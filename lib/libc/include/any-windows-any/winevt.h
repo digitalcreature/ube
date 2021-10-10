@@ -13,38 +13,38 @@ extern "C" {
 
 typedef enum _EVT_CHANNEL_CLOCK_TYPE {
   EvtChannelClockTypeSystemTime   = 0,
-  EvtChannelClockTypeQPC          = 1 
+  EvtChannelClockTypeQPC                       = 1 
 } EVT_CHANNEL_CLOCK_TYPE;
 
 typedef enum _EVT_CHANNEL_CONFIG_PROPERTY_ID {
-  EvtChannelConfigEnabled                 = 0,
-  EvtChannelConfigIsolation               = 1,
-  EvtChannelConfigType                    = 2,
-  EvtChannelConfigOwningPublisher         = 3,
-  EvtChannelConfigClassicEventlog         = 4,
-  EvtChannelConfigAccess                  = 5,
-  EvtChannelLoggingConfigRetention        = 6,
-  EvtChannelLoggingConfigAutoBackup       = 7,
-  EvtChannelLoggingConfigMaxSize          = 8,
-  EvtChannelLoggingConfigLogFilePath      = 9,
-  EvtChannelPublishingConfigLevel         = 10,
-  EvtChannelPublishingConfigKeywords      = 11,
+  EvtChannelConfigEnabled                                           = 0,
+  EvtChannelConfigIsolation                                         = 1,
+  EvtChannelConfigType                                                           = 2,
+  EvtChannelConfigOwningPublisher                      = 3,
+  EvtChannelConfigClassicEventlog                      = 4,
+  EvtChannelConfigAccess                                                         = 5,
+  EvtChannelLoggingConfigRetention                     = 6,
+  EvtChannelLoggingConfigAutoBackup                    = 7,
+  EvtChannelLoggingConfigMaxSize                       = 8,
+  EvtChannelLoggingConfigLogFilePath                   = 9,
+  EvtChannelPublishingConfigLevel                      = 10,
+  EvtChannelPublishingConfigKeywords                   = 11,
   EvtChannelPublishingConfigControlGuid   = 12,
   EvtChannelPublishingConfigBufferSize    = 13,
   EvtChannelPublishingConfigMinBuffers    = 14,
   EvtChannelPublishingConfigMaxBuffers    = 15,
-  EvtChannelPublishingConfigLatency       = 16,
+  EvtChannelPublishingConfigLatency                    = 16,
   EvtChannelPublishingConfigClockType     = 17,
-  EvtChannelPublishingConfigSidType       = 18,
-  EvtChannelPublisherList                 = 19,
-  EvtChannelPublishingConfigFileMax       = 20,
-  EvtChannelConfigPropertyIdEND           = 21 
+  EvtChannelPublishingConfigSidType                    = 18,
+  EvtChannelPublisherList                                           = 19,
+  EvtChannelPublishingConfigFileMax                    = 20,
+  EvtChannelConfigPropertyIdEND                        = 21 
 } EVT_CHANNEL_CONFIG_PROPERTY_ID;
 
 typedef enum _EVT_CHANNEL_ISOLATION_TYPE {
   EvtChannelIsolationTypeApplication   = 0,
-  EvtChannelIsolationTypeSystem        = 1,
-  EvtChannelIsolationTypeCustom        = 2 
+  EvtChannelIsolationTypeSystem                     = 1,
+  EvtChannelIsolationTypeCustom                     = 2 
 } EVT_CHANNEL_ISOLATION_TYPE;
 
 typedef enum _EVT_CHANNEL_REFERENCE_FLAGS {
@@ -52,63 +52,63 @@ typedef enum _EVT_CHANNEL_REFERENCE_FLAGS {
 } EVT_CHANNEL_REFERENCE_FLAGS;
 
 typedef enum _EVT_CHANNEL_SID_TYPE {
-  EvtChannelSidTypeNone         = 0,
+  EvtChannelSidTypeNone                      = 0,
   EvtChannelSidTypePublishing   = 1 
 } EVT_CHANNEL_SID_TYPE;
 
 typedef enum _EVT_CHANNEL_TYPE {
-  EvtChannelTypeAdmin         = 0,
+  EvtChannelTypeAdmin                      = 0,
   EvtChannelTypeOperational   = 1,
-  EvtChannelTypeAnalytic      = 2,
-  EvtChannelTypeDebug         = 3 
+  EvtChannelTypeAnalytic                   = 2,
+  EvtChannelTypeDebug                      = 3 
 } EVT_CHANNEL_TYPE;
 
 typedef enum _EVT_EVENT_METADATA_PROPERTY_ID {
-  EventMetadataEventID            = 0,
-  EventMetadataEventVersion       = 1,
-  EventMetadataEventChannel       = 2,
-  EventMetadataEventLevel         = 3,
-  EventMetadataEventOpcode        = 4,
-  EventMetadataEventTask          = 5,
-  EventMetadataEventKeyword       = 6,
+  EventMetadataEventID                                      = 0,
+  EventMetadataEventVersion                    = 1,
+  EventMetadataEventChannel                    = 2,
+  EventMetadataEventLevel                      = 3,
+  EventMetadataEventOpcode                     = 4,
+  EventMetadataEventTask                       = 5,
+  EventMetadataEventKeyword                    = 6,
   EventMetadataEventMessageID     = 7,
-  EventMetadataEventTemplate      = 8,
+  EventMetadataEventTemplate                   = 8,
   EvtEventMetadataPropertyIdEND   = 9 
 } EVT_EVENT_METADATA_PROPERTY_ID;
 
 typedef enum _EVT_EVENT_PROPERTY_ID {
-  EvtEventQueryIDs        = 0,
-  EvtEventPath            = 1,
+  EvtEventQueryIDs                     = 0,
+  EvtEventPath                                      = 1,
   EvtEventPropertyIdEND   = 2 
 } EVT_EVENT_PROPERTY_ID;
 
 typedef enum _EVT_EXPORTLOG_FLAGS {
-  EvtExportLogChannelPath           = 0x1,
-  EvtExportLogFilePath              = 0x2,
+  EvtExportLogChannelPath                        = 0x1,
+  EvtExportLogFilePath                                        = 0x2,
   EvtExportLogTolerateQueryErrors   = 0x1000 
 } EVT_EXPORTLOG_FLAGS;
 
 typedef enum _EVT_FORMAT_MESSAGE_FLAGS {
-  EvtFormatMessageEvent      = 1,
-  EvtFormatMessageLevel      = 2,
-  EvtFormatMessageTask       = 3,
+  EvtFormatMessageEvent                   = 1,
+  EvtFormatMessageLevel                   = 2,
+  EvtFormatMessageTask                    = 3,
   EvtFormatMessageOpcode     = 4,
   EvtFormatMessageKeyword    = 5,
   EvtFormatMessageChannel    = 6,
   EvtFormatMessageProvider   = 7,
-  EvtFormatMessageId         = 8,
-  EvtFormatMessageXml        = 9 
+  EvtFormatMessageId                      = 8,
+  EvtFormatMessageXml                     = 9 
 } EVT_FORMAT_MESSAGE_FLAGS;
 
 typedef enum _EVT_LOG_PROPERTY_ID {
-  EvtLogCreationTime         = 0,
-  EvtLogLastAccessTime       = 1,
-  EvtLogLastWriteTime        = 2,
-  EvtLogFileSize             = 3,
-  EvtLogAttributes           = 4,
+  EvtLogCreationTime                      = 0,
+  EvtLogLastAccessTime                    = 1,
+  EvtLogLastWriteTime                     = 2,
+  EvtLogFileSize                                       = 3,
+  EvtLogAttributes                        = 4,
   EvtLogNumberOfLogRecords   = 5,
   EvtLogOldestRecordNumber   = 6,
-  EvtLogFull                 = 7 
+  EvtLogFull                                           = 7 
 } EVT_LOG_PROPERTY_ID;
 
 typedef enum _EVT_LOGIN_CLASS {
@@ -117,11 +117,11 @@ typedef enum _EVT_LOGIN_CLASS {
 
 typedef enum _EVT_OPEN_LOG_FLAGS {
   EvtOpenChannelPath   = 0x1,
-  EvtOpenFilePath      = 0x2 
+  EvtOpenFilePath                   = 0x2 
 } EVT_OPEN_LOG_FLAGS;
 
 typedef enum _EVT_PUBLISHER_METADATA_PROPERTY_ID {
-  EvtPublisherMetadataPublisherGuid               = 0,
+  EvtPublisherMetadataPublisherGuid                                         = 0,
   EvtPublisherMetadataResourceFilePath,
   EvtPublisherMetadataParameterFilePath,
   EvtPublisherMetadataMessageFilePath,
@@ -154,16 +154,16 @@ typedef enum _EVT_PUBLISHER_METADATA_PROPERTY_ID {
 } EVT_PUBLISHER_METADATA_PROPERTY_ID;
 
 typedef enum _EVT_QUERY_FLAGS {
-  EvtQueryChannelPath           = 0x1,
-  EvtQueryFilePath              = 0x2,
-  EvtQueryForwardDirection      = 0x100,
-  EvtQueryReverseDirection      = 0x200,
+  EvtQueryChannelPath                        = 0x1,
+  EvtQueryFilePath                                        = 0x2,
+  EvtQueryForwardDirection                   = 0x100,
+  EvtQueryReverseDirection                   = 0x200,
   EvtQueryTolerateQueryErrors   = 0x1000 
 } EVT_QUERY_FLAGS;
 
 typedef enum _EVT_QUERY_PROPERTY_ID {
-  EvtQueryNames           = 0,
-  EvtQueryStatuses        = 1,
+  EvtQueryNames                        = 0,
+  EvtQueryStatuses                     = 1,
   EvtQueryPropertyIdEND   = 2 
 } EVT_QUERY_PROPERTY_ID;
 
@@ -175,8 +175,8 @@ typedef enum _EVT_RENDER_CONTEXT_FLAGS {
 
 typedef enum _EVT_RENDER_FLAGS {
   EvtRenderEventValues   = 0,
-  EvtRenderEventXml      = 1,
-  EvtRenderBookmark      = 2 
+  EvtRenderEventXml                   = 1,
+  EvtRenderBookmark                   = 2 
 } EVT_RENDER_FLAGS;
 
 typedef struct _EVT_RPC_LOGIN {
@@ -191,25 +191,25 @@ typedef enum _EVT_RPC_LOGIN_FLAGS {
   EvtRpcLoginAuthDefault     = 0,
   EvtRpcLoginAuthNegotiate   = 1,
   EvtRpcLoginAuthKerberos    = 2,
-  EvtRpcLoginAuthNTLM        = 3 
+  EvtRpcLoginAuthNTLM                     = 3 
 } EVT_RPC_LOGIN_FLAGS;
 
 typedef enum _EVT_SEEK_FLAGS {
-  EvtSeekRelativeToFirst      = 1,
-  EvtSeekRelativeToLast       = 2,
+  EvtSeekRelativeToFirst                   = 1,
+  EvtSeekRelativeToLast                    = 2,
   EvtSeekRelativeToCurrent    = 3,
   EvtSeekRelativeToBookmark   = 4,
-  EvtSeekOriginMask           = 7,
-  EvtSeekStrict               = 0x10000 
+  EvtSeekOriginMask                        = 7,
+  EvtSeekStrict                                         = 0x10000 
 } EVT_SEEK_FLAGS;
 
 typedef enum _EVT_SUBSCRIBE_FLAGS {
-  EvtSubscribeToFutureEvents        = 1,
+  EvtSubscribeToFutureEvents                     = 1,
   EvtSubscribeStartAtOldestRecord   = 2,
   EvtSubscribeStartAfterBookmark    = 3,
-  EvtSubscribeOriginMask            = 0x3,
+  EvtSubscribeOriginMask                                      = 0x3,
   EvtSubscribeTolerateQueryErrors   = 0x1000,
-  EvtSubscribeStrict                = 0x10000 
+  EvtSubscribeStrict                                          = 0x10000 
 } EVT_SUBSCRIBE_FLAGS;
 
 typedef enum _EVT_SUBSCRIBE_NOTIFY_ACTION {
@@ -218,7 +218,7 @@ typedef enum _EVT_SUBSCRIBE_NOTIFY_ACTION {
 } EVT_SUBSCRIBE_NOTIFY_ACTION;
 
 typedef enum _EVT_SYSTEM_PROPERTY_ID {
-  EvtSystemProviderName        = 0,
+  EvtSystemProviderName                     = 0,
   EvtSystemProviderGuid,
   EvtSystemEventID,
   EvtSystemQualifiers,
@@ -240,30 +240,30 @@ typedef enum _EVT_SYSTEM_PROPERTY_ID {
 } EVT_SYSTEM_PROPERTY_ID;
 
 typedef enum _EVT_VARIANT_TYPE {
-  EvtVarTypeNull         = 0,
-  EvtVarTypeString       = 1,
+  EvtVarTypeNull                      = 0,
+  EvtVarTypeString                    = 1,
   EvtVarTypeAnsiString   = 2,
-  EvtVarTypeSByte        = 3,
-  EvtVarTypeByte         = 4,
-  EvtVarTypeInt16        = 5,
-  EvtVarTypeUInt16       = 6,
-  EvtVarTypeInt32        = 7,
-  EvtVarTypeUInt32       = 8,
-  EvtVarTypeInt64        = 9,
-  EvtVarTypeUInt64       = 10,
-  EvtVarTypeSingle       = 11,
-  EvtVarTypeDouble       = 12,
-  EvtVarTypeBoolean      = 13,
-  EvtVarTypeBinary       = 14,
-  EvtVarTypeGuid         = 15,
-  EvtVarTypeSizeT        = 16,
+  EvtVarTypeSByte                     = 3,
+  EvtVarTypeByte                      = 4,
+  EvtVarTypeInt16                     = 5,
+  EvtVarTypeUInt16                    = 6,
+  EvtVarTypeInt32                     = 7,
+  EvtVarTypeUInt32                    = 8,
+  EvtVarTypeInt64                     = 9,
+  EvtVarTypeUInt64                    = 10,
+  EvtVarTypeSingle                    = 11,
+  EvtVarTypeDouble                    = 12,
+  EvtVarTypeBoolean                   = 13,
+  EvtVarTypeBinary                    = 14,
+  EvtVarTypeGuid                      = 15,
+  EvtVarTypeSizeT                     = 16,
   EvtVarTypeFileTime     = 17,
-  EvtVarTypeSysTime      = 18,
-  EvtVarTypeSid          = 19,
+  EvtVarTypeSysTime                   = 18,
+  EvtVarTypeSid                       = 19,
   EvtVarTypeHexInt32     = 20,
   EvtVarTypeHexInt64     = 21,
   EvtVarTypeEvtHandle    = 32,
-  EvtVarTypeEvtXml       = 35 
+  EvtVarTypeEvtXml                    = 35 
 } EVT_VARIANT_TYPE;
 
 typedef HANDLE EVT_HANDLE;
@@ -272,42 +272,42 @@ typedef HANDLE EVT_OBJECT_ARRAY_PROPERTY_HANDLE;
 typedef struct _EVT_VARIANT {
   __C89_NAMELESS union {
     WINBOOL    BooleanVal;
-    INT8       SByteVal;
-    INT16      Int16Val;
-    INT32      Int32Val;
-    INT64      Int64Val;
-    UINT8      ByteVal;
+    INT8                    SByteVal;
+    INT16                   Int16Val;
+    INT32                   Int32Val;
+    INT64                   Int64Val;
+    UINT8                   ByteVal;
     UINT16     UInt16Val;
     UINT32     UInt32Val;
     UINT64     UInt64Val;
-    float      SingleVal;
+    float                   SingleVal;
     double     DoubleVal;
     ULONGLONG  FileTimeVal;
     SYSTEMTIME *SysTimeVal;
-    GUID       *GuidVal;
+    GUID                    *GuidVal;
     LPCWSTR    StringVal;
     LPCSTR     AnsiStringVal;
-    PBYTE      BinaryVal;
-    PSID       SidVal;
+    PBYTE                   BinaryVal;
+    PSID                    SidVal;
     size_t     SizeTVal;
     EVT_HANDLE EvtHandleVal;
-    BOOL       *BooleanArr;
-    INT8       *SByteArr;
-    INT16      *Int16Arr;
-    INT32      *Int32Arr;
-    INT64      *Int64Arr;
-    UINT8      *ByteArr;
+    BOOL                    *BooleanArr;
+    INT8                    *SByteArr;
+    INT16                   *Int16Arr;
+    INT32                   *Int32Arr;
+    INT64                   *Int64Arr;
+    UINT8                   *ByteArr;
     UINT16     *UInt16Arr;
     UINT32     *UInt32Arr;
     UINT64     *UInt64Arr;
-    float      *SingleArr;
+    float                   *SingleArr;
     double     *DoubleArr;
     FILETIME   *FileTimeArr;
     SYSTEMTIME *SysTimeArr;
-    GUID       *GuidArr;
+    GUID                    *GuidArr;
     LPWSTR     *StringArr;
-    LPSTR      *AnsiStringArr;
-    PSID       *SidArr;
+    LPSTR                   *AnsiStringArr;
+    PSID                    *SidArr;
     size_t     *SizeTArr;
     LPCWSTR    XmlVal;
     LPCWSTR*   XmlValArr;

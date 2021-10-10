@@ -24,28 +24,28 @@
 #ifndef __D3DX9SHADER_H__
 #define __D3DX9SHADER_H__
 
-#define D3DXSHADER_DEBUG                          0x1
-#define D3DXSHADER_SKIPVALIDATION                 0x2
-#define D3DXSHADER_SKIPOPTIMIZATION               0x4
-#define D3DXSHADER_PACKMATRIX_ROWMAJOR            0x8
-#define D3DXSHADER_PACKMATRIX_COLUMNMAJOR         0x10
-#define D3DXSHADER_PARTIALPRECISION               0x20
-#define D3DXSHADER_FORCE_VS_SOFTWARE_NOOPT        0x40
-#define D3DXSHADER_FORCE_PS_SOFTWARE_NOOPT        0x80
-#define D3DXSHADER_NO_PRESHADER                   0x100
-#define D3DXSHADER_AVOID_FLOW_CONTROL             0x200
-#define D3DXSHADER_PREFER_FLOW_CONTROL            0x400
+#define D3DXSHADER_DEBUG                                                                              0x1
+#define D3DXSHADER_SKIPVALIDATION                                           0x2
+#define D3DXSHADER_SKIPOPTIMIZATION                                         0x4
+#define D3DXSHADER_PACKMATRIX_ROWMAJOR                                      0x8
+#define D3DXSHADER_PACKMATRIX_COLUMNMAJOR                      0x10
+#define D3DXSHADER_PARTIALPRECISION                                         0x20
+#define D3DXSHADER_FORCE_VS_SOFTWARE_NOOPT                     0x40
+#define D3DXSHADER_FORCE_PS_SOFTWARE_NOOPT                     0x80
+#define D3DXSHADER_NO_PRESHADER                                                          0x100
+#define D3DXSHADER_AVOID_FLOW_CONTROL                                       0x200
+#define D3DXSHADER_PREFER_FLOW_CONTROL                                      0x400
 #define D3DXSHADER_ENABLE_BACKWARDS_COMPATIBILITY 0x1000
-#define D3DXSHADER_IEEE_STRICTNESS                0x2000
+#define D3DXSHADER_IEEE_STRICTNESS                                          0x2000
 
-#define D3DXSHADER_OPTIMIZATION_LEVEL0            0x4000
-#define D3DXSHADER_OPTIMIZATION_LEVEL1            0x0
-#define D3DXSHADER_OPTIMIZATION_LEVEL2            0xC000
-#define D3DXSHADER_OPTIMIZATION_LEVEL3            0x8000
+#define D3DXSHADER_OPTIMIZATION_LEVEL0                                      0x4000
+#define D3DXSHADER_OPTIMIZATION_LEVEL1                                      0x0
+#define D3DXSHADER_OPTIMIZATION_LEVEL2                                      0xC000
+#define D3DXSHADER_OPTIMIZATION_LEVEL3                                      0x8000
 
-#define D3DXSHADER_USE_LEGACY_D3DX9_31_DLL        0x10000
+#define D3DXSHADER_USE_LEGACY_D3DX9_31_DLL                     0x10000
 
-#define D3DXCONSTTABLE_LARGEADDRESSAWARE          0x20000
+#define D3DXCONSTTABLE_LARGEADDRESSAWARE                       0x20000
 
 typedef const char *D3DXHANDLE;
 typedef D3DXHANDLE *LPD3DXHANDLE;
@@ -145,94 +145,94 @@ DECLARE_INTERFACE_(ID3DXConstantTable, ID3DXBuffer)
     STDMETHOD_(D3DXHANDLE, GetConstantElement)(THIS_ D3DXHANDLE hConstant, UINT Index) PURE;
     STDMETHOD(SetDefaults)(THIS_ struct IDirect3DDevice9 *device) PURE;
     STDMETHOD(SetValue)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const void *data, UINT data_size) PURE;
+                                      const void *data, UINT data_size) PURE;
     STDMETHOD(SetBool)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant, WINBOOL value) PURE;
     STDMETHOD(SetBoolArray)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const WINBOOL *values, UINT value_count) PURE;
+                                      const WINBOOL *values, UINT value_count) PURE;
     STDMETHOD(SetInt)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant, INT value) PURE;
     STDMETHOD(SetIntArray)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const INT *values, UINT value_count) PURE;
+                                      const INT *values, UINT value_count) PURE;
     STDMETHOD(SetFloat)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant, float value) PURE;
     STDMETHOD(SetFloatArray)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const float *values, UINT value_count) PURE;
+                                      const float *values, UINT value_count) PURE;
     STDMETHOD(SetVector)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant, const D3DXVECTOR4 *value) PURE;
     STDMETHOD(SetVectorArray)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const D3DXVECTOR4 *values, UINT value_count) PURE;
+                                      const D3DXVECTOR4 *values, UINT value_count) PURE;
     STDMETHOD(SetMatrix)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant, const D3DXMATRIX *value) PURE;
     STDMETHOD(SetMatrixArray)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const D3DXMATRIX *values, UINT value_count) PURE;
+                                      const D3DXMATRIX *values, UINT value_count) PURE;
     STDMETHOD(SetMatrixPointerArray)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const D3DXMATRIX **values, UINT value_count) PURE;
+                                      const D3DXMATRIX **values, UINT value_count) PURE;
     STDMETHOD(SetMatrixTranspose)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const D3DXMATRIX *value) PURE;
+                                      const D3DXMATRIX *value) PURE;
     STDMETHOD(SetMatrixTransposeArray)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const D3DXMATRIX *values, UINT value_count) PURE;
+                                      const D3DXMATRIX *values, UINT value_count) PURE;
     STDMETHOD(SetMatrixTransposePointerArray)(THIS_ struct IDirect3DDevice9 *device, D3DXHANDLE constant,
-            const D3DXMATRIX **values, UINT value_count) PURE;
+                                      const D3DXMATRIX **values, UINT value_count) PURE;
 };
 #undef INTERFACE
 
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
-#define ID3DXConstantTable_QueryInterface(p,a,b)                      (p)->lpVtbl->QueryInterface(p,a,b)
-#define ID3DXConstantTable_AddRef(p)                                  (p)->lpVtbl->AddRef(p)
-#define ID3DXConstantTable_Release(p)                                 (p)->lpVtbl->Release(p)
+#define ID3DXConstantTable_QueryInterface(p,a,b)                                                             (p)->lpVtbl->QueryInterface(p,a,b)
+#define ID3DXConstantTable_AddRef(p)                                                                                                   (p)->lpVtbl->AddRef(p)
+#define ID3DXConstantTable_Release(p)                                                                                                  (p)->lpVtbl->Release(p)
 /*** ID3DXBuffer methods ***/
-#define ID3DXConstantTable_GetBufferPointer(p)                        (p)->lpVtbl->GetBufferPointer(p)
-#define ID3DXConstantTable_GetBufferSize(p)                           (p)->lpVtbl->GetBufferSize(p)
+#define ID3DXConstantTable_GetBufferPointer(p)                                                                            (p)->lpVtbl->GetBufferPointer(p)
+#define ID3DXConstantTable_GetBufferSize(p)                                                                               (p)->lpVtbl->GetBufferSize(p)
 /*** ID3DXConstantTable methods ***/
-#define ID3DXConstantTable_GetDesc(p,a)                               (p)->lpVtbl->GetDesc(p,a)
-#define ID3DXConstantTable_GetConstantDesc(p,a,b,c)                   (p)->lpVtbl->GetConstantDesc(p,a,b,c)
-#define ID3DXConstantTable_GetSamplerIndex(p,a)                       (p)->lpVtbl->GetSamplerIndex(p,a)
-#define ID3DXConstantTable_GetConstant(p,a,b)                         (p)->lpVtbl->GetConstant(p,a,b)
-#define ID3DXConstantTable_GetConstantByName(p,a,b)                   (p)->lpVtbl->GetConstantByName(p,a,b)
-#define ID3DXConstantTable_GetConstantElement(p,a,b)                  (p)->lpVtbl->GetConstantElement(p,a,b)
-#define ID3DXConstantTable_SetDefaults(p,a)                           (p)->lpVtbl->SetDefaults(p,a)
-#define ID3DXConstantTable_SetValue(p,a,b,c,d)                        (p)->lpVtbl->SetValue(p,a,b,c,d)
-#define ID3DXConstantTable_SetBool(p,a,b,c)                           (p)->lpVtbl->SetBool(p,a,b,c)
-#define ID3DXConstantTable_SetBoolArray(p,a,b,c,d)                    (p)->lpVtbl->SetBoolArray(p,a,b,c,d)
-#define ID3DXConstantTable_SetInt(p,a,b,c)                            (p)->lpVtbl->SetInt(p,a,b,c)
-#define ID3DXConstantTable_SetIntArray(p,a,b,c,d)                     (p)->lpVtbl->SetIntArray(p,a,b,c,d)
-#define ID3DXConstantTable_SetFloat(p,a,b,c)                          (p)->lpVtbl->SetFloat(p,a,b,c)
-#define ID3DXConstantTable_SetFloatArray(p,a,b,c,d)                   (p)->lpVtbl->SetFloatArray(p,a,b,c,d)
-#define ID3DXConstantTable_SetVector(p,a,b,c)                         (p)->lpVtbl->SetVector(p,a,b,c)
-#define ID3DXConstantTable_SetVectorArray(p,a,b,c,d)                  (p)->lpVtbl->SetVectorArray(p,a,b,c,d)
-#define ID3DXConstantTable_SetMatrix(p,a,b,c)                         (p)->lpVtbl->SetMatrix(p,a,b,c)
-#define ID3DXConstantTable_SetMatrixArray(p,a,b,c,d)                  (p)->lpVtbl->SetMatrixArray(p,a,b,c,d)
-#define ID3DXConstantTable_SetMatrixPointerArray(p,a,b,c,d)           (p)->lpVtbl->SetMatrixPointerArray(p,a,b,c,d)
-#define ID3DXConstantTable_SetMatrixTranspose(p,a,b,c)                (p)->lpVtbl->SetMatrixTranspose(p,a,b,c)
-#define ID3DXConstantTable_SetMatrixTransposeArray(p,a,b,c,d)         (p)->lpVtbl->SetMatrixTransposeArray(p,a,b,c,d)
+#define ID3DXConstantTable_GetDesc(p,a)                                                                                                (p)->lpVtbl->GetDesc(p,a)
+#define ID3DXConstantTable_GetConstantDesc(p,a,b,c)                                                          (p)->lpVtbl->GetConstantDesc(p,a,b,c)
+#define ID3DXConstantTable_GetSamplerIndex(p,a)                                                              (p)->lpVtbl->GetSamplerIndex(p,a)
+#define ID3DXConstantTable_GetConstant(p,a,b)                                                                             (p)->lpVtbl->GetConstant(p,a,b)
+#define ID3DXConstantTable_GetConstantByName(p,a,b)                                                          (p)->lpVtbl->GetConstantByName(p,a,b)
+#define ID3DXConstantTable_GetConstantElement(p,a,b)                                                         (p)->lpVtbl->GetConstantElement(p,a,b)
+#define ID3DXConstantTable_SetDefaults(p,a)                                                                               (p)->lpVtbl->SetDefaults(p,a)
+#define ID3DXConstantTable_SetValue(p,a,b,c,d)                                                                            (p)->lpVtbl->SetValue(p,a,b,c,d)
+#define ID3DXConstantTable_SetBool(p,a,b,c)                                                                               (p)->lpVtbl->SetBool(p,a,b,c)
+#define ID3DXConstantTable_SetBoolArray(p,a,b,c,d)                                                           (p)->lpVtbl->SetBoolArray(p,a,b,c,d)
+#define ID3DXConstantTable_SetInt(p,a,b,c)                                                                                (p)->lpVtbl->SetInt(p,a,b,c)
+#define ID3DXConstantTable_SetIntArray(p,a,b,c,d)                                                            (p)->lpVtbl->SetIntArray(p,a,b,c,d)
+#define ID3DXConstantTable_SetFloat(p,a,b,c)                                                                              (p)->lpVtbl->SetFloat(p,a,b,c)
+#define ID3DXConstantTable_SetFloatArray(p,a,b,c,d)                                                          (p)->lpVtbl->SetFloatArray(p,a,b,c,d)
+#define ID3DXConstantTable_SetVector(p,a,b,c)                                                                             (p)->lpVtbl->SetVector(p,a,b,c)
+#define ID3DXConstantTable_SetVectorArray(p,a,b,c,d)                                                         (p)->lpVtbl->SetVectorArray(p,a,b,c,d)
+#define ID3DXConstantTable_SetMatrix(p,a,b,c)                                                                             (p)->lpVtbl->SetMatrix(p,a,b,c)
+#define ID3DXConstantTable_SetMatrixArray(p,a,b,c,d)                                                         (p)->lpVtbl->SetMatrixArray(p,a,b,c,d)
+#define ID3DXConstantTable_SetMatrixPointerArray(p,a,b,c,d)                        (p)->lpVtbl->SetMatrixPointerArray(p,a,b,c,d)
+#define ID3DXConstantTable_SetMatrixTranspose(p,a,b,c)                                          (p)->lpVtbl->SetMatrixTranspose(p,a,b,c)
+#define ID3DXConstantTable_SetMatrixTransposeArray(p,a,b,c,d)                      (p)->lpVtbl->SetMatrixTransposeArray(p,a,b,c,d)
 #define ID3DXConstantTable_SetMatrixTransposePointerArray(p,a,b,c,d)  (p)->lpVtbl->SetMatrixTransposePointerArray(p,a,b,c,d)
 #else
 /*** IUnknown methods ***/
-#define ID3DXConstantTable_QueryInterface(p,a,b)                      (p)->QueryInterface(a,b)
-#define ID3DXConstantTable_AddRef(p)                                  (p)->AddRef()
-#define ID3DXConstantTable_Release(p)                                 (p)->Release()
+#define ID3DXConstantTable_QueryInterface(p,a,b)                                                             (p)->QueryInterface(a,b)
+#define ID3DXConstantTable_AddRef(p)                                                                                                   (p)->AddRef()
+#define ID3DXConstantTable_Release(p)                                                                                                  (p)->Release()
 /*** ID3DXBuffer methods ***/
-#define ID3DXConstantTable_GetBufferPointer(p)                        (p)->GetBufferPointer()
-#define ID3DXConstantTable_GetBufferSize(p)                           (p)->GetBufferSize()
+#define ID3DXConstantTable_GetBufferPointer(p)                                                                            (p)->GetBufferPointer()
+#define ID3DXConstantTable_GetBufferSize(p)                                                                               (p)->GetBufferSize()
 /*** ID3DXConstantTable methods ***/
-#define ID3DXConstantTable_GetDesc(p,a)                               (p)->GetDesc(a)
-#define ID3DXConstantTable_GetConstantDesc(p,a,b,c)                   (p)->GetConstantDesc(a,b,c)
-#define ID3DXConstantTable_GetSamplerIndex(p,a)                       (p)->GetConstantDesc(a)
-#define ID3DXConstantTable_GetConstant(p,a,b)                         (p)->GetConstant(a,b)
-#define ID3DXConstantTable_GetConstantByName(p,a,b)                   (p)->GetConstantByName(a,b)
-#define ID3DXConstantTable_GetConstantElement(p,a,b)                  (p)->GetConstantElement(a,b)
-#define ID3DXConstantTable_SetDefaults(p,a)                           (p)->SetDefaults(a)
-#define ID3DXConstantTable_SetValue(p,a,b,c,d)                        (p)->SetValue(a,b,c,d)
-#define ID3DXConstantTable_SetBool(p,a,b,c)                           (p)->SetBool(a,b,c)
-#define ID3DXConstantTable_SetBoolArray(p,a,b,c,d)                    (p)->SetBoolArray(a,b,c,d)
-#define ID3DXConstantTable_SetInt(p,a,b,c)                            (p)->SetInt(a,b,c)
-#define ID3DXConstantTable_SetIntArray(p,a,b,c,d)                     (p)->SetIntArray(a,b,c,d)
-#define ID3DXConstantTable_SetFloat(p,a,b,c)                          (p)->SetFloat(a,b,c)
-#define ID3DXConstantTable_SetFloatArray(p,a,b,c,d)                   (p)->SetFloatArray(a,b,c,d)
-#define ID3DXConstantTable_SetVector(p,a,b,c)                         (p)->SetVector(a,b,c)
-#define ID3DXConstantTable_SetVectorArray(p,a,b,c,d)                  (p)->SetVectorArray(a,b,c,d)
-#define ID3DXConstantTable_SetMatrix(p,a,b,c)                         (p)->SetMatrix(a,b,c)
-#define ID3DXConstantTable_SetMatrixArray(p,a,b,c,d)                  (p)->SetMatrixArray(a,b,c,d)
-#define ID3DXConstantTable_SetMatrixPointerArray(p,a,b,c,d)           (p)->SetMatrixPointerArray(a,b,c,d)
-#define ID3DXConstantTable_SetMatrixTranspose(p,a,b,c)                (p)->SetMatrixTranspose(a,b,c)
-#define ID3DXConstantTable_SetMatrixTransposeArray(p,a,b,c,d)         (p)->SetMatrixTransposeArray(a,b,c,d)
+#define ID3DXConstantTable_GetDesc(p,a)                                                                                                (p)->GetDesc(a)
+#define ID3DXConstantTable_GetConstantDesc(p,a,b,c)                                                          (p)->GetConstantDesc(a,b,c)
+#define ID3DXConstantTable_GetSamplerIndex(p,a)                                                              (p)->GetConstantDesc(a)
+#define ID3DXConstantTable_GetConstant(p,a,b)                                                                             (p)->GetConstant(a,b)
+#define ID3DXConstantTable_GetConstantByName(p,a,b)                                                          (p)->GetConstantByName(a,b)
+#define ID3DXConstantTable_GetConstantElement(p,a,b)                                                         (p)->GetConstantElement(a,b)
+#define ID3DXConstantTable_SetDefaults(p,a)                                                                               (p)->SetDefaults(a)
+#define ID3DXConstantTable_SetValue(p,a,b,c,d)                                                                            (p)->SetValue(a,b,c,d)
+#define ID3DXConstantTable_SetBool(p,a,b,c)                                                                               (p)->SetBool(a,b,c)
+#define ID3DXConstantTable_SetBoolArray(p,a,b,c,d)                                                           (p)->SetBoolArray(a,b,c,d)
+#define ID3DXConstantTable_SetInt(p,a,b,c)                                                                                (p)->SetInt(a,b,c)
+#define ID3DXConstantTable_SetIntArray(p,a,b,c,d)                                                            (p)->SetIntArray(a,b,c,d)
+#define ID3DXConstantTable_SetFloat(p,a,b,c)                                                                              (p)->SetFloat(a,b,c)
+#define ID3DXConstantTable_SetFloatArray(p,a,b,c,d)                                                          (p)->SetFloatArray(a,b,c,d)
+#define ID3DXConstantTable_SetVector(p,a,b,c)                                                                             (p)->SetVector(a,b,c)
+#define ID3DXConstantTable_SetVectorArray(p,a,b,c,d)                                                         (p)->SetVectorArray(a,b,c,d)
+#define ID3DXConstantTable_SetMatrix(p,a,b,c)                                                                             (p)->SetMatrix(a,b,c)
+#define ID3DXConstantTable_SetMatrixArray(p,a,b,c,d)                                                         (p)->SetMatrixArray(a,b,c,d)
+#define ID3DXConstantTable_SetMatrixPointerArray(p,a,b,c,d)                        (p)->SetMatrixPointerArray(a,b,c,d)
+#define ID3DXConstantTable_SetMatrixTranspose(p,a,b,c)                                          (p)->SetMatrixTranspose(a,b,c)
+#define ID3DXConstantTable_SetMatrixTransposeArray(p,a,b,c,d)                      (p)->SetMatrixTransposeArray(a,b,c,d)
 #define ID3DXConstantTable_SetMatrixTransposePointerArray(p,a,b,c,d)  (p)->SetMatrixTransposePointerArray(a,b,c,d)
 #endif
 
@@ -297,13 +297,13 @@ typedef enum _D3DXINCLUDE_TYPE
 DECLARE_INTERFACE(ID3DXInclude)
 {
     STDMETHOD(Open)(THIS_ D3DXINCLUDE_TYPE include_type, const char *filename,
-            const void *parent_data, const void **data, UINT *bytes) PURE;
+                                      const void *parent_data, const void **data, UINT *bytes) PURE;
     STDMETHOD(Close)(THIS_ const void *data) PURE;
 };
 #undef INTERFACE
 
 #define ID3DXInclude_Open(p,a,b,c,d,e)  (p)->lpVtbl->Open(p,a,b,c,d,e)
-#define ID3DXInclude_Close(p,a)         (p)->lpVtbl->Close(p,a)
+#define ID3DXInclude_Close(p,a)                      (p)->lpVtbl->Close(p,a)
 
 typedef struct ID3DXInclude *LPD3DXINCLUDE;
 
@@ -356,55 +356,55 @@ HRESULT WINAPI D3DXFindShaderComment(const DWORD *byte_code, DWORD fourcc, const
 HRESULT WINAPI D3DXGetShaderSamplers(const DWORD *byte_code, const char **samplers, UINT *count);
 
 HRESULT WINAPI D3DXAssembleShaderFromFileA(const char *filename, const D3DXMACRO *defines,
-        ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 HRESULT WINAPI D3DXAssembleShaderFromFileW(const WCHAR *filename, const D3DXMACRO *defines,
-        ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 #define D3DXAssembleShaderFromFile __MINGW_NAME_AW(D3DXAssembleShaderFromFile)
 
 HRESULT WINAPI D3DXAssembleShaderFromResourceA(HMODULE module, const char *resource, const D3DXMACRO *defines,
-        ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 HRESULT WINAPI D3DXAssembleShaderFromResourceW(HMODULE module, const WCHAR *resource, const D3DXMACRO *defines,
-        ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 #define D3DXAssembleShaderFromResource __MINGW_NAME_AW(D3DXAssembleShaderFromResource)
 
 HRESULT WINAPI D3DXAssembleShader(const char *data, UINT data_len, const D3DXMACRO *defines,
-        ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, DWORD flags, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 
 HRESULT WINAPI D3DXCompileShader(const char *src_data, UINT data_len, const D3DXMACRO *defines,
-        ID3DXInclude *include, const char *function_name, const char *profile, DWORD flags,
-        ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
+                     ID3DXInclude *include, const char *function_name, const char *profile, DWORD flags,
+                     ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
 
 HRESULT WINAPI D3DXDisassembleShader(const DWORD *pShader, WINBOOL EnableColorCode, const char *pComments, struct ID3DXBuffer **ppDisassembly);
 
 HRESULT WINAPI D3DXCompileShaderFromFileA(const char *filename, const D3DXMACRO *defines,
-        ID3DXInclude *include, const char *entrypoint, const char *profile, DWORD flags,
-        ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
+                     ID3DXInclude *include, const char *entrypoint, const char *profile, DWORD flags,
+                     ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
 HRESULT WINAPI D3DXCompileShaderFromFileW(const WCHAR *filename, const D3DXMACRO *defines,
-        ID3DXInclude *include, const char *entrypoint, const char *profile, DWORD flags,
-        ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
+                     ID3DXInclude *include, const char *entrypoint, const char *profile, DWORD flags,
+                     ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
 #define D3DXCompileShaderFromFile __MINGW_NAME_AW(D3DXCompileShaderFromFile)
 
 HRESULT WINAPI D3DXCompileShaderFromResourceA(HMODULE module, const char *resource, const D3DXMACRO *defines,
-        ID3DXInclude *include, const char *entrypoint, const char *profile, DWORD flags,
-        ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
+                     ID3DXInclude *include, const char *entrypoint, const char *profile, DWORD flags,
+                     ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
 HRESULT WINAPI D3DXCompileShaderFromResourceW(HMODULE module, const WCHAR *resource, const D3DXMACRO *defines,
-        ID3DXInclude *include, const char *entrypoint, const char *profile, DWORD flags,
-        ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
+                     ID3DXInclude *include, const char *entrypoint, const char *profile, DWORD flags,
+                     ID3DXBuffer **shader, ID3DXBuffer **error_messages, ID3DXConstantTable **constant_table);
 #define D3DXCompileShaderFromResource __MINGW_NAME_AW(D3DXCompileShaderFromResource)
 
 HRESULT WINAPI D3DXPreprocessShader(const char *data, UINT data_len, const D3DXMACRO *defines,
-        ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 
 HRESULT WINAPI D3DXPreprocessShaderFromFileA(const char *filename, const D3DXMACRO *defines,
-        ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 HRESULT WINAPI D3DXPreprocessShaderFromFileW(const WCHAR *filename, const D3DXMACRO *defines,
-        ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 #define D3DXPreprocessShaderFromFile __MINGW_NAME_AW(D3DXPreprocessShaderFromFile)
 
 HRESULT WINAPI D3DXPreprocessShaderFromResourceA(HMODULE module, const char *resource, const D3DXMACRO *defines,
-        ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 HRESULT WINAPI D3DXPreprocessShaderFromResourceW(HMODULE module, const WCHAR *resource, const D3DXMACRO *defines,
-        ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
+                     ID3DXInclude *include, ID3DXBuffer **shader, ID3DXBuffer **error_messages);
 #define D3DXPreprocessShaderFromResource __MINGW_NAME_AW(D3DXPreprocessShaderFromResource)
 
 HRESULT WINAPI D3DXGetShaderConstantTableEx(const DWORD *byte_code, DWORD flags, ID3DXConstantTable **constant_table);

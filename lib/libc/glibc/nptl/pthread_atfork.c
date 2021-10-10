@@ -34,11 +34,11 @@
    <https://www.gnu.org/licenses/>.  */
 
 extern int __pthread_atfork (void (*prepare) (void), void (*parent) (void),
-                            void (*child) (void));
+                                                                                void (*child) (void));
 extern int __register_atfork (void (*__prepare) (void),
-                             void (*__parent) (void),
-                             void (*__child) (void),
-                             void *dso_handle);
+                                                                                 void (*__parent) (void),
+                                                                                 void (*__child) (void),
+                                                                                 void *dso_handle);
 libc_hidden_proto (__register_atfork)
 extern void *__dso_handle __attribute__ ((__visibility__ ("hidden")));
 

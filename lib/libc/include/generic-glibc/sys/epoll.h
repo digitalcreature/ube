@@ -107,7 +107,7 @@ extern int epoll_create1 (int __flags) __THROW;
    operation. The "event" parameter describes which events the caller
    is interested in and any associated user data.  */
 extern int epoll_ctl (int __epfd, int __op, int __fd,
-		      struct epoll_event *__event) __THROW;
+		                   struct epoll_event *__event) __THROW;
 
 
 /* Wait for events on an epoll instance "epfd". Returns the number of
@@ -121,7 +121,7 @@ extern int epoll_ctl (int __epfd, int __op, int __fd,
    This function is a cancellation point and therefore not marked with
    __THROW.  */
 extern int epoll_wait (int __epfd, struct epoll_event *__events,
-		       int __maxevents, int __timeout);
+		                    int __maxevents, int __timeout);
 
 
 /* Same as epoll_wait, but the thread's signal mask is temporarily

@@ -963,51 +963,51 @@ extern "C" {
 #else
   typedef struct IRTCClientVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCClient *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCClient *This);
-      ULONG (WINAPI *Release)(IRTCClient *This);
-      HRESULT (WINAPI *Initialize)(IRTCClient *This);
-      HRESULT (WINAPI *Shutdown)(IRTCClient *This);
-      HRESULT (WINAPI *PrepareForShutdown)(IRTCClient *This);
-      HRESULT (WINAPI *put_EventFilter)(IRTCClient *This,__LONG32 lFilter);
-      HRESULT (WINAPI *get_EventFilter)(IRTCClient *This,__LONG32 *plFilter);
-      HRESULT (WINAPI *SetPreferredMediaTypes)(IRTCClient *This,__LONG32 lMediaTypes,VARIANT_BOOL fPersistent);
-      HRESULT (WINAPI *get_PreferredMediaTypes)(IRTCClient *This,__LONG32 *plMediaTypes);
-      HRESULT (WINAPI *get_MediaCapabilities)(IRTCClient *This,__LONG32 *plMediaTypes);
-      HRESULT (WINAPI *CreateSession)(IRTCClient *This,RTC_SESSION_TYPE enType,BSTR bstrLocalPhoneURI,IRTCProfile *pProfile,__LONG32 lFlags,IRTCSession **ppSession);
-      HRESULT (WINAPI *put_ListenForIncomingSessions)(IRTCClient *This,RTC_LISTEN_MODE enListen);
-      HRESULT (WINAPI *get_ListenForIncomingSessions)(IRTCClient *This,RTC_LISTEN_MODE *penListen);
-      HRESULT (WINAPI *get_NetworkAddresses)(IRTCClient *This,VARIANT_BOOL fTCP,VARIANT_BOOL fExternal,VARIANT *pvAddresses);
-      HRESULT (WINAPI *put_Volume)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,__LONG32 lVolume);
-      HRESULT (WINAPI *get_Volume)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,__LONG32 *plVolume);
-      HRESULT (WINAPI *put_AudioMuted)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,VARIANT_BOOL fMuted);
-      HRESULT (WINAPI *get_AudioMuted)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,VARIANT_BOOL *pfMuted);
-      HRESULT (WINAPI *get_IVideoWindow)(IRTCClient *This,RTC_VIDEO_DEVICE enDevice,IVideoWindow **ppIVideoWindow);
-      HRESULT (WINAPI *put_PreferredAudioDevice)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,BSTR bstrDeviceName);
-      HRESULT (WINAPI *get_PreferredAudioDevice)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,BSTR *pbstrDeviceName);
-      HRESULT (WINAPI *put_PreferredVolume)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,__LONG32 lVolume);
-      HRESULT (WINAPI *get_PreferredVolume)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,__LONG32 *plVolume);
-      HRESULT (WINAPI *put_PreferredAEC)(IRTCClient *This,VARIANT_BOOL bEnable);
-      HRESULT (WINAPI *get_PreferredAEC)(IRTCClient *This,VARIANT_BOOL *pbEnabled);
-      HRESULT (WINAPI *put_PreferredVideoDevice)(IRTCClient *This,BSTR bstrDeviceName);
-      HRESULT (WINAPI *get_PreferredVideoDevice)(IRTCClient *This,BSTR *pbstrDeviceName);
-      HRESULT (WINAPI *get_ActiveMedia)(IRTCClient *This,__LONG32 *plMediaType);
-      HRESULT (WINAPI *put_MaxBitrate)(IRTCClient *This,__LONG32 lMaxBitrate);
-      HRESULT (WINAPI *get_MaxBitrate)(IRTCClient *This,__LONG32 *plMaxBitrate);
-      HRESULT (WINAPI *put_TemporalSpatialTradeOff)(IRTCClient *This,__LONG32 lValue);
-      HRESULT (WINAPI *get_TemporalSpatialTradeOff)(IRTCClient *This,__LONG32 *plValue);
-      HRESULT (WINAPI *get_NetworkQuality)(IRTCClient *This,__LONG32 *plNetworkQuality);
-      HRESULT (WINAPI *StartT120Applet)(IRTCClient *This,RTC_T120_APPLET enApplet);
-      HRESULT (WINAPI *StopT120Applets)(IRTCClient *This);
-      HRESULT (WINAPI *get_IsT120AppletRunning)(IRTCClient *This,RTC_T120_APPLET enApplet,VARIANT_BOOL *pfRunning);
-      HRESULT (WINAPI *get_LocalUserURI)(IRTCClient *This,BSTR *pbstrUserURI);
-      HRESULT (WINAPI *put_LocalUserURI)(IRTCClient *This,BSTR bstrUserURI);
-      HRESULT (WINAPI *get_LocalUserName)(IRTCClient *This,BSTR *pbstrUserName);
-      HRESULT (WINAPI *put_LocalUserName)(IRTCClient *This,BSTR bstrUserName);
-      HRESULT (WINAPI *PlayRing)(IRTCClient *This,RTC_RING_TYPE enType,VARIANT_BOOL bPlay);
-      HRESULT (WINAPI *SendDTMF)(IRTCClient *This,RTC_DTMF enDTMF);
-      HRESULT (WINAPI *InvokeTuningWizard)(IRTCClient *This,OAHWND hwndParent);
-      HRESULT (WINAPI *get_IsTuned)(IRTCClient *This,VARIANT_BOOL *pfTuned);
+                   HRESULT (WINAPI *QueryInterface)(IRTCClient *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCClient *This);
+                   ULONG (WINAPI *Release)(IRTCClient *This);
+                   HRESULT (WINAPI *Initialize)(IRTCClient *This);
+                   HRESULT (WINAPI *Shutdown)(IRTCClient *This);
+                   HRESULT (WINAPI *PrepareForShutdown)(IRTCClient *This);
+                   HRESULT (WINAPI *put_EventFilter)(IRTCClient *This,__LONG32 lFilter);
+                   HRESULT (WINAPI *get_EventFilter)(IRTCClient *This,__LONG32 *plFilter);
+                   HRESULT (WINAPI *SetPreferredMediaTypes)(IRTCClient *This,__LONG32 lMediaTypes,VARIANT_BOOL fPersistent);
+                   HRESULT (WINAPI *get_PreferredMediaTypes)(IRTCClient *This,__LONG32 *plMediaTypes);
+                   HRESULT (WINAPI *get_MediaCapabilities)(IRTCClient *This,__LONG32 *plMediaTypes);
+                   HRESULT (WINAPI *CreateSession)(IRTCClient *This,RTC_SESSION_TYPE enType,BSTR bstrLocalPhoneURI,IRTCProfile *pProfile,__LONG32 lFlags,IRTCSession **ppSession);
+                   HRESULT (WINAPI *put_ListenForIncomingSessions)(IRTCClient *This,RTC_LISTEN_MODE enListen);
+                   HRESULT (WINAPI *get_ListenForIncomingSessions)(IRTCClient *This,RTC_LISTEN_MODE *penListen);
+                   HRESULT (WINAPI *get_NetworkAddresses)(IRTCClient *This,VARIANT_BOOL fTCP,VARIANT_BOOL fExternal,VARIANT *pvAddresses);
+                   HRESULT (WINAPI *put_Volume)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,__LONG32 lVolume);
+                   HRESULT (WINAPI *get_Volume)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,__LONG32 *plVolume);
+                   HRESULT (WINAPI *put_AudioMuted)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,VARIANT_BOOL fMuted);
+                   HRESULT (WINAPI *get_AudioMuted)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,VARIANT_BOOL *pfMuted);
+                   HRESULT (WINAPI *get_IVideoWindow)(IRTCClient *This,RTC_VIDEO_DEVICE enDevice,IVideoWindow **ppIVideoWindow);
+                   HRESULT (WINAPI *put_PreferredAudioDevice)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,BSTR bstrDeviceName);
+                   HRESULT (WINAPI *get_PreferredAudioDevice)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,BSTR *pbstrDeviceName);
+                   HRESULT (WINAPI *put_PreferredVolume)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,__LONG32 lVolume);
+                   HRESULT (WINAPI *get_PreferredVolume)(IRTCClient *This,RTC_AUDIO_DEVICE enDevice,__LONG32 *plVolume);
+                   HRESULT (WINAPI *put_PreferredAEC)(IRTCClient *This,VARIANT_BOOL bEnable);
+                   HRESULT (WINAPI *get_PreferredAEC)(IRTCClient *This,VARIANT_BOOL *pbEnabled);
+                   HRESULT (WINAPI *put_PreferredVideoDevice)(IRTCClient *This,BSTR bstrDeviceName);
+                   HRESULT (WINAPI *get_PreferredVideoDevice)(IRTCClient *This,BSTR *pbstrDeviceName);
+                   HRESULT (WINAPI *get_ActiveMedia)(IRTCClient *This,__LONG32 *plMediaType);
+                   HRESULT (WINAPI *put_MaxBitrate)(IRTCClient *This,__LONG32 lMaxBitrate);
+                   HRESULT (WINAPI *get_MaxBitrate)(IRTCClient *This,__LONG32 *plMaxBitrate);
+                   HRESULT (WINAPI *put_TemporalSpatialTradeOff)(IRTCClient *This,__LONG32 lValue);
+                   HRESULT (WINAPI *get_TemporalSpatialTradeOff)(IRTCClient *This,__LONG32 *plValue);
+                   HRESULT (WINAPI *get_NetworkQuality)(IRTCClient *This,__LONG32 *plNetworkQuality);
+                   HRESULT (WINAPI *StartT120Applet)(IRTCClient *This,RTC_T120_APPLET enApplet);
+                   HRESULT (WINAPI *StopT120Applets)(IRTCClient *This);
+                   HRESULT (WINAPI *get_IsT120AppletRunning)(IRTCClient *This,RTC_T120_APPLET enApplet,VARIANT_BOOL *pfRunning);
+                   HRESULT (WINAPI *get_LocalUserURI)(IRTCClient *This,BSTR *pbstrUserURI);
+                   HRESULT (WINAPI *put_LocalUserURI)(IRTCClient *This,BSTR bstrUserURI);
+                   HRESULT (WINAPI *get_LocalUserName)(IRTCClient *This,BSTR *pbstrUserName);
+                   HRESULT (WINAPI *put_LocalUserName)(IRTCClient *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *PlayRing)(IRTCClient *This,RTC_RING_TYPE enType,VARIANT_BOOL bPlay);
+                   HRESULT (WINAPI *SendDTMF)(IRTCClient *This,RTC_DTMF enDTMF);
+                   HRESULT (WINAPI *InvokeTuningWizard)(IRTCClient *This,OAHWND hwndParent);
+                   HRESULT (WINAPI *get_IsTuned)(IRTCClient *This,VARIANT_BOOL *pfTuned);
     END_INTERFACE
   } IRTCClientVtbl;
   struct IRTCClient {
@@ -1170,64 +1170,64 @@ extern "C" {
 #else
   typedef struct IRTCClient2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCClient2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCClient2 *This);
-      ULONG (WINAPI *Release)(IRTCClient2 *This);
-      HRESULT (WINAPI *Initialize)(IRTCClient2 *This);
-      HRESULT (WINAPI *Shutdown)(IRTCClient2 *This);
-      HRESULT (WINAPI *PrepareForShutdown)(IRTCClient2 *This);
-      HRESULT (WINAPI *put_EventFilter)(IRTCClient2 *This,__LONG32 lFilter);
-      HRESULT (WINAPI *get_EventFilter)(IRTCClient2 *This,__LONG32 *plFilter);
-      HRESULT (WINAPI *SetPreferredMediaTypes)(IRTCClient2 *This,__LONG32 lMediaTypes,VARIANT_BOOL fPersistent);
-      HRESULT (WINAPI *get_PreferredMediaTypes)(IRTCClient2 *This,__LONG32 *plMediaTypes);
-      HRESULT (WINAPI *get_MediaCapabilities)(IRTCClient2 *This,__LONG32 *plMediaTypes);
-      HRESULT (WINAPI *CreateSession)(IRTCClient2 *This,RTC_SESSION_TYPE enType,BSTR bstrLocalPhoneURI,IRTCProfile *pProfile,__LONG32 lFlags,IRTCSession **ppSession);
-      HRESULT (WINAPI *put_ListenForIncomingSessions)(IRTCClient2 *This,RTC_LISTEN_MODE enListen);
-      HRESULT (WINAPI *get_ListenForIncomingSessions)(IRTCClient2 *This,RTC_LISTEN_MODE *penListen);
-      HRESULT (WINAPI *get_NetworkAddresses)(IRTCClient2 *This,VARIANT_BOOL fTCP,VARIANT_BOOL fExternal,VARIANT *pvAddresses);
-      HRESULT (WINAPI *put_Volume)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,__LONG32 lVolume);
-      HRESULT (WINAPI *get_Volume)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,__LONG32 *plVolume);
-      HRESULT (WINAPI *put_AudioMuted)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,VARIANT_BOOL fMuted);
-      HRESULT (WINAPI *get_AudioMuted)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,VARIANT_BOOL *pfMuted);
-      HRESULT (WINAPI *get_IVideoWindow)(IRTCClient2 *This,RTC_VIDEO_DEVICE enDevice,IVideoWindow **ppIVideoWindow);
-      HRESULT (WINAPI *put_PreferredAudioDevice)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,BSTR bstrDeviceName);
-      HRESULT (WINAPI *get_PreferredAudioDevice)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,BSTR *pbstrDeviceName);
-      HRESULT (WINAPI *put_PreferredVolume)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,__LONG32 lVolume);
-      HRESULT (WINAPI *get_PreferredVolume)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,__LONG32 *plVolume);
-      HRESULT (WINAPI *put_PreferredAEC)(IRTCClient2 *This,VARIANT_BOOL bEnable);
-      HRESULT (WINAPI *get_PreferredAEC)(IRTCClient2 *This,VARIANT_BOOL *pbEnabled);
-      HRESULT (WINAPI *put_PreferredVideoDevice)(IRTCClient2 *This,BSTR bstrDeviceName);
-      HRESULT (WINAPI *get_PreferredVideoDevice)(IRTCClient2 *This,BSTR *pbstrDeviceName);
-      HRESULT (WINAPI *get_ActiveMedia)(IRTCClient2 *This,__LONG32 *plMediaType);
-      HRESULT (WINAPI *put_MaxBitrate)(IRTCClient2 *This,__LONG32 lMaxBitrate);
-      HRESULT (WINAPI *get_MaxBitrate)(IRTCClient2 *This,__LONG32 *plMaxBitrate);
-      HRESULT (WINAPI *put_TemporalSpatialTradeOff)(IRTCClient2 *This,__LONG32 lValue);
-      HRESULT (WINAPI *get_TemporalSpatialTradeOff)(IRTCClient2 *This,__LONG32 *plValue);
-      HRESULT (WINAPI *get_NetworkQuality)(IRTCClient2 *This,__LONG32 *plNetworkQuality);
-      HRESULT (WINAPI *StartT120Applet)(IRTCClient2 *This,RTC_T120_APPLET enApplet);
-      HRESULT (WINAPI *StopT120Applets)(IRTCClient2 *This);
-      HRESULT (WINAPI *get_IsT120AppletRunning)(IRTCClient2 *This,RTC_T120_APPLET enApplet,VARIANT_BOOL *pfRunning);
-      HRESULT (WINAPI *get_LocalUserURI)(IRTCClient2 *This,BSTR *pbstrUserURI);
-      HRESULT (WINAPI *put_LocalUserURI)(IRTCClient2 *This,BSTR bstrUserURI);
-      HRESULT (WINAPI *get_LocalUserName)(IRTCClient2 *This,BSTR *pbstrUserName);
-      HRESULT (WINAPI *put_LocalUserName)(IRTCClient2 *This,BSTR bstrUserName);
-      HRESULT (WINAPI *PlayRing)(IRTCClient2 *This,RTC_RING_TYPE enType,VARIANT_BOOL bPlay);
-      HRESULT (WINAPI *SendDTMF)(IRTCClient2 *This,RTC_DTMF enDTMF);
-      HRESULT (WINAPI *InvokeTuningWizard)(IRTCClient2 *This,OAHWND hwndParent);
-      HRESULT (WINAPI *get_IsTuned)(IRTCClient2 *This,VARIANT_BOOL *pfTuned);
-      HRESULT (WINAPI *put_AnswerMode)(IRTCClient2 *This,RTC_SESSION_TYPE enType,RTC_ANSWER_MODE enMode);
-      HRESULT (WINAPI *get_AnswerMode)(IRTCClient2 *This,RTC_SESSION_TYPE enType,RTC_ANSWER_MODE *penMode);
-      HRESULT (WINAPI *InvokeTuningWizardEx)(IRTCClient2 *This,OAHWND hwndParent,VARIANT_BOOL fAllowAudio,VARIANT_BOOL fAllowVideo);
-      HRESULT (WINAPI *get_Version)(IRTCClient2 *This,__LONG32 *plVersion);
-      HRESULT (WINAPI *put_ClientName)(IRTCClient2 *This,BSTR bstrClientName);
-      HRESULT (WINAPI *put_ClientCurVer)(IRTCClient2 *This,BSTR bstrClientCurVer);
-      HRESULT (WINAPI *InitializeEx)(IRTCClient2 *This,__LONG32 lFlags);
-      HRESULT (WINAPI *CreateSessionWithDescription)(IRTCClient2 *This,BSTR bstrContentType,BSTR bstrSessionDescription,IRTCProfile *pProfile,__LONG32 lFlags,IRTCSession2 **ppSession2);
-      HRESULT (WINAPI *SetSessionDescriptionManager)(IRTCClient2 *This,IRTCSessionDescriptionManager *pSessionDescriptionManager);
-      HRESULT (WINAPI *put_PreferredSecurityLevel)(IRTCClient2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL enSecurityLevel);
-      HRESULT (WINAPI *get_PreferredSecurityLevel)(IRTCClient2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL *penSecurityLevel);
-      HRESULT (WINAPI *put_AllowedPorts)(IRTCClient2 *This,__LONG32 lTransport,RTC_LISTEN_MODE enListenMode);
-      HRESULT (WINAPI *get_AllowedPorts)(IRTCClient2 *This,__LONG32 lTransport,RTC_LISTEN_MODE *penListenMode);
+                   HRESULT (WINAPI *QueryInterface)(IRTCClient2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCClient2 *This);
+                   ULONG (WINAPI *Release)(IRTCClient2 *This);
+                   HRESULT (WINAPI *Initialize)(IRTCClient2 *This);
+                   HRESULT (WINAPI *Shutdown)(IRTCClient2 *This);
+                   HRESULT (WINAPI *PrepareForShutdown)(IRTCClient2 *This);
+                   HRESULT (WINAPI *put_EventFilter)(IRTCClient2 *This,__LONG32 lFilter);
+                   HRESULT (WINAPI *get_EventFilter)(IRTCClient2 *This,__LONG32 *plFilter);
+                   HRESULT (WINAPI *SetPreferredMediaTypes)(IRTCClient2 *This,__LONG32 lMediaTypes,VARIANT_BOOL fPersistent);
+                   HRESULT (WINAPI *get_PreferredMediaTypes)(IRTCClient2 *This,__LONG32 *plMediaTypes);
+                   HRESULT (WINAPI *get_MediaCapabilities)(IRTCClient2 *This,__LONG32 *plMediaTypes);
+                   HRESULT (WINAPI *CreateSession)(IRTCClient2 *This,RTC_SESSION_TYPE enType,BSTR bstrLocalPhoneURI,IRTCProfile *pProfile,__LONG32 lFlags,IRTCSession **ppSession);
+                   HRESULT (WINAPI *put_ListenForIncomingSessions)(IRTCClient2 *This,RTC_LISTEN_MODE enListen);
+                   HRESULT (WINAPI *get_ListenForIncomingSessions)(IRTCClient2 *This,RTC_LISTEN_MODE *penListen);
+                   HRESULT (WINAPI *get_NetworkAddresses)(IRTCClient2 *This,VARIANT_BOOL fTCP,VARIANT_BOOL fExternal,VARIANT *pvAddresses);
+                   HRESULT (WINAPI *put_Volume)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,__LONG32 lVolume);
+                   HRESULT (WINAPI *get_Volume)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,__LONG32 *plVolume);
+                   HRESULT (WINAPI *put_AudioMuted)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,VARIANT_BOOL fMuted);
+                   HRESULT (WINAPI *get_AudioMuted)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,VARIANT_BOOL *pfMuted);
+                   HRESULT (WINAPI *get_IVideoWindow)(IRTCClient2 *This,RTC_VIDEO_DEVICE enDevice,IVideoWindow **ppIVideoWindow);
+                   HRESULT (WINAPI *put_PreferredAudioDevice)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,BSTR bstrDeviceName);
+                   HRESULT (WINAPI *get_PreferredAudioDevice)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,BSTR *pbstrDeviceName);
+                   HRESULT (WINAPI *put_PreferredVolume)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,__LONG32 lVolume);
+                   HRESULT (WINAPI *get_PreferredVolume)(IRTCClient2 *This,RTC_AUDIO_DEVICE enDevice,__LONG32 *plVolume);
+                   HRESULT (WINAPI *put_PreferredAEC)(IRTCClient2 *This,VARIANT_BOOL bEnable);
+                   HRESULT (WINAPI *get_PreferredAEC)(IRTCClient2 *This,VARIANT_BOOL *pbEnabled);
+                   HRESULT (WINAPI *put_PreferredVideoDevice)(IRTCClient2 *This,BSTR bstrDeviceName);
+                   HRESULT (WINAPI *get_PreferredVideoDevice)(IRTCClient2 *This,BSTR *pbstrDeviceName);
+                   HRESULT (WINAPI *get_ActiveMedia)(IRTCClient2 *This,__LONG32 *plMediaType);
+                   HRESULT (WINAPI *put_MaxBitrate)(IRTCClient2 *This,__LONG32 lMaxBitrate);
+                   HRESULT (WINAPI *get_MaxBitrate)(IRTCClient2 *This,__LONG32 *plMaxBitrate);
+                   HRESULT (WINAPI *put_TemporalSpatialTradeOff)(IRTCClient2 *This,__LONG32 lValue);
+                   HRESULT (WINAPI *get_TemporalSpatialTradeOff)(IRTCClient2 *This,__LONG32 *plValue);
+                   HRESULT (WINAPI *get_NetworkQuality)(IRTCClient2 *This,__LONG32 *plNetworkQuality);
+                   HRESULT (WINAPI *StartT120Applet)(IRTCClient2 *This,RTC_T120_APPLET enApplet);
+                   HRESULT (WINAPI *StopT120Applets)(IRTCClient2 *This);
+                   HRESULT (WINAPI *get_IsT120AppletRunning)(IRTCClient2 *This,RTC_T120_APPLET enApplet,VARIANT_BOOL *pfRunning);
+                   HRESULT (WINAPI *get_LocalUserURI)(IRTCClient2 *This,BSTR *pbstrUserURI);
+                   HRESULT (WINAPI *put_LocalUserURI)(IRTCClient2 *This,BSTR bstrUserURI);
+                   HRESULT (WINAPI *get_LocalUserName)(IRTCClient2 *This,BSTR *pbstrUserName);
+                   HRESULT (WINAPI *put_LocalUserName)(IRTCClient2 *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *PlayRing)(IRTCClient2 *This,RTC_RING_TYPE enType,VARIANT_BOOL bPlay);
+                   HRESULT (WINAPI *SendDTMF)(IRTCClient2 *This,RTC_DTMF enDTMF);
+                   HRESULT (WINAPI *InvokeTuningWizard)(IRTCClient2 *This,OAHWND hwndParent);
+                   HRESULT (WINAPI *get_IsTuned)(IRTCClient2 *This,VARIANT_BOOL *pfTuned);
+                   HRESULT (WINAPI *put_AnswerMode)(IRTCClient2 *This,RTC_SESSION_TYPE enType,RTC_ANSWER_MODE enMode);
+                   HRESULT (WINAPI *get_AnswerMode)(IRTCClient2 *This,RTC_SESSION_TYPE enType,RTC_ANSWER_MODE *penMode);
+                   HRESULT (WINAPI *InvokeTuningWizardEx)(IRTCClient2 *This,OAHWND hwndParent,VARIANT_BOOL fAllowAudio,VARIANT_BOOL fAllowVideo);
+                   HRESULT (WINAPI *get_Version)(IRTCClient2 *This,__LONG32 *plVersion);
+                   HRESULT (WINAPI *put_ClientName)(IRTCClient2 *This,BSTR bstrClientName);
+                   HRESULT (WINAPI *put_ClientCurVer)(IRTCClient2 *This,BSTR bstrClientCurVer);
+                   HRESULT (WINAPI *InitializeEx)(IRTCClient2 *This,__LONG32 lFlags);
+                   HRESULT (WINAPI *CreateSessionWithDescription)(IRTCClient2 *This,BSTR bstrContentType,BSTR bstrSessionDescription,IRTCProfile *pProfile,__LONG32 lFlags,IRTCSession2 **ppSession2);
+                   HRESULT (WINAPI *SetSessionDescriptionManager)(IRTCClient2 *This,IRTCSessionDescriptionManager *pSessionDescriptionManager);
+                   HRESULT (WINAPI *put_PreferredSecurityLevel)(IRTCClient2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL enSecurityLevel);
+                   HRESULT (WINAPI *get_PreferredSecurityLevel)(IRTCClient2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL *penSecurityLevel);
+                   HRESULT (WINAPI *put_AllowedPorts)(IRTCClient2 *This,__LONG32 lTransport,RTC_LISTEN_MODE enListenMode);
+                   HRESULT (WINAPI *get_AllowedPorts)(IRTCClient2 *This,__LONG32 lTransport,RTC_LISTEN_MODE *penListenMode);
     END_INTERFACE
   } IRTCClient2Vtbl;
   struct IRTCClient2 {
@@ -1350,27 +1350,27 @@ extern "C" {
 #else
   typedef struct IRTCClientPresenceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCClientPresence *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCClientPresence *This);
-      ULONG (WINAPI *Release)(IRTCClientPresence *This);
-      HRESULT (WINAPI *EnablePresence)(IRTCClientPresence *This,VARIANT_BOOL fUseStorage,VARIANT varStorage);
-      HRESULT (WINAPI *Export)(IRTCClientPresence *This,VARIANT varStorage);
-      HRESULT (WINAPI *Import)(IRTCClientPresence *This,VARIANT varStorage,VARIANT_BOOL fReplaceAll);
-      HRESULT (WINAPI *EnumerateBuddies)(IRTCClientPresence *This,IRTCEnumBuddies **ppEnum);
-      HRESULT (WINAPI *get_Buddies)(IRTCClientPresence *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *get_Buddy)(IRTCClientPresence *This,BSTR bstrPresentityURI,IRTCBuddy **ppBuddy);
-      HRESULT (WINAPI *AddBuddy)(IRTCClientPresence *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fPersistent,IRTCProfile *pProfile,__LONG32 lFlags,IRTCBuddy **ppBuddy);
-      HRESULT (WINAPI *RemoveBuddy)(IRTCClientPresence *This,IRTCBuddy *pBuddy);
-      HRESULT (WINAPI *EnumerateWatchers)(IRTCClientPresence *This,IRTCEnumWatchers **ppEnum);
-      HRESULT (WINAPI *get_Watchers)(IRTCClientPresence *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *get_Watcher)(IRTCClientPresence *This,BSTR bstrPresentityURI,IRTCWatcher **ppWatcher);
-      HRESULT (WINAPI *AddWatcher)(IRTCClientPresence *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fBlocked,VARIANT_BOOL fPersistent,IRTCWatcher **ppWatcher);
-      HRESULT (WINAPI *RemoveWatcher)(IRTCClientPresence *This,IRTCWatcher *pWatcher);
-      HRESULT (WINAPI *SetLocalPresenceInfo)(IRTCClientPresence *This,RTC_PRESENCE_STATUS enStatus,BSTR bstrNotes);
-      HRESULT (WINAPI *get_OfferWatcherMode)(IRTCClientPresence *This,RTC_OFFER_WATCHER_MODE *penMode);
-      HRESULT (WINAPI *put_OfferWatcherMode)(IRTCClientPresence *This,RTC_OFFER_WATCHER_MODE enMode);
-      HRESULT (WINAPI *get_PrivacyMode)(IRTCClientPresence *This,RTC_PRIVACY_MODE *penMode);
-      HRESULT (WINAPI *put_PrivacyMode)(IRTCClientPresence *This,RTC_PRIVACY_MODE enMode);
+                   HRESULT (WINAPI *QueryInterface)(IRTCClientPresence *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCClientPresence *This);
+                   ULONG (WINAPI *Release)(IRTCClientPresence *This);
+                   HRESULT (WINAPI *EnablePresence)(IRTCClientPresence *This,VARIANT_BOOL fUseStorage,VARIANT varStorage);
+                   HRESULT (WINAPI *Export)(IRTCClientPresence *This,VARIANT varStorage);
+                   HRESULT (WINAPI *Import)(IRTCClientPresence *This,VARIANT varStorage,VARIANT_BOOL fReplaceAll);
+                   HRESULT (WINAPI *EnumerateBuddies)(IRTCClientPresence *This,IRTCEnumBuddies **ppEnum);
+                   HRESULT (WINAPI *get_Buddies)(IRTCClientPresence *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *get_Buddy)(IRTCClientPresence *This,BSTR bstrPresentityURI,IRTCBuddy **ppBuddy);
+                   HRESULT (WINAPI *AddBuddy)(IRTCClientPresence *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fPersistent,IRTCProfile *pProfile,__LONG32 lFlags,IRTCBuddy **ppBuddy);
+                   HRESULT (WINAPI *RemoveBuddy)(IRTCClientPresence *This,IRTCBuddy *pBuddy);
+                   HRESULT (WINAPI *EnumerateWatchers)(IRTCClientPresence *This,IRTCEnumWatchers **ppEnum);
+                   HRESULT (WINAPI *get_Watchers)(IRTCClientPresence *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *get_Watcher)(IRTCClientPresence *This,BSTR bstrPresentityURI,IRTCWatcher **ppWatcher);
+                   HRESULT (WINAPI *AddWatcher)(IRTCClientPresence *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fBlocked,VARIANT_BOOL fPersistent,IRTCWatcher **ppWatcher);
+                   HRESULT (WINAPI *RemoveWatcher)(IRTCClientPresence *This,IRTCWatcher *pWatcher);
+                   HRESULT (WINAPI *SetLocalPresenceInfo)(IRTCClientPresence *This,RTC_PRESENCE_STATUS enStatus,BSTR bstrNotes);
+                   HRESULT (WINAPI *get_OfferWatcherMode)(IRTCClientPresence *This,RTC_OFFER_WATCHER_MODE *penMode);
+                   HRESULT (WINAPI *put_OfferWatcherMode)(IRTCClientPresence *This,RTC_OFFER_WATCHER_MODE enMode);
+                   HRESULT (WINAPI *get_PrivacyMode)(IRTCClientPresence *This,RTC_PRIVACY_MODE *penMode);
+                   HRESULT (WINAPI *put_PrivacyMode)(IRTCClientPresence *This,RTC_PRIVACY_MODE enMode);
     END_INTERFACE
   } IRTCClientPresenceVtbl;
   struct IRTCClientPresence {
@@ -1463,42 +1463,42 @@ extern "C" {
 #else
   typedef struct IRTCClientPresence2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCClientPresence2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCClientPresence2 *This);
-      ULONG (WINAPI *Release)(IRTCClientPresence2 *This);
-      HRESULT (WINAPI *EnablePresence)(IRTCClientPresence2 *This,VARIANT_BOOL fUseStorage,VARIANT varStorage);
-      HRESULT (WINAPI *Export)(IRTCClientPresence2 *This,VARIANT varStorage);
-      HRESULT (WINAPI *Import)(IRTCClientPresence2 *This,VARIANT varStorage,VARIANT_BOOL fReplaceAll);
-      HRESULT (WINAPI *EnumerateBuddies)(IRTCClientPresence2 *This,IRTCEnumBuddies **ppEnum);
-      HRESULT (WINAPI *get_Buddies)(IRTCClientPresence2 *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *get_Buddy)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,IRTCBuddy **ppBuddy);
-      HRESULT (WINAPI *AddBuddy)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fPersistent,IRTCProfile *pProfile,__LONG32 lFlags,IRTCBuddy **ppBuddy);
-      HRESULT (WINAPI *RemoveBuddy)(IRTCClientPresence2 *This,IRTCBuddy *pBuddy);
-      HRESULT (WINAPI *EnumerateWatchers)(IRTCClientPresence2 *This,IRTCEnumWatchers **ppEnum);
-      HRESULT (WINAPI *get_Watchers)(IRTCClientPresence2 *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *get_Watcher)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,IRTCWatcher **ppWatcher);
-      HRESULT (WINAPI *AddWatcher)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fBlocked,VARIANT_BOOL fPersistent,IRTCWatcher **ppWatcher);
-      HRESULT (WINAPI *RemoveWatcher)(IRTCClientPresence2 *This,IRTCWatcher *pWatcher);
-      HRESULT (WINAPI *SetLocalPresenceInfo)(IRTCClientPresence2 *This,RTC_PRESENCE_STATUS enStatus,BSTR bstrNotes);
-      HRESULT (WINAPI *get_OfferWatcherMode)(IRTCClientPresence2 *This,RTC_OFFER_WATCHER_MODE *penMode);
-      HRESULT (WINAPI *put_OfferWatcherMode)(IRTCClientPresence2 *This,RTC_OFFER_WATCHER_MODE enMode);
-      HRESULT (WINAPI *get_PrivacyMode)(IRTCClientPresence2 *This,RTC_PRIVACY_MODE *penMode);
-      HRESULT (WINAPI *put_PrivacyMode)(IRTCClientPresence2 *This,RTC_PRIVACY_MODE enMode);
-      HRESULT (WINAPI *EnablePresenceEx)(IRTCClientPresence2 *This,IRTCProfile *pProfile,VARIANT varStorage,__LONG32 lFlags);
-      HRESULT (WINAPI *DisablePresence)(IRTCClientPresence2 *This);
-      HRESULT (WINAPI *AddGroup)(IRTCClientPresence2 *This,BSTR bstrGroupName,BSTR bstrData,IRTCProfile *pProfile,__LONG32 lFlags,IRTCBuddyGroup **ppGroup);
-      HRESULT (WINAPI *RemoveGroup)(IRTCClientPresence2 *This,IRTCBuddyGroup *pGroup);
-      HRESULT (WINAPI *EnumerateGroups)(IRTCClientPresence2 *This,IRTCEnumGroups **ppEnum);
-      HRESULT (WINAPI *get_Groups)(IRTCClientPresence2 *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *get_Group)(IRTCClientPresence2 *This,BSTR bstrGroupName,IRTCBuddyGroup **ppGroup);
-      HRESULT (WINAPI *AddWatcherEx)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,RTC_WATCHER_STATE enState,VARIANT_BOOL fPersistent,RTC_ACE_SCOPE enScope,IRTCProfile *pProfile,__LONG32 lFlags,IRTCWatcher2 **ppWatcher);
-      HRESULT (WINAPI *get_WatcherEx)(IRTCClientPresence2 *This,RTC_WATCHER_MATCH_MODE enMode,BSTR bstrPresentityURI,IRTCWatcher2 **ppWatcher);
-      HRESULT (WINAPI *put_PresenceProperty)(IRTCClientPresence2 *This,RTC_PRESENCE_PROPERTY enProperty,BSTR bstrProperty);
-      HRESULT (WINAPI *get_PresenceProperty)(IRTCClientPresence2 *This,RTC_PRESENCE_PROPERTY enProperty,BSTR *pbstrProperty);
-      HRESULT (WINAPI *SetPresenceData)(IRTCClientPresence2 *This,BSTR bstrNamespace,BSTR bstrData);
-      HRESULT (WINAPI *GetPresenceData)(IRTCClientPresence2 *This,BSTR *pbstrNamespace,BSTR *pbstrData);
-      HRESULT (WINAPI *GetLocalPresenceInfo)(IRTCClientPresence2 *This,RTC_PRESENCE_STATUS *penStatus,BSTR *pbstrNotes);
-      HRESULT (WINAPI *AddBuddyEx)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fPersistent,RTC_BUDDY_SUBSCRIPTION_TYPE enSubscriptionType,IRTCProfile *pProfile,__LONG32 lFlags,IRTCBuddy2 **ppBuddy);
+                   HRESULT (WINAPI *QueryInterface)(IRTCClientPresence2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCClientPresence2 *This);
+                   ULONG (WINAPI *Release)(IRTCClientPresence2 *This);
+                   HRESULT (WINAPI *EnablePresence)(IRTCClientPresence2 *This,VARIANT_BOOL fUseStorage,VARIANT varStorage);
+                   HRESULT (WINAPI *Export)(IRTCClientPresence2 *This,VARIANT varStorage);
+                   HRESULT (WINAPI *Import)(IRTCClientPresence2 *This,VARIANT varStorage,VARIANT_BOOL fReplaceAll);
+                   HRESULT (WINAPI *EnumerateBuddies)(IRTCClientPresence2 *This,IRTCEnumBuddies **ppEnum);
+                   HRESULT (WINAPI *get_Buddies)(IRTCClientPresence2 *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *get_Buddy)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,IRTCBuddy **ppBuddy);
+                   HRESULT (WINAPI *AddBuddy)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fPersistent,IRTCProfile *pProfile,__LONG32 lFlags,IRTCBuddy **ppBuddy);
+                   HRESULT (WINAPI *RemoveBuddy)(IRTCClientPresence2 *This,IRTCBuddy *pBuddy);
+                   HRESULT (WINAPI *EnumerateWatchers)(IRTCClientPresence2 *This,IRTCEnumWatchers **ppEnum);
+                   HRESULT (WINAPI *get_Watchers)(IRTCClientPresence2 *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *get_Watcher)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,IRTCWatcher **ppWatcher);
+                   HRESULT (WINAPI *AddWatcher)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fBlocked,VARIANT_BOOL fPersistent,IRTCWatcher **ppWatcher);
+                   HRESULT (WINAPI *RemoveWatcher)(IRTCClientPresence2 *This,IRTCWatcher *pWatcher);
+                   HRESULT (WINAPI *SetLocalPresenceInfo)(IRTCClientPresence2 *This,RTC_PRESENCE_STATUS enStatus,BSTR bstrNotes);
+                   HRESULT (WINAPI *get_OfferWatcherMode)(IRTCClientPresence2 *This,RTC_OFFER_WATCHER_MODE *penMode);
+                   HRESULT (WINAPI *put_OfferWatcherMode)(IRTCClientPresence2 *This,RTC_OFFER_WATCHER_MODE enMode);
+                   HRESULT (WINAPI *get_PrivacyMode)(IRTCClientPresence2 *This,RTC_PRIVACY_MODE *penMode);
+                   HRESULT (WINAPI *put_PrivacyMode)(IRTCClientPresence2 *This,RTC_PRIVACY_MODE enMode);
+                   HRESULT (WINAPI *EnablePresenceEx)(IRTCClientPresence2 *This,IRTCProfile *pProfile,VARIANT varStorage,__LONG32 lFlags);
+                   HRESULT (WINAPI *DisablePresence)(IRTCClientPresence2 *This);
+                   HRESULT (WINAPI *AddGroup)(IRTCClientPresence2 *This,BSTR bstrGroupName,BSTR bstrData,IRTCProfile *pProfile,__LONG32 lFlags,IRTCBuddyGroup **ppGroup);
+                   HRESULT (WINAPI *RemoveGroup)(IRTCClientPresence2 *This,IRTCBuddyGroup *pGroup);
+                   HRESULT (WINAPI *EnumerateGroups)(IRTCClientPresence2 *This,IRTCEnumGroups **ppEnum);
+                   HRESULT (WINAPI *get_Groups)(IRTCClientPresence2 *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *get_Group)(IRTCClientPresence2 *This,BSTR bstrGroupName,IRTCBuddyGroup **ppGroup);
+                   HRESULT (WINAPI *AddWatcherEx)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,RTC_WATCHER_STATE enState,VARIANT_BOOL fPersistent,RTC_ACE_SCOPE enScope,IRTCProfile *pProfile,__LONG32 lFlags,IRTCWatcher2 **ppWatcher);
+                   HRESULT (WINAPI *get_WatcherEx)(IRTCClientPresence2 *This,RTC_WATCHER_MATCH_MODE enMode,BSTR bstrPresentityURI,IRTCWatcher2 **ppWatcher);
+                   HRESULT (WINAPI *put_PresenceProperty)(IRTCClientPresence2 *This,RTC_PRESENCE_PROPERTY enProperty,BSTR bstrProperty);
+                   HRESULT (WINAPI *get_PresenceProperty)(IRTCClientPresence2 *This,RTC_PRESENCE_PROPERTY enProperty,BSTR *pbstrProperty);
+                   HRESULT (WINAPI *SetPresenceData)(IRTCClientPresence2 *This,BSTR bstrNamespace,BSTR bstrData);
+                   HRESULT (WINAPI *GetPresenceData)(IRTCClientPresence2 *This,BSTR *pbstrNamespace,BSTR *pbstrData);
+                   HRESULT (WINAPI *GetLocalPresenceInfo)(IRTCClientPresence2 *This,RTC_PRESENCE_STATUS *penStatus,BSTR *pbstrNotes);
+                   HRESULT (WINAPI *AddBuddyEx)(IRTCClientPresence2 *This,BSTR bstrPresentityURI,BSTR bstrUserName,BSTR bstrData,VARIANT_BOOL fPersistent,RTC_BUDDY_SUBSCRIPTION_TYPE enSubscriptionType,IRTCProfile *pProfile,__LONG32 lFlags,IRTCBuddy2 **ppBuddy);
     END_INTERFACE
   } IRTCClientPresence2Vtbl;
   struct IRTCClientPresence2 {
@@ -1592,16 +1592,16 @@ extern "C" {
 #else
   typedef struct IRTCClientProvisioningVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCClientProvisioning *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCClientProvisioning *This);
-      ULONG (WINAPI *Release)(IRTCClientProvisioning *This);
-      HRESULT (WINAPI *CreateProfile)(IRTCClientProvisioning *This,BSTR bstrProfileXML,IRTCProfile **ppProfile);
-      HRESULT (WINAPI *EnableProfile)(IRTCClientProvisioning *This,IRTCProfile *pProfile,__LONG32 lRegisterFlags);
-      HRESULT (WINAPI *DisableProfile)(IRTCClientProvisioning *This,IRTCProfile *pProfile);
-      HRESULT (WINAPI *EnumerateProfiles)(IRTCClientProvisioning *This,IRTCEnumProfiles **ppEnum);
-      HRESULT (WINAPI *get_Profiles)(IRTCClientProvisioning *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *GetProfile)(IRTCClientProvisioning *This,BSTR bstrUserAccount,BSTR bstrUserPassword,BSTR bstrUserURI,BSTR bstrServer,__LONG32 lTransport,LONG_PTR lCookie);
-      HRESULT (WINAPI *get_SessionCapabilities)(IRTCClientProvisioning *This,__LONG32 *plSupportedSessions);
+                   HRESULT (WINAPI *QueryInterface)(IRTCClientProvisioning *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCClientProvisioning *This);
+                   ULONG (WINAPI *Release)(IRTCClientProvisioning *This);
+                   HRESULT (WINAPI *CreateProfile)(IRTCClientProvisioning *This,BSTR bstrProfileXML,IRTCProfile **ppProfile);
+                   HRESULT (WINAPI *EnableProfile)(IRTCClientProvisioning *This,IRTCProfile *pProfile,__LONG32 lRegisterFlags);
+                   HRESULT (WINAPI *DisableProfile)(IRTCClientProvisioning *This,IRTCProfile *pProfile);
+                   HRESULT (WINAPI *EnumerateProfiles)(IRTCClientProvisioning *This,IRTCEnumProfiles **ppEnum);
+                   HRESULT (WINAPI *get_Profiles)(IRTCClientProvisioning *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *GetProfile)(IRTCClientProvisioning *This,BSTR bstrUserAccount,BSTR bstrUserPassword,BSTR bstrUserURI,BSTR bstrServer,__LONG32 lTransport,LONG_PTR lCookie);
+                   HRESULT (WINAPI *get_SessionCapabilities)(IRTCClientProvisioning *This,__LONG32 *plSupportedSessions);
     END_INTERFACE
   } IRTCClientProvisioningVtbl;
   struct IRTCClientProvisioning {
@@ -1647,17 +1647,17 @@ extern "C" {
 #else
   typedef struct IRTCClientProvisioning2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCClientProvisioning2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCClientProvisioning2 *This);
-      ULONG (WINAPI *Release)(IRTCClientProvisioning2 *This);
-      HRESULT (WINAPI *CreateProfile)(IRTCClientProvisioning2 *This,BSTR bstrProfileXML,IRTCProfile **ppProfile);
-      HRESULT (WINAPI *EnableProfile)(IRTCClientProvisioning2 *This,IRTCProfile *pProfile,__LONG32 lRegisterFlags);
-      HRESULT (WINAPI *DisableProfile)(IRTCClientProvisioning2 *This,IRTCProfile *pProfile);
-      HRESULT (WINAPI *EnumerateProfiles)(IRTCClientProvisioning2 *This,IRTCEnumProfiles **ppEnum);
-      HRESULT (WINAPI *get_Profiles)(IRTCClientProvisioning2 *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *GetProfile)(IRTCClientProvisioning2 *This,BSTR bstrUserAccount,BSTR bstrUserPassword,BSTR bstrUserURI,BSTR bstrServer,__LONG32 lTransport,LONG_PTR lCookie);
-      HRESULT (WINAPI *get_SessionCapabilities)(IRTCClientProvisioning2 *This,__LONG32 *plSupportedSessions);
-      HRESULT (WINAPI *EnableProfileEx)(IRTCClientProvisioning2 *This,IRTCProfile *pProfile,__LONG32 lRegisterFlags,__LONG32 lRoamingFlags);
+                   HRESULT (WINAPI *QueryInterface)(IRTCClientProvisioning2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCClientProvisioning2 *This);
+                   ULONG (WINAPI *Release)(IRTCClientProvisioning2 *This);
+                   HRESULT (WINAPI *CreateProfile)(IRTCClientProvisioning2 *This,BSTR bstrProfileXML,IRTCProfile **ppProfile);
+                   HRESULT (WINAPI *EnableProfile)(IRTCClientProvisioning2 *This,IRTCProfile *pProfile,__LONG32 lRegisterFlags);
+                   HRESULT (WINAPI *DisableProfile)(IRTCClientProvisioning2 *This,IRTCProfile *pProfile);
+                   HRESULT (WINAPI *EnumerateProfiles)(IRTCClientProvisioning2 *This,IRTCEnumProfiles **ppEnum);
+                   HRESULT (WINAPI *get_Profiles)(IRTCClientProvisioning2 *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *GetProfile)(IRTCClientProvisioning2 *This,BSTR bstrUserAccount,BSTR bstrUserPassword,BSTR bstrUserURI,BSTR bstrServer,__LONG32 lTransport,LONG_PTR lCookie);
+                   HRESULT (WINAPI *get_SessionCapabilities)(IRTCClientProvisioning2 *This,__LONG32 *plSupportedSessions);
+                   HRESULT (WINAPI *EnableProfileEx)(IRTCClientProvisioning2 *This,IRTCProfile *pProfile,__LONG32 lRegisterFlags,__LONG32 lRoamingFlags);
     END_INTERFACE
   } IRTCClientProvisioning2Vtbl;
   struct IRTCClientProvisioning2 {
@@ -1709,27 +1709,27 @@ extern "C" {
 #else
   typedef struct IRTCProfileVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCProfile *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCProfile *This);
-      ULONG (WINAPI *Release)(IRTCProfile *This);
-      HRESULT (WINAPI *get_Key)(IRTCProfile *This,BSTR *pbstrKey);
-      HRESULT (WINAPI *get_Name)(IRTCProfile *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_XML)(IRTCProfile *This,BSTR *pbstrXML);
-      HRESULT (WINAPI *get_ProviderName)(IRTCProfile *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_ProviderURI)(IRTCProfile *This,RTC_PROVIDER_URI enURI,BSTR *pbstrURI);
-      HRESULT (WINAPI *get_ProviderData)(IRTCProfile *This,BSTR *pbstrData);
-      HRESULT (WINAPI *get_ClientName)(IRTCProfile *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_ClientBanner)(IRTCProfile *This,VARIANT_BOOL *pfBanner);
-      HRESULT (WINAPI *get_ClientMinVer)(IRTCProfile *This,BSTR *pbstrMinVer);
-      HRESULT (WINAPI *get_ClientCurVer)(IRTCProfile *This,BSTR *pbstrCurVer);
-      HRESULT (WINAPI *get_ClientUpdateURI)(IRTCProfile *This,BSTR *pbstrUpdateURI);
-      HRESULT (WINAPI *get_ClientData)(IRTCProfile *This,BSTR *pbstrData);
-      HRESULT (WINAPI *get_UserURI)(IRTCProfile *This,BSTR *pbstrUserURI);
-      HRESULT (WINAPI *get_UserName)(IRTCProfile *This,BSTR *pbstrUserName);
-      HRESULT (WINAPI *get_UserAccount)(IRTCProfile *This,BSTR *pbstrUserAccount);
-      HRESULT (WINAPI *SetCredentials)(IRTCProfile *This,BSTR bstrUserURI,BSTR bstrUserAccount,BSTR bstrPassword);
-      HRESULT (WINAPI *get_SessionCapabilities)(IRTCProfile *This,__LONG32 *plSupportedSessions);
-      HRESULT (WINAPI *get_State)(IRTCProfile *This,RTC_REGISTRATION_STATE *penState);
+                   HRESULT (WINAPI *QueryInterface)(IRTCProfile *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCProfile *This);
+                   ULONG (WINAPI *Release)(IRTCProfile *This);
+                   HRESULT (WINAPI *get_Key)(IRTCProfile *This,BSTR *pbstrKey);
+                   HRESULT (WINAPI *get_Name)(IRTCProfile *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_XML)(IRTCProfile *This,BSTR *pbstrXML);
+                   HRESULT (WINAPI *get_ProviderName)(IRTCProfile *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_ProviderURI)(IRTCProfile *This,RTC_PROVIDER_URI enURI,BSTR *pbstrURI);
+                   HRESULT (WINAPI *get_ProviderData)(IRTCProfile *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *get_ClientName)(IRTCProfile *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_ClientBanner)(IRTCProfile *This,VARIANT_BOOL *pfBanner);
+                   HRESULT (WINAPI *get_ClientMinVer)(IRTCProfile *This,BSTR *pbstrMinVer);
+                   HRESULT (WINAPI *get_ClientCurVer)(IRTCProfile *This,BSTR *pbstrCurVer);
+                   HRESULT (WINAPI *get_ClientUpdateURI)(IRTCProfile *This,BSTR *pbstrUpdateURI);
+                   HRESULT (WINAPI *get_ClientData)(IRTCProfile *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *get_UserURI)(IRTCProfile *This,BSTR *pbstrUserURI);
+                   HRESULT (WINAPI *get_UserName)(IRTCProfile *This,BSTR *pbstrUserName);
+                   HRESULT (WINAPI *get_UserAccount)(IRTCProfile *This,BSTR *pbstrUserAccount);
+                   HRESULT (WINAPI *SetCredentials)(IRTCProfile *This,BSTR bstrUserURI,BSTR bstrUserAccount,BSTR bstrPassword);
+                   HRESULT (WINAPI *get_SessionCapabilities)(IRTCProfile *This,__LONG32 *plSupportedSessions);
+                   HRESULT (WINAPI *get_State)(IRTCProfile *This,RTC_REGISTRATION_STATE *penState);
     END_INTERFACE
   } IRTCProfileVtbl;
   struct IRTCProfile {
@@ -1811,31 +1811,31 @@ extern "C" {
 #else
   typedef struct IRTCProfile2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCProfile2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCProfile2 *This);
-      ULONG (WINAPI *Release)(IRTCProfile2 *This);
-      HRESULT (WINAPI *get_Key)(IRTCProfile2 *This,BSTR *pbstrKey);
-      HRESULT (WINAPI *get_Name)(IRTCProfile2 *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_XML)(IRTCProfile2 *This,BSTR *pbstrXML);
-      HRESULT (WINAPI *get_ProviderName)(IRTCProfile2 *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_ProviderURI)(IRTCProfile2 *This,RTC_PROVIDER_URI enURI,BSTR *pbstrURI);
-      HRESULT (WINAPI *get_ProviderData)(IRTCProfile2 *This,BSTR *pbstrData);
-      HRESULT (WINAPI *get_ClientName)(IRTCProfile2 *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_ClientBanner)(IRTCProfile2 *This,VARIANT_BOOL *pfBanner);
-      HRESULT (WINAPI *get_ClientMinVer)(IRTCProfile2 *This,BSTR *pbstrMinVer);
-      HRESULT (WINAPI *get_ClientCurVer)(IRTCProfile2 *This,BSTR *pbstrCurVer);
-      HRESULT (WINAPI *get_ClientUpdateURI)(IRTCProfile2 *This,BSTR *pbstrUpdateURI);
-      HRESULT (WINAPI *get_ClientData)(IRTCProfile2 *This,BSTR *pbstrData);
-      HRESULT (WINAPI *get_UserURI)(IRTCProfile2 *This,BSTR *pbstrUserURI);
-      HRESULT (WINAPI *get_UserName)(IRTCProfile2 *This,BSTR *pbstrUserName);
-      HRESULT (WINAPI *get_UserAccount)(IRTCProfile2 *This,BSTR *pbstrUserAccount);
-      HRESULT (WINAPI *SetCredentials)(IRTCProfile2 *This,BSTR bstrUserURI,BSTR bstrUserAccount,BSTR bstrPassword);
-      HRESULT (WINAPI *get_SessionCapabilities)(IRTCProfile2 *This,__LONG32 *plSupportedSessions);
-      HRESULT (WINAPI *get_State)(IRTCProfile2 *This,RTC_REGISTRATION_STATE *penState);
-      HRESULT (WINAPI *get_Realm)(IRTCProfile2 *This,BSTR *pbstrRealm);
-      HRESULT (WINAPI *put_Realm)(IRTCProfile2 *This,BSTR bstrRealm);
-      HRESULT (WINAPI *get_AllowedAuth)(IRTCProfile2 *This,__LONG32 *plAllowedAuth);
-      HRESULT (WINAPI *put_AllowedAuth)(IRTCProfile2 *This,__LONG32 lAllowedAuth);
+                   HRESULT (WINAPI *QueryInterface)(IRTCProfile2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCProfile2 *This);
+                   ULONG (WINAPI *Release)(IRTCProfile2 *This);
+                   HRESULT (WINAPI *get_Key)(IRTCProfile2 *This,BSTR *pbstrKey);
+                   HRESULT (WINAPI *get_Name)(IRTCProfile2 *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_XML)(IRTCProfile2 *This,BSTR *pbstrXML);
+                   HRESULT (WINAPI *get_ProviderName)(IRTCProfile2 *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_ProviderURI)(IRTCProfile2 *This,RTC_PROVIDER_URI enURI,BSTR *pbstrURI);
+                   HRESULT (WINAPI *get_ProviderData)(IRTCProfile2 *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *get_ClientName)(IRTCProfile2 *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_ClientBanner)(IRTCProfile2 *This,VARIANT_BOOL *pfBanner);
+                   HRESULT (WINAPI *get_ClientMinVer)(IRTCProfile2 *This,BSTR *pbstrMinVer);
+                   HRESULT (WINAPI *get_ClientCurVer)(IRTCProfile2 *This,BSTR *pbstrCurVer);
+                   HRESULT (WINAPI *get_ClientUpdateURI)(IRTCProfile2 *This,BSTR *pbstrUpdateURI);
+                   HRESULT (WINAPI *get_ClientData)(IRTCProfile2 *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *get_UserURI)(IRTCProfile2 *This,BSTR *pbstrUserURI);
+                   HRESULT (WINAPI *get_UserName)(IRTCProfile2 *This,BSTR *pbstrUserName);
+                   HRESULT (WINAPI *get_UserAccount)(IRTCProfile2 *This,BSTR *pbstrUserAccount);
+                   HRESULT (WINAPI *SetCredentials)(IRTCProfile2 *This,BSTR bstrUserURI,BSTR bstrUserAccount,BSTR bstrPassword);
+                   HRESULT (WINAPI *get_SessionCapabilities)(IRTCProfile2 *This,__LONG32 *plSupportedSessions);
+                   HRESULT (WINAPI *get_State)(IRTCProfile2 *This,RTC_REGISTRATION_STATE *penState);
+                   HRESULT (WINAPI *get_Realm)(IRTCProfile2 *This,BSTR *pbstrRealm);
+                   HRESULT (WINAPI *put_Realm)(IRTCProfile2 *This,BSTR bstrRealm);
+                   HRESULT (WINAPI *get_AllowedAuth)(IRTCProfile2 *This,__LONG32 *plAllowedAuth);
+                   HRESULT (WINAPI *put_AllowedAuth)(IRTCProfile2 *This,__LONG32 lAllowedAuth);
     END_INTERFACE
   } IRTCProfile2Vtbl;
   struct IRTCProfile2 {
@@ -1909,29 +1909,29 @@ extern "C" {
 #else
   typedef struct IRTCSessionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSession *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSession *This);
-      ULONG (WINAPI *Release)(IRTCSession *This);
-      HRESULT (WINAPI *get_Client)(IRTCSession *This,IRTCClient **ppClient);
-      HRESULT (WINAPI *get_State)(IRTCSession *This,RTC_SESSION_STATE *penState);
-      HRESULT (WINAPI *get_Type)(IRTCSession *This,RTC_SESSION_TYPE *penType);
-      HRESULT (WINAPI *get_Profile)(IRTCSession *This,IRTCProfile **ppProfile);
-      HRESULT (WINAPI *get_Participants)(IRTCSession *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *Answer)(IRTCSession *This);
-      HRESULT (WINAPI *Terminate)(IRTCSession *This,RTC_TERMINATE_REASON enReason);
-      HRESULT (WINAPI *Redirect)(IRTCSession *This,RTC_SESSION_TYPE enType,BSTR bstrLocalPhoneURI,IRTCProfile *pProfile,__LONG32 lFlags);
-      HRESULT (WINAPI *AddParticipant)(IRTCSession *This,BSTR bstrAddress,BSTR bstrName,IRTCParticipant **ppParticipant);
-      HRESULT (WINAPI *RemoveParticipant)(IRTCSession *This,IRTCParticipant *pParticipant);
-      HRESULT (WINAPI *EnumerateParticipants)(IRTCSession *This,IRTCEnumParticipants **ppEnum);
-      HRESULT (WINAPI *get_CanAddParticipants)(IRTCSession *This,VARIANT_BOOL *pfCanAdd);
-      HRESULT (WINAPI *get_RedirectedUserURI)(IRTCSession *This,BSTR *pbstrUserURI);
-      HRESULT (WINAPI *get_RedirectedUserName)(IRTCSession *This,BSTR *pbstrUserName);
-      HRESULT (WINAPI *NextRedirectedUser)(IRTCSession *This);
-      HRESULT (WINAPI *SendMessage)(IRTCSession *This,BSTR bstrMessageHeader,BSTR bstrMessage,LONG_PTR lCookie);
-      HRESULT (WINAPI *SendMessageStatus)(IRTCSession *This,RTC_MESSAGING_USER_STATUS enUserStatus,LONG_PTR lCookie);
-      HRESULT (WINAPI *AddStream)(IRTCSession *This,__LONG32 lMediaType,LONG_PTR lCookie);
-      HRESULT (WINAPI *RemoveStream)(IRTCSession *This,__LONG32 lMediaType,LONG_PTR lCookie);
-      HRESULT (WINAPI *put_EncryptionKey)(IRTCSession *This,__LONG32 lMediaType,BSTR EncryptionKey);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSession *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSession *This);
+                   ULONG (WINAPI *Release)(IRTCSession *This);
+                   HRESULT (WINAPI *get_Client)(IRTCSession *This,IRTCClient **ppClient);
+                   HRESULT (WINAPI *get_State)(IRTCSession *This,RTC_SESSION_STATE *penState);
+                   HRESULT (WINAPI *get_Type)(IRTCSession *This,RTC_SESSION_TYPE *penType);
+                   HRESULT (WINAPI *get_Profile)(IRTCSession *This,IRTCProfile **ppProfile);
+                   HRESULT (WINAPI *get_Participants)(IRTCSession *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *Answer)(IRTCSession *This);
+                   HRESULT (WINAPI *Terminate)(IRTCSession *This,RTC_TERMINATE_REASON enReason);
+                   HRESULT (WINAPI *Redirect)(IRTCSession *This,RTC_SESSION_TYPE enType,BSTR bstrLocalPhoneURI,IRTCProfile *pProfile,__LONG32 lFlags);
+                   HRESULT (WINAPI *AddParticipant)(IRTCSession *This,BSTR bstrAddress,BSTR bstrName,IRTCParticipant **ppParticipant);
+                   HRESULT (WINAPI *RemoveParticipant)(IRTCSession *This,IRTCParticipant *pParticipant);
+                   HRESULT (WINAPI *EnumerateParticipants)(IRTCSession *This,IRTCEnumParticipants **ppEnum);
+                   HRESULT (WINAPI *get_CanAddParticipants)(IRTCSession *This,VARIANT_BOOL *pfCanAdd);
+                   HRESULT (WINAPI *get_RedirectedUserURI)(IRTCSession *This,BSTR *pbstrUserURI);
+                   HRESULT (WINAPI *get_RedirectedUserName)(IRTCSession *This,BSTR *pbstrUserName);
+                   HRESULT (WINAPI *NextRedirectedUser)(IRTCSession *This);
+                   HRESULT (WINAPI *SendMessage)(IRTCSession *This,BSTR bstrMessageHeader,BSTR bstrMessage,LONG_PTR lCookie);
+                   HRESULT (WINAPI *SendMessageStatus)(IRTCSession *This,RTC_MESSAGING_USER_STATUS enUserStatus,LONG_PTR lCookie);
+                   HRESULT (WINAPI *AddStream)(IRTCSession *This,__LONG32 lMediaType,LONG_PTR lCookie);
+                   HRESULT (WINAPI *RemoveStream)(IRTCSession *This,__LONG32 lMediaType,LONG_PTR lCookie);
+                   HRESULT (WINAPI *put_EncryptionKey)(IRTCSession *This,__LONG32 lMediaType,BSTR EncryptionKey);
     END_INTERFACE
   } IRTCSessionVtbl;
   struct IRTCSession {
@@ -2021,35 +2021,35 @@ extern "C" {
 #else
   typedef struct IRTCSession2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSession2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSession2 *This);
-      ULONG (WINAPI *Release)(IRTCSession2 *This);
-      HRESULT (WINAPI *get_Client)(IRTCSession2 *This,IRTCClient **ppClient);
-      HRESULT (WINAPI *get_State)(IRTCSession2 *This,RTC_SESSION_STATE *penState);
-      HRESULT (WINAPI *get_Type)(IRTCSession2 *This,RTC_SESSION_TYPE *penType);
-      HRESULT (WINAPI *get_Profile)(IRTCSession2 *This,IRTCProfile **ppProfile);
-      HRESULT (WINAPI *get_Participants)(IRTCSession2 *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *Answer)(IRTCSession2 *This);
-      HRESULT (WINAPI *Terminate)(IRTCSession2 *This,RTC_TERMINATE_REASON enReason);
-      HRESULT (WINAPI *Redirect)(IRTCSession2 *This,RTC_SESSION_TYPE enType,BSTR bstrLocalPhoneURI,IRTCProfile *pProfile,__LONG32 lFlags);
-      HRESULT (WINAPI *AddParticipant)(IRTCSession2 *This,BSTR bstrAddress,BSTR bstrName,IRTCParticipant **ppParticipant);
-      HRESULT (WINAPI *RemoveParticipant)(IRTCSession2 *This,IRTCParticipant *pParticipant);
-      HRESULT (WINAPI *EnumerateParticipants)(IRTCSession2 *This,IRTCEnumParticipants **ppEnum);
-      HRESULT (WINAPI *get_CanAddParticipants)(IRTCSession2 *This,VARIANT_BOOL *pfCanAdd);
-      HRESULT (WINAPI *get_RedirectedUserURI)(IRTCSession2 *This,BSTR *pbstrUserURI);
-      HRESULT (WINAPI *get_RedirectedUserName)(IRTCSession2 *This,BSTR *pbstrUserName);
-      HRESULT (WINAPI *NextRedirectedUser)(IRTCSession2 *This);
-      HRESULT (WINAPI *SendMessage)(IRTCSession2 *This,BSTR bstrMessageHeader,BSTR bstrMessage,LONG_PTR lCookie);
-      HRESULT (WINAPI *SendMessageStatus)(IRTCSession2 *This,RTC_MESSAGING_USER_STATUS enUserStatus,LONG_PTR lCookie);
-      HRESULT (WINAPI *AddStream)(IRTCSession2 *This,__LONG32 lMediaType,LONG_PTR lCookie);
-      HRESULT (WINAPI *RemoveStream)(IRTCSession2 *This,__LONG32 lMediaType,LONG_PTR lCookie);
-      HRESULT (WINAPI *put_EncryptionKey)(IRTCSession2 *This,__LONG32 lMediaType,BSTR EncryptionKey);
-      HRESULT (WINAPI *SendInfo)(IRTCSession2 *This,BSTR bstrInfoHeader,BSTR bstrInfo,LONG_PTR lCookie);
-      HRESULT (WINAPI *put_PreferredSecurityLevel)(IRTCSession2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL enSecurityLevel);
-      HRESULT (WINAPI *get_PreferredSecurityLevel)(IRTCSession2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL *penSecurityLevel);
-      HRESULT (WINAPI *IsSecurityEnabled)(IRTCSession2 *This,RTC_SECURITY_TYPE enSecurityType,VARIANT_BOOL *pfSecurityEnabled);
-      HRESULT (WINAPI *AnswerWithSessionDescription)(IRTCSession2 *This,BSTR bstrContentType,BSTR bstrSessionDescription);
-      HRESULT (WINAPI *ReInviteWithSessionDescription)(IRTCSession2 *This,BSTR bstrContentType,BSTR bstrSessionDescription,LONG_PTR lCookie);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSession2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSession2 *This);
+                   ULONG (WINAPI *Release)(IRTCSession2 *This);
+                   HRESULT (WINAPI *get_Client)(IRTCSession2 *This,IRTCClient **ppClient);
+                   HRESULT (WINAPI *get_State)(IRTCSession2 *This,RTC_SESSION_STATE *penState);
+                   HRESULT (WINAPI *get_Type)(IRTCSession2 *This,RTC_SESSION_TYPE *penType);
+                   HRESULT (WINAPI *get_Profile)(IRTCSession2 *This,IRTCProfile **ppProfile);
+                   HRESULT (WINAPI *get_Participants)(IRTCSession2 *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *Answer)(IRTCSession2 *This);
+                   HRESULT (WINAPI *Terminate)(IRTCSession2 *This,RTC_TERMINATE_REASON enReason);
+                   HRESULT (WINAPI *Redirect)(IRTCSession2 *This,RTC_SESSION_TYPE enType,BSTR bstrLocalPhoneURI,IRTCProfile *pProfile,__LONG32 lFlags);
+                   HRESULT (WINAPI *AddParticipant)(IRTCSession2 *This,BSTR bstrAddress,BSTR bstrName,IRTCParticipant **ppParticipant);
+                   HRESULT (WINAPI *RemoveParticipant)(IRTCSession2 *This,IRTCParticipant *pParticipant);
+                   HRESULT (WINAPI *EnumerateParticipants)(IRTCSession2 *This,IRTCEnumParticipants **ppEnum);
+                   HRESULT (WINAPI *get_CanAddParticipants)(IRTCSession2 *This,VARIANT_BOOL *pfCanAdd);
+                   HRESULT (WINAPI *get_RedirectedUserURI)(IRTCSession2 *This,BSTR *pbstrUserURI);
+                   HRESULT (WINAPI *get_RedirectedUserName)(IRTCSession2 *This,BSTR *pbstrUserName);
+                   HRESULT (WINAPI *NextRedirectedUser)(IRTCSession2 *This);
+                   HRESULT (WINAPI *SendMessage)(IRTCSession2 *This,BSTR bstrMessageHeader,BSTR bstrMessage,LONG_PTR lCookie);
+                   HRESULT (WINAPI *SendMessageStatus)(IRTCSession2 *This,RTC_MESSAGING_USER_STATUS enUserStatus,LONG_PTR lCookie);
+                   HRESULT (WINAPI *AddStream)(IRTCSession2 *This,__LONG32 lMediaType,LONG_PTR lCookie);
+                   HRESULT (WINAPI *RemoveStream)(IRTCSession2 *This,__LONG32 lMediaType,LONG_PTR lCookie);
+                   HRESULT (WINAPI *put_EncryptionKey)(IRTCSession2 *This,__LONG32 lMediaType,BSTR EncryptionKey);
+                   HRESULT (WINAPI *SendInfo)(IRTCSession2 *This,BSTR bstrInfoHeader,BSTR bstrInfo,LONG_PTR lCookie);
+                   HRESULT (WINAPI *put_PreferredSecurityLevel)(IRTCSession2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL enSecurityLevel);
+                   HRESULT (WINAPI *get_PreferredSecurityLevel)(IRTCSession2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL *penSecurityLevel);
+                   HRESULT (WINAPI *IsSecurityEnabled)(IRTCSession2 *This,RTC_SECURITY_TYPE enSecurityType,VARIANT_BOOL *pfSecurityEnabled);
+                   HRESULT (WINAPI *AnswerWithSessionDescription)(IRTCSession2 *This,BSTR bstrContentType,BSTR bstrSessionDescription);
+                   HRESULT (WINAPI *ReInviteWithSessionDescription)(IRTCSession2 *This,BSTR bstrContentType,BSTR bstrSessionDescription,LONG_PTR lCookie);
     END_INTERFACE
   } IRTCSession2Vtbl;
   struct IRTCSession2 {
@@ -2120,18 +2120,18 @@ extern "C" {
 #else
   typedef struct IRTCSessionCallControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionCallControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionCallControl *This);
-      ULONG (WINAPI *Release)(IRTCSessionCallControl *This);
-      HRESULT (WINAPI *Hold)(IRTCSessionCallControl *This,LONG_PTR lCookie);
-      HRESULT (WINAPI *UnHold)(IRTCSessionCallControl *This,LONG_PTR lCookie);
-      HRESULT (WINAPI *Forward)(IRTCSessionCallControl *This,BSTR bstrForwardToURI);
-      HRESULT (WINAPI *Refer)(IRTCSessionCallControl *This,BSTR bstrReferToURI,BSTR bstrReferCookie);
-      HRESULT (WINAPI *put_ReferredByURI)(IRTCSessionCallControl *This,BSTR bstrReferredByURI);
-      HRESULT (WINAPI *get_ReferredByURI)(IRTCSessionCallControl *This,BSTR *pbstrReferredByURI);
-      HRESULT (WINAPI *put_ReferCookie)(IRTCSessionCallControl *This,BSTR bstrReferCookie);
-      HRESULT (WINAPI *get_ReferCookie)(IRTCSessionCallControl *This,BSTR *pbstrReferCookie);
-      HRESULT (WINAPI *get_IsReferred)(IRTCSessionCallControl *This,VARIANT_BOOL *pfIsReferred);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionCallControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionCallControl *This);
+                   ULONG (WINAPI *Release)(IRTCSessionCallControl *This);
+                   HRESULT (WINAPI *Hold)(IRTCSessionCallControl *This,LONG_PTR lCookie);
+                   HRESULT (WINAPI *UnHold)(IRTCSessionCallControl *This,LONG_PTR lCookie);
+                   HRESULT (WINAPI *Forward)(IRTCSessionCallControl *This,BSTR bstrForwardToURI);
+                   HRESULT (WINAPI *Refer)(IRTCSessionCallControl *This,BSTR bstrReferToURI,BSTR bstrReferCookie);
+                   HRESULT (WINAPI *put_ReferredByURI)(IRTCSessionCallControl *This,BSTR bstrReferredByURI);
+                   HRESULT (WINAPI *get_ReferredByURI)(IRTCSessionCallControl *This,BSTR *pbstrReferredByURI);
+                   HRESULT (WINAPI *put_ReferCookie)(IRTCSessionCallControl *This,BSTR bstrReferCookie);
+                   HRESULT (WINAPI *get_ReferCookie)(IRTCSessionCallControl *This,BSTR *pbstrReferCookie);
+                   HRESULT (WINAPI *get_IsReferred)(IRTCSessionCallControl *This,VARIANT_BOOL *pfIsReferred);
     END_INTERFACE
   } IRTCSessionCallControlVtbl;
   struct IRTCSessionCallControl {
@@ -2187,14 +2187,14 @@ extern "C" {
 #else
   typedef struct IRTCParticipantVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCParticipant *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCParticipant *This);
-      ULONG (WINAPI *Release)(IRTCParticipant *This);
-      HRESULT (WINAPI *get_UserURI)(IRTCParticipant *This,BSTR *pbstrUserURI);
-      HRESULT (WINAPI *get_Name)(IRTCParticipant *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_Removable)(IRTCParticipant *This,VARIANT_BOOL *pfRemovable);
-      HRESULT (WINAPI *get_State)(IRTCParticipant *This,RTC_PARTICIPANT_STATE *penState);
-      HRESULT (WINAPI *get_Session)(IRTCParticipant *This,IRTCSession **ppSession);
+                   HRESULT (WINAPI *QueryInterface)(IRTCParticipant *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCParticipant *This);
+                   ULONG (WINAPI *Release)(IRTCParticipant *This);
+                   HRESULT (WINAPI *get_UserURI)(IRTCParticipant *This,BSTR *pbstrUserURI);
+                   HRESULT (WINAPI *get_Name)(IRTCParticipant *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_Removable)(IRTCParticipant *This,VARIANT_BOOL *pfRemovable);
+                   HRESULT (WINAPI *get_State)(IRTCParticipant *This,RTC_PARTICIPANT_STATE *penState);
+                   HRESULT (WINAPI *get_Session)(IRTCParticipant *This,IRTCSession **ppSession);
     END_INTERFACE
   } IRTCParticipantVtbl;
   struct IRTCParticipant {
@@ -2236,17 +2236,17 @@ extern "C" {
 #else
   typedef struct IRTCRoamingEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCRoamingEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCRoamingEvent *This);
-      ULONG (WINAPI *Release)(IRTCRoamingEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCRoamingEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCRoamingEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCRoamingEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCRoamingEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_EventType)(IRTCRoamingEvent *This,RTC_ROAMING_EVENT_TYPE *pEventType);
-      HRESULT (WINAPI *get_Profile)(IRTCRoamingEvent *This,IRTCProfile2 **ppProfile);
-      HRESULT (WINAPI *get_StatusCode)(IRTCRoamingEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCRoamingEvent *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *QueryInterface)(IRTCRoamingEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCRoamingEvent *This);
+                   ULONG (WINAPI *Release)(IRTCRoamingEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCRoamingEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCRoamingEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCRoamingEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCRoamingEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_EventType)(IRTCRoamingEvent *This,RTC_ROAMING_EVENT_TYPE *pEventType);
+                   HRESULT (WINAPI *get_Profile)(IRTCRoamingEvent *This,IRTCProfile2 **ppProfile);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCRoamingEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCRoamingEvent *This,BSTR *pbstrStatusText);
     END_INTERFACE
   } IRTCRoamingEventVtbl;
   struct IRTCRoamingEvent {
@@ -2289,16 +2289,16 @@ extern "C" {
 #else
   typedef struct IRTCProfileEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCProfileEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCProfileEvent *This);
-      ULONG (WINAPI *Release)(IRTCProfileEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCProfileEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCProfileEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCProfileEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCProfileEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Profile)(IRTCProfileEvent *This,IRTCProfile **ppProfile);
-      HRESULT (WINAPI *get_Cookie)(IRTCProfileEvent *This,LONG_PTR *plCookie);
-      HRESULT (WINAPI *get_StatusCode)(IRTCProfileEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *QueryInterface)(IRTCProfileEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCProfileEvent *This);
+                   ULONG (WINAPI *Release)(IRTCProfileEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCProfileEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCProfileEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCProfileEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCProfileEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Profile)(IRTCProfileEvent *This,IRTCProfile **ppProfile);
+                   HRESULT (WINAPI *get_Cookie)(IRTCProfileEvent *This,LONG_PTR *plCookie);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCProfileEvent *This,__LONG32 *plStatusCode);
     END_INTERFACE
   } IRTCProfileEventVtbl;
   struct IRTCProfileEvent {
@@ -2336,17 +2336,17 @@ extern "C" {
 #else
   typedef struct IRTCProfileEvent2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCProfileEvent2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCProfileEvent2 *This);
-      ULONG (WINAPI *Release)(IRTCProfileEvent2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCProfileEvent2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCProfileEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCProfileEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCProfileEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Profile)(IRTCProfileEvent2 *This,IRTCProfile **ppProfile);
-      HRESULT (WINAPI *get_Cookie)(IRTCProfileEvent2 *This,LONG_PTR *plCookie);
-      HRESULT (WINAPI *get_StatusCode)(IRTCProfileEvent2 *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_EventType)(IRTCProfileEvent2 *This,RTC_PROFILE_EVENT_TYPE *pEventType);
+                   HRESULT (WINAPI *QueryInterface)(IRTCProfileEvent2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCProfileEvent2 *This);
+                   ULONG (WINAPI *Release)(IRTCProfileEvent2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCProfileEvent2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCProfileEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCProfileEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCProfileEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Profile)(IRTCProfileEvent2 *This,IRTCProfile **ppProfile);
+                   HRESULT (WINAPI *get_Cookie)(IRTCProfileEvent2 *This,LONG_PTR *plCookie);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCProfileEvent2 *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_EventType)(IRTCProfileEvent2 *This,RTC_PROFILE_EVENT_TYPE *pEventType);
     END_INTERFACE
   } IRTCProfileEvent2Vtbl;
   struct IRTCProfileEvent2 {
@@ -2382,15 +2382,15 @@ extern "C" {
 #else
   typedef struct IRTCClientEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCClientEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCClientEvent *This);
-      ULONG (WINAPI *Release)(IRTCClientEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCClientEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCClientEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCClientEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCClientEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_EventType)(IRTCClientEvent *This,RTC_CLIENT_EVENT_TYPE *penEventType);
-      HRESULT (WINAPI *get_Client)(IRTCClientEvent *This,IRTCClient **ppClient);
+                   HRESULT (WINAPI *QueryInterface)(IRTCClientEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCClientEvent *This);
+                   ULONG (WINAPI *Release)(IRTCClientEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCClientEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCClientEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCClientEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCClientEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_EventType)(IRTCClientEvent *This,RTC_CLIENT_EVENT_TYPE *penEventType);
+                   HRESULT (WINAPI *get_Client)(IRTCClientEvent *This,IRTCClient **ppClient);
     END_INTERFACE
   } IRTCClientEventVtbl;
   struct IRTCClientEvent {
@@ -2428,17 +2428,17 @@ extern "C" {
 #else
   typedef struct IRTCRegistrationStateChangeEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCRegistrationStateChangeEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCRegistrationStateChangeEvent *This);
-      ULONG (WINAPI *Release)(IRTCRegistrationStateChangeEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCRegistrationStateChangeEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCRegistrationStateChangeEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCRegistrationStateChangeEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCRegistrationStateChangeEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Profile)(IRTCRegistrationStateChangeEvent *This,IRTCProfile **ppProfile);
-      HRESULT (WINAPI *get_State)(IRTCRegistrationStateChangeEvent *This,RTC_REGISTRATION_STATE *penState);
-      HRESULT (WINAPI *get_StatusCode)(IRTCRegistrationStateChangeEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCRegistrationStateChangeEvent *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *QueryInterface)(IRTCRegistrationStateChangeEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCRegistrationStateChangeEvent *This);
+                   ULONG (WINAPI *Release)(IRTCRegistrationStateChangeEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCRegistrationStateChangeEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCRegistrationStateChangeEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCRegistrationStateChangeEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCRegistrationStateChangeEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Profile)(IRTCRegistrationStateChangeEvent *This,IRTCProfile **ppProfile);
+                   HRESULT (WINAPI *get_State)(IRTCRegistrationStateChangeEvent *This,RTC_REGISTRATION_STATE *penState);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCRegistrationStateChangeEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCRegistrationStateChangeEvent *This,BSTR *pbstrStatusText);
     END_INTERFACE
   } IRTCRegistrationStateChangeEventVtbl;
   struct IRTCRegistrationStateChangeEvent {
@@ -2482,17 +2482,17 @@ extern "C" {
 #else
   typedef struct IRTCSessionStateChangeEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionStateChangeEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionStateChangeEvent *This);
-      ULONG (WINAPI *Release)(IRTCSessionStateChangeEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionStateChangeEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCSessionStateChangeEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionStateChangeEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCSessionStateChangeEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCSessionStateChangeEvent *This,IRTCSession **ppSession);
-      HRESULT (WINAPI *get_State)(IRTCSessionStateChangeEvent *This,RTC_SESSION_STATE *penState);
-      HRESULT (WINAPI *get_StatusCode)(IRTCSessionStateChangeEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCSessionStateChangeEvent *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionStateChangeEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionStateChangeEvent *This);
+                   ULONG (WINAPI *Release)(IRTCSessionStateChangeEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionStateChangeEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCSessionStateChangeEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionStateChangeEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCSessionStateChangeEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCSessionStateChangeEvent *This,IRTCSession **ppSession);
+                   HRESULT (WINAPI *get_State)(IRTCSessionStateChangeEvent *This,RTC_SESSION_STATE *penState);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCSessionStateChangeEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCSessionStateChangeEvent *This,BSTR *pbstrStatusText);
     END_INTERFACE
   } IRTCSessionStateChangeEventVtbl;
   struct IRTCSessionStateChangeEvent {
@@ -2536,21 +2536,21 @@ extern "C" {
 #else
   typedef struct IRTCSessionStateChangeEvent2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionStateChangeEvent2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionStateChangeEvent2 *This);
-      ULONG (WINAPI *Release)(IRTCSessionStateChangeEvent2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionStateChangeEvent2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCSessionStateChangeEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionStateChangeEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCSessionStateChangeEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCSessionStateChangeEvent2 *This,IRTCSession **ppSession);
-      HRESULT (WINAPI *get_State)(IRTCSessionStateChangeEvent2 *This,RTC_SESSION_STATE *penState);
-      HRESULT (WINAPI *get_StatusCode)(IRTCSessionStateChangeEvent2 *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCSessionStateChangeEvent2 *This,BSTR *pbstrStatusText);
-      HRESULT (WINAPI *get_MediaTypes)(IRTCSessionStateChangeEvent2 *This,__LONG32 *pMediaTypes);
-      HRESULT (WINAPI *get_RemotePreferredSecurityLevel)(IRTCSessionStateChangeEvent2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL *penSecurityLevel);
-      HRESULT (WINAPI *get_IsForked)(IRTCSessionStateChangeEvent2 *This,VARIANT_BOOL *pfIsForked);
-      HRESULT (WINAPI *GetRemoteSessionDescription)(IRTCSessionStateChangeEvent2 *This,BSTR *pbstrContentType,BSTR *pbstrSessionDescription);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionStateChangeEvent2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionStateChangeEvent2 *This);
+                   ULONG (WINAPI *Release)(IRTCSessionStateChangeEvent2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionStateChangeEvent2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCSessionStateChangeEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionStateChangeEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCSessionStateChangeEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCSessionStateChangeEvent2 *This,IRTCSession **ppSession);
+                   HRESULT (WINAPI *get_State)(IRTCSessionStateChangeEvent2 *This,RTC_SESSION_STATE *penState);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCSessionStateChangeEvent2 *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCSessionStateChangeEvent2 *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *get_MediaTypes)(IRTCSessionStateChangeEvent2 *This,__LONG32 *pMediaTypes);
+                   HRESULT (WINAPI *get_RemotePreferredSecurityLevel)(IRTCSessionStateChangeEvent2 *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL *penSecurityLevel);
+                   HRESULT (WINAPI *get_IsForked)(IRTCSessionStateChangeEvent2 *This,VARIANT_BOOL *pfIsForked);
+                   HRESULT (WINAPI *GetRemoteSessionDescription)(IRTCSessionStateChangeEvent2 *This,BSTR *pbstrContentType,BSTR *pbstrSessionDescription);
     END_INTERFACE
   } IRTCSessionStateChangeEvent2Vtbl;
   struct IRTCSessionStateChangeEvent2 {
@@ -2598,17 +2598,17 @@ extern "C" {
 #else
   typedef struct IRTCSessionOperationCompleteEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionOperationCompleteEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionOperationCompleteEvent *This);
-      ULONG (WINAPI *Release)(IRTCSessionOperationCompleteEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionOperationCompleteEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCSessionOperationCompleteEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionOperationCompleteEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCSessionOperationCompleteEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCSessionOperationCompleteEvent *This,IRTCSession **ppSession);
-      HRESULT (WINAPI *get_Cookie)(IRTCSessionOperationCompleteEvent *This,LONG_PTR *plCookie);
-      HRESULT (WINAPI *get_StatusCode)(IRTCSessionOperationCompleteEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCSessionOperationCompleteEvent *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionOperationCompleteEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionOperationCompleteEvent *This);
+                   ULONG (WINAPI *Release)(IRTCSessionOperationCompleteEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionOperationCompleteEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCSessionOperationCompleteEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionOperationCompleteEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCSessionOperationCompleteEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCSessionOperationCompleteEvent *This,IRTCSession **ppSession);
+                   HRESULT (WINAPI *get_Cookie)(IRTCSessionOperationCompleteEvent *This,LONG_PTR *plCookie);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCSessionOperationCompleteEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCSessionOperationCompleteEvent *This,BSTR *pbstrStatusText);
     END_INTERFACE
   } IRTCSessionOperationCompleteEventVtbl;
   struct IRTCSessionOperationCompleteEvent {
@@ -2650,19 +2650,19 @@ extern "C" {
 #else
   typedef struct IRTCSessionOperationCompleteEvent2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionOperationCompleteEvent2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionOperationCompleteEvent2 *This);
-      ULONG (WINAPI *Release)(IRTCSessionOperationCompleteEvent2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionOperationCompleteEvent2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCSessionOperationCompleteEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionOperationCompleteEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCSessionOperationCompleteEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCSessionOperationCompleteEvent2 *This,IRTCSession **ppSession);
-      HRESULT (WINAPI *get_Cookie)(IRTCSessionOperationCompleteEvent2 *This,LONG_PTR *plCookie);
-      HRESULT (WINAPI *get_StatusCode)(IRTCSessionOperationCompleteEvent2 *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCSessionOperationCompleteEvent2 *This,BSTR *pbstrStatusText);
-      HRESULT (WINAPI *get_Participant)(IRTCSessionOperationCompleteEvent2 *This,IRTCParticipant **ppParticipant);
-      HRESULT (WINAPI *GetRemoteSessionDescription)(IRTCSessionOperationCompleteEvent2 *This,BSTR *pbstrContentType,BSTR *pbstrSessionDescription);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionOperationCompleteEvent2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionOperationCompleteEvent2 *This);
+                   ULONG (WINAPI *Release)(IRTCSessionOperationCompleteEvent2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionOperationCompleteEvent2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCSessionOperationCompleteEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionOperationCompleteEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCSessionOperationCompleteEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCSessionOperationCompleteEvent2 *This,IRTCSession **ppSession);
+                   HRESULT (WINAPI *get_Cookie)(IRTCSessionOperationCompleteEvent2 *This,LONG_PTR *plCookie);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCSessionOperationCompleteEvent2 *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCSessionOperationCompleteEvent2 *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *get_Participant)(IRTCSessionOperationCompleteEvent2 *This,IRTCParticipant **ppParticipant);
+                   HRESULT (WINAPI *GetRemoteSessionDescription)(IRTCSessionOperationCompleteEvent2 *This,BSTR *pbstrContentType,BSTR *pbstrSessionDescription);
     END_INTERFACE
   } IRTCSessionOperationCompleteEvent2Vtbl;
   struct IRTCSessionOperationCompleteEvent2 {
@@ -2703,16 +2703,16 @@ extern "C" {
 #else
   typedef struct IRTCParticipantStateChangeEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCParticipantStateChangeEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCParticipantStateChangeEvent *This);
-      ULONG (WINAPI *Release)(IRTCParticipantStateChangeEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCParticipantStateChangeEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCParticipantStateChangeEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCParticipantStateChangeEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCParticipantStateChangeEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Participant)(IRTCParticipantStateChangeEvent *This,IRTCParticipant **ppParticipant);
-      HRESULT (WINAPI *get_State)(IRTCParticipantStateChangeEvent *This,RTC_PARTICIPANT_STATE *penState);
-      HRESULT (WINAPI *get_StatusCode)(IRTCParticipantStateChangeEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *QueryInterface)(IRTCParticipantStateChangeEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCParticipantStateChangeEvent *This);
+                   ULONG (WINAPI *Release)(IRTCParticipantStateChangeEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCParticipantStateChangeEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCParticipantStateChangeEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCParticipantStateChangeEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCParticipantStateChangeEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Participant)(IRTCParticipantStateChangeEvent *This,IRTCParticipant **ppParticipant);
+                   HRESULT (WINAPI *get_State)(IRTCParticipantStateChangeEvent *This,RTC_PARTICIPANT_STATE *penState);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCParticipantStateChangeEvent *This,__LONG32 *plStatusCode);
     END_INTERFACE
   } IRTCParticipantStateChangeEventVtbl;
   struct IRTCParticipantStateChangeEvent {
@@ -2752,16 +2752,16 @@ extern "C" {
 #else
   typedef struct IRTCMediaEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCMediaEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCMediaEvent *This);
-      ULONG (WINAPI *Release)(IRTCMediaEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCMediaEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCMediaEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCMediaEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCMediaEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_MediaType)(IRTCMediaEvent *This,__LONG32 *pMediaType);
-      HRESULT (WINAPI *get_EventType)(IRTCMediaEvent *This,RTC_MEDIA_EVENT_TYPE *penEventType);
-      HRESULT (WINAPI *get_EventReason)(IRTCMediaEvent *This,RTC_MEDIA_EVENT_REASON *penEventReason);
+                   HRESULT (WINAPI *QueryInterface)(IRTCMediaEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCMediaEvent *This);
+                   ULONG (WINAPI *Release)(IRTCMediaEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCMediaEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCMediaEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCMediaEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCMediaEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_MediaType)(IRTCMediaEvent *This,__LONG32 *pMediaType);
+                   HRESULT (WINAPI *get_EventType)(IRTCMediaEvent *This,RTC_MEDIA_EVENT_TYPE *penEventType);
+                   HRESULT (WINAPI *get_EventReason)(IRTCMediaEvent *This,RTC_MEDIA_EVENT_REASON *penEventReason);
     END_INTERFACE
   } IRTCMediaEventVtbl;
   struct IRTCMediaEvent {
@@ -2802,17 +2802,17 @@ extern "C" {
 #else
   typedef struct IRTCIntensityEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCIntensityEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCIntensityEvent *This);
-      ULONG (WINAPI *Release)(IRTCIntensityEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCIntensityEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCIntensityEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCIntensityEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCIntensityEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Level)(IRTCIntensityEvent *This,__LONG32 *plLevel);
-      HRESULT (WINAPI *get_Min)(IRTCIntensityEvent *This,__LONG32 *plMin);
-      HRESULT (WINAPI *get_Max)(IRTCIntensityEvent *This,__LONG32 *plMax);
-      HRESULT (WINAPI *get_Direction)(IRTCIntensityEvent *This,RTC_AUDIO_DEVICE *penDirection);
+                   HRESULT (WINAPI *QueryInterface)(IRTCIntensityEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCIntensityEvent *This);
+                   ULONG (WINAPI *Release)(IRTCIntensityEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCIntensityEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCIntensityEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCIntensityEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCIntensityEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Level)(IRTCIntensityEvent *This,__LONG32 *plLevel);
+                   HRESULT (WINAPI *get_Min)(IRTCIntensityEvent *This,__LONG32 *plMin);
+                   HRESULT (WINAPI *get_Max)(IRTCIntensityEvent *This,__LONG32 *plMax);
+                   HRESULT (WINAPI *get_Direction)(IRTCIntensityEvent *This,RTC_AUDIO_DEVICE *penDirection);
     END_INTERFACE
   } IRTCIntensityEventVtbl;
   struct IRTCIntensityEvent {
@@ -2858,19 +2858,19 @@ extern "C" {
 #else
   typedef struct IRTCMessagingEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCMessagingEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCMessagingEvent *This);
-      ULONG (WINAPI *Release)(IRTCMessagingEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCMessagingEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCMessagingEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCMessagingEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCMessagingEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCMessagingEvent *This,IRTCSession **ppSession);
-      HRESULT (WINAPI *get_Participant)(IRTCMessagingEvent *This,IRTCParticipant **ppParticipant);
-      HRESULT (WINAPI *get_EventType)(IRTCMessagingEvent *This,RTC_MESSAGING_EVENT_TYPE *penEventType);
-      HRESULT (WINAPI *get_Message)(IRTCMessagingEvent *This,BSTR *pbstrMessage);
-      HRESULT (WINAPI *get_MessageHeader)(IRTCMessagingEvent *This,BSTR *pbstrMessageHeader);
-      HRESULT (WINAPI *get_UserStatus)(IRTCMessagingEvent *This,RTC_MESSAGING_USER_STATUS *penUserStatus);
+                   HRESULT (WINAPI *QueryInterface)(IRTCMessagingEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCMessagingEvent *This);
+                   ULONG (WINAPI *Release)(IRTCMessagingEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCMessagingEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCMessagingEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCMessagingEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCMessagingEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCMessagingEvent *This,IRTCSession **ppSession);
+                   HRESULT (WINAPI *get_Participant)(IRTCMessagingEvent *This,IRTCParticipant **ppParticipant);
+                   HRESULT (WINAPI *get_EventType)(IRTCMessagingEvent *This,RTC_MESSAGING_EVENT_TYPE *penEventType);
+                   HRESULT (WINAPI *get_Message)(IRTCMessagingEvent *This,BSTR *pbstrMessage);
+                   HRESULT (WINAPI *get_MessageHeader)(IRTCMessagingEvent *This,BSTR *pbstrMessageHeader);
+                   HRESULT (WINAPI *get_UserStatus)(IRTCMessagingEvent *This,RTC_MESSAGING_USER_STATUS *penUserStatus);
     END_INTERFACE
   } IRTCMessagingEventVtbl;
   struct IRTCMessagingEvent {
@@ -2917,14 +2917,14 @@ extern "C" {
 #else
   typedef struct IRTCBuddyEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCBuddyEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCBuddyEvent *This);
-      ULONG (WINAPI *Release)(IRTCBuddyEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCBuddyEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCBuddyEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCBuddyEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCBuddyEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Buddy)(IRTCBuddyEvent *This,IRTCBuddy **ppBuddy);
+                   HRESULT (WINAPI *QueryInterface)(IRTCBuddyEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCBuddyEvent *This);
+                   ULONG (WINAPI *Release)(IRTCBuddyEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCBuddyEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCBuddyEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCBuddyEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCBuddyEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Buddy)(IRTCBuddyEvent *This,IRTCBuddy **ppBuddy);
     END_INTERFACE
   } IRTCBuddyEventVtbl;
   struct IRTCBuddyEvent {
@@ -2958,17 +2958,17 @@ extern "C" {
 #else
   typedef struct IRTCBuddyEvent2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCBuddyEvent2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCBuddyEvent2 *This);
-      ULONG (WINAPI *Release)(IRTCBuddyEvent2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCBuddyEvent2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCBuddyEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCBuddyEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCBuddyEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Buddy)(IRTCBuddyEvent2 *This,IRTCBuddy **ppBuddy);
-      HRESULT (WINAPI *get_EventType)(IRTCBuddyEvent2 *This,RTC_BUDDY_EVENT_TYPE *pEventType);
-      HRESULT (WINAPI *get_StatusCode)(IRTCBuddyEvent2 *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCBuddyEvent2 *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *QueryInterface)(IRTCBuddyEvent2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCBuddyEvent2 *This);
+                   ULONG (WINAPI *Release)(IRTCBuddyEvent2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCBuddyEvent2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCBuddyEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCBuddyEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCBuddyEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Buddy)(IRTCBuddyEvent2 *This,IRTCBuddy **ppBuddy);
+                   HRESULT (WINAPI *get_EventType)(IRTCBuddyEvent2 *This,RTC_BUDDY_EVENT_TYPE *pEventType);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCBuddyEvent2 *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCBuddyEvent2 *This,BSTR *pbstrStatusText);
     END_INTERFACE
   } IRTCBuddyEvent2Vtbl;
   struct IRTCBuddyEvent2 {
@@ -3007,14 +3007,14 @@ extern "C" {
 #else
   typedef struct IRTCWatcherEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCWatcherEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCWatcherEvent *This);
-      ULONG (WINAPI *Release)(IRTCWatcherEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCWatcherEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCWatcherEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCWatcherEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCWatcherEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Watcher)(IRTCWatcherEvent *This,IRTCWatcher **ppWatcher);
+                   HRESULT (WINAPI *QueryInterface)(IRTCWatcherEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCWatcherEvent *This);
+                   ULONG (WINAPI *Release)(IRTCWatcherEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCWatcherEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCWatcherEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCWatcherEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCWatcherEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Watcher)(IRTCWatcherEvent *This,IRTCWatcher **ppWatcher);
     END_INTERFACE
   } IRTCWatcherEventVtbl;
   struct IRTCWatcherEvent {
@@ -3047,16 +3047,16 @@ extern "C" {
 #else
   typedef struct IRTCWatcherEvent2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCWatcherEvent2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCWatcherEvent2 *This);
-      ULONG (WINAPI *Release)(IRTCWatcherEvent2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCWatcherEvent2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCWatcherEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCWatcherEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCWatcherEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Watcher)(IRTCWatcherEvent2 *This,IRTCWatcher **ppWatcher);
-      HRESULT (WINAPI *get_EventType)(IRTCWatcherEvent2 *This,RTC_WATCHER_EVENT_TYPE *pEventType);
-      HRESULT (WINAPI *get_StatusCode)(IRTCWatcherEvent2 *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *QueryInterface)(IRTCWatcherEvent2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCWatcherEvent2 *This);
+                   ULONG (WINAPI *Release)(IRTCWatcherEvent2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCWatcherEvent2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCWatcherEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCWatcherEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCWatcherEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Watcher)(IRTCWatcherEvent2 *This,IRTCWatcher **ppWatcher);
+                   HRESULT (WINAPI *get_EventType)(IRTCWatcherEvent2 *This,RTC_WATCHER_EVENT_TYPE *pEventType);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCWatcherEvent2 *This,__LONG32 *plStatusCode);
     END_INTERFACE
   } IRTCWatcherEvent2Vtbl;
   struct IRTCWatcherEvent2 {
@@ -3095,17 +3095,17 @@ extern "C" {
 #else
   typedef struct IRTCBuddyGroupEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCBuddyGroupEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCBuddyGroupEvent *This);
-      ULONG (WINAPI *Release)(IRTCBuddyGroupEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCBuddyGroupEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCBuddyGroupEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCBuddyGroupEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCBuddyGroupEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_EventType)(IRTCBuddyGroupEvent *This,RTC_GROUP_EVENT_TYPE *pEventType);
-      HRESULT (WINAPI *get_Group)(IRTCBuddyGroupEvent *This,IRTCBuddyGroup **ppGroup);
-      HRESULT (WINAPI *get_Buddy)(IRTCBuddyGroupEvent *This,IRTCBuddy2 **ppBuddy);
-      HRESULT (WINAPI *get_StatusCode)(IRTCBuddyGroupEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *QueryInterface)(IRTCBuddyGroupEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCBuddyGroupEvent *This);
+                   ULONG (WINAPI *Release)(IRTCBuddyGroupEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCBuddyGroupEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCBuddyGroupEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCBuddyGroupEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCBuddyGroupEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_EventType)(IRTCBuddyGroupEvent *This,RTC_GROUP_EVENT_TYPE *pEventType);
+                   HRESULT (WINAPI *get_Group)(IRTCBuddyGroupEvent *This,IRTCBuddyGroup **ppGroup);
+                   HRESULT (WINAPI *get_Buddy)(IRTCBuddyGroupEvent *This,IRTCBuddy2 **ppBuddy);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCBuddyGroupEvent *This,__LONG32 *plStatusCode);
     END_INTERFACE
   } IRTCBuddyGroupEventVtbl;
   struct IRTCBuddyGroupEvent {
@@ -3149,17 +3149,17 @@ extern "C" {
 #else
   typedef struct IRTCInfoEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCInfoEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCInfoEvent *This);
-      ULONG (WINAPI *Release)(IRTCInfoEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCInfoEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCInfoEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCInfoEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCInfoEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCInfoEvent *This,IRTCSession2 **ppSession);
-      HRESULT (WINAPI *get_Participant)(IRTCInfoEvent *This,IRTCParticipant **ppParticipant);
-      HRESULT (WINAPI *get_Info)(IRTCInfoEvent *This,BSTR *pbstrInfo);
-      HRESULT (WINAPI *get_InfoHeader)(IRTCInfoEvent *This,BSTR *pbstrInfoHeader);
+                   HRESULT (WINAPI *QueryInterface)(IRTCInfoEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCInfoEvent *This);
+                   ULONG (WINAPI *Release)(IRTCInfoEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCInfoEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCInfoEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCInfoEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCInfoEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCInfoEvent *This,IRTCSession2 **ppSession);
+                   HRESULT (WINAPI *get_Participant)(IRTCInfoEvent *This,IRTCParticipant **ppParticipant);
+                   HRESULT (WINAPI *get_Info)(IRTCInfoEvent *This,BSTR *pbstrInfo);
+                   HRESULT (WINAPI *get_InfoHeader)(IRTCInfoEvent *This,BSTR *pbstrInfoHeader);
     END_INTERFACE
   } IRTCInfoEventVtbl;
   struct IRTCInfoEvent {
@@ -3206,20 +3206,20 @@ extern "C" {
 #else
   typedef struct IRTCMediaRequestEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCMediaRequestEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCMediaRequestEvent *This);
-      ULONG (WINAPI *Release)(IRTCMediaRequestEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCMediaRequestEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCMediaRequestEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCMediaRequestEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCMediaRequestEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCMediaRequestEvent *This,IRTCSession2 **ppSession);
-      HRESULT (WINAPI *get_ProposedMedia)(IRTCMediaRequestEvent *This,__LONG32 *plMediaTypes);
-      HRESULT (WINAPI *get_CurrentMedia)(IRTCMediaRequestEvent *This,__LONG32 *plMediaTypes);
-      HRESULT (WINAPI *Accept)(IRTCMediaRequestEvent *This,__LONG32 lMediaTypes);
-      HRESULT (WINAPI *get_RemotePreferredSecurityLevel)(IRTCMediaRequestEvent *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL *penSecurityLevel);
-      HRESULT (WINAPI *Reject)(IRTCMediaRequestEvent *This);
-      HRESULT (WINAPI *get_State)(IRTCMediaRequestEvent *This,RTC_REINVITE_STATE *pState);
+                   HRESULT (WINAPI *QueryInterface)(IRTCMediaRequestEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCMediaRequestEvent *This);
+                   ULONG (WINAPI *Release)(IRTCMediaRequestEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCMediaRequestEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCMediaRequestEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCMediaRequestEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCMediaRequestEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCMediaRequestEvent *This,IRTCSession2 **ppSession);
+                   HRESULT (WINAPI *get_ProposedMedia)(IRTCMediaRequestEvent *This,__LONG32 *plMediaTypes);
+                   HRESULT (WINAPI *get_CurrentMedia)(IRTCMediaRequestEvent *This,__LONG32 *plMediaTypes);
+                   HRESULT (WINAPI *Accept)(IRTCMediaRequestEvent *This,__LONG32 lMediaTypes);
+                   HRESULT (WINAPI *get_RemotePreferredSecurityLevel)(IRTCMediaRequestEvent *This,RTC_SECURITY_TYPE enSecurityType,RTC_SECURITY_LEVEL *penSecurityLevel);
+                   HRESULT (WINAPI *Reject)(IRTCMediaRequestEvent *This);
+                   HRESULT (WINAPI *get_State)(IRTCMediaRequestEvent *This,RTC_REINVITE_STATE *pState);
     END_INTERFACE
   } IRTCMediaRequestEventVtbl;
   struct IRTCMediaRequestEvent {
@@ -3273,18 +3273,18 @@ extern "C" {
 #else
   typedef struct IRTCReInviteEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCReInviteEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCReInviteEvent *This);
-      ULONG (WINAPI *Release)(IRTCReInviteEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCReInviteEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCReInviteEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCReInviteEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCReInviteEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCReInviteEvent *This,IRTCSession2 **ppSession2);
-      HRESULT (WINAPI *Accept)(IRTCReInviteEvent *This,BSTR bstrContentType,BSTR bstrSessionDescription);
-      HRESULT (WINAPI *Reject)(IRTCReInviteEvent *This);
-      HRESULT (WINAPI *get_State)(IRTCReInviteEvent *This,RTC_REINVITE_STATE *pState);
-      HRESULT (WINAPI *GetRemoteSessionDescription)(IRTCReInviteEvent *This,BSTR *pbstrContentType,BSTR *pbstrSessionDescription);
+                   HRESULT (WINAPI *QueryInterface)(IRTCReInviteEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCReInviteEvent *This);
+                   ULONG (WINAPI *Release)(IRTCReInviteEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCReInviteEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCReInviteEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCReInviteEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCReInviteEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCReInviteEvent *This,IRTCSession2 **ppSession2);
+                   HRESULT (WINAPI *Accept)(IRTCReInviteEvent *This,BSTR bstrContentType,BSTR bstrSessionDescription);
+                   HRESULT (WINAPI *Reject)(IRTCReInviteEvent *This);
+                   HRESULT (WINAPI *get_State)(IRTCReInviteEvent *This,RTC_REINVITE_STATE *pState);
+                   HRESULT (WINAPI *GetRemoteSessionDescription)(IRTCReInviteEvent *This,BSTR *pbstrContentType,BSTR *pbstrSessionDescription);
     END_INTERFACE
   } IRTCReInviteEventVtbl;
   struct IRTCReInviteEvent {
@@ -3331,17 +3331,17 @@ extern "C" {
 #else
   typedef struct IRTCPresencePropertyEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCPresencePropertyEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCPresencePropertyEvent *This);
-      ULONG (WINAPI *Release)(IRTCPresencePropertyEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCPresencePropertyEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCPresencePropertyEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCPresencePropertyEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCPresencePropertyEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_StatusCode)(IRTCPresencePropertyEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCPresencePropertyEvent *This,BSTR *pbstrStatusText);
-      HRESULT (WINAPI *get_PresenceProperty)(IRTCPresencePropertyEvent *This,RTC_PRESENCE_PROPERTY *penPresProp);
-      HRESULT (WINAPI *get_Value)(IRTCPresencePropertyEvent *This,BSTR *pbstrValue);
+                   HRESULT (WINAPI *QueryInterface)(IRTCPresencePropertyEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCPresencePropertyEvent *This);
+                   ULONG (WINAPI *Release)(IRTCPresencePropertyEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCPresencePropertyEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCPresencePropertyEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCPresencePropertyEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCPresencePropertyEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCPresencePropertyEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCPresencePropertyEvent *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *get_PresenceProperty)(IRTCPresencePropertyEvent *This,RTC_PRESENCE_PROPERTY *penPresProp);
+                   HRESULT (WINAPI *get_Value)(IRTCPresencePropertyEvent *This,BSTR *pbstrValue);
     END_INTERFACE
   } IRTCPresencePropertyEventVtbl;
   struct IRTCPresencePropertyEvent {
@@ -3384,16 +3384,16 @@ extern "C" {
 #else
   typedef struct IRTCPresenceDataEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCPresenceDataEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCPresenceDataEvent *This);
-      ULONG (WINAPI *Release)(IRTCPresenceDataEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCPresenceDataEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCPresenceDataEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCPresenceDataEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCPresenceDataEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_StatusCode)(IRTCPresenceDataEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCPresenceDataEvent *This,BSTR *pbstrStatusText);
-      HRESULT (WINAPI *GetPresenceData)(IRTCPresenceDataEvent *This,BSTR *pbstrNamespace,BSTR *pbstrData);
+                   HRESULT (WINAPI *QueryInterface)(IRTCPresenceDataEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCPresenceDataEvent *This);
+                   ULONG (WINAPI *Release)(IRTCPresenceDataEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCPresenceDataEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCPresenceDataEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCPresenceDataEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCPresenceDataEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCPresenceDataEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCPresenceDataEvent *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *GetPresenceData)(IRTCPresenceDataEvent *This,BSTR *pbstrNamespace,BSTR *pbstrData);
     END_INTERFACE
   } IRTCPresenceDataEventVtbl;
   struct IRTCPresenceDataEvent {
@@ -3433,16 +3433,16 @@ extern "C" {
 #else
   typedef struct IRTCPresenceStatusEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCPresenceStatusEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCPresenceStatusEvent *This);
-      ULONG (WINAPI *Release)(IRTCPresenceStatusEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCPresenceStatusEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCPresenceStatusEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCPresenceStatusEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCPresenceStatusEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_StatusCode)(IRTCPresenceStatusEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCPresenceStatusEvent *This,BSTR *pbstrStatusText);
-      HRESULT (WINAPI *GetLocalPresenceInfo)(IRTCPresenceStatusEvent *This,RTC_PRESENCE_STATUS *penStatus,BSTR *pbstrNotes);
+                   HRESULT (WINAPI *QueryInterface)(IRTCPresenceStatusEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCPresenceStatusEvent *This);
+                   ULONG (WINAPI *Release)(IRTCPresenceStatusEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCPresenceStatusEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCPresenceStatusEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCPresenceStatusEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCPresenceStatusEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCPresenceStatusEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCPresenceStatusEvent *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *GetLocalPresenceInfo)(IRTCPresenceStatusEvent *This,RTC_PRESENCE_STATUS *penStatus,BSTR *pbstrNotes);
     END_INTERFACE
   } IRTCPresenceStatusEventVtbl;
   struct IRTCPresenceStatusEvent {
@@ -3482,16 +3482,16 @@ extern "C" {
 #else
   typedef struct IRTCCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCCollection *This);
-      ULONG (WINAPI *Release)(IRTCCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IRTCCollection *This,__LONG32 *lCount);
-      HRESULT (WINAPI *get_Item)(IRTCCollection *This,__LONG32 Index,VARIANT *pVariant);
-      HRESULT (WINAPI *get__NewEnum)(IRTCCollection *This,IUnknown **ppNewEnum);
+                   HRESULT (WINAPI *QueryInterface)(IRTCCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCCollection *This);
+                   ULONG (WINAPI *Release)(IRTCCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IRTCCollection *This,__LONG32 *lCount);
+                   HRESULT (WINAPI *get_Item)(IRTCCollection *This,__LONG32 Index,VARIANT *pVariant);
+                   HRESULT (WINAPI *get__NewEnum)(IRTCCollection *This,IUnknown **ppNewEnum);
     END_INTERFACE
   } IRTCCollectionVtbl;
   struct IRTCCollection {
@@ -3532,13 +3532,13 @@ extern "C" {
 #else
   typedef struct IRTCEnumParticipantsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCEnumParticipants *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCEnumParticipants *This);
-      ULONG (WINAPI *Release)(IRTCEnumParticipants *This);
-      HRESULT (WINAPI *Next)(IRTCEnumParticipants *This,ULONG celt,IRTCParticipant **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IRTCEnumParticipants *This);
-      HRESULT (WINAPI *Skip)(IRTCEnumParticipants *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IRTCEnumParticipants *This,IRTCEnumParticipants **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IRTCEnumParticipants *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCEnumParticipants *This);
+                   ULONG (WINAPI *Release)(IRTCEnumParticipants *This);
+                   HRESULT (WINAPI *Next)(IRTCEnumParticipants *This,ULONG celt,IRTCParticipant **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IRTCEnumParticipants *This);
+                   HRESULT (WINAPI *Skip)(IRTCEnumParticipants *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IRTCEnumParticipants *This,IRTCEnumParticipants **ppEnum);
     END_INTERFACE
   } IRTCEnumParticipantsVtbl;
   struct IRTCEnumParticipants {
@@ -3578,13 +3578,13 @@ extern "C" {
 #else
   typedef struct IRTCEnumProfilesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCEnumProfiles *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCEnumProfiles *This);
-      ULONG (WINAPI *Release)(IRTCEnumProfiles *This);
-      HRESULT (WINAPI *Next)(IRTCEnumProfiles *This,ULONG celt,IRTCProfile **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IRTCEnumProfiles *This);
-      HRESULT (WINAPI *Skip)(IRTCEnumProfiles *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IRTCEnumProfiles *This,IRTCEnumProfiles **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IRTCEnumProfiles *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCEnumProfiles *This);
+                   ULONG (WINAPI *Release)(IRTCEnumProfiles *This);
+                   HRESULT (WINAPI *Next)(IRTCEnumProfiles *This,ULONG celt,IRTCProfile **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IRTCEnumProfiles *This);
+                   HRESULT (WINAPI *Skip)(IRTCEnumProfiles *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IRTCEnumProfiles *This,IRTCEnumProfiles **ppEnum);
     END_INTERFACE
   } IRTCEnumProfilesVtbl;
   struct IRTCEnumProfiles {
@@ -3624,13 +3624,13 @@ extern "C" {
 #else
   typedef struct IRTCEnumBuddiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCEnumBuddies *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCEnumBuddies *This);
-      ULONG (WINAPI *Release)(IRTCEnumBuddies *This);
-      HRESULT (WINAPI *Next)(IRTCEnumBuddies *This,ULONG celt,IRTCBuddy **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IRTCEnumBuddies *This);
-      HRESULT (WINAPI *Skip)(IRTCEnumBuddies *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IRTCEnumBuddies *This,IRTCEnumBuddies **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IRTCEnumBuddies *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCEnumBuddies *This);
+                   ULONG (WINAPI *Release)(IRTCEnumBuddies *This);
+                   HRESULT (WINAPI *Next)(IRTCEnumBuddies *This,ULONG celt,IRTCBuddy **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IRTCEnumBuddies *This);
+                   HRESULT (WINAPI *Skip)(IRTCEnumBuddies *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IRTCEnumBuddies *This,IRTCEnumBuddies **ppEnum);
     END_INTERFACE
   } IRTCEnumBuddiesVtbl;
   struct IRTCEnumBuddies {
@@ -3670,13 +3670,13 @@ extern "C" {
 #else
   typedef struct IRTCEnumWatchersVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCEnumWatchers *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCEnumWatchers *This);
-      ULONG (WINAPI *Release)(IRTCEnumWatchers *This);
-      HRESULT (WINAPI *Next)(IRTCEnumWatchers *This,ULONG celt,IRTCWatcher **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IRTCEnumWatchers *This);
-      HRESULT (WINAPI *Skip)(IRTCEnumWatchers *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IRTCEnumWatchers *This,IRTCEnumWatchers **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IRTCEnumWatchers *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCEnumWatchers *This);
+                   ULONG (WINAPI *Release)(IRTCEnumWatchers *This);
+                   HRESULT (WINAPI *Next)(IRTCEnumWatchers *This,ULONG celt,IRTCWatcher **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IRTCEnumWatchers *This);
+                   HRESULT (WINAPI *Skip)(IRTCEnumWatchers *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IRTCEnumWatchers *This,IRTCEnumWatchers **ppEnum);
     END_INTERFACE
   } IRTCEnumWatchersVtbl;
   struct IRTCEnumWatchers {
@@ -3716,13 +3716,13 @@ extern "C" {
 #else
   typedef struct IRTCEnumGroupsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCEnumGroups *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCEnumGroups *This);
-      ULONG (WINAPI *Release)(IRTCEnumGroups *This);
-      HRESULT (WINAPI *Next)(IRTCEnumGroups *This,ULONG celt,IRTCBuddyGroup **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IRTCEnumGroups *This);
-      HRESULT (WINAPI *Skip)(IRTCEnumGroups *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IRTCEnumGroups *This,IRTCEnumGroups **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IRTCEnumGroups *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCEnumGroups *This);
+                   ULONG (WINAPI *Release)(IRTCEnumGroups *This);
+                   HRESULT (WINAPI *Next)(IRTCEnumGroups *This,ULONG celt,IRTCBuddyGroup **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IRTCEnumGroups *This);
+                   HRESULT (WINAPI *Skip)(IRTCEnumGroups *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IRTCEnumGroups *This,IRTCEnumGroups **ppEnum);
     END_INTERFACE
   } IRTCEnumGroupsVtbl;
   struct IRTCEnumGroups {
@@ -3765,17 +3765,17 @@ extern "C" {
 #else
   typedef struct IRTCPresenceContactVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCPresenceContact *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCPresenceContact *This);
-      ULONG (WINAPI *Release)(IRTCPresenceContact *This);
-      HRESULT (WINAPI *get_PresentityURI)(IRTCPresenceContact *This,BSTR *pbstrPresentityURI);
-      HRESULT (WINAPI *put_PresentityURI)(IRTCPresenceContact *This,BSTR bstrPresentityURI);
-      HRESULT (WINAPI *get_Name)(IRTCPresenceContact *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IRTCPresenceContact *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Data)(IRTCPresenceContact *This,BSTR *pbstrData);
-      HRESULT (WINAPI *put_Data)(IRTCPresenceContact *This,BSTR bstrData);
-      HRESULT (WINAPI *get_Persistent)(IRTCPresenceContact *This,VARIANT_BOOL *pfPersistent);
-      HRESULT (WINAPI *put_Persistent)(IRTCPresenceContact *This,VARIANT_BOOL fPersistent);
+                   HRESULT (WINAPI *QueryInterface)(IRTCPresenceContact *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCPresenceContact *This);
+                   ULONG (WINAPI *Release)(IRTCPresenceContact *This);
+                   HRESULT (WINAPI *get_PresentityURI)(IRTCPresenceContact *This,BSTR *pbstrPresentityURI);
+                   HRESULT (WINAPI *put_PresentityURI)(IRTCPresenceContact *This,BSTR bstrPresentityURI);
+                   HRESULT (WINAPI *get_Name)(IRTCPresenceContact *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IRTCPresenceContact *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Data)(IRTCPresenceContact *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *put_Data)(IRTCPresenceContact *This,BSTR bstrData);
+                   HRESULT (WINAPI *get_Persistent)(IRTCPresenceContact *This,VARIANT_BOOL *pfPersistent);
+                   HRESULT (WINAPI *put_Persistent)(IRTCPresenceContact *This,VARIANT_BOOL fPersistent);
     END_INTERFACE
   } IRTCPresenceContactVtbl;
   struct IRTCPresenceContact {
@@ -3825,19 +3825,19 @@ extern "C" {
 #else
   typedef struct IRTCBuddyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCBuddy *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCBuddy *This);
-      ULONG (WINAPI *Release)(IRTCBuddy *This);
-      HRESULT (WINAPI *get_PresentityURI)(IRTCBuddy *This,BSTR *pbstrPresentityURI);
-      HRESULT (WINAPI *put_PresentityURI)(IRTCBuddy *This,BSTR bstrPresentityURI);
-      HRESULT (WINAPI *get_Name)(IRTCBuddy *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IRTCBuddy *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Data)(IRTCBuddy *This,BSTR *pbstrData);
-      HRESULT (WINAPI *put_Data)(IRTCBuddy *This,BSTR bstrData);
-      HRESULT (WINAPI *get_Persistent)(IRTCBuddy *This,VARIANT_BOOL *pfPersistent);
-      HRESULT (WINAPI *put_Persistent)(IRTCBuddy *This,VARIANT_BOOL fPersistent);
-      HRESULT (WINAPI *get_Status)(IRTCBuddy *This,RTC_PRESENCE_STATUS *penStatus);
-      HRESULT (WINAPI *get_Notes)(IRTCBuddy *This,BSTR *pbstrNotes);
+                   HRESULT (WINAPI *QueryInterface)(IRTCBuddy *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCBuddy *This);
+                   ULONG (WINAPI *Release)(IRTCBuddy *This);
+                   HRESULT (WINAPI *get_PresentityURI)(IRTCBuddy *This,BSTR *pbstrPresentityURI);
+                   HRESULT (WINAPI *put_PresentityURI)(IRTCBuddy *This,BSTR bstrPresentityURI);
+                   HRESULT (WINAPI *get_Name)(IRTCBuddy *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IRTCBuddy *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Data)(IRTCBuddy *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *put_Data)(IRTCBuddy *This,BSTR bstrData);
+                   HRESULT (WINAPI *get_Persistent)(IRTCBuddy *This,VARIANT_BOOL *pfPersistent);
+                   HRESULT (WINAPI *put_Persistent)(IRTCBuddy *This,VARIANT_BOOL fPersistent);
+                   HRESULT (WINAPI *get_Status)(IRTCBuddy *This,RTC_PRESENCE_STATUS *penStatus);
+                   HRESULT (WINAPI *get_Notes)(IRTCBuddy *This,BSTR *pbstrNotes);
     END_INTERFACE
   } IRTCBuddyVtbl;
   struct IRTCBuddy {
@@ -3883,27 +3883,27 @@ extern "C" {
 #else
   typedef struct IRTCBuddy2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCBuddy2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCBuddy2 *This);
-      ULONG (WINAPI *Release)(IRTCBuddy2 *This);
-      HRESULT (WINAPI *get_PresentityURI)(IRTCBuddy2 *This,BSTR *pbstrPresentityURI);
-      HRESULT (WINAPI *put_PresentityURI)(IRTCBuddy2 *This,BSTR bstrPresentityURI);
-      HRESULT (WINAPI *get_Name)(IRTCBuddy2 *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IRTCBuddy2 *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Data)(IRTCBuddy2 *This,BSTR *pbstrData);
-      HRESULT (WINAPI *put_Data)(IRTCBuddy2 *This,BSTR bstrData);
-      HRESULT (WINAPI *get_Persistent)(IRTCBuddy2 *This,VARIANT_BOOL *pfPersistent);
-      HRESULT (WINAPI *put_Persistent)(IRTCBuddy2 *This,VARIANT_BOOL fPersistent);
-      HRESULT (WINAPI *get_Status)(IRTCBuddy2 *This,RTC_PRESENCE_STATUS *penStatus);
-      HRESULT (WINAPI *get_Notes)(IRTCBuddy2 *This,BSTR *pbstrNotes);
-      HRESULT (WINAPI *get_Profile)(IRTCBuddy2 *This,IRTCProfile2 **ppProfile);
-      HRESULT (WINAPI *Refresh)(IRTCBuddy2 *This);
-      HRESULT (WINAPI *EnumerateGroups)(IRTCBuddy2 *This,IRTCEnumGroups **ppEnum);
-      HRESULT (WINAPI *get_Groups)(IRTCBuddy2 *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *get_PresenceProperty)(IRTCBuddy2 *This,RTC_PRESENCE_PROPERTY enProperty,BSTR *pbstrProperty);
-      HRESULT (WINAPI *EnumeratePresenceDevices)(IRTCBuddy2 *This,IRTCEnumPresenceDevices **ppEnumDevices);
-      HRESULT (WINAPI *get_PresenceDevices)(IRTCBuddy2 *This,IRTCCollection **ppDevicesCollection);
-      HRESULT (WINAPI *get_SubscriptionType)(IRTCBuddy2 *This,RTC_BUDDY_SUBSCRIPTION_TYPE *penSubscriptionType);
+                   HRESULT (WINAPI *QueryInterface)(IRTCBuddy2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCBuddy2 *This);
+                   ULONG (WINAPI *Release)(IRTCBuddy2 *This);
+                   HRESULT (WINAPI *get_PresentityURI)(IRTCBuddy2 *This,BSTR *pbstrPresentityURI);
+                   HRESULT (WINAPI *put_PresentityURI)(IRTCBuddy2 *This,BSTR bstrPresentityURI);
+                   HRESULT (WINAPI *get_Name)(IRTCBuddy2 *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IRTCBuddy2 *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Data)(IRTCBuddy2 *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *put_Data)(IRTCBuddy2 *This,BSTR bstrData);
+                   HRESULT (WINAPI *get_Persistent)(IRTCBuddy2 *This,VARIANT_BOOL *pfPersistent);
+                   HRESULT (WINAPI *put_Persistent)(IRTCBuddy2 *This,VARIANT_BOOL fPersistent);
+                   HRESULT (WINAPI *get_Status)(IRTCBuddy2 *This,RTC_PRESENCE_STATUS *penStatus);
+                   HRESULT (WINAPI *get_Notes)(IRTCBuddy2 *This,BSTR *pbstrNotes);
+                   HRESULT (WINAPI *get_Profile)(IRTCBuddy2 *This,IRTCProfile2 **ppProfile);
+                   HRESULT (WINAPI *Refresh)(IRTCBuddy2 *This);
+                   HRESULT (WINAPI *EnumerateGroups)(IRTCBuddy2 *This,IRTCEnumGroups **ppEnum);
+                   HRESULT (WINAPI *get_Groups)(IRTCBuddy2 *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *get_PresenceProperty)(IRTCBuddy2 *This,RTC_PRESENCE_PROPERTY enProperty,BSTR *pbstrProperty);
+                   HRESULT (WINAPI *EnumeratePresenceDevices)(IRTCBuddy2 *This,IRTCEnumPresenceDevices **ppEnumDevices);
+                   HRESULT (WINAPI *get_PresenceDevices)(IRTCBuddy2 *This,IRTCCollection **ppDevicesCollection);
+                   HRESULT (WINAPI *get_SubscriptionType)(IRTCBuddy2 *This,RTC_BUDDY_SUBSCRIPTION_TYPE *penSubscriptionType);
     END_INTERFACE
   } IRTCBuddy2Vtbl;
   struct IRTCBuddy2 {
@@ -3963,19 +3963,19 @@ extern "C" {
 #else
   typedef struct IRTCWatcherVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCWatcher *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCWatcher *This);
-      ULONG (WINAPI *Release)(IRTCWatcher *This);
-      HRESULT (WINAPI *get_PresentityURI)(IRTCWatcher *This,BSTR *pbstrPresentityURI);
-      HRESULT (WINAPI *put_PresentityURI)(IRTCWatcher *This,BSTR bstrPresentityURI);
-      HRESULT (WINAPI *get_Name)(IRTCWatcher *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IRTCWatcher *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Data)(IRTCWatcher *This,BSTR *pbstrData);
-      HRESULT (WINAPI *put_Data)(IRTCWatcher *This,BSTR bstrData);
-      HRESULT (WINAPI *get_Persistent)(IRTCWatcher *This,VARIANT_BOOL *pfPersistent);
-      HRESULT (WINAPI *put_Persistent)(IRTCWatcher *This,VARIANT_BOOL fPersistent);
-      HRESULT (WINAPI *get_State)(IRTCWatcher *This,RTC_WATCHER_STATE *penState);
-      HRESULT (WINAPI *put_State)(IRTCWatcher *This,RTC_WATCHER_STATE enState);
+                   HRESULT (WINAPI *QueryInterface)(IRTCWatcher *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCWatcher *This);
+                   ULONG (WINAPI *Release)(IRTCWatcher *This);
+                   HRESULT (WINAPI *get_PresentityURI)(IRTCWatcher *This,BSTR *pbstrPresentityURI);
+                   HRESULT (WINAPI *put_PresentityURI)(IRTCWatcher *This,BSTR bstrPresentityURI);
+                   HRESULT (WINAPI *get_Name)(IRTCWatcher *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IRTCWatcher *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Data)(IRTCWatcher *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *put_Data)(IRTCWatcher *This,BSTR bstrData);
+                   HRESULT (WINAPI *get_Persistent)(IRTCWatcher *This,VARIANT_BOOL *pfPersistent);
+                   HRESULT (WINAPI *put_Persistent)(IRTCWatcher *This,VARIANT_BOOL fPersistent);
+                   HRESULT (WINAPI *get_State)(IRTCWatcher *This,RTC_WATCHER_STATE *penState);
+                   HRESULT (WINAPI *put_State)(IRTCWatcher *This,RTC_WATCHER_STATE enState);
     END_INTERFACE
   } IRTCWatcherVtbl;
   struct IRTCWatcher {
@@ -4015,21 +4015,21 @@ extern "C" {
 #else
   typedef struct IRTCWatcher2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCWatcher2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCWatcher2 *This);
-      ULONG (WINAPI *Release)(IRTCWatcher2 *This);
-      HRESULT (WINAPI *get_PresentityURI)(IRTCWatcher2 *This,BSTR *pbstrPresentityURI);
-      HRESULT (WINAPI *put_PresentityURI)(IRTCWatcher2 *This,BSTR bstrPresentityURI);
-      HRESULT (WINAPI *get_Name)(IRTCWatcher2 *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IRTCWatcher2 *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Data)(IRTCWatcher2 *This,BSTR *pbstrData);
-      HRESULT (WINAPI *put_Data)(IRTCWatcher2 *This,BSTR bstrData);
-      HRESULT (WINAPI *get_Persistent)(IRTCWatcher2 *This,VARIANT_BOOL *pfPersistent);
-      HRESULT (WINAPI *put_Persistent)(IRTCWatcher2 *This,VARIANT_BOOL fPersistent);
-      HRESULT (WINAPI *get_State)(IRTCWatcher2 *This,RTC_WATCHER_STATE *penState);
-      HRESULT (WINAPI *put_State)(IRTCWatcher2 *This,RTC_WATCHER_STATE enState);
-      HRESULT (WINAPI *get_Profile)(IRTCWatcher2 *This,IRTCProfile2 **ppProfile);
-      HRESULT (WINAPI *get_Scope)(IRTCWatcher2 *This,RTC_ACE_SCOPE *penScope);
+                   HRESULT (WINAPI *QueryInterface)(IRTCWatcher2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCWatcher2 *This);
+                   ULONG (WINAPI *Release)(IRTCWatcher2 *This);
+                   HRESULT (WINAPI *get_PresentityURI)(IRTCWatcher2 *This,BSTR *pbstrPresentityURI);
+                   HRESULT (WINAPI *put_PresentityURI)(IRTCWatcher2 *This,BSTR bstrPresentityURI);
+                   HRESULT (WINAPI *get_Name)(IRTCWatcher2 *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IRTCWatcher2 *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Data)(IRTCWatcher2 *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *put_Data)(IRTCWatcher2 *This,BSTR bstrData);
+                   HRESULT (WINAPI *get_Persistent)(IRTCWatcher2 *This,VARIANT_BOOL *pfPersistent);
+                   HRESULT (WINAPI *put_Persistent)(IRTCWatcher2 *This,VARIANT_BOOL fPersistent);
+                   HRESULT (WINAPI *get_State)(IRTCWatcher2 *This,RTC_WATCHER_STATE *penState);
+                   HRESULT (WINAPI *put_State)(IRTCWatcher2 *This,RTC_WATCHER_STATE enState);
+                   HRESULT (WINAPI *get_Profile)(IRTCWatcher2 *This,IRTCProfile2 **ppProfile);
+                   HRESULT (WINAPI *get_Scope)(IRTCWatcher2 *This,RTC_ACE_SCOPE *penScope);
     END_INTERFACE
   } IRTCWatcher2Vtbl;
   struct IRTCWatcher2 {
@@ -4078,18 +4078,18 @@ extern "C" {
 #else
   typedef struct IRTCBuddyGroupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCBuddyGroup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCBuddyGroup *This);
-      ULONG (WINAPI *Release)(IRTCBuddyGroup *This);
-      HRESULT (WINAPI *get_Name)(IRTCBuddyGroup *This,BSTR *pbstrGroupName);
-      HRESULT (WINAPI *put_Name)(IRTCBuddyGroup *This,BSTR bstrGroupName);
-      HRESULT (WINAPI *AddBuddy)(IRTCBuddyGroup *This,IRTCBuddy *pBuddy);
-      HRESULT (WINAPI *RemoveBuddy)(IRTCBuddyGroup *This,IRTCBuddy *pBuddy);
-      HRESULT (WINAPI *EnumerateBuddies)(IRTCBuddyGroup *This,IRTCEnumBuddies **ppEnum);
-      HRESULT (WINAPI *get_Buddies)(IRTCBuddyGroup *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *get_Data)(IRTCBuddyGroup *This,BSTR *pbstrData);
-      HRESULT (WINAPI *put_Data)(IRTCBuddyGroup *This,BSTR bstrData);
-      HRESULT (WINAPI *get_Profile)(IRTCBuddyGroup *This,IRTCProfile2 **ppProfile);
+                   HRESULT (WINAPI *QueryInterface)(IRTCBuddyGroup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCBuddyGroup *This);
+                   ULONG (WINAPI *Release)(IRTCBuddyGroup *This);
+                   HRESULT (WINAPI *get_Name)(IRTCBuddyGroup *This,BSTR *pbstrGroupName);
+                   HRESULT (WINAPI *put_Name)(IRTCBuddyGroup *This,BSTR bstrGroupName);
+                   HRESULT (WINAPI *AddBuddy)(IRTCBuddyGroup *This,IRTCBuddy *pBuddy);
+                   HRESULT (WINAPI *RemoveBuddy)(IRTCBuddyGroup *This,IRTCBuddy *pBuddy);
+                   HRESULT (WINAPI *EnumerateBuddies)(IRTCBuddyGroup *This,IRTCEnumBuddies **ppEnum);
+                   HRESULT (WINAPI *get_Buddies)(IRTCBuddyGroup *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *get_Data)(IRTCBuddyGroup *This,BSTR *pbstrData);
+                   HRESULT (WINAPI *put_Data)(IRTCBuddyGroup *This,BSTR bstrData);
+                   HRESULT (WINAPI *get_Profile)(IRTCBuddyGroup *This,IRTCProfile2 **ppProfile);
     END_INTERFACE
   } IRTCBuddyGroupVtbl;
   struct IRTCBuddyGroup {
@@ -4141,10 +4141,10 @@ extern "C" {
 #else
   typedef struct IRTCEventNotificationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCEventNotification *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCEventNotification *This);
-      ULONG (WINAPI *Release)(IRTCEventNotification *This);
-      HRESULT (WINAPI *Event)(IRTCEventNotification *This,RTC_EVENT RTCEvent,IDispatch *pEvent);
+                   HRESULT (WINAPI *QueryInterface)(IRTCEventNotification *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCEventNotification *This);
+                   ULONG (WINAPI *Release)(IRTCEventNotification *This);
+                   HRESULT (WINAPI *Event)(IRTCEventNotification *This,RTC_EVENT RTCEvent,IDispatch *pEvent);
     END_INTERFACE
   } IRTCEventNotificationVtbl;
   struct IRTCEventNotification {
@@ -4174,12 +4174,12 @@ extern "C" {
 #else
   typedef struct IRTCPortManagerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCPortManager *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCPortManager *This);
-      ULONG (WINAPI *Release)(IRTCPortManager *This);
-      HRESULT (WINAPI *GetMapping)(IRTCPortManager *This,BSTR bstrRemoteAddress,RTC_PORT_TYPE enPortType,BSTR *pbstrInternalLocalAddress,__LONG32 *plInternalLocalPort,BSTR *pbstrExternalLocalAddress,__LONG32 *plExternalLocalPort);
-      HRESULT (WINAPI *UpdateRemoteAddress)(IRTCPortManager *This,BSTR bstrRemoteAddress,BSTR bstrInternalLocalAddress,__LONG32 lInternalLocalPort,BSTR bstrExternalLocalAddress,__LONG32 lExternalLocalPort);
-      HRESULT (WINAPI *ReleaseMapping)(IRTCPortManager *This,BSTR bstrInternalLocalAddress,__LONG32 lInternalLocalPort,BSTR bstrExternalLocalAddress,__LONG32 lExternalLocalAddress);
+                   HRESULT (WINAPI *QueryInterface)(IRTCPortManager *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCPortManager *This);
+                   ULONG (WINAPI *Release)(IRTCPortManager *This);
+                   HRESULT (WINAPI *GetMapping)(IRTCPortManager *This,BSTR bstrRemoteAddress,RTC_PORT_TYPE enPortType,BSTR *pbstrInternalLocalAddress,__LONG32 *plInternalLocalPort,BSTR *pbstrExternalLocalAddress,__LONG32 *plExternalLocalPort);
+                   HRESULT (WINAPI *UpdateRemoteAddress)(IRTCPortManager *This,BSTR bstrRemoteAddress,BSTR bstrInternalLocalAddress,__LONG32 lInternalLocalPort,BSTR bstrExternalLocalAddress,__LONG32 lExternalLocalPort);
+                   HRESULT (WINAPI *ReleaseMapping)(IRTCPortManager *This,BSTR bstrInternalLocalAddress,__LONG32 lInternalLocalPort,BSTR bstrExternalLocalAddress,__LONG32 lExternalLocalAddress);
     END_INTERFACE
   } IRTCPortManagerVtbl;
   struct IRTCPortManager {
@@ -4213,10 +4213,10 @@ extern "C" {
 #else
   typedef struct IRTCSessionPortManagementVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionPortManagement *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionPortManagement *This);
-      ULONG (WINAPI *Release)(IRTCSessionPortManagement *This);
-      HRESULT (WINAPI *SetPortManager)(IRTCSessionPortManagement *This,IRTCPortManager *pPortManager);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionPortManagement *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionPortManagement *This);
+                   ULONG (WINAPI *Release)(IRTCSessionPortManagement *This);
+                   HRESULT (WINAPI *SetPortManager)(IRTCSessionPortManagement *This,IRTCPortManager *pPortManager);
     END_INTERFACE
   } IRTCSessionPortManagementVtbl;
   struct IRTCSessionPortManagement {
@@ -4246,12 +4246,12 @@ extern "C" {
 #else
   typedef struct IRTCClientPortManagementVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCClientPortManagement *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCClientPortManagement *This);
-      ULONG (WINAPI *Release)(IRTCClientPortManagement *This);
-      HRESULT (WINAPI *StartListenAddressAndPort)(IRTCClientPortManagement *This,BSTR bstrInternalLocalAddress,__LONG32 lInternalLocalPort);
-      HRESULT (WINAPI *StopListenAddressAndPort)(IRTCClientPortManagement *This,BSTR bstrInternalLocalAddress,__LONG32 lInternalLocalPort);
-      HRESULT (WINAPI *GetPortRange)(IRTCClientPortManagement *This,RTC_PORT_TYPE enPortType,__LONG32 *plMinValue,__LONG32 *plMaxValue);
+                   HRESULT (WINAPI *QueryInterface)(IRTCClientPortManagement *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCClientPortManagement *This);
+                   ULONG (WINAPI *Release)(IRTCClientPortManagement *This);
+                   HRESULT (WINAPI *StartListenAddressAndPort)(IRTCClientPortManagement *This,BSTR bstrInternalLocalAddress,__LONG32 lInternalLocalPort);
+                   HRESULT (WINAPI *StopListenAddressAndPort)(IRTCClientPortManagement *This,BSTR bstrInternalLocalAddress,__LONG32 lInternalLocalPort);
+                   HRESULT (WINAPI *GetPortRange)(IRTCClientPortManagement *This,RTC_PORT_TYPE enPortType,__LONG32 *plMinValue,__LONG32 *plMaxValue);
     END_INTERFACE
   } IRTCClientPortManagementVtbl;
   struct IRTCClientPortManagement {
@@ -4286,11 +4286,11 @@ extern "C" {
 #else
   typedef struct IRTCUserSearchVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCUserSearch *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCUserSearch *This);
-      ULONG (WINAPI *Release)(IRTCUserSearch *This);
-      HRESULT (WINAPI *CreateQuery)(IRTCUserSearch *This,IRTCUserSearchQuery **ppQuery);
-      HRESULT (WINAPI *ExecuteSearch)(IRTCUserSearch *This,IRTCUserSearchQuery *pQuery,IRTCProfile *pProfile,LONG_PTR lCookie);
+                   HRESULT (WINAPI *QueryInterface)(IRTCUserSearch *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCUserSearch *This);
+                   ULONG (WINAPI *Release)(IRTCUserSearch *This);
+                   HRESULT (WINAPI *CreateQuery)(IRTCUserSearch *This,IRTCUserSearchQuery **ppQuery);
+                   HRESULT (WINAPI *ExecuteSearch)(IRTCUserSearch *This,IRTCUserSearchQuery *pQuery,IRTCProfile *pProfile,LONG_PTR lCookie);
     END_INTERFACE
   } IRTCUserSearchVtbl;
   struct IRTCUserSearch {
@@ -4327,16 +4327,16 @@ extern "C" {
 #else
   typedef struct IRTCUserSearchQueryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCUserSearchQuery *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCUserSearchQuery *This);
-      ULONG (WINAPI *Release)(IRTCUserSearchQuery *This);
-      HRESULT (WINAPI *put_SearchTerm)(IRTCUserSearchQuery *This,BSTR bstrName,BSTR bstrValue);
-      HRESULT (WINAPI *get_SearchTerm)(IRTCUserSearchQuery *This,BSTR bstrName,BSTR *pbstrValue);
-      HRESULT (WINAPI *get_SearchTerms)(IRTCUserSearchQuery *This,BSTR *pbstrNames);
-      HRESULT (WINAPI *put_SearchPreference)(IRTCUserSearchQuery *This,RTC_USER_SEARCH_PREFERENCE enPreference,__LONG32 lValue);
-      HRESULT (WINAPI *get_SearchPreference)(IRTCUserSearchQuery *This,RTC_USER_SEARCH_PREFERENCE enPreference,__LONG32 *plValue);
-      HRESULT (WINAPI *put_SearchDomain)(IRTCUserSearchQuery *This,BSTR bstrDomain);
-      HRESULT (WINAPI *get_SearchDomain)(IRTCUserSearchQuery *This,BSTR *pbstrDomain);
+                   HRESULT (WINAPI *QueryInterface)(IRTCUserSearchQuery *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCUserSearchQuery *This);
+                   ULONG (WINAPI *Release)(IRTCUserSearchQuery *This);
+                   HRESULT (WINAPI *put_SearchTerm)(IRTCUserSearchQuery *This,BSTR bstrName,BSTR bstrValue);
+                   HRESULT (WINAPI *get_SearchTerm)(IRTCUserSearchQuery *This,BSTR bstrName,BSTR *pbstrValue);
+                   HRESULT (WINAPI *get_SearchTerms)(IRTCUserSearchQuery *This,BSTR *pbstrNames);
+                   HRESULT (WINAPI *put_SearchPreference)(IRTCUserSearchQuery *This,RTC_USER_SEARCH_PREFERENCE enPreference,__LONG32 lValue);
+                   HRESULT (WINAPI *get_SearchPreference)(IRTCUserSearchQuery *This,RTC_USER_SEARCH_PREFERENCE enPreference,__LONG32 *plValue);
+                   HRESULT (WINAPI *put_SearchDomain)(IRTCUserSearchQuery *This,BSTR bstrDomain);
+                   HRESULT (WINAPI *get_SearchDomain)(IRTCUserSearchQuery *This,BSTR *pbstrDomain);
     END_INTERFACE
   } IRTCUserSearchQueryVtbl;
   struct IRTCUserSearchQuery {
@@ -4382,10 +4382,10 @@ extern "C" {
 #else
   typedef struct IRTCUserSearchResultVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCUserSearchResult *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCUserSearchResult *This);
-      ULONG (WINAPI *Release)(IRTCUserSearchResult *This);
-      HRESULT (WINAPI *get_Value)(IRTCUserSearchResult *This,RTC_USER_SEARCH_COLUMN enColumn,BSTR *pbstrValue);
+                   HRESULT (WINAPI *QueryInterface)(IRTCUserSearchResult *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCUserSearchResult *This);
+                   ULONG (WINAPI *Release)(IRTCUserSearchResult *This);
+                   HRESULT (WINAPI *get_Value)(IRTCUserSearchResult *This,RTC_USER_SEARCH_COLUMN enColumn,BSTR *pbstrValue);
     END_INTERFACE
   } IRTCUserSearchResultVtbl;
   struct IRTCUserSearchResult {
@@ -4416,13 +4416,13 @@ extern "C" {
 #else
   typedef struct IRTCEnumUserSearchResultsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCEnumUserSearchResults *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCEnumUserSearchResults *This);
-      ULONG (WINAPI *Release)(IRTCEnumUserSearchResults *This);
-      HRESULT (WINAPI *Next)(IRTCEnumUserSearchResults *This,ULONG celt,IRTCUserSearchResult **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IRTCEnumUserSearchResults *This);
-      HRESULT (WINAPI *Skip)(IRTCEnumUserSearchResults *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IRTCEnumUserSearchResults *This,IRTCEnumUserSearchResults **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IRTCEnumUserSearchResults *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCEnumUserSearchResults *This);
+                   ULONG (WINAPI *Release)(IRTCEnumUserSearchResults *This);
+                   HRESULT (WINAPI *Next)(IRTCEnumUserSearchResults *This,ULONG celt,IRTCUserSearchResult **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IRTCEnumUserSearchResults *This);
+                   HRESULT (WINAPI *Skip)(IRTCEnumUserSearchResults *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IRTCEnumUserSearchResults *This,IRTCEnumUserSearchResults **ppEnum);
     END_INTERFACE
   } IRTCEnumUserSearchResultsVtbl;
   struct IRTCEnumUserSearchResults {
@@ -4465,20 +4465,20 @@ extern "C" {
 #else
   typedef struct IRTCUserSearchResultsEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCUserSearchResultsEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCUserSearchResultsEvent *This);
-      ULONG (WINAPI *Release)(IRTCUserSearchResultsEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCUserSearchResultsEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCUserSearchResultsEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCUserSearchResultsEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCUserSearchResultsEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *EnumerateResults)(IRTCUserSearchResultsEvent *This,IRTCEnumUserSearchResults **ppEnum);
-      HRESULT (WINAPI *get_Results)(IRTCUserSearchResultsEvent *This,IRTCCollection **ppCollection);
-      HRESULT (WINAPI *get_Profile)(IRTCUserSearchResultsEvent *This,IRTCProfile2 **ppProfile);
-      HRESULT (WINAPI *get_Query)(IRTCUserSearchResultsEvent *This,IRTCUserSearchQuery **ppQuery);
-      HRESULT (WINAPI *get_Cookie)(IRTCUserSearchResultsEvent *This,LONG_PTR *plCookie);
-      HRESULT (WINAPI *get_StatusCode)(IRTCUserSearchResultsEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_MoreAvailable)(IRTCUserSearchResultsEvent *This,VARIANT_BOOL *pfMoreAvailable);
+                   HRESULT (WINAPI *QueryInterface)(IRTCUserSearchResultsEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCUserSearchResultsEvent *This);
+                   ULONG (WINAPI *Release)(IRTCUserSearchResultsEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCUserSearchResultsEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCUserSearchResultsEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCUserSearchResultsEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCUserSearchResultsEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *EnumerateResults)(IRTCUserSearchResultsEvent *This,IRTCEnumUserSearchResults **ppEnum);
+                   HRESULT (WINAPI *get_Results)(IRTCUserSearchResultsEvent *This,IRTCCollection **ppCollection);
+                   HRESULT (WINAPI *get_Profile)(IRTCUserSearchResultsEvent *This,IRTCProfile2 **ppProfile);
+                   HRESULT (WINAPI *get_Query)(IRTCUserSearchResultsEvent *This,IRTCUserSearchQuery **ppQuery);
+                   HRESULT (WINAPI *get_Cookie)(IRTCUserSearchResultsEvent *This,LONG_PTR *plCookie);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCUserSearchResultsEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_MoreAvailable)(IRTCUserSearchResultsEvent *This,VARIANT_BOOL *pfMoreAvailable);
     END_INTERFACE
   } IRTCUserSearchResultsEventVtbl;
   struct IRTCUserSearchResultsEvent {
@@ -4531,17 +4531,17 @@ extern "C" {
 #else
   typedef struct IRTCSessionReferStatusEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionReferStatusEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionReferStatusEvent *This);
-      ULONG (WINAPI *Release)(IRTCSessionReferStatusEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionReferStatusEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCSessionReferStatusEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionReferStatusEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCSessionReferStatusEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCSessionReferStatusEvent *This,IRTCSession2 **ppSession);
-      HRESULT (WINAPI *get_ReferStatus)(IRTCSessionReferStatusEvent *This,RTC_SESSION_REFER_STATUS *penReferStatus);
-      HRESULT (WINAPI *get_StatusCode)(IRTCSessionReferStatusEvent *This,__LONG32 *plStatusCode);
-      HRESULT (WINAPI *get_StatusText)(IRTCSessionReferStatusEvent *This,BSTR *pbstrStatusText);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionReferStatusEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionReferStatusEvent *This);
+                   ULONG (WINAPI *Release)(IRTCSessionReferStatusEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionReferStatusEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCSessionReferStatusEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionReferStatusEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCSessionReferStatusEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCSessionReferStatusEvent *This,IRTCSession2 **ppSession);
+                   HRESULT (WINAPI *get_ReferStatus)(IRTCSessionReferStatusEvent *This,RTC_SESSION_REFER_STATUS *penReferStatus);
+                   HRESULT (WINAPI *get_StatusCode)(IRTCSessionReferStatusEvent *This,__LONG32 *plStatusCode);
+                   HRESULT (WINAPI *get_StatusText)(IRTCSessionReferStatusEvent *This,BSTR *pbstrStatusText);
     END_INTERFACE
   } IRTCSessionReferStatusEventVtbl;
   struct IRTCSessionReferStatusEvent {
@@ -4588,20 +4588,20 @@ extern "C" {
 #else
   typedef struct IRTCSessionReferredEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionReferredEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionReferredEvent *This);
-      ULONG (WINAPI *Release)(IRTCSessionReferredEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionReferredEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCSessionReferredEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionReferredEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCSessionReferredEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(IRTCSessionReferredEvent *This,IRTCSession2 **ppSession);
-      HRESULT (WINAPI *get_ReferredByURI)(IRTCSessionReferredEvent *This,BSTR *pbstrReferredByURI);
-      HRESULT (WINAPI *get_ReferToURI)(IRTCSessionReferredEvent *This,BSTR *pbstrReferoURI);
-      HRESULT (WINAPI *get_ReferCookie)(IRTCSessionReferredEvent *This,BSTR *pbstrReferCookie);
-      HRESULT (WINAPI *Accept)(IRTCSessionReferredEvent *This);
-      HRESULT (WINAPI *Reject)(IRTCSessionReferredEvent *This);
-      HRESULT (WINAPI *SetReferredSessionState)(IRTCSessionReferredEvent *This,RTC_SESSION_STATE enState);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionReferredEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionReferredEvent *This);
+                   ULONG (WINAPI *Release)(IRTCSessionReferredEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCSessionReferredEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCSessionReferredEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCSessionReferredEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCSessionReferredEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(IRTCSessionReferredEvent *This,IRTCSession2 **ppSession);
+                   HRESULT (WINAPI *get_ReferredByURI)(IRTCSessionReferredEvent *This,BSTR *pbstrReferredByURI);
+                   HRESULT (WINAPI *get_ReferToURI)(IRTCSessionReferredEvent *This,BSTR *pbstrReferoURI);
+                   HRESULT (WINAPI *get_ReferCookie)(IRTCSessionReferredEvent *This,BSTR *pbstrReferCookie);
+                   HRESULT (WINAPI *Accept)(IRTCSessionReferredEvent *This);
+                   HRESULT (WINAPI *Reject)(IRTCSessionReferredEvent *This);
+                   HRESULT (WINAPI *SetReferredSessionState)(IRTCSessionReferredEvent *This,RTC_SESSION_STATE enState);
     END_INTERFACE
   } IRTCSessionReferredEventVtbl;
   struct IRTCSessionReferredEvent {
@@ -4651,10 +4651,10 @@ extern "C" {
 #else
   typedef struct IRTCSessionDescriptionManagerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCSessionDescriptionManager *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCSessionDescriptionManager *This);
-      ULONG (WINAPI *Release)(IRTCSessionDescriptionManager *This);
-      HRESULT (WINAPI *EvaluateSessionDescription)(IRTCSessionDescriptionManager *This,BSTR bstrContentType,BSTR bstrSessionDescription,VARIANT_BOOL *pfApplicationSession);
+                   HRESULT (WINAPI *QueryInterface)(IRTCSessionDescriptionManager *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCSessionDescriptionManager *This);
+                   ULONG (WINAPI *Release)(IRTCSessionDescriptionManager *This);
+                   HRESULT (WINAPI *EvaluateSessionDescription)(IRTCSessionDescriptionManager *This,BSTR bstrContentType,BSTR bstrSessionDescription,VARIANT_BOOL *pfApplicationSession);
     END_INTERFACE
   } IRTCSessionDescriptionManagerVtbl;
   struct IRTCSessionDescriptionManager {
@@ -4685,13 +4685,13 @@ extern "C" {
 #else
   typedef struct IRTCEnumPresenceDevicesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCEnumPresenceDevices *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCEnumPresenceDevices *This);
-      ULONG (WINAPI *Release)(IRTCEnumPresenceDevices *This);
-      HRESULT (WINAPI *Next)(IRTCEnumPresenceDevices *This,ULONG celt,IRTCPresenceDevice **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IRTCEnumPresenceDevices *This);
-      HRESULT (WINAPI *Skip)(IRTCEnumPresenceDevices *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IRTCEnumPresenceDevices *This,IRTCEnumPresenceDevices **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IRTCEnumPresenceDevices *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCEnumPresenceDevices *This);
+                   ULONG (WINAPI *Release)(IRTCEnumPresenceDevices *This);
+                   HRESULT (WINAPI *Next)(IRTCEnumPresenceDevices *This,ULONG celt,IRTCPresenceDevice **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IRTCEnumPresenceDevices *This);
+                   HRESULT (WINAPI *Skip)(IRTCEnumPresenceDevices *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IRTCEnumPresenceDevices *This,IRTCEnumPresenceDevices **ppEnum);
     END_INTERFACE
   } IRTCEnumPresenceDevicesVtbl;
   struct IRTCEnumPresenceDevices {
@@ -4731,13 +4731,13 @@ extern "C" {
 #else
   typedef struct IRTCPresenceDeviceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCPresenceDevice *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCPresenceDevice *This);
-      ULONG (WINAPI *Release)(IRTCPresenceDevice *This);
-      HRESULT (WINAPI *get_Status)(IRTCPresenceDevice *This,RTC_PRESENCE_STATUS *penStatus);
-      HRESULT (WINAPI *get_Notes)(IRTCPresenceDevice *This,BSTR *pbstrNotes);
-      HRESULT (WINAPI *get_PresenceProperty)(IRTCPresenceDevice *This,RTC_PRESENCE_PROPERTY enProperty,BSTR *pbstrProperty);
-      HRESULT (WINAPI *GetPresenceData)(IRTCPresenceDevice *This,BSTR *pbstrNamespace,BSTR *pbstrData);
+                   HRESULT (WINAPI *QueryInterface)(IRTCPresenceDevice *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCPresenceDevice *This);
+                   ULONG (WINAPI *Release)(IRTCPresenceDevice *This);
+                   HRESULT (WINAPI *get_Status)(IRTCPresenceDevice *This,RTC_PRESENCE_STATUS *penStatus);
+                   HRESULT (WINAPI *get_Notes)(IRTCPresenceDevice *This,BSTR *pbstrNotes);
+                   HRESULT (WINAPI *get_PresenceProperty)(IRTCPresenceDevice *This,RTC_PRESENCE_PROPERTY enProperty,BSTR *pbstrProperty);
+                   HRESULT (WINAPI *GetPresenceData)(IRTCPresenceDevice *This,BSTR *pbstrNamespace,BSTR *pbstrData);
     END_INTERFACE
   } IRTCPresenceDeviceVtbl;
   struct IRTCPresenceDevice {
@@ -4775,13 +4775,13 @@ extern "C" {
 #else
   typedef struct IRTCDispatchEventNotificationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTCDispatchEventNotification *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTCDispatchEventNotification *This);
-      ULONG (WINAPI *Release)(IRTCDispatchEventNotification *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRTCDispatchEventNotification *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRTCDispatchEventNotification *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRTCDispatchEventNotification *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRTCDispatchEventNotification *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(IRTCDispatchEventNotification *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTCDispatchEventNotification *This);
+                   ULONG (WINAPI *Release)(IRTCDispatchEventNotification *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRTCDispatchEventNotification *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRTCDispatchEventNotification *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRTCDispatchEventNotification *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRTCDispatchEventNotification *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } IRTCDispatchEventNotificationVtbl;
   struct IRTCDispatchEventNotification {

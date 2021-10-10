@@ -548,8 +548,8 @@ typedef struct _D3DHAL_DP2TEXBLT {
 } D3DHAL_DP2TEXBLT,*LPD3DHAL_DP2TEXBLT;
 
 typedef struct _D3DHAL_DP2STATESET {
-  DWORD               dwOperation;
-  DWORD               dwParam;
+  DWORD                                         dwOperation;
+  DWORD                                         dwParam;
   D3DSTATEBLOCKTYPE   sbType;
 } D3DHAL_DP2STATESET,*LPD3DHAL_DP2STATESET;
 

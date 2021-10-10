@@ -1,17 +1,17 @@
 /*****************************************************************************
- *                                                                           *
- * Copyright (c) David L. Mills 1993                                         *
- *                                                                           *
+ *                                                                                                                                                                                                                                       *
+ * Copyright (c) David L. Mills 1993                                                                                                                       *
+ *                                                                                                                                                                                                                                       *
  * Permission to use, copy, modify, and distribute this software and its     *
  * documentation for any purpose and without fee is hereby granted, provided *
  * that the above copyright notice appears in all copies and that both the   *
- * copyright notice and this permission notice appear in supporting          *
+ * copyright notice and this permission notice appear in supporting                       *
  * documentation, and that the name University of Delaware not be used in    *
- * advertising or publicity pertaining to distribution of the software       *
+ * advertising or publicity pertaining to distribution of the software                    *
  * without specific, written prior permission.  The University of Delaware   *
- * makes no representations about the suitability this software for any      *
+ * makes no representations about the suitability this software for any                   *
  * purpose.  It is provided "as is" without express or implied warranty.     *
- *                                                                           *
+ *                                                                                                                                                                                                                                       *
  *****************************************************************************/
 
 /*
@@ -22,7 +22,7 @@
  *	for ARM machines
  *
  *  9 Jan 97    Adrian Sun
- *      Shifted LATCH define to allow access to alpha machines.
+ *                   Shifted LATCH define to allow access to alpha machines.
  *
  * 26 Sep 94	David L. Mills
  *	Added defines for hybrid phase/frequency-lock loop.
@@ -40,15 +40,15 @@
  *	interval.
  *
  * 17 Sep 93    David L. Mills
- *      Created file $NTP/include/sys/timex.h
+ *                   Created file $NTP/include/sys/timex.h
  * 07 Oct 93    Torsten Duwe
- *      Derived linux/timex.h
+ *                   Derived linux/timex.h
  * 1995-08-13    Torsten Duwe
- *      kernel PLL updated to 1994-12-13 specs (rfc-1589)
+ *                   kernel PLL updated to 1994-12-13 specs (rfc-1589)
  * 1997-08-30    Ulrich Windl
- *      Added new constant NTP_PHASE_LIMIT
+ *                   Added new constant NTP_PHASE_LIMIT
  * 2004-08-12    Christoph Lameter
- *      Reworked time interpolation logic
+ *                   Reworked time interpolation logic
  */
 #ifndef _LINUX_TIMEX_H
 #define _LINUX_TIMEX_H
@@ -78,8 +78,8 @@ struct timex {
 
 	__kernel_long_t ppsfreq;/* pps frequency (scaled ppm) (ro) */
 	__kernel_long_t jitter; /* pps jitter (us) (ro) */
-	int shift;              /* interval duration (s) (shift) (ro) */
-	__kernel_long_t stabil;            /* pps stability (scaled ppm) (ro) */
+	int shift;                                        /* interval duration (s) (shift) (ro) */
+	__kernel_long_t stabil;                                      /* pps stability (scaled ppm) (ro) */
 	__kernel_long_t jitcnt; /* jitter limit exceeded (ro) */
 	__kernel_long_t calcnt; /* calibration intervals (ro) */
 	__kernel_long_t errcnt; /* calibration errors (ro) */

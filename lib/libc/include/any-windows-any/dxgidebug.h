@@ -56,8 +56,8 @@ MIDL_INTERFACE("119e7452-de9e-40fe-8806-88f90c12b441")
 IDXGIDebug : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ReportLiveObjects(
-        GUID apiid,
-        DXGI_DEBUG_RLO_FLAGS flags) = 0;
+                     GUID apiid,
+                     DXGI_DEBUG_RLO_FLAGS flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -69,21 +69,21 @@ typedef struct IDXGIDebugVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDXGIDebug *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDXGIDebug *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDXGIDebug *This);
+                     IDXGIDebug *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDXGIDebug *This);
+                     IDXGIDebug *This);
 
     /*** IDXGIDebug methods ***/
     HRESULT (STDMETHODCALLTYPE *ReportLiveObjects)(
-        IDXGIDebug *This,
-        GUID apiid,
-        DXGI_DEBUG_RLO_FLAGS flags);
+                     IDXGIDebug *This,
+                     GUID apiid,
+                     DXGI_DEBUG_RLO_FLAGS flags);
 
     END_INTERFACE
 } IDXGIDebugVtbl;

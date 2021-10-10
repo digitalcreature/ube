@@ -91,7 +91,7 @@
  */
 
 #ifndef _PATH_RESCONF
-#define _PATH_RESCONF        "/etc/resolv.conf"
+#define _PATH_RESCONF                     "/etc/resolv.conf"
 #endif
 
 struct res_sym {
@@ -289,8 +289,8 @@ int		res_nsearch (res_state, const char *, int, int,
 int		res_nquerydomain (res_state, const char *, const char *, int,
 				  int, unsigned char *, int) __THROW;
 int		res_nmkquery (res_state, int, const char *, int, int,
-			      const unsigned char *, int,
-			      const unsigned char *, unsigned char *, int)
+			                   const unsigned char *, int,
+			                   const unsigned char *, unsigned char *, int)
      __THROW;
 int		res_nsend (res_state, const unsigned char *, int,
 			   unsigned char *, int) __THROW;

@@ -79,7 +79,7 @@ extern "C" {
 #ifdef lstrcmp
   __CRT_INLINE int ua_lstrcmpW(LPCUWSTR String1,LPCUWSTR String2) {
     if(WSTR_ALIGNED(String1) && WSTR_ALIGNED(String2))
-      return lstrcmpW((LPCWSTR)String1,(LPCWSTR)String2);
+                   return lstrcmpW((LPCWSTR)String1,(LPCWSTR)String2);
     return uaw_lstrcmpW(String1,String2);
   }
 #endif
@@ -87,7 +87,7 @@ extern "C" {
 #ifdef lstrcmpi
   __CRT_INLINE int ua_lstrcmpiW(LPCUWSTR String1,LPCUWSTR String2) {
     if(WSTR_ALIGNED(String1) && WSTR_ALIGNED(String2))
-      return lstrcmpiW((LPCWSTR)String1,(LPCWSTR)String2);
+                   return lstrcmpiW((LPCWSTR)String1,(LPCWSTR)String2);
     return uaw_lstrcmpiW(String1,String2);
   }
 #endif
@@ -138,7 +138,7 @@ extern "C" {
 
   __CRT_INLINE PUWSTR ua_wcscpy(PUWSTR Destination,PCUWSTR Source) {
     if(WSTR_ALIGNED(Source) && WSTR_ALIGNED(Destination))
-      return wcscpy((PWSTR)Destination,(PCWSTR)Source);
+                   return wcscpy((PWSTR)Destination,(PCWSTR)Source);
     return uaw_wcscpy(Destination,Source);
   }
   __CRT_INLINE size_t ua_wcslen(PCUWSTR String) {
@@ -152,7 +152,7 @@ extern "C" {
 #ifndef __CRT__NO_INLINE
   __CRT_INLINE int ua_wcsicmp(LPCUWSTR String1,LPCUWSTR String2) {
     if(WSTR_ALIGNED(String1) && WSTR_ALIGNED(String2))
-      return _wcsicmp((LPCWSTR)String1,(LPCWSTR)String2);
+                   return _wcsicmp((LPCWSTR)String1,(LPCWSTR)String2);
     return uaw_wcsicmp(String1,String2);
   }
 #endif /* !__CRT__NO_INLINE */

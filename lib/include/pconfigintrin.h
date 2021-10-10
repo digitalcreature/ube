@@ -27,9 +27,9 @@ _pconfig_u32(unsigned int __leaf, __SIZE_TYPE__ __d[])
 {
   unsigned int __result;
   __asm__ ("pconfig"
-           : "=a" (__result), "=b" (__d[0]), "=c" (__d[1]), "=d" (__d[2])
-           : "a" (__leaf), "b" (__d[0]), "c" (__d[1]), "d" (__d[2])
-           : "cc");
+                        : "=a" (__result), "=b" (__d[0]), "=c" (__d[1]), "=d" (__d[2])
+                        : "a" (__leaf), "b" (__d[0]), "c" (__d[1]), "d" (__d[2])
+                        : "cc");
   return __result;
 }
 

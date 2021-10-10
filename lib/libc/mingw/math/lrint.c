@@ -14,7 +14,7 @@ long lrint (double x)
   float temp;
   __asm__ __volatile__ (
     "vcvtr.s32.f64    %[tmp], %[src]\n\t"
-    "fmrs             %[dst], %[tmp]\n\t"
+    "fmrs                                       %[dst], %[tmp]\n\t"
     : [dst] "=r" (retval), [tmp] "=t" (temp) : [src] "w" (x));
 #elif defined(__aarch64__) || defined(_ARM64_)
   __asm__ __volatile__ (

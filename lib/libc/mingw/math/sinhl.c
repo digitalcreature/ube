@@ -70,13 +70,13 @@ long double sinhl(long double x)
 
   if (x_class == FP_NAN)
     {
-      errno = EDOM;
-      return x;
+                   errno = EDOM;
+                   return x;
     }
   if (x_class == FP_ZERO)
     return x;
   if (x_class == FP_INFINITE ||
-      (fabsl (x) > (MAXLOGL + LOGE2L)))
+                   (fabsl (x) > (MAXLOGL + LOGE2L)))
   {
     errno = ERANGE;
 #ifdef INFINITIES
@@ -90,16 +90,16 @@ long double sinhl(long double x)
   {
     if (a >= (MAXLOGL - LOGE2L))
     {
-      a = expl(0.5L*a);
-      a = (0.5L * a) * a;
-      if (x < 0.0L)
+                   a = expl(0.5L*a);
+                   a = (0.5L * a) * a;
+                   if (x < 0.0L)
 	a = -a;
-      return (a);
+                   return (a);
     }
     a = expl(a);
     a = 0.5L*a - (0.5L/a);
     if (x < 0.0L)
-      a = -a;
+                   a = -a;
     return (a);
   }
 

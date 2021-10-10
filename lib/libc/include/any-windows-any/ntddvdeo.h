@@ -27,8 +27,8 @@
 extern "C" {
 #endif
 
-#define VIDEO_DEVICE_NAME                 "DISPLAY%d"
-#define WVIDEO_DEVICE_NAME                L"DISPLAY%d"
+#define VIDEO_DEVICE_NAME                                           "DISPLAY%d"
+#define WVIDEO_DEVICE_NAME                                          L"DISPLAY%d"
 
 #define DD_FULLSCREEN_VIDEO_DEVICE_NAME   L"\\Device\\FSVideo"
 
@@ -203,23 +203,23 @@ typedef struct _VIDEO_MEMORY_INFORMATION {
 } VIDEO_MEMORY_INFORMATION, *PVIDEO_MEMORY_INFORMATION;
 
 /* VIDEO_MODE.RequestedMode */
-#define VIDEO_MODE_MAP_MEM_LINEAR         0x40000000
-#define VIDEO_MODE_NO_ZERO_MEMORY         0x80000000
+#define VIDEO_MODE_MAP_MEM_LINEAR                      0x40000000
+#define VIDEO_MODE_NO_ZERO_MEMORY                      0x80000000
 
 typedef struct _VIDEO_MODE {
   ULONG  RequestedMode;
 } VIDEO_MODE, *PVIDEO_MODE;
 
 /* VIDEO_MODE_INFORMATION.AttributeFlags */
-#define VIDEO_MODE_COLOR                  0x0001
-#define VIDEO_MODE_GRAPHICS               0x0002
-#define VIDEO_MODE_PALETTE_DRIVEN         0x0004
-#define VIDEO_MODE_MANAGED_PALETTE        0x0008
-#define VIDEO_MODE_INTERLACED             0x0010
-#define VIDEO_MODE_NO_OFF_SCREEN          0x0020
-#define VIDEO_MODE_NO_64_BIT_ACCESS       0x0040
-#define VIDEO_MODE_BANKED                 0x0080
-#define VIDEO_MODE_LINEAR                 0x0100
+#define VIDEO_MODE_COLOR                                                         0x0001
+#define VIDEO_MODE_GRAPHICS                                         0x0002
+#define VIDEO_MODE_PALETTE_DRIVEN                      0x0004
+#define VIDEO_MODE_MANAGED_PALETTE                     0x0008
+#define VIDEO_MODE_INTERLACED                                       0x0010
+#define VIDEO_MODE_NO_OFF_SCREEN                       0x0020
+#define VIDEO_MODE_NO_64_BIT_ACCESS                    0x0040
+#define VIDEO_MODE_BANKED                                           0x0080
+#define VIDEO_MODE_LINEAR                                           0x0100
 
 typedef struct _VIDEO_MODE_INFORMATION {
   ULONG  Length;
@@ -286,7 +286,7 @@ typedef struct _VIDEO_SHARE_MEMORY_INFORMATION {
 } VIDEO_SHARE_MEMORY_INFORMATION, *PVIDEO_SHARE_MEMORY_INFORMATION;
 
 /* VIDEO_BANK_SELECT.BankingFlags constants */
-#define PLANAR_HC                         0x00000001
+#define PLANAR_HC                                                                             0x00000001
 
 /* VIDEO_BANK_SELECT.BankingType and PlanarHCBankingType constants */
 typedef enum _VIDEO_BANK_TYPE {
@@ -321,8 +321,8 @@ typedef struct _VIDEO_LOAD_FONT_INFORMATION {
 } VIDEO_LOAD_FONT_INFORMATION, *PVIDEO_LOAD_FONT_INFORMATION;
 
 /* VIDEO_COLOR_CAPABILITIES.AttributeFlags constants */
-#define VIDEO_DEVICE_COLOR                0x00000001
-#define VIDEO_OPTIONAL_GAMMET_TABLE       0x00000002
+#define VIDEO_DEVICE_COLOR                                          0x00000001
+#define VIDEO_OPTIONAL_GAMMET_TABLE                    0x00000002
 
 typedef struct _VIDEO_COLOR_CAPABILITIES {
   ULONG  Length;
@@ -371,11 +371,11 @@ typedef struct _VIDEO_POINTER_ATTRIBUTES {
 } VIDEO_POINTER_ATTRIBUTES, *PVIDEO_POINTER_ATTRIBUTES;
 
 /* VIDEO_POINTER_CAPABILITIES.Flags */
-#define VIDEO_MODE_ASYNC_POINTER          0x01
-#define VIDEO_MODE_MONO_POINTER           0x02
-#define VIDEO_MODE_COLOR_POINTER          0x04
-#define VIDEO_MODE_ANIMATE_START          0x08
-#define VIDEO_MODE_ANIMATE_UPDATE         0x10
+#define VIDEO_MODE_ASYNC_POINTER                       0x01
+#define VIDEO_MODE_MONO_POINTER                        0x02
+#define VIDEO_MODE_COLOR_POINTER                       0x04
+#define VIDEO_MODE_ANIMATE_START                       0x08
+#define VIDEO_MODE_ANIMATE_UPDATE                      0x10
 
 typedef struct _VIDEO_POINTER_CAPABILITIES {
   ULONG  Flags;
@@ -392,7 +392,7 @@ typedef struct _VIDEO_POINTER_POSITION {
 
 
 /* VIDEO_HARDWARE_STATE_HEADER.VGAStateFlags constants */
-#define VIDEO_STATE_NON_STANDARD_VGA      0x00000001
+#define VIDEO_STATE_NON_STANDARD_VGA                   0x00000001
 #define VIDEO_STATE_UNEMULATED_VGA_STATE  0x00000002
 #define VIDEO_STATE_PACKED_CHAIN4_MODE    0x00000004
 
@@ -456,14 +456,14 @@ typedef struct _VIDEO_HARDWARE_STATE {
 	ULONG  StateLength;
 } VIDEO_HARDWARE_STATE, *PVIDEO_HARDWARE_STATE;
 
-#define VIDEO_CHILD_ACTIVE                0x00000001
-#define VIDEO_CHILD_DETACHED              0x00000002
-#define VIDEO_CHILD_NOPRUNE_FREQ          0x80000000
+#define VIDEO_CHILD_ACTIVE                                          0x00000001
+#define VIDEO_CHILD_DETACHED                                        0x00000002
+#define VIDEO_CHILD_NOPRUNE_FREQ                       0x80000000
 #define VIDEO_CHILD_NOPRUNE_RESOLUTION    0x40000000
 
-#define VIDEO_DUALVIEW_REMOVABLE          0x00000001
-#define VIDEO_DUALVIEW_PRIMARY            0x80000000
-#define VIDEO_DUALVIEW_SECONDARY          0x40000000
+#define VIDEO_DUALVIEW_REMOVABLE                       0x00000001
+#define VIDEO_DUALVIEW_PRIMARY                                      0x80000000
+#define VIDEO_DUALVIEW_SECONDARY                       0x40000000
 
 #ifndef _WINDDI_
 typedef struct _ENG_EVENT *PEVENT;
@@ -480,9 +480,9 @@ typedef struct _DISPLAY_BRIGHTNESS {
   UCHAR ucDCBrightness;
 } DISPLAY_BRIGHTNESS, *PDISPLAY_BRIGHTNESS;
 
-#define DISPLAYPOLICY_AC                0x00000001
-#define DISPLAYPOLICY_DC                0x00000002
-#define DISPLAYPOLICY_BOTH              0x00000003
+#define DISPLAYPOLICY_AC                                          0x00000001
+#define DISPLAYPOLICY_DC                                          0x00000002
+#define DISPLAYPOLICY_BOTH                                        0x00000003
 
 #ifdef __cplusplus
 }

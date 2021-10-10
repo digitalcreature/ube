@@ -124,10 +124,10 @@ pub fn approxEqAbs(comptime T: type, x: T, y: T, tolerance: T) bool {
 
     // Fast path for equal values (and signed zeros and infinites).
     if (x == y)
-        return true;
+                     return true;
 
     if (isNan(x) or isNan(y))
-        return false;
+                     return false;
 
     return fabs(x - y) <= tolerance;
 }
@@ -152,10 +152,10 @@ pub fn approxEqRel(comptime T: type, x: T, y: T, tolerance: T) bool {
 
     // Fast path for equal values (and signed zeros and infinites).
     if (x == y)
-        return true;
+                     return true;
 
     if (isNan(x) or isNan(y))
-        return false;
+                     return false;
 
     return fabs(x - y) <= max(fabs(x), fabs(y)) * tolerance;
 }
@@ -165,32 +165,32 @@ pub const approxEq = approxEqAbs;
 
 test "approxEqAbs and approxEqRel" {
     inline for ([_]type{ f16, f32, f64, f128 }) |T| {
-        const eps_value = comptime epsilon(T);
-        const sqrt_eps_value = comptime sqrt(eps_value);
-        const nan_value = comptime nan(T);
-        const inf_value = comptime inf(T);
-        const min_value: T = switch (T) {
-            f16 => f16_min,
-            f32 => f32_min,
-            f64 => f64_min,
-            f128 => f128_min,
-            else => unreachable,
-        };
+                     const eps_value = comptime epsilon(T);
+                     const sqrt_eps_value = comptime sqrt(eps_value);
+                     const nan_value = comptime nan(T);
+                     const inf_value = comptime inf(T);
+                     const min_value: T = switch (T) {
+                                      f16 => f16_min,
+                                      f32 => f32_min,
+                                      f64 => f64_min,
+                                      f128 => f128_min,
+                                      else => unreachable,
+                     };
 
-        testing.expect(approxEqAbs(T, 0.0, 0.0, eps_value));
-        testing.expect(approxEqAbs(T, -0.0, -0.0, eps_value));
-        testing.expect(approxEqAbs(T, 0.0, -0.0, eps_value));
-        testing.expect(approxEqRel(T, 1.0, 1.0, sqrt_eps_value));
-        testing.expect(!approxEqRel(T, 1.0, 0.0, sqrt_eps_value));
-        testing.expect(!approxEqAbs(T, 1.0 + 2 * epsilon(T), 1.0, eps_value));
-        testing.expect(approxEqAbs(T, 1.0 + 1 * epsilon(T), 1.0, eps_value));
-        testing.expect(!approxEqRel(T, 1.0, nan_value, sqrt_eps_value));
-        testing.expect(!approxEqRel(T, nan_value, nan_value, sqrt_eps_value));
-        testing.expect(approxEqRel(T, inf_value, inf_value, sqrt_eps_value));
-        testing.expect(approxEqRel(T, min_value, min_value, sqrt_eps_value));
-        testing.expect(approxEqRel(T, -min_value, -min_value, sqrt_eps_value));
-        testing.expect(approxEqAbs(T, min_value, 0.0, eps_value * 2));
-        testing.expect(approxEqAbs(T, -min_value, 0.0, eps_value * 2));
+                     testing.expect(approxEqAbs(T, 0.0, 0.0, eps_value));
+                     testing.expect(approxEqAbs(T, -0.0, -0.0, eps_value));
+                     testing.expect(approxEqAbs(T, 0.0, -0.0, eps_value));
+                     testing.expect(approxEqRel(T, 1.0, 1.0, sqrt_eps_value));
+                     testing.expect(!approxEqRel(T, 1.0, 0.0, sqrt_eps_value));
+                     testing.expect(!approxEqAbs(T, 1.0 + 2 * epsilon(T), 1.0, eps_value));
+                     testing.expect(approxEqAbs(T, 1.0 + 1 * epsilon(T), 1.0, eps_value));
+                     testing.expect(!approxEqRel(T, 1.0, nan_value, sqrt_eps_value));
+                     testing.expect(!approxEqRel(T, nan_value, nan_value, sqrt_eps_value));
+                     testing.expect(approxEqRel(T, inf_value, inf_value, sqrt_eps_value));
+                     testing.expect(approxEqRel(T, min_value, min_value, sqrt_eps_value));
+                     testing.expect(approxEqRel(T, -min_value, -min_value, sqrt_eps_value));
+                     testing.expect(approxEqAbs(T, min_value, 0.0, eps_value * 2));
+                     testing.expect(approxEqAbs(T, -min_value, 0.0, eps_value * 2));
     }
 }
 
@@ -286,12 +286,12 @@ pub fn floatMantissaBits(comptime T: type) comptime_int {
     assert(@typeInfo(T) == .Float);
 
     return switch (@typeInfo(T).Float.bits) {
-        16 => 10,
-        32 => 23,
-        64 => 52,
-        80 => 64,
-        128 => 112,
-        else => @compileError("unknown floating point type " ++ @typeName(T)),
+                     16 => 10,
+                     32 => 23,
+                     64 => 52,
+                     80 => 64,
+                     128 => 112,
+                     else => @compileError("unknown floating point type " ++ @typeName(T)),
     };
 }
 
@@ -299,12 +299,12 @@ pub fn floatExponentBits(comptime T: type) comptime_int {
     assert(@typeInfo(T) == .Float);
 
     return switch (@typeInfo(T).Float.bits) {
-        16 => 5,
-        32 => 8,
-        64 => 11,
-        80 => 15,
-        128 => 15,
-        else => @compileError("unknown floating point type " ++ @typeName(T)),
+                     16 => 5,
+                     32 => 8,
+                     64 => 11,
+                     80 => 15,
+                     128 => 15,
+                     else => @compileError("unknown floating point type " ++ @typeName(T)),
     };
 }
 
@@ -312,17 +312,17 @@ pub fn floatExponentBits(comptime T: type) comptime_int {
 /// full range of the minimum value.
 pub fn Min(comptime A: type, comptime B: type) type {
     switch (@typeInfo(A)) {
-        .Int => |a_info| switch (@typeInfo(B)) {
-            .Int => |b_info| if (!a_info.is_signed and !b_info.is_signed) {
-                if (a_info.bits < b_info.bits) {
-                    return A;
-                } else {
-                    return B;
-                }
-            },
-            else => {},
-        },
-        else => {},
+                     .Int => |a_info| switch (@typeInfo(B)) {
+                                      .Int => |b_info| if (!a_info.is_signed and !b_info.is_signed) {
+                                          if (a_info.bits < b_info.bits) {
+                                                           return A;
+                                          } else {
+                                                           return B;
+                                          }
+                                      },
+                                      else => {},
+                     },
+                     else => {},
     }
     return @TypeOf(@as(A, 0) + @as(B, 0));
 }
@@ -332,51 +332,51 @@ pub fn Min(comptime A: type, comptime B: type) type {
 pub fn min(x: anytype, y: anytype) Min(@TypeOf(x), @TypeOf(y)) {
     const Result = Min(@TypeOf(x), @TypeOf(y));
     if (x < y) {
-        // TODO Zig should allow this as an implicit cast because x is immutable and in this
-        // scope it is known to fit in the return type.
-        switch (@typeInfo(Result)) {
-            .Int => return @intCast(Result, x),
-            else => return x,
-        }
+                     // TODO Zig should allow this as an implicit cast because x is immutable and in this
+                     // scope it is known to fit in the return type.
+                     switch (@typeInfo(Result)) {
+                                      .Int => return @intCast(Result, x),
+                                      else => return x,
+                     }
     } else {
-        // TODO Zig should allow this as an implicit cast because y is immutable and in this
-        // scope it is known to fit in the return type.
-        switch (@typeInfo(Result)) {
-            .Int => return @intCast(Result, y),
-            else => return y,
-        }
+                     // TODO Zig should allow this as an implicit cast because y is immutable and in this
+                     // scope it is known to fit in the return type.
+                     switch (@typeInfo(Result)) {
+                                      .Int => return @intCast(Result, y),
+                                      else => return y,
+                     }
     }
 }
 
 test "math.min" {
     testing.expect(min(@as(i32, -1), @as(i32, 2)) == -1);
     {
-        var a: u16 = 999;
-        var b: u32 = 10;
-        var result = min(a, b);
-        testing.expect(@TypeOf(result) == u16);
-        testing.expect(result == 10);
+                     var a: u16 = 999;
+                     var b: u32 = 10;
+                     var result = min(a, b);
+                     testing.expect(@TypeOf(result) == u16);
+                     testing.expect(result == 10);
     }
     {
-        var a: f64 = 10.34;
-        var b: f32 = 999.12;
-        var result = min(a, b);
-        testing.expect(@TypeOf(result) == f64);
-        testing.expect(result == 10.34);
+                     var a: f64 = 10.34;
+                     var b: f32 = 999.12;
+                     var result = min(a, b);
+                     testing.expect(@TypeOf(result) == f64);
+                     testing.expect(result == 10.34);
     }
     {
-        var a: i8 = -127;
-        var b: i16 = -200;
-        var result = min(a, b);
-        testing.expect(@TypeOf(result) == i16);
-        testing.expect(result == -200);
+                     var a: i8 = -127;
+                     var b: i16 = -200;
+                     var result = min(a, b);
+                     testing.expect(@TypeOf(result) == i16);
+                     testing.expect(result == -200);
     }
     {
-        const a = 10.34;
-        var b: f32 = 999.12;
-        var result = min(a, b);
-        testing.expect(@TypeOf(result) == f32);
-        testing.expect(result == 10.34);
+                     const a = 10.34;
+                     var b: f32 = 999.12;
+                     var result = min(a, b);
+                     testing.expect(@TypeOf(result) == f32);
+                     testing.expect(result == 10.34);
     }
 }
 
@@ -439,21 +439,21 @@ pub fn shl(comptime T: type, a: T, shift_amt: anytype) T {
     const abs_shift_amt = absCast(shift_amt);
 
     const casted_shift_amt = blk: {
-        if (@typeInfo(T) == .Vector) {
-            const C = @typeInfo(T).Vector.child;
-            const len = @typeInfo(T).Vector.len;
-            if (abs_shift_amt >= @typeInfo(C).Int.bits) return @splat(len, @as(C, 0));
-            break :blk @splat(len, @intCast(Log2Int(C), abs_shift_amt));
-        } else {
-            if (abs_shift_amt >= @typeInfo(T).Int.bits) return 0;
-            break :blk @intCast(Log2Int(T), abs_shift_amt);
-        }
+                     if (@typeInfo(T) == .Vector) {
+                                      const C = @typeInfo(T).Vector.child;
+                                      const len = @typeInfo(T).Vector.len;
+                                      if (abs_shift_amt >= @typeInfo(C).Int.bits) return @splat(len, @as(C, 0));
+                                      break :blk @splat(len, @intCast(Log2Int(C), abs_shift_amt));
+                     } else {
+                                      if (abs_shift_amt >= @typeInfo(T).Int.bits) return 0;
+                                      break :blk @intCast(Log2Int(T), abs_shift_amt);
+                     }
     };
 
     if (@TypeOf(shift_amt) == comptime_int or @typeInfo(@TypeOf(shift_amt)).Int.is_signed) {
-        if (shift_amt < 0) {
-            return a >> casted_shift_amt;
-        }
+                     if (shift_amt < 0) {
+                                      return a >> casted_shift_amt;
+                     }
     }
 
     return a << casted_shift_amt;
@@ -479,21 +479,21 @@ pub fn shr(comptime T: type, a: T, shift_amt: anytype) T {
     const abs_shift_amt = absCast(shift_amt);
 
     const casted_shift_amt = blk: {
-        if (@typeInfo(T) == .Vector) {
-            const C = @typeInfo(T).Vector.child;
-            const len = @typeInfo(T).Vector.len;
-            if (abs_shift_amt >= @typeInfo(C).Int.bits) return @splat(len, @as(C, 0));
-            break :blk @splat(len, @intCast(Log2Int(C), abs_shift_amt));
-        } else {
-            if (abs_shift_amt >= @typeInfo(T).Int.bits) return 0;
-            break :blk @intCast(Log2Int(T), abs_shift_amt);
-        }
+                     if (@typeInfo(T) == .Vector) {
+                                      const C = @typeInfo(T).Vector.child;
+                                      const len = @typeInfo(T).Vector.len;
+                                      if (abs_shift_amt >= @typeInfo(C).Int.bits) return @splat(len, @as(C, 0));
+                                      break :blk @splat(len, @intCast(Log2Int(C), abs_shift_amt));
+                     } else {
+                                      if (abs_shift_amt >= @typeInfo(T).Int.bits) return 0;
+                                      break :blk @intCast(Log2Int(T), abs_shift_amt);
+                     }
     };
 
     if (@TypeOf(shift_amt) == comptime_int or @typeInfo(@TypeOf(shift_amt)).Int.is_signed) {
-        if (shift_amt < 0) {
-            return a << casted_shift_amt;
-        }
+                     if (shift_amt < 0) {
+                                      return a << casted_shift_amt;
+                     }
     }
 
     return a >> casted_shift_amt;
@@ -517,17 +517,17 @@ test "math.shr" {
 /// Negative shift values results in shift modulo the bit count.
 pub fn rotr(comptime T: type, x: T, r: anytype) T {
     if (@typeInfo(T) == .Vector) {
-        const C = @typeInfo(T).Vector.child;
-        if (@typeInfo(C).Int.is_signed) {
-            @compileError("cannot rotate signed integers");
-        }
-        const ar = @intCast(Log2Int(C), @mod(r, @typeInfo(C).Int.bits));
-        return (x >> @splat(@typeInfo(T).Vector.len, ar)) | (x << @splat(@typeInfo(T).Vector.len, 1 + ~ar));
+                     const C = @typeInfo(T).Vector.child;
+                     if (@typeInfo(C).Int.is_signed) {
+                                      @compileError("cannot rotate signed integers");
+                     }
+                     const ar = @intCast(Log2Int(C), @mod(r, @typeInfo(C).Int.bits));
+                     return (x >> @splat(@typeInfo(T).Vector.len, ar)) | (x << @splat(@typeInfo(T).Vector.len, 1 + ~ar));
     } else if (@typeInfo(T).Int.is_signed) {
-        @compileError("cannot rotate signed integer");
+                     @compileError("cannot rotate signed integer");
     } else {
-        const ar = @mod(r, @typeInfo(T).Int.bits);
-        return shr(T, x, ar) | shl(T, x, @typeInfo(T).Int.bits - ar);
+                     const ar = @mod(r, @typeInfo(T).Int.bits);
+                     return shr(T, x, ar) | shl(T, x, @typeInfo(T).Int.bits - ar);
     }
 }
 
@@ -545,17 +545,17 @@ test "math.rotr" {
 /// Negative shift values results in shift modulo the bit count.
 pub fn rotl(comptime T: type, x: T, r: anytype) T {
     if (@typeInfo(T) == .Vector) {
-        const C = @typeInfo(T).Vector.child;
-        if (@typeInfo(C).Int.is_signed) {
-            @compileError("cannot rotate signed integers");
-        }
-        const ar = @intCast(Log2Int(C), @mod(r, @typeInfo(C).Int.bits));
-        return (x << @splat(@typeInfo(T).Vector.len, ar)) | (x >> @splat(@typeInfo(T).Vector.len, 1 +% ~ar));
+                     const C = @typeInfo(T).Vector.child;
+                     if (@typeInfo(C).Int.is_signed) {
+                                      @compileError("cannot rotate signed integers");
+                     }
+                     const ar = @intCast(Log2Int(C), @mod(r, @typeInfo(C).Int.bits));
+                     return (x << @splat(@typeInfo(T).Vector.len, ar)) | (x >> @splat(@typeInfo(T).Vector.len, 1 +% ~ar));
     } else if (@typeInfo(T).Int.is_signed) {
-        @compileError("cannot rotate signed integer");
+                     @compileError("cannot rotate signed integer");
     } else {
-        const ar = @mod(r, @typeInfo(T).Int.bits);
-        return shl(T, x, ar) | shr(T, x, @typeInfo(T).Int.bits - ar);
+                     const ar = @mod(r, @typeInfo(T).Int.bits);
+                     return shl(T, x, ar) | shr(T, x, @typeInfo(T).Int.bits - ar);
     }
 }
 
@@ -574,7 +574,7 @@ pub fn Log2Int(comptime T: type) type {
     comptime var count = 0;
     comptime var s = @typeInfo(T).Int.bits - 1;
     inline while (s != 0) : (s >>= 1) {
-        count += 1;
+                     count += 1;
     }
 
     return std.meta.Int(.unsigned, count);
@@ -583,7 +583,7 @@ pub fn Log2Int(comptime T: type) type {
 pub fn IntFittingRange(comptime from: comptime_int, comptime to: comptime_int) type {
     assert(from <= to);
     if (from == 0 and to == 0) {
-        return u0;
+                     return u0;
     }
     const sign: std.meta.Signedness = if (from < 0) .signed else .unsigned;
     const largest_positive_integer = max(if (from < 0) (-from) - 1 else from, to); // two's complement
@@ -591,7 +591,7 @@ pub fn IntFittingRange(comptime from: comptime_int, comptime to: comptime_int) t
     const upper = (1 << base) - 1;
     var magnitude_bits = if (upper >= largest_positive_integer) base else base + 1;
     if (sign == .signed) {
-        magnitude_bits += 1;
+                     magnitude_bits += 1;
     }
     return std.meta.Int(sign, magnitude_bits);
 }
@@ -661,10 +661,10 @@ pub fn absInt(x: anytype) !@TypeOf(x) {
     comptime assert(@typeInfo(T).Int.is_signed); // must pass a signed integer to absInt
 
     if (x == minInt(@TypeOf(x))) {
-        return error.Overflow;
+                     return error.Overflow;
     } else {
-        @setRuntimeSafety(false);
-        return if (x < 0) -x else x;
+                     @setRuntimeSafety(false);
+                     return if (x < 0) -x else x;
     }
 }
 
@@ -735,18 +735,18 @@ pub fn divCeil(comptime T: type, numerator: T, denominator: T) !T {
     if (comptime std.meta.trait.isNumber(T) and denominator == 0) return error.DivisionByZero;
     const info = @typeInfo(T);
     switch (info) {
-        .ComptimeFloat, .Float => return @ceil(numerator / denominator),
-        .ComptimeInt, .Int => {
-            if (numerator < 0 and denominator < 0) {
-                if (info == .Int and numerator == minInt(T) and denominator == -1)
-                    return error.Overflow;
-                return @divFloor(numerator + 1, denominator) + 1;
-            }
-            if (numerator > 0 and denominator > 0)
-                return @divFloor(numerator - 1, denominator) + 1;
-            return @divTrunc(numerator, denominator);
-        },
-        else => @compileError("divCeil unsupported on " ++ @typeName(T)),
+                     .ComptimeFloat, .Float => return @ceil(numerator / denominator),
+                     .ComptimeInt, .Int => {
+                                      if (numerator < 0 and denominator < 0) {
+                                          if (info == .Int and numerator == minInt(T) and denominator == -1)
+                                                           return error.Overflow;
+                                          return @divFloor(numerator + 1, denominator) + 1;
+                                      }
+                                      if (numerator > 0 and denominator > 0)
+                                          return @divFloor(numerator - 1, denominator) + 1;
+                                      return @divTrunc(numerator, denominator);
+                     },
+                     else => @compileError("divCeil unsupported on " ++ @typeName(T)),
     }
 }
 
@@ -862,22 +862,22 @@ pub fn absCast(x: anytype) switch (@typeInfo(@TypeOf(x))) {
     else => @compileError("absCast only accepts integers"),
 } {
     switch (@typeInfo(@TypeOf(x))) {
-        .ComptimeInt => {
-            if (x < 0) {
-                return -x;
-            } else {
-                return x;
-            }
-        },
-        .Int => |intInfo| {
-            const Uint = std.meta.Int(.unsigned, intInfo.bits);
-            if (x < 0) {
-                return ~@bitCast(Uint, x +% -1);
-            } else {
-                return @intCast(Uint, x);
-            }
-        },
-        else => unreachable,
+                     .ComptimeInt => {
+                                      if (x < 0) {
+                                          return -x;
+                                      } else {
+                                          return x;
+                                      }
+                     },
+                     .Int => |intInfo| {
+                                      const Uint = std.meta.Int(.unsigned, intInfo.bits);
+                                      if (x < 0) {
+                                          return ~@bitCast(Uint, x +% -1);
+                                      } else {
+                                          return @intCast(Uint, x);
+                                      }
+                     },
+                     else => unreachable,
     }
 }
 
@@ -919,11 +919,11 @@ pub fn cast(comptime T: type, x: anytype) (error{Overflow}!T) {
     comptime assert(@typeInfo(T) == .Int); // must pass an integer
     comptime assert(@typeInfo(@TypeOf(x)) == .Int); // must pass an integer
     if (maxInt(@TypeOf(x)) > maxInt(T) and x > maxInt(T)) {
-        return error.Overflow;
+                     return error.Overflow;
     } else if (minInt(@TypeOf(x)) < minInt(T) and x < minInt(T)) {
-        return error.Overflow;
+                     return error.Overflow;
     } else {
-        return @intCast(T, x);
+                     return @intCast(T, x);
     }
 }
 
@@ -943,7 +943,7 @@ pub const AlignCastError = error{UnalignedMemory};
 pub fn alignCast(comptime alignment: u29, ptr: anytype) AlignCastError!@TypeOf(@alignCast(alignment, ptr)) {
     const addr = @ptrToInt(ptr);
     if (addr % alignment != 0) {
-        return error.UnalignedMemory;
+                     return error.UnalignedMemory;
     }
     return @alignCast(alignment, ptr);
 }
@@ -958,7 +958,7 @@ pub fn floorPowerOfTwo(comptime T: type, value: T) T {
 
     comptime var i = 1;
     inline while (@typeInfo(T).Int.bits > i) : (i *= 2) {
-        x |= (x >> i);
+                     x |= (x >> i);
     }
 
     return x - (x >> 1);
@@ -1001,7 +1001,7 @@ pub fn ceilPowerOfTwo(comptime T: type, value: T) (error{Overflow}!T) {
     comptime const overflowBit = @as(PromotedType, 1) << info.bits;
     var x = ceilPowerOfTwoPromote(T, value);
     if (overflowBit & x != 0) {
-        return error.Overflow;
+                     return error.Overflow;
     }
     return @intCast(T, x);
 }
@@ -1053,7 +1053,7 @@ pub fn log2_int_ceil(comptime T: type, x: T) Log2Int(T) {
     assert(x != 0);
     const log2_val = log2_int(T, x);
     if (@as(T, 1) << log2_val == x)
-        return log2_val;
+                     return log2_val;
     return log2_val + 1;
 }
 
@@ -1072,11 +1072,11 @@ test "std.math.log2_int_ceil" {
 
 pub fn lossyCast(comptime T: type, value: anytype) T {
     switch (@typeInfo(@TypeOf(value))) {
-        .Int => return @intToFloat(T, value),
-        .Float => return @floatCast(T, value),
-        .ComptimeInt => return @as(T, value),
-        .ComptimeFloat => return @as(T, value),
-        else => @compileError("bad type"),
+                     .Int => return @intToFloat(T, value),
+                     .Float => return @floatCast(T, value),
+                     .ComptimeInt => return @as(T, value),
+                     .ComptimeFloat => return @as(T, value),
+                     else => @compileError("bad type"),
     }
 }
 
@@ -1166,53 +1166,53 @@ pub const Order = enum {
     gt,
 
     pub fn invert(self: Order) Order {
-        return switch (self) {
-            .lt => .gt,
-            .eq => .eq,
-            .gt => .gt,
-        };
+                     return switch (self) {
+                                      .lt => .gt,
+                                      .eq => .eq,
+                                      .gt => .gt,
+                     };
     }
 
     pub fn compare(self: Order, op: CompareOperator) bool {
-        return switch (self) {
-            .lt => switch (op) {
-                .lt => true,
-                .lte => true,
-                .eq => false,
-                .gte => false,
-                .gt => false,
-                .neq => true,
-            },
-            .eq => switch (op) {
-                .lt => false,
-                .lte => true,
-                .eq => true,
-                .gte => true,
-                .gt => false,
-                .neq => false,
-            },
-            .gt => switch (op) {
-                .lt => false,
-                .lte => false,
-                .eq => false,
-                .gte => true,
-                .gt => true,
-                .neq => true,
-            },
-        };
+                     return switch (self) {
+                                      .lt => switch (op) {
+                                          .lt => true,
+                                          .lte => true,
+                                          .eq => false,
+                                          .gte => false,
+                                          .gt => false,
+                                          .neq => true,
+                                      },
+                                      .eq => switch (op) {
+                                          .lt => false,
+                                          .lte => true,
+                                          .eq => true,
+                                          .gte => true,
+                                          .gt => false,
+                                          .neq => false,
+                                      },
+                                      .gt => switch (op) {
+                                          .lt => false,
+                                          .lte => false,
+                                          .eq => false,
+                                          .gte => true,
+                                          .gt => true,
+                                          .neq => true,
+                                      },
+                     };
     }
 };
 
 /// Given two numbers, this function returns the order they are with respect to each other.
 pub fn order(a: anytype, b: anytype) Order {
     if (a == b) {
-        return .eq;
+                     return .eq;
     } else if (a < b) {
-        return .lt;
+                     return .lt;
     } else if (a > b) {
-        return .gt;
+                     return .gt;
     } else {
-        unreachable;
+                     unreachable;
     }
 }
 
@@ -1237,12 +1237,12 @@ pub const CompareOperator = enum {
 /// support comparison operators.
 pub fn compare(a: anytype, op: CompareOperator, b: anytype) bool {
     return switch (op) {
-        .lt => a < b,
-        .lte => a <= b,
-        .eq => a == b,
-        .neq => a != b,
-        .gt => a > b,
-        .gte => a >= b,
+                     .lt => a < b,
+                     .lte => a <= b,
+                     .eq => a == b,
+                     .neq => a != b,
+                     .gt => a > b,
+                     .gte => a >= b,
     };
 }
 

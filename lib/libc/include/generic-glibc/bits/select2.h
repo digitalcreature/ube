@@ -29,7 +29,7 @@ extern long int __fdelt_warn (long int __d)
   __extension__								    \
   ({ long int __d = (d);						    \
      (__builtin_constant_p (__d)					    \
-      ? (0 <= __d && __d < __FD_SETSIZE					    \
+                   ? (0 <= __d && __d < __FD_SETSIZE					    \
 	 ? (__d / __NFDBITS)						    \
 	 : __fdelt_warn (__d))						    \
-      : __fdelt_chk (__d)); })
+                   : __fdelt_chk (__d)); })

@@ -36,7 +36,7 @@
 #define TIOCGWINSZ	_IOR('t', 104, struct winsize)
 #define	TIOCSTART	_IO('t', 110)		/* start output, like ^Q */
 #define	TIOCSTOP	_IO('t', 111)		/* stop output, like ^S */
-#define TIOCOUTQ        _IOR('t', 115, int)     /* output queue size */
+#define TIOCOUTQ                     _IOR('t', 115, int)     /* output queue size */
 
 #define TIOCGLTC	_IOR('t', 116, struct ltchars)
 #define TIOCSLTC	_IOW('t', 117, struct ltchars)

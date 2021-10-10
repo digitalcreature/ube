@@ -22,7 +22,7 @@ __MINGW_USYMBOL(__sinl_internal):
 	testl	$0x400,%eax
 	jnz	1f
 	movq	%rcx,%rax
-        movq	$0,8(%rcx)
+                     movq	$0,8(%rcx)
 	fstpt	(%rcx)
 	ret
 1:	fldpi

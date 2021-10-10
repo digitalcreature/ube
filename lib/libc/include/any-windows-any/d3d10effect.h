@@ -23,8 +23,8 @@
 
 #include "d3d10.h"
 
-#define D3D10_EFFECT_VARIABLE_POOLED                0x1
-#define D3D10_EFFECT_VARIABLE_ANNOTATION            0x2
+#define D3D10_EFFECT_VARIABLE_POOLED                                          0x1
+#define D3D10_EFFECT_VARIABLE_ANNOTATION                                      0x2
 #define D3D10_EFFECT_VARIABLE_EXPLICIT_BIND_POINT   0x4
 
 #ifndef D3D10_BYTES_FROM_BITS
@@ -158,7 +158,7 @@ typedef struct _D3D10_PASS_SHADER_DESC
 
 #define D3D10_EFFECT_COMPILE_CHILD_EFFECT    0x0001
 #define D3D10_EFFECT_COMPILE_ALLOW_SLOW_OPS  0x0002
-#define D3D10_EFFECT_SINGLE_THREADED         0x0008
+#define D3D10_EFFECT_SINGLE_THREADED                      0x0008
 
 DEFINE_GUID(IID_ID3D10EffectType, 0x4e9e1ddc, 0xcd9d, 0x4772, 0xa8, 0x37, 0x00, 0x18, 0x0b, 0x9b, 0x88, 0xfd);
 
@@ -422,7 +422,7 @@ DECLARE_INTERFACE_(ID3D10EffectStringVariable, ID3D10EffectVariable)
 #undef INTERFACE
 
 DEFINE_GUID(IID_ID3D10EffectShaderResourceVariable,
-        0xc0a7157b, 0xd872, 0x4b1d, 0x80, 0x73, 0xef, 0xc2, 0xac, 0xd4, 0xb1, 0xfc);
+                     0xc0a7157b, 0xd872, 0x4b1d, 0x80, 0x73, 0xef, 0xc2, 0xac, 0xd4, 0xb1, 0xfc);
 
 #define INTERFACE ID3D10EffectShaderResourceVariable
 DECLARE_INTERFACE_(ID3D10EffectShaderResourceVariable, ID3D10EffectVariable)
@@ -462,7 +462,7 @@ DECLARE_INTERFACE_(ID3D10EffectShaderResourceVariable, ID3D10EffectVariable)
 #undef INTERFACE
 
 DEFINE_GUID(IID_ID3D10EffectRenderTargetViewVariable,
-        0x28ca0cc3, 0xc2c9, 0x40bb, 0xb5, 0x7f, 0x67, 0xb7, 0x37, 0x12, 0x2b, 0x17);
+                     0x28ca0cc3, 0xc2c9, 0x40bb, 0xb5, 0x7f, 0x67, 0xb7, 0x37, 0x12, 0x2b, 0x17);
 
 #define INTERFACE ID3D10EffectRenderTargetViewVariable
 DECLARE_INTERFACE_(ID3D10EffectRenderTargetViewVariable, ID3D10EffectVariable)
@@ -502,7 +502,7 @@ DECLARE_INTERFACE_(ID3D10EffectRenderTargetViewVariable, ID3D10EffectVariable)
 #undef INTERFACE
 
 DEFINE_GUID(IID_ID3D10EffectDepthStencilViewVariable,
-        0x3e02c918, 0xcc79, 0x4985, 0xb6, 0x22, 0x2d, 0x92, 0xad, 0x70, 0x16, 0x23);
+                     0x3e02c918, 0xcc79, 0x4985, 0xb6, 0x22, 0x2d, 0x92, 0xad, 0x70, 0x16, 0x23);
 
 #define INTERFACE ID3D10EffectDepthStencilViewVariable
 DECLARE_INTERFACE_(ID3D10EffectDepthStencilViewVariable, ID3D10EffectVariable)
@@ -578,9 +578,9 @@ DECLARE_INTERFACE_(ID3D10EffectShaderVariable, ID3D10EffectVariable)
     STDMETHOD(GetGeometryShader)(THIS_ UINT index, ID3D10GeometryShader **shader) PURE;
     STDMETHOD(GetPixelShader)(THIS_ UINT index, ID3D10PixelShader **shader) PURE;
     STDMETHOD(GetInputSignatureElementDesc)(THIS_ UINT shader_index, UINT element_index,
-            D3D10_SIGNATURE_PARAMETER_DESC *desc) PURE;
+                                      D3D10_SIGNATURE_PARAMETER_DESC *desc) PURE;
     STDMETHOD(GetOutputSignatureElementDesc)(THIS_ UINT shader_index, UINT element_index,
-            D3D10_SIGNATURE_PARAMETER_DESC *desc) PURE;
+                                      D3D10_SIGNATURE_PARAMETER_DESC *desc) PURE;
 };
 #undef INTERFACE
 
@@ -622,7 +622,7 @@ DECLARE_INTERFACE_(ID3D10EffectBlendVariable, ID3D10EffectVariable)
 #undef INTERFACE
 
 DEFINE_GUID(IID_ID3D10EffectDepthStencilVariable,
-        0xaf482368, 0x330a, 0x46a5, 0x9a, 0x5c, 0x01, 0xc7, 0x1a, 0xf2, 0x4c, 0x8d);
+                     0xaf482368, 0x330a, 0x46a5, 0x9a, 0x5c, 0x01, 0xc7, 0x1a, 0xf2, 0x4c, 0x8d);
 
 #define INTERFACE ID3D10EffectDepthStencilVariable
 DECLARE_INTERFACE_(ID3D10EffectDepthStencilVariable, ID3D10EffectVariable)
@@ -660,7 +660,7 @@ DECLARE_INTERFACE_(ID3D10EffectDepthStencilVariable, ID3D10EffectVariable)
 #undef INTERFACE
 
 DEFINE_GUID(IID_ID3D10EffectRasterizerVariable,
-        0x21af9f0e, 0x4d94, 0x4ea9, 0x97, 0x85, 0x2c, 0xb7, 0x6b, 0x8c, 0x0b, 0x34);
+                     0x21af9f0e, 0x4d94, 0x4ea9, 0x97, 0x85, 0x2c, 0xb7, 0x6b, 0x8c, 0x0b, 0x34);
 
 #define INTERFACE ID3D10EffectRasterizerVariable
 DECLARE_INTERFACE_(ID3D10EffectRasterizerVariable, ID3D10EffectVariable)
@@ -698,7 +698,7 @@ DECLARE_INTERFACE_(ID3D10EffectRasterizerVariable, ID3D10EffectVariable)
 #undef INTERFACE
 
 DEFINE_GUID(IID_ID3D10EffectSamplerVariable,
-        0x6530d5c7, 0x07e9, 0x4271, 0xa4, 0x18, 0xe7, 0xce, 0x4b, 0xd1, 0xe4, 0x80);
+                     0x6530d5c7, 0x07e9, 0x4271, 0xa4, 0x18, 0xe7, 0xce, 0x4b, 0xd1, 0xe4, 0x80);
 
 #define INTERFACE ID3D10EffectSamplerVariable
 DECLARE_INTERFACE_(ID3D10EffectSamplerVariable, ID3D10EffectVariable)
@@ -829,29 +829,29 @@ extern "C" {
 #endif
 
 HRESULT WINAPI D3D10CompileEffectFromMemory(void *data, SIZE_T data_size, const char *filename,
-        const D3D10_SHADER_MACRO *defines, ID3D10Include *include, UINT hlsl_flags, UINT fx_flags,
-        ID3D10Blob **effect, ID3D10Blob **errors);
+                     const D3D10_SHADER_MACRO *defines, ID3D10Include *include, UINT hlsl_flags, UINT fx_flags,
+                     ID3D10Blob **effect, ID3D10Blob **errors);
 HRESULT WINAPI D3D10CreateEffectFromMemory(void *data, SIZE_T data_size, UINT flags,
-        ID3D10Device *device, ID3D10EffectPool *effect_pool, ID3D10Effect **effect);
+                     ID3D10Device *device, ID3D10EffectPool *effect_pool, ID3D10Effect **effect);
 HRESULT WINAPI D3D10CreateEffectPoolFromMemory(void *data, SIZE_T data_size, UINT fx_flags,
-        ID3D10Device *device, ID3D10EffectPool **effect_pool);
+                     ID3D10Device *device, ID3D10EffectPool **effect_pool);
 HRESULT WINAPI D3D10CreateStateBlock(ID3D10Device *device,
-        D3D10_STATE_BLOCK_MASK *mask, ID3D10StateBlock **stateblock);
+                     D3D10_STATE_BLOCK_MASK *mask, ID3D10StateBlock **stateblock);
 
 HRESULT WINAPI D3D10StateBlockMaskDifference(D3D10_STATE_BLOCK_MASK *mask_x,
-        D3D10_STATE_BLOCK_MASK *mask_y, D3D10_STATE_BLOCK_MASK *result);
+                     D3D10_STATE_BLOCK_MASK *mask_y, D3D10_STATE_BLOCK_MASK *result);
 HRESULT WINAPI D3D10StateBlockMaskDisableAll(D3D10_STATE_BLOCK_MASK *mask);
 HRESULT WINAPI D3D10StateBlockMaskDisableCapture(D3D10_STATE_BLOCK_MASK *mask,
-        D3D10_DEVICE_STATE_TYPES state_type, UINT start_idx, UINT count);
+                     D3D10_DEVICE_STATE_TYPES state_type, UINT start_idx, UINT count);
 HRESULT WINAPI D3D10StateBlockMaskEnableAll(D3D10_STATE_BLOCK_MASK *mask);
 HRESULT WINAPI D3D10StateBlockMaskEnableCapture(D3D10_STATE_BLOCK_MASK *mask,
-        D3D10_DEVICE_STATE_TYPES state_type, UINT start_idx, UINT count);
+                     D3D10_DEVICE_STATE_TYPES state_type, UINT start_idx, UINT count);
 WINBOOL WINAPI D3D10StateBlockMaskGetSetting(D3D10_STATE_BLOCK_MASK *mask,
-        D3D10_DEVICE_STATE_TYPES state_type, UINT idx);
+                     D3D10_DEVICE_STATE_TYPES state_type, UINT idx);
 HRESULT WINAPI D3D10StateBlockMaskIntersect(D3D10_STATE_BLOCK_MASK *mask_x,
-        D3D10_STATE_BLOCK_MASK *mask_y, D3D10_STATE_BLOCK_MASK *result);
+                     D3D10_STATE_BLOCK_MASK *mask_y, D3D10_STATE_BLOCK_MASK *result);
 HRESULT WINAPI D3D10StateBlockMaskUnion(D3D10_STATE_BLOCK_MASK *mask_x,
-        D3D10_STATE_BLOCK_MASK *mask_y, D3D10_STATE_BLOCK_MASK *result);
+                     D3D10_STATE_BLOCK_MASK *mask_y, D3D10_STATE_BLOCK_MASK *result);
 
 #ifdef __cplusplus
 }

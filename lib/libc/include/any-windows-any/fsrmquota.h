@@ -208,52 +208,52 @@ MIDL_INTERFACE("8bb68c7d-19d8-4ffb-809e-be4fc1734014")
 IFsrmQuotaManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_ActionVariables(
-        SAFEARRAY **variables) = 0;
+                     SAFEARRAY **variables) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ActionVariableDescriptions(
-        SAFEARRAY **descriptions) = 0;
+                     SAFEARRAY **descriptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateQuota(
-        BSTR path,
-        IFsrmQuota **quota) = 0;
+                     BSTR path,
+                     IFsrmQuota **quota) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAutoApplyQuota(
-        BSTR quotaTemplateName,
-        BSTR path,
-        IFsrmAutoApplyQuota **quota) = 0;
+                     BSTR quotaTemplateName,
+                     BSTR path,
+                     IFsrmAutoApplyQuota **quota) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetQuota(
-        BSTR path,
-        IFsrmQuota **quota) = 0;
+                     BSTR path,
+                     IFsrmQuota **quota) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAutoApplyQuota(
-        BSTR path,
-        IFsrmAutoApplyQuota **quota) = 0;
+                     BSTR path,
+                     IFsrmAutoApplyQuota **quota) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRestrictiveQuota(
-        BSTR path,
-        IFsrmQuota **quota) = 0;
+                     BSTR path,
+                     IFsrmQuota **quota) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumQuotas(
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas) = 0;
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumAutoApplyQuotas(
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas) = 0;
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumEffectiveQuotas(
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas) = 0;
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Scan(
-        BSTR strPath) = 0;
+                     BSTR strPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateQuotaCollection(
-        IFsrmCommittableCollection **collection) = 0;
+                     IFsrmCommittableCollection **collection) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -265,106 +265,106 @@ typedef struct IFsrmQuotaManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmQuotaManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmQuotaManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmQuotaManager *This);
+                     IFsrmQuotaManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmQuotaManager *This);
+                     IFsrmQuotaManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmQuotaManager *This,
-        UINT *pctinfo);
+                     IFsrmQuotaManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmQuotaManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmQuotaManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmQuotaManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmQuotaManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmQuotaManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmQuotaManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmQuotaManager methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ActionVariables)(
-        IFsrmQuotaManager *This,
-        SAFEARRAY **variables);
+                     IFsrmQuotaManager *This,
+                     SAFEARRAY **variables);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionVariableDescriptions)(
-        IFsrmQuotaManager *This,
-        SAFEARRAY **descriptions);
+                     IFsrmQuotaManager *This,
+                     SAFEARRAY **descriptions);
 
     HRESULT (STDMETHODCALLTYPE *CreateQuota)(
-        IFsrmQuotaManager *This,
-        BSTR path,
-        IFsrmQuota **quota);
+                     IFsrmQuotaManager *This,
+                     BSTR path,
+                     IFsrmQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *CreateAutoApplyQuota)(
-        IFsrmQuotaManager *This,
-        BSTR quotaTemplateName,
-        BSTR path,
-        IFsrmAutoApplyQuota **quota);
+                     IFsrmQuotaManager *This,
+                     BSTR quotaTemplateName,
+                     BSTR path,
+                     IFsrmAutoApplyQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *GetQuota)(
-        IFsrmQuotaManager *This,
-        BSTR path,
-        IFsrmQuota **quota);
+                     IFsrmQuotaManager *This,
+                     BSTR path,
+                     IFsrmQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *GetAutoApplyQuota)(
-        IFsrmQuotaManager *This,
-        BSTR path,
-        IFsrmAutoApplyQuota **quota);
+                     IFsrmQuotaManager *This,
+                     BSTR path,
+                     IFsrmAutoApplyQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *GetRestrictiveQuota)(
-        IFsrmQuotaManager *This,
-        BSTR path,
-        IFsrmQuota **quota);
+                     IFsrmQuotaManager *This,
+                     BSTR path,
+                     IFsrmQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *EnumQuotas)(
-        IFsrmQuotaManager *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas);
+                     IFsrmQuotaManager *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas);
 
     HRESULT (STDMETHODCALLTYPE *EnumAutoApplyQuotas)(
-        IFsrmQuotaManager *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas);
+                     IFsrmQuotaManager *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas);
 
     HRESULT (STDMETHODCALLTYPE *EnumEffectiveQuotas)(
-        IFsrmQuotaManager *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas);
+                     IFsrmQuotaManager *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas);
 
     HRESULT (STDMETHODCALLTYPE *Scan)(
-        IFsrmQuotaManager *This,
-        BSTR strPath);
+                     IFsrmQuotaManager *This,
+                     BSTR strPath);
 
     HRESULT (STDMETHODCALLTYPE *CreateQuotaCollection)(
-        IFsrmQuotaManager *This,
-        IFsrmCommittableCollection **collection);
+                     IFsrmQuotaManager *This,
+                     IFsrmCommittableCollection **collection);
 
     END_INTERFACE
 } IFsrmQuotaManagerVtbl;
@@ -478,24 +478,24 @@ MIDL_INTERFACE("4173ac41-172d-4d52-963c-fdc7e415f717")
 IFsrmQuotaTemplateManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE CreateTemplate(
-        IFsrmQuotaTemplate **quotaTemplate) = 0;
+                     IFsrmQuotaTemplate **quotaTemplate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTemplate(
-        BSTR name,
-        IFsrmQuotaTemplate **quotaTemplate) = 0;
+                     BSTR name,
+                     IFsrmQuotaTemplate **quotaTemplate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumTemplates(
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotaTemplates) = 0;
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotaTemplates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExportTemplates(
-        VARIANT *quotaTemplateNamesArray,
-        BSTR *serializedQuotaTemplates) = 0;
+                     VARIANT *quotaTemplateNamesArray,
+                     BSTR *serializedQuotaTemplates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportTemplates(
-        BSTR serializedQuotaTemplates,
-        VARIANT *quotaTemplateNamesArray,
-        IFsrmCommittableCollection **quotaTemplates) = 0;
+                     BSTR serializedQuotaTemplates,
+                     VARIANT *quotaTemplateNamesArray,
+                     IFsrmCommittableCollection **quotaTemplates) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -507,71 +507,71 @@ typedef struct IFsrmQuotaTemplateManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmQuotaTemplateManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmQuotaTemplateManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmQuotaTemplateManager *This);
+                     IFsrmQuotaTemplateManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmQuotaTemplateManager *This);
+                     IFsrmQuotaTemplateManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmQuotaTemplateManager *This,
-        UINT *pctinfo);
+                     IFsrmQuotaTemplateManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmQuotaTemplateManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmQuotaTemplateManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmQuotaTemplateManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmQuotaTemplateManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmQuotaTemplateManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmQuotaTemplateManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmQuotaTemplateManager methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateTemplate)(
-        IFsrmQuotaTemplateManager *This,
-        IFsrmQuotaTemplate **quotaTemplate);
+                     IFsrmQuotaTemplateManager *This,
+                     IFsrmQuotaTemplate **quotaTemplate);
 
     HRESULT (STDMETHODCALLTYPE *GetTemplate)(
-        IFsrmQuotaTemplateManager *This,
-        BSTR name,
-        IFsrmQuotaTemplate **quotaTemplate);
+                     IFsrmQuotaTemplateManager *This,
+                     BSTR name,
+                     IFsrmQuotaTemplate **quotaTemplate);
 
     HRESULT (STDMETHODCALLTYPE *EnumTemplates)(
-        IFsrmQuotaTemplateManager *This,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotaTemplates);
+                     IFsrmQuotaTemplateManager *This,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotaTemplates);
 
     HRESULT (STDMETHODCALLTYPE *ExportTemplates)(
-        IFsrmQuotaTemplateManager *This,
-        VARIANT *quotaTemplateNamesArray,
-        BSTR *serializedQuotaTemplates);
+                     IFsrmQuotaTemplateManager *This,
+                     VARIANT *quotaTemplateNamesArray,
+                     BSTR *serializedQuotaTemplates);
 
     HRESULT (STDMETHODCALLTYPE *ImportTemplates)(
-        IFsrmQuotaTemplateManager *This,
-        BSTR serializedQuotaTemplates,
-        VARIANT *quotaTemplateNamesArray,
-        IFsrmCommittableCollection **quotaTemplates);
+                     IFsrmQuotaTemplateManager *This,
+                     BSTR serializedQuotaTemplates,
+                     VARIANT *quotaTemplateNamesArray,
+                     IFsrmCommittableCollection **quotaTemplates);
 
     END_INTERFACE
 } IFsrmQuotaTemplateManagerVtbl;
@@ -657,38 +657,38 @@ MIDL_INTERFACE("1568a795-3924-4118-b74b-68d8f0fa5daf")
 IFsrmQuotaBase : public IFsrmObject
 {
     virtual HRESULT STDMETHODCALLTYPE get_QuotaLimit(
-        VARIANT *quotaLimit) = 0;
+                     VARIANT *quotaLimit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_QuotaLimit(
-        VARIANT quotaLimit) = 0;
+                     VARIANT quotaLimit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_QuotaFlags(
-        LONG *quotaFlags) = 0;
+                     LONG *quotaFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_QuotaFlags(
-        LONG quotaFlags) = 0;
+                     LONG quotaFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Thresholds(
-        SAFEARRAY **thresholds) = 0;
+                     SAFEARRAY **thresholds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddThreshold(
-        FSRM_QUOTA_THRESHOLD threshold) = 0;
+                     FSRM_QUOTA_THRESHOLD threshold) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteThreshold(
-        FSRM_QUOTA_THRESHOLD threshold) = 0;
+                     FSRM_QUOTA_THRESHOLD threshold) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ModifyThreshold(
-        FSRM_QUOTA_THRESHOLD threshold,
-        FSRM_QUOTA_THRESHOLD newThreshold) = 0;
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FSRM_QUOTA_THRESHOLD newThreshold) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateThresholdAction(
-        FSRM_QUOTA_THRESHOLD threshold,
-        FsrmActionType actionType,
-        IFsrmAction **action) = 0;
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FsrmActionType actionType,
+                     IFsrmAction **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumThresholdActions(
-        FSRM_QUOTA_THRESHOLD threshold,
-        IFsrmCollection **actions) = 0;
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     IFsrmCollection **actions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -700,109 +700,109 @@ typedef struct IFsrmQuotaBaseVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmQuotaBase *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmQuotaBase *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmQuotaBase *This);
+                     IFsrmQuotaBase *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmQuotaBase *This);
+                     IFsrmQuotaBase *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmQuotaBase *This,
-        UINT *pctinfo);
+                     IFsrmQuotaBase *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmQuotaBase *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmQuotaBase *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmQuotaBase *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmQuotaBase *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmQuotaBase *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmQuotaBase *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmQuotaBase *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmQuotaBase *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmQuotaBase *This,
-        BSTR *description);
+                     IFsrmQuotaBase *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmQuotaBase *This,
-        BSTR description);
+                     IFsrmQuotaBase *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmQuotaBase *This);
+                     IFsrmQuotaBase *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmQuotaBase *This);
+                     IFsrmQuotaBase *This);
 
     /*** IFsrmQuotaBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_QuotaLimit)(
-        IFsrmQuotaBase *This,
-        VARIANT *quotaLimit);
+                     IFsrmQuotaBase *This,
+                     VARIANT *quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaLimit)(
-        IFsrmQuotaBase *This,
-        VARIANT quotaLimit);
+                     IFsrmQuotaBase *This,
+                     VARIANT quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *get_QuotaFlags)(
-        IFsrmQuotaBase *This,
-        LONG *quotaFlags);
+                     IFsrmQuotaBase *This,
+                     LONG *quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaFlags)(
-        IFsrmQuotaBase *This,
-        LONG quotaFlags);
+                     IFsrmQuotaBase *This,
+                     LONG quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_Thresholds)(
-        IFsrmQuotaBase *This,
-        SAFEARRAY **thresholds);
+                     IFsrmQuotaBase *This,
+                     SAFEARRAY **thresholds);
 
     HRESULT (STDMETHODCALLTYPE *AddThreshold)(
-        IFsrmQuotaBase *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuotaBase *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *DeleteThreshold)(
-        IFsrmQuotaBase *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuotaBase *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *ModifyThreshold)(
-        IFsrmQuotaBase *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FSRM_QUOTA_THRESHOLD newThreshold);
+                     IFsrmQuotaBase *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FSRM_QUOTA_THRESHOLD newThreshold);
 
     HRESULT (STDMETHODCALLTYPE *CreateThresholdAction)(
-        IFsrmQuotaBase *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmQuotaBase *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumThresholdActions)(
-        IFsrmQuotaBase *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        IFsrmCollection **actions);
+                     IFsrmQuotaBase *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     IFsrmCollection **actions);
 
     END_INTERFACE
 } IFsrmQuotaBaseVtbl;
@@ -930,22 +930,22 @@ MIDL_INTERFACE("42dc3511-61d5-48ae-b6dc-59fc00c0a8d6")
 IFsrmQuotaObject : public IFsrmQuotaBase
 {
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UserSid(
-        BSTR *userSid) = 0;
+                     BSTR *userSid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UserAccount(
-        BSTR *userAccount) = 0;
+                     BSTR *userAccount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SourceTemplateName(
-        BSTR *quotaTemplateName) = 0;
+                     BSTR *quotaTemplateName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MatchesSourceTemplate(
-        VARIANT_BOOL *matches) = 0;
+                     VARIANT_BOOL *matches) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyTemplate(
-        BSTR quotaTemplateName) = 0;
+                     BSTR quotaTemplateName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -957,134 +957,134 @@ typedef struct IFsrmQuotaObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmQuotaObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmQuotaObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmQuotaObject *This);
+                     IFsrmQuotaObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmQuotaObject *This);
+                     IFsrmQuotaObject *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmQuotaObject *This,
-        UINT *pctinfo);
+                     IFsrmQuotaObject *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmQuotaObject *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmQuotaObject *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmQuotaObject *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmQuotaObject *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmQuotaObject *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmQuotaObject *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmQuotaObject *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmQuotaObject *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmQuotaObject *This,
-        BSTR *description);
+                     IFsrmQuotaObject *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmQuotaObject *This,
-        BSTR description);
+                     IFsrmQuotaObject *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmQuotaObject *This);
+                     IFsrmQuotaObject *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmQuotaObject *This);
+                     IFsrmQuotaObject *This);
 
     /*** IFsrmQuotaBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_QuotaLimit)(
-        IFsrmQuotaObject *This,
-        VARIANT *quotaLimit);
+                     IFsrmQuotaObject *This,
+                     VARIANT *quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaLimit)(
-        IFsrmQuotaObject *This,
-        VARIANT quotaLimit);
+                     IFsrmQuotaObject *This,
+                     VARIANT quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *get_QuotaFlags)(
-        IFsrmQuotaObject *This,
-        LONG *quotaFlags);
+                     IFsrmQuotaObject *This,
+                     LONG *quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaFlags)(
-        IFsrmQuotaObject *This,
-        LONG quotaFlags);
+                     IFsrmQuotaObject *This,
+                     LONG quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_Thresholds)(
-        IFsrmQuotaObject *This,
-        SAFEARRAY **thresholds);
+                     IFsrmQuotaObject *This,
+                     SAFEARRAY **thresholds);
 
     HRESULT (STDMETHODCALLTYPE *AddThreshold)(
-        IFsrmQuotaObject *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuotaObject *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *DeleteThreshold)(
-        IFsrmQuotaObject *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuotaObject *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *ModifyThreshold)(
-        IFsrmQuotaObject *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FSRM_QUOTA_THRESHOLD newThreshold);
+                     IFsrmQuotaObject *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FSRM_QUOTA_THRESHOLD newThreshold);
 
     HRESULT (STDMETHODCALLTYPE *CreateThresholdAction)(
-        IFsrmQuotaObject *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmQuotaObject *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumThresholdActions)(
-        IFsrmQuotaObject *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        IFsrmCollection **actions);
+                     IFsrmQuotaObject *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     IFsrmCollection **actions);
 
     /*** IFsrmQuotaObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IFsrmQuotaObject *This,
-        BSTR *path);
+                     IFsrmQuotaObject *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *get_UserSid)(
-        IFsrmQuotaObject *This,
-        BSTR *userSid);
+                     IFsrmQuotaObject *This,
+                     BSTR *userSid);
 
     HRESULT (STDMETHODCALLTYPE *get_UserAccount)(
-        IFsrmQuotaObject *This,
-        BSTR *userAccount);
+                     IFsrmQuotaObject *This,
+                     BSTR *userAccount);
 
     HRESULT (STDMETHODCALLTYPE *get_SourceTemplateName)(
-        IFsrmQuotaObject *This,
-        BSTR *quotaTemplateName);
+                     IFsrmQuotaObject *This,
+                     BSTR *quotaTemplateName);
 
     HRESULT (STDMETHODCALLTYPE *get_MatchesSourceTemplate)(
-        IFsrmQuotaObject *This,
-        VARIANT_BOOL *matches);
+                     IFsrmQuotaObject *This,
+                     VARIANT_BOOL *matches);
 
     HRESULT (STDMETHODCALLTYPE *ApplyTemplate)(
-        IFsrmQuotaObject *This,
-        BSTR quotaTemplateName);
+                     IFsrmQuotaObject *This,
+                     BSTR quotaTemplateName);
 
     END_INTERFACE
 } IFsrmQuotaObjectVtbl;
@@ -1238,18 +1238,18 @@ MIDL_INTERFACE("a2efab31-295e-46bb-b976-e86d58b52e8b")
 IFsrmQuotaTemplate : public IFsrmQuotaBase
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyTemplate(
-        BSTR quotaTemplateName) = 0;
+                     BSTR quotaTemplateName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitAndUpdateDerived(
-        FsrmCommitOptions commitOptions,
-        FsrmTemplateApplyOptions applyOptions,
-        IFsrmDerivedObjectsResult **derivedObjectsResult) = 0;
+                     FsrmCommitOptions commitOptions,
+                     FsrmTemplateApplyOptions applyOptions,
+                     IFsrmDerivedObjectsResult **derivedObjectsResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1261,128 +1261,128 @@ typedef struct IFsrmQuotaTemplateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmQuotaTemplate *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmQuotaTemplate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmQuotaTemplate *This);
+                     IFsrmQuotaTemplate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmQuotaTemplate *This);
+                     IFsrmQuotaTemplate *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmQuotaTemplate *This,
-        UINT *pctinfo);
+                     IFsrmQuotaTemplate *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmQuotaTemplate *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmQuotaTemplate *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmQuotaTemplate *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmQuotaTemplate *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmQuotaTemplate *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmQuotaTemplate *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmQuotaTemplate *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmQuotaTemplate *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmQuotaTemplate *This,
-        BSTR *description);
+                     IFsrmQuotaTemplate *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmQuotaTemplate *This,
-        BSTR description);
+                     IFsrmQuotaTemplate *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmQuotaTemplate *This);
+                     IFsrmQuotaTemplate *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmQuotaTemplate *This);
+                     IFsrmQuotaTemplate *This);
 
     /*** IFsrmQuotaBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_QuotaLimit)(
-        IFsrmQuotaTemplate *This,
-        VARIANT *quotaLimit);
+                     IFsrmQuotaTemplate *This,
+                     VARIANT *quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaLimit)(
-        IFsrmQuotaTemplate *This,
-        VARIANT quotaLimit);
+                     IFsrmQuotaTemplate *This,
+                     VARIANT quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *get_QuotaFlags)(
-        IFsrmQuotaTemplate *This,
-        LONG *quotaFlags);
+                     IFsrmQuotaTemplate *This,
+                     LONG *quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaFlags)(
-        IFsrmQuotaTemplate *This,
-        LONG quotaFlags);
+                     IFsrmQuotaTemplate *This,
+                     LONG quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_Thresholds)(
-        IFsrmQuotaTemplate *This,
-        SAFEARRAY **thresholds);
+                     IFsrmQuotaTemplate *This,
+                     SAFEARRAY **thresholds);
 
     HRESULT (STDMETHODCALLTYPE *AddThreshold)(
-        IFsrmQuotaTemplate *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuotaTemplate *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *DeleteThreshold)(
-        IFsrmQuotaTemplate *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuotaTemplate *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *ModifyThreshold)(
-        IFsrmQuotaTemplate *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FSRM_QUOTA_THRESHOLD newThreshold);
+                     IFsrmQuotaTemplate *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FSRM_QUOTA_THRESHOLD newThreshold);
 
     HRESULT (STDMETHODCALLTYPE *CreateThresholdAction)(
-        IFsrmQuotaTemplate *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmQuotaTemplate *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumThresholdActions)(
-        IFsrmQuotaTemplate *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        IFsrmCollection **actions);
+                     IFsrmQuotaTemplate *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     IFsrmCollection **actions);
 
     /*** IFsrmQuotaTemplate methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmQuotaTemplate *This,
-        BSTR *name);
+                     IFsrmQuotaTemplate *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmQuotaTemplate *This,
-        BSTR name);
+                     IFsrmQuotaTemplate *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *CopyTemplate)(
-        IFsrmQuotaTemplate *This,
-        BSTR quotaTemplateName);
+                     IFsrmQuotaTemplate *This,
+                     BSTR quotaTemplateName);
 
     HRESULT (STDMETHODCALLTYPE *CommitAndUpdateDerived)(
-        IFsrmQuotaTemplate *This,
-        FsrmCommitOptions commitOptions,
-        FsrmTemplateApplyOptions applyOptions,
-        IFsrmDerivedObjectsResult **derivedObjectsResult);
+                     IFsrmQuotaTemplate *This,
+                     FsrmCommitOptions commitOptions,
+                     FsrmTemplateApplyOptions applyOptions,
+                     IFsrmDerivedObjectsResult **derivedObjectsResult);
 
     END_INTERFACE
 } IFsrmQuotaTemplateVtbl;
@@ -1528,19 +1528,19 @@ MIDL_INTERFACE("377f739d-9647-4b8e-97d2-5ffce6d759cd")
 IFsrmQuota : public IFsrmQuotaObject
 {
     virtual HRESULT STDMETHODCALLTYPE get_QuotaUsed(
-        VARIANT *used) = 0;
+                     VARIANT *used) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_QuotaPeakUsage(
-        VARIANT *peakUsage) = 0;
+                     VARIANT *peakUsage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_QuotaPeakUsageTime(
-        DATE *peakUsageDateTime) = 0;
+                     DATE *peakUsageDateTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetPeakUsage(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RefreshUsageProperties(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1552,153 +1552,153 @@ typedef struct IFsrmQuotaVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmQuota *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmQuota *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmQuota *This);
+                     IFsrmQuota *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmQuota *This);
+                     IFsrmQuota *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmQuota *This,
-        UINT *pctinfo);
+                     IFsrmQuota *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmQuota *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmQuota *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmQuota *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmQuota *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmQuota *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmQuota *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmQuota *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmQuota *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmQuota *This,
-        BSTR *description);
+                     IFsrmQuota *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmQuota *This,
-        BSTR description);
+                     IFsrmQuota *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmQuota *This);
+                     IFsrmQuota *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmQuota *This);
+                     IFsrmQuota *This);
 
     /*** IFsrmQuotaBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_QuotaLimit)(
-        IFsrmQuota *This,
-        VARIANT *quotaLimit);
+                     IFsrmQuota *This,
+                     VARIANT *quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaLimit)(
-        IFsrmQuota *This,
-        VARIANT quotaLimit);
+                     IFsrmQuota *This,
+                     VARIANT quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *get_QuotaFlags)(
-        IFsrmQuota *This,
-        LONG *quotaFlags);
+                     IFsrmQuota *This,
+                     LONG *quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaFlags)(
-        IFsrmQuota *This,
-        LONG quotaFlags);
+                     IFsrmQuota *This,
+                     LONG quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_Thresholds)(
-        IFsrmQuota *This,
-        SAFEARRAY **thresholds);
+                     IFsrmQuota *This,
+                     SAFEARRAY **thresholds);
 
     HRESULT (STDMETHODCALLTYPE *AddThreshold)(
-        IFsrmQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *DeleteThreshold)(
-        IFsrmQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *ModifyThreshold)(
-        IFsrmQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FSRM_QUOTA_THRESHOLD newThreshold);
+                     IFsrmQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FSRM_QUOTA_THRESHOLD newThreshold);
 
     HRESULT (STDMETHODCALLTYPE *CreateThresholdAction)(
-        IFsrmQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumThresholdActions)(
-        IFsrmQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        IFsrmCollection **actions);
+                     IFsrmQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     IFsrmCollection **actions);
 
     /*** IFsrmQuotaObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IFsrmQuota *This,
-        BSTR *path);
+                     IFsrmQuota *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *get_UserSid)(
-        IFsrmQuota *This,
-        BSTR *userSid);
+                     IFsrmQuota *This,
+                     BSTR *userSid);
 
     HRESULT (STDMETHODCALLTYPE *get_UserAccount)(
-        IFsrmQuota *This,
-        BSTR *userAccount);
+                     IFsrmQuota *This,
+                     BSTR *userAccount);
 
     HRESULT (STDMETHODCALLTYPE *get_SourceTemplateName)(
-        IFsrmQuota *This,
-        BSTR *quotaTemplateName);
+                     IFsrmQuota *This,
+                     BSTR *quotaTemplateName);
 
     HRESULT (STDMETHODCALLTYPE *get_MatchesSourceTemplate)(
-        IFsrmQuota *This,
-        VARIANT_BOOL *matches);
+                     IFsrmQuota *This,
+                     VARIANT_BOOL *matches);
 
     HRESULT (STDMETHODCALLTYPE *ApplyTemplate)(
-        IFsrmQuota *This,
-        BSTR quotaTemplateName);
+                     IFsrmQuota *This,
+                     BSTR quotaTemplateName);
 
     /*** IFsrmQuota methods ***/
     HRESULT (STDMETHODCALLTYPE *get_QuotaUsed)(
-        IFsrmQuota *This,
-        VARIANT *used);
+                     IFsrmQuota *This,
+                     VARIANT *used);
 
     HRESULT (STDMETHODCALLTYPE *get_QuotaPeakUsage)(
-        IFsrmQuota *This,
-        VARIANT *peakUsage);
+                     IFsrmQuota *This,
+                     VARIANT *peakUsage);
 
     HRESULT (STDMETHODCALLTYPE *get_QuotaPeakUsageTime)(
-        IFsrmQuota *This,
-        DATE *peakUsageDateTime);
+                     IFsrmQuota *This,
+                     DATE *peakUsageDateTime);
 
     HRESULT (STDMETHODCALLTYPE *ResetPeakUsage)(
-        IFsrmQuota *This);
+                     IFsrmQuota *This);
 
     HRESULT (STDMETHODCALLTYPE *RefreshUsageProperties)(
-        IFsrmQuota *This);
+                     IFsrmQuota *This);
 
     END_INTERFACE
 } IFsrmQuotaVtbl;
@@ -1874,15 +1874,15 @@ MIDL_INTERFACE("f82e5729-6aba-4740-bfc7-c7f58f75fb7b")
 IFsrmAutoApplyQuota : public IFsrmQuotaObject
 {
     virtual HRESULT STDMETHODCALLTYPE get_ExcludeFolders(
-        SAFEARRAY **folders) = 0;
+                     SAFEARRAY **folders) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ExcludeFolders(
-        SAFEARRAY *folders) = 0;
+                     SAFEARRAY *folders) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitAndUpdateDerived(
-        FsrmCommitOptions commitOptions,
-        FsrmTemplateApplyOptions applyOptions,
-        IFsrmDerivedObjectsResult **derivedObjectsResult) = 0;
+                     FsrmCommitOptions commitOptions,
+                     FsrmTemplateApplyOptions applyOptions,
+                     IFsrmDerivedObjectsResult **derivedObjectsResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1894,149 +1894,149 @@ typedef struct IFsrmAutoApplyQuotaVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmAutoApplyQuota *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmAutoApplyQuota *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmAutoApplyQuota *This);
+                     IFsrmAutoApplyQuota *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmAutoApplyQuota *This);
+                     IFsrmAutoApplyQuota *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmAutoApplyQuota *This,
-        UINT *pctinfo);
+                     IFsrmAutoApplyQuota *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmAutoApplyQuota *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmAutoApplyQuota *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmAutoApplyQuota *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmAutoApplyQuota *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmAutoApplyQuota *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmAutoApplyQuota *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmAutoApplyQuota *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmAutoApplyQuota *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmAutoApplyQuota *This,
-        BSTR *description);
+                     IFsrmAutoApplyQuota *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmAutoApplyQuota *This,
-        BSTR description);
+                     IFsrmAutoApplyQuota *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmAutoApplyQuota *This);
+                     IFsrmAutoApplyQuota *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmAutoApplyQuota *This);
+                     IFsrmAutoApplyQuota *This);
 
     /*** IFsrmQuotaBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_QuotaLimit)(
-        IFsrmAutoApplyQuota *This,
-        VARIANT *quotaLimit);
+                     IFsrmAutoApplyQuota *This,
+                     VARIANT *quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaLimit)(
-        IFsrmAutoApplyQuota *This,
-        VARIANT quotaLimit);
+                     IFsrmAutoApplyQuota *This,
+                     VARIANT quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *get_QuotaFlags)(
-        IFsrmAutoApplyQuota *This,
-        LONG *quotaFlags);
+                     IFsrmAutoApplyQuota *This,
+                     LONG *quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaFlags)(
-        IFsrmAutoApplyQuota *This,
-        LONG quotaFlags);
+                     IFsrmAutoApplyQuota *This,
+                     LONG quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_Thresholds)(
-        IFsrmAutoApplyQuota *This,
-        SAFEARRAY **thresholds);
+                     IFsrmAutoApplyQuota *This,
+                     SAFEARRAY **thresholds);
 
     HRESULT (STDMETHODCALLTYPE *AddThreshold)(
-        IFsrmAutoApplyQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmAutoApplyQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *DeleteThreshold)(
-        IFsrmAutoApplyQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmAutoApplyQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *ModifyThreshold)(
-        IFsrmAutoApplyQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FSRM_QUOTA_THRESHOLD newThreshold);
+                     IFsrmAutoApplyQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FSRM_QUOTA_THRESHOLD newThreshold);
 
     HRESULT (STDMETHODCALLTYPE *CreateThresholdAction)(
-        IFsrmAutoApplyQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmAutoApplyQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumThresholdActions)(
-        IFsrmAutoApplyQuota *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        IFsrmCollection **actions);
+                     IFsrmAutoApplyQuota *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     IFsrmCollection **actions);
 
     /*** IFsrmQuotaObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IFsrmAutoApplyQuota *This,
-        BSTR *path);
+                     IFsrmAutoApplyQuota *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *get_UserSid)(
-        IFsrmAutoApplyQuota *This,
-        BSTR *userSid);
+                     IFsrmAutoApplyQuota *This,
+                     BSTR *userSid);
 
     HRESULT (STDMETHODCALLTYPE *get_UserAccount)(
-        IFsrmAutoApplyQuota *This,
-        BSTR *userAccount);
+                     IFsrmAutoApplyQuota *This,
+                     BSTR *userAccount);
 
     HRESULT (STDMETHODCALLTYPE *get_SourceTemplateName)(
-        IFsrmAutoApplyQuota *This,
-        BSTR *quotaTemplateName);
+                     IFsrmAutoApplyQuota *This,
+                     BSTR *quotaTemplateName);
 
     HRESULT (STDMETHODCALLTYPE *get_MatchesSourceTemplate)(
-        IFsrmAutoApplyQuota *This,
-        VARIANT_BOOL *matches);
+                     IFsrmAutoApplyQuota *This,
+                     VARIANT_BOOL *matches);
 
     HRESULT (STDMETHODCALLTYPE *ApplyTemplate)(
-        IFsrmAutoApplyQuota *This,
-        BSTR quotaTemplateName);
+                     IFsrmAutoApplyQuota *This,
+                     BSTR quotaTemplateName);
 
     /*** IFsrmAutoApplyQuota methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ExcludeFolders)(
-        IFsrmAutoApplyQuota *This,
-        SAFEARRAY **folders);
+                     IFsrmAutoApplyQuota *This,
+                     SAFEARRAY **folders);
 
     HRESULT (STDMETHODCALLTYPE *put_ExcludeFolders)(
-        IFsrmAutoApplyQuota *This,
-        SAFEARRAY *folders);
+                     IFsrmAutoApplyQuota *This,
+                     SAFEARRAY *folders);
 
     HRESULT (STDMETHODCALLTYPE *CommitAndUpdateDerived)(
-        IFsrmAutoApplyQuota *This,
-        FsrmCommitOptions commitOptions,
-        FsrmTemplateApplyOptions applyOptions,
-        IFsrmDerivedObjectsResult **derivedObjectsResult);
+                     IFsrmAutoApplyQuota *This,
+                     FsrmCommitOptions commitOptions,
+                     FsrmTemplateApplyOptions applyOptions,
+                     IFsrmDerivedObjectsResult **derivedObjectsResult);
 
     END_INTERFACE
 } IFsrmAutoApplyQuotaVtbl;
@@ -2204,9 +2204,9 @@ MIDL_INTERFACE("4846cb01-d430-494f-abb4-b1054999fb09")
 IFsrmQuotaManagerEx : public IFsrmQuotaManager
 {
     virtual HRESULT STDMETHODCALLTYPE IsAffectedByQuota(
-        BSTR path,
-        FsrmEnumOptions options,
-        VARIANT_BOOL *affected) = 0;
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     VARIANT_BOOL *affected) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2218,113 +2218,113 @@ typedef struct IFsrmQuotaManagerExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmQuotaManagerEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmQuotaManagerEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmQuotaManagerEx *This);
+                     IFsrmQuotaManagerEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmQuotaManagerEx *This);
+                     IFsrmQuotaManagerEx *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmQuotaManagerEx *This,
-        UINT *pctinfo);
+                     IFsrmQuotaManagerEx *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmQuotaManagerEx *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmQuotaManagerEx *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmQuotaManagerEx *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmQuotaManagerEx *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmQuotaManagerEx *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmQuotaManagerEx *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmQuotaManager methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ActionVariables)(
-        IFsrmQuotaManagerEx *This,
-        SAFEARRAY **variables);
+                     IFsrmQuotaManagerEx *This,
+                     SAFEARRAY **variables);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionVariableDescriptions)(
-        IFsrmQuotaManagerEx *This,
-        SAFEARRAY **descriptions);
+                     IFsrmQuotaManagerEx *This,
+                     SAFEARRAY **descriptions);
 
     HRESULT (STDMETHODCALLTYPE *CreateQuota)(
-        IFsrmQuotaManagerEx *This,
-        BSTR path,
-        IFsrmQuota **quota);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR path,
+                     IFsrmQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *CreateAutoApplyQuota)(
-        IFsrmQuotaManagerEx *This,
-        BSTR quotaTemplateName,
-        BSTR path,
-        IFsrmAutoApplyQuota **quota);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR quotaTemplateName,
+                     BSTR path,
+                     IFsrmAutoApplyQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *GetQuota)(
-        IFsrmQuotaManagerEx *This,
-        BSTR path,
-        IFsrmQuota **quota);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR path,
+                     IFsrmQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *GetAutoApplyQuota)(
-        IFsrmQuotaManagerEx *This,
-        BSTR path,
-        IFsrmAutoApplyQuota **quota);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR path,
+                     IFsrmAutoApplyQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *GetRestrictiveQuota)(
-        IFsrmQuotaManagerEx *This,
-        BSTR path,
-        IFsrmQuota **quota);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR path,
+                     IFsrmQuota **quota);
 
     HRESULT (STDMETHODCALLTYPE *EnumQuotas)(
-        IFsrmQuotaManagerEx *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas);
 
     HRESULT (STDMETHODCALLTYPE *EnumAutoApplyQuotas)(
-        IFsrmQuotaManagerEx *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas);
 
     HRESULT (STDMETHODCALLTYPE *EnumEffectiveQuotas)(
-        IFsrmQuotaManagerEx *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **quotas);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **quotas);
 
     HRESULT (STDMETHODCALLTYPE *Scan)(
-        IFsrmQuotaManagerEx *This,
-        BSTR strPath);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR strPath);
 
     HRESULT (STDMETHODCALLTYPE *CreateQuotaCollection)(
-        IFsrmQuotaManagerEx *This,
-        IFsrmCommittableCollection **collection);
+                     IFsrmQuotaManagerEx *This,
+                     IFsrmCommittableCollection **collection);
 
     /*** IFsrmQuotaManagerEx methods ***/
     HRESULT (STDMETHODCALLTYPE *IsAffectedByQuota)(
-        IFsrmQuotaManagerEx *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        VARIANT_BOOL *affected);
+                     IFsrmQuotaManagerEx *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     VARIANT_BOOL *affected);
 
     END_INTERFACE
 } IFsrmQuotaManagerExVtbl;
@@ -2444,10 +2444,10 @@ MIDL_INTERFACE("9a2bf113-a329-44cc-809a-5c00fce8da40")
 IFsrmQuotaTemplateImported : public IFsrmQuotaTemplate
 {
     virtual HRESULT STDMETHODCALLTYPE get_OverwriteOnCommit(
-        VARIANT_BOOL *overwrite) = 0;
+                     VARIANT_BOOL *overwrite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OverwriteOnCommit(
-        VARIANT_BOOL overwrite) = 0;
+                     VARIANT_BOOL overwrite) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2459,137 +2459,137 @@ typedef struct IFsrmQuotaTemplateImportedVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmQuotaTemplateImported *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmQuotaTemplateImported *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmQuotaTemplateImported *This);
+                     IFsrmQuotaTemplateImported *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmQuotaTemplateImported *This);
+                     IFsrmQuotaTemplateImported *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmQuotaTemplateImported *This,
-        UINT *pctinfo);
+                     IFsrmQuotaTemplateImported *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmQuotaTemplateImported *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmQuotaTemplateImported *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmQuotaTemplateImported *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmQuotaTemplateImported *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmQuotaTemplateImported *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmQuotaTemplateImported *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmQuotaTemplateImported *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmQuotaTemplateImported *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmQuotaTemplateImported *This,
-        BSTR *description);
+                     IFsrmQuotaTemplateImported *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmQuotaTemplateImported *This,
-        BSTR description);
+                     IFsrmQuotaTemplateImported *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmQuotaTemplateImported *This);
+                     IFsrmQuotaTemplateImported *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmQuotaTemplateImported *This);
+                     IFsrmQuotaTemplateImported *This);
 
     /*** IFsrmQuotaBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_QuotaLimit)(
-        IFsrmQuotaTemplateImported *This,
-        VARIANT *quotaLimit);
+                     IFsrmQuotaTemplateImported *This,
+                     VARIANT *quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaLimit)(
-        IFsrmQuotaTemplateImported *This,
-        VARIANT quotaLimit);
+                     IFsrmQuotaTemplateImported *This,
+                     VARIANT quotaLimit);
 
     HRESULT (STDMETHODCALLTYPE *get_QuotaFlags)(
-        IFsrmQuotaTemplateImported *This,
-        LONG *quotaFlags);
+                     IFsrmQuotaTemplateImported *This,
+                     LONG *quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_QuotaFlags)(
-        IFsrmQuotaTemplateImported *This,
-        LONG quotaFlags);
+                     IFsrmQuotaTemplateImported *This,
+                     LONG quotaFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_Thresholds)(
-        IFsrmQuotaTemplateImported *This,
-        SAFEARRAY **thresholds);
+                     IFsrmQuotaTemplateImported *This,
+                     SAFEARRAY **thresholds);
 
     HRESULT (STDMETHODCALLTYPE *AddThreshold)(
-        IFsrmQuotaTemplateImported *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuotaTemplateImported *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *DeleteThreshold)(
-        IFsrmQuotaTemplateImported *This,
-        FSRM_QUOTA_THRESHOLD threshold);
+                     IFsrmQuotaTemplateImported *This,
+                     FSRM_QUOTA_THRESHOLD threshold);
 
     HRESULT (STDMETHODCALLTYPE *ModifyThreshold)(
-        IFsrmQuotaTemplateImported *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FSRM_QUOTA_THRESHOLD newThreshold);
+                     IFsrmQuotaTemplateImported *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FSRM_QUOTA_THRESHOLD newThreshold);
 
     HRESULT (STDMETHODCALLTYPE *CreateThresholdAction)(
-        IFsrmQuotaTemplateImported *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmQuotaTemplateImported *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumThresholdActions)(
-        IFsrmQuotaTemplateImported *This,
-        FSRM_QUOTA_THRESHOLD threshold,
-        IFsrmCollection **actions);
+                     IFsrmQuotaTemplateImported *This,
+                     FSRM_QUOTA_THRESHOLD threshold,
+                     IFsrmCollection **actions);
 
     /*** IFsrmQuotaTemplate methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmQuotaTemplateImported *This,
-        BSTR *name);
+                     IFsrmQuotaTemplateImported *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmQuotaTemplateImported *This,
-        BSTR name);
+                     IFsrmQuotaTemplateImported *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *CopyTemplate)(
-        IFsrmQuotaTemplateImported *This,
-        BSTR quotaTemplateName);
+                     IFsrmQuotaTemplateImported *This,
+                     BSTR quotaTemplateName);
 
     HRESULT (STDMETHODCALLTYPE *CommitAndUpdateDerived)(
-        IFsrmQuotaTemplateImported *This,
-        FsrmCommitOptions commitOptions,
-        FsrmTemplateApplyOptions applyOptions,
-        IFsrmDerivedObjectsResult **derivedObjectsResult);
+                     IFsrmQuotaTemplateImported *This,
+                     FsrmCommitOptions commitOptions,
+                     FsrmTemplateApplyOptions applyOptions,
+                     IFsrmDerivedObjectsResult **derivedObjectsResult);
 
     /*** IFsrmQuotaTemplateImported methods ***/
     HRESULT (STDMETHODCALLTYPE *get_OverwriteOnCommit)(
-        IFsrmQuotaTemplateImported *This,
-        VARIANT_BOOL *overwrite);
+                     IFsrmQuotaTemplateImported *This,
+                     VARIANT_BOOL *overwrite);
 
     HRESULT (STDMETHODCALLTYPE *put_OverwriteOnCommit)(
-        IFsrmQuotaTemplateImported *This,
-        VARIANT_BOOL overwrite);
+                     IFsrmQuotaTemplateImported *This,
+                     VARIANT_BOOL overwrite);
 
     END_INTERFACE
 } IFsrmQuotaTemplateImportedVtbl;
@@ -2736,14 +2736,14 @@ static FORCEINLINE HRESULT IFsrmQuotaTemplateImported_put_OverwriteOnCommit(IFsr
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

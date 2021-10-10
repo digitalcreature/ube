@@ -23,13 +23,13 @@
 extern "C" {
 #endif
 
-#define UIA_E_ELEMENTNOTENABLED       0x80040200
+#define UIA_E_ELEMENTNOTENABLED                    0x80040200
 #define UIA_E_ELEMENTNOTAVAILABLE     0x80040201
-#define UIA_E_NOCLICKABLEPOINT        0x80040202
+#define UIA_E_NOCLICKABLEPOINT                     0x80040202
 #define UIA_E_PROXYASSEMBLYNOTLOADED  0x80040203
-#define UIA_E_NOTSUPPORTED            0x80040204
-#define UIA_E_INVALIDOPERATION        0x80131509
-#define UIA_E_TIMEOUT                 0x80131505
+#define UIA_E_NOTSUPPORTED                                      0x80040204
+#define UIA_E_INVALIDOPERATION                     0x80131509
+#define UIA_E_TIMEOUT                                           0x80131505
 
 #define UiaAppendRuntimeId  3
 #define UiaRootObjectId     -25

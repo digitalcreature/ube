@@ -90,11 +90,11 @@
 
 /* Call handler iff the first call.  */
 #define __libc_once(ONCE_CONTROL, INIT_FUNCTION) \
-  do {									      \
-    if ((ONCE_CONTROL) == 0) {						      \
-      INIT_FUNCTION ();							      \
-      (ONCE_CONTROL) = 1;						      \
-    }									      \
+  do {									                   \
+    if ((ONCE_CONTROL) == 0) {						                   \
+                   INIT_FUNCTION ();							                   \
+                   (ONCE_CONTROL) = 1;						                   \
+    }									                   \
   } while (0)
 
 /* Get once control variable.  */

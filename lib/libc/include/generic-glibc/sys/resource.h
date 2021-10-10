@@ -48,11 +48,11 @@ typedef int __priority_which_t;
    Returns 0 if successful, -1 if not (and sets errno).  */
 #ifndef __USE_FILE_OFFSET64
 extern int getrlimit (__rlimit_resource_t __resource,
-		      struct rlimit *__rlimits) __THROW;
+		                   struct rlimit *__rlimits) __THROW;
 #else
 # ifdef __REDIRECT_NTH
 extern int __REDIRECT_NTH (getrlimit, (__rlimit_resource_t __resource,
-				       struct rlimit *__rlimits), getrlimit64);
+				                    struct rlimit *__rlimits), getrlimit64);
 # else
 #  define getrlimit getrlimit64
 # endif
@@ -67,11 +67,11 @@ extern int getrlimit64 (__rlimit_resource_t __resource,
    Return 0 if successful, -1 if not (and sets errno).  */
 #ifndef __USE_FILE_OFFSET64
 extern int setrlimit (__rlimit_resource_t __resource,
-		      const struct rlimit *__rlimits) __THROW;
+		                   const struct rlimit *__rlimits) __THROW;
 #else
 # ifdef __REDIRECT_NTH
 extern int __REDIRECT_NTH (setrlimit, (__rlimit_resource_t __resource,
-				       const struct rlimit *__rlimits),
+				                    const struct rlimit *__rlimits),
 			   setrlimit64);
 # else
 #  define setrlimit setrlimit64

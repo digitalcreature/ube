@@ -40,18 +40,18 @@ _int_wmemmove_s (wchar_t *d, size_t dn, const wchar_t *s, size_t n)
 
   if (!d || !s)
     {
-      if (d)
-        memset (d, 0, dn * sizeof (wchar_t));
-      errno = EINVAL;
-      return EINVAL;
+                   if (d)
+                     memset (d, 0, dn * sizeof (wchar_t));
+                   errno = EINVAL;
+                   return EINVAL;
     }
 
   if (dn < n)
     {
-      memset (d, 0, dn * sizeof (wchar_t));
+                   memset (d, 0, dn * sizeof (wchar_t));
 
-      errno = ERANGE;
-      return ERANGE;
+                   errno = ERANGE;
+                   return ERANGE;
     }
 
   memmove (d, s, n * sizeof (wchar_t));

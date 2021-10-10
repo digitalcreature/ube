@@ -71,11 +71,11 @@ extern "C" {
     size_t szlen;
 
     if(!pszString)
-      return NULL;
+                   return NULL;
     szlen = strlen(pszString) + 1;
     rstr = (char *) WspiapiMalloc (szlen);
     if (!rstr)
-      return NULL;
+                   return NULL;
     strcpy (rstr, pszString);
     return rstr;
   }
@@ -88,13 +88,13 @@ extern "C" {
     int cnt;
 
     for (cnt = 0,h = pszAddress; *h != 0; h++)
-      if (h[0] == '.')
+                   if (h[0] == '.')
 	cnt++;
     if (cnt != 3)
-      return FALSE;
+                   return FALSE;
     dwAddress = inet_addr (pszAddress);
     if (dwAddress == INADDR_NONE)
-      return FALSE;
+                   return FALSE;
     *pdwAddress = dwAddress;
     return TRUE;
   }
@@ -106,12 +106,12 @@ extern "C" {
     struct sockaddr_in *pa;
 
     if ((n = (struct addrinfo *) WspiapiMalloc (sizeof (struct addrinfo))) == NULL)
-      return NULL;
+                   return NULL;
     if ((pa = (struct sockaddr_in *) WspiapiMalloc (sizeof(struct sockaddr_in))) == NULL)
-      {
+                   {
 	WspiapiFree(n);
 	return NULL;
-      }
+                   }
     pa->sin_family = AF_INET;
     pa->sin_port = wPort;
     pa->sin_addr.s_addr = dwAddress;
@@ -135,7 +135,7 @@ extern "C" {
     strncpy (pname, pszNodeName, NI_MAXHOST - 1);
     pname[NI_MAXHOST - 1] = 0;
     for (;;)
-      {
+                   {
 	err = WspiapiQueryDNS (pszNodeName, iSocketType, iProtocol, wPort, palias, pptResult);
 	if (err)
 	  break;
@@ -148,13 +148,13 @@ extern "C" {
 	    break;
 	  }
 	WspiapiSwap(pname, palias, tmp);
-      }
+                   }
     if (!err && bAI_CANONNAME)
-      {
-        (*pptResult)->ai_canonname = WspiapiStrdup (palias);
-        if (!(*pptResult)->ai_canonname)
+                   {
+                     (*pptResult)->ai_canonname = WspiapiStrdup (palias);
+                     if (!(*pptResult)->ai_canonname)
 	  err = EAI_MEMORY;
-      }
+                   }
     return err;
   }
 
@@ -165,7 +165,7 @@ extern "C" {
     struct addrinfo *n = NULL;
 
     for (p = ptResult; p != NULL;)
-      {
+                   {
 	n = WspiapiNewAddrInfo (SOCK_DGRAM, p->ai_protocol, wPort,
 				((struct sockaddr_in *) p->ai_addr)->sin_addr.s_addr);
 	if (!n)
@@ -173,9 +173,9 @@ extern "C" {
 	n->ai_next = p->ai_next;
 	p->ai_next = n;
 	p = n->ai_next;
-      }
+                   }
     if (p != NULL)
-      return EAI_MEMORY;
+                   return EAI_MEMORY;
     return 0;
   }
 
@@ -185,14 +185,14 @@ extern "C" {
     struct addrinfo *p;
 
     for (p = ptHead; p != NULL; p = ptHead)
-      {
+                   {
 	if (p->ai_canonname)
 	  WspiapiFree (p->ai_canonname);
 	if (p->ai_addr)
 	  WspiapiFree (p->ai_addr);
 	ptHead = p->ai_next;
 	WspiapiFree (p);
-      }
+                   }
   }
 #endif /* !__CRT__NO_INLINE */
 

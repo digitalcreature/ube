@@ -98,19 +98,19 @@ typedef struct tagPICTDESC {
   UINT picType;
   __C89_NAMELESS union {
     struct {
-      HBITMAP hbitmap;
-      HPALETTE hpal;
+                   HBITMAP hbitmap;
+                   HPALETTE hpal;
     } bmp;
     struct {
-      HMETAFILE hmeta;
-      int xExt;
-      int yExt;
+                   HMETAFILE hmeta;
+                   int xExt;
+                   int yExt;
     } wmf;
     struct {
-      HICON hicon;
+                   HICON hicon;
     } icon;
     struct {
-      HENHMETAFILE hemf;
+                   HENHMETAFILE hemf;
     } emf;
   } DUMMYUNIONNAME;
 } PICTDESC,*LPPICTDESC;

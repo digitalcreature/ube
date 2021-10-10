@@ -16,14 +16,14 @@ pub fn __floatditf(arg: i64) callconv(.C) f128 {
     @setRuntimeSafety(is_test);
 
     if (arg == 0)
-        return 0.0;
+                     return 0.0;
 
     // All other cases begin by extracting the sign and absolute value of a
     var sign: u128 = 0;
     var aAbs = @bitCast(u64, arg);
     if (arg < 0) {
-        sign = 1 << 127;
-        aAbs = ~@bitCast(u64, arg) + 1;
+                     sign = 1 << 127;
+                     aAbs = ~@bitCast(u64, arg) + 1;
     }
 
     // Exponent of (fp_t)a is the width of abs(a).

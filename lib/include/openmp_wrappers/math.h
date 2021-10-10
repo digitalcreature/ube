@@ -37,7 +37,7 @@
 // which should live in stdlib.h.
 #include <stdlib.h>
 
-#pragma omp begin declare variant match(                                       \
+#pragma omp begin declare variant match(                                                                                                                     \
     device = {arch(nvptx, nvptx64)}, implementation = {extension(match_any)})
 
 #define __CUDA__

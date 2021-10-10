@@ -27,7 +27,7 @@
 extern "C" {
 #endif
 
-#define ETH_LENGTH_OF_ADDRESS             6
+#define ETH_LENGTH_OF_ADDRESS                                       6
 
 #define ETH_IS_BROADCAST(Address) \
   ((((PUCHAR)(Address))[0] == ((UCHAR)0xff)) && (((PUCHAR)(Address))[1] == ((UCHAR)0xff)))
@@ -78,8 +78,8 @@ extern "C" {
 	*((USHORT UNALIGNED *)((UCHAR *)(_D) + 4)) = *((USHORT UNALIGNED *)((UCHAR *)(_S) + 4)); \
 }
 
-#define FDDI_LENGTH_OF_LONG_ADDRESS       6
-#define FDDI_LENGTH_OF_SHORT_ADDRESS      2
+#define FDDI_LENGTH_OF_LONG_ADDRESS                    6
+#define FDDI_LENGTH_OF_SHORT_ADDRESS                   2
 
 #define FDDI_IS_BROADCAST(Address, AddressLength, Result)   \
   *Result = ((*(PUCHAR)(Address) == (UCHAR)0xFF) && \
@@ -123,7 +123,7 @@ extern "C" {
 }
 
 #define FDDI_COMPARE_NETWORK_ADDRESSES_EQ(_A, _B, _Length, _Result) \
-{                                                                   \
+{                                                                                                                                                                                                                  \
 	if ((*(USHORT UNALIGNED *)(_A) == *(USHORT UNALIGNED *)(_B)) && \
 	  (((_Length) == 2) || \
 	    (*(ULONG UNALIGNED *)((PUCHAR)(_A) + 2) == *(ULONG UNALIGNED *)((PUCHAR)(_B) + 2)))) \
@@ -147,8 +147,8 @@ extern "C" {
 	} \
 }
 
-#define TR_LENGTH_OF_FUNCTIONAL           4
-#define TR_LENGTH_OF_ADDRESS              6
+#define TR_LENGTH_OF_FUNCTIONAL                        4
+#define TR_LENGTH_OF_ADDRESS                                        6
 
 typedef ULONG TR_FUNCTIONAL_ADDRESS;
 typedef ULONG TR_GROUP_ADDRESS;

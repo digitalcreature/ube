@@ -49,7 +49,7 @@
 /*
  * DM_ULOG_CTR corresponds to (found in dm-dirty-log.h):
  * int (*ctr)(struct dm_dirty_log *log, struct dm_target *ti,
- *	      unsigned argc, char **argv);
+ *	                   unsigned argc, char **argv);
  *
  * Payload-to-userspace:
  *	A single string containing all the argv arguments separated by ' 's
@@ -69,7 +69,7 @@
  * data field with the log device if necessary, and setting 'data_size'
  * appropriately.
  */
-#define DM_ULOG_CTR                    1
+#define DM_ULOG_CTR                                                           1
 
 /*
  * DM_ULOG_DTR corresponds to (found in dm-dirty-log.h):
@@ -88,7 +88,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and clearing
  * 'data_size' appropriately.
  */
-#define DM_ULOG_DTR                    2
+#define DM_ULOG_DTR                                                           2
 
 /*
  * DM_ULOG_PRESUSPEND corresponds to (found in dm-dirty-log.h):
@@ -107,7 +107,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and
  * 'data_size' appropriately.
  */
-#define DM_ULOG_PRESUSPEND             3
+#define DM_ULOG_PRESUSPEND                                       3
 
 /*
  * DM_ULOG_POSTSUSPEND corresponds to (found in dm-dirty-log.h):
@@ -126,7 +126,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and
  * 'data_size' appropriately.
  */
-#define DM_ULOG_POSTSUSPEND            4
+#define DM_ULOG_POSTSUSPEND                                      4
 
 /*
  * DM_ULOG_RESUME corresponds to (found in dm-dirty-log.h):
@@ -145,7 +145,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and
  * 'data_size' appropriately.
  */
-#define DM_ULOG_RESUME                 5
+#define DM_ULOG_RESUME                                           5
 
 /*
  * DM_ULOG_GET_REGION_SIZE corresponds to (found in dm-dirty-log.h):
@@ -163,7 +163,7 @@
  * When the request has been processed, user-space must return the
  * dm_ulog_request to the kernel - setting the 'error' field appropriately.
  */
-#define DM_ULOG_GET_REGION_SIZE        6
+#define DM_ULOG_GET_REGION_SIZE                     6
 
 /*
  * DM_ULOG_IS_CLEAN corresponds to (found in dm-dirty-log.h):
@@ -181,7 +181,7 @@
  * dm_ulog_request to the kernel - filling the payload with 0 (not clean) or
  * 1 (clean), setting 'data_size' and 'error' appropriately.
  */
-#define DM_ULOG_IS_CLEAN               7
+#define DM_ULOG_IS_CLEAN                                         7
 
 /*
  * DM_ULOG_IN_SYNC corresponds to (found in dm-dirty-log.h):
@@ -196,7 +196,7 @@
  * Exactly the same as 'is_clean' above, except this time asking "has the
  * region been recovered?" vs. "is the region not being modified?"
  */
-#define DM_ULOG_IN_SYNC                8
+#define DM_ULOG_IN_SYNC                                          8
 
 /*
  * DM_ULOG_FLUSH corresponds to (found in dm-dirty-log.h):
@@ -220,7 +220,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and clearing
  * 'data_size' appropriately.
  */
-#define DM_ULOG_FLUSH                  9
+#define DM_ULOG_FLUSH                                                         9
 
 /*
  * DM_ULOG_MARK_REGION corresponds to (found in dm-dirty-log.h):
@@ -239,7 +239,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and clearing
  * 'data_size' appropriately.
  */
-#define DM_ULOG_MARK_REGION           10
+#define DM_ULOG_MARK_REGION                        10
 
 /*
  * DM_ULOG_CLEAR_REGION corresponds to (found in dm-dirty-log.h):
@@ -258,7 +258,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and clearing
  * 'data_size' appropriately.
  */
-#define DM_ULOG_CLEAR_REGION          11
+#define DM_ULOG_CLEAR_REGION                       11
 
 /*
  * DM_ULOG_GET_RESYNC_WORK corresponds to (found in dm-dirty-log.h):
@@ -276,7 +276,7 @@
  * When the request has been processed, user-space must return the
  * dm_ulog_request to the kernel - setting the 'error' field appropriately.
  */
-#define DM_ULOG_GET_RESYNC_WORK       12
+#define DM_ULOG_GET_RESYNC_WORK                    12
 
 /*
  * DM_ULOG_SET_REGION_SYNC corresponds to (found in dm-dirty-log.h):
@@ -295,7 +295,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and clearing
  * 'data_size' appropriately.
  */
-#define DM_ULOG_SET_REGION_SYNC       13
+#define DM_ULOG_SET_REGION_SYNC                    13
 
 /*
  * DM_ULOG_GET_SYNC_COUNT corresponds to (found in dm-dirty-log.h):
@@ -313,7 +313,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and
  * 'data_size' appropriately.
  */
-#define DM_ULOG_GET_SYNC_COUNT        14
+#define DM_ULOG_GET_SYNC_COUNT                     14
 
 /*
  * DM_ULOG_STATUS_INFO corresponds to (found in dm-dirty-log.h):
@@ -329,7 +329,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and
  * 'data_size' appropriately.
  */
-#define DM_ULOG_STATUS_INFO           15
+#define DM_ULOG_STATUS_INFO                        15
 
 /*
  * DM_ULOG_STATUS_TABLE corresponds to (found in dm-dirty-log.h):
@@ -345,7 +345,7 @@
  * dm_ulog_request to the kernel - setting the 'error' field and
  * 'data_size' appropriately.
  */
-#define DM_ULOG_STATUS_TABLE          16
+#define DM_ULOG_STATUS_TABLE                       16
 
 /*
  * DM_ULOG_IS_REMOTE_RECOVERING corresponds to (found in dm-dirty-log.h):
@@ -392,8 +392,8 @@
  * issued/handled.  Changes are outlined here:
  *	version 1:  Initial implementation
  *	version 2:  DM_ULOG_CTR allowed to return a string containing a
- *	            device name that is to be registered with DM via
- *	            'dm_get_device'.
+ *	                                      device name that is to be registered with DM via
+ *	                                      'dm_get_device'.
  *	version 3:  DM_ULOG_FLUSH is capable of carrying payload for marking
  *		    regions.  This "integrated flush" reduces the number of
  *		    requests between the kernel and userspace by effectively
@@ -417,12 +417,12 @@ struct dm_ulog_request {
 	 */
 	__u64 luid;
 	char uuid[DM_UUID_LEN];
-	char padding[3];        /* Padding because DM_UUID_LEN = 129 */
+	char padding[3];                     /* Padding because DM_UUID_LEN = 129 */
 
-	__u32 version;       /* See DM_ULOG_REQUEST_VERSION */
-	__s32 error;          /* Used to report back processing errors */
+	__u32 version;                    /* See DM_ULOG_REQUEST_VERSION */
+	__s32 error;                       /* Used to report back processing errors */
 
-	__u32 seq;           /* Sequence number for request */
+	__u32 seq;                        /* Sequence number for request */
 	__u32 request_type;  /* DM_ULOG_* defined above */
 	__u32 data_size;     /* How much data (not including this struct) */
 

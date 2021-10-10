@@ -21,9 +21,9 @@ const expect = std.testing.expect;
 pub fn exp(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => exp32(x),
-        f64 => exp64(x),
-        else => @compileError("exp not implemented for " ++ @typeName(T)),
+                     f32 => exp32(x),
+                     f64 => exp64(x),
+                     else => @compileError("exp not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -41,26 +41,26 @@ fn exp32(x_: f32) f32 {
     hx &= 0x7FFFFFFF;
 
     if (math.isNan(x)) {
-        return x;
+                     return x;
     }
 
     // |x| >= -87.33655 or nan
     if (hx >= 0x42AEAC50) {
-        // nan
-        if (hx > 0x7F800000) {
-            return x;
-        }
-        // x >= 88.722839
-        if (hx >= 0x42b17218 and sign == 0) {
-            return x * 0x1.0p127;
-        }
-        if (sign != 0) {
-            math.doNotOptimizeAway(-0x1.0p-149 / x); // overflow
-            // x <= -103.972084
-            if (hx >= 0x42CFF1B5) {
-                return 0;
-            }
-        }
+                     // nan
+                     if (hx > 0x7F800000) {
+                                      return x;
+                     }
+                     // x >= 88.722839
+                     if (hx >= 0x42b17218 and sign == 0) {
+                                      return x * 0x1.0p127;
+                     }
+                     if (sign != 0) {
+                                      math.doNotOptimizeAway(-0x1.0p-149 / x); // overflow
+                                      // x <= -103.972084
+                                      if (hx >= 0x42CFF1B5) {
+                                          return 0;
+                                      }
+                     }
     }
 
     var k: i32 = undefined;
@@ -69,26 +69,26 @@ fn exp32(x_: f32) f32 {
 
     // |x| > 0.5 * ln2
     if (hx > 0x3EB17218) {
-        // |x| > 1.5 * ln2
-        if (hx > 0x3F851592) {
-            k = @floatToInt(i32, invln2 * x + half[@intCast(usize, sign)]);
-        } else {
-            k = 1 - sign - sign;
-        }
+                     // |x| > 1.5 * ln2
+                     if (hx > 0x3F851592) {
+                                      k = @floatToInt(i32, invln2 * x + half[@intCast(usize, sign)]);
+                     } else {
+                                      k = 1 - sign - sign;
+                     }
 
-        const fk = @intToFloat(f32, k);
-        hi = x - fk * ln2hi;
-        lo = fk * ln2lo;
-        x = hi - lo;
+                     const fk = @intToFloat(f32, k);
+                     hi = x - fk * ln2hi;
+                     lo = fk * ln2lo;
+                     x = hi - lo;
     }
     // |x| > 2^(-14)
     else if (hx > 0x39000000) {
-        k = 0;
-        hi = x;
-        lo = 0;
+                     k = 0;
+                     hi = x;
+                     lo = 0;
     } else {
-        math.doNotOptimizeAway(0x1.0p127 + x); // inexact
-        return 1 + x;
+                     math.doNotOptimizeAway(0x1.0p127 + x); // inexact
+                     return 1 + x;
     }
 
     const xx = x * x;
@@ -96,9 +96,9 @@ fn exp32(x_: f32) f32 {
     const y = 1 + (x * c / (2 - c) - lo + hi);
 
     if (k == 0) {
-        return y;
+                     return y;
     } else {
-        return math.scalbn(y, k);
+                     return math.scalbn(y, k);
     }
 }
 
@@ -120,29 +120,29 @@ fn exp64(x_: f64) f64 {
     hx &= 0x7FFFFFFF;
 
     if (math.isNan(x)) {
-        return x;
+                     return x;
     }
 
     // |x| >= 708.39 or nan
     if (hx >= 0x4086232B) {
-        // nan
-        if (hx > 0x7FF00000) {
-            return x;
-        }
-        if (x > 709.782712893383973096) {
-            // overflow if x != inf
-            if (!math.isInf(x)) {
-                math.raiseOverflow();
-            }
-            return math.inf(f64);
-        }
-        if (x < -708.39641853226410622) {
-            // underflow if x != -inf
-            // math.doNotOptimizeAway(@as(f32, -0x1.0p-149 / x));
-            if (x < -745.13321910194110842) {
-                return 0;
-            }
-        }
+                     // nan
+                     if (hx > 0x7FF00000) {
+                                      return x;
+                     }
+                     if (x > 709.782712893383973096) {
+                                      // overflow if x != inf
+                                      if (!math.isInf(x)) {
+                                          math.raiseOverflow();
+                                      }
+                                      return math.inf(f64);
+                     }
+                     if (x < -708.39641853226410622) {
+                                      // underflow if x != -inf
+                                      // math.doNotOptimizeAway(@as(f32, -0x1.0p-149 / x));
+                                      if (x < -745.13321910194110842) {
+                                          return 0;
+                                      }
+                     }
     }
 
     // argument reduction
@@ -152,27 +152,27 @@ fn exp64(x_: f64) f64 {
 
     // |x| > 0.5 * ln2
     if (hx > 0x3EB17218) {
-        // |x| >= 1.5 * ln2
-        if (hx > 0x3FF0A2B2) {
-            k = @floatToInt(i32, invln2 * x + half[@intCast(usize, sign)]);
-        } else {
-            k = 1 - sign - sign;
-        }
+                     // |x| >= 1.5 * ln2
+                     if (hx > 0x3FF0A2B2) {
+                                      k = @floatToInt(i32, invln2 * x + half[@intCast(usize, sign)]);
+                     } else {
+                                      k = 1 - sign - sign;
+                     }
 
-        const dk = @intToFloat(f64, k);
-        hi = x - dk * ln2hi;
-        lo = dk * ln2lo;
-        x = hi - lo;
+                     const dk = @intToFloat(f64, k);
+                     hi = x - dk * ln2hi;
+                     lo = dk * ln2lo;
+                     x = hi - lo;
     }
     // |x| > 2^(-28)
     else if (hx > 0x3E300000) {
-        k = 0;
-        hi = x;
-        lo = 0;
+                     k = 0;
+                     hi = x;
+                     lo = 0;
     } else {
-        // inexact if x != 0
-        // math.doNotOptimizeAway(0x1.0p1023 + x);
-        return 1 + x;
+                     // inexact if x != 0
+                     // math.doNotOptimizeAway(0x1.0p1023 + x);
+                     return 1 + x;
     }
 
     const xx = x * x;
@@ -180,9 +180,9 @@ fn exp64(x_: f64) f64 {
     const y = 1 + (x * c / (2 - c) - lo + hi);
 
     if (k == 0) {
-        return y;
+                     return y;
     } else {
-        return math.scalbn(y, k);
+                     return math.scalbn(y, k);
     }
 }
 

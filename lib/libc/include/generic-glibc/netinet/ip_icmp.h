@@ -32,14 +32,14 @@ struct icmphdr
   {
     struct
     {
-      uint16_t	id;
-      uint16_t	sequence;
+                   uint16_t	id;
+                   uint16_t	sequence;
     } echo;			/* echo datagram */
     uint32_t	gateway;	/* gateway address */
     struct
     {
-      uint16_t	__glibc_reserved;
-      uint16_t	mtu;
+                   uint16_t	__glibc_reserved;
+                   uint16_t	mtu;
     } frag;			/* path mtu discovery */
   } un;
 };
@@ -145,23 +145,23 @@ struct icmp
     struct in_addr ih_gwaddr;	/* gateway address */
     struct ih_idseq		/* echo datagram */
     {
-      uint16_t icd_id;
-      uint16_t icd_seq;
+                   uint16_t icd_id;
+                   uint16_t icd_seq;
     } ih_idseq;
     uint32_t ih_void;
 
     /* ICMP_UNREACH_NEEDFRAG -- Path MTU Discovery (RFC1191) */
     struct ih_pmtu
     {
-      uint16_t ipm_void;
-      uint16_t ipm_nextmtu;
+                   uint16_t ipm_void;
+                   uint16_t ipm_nextmtu;
     } ih_pmtu;
 
     struct ih_rtradv
     {
-      uint8_t irt_num_addrs;
-      uint8_t irt_wpa;
-      uint16_t irt_lifetime;
+                   uint8_t irt_num_addrs;
+                   uint8_t irt_wpa;
+                   uint16_t irt_lifetime;
     } ih_rtradv;
   } icmp_hun;
 #define	icmp_pptr	icmp_hun.ih_pptr
@@ -178,14 +178,14 @@ struct icmp
   {
     struct
     {
-      uint32_t its_otime;
-      uint32_t its_rtime;
-      uint32_t its_ttime;
+                   uint32_t its_otime;
+                   uint32_t its_rtime;
+                   uint32_t its_ttime;
     } id_ts;
     struct
     {
-      struct ip idi_ip;
-      /* options and then 64 bits of data */
+                   struct ip idi_ip;
+                   /* options and then 64 bits of data */
     } id_ip;
     struct icmp_ra_addr id_radv;
     uint32_t   id_mask;
@@ -238,20 +238,20 @@ struct icmp
 #define	ICMP_MAXTYPE		18
 
 /* UNREACH codes */
-#define	ICMP_UNREACH_NET	        0	/* bad net */
-#define	ICMP_UNREACH_HOST	        1	/* bad host */
-#define	ICMP_UNREACH_PROTOCOL	        2	/* bad protocol */
-#define	ICMP_UNREACH_PORT	        3	/* bad port */
-#define	ICMP_UNREACH_NEEDFRAG	        4	/* IP_DF caused drop */
-#define	ICMP_UNREACH_SRCFAIL	        5	/* src route failed */
-#define	ICMP_UNREACH_NET_UNKNOWN        6	/* unknown net */
-#define	ICMP_UNREACH_HOST_UNKNOWN       7	/* unknown host */
-#define	ICMP_UNREACH_ISOLATED	        8	/* src host isolated */
-#define	ICMP_UNREACH_NET_PROHIB	        9	/* net denied */
-#define	ICMP_UNREACH_HOST_PROHIB        10	/* host denied */
-#define	ICMP_UNREACH_TOSNET	        11	/* bad tos for net */
-#define	ICMP_UNREACH_TOSHOST	        12	/* bad tos for host */
-#define	ICMP_UNREACH_FILTER_PROHIB      13	/* admin prohib */
+#define	ICMP_UNREACH_NET	                     0	/* bad net */
+#define	ICMP_UNREACH_HOST	                     1	/* bad host */
+#define	ICMP_UNREACH_PROTOCOL	                     2	/* bad protocol */
+#define	ICMP_UNREACH_PORT	                     3	/* bad port */
+#define	ICMP_UNREACH_NEEDFRAG	                     4	/* IP_DF caused drop */
+#define	ICMP_UNREACH_SRCFAIL	                     5	/* src route failed */
+#define	ICMP_UNREACH_NET_UNKNOWN                     6	/* unknown net */
+#define	ICMP_UNREACH_HOST_UNKNOWN                    7	/* unknown host */
+#define	ICMP_UNREACH_ISOLATED	                     8	/* src host isolated */
+#define	ICMP_UNREACH_NET_PROHIB	                     9	/* net denied */
+#define	ICMP_UNREACH_HOST_PROHIB                     10	/* host denied */
+#define	ICMP_UNREACH_TOSNET	                     11	/* bad tos for net */
+#define	ICMP_UNREACH_TOSHOST	                     12	/* bad tos for host */
+#define	ICMP_UNREACH_FILTER_PROHIB                   13	/* admin prohib */
 #define	ICMP_UNREACH_HOST_PRECEDENCE    14	/* host prec vio. */
 #define	ICMP_UNREACH_PRECEDENCE_CUTOFF  15	/* prec cutoff */
 

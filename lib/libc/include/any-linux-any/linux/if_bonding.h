@@ -38,7 +38,7 @@
  *	- Code cleanup and style changes
  *
  * 2005/05/05 - Jason Gabler <jygabler at lbl dot gov>
- *      - added definitions for various XOR hashing policies
+ *                   - added definitions for various XOR hashing policies
  */
 
 #ifndef _LINUX_IF_BONDING_H
@@ -68,19 +68,19 @@
 #define BOND_MODE_ACTIVEBACKUP	1
 #define BOND_MODE_XOR		2
 #define BOND_MODE_BROADCAST	3
-#define BOND_MODE_8023AD        4
-#define BOND_MODE_TLB           5
+#define BOND_MODE_8023AD                     4
+#define BOND_MODE_TLB                        5
 #define BOND_MODE_ALB		6 /* TLB + RLB (receive load balancing) */
 
 /* each slave's link has 4 states */
-#define BOND_LINK_UP    0           /* link is up and running */
-#define BOND_LINK_FAIL  1           /* link has just gone down */
-#define BOND_LINK_DOWN  2           /* link has been down for too long time */
-#define BOND_LINK_BACK  3           /* link is going back */
+#define BOND_LINK_UP    0                        /* link is up and running */
+#define BOND_LINK_FAIL  1                        /* link has just gone down */
+#define BOND_LINK_DOWN  2                        /* link has been down for too long time */
+#define BOND_LINK_BACK  3                        /* link is going back */
 
 /* each slave has several states */
-#define BOND_STATE_ACTIVE       0   /* link is active */
-#define BOND_STATE_BACKUP       1   /* link is backup */
+#define BOND_STATE_ACTIVE                    0   /* link is active */
+#define BOND_STATE_BACKUP                    1   /* link is backup */
 
 #define BOND_DEFAULT_MAX_BONDS  1   /* Default maximum number of devices to support */
 

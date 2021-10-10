@@ -63,13 +63,13 @@ extern int __jrand48_r (unsigned short int __xsubi[3],
 extern int __srand48_r (long int __seedval,
 			struct drand48_data *__buffer) attribute_hidden;
 extern int __seed48_r (unsigned short int __seed16v[3],
-		       struct drand48_data *__buffer) attribute_hidden;
+		                    struct drand48_data *__buffer) attribute_hidden;
 extern int __lcong48_r (unsigned short int __param[7],
 			struct drand48_data *__buffer) attribute_hidden;
 
 /* Internal function to compute next state of the generator.  */
 extern int __drand48_iterate (unsigned short int __xsubi[3],
-			      struct drand48_data *__buffer)
+			                   struct drand48_data *__buffer)
      attribute_hidden;
 
 /* Global state for non-reentrant functions.  Defined in drand48-iter.c.  */
@@ -87,7 +87,7 @@ extern int __ptsname_r (int __fd, char *__buf, size_t __buflen)
      attribute_hidden;
 # ifndef _ISOMAC
 extern int __ptsname_internal (int fd, char *buf, size_t buflen,
-			       struct stat64 *stp) attribute_hidden;
+			                    struct stat64 *stp) attribute_hidden;
 # endif
 extern int __getpt (void);
 extern int __posix_openpt (int __oflag) attribute_hidden;
@@ -133,8 +133,8 @@ extern float __strtof_internal (const char *__restrict __nptr,
 				char **__restrict __endptr, int __group)
      __THROW __nonnull ((1)) __wur;
 extern long double __strtold_internal (const char *__restrict __nptr,
-				       char **__restrict __endptr,
-				       int __group)
+				                    char **__restrict __endptr,
+				                    int __group)
      __THROW __nonnull ((1)) __wur;
 extern long int __strtol_internal (const char *__restrict __nptr,
 				   char **__restrict __endptr,
@@ -173,9 +173,9 @@ extern long double ____strtold_l_internal (const char *__restrict __nptr,
 					   char **__restrict __endptr,
 					   int __group, locale_t __loc);
 extern long int ____strtol_l_internal (const char *__restrict __nptr,
-				       char **__restrict __endptr,
-				       int __base, int __group,
-				       locale_t __loc);
+				                    char **__restrict __endptr,
+				                    int __base, int __group,
+				                    locale_t __loc);
 extern unsigned long int ____strtoul_l_internal (const char *
 						 __restrict __nptr,
 						 char **__restrict __endptr,
@@ -188,11 +188,11 @@ extern long long int ____strtoll_l_internal (const char *__restrict __nptr,
 					     locale_t __loc);
 __extension__
 extern unsigned long long int ____strtoull_l_internal (const char *
-						       __restrict __nptr,
-						       char **
-						       __restrict __endptr,
-						       int __base, int __group,
-						       locale_t __loc);
+						                    __restrict __nptr,
+						                    char **
+						                    __restrict __endptr,
+						                    int __base, int __group,
+						                    locale_t __loc);
 
 libc_hidden_proto (____strtof_l_internal)
 libc_hidden_proto (____strtod_l_internal)
@@ -245,8 +245,8 @@ libc_hidden_proto (__strtof128_nan)
 libc_hidden_proto (__wcstof128_nan)
 
 extern _Float128 __strtof128_internal (const char *__restrict __nptr,
-				       char **__restrict __endptr,
-				       int __group);
+				                    char **__restrict __endptr,
+				                    int __group);
 libc_hidden_proto (__strtof128_internal)
 
 extern _Float128 ____strtof128_l_internal (const char *__restrict __nptr,
@@ -270,17 +270,17 @@ extern int __fcvt_r (double __value, int __ndigit, int *__restrict __decpt,
 		     size_t __len);
 libc_hidden_proto (__fcvt_r)
 extern char *__qecvt (long double __value, int __ndigit,
-		      int *__restrict __decpt, int *__restrict __sign);
+		                   int *__restrict __decpt, int *__restrict __sign);
 extern char *__qfcvt (long double __value, int __ndigit,
-		      int *__restrict __decpt, int *__restrict __sign);
+		                   int *__restrict __decpt, int *__restrict __sign);
 extern char *__qgcvt (long double __value, int __ndigit, char *__buf);
 extern int __qecvt_r (long double __value, int __ndigit,
-		      int *__restrict __decpt, int *__restrict __sign,
-		      char *__restrict __buf, size_t __len);
+		                   int *__restrict __decpt, int *__restrict __sign,
+		                   char *__restrict __buf, size_t __len);
 libc_hidden_proto (__qecvt_r)
 extern int __qfcvt_r (long double __value, int __ndigit,
-		      int *__restrict __decpt, int *__restrict __sign,
-		      char *__restrict __buf, size_t __len);
+		                   int *__restrict __decpt, int *__restrict __sign,
+		                   char *__restrict __buf, size_t __len);
 libc_hidden_proto (__qfcvt_r)
 
 # if IS_IN (libc)

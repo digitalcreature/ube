@@ -41,8 +41,8 @@ DEFINE_GUID(
 DECLARE_INTERFACE(IUnknown)
 {
     STDMETHOD_(NTSTATUS, QueryInterface)( THIS_
-        IN  REFIID,
-        OUT PVOID*)
+                     IN  REFIID,
+                     OUT PVOID*)
     PURE;
 
     STDMETHOD_(ULONG, AddRef)( THIS )
@@ -65,8 +65,8 @@ typedef IUnknown *PUNKNOWN;
 
 #define DEFINE_ABSTRACT_UNKNOWN() \
     STDMETHOD_(NTSTATUS, QueryInterface)( THIS_ \
-        REFIID InterfaceId, \
-        PVOID* Interface) \
+                     REFIID InterfaceId, \
+                     PVOID* Interface) \
     PURE; \
 \
     STDMETHOD_(ULONG, AddRef)(THIS) \

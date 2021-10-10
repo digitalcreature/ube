@@ -138,11 +138,11 @@ struct kvm_fpu {
 /*
  * CP0_Count control
  * DC:    Set 0: Master disable CP0_Count and set COUNT_RESUME to now
- *        Set 1: Master re-enable CP0_Count with unchanged bias, handling timer
- *               interrupts since COUNT_RESUME
- *        This can be used to freeze the timer to get a consistent snapshot of
- *        the CP0_Count and timer interrupt pending state, while also resuming
- *        safely without losing time or guest timer interrupts.
+ *                     Set 1: Master re-enable CP0_Count with unchanged bias, handling timer
+ *                                         interrupts since COUNT_RESUME
+ *                     This can be used to freeze the timer to get a consistent snapshot of
+ *                     the CP0_Count and timer interrupt pending state, while also resuming
+ *                     safely without losing time or guest timer interrupts.
  * Other: Reserved, do not change.
  */
 #define KVM_REG_MIPS_COUNT_CTL	    (KVM_REG_MIPS_KVM | KVM_REG_SIZE_U64 | 0)

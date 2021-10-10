@@ -171,15 +171,15 @@ pub const libc_stat = extern struct {
     birthtim: timespec,
 
     pub fn atime(self: @This()) timespec {
-        return self.atim;
+                     return self.atim;
     }
 
     pub fn mtime(self: @This()) timespec {
-        return self.mtim;
+                     return self.mtim;
     }
 
     pub fn ctime(self: @This()) timespec {
-        return self.ctim;
+                     return self.ctim;
     }
 };
 
@@ -200,7 +200,7 @@ pub const dirent = extern struct {
     d_name: [MAXNAMLEN + 1]u8,
 
     pub fn reclen(self: dirent) u16 {
-        return self.d_reclen;
+                     return self.d_reclen;
     }
 };
 
@@ -716,18 +716,18 @@ pub const _ksiginfo = extern struct {
     code: c_int,
     errno: c_int,
     data: extern union {
-        proc: extern struct {
-            pid: pid_t,
-            uid: uid_t,
-            value: sigval,
-            utime: clock_t,
-            stime: clock_t,
-            status: c_int,
-        },
-        fault: extern struct {
-            addr: ?*c_void,
-            trapno: c_int,
-        },
+                     proc: extern struct {
+                                      pid: pid_t,
+                                      uid: uid_t,
+                                      value: sigval,
+                                      utime: clock_t,
+                                      stime: clock_t,
+                                      status: c_int,
+                     },
+                     fault: extern struct {
+                                      addr: ?*c_void,
+                                      trapno: c_int,
+                     },
     } align(@sizeOf(usize)),
 };
 

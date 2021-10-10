@@ -158,10 +158,10 @@ struct tc_multiq_qopt {
 
 /* PLUG section */
 
-#define TCQ_PLUG_BUFFER                0
-#define TCQ_PLUG_RELEASE_ONE           1
+#define TCQ_PLUG_BUFFER                                          0
+#define TCQ_PLUG_RELEASE_ONE                        1
 #define TCQ_PLUG_RELEASE_INDEFINITE    2
-#define TCQ_PLUG_LIMIT                 3
+#define TCQ_PLUG_LIMIT                                           3
 
 struct tc_plug_qopt {
 	/* TCQ_PLUG_BUFFER: Inset a plug into the queue and
@@ -173,8 +173,8 @@ struct tc_plug_qopt {
 	 *   command is received (just act as a pass-thru queue).
 	 * TCQ_PLUG_LIMIT: Increase/decrease queue size
 	 */
-	int             action;
-	__u32           limit;
+	int                                       action;
+	__u32                        limit;
 };
 
 /* TBF section */
@@ -218,12 +218,12 @@ struct tc_sfq_qopt {
 };
 
 struct tc_sfqred_stats {
-	__u32           prob_drop;      /* Early drops, below max threshold */
-	__u32           forced_drop;	/* Early drops, after max threshold */
-	__u32           prob_mark;      /* Marked packets, below max threshold */
-	__u32           forced_mark;    /* Marked packets, after max threshold */
-	__u32           prob_mark_head; /* Marked packets, below max threshold */
-	__u32           forced_mark_head;/* Marked packets, after max threshold */
+	__u32                        prob_drop;                   /* Early drops, below max threshold */
+	__u32                        forced_drop;	/* Early drops, after max threshold */
+	__u32                        prob_mark;                   /* Marked packets, below max threshold */
+	__u32                        forced_mark;    /* Marked packets, after max threshold */
+	__u32                        prob_mark_head; /* Marked packets, below max threshold */
+	__u32                        forced_mark_head;/* Marked packets, after max threshold */
 };
 
 struct tc_sfq_qopt_v1 {
@@ -274,10 +274,10 @@ struct tc_red_qopt {
 };
 
 struct tc_red_xstats {
-	__u32           early;          /* Early drops */
-	__u32           pdrop;          /* Drops due to queue limits */
-	__u32           other;          /* Drops due to drop() calls */
-	__u32           marked;         /* Marked packets */
+	__u32                        early;                       /* Early drops */
+	__u32                        pdrop;                       /* Drops due to queue limits */
+	__u32                        other;                       /* Drops due to drop() calls */
+	__u32                        marked;                      /* Marked packets */
 };
 
 /* GRED section */
@@ -285,32 +285,32 @@ struct tc_red_xstats {
 #define MAX_DPs 16
 
 enum {
-       TCA_GRED_UNSPEC,
-       TCA_GRED_PARMS,
-       TCA_GRED_STAB,
-       TCA_GRED_DPS,
-       TCA_GRED_MAX_P,
-       TCA_GRED_LIMIT,
-       __TCA_GRED_MAX,
+                    TCA_GRED_UNSPEC,
+                    TCA_GRED_PARMS,
+                    TCA_GRED_STAB,
+                    TCA_GRED_DPS,
+                    TCA_GRED_MAX_P,
+                    TCA_GRED_LIMIT,
+                    __TCA_GRED_MAX,
 };
 
 #define TCA_GRED_MAX (__TCA_GRED_MAX - 1)
 
 struct tc_gred_qopt {
-	__u32		limit;        /* HARD maximal queue length (bytes)    */
-	__u32		qth_min;      /* Min average length threshold (bytes) */
-	__u32		qth_max;      /* Max average length threshold (bytes) */
-	__u32		DP;           /* up to 2^32 DPs */
+	__u32		limit;                     /* HARD maximal queue length (bytes)    */
+	__u32		qth_min;                   /* Min average length threshold (bytes) */
+	__u32		qth_max;                   /* Max average length threshold (bytes) */
+	__u32		DP;                        /* up to 2^32 DPs */
 	__u32		backlog;
 	__u32		qave;
 	__u32		forced;
 	__u32		early;
 	__u32		other;
 	__u32		pdrop;
-	__u8		Wlog;         /* log(W)               */
-	__u8		Plog;         /* log(P_max/(qth_max-qth_min)) */
+	__u8		Wlog;                      /* log(W)                                         */
+	__u8		Plog;                      /* log(P_max/(qth_max-qth_min)) */
 	__u8		Scell_log;    /* cell size for idle damping */
-	__u8		prio;         /* prio of this VQ */
+	__u8		prio;                      /* prio of this VQ */
 	__u32		packets;
 	__u32		bytesin;
 };
@@ -347,10 +347,10 @@ struct tc_choke_qopt {
 };
 
 struct tc_choke_xstats {
-	__u32		early;          /* Early drops */
-	__u32		pdrop;          /* Drops due to queue limits */
-	__u32		other;          /* Drops due to drop() calls */
-	__u32		marked;         /* Marked packets */
+	__u32		early;                       /* Early drops */
+	__u32		pdrop;                       /* Drops due to queue limits */
+	__u32		other;                       /* Drops due to drop() calls */
+	__u32		marked;                      /* Marked packets */
 	__u32		matched;	/* Drops due to flow match */
 };
 
@@ -924,14 +924,14 @@ enum {
 #define TCA_PIE_MAX   (__TCA_PIE_MAX - 1)
 
 struct tc_pie_xstats {
-	__u32 prob;             /* current probability */
-	__u32 delay;            /* current delay in ms */
-	__u32 avg_dq_rate;      /* current average dq_rate in bits/pie_time */
-	__u32 packets_in;       /* total number of packets enqueued */
-	__u32 dropped;          /* packets dropped due to pie_action */
-	__u32 overlimit;        /* dropped due to lack of space in queue */
-	__u32 maxq;             /* maximum queue size */
-	__u32 ecn_mark;         /* packets marked with ecn*/
+	__u32 prob;                                       /* current probability */
+	__u32 delay;                                      /* current delay in ms */
+	__u32 avg_dq_rate;                   /* current average dq_rate in bits/pie_time */
+	__u32 packets_in;                    /* total number of packets enqueued */
+	__u32 dropped;                       /* packets dropped due to pie_action */
+	__u32 overlimit;                     /* dropped due to lack of space in queue */
+	__u32 maxq;                                       /* maximum queue size */
+	__u32 ecn_mark;                      /* packets marked with ecn*/
 };
 
 /* CBS */

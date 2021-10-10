@@ -23,7 +23,7 @@ typedef struct _SdpAttributeRange {
 
 typedef struct _SdpQueryUuid {
   SdpQueryUuidUnion u;
-  USHORT            uuidType;
+  USHORT                                      uuidType;
 } SdpQueryUuid;
 
 typedef enum _SDP_TYPE {
@@ -67,38 +67,38 @@ typedef struct _SDP_ULARGE_INTEGER_16 {
 } SDP_ULARGE_INTEGER_16;
 
 typedef struct _SPD_ELEMENT_DATA {
-  SDP_TYPE         type;
+  SDP_TYPE                      type;
   SDP_SPECIFICTYPE specificType;
   __C89_NAMELESS union {
     SDP_LARGE_INTEGER_16  int128;
-    LONGLONG              int64;
-    LONG                  int32;
-    SHORT                 int16;
-    CHAR                  int8;
+    LONGLONG                                        int64;
+    LONG                                                         int32;
+    SHORT                                           int16;
+    CHAR                                                         int8;
     SDP_ULARGE_INTEGER_16 uint128;
-    ULONGLONG             uint64;
-    ULONG                 uint32;
-    USHORT                uint16;
-    UCHAR                 uint8;
-    UCHAR                 booleanVal;
-    GUID                  uuid128;
-    ULONG                 uuid32;
-    USHORT                uuid16;
+    ULONGLONG                                       uint64;
+    ULONG                                           uint32;
+    USHORT                                          uint16;
+    UCHAR                                           uint8;
+    UCHAR                                           booleanVal;
+    GUID                                                         uuid128;
+    ULONG                                           uuid32;
+    USHORT                                          uuid16;
     struct {
-      LPBYTE value;
-      ULONG  length;
+                   LPBYTE value;
+                   ULONG  length;
     } string;
     struct {
-      LPBYTE value;
-      ULONG  length;
+                   LPBYTE value;
+                   ULONG  length;
     } url;
     struct {
-      LPBYTE value;
-      ULONG  length;
+                   LPBYTE value;
+                   ULONG  length;
     } sequence;
     struct {
-      LPBYTE value;
-      ULONG  length;
+                   LPBYTE value;
+                   ULONG  length;
     } alternative;
   } data;
 } SDP_ELEMENT_DATA, *PSDP_ELEMENT_DATA;

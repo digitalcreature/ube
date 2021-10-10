@@ -101,7 +101,7 @@ typedef enum {
 } _Unwind_Action;
 
 typedef void (*_Unwind_Exception_Cleanup_Fn)(_Unwind_Reason_Code,
-                                             _Unwind_Exception *);
+                                                                                                                                        _Unwind_Exception *);
 
 #if defined(__arm__) && !(defined(__USING_SJLJ_EXCEPTIONS__) || defined(__ARM_DWARF_EH__))
 typedef struct _Unwind_Control_Block _Unwind_Control_Block;
@@ -129,9 +129,9 @@ struct _Unwind_Control_Block {
   } cleanup_cache;
   /* personality cache (for personality's benefit) */
   struct {
-    uint32_t fnstart;         /* function start address */
+    uint32_t fnstart;                      /* function start address */
     _Unwind_EHT_Header *ehtp; /* pointer to EHT entry header word */
-    uint32_t additional;      /* additional data */
+    uint32_t additional;                   /* additional data */
     uint32_t reserved1;
   } pr_cache;
   long long int : 0; /* force alignment of next item to 8-byte boundary */
@@ -153,26 +153,26 @@ struct _Unwind_Exception {
 #endif
 
 typedef _Unwind_Reason_Code (*_Unwind_Stop_Fn)(int, _Unwind_Action,
-                                               _Unwind_Exception_Class,
-                                               _Unwind_Exception *,
-                                               struct _Unwind_Context *,
-                                               void *);
+                                                                                                                                          _Unwind_Exception_Class,
+                                                                                                                                          _Unwind_Exception *,
+                                                                                                                                          struct _Unwind_Context *,
+                                                                                                                                          void *);
 
 typedef _Unwind_Reason_Code (*_Unwind_Personality_Fn)(int, _Unwind_Action,
-                                                      _Unwind_Exception_Class,
-                                                      _Unwind_Exception *,
-                                                      struct _Unwind_Context *);
+                                                                                                                                                                           _Unwind_Exception_Class,
+                                                                                                                                                                           _Unwind_Exception *,
+                                                                                                                                                                           struct _Unwind_Context *);
 typedef _Unwind_Personality_Fn __personality_routine;
 
 typedef _Unwind_Reason_Code (*_Unwind_Trace_Fn)(struct _Unwind_Context *,
-                                                void *);
+                                                                                                                                                        void *);
 
 #if defined(__arm__) && !(defined(__USING_SJLJ_EXCEPTIONS__) || defined(__ARM_DWARF_EH__))
 typedef enum {
-  _UVRSC_CORE = 0,        /* integer register */
-  _UVRSC_VFP = 1,         /* vfp */
-  _UVRSC_WMMXD = 3,       /* Intel WMMX data register */
-  _UVRSC_WMMXC = 4        /* Intel WMMX control register */
+  _UVRSC_CORE = 0,                     /* integer register */
+  _UVRSC_VFP = 1,                      /* vfp */
+  _UVRSC_WMMXD = 3,                    /* Intel WMMX data register */
+  _UVRSC_WMMXC = 4                     /* Intel WMMX control register */
 } _Unwind_VRS_RegClass;
 
 typedef enum {
@@ -193,8 +193,8 @@ typedef uint32_t _Unwind_State;
 #define _US_VIRTUAL_UNWIND_FRAME  ((_Unwind_State)0)
 #define _US_UNWIND_FRAME_STARTING ((_Unwind_State)1)
 #define _US_UNWIND_FRAME_RESUME   ((_Unwind_State)2)
-#define _US_ACTION_MASK           ((_Unwind_State)3)
-#define _US_FORCE_UNWIND          ((_Unwind_State)8)
+#define _US_ACTION_MASK                        ((_Unwind_State)3)
+#define _US_FORCE_UNWIND                       ((_Unwind_State)8)
 
 _Unwind_VRS_Result _Unwind_VRS_Get(struct _Unwind_Context *__context,
   _Unwind_VRS_RegClass __regclass,
@@ -217,7 +217,7 @@ _Unwind_Word _Unwind_GetGR(struct _Unwind_Context *__context, int __index) {
 
 static __inline__
 void _Unwind_SetGR(struct _Unwind_Context *__context, int __index,
-                   _Unwind_Word __value) {
+                                                          _Unwind_Word __value) {
   _Unwind_VRS_Set(__context, _UVRSC_CORE, __index, _UVRSD_UINT32, &__value);
 }
 
@@ -255,7 +255,7 @@ _Unwind_Ptr _Unwind_GetRegionStart(struct _Unwind_Context *);
 #if !defined(__APPLE__) || !defined(__arm__)
 _Unwind_Reason_Code _Unwind_RaiseException(_Unwind_Exception *);
 _Unwind_Reason_Code _Unwind_ForcedUnwind(_Unwind_Exception *, _Unwind_Stop_Fn,
-                                         void *);
+                                                                                                                       void *);
 void _Unwind_DeleteException(_Unwind_Exception *);
 void _Unwind_Resume(_Unwind_Exception *);
 _Unwind_Reason_Code _Unwind_Resume_or_Rethrow(_Unwind_Exception *);
@@ -271,7 +271,7 @@ void _Unwind_SjLj_Register(_Unwind_FunctionContext_t);
 void _Unwind_SjLj_Unregister(_Unwind_FunctionContext_t);
 _Unwind_Reason_Code _Unwind_SjLj_RaiseException(_Unwind_Exception *);
 _Unwind_Reason_Code _Unwind_SjLj_ForcedUnwind(_Unwind_Exception *,
-                                              _Unwind_Stop_Fn, void *);
+                                                                                                                                         _Unwind_Stop_Fn, void *);
 void _Unwind_SjLj_Resume(_Unwind_Exception *);
 _Unwind_Reason_Code _Unwind_SjLj_Resume_or_Rethrow(_Unwind_Exception *);
 

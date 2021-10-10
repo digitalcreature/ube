@@ -60,9 +60,9 @@
 #endif
 
 #if PREINIT_FUNCTION_WEAK
-        weak_extern (PREINIT_FUNCTION)
+                     weak_extern (PREINIT_FUNCTION)
 #else
-        .hidden PREINIT_FUNCTION
+                     .hidden PREINIT_FUNCTION
 #endif
 
 	.section .init, "ax", @progbits

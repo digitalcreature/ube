@@ -52,8 +52,8 @@ enum nfulnl_attr_type {
 	NFULA_HWTYPE,			/* hardware type */
 	NFULA_HWHEADER,			/* hardware header */
 	NFULA_HWLEN,			/* hardware header length */
-	NFULA_CT,                       /* nf_conntrack_netlink.h */
-	NFULA_CT_INFO,                  /* enum ip_conntrack_info */
+	NFULA_CT,                                                              /* nf_conntrack_netlink.h */
+	NFULA_CT_INFO,                                                         /* enum ip_conntrack_info */
 
 	__NFULA_MAX
 };

@@ -163,24 +163,24 @@ MIDL_INTERFACE("bd77db67-45a8-42dc-8d00-6dcf15f8377a")
 ISensorManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSensorsByCategory(
-        REFSENSOR_CATEGORY_ID sensorCategory,
-        ISensorCollection **ppSensorsFound) = 0;
+                     REFSENSOR_CATEGORY_ID sensorCategory,
+                     ISensorCollection **ppSensorsFound) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSensorsByType(
-        REFSENSOR_TYPE_ID sensorType,
-        ISensorCollection **ppSensorsFound) = 0;
+                     REFSENSOR_TYPE_ID sensorType,
+                     ISensorCollection **ppSensorsFound) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSensorByID(
-        REFSENSOR_ID sensorID,
-        ISensor **ppSensor) = 0;
+                     REFSENSOR_ID sensorID,
+                     ISensor **ppSensor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEventSink(
-        ISensorManagerEvents *pEvents) = 0;
+                     ISensorManagerEvents *pEvents) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestPermissions(
-        HWND hParent,
-        ISensorCollection *pSensors,
-        WINBOOL fModal) = 0;
+                     HWND hParent,
+                     ISensorCollection *pSensors,
+                     WINBOOL fModal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -192,41 +192,41 @@ typedef struct ISensorManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISensorManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISensorManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISensorManager *This);
+                     ISensorManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISensorManager *This);
+                     ISensorManager *This);
 
     /*** ISensorManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSensorsByCategory)(
-        ISensorManager *This,
-        REFSENSOR_CATEGORY_ID sensorCategory,
-        ISensorCollection **ppSensorsFound);
+                     ISensorManager *This,
+                     REFSENSOR_CATEGORY_ID sensorCategory,
+                     ISensorCollection **ppSensorsFound);
 
     HRESULT (STDMETHODCALLTYPE *GetSensorsByType)(
-        ISensorManager *This,
-        REFSENSOR_TYPE_ID sensorType,
-        ISensorCollection **ppSensorsFound);
+                     ISensorManager *This,
+                     REFSENSOR_TYPE_ID sensorType,
+                     ISensorCollection **ppSensorsFound);
 
     HRESULT (STDMETHODCALLTYPE *GetSensorByID)(
-        ISensorManager *This,
-        REFSENSOR_ID sensorID,
-        ISensor **ppSensor);
+                     ISensorManager *This,
+                     REFSENSOR_ID sensorID,
+                     ISensor **ppSensor);
 
     HRESULT (STDMETHODCALLTYPE *SetEventSink)(
-        ISensorManager *This,
-        ISensorManagerEvents *pEvents);
+                     ISensorManager *This,
+                     ISensorManagerEvents *pEvents);
 
     HRESULT (STDMETHODCALLTYPE *RequestPermissions)(
-        ISensorManager *This,
-        HWND hParent,
-        ISensorCollection *pSensors,
-        WINBOOL fModal);
+                     ISensorManager *This,
+                     HWND hParent,
+                     ISensorCollection *pSensors,
+                     WINBOOL fModal);
 
     END_INTERFACE
 } ISensorManagerVtbl;
@@ -294,23 +294,23 @@ MIDL_INTERFACE("23571e11-e545-4dd8-a337-b89bf44b10df")
 ISensorCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        ULONG ulIndex,
-        ISensor **ppSensor) = 0;
+                     ULONG ulIndex,
+                     ISensor **ppSensor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        ULONG *pCount) = 0;
+                     ULONG *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        ISensor *pSensor) = 0;
+                     ISensor *pSensor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        ISensor *pSensor) = 0;
+                     ISensor *pSensor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveByID(
-        REFSENSOR_ID sensorID) = 0;
+                     REFSENSOR_ID sensorID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -322,40 +322,40 @@ typedef struct ISensorCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISensorCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISensorCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISensorCollection *This);
+                     ISensorCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISensorCollection *This);
+                     ISensorCollection *This);
 
     /*** ISensorCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        ISensorCollection *This,
-        ULONG ulIndex,
-        ISensor **ppSensor);
+                     ISensorCollection *This,
+                     ULONG ulIndex,
+                     ISensor **ppSensor);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        ISensorCollection *This,
-        ULONG *pCount);
+                     ISensorCollection *This,
+                     ULONG *pCount);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ISensorCollection *This,
-        ISensor *pSensor);
+                     ISensorCollection *This,
+                     ISensor *pSensor);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISensorCollection *This,
-        ISensor *pSensor);
+                     ISensorCollection *This,
+                     ISensor *pSensor);
 
     HRESULT (STDMETHODCALLTYPE *RemoveByID)(
-        ISensorCollection *This,
-        REFSENSOR_ID sensorID);
+                     ISensorCollection *This,
+                     REFSENSOR_ID sensorID);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        ISensorCollection *This);
+                     ISensorCollection *This);
 
     END_INTERFACE
 } ISensorCollectionVtbl;
@@ -427,56 +427,56 @@ MIDL_INTERFACE("5fa08f80-2657-458e-af75-46f73fa6ac5c")
 ISensor : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetID(
-        SENSOR_ID *pID) = 0;
+                     SENSOR_ID *pID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategory(
-        SENSOR_CATEGORY_ID *pSensorCategory) = 0;
+                     SENSOR_CATEGORY_ID *pSensorCategory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        SENSOR_TYPE_ID *pSensorType) = 0;
+                     SENSOR_TYPE_ID *pSensorType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFriendlyName(
-        BSTR *pFriendlyName) = 0;
+                     BSTR *pFriendlyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        REFPROPERTYKEY key,
-        PROPVARIANT *pProperty) = 0;
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *pProperty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperties(
-        IPortableDeviceKeyCollection *pKeys,
-        IPortableDeviceValues **ppProperties) = 0;
+                     IPortableDeviceKeyCollection *pKeys,
+                     IPortableDeviceValues **ppProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSupportedDataFields(
-        IPortableDeviceKeyCollection **ppDataFields) = 0;
+                     IPortableDeviceKeyCollection **ppDataFields) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProperties(
-        IPortableDeviceValues *pProperties,
-        IPortableDeviceValues **ppResults) = 0;
+                     IPortableDeviceValues *pProperties,
+                     IPortableDeviceValues **ppResults) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SupportsDataField(
-        REFPROPERTYKEY key,
-        VARIANT_BOOL *pIsSupported) = 0;
+                     REFPROPERTYKEY key,
+                     VARIANT_BOOL *pIsSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        SensorState *pState) = 0;
+                     SensorState *pState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetData(
-        ISensorDataReport **ppDataReport) = 0;
+                     ISensorDataReport **ppDataReport) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SupportsEvent(
-        REFGUID eventGuid,
-        VARIANT_BOOL *pIsSupported) = 0;
+                     REFGUID eventGuid,
+                     VARIANT_BOOL *pIsSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEventInterest(
-        GUID **ppValues,
-        ULONG *pCount) = 0;
+                     GUID **ppValues,
+                     ULONG *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEventInterest(
-        GUID *pValues,
-        ULONG count) = 0;
+                     GUID *pValues,
+                     ULONG count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEventSink(
-        ISensorEvents *pEvents) = 0;
+                     ISensorEvents *pEvents) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -488,83 +488,83 @@ typedef struct ISensorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISensor *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISensor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISensor *This);
+                     ISensor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISensor *This);
+                     ISensor *This);
 
     /*** ISensor methods ***/
     HRESULT (STDMETHODCALLTYPE *GetID)(
-        ISensor *This,
-        SENSOR_ID *pID);
+                     ISensor *This,
+                     SENSOR_ID *pID);
 
     HRESULT (STDMETHODCALLTYPE *GetCategory)(
-        ISensor *This,
-        SENSOR_CATEGORY_ID *pSensorCategory);
+                     ISensor *This,
+                     SENSOR_CATEGORY_ID *pSensorCategory);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        ISensor *This,
-        SENSOR_TYPE_ID *pSensorType);
+                     ISensor *This,
+                     SENSOR_TYPE_ID *pSensorType);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        ISensor *This,
-        BSTR *pFriendlyName);
+                     ISensor *This,
+                     BSTR *pFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        ISensor *This,
-        REFPROPERTYKEY key,
-        PROPVARIANT *pProperty);
+                     ISensor *This,
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *pProperty);
 
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        ISensor *This,
-        IPortableDeviceKeyCollection *pKeys,
-        IPortableDeviceValues **ppProperties);
+                     ISensor *This,
+                     IPortableDeviceKeyCollection *pKeys,
+                     IPortableDeviceValues **ppProperties);
 
     HRESULT (STDMETHODCALLTYPE *GetSupportedDataFields)(
-        ISensor *This,
-        IPortableDeviceKeyCollection **ppDataFields);
+                     ISensor *This,
+                     IPortableDeviceKeyCollection **ppDataFields);
 
     HRESULT (STDMETHODCALLTYPE *SetProperties)(
-        ISensor *This,
-        IPortableDeviceValues *pProperties,
-        IPortableDeviceValues **ppResults);
+                     ISensor *This,
+                     IPortableDeviceValues *pProperties,
+                     IPortableDeviceValues **ppResults);
 
     HRESULT (STDMETHODCALLTYPE *SupportsDataField)(
-        ISensor *This,
-        REFPROPERTYKEY key,
-        VARIANT_BOOL *pIsSupported);
+                     ISensor *This,
+                     REFPROPERTYKEY key,
+                     VARIANT_BOOL *pIsSupported);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        ISensor *This,
-        SensorState *pState);
+                     ISensor *This,
+                     SensorState *pState);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ISensor *This,
-        ISensorDataReport **ppDataReport);
+                     ISensor *This,
+                     ISensorDataReport **ppDataReport);
 
     HRESULT (STDMETHODCALLTYPE *SupportsEvent)(
-        ISensor *This,
-        REFGUID eventGuid,
-        VARIANT_BOOL *pIsSupported);
+                     ISensor *This,
+                     REFGUID eventGuid,
+                     VARIANT_BOOL *pIsSupported);
 
     HRESULT (STDMETHODCALLTYPE *GetEventInterest)(
-        ISensor *This,
-        GUID **ppValues,
-        ULONG *pCount);
+                     ISensor *This,
+                     GUID **ppValues,
+                     ULONG *pCount);
 
     HRESULT (STDMETHODCALLTYPE *SetEventInterest)(
-        ISensor *This,
-        GUID *pValues,
-        ULONG count);
+                     ISensor *This,
+                     GUID *pValues,
+                     ULONG count);
 
     HRESULT (STDMETHODCALLTYPE *SetEventSink)(
-        ISensor *This,
-        ISensorEvents *pEvents);
+                     ISensor *This,
+                     ISensorEvents *pEvents);
 
     END_INTERFACE
 } ISensorVtbl;
@@ -672,15 +672,15 @@ MIDL_INTERFACE("0ab9df9b-c4b5-4796-8898-0470706a2e1d")
 ISensorDataReport : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetTimestamp(
-        SYSTEMTIME *pTimeStamp) = 0;
+                     SYSTEMTIME *pTimeStamp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSensorValue(
-        REFPROPERTYKEY pKey,
-        PROPVARIANT *pValue) = 0;
+                     REFPROPERTYKEY pKey,
+                     PROPVARIANT *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSensorValues(
-        IPortableDeviceKeyCollection *pKeys,
-        IPortableDeviceValues **ppValues) = 0;
+                     IPortableDeviceKeyCollection *pKeys,
+                     IPortableDeviceValues **ppValues) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -692,30 +692,30 @@ typedef struct ISensorDataReportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISensorDataReport *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISensorDataReport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISensorDataReport *This);
+                     ISensorDataReport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISensorDataReport *This);
+                     ISensorDataReport *This);
 
     /*** ISensorDataReport methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTimestamp)(
-        ISensorDataReport *This,
-        SYSTEMTIME *pTimeStamp);
+                     ISensorDataReport *This,
+                     SYSTEMTIME *pTimeStamp);
 
     HRESULT (STDMETHODCALLTYPE *GetSensorValue)(
-        ISensorDataReport *This,
-        REFPROPERTYKEY pKey,
-        PROPVARIANT *pValue);
+                     ISensorDataReport *This,
+                     REFPROPERTYKEY pKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetSensorValues)(
-        ISensorDataReport *This,
-        IPortableDeviceKeyCollection *pKeys,
-        IPortableDeviceValues **ppValues);
+                     ISensorDataReport *This,
+                     IPortableDeviceKeyCollection *pKeys,
+                     IPortableDeviceValues **ppValues);
 
     END_INTERFACE
 } ISensorDataReportVtbl;
@@ -775,8 +775,8 @@ MIDL_INTERFACE("9b3b0b86-266a-4aad-b21f-fde5501001b7")
 ISensorManagerEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnSensorEnter(
-        ISensor *pSensor,
-        SensorState state) = 0;
+                     ISensor *pSensor,
+                     SensorState state) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -788,21 +788,21 @@ typedef struct ISensorManagerEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISensorManagerEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISensorManagerEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISensorManagerEvents *This);
+                     ISensorManagerEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISensorManagerEvents *This);
+                     ISensorManagerEvents *This);
 
     /*** ISensorManagerEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnSensorEnter)(
-        ISensorManagerEvents *This,
-        ISensor *pSensor,
-        SensorState state);
+                     ISensorManagerEvents *This,
+                     ISensor *pSensor,
+                     SensorState state);
 
     END_INTERFACE
 } ISensorManagerEventsVtbl;
@@ -854,20 +854,20 @@ MIDL_INTERFACE("5d8dcc91-4641-47e7-b7c3-b74f48a6c391")
 ISensorEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnStateChanged(
-        ISensor *pSensor,
-        SensorState state) = 0;
+                     ISensor *pSensor,
+                     SensorState state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDataUpdated(
-        ISensor *pSensor,
-        ISensorDataReport *pNewData) = 0;
+                     ISensor *pSensor,
+                     ISensorDataReport *pNewData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnEvent(
-        ISensor *pSensor,
-        REFGUID eventID,
-        IPortableDeviceValues *pEventData) = 0;
+                     ISensor *pSensor,
+                     REFGUID eventID,
+                     IPortableDeviceValues *pEventData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnLeave(
-        REFSENSOR_ID ID) = 0;
+                     REFSENSOR_ID ID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -879,36 +879,36 @@ typedef struct ISensorEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISensorEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISensorEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISensorEvents *This);
+                     ISensorEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISensorEvents *This);
+                     ISensorEvents *This);
 
     /*** ISensorEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStateChanged)(
-        ISensorEvents *This,
-        ISensor *pSensor,
-        SensorState state);
+                     ISensorEvents *This,
+                     ISensor *pSensor,
+                     SensorState state);
 
     HRESULT (STDMETHODCALLTYPE *OnDataUpdated)(
-        ISensorEvents *This,
-        ISensor *pSensor,
-        ISensorDataReport *pNewData);
+                     ISensorEvents *This,
+                     ISensor *pSensor,
+                     ISensorDataReport *pNewData);
 
     HRESULT (STDMETHODCALLTYPE *OnEvent)(
-        ISensorEvents *This,
-        ISensor *pSensor,
-        REFGUID eventID,
-        IPortableDeviceValues *pEventData);
+                     ISensorEvents *This,
+                     ISensor *pSensor,
+                     REFGUID eventID,
+                     IPortableDeviceValues *pEventData);
 
     HRESULT (STDMETHODCALLTYPE *OnLeave)(
-        ISensorEvents *This,
-        REFSENSOR_ID ID);
+                     ISensorEvents *This,
+                     REFSENSOR_ID ID);
 
     END_INTERFACE
 } ISensorEventsVtbl;
@@ -978,18 +978,18 @@ __CRT_UUID_DECL(SensorManager, 0x77a1c827, 0xfcd2, 0x4689, 0x89,0x15, 0x9d,0x61,
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
 
 /* End additional prototypes */
 

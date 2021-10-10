@@ -11,16 +11,16 @@ round (double x)
   double res;
   if (x >= 0.0)
     {
-      res = ceil (x);
-      if (res - x > 0.5)
+                   res = ceil (x);
+                   if (res - x > 0.5)
 	res -= 1.0;
     }
   else
     {
-      res = ceil (-x);
-      if (res + x > 0.5)
+                   res = ceil (-x);
+                   if (res + x > 0.5)
 	res -= 1.0;
-      res = -res;
+                   res = -res;
     }
   return res;
 }

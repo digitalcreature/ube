@@ -110,7 +110,7 @@ struct proc_event {
 		struct comm_proc_event {
 			__kernel_pid_t process_pid;
 			__kernel_pid_t process_tgid;
-			char           comm[16];
+			char                        comm[16];
 		} comm;
 
 		struct coredump_proc_event {

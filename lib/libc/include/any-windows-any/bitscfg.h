@@ -70,17 +70,17 @@ extern "C"{
 #else
   typedef struct IBITSExtensionSetupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBITSExtensionSetup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBITSExtensionSetup *This);
-      ULONG (WINAPI *Release)(IBITSExtensionSetup *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IBITSExtensionSetup *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IBITSExtensionSetup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IBITSExtensionSetup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IBITSExtensionSetup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *EnableBITSUploads)(IBITSExtensionSetup *This);
-      HRESULT (WINAPI *DisableBITSUploads)(IBITSExtensionSetup *This);
-      HRESULT (WINAPI *GetCleanupTaskName)(IBITSExtensionSetup *This,BSTR *pTaskName);
-      HRESULT (WINAPI *GetCleanupTask)(IBITSExtensionSetup *This,REFIID riid,IUnknown **ppUnk);
+                   HRESULT (WINAPI *QueryInterface)(IBITSExtensionSetup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBITSExtensionSetup *This);
+                   ULONG (WINAPI *Release)(IBITSExtensionSetup *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IBITSExtensionSetup *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IBITSExtensionSetup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IBITSExtensionSetup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IBITSExtensionSetup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *EnableBITSUploads)(IBITSExtensionSetup *This);
+                   HRESULT (WINAPI *DisableBITSUploads)(IBITSExtensionSetup *This);
+                   HRESULT (WINAPI *GetCleanupTaskName)(IBITSExtensionSetup *This,BSTR *pTaskName);
+                   HRESULT (WINAPI *GetCleanupTask)(IBITSExtensionSetup *This,REFIID riid,IUnknown **ppUnk);
     END_INTERFACE
   } IBITSExtensionSetupVtbl;
   struct IBITSExtensionSetup {
@@ -121,14 +121,14 @@ extern "C"{
 #else
   typedef struct IBITSExtensionSetupFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBITSExtensionSetupFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBITSExtensionSetupFactory *This);
-      ULONG (WINAPI *Release)(IBITSExtensionSetupFactory *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IBITSExtensionSetupFactory *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IBITSExtensionSetupFactory *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IBITSExtensionSetupFactory *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IBITSExtensionSetupFactory *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetObject)(IBITSExtensionSetupFactory *This,BSTR Path,IBITSExtensionSetup **ppExtensionSetup);
+                   HRESULT (WINAPI *QueryInterface)(IBITSExtensionSetupFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBITSExtensionSetupFactory *This);
+                   ULONG (WINAPI *Release)(IBITSExtensionSetupFactory *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IBITSExtensionSetupFactory *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IBITSExtensionSetupFactory *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IBITSExtensionSetupFactory *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IBITSExtensionSetupFactory *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetObject)(IBITSExtensionSetupFactory *This,BSTR Path,IBITSExtensionSetup **ppExtensionSetup);
     END_INTERFACE
   } IBITSExtensionSetupFactoryVtbl;
   struct IBITSExtensionSetupFactory {

@@ -61,9 +61,9 @@ typedef struct WAVEFORMATEX {
 typedef struct __WIDL_xapo_generated_name_0000000C {
     WAVEFORMATEX Format;
     union {
-        WORD wValidBitsPerSample;
-        WORD wSamplesPerBlock;
-        WORD wReserved;
+                     WORD wValidBitsPerSample;
+                     WORD wSamplesPerBlock;
+                     WORD wReserved;
     } Samples;
     DWORD dwChannelMask;
     GUID SubFormat;
@@ -123,46 +123,46 @@ MIDL_INTERFACE("a410b984-9839-4819-a0be-2856ae6b3adb")
 IXAPO : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRegistrationProperties(
-        XAPO_REGISTRATION_PROPERTIES **props) = 0;
+                     XAPO_REGISTRATION_PROPERTIES **props) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsInputFormatSupported(
-        const WAVEFORMATEX *output_fmt,
-        const WAVEFORMATEX *input_fmt,
-        WAVEFORMATEX **supported_fmt) = 0;
+                     const WAVEFORMATEX *output_fmt,
+                     const WAVEFORMATEX *input_fmt,
+                     WAVEFORMATEX **supported_fmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsOutputFormatSupported(
-        const WAVEFORMATEX *input_fmt,
-        const WAVEFORMATEX *output_fmt,
-        WAVEFORMATEX **supported_fmt) = 0;
+                     const WAVEFORMATEX *input_fmt,
+                     const WAVEFORMATEX *output_fmt,
+                     WAVEFORMATEX **supported_fmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        const void *data,
-        UINT32 data_len) = 0;
+                     const void *data,
+                     UINT32 data_len) = 0;
 
     virtual void STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockForProcess(
-        UINT32 in_params_count,
-        const XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS *in_params,
-        UINT32 out_params_count,
-        const XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS *out_params) = 0;
+                     UINT32 in_params_count,
+                     const XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS *in_params,
+                     UINT32 out_params_count,
+                     const XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS *out_params) = 0;
 
     virtual void STDMETHODCALLTYPE UnlockForProcess(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE Process(
-        UINT32 in_params_count,
-        const XAPO_PROCESS_BUFFER_PARAMETERS *in_params,
-        UINT32 out_params_count,
-        XAPO_PROCESS_BUFFER_PARAMETERS *out_params,
-        WINBOOL enabled) = 0;
+                     UINT32 in_params_count,
+                     const XAPO_PROCESS_BUFFER_PARAMETERS *in_params,
+                     UINT32 out_params_count,
+                     XAPO_PROCESS_BUFFER_PARAMETERS *out_params,
+                     WINBOOL enabled) = 0;
 
     virtual UINT32 STDMETHODCALLTYPE CalcInputFrames(
-        UINT32 output_frames) = 0;
+                     UINT32 output_frames) = 0;
 
     virtual UINT32 STDMETHODCALLTYPE CalcOutputFrames(
-        UINT32 input_frames) = 0;
+                     UINT32 input_frames) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -174,66 +174,66 @@ typedef struct IXAPOVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXAPO *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXAPO *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXAPO *This);
+                     IXAPO *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXAPO *This);
+                     IXAPO *This);
 
     /*** IXAPO methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRegistrationProperties)(
-        IXAPO *This,
-        XAPO_REGISTRATION_PROPERTIES **props);
+                     IXAPO *This,
+                     XAPO_REGISTRATION_PROPERTIES **props);
 
     HRESULT (STDMETHODCALLTYPE *IsInputFormatSupported)(
-        IXAPO *This,
-        const WAVEFORMATEX *output_fmt,
-        const WAVEFORMATEX *input_fmt,
-        WAVEFORMATEX **supported_fmt);
+                     IXAPO *This,
+                     const WAVEFORMATEX *output_fmt,
+                     const WAVEFORMATEX *input_fmt,
+                     WAVEFORMATEX **supported_fmt);
 
     HRESULT (STDMETHODCALLTYPE *IsOutputFormatSupported)(
-        IXAPO *This,
-        const WAVEFORMATEX *input_fmt,
-        const WAVEFORMATEX *output_fmt,
-        WAVEFORMATEX **supported_fmt);
+                     IXAPO *This,
+                     const WAVEFORMATEX *input_fmt,
+                     const WAVEFORMATEX *output_fmt,
+                     WAVEFORMATEX **supported_fmt);
 
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IXAPO *This,
-        const void *data,
-        UINT32 data_len);
+                     IXAPO *This,
+                     const void *data,
+                     UINT32 data_len);
 
     void (STDMETHODCALLTYPE *Reset)(
-        IXAPO *This);
+                     IXAPO *This);
 
     HRESULT (STDMETHODCALLTYPE *LockForProcess)(
-        IXAPO *This,
-        UINT32 in_params_count,
-        const XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS *in_params,
-        UINT32 out_params_count,
-        const XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS *out_params);
+                     IXAPO *This,
+                     UINT32 in_params_count,
+                     const XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS *in_params,
+                     UINT32 out_params_count,
+                     const XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS *out_params);
 
     void (STDMETHODCALLTYPE *UnlockForProcess)(
-        IXAPO *This);
+                     IXAPO *This);
 
     void (STDMETHODCALLTYPE *Process)(
-        IXAPO *This,
-        UINT32 in_params_count,
-        const XAPO_PROCESS_BUFFER_PARAMETERS *in_params,
-        UINT32 out_params_count,
-        XAPO_PROCESS_BUFFER_PARAMETERS *out_params,
-        WINBOOL enabled);
+                     IXAPO *This,
+                     UINT32 in_params_count,
+                     const XAPO_PROCESS_BUFFER_PARAMETERS *in_params,
+                     UINT32 out_params_count,
+                     XAPO_PROCESS_BUFFER_PARAMETERS *out_params,
+                     WINBOOL enabled);
 
     UINT32 (STDMETHODCALLTYPE *CalcInputFrames)(
-        IXAPO *This,
-        UINT32 output_frames);
+                     IXAPO *This,
+                     UINT32 output_frames);
 
     UINT32 (STDMETHODCALLTYPE *CalcOutputFrames)(
-        IXAPO *This,
-        UINT32 input_frames);
+                     IXAPO *This,
+                     UINT32 input_frames);
 
     END_INTERFACE
 } IXAPOVtbl;
@@ -322,12 +322,12 @@ MIDL_INTERFACE("26d95c66-80f2-499a-ad54-5ae7f01c6d98")
 IXAPOParameters : public IUnknown
 {
     virtual void STDMETHODCALLTYPE SetParameters(
-        const void *params,
-        UINT32 params_len) = 0;
+                     const void *params,
+                     UINT32 params_len) = 0;
 
     virtual void STDMETHODCALLTYPE GetParameters(
-        void *params,
-        UINT32 params_len) = 0;
+                     void *params,
+                     UINT32 params_len) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -339,26 +339,26 @@ typedef struct IXAPOParametersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXAPOParameters *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXAPOParameters *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXAPOParameters *This);
+                     IXAPOParameters *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXAPOParameters *This);
+                     IXAPOParameters *This);
 
     /*** IXAPOParameters methods ***/
     void (STDMETHODCALLTYPE *SetParameters)(
-        IXAPOParameters *This,
-        const void *params,
-        UINT32 params_len);
+                     IXAPOParameters *This,
+                     const void *params,
+                     UINT32 params_len);
 
     void (STDMETHODCALLTYPE *GetParameters)(
-        IXAPOParameters *This,
-        void *params,
-        UINT32 params_len);
+                     IXAPOParameters *This,
+                     void *params,
+                     UINT32 params_len);
 
     END_INTERFACE
 } IXAPOParametersVtbl;

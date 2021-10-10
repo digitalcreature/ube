@@ -57,8 +57,8 @@ extern "C" {
 #define PR_SET_TIMERSLACK 29
 #define PR_GET_TIMERSLACK 30
 
-#define PR_TASK_PERF_EVENTS_DISABLE             31
-#define PR_TASK_PERF_EVENTS_ENABLE              32
+#define PR_TASK_PERF_EVENTS_DISABLE                                       31
+#define PR_TASK_PERF_EVENTS_ENABLE                                        32
 
 #define PR_MCE_KILL     33
 #define PR_MCE_KILL_CLEAR   0
@@ -68,22 +68,22 @@ extern "C" {
 #define PR_MCE_KILL_DEFAULT 2
 #define PR_MCE_KILL_GET 34
 
-#define PR_SET_MM               35
-#define PR_SET_MM_START_CODE           1
-#define PR_SET_MM_END_CODE             2
-#define PR_SET_MM_START_DATA           3
-#define PR_SET_MM_END_DATA             4
-#define PR_SET_MM_START_STACK          5
-#define PR_SET_MM_START_BRK            6
-#define PR_SET_MM_BRK                  7
-#define PR_SET_MM_ARG_START            8
-#define PR_SET_MM_ARG_END              9
-#define PR_SET_MM_ENV_START            10
-#define PR_SET_MM_ENV_END              11
-#define PR_SET_MM_AUXV                 12
-#define PR_SET_MM_EXE_FILE             13
-#define PR_SET_MM_MAP                  14
-#define PR_SET_MM_MAP_SIZE             15
+#define PR_SET_MM                                         35
+#define PR_SET_MM_START_CODE                        1
+#define PR_SET_MM_END_CODE                                       2
+#define PR_SET_MM_START_DATA                        3
+#define PR_SET_MM_END_DATA                                       4
+#define PR_SET_MM_START_STACK                       5
+#define PR_SET_MM_START_BRK                                      6
+#define PR_SET_MM_BRK                                                         7
+#define PR_SET_MM_ARG_START                                      8
+#define PR_SET_MM_ARG_END                                        9
+#define PR_SET_MM_ENV_START                                      10
+#define PR_SET_MM_ENV_END                                        11
+#define PR_SET_MM_AUXV                                           12
+#define PR_SET_MM_EXE_FILE                                       13
+#define PR_SET_MM_MAP                                                         14
+#define PR_SET_MM_MAP_SIZE                                       15
 
 struct prctl_mm_map {
 	uint64_t start_code;
@@ -111,28 +111,28 @@ struct prctl_mm_map {
 #define PR_SET_NO_NEW_PRIVS     38
 #define PR_GET_NO_NEW_PRIVS     39
 
-#define PR_GET_TID_ADDRESS      40
+#define PR_GET_TID_ADDRESS                   40
 
-#define PR_SET_THP_DISABLE      41
-#define PR_GET_THP_DISABLE      42
+#define PR_SET_THP_DISABLE                   41
+#define PR_GET_THP_DISABLE                   42
 
 #define PR_MPX_ENABLE_MANAGEMENT  43
 #define PR_MPX_DISABLE_MANAGEMENT 44
 
-#define PR_SET_FP_MODE          45
-#define PR_GET_FP_MODE          46
+#define PR_SET_FP_MODE                       45
+#define PR_GET_FP_MODE                       46
 #define PR_FP_MODE_FR (1 << 0)
 #define PR_FP_MODE_FRE (1 << 1)
 
-#define PR_CAP_AMBIENT          47
+#define PR_CAP_AMBIENT                       47
 #define PR_CAP_AMBIENT_IS_SET   1
 #define PR_CAP_AMBIENT_RAISE    2
 #define PR_CAP_AMBIENT_LOWER    3
 #define PR_CAP_AMBIENT_CLEAR_ALL 4
 
-#define PR_SVE_SET_VL           50
+#define PR_SVE_SET_VL                        50
 #define PR_SVE_SET_VL_ONEXEC (1 << 18)
-#define PR_SVE_GET_VL           51
+#define PR_SVE_GET_VL                        51
 #define PR_SVE_VL_LEN_MASK 0xffff
 #define PR_SVE_VL_INHERIT (1 << 17)
 
@@ -147,7 +147,7 @@ struct prctl_mm_map {
 #define PR_SPEC_FORCE_DISABLE (1UL << 3)
 #define PR_SPEC_DISABLE_NOEXEC (1UL << 4)
 
-#define PR_PAC_RESET_KEYS       54
+#define PR_PAC_RESET_KEYS                    54
 #define PR_PAC_APIAKEY (1UL << 0)
 #define PR_PAC_APIBKEY (1UL << 1)
 #define PR_PAC_APDAKEY (1UL << 2)

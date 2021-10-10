@@ -47,32 +47,32 @@ MIDL_INTERFACE("cbfd91d9-51b2-45e4-b3de-d19ccfb863c5")
 IDCompositionAnimation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAbsoluteBeginTime(
-        LARGE_INTEGER a) = 0;
+                     LARGE_INTEGER a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddCubic(
-        double a,
-        float b,
-        float c,
-        float d,
-        float e) = 0;
+                     double a,
+                     float b,
+                     float c,
+                     float d,
+                     float e) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSinusoidal(
-        double a,
-        float b,
-        float c,
-        float d,
-        float e) = 0;
+                     double a,
+                     float b,
+                     float c,
+                     float d,
+                     float e) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddRepeat(
-        double a,
-        double b) = 0;
+                     double a,
+                     double b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE End(
-        double a,
-        float b) = 0;
+                     double a,
+                     float b) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -84,49 +84,49 @@ typedef struct IDCompositionAnimationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDCompositionAnimation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDCompositionAnimation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDCompositionAnimation *This);
+                     IDCompositionAnimation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDCompositionAnimation *This);
+                     IDCompositionAnimation *This);
 
     /*** IDCompositionAnimation methods ***/
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IDCompositionAnimation *This);
+                     IDCompositionAnimation *This);
 
     HRESULT (STDMETHODCALLTYPE *SetAbsoluteBeginTime)(
-        IDCompositionAnimation *This,
-        LARGE_INTEGER a);
+                     IDCompositionAnimation *This,
+                     LARGE_INTEGER a);
 
     HRESULT (STDMETHODCALLTYPE *AddCubic)(
-        IDCompositionAnimation *This,
-        double a,
-        float b,
-        float c,
-        float d,
-        float e);
+                     IDCompositionAnimation *This,
+                     double a,
+                     float b,
+                     float c,
+                     float d,
+                     float e);
 
     HRESULT (STDMETHODCALLTYPE *AddSinusoidal)(
-        IDCompositionAnimation *This,
-        double a,
-        float b,
-        float c,
-        float d,
-        float e);
+                     IDCompositionAnimation *This,
+                     double a,
+                     float b,
+                     float c,
+                     float d,
+                     float e);
 
     HRESULT (STDMETHODCALLTYPE *AddRepeat)(
-        IDCompositionAnimation *This,
-        double a,
-        double b);
+                     IDCompositionAnimation *This,
+                     double a,
+                     double b);
 
     HRESULT (STDMETHODCALLTYPE *End)(
-        IDCompositionAnimation *This,
-        double a,
-        float b);
+                     IDCompositionAnimation *This,
+                     double a,
+                     float b);
 
     END_INTERFACE
 } IDCompositionAnimationVtbl;

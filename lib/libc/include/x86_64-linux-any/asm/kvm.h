@@ -107,8 +107,8 @@ struct kvm_ioapic_state {
 
 #define KVM_IRQCHIP_PIC_MASTER   0
 #define KVM_IRQCHIP_PIC_SLAVE    1
-#define KVM_IRQCHIP_IOAPIC       2
-#define KVM_NR_IRQCHIPS          3
+#define KVM_IRQCHIP_IOAPIC                    2
+#define KVM_NR_IRQCHIPS                       3
 
 #define KVM_RUN_X86_SMM		 (1 << 0)
 
@@ -354,7 +354,7 @@ struct kvm_xcrs {
 	__u64 padding[16];
 };
 
-#define KVM_SYNC_X86_REGS      (1UL << 0)
+#define KVM_SYNC_X86_REGS                   (1UL << 0)
 #define KVM_SYNC_X86_SREGS     (1UL << 1)
 #define KVM_SYNC_X86_EVENTS    (1UL << 2)
 

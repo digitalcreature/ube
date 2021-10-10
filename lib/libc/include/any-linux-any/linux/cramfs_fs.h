@@ -32,7 +32,7 @@ struct cramfs_inode {
 	/* SIZE for device files is i_rdev */
 	__u32 size:CRAMFS_SIZE_WIDTH, gid:CRAMFS_GID_WIDTH;
 	/* NAMELEN is the length of the file name, divided by 4 and
-           rounded up.  (cramfs doesn't support hard links.) */
+                        rounded up.  (cramfs doesn't support hard links.) */
 	/* OFFSET: For symlinks and non-empty regular files, this
 	   contains the offset (divided by 4) of the file data in
 	   compressed form (starting with an array of block pointers;

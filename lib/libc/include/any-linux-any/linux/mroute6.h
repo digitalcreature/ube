@@ -13,8 +13,8 @@
  *
  *	See the pim6sd code for the original history.
  *
- *      Protocol Independent Multicast (PIM) data structures included
- *      Carlos Picoto (cap@di.fc.ul.pt)
+ *                   Protocol Independent Multicast (PIM) data structures included
+ *                   Carlos Picoto (cap@di.fc.ul.pt)
  *
  */
 
@@ -47,7 +47,7 @@ typedef unsigned short mifi_t;
 #endif
 
 typedef	__u32		if_mask;
-#define NIFBITS (sizeof(if_mask) * 8)        /* bits per mask */
+#define NIFBITS (sizeof(if_mask) * 8)                     /* bits per mask */
 
 typedef struct if_set {
 	if_mask ifs_bits[__KERNEL_DIV_ROUND_UP(IF_SETSIZE, NIFBITS)];
@@ -57,7 +57,7 @@ typedef struct if_set {
 #define IF_CLR(n, p)    ((p)->ifs_bits[(n)/NIFBITS] &= ~(1 << ((n) % NIFBITS)))
 #define IF_ISSET(n, p)  ((p)->ifs_bits[(n)/NIFBITS] & (1 << ((n) % NIFBITS)))
 #define IF_COPY(f, t)   bcopy(f, t, sizeof(*(f)))
-#define IF_ZERO(p)      bzero(p, sizeof(*(p)))
+#define IF_ZERO(p)                   bzero(p, sizeof(*(p)))
 
 /*
  *	Passed by mrouted for an MRT_ADD_MIF - again we use the

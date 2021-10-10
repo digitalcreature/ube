@@ -37,7 +37,7 @@ class ATL_NO_VTABLE CSafeComEnum : public CComEnumImpl<Base,piid,T,Copy>,public 
   CSafeComEnum() { m_pFTM = NULL; }
   void FinalRelease(void) {
     if(m_pFTM) {
-      m_pFTM->Release();
+                   m_pFTM->Release();
     }
     CComObjectRootEx< ThreadModel >::FinalRelease();
   }

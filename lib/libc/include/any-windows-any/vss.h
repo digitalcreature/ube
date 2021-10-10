@@ -323,18 +323,18 @@ MIDL_INTERFACE("ae1c7110-2f60-11d3-8a39-00c04f72d8e3")
 IVssEnumObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        VSS_OBJECT_PROP *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     VSS_OBJECT_PROP *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IVssEnumObject **ppenum) = 0;
+                     IVssEnumObject **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -346,33 +346,33 @@ typedef struct IVssEnumObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVssEnumObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVssEnumObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVssEnumObject *This);
+                     IVssEnumObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVssEnumObject *This);
+                     IVssEnumObject *This);
 
     /*** IVssEnumObject methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IVssEnumObject *This,
-        ULONG celt,
-        VSS_OBJECT_PROP *rgelt,
-        ULONG *pceltFetched);
+                     IVssEnumObject *This,
+                     ULONG celt,
+                     VSS_OBJECT_PROP *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IVssEnumObject *This,
-        ULONG celt);
+                     IVssEnumObject *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IVssEnumObject *This);
+                     IVssEnumObject *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IVssEnumObject *This,
-        IVssEnumObject **ppenum);
+                     IVssEnumObject *This,
+                     IVssEnumObject **ppenum);
 
     END_INTERFACE
 } IVssEnumObjectVtbl;
@@ -437,14 +437,14 @@ MIDL_INTERFACE("507c37b4-cf5b-4e95-b0af-14eb9767467e")
 IVssAsync : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Wait(
-        DWORD dwMilliseconds = 0xffffffff) = 0;
+                     DWORD dwMilliseconds = 0xffffffff) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryStatus(
-        HRESULT *pHrResult,
-        INT *pReserved) = 0;
+                     HRESULT *pHrResult,
+                     INT *pReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -456,28 +456,28 @@ typedef struct IVssAsyncVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVssAsync *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVssAsync *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVssAsync *This);
+                     IVssAsync *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVssAsync *This);
+                     IVssAsync *This);
 
     /*** IVssAsync methods ***/
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IVssAsync *This);
+                     IVssAsync *This);
 
     HRESULT (STDMETHODCALLTYPE *Wait)(
-        IVssAsync *This,
-        DWORD dwMilliseconds);
+                     IVssAsync *This,
+                     DWORD dwMilliseconds);
 
     HRESULT (STDMETHODCALLTYPE *QueryStatus)(
-        IVssAsync *This,
-        HRESULT *pHrResult,
-        INT *pReserved);
+                     IVssAsync *This,
+                     HRESULT *pHrResult,
+                     INT *pReserved);
 
     END_INTERFACE
 } IVssAsyncVtbl;

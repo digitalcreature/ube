@@ -22,9 +22,9 @@ const expect = std.testing.expect;
 pub fn tan(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => tan_(f32, x),
-        f64 => tan_(f64, x),
-        else => @compileError("tan not implemented for " ++ @typeName(T)),
+                     f32 => tan_(f32, x),
+                     f64 => tan_(f64, x),
+                     else => @compileError("tan not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -47,10 +47,10 @@ fn tan_(comptime T: type, x_: T) T {
 
     var x = x_;
     if (x == 0 or math.isNan(x)) {
-        return x;
+                     return x;
     }
     if (math.isInf(x)) {
-        return math.nan(T);
+                     return math.nan(T);
     }
 
     var sign = x < 0;
@@ -60,20 +60,20 @@ fn tan_(comptime T: type, x_: T) T {
     var j = @floatToInt(I, y);
 
     if (j & 1 == 1) {
-        j += 1;
-        y += 1;
+                     j += 1;
+                     y += 1;
     }
 
     const z = ((x - y * pi4a) - y * pi4b) - y * pi4c;
     const w = z * z;
 
     var r = if (w > 1e-14)
-        z + z * (w * ((Tp0 * w + Tp1) * w + Tp2) / ((((w + Tq1) * w + Tq2) * w + Tq3) * w + Tq4))
+                     z + z * (w * ((Tp0 * w + Tp1) * w + Tp2) / ((((w + Tq1) * w + Tq2) * w + Tq3) * w + Tq4))
     else
-        z;
+                     z;
 
     if (j & 2 == 2) {
-        r = -1 / r;
+                     r = -1 / r;
     }
 
     return if (sign) -r else r;

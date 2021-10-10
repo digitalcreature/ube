@@ -159,9 +159,9 @@ typedef enum tagSTRRET_TYPE {
 typedef struct _STRRET {
     UINT uType;
     __C89_NAMELESS union {
-        LPWSTR pOleStr;
-        UINT uOffset;
-        char cStr[260];
+                     LPWSTR pOleStr;
+                     UINT uOffset;
+                     char cStr[260];
     } __C89_NAMELESSUNIONNAME;
 } STRRET;
 #include <poppack.h>

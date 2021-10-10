@@ -11,16 +11,16 @@
 #if defined(_ARM_) || defined(__arm__) || defined(_ARM64_) || defined(__aarch64__)
 
 /* FPU status word exception flags */
-#define FE_INVALID      0x01
+#define FE_INVALID                   0x01
 #define FE_DIVBYZERO    0x02
 #define FE_OVERFLOW     0x04
 #define FE_UNDERFLOW    0x08
-#define FE_INEXACT      0x10
+#define FE_INEXACT                   0x10
 #define FE_ALL_EXCEPT   (FE_INVALID | FE_DIVBYZERO | FE_OVERFLOW | FE_UNDERFLOW | FE_INEXACT)
 
 /* FPU control word rounding flags */
 #define FE_TONEAREST    0x00000000
-#define FE_UPWARD       0x00400000
+#define FE_UPWARD                    0x00400000
 #define FE_DOWNWARD     0x00800000
 #define FE_TOWARDZERO   0x00c00000
 
@@ -36,7 +36,7 @@
 #define FE_UNDERFLOW	0x10
 #define FE_INEXACT	0x20
 #define FE_ALL_EXCEPT (FE_INVALID | FE_DENORMAL | FE_DIVBYZERO \
-		       | FE_OVERFLOW | FE_UNDERFLOW | FE_INEXACT)
+		                    | FE_OVERFLOW | FE_UNDERFLOW | FE_INEXACT)
 
 /* FPU control word rounding flags */
 #define FE_TONEAREST	0x0000

@@ -16,12 +16,12 @@ typedef enum _MPEG_CONTEXT_TYPE {
 } MPEG_CONTEXT_TYPE;
 
 typedef enum _MPEG_CURRENT_NEXT_BIT {
-  MPEG_SECTION_IS_NEXT      = 0,
+  MPEG_SECTION_IS_NEXT                   = 0,
   MPEG_SECTION_IS_CURRENT   = 1 
 } MPEG_CURRENT_NEXT_BIT;
 
 typedef enum _MPEG_REQUEST_TYPE {
-  MPEG_RQST_UNKNOWN               = 0,
+  MPEG_RQST_UNKNOWN                                         = 0,
   MPEG_RQST_GET_SECTION,
   MPEG_RQST_GET_SECTION_ASYNC,
   MPEG_RQST_GET_TABLE,
@@ -33,10 +33,10 @@ typedef enum _MPEG_REQUEST_TYPE {
 } MPEG_REQUEST_TYPE;
 
 typedef struct _DSMCC_ELEMENT {
-  PID                   pid;
-  BYTE                  bComponentTag;
-  DWORD                 dwCarouselId;
-  DWORD                 dwTransactionId;
+  PID                                                          pid;
+  BYTE                                                         bComponentTag;
+  DWORD                                           dwCarouselId;
+  DWORD                                           dwTransactionId;
   struct _DSMCC_ELEMENT *pNext;
 } DSMCC_ELEMENT, *PDSMCC_ELEMENT;
 
@@ -70,12 +70,12 @@ typedef struct _DSMCC_SECTION {
   TID   TableId;
   __C89_NAMELESS union {
     MPEG_HEADER_BITS_MIDL S;
-    WORD                  W;
+    WORD                                                         W;
   } Header;
   WORD  TableIdExtension;
   __C89_NAMELESS union {
     MPEG_HEADER_VERSION_BITS_MIDL S;
-    BYTE                          B;
+    BYTE                                                                              B;
   } Version;
   BYTE  SectionNumber;
   BYTE  LastSectionNumber;
@@ -98,12 +98,12 @@ typedef struct {
   TID   TableId;
   __C89_NAMELESS union {
     MPEG_HEADER_BITS_MIDL S;
-    WORD                  W;
+    WORD                                                         W;
   } Header;
   WORD  TableIdExtension;
   __C89_NAMELESS union {
     MPEG_HEADER_VERSION_BITS_MIDL S;
-    BYTE                          B;
+    BYTE                                                                              B;
   } Version;
   BYTE  SectionNumber;
   BYTE  LastSectionNumber;
@@ -111,50 +111,50 @@ typedef struct {
 } LONG_SECTION, *PLONG_SECTION;
 
 typedef struct _MPE_ELEMENT {
-  PID                 pid;
-  BYTE                bComponentTag;
+  PID                                           pid;
+  BYTE                                          bComponentTag;
   struct _MPE_ELEMENT *pNext;
 } MPE_ELEMENT, *PMPE_ELEMENT;
 
 typedef struct _MPEG2_FILTER {
-  BYTE                 bVersionNumber;
-  WORD                 wFilterSize;
-  WINBOOL              fUseRawFilteringBits;
-  BYTE                 Filter[16];
-  BYTE                 Mask[16];
-  WINBOOL              fSpecifyTableIdExtension;
-  WORD                 TableIdExtension;
-  WINBOOL              fSpecifyVersion;
-  BYTE                 Version;
-  WINBOOL              fSpecifySectionNumber;
-  BYTE                 SectionNumber;
-  WINBOOL              fSpecifyCurrentNext;
-  WINBOOL              fNext;
-  WINBOOL              fSpecifyDsmccOptions;
+  BYTE                                           bVersionNumber;
+  WORD                                           wFilterSize;
+  WINBOOL                                        fUseRawFilteringBits;
+  BYTE                                           Filter[16];
+  BYTE                                           Mask[16];
+  WINBOOL                                        fSpecifyTableIdExtension;
+  WORD                                           TableIdExtension;
+  WINBOOL                                        fSpecifyVersion;
+  BYTE                                           Version;
+  WINBOOL                                        fSpecifySectionNumber;
+  BYTE                                           SectionNumber;
+  WINBOOL                                        fSpecifyCurrentNext;
+  WINBOOL                                        fNext;
+  WINBOOL                                        fSpecifyDsmccOptions;
   DSMCC_FILTER_OPTIONS Dsmcc;
-  WINBOOL              fSpecifyAtscOptions;
+  WINBOOL                                        fSpecifyAtscOptions;
   ATSC_FILTER_OPTIONS  Atsc;
 } MPEG2_FILTER, *PMPEG2_FILTER;
 
 typedef struct {
-  BYTE                   bVersionNumber;
-  WORD                   wFilterSize;
-  WINBOOL                fUseRawFilteringBits;
-  BYTE                   Filter[16];
-  BYTE                   Mask[16];
-  WINBOOL                fSpecifyTableIdExtension;
-  WORD                   TableIdExtension;
-  WINBOOL                fSpecifyVersion;
-  BYTE                   Version;
-  WINBOOL                fSpecifySectionNumber;
-  BYTE                   SectionNumber;
-  WINBOOL                fSpecifyCurrentNext;
-  WINBOOL                fNext;
-  WINBOOL                fSpecifyDsmccOptions;
+  BYTE                                                          bVersionNumber;
+  WORD                                                          wFilterSize;
+  WINBOOL                                          fUseRawFilteringBits;
+  BYTE                                                          Filter[16];
+  BYTE                                                          Mask[16];
+  WINBOOL                                          fSpecifyTableIdExtension;
+  WORD                                                          TableIdExtension;
+  WINBOOL                                          fSpecifyVersion;
+  BYTE                                                          Version;
+  WINBOOL                                          fSpecifySectionNumber;
+  BYTE                                                          SectionNumber;
+  WINBOOL                                          fSpecifyCurrentNext;
+  WINBOOL                                          fNext;
+  WINBOOL                                          fSpecifyDsmccOptions;
   DSMCC_FILTER_OPTIONS   Dsmcc;
-  WINBOOL                fSpecifyAtscOptions;
+  WINBOOL                                          fSpecifyAtscOptions;
   ATSC_FILTER_OPTIONS    Atsc;
-  WINBOOL                 fSpecifyDvbEitOptions;
+  WINBOOL                                           fSpecifyDvbEitOptions;
   DVB_EIT_FILTER_OPTIONS Dvb_Eit;
 } MPEG2_FILTER2, *PMPEG2_FILTER2;
 
@@ -197,7 +197,7 @@ typedef struct {
   TID   TableId;
   __C89_NAMELESS union {
     MPEG_HEADER_BITS_MIDL S;
-    WORD                  W;
+    WORD                                                         W;
   } Header;
   BYTE  SectionData[1];
 } SECTION, *PSECTION;
@@ -208,7 +208,7 @@ typedef struct _MPEG_RQST_PACKET {
 } MPEG_RQST_PACKET, *PMPEG_RQST_PACKET;
 
 typedef struct _MPEG_PACKET_LIST {
-  WORD              wPacketCount;
+  WORD                                        wPacketCount;
   PMPEG_RQST_PACKET PacketList[1];
 } MPEG_PACKET_LIST, *PMPEG_PACKET_LIST;
 

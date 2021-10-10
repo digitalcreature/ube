@@ -23,26 +23,26 @@
 
 #include "d3d10.h"
 
-#define D3D10_SHADER_DEBUG                          0x0001
-#define D3D10_SHADER_SKIP_VALIDATION                0x0002
-#define D3D10_SHADER_SKIP_OPTIMIZATION              0x0004
-#define D3D10_SHADER_PACK_MATRIX_ROW_MAJOR          0x0008
-#define D3D10_SHADER_PACK_MATRIX_COLUMN_MAJOR       0x0010
-#define D3D10_SHADER_PARTIAL_PRECISION              0x0020
-#define D3D10_SHADER_FORCE_VS_SOFTWARE_NO_OPT       0x0040
-#define D3D10_SHADER_FORCE_PS_SOFTWARE_NO_OPT       0x0080
-#define D3D10_SHADER_NO_PRESHADER                   0x0100
-#define D3D10_SHADER_AVOID_FLOW_CONTROL             0x0200
-#define D3D10_SHADER_PREFER_FLOW_CONTROL            0x0400
-#define D3D10_SHADER_ENABLE_STRICTNESS              0x0800
+#define D3D10_SHADER_DEBUG                                                                              0x0001
+#define D3D10_SHADER_SKIP_VALIDATION                                          0x0002
+#define D3D10_SHADER_SKIP_OPTIMIZATION                                        0x0004
+#define D3D10_SHADER_PACK_MATRIX_ROW_MAJOR                       0x0008
+#define D3D10_SHADER_PACK_MATRIX_COLUMN_MAJOR                    0x0010
+#define D3D10_SHADER_PARTIAL_PRECISION                                        0x0020
+#define D3D10_SHADER_FORCE_VS_SOFTWARE_NO_OPT                    0x0040
+#define D3D10_SHADER_FORCE_PS_SOFTWARE_NO_OPT                    0x0080
+#define D3D10_SHADER_NO_PRESHADER                                                          0x0100
+#define D3D10_SHADER_AVOID_FLOW_CONTROL                                       0x0200
+#define D3D10_SHADER_PREFER_FLOW_CONTROL                                      0x0400
+#define D3D10_SHADER_ENABLE_STRICTNESS                                        0x0800
 #define D3D10_SHADER_ENABLE_BACKWARDS_COMPATIBILITY 0x1000
-#define D3D10_SHADER_IEEE_STRICTNESS                0x2000
-#define D3D10_SHADER_WARNINGS_ARE_ERRORS           0x40000
+#define D3D10_SHADER_IEEE_STRICTNESS                                          0x2000
+#define D3D10_SHADER_WARNINGS_ARE_ERRORS                        0x40000
 
-#define D3D10_SHADER_OPTIMIZATION_LEVEL0            0x4000
-#define D3D10_SHADER_OPTIMIZATION_LEVEL1            0x0000
-#define D3D10_SHADER_OPTIMIZATION_LEVEL2            0xC000
-#define D3D10_SHADER_OPTIMIZATION_LEVEL3            0x8000
+#define D3D10_SHADER_OPTIMIZATION_LEVEL0                                      0x4000
+#define D3D10_SHADER_OPTIMIZATION_LEVEL1                                      0x0000
+#define D3D10_SHADER_OPTIMIZATION_LEVEL2                                      0xC000
+#define D3D10_SHADER_OPTIMIZATION_LEVEL3                                      0x8000
 
 /* These are defined as version-neutral in d3dcommon.h */
 typedef D3D_SHADER_MACRO D3D10_SHADER_MACRO;
@@ -213,10 +213,10 @@ extern "C" {
 #endif
 
 HRESULT WINAPI D3D10CompileShader(const char *data, SIZE_T data_size, const char *filename,
-        const D3D10_SHADER_MACRO *defines, ID3D10Include *include, const char *entrypoint,
-        const char *profile, UINT flags, ID3D10Blob **shader, ID3D10Blob **error_messages);
+                     const D3D10_SHADER_MACRO *defines, ID3D10Include *include, const char *entrypoint,
+                     const char *profile, UINT flags, ID3D10Blob **shader, ID3D10Blob **error_messages);
 HRESULT WINAPI D3D10DisassembleShader(const void *data, SIZE_T data_size,
-        WINBOOL color_code, const char *comments, ID3D10Blob **disassembly);
+                     WINBOOL color_code, const char *comments, ID3D10Blob **disassembly);
 const char * WINAPI D3D10GetVertexShaderProfile(ID3D10Device *device);
 const char * WINAPI D3D10GetGeometryShaderProfile(ID3D10Device *device);
 const char * WINAPI D3D10GetPixelShaderProfile(ID3D10Device *device);

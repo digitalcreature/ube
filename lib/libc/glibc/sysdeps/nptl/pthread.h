@@ -154,9 +154,9 @@ enum
 /* Cleanup buffers */
 struct _pthread_cleanup_buffer
 {
-  void (*__routine) (void *);             /* Function to call.  */
-  void *__arg;                            /* Its argument.  */
-  int __canceltype;                       /* Saved cancellation type. */
+  void (*__routine) (void *);                                       /* Function to call.  */
+  void *__arg;                                                                                /* Its argument.  */
+  int __canceltype;                                                              /* Saved cancellation type. */
   struct _pthread_cleanup_buffer *__prev; /* Chaining of cleanup functions.  */
 };
 
@@ -236,7 +236,7 @@ extern int pthread_timedjoin_np (pthread_t __th, void **__thread_return,
    This function is a cancellation point and therefore not marked with
    __THROW.  */
 extern int pthread_clockjoin_np (pthread_t __th, void **__thread_return,
-                                 clockid_t __clockid,
+                                                                                                  clockid_t __clockid,
 				 const struct timespec *__abstime);
 #endif
 
@@ -279,24 +279,24 @@ extern int pthread_attr_setdetachstate (pthread_attr_t *__attr,
 
 /* Get the size of the guard area created for stack overflow protection.  */
 extern int pthread_attr_getguardsize (const pthread_attr_t *__attr,
-				      size_t *__guardsize)
+				                   size_t *__guardsize)
      __THROW __nonnull ((1, 2));
 
 /* Set the size of the guard area created for stack overflow protection.  */
 extern int pthread_attr_setguardsize (pthread_attr_t *__attr,
-				      size_t __guardsize)
+				                   size_t __guardsize)
      __THROW __nonnull ((1));
 
 
 /* Return in *PARAM the scheduling parameters of *ATTR.  */
 extern int pthread_attr_getschedparam (const pthread_attr_t *__restrict __attr,
-				       struct sched_param *__restrict __param)
+				                    struct sched_param *__restrict __param)
      __THROW __nonnull ((1, 2));
 
 /* Set scheduling parameters (priority, etc) in *ATTR according to PARAM.  */
 extern int pthread_attr_setschedparam (pthread_attr_t *__restrict __attr,
-				       const struct sched_param *__restrict
-				       __param) __THROW __nonnull ((1, 2));
+				                    const struct sched_param *__restrict
+				                    __param) __THROW __nonnull ((1, 2));
 
 /* Return in *POLICY the scheduling policy of *ATTR.  */
 extern int pthread_attr_getschedpolicy (const pthread_attr_t *__restrict
@@ -329,7 +329,7 @@ extern int pthread_attr_setscope (pthread_attr_t *__attr, int __scope)
 
 /* Return the previously set address for the stack.  */
 extern int pthread_attr_getstackaddr (const pthread_attr_t *__restrict
-				      __attr, void **__restrict __stackaddr)
+				                   __attr, void **__restrict __stackaddr)
      __THROW __nonnull ((1, 2)) __attribute_deprecated__;
 
 /* Set the starting address of the stack of the thread to be created.
@@ -337,19 +337,19 @@ extern int pthread_attr_getstackaddr (const pthread_attr_t *__restrict
    be higher or lower than all the address in the memory block.  The
    minimal size of the block must be PTHREAD_STACK_MIN.  */
 extern int pthread_attr_setstackaddr (pthread_attr_t *__attr,
-				      void *__stackaddr)
+				                   void *__stackaddr)
      __THROW __nonnull ((1)) __attribute_deprecated__;
 
 /* Return the currently used minimal stack size.  */
 extern int pthread_attr_getstacksize (const pthread_attr_t *__restrict
-				      __attr, size_t *__restrict __stacksize)
+				                   __attr, size_t *__restrict __stacksize)
      __THROW __nonnull ((1, 2));
 
 /* Add information about the minimum stack size needed for the thread
    to be started.  This size must never be less than PTHREAD_STACK_MIN
    and must also not exceed the system limits.  */
 extern int pthread_attr_setstacksize (pthread_attr_t *__attr,
-				      size_t __stacksize)
+				                   size_t __stacksize)
      __THROW __nonnull ((1));
 
 #ifdef __USE_XOPEN2K
@@ -420,7 +420,7 @@ extern int pthread_setschedprio (pthread_t __target_thread, int __prio)
 #ifdef __USE_GNU
 /* Get thread name visible in the kernel and its interfaces.  */
 extern int pthread_getname_np (pthread_t __target_thread, char *__buf,
-			       size_t __buflen)
+			                    size_t __buflen)
      __THROW __nonnull ((2));
 
 /* Set thread name visible in the kernel and its interfaces.  */
@@ -549,13 +549,13 @@ class __pthread_cleanup_class
    pthread_cleanup_push and pthread_cleanup_pop are macros and must always
    be used in matching pairs at the same nesting level of braces.  */
 #  define pthread_cleanup_push(routine, arg) \
-  do {									      \
+  do {									                   \
     __pthread_cleanup_class __clframe (routine, arg)
 
 /* Remove a cleanup handler installed by the matching pthread_cleanup_push.
    If EXECUTE is non-zero, the handler function is called. */
 #  define pthread_cleanup_pop(execute) \
-    __clframe.__setdoit (execute);					      \
+    __clframe.__setdoit (execute);					                   \
   } while (0)
 
 #  ifdef __USE_GNU
@@ -563,16 +563,16 @@ class __pthread_cleanup_class
    saves the current cancellation type and sets it to deferred
    cancellation.  */
 #   define pthread_cleanup_push_defer_np(routine, arg) \
-  do {									      \
-    __pthread_cleanup_class __clframe (routine, arg);			      \
+  do {									                   \
+    __pthread_cleanup_class __clframe (routine, arg);			                   \
     __clframe.__defer ()
 
 /* Remove a cleanup handler as pthread_cleanup_pop does, but also
    restores the cancellation type that was in effect when the matching
    pthread_cleanup_push_defer was called.  */
 #   define pthread_cleanup_pop_restore_np(execute) \
-    __clframe.__restore ();						      \
-    __clframe.__setdoit (execute);					      \
+    __clframe.__restore ();						                   \
+    __clframe.__setdoit (execute);					                   \
   } while (0)
 #  endif
 # else
@@ -595,16 +595,16 @@ __pthread_cleanup_routine (struct __pthread_cleanup_frame *__frame)
    pthread_cleanup_push and pthread_cleanup_pop are macros and must always
    be used in matching pairs at the same nesting level of braces.  */
 #  define pthread_cleanup_push(routine, arg) \
-  do {									      \
-    struct __pthread_cleanup_frame __clframe				      \
-      __attribute__ ((__cleanup__ (__pthread_cleanup_routine)))		      \
-      = { .__cancel_routine = (routine), .__cancel_arg = (arg),	 	      \
+  do {									                   \
+    struct __pthread_cleanup_frame __clframe				                   \
+                   __attribute__ ((__cleanup__ (__pthread_cleanup_routine)))		                   \
+                   = { .__cancel_routine = (routine), .__cancel_arg = (arg),	 	                   \
 	  .__do_it = 1 };
 
 /* Remove a cleanup handler installed by the matching pthread_cleanup_push.
    If EXECUTE is non-zero, the handler function is called. */
 #  define pthread_cleanup_pop(execute) \
-    __clframe.__do_it = (execute);					      \
+    __clframe.__do_it = (execute);					                   \
   } while (0)
 
 #  ifdef __USE_GNU
@@ -612,20 +612,20 @@ __pthread_cleanup_routine (struct __pthread_cleanup_frame *__frame)
    saves the current cancellation type and sets it to deferred
    cancellation.  */
 #   define pthread_cleanup_push_defer_np(routine, arg) \
-  do {									      \
-    struct __pthread_cleanup_frame __clframe				      \
-      __attribute__ ((__cleanup__ (__pthread_cleanup_routine)))		      \
-      = { .__cancel_routine = (routine), .__cancel_arg = (arg),		      \
-	  .__do_it = 1 };						      \
-    (void) pthread_setcanceltype (PTHREAD_CANCEL_DEFERRED,		      \
+  do {									                   \
+    struct __pthread_cleanup_frame __clframe				                   \
+                   __attribute__ ((__cleanup__ (__pthread_cleanup_routine)))		                   \
+                   = { .__cancel_routine = (routine), .__cancel_arg = (arg),		                   \
+	  .__do_it = 1 };						                   \
+    (void) pthread_setcanceltype (PTHREAD_CANCEL_DEFERRED,		                   \
 				  &__clframe.__cancel_type)
 
 /* Remove a cleanup handler as pthread_cleanup_pop does, but also
    restores the cancellation type that was in effect when the matching
    pthread_cleanup_push_defer was called.  */
 #   define pthread_cleanup_pop_restore_np(execute) \
-    (void) pthread_setcanceltype (__clframe.__cancel_type, NULL);	      \
-    __clframe.__do_it = (execute);					      \
+    (void) pthread_setcanceltype (__clframe.__cancel_type, NULL);	                   \
+    __clframe.__do_it = (execute);					                   \
   } while (0)
 #  endif
 # endif
@@ -638,20 +638,20 @@ __pthread_cleanup_routine (struct __pthread_cleanup_frame *__frame)
    pthread_cleanup_push and pthread_cleanup_pop are macros and must always
    be used in matching pairs at the same nesting level of braces.  */
 # define pthread_cleanup_push(routine, arg) \
-  do {									      \
-    __pthread_unwind_buf_t __cancel_buf;				      \
-    void (*__cancel_routine) (void *) = (routine);			      \
-    void *__cancel_arg = (arg);						      \
+  do {									                   \
+    __pthread_unwind_buf_t __cancel_buf;				                   \
+    void (*__cancel_routine) (void *) = (routine);			                   \
+    void *__cancel_arg = (arg);						                   \
     int __not_first_call = __sigsetjmp ((struct __jmp_buf_tag *) (void *)     \
 					__cancel_buf.__cancel_jmp_buf, 0);    \
-    if (__glibc_unlikely (__not_first_call))				      \
-      {									      \
-	__cancel_routine (__cancel_arg);				      \
-	__pthread_unwind_next (&__cancel_buf);				      \
-	/* NOTREACHED */						      \
-      }									      \
-									      \
-    __pthread_register_cancel (&__cancel_buf);				      \
+    if (__glibc_unlikely (__not_first_call))				                   \
+                   {									                   \
+	__cancel_routine (__cancel_arg);				                   \
+	__pthread_unwind_next (&__cancel_buf);				                   \
+	/* NOTREACHED */						                   \
+                   }									                   \
+									                   \
+    __pthread_register_cancel (&__cancel_buf);				                   \
     do {
 extern void __pthread_register_cancel (__pthread_unwind_buf_t *__buf)
      __cleanup_fct_attribute;
@@ -659,11 +659,11 @@ extern void __pthread_register_cancel (__pthread_unwind_buf_t *__buf)
 /* Remove a cleanup handler installed by the matching pthread_cleanup_push.
    If EXECUTE is non-zero, the handler function is called. */
 # define pthread_cleanup_pop(execute) \
-      do { } while (0);/* Empty to allow label before pthread_cleanup_pop.  */\
-    } while (0);							      \
-    __pthread_unregister_cancel (&__cancel_buf);			      \
-    if (execute)							      \
-      __cancel_routine (__cancel_arg);					      \
+                   do { } while (0);/* Empty to allow label before pthread_cleanup_pop.  */\
+    } while (0);							                   \
+    __pthread_unregister_cancel (&__cancel_buf);			                   \
+    if (execute)							                   \
+                   __cancel_routine (__cancel_arg);					                   \
   } while (0)
 extern void __pthread_unregister_cancel (__pthread_unwind_buf_t *__buf)
   __cleanup_fct_attribute;
@@ -673,20 +673,20 @@ extern void __pthread_unregister_cancel (__pthread_unwind_buf_t *__buf)
    saves the current cancellation type and sets it to deferred
    cancellation.  */
 #  define pthread_cleanup_push_defer_np(routine, arg) \
-  do {									      \
-    __pthread_unwind_buf_t __cancel_buf;				      \
-    void (*__cancel_routine) (void *) = (routine);			      \
-    void *__cancel_arg = (arg);						      \
+  do {									                   \
+    __pthread_unwind_buf_t __cancel_buf;				                   \
+    void (*__cancel_routine) (void *) = (routine);			                   \
+    void *__cancel_arg = (arg);						                   \
     int __not_first_call = __sigsetjmp ((struct __jmp_buf_tag *) (void *)     \
 					__cancel_buf.__cancel_jmp_buf, 0);    \
-    if (__glibc_unlikely (__not_first_call))				      \
-      {									      \
-	__cancel_routine (__cancel_arg);				      \
-	__pthread_unwind_next (&__cancel_buf);				      \
-	/* NOTREACHED */						      \
-      }									      \
-									      \
-    __pthread_register_cancel_defer (&__cancel_buf);			      \
+    if (__glibc_unlikely (__not_first_call))				                   \
+                   {									                   \
+	__cancel_routine (__cancel_arg);				                   \
+	__pthread_unwind_next (&__cancel_buf);				                   \
+	/* NOTREACHED */						                   \
+                   }									                   \
+									                   \
+    __pthread_register_cancel_defer (&__cancel_buf);			                   \
     do {
 extern void __pthread_register_cancel_defer (__pthread_unwind_buf_t *__buf)
      __cleanup_fct_attribute;
@@ -695,11 +695,11 @@ extern void __pthread_register_cancel_defer (__pthread_unwind_buf_t *__buf)
    restores the cancellation type that was in effect when the matching
    pthread_cleanup_push_defer was called.  */
 #  define pthread_cleanup_pop_restore_np(execute) \
-      do { } while (0);/* Empty to allow label before pthread_cleanup_pop.  */\
-    } while (0);							      \
-    __pthread_unregister_cancel_restore (&__cancel_buf);		      \
-    if (execute)							      \
-      __cancel_routine (__cancel_arg);					      \
+                   do { } while (0);/* Empty to allow label before pthread_cleanup_pop.  */\
+    } while (0);							                   \
+    __pthread_unregister_cancel_restore (&__cancel_buf);		                   \
+    if (execute)							                   \
+                   __cancel_routine (__cancel_arg);					                   \
   } while (0)
 extern void __pthread_unregister_cancel_restore (__pthread_unwind_buf_t *__buf)
   __cleanup_fct_attribute;
@@ -723,7 +723,7 @@ extern int __sigsetjmp (struct __jmp_buf_tag *__env, int __savemask) __THROWNL;
 
 /* Initialize a mutex.  */
 extern int pthread_mutex_init (pthread_mutex_t *__mutex,
-			       const pthread_mutexattr_t *__mutexattr)
+			                    const pthread_mutexattr_t *__mutexattr)
      __THROW __nonnull ((1));
 
 /* Destroy a mutex.  */
@@ -807,7 +807,7 @@ extern int pthread_mutexattr_setpshared (pthread_mutexattr_t *__attr,
 #if defined __USE_UNIX98 || defined __USE_XOPEN2K8
 /* Return in *KIND the mutex kind attribute in *ATTR.  */
 extern int pthread_mutexattr_gettype (const pthread_mutexattr_t *__restrict
-				      __attr, int *__restrict __kind)
+				                   __attr, int *__restrict __kind)
      __THROW __nonnull ((1, 2));
 
 /* Set the mutex kind attribute in *ATTR to KIND (either PTHREAD_MUTEX_NORMAL,
@@ -887,15 +887,15 @@ extern int pthread_rwlock_tryrdlock (pthread_rwlock_t *__rwlock)
 # ifdef __USE_XOPEN2K
 /* Try to acquire read lock for RWLOCK or return after specfied time.  */
 extern int pthread_rwlock_timedrdlock (pthread_rwlock_t *__restrict __rwlock,
-				       const struct timespec *__restrict
-				       __abstime) __THROWNL __nonnull ((1, 2));
+				                    const struct timespec *__restrict
+				                    __abstime) __THROWNL __nonnull ((1, 2));
 # endif
 
 # ifdef __USE_GNU
 extern int pthread_rwlock_clockrdlock (pthread_rwlock_t *__restrict __rwlock,
-				       clockid_t __clockid,
-				       const struct timespec *__restrict
-				       __abstime) __THROWNL __nonnull ((1, 3));
+				                    clockid_t __clockid,
+				                    const struct timespec *__restrict
+				                    __abstime) __THROWNL __nonnull ((1, 3));
 # endif
 
 /* Acquire write lock for RWLOCK.  */
@@ -909,15 +909,15 @@ extern int pthread_rwlock_trywrlock (pthread_rwlock_t *__rwlock)
 # ifdef __USE_XOPEN2K
 /* Try to acquire write lock for RWLOCK or return after specfied time.  */
 extern int pthread_rwlock_timedwrlock (pthread_rwlock_t *__restrict __rwlock,
-				       const struct timespec *__restrict
-				       __abstime) __THROWNL __nonnull ((1, 2));
+				                    const struct timespec *__restrict
+				                    __abstime) __THROWNL __nonnull ((1, 2));
 # endif
 
 # ifdef __USE_GNU
 extern int pthread_rwlock_clockwrlock (pthread_rwlock_t *__restrict __rwlock,
-				       clockid_t __clockid,
-				       const struct timespec *__restrict
-				       __abstime) __THROWNL __nonnull ((1, 3));
+				                    clockid_t __clockid,
+				                    const struct timespec *__restrict
+				                    __abstime) __THROWNL __nonnull ((1, 3));
 # endif
 
 /* Unlock RWLOCK.  */
@@ -963,7 +963,7 @@ extern int pthread_rwlockattr_setkind_np (pthread_rwlockattr_t *__attr,
 /* Initialize condition variable COND using attributes ATTR, or use
    the default values if later is NULL.  */
 extern int pthread_cond_init (pthread_cond_t *__restrict __cond,
-			      const pthread_condattr_t *__restrict __cond_attr)
+			                   const pthread_condattr_t *__restrict __cond_attr)
      __THROW __nonnull ((1));
 
 /* Destroy condition variable COND.  */
@@ -984,7 +984,7 @@ extern int pthread_cond_broadcast (pthread_cond_t *__cond)
    This function is a cancellation point and therefore not marked with
    __THROW.  */
 extern int pthread_cond_wait (pthread_cond_t *__restrict __cond,
-			      pthread_mutex_t *__restrict __mutex)
+			                   pthread_mutex_t *__restrict __mutex)
      __nonnull ((1, 2));
 
 /* Wait for condition variable COND to be signaled or broadcast until
@@ -1037,13 +1037,13 @@ extern int pthread_condattr_setpshared (pthread_condattr_t *__attr,
 #ifdef __USE_XOPEN2K
 /* Get the clock selected for the condition variable attribute ATTR.  */
 extern int pthread_condattr_getclock (const pthread_condattr_t *
-				      __restrict __attr,
-				      __clockid_t *__restrict __clock_id)
+				                   __restrict __attr,
+				                   __clockid_t *__restrict __clock_id)
      __THROW __nonnull ((1, 2));
 
 /* Set the clock selected for the condition variable attribute ATTR.  */
 extern int pthread_condattr_setclock (pthread_condattr_t *__attr,
-				      __clockid_t __clock_id)
+				                   __clockid_t __clock_id)
      __THROW __nonnull ((1));
 #endif
 
@@ -1121,7 +1121,7 @@ extern int pthread_barrierattr_setpshared (pthread_barrierattr_t *__attr,
    DESTR_FUNCTION is not called if the value associated is NULL when
    the key is destroyed.  */
 extern int pthread_key_create (pthread_key_t *__key,
-			       void (*__destr_function) (void *))
+			                    void (*__destr_function) (void *))
      __THROW __nonnull ((1));
 
 /* Destroy KEY.  */

@@ -28,16 +28,16 @@ pub const LoadedImageProtocol = extern struct {
 
     /// Unloads an image from memory.
     pub fn unload(self: *const LoadedImageProtocol, handle: Handle) Status {
-        return self._unload(self, handle);
+                     return self._unload(self, handle);
     }
 
     pub const guid align(8) = Guid{
-        .time_low = 0x5b1b31a1,
-        .time_mid = 0x9562,
-        .time_high_and_version = 0x11d2,
-        .clock_seq_high_and_reserved = 0x8e,
-        .clock_seq_low = 0x3f,
-        .node = [_]u8{ 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x3b },
+                     .time_low = 0x5b1b31a1,
+                     .time_mid = 0x9562,
+                     .time_high_and_version = 0x11d2,
+                     .clock_seq_high_and_reserved = 0x8e,
+                     .clock_seq_low = 0x3f,
+                     .node = [_]u8{ 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x3b },
     };
 };
 

@@ -23,6 +23,6 @@
 #include <linux/atalk.h>
 #include <sys/socket.h>
 
-#define SOL_ATALK       258     /* sockopt level for atalk */
+#define SOL_ATALK                    258     /* sockopt level for atalk */
 
 #endif	/* netatalk/at.h */

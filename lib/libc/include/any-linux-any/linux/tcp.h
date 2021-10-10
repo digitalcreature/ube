@@ -103,8 +103,8 @@ enum {
 #define TCP_QUICKACK		12	/* Block/reenable quick acks */
 #define TCP_CONGESTION		13	/* Congestion control algorithm */
 #define TCP_MD5SIG		14	/* TCP MD5 Signature (RFC2385) */
-#define TCP_THIN_LINEAR_TIMEOUTS 16      /* Use linear timeouts for thin streams*/
-#define TCP_THIN_DUPACK         17      /* Fast retrans. after 1 dupack */
+#define TCP_THIN_LINEAR_TIMEOUTS 16                   /* Use linear timeouts for thin streams*/
+#define TCP_THIN_DUPACK                      17                   /* Fast retrans. after 1 dupack */
 #define TCP_USER_TIMEOUT	18	/* How long for loss retry before timeout */
 #define TCP_REPAIR		19	/* TCP sock is under repair right now */
 #define TCP_REPAIR_QUEUE	20
@@ -229,7 +229,7 @@ struct tcp_info {
 
 	__u64   tcpi_delivery_rate;
 
-	__u64	tcpi_busy_time;      /* Time (usec) busy sending data */
+	__u64	tcpi_busy_time;                   /* Time (usec) busy sending data */
 	__u64	tcpi_rwnd_limited;   /* Time (usec) limited by receive window */
 	__u64	tcpi_sndbuf_limited; /* Time (usec) limited by send buffer */
 
@@ -252,9 +252,9 @@ enum {
 	TCP_NLA_TOTAL_RETRANS,	/* Data pkts retransmitted */
 	TCP_NLA_PACING_RATE,    /* Pacing rate in bytes per second */
 	TCP_NLA_DELIVERY_RATE,  /* Delivery rate in bytes per second */
-	TCP_NLA_SND_CWND,       /* Sending congestion window */
+	TCP_NLA_SND_CWND,                    /* Sending congestion window */
 	TCP_NLA_REORDERING,     /* Reordering metric */
-	TCP_NLA_MIN_RTT,        /* minimum RTT */
+	TCP_NLA_MIN_RTT,                     /* minimum RTT */
 	TCP_NLA_RECUR_RETRANS,  /* Recurring retransmits for the current pkt */
 	TCP_NLA_DELIVERY_RATE_APP_LMT, /* delivery rate application limited ? */
 	TCP_NLA_SNDQ_SIZE,	/* Data (bytes) pending in send queue */

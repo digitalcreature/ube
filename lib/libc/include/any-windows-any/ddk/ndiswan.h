@@ -29,98 +29,98 @@
 extern "C" {
 #endif
 
-#define NDIS_USE_WAN_WRAPPER            0x00000001
+#define NDIS_USE_WAN_WRAPPER                                      0x00000001
 
 #define NDIS_STATUS_TAPI_INDICATION     ((NDIS_STATUS)0x40010080L)
 
 /* NDIS_WAN_INFO.FramingBits constants */
-#define RAS_FRAMING                     0x00000001
-#define RAS_COMPRESSION                 0x00000002
+#define RAS_FRAMING                                                            0x00000001
+#define RAS_COMPRESSION                                           0x00000002
 
-#define ARAP_V1_FRAMING                 0x00000004
-#define ARAP_V2_FRAMING                 0x00000008
-#define ARAP_FRAMING                    (ARAP_V1_FRAMING | ARAP_V2_FRAMING)
+#define ARAP_V1_FRAMING                                           0x00000004
+#define ARAP_V2_FRAMING                                           0x00000008
+#define ARAP_FRAMING                                                           (ARAP_V1_FRAMING | ARAP_V2_FRAMING)
 
-#define PPP_MULTILINK_FRAMING           0x00000010
+#define PPP_MULTILINK_FRAMING                        0x00000010
 #define PPP_SHORT_SEQUENCE_HDR_FORMAT   0x00000020
-#define PPP_MC_MULTILINK_FRAMING        0x00000040
+#define PPP_MC_MULTILINK_FRAMING                     0x00000040
 
-#define PPP_FRAMING                     0x00000100
+#define PPP_FRAMING                                                            0x00000100
 #define PPP_COMPRESS_ADDRESS_CONTROL    0x00000200
 #define PPP_COMPRESS_PROTOCOL_FIELD     0x00000400
-#define PPP_ACCM_SUPPORTED              0x00000800
+#define PPP_ACCM_SUPPORTED                                        0x00000800
 
-#define SLIP_FRAMING                    0x00001000
-#define SLIP_VJ_COMPRESSION             0x00002000
-#define SLIP_VJ_AUTODETECT              0x00004000
+#define SLIP_FRAMING                                                           0x00001000
+#define SLIP_VJ_COMPRESSION                                       0x00002000
+#define SLIP_VJ_AUTODETECT                                        0x00004000
 
-#define MEDIA_NRZ_ENCODING              0x00010000
-#define MEDIA_NRZI_ENCODING             0x00020000
-#define MEDIA_NLPID                     0x00040000
+#define MEDIA_NRZ_ENCODING                                        0x00010000
+#define MEDIA_NRZI_ENCODING                                       0x00020000
+#define MEDIA_NLPID                                                            0x00040000
 
-#define RFC_1356_FRAMING                0x00100000
-#define RFC_1483_FRAMING                0x00200000
-#define RFC_1490_FRAMING                0x00400000
-#define LLC_ENCAPSULATION               0x00800000
+#define RFC_1356_FRAMING                                          0x00100000
+#define RFC_1483_FRAMING                                          0x00200000
+#define RFC_1490_FRAMING                                          0x00400000
+#define LLC_ENCAPSULATION                                         0x00800000
 
-#define SHIVA_FRAMING                   0x01000000
-#define NBF_PRESERVE_MAC_ADDRESS        0x01000000
+#define SHIVA_FRAMING                                                          0x01000000
+#define NBF_PRESERVE_MAC_ADDRESS                     0x01000000
 
-#define PASS_THROUGH_MODE               0x10000000
-#define RAW_PASS_THROUGH_MODE           0x20000000
+#define PASS_THROUGH_MODE                                         0x10000000
+#define RAW_PASS_THROUGH_MODE                        0x20000000
 
-#define TAPI_PROVIDER                   0x80000000
+#define TAPI_PROVIDER                                                          0x80000000
 
-#define BRIDGING_FLAG_LANFCS            0x00000001
-#define BRIDGING_FLAG_LANID             0x00000002
-#define BRIDGING_FLAG_PADDING           0x00000004
+#define BRIDGING_FLAG_LANFCS                                      0x00000001
+#define BRIDGING_FLAG_LANID                                       0x00000002
+#define BRIDGING_FLAG_PADDING                        0x00000004
 
-#define BRIDGING_TINYGRAM               0x00000001
-#define BRIDGING_LANID                  0x00000002
-#define BRIDGING_NO_SPANNING_TREE       0x00000004
+#define BRIDGING_TINYGRAM                                         0x00000001
+#define BRIDGING_LANID                                                         0x00000002
+#define BRIDGING_NO_SPANNING_TREE                    0x00000004
 #define BRIDGING_8021D_SPANNING_TREE    0x00000008
 #define BRIDGING_8021G_SPANNING_TREE    0x00000010
-#define BRIDGING_SOURCE_ROUTING         0x00000020
-#define BRIDGING_DEC_LANBRIDGE          0x00000040
+#define BRIDGING_SOURCE_ROUTING                      0x00000020
+#define BRIDGING_DEC_LANBRIDGE                       0x00000040
 
-#define BRIDGING_TYPE_RESERVED          0x00000001
-#define BRIDGING_TYPE_8023_CANON        0x00000002
+#define BRIDGING_TYPE_RESERVED                       0x00000001
+#define BRIDGING_TYPE_8023_CANON                     0x00000002
 #define BRIDGING_TYPE_8024_NO_CANON     0x00000004
 #define BRIDGING_TYPE_8025_NO_CANON     0x00000008
 #define BRIDGING_TYPE_FDDI_NO_CANON     0x00000010
-#define BRIDGING_TYPE_8024_CANON        0x00000400
-#define BRIDGING_TYPE_8025_CANON        0x00000800
-#define BRIDGING_TYPE_FDDI_CANON        0x00001000
+#define BRIDGING_TYPE_8024_CANON                     0x00000400
+#define BRIDGING_TYPE_8025_CANON                     0x00000800
+#define BRIDGING_TYPE_FDDI_CANON                     0x00001000
 
 /* NDIS_WAN_COMPRESS_INFO.MSCompType constants */
-#define NDISWAN_COMPRESSION             0x00000001
-#define NDISWAN_ENCRYPTION              0x00000010
-#define NDISWAN_40_ENCRYPTION           0x00000020
-#define NDISWAN_128_ENCRYPTION          0x00000040
-#define NDISWAN_56_ENCRYPTION           0x00000080
-#define NDISWAN_HISTORY_LESS            0x01000000
+#define NDISWAN_COMPRESSION                                       0x00000001
+#define NDISWAN_ENCRYPTION                                        0x00000010
+#define NDISWAN_40_ENCRYPTION                        0x00000020
+#define NDISWAN_128_ENCRYPTION                       0x00000040
+#define NDISWAN_56_ENCRYPTION                        0x00000080
+#define NDISWAN_HISTORY_LESS                                      0x01000000
 
 /* NDIS_WAN_COMPRESS_INFO.CompType constants */
-#define COMPTYPE_OUI                    0
-#define COMPTYPE_NT31RAS                254
-#define COMPTYPE_NONE                   255
+#define COMPTYPE_OUI                                                           0
+#define COMPTYPE_NT31RAS                                          254
+#define COMPTYPE_NONE                                                          255
 
-#define WAN_ERROR_CRC                   ((ULONG)0x00000001)
-#define WAN_ERROR_FRAMING               ((ULONG)0x00000002)
-#define WAN_ERROR_HARDWAREOVERRUN       ((ULONG)0x00000004)
-#define WAN_ERROR_BUFFEROVERRUN         ((ULONG)0x00000008)
-#define WAN_ERROR_TIMEOUT               ((ULONG)0x00000010)
-#define WAN_ERROR_ALIGNMENT             ((ULONG)0x00000020)
+#define WAN_ERROR_CRC                                                          ((ULONG)0x00000001)
+#define WAN_ERROR_FRAMING                                         ((ULONG)0x00000002)
+#define WAN_ERROR_HARDWAREOVERRUN                    ((ULONG)0x00000004)
+#define WAN_ERROR_BUFFEROVERRUN                      ((ULONG)0x00000008)
+#define WAN_ERROR_TIMEOUT                                         ((ULONG)0x00000010)
+#define WAN_ERROR_ALIGNMENT                                       ((ULONG)0x00000020)
 
 #define NdisMWanInitializeWrapper(NdisWrapperHandle, \
-                                  SystemSpecific1,   \
-                                  SystemSpecific2,   \
-                                  SystemSpecific3)   \
-{                                                     \
-  NdisMInitializeWrapper(NdisWrapperHandle,           \
-                         SystemSpecific1,             \
-                         SystemSpecific2,             \
-                         SystemSpecific3);            \
+                                                                                                   SystemSpecific1,   \
+                                                                                                   SystemSpecific2,   \
+                                                                                                   SystemSpecific3)   \
+{                                                                                                                                                             \
+  NdisMInitializeWrapper(NdisWrapperHandle,                        \
+                                                                             SystemSpecific1,                                       \
+                                                                             SystemSpecific2,                                       \
+                                                                             SystemSpecific3);                                      \
 }
 
 typedef struct _NDIS_WAN_INFO {
@@ -190,12 +190,12 @@ typedef struct _NDIS_WAN_COMPRESS_INFO {
   USHORT CompLength;
   _ANONYMOUS_UNION union {
     struct {
-      UCHAR CompOUI[3];
-      UCHAR CompSubType;
-      UCHAR CompValues[32];
+                   UCHAR CompOUI[3];
+                   UCHAR CompSubType;
+                   UCHAR CompValues[32];
     } Proprietary;
     struct {
-      UCHAR CompValues[32];
+                   UCHAR CompValues[32];
     } Public;
   } DUMMYUNIONNAME;
 } NDIS_WAN_COMPRESS_INFO, *PNDIS_WAN_COMPRESS_INFO;

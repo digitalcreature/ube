@@ -353,47 +353,47 @@ typedef struct tagDBTIMESTAMPOFFSET {
  * `MSOLEDBSQL_H_DECL_SSVARIANT_STRUCTS` macro. */
 #define MSOLEDBSQL_H_DECL_SSVARIANT_STRUCTS \
     struct _Time2Val { \
-      DBTIME2 tTime2Val; \
-      BYTE bScale; \
+                   DBTIME2 tTime2Val; \
+                   BYTE bScale; \
     }; \
     struct _DateTimeVal { \
-      DBTIMESTAMP tsDateTimeVal; \
-      BYTE bScale; \
+                   DBTIMESTAMP tsDateTimeVal; \
+                   BYTE bScale; \
     }; \
     struct _DateTimeOffsetVal { \
-      DBTIMESTAMPOFFSET tsoDateTimeOffsetVal; \
-      BYTE bScale; \
+                   DBTIMESTAMPOFFSET tsoDateTimeOffsetVal; \
+                   BYTE bScale; \
     }; \
     struct _NCharVal { \
-      SHORT sActualLength; \
-      SHORT sMaxLength; \
-      WCHAR *pwchNCharVal; \
-      BYTE rgbReserved[5]; \
-      DWORD dwReserved; \
-      WCHAR *pwchReserved; \
+                   SHORT sActualLength; \
+                   SHORT sMaxLength; \
+                   WCHAR *pwchNCharVal; \
+                   BYTE rgbReserved[5]; \
+                   DWORD dwReserved; \
+                   WCHAR *pwchReserved; \
     }; \
     struct _CharVal { \
-      SHORT sActualLength; \
-      SHORT sMaxLength; \
-      CHAR *pchCharVal; \
-      BYTE rgbReserved[5]; \
-      DWORD dwReserved; \
-      WCHAR *pwchReserved; \
+                   SHORT sActualLength; \
+                   SHORT sMaxLength; \
+                   CHAR *pchCharVal; \
+                   BYTE rgbReserved[5]; \
+                   DWORD dwReserved; \
+                   WCHAR *pwchReserved; \
     }; \
     struct _BinaryVal { \
-      SHORT sActualLength; \
-      SHORT sMaxLength; \
-      BYTE *prgbBinaryVal; \
-      DWORD dwReserved; \
+                   SHORT sActualLength; \
+                   SHORT sMaxLength; \
+                   BYTE *prgbBinaryVal; \
+                   DWORD dwReserved; \
     }; \
     struct _UnknownType { \
-      DWORD dwActualLength; \
-      BYTE rgMetadata[16]; \
-      BYTE *pUnknownData; \
+                   DWORD dwActualLength; \
+                   BYTE rgMetadata[16]; \
+                   BYTE *pUnknownData; \
     }; \
     struct _BLOBType { \
-      DBOBJECT dbobj; \
-      IUnknown *pUnk; \
+                   DBOBJECT dbobj; \
+                   IUnknown *pUnk; \
     };
 /* As it's already mentioned the original msoledbsql.h header defines members of
  * the `SSVARIANT::{unnamed union}` of structure types specifying those types
@@ -1211,23 +1211,23 @@ static BOOL ParseVersion(Version * pVersion)
     BOOL fHaveDigit = FALSE;
 
     while (*pwch >= L'0' && *pwch <= L'9') {
-        llVal = llVal * 10 + (*pwch++ - L'0');
-        fHaveDigit = TRUE;
-        if (llVal > 0x7fffffff) {
-            return FALSE;
-        }
+                     llVal = llVal * 10 + (*pwch++ - L'0');
+                     fHaveDigit = TRUE;
+                     if (llVal > 0x7fffffff) {
+                                      return FALSE;
+                     }
     }
 
     if (!fHaveDigit)
-        return FALSE;
+                     return FALSE;
 
     pVersion->dwComponent[i] = (DWORD)llVal;
 
     if (*pwch == L'\0')
-        return TRUE;
+                     return TRUE;
 
     if (*pwch != L'.')
-        return FALSE;
+                     return FALSE;
 
     pwch++;
   }
@@ -1253,61 +1253,61 @@ static HRESULT LocalDBGetPFn(LPCSTR szLocalDBFn, FARPROC *pfnLocalDBFn)
     HMODULE hLocalDBDllTemp = NULL;
 
     if (ERROR_SUCCESS != (ec = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Microsoft SQL Server Local DB\\Installed Versions", 0, KEY_READ, &hkeyVersions)))
-      goto Cleanup;
+                   goto Cleanup;
 
     for (int i = 0; ; i++) {
-      cchKeyName = 256;
-      if (ERROR_SUCCESS != (ec = RegEnumKeyExW(hkeyVersions, i, verCurrent.wszKeyName, &cchKeyName, 0, NULL, NULL, NULL))) {
-        if (ERROR_NO_MORE_ITEMS == ec)
-          break;
-        goto Cleanup;
-      }
+                   cchKeyName = 256;
+                   if (ERROR_SUCCESS != (ec = RegEnumKeyExW(hkeyVersions, i, verCurrent.wszKeyName, &cchKeyName, 0, NULL, NULL, NULL))) {
+                     if (ERROR_NO_MORE_ITEMS == ec)
+                       break;
+                     goto Cleanup;
+                   }
 
-      if (!ParseVersion(&verCurrent))
-        continue;
+                   if (!ParseVersion(&verCurrent))
+                     continue;
 
-      if (verCurrent.dwComponent[0] > verHigh.dwComponent[0] ||
-          (verCurrent.dwComponent[0] == verHigh.dwComponent[0] && verCurrent.dwComponent[1] > verHigh.dwComponent[1]))
-        verHigh = verCurrent;
+                   if (verCurrent.dwComponent[0] > verHigh.dwComponent[0] ||
+                       (verCurrent.dwComponent[0] == verHigh.dwComponent[0] && verCurrent.dwComponent[1] > verHigh.dwComponent[1]))
+                     verHigh = verCurrent;
     }
     if (!verHigh.wszKeyName[0]) {
-      assert(ec == ERROR_NO_MORE_ITEMS);
+                   assert(ec == ERROR_NO_MORE_ITEMS);
 
-      ec = ERROR_FILE_NOT_FOUND;
-      goto Cleanup;
+                   ec = ERROR_FILE_NOT_FOUND;
+                   goto Cleanup;
     }
 
     if (ERROR_SUCCESS != (ec = RegOpenKeyExW(hkeyVersions, verHigh.wszKeyName, 0, KEY_READ, &hkeyVersion)))
-      goto Cleanup;
+                   goto Cleanup;
     if (ERROR_SUCCESS != (ec = RegQueryValueExW(hkeyVersion, L"InstanceAPIPath", NULL, &dwValueType, (PBYTE) wszLocalDBDll, &cbLocalDBDll)))
-      goto Cleanup;
+                   goto Cleanup;
     if (dwValueType != REG_SZ) {
-      ec = ERROR_INVALID_DATA;
-      goto Cleanup;
+                   ec = ERROR_INVALID_DATA;
+                   goto Cleanup;
     }
     wszLocalDBDll[cbLocalDBDll/sizeof(WCHAR)] = L'\0';
 
     hLocalDBDllTemp = LoadLibraryW(wszLocalDBDll);
     if (NULL == hLocalDBDllTemp) {
-      ec = GetLastError();
-      goto Cleanup;
+                   ec = GetLastError();
+                   goto Cleanup;
     }
     if (NULL == InterlockedCompareExchangePointer((volatile PVOID *)&hLocalDBDll, hLocalDBDllTemp, NULL))
-      hLocalDBDllTemp = NULL;
+                   hLocalDBDllTemp = NULL;
     ec = ERROR_SUCCESS;
 Cleanup:
     if (hLocalDBDllTemp)
-      FreeLibrary(hLocalDBDllTemp);
+                   FreeLibrary(hLocalDBDllTemp);
     if (hkeyVersion)
-      RegCloseKey(hkeyVersion);
+                   RegCloseKey(hkeyVersion);
     if (hkeyVersions)
-      RegCloseKey(hkeyVersions);
+                   RegCloseKey(hkeyVersions);
 
     if (ec == ERROR_FILE_NOT_FOUND)
-      return LOCALDB_ERROR_NOT_INSTALLED;
+                   return LOCALDB_ERROR_NOT_INSTALLED;
 
     if (ec != ERROR_SUCCESS)
-      return HRESULT_FROM_WIN32(ec);
+                   return HRESULT_FROM_WIN32(ec);
   }
 
   FARPROC pfn = GetProcAddress(hLocalDBDll, szLocalDBFn);

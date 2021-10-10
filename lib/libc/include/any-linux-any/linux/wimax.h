@@ -208,17 +208,17 @@ enum {
  * The allowed state transitions are described in the table below
  * (states in rows can go to states in columns where there is an X):
  *
- *                                  UNINI   RADIO READY SCAN CONNEC CONNEC
- *             NULL DOWN QUIESCING TIALIZED  OFF        NING  TING   TED
- * NULL         -    x
- * DOWN              -      x        x       x
- * QUIESCING         x      -
- * UNINITIALIZED            x        -       x
- * RADIO_OFF                x                -     x
- * READY                    x                x     -     x     x      x
- * SCANNING                 x                x     x     -     x      x
- * CONNECTING               x                x     x     x     -      x
- * CONNECTED                x                x     x                  -
+ *                                                                                                   UNINI   RADIO READY SCAN CONNEC CONNEC
+ *                                       NULL DOWN QUIESCING TIALIZED  OFF                     NING  TING   TED
+ * NULL                      -    x
+ * DOWN                                        -                   x                     x                    x
+ * QUIESCING                      x                   -
+ * UNINITIALIZED                                      x                     -                    x
+ * RADIO_OFF                                          x                                          -     x
+ * READY                                                           x                                          x     -     x     x                   x
+ * SCANNING                                           x                                          x     x     -     x                   x
+ * CONNECTING                                         x                                          x     x     x     -                   x
+ * CONNECTED                                          x                                          x     x                                                         -
  *
  * This table not available in kernel-doc because the formatting messes it up.
  */

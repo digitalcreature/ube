@@ -55,12 +55,12 @@ extern "C" {
 #define IOCTL_INTERNAL_I8042_MOUSE_WRITE_BUFFER \
   CTL_CODE(FILE_DEVICE_MOUSE, 0x0FF1, METHOD_NEITHER, FILE_ANY_ACCESS)
 
-#define I8042_POWER_SYS_BUTTON            0x0001
-#define I8042_SLEEP_SYS_BUTTON            0x0002
-#define I8042_WAKE_SYS_BUTTON             0x0004
-#define I8042_SYS_BUTTONS                 (I8042_POWER_SYS_BUTTON | \
-                                           I8042_SLEEP_SYS_BUTTON | \
-                                           I8042_WAKE_SYS_BUTTON)
+#define I8042_POWER_SYS_BUTTON                                      0x0001
+#define I8042_SLEEP_SYS_BUTTON                                      0x0002
+#define I8042_WAKE_SYS_BUTTON                                       0x0004
+#define I8042_SYS_BUTTONS                                           (I8042_POWER_SYS_BUTTON | \
+                                                                                                                                      I8042_SLEEP_SYS_BUTTON | \
+                                                                                                                                      I8042_WAKE_SYS_BUTTON)
 
 typedef enum _TRANSMIT_STATE {
   Idle = 0,

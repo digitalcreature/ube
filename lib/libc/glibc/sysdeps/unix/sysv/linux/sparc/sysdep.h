@@ -57,10 +57,10 @@
 ({	INTERNAL_SYSCALL_DECL(err);  					\
 	unsigned long resultvar = INTERNAL_SYSCALL(name, err, nr, args);\
 	if (INTERNAL_SYSCALL_ERROR_P (resultvar, err))			\
-	  {		     			       		   	\
+	  {		     			                    		   	\
 	    __set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, err));	\
 	    resultvar = (unsigned long) -1;				\
-	  } 	      							\
+	  } 	                   							\
 	(long) resultvar;						\
 })
 
@@ -187,12 +187,12 @@
 			  "r" (__o2), "r" (__o3), "r" (__o4) :		\
 			  __SYSCALL_CLOBBERS);				\
 	if (INTERNAL_SYSCALL_ERROR_P (__o0, __g1))			\
-	  {		     			       		   	\
+	  {		     			                    		   	\
 	    __set_errno (INTERNAL_SYSCALL_ERRNO (__o0, __g1));		\
 	    __o0 = -1L;			    				\
-	  } 	      							\
+	  } 	                   							\
 	else								\
-	  { 	      							\
+	  { 	                   							\
 	    __o0 &= (__o1 - 1);						\
 	  } 	    	    						\
 	__o0;								\

@@ -21,9 +21,9 @@ void main() {
    vec2 quantized_uv = (floor(uv * TILE_RES) + vec2(0.5)) / TILE_RES;
    // vec2 quantized_uv = (floor(uv * TILE_RES)) / TILE_RES;
    float frag_ao = 1 - mix(
-      mix(ao[0][0], ao[1][0], quantized_uv.x),
-      mix(ao[0][1], ao[1][1], quantized_uv.x),
-      quantized_uv.y
+                   mix(ao[0][0], ao[1][0], quantized_uv.x),
+                   mix(ao[0][1], ao[1][1], quantized_uv.x),
+                   quantized_uv.y
    );
    FragColor = vec4(color * frag_ao, 1.0f) * texture(albedo, vec3(tex_coord, layer2coord(2, material)));
 };

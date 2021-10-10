@@ -30,7 +30,7 @@
 #define O_SYNC		0x802000
 #define O_NONBLOCK	0x4000
 #define O_NDELAY	(0x0004 | O_NONBLOCK)
-#define O_NOCTTY        0x8000  /* not fcntl */
+#define O_NOCTTY                     0x8000  /* not fcntl */
 
 #define __O_DIRECTORY	0x10000 /* must be a directory */
 #define __O_NOFOLLOW	0x20000 /* don't follow links */

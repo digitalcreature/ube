@@ -92,7 +92,7 @@ typedef unsigned long old_sigset_t;		/* at least 32 bits */
 #define SA_ONESHOT	SA_RESETHAND
 
 #define MINSIGSTKSZ    2048
-#define SIGSTKSZ       8192
+#define SIGSTKSZ                    8192
 
 
 #define SIG_BLOCK	1	/* for blocking signals */

@@ -60,52 +60,52 @@ MIDL_INTERFACE("320b7e22-3cb0-4cdf-8663-1d28910065eb")
 ICryptographicBufferStatics : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE Compare(
-        IBuffer *object1,
-        IBuffer *object2,
-        boolean *isEqual) = 0;
+                     IBuffer *object1,
+                     IBuffer *object2,
+                     boolean *isEqual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GenerateRandom(
-        UINT32 length,
-        IBuffer **buffer) = 0;
+                     UINT32 length,
+                     IBuffer **buffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GenerateRandomNumber(
-        UINT32 *value) = 0;
+                     UINT32 *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFromByteArray(
-        UINT32 __valueSize,
-        BYTE *value,
-        IBuffer **buffer) = 0;
+                     UINT32 __valueSize,
+                     BYTE *value,
+                     IBuffer **buffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyToByteArray(
-        IBuffer *buffer,
-        UINT32 *__valueSize,
-        BYTE **value) = 0;
+                     IBuffer *buffer,
+                     UINT32 *__valueSize,
+                     BYTE **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DecodeFromHexString(
-        HSTRING value,
-        IBuffer **buffer) = 0;
+                     HSTRING value,
+                     IBuffer **buffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EncodeToHexString(
-        IBuffer *buffer,
-        HSTRING *value) = 0;
+                     IBuffer *buffer,
+                     HSTRING *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DecodeFromBase64String(
-        HSTRING value,
-        IBuffer **buffer) = 0;
+                     HSTRING value,
+                     IBuffer **buffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EncodeToBase64String(
-        IBuffer *buffer,
-        HSTRING *value) = 0;
+                     IBuffer *buffer,
+                     HSTRING *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertStringToBinary(
-        HSTRING value,
-        BinaryStringEncoding encoding,
-        IBuffer **buffer) = 0;
+                     HSTRING value,
+                     BinaryStringEncoding encoding,
+                     IBuffer **buffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertBinaryToString(
-        BinaryStringEncoding encoding,
-        IBuffer *buffer,
-        HSTRING *value) = 0;
+                     BinaryStringEncoding encoding,
+                     IBuffer *buffer,
+                     HSTRING *value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -117,89 +117,89 @@ typedef struct ICryptographicBufferStaticsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICryptographicBufferStatics* This,
-        REFIID riid,
-        void **ppvObject);
+                     ICryptographicBufferStatics* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICryptographicBufferStatics* This);
+                     ICryptographicBufferStatics* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICryptographicBufferStatics* This);
+                     ICryptographicBufferStatics* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        ICryptographicBufferStatics* This,
-        ULONG *iidCount,
-        IID **iids);
+                     ICryptographicBufferStatics* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        ICryptographicBufferStatics* This,
-        HSTRING *className);
+                     ICryptographicBufferStatics* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        ICryptographicBufferStatics* This,
-        TrustLevel *trustLevel);
+                     ICryptographicBufferStatics* This,
+                     TrustLevel *trustLevel);
 
     /*** ICryptographicBufferStatics methods ***/
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        ICryptographicBufferStatics* This,
-        IBuffer *object1,
-        IBuffer *object2,
-        boolean *isEqual);
+                     ICryptographicBufferStatics* This,
+                     IBuffer *object1,
+                     IBuffer *object2,
+                     boolean *isEqual);
 
     HRESULT (STDMETHODCALLTYPE *GenerateRandom)(
-        ICryptographicBufferStatics* This,
-        UINT32 length,
-        IBuffer **buffer);
+                     ICryptographicBufferStatics* This,
+                     UINT32 length,
+                     IBuffer **buffer);
 
     HRESULT (STDMETHODCALLTYPE *GenerateRandomNumber)(
-        ICryptographicBufferStatics* This,
-        UINT32 *value);
+                     ICryptographicBufferStatics* This,
+                     UINT32 *value);
 
     HRESULT (STDMETHODCALLTYPE *CreateFromByteArray)(
-        ICryptographicBufferStatics* This,
-        UINT32 __valueSize,
-        BYTE *value,
-        IBuffer **buffer);
+                     ICryptographicBufferStatics* This,
+                     UINT32 __valueSize,
+                     BYTE *value,
+                     IBuffer **buffer);
 
     HRESULT (STDMETHODCALLTYPE *CopyToByteArray)(
-        ICryptographicBufferStatics* This,
-        IBuffer *buffer,
-        UINT32 *__valueSize,
-        BYTE **value);
+                     ICryptographicBufferStatics* This,
+                     IBuffer *buffer,
+                     UINT32 *__valueSize,
+                     BYTE **value);
 
     HRESULT (STDMETHODCALLTYPE *DecodeFromHexString)(
-        ICryptographicBufferStatics* This,
-        HSTRING value,
-        IBuffer **buffer);
+                     ICryptographicBufferStatics* This,
+                     HSTRING value,
+                     IBuffer **buffer);
 
     HRESULT (STDMETHODCALLTYPE *EncodeToHexString)(
-        ICryptographicBufferStatics* This,
-        IBuffer *buffer,
-        HSTRING *value);
+                     ICryptographicBufferStatics* This,
+                     IBuffer *buffer,
+                     HSTRING *value);
 
     HRESULT (STDMETHODCALLTYPE *DecodeFromBase64String)(
-        ICryptographicBufferStatics* This,
-        HSTRING value,
-        IBuffer **buffer);
+                     ICryptographicBufferStatics* This,
+                     HSTRING value,
+                     IBuffer **buffer);
 
     HRESULT (STDMETHODCALLTYPE *EncodeToBase64String)(
-        ICryptographicBufferStatics* This,
-        IBuffer *buffer,
-        HSTRING *value);
+                     ICryptographicBufferStatics* This,
+                     IBuffer *buffer,
+                     HSTRING *value);
 
     HRESULT (STDMETHODCALLTYPE *ConvertStringToBinary)(
-        ICryptographicBufferStatics* This,
-        HSTRING value,
-        BinaryStringEncoding encoding,
-        IBuffer **buffer);
+                     ICryptographicBufferStatics* This,
+                     HSTRING value,
+                     BinaryStringEncoding encoding,
+                     IBuffer **buffer);
 
     HRESULT (STDMETHODCALLTYPE *ConvertBinaryToString)(
-        ICryptographicBufferStatics* This,
-        BinaryStringEncoding encoding,
-        IBuffer *buffer,
-        HSTRING *value);
+                     ICryptographicBufferStatics* This,
+                     BinaryStringEncoding encoding,
+                     IBuffer *buffer,
+                     HSTRING *value);
 
     END_INTERFACE
 } ICryptographicBufferStaticsVtbl;
@@ -397,10 +397,10 @@ void __RPC_STUB ICryptographicBufferStatics_ConvertBinaryToString_Stub(
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);
+ULONG                        __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);
 unsigned char * __RPC_USER HSTRING_UserMarshal  (ULONG *, unsigned char *, HSTRING *);
 unsigned char * __RPC_USER HSTRING_UserUnmarshal(ULONG *, unsigned char *, HSTRING *);
-void            __RPC_USER HSTRING_UserFree     (ULONG *, HSTRING *);
+void                                      __RPC_USER HSTRING_UserFree     (ULONG *, HSTRING *);
 
 /* End additional prototypes */
 

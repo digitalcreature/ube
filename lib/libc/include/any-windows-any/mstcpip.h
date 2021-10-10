@@ -57,9 +57,9 @@ typedef enum _SOCKET_USAGE_TYPE {
 
 typedef struct _SOCKET_PEER_TARGET_NAME {
   SOCKET_SECURITY_PROTOCOL SecurityProtocol;
-  SOCKADDR_STORAGE         PeerAddress;
-  ULONG                    PeerTargetNameStringLen;
-  wchar_t                  AllStrings[];
+  SOCKADDR_STORAGE                      PeerAddress;
+  ULONG                                                           PeerTargetNameStringLen;
+  wchar_t                                                         AllStrings[];
 } SOCKET_PEER_TARGET_NAME;
 
 #define SOCKET_INFO_CONNECTION_SECURED		0x00000001
@@ -68,36 +68,36 @@ typedef struct _SOCKET_PEER_TARGET_NAME {
 
 typedef struct _SOCKET_SECURITY_QUERY_INFO {
   SOCKET_SECURITY_PROTOCOL SecurityProtocol;
-  ULONG                    Flags;
-  UINT64                   PeerApplicationAccessTokenHandle;
-  UINT64                   PeerMachineAccessTokenHandle;
+  ULONG                                                           Flags;
+  UINT64                                                          PeerApplicationAccessTokenHandle;
+  UINT64                                                          PeerMachineAccessTokenHandle;
 } SOCKET_SECURITY_QUERY_INFO;
 
 typedef struct _SOCKET_SECURITY_QUERY_TEMPLATE {
   SOCKET_SECURITY_PROTOCOL SecurityProtocol;
-  SOCKADDR_STORAGE         PeerAddress;
-  ULONG                    PeerTokenAccessMask;
+  SOCKADDR_STORAGE                      PeerAddress;
+  ULONG                                                           PeerTokenAccessMask;
 } SOCKET_SECURITY_QUERY_TEMPLATE;
 
 typedef struct _SOCKET_SECURITY_SETTINGS {
   SOCKET_SECURITY_PROTOCOL SecurityProtocol;
-  ULONG                    SecurityFlags;
+  ULONG                                                           SecurityFlags;
 } SOCKET_SECURITY_SETTINGS;
 
 #define SOCKET_SETTINGS_IPSEC_SKIP_FILTER_INSTANTIATION 0x00000001
 
 typedef struct _SOCKET_SECURITY_SETTINGS_IPSEC {
   SOCKET_SECURITY_PROTOCOL SecurityProtocol;
-  ULONG                    SecurityFlags;
-  ULONG                    IpsecFlags;
-  GUID                     AuthipMMPolicyKey;
-  GUID                     AuthipQMPolicyKey;
-  GUID                     Reserved;
-  UINT64                   Reserved2;
-  ULONG                    UserNameStringLen;
-  ULONG                    DomainNameStringLen;
-  ULONG                    PasswordStringLen;
-  wchar_t                  AllStrings[];
+  ULONG                                                           SecurityFlags;
+  ULONG                                                           IpsecFlags;
+  GUID                                                            AuthipMMPolicyKey;
+  GUID                                                            AuthipQMPolicyKey;
+  GUID                                                            Reserved;
+  UINT64                                                          Reserved2;
+  ULONG                                                           UserNameStringLen;
+  ULONG                                                           DomainNameStringLen;
+  ULONG                                                           PasswordStringLen;
+  wchar_t                                                         AllStrings[];
 } SOCKET_SECURITY_SETTINGS_IPSEC;
 
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)

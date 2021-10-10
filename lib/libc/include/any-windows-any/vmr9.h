@@ -316,14 +316,14 @@ MIDL_INTERFACE("69188c61-12a3-40f0-8ffc-342e7b433fd7")
 IVMRImagePresenter9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartPresenting(
-        DWORD_PTR id) = 0;
+                     DWORD_PTR id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopPresenting(
-        DWORD_PTR id) = 0;
+                     DWORD_PTR id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PresentImage(
-        DWORD_PTR id,
-        VMR9PresentationInfo *info) = 0;
+                     DWORD_PTR id,
+                     VMR9PresentationInfo *info) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -335,29 +335,29 @@ typedef struct IVMRImagePresenter9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRImagePresenter9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRImagePresenter9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRImagePresenter9 *This);
+                     IVMRImagePresenter9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRImagePresenter9 *This);
+                     IVMRImagePresenter9 *This);
 
     /*** IVMRImagePresenter9 methods ***/
     HRESULT (STDMETHODCALLTYPE *StartPresenting)(
-        IVMRImagePresenter9 *This,
-        DWORD_PTR id);
+                     IVMRImagePresenter9 *This,
+                     DWORD_PTR id);
 
     HRESULT (STDMETHODCALLTYPE *StopPresenting)(
-        IVMRImagePresenter9 *This,
-        DWORD_PTR id);
+                     IVMRImagePresenter9 *This,
+                     DWORD_PTR id);
 
     HRESULT (STDMETHODCALLTYPE *PresentImage)(
-        IVMRImagePresenter9 *This,
-        DWORD_PTR id,
-        VMR9PresentationInfo *info);
+                     IVMRImagePresenter9 *This,
+                     DWORD_PTR id,
+                     VMR9PresentationInfo *info);
 
     END_INTERFACE
 } IVMRImagePresenter9Vtbl;
@@ -436,21 +436,21 @@ MIDL_INTERFACE("8d5148ea-3f5d-46cf-9df1-d1b896eedb1f")
 IVMRSurfaceAllocator9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitializeDevice(
-        DWORD_PTR id,
-        VMR9AllocationInfo *allocinfo,
-        DWORD *numbuffers) = 0;
+                     DWORD_PTR id,
+                     VMR9AllocationInfo *allocinfo,
+                     DWORD *numbuffers) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TerminateDevice(
-        DWORD_PTR id) = 0;
+                     DWORD_PTR id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSurface(
-        DWORD_PTR id,
-        DWORD surfaceindex,
-        DWORD flags,
-        IDirect3DSurface9 **surface) = 0;
+                     DWORD_PTR id,
+                     DWORD surfaceindex,
+                     DWORD flags,
+                     IDirect3DSurface9 **surface) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdviseNotify(
-        IVMRSurfaceAllocatorNotify9 *allocnotify) = 0;
+                     IVMRSurfaceAllocatorNotify9 *allocnotify) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -462,37 +462,37 @@ typedef struct IVMRSurfaceAllocator9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRSurfaceAllocator9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRSurfaceAllocator9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRSurfaceAllocator9 *This);
+                     IVMRSurfaceAllocator9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRSurfaceAllocator9 *This);
+                     IVMRSurfaceAllocator9 *This);
 
     /*** IVMRSurfaceAllocator9 methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializeDevice)(
-        IVMRSurfaceAllocator9 *This,
-        DWORD_PTR id,
-        VMR9AllocationInfo *allocinfo,
-        DWORD *numbuffers);
+                     IVMRSurfaceAllocator9 *This,
+                     DWORD_PTR id,
+                     VMR9AllocationInfo *allocinfo,
+                     DWORD *numbuffers);
 
     HRESULT (STDMETHODCALLTYPE *TerminateDevice)(
-        IVMRSurfaceAllocator9 *This,
-        DWORD_PTR id);
+                     IVMRSurfaceAllocator9 *This,
+                     DWORD_PTR id);
 
     HRESULT (STDMETHODCALLTYPE *GetSurface)(
-        IVMRSurfaceAllocator9 *This,
-        DWORD_PTR id,
-        DWORD surfaceindex,
-        DWORD flags,
-        IDirect3DSurface9 **surface);
+                     IVMRSurfaceAllocator9 *This,
+                     DWORD_PTR id,
+                     DWORD surfaceindex,
+                     DWORD flags,
+                     IDirect3DSurface9 **surface);
 
     HRESULT (STDMETHODCALLTYPE *AdviseNotify)(
-        IVMRSurfaceAllocator9 *This,
-        IVMRSurfaceAllocatorNotify9 *allocnotify);
+                     IVMRSurfaceAllocator9 *This,
+                     IVMRSurfaceAllocatorNotify9 *allocnotify);
 
     END_INTERFACE
 } IVMRSurfaceAllocator9Vtbl;
@@ -556,11 +556,11 @@ MIDL_INTERFACE("6de9a68a-a928-4522-bf57-655ae3866456")
 IVMRSurfaceAllocatorEx9 : public IVMRSurfaceAllocator9
 {
     virtual HRESULT STDMETHODCALLTYPE GetSurfaceEx(
-        DWORD_PTR id,
-        DWORD surfaceindex,
-        DWORD flags,
-        IDirect3DSurface9 **surface,
-        RECT *dest) = 0;
+                     DWORD_PTR id,
+                     DWORD surfaceindex,
+                     DWORD flags,
+                     IDirect3DSurface9 **surface,
+                     RECT *dest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -572,46 +572,46 @@ typedef struct IVMRSurfaceAllocatorEx9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRSurfaceAllocatorEx9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRSurfaceAllocatorEx9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRSurfaceAllocatorEx9 *This);
+                     IVMRSurfaceAllocatorEx9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRSurfaceAllocatorEx9 *This);
+                     IVMRSurfaceAllocatorEx9 *This);
 
     /*** IVMRSurfaceAllocator9 methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializeDevice)(
-        IVMRSurfaceAllocatorEx9 *This,
-        DWORD_PTR id,
-        VMR9AllocationInfo *allocinfo,
-        DWORD *numbuffers);
+                     IVMRSurfaceAllocatorEx9 *This,
+                     DWORD_PTR id,
+                     VMR9AllocationInfo *allocinfo,
+                     DWORD *numbuffers);
 
     HRESULT (STDMETHODCALLTYPE *TerminateDevice)(
-        IVMRSurfaceAllocatorEx9 *This,
-        DWORD_PTR id);
+                     IVMRSurfaceAllocatorEx9 *This,
+                     DWORD_PTR id);
 
     HRESULT (STDMETHODCALLTYPE *GetSurface)(
-        IVMRSurfaceAllocatorEx9 *This,
-        DWORD_PTR id,
-        DWORD surfaceindex,
-        DWORD flags,
-        IDirect3DSurface9 **surface);
+                     IVMRSurfaceAllocatorEx9 *This,
+                     DWORD_PTR id,
+                     DWORD surfaceindex,
+                     DWORD flags,
+                     IDirect3DSurface9 **surface);
 
     HRESULT (STDMETHODCALLTYPE *AdviseNotify)(
-        IVMRSurfaceAllocatorEx9 *This,
-        IVMRSurfaceAllocatorNotify9 *allocnotify);
+                     IVMRSurfaceAllocatorEx9 *This,
+                     IVMRSurfaceAllocatorNotify9 *allocnotify);
 
     /*** IVMRSurfaceAllocatorEx9 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSurfaceEx)(
-        IVMRSurfaceAllocatorEx9 *This,
-        DWORD_PTR id,
-        DWORD surfaceindex,
-        DWORD flags,
-        IDirect3DSurface9 **surface,
-        RECT *dest);
+                     IVMRSurfaceAllocatorEx9 *This,
+                     DWORD_PTR id,
+                     DWORD surfaceindex,
+                     DWORD flags,
+                     IDirect3DSurface9 **surface,
+                     RECT *dest);
 
     END_INTERFACE
 } IVMRSurfaceAllocatorEx9Vtbl;
@@ -681,26 +681,26 @@ MIDL_INTERFACE("dca3f5df-bb3a-4d03-bd81-84614bfbfa0c")
 IVMRSurfaceAllocatorNotify9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AdviseSurfaceAllocator(
-        DWORD_PTR id,
-        IVMRSurfaceAllocator9 *alloc) = 0;
+                     DWORD_PTR id,
+                     IVMRSurfaceAllocator9 *alloc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetD3DDevice(
-        IDirect3DDevice9 *device,
-        HMONITOR monitor) = 0;
+                     IDirect3DDevice9 *device,
+                     HMONITOR monitor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ChangeD3DDevice(
-        IDirect3DDevice9 *device,
-        HMONITOR monitor) = 0;
+                     IDirect3DDevice9 *device,
+                     HMONITOR monitor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AllocateSurfaceHelper(
-        VMR9AllocationInfo *allocinfo,
-        DWORD *numbuffers,
-        IDirect3DSurface9 **surface) = 0;
+                     VMR9AllocationInfo *allocinfo,
+                     DWORD *numbuffers,
+                     IDirect3DSurface9 **surface) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyEvent(
-        LONG code,
-        LONG_PTR param1,
-        LONG_PTR param2) = 0;
+                     LONG code,
+                     LONG_PTR param1,
+                     LONG_PTR param2) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -712,43 +712,43 @@ typedef struct IVMRSurfaceAllocatorNotify9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRSurfaceAllocatorNotify9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRSurfaceAllocatorNotify9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRSurfaceAllocatorNotify9 *This);
+                     IVMRSurfaceAllocatorNotify9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRSurfaceAllocatorNotify9 *This);
+                     IVMRSurfaceAllocatorNotify9 *This);
 
     /*** IVMRSurfaceAllocatorNotify9 methods ***/
     HRESULT (STDMETHODCALLTYPE *AdviseSurfaceAllocator)(
-        IVMRSurfaceAllocatorNotify9 *This,
-        DWORD_PTR id,
-        IVMRSurfaceAllocator9 *alloc);
+                     IVMRSurfaceAllocatorNotify9 *This,
+                     DWORD_PTR id,
+                     IVMRSurfaceAllocator9 *alloc);
 
     HRESULT (STDMETHODCALLTYPE *SetD3DDevice)(
-        IVMRSurfaceAllocatorNotify9 *This,
-        IDirect3DDevice9 *device,
-        HMONITOR monitor);
+                     IVMRSurfaceAllocatorNotify9 *This,
+                     IDirect3DDevice9 *device,
+                     HMONITOR monitor);
 
     HRESULT (STDMETHODCALLTYPE *ChangeD3DDevice)(
-        IVMRSurfaceAllocatorNotify9 *This,
-        IDirect3DDevice9 *device,
-        HMONITOR monitor);
+                     IVMRSurfaceAllocatorNotify9 *This,
+                     IDirect3DDevice9 *device,
+                     HMONITOR monitor);
 
     HRESULT (STDMETHODCALLTYPE *AllocateSurfaceHelper)(
-        IVMRSurfaceAllocatorNotify9 *This,
-        VMR9AllocationInfo *allocinfo,
-        DWORD *numbuffers,
-        IDirect3DSurface9 **surface);
+                     IVMRSurfaceAllocatorNotify9 *This,
+                     VMR9AllocationInfo *allocinfo,
+                     DWORD *numbuffers,
+                     IDirect3DSurface9 **surface);
 
     HRESULT (STDMETHODCALLTYPE *NotifyEvent)(
-        IVMRSurfaceAllocatorNotify9 *This,
-        LONG code,
-        LONG_PTR param1,
-        LONG_PTR param2);
+                     IVMRSurfaceAllocatorNotify9 *This,
+                     LONG code,
+                     LONG_PTR param1,
+                     LONG_PTR param2);
 
     END_INTERFACE
 } IVMRSurfaceAllocatorNotify9Vtbl;
@@ -820,51 +820,51 @@ MIDL_INTERFACE("8f537d09-f85e-4414-b23b-502e54c79927")
 IVMRWindowlessControl9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNativeVideoSize(
-        LONG *width,
-        LONG *height,
-        LONG *arwidth,
-        LONG *arheight) = 0;
+                     LONG *width,
+                     LONG *height,
+                     LONG *arwidth,
+                     LONG *arheight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMinIdealVideoSize(
-        LONG *width,
-        LONG *height) = 0;
+                     LONG *width,
+                     LONG *height) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxIdealVideoSize(
-        LONG *width,
-        LONG *height) = 0;
+                     LONG *width,
+                     LONG *height) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVideoPosition(
-        const RECT *source,
-        const RECT *dest) = 0;
+                     const RECT *source,
+                     const RECT *dest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoPosition(
-        RECT *source,
-        RECT *dest) = 0;
+                     RECT *source,
+                     RECT *dest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAspectRatioMode(
-        DWORD *mode) = 0;
+                     DWORD *mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAspectRatioMode(
-        DWORD mode) = 0;
+                     DWORD mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVideoClippingWindow(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RepaintVideo(
-        HWND hwnd,
-        HDC hdc) = 0;
+                     HWND hwnd,
+                     HDC hdc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisplayModeChanged(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentImage(
-        BYTE **dib) = 0;
+                     BYTE **dib) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBorderColor(
-        COLORREF color) = 0;
+                     COLORREF color) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBorderColor(
-        COLORREF *color) = 0;
+                     COLORREF *color) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -876,75 +876,75 @@ typedef struct IVMRWindowlessControl9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRWindowlessControl9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRWindowlessControl9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRWindowlessControl9 *This);
+                     IVMRWindowlessControl9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRWindowlessControl9 *This);
+                     IVMRWindowlessControl9 *This);
 
     /*** IVMRWindowlessControl9 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNativeVideoSize)(
-        IVMRWindowlessControl9 *This,
-        LONG *width,
-        LONG *height,
-        LONG *arwidth,
-        LONG *arheight);
+                     IVMRWindowlessControl9 *This,
+                     LONG *width,
+                     LONG *height,
+                     LONG *arwidth,
+                     LONG *arheight);
 
     HRESULT (STDMETHODCALLTYPE *GetMinIdealVideoSize)(
-        IVMRWindowlessControl9 *This,
-        LONG *width,
-        LONG *height);
+                     IVMRWindowlessControl9 *This,
+                     LONG *width,
+                     LONG *height);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxIdealVideoSize)(
-        IVMRWindowlessControl9 *This,
-        LONG *width,
-        LONG *height);
+                     IVMRWindowlessControl9 *This,
+                     LONG *width,
+                     LONG *height);
 
     HRESULT (STDMETHODCALLTYPE *SetVideoPosition)(
-        IVMRWindowlessControl9 *This,
-        const RECT *source,
-        const RECT *dest);
+                     IVMRWindowlessControl9 *This,
+                     const RECT *source,
+                     const RECT *dest);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoPosition)(
-        IVMRWindowlessControl9 *This,
-        RECT *source,
-        RECT *dest);
+                     IVMRWindowlessControl9 *This,
+                     RECT *source,
+                     RECT *dest);
 
     HRESULT (STDMETHODCALLTYPE *GetAspectRatioMode)(
-        IVMRWindowlessControl9 *This,
-        DWORD *mode);
+                     IVMRWindowlessControl9 *This,
+                     DWORD *mode);
 
     HRESULT (STDMETHODCALLTYPE *SetAspectRatioMode)(
-        IVMRWindowlessControl9 *This,
-        DWORD mode);
+                     IVMRWindowlessControl9 *This,
+                     DWORD mode);
 
     HRESULT (STDMETHODCALLTYPE *SetVideoClippingWindow)(
-        IVMRWindowlessControl9 *This,
-        HWND hwnd);
+                     IVMRWindowlessControl9 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *RepaintVideo)(
-        IVMRWindowlessControl9 *This,
-        HWND hwnd,
-        HDC hdc);
+                     IVMRWindowlessControl9 *This,
+                     HWND hwnd,
+                     HDC hdc);
 
     HRESULT (STDMETHODCALLTYPE *DisplayModeChanged)(
-        IVMRWindowlessControl9 *This);
+                     IVMRWindowlessControl9 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentImage)(
-        IVMRWindowlessControl9 *This,
-        BYTE **dib);
+                     IVMRWindowlessControl9 *This,
+                     BYTE **dib);
 
     HRESULT (STDMETHODCALLTYPE *SetBorderColor)(
-        IVMRWindowlessControl9 *This,
-        COLORREF color);
+                     IVMRWindowlessControl9 *This,
+                     COLORREF color);
 
     HRESULT (STDMETHODCALLTYPE *GetBorderColor)(
-        IVMRWindowlessControl9 *This,
-        COLORREF *color);
+                     IVMRWindowlessControl9 *This,
+                     COLORREF *color);
 
     END_INTERFACE
 } IVMRWindowlessControl9Vtbl;
@@ -1094,52 +1094,52 @@ MIDL_INTERFACE("1a777eaa-47c8-4930-b2c9-8fee1c1b0f3b")
 IVMRMixerControl9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAlpha(
-        DWORD streamid,
-        FLOAT alpha) = 0;
+                     DWORD streamid,
+                     FLOAT alpha) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAlpha(
-        DWORD streamid,
-        FLOAT *alpha) = 0;
+                     DWORD streamid,
+                     FLOAT *alpha) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetZOrder(
-        DWORD streamid,
-        DWORD zorder) = 0;
+                     DWORD streamid,
+                     DWORD zorder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetZOrder(
-        DWORD streamid,
-        DWORD *zorder) = 0;
+                     DWORD streamid,
+                     DWORD *zorder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputRect(
-        DWORD streamid,
-        const VMR9NormalizedRect *rect) = 0;
+                     DWORD streamid,
+                     const VMR9NormalizedRect *rect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputRect(
-        DWORD streamid,
-        VMR9NormalizedRect *rect) = 0;
+                     DWORD streamid,
+                     VMR9NormalizedRect *rect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBackgroundClr(
-        COLORREF back) = 0;
+                     COLORREF back) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBackgroundClr(
-        COLORREF *back) = 0;
+                     COLORREF *back) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMixingPrefs(
-        DWORD mixingprefs) = 0;
+                     DWORD mixingprefs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMixingPrefs(
-        DWORD *mixingprefs) = 0;
+                     DWORD *mixingprefs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProcAmpControl(
-        DWORD streamid,
-        VMR9ProcAmpControl *control) = 0;
+                     DWORD streamid,
+                     VMR9ProcAmpControl *control) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProcAmpControl(
-        DWORD streamid,
-        VMR9ProcAmpControl *control) = 0;
+                     DWORD streamid,
+                     VMR9ProcAmpControl *control) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProcAmpControlRange(
-        DWORD streamid,
-        VMR9ProcAmpControlRange *controlrange) = 0;
+                     DWORD streamid,
+                     VMR9ProcAmpControlRange *controlrange) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1151,77 +1151,77 @@ typedef struct IVMRMixerControl9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRMixerControl9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRMixerControl9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRMixerControl9 *This);
+                     IVMRMixerControl9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRMixerControl9 *This);
+                     IVMRMixerControl9 *This);
 
     /*** IVMRMixerControl9 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAlpha)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        FLOAT alpha);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     FLOAT alpha);
 
     HRESULT (STDMETHODCALLTYPE *GetAlpha)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        FLOAT *alpha);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     FLOAT *alpha);
 
     HRESULT (STDMETHODCALLTYPE *SetZOrder)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        DWORD zorder);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     DWORD zorder);
 
     HRESULT (STDMETHODCALLTYPE *GetZOrder)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        DWORD *zorder);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     DWORD *zorder);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputRect)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        const VMR9NormalizedRect *rect);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     const VMR9NormalizedRect *rect);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputRect)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        VMR9NormalizedRect *rect);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     VMR9NormalizedRect *rect);
 
     HRESULT (STDMETHODCALLTYPE *SetBackgroundClr)(
-        IVMRMixerControl9 *This,
-        COLORREF back);
+                     IVMRMixerControl9 *This,
+                     COLORREF back);
 
     HRESULT (STDMETHODCALLTYPE *GetBackgroundClr)(
-        IVMRMixerControl9 *This,
-        COLORREF *back);
+                     IVMRMixerControl9 *This,
+                     COLORREF *back);
 
     HRESULT (STDMETHODCALLTYPE *SetMixingPrefs)(
-        IVMRMixerControl9 *This,
-        DWORD mixingprefs);
+                     IVMRMixerControl9 *This,
+                     DWORD mixingprefs);
 
     HRESULT (STDMETHODCALLTYPE *GetMixingPrefs)(
-        IVMRMixerControl9 *This,
-        DWORD *mixingprefs);
+                     IVMRMixerControl9 *This,
+                     DWORD *mixingprefs);
 
     HRESULT (STDMETHODCALLTYPE *SetProcAmpControl)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        VMR9ProcAmpControl *control);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     VMR9ProcAmpControl *control);
 
     HRESULT (STDMETHODCALLTYPE *GetProcAmpControl)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        VMR9ProcAmpControl *control);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     VMR9ProcAmpControl *control);
 
     HRESULT (STDMETHODCALLTYPE *GetProcAmpControlRange)(
-        IVMRMixerControl9 *This,
-        DWORD streamid,
-        VMR9ProcAmpControlRange *controlrange);
+                     IVMRMixerControl9 *This,
+                     DWORD streamid,
+                     VMR9ProcAmpControlRange *controlrange);
 
     END_INTERFACE
 } IVMRMixerControl9Vtbl;
@@ -1339,13 +1339,13 @@ MIDL_INTERFACE("ced175e5-1935-4820-81bd-ff6ad00c9108")
 IVMRMixerBitmap9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAlphaBitmap(
-        const VMR9AlphaBitmap *bitmap) = 0;
+                     const VMR9AlphaBitmap *bitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateAlphaBitmapParameters(
-        const VMR9AlphaBitmap *bitmap) = 0;
+                     const VMR9AlphaBitmap *bitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAlphaBitmapParameters(
-        VMR9AlphaBitmap *bitmap) = 0;
+                     VMR9AlphaBitmap *bitmap) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1357,28 +1357,28 @@ typedef struct IVMRMixerBitmap9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRMixerBitmap9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRMixerBitmap9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRMixerBitmap9 *This);
+                     IVMRMixerBitmap9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRMixerBitmap9 *This);
+                     IVMRMixerBitmap9 *This);
 
     /*** IVMRMixerBitmap9 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAlphaBitmap)(
-        IVMRMixerBitmap9 *This,
-        const VMR9AlphaBitmap *bitmap);
+                     IVMRMixerBitmap9 *This,
+                     const VMR9AlphaBitmap *bitmap);
 
     HRESULT (STDMETHODCALLTYPE *UpdateAlphaBitmapParameters)(
-        IVMRMixerBitmap9 *This,
-        const VMR9AlphaBitmap *bitmap);
+                     IVMRMixerBitmap9 *This,
+                     const VMR9AlphaBitmap *bitmap);
 
     HRESULT (STDMETHODCALLTYPE *GetAlphaBitmapParameters)(
-        IVMRMixerBitmap9 *This,
-        VMR9AlphaBitmap *bitmap);
+                     IVMRMixerBitmap9 *This,
+                     VMR9AlphaBitmap *bitmap);
 
     END_INTERFACE
 } IVMRMixerBitmap9Vtbl;
@@ -1438,16 +1438,16 @@ MIDL_INTERFACE("dfc581a1-6e1f-4c3a-8d0a-5e9792ea2afc")
 IVMRSurface9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsSurfaceLocked(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockSurface(
-        BYTE **surface) = 0;
+                     BYTE **surface) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnlockSurface(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSurface(
-        IDirect3DSurface9 **surface) = 0;
+                     IDirect3DSurface9 **surface) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1459,30 +1459,30 @@ typedef struct IVMRSurface9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRSurface9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRSurface9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRSurface9 *This);
+                     IVMRSurface9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRSurface9 *This);
+                     IVMRSurface9 *This);
 
     /*** IVMRSurface9 methods ***/
     HRESULT (STDMETHODCALLTYPE *IsSurfaceLocked)(
-        IVMRSurface9 *This);
+                     IVMRSurface9 *This);
 
     HRESULT (STDMETHODCALLTYPE *LockSurface)(
-        IVMRSurface9 *This,
-        BYTE **surface);
+                     IVMRSurface9 *This,
+                     BYTE **surface);
 
     HRESULT (STDMETHODCALLTYPE *UnlockSurface)(
-        IVMRSurface9 *This);
+                     IVMRSurface9 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetSurface)(
-        IVMRSurface9 *This,
-        IDirect3DSurface9 **surface);
+                     IVMRSurface9 *This,
+                     IDirect3DSurface9 **surface);
 
     END_INTERFACE
 } IVMRSurface9Vtbl;
@@ -1550,10 +1550,10 @@ MIDL_INTERFACE("45c15cab-6e22-420a-8043-ae1f0ac02c7d")
 IVMRImagePresenterConfig9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetRenderingPrefs(
-        DWORD renderflags) = 0;
+                     DWORD renderflags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRenderingPrefs(
-        DWORD *renderflags) = 0;
+                     DWORD *renderflags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1565,24 +1565,24 @@ typedef struct IVMRImagePresenterConfig9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRImagePresenterConfig9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRImagePresenterConfig9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRImagePresenterConfig9 *This);
+                     IVMRImagePresenterConfig9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRImagePresenterConfig9 *This);
+                     IVMRImagePresenterConfig9 *This);
 
     /*** IVMRImagePresenterConfig9 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetRenderingPrefs)(
-        IVMRImagePresenterConfig9 *This,
-        DWORD renderflags);
+                     IVMRImagePresenterConfig9 *This,
+                     DWORD renderflags);
 
     HRESULT (STDMETHODCALLTYPE *GetRenderingPrefs)(
-        IVMRImagePresenterConfig9 *This,
-        DWORD *renderflags);
+                     IVMRImagePresenterConfig9 *This,
+                     DWORD *renderflags);
 
     END_INTERFACE
 } IVMRImagePresenterConfig9Vtbl;
@@ -1638,10 +1638,10 @@ MIDL_INTERFACE("d0cfe38b-93e7-4772-8957-0400c49a4485")
 IVMRVideoStreamControl9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetStreamActiveState(
-        WINBOOL active) = 0;
+                     WINBOOL active) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamActiveState(
-        WINBOOL *active) = 0;
+                     WINBOOL *active) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1653,24 +1653,24 @@ typedef struct IVMRVideoStreamControl9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRVideoStreamControl9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRVideoStreamControl9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRVideoStreamControl9 *This);
+                     IVMRVideoStreamControl9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRVideoStreamControl9 *This);
+                     IVMRVideoStreamControl9 *This);
 
     /*** IVMRVideoStreamControl9 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetStreamActiveState)(
-        IVMRVideoStreamControl9 *This,
-        WINBOOL active);
+                     IVMRVideoStreamControl9 *This,
+                     WINBOOL active);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamActiveState)(
-        IVMRVideoStreamControl9 *This,
-        WINBOOL *active);
+                     IVMRVideoStreamControl9 *This,
+                     WINBOOL *active);
 
     END_INTERFACE
 } IVMRVideoStreamControl9Vtbl;
@@ -1732,25 +1732,25 @@ MIDL_INTERFACE("5a804648-4f66-4867-9c43-4f5c822cf1b8")
 IVMRFilterConfig9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetImageCompositor(
-        IVMRImageCompositor9 *compositor) = 0;
+                     IVMRImageCompositor9 *compositor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNumberOfStreams(
-        DWORD max) = 0;
+                     DWORD max) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfStreams(
-        DWORD *max) = 0;
+                     DWORD *max) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRenderingPrefs(
-        DWORD renderflags) = 0;
+                     DWORD renderflags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRenderingPrefs(
-        DWORD *renderflags) = 0;
+                     DWORD *renderflags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRenderingMode(
-        DWORD mode) = 0;
+                     DWORD mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRenderingMode(
-        DWORD *mode) = 0;
+                     DWORD *mode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1762,44 +1762,44 @@ typedef struct IVMRFilterConfig9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRFilterConfig9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRFilterConfig9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRFilterConfig9 *This);
+                     IVMRFilterConfig9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRFilterConfig9 *This);
+                     IVMRFilterConfig9 *This);
 
     /*** IVMRFilterConfig9 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetImageCompositor)(
-        IVMRFilterConfig9 *This,
-        IVMRImageCompositor9 *compositor);
+                     IVMRFilterConfig9 *This,
+                     IVMRImageCompositor9 *compositor);
 
     HRESULT (STDMETHODCALLTYPE *SetNumberOfStreams)(
-        IVMRFilterConfig9 *This,
-        DWORD max);
+                     IVMRFilterConfig9 *This,
+                     DWORD max);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfStreams)(
-        IVMRFilterConfig9 *This,
-        DWORD *max);
+                     IVMRFilterConfig9 *This,
+                     DWORD *max);
 
     HRESULT (STDMETHODCALLTYPE *SetRenderingPrefs)(
-        IVMRFilterConfig9 *This,
-        DWORD renderflags);
+                     IVMRFilterConfig9 *This,
+                     DWORD renderflags);
 
     HRESULT (STDMETHODCALLTYPE *GetRenderingPrefs)(
-        IVMRFilterConfig9 *This,
-        DWORD *renderflags);
+                     IVMRFilterConfig9 *This,
+                     DWORD *renderflags);
 
     HRESULT (STDMETHODCALLTYPE *SetRenderingMode)(
-        IVMRFilterConfig9 *This,
-        DWORD mode);
+                     IVMRFilterConfig9 *This,
+                     DWORD mode);
 
     HRESULT (STDMETHODCALLTYPE *GetRenderingMode)(
-        IVMRFilterConfig9 *This,
-        DWORD *mode);
+                     IVMRFilterConfig9 *This,
+                     DWORD *mode);
 
     END_INTERFACE
 } IVMRFilterConfig9Vtbl;
@@ -1875,10 +1875,10 @@ MIDL_INTERFACE("00d96c29-bbde-4efc-9901-bb5036392146")
 IVMRAspectRatioControl9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAspectRatioMode(
-        DWORD *mode) = 0;
+                     DWORD *mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAspectRatioMode(
-        DWORD mode) = 0;
+                     DWORD mode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1890,24 +1890,24 @@ typedef struct IVMRAspectRatioControl9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRAspectRatioControl9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRAspectRatioControl9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRAspectRatioControl9 *This);
+                     IVMRAspectRatioControl9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRAspectRatioControl9 *This);
+                     IVMRAspectRatioControl9 *This);
 
     /*** IVMRAspectRatioControl9 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAspectRatioMode)(
-        IVMRAspectRatioControl9 *This,
-        DWORD *mode);
+                     IVMRAspectRatioControl9 *This,
+                     DWORD *mode);
 
     HRESULT (STDMETHODCALLTYPE *SetAspectRatioMode)(
-        IVMRAspectRatioControl9 *This,
-        DWORD mode);
+                     IVMRAspectRatioControl9 *This,
+                     DWORD mode);
 
     END_INTERFACE
 } IVMRAspectRatioControl9Vtbl;
@@ -1976,21 +1976,21 @@ MIDL_INTERFACE("46c2e457-8ba0-4eef-b80b-0680f0978749")
 IVMRMonitorConfig9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetMonitor(
-        UINT uDev) = 0;
+                     UINT uDev) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMonitor(
-        UINT *uDev) = 0;
+                     UINT *uDev) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultMonitor(
-        UINT uDev) = 0;
+                     UINT uDev) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultMonitor(
-        UINT *uDev) = 0;
+                     UINT *uDev) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAvailableMonitors(
-        VMR9MonitorInfo *info,
-        DWORD arraysize,
-        DWORD *numdev) = 0;
+                     VMR9MonitorInfo *info,
+                     DWORD arraysize,
+                     DWORD *numdev) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2002,38 +2002,38 @@ typedef struct IVMRMonitorConfig9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRMonitorConfig9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRMonitorConfig9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRMonitorConfig9 *This);
+                     IVMRMonitorConfig9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRMonitorConfig9 *This);
+                     IVMRMonitorConfig9 *This);
 
     /*** IVMRMonitorConfig9 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetMonitor)(
-        IVMRMonitorConfig9 *This,
-        UINT uDev);
+                     IVMRMonitorConfig9 *This,
+                     UINT uDev);
 
     HRESULT (STDMETHODCALLTYPE *GetMonitor)(
-        IVMRMonitorConfig9 *This,
-        UINT *uDev);
+                     IVMRMonitorConfig9 *This,
+                     UINT *uDev);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultMonitor)(
-        IVMRMonitorConfig9 *This,
-        UINT uDev);
+                     IVMRMonitorConfig9 *This,
+                     UINT uDev);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultMonitor)(
-        IVMRMonitorConfig9 *This,
-        UINT *uDev);
+                     IVMRMonitorConfig9 *This,
+                     UINT *uDev);
 
     HRESULT (STDMETHODCALLTYPE *GetAvailableMonitors)(
-        IVMRMonitorConfig9 *This,
-        VMR9MonitorInfo *info,
-        DWORD arraysize,
-        DWORD *numdev);
+                     IVMRMonitorConfig9 *This,
+                     VMR9MonitorInfo *info,
+                     DWORD arraysize,
+                     DWORD *numdev);
 
     END_INTERFACE
 } IVMRMonitorConfig9Vtbl;
@@ -2145,32 +2145,32 @@ MIDL_INTERFACE("a215fb8d-13c2-4f7f-993c-003d6271a459")
 IVMRDeinterlaceControl9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfDeinterlaceModes(
-        VMR9VideoDesc *desc,
-        DWORD *nummodes,
-        GUID *modes) = 0;
+                     VMR9VideoDesc *desc,
+                     DWORD *nummodes,
+                     GUID *modes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeinterlaceModeCaps(
-        GUID *mode,
-        VMR9VideoDesc *desc,
-        VMR9DeinterlaceCaps *caps) = 0;
+                     GUID *mode,
+                     VMR9VideoDesc *desc,
+                     VMR9DeinterlaceCaps *caps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeinterlaceMode(
-        DWORD streamid,
-        GUID *mode) = 0;
+                     DWORD streamid,
+                     GUID *mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDeinterlaceMode(
-        DWORD streamid,
-        GUID *mode) = 0;
+                     DWORD streamid,
+                     GUID *mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeinterlacePrefs(
-        DWORD *prefs) = 0;
+                     DWORD *prefs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDeinterlacePrefs(
-        DWORD prefs) = 0;
+                     DWORD prefs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActualDeinterlaceMode(
-        DWORD streamid,
-        GUID *mode) = 0;
+                     DWORD streamid,
+                     GUID *mode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2182,51 +2182,51 @@ typedef struct IVMRDeinterlaceControl9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRDeinterlaceControl9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRDeinterlaceControl9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRDeinterlaceControl9 *This);
+                     IVMRDeinterlaceControl9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRDeinterlaceControl9 *This);
+                     IVMRDeinterlaceControl9 *This);
 
     /*** IVMRDeinterlaceControl9 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNumberOfDeinterlaceModes)(
-        IVMRDeinterlaceControl9 *This,
-        VMR9VideoDesc *desc,
-        DWORD *nummodes,
-        GUID *modes);
+                     IVMRDeinterlaceControl9 *This,
+                     VMR9VideoDesc *desc,
+                     DWORD *nummodes,
+                     GUID *modes);
 
     HRESULT (STDMETHODCALLTYPE *GetDeinterlaceModeCaps)(
-        IVMRDeinterlaceControl9 *This,
-        GUID *mode,
-        VMR9VideoDesc *desc,
-        VMR9DeinterlaceCaps *caps);
+                     IVMRDeinterlaceControl9 *This,
+                     GUID *mode,
+                     VMR9VideoDesc *desc,
+                     VMR9DeinterlaceCaps *caps);
 
     HRESULT (STDMETHODCALLTYPE *GetDeinterlaceMode)(
-        IVMRDeinterlaceControl9 *This,
-        DWORD streamid,
-        GUID *mode);
+                     IVMRDeinterlaceControl9 *This,
+                     DWORD streamid,
+                     GUID *mode);
 
     HRESULT (STDMETHODCALLTYPE *SetDeinterlaceMode)(
-        IVMRDeinterlaceControl9 *This,
-        DWORD streamid,
-        GUID *mode);
+                     IVMRDeinterlaceControl9 *This,
+                     DWORD streamid,
+                     GUID *mode);
 
     HRESULT (STDMETHODCALLTYPE *GetDeinterlacePrefs)(
-        IVMRDeinterlaceControl9 *This,
-        DWORD *prefs);
+                     IVMRDeinterlaceControl9 *This,
+                     DWORD *prefs);
 
     HRESULT (STDMETHODCALLTYPE *SetDeinterlacePrefs)(
-        IVMRDeinterlaceControl9 *This,
-        DWORD prefs);
+                     IVMRDeinterlaceControl9 *This,
+                     DWORD prefs);
 
     HRESULT (STDMETHODCALLTYPE *GetActualDeinterlaceMode)(
-        IVMRDeinterlaceControl9 *This,
-        DWORD streamid,
-        GUID *mode);
+                     IVMRDeinterlaceControl9 *This,
+                     DWORD streamid,
+                     GUID *mode);
 
     END_INTERFACE
 } IVMRDeinterlaceControl9Vtbl;
@@ -2313,25 +2313,25 @@ MIDL_INTERFACE("4a5c89eb-df51-4654-ac2a-e48e02bbabf6")
 IVMRImageCompositor9 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitCompositionDevice(
-        IUnknown *d3ddev) = 0;
+                     IUnknown *d3ddev) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TermCompositionDevice(
-        IUnknown *d3ddev) = 0;
+                     IUnknown *d3ddev) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStreamMediaType(
-        DWORD stream,
-        AM_MEDIA_TYPE *mt,
-        WINBOOL texture) = 0;
+                     DWORD stream,
+                     AM_MEDIA_TYPE *mt,
+                     WINBOOL texture) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompositeImage(
-        IUnknown *d3ddev,
-        IDirect3DSurface9 *d3dtarget,
-        AM_MEDIA_TYPE *mttarget,
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop,
-        D3DCOLOR back,
-        VMR9VideoStreamInfo *info,
-        UINT streams) = 0;
+                     IUnknown *d3ddev,
+                     IDirect3DSurface9 *d3dtarget,
+                     AM_MEDIA_TYPE *mttarget,
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop,
+                     D3DCOLOR back,
+                     VMR9VideoStreamInfo *info,
+                     UINT streams) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2343,41 +2343,41 @@ typedef struct IVMRImageCompositor9Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVMRImageCompositor9 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVMRImageCompositor9 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVMRImageCompositor9 *This);
+                     IVMRImageCompositor9 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVMRImageCompositor9 *This);
+                     IVMRImageCompositor9 *This);
 
     /*** IVMRImageCompositor9 methods ***/
     HRESULT (STDMETHODCALLTYPE *InitCompositionDevice)(
-        IVMRImageCompositor9 *This,
-        IUnknown *d3ddev);
+                     IVMRImageCompositor9 *This,
+                     IUnknown *d3ddev);
 
     HRESULT (STDMETHODCALLTYPE *TermCompositionDevice)(
-        IVMRImageCompositor9 *This,
-        IUnknown *d3ddev);
+                     IVMRImageCompositor9 *This,
+                     IUnknown *d3ddev);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamMediaType)(
-        IVMRImageCompositor9 *This,
-        DWORD stream,
-        AM_MEDIA_TYPE *mt,
-        WINBOOL texture);
+                     IVMRImageCompositor9 *This,
+                     DWORD stream,
+                     AM_MEDIA_TYPE *mt,
+                     WINBOOL texture);
 
     HRESULT (STDMETHODCALLTYPE *CompositeImage)(
-        IVMRImageCompositor9 *This,
-        IUnknown *d3ddev,
-        IDirect3DSurface9 *d3dtarget,
-        AM_MEDIA_TYPE *mttarget,
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop,
-        D3DCOLOR back,
-        VMR9VideoStreamInfo *info,
-        UINT streams);
+                     IVMRImageCompositor9 *This,
+                     IUnknown *d3ddev,
+                     IDirect3DSurface9 *d3dtarget,
+                     AM_MEDIA_TYPE *mttarget,
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop,
+                     D3DCOLOR back,
+                     VMR9VideoStreamInfo *info,
+                     UINT streams);
 
     END_INTERFACE
 } IVMRImageCompositor9Vtbl;

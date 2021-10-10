@@ -24,9 +24,9 @@ typedef interface __x_ABI_CWindows_CSystem_CIDispatcherQueueController __x_ABI_C
 #ifdef __cplusplus
 namespace ABI {
     namespace Windows {
-        namespace System {
-            interface IDispatcherQueueController;
-        }
+                     namespace System {
+                                      interface IDispatcherQueueController;
+                     }
     }
 }
 #endif /* __cplusplus */
@@ -51,12 +51,12 @@ DEFINE_GUID(IID___x_ABI_CWindows_CSystem_CIDispatcherQueueController, 0x22f34e66
 } /* extern "C" */
 namespace ABI {
     namespace Windows {
-        namespace System {
-            MIDL_INTERFACE("22f34e66-50db-4e36-a98d-61c01b384d20")
-            IDispatcherQueueController : public IInspectable
-            {
-            };
-        }
+                     namespace System {
+                                      MIDL_INTERFACE("22f34e66-50db-4e36-a98d-61c01b384d20")
+                                      IDispatcherQueueController : public IInspectable
+                                      {
+                                      };
+                     }
     }
 }
 extern "C" {
@@ -69,29 +69,29 @@ typedef struct __x_ABI_CWindows_CSystem_CIDispatcherQueueControllerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This,
-        REFIID riid,
-        void **ppvObject);
+                     __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This);
+                     __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This);
+                     __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This,
-        ULONG *iidCount,
-        IID **iids);
+                     __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This,
-        HSTRING *className);
+                     __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This,
-        TrustLevel *trustLevel);
+                     __x_ABI_CWindows_CSystem_CIDispatcherQueueController *This,
+                     TrustLevel *trustLevel);
 
     END_INTERFACE
 } __x_ABI_CWindows_CSystem_CIDispatcherQueueControllerVtbl;

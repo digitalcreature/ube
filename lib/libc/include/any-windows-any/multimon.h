@@ -48,20 +48,20 @@ extern "C" {
 #else
   typedef struct tagMONITORINFOEXA {
     __C89_NAMELESS struct {
-      DWORD cbSize;
-      RECT rcMonitor;
-      RECT rcWork;
-      DWORD dwFlags;
+                   DWORD cbSize;
+                   RECT rcMonitor;
+                   RECT rcWork;
+                   DWORD dwFlags;
     }; /* MONITORINFO */;
     CHAR szDevice[CCHDEVICENAME];
   } MONITORINFOEXA,*LPMONITORINFOEXA;
 
   typedef struct tagMONITORINFOEXW {
     __C89_NAMELESS struct {
-      DWORD cbSize;
-      RECT rcMonitor;
-      RECT rcWork;
-      DWORD dwFlags;
+                   DWORD cbSize;
+                   RECT rcMonitor;
+                   RECT rcWork;
+                   DWORD dwFlags;
     }; /* MONITORINFO */;
     WCHAR szDevice[CCHDEVICENAME];
   } MONITORINFOEXW,*LPMONITORINFOEXW;
@@ -136,27 +136,27 @@ extern "C" {
     HMODULE h;
 
     if (g_fMultiMonInitDone)
-      return g_pfnGetMonitorInfo != NULL;
+                   return g_pfnGetMonitorInfo != NULL;
 
     g_fMultimonPlatformNT = IsPlatformNT ();
     h = GetModuleHandle (TEXT ("USER32"));
 
     if (h
-        && (*((FARPROC *) &g_pfnGetSystemMetrics) = GetProcAddress (h, "GetSystemMetrics")) != NULL
+                     && (*((FARPROC *) &g_pfnGetSystemMetrics) = GetProcAddress (h, "GetSystemMetrics")) != NULL
 	&& (*((FARPROC *) &g_pfnMonitorFromWindow) = GetProcAddress (h, "MonitorFromWindow")) != NULL
 	&& (*((FARPROC *) &g_pfnMonitorFromRect) = GetProcAddress (h, "MonitorFromRect")) != NULL
 	&& (*((FARPROC *) &g_pfnMonitorFromPoint) = GetProcAddress (h, "MonitorFromPoint")) != NULL
 	&& (*((FARPROC *) &g_pfnEnumDisplayMonitors) = GetProcAddress (h, "EnumDisplayMonitors")) != NULL
 #ifdef UNICODE
-        && (*((FARPROC *) &g_pfnEnumDisplayDevices) = GetProcAddress (h, "EnumDisplayDevicesW")) != NULL
+                     && (*((FARPROC *) &g_pfnEnumDisplayDevices) = GetProcAddress (h, "EnumDisplayDevicesW")) != NULL
 	&& (*((FARPROC *) &g_pfnGetMonitorInfo) = (g_fMultimonPlatformNT ? GetProcAddress (h, "GetMonitorInfoW") : GetProcAddress (h, "GetMonitorInfoA"))) != NULL
 #else
-        && (*((FARPROC *) &g_pfnGetMonitorInfo) = GetProcAddress (h, "GetMonitorInfoA")) != NULL
+                     && (*((FARPROC *) &g_pfnGetMonitorInfo) = GetProcAddress (h, "GetMonitorInfoA")) != NULL
 	&& (*((FARPROC *) &g_pfnEnumDisplayDevices) = GetProcAddress (h, "EnumDisplayDevicesA")) != NULL
 #endif
     ) {
-      g_fMultiMonInitDone = TRUE;
-      return TRUE;
+                   g_fMultiMonInitDone = TRUE;
+                   return TRUE;
     }
 
     g_pfnGetSystemMetrics = NULL;
@@ -172,21 +172,21 @@ extern "C" {
 
   int WINAPI xGetSystemMetrics(int n) {
     if (InitMultipleMonitorStubs ())
-      return g_pfnGetSystemMetrics (n);
+                   return g_pfnGetSystemMetrics (n);
 
     switch (n) {
     case SM_CMONITORS:
     case SM_SAMEDISPLAYFORMAT:
-      return 1;
+                   return 1;
     case SM_XVIRTUALSCREEN:
     case SM_YVIRTUALSCREEN:
-      return 0;
+                   return 0;
     case SM_CXVIRTUALSCREEN:
-      return GetSystemMetrics (SM_CXSCREEN);
+                   return GetSystemMetrics (SM_CXSCREEN);
     case SM_CYVIRTUALSCREEN:
-      return GetSystemMetrics (SM_CYSCREEN);
+                   return GetSystemMetrics (SM_CYSCREEN);
     default:
-      break;
+                   break;
     }
 
     return GetSystemMetrics (n);
@@ -196,22 +196,22 @@ extern "C" {
 
   HMONITOR WINAPI xMonitorFromPoint (POINT pt, DWORD flags) {
     if (InitMultipleMonitorStubs ())
-      return g_pfnMonitorFromPoint (pt, flags);
+                   return g_pfnMonitorFromPoint (pt, flags);
 
     if ((flags & (MONITOR_DEFAULTTOPRIMARY | MONITOR_DEFAULTTONEAREST)) != 0
-        || (pt.x >= 0 && pt.y >= 0 && pt.x < GetSystemMetrics (SM_CXSCREEN) && pt.y < GetSystemMetrics (SM_CYSCREEN)))
-      return xPRIMARY_MONITOR;
+                     || (pt.x >= 0 && pt.y >= 0 && pt.x < GetSystemMetrics (SM_CXSCREEN) && pt.y < GetSystemMetrics (SM_CYSCREEN)))
+                   return xPRIMARY_MONITOR;
 
     return NULL;
   }
 
   HMONITOR WINAPI xMonitorFromRect (LPCRECT pr, DWORD flags) {
     if (InitMultipleMonitorStubs ())
-      return g_pfnMonitorFromRect (pr, flags);
+                   return g_pfnMonitorFromRect (pr, flags);
 
     if ((flags & (MONITOR_DEFAULTTOPRIMARY | MONITOR_DEFAULTTONEAREST)) != 0
-        || (pr->right > 0 && pr->bottom > 0 && pr->left < GetSystemMetrics (SM_CXSCREEN) && pr->top < GetSystemMetrics (SM_CYSCREEN)))
-      return xPRIMARY_MONITOR;
+                     || (pr->right > 0 && pr->bottom > 0 && pr->left < GetSystemMetrics (SM_CXSCREEN) && pr->top < GetSystemMetrics (SM_CYSCREEN)))
+                   return xPRIMARY_MONITOR;
 
     return NULL;
   }
@@ -220,13 +220,13 @@ extern "C" {
     WINDOWPLACEMENT wp;
 
     if (InitMultipleMonitorStubs ())
-      return g_pfnMonitorFromWindow (hw, flags);
+                   return g_pfnMonitorFromWindow (hw, flags);
 
     if ((flags & (MONITOR_DEFAULTTOPRIMARY | MONITOR_DEFAULTTONEAREST)) != 0)
-      return xPRIMARY_MONITOR;
+                   return xPRIMARY_MONITOR;
 
     if ((IsIconic (hw) ? GetWindowPlacement (hw, &wp) : GetWindowRect (hw, &wp.rcNormalPosition)) != 0)
-      return xMonitorFromRect (&wp.rcNormalPosition, flags);
+                   return xMonitorFromRect (&wp.rcNormalPosition, flags);
 
     return NULL;
   }
@@ -238,30 +238,30 @@ extern "C" {
 
     c.mi = pmi;
     if (InitMultipleMonitorStubs ()) {
-      f = g_pfnGetMonitorInfo (hmon, pmi);
+                   f = g_pfnGetMonitorInfo (hmon, pmi);
 #ifdef UNICODE
-      if (f && !g_fMultimonPlatformNT && pmi->cbSize >= sizeof (MONITORINFOEX))
+                   if (f && !g_fMultimonPlatformNT && pmi->cbSize >= sizeof (MONITORINFOEX))
 	MultiByteToWideChar (CP_ACP, 0, (LPSTR) c.ex->szDevice, -1, c.ex->szDevice, (sizeof (c.ex->szDevice) / 2));
 #endif
-      return f;
+                   return f;
     }
 
     if ((hmon == xPRIMARY_MONITOR) && pmi &&(pmi->cbSize >= sizeof (MONITORINFO)) && SystemParametersInfoA (SPI_GETWORKAREA, 0,&r, 0)) {
-      pmi->rcMonitor.left = 0;
-      pmi->rcMonitor.top = 0;
-      pmi->rcMonitor.right = GetSystemMetrics (SM_CXSCREEN);
-      pmi->rcMonitor.bottom = GetSystemMetrics (SM_CYSCREEN);
-      pmi->rcWork = r;
-      pmi->dwFlags = MONITORINFOF_PRIMARY;
-      if (pmi->cbSize >= sizeof (MONITORINFOEX)) {
+                   pmi->rcMonitor.left = 0;
+                   pmi->rcMonitor.top = 0;
+                   pmi->rcMonitor.right = GetSystemMetrics (SM_CXSCREEN);
+                   pmi->rcMonitor.bottom = GetSystemMetrics (SM_CYSCREEN);
+                   pmi->rcWork = r;
+                   pmi->dwFlags = MONITORINFOF_PRIMARY;
+                   if (pmi->cbSize >= sizeof (MONITORINFOEX)) {
 #ifdef UNICODE
 	MultiByteToWideChar (CP_ACP, 0, "DISPLAY", -1, c.ex->szDevice, (sizeof (c.ex->szDevice) / 2));
 #else
 	lstrcpyn (c.ex->szDevice, "DISPLAY", sizeof (c.ex->szDevice));
 #endif
-      }
+                   }
 
-      return TRUE;
+                   return TRUE;
     }
 
     return FALSE;
@@ -272,18 +272,18 @@ extern "C" {
     POINT ptOrg;
 
     if (InitMultipleMonitorStubs ())
-      return g_pfnEnumDisplayMonitors (hdcOptionalForPainting, lprcEnumMonitorsThatIntersect, lpfnEnumProc, dwData);
+                   return g_pfnEnumDisplayMonitors (hdcOptionalForPainting, lprcEnumMonitorsThatIntersect, lpfnEnumProc, dwData);
 
     if (!lpfnEnumProc)
-      return FALSE;
+                   return FALSE;
 
     rcLimit.left = rcLimit.top = 0;
     rcLimit.right = GetSystemMetrics (SM_CXSCREEN);
     rcLimit.bottom = GetSystemMetrics (SM_CYSCREEN);
 
     if (hdcOptionalForPainting) {
-      switch (GetClipBox (hdcOptionalForPainting,&rcClip)) {
-      default:
+                   switch (GetClipBox (hdcOptionalForPainting,&rcClip)) {
+                   default:
 	if (!GetDCOrgEx (hdcOptionalForPainting,&ptOrg))
 	  return FALSE;
 
@@ -293,22 +293,22 @@ extern "C" {
 	    && (!lprcEnumMonitorsThatIntersect || IntersectRect (&rcLimit, &rcLimit, lprcEnumMonitorsThatIntersect)))
 	  break;
 
-      case NULLREGION:
+                   case NULLREGION:
 	return TRUE;
-      case ERROR:
+                   case ERROR:
 	return FALSE;
-      }
+                   }
     } else if (lprcEnumMonitorsThatIntersect && !IntersectRect (&rcLimit, &rcLimit, lprcEnumMonitorsThatIntersect))
-      return TRUE;
+                   return TRUE;
 
     return lpfnEnumProc (xPRIMARY_MONITOR, hdcOptionalForPainting, &rcLimit, dwData);
   }
 
   WINBOOL WINAPI xEnumDisplayDevices (PVOID Unused, DWORD iDevNum, PDISPLAY_DEVICE lpDisplayDevice, DWORD flags) {
     if (InitMultipleMonitorStubs ())
-      return g_pfnEnumDisplayDevices (Unused, iDevNum, lpDisplayDevice, flags);
+                   return g_pfnEnumDisplayDevices (Unused, iDevNum, lpDisplayDevice, flags);
     if (Unused || iDevNum || lpDisplayDevice == NULL || lpDisplayDevice->cb < sizeof (DISPLAY_DEVICE))
-      return FALSE;
+                   return FALSE;
 #ifdef UNICODE
     MultiByteToWideChar (CP_ACP, 0, "DISPLAY", -1, lpDisplayDevice->DeviceName, (sizeof (lpDisplayDevice->DeviceName) / 2));
     MultiByteToWideChar (CP_ACP, 0, "DISPLAY", -1, lpDisplayDevice->DeviceString, (sizeof (lpDisplayDevice->DeviceString) / 2));

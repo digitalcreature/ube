@@ -49,38 +49,38 @@ new_handler get_new_handler() noexcept;
 template <class T> constexpr T* launder(T* p) noexcept; // C++17
 }  // std
 
-void* operator new(std::size_t size);                                   // replaceable, nodiscard in C++2a
-void* operator new(std::size_t size, std::align_val_t alignment);       // replaceable, C++17, nodiscard in C++2a
+void* operator new(std::size_t size);                                                                                                    // replaceable, nodiscard in C++2a
+void* operator new(std::size_t size, std::align_val_t alignment);                    // replaceable, C++17, nodiscard in C++2a
 void* operator new(std::size_t size, const std::nothrow_t&) noexcept;   // replaceable, nodiscard in C++2a
 void* operator new(std::size_t size, std::align_val_t alignment,
-                   const std::nothrow_t&) noexcept;                     // replaceable, C++17, nodiscard in C++2a
-void  operator delete(void* ptr) noexcept;                              // replaceable
-void  operator delete(void* ptr, std::size_t size) noexcept;            // replaceable, C++14
+                                                          const std::nothrow_t&) noexcept;                                                            // replaceable, C++17, nodiscard in C++2a
+void  operator delete(void* ptr) noexcept;                                                                                               // replaceable
+void  operator delete(void* ptr, std::size_t size) noexcept;                                      // replaceable, C++14
 void  operator delete(void* ptr, std::align_val_t alignment) noexcept;  // replaceable, C++17
 void  operator delete(void* ptr, std::size_t size,
-                      std::align_val_t alignment) noexcept;             // replaceable, C++17
-void  operator delete(void* ptr, const std::nothrow_t&) noexcept;       // replaceable
+                                                             std::align_val_t alignment) noexcept;                                       // replaceable, C++17
+void  operator delete(void* ptr, const std::nothrow_t&) noexcept;                    // replaceable
 void  operator delete(void* ptr, std:align_val_t alignment,
-                      const std::nothrow_t&) noexcept;                  // replaceable, C++17
+                                                             const std::nothrow_t&) noexcept;                                                         // replaceable, C++17
 
-void* operator new[](std::size_t size);                                 // replaceable, nodiscard in C++2a
+void* operator new[](std::size_t size);                                                                                                  // replaceable, nodiscard in C++2a
 void* operator new[](std::size_t size,
-                     std::align_val_t alignment) noexcept;              // replaceable, C++17, nodiscard in C++2a
+                                                            std::align_val_t alignment) noexcept;                                        // replaceable, C++17, nodiscard in C++2a
 void* operator new[](std::size_t size, const std::nothrow_t&) noexcept; // replaceable, nodiscard in C++2a
 void* operator new[](std::size_t size, std::align_val_t alignment,
-                     const std::nothrow_t&) noexcept;                   // replaceable, C++17, nodiscard in C++2a
-void  operator delete[](void* ptr) noexcept;                            // replaceable
-void  operator delete[](void* ptr, std::size_t size) noexcept;          // replaceable, C++14
+                                                            const std::nothrow_t&) noexcept;                                                          // replaceable, C++17, nodiscard in C++2a
+void  operator delete[](void* ptr) noexcept;                                                                                // replaceable
+void  operator delete[](void* ptr, std::size_t size) noexcept;                       // replaceable, C++14
 void  operator delete[](void* ptr,
-                        std::align_val_t alignment) noexcept;           // replaceable, C++17
+                                                                            std::align_val_t alignment) noexcept;                        // replaceable, C++17
 void  operator delete[](void* ptr, std::size_t size,
-                        std::align_val_t alignment) noexcept;           // replaceable, C++17
+                                                                            std::align_val_t alignment) noexcept;                        // replaceable, C++17
 void  operator delete[](void* ptr, const std::nothrow_t&) noexcept;     // replaceable
 void  operator delete[](void* ptr, std::align_val_t alignment,
-                        const std::nothrow_t&) noexcept;                // replaceable, C++17
+                                                                            const std::nothrow_t&) noexcept;                                          // replaceable, C++17
 
-void* operator new  (std::size_t size, void* ptr) noexcept;             // nodiscard in C++2a
-void* operator new[](std::size_t size, void* ptr) noexcept;             // nodiscard in C++2a
+void* operator new  (std::size_t size, void* ptr) noexcept;                                       // nodiscard in C++2a
+void* operator new[](std::size_t size, void* ptr) noexcept;                                       // nodiscard in C++2a
 void  operator delete  (void* ptr, void*) noexcept;
 void  operator delete[](void* ptr, void*) noexcept;
 
@@ -262,10 +262,10 @@ struct _DeallocateCaller {
     return __do_deallocate_handle_size(__ptr, __size);
 #else
     if (__is_overaligned_for_new(__align)) {
-      const align_val_t __align_val = static_cast<align_val_t>(__align);
-      return __do_deallocate_handle_size(__ptr, __size, __align_val);
+                   const align_val_t __align_val = static_cast<align_val_t>(__align);
+                   return __do_deallocate_handle_size(__ptr, __size, __align_val);
     } else {
-      return __do_deallocate_handle_size(__ptr, __size);
+                   return __do_deallocate_handle_size(__ptr, __size);
     }
 #endif
   }
@@ -277,10 +277,10 @@ struct _DeallocateCaller {
     return __do_call(__ptr);
 #else
     if (__is_overaligned_for_new(__align)) {
-      const align_val_t __align_val = static_cast<align_val_t>(__align);
-      return __do_call(__ptr, __align_val);
+                   const align_val_t __align_val = static_cast<align_val_t>(__align);
+                   return __do_call(__ptr, __align_val);
     } else {
-      return __do_call(__ptr);
+                   return __do_call(__ptr);
     }
 #endif
   }

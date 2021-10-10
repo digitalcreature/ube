@@ -15,7 +15,7 @@ fn floatsiXf(comptime T: type, a: i32) T {
     const S = std.meta.Int(.unsigned, bits - @clz(Z, @as(Z, bits) - 1));
 
     if (a == 0) {
-        return @as(T, 0.0);
+                     return @as(T, 0.0);
     }
 
     const significandBits = std.math.floatMantissaBits(T);
@@ -36,18 +36,18 @@ fn floatsiXf(comptime T: type, a: i32) T {
     var mantissa: Z = undefined;
     // Shift a into the significand field and clear the implicit bit.
     if (exp <= significandBits) {
-        // No rounding needed
-        const shift = @intCast(S, significandBits - exp);
-        mantissa = @intCast(Z, @bitCast(u32, abs_a)) << shift ^ implicitBit;
+                     // No rounding needed
+                     const shift = @intCast(S, significandBits - exp);
+                     mantissa = @intCast(Z, @bitCast(u32, abs_a)) << shift ^ implicitBit;
     } else {
-        const shift = @intCast(S, exp - significandBits);
-        // Round to the nearest number after truncation
-        mantissa = @intCast(Z, @bitCast(u32, abs_a)) >> shift ^ implicitBit;
-        // Align to the left and check if the truncated part is halfway over
-        const round = @bitCast(u32, abs_a) << @intCast(u5, 31 - shift);
-        mantissa += @boolToInt(round > 0x80000000);
-        // Tie to even
-        mantissa += mantissa & 1;
+                     const shift = @intCast(S, exp - significandBits);
+                     // Round to the nearest number after truncation
+                     mantissa = @intCast(Z, @bitCast(u32, abs_a)) >> shift ^ implicitBit;
+                     // Align to the left and check if the truncated part is halfway over
+                     const round = @bitCast(u32, abs_a) << @intCast(u5, 31 - shift);
+                     mantissa += @boolToInt(round > 0x80000000);
+                     // Tie to even
+                     mantissa += mantissa & 1;
     }
 
     // Use the addition instead of a or since we may have a carry from the

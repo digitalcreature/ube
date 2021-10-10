@@ -63,29 +63,29 @@ pub const OpenFileOptions = struct {
 /// untinterruptible sleep() to block. This is not the final iteration of the API.
 pub fn OpenFile(sub_path_w: []const u16, options: OpenFileOptions) OpenError!HANDLE {
     if (mem.eql(u16, sub_path_w, &[_]u16{'.'}) and !options.open_dir) {
-        return error.IsDir;
+                     return error.IsDir;
     }
     if (mem.eql(u16, sub_path_w, &[_]u16{ '.', '.' }) and !options.open_dir) {
-        return error.IsDir;
+                     return error.IsDir;
     }
 
     var result: HANDLE = undefined;
 
     const path_len_bytes = math.cast(u16, sub_path_w.len * 2) catch |err| switch (err) {
-        error.Overflow => return error.NameTooLong,
+                     error.Overflow => return error.NameTooLong,
     };
     var nt_name = UNICODE_STRING{
-        .Length = path_len_bytes,
-        .MaximumLength = path_len_bytes,
-        .Buffer = @intToPtr([*]u16, @ptrToInt(sub_path_w.ptr)),
+                     .Length = path_len_bytes,
+                     .MaximumLength = path_len_bytes,
+                     .Buffer = @intToPtr([*]u16, @ptrToInt(sub_path_w.ptr)),
     };
     var attr = OBJECT_ATTRIBUTES{
-        .Length = @sizeOf(OBJECT_ATTRIBUTES),
-        .RootDirectory = if (std.fs.path.isAbsoluteWindowsWTF16(sub_path_w)) null else options.dir,
-        .Attributes = 0, // Note we do not use OBJ_CASE_INSENSITIVE here.
-        .ObjectName = &nt_name,
-        .SecurityDescriptor = if (options.sa) |ptr| ptr.lpSecurityDescriptor else null,
-        .SecurityQualityOfService = null,
+                     .Length = @sizeOf(OBJECT_ATTRIBUTES),
+                     .RootDirectory = if (std.fs.path.isAbsoluteWindowsWTF16(sub_path_w)) null else options.dir,
+                     .Attributes = 0, // Note we do not use OBJ_CASE_INSENSITIVE here.
+                     .ObjectName = &nt_name,
+                     .SecurityDescriptor = if (options.sa) |ptr| ptr.lpSecurityDescriptor else null,
+                     .SecurityQualityOfService = null,
     };
     var io: IO_STATUS_BLOCK = undefined;
     const blocking_flag: ULONG = if (options.io_mode == .blocking) FILE_SYNCHRONOUS_IO_NONALERT else 0;
@@ -95,46 +95,46 @@ pub fn OpenFile(sub_path_w: []const u16, options: OpenFileOptions) OpenError!HAN
 
     var delay: usize = 1;
     while (true) {
-        const rc = ntdll.NtCreateFile(
-            &result,
-            options.access_mask,
-            &attr,
-            &io,
-            null,
-            FILE_ATTRIBUTE_NORMAL,
-            options.share_access,
-            options.creation,
-            flags,
-            null,
-            0,
-        );
-        switch (rc) {
-            .SUCCESS => return result,
-            .OBJECT_NAME_INVALID => unreachable,
-            .OBJECT_NAME_NOT_FOUND => return error.FileNotFound,
-            .OBJECT_PATH_NOT_FOUND => return error.FileNotFound,
-            .NO_MEDIA_IN_DEVICE => return error.NoDevice,
-            .INVALID_PARAMETER => unreachable,
-            .SHARING_VIOLATION => {
-                if (options.share_access_nonblocking) {
-                    return error.WouldBlock;
-                }
-                // TODO sleep in a way that is interruptable
-                // TODO integrate with async I/O
-                std.time.sleep(delay);
-                if (delay < 1 * std.time.ns_per_s) {
-                    delay *= 2;
-                }
-                continue;
-            },
-            .ACCESS_DENIED => return error.AccessDenied,
-            .PIPE_BUSY => return error.PipeBusy,
-            .OBJECT_PATH_SYNTAX_BAD => unreachable,
-            .OBJECT_NAME_COLLISION => return error.PathAlreadyExists,
-            .FILE_IS_A_DIRECTORY => return error.IsDir,
-            .NOT_A_DIRECTORY => return error.NotDir,
-            else => return unexpectedStatus(rc),
-        }
+                     const rc = ntdll.NtCreateFile(
+                                      &result,
+                                      options.access_mask,
+                                      &attr,
+                                      &io,
+                                      null,
+                                      FILE_ATTRIBUTE_NORMAL,
+                                      options.share_access,
+                                      options.creation,
+                                      flags,
+                                      null,
+                                      0,
+                     );
+                     switch (rc) {
+                                      .SUCCESS => return result,
+                                      .OBJECT_NAME_INVALID => unreachable,
+                                      .OBJECT_NAME_NOT_FOUND => return error.FileNotFound,
+                                      .OBJECT_PATH_NOT_FOUND => return error.FileNotFound,
+                                      .NO_MEDIA_IN_DEVICE => return error.NoDevice,
+                                      .INVALID_PARAMETER => unreachable,
+                                      .SHARING_VIOLATION => {
+                                          if (options.share_access_nonblocking) {
+                                                           return error.WouldBlock;
+                                          }
+                                          // TODO sleep in a way that is interruptable
+                                          // TODO integrate with async I/O
+                                          std.time.sleep(delay);
+                                          if (delay < 1 * std.time.ns_per_s) {
+                                                           delay *= 2;
+                                          }
+                                          continue;
+                                      },
+                                      .ACCESS_DENIED => return error.AccessDenied,
+                                      .PIPE_BUSY => return error.PipeBusy,
+                                      .OBJECT_PATH_SYNTAX_BAD => unreachable,
+                                      .OBJECT_NAME_COLLISION => return error.PathAlreadyExists,
+                                      .FILE_IS_A_DIRECTORY => return error.IsDir,
+                                      .NOT_A_DIRECTORY => return error.NotDir,
+                                      else => return unexpectedStatus(rc),
+                     }
     }
 }
 
@@ -142,9 +142,9 @@ pub const CreatePipeError = error{Unexpected};
 
 pub fn CreatePipe(rd: *HANDLE, wr: *HANDLE, sattr: *const SECURITY_ATTRIBUTES) CreatePipeError!void {
     if (kernel32.CreatePipe(rd, wr, sattr, 0) == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -156,11 +156,11 @@ pub fn CreateEventEx(attributes: ?*SECURITY_ATTRIBUTES, name: []const u8, flags:
 pub fn CreateEventExW(attributes: ?*SECURITY_ATTRIBUTES, nameW: [*:0]const u16, flags: DWORD, desired_access: DWORD) !HANDLE {
     const handle = kernel32.CreateEventExW(attributes, nameW, flags, desired_access);
     if (handle) |h| {
-        return h;
+                     return h;
     } else {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -186,50 +186,50 @@ pub fn DeviceIoControl(
     const out_len = if (out) |o| @intCast(ULONG, o.len) else 0;
 
     const rc = blk: {
-        if (is_fsctl) {
-            break :blk ntdll.NtFsControlFile(
-                h,
-                null,
-                null,
-                null,
-                &io,
-                ioControlCode,
-                in_ptr,
-                in_len,
-                out_ptr,
-                out_len,
-            );
-        } else {
-            break :blk ntdll.NtDeviceIoControlFile(
-                h,
-                null,
-                null,
-                null,
-                &io,
-                ioControlCode,
-                in_ptr,
-                in_len,
-                out_ptr,
-                out_len,
-            );
-        }
+                     if (is_fsctl) {
+                                      break :blk ntdll.NtFsControlFile(
+                                          h,
+                                          null,
+                                          null,
+                                          null,
+                                          &io,
+                                          ioControlCode,
+                                          in_ptr,
+                                          in_len,
+                                          out_ptr,
+                                          out_len,
+                                      );
+                     } else {
+                                      break :blk ntdll.NtDeviceIoControlFile(
+                                          h,
+                                          null,
+                                          null,
+                                          null,
+                                          &io,
+                                          ioControlCode,
+                                          in_ptr,
+                                          in_len,
+                                          out_ptr,
+                                          out_len,
+                                      );
+                     }
     };
     switch (rc) {
-        .SUCCESS => {},
-        .PRIVILEGE_NOT_HELD => return error.AccessDenied,
-        .ACCESS_DENIED => return error.AccessDenied,
-        .INVALID_PARAMETER => unreachable,
-        else => return unexpectedStatus(rc),
+                     .SUCCESS => {},
+                     .PRIVILEGE_NOT_HELD => return error.AccessDenied,
+                     .ACCESS_DENIED => return error.AccessDenied,
+                     .INVALID_PARAMETER => unreachable,
+                     else => return unexpectedStatus(rc),
     }
 }
 
 pub fn GetOverlappedResult(h: HANDLE, overlapped: *OVERLAPPED, wait: bool) !DWORD {
     var bytes: DWORD = undefined;
     if (kernel32.GetOverlappedResult(h, overlapped, &bytes, @boolToInt(wait)) == 0) {
-        switch (kernel32.GetLastError()) {
-            .IO_INCOMPLETE => if (!wait) return error.WouldBlock else unreachable,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .IO_INCOMPLETE => if (!wait) return error.WouldBlock else unreachable,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     return bytes;
 }
@@ -238,9 +238,9 @@ pub const SetHandleInformationError = error{Unexpected};
 
 pub fn SetHandleInformation(h: HANDLE, mask: DWORD, flags: DWORD) SetHandleInformationError!void {
     if (kernel32.SetHandleInformation(h, mask, flags) == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -255,14 +255,14 @@ pub fn RtlGenRandom(output: []u8) RtlGenRandomError!void {
     const max_read_size: ULONG = maxInt(ULONG);
 
     while (total_read < output.len) {
-        const to_read: ULONG = math.min(buff.len, max_read_size);
+                     const to_read: ULONG = math.min(buff.len, max_read_size);
 
-        if (advapi32.RtlGenRandom(buff.ptr, to_read) == 0) {
-            return unexpectedError(kernel32.GetLastError());
-        }
+                     if (advapi32.RtlGenRandom(buff.ptr, to_read) == 0) {
+                                      return unexpectedError(kernel32.GetLastError());
+                     }
 
-        total_read += to_read;
-        buff = buff[to_read..];
+                     total_read += to_read;
+                     buff = buff[to_read..];
     }
 }
 
@@ -278,13 +278,13 @@ pub fn WaitForSingleObject(handle: HANDLE, milliseconds: DWORD) WaitForSingleObj
 
 pub fn WaitForSingleObjectEx(handle: HANDLE, milliseconds: DWORD, alertable: bool) WaitForSingleObjectError!void {
     switch (kernel32.WaitForSingleObjectEx(handle, milliseconds, @boolToInt(alertable))) {
-        WAIT_ABANDONED => return error.WaitAbandoned,
-        WAIT_OBJECT_0 => return,
-        WAIT_TIMEOUT => return error.WaitTimeOut,
-        WAIT_FAILED => switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        },
-        else => return error.Unexpected,
+                     WAIT_ABANDONED => return error.WaitAbandoned,
+                     WAIT_OBJECT_0 => return,
+                     WAIT_TIMEOUT => return error.WaitTimeOut,
+                     WAIT_FAILED => switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     },
+                     else => return error.Unexpected,
     }
 }
 
@@ -292,27 +292,27 @@ pub fn WaitForMultipleObjectsEx(handles: []const HANDLE, waitAll: bool, millisec
     assert(handles.len < MAXIMUM_WAIT_OBJECTS);
     const nCount: DWORD = @intCast(DWORD, handles.len);
     switch (kernel32.WaitForMultipleObjectsEx(
-        nCount,
-        handles.ptr,
-        @boolToInt(waitAll),
-        milliseconds,
-        @boolToInt(alertable),
+                     nCount,
+                     handles.ptr,
+                     @boolToInt(waitAll),
+                     milliseconds,
+                     @boolToInt(alertable),
     )) {
-        WAIT_OBJECT_0...WAIT_OBJECT_0 + MAXIMUM_WAIT_OBJECTS => |n| {
-            const handle_index = n - WAIT_OBJECT_0;
-            assert(handle_index < nCount);
-            return handle_index;
-        },
-        WAIT_ABANDONED_0...WAIT_ABANDONED_0 + MAXIMUM_WAIT_OBJECTS => |n| {
-            const handle_index = n - WAIT_ABANDONED_0;
-            assert(handle_index < nCount);
-            return error.WaitAbandoned;
-        },
-        WAIT_TIMEOUT => return error.WaitTimeOut,
-        WAIT_FAILED => switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        },
-        else => return error.Unexpected,
+                     WAIT_OBJECT_0...WAIT_OBJECT_0 + MAXIMUM_WAIT_OBJECTS => |n| {
+                                      const handle_index = n - WAIT_OBJECT_0;
+                                      assert(handle_index < nCount);
+                                      return handle_index;
+                     },
+                     WAIT_ABANDONED_0...WAIT_ABANDONED_0 + MAXIMUM_WAIT_OBJECTS => |n| {
+                                      const handle_index = n - WAIT_ABANDONED_0;
+                                      assert(handle_index < nCount);
+                                      return error.WaitAbandoned;
+                     },
+                     WAIT_TIMEOUT => return error.WaitTimeOut,
+                     WAIT_FAILED => switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     },
+                     else => return error.Unexpected,
     }
 }
 
@@ -325,10 +325,10 @@ pub fn CreateIoCompletionPort(
     concurrent_thread_count: DWORD,
 ) CreateIoCompletionPortError!HANDLE {
     const handle = kernel32.CreateIoCompletionPort(file_handle, existing_completion_port, completion_key, concurrent_thread_count) orelse {
-        switch (kernel32.GetLastError()) {
-            .INVALID_PARAMETER => unreachable,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .INVALID_PARAMETER => unreachable,
+                                      else => |err| return unexpectedError(err),
+                     }
     };
     return handle;
 }
@@ -342,9 +342,9 @@ pub fn PostQueuedCompletionStatus(
     lpOverlapped: ?*OVERLAPPED,
 ) PostQueuedCompletionStatusError!void {
     if (kernel32.PostQueuedCompletionStatus(completion_port, bytes_transferred_count, completion_key, lpOverlapped) == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -363,23 +363,23 @@ pub fn GetQueuedCompletionStatus(
     dwMilliseconds: DWORD,
 ) GetQueuedCompletionStatusResult {
     if (kernel32.GetQueuedCompletionStatus(
-        completion_port,
-        bytes_transferred_count,
-        lpCompletionKey,
-        lpOverlapped,
-        dwMilliseconds,
+                     completion_port,
+                     bytes_transferred_count,
+                     lpCompletionKey,
+                     lpOverlapped,
+                     dwMilliseconds,
     ) == FALSE) {
-        switch (kernel32.GetLastError()) {
-            .ABANDONED_WAIT_0 => return GetQueuedCompletionStatusResult.Aborted,
-            .OPERATION_ABORTED => return GetQueuedCompletionStatusResult.Cancelled,
-            .HANDLE_EOF => return GetQueuedCompletionStatusResult.EOF,
-            else => |err| {
-                if (std.debug.runtime_safety) {
-                    @setEvalBranchQuota(2500);
-                    std.debug.panic("unexpected error: {}\n", .{err});
-                }
-            },
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .ABANDONED_WAIT_0 => return GetQueuedCompletionStatusResult.Aborted,
+                                      .OPERATION_ABORTED => return GetQueuedCompletionStatusResult.Cancelled,
+                                      .HANDLE_EOF => return GetQueuedCompletionStatusResult.EOF,
+                                      else => |err| {
+                                          if (std.debug.runtime_safety) {
+                                                           @setEvalBranchQuota(2500);
+                                                           std.debug.panic("unexpected error: {}\n", .{err});
+                                          }
+                                      },
+                     }
     }
     return GetQueuedCompletionStatusResult.Normal;
 }
@@ -402,70 +402,70 @@ pub const ReadFileError = error{
 /// multiple non-atomic reads.
 pub fn ReadFile(in_hFile: HANDLE, buffer: []u8, offset: ?u64, io_mode: std.io.ModeOverride) ReadFileError!usize {
     if (io_mode != .blocking) {
-        const loop = std.event.Loop.instance.?;
-        // TODO make getting the file position non-blocking
-        const off = if (offset) |o| o else try SetFilePointerEx_CURRENT_get(in_hFile);
-        var resume_node = std.event.Loop.ResumeNode.Basic{
-            .base = .{
-                .id = .Basic,
-                .handle = @frame(),
-                .overlapped = OVERLAPPED{
-                    .Internal = 0,
-                    .InternalHigh = 0,
-                    .Offset = @truncate(u32, off),
-                    .OffsetHigh = @truncate(u32, off >> 32),
-                    .hEvent = null,
-                },
-            },
-        };
-        // TODO only call create io completion port once per fd
-        _ = CreateIoCompletionPort(in_hFile, loop.os_data.io_port, undefined, undefined) catch undefined;
-        loop.beginOneEvent();
-        suspend {
-            // TODO handle buffer bigger than DWORD can hold
-            _ = kernel32.ReadFile(in_hFile, buffer.ptr, @intCast(DWORD, buffer.len), null, &resume_node.base.overlapped);
-        }
-        var bytes_transferred: DWORD = undefined;
-        if (kernel32.GetOverlappedResult(in_hFile, &resume_node.base.overlapped, &bytes_transferred, FALSE) == 0) {
-            switch (kernel32.GetLastError()) {
-                .IO_PENDING => unreachable,
-                .OPERATION_ABORTED => return error.OperationAborted,
-                .BROKEN_PIPE => return error.BrokenPipe,
-                .HANDLE_EOF => return @as(usize, bytes_transferred),
-                else => |err| return unexpectedError(err),
-            }
-        }
-        if (offset == null) {
-            // TODO make setting the file position non-blocking
-            const new_off = off + bytes_transferred;
-            try SetFilePointerEx_CURRENT(in_hFile, @bitCast(i64, new_off));
-        }
-        return @as(usize, bytes_transferred);
+                     const loop = std.event.Loop.instance.?;
+                     // TODO make getting the file position non-blocking
+                     const off = if (offset) |o| o else try SetFilePointerEx_CURRENT_get(in_hFile);
+                     var resume_node = std.event.Loop.ResumeNode.Basic{
+                                      .base = .{
+                                          .id = .Basic,
+                                          .handle = @frame(),
+                                          .overlapped = OVERLAPPED{
+                                                           .Internal = 0,
+                                                           .InternalHigh = 0,
+                                                           .Offset = @truncate(u32, off),
+                                                           .OffsetHigh = @truncate(u32, off >> 32),
+                                                           .hEvent = null,
+                                          },
+                                      },
+                     };
+                     // TODO only call create io completion port once per fd
+                     _ = CreateIoCompletionPort(in_hFile, loop.os_data.io_port, undefined, undefined) catch undefined;
+                     loop.beginOneEvent();
+                     suspend {
+                                      // TODO handle buffer bigger than DWORD can hold
+                                      _ = kernel32.ReadFile(in_hFile, buffer.ptr, @intCast(DWORD, buffer.len), null, &resume_node.base.overlapped);
+                     }
+                     var bytes_transferred: DWORD = undefined;
+                     if (kernel32.GetOverlappedResult(in_hFile, &resume_node.base.overlapped, &bytes_transferred, FALSE) == 0) {
+                                      switch (kernel32.GetLastError()) {
+                                          .IO_PENDING => unreachable,
+                                          .OPERATION_ABORTED => return error.OperationAborted,
+                                          .BROKEN_PIPE => return error.BrokenPipe,
+                                          .HANDLE_EOF => return @as(usize, bytes_transferred),
+                                          else => |err| return unexpectedError(err),
+                                      }
+                     }
+                     if (offset == null) {
+                                      // TODO make setting the file position non-blocking
+                                      const new_off = off + bytes_transferred;
+                                      try SetFilePointerEx_CURRENT(in_hFile, @bitCast(i64, new_off));
+                     }
+                     return @as(usize, bytes_transferred);
     } else {
-        while (true) {
-            const want_read_count = @intCast(DWORD, math.min(@as(DWORD, maxInt(DWORD)), buffer.len));
-            var amt_read: DWORD = undefined;
-            var overlapped_data: OVERLAPPED = undefined;
-            const overlapped: ?*OVERLAPPED = if (offset) |off| blk: {
-                overlapped_data = .{
-                    .Internal = 0,
-                    .InternalHigh = 0,
-                    .Offset = @truncate(u32, off),
-                    .OffsetHigh = @truncate(u32, off >> 32),
-                    .hEvent = null,
-                };
-                break :blk &overlapped_data;
-            } else null;
-            if (kernel32.ReadFile(in_hFile, buffer.ptr, want_read_count, &amt_read, overlapped) == 0) {
-                switch (kernel32.GetLastError()) {
-                    .OPERATION_ABORTED => continue,
-                    .BROKEN_PIPE => return 0,
-                    .HANDLE_EOF => return 0,
-                    else => |err| return unexpectedError(err),
-                }
-            }
-            return amt_read;
-        }
+                     while (true) {
+                                      const want_read_count = @intCast(DWORD, math.min(@as(DWORD, maxInt(DWORD)), buffer.len));
+                                      var amt_read: DWORD = undefined;
+                                      var overlapped_data: OVERLAPPED = undefined;
+                                      const overlapped: ?*OVERLAPPED = if (offset) |off| blk: {
+                                          overlapped_data = .{
+                                                           .Internal = 0,
+                                                           .InternalHigh = 0,
+                                                           .Offset = @truncate(u32, off),
+                                                           .OffsetHigh = @truncate(u32, off >> 32),
+                                                           .hEvent = null,
+                                          };
+                                          break :blk &overlapped_data;
+                                      } else null;
+                                      if (kernel32.ReadFile(in_hFile, buffer.ptr, want_read_count, &amt_read, overlapped) == 0) {
+                                          switch (kernel32.GetLastError()) {
+                                                           .OPERATION_ABORTED => continue,
+                                                           .BROKEN_PIPE => return 0,
+                                                           .HANDLE_EOF => return 0,
+                                                           else => |err| return unexpectedError(err),
+                                          }
+                                      }
+                                      return amt_read;
+                     }
     }
 }
 
@@ -484,74 +484,74 @@ pub fn WriteFile(
     io_mode: std.io.ModeOverride,
 ) WriteFileError!usize {
     if (std.event.Loop.instance != null and io_mode != .blocking) {
-        const loop = std.event.Loop.instance.?;
-        // TODO make getting the file position non-blocking
-        const off = if (offset) |o| o else try SetFilePointerEx_CURRENT_get(handle);
-        var resume_node = std.event.Loop.ResumeNode.Basic{
-            .base = .{
-                .id = .Basic,
-                .handle = @frame(),
-                .overlapped = OVERLAPPED{
-                    .Internal = 0,
-                    .InternalHigh = 0,
-                    .Offset = @truncate(u32, off),
-                    .OffsetHigh = @truncate(u32, off >> 32),
-                    .hEvent = null,
-                },
-            },
-        };
-        // TODO only call create io completion port once per fd
-        _ = CreateIoCompletionPort(handle, loop.os_data.io_port, undefined, undefined) catch undefined;
-        loop.beginOneEvent();
-        suspend {
-            const adjusted_len = math.cast(DWORD, bytes.len) catch maxInt(DWORD);
-            _ = kernel32.WriteFile(handle, bytes.ptr, adjusted_len, null, &resume_node.base.overlapped);
-        }
-        var bytes_transferred: DWORD = undefined;
-        if (kernel32.GetOverlappedResult(handle, &resume_node.base.overlapped, &bytes_transferred, FALSE) == 0) {
-            switch (kernel32.GetLastError()) {
-                .IO_PENDING => unreachable,
-                .INVALID_USER_BUFFER => return error.SystemResources,
-                .NOT_ENOUGH_MEMORY => return error.SystemResources,
-                .OPERATION_ABORTED => return error.OperationAborted,
-                .NOT_ENOUGH_QUOTA => return error.SystemResources,
-                .BROKEN_PIPE => return error.BrokenPipe,
-                else => |err| return unexpectedError(err),
-            }
-        }
-        if (offset == null) {
-            // TODO make setting the file position non-blocking
-            const new_off = off + bytes_transferred;
-            try SetFilePointerEx_CURRENT(handle, @bitCast(i64, new_off));
-        }
-        return bytes_transferred;
+                     const loop = std.event.Loop.instance.?;
+                     // TODO make getting the file position non-blocking
+                     const off = if (offset) |o| o else try SetFilePointerEx_CURRENT_get(handle);
+                     var resume_node = std.event.Loop.ResumeNode.Basic{
+                                      .base = .{
+                                          .id = .Basic,
+                                          .handle = @frame(),
+                                          .overlapped = OVERLAPPED{
+                                                           .Internal = 0,
+                                                           .InternalHigh = 0,
+                                                           .Offset = @truncate(u32, off),
+                                                           .OffsetHigh = @truncate(u32, off >> 32),
+                                                           .hEvent = null,
+                                          },
+                                      },
+                     };
+                     // TODO only call create io completion port once per fd
+                     _ = CreateIoCompletionPort(handle, loop.os_data.io_port, undefined, undefined) catch undefined;
+                     loop.beginOneEvent();
+                     suspend {
+                                      const adjusted_len = math.cast(DWORD, bytes.len) catch maxInt(DWORD);
+                                      _ = kernel32.WriteFile(handle, bytes.ptr, adjusted_len, null, &resume_node.base.overlapped);
+                     }
+                     var bytes_transferred: DWORD = undefined;
+                     if (kernel32.GetOverlappedResult(handle, &resume_node.base.overlapped, &bytes_transferred, FALSE) == 0) {
+                                      switch (kernel32.GetLastError()) {
+                                          .IO_PENDING => unreachable,
+                                          .INVALID_USER_BUFFER => return error.SystemResources,
+                                          .NOT_ENOUGH_MEMORY => return error.SystemResources,
+                                          .OPERATION_ABORTED => return error.OperationAborted,
+                                          .NOT_ENOUGH_QUOTA => return error.SystemResources,
+                                          .BROKEN_PIPE => return error.BrokenPipe,
+                                          else => |err| return unexpectedError(err),
+                                      }
+                     }
+                     if (offset == null) {
+                                      // TODO make setting the file position non-blocking
+                                      const new_off = off + bytes_transferred;
+                                      try SetFilePointerEx_CURRENT(handle, @bitCast(i64, new_off));
+                     }
+                     return bytes_transferred;
     } else {
-        var bytes_written: DWORD = undefined;
-        var overlapped_data: OVERLAPPED = undefined;
-        const overlapped: ?*OVERLAPPED = if (offset) |off| blk: {
-            overlapped_data = .{
-                .Internal = 0,
-                .InternalHigh = 0,
-                .Offset = @truncate(u32, off),
-                .OffsetHigh = @truncate(u32, off >> 32),
-                .hEvent = null,
-            };
-            break :blk &overlapped_data;
-        } else null;
-        const adjusted_len = math.cast(u32, bytes.len) catch maxInt(u32);
-        if (kernel32.WriteFile(handle, bytes.ptr, adjusted_len, &bytes_written, overlapped) == 0) {
-            switch (kernel32.GetLastError()) {
-                .INVALID_USER_BUFFER => return error.SystemResources,
-                .NOT_ENOUGH_MEMORY => return error.SystemResources,
-                .OPERATION_ABORTED => return error.OperationAborted,
-                .NOT_ENOUGH_QUOTA => return error.SystemResources,
-                .IO_PENDING => unreachable,
-                .BROKEN_PIPE => return error.BrokenPipe,
-                .INVALID_HANDLE => return error.NotOpenForWriting,
-                else => |err| return unexpectedError(err),
-            }
-        }
-        return bytes_written;
+                     var bytes_written: DWORD = undefined;
+                     var overlapped_data: OVERLAPPED = undefined;
+                     const overlapped: ?*OVERLAPPED = if (offset) |off| blk: {
+                                      overlapped_data = .{
+                                          .Internal = 0,
+                                          .InternalHigh = 0,
+                                          .Offset = @truncate(u32, off),
+                                          .OffsetHigh = @truncate(u32, off >> 32),
+                                          .hEvent = null,
+                                      };
+                                      break :blk &overlapped_data;
+                     } else null;
+                     const adjusted_len = math.cast(u32, bytes.len) catch maxInt(u32);
+                     if (kernel32.WriteFile(handle, bytes.ptr, adjusted_len, &bytes_written, overlapped) == 0) {
+                                      switch (kernel32.GetLastError()) {
+                                          .INVALID_USER_BUFFER => return error.SystemResources,
+                                          .NOT_ENOUGH_MEMORY => return error.SystemResources,
+                                          .OPERATION_ABORTED => return error.OperationAborted,
+                                          .NOT_ENOUGH_QUOTA => return error.SystemResources,
+                                          .IO_PENDING => unreachable,
+                                          .BROKEN_PIPE => return error.BrokenPipe,
+                                          .INVALID_HANDLE => return error.NotOpenForWriting,
+                                          else => |err| return unexpectedError(err),
+                                      }
+                     }
+                     return bytes_written;
     }
 }
 
@@ -565,9 +565,9 @@ pub fn GetCurrentDirectory(buffer: []u8) GetCurrentDirectoryError![]u8 {
     var utf16le_buf: [PATH_MAX_WIDE]u16 = undefined;
     const result = kernel32.GetCurrentDirectoryW(utf16le_buf.len, &utf16le_buf);
     if (result == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     assert(result <= utf16le_buf.len);
     const utf16le_slice = utf16le_buf[0..result];
@@ -575,10 +575,10 @@ pub fn GetCurrentDirectory(buffer: []u8) GetCurrentDirectoryError![]u8 {
     var end_index: usize = 0;
     var it = std.unicode.Utf16LeIterator.init(utf16le_slice);
     while (it.nextCodepoint() catch unreachable) |codepoint| {
-        const seq_len = std.unicode.utf8CodepointSequenceLength(codepoint) catch unreachable;
-        if (end_index + seq_len >= buffer.len)
-            return error.NameTooLong;
-        end_index += std.unicode.utf8Encode(codepoint, buffer[end_index..]) catch unreachable;
+                     const seq_len = std.unicode.utf8CodepointSequenceLength(codepoint) catch unreachable;
+                     if (end_index + seq_len >= buffer.len)
+                                      return error.NameTooLong;
+                     end_index += std.unicode.utf8Encode(codepoint, buffer[end_index..]) catch unreachable;
     }
     return buffer[0..end_index];
 }
@@ -605,28 +605,28 @@ pub fn CreateSymbolicLink(
     is_directory: bool,
 ) CreateSymbolicLinkError!void {
     const SYMLINK_DATA = extern struct {
-        ReparseTag: ULONG,
-        ReparseDataLength: USHORT,
-        Reserved: USHORT,
-        SubstituteNameOffset: USHORT,
-        SubstituteNameLength: USHORT,
-        PrintNameOffset: USHORT,
-        PrintNameLength: USHORT,
-        Flags: ULONG,
+                     ReparseTag: ULONG,
+                     ReparseDataLength: USHORT,
+                     Reserved: USHORT,
+                     SubstituteNameOffset: USHORT,
+                     SubstituteNameLength: USHORT,
+                     PrintNameOffset: USHORT,
+                     PrintNameLength: USHORT,
+                     Flags: ULONG,
     };
 
     const symlink_handle = OpenFile(sym_link_path, .{
-        .access_mask = SYNCHRONIZE | GENERIC_READ | GENERIC_WRITE,
-        .dir = dir,
-        .creation = FILE_CREATE,
-        .io_mode = .blocking,
-        .open_dir = is_directory,
+                     .access_mask = SYNCHRONIZE | GENERIC_READ | GENERIC_WRITE,
+                     .dir = dir,
+                     .creation = FILE_CREATE,
+                     .io_mode = .blocking,
+                     .open_dir = is_directory,
     }) catch |err| switch (err) {
-        error.IsDir => return error.PathAlreadyExists,
-        error.NotDir => unreachable,
-        error.WouldBlock => unreachable,
-        error.PipeBusy => unreachable,
-        else => |e| return e,
+                     error.IsDir => return error.PathAlreadyExists,
+                     error.NotDir => unreachable,
+                     error.WouldBlock => unreachable,
+                     error.PipeBusy => unreachable,
+                     else => |e| return e,
     };
     defer CloseHandle(symlink_handle);
 
@@ -635,14 +635,14 @@ pub fn CreateSymbolicLink(
     const buf_len = @sizeOf(SYMLINK_DATA) + target_path.len * 4;
     const header_len = @sizeOf(ULONG) + @sizeOf(USHORT) * 2;
     const symlink_data = SYMLINK_DATA{
-        .ReparseTag = IO_REPARSE_TAG_SYMLINK,
-        .ReparseDataLength = @intCast(u16, buf_len - header_len),
-        .Reserved = 0,
-        .SubstituteNameOffset = @intCast(u16, target_path.len * 2),
-        .SubstituteNameLength = @intCast(u16, target_path.len * 2),
-        .PrintNameOffset = 0,
-        .PrintNameLength = @intCast(u16, target_path.len * 2),
-        .Flags = if (dir) |_| SYMLINK_FLAG_RELATIVE else 0,
+                     .ReparseTag = IO_REPARSE_TAG_SYMLINK,
+                     .ReparseDataLength = @intCast(u16, buf_len - header_len),
+                     .Reserved = 0,
+                     .SubstituteNameOffset = @intCast(u16, target_path.len * 2),
+                     .SubstituteNameLength = @intCast(u16, target_path.len * 2),
+                     .PrintNameOffset = 0,
+                     .PrintNameLength = @intCast(u16, target_path.len * 2),
+                     .Flags = if (dir) |_| SYMLINK_FLAG_RELATIVE else 0,
     };
 
     std.mem.copy(u8, buffer[0..], std.mem.asBytes(&symlink_data));
@@ -666,81 +666,81 @@ pub fn ReadLink(dir: ?HANDLE, sub_path_w: []const u16, out_buffer: []u8) ReadLin
     // failed, again for dir symlink. Omitting any mention of file/dir flags makes it possible
     // to open the symlink there and then.
     const path_len_bytes = math.cast(u16, sub_path_w.len * 2) catch |err| switch (err) {
-        error.Overflow => return error.NameTooLong,
+                     error.Overflow => return error.NameTooLong,
     };
     var nt_name = UNICODE_STRING{
-        .Length = path_len_bytes,
-        .MaximumLength = path_len_bytes,
-        .Buffer = @intToPtr([*]u16, @ptrToInt(sub_path_w.ptr)),
+                     .Length = path_len_bytes,
+                     .MaximumLength = path_len_bytes,
+                     .Buffer = @intToPtr([*]u16, @ptrToInt(sub_path_w.ptr)),
     };
     var attr = OBJECT_ATTRIBUTES{
-        .Length = @sizeOf(OBJECT_ATTRIBUTES),
-        .RootDirectory = if (std.fs.path.isAbsoluteWindowsWTF16(sub_path_w)) null else dir,
-        .Attributes = 0, // Note we do not use OBJ_CASE_INSENSITIVE here.
-        .ObjectName = &nt_name,
-        .SecurityDescriptor = null,
-        .SecurityQualityOfService = null,
+                     .Length = @sizeOf(OBJECT_ATTRIBUTES),
+                     .RootDirectory = if (std.fs.path.isAbsoluteWindowsWTF16(sub_path_w)) null else dir,
+                     .Attributes = 0, // Note we do not use OBJ_CASE_INSENSITIVE here.
+                     .ObjectName = &nt_name,
+                     .SecurityDescriptor = null,
+                     .SecurityQualityOfService = null,
     };
     var result_handle: HANDLE = undefined;
     var io: IO_STATUS_BLOCK = undefined;
 
     const rc = ntdll.NtCreateFile(
-        &result_handle,
-        FILE_READ_ATTRIBUTES,
-        &attr,
-        &io,
-        null,
-        FILE_ATTRIBUTE_NORMAL,
-        FILE_SHARE_READ,
-        FILE_OPEN,
-        FILE_OPEN_REPARSE_POINT,
-        null,
-        0,
+                     &result_handle,
+                     FILE_READ_ATTRIBUTES,
+                     &attr,
+                     &io,
+                     null,
+                     FILE_ATTRIBUTE_NORMAL,
+                     FILE_SHARE_READ,
+                     FILE_OPEN,
+                     FILE_OPEN_REPARSE_POINT,
+                     null,
+                     0,
     );
     switch (rc) {
-        .SUCCESS => {},
-        .OBJECT_NAME_INVALID => unreachable,
-        .OBJECT_NAME_NOT_FOUND => return error.FileNotFound,
-        .OBJECT_PATH_NOT_FOUND => return error.FileNotFound,
-        .NO_MEDIA_IN_DEVICE => return error.FileNotFound,
-        .INVALID_PARAMETER => unreachable,
-        .SHARING_VIOLATION => return error.AccessDenied,
-        .ACCESS_DENIED => return error.AccessDenied,
-        .PIPE_BUSY => return error.AccessDenied,
-        .OBJECT_PATH_SYNTAX_BAD => unreachable,
-        .OBJECT_NAME_COLLISION => unreachable,
-        .FILE_IS_A_DIRECTORY => unreachable,
-        else => return unexpectedStatus(rc),
+                     .SUCCESS => {},
+                     .OBJECT_NAME_INVALID => unreachable,
+                     .OBJECT_NAME_NOT_FOUND => return error.FileNotFound,
+                     .OBJECT_PATH_NOT_FOUND => return error.FileNotFound,
+                     .NO_MEDIA_IN_DEVICE => return error.FileNotFound,
+                     .INVALID_PARAMETER => unreachable,
+                     .SHARING_VIOLATION => return error.AccessDenied,
+                     .ACCESS_DENIED => return error.AccessDenied,
+                     .PIPE_BUSY => return error.AccessDenied,
+                     .OBJECT_PATH_SYNTAX_BAD => unreachable,
+                     .OBJECT_NAME_COLLISION => unreachable,
+                     .FILE_IS_A_DIRECTORY => unreachable,
+                     else => return unexpectedStatus(rc),
     }
     defer CloseHandle(result_handle);
 
     var reparse_buf: [MAXIMUM_REPARSE_DATA_BUFFER_SIZE]u8 = undefined;
     _ = DeviceIoControl(result_handle, FSCTL_GET_REPARSE_POINT, null, reparse_buf[0..]) catch |err| switch (err) {
-        error.AccessDenied => unreachable,
-        else => |e| return e,
+                     error.AccessDenied => unreachable,
+                     else => |e| return e,
     };
 
     const reparse_struct = @ptrCast(*const REPARSE_DATA_BUFFER, @alignCast(@alignOf(REPARSE_DATA_BUFFER), &reparse_buf[0]));
     switch (reparse_struct.ReparseTag) {
-        IO_REPARSE_TAG_SYMLINK => {
-            const buf = @ptrCast(*const SYMBOLIC_LINK_REPARSE_BUFFER, @alignCast(@alignOf(SYMBOLIC_LINK_REPARSE_BUFFER), &reparse_struct.DataBuffer[0]));
-            const offset = buf.SubstituteNameOffset >> 1;
-            const len = buf.SubstituteNameLength >> 1;
-            const path_buf = @as([*]const u16, &buf.PathBuffer);
-            const is_relative = buf.Flags & SYMLINK_FLAG_RELATIVE != 0;
-            return parseReadlinkPath(path_buf[offset .. offset + len], is_relative, out_buffer);
-        },
-        IO_REPARSE_TAG_MOUNT_POINT => {
-            const buf = @ptrCast(*const MOUNT_POINT_REPARSE_BUFFER, @alignCast(@alignOf(MOUNT_POINT_REPARSE_BUFFER), &reparse_struct.DataBuffer[0]));
-            const offset = buf.SubstituteNameOffset >> 1;
-            const len = buf.SubstituteNameLength >> 1;
-            const path_buf = @as([*]const u16, &buf.PathBuffer);
-            return parseReadlinkPath(path_buf[offset .. offset + len], false, out_buffer);
-        },
-        else => |value| {
-            std.debug.warn("unsupported symlink type: {}", .{value});
-            return error.UnsupportedReparsePointType;
-        },
+                     IO_REPARSE_TAG_SYMLINK => {
+                                      const buf = @ptrCast(*const SYMBOLIC_LINK_REPARSE_BUFFER, @alignCast(@alignOf(SYMBOLIC_LINK_REPARSE_BUFFER), &reparse_struct.DataBuffer[0]));
+                                      const offset = buf.SubstituteNameOffset >> 1;
+                                      const len = buf.SubstituteNameLength >> 1;
+                                      const path_buf = @as([*]const u16, &buf.PathBuffer);
+                                      const is_relative = buf.Flags & SYMLINK_FLAG_RELATIVE != 0;
+                                      return parseReadlinkPath(path_buf[offset .. offset + len], is_relative, out_buffer);
+                     },
+                     IO_REPARSE_TAG_MOUNT_POINT => {
+                                      const buf = @ptrCast(*const MOUNT_POINT_REPARSE_BUFFER, @alignCast(@alignOf(MOUNT_POINT_REPARSE_BUFFER), &reparse_struct.DataBuffer[0]));
+                                      const offset = buf.SubstituteNameOffset >> 1;
+                                      const len = buf.SubstituteNameLength >> 1;
+                                      const path_buf = @as([*]const u16, &buf.PathBuffer);
+                                      return parseReadlinkPath(path_buf[offset .. offset + len], false, out_buffer);
+                     },
+                     else => |value| {
+                                      std.debug.warn("unsupported symlink type: {}", .{value});
+                                      return error.UnsupportedReparsePointType;
+                     },
     }
 }
 
@@ -748,7 +748,7 @@ fn parseReadlinkPath(path: []const u16, is_relative: bool, out_buffer: []u8) []u
     const prefix = [_]u16{ '\\', '?', '?', '\\' };
     var start_index: usize = 0;
     if (!is_relative and std.mem.startsWith(u16, path, &prefix)) {
-        start_index = prefix.len;
+                     start_index = prefix.len;
     }
     const out_len = std.unicode.utf16leToUtf8(out_buffer, path[start_index..]) catch unreachable;
     return out_buffer[0..out_len];
@@ -772,59 +772,59 @@ pub const DeleteFileOptions = struct {
 
 pub fn DeleteFile(sub_path_w: []const u16, options: DeleteFileOptions) DeleteFileError!void {
     const create_options_flags: ULONG = if (options.remove_dir)
-        FILE_DELETE_ON_CLOSE | FILE_DIRECTORY_FILE | FILE_OPEN_REPARSE_POINT
+                     FILE_DELETE_ON_CLOSE | FILE_DIRECTORY_FILE | FILE_OPEN_REPARSE_POINT
     else
-        FILE_DELETE_ON_CLOSE | FILE_NON_DIRECTORY_FILE | FILE_OPEN_REPARSE_POINT; // would we ever want to delete the target instead?
+                     FILE_DELETE_ON_CLOSE | FILE_NON_DIRECTORY_FILE | FILE_OPEN_REPARSE_POINT; // would we ever want to delete the target instead?
 
     const path_len_bytes = @intCast(u16, sub_path_w.len * 2);
     var nt_name = UNICODE_STRING{
-        .Length = path_len_bytes,
-        .MaximumLength = path_len_bytes,
-        // The Windows API makes this mutable, but it will not mutate here.
-        .Buffer = @intToPtr([*]u16, @ptrToInt(sub_path_w.ptr)),
+                     .Length = path_len_bytes,
+                     .MaximumLength = path_len_bytes,
+                     // The Windows API makes this mutable, but it will not mutate here.
+                     .Buffer = @intToPtr([*]u16, @ptrToInt(sub_path_w.ptr)),
     };
 
     if (sub_path_w[0] == '.' and sub_path_w[1] == 0) {
-        // Windows does not recognize this, but it does work with empty string.
-        nt_name.Length = 0;
+                     // Windows does not recognize this, but it does work with empty string.
+                     nt_name.Length = 0;
     }
     if (sub_path_w[0] == '.' and sub_path_w[1] == '.' and sub_path_w[2] == 0) {
-        // Can't remove the parent directory with an open handle.
-        return error.FileBusy;
+                     // Can't remove the parent directory with an open handle.
+                     return error.FileBusy;
     }
 
     var attr = OBJECT_ATTRIBUTES{
-        .Length = @sizeOf(OBJECT_ATTRIBUTES),
-        .RootDirectory = if (std.fs.path.isAbsoluteWindowsWTF16(sub_path_w)) null else options.dir,
-        .Attributes = 0, // Note we do not use OBJ_CASE_INSENSITIVE here.
-        .ObjectName = &nt_name,
-        .SecurityDescriptor = null,
-        .SecurityQualityOfService = null,
+                     .Length = @sizeOf(OBJECT_ATTRIBUTES),
+                     .RootDirectory = if (std.fs.path.isAbsoluteWindowsWTF16(sub_path_w)) null else options.dir,
+                     .Attributes = 0, // Note we do not use OBJ_CASE_INSENSITIVE here.
+                     .ObjectName = &nt_name,
+                     .SecurityDescriptor = null,
+                     .SecurityQualityOfService = null,
     };
     var io: IO_STATUS_BLOCK = undefined;
     var tmp_handle: HANDLE = undefined;
     var rc = ntdll.NtCreateFile(
-        &tmp_handle,
-        SYNCHRONIZE | DELETE,
-        &attr,
-        &io,
-        null,
-        0,
-        FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
-        FILE_OPEN,
-        create_options_flags,
-        null,
-        0,
+                     &tmp_handle,
+                     SYNCHRONIZE | DELETE,
+                     &attr,
+                     &io,
+                     null,
+                     0,
+                     FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
+                     FILE_OPEN,
+                     create_options_flags,
+                     null,
+                     0,
     );
     switch (rc) {
-        .SUCCESS => return CloseHandle(tmp_handle),
-        .OBJECT_NAME_INVALID => unreachable,
-        .OBJECT_NAME_NOT_FOUND => return error.FileNotFound,
-        .INVALID_PARAMETER => unreachable,
-        .FILE_IS_A_DIRECTORY => return error.IsDir,
-        .NOT_A_DIRECTORY => return error.NotDir,
-        .SHARING_VIOLATION => return error.FileBusy,
-        else => return unexpectedStatus(rc),
+                     .SUCCESS => return CloseHandle(tmp_handle),
+                     .OBJECT_NAME_INVALID => unreachable,
+                     .OBJECT_NAME_NOT_FOUND => return error.FileNotFound,
+                     .INVALID_PARAMETER => unreachable,
+                     .FILE_IS_A_DIRECTORY => return error.IsDir,
+                     .NOT_A_DIRECTORY => return error.NotDir,
+                     .SHARING_VIOLATION => return error.FileBusy,
+                     else => return unexpectedStatus(rc),
     }
 }
 
@@ -838,11 +838,11 @@ pub fn MoveFileEx(old_path: []const u8, new_path: []const u8, flags: DWORD) Move
 
 pub fn MoveFileExW(old_path: [*:0]const u16, new_path: [*:0]const u16, flags: DWORD) MoveFileError!void {
     if (kernel32.MoveFileExW(old_path, new_path, flags) == 0) {
-        switch (kernel32.GetLastError()) {
-            .FILE_NOT_FOUND => return error.FileNotFound,
-            .ACCESS_DENIED => return error.AccessDenied,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .FILE_NOT_FOUND => return error.FileNotFound,
+                                      .ACCESS_DENIED => return error.AccessDenied,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -854,9 +854,9 @@ pub const GetStdHandleError = error{
 pub fn GetStdHandle(handle_id: DWORD) GetStdHandleError!HANDLE {
     const handle = kernel32.GetStdHandle(handle_id) orelse return error.NoStandardHandleAttached;
     if (handle == INVALID_HANDLE_VALUE) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     return handle;
 }
@@ -870,33 +870,33 @@ pub fn SetFilePointerEx_BEGIN(handle: HANDLE, offset: u64) SetFilePointerError!v
     // https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-setfilepointerex
     const ipos = @bitCast(LARGE_INTEGER, offset);
     if (kernel32.SetFilePointerEx(handle, ipos, null, FILE_BEGIN) == 0) {
-        switch (kernel32.GetLastError()) {
-            .INVALID_PARAMETER => unreachable,
-            .INVALID_HANDLE => unreachable,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .INVALID_PARAMETER => unreachable,
+                                      .INVALID_HANDLE => unreachable,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
 /// The SetFilePointerEx function with the `dwMoveMethod` parameter set to `FILE_CURRENT`.
 pub fn SetFilePointerEx_CURRENT(handle: HANDLE, offset: i64) SetFilePointerError!void {
     if (kernel32.SetFilePointerEx(handle, offset, null, FILE_CURRENT) == 0) {
-        switch (kernel32.GetLastError()) {
-            .INVALID_PARAMETER => unreachable,
-            .INVALID_HANDLE => unreachable,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .INVALID_PARAMETER => unreachable,
+                                      .INVALID_HANDLE => unreachable,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
 /// The SetFilePointerEx function with the `dwMoveMethod` parameter set to `FILE_END`.
 pub fn SetFilePointerEx_END(handle: HANDLE, offset: i64) SetFilePointerError!void {
     if (kernel32.SetFilePointerEx(handle, offset, null, FILE_END) == 0) {
-        switch (kernel32.GetLastError()) {
-            .INVALID_PARAMETER => unreachable,
-            .INVALID_HANDLE => unreachable,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .INVALID_PARAMETER => unreachable,
+                                      .INVALID_HANDLE => unreachable,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -904,11 +904,11 @@ pub fn SetFilePointerEx_END(handle: HANDLE, offset: i64) SetFilePointerError!voi
 pub fn SetFilePointerEx_CURRENT_get(handle: HANDLE) SetFilePointerError!u64 {
     var result: LARGE_INTEGER = undefined;
     if (kernel32.SetFilePointerEx(handle, 0, &result, FILE_CURRENT) == 0) {
-        switch (kernel32.GetLastError()) {
-            .INVALID_PARAMETER => unreachable,
-            .INVALID_HANDLE => unreachable,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .INVALID_PARAMETER => unreachable,
+                                      .INVALID_HANDLE => unreachable,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     // Based on the docs for FILE_BEGIN, it seems that the returned signed integer
     // should be interpreted as an unsigned integer.
@@ -926,10 +926,10 @@ pub const GetFinalPathNameByHandleError = error{
 /// Defaults to DOS volume names.
 pub const GetFinalPathNameByHandleFormat = struct {
     volume_name: enum {
-        /// Format as DOS volume name
-        Dos,
-        /// Format as NT volume name
-        Nt,
+                     /// Format as DOS volume name
+                     Dos,
+                     /// Format as NT volume name
+                     Nt,
     } = .Dos,
 };
 
@@ -957,100 +957,100 @@ pub fn GetFinalPathNameByHandle(
     const volume_name = @ptrCast(*const FILE_NAME_INFORMATION, &volume_buffer[0]);
 
     switch (fmt.volume_name) {
-        .Nt => {
-            // Nothing to do, we simply copy the bytes to the user-provided buffer.
-            const volume_name_u16 = @ptrCast([*]const u16, &volume_name.FileName[0])[0 .. volume_name.FileNameLength / 2];
+                     .Nt => {
+                                      // Nothing to do, we simply copy the bytes to the user-provided buffer.
+                                      const volume_name_u16 = @ptrCast([*]const u16, &volume_name.FileName[0])[0 .. volume_name.FileNameLength / 2];
 
-            if (out_buffer.len < volume_name_u16.len + file_name_u16.len) return error.NameTooLong;
+                                      if (out_buffer.len < volume_name_u16.len + file_name_u16.len) return error.NameTooLong;
 
-            std.mem.copy(u16, out_buffer[0..], volume_name_u16);
-            std.mem.copy(u16, out_buffer[volume_name_u16.len..], file_name_u16);
+                                      std.mem.copy(u16, out_buffer[0..], volume_name_u16);
+                                      std.mem.copy(u16, out_buffer[volume_name_u16.len..], file_name_u16);
 
-            return out_buffer[0 .. volume_name_u16.len + file_name_u16.len];
-        },
-        .Dos => {
-            // Get DOS volume name. DOS volume names are actually symbolic link objects to the
-            // actual NT volume. For example:
-            // (NT) \Device\HarddiskVolume4 => (DOS) \DosDevices\C: == (DOS) C:
-            const MIN_SIZE = @sizeOf(MOUNTMGR_MOUNT_POINT) + MAX_PATH;
-            // We initialize the input buffer to all zeros for convenience since
-            // `DeviceIoControl` with `IOCTL_MOUNTMGR_QUERY_POINTS` expects this.
-            var input_buf: [MIN_SIZE]u8 align(@alignOf(MOUNTMGR_MOUNT_POINT)) = [_]u8{0} ** MIN_SIZE;
-            var output_buf: [MIN_SIZE * 4]u8 align(@alignOf(MOUNTMGR_MOUNT_POINTS)) = undefined;
+                                      return out_buffer[0 .. volume_name_u16.len + file_name_u16.len];
+                     },
+                     .Dos => {
+                                      // Get DOS volume name. DOS volume names are actually symbolic link objects to the
+                                      // actual NT volume. For example:
+                                      // (NT) \Device\HarddiskVolume4 => (DOS) \DosDevices\C: == (DOS) C:
+                                      const MIN_SIZE = @sizeOf(MOUNTMGR_MOUNT_POINT) + MAX_PATH;
+                                      // We initialize the input buffer to all zeros for convenience since
+                                      // `DeviceIoControl` with `IOCTL_MOUNTMGR_QUERY_POINTS` expects this.
+                                      var input_buf: [MIN_SIZE]u8 align(@alignOf(MOUNTMGR_MOUNT_POINT)) = [_]u8{0} ** MIN_SIZE;
+                                      var output_buf: [MIN_SIZE * 4]u8 align(@alignOf(MOUNTMGR_MOUNT_POINTS)) = undefined;
 
-            // This surprising path is a filesystem path to the mount manager on Windows.
-            // Source: https://stackoverflow.com/questions/3012828/using-ioctl-mountmgr-query-points
-            const mgmt_path = "\\MountPointManager";
-            const mgmt_path_u16 = sliceToPrefixedFileW(mgmt_path) catch unreachable;
-            const mgmt_handle = OpenFile(mgmt_path_u16.span(), .{
-                .access_mask = SYNCHRONIZE,
-                .share_access = FILE_SHARE_READ | FILE_SHARE_WRITE,
-                .creation = FILE_OPEN,
-                .io_mode = .blocking,
-            }) catch |err| switch (err) {
-                error.IsDir => unreachable,
-                error.NotDir => unreachable,
-                error.NoDevice => unreachable,
-                error.AccessDenied => unreachable,
-                error.PipeBusy => unreachable,
-                error.PathAlreadyExists => unreachable,
-                error.WouldBlock => unreachable,
-                else => |e| return e,
-            };
-            defer CloseHandle(mgmt_handle);
+                                      // This surprising path is a filesystem path to the mount manager on Windows.
+                                      // Source: https://stackoverflow.com/questions/3012828/using-ioctl-mountmgr-query-points
+                                      const mgmt_path = "\\MountPointManager";
+                                      const mgmt_path_u16 = sliceToPrefixedFileW(mgmt_path) catch unreachable;
+                                      const mgmt_handle = OpenFile(mgmt_path_u16.span(), .{
+                                          .access_mask = SYNCHRONIZE,
+                                          .share_access = FILE_SHARE_READ | FILE_SHARE_WRITE,
+                                          .creation = FILE_OPEN,
+                                          .io_mode = .blocking,
+                                      }) catch |err| switch (err) {
+                                          error.IsDir => unreachable,
+                                          error.NotDir => unreachable,
+                                          error.NoDevice => unreachable,
+                                          error.AccessDenied => unreachable,
+                                          error.PipeBusy => unreachable,
+                                          error.PathAlreadyExists => unreachable,
+                                          error.WouldBlock => unreachable,
+                                          else => |e| return e,
+                                      };
+                                      defer CloseHandle(mgmt_handle);
 
-            var input_struct = @ptrCast(*MOUNTMGR_MOUNT_POINT, &input_buf[0]);
-            input_struct.DeviceNameOffset = @sizeOf(MOUNTMGR_MOUNT_POINT);
-            input_struct.DeviceNameLength = @intCast(USHORT, volume_name.FileNameLength);
-            @memcpy(input_buf[@sizeOf(MOUNTMGR_MOUNT_POINT)..], @ptrCast([*]const u8, &volume_name.FileName[0]), volume_name.FileNameLength);
+                                      var input_struct = @ptrCast(*MOUNTMGR_MOUNT_POINT, &input_buf[0]);
+                                      input_struct.DeviceNameOffset = @sizeOf(MOUNTMGR_MOUNT_POINT);
+                                      input_struct.DeviceNameLength = @intCast(USHORT, volume_name.FileNameLength);
+                                      @memcpy(input_buf[@sizeOf(MOUNTMGR_MOUNT_POINT)..], @ptrCast([*]const u8, &volume_name.FileName[0]), volume_name.FileNameLength);
 
-            DeviceIoControl(mgmt_handle, IOCTL_MOUNTMGR_QUERY_POINTS, input_buf[0..], output_buf[0..]) catch |err| switch (err) {
-                error.AccessDenied => unreachable,
-                else => |e| return e,
-            };
-            const mount_points_struct = @ptrCast(*const MOUNTMGR_MOUNT_POINTS, &output_buf[0]);
+                                      DeviceIoControl(mgmt_handle, IOCTL_MOUNTMGR_QUERY_POINTS, input_buf[0..], output_buf[0..]) catch |err| switch (err) {
+                                          error.AccessDenied => unreachable,
+                                          else => |e| return e,
+                                      };
+                                      const mount_points_struct = @ptrCast(*const MOUNTMGR_MOUNT_POINTS, &output_buf[0]);
 
-            const mount_points = @ptrCast(
-                [*]const MOUNTMGR_MOUNT_POINT,
-                &mount_points_struct.MountPoints[0],
-            )[0..mount_points_struct.NumberOfMountPoints];
+                                      const mount_points = @ptrCast(
+                                          [*]const MOUNTMGR_MOUNT_POINT,
+                                          &mount_points_struct.MountPoints[0],
+                                      )[0..mount_points_struct.NumberOfMountPoints];
 
-            var found: bool = false;
-            for (mount_points) |mount_point| {
-                const symlink = @ptrCast(
-                    [*]const u16,
-                    @alignCast(@alignOf(u16), &output_buf[mount_point.SymbolicLinkNameOffset]),
-                )[0 .. mount_point.SymbolicLinkNameLength / 2];
+                                      var found: bool = false;
+                                      for (mount_points) |mount_point| {
+                                          const symlink = @ptrCast(
+                                                           [*]const u16,
+                                                           @alignCast(@alignOf(u16), &output_buf[mount_point.SymbolicLinkNameOffset]),
+                                          )[0 .. mount_point.SymbolicLinkNameLength / 2];
 
-                // Look for `\DosDevices\` prefix. We don't really care if there are more than one symlinks
-                // with traditional DOS drive letters, so pick the first one available.
-                const prefix_u8 = "\\DosDevices\\";
-                var prefix_buf_u16: [prefix_u8.len]u16 = undefined;
-                const prefix_len_u16 = std.unicode.utf8ToUtf16Le(prefix_buf_u16[0..], prefix_u8[0..]) catch unreachable;
-                const prefix = prefix_buf_u16[0..prefix_len_u16];
+                                          // Look for `\DosDevices\` prefix. We don't really care if there are more than one symlinks
+                                          // with traditional DOS drive letters, so pick the first one available.
+                                          const prefix_u8 = "\\DosDevices\\";
+                                          var prefix_buf_u16: [prefix_u8.len]u16 = undefined;
+                                          const prefix_len_u16 = std.unicode.utf8ToUtf16Le(prefix_buf_u16[0..], prefix_u8[0..]) catch unreachable;
+                                          const prefix = prefix_buf_u16[0..prefix_len_u16];
 
-                if (std.mem.startsWith(u16, symlink, prefix)) {
-                    const drive_letter = symlink[prefix.len..];
+                                          if (std.mem.startsWith(u16, symlink, prefix)) {
+                                                           const drive_letter = symlink[prefix.len..];
 
-                    if (out_buffer.len < drive_letter.len + file_name_u16.len) return error.NameTooLong;
+                                                           if (out_buffer.len < drive_letter.len + file_name_u16.len) return error.NameTooLong;
 
-                    std.mem.copy(u16, out_buffer[0..], drive_letter);
-                    std.mem.copy(u16, out_buffer[drive_letter.len..], file_name_u16);
-                    const total_len = drive_letter.len + file_name_u16.len;
+                                                           std.mem.copy(u16, out_buffer[0..], drive_letter);
+                                                           std.mem.copy(u16, out_buffer[drive_letter.len..], file_name_u16);
+                                                           const total_len = drive_letter.len + file_name_u16.len;
 
-                    // Validate that DOS does not contain any spurious nul bytes.
-                    if (std.mem.indexOfScalar(u16, out_buffer[0..total_len], 0)) |_| {
-                        return error.BadPathName;
-                    }
+                                                           // Validate that DOS does not contain any spurious nul bytes.
+                                                           if (std.mem.indexOfScalar(u16, out_buffer[0..total_len], 0)) |_| {
+                                                                            return error.BadPathName;
+                                                           }
 
-                    return out_buffer[0..total_len];
-                }
-            }
+                                                           return out_buffer[0..total_len];
+                                          }
+                                      }
 
-            // If we've ended up here, then something went wrong/is corrupted in the OS,
-            // so error out!
-            return error.FileNotFound;
-        },
+                                      // If we've ended up here, then something went wrong/is corrupted in the OS,
+                                      // so error out!
+                                      return error.FileNotFound;
+                     },
     }
 }
 
@@ -1065,9 +1065,9 @@ pub fn QueryInformationFile(
     const len_bytes = std.math.cast(u32, out_buffer.len) catch unreachable;
     const rc = ntdll.NtQueryInformationFile(handle, &io, out_buffer.ptr, len_bytes, info_class);
     switch (rc) {
-        .SUCCESS => {},
-        .INVALID_PARAMETER => unreachable,
-        else => return unexpectedStatus(rc),
+                     .SUCCESS => {},
+                     .INVALID_PARAMETER => unreachable,
+                     else => return unexpectedStatus(rc),
     }
 }
 
@@ -1076,9 +1076,9 @@ pub const GetFileSizeError = error{Unexpected};
 pub fn GetFileSizeEx(hFile: HANDLE) GetFileSizeError!u64 {
     var file_size: LARGE_INTEGER = undefined;
     if (kernel32.GetFileSizeEx(hFile, &file_size) == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     return @bitCast(u64, file_size);
 }
@@ -1097,12 +1097,12 @@ pub fn GetFileAttributes(filename: []const u8) GetFileAttributesError!DWORD {
 pub fn GetFileAttributesW(lpFileName: [*:0]const u16) GetFileAttributesError!DWORD {
     const rc = kernel32.GetFileAttributesW(lpFileName);
     if (rc == INVALID_FILE_ATTRIBUTES) {
-        switch (kernel32.GetLastError()) {
-            .FILE_NOT_FOUND => return error.FileNotFound,
-            .PATH_NOT_FOUND => return error.FileNotFound,
-            .ACCESS_DENIED => return error.PermissionDenied,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .FILE_NOT_FOUND => return error.FileNotFound,
+                                      .PATH_NOT_FOUND => return error.FileNotFound,
+                                      .ACCESS_DENIED => return error.PermissionDenied,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     return rc;
 }
@@ -1110,27 +1110,27 @@ pub fn GetFileAttributesW(lpFileName: [*:0]const u16) GetFileAttributesError!DWO
 pub fn WSAStartup(majorVersion: u8, minorVersion: u8) !ws2_32.WSADATA {
     var wsadata: ws2_32.WSADATA = undefined;
     return switch (ws2_32.WSAStartup((@as(WORD, minorVersion) << 8) | majorVersion, &wsadata)) {
-        0 => wsadata,
-        else => |err_int| switch (@intToEnum(ws2_32.WinsockError, @intCast(u16, err_int))) {
-            .WSASYSNOTREADY => return error.SystemNotAvailable,
-            .WSAVERNOTSUPPORTED => return error.VersionNotSupported,
-            .WSAEINPROGRESS => return error.BlockingOperationInProgress,
-            .WSAEPROCLIM => return error.SystemResources,
-            else => |err| return unexpectedWSAError(err),
-        },
+                     0 => wsadata,
+                     else => |err_int| switch (@intToEnum(ws2_32.WinsockError, @intCast(u16, err_int))) {
+                                      .WSASYSNOTREADY => return error.SystemNotAvailable,
+                                      .WSAVERNOTSUPPORTED => return error.VersionNotSupported,
+                                      .WSAEINPROGRESS => return error.BlockingOperationInProgress,
+                                      .WSAEPROCLIM => return error.SystemResources,
+                                      else => |err| return unexpectedWSAError(err),
+                     },
     };
 }
 
 pub fn WSACleanup() !void {
     return switch (ws2_32.WSACleanup()) {
-        0 => {},
-        ws2_32.SOCKET_ERROR => switch (ws2_32.WSAGetLastError()) {
-            .WSANOTINITIALISED => return error.NotInitialized,
-            .WSAENETDOWN => return error.NetworkNotAvailable,
-            .WSAEINPROGRESS => return error.BlockingOperationInProgress,
-            else => |err| return unexpectedWSAError(err),
-        },
-        else => unreachable,
+                     0 => {},
+                     ws2_32.SOCKET_ERROR => switch (ws2_32.WSAGetLastError()) {
+                                      .WSANOTINITIALISED => return error.NotInitialized,
+                                      .WSAENETDOWN => return error.NetworkNotAvailable,
+                                      .WSAEINPROGRESS => return error.BlockingOperationInProgress,
+                                      else => |err| return unexpectedWSAError(err),
+                     },
+                     else => unreachable,
     };
 }
 
@@ -1144,13 +1144,13 @@ pub fn WSASocketW(
 ) !ws2_32.SOCKET {
     const rc = ws2_32.WSASocketW(af, socket_type, protocol, protocolInfo, g, dwFlags);
     if (rc == ws2_32.INVALID_SOCKET) {
-        switch (ws2_32.WSAGetLastError()) {
-            .WSAEAFNOSUPPORT => return error.AddressFamilyNotSupported,
-            .WSAEMFILE => return error.ProcessFdQuotaExceeded,
-            .WSAENOBUFS => return error.SystemResources,
-            .WSAEPROTONOSUPPORT => return error.ProtocolNotSupported,
-            else => |err| return unexpectedWSAError(err),
-        }
+                     switch (ws2_32.WSAGetLastError()) {
+                                      .WSAEAFNOSUPPORT => return error.AddressFamilyNotSupported,
+                                      .WSAEMFILE => return error.ProcessFdQuotaExceeded,
+                                      .WSAENOBUFS => return error.SystemResources,
+                                      .WSAEPROTONOSUPPORT => return error.ProtocolNotSupported,
+                                      else => |err| return unexpectedWSAError(err),
+                     }
     }
     return rc;
 }
@@ -1165,11 +1165,11 @@ pub fn listen(s: ws2_32.SOCKET, backlog: u31) i32 {
 
 pub fn closesocket(s: ws2_32.SOCKET) !void {
     switch (ws2_32.closesocket(s)) {
-        0 => {},
-        ws2_32.SOCKET_ERROR => switch (ws2_32.WSAGetLastError()) {
-            else => |err| return unexpectedWSAError(err),
-        },
-        else => unreachable,
+                     0 => {},
+                     ws2_32.SOCKET_ERROR => switch (ws2_32.WSAGetLastError()) {
+                                      else => |err| return unexpectedWSAError(err),
+                     },
+                     else => unreachable,
     }
 }
 
@@ -1186,9 +1186,9 @@ pub fn sendto(s: ws2_32.SOCKET, buf: [*]const u8, len: usize, flags: u32, to: ?*
     var buffer = ws2_32.WSABUF{ .len = @truncate(u31, len), .buf = @intToPtr([*]u8, @ptrToInt(buf)) };
     var bytes_send: DWORD = undefined;
     if (ws2_32.WSASendTo(s, @ptrCast([*]ws2_32.WSABUF, &buffer), 1, &bytes_send, flags, to, @intCast(i32, to_len), null, null) == ws2_32.SOCKET_ERROR) {
-        return ws2_32.SOCKET_ERROR;
+                     return ws2_32.SOCKET_ERROR;
     } else {
-        return @as(i32, @intCast(u31, bytes_send));
+                     return @as(i32, @intCast(u31, bytes_send));
     }
 }
 
@@ -1197,9 +1197,9 @@ pub fn recvfrom(s: ws2_32.SOCKET, buf: [*]u8, len: usize, flags: u32, from: ?*ws
     var bytes_received: DWORD = undefined;
     var flags_inout = flags;
     if (ws2_32.WSARecvFrom(s, @ptrCast([*]ws2_32.WSABUF, &buffer), 1, &bytes_received, &flags_inout, from, from_len, null, null) == ws2_32.SOCKET_ERROR) {
-        return ws2_32.SOCKET_ERROR;
+                     return ws2_32.SOCKET_ERROR;
     } else {
-        return @as(i32, @intCast(u31, bytes_received));
+                     return @as(i32, @intCast(u31, bytes_received));
     }
 }
 
@@ -1217,21 +1217,21 @@ pub fn WSAIoctl(
 ) !DWORD {
     var bytes: DWORD = undefined;
     switch (ws2_32.WSAIoctl(
-        s,
-        dwIoControlCode,
-        if (inBuffer) |i| i.ptr else null,
-        if (inBuffer) |i| @intCast(DWORD, i.len) else 0,
-        outBuffer.ptr,
-        @intCast(DWORD, outBuffer.len),
-        &bytes,
-        overlapped,
-        completionRoutine,
+                     s,
+                     dwIoControlCode,
+                     if (inBuffer) |i| i.ptr else null,
+                     if (inBuffer) |i| @intCast(DWORD, i.len) else 0,
+                     outBuffer.ptr,
+                     @intCast(DWORD, outBuffer.len),
+                     &bytes,
+                     overlapped,
+                     completionRoutine,
     )) {
-        0 => {},
-        ws2_32.SOCKET_ERROR => switch (ws2_32.WSAGetLastError()) {
-            else => |err| return unexpectedWSAError(err),
-        },
-        else => unreachable,
+                     0 => {},
+                     ws2_32.SOCKET_ERROR => switch (ws2_32.WSAGetLastError()) {
+                                      else => |err| return unexpectedWSAError(err),
+                     },
+                     else => unreachable,
     }
     return bytes;
 }
@@ -1241,9 +1241,9 @@ const GetModuleFileNameError = error{Unexpected};
 pub fn GetModuleFileNameW(hModule: ?HMODULE, buf_ptr: [*]u16, buf_len: DWORD) GetModuleFileNameError![:0]u16 {
     const rc = kernel32.GetModuleFileNameW(hModule, buf_ptr, buf_len);
     if (rc == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     return buf_ptr[0..rc :0];
 }
@@ -1252,9 +1252,9 @@ pub const TerminateProcessError = error{Unexpected};
 
 pub fn TerminateProcess(hProcess: HANDLE, uExitCode: UINT) TerminateProcessError!void {
     if (kernel32.TerminateProcess(hProcess, uExitCode) == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -1262,9 +1262,9 @@ pub const VirtualAllocError = error{Unexpected};
 
 pub fn VirtualAlloc(addr: ?LPVOID, size: usize, alloc_type: DWORD, flProtect: DWORD) VirtualAllocError!LPVOID {
     return kernel32.VirtualAlloc(addr, size, alloc_type, flProtect) orelse {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     };
 }
 
@@ -1276,9 +1276,9 @@ pub const SetConsoleTextAttributeError = error{Unexpected};
 
 pub fn SetConsoleTextAttribute(hConsoleOutput: HANDLE, wAttributes: WORD) SetConsoleTextAttributeError!void {
     if (kernel32.SetConsoleTextAttribute(hConsoleOutput, wAttributes) == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -1300,10 +1300,10 @@ pub const GetEnvironmentVariableError = error{
 pub fn GetEnvironmentVariableW(lpName: LPWSTR, lpBuffer: [*]u16, nSize: DWORD) GetEnvironmentVariableError!DWORD {
     const rc = kernel32.GetEnvironmentVariableW(lpName, lpBuffer, nSize);
     if (rc == 0) {
-        switch (kernel32.GetLastError()) {
-            .ENVVAR_NOT_FOUND => return error.EnvironmentVariableNotFound,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .ENVVAR_NOT_FOUND => return error.EnvironmentVariableNotFound,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     return rc;
 }
@@ -1328,25 +1328,25 @@ pub fn CreateProcessW(
     lpProcessInformation: *PROCESS_INFORMATION,
 ) CreateProcessError!void {
     if (kernel32.CreateProcessW(
-        lpApplicationName,
-        lpCommandLine,
-        lpProcessAttributes,
-        lpThreadAttributes,
-        bInheritHandles,
-        dwCreationFlags,
-        lpEnvironment,
-        lpCurrentDirectory,
-        lpStartupInfo,
-        lpProcessInformation,
+                     lpApplicationName,
+                     lpCommandLine,
+                     lpProcessAttributes,
+                     lpThreadAttributes,
+                     bInheritHandles,
+                     dwCreationFlags,
+                     lpEnvironment,
+                     lpCurrentDirectory,
+                     lpStartupInfo,
+                     lpProcessInformation,
     ) == 0) {
-        switch (kernel32.GetLastError()) {
-            .FILE_NOT_FOUND => return error.FileNotFound,
-            .PATH_NOT_FOUND => return error.FileNotFound,
-            .ACCESS_DENIED => return error.AccessDenied,
-            .INVALID_PARAMETER => unreachable,
-            .INVALID_NAME => return error.InvalidName,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .FILE_NOT_FOUND => return error.FileNotFound,
+                                      .PATH_NOT_FOUND => return error.FileNotFound,
+                                      .ACCESS_DENIED => return error.AccessDenied,
+                                      .INVALID_PARAMETER => unreachable,
+                                      .INVALID_NAME => return error.InvalidName,
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
@@ -1357,12 +1357,12 @@ pub const LoadLibraryError = error{
 
 pub fn LoadLibraryW(lpLibFileName: [*:0]const u16) LoadLibraryError!HMODULE {
     return kernel32.LoadLibraryW(lpLibFileName) orelse {
-        switch (kernel32.GetLastError()) {
-            .FILE_NOT_FOUND => return error.FileNotFound,
-            .PATH_NOT_FOUND => return error.FileNotFound,
-            .MOD_NOT_FOUND => return error.FileNotFound,
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      .FILE_NOT_FOUND => return error.FileNotFound,
+                                      .PATH_NOT_FOUND => return error.FileNotFound,
+                                      .MOD_NOT_FOUND => return error.FileNotFound,
+                                      else => |err| return unexpectedError(err),
+                     }
     };
 }
 
@@ -1408,9 +1408,9 @@ pub fn GetFileInformationByHandle(
     var info: BY_HANDLE_FILE_INFORMATION = undefined;
     const rc = ntdll.GetFileInformationByHandle(hFile, &info);
     if (rc == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
     return info;
 }
@@ -1425,27 +1425,27 @@ pub fn SetFileTime(
 ) SetFileTimeError!void {
     const rc = kernel32.SetFileTime(hFile, lpCreationTime, lpLastAccessTime, lpLastWriteTime);
     if (rc == 0) {
-        switch (kernel32.GetLastError()) {
-            else => |err| return unexpectedError(err),
-        }
+                     switch (kernel32.GetLastError()) {
+                                      else => |err| return unexpectedError(err),
+                     }
     }
 }
 
 pub fn teb() *TEB {
     return switch (builtin.arch) {
-        .i386 => asm volatile (
-            \\ movl %%fs:0x18, %[ptr]
-            : [ptr] "=r" (-> *TEB)
-        ),
-        .x86_64 => asm volatile (
-            \\ movq %%gs:0x30, %[ptr]
-            : [ptr] "=r" (-> *TEB)
-        ),
-        .aarch64 => asm volatile (
-            \\ mov %[ptr], x18
-            : [ptr] "=r" (-> *TEB)
-        ),
-        else => @compileError("unsupported arch"),
+                     .i386 => asm volatile (
+                                      \\ movl %%fs:0x18, %[ptr]
+                                      : [ptr] "=r" (-> *TEB)
+                     ),
+                     .x86_64 => asm volatile (
+                                      \\ movq %%gs:0x30, %[ptr]
+                                      : [ptr] "=r" (-> *TEB)
+                     ),
+                     .aarch64 => asm volatile (
+                                      \\ mov %[ptr], x18
+                                      : [ptr] "=r" (-> *TEB)
+                     ),
+                     else => @compileError("unsupported arch"),
     };
 }
 
@@ -1477,8 +1477,8 @@ pub fn fileTimeToNanoSeconds(ft: FILETIME) i128 {
 pub fn nanoSecondsToFileTime(ns: i128) FILETIME {
     const adjusted = @bitCast(u64, toSysTime(ns));
     return FILETIME{
-        .dwHighDateTime = @truncate(u32, adjusted >> 32),
-        .dwLowDateTime = @truncate(u32, adjusted),
+                     .dwHighDateTime = @truncate(u32, adjusted >> 32),
+                     .dwLowDateTime = @truncate(u32, adjusted),
     };
 }
 
@@ -1487,7 +1487,7 @@ pub const PathSpace = struct {
     len: usize,
 
     pub fn span(self: PathSpace) [:0]const u16 {
-        return self.data[0..self.len :0];
+                     return self.data[0..self.len :0];
     }
 };
 
@@ -1505,15 +1505,15 @@ pub fn sliceToPrefixedFileW(s: []const u8) !PathSpace {
     const prefix = "\\??\\";
     const prefix_index: usize = if (mem.startsWith(u8, s, prefix)) prefix.len else 0;
     for (s[prefix_index..]) |byte| {
-        switch (byte) {
-            '*', '?', '"', '<', '>', '|' => return error.BadPathName,
-            else => {},
-        }
+                     switch (byte) {
+                                      '*', '?', '"', '<', '>', '|' => return error.BadPathName,
+                                      else => {},
+                     }
     }
     const start_index = if (prefix_index > 0 or !std.fs.path.isAbsolute(s)) 0 else blk: {
-        const prefix_u16 = [_]u16{ '\\', '?', '?', '\\' };
-        mem.copy(u16, path_space.data[0..], prefix_u16[0..]);
-        break :blk prefix_u16.len;
+                     const prefix_u16 = [_]u16{ '\\', '?', '?', '\\' };
+                     mem.copy(u16, path_space.data[0..], prefix_u16[0..]);
+                     break :blk prefix_u16.len;
     };
     path_space.len = start_index + try std.unicode.utf8ToUtf16Le(path_space.data[start_index..], s);
     if (path_space.len > path_space.data.len) return error.NameTooLong;
@@ -1524,9 +1524,9 @@ pub fn sliceToPrefixedFileW(s: []const u8) !PathSpace {
     // Because we want the larger maximum path length for absolute paths, we
     // convert forward slashes to backward slashes here.
     for (path_space.data[0..path_space.len]) |*elem| {
-        if (elem.* == '/') {
-            elem.* = '\\';
-        }
+                     if (elem.* == '/') {
+                                      elem.* = '\\';
+                     }
     }
     path_space.data[path_space.len] = 0;
     return path_space;
@@ -1538,9 +1538,9 @@ pub fn wToPrefixedFileW(s: []const u16) !PathSpace {
     var path_space: PathSpace = undefined;
 
     const start_index = if (mem.startsWith(u16, s, &[_]u16{ '\\', '?' })) 0 else blk: {
-        const prefix = [_]u16{ '\\', '?', '?', '\\' };
-        mem.copy(u16, path_space.data[0..], &prefix);
-        break :blk prefix.len;
+                     const prefix = [_]u16{ '\\', '?', '?', '\\' };
+                     mem.copy(u16, path_space.data[0..], &prefix);
+                     break :blk prefix.len;
     };
     path_space.len = start_index + s.len;
     if (path_space.len > path_space.data.len) return error.NameTooLong;
@@ -1552,9 +1552,9 @@ pub fn wToPrefixedFileW(s: []const u16) !PathSpace {
     // Because we want the larger maximum path length for absolute paths, we
     // convert forward slashes to backward slashes here.
     for (path_space.data[0..path_space.len]) |*elem| {
-        if (elem.* == '/') {
-            elem.* = '\\';
-        }
+                     if (elem.* == '/') {
+                                      elem.* = '\\';
+                     }
     }
     path_space.data[path_space.len] = 0;
     return path_space;
@@ -1568,21 +1568,21 @@ inline fn MAKELANGID(p: c_ushort, s: c_ushort) LANGID {
 /// and you get an unexpected error.
 pub fn unexpectedError(err: Win32Error) std.os.UnexpectedError {
     if (std.os.unexpected_error_tracing) {
-        // 614 is the length of the longest windows error desciption
-        var buf_u16: [614]u16 = undefined;
-        var buf_u8: [614]u8 = undefined;
-        const len = kernel32.FormatMessageW(
-            FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-            null,
-            err,
-            MAKELANGID(LANG.NEUTRAL, SUBLANG.DEFAULT),
-            &buf_u16,
-            buf_u16.len / @sizeOf(TCHAR),
-            null,
-        );
-        _ = std.unicode.utf16leToUtf8(&buf_u8, buf_u16[0..len]) catch unreachable;
-        std.debug.warn("error.Unexpected: GetLastError({}): {}\n", .{ @enumToInt(err), buf_u8[0..len] });
-        std.debug.dumpCurrentStackTrace(null);
+                     // 614 is the length of the longest windows error desciption
+                     var buf_u16: [614]u16 = undefined;
+                     var buf_u8: [614]u8 = undefined;
+                     const len = kernel32.FormatMessageW(
+                                      FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+                                      null,
+                                      err,
+                                      MAKELANGID(LANG.NEUTRAL, SUBLANG.DEFAULT),
+                                      &buf_u16,
+                                      buf_u16.len / @sizeOf(TCHAR),
+                                      null,
+                     );
+                     _ = std.unicode.utf16leToUtf8(&buf_u8, buf_u16[0..len]) catch unreachable;
+                     std.debug.warn("error.Unexpected: GetLastError({}): {}\n", .{ @enumToInt(err), buf_u8[0..len] });
+                     std.debug.dumpCurrentStackTrace(null);
     }
     return error.Unexpected;
 }
@@ -1595,8 +1595,8 @@ pub fn unexpectedWSAError(err: ws2_32.WinsockError) std.os.UnexpectedError {
 /// and you get an unexpected status.
 pub fn unexpectedStatus(status: NTSTATUS) std.os.UnexpectedError {
     if (std.os.unexpected_error_tracing) {
-        std.debug.warn("error.Unexpected NTSTATUS=0x{x}\n", .{@enumToInt(status)});
-        std.debug.dumpCurrentStackTrace(null);
+                     std.debug.warn("error.Unexpected NTSTATUS=0x{x}\n", .{@enumToInt(status)});
+                     std.debug.dumpCurrentStackTrace(null);
     }
     return error.Unexpected;
 }

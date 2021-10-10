@@ -8,15 +8,15 @@
  *
  *	Sources:
  *	IPv6 Program Interfaces for BSD Systems
- *      <draft-ietf-ipngwg-bsd-api-05.txt>
+ *                   <draft-ietf-ipngwg-bsd-api-05.txt>
  *
  *	Advanced Sockets API for IPv6
  *	<draft-stevens-advanced-api-00.txt>
  *
  *	This program is free software; you can redistribute it and/or
- *      modify it under the terms of the GNU General Public License
- *      as published by the Free Software Foundation; either version
- *      2 of the License, or (at your option) any later version.
+ *                   modify it under the terms of the GNU General Public License
+ *                   as published by the Free Software Foundation; either version
+ *                   2 of the License, or (at your option) any later version.
  */
 
 #ifndef _LINUX_IN6_H
@@ -49,9 +49,9 @@ struct in6_addr {
 #if __UAPI_DEF_SOCKADDR_IN6
 struct sockaddr_in6 {
 	unsigned short int	sin6_family;    /* AF_INET6 */
-	__be16			sin6_port;      /* Transport layer port # */
+	__be16			sin6_port;                   /* Transport layer port # */
 	__be32			sin6_flowinfo;  /* IPv6 flow information */
-	struct in6_addr		sin6_addr;      /* IPv6 address */
+	struct in6_addr		sin6_addr;                   /* IPv6 address */
 	__u32			sin6_scope_id;  /* scope id (new in RFC2553) */
 };
 #endif /* __UAPI_DEF_SOCKADDR_IN6 */
@@ -280,10 +280,10 @@ struct in6_flowlabel_req {
 /* RFC5082: Generalized Ttl Security Mechanism */
 #define IPV6_MINHOPCOUNT		73
 
-#define IPV6_ORIGDSTADDR        74
+#define IPV6_ORIGDSTADDR                     74
 #define IPV6_RECVORIGDSTADDR    IPV6_ORIGDSTADDR
-#define IPV6_TRANSPARENT        75
-#define IPV6_UNICAST_IF         76
+#define IPV6_TRANSPARENT                     75
+#define IPV6_UNICAST_IF                      76
 #define IPV6_RECVFRAGSIZE	77
 #define IPV6_FREEBIND		78
 

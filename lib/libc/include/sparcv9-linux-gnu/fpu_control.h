@@ -39,9 +39,9 @@
 
 /* rounding control / Sparc */
 #define _FPU_RC_DOWN    0xc0000000
-#define _FPU_RC_UP      0x80000000
+#define _FPU_RC_UP                   0x80000000
 #define _FPU_RC_ZERO    0x40000000
-#define _FPU_RC_NEAREST 0x0        /* RECOMMENDED */
+#define _FPU_RC_NEAREST 0x0                     /* RECOMMENDED */
 
 #define _FPU_RESERVED   0x30300000  /* Reserved bits in cw */
 

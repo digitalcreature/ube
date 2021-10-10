@@ -38,15 +38,15 @@ _int_mktemp_s (char *d, size_t dn)
   size_t sz;
   if (!d || !dn)
     {
-      _mktemp (NULL);
-      return EINVAL;
+                   _mktemp (NULL);
+                   return EINVAL;
     }
   sz = strnlen (d, dn);
   if (sz >= dn || sz < 6)
     {
-      d[0] = 0;
-      _mktemp (NULL);
-      return EINVAL;
+                   d[0] = 0;
+                   _mktemp (NULL);
+                   return EINVAL;
     }
   if (_mktemp (d) != NULL)
     return 0;

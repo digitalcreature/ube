@@ -95,27 +95,27 @@ struct __ptrace_syscall_info
   union
   {
     /* System call number and arguments, for
-       PTRACE_SYSCALL_INFO_ENTRY.  */
+                    PTRACE_SYSCALL_INFO_ENTRY.  */
     struct
     {
-      __uint64_t nr;
-      __uint64_t args[6];
+                   __uint64_t nr;
+                   __uint64_t args[6];
     } entry;
     /* System call return value and error flag, for
-       PTRACE_SYSCALL_INFO_EXIT.  */
+                    PTRACE_SYSCALL_INFO_EXIT.  */
     struct
     {
-      __int64_t rval;
-      __uint8_t is_error;
+                   __int64_t rval;
+                   __uint8_t is_error;
     } exit;
     /* System call number, arguments and SECCOMP_RET_DATA portion of
-       SECCOMP_RET_TRACE return value, for
-       PTRACE_SYSCALL_INFO_SECCOMP.  */
+                    SECCOMP_RET_TRACE return value, for
+                    PTRACE_SYSCALL_INFO_SECCOMP.  */
     struct
     {
-      __uint64_t nr;
-      __uint64_t args[6];
-      __uint32_t ret_data;
+                   __uint64_t nr;
+                   __uint64_t args[6];
+                   __uint32_t ret_data;
     } seccomp;
   };
 };

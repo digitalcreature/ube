@@ -65,21 +65,21 @@ struct virtio_crypto_ctrl_header {
 };
 
 struct virtio_crypto_cipher_session_para {
-#define VIRTIO_CRYPTO_NO_CIPHER                 0
-#define VIRTIO_CRYPTO_CIPHER_ARC4               1
-#define VIRTIO_CRYPTO_CIPHER_AES_ECB            2
-#define VIRTIO_CRYPTO_CIPHER_AES_CBC            3
-#define VIRTIO_CRYPTO_CIPHER_AES_CTR            4
-#define VIRTIO_CRYPTO_CIPHER_DES_ECB            5
-#define VIRTIO_CRYPTO_CIPHER_DES_CBC            6
-#define VIRTIO_CRYPTO_CIPHER_3DES_ECB           7
-#define VIRTIO_CRYPTO_CIPHER_3DES_CBC           8
-#define VIRTIO_CRYPTO_CIPHER_3DES_CTR           9
-#define VIRTIO_CRYPTO_CIPHER_KASUMI_F8          10
-#define VIRTIO_CRYPTO_CIPHER_SNOW3G_UEA2        11
-#define VIRTIO_CRYPTO_CIPHER_AES_F8             12
-#define VIRTIO_CRYPTO_CIPHER_AES_XTS            13
-#define VIRTIO_CRYPTO_CIPHER_ZUC_EEA3           14
+#define VIRTIO_CRYPTO_NO_CIPHER                                           0
+#define VIRTIO_CRYPTO_CIPHER_ARC4                                         1
+#define VIRTIO_CRYPTO_CIPHER_AES_ECB                                      2
+#define VIRTIO_CRYPTO_CIPHER_AES_CBC                                      3
+#define VIRTIO_CRYPTO_CIPHER_AES_CTR                                      4
+#define VIRTIO_CRYPTO_CIPHER_DES_ECB                                      5
+#define VIRTIO_CRYPTO_CIPHER_DES_CBC                                      6
+#define VIRTIO_CRYPTO_CIPHER_3DES_ECB                        7
+#define VIRTIO_CRYPTO_CIPHER_3DES_CBC                        8
+#define VIRTIO_CRYPTO_CIPHER_3DES_CTR                        9
+#define VIRTIO_CRYPTO_CIPHER_KASUMI_F8                       10
+#define VIRTIO_CRYPTO_CIPHER_SNOW3G_UEA2                     11
+#define VIRTIO_CRYPTO_CIPHER_AES_F8                                       12
+#define VIRTIO_CRYPTO_CIPHER_AES_XTS                                      13
+#define VIRTIO_CRYPTO_CIPHER_ZUC_EEA3                        14
 	__le32 algo;
 	/* length of key */
 	__le32 keylen;
@@ -104,19 +104,19 @@ struct virtio_crypto_cipher_session_req {
 };
 
 struct virtio_crypto_hash_session_para {
-#define VIRTIO_CRYPTO_NO_HASH            0
-#define VIRTIO_CRYPTO_HASH_MD5           1
-#define VIRTIO_CRYPTO_HASH_SHA1          2
-#define VIRTIO_CRYPTO_HASH_SHA_224       3
-#define VIRTIO_CRYPTO_HASH_SHA_256       4
-#define VIRTIO_CRYPTO_HASH_SHA_384       5
-#define VIRTIO_CRYPTO_HASH_SHA_512       6
-#define VIRTIO_CRYPTO_HASH_SHA3_224      7
-#define VIRTIO_CRYPTO_HASH_SHA3_256      8
-#define VIRTIO_CRYPTO_HASH_SHA3_384      9
-#define VIRTIO_CRYPTO_HASH_SHA3_512      10
-#define VIRTIO_CRYPTO_HASH_SHA3_SHAKE128      11
-#define VIRTIO_CRYPTO_HASH_SHA3_SHAKE256      12
+#define VIRTIO_CRYPTO_NO_HASH                                      0
+#define VIRTIO_CRYPTO_HASH_MD5                        1
+#define VIRTIO_CRYPTO_HASH_SHA1                       2
+#define VIRTIO_CRYPTO_HASH_SHA_224                    3
+#define VIRTIO_CRYPTO_HASH_SHA_256                    4
+#define VIRTIO_CRYPTO_HASH_SHA_384                    5
+#define VIRTIO_CRYPTO_HASH_SHA_512                    6
+#define VIRTIO_CRYPTO_HASH_SHA3_224                   7
+#define VIRTIO_CRYPTO_HASH_SHA3_256                   8
+#define VIRTIO_CRYPTO_HASH_SHA3_384                   9
+#define VIRTIO_CRYPTO_HASH_SHA3_512                   10
+#define VIRTIO_CRYPTO_HASH_SHA3_SHAKE128                   11
+#define VIRTIO_CRYPTO_HASH_SHA3_SHAKE256                   12
 	__le32 algo;
 	/* hash result length */
 	__le32 hash_result_len;
@@ -129,22 +129,22 @@ struct virtio_crypto_hash_create_session_req {
 };
 
 struct virtio_crypto_mac_session_para {
-#define VIRTIO_CRYPTO_NO_MAC                       0
-#define VIRTIO_CRYPTO_MAC_HMAC_MD5                 1
-#define VIRTIO_CRYPTO_MAC_HMAC_SHA1                2
-#define VIRTIO_CRYPTO_MAC_HMAC_SHA_224             3
-#define VIRTIO_CRYPTO_MAC_HMAC_SHA_256             4
-#define VIRTIO_CRYPTO_MAC_HMAC_SHA_384             5
-#define VIRTIO_CRYPTO_MAC_HMAC_SHA_512             6
-#define VIRTIO_CRYPTO_MAC_CMAC_3DES                25
-#define VIRTIO_CRYPTO_MAC_CMAC_AES                 26
-#define VIRTIO_CRYPTO_MAC_KASUMI_F9                27
-#define VIRTIO_CRYPTO_MAC_SNOW3G_UIA2              28
-#define VIRTIO_CRYPTO_MAC_GMAC_AES                 41
-#define VIRTIO_CRYPTO_MAC_GMAC_TWOFISH             42
-#define VIRTIO_CRYPTO_MAC_CBCMAC_AES               49
-#define VIRTIO_CRYPTO_MAC_CBCMAC_KASUMI_F9         50
-#define VIRTIO_CRYPTO_MAC_XCBC_AES                 53
+#define VIRTIO_CRYPTO_NO_MAC                                                              0
+#define VIRTIO_CRYPTO_MAC_HMAC_MD5                                           1
+#define VIRTIO_CRYPTO_MAC_HMAC_SHA1                                          2
+#define VIRTIO_CRYPTO_MAC_HMAC_SHA_224                                       3
+#define VIRTIO_CRYPTO_MAC_HMAC_SHA_256                                       4
+#define VIRTIO_CRYPTO_MAC_HMAC_SHA_384                                       5
+#define VIRTIO_CRYPTO_MAC_HMAC_SHA_512                                       6
+#define VIRTIO_CRYPTO_MAC_CMAC_3DES                                          25
+#define VIRTIO_CRYPTO_MAC_CMAC_AES                                           26
+#define VIRTIO_CRYPTO_MAC_KASUMI_F9                                          27
+#define VIRTIO_CRYPTO_MAC_SNOW3G_UIA2                                        28
+#define VIRTIO_CRYPTO_MAC_GMAC_AES                                           41
+#define VIRTIO_CRYPTO_MAC_GMAC_TWOFISH                                       42
+#define VIRTIO_CRYPTO_MAC_CBCMAC_AES                                         49
+#define VIRTIO_CRYPTO_MAC_CBCMAC_KASUMI_F9                      50
+#define VIRTIO_CRYPTO_MAC_XCBC_AES                                           53
 	__le32 algo;
 	/* hash result length */
 	__le32 hash_result_len;
@@ -403,8 +403,8 @@ struct virtio_crypto_op_data_req {
 	} u;
 };
 
-#define VIRTIO_CRYPTO_OK        0
-#define VIRTIO_CRYPTO_ERR       1
+#define VIRTIO_CRYPTO_OK                     0
+#define VIRTIO_CRYPTO_ERR                    1
 #define VIRTIO_CRYPTO_BADMSG    2
 #define VIRTIO_CRYPTO_NOTSUPP   3
 #define VIRTIO_CRYPTO_INVSESS   4 /* Invalid session id */

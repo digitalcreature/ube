@@ -11,16 +11,16 @@ roundf (float x)
   float res;
   if (x >= 0.0F)
     {
-      res = ceilf (x);
-      if (res - x > 0.5F)
+                   res = ceilf (x);
+                   if (res - x > 0.5F)
 	res -= 1.0F;
     }
   else
     {
-      res = ceilf (-x);
-      if (res + x > 0.5F)
+                   res = ceilf (-x);
+                   if (res + x > 0.5F)
 	res -= 1.0F;
-      res = -res;
+                   res = -res;
     }
   return res;
 }

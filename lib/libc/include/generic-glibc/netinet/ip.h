@@ -148,7 +148,7 @@ struct ip_timestamp
   };
 #endif /* __USE_MISC */
 
-#define	IPVERSION	4               /* IP version number */
+#define	IPVERSION	4                                         /* IP version number */
 #define	IP_MAXPACKET	65535		/* maximum packet size */
 
 /*
@@ -244,7 +244,7 @@ struct ip_timestamp
 #define	IPOPT_CONTROL		0x00
 #define	IPOPT_RESERVED1		0x20
 #define	IPOPT_DEBMEAS		0x40
-#define	IPOPT_MEASUREMENT       IPOPT_DEBMEAS
+#define	IPOPT_MEASUREMENT                    IPOPT_DEBMEAS
 #define	IPOPT_RESERVED2		0x60
 
 #define	IPOPT_EOL		0		/* end of option list */

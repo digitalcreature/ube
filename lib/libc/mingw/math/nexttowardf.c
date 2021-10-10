@@ -32,8 +32,8 @@ nexttowardf (float x, long double y)
   u.f = x; 
   if (x == 0.0F)
     {
-      u.i = 1;
-      return y > 0.0L ? u.f : -u.f;
+                   u.i = 1;
+                   return y > 0.0L ? u.f : -u.f;
     }
   if (((x > 0.0F) ^ (y > xx)) == 0)
     u.i++;

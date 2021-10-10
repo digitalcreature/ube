@@ -59,7 +59,7 @@ __sparc_get_pc_thunk.reg:		   				\
 
 #define SETUP_PIC_REG_LEAF(reg, tmp)					\
 	SPARC_PIC_THUNK(reg)						\
-	mov	%o7, %##tmp;		      				\
+	mov	%o7, %##tmp;		                   				\
 	SPARC_PIC_THUNK_CALL(reg);					\
 	mov	%##tmp, %o7;
 

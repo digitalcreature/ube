@@ -833,8 +833,8 @@ typedef struct
   Elf32_Sword	d_tag;			/* Dynamic entry type */
   union
     {
-      Elf32_Word d_val;			/* Integer value */
-      Elf32_Addr d_ptr;			/* Address value */
+                   Elf32_Word d_val;			/* Integer value */
+                   Elf32_Addr d_ptr;			/* Address value */
     } d_un;
 } Elf32_Dyn;
 
@@ -843,8 +843,8 @@ typedef struct
   Elf64_Sxword	d_tag;			/* Dynamic entry type */
   union
     {
-      Elf64_Xword d_val;		/* Integer value */
-      Elf64_Addr d_ptr;			/* Address value */
+                   Elf64_Xword d_val;		/* Integer value */
+                   Elf64_Addr d_ptr;			/* Address value */
     } d_un;
 } Elf64_Dyn;
 
@@ -953,8 +953,8 @@ typedef struct
 
 /* Sun added these machine-independent extensions in the "processor-specific"
    range.  Be compatible.  */
-#define DT_AUXILIARY    0x7ffffffd      /* Shared object to load before self */
-#define DT_FILTER       0x7fffffff      /* Shared object to get values from */
+#define DT_AUXILIARY    0x7ffffffd                   /* Shared object to load before self */
+#define DT_FILTER                    0x7fffffff                   /* Shared object to get values from */
 #define DT_EXTRATAGIDX(tag)	((Elf32_Word)-((Elf32_Sword) (tag) <<1>>1)-1)
 #define DT_EXTRANUM	3
 
@@ -995,7 +995,7 @@ typedef struct
 #define	DF_1_SINGLETON	0x02000000	/* Singleton symbols are used.  */
 #define	DF_1_STUB	0x04000000
 #define	DF_1_PIE	0x08000000
-#define	DF_1_KMOD       0x10000000
+#define	DF_1_KMOD                    0x10000000
 #define	DF_1_WEAKFILTER 0x20000000
 #define	DF_1_NOCOMMON   0x40000000
 
@@ -1138,8 +1138,8 @@ typedef struct
   uint32_t a_type;		/* Entry type */
   union
     {
-      uint32_t a_val;		/* Integer value */
-      /* We use to have pointer elements added here.  We cannot do that,
+                   uint32_t a_val;		/* Integer value */
+                   /* We use to have pointer elements added here.  We cannot do that,
 	 though, since it does not work when using 32-bit definitions
 	 on 64-bit platforms and vice versa.  */
     } a_un;
@@ -1150,8 +1150,8 @@ typedef struct
   uint64_t a_type;		/* Entry type */
   union
     {
-      uint64_t a_val;		/* Integer value */
-      /* We use to have pointer elements added here.  We cannot do that,
+                   uint64_t a_val;		/* Integer value */
+                   /* We use to have pointer elements added here.  We cannot do that,
 	 though, since it does not work when using 32-bit definitions
 	 on 64-bit platforms and vice versa.  */
     } a_un;
@@ -1230,7 +1230,7 @@ typedef struct
 #define AT_L3_CACHEGEOMETRY	47
 
 #define AT_MINSIGSTKSZ		51 /* Stack needed for signal delivery
-				      (AArch64).  */
+				                   (AArch64).  */
 
 /* Note section contents.  Each entry in the note section begins with
    a header of a fixed form.  */
@@ -1419,27 +1419,27 @@ typedef struct
 #define R_68K_GLOB_DAT	20		/* Create GOT entry */
 #define R_68K_JMP_SLOT	21		/* Create PLT entry */
 #define R_68K_RELATIVE	22		/* Adjust by program base */
-#define R_68K_TLS_GD32      25          /* 32 bit GOT offset for GD */
-#define R_68K_TLS_GD16      26          /* 16 bit GOT offset for GD */
-#define R_68K_TLS_GD8       27          /* 8 bit GOT offset for GD */
-#define R_68K_TLS_LDM32     28          /* 32 bit GOT offset for LDM */
-#define R_68K_TLS_LDM16     29          /* 16 bit GOT offset for LDM */
-#define R_68K_TLS_LDM8      30          /* 8 bit GOT offset for LDM */
-#define R_68K_TLS_LDO32     31          /* 32 bit module-relative offset */
-#define R_68K_TLS_LDO16     32          /* 16 bit module-relative offset */
-#define R_68K_TLS_LDO8      33          /* 8 bit module-relative offset */
-#define R_68K_TLS_IE32      34          /* 32 bit GOT offset for IE */
-#define R_68K_TLS_IE16      35          /* 16 bit GOT offset for IE */
-#define R_68K_TLS_IE8       36          /* 8 bit GOT offset for IE */
-#define R_68K_TLS_LE32      37          /* 32 bit offset relative to
+#define R_68K_TLS_GD32                   25                       /* 32 bit GOT offset for GD */
+#define R_68K_TLS_GD16                   26                       /* 16 bit GOT offset for GD */
+#define R_68K_TLS_GD8                    27                       /* 8 bit GOT offset for GD */
+#define R_68K_TLS_LDM32     28                       /* 32 bit GOT offset for LDM */
+#define R_68K_TLS_LDM16     29                       /* 16 bit GOT offset for LDM */
+#define R_68K_TLS_LDM8                   30                       /* 8 bit GOT offset for LDM */
+#define R_68K_TLS_LDO32     31                       /* 32 bit module-relative offset */
+#define R_68K_TLS_LDO16     32                       /* 16 bit module-relative offset */
+#define R_68K_TLS_LDO8                   33                       /* 8 bit module-relative offset */
+#define R_68K_TLS_IE32                   34                       /* 32 bit GOT offset for IE */
+#define R_68K_TLS_IE16                   35                       /* 16 bit GOT offset for IE */
+#define R_68K_TLS_IE8                    36                       /* 8 bit GOT offset for IE */
+#define R_68K_TLS_LE32                   37                       /* 32 bit offset relative to
 					   static TLS block */
-#define R_68K_TLS_LE16      38          /* 16 bit offset relative to
+#define R_68K_TLS_LE16                   38                       /* 16 bit offset relative to
 					   static TLS block */
-#define R_68K_TLS_LE8       39          /* 8 bit offset relative to
+#define R_68K_TLS_LE8                    39                       /* 8 bit offset relative to
 					   static TLS block */
-#define R_68K_TLS_DTPMOD32  40          /* 32 bit module number */
-#define R_68K_TLS_DTPREL32  41          /* 32 bit module-relative offset */
-#define R_68K_TLS_TPREL32   42          /* 32 bit TP-relative offset */
+#define R_68K_TLS_DTPMOD32  40                       /* 32 bit module number */
+#define R_68K_TLS_DTPREL32  41                       /* 32 bit module-relative offset */
+#define R_68K_TLS_TPREL32   42                       /* 32 bit TP-relative offset */
 /* Keep this the last entry.  */
 #define R_68K_NUM	43
 
@@ -1755,13 +1755,13 @@ typedef union
 {
   struct
     {
-      Elf32_Word gt_current_g_value;	/* -G value used for compilation.  */
-      Elf32_Word gt_unused;		/* Not used.  */
+                   Elf32_Word gt_current_g_value;	/* -G value used for compilation.  */
+                   Elf32_Word gt_unused;		/* Not used.  */
     } gt_header;			/* First entry in section.  */
   struct
     {
-      Elf32_Word gt_g_value;		/* If this value were used for -G.  */
-      Elf32_Word gt_bytes;		/* This many bytes would be used.  */
+                   Elf32_Word gt_g_value;		/* If this value were used for -G.  */
+                   Elf32_Word gt_bytes;		/* This many bytes would be used.  */
     } gt_entry;				/* Subsequent entries in section.  */
 } Elf32_gptab;
 
@@ -1891,7 +1891,7 @@ typedef struct
 #define R_MIPS_TLS_TPREL_LO16	50	/* TP-relative offset, low 16 bits */
 #define R_MIPS_GLOB_DAT		51
 #define R_MIPS_COPY		126
-#define R_MIPS_JUMP_SLOT        127
+#define R_MIPS_JUMP_SLOT                     127
 /* Keep this the last entry.  */
 #define R_MIPS_NUM		128
 
@@ -1965,7 +1965,7 @@ typedef struct
 /* The base of the PLT in an executable using the new non-PIC ABI if that
    PLT is writable.  For a non-writable PLT, this is omitted or has a zero
    value.  */
-#define DT_MIPS_RWPLT        0x70000034
+#define DT_MIPS_RWPLT                     0x70000034
 /* An alternative description of the classic MIPS RLD_MAP that is usable
    in a PIE as it stores a relative offset from the address of the tag
    rather than an absolute address.  */
@@ -2133,7 +2133,7 @@ enum
 #define EF_PARISC_LSB		0x00040000 /* Program expects little endian. */
 #define EF_PARISC_WIDE		0x00080000 /* Program expects wide mode.  */
 #define EF_PARISC_NO_KABP	0x00100000 /* No kernel assisted branch
-					      prediction.  */
+					                   prediction.  */
 #define EF_PARISC_LAZYSWAP	0x00400000 /* Allow lazy swapping.  */
 #define EF_PARISC_ARCH		0x0000ffff /* Architecture version.  */
 
@@ -2146,7 +2146,7 @@ enum
 /* Additional section indeces.  */
 
 #define SHN_PARISC_ANSI_COMMON	0xff00	   /* Section for tenatively declared
-					      symbols in ANSI C.  */
+					                   symbols in ANSI C.  */
 #define SHN_PARISC_HUGE_COMMON	0xff01	   /* Common blocks in huge model.  */
 
 /* Legal values for sh_type field of Elf32_Shdr.  */
@@ -2717,11 +2717,11 @@ enum
 /* ARM-specific values for sh_flags */
 #define SHF_ARM_ENTRYSECT	0x10000000 /* Section contains an entry point */
 #define SHF_ARM_COMDEF		0x80000000 /* Section may be multiply defined
-					      in the input to a link step.  */
+					                   in the input to a link step.  */
 
 /* ARM-specific program header flags */
 #define PF_ARM_SB		0x10000000 /* Segment contains the location
-					      addressed by the static base. */
+					                   addressed by the static base. */
 #define PF_ARM_PI		0x20000000 /* Position-independent segment.  */
 #define PF_ARM_ABS		0x40000000 /* Absolute segment.  */
 
@@ -2736,7 +2736,7 @@ enum
 
 /* AArch64 relocs.  */
 
-#define R_AARCH64_NONE            0	/* No relocation.  */
+#define R_AARCH64_NONE                                      0	/* No relocation.  */
 
 /* ILP32 AArch64 relocs.  */
 #define R_AARCH64_P32_ABS32		  1	/* Direct 32 bit.  */
@@ -2751,8 +2751,8 @@ enum
 #define R_AARCH64_P32_IRELATIVE		188	/* STT_GNU_IFUNC relocation. */
 
 /* LP64 AArch64 relocs.  */
-#define R_AARCH64_ABS64         257	/* Direct 64 bit. */
-#define R_AARCH64_ABS32         258	/* Direct 32 bit.  */
+#define R_AARCH64_ABS64                      257	/* Direct 64 bit. */
+#define R_AARCH64_ABS32                      258	/* Direct 32 bit.  */
 #define R_AARCH64_ABS16		259	/* Direct 16-bit.  */
 #define R_AARCH64_PREL64	260	/* PC-relative 64-bit.	*/
 #define R_AARCH64_PREL32	261	/* PC-relative 32-bit.	*/
@@ -2864,14 +2864,14 @@ enum
 #define R_AARCH64_TLSLE_LDST128_TPREL_LO12_NC 571 /* Likewise; no check.  */
 #define R_AARCH64_TLSLD_LDST128_DTPREL_LO12 572 /* DTP-rel. LD/ST imm. 11:4. */
 #define R_AARCH64_TLSLD_LDST128_DTPREL_LO12_NC 573 /* Likewise; no check.  */
-#define R_AARCH64_COPY         1024	/* Copy symbol at runtime.  */
+#define R_AARCH64_COPY                      1024	/* Copy symbol at runtime.  */
 #define R_AARCH64_GLOB_DAT     1025	/* Create GOT entry.  */
 #define R_AARCH64_JUMP_SLOT    1026	/* Create PLT entry.  */
 #define R_AARCH64_RELATIVE     1027	/* Adjust by program base.  */
 #define R_AARCH64_TLS_DTPMOD   1028	/* Module number, 64 bit.  */
 #define R_AARCH64_TLS_DTPREL   1029	/* Module-relative offset, 64 bit.  */
 #define R_AARCH64_TLS_TPREL    1030	/* TP-relative offset, 64 bit.  */
-#define R_AARCH64_TLSDESC      1031	/* TLS Descriptor.  */
+#define R_AARCH64_TLSDESC                   1031	/* TLS Descriptor.  */
 #define R_AARCH64_IRELATIVE	1032	/* STT_GNU_IFUNC relocation.  */
 
 /* AArch64 specific values for the Dyn d_tag field.  */
@@ -2899,7 +2899,7 @@ enum
 					   (Thumb16 LDR, ADD, ADR).  */
 #define R_ARM_AMP_VCALL9	12
 #define R_ARM_SWI24		13	/* Obsolete static relocation.  */
-#define R_ARM_TLS_DESC		13      /* Dynamic relocation.  */
+#define R_ARM_TLS_DESC		13                   /* Dynamic relocation.  */
 #define R_ARM_THM_SWI8		14	/* Reserved.  */
 #define R_ARM_XPC25		15	/* Reserved.  */
 #define R_ARM_THM_XPC22		16	/* Reserved.  */
@@ -3050,68 +3050,68 @@ enum
 #define R_ARM_NUM		256
 
 /* C-SKY */
-#define R_CKCORE_NONE               0	/* no reloc */
-#define R_CKCORE_ADDR32             1	/* direct 32 bit (S + A) */
-#define R_CKCORE_PCRELIMM8BY4       2	/* disp ((S + A - P) >> 2) & 0xff   */
-#define R_CKCORE_PCRELIMM11BY2      3	/* disp ((S + A - P) >> 1) & 0x7ff  */
-#define R_CKCORE_PCREL32            5	/* 32-bit rel (S + A - P)           */
+#define R_CKCORE_NONE                                         0	/* no reloc */
+#define R_CKCORE_ADDR32                                       1	/* direct 32 bit (S + A) */
+#define R_CKCORE_PCRELIMM8BY4                    2	/* disp ((S + A - P) >> 2) & 0xff   */
+#define R_CKCORE_PCRELIMM11BY2                   3	/* disp ((S + A - P) >> 1) & 0x7ff  */
+#define R_CKCORE_PCREL32                                      5	/* 32-bit rel (S + A - P)                        */
 #define R_CKCORE_PCRELJSR_IMM11BY2  6	/* disp ((S + A - P) >>1) & 0x7ff   */
-#define R_CKCORE_RELATIVE           9	/* 32 bit adjust program base(B + A)*/
-#define R_CKCORE_COPY               10	/* 32 bit adjust by program base    */
-#define R_CKCORE_GLOB_DAT           11	/* off between got and sym (S)      */
-#define R_CKCORE_JUMP_SLOT          12	/* PLT entry (S) */
-#define R_CKCORE_GOTOFF             13	/* offset to GOT (S + A - GOT)      */
-#define R_CKCORE_GOTPC              14	/* PC offset to GOT (GOT + A - P)   */
-#define R_CKCORE_GOT32              15	/* 32 bit GOT entry (G) */
-#define R_CKCORE_PLT32              16	/* 32 bit PLT entry (G) */
-#define R_CKCORE_ADDRGOT            17	/* GOT entry in GLOB_DAT (GOT + G)  */
-#define R_CKCORE_ADDRPLT            18	/* PLT entry in GLOB_DAT (GOT + G)  */
+#define R_CKCORE_RELATIVE                        9	/* 32 bit adjust program base(B + A)*/
+#define R_CKCORE_COPY                                         10	/* 32 bit adjust by program base    */
+#define R_CKCORE_GLOB_DAT                        11	/* off between got and sym (S)                   */
+#define R_CKCORE_JUMP_SLOT                       12	/* PLT entry (S) */
+#define R_CKCORE_GOTOFF                                       13	/* offset to GOT (S + A - GOT)                   */
+#define R_CKCORE_GOTPC                                        14	/* PC offset to GOT (GOT + A - P)   */
+#define R_CKCORE_GOT32                                        15	/* 32 bit GOT entry (G) */
+#define R_CKCORE_PLT32                                        16	/* 32 bit PLT entry (G) */
+#define R_CKCORE_ADDRGOT                                      17	/* GOT entry in GLOB_DAT (GOT + G)  */
+#define R_CKCORE_ADDRPLT                                      18	/* PLT entry in GLOB_DAT (GOT + G)  */
 #define R_CKCORE_PCREL_IMM26BY2     19	/* ((S + A - P) >> 1) & 0x3ffffff   */
 #define R_CKCORE_PCREL_IMM16BY2     20	/* disp ((S + A - P) >> 1) & 0xffff */
 #define R_CKCORE_PCREL_IMM16BY4     21	/* disp ((S + A - P) >> 2) & 0xffff */
 #define R_CKCORE_PCREL_IMM10BY2     22	/* disp ((S + A - P) >> 1) & 0x3ff  */
 #define R_CKCORE_PCREL_IMM10BY4     23	/* disp ((S + A - P) >> 2) & 0x3ff  */
-#define R_CKCORE_ADDR_HI16          24	/* high & low 16 bit ADDR */
-                                        /* ((S + A) >> 16) & 0xffff */
-#define R_CKCORE_ADDR_LO16          25	/* (S + A) & 0xffff */
-#define R_CKCORE_GOTPC_HI16         26	/* high & low 16 bit GOTPC */
-                                        /* ((GOT + A - P) >> 16) & 0xffff */
-#define R_CKCORE_GOTPC_LO16         27	/* (GOT + A - P) & 0xffff */
-#define R_CKCORE_GOTOFF_HI16        28	/* high & low 16 bit GOTOFF */
-                                        /* ((S + A - GOT) >> 16) & 0xffff */
-#define R_CKCORE_GOTOFF_LO16        29	/* (S + A - GOT) & 0xffff */
-#define R_CKCORE_GOT12              30	/* 12 bit disp GOT entry (G) */
-#define R_CKCORE_GOT_HI16           31	/* high & low 16 bit GOT */
-                                        /* (G >> 16) & 0xffff */
-#define R_CKCORE_GOT_LO16           32	/* (G & 0xffff) */
-#define R_CKCORE_PLT12              33	/* 12 bit disp PLT entry (G) */
-#define R_CKCORE_PLT_HI16           34	/* high & low 16 bit PLT */
-                                        /* (G >> 16) & 0xffff */
-#define R_CKCORE_PLT_LO16           35	/* G & 0xffff */
-#define R_CKCORE_ADDRGOT_HI16       36	/* high & low 16 bit ADDRGOT */
-                                        /* (GOT + G * 4) & 0xffff */
-#define R_CKCORE_ADDRGOT_LO16       37	/* (GOT + G * 4) & 0xffff */
-#define R_CKCORE_ADDRPLT_HI16       38	/* high & low 16 bit ADDRPLT */
-                                        /* ((GOT + G * 4) >> 16) & 0xFFFF */
-#define R_CKCORE_ADDRPLT_LO16       39	/* (GOT+G*4) & 0xffff */
+#define R_CKCORE_ADDR_HI16                       24	/* high & low 16 bit ADDR */
+                                                                                                                      /* ((S + A) >> 16) & 0xffff */
+#define R_CKCORE_ADDR_LO16                       25	/* (S + A) & 0xffff */
+#define R_CKCORE_GOTPC_HI16                      26	/* high & low 16 bit GOTPC */
+                                                                                                                      /* ((GOT + A - P) >> 16) & 0xffff */
+#define R_CKCORE_GOTPC_LO16                      27	/* (GOT + A - P) & 0xffff */
+#define R_CKCORE_GOTOFF_HI16                     28	/* high & low 16 bit GOTOFF */
+                                                                                                                      /* ((S + A - GOT) >> 16) & 0xffff */
+#define R_CKCORE_GOTOFF_LO16                     29	/* (S + A - GOT) & 0xffff */
+#define R_CKCORE_GOT12                                        30	/* 12 bit disp GOT entry (G) */
+#define R_CKCORE_GOT_HI16                        31	/* high & low 16 bit GOT */
+                                                                                                                      /* (G >> 16) & 0xffff */
+#define R_CKCORE_GOT_LO16                        32	/* (G & 0xffff) */
+#define R_CKCORE_PLT12                                        33	/* 12 bit disp PLT entry (G) */
+#define R_CKCORE_PLT_HI16                        34	/* high & low 16 bit PLT */
+                                                                                                                      /* (G >> 16) & 0xffff */
+#define R_CKCORE_PLT_LO16                        35	/* G & 0xffff */
+#define R_CKCORE_ADDRGOT_HI16                    36	/* high & low 16 bit ADDRGOT */
+                                                                                                                      /* (GOT + G * 4) & 0xffff */
+#define R_CKCORE_ADDRGOT_LO16                    37	/* (GOT + G * 4) & 0xffff */
+#define R_CKCORE_ADDRPLT_HI16                    38	/* high & low 16 bit ADDRPLT */
+                                                                                                                      /* ((GOT + G * 4) >> 16) & 0xFFFF */
+#define R_CKCORE_ADDRPLT_LO16                    39	/* (GOT+G*4) & 0xffff */
 #define R_CKCORE_PCREL_JSR_IMM26BY2 40	/* disp ((S+A-P) >>1) & x3ffffff */
-#define R_CKCORE_TOFFSET_LO16       41	/* (S+A-BTEXT) & 0xffff */
-#define R_CKCORE_DOFFSET_LO16       42	/* (S+A-BTEXT) & 0xffff */
+#define R_CKCORE_TOFFSET_LO16                    41	/* (S+A-BTEXT) & 0xffff */
+#define R_CKCORE_DOFFSET_LO16                    42	/* (S+A-BTEXT) & 0xffff */
 #define R_CKCORE_PCREL_IMM18BY2     43	/* disp ((S+A-P) >>1) & 0x3ffff */
-#define R_CKCORE_DOFFSET_IMM18      44	/* disp (S+A-BDATA) & 0x3ffff */
+#define R_CKCORE_DOFFSET_IMM18                   44	/* disp (S+A-BDATA) & 0x3ffff */
 #define R_CKCORE_DOFFSET_IMM18BY2   45	/* disp ((S+A-BDATA)>>1) & 0x3ffff */
 #define R_CKCORE_DOFFSET_IMM18BY4   46	/* disp ((S+A-BDATA)>>2) & 0x3ffff */
-#define R_CKCORE_GOT_IMM18BY4       48	/* disp (G >> 2) */
-#define R_CKCORE_PLT_IMM18BY4       49	/* disp (G >> 2) */
-#define R_CKCORE_PCREL_IMM7BY4      50	/* disp ((S+A-P) >>2) & 0x7f */
-#define R_CKCORE_TLS_LE32           51	/* 32 bit offset to TLS block */
-#define R_CKCORE_TLS_IE32           52
-#define R_CKCORE_TLS_GD32           53
-#define R_CKCORE_TLS_LDM32          54
-#define R_CKCORE_TLS_LDO32          55
-#define R_CKCORE_TLS_DTPMOD32       56
-#define R_CKCORE_TLS_DTPOFF32       57
-#define R_CKCORE_TLS_TPOFF32        58
+#define R_CKCORE_GOT_IMM18BY4                    48	/* disp (G >> 2) */
+#define R_CKCORE_PLT_IMM18BY4                    49	/* disp (G >> 2) */
+#define R_CKCORE_PCREL_IMM7BY4                   50	/* disp ((S+A-P) >>2) & 0x7f */
+#define R_CKCORE_TLS_LE32                        51	/* 32 bit offset to TLS block */
+#define R_CKCORE_TLS_IE32                        52
+#define R_CKCORE_TLS_GD32                        53
+#define R_CKCORE_TLS_LDM32                       54
+#define R_CKCORE_TLS_LDO32                       55
+#define R_CKCORE_TLS_DTPMOD32                    56
+#define R_CKCORE_TLS_DTPOFF32                    57
+#define R_CKCORE_TLS_TPOFF32                     58
 
 /* C-SKY elf header definition.  */
 #define EF_CSKY_ABIMASK		    0XF0000000
@@ -3390,7 +3390,7 @@ enum
 #define R_390_GOTPLT20		59	/* 20 bit offset to jump slot.  */
 #define R_390_TLS_GOTIE20	60	/* 20 bit GOT offset for static TLS
 					   block offset.  */
-#define R_390_IRELATIVE         61      /* STT_GNU_IFUNC relocation.  */
+#define R_390_IRELATIVE                      61                   /* STT_GNU_IFUNC relocation.  */
 /* Keep this the last entry.  */
 #define R_390_NUM		62
 
@@ -3465,7 +3465,7 @@ enum
 #define R_X86_64_GOTPC32_TLSDESC 34	/* GOT offset for TLS descriptor.  */
 #define R_X86_64_TLSDESC_CALL   35	/* Marker for call through TLS
 					   descriptor.  */
-#define R_X86_64_TLSDESC        36	/* TLS descriptor.  */
+#define R_X86_64_TLSDESC                     36	/* TLS descriptor.  */
 #define R_X86_64_IRELATIVE	37	/* Adjust indirectly by program base */
 #define R_X86_64_RELATIVE64	38	/* 64-bit adjust by program base */
 					/* 39 Reserved was R_X86_64_PC32_BND */
@@ -3614,7 +3614,7 @@ enum
 #define R_MICROBLAZE_TLSTPREL32 	29	/* TLS Offset From Thread Pointer. */
 
 /* Legal values for d_tag (dynamic entry type).  */
-#define DT_NIOS2_GP             0x70000002 /* Address of _gp.  */
+#define DT_NIOS2_GP                                       0x70000002 /* Address of _gp.  */
 
 /* Nios II relocations.  */
 #define R_NIOS2_NONE		0	/* No reloc.  */
@@ -4096,7 +4096,7 @@ enum
 #define R_ARC_TLS_DTPOFF	0x43
 #define R_ARC_TLS_TPOFF		0x44
 #define R_ARC_TLS_GD_GOT	0x45
-#define R_ARC_TLS_GD_LD	        0x46
+#define R_ARC_TLS_GD_LD	                     0x46
 #define R_ARC_TLS_GD_CALL	0x47
 #define R_ARC_TLS_IE_GOT	0x48
 #define R_ARC_TLS_DTPOFF_S9	0x4a

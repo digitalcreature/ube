@@ -24,9 +24,9 @@
 
 __BEGIN_DECLS
 
-#define SOL_IPX    256          /* sockopt level */
+#define SOL_IPX    256                       /* sockopt level */
 
-#define IPX_TYPE        1
+#define IPX_TYPE                     1
 #define IPX_NODE_LEN	6
 #define IPX_MTU		576
 

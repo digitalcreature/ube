@@ -54,7 +54,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 struct _LIBCPP_TEMPLATE_VIS __libcpp_debug_info {
   _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
   __libcpp_debug_info()
-      : __file_(nullptr), __line_(-1), __pred_(nullptr), __msg_(nullptr) {}
+                   : __file_(nullptr), __line_(-1), __pred_(nullptr), __msg_(nullptr) {}
   _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
   __libcpp_debug_info(const char* __f, int __l, const char* __p, const char* __m)
     : __file_(__f), __line_(__l), __pred_(__p), __msg_(__m) {}
@@ -104,7 +104,7 @@ public:
 #endif
     _LIBCPP_INLINE_VISIBILITY
     __i_node(void* __i, __i_node* __next, __c_node* __c)
-        : __i_(__i), __next_(__next), __c_(__c) {}
+                     : __i_(__i), __next_(__next), __c_(__c) {}
     ~__i_node();
 };
 
@@ -127,7 +127,7 @@ public:
 #endif
     _LIBCPP_INLINE_VISIBILITY
     __c_node(void* __c, __c_node* __next)
-        : __c_(__c), __next_(__next), beg_(nullptr), end_(nullptr), cap_(nullptr) {}
+                     : __c_(__c), __next_(__next), beg_(nullptr), end_(nullptr), cap_(nullptr) {}
     virtual ~__c_node();
 
     virtual bool __dereferenceable(const void*) const = 0;
@@ -144,7 +144,7 @@ struct _C_node
     : public __c_node
 {
     _C_node(void* __c, __c_node* __n)
-        : __c_node(__c, __n) {}
+                     : __c_node(__c, __n) {}
 
     virtual bool __dereferenceable(const void*) const;
     virtual bool __decrementable(const void*) const;
@@ -226,14 +226,14 @@ public:
 
     template <class _Cont>
     _LIBCPP_INLINE_VISIBILITY static __c_node* __create_C_node(void *__mem, void *__c, __c_node *__next) {
-        return ::new(__mem) _C_node<_Cont>(__c, __next);
+                     return ::new(__mem) _C_node<_Cont>(__c, __next);
     }
 
     template <class _Cont>
     _LIBCPP_INLINE_VISIBILITY
     void __insert_c(_Cont* __c)
     {
-        __insert_c(static_cast<void*>(__c), &__create_C_node<_Cont>);
+                     __insert_c(static_cast<void*>(__c), &__create_C_node<_Cont>);
     }
 
     void __insert_i(void* __i);

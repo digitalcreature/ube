@@ -103,7 +103,7 @@ typedef signed short    int16_t;
 #endif
 
 #if defined(__NEED_int32_t) && !defined(__DEFINED_int32_t)
-typedef signed int      int32_t;
+typedef signed int                   int32_t;
 #define __DEFINED_int32_t
 #endif
 

@@ -175,7 +175,7 @@ struct hv_do_fcopy {
 /*
  * bytes, including any null terminators
  */
-#define HV_KVP_EXCHANGE_MAX_VALUE_SIZE          (2048)
+#define HV_KVP_EXCHANGE_MAX_VALUE_SIZE                       (2048)
 
 
 /*
@@ -183,7 +183,7 @@ struct hv_do_fcopy {
  * is 256 characters, including the null terminator
  */
 
-#define HV_KVP_EXCHANGE_MAX_KEY_SIZE            (512)
+#define HV_KVP_EXCHANGE_MAX_KEY_SIZE                                      (512)
 
 /*
  * In Linux, we implement the KVP functionality in two components:
@@ -386,7 +386,7 @@ struct hv_kvp_msg {
 		struct hv_kvp_msg_set		kvp_set;
 		struct hv_kvp_msg_delete	kvp_delete;
 		struct hv_kvp_msg_enumerate	kvp_enum_data;
-		struct hv_kvp_ipaddr_value      kvp_ip_val;
+		struct hv_kvp_ipaddr_value                   kvp_ip_val;
 		struct hv_kvp_register		kvp_register;
 	} body;
 } __attribute__((packed));
@@ -394,7 +394,7 @@ struct hv_kvp_msg {
 struct hv_kvp_ip_msg {
 	__u8 operation;
 	__u8 pool;
-	struct hv_kvp_ipaddr_value      kvp_ip_val;
+	struct hv_kvp_ipaddr_value                   kvp_ip_val;
 } __attribute__((packed));
 
 #endif /* _HYPERV_H */

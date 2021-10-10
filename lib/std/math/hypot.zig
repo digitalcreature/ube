@@ -23,9 +23,9 @@ const maxInt = std.math.maxInt;
 ///  - hypot(x, nan)    = nan
 pub fn hypot(comptime T: type, x: T, y: T) T {
     return switch (T) {
-        f32 => hypot32(x, y),
-        f64 => hypot64(x, y),
-        else => @compileError("hypot not implemented for " ++ @typeName(T)),
+                     f32 => hypot32(x, y),
+                     f64 => hypot64(x, y),
+                     else => @compileError("hypot not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -36,29 +36,29 @@ fn hypot32(x: f32, y: f32) f32 {
     ux &= maxInt(u32) >> 1;
     uy &= maxInt(u32) >> 1;
     if (ux < uy) {
-        const tmp = ux;
-        ux = uy;
-        uy = tmp;
+                     const tmp = ux;
+                     ux = uy;
+                     uy = tmp;
     }
 
     var xx = @bitCast(f32, ux);
     var yy = @bitCast(f32, uy);
     if (uy == 0xFF << 23) {
-        return yy;
+                     return yy;
     }
     if (ux >= 0xFF << 23 or uy == 0 or ux - uy >= (25 << 23)) {
-        return xx + yy;
+                     return xx + yy;
     }
 
     var z: f32 = 1.0;
     if (ux >= (0x7F + 60) << 23) {
-        z = 0x1.0p90;
-        xx *= 0x1.0p-90;
-        yy *= 0x1.0p-90;
+                     z = 0x1.0p90;
+                     xx *= 0x1.0p-90;
+                     yy *= 0x1.0p-90;
     } else if (uy < (0x7F - 60) << 23) {
-        z = 0x1.0p-90;
-        xx *= 0x1.0p-90;
-        yy *= 0x1.0p-90;
+                     z = 0x1.0p-90;
+                     xx *= 0x1.0p-90;
+                     yy *= 0x1.0p-90;
     }
 
     return z * math.sqrt(@floatCast(f32, @as(f64, x) * x + @as(f64, y) * y));
@@ -80,9 +80,9 @@ fn hypot64(x: f64, y: f64) f64 {
     ux &= maxInt(u64) >> 1;
     uy &= maxInt(u64) >> 1;
     if (ux < uy) {
-        const tmp = ux;
-        ux = uy;
-        uy = tmp;
+                     const tmp = ux;
+                     ux = uy;
+                     uy = tmp;
     }
 
     const ex = ux >> 52;
@@ -92,26 +92,26 @@ fn hypot64(x: f64, y: f64) f64 {
 
     // hypot(inf, nan) == inf
     if (ey == 0x7FF) {
-        return yy;
+                     return yy;
     }
     if (ex == 0x7FF or uy == 0) {
-        return xx;
+                     return xx;
     }
 
     // hypot(x, y) ~= x + y * y / x / 2 with inexact for small y/x
     if (ex - ey > 64) {
-        return xx + yy;
+                     return xx + yy;
     }
 
     var z: f64 = 1;
     if (ex > 0x3FF + 510) {
-        z = 0x1.0p700;
-        xx *= 0x1.0p-700;
-        yy *= 0x1.0p-700;
+                     z = 0x1.0p700;
+                     xx *= 0x1.0p-700;
+                     yy *= 0x1.0p-700;
     } else if (ey < 0x3FF - 450) {
-        z = 0x1.0p-700;
-        xx *= 0x1.0p700;
-        yy *= 0x1.0p700;
+                     z = 0x1.0p-700;
+                     xx *= 0x1.0p700;
+                     yy *= 0x1.0p700;
     }
 
     var hx: f64 = undefined;

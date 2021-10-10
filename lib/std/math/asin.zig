@@ -21,9 +21,9 @@ const expect = std.testing.expect;
 pub fn asin(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => asin32(x),
-        f64 => asin64(x),
-        else => @compileError("asin not implemented for " ++ @typeName(T)),
+                     f32 => asin32(x),
+                     f64 => asin64(x),
+                     else => @compileError("asin not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -46,22 +46,22 @@ fn asin32(x: f32) f32 {
 
     // |x| >= 1
     if (ix >= 0x3F800000) {
-        // |x| >= 1
-        if (ix == 0x3F800000) {
-            return x * pio2 + 0x1.0p-120; // asin(+-1) = +-pi/2 with inexact
-        } else {
-            return math.nan(f32); // asin(|x| > 1) is nan
-        }
+                     // |x| >= 1
+                     if (ix == 0x3F800000) {
+                                      return x * pio2 + 0x1.0p-120; // asin(+-1) = +-pi/2 with inexact
+                     } else {
+                                      return math.nan(f32); // asin(|x| > 1) is nan
+                     }
     }
 
     // |x| < 0.5
     if (ix < 0x3F000000) {
-        // 0x1p-126 <= |x| < 0x1p-12
-        if (ix < 0x39800000 and ix >= 0x00800000) {
-            return x;
-        } else {
-            return x + x * r32(x * x);
-        }
+                     // 0x1p-126 <= |x| < 0x1p-12
+                     if (ix < 0x39800000 and ix >= 0x00800000) {
+                                      return x;
+                     } else {
+                                      return x + x * r32(x * x);
+                     }
     }
 
     // 1 > |x| >= 0.5
@@ -70,9 +70,9 @@ fn asin32(x: f32) f32 {
     const fx = pio2 - 2 * (s + s * r32(z));
 
     if (hx >> 31 != 0) {
-        return -fx;
+                     return -fx;
     } else {
-        return fx;
+                     return fx;
     }
 }
 
@@ -103,24 +103,24 @@ fn asin64(x: f64) f64 {
 
     // |x| >= 1 or nan
     if (ix >= 0x3FF00000) {
-        const lx = @intCast(u32, ux & 0xFFFFFFFF);
+                     const lx = @intCast(u32, ux & 0xFFFFFFFF);
 
-        // asin(1) = +-pi/2 with inexact
-        if ((ix - 0x3FF00000) | lx == 0) {
-            return x * pio2_hi + 0x1.0p-120;
-        } else {
-            return math.nan(f64);
-        }
+                     // asin(1) = +-pi/2 with inexact
+                     if ((ix - 0x3FF00000) | lx == 0) {
+                                      return x * pio2_hi + 0x1.0p-120;
+                     } else {
+                                      return math.nan(f64);
+                     }
     }
 
     // |x| < 0.5
     if (ix < 0x3FE00000) {
-        // if 0x1p-1022 <= |x| < 0x1p-26 avoid raising overflow
-        if (ix < 0x3E500000 and ix >= 0x00100000) {
-            return x;
-        } else {
-            return x + x * r64(x * x);
-        }
+                     // if 0x1p-1022 <= |x| < 0x1p-26 avoid raising overflow
+                     if (ix < 0x3E500000 and ix >= 0x00100000) {
+                                      return x;
+                     } else {
+                                      return x + x * r64(x * x);
+                     }
     }
 
     // 1 > |x| >= 0.5
@@ -131,18 +131,18 @@ fn asin64(x: f64) f64 {
 
     // |x| > 0.975
     if (ix >= 0x3FEF3333) {
-        fx = pio2_hi - 2 * (s + s * r);
+                     fx = pio2_hi - 2 * (s + s * r);
     } else {
-        const jx = @bitCast(u64, s);
-        const df = @bitCast(f64, jx & 0xFFFFFFFF00000000);
-        const c = (z - df * df) / (s + df);
-        fx = 0.5 * pio2_hi - (2 * s * r - (pio2_lo - 2 * c) - (0.5 * pio2_hi - 2 * df));
+                     const jx = @bitCast(u64, s);
+                     const df = @bitCast(f64, jx & 0xFFFFFFFF00000000);
+                     const c = (z - df * df) / (s + df);
+                     fx = 0.5 * pio2_hi - (2 * s * r - (pio2_lo - 2 * c) - (0.5 * pio2_hi - 2 * df));
     }
 
     if (hx >> 31 != 0) {
-        return -fx;
+                     return -fx;
     } else {
-        return fx;
+                     return fx;
     }
 }
 

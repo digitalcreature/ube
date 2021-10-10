@@ -64,7 +64,7 @@
 #define SO_PROTOCOL		38
 #define SO_DOMAIN		39
 
-#define SO_RXQ_OVFL             40
+#define SO_RXQ_OVFL                                       40
 
 #define SO_WIFI_STATUS		41
 #define SCM_WIFI_STATUS	SO_WIFI_STATUS

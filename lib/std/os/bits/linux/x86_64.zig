@@ -535,15 +535,15 @@ pub const kernel_stat = extern struct {
     __unused: [3]isize,
 
     pub fn atime(self: @This()) timespec {
-        return self.atim;
+                     return self.atim;
     }
 
     pub fn mtime(self: @This()) timespec {
-        return self.mtim;
+                     return self.mtim;
     }
 
     pub fn ctime(self: @This()) timespec {
-        return self.ctim;
+                     return self.ctim;
     }
 };
 
@@ -579,12 +579,12 @@ pub const fpstate = extern struct {
     mxcsr: u32,
     mxcr_mask: u32,
     st: [8]extern struct {
-        significand: [4]u16,
-        exponent: u16,
-        padding: [3]u16 = undefined,
+                     significand: [4]u16,
+                     exponent: u16,
+                     padding: [3]u16 = undefined,
     },
     xmm: [16]extern struct {
-        element: [4]u32,
+                     element: [4]u32,
     },
     padding: [24]u32 = undefined,
 };

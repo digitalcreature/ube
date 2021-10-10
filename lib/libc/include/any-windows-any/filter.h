@@ -135,25 +135,25 @@ MIDL_INTERFACE("89bcb740-6119-101a-bcb7-00dd010655af")
 IFilter : public IUnknown
 {
     virtual SCODE STDMETHODCALLTYPE Init(
-        ULONG grfFlags,
-        ULONG cAttributes,
-        const FULLPROPSPEC *aAttributes,
-        ULONG *pFlags) = 0;
+                     ULONG grfFlags,
+                     ULONG cAttributes,
+                     const FULLPROPSPEC *aAttributes,
+                     ULONG *pFlags) = 0;
 
     virtual SCODE STDMETHODCALLTYPE GetChunk(
-        STAT_CHUNK *pStat) = 0;
+                     STAT_CHUNK *pStat) = 0;
 
     virtual SCODE STDMETHODCALLTYPE GetText(
-        ULONG *pcwcBuffer,
-        WCHAR *awcBuffer) = 0;
+                     ULONG *pcwcBuffer,
+                     WCHAR *awcBuffer) = 0;
 
     virtual SCODE STDMETHODCALLTYPE GetValue(
-        PROPVARIANT **ppPropValue) = 0;
+                     PROPVARIANT **ppPropValue) = 0;
 
     virtual SCODE STDMETHODCALLTYPE BindRegion(
-        FILTERREGION origPos,
-        REFIID riid,
-        void **ppunk) = 0;
+                     FILTERREGION origPos,
+                     REFIID riid,
+                     void **ppunk) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -165,42 +165,42 @@ typedef struct IFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFilter *This);
+                     IFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFilter *This);
+                     IFilter *This);
 
     /*** IFilter methods ***/
     SCODE (STDMETHODCALLTYPE *Init)(
-        IFilter *This,
-        ULONG grfFlags,
-        ULONG cAttributes,
-        const FULLPROPSPEC *aAttributes,
-        ULONG *pFlags);
+                     IFilter *This,
+                     ULONG grfFlags,
+                     ULONG cAttributes,
+                     const FULLPROPSPEC *aAttributes,
+                     ULONG *pFlags);
 
     SCODE (STDMETHODCALLTYPE *GetChunk)(
-        IFilter *This,
-        STAT_CHUNK *pStat);
+                     IFilter *This,
+                     STAT_CHUNK *pStat);
 
     SCODE (STDMETHODCALLTYPE *GetText)(
-        IFilter *This,
-        ULONG *pcwcBuffer,
-        WCHAR *awcBuffer);
+                     IFilter *This,
+                     ULONG *pcwcBuffer,
+                     WCHAR *awcBuffer);
 
     SCODE (STDMETHODCALLTYPE *GetValue)(
-        IFilter *This,
-        PROPVARIANT **ppPropValue);
+                     IFilter *This,
+                     PROPVARIANT **ppPropValue);
 
     SCODE (STDMETHODCALLTYPE *BindRegion)(
-        IFilter *This,
-        FILTERREGION origPos,
-        REFIID riid,
-        void **ppunk);
+                     IFilter *This,
+                     FILTERREGION origPos,
+                     REFIID riid,
+                     void **ppunk);
 
     END_INTERFACE
 } IFilterVtbl;
@@ -259,14 +259,14 @@ static FORCEINLINE SCODE IFilter_BindRegion(IFilter* This,FILTERREGION origPos,R
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
 
 /* End additional prototypes */
 

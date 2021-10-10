@@ -27,11 +27,11 @@ struct dim3;
 // PTX output:
 //  mov.u32     %r2, %tid.x;
 
-#define __CUDA_DEVICE_BUILTIN(FIELD, INTRINSIC)                                \
-  __declspec(property(get = __fetch_builtin_##FIELD)) unsigned int FIELD;      \
-  static inline __attribute__((always_inline))                                 \
-      __attribute__((device)) unsigned int __fetch_builtin_##FIELD(void) {     \
-    return INTRINSIC;                                                          \
+#define __CUDA_DEVICE_BUILTIN(FIELD, INTRINSIC)                                                                                                 \
+  __declspec(property(get = __fetch_builtin_##FIELD)) unsigned int FIELD;                   \
+  static inline __attribute__((always_inline))                                                                                                  \
+                   __attribute__((device)) unsigned int __fetch_builtin_##FIELD(void) {     \
+    return INTRINSIC;                                                                                                                                                                               \
   }
 
 #if __cplusplus >= 201103L
@@ -43,9 +43,9 @@ struct dim3;
 // Make sure nobody can create instances of the special variable types.  nvcc
 // also disallows taking address of special variables, so we disable address-of
 // operator as well.
-#define __CUDA_DISALLOW_BUILTINVAR_ACCESS(TypeName)                            \
-  __attribute__((device)) TypeName() __DELETE;                                 \
-  __attribute__((device)) TypeName(const TypeName &) __DELETE;                 \
+#define __CUDA_DISALLOW_BUILTINVAR_ACCESS(TypeName)                                                                                \
+  __attribute__((device)) TypeName() __DELETE;                                                                                                  \
+  __attribute__((device)) TypeName(const TypeName &) __DELETE;                                           \
   __attribute__((device)) void operator=(const TypeName &) const __DELETE;     \
   __attribute__((device)) TypeName *operator&() const __DELETE
 
@@ -93,7 +93,7 @@ private:
   __CUDA_DISALLOW_BUILTINVAR_ACCESS(__cuda_builtin_gridDim_t);
 };
 
-#define __CUDA_BUILTIN_VAR                                                     \
+#define __CUDA_BUILTIN_VAR                                                                                                                                                             \
   extern const __attribute__((device)) __attribute__((weak))
 __CUDA_BUILTIN_VAR __cuda_builtin_threadIdx_t threadIdx;
 __CUDA_BUILTIN_VAR __cuda_builtin_blockIdx_t blockIdx;

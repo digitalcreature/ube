@@ -86,119 +86,119 @@ DEFINE_GUID(DPSPGUID_MODEM, 0x44eaa760, 0xcb68, 0x11cf, 0x9c, 0x4e, 0x0, 0xa0, 0
 #define _FACDP  0x877
 #define MAKE_DPHRESULT( code )    MAKE_HRESULT( 1, _FACDP, code )
 
-#define DP_OK                           S_OK
-#define DPERR_ALREADYINITIALIZED        MAKE_DPHRESULT(   5 )
-#define DPERR_ACCESSDENIED              MAKE_DPHRESULT(  10 )
-#define DPERR_ACTIVEPLAYERS             MAKE_DPHRESULT(  20 )
-#define DPERR_BUFFERTOOSMALL            MAKE_DPHRESULT(  30 )
-#define DPERR_CANTADDPLAYER             MAKE_DPHRESULT(  40 )
-#define DPERR_CANTCREATEGROUP           MAKE_DPHRESULT(  50 )
-#define DPERR_CANTCREATEPLAYER          MAKE_DPHRESULT(  60 )
-#define DPERR_CANTCREATESESSION         MAKE_DPHRESULT(  70 )
-#define DPERR_CAPSNOTAVAILABLEYET       MAKE_DPHRESULT(  80 )
-#define DPERR_EXCEPTION                 MAKE_DPHRESULT(  90 )
-#define DPERR_GENERIC                   E_FAIL
-#define DPERR_INVALIDFLAGS              MAKE_DPHRESULT( 120 )
-#define DPERR_INVALIDOBJECT             MAKE_DPHRESULT( 130 )
-#define DPERR_INVALIDPARAM              E_INVALIDARG
-#define DPERR_INVALIDPARAMS             DPERR_INVALIDPARAM
-#define DPERR_INVALIDPLAYER             MAKE_DPHRESULT( 150 )
-#define DPERR_INVALIDGROUP              MAKE_DPHRESULT( 155 )
-#define DPERR_NOCAPS                    MAKE_DPHRESULT( 160 )
-#define DPERR_NOCONNECTION              MAKE_DPHRESULT( 170 )
-#define DPERR_NOMEMORY                  E_OUTOFMEMORY
-#define DPERR_OUTOFMEMORY               DPERR_NOMEMORY
-#define DPERR_NOMESSAGES                MAKE_DPHRESULT( 190 )
-#define DPERR_NONAMESERVERFOUND         MAKE_DPHRESULT( 200 )
-#define DPERR_NOPLAYERS                 MAKE_DPHRESULT( 210 )
-#define DPERR_NOSESSIONS                MAKE_DPHRESULT( 220 )
-#define DPERR_PENDING                   E_PENDING
-#define DPERR_SENDTOOBIG                MAKE_DPHRESULT( 230 )
-#define DPERR_TIMEOUT                   MAKE_DPHRESULT( 240 )
-#define DPERR_UNAVAILABLE               MAKE_DPHRESULT( 250 )
-#define DPERR_UNSUPPORTED               E_NOTIMPL
-#define DPERR_BUSY                      MAKE_DPHRESULT( 270 )
-#define DPERR_USERCANCEL                MAKE_DPHRESULT( 280 )
-#define DPERR_NOINTERFACE               E_NOINTERFACE
-#define DPERR_CANNOTCREATESERVER        MAKE_DPHRESULT( 290 )
-#define DPERR_PLAYERLOST                MAKE_DPHRESULT( 300 )
-#define DPERR_SESSIONLOST               MAKE_DPHRESULT( 310 )
-#define DPERR_UNINITIALIZED             MAKE_DPHRESULT( 320 )
-#define DPERR_NONEWPLAYERS              MAKE_DPHRESULT( 330 )
-#define DPERR_INVALIDPASSWORD           MAKE_DPHRESULT( 340 )
-#define DPERR_CONNECTING                MAKE_DPHRESULT( 350 )
-#define DPERR_CONNECTIONLOST            MAKE_DPHRESULT( 360 )
-#define DPERR_UNKNOWNMESSAGE            MAKE_DPHRESULT( 370 )
-#define DPERR_CANCELFAILED              MAKE_DPHRESULT( 380 )
-#define DPERR_INVALIDPRIORITY           MAKE_DPHRESULT( 390 )
-#define DPERR_NOTHANDLED                MAKE_DPHRESULT( 400 )
-#define DPERR_CANCELLED                 MAKE_DPHRESULT( 410 )
-#define DPERR_ABORTED                   MAKE_DPHRESULT( 420 )
-#define DPERR_BUFFERTOOLARGE            MAKE_DPHRESULT( 1000 )
-#define DPERR_CANTCREATEPROCESS         MAKE_DPHRESULT( 1010 )
-#define DPERR_APPNOTSTARTED             MAKE_DPHRESULT( 1020 )
-#define DPERR_INVALIDINTERFACE          MAKE_DPHRESULT( 1030 )
-#define DPERR_NOSERVICEPROVIDER         MAKE_DPHRESULT( 1040 )
-#define DPERR_UNKNOWNAPPLICATION        MAKE_DPHRESULT( 1050 )
-#define DPERR_NOTLOBBIED                MAKE_DPHRESULT( 1070 )
+#define DP_OK                                                                               S_OK
+#define DPERR_ALREADYINITIALIZED                     MAKE_DPHRESULT(   5 )
+#define DPERR_ACCESSDENIED                                        MAKE_DPHRESULT(  10 )
+#define DPERR_ACTIVEPLAYERS                                       MAKE_DPHRESULT(  20 )
+#define DPERR_BUFFERTOOSMALL                                      MAKE_DPHRESULT(  30 )
+#define DPERR_CANTADDPLAYER                                       MAKE_DPHRESULT(  40 )
+#define DPERR_CANTCREATEGROUP                        MAKE_DPHRESULT(  50 )
+#define DPERR_CANTCREATEPLAYER                       MAKE_DPHRESULT(  60 )
+#define DPERR_CANTCREATESESSION                      MAKE_DPHRESULT(  70 )
+#define DPERR_CAPSNOTAVAILABLEYET                    MAKE_DPHRESULT(  80 )
+#define DPERR_EXCEPTION                                           MAKE_DPHRESULT(  90 )
+#define DPERR_GENERIC                                                          E_FAIL
+#define DPERR_INVALIDFLAGS                                        MAKE_DPHRESULT( 120 )
+#define DPERR_INVALIDOBJECT                                       MAKE_DPHRESULT( 130 )
+#define DPERR_INVALIDPARAM                                        E_INVALIDARG
+#define DPERR_INVALIDPARAMS                                       DPERR_INVALIDPARAM
+#define DPERR_INVALIDPLAYER                                       MAKE_DPHRESULT( 150 )
+#define DPERR_INVALIDGROUP                                        MAKE_DPHRESULT( 155 )
+#define DPERR_NOCAPS                                                           MAKE_DPHRESULT( 160 )
+#define DPERR_NOCONNECTION                                        MAKE_DPHRESULT( 170 )
+#define DPERR_NOMEMORY                                                         E_OUTOFMEMORY
+#define DPERR_OUTOFMEMORY                                         DPERR_NOMEMORY
+#define DPERR_NOMESSAGES                                          MAKE_DPHRESULT( 190 )
+#define DPERR_NONAMESERVERFOUND                      MAKE_DPHRESULT( 200 )
+#define DPERR_NOPLAYERS                                           MAKE_DPHRESULT( 210 )
+#define DPERR_NOSESSIONS                                          MAKE_DPHRESULT( 220 )
+#define DPERR_PENDING                                                          E_PENDING
+#define DPERR_SENDTOOBIG                                          MAKE_DPHRESULT( 230 )
+#define DPERR_TIMEOUT                                                          MAKE_DPHRESULT( 240 )
+#define DPERR_UNAVAILABLE                                         MAKE_DPHRESULT( 250 )
+#define DPERR_UNSUPPORTED                                         E_NOTIMPL
+#define DPERR_BUSY                                                             MAKE_DPHRESULT( 270 )
+#define DPERR_USERCANCEL                                          MAKE_DPHRESULT( 280 )
+#define DPERR_NOINTERFACE                                         E_NOINTERFACE
+#define DPERR_CANNOTCREATESERVER                     MAKE_DPHRESULT( 290 )
+#define DPERR_PLAYERLOST                                          MAKE_DPHRESULT( 300 )
+#define DPERR_SESSIONLOST                                         MAKE_DPHRESULT( 310 )
+#define DPERR_UNINITIALIZED                                       MAKE_DPHRESULT( 320 )
+#define DPERR_NONEWPLAYERS                                        MAKE_DPHRESULT( 330 )
+#define DPERR_INVALIDPASSWORD                        MAKE_DPHRESULT( 340 )
+#define DPERR_CONNECTING                                          MAKE_DPHRESULT( 350 )
+#define DPERR_CONNECTIONLOST                                      MAKE_DPHRESULT( 360 )
+#define DPERR_UNKNOWNMESSAGE                                      MAKE_DPHRESULT( 370 )
+#define DPERR_CANCELFAILED                                        MAKE_DPHRESULT( 380 )
+#define DPERR_INVALIDPRIORITY                        MAKE_DPHRESULT( 390 )
+#define DPERR_NOTHANDLED                                          MAKE_DPHRESULT( 400 )
+#define DPERR_CANCELLED                                           MAKE_DPHRESULT( 410 )
+#define DPERR_ABORTED                                                          MAKE_DPHRESULT( 420 )
+#define DPERR_BUFFERTOOLARGE                                      MAKE_DPHRESULT( 1000 )
+#define DPERR_CANTCREATEPROCESS                      MAKE_DPHRESULT( 1010 )
+#define DPERR_APPNOTSTARTED                                       MAKE_DPHRESULT( 1020 )
+#define DPERR_INVALIDINTERFACE                       MAKE_DPHRESULT( 1030 )
+#define DPERR_NOSERVICEPROVIDER                      MAKE_DPHRESULT( 1040 )
+#define DPERR_UNKNOWNAPPLICATION                     MAKE_DPHRESULT( 1050 )
+#define DPERR_NOTLOBBIED                                          MAKE_DPHRESULT( 1070 )
 #define DPERR_SERVICEPROVIDERLOADED     MAKE_DPHRESULT( 1080 )
-#define DPERR_ALREADYREGISTERED         MAKE_DPHRESULT( 1090 )
-#define DPERR_NOTREGISTERED             MAKE_DPHRESULT( 1100 )
-#define DPERR_AUTHENTICATIONFAILED      MAKE_DPHRESULT( 2000 )
-#define DPERR_CANTLOADSSPI              MAKE_DPHRESULT( 2010 )
-#define DPERR_ENCRYPTIONFAILED          MAKE_DPHRESULT( 2020 )
-#define DPERR_SIGNFAILED                MAKE_DPHRESULT( 2030 )
+#define DPERR_ALREADYREGISTERED                      MAKE_DPHRESULT( 1090 )
+#define DPERR_NOTREGISTERED                                       MAKE_DPHRESULT( 1100 )
+#define DPERR_AUTHENTICATIONFAILED                   MAKE_DPHRESULT( 2000 )
+#define DPERR_CANTLOADSSPI                                        MAKE_DPHRESULT( 2010 )
+#define DPERR_ENCRYPTIONFAILED                       MAKE_DPHRESULT( 2020 )
+#define DPERR_SIGNFAILED                                          MAKE_DPHRESULT( 2030 )
 #define DPERR_CANTLOADSECURITYPACKAGE   MAKE_DPHRESULT( 2040 )
 #define DPERR_ENCRYPTIONNOTSUPPORTED    MAKE_DPHRESULT( 2050 )
-#define DPERR_CANTLOADCAPI              MAKE_DPHRESULT( 2060 )
-#define DPERR_NOTLOGGEDIN               MAKE_DPHRESULT( 2070 )
-#define DPERR_LOGONDENIED               MAKE_DPHRESULT( 2080 )
+#define DPERR_CANTLOADCAPI                                        MAKE_DPHRESULT( 2060 )
+#define DPERR_NOTLOGGEDIN                                         MAKE_DPHRESULT( 2070 )
+#define DPERR_LOGONDENIED                                         MAKE_DPHRESULT( 2080 )
 
 
 /* DPID - DirectPlay player and group ID */
 typedef DWORD DPID, *LPDPID;
 
 /* DPID from whence originate messages - just an ID */
-#define DPID_SYSMSG             0           /* DPID of system */
-#define DPID_ALLPLAYERS         0           /* DPID of all players */
-#define DPID_SERVERPLAYER       1           /* DPID of the server player */
-#define DPID_UNKNOWN            0xFFFFFFFF  /* Player ID is unknown */
+#define DPID_SYSMSG                                       0                        /* DPID of system */
+#define DPID_ALLPLAYERS                      0                        /* DPID of all players */
+#define DPID_SERVERPLAYER                    1                        /* DPID of the server player */
+#define DPID_UNKNOWN                                      0xFFFFFFFF  /* Player ID is unknown */
 
 /*  DPCAPS -  Used to obtain the capabilities of a DirectPlay object */
 typedef struct tagDPCAPS
 {
-    DWORD dwSize;               /* Size of structure in bytes */
+    DWORD dwSize;                                         /* Size of structure in bytes */
     DWORD dwFlags;
     DWORD dwMaxBufferSize;
-    DWORD dwMaxQueueSize;       /* Obsolete. */
-    DWORD dwMaxPlayers;         /* Maximum players/groups (local + remote) */
-    DWORD dwHundredBaud;        /* Bandwidth in 100 bits per second units;
-                                 * i.e. 24 is 2400, 96 is 9600, etc.
-                                 */
-    DWORD dwLatency;            /* Estimated latency; 0 = unknown */
+    DWORD dwMaxQueueSize;                    /* Obsolete. */
+    DWORD dwMaxPlayers;                      /* Maximum players/groups (local + remote) */
+    DWORD dwHundredBaud;                     /* Bandwidth in 100 bits per second units;
+                                                                                                  * i.e. 24 is 2400, 96 is 9600, etc.
+                                                                                                  */
+    DWORD dwLatency;                                      /* Estimated latency; 0 = unknown */
     DWORD dwMaxLocalPlayers;    /* Maximum # of locally created players */
-    DWORD dwHeaderLength;       /* Maximum header length in bytes */
-    DWORD dwTimeout;            /* Service provider's suggested timeout value
-                                 * This is how long DirectPlay will wait for
-                                 * responses to system messages
-                                 */
+    DWORD dwHeaderLength;                    /* Maximum header length in bytes */
+    DWORD dwTimeout;                                      /* Service provider's suggested timeout value
+                                                                                                  * This is how long DirectPlay will wait for
+                                                                                                  * responses to system messages
+                                                                                                  */
 } DPCAPS, *LPDPCAPS;
 
 typedef struct tagDPNAME
 {
     DWORD   dwSize;
-    DWORD   dwFlags;            /* Not used must be 0 */
+    DWORD   dwFlags;                                      /* Not used must be 0 */
 
-    union /*playerShortName */      /* Player's Handle? */
+    union /*playerShortName */                   /* Player's Handle? */
     {
-        LPWSTR  lpszShortName;
-        LPSTR   lpszShortNameA;
+                     LPWSTR  lpszShortName;
+                     LPSTR   lpszShortNameA;
     } DUMMYUNIONNAME1;
 
-    union /*playerLongName */       /* Player's formal/real name */
+    union /*playerLongName */                    /* Player's formal/real name */
     {
-        LPWSTR  lpszLongName;
-        LPSTR   lpszLongNameA;
+                     LPWSTR  lpszLongName;
+                     LPSTR   lpszLongNameA;
     } DUMMYUNIONNAME2;
 
 } DPNAME, *LPDPNAME;
@@ -234,61 +234,61 @@ typedef struct tagDPSESSIONDESC2
     DWORD   dwFlags;
     GUID    guidInstance;
     GUID    guidApplication;   /* GUID of the DP application, GUID_NULL if
-                                * all applications! */
+                                                                                                 * all applications! */
 
     DWORD   dwMaxPlayers;
     DWORD   dwCurrentPlayers;   /* (read only value) */
 
     union  /* Session name */
     {
-        LPWSTR  lpszSessionName;
-        LPSTR   lpszSessionNameA;
+                     LPWSTR  lpszSessionName;
+                     LPSTR   lpszSessionNameA;
     } DUMMYUNIONNAME1;
 
     union  /* Optional password */
     {
-        LPWSTR  lpszPassword;
-        LPSTR   lpszPasswordA;
+                     LPWSTR  lpszPassword;
+                     LPSTR   lpszPasswordA;
     } DUMMYUNIONNAME2;
 
     DWORD   dwReserved1;
     DWORD   dwReserved2;
 
-    DWORD   dwUser1;        /* For use by the application */
+    DWORD   dwUser1;                     /* For use by the application */
     DWORD   dwUser2;
     DWORD   dwUser3;
     DWORD   dwUser4;
 } DPSESSIONDESC2, *LPDPSESSIONDESC2;
 typedef const DPSESSIONDESC2* LPCDPSESSIONDESC2;
 
-#define DPOPEN_JOIN                     0x00000001
-#define DPOPEN_CREATE                   0x00000002
-#define DPOPEN_RETURNSTATUS             DPENUMSESSIONS_RETURNSTATUS
+#define DPOPEN_JOIN                                                            0x00000001
+#define DPOPEN_CREATE                                                          0x00000002
+#define DPOPEN_RETURNSTATUS                                       DPENUMSESSIONS_RETURNSTATUS
 
 #define DPSESSION_NEWPLAYERSDISABLED    0x00000001
-#define DPSESSION_MIGRATEHOST           0x00000004
-#define DPSESSION_NOMESSAGEID           0x00000008
-#define DPSESSION_JOINDISABLED          0x00000020
-#define DPSESSION_KEEPALIVE             0x00000040
-#define DPSESSION_NODATAMESSAGES        0x00000080
-#define DPSESSION_SECURESERVER          0x00000100
-#define DPSESSION_PRIVATE               0x00000200
-#define DPSESSION_PASSWORDREQUIRED      0x00000400
-#define DPSESSION_MULTICASTSERVER       0x00000800
-#define DPSESSION_CLIENTSERVER          0x00001000
+#define DPSESSION_MIGRATEHOST                        0x00000004
+#define DPSESSION_NOMESSAGEID                        0x00000008
+#define DPSESSION_JOINDISABLED                       0x00000020
+#define DPSESSION_KEEPALIVE                                       0x00000040
+#define DPSESSION_NODATAMESSAGES                     0x00000080
+#define DPSESSION_SECURESERVER                       0x00000100
+#define DPSESSION_PRIVATE                                         0x00000200
+#define DPSESSION_PASSWORDREQUIRED                   0x00000400
+#define DPSESSION_MULTICASTSERVER                    0x00000800
+#define DPSESSION_CLIENTSERVER                       0x00001000
 #define DPSESSION_DIRECTPLAYPROTOCOL    0x00002000
-#define DPSESSION_NOPRESERVEORDER       0x00004000
-#define DPSESSION_OPTIMIZELATENCY       0x00008000
+#define DPSESSION_NOPRESERVEORDER                    0x00004000
+#define DPSESSION_OPTIMIZELATENCY                    0x00008000
 
 typedef struct tagDPLCONNECTION
 {
-    DWORD               dwSize;
-    DWORD               dwFlags;
+    DWORD                                         dwSize;
+    DWORD                                         dwFlags;
     LPDPSESSIONDESC2    lpSessionDesc;  /* Ptr to session desc to use for connect */
-    LPDPNAME            lpPlayerName;   /* Ptr to player name structure */
-    GUID                guidSP;         /* GUID of Service Provider to use */
-    LPVOID              lpAddress;      /* Ptr to Address of Service Provider to use */
-    DWORD               dwAddressSize;  /* Size of address data */
+    LPDPNAME                                      lpPlayerName;   /* Ptr to player name structure */
+    GUID                                          guidSP;                      /* GUID of Service Provider to use */
+    LPVOID                                        lpAddress;                   /* Ptr to Address of Service Provider to use */
+    DWORD                                         dwAddressSize;  /* Size of address data */
 } DPLCONNECTION, *LPDPLCONNECTION;
 
 /* DPLCONNECTION flags (for dwFlags) */
@@ -297,12 +297,12 @@ typedef struct tagDPLCONNECTION
 
 typedef struct tagDPCHAT
 {
-    DWORD               dwSize;
-    DWORD               dwFlags;
+    DWORD                                         dwSize;
+    DWORD                                         dwFlags;
     union
-    {                          /* Message string */
-        LPWSTR  lpszMessage;   /* Unicode */
-        LPSTR   lpszMessageA;  /* ANSI */
+    {                                                                              /* Message string */
+                     LPWSTR  lpszMessage;   /* Unicode */
+                     LPSTR   lpszMessageA;  /* ANSI */
     } DUMMYUNIONNAME;
 } DPCHAT, *LPDPCHAT;
 
@@ -315,19 +315,19 @@ typedef struct
 
 typedef struct tagDPSECURITYDESC
 {
-    DWORD dwSize;                   /* Size of structure */
-    DWORD dwFlags;                  /* Not used. Must be zero. */
+    DWORD dwSize;                                                          /* Size of structure */
+    DWORD dwFlags;                                                         /* Not used. Must be zero. */
     union
-    {                               /* SSPI provider name */
-        LPWSTR  lpszSSPIProvider;   /* Unicode */
-        LPSTR   lpszSSPIProviderA;  /* ANSI */
+    {                                                                                                /* SSPI provider name */
+                     LPWSTR  lpszSSPIProvider;   /* Unicode */
+                     LPSTR   lpszSSPIProviderA;  /* ANSI */
     } DUMMYUNIONNAME1;
     union
-    {                               /* CAPI provider name */
-        LPWSTR lpszCAPIProvider;    /* Unicode */
-        LPSTR  lpszCAPIProviderA;   /* ANSI */
+    {                                                                                                /* CAPI provider name */
+                     LPWSTR lpszCAPIProvider;    /* Unicode */
+                     LPSTR  lpszCAPIProviderA;   /* ANSI */
     } DUMMYUNIONNAME2;
-    DWORD dwCAPIProviderType;       /* Crypto Service Provider type */
+    DWORD dwCAPIProviderType;                    /* Crypto Service Provider type */
     DWORD dwEncryptionAlgorithm;    /* Encryption Algorithm type */
 } DPSECURITYDESC, *LPDPSECURITYDESC;
 
@@ -339,8 +339,8 @@ typedef struct
     DWORD dwFlags;
     union
     {
-        LPWSTR  lpszAccountID;
-        LPSTR   lpszAccountIDA;
+                     LPWSTR  lpszAccountID;
+                     LPSTR   lpszAccountIDA;
     } DUMMYUNIONNAME;
 } DPACCOUNTDESC, *LPDPACCOUNTDESC;
 
@@ -348,22 +348,22 @@ typedef const DPACCOUNTDESC *LPCDPACCOUNTDESC;
 
 typedef struct tagDPCREDENTIALS
 {
-    DWORD dwSize;               /* Size of structure */
-    DWORD dwFlags;              /* Not used. Must be zero. */
+    DWORD dwSize;                                         /* Size of structure */
+    DWORD dwFlags;                                        /* Not used. Must be zero. */
     union
-    {                           /* User name of the account */
-        LPWSTR  lpszUsername;   /* Unicode */
-        LPSTR   lpszUsernameA;  /* ANSI */
+    {                                                                               /* User name of the account */
+                     LPWSTR  lpszUsername;   /* Unicode */
+                     LPSTR   lpszUsernameA;  /* ANSI */
     } DUMMYUNIONNAME1;
     union
-    {                           /* Password of the account */
-        LPWSTR  lpszPassword;   /* Unicode */
-        LPSTR   lpszPasswordA;  /* ANSI */
+    {                                                                               /* Password of the account */
+                     LPWSTR  lpszPassword;   /* Unicode */
+                     LPSTR   lpszPasswordA;  /* ANSI */
     } DUMMYUNIONNAME2;
     union
-    {                           /* Domain name of the account */
-        LPWSTR  lpszDomain;     /* Unicode */
-        LPSTR   lpszDomainA;    /* ANSI */
+    {                                                                               /* Domain name of the account */
+                     LPWSTR  lpszDomain;     /* Unicode */
+                     LPSTR   lpszDomainA;    /* ANSI */
     } DUMMYUNIONNAME3;
 } DPCREDENTIALS, *LPDPCREDENTIALS;
 
@@ -372,18 +372,18 @@ typedef const DPCREDENTIALS *LPCDPCREDENTIALS;
 
 
 typedef WINBOOL (CALLBACK *LPDPENUMDPCALLBACKW)(
-    LPGUID      lpguidSP,
-    LPWSTR      lpSPName,
-    DWORD       dwMajorVersion,
-    DWORD       dwMinorVersion,
-    LPVOID      lpContext);
+    LPGUID                   lpguidSP,
+    LPWSTR                   lpSPName,
+    DWORD                    dwMajorVersion,
+    DWORD                    dwMinorVersion,
+    LPVOID                   lpContext);
 
 typedef WINBOOL (CALLBACK *LPDPENUMDPCALLBACKA)(
-    LPGUID      lpguidSP,
-    LPSTR       lpSPName,       /* ptr to str w/ driver description */
-    DWORD       dwMajorVersion, /* Major # of driver spec in lpguidSP */
-    DWORD       dwMinorVersion, /* Minor # of driver spec in lpguidSP */
-    LPVOID      lpContext);     /* User given */
+    LPGUID                   lpguidSP,
+    LPSTR                    lpSPName,                    /* ptr to str w/ driver description */
+    DWORD                    dwMajorVersion, /* Major # of driver spec in lpguidSP */
+    DWORD                    dwMinorVersion, /* Minor # of driver spec in lpguidSP */
+    LPVOID                   lpContext);     /* User given */
 
 #ifndef __LPCGUID_DEFINED__
 #define __LPCGUID_DEFINED__
@@ -394,17 +394,17 @@ typedef const DPNAME *LPCDPNAME;
 
 typedef WINBOOL (CALLBACK *LPDPENUMCONNECTIONSCALLBACK)(
     LPCGUID     lpguidSP,
-    LPVOID      lpConnection,
-    DWORD       dwConnectionSize,
+    LPVOID                   lpConnection,
+    DWORD                    dwConnectionSize,
     LPCDPNAME   lpName,
-    DWORD       dwFlags,
-    LPVOID      lpContext);
+    DWORD                    dwFlags,
+    LPVOID                   lpContext);
 
 typedef WINBOOL (CALLBACK *LPDPENUMSESSIONSCALLBACK)(
     LPDPSESSIONDESC lpDPSessionDesc,
-    LPVOID      lpContext,
+    LPVOID                   lpContext,
     LPDWORD     lpdwTimeOut,
-    DWORD       dwFlags);
+    DWORD                    dwFlags);
 
 
 extern HRESULT WINAPI DirectPlayEnumerateA( LPDPENUMDPCALLBACKA, LPVOID );
@@ -416,22 +416,22 @@ typedef WINBOOL (CALLBACK *LPDPENUMPLAYERSCALLBACK)(
     LPSTR  lpFriendlyName,
     LPSTR  lpFormalName,
     DWORD  dwFlags,
-    LPVOID          lpContext );
+    LPVOID                       lpContext );
 
 typedef WINBOOL (CALLBACK *LPDPENUMPLAYERSCALLBACK2)(
-    DPID            dpId,
-    DWORD           dwPlayerType,
-    LPCDPNAME       lpName,
-    DWORD           dwFlags,
-    LPVOID          lpContext );
+    DPID                                      dpId,
+    DWORD                        dwPlayerType,
+    LPCDPNAME                    lpName,
+    DWORD                        dwFlags,
+    LPVOID                       lpContext );
 
 typedef WINBOOL (CALLBACK *LPDPENUMSESSIONSCALLBACK2)(
     LPCDPSESSIONDESC2   lpThisSD,
-    LPDWORD             lpdwTimeOut,
-    DWORD               dwFlags,
-    LPVOID              lpContext );
+    LPDWORD                                       lpdwTimeOut,
+    DWORD                                         dwFlags,
+    LPVOID                                        lpContext );
 
-#define DPESC_TIMEDOUT          0x00000001
+#define DPESC_TIMEDOUT                       0x00000001
 
 /*****************************************************************************
  * IDirectPlay interface
@@ -472,59 +472,59 @@ DECLARE_INTERFACE_(IDirectPlay,IUnknown)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectPlay_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectPlay_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectPlay_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectPlay_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectPlay_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectPlay methods ***/
-#define IDirectPlay_AddPlayerToGroup(p,a,b)      (p)->lpVtbl->AddPlayerToGroup(p,a,b)
-#define IDirectPlay_Close(p)                     (p)->lpVtbl->Close(p)
-#define IDirectPlay_CreatePlayer(p,a,b,c,d)      (p)->lpVtbl->CreatePlayer(p,a,b,c,d)
-#define IDirectPlay_CreateGroup(p,a,b,c)         (p)->lpVtbl->CreateGroup(p,a,b,c)
+#define IDirectPlay_AddPlayerToGroup(p,a,b)                   (p)->lpVtbl->AddPlayerToGroup(p,a,b)
+#define IDirectPlay_Close(p)                                                            (p)->lpVtbl->Close(p)
+#define IDirectPlay_CreatePlayer(p,a,b,c,d)                   (p)->lpVtbl->CreatePlayer(p,a,b,c,d)
+#define IDirectPlay_CreateGroup(p,a,b,c)                      (p)->lpVtbl->CreateGroup(p,a,b,c)
 #define IDirectPlay_DeletePlayerFromGroup(p,a,b) (p)->lpVtbl->DeletePlayerFromGroup(p,a,b)
-#define IDirectPlay_DestroyPlayer(p,a)           (p)->lpVtbl->DestroyPlayer(p,a)
-#define IDirectPlay_DestroyGroup(p,a)            (p)->lpVtbl->DestroyGroup(p,a)
-#define IDirectPlay_EnableNewPlayers(p,a)        (p)->lpVtbl->EnableNewPlayers(p,a)
+#define IDirectPlay_DestroyPlayer(p,a)                        (p)->lpVtbl->DestroyPlayer(p,a)
+#define IDirectPlay_DestroyGroup(p,a)                                      (p)->lpVtbl->DestroyGroup(p,a)
+#define IDirectPlay_EnableNewPlayers(p,a)                     (p)->lpVtbl->EnableNewPlayers(p,a)
 #define IDirectPlay_EnumGroupPlayers(p,a,b,c,d)  (p)->lpVtbl->EnumGroupPlayers(p,a,b,c,d)
-#define IDirectPlay_EnumGroups(p,a,b,c,d)        (p)->lpVtbl->EnumGroups(p,a,b,c,d)
-#define IDirectPlay_EnumPlayers(p,a,b,c,d)       (p)->lpVtbl->EnumPlayers(p,a,b,c,d)
+#define IDirectPlay_EnumGroups(p,a,b,c,d)                     (p)->lpVtbl->EnumGroups(p,a,b,c,d)
+#define IDirectPlay_EnumPlayers(p,a,b,c,d)                    (p)->lpVtbl->EnumPlayers(p,a,b,c,d)
 #define IDirectPlay_EnumSessions(p,a,b,c,d,e)    (p)->lpVtbl->EnumSessions(p,a,b,c,d,e)
-#define IDirectPlay_GetCaps(p,a)                 (p)->lpVtbl->GetCaps(p,a)
-#define IDirectPlay_GetMessageCount(p,a,b)       (p)->lpVtbl->GetMessageCount(p,a,b)
-#define IDirectPlay_GetPlayerCaps(p,a,b)         (p)->lpVtbl->GetPlayerCaps(p,a,b)
+#define IDirectPlay_GetCaps(p,a)                                           (p)->lpVtbl->GetCaps(p,a)
+#define IDirectPlay_GetMessageCount(p,a,b)                    (p)->lpVtbl->GetMessageCount(p,a,b)
+#define IDirectPlay_GetPlayerCaps(p,a,b)                      (p)->lpVtbl->GetPlayerCaps(p,a,b)
 #define IDirectPlay_GetPlayerName(p,a,b,c,d,e)   (p)->lpVtbl->GetPlayerName(p,a,b,c,d,e)
-#define IDirectPlay_Initialize(p,a)              (p)->lpVtbl->Initialize(p,a)
-#define IDirectPlay_Open(p,a)                    (p)->lpVtbl->Open(p,a)
-#define IDirectPlay_Receive(p,a,b,c,d,e)         (p)->lpVtbl->Receive(p,a,b,c,d,e)
-#define IDirectPlay_SaveSession(p,a)             (p)->lpVtbl->SaveSession(p,a)
-#define IDirectPlay_Send(p,a,b,c,d,e)            (p)->lpVtbl->Send(p,a,b,c,d,e)
-#define IDirectPlay_SetPlayerName(p,a,b,c)       (p)->lpVtbl->SetPlayerName(p,a,b,c)
+#define IDirectPlay_Initialize(p,a)                                        (p)->lpVtbl->Initialize(p,a)
+#define IDirectPlay_Open(p,a)                                                           (p)->lpVtbl->Open(p,a)
+#define IDirectPlay_Receive(p,a,b,c,d,e)                      (p)->lpVtbl->Receive(p,a,b,c,d,e)
+#define IDirectPlay_SaveSession(p,a)                                       (p)->lpVtbl->SaveSession(p,a)
+#define IDirectPlay_Send(p,a,b,c,d,e)                                      (p)->lpVtbl->Send(p,a,b,c,d,e)
+#define IDirectPlay_SetPlayerName(p,a,b,c)                    (p)->lpVtbl->SetPlayerName(p,a,b,c)
 #else
 /*** IUnknown methods ***/
 #define IDirectPlay_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectPlay_AddRef(p)             (p)->AddRef()
-#define IDirectPlay_Release(p)            (p)->Release()
+#define IDirectPlay_AddRef(p)                                       (p)->AddRef()
+#define IDirectPlay_Release(p)                                      (p)->Release()
 /*** IDirectPlay methods ***/
-#define IDirectPlay_AddPlayerToGroup(p,a,b)      (p)->AddPlayerToGroup(a,b)
-#define IDirectPlay_Close(p)                     (p)->Close()
-#define IDirectPlay_CreatePlayer(p,a,b,c,d)      (p)->CreatePlayer(a,b,c,d)
-#define IDirectPlay_CreateGroup(p,a,b,c)         (p)->CreateGroup(a,b,c)
+#define IDirectPlay_AddPlayerToGroup(p,a,b)                   (p)->AddPlayerToGroup(a,b)
+#define IDirectPlay_Close(p)                                                            (p)->Close()
+#define IDirectPlay_CreatePlayer(p,a,b,c,d)                   (p)->CreatePlayer(a,b,c,d)
+#define IDirectPlay_CreateGroup(p,a,b,c)                      (p)->CreateGroup(a,b,c)
 #define IDirectPlay_DeletePlayerFromGroup(p,a,b) (p)->DeletePlayerFromGroup(a,b)
-#define IDirectPlay_DestroyPlayer(p,a)           (p)->DestroyPlayer(a)
-#define IDirectPlay_DestroyGroup(p,a)            (p)->DestroyGroup(a)
-#define IDirectPlay_EnableNewPlayers(p,a)        (p)->EnableNewPlayers(a)
+#define IDirectPlay_DestroyPlayer(p,a)                        (p)->DestroyPlayer(a)
+#define IDirectPlay_DestroyGroup(p,a)                                      (p)->DestroyGroup(a)
+#define IDirectPlay_EnableNewPlayers(p,a)                     (p)->EnableNewPlayers(a)
 #define IDirectPlay_EnumGroupPlayers(p,a,b,c,d)  (p)->EnumGroupPlayers(a,b,c,d)
-#define IDirectPlay_EnumGroups(p,a,b,c,d)        (p)->EnumGroups(a,b,c,d)
-#define IDirectPlay_EnumPlayers(p,a,b,c,d)       (p)->EnumPlayers(a,b,c,d)
+#define IDirectPlay_EnumGroups(p,a,b,c,d)                     (p)->EnumGroups(a,b,c,d)
+#define IDirectPlay_EnumPlayers(p,a,b,c,d)                    (p)->EnumPlayers(a,b,c,d)
 #define IDirectPlay_EnumSessions(p,a,b,c,d,e)    (p)->EnumSessions(a,b,c,d,e)
-#define IDirectPlay_GetCaps(p,a)                 (p)->GetCaps(a)
-#define IDirectPlay_GetMessageCount(p,a,b)       (p)->GetMessageCount(a,b)
-#define IDirectPlay_GetPlayerCaps(p,a,b)         (p)->GetPlayerCaps(a,b)
+#define IDirectPlay_GetCaps(p,a)                                           (p)->GetCaps(a)
+#define IDirectPlay_GetMessageCount(p,a,b)                    (p)->GetMessageCount(a,b)
+#define IDirectPlay_GetPlayerCaps(p,a,b)                      (p)->GetPlayerCaps(a,b)
 #define IDirectPlay_GetPlayerName(p,a,b,c,d,e)   (p)->GetPlayerName(a,b,c,d,e)
-#define IDirectPlay_Initialize(p,a)              (p)->Initialize(a)
-#define IDirectPlay_Open(p,a)                    (p)->Open(a)
-#define IDirectPlay_Receive(p,a,b,c,d,e)         (p)->Receive(a,b,c,d,e)
-#define IDirectPlay_SaveSession(p,a)             (p)->SaveSession(a)
-#define IDirectPlay_Send(p,a,b,c,d,e)            (p)->Send(a,b,c,d,e)
-#define IDirectPlay_SetPlayerName(p,a,b,c)       (p)->SetPlayerName(a,b,c)
+#define IDirectPlay_Initialize(p,a)                                        (p)->Initialize(a)
+#define IDirectPlay_Open(p,a)                                                           (p)->Open(a)
+#define IDirectPlay_Receive(p,a,b,c,d,e)                      (p)->Receive(a,b,c,d,e)
+#define IDirectPlay_SaveSession(p,a)                                       (p)->SaveSession(a)
+#define IDirectPlay_Send(p,a,b,c,d,e)                                      (p)->Send(a,b,c,d,e)
+#define IDirectPlay_SetPlayerName(p,a,b,c)                    (p)->SetPlayerName(a,b,c)
 #endif
 
 
@@ -574,73 +574,73 @@ DECLARE_INTERFACE_(IDirectPlay2,IUnknown)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectPlay2_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectPlay2_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectPlay2_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectPlay2_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectPlay2_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectPlay2 methods ***/
-#define IDirectPlay2_AddPlayerToGroup(p,a,b)       (p)->lpVtbl->AddPlayerToGroup(p,a,b)
-#define IDirectPlay2_Close(p)                      (p)->lpVtbl->Close(p)
-#define IDirectPlay2_CreateGroup(p,a,b,c,d,e)      (p)->lpVtbl->CreateGroup(p,a,b,c,d,e)
+#define IDirectPlay2_AddPlayerToGroup(p,a,b)                    (p)->lpVtbl->AddPlayerToGroup(p,a,b)
+#define IDirectPlay2_Close(p)                                                             (p)->lpVtbl->Close(p)
+#define IDirectPlay2_CreateGroup(p,a,b,c,d,e)                   (p)->lpVtbl->CreateGroup(p,a,b,c,d,e)
 #define IDirectPlay2_CreatePlayer(p,a,b,c,d,e,f)   (p)->lpVtbl->CreatePlayer(p,a,b,c,d,e,f)
 #define IDirectPlay2_DeletePlayerFromGroup(p,a,b)  (p)->lpVtbl->DeletePlayerFromGroup(p,a,b)
-#define IDirectPlay2_DestroyGroup(p,a)             (p)->lpVtbl->DestroyGroup(p,a)
-#define IDirectPlay2_DestroyPlayer(p,a)            (p)->lpVtbl->DestroyPlayer(p,a)
+#define IDirectPlay2_DestroyGroup(p,a)                                       (p)->lpVtbl->DestroyGroup(p,a)
+#define IDirectPlay2_DestroyPlayer(p,a)                                      (p)->lpVtbl->DestroyPlayer(p,a)
 #define IDirectPlay2_EnumGroupPlayers(p,a,b,c,d,e) (p)->lpVtbl->EnumGroupPlayers(p,a,b,c,d,e)
-#define IDirectPlay2_EnumGroups(p,a,b,c,d)         (p)->lpVtbl->EnumGroups(p,a,b,c,d)
-#define IDirectPlay2_EnumPlayers(p,a,b,c,d)        (p)->lpVtbl->EnumPlayers(p,a,b,c,d)
+#define IDirectPlay2_EnumGroups(p,a,b,c,d)                      (p)->lpVtbl->EnumGroups(p,a,b,c,d)
+#define IDirectPlay2_EnumPlayers(p,a,b,c,d)                     (p)->lpVtbl->EnumPlayers(p,a,b,c,d)
 #define IDirectPlay2_EnumSessions(p,a,b,c,d,e)     (p)->lpVtbl->EnumSessions(p,a,b,c,d,e)
-#define IDirectPlay2_GetCaps(p,a,b)                (p)->lpVtbl->GetCaps(p,a,b)
-#define IDirectPlay2_GetGroupData(p,a,b,c,d)       (p)->lpVtbl->GetGroupData(p,a,b,c,d)
-#define IDirectPlay2_GetGroupName(p,a,b,c)         (p)->lpVtbl->GetGroupName(p,a,b,c)
-#define IDirectPlay2_GetMessageCount(p,a,b)        (p)->lpVtbl->GetMessageCount(p,a,b)
+#define IDirectPlay2_GetCaps(p,a,b)                                          (p)->lpVtbl->GetCaps(p,a,b)
+#define IDirectPlay2_GetGroupData(p,a,b,c,d)                    (p)->lpVtbl->GetGroupData(p,a,b,c,d)
+#define IDirectPlay2_GetGroupName(p,a,b,c)                      (p)->lpVtbl->GetGroupName(p,a,b,c)
+#define IDirectPlay2_GetMessageCount(p,a,b)                     (p)->lpVtbl->GetMessageCount(p,a,b)
 #define IDirectPlay2_GetPlayerAddress(p,a,b,c)     (p)->lpVtbl->GetPlayerAddress(p,a,b,c)
-#define IDirectPlay2_GetPlayerCaps(p,a,b,c)        (p)->lpVtbl->GetPlayerCaps(p,a,b,c)
-#define IDirectPlay2_GetPlayerData(p,a,b,c,d)      (p)->lpVtbl->GetPlayerData(p,a,b,c,d)
-#define IDirectPlay2_GetPlayerName(p,a,b,c)        (p)->lpVtbl->GetPlayerName(p,a,b,c)
-#define IDirectPlay2_GetSessionDesc(p,a,b)         (p)->lpVtbl->GetSessionDesc(p,a,b)
-#define IDirectPlay2_Initialize(p,a)               (p)->lpVtbl->Initialize(p,a)
-#define IDirectPlay2_Open(p,a,b)                   (p)->lpVtbl->Open(p,a,b)
-#define IDirectPlay2_Receive(p,a,b,c,d,e)          (p)->lpVtbl->Receive(p,a,b,c,d,e)
-#define IDirectPlay2_Send(p,a,b,c,d,e)             (p)->lpVtbl->Send(p,a,b,c,d,e)
-#define IDirectPlay2_SetGroupData(p,a,b,c,d)       (p)->lpVtbl->SetGroupData(p,a,b,c,d)
-#define IDirectPlay2_SetGroupName(p,a,b,c)         (p)->lpVtbl->SetGroupName(p,a,b,c)
-#define IDirectPlay2_SetPlayerData(p,a,b,c,d)      (p)->lpVtbl->SetPlayerData(p,a,b,c,d)
-#define IDirectPlay2_SetPlayerName(p,a,b,c)        (p)->lpVtbl->SetPlayerName(p,a,b,c)
-#define IDirectPlay2_SetSessionDesc(p,a,b)         (p)->lpVtbl->SetSessionDesc(p,a,b)
+#define IDirectPlay2_GetPlayerCaps(p,a,b,c)                     (p)->lpVtbl->GetPlayerCaps(p,a,b,c)
+#define IDirectPlay2_GetPlayerData(p,a,b,c,d)                   (p)->lpVtbl->GetPlayerData(p,a,b,c,d)
+#define IDirectPlay2_GetPlayerName(p,a,b,c)                     (p)->lpVtbl->GetPlayerName(p,a,b,c)
+#define IDirectPlay2_GetSessionDesc(p,a,b)                      (p)->lpVtbl->GetSessionDesc(p,a,b)
+#define IDirectPlay2_Initialize(p,a)                                         (p)->lpVtbl->Initialize(p,a)
+#define IDirectPlay2_Open(p,a,b)                                                          (p)->lpVtbl->Open(p,a,b)
+#define IDirectPlay2_Receive(p,a,b,c,d,e)                       (p)->lpVtbl->Receive(p,a,b,c,d,e)
+#define IDirectPlay2_Send(p,a,b,c,d,e)                                       (p)->lpVtbl->Send(p,a,b,c,d,e)
+#define IDirectPlay2_SetGroupData(p,a,b,c,d)                    (p)->lpVtbl->SetGroupData(p,a,b,c,d)
+#define IDirectPlay2_SetGroupName(p,a,b,c)                      (p)->lpVtbl->SetGroupName(p,a,b,c)
+#define IDirectPlay2_SetPlayerData(p,a,b,c,d)                   (p)->lpVtbl->SetPlayerData(p,a,b,c,d)
+#define IDirectPlay2_SetPlayerName(p,a,b,c)                     (p)->lpVtbl->SetPlayerName(p,a,b,c)
+#define IDirectPlay2_SetSessionDesc(p,a,b)                      (p)->lpVtbl->SetSessionDesc(p,a,b)
 #else
 /*** IUnknown methods ***/
 #define IDirectPlay2_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectPlay2_AddRef(p)             (p)->AddRef()
-#define IDirectPlay2_Release(p)            (p)->Release()
+#define IDirectPlay2_AddRef(p)                                       (p)->AddRef()
+#define IDirectPlay2_Release(p)                                      (p)->Release()
 /*** IDirectPlay2 methods ***/
-#define IDirectPlay2_AddPlayerToGroup(p,a,b)       (p)->AddPlayerToGroup(a,b)
-#define IDirectPlay2_Close(p)                      (p)->Close()
-#define IDirectPlay2_CreateGroup(p,a,b,c,d,e)      (p)->CreateGroup(a,b,c,d,e)
+#define IDirectPlay2_AddPlayerToGroup(p,a,b)                    (p)->AddPlayerToGroup(a,b)
+#define IDirectPlay2_Close(p)                                                             (p)->Close()
+#define IDirectPlay2_CreateGroup(p,a,b,c,d,e)                   (p)->CreateGroup(a,b,c,d,e)
 #define IDirectPlay2_CreatePlayer(p,a,b,c,d,e,f)   (p)->CreatePlayer(a,b,c,d,e,f)
 #define IDirectPlay2_DeletePlayerFromGroup(p,a,b)  (p)->DeletePlayerFromGroup(a,b)
-#define IDirectPlay2_DestroyGroup(p,a)             (p)->DestroyGroup(a)
-#define IDirectPlay2_DestroyPlayer(p,a)            (p)->DestroyPlayer(a)
+#define IDirectPlay2_DestroyGroup(p,a)                                       (p)->DestroyGroup(a)
+#define IDirectPlay2_DestroyPlayer(p,a)                                      (p)->DestroyPlayer(a)
 #define IDirectPlay2_EnumGroupPlayers(p,a,b,c,d,e) (p)->EnumGroupPlayers(a,b,c,d,e)
-#define IDirectPlay2_EnumGroups(p,a,b,c,d)         (p)->EnumGroups(a,b,c,d)
-#define IDirectPlay2_EnumPlayers(p,a,b,c,d)        (p)->EnumPlayers(a,b,c,d)
+#define IDirectPlay2_EnumGroups(p,a,b,c,d)                      (p)->EnumGroups(a,b,c,d)
+#define IDirectPlay2_EnumPlayers(p,a,b,c,d)                     (p)->EnumPlayers(a,b,c,d)
 #define IDirectPlay2_EnumSessions(p,a,b,c,d,e)     (p)->EnumSessions(a,b,c,d,e)
-#define IDirectPlay2_GetCaps(p,a,b)                (p)->GetCaps(a,b)
-#define IDirectPlay2_GetGroupData(p,a,b,c,d)       (p)->GetGroupData(a,b,c,d)
-#define IDirectPlay2_GetGroupName(p,a,b,c)         (p)->GetGroupName(a,b,c)
-#define IDirectPlay2_GetMessageCount(p,a,b)        (p)->GetMessageCount(a,b)
+#define IDirectPlay2_GetCaps(p,a,b)                                          (p)->GetCaps(a,b)
+#define IDirectPlay2_GetGroupData(p,a,b,c,d)                    (p)->GetGroupData(a,b,c,d)
+#define IDirectPlay2_GetGroupName(p,a,b,c)                      (p)->GetGroupName(a,b,c)
+#define IDirectPlay2_GetMessageCount(p,a,b)                     (p)->GetMessageCount(a,b)
 #define IDirectPlay2_GetPlayerAddress(p,a,b,c)     (p)->GetPlayerAddress(a,b,c)
-#define IDirectPlay2_GetPlayerCaps(p,a,b,c)        (p)->GetPlayerCaps(a,b,c)
-#define IDirectPlay2_GetPlayerData(p,a,b,c,d)      (p)->GetPlayerData(a,b,c,d)
-#define IDirectPlay2_GetPlayerName(p,a,b,c)        (p)->GetPlayerName(a,b,c)
-#define IDirectPlay2_GetSessionDesc(p,a,b)         (p)->GetSessionDesc(a,b)
-#define IDirectPlay2_Initialize(p,a)               (p)->Initialize(a)
-#define IDirectPlay2_Open(p,a,b)                   (p)->Open(a,b)
-#define IDirectPlay2_Receive(p,a,b,c,d,e)          (p)->Receive(a,b,c,d,e)
-#define IDirectPlay2_Send(p,a,b,c,d,e)             (p)->Send(a,b,c,d,e)
-#define IDirectPlay2_SetGroupData(p,a,b,c,d)       (p)->SetGroupData(a,b,c,d)
-#define IDirectPlay2_SetGroupName(p,a,b,c)         (p)->SetGroupName(a,b,c)
-#define IDirectPlay2_SetPlayerData(p,a,b,c,d)      (p)->SetPlayerData(a,b,c,d)
-#define IDirectPlay2_SetPlayerName(p,a,b,c)        (p)->SetPlayerName(a,b,c)
-#define IDirectPlay2_SetSessionDesc(p,a,b)         (p)->SetSessionDesc(a,b)
+#define IDirectPlay2_GetPlayerCaps(p,a,b,c)                     (p)->GetPlayerCaps(a,b,c)
+#define IDirectPlay2_GetPlayerData(p,a,b,c,d)                   (p)->GetPlayerData(a,b,c,d)
+#define IDirectPlay2_GetPlayerName(p,a,b,c)                     (p)->GetPlayerName(a,b,c)
+#define IDirectPlay2_GetSessionDesc(p,a,b)                      (p)->GetSessionDesc(a,b)
+#define IDirectPlay2_Initialize(p,a)                                         (p)->Initialize(a)
+#define IDirectPlay2_Open(p,a,b)                                                          (p)->Open(a,b)
+#define IDirectPlay2_Receive(p,a,b,c,d,e)                       (p)->Receive(a,b,c,d,e)
+#define IDirectPlay2_Send(p,a,b,c,d,e)                                       (p)->Send(a,b,c,d,e)
+#define IDirectPlay2_SetGroupData(p,a,b,c,d)                    (p)->SetGroupData(a,b,c,d)
+#define IDirectPlay2_SetGroupName(p,a,b,c)                      (p)->SetGroupName(a,b,c)
+#define IDirectPlay2_SetPlayerData(p,a,b,c,d)                   (p)->SetPlayerData(a,b,c,d)
+#define IDirectPlay2_SetPlayerName(p,a,b,c)                     (p)->SetPlayerName(a,b,c)
+#define IDirectPlay2_SetSessionDesc(p,a,b)                      (p)->SetSessionDesc(a,b)
 #endif
 
 
@@ -706,105 +706,105 @@ DECLARE_INTERFACE_(IDirectPlay3,IDirectPlay2)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectPlay3_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectPlay3_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectPlay3_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectPlay3_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectPlay3_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectPlay2 methods ***/
-#define IDirectPlay3_AddPlayerToGroup(p,a,b)       (p)->lpVtbl->AddPlayerToGroup(p,a,b)
-#define IDirectPlay3_Close(p)                      (p)->lpVtbl->Close(p)
-#define IDirectPlay3_CreateGroup(p,a,b,c,d,e)      (p)->lpVtbl->CreateGroup(p,a,b,c,d,e)
+#define IDirectPlay3_AddPlayerToGroup(p,a,b)                    (p)->lpVtbl->AddPlayerToGroup(p,a,b)
+#define IDirectPlay3_Close(p)                                                             (p)->lpVtbl->Close(p)
+#define IDirectPlay3_CreateGroup(p,a,b,c,d,e)                   (p)->lpVtbl->CreateGroup(p,a,b,c,d,e)
 #define IDirectPlay3_CreatePlayer(p,a,b,c,d,e,f)   (p)->lpVtbl->CreatePlayer(p,a,b,c,d,e,f)
 #define IDirectPlay3_DeletePlayerFromGroup(p,a,b)  (p)->lpVtbl->DeletePlayerFromGroup(p,a,b)
-#define IDirectPlay3_DestroyGroup(p,a)             (p)->lpVtbl->DestroyGroup(p,a)
-#define IDirectPlay3_DestroyPlayer(p,a)            (p)->lpVtbl->DestroyPlayer(p,a)
+#define IDirectPlay3_DestroyGroup(p,a)                                       (p)->lpVtbl->DestroyGroup(p,a)
+#define IDirectPlay3_DestroyPlayer(p,a)                                      (p)->lpVtbl->DestroyPlayer(p,a)
 #define IDirectPlay3_EnumGroupPlayers(p,a,b,c,d,e) (p)->lpVtbl->EnumGroupPlayers(p,a,b,c,d,e)
-#define IDirectPlay3_EnumGroups(p,a,b,c,d)         (p)->lpVtbl->EnumGroups(p,a,b,c,d)
-#define IDirectPlay3_EnumPlayers(p,a,b,c,d)        (p)->lpVtbl->EnumPlayers(p,a,b,c,d)
+#define IDirectPlay3_EnumGroups(p,a,b,c,d)                      (p)->lpVtbl->EnumGroups(p,a,b,c,d)
+#define IDirectPlay3_EnumPlayers(p,a,b,c,d)                     (p)->lpVtbl->EnumPlayers(p,a,b,c,d)
 #define IDirectPlay3_EnumSessions(p,a,b,c,d,e)     (p)->lpVtbl->EnumSessions(p,a,b,c,d,e)
-#define IDirectPlay3_GetCaps(p,a,b)                (p)->lpVtbl->GetCaps(p,a,b)
-#define IDirectPlay3_GetGroupData(p,a,b,c,d)       (p)->lpVtbl->GetGroupData(p,a,b,c,d)
-#define IDirectPlay3_GetGroupName(p,a,b,c)         (p)->lpVtbl->GetGroupName(p,a,b,c)
-#define IDirectPlay3_GetMessageCount(p,a,b)        (p)->lpVtbl->GetMessageCount(p,a,b)
+#define IDirectPlay3_GetCaps(p,a,b)                                          (p)->lpVtbl->GetCaps(p,a,b)
+#define IDirectPlay3_GetGroupData(p,a,b,c,d)                    (p)->lpVtbl->GetGroupData(p,a,b,c,d)
+#define IDirectPlay3_GetGroupName(p,a,b,c)                      (p)->lpVtbl->GetGroupName(p,a,b,c)
+#define IDirectPlay3_GetMessageCount(p,a,b)                     (p)->lpVtbl->GetMessageCount(p,a,b)
 #define IDirectPlay3_GetPlayerAddress(p,a,b,c)     (p)->lpVtbl->GetPlayerAddress(p,a,b,c)
-#define IDirectPlay3_GetPlayerCaps(p,a,b,c)        (p)->lpVtbl->GetPlayerCaps(p,a,b,c)
-#define IDirectPlay3_GetPlayerData(p,a,b,c,d)      (p)->lpVtbl->GetPlayerData(p,a,b,c,d)
-#define IDirectPlay3_GetPlayerName(p,a,b,c)        (p)->lpVtbl->GetPlayerName(p,a,b,c)
-#define IDirectPlay3_GetSessionDesc(p,a,b)         (p)->lpVtbl->GetSessionDesc(p,a,b)
-#define IDirectPlay3_Initialize(p,a)               (p)->lpVtbl->Initialize(p,a)
-#define IDirectPlay3_Open(p,a,b)                   (p)->lpVtbl->Open(p,a,b)
-#define IDirectPlay3_Receive(p,a,b,c,d,e)          (p)->lpVtbl->Receive(p,a,b,c,d,e)
-#define IDirectPlay3_Send(p,a,b,c,d,e)             (p)->lpVtbl->Send(p,a,b,c,d,e)
-#define IDirectPlay3_SetGroupData(p,a,b,c,d)       (p)->lpVtbl->SetGroupData(p,a,b,c,d)
-#define IDirectPlay3_SetGroupName(p,a,b,c)         (p)->lpVtbl->SetGroupName(p,a,b,c)
-#define IDirectPlay3_SetPlayerData(p,a,b,c,d)      (p)->lpVtbl->SetPlayerData(p,a,b,c,d)
-#define IDirectPlay3_SetPlayerName(p,a,b,c)        (p)->lpVtbl->SetPlayerName(p,a,b,c)
-#define IDirectPlay3_SetSessionDesc(p,a,b)         (p)->lpVtbl->SetSessionDesc(p,a,b)
+#define IDirectPlay3_GetPlayerCaps(p,a,b,c)                     (p)->lpVtbl->GetPlayerCaps(p,a,b,c)
+#define IDirectPlay3_GetPlayerData(p,a,b,c,d)                   (p)->lpVtbl->GetPlayerData(p,a,b,c,d)
+#define IDirectPlay3_GetPlayerName(p,a,b,c)                     (p)->lpVtbl->GetPlayerName(p,a,b,c)
+#define IDirectPlay3_GetSessionDesc(p,a,b)                      (p)->lpVtbl->GetSessionDesc(p,a,b)
+#define IDirectPlay3_Initialize(p,a)                                         (p)->lpVtbl->Initialize(p,a)
+#define IDirectPlay3_Open(p,a,b)                                                          (p)->lpVtbl->Open(p,a,b)
+#define IDirectPlay3_Receive(p,a,b,c,d,e)                       (p)->lpVtbl->Receive(p,a,b,c,d,e)
+#define IDirectPlay3_Send(p,a,b,c,d,e)                                       (p)->lpVtbl->Send(p,a,b,c,d,e)
+#define IDirectPlay3_SetGroupData(p,a,b,c,d)                    (p)->lpVtbl->SetGroupData(p,a,b,c,d)
+#define IDirectPlay3_SetGroupName(p,a,b,c)                      (p)->lpVtbl->SetGroupName(p,a,b,c)
+#define IDirectPlay3_SetPlayerData(p,a,b,c,d)                   (p)->lpVtbl->SetPlayerData(p,a,b,c,d)
+#define IDirectPlay3_SetPlayerName(p,a,b,c)                     (p)->lpVtbl->SetPlayerName(p,a,b,c)
+#define IDirectPlay3_SetSessionDesc(p,a,b)                      (p)->lpVtbl->SetSessionDesc(p,a,b)
 /*** IDirectPlay3 methods ***/
-#define IDirectPlay3_AddGroupToGroup(p,a,b)                (p)->lpVtbl->AddGroupToGroup(p,a,b)
+#define IDirectPlay3_AddGroupToGroup(p,a,b)                                          (p)->lpVtbl->AddGroupToGroup(p,a,b)
 #define IDirectPlay3_CreateGroupInGroup(p,a,b,c,d,e,f)     (p)->lpVtbl->CreateGroupInGroup(p,a,b,c,d,e,f)
-#define IDirectPlay3_DeleteGroupFromGroup(p,a,b)           (p)->lpVtbl->DeleteGroupFromGroup(p,a,b)
-#define IDirectPlay3_EnumConnections(p,a,b,c,d)            (p)->lpVtbl->EnumConnections(p,a,b,c,d)
-#define IDirectPlay3_EnumGroupsInGroup(p,a,b,c,d,e)        (p)->lpVtbl->EnumGroupsInGroup(p,a,b,c,d,e)
+#define IDirectPlay3_DeleteGroupFromGroup(p,a,b)                        (p)->lpVtbl->DeleteGroupFromGroup(p,a,b)
+#define IDirectPlay3_EnumConnections(p,a,b,c,d)                                      (p)->lpVtbl->EnumConnections(p,a,b,c,d)
+#define IDirectPlay3_EnumGroupsInGroup(p,a,b,c,d,e)                     (p)->lpVtbl->EnumGroupsInGroup(p,a,b,c,d,e)
 #define IDirectPlay3_GetGroupConnectionSettings(p,a,b,c,d) (p)->lpVtbl->GetGroupConnectionSettings(p,a,b,c,d)
-#define IDirectPlay3_InitializeConnection(p,a,b)           (p)->lpVtbl->InitializeConnection(p,a,b)
-#define IDirectPlay3_SecureOpen(p,a,b,c,d)                 (p)->lpVtbl->SecureOpen(p,a,b,c,d)
-#define IDirectPlay3_SendChatMessage(p,a,b,c,d)            (p)->lpVtbl->SendChatMessage(p,a,b,c,d)
+#define IDirectPlay3_InitializeConnection(p,a,b)                        (p)->lpVtbl->InitializeConnection(p,a,b)
+#define IDirectPlay3_SecureOpen(p,a,b,c,d)                                           (p)->lpVtbl->SecureOpen(p,a,b,c,d)
+#define IDirectPlay3_SendChatMessage(p,a,b,c,d)                                      (p)->lpVtbl->SendChatMessage(p,a,b,c,d)
 #define IDirectPlay3_SetGroupConnectionSettings(p,a,b,c)   (p)->lpVtbl->SetGroupConnectionSettings(p,a,b,c)
-#define IDirectPlay3_StartSession(p,a,b)                   (p)->lpVtbl->StartSession(p,a,b)
-#define IDirectPlay3_GetGroupFlags(p,a,b)                  (p)->lpVtbl->GetGroupFlags(p,a,b)
-#define IDirectPlay3_GetGroupParent(p,a,b)                 (p)->lpVtbl->GetGroupParent(p,a,b)
-#define IDirectPlay3_GetPlayerAccount(p,a,b,c,d)           (p)->lpVtbl->GetPlayerAccount(p,a,b,c,d)
-#define IDirectPlay3_GetPlayerFlags(p,a,b)                 (p)->lpVtbl->GetPlayerFlags(p,a,b)
+#define IDirectPlay3_StartSession(p,a,b)                                                          (p)->lpVtbl->StartSession(p,a,b)
+#define IDirectPlay3_GetGroupFlags(p,a,b)                                                         (p)->lpVtbl->GetGroupFlags(p,a,b)
+#define IDirectPlay3_GetGroupParent(p,a,b)                                           (p)->lpVtbl->GetGroupParent(p,a,b)
+#define IDirectPlay3_GetPlayerAccount(p,a,b,c,d)                        (p)->lpVtbl->GetPlayerAccount(p,a,b,c,d)
+#define IDirectPlay3_GetPlayerFlags(p,a,b)                                           (p)->lpVtbl->GetPlayerFlags(p,a,b)
 #else
 /*** IUnknown methods ***/
 #define IDirectPlay3_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectPlay3_AddRef(p)             (p)->AddRef()
-#define IDirectPlay3_Release(p)            (p)->Release()
+#define IDirectPlay3_AddRef(p)                                       (p)->AddRef()
+#define IDirectPlay3_Release(p)                                      (p)->Release()
 /*** IDirectPlay2 methods ***/
-#define IDirectPlay3_AddPlayerToGroup(p,a,b)       (p)->AddPlayerToGroup(a,b)
-#define IDirectPlay3_Close(p)                      (p)->Close()
-#define IDirectPlay3_CreateGroup(p,a,b,c,d,e)      (p)->CreateGroup(a,b,c,d,e)
+#define IDirectPlay3_AddPlayerToGroup(p,a,b)                    (p)->AddPlayerToGroup(a,b)
+#define IDirectPlay3_Close(p)                                                             (p)->Close()
+#define IDirectPlay3_CreateGroup(p,a,b,c,d,e)                   (p)->CreateGroup(a,b,c,d,e)
 #define IDirectPlay3_CreatePlayer(p,a,b,c,d,e,f)   (p)->CreatePlayer(a,b,c,d,e,f)
 #define IDirectPlay3_DeletePlayerFromGroup(p,a,b)  (p)->DeletePlayerFromGroup(a,b)
-#define IDirectPlay3_DestroyGroup(p,a)             (p)->DestroyGroup(a)
-#define IDirectPlay3_DestroyPlayer(p,a)            (p)->DestroyPlayer(a)
+#define IDirectPlay3_DestroyGroup(p,a)                                       (p)->DestroyGroup(a)
+#define IDirectPlay3_DestroyPlayer(p,a)                                      (p)->DestroyPlayer(a)
 #define IDirectPlay3_EnumGroupPlayers(p,a,b,c,d,e) (p)->EnumGroupPlayers(a,b,c,d,e)
-#define IDirectPlay3_EnumGroups(p,a,b,c,d)         (p)->EnumGroups(a,b,c,d)
-#define IDirectPlay3_EnumPlayers(p,a,b,c,d)        (p)->EnumPlayers(a,b,c,d)
+#define IDirectPlay3_EnumGroups(p,a,b,c,d)                      (p)->EnumGroups(a,b,c,d)
+#define IDirectPlay3_EnumPlayers(p,a,b,c,d)                     (p)->EnumPlayers(a,b,c,d)
 #define IDirectPlay3_EnumSessions(p,a,b,c,d,e)     (p)->EnumSessions(a,b,c,d,e)
-#define IDirectPlay3_GetCaps(p,a,b)                (p)->GetCaps(a,b)
-#define IDirectPlay3_GetGroupData(p,a,b,c,d)       (p)->GetGroupData(a,b,c,d)
-#define IDirectPlay3_GetGroupName(p,a,b,c)         (p)->GetGroupName(a,b,c)
-#define IDirectPlay3_GetMessageCount(p,a,b)        (p)->GetMessageCount(a,b)
+#define IDirectPlay3_GetCaps(p,a,b)                                          (p)->GetCaps(a,b)
+#define IDirectPlay3_GetGroupData(p,a,b,c,d)                    (p)->GetGroupData(a,b,c,d)
+#define IDirectPlay3_GetGroupName(p,a,b,c)                      (p)->GetGroupName(a,b,c)
+#define IDirectPlay3_GetMessageCount(p,a,b)                     (p)->GetMessageCount(a,b)
 #define IDirectPlay3_GetPlayerAddress(p,a,b,c)     (p)->GetPlayerAddress(a,b,c)
-#define IDirectPlay3_GetPlayerCaps(p,a,b,c)        (p)->GetPlayerCaps(a,b,c)
-#define IDirectPlay3_GetPlayerData(p,a,b,c,d)      (p)->GetPlayerData(a,b,c,d)
-#define IDirectPlay3_GetPlayerName(p,a,b,c)        (p)->GetPlayerName(a,b,c)
-#define IDirectPlay3_GetSessionDesc(p,a,b)         (p)->GetSessionDesc(a,b)
-#define IDirectPlay3_Initialize(p,a)               (p)->Initialize(a)
-#define IDirectPlay3_Open(p,a,b)                   (p)->Open(a,b)
-#define IDirectPlay3_Receive(p,a,b,c,d,e)          (p)->Receive(a,b,c,d,e)
-#define IDirectPlay3_Send(p,a,b,c,d,e)             (p)->Send(a,b,c,d,e)
-#define IDirectPlay3_SetGroupData(p,a,b,c,d)       (p)->SetGroupData(a,b,c,d)
-#define IDirectPlay3_SetGroupName(p,a,b,c)         (p)->SetGroupName(a,b,c)
-#define IDirectPlay3_SetPlayerData(p,a,b,c,d)      (p)->SetPlayerData(a,b,c,d)
-#define IDirectPlay3_SetPlayerName(p,a,b,c)        (p)->SetPlayerName(a,b,c)
-#define IDirectPlay3_SetSessionDesc(p,a,b)         (p)->SetSessionDesc(a,b)
+#define IDirectPlay3_GetPlayerCaps(p,a,b,c)                     (p)->GetPlayerCaps(a,b,c)
+#define IDirectPlay3_GetPlayerData(p,a,b,c,d)                   (p)->GetPlayerData(a,b,c,d)
+#define IDirectPlay3_GetPlayerName(p,a,b,c)                     (p)->GetPlayerName(a,b,c)
+#define IDirectPlay3_GetSessionDesc(p,a,b)                      (p)->GetSessionDesc(a,b)
+#define IDirectPlay3_Initialize(p,a)                                         (p)->Initialize(a)
+#define IDirectPlay3_Open(p,a,b)                                                          (p)->Open(a,b)
+#define IDirectPlay3_Receive(p,a,b,c,d,e)                       (p)->Receive(a,b,c,d,e)
+#define IDirectPlay3_Send(p,a,b,c,d,e)                                       (p)->Send(a,b,c,d,e)
+#define IDirectPlay3_SetGroupData(p,a,b,c,d)                    (p)->SetGroupData(a,b,c,d)
+#define IDirectPlay3_SetGroupName(p,a,b,c)                      (p)->SetGroupName(a,b,c)
+#define IDirectPlay3_SetPlayerData(p,a,b,c,d)                   (p)->SetPlayerData(a,b,c,d)
+#define IDirectPlay3_SetPlayerName(p,a,b,c)                     (p)->SetPlayerName(a,b,c)
+#define IDirectPlay3_SetSessionDesc(p,a,b)                      (p)->SetSessionDesc(a,b)
 /*** IDirectPlay3 methods ***/
-#define IDirectPlay3_AddGroupToGroup(p,a,b)                (p)->AddGroupToGroup(a,b)
+#define IDirectPlay3_AddGroupToGroup(p,a,b)                                          (p)->AddGroupToGroup(a,b)
 #define IDirectPlay3_CreateGroupInGroup(p,a,b,c,d,e,f)     (p)->CreateGroupInGroup(a,b,c,d,e,f)
-#define IDirectPlay3_DeleteGroupFromGroup(p,a,b)           (p)->DeleteGroupFromGroup(a,b)
-#define IDirectPlay3_EnumConnections(p,a,b,c,d)            (p)->EnumConnections(a,b,c,d)
-#define IDirectPlay3_EnumGroupsInGroup(p,a,b,c,d,e)        (p)->EnumGroupsInGroup(a,b,c,d,e)
+#define IDirectPlay3_DeleteGroupFromGroup(p,a,b)                        (p)->DeleteGroupFromGroup(a,b)
+#define IDirectPlay3_EnumConnections(p,a,b,c,d)                                      (p)->EnumConnections(a,b,c,d)
+#define IDirectPlay3_EnumGroupsInGroup(p,a,b,c,d,e)                     (p)->EnumGroupsInGroup(a,b,c,d,e)
 #define IDirectPlay3_GetGroupConnectionSettings(p,a,b,c,d) (p)->GetGroupConnectionSettings(a,b,c,d)
-#define IDirectPlay3_InitializeConnection(p,a,b)           (p)->InitializeConnection(a,b)
-#define IDirectPlay3_SecureOpen(p,a,b,c,d)                 (p)->SecureOpen(a,b,c,d)
-#define IDirectPlay3_SendChatMessage(p,a,b,c,d)            (p)->SendChatMessage(a,b,c,d)
+#define IDirectPlay3_InitializeConnection(p,a,b)                        (p)->InitializeConnection(a,b)
+#define IDirectPlay3_SecureOpen(p,a,b,c,d)                                           (p)->SecureOpen(a,b,c,d)
+#define IDirectPlay3_SendChatMessage(p,a,b,c,d)                                      (p)->SendChatMessage(a,b,c,d)
 #define IDirectPlay3_SetGroupConnectionSettings(p,a,b,c)   (p)->SetGroupConnectionSettings(a,b,c)
-#define IDirectPlay3_StartSession(p,a,b)                   (p)->StartSession(a,b)
-#define IDirectPlay3_GetGroupFlags(p,a,b)                  (p)->GetGroupFlags(a,b)
-#define IDirectPlay3_GetGroupParent(p,a,b)                 (p)->GetGroupParent(a,b)
-#define IDirectPlay3_GetPlayerAccount(p,a,b,c,d)           (p)->GetPlayerAccount(a,b,c,d)
-#define IDirectPlay3_GetPlayerFlags(p,a,b)                 (p)->GetPlayerFlags(a,b)
+#define IDirectPlay3_StartSession(p,a,b)                                                          (p)->StartSession(a,b)
+#define IDirectPlay3_GetGroupFlags(p,a,b)                                                         (p)->GetGroupFlags(a,b)
+#define IDirectPlay3_GetGroupParent(p,a,b)                                           (p)->GetGroupParent(a,b)
+#define IDirectPlay3_GetPlayerAccount(p,a,b,c,d)                        (p)->GetPlayerAccount(a,b,c,d)
+#define IDirectPlay3_GetPlayerFlags(p,a,b)                                           (p)->GetPlayerFlags(a,b)
 #endif
 
 /*****************************************************************************
@@ -876,163 +876,163 @@ DECLARE_INTERFACE_(IDirectPlay4,IDirectPlay3)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectPlayX_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectPlayX_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectPlayX_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectPlayX_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectPlayX_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectPlay2 methods ***/
-#define IDirectPlayX_AddPlayerToGroup(p,a,b)       (p)->lpVtbl->AddPlayerToGroup(p,a,b)
-#define IDirectPlayX_Close(p)                      (p)->lpVtbl->Close(p)
-#define IDirectPlayX_CreateGroup(p,a,b,c,d,e)      (p)->lpVtbl->CreateGroup(p,a,b,c,d,e)
+#define IDirectPlayX_AddPlayerToGroup(p,a,b)                    (p)->lpVtbl->AddPlayerToGroup(p,a,b)
+#define IDirectPlayX_Close(p)                                                             (p)->lpVtbl->Close(p)
+#define IDirectPlayX_CreateGroup(p,a,b,c,d,e)                   (p)->lpVtbl->CreateGroup(p,a,b,c,d,e)
 #define IDirectPlayX_CreatePlayer(p,a,b,c,d,e,f)   (p)->lpVtbl->CreatePlayer(p,a,b,c,d,e,f)
 #define IDirectPlayX_DeletePlayerFromGroup(p,a,b)  (p)->lpVtbl->DeletePlayerFromGroup(p,a,b)
-#define IDirectPlayX_DestroyGroup(p,a)             (p)->lpVtbl->DestroyGroup(p,a)
-#define IDirectPlayX_DestroyPlayer(p,a)            (p)->lpVtbl->DestroyPlayer(p,a)
+#define IDirectPlayX_DestroyGroup(p,a)                                       (p)->lpVtbl->DestroyGroup(p,a)
+#define IDirectPlayX_DestroyPlayer(p,a)                                      (p)->lpVtbl->DestroyPlayer(p,a)
 #define IDirectPlayX_EnumGroupPlayers(p,a,b,c,d,e) (p)->lpVtbl->EnumGroupPlayers(p,a,b,c,d,e)
-#define IDirectPlayX_EnumGroups(p,a,b,c,d)         (p)->lpVtbl->EnumGroups(p,a,b,c,d)
-#define IDirectPlayX_EnumPlayers(p,a,b,c,d)        (p)->lpVtbl->EnumPlayers(p,a,b,c,d)
+#define IDirectPlayX_EnumGroups(p,a,b,c,d)                      (p)->lpVtbl->EnumGroups(p,a,b,c,d)
+#define IDirectPlayX_EnumPlayers(p,a,b,c,d)                     (p)->lpVtbl->EnumPlayers(p,a,b,c,d)
 #define IDirectPlayX_EnumSessions(p,a,b,c,d,e)     (p)->lpVtbl->EnumSessions(p,a,b,c,d,e)
-#define IDirectPlayX_GetCaps(p,a,b)                (p)->lpVtbl->GetCaps(p,a,b)
-#define IDirectPlayX_GetGroupData(p,a,b,c,d)       (p)->lpVtbl->GetGroupData(p,a,b,c,d)
-#define IDirectPlayX_GetGroupName(p,a,b,c)         (p)->lpVtbl->GetGroupName(p,a,b,c)
-#define IDirectPlayX_GetMessageCount(p,a,b)        (p)->lpVtbl->GetMessageCount(p,a,b)
+#define IDirectPlayX_GetCaps(p,a,b)                                          (p)->lpVtbl->GetCaps(p,a,b)
+#define IDirectPlayX_GetGroupData(p,a,b,c,d)                    (p)->lpVtbl->GetGroupData(p,a,b,c,d)
+#define IDirectPlayX_GetGroupName(p,a,b,c)                      (p)->lpVtbl->GetGroupName(p,a,b,c)
+#define IDirectPlayX_GetMessageCount(p,a,b)                     (p)->lpVtbl->GetMessageCount(p,a,b)
 #define IDirectPlayX_GetPlayerAddress(p,a,b,c)     (p)->lpVtbl->GetPlayerAddress(p,a,b,c)
-#define IDirectPlayX_GetPlayerCaps(p,a,b,c)        (p)->lpVtbl->GetPlayerCaps(p,a,b,c)
-#define IDirectPlayX_GetPlayerData(p,a,b,c,d)      (p)->lpVtbl->GetPlayerData(p,a,b,c,d)
-#define IDirectPlayX_GetPlayerName(p,a,b,c)        (p)->lpVtbl->GetPlayerName(p,a,b,c)
-#define IDirectPlayX_GetSessionDesc(p,a,b)         (p)->lpVtbl->GetSessionDesc(p,a,b)
-#define IDirectPlayX_Initialize(p,a)               (p)->lpVtbl->Initialize(p,a)
-#define IDirectPlayX_Open(p,a,b)                   (p)->lpVtbl->Open(p,a,b)
-#define IDirectPlayX_Receive(p,a,b,c,d,e)          (p)->lpVtbl->Receive(p,a,b,c,d,e)
-#define IDirectPlayX_Send(p,a,b,c,d,e)             (p)->lpVtbl->Send(p,a,b,c,d,e)
-#define IDirectPlayX_SetGroupData(p,a,b,c,d)       (p)->lpVtbl->SetGroupData(p,a,b,c,d)
-#define IDirectPlayX_SetGroupName(p,a,b,c)         (p)->lpVtbl->SetGroupName(p,a,b,c)
-#define IDirectPlayX_SetPlayerData(p,a,b,c,d)      (p)->lpVtbl->SetPlayerData(p,a,b,c,d)
-#define IDirectPlayX_SetPlayerName(p,a,b,c)        (p)->lpVtbl->SetPlayerName(p,a,b,c)
-#define IDirectPlayX_SetSessionDesc(p,a,b)         (p)->lpVtbl->SetSessionDesc(p,a,b)
+#define IDirectPlayX_GetPlayerCaps(p,a,b,c)                     (p)->lpVtbl->GetPlayerCaps(p,a,b,c)
+#define IDirectPlayX_GetPlayerData(p,a,b,c,d)                   (p)->lpVtbl->GetPlayerData(p,a,b,c,d)
+#define IDirectPlayX_GetPlayerName(p,a,b,c)                     (p)->lpVtbl->GetPlayerName(p,a,b,c)
+#define IDirectPlayX_GetSessionDesc(p,a,b)                      (p)->lpVtbl->GetSessionDesc(p,a,b)
+#define IDirectPlayX_Initialize(p,a)                                         (p)->lpVtbl->Initialize(p,a)
+#define IDirectPlayX_Open(p,a,b)                                                          (p)->lpVtbl->Open(p,a,b)
+#define IDirectPlayX_Receive(p,a,b,c,d,e)                       (p)->lpVtbl->Receive(p,a,b,c,d,e)
+#define IDirectPlayX_Send(p,a,b,c,d,e)                                       (p)->lpVtbl->Send(p,a,b,c,d,e)
+#define IDirectPlayX_SetGroupData(p,a,b,c,d)                    (p)->lpVtbl->SetGroupData(p,a,b,c,d)
+#define IDirectPlayX_SetGroupName(p,a,b,c)                      (p)->lpVtbl->SetGroupName(p,a,b,c)
+#define IDirectPlayX_SetPlayerData(p,a,b,c,d)                   (p)->lpVtbl->SetPlayerData(p,a,b,c,d)
+#define IDirectPlayX_SetPlayerName(p,a,b,c)                     (p)->lpVtbl->SetPlayerName(p,a,b,c)
+#define IDirectPlayX_SetSessionDesc(p,a,b)                      (p)->lpVtbl->SetSessionDesc(p,a,b)
 /*** IDirectPlay3 methods ***/
-#define IDirectPlayX_AddGroupToGroup(p,a,b)                (p)->lpVtbl->AddGroupToGroup(p,a,b)
+#define IDirectPlayX_AddGroupToGroup(p,a,b)                                          (p)->lpVtbl->AddGroupToGroup(p,a,b)
 #define IDirectPlayX_CreateGroupInGroup(p,a,b,c,d,e,f)     (p)->lpVtbl->CreateGroupInGroup(p,a,b,c,d,e,f)
-#define IDirectPlayX_DeleteGroupFromGroup(p,a,b)           (p)->lpVtbl->DeleteGroupFromGroup(p,a,b)
-#define IDirectPlayX_EnumConnections(p,a,b,c,d)            (p)->lpVtbl->EnumConnections(p,a,b,c,d)
-#define IDirectPlayX_EnumGroupsInGroup(p,a,b,c,d,e)        (p)->lpVtbl->EnumGroupsInGroup(p,a,b,c,d,e)
+#define IDirectPlayX_DeleteGroupFromGroup(p,a,b)                        (p)->lpVtbl->DeleteGroupFromGroup(p,a,b)
+#define IDirectPlayX_EnumConnections(p,a,b,c,d)                                      (p)->lpVtbl->EnumConnections(p,a,b,c,d)
+#define IDirectPlayX_EnumGroupsInGroup(p,a,b,c,d,e)                     (p)->lpVtbl->EnumGroupsInGroup(p,a,b,c,d,e)
 #define IDirectPlayX_GetGroupConnectionSettings(p,a,b,c,d) (p)->lpVtbl->GetGroupConnectionSettings(p,a,b,c,d)
-#define IDirectPlayX_InitializeConnection(p,a,b)           (p)->lpVtbl->InitializeConnection(p,a,b)
-#define IDirectPlayX_SecureOpen(p,a,b,c,d)                 (p)->lpVtbl->SecureOpen(p,a,b,c,d)
-#define IDirectPlayX_SendChatMessage(p,a,b,c,d)            (p)->lpVtbl->SendChatMessage(p,a,b,c,d)
+#define IDirectPlayX_InitializeConnection(p,a,b)                        (p)->lpVtbl->InitializeConnection(p,a,b)
+#define IDirectPlayX_SecureOpen(p,a,b,c,d)                                           (p)->lpVtbl->SecureOpen(p,a,b,c,d)
+#define IDirectPlayX_SendChatMessage(p,a,b,c,d)                                      (p)->lpVtbl->SendChatMessage(p,a,b,c,d)
 #define IDirectPlayX_SetGroupConnectionSettings(p,a,b,c)   (p)->lpVtbl->SetGroupConnectionSettings(p,a,b,c)
-#define IDirectPlayX_StartSession(p,a,b)                   (p)->lpVtbl->StartSession(p,a,b)
-#define IDirectPlayX_GetGroupFlags(p,a,b)                  (p)->lpVtbl->GetGroupFlags(p,a,b)
-#define IDirectPlayX_GetGroupParent(p,a,b)                 (p)->lpVtbl->GetGroupParent(p,a,b)
-#define IDirectPlayX_GetPlayerAccount(p,a,b,c,d)           (p)->lpVtbl->GetPlayerAccount(p,a,b,c,d)
-#define IDirectPlayX_GetPlayerFlags(p,a,b)                 (p)->lpVtbl->GetPlayerFlags(p,a,b)
+#define IDirectPlayX_StartSession(p,a,b)                                                          (p)->lpVtbl->StartSession(p,a,b)
+#define IDirectPlayX_GetGroupFlags(p,a,b)                                                         (p)->lpVtbl->GetGroupFlags(p,a,b)
+#define IDirectPlayX_GetGroupParent(p,a,b)                                           (p)->lpVtbl->GetGroupParent(p,a,b)
+#define IDirectPlayX_GetPlayerAccount(p,a,b,c,d)                        (p)->lpVtbl->GetPlayerAccount(p,a,b,c,d)
+#define IDirectPlayX_GetPlayerFlags(p,a,b)                                           (p)->lpVtbl->GetPlayerFlags(p,a,b)
 /*** IDirectPlay4 methods ***/
-#define IDirectPlayX_GetGroupOwner(p,a,b)                  (p)->lpVtbl->GetGroupOwner(p,a,b)
-#define IDirectPlayX_SetGroupOwner(p,a,b)                  (p)->lpVtbl->SetGroupOwner(p,a,b)
-#define IDirectPlayX_SendEx(p,a,b,c,d,e,f,g,h,i)           (p)->lpVtbl->SendEx(p,a,b,c,d,e,f,g,h,i)
-#define IDirectPlayX_GetMessageQueue(p,a,b,c,d,e)          (p)->lpVtbl->GetMessageQueue(p,a,b,c,d,e)
-#define IDirectPlayX_CancelMessage(p,a,b)                  (p)->lpVtbl->CancelMessage(p,a,b)
-#define IDirectPlayX_CancelPriority(p,a,b,c)               (p)->lpVtbl->CancelPriority(p,a,b,c)
+#define IDirectPlayX_GetGroupOwner(p,a,b)                                                         (p)->lpVtbl->GetGroupOwner(p,a,b)
+#define IDirectPlayX_SetGroupOwner(p,a,b)                                                         (p)->lpVtbl->SetGroupOwner(p,a,b)
+#define IDirectPlayX_SendEx(p,a,b,c,d,e,f,g,h,i)                        (p)->lpVtbl->SendEx(p,a,b,c,d,e,f,g,h,i)
+#define IDirectPlayX_GetMessageQueue(p,a,b,c,d,e)                       (p)->lpVtbl->GetMessageQueue(p,a,b,c,d,e)
+#define IDirectPlayX_CancelMessage(p,a,b)                                                         (p)->lpVtbl->CancelMessage(p,a,b)
+#define IDirectPlayX_CancelPriority(p,a,b,c)                                         (p)->lpVtbl->CancelPriority(p,a,b,c)
 #else
 /*** IUnknown methods ***/
 #define IDirectPlayX_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectPlayX_AddRef(p)             (p)->AddRef()
-#define IDirectPlayX_Release(p)            (p)->Release()
+#define IDirectPlayX_AddRef(p)                                       (p)->AddRef()
+#define IDirectPlayX_Release(p)                                      (p)->Release()
 /*** IDirectPlay2 methods ***/
-#define IDirectPlayX_AddPlayerToGroup(p,a,b)       (p)->AddPlayerToGroup(a,b)
-#define IDirectPlayX_Close(p)                      (p)->Close()
-#define IDirectPlayX_CreateGroup(p,a,b,c,d,e)      (p)->CreateGroup(a,b,c,d,e)
+#define IDirectPlayX_AddPlayerToGroup(p,a,b)                    (p)->AddPlayerToGroup(a,b)
+#define IDirectPlayX_Close(p)                                                             (p)->Close()
+#define IDirectPlayX_CreateGroup(p,a,b,c,d,e)                   (p)->CreateGroup(a,b,c,d,e)
 #define IDirectPlayX_CreatePlayer(p,a,b,c,d,e,f)   (p)->CreatePlayer(a,b,c,d,e,f)
 #define IDirectPlayX_DeletePlayerFromGroup(p,a,b)  (p)->DeletePlayerFromGroup(a,b)
-#define IDirectPlayX_DestroyGroup(p,a)             (p)->DestroyGroup(a)
-#define IDirectPlayX_DestroyPlayer(p,a)            (p)->DestroyPlayer(a)
+#define IDirectPlayX_DestroyGroup(p,a)                                       (p)->DestroyGroup(a)
+#define IDirectPlayX_DestroyPlayer(p,a)                                      (p)->DestroyPlayer(a)
 #define IDirectPlayX_EnumGroupPlayers(p,a,b,c,d,e) (p)->EnumGroupPlayers(a,b,c,d,e)
-#define IDirectPlayX_EnumGroups(p,a,b,c,d)         (p)->EnumGroups(a,b,c,d)
-#define IDirectPlayX_EnumPlayers(p,a,b,c,d)        (p)->EnumPlayers(a,b,c,d)
+#define IDirectPlayX_EnumGroups(p,a,b,c,d)                      (p)->EnumGroups(a,b,c,d)
+#define IDirectPlayX_EnumPlayers(p,a,b,c,d)                     (p)->EnumPlayers(a,b,c,d)
 #define IDirectPlayX_EnumSessions(p,a,b,c,d,e)     (p)->EnumSessions(a,b,c,d,e)
-#define IDirectPlayX_GetCaps(p,a,b)                (p)->GetCaps(a,b)
-#define IDirectPlayX_GetGroupData(p,a,b,c,d)       (p)->GetGroupData(a,b,c,d)
-#define IDirectPlayX_GetGroupName(p,a,b,c)         (p)->GetGroupName(a,b,c)
-#define IDirectPlayX_GetMessageCount(p,a,b)        (p)->GetMessageCount(a,b)
+#define IDirectPlayX_GetCaps(p,a,b)                                          (p)->GetCaps(a,b)
+#define IDirectPlayX_GetGroupData(p,a,b,c,d)                    (p)->GetGroupData(a,b,c,d)
+#define IDirectPlayX_GetGroupName(p,a,b,c)                      (p)->GetGroupName(a,b,c)
+#define IDirectPlayX_GetMessageCount(p,a,b)                     (p)->GetMessageCount(a,b)
 #define IDirectPlayX_GetPlayerAddress(p,a,b,c)     (p)->GetPlayerAddress(a,b,c)
-#define IDirectPlayX_GetPlayerCaps(p,a,b,c)        (p)->GetPlayerCaps(a,b,c)
-#define IDirectPlayX_GetPlayerData(p,a,b,c,d)      (p)->GetPlayerData(a,b,c,d)
-#define IDirectPlayX_GetPlayerName(p,a,b,c)        (p)->GetPlayerName(a,b,c)
-#define IDirectPlayX_GetSessionDesc(p,a,b)         (p)->GetSessionDesc(a,b)
-#define IDirectPlayX_Initialize(p,a)               (p)->Initialize(a)
-#define IDirectPlayX_Open(p,a,b)                   (p)->Open(a,b)
-#define IDirectPlayX_Receive(p,a,b,c,d,e)          (p)->Receive(a,b,c,d,e)
-#define IDirectPlayX_Send(p,a,b,c,d,e)             (p)->Send(a,b,c,d,e)
-#define IDirectPlayX_SetGroupData(p,a,b,c,d)       (p)->SetGroupData(a,b,c,d)
-#define IDirectPlayX_SetGroupName(p,a,b,c)         (p)->SetGroupName(a,b,c)
-#define IDirectPlayX_SetPlayerData(p,a,b,c,d)      (p)->SetPlayerData(a,b,c,d)
-#define IDirectPlayX_SetPlayerName(p,a,b,c)        (p)->SetPlayerName(a,b,c)
-#define IDirectPlayX_SetSessionDesc(p,a,b)         (p)->SetSessionDesc(a,b)
+#define IDirectPlayX_GetPlayerCaps(p,a,b,c)                     (p)->GetPlayerCaps(a,b,c)
+#define IDirectPlayX_GetPlayerData(p,a,b,c,d)                   (p)->GetPlayerData(a,b,c,d)
+#define IDirectPlayX_GetPlayerName(p,a,b,c)                     (p)->GetPlayerName(a,b,c)
+#define IDirectPlayX_GetSessionDesc(p,a,b)                      (p)->GetSessionDesc(a,b)
+#define IDirectPlayX_Initialize(p,a)                                         (p)->Initialize(a)
+#define IDirectPlayX_Open(p,a,b)                                                          (p)->Open(a,b)
+#define IDirectPlayX_Receive(p,a,b,c,d,e)                       (p)->Receive(a,b,c,d,e)
+#define IDirectPlayX_Send(p,a,b,c,d,e)                                       (p)->Send(a,b,c,d,e)
+#define IDirectPlayX_SetGroupData(p,a,b,c,d)                    (p)->SetGroupData(a,b,c,d)
+#define IDirectPlayX_SetGroupName(p,a,b,c)                      (p)->SetGroupName(a,b,c)
+#define IDirectPlayX_SetPlayerData(p,a,b,c,d)                   (p)->SetPlayerData(a,b,c,d)
+#define IDirectPlayX_SetPlayerName(p,a,b,c)                     (p)->SetPlayerName(a,b,c)
+#define IDirectPlayX_SetSessionDesc(p,a,b)                      (p)->SetSessionDesc(a,b)
 /*** IDirectPlay3 methods ***/
-#define IDirectPlayX_AddGroupToGroup(p,a,b)                (p)->AddGroupToGroup(a,b)
+#define IDirectPlayX_AddGroupToGroup(p,a,b)                                          (p)->AddGroupToGroup(a,b)
 #define IDirectPlayX_CreateGroupInGroup(p,a,b,c,d,e,f)     (p)->CreateGroupInGroup(a,b,c,d,e,f)
-#define IDirectPlayX_DeleteGroupFromGroup(p,a,b)           (p)->DeleteGroupFromGroup(a,b)
-#define IDirectPlayX_EnumConnections(p,a,b,c,d)            (p)->EnumConnections(a,b,c,d)
-#define IDirectPlayX_EnumGroupsInGroup(p,a,b,c,d,e)        (p)->EnumGroupsInGroup(a,b,c,d,e)
+#define IDirectPlayX_DeleteGroupFromGroup(p,a,b)                        (p)->DeleteGroupFromGroup(a,b)
+#define IDirectPlayX_EnumConnections(p,a,b,c,d)                                      (p)->EnumConnections(a,b,c,d)
+#define IDirectPlayX_EnumGroupsInGroup(p,a,b,c,d,e)                     (p)->EnumGroupsInGroup(a,b,c,d,e)
 #define IDirectPlayX_GetGroupConnectionSettings(p,a,b,c,d) (p)->GetGroupConnectionSettings(a,b,c,d)
-#define IDirectPlayX_InitializeConnection(p,a,b)           (p)->InitializeConnection(a,b)
-#define IDirectPlayX_SecureOpen(p,a,b,c,d)                 (p)->SecureOpen(a,b,c,d)
-#define IDirectPlayX_SendChatMessage(p,a,b,c,d)            (p)->SendChatMessage(a,b,c,d)
+#define IDirectPlayX_InitializeConnection(p,a,b)                        (p)->InitializeConnection(a,b)
+#define IDirectPlayX_SecureOpen(p,a,b,c,d)                                           (p)->SecureOpen(a,b,c,d)
+#define IDirectPlayX_SendChatMessage(p,a,b,c,d)                                      (p)->SendChatMessage(a,b,c,d)
 #define IDirectPlayX_SetGroupConnectionSettings(p,a,b,c)   (p)->SetGroupConnectionSettings(a,b,c)
-#define IDirectPlayX_StartSession(p,a,b)                   (p)->StartSession(a,b)
-#define IDirectPlayX_GetGroupFlags(p,a,b)                  (p)->GetGroupFlags(a,b)
-#define IDirectPlayX_GetGroupParent(p,a,b)                 (p)->GetGroupParent(a,b)
-#define IDirectPlayX_GetPlayerAccount(p,a,b,c,d)           (p)->GetPlayerAccount(a,b,c,d)
-#define IDirectPlayX_GetPlayerFlags(p,a,b)                 (p)->GetPlayerFlags(a,b)
+#define IDirectPlayX_StartSession(p,a,b)                                                          (p)->StartSession(a,b)
+#define IDirectPlayX_GetGroupFlags(p,a,b)                                                         (p)->GetGroupFlags(a,b)
+#define IDirectPlayX_GetGroupParent(p,a,b)                                           (p)->GetGroupParent(a,b)
+#define IDirectPlayX_GetPlayerAccount(p,a,b,c,d)                        (p)->GetPlayerAccount(a,b,c,d)
+#define IDirectPlayX_GetPlayerFlags(p,a,b)                                           (p)->GetPlayerFlags(a,b)
 /*** IDirectPlay4 methods ***/
-#define IDirectPlayX_GetGroupOwner(p,a,b)                  (p)->GetGroupOwner(a,b)
-#define IDirectPlayX_SetGroupOwner(p,a,b)                  (p)->SetGroupOwner(a,b)
-#define IDirectPlayX_SendEx(p,a,b,c,d,e,f,g,h,i)           (p)->SendEx(a,b,c,d,e,f,g,h,i)
-#define IDirectPlayX_GetMessageQueue(p,a,b,c,d,e)          (p)->GetMessageQueue(a,b,c,d,e)
-#define IDirectPlayX_CancelMessage(p,a,b)                  (p)->CancelMessage(a,b)
-#define IDirectPlayX_CancelPriority(p,a,b,c)               (p)->CancelPriority(a,b,c)
+#define IDirectPlayX_GetGroupOwner(p,a,b)                                                         (p)->GetGroupOwner(a,b)
+#define IDirectPlayX_SetGroupOwner(p,a,b)                                                         (p)->SetGroupOwner(a,b)
+#define IDirectPlayX_SendEx(p,a,b,c,d,e,f,g,h,i)                        (p)->SendEx(a,b,c,d,e,f,g,h,i)
+#define IDirectPlayX_GetMessageQueue(p,a,b,c,d,e)                       (p)->GetMessageQueue(a,b,c,d,e)
+#define IDirectPlayX_CancelMessage(p,a,b)                                                         (p)->CancelMessage(a,b)
+#define IDirectPlayX_CancelPriority(p,a,b,c)                                         (p)->CancelPriority(a,b,c)
 #endif
 
 
 /* For DirectPlay::EnumConnections */
-#define DPCONNECTION_DIRECTPLAY      0x00000001
+#define DPCONNECTION_DIRECTPLAY                   0x00000001
 #define DPCONNECTION_DIRECTPLAYLOBBY 0x00000002
 
 /* For DirectPlay::EnumPlayers and DirectPlay::EnumGroups */
-#define DPENUMPLAYERS_ALL           0x00000000
-#define DPENUMPLAYERS_LOCAL         0x00000008
-#define DPENUMPLAYERS_REMOTE        0x00000010
-#define DPENUMPLAYERS_GROUP         0x00000020
-#define DPENUMPLAYERS_SESSION       0x00000080
+#define DPENUMPLAYERS_ALL                        0x00000000
+#define DPENUMPLAYERS_LOCAL                      0x00000008
+#define DPENUMPLAYERS_REMOTE                     0x00000010
+#define DPENUMPLAYERS_GROUP                      0x00000020
+#define DPENUMPLAYERS_SESSION                    0x00000080
 #define DPENUMPLAYERS_SERVERPLAYER  0x00000100
 #define DPENUMPLAYERS_SPECTATOR     0x00000200
-#define DPENUMPLAYERS_OWNER         0x00002000
+#define DPENUMPLAYERS_OWNER                      0x00002000
 
-#define DPENUMGROUPS_ALL            DPENUMPLAYERS_ALL
-#define DPENUMGROUPS_LOCAL          DPENUMPLAYERS_LOCAL
-#define DPENUMGROUPS_REMOTE         DPENUMPLAYERS_REMOTE
-#define DPENUMGROUPS_SESSION        DPENUMPLAYERS_SESSION
-#define DPENUMGROUPS_SHORTCUT       0x00000400
+#define DPENUMGROUPS_ALL                                      DPENUMPLAYERS_ALL
+#define DPENUMGROUPS_LOCAL                       DPENUMPLAYERS_LOCAL
+#define DPENUMGROUPS_REMOTE                      DPENUMPLAYERS_REMOTE
+#define DPENUMGROUPS_SESSION                     DPENUMPLAYERS_SESSION
+#define DPENUMGROUPS_SHORTCUT                    0x00000400
 #define DPENUMGROUPS_STAGINGAREA    0x00000800
-#define DPENUMGROUPS_HIDDEN         0x00001000
+#define DPENUMGROUPS_HIDDEN                      0x00001000
 
 
 /* For DirectPlay::CreatePlayer */
 #define DPPLAYER_SERVERPLAYER  DPENUMPLAYERS_SERVERPLAYER
 #define DPPLAYER_SPECTATOR     DPENUMPLAYERS_SPECTATOR
-#define DPPLAYER_LOCAL         DPENUMPLAYERS_LOCAL
-#define DPPLAYER_OWNER         DPENUMPLAYERS_OWNER
+#define DPPLAYER_LOCAL                      DPENUMPLAYERS_LOCAL
+#define DPPLAYER_OWNER                      DPENUMPLAYERS_OWNER
 
 /* For DirectPlay::CreateGroup */
 #define DPGROUP_STAGINGAREA  DPENUMGROUPS_STAGINGAREA
-#define DPGROUP_LOCAL        DPENUMGROUPS_LOCAL
-#define DPGROUP_HIDDEN       DPENUMGROUPS_HIDDEN
+#define DPGROUP_LOCAL                     DPENUMGROUPS_LOCAL
+#define DPGROUP_HIDDEN                    DPENUMGROUPS_HIDDEN
 
 /* For DirectPlay::EnumSessions */
-#define DPENUMSESSIONS_AVAILABLE         0x00000001
-#define DPENUMSESSIONS_ALL               0x00000002
-#define DPENUMSESSIONS_ASYNC             0x00000010
-#define DPENUMSESSIONS_STOPASYNC         0x00000020
+#define DPENUMSESSIONS_AVAILABLE                      0x00000001
+#define DPENUMSESSIONS_ALL                                         0x00000002
+#define DPENUMSESSIONS_ASYNC                                       0x00000010
+#define DPENUMSESSIONS_STOPASYNC                      0x00000020
 #define DPENUMSESSIONS_PASSWORDREQUIRED  0x00000040
-#define DPENUMSESSIONS_RETURNSTATUS      0x00000080
+#define DPENUMSESSIONS_RETURNSTATUS                   0x00000080
 
 /* For DirectPlay::GetCaps and DirectPlay::GetPlayerCaps */
 #define DPGETCAPS_GUARANTEED  0x00000001
@@ -1042,24 +1042,24 @@ DECLARE_INTERFACE_(IDirectPlay4,IDirectPlay3)
 #define DPGET_LOCAL   0x00000001
 
 /* For DirectPlay::Receive */
-#define DPRECEIVE_ALL         0x00000001
+#define DPRECEIVE_ALL                      0x00000001
 #define DPRECEIVE_TOPLAYER    0x00000002
 #define DPRECEIVE_FROMPLAYER  0x00000004
-#define DPRECEIVE_PEEK        0x00000008
+#define DPRECEIVE_PEEK                     0x00000008
 
 /* For DirectPlay::Send */
-#define DPSEND_NONGUARANTEED       0x00000000
-#define DPSEND_GUARANTEED          0x00000001
-#define DPSEND_HIGHPRIORITY        0x00000002
-#define DPSEND_OPENSTREAM          0x00000008
-#define DPSEND_CLOSESTREAM         0x00000010
-#define DPSEND_SIGNED              0x00000020
-#define DPSEND_ENCRYPTED           0x00000040
+#define DPSEND_NONGUARANTEED                    0x00000000
+#define DPSEND_GUARANTEED                       0x00000001
+#define DPSEND_HIGHPRIORITY                     0x00000002
+#define DPSEND_OPENSTREAM                       0x00000008
+#define DPSEND_CLOSESTREAM                      0x00000010
+#define DPSEND_SIGNED                                        0x00000020
+#define DPSEND_ENCRYPTED                        0x00000040
 #define DPSEND_LOBBYSYSTEMMESSAGE  0x00000080
-#define DPSEND_ASYNC               0x00000200
+#define DPSEND_ASYNC                                         0x00000200
 #define DPSEND_NOSENDCOMPLETEMSG   0x00000400
 
-#define DPSEND_MAX_PRI       0x0000FFFF
+#define DPSEND_MAX_PRI                    0x0000FFFF
 #define DPSEND_MAX_PRIORITY  DPSEND_MAX_PRI
 
 
@@ -1067,8 +1067,8 @@ DECLARE_INTERFACE_(IDirectPlay4,IDirectPlay3)
  * DirectPlay::SetPlayerData, DirectPlay::SetPlayerName and
  * DirectPlay::SetSessionDesc.
  */
-#define DPSET_REMOTE      0x00000000
-#define DPSET_LOCAL       0x00000001
+#define DPSET_REMOTE                   0x00000000
+#define DPSET_LOCAL                    0x00000001
 #define DPSET_GUARANTEED  0x00000002
 
 /* For DirectPlay::GetMessageQueue */
@@ -1079,19 +1079,19 @@ DECLARE_INTERFACE_(IDirectPlay4,IDirectPlay3)
 #define DPCONNECT_RETURNSTATUS  (DPENUMSESSIONS_RETURNSTATUS)
 
 /* DirectPlay::GetCaps and DirectPlay::GetPlayerCaps */
-#define DPCAPS_ISHOST                  0x00000002
-#define DPCAPS_GROUPOPTIMIZED          0x00000008
-#define DPCAPS_KEEPALIVEOPTIMIZED      0x00000010
+#define DPCAPS_ISHOST                                                         0x00000002
+#define DPCAPS_GROUPOPTIMIZED                       0x00000008
+#define DPCAPS_KEEPALIVEOPTIMIZED                   0x00000010
 #define DPCAPS_GUARANTEEDOPTIMIZED     0x00000020
 #define DPCAPS_GUARANTEEDSUPPORTED     0x00000040
-#define DPCAPS_SIGNINGSUPPORTED        0x00000080
+#define DPCAPS_SIGNINGSUPPORTED                     0x00000080
 #define DPCAPS_ENCRYPTIONSUPPORTED     0x00000100
-#define DPPLAYERCAPS_LOCAL             0x00000800
+#define DPPLAYERCAPS_LOCAL                                       0x00000800
 #define DPCAPS_ASYNCCANCELSUPPORTED    0x00001000
 #define DPCAPS_ASYNCCANCELALLSUPPORTED 0x00002000
 #define DPCAPS_SENDTIMEOUTSUPPORTED    0x00004000
 #define DPCAPS_SENDPRIORITYSUPPORTED   0x00008000
-#define DPCAPS_ASYNCSUPPORTED          0x00010000
+#define DPCAPS_ASYNCSUPPORTED                       0x00010000
 
 /** DirectPlay system messages **/
 
@@ -1102,16 +1102,16 @@ DECLARE_INTERFACE_(IDirectPlay4,IDirectPlay3)
 #define DPSYS_DESTROYPLAYERORGROUP  0x0005
 
 /* A player has been added to a group */
-#define DPSYS_ADDPLAYERTOGROUP      0x0007
+#define DPSYS_ADDPLAYERTOGROUP                   0x0007
 
 /* A player has been deleted from a group */
 #define DPSYS_DELETEPLAYERFROMGROUP 0x0021
 
 /* Session lost for this object - ie lost contact with all players */
-#define DPSYS_SESSIONLOST           0x0031
+#define DPSYS_SESSIONLOST                        0x0031
 
 /* The current host has left the session */
-#define DPSYS_HOST                  0x0101
+#define DPSYS_HOST                                                         0x0101
 
 /* Player or group data has changed */
 #define DPSYS_SETPLAYERORGROUPDATA  0x0102
@@ -1120,28 +1120,28 @@ DECLARE_INTERFACE_(IDirectPlay4,IDirectPlay3)
 #define DPSYS_SETPLAYERORGROUPNAME  0x0103
 
 /* The session description has changed */
-#define DPSYS_SETSESSIONDESC        0x0104
+#define DPSYS_SETSESSIONDESC                     0x0104
 
 /* A group has been added to a group */
-#define DPSYS_ADDGROUPTOGROUP           0x0105
+#define DPSYS_ADDGROUPTOGROUP                        0x0105
 
 /* A group has been deleted from a group */
-#define DPSYS_DELETEGROUPFROMGROUP      0x0106
+#define DPSYS_DELETEGROUPFROMGROUP                   0x0106
 
 /* A secure player to player message has arrived */
-#define DPSYS_SECUREMESSAGE         0x0107
+#define DPSYS_SECUREMESSAGE                      0x0107
 
 /* Start a new session */
-#define DPSYS_STARTSESSION          0x0108
+#define DPSYS_STARTSESSION                       0x0108
 
 /* A chat message has arrived */
-#define DPSYS_CHAT                  0x0109
+#define DPSYS_CHAT                                                         0x0109
 
 /* The owner of a group has changed */
-#define DPSYS_SETGROUPOWNER         0x010A
+#define DPSYS_SETGROUPOWNER                      0x010A
 
 /* An async send is done (finished normally, failed or cancelled) */
-#define DPSYS_SENDCOMPLETE          0x010d
+#define DPSYS_SENDCOMPLETE                       0x010d
 
 /** DirectPlay System Messages **/
 
@@ -1152,20 +1152,20 @@ DECLARE_INTERFACE_(IDirectPlay4,IDirectPlay3)
 /* NOTE: DPMSG_HOST and DPMSG_GENERIC share the same format */
 typedef struct tagDPMSG_GENERIC
 {
-   DWORD       dwType; /* Use message type as described above */
+   DWORD                    dwType; /* Use message type as described above */
 } DPMSG_GENERIC,     *LPDPMSG_GENERIC,
-  DPMSG_HOST,        *LPDPMSG_HOST,
+  DPMSG_HOST,                     *LPDPMSG_HOST,
   DPMSG_SESSIONLOST, *LPDPMSG_SESSIONLOST;
 
 typedef struct tagDPMSG_CREATEPLAYERORGROUP
 {
-   DWORD   dwType;           /* Use message type as described above */
+   DWORD   dwType;                        /* Use message type as described above */
    DWORD   dwPlayerType;     /* Use DPPLAYERTYPE_GROUP or DPPLAYERTYPE_PLAYER */
-   DPID    dpId;             /* ID of the player/group */
+   DPID    dpId;                                       /* ID of the player/group */
    DWORD   dwCurrentPlayers; /* Current number of players/groups in session */
-   LPVOID  lpData;           /* Pointer to data */
-   DWORD   dwDataSize;       /* Size of data */
-   DPNAME  dpnName;          /* Name info */
+   LPVOID  lpData;                        /* Pointer to data */
+   DWORD   dwDataSize;                    /* Size of data */
+   DPNAME  dpnName;                       /* Name info */
 
    /* dpIdParent and dwFlags are only valid in DirectPlay3 and later. What
     * does that mean about the message size before? -PH */
@@ -1175,10 +1175,10 @@ typedef struct tagDPMSG_CREATEPLAYERORGROUP
 
 typedef struct tagDPMSG_DESTROYPLAYERORGROUP
 {
-   DWORD   dwType;           /* Use message type as described above */
+   DWORD   dwType;                        /* Use message type as described above */
    DWORD   dwPlayerType;     /* Use DPPLAYERTYPE_GROUP or DPPLAYERTYPE_PLAYER */
-   DPID    dpId;             /* ID of player/group to be deleted */
-   LPVOID  lpLocalData;      /* Pointer to local data */
+   DPID    dpId;                                       /* ID of player/group to be deleted */
+   LPVOID  lpLocalData;                   /* Pointer to local data */
    DWORD   dwLocalDataSize;  /* Sizeof local data */
    LPVOID  lpRemoteData;     /* Pointer to remote data */
    DWORD   dwRemoteDataSize; /* Sizeof remote data */
@@ -1193,41 +1193,41 @@ typedef struct tagDPMSG_DESTROYPLAYERORGROUP
 /* NOTE: DPMSG_ADDPLAYERTOGROUP and DPMSG_DELETEPLAYERFROMGROUP are the same */
 typedef struct tagDPMSG_ADDPLAYERTOGROUP
 {
-   DWORD  dwType;      /* Use message type as described above */
+   DWORD  dwType;                   /* Use message type as described above */
    DPID   dpIdGroup;   /* Group ID to add player into */
    DPID   dpIdPlayer;  /* ID of player to add */
-} DPMSG_ADDPLAYERTOGROUP,      *LPDPMSG_ADDPLAYERTOGROUP,
+} DPMSG_ADDPLAYERTOGROUP,                   *LPDPMSG_ADDPLAYERTOGROUP,
   DPMSG_DELETEPLAYERFROMGROUP, *LPDPMSG_DELETEPLAYERFROMGROUP;
 
 /* NOTE: DPMSG_ADDGROUPTOGROUP and DPMSG_DELETEGROUPFROMGROUP are the same */
 typedef struct tagDPMSG_ADDGROUPTOGROUP
 {
-   DWORD  dwType;          /* Use message type as described above */
+   DWORD  dwType;                       /* Use message type as described above */
    DPID   dpIdParentGroup; /* Group ID to add group into */
-   DPID   dpIdGroup;       /* ID of group to add */
-} DPMSG_ADDGROUPTOGROUP,      *LPDPMSG_ADDGROUPTOGROUP,
+   DPID   dpIdGroup;                    /* ID of group to add */
+} DPMSG_ADDGROUPTOGROUP,                   *LPDPMSG_ADDGROUPTOGROUP,
   DPMSG_DELETEGROUPFROMGROUP, *LPDPMSG_DELETEGROUPFROMGROUP;
 
 typedef struct tagDPMSG_SETPLAYERORGROUPDATA
 {
-   DWORD   dwType;       /* Use message type as described above */
+   DWORD   dwType;                    /* Use message type as described above */
    DWORD   dwPlayerType; /* Use DPPLAYERTYPE_GROUP or DPPLAYERTYPE_PLAYER */
-   DPID    dpId;         /* ID of player/group */
-   LPVOID  lpData;       /* Pointer to data */
+   DPID    dpId;                      /* ID of player/group */
+   LPVOID  lpData;                    /* Pointer to data */
    DWORD   dwDataSize;   /* Size of data */
 } DPMSG_SETPLAYERORGROUPDATA, *LPDPMSG_SETPLAYERORGROUPDATA;
 
 typedef struct tagDPMSG_SETPLAYERORGROUPNAME
 {
-   DWORD  dwType;       /* Use message type as described above */
+   DWORD  dwType;                    /* Use message type as described above */
    DWORD  dwPlayerType; /* Use DPPLAYERTYPE_GROUP or DPPLAYERTYPE_PLAYER */
-   DPID   dpId;         /* ID of player/group */
-   DPNAME dpnName;      /* New name */
+   DPID   dpId;                      /* ID of player/group */
+   DPNAME dpnName;                   /* New name */
 } DPMSG_SETPLAYERORGROUPNAME, *LPDPMSG_SETPLAYERORGROUPNAME;
 
 typedef struct tagDPMSG_SETSESSIONDESC
 {
-   DWORD           dwType; /* Use message type as described above */
+   DWORD                        dwType; /* Use message type as described above */
    DPSESSIONDESC2  dpDesc; /* New session desc */
 } DPMSG_SETSESSIONDESC, *LPDPMSG_SETSESSIONDESC;
 
@@ -1242,18 +1242,18 @@ typedef struct tagDPMSG_SECUREMESSAGE
 
 typedef struct tagDPMSG_STARTSESSION
 {
-   DWORD            dwType; /* Use message type as described above */
+   DWORD                                      dwType; /* Use message type as described above */
    LPDPLCONNECTION  lpConn; /* DPLCONNECTION structure */
 } DPMSG_STARTSESSION, *LPDPMSG_STARTSESSION;
 
 typedef struct tagDPMSG_CHAT
 {
-   DWORD     dwType;       /* Use message type as described above */
-   DWORD     dwFlags;      /* Message flags */
-   DPID      idFromPlayer; /* ID of sender */
-   DPID      idToPlayer;   /* ID of who msg is for */
-   DPID      idToGroup;    /* ID of what group msg is for */
-   LPDPCHAT  lpChat;       /* Chat message */
+   DWORD     dwType;                    /* Use message type as described above */
+   DWORD     dwFlags;                   /* Message flags */
+   DPID                   idFromPlayer; /* ID of sender */
+   DPID                   idToPlayer;   /* ID of who msg is for */
+   DPID                   idToGroup;    /* ID of what group msg is for */
+   LPDPCHAT  lpChat;                    /* Chat message */
 } DPMSG_CHAT, *LPDPMSG_CHAT;
 
 typedef struct tagDPMSG_SETGROUPOWNER
@@ -1266,9 +1266,9 @@ typedef struct tagDPMSG_SETGROUPOWNER
 
 typedef struct
 {
-   DWORD    dwType;      /* Use message type as described above */
-   DPID     idFrom;      /* ID from */
-   DPID     idTo;        /* ID to */
+   DWORD    dwType;                   /* Use message type as described above */
+   DPID     idFrom;                   /* ID from */
+   DPID     idTo;                     /* ID to */
    DWORD    dwFlags;
    DWORD    dwPriority;
    DWORD    dwTimeout;

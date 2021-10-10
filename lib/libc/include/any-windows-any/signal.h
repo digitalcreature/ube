@@ -27,14 +27,14 @@ extern "C" {
 #define SIGSEGV 11
 #define SIGTERM 15
 #define SIGBREAK 21
-#define SIGABRT 22       /* used by abort, replace SIGIOT in the future */
+#define SIGABRT 22                    /* used by abort, replace SIGIOT in the future */
 #define SIGABRT2 22
 
 #ifdef _POSIX
 #define	SIGHUP	1	/* hangup */
 #define	SIGQUIT	3	/* quit */
 #define	SIGTRAP	5	/* trace trap (not reset when caught) */
-#define SIGIOT  6       /* IOT instruction */
+#define SIGIOT  6                    /* IOT instruction */
 #define	SIGEMT	7	/* EMT instruction */
 #define	SIGKILL	9	/* kill (cannot be caught or ignored) */
 #define	SIGBUS	10	/* bus error */

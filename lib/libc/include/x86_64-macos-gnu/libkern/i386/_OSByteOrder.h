@@ -31,11 +31,11 @@
 
 #if !defined(__DARWIN_OS_INLINE)
 # if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
-#        define __DARWIN_OS_INLINE static inline
+#                     define __DARWIN_OS_INLINE static inline
 # elif defined(__MWERKS__) || defined(__cplusplus)
-#        define __DARWIN_OS_INLINE static inline
+#                     define __DARWIN_OS_INLINE static inline
 # else
-#        define __DARWIN_OS_INLINE static __inline__
+#                     define __DARWIN_OS_INLINE static __inline__
 # endif
 #endif
 
@@ -44,7 +44,7 @@
 __DARWIN_OS_INLINE
 __uint16_t
 _OSSwapInt16(
-	__uint16_t        _data
+	__uint16_t                     _data
 	)
 {
 	return (__uint16_t)((_data << 8) | (_data >> 8));
@@ -53,7 +53,7 @@ _OSSwapInt16(
 __DARWIN_OS_INLINE
 __uint32_t
 _OSSwapInt32(
-	__uint32_t        _data
+	__uint32_t                     _data
 	)
 {
 #if defined(__llvm__)
@@ -68,7 +68,7 @@ _OSSwapInt32(
 __DARWIN_OS_INLINE
 __uint64_t
 _OSSwapInt64(
-	__uint64_t        _data
+	__uint64_t                     _data
 	)
 {
 	return __builtin_bswap64(_data);
@@ -78,20 +78,20 @@ _OSSwapInt64(
 __DARWIN_OS_INLINE
 __uint64_t
 _OSSwapInt64(
-	__uint64_t        _data
+	__uint64_t                     _data
 	)
 {
 	__asm__ ("bswap   %%eax\n\t"
-                 "bswap   %%edx\n\t"
-                 "xchgl   %%eax, %%edx"
-                 : "+A" (_data));
+                                           "bswap   %%edx\n\t"
+                                           "xchgl   %%eax, %%edx"
+                                           : "+A" (_data));
 	return _data;
 }
 #elif defined(__x86_64__)
 __DARWIN_OS_INLINE
 __uint64_t
 _OSSwapInt64(
-	__uint64_t        _data
+	__uint64_t                     _data
 	)
 {
 	__asm__ ("bswap   %0" : "+r" (_data));

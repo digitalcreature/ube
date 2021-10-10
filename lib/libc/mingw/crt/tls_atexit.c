@@ -89,20 +89,20 @@ static void WINAPI tls_callback(HANDLE hDllHandle, DWORD dwReason, LPVOID __UNUS
   switch (dwReason) {
   case DLL_PROCESS_ATTACH:
     if (inited == 0) {
-      InitializeCriticalSection(&lock);
-      __dso_handle = hDllHandle;
-      /*
-       * We can only call _register_thread_local_exe_atexit_callback once
-       * in a process; if we call it a second time the process terminates.
-       * When DLLs are unloaded, this callback is invoked before we run the
-       * _onexit tables, but for exes, we need to ask this to be called before
-       * all other registered atexit functions.
-       * Since we are registered as a normal TLS callback, we will be called
-       * another time later as well, but that doesn't matter, it's safe to
-       * invoke this with DLL_PROCESS_DETACH twice.
-       */
-      if (!__mingw_module_is_dll)
-        _register_thread_local_exe_atexit_callback(tls_atexit_callback);
+                   InitializeCriticalSection(&lock);
+                   __dso_handle = hDllHandle;
+                   /*
+                    * We can only call _register_thread_local_exe_atexit_callback once
+                    * in a process; if we call it a second time the process terminates.
+                    * When DLLs are unloaded, this callback is invoked before we run the
+                    * _onexit tables, but for exes, we need to ask this to be called before
+                    * all other registered atexit functions.
+                    * Since we are registered as a normal TLS callback, we will be called
+                    * another time later as well, but that doesn't matter, it's safe to
+                    * invoke this with DLL_PROCESS_DETACH twice.
+                    */
+                   if (!__mingw_module_is_dll)
+                     _register_thread_local_exe_atexit_callback(tls_atexit_callback);
     }
     inited = 1;
     break;
@@ -130,14 +130,14 @@ static void WINAPI tls_callback(HANDLE hDllHandle, DWORD dwReason, LPVOID __UNUS
      */
     run_dtor_list(&tls_dtors);
     if (__mingw_module_is_dll) {
-      /* For DLLs, run dtors when detached. For EXEs, run dtors via the
-       * thread local atexit callback, to make sure they don't run when
-       * exiting the process with _exit or ExitProcess. */
-      run_dtor_list(&global_dtors);
+                   /* For DLLs, run dtors when detached. For EXEs, run dtors via the
+                    * thread local atexit callback, to make sure they don't run when
+                    * exiting the process with _exit or ExitProcess. */
+                   run_dtor_list(&global_dtors);
     }
     if (inited == 1) {
-      inited = 0;
-      DeleteCriticalSection(&lock);
+                   inited = 0;
+                   DeleteCriticalSection(&lock);
     }
     break;
   case DLL_THREAD_ATTACH:

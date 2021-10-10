@@ -5,13 +5,13 @@
     This file is in the public domain.
 
     Author:
-        Andrew Greenwood (andrew.greenwood@silverblade.co.uk)
+                     Andrew Greenwood (andrew.greenwood@silverblade.co.uk)
 
     History:
-        24 May 2008 - Created
-        2 July 2008 - Added device names as seen from user-mode
-        5 July 2008 - Added macros for checking device type
-        14 Feb 2009 - Added base control codes for nonstandard extensions
+                     24 May 2008 - Created
+                     2 July 2008 - Added device names as seen from user-mode
+                     5 July 2008 - Added macros for checking device type
+                     14 Feb 2009 - Added base control codes for nonstandard extensions
 
     This file contains definitions and structures for Windows NT4 style
     multimedia drivers. The NT4 DDK has these split across multiple header
@@ -29,8 +29,8 @@
 #ifndef NTDDSND_H
 #define NTDDSND_H
 
-#define SOUND_MAX_DEVICES           100
-#define SOUND_MAX_DEVICE_NAME       80
+#define SOUND_MAX_DEVICES                        100
+#define SOUND_MAX_DEVICE_NAME                    80
 
 
 /*
@@ -40,8 +40,8 @@
 #define IOCTL_SOUND_BASE    FILE_DEVICE_SOUND
 #define IOCTL_WAVE_BASE     0x0000
 #define IOCTL_MIDI_BASE     0x0080
-#define IOCTL_AUX_BASE      0x0100
-#define IOCTL_MIX_BASE      0x0180
+#define IOCTL_AUX_BASE                   0x0100
+#define IOCTL_MIX_BASE                   0x0180
 
 
 /*
@@ -116,7 +116,7 @@
 #if DBG
 /* Debug-only control code */
 #define IOCTL_WAVE_SET_DEBUG_LEVEL \
-        WAVE_CTL_CODE(0x0040, METHOD_BUFFERED, FILE_READ_ACCESS)
+                     WAVE_CTL_CODE(0x0040, METHOD_BUFFERED, FILE_READ_ACCESS)
 #endif
 
 
@@ -154,7 +154,7 @@
 #if DBG
 /* Debug-only control code */
 #define IOCTL_MIDI_SET_DEBUG_LEVEL \
-        WAVE_CTL_CODE(0x0040, METHOD_BUFFERED, FILE_READ_ACCESS)
+                     WAVE_CTL_CODE(0x0040, METHOD_BUFFERED, FILE_READ_ACCESS)
 #endif
 
 
@@ -196,7 +196,7 @@
     Wave structures & states
 */
 
-#define WAVE_DD_MAX_VOLUME      0xFFFFFFFF
+#define WAVE_DD_MAX_VOLUME                   0xFFFFFFFF
 
 typedef struct _WAVE_DD_VOLUME
 {
@@ -215,13 +215,13 @@ typedef struct _WAVE_DD_PLAYBACK_RATE
 } WAVE_DD_PLAYBACK_RATE, *PWAVE_DD_PLAYBACK_RATE;
 
 /* IOCTL_WAVE_SET_STATE commands */
-#define WAVE_DD_STOP        0x0001
-#define WAVE_DD_PLAY        0x0002
-#define WAVE_DD_RECORD      0x0003
-#define WAVE_DD_RESET       0x0004
+#define WAVE_DD_STOP                     0x0001
+#define WAVE_DD_PLAY                     0x0002
+#define WAVE_DD_RECORD                   0x0003
+#define WAVE_DD_RESET                    0x0004
 
 /* IOCTL_WAVE_GET_STATE responses */
-#define WAVE_DD_IDLE        0x0000
+#define WAVE_DD_IDLE                     0x0000
 #define WAVE_DD_STOPPED     0x0001
 #define WAVE_DD_PLAYING     0x0002
 #define WAVE_DD_RECORDING   0x0003
@@ -258,13 +258,13 @@ typedef struct _MIDI_DD_CACHE_DRUM_PATCHES
 } MIDI_DD_CACHE_DRUM_PATCHES, *PMIDI_DD_CACHE_DRUM_PATCHES;
 
 /* IOCTL_MIDI_SET_STATE commands */
-#define MIDI_DD_STOP        0x0001
-#define MIDI_DD_PLAY        0x0002
-#define MIDI_DD_RECORD      0x0003
-#define MIDI_DD_RESET       0x0004
+#define MIDI_DD_STOP                     0x0001
+#define MIDI_DD_PLAY                     0x0002
+#define MIDI_DD_RECORD                   0x0003
+#define MIDI_DD_RESET                    0x0004
 
 /* IOCTL_MIDI_GET_STATE responses */
-#define MIDI_DD_IDLE        0x0000
+#define MIDI_DD_IDLE                     0x0000
 #define MIDI_DD_STOPPED     0x0001
 #define MIDI_DD_PLAYING     0x0002
 #define MIDI_DD_RECORDING   0x0003

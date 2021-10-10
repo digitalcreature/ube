@@ -91,13 +91,13 @@ int __asctoe64(const char * __restrict__ ss, short unsigned int * __restrict__ y
   s = (char *) ss;
   while( isspace ((int)(unsigned char)*s)) /* skip leading spaces */
     {
-      ++s;
-      ++lenldstr;
+                   ++s;
+                   ++lenldstr;
     }
   sp = lstr;
   for (k = 0; k < c; k++)
     {
-      if ((*sp++ = *s++) == '\0')
+                   if ((*sp++ = *s++) == '\0')
 	break;
     }
   *sp = '\0';
@@ -105,8 +105,8 @@ int __asctoe64(const char * __restrict__ ss, short unsigned int * __restrict__ y
 
   if (*s == '-')
     {
-      nsign = 0xffff;
-      ++s;
+                   nsign = 0xffff;
+                   ++s;
     }
   else if (*s == '+')
     {
@@ -115,20 +115,20 @@ int __asctoe64(const char * __restrict__ ss, short unsigned int * __restrict__ y
 
   if (_strnicmp("INF", s , 3) == 0)
     {
-      valid_lead_string = 1;
-      s += 3;
-      if ( _strnicmp ("INITY", s, 5) == 0)
+                   valid_lead_string = 1;
+                   s += 3;
+                   if ( _strnicmp ("INITY", s, 5) == 0)
 	s += 5;
-      __ecleaz(yy);
-      yy[E] = 0x7fff;  /* infinity */
-      goto aexit;
+                   __ecleaz(yy);
+                   yy[E] = 0x7fff;  /* infinity */
+                   goto aexit;
     }
   else if(_strnicmp ("NAN", s, 3) == 0)
     {
-      valid_lead_string = 1;
-      s += 3;
-      __enan_NI16( yy );
-      goto aexit;
+                   valid_lead_string = 1;
+                   s += 3;
+                   __enan_NI16( yy );
+                   goto aexit;
     }
 
   /* FIXME: Handle case of strtold ("NAN(n_char_seq)",endptr)  */ 
@@ -143,8 +143,8 @@ int __asctoe64(const char * __restrict__ ss, short unsigned int * __restrict__ y
   /* Ignore leading zeros */
   while (*s == '0')
     {
-      valid_lead_string = 1;
-      s++;
+                   valid_lead_string = 1;
+                   s++;
     }
 
 nxtcom:
@@ -156,7 +156,7 @@ nxtcom:
 /* The use of a special char as a flag for trailing zeroes causes problems when input
    actually contains the char  */
 /* Identify and strip trailing zeros after the decimal point. */
-      if ((trail == 0) && (decflg != 0))
+                   if ((trail == 0) && (decflg != 0))
 	{
 	  sp = s;
 	  while ((*sp >= '0') && (*sp <= '9'))
@@ -164,8 +164,8 @@ nxtcom:
 	  --sp;
 	  while (*sp == '0')
 	    {
-	      *sp-- = (char)-1;
-	      trail++;
+	                   *sp-- = (char)-1;
+	                   trail++;
 	    }
 	  if( *s == (char)-1 )
 	    goto donchr;
@@ -177,7 +177,7 @@ nxtcom:
  * guarantees that there will be a roundoff bit at the top
  * of the low guard word after normalization.
  */
-      if (yy[2] == 0)
+                   if (yy[2] == 0)
 	{
 	  if( decflg )
 	    nexp += 1; /* count digits after decimal point */
@@ -190,7 +190,7 @@ nxtcom:
 	  xt[NI-2] = (unsigned short )k;
 	  __eaddm( xt, yy );
 	}
-      else
+                   else
 	{
 	  /* Mark any lost non-zero digit.  */
 	  lost |= k;
@@ -198,21 +198,21 @@ nxtcom:
 	  if (decflg == 0)
 	    nexp -= 1;
 	}
-      have_non_zero_mant |= k;
-      prec ++;
-      /* goto donchr; */
+                   have_non_zero_mant |= k;
+                   prec ++;
+                   /* goto donchr; */
     }
   else if (*s == dec_sym)
     {
-      if( decflg )
-        goto daldone;
-      ++decflg;
+                   if( decflg )
+                     goto daldone;
+                   ++decflg;
     }
   else if ((*s == 'E') || (*s == 'e') )
     {
-      if (prec || valid_lead_string)
+                   if (prec || valid_lead_string)
 	goto expnt;
-      else
+                   else
 	goto daldone;
     }
 #if 0
@@ -237,8 +237,8 @@ expnt:
   /* check for + or - */
   if (*s == '-')
     {
-      esign = -1;
-      ++s;
+                   esign = -1;
+                   ++s;
     }
   if (*s == '+')
     ++s;
@@ -246,20 +246,20 @@ expnt:
   /* Check for valid exponent.  */
   if (!(*s >= '0' && *s <= '9'))
     {
-      s = sp;
-      goto daldone;
+                   s = sp;
+                   goto daldone;
     }
 
   while ((*s >= '0') && (*s <= '9'))
     {
     /* Stop modifying exp if we are going to overflow anyway,
-       but keep parsing the string. */	
-      if (expo < 4978)
+                    but keep parsing the string. */	
+                   if (expo < 4978)
 	{
 	  expo *= 10;
 	  expo += *s - '0';
 	}
-      s++;
+                   s++;
     }
 
   if (esign < 0)
@@ -267,15 +267,15 @@ expnt:
 
   if (expo > 4977) /* maybe overflow */
     {
-      __ecleaz(yy);
-      if (have_non_zero_mant)
+                   __ecleaz(yy);
+                   if (have_non_zero_mant)
 	yy[E] = 0x7fff;
-      goto aexit;
+                   goto aexit;
     }
   else if (expo < -4977) /* underflow */
     {
-      __ecleaz(yy);
-      goto aexit;
+                   __ecleaz(yy);
+                   goto aexit;
     }
 
 daldone:
@@ -285,20 +285,20 @@ daldone:
   /* Pad trailing zeros to minimize power of 10, per IEEE spec. */
   while ((nexp > 0) && (yy[2] == 0))
     {
-      __emovz( yy, xt );
-      __eshup1( xt );
-      __eshup1( xt );
-      __eaddm( yy, xt );
-      __eshup1( xt );
-      if (xt[2] != 0)
+                   __emovz( yy, xt );
+                   __eshup1( xt );
+                   __eshup1( xt );
+                   __eaddm( yy, xt );
+                   __eshup1( xt );
+                   if (xt[2] != 0)
 	break;
-      nexp -= 1;
-      __emovz( xt, yy );
+                   nexp -= 1;
+                   __emovz( xt, yy );
     }
   if ((k = __enormlz(yy)) > NBITS)
     {
-      __ecleaz(yy);
-      goto aexit;
+                   __ecleaz(yy);
+                   goto aexit;
     }
   lexp = (EXONE - 1 + NBITS) - k;
   __emdnorm( yy, lost, 0, lexp, 64, NBITS );
@@ -313,15 +313,15 @@ daldone:
   lexp = yy[E];
   if (nexp == 0)
     {
-      k = 0;
-      goto expdon;
+                   k = 0;
+                   goto expdon;
     }
   esign = 1;
   if (nexp < 0)
     {
-      nexp = -nexp;
-      esign = -1;
-      if (nexp > 4096)
+                   nexp = -nexp;
+                   esign = -1;
+                   if (nexp > 4096)
 	{ /* Punt.  Can't handle this without 2 divides. */
 	  __emovi( __etens[0], tt );
 	  lexp -= tt[E];
@@ -335,25 +335,25 @@ daldone:
   expo = 1;
   do
     {
-      if (expo & nexp)
+                   if (expo & nexp)
 	__emul( p, xt, xt );
-      p -= NE;
-      expo = expo + expo;
+                   p -= NE;
+                   expo = expo + expo;
     }
   while (expo <= MAXP);
 
   __emovi( xt, tt );
   if (esign < 0)
     {
-      lexp -= tt[E];
-      k = __edivm( tt, yy );
-      lexp += EXONE;
+                   lexp -= tt[E];
+                   k = __edivm( tt, yy );
+                   lexp += EXONE;
     }
   else
     {
-      lexp += tt[E];
-      k = __emulm( tt, yy );
-      lexp -= EXONE - 1;
+                   lexp += tt[E];
+                   k = __emulm( tt, yy );
+                   lexp -= EXONE - 1;
     }
 
 expdon:
@@ -370,7 +370,7 @@ aexit:
 
   /* Check for overflow, undeflow  */
   if (have_non_zero_mant &&
-      (*((long double*) y) == 0.0L || isinf (*((long double*) y)))) 
+                   (*((long double*) y) == 0.0L || isinf (*((long double*) y)))) 
     errno = ERANGE;
 
   if (prec || valid_lead_string)

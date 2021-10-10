@@ -76,15 +76,15 @@ MIDL_INTERFACE("9de543e7-0f23-47e0-a8bc-971a894f86d4")
 INapServerManagement : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterSystemHealthValidator(
-        const NapComponentRegistrationInfo *validator,
-        const CLSID *validatorClsid) = 0;
+                     const NapComponentRegistrationInfo *validator,
+                     const CLSID *validatorClsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterSystemHealthValidator(
-        SystemHealthEntityId id) = 0;
+                     SystemHealthEntityId id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFailureCategoryMappings(
-        SystemHealthEntityId id,
-        const FailureCategoryMapping mapping) = 0;
+                     SystemHealthEntityId id,
+                     const FailureCategoryMapping mapping) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -96,30 +96,30 @@ typedef struct INapServerManagementVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapServerManagement *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapServerManagement *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapServerManagement *This);
+                     INapServerManagement *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapServerManagement *This);
+                     INapServerManagement *This);
 
     /*** INapServerManagement methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterSystemHealthValidator)(
-        INapServerManagement *This,
-        const NapComponentRegistrationInfo *validator,
-        const CLSID *validatorClsid);
+                     INapServerManagement *This,
+                     const NapComponentRegistrationInfo *validator,
+                     const CLSID *validatorClsid);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterSystemHealthValidator)(
-        INapServerManagement *This,
-        SystemHealthEntityId id);
+                     INapServerManagement *This,
+                     SystemHealthEntityId id);
 
     HRESULT (STDMETHODCALLTYPE *SetFailureCategoryMappings)(
-        INapServerManagement *This,
-        SystemHealthEntityId id,
-        const FailureCategoryMapping mapping);
+                     INapServerManagement *This,
+                     SystemHealthEntityId id,
+                     const FailureCategoryMapping mapping);
 
     END_INTERFACE
 } INapServerManagementVtbl;
@@ -179,18 +179,18 @@ MIDL_INTERFACE("599f9021-5643-4965-9949-e88975efff0e")
 INapServerInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNapServerInfo(
-        CountedString **serverName,
-        CountedString **serverDescription,
-        CountedString **protocolVersion) = 0;
+                     CountedString **serverName,
+                     CountedString **serverDescription,
+                     CountedString **protocolVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRegisteredSystemHealthValidators(
-        SystemHealthEntityCount *count,
-        NapComponentRegistrationInfo **validators,
-        CLSID **validatorClsids) = 0;
+                     SystemHealthEntityCount *count,
+                     NapComponentRegistrationInfo **validators,
+                     CLSID **validatorClsids) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFailureCategoryMappings(
-        SystemHealthEntityId id,
-        FailureCategoryMapping *mapping) = 0;
+                     SystemHealthEntityId id,
+                     FailureCategoryMapping *mapping) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -202,33 +202,33 @@ typedef struct INapServerInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapServerInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapServerInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapServerInfo *This);
+                     INapServerInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapServerInfo *This);
+                     INapServerInfo *This);
 
     /*** INapServerInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNapServerInfo)(
-        INapServerInfo *This,
-        CountedString **serverName,
-        CountedString **serverDescription,
-        CountedString **protocolVersion);
+                     INapServerInfo *This,
+                     CountedString **serverName,
+                     CountedString **serverDescription,
+                     CountedString **protocolVersion);
 
     HRESULT (STDMETHODCALLTYPE *GetRegisteredSystemHealthValidators)(
-        INapServerInfo *This,
-        SystemHealthEntityCount *count,
-        NapComponentRegistrationInfo **validators,
-        CLSID **validatorClsids);
+                     INapServerInfo *This,
+                     SystemHealthEntityCount *count,
+                     NapComponentRegistrationInfo **validators,
+                     CLSID **validatorClsids);
 
     HRESULT (STDMETHODCALLTYPE *GetFailureCategoryMappings)(
-        INapServerInfo *This,
-        SystemHealthEntityId id,
-        FailureCategoryMapping *mapping);
+                     INapServerInfo *This,
+                     SystemHealthEntityId id,
+                     FailureCategoryMapping *mapping);
 
     END_INTERFACE
 } INapServerInfoVtbl;

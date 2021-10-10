@@ -66,15 +66,15 @@ extern "C"{
 #else
   typedef struct IAccessControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAccessControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAccessControl *This);
-      ULONG (WINAPI *Release)(IAccessControl *This);
-      HRESULT (WINAPI *GrantAccessRights)(IAccessControl *This,PACTRL_ACCESSW pAccessList);
-      HRESULT (WINAPI *SetAccessRights)(IAccessControl *This,PACTRL_ACCESSW pAccessList);
-      HRESULT (WINAPI *SetOwner)(IAccessControl *This,PTRUSTEEW pOwner,PTRUSTEEW pGroup);
-      HRESULT (WINAPI *RevokeAccessRights)(IAccessControl *This,LPWSTR lpProperty,ULONG cTrustees,TRUSTEEW prgTrustees[]);
-      HRESULT (WINAPI *GetAllAccessRights)(IAccessControl *This,LPWSTR lpProperty,PACTRL_ACCESSW_ALLOCATE_ALL_NODES *ppAccessList,PTRUSTEEW *ppOwner,PTRUSTEEW *ppGroup);
-      HRESULT (WINAPI *IsAccessAllowed)(IAccessControl *This,PTRUSTEEW pTrustee,LPWSTR lpProperty,ACCESS_RIGHTS AccessRights,WINBOOL *pfAccessAllowed);
+                   HRESULT (WINAPI *QueryInterface)(IAccessControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAccessControl *This);
+                   ULONG (WINAPI *Release)(IAccessControl *This);
+                   HRESULT (WINAPI *GrantAccessRights)(IAccessControl *This,PACTRL_ACCESSW pAccessList);
+                   HRESULT (WINAPI *SetAccessRights)(IAccessControl *This,PACTRL_ACCESSW pAccessList);
+                   HRESULT (WINAPI *SetOwner)(IAccessControl *This,PTRUSTEEW pOwner,PTRUSTEEW pGroup);
+                   HRESULT (WINAPI *RevokeAccessRights)(IAccessControl *This,LPWSTR lpProperty,ULONG cTrustees,TRUSTEEW prgTrustees[]);
+                   HRESULT (WINAPI *GetAllAccessRights)(IAccessControl *This,LPWSTR lpProperty,PACTRL_ACCESSW_ALLOCATE_ALL_NODES *ppAccessList,PTRUSTEEW *ppOwner,PTRUSTEEW *ppGroup);
+                   HRESULT (WINAPI *IsAccessAllowed)(IAccessControl *This,PTRUSTEEW pTrustee,LPWSTR lpProperty,ACCESS_RIGHTS AccessRights,WINBOOL *pfAccessAllowed);
     END_INTERFACE
   } IAccessControlVtbl;
   struct IAccessControl {
@@ -125,14 +125,14 @@ extern "C"{
 #else
   typedef struct IAuditControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAuditControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAuditControl *This);
-      ULONG (WINAPI *Release)(IAuditControl *This);
-      HRESULT (WINAPI *GrantAuditRights)(IAuditControl *This,PACTRL_AUDITW pAuditList);
-      HRESULT (WINAPI *SetAuditRights)(IAuditControl *This,PACTRL_AUDITW pAuditList);
-      HRESULT (WINAPI *RevokeAuditRights)(IAuditControl *This,LPWSTR lpProperty,ULONG cTrustees,TRUSTEEW prgTrustees[]);
-      HRESULT (WINAPI *GetAllAuditRights)(IAuditControl *This,LPWSTR lpProperty,PACTRL_AUDITW *ppAuditList);
-      HRESULT (WINAPI *IsAccessAudited)(IAuditControl *This,PTRUSTEEW pTrustee,ACCESS_RIGHTS AuditRights,WINBOOL *pfAccessAudited);
+                   HRESULT (WINAPI *QueryInterface)(IAuditControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAuditControl *This);
+                   ULONG (WINAPI *Release)(IAuditControl *This);
+                   HRESULT (WINAPI *GrantAuditRights)(IAuditControl *This,PACTRL_AUDITW pAuditList);
+                   HRESULT (WINAPI *SetAuditRights)(IAuditControl *This,PACTRL_AUDITW pAuditList);
+                   HRESULT (WINAPI *RevokeAuditRights)(IAuditControl *This,LPWSTR lpProperty,ULONG cTrustees,TRUSTEEW prgTrustees[]);
+                   HRESULT (WINAPI *GetAllAuditRights)(IAuditControl *This,LPWSTR lpProperty,PACTRL_AUDITW *ppAuditList);
+                   HRESULT (WINAPI *IsAccessAudited)(IAuditControl *This,PTRUSTEEW pTrustee,ACCESS_RIGHTS AuditRights,WINBOOL *pfAccessAudited);
     END_INTERFACE
   } IAuditControlVtbl;
   struct IAuditControl {

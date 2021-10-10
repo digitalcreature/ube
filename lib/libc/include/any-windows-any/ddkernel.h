@@ -1,10 +1,10 @@
 /* $Id$
  *
- * COPYRIGHT:            This file is in the public domain.
- * PROJECT:              ReactOS kernel
+ * COPYRIGHT:                                      This file is in the public domain.
+ * PROJECT:                                        ReactOS kernel
  * FILE:
- * PURPOSE:              Directx headers
- * PROGRAMMER:           Magnus Olsen (greatlrd)
+ * PURPOSE:                                        Directx headers
+ * PROGRAMMER:                        Magnus Olsen (greatlrd)
  *
  */
 
@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 #if defined (_WIN32) && !defined (_NO_COM)
-DEFINE_GUID (IID_IDirectDrawKernel,        0x8D56C120,0x6A08,0x11D0,0x9B,0x06,0x00,0xA0,0xC9,0x03,0xA3,0xB8);
+DEFINE_GUID (IID_IDirectDrawKernel,                     0x8D56C120,0x6A08,0x11D0,0x9B,0x06,0x00,0xA0,0xC9,0x03,0xA3,0xB8);
 DEFINE_GUID (IID_IDirectDrawSurfaceKernel, 0x60755DA0,0x6A40,0x11D0,0x9B,0x06,0x00,0xA0,0xC9,0x03,0xA3,0xB8);
 #endif
 

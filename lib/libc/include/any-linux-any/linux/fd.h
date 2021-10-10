@@ -87,12 +87,12 @@ struct format_descr {
  */
 struct floppy_max_errors {
 	unsigned int
-	  abort,      /* number of errors to be reached before aborting */
+	  abort,                   /* number of errors to be reached before aborting */
 	  read_track, /* maximal number of errors permitted to read an
-		       * entire track at once */
-	  reset,      /* maximal number of errors before a reset is tried */
-	  recal,      /* maximal number of errors before a recalibrate is
-		       * tried */
+		                    * entire track at once */
+	  reset,                   /* maximal number of errors before a reset is tried */
+	  recal,                   /* maximal number of errors before a recalibrate is
+		                    * tried */
 
 	  /*
 	   * Threshold for reporting FDC errors to the console.
@@ -304,12 +304,12 @@ struct floppy_write_errors {
 	
 	/* position of first and last write errors */
 	unsigned long first_error_sector;
-	int           first_error_generation;
+	int                        first_error_generation;
 	unsigned long last_error_sector;
-	int           last_error_generation;
+	int                        last_error_generation;
 	
 	unsigned int badness; /* highest retry count for a read or write 
-			       * operation */
+			                    * operation */
 };
 
 #define FDWERRORCLR  _IO(2, 0x56)
@@ -351,7 +351,7 @@ struct floppy_raw_cmd {
 	void *data;
 	char *kernel_data; /* location of data buffer in the kernel */
 	struct floppy_raw_cmd *next; /* used for chaining of raw cmd's 
-				      * within the kernel */
+				                   * within the kernel */
 	long length; /* in: length of dma transfer. out: remaining bytes */
 	long phys_length; /* physical length, if different from dma length */
 	int buffer_length; /* length of allocated buffer */

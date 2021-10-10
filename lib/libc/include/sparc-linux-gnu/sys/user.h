@@ -36,8 +36,8 @@ struct sunos_fp
 {
   union
     {
-      unsigned int regs[32];
-      double reg_dbls[16];
+                   unsigned int regs[32];
+                   double reg_dbls[16];
     } fregs;
   unsigned int fsr;
   unsigned int flags;
@@ -58,23 +58,23 @@ struct user {
   struct sunos_regs regs;
   struct
     {
-      unsigned char a_dynamic :1;
-      unsigned char a_toolversion :7;
-      unsigned char a_machtype;
-      unsigned short a_info;
-      unsigned int a_text;
-      unsigned int a_data;
-      unsigned int a_bss;
-      unsigned int a_syms;
-      unsigned int a_entry;
-      unsigned int a_trsize;
-      unsigned int a_drsize;
+                   unsigned char a_dynamic :1;
+                   unsigned char a_toolversion :7;
+                   unsigned char a_machtype;
+                   unsigned short a_info;
+                   unsigned int a_text;
+                   unsigned int a_data;
+                   unsigned int a_bss;
+                   unsigned int a_syms;
+                   unsigned int a_entry;
+                   unsigned int a_trsize;
+                   unsigned int a_drsize;
     } uexec;
-  int           signal;
-  size_t        u_tsize;
-  size_t        u_dsize;
-  size_t        u_ssize;
-  char          u_comm[17];
+  int                        signal;
+  size_t                     u_tsize;
+  size_t                     u_dsize;
+  size_t                     u_ssize;
+  char                       u_comm[17];
   struct sunos_fpu fpu;
   unsigned int  sigcode;
 };

@@ -134,16 +134,16 @@ extern "C" {
     PVOID AllocationBase;
     ULONG AllocationProtect;
     __C89_NAMELESS union {
-        ULONG Flags;
-        __C89_NAMELESS struct {
-            ULONG Private : 1;
-            ULONG MappedDataFile : 1;
-            ULONG MappedImage : 1;
-            ULONG MappedPageFile : 1;
-            ULONG MappedPhysical : 1;
-            ULONG DirectMapped : 1;
-            ULONG Reserved : 26;
-        };
+                     ULONG Flags;
+                     __C89_NAMELESS struct {
+                                      ULONG Private : 1;
+                                      ULONG MappedDataFile : 1;
+                                      ULONG MappedImage : 1;
+                                      ULONG MappedPageFile : 1;
+                                      ULONG MappedPhysical : 1;
+                                      ULONG DirectMapped : 1;
+                                      ULONG Reserved : 26;
+                     };
     };
     SIZE_T RegionSize;
     SIZE_T CommitSize;

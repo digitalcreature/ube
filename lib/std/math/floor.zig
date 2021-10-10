@@ -23,11 +23,11 @@ const math = std.math;
 pub fn floor(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f16 => floor16(x),
-        f32 => floor32(x),
-        f64 => floor64(x),
-        f128 => floor128(x),
-        else => @compileError("floor not implemented for " ++ @typeName(T)),
+                     f16 => floor16(x),
+                     f32 => floor32(x),
+                     f64 => floor64(x),
+                     f128 => floor128(x),
+                     else => @compileError("floor not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -38,30 +38,30 @@ fn floor16(x: f16) f16 {
 
     // TODO: Shouldn't need this explicit check.
     if (x == 0.0) {
-        return x;
+                     return x;
     }
 
     if (e >= 10) {
-        return x;
+                     return x;
     }
 
     if (e >= 0) {
-        m = @as(u16, 1023) >> @intCast(u4, e);
-        if (u & m == 0) {
-            return x;
-        }
-        math.doNotOptimizeAway(x + 0x1.0p120);
-        if (u >> 15 != 0) {
-            u += m;
-        }
-        return @bitCast(f16, u & ~m);
+                     m = @as(u16, 1023) >> @intCast(u4, e);
+                     if (u & m == 0) {
+                                      return x;
+                     }
+                     math.doNotOptimizeAway(x + 0x1.0p120);
+                     if (u >> 15 != 0) {
+                                      u += m;
+                     }
+                     return @bitCast(f16, u & ~m);
     } else {
-        math.doNotOptimizeAway(x + 0x1.0p120);
-        if (u >> 15 == 0) {
-            return 0.0;
-        } else {
-            return -1.0;
-        }
+                     math.doNotOptimizeAway(x + 0x1.0p120);
+                     if (u >> 15 == 0) {
+                                      return 0.0;
+                     } else {
+                                      return -1.0;
+                     }
     }
 }
 
@@ -72,30 +72,30 @@ fn floor32(x: f32) f32 {
 
     // TODO: Shouldn't need this explicit check.
     if (x == 0.0) {
-        return x;
+                     return x;
     }
 
     if (e >= 23) {
-        return x;
+                     return x;
     }
 
     if (e >= 0) {
-        m = @as(u32, 0x007FFFFF) >> @intCast(u5, e);
-        if (u & m == 0) {
-            return x;
-        }
-        math.doNotOptimizeAway(x + 0x1.0p120);
-        if (u >> 31 != 0) {
-            u += m;
-        }
-        return @bitCast(f32, u & ~m);
+                     m = @as(u32, 0x007FFFFF) >> @intCast(u5, e);
+                     if (u & m == 0) {
+                                      return x;
+                     }
+                     math.doNotOptimizeAway(x + 0x1.0p120);
+                     if (u >> 31 != 0) {
+                                      u += m;
+                     }
+                     return @bitCast(f32, u & ~m);
     } else {
-        math.doNotOptimizeAway(x + 0x1.0p120);
-        if (u >> 31 == 0) {
-            return 0.0;
-        } else {
-            return -1.0;
-        }
+                     math.doNotOptimizeAway(x + 0x1.0p120);
+                     if (u >> 31 == 0) {
+                                      return 0.0;
+                     } else {
+                                      return -1.0;
+                     }
     }
 }
 
@@ -105,26 +105,26 @@ fn floor64(x: f64) f64 {
     var y: f64 = undefined;
 
     if (e >= 0x3FF + 52 or x == 0) {
-        return x;
+                     return x;
     }
 
     if (u >> 63 != 0) {
-        y = x - math.f64_toint + math.f64_toint - x;
+                     y = x - math.f64_toint + math.f64_toint - x;
     } else {
-        y = x + math.f64_toint - math.f64_toint - x;
+                     y = x + math.f64_toint - math.f64_toint - x;
     }
 
     if (e <= 0x3FF - 1) {
-        math.doNotOptimizeAway(y);
-        if (u >> 63 != 0) {
-            return -1.0;
-        } else {
-            return 0.0;
-        }
+                     math.doNotOptimizeAway(y);
+                     if (u >> 63 != 0) {
+                                      return -1.0;
+                     } else {
+                                      return 0.0;
+                     }
     } else if (y > 0) {
-        return x + y - 1;
+                     return x + y - 1;
     } else {
-        return x + y;
+                     return x + y;
     }
 }
 
@@ -136,22 +136,22 @@ fn floor128(x: f128) f128 {
     if (e >= 0x3FFF + 112 or x == 0) return x;
 
     if (u >> 127 != 0) {
-        y = x - math.f128_toint + math.f128_toint - x;
+                     y = x - math.f128_toint + math.f128_toint - x;
     } else {
-        y = x + math.f128_toint - math.f128_toint - x;
+                     y = x + math.f128_toint - math.f128_toint - x;
     }
 
     if (e <= 0x3FFF - 1) {
-        math.doNotOptimizeAway(y);
-        if (u >> 127 != 0) {
-            return -1.0;
-        } else {
-            return 0.0;
-        }
+                     math.doNotOptimizeAway(y);
+                     if (u >> 127 != 0) {
+                                      return -1.0;
+                     } else {
+                                      return 0.0;
+                     }
     } else if (y > 0) {
-        return x + y - 1;
+                     return x + y - 1;
     } else {
-        return x + y;
+                     return x + y;
     }
 }
 

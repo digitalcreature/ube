@@ -81,8 +81,8 @@ extern "C" {
     LPWSTR pwszSigningCertFileName;
     DWORD dwPvkChoice;
     __C89_NAMELESS union {
-      PCCRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO pPvkFileInfo;
-      PCRYPT_KEY_PROV_INFO pPvkProvInfo;
+                   PCCRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO pPvkFileInfo;
+                   PCRYPT_KEY_PROV_INFO pPvkProvInfo;
     };
   } CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO,*PCRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO;
 
@@ -117,14 +117,14 @@ extern "C" {
     DWORD dwSize;
     DWORD dwSubjectChoice;
     __C89_NAMELESS union {
-      LPCWSTR pwszFileName;
-      PCCRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO pSignBlobInfo;
+                   LPCWSTR pwszFileName;
+                   PCCRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO pSignBlobInfo;
     };
     DWORD dwSigningCertChoice;
     __C89_NAMELESS union {
-      PCCERT_CONTEXT pSigningCertContext;
-      PCCRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO pSigningCertStore;
-      PCCRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO pSigningCertPvkInfo;
+                   PCCERT_CONTEXT pSigningCertContext;
+                   PCCRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO pSigningCertStore;
+                   PCCRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO pSigningCertPvkInfo;
     };
     LPCWSTR pwszTimestampURL;
     DWORD dwAdditionalCertChoice;
@@ -181,8 +181,8 @@ extern "C" {
     LPCSTR *rgszPurposes;
     DWORD cPurposes;
     __C89_NAMELESS union {
-      CRYPT_PROVIDER_DATA const *pCryptProviderData;
-      HANDLE hWVTStateData;
+                   CRYPT_PROVIDER_DATA const *pCryptProviderData;
+                   HANDLE hWVTStateData;
     };
     WINBOOL fpCryptProviderDataTrustedUsage;
     DWORD idxSigner;
@@ -207,8 +207,8 @@ extern "C" {
     LPCSTR *rgszPurposes;
     DWORD cPurposes;
     __C89_NAMELESS union {
-      CRYPT_PROVIDER_DATA const *pCryptProviderData;
-      HANDLE hWVTStateData;
+                   CRYPT_PROVIDER_DATA const *pCryptProviderData;
+                   HANDLE hWVTStateData;
     };
     WINBOOL fpCryptProviderDataTrustedUsage;
     DWORD idxSigner;
@@ -244,10 +244,10 @@ extern "C" {
     LPCWSTR pwszExportFileName;
     DWORD dwSubjectChoice;
     __C89_NAMELESS union {
-      PCCERT_CONTEXT pCertContext;
-      PCCTL_CONTEXT pCTLContext;
-      PCCRL_CONTEXT pCRLContext;
-      HCERTSTORE hCertStore;
+                   PCCERT_CONTEXT pCertContext;
+                   PCCTL_CONTEXT pCTLContext;
+                   PCCRL_CONTEXT pCRLContext;
+                   HCERTSTORE hCertStore;
     };
     DWORD cStores;
     HCERTSTORE *rghStores;
@@ -284,11 +284,11 @@ extern "C" {
     DWORD dwSize;
     DWORD dwSubjectChoice;
     __C89_NAMELESS union {
-      LPCWSTR pwszFileName;
-      PCCERT_CONTEXT pCertContext;
-      PCCTL_CONTEXT pCTLContext;
-      PCCRL_CONTEXT pCRLContext;
-      HCERTSTORE hCertStore;
+                   LPCWSTR pwszFileName;
+                   PCCERT_CONTEXT pCertContext;
+                   PCCTL_CONTEXT pCTLContext;
+                   PCCRL_CONTEXT pCRLContext;
+                   HCERTSTORE hCertStore;
     };
     DWORD dwFlags;
     LPCWSTR pwszPassword;

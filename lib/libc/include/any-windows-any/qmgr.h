@@ -131,17 +131,17 @@ extern "C"{
 #else
   typedef struct IBackgroundCopyJob1Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBackgroundCopyJob1 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBackgroundCopyJob1 *This);
-      ULONG (WINAPI *Release)(IBackgroundCopyJob1 *This);
-      HRESULT (WINAPI *CancelJob)(IBackgroundCopyJob1 *This);
-      HRESULT (WINAPI *GetProgress)(IBackgroundCopyJob1 *This,DWORD dwFlags,DWORD *pdwProgress);
-      HRESULT (WINAPI *GetStatus)(IBackgroundCopyJob1 *This,DWORD *pdwStatus,DWORD *pdwWin32Result,DWORD *pdwTransportResult,DWORD *pdwNumOfRetries);
-      HRESULT (WINAPI *AddFiles)(IBackgroundCopyJob1 *This,ULONG cFileCount,FILESETINFO **ppFileSet);
-      HRESULT (WINAPI *GetFile)(IBackgroundCopyJob1 *This,ULONG cFileIndex,FILESETINFO *pFileInfo);
-      HRESULT (WINAPI *GetFileCount)(IBackgroundCopyJob1 *This,DWORD *pdwFileCount);
-      HRESULT (WINAPI *SwitchToForeground)(IBackgroundCopyJob1 *This);
-      HRESULT (WINAPI *get_JobID)(IBackgroundCopyJob1 *This,GUID *pguidJobID);
+                   HRESULT (WINAPI *QueryInterface)(IBackgroundCopyJob1 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBackgroundCopyJob1 *This);
+                   ULONG (WINAPI *Release)(IBackgroundCopyJob1 *This);
+                   HRESULT (WINAPI *CancelJob)(IBackgroundCopyJob1 *This);
+                   HRESULT (WINAPI *GetProgress)(IBackgroundCopyJob1 *This,DWORD dwFlags,DWORD *pdwProgress);
+                   HRESULT (WINAPI *GetStatus)(IBackgroundCopyJob1 *This,DWORD *pdwStatus,DWORD *pdwWin32Result,DWORD *pdwTransportResult,DWORD *pdwNumOfRetries);
+                   HRESULT (WINAPI *AddFiles)(IBackgroundCopyJob1 *This,ULONG cFileCount,FILESETINFO **ppFileSet);
+                   HRESULT (WINAPI *GetFile)(IBackgroundCopyJob1 *This,ULONG cFileIndex,FILESETINFO *pFileInfo);
+                   HRESULT (WINAPI *GetFileCount)(IBackgroundCopyJob1 *This,DWORD *pdwFileCount);
+                   HRESULT (WINAPI *SwitchToForeground)(IBackgroundCopyJob1 *This);
+                   HRESULT (WINAPI *get_JobID)(IBackgroundCopyJob1 *This,GUID *pguidJobID);
     END_INTERFACE
   } IBackgroundCopyJob1Vtbl;
   struct IBackgroundCopyJob1 {
@@ -194,14 +194,14 @@ extern "C"{
 #else
   typedef struct IEnumBackgroundCopyJobs1Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumBackgroundCopyJobs1 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumBackgroundCopyJobs1 *This);
-      ULONG (WINAPI *Release)(IEnumBackgroundCopyJobs1 *This);
-      HRESULT (WINAPI *Next)(IEnumBackgroundCopyJobs1 *This,ULONG celt,GUID *rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumBackgroundCopyJobs1 *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumBackgroundCopyJobs1 *This);
-      HRESULT (WINAPI *Clone)(IEnumBackgroundCopyJobs1 *This,IEnumBackgroundCopyJobs1 **ppenum);
-      HRESULT (WINAPI *GetCount)(IEnumBackgroundCopyJobs1 *This,ULONG *puCount);
+                   HRESULT (WINAPI *QueryInterface)(IEnumBackgroundCopyJobs1 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumBackgroundCopyJobs1 *This);
+                   ULONG (WINAPI *Release)(IEnumBackgroundCopyJobs1 *This);
+                   HRESULT (WINAPI *Next)(IEnumBackgroundCopyJobs1 *This,ULONG celt,GUID *rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumBackgroundCopyJobs1 *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumBackgroundCopyJobs1 *This);
+                   HRESULT (WINAPI *Clone)(IEnumBackgroundCopyJobs1 *This,IEnumBackgroundCopyJobs1 **ppenum);
+                   HRESULT (WINAPI *GetCount)(IEnumBackgroundCopyJobs1 *This,ULONG *puCount);
     END_INTERFACE
   } IEnumBackgroundCopyJobs1Vtbl;
   struct IEnumBackgroundCopyJobs1 {
@@ -261,24 +261,24 @@ extern "C"{
 #else
   typedef struct IBackgroundCopyGroupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBackgroundCopyGroup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBackgroundCopyGroup *This);
-      ULONG (WINAPI *Release)(IBackgroundCopyGroup *This);
-      HRESULT (WINAPI *GetProp)(IBackgroundCopyGroup *This,GROUPPROP propID,VARIANT *pvarVal);
-      HRESULT (WINAPI *SetProp)(IBackgroundCopyGroup *This,GROUPPROP propID,VARIANT *pvarVal);
-      HRESULT (WINAPI *GetProgress)(IBackgroundCopyGroup *This,DWORD dwFlags,DWORD *pdwProgress);
-      HRESULT (WINAPI *GetStatus)(IBackgroundCopyGroup *This,DWORD *pdwStatus,DWORD *pdwJobIndex);
-      HRESULT (WINAPI *GetJob)(IBackgroundCopyGroup *This,GUID jobID,IBackgroundCopyJob1 **ppJob);
-      HRESULT (WINAPI *SuspendGroup)(IBackgroundCopyGroup *This);
-      HRESULT (WINAPI *ResumeGroup)(IBackgroundCopyGroup *This);
-      HRESULT (WINAPI *CancelGroup)(IBackgroundCopyGroup *This);
-      HRESULT (WINAPI *get_Size)(IBackgroundCopyGroup *This,DWORD *pdwSize);
-      HRESULT (WINAPI *get_GroupID)(IBackgroundCopyGroup *This,GUID *pguidGroupID);
-      HRESULT (WINAPI *CreateJob)(IBackgroundCopyGroup *This,GUID guidJobID,IBackgroundCopyJob1 **ppJob);
-      HRESULT (WINAPI *EnumJobs)(IBackgroundCopyGroup *This,DWORD dwFlags,IEnumBackgroundCopyJobs1 **ppEnumJobs);
-      HRESULT (WINAPI *SwitchToForeground)(IBackgroundCopyGroup *This);
-      HRESULT (WINAPI *QueryNewJobInterface)(IBackgroundCopyGroup *This,REFIID iid,IUnknown **pUnk);
-      HRESULT (WINAPI *SetNotificationPointer)(IBackgroundCopyGroup *This,REFIID iid,IUnknown *pUnk);
+                   HRESULT (WINAPI *QueryInterface)(IBackgroundCopyGroup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBackgroundCopyGroup *This);
+                   ULONG (WINAPI *Release)(IBackgroundCopyGroup *This);
+                   HRESULT (WINAPI *GetProp)(IBackgroundCopyGroup *This,GROUPPROP propID,VARIANT *pvarVal);
+                   HRESULT (WINAPI *SetProp)(IBackgroundCopyGroup *This,GROUPPROP propID,VARIANT *pvarVal);
+                   HRESULT (WINAPI *GetProgress)(IBackgroundCopyGroup *This,DWORD dwFlags,DWORD *pdwProgress);
+                   HRESULT (WINAPI *GetStatus)(IBackgroundCopyGroup *This,DWORD *pdwStatus,DWORD *pdwJobIndex);
+                   HRESULT (WINAPI *GetJob)(IBackgroundCopyGroup *This,GUID jobID,IBackgroundCopyJob1 **ppJob);
+                   HRESULT (WINAPI *SuspendGroup)(IBackgroundCopyGroup *This);
+                   HRESULT (WINAPI *ResumeGroup)(IBackgroundCopyGroup *This);
+                   HRESULT (WINAPI *CancelGroup)(IBackgroundCopyGroup *This);
+                   HRESULT (WINAPI *get_Size)(IBackgroundCopyGroup *This,DWORD *pdwSize);
+                   HRESULT (WINAPI *get_GroupID)(IBackgroundCopyGroup *This,GUID *pguidGroupID);
+                   HRESULT (WINAPI *CreateJob)(IBackgroundCopyGroup *This,GUID guidJobID,IBackgroundCopyJob1 **ppJob);
+                   HRESULT (WINAPI *EnumJobs)(IBackgroundCopyGroup *This,DWORD dwFlags,IEnumBackgroundCopyJobs1 **ppEnumJobs);
+                   HRESULT (WINAPI *SwitchToForeground)(IBackgroundCopyGroup *This);
+                   HRESULT (WINAPI *QueryNewJobInterface)(IBackgroundCopyGroup *This,REFIID iid,IUnknown **pUnk);
+                   HRESULT (WINAPI *SetNotificationPointer)(IBackgroundCopyGroup *This,REFIID iid,IUnknown *pUnk);
     END_INTERFACE
   } IBackgroundCopyGroupVtbl;
   struct IBackgroundCopyGroup {
@@ -352,14 +352,14 @@ extern "C"{
 #else
   typedef struct IEnumBackgroundCopyGroupsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumBackgroundCopyGroups *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumBackgroundCopyGroups *This);
-      ULONG (WINAPI *Release)(IEnumBackgroundCopyGroups *This);
-      HRESULT (WINAPI *Next)(IEnumBackgroundCopyGroups *This,ULONG celt,GUID *rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumBackgroundCopyGroups *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumBackgroundCopyGroups *This);
-      HRESULT (WINAPI *Clone)(IEnumBackgroundCopyGroups *This,IEnumBackgroundCopyGroups **ppenum);
-      HRESULT (WINAPI *GetCount)(IEnumBackgroundCopyGroups *This,ULONG *puCount);
+                   HRESULT (WINAPI *QueryInterface)(IEnumBackgroundCopyGroups *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumBackgroundCopyGroups *This);
+                   ULONG (WINAPI *Release)(IEnumBackgroundCopyGroups *This);
+                   HRESULT (WINAPI *Next)(IEnumBackgroundCopyGroups *This,ULONG celt,GUID *rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumBackgroundCopyGroups *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumBackgroundCopyGroups *This);
+                   HRESULT (WINAPI *Clone)(IEnumBackgroundCopyGroups *This,IEnumBackgroundCopyGroups **ppenum);
+                   HRESULT (WINAPI *GetCount)(IEnumBackgroundCopyGroups *This,ULONG *puCount);
     END_INTERFACE
   } IEnumBackgroundCopyGroupsVtbl;
   struct IEnumBackgroundCopyGroups {
@@ -401,12 +401,12 @@ extern "C"{
 #else
   typedef struct IBackgroundCopyCallback1Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBackgroundCopyCallback1 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBackgroundCopyCallback1 *This);
-      ULONG (WINAPI *Release)(IBackgroundCopyCallback1 *This);
-      HRESULT (WINAPI *OnStatus)(IBackgroundCopyCallback1 *This,IBackgroundCopyGroup *pGroup,IBackgroundCopyJob1 *pJob,DWORD dwFileIndex,DWORD dwStatus,DWORD dwNumOfRetries,DWORD dwWin32Result,DWORD dwTransportResult);
-      HRESULT (WINAPI *OnProgress)(IBackgroundCopyCallback1 *This,DWORD ProgressType,IBackgroundCopyGroup *pGroup,IBackgroundCopyJob1 *pJob,DWORD dwFileIndex,DWORD dwProgressValue);
-      HRESULT (WINAPI *OnProgressEx)(IBackgroundCopyCallback1 *This,DWORD ProgressType,IBackgroundCopyGroup *pGroup,IBackgroundCopyJob1 *pJob,DWORD dwFileIndex,DWORD dwProgressValue,DWORD dwByteArraySize,BYTE *pByte);
+                   HRESULT (WINAPI *QueryInterface)(IBackgroundCopyCallback1 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBackgroundCopyCallback1 *This);
+                   ULONG (WINAPI *Release)(IBackgroundCopyCallback1 *This);
+                   HRESULT (WINAPI *OnStatus)(IBackgroundCopyCallback1 *This,IBackgroundCopyGroup *pGroup,IBackgroundCopyJob1 *pJob,DWORD dwFileIndex,DWORD dwStatus,DWORD dwNumOfRetries,DWORD dwWin32Result,DWORD dwTransportResult);
+                   HRESULT (WINAPI *OnProgress)(IBackgroundCopyCallback1 *This,DWORD ProgressType,IBackgroundCopyGroup *pGroup,IBackgroundCopyJob1 *pJob,DWORD dwFileIndex,DWORD dwProgressValue);
+                   HRESULT (WINAPI *OnProgressEx)(IBackgroundCopyCallback1 *This,DWORD ProgressType,IBackgroundCopyGroup *pGroup,IBackgroundCopyJob1 *pJob,DWORD dwFileIndex,DWORD dwProgressValue,DWORD dwByteArraySize,BYTE *pByte);
     END_INTERFACE
   } IBackgroundCopyCallback1Vtbl;
   struct IBackgroundCopyCallback1 {
@@ -442,12 +442,12 @@ extern "C"{
 #else
   typedef struct IBackgroundCopyQMgrVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBackgroundCopyQMgr *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBackgroundCopyQMgr *This);
-      ULONG (WINAPI *Release)(IBackgroundCopyQMgr *This);
-      HRESULT (WINAPI *CreateGroup)(IBackgroundCopyQMgr *This,GUID guidGroupID,IBackgroundCopyGroup **ppGroup);
-      HRESULT (WINAPI *GetGroup)(IBackgroundCopyQMgr *This,GUID groupID,IBackgroundCopyGroup **ppGroup);
-      HRESULT (WINAPI *EnumGroups)(IBackgroundCopyQMgr *This,DWORD dwFlags,IEnumBackgroundCopyGroups **ppEnumGroups);
+                   HRESULT (WINAPI *QueryInterface)(IBackgroundCopyQMgr *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBackgroundCopyQMgr *This);
+                   ULONG (WINAPI *Release)(IBackgroundCopyQMgr *This);
+                   HRESULT (WINAPI *CreateGroup)(IBackgroundCopyQMgr *This,GUID guidGroupID,IBackgroundCopyGroup **ppGroup);
+                   HRESULT (WINAPI *GetGroup)(IBackgroundCopyQMgr *This,GUID groupID,IBackgroundCopyGroup **ppGroup);
+                   HRESULT (WINAPI *EnumGroups)(IBackgroundCopyQMgr *This,DWORD dwFlags,IEnumBackgroundCopyGroups **ppEnumGroups);
     END_INTERFACE
   } IBackgroundCopyQMgrVtbl;
   struct IBackgroundCopyQMgr {

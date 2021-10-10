@@ -325,8 +325,8 @@ extern "C" {
 #define CREDUIWIN_PACK_32_WOW 0x10000000
 
 typedef enum _CRED_PROTECTION_TYPE {
-  CredUnprotected         = 0,
-  CredUserProtection      = 1,
+  CredUnprotected                      = 0,
+  CredUserProtection                   = 1,
   CredTrustedProtection   = 2 
 } CRED_PROTECTION_TYPE, *PCRED_PROTECTION_TYPE;
 

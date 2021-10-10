@@ -598,32 +598,32 @@ MIDL_INTERFACE("db01a1e3-a42b-11cf-8f20-00805f2cd064")
 IActiveScriptSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetLCID(
-        LCID *plcid) = 0;
+                     LCID *plcid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemInfo(
-        LPCOLESTR pstrName,
-        DWORD dwReturnMask,
-        IUnknown **ppiunkItem,
-        ITypeInfo **ppti) = 0;
+                     LPCOLESTR pstrName,
+                     DWORD dwReturnMask,
+                     IUnknown **ppiunkItem,
+                     ITypeInfo **ppti) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDocVersionString(
-        BSTR *pbstrVersion) = 0;
+                     BSTR *pbstrVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnScriptTerminate(
-        const VARIANT *pvarResult,
-        const EXCEPINFO *pexcepinfo) = 0;
+                     const VARIANT *pvarResult,
+                     const EXCEPINFO *pexcepinfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStateChange(
-        SCRIPTSTATE ssScriptState) = 0;
+                     SCRIPTSTATE ssScriptState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnScriptError(
-        IActiveScriptError *pscripterror) = 0;
+                     IActiveScriptError *pscripterror) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnEnterScript(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnLeaveScript(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -635,50 +635,50 @@ typedef struct IActiveScriptSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSite *This);
+                     IActiveScriptSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSite *This);
+                     IActiveScriptSite *This);
 
     /*** IActiveScriptSite methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLCID)(
-        IActiveScriptSite *This,
-        LCID *plcid);
+                     IActiveScriptSite *This,
+                     LCID *plcid);
 
     HRESULT (STDMETHODCALLTYPE *GetItemInfo)(
-        IActiveScriptSite *This,
-        LPCOLESTR pstrName,
-        DWORD dwReturnMask,
-        IUnknown **ppiunkItem,
-        ITypeInfo **ppti);
+                     IActiveScriptSite *This,
+                     LPCOLESTR pstrName,
+                     DWORD dwReturnMask,
+                     IUnknown **ppiunkItem,
+                     ITypeInfo **ppti);
 
     HRESULT (STDMETHODCALLTYPE *GetDocVersionString)(
-        IActiveScriptSite *This,
-        BSTR *pbstrVersion);
+                     IActiveScriptSite *This,
+                     BSTR *pbstrVersion);
 
     HRESULT (STDMETHODCALLTYPE *OnScriptTerminate)(
-        IActiveScriptSite *This,
-        const VARIANT *pvarResult,
-        const EXCEPINFO *pexcepinfo);
+                     IActiveScriptSite *This,
+                     const VARIANT *pvarResult,
+                     const EXCEPINFO *pexcepinfo);
 
     HRESULT (STDMETHODCALLTYPE *OnStateChange)(
-        IActiveScriptSite *This,
-        SCRIPTSTATE ssScriptState);
+                     IActiveScriptSite *This,
+                     SCRIPTSTATE ssScriptState);
 
     HRESULT (STDMETHODCALLTYPE *OnScriptError)(
-        IActiveScriptSite *This,
-        IActiveScriptError *pscripterror);
+                     IActiveScriptSite *This,
+                     IActiveScriptError *pscripterror);
 
     HRESULT (STDMETHODCALLTYPE *OnEnterScript)(
-        IActiveScriptSite *This);
+                     IActiveScriptSite *This);
 
     HRESULT (STDMETHODCALLTYPE *OnLeaveScript)(
-        IActiveScriptSite *This);
+                     IActiveScriptSite *This);
 
     END_INTERFACE
 } IActiveScriptSiteVtbl;
@@ -759,15 +759,15 @@ MIDL_INTERFACE("eae1ba61-a4ed-11cf-8f20-00805f2cd064")
 IActiveScriptError : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetExceptionInfo(
-        EXCEPINFO *pexcepinfo) = 0;
+                     EXCEPINFO *pexcepinfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSourcePosition(
-        DWORD *pdwSourceContext,
-        ULONG *pulLineNumber,
-        LONG *plCharacterPosition) = 0;
+                     DWORD *pdwSourceContext,
+                     ULONG *pulLineNumber,
+                     LONG *plCharacterPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSourceLineText(
-        BSTR *pbstrSourceLine) = 0;
+                     BSTR *pbstrSourceLine) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -779,30 +779,30 @@ typedef struct IActiveScriptErrorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptError *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptError *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptError *This);
+                     IActiveScriptError *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptError *This);
+                     IActiveScriptError *This);
 
     /*** IActiveScriptError methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExceptionInfo)(
-        IActiveScriptError *This,
-        EXCEPINFO *pexcepinfo);
+                     IActiveScriptError *This,
+                     EXCEPINFO *pexcepinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetSourcePosition)(
-        IActiveScriptError *This,
-        DWORD *pdwSourceContext,
-        ULONG *pulLineNumber,
-        LONG *plCharacterPosition);
+                     IActiveScriptError *This,
+                     DWORD *pdwSourceContext,
+                     ULONG *pulLineNumber,
+                     LONG *plCharacterPosition);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceLineText)(
-        IActiveScriptError *This,
-        BSTR *pbstrSourceLine);
+                     IActiveScriptError *This,
+                     BSTR *pbstrSourceLine);
 
     END_INTERFACE
 } IActiveScriptErrorVtbl;
@@ -877,9 +877,9 @@ MIDL_INTERFACE("b21fb2a1-5b8f-4963-8c21-21450f84ed7f")
 IActiveScriptError64 : public IActiveScriptError
 {
     virtual HRESULT STDMETHODCALLTYPE GetSourcePosition64(
-        DWORDLONG *pdwSourceContext,
-        ULONG *pulLineNumber,
-        LONG *plCharacterPosition) = 0;
+                     DWORDLONG *pdwSourceContext,
+                     ULONG *pulLineNumber,
+                     LONG *plCharacterPosition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -891,37 +891,37 @@ typedef struct IActiveScriptError64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptError64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptError64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptError64 *This);
+                     IActiveScriptError64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptError64 *This);
+                     IActiveScriptError64 *This);
 
     /*** IActiveScriptError methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExceptionInfo)(
-        IActiveScriptError64 *This,
-        EXCEPINFO *pexcepinfo);
+                     IActiveScriptError64 *This,
+                     EXCEPINFO *pexcepinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetSourcePosition)(
-        IActiveScriptError64 *This,
-        DWORD *pdwSourceContext,
-        ULONG *pulLineNumber,
-        LONG *plCharacterPosition);
+                     IActiveScriptError64 *This,
+                     DWORD *pdwSourceContext,
+                     ULONG *pulLineNumber,
+                     LONG *plCharacterPosition);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceLineText)(
-        IActiveScriptError64 *This,
-        BSTR *pbstrSourceLine);
+                     IActiveScriptError64 *This,
+                     BSTR *pbstrSourceLine);
 
     /*** IActiveScriptError64 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSourcePosition64)(
-        IActiveScriptError64 *This,
-        DWORDLONG *pdwSourceContext,
-        ULONG *pulLineNumber,
-        LONG *plCharacterPosition);
+                     IActiveScriptError64 *This,
+                     DWORDLONG *pdwSourceContext,
+                     ULONG *pulLineNumber,
+                     LONG *plCharacterPosition);
 
     END_INTERFACE
 } IActiveScriptError64Vtbl;
@@ -987,10 +987,10 @@ MIDL_INTERFACE("d10f6761-83e9-11cf-8f20-00805f2cd064")
 IActiveScriptSiteWindow : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetWindow(
-        HWND *phwnd) = 0;
+                     HWND *phwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableModeless(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1002,24 +1002,24 @@ typedef struct IActiveScriptSiteWindowVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSiteWindow *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSiteWindow *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSiteWindow *This);
+                     IActiveScriptSiteWindow *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSiteWindow *This);
+                     IActiveScriptSiteWindow *This);
 
     /*** IActiveScriptSiteWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IActiveScriptSiteWindow *This,
-        HWND *phwnd);
+                     IActiveScriptSiteWindow *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IActiveScriptSiteWindow *This,
-        WINBOOL fEnable);
+                     IActiveScriptSiteWindow *This,
+                     WINBOOL fEnable);
 
     END_INTERFACE
 } IActiveScriptSiteWindowVtbl;
@@ -1076,8 +1076,8 @@ MIDL_INTERFACE("aedae97e-d7ee-4796-b960-7f092ae844ab")
 IActiveScriptSiteUIControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetUIBehavior(
-        SCRIPTUICITEM UicItem,
-        SCRIPTUICHANDLING *pUicHandling) = 0;
+                     SCRIPTUICITEM UicItem,
+                     SCRIPTUICHANDLING *pUicHandling) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1089,21 +1089,21 @@ typedef struct IActiveScriptSiteUIControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSiteUIControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSiteUIControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSiteUIControl *This);
+                     IActiveScriptSiteUIControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSiteUIControl *This);
+                     IActiveScriptSiteUIControl *This);
 
     /*** IActiveScriptSiteUIControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetUIBehavior)(
-        IActiveScriptSiteUIControl *This,
-        SCRIPTUICITEM UicItem,
-        SCRIPTUICHANDLING *pUicHandling);
+                     IActiveScriptSiteUIControl *This,
+                     SCRIPTUICITEM UicItem,
+                     SCRIPTUICHANDLING *pUicHandling);
 
     END_INTERFACE
 } IActiveScriptSiteUIControlVtbl;
@@ -1156,7 +1156,7 @@ MIDL_INTERFACE("539698a0-cdca-11cf-a5eb-00aa0047a063")
 IActiveScriptSiteInterruptPoll : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryContinue(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1168,19 +1168,19 @@ typedef struct IActiveScriptSiteInterruptPollVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSiteInterruptPoll *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSiteInterruptPoll *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSiteInterruptPoll *This);
+                     IActiveScriptSiteInterruptPoll *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSiteInterruptPoll *This);
+                     IActiveScriptSiteInterruptPoll *This);
 
     /*** IActiveScriptSiteInterruptPoll methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryContinue)(
-        IActiveScriptSiteInterruptPoll *This);
+                     IActiveScriptSiteInterruptPoll *This);
 
     END_INTERFACE
 } IActiveScriptSiteInterruptPollVtbl;
@@ -1233,53 +1233,53 @@ MIDL_INTERFACE("bb1a2ae1-a4f9-11cf-8f20-00805f2cd064")
 IActiveScript : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetScriptSite(
-        IActiveScriptSite *pass) = 0;
+                     IActiveScriptSite *pass) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptSite(
-        REFIID riid,
-        void **ppvObject) = 0;
+                     REFIID riid,
+                     void **ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetScriptState(
-        SCRIPTSTATE ss) = 0;
+                     SCRIPTSTATE ss) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptState(
-        SCRIPTSTATE *pssState) = 0;
+                     SCRIPTSTATE *pssState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddNamedItem(
-        LPCOLESTR pstrName,
-        DWORD dwFlags) = 0;
+                     LPCOLESTR pstrName,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddTypeLib(
-        REFGUID rguidTypeLib,
-        DWORD dwMajor,
-        DWORD dwMinor,
-        DWORD dwFlags) = 0;
+                     REFGUID rguidTypeLib,
+                     DWORD dwMajor,
+                     DWORD dwMinor,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptDispatch(
-        LPCOLESTR pstrItemName,
-        IDispatch **ppdisp) = 0;
+                     LPCOLESTR pstrItemName,
+                     IDispatch **ppdisp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentScriptThreadID(
-        SCRIPTTHREADID *pstidThread) = 0;
+                     SCRIPTTHREADID *pstidThread) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptThreadID(
-        DWORD dwWin32ThreadId,
-        SCRIPTTHREADID *pstidThread) = 0;
+                     DWORD dwWin32ThreadId,
+                     SCRIPTTHREADID *pstidThread) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptThreadState(
-        SCRIPTTHREADID stidThread,
-        SCRIPTTHREADSTATE *pstsState) = 0;
+                     SCRIPTTHREADID stidThread,
+                     SCRIPTTHREADSTATE *pstsState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InterruptScriptThread(
-        SCRIPTTHREADID stidThread,
-        const EXCEPINFO *pexcepinfo,
-        DWORD dwFlags) = 0;
+                     SCRIPTTHREADID stidThread,
+                     const EXCEPINFO *pexcepinfo,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IActiveScript **ppscript) = 0;
+                     IActiveScript **ppscript) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1291,77 +1291,77 @@ typedef struct IActiveScriptVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScript *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScript *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScript *This);
+                     IActiveScript *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScript *This);
+                     IActiveScript *This);
 
     /*** IActiveScript methods ***/
     HRESULT (STDMETHODCALLTYPE *SetScriptSite)(
-        IActiveScript *This,
-        IActiveScriptSite *pass);
+                     IActiveScript *This,
+                     IActiveScriptSite *pass);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptSite)(
-        IActiveScript *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScript *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *SetScriptState)(
-        IActiveScript *This,
-        SCRIPTSTATE ss);
+                     IActiveScript *This,
+                     SCRIPTSTATE ss);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptState)(
-        IActiveScript *This,
-        SCRIPTSTATE *pssState);
+                     IActiveScript *This,
+                     SCRIPTSTATE *pssState);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IActiveScript *This);
+                     IActiveScript *This);
 
     HRESULT (STDMETHODCALLTYPE *AddNamedItem)(
-        IActiveScript *This,
-        LPCOLESTR pstrName,
-        DWORD dwFlags);
+                     IActiveScript *This,
+                     LPCOLESTR pstrName,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *AddTypeLib)(
-        IActiveScript *This,
-        REFGUID rguidTypeLib,
-        DWORD dwMajor,
-        DWORD dwMinor,
-        DWORD dwFlags);
+                     IActiveScript *This,
+                     REFGUID rguidTypeLib,
+                     DWORD dwMajor,
+                     DWORD dwMinor,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptDispatch)(
-        IActiveScript *This,
-        LPCOLESTR pstrItemName,
-        IDispatch **ppdisp);
+                     IActiveScript *This,
+                     LPCOLESTR pstrItemName,
+                     IDispatch **ppdisp);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentScriptThreadID)(
-        IActiveScript *This,
-        SCRIPTTHREADID *pstidThread);
+                     IActiveScript *This,
+                     SCRIPTTHREADID *pstidThread);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptThreadID)(
-        IActiveScript *This,
-        DWORD dwWin32ThreadId,
-        SCRIPTTHREADID *pstidThread);
+                     IActiveScript *This,
+                     DWORD dwWin32ThreadId,
+                     SCRIPTTHREADID *pstidThread);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptThreadState)(
-        IActiveScript *This,
-        SCRIPTTHREADID stidThread,
-        SCRIPTTHREADSTATE *pstsState);
+                     IActiveScript *This,
+                     SCRIPTTHREADID stidThread,
+                     SCRIPTTHREADSTATE *pstsState);
 
     HRESULT (STDMETHODCALLTYPE *InterruptScriptThread)(
-        IActiveScript *This,
-        SCRIPTTHREADID stidThread,
-        const EXCEPINFO *pexcepinfo,
-        DWORD dwFlags);
+                     IActiveScript *This,
+                     SCRIPTTHREADID stidThread,
+                     const EXCEPINFO *pexcepinfo,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IActiveScript *This,
-        IActiveScript **ppscript);
+                     IActiveScript *This,
+                     IActiveScript **ppscript);
 
     END_INTERFACE
 } IActiveScriptVtbl;
@@ -1462,31 +1462,31 @@ MIDL_INTERFACE("bb1a2ae2-a4f9-11cf-8f20-00805f2cd064")
 IActiveScriptParse32 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddScriptlet(
-        LPCOLESTR pstrDefaultName,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrItemName,
-        LPCOLESTR pstrSubItemName,
-        LPCOLESTR pstrEventName,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        BSTR *pbstrName,
-        EXCEPINFO *pexcepinfo) = 0;
+                     LPCOLESTR pstrDefaultName,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrItemName,
+                     LPCOLESTR pstrSubItemName,
+                     LPCOLESTR pstrEventName,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     BSTR *pbstrName,
+                     EXCEPINFO *pexcepinfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ParseScriptText(
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        VARIANT *pvarResult,
-        EXCEPINFO *pexcepinfo) = 0;
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     VARIANT *pvarResult,
+                     EXCEPINFO *pexcepinfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1498,45 +1498,45 @@ typedef struct IActiveScriptParse32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptParse32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptParse32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptParse32 *This);
+                     IActiveScriptParse32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptParse32 *This);
+                     IActiveScriptParse32 *This);
 
     /*** IActiveScriptParse32 methods ***/
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IActiveScriptParse32 *This);
+                     IActiveScriptParse32 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddScriptlet)(
-        IActiveScriptParse32 *This,
-        LPCOLESTR pstrDefaultName,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrItemName,
-        LPCOLESTR pstrSubItemName,
-        LPCOLESTR pstrEventName,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        BSTR *pbstrName,
-        EXCEPINFO *pexcepinfo);
+                     IActiveScriptParse32 *This,
+                     LPCOLESTR pstrDefaultName,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrItemName,
+                     LPCOLESTR pstrSubItemName,
+                     LPCOLESTR pstrEventName,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     BSTR *pbstrName,
+                     EXCEPINFO *pexcepinfo);
 
     HRESULT (STDMETHODCALLTYPE *ParseScriptText)(
-        IActiveScriptParse32 *This,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        VARIANT *pvarResult,
-        EXCEPINFO *pexcepinfo);
+                     IActiveScriptParse32 *This,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     VARIANT *pvarResult,
+                     EXCEPINFO *pexcepinfo);
 
     END_INTERFACE
 } IActiveScriptParse32Vtbl;
@@ -1597,31 +1597,31 @@ MIDL_INTERFACE("c7ef7658-e1ee-480e-97ea-d52cb4d76d17")
 IActiveScriptParse64 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddScriptlet(
-        LPCOLESTR pstrDefaultName,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrItemName,
-        LPCOLESTR pstrSubItemName,
-        LPCOLESTR pstrEventName,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        BSTR *pbstrName,
-        EXCEPINFO *pexcepinfo) = 0;
+                     LPCOLESTR pstrDefaultName,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrItemName,
+                     LPCOLESTR pstrSubItemName,
+                     LPCOLESTR pstrEventName,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     BSTR *pbstrName,
+                     EXCEPINFO *pexcepinfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ParseScriptText(
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        VARIANT *pvarResult,
-        EXCEPINFO *pexcepinfo) = 0;
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     VARIANT *pvarResult,
+                     EXCEPINFO *pexcepinfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1633,45 +1633,45 @@ typedef struct IActiveScriptParse64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptParse64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptParse64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptParse64 *This);
+                     IActiveScriptParse64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptParse64 *This);
+                     IActiveScriptParse64 *This);
 
     /*** IActiveScriptParse64 methods ***/
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IActiveScriptParse64 *This);
+                     IActiveScriptParse64 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddScriptlet)(
-        IActiveScriptParse64 *This,
-        LPCOLESTR pstrDefaultName,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrItemName,
-        LPCOLESTR pstrSubItemName,
-        LPCOLESTR pstrEventName,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        BSTR *pbstrName,
-        EXCEPINFO *pexcepinfo);
+                     IActiveScriptParse64 *This,
+                     LPCOLESTR pstrDefaultName,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrItemName,
+                     LPCOLESTR pstrSubItemName,
+                     LPCOLESTR pstrEventName,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     BSTR *pbstrName,
+                     EXCEPINFO *pexcepinfo);
 
     HRESULT (STDMETHODCALLTYPE *ParseScriptText)(
-        IActiveScriptParse64 *This,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        VARIANT *pvarResult,
-        EXCEPINFO *pexcepinfo);
+                     IActiveScriptParse64 *This,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     VARIANT *pvarResult,
+                     EXCEPINFO *pexcepinfo);
 
     END_INTERFACE
 } IActiveScriptParse64Vtbl;
@@ -1742,15 +1742,15 @@ MIDL_INTERFACE("1cff0050-6fdd-11d0-9328-00a0c90dcaa9")
 IActiveScriptParseProcedureOld32 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseProcedureText(
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp) = 0;
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1762,28 +1762,28 @@ typedef struct IActiveScriptParseProcedureOld32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptParseProcedureOld32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptParseProcedureOld32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptParseProcedureOld32 *This);
+                     IActiveScriptParseProcedureOld32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptParseProcedureOld32 *This);
+                     IActiveScriptParseProcedureOld32 *This);
 
     /*** IActiveScriptParseProcedureOld32 methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseProcedureText)(
-        IActiveScriptParseProcedureOld32 *This,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp);
+                     IActiveScriptParseProcedureOld32 *This,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp);
 
     END_INTERFACE
 } IActiveScriptParseProcedureOld32Vtbl;
@@ -1836,15 +1836,15 @@ MIDL_INTERFACE("21f57128-08c9-4638-ba12-22d15d88dc5c")
 IActiveScriptParseProcedureOld64 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseProcedureText(
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp) = 0;
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1856,28 +1856,28 @@ typedef struct IActiveScriptParseProcedureOld64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptParseProcedureOld64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptParseProcedureOld64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptParseProcedureOld64 *This);
+                     IActiveScriptParseProcedureOld64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptParseProcedureOld64 *This);
+                     IActiveScriptParseProcedureOld64 *This);
 
     /*** IActiveScriptParseProcedureOld64 methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseProcedureText)(
-        IActiveScriptParseProcedureOld64 *This,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp);
+                     IActiveScriptParseProcedureOld64 *This,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp);
 
     END_INTERFACE
 } IActiveScriptParseProcedureOld64Vtbl;
@@ -1940,16 +1940,16 @@ MIDL_INTERFACE("aa5b6a80-b834-11d0-932f-00a0c90dcaa9")
 IActiveScriptParseProcedure32 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseProcedureText(
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrProcedureName,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp) = 0;
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrProcedureName,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1961,29 +1961,29 @@ typedef struct IActiveScriptParseProcedure32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptParseProcedure32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptParseProcedure32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptParseProcedure32 *This);
+                     IActiveScriptParseProcedure32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptParseProcedure32 *This);
+                     IActiveScriptParseProcedure32 *This);
 
     /*** IActiveScriptParseProcedure32 methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseProcedureText)(
-        IActiveScriptParseProcedure32 *This,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrProcedureName,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp);
+                     IActiveScriptParseProcedure32 *This,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrProcedureName,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp);
 
     END_INTERFACE
 } IActiveScriptParseProcedure32Vtbl;
@@ -2036,16 +2036,16 @@ MIDL_INTERFACE("c64713b6-e029-4cc5-9200-438b72890b6a")
 IActiveScriptParseProcedure64 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseProcedureText(
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrProcedureName,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp) = 0;
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrProcedureName,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2057,29 +2057,29 @@ typedef struct IActiveScriptParseProcedure64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptParseProcedure64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptParseProcedure64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptParseProcedure64 *This);
+                     IActiveScriptParseProcedure64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptParseProcedure64 *This);
+                     IActiveScriptParseProcedure64 *This);
 
     /*** IActiveScriptParseProcedure64 methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseProcedureText)(
-        IActiveScriptParseProcedure64 *This,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrProcedureName,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp);
+                     IActiveScriptParseProcedure64 *This,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrProcedureName,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp);
 
     END_INTERFACE
 } IActiveScriptParseProcedure64Vtbl;
@@ -2151,29 +2151,29 @@ typedef struct IActiveScriptParseProcedure2_32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptParseProcedure2_32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptParseProcedure2_32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptParseProcedure2_32 *This);
+                     IActiveScriptParseProcedure2_32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptParseProcedure2_32 *This);
+                     IActiveScriptParseProcedure2_32 *This);
 
     /*** IActiveScriptParseProcedure32 methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseProcedureText)(
-        IActiveScriptParseProcedure2_32 *This,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrProcedureName,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp);
+                     IActiveScriptParseProcedure2_32 *This,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrProcedureName,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp);
 
     END_INTERFACE
 } IActiveScriptParseProcedure2_32Vtbl;
@@ -2235,29 +2235,29 @@ typedef struct IActiveScriptParseProcedure2_64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptParseProcedure2_64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptParseProcedure2_64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptParseProcedure2_64 *This);
+                     IActiveScriptParseProcedure2_64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptParseProcedure2_64 *This);
+                     IActiveScriptParseProcedure2_64 *This);
 
     /*** IActiveScriptParseProcedure64 methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseProcedureText)(
-        IActiveScriptParseProcedure2_64 *This,
-        LPCOLESTR pstrCode,
-        LPCOLESTR pstrFormalParams,
-        LPCOLESTR pstrProcedureName,
-        LPCOLESTR pstrItemName,
-        IUnknown *punkContext,
-        LPCOLESTR pstrDelimiter,
-        DWORDLONG dwSourceContextCookie,
-        ULONG ulStartingLineNumber,
-        DWORD dwFlags,
-        IDispatch **ppdisp);
+                     IActiveScriptParseProcedure2_64 *This,
+                     LPCOLESTR pstrCode,
+                     LPCOLESTR pstrFormalParams,
+                     LPCOLESTR pstrProcedureName,
+                     LPCOLESTR pstrItemName,
+                     IUnknown *punkContext,
+                     LPCOLESTR pstrDelimiter,
+                     DWORDLONG dwSourceContextCookie,
+                     ULONG ulStartingLineNumber,
+                     DWORD dwFlags,
+                     IDispatch **ppdisp);
 
     END_INTERFACE
 } IActiveScriptParseProcedure2_64Vtbl;
@@ -2320,21 +2320,21 @@ MIDL_INTERFACE("bb1a2ae3-a4f9-11cf-8f20-00805f2cd064")
 IActiveScriptEncode : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EncodeSection(
-        LPCOLESTR pchIn,
-        DWORD cchIn,
-        LPOLESTR pchOut,
-        DWORD cchOut,
-        DWORD *pcchRet) = 0;
+                     LPCOLESTR pchIn,
+                     DWORD cchIn,
+                     LPOLESTR pchOut,
+                     DWORD cchOut,
+                     DWORD *pcchRet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DecodeScript(
-        LPCOLESTR pchIn,
-        DWORD cchIn,
-        LPOLESTR pchOut,
-        DWORD cchOut,
-        DWORD *pcchRet) = 0;
+                     LPCOLESTR pchIn,
+                     DWORD cchIn,
+                     LPOLESTR pchOut,
+                     DWORD cchOut,
+                     DWORD *pcchRet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEncodeProgId(
-        BSTR *pbstrOut) = 0;
+                     BSTR *pbstrOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2346,36 +2346,36 @@ typedef struct IActiveScriptEncodeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptEncode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptEncode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptEncode *This);
+                     IActiveScriptEncode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptEncode *This);
+                     IActiveScriptEncode *This);
 
     /*** IActiveScriptEncode methods ***/
     HRESULT (STDMETHODCALLTYPE *EncodeSection)(
-        IActiveScriptEncode *This,
-        LPCOLESTR pchIn,
-        DWORD cchIn,
-        LPOLESTR pchOut,
-        DWORD cchOut,
-        DWORD *pcchRet);
+                     IActiveScriptEncode *This,
+                     LPCOLESTR pchIn,
+                     DWORD cchIn,
+                     LPOLESTR pchOut,
+                     DWORD cchOut,
+                     DWORD *pcchRet);
 
     HRESULT (STDMETHODCALLTYPE *DecodeScript)(
-        IActiveScriptEncode *This,
-        LPCOLESTR pchIn,
-        DWORD cchIn,
-        LPOLESTR pchOut,
-        DWORD cchOut,
-        DWORD *pcchRet);
+                     IActiveScriptEncode *This,
+                     LPCOLESTR pchIn,
+                     DWORD cchIn,
+                     LPOLESTR pchOut,
+                     DWORD cchOut,
+                     DWORD *pcchRet);
 
     HRESULT (STDMETHODCALLTYPE *GetEncodeProgId)(
-        IActiveScriptEncode *This,
-        BSTR *pbstrOut);
+                     IActiveScriptEncode *This,
+                     BSTR *pbstrOut);
 
     END_INTERFACE
 } IActiveScriptEncodeVtbl;
@@ -2436,10 +2436,10 @@ MIDL_INTERFACE("bee9b76e-cfe3-11d1-b747-00c04fc2b085")
 IActiveScriptHostEncode : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EncodeScriptHostFile(
-        BSTR bstrInFile,
-        BSTR *pbstrOutFile,
-        ULONG cFlags,
-        BSTR bstrDefaultLang) = 0;
+                     BSTR bstrInFile,
+                     BSTR *pbstrOutFile,
+                     ULONG cFlags,
+                     BSTR bstrDefaultLang) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2451,23 +2451,23 @@ typedef struct IActiveScriptHostEncodeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptHostEncode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptHostEncode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptHostEncode *This);
+                     IActiveScriptHostEncode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptHostEncode *This);
+                     IActiveScriptHostEncode *This);
 
     /*** IActiveScriptHostEncode methods ***/
     HRESULT (STDMETHODCALLTYPE *EncodeScriptHostFile)(
-        IActiveScriptHostEncode *This,
-        BSTR bstrInFile,
-        BSTR *pbstrOutFile,
-        ULONG cFlags,
-        BSTR bstrDefaultLang);
+                     IActiveScriptHostEncode *This,
+                     BSTR bstrInFile,
+                     BSTR *pbstrOutFile,
+                     ULONG cFlags,
+                     BSTR bstrDefaultLang);
 
     END_INTERFACE
 } IActiveScriptHostEncodeVtbl;
@@ -2520,8 +2520,8 @@ MIDL_INTERFACE("63cdbcb0-c1b1-11d0-9336-00a0c90dcaa9")
 IBindEventHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BindHandler(
-        LPCOLESTR pstrEvent,
-        IDispatch *pdisp) = 0;
+                     LPCOLESTR pstrEvent,
+                     IDispatch *pdisp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2533,21 +2533,21 @@ typedef struct IBindEventHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBindEventHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBindEventHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBindEventHandler *This);
+                     IBindEventHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBindEventHandler *This);
+                     IBindEventHandler *This);
 
     /*** IBindEventHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *BindHandler)(
-        IBindEventHandler *This,
-        LPCOLESTR pstrEvent,
-        IDispatch *pdisp);
+                     IBindEventHandler *This,
+                     LPCOLESTR pstrEvent,
+                     IDispatch *pdisp);
 
     END_INTERFACE
 } IBindEventHandlerVtbl;
@@ -2600,17 +2600,17 @@ MIDL_INTERFACE("b8da6310-e19b-11d0-933c-00a0c90dcaa9")
 IActiveScriptStats : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStat(
-        DWORD stid,
-        ULONG *pluHi,
-        ULONG *pluLo) = 0;
+                     DWORD stid,
+                     ULONG *pluHi,
+                     ULONG *pluLo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatEx(
-        REFGUID guid,
-        ULONG *pluHi,
-        ULONG *pluLo) = 0;
+                     REFGUID guid,
+                     ULONG *pluHi,
+                     ULONG *pluLo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetStats(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2622,31 +2622,31 @@ typedef struct IActiveScriptStatsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptStats *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptStats *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptStats *This);
+                     IActiveScriptStats *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptStats *This);
+                     IActiveScriptStats *This);
 
     /*** IActiveScriptStats methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStat)(
-        IActiveScriptStats *This,
-        DWORD stid,
-        ULONG *pluHi,
-        ULONG *pluLo);
+                     IActiveScriptStats *This,
+                     DWORD stid,
+                     ULONG *pluHi,
+                     ULONG *pluLo);
 
     HRESULT (STDMETHODCALLTYPE *GetStatEx)(
-        IActiveScriptStats *This,
-        REFGUID guid,
-        ULONG *pluHi,
-        ULONG *pluLo);
+                     IActiveScriptStats *This,
+                     REFGUID guid,
+                     ULONG *pluHi,
+                     ULONG *pluLo);
 
     HRESULT (STDMETHODCALLTYPE *ResetStats)(
-        IActiveScriptStats *This);
+                     IActiveScriptStats *This);
 
     END_INTERFACE
 } IActiveScriptStatsVtbl;
@@ -2707,14 +2707,14 @@ MIDL_INTERFACE("4954e0d0-fbc7-11d1-8410-006008c3fbfc")
 IActiveScriptProperty : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        DWORD dwProperty,
-        VARIANT *pvarIndex,
-        VARIANT *pvarValue) = 0;
+                     DWORD dwProperty,
+                     VARIANT *pvarIndex,
+                     VARIANT *pvarValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProperty(
-        DWORD dwProperty,
-        VARIANT *pvarIndex,
-        VARIANT *pvarValue) = 0;
+                     DWORD dwProperty,
+                     VARIANT *pvarIndex,
+                     VARIANT *pvarValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2726,28 +2726,28 @@ typedef struct IActiveScriptPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptProperty *This);
+                     IActiveScriptProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptProperty *This);
+                     IActiveScriptProperty *This);
 
     /*** IActiveScriptProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IActiveScriptProperty *This,
-        DWORD dwProperty,
-        VARIANT *pvarIndex,
-        VARIANT *pvarValue);
+                     IActiveScriptProperty *This,
+                     DWORD dwProperty,
+                     VARIANT *pvarIndex,
+                     VARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *SetProperty)(
-        IActiveScriptProperty *This,
-        DWORD dwProperty,
-        VARIANT *pvarIndex,
-        VARIANT *pvarValue);
+                     IActiveScriptProperty *This,
+                     DWORD dwProperty,
+                     VARIANT *pvarIndex,
+                     VARIANT *pvarValue);
 
     END_INTERFACE
 } IActiveScriptPropertyVtbl;
@@ -2804,10 +2804,10 @@ MIDL_INTERFACE("1dc9ca50-06ef-11d2-8415-006008c3fbfc")
 ITridentEventSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FireEvent(
-        LPCOLESTR pstrEvent,
-        DISPPARAMS *pdp,
-        VARIANT *pvarRes,
-        EXCEPINFO *pei) = 0;
+                     LPCOLESTR pstrEvent,
+                     DISPPARAMS *pdp,
+                     VARIANT *pvarRes,
+                     EXCEPINFO *pei) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2819,23 +2819,23 @@ typedef struct ITridentEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITridentEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITridentEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITridentEventSink *This);
+                     ITridentEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITridentEventSink *This);
+                     ITridentEventSink *This);
 
     /*** ITridentEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *FireEvent)(
-        ITridentEventSink *This,
-        LPCOLESTR pstrEvent,
-        DISPPARAMS *pdp,
-        VARIANT *pvarRes,
-        EXCEPINFO *pei);
+                     ITridentEventSink *This,
+                     LPCOLESTR pstrEvent,
+                     DISPPARAMS *pdp,
+                     VARIANT *pvarRes,
+                     EXCEPINFO *pei);
 
     END_INTERFACE
 } ITridentEventSinkVtbl;
@@ -2888,7 +2888,7 @@ MIDL_INTERFACE("6aa2c4a0-2b53-11d4-a2a0-00104bd35090")
 IActiveScriptGarbageCollector : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CollectGarbage(
-        SCRIPTGCTYPE scriptgctype) = 0;
+                     SCRIPTGCTYPE scriptgctype) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2900,20 +2900,20 @@ typedef struct IActiveScriptGarbageCollectorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptGarbageCollector *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptGarbageCollector *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptGarbageCollector *This);
+                     IActiveScriptGarbageCollector *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptGarbageCollector *This);
+                     IActiveScriptGarbageCollector *This);
 
     /*** IActiveScriptGarbageCollector methods ***/
     HRESULT (STDMETHODCALLTYPE *CollectGarbage)(
-        IActiveScriptGarbageCollector *This,
-        SCRIPTGCTYPE scriptgctype);
+                     IActiveScriptGarbageCollector *This,
+                     SCRIPTGCTYPE scriptgctype);
 
     END_INTERFACE
 } IActiveScriptGarbageCollectorVtbl;
@@ -2966,7 +2966,7 @@ MIDL_INTERFACE("764651d0-38de-11d4-a2a3-00104bd35090")
 IActiveScriptSIPInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSIPOID(
-        GUID *poid_sip) = 0;
+                     GUID *poid_sip) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2978,20 +2978,20 @@ typedef struct IActiveScriptSIPInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSIPInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSIPInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSIPInfo *This);
+                     IActiveScriptSIPInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSIPInfo *This);
+                     IActiveScriptSIPInfo *This);
 
     /*** IActiveScriptSIPInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSIPOID)(
-        IActiveScriptSIPInfo *This,
-        GUID *poid_sip);
+                     IActiveScriptSIPInfo *This,
+                     GUID *poid_sip);
 
     END_INTERFACE
 } IActiveScriptSIPInfoVtbl;
@@ -3044,12 +3044,12 @@ MIDL_INTERFACE("4b7272ae-1955-4bfe-98b0-780621888569")
 IActiveScriptSiteTraceInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SendScriptTraceInfo(
-        SCRIPTTRACEINFO stiEventType,
-        GUID guidContextID,
-        DWORD dwScriptContextCookie,
-        LONG lScriptStatementStart,
-        LONG lScriptStatementEnd,
-        DWORD64 dwReserved) = 0;
+                     SCRIPTTRACEINFO stiEventType,
+                     GUID guidContextID,
+                     DWORD dwScriptContextCookie,
+                     LONG lScriptStatementStart,
+                     LONG lScriptStatementEnd,
+                     DWORD64 dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3061,25 +3061,25 @@ typedef struct IActiveScriptSiteTraceInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSiteTraceInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSiteTraceInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSiteTraceInfo *This);
+                     IActiveScriptSiteTraceInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSiteTraceInfo *This);
+                     IActiveScriptSiteTraceInfo *This);
 
     /*** IActiveScriptSiteTraceInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *SendScriptTraceInfo)(
-        IActiveScriptSiteTraceInfo *This,
-        SCRIPTTRACEINFO stiEventType,
-        GUID guidContextID,
-        DWORD dwScriptContextCookie,
-        LONG lScriptStatementStart,
-        LONG lScriptStatementEnd,
-        DWORD64 dwReserved);
+                     IActiveScriptSiteTraceInfo *This,
+                     SCRIPTTRACEINFO stiEventType,
+                     GUID guidContextID,
+                     DWORD dwScriptContextCookie,
+                     LONG lScriptStatementStart,
+                     LONG lScriptStatementEnd,
+                     DWORD64 dwReserved);
 
     END_INTERFACE
 } IActiveScriptSiteTraceInfoVtbl;
@@ -3132,11 +3132,11 @@ MIDL_INTERFACE("c35456e7-bebf-4a1b-86a9-24d56be8b369")
 IActiveScriptTraceInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartScriptTracing(
-        IActiveScriptSiteTraceInfo *pSiteTraceInfo,
-        GUID guidContextID) = 0;
+                     IActiveScriptSiteTraceInfo *pSiteTraceInfo,
+                     GUID guidContextID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopScriptTracing(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3148,24 +3148,24 @@ typedef struct IActiveScriptTraceInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptTraceInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptTraceInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptTraceInfo *This);
+                     IActiveScriptTraceInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptTraceInfo *This);
+                     IActiveScriptTraceInfo *This);
 
     /*** IActiveScriptTraceInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *StartScriptTracing)(
-        IActiveScriptTraceInfo *This,
-        IActiveScriptSiteTraceInfo *pSiteTraceInfo,
-        GUID guidContextID);
+                     IActiveScriptTraceInfo *This,
+                     IActiveScriptSiteTraceInfo *pSiteTraceInfo,
+                     GUID guidContextID);
 
     HRESULT (STDMETHODCALLTYPE *StopScriptTracing)(
-        IActiveScriptTraceInfo *This);
+                     IActiveScriptTraceInfo *This);
 
     END_INTERFACE
 } IActiveScriptTraceInfoVtbl;
@@ -3222,9 +3222,9 @@ MIDL_INTERFACE("58562769-ed52-42f7-8403-4963514e1f11")
 IActiveScriptStringCompare : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StrComp(
-        BSTR bszStr1,
-        BSTR bszStr2,
-        LONG *iRet) = 0;
+                     BSTR bszStr1,
+                     BSTR bszStr2,
+                     LONG *iRet) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3236,22 +3236,22 @@ typedef struct IActiveScriptStringCompareVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptStringCompare *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptStringCompare *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptStringCompare *This);
+                     IActiveScriptStringCompare *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptStringCompare *This);
+                     IActiveScriptStringCompare *This);
 
     /*** IActiveScriptStringCompare methods ***/
     HRESULT (STDMETHODCALLTYPE *StrComp)(
-        IActiveScriptStringCompare *This,
-        BSTR bszStr1,
-        BSTR bszStr2,
-        LONG *iRet);
+                     IActiveScriptStringCompare *This,
+                     BSTR bszStr1,
+                     BSTR bszStr2,
+                     LONG *iRet);
 
     END_INTERFACE
 } IActiveScriptStringCompareVtbl;
@@ -3296,18 +3296,18 @@ static FORCEINLINE HRESULT IActiveScriptStringCompare_StrComp(IActiveScriptStrin
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
 
 /* End additional prototypes */
 

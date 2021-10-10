@@ -79,9 +79,9 @@
 #define AUDIT_FIRST_USER_MSG2	2100	/* More user space messages */
 #define AUDIT_LAST_USER_MSG2	2999
  
-#define AUDIT_DAEMON_START      1200    /* Daemon startup record */
-#define AUDIT_DAEMON_END        1201    /* Daemon normal stop record */
-#define AUDIT_DAEMON_ABORT      1202    /* Daemon error stop record */
+#define AUDIT_DAEMON_START                   1200    /* Daemon startup record */
+#define AUDIT_DAEMON_END                     1201    /* Daemon normal stop record */
+#define AUDIT_DAEMON_ABORT                   1202    /* Daemon error stop record */
 #define AUDIT_DAEMON_CONFIG     1203    /* Daemon config change */
 
 #define AUDIT_SYSCALL		1300	/* Syscall event */
@@ -138,8 +138,8 @@
 
 #define AUDIT_FIRST_KERN_ANOM_MSG   1700
 #define AUDIT_LAST_KERN_ANOM_MSG    1799
-#define AUDIT_ANOM_PROMISCUOUS      1700 /* Device changed promiscuous mode */
-#define AUDIT_ANOM_ABEND            1701 /* Process ended abnormally */
+#define AUDIT_ANOM_PROMISCUOUS                   1700 /* Device changed promiscuous mode */
+#define AUDIT_ANOM_ABEND                                      1701 /* Process ended abnormally */
 #define AUDIT_ANOM_LINK		    1702 /* Suspicious use of file links */
 #define AUDIT_INTEGRITY_DATA	    1800 /* Data integrity verification */
 #define AUDIT_INTEGRITY_METADATA    1801 /* Metadata integrity verification */
@@ -280,10 +280,10 @@
 #define AUDIT_FIELD_COMPARE	111
 #define AUDIT_EXE	112
 
-#define AUDIT_ARG0      200
-#define AUDIT_ARG1      (AUDIT_ARG0+1)
-#define AUDIT_ARG2      (AUDIT_ARG0+2)
-#define AUDIT_ARG3      (AUDIT_ARG0+3)
+#define AUDIT_ARG0                   200
+#define AUDIT_ARG1                   (AUDIT_ARG0+1)
+#define AUDIT_ARG2                   (AUDIT_ARG0+2)
+#define AUDIT_ARG3                   (AUDIT_ARG0+3)
 
 #define AUDIT_FILTERKEY	210
 
@@ -429,7 +429,7 @@ enum audit_nlgrps {
 	AUDIT_NLGRP_READLOG,	/* "best effort" read only socket */
 	__AUDIT_NLGRP_MAX
 };
-#define AUDIT_NLGRP_MAX                (__AUDIT_NLGRP_MAX - 1)
+#define AUDIT_NLGRP_MAX                                          (__AUDIT_NLGRP_MAX - 1)
 
 struct audit_status {
 	__u32		mask;		/* Bit mask for valid entries */

@@ -30,23 +30,23 @@ pub const Guid = extern struct {
 
     /// Format GUID into hexadecimal lowercase xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx format
     pub fn format(
-        self: @This(),
-        comptime f: []const u8,
-        options: std.fmt.FormatOptions,
-        out_stream: anytype,
+                     self: @This(),
+                     comptime f: []const u8,
+                     options: std.fmt.FormatOptions,
+                     out_stream: anytype,
     ) Errors!void {
-        if (f.len == 0) {
-            return std.fmt.format(out_stream, "{x:0>8}-{x:0>4}-{x:0>4}-{x:0>2}{x:0>2}-{x:0>12}", .{
-                self.time_low,
-                self.time_mid,
-                self.time_high_and_version,
-                self.clock_seq_high_and_reserved,
-                self.clock_seq_low,
-                self.node,
-            });
-        } else {
-            @compileError("Unknown format character: '" ++ f ++ "'");
-        }
+                     if (f.len == 0) {
+                                      return std.fmt.format(out_stream, "{x:0>8}-{x:0>4}-{x:0>4}-{x:0>2}{x:0>2}-{x:0>12}", .{
+                                          self.time_low,
+                                          self.time_mid,
+                                          self.time_high_and_version,
+                                          self.clock_seq_high_and_reserved,
+                                          self.clock_seq_low,
+                                          self.node,
+                                      });
+                     } else {
+                                      @compileError("Unknown format character: '" ++ f ++ "'");
+                     }
     }
 };
 
@@ -81,13 +81,13 @@ pub const Time = extern struct {
     /// Allowed values are -1440 to 1440 or unspecified_timezone
     timezone: i16,
     daylight: packed struct {
-        _pad1: u6,
+                     _pad1: u6,
 
-        /// If true, the time has been adjusted for daylight savings time.
-        in_daylight: bool,
+                     /// If true, the time has been adjusted for daylight savings time.
+                     in_daylight: bool,
 
-        /// If true, the time is affected by daylight savings time.
-        adjust_daylight: bool,
+                     /// If true, the time is affected by daylight savings time.
+                     adjust_daylight: bool,
     },
     _pad2: u8,
 

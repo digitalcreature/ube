@@ -21,7 +21,7 @@ inline namespace fundamentals_v1 {
 
 template <class ForwardIterator, class Searcher>
 ForwardIterator search(ForwardIterator first, ForwardIterator last,
-                       const Searcher &searcher);
+                                                              const Searcher &searcher);
 
 // sample removed because it's now part of C++17
 

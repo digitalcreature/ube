@@ -28,5 +28,5 @@
 #ifndef _SSIZE_T
 #define _SSIZE_T
 #include <machine/types.h> /* __darwin_ssize_t */
-typedef __darwin_ssize_t        ssize_t;
+typedef __darwin_ssize_t                     ssize_t;
 #endif  /* _SSIZE_T */

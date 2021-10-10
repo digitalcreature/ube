@@ -29,24 +29,24 @@ extern "C" {
 #define CHARSET_GLYPHIDX  3
 
 #define LICENSE_INSTALLABLE   0x0000
-#define LICENSE_DEFAULT       0x0000
+#define LICENSE_DEFAULT                    0x0000
 #define LICENSE_NOEMBEDDING   0x0002
 #define LICENSE_PREVIEWPRINT  0x0004
-#define LICENSE_EDITABLE      0x0008
+#define LICENSE_EDITABLE                   0x0008
 
 #define TTLOAD_PRIVATE  0x0001
 
 /* Possible return values. */
-#define E_NONE                              __MSABI_LONG(0x0000)
-#define E_API_NOTIMPL                       __MSABI_LONG(0x0001)
-#define E_HDCINVALID                        __MSABI_LONG(0x0006)
-#define E_NOFREEMEMORY                      __MSABI_LONG(0x0007)
-#define E_NOTATRUETYPEFONT                  __MSABI_LONG(0x000a)
-#define E_ERRORACCESSINGFONTDATA            __MSABI_LONG(0x000c)
-#define E_ERRORACCESSINGFACENAME            __MSABI_LONG(0x000d)
-#define E_FACENAMEINVALID                   __MSABI_LONG(0x0113)
-#define E_PERMISSIONSINVALID                __MSABI_LONG(0x0117)
-#define E_PBENABLEDINVALID                  __MSABI_LONG(0x0118)
+#define E_NONE                                                                                               __MSABI_LONG(0x0000)
+#define E_API_NOTIMPL                                                              __MSABI_LONG(0x0001)
+#define E_HDCINVALID                                                                            __MSABI_LONG(0x0006)
+#define E_NOFREEMEMORY                                                             __MSABI_LONG(0x0007)
+#define E_NOTATRUETYPEFONT                                                         __MSABI_LONG(0x000a)
+#define E_ERRORACCESSINGFONTDATA                                      __MSABI_LONG(0x000c)
+#define E_ERRORACCESSINGFACENAME                                      __MSABI_LONG(0x000d)
+#define E_FACENAMEINVALID                                                          __MSABI_LONG(0x0113)
+#define E_PERMISSIONSINVALID                                          __MSABI_LONG(0x0117)
+#define E_PBENABLEDINVALID                                                         __MSABI_LONG(0x0118)
 
 typedef ULONG (WINAPIV * READEMBEDPROC)(void*,void*,ULONG);
 typedef ULONG (WINAPIV * WRITEEMBEDPROC)(void*,void*,ULONG);
@@ -66,12 +66,12 @@ typedef struct
 } TTEMBEDINFO;
 
 LONG WINAPI TTLoadEmbeddedFont(HANDLE*,ULONG,ULONG*,ULONG,ULONG*,READEMBEDPROC,
-                               LPVOID,LPWSTR,LPSTR,TTLOADINFO*);
+                                                                                                LPVOID,LPWSTR,LPSTR,TTLOADINFO*);
 LONG WINAPI TTDeleteEmbeddedFont(HANDLE,ULONG,ULONG*);
 
 /* embedding privileges */
 #define EMBED_PREVIEWPRINT  1
-#define EMBED_EDITABLE      2
+#define EMBED_EDITABLE                   2
 #define EMBED_INSTALLABLE   3
 #define EMBED_NOEMBEDDING   4
 

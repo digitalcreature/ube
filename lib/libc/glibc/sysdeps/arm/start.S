@@ -73,8 +73,8 @@
 	.globl _start
 	.type _start,#function
 _start:
-       /* Protect against unhandled exceptions.  */
-       .fnstart
+                    /* Protect against unhandled exceptions.  */
+                    .fnstart
 	/* Clear the frame pointer and link register since this is the outermost frame. */
 	mov fp, #0
 	mov lr, #0
@@ -136,8 +136,8 @@ _start:
 	.word main(GOT)
 #endif
 
-       .cantunwind
-       .fnend
+                    .cantunwind
+                    .fnend
 
 /* Define a symbol for the first piece of initialized data.  */
 	.data

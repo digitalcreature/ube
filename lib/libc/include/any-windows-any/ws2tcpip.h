@@ -219,21 +219,21 @@ typedef __MINGW_NAME_AW(ADDRINFO) ADDRINFOT,*PADDRINFOT;
 
 typedef ADDRINFOA ADDRINFO,*LPADDRINFO;
 
-#define AI_PASSIVE                  0x00000001
-#define AI_CANONNAME                0x00000002
-#define AI_NUMERICHOST              0x00000004
+#define AI_PASSIVE                                                         0x00000001
+#define AI_CANONNAME                                          0x00000002
+#define AI_NUMERICHOST                                        0x00000004
 #if (_WIN32_WINNT >= 0x0600)
-#define AI_NUMERICSERV              0x00000008
-#define AI_ALL                      0x00000100
-#define AI_ADDRCONFIG               0x00000400
-#define AI_V4MAPPED                 0x00000800
-#define AI_NON_AUTHORITATIVE        0x00004000
-#define AI_SECURE                   0x00008000
+#define AI_NUMERICSERV                                        0x00000008
+#define AI_ALL                                                             0x00000100
+#define AI_ADDRCONFIG                                         0x00000400
+#define AI_V4MAPPED                                           0x00000800
+#define AI_NON_AUTHORITATIVE                     0x00004000
+#define AI_SECURE                                                          0x00008000
 #define AI_RETURN_PREFERRED_NAMES   0x00010000
 #endif
 #if (_WIN32_WINNT >= 0x0601)
-#define AI_FQDN                     0x00020000
-#define AI_FILESERVER               0x00040000
+#define AI_FQDN                                                            0x00020000
+#define AI_FILESERVER                                         0x00040000
 #endif
 #if (_WIN32_WINNT >= 0x0602)
 #define AI_DISABLE_IDN_ENCODING     0x00080000
@@ -321,56 +321,56 @@ WCHAR *gai_strerrorW(int);
 #define SetAddrInfoEx __MINGW_NAME_AW(SetAddrInfoEx)
 
   typedef struct addrinfoExA {
-    int                ai_flags;
-    int                ai_family;
-    int                ai_socktype;
-    int                ai_protocol;
-    size_t             ai_addrlen;
-    LPCSTR             ai_canonname;
+    int                                          ai_flags;
+    int                                          ai_family;
+    int                                          ai_socktype;
+    int                                          ai_protocol;
+    size_t                                       ai_addrlen;
+    LPCSTR                                       ai_canonname;
     struct sockaddr    *ai_addr;
-    void               *ai_blob;
-    size_t             ai_bloblen;
-    LPGUID             ai_provider;
+    void                                         *ai_blob;
+    size_t                                       ai_bloblen;
+    LPGUID                                       ai_provider;
     struct addrinfoexA *ai_next;
   } ADDRINFOEXA, *PADDRINFOEXA;
 
   typedef struct addrinfoExW {
-    int                ai_flags;
-    int                ai_family;
-    int                ai_socktype;
-    int                ai_protocol;
-    size_t             ai_addrlen;
-    LPCWSTR            ai_canonname;
+    int                                          ai_flags;
+    int                                          ai_family;
+    int                                          ai_socktype;
+    int                                          ai_protocol;
+    size_t                                       ai_addrlen;
+    LPCWSTR                                      ai_canonname;
     struct sockaddr    *ai_addr;
-    void               *ai_blob;
-    size_t             ai_bloblen;
-    LPGUID             ai_provider;
+    void                                         *ai_blob;
+    size_t                                       ai_bloblen;
+    LPGUID                                       ai_provider;
     struct addrinfoexW *ai_next;
   } ADDRINFOEXW, *PADDRINFOEXW;
 
 typedef PVOID LPLOOKUPSERVICE_COMPLETION_ROUTINE; /*reserved*/
 
 WINSOCK_API_LINKAGE int WSAAPI GetAddrInfoExA(PCSTR pName, PCSTR pServiceName, DWORD dwNameSpace,
-					      LPGUID lpNspId,const ADDRINFOEXA *pHints,PADDRINFOEXA *ppResult,
-					      PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
-					      LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
-					      LPHANDLE lpNameHandle);
+					                   LPGUID lpNspId,const ADDRINFOEXA *pHints,PADDRINFOEXA *ppResult,
+					                   PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
+					                   LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
+					                   LPHANDLE lpNameHandle);
 WINSOCK_API_LINKAGE int WSAAPI GetAddrInfoExW(PCWSTR pName,PCWSTR pServiceName,DWORD dwNameSpace,
-					      LPGUID lpNspId,const ADDRINFOEXW *pHints,PADDRINFOEXW *ppResult,
-					      PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
-					      LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
-					      LPHANDLE lpNameHandle);
+					                   LPGUID lpNspId,const ADDRINFOEXW *pHints,PADDRINFOEXW *ppResult,
+					                   PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
+					                   LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
+					                   LPHANDLE lpNameHandle);
 
 WINSOCK_API_LINKAGE int WSAAPI SetAddrInfoExA(PCSTR pName, PCSTR pServiceName, SOCKET_ADDRESS *pAddresses,
-					      DWORD dwAddressCount,LPBLOB lpBlob,DWORD dwFlags,DWORD dwNameSpace,
-					      LPGUID lpNspId,PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
-					      LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
-					      LPHANDLE lpNameHandle);
+					                   DWORD dwAddressCount,LPBLOB lpBlob,DWORD dwFlags,DWORD dwNameSpace,
+					                   LPGUID lpNspId,PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
+					                   LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
+					                   LPHANDLE lpNameHandle);
 WINSOCK_API_LINKAGE int WSAAPI SetAddrInfoExW(PCWSTR pName,PCWSTR pServiceName,SOCKET_ADDRESS *pAddresses,
-					      DWORD dwAddressCount,LPBLOB lpBlob,DWORD dwFlags,DWORD dwNameSpace,
-					      LPGUID lpNspId,PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
-					      LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
-					      LPHANDLE lpNameHandle);
+					                   DWORD dwAddressCount,LPBLOB lpBlob,DWORD dwFlags,DWORD dwNameSpace,
+					                   LPGUID lpNspId,PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
+					                   LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
+					                   LPHANDLE lpNameHandle);
 
 WINSOCK_API_LINKAGE void WSAAPI FreeAddrInfoEx(PADDRINFOEXA pAddrInfo);
 WINSOCK_API_LINKAGE void WSAAPI FreeAddrInfoExW(PADDRINFOEXW pAddrInfo);

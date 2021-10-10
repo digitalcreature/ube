@@ -237,7 +237,7 @@ typedef struct
   {
     gregset_t __ctx(gregs);
     /* Due to Linux's history we have to use a pointer here.  The SysV/i386
-       ABI requires a struct with the values.  */
+                    ABI requires a struct with the values.  */
     fpregset_t __ctx(fpregs);
     unsigned long int __ctx(oldmask);
     unsigned long int __ctx(cr2);

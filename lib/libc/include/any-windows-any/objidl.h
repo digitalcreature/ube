@@ -579,39 +579,39 @@ MIDL_INTERFACE("00000003-0000-0000-c000-000000000046")
 IMarshal : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetUnmarshalClass(
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags,
-        CLSID *pCid) = 0;
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags,
+                     CLSID *pCid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMarshalSizeMax(
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags,
-        DWORD *pSize) = 0;
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags,
+                     DWORD *pSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MarshalInterface(
-        IStream *pStm,
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags) = 0;
+                     IStream *pStm,
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnmarshalInterface(
-        IStream *pStm,
-        REFIID riid,
-        void **ppv) = 0;
+                     IStream *pStm,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseMarshalData(
-        IStream *pStm) = 0;
+                     IStream *pStm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisconnectObject(
-        DWORD dwReserved) = 0;
+                     DWORD dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -623,57 +623,57 @@ typedef struct IMarshalVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMarshal* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMarshal* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMarshal* This);
+                     IMarshal* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMarshal* This);
+                     IMarshal* This);
 
     /*** IMarshal methods ***/
     HRESULT (STDMETHODCALLTYPE *GetUnmarshalClass)(
-        IMarshal* This,
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags,
-        CLSID *pCid);
+                     IMarshal* This,
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags,
+                     CLSID *pCid);
 
     HRESULT (STDMETHODCALLTYPE *GetMarshalSizeMax)(
-        IMarshal* This,
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags,
-        DWORD *pSize);
+                     IMarshal* This,
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags,
+                     DWORD *pSize);
 
     HRESULT (STDMETHODCALLTYPE *MarshalInterface)(
-        IMarshal* This,
-        IStream *pStm,
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags);
+                     IMarshal* This,
+                     IStream *pStm,
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags);
 
     HRESULT (STDMETHODCALLTYPE *UnmarshalInterface)(
-        IMarshal* This,
-        IStream *pStm,
-        REFIID riid,
-        void **ppv);
+                     IMarshal* This,
+                     IStream *pStm,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseMarshalData)(
-        IMarshal* This,
-        IStream *pStm);
+                     IMarshal* This,
+                     IStream *pStm);
 
     HRESULT (STDMETHODCALLTYPE *DisconnectObject)(
-        IMarshal* This,
-        DWORD dwReserved);
+                     IMarshal* This,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } IMarshalVtbl;
@@ -819,15 +819,15 @@ typedef struct INoMarshalVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INoMarshal* This,
-        REFIID riid,
-        void **ppvObject);
+                     INoMarshal* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INoMarshal* This);
+                     INoMarshal* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INoMarshal* This);
+                     INoMarshal* This);
 
     END_INTERFACE
 } INoMarshalVtbl;
@@ -882,15 +882,15 @@ typedef struct IAgileObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAgileObject* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAgileObject* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAgileObject* This);
+                     IAgileObject* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAgileObject* This);
+                     IAgileObject* This);
 
     END_INTERFACE
 } IAgileObjectVtbl;
@@ -948,57 +948,57 @@ typedef struct IMarshal2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMarshal2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMarshal2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMarshal2* This);
+                     IMarshal2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMarshal2* This);
+                     IMarshal2* This);
 
     /*** IMarshal methods ***/
     HRESULT (STDMETHODCALLTYPE *GetUnmarshalClass)(
-        IMarshal2* This,
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags,
-        CLSID *pCid);
+                     IMarshal2* This,
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags,
+                     CLSID *pCid);
 
     HRESULT (STDMETHODCALLTYPE *GetMarshalSizeMax)(
-        IMarshal2* This,
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags,
-        DWORD *pSize);
+                     IMarshal2* This,
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags,
+                     DWORD *pSize);
 
     HRESULT (STDMETHODCALLTYPE *MarshalInterface)(
-        IMarshal2* This,
-        IStream *pStm,
-        REFIID riid,
-        void *pv,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        DWORD mshlflags);
+                     IMarshal2* This,
+                     IStream *pStm,
+                     REFIID riid,
+                     void *pv,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     DWORD mshlflags);
 
     HRESULT (STDMETHODCALLTYPE *UnmarshalInterface)(
-        IMarshal2* This,
-        IStream *pStm,
-        REFIID riid,
-        void **ppv);
+                     IMarshal2* This,
+                     IStream *pStm,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseMarshalData)(
-        IMarshal2* This,
-        IStream *pStm);
+                     IMarshal2* This,
+                     IStream *pStm);
 
     HRESULT (STDMETHODCALLTYPE *DisconnectObject)(
-        IMarshal2* This,
-        DWORD dwReserved);
+                     IMarshal2* This,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } IMarshal2Vtbl;
@@ -1072,23 +1072,23 @@ MIDL_INTERFACE("00000002-0000-0000-c000-000000000046")
 IMalloc : public IUnknown
 {
     virtual void * STDMETHODCALLTYPE Alloc(
-        SIZE_T cb) = 0;
+                     SIZE_T cb) = 0;
 
     virtual void * STDMETHODCALLTYPE Realloc(
-        void *pv,
-        SIZE_T cb) = 0;
+                     void *pv,
+                     SIZE_T cb) = 0;
 
     virtual void STDMETHODCALLTYPE Free(
-        void *pv) = 0;
+                     void *pv) = 0;
 
     virtual SIZE_T STDMETHODCALLTYPE GetSize(
-        void *pv) = 0;
+                     void *pv) = 0;
 
     virtual int STDMETHODCALLTYPE DidAlloc(
-        void *pv) = 0;
+                     void *pv) = 0;
 
     virtual void STDMETHODCALLTYPE HeapMinimize(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1100,40 +1100,40 @@ typedef struct IMallocVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMalloc* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMalloc* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMalloc* This);
+                     IMalloc* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMalloc* This);
+                     IMalloc* This);
 
     /*** IMalloc methods ***/
     void * (STDMETHODCALLTYPE *Alloc)(
-        IMalloc* This,
-        SIZE_T cb);
+                     IMalloc* This,
+                     SIZE_T cb);
 
     void * (STDMETHODCALLTYPE *Realloc)(
-        IMalloc* This,
-        void *pv,
-        SIZE_T cb);
+                     IMalloc* This,
+                     void *pv,
+                     SIZE_T cb);
 
     void (STDMETHODCALLTYPE *Free)(
-        IMalloc* This,
-        void *pv);
+                     IMalloc* This,
+                     void *pv);
 
     SIZE_T (STDMETHODCALLTYPE *GetSize)(
-        IMalloc* This,
-        void *pv);
+                     IMalloc* This,
+                     void *pv);
 
     int (STDMETHODCALLTYPE *DidAlloc)(
-        IMalloc* This,
-        void *pv);
+                     IMalloc* This,
+                     void *pv);
 
     void (STDMETHODCALLTYPE *HeapMinimize)(
-        IMalloc* This);
+                     IMalloc* This);
 
     END_INTERFACE
 } IMallocVtbl;
@@ -1255,9 +1255,9 @@ MIDL_INTERFACE("00000018-0000-0000-c000-000000000046")
 IStdMarshalInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClassForHandler(
-        DWORD dwDestContext,
-        void *pvDestContext,
-        CLSID *pClsid) = 0;
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     CLSID *pClsid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1269,22 +1269,22 @@ typedef struct IStdMarshalInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStdMarshalInfo* This,
-        REFIID riid,
-        void **ppvObject);
+                     IStdMarshalInfo* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStdMarshalInfo* This);
+                     IStdMarshalInfo* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStdMarshalInfo* This);
+                     IStdMarshalInfo* This);
 
     /*** IStdMarshalInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassForHandler)(
-        IStdMarshalInfo* This,
-        DWORD dwDestContext,
-        void *pvDestContext,
-        CLSID *pClsid);
+                     IStdMarshalInfo* This,
+                     DWORD dwDestContext,
+                     void *pvDestContext,
+                     CLSID *pClsid);
 
     END_INTERFACE
 } IStdMarshalInfoVtbl;
@@ -1354,13 +1354,13 @@ MIDL_INTERFACE("00000019-0000-0000-c000-000000000046")
 IExternalConnection : public IUnknown
 {
     virtual DWORD STDMETHODCALLTYPE AddConnection(
-        DWORD extconn,
-        DWORD reserved) = 0;
+                     DWORD extconn,
+                     DWORD reserved) = 0;
 
     virtual DWORD STDMETHODCALLTYPE ReleaseConnection(
-        DWORD extconn,
-        DWORD reserved,
-        WINBOOL fLastReleaseCloses) = 0;
+                     DWORD extconn,
+                     DWORD reserved,
+                     WINBOOL fLastReleaseCloses) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1372,27 +1372,27 @@ typedef struct IExternalConnectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExternalConnection* This,
-        REFIID riid,
-        void **ppvObject);
+                     IExternalConnection* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExternalConnection* This);
+                     IExternalConnection* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExternalConnection* This);
+                     IExternalConnection* This);
 
     /*** IExternalConnection methods ***/
     DWORD (STDMETHODCALLTYPE *AddConnection)(
-        IExternalConnection* This,
-        DWORD extconn,
-        DWORD reserved);
+                     IExternalConnection* This,
+                     DWORD extconn,
+                     DWORD reserved);
 
     DWORD (STDMETHODCALLTYPE *ReleaseConnection)(
-        IExternalConnection* This,
-        DWORD extconn,
-        DWORD reserved,
-        WINBOOL fLastReleaseCloses);
+                     IExternalConnection* This,
+                     DWORD extconn,
+                     DWORD reserved,
+                     WINBOOL fLastReleaseCloses);
 
     END_INTERFACE
 } IExternalConnectionVtbl;
@@ -1477,8 +1477,8 @@ MIDL_INTERFACE("00000020-0000-0000-c000-000000000046")
 IMultiQI : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryMultipleInterfaces(
-        ULONG cMQIs,
-        MULTI_QI *pMQIs) = 0;
+                     ULONG cMQIs,
+                     MULTI_QI *pMQIs) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1490,21 +1490,21 @@ typedef struct IMultiQIVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMultiQI* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMultiQI* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMultiQI* This);
+                     IMultiQI* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMultiQI* This);
+                     IMultiQI* This);
 
     /*** IMultiQI methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryMultipleInterfaces)(
-        IMultiQI* This,
-        ULONG cMQIs,
-        MULTI_QI *pMQIs);
+                     IMultiQI* This,
+                     ULONG cMQIs,
+                     MULTI_QI *pMQIs);
 
     END_INTERFACE
 } IMultiQIVtbl;
@@ -1564,11 +1564,11 @@ MIDL_INTERFACE("000e0020-0000-0000-c000-000000000046")
 AsyncIMultiQI : public IUnknown
 {
     virtual void STDMETHODCALLTYPE Begin_QueryMultipleInterfaces(
-        ULONG cMQIs,
-        MULTI_QI *pMQIs) = 0;
+                     ULONG cMQIs,
+                     MULTI_QI *pMQIs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_QueryMultipleInterfaces(
-        MULTI_QI *pMQIs) = 0;
+                     MULTI_QI *pMQIs) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1580,25 +1580,25 @@ typedef struct AsyncIMultiQIVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncIMultiQI* This,
-        REFIID riid,
-        void **ppvObject);
+                     AsyncIMultiQI* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncIMultiQI* This);
+                     AsyncIMultiQI* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncIMultiQI* This);
+                     AsyncIMultiQI* This);
 
     /*** IMultiQI methods ***/
     void (STDMETHODCALLTYPE *Begin_QueryMultipleInterfaces)(
-        AsyncIMultiQI* This,
-        ULONG cMQIs,
-        MULTI_QI *pMQIs);
+                     AsyncIMultiQI* This,
+                     ULONG cMQIs,
+                     MULTI_QI *pMQIs);
 
     HRESULT (STDMETHODCALLTYPE *Finish_QueryMultipleInterfaces)(
-        AsyncIMultiQI* This,
-        MULTI_QI *pMQIs);
+                     AsyncIMultiQI* This,
+                     MULTI_QI *pMQIs);
 
     END_INTERFACE
 } AsyncIMultiQIVtbl;
@@ -1674,8 +1674,8 @@ MIDL_INTERFACE("00000021-0000-0000-c000-000000000046")
 IInternalUnknown : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryInternalInterface(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1687,21 +1687,21 @@ typedef struct IInternalUnknownVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternalUnknown* This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternalUnknown* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternalUnknown* This);
+                     IInternalUnknown* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternalUnknown* This);
+                     IInternalUnknown* This);
 
     /*** IInternalUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInternalInterface)(
-        IInternalUnknown* This,
-        REFIID riid,
-        void **ppv);
+                     IInternalUnknown* This,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IInternalUnknownVtbl;
@@ -1766,18 +1766,18 @@ MIDL_INTERFACE("00000100-0000-0000-c000-000000000046")
 IEnumUnknown : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        IUnknown **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IUnknown **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumUnknown **ppenum) = 0;
+                     IEnumUnknown **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1789,33 +1789,33 @@ typedef struct IEnumUnknownVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumUnknown* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumUnknown* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumUnknown* This);
+                     IEnumUnknown* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumUnknown* This);
+                     IEnumUnknown* This);
 
     /*** IEnumUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumUnknown* This,
-        ULONG celt,
-        IUnknown **rgelt,
-        ULONG *pceltFetched);
+                     IEnumUnknown* This,
+                     ULONG celt,
+                     IUnknown **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumUnknown* This,
-        ULONG celt);
+                     IEnumUnknown* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumUnknown* This);
+                     IEnumUnknown* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumUnknown* This,
-        IEnumUnknown **ppenum);
+                     IEnumUnknown* This,
+                     IEnumUnknown **ppenum);
 
     END_INTERFACE
 } IEnumUnknownVtbl;
@@ -1924,18 +1924,18 @@ MIDL_INTERFACE("00000101-0000-0000-c000-000000000046")
 IEnumString : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        LPOLESTR *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     LPOLESTR *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumString **ppenum) = 0;
+                     IEnumString **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1947,33 +1947,33 @@ typedef struct IEnumStringVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumString* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumString* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumString* This);
+                     IEnumString* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumString* This);
+                     IEnumString* This);
 
     /*** IEnumString methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumString* This,
-        ULONG celt,
-        LPOLESTR *rgelt,
-        ULONG *pceltFetched);
+                     IEnumString* This,
+                     ULONG celt,
+                     LPOLESTR *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumString* This,
-        ULONG celt);
+                     IEnumString* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumString* This);
+                     IEnumString* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumString* This,
-        IEnumString **ppenum);
+                     IEnumString* This,
+                     IEnumString **ppenum);
 
     END_INTERFACE
 } IEnumStringVtbl;
@@ -2080,14 +2080,14 @@ MIDL_INTERFACE("0c733a30-2a1c-11ce-ade5-00aa0044773d")
 ISequentialStream : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Read(
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead) = 0;
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Write(
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten) = 0;
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2099,28 +2099,28 @@ typedef struct ISequentialStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISequentialStream* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISequentialStream* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISequentialStream* This);
+                     ISequentialStream* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISequentialStream* This);
+                     ISequentialStream* This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISequentialStream* This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     ISequentialStream* This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISequentialStream* This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     ISequentialStream* This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     END_INTERFACE
 } ISequentialStreamVtbl;
@@ -2251,41 +2251,41 @@ MIDL_INTERFACE("0000000c-0000-0000-c000-000000000046")
 IStream : public ISequentialStream
 {
     virtual HRESULT STDMETHODCALLTYPE Seek(
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition) = 0;
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSize(
-        ULARGE_INTEGER libNewSize) = 0;
+                     ULARGE_INTEGER libNewSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyTo(
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten) = 0;
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        DWORD grfCommitFlags) = 0;
+                     DWORD grfCommitFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Revert(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockRegion(
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType) = 0;
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnlockRegion(
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType) = 0;
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stat(
-        STATSTG *pstatstg,
-        DWORD grfStatFlag) = 0;
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IStream **ppstm) = 0;
+                     IStream **ppstm) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2297,74 +2297,74 @@ typedef struct IStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStream* This,
-        REFIID riid,
-        void **ppvObject);
+                     IStream* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStream* This);
+                     IStream* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStream* This);
+                     IStream* This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IStream* This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     IStream* This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IStream* This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     IStream* This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        IStream* This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     IStream* This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        IStream* This,
-        ULARGE_INTEGER libNewSize);
+                     IStream* This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        IStream* This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     IStream* This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IStream* This,
-        DWORD grfCommitFlags);
+                     IStream* This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        IStream* This);
+                     IStream* This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        IStream* This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     IStream* This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        IStream* This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     IStream* This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        IStream* This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     IStream* This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IStream* This,
-        IStream **ppstm);
+                     IStream* This,
+                     IStream **ppstm);
 
     END_INTERFACE
 } IStreamVtbl;
@@ -2575,22 +2575,22 @@ MIDL_INTERFACE("d5f56b60-593b-101a-b569-08002b2dbf7a")
 IRpcChannelBuffer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetBuffer(
-        RPCOLEMESSAGE *pMessage,
-        REFIID riid) = 0;
+                     RPCOLEMESSAGE *pMessage,
+                     REFIID riid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendReceive(
-        RPCOLEMESSAGE *pMessage,
-        ULONG *pStatus) = 0;
+                     RPCOLEMESSAGE *pMessage,
+                     ULONG *pStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FreeBuffer(
-        RPCOLEMESSAGE *pMessage) = 0;
+                     RPCOLEMESSAGE *pMessage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDestCtx(
-        DWORD *pdwDestContext,
-        void **ppvDestContext) = 0;
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsConnected(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2602,38 +2602,38 @@ typedef struct IRpcChannelBufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRpcChannelBuffer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRpcChannelBuffer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRpcChannelBuffer* This);
+                     IRpcChannelBuffer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRpcChannelBuffer* This);
+                     IRpcChannelBuffer* This);
 
     /*** IRpcChannelBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBuffer)(
-        IRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMessage,
-        REFIID riid);
+                     IRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMessage,
+                     REFIID riid);
 
     HRESULT (STDMETHODCALLTYPE *SendReceive)(
-        IRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMessage,
-        ULONG *pStatus);
+                     IRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMessage,
+                     ULONG *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *FreeBuffer)(
-        IRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMessage);
+                     IRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMessage);
 
     HRESULT (STDMETHODCALLTYPE *GetDestCtx)(
-        IRpcChannelBuffer* This,
-        DWORD *pdwDestContext,
-        void **ppvDestContext);
+                     IRpcChannelBuffer* This,
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext);
 
     HRESULT (STDMETHODCALLTYPE *IsConnected)(
-        IRpcChannelBuffer* This);
+                     IRpcChannelBuffer* This);
 
     END_INTERFACE
 } IRpcChannelBufferVtbl;
@@ -2745,7 +2745,7 @@ MIDL_INTERFACE("594f31d0-7f19-11d0-b194-00a0c90dc8bf")
 IRpcChannelBuffer2 : public IRpcChannelBuffer
 {
     virtual HRESULT STDMETHODCALLTYPE GetProtocolVersion(
-        DWORD *pdwVersion) = 0;
+                     DWORD *pdwVersion) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2757,43 +2757,43 @@ typedef struct IRpcChannelBuffer2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRpcChannelBuffer2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRpcChannelBuffer2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRpcChannelBuffer2* This);
+                     IRpcChannelBuffer2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRpcChannelBuffer2* This);
+                     IRpcChannelBuffer2* This);
 
     /*** IRpcChannelBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBuffer)(
-        IRpcChannelBuffer2* This,
-        RPCOLEMESSAGE *pMessage,
-        REFIID riid);
+                     IRpcChannelBuffer2* This,
+                     RPCOLEMESSAGE *pMessage,
+                     REFIID riid);
 
     HRESULT (STDMETHODCALLTYPE *SendReceive)(
-        IRpcChannelBuffer2* This,
-        RPCOLEMESSAGE *pMessage,
-        ULONG *pStatus);
+                     IRpcChannelBuffer2* This,
+                     RPCOLEMESSAGE *pMessage,
+                     ULONG *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *FreeBuffer)(
-        IRpcChannelBuffer2* This,
-        RPCOLEMESSAGE *pMessage);
+                     IRpcChannelBuffer2* This,
+                     RPCOLEMESSAGE *pMessage);
 
     HRESULT (STDMETHODCALLTYPE *GetDestCtx)(
-        IRpcChannelBuffer2* This,
-        DWORD *pdwDestContext,
-        void **ppvDestContext);
+                     IRpcChannelBuffer2* This,
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext);
 
     HRESULT (STDMETHODCALLTYPE *IsConnected)(
-        IRpcChannelBuffer2* This);
+                     IRpcChannelBuffer2* This);
 
     /*** IRpcChannelBuffer2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetProtocolVersion)(
-        IRpcChannelBuffer2* This,
-        DWORD *pdwVersion);
+                     IRpcChannelBuffer2* This,
+                     DWORD *pdwVersion);
 
     END_INTERFACE
 } IRpcChannelBuffer2Vtbl;
@@ -2875,18 +2875,18 @@ MIDL_INTERFACE("a5029fb6-3c34-11d1-9c99-00c04fb998aa")
 IAsyncRpcChannelBuffer : public IRpcChannelBuffer2
 {
     virtual HRESULT STDMETHODCALLTYPE Send(
-        RPCOLEMESSAGE *pMsg,
-        ISynchronize *pSync,
-        ULONG *pulStatus) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     ISynchronize *pSync,
+                     ULONG *pulStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Receive(
-        RPCOLEMESSAGE *pMsg,
-        ULONG *pulStatus) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     ULONG *pulStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDestCtxEx(
-        RPCOLEMESSAGE *pMsg,
-        DWORD *pdwDestContext,
-        void **ppvDestContext) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2898,61 +2898,61 @@ typedef struct IAsyncRpcChannelBufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAsyncRpcChannelBuffer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAsyncRpcChannelBuffer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAsyncRpcChannelBuffer* This);
+                     IAsyncRpcChannelBuffer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAsyncRpcChannelBuffer* This);
+                     IAsyncRpcChannelBuffer* This);
 
     /*** IRpcChannelBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBuffer)(
-        IAsyncRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMessage,
-        REFIID riid);
+                     IAsyncRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMessage,
+                     REFIID riid);
 
     HRESULT (STDMETHODCALLTYPE *SendReceive)(
-        IAsyncRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMessage,
-        ULONG *pStatus);
+                     IAsyncRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMessage,
+                     ULONG *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *FreeBuffer)(
-        IAsyncRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMessage);
+                     IAsyncRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMessage);
 
     HRESULT (STDMETHODCALLTYPE *GetDestCtx)(
-        IAsyncRpcChannelBuffer* This,
-        DWORD *pdwDestContext,
-        void **ppvDestContext);
+                     IAsyncRpcChannelBuffer* This,
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext);
 
     HRESULT (STDMETHODCALLTYPE *IsConnected)(
-        IAsyncRpcChannelBuffer* This);
+                     IAsyncRpcChannelBuffer* This);
 
     /*** IRpcChannelBuffer2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetProtocolVersion)(
-        IAsyncRpcChannelBuffer* This,
-        DWORD *pdwVersion);
+                     IAsyncRpcChannelBuffer* This,
+                     DWORD *pdwVersion);
 
     /*** IAsyncRpcChannelBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *Send)(
-        IAsyncRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMsg,
-        ISynchronize *pSync,
-        ULONG *pulStatus);
+                     IAsyncRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMsg,
+                     ISynchronize *pSync,
+                     ULONG *pulStatus);
 
     HRESULT (STDMETHODCALLTYPE *Receive)(
-        IAsyncRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMsg,
-        ULONG *pulStatus);
+                     IAsyncRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMsg,
+                     ULONG *pulStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetDestCtxEx)(
-        IAsyncRpcChannelBuffer* This,
-        RPCOLEMESSAGE *pMsg,
-        DWORD *pdwDestContext,
-        void **ppvDestContext);
+                     IAsyncRpcChannelBuffer* This,
+                     RPCOLEMESSAGE *pMsg,
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext);
 
     END_INTERFACE
 } IAsyncRpcChannelBufferVtbl;
@@ -3069,34 +3069,34 @@ MIDL_INTERFACE("25b15600-0115-11d0-bf0d-00aa00b8dfd2")
 IRpcChannelBuffer3 : public IRpcChannelBuffer2
 {
     virtual HRESULT STDMETHODCALLTYPE Send(
-        RPCOLEMESSAGE *pMsg,
-        ULONG *pulStatus) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     ULONG *pulStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Receive(
-        RPCOLEMESSAGE *pMsg,
-        ULONG ulSize,
-        ULONG *pulStatus) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     ULONG ulSize,
+                     ULONG *pulStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        RPCOLEMESSAGE *pMsg) = 0;
+                     RPCOLEMESSAGE *pMsg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCallContext(
-        RPCOLEMESSAGE *pMsg,
-        REFIID riid,
-        void **pInterface) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     REFIID riid,
+                     void **pInterface) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDestCtxEx(
-        RPCOLEMESSAGE *pMsg,
-        DWORD *pdwDestContext,
-        void **ppvDestContext) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        RPCOLEMESSAGE *pMsg,
-        DWORD *pState) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     DWORD *pState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterAsync(
-        RPCOLEMESSAGE *pMsg,
-        IAsyncManager *pAsyncMgr) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     IAsyncManager *pAsyncMgr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3108,81 +3108,81 @@ typedef struct IRpcChannelBuffer3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRpcChannelBuffer3* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRpcChannelBuffer3* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRpcChannelBuffer3* This);
+                     IRpcChannelBuffer3* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRpcChannelBuffer3* This);
+                     IRpcChannelBuffer3* This);
 
     /*** IRpcChannelBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBuffer)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMessage,
-        REFIID riid);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMessage,
+                     REFIID riid);
 
     HRESULT (STDMETHODCALLTYPE *SendReceive)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMessage,
-        ULONG *pStatus);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMessage,
+                     ULONG *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *FreeBuffer)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMessage);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMessage);
 
     HRESULT (STDMETHODCALLTYPE *GetDestCtx)(
-        IRpcChannelBuffer3* This,
-        DWORD *pdwDestContext,
-        void **ppvDestContext);
+                     IRpcChannelBuffer3* This,
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext);
 
     HRESULT (STDMETHODCALLTYPE *IsConnected)(
-        IRpcChannelBuffer3* This);
+                     IRpcChannelBuffer3* This);
 
     /*** IRpcChannelBuffer2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetProtocolVersion)(
-        IRpcChannelBuffer3* This,
-        DWORD *pdwVersion);
+                     IRpcChannelBuffer3* This,
+                     DWORD *pdwVersion);
 
     /*** IRpcChannelBuffer3 methods ***/
     HRESULT (STDMETHODCALLTYPE *Send)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMsg,
-        ULONG *pulStatus);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMsg,
+                     ULONG *pulStatus);
 
     HRESULT (STDMETHODCALLTYPE *Receive)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMsg,
-        ULONG ulSize,
-        ULONG *pulStatus);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMsg,
+                     ULONG ulSize,
+                     ULONG *pulStatus);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMsg);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMsg);
 
     HRESULT (STDMETHODCALLTYPE *GetCallContext)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMsg,
-        REFIID riid,
-        void **pInterface);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMsg,
+                     REFIID riid,
+                     void **pInterface);
 
     HRESULT (STDMETHODCALLTYPE *GetDestCtxEx)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMsg,
-        DWORD *pdwDestContext,
-        void **ppvDestContext);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMsg,
+                     DWORD *pdwDestContext,
+                     void **ppvDestContext);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMsg,
-        DWORD *pState);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMsg,
+                     DWORD *pState);
 
     HRESULT (STDMETHODCALLTYPE *RegisterAsync)(
-        IRpcChannelBuffer3* This,
-        RPCOLEMESSAGE *pMsg,
-        IAsyncManager *pAsyncMgr);
+                     IRpcChannelBuffer3* This,
+                     RPCOLEMESSAGE *pMsg,
+                     IAsyncManager *pAsyncMgr);
 
     END_INTERFACE
 } IRpcChannelBuffer3Vtbl;
@@ -3351,7 +3351,7 @@ MIDL_INTERFACE("58a08519-24c8-4935-b482-3fd823333a4f")
 IRpcSyntaxNegotiate : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE NegotiateSyntax(
-        RPCOLEMESSAGE *pMsg) = 0;
+                     RPCOLEMESSAGE *pMsg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3363,20 +3363,20 @@ typedef struct IRpcSyntaxNegotiateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRpcSyntaxNegotiate* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRpcSyntaxNegotiate* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRpcSyntaxNegotiate* This);
+                     IRpcSyntaxNegotiate* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRpcSyntaxNegotiate* This);
+                     IRpcSyntaxNegotiate* This);
 
     /*** IRpcSyntaxNegotiate methods ***/
     HRESULT (STDMETHODCALLTYPE *NegotiateSyntax)(
-        IRpcSyntaxNegotiate* This,
-        RPCOLEMESSAGE *pMsg);
+                     IRpcSyntaxNegotiate* This,
+                     RPCOLEMESSAGE *pMsg);
 
     END_INTERFACE
 } IRpcSyntaxNegotiateVtbl;
@@ -3436,10 +3436,10 @@ MIDL_INTERFACE("d5f56a34-593b-101a-b569-08002b2dbf7a")
 IRpcProxyBuffer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Connect(
-        IRpcChannelBuffer *pRpcChannelBuffer) = 0;
+                     IRpcChannelBuffer *pRpcChannelBuffer) = 0;
 
     virtual void STDMETHODCALLTYPE Disconnect(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3451,23 +3451,23 @@ typedef struct IRpcProxyBufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRpcProxyBuffer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRpcProxyBuffer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRpcProxyBuffer* This);
+                     IRpcProxyBuffer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRpcProxyBuffer* This);
+                     IRpcProxyBuffer* This);
 
     /*** IRpcProxyBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        IRpcProxyBuffer* This,
-        IRpcChannelBuffer *pRpcChannelBuffer);
+                     IRpcProxyBuffer* This,
+                     IRpcChannelBuffer *pRpcChannelBuffer);
 
     void (STDMETHODCALLTYPE *Disconnect)(
-        IRpcProxyBuffer* This);
+                     IRpcProxyBuffer* This);
 
     END_INTERFACE
 } IRpcProxyBufferVtbl;
@@ -3540,26 +3540,26 @@ MIDL_INTERFACE("d5f56afc-593b-101a-b569-08002b2dbf7a")
 IRpcStubBuffer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Connect(
-        IUnknown *pUnkServer) = 0;
+                     IUnknown *pUnkServer) = 0;
 
     virtual void STDMETHODCALLTYPE Disconnect(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        RPCOLEMESSAGE *_prpcmsg,
-        IRpcChannelBuffer *_pRpcChannelBuffer) = 0;
+                     RPCOLEMESSAGE *_prpcmsg,
+                     IRpcChannelBuffer *_pRpcChannelBuffer) = 0;
 
     virtual IRpcStubBuffer * STDMETHODCALLTYPE IsIIDSupported(
-        REFIID riid) = 0;
+                     REFIID riid) = 0;
 
     virtual ULONG STDMETHODCALLTYPE CountRefs(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DebugServerQueryInterface(
-        void **ppv) = 0;
+                     void **ppv) = 0;
 
     virtual void STDMETHODCALLTYPE DebugServerRelease(
-        void *pv) = 0;
+                     void *pv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3571,43 +3571,43 @@ typedef struct IRpcStubBufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRpcStubBuffer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRpcStubBuffer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRpcStubBuffer* This);
+                     IRpcStubBuffer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRpcStubBuffer* This);
+                     IRpcStubBuffer* This);
 
     /*** IRpcStubBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        IRpcStubBuffer* This,
-        IUnknown *pUnkServer);
+                     IRpcStubBuffer* This,
+                     IUnknown *pUnkServer);
 
     void (STDMETHODCALLTYPE *Disconnect)(
-        IRpcStubBuffer* This);
+                     IRpcStubBuffer* This);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IRpcStubBuffer* This,
-        RPCOLEMESSAGE *_prpcmsg,
-        IRpcChannelBuffer *_pRpcChannelBuffer);
+                     IRpcStubBuffer* This,
+                     RPCOLEMESSAGE *_prpcmsg,
+                     IRpcChannelBuffer *_pRpcChannelBuffer);
 
     IRpcStubBuffer * (STDMETHODCALLTYPE *IsIIDSupported)(
-        IRpcStubBuffer* This,
-        REFIID riid);
+                     IRpcStubBuffer* This,
+                     REFIID riid);
 
     ULONG (STDMETHODCALLTYPE *CountRefs)(
-        IRpcStubBuffer* This);
+                     IRpcStubBuffer* This);
 
     HRESULT (STDMETHODCALLTYPE *DebugServerQueryInterface)(
-        IRpcStubBuffer* This,
-        void **ppv);
+                     IRpcStubBuffer* This,
+                     void **ppv);
 
     void (STDMETHODCALLTYPE *DebugServerRelease)(
-        IRpcStubBuffer* This,
-        void *pv);
+                     IRpcStubBuffer* This,
+                     void *pv);
 
     END_INTERFACE
 } IRpcStubBufferVtbl;
@@ -3738,15 +3738,15 @@ MIDL_INTERFACE("d5f569d0-593b-101a-b569-08002b2dbf7a")
 IPSFactoryBuffer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateProxy(
-        IUnknown *pUnkOuter,
-        REFIID riid,
-        IRpcProxyBuffer **ppProxy,
-        void **ppv) = 0;
+                     IUnknown *pUnkOuter,
+                     REFIID riid,
+                     IRpcProxyBuffer **ppProxy,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStub(
-        REFIID riid,
-        IUnknown *pUnkServer,
-        IRpcStubBuffer **ppStub) = 0;
+                     REFIID riid,
+                     IUnknown *pUnkServer,
+                     IRpcStubBuffer **ppStub) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3758,29 +3758,29 @@ typedef struct IPSFactoryBufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPSFactoryBuffer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPSFactoryBuffer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPSFactoryBuffer* This);
+                     IPSFactoryBuffer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPSFactoryBuffer* This);
+                     IPSFactoryBuffer* This);
 
     /*** IPSFactoryBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateProxy)(
-        IPSFactoryBuffer* This,
-        IUnknown *pUnkOuter,
-        REFIID riid,
-        IRpcProxyBuffer **ppProxy,
-        void **ppv);
+                     IPSFactoryBuffer* This,
+                     IUnknown *pUnkOuter,
+                     REFIID riid,
+                     IRpcProxyBuffer **ppProxy,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CreateStub)(
-        IPSFactoryBuffer* This,
-        REFIID riid,
-        IUnknown *pUnkServer,
-        IRpcStubBuffer **ppStub);
+                     IPSFactoryBuffer* This,
+                     REFIID riid,
+                     IUnknown *pUnkServer,
+                     IRpcStubBuffer **ppStub);
 
     END_INTERFACE
 } IPSFactoryBufferVtbl;
@@ -3869,43 +3869,43 @@ MIDL_INTERFACE("1008c4a0-7613-11cf-9af1-0020af6e72f4")
 IChannelHook : public IUnknown
 {
     virtual void STDMETHODCALLTYPE ClientGetSize(
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG *pDataSize) = 0;
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG *pDataSize) = 0;
 
     virtual void STDMETHODCALLTYPE ClientFillBuffer(
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG *pDataSize,
-        void *pDataBuffer) = 0;
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG *pDataSize,
+                     void *pDataBuffer) = 0;
 
     virtual void STDMETHODCALLTYPE ClientNotify(
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG cbDataSize,
-        void *pDataBuffer,
-        DWORD lDataRep,
-        HRESULT hrFault) = 0;
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG cbDataSize,
+                     void *pDataBuffer,
+                     DWORD lDataRep,
+                     HRESULT hrFault) = 0;
 
     virtual void STDMETHODCALLTYPE ServerNotify(
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG cbDataSize,
-        void *pDataBuffer,
-        DWORD lDataRep) = 0;
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG cbDataSize,
+                     void *pDataBuffer,
+                     DWORD lDataRep) = 0;
 
     virtual void STDMETHODCALLTYPE ServerGetSize(
-        REFGUID uExtent,
-        REFIID riid,
-        HRESULT hrFault,
-        ULONG *pDataSize) = 0;
+                     REFGUID uExtent,
+                     REFIID riid,
+                     HRESULT hrFault,
+                     ULONG *pDataSize) = 0;
 
     virtual void STDMETHODCALLTYPE ServerFillBuffer(
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG *pDataSize,
-        void *pDataBuffer,
-        HRESULT hrFault) = 0;
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG *pDataSize,
+                     void *pDataBuffer,
+                     HRESULT hrFault) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3917,61 +3917,61 @@ typedef struct IChannelHookVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IChannelHook* This,
-        REFIID riid,
-        void **ppvObject);
+                     IChannelHook* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IChannelHook* This);
+                     IChannelHook* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IChannelHook* This);
+                     IChannelHook* This);
 
     /*** IChannelHook methods ***/
     void (STDMETHODCALLTYPE *ClientGetSize)(
-        IChannelHook* This,
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG *pDataSize);
+                     IChannelHook* This,
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG *pDataSize);
 
     void (STDMETHODCALLTYPE *ClientFillBuffer)(
-        IChannelHook* This,
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG *pDataSize,
-        void *pDataBuffer);
+                     IChannelHook* This,
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG *pDataSize,
+                     void *pDataBuffer);
 
     void (STDMETHODCALLTYPE *ClientNotify)(
-        IChannelHook* This,
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG cbDataSize,
-        void *pDataBuffer,
-        DWORD lDataRep,
-        HRESULT hrFault);
+                     IChannelHook* This,
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG cbDataSize,
+                     void *pDataBuffer,
+                     DWORD lDataRep,
+                     HRESULT hrFault);
 
     void (STDMETHODCALLTYPE *ServerNotify)(
-        IChannelHook* This,
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG cbDataSize,
-        void *pDataBuffer,
-        DWORD lDataRep);
+                     IChannelHook* This,
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG cbDataSize,
+                     void *pDataBuffer,
+                     DWORD lDataRep);
 
     void (STDMETHODCALLTYPE *ServerGetSize)(
-        IChannelHook* This,
-        REFGUID uExtent,
-        REFIID riid,
-        HRESULT hrFault,
-        ULONG *pDataSize);
+                     IChannelHook* This,
+                     REFGUID uExtent,
+                     REFIID riid,
+                     HRESULT hrFault,
+                     ULONG *pDataSize);
 
     void (STDMETHODCALLTYPE *ServerFillBuffer)(
-        IChannelHook* This,
-        REFGUID uExtent,
-        REFIID riid,
-        ULONG *pDataSize,
-        void *pDataBuffer,
-        HRESULT hrFault);
+                     IChannelHook* This,
+                     REFGUID uExtent,
+                     REFIID riid,
+                     ULONG *pDataSize,
+                     void *pDataBuffer,
+                     HRESULT hrFault);
 
     END_INTERFACE
 } IChannelHookVtbl;
@@ -4161,28 +4161,28 @@ MIDL_INTERFACE("0000013d-0000-0000-c000-000000000046")
 IClientSecurity : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryBlanket(
-        IUnknown *pProxy,
-        DWORD *pAuthnSvc,
-        DWORD *pAuthzSvc,
-        OLECHAR **pServerPrincName,
-        DWORD *pAuthnLevel,
-        DWORD *pImpLevel,
-        void **pAuthInfo,
-        DWORD *pCapabilites) = 0;
+                     IUnknown *pProxy,
+                     DWORD *pAuthnSvc,
+                     DWORD *pAuthzSvc,
+                     OLECHAR **pServerPrincName,
+                     DWORD *pAuthnLevel,
+                     DWORD *pImpLevel,
+                     void **pAuthInfo,
+                     DWORD *pCapabilites) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBlanket(
-        IUnknown *pProxy,
-        DWORD dwAuthnSvc,
-        DWORD dwAuthzSvc,
-        OLECHAR *pServerPrincName,
-        DWORD dwAuthnLevel,
-        DWORD dwImpLevel,
-        void *pAuthInfo,
-        DWORD dwCapabilities) = 0;
+                     IUnknown *pProxy,
+                     DWORD dwAuthnSvc,
+                     DWORD dwAuthzSvc,
+                     OLECHAR *pServerPrincName,
+                     DWORD dwAuthnLevel,
+                     DWORD dwImpLevel,
+                     void *pAuthInfo,
+                     DWORD dwCapabilities) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyProxy(
-        IUnknown *pProxy,
-        IUnknown **ppCopy) = 0;
+                     IUnknown *pProxy,
+                     IUnknown **ppCopy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4194,43 +4194,43 @@ typedef struct IClientSecurityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IClientSecurity* This,
-        REFIID riid,
-        void **ppvObject);
+                     IClientSecurity* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IClientSecurity* This);
+                     IClientSecurity* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IClientSecurity* This);
+                     IClientSecurity* This);
 
     /*** IClientSecurity methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryBlanket)(
-        IClientSecurity* This,
-        IUnknown *pProxy,
-        DWORD *pAuthnSvc,
-        DWORD *pAuthzSvc,
-        OLECHAR **pServerPrincName,
-        DWORD *pAuthnLevel,
-        DWORD *pImpLevel,
-        void **pAuthInfo,
-        DWORD *pCapabilites);
+                     IClientSecurity* This,
+                     IUnknown *pProxy,
+                     DWORD *pAuthnSvc,
+                     DWORD *pAuthzSvc,
+                     OLECHAR **pServerPrincName,
+                     DWORD *pAuthnLevel,
+                     DWORD *pImpLevel,
+                     void **pAuthInfo,
+                     DWORD *pCapabilites);
 
     HRESULT (STDMETHODCALLTYPE *SetBlanket)(
-        IClientSecurity* This,
-        IUnknown *pProxy,
-        DWORD dwAuthnSvc,
-        DWORD dwAuthzSvc,
-        OLECHAR *pServerPrincName,
-        DWORD dwAuthnLevel,
-        DWORD dwImpLevel,
-        void *pAuthInfo,
-        DWORD dwCapabilities);
+                     IClientSecurity* This,
+                     IUnknown *pProxy,
+                     DWORD dwAuthnSvc,
+                     DWORD dwAuthzSvc,
+                     OLECHAR *pServerPrincName,
+                     DWORD dwAuthnLevel,
+                     DWORD dwImpLevel,
+                     void *pAuthInfo,
+                     DWORD dwCapabilities);
 
     HRESULT (STDMETHODCALLTYPE *CopyProxy)(
-        IClientSecurity* This,
-        IUnknown *pProxy,
-        IUnknown **ppCopy);
+                     IClientSecurity* This,
+                     IUnknown *pProxy,
+                     IUnknown **ppCopy);
 
     END_INTERFACE
 } IClientSecurityVtbl;
@@ -4331,22 +4331,22 @@ MIDL_INTERFACE("0000013e-0000-0000-c000-000000000046")
 IServerSecurity : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryBlanket(
-        DWORD *pAuthnSvc,
-        DWORD *pAuthzSvc,
-        OLECHAR **pServerPrincName,
-        DWORD *pAuthnLevel,
-        DWORD *pImpLevel,
-        void **pPrivs,
-        DWORD *pCapabilities) = 0;
+                     DWORD *pAuthnSvc,
+                     DWORD *pAuthzSvc,
+                     OLECHAR **pServerPrincName,
+                     DWORD *pAuthnLevel,
+                     DWORD *pImpLevel,
+                     void **pPrivs,
+                     DWORD *pCapabilities) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImpersonateClient(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RevertToSelf(
-        ) = 0;
+                     ) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE IsImpersonating(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4358,35 +4358,35 @@ typedef struct IServerSecurityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IServerSecurity* This,
-        REFIID riid,
-        void **ppvObject);
+                     IServerSecurity* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IServerSecurity* This);
+                     IServerSecurity* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IServerSecurity* This);
+                     IServerSecurity* This);
 
     /*** IServerSecurity methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryBlanket)(
-        IServerSecurity* This,
-        DWORD *pAuthnSvc,
-        DWORD *pAuthzSvc,
-        OLECHAR **pServerPrincName,
-        DWORD *pAuthnLevel,
-        DWORD *pImpLevel,
-        void **pPrivs,
-        DWORD *pCapabilities);
+                     IServerSecurity* This,
+                     DWORD *pAuthnSvc,
+                     DWORD *pAuthzSvc,
+                     OLECHAR **pServerPrincName,
+                     DWORD *pAuthnLevel,
+                     DWORD *pImpLevel,
+                     void **pPrivs,
+                     DWORD *pCapabilities);
 
     HRESULT (STDMETHODCALLTYPE *ImpersonateClient)(
-        IServerSecurity* This);
+                     IServerSecurity* This);
 
     HRESULT (STDMETHODCALLTYPE *RevertToSelf)(
-        IServerSecurity* This);
+                     IServerSecurity* This);
 
     WINBOOL (STDMETHODCALLTYPE *IsImpersonating)(
-        IServerSecurity* This);
+                     IServerSecurity* This);
 
     END_INTERFACE
 } IServerSecurityVtbl;
@@ -4497,14 +4497,14 @@ MIDL_INTERFACE("00000144-0000-0000-c000-000000000046")
 IRpcOptions : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Set(
-        IUnknown *pPrx,
-        RPCOPT_PROPERTIES dwProperty,
-        ULONG_PTR dwValue) = 0;
+                     IUnknown *pPrx,
+                     RPCOPT_PROPERTIES dwProperty,
+                     ULONG_PTR dwValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Query(
-        IUnknown *pPrx,
-        RPCOPT_PROPERTIES dwProperty,
-        ULONG_PTR *pdwValue) = 0;
+                     IUnknown *pPrx,
+                     RPCOPT_PROPERTIES dwProperty,
+                     ULONG_PTR *pdwValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4516,28 +4516,28 @@ typedef struct IRpcOptionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRpcOptions* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRpcOptions* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRpcOptions* This);
+                     IRpcOptions* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRpcOptions* This);
+                     IRpcOptions* This);
 
     /*** IRpcOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *Set)(
-        IRpcOptions* This,
-        IUnknown *pPrx,
-        RPCOPT_PROPERTIES dwProperty,
-        ULONG_PTR dwValue);
+                     IRpcOptions* This,
+                     IUnknown *pPrx,
+                     RPCOPT_PROPERTIES dwProperty,
+                     ULONG_PTR dwValue);
 
     HRESULT (STDMETHODCALLTYPE *Query)(
-        IRpcOptions* This,
-        IUnknown *pPrx,
-        RPCOPT_PROPERTIES dwProperty,
-        ULONG_PTR *pdwValue);
+                     IRpcOptions* This,
+                     IUnknown *pPrx,
+                     RPCOPT_PROPERTIES dwProperty,
+                     ULONG_PTR *pdwValue);
 
     END_INTERFACE
 } IRpcOptionsVtbl;
@@ -4652,12 +4652,12 @@ MIDL_INTERFACE("0000015b-0000-0000-c000-000000000046")
 IGlobalOptions : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Set(
-        GLOBALOPT_PROPERTIES dwProperty,
-        ULONG_PTR dwValue) = 0;
+                     GLOBALOPT_PROPERTIES dwProperty,
+                     ULONG_PTR dwValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Query(
-        GLOBALOPT_PROPERTIES dwProperty,
-        ULONG_PTR *pdwValue) = 0;
+                     GLOBALOPT_PROPERTIES dwProperty,
+                     ULONG_PTR *pdwValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4669,26 +4669,26 @@ typedef struct IGlobalOptionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IGlobalOptions* This,
-        REFIID riid,
-        void **ppvObject);
+                     IGlobalOptions* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IGlobalOptions* This);
+                     IGlobalOptions* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IGlobalOptions* This);
+                     IGlobalOptions* This);
 
     /*** IGlobalOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *Set)(
-        IGlobalOptions* This,
-        GLOBALOPT_PROPERTIES dwProperty,
-        ULONG_PTR dwValue);
+                     IGlobalOptions* This,
+                     GLOBALOPT_PROPERTIES dwProperty,
+                     ULONG_PTR dwValue);
 
     HRESULT (STDMETHODCALLTYPE *Query)(
-        IGlobalOptions* This,
-        GLOBALOPT_PROPERTIES dwProperty,
-        ULONG_PTR *pdwValue);
+                     IGlobalOptions* This,
+                     GLOBALOPT_PROPERTIES dwProperty,
+                     ULONG_PTR *pdwValue);
 
     END_INTERFACE
 } IGlobalOptionsVtbl;
@@ -4767,10 +4767,10 @@ MIDL_INTERFACE("00000022-0000-0000-c000-000000000046")
 ISurrogate : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE LoadDllServer(
-        REFCLSID Clsid) = 0;
+                     REFCLSID Clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FreeSurrogate(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4782,23 +4782,23 @@ typedef struct ISurrogateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISurrogate* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISurrogate* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISurrogate* This);
+                     ISurrogate* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISurrogate* This);
+                     ISurrogate* This);
 
     /*** ISurrogate methods ***/
     HRESULT (STDMETHODCALLTYPE *LoadDllServer)(
-        ISurrogate* This,
-        REFCLSID Clsid);
+                     ISurrogate* This,
+                     REFCLSID Clsid);
 
     HRESULT (STDMETHODCALLTYPE *FreeSurrogate)(
-        ISurrogate* This);
+                     ISurrogate* This);
 
     END_INTERFACE
 } ISurrogateVtbl;
@@ -4871,17 +4871,17 @@ MIDL_INTERFACE("00000146-0000-0000-c000-000000000046")
 IGlobalInterfaceTable : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterInterfaceInGlobal(
-        IUnknown *pUnk,
-        REFIID riid,
-        DWORD *pdwCookie) = 0;
+                     IUnknown *pUnk,
+                     REFIID riid,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RevokeInterfaceFromGlobal(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInterfaceFromGlobal(
-        DWORD dwCookie,
-        REFIID riid,
-        void **ppv) = 0;
+                     DWORD dwCookie,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4893,32 +4893,32 @@ typedef struct IGlobalInterfaceTableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IGlobalInterfaceTable* This,
-        REFIID riid,
-        void **ppvObject);
+                     IGlobalInterfaceTable* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IGlobalInterfaceTable* This);
+                     IGlobalInterfaceTable* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IGlobalInterfaceTable* This);
+                     IGlobalInterfaceTable* This);
 
     /*** IGlobalInterfaceTable methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterInterfaceInGlobal)(
-        IGlobalInterfaceTable* This,
-        IUnknown *pUnk,
-        REFIID riid,
-        DWORD *pdwCookie);
+                     IGlobalInterfaceTable* This,
+                     IUnknown *pUnk,
+                     REFIID riid,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *RevokeInterfaceFromGlobal)(
-        IGlobalInterfaceTable* This,
-        DWORD dwCookie);
+                     IGlobalInterfaceTable* This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *GetInterfaceFromGlobal)(
-        IGlobalInterfaceTable* This,
-        DWORD dwCookie,
-        REFIID riid,
-        void **ppv);
+                     IGlobalInterfaceTable* This,
+                     DWORD dwCookie,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IGlobalInterfaceTableVtbl;
@@ -5008,14 +5008,14 @@ MIDL_INTERFACE("00000030-0000-0000-c000-000000000046")
 ISynchronize : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Wait(
-        DWORD dwFlags,
-        DWORD dwMilliseconds) = 0;
+                     DWORD dwFlags,
+                     DWORD dwMilliseconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Signal(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5027,27 +5027,27 @@ typedef struct ISynchronizeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISynchronize* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISynchronize* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISynchronize* This);
+                     ISynchronize* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISynchronize* This);
+                     ISynchronize* This);
 
     /*** ISynchronize methods ***/
     HRESULT (STDMETHODCALLTYPE *Wait)(
-        ISynchronize* This,
-        DWORD dwFlags,
-        DWORD dwMilliseconds);
+                     ISynchronize* This,
+                     DWORD dwFlags,
+                     DWORD dwMilliseconds);
 
     HRESULT (STDMETHODCALLTYPE *Signal)(
-        ISynchronize* This);
+                     ISynchronize* This);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        ISynchronize* This);
+                     ISynchronize* This);
 
     END_INTERFACE
 } ISynchronizeVtbl;
@@ -5130,7 +5130,7 @@ MIDL_INTERFACE("00000031-0000-0000-c000-000000000046")
 ISynchronizeHandle : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetHandle(
-        HANDLE *ph) = 0;
+                     HANDLE *ph) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5142,20 +5142,20 @@ typedef struct ISynchronizeHandleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISynchronizeHandle* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISynchronizeHandle* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISynchronizeHandle* This);
+                     ISynchronizeHandle* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISynchronizeHandle* This);
+                     ISynchronizeHandle* This);
 
     /*** ISynchronizeHandle methods ***/
     HRESULT (STDMETHODCALLTYPE *GetHandle)(
-        ISynchronizeHandle* This,
-        HANDLE *ph);
+                     ISynchronizeHandle* This,
+                     HANDLE *ph);
 
     END_INTERFACE
 } ISynchronizeHandleVtbl;
@@ -5215,7 +5215,7 @@ MIDL_INTERFACE("00000032-0000-0000-c000-000000000046")
 ISynchronizeEvent : public ISynchronizeHandle
 {
     virtual HRESULT STDMETHODCALLTYPE SetEventHandle(
-        HANDLE *ph) = 0;
+                     HANDLE *ph) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5227,25 +5227,25 @@ typedef struct ISynchronizeEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISynchronizeEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISynchronizeEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISynchronizeEvent* This);
+                     ISynchronizeEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISynchronizeEvent* This);
+                     ISynchronizeEvent* This);
 
     /*** ISynchronizeHandle methods ***/
     HRESULT (STDMETHODCALLTYPE *GetHandle)(
-        ISynchronizeEvent* This,
-        HANDLE *ph);
+                     ISynchronizeEvent* This,
+                     HANDLE *ph);
 
     /*** ISynchronizeEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *SetEventHandle)(
-        ISynchronizeEvent* This,
-        HANDLE *ph);
+                     ISynchronizeEvent* This,
+                     HANDLE *ph);
 
     END_INTERFACE
 } ISynchronizeEventVtbl;
@@ -5311,12 +5311,12 @@ MIDL_INTERFACE("00000033-0000-0000-c000-000000000046")
 ISynchronizeContainer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddSynchronize(
-        ISynchronize *pSync) = 0;
+                     ISynchronize *pSync) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitMultiple(
-        DWORD dwFlags,
-        DWORD dwTimeOut,
-        ISynchronize **ppSync) = 0;
+                     DWORD dwFlags,
+                     DWORD dwTimeOut,
+                     ISynchronize **ppSync) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5328,26 +5328,26 @@ typedef struct ISynchronizeContainerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISynchronizeContainer* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISynchronizeContainer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISynchronizeContainer* This);
+                     ISynchronizeContainer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISynchronizeContainer* This);
+                     ISynchronizeContainer* This);
 
     /*** ISynchronizeContainer methods ***/
     HRESULT (STDMETHODCALLTYPE *AddSynchronize)(
-        ISynchronizeContainer* This,
-        ISynchronize *pSync);
+                     ISynchronizeContainer* This,
+                     ISynchronize *pSync);
 
     HRESULT (STDMETHODCALLTYPE *WaitMultiple)(
-        ISynchronizeContainer* This,
-        DWORD dwFlags,
-        DWORD dwTimeOut,
-        ISynchronize **ppSync);
+                     ISynchronizeContainer* This,
+                     DWORD dwFlags,
+                     DWORD dwTimeOut,
+                     ISynchronize **ppSync);
 
     END_INTERFACE
 } ISynchronizeContainerVtbl;
@@ -5421,7 +5421,7 @@ MIDL_INTERFACE("00000025-0000-0000-c000-000000000046")
 ISynchronizeMutex : public ISynchronize
 {
     virtual HRESULT STDMETHODCALLTYPE ReleaseMutex(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5433,31 +5433,31 @@ typedef struct ISynchronizeMutexVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISynchronizeMutex* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISynchronizeMutex* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISynchronizeMutex* This);
+                     ISynchronizeMutex* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISynchronizeMutex* This);
+                     ISynchronizeMutex* This);
 
     /*** ISynchronize methods ***/
     HRESULT (STDMETHODCALLTYPE *Wait)(
-        ISynchronizeMutex* This,
-        DWORD dwFlags,
-        DWORD dwMilliseconds);
+                     ISynchronizeMutex* This,
+                     DWORD dwFlags,
+                     DWORD dwMilliseconds);
 
     HRESULT (STDMETHODCALLTYPE *Signal)(
-        ISynchronizeMutex* This);
+                     ISynchronizeMutex* This);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        ISynchronizeMutex* This);
+                     ISynchronizeMutex* This);
 
     /*** ISynchronizeMutex methods ***/
     HRESULT (STDMETHODCALLTYPE *ReleaseMutex)(
-        ISynchronizeMutex* This);
+                     ISynchronizeMutex* This);
 
     END_INTERFACE
 } ISynchronizeMutexVtbl;
@@ -5532,10 +5532,10 @@ MIDL_INTERFACE("00000029-0000-0000-c000-000000000046")
 ICancelMethodCalls : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ULONG ulSeconds) = 0;
+                     ULONG ulSeconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TestCancel(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5547,23 +5547,23 @@ typedef struct ICancelMethodCallsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICancelMethodCalls* This,
-        REFIID riid,
-        void **ppvObject);
+                     ICancelMethodCalls* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICancelMethodCalls* This);
+                     ICancelMethodCalls* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICancelMethodCalls* This);
+                     ICancelMethodCalls* This);
 
     /*** ICancelMethodCalls methods ***/
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        ICancelMethodCalls* This,
-        ULONG ulSeconds);
+                     ICancelMethodCalls* This,
+                     ULONG ulSeconds);
 
     HRESULT (STDMETHODCALLTYPE *TestCancel)(
-        ICancelMethodCalls* This);
+                     ICancelMethodCalls* This);
 
     END_INTERFACE
 } ICancelMethodCallsVtbl;
@@ -5640,14 +5640,14 @@ MIDL_INTERFACE("0000002a-0000-0000-c000-000000000046")
 IAsyncManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CompleteCall(
-        HRESULT Result) = 0;
+                     HRESULT Result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCallContext(
-        REFIID riid,
-        void **pInterface) = 0;
+                     REFIID riid,
+                     void **pInterface) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        ULONG *pulStateFlags) = 0;
+                     ULONG *pulStateFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5659,29 +5659,29 @@ typedef struct IAsyncManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAsyncManager* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAsyncManager* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAsyncManager* This);
+                     IAsyncManager* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAsyncManager* This);
+                     IAsyncManager* This);
 
     /*** IAsyncManager methods ***/
     HRESULT (STDMETHODCALLTYPE *CompleteCall)(
-        IAsyncManager* This,
-        HRESULT Result);
+                     IAsyncManager* This,
+                     HRESULT Result);
 
     HRESULT (STDMETHODCALLTYPE *GetCallContext)(
-        IAsyncManager* This,
-        REFIID riid,
-        void **pInterface);
+                     IAsyncManager* This,
+                     REFIID riid,
+                     void **pInterface);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IAsyncManager* This,
-        ULONG *pulStateFlags);
+                     IAsyncManager* This,
+                     ULONG *pulStateFlags);
 
     END_INTERFACE
 } IAsyncManagerVtbl;
@@ -5766,10 +5766,10 @@ MIDL_INTERFACE("1c733a30-2a1c-11ce-ade5-00aa0044773d")
 ICallFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateCall(
-        REFIID riid,
-        IUnknown *pCtrlUnk,
-        REFIID riid2,
-        IUnknown **ppv) = 0;
+                     REFIID riid,
+                     IUnknown *pCtrlUnk,
+                     REFIID riid2,
+                     IUnknown **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5781,23 +5781,23 @@ typedef struct ICallFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICallFactory* This,
-        REFIID riid,
-        void **ppvObject);
+                     ICallFactory* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICallFactory* This);
+                     ICallFactory* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICallFactory* This);
+                     ICallFactory* This);
 
     /*** ICallFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateCall)(
-        ICallFactory* This,
-        REFIID riid,
-        IUnknown *pCtrlUnk,
-        REFIID riid2,
-        IUnknown **ppv);
+                     ICallFactory* This,
+                     REFIID riid,
+                     IUnknown *pCtrlUnk,
+                     REFIID riid2,
+                     IUnknown **ppv);
 
     END_INTERFACE
 } ICallFactoryVtbl;
@@ -5860,11 +5860,11 @@ MIDL_INTERFACE("00000149-0000-0000-c000-000000000046")
 IRpcHelper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDCOMProtocolVersion(
-        DWORD *pComVersion) = 0;
+                     DWORD *pComVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIIDFromOBJREF(
-        void *pObjRef,
-        IID **piid) = 0;
+                     void *pObjRef,
+                     IID **piid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5876,25 +5876,25 @@ typedef struct IRpcHelperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRpcHelper* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRpcHelper* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRpcHelper* This);
+                     IRpcHelper* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRpcHelper* This);
+                     IRpcHelper* This);
 
     /*** IRpcHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDCOMProtocolVersion)(
-        IRpcHelper* This,
-        DWORD *pComVersion);
+                     IRpcHelper* This,
+                     DWORD *pComVersion);
 
     HRESULT (STDMETHODCALLTYPE *GetIIDFromOBJREF)(
-        IRpcHelper* This,
-        void *pObjRef,
-        IID **piid);
+                     IRpcHelper* This,
+                     void *pObjRef,
+                     IID **piid);
 
     END_INTERFACE
 } IRpcHelperVtbl;
@@ -5967,9 +5967,9 @@ MIDL_INTERFACE("eb0cb9e8-7996-11d2-872e-0000f8080859")
 IReleaseMarshalBuffers : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ReleaseMarshalBuffer(
-        RPCOLEMESSAGE *pMsg,
-        DWORD dwFlags,
-        IUnknown *pChnl) = 0;
+                     RPCOLEMESSAGE *pMsg,
+                     DWORD dwFlags,
+                     IUnknown *pChnl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5981,22 +5981,22 @@ typedef struct IReleaseMarshalBuffersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IReleaseMarshalBuffers* This,
-        REFIID riid,
-        void **ppvObject);
+                     IReleaseMarshalBuffers* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IReleaseMarshalBuffers* This);
+                     IReleaseMarshalBuffers* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IReleaseMarshalBuffers* This);
+                     IReleaseMarshalBuffers* This);
 
     /*** IReleaseMarshalBuffers methods ***/
     HRESULT (STDMETHODCALLTYPE *ReleaseMarshalBuffer)(
-        IReleaseMarshalBuffers* This,
-        RPCOLEMESSAGE *pMsg,
-        DWORD dwFlags,
-        IUnknown *pChnl);
+                     IReleaseMarshalBuffers* This,
+                     RPCOLEMESSAGE *pMsg,
+                     DWORD dwFlags,
+                     IUnknown *pChnl);
 
     END_INTERFACE
 } IReleaseMarshalBuffersVtbl;
@@ -6058,11 +6058,11 @@ MIDL_INTERFACE("0000002b-0000-0000-c000-000000000046")
 IWaitMultiple : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE WaitMultiple(
-        DWORD timeout,
-        ISynchronize **pSync) = 0;
+                     DWORD timeout,
+                     ISynchronize **pSync) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSynchronize(
-        ISynchronize *pSync) = 0;
+                     ISynchronize *pSync) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6074,25 +6074,25 @@ typedef struct IWaitMultipleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWaitMultiple* This,
-        REFIID riid,
-        void **ppvObject);
+                     IWaitMultiple* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWaitMultiple* This);
+                     IWaitMultiple* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWaitMultiple* This);
+                     IWaitMultiple* This);
 
     /*** IWaitMultiple methods ***/
     HRESULT (STDMETHODCALLTYPE *WaitMultiple)(
-        IWaitMultiple* This,
-        DWORD timeout,
-        ISynchronize **pSync);
+                     IWaitMultiple* This,
+                     DWORD timeout,
+                     ISynchronize **pSync);
 
     HRESULT (STDMETHODCALLTYPE *AddSynchronize)(
-        IWaitMultiple* This,
-        ISynchronize *pSync);
+                     IWaitMultiple* This,
+                     ISynchronize *pSync);
 
     END_INTERFACE
 } IWaitMultipleVtbl;
@@ -6166,10 +6166,10 @@ MIDL_INTERFACE("00000147-0000-0000-c000-000000000046")
 IAddrTrackingControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnableCOMDynamicAddrTracking(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisableCOMDynamicAddrTracking(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6181,22 +6181,22 @@ typedef struct IAddrTrackingControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAddrTrackingControl* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAddrTrackingControl* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAddrTrackingControl* This);
+                     IAddrTrackingControl* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAddrTrackingControl* This);
+                     IAddrTrackingControl* This);
 
     /*** IAddrTrackingControl methods ***/
     HRESULT (STDMETHODCALLTYPE *EnableCOMDynamicAddrTracking)(
-        IAddrTrackingControl* This);
+                     IAddrTrackingControl* This);
 
     HRESULT (STDMETHODCALLTYPE *DisableCOMDynamicAddrTracking)(
-        IAddrTrackingControl* This);
+                     IAddrTrackingControl* This);
 
     END_INTERFACE
 } IAddrTrackingControlVtbl;
@@ -6267,11 +6267,11 @@ MIDL_INTERFACE("00000148-0000-0000-c000-000000000046")
 IAddrExclusionControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCurrentAddrExclusionList(
-        REFIID riid,
-        void **ppEnumerator) = 0;
+                     REFIID riid,
+                     void **ppEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateAddrExclusionList(
-        IUnknown *pEnumerator) = 0;
+                     IUnknown *pEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6283,25 +6283,25 @@ typedef struct IAddrExclusionControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAddrExclusionControl* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAddrExclusionControl* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAddrExclusionControl* This);
+                     IAddrExclusionControl* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAddrExclusionControl* This);
+                     IAddrExclusionControl* This);
 
     /*** IAddrExclusionControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurrentAddrExclusionList)(
-        IAddrExclusionControl* This,
-        REFIID riid,
-        void **ppEnumerator);
+                     IAddrExclusionControl* This,
+                     REFIID riid,
+                     void **ppEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *UpdateAddrExclusionList)(
-        IAddrExclusionControl* This,
-        IUnknown *pEnumerator);
+                     IAddrExclusionControl* This,
+                     IUnknown *pEnumerator);
 
     END_INTERFACE
 } IAddrExclusionControlVtbl;
@@ -6374,13 +6374,13 @@ MIDL_INTERFACE("db2f3aca-2f86-11d1-8e04-00c04fb9989a")
 IPipeByte : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Pull(
-        BYTE *buf,
-        ULONG cRequest,
-        ULONG *pcReturned) = 0;
+                     BYTE *buf,
+                     ULONG cRequest,
+                     ULONG *pcReturned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Push(
-        BYTE *buf,
-        ULONG cSent) = 0;
+                     BYTE *buf,
+                     ULONG cSent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6392,27 +6392,27 @@ typedef struct IPipeByteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPipeByte* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPipeByte* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPipeByte* This);
+                     IPipeByte* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPipeByte* This);
+                     IPipeByte* This);
 
     /*** IPipeByte methods ***/
     HRESULT (STDMETHODCALLTYPE *Pull)(
-        IPipeByte* This,
-        BYTE *buf,
-        ULONG cRequest,
-        ULONG *pcReturned);
+                     IPipeByte* This,
+                     BYTE *buf,
+                     ULONG cRequest,
+                     ULONG *pcReturned);
 
     HRESULT (STDMETHODCALLTYPE *Push)(
-        IPipeByte* This,
-        BYTE *buf,
-        ULONG cSent);
+                     IPipeByte* This,
+                     BYTE *buf,
+                     ULONG cSent);
 
     END_INTERFACE
 } IPipeByteVtbl;
@@ -6487,13 +6487,13 @@ MIDL_INTERFACE("db2f3acc-2f86-11d1-8e04-00c04fb9989a")
 IPipeLong : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Pull(
-        LONG *buf,
-        ULONG cRequest,
-        ULONG *pcReturned) = 0;
+                     LONG *buf,
+                     ULONG cRequest,
+                     ULONG *pcReturned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Push(
-        LONG *buf,
-        ULONG cSent) = 0;
+                     LONG *buf,
+                     ULONG cSent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6505,27 +6505,27 @@ typedef struct IPipeLongVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPipeLong* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPipeLong* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPipeLong* This);
+                     IPipeLong* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPipeLong* This);
+                     IPipeLong* This);
 
     /*** IPipeLong methods ***/
     HRESULT (STDMETHODCALLTYPE *Pull)(
-        IPipeLong* This,
-        LONG *buf,
-        ULONG cRequest,
-        ULONG *pcReturned);
+                     IPipeLong* This,
+                     LONG *buf,
+                     ULONG cRequest,
+                     ULONG *pcReturned);
 
     HRESULT (STDMETHODCALLTYPE *Push)(
-        IPipeLong* This,
-        LONG *buf,
-        ULONG cSent);
+                     IPipeLong* This,
+                     LONG *buf,
+                     ULONG cSent);
 
     END_INTERFACE
 } IPipeLongVtbl;
@@ -6600,13 +6600,13 @@ MIDL_INTERFACE("db2f3ace-2f86-11d1-8e04-00c04fb9989a")
 IPipeDouble : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Pull(
-        DOUBLE *buf,
-        ULONG cRequest,
-        ULONG *pcReturned) = 0;
+                     DOUBLE *buf,
+                     ULONG cRequest,
+                     ULONG *pcReturned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Push(
-        DOUBLE *buf,
-        ULONG cSent) = 0;
+                     DOUBLE *buf,
+                     ULONG cSent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6618,27 +6618,27 @@ typedef struct IPipeDoubleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPipeDouble* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPipeDouble* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPipeDouble* This);
+                     IPipeDouble* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPipeDouble* This);
+                     IPipeDouble* This);
 
     /*** IPipeDouble methods ***/
     HRESULT (STDMETHODCALLTYPE *Pull)(
-        IPipeDouble* This,
-        DOUBLE *buf,
-        ULONG cRequest,
-        ULONG *pcReturned);
+                     IPipeDouble* This,
+                     DOUBLE *buf,
+                     ULONG cRequest,
+                     ULONG *pcReturned);
 
     HRESULT (STDMETHODCALLTYPE *Push)(
-        IPipeDouble* This,
-        DOUBLE *buf,
-        ULONG cSent);
+                     IPipeDouble* This,
+                     DOUBLE *buf,
+                     ULONG cSent);
 
     END_INTERFACE
 } IPipeDoubleVtbl;
@@ -6725,21 +6725,21 @@ MIDL_INTERFACE("000001c1-0000-0000-c000-000000000046")
 IEnumContextProps : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        ContextProperty *pContextProperties,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     ContextProperty *pContextProperties,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumContextProps **ppEnumContextProps) = 0;
+                     IEnumContextProps **ppEnumContextProps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Count(
-        ULONG *pcelt) = 0;
+                     ULONG *pcelt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6751,37 +6751,37 @@ typedef struct IEnumContextPropsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumContextProps* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumContextProps* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumContextProps* This);
+                     IEnumContextProps* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumContextProps* This);
+                     IEnumContextProps* This);
 
     /*** IEnumContextProps methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumContextProps* This,
-        ULONG celt,
-        ContextProperty *pContextProperties,
-        ULONG *pceltFetched);
+                     IEnumContextProps* This,
+                     ULONG celt,
+                     ContextProperty *pContextProperties,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumContextProps* This,
-        ULONG celt);
+                     IEnumContextProps* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumContextProps* This);
+                     IEnumContextProps* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumContextProps* This,
-        IEnumContextProps **ppEnumContextProps);
+                     IEnumContextProps* This,
+                     IEnumContextProps **ppEnumContextProps);
 
     HRESULT (STDMETHODCALLTYPE *Count)(
-        IEnumContextProps* This,
-        ULONG *pcelt);
+                     IEnumContextProps* This,
+                     ULONG *pcelt);
 
     END_INTERFACE
 } IEnumContextPropsVtbl;
@@ -6890,20 +6890,20 @@ MIDL_INTERFACE("000001c0-0000-0000-c000-000000000046")
 IContext : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetProperty(
-        REFGUID rpolicyId,
-        CPFLAGS flags,
-        IUnknown *pUnk) = 0;
+                     REFGUID rpolicyId,
+                     CPFLAGS flags,
+                     IUnknown *pUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveProperty(
-        REFGUID rPolicyId) = 0;
+                     REFGUID rPolicyId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        REFGUID rGuid,
-        CPFLAGS *pFlags,
-        IUnknown **ppUnk) = 0;
+                     REFGUID rGuid,
+                     CPFLAGS *pFlags,
+                     IUnknown **ppUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumContextProps(
-        IEnumContextProps **ppEnumContextProps) = 0;
+                     IEnumContextProps **ppEnumContextProps) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6915,36 +6915,36 @@ typedef struct IContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IContext* This,
-        REFIID riid,
-        void **ppvObject);
+                     IContext* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IContext* This);
+                     IContext* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IContext* This);
+                     IContext* This);
 
     /*** IContext methods ***/
     HRESULT (STDMETHODCALLTYPE *SetProperty)(
-        IContext* This,
-        REFGUID rpolicyId,
-        CPFLAGS flags,
-        IUnknown *pUnk);
+                     IContext* This,
+                     REFGUID rpolicyId,
+                     CPFLAGS flags,
+                     IUnknown *pUnk);
 
     HRESULT (STDMETHODCALLTYPE *RemoveProperty)(
-        IContext* This,
-        REFGUID rPolicyId);
+                     IContext* This,
+                     REFGUID rPolicyId);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IContext* This,
-        REFGUID rGuid,
-        CPFLAGS *pFlags,
-        IUnknown **ppUnk);
+                     IContext* This,
+                     REFGUID rGuid,
+                     CPFLAGS *pFlags,
+                     IUnknown **ppUnk);
 
     HRESULT (STDMETHODCALLTYPE *EnumContextProps)(
-        IContext* This,
-        IEnumContextProps **ppEnumContextProps);
+                     IContext* This,
+                     IEnumContextProps **ppEnumContextProps);
 
     END_INTERFACE
 } IContextVtbl;
@@ -7074,16 +7074,16 @@ MIDL_INTERFACE("000001ce-0000-0000-c000-000000000046")
 IComThreadingInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCurrentApartmentType(
-        APTTYPE *pAptType) = 0;
+                     APTTYPE *pAptType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentThreadType(
-        THDTYPE *pThreadType) = 0;
+                     THDTYPE *pThreadType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentLogicalThreadId(
-        GUID *pguidLogicalThreadId) = 0;
+                     GUID *pguidLogicalThreadId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCurrentLogicalThreadId(
-        REFGUID rguid) = 0;
+                     REFGUID rguid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7095,32 +7095,32 @@ typedef struct IComThreadingInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IComThreadingInfo* This,
-        REFIID riid,
-        void **ppvObject);
+                     IComThreadingInfo* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IComThreadingInfo* This);
+                     IComThreadingInfo* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IComThreadingInfo* This);
+                     IComThreadingInfo* This);
 
     /*** IComThreadingInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurrentApartmentType)(
-        IComThreadingInfo* This,
-        APTTYPE *pAptType);
+                     IComThreadingInfo* This,
+                     APTTYPE *pAptType);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentThreadType)(
-        IComThreadingInfo* This,
-        THDTYPE *pThreadType);
+                     IComThreadingInfo* This,
+                     THDTYPE *pThreadType);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentLogicalThreadId)(
-        IComThreadingInfo* This,
-        GUID *pguidLogicalThreadId);
+                     IComThreadingInfo* This,
+                     GUID *pguidLogicalThreadId);
 
     HRESULT (STDMETHODCALLTYPE *SetCurrentLogicalThreadId)(
-        IComThreadingInfo* This,
-        REFGUID rguid);
+                     IComThreadingInfo* This,
+                     REFGUID rguid);
 
     END_INTERFACE
 } IComThreadingInfoVtbl;
@@ -7216,7 +7216,7 @@ MIDL_INTERFACE("72380d55-8d2b-43a3-8513-2b6ef31434e9")
 IProcessInitControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ResetInitializerTimeout(
-        DWORD dwSecondsRemaining) = 0;
+                     DWORD dwSecondsRemaining) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7228,20 +7228,20 @@ typedef struct IProcessInitControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProcessInitControl* This,
-        REFIID riid,
-        void **ppvObject);
+                     IProcessInitControl* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProcessInitControl* This);
+                     IProcessInitControl* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProcessInitControl* This);
+                     IProcessInitControl* This);
 
     /*** IProcessInitControl methods ***/
     HRESULT (STDMETHODCALLTYPE *ResetInitializerTimeout)(
-        IProcessInitControl* This,
-        DWORD dwSecondsRemaining);
+                     IProcessInitControl* This,
+                     DWORD dwSecondsRemaining);
 
     END_INTERFACE
 } IProcessInitControlVtbl;
@@ -7310,15 +7310,15 @@ typedef struct IFastRundownVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFastRundown* This,
-        REFIID riid,
-        void **ppvObject);
+                     IFastRundown* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFastRundown* This);
+                     IFastRundown* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFastRundown* This);
+                     IFastRundown* This);
 
     END_INTERFACE
 } IFastRundownVtbl;
@@ -7368,8 +7368,8 @@ MIDL_INTERFACE("d8f2f5e6-6102-4863-9f26-389a4676efde")
 IMarshalingStream : public IStream
 {
     virtual HRESULT STDMETHODCALLTYPE GetMarshalingContextAttribute(
-        CO_MARSHALING_CONTEXT_ATTRIBUTES attribute,
-        ULONG_PTR *pAttributeValue) = 0;
+                     CO_MARSHALING_CONTEXT_ATTRIBUTES attribute,
+                     ULONG_PTR *pAttributeValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7381,80 +7381,80 @@ typedef struct IMarshalingStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMarshalingStream* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMarshalingStream* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMarshalingStream* This);
+                     IMarshalingStream* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMarshalingStream* This);
+                     IMarshalingStream* This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IMarshalingStream* This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     IMarshalingStream* This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IMarshalingStream* This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     IMarshalingStream* This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        IMarshalingStream* This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     IMarshalingStream* This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        IMarshalingStream* This,
-        ULARGE_INTEGER libNewSize);
+                     IMarshalingStream* This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        IMarshalingStream* This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     IMarshalingStream* This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IMarshalingStream* This,
-        DWORD grfCommitFlags);
+                     IMarshalingStream* This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        IMarshalingStream* This);
+                     IMarshalingStream* This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        IMarshalingStream* This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     IMarshalingStream* This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        IMarshalingStream* This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     IMarshalingStream* This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        IMarshalingStream* This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     IMarshalingStream* This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMarshalingStream* This,
-        IStream **ppstm);
+                     IMarshalingStream* This,
+                     IStream **ppstm);
 
     /*** IMarshalingStream methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMarshalingContextAttribute)(
-        IMarshalingStream* This,
-        CO_MARSHALING_CONTEXT_ATTRIBUTES attribute,
-        ULONG_PTR *pAttributeValue);
+                     IMarshalingStream* This,
+                     CO_MARSHALING_CONTEXT_ATTRIBUTES attribute,
+                     ULONG_PTR *pAttributeValue);
 
     END_INTERFACE
 } IMarshalingStreamVtbl;
@@ -7616,50 +7616,50 @@ MIDL_INTERFACE("0000001d-0000-0000-c000-000000000046")
 IMallocSpy : public IUnknown
 {
     virtual SIZE_T STDMETHODCALLTYPE PreAlloc(
-        SIZE_T cbRequest) = 0;
+                     SIZE_T cbRequest) = 0;
 
     virtual void * STDMETHODCALLTYPE PostAlloc(
-        void *pActual) = 0;
+                     void *pActual) = 0;
 
     virtual void * STDMETHODCALLTYPE PreFree(
-        void *pRequest,
-        WINBOOL fSpyed) = 0;
+                     void *pRequest,
+                     WINBOOL fSpyed) = 0;
 
     virtual void STDMETHODCALLTYPE PostFree(
-        WINBOOL fSpyed) = 0;
+                     WINBOOL fSpyed) = 0;
 
     virtual SIZE_T STDMETHODCALLTYPE PreRealloc(
-        void *pRequest,
-        SIZE_T cbRequest,
-        void **ppNewRequest,
-        WINBOOL fSpyed) = 0;
+                     void *pRequest,
+                     SIZE_T cbRequest,
+                     void **ppNewRequest,
+                     WINBOOL fSpyed) = 0;
 
     virtual void * STDMETHODCALLTYPE PostRealloc(
-        void *pActual,
-        WINBOOL fSpyed) = 0;
+                     void *pActual,
+                     WINBOOL fSpyed) = 0;
 
     virtual void * STDMETHODCALLTYPE PreGetSize(
-        void *pRequest,
-        WINBOOL fSpyed) = 0;
+                     void *pRequest,
+                     WINBOOL fSpyed) = 0;
 
     virtual SIZE_T STDMETHODCALLTYPE PostGetSize(
-        SIZE_T cbActual,
-        WINBOOL fSpyed) = 0;
+                     SIZE_T cbActual,
+                     WINBOOL fSpyed) = 0;
 
     virtual void * STDMETHODCALLTYPE PreDidAlloc(
-        void *pRequest,
-        WINBOOL fSpyed) = 0;
+                     void *pRequest,
+                     WINBOOL fSpyed) = 0;
 
     virtual int STDMETHODCALLTYPE PostDidAlloc(
-        void *pRequest,
-        WINBOOL fSpyed,
-        int fActual) = 0;
+                     void *pRequest,
+                     WINBOOL fSpyed,
+                     int fActual) = 0;
 
     virtual void STDMETHODCALLTYPE PreHeapMinimize(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE PostHeapMinimize(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7671,72 +7671,72 @@ typedef struct IMallocSpyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMallocSpy* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMallocSpy* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMallocSpy* This);
+                     IMallocSpy* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMallocSpy* This);
+                     IMallocSpy* This);
 
     /*** IMallocSpy methods ***/
     SIZE_T (STDMETHODCALLTYPE *PreAlloc)(
-        IMallocSpy* This,
-        SIZE_T cbRequest);
+                     IMallocSpy* This,
+                     SIZE_T cbRequest);
 
     void * (STDMETHODCALLTYPE *PostAlloc)(
-        IMallocSpy* This,
-        void *pActual);
+                     IMallocSpy* This,
+                     void *pActual);
 
     void * (STDMETHODCALLTYPE *PreFree)(
-        IMallocSpy* This,
-        void *pRequest,
-        WINBOOL fSpyed);
+                     IMallocSpy* This,
+                     void *pRequest,
+                     WINBOOL fSpyed);
 
     void (STDMETHODCALLTYPE *PostFree)(
-        IMallocSpy* This,
-        WINBOOL fSpyed);
+                     IMallocSpy* This,
+                     WINBOOL fSpyed);
 
     SIZE_T (STDMETHODCALLTYPE *PreRealloc)(
-        IMallocSpy* This,
-        void *pRequest,
-        SIZE_T cbRequest,
-        void **ppNewRequest,
-        WINBOOL fSpyed);
+                     IMallocSpy* This,
+                     void *pRequest,
+                     SIZE_T cbRequest,
+                     void **ppNewRequest,
+                     WINBOOL fSpyed);
 
     void * (STDMETHODCALLTYPE *PostRealloc)(
-        IMallocSpy* This,
-        void *pActual,
-        WINBOOL fSpyed);
+                     IMallocSpy* This,
+                     void *pActual,
+                     WINBOOL fSpyed);
 
     void * (STDMETHODCALLTYPE *PreGetSize)(
-        IMallocSpy* This,
-        void *pRequest,
-        WINBOOL fSpyed);
+                     IMallocSpy* This,
+                     void *pRequest,
+                     WINBOOL fSpyed);
 
     SIZE_T (STDMETHODCALLTYPE *PostGetSize)(
-        IMallocSpy* This,
-        SIZE_T cbActual,
-        WINBOOL fSpyed);
+                     IMallocSpy* This,
+                     SIZE_T cbActual,
+                     WINBOOL fSpyed);
 
     void * (STDMETHODCALLTYPE *PreDidAlloc)(
-        IMallocSpy* This,
-        void *pRequest,
-        WINBOOL fSpyed);
+                     IMallocSpy* This,
+                     void *pRequest,
+                     WINBOOL fSpyed);
 
     int (STDMETHODCALLTYPE *PostDidAlloc)(
-        IMallocSpy* This,
-        void *pRequest,
-        WINBOOL fSpyed,
-        int fActual);
+                     IMallocSpy* This,
+                     void *pRequest,
+                     WINBOOL fSpyed,
+                     int fActual);
 
     void (STDMETHODCALLTYPE *PreHeapMinimize)(
-        IMallocSpy* This);
+                     IMallocSpy* This);
 
     void (STDMETHODCALLTYPE *PostHeapMinimize)(
-        IMallocSpy* This);
+                     IMallocSpy* This);
 
     END_INTERFACE
 } IMallocSpyVtbl;
@@ -7951,9 +7951,9 @@ typedef struct tagBIND_OPTS *LPBIND_OPTS;
 #endif
 #if defined(__cplusplus)
 typedef struct tagBIND_OPTS2 : tagBIND_OPTS {
-DWORD           dwTrackFlags;
-DWORD           dwClassContext;
-LCID            locale;
+DWORD                        dwTrackFlags;
+DWORD                        dwClassContext;
+LCID                                      locale;
 COSERVERINFO *  pServerInfo;
 } BIND_OPTS2, * LPBIND_OPTS2;
 #else
@@ -7971,7 +7971,7 @@ typedef struct tagBIND_OPTS2 *LPBIND_OPTS2;
 #endif
 #if defined(__cplusplus)
 typedef struct tagBIND_OPTS3 : tagBIND_OPTS2 {
-HWND           hwnd;
+HWND                        hwnd;
 } BIND_OPTS3, * LPBIND_OPTS3;
 #else
 typedef struct tagBIND_OPTS3 {
@@ -7997,36 +7997,36 @@ MIDL_INTERFACE("0000000e-0000-0000-c000-000000000046")
 IBindCtx : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterObjectBound(
-        IUnknown *punk) = 0;
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RevokeObjectBound(
-        IUnknown *punk) = 0;
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseBoundObjects(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBindOptions(
-        BIND_OPTS *pbindopts) = 0;
+                     BIND_OPTS *pbindopts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBindOptions(
-        BIND_OPTS *pbindopts) = 0;
+                     BIND_OPTS *pbindopts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRunningObjectTable(
-        IRunningObjectTable **pprot) = 0;
+                     IRunningObjectTable **pprot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterObjectParam(
-        LPOLESTR pszKey,
-        IUnknown *punk) = 0;
+                     LPOLESTR pszKey,
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObjectParam(
-        LPOLESTR pszKey,
-        IUnknown **ppunk) = 0;
+                     LPOLESTR pszKey,
+                     IUnknown **ppunk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumObjectParam(
-        IEnumString **ppenum) = 0;
+                     IEnumString **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RevokeObjectParam(
-        LPOLESTR pszKey) = 0;
+                     LPOLESTR pszKey) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8038,57 +8038,57 @@ typedef struct IBindCtxVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBindCtx* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBindCtx* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBindCtx* This);
+                     IBindCtx* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBindCtx* This);
+                     IBindCtx* This);
 
     /*** IBindCtx methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterObjectBound)(
-        IBindCtx* This,
-        IUnknown *punk);
+                     IBindCtx* This,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *RevokeObjectBound)(
-        IBindCtx* This,
-        IUnknown *punk);
+                     IBindCtx* This,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseBoundObjects)(
-        IBindCtx* This);
+                     IBindCtx* This);
 
     HRESULT (STDMETHODCALLTYPE *SetBindOptions)(
-        IBindCtx* This,
-        BIND_OPTS *pbindopts);
+                     IBindCtx* This,
+                     BIND_OPTS *pbindopts);
 
     HRESULT (STDMETHODCALLTYPE *GetBindOptions)(
-        IBindCtx* This,
-        BIND_OPTS *pbindopts);
+                     IBindCtx* This,
+                     BIND_OPTS *pbindopts);
 
     HRESULT (STDMETHODCALLTYPE *GetRunningObjectTable)(
-        IBindCtx* This,
-        IRunningObjectTable **pprot);
+                     IBindCtx* This,
+                     IRunningObjectTable **pprot);
 
     HRESULT (STDMETHODCALLTYPE *RegisterObjectParam)(
-        IBindCtx* This,
-        LPOLESTR pszKey,
-        IUnknown *punk);
+                     IBindCtx* This,
+                     LPOLESTR pszKey,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectParam)(
-        IBindCtx* This,
-        LPOLESTR pszKey,
-        IUnknown **ppunk);
+                     IBindCtx* This,
+                     LPOLESTR pszKey,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *EnumObjectParam)(
-        IBindCtx* This,
-        IEnumString **ppenum);
+                     IBindCtx* This,
+                     IEnumString **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *RevokeObjectParam)(
-        IBindCtx* This,
-        LPOLESTR pszKey);
+                     IBindCtx* This,
+                     LPOLESTR pszKey);
 
     END_INTERFACE
 } IBindCtxVtbl;
@@ -8269,18 +8269,18 @@ MIDL_INTERFACE("00000102-0000-0000-c000-000000000046")
 IEnumMoniker : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        IMoniker **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IMoniker **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumMoniker **ppenum) = 0;
+                     IEnumMoniker **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8292,33 +8292,33 @@ typedef struct IEnumMonikerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumMoniker* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumMoniker* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumMoniker* This);
+                     IEnumMoniker* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumMoniker* This);
+                     IEnumMoniker* This);
 
     /*** IEnumMoniker methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumMoniker* This,
-        ULONG celt,
-        IMoniker **rgelt,
-        ULONG *pceltFetched);
+                     IEnumMoniker* This,
+                     ULONG celt,
+                     IMoniker **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumMoniker* This,
-        ULONG celt);
+                     IEnumMoniker* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumMoniker* This);
+                     IEnumMoniker* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumMoniker* This,
-        IEnumMoniker **ppenum);
+                     IEnumMoniker* This,
+                     IEnumMoniker **ppenum);
 
     END_INTERFACE
 } IEnumMonikerVtbl;
@@ -8427,20 +8427,20 @@ MIDL_INTERFACE("00000126-0000-0000-c000-000000000046")
 IRunnableObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRunningClass(
-        LPCLSID lpClsid) = 0;
+                     LPCLSID lpClsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Run(
-        LPBINDCTX pbc) = 0;
+                     LPBINDCTX pbc) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE IsRunning(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockRunning(
-        WINBOOL fLock,
-        WINBOOL fLastUnlockCloses) = 0;
+                     WINBOOL fLock,
+                     WINBOOL fLastUnlockCloses) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContainedObject(
-        WINBOOL fContained) = 0;
+                     WINBOOL fContained) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8452,36 +8452,36 @@ typedef struct IRunnableObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRunnableObject* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRunnableObject* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRunnableObject* This);
+                     IRunnableObject* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRunnableObject* This);
+                     IRunnableObject* This);
 
     /*** IRunnableObject methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRunningClass)(
-        IRunnableObject* This,
-        LPCLSID lpClsid);
+                     IRunnableObject* This,
+                     LPCLSID lpClsid);
 
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IRunnableObject* This,
-        LPBINDCTX pbc);
+                     IRunnableObject* This,
+                     LPBINDCTX pbc);
 
     WINBOOL (STDMETHODCALLTYPE *IsRunning)(
-        IRunnableObject* This);
+                     IRunnableObject* This);
 
     HRESULT (STDMETHODCALLTYPE *LockRunning)(
-        IRunnableObject* This,
-        WINBOOL fLock,
-        WINBOOL fLastUnlockCloses);
+                     IRunnableObject* This,
+                     WINBOOL fLock,
+                     WINBOOL fLastUnlockCloses);
 
     HRESULT (STDMETHODCALLTYPE *SetContainedObject)(
-        IRunnableObject* This,
-        WINBOOL fContained);
+                     IRunnableObject* This,
+                     WINBOOL fContained);
 
     END_INTERFACE
 } IRunnableObjectVtbl;
@@ -8593,31 +8593,31 @@ MIDL_INTERFACE("00000010-0000-0000-c000-000000000046")
 IRunningObjectTable : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Register(
-        DWORD grfFlags,
-        IUnknown *punkObject,
-        IMoniker *pmkObjectName,
-        DWORD *pdwRegister) = 0;
+                     DWORD grfFlags,
+                     IUnknown *punkObject,
+                     IMoniker *pmkObjectName,
+                     DWORD *pdwRegister) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Revoke(
-        DWORD dwRegister) = 0;
+                     DWORD dwRegister) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRunning(
-        IMoniker *pmkObjectName) = 0;
+                     IMoniker *pmkObjectName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObject(
-        IMoniker *pmkObjectName,
-        IUnknown **ppunkObject) = 0;
+                     IMoniker *pmkObjectName,
+                     IUnknown **ppunkObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NoteChangeTime(
-        DWORD dwRegister,
-        FILETIME *pfiletime) = 0;
+                     DWORD dwRegister,
+                     FILETIME *pfiletime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimeOfLastChange(
-        IMoniker *pmkObjectName,
-        FILETIME *pfiletime) = 0;
+                     IMoniker *pmkObjectName,
+                     FILETIME *pfiletime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumRunning(
-        IEnumMoniker **ppenumMoniker) = 0;
+                     IEnumMoniker **ppenumMoniker) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8629,50 +8629,50 @@ typedef struct IRunningObjectTableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRunningObjectTable* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRunningObjectTable* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRunningObjectTable* This);
+                     IRunningObjectTable* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRunningObjectTable* This);
+                     IRunningObjectTable* This);
 
     /*** IRunningObjectTable methods ***/
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IRunningObjectTable* This,
-        DWORD grfFlags,
-        IUnknown *punkObject,
-        IMoniker *pmkObjectName,
-        DWORD *pdwRegister);
+                     IRunningObjectTable* This,
+                     DWORD grfFlags,
+                     IUnknown *punkObject,
+                     IMoniker *pmkObjectName,
+                     DWORD *pdwRegister);
 
     HRESULT (STDMETHODCALLTYPE *Revoke)(
-        IRunningObjectTable* This,
-        DWORD dwRegister);
+                     IRunningObjectTable* This,
+                     DWORD dwRegister);
 
     HRESULT (STDMETHODCALLTYPE *IsRunning)(
-        IRunningObjectTable* This,
-        IMoniker *pmkObjectName);
+                     IRunningObjectTable* This,
+                     IMoniker *pmkObjectName);
 
     HRESULT (STDMETHODCALLTYPE *GetObject)(
-        IRunningObjectTable* This,
-        IMoniker *pmkObjectName,
-        IUnknown **ppunkObject);
+                     IRunningObjectTable* This,
+                     IMoniker *pmkObjectName,
+                     IUnknown **ppunkObject);
 
     HRESULT (STDMETHODCALLTYPE *NoteChangeTime)(
-        IRunningObjectTable* This,
-        DWORD dwRegister,
-        FILETIME *pfiletime);
+                     IRunningObjectTable* This,
+                     DWORD dwRegister,
+                     FILETIME *pfiletime);
 
     HRESULT (STDMETHODCALLTYPE *GetTimeOfLastChange)(
-        IRunningObjectTable* This,
-        IMoniker *pmkObjectName,
-        FILETIME *pfiletime);
+                     IRunningObjectTable* This,
+                     IMoniker *pmkObjectName,
+                     FILETIME *pfiletime);
 
     HRESULT (STDMETHODCALLTYPE *EnumRunning)(
-        IRunningObjectTable* This,
-        IEnumMoniker **ppenumMoniker);
+                     IRunningObjectTable* This,
+                     IEnumMoniker **ppenumMoniker);
 
     END_INTERFACE
 } IRunningObjectTableVtbl;
@@ -8812,7 +8812,7 @@ MIDL_INTERFACE("0000010c-0000-0000-c000-000000000046")
 IPersist : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClassID(
-        CLSID *pClassID) = 0;
+                     CLSID *pClassID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8824,20 +8824,20 @@ typedef struct IPersistVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersist* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersist* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersist* This);
+                     IPersist* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersist* This);
+                     IPersist* This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersist* This,
-        CLSID *pClassID);
+                     IPersist* This,
+                     CLSID *pClassID);
 
     END_INTERFACE
 } IPersistVtbl;
@@ -8897,17 +8897,17 @@ MIDL_INTERFACE("00000109-0000-0000-c000-000000000046")
 IPersistStream : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE IsDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        IStream *pStm) = 0;
+                     IStream *pStm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        IStream *pStm,
-        WINBOOL fClearDirty) = 0;
+                     IStream *pStm,
+                     WINBOOL fClearDirty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSizeMax(
-        ULARGE_INTEGER *pcbSize) = 0;
+                     ULARGE_INTEGER *pcbSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8919,37 +8919,37 @@ typedef struct IPersistStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistStream* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistStream* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistStream* This);
+                     IPersistStream* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistStream* This);
+                     IPersistStream* This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistStream* This,
-        CLSID *pClassID);
+                     IPersistStream* This,
+                     CLSID *pClassID);
 
     /*** IPersistStream methods ***/
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IPersistStream* This);
+                     IPersistStream* This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistStream* This,
-        IStream *pStm);
+                     IPersistStream* This,
+                     IStream *pStm);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistStream* This,
-        IStream *pStm,
-        WINBOOL fClearDirty);
+                     IPersistStream* This,
+                     IStream *pStm,
+                     WINBOOL fClearDirty);
 
     HRESULT (STDMETHODCALLTYPE *GetSizeMax)(
-        IPersistStream* This,
-        ULARGE_INTEGER *pcbSize);
+                     IPersistStream* This,
+                     ULARGE_INTEGER *pcbSize);
 
     END_INTERFACE
 } IPersistStreamVtbl;
@@ -9069,73 +9069,73 @@ MIDL_INTERFACE("0000000f-0000-0000-c000-000000000046")
 IMoniker : public IPersistStream
 {
     virtual HRESULT STDMETHODCALLTYPE BindToObject(
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        REFIID riidResult,
-        void **ppvResult) = 0;
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     REFIID riidResult,
+                     void **ppvResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BindToStorage(
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        REFIID riid,
-        void **ppvObj) = 0;
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     REFIID riid,
+                     void **ppvObj) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reduce(
-        IBindCtx *pbc,
-        DWORD dwReduceHowFar,
-        IMoniker **ppmkToLeft,
-        IMoniker **ppmkReduced) = 0;
+                     IBindCtx *pbc,
+                     DWORD dwReduceHowFar,
+                     IMoniker **ppmkToLeft,
+                     IMoniker **ppmkReduced) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ComposeWith(
-        IMoniker *pmkRight,
-        WINBOOL fOnlyIfNotGeneric,
-        IMoniker **ppmkComposite) = 0;
+                     IMoniker *pmkRight,
+                     WINBOOL fOnlyIfNotGeneric,
+                     IMoniker **ppmkComposite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Enum(
-        WINBOOL fForward,
-        IEnumMoniker **ppenumMoniker) = 0;
+                     WINBOOL fForward,
+                     IEnumMoniker **ppenumMoniker) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEqual(
-        IMoniker *pmkOtherMoniker) = 0;
+                     IMoniker *pmkOtherMoniker) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Hash(
-        DWORD *pdwHash) = 0;
+                     DWORD *pdwHash) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRunning(
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        IMoniker *pmkNewlyRunning) = 0;
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     IMoniker *pmkNewlyRunning) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimeOfLastChange(
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        FILETIME *pFileTime) = 0;
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     FILETIME *pFileTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Inverse(
-        IMoniker **ppmk) = 0;
+                     IMoniker **ppmk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommonPrefixWith(
-        IMoniker *pmkOther,
-        IMoniker **ppmkPrefix) = 0;
+                     IMoniker *pmkOther,
+                     IMoniker **ppmkPrefix) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RelativePathTo(
-        IMoniker *pmkOther,
-        IMoniker **ppmkRelPath) = 0;
+                     IMoniker *pmkOther,
+                     IMoniker **ppmkRelPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayName(
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        LPOLESTR *ppszDisplayName) = 0;
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     LPOLESTR *ppszDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ParseDisplayName(
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        LPOLESTR pszDisplayName,
-        ULONG *pchEaten,
-        IMoniker **ppmkOut) = 0;
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     LPOLESTR pszDisplayName,
+                     ULONG *pchEaten,
+                     IMoniker **ppmkOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSystemMoniker(
-        DWORD *pdwMksys) = 0;
+                     DWORD *pdwMksys) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9147,122 +9147,122 @@ typedef struct IMonikerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMoniker* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMoniker* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMoniker* This);
+                     IMoniker* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMoniker* This);
+                     IMoniker* This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IMoniker* This,
-        CLSID *pClassID);
+                     IMoniker* This,
+                     CLSID *pClassID);
 
     /*** IPersistStream methods ***/
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IMoniker* This);
+                     IMoniker* This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IMoniker* This,
-        IStream *pStm);
+                     IMoniker* This,
+                     IStream *pStm);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IMoniker* This,
-        IStream *pStm,
-        WINBOOL fClearDirty);
+                     IMoniker* This,
+                     IStream *pStm,
+                     WINBOOL fClearDirty);
 
     HRESULT (STDMETHODCALLTYPE *GetSizeMax)(
-        IMoniker* This,
-        ULARGE_INTEGER *pcbSize);
+                     IMoniker* This,
+                     ULARGE_INTEGER *pcbSize);
 
     /*** IMoniker methods ***/
     HRESULT (STDMETHODCALLTYPE *BindToObject)(
-        IMoniker* This,
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        REFIID riidResult,
-        void **ppvResult);
+                     IMoniker* This,
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     REFIID riidResult,
+                     void **ppvResult);
 
     HRESULT (STDMETHODCALLTYPE *BindToStorage)(
-        IMoniker* This,
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        REFIID riid,
-        void **ppvObj);
+                     IMoniker* This,
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     REFIID riid,
+                     void **ppvObj);
 
     HRESULT (STDMETHODCALLTYPE *Reduce)(
-        IMoniker* This,
-        IBindCtx *pbc,
-        DWORD dwReduceHowFar,
-        IMoniker **ppmkToLeft,
-        IMoniker **ppmkReduced);
+                     IMoniker* This,
+                     IBindCtx *pbc,
+                     DWORD dwReduceHowFar,
+                     IMoniker **ppmkToLeft,
+                     IMoniker **ppmkReduced);
 
     HRESULT (STDMETHODCALLTYPE *ComposeWith)(
-        IMoniker* This,
-        IMoniker *pmkRight,
-        WINBOOL fOnlyIfNotGeneric,
-        IMoniker **ppmkComposite);
+                     IMoniker* This,
+                     IMoniker *pmkRight,
+                     WINBOOL fOnlyIfNotGeneric,
+                     IMoniker **ppmkComposite);
 
     HRESULT (STDMETHODCALLTYPE *Enum)(
-        IMoniker* This,
-        WINBOOL fForward,
-        IEnumMoniker **ppenumMoniker);
+                     IMoniker* This,
+                     WINBOOL fForward,
+                     IEnumMoniker **ppenumMoniker);
 
     HRESULT (STDMETHODCALLTYPE *IsEqual)(
-        IMoniker* This,
-        IMoniker *pmkOtherMoniker);
+                     IMoniker* This,
+                     IMoniker *pmkOtherMoniker);
 
     HRESULT (STDMETHODCALLTYPE *Hash)(
-        IMoniker* This,
-        DWORD *pdwHash);
+                     IMoniker* This,
+                     DWORD *pdwHash);
 
     HRESULT (STDMETHODCALLTYPE *IsRunning)(
-        IMoniker* This,
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        IMoniker *pmkNewlyRunning);
+                     IMoniker* This,
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     IMoniker *pmkNewlyRunning);
 
     HRESULT (STDMETHODCALLTYPE *GetTimeOfLastChange)(
-        IMoniker* This,
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        FILETIME *pFileTime);
+                     IMoniker* This,
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     FILETIME *pFileTime);
 
     HRESULT (STDMETHODCALLTYPE *Inverse)(
-        IMoniker* This,
-        IMoniker **ppmk);
+                     IMoniker* This,
+                     IMoniker **ppmk);
 
     HRESULT (STDMETHODCALLTYPE *CommonPrefixWith)(
-        IMoniker* This,
-        IMoniker *pmkOther,
-        IMoniker **ppmkPrefix);
+                     IMoniker* This,
+                     IMoniker *pmkOther,
+                     IMoniker **ppmkPrefix);
 
     HRESULT (STDMETHODCALLTYPE *RelativePathTo)(
-        IMoniker* This,
-        IMoniker *pmkOther,
-        IMoniker **ppmkRelPath);
+                     IMoniker* This,
+                     IMoniker *pmkOther,
+                     IMoniker **ppmkRelPath);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IMoniker* This,
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        LPOLESTR *ppszDisplayName);
+                     IMoniker* This,
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     LPOLESTR *ppszDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *ParseDisplayName)(
-        IMoniker* This,
-        IBindCtx *pbc,
-        IMoniker *pmkToLeft,
-        LPOLESTR pszDisplayName,
-        ULONG *pchEaten,
-        IMoniker **ppmkOut);
+                     IMoniker* This,
+                     IBindCtx *pbc,
+                     IMoniker *pmkToLeft,
+                     LPOLESTR pszDisplayName,
+                     ULONG *pchEaten,
+                     IMoniker **ppmkOut);
 
     HRESULT (STDMETHODCALLTYPE *IsSystemMoniker)(
-        IMoniker* This,
-        DWORD *pdwMksys);
+                     IMoniker* This,
+                     DWORD *pdwMksys);
 
     END_INTERFACE
 } IMonikerVtbl;
@@ -9563,9 +9563,9 @@ MIDL_INTERFACE("f29f6bc0-5021-11ce-aa15-00006901293f")
 IROTData : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetComparisonData(
-        byte *pbData,
-        ULONG cbMax,
-        ULONG *pcbData) = 0;
+                     byte *pbData,
+                     ULONG cbMax,
+                     ULONG *pcbData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9577,22 +9577,22 @@ typedef struct IROTDataVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IROTData* This,
-        REFIID riid,
-        void **ppvObject);
+                     IROTData* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IROTData* This);
+                     IROTData* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IROTData* This);
+                     IROTData* This);
 
     /*** IROTData methods ***/
     HRESULT (STDMETHODCALLTYPE *GetComparisonData)(
-        IROTData* This,
-        byte *pbData,
-        ULONG cbMax,
-        ULONG *pcbData);
+                     IROTData* This,
+                     byte *pbData,
+                     ULONG cbMax,
+                     ULONG *pcbData);
 
     END_INTERFACE
 } IROTDataVtbl;
@@ -9656,18 +9656,18 @@ MIDL_INTERFACE("0000000d-0000-0000-c000-000000000046")
 IEnumSTATSTG : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        STATSTG *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     STATSTG *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumSTATSTG **ppenum) = 0;
+                     IEnumSTATSTG **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9679,33 +9679,33 @@ typedef struct IEnumSTATSTGVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumSTATSTG* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumSTATSTG* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumSTATSTG* This);
+                     IEnumSTATSTG* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumSTATSTG* This);
+                     IEnumSTATSTG* This);
 
     /*** IEnumSTATSTG methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumSTATSTG* This,
-        ULONG celt,
-        STATSTG *rgelt,
-        ULONG *pceltFetched);
+                     IEnumSTATSTG* This,
+                     ULONG celt,
+                     STATSTG *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumSTATSTG* This,
-        ULONG celt);
+                     IEnumSTATSTG* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumSTATSTG* This);
+                     IEnumSTATSTG* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumSTATSTG* This,
-        IEnumSTATSTG **ppenum);
+                     IEnumSTATSTG* This,
+                     IEnumSTATSTG **ppenum);
 
     END_INTERFACE
 } IEnumSTATSTGVtbl;
@@ -9819,81 +9819,81 @@ MIDL_INTERFACE("0000000b-0000-0000-c000-000000000046")
 IStorage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateStream(
-        const OLECHAR *pwcsName,
-        DWORD grfMode,
-        DWORD reserved1,
-        DWORD reserved2,
-        IStream **ppstm) = 0;
+                     const OLECHAR *pwcsName,
+                     DWORD grfMode,
+                     DWORD reserved1,
+                     DWORD reserved2,
+                     IStream **ppstm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenStream(
-        const OLECHAR *pwcsName,
-        void *reserved1,
-        DWORD grfMode,
-        DWORD reserved2,
-        IStream **ppstm) = 0;
+                     const OLECHAR *pwcsName,
+                     void *reserved1,
+                     DWORD grfMode,
+                     DWORD reserved2,
+                     IStream **ppstm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStorage(
-        const OLECHAR *pwcsName,
-        DWORD grfMode,
-        DWORD reserved1,
-        DWORD reserved2,
-        IStorage **ppstg) = 0;
+                     const OLECHAR *pwcsName,
+                     DWORD grfMode,
+                     DWORD reserved1,
+                     DWORD reserved2,
+                     IStorage **ppstg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenStorage(
-        const OLECHAR *pwcsName,
-        IStorage *pstgPriority,
-        DWORD grfMode,
-        SNB snbExclude,
-        DWORD reserved,
-        IStorage **ppstg) = 0;
+                     const OLECHAR *pwcsName,
+                     IStorage *pstgPriority,
+                     DWORD grfMode,
+                     SNB snbExclude,
+                     DWORD reserved,
+                     IStorage **ppstg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyTo(
-        DWORD ciidExclude,
-        const IID *rgiidExclude,
-        SNB snbExclude,
-        IStorage *pstgDest) = 0;
+                     DWORD ciidExclude,
+                     const IID *rgiidExclude,
+                     SNB snbExclude,
+                     IStorage *pstgDest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveElementTo(
-        const OLECHAR *pwcsName,
-        IStorage *pstgDest,
-        const OLECHAR *pwcsNewName,
-        DWORD grfFlags) = 0;
+                     const OLECHAR *pwcsName,
+                     IStorage *pstgDest,
+                     const OLECHAR *pwcsNewName,
+                     DWORD grfFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        DWORD grfCommitFlags) = 0;
+                     DWORD grfCommitFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Revert(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumElements(
-        DWORD reserved1,
-        void *reserved2,
-        DWORD reserved3,
-        IEnumSTATSTG **ppenum) = 0;
+                     DWORD reserved1,
+                     void *reserved2,
+                     DWORD reserved3,
+                     IEnumSTATSTG **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DestroyElement(
-        const OLECHAR *pwcsName) = 0;
+                     const OLECHAR *pwcsName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenameElement(
-        const OLECHAR *pwcsOldName,
-        const OLECHAR *pwcsNewName) = 0;
+                     const OLECHAR *pwcsOldName,
+                     const OLECHAR *pwcsNewName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetElementTimes(
-        const OLECHAR *pwcsName,
-        const FILETIME *pctime,
-        const FILETIME *patime,
-        const FILETIME *pmtime) = 0;
+                     const OLECHAR *pwcsName,
+                     const FILETIME *pctime,
+                     const FILETIME *patime,
+                     const FILETIME *pmtime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetClass(
-        REFCLSID clsid) = 0;
+                     REFCLSID clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStateBits(
-        DWORD grfStateBits,
-        DWORD grfMask) = 0;
+                     DWORD grfStateBits,
+                     DWORD grfMask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stat(
-        STATSTG *pstatstg,
-        DWORD grfStatFlag) = 0;
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9905,107 +9905,107 @@ typedef struct IStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStorage* This,
-        REFIID riid,
-        void **ppvObject);
+                     IStorage* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStorage* This);
+                     IStorage* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStorage* This);
+                     IStorage* This);
 
     /*** IStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateStream)(
-        IStorage* This,
-        const OLECHAR *pwcsName,
-        DWORD grfMode,
-        DWORD reserved1,
-        DWORD reserved2,
-        IStream **ppstm);
+                     IStorage* This,
+                     const OLECHAR *pwcsName,
+                     DWORD grfMode,
+                     DWORD reserved1,
+                     DWORD reserved2,
+                     IStream **ppstm);
 
     HRESULT (STDMETHODCALLTYPE *OpenStream)(
-        IStorage* This,
-        const OLECHAR *pwcsName,
-        void *reserved1,
-        DWORD grfMode,
-        DWORD reserved2,
-        IStream **ppstm);
+                     IStorage* This,
+                     const OLECHAR *pwcsName,
+                     void *reserved1,
+                     DWORD grfMode,
+                     DWORD reserved2,
+                     IStream **ppstm);
 
     HRESULT (STDMETHODCALLTYPE *CreateStorage)(
-        IStorage* This,
-        const OLECHAR *pwcsName,
-        DWORD grfMode,
-        DWORD reserved1,
-        DWORD reserved2,
-        IStorage **ppstg);
+                     IStorage* This,
+                     const OLECHAR *pwcsName,
+                     DWORD grfMode,
+                     DWORD reserved1,
+                     DWORD reserved2,
+                     IStorage **ppstg);
 
     HRESULT (STDMETHODCALLTYPE *OpenStorage)(
-        IStorage* This,
-        const OLECHAR *pwcsName,
-        IStorage *pstgPriority,
-        DWORD grfMode,
-        SNB snbExclude,
-        DWORD reserved,
-        IStorage **ppstg);
+                     IStorage* This,
+                     const OLECHAR *pwcsName,
+                     IStorage *pstgPriority,
+                     DWORD grfMode,
+                     SNB snbExclude,
+                     DWORD reserved,
+                     IStorage **ppstg);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        IStorage* This,
-        DWORD ciidExclude,
-        const IID *rgiidExclude,
-        SNB snbExclude,
-        IStorage *pstgDest);
+                     IStorage* This,
+                     DWORD ciidExclude,
+                     const IID *rgiidExclude,
+                     SNB snbExclude,
+                     IStorage *pstgDest);
 
     HRESULT (STDMETHODCALLTYPE *MoveElementTo)(
-        IStorage* This,
-        const OLECHAR *pwcsName,
-        IStorage *pstgDest,
-        const OLECHAR *pwcsNewName,
-        DWORD grfFlags);
+                     IStorage* This,
+                     const OLECHAR *pwcsName,
+                     IStorage *pstgDest,
+                     const OLECHAR *pwcsNewName,
+                     DWORD grfFlags);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IStorage* This,
-        DWORD grfCommitFlags);
+                     IStorage* This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        IStorage* This);
+                     IStorage* This);
 
     HRESULT (STDMETHODCALLTYPE *EnumElements)(
-        IStorage* This,
-        DWORD reserved1,
-        void *reserved2,
-        DWORD reserved3,
-        IEnumSTATSTG **ppenum);
+                     IStorage* This,
+                     DWORD reserved1,
+                     void *reserved2,
+                     DWORD reserved3,
+                     IEnumSTATSTG **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *DestroyElement)(
-        IStorage* This,
-        const OLECHAR *pwcsName);
+                     IStorage* This,
+                     const OLECHAR *pwcsName);
 
     HRESULT (STDMETHODCALLTYPE *RenameElement)(
-        IStorage* This,
-        const OLECHAR *pwcsOldName,
-        const OLECHAR *pwcsNewName);
+                     IStorage* This,
+                     const OLECHAR *pwcsOldName,
+                     const OLECHAR *pwcsNewName);
 
     HRESULT (STDMETHODCALLTYPE *SetElementTimes)(
-        IStorage* This,
-        const OLECHAR *pwcsName,
-        const FILETIME *pctime,
-        const FILETIME *patime,
-        const FILETIME *pmtime);
+                     IStorage* This,
+                     const OLECHAR *pwcsName,
+                     const FILETIME *pctime,
+                     const FILETIME *patime,
+                     const FILETIME *pmtime);
 
     HRESULT (STDMETHODCALLTYPE *SetClass)(
-        IStorage* This,
-        REFCLSID clsid);
+                     IStorage* This,
+                     REFCLSID clsid);
 
     HRESULT (STDMETHODCALLTYPE *SetStateBits)(
-        IStorage* This,
-        DWORD grfStateBits,
-        DWORD grfMask);
+                     IStorage* This,
+                     DWORD grfStateBits,
+                     DWORD grfMask);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        IStorage* This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     IStorage* This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     END_INTERFACE
 } IStorageVtbl;
@@ -10308,21 +10308,21 @@ MIDL_INTERFACE("0000010b-0000-0000-c000-000000000046")
 IPersistFile : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE IsDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        LPCOLESTR pszFileName,
-        DWORD dwMode) = 0;
+                     LPCOLESTR pszFileName,
+                     DWORD dwMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        LPCOLESTR pszFileName,
-        WINBOOL fRemember) = 0;
+                     LPCOLESTR pszFileName,
+                     WINBOOL fRemember) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveCompleted(
-        LPCOLESTR pszFileName) = 0;
+                     LPCOLESTR pszFileName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurFile(
-        LPOLESTR *ppszFileName) = 0;
+                     LPOLESTR *ppszFileName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10334,42 +10334,42 @@ typedef struct IPersistFileVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistFile* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistFile* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistFile* This);
+                     IPersistFile* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistFile* This);
+                     IPersistFile* This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistFile* This,
-        CLSID *pClassID);
+                     IPersistFile* This,
+                     CLSID *pClassID);
 
     /*** IPersistFile methods ***/
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IPersistFile* This);
+                     IPersistFile* This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistFile* This,
-        LPCOLESTR pszFileName,
-        DWORD dwMode);
+                     IPersistFile* This,
+                     LPCOLESTR pszFileName,
+                     DWORD dwMode);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistFile* This,
-        LPCOLESTR pszFileName,
-        WINBOOL fRemember);
+                     IPersistFile* This,
+                     LPCOLESTR pszFileName,
+                     WINBOOL fRemember);
 
     HRESULT (STDMETHODCALLTYPE *SaveCompleted)(
-        IPersistFile* This,
-        LPCOLESTR pszFileName);
+                     IPersistFile* This,
+                     LPCOLESTR pszFileName);
 
     HRESULT (STDMETHODCALLTYPE *GetCurFile)(
-        IPersistFile* This,
-        LPOLESTR *ppszFileName);
+                     IPersistFile* This,
+                     LPOLESTR *ppszFileName);
 
     END_INTERFACE
 } IPersistFileVtbl;
@@ -10484,23 +10484,23 @@ MIDL_INTERFACE("0000010a-0000-0000-c000-000000000046")
 IPersistStorage : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE IsDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        IStorage *pStg) = 0;
+                     IStorage *pStg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        IStorage *pStg) = 0;
+                     IStorage *pStg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        IStorage *pStgSave,
-        WINBOOL fSameAsLoad) = 0;
+                     IStorage *pStgSave,
+                     WINBOOL fSameAsLoad) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveCompleted(
-        IStorage *pStgNew) = 0;
+                     IStorage *pStgNew) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HandsOffStorage(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10512,44 +10512,44 @@ typedef struct IPersistStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistStorage* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistStorage* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistStorage* This);
+                     IPersistStorage* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistStorage* This);
+                     IPersistStorage* This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistStorage* This,
-        CLSID *pClassID);
+                     IPersistStorage* This,
+                     CLSID *pClassID);
 
     /*** IPersistStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IPersistStorage* This);
+                     IPersistStorage* This);
 
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IPersistStorage* This,
-        IStorage *pStg);
+                     IPersistStorage* This,
+                     IStorage *pStg);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistStorage* This,
-        IStorage *pStg);
+                     IPersistStorage* This,
+                     IStorage *pStg);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistStorage* This,
-        IStorage *pStgSave,
-        WINBOOL fSameAsLoad);
+                     IPersistStorage* This,
+                     IStorage *pStgSave,
+                     WINBOOL fSameAsLoad);
 
     HRESULT (STDMETHODCALLTYPE *SaveCompleted)(
-        IPersistStorage* This,
-        IStorage *pStgNew);
+                     IPersistStorage* This,
+                     IStorage *pStgNew);
 
     HRESULT (STDMETHODCALLTYPE *HandsOffStorage)(
-        IPersistStorage* This);
+                     IPersistStorage* This);
 
     END_INTERFACE
 } IPersistStorageVtbl;
@@ -10676,36 +10676,36 @@ MIDL_INTERFACE("0000000a-0000-0000-c000-000000000046")
 ILockBytes : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ReadAt(
-        ULARGE_INTEGER ulOffset,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead) = 0;
+                     ULARGE_INTEGER ulOffset,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteAt(
-        ULARGE_INTEGER ulOffset,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten) = 0;
+                     ULARGE_INTEGER ulOffset,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Flush(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSize(
-        ULARGE_INTEGER cb) = 0;
+                     ULARGE_INTEGER cb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockRegion(
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType) = 0;
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnlockRegion(
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType) = 0;
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stat(
-        STATSTG *pstatstg,
-        DWORD grfStatFlag) = 0;
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10717,54 +10717,54 @@ typedef struct ILockBytesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILockBytes* This,
-        REFIID riid,
-        void **ppvObject);
+                     ILockBytes* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILockBytes* This);
+                     ILockBytes* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILockBytes* This);
+                     ILockBytes* This);
 
     /*** ILockBytes methods ***/
     HRESULT (STDMETHODCALLTYPE *ReadAt)(
-        ILockBytes* This,
-        ULARGE_INTEGER ulOffset,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     ILockBytes* This,
+                     ULARGE_INTEGER ulOffset,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *WriteAt)(
-        ILockBytes* This,
-        ULARGE_INTEGER ulOffset,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     ILockBytes* This,
+                     ULARGE_INTEGER ulOffset,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Flush)(
-        ILockBytes* This);
+                     ILockBytes* This);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        ILockBytes* This,
-        ULARGE_INTEGER cb);
+                     ILockBytes* This,
+                     ULARGE_INTEGER cb);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        ILockBytes* This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ILockBytes* This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        ILockBytes* This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ILockBytes* This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        ILockBytes* This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     ILockBytes* This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     END_INTERFACE
 } ILockBytesVtbl;
@@ -10947,18 +10947,18 @@ MIDL_INTERFACE("00000103-0000-0000-c000-000000000046")
 IEnumFORMATETC : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        FORMATETC *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     FORMATETC *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumFORMATETC **ppenum) = 0;
+                     IEnumFORMATETC **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10970,33 +10970,33 @@ typedef struct IEnumFORMATETCVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumFORMATETC* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumFORMATETC* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumFORMATETC* This);
+                     IEnumFORMATETC* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumFORMATETC* This);
+                     IEnumFORMATETC* This);
 
     /*** IEnumFORMATETC methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumFORMATETC* This,
-        ULONG celt,
-        FORMATETC *rgelt,
-        ULONG *pceltFetched);
+                     IEnumFORMATETC* This,
+                     ULONG celt,
+                     FORMATETC *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumFORMATETC* This,
-        ULONG celt);
+                     IEnumFORMATETC* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumFORMATETC* This);
+                     IEnumFORMATETC* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumFORMATETC* This,
-        IEnumFORMATETC **ppenum);
+                     IEnumFORMATETC* This,
+                     IEnumFORMATETC **ppenum);
 
     END_INTERFACE
 } IEnumFORMATETCVtbl;
@@ -11119,18 +11119,18 @@ MIDL_INTERFACE("00000105-0000-0000-c000-000000000046")
 IEnumSTATDATA : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        STATDATA *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     STATDATA *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumSTATDATA **ppenum) = 0;
+                     IEnumSTATDATA **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11142,33 +11142,33 @@ typedef struct IEnumSTATDATAVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumSTATDATA* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumSTATDATA* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumSTATDATA* This);
+                     IEnumSTATDATA* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumSTATDATA* This);
+                     IEnumSTATDATA* This);
 
     /*** IEnumSTATDATA methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumSTATDATA* This,
-        ULONG celt,
-        STATDATA *rgelt,
-        ULONG *pceltFetched);
+                     IEnumSTATDATA* This,
+                     ULONG celt,
+                     STATDATA *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumSTATDATA* This,
-        ULONG celt);
+                     IEnumSTATDATA* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumSTATDATA* This);
+                     IEnumSTATDATA* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumSTATDATA* This,
-        IEnumSTATDATA **ppenum);
+                     IEnumSTATDATA* This,
+                     IEnumSTATDATA **ppenum);
 
     END_INTERFACE
 } IEnumSTATDATAVtbl;
@@ -11275,7 +11275,7 @@ MIDL_INTERFACE("00000012-0000-0000-c000-000000000046")
 IRootStorage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SwitchToFile(
-        LPOLESTR pszFile) = 0;
+                     LPOLESTR pszFile) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11287,20 +11287,20 @@ typedef struct IRootStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRootStorage* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRootStorage* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRootStorage* This);
+                     IRootStorage* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRootStorage* This);
+                     IRootStorage* This);
 
     /*** IRootStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *SwitchToFile)(
-        IRootStorage* This,
-        LPOLESTR pszFile);
+                     IRootStorage* This,
+                     LPOLESTR pszFile);
 
     END_INTERFACE
 } IRootStorageVtbl;
@@ -11390,13 +11390,13 @@ IUnknown *pUnkForRelease;
 typedef struct tagSTGMEDIUM {
     DWORD tymed;
     __C89_NAMELESS union {
-        HBITMAP hBitmap;
-        HMETAFILEPICT hMetaFilePict;
-        HENHMETAFILE hEnhMetaFile;
-        HGLOBAL hGlobal;
-        LPOLESTR lpszFileName;
-        IStream *pstm;
-        IStorage *pstg;
+                     HBITMAP hBitmap;
+                     HMETAFILEPICT hMetaFilePict;
+                     HENHMETAFILE hEnhMetaFile;
+                     HGLOBAL hGlobal;
+                     LPOLESTR lpszFileName;
+                     IStream *pstm;
+                     IStorage *pstg;
     } DUMMYUNIONNAME;
     IUnknown *pUnkForRelease;
 } uSTGMEDIUM;
@@ -11404,23 +11404,23 @@ typedef struct tagSTGMEDIUM {
 typedef struct _GDI_OBJECT {
     DWORD ObjectType;
     union {
-        wireHBITMAP hBitmap;
-        wireHPALETTE hPalette;
-        wireHGLOBAL hGeneric;
+                     wireHBITMAP hBitmap;
+                     wireHPALETTE hPalette;
+                     wireHGLOBAL hGeneric;
     } u;
 } GDI_OBJECT;
 typedef struct _userSTGMEDIUM {
     __C89_NAMELESS struct _STGMEDIUM_UNION {
-        DWORD tymed;
-        union {
-            wireHMETAFILEPICT hMetaFilePict;
-            wireHENHMETAFILE hHEnhMetaFile;
-            GDI_OBJECT *hGdiHandle;
-            wireHGLOBAL hGlobal;
-            LPOLESTR lpszFileName;
-            BYTE_BLOB *pstm;
-            BYTE_BLOB *pstg;
-        } u;
+                     DWORD tymed;
+                     union {
+                                      wireHMETAFILEPICT hMetaFilePict;
+                                      wireHENHMETAFILE hHEnhMetaFile;
+                                      GDI_OBJECT *hGdiHandle;
+                                      wireHGLOBAL hGlobal;
+                                      LPOLESTR lpszFileName;
+                                      BYTE_BLOB *pstm;
+                                      BYTE_BLOB *pstg;
+                     } u;
     } DUMMYUNIONNAME;
     IUnknown *pUnkForRelease;
 } userSTGMEDIUM;
@@ -11446,21 +11446,21 @@ MIDL_INTERFACE("0000010f-0000-0000-c000-000000000046")
 IAdviseSink : public IUnknown
 {
     virtual void STDMETHODCALLTYPE OnDataChange(
-        FORMATETC *pFormatetc,
-        STGMEDIUM *pStgmed) = 0;
+                     FORMATETC *pFormatetc,
+                     STGMEDIUM *pStgmed) = 0;
 
     virtual void STDMETHODCALLTYPE OnViewChange(
-        DWORD dwAspect,
-        LONG lindex) = 0;
+                     DWORD dwAspect,
+                     LONG lindex) = 0;
 
     virtual void STDMETHODCALLTYPE OnRename(
-        IMoniker *pmk) = 0;
+                     IMoniker *pmk) = 0;
 
     virtual void STDMETHODCALLTYPE OnSave(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE OnClose(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11472,36 +11472,36 @@ typedef struct IAdviseSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAdviseSink* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAdviseSink* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAdviseSink* This);
+                     IAdviseSink* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAdviseSink* This);
+                     IAdviseSink* This);
 
     /*** IAdviseSink methods ***/
     void (STDMETHODCALLTYPE *OnDataChange)(
-        IAdviseSink* This,
-        FORMATETC *pFormatetc,
-        STGMEDIUM *pStgmed);
+                     IAdviseSink* This,
+                     FORMATETC *pFormatetc,
+                     STGMEDIUM *pStgmed);
 
     void (STDMETHODCALLTYPE *OnViewChange)(
-        IAdviseSink* This,
-        DWORD dwAspect,
-        LONG lindex);
+                     IAdviseSink* This,
+                     DWORD dwAspect,
+                     LONG lindex);
 
     void (STDMETHODCALLTYPE *OnRename)(
-        IAdviseSink* This,
-        IMoniker *pmk);
+                     IAdviseSink* This,
+                     IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *OnSave)(
-        IAdviseSink* This);
+                     IAdviseSink* This);
 
     void (STDMETHODCALLTYPE *OnClose)(
-        IAdviseSink* This);
+                     IAdviseSink* This);
 
     END_INTERFACE
 } IAdviseSinkVtbl;
@@ -11638,36 +11638,36 @@ MIDL_INTERFACE("00000150-0000-0000-c000-000000000046")
 AsyncIAdviseSink : public IUnknown
 {
     virtual void STDMETHODCALLTYPE Begin_OnDataChange(
-        FORMATETC *pFormatetc,
-        STGMEDIUM *pStgmed) = 0;
+                     FORMATETC *pFormatetc,
+                     STGMEDIUM *pStgmed) = 0;
 
     virtual void STDMETHODCALLTYPE Finish_OnDataChange(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE Begin_OnViewChange(
-        DWORD dwAspect,
-        LONG lindex) = 0;
+                     DWORD dwAspect,
+                     LONG lindex) = 0;
 
     virtual void STDMETHODCALLTYPE Finish_OnViewChange(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE Begin_OnRename(
-        IMoniker *pmk) = 0;
+                     IMoniker *pmk) = 0;
 
     virtual void STDMETHODCALLTYPE Finish_OnRename(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE Begin_OnSave(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE Finish_OnSave(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE Begin_OnClose(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE Finish_OnClose(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11679,51 +11679,51 @@ typedef struct AsyncIAdviseSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncIAdviseSink* This,
-        REFIID riid,
-        void **ppvObject);
+                     AsyncIAdviseSink* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     /*** IAdviseSink methods ***/
     void (STDMETHODCALLTYPE *Begin_OnDataChange)(
-        AsyncIAdviseSink* This,
-        FORMATETC *pFormatetc,
-        STGMEDIUM *pStgmed);
+                     AsyncIAdviseSink* This,
+                     FORMATETC *pFormatetc,
+                     STGMEDIUM *pStgmed);
 
     void (STDMETHODCALLTYPE *Finish_OnDataChange)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     void (STDMETHODCALLTYPE *Begin_OnViewChange)(
-        AsyncIAdviseSink* This,
-        DWORD dwAspect,
-        LONG lindex);
+                     AsyncIAdviseSink* This,
+                     DWORD dwAspect,
+                     LONG lindex);
 
     void (STDMETHODCALLTYPE *Finish_OnViewChange)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     void (STDMETHODCALLTYPE *Begin_OnRename)(
-        AsyncIAdviseSink* This,
-        IMoniker *pmk);
+                     AsyncIAdviseSink* This,
+                     IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *Finish_OnRename)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     void (STDMETHODCALLTYPE *Begin_OnSave)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     void (STDMETHODCALLTYPE *Finish_OnSave)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     void (STDMETHODCALLTYPE *Begin_OnClose)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     void (STDMETHODCALLTYPE *Finish_OnClose)(
-        AsyncIAdviseSink* This);
+                     AsyncIAdviseSink* This);
 
     END_INTERFACE
 } AsyncIAdviseSinkVtbl;
@@ -11948,7 +11948,7 @@ MIDL_INTERFACE("00000125-0000-0000-c000-000000000046")
 IAdviseSink2 : public IAdviseSink
 {
     virtual void STDMETHODCALLTYPE OnLinkSrcChange(
-        IMoniker *pmk) = 0;
+                     IMoniker *pmk) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11960,41 +11960,41 @@ typedef struct IAdviseSink2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAdviseSink2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAdviseSink2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAdviseSink2* This);
+                     IAdviseSink2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAdviseSink2* This);
+                     IAdviseSink2* This);
 
     /*** IAdviseSink methods ***/
     void (STDMETHODCALLTYPE *OnDataChange)(
-        IAdviseSink2* This,
-        FORMATETC *pFormatetc,
-        STGMEDIUM *pStgmed);
+                     IAdviseSink2* This,
+                     FORMATETC *pFormatetc,
+                     STGMEDIUM *pStgmed);
 
     void (STDMETHODCALLTYPE *OnViewChange)(
-        IAdviseSink2* This,
-        DWORD dwAspect,
-        LONG lindex);
+                     IAdviseSink2* This,
+                     DWORD dwAspect,
+                     LONG lindex);
 
     void (STDMETHODCALLTYPE *OnRename)(
-        IAdviseSink2* This,
-        IMoniker *pmk);
+                     IAdviseSink2* This,
+                     IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *OnSave)(
-        IAdviseSink2* This);
+                     IAdviseSink2* This);
 
     void (STDMETHODCALLTYPE *OnClose)(
-        IAdviseSink2* This);
+                     IAdviseSink2* This);
 
     /*** IAdviseSink2 methods ***/
     void (STDMETHODCALLTYPE *OnLinkSrcChange)(
-        IAdviseSink2* This,
-        IMoniker *pmk);
+                     IAdviseSink2* This,
+                     IMoniker *pmk);
 
     END_INTERFACE
 } IAdviseSink2Vtbl;
@@ -12081,10 +12081,10 @@ MIDL_INTERFACE("00000151-0000-0000-c000-000000000046")
 AsyncIAdviseSink2 : public IAdviseSink
 {
     virtual void STDMETHODCALLTYPE Begin_OnLinkSrcChange(
-        IMoniker *pmk) = 0;
+                     IMoniker *pmk) = 0;
 
     virtual void STDMETHODCALLTYPE Finish_OnLinkSrcChange(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12096,59 +12096,59 @@ typedef struct AsyncIAdviseSink2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncIAdviseSink2* This,
-        REFIID riid,
-        void **ppvObject);
+                     AsyncIAdviseSink2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     /*** IAdviseSink methods ***/
     void (STDMETHODCALLTYPE *Begin_OnDataChange)(
-        AsyncIAdviseSink2* This,
-        FORMATETC *pFormatetc,
-        STGMEDIUM *pStgmed);
+                     AsyncIAdviseSink2* This,
+                     FORMATETC *pFormatetc,
+                     STGMEDIUM *pStgmed);
 
     void (STDMETHODCALLTYPE *Finish_OnDataChange)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     void (STDMETHODCALLTYPE *Begin_OnViewChange)(
-        AsyncIAdviseSink2* This,
-        DWORD dwAspect,
-        LONG lindex);
+                     AsyncIAdviseSink2* This,
+                     DWORD dwAspect,
+                     LONG lindex);
 
     void (STDMETHODCALLTYPE *Finish_OnViewChange)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     void (STDMETHODCALLTYPE *Begin_OnRename)(
-        AsyncIAdviseSink2* This,
-        IMoniker *pmk);
+                     AsyncIAdviseSink2* This,
+                     IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *Finish_OnRename)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     void (STDMETHODCALLTYPE *Begin_OnSave)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     void (STDMETHODCALLTYPE *Finish_OnSave)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     void (STDMETHODCALLTYPE *Begin_OnClose)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     void (STDMETHODCALLTYPE *Finish_OnClose)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     /*** IAdviseSink2 methods ***/
     void (STDMETHODCALLTYPE *Begin_OnLinkSrcChange)(
-        AsyncIAdviseSink2* This,
-        IMoniker *pmk);
+                     AsyncIAdviseSink2* This,
+                     IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *Finish_OnLinkSrcChange)(
-        AsyncIAdviseSink2* This);
+                     AsyncIAdviseSink2* This);
 
     END_INTERFACE
 } AsyncIAdviseSink2Vtbl;
@@ -12279,40 +12279,40 @@ MIDL_INTERFACE("0000010e-0000-0000-c000-000000000046")
 IDataObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetData(
-        FORMATETC *pformatetcIn,
-        STGMEDIUM *pmedium) = 0;
+                     FORMATETC *pformatetcIn,
+                     STGMEDIUM *pmedium) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataHere(
-        FORMATETC *pformatetc,
-        STGMEDIUM *pmedium) = 0;
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pmedium) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryGetData(
-        FORMATETC *pformatetc) = 0;
+                     FORMATETC *pformatetc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCanonicalFormatEtc(
-        FORMATETC *pformatectIn,
-        FORMATETC *pformatetcOut) = 0;
+                     FORMATETC *pformatectIn,
+                     FORMATETC *pformatetcOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetData(
-        FORMATETC *pformatetc,
-        STGMEDIUM *pmedium,
-        WINBOOL fRelease) = 0;
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pmedium,
+                     WINBOOL fRelease) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumFormatEtc(
-        DWORD dwDirection,
-        IEnumFORMATETC **ppenumFormatEtc) = 0;
+                     DWORD dwDirection,
+                     IEnumFORMATETC **ppenumFormatEtc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DAdvise(
-        FORMATETC *pformatetc,
-        DWORD advf,
-        IAdviseSink *pAdvSink,
-        DWORD *pdwConnection) = 0;
+                     FORMATETC *pformatetc,
+                     DWORD advf,
+                     IAdviseSink *pAdvSink,
+                     DWORD *pdwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DUnadvise(
-        DWORD dwConnection) = 0;
+                     DWORD dwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumDAdvise(
-        IEnumSTATDATA **ppenumAdvise) = 0;
+                     IEnumSTATDATA **ppenumAdvise) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12324,61 +12324,61 @@ typedef struct IDataObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDataObject* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDataObject* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDataObject* This);
+                     IDataObject* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDataObject* This);
+                     IDataObject* This);
 
     /*** IDataObject methods ***/
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IDataObject* This,
-        FORMATETC *pformatetcIn,
-        STGMEDIUM *pmedium);
+                     IDataObject* This,
+                     FORMATETC *pformatetcIn,
+                     STGMEDIUM *pmedium);
 
     HRESULT (STDMETHODCALLTYPE *GetDataHere)(
-        IDataObject* This,
-        FORMATETC *pformatetc,
-        STGMEDIUM *pmedium);
+                     IDataObject* This,
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pmedium);
 
     HRESULT (STDMETHODCALLTYPE *QueryGetData)(
-        IDataObject* This,
-        FORMATETC *pformatetc);
+                     IDataObject* This,
+                     FORMATETC *pformatetc);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalFormatEtc)(
-        IDataObject* This,
-        FORMATETC *pformatectIn,
-        FORMATETC *pformatetcOut);
+                     IDataObject* This,
+                     FORMATETC *pformatectIn,
+                     FORMATETC *pformatetcOut);
 
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        IDataObject* This,
-        FORMATETC *pformatetc,
-        STGMEDIUM *pmedium,
-        WINBOOL fRelease);
+                     IDataObject* This,
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pmedium,
+                     WINBOOL fRelease);
 
     HRESULT (STDMETHODCALLTYPE *EnumFormatEtc)(
-        IDataObject* This,
-        DWORD dwDirection,
-        IEnumFORMATETC **ppenumFormatEtc);
+                     IDataObject* This,
+                     DWORD dwDirection,
+                     IEnumFORMATETC **ppenumFormatEtc);
 
     HRESULT (STDMETHODCALLTYPE *DAdvise)(
-        IDataObject* This,
-        FORMATETC *pformatetc,
-        DWORD advf,
-        IAdviseSink *pAdvSink,
-        DWORD *pdwConnection);
+                     IDataObject* This,
+                     FORMATETC *pformatetc,
+                     DWORD advf,
+                     IAdviseSink *pAdvSink,
+                     DWORD *pdwConnection);
 
     HRESULT (STDMETHODCALLTYPE *DUnadvise)(
-        IDataObject* This,
-        DWORD dwConnection);
+                     IDataObject* This,
+                     DWORD dwConnection);
 
     HRESULT (STDMETHODCALLTYPE *EnumDAdvise)(
-        IDataObject* This,
-        IEnumSTATDATA **ppenumAdvise);
+                     IDataObject* This,
+                     IEnumSTATDATA **ppenumAdvise);
 
     END_INTERFACE
 } IDataObjectVtbl;
@@ -12571,22 +12571,22 @@ MIDL_INTERFACE("00000110-0000-0000-c000-000000000046")
 IDataAdviseHolder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IDataObject *pDataObject,
-        FORMATETC *pFetc,
-        DWORD advf,
-        IAdviseSink *pAdvise,
-        DWORD *pdwConnection) = 0;
+                     IDataObject *pDataObject,
+                     FORMATETC *pFetc,
+                     DWORD advf,
+                     IAdviseSink *pAdvise,
+                     DWORD *pdwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwConnection) = 0;
+                     DWORD dwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumAdvise(
-        IEnumSTATDATA **ppenumAdvise) = 0;
+                     IEnumSTATDATA **ppenumAdvise) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendOnDataChange(
-        IDataObject *pDataObject,
-        DWORD dwReserved,
-        DWORD advf) = 0;
+                     IDataObject *pDataObject,
+                     DWORD dwReserved,
+                     DWORD advf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12598,38 +12598,38 @@ typedef struct IDataAdviseHolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDataAdviseHolder* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDataAdviseHolder* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDataAdviseHolder* This);
+                     IDataAdviseHolder* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDataAdviseHolder* This);
+                     IDataAdviseHolder* This);
 
     /*** IDataAdviseHolder methods ***/
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IDataAdviseHolder* This,
-        IDataObject *pDataObject,
-        FORMATETC *pFetc,
-        DWORD advf,
-        IAdviseSink *pAdvise,
-        DWORD *pdwConnection);
+                     IDataAdviseHolder* This,
+                     IDataObject *pDataObject,
+                     FORMATETC *pFetc,
+                     DWORD advf,
+                     IAdviseSink *pAdvise,
+                     DWORD *pdwConnection);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IDataAdviseHolder* This,
-        DWORD dwConnection);
+                     IDataAdviseHolder* This,
+                     DWORD dwConnection);
 
     HRESULT (STDMETHODCALLTYPE *EnumAdvise)(
-        IDataAdviseHolder* This,
-        IEnumSTATDATA **ppenumAdvise);
+                     IDataAdviseHolder* This,
+                     IEnumSTATDATA **ppenumAdvise);
 
     HRESULT (STDMETHODCALLTYPE *SendOnDataChange)(
-        IDataAdviseHolder* This,
-        IDataObject *pDataObject,
-        DWORD dwReserved,
-        DWORD advf);
+                     IDataAdviseHolder* This,
+                     IDataObject *pDataObject,
+                     DWORD dwReserved,
+                     DWORD advf);
 
     END_INTERFACE
 } IDataAdviseHolderVtbl;
@@ -12758,20 +12758,20 @@ MIDL_INTERFACE("00000016-0000-0000-c000-000000000046")
 IMessageFilter : public IUnknown
 {
     virtual DWORD STDMETHODCALLTYPE HandleInComingCall(
-        DWORD dwCallType,
-        HTASK htaskCaller,
-        DWORD dwTickCount,
-        LPINTERFACEINFO lpInterfaceInfo) = 0;
+                     DWORD dwCallType,
+                     HTASK htaskCaller,
+                     DWORD dwTickCount,
+                     LPINTERFACEINFO lpInterfaceInfo) = 0;
 
     virtual DWORD STDMETHODCALLTYPE RetryRejectedCall(
-        HTASK htaskCallee,
-        DWORD dwTickCount,
-        DWORD dwRejectType) = 0;
+                     HTASK htaskCallee,
+                     DWORD dwTickCount,
+                     DWORD dwRejectType) = 0;
 
     virtual DWORD STDMETHODCALLTYPE MessagePending(
-        HTASK htaskCallee,
-        DWORD dwTickCount,
-        DWORD dwPendingType) = 0;
+                     HTASK htaskCallee,
+                     DWORD dwTickCount,
+                     DWORD dwPendingType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12783,35 +12783,35 @@ typedef struct IMessageFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMessageFilter* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMessageFilter* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMessageFilter* This);
+                     IMessageFilter* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMessageFilter* This);
+                     IMessageFilter* This);
 
     /*** IMessageFilter methods ***/
     DWORD (STDMETHODCALLTYPE *HandleInComingCall)(
-        IMessageFilter* This,
-        DWORD dwCallType,
-        HTASK htaskCaller,
-        DWORD dwTickCount,
-        LPINTERFACEINFO lpInterfaceInfo);
+                     IMessageFilter* This,
+                     DWORD dwCallType,
+                     HTASK htaskCaller,
+                     DWORD dwTickCount,
+                     LPINTERFACEINFO lpInterfaceInfo);
 
     DWORD (STDMETHODCALLTYPE *RetryRejectedCall)(
-        IMessageFilter* This,
-        HTASK htaskCallee,
-        DWORD dwTickCount,
-        DWORD dwRejectType);
+                     IMessageFilter* This,
+                     HTASK htaskCallee,
+                     DWORD dwTickCount,
+                     DWORD dwRejectType);
 
     DWORD (STDMETHODCALLTYPE *MessagePending)(
-        IMessageFilter* This,
-        HTASK htaskCallee,
-        DWORD dwTickCount,
-        DWORD dwPendingType);
+                     IMessageFilter* This,
+                     HTASK htaskCallee,
+                     DWORD dwTickCount,
+                     DWORD dwPendingType);
 
     END_INTERFACE
 } IMessageFilterVtbl;
@@ -12918,11 +12918,11 @@ MIDL_INTERFACE("00000140-0000-0000-c000-000000000046")
 IClassActivator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClassObject(
-        REFCLSID rclsid,
-        DWORD dwClassContext,
-        LCID locale,
-        REFIID riid,
-        void **ppv) = 0;
+                     REFCLSID rclsid,
+                     DWORD dwClassContext,
+                     LCID locale,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12934,24 +12934,24 @@ typedef struct IClassActivatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IClassActivator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IClassActivator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IClassActivator* This);
+                     IClassActivator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IClassActivator* This);
+                     IClassActivator* This);
 
     /*** IClassActivator methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassObject)(
-        IClassActivator* This,
-        REFCLSID rclsid,
-        DWORD dwClassContext,
-        LCID locale,
-        REFIID riid,
-        void **ppv);
+                     IClassActivator* This,
+                     REFCLSID rclsid,
+                     DWORD dwClassContext,
+                     LCID locale,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IClassActivatorVtbl;
@@ -13016,21 +13016,21 @@ MIDL_INTERFACE("99caf010-415e-11cf-8814-00aa00b569f5")
 IFillLockBytes : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FillAppend(
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten) = 0;
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FillAt(
-        ULARGE_INTEGER ulOffset,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten) = 0;
+                     ULARGE_INTEGER ulOffset,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFillSize(
-        ULARGE_INTEGER ulSize) = 0;
+                     ULARGE_INTEGER ulSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Terminate(
-        WINBOOL bCanceled) = 0;
+                     WINBOOL bCanceled) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13042,37 +13042,37 @@ typedef struct IFillLockBytesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFillLockBytes* This,
-        REFIID riid,
-        void **ppvObject);
+                     IFillLockBytes* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFillLockBytes* This);
+                     IFillLockBytes* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFillLockBytes* This);
+                     IFillLockBytes* This);
 
     /*** IFillLockBytes methods ***/
     HRESULT (STDMETHODCALLTYPE *FillAppend)(
-        IFillLockBytes* This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     IFillLockBytes* This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *FillAt)(
-        IFillLockBytes* This,
-        ULARGE_INTEGER ulOffset,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     IFillLockBytes* This,
+                     ULARGE_INTEGER ulOffset,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *SetFillSize)(
-        IFillLockBytes* This,
-        ULARGE_INTEGER ulSize);
+                     IFillLockBytes* This,
+                     ULARGE_INTEGER ulSize);
 
     HRESULT (STDMETHODCALLTYPE *Terminate)(
-        IFillLockBytes* This,
-        WINBOOL bCanceled);
+                     IFillLockBytes* This,
+                     WINBOOL bCanceled);
 
     END_INTERFACE
 } IFillLockBytesVtbl;
@@ -13196,10 +13196,10 @@ MIDL_INTERFACE("a9d758a0-4617-11cf-95fc-00aa00680db4")
 IProgressNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnProgress(
-        DWORD dwProgressCurrent,
-        DWORD dwProgressMaximum,
-        WINBOOL fAccurate,
-        WINBOOL fOwner) = 0;
+                     DWORD dwProgressCurrent,
+                     DWORD dwProgressMaximum,
+                     WINBOOL fAccurate,
+                     WINBOOL fOwner) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13211,23 +13211,23 @@ typedef struct IProgressNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProgressNotify* This,
-        REFIID riid,
-        void **ppvObject);
+                     IProgressNotify* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProgressNotify* This);
+                     IProgressNotify* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProgressNotify* This);
+                     IProgressNotify* This);
 
     /*** IProgressNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *OnProgress)(
-        IProgressNotify* This,
-        DWORD dwProgressCurrent,
-        DWORD dwProgressMaximum,
-        WINBOOL fAccurate,
-        WINBOOL fOwner);
+                     IProgressNotify* This,
+                     DWORD dwProgressCurrent,
+                     DWORD dwProgressMaximum,
+                     WINBOOL fAccurate,
+                     WINBOOL fOwner);
 
     END_INTERFACE
 } IProgressNotifyVtbl;
@@ -13297,21 +13297,21 @@ MIDL_INTERFACE("0e6d4d90-6738-11cf-9608-00aa00680db4")
 ILayoutStorage : public IUnknown
 {
     virtual HRESULT __stdcall LayoutScript(
-        StorageLayout *pStorageLayout,
-        DWORD nEntries,
-        DWORD glfInterleavedFlag) = 0;
+                     StorageLayout *pStorageLayout,
+                     DWORD nEntries,
+                     DWORD glfInterleavedFlag) = 0;
 
     virtual HRESULT __stdcall BeginMonitor(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT __stdcall EndMonitor(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT __stdcall ReLayoutDocfile(
-        OLECHAR *pwcsNewDfName) = 0;
+                     OLECHAR *pwcsNewDfName) = 0;
 
     virtual HRESULT __stdcall ReLayoutDocfileOnILockBytes(
-        ILockBytes *pILockBytes) = 0;
+                     ILockBytes *pILockBytes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13323,36 +13323,36 @@ typedef struct ILayoutStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILayoutStorage* This,
-        REFIID riid,
-        void **ppvObject);
+                     ILayoutStorage* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILayoutStorage* This);
+                     ILayoutStorage* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILayoutStorage* This);
+                     ILayoutStorage* This);
 
     /*** ILayoutStorage methods ***/
     HRESULT (__stdcall *LayoutScript)(
-        ILayoutStorage* This,
-        StorageLayout *pStorageLayout,
-        DWORD nEntries,
-        DWORD glfInterleavedFlag);
+                     ILayoutStorage* This,
+                     StorageLayout *pStorageLayout,
+                     DWORD nEntries,
+                     DWORD glfInterleavedFlag);
 
     HRESULT (__stdcall *BeginMonitor)(
-        ILayoutStorage* This);
+                     ILayoutStorage* This);
 
     HRESULT (__stdcall *EndMonitor)(
-        ILayoutStorage* This);
+                     ILayoutStorage* This);
 
     HRESULT (__stdcall *ReLayoutDocfile)(
-        ILayoutStorage* This,
-        OLECHAR *pwcsNewDfName);
+                     ILayoutStorage* This,
+                     OLECHAR *pwcsNewDfName);
 
     HRESULT (__stdcall *ReLayoutDocfileOnILockBytes)(
-        ILayoutStorage* This,
-        ILockBytes *pILockBytes);
+                     ILayoutStorage* This,
+                     ILockBytes *pILockBytes);
 
     END_INTERFACE
 } ILayoutStorageVtbl;
@@ -13461,10 +13461,10 @@ MIDL_INTERFACE("30f3d47a-6447-11d1-8e3c-00c04fb9386d")
 IBlockingLock : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Lock(
-        DWORD dwTimeout) = 0;
+                     DWORD dwTimeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unlock(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13476,23 +13476,23 @@ typedef struct IBlockingLockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBlockingLock* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBlockingLock* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBlockingLock* This);
+                     IBlockingLock* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBlockingLock* This);
+                     IBlockingLock* This);
 
     /*** IBlockingLock methods ***/
     HRESULT (STDMETHODCALLTYPE *Lock)(
-        IBlockingLock* This,
-        DWORD dwTimeout);
+                     IBlockingLock* This,
+                     DWORD dwTimeout);
 
     HRESULT (STDMETHODCALLTYPE *Unlock)(
-        IBlockingLock* This);
+                     IBlockingLock* This);
 
     END_INTERFACE
 } IBlockingLockVtbl;
@@ -13562,8 +13562,8 @@ MIDL_INTERFACE("bc0bf6ae-8878-11d1-83e9-00c04fc2c6d4")
 ITimeAndNoticeControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SuppressChanges(
-        DWORD res1,
-        DWORD res2) = 0;
+                     DWORD res1,
+                     DWORD res2) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13575,21 +13575,21 @@ typedef struct ITimeAndNoticeControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITimeAndNoticeControl* This,
-        REFIID riid,
-        void **ppvObject);
+                     ITimeAndNoticeControl* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITimeAndNoticeControl* This);
+                     ITimeAndNoticeControl* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITimeAndNoticeControl* This);
+                     ITimeAndNoticeControl* This);
 
     /*** ITimeAndNoticeControl methods ***/
     HRESULT (STDMETHODCALLTYPE *SuppressChanges)(
-        ITimeAndNoticeControl* This,
-        DWORD res1,
-        DWORD res2);
+                     ITimeAndNoticeControl* This,
+                     DWORD res1,
+                     DWORD res2);
 
     END_INTERFACE
 } ITimeAndNoticeControlVtbl;
@@ -13649,20 +13649,20 @@ MIDL_INTERFACE("8d19c834-8879-11d1-83e9-00c04fc2c6d4")
 IOplockStorage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateStorageEx(
-        LPCWSTR pwcsName,
-        DWORD grfMode,
-        DWORD stgfmt,
-        DWORD grfAttrs,
-        REFIID riid,
-        void **ppstgOpen) = 0;
+                     LPCWSTR pwcsName,
+                     DWORD grfMode,
+                     DWORD stgfmt,
+                     DWORD grfAttrs,
+                     REFIID riid,
+                     void **ppstgOpen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenStorageEx(
-        LPCWSTR pwcsName,
-        DWORD grfMode,
-        DWORD stgfmt,
-        DWORD grfAttrs,
-        REFIID riid,
-        void **ppstgOpen) = 0;
+                     LPCWSTR pwcsName,
+                     DWORD grfMode,
+                     DWORD stgfmt,
+                     DWORD grfAttrs,
+                     REFIID riid,
+                     void **ppstgOpen) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13674,34 +13674,34 @@ typedef struct IOplockStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOplockStorage* This,
-        REFIID riid,
-        void **ppvObject);
+                     IOplockStorage* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOplockStorage* This);
+                     IOplockStorage* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOplockStorage* This);
+                     IOplockStorage* This);
 
     /*** IOplockStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateStorageEx)(
-        IOplockStorage* This,
-        LPCWSTR pwcsName,
-        DWORD grfMode,
-        DWORD stgfmt,
-        DWORD grfAttrs,
-        REFIID riid,
-        void **ppstgOpen);
+                     IOplockStorage* This,
+                     LPCWSTR pwcsName,
+                     DWORD grfMode,
+                     DWORD stgfmt,
+                     DWORD grfAttrs,
+                     REFIID riid,
+                     void **ppstgOpen);
 
     HRESULT (STDMETHODCALLTYPE *OpenStorageEx)(
-        IOplockStorage* This,
-        LPCWSTR pwcsName,
-        DWORD grfMode,
-        DWORD stgfmt,
-        DWORD grfAttrs,
-        REFIID riid,
-        void **ppstgOpen);
+                     IOplockStorage* This,
+                     LPCWSTR pwcsName,
+                     DWORD grfMode,
+                     DWORD stgfmt,
+                     DWORD grfAttrs,
+                     REFIID riid,
+                     void **ppstgOpen);
 
     END_INTERFACE
 } IOplockStorageVtbl;
@@ -13784,13 +13784,13 @@ MIDL_INTERFACE("0e6d4d92-6738-11cf-9608-00aa00680db4")
 IDirectWriterLock : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE WaitForWriteAccess(
-        DWORD dwTimeout) = 0;
+                     DWORD dwTimeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseWriteAccess(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HaveWriteAccess(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13802,26 +13802,26 @@ typedef struct IDirectWriterLockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDirectWriterLock* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDirectWriterLock* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDirectWriterLock* This);
+                     IDirectWriterLock* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDirectWriterLock* This);
+                     IDirectWriterLock* This);
 
     /*** IDirectWriterLock methods ***/
     HRESULT (STDMETHODCALLTYPE *WaitForWriteAccess)(
-        IDirectWriterLock* This,
-        DWORD dwTimeout);
+                     IDirectWriterLock* This,
+                     DWORD dwTimeout);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseWriteAccess)(
-        IDirectWriterLock* This);
+                     IDirectWriterLock* This);
 
     HRESULT (STDMETHODCALLTYPE *HaveWriteAccess)(
-        IDirectWriterLock* This);
+                     IDirectWriterLock* This);
 
     END_INTERFACE
 } IDirectWriterLockVtbl;
@@ -13904,16 +13904,16 @@ MIDL_INTERFACE("00000026-0000-0000-c000-000000000046")
 IUrlMon : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AsyncGetClassBits(
-        REFCLSID rclsid,
-        LPCWSTR pszTYPE,
-        LPCWSTR pszExt,
-        DWORD dwFileVersionMS,
-        DWORD dwFileVersionLS,
-        LPCWSTR pszCodeBase,
-        IBindCtx *pbc,
-        DWORD dwClassContext,
-        REFIID riid,
-        DWORD flags) = 0;
+                     REFCLSID rclsid,
+                     LPCWSTR pszTYPE,
+                     LPCWSTR pszExt,
+                     DWORD dwFileVersionMS,
+                     DWORD dwFileVersionLS,
+                     LPCWSTR pszCodeBase,
+                     IBindCtx *pbc,
+                     DWORD dwClassContext,
+                     REFIID riid,
+                     DWORD flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13925,29 +13925,29 @@ typedef struct IUrlMonVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUrlMon* This,
-        REFIID riid,
-        void **ppvObject);
+                     IUrlMon* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUrlMon* This);
+                     IUrlMon* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUrlMon* This);
+                     IUrlMon* This);
 
     /*** IUrlMon methods ***/
     HRESULT (STDMETHODCALLTYPE *AsyncGetClassBits)(
-        IUrlMon* This,
-        REFCLSID rclsid,
-        LPCWSTR pszTYPE,
-        LPCWSTR pszExt,
-        DWORD dwFileVersionMS,
-        DWORD dwFileVersionLS,
-        LPCWSTR pszCodeBase,
-        IBindCtx *pbc,
-        DWORD dwClassContext,
-        REFIID riid,
-        DWORD flags);
+                     IUrlMon* This,
+                     REFCLSID rclsid,
+                     LPCWSTR pszTYPE,
+                     LPCWSTR pszExt,
+                     DWORD dwFileVersionMS,
+                     DWORD dwFileVersionLS,
+                     LPCWSTR pszCodeBase,
+                     IBindCtx *pbc,
+                     DWORD dwClassContext,
+                     REFIID riid,
+                     DWORD flags);
 
     END_INTERFACE
 } IUrlMonVtbl;
@@ -14015,7 +14015,7 @@ MIDL_INTERFACE("00000145-0000-0000-c000-000000000046")
 IForegroundTransfer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AllowForegroundTransfer(
-        void *lpvReserved) = 0;
+                     void *lpvReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14027,20 +14027,20 @@ typedef struct IForegroundTransferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IForegroundTransfer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IForegroundTransfer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IForegroundTransfer* This);
+                     IForegroundTransfer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IForegroundTransfer* This);
+                     IForegroundTransfer* This);
 
     /*** IForegroundTransfer methods ***/
     HRESULT (STDMETHODCALLTYPE *AllowForegroundTransfer)(
-        IForegroundTransfer* This,
-        void *lpvReserved);
+                     IForegroundTransfer* This,
+                     void *lpvReserved);
 
     END_INTERFACE
 } IForegroundTransferVtbl;
@@ -14099,15 +14099,15 @@ MIDL_INTERFACE("969dc708-5c76-11d1-8d86-0000f804b057")
 IThumbnailExtractor : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ExtractThumbnail(
-        IStorage *pStg,
-        ULONG ulLength,
-        ULONG ulHeight,
-        ULONG *pulOutputLength,
-        ULONG *pulOutputHeight,
-        HBITMAP *phOutputBitmap) = 0;
+                     IStorage *pStg,
+                     ULONG ulLength,
+                     ULONG ulHeight,
+                     ULONG *pulOutputLength,
+                     ULONG *pulOutputHeight,
+                     HBITMAP *phOutputBitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFileUpdated(
-        IStorage *pStg) = 0;
+                     IStorage *pStg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14119,29 +14119,29 @@ typedef struct IThumbnailExtractorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThumbnailExtractor* This,
-        REFIID riid,
-        void **ppvObject);
+                     IThumbnailExtractor* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThumbnailExtractor* This);
+                     IThumbnailExtractor* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThumbnailExtractor* This);
+                     IThumbnailExtractor* This);
 
     /*** IThumbnailExtractor methods ***/
     HRESULT (STDMETHODCALLTYPE *ExtractThumbnail)(
-        IThumbnailExtractor* This,
-        IStorage *pStg,
-        ULONG ulLength,
-        ULONG ulHeight,
-        ULONG *pulOutputLength,
-        ULONG *pulOutputHeight,
-        HBITMAP *phOutputBitmap);
+                     IThumbnailExtractor* This,
+                     IStorage *pStg,
+                     ULONG ulLength,
+                     ULONG ulHeight,
+                     ULONG *pulOutputLength,
+                     ULONG *pulOutputHeight,
+                     HBITMAP *phOutputBitmap);
 
     HRESULT (STDMETHODCALLTYPE *OnFileUpdated)(
-        IThumbnailExtractor* This,
-        IStorage *pStg);
+                     IThumbnailExtractor* This,
+                     IStorage *pStg);
 
     END_INTERFACE
 } IThumbnailExtractorVtbl;
@@ -14217,8 +14217,8 @@ MIDL_INTERFACE("947990de-cc28-11d2-a0f7-00805f858fb1")
 IDummyHICONIncluder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Dummy(
-        HICON h1,
-        HDC h2) = 0;
+                     HICON h1,
+                     HDC h2) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14230,21 +14230,21 @@ typedef struct IDummyHICONIncluderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDummyHICONIncluder* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDummyHICONIncluder* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDummyHICONIncluder* This);
+                     IDummyHICONIncluder* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDummyHICONIncluder* This);
+                     IDummyHICONIncluder* This);
 
     /*** IDummyHICONIncluder methods ***/
     HRESULT (STDMETHODCALLTYPE *Dummy)(
-        IDummyHICONIncluder* This,
-        HICON h1,
-        HDC h2);
+                     IDummyHICONIncluder* This,
+                     HICON h1,
+                     HDC h2);
 
     END_INTERFACE
 } IDummyHICONIncluderVtbl;
@@ -14312,10 +14312,10 @@ MIDL_INTERFACE("000001d5-0000-0000-c000-000000000046")
 IProcessLock : public IUnknown
 {
     virtual ULONG STDMETHODCALLTYPE AddRefOnProcess(
-        ) = 0;
+                     ) = 0;
 
     virtual ULONG STDMETHODCALLTYPE ReleaseRefOnProcess(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14327,22 +14327,22 @@ typedef struct IProcessLockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProcessLock* This,
-        REFIID riid,
-        void **ppvObject);
+                     IProcessLock* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProcessLock* This);
+                     IProcessLock* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProcessLock* This);
+                     IProcessLock* This);
 
     /*** IProcessLock methods ***/
     ULONG (STDMETHODCALLTYPE *AddRefOnProcess)(
-        IProcessLock* This);
+                     IProcessLock* This);
 
     ULONG (STDMETHODCALLTYPE *ReleaseRefOnProcess)(
-        IProcessLock* This);
+                     IProcessLock* This);
 
     END_INTERFACE
 } IProcessLockVtbl;
@@ -14411,22 +14411,22 @@ MIDL_INTERFACE("000001d4-0000-0000-c000-000000000046")
 ISurrogateService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Init(
-        REFGUID rguidProcessID,
-        IProcessLock *pProcessLock,
-        WINBOOL *pfApplicationAware) = 0;
+                     REFGUID rguidProcessID,
+                     IProcessLock *pProcessLock,
+                     WINBOOL *pfApplicationAware) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplicationLaunch(
-        REFGUID rguidApplID,
-        ApplicationType appType) = 0;
+                     REFGUID rguidApplID,
+                     ApplicationType appType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplicationFree(
-        REFGUID rguidApplID) = 0;
+                     REFGUID rguidApplID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CatalogRefresh(
-        ULONG ulReserved) = 0;
+                     ULONG ulReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessShutdown(
-        ShutdownType shutdownType) = 0;
+                     ShutdownType shutdownType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14438,39 +14438,39 @@ typedef struct ISurrogateServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISurrogateService* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISurrogateService* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISurrogateService* This);
+                     ISurrogateService* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISurrogateService* This);
+                     ISurrogateService* This);
 
     /*** ISurrogateService methods ***/
     HRESULT (STDMETHODCALLTYPE *Init)(
-        ISurrogateService* This,
-        REFGUID rguidProcessID,
-        IProcessLock *pProcessLock,
-        WINBOOL *pfApplicationAware);
+                     ISurrogateService* This,
+                     REFGUID rguidProcessID,
+                     IProcessLock *pProcessLock,
+                     WINBOOL *pfApplicationAware);
 
     HRESULT (STDMETHODCALLTYPE *ApplicationLaunch)(
-        ISurrogateService* This,
-        REFGUID rguidApplID,
-        ApplicationType appType);
+                     ISurrogateService* This,
+                     REFGUID rguidApplID,
+                     ApplicationType appType);
 
     HRESULT (STDMETHODCALLTYPE *ApplicationFree)(
-        ISurrogateService* This,
-        REFGUID rguidApplID);
+                     ISurrogateService* This,
+                     REFGUID rguidApplID);
 
     HRESULT (STDMETHODCALLTYPE *CatalogRefresh)(
-        ISurrogateService* This,
-        ULONG ulReserved);
+                     ISurrogateService* This,
+                     ULONG ulReserved);
 
     HRESULT (STDMETHODCALLTYPE *ProcessShutdown)(
-        ISurrogateService* This,
-        ShutdownType shutdownType);
+                     ISurrogateService* This,
+                     ShutdownType shutdownType);
 
     END_INTERFACE
 } ISurrogateServiceVtbl;
@@ -14581,19 +14581,19 @@ MIDL_INTERFACE("00000034-0000-0000-c000-000000000046")
 IInitializeSpy : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PreInitialize(
-        DWORD dwCoInit,
-        DWORD dwCurThreadAptRefs) = 0;
+                     DWORD dwCoInit,
+                     DWORD dwCurThreadAptRefs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostInitialize(
-        HRESULT hrCoInit,
-        DWORD dwCoInit,
-        DWORD dwNewThreadAptRefs) = 0;
+                     HRESULT hrCoInit,
+                     DWORD dwCoInit,
+                     DWORD dwNewThreadAptRefs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PreUninitialize(
-        DWORD dwCurThreadAptRefs) = 0;
+                     DWORD dwCurThreadAptRefs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostUninitialize(
-        DWORD dwNewThreadAptRefs) = 0;
+                     DWORD dwNewThreadAptRefs) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14605,35 +14605,35 @@ typedef struct IInitializeSpyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeSpy* This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeSpy* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeSpy* This);
+                     IInitializeSpy* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeSpy* This);
+                     IInitializeSpy* This);
 
     /*** IInitializeSpy methods ***/
     HRESULT (STDMETHODCALLTYPE *PreInitialize)(
-        IInitializeSpy* This,
-        DWORD dwCoInit,
-        DWORD dwCurThreadAptRefs);
+                     IInitializeSpy* This,
+                     DWORD dwCoInit,
+                     DWORD dwCurThreadAptRefs);
 
     HRESULT (STDMETHODCALLTYPE *PostInitialize)(
-        IInitializeSpy* This,
-        HRESULT hrCoInit,
-        DWORD dwCoInit,
-        DWORD dwNewThreadAptRefs);
+                     IInitializeSpy* This,
+                     HRESULT hrCoInit,
+                     DWORD dwCoInit,
+                     DWORD dwNewThreadAptRefs);
 
     HRESULT (STDMETHODCALLTYPE *PreUninitialize)(
-        IInitializeSpy* This,
-        DWORD dwCurThreadAptRefs);
+                     IInitializeSpy* This,
+                     DWORD dwCurThreadAptRefs);
 
     HRESULT (STDMETHODCALLTYPE *PostUninitialize)(
-        IInitializeSpy* This,
-        DWORD dwNewThreadAptRefs);
+                     IInitializeSpy* This,
+                     DWORD dwNewThreadAptRefs);
 
     END_INTERFACE
 } IInitializeSpyVtbl;
@@ -14733,7 +14733,7 @@ MIDL_INTERFACE("a2f05a09-27a2-42b5-bc0e-ac163ef49d9b")
 IApartmentShutdown : public IUnknown
 {
     virtual void STDMETHODCALLTYPE OnUninitialize(
-        UINT64 ui64ApartmentIdentifier) = 0;
+                     UINT64 ui64ApartmentIdentifier) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14745,20 +14745,20 @@ typedef struct IApartmentShutdownVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApartmentShutdown* This,
-        REFIID riid,
-        void **ppvObject);
+                     IApartmentShutdown* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApartmentShutdown* This);
+                     IApartmentShutdown* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApartmentShutdown* This);
+                     IApartmentShutdown* This);
 
     /*** IApartmentShutdown methods ***/
     void (STDMETHODCALLTYPE *OnUninitialize)(
-        IApartmentShutdown* This,
-        UINT64 ui64ApartmentIdentifier);
+                     IApartmentShutdown* This,
+                     UINT64 ui64ApartmentIdentifier);
 
     END_INTERFACE
 } IApartmentShutdownVtbl;
@@ -14808,38 +14808,38 @@ void __RPC_STUB IApartmentShutdown_OnUninitialize_Stub(
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER SNB_UserSize     (ULONG *, ULONG, SNB *);
+ULONG                        __RPC_USER SNB_UserSize     (ULONG *, ULONG, SNB *);
 unsigned char * __RPC_USER SNB_UserMarshal  (ULONG *, unsigned char *, SNB *);
 unsigned char * __RPC_USER SNB_UserUnmarshal(ULONG *, unsigned char *, SNB *);
-void            __RPC_USER SNB_UserFree     (ULONG *, SNB *);
-ULONG           __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
+void                                      __RPC_USER SNB_UserFree     (ULONG *, SNB *);
+ULONG                        __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserMarshal  (ULONG *, unsigned char *, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserUnmarshal(ULONG *, unsigned char *, CLIPFORMAT *);
-void            __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
-ULONG           __RPC_USER STGMEDIUM_UserSize     (ULONG *, ULONG, STGMEDIUM *);
+void                                      __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
+ULONG                        __RPC_USER STGMEDIUM_UserSize     (ULONG *, ULONG, STGMEDIUM *);
 unsigned char * __RPC_USER STGMEDIUM_UserMarshal  (ULONG *, unsigned char *, STGMEDIUM *);
 unsigned char * __RPC_USER STGMEDIUM_UserUnmarshal(ULONG *, unsigned char *, STGMEDIUM *);
-void            __RPC_USER STGMEDIUM_UserFree     (ULONG *, STGMEDIUM *);
-ULONG           __RPC_USER ASYNC_STGMEDIUM_UserSize     (ULONG *, ULONG, ASYNC_STGMEDIUM *);
+void                                      __RPC_USER STGMEDIUM_UserFree     (ULONG *, STGMEDIUM *);
+ULONG                        __RPC_USER ASYNC_STGMEDIUM_UserSize     (ULONG *, ULONG, ASYNC_STGMEDIUM *);
 unsigned char * __RPC_USER ASYNC_STGMEDIUM_UserMarshal  (ULONG *, unsigned char *, ASYNC_STGMEDIUM *);
 unsigned char * __RPC_USER ASYNC_STGMEDIUM_UserUnmarshal(ULONG *, unsigned char *, ASYNC_STGMEDIUM *);
-void            __RPC_USER ASYNC_STGMEDIUM_UserFree     (ULONG *, ASYNC_STGMEDIUM *);
-ULONG           __RPC_USER FLAG_STGMEDIUM_UserSize     (ULONG *, ULONG, FLAG_STGMEDIUM *);
+void                                      __RPC_USER ASYNC_STGMEDIUM_UserFree     (ULONG *, ASYNC_STGMEDIUM *);
+ULONG                        __RPC_USER FLAG_STGMEDIUM_UserSize     (ULONG *, ULONG, FLAG_STGMEDIUM *);
 unsigned char * __RPC_USER FLAG_STGMEDIUM_UserMarshal  (ULONG *, unsigned char *, FLAG_STGMEDIUM *);
 unsigned char * __RPC_USER FLAG_STGMEDIUM_UserUnmarshal(ULONG *, unsigned char *, FLAG_STGMEDIUM *);
-void            __RPC_USER FLAG_STGMEDIUM_UserFree     (ULONG *, FLAG_STGMEDIUM *);
-ULONG           __RPC_USER HBITMAP_UserSize     (ULONG *, ULONG, HBITMAP *);
+void                                      __RPC_USER FLAG_STGMEDIUM_UserFree     (ULONG *, FLAG_STGMEDIUM *);
+ULONG                        __RPC_USER HBITMAP_UserSize     (ULONG *, ULONG, HBITMAP *);
 unsigned char * __RPC_USER HBITMAP_UserMarshal  (ULONG *, unsigned char *, HBITMAP *);
 unsigned char * __RPC_USER HBITMAP_UserUnmarshal(ULONG *, unsigned char *, HBITMAP *);
-void            __RPC_USER HBITMAP_UserFree     (ULONG *, HBITMAP *);
-ULONG           __RPC_USER HICON_UserSize     (ULONG *, ULONG, HICON *);
+void                                      __RPC_USER HBITMAP_UserFree     (ULONG *, HBITMAP *);
+ULONG                        __RPC_USER HICON_UserSize     (ULONG *, ULONG, HICON *);
 unsigned char * __RPC_USER HICON_UserMarshal  (ULONG *, unsigned char *, HICON *);
 unsigned char * __RPC_USER HICON_UserUnmarshal(ULONG *, unsigned char *, HICON *);
-void            __RPC_USER HICON_UserFree     (ULONG *, HICON *);
-ULONG           __RPC_USER HDC_UserSize     (ULONG *, ULONG, HDC *);
+void                                      __RPC_USER HICON_UserFree     (ULONG *, HICON *);
+ULONG                        __RPC_USER HDC_UserSize     (ULONG *, ULONG, HDC *);
 unsigned char * __RPC_USER HDC_UserMarshal  (ULONG *, unsigned char *, HDC *);
 unsigned char * __RPC_USER HDC_UserUnmarshal(ULONG *, unsigned char *, HDC *);
-void            __RPC_USER HDC_UserFree     (ULONG *, HDC *);
+void                                      __RPC_USER HDC_UserFree     (ULONG *, HDC *);
 
 /* End additional prototypes */
 

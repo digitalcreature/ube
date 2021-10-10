@@ -21,18 +21,18 @@ pub fn __floatunsisf(arg: u32) callconv(.C) f32 {
 
     var mantissa: u32 = undefined;
     if (exp <= significandBits) {
-        // Shift a into the significand field and clear the implicit bit
-        const shift = @intCast(u5, significandBits - exp);
-        mantissa = @as(u32, arg) << shift ^ implicitBit;
+                     // Shift a into the significand field and clear the implicit bit
+                     const shift = @intCast(u5, significandBits - exp);
+                     mantissa = @as(u32, arg) << shift ^ implicitBit;
     } else {
-        const shift = @intCast(u5, exp - significandBits);
-        // Round to the nearest number after truncation
-        mantissa = @as(u32, arg) >> shift ^ implicitBit;
-        // Align to the left and check if the truncated part is halfway over
-        const round = arg << @intCast(u5, 31 - shift);
-        mantissa += @boolToInt(round > 0x80000000);
-        // Tie to even
-        mantissa += mantissa & 1;
+                     const shift = @intCast(u5, exp - significandBits);
+                     // Round to the nearest number after truncation
+                     mantissa = @as(u32, arg) >> shift ^ implicitBit;
+                     // Align to the left and check if the truncated part is halfway over
+                     const round = arg << @intCast(u5, 31 - shift);
+                     mantissa += @boolToInt(round > 0x80000000);
+                     // Tie to even
+                     mantissa += mantissa & 1;
     }
 
     // Use the addition instead of a or since we may have a carry from the

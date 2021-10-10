@@ -179,15 +179,15 @@ MIDL_INTERFACE("90a7734e-841b-4f77-9384-a2891e76e7e2")
 IDebugApplicationNode100 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFilterForEventSink(
-        DWORD dwCookie,
-        APPLICATION_NODE_EVENT_FILTER filter) = 0;
+                     DWORD dwCookie,
+                     APPLICATION_NODE_EVENT_FILTER filter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExcludedDocuments(
-        APPLICATION_NODE_EVENT_FILTER filter,
-        TEXT_DOCUMENT_ARRAY *pDocuments) = 0;
+                     APPLICATION_NODE_EVENT_FILTER filter,
+                     TEXT_DOCUMENT_ARRAY *pDocuments) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryIsChildNode(
-        IDebugDocument *pSearchKey) = 0;
+                     IDebugDocument *pSearchKey) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -199,30 +199,30 @@ typedef struct IDebugApplicationNode100Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplicationNode100 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplicationNode100 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplicationNode100 *This);
+                     IDebugApplicationNode100 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplicationNode100 *This);
+                     IDebugApplicationNode100 *This);
 
     /*** IDebugApplicationNode100 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFilterForEventSink)(
-        IDebugApplicationNode100 *This,
-        DWORD dwCookie,
-        APPLICATION_NODE_EVENT_FILTER filter);
+                     IDebugApplicationNode100 *This,
+                     DWORD dwCookie,
+                     APPLICATION_NODE_EVENT_FILTER filter);
 
     HRESULT (STDMETHODCALLTYPE *GetExcludedDocuments)(
-        IDebugApplicationNode100 *This,
-        APPLICATION_NODE_EVENT_FILTER filter,
-        TEXT_DOCUMENT_ARRAY *pDocuments);
+                     IDebugApplicationNode100 *This,
+                     APPLICATION_NODE_EVENT_FILTER filter,
+                     TEXT_DOCUMENT_ARRAY *pDocuments);
 
     HRESULT (STDMETHODCALLTYPE *QueryIsChildNode)(
-        IDebugApplicationNode100 *This,
-        IDebugDocument *pSearchKey);
+                     IDebugApplicationNode100 *This,
+                     IDebugDocument *pSearchKey);
 
     END_INTERFACE
 } IDebugApplicationNode100Vtbl;
@@ -282,13 +282,13 @@ MIDL_INTERFACE("379bfbe1-c6c9-432a-93e1-6d17656c538c")
 IWebAppDiagnosticsSetup : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DiagnosticsSupported(
-        VARIANT_BOOL *pRetVal) = 0;
+                     VARIANT_BOOL *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateObjectWithSiteAtWebApp(
-        REFCLSID rclsid,
-        DWORD dwClsContext,
-        REFIID riid,
-        DWORD_PTR hPassToObject) = 0;
+                     REFCLSID rclsid,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     DWORD_PTR hPassToObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -300,27 +300,27 @@ typedef struct IWebAppDiagnosticsSetupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWebAppDiagnosticsSetup *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWebAppDiagnosticsSetup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWebAppDiagnosticsSetup *This);
+                     IWebAppDiagnosticsSetup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWebAppDiagnosticsSetup *This);
+                     IWebAppDiagnosticsSetup *This);
 
     /*** IWebAppDiagnosticsSetup methods ***/
     HRESULT (STDMETHODCALLTYPE *DiagnosticsSupported)(
-        IWebAppDiagnosticsSetup *This,
-        VARIANT_BOOL *pRetVal);
+                     IWebAppDiagnosticsSetup *This,
+                     VARIANT_BOOL *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *CreateObjectWithSiteAtWebApp)(
-        IWebAppDiagnosticsSetup *This,
-        REFCLSID rclsid,
-        DWORD dwClsContext,
-        REFIID riid,
-        DWORD_PTR hPassToObject);
+                     IWebAppDiagnosticsSetup *This,
+                     REFCLSID rclsid,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     DWORD_PTR hPassToObject);
 
     END_INTERFACE
 } IWebAppDiagnosticsSetupVtbl;
@@ -376,14 +376,14 @@ MIDL_INTERFACE("d5fe005b-2836-485e-b1f9-89d91aa24fd4")
 IRemoteDebugApplication110 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetDebuggerOptions(
-        enum SCRIPT_DEBUGGER_OPTIONS mask,
-        enum SCRIPT_DEBUGGER_OPTIONS value) = 0;
+                     enum SCRIPT_DEBUGGER_OPTIONS mask,
+                     enum SCRIPT_DEBUGGER_OPTIONS value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentDebuggerOptions(
-        enum SCRIPT_DEBUGGER_OPTIONS *pCurrentOptions) = 0;
+                     enum SCRIPT_DEBUGGER_OPTIONS *pCurrentOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMainThread(
-        IRemoteDebugApplicationThread **ppThread) = 0;
+                     IRemoteDebugApplicationThread **ppThread) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -395,29 +395,29 @@ typedef struct IRemoteDebugApplication110Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRemoteDebugApplication110 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRemoteDebugApplication110 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRemoteDebugApplication110 *This);
+                     IRemoteDebugApplication110 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRemoteDebugApplication110 *This);
+                     IRemoteDebugApplication110 *This);
 
     /*** IRemoteDebugApplication110 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetDebuggerOptions)(
-        IRemoteDebugApplication110 *This,
-        enum SCRIPT_DEBUGGER_OPTIONS mask,
-        enum SCRIPT_DEBUGGER_OPTIONS value);
+                     IRemoteDebugApplication110 *This,
+                     enum SCRIPT_DEBUGGER_OPTIONS mask,
+                     enum SCRIPT_DEBUGGER_OPTIONS value);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentDebuggerOptions)(
-        IRemoteDebugApplication110 *This,
-        enum SCRIPT_DEBUGGER_OPTIONS *pCurrentOptions);
+                     IRemoteDebugApplication110 *This,
+                     enum SCRIPT_DEBUGGER_OPTIONS *pCurrentOptions);
 
     HRESULT (STDMETHODCALLTYPE *GetMainThread)(
-        IRemoteDebugApplication110 *This,
-        IRemoteDebugApplicationThread **ppThread);
+                     IRemoteDebugApplication110 *This,
+                     IRemoteDebugApplicationThread **ppThread);
 
     END_INTERFACE
 } IRemoteDebugApplication110Vtbl;
@@ -477,21 +477,21 @@ MIDL_INTERFACE("bdb3b5de-89f2-4e11-84a5-97445f941c7d")
 IDebugApplication11032 : public IRemoteDebugApplication110
 {
     virtual HRESULT STDMETHODCALLTYPE SynchronousCallInMainThread(
-        IDebugThreadCall32 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3) = 0;
+                     IDebugThreadCall32 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AsynchronousCallInMainThread(
-        IDebugThreadCall32 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3) = 0;
+                     IDebugThreadCall32 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CallableWaitForHandles(
-        DWORD handleCount,
-        const HANDLE *pHandles,
-        DWORD *pIndex) = 0;
+                     DWORD handleCount,
+                     const HANDLE *pHandles,
+                     DWORD *pIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -503,50 +503,50 @@ typedef struct IDebugApplication11032Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplication11032 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplication11032 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplication11032 *This);
+                     IDebugApplication11032 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplication11032 *This);
+                     IDebugApplication11032 *This);
 
     /*** IRemoteDebugApplication110 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetDebuggerOptions)(
-        IDebugApplication11032 *This,
-        enum SCRIPT_DEBUGGER_OPTIONS mask,
-        enum SCRIPT_DEBUGGER_OPTIONS value);
+                     IDebugApplication11032 *This,
+                     enum SCRIPT_DEBUGGER_OPTIONS mask,
+                     enum SCRIPT_DEBUGGER_OPTIONS value);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentDebuggerOptions)(
-        IDebugApplication11032 *This,
-        enum SCRIPT_DEBUGGER_OPTIONS *pCurrentOptions);
+                     IDebugApplication11032 *This,
+                     enum SCRIPT_DEBUGGER_OPTIONS *pCurrentOptions);
 
     HRESULT (STDMETHODCALLTYPE *GetMainThread)(
-        IDebugApplication11032 *This,
-        IRemoteDebugApplicationThread **ppThread);
+                     IDebugApplication11032 *This,
+                     IRemoteDebugApplicationThread **ppThread);
 
     /*** IDebugApplication11032 methods ***/
     HRESULT (STDMETHODCALLTYPE *SynchronousCallInMainThread)(
-        IDebugApplication11032 *This,
-        IDebugThreadCall32 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3);
+                     IDebugApplication11032 *This,
+                     IDebugThreadCall32 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3);
 
     HRESULT (STDMETHODCALLTYPE *AsynchronousCallInMainThread)(
-        IDebugApplication11032 *This,
-        IDebugThreadCall32 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3);
+                     IDebugApplication11032 *This,
+                     IDebugThreadCall32 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3);
 
     HRESULT (STDMETHODCALLTYPE *CallableWaitForHandles)(
-        IDebugApplication11032 *This,
-        DWORD handleCount,
-        const HANDLE *pHandles,
-        DWORD *pIndex);
+                     IDebugApplication11032 *This,
+                     DWORD handleCount,
+                     const HANDLE *pHandles,
+                     DWORD *pIndex);
 
     END_INTERFACE
 } IDebugApplication11032Vtbl;
@@ -620,21 +620,21 @@ MIDL_INTERFACE("2039d958-4eeb-496a-87bb-2e5201eadeef")
 IDebugApplication11064 : public IRemoteDebugApplication110
 {
     virtual HRESULT STDMETHODCALLTYPE SynchronousCallInMainThread(
-        IDebugThreadCall64 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3) = 0;
+                     IDebugThreadCall64 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AsynchronousCallInMainThread(
-        IDebugThreadCall64 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3) = 0;
+                     IDebugThreadCall64 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CallableWaitForHandles(
-        DWORD handleCount,
-        const HANDLE *pHandles,
-        DWORD *pIndex) = 0;
+                     DWORD handleCount,
+                     const HANDLE *pHandles,
+                     DWORD *pIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -646,50 +646,50 @@ typedef struct IDebugApplication11064Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplication11064 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplication11064 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplication11064 *This);
+                     IDebugApplication11064 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplication11064 *This);
+                     IDebugApplication11064 *This);
 
     /*** IRemoteDebugApplication110 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetDebuggerOptions)(
-        IDebugApplication11064 *This,
-        enum SCRIPT_DEBUGGER_OPTIONS mask,
-        enum SCRIPT_DEBUGGER_OPTIONS value);
+                     IDebugApplication11064 *This,
+                     enum SCRIPT_DEBUGGER_OPTIONS mask,
+                     enum SCRIPT_DEBUGGER_OPTIONS value);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentDebuggerOptions)(
-        IDebugApplication11064 *This,
-        enum SCRIPT_DEBUGGER_OPTIONS *pCurrentOptions);
+                     IDebugApplication11064 *This,
+                     enum SCRIPT_DEBUGGER_OPTIONS *pCurrentOptions);
 
     HRESULT (STDMETHODCALLTYPE *GetMainThread)(
-        IDebugApplication11064 *This,
-        IRemoteDebugApplicationThread **ppThread);
+                     IDebugApplication11064 *This,
+                     IRemoteDebugApplicationThread **ppThread);
 
     /*** IDebugApplication11064 methods ***/
     HRESULT (STDMETHODCALLTYPE *SynchronousCallInMainThread)(
-        IDebugApplication11064 *This,
-        IDebugThreadCall64 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3);
+                     IDebugApplication11064 *This,
+                     IDebugThreadCall64 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3);
 
     HRESULT (STDMETHODCALLTYPE *AsynchronousCallInMainThread)(
-        IDebugApplication11064 *This,
-        IDebugThreadCall64 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3);
+                     IDebugApplication11064 *This,
+                     IDebugThreadCall64 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3);
 
     HRESULT (STDMETHODCALLTYPE *CallableWaitForHandles)(
-        IDebugApplication11064 *This,
-        DWORD handleCount,
-        const HANDLE *pHandles,
-        DWORD *pIndex);
+                     IDebugApplication11064 *This,
+                     DWORD handleCount,
+                     const HANDLE *pHandles,
+                     DWORD *pIndex);
 
     END_INTERFACE
 } IDebugApplication11064Vtbl;
@@ -763,8 +763,8 @@ MIDL_INTERFACE("16ff3a42-a5f5-432b-b625-8e8e16f57e15")
 IWebAppDiagnosticsObjectInitialization : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        HANDLE_PTR hPassedHandle,
-        IUnknown *pDebugApplication) = 0;
+                     HANDLE_PTR hPassedHandle,
+                     IUnknown *pDebugApplication) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -776,21 +776,21 @@ typedef struct IWebAppDiagnosticsObjectInitializationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWebAppDiagnosticsObjectInitialization *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWebAppDiagnosticsObjectInitialization *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWebAppDiagnosticsObjectInitialization *This);
+                     IWebAppDiagnosticsObjectInitialization *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWebAppDiagnosticsObjectInitialization *This);
+                     IWebAppDiagnosticsObjectInitialization *This);
 
     /*** IWebAppDiagnosticsObjectInitialization methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWebAppDiagnosticsObjectInitialization *This,
-        HANDLE_PTR hPassedHandle,
-        IUnknown *pDebugApplication);
+                     IWebAppDiagnosticsObjectInitialization *This,
+                     HANDLE_PTR hPassedHandle,
+                     IUnknown *pDebugApplication);
 
     END_INTERFACE
 } IWebAppDiagnosticsObjectInitializationVtbl;
@@ -842,13 +842,13 @@ MIDL_INTERFACE("73a3f82a-0fe9-4b33-ba3b-fe095f697e0a")
 IActiveScriptWinRTErrorDebug : public IActiveScriptError
 {
     virtual HRESULT STDMETHODCALLTYPE GetRestrictedErrorString(
-        BSTR *errorString) = 0;
+                     BSTR *errorString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRestrictedErrorReference(
-        BSTR *referenceString) = 0;
+                     BSTR *referenceString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCapabilitySid(
-        BSTR *capabilitySid) = 0;
+                     BSTR *capabilitySid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -860,43 +860,43 @@ typedef struct IActiveScriptWinRTErrorDebugVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptWinRTErrorDebug *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptWinRTErrorDebug *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptWinRTErrorDebug *This);
+                     IActiveScriptWinRTErrorDebug *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptWinRTErrorDebug *This);
+                     IActiveScriptWinRTErrorDebug *This);
 
     /*** IActiveScriptError methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExceptionInfo)(
-        IActiveScriptWinRTErrorDebug *This,
-        EXCEPINFO *pexcepinfo);
+                     IActiveScriptWinRTErrorDebug *This,
+                     EXCEPINFO *pexcepinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetSourcePosition)(
-        IActiveScriptWinRTErrorDebug *This,
-        DWORD *pdwSourceContext,
-        ULONG *pulLineNumber,
-        LONG *plCharacterPosition);
+                     IActiveScriptWinRTErrorDebug *This,
+                     DWORD *pdwSourceContext,
+                     ULONG *pulLineNumber,
+                     LONG *plCharacterPosition);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceLineText)(
-        IActiveScriptWinRTErrorDebug *This,
-        BSTR *pbstrSourceLine);
+                     IActiveScriptWinRTErrorDebug *This,
+                     BSTR *pbstrSourceLine);
 
     /*** IActiveScriptWinRTErrorDebug methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRestrictedErrorString)(
-        IActiveScriptWinRTErrorDebug *This,
-        BSTR *errorString);
+                     IActiveScriptWinRTErrorDebug *This,
+                     BSTR *errorString);
 
     HRESULT (STDMETHODCALLTYPE *GetRestrictedErrorReference)(
-        IActiveScriptWinRTErrorDebug *This,
-        BSTR *referenceString);
+                     IActiveScriptWinRTErrorDebug *This,
+                     BSTR *referenceString);
 
     HRESULT (STDMETHODCALLTYPE *GetCapabilitySid)(
-        IActiveScriptWinRTErrorDebug *This,
-        BSTR *capabilitySid);
+                     IActiveScriptWinRTErrorDebug *This,
+                     BSTR *capabilitySid);
 
     END_INTERFACE
 } IActiveScriptWinRTErrorDebugVtbl;
@@ -971,7 +971,7 @@ MIDL_INTERFACE("516e42b6-89a8-4530-937b-5f0708431442")
 IActiveScriptErrorDebug110 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetExceptionThrownKind(
-        SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND *pExceptionKind) = 0;
+                     SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND *pExceptionKind) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -983,20 +983,20 @@ typedef struct IActiveScriptErrorDebug110Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptErrorDebug110 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptErrorDebug110 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptErrorDebug110 *This);
+                     IActiveScriptErrorDebug110 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptErrorDebug110 *This);
+                     IActiveScriptErrorDebug110 *This);
 
     /*** IActiveScriptErrorDebug110 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExceptionThrownKind)(
-        IActiveScriptErrorDebug110 *This,
-        SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND *pExceptionKind);
+                     IActiveScriptErrorDebug110 *This,
+                     SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND *pExceptionKind);
 
     END_INTERFACE
 } IActiveScriptErrorDebug110Vtbl;
@@ -1048,16 +1048,16 @@ MIDL_INTERFACE("84e5e468-d5da-48a8-83f4-40366429007b")
 IDebugApplicationThreadEvents110 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnSuspendForBreakPoint(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnResumeFromBreakPoint(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnThreadRequestComplete(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnBeginThreadRequest(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1069,28 +1069,28 @@ typedef struct IDebugApplicationThreadEvents110Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplicationThreadEvents110 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplicationThreadEvents110 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplicationThreadEvents110 *This);
+                     IDebugApplicationThreadEvents110 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplicationThreadEvents110 *This);
+                     IDebugApplicationThreadEvents110 *This);
 
     /*** IDebugApplicationThreadEvents110 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnSuspendForBreakPoint)(
-        IDebugApplicationThreadEvents110 *This);
+                     IDebugApplicationThreadEvents110 *This);
 
     HRESULT (STDMETHODCALLTYPE *OnResumeFromBreakPoint)(
-        IDebugApplicationThreadEvents110 *This);
+                     IDebugApplicationThreadEvents110 *This);
 
     HRESULT (STDMETHODCALLTYPE *OnThreadRequestComplete)(
-        IDebugApplicationThreadEvents110 *This);
+                     IDebugApplicationThreadEvents110 *This);
 
     HRESULT (STDMETHODCALLTYPE *OnBeginThreadRequest)(
-        IDebugApplicationThreadEvents110 *This);
+                     IDebugApplicationThreadEvents110 *This);
 
     END_INTERFACE
 } IDebugApplicationThreadEvents110Vtbl;
@@ -1154,19 +1154,19 @@ MIDL_INTERFACE("2194ac5c-6561-404a-a2e9-f57d72de3702")
 IDebugApplicationThread11032 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetActiveThreadRequestCount(
-        UINT *puiThreadRequests) = 0;
+                     UINT *puiThreadRequests) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSuspendedForBreakPoint(
-        WINBOOL *pfIsSuspended) = 0;
+                     WINBOOL *pfIsSuspended) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsThreadCallable(
-        WINBOOL *pfIsCallable) = 0;
+                     WINBOOL *pfIsCallable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AsynchronousCallIntoThread(
-        IDebugThreadCall32 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3) = 0;
+                     IDebugThreadCall32 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1178,35 +1178,35 @@ typedef struct IDebugApplicationThread11032Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplicationThread11032 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplicationThread11032 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplicationThread11032 *This);
+                     IDebugApplicationThread11032 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplicationThread11032 *This);
+                     IDebugApplicationThread11032 *This);
 
     /*** IDebugApplicationThread11032 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetActiveThreadRequestCount)(
-        IDebugApplicationThread11032 *This,
-        UINT *puiThreadRequests);
+                     IDebugApplicationThread11032 *This,
+                     UINT *puiThreadRequests);
 
     HRESULT (STDMETHODCALLTYPE *IsSuspendedForBreakPoint)(
-        IDebugApplicationThread11032 *This,
-        WINBOOL *pfIsSuspended);
+                     IDebugApplicationThread11032 *This,
+                     WINBOOL *pfIsSuspended);
 
     HRESULT (STDMETHODCALLTYPE *IsThreadCallable)(
-        IDebugApplicationThread11032 *This,
-        WINBOOL *pfIsCallable);
+                     IDebugApplicationThread11032 *This,
+                     WINBOOL *pfIsCallable);
 
     HRESULT (STDMETHODCALLTYPE *AsynchronousCallIntoThread)(
-        IDebugApplicationThread11032 *This,
-        IDebugThreadCall32 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3);
+                     IDebugApplicationThread11032 *This,
+                     IDebugThreadCall32 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3);
 
     END_INTERFACE
 } IDebugApplicationThread11032Vtbl;
@@ -1270,19 +1270,19 @@ MIDL_INTERFACE("420aa4cc-efd8-4dac-983b-47127826917d")
 IDebugApplicationThread11064 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetActiveThreadRequestCount(
-        UINT *puiThreadRequests) = 0;
+                     UINT *puiThreadRequests) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSuspendedForBreakPoint(
-        WINBOOL *pfIsSuspended) = 0;
+                     WINBOOL *pfIsSuspended) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsThreadCallable(
-        WINBOOL *pfIsCallable) = 0;
+                     WINBOOL *pfIsCallable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AsynchronousCallIntoThread(
-        IDebugThreadCall64 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3) = 0;
+                     IDebugThreadCall64 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1294,35 +1294,35 @@ typedef struct IDebugApplicationThread11064Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplicationThread11064 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplicationThread11064 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplicationThread11064 *This);
+                     IDebugApplicationThread11064 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplicationThread11064 *This);
+                     IDebugApplicationThread11064 *This);
 
     /*** IDebugApplicationThread11064 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetActiveThreadRequestCount)(
-        IDebugApplicationThread11064 *This,
-        UINT *puiThreadRequests);
+                     IDebugApplicationThread11064 *This,
+                     UINT *puiThreadRequests);
 
     HRESULT (STDMETHODCALLTYPE *IsSuspendedForBreakPoint)(
-        IDebugApplicationThread11064 *This,
-        WINBOOL *pfIsSuspended);
+                     IDebugApplicationThread11064 *This,
+                     WINBOOL *pfIsSuspended);
 
     HRESULT (STDMETHODCALLTYPE *IsThreadCallable)(
-        IDebugApplicationThread11064 *This,
-        WINBOOL *pfIsCallable);
+                     IDebugApplicationThread11064 *This,
+                     WINBOOL *pfIsCallable);
 
     HRESULT (STDMETHODCALLTYPE *AsynchronousCallIntoThread)(
-        IDebugApplicationThread11064 *This,
-        IDebugThreadCall64 *pptc,
-        DWORD_PTR dwParam1,
-        DWORD_PTR dwParam2,
-        DWORD_PTR dwParam3);
+                     IDebugApplicationThread11064 *This,
+                     IDebugThreadCall64 *pptc,
+                     DWORD_PTR dwParam1,
+                     DWORD_PTR dwParam2,
+                     DWORD_PTR dwParam3);
 
     END_INTERFACE
 } IDebugApplicationThread11064Vtbl;
@@ -1386,10 +1386,10 @@ MIDL_INTERFACE("2f69c611-6b14-47e8-9260-4bb7c52f504b")
 IRemoteDebugCriticalErrorEvent110 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetErrorInfo(
-        BSTR *pbstrSource,
-        int *pMessageId,
-        BSTR *pbstrMessage,
-        IDebugDocumentContext **ppLocation) = 0;
+                     BSTR *pbstrSource,
+                     int *pMessageId,
+                     BSTR *pbstrMessage,
+                     IDebugDocumentContext **ppLocation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1401,23 +1401,23 @@ typedef struct IRemoteDebugCriticalErrorEvent110Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRemoteDebugCriticalErrorEvent110 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRemoteDebugCriticalErrorEvent110 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRemoteDebugCriticalErrorEvent110 *This);
+                     IRemoteDebugCriticalErrorEvent110 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRemoteDebugCriticalErrorEvent110 *This);
+                     IRemoteDebugCriticalErrorEvent110 *This);
 
     /*** IRemoteDebugCriticalErrorEvent110 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetErrorInfo)(
-        IRemoteDebugCriticalErrorEvent110 *This,
-        BSTR *pbstrSource,
-        int *pMessageId,
-        BSTR *pbstrMessage,
-        IDebugDocumentContext **ppLocation);
+                     IRemoteDebugCriticalErrorEvent110 *This,
+                     BSTR *pbstrSource,
+                     int *pMessageId,
+                     BSTR *pbstrMessage,
+                     IDebugDocumentContext **ppLocation);
 
     END_INTERFACE
 } IRemoteDebugCriticalErrorEvent110Vtbl;
@@ -1460,10 +1460,10 @@ static FORCEINLINE HRESULT IRemoteDebugCriticalErrorEvent110_GetErrorInfo(IRemot
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

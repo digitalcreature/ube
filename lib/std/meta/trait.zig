@@ -16,34 +16,34 @@ pub const TraitFn = fn (type) bool;
 
 pub fn multiTrait(comptime traits: anytype) TraitFn {
     const Closure = struct {
-        pub fn trait(comptime T: type) bool {
-            inline for (traits) |t|
-                if (!t(T)) return false;
-            return true;
-        }
+                     pub fn trait(comptime T: type) bool {
+                                      inline for (traits) |t|
+                                          if (!t(T)) return false;
+                                      return true;
+                     }
     };
     return Closure.trait;
 }
 
 test "std.meta.trait.multiTrait" {
     const Vector2 = struct {
-        const MyType = @This();
+                     const MyType = @This();
 
-        x: u8,
-        y: u8,
+                     x: u8,
+                     y: u8,
 
-        pub fn add(self: MyType, other: MyType) MyType {
-            return MyType{
-                .x = self.x + other.x,
-                .y = self.y + other.y,
-            };
-        }
+                     pub fn add(self: MyType, other: MyType) MyType {
+                                      return MyType{
+                                          .x = self.x + other.x,
+                                          .y = self.y + other.y,
+                                      };
+                     }
     };
 
     const isVector = multiTrait(.{
-        hasFn("add"),
-        hasField("x"),
-        hasField("y"),
+                     hasFn("add"),
+                     hasField("x"),
+                     hasField("y"),
     });
     testing.expect(isVector(Vector2));
     testing.expect(!isVector(u8));
@@ -51,19 +51,19 @@ test "std.meta.trait.multiTrait" {
 
 pub fn hasFn(comptime name: []const u8) TraitFn {
     const Closure = struct {
-        pub fn trait(comptime T: type) bool {
-            if (!comptime isContainer(T)) return false;
-            if (!comptime @hasDecl(T, name)) return false;
-            const DeclType = @TypeOf(@field(T, name));
-            return @typeInfo(DeclType) == .Fn;
-        }
+                     pub fn trait(comptime T: type) bool {
+                                      if (!comptime isContainer(T)) return false;
+                                      if (!comptime @hasDecl(T, name)) return false;
+                                      const DeclType = @TypeOf(@field(T, name));
+                                      return @typeInfo(DeclType) == .Fn;
+                     }
     };
     return Closure.trait;
 }
 
 test "std.meta.trait.hasFn" {
     const TestStruct = struct {
-        pub fn useless() void {}
+                     pub fn useless() void {}
     };
 
     testing.expect(hasFn("useless")(TestStruct));
@@ -73,27 +73,27 @@ test "std.meta.trait.hasFn" {
 
 pub fn hasField(comptime name: []const u8) TraitFn {
     const Closure = struct {
-        pub fn trait(comptime T: type) bool {
-            const fields = switch (@typeInfo(T)) {
-                .Struct => |s| s.fields,
-                .Union => |u| u.fields,
-                .Enum => |e| e.fields,
-                else => return false,
-            };
+                     pub fn trait(comptime T: type) bool {
+                                      const fields = switch (@typeInfo(T)) {
+                                          .Struct => |s| s.fields,
+                                          .Union => |u| u.fields,
+                                          .Enum => |e| e.fields,
+                                          else => return false,
+                                      };
 
-            inline for (fields) |field| {
-                if (mem.eql(u8, field.name, name)) return true;
-            }
+                                      inline for (fields) |field| {
+                                          if (mem.eql(u8, field.name, name)) return true;
+                                      }
 
-            return false;
-        }
+                                      return false;
+                     }
     };
     return Closure.trait;
 }
 
 test "std.meta.trait.hasField" {
     const TestStruct = struct {
-        value: u32,
+                     value: u32,
     };
 
     testing.expect(hasField("value")(TestStruct));
@@ -105,9 +105,9 @@ test "std.meta.trait.hasField" {
 
 pub fn is(comptime id: builtin.TypeId) TraitFn {
     const Closure = struct {
-        pub fn trait(comptime T: type) bool {
-            return id == @typeInfo(T);
-        }
+                     pub fn trait(comptime T: type) bool {
+                                      return id == @typeInfo(T);
+                     }
     };
     return Closure.trait;
 }
@@ -122,10 +122,10 @@ test "std.meta.trait.is" {
 
 pub fn isPtrTo(comptime id: builtin.TypeId) TraitFn {
     const Closure = struct {
-        pub fn trait(comptime T: type) bool {
-            if (!comptime isSingleItemPtr(T)) return false;
-            return id == @typeInfo(meta.Child(T));
-        }
+                     pub fn trait(comptime T: type) bool {
+                                      if (!comptime isSingleItemPtr(T)) return false;
+                                      return id == @typeInfo(meta.Child(T));
+                     }
     };
     return Closure.trait;
 }
@@ -138,10 +138,10 @@ test "std.meta.trait.isPtrTo" {
 
 pub fn isSliceOf(comptime id: builtin.TypeId) TraitFn {
     const Closure = struct {
-        pub fn trait(comptime T: type) bool {
-            if (!comptime isSlice(T)) return false;
-            return id == @typeInfo(meta.Child(T));
-        }
+                     pub fn trait(comptime T: type) bool {
+                                      if (!comptime isSlice(T)) return false;
+                                      return id == @typeInfo(meta.Child(T));
+                     }
     };
     return Closure.trait;
 }
@@ -159,10 +159,10 @@ test "std.meta.trait.isSliceOf" {
 //  Fns yet. Should be isExternType?
 pub fn isExtern(comptime T: type) bool {
     return switch (@typeInfo(T)) {
-        .Struct => |s| s.layout == .Extern,
-        .Union => |u| u.layout == .Extern,
-        .Enum => |e| e.layout == .Extern,
-        else => false,
+                     .Struct => |s| s.layout == .Extern,
+                     .Union => |u| u.layout == .Extern,
+                     .Enum => |e| e.layout == .Extern,
+                     else => false,
     };
 }
 
@@ -177,10 +177,10 @@ test "std.meta.trait.isExtern" {
 
 pub fn isPacked(comptime T: type) bool {
     return switch (@typeInfo(T)) {
-        .Struct => |s| s.layout == .Packed,
-        .Union => |u| u.layout == .Packed,
-        .Enum => |e| e.layout == .Packed,
-        else => false,
+                     .Struct => |s| s.layout == .Packed,
+                     .Union => |u| u.layout == .Packed,
+                     .Enum => |e| e.layout == .Packed,
+                     else => false,
     };
 }
 
@@ -195,8 +195,8 @@ test "std.meta.trait.isPacked" {
 
 pub fn isUnsignedInt(comptime T: type) bool {
     return switch (@typeInfo(T)) {
-        .Int => |i| !i.is_signed,
-        else => false,
+                     .Int => |i| !i.is_signed,
+                     else => false,
     };
 }
 
@@ -209,9 +209,9 @@ test "isUnsignedInt" {
 
 pub fn isSignedInt(comptime T: type) bool {
     return switch (@typeInfo(T)) {
-        .ComptimeInt => true,
-        .Int => |i| i.is_signed,
-        else => false,
+                     .ComptimeInt => true,
+                     .Int => |i| i.is_signed,
+                     else => false,
     };
 }
 
@@ -224,7 +224,7 @@ test "isSignedInt" {
 
 pub fn isSingleItemPtr(comptime T: type) bool {
     if (comptime is(.Pointer)(T)) {
-        return @typeInfo(T).Pointer.size == .One;
+                     return @typeInfo(T).Pointer.size == .One;
     }
     return false;
 }
@@ -239,7 +239,7 @@ test "std.meta.trait.isSingleItemPtr" {
 
 pub fn isManyItemPtr(comptime T: type) bool {
     if (comptime is(.Pointer)(T)) {
-        return @typeInfo(T).Pointer.size == .Many;
+                     return @typeInfo(T).Pointer.size == .Many;
     }
     return false;
 }
@@ -254,7 +254,7 @@ test "std.meta.trait.isManyItemPtr" {
 
 pub fn isSlice(comptime T: type) bool {
     if (comptime is(.Pointer)(T)) {
-        return @typeInfo(T).Pointer.size == .Slice;
+                     return @typeInfo(T).Pointer.size == .Slice;
     }
     return false;
 }
@@ -269,10 +269,10 @@ test "std.meta.trait.isSlice" {
 
 pub fn isIndexable(comptime T: type) bool {
     if (comptime is(.Pointer)(T)) {
-        if (@typeInfo(T).Pointer.size == .One) {
-            return (comptime is(.Array)(meta.Child(T)));
-        }
-        return true;
+                     if (@typeInfo(T).Pointer.size == .One) {
+                                      return (comptime is(.Array)(meta.Child(T)));
+                     }
+                     return true;
     }
     return comptime is(.Array)(T) or is(.Vector)(T) or isTuple(T);
 }
@@ -293,14 +293,14 @@ test "std.meta.trait.isIndexable" {
 
 pub fn isNumber(comptime T: type) bool {
     return switch (@typeInfo(T)) {
-        .Int, .Float, .ComptimeInt, .ComptimeFloat => true,
-        else => false,
+                     .Int, .Float, .ComptimeInt, .ComptimeFloat => true,
+                     else => false,
     };
 }
 
 test "std.meta.trait.isNumber" {
     const NotANumber = struct {
-        number: u8,
+                     number: u8,
     };
 
     testing.expect(isNumber(u32));
@@ -328,19 +328,19 @@ test "std.meta.trait.isConstPtr" {
 
 pub fn isContainer(comptime T: type) bool {
     return switch (@typeInfo(T)) {
-        .Struct, .Union, .Enum => true,
-        else => false,
+                     .Struct, .Union, .Enum => true,
+                     else => false,
     };
 }
 
 test "std.meta.trait.isContainer" {
     const TestStruct = struct {};
     const TestUnion = union {
-        a: void,
+                     a: void,
     };
     const TestEnum = enum {
-        A,
-        B,
+                     A,
+                     B,
     };
 
     testing.expect(isContainer(TestStruct));
@@ -364,8 +364,8 @@ test "std.meta.trait.isTuple" {
 
 pub fn hasDecls(comptime T: type, comptime names: anytype) bool {
     inline for (names) |name| {
-        if (!@hasDecl(T, name))
-            return false;
+                     if (!@hasDecl(T, name))
+                                      return false;
     }
     return true;
 }
@@ -373,10 +373,10 @@ pub fn hasDecls(comptime T: type, comptime names: anytype) bool {
 test "std.meta.trait.hasDecls" {
     const TestStruct1 = struct {};
     const TestStruct2 = struct {
-        pub var a: u32;
-        pub var b: u32;
-        c: bool,
-        pub fn useless() void {}
+                     pub var a: u32;
+                     pub var b: u32;
+                     c: bool,
+                     pub fn useless() void {}
     };
 
     const tuple = .{ "a", "b", "c" };
@@ -390,8 +390,8 @@ test "std.meta.trait.hasDecls" {
 
 pub fn hasFields(comptime T: type, comptime names: anytype) bool {
     inline for (names) |name| {
-        if (!@hasField(T, name))
-            return false;
+                     if (!@hasField(T, name))
+                                      return false;
     }
     return true;
 }
@@ -399,10 +399,10 @@ pub fn hasFields(comptime T: type, comptime names: anytype) bool {
 test "std.meta.trait.hasFields" {
     const TestStruct1 = struct {};
     const TestStruct2 = struct {
-        a: u32,
-        b: u32,
-        c: bool,
-        pub fn useless() void {}
+                     a: u32,
+                     b: u32,
+                     c: bool,
+                     pub fn useless() void {}
     };
 
     const tuple = .{ "a", "b", "c" };
@@ -416,8 +416,8 @@ test "std.meta.trait.hasFields" {
 
 pub fn hasFunctions(comptime T: type, comptime names: anytype) bool {
     inline for (names) |name| {
-        if (!hasFn(name)(T))
-            return false;
+                     if (!hasFn(name)(T))
+                                      return false;
     }
     return true;
 }
@@ -425,8 +425,8 @@ pub fn hasFunctions(comptime T: type, comptime names: anytype) bool {
 test "std.meta.trait.hasFunctions" {
     const TestStruct1 = struct {};
     const TestStruct2 = struct {
-        pub fn a() void {}
-        fn b() void {}
+                     pub fn a() void {}
+                     fn b() void {}
     };
 
     const tuple = .{ "a", "b", "c" };
@@ -441,54 +441,54 @@ test "std.meta.trait.hasFunctions" {
 /// In other words, `T` has no unused bits and no padding.
 pub fn hasUniqueRepresentation(comptime T: type) bool {
     switch (@typeInfo(T)) {
-        else => return false, // TODO can we know if it's true for some of these types ?
+                     else => return false, // TODO can we know if it's true for some of these types ?
 
-        .AnyFrame,
-        .Bool,
-        .BoundFn,
-        .Enum,
-        .ErrorSet,
-        .Fn,
-        .Int, // TODO check that it is still true
-        .Pointer,
-        => return true,
+                     .AnyFrame,
+                     .Bool,
+                     .BoundFn,
+                     .Enum,
+                     .ErrorSet,
+                     .Fn,
+                     .Int, // TODO check that it is still true
+                     .Pointer,
+                     => return true,
 
-        .Array => |info| return comptime hasUniqueRepresentation(info.child),
+                     .Array => |info| return comptime hasUniqueRepresentation(info.child),
 
-        .Struct => |info| {
-            var sum_size = @as(usize, 0);
+                     .Struct => |info| {
+                                      var sum_size = @as(usize, 0);
 
-            inline for (info.fields) |field| {
-                const FieldType = field.field_type;
-                if (comptime !hasUniqueRepresentation(FieldType)) return false;
-                sum_size += @sizeOf(FieldType);
-            }
+                                      inline for (info.fields) |field| {
+                                          const FieldType = field.field_type;
+                                          if (comptime !hasUniqueRepresentation(FieldType)) return false;
+                                          sum_size += @sizeOf(FieldType);
+                                      }
 
-            return @sizeOf(T) == sum_size;
-        },
+                                      return @sizeOf(T) == sum_size;
+                     },
 
-        .Vector => |info| return comptime hasUniqueRepresentation(info.child),
+                     .Vector => |info| return comptime hasUniqueRepresentation(info.child),
     }
 }
 
 test "std.meta.trait.hasUniqueRepresentation" {
     const TestStruct1 = struct {
-        a: u32,
-        b: u32,
+                     a: u32,
+                     b: u32,
     };
 
     testing.expect(hasUniqueRepresentation(TestStruct1));
 
     const TestStruct2 = struct {
-        a: u32,
-        b: u16,
+                     a: u32,
+                     b: u16,
     };
 
     testing.expect(!hasUniqueRepresentation(TestStruct2));
 
     const TestStruct3 = struct {
-        a: u32,
-        b: u32,
+                     a: u32,
+                     b: u32,
     };
 
     testing.expect(hasUniqueRepresentation(TestStruct3));

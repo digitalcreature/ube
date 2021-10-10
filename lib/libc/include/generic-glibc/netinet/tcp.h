@@ -62,13 +62,13 @@
 #define TCP_FASTOPEN		 23 /* Enable FastOpen on listeners */
 #define TCP_TIMESTAMP		 24 /* TCP time stamp */
 #define TCP_NOTSENT_LOWAT	 25 /* Limit number of unsent bytes in
-				       write queue.  */
+				                    write queue.  */
 #define TCP_CC_INFO		 26 /* Get Congestion Control
-				       (optional) info.  */
+				                    (optional) info.  */
 #define TCP_SAVE_SYN		 27 /* Record SYN headers for new
-				       connections.  */
+				                    connections.  */
 #define TCP_SAVED_SYN		 28 /* Get SYN headers recorded for
-				       connection.  */
+				                    connection.  */
 #define TCP_REPAIR_WINDOW	 29 /* Get/set window parameters.  */
 #define TCP_FASTOPEN_CONNECT	 30 /* Attempt FastOpen with connect.  */
 #define TCP_ULP			 31 /* Attach a ULP to a TCP connection.  */
@@ -77,7 +77,7 @@
 #define TCP_FASTOPEN_NO_COOKIE	 34 /* Enable TFO without a TFO cookie.  */
 #define TCP_ZEROCOPY_RECEIVE	 35
 #define TCP_INQ			 36 /* Notify bytes available to read
-				       as a cmsg on read.  */
+				                    as a cmsg on read.  */
 #define TCP_CM_INQ		 TCP_INQ
 #define TCP_TX_DELAY		 37 /* Delay outgoing packets by XX usec.  */
 
@@ -99,8 +99,8 @@ struct tcphdr
   {
     __extension__ union
     {
-      struct
-      {
+                   struct
+                   {
 	uint16_t th_sport;	/* source port */
 	uint16_t th_dport;	/* destination port */
 	tcp_seq th_seq;		/* sequence number */
@@ -123,9 +123,9 @@ struct tcphdr
 	uint16_t th_win;	/* window */
 	uint16_t th_sum;	/* checksum */
 	uint16_t th_urp;	/* urgent pointer */
-      };
-      struct
-      {
+                   };
+                   struct
+                   {
 	uint16_t source;
 	uint16_t dest;
 	uint32_t seq;
@@ -156,7 +156,7 @@ struct tcphdr
 	uint16_t window;
 	uint16_t check;
 	uint16_t urg_ptr;
-      };
+                   };
     };
 };
 

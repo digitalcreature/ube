@@ -38,21 +38,21 @@ typedef struct _GamutShellTriangle {
 } GamutShellTriangle;
 
 typedef struct _GamutShell {
-  FLOAT                                    JMin;
-  FLOAT                                    JMax;
-  UINT                                     cVertices;
-  UINT                                     cTriangles;
-  JabColorF                                *pVertices;
-  GamutShellTriangle                       *pTriangles;
+  FLOAT                                                                                                                  JMin;
+  FLOAT                                                                                                                  JMax;
+  UINT                                                                                                                   cVertices;
+  UINT                                                                                                                   cTriangles;
+  JabColorF                                                                                                 *pVertices;
+  GamutShellTriangle                                                              *pTriangles;
 } GamutShell;
 
 typedef struct _GamutBoundaryDescription {
-  PrimaryJabColors                      primaries;
-  UINT                                 cNeutralSamples
-  JabColorF                            *pNeutralSamples;
-  GamutShell                           *pReferenceShell;
-  GamutShell                           *pPlausibleShell;
-  GamutShell                           *pPossibleShell;
+  PrimaryJabColors                                                             primaries;
+  UINT                                                                                                  cNeutralSamples
+  JabColorF                                                                                *pNeutralSamples;
+  GamutShell                                                                               *pReferenceShell;
+  GamutShell                                                                               *pPlausibleShell;
+  GamutShell                                                                               *pPossibleShell;
 } GamutBoundaryDescription;
 
 typedef struct _PrimaryJabColors {

@@ -48,10 +48,10 @@
  * based process timing */
 #define PR_GET_TIMING   13
 #define PR_SET_TIMING   14
-# define PR_TIMING_STATISTICAL  0       /* Normal, traditional,
-                                                   statistical process timing */
-# define PR_TIMING_TIMESTAMP    1       /* Accurate timestamp based
-                                                   process timing */
+# define PR_TIMING_STATISTICAL  0                    /* Normal, traditional,
+                                                                                                                                                           statistical process timing */
+# define PR_TIMING_TIMESTAMP    1                    /* Accurate timestamp based
+                                                                                                                                                           process timing */
 
 #define PR_SET_NAME    15		/* Set process name */
 #define PR_GET_NAME    16		/* Get process name */

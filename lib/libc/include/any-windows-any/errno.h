@@ -73,7 +73,7 @@ errno_t __cdecl _get_errno(int *_Value);
 /* Posix thread extensions.  */
 
 #ifndef ENOTSUP
-#define ENOTSUP         129
+#define ENOTSUP                      129
 #endif
 
 /* Extension defined as by report VC 10+ defines error-numbers.  */

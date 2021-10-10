@@ -24,30 +24,30 @@
 
 #define PARPORT_CONTROL_STROBE    0x1
 #define PARPORT_CONTROL_AUTOFD    0x2
-#define PARPORT_CONTROL_INIT      0x4
+#define PARPORT_CONTROL_INIT                   0x4
 #define PARPORT_CONTROL_SELECT    0x8
 
-#define PARPORT_STATUS_ERROR      0x8
+#define PARPORT_STATUS_ERROR                   0x8
 #define PARPORT_STATUS_SELECT     0x10
 #define PARPORT_STATUS_PAPEROUT   0x20
-#define PARPORT_STATUS_ACK        0x40
-#define PARPORT_STATUS_BUSY       0x80
+#define PARPORT_STATUS_ACK                     0x40
+#define PARPORT_STATUS_BUSY                    0x80
 
 /* Type classes for Plug-and-Play probe.  */
 typedef enum {
-	PARPORT_CLASS_LEGACY = 0,       /* Non-IEEE1284 device */
+	PARPORT_CLASS_LEGACY = 0,                    /* Non-IEEE1284 device */
 	PARPORT_CLASS_PRINTER,
 	PARPORT_CLASS_MODEM,
 	PARPORT_CLASS_NET,
-	PARPORT_CLASS_HDC,              /* Hard disk controller */
+	PARPORT_CLASS_HDC,                                        /* Hard disk controller */
 	PARPORT_CLASS_PCMCIA,
-	PARPORT_CLASS_MEDIA,            /* Multimedia device */
-	PARPORT_CLASS_FDC,              /* Floppy disk controller */
+	PARPORT_CLASS_MEDIA,                                      /* Multimedia device */
+	PARPORT_CLASS_FDC,                                        /* Floppy disk controller */
 	PARPORT_CLASS_PORTS,
 	PARPORT_CLASS_SCANNER,
 	PARPORT_CLASS_DIGCAM,
-	PARPORT_CLASS_OTHER,            /* Anything else */
-	PARPORT_CLASS_UNSPEC,           /* No CLS field in ID */
+	PARPORT_CLASS_OTHER,                                      /* Anything else */
+	PARPORT_CLASS_UNSPEC,                        /* No CLS field in ID */
 	PARPORT_CLASS_SCSIADAPTER
 } parport_device_class;
 
@@ -65,18 +65,18 @@ typedef enum {
    Nibble mode, byte mode, ECP, ECPRLE and EPP are their own
    'extensibility request' values.  Others are special.
    'Real' ECP modes must have the IEEE1284_MODE_ECP bit set.  */
-#define IEEE1284_MODE_NIBBLE             0
-#define IEEE1284_MODE_BYTE              (1<<0)
-#define IEEE1284_MODE_COMPAT            (1<<8)
-#define IEEE1284_MODE_BECP              (1<<9) /* Bounded ECP mode */
-#define IEEE1284_MODE_ECP               (1<<4)
-#define IEEE1284_MODE_ECPRLE            (IEEE1284_MODE_ECP | (1<<5))
-#define IEEE1284_MODE_ECPSWE            (1<<10) /* Software-emulated */
-#define IEEE1284_MODE_EPP               (1<<6)
-#define IEEE1284_MODE_EPPSL             (1<<11) /* EPP 1.7 */
-#define IEEE1284_MODE_EPPSWE            (1<<12) /* Software-emulated */
-#define IEEE1284_DEVICEID               (1<<2)  /* This is a flag */
-#define IEEE1284_EXT_LINK               (1<<14) /* This flag causes the
+#define IEEE1284_MODE_NIBBLE                                       0
+#define IEEE1284_MODE_BYTE                                        (1<<0)
+#define IEEE1284_MODE_COMPAT                                      (1<<8)
+#define IEEE1284_MODE_BECP                                        (1<<9) /* Bounded ECP mode */
+#define IEEE1284_MODE_ECP                                         (1<<4)
+#define IEEE1284_MODE_ECPRLE                                      (IEEE1284_MODE_ECP | (1<<5))
+#define IEEE1284_MODE_ECPSWE                                      (1<<10) /* Software-emulated */
+#define IEEE1284_MODE_EPP                                         (1<<6)
+#define IEEE1284_MODE_EPPSL                                       (1<<11) /* EPP 1.7 */
+#define IEEE1284_MODE_EPPSWE                                      (1<<12) /* Software-emulated */
+#define IEEE1284_DEVICEID                                         (1<<2)  /* This is a flag */
+#define IEEE1284_EXT_LINK                                         (1<<14) /* This flag causes the
 						 * extensibility link to
 						 * be requested, using
 						 * bits 0-6. */

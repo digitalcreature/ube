@@ -70,18 +70,18 @@ enum {
 	AUTOFS_IOC_EXPIRE_CMD,
 };
 
-#define AUTOFS_IOC_READY        _IO(AUTOFS_IOCTL, AUTOFS_IOC_READY_CMD)
-#define AUTOFS_IOC_FAIL         _IO(AUTOFS_IOCTL, AUTOFS_IOC_FAIL_CMD)
+#define AUTOFS_IOC_READY                     _IO(AUTOFS_IOCTL, AUTOFS_IOC_READY_CMD)
+#define AUTOFS_IOC_FAIL                      _IO(AUTOFS_IOCTL, AUTOFS_IOC_FAIL_CMD)
 #define AUTOFS_IOC_CATATONIC    _IO(AUTOFS_IOCTL, AUTOFS_IOC_CATATONIC_CMD)
 #define AUTOFS_IOC_PROTOVER     _IOR(AUTOFS_IOCTL, \
 				     AUTOFS_IOC_PROTOVER_CMD, int)
 #define AUTOFS_IOC_SETTIMEOUT32 _IOWR(AUTOFS_IOCTL, \
-				      AUTOFS_IOC_SETTIMEOUT_CMD, \
-				      compat_ulong_t)
+				                   AUTOFS_IOC_SETTIMEOUT_CMD, \
+				                   compat_ulong_t)
 #define AUTOFS_IOC_SETTIMEOUT   _IOWR(AUTOFS_IOCTL, \
-				      AUTOFS_IOC_SETTIMEOUT_CMD, \
-				      unsigned long)
-#define AUTOFS_IOC_EXPIRE       _IOR(AUTOFS_IOCTL, \
+				                   AUTOFS_IOC_SETTIMEOUT_CMD, \
+				                   unsigned long)
+#define AUTOFS_IOC_EXPIRE                    _IOR(AUTOFS_IOCTL, \
 				     AUTOFS_IOC_EXPIRE_CMD, \
 				     struct autofs_packet_expire)
 

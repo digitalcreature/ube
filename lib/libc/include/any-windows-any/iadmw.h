@@ -142,40 +142,40 @@ extern "C"{
 #else
   typedef struct IMSAdminBaseWVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSAdminBaseW *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSAdminBaseW *This);
-      ULONG (WINAPI *Release)(IMSAdminBaseW *This);
-      HRESULT (WINAPI *AddKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *DeleteKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *DeleteChildKeys)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *EnumKeys)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPWSTR pszMDName,DWORD dwMDEnumObjectIndex);
-      HRESULT (WINAPI *CopyKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,WINBOOL bMDOverwriteFlag,WINBOOL bMDCopyFlag);
-      HRESULT (WINAPI *RenameKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPCWSTR pszMDNewName);
-      HRESULT (WINAPI *SetData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData);
-      HRESULT (WINAPI *GetData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD *pdwMDRequiredDataLen);
-      HRESULT (WINAPI *DeleteData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType);
-      HRESULT (WINAPI *EnumData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD dwMDEnumDataIndex,DWORD *pdwMDRequiredDataLen);
-      HRESULT (WINAPI *GetAllData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,DWORD *pdwMDNumDataEntries,DWORD *pdwMDDataSetNumber,DWORD dwMDBufferSize,unsigned char *pbMDBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *DeleteAllData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDUserType,DWORD dwMDDataType);
-      HRESULT (WINAPI *CopyData)(IMSAdminBaseW *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,WINBOOL bMDCopyFlag);
-      HRESULT (WINAPI *GetDataPaths)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType,DWORD dwMDBufferSize,WCHAR *pszBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *OpenKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAccessRequested,DWORD dwMDTimeOut,PMETADATA_HANDLE phMDNewHandle);
-      HRESULT (WINAPI *CloseKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle);
-      HRESULT (WINAPI *ChangePermissions)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,DWORD dwMDTimeOut,DWORD dwMDAccessRequested);
-      HRESULT (WINAPI *SaveData)(IMSAdminBaseW *This);
-      HRESULT (WINAPI *GetHandleInfo)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,PMETADATA_HANDLE_INFO pmdhiInfo);
-      HRESULT (WINAPI *GetSystemChangeNumber)(IMSAdminBaseW *This,DWORD *pdwSystemChangeNumber);
-      HRESULT (WINAPI *GetDataSetNumber)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD *pdwMDDataSetNumber);
-      HRESULT (WINAPI *SetLastChangeTime)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
-      HRESULT (WINAPI *GetLastChangeTime)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
-      HRESULT (WINAPI *KeyExchangePhase1)(IMSAdminBaseW *This);
-      HRESULT (WINAPI *KeyExchangePhase2)(IMSAdminBaseW *This);
-      HRESULT (WINAPI *Backup)(IMSAdminBaseW *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
-      HRESULT (WINAPI *Restore)(IMSAdminBaseW *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
-      HRESULT (WINAPI *EnumBackups)(IMSAdminBaseW *This,LPWSTR pszMDBackupLocation,DWORD *pdwMDVersion,PFILETIME pftMDBackupTime,DWORD dwMDEnumIndex);
-      HRESULT (WINAPI *DeleteBackup)(IMSAdminBaseW *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion);
-      HRESULT (WINAPI *UnmarshalInterface)(IMSAdminBaseW *This,IMSAdminBaseW **piadmbwInterface);
-      HRESULT (WINAPI *GetServerGuid)(IMSAdminBaseW *This);
+                   HRESULT (WINAPI *QueryInterface)(IMSAdminBaseW *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSAdminBaseW *This);
+                   ULONG (WINAPI *Release)(IMSAdminBaseW *This);
+                   HRESULT (WINAPI *AddKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *DeleteKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *DeleteChildKeys)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *EnumKeys)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPWSTR pszMDName,DWORD dwMDEnumObjectIndex);
+                   HRESULT (WINAPI *CopyKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,WINBOOL bMDOverwriteFlag,WINBOOL bMDCopyFlag);
+                   HRESULT (WINAPI *RenameKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPCWSTR pszMDNewName);
+                   HRESULT (WINAPI *SetData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData);
+                   HRESULT (WINAPI *GetData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD *pdwMDRequiredDataLen);
+                   HRESULT (WINAPI *DeleteData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType);
+                   HRESULT (WINAPI *EnumData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD dwMDEnumDataIndex,DWORD *pdwMDRequiredDataLen);
+                   HRESULT (WINAPI *GetAllData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,DWORD *pdwMDNumDataEntries,DWORD *pdwMDDataSetNumber,DWORD dwMDBufferSize,unsigned char *pbMDBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *DeleteAllData)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDUserType,DWORD dwMDDataType);
+                   HRESULT (WINAPI *CopyData)(IMSAdminBaseW *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,WINBOOL bMDCopyFlag);
+                   HRESULT (WINAPI *GetDataPaths)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType,DWORD dwMDBufferSize,WCHAR *pszBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *OpenKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAccessRequested,DWORD dwMDTimeOut,PMETADATA_HANDLE phMDNewHandle);
+                   HRESULT (WINAPI *CloseKey)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle);
+                   HRESULT (WINAPI *ChangePermissions)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,DWORD dwMDTimeOut,DWORD dwMDAccessRequested);
+                   HRESULT (WINAPI *SaveData)(IMSAdminBaseW *This);
+                   HRESULT (WINAPI *GetHandleInfo)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,PMETADATA_HANDLE_INFO pmdhiInfo);
+                   HRESULT (WINAPI *GetSystemChangeNumber)(IMSAdminBaseW *This,DWORD *pdwSystemChangeNumber);
+                   HRESULT (WINAPI *GetDataSetNumber)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD *pdwMDDataSetNumber);
+                   HRESULT (WINAPI *SetLastChangeTime)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
+                   HRESULT (WINAPI *GetLastChangeTime)(IMSAdminBaseW *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
+                   HRESULT (WINAPI *KeyExchangePhase1)(IMSAdminBaseW *This);
+                   HRESULT (WINAPI *KeyExchangePhase2)(IMSAdminBaseW *This);
+                   HRESULT (WINAPI *Backup)(IMSAdminBaseW *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
+                   HRESULT (WINAPI *Restore)(IMSAdminBaseW *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
+                   HRESULT (WINAPI *EnumBackups)(IMSAdminBaseW *This,LPWSTR pszMDBackupLocation,DWORD *pdwMDVersion,PFILETIME pftMDBackupTime,DWORD dwMDEnumIndex);
+                   HRESULT (WINAPI *DeleteBackup)(IMSAdminBaseW *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion);
+                   HRESULT (WINAPI *UnmarshalInterface)(IMSAdminBaseW *This,IMSAdminBaseW **piadmbwInterface);
+                   HRESULT (WINAPI *GetServerGuid)(IMSAdminBaseW *This);
     END_INTERFACE
   } IMSAdminBaseWVtbl;
   struct IMSAdminBaseW {
@@ -298,46 +298,46 @@ extern "C"{
 #else
   typedef struct IMSAdminBase2WVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSAdminBase2W *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSAdminBase2W *This);
-      ULONG (WINAPI *Release)(IMSAdminBase2W *This);
-      HRESULT (WINAPI *AddKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *DeleteKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *DeleteChildKeys)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *EnumKeys)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPWSTR pszMDName,DWORD dwMDEnumObjectIndex);
-      HRESULT (WINAPI *CopyKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,WINBOOL bMDOverwriteFlag,WINBOOL bMDCopyFlag);
-      HRESULT (WINAPI *RenameKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPCWSTR pszMDNewName);
-      HRESULT (WINAPI *SetData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData);
-      HRESULT (WINAPI *GetData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD *pdwMDRequiredDataLen);
-      HRESULT (WINAPI *DeleteData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType);
-      HRESULT (WINAPI *EnumData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD dwMDEnumDataIndex,DWORD *pdwMDRequiredDataLen);
-      HRESULT (WINAPI *GetAllData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,DWORD *pdwMDNumDataEntries,DWORD *pdwMDDataSetNumber,DWORD dwMDBufferSize,unsigned char *pbMDBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *DeleteAllData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDUserType,DWORD dwMDDataType);
-      HRESULT (WINAPI *CopyData)(IMSAdminBase2W *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,WINBOOL bMDCopyFlag);
-      HRESULT (WINAPI *GetDataPaths)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType,DWORD dwMDBufferSize,WCHAR *pszBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *OpenKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAccessRequested,DWORD dwMDTimeOut,PMETADATA_HANDLE phMDNewHandle);
-      HRESULT (WINAPI *CloseKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle);
-      HRESULT (WINAPI *ChangePermissions)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,DWORD dwMDTimeOut,DWORD dwMDAccessRequested);
-      HRESULT (WINAPI *SaveData)(IMSAdminBase2W *This);
-      HRESULT (WINAPI *GetHandleInfo)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,PMETADATA_HANDLE_INFO pmdhiInfo);
-      HRESULT (WINAPI *GetSystemChangeNumber)(IMSAdminBase2W *This,DWORD *pdwSystemChangeNumber);
-      HRESULT (WINAPI *GetDataSetNumber)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD *pdwMDDataSetNumber);
-      HRESULT (WINAPI *SetLastChangeTime)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
-      HRESULT (WINAPI *GetLastChangeTime)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
-      HRESULT (WINAPI *KeyExchangePhase1)(IMSAdminBase2W *This);
-      HRESULT (WINAPI *KeyExchangePhase2)(IMSAdminBase2W *This);
-      HRESULT (WINAPI *Backup)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
-      HRESULT (WINAPI *Restore)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
-      HRESULT (WINAPI *EnumBackups)(IMSAdminBase2W *This,LPWSTR pszMDBackupLocation,DWORD *pdwMDVersion,PFILETIME pftMDBackupTime,DWORD dwMDEnumIndex);
-      HRESULT (WINAPI *DeleteBackup)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion);
-      HRESULT (WINAPI *UnmarshalInterface)(IMSAdminBase2W *This,IMSAdminBaseW **piadmbwInterface);
-      HRESULT (WINAPI *GetServerGuid)(IMSAdminBase2W *This);
-      HRESULT (WINAPI *BackupWithPasswd)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags,LPCWSTR pszPasswd);
-      HRESULT (WINAPI *RestoreWithPasswd)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags,LPCWSTR pszPasswd);
-      HRESULT (WINAPI *Export)(IMSAdminBase2W *This,LPCWSTR pszPasswd,LPCWSTR pszFileName,LPCWSTR pszSourcePath,DWORD dwMDFlags);
-      HRESULT (WINAPI *Import)(IMSAdminBase2W *This,LPCWSTR pszPasswd,LPCWSTR pszFileName,LPCWSTR pszSourcePath,LPCWSTR pszDestPath,DWORD dwMDFlags);
-      HRESULT (WINAPI *RestoreHistory)(IMSAdminBase2W *This,LPCWSTR pszMDHistoryLocation,DWORD dwMDMajorVersion,DWORD dwMDMinorVersion,DWORD dwMDFlags);
-      HRESULT (WINAPI *EnumHistory)(IMSAdminBase2W *This,LPWSTR pszMDHistoryLocation,DWORD *pdwMDMajorVersion,DWORD *pdwMDMinorVersion,PFILETIME pftMDHistoryTime,DWORD dwMDEnumIndex);
+                   HRESULT (WINAPI *QueryInterface)(IMSAdminBase2W *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSAdminBase2W *This);
+                   ULONG (WINAPI *Release)(IMSAdminBase2W *This);
+                   HRESULT (WINAPI *AddKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *DeleteKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *DeleteChildKeys)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *EnumKeys)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPWSTR pszMDName,DWORD dwMDEnumObjectIndex);
+                   HRESULT (WINAPI *CopyKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,WINBOOL bMDOverwriteFlag,WINBOOL bMDCopyFlag);
+                   HRESULT (WINAPI *RenameKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPCWSTR pszMDNewName);
+                   HRESULT (WINAPI *SetData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData);
+                   HRESULT (WINAPI *GetData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD *pdwMDRequiredDataLen);
+                   HRESULT (WINAPI *DeleteData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType);
+                   HRESULT (WINAPI *EnumData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD dwMDEnumDataIndex,DWORD *pdwMDRequiredDataLen);
+                   HRESULT (WINAPI *GetAllData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,DWORD *pdwMDNumDataEntries,DWORD *pdwMDDataSetNumber,DWORD dwMDBufferSize,unsigned char *pbMDBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *DeleteAllData)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDUserType,DWORD dwMDDataType);
+                   HRESULT (WINAPI *CopyData)(IMSAdminBase2W *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,WINBOOL bMDCopyFlag);
+                   HRESULT (WINAPI *GetDataPaths)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType,DWORD dwMDBufferSize,WCHAR *pszBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *OpenKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAccessRequested,DWORD dwMDTimeOut,PMETADATA_HANDLE phMDNewHandle);
+                   HRESULT (WINAPI *CloseKey)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle);
+                   HRESULT (WINAPI *ChangePermissions)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,DWORD dwMDTimeOut,DWORD dwMDAccessRequested);
+                   HRESULT (WINAPI *SaveData)(IMSAdminBase2W *This);
+                   HRESULT (WINAPI *GetHandleInfo)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,PMETADATA_HANDLE_INFO pmdhiInfo);
+                   HRESULT (WINAPI *GetSystemChangeNumber)(IMSAdminBase2W *This,DWORD *pdwSystemChangeNumber);
+                   HRESULT (WINAPI *GetDataSetNumber)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD *pdwMDDataSetNumber);
+                   HRESULT (WINAPI *SetLastChangeTime)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
+                   HRESULT (WINAPI *GetLastChangeTime)(IMSAdminBase2W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
+                   HRESULT (WINAPI *KeyExchangePhase1)(IMSAdminBase2W *This);
+                   HRESULT (WINAPI *KeyExchangePhase2)(IMSAdminBase2W *This);
+                   HRESULT (WINAPI *Backup)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
+                   HRESULT (WINAPI *Restore)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
+                   HRESULT (WINAPI *EnumBackups)(IMSAdminBase2W *This,LPWSTR pszMDBackupLocation,DWORD *pdwMDVersion,PFILETIME pftMDBackupTime,DWORD dwMDEnumIndex);
+                   HRESULT (WINAPI *DeleteBackup)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion);
+                   HRESULT (WINAPI *UnmarshalInterface)(IMSAdminBase2W *This,IMSAdminBaseW **piadmbwInterface);
+                   HRESULT (WINAPI *GetServerGuid)(IMSAdminBase2W *This);
+                   HRESULT (WINAPI *BackupWithPasswd)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags,LPCWSTR pszPasswd);
+                   HRESULT (WINAPI *RestoreWithPasswd)(IMSAdminBase2W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags,LPCWSTR pszPasswd);
+                   HRESULT (WINAPI *Export)(IMSAdminBase2W *This,LPCWSTR pszPasswd,LPCWSTR pszFileName,LPCWSTR pszSourcePath,DWORD dwMDFlags);
+                   HRESULT (WINAPI *Import)(IMSAdminBase2W *This,LPCWSTR pszPasswd,LPCWSTR pszFileName,LPCWSTR pszSourcePath,LPCWSTR pszDestPath,DWORD dwMDFlags);
+                   HRESULT (WINAPI *RestoreHistory)(IMSAdminBase2W *This,LPCWSTR pszMDHistoryLocation,DWORD dwMDMajorVersion,DWORD dwMDMinorVersion,DWORD dwMDFlags);
+                   HRESULT (WINAPI *EnumHistory)(IMSAdminBase2W *This,LPWSTR pszMDHistoryLocation,DWORD *pdwMDMajorVersion,DWORD *pdwMDMinorVersion,PFILETIME pftMDHistoryTime,DWORD dwMDEnumIndex);
     END_INTERFACE
   } IMSAdminBase2WVtbl;
   struct IMSAdminBase2W {
@@ -412,47 +412,47 @@ extern "C"{
 #else
   typedef struct IMSAdminBase3WVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSAdminBase3W *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSAdminBase3W *This);
-      ULONG (WINAPI *Release)(IMSAdminBase3W *This);
-      HRESULT (WINAPI *AddKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *DeleteKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *DeleteChildKeys)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
-      HRESULT (WINAPI *EnumKeys)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPWSTR pszMDName,DWORD dwMDEnumObjectIndex);
-      HRESULT (WINAPI *CopyKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,WINBOOL bMDOverwriteFlag,WINBOOL bMDCopyFlag);
-      HRESULT (WINAPI *RenameKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPCWSTR pszMDNewName);
-      HRESULT (WINAPI *SetData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData);
-      HRESULT (WINAPI *GetData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD *pdwMDRequiredDataLen);
-      HRESULT (WINAPI *DeleteData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType);
-      HRESULT (WINAPI *EnumData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD dwMDEnumDataIndex,DWORD *pdwMDRequiredDataLen);
-      HRESULT (WINAPI *GetAllData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,DWORD *pdwMDNumDataEntries,DWORD *pdwMDDataSetNumber,DWORD dwMDBufferSize,unsigned char *pbMDBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *DeleteAllData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDUserType,DWORD dwMDDataType);
-      HRESULT (WINAPI *CopyData)(IMSAdminBase3W *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,WINBOOL bMDCopyFlag);
-      HRESULT (WINAPI *GetDataPaths)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType,DWORD dwMDBufferSize,WCHAR *pszBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *OpenKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAccessRequested,DWORD dwMDTimeOut,PMETADATA_HANDLE phMDNewHandle);
-      HRESULT (WINAPI *CloseKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle);
-      HRESULT (WINAPI *ChangePermissions)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,DWORD dwMDTimeOut,DWORD dwMDAccessRequested);
-      HRESULT (WINAPI *SaveData)(IMSAdminBase3W *This);
-      HRESULT (WINAPI *GetHandleInfo)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,PMETADATA_HANDLE_INFO pmdhiInfo);
-      HRESULT (WINAPI *GetSystemChangeNumber)(IMSAdminBase3W *This,DWORD *pdwSystemChangeNumber);
-      HRESULT (WINAPI *GetDataSetNumber)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD *pdwMDDataSetNumber);
-      HRESULT (WINAPI *SetLastChangeTime)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
-      HRESULT (WINAPI *GetLastChangeTime)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
-      HRESULT (WINAPI *KeyExchangePhase1)(IMSAdminBase3W *This);
-      HRESULT (WINAPI *KeyExchangePhase2)(IMSAdminBase3W *This);
-      HRESULT (WINAPI *Backup)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
-      HRESULT (WINAPI *Restore)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
-      HRESULT (WINAPI *EnumBackups)(IMSAdminBase3W *This,LPWSTR pszMDBackupLocation,DWORD *pdwMDVersion,PFILETIME pftMDBackupTime,DWORD dwMDEnumIndex);
-      HRESULT (WINAPI *DeleteBackup)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion);
-      HRESULT (WINAPI *UnmarshalInterface)(IMSAdminBase3W *This,IMSAdminBaseW **piadmbwInterface);
-      HRESULT (WINAPI *GetServerGuid)(IMSAdminBase3W *This);
-      HRESULT (WINAPI *BackupWithPasswd)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags,LPCWSTR pszPasswd);
-      HRESULT (WINAPI *RestoreWithPasswd)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags,LPCWSTR pszPasswd);
-      HRESULT (WINAPI *Export)(IMSAdminBase3W *This,LPCWSTR pszPasswd,LPCWSTR pszFileName,LPCWSTR pszSourcePath,DWORD dwMDFlags);
-      HRESULT (WINAPI *Import)(IMSAdminBase3W *This,LPCWSTR pszPasswd,LPCWSTR pszFileName,LPCWSTR pszSourcePath,LPCWSTR pszDestPath,DWORD dwMDFlags);
-      HRESULT (WINAPI *RestoreHistory)(IMSAdminBase3W *This,LPCWSTR pszMDHistoryLocation,DWORD dwMDMajorVersion,DWORD dwMDMinorVersion,DWORD dwMDFlags);
-      HRESULT (WINAPI *EnumHistory)(IMSAdminBase3W *This,LPWSTR pszMDHistoryLocation,DWORD *pdwMDMajorVersion,DWORD *pdwMDMinorVersion,PFILETIME pftMDHistoryTime,DWORD dwMDEnumIndex);
-      HRESULT (WINAPI *GetChildPaths)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD cchMDBufferSize,WCHAR *pszBuffer,DWORD *pcchMDRequiredBufferSize);
+                   HRESULT (WINAPI *QueryInterface)(IMSAdminBase3W *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSAdminBase3W *This);
+                   ULONG (WINAPI *Release)(IMSAdminBase3W *This);
+                   HRESULT (WINAPI *AddKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *DeleteKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *DeleteChildKeys)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath);
+                   HRESULT (WINAPI *EnumKeys)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPWSTR pszMDName,DWORD dwMDEnumObjectIndex);
+                   HRESULT (WINAPI *CopyKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,WINBOOL bMDOverwriteFlag,WINBOOL bMDCopyFlag);
+                   HRESULT (WINAPI *RenameKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,LPCWSTR pszMDNewName);
+                   HRESULT (WINAPI *SetData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData);
+                   HRESULT (WINAPI *GetData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD *pdwMDRequiredDataLen);
+                   HRESULT (WINAPI *DeleteData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType);
+                   HRESULT (WINAPI *EnumData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PMETADATA_RECORD pmdrMDData,DWORD dwMDEnumDataIndex,DWORD *pdwMDRequiredDataLen);
+                   HRESULT (WINAPI *GetAllData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,DWORD *pdwMDNumDataEntries,DWORD *pdwMDDataSetNumber,DWORD dwMDBufferSize,unsigned char *pbMDBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *DeleteAllData)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDUserType,DWORD dwMDDataType);
+                   HRESULT (WINAPI *CopyData)(IMSAdminBase3W *This,METADATA_HANDLE hMDSourceHandle,LPCWSTR pszMDSourcePath,METADATA_HANDLE hMDDestHandle,LPCWSTR pszMDDestPath,DWORD dwMDAttributes,DWORD dwMDUserType,DWORD dwMDDataType,WINBOOL bMDCopyFlag);
+                   HRESULT (WINAPI *GetDataPaths)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDIdentifier,DWORD dwMDDataType,DWORD dwMDBufferSize,WCHAR *pszBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *OpenKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD dwMDAccessRequested,DWORD dwMDTimeOut,PMETADATA_HANDLE phMDNewHandle);
+                   HRESULT (WINAPI *CloseKey)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle);
+                   HRESULT (WINAPI *ChangePermissions)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,DWORD dwMDTimeOut,DWORD dwMDAccessRequested);
+                   HRESULT (WINAPI *SaveData)(IMSAdminBase3W *This);
+                   HRESULT (WINAPI *GetHandleInfo)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,PMETADATA_HANDLE_INFO pmdhiInfo);
+                   HRESULT (WINAPI *GetSystemChangeNumber)(IMSAdminBase3W *This,DWORD *pdwSystemChangeNumber);
+                   HRESULT (WINAPI *GetDataSetNumber)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD *pdwMDDataSetNumber);
+                   HRESULT (WINAPI *SetLastChangeTime)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
+                   HRESULT (WINAPI *GetLastChangeTime)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,PFILETIME pftMDLastChangeTime,WINBOOL bLocalTime);
+                   HRESULT (WINAPI *KeyExchangePhase1)(IMSAdminBase3W *This);
+                   HRESULT (WINAPI *KeyExchangePhase2)(IMSAdminBase3W *This);
+                   HRESULT (WINAPI *Backup)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
+                   HRESULT (WINAPI *Restore)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags);
+                   HRESULT (WINAPI *EnumBackups)(IMSAdminBase3W *This,LPWSTR pszMDBackupLocation,DWORD *pdwMDVersion,PFILETIME pftMDBackupTime,DWORD dwMDEnumIndex);
+                   HRESULT (WINAPI *DeleteBackup)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion);
+                   HRESULT (WINAPI *UnmarshalInterface)(IMSAdminBase3W *This,IMSAdminBaseW **piadmbwInterface);
+                   HRESULT (WINAPI *GetServerGuid)(IMSAdminBase3W *This);
+                   HRESULT (WINAPI *BackupWithPasswd)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags,LPCWSTR pszPasswd);
+                   HRESULT (WINAPI *RestoreWithPasswd)(IMSAdminBase3W *This,LPCWSTR pszMDBackupLocation,DWORD dwMDVersion,DWORD dwMDFlags,LPCWSTR pszPasswd);
+                   HRESULT (WINAPI *Export)(IMSAdminBase3W *This,LPCWSTR pszPasswd,LPCWSTR pszFileName,LPCWSTR pszSourcePath,DWORD dwMDFlags);
+                   HRESULT (WINAPI *Import)(IMSAdminBase3W *This,LPCWSTR pszPasswd,LPCWSTR pszFileName,LPCWSTR pszSourcePath,LPCWSTR pszDestPath,DWORD dwMDFlags);
+                   HRESULT (WINAPI *RestoreHistory)(IMSAdminBase3W *This,LPCWSTR pszMDHistoryLocation,DWORD dwMDMajorVersion,DWORD dwMDMinorVersion,DWORD dwMDFlags);
+                   HRESULT (WINAPI *EnumHistory)(IMSAdminBase3W *This,LPWSTR pszMDHistoryLocation,DWORD *pdwMDMajorVersion,DWORD *pdwMDMinorVersion,PFILETIME pftMDHistoryTime,DWORD dwMDEnumIndex);
+                   HRESULT (WINAPI *GetChildPaths)(IMSAdminBase3W *This,METADATA_HANDLE hMDHandle,LPCWSTR pszMDPath,DWORD cchMDBufferSize,WCHAR *pszBuffer,DWORD *pcchMDRequiredBufferSize);
     END_INTERFACE
   } IMSAdminBase3WVtbl;
   struct IMSAdminBase3W {
@@ -517,10 +517,10 @@ extern "C"{
 #else
   typedef struct IMSImpExpHelpWVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSImpExpHelpW *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSImpExpHelpW *This);
-      ULONG (WINAPI *Release)(IMSImpExpHelpW *This);
-      HRESULT (WINAPI *EnumeratePathsInFile)(IMSImpExpHelpW *This,LPCWSTR pszFileName,LPCWSTR pszKeyType,DWORD dwMDBufferSize,WCHAR *pszBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *QueryInterface)(IMSImpExpHelpW *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSImpExpHelpW *This);
+                   ULONG (WINAPI *Release)(IMSImpExpHelpW *This);
+                   HRESULT (WINAPI *EnumeratePathsInFile)(IMSImpExpHelpW *This,LPCWSTR pszFileName,LPCWSTR pszKeyType,DWORD dwMDBufferSize,WCHAR *pszBuffer,DWORD *pdwMDRequiredBufferSize);
     END_INTERFACE
   } IMSImpExpHelpWVtbl;
   struct IMSImpExpHelpW {
@@ -549,11 +549,11 @@ extern "C"{
 #else
   typedef struct IMSAdminBaseSinkWVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSAdminBaseSinkW *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSAdminBaseSinkW *This);
-      ULONG (WINAPI *Release)(IMSAdminBaseSinkW *This);
-      HRESULT (WINAPI *SinkNotify)(IMSAdminBaseSinkW *This,DWORD dwMDNumElements,MD_CHANGE_OBJECT_W pcoChangeList[]);
-      HRESULT (WINAPI *ShutdownNotify)(IMSAdminBaseSinkW *This);
+                   HRESULT (WINAPI *QueryInterface)(IMSAdminBaseSinkW *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSAdminBaseSinkW *This);
+                   ULONG (WINAPI *Release)(IMSAdminBaseSinkW *This);
+                   HRESULT (WINAPI *SinkNotify)(IMSAdminBaseSinkW *This,DWORD dwMDNumElements,MD_CHANGE_OBJECT_W pcoChangeList[]);
+                   HRESULT (WINAPI *ShutdownNotify)(IMSAdminBaseSinkW *This);
     END_INTERFACE
   } IMSAdminBaseSinkWVtbl;
   struct IMSAdminBaseSinkW {
@@ -587,13 +587,13 @@ extern "C"{
 #else
   typedef struct AsyncIMSAdminBaseSinkWVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIMSAdminBaseSinkW *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIMSAdminBaseSinkW *This);
-      ULONG (WINAPI *Release)(AsyncIMSAdminBaseSinkW *This);
-      HRESULT (WINAPI *Begin_SinkNotify)(AsyncIMSAdminBaseSinkW *This,DWORD dwMDNumElements,MD_CHANGE_OBJECT_W pcoChangeList[]);
-      HRESULT (WINAPI *Finish_SinkNotify)(AsyncIMSAdminBaseSinkW *This);
-      HRESULT (WINAPI *Begin_ShutdownNotify)(AsyncIMSAdminBaseSinkW *This);
-      HRESULT (WINAPI *Finish_ShutdownNotify)(AsyncIMSAdminBaseSinkW *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIMSAdminBaseSinkW *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIMSAdminBaseSinkW *This);
+                   ULONG (WINAPI *Release)(AsyncIMSAdminBaseSinkW *This);
+                   HRESULT (WINAPI *Begin_SinkNotify)(AsyncIMSAdminBaseSinkW *This,DWORD dwMDNumElements,MD_CHANGE_OBJECT_W pcoChangeList[]);
+                   HRESULT (WINAPI *Finish_SinkNotify)(AsyncIMSAdminBaseSinkW *This);
+                   HRESULT (WINAPI *Begin_ShutdownNotify)(AsyncIMSAdminBaseSinkW *This);
+                   HRESULT (WINAPI *Finish_ShutdownNotify)(AsyncIMSAdminBaseSinkW *This);
     END_INTERFACE
   } AsyncIMSAdminBaseSinkWVtbl;
   struct AsyncIMSAdminBaseSinkW {

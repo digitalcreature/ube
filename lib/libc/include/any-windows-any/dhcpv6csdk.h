@@ -34,29 +34,29 @@ typedef struct _DHCPV6CAPI_PARAMS {
 } DHCPV6CAPI_PARAMS, *PDHCPV6CAPI_PARAMS, *LPDHCPV6CAPI_PARAMS;
 
 typedef struct _DHCPV6Prefix {
-  UCHAR      prefix[16];
-  DWORD      prefixLength;
-  DWORD      preferredLifeTime;
-  DWORD      validLifeTime;
+  UCHAR                   prefix[16];
+  DWORD                   prefixLength;
+  DWORD                   preferredLifeTime;
+  DWORD                   validLifeTime;
   StatusCode status;
 } DHCPV6Prefix, *PDHCPV6Prefix, *LPDHCPV6Prefix;
 
 typedef struct _DHCPV6CAPI_PARAMS_ARRAY {
-  ULONG               nParams;
+  ULONG                                         nParams;
   LPDHCPV6CAPI_PARAMS Params;
 } DHCPV6CAPI_PARAMS_ARRAY, *PDHCPV6CAPI_PARAMS_ARRAY, *LPDHCPV6CAPI_PARAMS_ARRAY;
 
 typedef struct _DHCPV6PrefixLeaseInformation {
-  DWORD          nPrefixes;
+  DWORD                       nPrefixes;
   LPDHCPV6Prefix prefixArray;
-  DWORD          iaid;
-  time_t         T1;
-  time_t         T2;
-  time_t         MaxLeaseExpirationTime;
-  time_t         LastRenewalTime;
+  DWORD                       iaid;
+  time_t                      T1;
+  time_t                      T2;
+  time_t                      MaxLeaseExpirationTime;
+  time_t                      LastRenewalTime;
   StatusCode     status;
-  LPBYTE         ServerId;
-  DWORD          ServerIdLen;
+  LPBYTE                      ServerId;
+  DWORD                       ServerIdLen;
 } DHCPV6PrefixLeaseInformation, *PDHCPV6PrefixLeaseInformation, *LPDHCPV6PrefixLeaseInformation, *LPDHCPV6CAPIPrefixLeaseInformation;
 
 VOID APIENTRY Dhcpv6CApiCleanup(void);

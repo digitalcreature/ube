@@ -155,15 +155,15 @@ extern "C"{
 #else
   typedef struct IDistributionListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDistributionList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDistributionList *This);
-      ULONG (WINAPI *Release)(IDistributionList *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IDistributionList *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IDistributionList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IDistributionList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IDistributionList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_HideDLMembership)(IDistributionList *This,VARIANT_BOOL *pHideDLMembership);
-      HRESULT (WINAPI *put_HideDLMembership)(IDistributionList *This,VARIANT_BOOL varHideDLMembership);
+                   HRESULT (WINAPI *QueryInterface)(IDistributionList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDistributionList *This);
+                   ULONG (WINAPI *Release)(IDistributionList *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IDistributionList *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IDistributionList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IDistributionList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IDistributionList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_HideDLMembership)(IDistributionList *This,VARIANT_BOOL *pHideDLMembership);
+                   HRESULT (WINAPI *put_HideDLMembership)(IDistributionList *This,VARIANT_BOOL varHideDLMembership);
     END_INTERFACE
   } IDistributionListVtbl;
   struct IDistributionList {
@@ -224,40 +224,40 @@ extern "C"{
 #else
   typedef struct IMailRecipientVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMailRecipient *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMailRecipient *This);
-      ULONG (WINAPI *Release)(IMailRecipient *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMailRecipient *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMailRecipient *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMailRecipient *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMailRecipient *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_IncomingLimit)(IMailRecipient *This,__LONG32 *pIncomingLimit);
-      HRESULT (WINAPI *put_IncomingLimit)(IMailRecipient *This,__LONG32 varIncomingLimit);
-      HRESULT (WINAPI *get_OutgoingLimit)(IMailRecipient *This,__LONG32 *pOutgoingLimit);
-      HRESULT (WINAPI *put_OutgoingLimit)(IMailRecipient *This,__LONG32 varOutgoingLimit);
-      HRESULT (WINAPI *get_RestrictedAddressList)(IMailRecipient *This,VARIANT *pRestrictedAddressList);
-      HRESULT (WINAPI *put_RestrictedAddressList)(IMailRecipient *This,VARIANT varRestrictedAddressList);
-      HRESULT (WINAPI *get_RestrictedAddresses)(IMailRecipient *This,CDOEXMRestrictedAddressType *pRestrictedAddresses);
-      HRESULT (WINAPI *put_RestrictedAddresses)(IMailRecipient *This,CDOEXMRestrictedAddressType varRestrictedAddresses);
-      HRESULT (WINAPI *get_ForwardTo)(IMailRecipient *This,BSTR *pForwardTo);
-      HRESULT (WINAPI *put_ForwardTo)(IMailRecipient *This,BSTR varForwardTo);
-      HRESULT (WINAPI *get_ForwardingStyle)(IMailRecipient *This,CDOEXMDeliverAndRedirect *pForwardingStyle);
-      HRESULT (WINAPI *put_ForwardingStyle)(IMailRecipient *This,CDOEXMDeliverAndRedirect varForwardingStyle);
-      HRESULT (WINAPI *get_HideFromAddressBook)(IMailRecipient *This,VARIANT_BOOL *pHideFromAddressBook);
-      HRESULT (WINAPI *put_HideFromAddressBook)(IMailRecipient *This,VARIANT_BOOL varHideFromAddressBook);
-      HRESULT (WINAPI *get_X400Email)(IMailRecipient *This,BSTR *pX400Email);
-      HRESULT (WINAPI *put_X400Email)(IMailRecipient *This,BSTR varX400Email);
-      HRESULT (WINAPI *get_SMTPEmail)(IMailRecipient *This,BSTR *pSMTPEmail);
-      HRESULT (WINAPI *put_SMTPEmail)(IMailRecipient *This,BSTR varSMTPEmail);
-      HRESULT (WINAPI *get_ProxyAddresses)(IMailRecipient *This,VARIANT *pProxyAddresses);
-      HRESULT (WINAPI *put_ProxyAddresses)(IMailRecipient *This,VARIANT varProxyAddresses);
-      HRESULT (WINAPI *get_AutoGenerateEmailAddresses)(IMailRecipient *This,VARIANT_BOOL *pAutoGenerateEmailAddresses);
-      HRESULT (WINAPI *put_AutoGenerateEmailAddresses)(IMailRecipient *This,VARIANT_BOOL varAutoGenerateEmailAddresses);
-      HRESULT (WINAPI *get_Alias)(IMailRecipient *This,BSTR *pAlias);
-      HRESULT (WINAPI *put_Alias)(IMailRecipient *This,BSTR varAlias);
-      HRESULT (WINAPI *get_TargetAddress)(IMailRecipient *This,BSTR *varTargetAddress);
-      HRESULT (WINAPI *MailEnable)(IMailRecipient *This,BSTR TargetMailAddress);
-      HRESULT (WINAPI *MailDisable)(IMailRecipient *This);
+                   HRESULT (WINAPI *QueryInterface)(IMailRecipient *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMailRecipient *This);
+                   ULONG (WINAPI *Release)(IMailRecipient *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMailRecipient *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMailRecipient *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMailRecipient *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMailRecipient *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_IncomingLimit)(IMailRecipient *This,__LONG32 *pIncomingLimit);
+                   HRESULT (WINAPI *put_IncomingLimit)(IMailRecipient *This,__LONG32 varIncomingLimit);
+                   HRESULT (WINAPI *get_OutgoingLimit)(IMailRecipient *This,__LONG32 *pOutgoingLimit);
+                   HRESULT (WINAPI *put_OutgoingLimit)(IMailRecipient *This,__LONG32 varOutgoingLimit);
+                   HRESULT (WINAPI *get_RestrictedAddressList)(IMailRecipient *This,VARIANT *pRestrictedAddressList);
+                   HRESULT (WINAPI *put_RestrictedAddressList)(IMailRecipient *This,VARIANT varRestrictedAddressList);
+                   HRESULT (WINAPI *get_RestrictedAddresses)(IMailRecipient *This,CDOEXMRestrictedAddressType *pRestrictedAddresses);
+                   HRESULT (WINAPI *put_RestrictedAddresses)(IMailRecipient *This,CDOEXMRestrictedAddressType varRestrictedAddresses);
+                   HRESULT (WINAPI *get_ForwardTo)(IMailRecipient *This,BSTR *pForwardTo);
+                   HRESULT (WINAPI *put_ForwardTo)(IMailRecipient *This,BSTR varForwardTo);
+                   HRESULT (WINAPI *get_ForwardingStyle)(IMailRecipient *This,CDOEXMDeliverAndRedirect *pForwardingStyle);
+                   HRESULT (WINAPI *put_ForwardingStyle)(IMailRecipient *This,CDOEXMDeliverAndRedirect varForwardingStyle);
+                   HRESULT (WINAPI *get_HideFromAddressBook)(IMailRecipient *This,VARIANT_BOOL *pHideFromAddressBook);
+                   HRESULT (WINAPI *put_HideFromAddressBook)(IMailRecipient *This,VARIANT_BOOL varHideFromAddressBook);
+                   HRESULT (WINAPI *get_X400Email)(IMailRecipient *This,BSTR *pX400Email);
+                   HRESULT (WINAPI *put_X400Email)(IMailRecipient *This,BSTR varX400Email);
+                   HRESULT (WINAPI *get_SMTPEmail)(IMailRecipient *This,BSTR *pSMTPEmail);
+                   HRESULT (WINAPI *put_SMTPEmail)(IMailRecipient *This,BSTR varSMTPEmail);
+                   HRESULT (WINAPI *get_ProxyAddresses)(IMailRecipient *This,VARIANT *pProxyAddresses);
+                   HRESULT (WINAPI *put_ProxyAddresses)(IMailRecipient *This,VARIANT varProxyAddresses);
+                   HRESULT (WINAPI *get_AutoGenerateEmailAddresses)(IMailRecipient *This,VARIANT_BOOL *pAutoGenerateEmailAddresses);
+                   HRESULT (WINAPI *put_AutoGenerateEmailAddresses)(IMailRecipient *This,VARIANT_BOOL varAutoGenerateEmailAddresses);
+                   HRESULT (WINAPI *get_Alias)(IMailRecipient *This,BSTR *pAlias);
+                   HRESULT (WINAPI *put_Alias)(IMailRecipient *This,BSTR varAlias);
+                   HRESULT (WINAPI *get_TargetAddress)(IMailRecipient *This,BSTR *varTargetAddress);
+                   HRESULT (WINAPI *MailEnable)(IMailRecipient *This,BSTR TargetMailAddress);
+                   HRESULT (WINAPI *MailDisable)(IMailRecipient *This);
     END_INTERFACE
   } IMailRecipientVtbl;
   struct IMailRecipient {
@@ -388,35 +388,35 @@ extern "C"{
 #else
   typedef struct IMailboxStoreVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMailboxStore *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMailboxStore *This);
-      ULONG (WINAPI *Release)(IMailboxStore *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMailboxStore *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMailboxStore *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMailboxStore *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMailboxStore *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_EnableStoreDefaults)(IMailboxStore *This,VARIANT *pEnableStoreDefaults);
-      HRESULT (WINAPI *put_EnableStoreDefaults)(IMailboxStore *This,VARIANT varEnableStoreDefaults);
-      HRESULT (WINAPI *get_StoreQuota)(IMailboxStore *This,__LONG32 *pStoreQuota);
-      HRESULT (WINAPI *put_StoreQuota)(IMailboxStore *This,__LONG32 varStoreQuota);
-      HRESULT (WINAPI *get_OverQuotaLimit)(IMailboxStore *This,__LONG32 *pOverQuotaLimit);
-      HRESULT (WINAPI *put_OverQuotaLimit)(IMailboxStore *This,__LONG32 varOverQuotaLimit);
-      HRESULT (WINAPI *get_HardLimit)(IMailboxStore *This,__LONG32 *pHardLimit);
-      HRESULT (WINAPI *put_HardLimit)(IMailboxStore *This,__LONG32 varHardLimit);
-      HRESULT (WINAPI *get_OverrideStoreGarbageCollection)(IMailboxStore *This,VARIANT_BOOL *pOverrideStoreGarbageCollection);
-      HRESULT (WINAPI *put_OverrideStoreGarbageCollection)(IMailboxStore *This,VARIANT_BOOL varOverrideStoreGarbageCollection);
-      HRESULT (WINAPI *get_DaysBeforeGarbageCollection)(IMailboxStore *This,__LONG32 *pDaysBeforeGarbageCollection);
-      HRESULT (WINAPI *put_DaysBeforeGarbageCollection)(IMailboxStore *This,__LONG32 varDaysBeforeGarbageCollection);
-      HRESULT (WINAPI *get_GarbageCollectOnlyAfterBackup)(IMailboxStore *This,VARIANT_BOOL *pGarbageCollectOnlyAfterBackup);
-      HRESULT (WINAPI *put_GarbageCollectOnlyAfterBackup)(IMailboxStore *This,VARIANT_BOOL varGarbageCollectOnlyAfterBackup);
-      HRESULT (WINAPI *get_Delegates)(IMailboxStore *This,VARIANT *pDelegates);
-      HRESULT (WINAPI *put_Delegates)(IMailboxStore *This,VARIANT varDelegates);
-      HRESULT (WINAPI *get_HomeMDB)(IMailboxStore *This,BSTR *varHomeMDB);
-      HRESULT (WINAPI *get_RecipientLimit)(IMailboxStore *This,__LONG32 *pRecipientLimit);
-      HRESULT (WINAPI *put_RecipientLimit)(IMailboxStore *This,__LONG32 varRecipientLimit);
-      HRESULT (WINAPI *CreateMailbox)(IMailboxStore *This,BSTR HomeMDBURL);
-      HRESULT (WINAPI *DeleteMailbox)(IMailboxStore *This);
-      HRESULT (WINAPI *MoveMailbox)(IMailboxStore *This,BSTR HomeMDBURL);
+                   HRESULT (WINAPI *QueryInterface)(IMailboxStore *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMailboxStore *This);
+                   ULONG (WINAPI *Release)(IMailboxStore *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMailboxStore *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMailboxStore *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMailboxStore *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMailboxStore *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_EnableStoreDefaults)(IMailboxStore *This,VARIANT *pEnableStoreDefaults);
+                   HRESULT (WINAPI *put_EnableStoreDefaults)(IMailboxStore *This,VARIANT varEnableStoreDefaults);
+                   HRESULT (WINAPI *get_StoreQuota)(IMailboxStore *This,__LONG32 *pStoreQuota);
+                   HRESULT (WINAPI *put_StoreQuota)(IMailboxStore *This,__LONG32 varStoreQuota);
+                   HRESULT (WINAPI *get_OverQuotaLimit)(IMailboxStore *This,__LONG32 *pOverQuotaLimit);
+                   HRESULT (WINAPI *put_OverQuotaLimit)(IMailboxStore *This,__LONG32 varOverQuotaLimit);
+                   HRESULT (WINAPI *get_HardLimit)(IMailboxStore *This,__LONG32 *pHardLimit);
+                   HRESULT (WINAPI *put_HardLimit)(IMailboxStore *This,__LONG32 varHardLimit);
+                   HRESULT (WINAPI *get_OverrideStoreGarbageCollection)(IMailboxStore *This,VARIANT_BOOL *pOverrideStoreGarbageCollection);
+                   HRESULT (WINAPI *put_OverrideStoreGarbageCollection)(IMailboxStore *This,VARIANT_BOOL varOverrideStoreGarbageCollection);
+                   HRESULT (WINAPI *get_DaysBeforeGarbageCollection)(IMailboxStore *This,__LONG32 *pDaysBeforeGarbageCollection);
+                   HRESULT (WINAPI *put_DaysBeforeGarbageCollection)(IMailboxStore *This,__LONG32 varDaysBeforeGarbageCollection);
+                   HRESULT (WINAPI *get_GarbageCollectOnlyAfterBackup)(IMailboxStore *This,VARIANT_BOOL *pGarbageCollectOnlyAfterBackup);
+                   HRESULT (WINAPI *put_GarbageCollectOnlyAfterBackup)(IMailboxStore *This,VARIANT_BOOL varGarbageCollectOnlyAfterBackup);
+                   HRESULT (WINAPI *get_Delegates)(IMailboxStore *This,VARIANT *pDelegates);
+                   HRESULT (WINAPI *put_Delegates)(IMailboxStore *This,VARIANT varDelegates);
+                   HRESULT (WINAPI *get_HomeMDB)(IMailboxStore *This,BSTR *varHomeMDB);
+                   HRESULT (WINAPI *get_RecipientLimit)(IMailboxStore *This,__LONG32 *pRecipientLimit);
+                   HRESULT (WINAPI *put_RecipientLimit)(IMailboxStore *This,__LONG32 varRecipientLimit);
+                   HRESULT (WINAPI *CreateMailbox)(IMailboxStore *This,BSTR HomeMDBURL);
+                   HRESULT (WINAPI *DeleteMailbox)(IMailboxStore *This);
+                   HRESULT (WINAPI *MoveMailbox)(IMailboxStore *This,BSTR HomeMDBURL);
     END_INTERFACE
   } IMailboxStoreVtbl;
   struct IMailboxStore {

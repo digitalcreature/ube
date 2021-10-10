@@ -72,9 +72,9 @@ typedef struct {
   __C89_NAMELESS union {
     _KS_ANON_STRUCT(_IDENTIFIER)
     {
-      GUID Set;
-      ULONG Id;
-      ULONG Flags;
+                   GUID Set;
+                   ULONG Id;
+                   ULONG Flags;
     };
     LONGLONG Alignment;
   };
@@ -228,44 +228,44 @@ typedef struct {
   ULONG NotificationType;
   __C89_NAMELESS union {
     struct {
-      HANDLE Event;
-      ULONG_PTR Reserved[2];
+                   HANDLE Event;
+                   ULONG_PTR Reserved[2];
     } EventHandle;
     struct {
-      HANDLE Semaphore;
-      ULONG Reserved;
-      LONG Adjustment;
+                   HANDLE Semaphore;
+                   ULONG Reserved;
+                   LONG Adjustment;
     } SemaphoreHandle;
 #if defined(_NTDDK_)
     struct {
-      PVOID Event;
-      KPRIORITY Increment;
-      ULONG_PTR Reserved;
+                   PVOID Event;
+                   KPRIORITY Increment;
+                   ULONG_PTR Reserved;
     } EventObject;
     struct {
-      PVOID Semaphore;
-      KPRIORITY Increment;
-      LONG Adjustment;
+                   PVOID Semaphore;
+                   KPRIORITY Increment;
+                   LONG Adjustment;
     } SemaphoreObject;
     struct {
-      PKDPC Dpc;
-      ULONG ReferenceCount;
-      ULONG_PTR Reserved;
+                   PKDPC Dpc;
+                   ULONG ReferenceCount;
+                   ULONG_PTR Reserved;
     } Dpc;
     struct {
-      PWORK_QUEUE_ITEM WorkQueueItem;
-      WORK_QUEUE_TYPE WorkQueueType;
-      ULONG_PTR Reserved;
+                   PWORK_QUEUE_ITEM WorkQueueItem;
+                   WORK_QUEUE_TYPE WorkQueueType;
+                   ULONG_PTR Reserved;
     } WorkItem;
     struct {
-      PWORK_QUEUE_ITEM WorkQueueItem;
-      PKSWORKER KsWorkerObject;
-      ULONG_PTR Reserved;
+                   PWORK_QUEUE_ITEM WorkQueueItem;
+                   PKSWORKER KsWorkerObject;
+                   ULONG_PTR Reserved;
     } KsWorkItem;
 #endif /* _NTDDK_ */
     struct {
-      PVOID Unused;
-      LONG_PTR Alignment[2];
+                   PVOID Unused;
+                   LONG_PTR Alignment[2];
     } Alignment;
   };
 } KSEVENTDATA,*PKSEVENTDATA;
@@ -1064,8 +1064,8 @@ typedef struct {
   __C89_NAMELESS union {
     LONGLONG Reserved;
     __C89_NAMELESS struct {
-      ULONG ConstrainedDataRangesCount;
-      PKSDATARANGE *ConstrainedDataRanges;
+                   ULONG ConstrainedDataRangesCount;
+                   PKSDATARANGE *ConstrainedDataRanges;
     };
   };
 } KSPIN_DESCRIPTOR, *PKSPIN_DESCRIPTOR;
@@ -2504,7 +2504,7 @@ typedef PVOID KSOBJECT_BAG;
 
 
 typedef BOOLEAN (*PFNKSGENERATEEVENTCALLBACK)(PVOID Context,
-					      PKSEVENT_ENTRY EventEntry);
+					                   PKSEVENT_ENTRY EventEntry);
 
 typedef NTSTATUS (*PFNKSDEVICECREATE)(PKSDEVICE Device);
 
@@ -2557,7 +2557,7 @@ typedef NTSTATUS (*PFNKSPINSETDATAFORMAT)(PKSPIN Pin,PKSDATAFORMAT OldFormat,
 					  const KSATTRIBUTE_LIST *AttributeRange);
 
 typedef NTSTATUS (*PFNKSPINHANDSHAKE)(PKSPIN Pin,PKSHANDSHAKE In,
-				      PKSHANDSHAKE Out);
+				                   PKSHANDSHAKE Out);
 
 typedef NTSTATUS (*PFNKSPIN)(PKSPIN Pin);
 

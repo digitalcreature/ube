@@ -14,7 +14,7 @@ TYPEDEF _Int64 suseconds_t;
 
 TYPEDEF signed char     int8_t;
 TYPEDEF signed short    int16_t;
-TYPEDEF signed int      int32_t;
+TYPEDEF signed int                   int32_t;
 TYPEDEF signed _Int64   int64_t;
 TYPEDEF signed _Int64   intmax_t;
 TYPEDEF unsigned char   uint8_t;

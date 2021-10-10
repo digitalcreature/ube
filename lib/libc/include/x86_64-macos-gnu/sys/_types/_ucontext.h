@@ -30,9 +30,9 @@
 #include <sys/cdefs.h> /* __DARWIN_UNIX03 */
 
 #if __DARWIN_UNIX03
-#define _STRUCT_UCONTEXT        struct __darwin_ucontext
+#define _STRUCT_UCONTEXT                     struct __darwin_ucontext
 #else /* !__DARWIN_UNIX03 */
-#define _STRUCT_UCONTEXT        struct ucontext
+#define _STRUCT_UCONTEXT                     struct ucontext
 #endif /* __DARWIN_UNIX03 */
 
 #include <machine/types.h> /* __darwin_size_t */
@@ -41,18 +41,18 @@
 
 _STRUCT_UCONTEXT
 {
-	int                     uc_onstack;
-	__darwin_sigset_t       uc_sigmask;     /* signal mask used by this context */
-	_STRUCT_SIGALTSTACK     uc_stack;       /* stack used by this context */
-	_STRUCT_UCONTEXT        *uc_link;       /* pointer to resuming context */
-	__darwin_size_t         uc_mcsize;      /* size of the machine context passed in */
-	_STRUCT_MCONTEXT        *uc_mcontext;   /* pointer to machine specific context */
+	int                                                            uc_onstack;
+	__darwin_sigset_t                    uc_sigmask;     /* signal mask used by this context */
+	_STRUCT_SIGALTSTACK     uc_stack;                    /* stack used by this context */
+	_STRUCT_UCONTEXT                     *uc_link;                    /* pointer to resuming context */
+	__darwin_size_t                      uc_mcsize;                   /* size of the machine context passed in */
+	_STRUCT_MCONTEXT                     *uc_mcontext;   /* pointer to machine specific context */
 #ifdef _XOPEN_SOURCE
-	_STRUCT_MCONTEXT        __mcontext_data;
+	_STRUCT_MCONTEXT                     __mcontext_data;
 #endif /* _XOPEN_SOURCE */
 };
 
 /* user context */
-typedef _STRUCT_UCONTEXT        ucontext_t;     /* [???] user context */
+typedef _STRUCT_UCONTEXT                     ucontext_t;     /* [???] user context */
 
 #endif /* _STRUCT_UCONTEXT */

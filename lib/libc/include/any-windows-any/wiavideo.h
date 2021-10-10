@@ -79,22 +79,22 @@ extern "C" {
 #else
   typedef struct IWiaVideoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaVideo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaVideo *This);
-      ULONG (WINAPI *Release)(IWiaVideo *This);
-      HRESULT (WINAPI *get_PreviewVisible)(IWiaVideo *This,WINBOOL *pbPreviewVisible);
-      HRESULT (WINAPI *put_PreviewVisible)(IWiaVideo *This,WINBOOL bPreviewVisible);
-      HRESULT (WINAPI *get_ImagesDirectory)(IWiaVideo *This,BSTR *pbstrImageDirectory);
-      HRESULT (WINAPI *put_ImagesDirectory)(IWiaVideo *This,BSTR bstrImageDirectory);
-      HRESULT (WINAPI *CreateVideoByWiaDevID)(IWiaVideo *This,BSTR bstrWiaDeviceID,HWND hwndParent,WINBOOL bStretchToFitParent,WINBOOL bAutoBeginPlayback);
-      HRESULT (WINAPI *CreateVideoByDevNum)(IWiaVideo *This,UINT uiDeviceNumber,HWND hwndParent,WINBOOL bStretchToFitParent,WINBOOL bAutoBeginPlayback);
-      HRESULT (WINAPI *CreateVideoByName)(IWiaVideo *This,BSTR bstrFriendlyName,HWND hwndParent,WINBOOL bStretchToFitParent,WINBOOL bAutoBeginPlayback);
-      HRESULT (WINAPI *DestroyVideo)(IWiaVideo *This);
-      HRESULT (WINAPI *Play)(IWiaVideo *This);
-      HRESULT (WINAPI *Pause)(IWiaVideo *This);
-      HRESULT (WINAPI *TakePicture)(IWiaVideo *This,BSTR *pbstrNewImageFilename);
-      HRESULT (WINAPI *ResizeVideo)(IWiaVideo *This,WINBOOL bStretchToFitParent);
-      HRESULT (WINAPI *GetCurrentState)(IWiaVideo *This,WIAVIDEO_STATE *pState);
+                   HRESULT (WINAPI *QueryInterface)(IWiaVideo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaVideo *This);
+                   ULONG (WINAPI *Release)(IWiaVideo *This);
+                   HRESULT (WINAPI *get_PreviewVisible)(IWiaVideo *This,WINBOOL *pbPreviewVisible);
+                   HRESULT (WINAPI *put_PreviewVisible)(IWiaVideo *This,WINBOOL bPreviewVisible);
+                   HRESULT (WINAPI *get_ImagesDirectory)(IWiaVideo *This,BSTR *pbstrImageDirectory);
+                   HRESULT (WINAPI *put_ImagesDirectory)(IWiaVideo *This,BSTR bstrImageDirectory);
+                   HRESULT (WINAPI *CreateVideoByWiaDevID)(IWiaVideo *This,BSTR bstrWiaDeviceID,HWND hwndParent,WINBOOL bStretchToFitParent,WINBOOL bAutoBeginPlayback);
+                   HRESULT (WINAPI *CreateVideoByDevNum)(IWiaVideo *This,UINT uiDeviceNumber,HWND hwndParent,WINBOOL bStretchToFitParent,WINBOOL bAutoBeginPlayback);
+                   HRESULT (WINAPI *CreateVideoByName)(IWiaVideo *This,BSTR bstrFriendlyName,HWND hwndParent,WINBOOL bStretchToFitParent,WINBOOL bAutoBeginPlayback);
+                   HRESULT (WINAPI *DestroyVideo)(IWiaVideo *This);
+                   HRESULT (WINAPI *Play)(IWiaVideo *This);
+                   HRESULT (WINAPI *Pause)(IWiaVideo *This);
+                   HRESULT (WINAPI *TakePicture)(IWiaVideo *This,BSTR *pbstrNewImageFilename);
+                   HRESULT (WINAPI *ResizeVideo)(IWiaVideo *This,WINBOOL bStretchToFitParent);
+                   HRESULT (WINAPI *GetCurrentState)(IWiaVideo *This,WIAVIDEO_STATE *pState);
     END_INTERFACE
   } IWiaVideoVtbl;
   struct IWiaVideo {

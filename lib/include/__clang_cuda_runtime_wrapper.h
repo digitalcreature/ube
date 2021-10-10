@@ -350,14 +350,14 @@ __device__ int vprintf(const char *, const char *);
 __device__ void free(void *) __attribute((nothrow));
 __device__ void *malloc(size_t) __attribute((nothrow)) __attribute__((malloc));
 __device__ void __assertfail(const char *__message, const char *__file,
-                             unsigned __line, const char *__function,
-                             size_t __charSize) __attribute__((noreturn));
+                                                                                 unsigned __line, const char *__function,
+                                                                                 size_t __charSize) __attribute__((noreturn));
 
 // In order for standard assert() macro on linux to work we need to
 // provide device-side __assert_fail()
 __device__ static inline void __assert_fail(const char *__message,
-                                            const char *__file, unsigned __line,
-                                            const char *__function) {
+                                                                                                                                       const char *__file, unsigned __line,
+                                                                                                                                       const char *__function) {
   __assertfail(__message, __file, __line, __function, sizeof(char));
 }
 
@@ -427,8 +427,8 @@ __device__ inline __cuda_builtin_gridDim_t::operator dim3() const {
 // declaration for it here.
 #if CUDA_VERSION >= 9020
 extern "C" unsigned __cudaPushCallConfiguration(dim3 gridDim, dim3 blockDim,
-                                                size_t sharedMem = 0,
-                                                void *stream = 0);
+                                                                                                                                                        size_t sharedMem = 0,
+                                                                                                                                                        void *stream = 0);
 #endif
 
 #endif // __CUDA__

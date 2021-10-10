@@ -9,7 +9,7 @@
 	.text
 	.p2align 4,,15
 	.globl __MINGW_USYMBOL(trunc)
-        .def    __MINGW_USYMBOL(trunc);  .scl    2;      .type   32;     .endef
+                     .def    __MINGW_USYMBOL(trunc);  .scl    2;                   .type   32;     .endef
 
 #ifdef __x86_64__
 	.seh_proc __MINGW_USYMBOL(trunc)

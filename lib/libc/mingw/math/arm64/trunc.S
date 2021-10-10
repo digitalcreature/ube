@@ -9,7 +9,7 @@
 	.text
 	.p2align 2
 	.globl __MINGW_USYMBOL(trunc)
-        .def    __MINGW_USYMBOL(trunc);  .scl    2;      .type   32;     .endef
+                     .def    __MINGW_USYMBOL(trunc);  .scl    2;                   .type   32;     .endef
 
 __MINGW_USYMBOL(trunc):
 	frintz	d0, d0

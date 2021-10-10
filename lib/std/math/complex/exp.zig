@@ -23,9 +23,9 @@ pub fn exp(z: anytype) @TypeOf(z) {
     const T = @TypeOf(z.re);
 
     return switch (T) {
-        f32 => exp32(z),
-        f64 => exp64(z),
-        else => @compileError("exp not implemented for " ++ @typeName(z)),
+                     f32 => exp32(z),
+                     f64 => exp64(z),
+                     else => @compileError("exp not implemented for " ++ @typeName(z)),
     };
 }
 
@@ -39,38 +39,38 @@ fn exp32(z: Complex(f32)) Complex(f32) {
     const hy = @bitCast(u32, y) & 0x7fffffff;
     // cexp(x + i0) = exp(x) + i0
     if (hy == 0) {
-        return Complex(f32).new(math.exp(x), y);
+                     return Complex(f32).new(math.exp(x), y);
     }
 
     const hx = @bitCast(u32, x);
     // cexp(0 + iy) = cos(y) + isin(y)
     if ((hx & 0x7fffffff) == 0) {
-        return Complex(f32).new(math.cos(y), math.sin(y));
+                     return Complex(f32).new(math.cos(y), math.sin(y));
     }
 
     if (hy >= 0x7f800000) {
-        // cexp(finite|nan +- i inf|nan) = nan + i nan
-        if ((hx & 0x7fffffff) != 0x7f800000) {
-            return Complex(f32).new(y - y, y - y);
-        } // cexp(-inf +- i inf|nan) = 0 + i0
-        else if (hx & 0x80000000 != 0) {
-            return Complex(f32).new(0, 0);
-        } // cexp(+inf +- i inf|nan) = inf + i nan
-        else {
-            return Complex(f32).new(x, y - y);
-        }
+                     // cexp(finite|nan +- i inf|nan) = nan + i nan
+                     if ((hx & 0x7fffffff) != 0x7f800000) {
+                                      return Complex(f32).new(y - y, y - y);
+                     } // cexp(-inf +- i inf|nan) = 0 + i0
+                     else if (hx & 0x80000000 != 0) {
+                                      return Complex(f32).new(0, 0);
+                     } // cexp(+inf +- i inf|nan) = inf + i nan
+                     else {
+                                      return Complex(f32).new(x, y - y);
+                     }
     }
 
     // 88.7 <= x <= 192 so must scale
     if (hx >= exp_overflow and hx <= cexp_overflow) {
-        return ldexp_cexp(z, 0);
+                     return ldexp_cexp(z, 0);
     } // - x < exp_overflow => exp(x) won't overflow (common)
     // - x > cexp_overflow, so exp(x) * s overflows for s > 0
     // - x = +-inf
     // - x = nan
     else {
-        const exp_x = math.exp(x);
-        return Complex(f32).new(exp_x * math.cos(y), exp_x * math.sin(y));
+                     const exp_x = math.exp(x);
+                     return Complex(f32).new(exp_x * math.cos(y), exp_x * math.sin(y));
     }
 }
 
@@ -87,7 +87,7 @@ fn exp64(z: Complex(f64)) Complex(f64) {
 
     // cexp(x + i0) = exp(x) + i0
     if (hy | ly == 0) {
-        return Complex(f64).new(math.exp(x), y);
+                     return Complex(f64).new(math.exp(x), y);
     }
 
     const fx = @bitCast(u64, x);
@@ -96,32 +96,32 @@ fn exp64(z: Complex(f64)) Complex(f64) {
 
     // cexp(0 + iy) = cos(y) + isin(y)
     if ((hx & 0x7fffffff) | lx == 0) {
-        return Complex(f64).new(math.cos(y), math.sin(y));
+                     return Complex(f64).new(math.cos(y), math.sin(y));
     }
 
     if (hy >= 0x7ff00000) {
-        // cexp(finite|nan +- i inf|nan) = nan + i nan
-        if (lx != 0 or (hx & 0x7fffffff) != 0x7ff00000) {
-            return Complex(f64).new(y - y, y - y);
-        } // cexp(-inf +- i inf|nan) = 0 + i0
-        else if (hx & 0x80000000 != 0) {
-            return Complex(f64).new(0, 0);
-        } // cexp(+inf +- i inf|nan) = inf + i nan
-        else {
-            return Complex(f64).new(x, y - y);
-        }
+                     // cexp(finite|nan +- i inf|nan) = nan + i nan
+                     if (lx != 0 or (hx & 0x7fffffff) != 0x7ff00000) {
+                                      return Complex(f64).new(y - y, y - y);
+                     } // cexp(-inf +- i inf|nan) = 0 + i0
+                     else if (hx & 0x80000000 != 0) {
+                                      return Complex(f64).new(0, 0);
+                     } // cexp(+inf +- i inf|nan) = inf + i nan
+                     else {
+                                      return Complex(f64).new(x, y - y);
+                     }
     }
 
     // 709.7 <= x <= 1454.3 so must scale
     if (hx >= exp_overflow and hx <= cexp_overflow) {
-        return ldexp_cexp(z, 0);
+                     return ldexp_cexp(z, 0);
     } // - x < exp_overflow => exp(x) won't overflow (common)
     // - x > cexp_overflow, so exp(x) * s overflows for s > 0
     // - x = +-inf
     // - x = nan
     else {
-        const exp_x = math.exp(x);
-        return Complex(f64).new(exp_x * math.cos(y), exp_x * math.sin(y));
+                     const exp_x = math.exp(x);
+                     return Complex(f64).new(exp_x * math.cos(y), exp_x * math.sin(y));
     }
 }
 

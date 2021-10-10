@@ -24,7 +24,7 @@
 #endif
 #ifdef _crt_va_end
 #undef _crt_va_end
-#define _crt_va_end(ap)          __builtin_va_end(ap)
+#define _crt_va_end(ap)                       __builtin_va_end(ap)
 #endif
 #ifdef _crt_va_arg
 #undef _crt_va_arg
@@ -40,7 +40,7 @@
 #endif
 #ifdef __crt_va_end
 #undef __crt_va_end
-#define __crt_va_end(ap)          __builtin_va_end(ap)
+#define __crt_va_end(ap)                       __builtin_va_end(ap)
 #endif
 #ifdef __crt_va_arg
 #undef __crt_va_arg

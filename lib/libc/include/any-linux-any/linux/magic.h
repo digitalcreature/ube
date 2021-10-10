@@ -4,12 +4,12 @@
 
 #define ADFS_SUPER_MAGIC	0xadf5
 #define AFFS_SUPER_MAGIC	0xadff
-#define AFS_SUPER_MAGIC                0x5346414F
+#define AFS_SUPER_MAGIC                                          0x5346414F
 #define AUTOFS_SUPER_MAGIC	0x0187
 #define CODA_SUPER_MAGIC	0x73757245
 #define CRAMFS_MAGIC		0x28cd3d45	/* some random number */
 #define CRAMFS_MAGIC_WEND	0x453dcd28	/* magic number with the wrong endianess */
-#define DEBUGFS_MAGIC          0x64626720
+#define DEBUGFS_MAGIC                       0x64626720
 #define SECURITYFS_MAGIC	0x73636673
 #define SELINUX_MAGIC		0xf97cff8c
 #define SMACK_MAGIC		0x43415d53	/* "SMAC" */
@@ -51,7 +51,7 @@
 
 #define REISERFS_SUPER_MAGIC	0x52654973	/* used by gcc */
 					/* used by file system utilities that
-	                                   look at the superblock, etc.  */
+	                                                                                                    look at the superblock, etc.  */
 #define REISERFS_SUPER_MAGIC_STRING	"ReIsErFs"
 #define REISER2FS_SUPER_MAGIC_STRING	"ReIsEr2Fs"
 #define REISER2FS_JR_SUPER_MAGIC_STRING	"ReIsEr3Fs"
@@ -64,21 +64,21 @@
 
 #define STACK_END_MAGIC		0x57AC6E9D
 
-#define TRACEFS_MAGIC          0x74726163
+#define TRACEFS_MAGIC                       0x74726163
 
 #define V9FS_MAGIC		0x01021997
 
-#define BDEVFS_MAGIC            0x62646576
-#define DAXFS_MAGIC             0x64646178
-#define BINFMTFS_MAGIC          0x42494e4d
+#define BDEVFS_MAGIC                                      0x62646576
+#define DAXFS_MAGIC                                       0x64646178
+#define BINFMTFS_MAGIC                       0x42494e4d
 #define DEVPTS_SUPER_MAGIC	0x1cd1
 #define FUTEXFS_SUPER_MAGIC	0xBAD1DEA
-#define PIPEFS_MAGIC            0x50495045
+#define PIPEFS_MAGIC                                      0x50495045
 #define PROC_SUPER_MAGIC	0x9fa0
 #define SOCKFS_MAGIC		0x534F434B
 #define SYSFS_MAGIC		0x62656572
 #define USBDEVICE_SUPER_MAGIC	0x9fa2
-#define MTD_INODE_FS_MAGIC      0x11307854
+#define MTD_INODE_FS_MAGIC                   0x11307854
 #define ANON_INODE_FS_MAGIC	0x09041934
 #define BTRFS_TEST_MAGIC	0x73727279
 #define NSFS_MAGIC		0x6e736673

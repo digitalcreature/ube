@@ -29,7 +29,7 @@
 
 /* LLC and SNAP constants */
 #define EXTENDED_SAP 0xAA
-#define UI_CMD       0x03
+#define UI_CMD                    0x03
 
 /* This is NOT the Fibre Channel frame header. The FC frame header is
  *  constructed in the driver as the Tachyon needs certain fields in

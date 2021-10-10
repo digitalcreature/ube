@@ -27,8 +27,8 @@
 extern "C" {
 #endif
 
-#define EMULATOR_READ_ACCESS              0x01
-#define EMULATOR_WRITE_ACCESS             0x02
+#define EMULATOR_READ_ACCESS                                        0x01
+#define EMULATOR_WRITE_ACCESS                                       0x02
 
 typedef enum _EMULATOR_PORT_ACCESS_TYPE {
 	Uchar,
@@ -143,93 +143,93 @@ typedef enum _IRQ_PRIORITY {
 
 typedef struct _IO_RESOURCE_DESCRIPTOR {
     UCHAR Option;
-    UCHAR Type;                         // use CM_RESOURCE_TYPE
-    UCHAR ShareDisposition;             // use CM_SHARE_DISPOSITION
+    UCHAR Type;                                                                             // use CM_RESOURCE_TYPE
+    UCHAR ShareDisposition;                                       // use CM_SHARE_DISPOSITION
     UCHAR Spare1;
-    USHORT Flags;                       // use CM resource flag defines
-    USHORT Spare2;                      // align
+    USHORT Flags;                                                              // use CM resource flag defines
+    USHORT Spare2;                                                             // align
 
     union {
-        struct {
-            ULONG Length;
-            ULONG Alignment;
-            PHYSICAL_ADDRESS MinimumAddress;
-            PHYSICAL_ADDRESS MaximumAddress;
-        } Port;
+                     struct {
+                                      ULONG Length;
+                                      ULONG Alignment;
+                                      PHYSICAL_ADDRESS MinimumAddress;
+                                      PHYSICAL_ADDRESS MaximumAddress;
+                     } Port;
 
-        struct {
-            ULONG Length;
-            ULONG Alignment;
-            PHYSICAL_ADDRESS MinimumAddress;
-            PHYSICAL_ADDRESS MaximumAddress;
-        } Memory;
+                     struct {
+                                      ULONG Length;
+                                      ULONG Alignment;
+                                      PHYSICAL_ADDRESS MinimumAddress;
+                                      PHYSICAL_ADDRESS MaximumAddress;
+                     } Memory;
 
-        struct {
-            ULONG MinimumVector;
-            ULONG MaximumVector;
-            IRQ_DEVICE_POLICY AffinityPolicy;
-            IRQ_PRIORITY PriorityPolicy;
-            KAFFINITY TargetedProcessors;
-        } Interrupt;
+                     struct {
+                                      ULONG MinimumVector;
+                                      ULONG MaximumVector;
+                                      IRQ_DEVICE_POLICY AffinityPolicy;
+                                      IRQ_PRIORITY PriorityPolicy;
+                                      KAFFINITY TargetedProcessors;
+                     } Interrupt;
 
-        struct {
-            ULONG MinimumChannel;
-            ULONG MaximumChannel;
-        } Dma;
+                     struct {
+                                      ULONG MinimumChannel;
+                                      ULONG MaximumChannel;
+                     } Dma;
 
-        struct {
-            ULONG Length;
-            ULONG Alignment;
-            PHYSICAL_ADDRESS MinimumAddress;
-            PHYSICAL_ADDRESS MaximumAddress;
-        } Generic;
+                     struct {
+                                      ULONG Length;
+                                      ULONG Alignment;
+                                      PHYSICAL_ADDRESS MinimumAddress;
+                                      PHYSICAL_ADDRESS MaximumAddress;
+                     } Generic;
 
-        struct {
-            ULONG Data[3];
-        } DevicePrivate;
+                     struct {
+                                      ULONG Data[3];
+                     } DevicePrivate;
 
-        //
-        // Bus Number information.
-        //
+                     //
+                     // Bus Number information.
+                     //
 
-        struct {
-            ULONG Length;
-            ULONG MinBusNumber;
-            ULONG MaxBusNumber;
-            ULONG Reserved;
-        } BusNumber;
+                     struct {
+                                      ULONG Length;
+                                      ULONG MinBusNumber;
+                                      ULONG MaxBusNumber;
+                                      ULONG Reserved;
+                     } BusNumber;
 
-        struct {
-            ULONG Priority;   // use LCPRI_Xxx values in cfg.h
-            ULONG Reserved1;
-            ULONG Reserved2;
-        } ConfigData;
+                     struct {
+                                      ULONG Priority;   // use LCPRI_Xxx values in cfg.h
+                                      ULONG Reserved1;
+                                      ULONG Reserved2;
+                     } ConfigData;
 
-        //
-        // The following structures provide descriptions
-        // for memory resource requirement greater than MAXULONG
-        //
+                     //
+                     // The following structures provide descriptions
+                     // for memory resource requirement greater than MAXULONG
+                     //
 
-        struct {
-            ULONG Length40;
-            ULONG Alignment40;
-            PHYSICAL_ADDRESS MinimumAddress;
-            PHYSICAL_ADDRESS MaximumAddress;
-        } Memory40;
+                     struct {
+                                      ULONG Length40;
+                                      ULONG Alignment40;
+                                      PHYSICAL_ADDRESS MinimumAddress;
+                                      PHYSICAL_ADDRESS MaximumAddress;
+                     } Memory40;
 
-        struct {
-            ULONG Length48;
-            ULONG Alignment48;
-            PHYSICAL_ADDRESS MinimumAddress;
-            PHYSICAL_ADDRESS MaximumAddress;
-        } Memory48;
+                     struct {
+                                      ULONG Length48;
+                                      ULONG Alignment48;
+                                      PHYSICAL_ADDRESS MinimumAddress;
+                                      PHYSICAL_ADDRESS MaximumAddress;
+                     } Memory48;
 
-        struct {
-            ULONG Length64;
-            ULONG Alignment64;
-            PHYSICAL_ADDRESS MinimumAddress;
-            PHYSICAL_ADDRESS MaximumAddress;
-        } Memory64;
+                     struct {
+                                      ULONG Length64;
+                                      ULONG Alignment64;
+                                      PHYSICAL_ADDRESS MinimumAddress;
+                                      PHYSICAL_ADDRESS MaximumAddress;
+                     } Memory64;
 
     } u;
 

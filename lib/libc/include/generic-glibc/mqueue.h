@@ -49,8 +49,8 @@ extern int mq_getattr (mqd_t __mqdes, struct mq_attr *__mqstat)
 /* Set attributes associated with message queue MQDES and if OMQSTAT is
    not NULL also query its old attributes.  */
 extern int mq_setattr (mqd_t __mqdes,
-		       const struct mq_attr *__restrict __mqstat,
-		       struct mq_attr *__restrict __omqstat)
+		                    const struct mq_attr *__restrict __mqstat,
+		                    struct mq_attr *__restrict __omqstat)
   __THROW __nonnull ((2));
 
 /* Remove message queue named NAME.  */

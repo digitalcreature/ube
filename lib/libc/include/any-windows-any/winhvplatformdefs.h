@@ -23,14 +23,14 @@ typedef enum WHV_CAPABILITY_CODE {
 
 typedef union WHV_CAPABILITY_FEATURES {
     __C89_NAMELESS struct {
-        UINT64 PartialUnmap : 1;
-        UINT64 LocalApicEmulation : 1;
-        UINT64 Xsave : 1;
-        UINT64 DirtyPageTracking : 1;
-        UINT64 SpeculationControl : 1;
-        UINT64 ApicRemoteRead : 1;
-        UINT64 IdleSuspend : 1;
-        UINT64 Reserved : 57;
+                     UINT64 PartialUnmap : 1;
+                     UINT64 LocalApicEmulation : 1;
+                     UINT64 Xsave : 1;
+                     UINT64 DirtyPageTracking : 1;
+                     UINT64 SpeculationControl : 1;
+                     UINT64 ApicRemoteRead : 1;
+                     UINT64 IdleSuspend : 1;
+                     UINT64 Reserved : 57;
     };
     UINT64 AsUINT64;
 } WHV_CAPABILITY_FEATURES;
@@ -39,14 +39,14 @@ C_ASSERT(sizeof(WHV_CAPABILITY_FEATURES) == sizeof(UINT64));
 
 typedef union WHV_EXTENDED_VM_EXITS {
     __C89_NAMELESS struct {
-        UINT64 X64CpuidExit : 1;
-        UINT64 X64MsrExit : 1;
-        UINT64 ExceptionExit : 1;
-        UINT64 X64RdtscExit : 1;
-        UINT64 X64ApicSmiExitTrap : 1;
-        UINT64 HypercallExit : 1;
-        UINT64 X64ApicInitSipiExitTrap : 1;
-        UINT64 Reserved : 57;
+                     UINT64 X64CpuidExit : 1;
+                     UINT64 X64MsrExit : 1;
+                     UINT64 ExceptionExit : 1;
+                     UINT64 X64RdtscExit : 1;
+                     UINT64 X64ApicSmiExitTrap : 1;
+                     UINT64 HypercallExit : 1;
+                     UINT64 X64ApicInitSipiExitTrap : 1;
+                     UINT64 Reserved : 57;
     };
     UINT64 AsUINT64;
 } WHV_EXTENDED_VM_EXITS;
@@ -61,67 +61,67 @@ typedef enum WHV_PROCESSOR_VENDOR {
 
 typedef union WHV_PROCESSOR_FEATURES {
     __C89_NAMELESS struct {
-        UINT64 Sse3Support : 1;
-        UINT64 LahfSahfSupport : 1;
-        UINT64 Ssse3Support : 1;
-        UINT64 Sse4_1Support : 1;
-        UINT64 Sse4_2Support : 1;
-        UINT64 Sse4aSupport : 1;
-        UINT64 XopSupport : 1;
-        UINT64 PopCntSupport : 1;
-        UINT64 Cmpxchg16bSupport : 1;
-        UINT64 Altmovcr8Support : 1;
-        UINT64 LzcntSupport : 1;
-        UINT64 MisAlignSseSupport : 1;
-        UINT64 MmxExtSupport : 1;
-        UINT64 Amd3DNowSupport : 1;
-        UINT64 ExtendedAmd3DNowSupport : 1;
-        UINT64 Page1GbSupport : 1;
-        UINT64 AesSupport : 1;
-        UINT64 PclmulqdqSupport : 1;
-        UINT64 PcidSupport : 1;
-        UINT64 Fma4Support : 1;
-        UINT64 F16CSupport : 1;
-        UINT64 RdRandSupport : 1;
-        UINT64 RdWrFsGsSupport : 1;
-        UINT64 SmepSupport : 1;
-        UINT64 EnhancedFastStringSupport : 1;
-        UINT64 Bmi1Support : 1;
-        UINT64 Bmi2Support : 1;
-        UINT64 Reserved1 : 2;
-        UINT64 MovbeSupport : 1;
-        UINT64 Npiep1Support : 1;
-        UINT64 DepX87FPUSaveSupport : 1;
-        UINT64 RdSeedSupport : 1;
-        UINT64 AdxSupport : 1;
-        UINT64 IntelPrefetchSupport : 1;
-        UINT64 SmapSupport : 1;
-        UINT64 HleSupport : 1;
-        UINT64 RtmSupport : 1;
-        UINT64 RdtscpSupport : 1;
-        UINT64 ClflushoptSupport : 1;
-        UINT64 ClwbSupport : 1;
-        UINT64 ShaSupport : 1;
-        UINT64 X87PointersSavedSupport : 1;
-        UINT64 InvpcidSupport : 1;
-        UINT64 IbrsSupport : 1;
-        UINT64 StibpSupport : 1;
-        UINT64 IbpbSupport : 1;
-        UINT64 Reserved2 : 1;
-        UINT64 SsbdSupport : 1;
-        UINT64 FastShortRepMovSupport : 1;
-        UINT64 Reserved3 : 1;
-        UINT64 RdclNo : 1;
-        UINT64 IbrsAllSupport : 1;
-        UINT64 Reserved4 : 1;
-        UINT64 SsbNo : 1;
-        UINT64 RsbANo : 1;
-        UINT64 Reserved5 : 1;
-        UINT64 RdPidSupport : 1;
-        UINT64 UmipSupport : 1;
-        UINT64 MdsNoSupport : 1;
-        UINT64 MdClearSupport : 1;
-        UINT64 Reserved6 : 3;
+                     UINT64 Sse3Support : 1;
+                     UINT64 LahfSahfSupport : 1;
+                     UINT64 Ssse3Support : 1;
+                     UINT64 Sse4_1Support : 1;
+                     UINT64 Sse4_2Support : 1;
+                     UINT64 Sse4aSupport : 1;
+                     UINT64 XopSupport : 1;
+                     UINT64 PopCntSupport : 1;
+                     UINT64 Cmpxchg16bSupport : 1;
+                     UINT64 Altmovcr8Support : 1;
+                     UINT64 LzcntSupport : 1;
+                     UINT64 MisAlignSseSupport : 1;
+                     UINT64 MmxExtSupport : 1;
+                     UINT64 Amd3DNowSupport : 1;
+                     UINT64 ExtendedAmd3DNowSupport : 1;
+                     UINT64 Page1GbSupport : 1;
+                     UINT64 AesSupport : 1;
+                     UINT64 PclmulqdqSupport : 1;
+                     UINT64 PcidSupport : 1;
+                     UINT64 Fma4Support : 1;
+                     UINT64 F16CSupport : 1;
+                     UINT64 RdRandSupport : 1;
+                     UINT64 RdWrFsGsSupport : 1;
+                     UINT64 SmepSupport : 1;
+                     UINT64 EnhancedFastStringSupport : 1;
+                     UINT64 Bmi1Support : 1;
+                     UINT64 Bmi2Support : 1;
+                     UINT64 Reserved1 : 2;
+                     UINT64 MovbeSupport : 1;
+                     UINT64 Npiep1Support : 1;
+                     UINT64 DepX87FPUSaveSupport : 1;
+                     UINT64 RdSeedSupport : 1;
+                     UINT64 AdxSupport : 1;
+                     UINT64 IntelPrefetchSupport : 1;
+                     UINT64 SmapSupport : 1;
+                     UINT64 HleSupport : 1;
+                     UINT64 RtmSupport : 1;
+                     UINT64 RdtscpSupport : 1;
+                     UINT64 ClflushoptSupport : 1;
+                     UINT64 ClwbSupport : 1;
+                     UINT64 ShaSupport : 1;
+                     UINT64 X87PointersSavedSupport : 1;
+                     UINT64 InvpcidSupport : 1;
+                     UINT64 IbrsSupport : 1;
+                     UINT64 StibpSupport : 1;
+                     UINT64 IbpbSupport : 1;
+                     UINT64 Reserved2 : 1;
+                     UINT64 SsbdSupport : 1;
+                     UINT64 FastShortRepMovSupport : 1;
+                     UINT64 Reserved3 : 1;
+                     UINT64 RdclNo : 1;
+                     UINT64 IbrsAllSupport : 1;
+                     UINT64 Reserved4 : 1;
+                     UINT64 SsbNo : 1;
+                     UINT64 RsbANo : 1;
+                     UINT64 Reserved5 : 1;
+                     UINT64 RdPidSupport : 1;
+                     UINT64 UmipSupport : 1;
+                     UINT64 MdsNoSupport : 1;
+                     UINT64 MdClearSupport : 1;
+                     UINT64 Reserved6 : 3;
     };
     UINT64 AsUINT64;
 } WHV_PROCESSOR_FEATURES;
@@ -130,9 +130,9 @@ C_ASSERT(sizeof(WHV_PROCESSOR_FEATURES) == sizeof(UINT64));
 
 typedef union WHV_PROCESSOR_FEATURES1 {
     __C89_NAMELESS struct {
-        UINT64 Reserved1 : 2;
-        UINT64 ClZeroSupport : 1;
-        UINT64 Reserved2 : 61;
+                     UINT64 Reserved1 : 2;
+                     UINT64 ClZeroSupport : 1;
+                     UINT64 Reserved2 : 61;
     };
     UINT64 AsUINT64;
 } WHV_PROCESSOR_FEATURES1;
@@ -145,11 +145,11 @@ typedef struct WHV_PROCESSOR_FEATURES_BANKS {
     UINT32 BanksCount;
     UINT32 Reserved0;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            WHV_PROCESSOR_FEATURES Bank0;
-            WHV_PROCESSOR_FEATURES1 Bank1;
-        };
-        UINT64 AsUINT64[WHV_PROCESSOR_FEATURES_BANKS_COUNT];
+                     __C89_NAMELESS struct {
+                                      WHV_PROCESSOR_FEATURES Bank0;
+                                      WHV_PROCESSOR_FEATURES1 Bank1;
+                     };
+                     UINT64 AsUINT64[WHV_PROCESSOR_FEATURES_BANKS_COUNT];
     };
 } WHV_PROCESSOR_FEATURES_BANKS;
 
@@ -157,32 +157,32 @@ C_ASSERT(sizeof(WHV_PROCESSOR_FEATURES_BANKS) == sizeof(UINT64) * (WHV_PROCESSOR
 
 typedef union _WHV_PROCESSOR_XSAVE_FEATURES {
     __C89_NAMELESS struct {
-        UINT64 XsaveSupport : 1;
-        UINT64 XsaveoptSupport : 1;
-        UINT64 AvxSupport : 1;
-        UINT64 Avx2Support : 1;
-        UINT64 FmaSupport : 1;
-        UINT64 MpxSupport : 1;
-        UINT64 Avx512Support : 1;
-        UINT64 Avx512DQSupport : 1;
-        UINT64 Avx512CDSupport : 1;
-        UINT64 Avx512BWSupport : 1;
-        UINT64 Avx512VLSupport : 1;
-        UINT64 XsaveCompSupport : 1;
-        UINT64 XsaveSupervisorSupport : 1;
-        UINT64 Xcr1Support : 1;
-        UINT64 Avx512BitalgSupport : 1;
-        UINT64 Avx512IfmaSupport : 1;
-        UINT64 Avx512VBmiSupport : 1;
-        UINT64 Avx512VBmi2Support : 1;
-        UINT64 Avx512VnniSupport : 1;
-        UINT64 GfniSupport : 1;
-        UINT64 VaesSupport : 1;
-        UINT64 Avx512VPopcntdqSupport : 1;
-        UINT64 VpclmulqdqSupport : 1;
-        UINT64 Avx512Bf16Support : 1;
-        UINT64 Avx512Vp2IntersectSupport : 1;
-        UINT64 Reserved : 39;
+                     UINT64 XsaveSupport : 1;
+                     UINT64 XsaveoptSupport : 1;
+                     UINT64 AvxSupport : 1;
+                     UINT64 Avx2Support : 1;
+                     UINT64 FmaSupport : 1;
+                     UINT64 MpxSupport : 1;
+                     UINT64 Avx512Support : 1;
+                     UINT64 Avx512DQSupport : 1;
+                     UINT64 Avx512CDSupport : 1;
+                     UINT64 Avx512BWSupport : 1;
+                     UINT64 Avx512VLSupport : 1;
+                     UINT64 XsaveCompSupport : 1;
+                     UINT64 XsaveSupervisorSupport : 1;
+                     UINT64 Xcr1Support : 1;
+                     UINT64 Avx512BitalgSupport : 1;
+                     UINT64 Avx512IfmaSupport : 1;
+                     UINT64 Avx512VBmiSupport : 1;
+                     UINT64 Avx512VBmi2Support : 1;
+                     UINT64 Avx512VnniSupport : 1;
+                     UINT64 GfniSupport : 1;
+                     UINT64 VaesSupport : 1;
+                     UINT64 Avx512VPopcntdqSupport : 1;
+                     UINT64 VpclmulqdqSupport : 1;
+                     UINT64 Avx512Bf16Support : 1;
+                     UINT64 Avx512Vp2IntersectSupport : 1;
+                     UINT64 Reserved : 39;
     };
     UINT64 AsUINT64;
 } WHV_PROCESSOR_XSAVE_FEATURES, *PWHV_PROCESSOR_XSAVE_FEATURES;
@@ -192,11 +192,11 @@ C_ASSERT(sizeof(WHV_PROCESSOR_XSAVE_FEATURES) == sizeof(UINT64));
 typedef union WHV_X64_MSR_EXIT_BITMAP {
     UINT64 AsUINT64;
     __C89_NAMELESS struct {
-        UINT64 UnhandledMsrs : 1;
-        UINT64 TscMsrWrite : 1;
-        UINT64 TscMsrRead : 1;
-        UINT64 ApicBaseMsrWrite : 1;
-        UINT64 Reserved : 60;
+                     UINT64 UnhandledMsrs : 1;
+                     UINT64 TscMsrWrite : 1;
+                     UINT64 TscMsrRead : 1;
+                     UINT64 ApicBaseMsrWrite : 1;
+                     UINT64 Reserved : 60;
     };
 } WHV_X64_MSR_EXIT_BITMAP;
 
@@ -476,53 +476,53 @@ typedef enum WHV_REGISTER_NAME {
 
 typedef union DECLSPEC_ALIGN(16) WHV_UINT128 {
     __C89_NAMELESS struct {
-        UINT64 Low64;
-        UINT64 High64;
+                     UINT64 Low64;
+                     UINT64 High64;
     };
     UINT32 Dword[4];
 } WHV_UINT128;
 
 typedef union WHV_X64_FP_REGISTER {
     __C89_NAMELESS struct {
-        UINT64 Mantissa;
-        UINT64 BiasedExponent:15;
-        UINT64 Sign:1;
-        UINT64 Reserved:48;
+                     UINT64 Mantissa;
+                     UINT64 BiasedExponent:15;
+                     UINT64 Sign:1;
+                     UINT64 Reserved:48;
     };
     WHV_UINT128 AsUINT128;
 } WHV_X64_FP_REGISTER;
 
 typedef union WHV_X64_FP_CONTROL_STATUS_REGISTER {
     __C89_NAMELESS struct {
-        UINT16 FpControl;
-        UINT16 FpStatus;
-        UINT8 FpTag;
-        UINT8 Reserved;
-        UINT16 LastFpOp;
-        __C89_NAMELESS union {
-            UINT64 LastFpRip;
-            __C89_NAMELESS struct {
-                UINT32 LastFpEip;
-                UINT16 LastFpCs;
-                UINT16 Reserved2;
-            };
-        };
+                     UINT16 FpControl;
+                     UINT16 FpStatus;
+                     UINT8 FpTag;
+                     UINT8 Reserved;
+                     UINT16 LastFpOp;
+                     __C89_NAMELESS union {
+                                      UINT64 LastFpRip;
+                                      __C89_NAMELESS struct {
+                                          UINT32 LastFpEip;
+                                          UINT16 LastFpCs;
+                                          UINT16 Reserved2;
+                                      };
+                     };
     };
     WHV_UINT128 AsUINT128;
 } WHV_X64_FP_CONTROL_STATUS_REGISTER;
 
 typedef union WHV_X64_XMM_CONTROL_STATUS_REGISTER {
     __C89_NAMELESS struct {
-        __C89_NAMELESS union {
-            UINT64 LastFpRdp;
-            __C89_NAMELESS struct {
-                UINT32 LastFpDp;
-                UINT16 LastFpDs;
-                UINT16 Reserved;
-            };
-        };
-        UINT32 XmmStatusControl;
-        UINT32 XmmStatusControlMask;
+                     __C89_NAMELESS union {
+                                      UINT64 LastFpRdp;
+                                      __C89_NAMELESS struct {
+                                          UINT32 LastFpDp;
+                                          UINT16 LastFpDs;
+                                          UINT16 Reserved;
+                                      };
+                     };
+                     UINT32 XmmStatusControl;
+                     UINT32 XmmStatusControlMask;
     };
     WHV_UINT128 AsUINT128;
 } WHV_X64_XMM_CONTROL_STATUS_REGISTER;
@@ -532,18 +532,18 @@ typedef struct WHV_X64_SEGMENT_REGISTER {
     UINT32 Limit;
     UINT16 Selector;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            UINT16 SegmentType:4;
-            UINT16 NonSystemSegment:1;
-            UINT16 DescriptorPrivilegeLevel:2;
-            UINT16 Present:1;
-            UINT16 Reserved:4;
-            UINT16 Available:1;
-            UINT16 Long:1;
-            UINT16 Default:1;
-            UINT16 Granularity:1;
-        };
-        UINT16 Attributes;
+                     __C89_NAMELESS struct {
+                                      UINT16 SegmentType:4;
+                                      UINT16 NonSystemSegment:1;
+                                      UINT16 DescriptorPrivilegeLevel:2;
+                                      UINT16 Present:1;
+                                      UINT16 Reserved:4;
+                                      UINT16 Available:1;
+                                      UINT16 Long:1;
+                                      UINT16 Default:1;
+                                      UINT16 Granularity:1;
+                     };
+                     UINT16 Attributes;
     };
 } WHV_X64_SEGMENT_REGISTER;
 
@@ -555,23 +555,23 @@ typedef struct WHV_X64_TABLE_REGISTER {
 
 typedef union WHV_X64_INTERRUPT_STATE_REGISTER {
     __C89_NAMELESS struct {
-        UINT64 InterruptShadow:1;
-        UINT64 NmiMasked:1;
-        UINT64 Reserved:62;
+                     UINT64 InterruptShadow:1;
+                     UINT64 NmiMasked:1;
+                     UINT64 Reserved:62;
     };
     UINT64 AsUINT64;
 } WHV_X64_INTERRUPT_STATE_REGISTER;
 
 typedef union WHV_X64_PENDING_INTERRUPTION_REGISTER {
     __C89_NAMELESS struct {
-        UINT32 InterruptionPending:1;
-        UINT32 InterruptionType:3;
-        UINT32 DeliverErrorCode:1;
-        UINT32 InstructionLength:4;
-        UINT32 NestedEvent:1;
-        UINT32 Reserved:6;
-        UINT32 InterruptionVector:16;
-        UINT32 ErrorCode;
+                     UINT32 InterruptionPending:1;
+                     UINT32 InterruptionType:3;
+                     UINT32 DeliverErrorCode:1;
+                     UINT32 InstructionLength:4;
+                     UINT32 NestedEvent:1;
+                     UINT32 Reserved:6;
+                     UINT32 InterruptionVector:16;
+                     UINT32 ErrorCode;
     };
     UINT64 AsUINT64;
 } WHV_X64_PENDING_INTERRUPTION_REGISTER;
@@ -580,10 +580,10 @@ C_ASSERT(sizeof(WHV_X64_PENDING_INTERRUPTION_REGISTER) == sizeof(UINT64));
 
 typedef union WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER {
     __C89_NAMELESS struct {
-        UINT64 NmiNotification:1;
-        UINT64 InterruptNotification:1;
-        UINT64 InterruptPriority:4;
-        UINT64 Reserved:58;
+                     UINT64 NmiNotification:1;
+                     UINT64 InterruptNotification:1;
+                     UINT64 InterruptPriority:4;
+                     UINT64 Reserved:58;
     };
     UINT64 AsUINT64;
 } WHV_X64_DELIVERABILITY_NOTIFICATIONS_REGISTER;
@@ -598,14 +598,14 @@ typedef enum WHV_X64_PENDING_EVENT_TYPE {
 
 typedef union WHV_X64_PENDING_EXCEPTION_EVENT {
     __C89_NAMELESS struct {
-        UINT32 EventPending : 1;
-        UINT32 EventType : 3;
-        UINT32 Reserved0 : 4;
-        UINT32 DeliverErrorCode : 1;
-        UINT32 Reserved1 : 7;
-        UINT32 Vector : 16;
-        UINT32 ErrorCode;
-        UINT64 ExceptionParameter;
+                     UINT32 EventPending : 1;
+                     UINT32 EventType : 3;
+                     UINT32 Reserved0 : 4;
+                     UINT32 DeliverErrorCode : 1;
+                     UINT32 Reserved1 : 7;
+                     UINT32 Vector : 16;
+                     UINT32 ErrorCode;
+                     UINT64 ExceptionParameter;
     };
     WHV_UINT128 AsUINT128;
 } WHV_X64_PENDING_EXCEPTION_EVENT;
@@ -614,12 +614,12 @@ C_ASSERT(sizeof(WHV_X64_PENDING_EXCEPTION_EVENT) == sizeof(WHV_UINT128));
 
 typedef union WHV_X64_PENDING_EXT_INT_EVENT {
     __C89_NAMELESS struct {
-        UINT64 EventPending : 1;
-        UINT64 EventType : 3;
-        UINT64 Reserved0 : 4;
-        UINT64 Vector : 8;
-        UINT64 Reserved1 : 48;
-        UINT64 Reserved2;
+                     UINT64 EventPending : 1;
+                     UINT64 EventType : 3;
+                     UINT64 Reserved0 : 4;
+                     UINT64 Vector : 8;
+                     UINT64 Reserved1 : 48;
+                     UINT64 Reserved2;
     };
     WHV_UINT128 AsUINT128;
 } WHV_X64_PENDING_EXT_INT_EVENT;
@@ -628,10 +628,10 @@ C_ASSERT(sizeof(WHV_X64_PENDING_EXT_INT_EVENT) == sizeof(WHV_UINT128));
 
 typedef union WHV_INTERNAL_ACTIVITY_REGISTER {
     __C89_NAMELESS struct {
-        UINT64 StartupSuspend : 1;
-        UINT64 HaltSuspend : 1;
-        UINT64 IdleSuspend : 1;
-        UINT64 Reserved :61;
+                     UINT64 StartupSuspend : 1;
+                     UINT64 HaltSuspend : 1;
+                     UINT64 IdleSuspend : 1;
+                     UINT64 Reserved :61;
     };
     UINT64 AsUINT64;
 } WHV_INTERNAL_ACTIVITY_REGISTER;
@@ -641,12 +641,12 @@ C_ASSERT(sizeof(WHV_INTERNAL_ACTIVITY_REGISTER) == sizeof(UINT64));
 typedef union WHV_X64_PENDING_DEBUG_EXCEPTION {
     UINT64 AsUINT64;
     __C89_NAMELESS struct {
-        UINT64 Breakpoint0 : 1;
-        UINT64 Breakpoint1 : 1;
-        UINT64 Breakpoint2 : 1;
-        UINT64 Breakpoint3 : 1;
-        UINT64 SingleStep : 1;
-        UINT64 Reserved0 : 59;
+                     UINT64 Breakpoint0 : 1;
+                     UINT64 Breakpoint1 : 1;
+                     UINT64 Breakpoint2 : 1;
+                     UINT64 Breakpoint3 : 1;
+                     UINT64 SingleStep : 1;
+                     UINT64 Reserved0 : 59;
     };
 } WHV_X64_PENDING_DEBUG_EXCEPTION;
 
@@ -694,15 +694,15 @@ typedef enum WHV_RUN_VP_EXIT_REASON {
 
 typedef union WHV_X64_VP_EXECUTION_STATE {
     __C89_NAMELESS struct {
-        UINT16 Cpl : 2;
-        UINT16 Cr0Pe : 1;
-        UINT16 Cr0Am : 1;
-        UINT16 EferLma : 1;
-        UINT16 DebugActive : 1;
-        UINT16 InterruptionPending : 1;
-        UINT16 Reserved0 : 5;
-        UINT16 InterruptShadow : 1;
-        UINT16 Reserved1 : 3;
+                     UINT16 Cpl : 2;
+                     UINT16 Cr0Pe : 1;
+                     UINT16 Cr0Am : 1;
+                     UINT16 EferLma : 1;
+                     UINT16 DebugActive : 1;
+                     UINT16 InterruptionPending : 1;
+                     UINT16 Reserved0 : 5;
+                     UINT16 InterruptShadow : 1;
+                     UINT16 Reserved1 : 3;
     };
     UINT16 AsUINT16;
 } WHV_X64_VP_EXECUTION_STATE;
@@ -728,10 +728,10 @@ typedef enum WHV_MEMORY_ACCESS_TYPE {
 
 typedef union WHV_MEMORY_ACCESS_INFO {
     __C89_NAMELESS struct {
-        UINT32 AccessType : 2;
-        UINT32 GpaUnmapped : 1;
-        UINT32 GvaValid : 1;
-        UINT32 Reserved : 28;
+                     UINT32 AccessType : 2;
+                     UINT32 GpaUnmapped : 1;
+                     UINT32 GvaValid : 1;
+                     UINT32 Reserved : 28;
     };
     UINT32 AsUINT32;
 } WHV_MEMORY_ACCESS_INFO;
@@ -747,11 +747,11 @@ typedef struct WHV_MEMORY_ACCESS_CONTEXT {
 
 typedef union WHV_X64_IO_PORT_ACCESS_INFO {
     __C89_NAMELESS struct {
-        UINT32 IsWrite : 1;
-        UINT32 AccessSize: 3;
-        UINT32 StringOp : 1;
-        UINT32 RepPrefix : 1;
-        UINT32 Reserved : 26;
+                     UINT32 IsWrite : 1;
+                     UINT32 AccessSize: 3;
+                     UINT32 StringOp : 1;
+                     UINT32 RepPrefix : 1;
+                     UINT32 Reserved : 26;
     };
     UINT32 AsUINT32;
 } WHV_X64_IO_PORT_ACCESS_INFO;
@@ -775,8 +775,8 @@ typedef struct WHV_X64_IO_PORT_ACCESS_CONTEXT {
 
 typedef union WHV_X64_MSR_ACCESS_INFO {
     __C89_NAMELESS struct {
-        UINT32 IsWrite : 1;
-        UINT32 Reserved : 31;
+                     UINT32 IsWrite : 1;
+                     UINT32 Reserved : 31;
     };
     UINT32 AsUINT32;
 } WHV_X64_MSR_ACCESS_INFO;
@@ -803,9 +803,9 @@ typedef struct WHV_X64_CPUID_ACCESS_CONTEXT {
 
 typedef union WHV_VP_EXCEPTION_INFO {
     __C89_NAMELESS struct {
-        UINT32 ErrorCodeValid : 1;
-        UINT32 SoftwareException : 1;
-        UINT32 Reserved : 30;
+                     UINT32 ErrorCodeValid : 1;
+                     UINT32 SoftwareException : 1;
+                     UINT32 Reserved : 30;
     };
     UINT32 AsUINT32;
 } WHV_VP_EXCEPTION_INFO;
@@ -858,8 +858,8 @@ typedef struct WHV_X64_APIC_EOI_CONTEXT {
 
 typedef union WHV_X64_RDTSC_INFO {
     __C89_NAMELESS struct {
-        UINT64 IsRdtscp : 1;
-        UINT64 Reserved : 63;
+                     UINT64 IsRdtscp : 1;
+                     UINT64 Reserved : 63;
     };
     UINT64 AsUINT64;
 } WHV_X64_RDTSC_INFO;
@@ -900,19 +900,19 @@ typedef struct WHV_RUN_VP_EXIT_CONTEXT {
     UINT32 Reserved;
     WHV_VP_EXIT_CONTEXT VpContext;
     __C89_NAMELESS union {
-        WHV_MEMORY_ACCESS_CONTEXT MemoryAccess;
-        WHV_X64_IO_PORT_ACCESS_CONTEXT IoPortAccess;
-        WHV_X64_MSR_ACCESS_CONTEXT MsrAccess;
-        WHV_X64_CPUID_ACCESS_CONTEXT CpuidAccess;
-        WHV_VP_EXCEPTION_CONTEXT VpException;
-        WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT InterruptWindow;
-        WHV_X64_UNSUPPORTED_FEATURE_CONTEXT UnsupportedFeature;
-        WHV_RUN_VP_CANCELED_CONTEXT CancelReason;
-        WHV_X64_APIC_EOI_CONTEXT ApicEoi;
-        WHV_X64_RDTSC_CONTEXT ReadTsc;
-        WHV_X64_APIC_SMI_CONTEXT ApicSmi;
-        WHV_HYPERCALL_CONTEXT Hypercall;
-        WHV_X64_APIC_INIT_SIPI_CONTEXT ApicInitSipi;
+                     WHV_MEMORY_ACCESS_CONTEXT MemoryAccess;
+                     WHV_X64_IO_PORT_ACCESS_CONTEXT IoPortAccess;
+                     WHV_X64_MSR_ACCESS_CONTEXT MsrAccess;
+                     WHV_X64_CPUID_ACCESS_CONTEXT CpuidAccess;
+                     WHV_VP_EXCEPTION_CONTEXT VpException;
+                     WHV_X64_INTERRUPTION_DELIVERABLE_CONTEXT InterruptWindow;
+                     WHV_X64_UNSUPPORTED_FEATURE_CONTEXT UnsupportedFeature;
+                     WHV_RUN_VP_CANCELED_CONTEXT CancelReason;
+                     WHV_X64_APIC_EOI_CONTEXT ApicEoi;
+                     WHV_X64_RDTSC_CONTEXT ReadTsc;
+                     WHV_X64_APIC_SMI_CONTEXT ApicSmi;
+                     WHV_HYPERCALL_CONTEXT Hypercall;
+                     WHV_X64_APIC_INIT_SIPI_CONTEXT ApicInitSipi;
     };
 } WHV_RUN_VP_EXIT_CONTEXT;
 

@@ -17,7 +17,7 @@
    <https://www.gnu.org/licenses/>.  */
 
 #include <sysdeps/unix/sysdep.h>
-#include <dl-sysdep.h>         /* Defines RTLD_PRIVATE_ERRNO.  */
+#include <dl-sysdep.h>                      /* Defines RTLD_PRIVATE_ERRNO.  */
 
 #ifdef __ASSEMBLER__
 
@@ -368,8 +368,8 @@ __LABEL(name)						\
 #else
 # include <stdint.h>
 # if (IS_IN (rtld) \
-      || (!defined SHARED && (IS_IN (libc) \
-			      || IS_IN (libpthread))))
+                   || (!defined SHARED && (IS_IN (libc) \
+			                   || IS_IN (libpthread))))
 extern uintptr_t __pointer_chk_guard_local attribute_relro attribute_hidden;
 #  define PTR_MANGLE(var) \
 	(var) = (__typeof (var)) ((uintptr_t) (var) ^ __pointer_chk_guard_local)

@@ -165,28 +165,28 @@ extern "C" {
 #else
   typedef struct ITDirectoryObjectConferenceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITDirectoryObjectConference *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITDirectoryObjectConference *This);
-      ULONG (WINAPI *Release)(ITDirectoryObjectConference *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITDirectoryObjectConference *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITDirectoryObjectConference *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITDirectoryObjectConference *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITDirectoryObjectConference *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Protocol)(ITDirectoryObjectConference *This,BSTR *ppProtocol);
-      HRESULT (WINAPI *get_Originator)(ITDirectoryObjectConference *This,BSTR *ppOriginator);
-      HRESULT (WINAPI *put_Originator)(ITDirectoryObjectConference *This,BSTR pOriginator);
-      HRESULT (WINAPI *get_AdvertisingScope)(ITDirectoryObjectConference *This,RND_ADVERTISING_SCOPE *pAdvertisingScope);
-      HRESULT (WINAPI *put_AdvertisingScope)(ITDirectoryObjectConference *This,RND_ADVERTISING_SCOPE AdvertisingScope);
-      HRESULT (WINAPI *get_Url)(ITDirectoryObjectConference *This,BSTR *ppUrl);
-      HRESULT (WINAPI *put_Url)(ITDirectoryObjectConference *This,BSTR pUrl);
-      HRESULT (WINAPI *get_Description)(ITDirectoryObjectConference *This,BSTR *ppDescription);
-      HRESULT (WINAPI *put_Description)(ITDirectoryObjectConference *This,BSTR pDescription);
-      HRESULT (WINAPI *get_IsEncrypted)(ITDirectoryObjectConference *This,VARIANT_BOOL *pfEncrypted);
-      HRESULT (WINAPI *put_IsEncrypted)(ITDirectoryObjectConference *This,VARIANT_BOOL fEncrypted);
-      HRESULT (WINAPI *get_StartTime)(ITDirectoryObjectConference *This,DATE *pDate);
-      HRESULT (WINAPI *put_StartTime)(ITDirectoryObjectConference *This,DATE Date);
-      HRESULT (WINAPI *get_StopTime)(ITDirectoryObjectConference *This,DATE *pDate);
-      HRESULT (WINAPI *put_StopTime)(ITDirectoryObjectConference *This,DATE Date);
+                   HRESULT (WINAPI *QueryInterface)(ITDirectoryObjectConference *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITDirectoryObjectConference *This);
+                   ULONG (WINAPI *Release)(ITDirectoryObjectConference *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITDirectoryObjectConference *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITDirectoryObjectConference *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITDirectoryObjectConference *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITDirectoryObjectConference *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Protocol)(ITDirectoryObjectConference *This,BSTR *ppProtocol);
+                   HRESULT (WINAPI *get_Originator)(ITDirectoryObjectConference *This,BSTR *ppOriginator);
+                   HRESULT (WINAPI *put_Originator)(ITDirectoryObjectConference *This,BSTR pOriginator);
+                   HRESULT (WINAPI *get_AdvertisingScope)(ITDirectoryObjectConference *This,RND_ADVERTISING_SCOPE *pAdvertisingScope);
+                   HRESULT (WINAPI *put_AdvertisingScope)(ITDirectoryObjectConference *This,RND_ADVERTISING_SCOPE AdvertisingScope);
+                   HRESULT (WINAPI *get_Url)(ITDirectoryObjectConference *This,BSTR *ppUrl);
+                   HRESULT (WINAPI *put_Url)(ITDirectoryObjectConference *This,BSTR pUrl);
+                   HRESULT (WINAPI *get_Description)(ITDirectoryObjectConference *This,BSTR *ppDescription);
+                   HRESULT (WINAPI *put_Description)(ITDirectoryObjectConference *This,BSTR pDescription);
+                   HRESULT (WINAPI *get_IsEncrypted)(ITDirectoryObjectConference *This,VARIANT_BOOL *pfEncrypted);
+                   HRESULT (WINAPI *put_IsEncrypted)(ITDirectoryObjectConference *This,VARIANT_BOOL fEncrypted);
+                   HRESULT (WINAPI *get_StartTime)(ITDirectoryObjectConference *This,DATE *pDate);
+                   HRESULT (WINAPI *put_StartTime)(ITDirectoryObjectConference *This,DATE Date);
+                   HRESULT (WINAPI *get_StopTime)(ITDirectoryObjectConference *This,DATE *pDate);
+                   HRESULT (WINAPI *put_StopTime)(ITDirectoryObjectConference *This,DATE Date);
     END_INTERFACE
   } ITDirectoryObjectConferenceVtbl;
   struct ITDirectoryObjectConference {
@@ -261,15 +261,15 @@ extern "C" {
 #else
   typedef struct ITDirectoryObjectUserVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITDirectoryObjectUser *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITDirectoryObjectUser *This);
-      ULONG (WINAPI *Release)(ITDirectoryObjectUser *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITDirectoryObjectUser *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITDirectoryObjectUser *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITDirectoryObjectUser *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITDirectoryObjectUser *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_IPPhonePrimary)(ITDirectoryObjectUser *This,BSTR *ppName);
-      HRESULT (WINAPI *put_IPPhonePrimary)(ITDirectoryObjectUser *This,BSTR pName);
+                   HRESULT (WINAPI *QueryInterface)(ITDirectoryObjectUser *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITDirectoryObjectUser *This);
+                   ULONG (WINAPI *Release)(ITDirectoryObjectUser *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITDirectoryObjectUser *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITDirectoryObjectUser *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITDirectoryObjectUser *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITDirectoryObjectUser *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_IPPhonePrimary)(ITDirectoryObjectUser *This,BSTR *ppName);
+                   HRESULT (WINAPI *put_IPPhonePrimary)(ITDirectoryObjectUser *This,BSTR pName);
     END_INTERFACE
   } ITDirectoryObjectUserVtbl;
   struct ITDirectoryObjectUser {
@@ -307,13 +307,13 @@ extern "C" {
 #else
   typedef struct IEnumDialableAddrsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumDialableAddrs *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumDialableAddrs *This);
-      ULONG (WINAPI *Release)(IEnumDialableAddrs *This);
-      HRESULT (WINAPI *Next)(IEnumDialableAddrs *This,ULONG celt,BSTR *ppElements,ULONG *pcFetched);
-      HRESULT (WINAPI *Reset)(IEnumDialableAddrs *This);
-      HRESULT (WINAPI *Skip)(IEnumDialableAddrs *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumDialableAddrs *This,IEnumDialableAddrs **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumDialableAddrs *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumDialableAddrs *This);
+                   ULONG (WINAPI *Release)(IEnumDialableAddrs *This);
+                   HRESULT (WINAPI *Next)(IEnumDialableAddrs *This,ULONG celt,BSTR *ppElements,ULONG *pcFetched);
+                   HRESULT (WINAPI *Reset)(IEnumDialableAddrs *This);
+                   HRESULT (WINAPI *Skip)(IEnumDialableAddrs *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumDialableAddrs *This,IEnumDialableAddrs **ppEnum);
     END_INTERFACE
   } IEnumDialableAddrsVtbl;
   struct IEnumDialableAddrs {
@@ -356,20 +356,20 @@ extern "C" {
 #else
   typedef struct ITDirectoryObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITDirectoryObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITDirectoryObject *This);
-      ULONG (WINAPI *Release)(ITDirectoryObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITDirectoryObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITDirectoryObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITDirectoryObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITDirectoryObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ObjectType)(ITDirectoryObject *This,DIRECTORY_OBJECT_TYPE *pObjectType);
-      HRESULT (WINAPI *get_Name)(ITDirectoryObject *This,BSTR *ppName);
-      HRESULT (WINAPI *put_Name)(ITDirectoryObject *This,BSTR pName);
-      HRESULT (WINAPI *get_DialableAddrs)(ITDirectoryObject *This,__LONG32 dwAddressType,VARIANT *pVariant);
-      HRESULT (WINAPI *EnumerateDialableAddrs)(ITDirectoryObject *This,DWORD dwAddressType,IEnumDialableAddrs **ppEnumDialableAddrs);
-      HRESULT (WINAPI *get_SecurityDescriptor)(ITDirectoryObject *This,IDispatch **ppSecDes);
-      HRESULT (WINAPI *put_SecurityDescriptor)(ITDirectoryObject *This,IDispatch *pSecDes);
+                   HRESULT (WINAPI *QueryInterface)(ITDirectoryObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITDirectoryObject *This);
+                   ULONG (WINAPI *Release)(ITDirectoryObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITDirectoryObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITDirectoryObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITDirectoryObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITDirectoryObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ObjectType)(ITDirectoryObject *This,DIRECTORY_OBJECT_TYPE *pObjectType);
+                   HRESULT (WINAPI *get_Name)(ITDirectoryObject *This,BSTR *ppName);
+                   HRESULT (WINAPI *put_Name)(ITDirectoryObject *This,BSTR pName);
+                   HRESULT (WINAPI *get_DialableAddrs)(ITDirectoryObject *This,__LONG32 dwAddressType,VARIANT *pVariant);
+                   HRESULT (WINAPI *EnumerateDialableAddrs)(ITDirectoryObject *This,DWORD dwAddressType,IEnumDialableAddrs **ppEnumDialableAddrs);
+                   HRESULT (WINAPI *get_SecurityDescriptor)(ITDirectoryObject *This,IDispatch **ppSecDes);
+                   HRESULT (WINAPI *put_SecurityDescriptor)(ITDirectoryObject *This,IDispatch *pSecDes);
     END_INTERFACE
   } ITDirectoryObjectVtbl;
   struct ITDirectoryObject {
@@ -422,13 +422,13 @@ extern "C" {
 #else
   typedef struct IEnumDirectoryObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumDirectoryObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumDirectoryObject *This);
-      ULONG (WINAPI *Release)(IEnumDirectoryObject *This);
-      HRESULT (WINAPI *Next)(IEnumDirectoryObject *This,ULONG celt,ITDirectoryObject **pVal,ULONG *pcFetched);
-      HRESULT (WINAPI *Reset)(IEnumDirectoryObject *This);
-      HRESULT (WINAPI *Skip)(IEnumDirectoryObject *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumDirectoryObject *This,IEnumDirectoryObject **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumDirectoryObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumDirectoryObject *This);
+                   ULONG (WINAPI *Release)(IEnumDirectoryObject *This);
+                   HRESULT (WINAPI *Next)(IEnumDirectoryObject *This,ULONG celt,ITDirectoryObject **pVal,ULONG *pcFetched);
+                   HRESULT (WINAPI *Reset)(IEnumDirectoryObject *This);
+                   HRESULT (WINAPI *Skip)(IEnumDirectoryObject *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumDirectoryObject *This,IEnumDirectoryObject **ppEnum);
     END_INTERFACE
   } IEnumDirectoryObjectVtbl;
   struct IEnumDirectoryObject {
@@ -466,15 +466,15 @@ extern "C" {
 #else
   typedef struct ITILSConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITILSConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITILSConfig *This);
-      ULONG (WINAPI *Release)(ITILSConfig *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITILSConfig *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITILSConfig *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITILSConfig *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITILSConfig *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Port)(ITILSConfig *This,__LONG32 *pPort);
-      HRESULT (WINAPI *put_Port)(ITILSConfig *This,__LONG32 Port);
+                   HRESULT (WINAPI *QueryInterface)(ITILSConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITILSConfig *This);
+                   ULONG (WINAPI *Release)(ITILSConfig *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITILSConfig *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITILSConfig *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITILSConfig *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITILSConfig *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Port)(ITILSConfig *This,__LONG32 *pPort);
+                   HRESULT (WINAPI *put_Port)(ITILSConfig *This,__LONG32 Port);
     END_INTERFACE
   } ITILSConfigVtbl;
   struct ITILSConfig {
@@ -522,27 +522,27 @@ extern "C" {
 #else
   typedef struct ITDirectoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITDirectory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITDirectory *This);
-      ULONG (WINAPI *Release)(ITDirectory *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITDirectory *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITDirectory *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITDirectory *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITDirectory *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DirectoryType)(ITDirectory *This,DIRECTORY_TYPE *pDirectoryType);
-      HRESULT (WINAPI *get_DisplayName)(ITDirectory *This,BSTR *pName);
-      HRESULT (WINAPI *get_IsDynamic)(ITDirectory *This,VARIANT_BOOL *pfDynamic);
-      HRESULT (WINAPI *get_DefaultObjectTTL)(ITDirectory *This,__LONG32 *pTTL);
-      HRESULT (WINAPI *put_DefaultObjectTTL)(ITDirectory *This,__LONG32 TTL);
-      HRESULT (WINAPI *EnableAutoRefresh)(ITDirectory *This,VARIANT_BOOL fEnable);
-      HRESULT (WINAPI *Connect)(ITDirectory *This,VARIANT_BOOL fSecure);
-      HRESULT (WINAPI *Bind)(ITDirectory *This,BSTR pDomainName,BSTR pUserName,BSTR pPassword,__LONG32 lFlags);
-      HRESULT (WINAPI *AddDirectoryObject)(ITDirectory *This,ITDirectoryObject *pDirectoryObject);
-      HRESULT (WINAPI *ModifyDirectoryObject)(ITDirectory *This,ITDirectoryObject *pDirectoryObject);
-      HRESULT (WINAPI *RefreshDirectoryObject)(ITDirectory *This,ITDirectoryObject *pDirectoryObject);
-      HRESULT (WINAPI *DeleteDirectoryObject)(ITDirectory *This,ITDirectoryObject *pDirectoryObject);
-      HRESULT (WINAPI *get_DirectoryObjects)(ITDirectory *This,DIRECTORY_OBJECT_TYPE DirectoryObjectType,BSTR pName,VARIANT *pVariant);
-      HRESULT (WINAPI *EnumerateDirectoryObjects)(ITDirectory *This,DIRECTORY_OBJECT_TYPE DirectoryObjectType,BSTR pName,IEnumDirectoryObject **ppEnumObject);
+                   HRESULT (WINAPI *QueryInterface)(ITDirectory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITDirectory *This);
+                   ULONG (WINAPI *Release)(ITDirectory *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITDirectory *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITDirectory *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITDirectory *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITDirectory *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DirectoryType)(ITDirectory *This,DIRECTORY_TYPE *pDirectoryType);
+                   HRESULT (WINAPI *get_DisplayName)(ITDirectory *This,BSTR *pName);
+                   HRESULT (WINAPI *get_IsDynamic)(ITDirectory *This,VARIANT_BOOL *pfDynamic);
+                   HRESULT (WINAPI *get_DefaultObjectTTL)(ITDirectory *This,__LONG32 *pTTL);
+                   HRESULT (WINAPI *put_DefaultObjectTTL)(ITDirectory *This,__LONG32 TTL);
+                   HRESULT (WINAPI *EnableAutoRefresh)(ITDirectory *This,VARIANT_BOOL fEnable);
+                   HRESULT (WINAPI *Connect)(ITDirectory *This,VARIANT_BOOL fSecure);
+                   HRESULT (WINAPI *Bind)(ITDirectory *This,BSTR pDomainName,BSTR pUserName,BSTR pPassword,__LONG32 lFlags);
+                   HRESULT (WINAPI *AddDirectoryObject)(ITDirectory *This,ITDirectoryObject *pDirectoryObject);
+                   HRESULT (WINAPI *ModifyDirectoryObject)(ITDirectory *This,ITDirectoryObject *pDirectoryObject);
+                   HRESULT (WINAPI *RefreshDirectoryObject)(ITDirectory *This,ITDirectoryObject *pDirectoryObject);
+                   HRESULT (WINAPI *DeleteDirectoryObject)(ITDirectory *This,ITDirectoryObject *pDirectoryObject);
+                   HRESULT (WINAPI *get_DirectoryObjects)(ITDirectory *This,DIRECTORY_OBJECT_TYPE DirectoryObjectType,BSTR pName,VARIANT *pVariant);
+                   HRESULT (WINAPI *EnumerateDirectoryObjects)(ITDirectory *This,DIRECTORY_OBJECT_TYPE DirectoryObjectType,BSTR pName,IEnumDirectoryObject **ppEnumObject);
     END_INTERFACE
   } ITDirectoryVtbl;
   struct ITDirectory {
@@ -616,13 +616,13 @@ extern "C" {
 #else
   typedef struct IEnumDirectoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumDirectory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumDirectory *This);
-      ULONG (WINAPI *Release)(IEnumDirectory *This);
-      HRESULT (WINAPI *Next)(IEnumDirectory *This,ULONG celt,ITDirectory **ppElements,ULONG *pcFetched);
-      HRESULT (WINAPI *Reset)(IEnumDirectory *This);
-      HRESULT (WINAPI *Skip)(IEnumDirectory *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumDirectory *This,IEnumDirectory **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumDirectory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumDirectory *This);
+                   ULONG (WINAPI *Release)(IEnumDirectory *This);
+                   HRESULT (WINAPI *Next)(IEnumDirectory *This,ULONG celt,ITDirectory **ppElements,ULONG *pcFetched);
+                   HRESULT (WINAPI *Reset)(IEnumDirectory *This);
+                   HRESULT (WINAPI *Skip)(IEnumDirectory *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumDirectory *This,IEnumDirectory **ppEnum);
     END_INTERFACE
   } IEnumDirectoryVtbl;
   struct IEnumDirectory {
@@ -662,17 +662,17 @@ extern "C" {
 #else
   typedef struct ITRendezvousVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITRendezvous *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITRendezvous *This);
-      ULONG (WINAPI *Release)(ITRendezvous *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITRendezvous *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITRendezvous *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITRendezvous *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITRendezvous *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DefaultDirectories)(ITRendezvous *This,VARIANT *pVariant);
-      HRESULT (WINAPI *EnumerateDefaultDirectories)(ITRendezvous *This,IEnumDirectory **ppEnumDirectory);
-      HRESULT (WINAPI *CreateDirectory)(ITRendezvous *This,DIRECTORY_TYPE DirectoryType,BSTR pName,ITDirectory **ppDir);
-      HRESULT (WINAPI *CreateDirectoryObject)(ITRendezvous *This,DIRECTORY_OBJECT_TYPE DirectoryObjectType,BSTR pName,ITDirectoryObject **ppDirectoryObject);
+                   HRESULT (WINAPI *QueryInterface)(ITRendezvous *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITRendezvous *This);
+                   ULONG (WINAPI *Release)(ITRendezvous *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITRendezvous *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITRendezvous *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITRendezvous *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITRendezvous *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DefaultDirectories)(ITRendezvous *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *EnumerateDefaultDirectories)(ITRendezvous *This,IEnumDirectory **ppEnumDirectory);
+                   HRESULT (WINAPI *CreateDirectory)(ITRendezvous *This,DIRECTORY_TYPE DirectoryType,BSTR pName,ITDirectory **ppDir);
+                   HRESULT (WINAPI *CreateDirectoryObject)(ITRendezvous *This,DIRECTORY_OBJECT_TYPE DirectoryObjectType,BSTR pName,ITDirectoryObject **ppDirectoryObject);
     END_INTERFACE
   } ITRendezvousVtbl;
   struct ITRendezvous {

@@ -24,8 +24,8 @@
 
 #include <sys/types.h>
 #include <limits.h>
-#include <endian.h>                     /* Define BYTE_ORDER et al.  */
-#include <signal.h>                     /* Define NSIG.  */
+#include <endian.h>                                                            /* Define BYTE_ORDER et al.  */
+#include <signal.h>                                                            /* Define NSIG.  */
 
 /* This file defines some things in system-specific ways.  */
 #include <bits/param.h>
@@ -82,17 +82,17 @@
 /* Bit map related macros.  */
 #define setbit(a,i)     ((a)[(i)/NBBY] |= 1<<((i)%NBBY))
 #define clrbit(a,i)     ((a)[(i)/NBBY] &= ~(1<<((i)%NBBY)))
-#define isset(a,i)      ((a)[(i)/NBBY] & (1<<((i)%NBBY)))
-#define isclr(a,i)      (((a)[(i)/NBBY] & (1<<((i)%NBBY))) == 0)
+#define isset(a,i)                   ((a)[(i)/NBBY] & (1<<((i)%NBBY)))
+#define isclr(a,i)                   (((a)[(i)/NBBY] & (1<<((i)%NBBY))) == 0)
 
 /* Macros for counting and rounding.  */
 #ifndef howmany
 # define howmany(x, y)  (((x) + ((y) - 1)) / (y))
 #endif
 #ifdef __GNUC__
-# define roundup(x, y)  (__builtin_constant_p (y) && powerof2 (y)             \
-                         ? (((x) + (y) - 1) & ~((y) - 1))                     \
-                         : ((((x) + ((y) - 1)) / (y)) * (y)))
+# define roundup(x, y)  (__builtin_constant_p (y) && powerof2 (y)                                       \
+                                                                             ? (((x) + (y) - 1) & ~((y) - 1))                                                            \
+                                                                             : ((((x) + ((y) - 1)) / (y)) * (y)))
 #else
 # define roundup(x, y)  ((((x) + ((y) - 1)) / (y)) * (y))
 #endif

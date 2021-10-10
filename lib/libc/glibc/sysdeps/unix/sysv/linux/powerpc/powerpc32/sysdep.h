@@ -41,31 +41,31 @@
    function call, with the exception of LR (which is needed for the
    "sc; bnslr+" sequence) and CR (where only CR0.SO is clobbered to signal
    an error return status).  */
-# define INTERNAL_VSYSCALL_CALL_TYPE(funcptr, err, type, nr, args...)	      \
-  ({									      \
-    register void *r0  __asm__ ("r0");					      \
-    register long int r3  __asm__ ("r3");				      \
-    register long int r4  __asm__ ("r4");				      \
-    register long int r5  __asm__ ("r5");				      \
-    register long int r6  __asm__ ("r6");				      \
-    register long int r7  __asm__ ("r7");				      \
-    register long int r8  __asm__ ("r8");				      \
-    register long int r9  __asm__ ("r9");				      \
-    register long int r10 __asm__ ("r10");				      \
-    register long int r11 __asm__ ("r11");				      \
-    register long int r12 __asm__ ("r12");				      \
-    register type rval  __asm__ ("r3");					      \
-    LOADARGS_##nr (funcptr, args);					      \
-    __asm__ __volatile__						      \
-      ("mtctr %0\n\t"							      \
-       "bctrl\n\t"							      \
-       "mfcr %0"							      \
-       : "+r" (r0), "+r" (r3), "+r" (r4), "+r" (r5),  "+r" (r6),  "+r" (r7),  \
-	 "+r" (r8), "+r" (r9), "+r" (r10), "+r" (r11), "+r" (r12)	      \
-       : : "cr0", "ctr", "lr", "memory");				      \
-    err = (long int) r0;						      \
-    __asm__ __volatile__ ("" : "=r" (rval) : "r" (r3), "r" (r4));	      \
-    rval;								      \
+# define INTERNAL_VSYSCALL_CALL_TYPE(funcptr, err, type, nr, args...)	                   \
+  ({									                   \
+    register void *r0  __asm__ ("r0");					                   \
+    register long int r3  __asm__ ("r3");				                   \
+    register long int r4  __asm__ ("r4");				                   \
+    register long int r5  __asm__ ("r5");				                   \
+    register long int r6  __asm__ ("r6");				                   \
+    register long int r7  __asm__ ("r7");				                   \
+    register long int r8  __asm__ ("r8");				                   \
+    register long int r9  __asm__ ("r9");				                   \
+    register long int r10 __asm__ ("r10");				                   \
+    register long int r11 __asm__ ("r11");				                   \
+    register long int r12 __asm__ ("r12");				                   \
+    register type rval  __asm__ ("r3");					                   \
+    LOADARGS_##nr (funcptr, args);					                   \
+    __asm__ __volatile__						                   \
+                   ("mtctr %0\n\t"							                   \
+                    "bctrl\n\t"							                   \
+                    "mfcr %0"							                   \
+                    : "+r" (r0), "+r" (r3), "+r" (r4), "+r" (r5),  "+r" (r6),  "+r" (r7),  \
+	 "+r" (r8), "+r" (r9), "+r" (r10), "+r" (r11), "+r" (r12)	                   \
+                    : : "cr0", "ctr", "lr", "memory");				                   \
+    err = (long int) r0;						                   \
+    __asm__ __volatile__ ("" : "=r" (rval) : "r" (r3), "r" (r4));	                   \
+    rval;								                   \
   })
 
 #define INTERNAL_VSYSCALL_CALL(funcptr, err, nr, args...) \
@@ -77,10 +77,10 @@
     INTERNAL_SYSCALL_DECL (sc_err);					\
     long int sc_ret = INTERNAL_SYSCALL (name, sc_err, nr, args);	\
     if (INTERNAL_SYSCALL_ERROR_P (sc_ret, sc_err))			\
-      {									\
+                   {									\
 	__set_errno (INTERNAL_SYSCALL_ERRNO (sc_ret, sc_err));		\
 	sc_ret = -1L;							\
-      }									\
+                   }									\
     sc_ret;								\
   })
 
@@ -111,13 +111,13 @@
     register long int r12 __asm__ ("r12");				\
     LOADARGS_##nr(name, args);						\
     __asm__ __volatile__						\
-      ("sc   \n\t"							\
-       "mfcr %0"							\
-       : "=&r" (r0),							\
+                   ("sc   \n\t"							\
+                    "mfcr %0"							\
+                    : "=&r" (r0),							\
 	 "=&r" (r3), "=&r" (r4), "=&r" (r5),  "=&r" (r6),  "=&r" (r7),	\
 	 "=&r" (r8), "=&r" (r9), "=&r" (r10), "=&r" (r11), "=&r" (r12)	\
-       : ASM_INPUT_##nr							\
-       : "cr0", "ctr", "memory");					\
+                    : ASM_INPUT_##nr							\
+                    : "cr0", "ctr", "memory");					\
     err = r0;								\
     (int) r3;								\
   })
@@ -131,7 +131,7 @@
 # undef INTERNAL_SYSCALL_ERRNO
 # define INTERNAL_SYSCALL_ERRNO(val, err)     (val)
 
-# define LOADARGS_0(name, dummy)					      \
+# define LOADARGS_0(name, dummy)					                   \
 	r0 = name
 # define LOADARGS_1(name, __arg1) \
 	long int arg1 = (long int) (__arg1);	\

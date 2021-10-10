@@ -170,10 +170,10 @@ struct pt_regs {
 /* (new) PTRACE requests using the same numbers as x86 and the same
  * argument ordering. Additionally, they support more registers too
  */
-#define PTRACE_GETREGS            0xc
-#define PTRACE_SETREGS            0xd
-#define PTRACE_GETFPREGS          0xe
-#define PTRACE_SETFPREGS          0xf
+#define PTRACE_GETREGS                                      0xc
+#define PTRACE_SETREGS                                      0xd
+#define PTRACE_GETFPREGS                       0xe
+#define PTRACE_SETFPREGS                       0xf
 #define PTRACE_GETREGS64	  0x16
 #define PTRACE_SETREGS64	  0x17
 

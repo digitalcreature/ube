@@ -32,12 +32,12 @@ struct sigaction
     /* Signal handler.  */
 #if defined __USE_POSIX199309 || defined __USE_XOPEN_EXTENDED
     union
-      {
+                   {
 	/* Used if SA_SIGINFO is not set.  */
 	__sighandler_t sa_handler;
 	/* Used if SA_SIGINFO is set.  */
 	void (*sa_sigaction) (int, siginfo_t *, void *);
-      }
+                   }
     __sigaction_handler;
 # define sa_handler    __sigaction_handler.sa_handler
 # define sa_sigaction  __sigaction_handler.sa_sigaction
@@ -82,7 +82,7 @@ struct sigaction
 #endif
 
 /* Values for the HOW argument to `sigprocmask'.  */
-#define SIG_NOP	      0		/* 0 is unused to catch errors */
+#define SIG_NOP	                   0		/* 0 is unused to catch errors */
 #define	SIG_BLOCK     1		/* Block signals.  */
 #define	SIG_UNBLOCK   2		/* Unblock signals.  */
 #define	SIG_SETMASK   3		/* Set the set of blocked signals.  */

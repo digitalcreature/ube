@@ -62,22 +62,22 @@
 # endif
 
 # undef	PSEUDO
-# define PSEUDO(name, syscall_name, args)				      \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
-    cmpq $-4095, %rax;							      \
+# define PSEUDO(name, syscall_name, args)				                   \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
+    cmpq $-4095, %rax;							                   \
     jae SYSCALL_ERROR_LABEL
 
 # undef	PSEUDO_END
-# define PSEUDO_END(name)						      \
-  SYSCALL_ERROR_HANDLER							      \
+# define PSEUDO_END(name)						                   \
+  SYSCALL_ERROR_HANDLER							                   \
   END (name)
 
 # undef	PSEUDO_NOERRNO
 # define PSEUDO_NOERRNO(name, syscall_name, args) \
-  .text;								      \
-  ENTRY (name)								      \
+  .text;								                   \
+  ENTRY (name)								                   \
     DO_CALL (syscall_name, args)
 
 # undef	PSEUDO_END_NOERRNO
@@ -88,9 +88,9 @@
 
 # undef	PSEUDO_ERRVAL
 # define PSEUDO_ERRVAL(name, syscall_name, args) \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
     negq %rax
 
 # undef	PSEUDO_END_ERRVAL
@@ -181,13 +181,13 @@
    call.  */
 # undef INLINE_SYSCALL
 # define INLINE_SYSCALL(name, nr, args...) \
-  ({									      \
-    unsigned long int resultvar = INTERNAL_SYSCALL (name, , nr, args);	      \
-    if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (resultvar, )))	      \
-      {									      \
-	__set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, ));		      \
-	resultvar = (unsigned long int) -1;				      \
-      }									      \
+  ({									                   \
+    unsigned long int resultvar = INTERNAL_SYSCALL (name, , nr, args);	                   \
+    if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (resultvar, )))	                   \
+                   {									                   \
+	__set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, ));		                   \
+	resultvar = (unsigned long int) -1;				                   \
+                   }									                   \
     (long int) resultvar; })
 
 /* Define a macro with explicit types for arguments, which expands inline
@@ -195,13 +195,13 @@
    of any argument > size of long int.  */
 # undef INLINE_SYSCALL_TYPES
 # define INLINE_SYSCALL_TYPES(name, nr, args...) \
-  ({									      \
+  ({									                   \
     unsigned long int resultvar = INTERNAL_SYSCALL_TYPES (name, , nr, args);  \
-    if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (resultvar, )))	      \
-      {									      \
-	__set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, ));		      \
-	resultvar = (unsigned long int) -1;				      \
-      }									      \
+    if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (resultvar, )))	                   \
+                   {									                   \
+	__set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, ));		                   \
+	resultvar = (unsigned long int) -1;				                   \
+                   }									                   \
     (long int) resultvar; })
 
 # undef INTERNAL_SYSCALL_DECL
@@ -323,7 +323,7 @@
     "syscall\n\t"							\
     : "=a" (resultvar)							\
     : "0" (number), "r" (_a1), "r" (_a2), "r" (_a3), "r" (_a4),		\
-      "r" (_a5)								\
+                   "r" (_a5)								\
     : "memory", REGISTERS_CLOBBERED_BY_SYSCALL);			\
     (long int) resultvar;						\
 })
@@ -348,7 +348,7 @@
     "syscall\n\t"							\
     : "=a" (resultvar)							\
     : "0" (number), "r" (_a1), "r" (_a2), "r" (_a3), "r" (_a4),		\
-      "r" (_a5), "r" (_a6)						\
+                   "r" (_a5), "r" (_a6)						\
     : "memory", REGISTERS_CLOBBERED_BY_SYSCALL);			\
     (long int) resultvar;						\
 })
@@ -366,7 +366,7 @@
 /* List of system calls which are supported as vsyscalls.  */
 # define HAVE_CLOCK_GETTIME64_VSYSCALL  "__vdso_clock_gettime"
 # define HAVE_GETTIMEOFDAY_VSYSCALL     "__vdso_gettimeofday"
-# define HAVE_TIME_VSYSCALL             "__vdso_time"
+# define HAVE_TIME_VSYSCALL                                       "__vdso_time"
 # define HAVE_GETCPU_VSYSCALL		"__vdso_getcpu"
 # define HAVE_CLOCK_GETRES64_VSYSCALL   "__vdso_clock_getres"
 
@@ -394,23 +394,23 @@
 # endif
 #else
 # ifdef __ASSEMBLER__
-#  define PTR_MANGLE(reg)	xor %fs:POINTER_GUARD, reg;		      \
+#  define PTR_MANGLE(reg)	xor %fs:POINTER_GUARD, reg;		                   \
 				rol $2*LP_SIZE+1, reg
-#  define PTR_DEMANGLE(reg)	ror $2*LP_SIZE+1, reg;			      \
+#  define PTR_DEMANGLE(reg)	ror $2*LP_SIZE+1, reg;			                   \
 				xor %fs:POINTER_GUARD, reg
 # else
-#  define PTR_MANGLE(var)	asm ("xor %%fs:%c2, %0\n"		      \
-				     "rol $2*" LP_SIZE "+1, %0"		      \
-				     : "=r" (var)			      \
-				     : "0" (var),			      \
-				       "i" (offsetof (tcbhead_t,	      \
-						      pointer_guard)))
-#  define PTR_DEMANGLE(var)	asm ("ror $2*" LP_SIZE "+1, %0\n"	      \
-				     "xor %%fs:%c2, %0"			      \
-				     : "=r" (var)			      \
-				     : "0" (var),			      \
-				       "i" (offsetof (tcbhead_t,	      \
-						      pointer_guard)))
+#  define PTR_MANGLE(var)	asm ("xor %%fs:%c2, %0\n"		                   \
+				     "rol $2*" LP_SIZE "+1, %0"		                   \
+				     : "=r" (var)			                   \
+				     : "0" (var),			                   \
+				                    "i" (offsetof (tcbhead_t,	                   \
+						                   pointer_guard)))
+#  define PTR_DEMANGLE(var)	asm ("ror $2*" LP_SIZE "+1, %0\n"	                   \
+				     "xor %%fs:%c2, %0"			                   \
+				     : "=r" (var)			                   \
+				     : "0" (var),			                   \
+				                    "i" (offsetof (tcbhead_t,	                   \
+						                   pointer_guard)))
 # endif
 #endif
 

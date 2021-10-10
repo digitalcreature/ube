@@ -2,9 +2,9 @@
  * gdiplusheaders.h
  *
  * GDI+ Bitmap, CachedBitmap, CustomLineCap, Font, FontCollection,
- *      FontFamily, Image, InstalledFontCollection, PrivateFontCollection,
- *      Region class definitions.
- *      Implementation of these classes is in gdiplusimpl.h.
+ *                   FontFamily, Image, InstalledFontCollection, PrivateFontCollection,
+ *                   Region class definitions.
+ *                   Implementation of these classes is in gdiplusimpl.h.
  *
  * This file is part of the w32api package.
  *

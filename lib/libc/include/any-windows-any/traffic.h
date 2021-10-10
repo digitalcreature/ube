@@ -94,9 +94,9 @@ extern "C" {
     ULONG SrcAddr;
     ULONG DstAddr;
     union {
-      struct { USHORT s_srcport,s_dstport; } S_un_ports;
-      struct { UCHAR s_type,s_code; USHORT filler; } S_un_icmp;
-      ULONG S_Spi;
+                   struct { USHORT s_srcport,s_dstport; } S_un_ports;
+                   struct { UCHAR s_type,s_code; USHORT filler; } S_un_icmp;
+                   ULONG S_Spi;
     } S_un;
     UCHAR ProtocolId;
     UCHAR Reserved3[3];
@@ -110,9 +110,9 @@ extern "C" {
 
   typedef struct _IPX_PATTERN {
     struct {
-      ULONG NetworkAddress;
-      UCHAR NodeAddress[6];
-      USHORT Socket;
+                   ULONG NetworkAddress;
+                   UCHAR NodeAddress[6];
+                   USHORT Socket;
     } Src,Dest;
   } IPX_PATTERN,*PIPX_PATTERN;
 

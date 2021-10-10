@@ -47,7 +47,7 @@ wctrans (const char* property)
   int i;
   for ( i = 0; i < (int) NTMAP; ++i )
     if (strcmp (property, tmap[i].name) == 0)
-      return tmap[i].val;
+                   return tmap[i].val;
    return 0;
 }
 
@@ -56,10 +56,10 @@ wint_t towctrans (wint_t wc, wctrans_t desc)
   switch (desc)
     {
     case _LOWER:
-      return towlower (wc);
+                   return towlower (wc);
     case _UPPER:
-      return towupper (wc);
+                   return towupper (wc);
     default:
-      return wc;
+                   return wc;
    }
 }

@@ -277,8 +277,8 @@ extern "C" {
 #else
 /*  DATABLOCK_HEADER DUMMYSTRUCTNAME; */
     __C89_NAMELESS struct {
-      DWORD cbSize;
-      DWORD dwSignature;
+                   DWORD cbSize;
+                   DWORD dwSignature;
     };
 #endif
     WORD wFillAttribute;
@@ -313,8 +313,8 @@ extern "C" {
 #else
     /* DATABLOCK_HEADER DUMMYSTRUCTNAME; */
     __C89_NAMELESS struct {
-      DWORD cbSize;
-      DWORD dwSignature;
+                   DWORD cbSize;
+                   DWORD dwSignature;
     };
 #endif
     UINT uCodePage;
@@ -327,8 +327,8 @@ extern "C" {
 #else
 /*  DATABLOCK_HEADER DUMMYSTRUCTNAME; */
     __C89_NAMELESS struct {
-      DWORD cbSize;
-      DWORD dwSignature;
+                   DWORD cbSize;
+                   DWORD dwSignature;
     };
 #endif
     CHAR szDarwinID[MAX_PATH];
@@ -2661,8 +2661,8 @@ typedef struct {
     UINT c = sizeof (p->mkid.cb);
 
     while (c <= sz && p->mkid.cb >= sizeof (p->mkid.cb) && p->mkid.cb <= (sz - c)) {
-      c += p->mkid.cb;
-      p = ILNext(p);
+                   c += p->mkid.cb;
+                   p = ILNext(p);
     }
     return c <= sz && p->mkid.cb == 0;
   }

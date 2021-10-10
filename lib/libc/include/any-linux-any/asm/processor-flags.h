@@ -141,7 +141,7 @@
  */
 
 /*
- *      NSC/Cyrix CPU configuration register indexes
+ *                   NSC/Cyrix CPU configuration register indexes
  */
 #define CX86_PCR0	0x20
 #define CX86_GCR	0xb8

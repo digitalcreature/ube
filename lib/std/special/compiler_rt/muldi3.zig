@@ -11,14 +11,14 @@ const builtin = @import("builtin");
 const dwords = extern union {
     all: i64,
     s: switch (builtin.endian) {
-        .Little => extern struct {
-            low: u32,
-            high: u32,
-        },
-        .Big => extern struct {
-            high: u32,
-            low: u32,
-        },
+                     .Little => extern struct {
+                                      low: u32,
+                                      high: u32,
+                     },
+                     .Big => extern struct {
+                                      high: u32,
+                                      low: u32,
+                     },
     },
 };
 

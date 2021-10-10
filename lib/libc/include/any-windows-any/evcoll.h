@@ -11,22 +11,22 @@ extern "C" {
 #endif
 
 typedef enum _EC_SUBSCRIPTION_CONFIGURATION_MODE {
-  EcConfigurationModeNormal         = 0,
-  EcConfigurationModeCustom         = 1,
+  EcConfigurationModeNormal                      = 0,
+  EcConfigurationModeCustom                      = 1,
   EcConfigurationModeMinLatency     = 2,
   EcConfigurationModeMinBandwidth   = 3 
 } EC_SUBSCRIPTION_CONFIGURATION_MODE;
 
 typedef enum _EC_SUBSCRIPTION_CONTENT_FORMAT {
-  EcContentFormatEvents         = 1,
+  EcContentFormatEvents                      = 1,
   EcContentFormatRenderedText   = 2 
 } EC_SUBSCRIPTION_CONTENT_FORMAT;
 
 typedef enum _EC_SUBSCRIPTION_CREDENTIALS_TYPE {
-  EcSubscriptionCredDefault        = 0,
-  EcSubscriptionCredNegotiate      = 1,
-  EcSubscriptionCredDigest         = 2,
-  EcSubscriptionCredBasic          = 3,
+  EcSubscriptionCredDefault                     = 0,
+  EcSubscriptionCredNegotiate                   = 1,
+  EcSubscriptionCredDigest                      = 2,
+  EcSubscriptionCredBasic                       = 3,
   EcSubscriptionCredLocalMachine   = 4 
 } EC_SUBSCRIPTION_CREDENTIALS_TYPE;
 
@@ -36,37 +36,37 @@ typedef enum _EC_SUBSCRIPTION_DELIVERY_MODE {
 } EC_SUBSCRIPTION_DELIVERY_MODE;
 
 typedef enum _EC_SUBSCRIPTION_PROPERTY_ID {
-  EcSubscriptionEnabled                        = 0,
-  EcSubscriptionEventSources                   = 1,
-  EcSubscriptionEventSourceAddress             = 2,
-  EcSubscriptionEventSourceEnabled             = 3,
-  EcSubscriptionEventSourceUserName            = 4,
-  EcSubscriptionEventSourcePassword            = 5,
-  EcSubscriptionDescription                    = 6,
-  EcSubscriptionURI                            = 7,
-  EcSubscriptionConfigurationMode              = 8,
-  EcSubscriptionExpires                        = 9,
-  EcSubscriptionQuery                          = 10,
-  EcSubscriptionTransportName                  = 11,
-  EcSubscriptionTransportPort                  = 12,
-  EcSubscriptionDeliveryMode                   = 13,
-  EcSubscriptionDeliveryMaxItems               = 14,
-  EcSubscriptionDeliveryMaxLatencyTime         = 15,
-  EcSubscriptionHeartbeatInterval              = 16,
-  EcSubscriptionLocale                         = 17,
-  EcSubscriptionContentFormat                  = 18,
-  EcSubscriptionLogFile                        = 19,
-  EcSubscriptionPublisherName                  = 20,
-  EcSubscriptionCredentialsType                = 21,
-  EcSubscriptionCommonUserName                 = 22,
-  EcSubscriptionCommonPassword                 = 23,
-  EcSubscriptionHostName                       = 24,
-  EcSubscriptionReadExistingEvents             = 25,
-  EcSubscriptionDialect                        = 26,
-  EcSubscriptionType                           = 27,
-  EcSubscriptionAllowedIssuerCAs               = 28,
-  EcSubscriptionAllowedSubjects                = 29,
-  EcSubscriptionDeniedSubjects                 = 30,
+  EcSubscriptionEnabled                                                                            = 0,
+  EcSubscriptionEventSources                                                          = 1,
+  EcSubscriptionEventSourceAddress                                       = 2,
+  EcSubscriptionEventSourceEnabled                                       = 3,
+  EcSubscriptionEventSourceUserName                                      = 4,
+  EcSubscriptionEventSourcePassword                                      = 5,
+  EcSubscriptionDescription                                                           = 6,
+  EcSubscriptionURI                                                                                = 7,
+  EcSubscriptionConfigurationMode                                        = 8,
+  EcSubscriptionExpires                                                                            = 9,
+  EcSubscriptionQuery                                                                              = 10,
+  EcSubscriptionTransportName                                                         = 11,
+  EcSubscriptionTransportPort                                                         = 12,
+  EcSubscriptionDeliveryMode                                                          = 13,
+  EcSubscriptionDeliveryMaxItems                                         = 14,
+  EcSubscriptionDeliveryMaxLatencyTime                      = 15,
+  EcSubscriptionHeartbeatInterval                                        = 16,
+  EcSubscriptionLocale                                                                             = 17,
+  EcSubscriptionContentFormat                                                         = 18,
+  EcSubscriptionLogFile                                                                            = 19,
+  EcSubscriptionPublisherName                                                         = 20,
+  EcSubscriptionCredentialsType                                          = 21,
+  EcSubscriptionCommonUserName                                           = 22,
+  EcSubscriptionCommonPassword                                           = 23,
+  EcSubscriptionHostName                                                              = 24,
+  EcSubscriptionReadExistingEvents                                       = 25,
+  EcSubscriptionDialect                                                                            = 26,
+  EcSubscriptionType                                                                               = 27,
+  EcSubscriptionAllowedIssuerCAs                                         = 28,
+  EcSubscriptionAllowedSubjects                                          = 29,
+  EcSubscriptionDeniedSubjects                                           = 30,
   EcSubscriptionAllowedSourceDomainComputers   = 31 
 } EC_SUBSCRIPTION_PROPERTY_ID;
 
@@ -78,23 +78,23 @@ typedef enum _EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS {
 } EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS;
 
 typedef enum _EC_SUBSCRIPTION_TYPE {
-  EcSubscriptionTypeSourceInitiated      = 0,
+  EcSubscriptionTypeSourceInitiated                   = 0,
   EcSubscriptionTypeCollectorInitiated   = 1 
 } EC_SUBSCRIPTION_TYPE;
 
 typedef enum _EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID {
-  EcSubscriptionRunTimeStatusActive              = 0,
-  EcSubscriptionRunTimeStatusLastError           = 1,
+  EcSubscriptionRunTimeStatusActive                                        = 0,
+  EcSubscriptionRunTimeStatusLastError                        = 1,
   EcSubscriptionRunTimeStatusLastErrorMessage    = 2,
-  EcSubscriptionRunTimeStatusLastErrorTime       = 3,
-  EcSubscriptionRunTimeStatusNextRetryTime       = 4,
-  EcSubscriptionRunTimeStatusEventSources        = 5,
+  EcSubscriptionRunTimeStatusLastErrorTime                    = 3,
+  EcSubscriptionRunTimeStatusNextRetryTime                    = 4,
+  EcSubscriptionRunTimeStatusEventSources                     = 5,
   EcSubscriptionRunTimeStatusLastHeartbeatTime   = 6 
 } EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID;
 
 typedef struct _EC_VARIANT {
   __C89_NAMELESS union {
-    BOOL      BooleanVal;
+    BOOL                   BooleanVal;
     UINT32    UInt32Val;
     ULONGLONG DateTimeVal;
     LPCWSTR   StringVal;
@@ -108,11 +108,11 @@ typedef struct _EC_VARIANT {
 } EC_VARIANT, *PEC_VARIANT;
 
 typedef enum _EC_VARIANT_TYPE {
-  EcVarTypeNull                    = 0,
-  EcVarTypeBoolean                 = 1,
-  EcVarTypeUInt32                  = 2,
-  EcVarTypeDateTime                = 3,
-  EcVarTypeString                  = 4,
+  EcVarTypeNull                                                           = 0,
+  EcVarTypeBoolean                                           = 1,
+  EcVarTypeUInt32                                                         = 2,
+  EcVarTypeDateTime                                          = 3,
+  EcVarTypeString                                                         = 4,
   EcVarObjectArrayPropertyHandle   = 5 
 } EC_VARIANT_TYPE;
 

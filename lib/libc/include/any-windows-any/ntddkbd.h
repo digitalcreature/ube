@@ -26,8 +26,8 @@
 extern "C" {
 #endif
 
-#define DD_KEYBOARD_DEVICE_NAME           "\\Device\\KeyboardClass"
-#define DD_KEYBOARD_DEVICE_NAME_U         L"\\Device\\KeyboardClass"
+#define DD_KEYBOARD_DEVICE_NAME                        "\\Device\\KeyboardClass"
+#define DD_KEYBOARD_DEVICE_NAME_U                      L"\\Device\\KeyboardClass"
 
 #define IOCTL_KEYBOARD_QUERY_ATTRIBUTES \
   CTL_CODE(FILE_DEVICE_KEYBOARD, 0x0000, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -61,25 +61,25 @@ DEFINE_GUID(GUID_DEVINTERFACE_KEYBOARD, \
 
 #define GUID_CLASS_KEYBOARD GUID_DEVINTERFACE_KEYBOARD /* Obsolete */
 
-#define KEYBOARD_ERROR_VALUE_BASE         10000
+#define KEYBOARD_ERROR_VALUE_BASE                      10000
 
 /* KEYBOARD_INPUT_DATA.MakeCode constants */
 #define KEYBOARD_OVERRUN_MAKE_CODE     0xFF
 
 /* KEYBOARD_INPUT_DATA.Flags constants */
-#define KEY_MAKE                       0
-#define KEY_BREAK                      1
-#define KEY_E0                         2
-#define KEY_E1                         4
-#define KEY_TERMSRV_SET_LED            8
-#define KEY_TERMSRV_SHADOW             0x10
-#define KEY_TERMSRV_VKPACKET           0x20
+#define KEY_MAKE                                                              0
+#define KEY_BREAK                                                             1
+#define KEY_E0                                                                             2
+#define KEY_E1                                                                             4
+#define KEY_TERMSRV_SET_LED                                      8
+#define KEY_TERMSRV_SHADOW                                       0x10
+#define KEY_TERMSRV_VKPACKET                        0x20
 
 #define KEYBOARD_LED_INJECTED     0x8000
-#define KEYBOARD_SHADOW           0x4000
+#define KEYBOARD_SHADOW                        0x4000
 #define KEYBOARD_KANA_LOCK_ON     8
 #define KEYBOARD_CAPS_LOCK_ON     4
-#define KEYBOARD_NUM_LOCK_ON      2
+#define KEYBOARD_NUM_LOCK_ON                   2
 #define KEYBOARD_SCROLL_LOCK_ON   1
 
 typedef struct _KEYBOARD_INPUT_DATA {

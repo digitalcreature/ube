@@ -30,7 +30,7 @@
 
 /* LLC and SNAP constants */
 #define EXTENDED_SAP 	0xAA
-#define UI_CMD       	0x03
+#define UI_CMD                    	0x03
 
 /* This is an Token-Ring frame header. */
 struct trh_hdr
@@ -97,12 +97,12 @@ struct tr_statistics
 
 struct trn_hdr
 {
-  uint8_t trn_ac;                /* access control field */
-  uint8_t trn_fc;                /* field control field */
+  uint8_t trn_ac;                                          /* access control field */
+  uint8_t trn_fc;                                          /* field control field */
   uint8_t trn_dhost[TR_ALEN];    /* destination host */
   uint8_t trn_shost[TR_ALEN];    /* source host */
-  uint16_t trn_rcf;              /* route control field */
-  uint16_t trn_rseg[8];          /* routing registers */
+  uint16_t trn_rcf;                                        /* route control field */
+  uint16_t trn_rseg[8];                       /* routing registers */
 };
 
 #endif

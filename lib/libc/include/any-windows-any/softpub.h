@@ -42,8 +42,8 @@ extern "C" {
 
   struct _WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO {
     __C89_NAMELESS union {
-      DWORD cbStruct;
-      DWORD cbSize;
+                   DWORD cbStruct;
+                   DWORD cbSize;
     };
     PCCERT_CHAIN_CONTEXT pChainContext;
     DWORD dwSignerType;
@@ -57,8 +57,8 @@ extern "C" {
 
   typedef struct _WTD_GENERIC_CHAIN_POLICY_CREATE_INFO {
     __C89_NAMELESS union {
-      DWORD cbStruct;
-      DWORD cbSize;
+                   DWORD cbStruct;
+                   DWORD cbSize;
     };
     HCERTCHAINENGINE hChainEngine;
     PCERT_CHAIN_PARA pChainPara;
@@ -68,8 +68,8 @@ extern "C" {
 
   typedef struct _WTD_GENERIC_CHAIN_POLICY_DATA {
     __C89_NAMELESS union {
-      DWORD cbStruct;
-      DWORD cbSize;
+                   DWORD cbStruct;
+                   DWORD cbSize;
     };
     PWTD_GENERIC_CHAIN_POLICY_CREATE_INFO pSignerChainInfo;
     PWTD_GENERIC_CHAIN_POLICY_CREATE_INFO pCounterSignerChainInfo;

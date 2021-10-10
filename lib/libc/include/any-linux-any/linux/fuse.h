@@ -15,10 +15,10 @@
     modification, are permitted provided that the following conditions
     are met:
     1. Redistributions of source code must retain the above copyright
-       notice, this list of conditions and the following disclaimer.
+                    notice, this list of conditions and the following disclaimer.
     2. Redistributions in binary form must reproduce the above copyright
-       notice, this list of conditions and the following disclaimer in the
-       documentation and/or other materials provided with the distribution.
+                    notice, this list of conditions and the following disclaimer in the
+                    documentation and/or other materials provided with the distribution.
 
     THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
     ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -349,37 +349,37 @@ enum fuse_opcode {
 	FUSE_READ	   = 15,
 	FUSE_WRITE	   = 16,
 	FUSE_STATFS	   = 17,
-	FUSE_RELEASE       = 18,
-	FUSE_FSYNC         = 20,
-	FUSE_SETXATTR      = 21,
-	FUSE_GETXATTR      = 22,
+	FUSE_RELEASE                    = 18,
+	FUSE_FSYNC                      = 20,
+	FUSE_SETXATTR                   = 21,
+	FUSE_GETXATTR                   = 22,
 	FUSE_LISTXATTR     = 23,
 	FUSE_REMOVEXATTR   = 24,
-	FUSE_FLUSH         = 25,
-	FUSE_INIT          = 26,
-	FUSE_OPENDIR       = 27,
-	FUSE_READDIR       = 28,
+	FUSE_FLUSH                      = 25,
+	FUSE_INIT                       = 26,
+	FUSE_OPENDIR                    = 27,
+	FUSE_READDIR                    = 28,
 	FUSE_RELEASEDIR    = 29,
-	FUSE_FSYNCDIR      = 30,
-	FUSE_GETLK         = 31,
-	FUSE_SETLK         = 32,
-	FUSE_SETLKW        = 33,
-	FUSE_ACCESS        = 34,
-	FUSE_CREATE        = 35,
+	FUSE_FSYNCDIR                   = 30,
+	FUSE_GETLK                      = 31,
+	FUSE_SETLK                      = 32,
+	FUSE_SETLKW                     = 33,
+	FUSE_ACCESS                     = 34,
+	FUSE_CREATE                     = 35,
 	FUSE_INTERRUPT     = 36,
-	FUSE_BMAP          = 37,
-	FUSE_DESTROY       = 38,
-	FUSE_IOCTL         = 39,
-	FUSE_POLL          = 40,
+	FUSE_BMAP                       = 37,
+	FUSE_DESTROY                    = 38,
+	FUSE_IOCTL                      = 39,
+	FUSE_POLL                       = 40,
 	FUSE_NOTIFY_REPLY  = 41,
 	FUSE_BATCH_FORGET  = 42,
 	FUSE_FALLOCATE     = 43,
 	FUSE_READDIRPLUS   = 44,
-	FUSE_RENAME2       = 45,
-	FUSE_LSEEK         = 46,
+	FUSE_RENAME2                    = 45,
+	FUSE_LSEEK                      = 46,
 
 	/* CUSE specific operations */
-	CUSE_INIT          = 4096,
+	CUSE_INIT                       = 4096,
 };
 
 enum fuse_notify_code {

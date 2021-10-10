@@ -66,40 +66,40 @@
    in -1 .. -4095 as a valid result so we can savely test with -4095.  */
 
 #undef PSEUDO
-#define	PSEUDO(name, syscall_name, args)				      \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
-    lghi %r4,-4095 ;							      \
-    clgr %r2,%r4 ;							      \
+#define	PSEUDO(name, syscall_name, args)				                   \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
+    lghi %r4,-4095 ;							                   \
+    clgr %r2,%r4 ;							                   \
     jgnl SYSCALL_ERROR_LABEL
 
 #undef PSEUDO_END
-#define PSEUDO_END(name)						      \
-  SYSCALL_ERROR_HANDLER;						      \
+#define PSEUDO_END(name)						                   \
+  SYSCALL_ERROR_HANDLER;						                   \
   END (name)
 
 #undef PSEUDO_NOERRNO
-#define	PSEUDO_NOERRNO(name, syscall_name, args)			      \
-  .text;								      \
-  ENTRY (name)								      \
+#define	PSEUDO_NOERRNO(name, syscall_name, args)			                   \
+  .text;								                   \
+  ENTRY (name)								                   \
     DO_CALL (syscall_name, args)
 
 #undef PSEUDO_END_NOERRNO
-#define PSEUDO_END_NOERRNO(name)					      \
-  SYSCALL_ERROR_HANDLER;						      \
+#define PSEUDO_END_NOERRNO(name)					                   \
+  SYSCALL_ERROR_HANDLER;						                   \
   END (name)
 
 #undef PSEUDO_ERRVAL
-#define	PSEUDO_ERRVAL(name, syscall_name, args)				      \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
+#define	PSEUDO_ERRVAL(name, syscall_name, args)				                   \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
     lcgr %r2,%r2
 
 #undef PSEUDO_END_ERRVAL
-#define PSEUDO_END_ERRVAL(name)						      \
-  SYSCALL_ERROR_HANDLER;						      \
+#define PSEUDO_END_ERRVAL(name)						                   \
+  SYSCALL_ERROR_HANDLER;						                   \
   END (name)
 
 #ifndef PIC
@@ -109,10 +109,10 @@
 # if RTLD_PRIVATE_ERRNO
 #  define SYSCALL_ERROR_LABEL 0f
 #  define SYSCALL_ERROR_HANDLER \
-0:  larl  %r1,rtld_errno;						      \
-    lcr   %r2,%r2;							      \
-    st    %r2,0(%r1);							      \
-    lghi  %r2,-1;							      \
+0:  larl  %r1,rtld_errno;						                   \
+    lcr   %r2,%r2;							                   \
+    st    %r2,0(%r1);							                   \
+    lghi  %r2,-1;							                   \
     br    %r14
 # elif defined _LIBC_REENTRANT
 #  if IS_IN (libc)
@@ -122,23 +122,23 @@
 #  endif
 #  define SYSCALL_ERROR_LABEL 0f
 #  define SYSCALL_ERROR_HANDLER \
-0:  lcr   %r0,%r2;							      \
-    larl  %r1,SYSCALL_ERROR_ERRNO@indntpoff;				      \
-    lg    %r1,0(%r1);							      \
-    ear   %r2,%a0;							      \
-    sllg  %r2,%r2,32;							      \
-    ear   %r2,%a1;							      \
-    st    %r0,0(%r1,%r2);						      \
-    lghi   %r2,-1;							      \
+0:  lcr   %r0,%r2;							                   \
+    larl  %r1,SYSCALL_ERROR_ERRNO@indntpoff;				                   \
+    lg    %r1,0(%r1);							                   \
+    ear   %r2,%a0;							                   \
+    sllg  %r2,%r2,32;							                   \
+    ear   %r2,%a1;							                   \
+    st    %r0,0(%r1,%r2);						                   \
+    lghi   %r2,-1;							                   \
     br    %r14
 # else
 #  define SYSCALL_ERROR_LABEL 0f
 #  define SYSCALL_ERROR_HANDLER \
-0:  larl  %r1,_GLOBAL_OFFSET_TABLE_;					      \
-    lg    %r1,errno@GOT(%r1);						      \
-    lcr   %r2,%r2;							      \
-    st    %r2,0(%r1);							      \
-    lghi  %r2,-1;							      \
+0:  larl  %r1,_GLOBAL_OFFSET_TABLE_;					                   \
+    lg    %r1,errno@GOT(%r1);						                   \
+    lcr   %r2,%r2;							                   \
+    st    %r2,0(%r1);							                   \
+    lghi  %r2,-1;							                   \
     br    %r14
 # endif /* _LIBC_REENTRANT */
 #endif /* PIC */
@@ -160,92 +160,92 @@
    moved to register 0 and back to avoid an additional stack frame.
  */
 
-#define DO_CALL(syscall, args)						      \
-  .if args > 5;								      \
-    lgr %r0,%r7;							      \
-    lg %r7,160(%r15);							      \
-  .endif;								      \
-  .if SYS_ify (syscall) < 256;						      \
-    svc SYS_ify (syscall);						      \
-  .else;								      \
-    lghi %r1,SYS_ify (syscall);						      \
-    svc 0;								      \
-  .endif;								      \
-  .if args > 5;								      \
-    lgr %r7,%r0;							      \
+#define DO_CALL(syscall, args)						                   \
+  .if args > 5;								                   \
+    lgr %r0,%r7;							                   \
+    lg %r7,160(%r15);							                   \
+  .endif;								                   \
+  .if SYS_ify (syscall) < 256;						                   \
+    svc SYS_ify (syscall);						                   \
+  .else;								                   \
+    lghi %r1,SYS_ify (syscall);						                   \
+    svc 0;								                   \
+  .endif;								                   \
+  .if args > 5;								                   \
+    lgr %r7,%r0;							                   \
   .endif
 
-#define ret								      \
+#define ret								                   \
     br	    14
 
-#define ret_NOERRNO							      \
+#define ret_NOERRNO							                   \
     br	    14
 
-#define ret_ERRVAL							      \
+#define ret_ERRVAL							                   \
     br	    14
 
 #endif /* __ASSEMBLER__ */
 
 #undef INLINE_SYSCALL
-#define INLINE_SYSCALL(name, nr, args...)				      \
-  ({									      \
-    long _ret = INTERNAL_SYSCALL (name, , nr, args);			      \
-    if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (_ret, )))		      \
-     {									      \
-       __set_errno (INTERNAL_SYSCALL_ERRNO (_ret, ));			      \
-       _ret = -1;							      \
-     }									      \
+#define INLINE_SYSCALL(name, nr, args...)				                   \
+  ({									                   \
+    long _ret = INTERNAL_SYSCALL (name, , nr, args);			                   \
+    if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (_ret, )))		                   \
+     {									                   \
+                    __set_errno (INTERNAL_SYSCALL_ERRNO (_ret, ));			                   \
+                    _ret = -1;							                   \
+     }									                   \
     _ret; })
 
 #undef INTERNAL_SYSCALL_DECL
 #define INTERNAL_SYSCALL_DECL(err) do { } while (0)
 
 #undef INTERNAL_SYSCALL_DIRECT
-#define INTERNAL_SYSCALL_DIRECT(name, err, nr, args...)			      \
-  ({									      \
-    DECLARGS_##nr(args)							      \
-    register long _ret __asm__("2");					      \
-    __asm__ __volatile__ (						      \
-			  "svc    %b1\n\t"				      \
-			  : "=d" (_ret)					      \
-			  : "i" (__NR_##name) ASMFMT_##nr		      \
-			  : "memory" );					      \
+#define INTERNAL_SYSCALL_DIRECT(name, err, nr, args...)			                   \
+  ({									                   \
+    DECLARGS_##nr(args)							                   \
+    register long _ret __asm__("2");					                   \
+    __asm__ __volatile__ (						                   \
+			  "svc    %b1\n\t"				                   \
+			  : "=d" (_ret)					                   \
+			  : "i" (__NR_##name) ASMFMT_##nr		                   \
+			  : "memory" );					                   \
     _ret; })
 
 #undef INTERNAL_SYSCALL_SVC0
-#define INTERNAL_SYSCALL_SVC0(name, err, nr, args...)			      \
-  ({									      \
-    DECLARGS_##nr(args)							      \
+#define INTERNAL_SYSCALL_SVC0(name, err, nr, args...)			                   \
+  ({									                   \
+    DECLARGS_##nr(args)							                   \
     register unsigned long _nr __asm__("1") = (unsigned long)(__NR_##name);   \
-    register long _ret __asm__("2");					      \
-    __asm__ __volatile__ (						      \
-			  "svc    0\n\t"				      \
-			  : "=d" (_ret)					      \
-			  : "d" (_nr) ASMFMT_##nr			      \
-			  : "memory" );					      \
+    register long _ret __asm__("2");					                   \
+    __asm__ __volatile__ (						                   \
+			  "svc    0\n\t"				                   \
+			  : "=d" (_ret)					                   \
+			  : "d" (_nr) ASMFMT_##nr			                   \
+			  : "memory" );					                   \
     _ret; })
 
 #undef INTERNAL_SYSCALL_NCS
-#define INTERNAL_SYSCALL_NCS(no, err, nr, args...)			      \
-  ({									      \
-    DECLARGS_##nr(args)							      \
-    register unsigned long _nr __asm__("1") = (unsigned long)(no);	      \
-    register long _ret __asm__("2");					      \
-    __asm__ __volatile__ (						      \
-			  "svc    0\n\t"				      \
-			  : "=d" (_ret)					      \
-			  : "d" (_nr) ASMFMT_##nr			      \
-			  : "memory" );					      \
+#define INTERNAL_SYSCALL_NCS(no, err, nr, args...)			                   \
+  ({									                   \
+    DECLARGS_##nr(args)							                   \
+    register unsigned long _nr __asm__("1") = (unsigned long)(no);	                   \
+    register long _ret __asm__("2");					                   \
+    __asm__ __volatile__ (						                   \
+			  "svc    0\n\t"				                   \
+			  : "=d" (_ret)					                   \
+			  : "d" (_nr) ASMFMT_##nr			                   \
+			  : "memory" );					                   \
     _ret; })
 
 #undef INTERNAL_SYSCALL
-#define INTERNAL_SYSCALL(name, err, nr, args...)			      \
-  (((__NR_##name) < 256)						      \
-   ? INTERNAL_SYSCALL_DIRECT(name, err, nr, args)			      \
+#define INTERNAL_SYSCALL(name, err, nr, args...)			                   \
+  (((__NR_##name) < 256)						                   \
+   ? INTERNAL_SYSCALL_DIRECT(name, err, nr, args)			                   \
    : INTERNAL_SYSCALL_SVC0(name, err,nr, args))
 
 #undef INTERNAL_SYSCALL_ERROR_P
-#define INTERNAL_SYSCALL_ERROR_P(val, err)				      \
+#define INTERNAL_SYSCALL_ERROR_P(val, err)				                   \
   ((unsigned long) (val) >= -4095UL)
 
 #undef INTERNAL_SYSCALL_ERRNO
@@ -292,9 +292,9 @@
   ear     tmpreg,%a0;			\
   sllg    tmpreg,tmpreg,32;		\
   ear     tmpreg,%a1;			\
-  xg      reg,STACK_GUARD(tmpreg)
+  xg                   reg,STACK_GUARD(tmpreg)
 #  define PTR_MANGLE2(reg, tmpreg) \
-  xg      reg,STACK_GUARD(tmpreg)
+  xg                   reg,STACK_GUARD(tmpreg)
 #  define PTR_DEMANGLE(reg, tmpreg) PTR_MANGLE (reg, tmpreg)
 # else
 #  define PTR_MANGLE(var) \

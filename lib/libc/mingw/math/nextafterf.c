@@ -21,8 +21,8 @@ nextafterf (float x, float y)
   u.f = x; 
   if (x == 0.0F)
     {
-      u.i = 1;
-      return y > 0.0F ? u.f : -u.f;
+                   u.i = 1;
+                   return y > 0.0F ? u.f : -u.f;
     }
   if (((x > 0.0F) ^ (y > x)) == 0)
     u.i++;

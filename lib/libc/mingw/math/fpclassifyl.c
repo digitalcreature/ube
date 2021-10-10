@@ -12,16 +12,16 @@ int __fpclassifyl (long double _x){
     hlp.x = _x;
     e = hlp.lh.sign_exponent & 0x7fff;
     if (!e)
-      {
-        unsigned int h = hlp.lh.high;
-        if (!(hlp.lh.low | h))
-          return FP_ZERO;
-        else if (!(h & 0x80000000))
-          return FP_SUBNORMAL;
-      }
+                   {
+                     unsigned int h = hlp.lh.high;
+                     if (!(hlp.lh.low | h))
+                       return FP_ZERO;
+                     else if (!(h & 0x80000000))
+                       return FP_SUBNORMAL;
+                   }
     else if (e == 0x7fff)
-      return (((hlp.lh.high & 0x7fffffff) | hlp.lh.low) == 0 ?
-	      FP_INFINITE : FP_NAN);
+                   return (((hlp.lh.high & 0x7fffffff) | hlp.lh.low) == 0 ?
+	                   FP_INFINITE : FP_NAN);
     return FP_NORMAL;
 #elif defined(__arm__) || defined(_ARM_) || defined(__aarch64__) || defined(_ARM64_)
     return __fpclassify(_x);

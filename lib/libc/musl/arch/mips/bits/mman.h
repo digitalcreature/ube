@@ -1,5 +1,5 @@
 #undef MAP_ANON
-#define MAP_ANON       0x800
+#define MAP_ANON                    0x800
 #undef MAP_NORESERVE
 #define MAP_NORESERVE  0x0400
 #undef MAP_GROWSDOWN
@@ -15,7 +15,7 @@
 #undef MAP_NONBLOCK
 #define MAP_NONBLOCK   0x20000
 #undef MAP_STACK
-#define MAP_STACK      0x40000
+#define MAP_STACK                   0x40000
 #undef MAP_HUGETLB
 #define MAP_HUGETLB    0x80000
 #undef MAP_SYNC

@@ -84,31 +84,31 @@
 #define TIOCGICOUNT	0x545D
 #define FIOQSIZE	0x5460
 
-#define TIOCM_LE        0x001
-#define TIOCM_DTR       0x002
-#define TIOCM_RTS       0x004
-#define TIOCM_ST        0x008
-#define TIOCM_SR        0x010
-#define TIOCM_CTS       0x020
-#define TIOCM_CAR       0x040
-#define TIOCM_RNG       0x080
-#define TIOCM_DSR       0x100
-#define TIOCM_CD        TIOCM_CAR
-#define TIOCM_RI        TIOCM_RNG
-#define TIOCM_OUT1      0x2000
-#define TIOCM_OUT2      0x4000
-#define TIOCM_LOOP      0x8000
+#define TIOCM_LE                     0x001
+#define TIOCM_DTR                    0x002
+#define TIOCM_RTS                    0x004
+#define TIOCM_ST                     0x008
+#define TIOCM_SR                     0x010
+#define TIOCM_CTS                    0x020
+#define TIOCM_CAR                    0x040
+#define TIOCM_RNG                    0x080
+#define TIOCM_DSR                    0x100
+#define TIOCM_CD                     TIOCM_CAR
+#define TIOCM_RI                     TIOCM_RNG
+#define TIOCM_OUT1                   0x2000
+#define TIOCM_OUT2                   0x4000
+#define TIOCM_LOOP                   0x8000
 
-#define FIOSETOWN       0x8901
-#define SIOCSPGRP       0x8902
-#define FIOGETOWN       0x8903
-#define SIOCGPGRP       0x8904
-#define SIOCATMARK      0x8905
+#define FIOSETOWN                    0x8901
+#define SIOCSPGRP                    0x8902
+#define FIOGETOWN                    0x8903
+#define SIOCGPGRP                    0x8904
+#define SIOCATMARK                   0x8905
 #if __LONG_MAX == 0x7fffffff
-#define SIOCGSTAMP      _IOR(0x89, 6, char[16])
+#define SIOCGSTAMP                   _IOR(0x89, 6, char[16])
 #define SIOCGSTAMPNS    _IOR(0x89, 7, char[16])
 #else
-#define SIOCGSTAMP      0x8906
+#define SIOCGSTAMP                   0x8906
 #define SIOCGSTAMPNS    0x8907
 #endif
 

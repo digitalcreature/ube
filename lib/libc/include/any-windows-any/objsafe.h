@@ -66,11 +66,11 @@ extern "C" {
 #else
   typedef struct IObjectSafetyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IObjectSafety *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IObjectSafety *This);
-      ULONG (WINAPI *Release)(IObjectSafety *This);
-      HRESULT (WINAPI *GetInterfaceSafetyOptions)(IObjectSafety *This,REFIID riid,DWORD *pdwSupportedOptions,DWORD *pdwEnabledOptions);
-      HRESULT (WINAPI *SetInterfaceSafetyOptions)(IObjectSafety *This,REFIID riid,DWORD dwOptionSetMask,DWORD dwEnabledOptions);
+                   HRESULT (WINAPI *QueryInterface)(IObjectSafety *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IObjectSafety *This);
+                   ULONG (WINAPI *Release)(IObjectSafety *This);
+                   HRESULT (WINAPI *GetInterfaceSafetyOptions)(IObjectSafety *This,REFIID riid,DWORD *pdwSupportedOptions,DWORD *pdwEnabledOptions);
+                   HRESULT (WINAPI *SetInterfaceSafetyOptions)(IObjectSafety *This,REFIID riid,DWORD dwOptionSetMask,DWORD dwEnabledOptions);
     END_INTERFACE
   } IObjectSafetyVtbl;
   struct IObjectSafety {

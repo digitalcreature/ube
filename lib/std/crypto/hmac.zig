@@ -20,62 +20,62 @@ pub const sha2 = struct {
 
 pub fn Hmac(comptime Hash: type) type {
     return struct {
-        const Self = @This();
-        pub const mac_length = Hash.digest_length;
-        pub const key_length_min = 0;
-        pub const key_length = 32; // recommended key length
+                     const Self = @This();
+                     pub const mac_length = Hash.digest_length;
+                     pub const key_length_min = 0;
+                     pub const key_length = 32; // recommended key length
 
-        o_key_pad: [Hash.block_length]u8,
-        hash: Hash,
+                     o_key_pad: [Hash.block_length]u8,
+                     hash: Hash,
 
-        // HMAC(k, m) = H(o_key_pad || H(i_key_pad || msg)) where || is concatenation
-        pub fn create(out: *[mac_length]u8, msg: []const u8, key: []const u8) void {
-            var ctx = Self.init(key);
-            ctx.update(msg);
-            ctx.final(out);
-        }
+                     // HMAC(k, m) = H(o_key_pad || H(i_key_pad || msg)) where || is concatenation
+                     pub fn create(out: *[mac_length]u8, msg: []const u8, key: []const u8) void {
+                                      var ctx = Self.init(key);
+                                      ctx.update(msg);
+                                      ctx.final(out);
+                     }
 
-        pub fn init(key: []const u8) Self {
-            var ctx: Self = undefined;
-            var scratch: [Hash.block_length]u8 = undefined;
-            var i_key_pad: [Hash.block_length]u8 = undefined;
+                     pub fn init(key: []const u8) Self {
+                                      var ctx: Self = undefined;
+                                      var scratch: [Hash.block_length]u8 = undefined;
+                                      var i_key_pad: [Hash.block_length]u8 = undefined;
 
-            // Normalize key length to block size of hash
-            if (key.len > Hash.block_length) {
-                Hash.hash(key, scratch[0..mac_length], .{});
-                mem.set(u8, scratch[mac_length..Hash.block_length], 0);
-            } else if (key.len < Hash.block_length) {
-                mem.copy(u8, scratch[0..key.len], key);
-                mem.set(u8, scratch[key.len..Hash.block_length], 0);
-            } else {
-                mem.copy(u8, scratch[0..], key);
-            }
+                                      // Normalize key length to block size of hash
+                                      if (key.len > Hash.block_length) {
+                                          Hash.hash(key, scratch[0..mac_length], .{});
+                                          mem.set(u8, scratch[mac_length..Hash.block_length], 0);
+                                      } else if (key.len < Hash.block_length) {
+                                          mem.copy(u8, scratch[0..key.len], key);
+                                          mem.set(u8, scratch[key.len..Hash.block_length], 0);
+                                      } else {
+                                          mem.copy(u8, scratch[0..], key);
+                                      }
 
-            for (ctx.o_key_pad) |*b, i| {
-                b.* = scratch[i] ^ 0x5c;
-            }
+                                      for (ctx.o_key_pad) |*b, i| {
+                                          b.* = scratch[i] ^ 0x5c;
+                                      }
 
-            for (i_key_pad) |*b, i| {
-                b.* = scratch[i] ^ 0x36;
-            }
+                                      for (i_key_pad) |*b, i| {
+                                          b.* = scratch[i] ^ 0x36;
+                                      }
 
-            ctx.hash = Hash.init(.{});
-            ctx.hash.update(&i_key_pad);
-            return ctx;
-        }
+                                      ctx.hash = Hash.init(.{});
+                                      ctx.hash.update(&i_key_pad);
+                                      return ctx;
+                     }
 
-        pub fn update(ctx: *Self, msg: []const u8) void {
-            ctx.hash.update(msg);
-        }
+                     pub fn update(ctx: *Self, msg: []const u8) void {
+                                      ctx.hash.update(msg);
+                     }
 
-        pub fn final(ctx: *Self, out: *[mac_length]u8) void {
-            var scratch: [mac_length]u8 = undefined;
-            ctx.hash.final(&scratch);
-            var ohash = Hash.init(.{});
-            ohash.update(&ctx.o_key_pad);
-            ohash.update(&scratch);
-            ohash.final(out);
-        }
+                     pub fn final(ctx: *Self, out: *[mac_length]u8) void {
+                                      var scratch: [mac_length]u8 = undefined;
+                                      ctx.hash.final(&scratch);
+                                      var ohash = Hash.init(.{});
+                                      ohash.update(&ctx.o_key_pad);
+                                      ohash.update(&scratch);
+                                      ohash.final(out);
+                     }
     };
 }
 

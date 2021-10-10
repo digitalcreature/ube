@@ -71,10 +71,10 @@
 #include <linux/types.h>
 
 struct cyclades_monitor {
-        unsigned long           int_count;
-        unsigned long           char_count;
-        unsigned long           char_max;
-        unsigned long           char_last;
+                     unsigned long                        int_count;
+                     unsigned long                        char_count;
+                     unsigned long                        char_max;
+                     unsigned long                        char_last;
 };
 
 /*
@@ -95,15 +95,15 @@ struct cyclades_idle_stats {
 
 #define CYCLADES_MAGIC  0x4359
 
-#define CYGETMON                0x435901
-#define CYGETTHRESH             0x435902
-#define CYSETTHRESH             0x435903
-#define CYGETDEFTHRESH          0x435904
-#define CYSETDEFTHRESH          0x435905
-#define CYGETTIMEOUT            0x435906
-#define CYSETTIMEOUT            0x435907
-#define CYGETDEFTIMEOUT         0x435908
-#define CYSETDEFTIMEOUT         0x435909
+#define CYGETMON                                          0x435901
+#define CYGETTHRESH                                       0x435902
+#define CYSETTHRESH                                       0x435903
+#define CYGETDEFTHRESH                       0x435904
+#define CYSETDEFTHRESH                       0x435905
+#define CYGETTIMEOUT                                      0x435906
+#define CYSETTIMEOUT                                      0x435907
+#define CYGETDEFTIMEOUT                      0x435908
+#define CYSETDEFTIMEOUT                      0x435909
 #define CYSETRFLOW		0x43590a
 #define CYGETRFLOW		0x43590b
 #define CYSETRTSDTR_INV		0x43590c
@@ -116,29 +116,29 @@ struct cyclades_idle_stats {
 
 /*************** CYCLOM-Z ADDITIONS ***************/
 
-#define CZIOC           ('M' << 8)
-#define CZ_NBOARDS      (CZIOC|0xfa)
+#define CZIOC                        ('M' << 8)
+#define CZ_NBOARDS                   (CZIOC|0xfa)
 #define CZ_BOOT_START   (CZIOC|0xfb)
 #define CZ_BOOT_DATA    (CZIOC|0xfc)
 #define CZ_BOOT_END     (CZIOC|0xfd)
-#define CZ_TEST         (CZIOC|0xfe)
+#define CZ_TEST                      (CZIOC|0xfe)
 
 #define CZ_DEF_POLL	(HZ/25)
 
-#define MAX_BOARD       4       /* Max number of boards */
-#define MAX_DEV         256     /* Max number of ports total */
+#define MAX_BOARD                    4                    /* Max number of boards */
+#define MAX_DEV                      256     /* Max number of ports total */
 #define	CYZ_MAX_SPEED	921600
 
 #define	CYZ_FIFO_SIZE	16
 
 #define CYZ_BOOT_NWORDS 0x100
 struct CYZ_BOOT_CTRL {
-        unsigned short  nboard;
-        int             status[MAX_BOARD];
-        int             nchannel[MAX_BOARD];
-        int             fw_rev[MAX_BOARD];
-        unsigned long   offset;
-        unsigned long   data[CYZ_BOOT_NWORDS];
+                     unsigned short  nboard;
+                     int                                       status[MAX_BOARD];
+                     int                                       nchannel[MAX_BOARD];
+                     int                                       fw_rev[MAX_BOARD];
+                     unsigned long   offset;
+                     unsigned long   data[CYZ_BOOT_NWORDS];
 };
 
 
@@ -309,9 +309,9 @@ struct	FIRM_ID {
 #define	C_IN_RXBRK	0x00001000	/* Break received */
 #define	C_IN_PR_ERROR	0x00002000	/* parity error */
 #define	C_IN_FR_ERROR	0x00004000	/* frame error */
-#define C_IN_OVR_ERROR  0x00008000      /* overrun error */
-#define C_IN_RXOFL	0x00010000      /* RX buffer overflow */
-#define C_IN_IOCTLW	0x00020000      /* I/O control w/ wait */
+#define C_IN_OVR_ERROR  0x00008000                   /* overrun error */
+#define C_IN_RXOFL	0x00010000                   /* RX buffer overflow */
+#define C_IN_IOCTLW	0x00020000                   /* I/O control w/ wait */
 #define C_IN_MRTS	0x00040000	/* modem RTS drop */
 #define C_IN_ICHAR	0x00080000
  
@@ -363,7 +363,7 @@ struct	FIRM_ID {
 #define	C_CM_FLUSH_TX	0x57		/* flushes Tx buffer */
 #define C_CM_Q_ENABLE	0x58		/* enables queue access from the 
 					   driver */
-#define C_CM_Q_DISABLE  0x59            /* disables queue access from the 
+#define C_CM_Q_DISABLE  0x59                                      /* disables queue access from the 
 					   driver */
 
 #define	C_CM_TXBEMPTY	0x60		/* Tx buffer is empty */
@@ -380,8 +380,8 @@ struct	FIRM_ID {
 #define	C_CM_RXBRK	0x84		/* Break received */
 #define	C_CM_PR_ERROR	0x85		/* Parity error */
 #define	C_CM_FR_ERROR	0x86		/* Frame error */
-#define C_CM_OVR_ERROR  0x87            /* Overrun error */
-#define C_CM_RXOFL	0x88            /* RX buffer overflow */
+#define C_CM_OVR_ERROR  0x87                                      /* Overrun error */
+#define C_CM_RXOFL	0x88                                      /* RX buffer overflow */
 #define	C_CM_CMDERROR	0x90		/* command error */
 #define	C_CM_FATAL	0x91		/* fatal error */
 #define	C_CM_HW_RESET	0x92		/* reset board */

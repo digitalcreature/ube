@@ -307,18 +307,18 @@ MIDL_INTERFACE("c0e8ae90-306e-11d1-aacf-00805fc1270e")
 IEnumNetCfgBindingInterface : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        INetCfgBindingInterface **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     INetCfgBindingInterface **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumNetCfgBindingInterface **ppenum) = 0;
+                     IEnumNetCfgBindingInterface **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -330,33 +330,33 @@ typedef struct IEnumNetCfgBindingInterfaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumNetCfgBindingInterface *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumNetCfgBindingInterface *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumNetCfgBindingInterface *This);
+                     IEnumNetCfgBindingInterface *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumNetCfgBindingInterface *This);
+                     IEnumNetCfgBindingInterface *This);
 
     /*** IEnumNetCfgBindingInterface methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumNetCfgBindingInterface *This,
-        ULONG celt,
-        INetCfgBindingInterface **rgelt,
-        ULONG *pceltFetched);
+                     IEnumNetCfgBindingInterface *This,
+                     ULONG celt,
+                     INetCfgBindingInterface **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumNetCfgBindingInterface *This,
-        ULONG celt);
+                     IEnumNetCfgBindingInterface *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumNetCfgBindingInterface *This);
+                     IEnumNetCfgBindingInterface *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumNetCfgBindingInterface *This,
-        IEnumNetCfgBindingInterface **ppenum);
+                     IEnumNetCfgBindingInterface *This,
+                     IEnumNetCfgBindingInterface **ppenum);
 
     END_INTERFACE
 } IEnumNetCfgBindingInterfaceVtbl;
@@ -421,18 +421,18 @@ MIDL_INTERFACE("c0e8ae91-306e-11d1-aacf-00805fc1270e")
 IEnumNetCfgBindingPath : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        INetCfgBindingPath **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     INetCfgBindingPath **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumNetCfgBindingPath **ppenum) = 0;
+                     IEnumNetCfgBindingPath **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -444,33 +444,33 @@ typedef struct IEnumNetCfgBindingPathVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumNetCfgBindingPath *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumNetCfgBindingPath *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumNetCfgBindingPath *This);
+                     IEnumNetCfgBindingPath *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumNetCfgBindingPath *This);
+                     IEnumNetCfgBindingPath *This);
 
     /*** IEnumNetCfgBindingPath methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumNetCfgBindingPath *This,
-        ULONG celt,
-        INetCfgBindingPath **rgelt,
-        ULONG *pceltFetched);
+                     IEnumNetCfgBindingPath *This,
+                     ULONG celt,
+                     INetCfgBindingPath **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumNetCfgBindingPath *This,
-        ULONG celt);
+                     IEnumNetCfgBindingPath *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumNetCfgBindingPath *This);
+                     IEnumNetCfgBindingPath *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumNetCfgBindingPath *This,
-        IEnumNetCfgBindingPath **ppenum);
+                     IEnumNetCfgBindingPath *This,
+                     IEnumNetCfgBindingPath **ppenum);
 
     END_INTERFACE
 } IEnumNetCfgBindingPathVtbl;
@@ -535,18 +535,18 @@ MIDL_INTERFACE("c0e8ae92-306e-11d1-aacf-00805fc1270e")
 IEnumNetCfgComponent : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        INetCfgComponent **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     INetCfgComponent **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumNetCfgComponent **ppenum) = 0;
+                     IEnumNetCfgComponent **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -558,33 +558,33 @@ typedef struct IEnumNetCfgComponentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumNetCfgComponent *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumNetCfgComponent *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumNetCfgComponent *This);
+                     IEnumNetCfgComponent *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumNetCfgComponent *This);
+                     IEnumNetCfgComponent *This);
 
     /*** IEnumNetCfgComponent methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumNetCfgComponent *This,
-        ULONG celt,
-        INetCfgComponent **rgelt,
-        ULONG *pceltFetched);
+                     IEnumNetCfgComponent *This,
+                     ULONG celt,
+                     INetCfgComponent **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumNetCfgComponent *This,
-        ULONG celt);
+                     IEnumNetCfgComponent *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumNetCfgComponent *This);
+                     IEnumNetCfgComponent *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumNetCfgComponent *This,
-        IEnumNetCfgComponent **ppenum);
+                     IEnumNetCfgComponent *This,
+                     IEnumNetCfgComponent **ppenum);
 
     END_INTERFACE
 } IEnumNetCfgComponentVtbl;
@@ -649,29 +649,29 @@ MIDL_INTERFACE("c0e8ae93-306e-11d1-aacf-00805fc1270e")
 INetCfg : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        PVOID pvReserved) = 0;
+                     PVOID pvReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Uninitialize(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Apply(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumComponents(
-        const GUID *pguidClass,
-        IEnumNetCfgComponent **ppenumComponent) = 0;
+                     const GUID *pguidClass,
+                     IEnumNetCfgComponent **ppenumComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindComponent(
-        LPCWSTR pszwInfId,
-        INetCfgComponent **pComponent) = 0;
+                     LPCWSTR pszwInfId,
+                     INetCfgComponent **pComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryNetCfgClass(
-        const GUID *pguidClass,
-        REFIID riid,
-        void **ppvObject) = 0;
+                     const GUID *pguidClass,
+                     REFIID riid,
+                     void **ppvObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -683,45 +683,45 @@ typedef struct INetCfgVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfg *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfg *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfg *This);
+                     INetCfg *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfg *This);
+                     INetCfg *This);
 
     /*** INetCfg methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INetCfg *This,
-        PVOID pvReserved);
+                     INetCfg *This,
+                     PVOID pvReserved);
 
     HRESULT (STDMETHODCALLTYPE *Uninitialize)(
-        INetCfg *This);
+                     INetCfg *This);
 
     HRESULT (STDMETHODCALLTYPE *Apply)(
-        INetCfg *This);
+                     INetCfg *This);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        INetCfg *This);
+                     INetCfg *This);
 
     HRESULT (STDMETHODCALLTYPE *EnumComponents)(
-        INetCfg *This,
-        const GUID *pguidClass,
-        IEnumNetCfgComponent **ppenumComponent);
+                     INetCfg *This,
+                     const GUID *pguidClass,
+                     IEnumNetCfgComponent **ppenumComponent);
 
     HRESULT (STDMETHODCALLTYPE *FindComponent)(
-        INetCfg *This,
-        LPCWSTR pszwInfId,
-        INetCfgComponent **pComponent);
+                     INetCfg *This,
+                     LPCWSTR pszwInfId,
+                     INetCfgComponent **pComponent);
 
     HRESULT (STDMETHODCALLTYPE *QueryNetCfgClass)(
-        INetCfg *This,
-        const GUID *pguidClass,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfg *This,
+                     const GUID *pguidClass,
+                     REFIID riid,
+                     void **ppvObject);
 
     END_INTERFACE
 } INetCfgVtbl;
@@ -812,15 +812,15 @@ MIDL_INTERFACE("c0e8ae9f-306e-11d1-aacf-00805fc1270e")
 INetCfgLock : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AcquireWriteLock(
-        DWORD cmsTimeout,
-        LPCWSTR pszwClientDescription,
-        LPWSTR *ppszwClientDescription) = 0;
+                     DWORD cmsTimeout,
+                     LPCWSTR pszwClientDescription,
+                     LPWSTR *ppszwClientDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseWriteLock(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsWriteLocked(
-        LPWSTR *ppszwClientDescription) = 0;
+                     LPWSTR *ppszwClientDescription) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -832,29 +832,29 @@ typedef struct INetCfgLockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgLock *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgLock *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgLock *This);
+                     INetCfgLock *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgLock *This);
+                     INetCfgLock *This);
 
     /*** INetCfgLock methods ***/
     HRESULT (STDMETHODCALLTYPE *AcquireWriteLock)(
-        INetCfgLock *This,
-        DWORD cmsTimeout,
-        LPCWSTR pszwClientDescription,
-        LPWSTR *ppszwClientDescription);
+                     INetCfgLock *This,
+                     DWORD cmsTimeout,
+                     LPCWSTR pszwClientDescription,
+                     LPWSTR *ppszwClientDescription);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseWriteLock)(
-        INetCfgLock *This);
+                     INetCfgLock *This);
 
     HRESULT (STDMETHODCALLTYPE *IsWriteLocked)(
-        INetCfgLock *This,
-        LPWSTR *ppszwClientDescription);
+                     INetCfgLock *This,
+                     LPWSTR *ppszwClientDescription);
 
     END_INTERFACE
 } INetCfgLockVtbl;
@@ -915,13 +915,13 @@ MIDL_INTERFACE("c0e8ae94-306e-11d1-aacf-00805fc1270e")
 INetCfgBindingInterface : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        LPWSTR *ppszwInterfaceName) = 0;
+                     LPWSTR *ppszwInterfaceName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUpperComponent(
-        INetCfgComponent **ppnccItem) = 0;
+                     INetCfgComponent **ppnccItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLowerComponent(
-        INetCfgComponent **ppnccItem) = 0;
+                     INetCfgComponent **ppnccItem) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -933,28 +933,28 @@ typedef struct INetCfgBindingInterfaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgBindingInterface *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgBindingInterface *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgBindingInterface *This);
+                     INetCfgBindingInterface *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgBindingInterface *This);
+                     INetCfgBindingInterface *This);
 
     /*** INetCfgBindingInterface methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        INetCfgBindingInterface *This,
-        LPWSTR *ppszwInterfaceName);
+                     INetCfgBindingInterface *This,
+                     LPWSTR *ppszwInterfaceName);
 
     HRESULT (STDMETHODCALLTYPE *GetUpperComponent)(
-        INetCfgBindingInterface *This,
-        INetCfgComponent **ppnccItem);
+                     INetCfgBindingInterface *This,
+                     INetCfgComponent **ppnccItem);
 
     HRESULT (STDMETHODCALLTYPE *GetLowerComponent)(
-        INetCfgBindingInterface *This,
-        INetCfgComponent **ppnccItem);
+                     INetCfgBindingInterface *This,
+                     INetCfgComponent **ppnccItem);
 
     END_INTERFACE
 } INetCfgBindingInterfaceVtbl;
@@ -1015,28 +1015,28 @@ MIDL_INTERFACE("c0e8ae96-306e-11d1-aacf-00805fc1270e")
 INetCfgBindingPath : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsSamePathAs(
-        INetCfgBindingPath *pPath) = 0;
+                     INetCfgBindingPath *pPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSubPathOf(
-        INetCfgBindingPath *pPath) = 0;
+                     INetCfgBindingPath *pPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEnabled(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Enable(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPathToken(
-        LPWSTR *ppszwPathToken) = 0;
+                     LPWSTR *ppszwPathToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        INetCfgComponent **ppComponent) = 0;
+                     INetCfgComponent **ppComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDepth(
-        ULONG *pcInterfaces) = 0;
+                     ULONG *pcInterfaces) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumBindingInterfaces(
-        IEnumNetCfgBindingInterface **ppenumInterface) = 0;
+                     IEnumNetCfgBindingInterface **ppenumInterface) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1048,47 +1048,47 @@ typedef struct INetCfgBindingPathVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgBindingPath *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgBindingPath *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgBindingPath *This);
+                     INetCfgBindingPath *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgBindingPath *This);
+                     INetCfgBindingPath *This);
 
     /*** INetCfgBindingPath methods ***/
     HRESULT (STDMETHODCALLTYPE *IsSamePathAs)(
-        INetCfgBindingPath *This,
-        INetCfgBindingPath *pPath);
+                     INetCfgBindingPath *This,
+                     INetCfgBindingPath *pPath);
 
     HRESULT (STDMETHODCALLTYPE *IsSubPathOf)(
-        INetCfgBindingPath *This,
-        INetCfgBindingPath *pPath);
+                     INetCfgBindingPath *This,
+                     INetCfgBindingPath *pPath);
 
     HRESULT (STDMETHODCALLTYPE *IsEnabled)(
-        INetCfgBindingPath *This);
+                     INetCfgBindingPath *This);
 
     HRESULT (STDMETHODCALLTYPE *Enable)(
-        INetCfgBindingPath *This,
-        WINBOOL fEnable);
+                     INetCfgBindingPath *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *GetPathToken)(
-        INetCfgBindingPath *This,
-        LPWSTR *ppszwPathToken);
+                     INetCfgBindingPath *This,
+                     LPWSTR *ppszwPathToken);
 
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        INetCfgBindingPath *This,
-        INetCfgComponent **ppComponent);
+                     INetCfgBindingPath *This,
+                     INetCfgComponent **ppComponent);
 
     HRESULT (STDMETHODCALLTYPE *GetDepth)(
-        INetCfgBindingPath *This,
-        ULONG *pcInterfaces);
+                     INetCfgBindingPath *This,
+                     ULONG *pcInterfaces);
 
     HRESULT (STDMETHODCALLTYPE *EnumBindingInterfaces)(
-        INetCfgBindingPath *This,
-        IEnumNetCfgBindingInterface **ppenumInterface);
+                     INetCfgBindingPath *This,
+                     IEnumNetCfgBindingInterface **ppenumInterface);
 
     END_INTERFACE
 } INetCfgBindingPathVtbl;
@@ -1169,11 +1169,11 @@ MIDL_INTERFACE("c0e8ae97-306e-11d1-aacf-00805fc1270e")
 INetCfgClass : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FindComponent(
-        LPCWSTR pszwInfId,
-        INetCfgComponent **ppnccItem) = 0;
+                     LPCWSTR pszwInfId,
+                     INetCfgComponent **ppnccItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumComponents(
-        IEnumNetCfgComponent **ppenumComponent) = 0;
+                     IEnumNetCfgComponent **ppenumComponent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1185,25 +1185,25 @@ typedef struct INetCfgClassVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgClass *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgClass *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgClass *This);
+                     INetCfgClass *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgClass *This);
+                     INetCfgClass *This);
 
     /*** INetCfgClass methods ***/
     HRESULT (STDMETHODCALLTYPE *FindComponent)(
-        INetCfgClass *This,
-        LPCWSTR pszwInfId,
-        INetCfgComponent **ppnccItem);
+                     INetCfgClass *This,
+                     LPCWSTR pszwInfId,
+                     INetCfgComponent **ppnccItem);
 
     HRESULT (STDMETHODCALLTYPE *EnumComponents)(
-        INetCfgClass *This,
-        IEnumNetCfgComponent **ppenumComponent);
+                     INetCfgClass *This,
+                     IEnumNetCfgComponent **ppenumComponent);
 
     END_INTERFACE
 } INetCfgClassVtbl;
@@ -1273,23 +1273,23 @@ MIDL_INTERFACE("c0e8ae9d-306e-11d1-aacf-00805fc1270e")
 INetCfgClassSetup : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SelectAndInstall(
-        HWND hwndParent,
-        OBO_TOKEN *pOboToken,
-        INetCfgComponent **ppnccItem) = 0;
+                     HWND hwndParent,
+                     OBO_TOKEN *pOboToken,
+                     INetCfgComponent **ppnccItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Install(
-        LPCWSTR pszwInfId,
-        OBO_TOKEN *pOboToken,
-        DWORD dwSetupFlags,
-        DWORD dwUpgradeFromBuildNo,
-        LPCWSTR pszwAnswerFile,
-        LPCWSTR pszwAnswerSections,
-        INetCfgComponent **ppnccItem) = 0;
+                     LPCWSTR pszwInfId,
+                     OBO_TOKEN *pOboToken,
+                     DWORD dwSetupFlags,
+                     DWORD dwUpgradeFromBuildNo,
+                     LPCWSTR pszwAnswerFile,
+                     LPCWSTR pszwAnswerSections,
+                     INetCfgComponent **ppnccItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeInstall(
-        INetCfgComponent *pComponent,
-        OBO_TOKEN *pOboToken,
-        LPWSTR *pmszwRefs) = 0;
+                     INetCfgComponent *pComponent,
+                     OBO_TOKEN *pOboToken,
+                     LPWSTR *pmszwRefs) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1301,38 +1301,38 @@ typedef struct INetCfgClassSetupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgClassSetup *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgClassSetup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgClassSetup *This);
+                     INetCfgClassSetup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgClassSetup *This);
+                     INetCfgClassSetup *This);
 
     /*** INetCfgClassSetup methods ***/
     HRESULT (STDMETHODCALLTYPE *SelectAndInstall)(
-        INetCfgClassSetup *This,
-        HWND hwndParent,
-        OBO_TOKEN *pOboToken,
-        INetCfgComponent **ppnccItem);
+                     INetCfgClassSetup *This,
+                     HWND hwndParent,
+                     OBO_TOKEN *pOboToken,
+                     INetCfgComponent **ppnccItem);
 
     HRESULT (STDMETHODCALLTYPE *Install)(
-        INetCfgClassSetup *This,
-        LPCWSTR pszwInfId,
-        OBO_TOKEN *pOboToken,
-        DWORD dwSetupFlags,
-        DWORD dwUpgradeFromBuildNo,
-        LPCWSTR pszwAnswerFile,
-        LPCWSTR pszwAnswerSections,
-        INetCfgComponent **ppnccItem);
+                     INetCfgClassSetup *This,
+                     LPCWSTR pszwInfId,
+                     OBO_TOKEN *pOboToken,
+                     DWORD dwSetupFlags,
+                     DWORD dwUpgradeFromBuildNo,
+                     LPCWSTR pszwAnswerFile,
+                     LPCWSTR pszwAnswerSections,
+                     INetCfgComponent **ppnccItem);
 
     HRESULT (STDMETHODCALLTYPE *DeInstall)(
-        INetCfgClassSetup *This,
-        INetCfgComponent *pComponent,
-        OBO_TOKEN *pOboToken,
-        LPWSTR *pmszwRefs);
+                     INetCfgClassSetup *This,
+                     INetCfgComponent *pComponent,
+                     OBO_TOKEN *pOboToken,
+                     LPWSTR *pmszwRefs);
 
     END_INTERFACE
 } INetCfgClassSetupVtbl;
@@ -1393,9 +1393,9 @@ MIDL_INTERFACE("c0e8aea0-306e-11d1-aacf-00805fc1270e")
 INetCfgClassSetup2 : public INetCfgClassSetup
 {
     virtual HRESULT STDMETHODCALLTYPE UpdateNonEnumeratedComponent(
-        INetCfgComponent *pIComp,
-        DWORD dwSetupFlags,
-        DWORD dwUpgradeFromBuildNo) = 0;
+                     INetCfgComponent *pIComp,
+                     DWORD dwSetupFlags,
+                     DWORD dwUpgradeFromBuildNo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1407,45 +1407,45 @@ typedef struct INetCfgClassSetup2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgClassSetup2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgClassSetup2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgClassSetup2 *This);
+                     INetCfgClassSetup2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgClassSetup2 *This);
+                     INetCfgClassSetup2 *This);
 
     /*** INetCfgClassSetup methods ***/
     HRESULT (STDMETHODCALLTYPE *SelectAndInstall)(
-        INetCfgClassSetup2 *This,
-        HWND hwndParent,
-        OBO_TOKEN *pOboToken,
-        INetCfgComponent **ppnccItem);
+                     INetCfgClassSetup2 *This,
+                     HWND hwndParent,
+                     OBO_TOKEN *pOboToken,
+                     INetCfgComponent **ppnccItem);
 
     HRESULT (STDMETHODCALLTYPE *Install)(
-        INetCfgClassSetup2 *This,
-        LPCWSTR pszwInfId,
-        OBO_TOKEN *pOboToken,
-        DWORD dwSetupFlags,
-        DWORD dwUpgradeFromBuildNo,
-        LPCWSTR pszwAnswerFile,
-        LPCWSTR pszwAnswerSections,
-        INetCfgComponent **ppnccItem);
+                     INetCfgClassSetup2 *This,
+                     LPCWSTR pszwInfId,
+                     OBO_TOKEN *pOboToken,
+                     DWORD dwSetupFlags,
+                     DWORD dwUpgradeFromBuildNo,
+                     LPCWSTR pszwAnswerFile,
+                     LPCWSTR pszwAnswerSections,
+                     INetCfgComponent **ppnccItem);
 
     HRESULT (STDMETHODCALLTYPE *DeInstall)(
-        INetCfgClassSetup2 *This,
-        INetCfgComponent *pComponent,
-        OBO_TOKEN *pOboToken,
-        LPWSTR *pmszwRefs);
+                     INetCfgClassSetup2 *This,
+                     INetCfgComponent *pComponent,
+                     OBO_TOKEN *pOboToken,
+                     LPWSTR *pmszwRefs);
 
     /*** INetCfgClassSetup2 methods ***/
     HRESULT (STDMETHODCALLTYPE *UpdateNonEnumeratedComponent)(
-        INetCfgClassSetup2 *This,
-        INetCfgComponent *pIComp,
-        DWORD dwSetupFlags,
-        DWORD dwUpgradeFromBuildNo);
+                     INetCfgClassSetup2 *This,
+                     INetCfgComponent *pIComp,
+                     DWORD dwSetupFlags,
+                     DWORD dwUpgradeFromBuildNo);
 
     END_INTERFACE
 } INetCfgClassSetup2Vtbl;
@@ -1533,42 +1533,42 @@ MIDL_INTERFACE("c0e8ae99-306e-11d1-aacf-00805fc1270e")
 INetCfgComponent : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDisplayName(
-        LPWSTR *ppszwDisplayName) = 0;
+                     LPWSTR *ppszwDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDisplayName(
-        LPCWSTR pszwDisplayName) = 0;
+                     LPCWSTR pszwDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHelpText(
-        LPWSTR *pszwHelpText) = 0;
+                     LPWSTR *pszwHelpText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetId(
-        LPWSTR *ppszwId) = 0;
+                     LPWSTR *ppszwId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCharacteristics(
-        LPDWORD pdwCharacteristics) = 0;
+                     LPDWORD pdwCharacteristics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInstanceGuid(
-        GUID *pGuid) = 0;
+                     GUID *pGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPnpDevNodeId(
-        LPWSTR *ppszwDevNodeId) = 0;
+                     LPWSTR *ppszwDevNodeId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClassGuid(
-        GUID *pGuid) = 0;
+                     GUID *pGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBindName(
-        LPWSTR *ppszwBindName) = 0;
+                     LPWSTR *ppszwBindName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceStatus(
-        ULONG *pulStatus) = 0;
+                     ULONG *pulStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenParamKey(
-        HKEY *phkey) = 0;
+                     HKEY *phkey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RaisePropertyUi(
-        HWND hwndParent,
-        DWORD dwFlags,
-        IUnknown *punkContext) = 0;
+                     HWND hwndParent,
+                     DWORD dwFlags,
+                     IUnknown *punkContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1580,66 +1580,66 @@ typedef struct INetCfgComponentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponent *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponent *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponent *This);
+                     INetCfgComponent *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponent *This);
+                     INetCfgComponent *This);
 
     /*** INetCfgComponent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        INetCfgComponent *This,
-        LPWSTR *ppszwDisplayName);
+                     INetCfgComponent *This,
+                     LPWSTR *ppszwDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *SetDisplayName)(
-        INetCfgComponent *This,
-        LPCWSTR pszwDisplayName);
+                     INetCfgComponent *This,
+                     LPCWSTR pszwDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *GetHelpText)(
-        INetCfgComponent *This,
-        LPWSTR *pszwHelpText);
+                     INetCfgComponent *This,
+                     LPWSTR *pszwHelpText);
 
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        INetCfgComponent *This,
-        LPWSTR *ppszwId);
+                     INetCfgComponent *This,
+                     LPWSTR *ppszwId);
 
     HRESULT (STDMETHODCALLTYPE *GetCharacteristics)(
-        INetCfgComponent *This,
-        LPDWORD pdwCharacteristics);
+                     INetCfgComponent *This,
+                     LPDWORD pdwCharacteristics);
 
     HRESULT (STDMETHODCALLTYPE *GetInstanceGuid)(
-        INetCfgComponent *This,
-        GUID *pGuid);
+                     INetCfgComponent *This,
+                     GUID *pGuid);
 
     HRESULT (STDMETHODCALLTYPE *GetPnpDevNodeId)(
-        INetCfgComponent *This,
-        LPWSTR *ppszwDevNodeId);
+                     INetCfgComponent *This,
+                     LPWSTR *ppszwDevNodeId);
 
     HRESULT (STDMETHODCALLTYPE *GetClassGuid)(
-        INetCfgComponent *This,
-        GUID *pGuid);
+                     INetCfgComponent *This,
+                     GUID *pGuid);
 
     HRESULT (STDMETHODCALLTYPE *GetBindName)(
-        INetCfgComponent *This,
-        LPWSTR *ppszwBindName);
+                     INetCfgComponent *This,
+                     LPWSTR *ppszwBindName);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceStatus)(
-        INetCfgComponent *This,
-        ULONG *pulStatus);
+                     INetCfgComponent *This,
+                     ULONG *pulStatus);
 
     HRESULT (STDMETHODCALLTYPE *OpenParamKey)(
-        INetCfgComponent *This,
-        HKEY *phkey);
+                     INetCfgComponent *This,
+                     HKEY *phkey);
 
     HRESULT (STDMETHODCALLTYPE *RaisePropertyUi)(
-        INetCfgComponent *This,
-        HWND hwndParent,
-        DWORD dwFlags,
-        IUnknown *punkContext);
+                     INetCfgComponent *This,
+                     HWND hwndParent,
+                     DWORD dwFlags,
+                     IUnknown *punkContext);
 
     END_INTERFACE
 } INetCfgComponentVtbl;
@@ -1744,32 +1744,32 @@ MIDL_INTERFACE("c0e8ae9e-306e-11d1-aacf-00805fc1270e")
 INetCfgComponentBindings : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BindTo(
-        INetCfgComponent *pnccItem) = 0;
+                     INetCfgComponent *pnccItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnbindFrom(
-        INetCfgComponent *pnccItem) = 0;
+                     INetCfgComponent *pnccItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SupportsBindingInterface(
-        DWORD dwFlags,
-        LPCWSTR pszwInterfaceName) = 0;
+                     DWORD dwFlags,
+                     LPCWSTR pszwInterfaceName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsBoundTo(
-        INetCfgComponent *pnccItem) = 0;
+                     INetCfgComponent *pnccItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsBindableTo(
-        INetCfgComponent *pnccItem) = 0;
+                     INetCfgComponent *pnccItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumBindingPaths(
-        DWORD dwFlags,
-        IEnumNetCfgBindingPath **ppIEnum) = 0;
+                     DWORD dwFlags,
+                     IEnumNetCfgBindingPath **ppIEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveBefore(
-        INetCfgBindingPath *pncbItemSrc,
-        INetCfgBindingPath *pncbItemDest) = 0;
+                     INetCfgBindingPath *pncbItemSrc,
+                     INetCfgBindingPath *pncbItemDest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveAfter(
-        INetCfgBindingPath *pncbItemSrc,
-        INetCfgBindingPath *pncbItemDest) = 0;
+                     INetCfgBindingPath *pncbItemSrc,
+                     INetCfgBindingPath *pncbItemDest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1781,52 +1781,52 @@ typedef struct INetCfgComponentBindingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponentBindings *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponentBindings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponentBindings *This);
+                     INetCfgComponentBindings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponentBindings *This);
+                     INetCfgComponentBindings *This);
 
     /*** INetCfgComponentBindings methods ***/
     HRESULT (STDMETHODCALLTYPE *BindTo)(
-        INetCfgComponentBindings *This,
-        INetCfgComponent *pnccItem);
+                     INetCfgComponentBindings *This,
+                     INetCfgComponent *pnccItem);
 
     HRESULT (STDMETHODCALLTYPE *UnbindFrom)(
-        INetCfgComponentBindings *This,
-        INetCfgComponent *pnccItem);
+                     INetCfgComponentBindings *This,
+                     INetCfgComponent *pnccItem);
 
     HRESULT (STDMETHODCALLTYPE *SupportsBindingInterface)(
-        INetCfgComponentBindings *This,
-        DWORD dwFlags,
-        LPCWSTR pszwInterfaceName);
+                     INetCfgComponentBindings *This,
+                     DWORD dwFlags,
+                     LPCWSTR pszwInterfaceName);
 
     HRESULT (STDMETHODCALLTYPE *IsBoundTo)(
-        INetCfgComponentBindings *This,
-        INetCfgComponent *pnccItem);
+                     INetCfgComponentBindings *This,
+                     INetCfgComponent *pnccItem);
 
     HRESULT (STDMETHODCALLTYPE *IsBindableTo)(
-        INetCfgComponentBindings *This,
-        INetCfgComponent *pnccItem);
+                     INetCfgComponentBindings *This,
+                     INetCfgComponent *pnccItem);
 
     HRESULT (STDMETHODCALLTYPE *EnumBindingPaths)(
-        INetCfgComponentBindings *This,
-        DWORD dwFlags,
-        IEnumNetCfgBindingPath **ppIEnum);
+                     INetCfgComponentBindings *This,
+                     DWORD dwFlags,
+                     IEnumNetCfgBindingPath **ppIEnum);
 
     HRESULT (STDMETHODCALLTYPE *MoveBefore)(
-        INetCfgComponentBindings *This,
-        INetCfgBindingPath *pncbItemSrc,
-        INetCfgBindingPath *pncbItemDest);
+                     INetCfgComponentBindings *This,
+                     INetCfgBindingPath *pncbItemSrc,
+                     INetCfgBindingPath *pncbItemDest);
 
     HRESULT (STDMETHODCALLTYPE *MoveAfter)(
-        INetCfgComponentBindings *This,
-        INetCfgBindingPath *pncbItemSrc,
-        INetCfgBindingPath *pncbItemDest);
+                     INetCfgComponentBindings *This,
+                     INetCfgBindingPath *pncbItemSrc,
+                     INetCfgBindingPath *pncbItemDest);
 
     END_INTERFACE
 } INetCfgComponentBindingsVtbl;
@@ -1907,24 +1907,24 @@ MIDL_INTERFACE("c0e8ae98-306e-11d1-aacf-00805fc1270e")
 INetCfgSysPrep : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE HrSetupSetFirstDword(
-        LPCWSTR pwszSection,
-        LPCWSTR pwszKey,
-        DWORD dwValue) = 0;
+                     LPCWSTR pwszSection,
+                     LPCWSTR pwszKey,
+                     DWORD dwValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HrSetupSetFirstString(
-        LPCWSTR pwszSection,
-        LPCWSTR pwszKey,
-        LPCWSTR pwszValue) = 0;
+                     LPCWSTR pwszSection,
+                     LPCWSTR pwszKey,
+                     LPCWSTR pwszValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HrSetupSetFirstStringAsBool(
-        LPCWSTR pwszSection,
-        LPCWSTR pwszKey,
-        WINBOOL fValue) = 0;
+                     LPCWSTR pwszSection,
+                     LPCWSTR pwszKey,
+                     WINBOOL fValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HrSetupSetFirstMultiSzField(
-        LPCWSTR pwszSection,
-        LPCWSTR pwszKey,
-        LPCWSTR pmszValue) = 0;
+                     LPCWSTR pwszSection,
+                     LPCWSTR pwszKey,
+                     LPCWSTR pmszValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1936,40 +1936,40 @@ typedef struct INetCfgSysPrepVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgSysPrep *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgSysPrep *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgSysPrep *This);
+                     INetCfgSysPrep *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgSysPrep *This);
+                     INetCfgSysPrep *This);
 
     /*** INetCfgSysPrep methods ***/
     HRESULT (STDMETHODCALLTYPE *HrSetupSetFirstDword)(
-        INetCfgSysPrep *This,
-        LPCWSTR pwszSection,
-        LPCWSTR pwszKey,
-        DWORD dwValue);
+                     INetCfgSysPrep *This,
+                     LPCWSTR pwszSection,
+                     LPCWSTR pwszKey,
+                     DWORD dwValue);
 
     HRESULT (STDMETHODCALLTYPE *HrSetupSetFirstString)(
-        INetCfgSysPrep *This,
-        LPCWSTR pwszSection,
-        LPCWSTR pwszKey,
-        LPCWSTR pwszValue);
+                     INetCfgSysPrep *This,
+                     LPCWSTR pwszSection,
+                     LPCWSTR pwszKey,
+                     LPCWSTR pwszValue);
 
     HRESULT (STDMETHODCALLTYPE *HrSetupSetFirstStringAsBool)(
-        INetCfgSysPrep *This,
-        LPCWSTR pwszSection,
-        LPCWSTR pwszKey,
-        WINBOOL fValue);
+                     INetCfgSysPrep *This,
+                     LPCWSTR pwszSection,
+                     LPCWSTR pwszKey,
+                     WINBOOL fValue);
 
     HRESULT (STDMETHODCALLTYPE *HrSetupSetFirstMultiSzField)(
-        INetCfgSysPrep *This,
-        LPCWSTR pwszSection,
-        LPCWSTR pwszKey,
-        LPCWSTR pmszValue);
+                     INetCfgSysPrep *This,
+                     LPCWSTR pwszSection,
+                     LPCWSTR pwszKey,
+                     LPCWSTR pmszValue);
 
     END_INTERFACE
 } INetCfgSysPrepVtbl;

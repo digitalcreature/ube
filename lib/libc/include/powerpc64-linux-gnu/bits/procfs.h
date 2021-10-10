@@ -27,12 +27,12 @@
    asm/sigcontext.h, asm/ptrace.h, and asm/elf.h.  Otherwise we define
    them here.  */
 #if !defined __PPC64_ELF_H && !defined _ASM_POWERPC_ELF_H
-#define ELF_NGREG       48      /* includes nip, msr, lr, etc. */
-#define ELF_NFPREG      33      /* includes fpscr */
+#define ELF_NGREG                    48                   /* includes nip, msr, lr, etc. */
+#define ELF_NFPREG                   33                   /* includes fpscr */
 #if __WORDSIZE == 32
-# define ELF_NVRREG      33      /* includes vscr */
+# define ELF_NVRREG                   33                   /* includes vscr */
 #else
-# define ELF_NVRREG      34      /* includes vscr */
+# define ELF_NVRREG                   34                   /* includes vscr */
 #endif
 
 typedef unsigned long elf_greg_t;

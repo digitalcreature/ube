@@ -165,14 +165,14 @@ Direct inquiries to 30 Frost Street, Cambridge, MA 02140
  *
  * Evaluates polynomial of degree N:
  *
- *                     2          N
+ *                                                            2                       N
  * y  =  C  + C x + C x  +...+ C x
- *        0    1     2          N
+ *                     0    1     2                       N
  *
  * Coefficients are stored in reverse order:
  *
  * coef[0] = C  , ..., coef[N] = C  .
- *            N                   0
+ *                                      N                                                          0
  *
  *  The function p1evl() assumes that coef[N] = 1.0 and is
  * omitted from the array.  Its calling arguments are
@@ -254,14 +254,14 @@ Direct inquiries to 30 Frost Street, Cambridge, MA 02140
  *
  * Evaluates polynomial of degree N:
  *
- *                     2          N
+ *                                                            2                       N
  * y  =  C  + C x + C x  +...+ C x
- *        0    1     2          N
+ *                     0    1     2                       N
  *
  * Coefficients are stored in reverse order:
  *
  * coef[0] = C  , ..., coef[N] = C  .
- *            N                   0
+ *                                      N                                                          0
  *
  *  The function p1evll() assumes that coef[N] = 1.0 and is
  * omitted from the array.  Its calling arguments are
@@ -340,14 +340,14 @@ static __inline__ long double p1evll(long double x, const uLD *p, int n)
  *
  * Evaluates polynomial of degree N:
  *
- *                     2          N
+ *                                                            2                       N
  * y  =  C  + C x + C x  +...+ C x
- *        0    1     2          N
+ *                     0    1     2                       N
  *
  * Coefficients are stored in reverse order:
  *
  * coef[0] = C  , ..., coef[N] = C  .
- *            N                   0
+ *                                      N                                                          0
  *
  *  The function p1evl() assumes that coef[N] = 1.0 and is
  * omitted from the array.  Its calling arguments are
@@ -393,7 +393,7 @@ static __inline__ float polevlf(float x, const float* coef, int N)
 }
 
 /*							p1evl()	*/
-/*                                          N
+/*                                                                                                                                     N
  * Evaluate polynomial when coefficient of x  is 1.0.
  * Otherwise same as polevl.
  */

@@ -586,8 +586,8 @@ for linking")
 #else
 # ifndef __ASSEMBLER__
 #  if !defined SHARED && IS_IN (libc) && !defined LIBC_NONSHARED \
-      && (!defined PIC || !defined NO_HIDDEN_EXTERN_FUNC_IN_PIE) \
-      && !defined NO_HIDDEN
+                   && (!defined PIC || !defined NO_HIDDEN_EXTERN_FUNC_IN_PIE) \
+                   && !defined NO_HIDDEN
 #   define __hidden_proto_hiddenattr(attrs...) \
   __attribute__ ((visibility ("hidden"), ##attrs))
 #   define hidden_proto(name, attrs...) \
@@ -910,7 +910,7 @@ for linking")
 #ifdef HAVE_GCC_IFUNC
 # define __ifunc(type_name, name, expr, arg, init)			\
   extern __typeof (type_name) name __attribute__			\
-			      ((ifunc (#name "_ifunc")));		\
+			                   ((ifunc (#name "_ifunc")));		\
   __ifunc_resolver (type_name, name, expr, arg, init, static)
 
 # define __ifunc_hidden(type_name, name, expr, arg, init)	\
@@ -1008,9 +1008,9 @@ for linking")
    to use:
 
    libc_ifunc_hidden (foo, foo,
-		      (hwcap & HWCAP_SPECIAL)
-		      ? __foo_special
-		      : __foo_default);
+		                   (hwcap & HWCAP_SPECIAL)
+		                   ? __foo_special
+		                   : __foo_default);
    libc_hidden_def (foo)
 
    The first parameter foo of libc_ifunc_hidden macro is used in the same way

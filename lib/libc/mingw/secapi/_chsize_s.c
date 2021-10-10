@@ -37,8 +37,8 @@ _int_chsize_s (int fd, long long sz)
 {
   if (sz > 0x7fffffffll)
     {
-      /* We can't set file bigger as 2GB, so return EACCES.  */
-      return (errno = EACCES);
+                   /* We can't set file bigger as 2GB, so return EACCES.  */
+                   return (errno = EACCES);
     }
   if (!_chsize (fd, sz))
     return 0;

@@ -173,15 +173,15 @@ pub const libc_stat = extern struct {
     __spare: [2]u32,
 
     pub fn atime(self: @This()) timespec {
-        return self.atim;
+                     return self.atim;
     }
 
     pub fn mtime(self: @This()) timespec {
-        return self.mtim;
+                     return self.mtim;
     }
 
     pub fn ctime(self: @This()) timespec {
-        return self.ctim;
+                     return self.ctim;
     }
 };
 
@@ -200,7 +200,7 @@ pub const dirent = extern struct {
     d_name: [MAXNAMLEN:0]u8,
 
     pub fn reclen(self: dirent) u16 {
-        return self.d_reclen;
+                     return self.d_reclen;
     }
 };
 
@@ -742,41 +742,41 @@ pub const _ksiginfo = extern struct {
     // 64bit architectures insert 4bytes of padding here, this is done by
     // correctly aligning the reason field
     reason: extern union {
-        rt: extern struct {
-            pid: pid_t,
-            uid: uid_t,
-            value: sigval_t,
-        },
-        child: extern struct {
-            pid: pid_t,
-            uid: uid_t,
-            status: i32,
-            utime: clock_t,
-            stime: clock_t,
-        },
-        fault: extern struct {
-            addr: ?*c_void,
-            trap: i32,
-            trap2: i32,
-            trap3: i32,
-        },
-        poll: extern struct {
-            band: i32,
-            fd: i32,
-        },
-        syscall: extern struct {
-            sysnum: i32,
-            retval: [2]i32,
-            @"error": i32,
-            args: [8]u64,
-        },
-        ptrace_state: extern struct {
-            pe_report_event: i32,
-            option: extern union {
-                pe_other_pid: pid_t,
-                pe_lwp: lwpid_t,
-            },
-        },
+                     rt: extern struct {
+                                      pid: pid_t,
+                                      uid: uid_t,
+                                      value: sigval_t,
+                     },
+                     child: extern struct {
+                                      pid: pid_t,
+                                      uid: uid_t,
+                                      status: i32,
+                                      utime: clock_t,
+                                      stime: clock_t,
+                     },
+                     fault: extern struct {
+                                      addr: ?*c_void,
+                                      trap: i32,
+                                      trap2: i32,
+                                      trap3: i32,
+                     },
+                     poll: extern struct {
+                                      band: i32,
+                                      fd: i32,
+                     },
+                     syscall: extern struct {
+                                      sysnum: i32,
+                                      retval: [2]i32,
+                                      @"error": i32,
+                                      args: [8]u64,
+                     },
+                     ptrace_state: extern struct {
+                                      pe_report_event: i32,
+                                      option: extern union {
+                                          pe_other_pid: pid_t,
+                                          pe_lwp: lwpid_t,
+                                      },
+                     },
     } align(@sizeOf(usize)),
 };
 
@@ -820,11 +820,11 @@ pub const ucontext_t = extern struct {
     stack: stack_t,
     mcontext: mcontext_t,
     __pad: [switch (builtin.arch) {
-        .i386 => 4,
-        .mips, .mipsel, .mips64, .mips64el => 14,
-        .arm, .armeb, .thumb, .thumbeb => 1,
-        .sparc, .sparcel, .sparcv9 => if (@sizeOf(usize) == 4) 43 else 8,
-        else => 0,
+                     .i386 => 4,
+                     .mips, .mipsel, .mips64, .mips64el => 14,
+                     .arm, .armeb, .thumb, .thumbeb => 1,
+                     .sparc, .sparcel, .sparcv9 => if (@sizeOf(usize) == 4) 43 else 8,
+                     else => 0,
     }]u32,
 };
 

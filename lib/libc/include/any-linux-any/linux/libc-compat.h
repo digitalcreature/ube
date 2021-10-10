@@ -18,7 +18,7 @@
  * Then follow this process:
  *
  * (a) Include libc-compat.h in the UAPI header.
- *      e.g. #include <linux/libc-compat.h>
+ *                   e.g. #include <linux/libc-compat.h>
  *     This include must be as early as possible.
  *
  * (b) In libc-compat.h add enough code to detect that the comflicting
@@ -31,7 +31,7 @@
  * (d) Back in the UAPI header with the conflicting definitions, guard the
  *     definitions with:
  *     #if __UAPI_DEF_FOO
- *       ...
+ *                    ...
  *     #endif
  *
  * This fixes the situation where the linux headers are included *after* the

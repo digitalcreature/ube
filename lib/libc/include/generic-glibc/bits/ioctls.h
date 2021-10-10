@@ -49,7 +49,7 @@
 #define SIOCSIFMTU	0x8922		/* set MTU size			*/
 #define SIOCSIFNAME	0x8923		/* set interface name		*/
 #define	SIOCSIFHWADDR	0x8924		/* set hardware address 	*/
-#define SIOCGIFENCAP	0x8925		/* get/set encapsulations       */
+#define SIOCGIFENCAP	0x8925		/* get/set encapsulations                    */
 #define SIOCSIFENCAP	0x8926
 #define SIOCGIFHWADDR	0x8927		/* Get hardware address		*/
 #define SIOCGIFSLAVE	0x8929		/* Driver slaving support	*/

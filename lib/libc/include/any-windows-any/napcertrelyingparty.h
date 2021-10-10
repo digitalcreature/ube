@@ -57,18 +57,18 @@ MIDL_INTERFACE("62c02ffc-4c77-4158-8754-782d5b4ee66e")
 INapCertRelyingParty : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SubscribeCertByGroup(
-        EnforcementEntityId id,
-        const BSTR subscriberName,
-        const VARIANT *reserved,
-        WINBOOL *certExists) = 0;
+                     EnforcementEntityId id,
+                     const BSTR subscriberName,
+                     const VARIANT *reserved,
+                     WINBOOL *certExists) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnSubscribeCertByGroup(
-        EnforcementEntityId id,
-        const VARIANT *reserved) = 0;
+                     EnforcementEntityId id,
+                     const VARIANT *reserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubscribedRelyingParties(
-        EnforcementEntityCount *count,
-        EnforcementEntityId **relyingParties) = 0;
+                     EnforcementEntityCount *count,
+                     EnforcementEntityId **relyingParties) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -80,33 +80,33 @@ typedef struct INapCertRelyingPartyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapCertRelyingParty *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapCertRelyingParty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapCertRelyingParty *This);
+                     INapCertRelyingParty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapCertRelyingParty *This);
+                     INapCertRelyingParty *This);
 
     /*** INapCertRelyingParty methods ***/
     HRESULT (STDMETHODCALLTYPE *SubscribeCertByGroup)(
-        INapCertRelyingParty *This,
-        EnforcementEntityId id,
-        const BSTR subscriberName,
-        const VARIANT *reserved,
-        WINBOOL *certExists);
+                     INapCertRelyingParty *This,
+                     EnforcementEntityId id,
+                     const BSTR subscriberName,
+                     const VARIANT *reserved,
+                     WINBOOL *certExists);
 
     HRESULT (STDMETHODCALLTYPE *UnSubscribeCertByGroup)(
-        INapCertRelyingParty *This,
-        EnforcementEntityId id,
-        const VARIANT *reserved);
+                     INapCertRelyingParty *This,
+                     EnforcementEntityId id,
+                     const VARIANT *reserved);
 
     HRESULT (STDMETHODCALLTYPE *GetSubscribedRelyingParties)(
-        INapCertRelyingParty *This,
-        EnforcementEntityCount *count,
-        EnforcementEntityId **relyingParties);
+                     INapCertRelyingParty *This,
+                     EnforcementEntityCount *count,
+                     EnforcementEntityId **relyingParties);
 
     END_INTERFACE
 } INapCertRelyingPartyVtbl;
@@ -157,14 +157,14 @@ static FORCEINLINE HRESULT INapCertRelyingParty_GetSubscribedRelyingParties(INap
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

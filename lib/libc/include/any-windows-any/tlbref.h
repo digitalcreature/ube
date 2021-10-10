@@ -53,13 +53,13 @@ MIDL_INTERFACE("8f026edb-785e-4470-a8e1-b4e84e9d1779")
 ITypeLibResolver : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ResolveTypeLib(
-        BSTR bstrSimpleName,
-        GUID tlbid,
-        LCID lcid,
-        USHORT wMajorVersion,
-        USHORT wMinorVersion,
-        SYSKIND syskind,
-        BSTR *pbstrResolvedTlbName) = 0;
+                     BSTR bstrSimpleName,
+                     GUID tlbid,
+                     LCID lcid,
+                     USHORT wMajorVersion,
+                     USHORT wMinorVersion,
+                     SYSKIND syskind,
+                     BSTR *pbstrResolvedTlbName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -71,26 +71,26 @@ typedef struct ITypeLibResolverVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITypeLibResolver *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITypeLibResolver *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITypeLibResolver *This);
+                     ITypeLibResolver *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITypeLibResolver *This);
+                     ITypeLibResolver *This);
 
     /*** ITypeLibResolver methods ***/
     HRESULT (STDMETHODCALLTYPE *ResolveTypeLib)(
-        ITypeLibResolver *This,
-        BSTR bstrSimpleName,
-        GUID tlbid,
-        LCID lcid,
-        USHORT wMajorVersion,
-        USHORT wMinorVersion,
-        SYSKIND syskind,
-        BSTR *pbstrResolvedTlbName);
+                     ITypeLibResolver *This,
+                     BSTR bstrSimpleName,
+                     GUID tlbid,
+                     LCID lcid,
+                     USHORT wMajorVersion,
+                     USHORT wMinorVersion,
+                     SYSKIND syskind,
+                     BSTR *pbstrResolvedTlbName);
 
     END_INTERFACE
 } ITypeLibResolverVtbl;
@@ -135,10 +135,10 @@ STDAPI GetTypeLibInfo (LPWSTR szFile, GUID *pTypeLibID, LCID *pTypeLibLCID, SYSK
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

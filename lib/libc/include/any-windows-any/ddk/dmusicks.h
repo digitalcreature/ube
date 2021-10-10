@@ -30,7 +30,7 @@ typedef enum {
   DMUS_STREAM_WAVE_SINK
 } DMUS_STREAM_TYPE;
 
-DEFINE_GUID(CLSID_MiniportDriverDMusUART,        0xd3f0ce1c, 0xFFFC, 0x11D1, 0x81, 0xB0, 0x00, 0x60, 0x08, 0x33, 0x16, 0xC1);
+DEFINE_GUID(CLSID_MiniportDriverDMusUART,                     0xd3f0ce1c, 0xFFFC, 0x11D1, 0x81, 0xB0, 0x00, 0x60, 0x08, 0x33, 0x16, 0xC1);
 DEFINE_GUID(CLSID_MiniportDriverDMusUARTCapture, 0xD3F0CE1D, 0xFFFC, 0x11D1, 0x81, 0xB0, 0x00, 0x60, 0x08, 0x33, 0x16, 0xC1);
 
 /* ===============================================================
@@ -45,15 +45,15 @@ DECLARE_INTERFACE_(IMasterClock,IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS,GetTime)( THIS_
-        OUT     REFERENCE_TIME  * pTime
+                     OUT     REFERENCE_TIME  * pTime
     ) PURE;
 };
 
 typedef IMasterClock *PMASTERCLOCK;
 
-#define IMP_IMasterClock                    \
-    STDMETHODIMP_(NTSTATUS) GetTime(        \
-        OUT     REFERENCE_TIME  * pTime     \
+#define IMP_IMasterClock                                                           \
+    STDMETHODIMP_(NTSTATUS) GetTime(                     \
+                     OUT     REFERENCE_TIME  * pTime     \
     )
 
 /* ===============================================================
@@ -66,39 +66,39 @@ typedef IMasterClock *PMASTERCLOCK;
 struct IMXF;
 typedef struct IMXF *PMXF;
 
-#define DEFINE_ABSTRACT_IMXF()                 \
-    STDMETHOD_(NTSTATUS,SetState)(THIS_        \
-        IN      KSSTATE State                  \
-    ) PURE;                                    \
-    STDMETHOD_(NTSTATUS,PutMessage)            \
-    (   THIS_                                  \
-        IN      PDMUS_KERNEL_EVENT  pDMKEvt    \
-    ) PURE;                                    \
-    STDMETHOD_(NTSTATUS,ConnectOutput)         \
-    (   THIS_                                  \
-        IN      PMXF    sinkMXF                \
-    ) PURE;                                    \
-    STDMETHOD_(NTSTATUS,DisconnectOutput)      \
-    (   THIS_                                  \
-        IN      PMXF    sinkMXF                \
+#define DEFINE_ABSTRACT_IMXF()                                           \
+    STDMETHOD_(NTSTATUS,SetState)(THIS_                     \
+                     IN                   KSSTATE State                                                         \
+    ) PURE;                                                                                                                  \
+    STDMETHOD_(NTSTATUS,PutMessage)                                      \
+    (   THIS_                                                                                                   \
+                     IN                   PDMUS_KERNEL_EVENT  pDMKEvt    \
+    ) PURE;                                                                                                                  \
+    STDMETHOD_(NTSTATUS,ConnectOutput)                      \
+    (   THIS_                                                                                                   \
+                     IN                   PMXF    sinkMXF                                          \
+    ) PURE;                                                                                                                  \
+    STDMETHOD_(NTSTATUS,DisconnectOutput)                   \
+    (   THIS_                                                                                                   \
+                     IN                   PMXF    sinkMXF                                          \
     ) PURE;
 
-#define IMP_IMXF                                \
-    STDMETHODIMP_(NTSTATUS) SetState            \
-    (                                           \
-        IN      KSSTATE State                   \
-    );                                          \
-    STDMETHODIMP_(NTSTATUS) PutMessage          \
-    (   THIS_                                   \
-        IN      PDMUS_KERNEL_EVENT  pDMKEvt     \
-    );                                          \
-    STDMETHODIMP_(NTSTATUS) ConnectOutput       \
-    (   THIS_                                   \
-        IN      PMXF    sinkMXF                 \
-    );                                          \
+#define IMP_IMXF                                                                                                 \
+    STDMETHODIMP_(NTSTATUS) SetState                                      \
+    (                                                                                                                                      \
+                     IN                   KSSTATE State                                                          \
+    );                                                                                                                                     \
+    STDMETHODIMP_(NTSTATUS) PutMessage                       \
+    (   THIS_                                                                                                    \
+                     IN                   PDMUS_KERNEL_EVENT  pDMKEvt     \
+    );                                                                                                                                     \
+    STDMETHODIMP_(NTSTATUS) ConnectOutput                    \
+    (   THIS_                                                                                                    \
+                     IN                   PMXF    sinkMXF                                           \
+    );                                                                                                                                     \
     STDMETHODIMP_(NTSTATUS) DisconnectOutput    \
-    (   THIS_                                   \
-        IN      PMXF    sinkMXF                 \
+    (   THIS_                                                                                                    \
+                     IN                   PMXF    sinkMXF                                           \
     )
 
 
@@ -132,34 +132,34 @@ DECLARE_INTERFACE_(IAllocatorMXF, IMXF)
     DEFINE_ABSTRACT_IMXF()
 
     STDMETHOD_(NTSTATUS,GetMessage)(THIS_
-        OUT     PDMUS_KERNEL_EVENT * ppDMKEvt
+                     OUT     PDMUS_KERNEL_EVENT * ppDMKEvt
     ) PURE;
 
     STDMETHOD_(USHORT,GetBufferSize)(THIS) PURE;
 
     STDMETHOD_(NTSTATUS,GetBuffer)(THIS_
-        OUT     PBYTE * ppBuffer
+                     OUT     PBYTE * ppBuffer
     )PURE;
 
     STDMETHOD_(NTSTATUS,PutBuffer)(THIS_
-        IN      PBYTE   pBuffer
+                     IN                   PBYTE   pBuffer
     )   PURE;
 };
 
-#define IMP_IAllocatorMXF                               \
-    IMP_IMXF;                                           \
-    STDMETHODIMP_(NTSTATUS) GetMessage(                 \
-        OUT     PDMUS_KERNEL_EVENT * ppDMKEvt           \
-    );                                                  \
-                                                        \
-    STDMETHODIMP_(USHORT) GetBufferSize(void);          \
-                                                        \
-    STDMETHODIMP_(NTSTATUS) GetBuffer(                  \
-        OUT     PBYTE * ppBuffer                        \
-    );                                                  \
-                                                        \
-    STDMETHODIMP_(NTSTATUS) PutBuffer(                  \
-        IN      PBYTE   pBuffer                         \
+#define IMP_IAllocatorMXF                                                                                                \
+    IMP_IMXF;                                                                                                                                      \
+    STDMETHODIMP_(NTSTATUS) GetMessage(                                           \
+                     OUT     PDMUS_KERNEL_EVENT * ppDMKEvt                        \
+    );                                                                                                                                                          \
+                                                                                                                                                                             \
+    STDMETHODIMP_(USHORT) GetBufferSize(void);                       \
+                                                                                                                                                                             \
+    STDMETHODIMP_(NTSTATUS) GetBuffer(                                                         \
+                     OUT     PBYTE * ppBuffer                                                                            \
+    );                                                                                                                                                          \
+                                                                                                                                                                             \
+    STDMETHODIMP_(NTSTATUS) PutBuffer(                                                         \
+                     IN                   PBYTE   pBuffer                                                                             \
     )
 
 #undef INTERFACE
@@ -175,23 +175,23 @@ DECLARE_INTERFACE_(IPortDMus, IPort)
     DEFINE_ABSTRACT_PORT()
 
     STDMETHOD_(void,Notify)(THIS_
-        IN PSERVICEGROUP ServiceGroup OPTIONAL
+                     IN PSERVICEGROUP ServiceGroup OPTIONAL
     )PURE;
 
     STDMETHOD_(void,RegisterServiceGroup)(THIS_
-        IN PSERVICEGROUP ServiceGroup
+                     IN PSERVICEGROUP ServiceGroup
     ) PURE;
 };
 typedef IPortDMus *PPORTDMUS;
 
-#define IMP_IPortDMus                                 \
-    IMP_IPort;                                        \
-    STDMETHODIMP_(void) Notify(                       \
-        IN PSERVICEGROUP ServiceGroup OPTIONAL        \
-    );                                                \
-                                                      \
-    STDMETHODIMP_(void) RegisterServiceGroup(         \
-        IN PSERVICEGROUP ServiceGroup                 \
+#define IMP_IPortDMus                                                                                                  \
+    IMP_IPort;                                                                                                                      \
+    STDMETHODIMP_(void) Notify(                                                              \
+                     IN PSERVICEGROUP ServiceGroup OPTIONAL                     \
+    );                                                                                                                                                        \
+                                                                                                                                                                           \
+    STDMETHODIMP_(void) RegisterServiceGroup(                      \
+                     IN PSERVICEGROUP ServiceGroup                                           \
     )
 
 #undef INTERFACE
@@ -205,53 +205,53 @@ DECLARE_INTERFACE_(IMiniportDMus, IMiniport)
     DEFINE_ABSTRACT_MINIPORT()
 
     STDMETHOD_(NTSTATUS,Init)(THIS_
-        IN      PUNKNOWN        UnknownAdapter,
-        IN      PRESOURCELIST   ResourceList,
-        IN      PPORTDMUS       Port,
-        OUT     PSERVICEGROUP * ServiceGroup
+                     IN                   PUNKNOWN                     UnknownAdapter,
+                     IN                   PRESOURCELIST   ResourceList,
+                     IN                   PPORTDMUS                    Port,
+                     OUT     PSERVICEGROUP * ServiceGroup
     )   PURE;
 
     STDMETHOD_(void,Service)(THIS) PURE;
 
     STDMETHOD_(NTSTATUS,NewStream)(THIS_
-        OUT     PMXF                  * MXF,
-        IN      PUNKNOWN                OuterUnknown    OPTIONAL,
-        IN      POOL_TYPE               PoolType,
-        IN      ULONG                   PinID,
-        IN      DMUS_STREAM_TYPE        StreamType,
-        IN      PKSDATAFORMAT           DataFormat,
-        OUT     PSERVICEGROUP         * ServiceGroup,
-        IN      PAllocatorMXF           AllocatorMXF,
-        IN      PMASTERCLOCK            MasterClock,
-        OUT     PULONGLONG              SchedulePreFetch
+                     OUT     PMXF                                                         * MXF,
+                     IN                   PUNKNOWN                                          OuterUnknown    OPTIONAL,
+                     IN                   POOL_TYPE                                         PoolType,
+                     IN                   ULONG                                                          PinID,
+                     IN                   DMUS_STREAM_TYPE                     StreamType,
+                     IN                   PKSDATAFORMAT                        DataFormat,
+                     OUT     PSERVICEGROUP                      * ServiceGroup,
+                     IN                   PAllocatorMXF                        AllocatorMXF,
+                     IN                   PMASTERCLOCK                                      MasterClock,
+                     OUT     PULONGLONG                                        SchedulePreFetch
     ) PURE;
 };
 
 typedef IMiniportDMus *PMINIPORTDMUS;
 #undef INTERFACE
 
-#define IMP_IMiniportDMus                              \
-    IMP_IMiniport;                                     \
-    STDMETHODIMP_(NTSTATUS) Init(                      \
-        IN      PUNKNOWN        UnknownAdapter,        \
-        IN      PRESOURCELIST   ResourceList,          \
-        IN      PPORTDMUS       Port,                  \
-        OUT     PSERVICEGROUP * ServiceGroup           \
-    );                                                 \
-                                                       \
-    STDMETHODIMP_(void) Service(THIS);                 \
-                                                       \
-    STDMETHODIMP_(NTSTATUS) NewStream(                 \
-        OUT     PMXF              * MXF,               \
-        IN      PUNKNOWN          OuterUnknown,        \
-        IN      POOL_TYPE         PoolType,            \
-        IN      ULONG             PinID,               \
-        IN      DMUS_STREAM_TYPE  StreamType,          \
-        IN      PKSDATAFORMAT     DataFormat,          \
-        OUT     PSERVICEGROUP     * ServiceGroup,      \
-        IN      PAllocatorMXF     AllocatorMXF,        \
-        IN      PMASTERCLOCK      MasterClock,         \
-        OUT     PULONGLONG        SchedulePreFetch     \
+#define IMP_IMiniportDMus                                                                                               \
+    IMP_IMiniport;                                                                                                                   \
+    STDMETHODIMP_(NTSTATUS) Init(                                                             \
+                     IN                   PUNKNOWN                     UnknownAdapter,                     \
+                     IN                   PRESOURCELIST   ResourceList,                       \
+                     IN                   PPORTDMUS                    Port,                                                         \
+                     OUT     PSERVICEGROUP * ServiceGroup                        \
+    );                                                                                                                                                         \
+                                                                                                                                                                            \
+    STDMETHODIMP_(void) Service(THIS);                                           \
+                                                                                                                                                                            \
+    STDMETHODIMP_(NTSTATUS) NewStream(                                           \
+                     OUT     PMXF                                        * MXF,                                         \
+                     IN                   PUNKNOWN                       OuterUnknown,                     \
+                     IN                   POOL_TYPE                      PoolType,                                      \
+                     IN                   ULONG                                       PinID,                                         \
+                     IN                   DMUS_STREAM_TYPE  StreamType,                       \
+                     IN                   PKSDATAFORMAT     DataFormat,                       \
+                     OUT     PSERVICEGROUP     * ServiceGroup,                   \
+                     IN                   PAllocatorMXF     AllocatorMXF,                     \
+                     IN                   PMASTERCLOCK                   MasterClock,                      \
+                     OUT     PULONGLONG                     SchedulePreFetch     \
     )
 
 #endif /* _DMUSICKS_ */

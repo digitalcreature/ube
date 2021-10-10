@@ -8,7 +8,7 @@
 
 #include <linux/ioctl.h>
 
-#define __IPMI_BMC_IOCTL_MAGIC        0xB1
+#define __IPMI_BMC_IOCTL_MAGIC                     0xB1
 #define IPMI_BMC_IOCTL_SET_SMS_ATN    _IO(__IPMI_BMC_IOCTL_MAGIC, 0x00)
 #define IPMI_BMC_IOCTL_CLEAR_SMS_ATN  _IO(__IPMI_BMC_IOCTL_MAGIC, 0x01)
 #define IPMI_BMC_IOCTL_FORCE_ABORT    _IO(__IPMI_BMC_IOCTL_MAGIC, 0x02)

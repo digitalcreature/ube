@@ -40,46 +40,46 @@ pub fn __divtf3(a: f128, b: f128) callconv(.C) f128 {
 
     // Detect if a or b is zero, denormal, infinity, or NaN.
     if (aExponent -% 1 >= maxExponent -% 1 or bExponent -% 1 >= maxExponent -% 1) {
-        const aAbs: Z = @bitCast(Z, a) & absMask;
-        const bAbs: Z = @bitCast(Z, b) & absMask;
+                     const aAbs: Z = @bitCast(Z, a) & absMask;
+                     const bAbs: Z = @bitCast(Z, b) & absMask;
 
-        // NaN / anything = qNaN
-        if (aAbs > infRep) return @bitCast(f128, @bitCast(Z, a) | quietBit);
-        // anything / NaN = qNaN
-        if (bAbs > infRep) return @bitCast(f128, @bitCast(Z, b) | quietBit);
+                     // NaN / anything = qNaN
+                     if (aAbs > infRep) return @bitCast(f128, @bitCast(Z, a) | quietBit);
+                     // anything / NaN = qNaN
+                     if (bAbs > infRep) return @bitCast(f128, @bitCast(Z, b) | quietBit);
 
-        if (aAbs == infRep) {
-            // infinity / infinity = NaN
-            if (bAbs == infRep) {
-                return @bitCast(f128, qnanRep);
-            }
-            // infinity / anything else = +/- infinity
-            else {
-                return @bitCast(f128, aAbs | quotientSign);
-            }
-        }
+                     if (aAbs == infRep) {
+                                      // infinity / infinity = NaN
+                                      if (bAbs == infRep) {
+                                          return @bitCast(f128, qnanRep);
+                                      }
+                                      // infinity / anything else = +/- infinity
+                                      else {
+                                          return @bitCast(f128, aAbs | quotientSign);
+                                      }
+                     }
 
-        // anything else / infinity = +/- 0
-        if (bAbs == infRep) return @bitCast(f128, quotientSign);
+                     // anything else / infinity = +/- 0
+                     if (bAbs == infRep) return @bitCast(f128, quotientSign);
 
-        if (aAbs == 0) {
-            // zero / zero = NaN
-            if (bAbs == 0) {
-                return @bitCast(f128, qnanRep);
-            }
-            // zero / anything else = +/- zero
-            else {
-                return @bitCast(f128, quotientSign);
-            }
-        }
-        // anything else / zero = +/- infinity
-        if (bAbs == 0) return @bitCast(f128, infRep | quotientSign);
+                     if (aAbs == 0) {
+                                      // zero / zero = NaN
+                                      if (bAbs == 0) {
+                                          return @bitCast(f128, qnanRep);
+                                      }
+                                      // zero / anything else = +/- zero
+                                      else {
+                                          return @bitCast(f128, quotientSign);
+                                      }
+                     }
+                     // anything else / zero = +/- infinity
+                     if (bAbs == 0) return @bitCast(f128, infRep | quotientSign);
 
-        // one or both of a or b is denormal, the other (if applicable) is a
-        // normal number.  Renormalize one or both of a and b, and set scale to
-        // include the necessary exponent adjustment.
-        if (aAbs < implicitBit) scale +%= normalize(f128, &aSignificand);
-        if (bAbs < implicitBit) scale -%= normalize(f128, &bSignificand);
+                     // one or both of a or b is denormal, the other (if applicable) is a
+                     // normal number.  Renormalize one or both of a and b, and set scale to
+                     // include the necessary exponent adjustment.
+                     if (aAbs < implicitBit) scale +%= normalize(f128, &aSignificand);
+                     if (bAbs < implicitBit) scale -%= normalize(f128, &bSignificand);
     }
 
     // Set the implicit significand bit.  If we fell through from the
@@ -127,7 +127,7 @@ pub fn __divtf3(a: f128, b: f128) callconv(.C) f128 {
     var reciprocal: u128 = undefined;
 
     // NOTE: This operation is equivalent to __multi3, which is not implemented
-    //       in some architechure
+    //                    in some architechure
     var r64q63: u128 = undefined;
     var r64q127: u128 = undefined;
     var r64cH: u128 = undefined;
@@ -160,7 +160,7 @@ pub fn __divtf3(a: f128, b: f128) callconv(.C) f128 {
     //    1. q < a/b
     //    2. q is in the interval [0.5, 2.0)
     //    3. The error in q is bounded away from 2^-113 (actually, we have a
-    //       couple of bits to spare, but this is all we need).
+    //                    couple of bits to spare, but this is all we need).
 
     // We need a 128 x 128 multiply high to compute q.
     var quotient: u128 = undefined;
@@ -184,46 +184,46 @@ pub fn __divtf3(a: f128, b: f128) callconv(.C) f128 {
     var qb: u128 = undefined;
 
     if (quotient < (implicitBit << 1)) {
-        wideMultiply(u128, quotient, bSignificand, &dummy, &qb);
-        residual = (aSignificand << 113) -% qb;
-        quotientExponent -%= 1;
+                     wideMultiply(u128, quotient, bSignificand, &dummy, &qb);
+                     residual = (aSignificand << 113) -% qb;
+                     quotientExponent -%= 1;
     } else {
-        quotient >>= 1;
-        wideMultiply(u128, quotient, bSignificand, &dummy, &qb);
-        residual = (aSignificand << 112) -% qb;
+                     quotient >>= 1;
+                     wideMultiply(u128, quotient, bSignificand, &dummy, &qb);
+                     residual = (aSignificand << 112) -% qb;
     }
 
     const writtenExponent = quotientExponent +% exponentBias;
 
     if (writtenExponent >= maxExponent) {
-        // If we have overflowed the exponent, return infinity.
-        return @bitCast(f128, infRep | quotientSign);
+                     // If we have overflowed the exponent, return infinity.
+                     return @bitCast(f128, infRep | quotientSign);
     } else if (writtenExponent < 1) {
-        if (writtenExponent == 0) {
-            // Check whether the rounded result is normal.
-            const round = @boolToInt((residual << 1) > bSignificand);
-            // Clear the implicit bit.
-            var absResult = quotient & significandMask;
-            // Round.
-            absResult += round;
-            if ((absResult & ~significandMask) > 0) {
-                // The rounded result is normal; return it.
-                return @bitCast(f128, absResult | quotientSign);
-            }
-        }
-        // Flush denormals to zero.  In the future, it would be nice to add
-        // code to round them correctly.
-        return @bitCast(f128, quotientSign);
+                     if (writtenExponent == 0) {
+                                      // Check whether the rounded result is normal.
+                                      const round = @boolToInt((residual << 1) > bSignificand);
+                                      // Clear the implicit bit.
+                                      var absResult = quotient & significandMask;
+                                      // Round.
+                                      absResult += round;
+                                      if ((absResult & ~significandMask) > 0) {
+                                          // The rounded result is normal; return it.
+                                          return @bitCast(f128, absResult | quotientSign);
+                                      }
+                     }
+                     // Flush denormals to zero.  In the future, it would be nice to add
+                     // code to round them correctly.
+                     return @bitCast(f128, quotientSign);
     } else {
-        const round = @boolToInt((residual << 1) >= bSignificand);
-        // Clear the implicit bit
-        var absResult = quotient & significandMask;
-        // Insert the exponent
-        absResult |= @intCast(Z, writtenExponent) << significandBits;
-        // Round
-        absResult +%= round;
-        // Insert the sign and return
-        return @bitCast(f128, absResult | quotientSign);
+                     const round = @boolToInt((residual << 1) >= bSignificand);
+                     // Clear the implicit bit
+                     var absResult = quotient & significandMask;
+                     // Insert the exponent
+                     absResult |= @intCast(Z, writtenExponent) << significandBits;
+                     // Round
+                     absResult +%= round;
+                     // Insert the sign and return
+                     return @bitCast(f128, absResult | quotientSign);
     }
 }
 

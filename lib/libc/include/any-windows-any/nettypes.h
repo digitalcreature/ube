@@ -20,10 +20,10 @@
 
 #pragma once
 
-#define HARDWARE_ADDRESS_LENGTH             6
-#define NETMAN_VARTYPE_ULONG                0
+#define HARDWARE_ADDRESS_LENGTH                                       6
+#define NETMAN_VARTYPE_ULONG                                          0
 #define NETMAN_VARTYPE_HARDWARE_ADDRESS     1
-#define NETMAN_VARTYPE_STRING               2
+#define NETMAN_VARTYPE_STRING                                         2
 
 typedef ULONG OFFSET;
 

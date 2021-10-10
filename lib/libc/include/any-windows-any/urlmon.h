@@ -619,12 +619,12 @@ EXTERN_C const IID CLSID_CdlProtocol;
 EXTERN_C const IID CLSID_ClassInstallFilter;
 EXTERN_C const IID IID_IAsyncBindCtx;
 
-#define SZ_URLCONTEXT           OLESTR("URL Context")
-#define SZ_ASYNC_CALLEE         OLESTR("AsyncCallee")
+#define SZ_URLCONTEXT                        OLESTR("URL Context")
+#define SZ_ASYNC_CALLEE                      OLESTR("AsyncCallee")
 
-#define MKSYS_URLMONIKER         6
-#define URL_MK_LEGACY            0
-#define URL_MK_UNIFORM           1
+#define MKSYS_URLMONIKER                      6
+#define URL_MK_LEGACY                                      0
+#define URL_MK_UNIFORM                        1
 #define URL_MK_NO_CANONICALIZE   2
 
 STDAPI CreateURLMoniker(LPMONIKER pMkCtx, LPCWSTR szURL, LPMONIKER *ppmk);
@@ -690,8 +690,8 @@ STDAPI CompatFlagsFromClsid(CLSID *pclsid, LPDWORD pdwCompatFlags, LPDWORD pdwMi
 #endif
 
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
-#define CF_NULL                 0
-#define CFSTR_MIME_NULL         NULL
+#define CF_NULL                                           0
+#define CFSTR_MIME_NULL                      NULL
 
 #define CFSTR_MIME_TEXT (TEXT("text/plain"))
 #define CFSTR_MIME_RICHTEXT (TEXT("text/richtext"))
@@ -745,41 +745,41 @@ STDAPI CompatFlagsFromClsid(CLSID *pclsid, LPDWORD pdwCompatFlags, LPDWORD pdwMi
 #endif
 #define INET_E_INVALID_URL _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0002))
 #define INET_E_NO_SESSION _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0003))
-#define INET_E_CANNOT_CONNECT            _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0004))
-#define INET_E_RESOURCE_NOT_FOUND        _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0005))
-#define INET_E_OBJECT_NOT_FOUND          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0006))
-#define INET_E_DATA_NOT_AVAILABLE        _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0007))
-#define INET_E_DOWNLOAD_FAILURE          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0008))
+#define INET_E_CANNOT_CONNECT                                      _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0004))
+#define INET_E_RESOURCE_NOT_FOUND                     _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0005))
+#define INET_E_OBJECT_NOT_FOUND                       _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0006))
+#define INET_E_DATA_NOT_AVAILABLE                     _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0007))
+#define INET_E_DOWNLOAD_FAILURE                       _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0008))
 #define INET_E_AUTHENTICATION_REQUIRED   _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0009))
-#define INET_E_NO_VALID_MEDIA            _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000A))
-#define INET_E_CONNECTION_TIMEOUT        _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000B))
-#define INET_E_INVALID_REQUEST           _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000C))
-#define INET_E_UNKNOWN_PROTOCOL          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000D))
-#define INET_E_SECURITY_PROBLEM          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000E))
-#define INET_E_CANNOT_LOAD_DATA          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000F))
+#define INET_E_NO_VALID_MEDIA                                      _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000A))
+#define INET_E_CONNECTION_TIMEOUT                     _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000B))
+#define INET_E_INVALID_REQUEST                        _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000C))
+#define INET_E_UNKNOWN_PROTOCOL                       _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000D))
+#define INET_E_SECURITY_PROBLEM                       _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000E))
+#define INET_E_CANNOT_LOAD_DATA                       _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C000F))
 #define INET_E_CANNOT_INSTANTIATE_OBJECT _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0010))
-#define INET_E_INVALID_CERTIFICATE       _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0019))
-#define INET_E_REDIRECT_FAILED           _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0014))
-#define INET_E_REDIRECT_TO_DIR           _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0015))
-#define INET_E_CANNOT_LOCK_REQUEST                   _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0016))
-#define INET_E_USE_EXTEND_BINDING                    _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0017))
-#define INET_E_TERMINATED_BIND                       _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0018))
-#define INET_E_RESERVED_1                            _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C001A))
-#define INET_E_BLOCKED_REDIRECT_XSECURITYID          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C001B))
-#define INET_E_DOMINJECTIONVALIDATION                _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C001C))
-#define INET_E_ERROR_FIRST                           _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0002))
-#define INET_E_CODE_DOWNLOAD_DECLINED                _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0100))
-#define INET_E_RESULT_DISPATCHED                     _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0200))
-#define INET_E_CANNOT_REPLACE_SFP_FILE               _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0300))
+#define INET_E_INVALID_CERTIFICATE                    _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0019))
+#define INET_E_REDIRECT_FAILED                        _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0014))
+#define INET_E_REDIRECT_TO_DIR                        _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0015))
+#define INET_E_CANNOT_LOCK_REQUEST                                                          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0016))
+#define INET_E_USE_EXTEND_BINDING                                                           _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0017))
+#define INET_E_TERMINATED_BIND                                                              _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0018))
+#define INET_E_RESERVED_1                                                                                _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C001A))
+#define INET_E_BLOCKED_REDIRECT_XSECURITYID                       _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C001B))
+#define INET_E_DOMINJECTIONVALIDATION                                          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C001C))
+#define INET_E_ERROR_FIRST                                                                               _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0002))
+#define INET_E_CODE_DOWNLOAD_DECLINED                                          _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0100))
+#define INET_E_RESULT_DISPATCHED                                                            _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0200))
+#define INET_E_CANNOT_REPLACE_SFP_FILE                                         _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0300))
 #if (_WIN32_IE >= _WIN32_IE_IE60SP2)
-#define INET_E_CODE_INSTALL_SUPPRESSED               _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0400))
+#define INET_E_CODE_INSTALL_SUPPRESSED                                         _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0400))
 #endif
 #define INET_E_CODE_INSTALL_BLOCKED_BY_HASH_POLICY   _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0500))
-#define INET_E_DOWNLOAD_BLOCKED_BY_INPRIVATE         _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0501))
-#define INET_E_CODE_INSTALL_BLOCKED_IMMERSIVE        _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0502))
-#define INET_E_FORBIDFRAMING                         _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0503))
-#define INET_E_CODE_INSTALL_BLOCKED_ARM              _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0504))
-#define INET_E_BLOCKED_PLUGGABLE_PROTOCOL            _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0505))
+#define INET_E_DOWNLOAD_BLOCKED_BY_INPRIVATE                      _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0501))
+#define INET_E_CODE_INSTALL_BLOCKED_IMMERSIVE                     _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0502))
+#define INET_E_FORBIDFRAMING                                                                             _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0503))
+#define INET_E_CODE_INSTALL_BLOCKED_ARM                                        _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0504))
+#define INET_E_BLOCKED_PLUGGABLE_PROTOCOL                                      _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0505))
 #define INET_E_ERROR_LAST INET_E_BLOCKED_PLUGGABLE_PROTOCOL
 #endif
 
@@ -800,28 +800,28 @@ MIDL_INTERFACE("79eac9c9-baf9-11ce-8c82-00aa004ba90b")
 IPersistMoniker : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClassID(
-        CLSID *pClassID) = 0;
+                     CLSID *pClassID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        WINBOOL fFullyAvailable,
-        IMoniker *pimkName,
-        LPBC pibc,
-        DWORD grfMode) = 0;
+                     WINBOOL fFullyAvailable,
+                     IMoniker *pimkName,
+                     LPBC pibc,
+                     DWORD grfMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        IMoniker *pimkName,
-        LPBC pbc,
-        WINBOOL fRemember) = 0;
+                     IMoniker *pimkName,
+                     LPBC pbc,
+                     WINBOOL fRemember) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveCompleted(
-        IMoniker *pimkName,
-        LPBC pibc) = 0;
+                     IMoniker *pimkName,
+                     LPBC pibc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurMoniker(
-        IMoniker **ppimkName) = 0;
+                     IMoniker **ppimkName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -833,45 +833,45 @@ typedef struct IPersistMonikerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistMoniker *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistMoniker *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistMoniker *This);
+                     IPersistMoniker *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistMoniker *This);
+                     IPersistMoniker *This);
 
     /*** IPersistMoniker methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistMoniker *This,
-        CLSID *pClassID);
+                     IPersistMoniker *This,
+                     CLSID *pClassID);
 
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IPersistMoniker *This);
+                     IPersistMoniker *This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistMoniker *This,
-        WINBOOL fFullyAvailable,
-        IMoniker *pimkName,
-        LPBC pibc,
-        DWORD grfMode);
+                     IPersistMoniker *This,
+                     WINBOOL fFullyAvailable,
+                     IMoniker *pimkName,
+                     LPBC pibc,
+                     DWORD grfMode);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistMoniker *This,
-        IMoniker *pimkName,
-        LPBC pbc,
-        WINBOOL fRemember);
+                     IPersistMoniker *This,
+                     IMoniker *pimkName,
+                     LPBC pbc,
+                     WINBOOL fRemember);
 
     HRESULT (STDMETHODCALLTYPE *SaveCompleted)(
-        IPersistMoniker *This,
-        IMoniker *pimkName,
-        LPBC pibc);
+                     IPersistMoniker *This,
+                     IMoniker *pimkName,
+                     LPBC pibc);
 
     HRESULT (STDMETHODCALLTYPE *GetCurMoniker)(
-        IPersistMoniker *This,
-        IMoniker **ppimkName);
+                     IPersistMoniker *This,
+                     IMoniker **ppimkName);
 
     END_INTERFACE
 } IPersistMonikerVtbl;
@@ -957,8 +957,8 @@ MIDL_INTERFACE("a5ca5f7f-1847-4d87-9c5b-918509f7511d")
 IMonikerProp : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PutProperty(
-        MONIKERPROPERTY mkp,
-        LPCWSTR val) = 0;
+                     MONIKERPROPERTY mkp,
+                     LPCWSTR val) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -970,21 +970,21 @@ typedef struct IMonikerPropVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMonikerProp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMonikerProp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMonikerProp *This);
+                     IMonikerProp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMonikerProp *This);
+                     IMonikerProp *This);
 
     /*** IMonikerProp methods ***/
     HRESULT (STDMETHODCALLTYPE *PutProperty)(
-        IMonikerProp *This,
-        MONIKERPROPERTY mkp,
-        LPCWSTR val);
+                     IMonikerProp *This,
+                     MONIKERPROPERTY mkp,
+                     LPCWSTR val);
 
     END_INTERFACE
 } IMonikerPropVtbl;
@@ -1043,9 +1043,9 @@ MIDL_INTERFACE("79eac9cd-baf9-11ce-8c82-00aa004ba90b")
 IBindProtocol : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateBinding(
-        LPCWSTR szUrl,
-        IBindCtx *pbc,
-        IBinding **ppb) = 0;
+                     LPCWSTR szUrl,
+                     IBindCtx *pbc,
+                     IBinding **ppb) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1057,22 +1057,22 @@ typedef struct IBindProtocolVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBindProtocol *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBindProtocol *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBindProtocol *This);
+                     IBindProtocol *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBindProtocol *This);
+                     IBindProtocol *This);
 
     /*** IBindProtocol methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateBinding)(
-        IBindProtocol *This,
-        LPCWSTR szUrl,
-        IBindCtx *pbc,
-        IBinding **ppb);
+                     IBindProtocol *This,
+                     LPCWSTR szUrl,
+                     IBindCtx *pbc,
+                     IBinding **ppb);
 
     END_INTERFACE
 } IBindProtocolVtbl;
@@ -1131,25 +1131,25 @@ MIDL_INTERFACE("79eac9c0-baf9-11ce-8c82-00aa004ba90b")
 IBinding : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Abort(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Suspend(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPriority(
-        LONG nPriority) = 0;
+                     LONG nPriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPriority(
-        LONG *pnPriority) = 0;
+                     LONG *pnPriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBindResult(
-        CLSID *pclsidProtocol,
-        DWORD *pdwResult,
-        LPOLESTR *pszResult,
-        DWORD *pdwReserved) = 0;
+                     CLSID *pclsidProtocol,
+                     DWORD *pdwResult,
+                     LPOLESTR *pszResult,
+                     DWORD *pdwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1161,40 +1161,40 @@ typedef struct IBindingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBinding *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBinding *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBinding *This);
+                     IBinding *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBinding *This);
+                     IBinding *This);
 
     /*** IBinding methods ***/
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IBinding *This);
+                     IBinding *This);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IBinding *This);
+                     IBinding *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IBinding *This);
+                     IBinding *This);
 
     HRESULT (STDMETHODCALLTYPE *SetPriority)(
-        IBinding *This,
-        LONG nPriority);
+                     IBinding *This,
+                     LONG nPriority);
 
     HRESULT (STDMETHODCALLTYPE *GetPriority)(
-        IBinding *This,
-        LONG *pnPriority);
+                     IBinding *This,
+                     LONG *pnPriority);
 
     HRESULT (STDMETHODCALLTYPE *GetBindResult)(
-        IBinding *This,
-        CLSID *pclsidProtocol,
-        DWORD *pdwResult,
-        LPOLESTR *pszResult,
-        DWORD *pdwReserved);
+                     IBinding *This,
+                     CLSID *pclsidProtocol,
+                     DWORD *pdwResult,
+                     LPOLESTR *pszResult,
+                     DWORD *pdwReserved);
 
     END_INTERFACE
 } IBindingVtbl;
@@ -1500,38 +1500,38 @@ MIDL_INTERFACE("79eac9c1-baf9-11ce-8c82-00aa004ba90b")
 IBindStatusCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnStartBinding(
-        DWORD dwReserved,
-        IBinding *pib) = 0;
+                     DWORD dwReserved,
+                     IBinding *pib) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPriority(
-        LONG *pnPriority) = 0;
+                     LONG *pnPriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnLowResource(
-        DWORD reserved) = 0;
+                     DWORD reserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnProgress(
-        ULONG ulProgress,
-        ULONG ulProgressMax,
-        ULONG ulStatusCode,
-        LPCWSTR szStatusText) = 0;
+                     ULONG ulProgress,
+                     ULONG ulProgressMax,
+                     ULONG ulStatusCode,
+                     LPCWSTR szStatusText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStopBinding(
-        HRESULT hresult,
-        LPCWSTR szError) = 0;
+                     HRESULT hresult,
+                     LPCWSTR szError) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBindInfo(
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo) = 0;
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDataAvailable(
-        DWORD grfBSCF,
-        DWORD dwSize,
-        FORMATETC *pformatetc,
-        STGMEDIUM *pstgmed) = 0;
+                     DWORD grfBSCF,
+                     DWORD dwSize,
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pstgmed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnObjectAvailable(
-        REFIID riid,
-        IUnknown *punk) = 0;
+                     REFIID riid,
+                     IUnknown *punk) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1543,58 +1543,58 @@ typedef struct IBindStatusCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBindStatusCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBindStatusCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBindStatusCallback *This);
+                     IBindStatusCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBindStatusCallback *This);
+                     IBindStatusCallback *This);
 
     /*** IBindStatusCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStartBinding)(
-        IBindStatusCallback *This,
-        DWORD dwReserved,
-        IBinding *pib);
+                     IBindStatusCallback *This,
+                     DWORD dwReserved,
+                     IBinding *pib);
 
     HRESULT (STDMETHODCALLTYPE *GetPriority)(
-        IBindStatusCallback *This,
-        LONG *pnPriority);
+                     IBindStatusCallback *This,
+                     LONG *pnPriority);
 
     HRESULT (STDMETHODCALLTYPE *OnLowResource)(
-        IBindStatusCallback *This,
-        DWORD reserved);
+                     IBindStatusCallback *This,
+                     DWORD reserved);
 
     HRESULT (STDMETHODCALLTYPE *OnProgress)(
-        IBindStatusCallback *This,
-        ULONG ulProgress,
-        ULONG ulProgressMax,
-        ULONG ulStatusCode,
-        LPCWSTR szStatusText);
+                     IBindStatusCallback *This,
+                     ULONG ulProgress,
+                     ULONG ulProgressMax,
+                     ULONG ulStatusCode,
+                     LPCWSTR szStatusText);
 
     HRESULT (STDMETHODCALLTYPE *OnStopBinding)(
-        IBindStatusCallback *This,
-        HRESULT hresult,
-        LPCWSTR szError);
+                     IBindStatusCallback *This,
+                     HRESULT hresult,
+                     LPCWSTR szError);
 
     HRESULT (STDMETHODCALLTYPE *GetBindInfo)(
-        IBindStatusCallback *This,
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo);
+                     IBindStatusCallback *This,
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo);
 
     HRESULT (STDMETHODCALLTYPE *OnDataAvailable)(
-        IBindStatusCallback *This,
-        DWORD grfBSCF,
-        DWORD dwSize,
-        FORMATETC *pformatetc,
-        STGMEDIUM *pstgmed);
+                     IBindStatusCallback *This,
+                     DWORD grfBSCF,
+                     DWORD dwSize,
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pstgmed);
 
     HRESULT (STDMETHODCALLTYPE *OnObjectAvailable)(
-        IBindStatusCallback *This,
-        REFIID riid,
-        IUnknown *punk);
+                     IBindStatusCallback *This,
+                     REFIID riid,
+                     IUnknown *punk);
 
     END_INTERFACE
 } IBindStatusCallbackVtbl;
@@ -1751,10 +1751,10 @@ MIDL_INTERFACE("aaa74ef9-8ee7-4659-88d9-f8c504da73cc")
 IBindStatusCallbackEx : public IBindStatusCallback
 {
     virtual HRESULT STDMETHODCALLTYPE GetBindInfoEx(
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo,
-        DWORD *grfBINDF2,
-        DWORD *pdwReserved) = 0;
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo,
+                     DWORD *grfBINDF2,
+                     DWORD *pdwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1766,66 +1766,66 @@ typedef struct IBindStatusCallbackExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBindStatusCallbackEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBindStatusCallbackEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBindStatusCallbackEx *This);
+                     IBindStatusCallbackEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBindStatusCallbackEx *This);
+                     IBindStatusCallbackEx *This);
 
     /*** IBindStatusCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStartBinding)(
-        IBindStatusCallbackEx *This,
-        DWORD dwReserved,
-        IBinding *pib);
+                     IBindStatusCallbackEx *This,
+                     DWORD dwReserved,
+                     IBinding *pib);
 
     HRESULT (STDMETHODCALLTYPE *GetPriority)(
-        IBindStatusCallbackEx *This,
-        LONG *pnPriority);
+                     IBindStatusCallbackEx *This,
+                     LONG *pnPriority);
 
     HRESULT (STDMETHODCALLTYPE *OnLowResource)(
-        IBindStatusCallbackEx *This,
-        DWORD reserved);
+                     IBindStatusCallbackEx *This,
+                     DWORD reserved);
 
     HRESULT (STDMETHODCALLTYPE *OnProgress)(
-        IBindStatusCallbackEx *This,
-        ULONG ulProgress,
-        ULONG ulProgressMax,
-        ULONG ulStatusCode,
-        LPCWSTR szStatusText);
+                     IBindStatusCallbackEx *This,
+                     ULONG ulProgress,
+                     ULONG ulProgressMax,
+                     ULONG ulStatusCode,
+                     LPCWSTR szStatusText);
 
     HRESULT (STDMETHODCALLTYPE *OnStopBinding)(
-        IBindStatusCallbackEx *This,
-        HRESULT hresult,
-        LPCWSTR szError);
+                     IBindStatusCallbackEx *This,
+                     HRESULT hresult,
+                     LPCWSTR szError);
 
     HRESULT (STDMETHODCALLTYPE *GetBindInfo)(
-        IBindStatusCallbackEx *This,
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo);
+                     IBindStatusCallbackEx *This,
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo);
 
     HRESULT (STDMETHODCALLTYPE *OnDataAvailable)(
-        IBindStatusCallbackEx *This,
-        DWORD grfBSCF,
-        DWORD dwSize,
-        FORMATETC *pformatetc,
-        STGMEDIUM *pstgmed);
+                     IBindStatusCallbackEx *This,
+                     DWORD grfBSCF,
+                     DWORD dwSize,
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pstgmed);
 
     HRESULT (STDMETHODCALLTYPE *OnObjectAvailable)(
-        IBindStatusCallbackEx *This,
-        REFIID riid,
-        IUnknown *punk);
+                     IBindStatusCallbackEx *This,
+                     REFIID riid,
+                     IUnknown *punk);
 
     /*** IBindStatusCallbackEx methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBindInfoEx)(
-        IBindStatusCallbackEx *This,
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo,
-        DWORD *grfBINDF2,
-        DWORD *pdwReserved);
+                     IBindStatusCallbackEx *This,
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo,
+                     DWORD *grfBINDF2,
+                     DWORD *pdwReserved);
 
     END_INTERFACE
 } IBindStatusCallbackExVtbl;
@@ -1943,9 +1943,9 @@ MIDL_INTERFACE("79eac9d0-baf9-11ce-8c82-00aa004ba90b")
 IAuthenticate : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Authenticate(
-        HWND *phwnd,
-        LPWSTR *pszUsername,
-        LPWSTR *pszPassword) = 0;
+                     HWND *phwnd,
+                     LPWSTR *pszUsername,
+                     LPWSTR *pszPassword) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1957,22 +1957,22 @@ typedef struct IAuthenticateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAuthenticate *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAuthenticate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAuthenticate *This);
+                     IAuthenticate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAuthenticate *This);
+                     IAuthenticate *This);
 
     /*** IAuthenticate methods ***/
     HRESULT (STDMETHODCALLTYPE *Authenticate)(
-        IAuthenticate *This,
-        HWND *phwnd,
-        LPWSTR *pszUsername,
-        LPWSTR *pszPassword);
+                     IAuthenticate *This,
+                     HWND *phwnd,
+                     LPWSTR *pszUsername,
+                     LPWSTR *pszPassword);
 
     END_INTERFACE
 } IAuthenticateVtbl;
@@ -2042,10 +2042,10 @@ MIDL_INTERFACE("2ad1edaf-d83d-48b5-9adf-03dbe19f53bd")
 IAuthenticateEx : public IAuthenticate
 {
     virtual HRESULT STDMETHODCALLTYPE AuthenticateEx(
-        HWND *phwnd,
-        LPWSTR *pszUsername,
-        LPWSTR *pszPassword,
-        AUTHENTICATEINFO *pauthinfo) = 0;
+                     HWND *phwnd,
+                     LPWSTR *pszUsername,
+                     LPWSTR *pszPassword,
+                     AUTHENTICATEINFO *pauthinfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2057,30 +2057,30 @@ typedef struct IAuthenticateExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAuthenticateEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAuthenticateEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAuthenticateEx *This);
+                     IAuthenticateEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAuthenticateEx *This);
+                     IAuthenticateEx *This);
 
     /*** IAuthenticate methods ***/
     HRESULT (STDMETHODCALLTYPE *Authenticate)(
-        IAuthenticateEx *This,
-        HWND *phwnd,
-        LPWSTR *pszUsername,
-        LPWSTR *pszPassword);
+                     IAuthenticateEx *This,
+                     HWND *phwnd,
+                     LPWSTR *pszUsername,
+                     LPWSTR *pszPassword);
 
     /*** IAuthenticateEx methods ***/
     HRESULT (STDMETHODCALLTYPE *AuthenticateEx)(
-        IAuthenticateEx *This,
-        HWND *phwnd,
-        LPWSTR *pszUsername,
-        LPWSTR *pszPassword,
-        AUTHENTICATEINFO *pauthinfo);
+                     IAuthenticateEx *This,
+                     HWND *phwnd,
+                     LPWSTR *pszUsername,
+                     LPWSTR *pszPassword,
+                     AUTHENTICATEINFO *pauthinfo);
 
     END_INTERFACE
 } IAuthenticateExVtbl;
@@ -2145,16 +2145,16 @@ MIDL_INTERFACE("79eac9d2-baf9-11ce-8c82-00aa004ba90b")
 IHttpNegotiate : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BeginningTransaction(
-        LPCWSTR szURL,
-        LPCWSTR szHeaders,
-        DWORD dwReserved,
-        LPWSTR *pszAdditionalHeaders) = 0;
+                     LPCWSTR szURL,
+                     LPCWSTR szHeaders,
+                     DWORD dwReserved,
+                     LPWSTR *pszAdditionalHeaders) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnResponse(
-        DWORD dwResponseCode,
-        LPCWSTR szResponseHeaders,
-        LPCWSTR szRequestHeaders,
-        LPWSTR *pszAdditionalRequestHeaders) = 0;
+                     DWORD dwResponseCode,
+                     LPCWSTR szResponseHeaders,
+                     LPCWSTR szRequestHeaders,
+                     LPWSTR *pszAdditionalRequestHeaders) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2166,30 +2166,30 @@ typedef struct IHttpNegotiateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHttpNegotiate *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHttpNegotiate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHttpNegotiate *This);
+                     IHttpNegotiate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHttpNegotiate *This);
+                     IHttpNegotiate *This);
 
     /*** IHttpNegotiate methods ***/
     HRESULT (STDMETHODCALLTYPE *BeginningTransaction)(
-        IHttpNegotiate *This,
-        LPCWSTR szURL,
-        LPCWSTR szHeaders,
-        DWORD dwReserved,
-        LPWSTR *pszAdditionalHeaders);
+                     IHttpNegotiate *This,
+                     LPCWSTR szURL,
+                     LPCWSTR szHeaders,
+                     DWORD dwReserved,
+                     LPWSTR *pszAdditionalHeaders);
 
     HRESULT (STDMETHODCALLTYPE *OnResponse)(
-        IHttpNegotiate *This,
-        DWORD dwResponseCode,
-        LPCWSTR szResponseHeaders,
-        LPCWSTR szRequestHeaders,
-        LPWSTR *pszAdditionalRequestHeaders);
+                     IHttpNegotiate *This,
+                     DWORD dwResponseCode,
+                     LPCWSTR szResponseHeaders,
+                     LPCWSTR szRequestHeaders,
+                     LPWSTR *pszAdditionalRequestHeaders);
 
     END_INTERFACE
 } IHttpNegotiateVtbl;
@@ -2252,9 +2252,9 @@ MIDL_INTERFACE("4f9f9fcb-e0f4-48eb-b7ab-fa2ea9365cb4")
 IHttpNegotiate2 : public IHttpNegotiate
 {
     virtual HRESULT STDMETHODCALLTYPE GetRootSecurityId(
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved) = 0;
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2266,37 +2266,37 @@ typedef struct IHttpNegotiate2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHttpNegotiate2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHttpNegotiate2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHttpNegotiate2 *This);
+                     IHttpNegotiate2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHttpNegotiate2 *This);
+                     IHttpNegotiate2 *This);
 
     /*** IHttpNegotiate methods ***/
     HRESULT (STDMETHODCALLTYPE *BeginningTransaction)(
-        IHttpNegotiate2 *This,
-        LPCWSTR szURL,
-        LPCWSTR szHeaders,
-        DWORD dwReserved,
-        LPWSTR *pszAdditionalHeaders);
+                     IHttpNegotiate2 *This,
+                     LPCWSTR szURL,
+                     LPCWSTR szHeaders,
+                     DWORD dwReserved,
+                     LPWSTR *pszAdditionalHeaders);
 
     HRESULT (STDMETHODCALLTYPE *OnResponse)(
-        IHttpNegotiate2 *This,
-        DWORD dwResponseCode,
-        LPCWSTR szResponseHeaders,
-        LPCWSTR szRequestHeaders,
-        LPWSTR *pszAdditionalRequestHeaders);
+                     IHttpNegotiate2 *This,
+                     DWORD dwResponseCode,
+                     LPCWSTR szResponseHeaders,
+                     LPCWSTR szRequestHeaders,
+                     LPWSTR *pszAdditionalRequestHeaders);
 
     /*** IHttpNegotiate2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRootSecurityId)(
-        IHttpNegotiate2 *This,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved);
+                     IHttpNegotiate2 *This,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved);
 
     END_INTERFACE
 } IHttpNegotiate2Vtbl;
@@ -2365,8 +2365,8 @@ MIDL_INTERFACE("57b6c80a-34c2-4602-bc26-66a02fc57153")
 IHttpNegotiate3 : public IHttpNegotiate2
 {
     virtual HRESULT STDMETHODCALLTYPE GetSerializedClientCertContext(
-        BYTE **ppbCert,
-        DWORD *pcbCert) = 0;
+                     BYTE **ppbCert,
+                     DWORD *pcbCert) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2378,43 +2378,43 @@ typedef struct IHttpNegotiate3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHttpNegotiate3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHttpNegotiate3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHttpNegotiate3 *This);
+                     IHttpNegotiate3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHttpNegotiate3 *This);
+                     IHttpNegotiate3 *This);
 
     /*** IHttpNegotiate methods ***/
     HRESULT (STDMETHODCALLTYPE *BeginningTransaction)(
-        IHttpNegotiate3 *This,
-        LPCWSTR szURL,
-        LPCWSTR szHeaders,
-        DWORD dwReserved,
-        LPWSTR *pszAdditionalHeaders);
+                     IHttpNegotiate3 *This,
+                     LPCWSTR szURL,
+                     LPCWSTR szHeaders,
+                     DWORD dwReserved,
+                     LPWSTR *pszAdditionalHeaders);
 
     HRESULT (STDMETHODCALLTYPE *OnResponse)(
-        IHttpNegotiate3 *This,
-        DWORD dwResponseCode,
-        LPCWSTR szResponseHeaders,
-        LPCWSTR szRequestHeaders,
-        LPWSTR *pszAdditionalRequestHeaders);
+                     IHttpNegotiate3 *This,
+                     DWORD dwResponseCode,
+                     LPCWSTR szResponseHeaders,
+                     LPCWSTR szRequestHeaders,
+                     LPWSTR *pszAdditionalRequestHeaders);
 
     /*** IHttpNegotiate2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRootSecurityId)(
-        IHttpNegotiate3 *This,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved);
+                     IHttpNegotiate3 *This,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved);
 
     /*** IHttpNegotiate3 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSerializedClientCertContext)(
-        IHttpNegotiate3 *This,
-        BYTE **ppbCert,
-        DWORD *pcbCert);
+                     IHttpNegotiate3 *This,
+                     BYTE **ppbCert,
+                     DWORD *pcbCert);
 
     END_INTERFACE
 } IHttpNegotiate3Vtbl;
@@ -2489,11 +2489,11 @@ MIDL_INTERFACE("f134c4b7-b1f8-4e75-b886-74b90943becb")
 IWinInetFileStream : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetHandleForUnlock(
-        DWORD_PTR hWinInetLockHandle,
-        DWORD_PTR dwReserved) = 0;
+                     DWORD_PTR hWinInetLockHandle,
+                     DWORD_PTR dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDeleteFile(
-        DWORD_PTR dwReserved) = 0;
+                     DWORD_PTR dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2505,25 +2505,25 @@ typedef struct IWinInetFileStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWinInetFileStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWinInetFileStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWinInetFileStream *This);
+                     IWinInetFileStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWinInetFileStream *This);
+                     IWinInetFileStream *This);
 
     /*** IWinInetFileStream methods ***/
     HRESULT (STDMETHODCALLTYPE *SetHandleForUnlock)(
-        IWinInetFileStream *This,
-        DWORD_PTR hWinInetLockHandle,
-        DWORD_PTR dwReserved);
+                     IWinInetFileStream *This,
+                     DWORD_PTR hWinInetLockHandle,
+                     DWORD_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetDeleteFile)(
-        IWinInetFileStream *This,
-        DWORD_PTR dwReserved);
+                     IWinInetFileStream *This,
+                     DWORD_PTR dwReserved);
 
     END_INTERFACE
 } IWinInetFileStreamVtbl;
@@ -2586,8 +2586,8 @@ MIDL_INTERFACE("79eac9d5-bafa-11ce-8c82-00aa004ba90b")
 IWindowForBindingUI : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetWindow(
-        REFGUID rguidReason,
-        HWND *phwnd) = 0;
+                     REFGUID rguidReason,
+                     HWND *phwnd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2599,21 +2599,21 @@ typedef struct IWindowForBindingUIVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWindowForBindingUI *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWindowForBindingUI *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWindowForBindingUI *This);
+                     IWindowForBindingUI *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWindowForBindingUI *This);
+                     IWindowForBindingUI *This);
 
     /*** IWindowForBindingUI methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IWindowForBindingUI *This,
-        REFGUID rguidReason,
-        HWND *phwnd);
+                     IWindowForBindingUI *This,
+                     REFGUID rguidReason,
+                     HWND *phwnd);
 
     END_INTERFACE
 } IWindowForBindingUIVtbl;
@@ -2685,10 +2685,10 @@ MIDL_INTERFACE("79eac9d1-baf9-11ce-8c82-00aa004ba90b")
 ICodeInstall : public IWindowForBindingUI
 {
     virtual HRESULT STDMETHODCALLTYPE OnCodeInstallProblem(
-        ULONG ulStatusCode,
-        LPCWSTR szDestination,
-        LPCWSTR szSource,
-        DWORD dwReserved) = 0;
+                     ULONG ulStatusCode,
+                     LPCWSTR szDestination,
+                     LPCWSTR szSource,
+                     DWORD dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2700,29 +2700,29 @@ typedef struct ICodeInstallVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICodeInstall *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICodeInstall *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICodeInstall *This);
+                     ICodeInstall *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICodeInstall *This);
+                     ICodeInstall *This);
 
     /*** IWindowForBindingUI methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        ICodeInstall *This,
-        REFGUID rguidReason,
-        HWND *phwnd);
+                     ICodeInstall *This,
+                     REFGUID rguidReason,
+                     HWND *phwnd);
 
     /*** ICodeInstall methods ***/
     HRESULT (STDMETHODCALLTYPE *OnCodeInstallProblem)(
-        ICodeInstall *This,
-        ULONG ulStatusCode,
-        LPCWSTR szDestination,
-        LPCWSTR szSource,
-        DWORD dwReserved);
+                     ICodeInstall *This,
+                     ULONG ulStatusCode,
+                     LPCWSTR szDestination,
+                     LPCWSTR szSource,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } ICodeInstallVtbl;
@@ -2821,87 +2821,87 @@ MIDL_INTERFACE("a39ee748-6a27-4817-a6f2-13914bef5890")
 IUri : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPropertyBSTR(
-        Uri_PROPERTY uriProp,
-        BSTR *pbstrProperty,
-        DWORD dwFlags) = 0;
+                     Uri_PROPERTY uriProp,
+                     BSTR *pbstrProperty,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyLength(
-        Uri_PROPERTY uriProp,
-        DWORD *pcchProperty,
-        DWORD dwFlags) = 0;
+                     Uri_PROPERTY uriProp,
+                     DWORD *pcchProperty,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyDWORD(
-        Uri_PROPERTY uriProp,
-        DWORD *pdwProperty,
-        DWORD dwFlags) = 0;
+                     Uri_PROPERTY uriProp,
+                     DWORD *pdwProperty,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasProperty(
-        Uri_PROPERTY uriProp,
-        WINBOOL *pfHasProperty) = 0;
+                     Uri_PROPERTY uriProp,
+                     WINBOOL *pfHasProperty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAbsoluteUri(
-        BSTR *pbstrAbsoluteUri) = 0;
+                     BSTR *pbstrAbsoluteUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAuthority(
-        BSTR *pbstrAuthority) = 0;
+                     BSTR *pbstrAuthority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayUri(
-        BSTR *pbstrDisplayString) = 0;
+                     BSTR *pbstrDisplayString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDomain(
-        BSTR *pbstrDomain) = 0;
+                     BSTR *pbstrDomain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExtension(
-        BSTR *pbstrExtension) = 0;
+                     BSTR *pbstrExtension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFragment(
-        BSTR *pbstrFragment) = 0;
+                     BSTR *pbstrFragment) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHost(
-        BSTR *pbstrHost) = 0;
+                     BSTR *pbstrHost) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPassword(
-        BSTR *pbstrPassword) = 0;
+                     BSTR *pbstrPassword) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPath(
-        BSTR *pbstrPath) = 0;
+                     BSTR *pbstrPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPathAndQuery(
-        BSTR *pbstrPathAndQuery) = 0;
+                     BSTR *pbstrPathAndQuery) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetQuery(
-        BSTR *pbstrQuery) = 0;
+                     BSTR *pbstrQuery) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRawUri(
-        BSTR *pbstrRawUri) = 0;
+                     BSTR *pbstrRawUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSchemeName(
-        BSTR *pbstrSchemeName) = 0;
+                     BSTR *pbstrSchemeName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserInfo(
-        BSTR *pbstrUserInfo) = 0;
+                     BSTR *pbstrUserInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserName(
-        BSTR *pbstrUserName) = 0;
+                     BSTR *pbstrUserName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHostType(
-        DWORD *pdwHostType) = 0;
+                     DWORD *pdwHostType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPort(
-        DWORD *pdwPort) = 0;
+                     DWORD *pdwPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScheme(
-        DWORD *pdwScheme) = 0;
+                     DWORD *pdwScheme) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetZone(
-        DWORD *pdwZone) = 0;
+                     DWORD *pdwZone) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperties(
-        LPDWORD pdwFlags) = 0;
+                     LPDWORD pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEqual(
-        IUri *pUri,
-        WINBOOL *pfEqual) = 0;
+                     IUri *pUri,
+                     WINBOOL *pfEqual) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2913,124 +2913,124 @@ typedef struct IUriVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUri *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUri *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUri *This);
+                     IUri *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUri *This);
+                     IUri *This);
 
     /*** IUri methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyBSTR)(
-        IUri *This,
-        Uri_PROPERTY uriProp,
-        BSTR *pbstrProperty,
-        DWORD dwFlags);
+                     IUri *This,
+                     Uri_PROPERTY uriProp,
+                     BSTR *pbstrProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyLength)(
-        IUri *This,
-        Uri_PROPERTY uriProp,
-        DWORD *pcchProperty,
-        DWORD dwFlags);
+                     IUri *This,
+                     Uri_PROPERTY uriProp,
+                     DWORD *pcchProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyDWORD)(
-        IUri *This,
-        Uri_PROPERTY uriProp,
-        DWORD *pdwProperty,
-        DWORD dwFlags);
+                     IUri *This,
+                     Uri_PROPERTY uriProp,
+                     DWORD *pdwProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *HasProperty)(
-        IUri *This,
-        Uri_PROPERTY uriProp,
-        WINBOOL *pfHasProperty);
+                     IUri *This,
+                     Uri_PROPERTY uriProp,
+                     WINBOOL *pfHasProperty);
 
     HRESULT (STDMETHODCALLTYPE *GetAbsoluteUri)(
-        IUri *This,
-        BSTR *pbstrAbsoluteUri);
+                     IUri *This,
+                     BSTR *pbstrAbsoluteUri);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthority)(
-        IUri *This,
-        BSTR *pbstrAuthority);
+                     IUri *This,
+                     BSTR *pbstrAuthority);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayUri)(
-        IUri *This,
-        BSTR *pbstrDisplayString);
+                     IUri *This,
+                     BSTR *pbstrDisplayString);
 
     HRESULT (STDMETHODCALLTYPE *GetDomain)(
-        IUri *This,
-        BSTR *pbstrDomain);
+                     IUri *This,
+                     BSTR *pbstrDomain);
 
     HRESULT (STDMETHODCALLTYPE *GetExtension)(
-        IUri *This,
-        BSTR *pbstrExtension);
+                     IUri *This,
+                     BSTR *pbstrExtension);
 
     HRESULT (STDMETHODCALLTYPE *GetFragment)(
-        IUri *This,
-        BSTR *pbstrFragment);
+                     IUri *This,
+                     BSTR *pbstrFragment);
 
     HRESULT (STDMETHODCALLTYPE *GetHost)(
-        IUri *This,
-        BSTR *pbstrHost);
+                     IUri *This,
+                     BSTR *pbstrHost);
 
     HRESULT (STDMETHODCALLTYPE *GetPassword)(
-        IUri *This,
-        BSTR *pbstrPassword);
+                     IUri *This,
+                     BSTR *pbstrPassword);
 
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IUri *This,
-        BSTR *pbstrPath);
+                     IUri *This,
+                     BSTR *pbstrPath);
 
     HRESULT (STDMETHODCALLTYPE *GetPathAndQuery)(
-        IUri *This,
-        BSTR *pbstrPathAndQuery);
+                     IUri *This,
+                     BSTR *pbstrPathAndQuery);
 
     HRESULT (STDMETHODCALLTYPE *GetQuery)(
-        IUri *This,
-        BSTR *pbstrQuery);
+                     IUri *This,
+                     BSTR *pbstrQuery);
 
     HRESULT (STDMETHODCALLTYPE *GetRawUri)(
-        IUri *This,
-        BSTR *pbstrRawUri);
+                     IUri *This,
+                     BSTR *pbstrRawUri);
 
     HRESULT (STDMETHODCALLTYPE *GetSchemeName)(
-        IUri *This,
-        BSTR *pbstrSchemeName);
+                     IUri *This,
+                     BSTR *pbstrSchemeName);
 
     HRESULT (STDMETHODCALLTYPE *GetUserInfo)(
-        IUri *This,
-        BSTR *pbstrUserInfo);
+                     IUri *This,
+                     BSTR *pbstrUserInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetUserName)(
-        IUri *This,
-        BSTR *pbstrUserName);
+                     IUri *This,
+                     BSTR *pbstrUserName);
 
     HRESULT (STDMETHODCALLTYPE *GetHostType)(
-        IUri *This,
-        DWORD *pdwHostType);
+                     IUri *This,
+                     DWORD *pdwHostType);
 
     HRESULT (STDMETHODCALLTYPE *GetPort)(
-        IUri *This,
-        DWORD *pdwPort);
+                     IUri *This,
+                     DWORD *pdwPort);
 
     HRESULT (STDMETHODCALLTYPE *GetScheme)(
-        IUri *This,
-        DWORD *pdwScheme);
+                     IUri *This,
+                     DWORD *pdwScheme);
 
     HRESULT (STDMETHODCALLTYPE *GetZone)(
-        IUri *This,
-        DWORD *pdwZone);
+                     IUri *This,
+                     DWORD *pdwZone);
 
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        IUri *This,
-        LPDWORD pdwFlags);
+                     IUri *This,
+                     LPDWORD pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *IsEqual)(
-        IUri *This,
-        IUri *pUri,
-        WINBOOL *pfEqual);
+                     IUri *This,
+                     IUri *pUri,
+                     WINBOOL *pfEqual);
 
     END_INTERFACE
 } IUriVtbl;
@@ -3247,7 +3247,7 @@ MIDL_INTERFACE("a158a630-ed6f-45fb-b987-f68676f57752")
 IUriContainer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetIUri(
-        IUri **ppIUri) = 0;
+                     IUri **ppIUri) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3259,20 +3259,20 @@ typedef struct IUriContainerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUriContainer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUriContainer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUriContainer *This);
+                     IUriContainer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUriContainer *This);
+                     IUriContainer *This);
 
     /*** IUriContainer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIUri)(
-        IUriContainer *This,
-        IUri **ppIUri);
+                     IUriContainer *This,
+                     IUri **ppIUri);
 
     END_INTERFACE
 } IUriContainerVtbl;
@@ -3325,91 +3325,91 @@ MIDL_INTERFACE("4221b2e1-8955-46c0-bd5b-de9897565de7")
 IUriBuilder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateUriSimple(
-        DWORD dwAllowEncodingPropertyMask,
-        DWORD_PTR dwReserved,
-        IUri **ppIUri) = 0;
+                     DWORD dwAllowEncodingPropertyMask,
+                     DWORD_PTR dwReserved,
+                     IUri **ppIUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateUri(
-        DWORD dwCreateFlags,
-        DWORD dwAllowEncodingPropertyMask,
-        DWORD_PTR dwReserved,
-        IUri **ppIUri) = 0;
+                     DWORD dwCreateFlags,
+                     DWORD dwAllowEncodingPropertyMask,
+                     DWORD_PTR dwReserved,
+                     IUri **ppIUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateUriWithFlags(
-        DWORD dwCreateFlags,
-        DWORD dwUriBuilderFlags,
-        DWORD dwAllowEncodingPropertyMask,
-        DWORD_PTR dwReserved,
-        IUri **ppIUri) = 0;
+                     DWORD dwCreateFlags,
+                     DWORD dwUriBuilderFlags,
+                     DWORD dwAllowEncodingPropertyMask,
+                     DWORD_PTR dwReserved,
+                     IUri **ppIUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIUri(
-        IUri **ppIUri) = 0;
+                     IUri **ppIUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIUri(
-        IUri *pIUri) = 0;
+                     IUri *pIUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFragment(
-        DWORD *pcchFragment,
-        LPCWSTR *ppwzFragment) = 0;
+                     DWORD *pcchFragment,
+                     LPCWSTR *ppwzFragment) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHost(
-        DWORD *pcchHost,
-        LPCWSTR *ppwzHost) = 0;
+                     DWORD *pcchHost,
+                     LPCWSTR *ppwzHost) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPassword(
-        DWORD *pcchPassword,
-        LPCWSTR *ppwzPassword) = 0;
+                     DWORD *pcchPassword,
+                     LPCWSTR *ppwzPassword) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPath(
-        DWORD *pcchPath,
-        LPCWSTR *ppwzPath) = 0;
+                     DWORD *pcchPath,
+                     LPCWSTR *ppwzPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPort(
-        WINBOOL *pfHasPort,
-        DWORD *pdwPort) = 0;
+                     WINBOOL *pfHasPort,
+                     DWORD *pdwPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetQuery(
-        DWORD *pcchQuery,
-        LPCWSTR *ppwzQuery) = 0;
+                     DWORD *pcchQuery,
+                     LPCWSTR *ppwzQuery) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSchemeName(
-        DWORD *pcchSchemeName,
-        LPCWSTR *ppwzSchemeName) = 0;
+                     DWORD *pcchSchemeName,
+                     LPCWSTR *ppwzSchemeName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserName(
-        DWORD *pcchUserName,
-        LPCWSTR *ppwzUserName) = 0;
+                     DWORD *pcchUserName,
+                     LPCWSTR *ppwzUserName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFragment(
-        LPCWSTR pwzNewValue) = 0;
+                     LPCWSTR pwzNewValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetHost(
-        LPCWSTR pwzNewValue) = 0;
+                     LPCWSTR pwzNewValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPassword(
-        LPCWSTR pwzNewValue) = 0;
+                     LPCWSTR pwzNewValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPath(
-        LPCWSTR pwzNewValue) = 0;
+                     LPCWSTR pwzNewValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPort(
-        WINBOOL fHasPort,
-        DWORD dwNewValue) = 0;
+                     WINBOOL fHasPort,
+                     DWORD dwNewValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetQuery(
-        LPCWSTR pwzNewValue) = 0;
+                     LPCWSTR pwzNewValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSchemeName(
-        LPCWSTR pwzNewValue) = 0;
+                     LPCWSTR pwzNewValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUserName(
-        LPCWSTR pwzNewValue) = 0;
+                     LPCWSTR pwzNewValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveProperties(
-        DWORD dwPropertyMask) = 0;
+                     DWORD dwPropertyMask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasBeenModified(
-        WINBOOL *pfModified) = 0;
+                     WINBOOL *pfModified) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3421,126 +3421,126 @@ typedef struct IUriBuilderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUriBuilder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUriBuilder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUriBuilder *This);
+                     IUriBuilder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUriBuilder *This);
+                     IUriBuilder *This);
 
     /*** IUriBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateUriSimple)(
-        IUriBuilder *This,
-        DWORD dwAllowEncodingPropertyMask,
-        DWORD_PTR dwReserved,
-        IUri **ppIUri);
+                     IUriBuilder *This,
+                     DWORD dwAllowEncodingPropertyMask,
+                     DWORD_PTR dwReserved,
+                     IUri **ppIUri);
 
     HRESULT (STDMETHODCALLTYPE *CreateUri)(
-        IUriBuilder *This,
-        DWORD dwCreateFlags,
-        DWORD dwAllowEncodingPropertyMask,
-        DWORD_PTR dwReserved,
-        IUri **ppIUri);
+                     IUriBuilder *This,
+                     DWORD dwCreateFlags,
+                     DWORD dwAllowEncodingPropertyMask,
+                     DWORD_PTR dwReserved,
+                     IUri **ppIUri);
 
     HRESULT (STDMETHODCALLTYPE *CreateUriWithFlags)(
-        IUriBuilder *This,
-        DWORD dwCreateFlags,
-        DWORD dwUriBuilderFlags,
-        DWORD dwAllowEncodingPropertyMask,
-        DWORD_PTR dwReserved,
-        IUri **ppIUri);
+                     IUriBuilder *This,
+                     DWORD dwCreateFlags,
+                     DWORD dwUriBuilderFlags,
+                     DWORD dwAllowEncodingPropertyMask,
+                     DWORD_PTR dwReserved,
+                     IUri **ppIUri);
 
     HRESULT (STDMETHODCALLTYPE *GetIUri)(
-        IUriBuilder *This,
-        IUri **ppIUri);
+                     IUriBuilder *This,
+                     IUri **ppIUri);
 
     HRESULT (STDMETHODCALLTYPE *SetIUri)(
-        IUriBuilder *This,
-        IUri *pIUri);
+                     IUriBuilder *This,
+                     IUri *pIUri);
 
     HRESULT (STDMETHODCALLTYPE *GetFragment)(
-        IUriBuilder *This,
-        DWORD *pcchFragment,
-        LPCWSTR *ppwzFragment);
+                     IUriBuilder *This,
+                     DWORD *pcchFragment,
+                     LPCWSTR *ppwzFragment);
 
     HRESULT (STDMETHODCALLTYPE *GetHost)(
-        IUriBuilder *This,
-        DWORD *pcchHost,
-        LPCWSTR *ppwzHost);
+                     IUriBuilder *This,
+                     DWORD *pcchHost,
+                     LPCWSTR *ppwzHost);
 
     HRESULT (STDMETHODCALLTYPE *GetPassword)(
-        IUriBuilder *This,
-        DWORD *pcchPassword,
-        LPCWSTR *ppwzPassword);
+                     IUriBuilder *This,
+                     DWORD *pcchPassword,
+                     LPCWSTR *ppwzPassword);
 
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IUriBuilder *This,
-        DWORD *pcchPath,
-        LPCWSTR *ppwzPath);
+                     IUriBuilder *This,
+                     DWORD *pcchPath,
+                     LPCWSTR *ppwzPath);
 
     HRESULT (STDMETHODCALLTYPE *GetPort)(
-        IUriBuilder *This,
-        WINBOOL *pfHasPort,
-        DWORD *pdwPort);
+                     IUriBuilder *This,
+                     WINBOOL *pfHasPort,
+                     DWORD *pdwPort);
 
     HRESULT (STDMETHODCALLTYPE *GetQuery)(
-        IUriBuilder *This,
-        DWORD *pcchQuery,
-        LPCWSTR *ppwzQuery);
+                     IUriBuilder *This,
+                     DWORD *pcchQuery,
+                     LPCWSTR *ppwzQuery);
 
     HRESULT (STDMETHODCALLTYPE *GetSchemeName)(
-        IUriBuilder *This,
-        DWORD *pcchSchemeName,
-        LPCWSTR *ppwzSchemeName);
+                     IUriBuilder *This,
+                     DWORD *pcchSchemeName,
+                     LPCWSTR *ppwzSchemeName);
 
     HRESULT (STDMETHODCALLTYPE *GetUserName)(
-        IUriBuilder *This,
-        DWORD *pcchUserName,
-        LPCWSTR *ppwzUserName);
+                     IUriBuilder *This,
+                     DWORD *pcchUserName,
+                     LPCWSTR *ppwzUserName);
 
     HRESULT (STDMETHODCALLTYPE *SetFragment)(
-        IUriBuilder *This,
-        LPCWSTR pwzNewValue);
+                     IUriBuilder *This,
+                     LPCWSTR pwzNewValue);
 
     HRESULT (STDMETHODCALLTYPE *SetHost)(
-        IUriBuilder *This,
-        LPCWSTR pwzNewValue);
+                     IUriBuilder *This,
+                     LPCWSTR pwzNewValue);
 
     HRESULT (STDMETHODCALLTYPE *SetPassword)(
-        IUriBuilder *This,
-        LPCWSTR pwzNewValue);
+                     IUriBuilder *This,
+                     LPCWSTR pwzNewValue);
 
     HRESULT (STDMETHODCALLTYPE *SetPath)(
-        IUriBuilder *This,
-        LPCWSTR pwzNewValue);
+                     IUriBuilder *This,
+                     LPCWSTR pwzNewValue);
 
     HRESULT (STDMETHODCALLTYPE *SetPort)(
-        IUriBuilder *This,
-        WINBOOL fHasPort,
-        DWORD dwNewValue);
+                     IUriBuilder *This,
+                     WINBOOL fHasPort,
+                     DWORD dwNewValue);
 
     HRESULT (STDMETHODCALLTYPE *SetQuery)(
-        IUriBuilder *This,
-        LPCWSTR pwzNewValue);
+                     IUriBuilder *This,
+                     LPCWSTR pwzNewValue);
 
     HRESULT (STDMETHODCALLTYPE *SetSchemeName)(
-        IUriBuilder *This,
-        LPCWSTR pwzNewValue);
+                     IUriBuilder *This,
+                     LPCWSTR pwzNewValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUserName)(
-        IUriBuilder *This,
-        LPCWSTR pwzNewValue);
+                     IUriBuilder *This,
+                     LPCWSTR pwzNewValue);
 
     HRESULT (STDMETHODCALLTYPE *RemoveProperties)(
-        IUriBuilder *This,
-        DWORD dwPropertyMask);
+                     IUriBuilder *This,
+                     DWORD dwPropertyMask);
 
     HRESULT (STDMETHODCALLTYPE *HasBeenModified)(
-        IUriBuilder *This,
-        WINBOOL *pfModified);
+                     IUriBuilder *This,
+                     WINBOOL *pfModified);
 
     END_INTERFACE
 } IUriBuilderVtbl;
@@ -3681,14 +3681,14 @@ MIDL_INTERFACE("e982ce48-0b96-440c-bc37-0c869b27a29e")
 IUriBuilderFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateIUriBuilder(
-        DWORD dwFlags,
-        DWORD_PTR dwReserved,
-        IUriBuilder **ppIUriBuilder) = 0;
+                     DWORD dwFlags,
+                     DWORD_PTR dwReserved,
+                     IUriBuilder **ppIUriBuilder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInitializedIUriBuilder(
-        DWORD dwFlags,
-        DWORD_PTR dwReserved,
-        IUriBuilder **ppIUriBuilder) = 0;
+                     DWORD dwFlags,
+                     DWORD_PTR dwReserved,
+                     IUriBuilder **ppIUriBuilder) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3700,28 +3700,28 @@ typedef struct IUriBuilderFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUriBuilderFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUriBuilderFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUriBuilderFactory *This);
+                     IUriBuilderFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUriBuilderFactory *This);
+                     IUriBuilderFactory *This);
 
     /*** IUriBuilderFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateIUriBuilder)(
-        IUriBuilderFactory *This,
-        DWORD dwFlags,
-        DWORD_PTR dwReserved,
-        IUriBuilder **ppIUriBuilder);
+                     IUriBuilderFactory *This,
+                     DWORD dwFlags,
+                     DWORD_PTR dwReserved,
+                     IUriBuilder **ppIUriBuilder);
 
     HRESULT (STDMETHODCALLTYPE *CreateInitializedIUriBuilder)(
-        IUriBuilderFactory *This,
-        DWORD dwFlags,
-        DWORD_PTR dwReserved,
-        IUriBuilder **ppIUriBuilder);
+                     IUriBuilderFactory *This,
+                     DWORD dwFlags,
+                     DWORD_PTR dwReserved,
+                     IUriBuilder **ppIUriBuilder);
 
     END_INTERFACE
 } IUriBuilderFactoryVtbl;
@@ -3787,9 +3787,9 @@ MIDL_INTERFACE("79eac9d6-bafa-11ce-8c82-00aa004ba90b")
 IWinInetInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryOption(
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD *pcbBuf) = 0;
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD *pcbBuf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3801,22 +3801,22 @@ typedef struct IWinInetInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWinInetInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWinInetInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWinInetInfo *This);
+                     IWinInetInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWinInetInfo *This);
+                     IWinInetInfo *This);
 
     /*** IWinInetInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryOption)(
-        IWinInetInfo *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD *pcbBuf);
+                     IWinInetInfo *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD *pcbBuf);
 
     END_INTERFACE
 } IWinInetInfoVtbl;
@@ -3897,7 +3897,7 @@ MIDL_INTERFACE("79eac9d7-bafa-11ce-8c82-00aa004ba90b")
 IHttpSecurity : public IWindowForBindingUI
 {
     virtual HRESULT STDMETHODCALLTYPE OnSecurityProblem(
-        DWORD dwProblem) = 0;
+                     DWORD dwProblem) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3909,26 +3909,26 @@ typedef struct IHttpSecurityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHttpSecurity *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHttpSecurity *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHttpSecurity *This);
+                     IHttpSecurity *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHttpSecurity *This);
+                     IHttpSecurity *This);
 
     /*** IWindowForBindingUI methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IHttpSecurity *This,
-        REFGUID rguidReason,
-        HWND *phwnd);
+                     IHttpSecurity *This,
+                     REFGUID rguidReason,
+                     HWND *phwnd);
 
     /*** IHttpSecurity methods ***/
     HRESULT (STDMETHODCALLTYPE *OnSecurityProblem)(
-        IHttpSecurity *This,
-        DWORD dwProblem);
+                     IHttpSecurity *This,
+                     DWORD dwProblem);
 
     END_INTERFACE
 } IHttpSecurityVtbl;
@@ -3993,11 +3993,11 @@ MIDL_INTERFACE("79eac9d8-bafa-11ce-8c82-00aa004ba90b")
 IWinInetHttpInfo : public IWinInetInfo
 {
     virtual HRESULT STDMETHODCALLTYPE QueryInfo(
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD *pcbBuf,
-        DWORD *pdwFlags,
-        DWORD *pdwReserved) = 0;
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD *pcbBuf,
+                     DWORD *pdwFlags,
+                     DWORD *pdwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4009,31 +4009,31 @@ typedef struct IWinInetHttpInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWinInetHttpInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWinInetHttpInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWinInetHttpInfo *This);
+                     IWinInetHttpInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWinInetHttpInfo *This);
+                     IWinInetHttpInfo *This);
 
     /*** IWinInetInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryOption)(
-        IWinInetHttpInfo *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD *pcbBuf);
+                     IWinInetHttpInfo *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD *pcbBuf);
 
     /*** IWinInetHttpInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInfo)(
-        IWinInetHttpInfo *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD *pcbBuf,
-        DWORD *pdwFlags,
-        DWORD *pdwReserved);
+                     IWinInetHttpInfo *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD *pcbBuf,
+                     DWORD *pdwFlags,
+                     DWORD *pdwReserved);
 
     END_INTERFACE
 } IWinInetHttpInfoVtbl;
@@ -4121,9 +4121,9 @@ MIDL_INTERFACE("f286fa56-c1fd-4270-8e67-b3eb790a81e8")
 IWinInetHttpTimeouts : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRequestTimeouts(
-        DWORD *pdwConnectTimeout,
-        DWORD *pdwSendTimeout,
-        DWORD *pdwReceiveTimeout) = 0;
+                     DWORD *pdwConnectTimeout,
+                     DWORD *pdwSendTimeout,
+                     DWORD *pdwReceiveTimeout) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4135,22 +4135,22 @@ typedef struct IWinInetHttpTimeoutsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWinInetHttpTimeouts *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWinInetHttpTimeouts *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWinInetHttpTimeouts *This);
+                     IWinInetHttpTimeouts *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWinInetHttpTimeouts *This);
+                     IWinInetHttpTimeouts *This);
 
     /*** IWinInetHttpTimeouts methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRequestTimeouts)(
-        IWinInetHttpTimeouts *This,
-        DWORD *pdwConnectTimeout,
-        DWORD *pdwSendTimeout,
-        DWORD *pdwReceiveTimeout);
+                     IWinInetHttpTimeouts *This,
+                     DWORD *pdwConnectTimeout,
+                     DWORD *pdwSendTimeout,
+                     DWORD *pdwReceiveTimeout);
 
     END_INTERFACE
 } IWinInetHttpTimeoutsVtbl;
@@ -4210,11 +4210,11 @@ MIDL_INTERFACE("dd1ec3b3-8391-4fdb-a9e6-347c3caaa7dd")
 IWinInetCacheHints : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetCacheExtension(
-        LPCWSTR pwzExt,
-        LPVOID pszCacheFile,
-        DWORD *pcbCacheFile,
-        DWORD *pdwWinInetError,
-        DWORD *pdwReserved) = 0;
+                     LPCWSTR pwzExt,
+                     LPVOID pszCacheFile,
+                     DWORD *pcbCacheFile,
+                     DWORD *pdwWinInetError,
+                     DWORD *pdwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4226,24 +4226,24 @@ typedef struct IWinInetCacheHintsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWinInetCacheHints *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWinInetCacheHints *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWinInetCacheHints *This);
+                     IWinInetCacheHints *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWinInetCacheHints *This);
+                     IWinInetCacheHints *This);
 
     /*** IWinInetCacheHints methods ***/
     HRESULT (STDMETHODCALLTYPE *SetCacheExtension)(
-        IWinInetCacheHints *This,
-        LPCWSTR pwzExt,
-        LPVOID pszCacheFile,
-        DWORD *pcbCacheFile,
-        DWORD *pdwWinInetError,
-        DWORD *pdwReserved);
+                     IWinInetCacheHints *This,
+                     LPCWSTR pwzExt,
+                     LPVOID pszCacheFile,
+                     DWORD *pcbCacheFile,
+                     DWORD *pdwWinInetError,
+                     DWORD *pdwReserved);
 
     END_INTERFACE
 } IWinInetCacheHintsVtbl;
@@ -4304,11 +4304,11 @@ MIDL_INTERFACE("7857aeac-d31f-49bf-884e-dd46df36780a")
 IWinInetCacheHints2 : public IWinInetCacheHints
 {
     virtual HRESULT STDMETHODCALLTYPE SetCacheExtension2(
-        LPCWSTR pwzExt,
-        WCHAR *pwzCacheFile,
-        DWORD *pcchCacheFile,
-        DWORD *pdwWinInetError,
-        DWORD *pdwReserved) = 0;
+                     LPCWSTR pwzExt,
+                     WCHAR *pwzCacheFile,
+                     DWORD *pcchCacheFile,
+                     DWORD *pdwWinInetError,
+                     DWORD *pdwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4320,33 +4320,33 @@ typedef struct IWinInetCacheHints2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWinInetCacheHints2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWinInetCacheHints2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWinInetCacheHints2 *This);
+                     IWinInetCacheHints2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWinInetCacheHints2 *This);
+                     IWinInetCacheHints2 *This);
 
     /*** IWinInetCacheHints methods ***/
     HRESULT (STDMETHODCALLTYPE *SetCacheExtension)(
-        IWinInetCacheHints2 *This,
-        LPCWSTR pwzExt,
-        LPVOID pszCacheFile,
-        DWORD *pcbCacheFile,
-        DWORD *pdwWinInetError,
-        DWORD *pdwReserved);
+                     IWinInetCacheHints2 *This,
+                     LPCWSTR pwzExt,
+                     LPVOID pszCacheFile,
+                     DWORD *pcbCacheFile,
+                     DWORD *pdwWinInetError,
+                     DWORD *pdwReserved);
 
     /*** IWinInetCacheHints2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetCacheExtension2)(
-        IWinInetCacheHints2 *This,
-        LPCWSTR pwzExt,
-        WCHAR *pwzCacheFile,
-        DWORD *pcchCacheFile,
-        DWORD *pdwWinInetError,
-        DWORD *pdwReserved);
+                     IWinInetCacheHints2 *This,
+                     LPCWSTR pwzExt,
+                     WCHAR *pwzCacheFile,
+                     DWORD *pcchCacheFile,
+                     DWORD *pdwWinInetError,
+                     DWORD *pdwReserved);
 
     END_INTERFACE
 } IWinInetCacheHints2Vtbl;
@@ -4417,24 +4417,24 @@ MIDL_INTERFACE("fc4801a1-2ba9-11cf-a229-00aa003d7352")
 IBindHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateMoniker(
-        LPOLESTR szName,
-        IBindCtx *pBC,
-        IMoniker **ppmk,
-        DWORD dwReserved) = 0;
+                     LPOLESTR szName,
+                     IBindCtx *pBC,
+                     IMoniker **ppmk,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MonikerBindToStorage(
-        IMoniker *pMk,
-        IBindCtx *pBC,
-        IBindStatusCallback *pBSC,
-        REFIID riid,
-        void **ppvObj) = 0;
+                     IMoniker *pMk,
+                     IBindCtx *pBC,
+                     IBindStatusCallback *pBSC,
+                     REFIID riid,
+                     void **ppvObj) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MonikerBindToObject(
-        IMoniker *pMk,
-        IBindCtx *pBC,
-        IBindStatusCallback *pBSC,
-        REFIID riid,
-        void **ppvObj) = 0;
+                     IMoniker *pMk,
+                     IBindCtx *pBC,
+                     IBindStatusCallback *pBSC,
+                     REFIID riid,
+                     void **ppvObj) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4446,39 +4446,39 @@ typedef struct IBindHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBindHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBindHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBindHost *This);
+                     IBindHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBindHost *This);
+                     IBindHost *This);
 
     /*** IBindHost methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateMoniker)(
-        IBindHost *This,
-        LPOLESTR szName,
-        IBindCtx *pBC,
-        IMoniker **ppmk,
-        DWORD dwReserved);
+                     IBindHost *This,
+                     LPOLESTR szName,
+                     IBindCtx *pBC,
+                     IMoniker **ppmk,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *MonikerBindToStorage)(
-        IBindHost *This,
-        IMoniker *pMk,
-        IBindCtx *pBC,
-        IBindStatusCallback *pBSC,
-        REFIID riid,
-        void **ppvObj);
+                     IBindHost *This,
+                     IMoniker *pMk,
+                     IBindCtx *pBC,
+                     IBindStatusCallback *pBSC,
+                     REFIID riid,
+                     void **ppvObj);
 
     HRESULT (STDMETHODCALLTYPE *MonikerBindToObject)(
-        IBindHost *This,
-        IMoniker *pMk,
-        IBindCtx *pBC,
-        IBindStatusCallback *pBSC,
-        REFIID riid,
-        void **ppvObj);
+                     IBindHost *This,
+                     IMoniker *pMk,
+                     IBindCtx *pBC,
+                     IBindStatusCallback *pBSC,
+                     REFIID riid,
+                     void **ppvObj);
 
     END_INTERFACE
 } IBindHostVtbl;
@@ -4716,15 +4716,15 @@ typedef struct IInternetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternet *This);
+                     IInternet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternet *This);
+                     IInternet *This);
 
     END_INTERFACE
 } IInternetVtbl;
@@ -4803,14 +4803,14 @@ MIDL_INTERFACE("79eac9e1-baf9-11ce-8c82-00aa004ba90b")
 IInternetBindInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetBindInfo(
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo) = 0;
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBindString(
-        ULONG ulStringType,
-        LPOLESTR *ppwzStr,
-        ULONG cEl,
-        ULONG *pcElFetched) = 0;
+                     ULONG ulStringType,
+                     LPOLESTR *ppwzStr,
+                     ULONG cEl,
+                     ULONG *pcElFetched) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4822,28 +4822,28 @@ typedef struct IInternetBindInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetBindInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetBindInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetBindInfo *This);
+                     IInternetBindInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetBindInfo *This);
+                     IInternetBindInfo *This);
 
     /*** IInternetBindInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBindInfo)(
-        IInternetBindInfo *This,
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo);
+                     IInternetBindInfo *This,
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetBindString)(
-        IInternetBindInfo *This,
-        ULONG ulStringType,
-        LPOLESTR *ppwzStr,
-        ULONG cEl,
-        ULONG *pcElFetched);
+                     IInternetBindInfo *This,
+                     ULONG ulStringType,
+                     LPOLESTR *ppwzStr,
+                     ULONG cEl,
+                     ULONG *pcElFetched);
 
     END_INTERFACE
 } IInternetBindInfoVtbl;
@@ -4906,10 +4906,10 @@ MIDL_INTERFACE("a3e015b7-a82c-4dcd-a150-569aeeed36ab")
 IInternetBindInfoEx : public IInternetBindInfo
 {
     virtual HRESULT STDMETHODCALLTYPE GetBindInfoEx(
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo,
-        DWORD *grfBINDF2,
-        DWORD *pdwReserved) = 0;
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo,
+                     DWORD *grfBINDF2,
+                     DWORD *pdwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4921,36 +4921,36 @@ typedef struct IInternetBindInfoExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetBindInfoEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetBindInfoEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetBindInfoEx *This);
+                     IInternetBindInfoEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetBindInfoEx *This);
+                     IInternetBindInfoEx *This);
 
     /*** IInternetBindInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBindInfo)(
-        IInternetBindInfoEx *This,
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo);
+                     IInternetBindInfoEx *This,
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetBindString)(
-        IInternetBindInfoEx *This,
-        ULONG ulStringType,
-        LPOLESTR *ppwzStr,
-        ULONG cEl,
-        ULONG *pcElFetched);
+                     IInternetBindInfoEx *This,
+                     ULONG ulStringType,
+                     LPOLESTR *ppwzStr,
+                     ULONG cEl,
+                     ULONG *pcElFetched);
 
     /*** IInternetBindInfoEx methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBindInfoEx)(
-        IInternetBindInfoEx *This,
-        DWORD *grfBINDF,
-        BINDINFO *pbindinfo,
-        DWORD *grfBINDF2,
-        DWORD *pdwReserved);
+                     IInternetBindInfoEx *This,
+                     DWORD *grfBINDF,
+                     BINDINFO *pbindinfo,
+                     DWORD *grfBINDF2,
+                     DWORD *pdwReserved);
 
     END_INTERFACE
 } IInternetBindInfoExVtbl;
@@ -5049,27 +5049,27 @@ MIDL_INTERFACE("79eac9e3-baf9-11ce-8c82-00aa004ba90b")
 IInternetProtocolRoot : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        LPCWSTR szUrl,
-        IInternetProtocolSink *pOIProtSink,
-        IInternetBindInfo *pOIBindInfo,
-        DWORD grfPI,
-        HANDLE_PTR dwReserved) = 0;
+                     LPCWSTR szUrl,
+                     IInternetProtocolSink *pOIProtSink,
+                     IInternetBindInfo *pOIBindInfo,
+                     DWORD grfPI,
+                     HANDLE_PTR dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Continue(
-        PROTOCOLDATA *pProtocolData) = 0;
+                     PROTOCOLDATA *pProtocolData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Abort(
-        HRESULT hrReason,
-        DWORD dwOptions) = 0;
+                     HRESULT hrReason,
+                     DWORD dwOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Terminate(
-        DWORD dwOptions) = 0;
+                     DWORD dwOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Suspend(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5081,43 +5081,43 @@ typedef struct IInternetProtocolRootVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetProtocolRoot *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetProtocolRoot *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetProtocolRoot *This);
+                     IInternetProtocolRoot *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetProtocolRoot *This);
+                     IInternetProtocolRoot *This);
 
     /*** IInternetProtocolRoot methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IInternetProtocolRoot *This,
-        LPCWSTR szUrl,
-        IInternetProtocolSink *pOIProtSink,
-        IInternetBindInfo *pOIBindInfo,
-        DWORD grfPI,
-        HANDLE_PTR dwReserved);
+                     IInternetProtocolRoot *This,
+                     LPCWSTR szUrl,
+                     IInternetProtocolSink *pOIProtSink,
+                     IInternetBindInfo *pOIBindInfo,
+                     DWORD grfPI,
+                     HANDLE_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *Continue)(
-        IInternetProtocolRoot *This,
-        PROTOCOLDATA *pProtocolData);
+                     IInternetProtocolRoot *This,
+                     PROTOCOLDATA *pProtocolData);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IInternetProtocolRoot *This,
-        HRESULT hrReason,
-        DWORD dwOptions);
+                     IInternetProtocolRoot *This,
+                     HRESULT hrReason,
+                     DWORD dwOptions);
 
     HRESULT (STDMETHODCALLTYPE *Terminate)(
-        IInternetProtocolRoot *This,
-        DWORD dwOptions);
+                     IInternetProtocolRoot *This,
+                     DWORD dwOptions);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IInternetProtocolRoot *This);
+                     IInternetProtocolRoot *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IInternetProtocolRoot *This);
+                     IInternetProtocolRoot *This);
 
     END_INTERFACE
 } IInternetProtocolRootVtbl;
@@ -5196,20 +5196,20 @@ MIDL_INTERFACE("79eac9e4-baf9-11ce-8c82-00aa004ba90b")
 IInternetProtocol : public IInternetProtocolRoot
 {
     virtual HRESULT STDMETHODCALLTYPE Read(
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead) = 0;
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Seek(
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition) = 0;
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockRequest(
-        DWORD dwOptions) = 0;
+                     DWORD dwOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnlockRequest(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5221,63 +5221,63 @@ typedef struct IInternetProtocolVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetProtocol *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetProtocol *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetProtocol *This);
+                     IInternetProtocol *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetProtocol *This);
+                     IInternetProtocol *This);
 
     /*** IInternetProtocolRoot methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IInternetProtocol *This,
-        LPCWSTR szUrl,
-        IInternetProtocolSink *pOIProtSink,
-        IInternetBindInfo *pOIBindInfo,
-        DWORD grfPI,
-        HANDLE_PTR dwReserved);
+                     IInternetProtocol *This,
+                     LPCWSTR szUrl,
+                     IInternetProtocolSink *pOIProtSink,
+                     IInternetBindInfo *pOIBindInfo,
+                     DWORD grfPI,
+                     HANDLE_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *Continue)(
-        IInternetProtocol *This,
-        PROTOCOLDATA *pProtocolData);
+                     IInternetProtocol *This,
+                     PROTOCOLDATA *pProtocolData);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IInternetProtocol *This,
-        HRESULT hrReason,
-        DWORD dwOptions);
+                     IInternetProtocol *This,
+                     HRESULT hrReason,
+                     DWORD dwOptions);
 
     HRESULT (STDMETHODCALLTYPE *Terminate)(
-        IInternetProtocol *This,
-        DWORD dwOptions);
+                     IInternetProtocol *This,
+                     DWORD dwOptions);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IInternetProtocol *This);
+                     IInternetProtocol *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IInternetProtocol *This);
+                     IInternetProtocol *This);
 
     /*** IInternetProtocol methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IInternetProtocol *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     IInternetProtocol *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        IInternetProtocol *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     IInternetProtocol *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *LockRequest)(
-        IInternetProtocol *This,
-        DWORD dwOptions);
+                     IInternetProtocol *This,
+                     DWORD dwOptions);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRequest)(
-        IInternetProtocol *This);
+                     IInternetProtocol *This);
 
     END_INTERFACE
 } IInternetProtocolVtbl;
@@ -5373,11 +5373,11 @@ MIDL_INTERFACE("c7a98e66-1010-492c-a1c8-c809e1f75905")
 IInternetProtocolEx : public IInternetProtocol
 {
     virtual HRESULT STDMETHODCALLTYPE StartEx(
-        IUri *pUri,
-        IInternetProtocolSink *pOIProtSink,
-        IInternetBindInfo *pOIBindInfo,
-        DWORD grfPI,
-        HANDLE_PTR dwReserved) = 0;
+                     IUri *pUri,
+                     IInternetProtocolSink *pOIProtSink,
+                     IInternetBindInfo *pOIBindInfo,
+                     DWORD grfPI,
+                     HANDLE_PTR dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5389,72 +5389,72 @@ typedef struct IInternetProtocolExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetProtocolEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetProtocolEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetProtocolEx *This);
+                     IInternetProtocolEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetProtocolEx *This);
+                     IInternetProtocolEx *This);
 
     /*** IInternetProtocolRoot methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IInternetProtocolEx *This,
-        LPCWSTR szUrl,
-        IInternetProtocolSink *pOIProtSink,
-        IInternetBindInfo *pOIBindInfo,
-        DWORD grfPI,
-        HANDLE_PTR dwReserved);
+                     IInternetProtocolEx *This,
+                     LPCWSTR szUrl,
+                     IInternetProtocolSink *pOIProtSink,
+                     IInternetBindInfo *pOIBindInfo,
+                     DWORD grfPI,
+                     HANDLE_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *Continue)(
-        IInternetProtocolEx *This,
-        PROTOCOLDATA *pProtocolData);
+                     IInternetProtocolEx *This,
+                     PROTOCOLDATA *pProtocolData);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IInternetProtocolEx *This,
-        HRESULT hrReason,
-        DWORD dwOptions);
+                     IInternetProtocolEx *This,
+                     HRESULT hrReason,
+                     DWORD dwOptions);
 
     HRESULT (STDMETHODCALLTYPE *Terminate)(
-        IInternetProtocolEx *This,
-        DWORD dwOptions);
+                     IInternetProtocolEx *This,
+                     DWORD dwOptions);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IInternetProtocolEx *This);
+                     IInternetProtocolEx *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IInternetProtocolEx *This);
+                     IInternetProtocolEx *This);
 
     /*** IInternetProtocol methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IInternetProtocolEx *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     IInternetProtocolEx *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        IInternetProtocolEx *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     IInternetProtocolEx *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *LockRequest)(
-        IInternetProtocolEx *This,
-        DWORD dwOptions);
+                     IInternetProtocolEx *This,
+                     DWORD dwOptions);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRequest)(
-        IInternetProtocolEx *This);
+                     IInternetProtocolEx *This);
 
     /*** IInternetProtocolEx methods ***/
     HRESULT (STDMETHODCALLTYPE *StartEx)(
-        IInternetProtocolEx *This,
-        IUri *pUri,
-        IInternetProtocolSink *pOIProtSink,
-        IInternetBindInfo *pOIBindInfo,
-        DWORD grfPI,
-        HANDLE_PTR dwReserved);
+                     IInternetProtocolEx *This,
+                     IUri *pUri,
+                     IInternetProtocolSink *pOIProtSink,
+                     IInternetBindInfo *pOIBindInfo,
+                     DWORD grfPI,
+                     HANDLE_PTR dwReserved);
 
     END_INTERFACE
 } IInternetProtocolExVtbl;
@@ -5557,21 +5557,21 @@ MIDL_INTERFACE("79eac9e5-baf9-11ce-8c82-00aa004ba90b")
 IInternetProtocolSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Switch(
-        PROTOCOLDATA *pProtocolData) = 0;
+                     PROTOCOLDATA *pProtocolData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReportProgress(
-        ULONG ulStatusCode,
-        LPCWSTR szStatusText) = 0;
+                     ULONG ulStatusCode,
+                     LPCWSTR szStatusText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReportData(
-        DWORD grfBSCF,
-        ULONG ulProgress,
-        ULONG ulProgressMax) = 0;
+                     DWORD grfBSCF,
+                     ULONG ulProgress,
+                     ULONG ulProgressMax) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReportResult(
-        HRESULT hrResult,
-        DWORD dwError,
-        LPCWSTR szResult) = 0;
+                     HRESULT hrResult,
+                     DWORD dwError,
+                     LPCWSTR szResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5583,37 +5583,37 @@ typedef struct IInternetProtocolSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetProtocolSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetProtocolSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetProtocolSink *This);
+                     IInternetProtocolSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetProtocolSink *This);
+                     IInternetProtocolSink *This);
 
     /*** IInternetProtocolSink methods ***/
     HRESULT (STDMETHODCALLTYPE *Switch)(
-        IInternetProtocolSink *This,
-        PROTOCOLDATA *pProtocolData);
+                     IInternetProtocolSink *This,
+                     PROTOCOLDATA *pProtocolData);
 
     HRESULT (STDMETHODCALLTYPE *ReportProgress)(
-        IInternetProtocolSink *This,
-        ULONG ulStatusCode,
-        LPCWSTR szStatusText);
+                     IInternetProtocolSink *This,
+                     ULONG ulStatusCode,
+                     LPCWSTR szStatusText);
 
     HRESULT (STDMETHODCALLTYPE *ReportData)(
-        IInternetProtocolSink *This,
-        DWORD grfBSCF,
-        ULONG ulProgress,
-        ULONG ulProgressMax);
+                     IInternetProtocolSink *This,
+                     DWORD grfBSCF,
+                     ULONG ulProgress,
+                     ULONG ulProgressMax);
 
     HRESULT (STDMETHODCALLTYPE *ReportResult)(
-        IInternetProtocolSink *This,
-        HRESULT hrResult,
-        DWORD dwError,
-        LPCWSTR szResult);
+                     IInternetProtocolSink *This,
+                     HRESULT hrResult,
+                     DWORD dwError,
+                     LPCWSTR szResult);
 
     END_INTERFACE
 } IInternetProtocolSinkVtbl;
@@ -5684,13 +5684,13 @@ MIDL_INTERFACE("79eac9f0-baf9-11ce-8c82-00aa004ba90b")
 IInternetProtocolSinkStackable : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SwitchSink(
-        IInternetProtocolSink *pOIProtSink) = 0;
+                     IInternetProtocolSink *pOIProtSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitSwitch(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RollbackSwitch(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5702,26 +5702,26 @@ typedef struct IInternetProtocolSinkStackableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetProtocolSinkStackable *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetProtocolSinkStackable *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetProtocolSinkStackable *This);
+                     IInternetProtocolSinkStackable *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetProtocolSinkStackable *This);
+                     IInternetProtocolSinkStackable *This);
 
     /*** IInternetProtocolSinkStackable methods ***/
     HRESULT (STDMETHODCALLTYPE *SwitchSink)(
-        IInternetProtocolSinkStackable *This,
-        IInternetProtocolSink *pOIProtSink);
+                     IInternetProtocolSinkStackable *This,
+                     IInternetProtocolSink *pOIProtSink);
 
     HRESULT (STDMETHODCALLTYPE *CommitSwitch)(
-        IInternetProtocolSinkStackable *This);
+                     IInternetProtocolSinkStackable *This);
 
     HRESULT (STDMETHODCALLTYPE *RollbackSwitch)(
-        IInternetProtocolSinkStackable *This);
+                     IInternetProtocolSinkStackable *This);
 
     END_INTERFACE
 } IInternetProtocolSinkStackableVtbl;
@@ -5793,45 +5793,45 @@ MIDL_INTERFACE("79eac9e7-baf9-11ce-8c82-00aa004ba90b")
 IInternetSession : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterNameSpace(
-        IClassFactory *pCF,
-        REFCLSID rclsid,
-        LPCWSTR pwzProtocol,
-        ULONG cPatterns,
-        const LPCWSTR *ppwzPatterns,
-        DWORD dwReserved) = 0;
+                     IClassFactory *pCF,
+                     REFCLSID rclsid,
+                     LPCWSTR pwzProtocol,
+                     ULONG cPatterns,
+                     const LPCWSTR *ppwzPatterns,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterNameSpace(
-        IClassFactory *pCF,
-        LPCWSTR pszProtocol) = 0;
+                     IClassFactory *pCF,
+                     LPCWSTR pszProtocol) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterMimeFilter(
-        IClassFactory *pCF,
-        REFCLSID rclsid,
-        LPCWSTR pwzType) = 0;
+                     IClassFactory *pCF,
+                     REFCLSID rclsid,
+                     LPCWSTR pwzType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterMimeFilter(
-        IClassFactory *pCF,
-        LPCWSTR pwzType) = 0;
+                     IClassFactory *pCF,
+                     LPCWSTR pwzType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBinding(
-        LPBC pBC,
-        LPCWSTR szUrl,
-        IUnknown *pUnkOuter,
-        IUnknown **ppUnk,
-        IInternetProtocol **ppOInetProt,
-        DWORD dwOption) = 0;
+                     LPBC pBC,
+                     LPCWSTR szUrl,
+                     IUnknown *pUnkOuter,
+                     IUnknown **ppUnk,
+                     IInternetProtocol **ppOInetProt,
+                     DWORD dwOption) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSessionOption(
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD dwBufferLength,
-        DWORD dwReserved) = 0;
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD dwBufferLength,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSessionOption(
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD *pdwBufferLength,
-        DWORD dwReserved) = 0;
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD *pdwBufferLength,
+                     DWORD dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5843,64 +5843,64 @@ typedef struct IInternetSessionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetSession *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetSession *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetSession *This);
+                     IInternetSession *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetSession *This);
+                     IInternetSession *This);
 
     /*** IInternetSession methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterNameSpace)(
-        IInternetSession *This,
-        IClassFactory *pCF,
-        REFCLSID rclsid,
-        LPCWSTR pwzProtocol,
-        ULONG cPatterns,
-        const LPCWSTR *ppwzPatterns,
-        DWORD dwReserved);
+                     IInternetSession *This,
+                     IClassFactory *pCF,
+                     REFCLSID rclsid,
+                     LPCWSTR pwzProtocol,
+                     ULONG cPatterns,
+                     const LPCWSTR *ppwzPatterns,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterNameSpace)(
-        IInternetSession *This,
-        IClassFactory *pCF,
-        LPCWSTR pszProtocol);
+                     IInternetSession *This,
+                     IClassFactory *pCF,
+                     LPCWSTR pszProtocol);
 
     HRESULT (STDMETHODCALLTYPE *RegisterMimeFilter)(
-        IInternetSession *This,
-        IClassFactory *pCF,
-        REFCLSID rclsid,
-        LPCWSTR pwzType);
+                     IInternetSession *This,
+                     IClassFactory *pCF,
+                     REFCLSID rclsid,
+                     LPCWSTR pwzType);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterMimeFilter)(
-        IInternetSession *This,
-        IClassFactory *pCF,
-        LPCWSTR pwzType);
+                     IInternetSession *This,
+                     IClassFactory *pCF,
+                     LPCWSTR pwzType);
 
     HRESULT (STDMETHODCALLTYPE *CreateBinding)(
-        IInternetSession *This,
-        LPBC pBC,
-        LPCWSTR szUrl,
-        IUnknown *pUnkOuter,
-        IUnknown **ppUnk,
-        IInternetProtocol **ppOInetProt,
-        DWORD dwOption);
+                     IInternetSession *This,
+                     LPBC pBC,
+                     LPCWSTR szUrl,
+                     IUnknown *pUnkOuter,
+                     IUnknown **ppUnk,
+                     IInternetProtocol **ppOInetProt,
+                     DWORD dwOption);
 
     HRESULT (STDMETHODCALLTYPE *SetSessionOption)(
-        IInternetSession *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD dwBufferLength,
-        DWORD dwReserved);
+                     IInternetSession *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD dwBufferLength,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *GetSessionOption)(
-        IInternetSession *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        DWORD *pdwBufferLength,
-        DWORD dwReserved);
+                     IInternetSession *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     DWORD *pdwBufferLength,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } IInternetSessionVtbl;
@@ -5983,10 +5983,10 @@ MIDL_INTERFACE("79eac9e8-baf9-11ce-8c82-00aa004ba90b")
 IInternetThreadSwitch : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Prepare(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Continue(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5998,22 +5998,22 @@ typedef struct IInternetThreadSwitchVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetThreadSwitch *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetThreadSwitch *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetThreadSwitch *This);
+                     IInternetThreadSwitch *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetThreadSwitch *This);
+                     IInternetThreadSwitch *This);
 
     /*** IInternetThreadSwitch methods ***/
     HRESULT (STDMETHODCALLTYPE *Prepare)(
-        IInternetThreadSwitch *This);
+                     IInternetThreadSwitch *This);
 
     HRESULT (STDMETHODCALLTYPE *Continue)(
-        IInternetThreadSwitch *This);
+                     IInternetThreadSwitch *This);
 
     END_INTERFACE
 } IInternetThreadSwitchVtbl;
@@ -6076,10 +6076,10 @@ MIDL_INTERFACE("79eac9eb-baf9-11ce-8c82-00aa004ba90b")
 IInternetPriority : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetPriority(
-        LONG nPriority) = 0;
+                     LONG nPriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPriority(
-        LONG *pnPriority) = 0;
+                     LONG *pnPriority) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6091,24 +6091,24 @@ typedef struct IInternetPriorityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetPriority *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetPriority *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetPriority *This);
+                     IInternetPriority *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetPriority *This);
+                     IInternetPriority *This);
 
     /*** IInternetPriority methods ***/
     HRESULT (STDMETHODCALLTYPE *SetPriority)(
-        IInternetPriority *This,
-        LONG nPriority);
+                     IInternetPriority *This,
+                     LONG nPriority);
 
     HRESULT (STDMETHODCALLTYPE *GetPriority)(
-        IInternetPriority *This,
-        LONG *pnPriority);
+                     IInternetPriority *This,
+                     LONG *pnPriority);
 
     END_INTERFACE
 } IInternetPriorityVtbl;
@@ -6217,36 +6217,36 @@ MIDL_INTERFACE("79eac9ec-baf9-11ce-8c82-00aa004ba90b")
 IInternetProtocolInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseUrl(
-        LPCWSTR pwzUrl,
-        PARSEACTION ParseAction,
-        DWORD dwParseFlags,
-        LPWSTR pwzResult,
-        DWORD cchResult,
-        DWORD *pcchResult,
-        DWORD dwReserved) = 0;
+                     LPCWSTR pwzUrl,
+                     PARSEACTION ParseAction,
+                     DWORD dwParseFlags,
+                     LPWSTR pwzResult,
+                     DWORD cchResult,
+                     DWORD *pcchResult,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CombineUrl(
-        LPCWSTR pwzBaseUrl,
-        LPCWSTR pwzRelativeUrl,
-        DWORD dwCombineFlags,
-        LPWSTR pwzResult,
-        DWORD cchResult,
-        DWORD *pcchResult,
-        DWORD dwReserved) = 0;
+                     LPCWSTR pwzBaseUrl,
+                     LPCWSTR pwzRelativeUrl,
+                     DWORD dwCombineFlags,
+                     LPWSTR pwzResult,
+                     DWORD cchResult,
+                     DWORD *pcchResult,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompareUrl(
-        LPCWSTR pwzUrl1,
-        LPCWSTR pwzUrl2,
-        DWORD dwCompareFlags) = 0;
+                     LPCWSTR pwzUrl1,
+                     LPCWSTR pwzUrl2,
+                     DWORD dwCompareFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryInfo(
-        LPCWSTR pwzUrl,
-        QUERYOPTION OueryOption,
-        DWORD dwQueryFlags,
-        LPVOID pBuffer,
-        DWORD cbBuffer,
-        DWORD *pcbBuf,
-        DWORD dwReserved) = 0;
+                     LPCWSTR pwzUrl,
+                     QUERYOPTION OueryOption,
+                     DWORD dwQueryFlags,
+                     LPVOID pBuffer,
+                     DWORD cbBuffer,
+                     DWORD *pcbBuf,
+                     DWORD dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6258,52 +6258,52 @@ typedef struct IInternetProtocolInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetProtocolInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetProtocolInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetProtocolInfo *This);
+                     IInternetProtocolInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetProtocolInfo *This);
+                     IInternetProtocolInfo *This);
 
     /*** IInternetProtocolInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseUrl)(
-        IInternetProtocolInfo *This,
-        LPCWSTR pwzUrl,
-        PARSEACTION ParseAction,
-        DWORD dwParseFlags,
-        LPWSTR pwzResult,
-        DWORD cchResult,
-        DWORD *pcchResult,
-        DWORD dwReserved);
+                     IInternetProtocolInfo *This,
+                     LPCWSTR pwzUrl,
+                     PARSEACTION ParseAction,
+                     DWORD dwParseFlags,
+                     LPWSTR pwzResult,
+                     DWORD cchResult,
+                     DWORD *pcchResult,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *CombineUrl)(
-        IInternetProtocolInfo *This,
-        LPCWSTR pwzBaseUrl,
-        LPCWSTR pwzRelativeUrl,
-        DWORD dwCombineFlags,
-        LPWSTR pwzResult,
-        DWORD cchResult,
-        DWORD *pcchResult,
-        DWORD dwReserved);
+                     IInternetProtocolInfo *This,
+                     LPCWSTR pwzBaseUrl,
+                     LPCWSTR pwzRelativeUrl,
+                     DWORD dwCombineFlags,
+                     LPWSTR pwzResult,
+                     DWORD cchResult,
+                     DWORD *pcchResult,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *CompareUrl)(
-        IInternetProtocolInfo *This,
-        LPCWSTR pwzUrl1,
-        LPCWSTR pwzUrl2,
-        DWORD dwCompareFlags);
+                     IInternetProtocolInfo *This,
+                     LPCWSTR pwzUrl1,
+                     LPCWSTR pwzUrl2,
+                     DWORD dwCompareFlags);
 
     HRESULT (STDMETHODCALLTYPE *QueryInfo)(
-        IInternetProtocolInfo *This,
-        LPCWSTR pwzUrl,
-        QUERYOPTION OueryOption,
-        DWORD dwQueryFlags,
-        LPVOID pBuffer,
-        DWORD cbBuffer,
-        DWORD *pcbBuf,
-        DWORD dwReserved);
+                     IInternetProtocolInfo *This,
+                     LPCWSTR pwzUrl,
+                     QUERYOPTION OueryOption,
+                     DWORD dwQueryFlags,
+                     LPVOID pBuffer,
+                     DWORD cbBuffer,
+                     DWORD *pcbBuf,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } IInternetProtocolInfoVtbl;
@@ -6362,51 +6362,51 @@ static FORCEINLINE HRESULT IInternetProtocolInfo_QueryInfo(IInternetProtocolInfo
 #endif
 #endif
 
-#define IOInet               IInternet
-#define IOInetBindInfo       IInternetBindInfo
+#define IOInet                                         IInternet
+#define IOInetBindInfo                    IInternetBindInfo
 #define IOInetBindInfoEx     IInternetBindInfoEx
 #define IOInetProtocolRoot   IInternetProtocolRoot
-#define IOInetProtocol       IInternetProtocol
+#define IOInetProtocol                    IInternetProtocol
 
 #if (_WIN32_IE >= _WIN32_IE_IE70)
 #define IOInetProtocolEx     IInternetProtocolEx
 #endif
 #define IOInetProtocolSink   IInternetProtocolSink
 #define IOInetProtocolInfo   IInternetProtocolInfo
-#define IOInetSession        IInternetSession
-#define IOInetPriority       IInternetPriority
+#define IOInetSession                     IInternetSession
+#define IOInetPriority                    IInternetPriority
 #define IOInetThreadSwitch   IInternetThreadSwitch
 #define IOInetProtocolSinkStackable   IInternetProtocolSinkStackable
 
-#define LPOINET              LPIINTERNET
+#define LPOINET                                        LPIINTERNET
 #define LPOINETPROTOCOLINFO  LPIINTERNETPROTOCOLINFO
-#define LPOINETBINDINFO      LPIINTERNETBINDINFO
+#define LPOINETBINDINFO                   LPIINTERNETBINDINFO
 #define LPOINETPROTOCOLROOT  LPIINTERNETPROTOCOLROOT
-#define LPOINETPROTOCOL      LPIINTERNETPROTOCOL
+#define LPOINETPROTOCOL                   LPIINTERNETPROTOCOL
 
 #if (_WIN32_IE >= _WIN32_IE_IE70)
 #define LPOINETPROTOCOLEX LPIINTERNETPROTOCOLEX
 #endif
 #define LPOINETPROTOCOLSINK  LPIINTERNETPROTOCOLSINK
-#define LPOINETSESSION       LPIINTERNETSESSION
+#define LPOINETSESSION                    LPIINTERNETSESSION
 #define LPOINETTHREADSWITCH  LPIINTERNETTHREADSWITCH
-#define LPOINETPRIORITY      LPIINTERNETPRIORITY
+#define LPOINETPRIORITY                   LPIINTERNETPRIORITY
 #define LPOINETPROTOCOLINFO  LPIINTERNETPROTOCOLINFO
 #define LPOINETPROTOCOLSINKSTACKABLE  LPIINTERNETPROTOCOLSINKSTACKABLE
 
-#define IID_IOInet               IID_IInternet
-#define IID_IOInetBindInfo       IID_IInternetBindInfo
+#define IID_IOInet                                         IID_IInternet
+#define IID_IOInetBindInfo                    IID_IInternetBindInfo
 #define IID_IOInetBindInfoEx     IID_IInternetBindInfoEx
 #define IID_IOInetProtocolRoot   IID_IInternetProtocolRoot
-#define IID_IOInetProtocol       IID_IInternetProtocol
+#define IID_IOInetProtocol                    IID_IInternetProtocol
 
 #if (_WIN32_IE >= _WIN32_IE_IE70)
 #define IID_IOInetProtocolEx IID_IInternetProtocolEx
 #endif
 #define IID_IOInetProtocolSink   IID_IInternetProtocolSink
 #define IID_IOInetProtocolInfo   IID_IInternetProtocolInfo
-#define IID_IOInetSession        IID_IInternetSession
-#define IID_IOInetPriority       IID_IInternetPriority
+#define IID_IOInetSession                     IID_IInternetSession
+#define IID_IOInetPriority                    IID_IInternetPriority
 #define IID_IOInetThreadSwitch   IID_IInternetThreadSwitch
 #define IID_IOInetProtocolSinkStackable   IID_IInternetProtocolSinkStackable
 
@@ -6495,10 +6495,10 @@ STDAPI CopyBindInfo(const BINDINFO *pcbiSrc, BINDINFO *pbiDest);
 STDAPI_(void) ReleaseBindInfo(BINDINFO *pbindinfo);
 
 #define INET_E_USE_DEFAULT_PROTOCOLHANDLER _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0011))
-#define INET_E_USE_DEFAULT_SETTING         _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0012))
-#define INET_E_DEFAULT_ACTION              INET_E_USE_DEFAULT_PROTOCOLHANDLER
-#define INET_E_QUERYOPTION_UNKNOWN         _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0013))
-#define INET_E_REDIRECTING                 _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0014))
+#define INET_E_USE_DEFAULT_SETTING                      _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0012))
+#define INET_E_DEFAULT_ACTION                                        INET_E_USE_DEFAULT_PROTOCOLHANDLER
+#define INET_E_QUERYOPTION_UNKNOWN                      _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0013))
+#define INET_E_REDIRECTING                                           _HRESULT_TYPEDEF_(__MSABI_LONG(0x800C0014))
 
 #define OInetParseUrl CoInternetParseUrl
 #define OInetCombineUrl CoInternetCombineUrl
@@ -6547,10 +6547,10 @@ MIDL_INTERFACE("79eac9ed-baf9-11ce-8c82-00aa004ba90b")
 IInternetSecurityMgrSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetWindow(
-        HWND *phwnd) = 0;
+                     HWND *phwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableModeless(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6562,24 +6562,24 @@ typedef struct IInternetSecurityMgrSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetSecurityMgrSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetSecurityMgrSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetSecurityMgrSite *This);
+                     IInternetSecurityMgrSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetSecurityMgrSite *This);
+                     IInternetSecurityMgrSite *This);
 
     /*** IInternetSecurityMgrSite methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IInternetSecurityMgrSite *This,
-        HWND *phwnd);
+                     IInternetSecurityMgrSite *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IInternetSecurityMgrSite *This,
-        WINBOOL fEnable);
+                     IInternetSecurityMgrSite *This,
+                     WINBOOL fEnable);
 
     END_INTERFACE
 } IInternetSecurityMgrSiteVtbl;
@@ -6690,50 +6690,50 @@ MIDL_INTERFACE("79eac9ee-baf9-11ce-8c82-00aa004ba90b")
 IInternetSecurityManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetSecuritySite(
-        IInternetSecurityMgrSite *pSite) = 0;
+                     IInternetSecurityMgrSite *pSite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSecuritySite(
-        IInternetSecurityMgrSite **ppSite) = 0;
+                     IInternetSecurityMgrSite **ppSite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MapUrlToZone(
-        LPCWSTR pwszUrl,
-        DWORD *pdwZone,
-        DWORD dwFlags) = 0;
+                     LPCWSTR pwszUrl,
+                     DWORD *pdwZone,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSecurityId(
-        LPCWSTR pwszUrl,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved) = 0;
+                     LPCWSTR pwszUrl,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessUrlAction(
-        LPCWSTR pwszUrl,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved) = 0;
+                     LPCWSTR pwszUrl,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryCustomPolicy(
-        LPCWSTR pwszUrl,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwReserved) = 0;
+                     LPCWSTR pwszUrl,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetZoneMapping(
-        DWORD dwZone,
-        LPCWSTR lpszPattern,
-        DWORD dwFlags) = 0;
+                     DWORD dwZone,
+                     LPCWSTR lpszPattern,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetZoneMappings(
-        DWORD dwZone,
-        IEnumString **ppenumString,
-        DWORD dwFlags) = 0;
+                     DWORD dwZone,
+                     IEnumString **ppenumString,
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6745,70 +6745,70 @@ typedef struct IInternetSecurityManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetSecurityManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetSecurityManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetSecurityManager *This);
+                     IInternetSecurityManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetSecurityManager *This);
+                     IInternetSecurityManager *This);
 
     /*** IInternetSecurityManager methods ***/
     HRESULT (STDMETHODCALLTYPE *SetSecuritySite)(
-        IInternetSecurityManager *This,
-        IInternetSecurityMgrSite *pSite);
+                     IInternetSecurityManager *This,
+                     IInternetSecurityMgrSite *pSite);
 
     HRESULT (STDMETHODCALLTYPE *GetSecuritySite)(
-        IInternetSecurityManager *This,
-        IInternetSecurityMgrSite **ppSite);
+                     IInternetSecurityManager *This,
+                     IInternetSecurityMgrSite **ppSite);
 
     HRESULT (STDMETHODCALLTYPE *MapUrlToZone)(
-        IInternetSecurityManager *This,
-        LPCWSTR pwszUrl,
-        DWORD *pdwZone,
-        DWORD dwFlags);
+                     IInternetSecurityManager *This,
+                     LPCWSTR pwszUrl,
+                     DWORD *pdwZone,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSecurityId)(
-        IInternetSecurityManager *This,
-        LPCWSTR pwszUrl,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved);
+                     IInternetSecurityManager *This,
+                     LPCWSTR pwszUrl,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ProcessUrlAction)(
-        IInternetSecurityManager *This,
-        LPCWSTR pwszUrl,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved);
+                     IInternetSecurityManager *This,
+                     LPCWSTR pwszUrl,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *QueryCustomPolicy)(
-        IInternetSecurityManager *This,
-        LPCWSTR pwszUrl,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwReserved);
+                     IInternetSecurityManager *This,
+                     LPCWSTR pwszUrl,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneMapping)(
-        IInternetSecurityManager *This,
-        DWORD dwZone,
-        LPCWSTR lpszPattern,
-        DWORD dwFlags);
+                     IInternetSecurityManager *This,
+                     DWORD dwZone,
+                     LPCWSTR lpszPattern,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneMappings)(
-        IInternetSecurityManager *This,
-        DWORD dwZone,
-        IEnumString **ppenumString,
-        DWORD dwFlags);
+                     IInternetSecurityManager *This,
+                     DWORD dwZone,
+                     IEnumString **ppenumString,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } IInternetSecurityManagerVtbl;
@@ -6894,15 +6894,15 @@ MIDL_INTERFACE("f164edf1-cc7c-4f0d-9a94-34222625c393")
 IInternetSecurityManagerEx : public IInternetSecurityManager
 {
     virtual HRESULT STDMETHODCALLTYPE ProcessUrlActionEx(
-        LPCWSTR pwszUrl,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved,
-        DWORD *pdwOutFlags) = 0;
+                     LPCWSTR pwszUrl,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved,
+                     DWORD *pdwOutFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6914,83 +6914,83 @@ typedef struct IInternetSecurityManagerExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetSecurityManagerEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetSecurityManagerEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetSecurityManagerEx *This);
+                     IInternetSecurityManagerEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetSecurityManagerEx *This);
+                     IInternetSecurityManagerEx *This);
 
     /*** IInternetSecurityManager methods ***/
     HRESULT (STDMETHODCALLTYPE *SetSecuritySite)(
-        IInternetSecurityManagerEx *This,
-        IInternetSecurityMgrSite *pSite);
+                     IInternetSecurityManagerEx *This,
+                     IInternetSecurityMgrSite *pSite);
 
     HRESULT (STDMETHODCALLTYPE *GetSecuritySite)(
-        IInternetSecurityManagerEx *This,
-        IInternetSecurityMgrSite **ppSite);
+                     IInternetSecurityManagerEx *This,
+                     IInternetSecurityMgrSite **ppSite);
 
     HRESULT (STDMETHODCALLTYPE *MapUrlToZone)(
-        IInternetSecurityManagerEx *This,
-        LPCWSTR pwszUrl,
-        DWORD *pdwZone,
-        DWORD dwFlags);
+                     IInternetSecurityManagerEx *This,
+                     LPCWSTR pwszUrl,
+                     DWORD *pdwZone,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSecurityId)(
-        IInternetSecurityManagerEx *This,
-        LPCWSTR pwszUrl,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved);
+                     IInternetSecurityManagerEx *This,
+                     LPCWSTR pwszUrl,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ProcessUrlAction)(
-        IInternetSecurityManagerEx *This,
-        LPCWSTR pwszUrl,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved);
+                     IInternetSecurityManagerEx *This,
+                     LPCWSTR pwszUrl,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *QueryCustomPolicy)(
-        IInternetSecurityManagerEx *This,
-        LPCWSTR pwszUrl,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwReserved);
+                     IInternetSecurityManagerEx *This,
+                     LPCWSTR pwszUrl,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneMapping)(
-        IInternetSecurityManagerEx *This,
-        DWORD dwZone,
-        LPCWSTR lpszPattern,
-        DWORD dwFlags);
+                     IInternetSecurityManagerEx *This,
+                     DWORD dwZone,
+                     LPCWSTR lpszPattern,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneMappings)(
-        IInternetSecurityManagerEx *This,
-        DWORD dwZone,
-        IEnumString **ppenumString,
-        DWORD dwFlags);
+                     IInternetSecurityManagerEx *This,
+                     DWORD dwZone,
+                     IEnumString **ppenumString,
+                     DWORD dwFlags);
 
     /*** IInternetSecurityManagerEx methods ***/
     HRESULT (STDMETHODCALLTYPE *ProcessUrlActionEx)(
-        IInternetSecurityManagerEx *This,
-        LPCWSTR pwszUrl,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved,
-        DWORD *pdwOutFlags);
+                     IInternetSecurityManagerEx *This,
+                     LPCWSTR pwszUrl,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved,
+                     DWORD *pdwOutFlags);
 
     END_INTERFACE
 } IInternetSecurityManagerExVtbl;
@@ -7083,37 +7083,37 @@ MIDL_INTERFACE("f1e50292-a795-4117-8e09-2b560a72ac60")
 IInternetSecurityManagerEx2 : public IInternetSecurityManagerEx
 {
     virtual HRESULT STDMETHODCALLTYPE MapUrlToZoneEx2(
-        IUri *pUri,
-        DWORD *pdwZone,
-        DWORD dwFlags,
-        LPWSTR *ppwszMappedUrl,
-        DWORD *pdwOutFlags) = 0;
+                     IUri *pUri,
+                     DWORD *pdwZone,
+                     DWORD dwFlags,
+                     LPWSTR *ppwszMappedUrl,
+                     DWORD *pdwOutFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessUrlActionEx2(
-        IUri *pUri,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD_PTR dwReserved,
-        DWORD *pdwOutFlags) = 0;
+                     IUri *pUri,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD_PTR dwReserved,
+                     DWORD *pdwOutFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSecurityIdEx2(
-        IUri *pUri,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved) = 0;
+                     IUri *pUri,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryCustomPolicyEx2(
-        IUri *pUri,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD_PTR dwReserved) = 0;
+                     IUri *pUri,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD_PTR dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7125,121 +7125,121 @@ typedef struct IInternetSecurityManagerEx2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetSecurityManagerEx2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetSecurityManagerEx2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetSecurityManagerEx2 *This);
+                     IInternetSecurityManagerEx2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetSecurityManagerEx2 *This);
+                     IInternetSecurityManagerEx2 *This);
 
     /*** IInternetSecurityManager methods ***/
     HRESULT (STDMETHODCALLTYPE *SetSecuritySite)(
-        IInternetSecurityManagerEx2 *This,
-        IInternetSecurityMgrSite *pSite);
+                     IInternetSecurityManagerEx2 *This,
+                     IInternetSecurityMgrSite *pSite);
 
     HRESULT (STDMETHODCALLTYPE *GetSecuritySite)(
-        IInternetSecurityManagerEx2 *This,
-        IInternetSecurityMgrSite **ppSite);
+                     IInternetSecurityManagerEx2 *This,
+                     IInternetSecurityMgrSite **ppSite);
 
     HRESULT (STDMETHODCALLTYPE *MapUrlToZone)(
-        IInternetSecurityManagerEx2 *This,
-        LPCWSTR pwszUrl,
-        DWORD *pdwZone,
-        DWORD dwFlags);
+                     IInternetSecurityManagerEx2 *This,
+                     LPCWSTR pwszUrl,
+                     DWORD *pdwZone,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSecurityId)(
-        IInternetSecurityManagerEx2 *This,
-        LPCWSTR pwszUrl,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved);
+                     IInternetSecurityManagerEx2 *This,
+                     LPCWSTR pwszUrl,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ProcessUrlAction)(
-        IInternetSecurityManagerEx2 *This,
-        LPCWSTR pwszUrl,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved);
+                     IInternetSecurityManagerEx2 *This,
+                     LPCWSTR pwszUrl,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *QueryCustomPolicy)(
-        IInternetSecurityManagerEx2 *This,
-        LPCWSTR pwszUrl,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwReserved);
+                     IInternetSecurityManagerEx2 *This,
+                     LPCWSTR pwszUrl,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneMapping)(
-        IInternetSecurityManagerEx2 *This,
-        DWORD dwZone,
-        LPCWSTR lpszPattern,
-        DWORD dwFlags);
+                     IInternetSecurityManagerEx2 *This,
+                     DWORD dwZone,
+                     LPCWSTR lpszPattern,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneMappings)(
-        IInternetSecurityManagerEx2 *This,
-        DWORD dwZone,
-        IEnumString **ppenumString,
-        DWORD dwFlags);
+                     IInternetSecurityManagerEx2 *This,
+                     DWORD dwZone,
+                     IEnumString **ppenumString,
+                     DWORD dwFlags);
 
     /*** IInternetSecurityManagerEx methods ***/
     HRESULT (STDMETHODCALLTYPE *ProcessUrlActionEx)(
-        IInternetSecurityManagerEx2 *This,
-        LPCWSTR pwszUrl,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved,
-        DWORD *pdwOutFlags);
+                     IInternetSecurityManagerEx2 *This,
+                     LPCWSTR pwszUrl,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved,
+                     DWORD *pdwOutFlags);
 
     /*** IInternetSecurityManagerEx2 methods ***/
     HRESULT (STDMETHODCALLTYPE *MapUrlToZoneEx2)(
-        IInternetSecurityManagerEx2 *This,
-        IUri *pUri,
-        DWORD *pdwZone,
-        DWORD dwFlags,
-        LPWSTR *ppwszMappedUrl,
-        DWORD *pdwOutFlags);
+                     IInternetSecurityManagerEx2 *This,
+                     IUri *pUri,
+                     DWORD *pdwZone,
+                     DWORD dwFlags,
+                     LPWSTR *ppwszMappedUrl,
+                     DWORD *pdwOutFlags);
 
     HRESULT (STDMETHODCALLTYPE *ProcessUrlActionEx2)(
-        IInternetSecurityManagerEx2 *This,
-        IUri *pUri,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD_PTR dwReserved,
-        DWORD *pdwOutFlags);
+                     IInternetSecurityManagerEx2 *This,
+                     IUri *pUri,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD_PTR dwReserved,
+                     DWORD *pdwOutFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSecurityIdEx2)(
-        IInternetSecurityManagerEx2 *This,
-        IUri *pUri,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved);
+                     IInternetSecurityManagerEx2 *This,
+                     IUri *pUri,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *QueryCustomPolicyEx2)(
-        IInternetSecurityManagerEx2 *This,
-        IUri *pUri,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD_PTR dwReserved);
+                     IInternetSecurityManagerEx2 *This,
+                     IUri *pUri,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD_PTR dwReserved);
 
     END_INTERFACE
 } IInternetSecurityManagerEx2Vtbl;
@@ -7347,13 +7347,13 @@ MIDL_INTERFACE("cd45f185-1b21-48e2-967b-ead743a8914e")
 IZoneIdentifier : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetId(
-        DWORD *pdwZone) = 0;
+                     DWORD *pdwZone) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetId(
-        DWORD dwZone) = 0;
+                     DWORD dwZone) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7365,27 +7365,27 @@ typedef struct IZoneIdentifierVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IZoneIdentifier *This,
-        REFIID riid,
-        void **ppvObject);
+                     IZoneIdentifier *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IZoneIdentifier *This);
+                     IZoneIdentifier *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IZoneIdentifier *This);
+                     IZoneIdentifier *This);
 
     /*** IZoneIdentifier methods ***/
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        IZoneIdentifier *This,
-        DWORD *pdwZone);
+                     IZoneIdentifier *This,
+                     DWORD *pdwZone);
 
     HRESULT (STDMETHODCALLTYPE *SetId)(
-        IZoneIdentifier *This,
-        DWORD dwZone);
+                     IZoneIdentifier *This,
+                     DWORD dwZone);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IZoneIdentifier *This);
+                     IZoneIdentifier *This);
 
     END_INTERFACE
 } IZoneIdentifierVtbl;
@@ -7450,26 +7450,26 @@ MIDL_INTERFACE("3af280b6-cb3f-11d0-891e-00c04fb6bfc4")
 IInternetHostSecurityManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSecurityId(
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved) = 0;
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessUrlAction(
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved) = 0;
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryCustomPolicy(
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwReserved) = 0;
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7481,41 +7481,41 @@ typedef struct IInternetHostSecurityManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetHostSecurityManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetHostSecurityManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetHostSecurityManager *This);
+                     IInternetHostSecurityManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetHostSecurityManager *This);
+                     IInternetHostSecurityManager *This);
 
     /*** IInternetHostSecurityManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSecurityId)(
-        IInternetHostSecurityManager *This,
-        BYTE *pbSecurityId,
-        DWORD *pcbSecurityId,
-        DWORD_PTR dwReserved);
+                     IInternetHostSecurityManager *This,
+                     BYTE *pbSecurityId,
+                     DWORD *pcbSecurityId,
+                     DWORD_PTR dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ProcessUrlAction)(
-        IInternetHostSecurityManager *This,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwFlags,
-        DWORD dwReserved);
+                     IInternetHostSecurityManager *This,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwFlags,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *QueryCustomPolicy)(
-        IInternetHostSecurityManager *This,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        BYTE *pContext,
-        DWORD cbContext,
-        DWORD dwReserved);
+                     IInternetHostSecurityManager *This,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     BYTE *pContext,
+                     DWORD cbContext,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } IInternetHostSecurityManagerVtbl;
@@ -7850,71 +7850,71 @@ MIDL_INTERFACE("79eac9ef-baf9-11ce-8c82-00aa004ba90b")
 IInternetZoneManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetZoneAttributes(
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes) = 0;
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetZoneAttributes(
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes) = 0;
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetZoneCustomPolicy(
-        DWORD dwZone,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        URLZONEREG urlZoneReg) = 0;
+                     DWORD dwZone,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     URLZONEREG urlZoneReg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetZoneCustomPolicy(
-        DWORD dwZone,
-        REFGUID guidKey,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg) = 0;
+                     DWORD dwZone,
+                     REFGUID guidKey,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetZoneActionPolicy(
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg) = 0;
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetZoneActionPolicy(
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg) = 0;
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PromptAction(
-        DWORD dwAction,
-        HWND hwndParent,
-        LPCWSTR pwszUrl,
-        LPCWSTR pwszText,
-        DWORD dwPromptFlags) = 0;
+                     DWORD dwAction,
+                     HWND hwndParent,
+                     LPCWSTR pwszUrl,
+                     LPCWSTR pwszText,
+                     DWORD dwPromptFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LogAction(
-        DWORD dwAction,
-        LPCWSTR pwszUrl,
-        LPCWSTR pwszText,
-        DWORD dwLogFlags) = 0;
+                     DWORD dwAction,
+                     LPCWSTR pwszUrl,
+                     LPCWSTR pwszText,
+                     DWORD dwLogFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateZoneEnumerator(
-        DWORD *pdwEnum,
-        DWORD *pdwCount,
-        DWORD dwFlags) = 0;
+                     DWORD *pdwEnum,
+                     DWORD *pdwCount,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetZoneAt(
-        DWORD dwEnum,
-        DWORD dwIndex,
-        DWORD *pdwZone) = 0;
+                     DWORD dwEnum,
+                     DWORD dwIndex,
+                     DWORD *pdwZone) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DestroyZoneEnumerator(
-        DWORD dwEnum) = 0;
+                     DWORD dwEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyTemplatePoliciesToZone(
-        DWORD dwTemplate,
-        DWORD dwZone,
-        DWORD dwReserved) = 0;
+                     DWORD dwTemplate,
+                     DWORD dwZone,
+                     DWORD dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7926,95 +7926,95 @@ typedef struct IInternetZoneManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetZoneManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetZoneManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetZoneManager *This);
+                     IInternetZoneManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetZoneManager *This);
+                     IInternetZoneManager *This);
 
     /*** IInternetZoneManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetZoneAttributes)(
-        IInternetZoneManager *This,
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes);
+                     IInternetZoneManager *This,
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneAttributes)(
-        IInternetZoneManager *This,
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes);
+                     IInternetZoneManager *This,
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneCustomPolicy)(
-        IInternetZoneManager *This,
-        DWORD dwZone,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManager *This,
+                     DWORD dwZone,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneCustomPolicy)(
-        IInternetZoneManager *This,
-        DWORD dwZone,
-        REFGUID guidKey,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManager *This,
+                     DWORD dwZone,
+                     REFGUID guidKey,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneActionPolicy)(
-        IInternetZoneManager *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManager *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneActionPolicy)(
-        IInternetZoneManager *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManager *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *PromptAction)(
-        IInternetZoneManager *This,
-        DWORD dwAction,
-        HWND hwndParent,
-        LPCWSTR pwszUrl,
-        LPCWSTR pwszText,
-        DWORD dwPromptFlags);
+                     IInternetZoneManager *This,
+                     DWORD dwAction,
+                     HWND hwndParent,
+                     LPCWSTR pwszUrl,
+                     LPCWSTR pwszText,
+                     DWORD dwPromptFlags);
 
     HRESULT (STDMETHODCALLTYPE *LogAction)(
-        IInternetZoneManager *This,
-        DWORD dwAction,
-        LPCWSTR pwszUrl,
-        LPCWSTR pwszText,
-        DWORD dwLogFlags);
+                     IInternetZoneManager *This,
+                     DWORD dwAction,
+                     LPCWSTR pwszUrl,
+                     LPCWSTR pwszText,
+                     DWORD dwLogFlags);
 
     HRESULT (STDMETHODCALLTYPE *CreateZoneEnumerator)(
-        IInternetZoneManager *This,
-        DWORD *pdwEnum,
-        DWORD *pdwCount,
-        DWORD dwFlags);
+                     IInternetZoneManager *This,
+                     DWORD *pdwEnum,
+                     DWORD *pdwCount,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneAt)(
-        IInternetZoneManager *This,
-        DWORD dwEnum,
-        DWORD dwIndex,
-        DWORD *pdwZone);
+                     IInternetZoneManager *This,
+                     DWORD dwEnum,
+                     DWORD dwIndex,
+                     DWORD *pdwZone);
 
     HRESULT (STDMETHODCALLTYPE *DestroyZoneEnumerator)(
-        IInternetZoneManager *This,
-        DWORD dwEnum);
+                     IInternetZoneManager *This,
+                     DWORD dwEnum);
 
     HRESULT (STDMETHODCALLTYPE *CopyTemplatePoliciesToZone)(
-        IInternetZoneManager *This,
-        DWORD dwTemplate,
-        DWORD dwZone,
-        DWORD dwReserved);
+                     IInternetZoneManager *This,
+                     DWORD dwTemplate,
+                     DWORD dwZone,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } IInternetZoneManagerVtbl;
@@ -8116,20 +8116,20 @@ MIDL_INTERFACE("a4c23339-8e06-431e-9bf4-7e711c085648")
 IInternetZoneManagerEx : public IInternetZoneManager
 {
     virtual HRESULT STDMETHODCALLTYPE GetZoneActionPolicyEx(
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg,
-        DWORD dwFlags) = 0;
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetZoneActionPolicyEx(
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg,
-        DWORD dwFlags) = 0;
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg,
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8141,114 +8141,114 @@ typedef struct IInternetZoneManagerExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetZoneManagerEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetZoneManagerEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetZoneManagerEx *This);
+                     IInternetZoneManagerEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetZoneManagerEx *This);
+                     IInternetZoneManagerEx *This);
 
     /*** IInternetZoneManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetZoneAttributes)(
-        IInternetZoneManagerEx *This,
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneAttributes)(
-        IInternetZoneManagerEx *This,
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneCustomPolicy)(
-        IInternetZoneManagerEx *This,
-        DWORD dwZone,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwZone,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneCustomPolicy)(
-        IInternetZoneManagerEx *This,
-        DWORD dwZone,
-        REFGUID guidKey,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwZone,
+                     REFGUID guidKey,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneActionPolicy)(
-        IInternetZoneManagerEx *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneActionPolicy)(
-        IInternetZoneManagerEx *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *PromptAction)(
-        IInternetZoneManagerEx *This,
-        DWORD dwAction,
-        HWND hwndParent,
-        LPCWSTR pwszUrl,
-        LPCWSTR pwszText,
-        DWORD dwPromptFlags);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwAction,
+                     HWND hwndParent,
+                     LPCWSTR pwszUrl,
+                     LPCWSTR pwszText,
+                     DWORD dwPromptFlags);
 
     HRESULT (STDMETHODCALLTYPE *LogAction)(
-        IInternetZoneManagerEx *This,
-        DWORD dwAction,
-        LPCWSTR pwszUrl,
-        LPCWSTR pwszText,
-        DWORD dwLogFlags);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwAction,
+                     LPCWSTR pwszUrl,
+                     LPCWSTR pwszText,
+                     DWORD dwLogFlags);
 
     HRESULT (STDMETHODCALLTYPE *CreateZoneEnumerator)(
-        IInternetZoneManagerEx *This,
-        DWORD *pdwEnum,
-        DWORD *pdwCount,
-        DWORD dwFlags);
+                     IInternetZoneManagerEx *This,
+                     DWORD *pdwEnum,
+                     DWORD *pdwCount,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneAt)(
-        IInternetZoneManagerEx *This,
-        DWORD dwEnum,
-        DWORD dwIndex,
-        DWORD *pdwZone);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwEnum,
+                     DWORD dwIndex,
+                     DWORD *pdwZone);
 
     HRESULT (STDMETHODCALLTYPE *DestroyZoneEnumerator)(
-        IInternetZoneManagerEx *This,
-        DWORD dwEnum);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwEnum);
 
     HRESULT (STDMETHODCALLTYPE *CopyTemplatePoliciesToZone)(
-        IInternetZoneManagerEx *This,
-        DWORD dwTemplate,
-        DWORD dwZone,
-        DWORD dwReserved);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwTemplate,
+                     DWORD dwZone,
+                     DWORD dwReserved);
 
     /*** IInternetZoneManagerEx methods ***/
     HRESULT (STDMETHODCALLTYPE *GetZoneActionPolicyEx)(
-        IInternetZoneManagerEx *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg,
-        DWORD dwFlags);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneActionPolicyEx)(
-        IInternetZoneManagerEx *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg,
-        DWORD dwFlags);
+                     IInternetZoneManagerEx *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } IInternetZoneManagerExVtbl;
@@ -8364,24 +8364,24 @@ MIDL_INTERFACE("edc17559-dd5d-4846-8eef-8becba5a4abf")
 IInternetZoneManagerEx2 : public IInternetZoneManagerEx
 {
     virtual HRESULT STDMETHODCALLTYPE GetZoneAttributesEx(
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes,
-        DWORD dwFlags) = 0;
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetZoneSecurityState(
-        DWORD dwZoneIndex,
-        WINBOOL fRespectPolicy,
-        LPDWORD pdwState,
-        WINBOOL *pfPolicyEncountered) = 0;
+                     DWORD dwZoneIndex,
+                     WINBOOL fRespectPolicy,
+                     LPDWORD pdwState,
+                     WINBOOL *pfPolicyEncountered) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIESecurityState(
-        WINBOOL fRespectPolicy,
-        LPDWORD pdwState,
-        WINBOOL *pfPolicyEncountered,
-        WINBOOL fNoCache) = 0;
+                     WINBOOL fRespectPolicy,
+                     LPDWORD pdwState,
+                     WINBOOL *pfPolicyEncountered,
+                     WINBOOL fNoCache) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FixUnsecureSettings(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8393,138 +8393,138 @@ typedef struct IInternetZoneManagerEx2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInternetZoneManagerEx2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInternetZoneManagerEx2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInternetZoneManagerEx2 *This);
+                     IInternetZoneManagerEx2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInternetZoneManagerEx2 *This);
+                     IInternetZoneManagerEx2 *This);
 
     /*** IInternetZoneManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetZoneAttributes)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneAttributes)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneCustomPolicy)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        REFGUID guidKey,
-        BYTE **ppPolicy,
-        DWORD *pcbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     REFGUID guidKey,
+                     BYTE **ppPolicy,
+                     DWORD *pcbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneCustomPolicy)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        REFGUID guidKey,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     REFGUID guidKey,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneActionPolicy)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneActionPolicy)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg);
 
     HRESULT (STDMETHODCALLTYPE *PromptAction)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwAction,
-        HWND hwndParent,
-        LPCWSTR pwszUrl,
-        LPCWSTR pwszText,
-        DWORD dwPromptFlags);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwAction,
+                     HWND hwndParent,
+                     LPCWSTR pwszUrl,
+                     LPCWSTR pwszText,
+                     DWORD dwPromptFlags);
 
     HRESULT (STDMETHODCALLTYPE *LogAction)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwAction,
-        LPCWSTR pwszUrl,
-        LPCWSTR pwszText,
-        DWORD dwLogFlags);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwAction,
+                     LPCWSTR pwszUrl,
+                     LPCWSTR pwszText,
+                     DWORD dwLogFlags);
 
     HRESULT (STDMETHODCALLTYPE *CreateZoneEnumerator)(
-        IInternetZoneManagerEx2 *This,
-        DWORD *pdwEnum,
-        DWORD *pdwCount,
-        DWORD dwFlags);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD *pdwEnum,
+                     DWORD *pdwCount,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneAt)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwEnum,
-        DWORD dwIndex,
-        DWORD *pdwZone);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwEnum,
+                     DWORD dwIndex,
+                     DWORD *pdwZone);
 
     HRESULT (STDMETHODCALLTYPE *DestroyZoneEnumerator)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwEnum);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwEnum);
 
     HRESULT (STDMETHODCALLTYPE *CopyTemplatePoliciesToZone)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwTemplate,
-        DWORD dwZone,
-        DWORD dwReserved);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwTemplate,
+                     DWORD dwZone,
+                     DWORD dwReserved);
 
     /*** IInternetZoneManagerEx methods ***/
     HRESULT (STDMETHODCALLTYPE *GetZoneActionPolicyEx)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg,
-        DWORD dwFlags);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetZoneActionPolicyEx)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        DWORD dwAction,
-        BYTE *pPolicy,
-        DWORD cbPolicy,
-        URLZONEREG urlZoneReg,
-        DWORD dwFlags);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     DWORD dwAction,
+                     BYTE *pPolicy,
+                     DWORD cbPolicy,
+                     URLZONEREG urlZoneReg,
+                     DWORD dwFlags);
 
     /*** IInternetZoneManagerEx2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetZoneAttributesEx)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZone,
-        ZONEATTRIBUTES *pZoneAttributes,
-        DWORD dwFlags);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZone,
+                     ZONEATTRIBUTES *pZoneAttributes,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetZoneSecurityState)(
-        IInternetZoneManagerEx2 *This,
-        DWORD dwZoneIndex,
-        WINBOOL fRespectPolicy,
-        LPDWORD pdwState,
-        WINBOOL *pfPolicyEncountered);
+                     IInternetZoneManagerEx2 *This,
+                     DWORD dwZoneIndex,
+                     WINBOOL fRespectPolicy,
+                     LPDWORD pdwState,
+                     WINBOOL *pfPolicyEncountered);
 
     HRESULT (STDMETHODCALLTYPE *GetIESecurityState)(
-        IInternetZoneManagerEx2 *This,
-        WINBOOL fRespectPolicy,
-        LPDWORD pdwState,
-        WINBOOL *pfPolicyEncountered,
-        WINBOOL fNoCache);
+                     IInternetZoneManagerEx2 *This,
+                     WINBOOL fRespectPolicy,
+                     LPDWORD pdwState,
+                     WINBOOL *pfPolicyEncountered,
+                     WINBOOL fNoCache);
 
     HRESULT (STDMETHODCALLTYPE *FixUnsecureSettings)(
-        IInternetZoneManagerEx2 *This);
+                     IInternetZoneManagerEx2 *This);
 
     END_INTERFACE
 } IInternetZoneManagerEx2Vtbl;
@@ -8693,23 +8693,23 @@ MIDL_INTERFACE("b15b8dc1-c7e1-11d0-8680-00aa00bdcb71")
 ISoftDistExt : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ProcessSoftDist(
-        LPCWSTR szCDFURL,
-        IXMLElement *pSoftDistElement,
-        LPSOFTDISTINFO lpsdi) = 0;
+                     LPCWSTR szCDFURL,
+                     IXMLElement *pSoftDistElement,
+                     LPSOFTDISTINFO lpsdi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFirstCodeBase(
-        LPWSTR *szCodeBase,
-        LPDWORD dwMaxSize) = 0;
+                     LPWSTR *szCodeBase,
+                     LPDWORD dwMaxSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNextCodeBase(
-        LPWSTR *szCodeBase,
-        LPDWORD dwMaxSize) = 0;
+                     LPWSTR *szCodeBase,
+                     LPDWORD dwMaxSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AsyncInstallDistributionUnit(
-        IBindCtx *pbc,
-        LPVOID pvReserved,
-        DWORD flags,
-        LPCODEBASEHOLD lpcbh) = 0;
+                     IBindCtx *pbc,
+                     LPVOID pvReserved,
+                     DWORD flags,
+                     LPCODEBASEHOLD lpcbh) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8721,39 +8721,39 @@ typedef struct ISoftDistExtVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISoftDistExt *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISoftDistExt *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISoftDistExt *This);
+                     ISoftDistExt *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISoftDistExt *This);
+                     ISoftDistExt *This);
 
     /*** ISoftDistExt methods ***/
     HRESULT (STDMETHODCALLTYPE *ProcessSoftDist)(
-        ISoftDistExt *This,
-        LPCWSTR szCDFURL,
-        IXMLElement *pSoftDistElement,
-        LPSOFTDISTINFO lpsdi);
+                     ISoftDistExt *This,
+                     LPCWSTR szCDFURL,
+                     IXMLElement *pSoftDistElement,
+                     LPSOFTDISTINFO lpsdi);
 
     HRESULT (STDMETHODCALLTYPE *GetFirstCodeBase)(
-        ISoftDistExt *This,
-        LPWSTR *szCodeBase,
-        LPDWORD dwMaxSize);
+                     ISoftDistExt *This,
+                     LPWSTR *szCodeBase,
+                     LPDWORD dwMaxSize);
 
     HRESULT (STDMETHODCALLTYPE *GetNextCodeBase)(
-        ISoftDistExt *This,
-        LPWSTR *szCodeBase,
-        LPDWORD dwMaxSize);
+                     ISoftDistExt *This,
+                     LPWSTR *szCodeBase,
+                     LPDWORD dwMaxSize);
 
     HRESULT (STDMETHODCALLTYPE *AsyncInstallDistributionUnit)(
-        ISoftDistExt *This,
-        IBindCtx *pbc,
-        LPVOID pvReserved,
-        DWORD flags,
-        LPCODEBASEHOLD lpcbh);
+                     ISoftDistExt *This,
+                     IBindCtx *pbc,
+                     LPVOID pvReserved,
+                     DWORD flags,
+                     LPCODEBASEHOLD lpcbh);
 
     END_INTERFACE
 } ISoftDistExtVtbl;
@@ -8827,10 +8827,10 @@ MIDL_INTERFACE("711c7600-6b48-11d1-b403-00aa00b92af1")
 ICatalogFileInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCatalogFile(
-        LPSTR *ppszCatalogFile) = 0;
+                     LPSTR *ppszCatalogFile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetJavaTrust(
-        void **ppJavaTrust) = 0;
+                     void **ppJavaTrust) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8842,24 +8842,24 @@ typedef struct ICatalogFileInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICatalogFileInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICatalogFileInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICatalogFileInfo *This);
+                     ICatalogFileInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICatalogFileInfo *This);
+                     ICatalogFileInfo *This);
 
     /*** ICatalogFileInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCatalogFile)(
-        ICatalogFileInfo *This,
-        LPSTR *ppszCatalogFile);
+                     ICatalogFileInfo *This,
+                     LPSTR *ppszCatalogFile);
 
     HRESULT (STDMETHODCALLTYPE *GetJavaTrust)(
-        ICatalogFileInfo *This,
-        void **ppJavaTrust);
+                     ICatalogFileInfo *This,
+                     void **ppJavaTrust);
 
     END_INTERFACE
 } ICatalogFileInfoVtbl;
@@ -8922,29 +8922,29 @@ MIDL_INTERFACE("69d14c80-c18e-11d0-a9ce-006097942311")
 IDataFilter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DoEncode(
-        DWORD dwFlags,
-        LONG lInBufferSize,
-        BYTE *pbInBuffer,
-        LONG lOutBufferSize,
-        BYTE *pbOutBuffer,
-        LONG lInBytesAvailable,
-        LONG *plInBytesRead,
-        LONG *plOutBytesWritten,
-        DWORD dwReserved) = 0;
+                     DWORD dwFlags,
+                     LONG lInBufferSize,
+                     BYTE *pbInBuffer,
+                     LONG lOutBufferSize,
+                     BYTE *pbOutBuffer,
+                     LONG lInBytesAvailable,
+                     LONG *plInBytesRead,
+                     LONG *plOutBytesWritten,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoDecode(
-        DWORD dwFlags,
-        LONG lInBufferSize,
-        BYTE *pbInBuffer,
-        LONG lOutBufferSize,
-        BYTE *pbOutBuffer,
-        LONG lInBytesAvailable,
-        LONG *plInBytesRead,
-        LONG *plOutBytesWritten,
-        DWORD dwReserved) = 0;
+                     DWORD dwFlags,
+                     LONG lInBufferSize,
+                     BYTE *pbInBuffer,
+                     LONG lOutBufferSize,
+                     BYTE *pbOutBuffer,
+                     LONG lInBytesAvailable,
+                     LONG *plInBytesRead,
+                     LONG *plOutBytesWritten,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEncodingLevel(
-        DWORD dwEncLevel) = 0;
+                     DWORD dwEncLevel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8956,44 +8956,44 @@ typedef struct IDataFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDataFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDataFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDataFilter *This);
+                     IDataFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDataFilter *This);
+                     IDataFilter *This);
 
     /*** IDataFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *DoEncode)(
-        IDataFilter *This,
-        DWORD dwFlags,
-        LONG lInBufferSize,
-        BYTE *pbInBuffer,
-        LONG lOutBufferSize,
-        BYTE *pbOutBuffer,
-        LONG lInBytesAvailable,
-        LONG *plInBytesRead,
-        LONG *plOutBytesWritten,
-        DWORD dwReserved);
+                     IDataFilter *This,
+                     DWORD dwFlags,
+                     LONG lInBufferSize,
+                     BYTE *pbInBuffer,
+                     LONG lOutBufferSize,
+                     BYTE *pbOutBuffer,
+                     LONG lInBytesAvailable,
+                     LONG *plInBytesRead,
+                     LONG *plOutBytesWritten,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *DoDecode)(
-        IDataFilter *This,
-        DWORD dwFlags,
-        LONG lInBufferSize,
-        BYTE *pbInBuffer,
-        LONG lOutBufferSize,
-        BYTE *pbOutBuffer,
-        LONG lInBytesAvailable,
-        LONG *plInBytesRead,
-        LONG *plOutBytesWritten,
-        DWORD dwReserved);
+                     IDataFilter *This,
+                     DWORD dwFlags,
+                     LONG lInBufferSize,
+                     BYTE *pbInBuffer,
+                     LONG lOutBufferSize,
+                     BYTE *pbOutBuffer,
+                     LONG lInBytesAvailable,
+                     LONG *plInBytesRead,
+                     LONG *plOutBytesWritten,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetEncodingLevel)(
-        IDataFilter *This,
-        DWORD dwEncLevel);
+                     IDataFilter *This,
+                     DWORD dwEncLevel);
 
     END_INTERFACE
 } IDataFilterVtbl;
@@ -9075,15 +9075,15 @@ MIDL_INTERFACE("70bdde00-c18e-11d0-a9ce-006097942311")
 IEncodingFilterFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FindBestFilter(
-        LPCWSTR pwzCodeIn,
-        LPCWSTR pwzCodeOut,
-        DATAINFO info,
-        IDataFilter **ppDF) = 0;
+                     LPCWSTR pwzCodeIn,
+                     LPCWSTR pwzCodeOut,
+                     DATAINFO info,
+                     IDataFilter **ppDF) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultFilter(
-        LPCWSTR pwzCodeIn,
-        LPCWSTR pwzCodeOut,
-        IDataFilter **ppDF) = 0;
+                     LPCWSTR pwzCodeIn,
+                     LPCWSTR pwzCodeOut,
+                     IDataFilter **ppDF) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9095,29 +9095,29 @@ typedef struct IEncodingFilterFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEncodingFilterFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEncodingFilterFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEncodingFilterFactory *This);
+                     IEncodingFilterFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEncodingFilterFactory *This);
+                     IEncodingFilterFactory *This);
 
     /*** IEncodingFilterFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *FindBestFilter)(
-        IEncodingFilterFactory *This,
-        LPCWSTR pwzCodeIn,
-        LPCWSTR pwzCodeOut,
-        DATAINFO info,
-        IDataFilter **ppDF);
+                     IEncodingFilterFactory *This,
+                     LPCWSTR pwzCodeIn,
+                     LPCWSTR pwzCodeOut,
+                     DATAINFO info,
+                     IDataFilter **ppDF);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultFilter)(
-        IEncodingFilterFactory *This,
-        LPCWSTR pwzCodeIn,
-        LPCWSTR pwzCodeOut,
-        IDataFilter **ppDF);
+                     IEncodingFilterFactory *This,
+                     LPCWSTR pwzCodeIn,
+                     LPCWSTR pwzCodeOut,
+                     IDataFilter **ppDF);
 
     END_INTERFACE
 } IEncodingFilterFactoryVtbl;
@@ -9209,8 +9209,8 @@ MIDL_INTERFACE("53c84785-8425-4dc5-971b-e58d9c19f9b6")
 IWrappedProtocol : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetWrapperCode(
-        LONG *pnCode,
-        DWORD_PTR dwReserved) = 0;
+                     LONG *pnCode,
+                     DWORD_PTR dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9222,21 +9222,21 @@ typedef struct IWrappedProtocolVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWrappedProtocol *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWrappedProtocol *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWrappedProtocol *This);
+                     IWrappedProtocol *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWrappedProtocol *This);
+                     IWrappedProtocol *This);
 
     /*** IWrappedProtocol methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWrapperCode)(
-        IWrappedProtocol *This,
-        LONG *pnCode,
-        DWORD_PTR dwReserved);
+                     IWrappedProtocol *This,
+                     LONG *pnCode,
+                     DWORD_PTR dwReserved);
 
     END_INTERFACE
 } IWrappedProtocolVtbl;
@@ -9301,8 +9301,8 @@ MIDL_INTERFACE("af0ff408-129d-4b20-91f0-02bd23d88352")
 IGetBindHandle : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetBindHandle(
-        BINDHANDLETYPES enumRequestedHandle,
-        HANDLE *pRetHandle) = 0;
+                     BINDHANDLETYPES enumRequestedHandle,
+                     HANDLE *pRetHandle) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9314,21 +9314,21 @@ typedef struct IGetBindHandleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IGetBindHandle *This,
-        REFIID riid,
-        void **ppvObject);
+                     IGetBindHandle *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IGetBindHandle *This);
+                     IGetBindHandle *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IGetBindHandle *This);
+                     IGetBindHandle *This);
 
     /*** IGetBindHandle methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBindHandle)(
-        IGetBindHandle *This,
-        BINDHANDLETYPES enumRequestedHandle,
-        HANDLE *pRetHandle);
+                     IGetBindHandle *This,
+                     BINDHANDLETYPES enumRequestedHandle,
+                     HANDLE *pRetHandle);
 
     END_INTERFACE
 } IGetBindHandleVtbl;
@@ -9397,8 +9397,8 @@ MIDL_INTERFACE("11c81bc2-121e-4ed5-b9c4-b430bd54f2c0")
 IBindCallbackRedirect : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Redirect(
-        LPCWSTR lpcUrl,
-        VARIANT_BOOL *vbCancel) = 0;
+                     LPCWSTR lpcUrl,
+                     VARIANT_BOOL *vbCancel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9410,21 +9410,21 @@ typedef struct IBindCallbackRedirectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBindCallbackRedirect *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBindCallbackRedirect *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBindCallbackRedirect *This);
+                     IBindCallbackRedirect *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBindCallbackRedirect *This);
+                     IBindCallbackRedirect *This);
 
     /*** IBindCallbackRedirect methods ***/
     HRESULT (STDMETHODCALLTYPE *Redirect)(
-        IBindCallbackRedirect *This,
-        LPCWSTR lpcUrl,
-        VARIANT_BOOL *vbCancel);
+                     IBindCallbackRedirect *This,
+                     LPCWSTR lpcUrl,
+                     VARIANT_BOOL *vbCancel);
 
     END_INTERFACE
 } IBindCallbackRedirectVtbl;
@@ -9469,22 +9469,22 @@ static FORCEINLINE HRESULT IBindCallbackRedirect_Redirect(IBindCallbackRedirect*
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER STGMEDIUM_UserSize     (ULONG *, ULONG, STGMEDIUM *);
+ULONG                        __RPC_USER STGMEDIUM_UserSize     (ULONG *, ULONG, STGMEDIUM *);
 unsigned char * __RPC_USER STGMEDIUM_UserMarshal  (ULONG *, unsigned char *, STGMEDIUM *);
 unsigned char * __RPC_USER STGMEDIUM_UserUnmarshal(ULONG *, unsigned char *, STGMEDIUM *);
-void            __RPC_USER STGMEDIUM_UserFree     (ULONG *, STGMEDIUM *);
-ULONG           __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
+void                                      __RPC_USER STGMEDIUM_UserFree     (ULONG *, STGMEDIUM *);
+ULONG                        __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserMarshal  (ULONG *, unsigned char *, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserUnmarshal(ULONG *, unsigned char *, CLIPFORMAT *);
-void            __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

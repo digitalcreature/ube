@@ -7,23 +7,23 @@
 #define _INC_VSWRITER
 
   typedef enum VSS_COMPONENT_FLAGS {
-    VSS_CF_BACKUP_RECOVERY         = 0x00000001,
+    VSS_CF_BACKUP_RECOVERY                      = 0x00000001,
     VSS_CF_APP_ROLLBACK_RECOVERY   = 0x00000002,
-    VSS_CF_NOT_SYSTEM_STATE        = 0x00000004 
+    VSS_CF_NOT_SYSTEM_STATE                     = 0x00000004 
   } VSS_COMPONENT_FLAGS;
 
   /* http://msdn.microsoft.com/en-us/library/aa384976%28v=VS.85%29.aspx */
   typedef enum VSS_USAGE_TYPE {
-    VSS_UT_UNDEFINED             = 0,
+    VSS_UT_UNDEFINED                                       = 0,
     VSS_UT_BOOTABLESYSTEMSTATE   = 1,
-    VSS_UT_SYSTEMSERVICE         = 2,
-    VSS_UT_USERDATA              = 3,
-    VSS_UT_OTHER                 = 4 
+    VSS_UT_SYSTEMSERVICE                      = 2,
+    VSS_UT_USERDATA                                        = 3,
+    VSS_UT_OTHER                                           = 4 
   } VSS_USAGE_TYPE;
 
 typedef enum VSS_ALTERNATE_WRITER_STATE {
-  VSS_AWS_UNDEFINED                  = 0,
-  VSS_AWS_NO_ALTERNATE_WRITER        = 1,
+  VSS_AWS_UNDEFINED                                                         = 0,
+  VSS_AWS_NO_ALTERNATE_WRITER                     = 1,
   VSS_AWS_ALTERNATE_WRITER_EXISTS    = 2,
   VSS_AWS_THIS_IS_ALTERNATE_WRITER   = 3 
 } VSS_ALTERNATE_WRITER_STATE;
@@ -36,36 +36,36 @@ typedef enum VSS_COMPONENT_TYPE {
 
 typedef enum VSS_FILE_RESTORE_STATUS {
   VSS_RS_UNDEFINED   = 0,
-  VSS_RS_NONE        = 1,
-  VSS_RS_ALL         = 2,
-  VSS_RS_FAILED      = 3 
+  VSS_RS_NONE                     = 1,
+  VSS_RS_ALL                      = 2,
+  VSS_RS_FAILED                   = 3 
 } VSS_FILE_RESTORE_STATUS;
 
 typedef enum VSS_RESTORE_TARGET {
-  VSS_RT_UNDEFINED           = 0,
-  VSS_RT_ORIGINAL            = 1,
-  VSS_RT_ALTERNATE           = 2,
-  VSS_RT_DIRECTED            = 3,
+  VSS_RT_UNDEFINED                        = 0,
+  VSS_RT_ORIGINAL                                      = 1,
+  VSS_RT_ALTERNATE                        = 2,
+  VSS_RT_DIRECTED                                      = 3,
   VSS_RT_ORIGINAL_LOCATION   = 4 
 } VSS_RESTORE_TARGET;
 
 typedef enum VSS_RESTOREMETHOD_ENUM {
-  VSS_RME_UNDEFINED                             = 0,
-  VSS_RME_RESTORE_IF_NOT_THERE                  = 1,
-  VSS_RME_RESTORE_IF_CAN_REPLACE                = 2,
-  VSS_RME_STOP_RESTORE_START                    = 3,
-  VSS_RME_RESTORE_TO_ALTERNATE_LOCATION         = 4,
-  VSS_RME_RESTORE_AT_REBOOT                     = 5,
+  VSS_RME_UNDEFINED                                                                                 = 0,
+  VSS_RME_RESTORE_IF_NOT_THERE                                                         = 1,
+  VSS_RME_RESTORE_IF_CAN_REPLACE                                          = 2,
+  VSS_RME_STOP_RESTORE_START                                                           = 3,
+  VSS_RME_RESTORE_TO_ALTERNATE_LOCATION                      = 4,
+  VSS_RME_RESTORE_AT_REBOOT                                                            = 5,
   VSS_RME_RESTORE_AT_REBOOT_IF_CANNOT_REPLACE   = 6,
-  VSS_RME_CUSTOM                                = 7,
-  VSS_RME_RESTORE_STOP_START                    = 8 
+  VSS_RME_CUSTOM                                                                                                 = 7,
+  VSS_RME_RESTORE_STOP_START                                                           = 8 
 } VSS_RESTOREMETHOD_ENUM;
 
 typedef enum VSS_SOURCE_TYPE {
-  VSS_ST_UNDEFINED         = 0,
-  VSS_ST_TRANSACTEDDB      = 1,
+  VSS_ST_UNDEFINED                      = 0,
+  VSS_ST_TRANSACTEDDB                   = 1,
   VSS_ST_NONTRANSACTEDDB   = 2,
-  VSS_ST_OTHER             = 3 
+  VSS_ST_OTHER                                       = 3 
 } VSS_SOURCE_TYPE;
 
 typedef enum VSS_SUBSCRIBE_MASK {
@@ -73,14 +73,14 @@ typedef enum VSS_SUBSCRIBE_MASK {
   VSS_SM_BACKUP_EVENTS_FLAG    = 0x00000002,
   VSS_SM_RESTORE_EVENTS_FLAG   = 0x00000004,
   VSS_SM_IO_THROTTLING_FLAG    = 0x00000008,
-  VSS_SM_ALL_FLAGS             = 0xffffffff 
+  VSS_SM_ALL_FLAGS                                       = 0xffffffff 
 } VSS_SUBSCRIBE_MASK;
 
 typedef enum VSS_WRITERRESTORE_ENUM {
-  VSS_WRE_UNDEFINED          = 0,
-  VSS_WRE_NEVER              = 1,
+  VSS_WRE_UNDEFINED                       = 0,
+  VSS_WRE_NEVER                                        = 1,
   VSS_WRE_IF_REPLACE_FAILS   = 2,
-  VSS_WRE_ALWAYS             = 3 
+  VSS_WRE_ALWAYS                                       = 3 
 } VSS_WRITERRESTORE_ENUM;
 
 #include <vss.h>
@@ -681,14 +681,14 @@ protected:
     UINT WINAPI GetCurrentVolumeCount() const;
     VSS_RESTORE_TYPE WINAPI GetRestoreType() const;
     HRESULT WINAPI GetSnapshotDeviceName(
-        LPCWSTR wszOriginalVolume,
-        LPCWSTR *ppwszSnapshotDevice) const;
+                     LPCWSTR wszOriginalVolume,
+                     LPCWSTR *ppwszSnapshotDevice) const;
     bool WINAPI IsBootableSystemStateBackedUp() const;
     bool WINAPI IsPartialFileSupportEnabled() const;
     bool WINAPI IsPathAffected(
-        LPCWSTR wszPath) const;
+                     LPCWSTR wszPath) const;
     HRESULT WINAPI SetWriterFailure(
-        HRESULT hr);
+                     HRESULT hr);
 public:
     //Pure virtuals
     virtual bool WINAPI OnAbort() = 0;
@@ -698,89 +698,89 @@ public:
     //Virtuals
     virtual __thiscall ~CVssWriter();
     virtual bool WINAPI OnBackupComplete(
-        IVssWriterComponents *pComponent);
+                     IVssWriterComponents *pComponent);
     virtual bool WINAPI OnBackupShutdown(
-        VSS_ID SnapshotSetId);
+                     VSS_ID SnapshotSetId);
     virtual bool WINAPI OnIdentify(
-        IVssCreateWriterMetadata *pMetadata);
+                     IVssCreateWriterMetadata *pMetadata);
     virtual bool WINAPI OnPostRestore(
-        IVssWriterComponents *pComponent);
+                     IVssWriterComponents *pComponent);
     virtual bool WINAPI OnPostSnapshot(
-        IVssWriterComponents *pComponent);
+                     IVssWriterComponents *pComponent);
     virtual bool WINAPI OnPrepareBackup(
-        IVssWriterComponents *pComponent);
+                     IVssWriterComponents *pComponent);
     virtual bool WINAPI OnPreRestore(
-        IVssWriterComponents *pComponent);
+                     IVssWriterComponents *pComponent);
     //gendef says public: virtual bool __stdcall CVssWriter::OnBackOffIOOnVolume(unsigned short *,struct _GUID,struct _GUID)
     //Method unsupported
     virtual bool WINAPI OnBackOffIOOnVolume(
-        VSS_PWSZ _vss_pwsz,
-        VSS_ID _id1,
-        VSS_ID _id2);
+                     VSS_PWSZ _vss_pwsz,
+                     VSS_ID _id1,
+                     VSS_ID _id2);
     //gendef says public: virtual bool __stdcall CVssWriter::OnContinueIOOnVolume(unsigned short *,struct _GUID,struct _GUID)
     //Method unsupported
     virtual bool WINAPI OnContinueIOOnVolume(
-        VSS_PWSZ _vss_pwsz,
-        VSS_ID _id1,
-        VSS_ID _id2);
+                     VSS_PWSZ _vss_pwsz,
+                     VSS_ID _id1,
+                     VSS_ID _id2);
     //gendef says public: virtual bool __stdcall CVssWriter::OnVSSShutdown(void)
     //Method unsupported
     virtual bool WINAPI OnVssShutdown();
     //Non-virtuals
     __thiscall CVssWriter();
     HRESULT WINAPI Initialize(
-        VSS_ID WriterId,
-        LPCWSTR WriterName,
-        VSS_USAGE_TYPE UsageType,
-        VSS_SOURCE_TYPE SourceType,
-        VSS_APPLICATION_LEVEL AppLevel,
-        DWORD dwTimeoutFreeze = 60000,
-        VSS_ALTERNATE_WRITER_STATE aws = VSS_AWS_NO_ALTERNATE_WRITER,
-        bool bIOThrottlingOnly = false,
-        LPCWSTR wszWriterInstanceName = NULL);
+                     VSS_ID WriterId,
+                     LPCWSTR WriterName,
+                     VSS_USAGE_TYPE UsageType,
+                     VSS_SOURCE_TYPE SourceType,
+                     VSS_APPLICATION_LEVEL AppLevel,
+                     DWORD dwTimeoutFreeze = 60000,
+                     VSS_ALTERNATE_WRITER_STATE aws = VSS_AWS_NO_ALTERNATE_WRITER,
+                     bool bIOThrottlingOnly = false,
+                     LPCWSTR wszWriterInstanceName = NULL);
     HRESULT WINAPI Subscribe(
-        DWORD dwEventFlags);
+                     DWORD dwEventFlags);
     HRESULT WINAPI Unsubscribe();
     //gendef says public: long __stdcall CVssWriter::InstallAlternateWriter(struct _GUID,struct _GUID)
     //Method unsupported
     HRESULT WINAPI InstallAlternateWriter(
-        VSS_ID _id1,
-        VSS_ID _id2);
+                     VSS_ID _id1,
+                     VSS_ID _id2);
 };
 
 class CVssWriterEx : public CVssWriter {
   protected:
     HRESULT WINAPI GetIdentifyInformation(
-        IVssExamineWriterMetadata **ppMetadata) const;
+                     IVssExamineWriterMetadata **ppMetadata) const;
     HRESULT WINAPI SubscribeEx(
-        DWORD dwUnsubscribeTimeout,
-        DWORD dwEventFlags);
+                     DWORD dwUnsubscribeTimeout,
+                     DWORD dwEventFlags);
   public:
     virtual bool WINAPI OnIdentifyEx(
-        IVssCreateWriterMetadataEx *pMetadata) const;
+                     IVssCreateWriterMetadataEx *pMetadata) const;
     HRESULT WINAPI InitializeEx(
-        VSS_ID WriterId,
-        LPCWSTR wszWriterName,
-        DWORD dwMajorVersion,
-        DWORD dwMinorVersion,
-        VSS_USAGE_TYPE ut,
-        VSS_SOURCE_TYPE st,
-        VSS_APPLICATION_LEVEL nLevel,
-        DWORD dwTimeoutFreeze = 60000,
-        VSS_ALTERNATE_WRITER_STATE aws = VSS_AWS_NO_ALTERNATE_WRITER,
-        bool bIOThrottlingOnly = false,
-        LPCWSTR wszWriterInstanceName = NULL);
+                     VSS_ID WriterId,
+                     LPCWSTR wszWriterName,
+                     DWORD dwMajorVersion,
+                     DWORD dwMinorVersion,
+                     VSS_USAGE_TYPE ut,
+                     VSS_SOURCE_TYPE st,
+                     VSS_APPLICATION_LEVEL nLevel,
+                     DWORD dwTimeoutFreeze = 60000,
+                     VSS_ALTERNATE_WRITER_STATE aws = VSS_AWS_NO_ALTERNATE_WRITER,
+                     bool bIOThrottlingOnly = false,
+                     LPCWSTR wszWriterInstanceName = NULL);
 };
 
 class CVssWriterEx2: public CVssWriterEx {
   public:
     HRESULT WINAPI GetSessionId(
-        VSS_ID *idSession) const;
+                     VSS_ID *idSession) const;
     bool WINAPI IsWriterShuttingDown() const;
     HRESULT WINAPI SetWriterFailureEx(
-        HRESULT hrWriter,
-        HRESULT hrApplication,
-        LPCWSTR wszApplicationMessage);
+                     HRESULT hrWriter,
+                     HRESULT hrApplication,
+                     LPCWSTR wszApplicationMessage);
 };
 #endif /*__MINGW_GNUC_PREREQ(4,6)*/
 #endif /*__cplusplus*/

@@ -16,8 +16,8 @@ const maxInt = std.math.maxInt;
 
 fn modf_result(comptime T: type) type {
     return struct {
-        fpart: T,
-        ipart: T,
+                     fpart: T,
+                     ipart: T,
     };
 }
 pub const modf32_result = modf_result(f32);
@@ -32,9 +32,9 @@ pub const modf64_result = modf_result(f64);
 pub fn modf(x: anytype) modf_result(@TypeOf(x)) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => modf32(x),
-        f64 => modf64(x),
-        else => @compileError("modf not implemented for " ++ @typeName(T)),
+                     f32 => modf32(x),
+                     f64 => modf64(x),
+                     else => @compileError("modf not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -47,34 +47,34 @@ fn modf32(x: f32) modf32_result {
 
     // TODO: Shouldn't need this.
     if (math.isInf(x)) {
-        result.ipart = x;
-        result.fpart = math.nan(f32);
-        return result;
+                     result.ipart = x;
+                     result.fpart = math.nan(f32);
+                     return result;
     }
 
     // no fractional part
     if (e >= 23) {
-        result.ipart = x;
-        if (e == 0x80 and u << 9 != 0) { // nan
-            result.fpart = x;
-        } else {
-            result.fpart = @bitCast(f32, us);
-        }
-        return result;
+                     result.ipart = x;
+                     if (e == 0x80 and u << 9 != 0) { // nan
+                                      result.fpart = x;
+                     } else {
+                                      result.fpart = @bitCast(f32, us);
+                     }
+                     return result;
     }
 
     // no integral part
     if (e < 0) {
-        result.ipart = @bitCast(f32, us);
-        result.fpart = x;
-        return result;
+                     result.ipart = @bitCast(f32, us);
+                     result.fpart = x;
+                     return result;
     }
 
     const mask = @as(u32, 0x007FFFFF) >> @intCast(u5, e);
     if (u & mask == 0) {
-        result.ipart = x;
-        result.fpart = @bitCast(f32, us);
-        return result;
+                     result.ipart = x;
+                     result.fpart = @bitCast(f32, us);
+                     return result;
     }
 
     const uf = @bitCast(f32, u & ~mask);
@@ -91,34 +91,34 @@ fn modf64(x: f64) modf64_result {
     const us = u & (1 << 63);
 
     if (math.isInf(x)) {
-        result.ipart = x;
-        result.fpart = math.nan(f64);
-        return result;
+                     result.ipart = x;
+                     result.fpart = math.nan(f64);
+                     return result;
     }
 
     // no fractional part
     if (e >= 52) {
-        result.ipart = x;
-        if (e == 0x400 and u << 12 != 0) { // nan
-            result.fpart = x;
-        } else {
-            result.fpart = @bitCast(f64, us);
-        }
-        return result;
+                     result.ipart = x;
+                     if (e == 0x400 and u << 12 != 0) { // nan
+                                      result.fpart = x;
+                     } else {
+                                      result.fpart = @bitCast(f64, us);
+                     }
+                     return result;
     }
 
     // no integral part
     if (e < 0) {
-        result.ipart = @bitCast(f64, us);
-        result.fpart = x;
-        return result;
+                     result.ipart = @bitCast(f64, us);
+                     result.fpart = x;
+                     return result;
     }
 
     const mask = @as(u64, maxInt(u64) >> 12) >> @intCast(u6, e);
     if (u & mask == 0) {
-        result.ipart = x;
-        result.fpart = @bitCast(f64, us);
-        return result;
+                     result.ipart = x;
+                     result.fpart = @bitCast(f64, us);
+                     return result;
     }
 
     const uf = @bitCast(f64, u & ~mask);

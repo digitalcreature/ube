@@ -149,11 +149,11 @@ extern "C" {
 typedef enum _POWER_DATA_ACCESSOR {
   ACCESS_AC_POWER_SETTING_INDEX   = 0,   // 0x0
   ACCESS_DC_POWER_SETTING_INDEX   = 1,   // 0x1
-  ACCESS_SCHEME                   = 16,  // 0x10
-  ACCESS_SUBGROUP                 = 17,  // 0x11
-  ACCESS_INDIVIDUAL_SETTING       = 18,  // 0x12
-  ACCESS_ACTIVE_SCHEME            = 19,  // 0x13
-  ACCESS_CREATE_SCHEME            = 20   // 0x14
+  ACCESS_SCHEME                                                          = 16,  // 0x10
+  ACCESS_SUBGROUP                                           = 17,  // 0x11
+  ACCESS_INDIVIDUAL_SETTING                    = 18,  // 0x12
+  ACCESS_ACTIVE_SCHEME                                      = 19,  // 0x13
+  ACCESS_CREATE_SCHEME                                      = 20   // 0x14
 } POWER_DATA_ACCESSOR, *PPOWER_DATA_ACCESSOR;
 
 BOOLEAN WINAPI DevicePowerClose(void);

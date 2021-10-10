@@ -78,44 +78,44 @@ extern "C" {
     MSP_EVENT Event;
     MSP_HANDLE hCall;
     __C89_NAMELESS union {
-      struct {
+                   struct {
 	MSP_ADDRESS_EVENT Type;
 	ITTerminal *pTerminal;
-      } MSP_ADDRESS_EVENT_INFO;
-      struct {
+                   } MSP_ADDRESS_EVENT_INFO;
+                   struct {
 	MSP_CALL_EVENT Type;
 	MSP_CALL_EVENT_CAUSE Cause;
 	ITStream *pStream;
 	ITTerminal *pTerminal;
 	HRESULT hrError;
-      } MSP_CALL_EVENT_INFO;
-      struct {
+                   } MSP_CALL_EVENT_INFO;
+                   struct {
 	DWORD dwBufferSize;
 	BYTE pBuffer[1 ];
-      } MSP_TSP_DATA;
-      struct {
+                   } MSP_TSP_DATA;
+                   struct {
 	IDispatch *pEvent;
 	__LONG32 lEventCode;
-      } MSP_PRIVATE_EVENT_INFO;
-      struct {
+                   } MSP_PRIVATE_EVENT_INFO;
+                   struct {
 	ITTerminal *pParentFileTerminal;
 	ITFileTrack *pFileTrack;
 	TERMINAL_MEDIA_STATE TerminalMediaState;
 	FT_STATE_EVENT_CAUSE ftecEventCause;
 	HRESULT hrErrorCode;
-      } MSP_FILE_TERMINAL_EVENT_INFO;
-      struct {
+                   } MSP_FILE_TERMINAL_EVENT_INFO;
+                   struct {
 	ITTerminal *pASRTerminal;
 	HRESULT hrErrorCode;
-      } MSP_ASR_TERMINAL_EVENT_INFO;
-      struct {
+                   } MSP_ASR_TERMINAL_EVENT_INFO;
+                   struct {
 	ITTerminal *pTTSTerminal;
 	HRESULT hrErrorCode;
-      } MSP_TTS_TERMINAL_EVENT_INFO;
-      struct {
+                   } MSP_TTS_TERMINAL_EVENT_INFO;
+                   struct {
 	ITTerminal *pToneTerminal;
 	HRESULT hrErrorCode;
-      } MSP_TONE_TERMINAL_EVENT_INFO;
+                   } MSP_TONE_TERMINAL_EVENT_INFO;
     };
   } MSP_EVENT_INFO;
 
@@ -133,10 +133,10 @@ extern "C" {
 #else
   typedef struct ITPluggableTerminalEventSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalEventSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITPluggableTerminalEventSink *This);
-      ULONG (WINAPI *Release)(ITPluggableTerminalEventSink *This);
-      HRESULT (WINAPI *FireEvent)(ITPluggableTerminalEventSink *This,const MSP_EVENT_INFO *pMspEventInfo);
+                   HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalEventSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITPluggableTerminalEventSink *This);
+                   ULONG (WINAPI *Release)(ITPluggableTerminalEventSink *This);
+                   HRESULT (WINAPI *FireEvent)(ITPluggableTerminalEventSink *This,const MSP_EVENT_INFO *pMspEventInfo);
     END_INTERFACE
   } ITPluggableTerminalEventSinkVtbl;
   struct ITPluggableTerminalEventSink {
@@ -165,11 +165,11 @@ extern "C" {
 #else
   typedef struct ITPluggableTerminalEventSinkRegistrationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalEventSinkRegistration *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITPluggableTerminalEventSinkRegistration *This);
-      ULONG (WINAPI *Release)(ITPluggableTerminalEventSinkRegistration *This);
-      HRESULT (WINAPI *RegisterSink)(ITPluggableTerminalEventSinkRegistration *This,ITPluggableTerminalEventSink *pEventSink);
-      HRESULT (WINAPI *UnregisterSink)(ITPluggableTerminalEventSinkRegistration *This);
+                   HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalEventSinkRegistration *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITPluggableTerminalEventSinkRegistration *This);
+                   ULONG (WINAPI *Release)(ITPluggableTerminalEventSinkRegistration *This);
+                   HRESULT (WINAPI *RegisterSink)(ITPluggableTerminalEventSinkRegistration *This,ITPluggableTerminalEventSink *pEventSink);
+                   HRESULT (WINAPI *UnregisterSink)(ITPluggableTerminalEventSinkRegistration *This);
     END_INTERFACE
   } ITPluggableTerminalEventSinkRegistrationVtbl;
   struct ITPluggableTerminalEventSinkRegistration {
@@ -205,15 +205,15 @@ extern "C" {
 #else
   typedef struct ITMSPAddressVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITMSPAddress *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITMSPAddress *This);
-      ULONG (WINAPI *Release)(ITMSPAddress *This);
-      HRESULT (WINAPI *Initialize)(ITMSPAddress *This,MSP_HANDLE hEvent);
-      HRESULT (WINAPI *Shutdown)(ITMSPAddress *This);
-      HRESULT (WINAPI *CreateMSPCall)(ITMSPAddress *This,MSP_HANDLE hCall,DWORD dwReserved,DWORD dwMediaType,IUnknown *pOuterUnknown,IUnknown **ppStreamControl);
-      HRESULT (WINAPI *ShutdownMSPCall)(ITMSPAddress *This,IUnknown *pStreamControl);
-      HRESULT (WINAPI *ReceiveTSPData)(ITMSPAddress *This,IUnknown *pMSPCall,BYTE *pBuffer,DWORD dwSize);
-      HRESULT (WINAPI *GetEvent)(ITMSPAddress *This,DWORD *pdwSize,byte *pEventBuffer);
+                   HRESULT (WINAPI *QueryInterface)(ITMSPAddress *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITMSPAddress *This);
+                   ULONG (WINAPI *Release)(ITMSPAddress *This);
+                   HRESULT (WINAPI *Initialize)(ITMSPAddress *This,MSP_HANDLE hEvent);
+                   HRESULT (WINAPI *Shutdown)(ITMSPAddress *This);
+                   HRESULT (WINAPI *CreateMSPCall)(ITMSPAddress *This,MSP_HANDLE hCall,DWORD dwReserved,DWORD dwMediaType,IUnknown *pOuterUnknown,IUnknown **ppStreamControl);
+                   HRESULT (WINAPI *ShutdownMSPCall)(ITMSPAddress *This,IUnknown *pStreamControl);
+                   HRESULT (WINAPI *ReceiveTSPData)(ITMSPAddress *This,IUnknown *pMSPCall,BYTE *pBuffer,DWORD dwSize);
+                   HRESULT (WINAPI *GetEvent)(ITMSPAddress *This,DWORD *pdwSize,byte *pEventBuffer);
     END_INTERFACE
   } ITMSPAddressVtbl;
   struct ITMSPAddress {

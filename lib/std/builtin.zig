@@ -33,22 +33,22 @@ pub const Cpu = std.Target.Cpu;
 pub const subsystem: ?SubSystem = blk: {
     if (@hasDecl(@This(), "explicit_subsystem")) break :blk explicit_subsystem;
     switch (os.tag) {
-        .windows => {
-            if (is_test) {
-                break :blk SubSystem.Console;
-            }
-            if (@hasDecl(root, "main") or
-                @hasDecl(root, "WinMain") or
-                @hasDecl(root, "wWinMain") or
-                @hasDecl(root, "WinMainCRTStartup") or
-                @hasDecl(root, "wWinMainCRTStartup"))
-            {
-                break :blk SubSystem.Windows;
-            } else {
-                break :blk SubSystem.Console;
-            }
-        },
-        else => break :blk null,
+                     .windows => {
+                                      if (is_test) {
+                                          break :blk SubSystem.Console;
+                                      }
+                                      if (@hasDecl(root, "main") or
+                                          @hasDecl(root, "WinMain") or
+                                          @hasDecl(root, "wWinMain") or
+                                          @hasDecl(root, "WinMainCRTStartup") or
+                                          @hasDecl(root, "wWinMainCRTStartup"))
+                                      {
+                                          break :blk SubSystem.Windows;
+                                      } else {
+                                          break :blk SubSystem.Console;
+                                      }
+                     },
+                     else => break :blk null,
     }
 };
 
@@ -59,22 +59,22 @@ pub const StackTrace = struct {
     instruction_addresses: []usize,
 
     pub fn format(
-        self: StackTrace,
-        comptime fmt: []const u8,
-        options: std.fmt.FormatOptions,
-        writer: anytype,
+                     self: StackTrace,
+                     comptime fmt: []const u8,
+                     options: std.fmt.FormatOptions,
+                     writer: anytype,
     ) !void {
-        var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
-        defer arena.deinit();
-        const debug_info = std.debug.getSelfDebugInfo() catch |err| {
-            return writer.print("\nUnable to print stack trace: Unable to open debug info: {}\n", .{@errorName(err)});
-        };
-        const tty_config = std.debug.detectTTYConfig();
-        try writer.writeAll("\n");
-        std.debug.writeStackTrace(self, writer, &arena.allocator, debug_info, tty_config) catch |err| {
-            try writer.print("Unable to print stack trace: {}\n", .{@errorName(err)});
-        };
-        try writer.writeAll("\n");
+                     var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+                     defer arena.deinit();
+                     const debug_info = std.debug.getSelfDebugInfo() catch |err| {
+                                      return writer.print("\nUnable to print stack trace: Unable to open debug info: {}\n", .{@errorName(err)});
+                     };
+                     const tty_config = std.debug.detectTTYConfig();
+                     try writer.writeAll("\n");
+                     std.debug.writeStackTrace(self, writer, &arena.allocator, debug_info, tty_config) catch |err| {
+                                      try writer.print("Unable to print stack trace: {}\n", .{@errorName(err)});
+                     };
+                     try writer.writeAll("\n");
     }
 };
 
@@ -209,99 +209,99 @@ pub const TypeInfo = union(enum) {
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Int = struct {
-        is_signed: bool,
-        bits: comptime_int,
+                     is_signed: bool,
+                     bits: comptime_int,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Float = struct {
-        bits: comptime_int,
+                     bits: comptime_int,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Pointer = struct {
-        size: Size,
-        is_const: bool,
-        is_volatile: bool,
-        alignment: comptime_int,
-        child: type,
-        is_allowzero: bool,
+                     size: Size,
+                     is_const: bool,
+                     is_volatile: bool,
+                     alignment: comptime_int,
+                     child: type,
+                     is_allowzero: bool,
 
-        /// This field is an optional type.
-        /// The type of the sentinel is the element type of the pointer, which is
-        /// the value of the `child` field in this struct. However there is no way
-        /// to refer to that type here, so we use `var`.
-        sentinel: anytype,
+                     /// This field is an optional type.
+                     /// The type of the sentinel is the element type of the pointer, which is
+                     /// the value of the `child` field in this struct. However there is no way
+                     /// to refer to that type here, so we use `var`.
+                     sentinel: anytype,
 
-        /// This data structure is used by the Zig language code generation and
-        /// therefore must be kept in sync with the compiler implementation.
-        pub const Size = enum {
-            One,
-            Many,
-            Slice,
-            C,
-        };
+                     /// This data structure is used by the Zig language code generation and
+                     /// therefore must be kept in sync with the compiler implementation.
+                     pub const Size = enum {
+                                      One,
+                                      Many,
+                                      Slice,
+                                      C,
+                     };
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Array = struct {
-        len: comptime_int,
-        child: type,
+                     len: comptime_int,
+                     child: type,
 
-        /// This field is an optional type.
-        /// The type of the sentinel is the element type of the array, which is
-        /// the value of the `child` field in this struct. However there is no way
-        /// to refer to that type here, so we use `var`.
-        sentinel: anytype,
+                     /// This field is an optional type.
+                     /// The type of the sentinel is the element type of the array, which is
+                     /// the value of the `child` field in this struct. However there is no way
+                     /// to refer to that type here, so we use `var`.
+                     sentinel: anytype,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const ContainerLayout = enum {
-        Auto,
-        Extern,
-        Packed,
+                     Auto,
+                     Extern,
+                     Packed,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const StructField = struct {
-        name: []const u8,
-        field_type: type,
-        default_value: anytype,
-        is_comptime: bool,
-        alignment: comptime_int,
+                     name: []const u8,
+                     field_type: type,
+                     default_value: anytype,
+                     is_comptime: bool,
+                     alignment: comptime_int,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Struct = struct {
-        layout: ContainerLayout,
-        fields: []const StructField,
-        decls: []const Declaration,
-        is_tuple: bool,
+                     layout: ContainerLayout,
+                     fields: []const StructField,
+                     decls: []const Declaration,
+                     is_tuple: bool,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Optional = struct {
-        child: type,
+                     child: type,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const ErrorUnion = struct {
-        error_set: type,
-        payload: type,
+                     error_set: type,
+                     payload: type,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Error = struct {
-        name: []const u8,
+                     name: []const u8,
     };
 
     /// This data structure is used by the Zig language code generation and
@@ -311,116 +311,116 @@ pub const TypeInfo = union(enum) {
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const EnumField = struct {
-        name: []const u8,
-        value: comptime_int,
+                     name: []const u8,
+                     value: comptime_int,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Enum = struct {
-        layout: ContainerLayout,
-        tag_type: type,
-        fields: []const EnumField,
-        decls: []const Declaration,
-        is_exhaustive: bool,
+                     layout: ContainerLayout,
+                     tag_type: type,
+                     fields: []const EnumField,
+                     decls: []const Declaration,
+                     is_exhaustive: bool,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const UnionField = struct {
-        name: []const u8,
-        field_type: type,
-        alignment: comptime_int,
+                     name: []const u8,
+                     field_type: type,
+                     alignment: comptime_int,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Union = struct {
-        layout: ContainerLayout,
-        tag_type: ?type,
-        fields: []const UnionField,
-        decls: []const Declaration,
+                     layout: ContainerLayout,
+                     tag_type: ?type,
+                     fields: []const UnionField,
+                     decls: []const Declaration,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const FnArg = struct {
-        is_generic: bool,
-        is_noalias: bool,
-        arg_type: ?type,
+                     is_generic: bool,
+                     is_noalias: bool,
+                     arg_type: ?type,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Fn = struct {
-        calling_convention: CallingConvention,
-        alignment: comptime_int,
-        is_generic: bool,
-        is_var_args: bool,
-        return_type: ?type,
-        args: []const FnArg,
+                     calling_convention: CallingConvention,
+                     alignment: comptime_int,
+                     is_generic: bool,
+                     is_var_args: bool,
+                     return_type: ?type,
+                     args: []const FnArg,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Opaque = struct {
-        decls: []const Declaration,
+                     decls: []const Declaration,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Frame = struct {
-        function: anytype,
+                     function: anytype,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const AnyFrame = struct {
-        child: ?type,
+                     child: ?type,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Vector = struct {
-        len: comptime_int,
-        child: type,
+                     len: comptime_int,
+                     child: type,
     };
 
     /// This data structure is used by the Zig language code generation and
     /// therefore must be kept in sync with the compiler implementation.
     pub const Declaration = struct {
-        name: []const u8,
-        is_pub: bool,
-        data: Data,
+                     name: []const u8,
+                     is_pub: bool,
+                     data: Data,
 
-        /// This data structure is used by the Zig language code generation and
-        /// therefore must be kept in sync with the compiler implementation.
-        pub const Data = union(enum) {
-            Type: type,
-            Var: type,
-            Fn: FnDecl,
+                     /// This data structure is used by the Zig language code generation and
+                     /// therefore must be kept in sync with the compiler implementation.
+                     pub const Data = union(enum) {
+                                      Type: type,
+                                      Var: type,
+                                      Fn: FnDecl,
 
-            /// This data structure is used by the Zig language code generation and
-            /// therefore must be kept in sync with the compiler implementation.
-            pub const FnDecl = struct {
-                fn_type: type,
-                inline_type: Inline,
-                is_var_args: bool,
-                is_extern: bool,
-                is_export: bool,
-                lib_name: ?[]const u8,
-                return_type: type,
-                arg_names: []const []const u8,
+                                      /// This data structure is used by the Zig language code generation and
+                                      /// therefore must be kept in sync with the compiler implementation.
+                                      pub const FnDecl = struct {
+                                          fn_type: type,
+                                          inline_type: Inline,
+                                          is_var_args: bool,
+                                          is_extern: bool,
+                                          is_export: bool,
+                                          lib_name: ?[]const u8,
+                                          return_type: type,
+                                          arg_names: []const []const u8,
 
-                /// This data structure is used by the Zig language code generation and
-                /// therefore must be kept in sync with the compiler implementation.
-                pub const Inline = enum {
-                    Auto,
-                    Always,
-                    Never,
-                };
-            };
-        };
+                                          /// This data structure is used by the Zig language code generation and
+                                          /// therefore must be kept in sync with the compiler implementation.
+                                          pub const Inline = enum {
+                                                           Auto,
+                                                           Always,
+                                                           Never,
+                                          };
+                                      };
+                     };
     };
 };
 
@@ -461,77 +461,77 @@ pub const Version = struct {
     patch: u32 = 0,
 
     pub const Range = struct {
-        min: Version,
-        max: Version,
+                     min: Version,
+                     max: Version,
 
-        pub fn includesVersion(self: Range, ver: Version) bool {
-            if (self.min.order(ver) == .gt) return false;
-            if (self.max.order(ver) == .lt) return false;
-            return true;
-        }
+                     pub fn includesVersion(self: Range, ver: Version) bool {
+                                      if (self.min.order(ver) == .gt) return false;
+                                      if (self.max.order(ver) == .lt) return false;
+                                      return true;
+                     }
 
-        /// Checks if system is guaranteed to be at least `version` or older than `version`.
-        /// Returns `null` if a runtime check is required.
-        pub fn isAtLeast(self: Range, ver: Version) ?bool {
-            if (self.min.order(ver) != .lt) return true;
-            if (self.max.order(ver) == .lt) return false;
-            return null;
-        }
+                     /// Checks if system is guaranteed to be at least `version` or older than `version`.
+                     /// Returns `null` if a runtime check is required.
+                     pub fn isAtLeast(self: Range, ver: Version) ?bool {
+                                      if (self.min.order(ver) != .lt) return true;
+                                      if (self.max.order(ver) == .lt) return false;
+                                      return null;
+                     }
     };
 
     pub fn order(lhs: Version, rhs: Version) std.math.Order {
-        if (lhs.major < rhs.major) return .lt;
-        if (lhs.major > rhs.major) return .gt;
-        if (lhs.minor < rhs.minor) return .lt;
-        if (lhs.minor > rhs.minor) return .gt;
-        if (lhs.patch < rhs.patch) return .lt;
-        if (lhs.patch > rhs.patch) return .gt;
-        return .eq;
+                     if (lhs.major < rhs.major) return .lt;
+                     if (lhs.major > rhs.major) return .gt;
+                     if (lhs.minor < rhs.minor) return .lt;
+                     if (lhs.minor > rhs.minor) return .gt;
+                     if (lhs.patch < rhs.patch) return .lt;
+                     if (lhs.patch > rhs.patch) return .gt;
+                     return .eq;
     }
 
     pub fn parse(text: []const u8) !Version {
-        var end: usize = 0;
-        while (end < text.len) : (end += 1) {
-            const c = text[end];
-            if (!std.ascii.isDigit(c) and c != '.') break;
-        }
-        // found no digits or '.' before unexpected character
-        if (end == 0) return error.InvalidVersion;
+                     var end: usize = 0;
+                     while (end < text.len) : (end += 1) {
+                                      const c = text[end];
+                                      if (!std.ascii.isDigit(c) and c != '.') break;
+                     }
+                     // found no digits or '.' before unexpected character
+                     if (end == 0) return error.InvalidVersion;
 
-        var it = std.mem.split(text[0..end], ".");
-        // substring is not empty, first call will succeed
-        const major = it.next().?;
-        if (major.len == 0) return error.InvalidVersion;
-        const minor = it.next() orelse "0";
-        // ignore 'patch' if 'minor' is invalid
-        const patch = if (minor.len == 0) "0" else (it.next() orelse "0");
+                     var it = std.mem.split(text[0..end], ".");
+                     // substring is not empty, first call will succeed
+                     const major = it.next().?;
+                     if (major.len == 0) return error.InvalidVersion;
+                     const minor = it.next() orelse "0";
+                     // ignore 'patch' if 'minor' is invalid
+                     const patch = if (minor.len == 0) "0" else (it.next() orelse "0");
 
-        return Version{
-            .major = try std.fmt.parseUnsigned(u32, major, 10),
-            .minor = try std.fmt.parseUnsigned(u32, if (minor.len == 0) "0" else minor, 10),
-            .patch = try std.fmt.parseUnsigned(u32, if (patch.len == 0) "0" else patch, 10),
-        };
+                     return Version{
+                                      .major = try std.fmt.parseUnsigned(u32, major, 10),
+                                      .minor = try std.fmt.parseUnsigned(u32, if (minor.len == 0) "0" else minor, 10),
+                                      .patch = try std.fmt.parseUnsigned(u32, if (patch.len == 0) "0" else patch, 10),
+                     };
     }
 
     pub fn format(
-        self: Version,
-        comptime fmt: []const u8,
-        options: std.fmt.FormatOptions,
-        out_stream: anytype,
+                     self: Version,
+                     comptime fmt: []const u8,
+                     options: std.fmt.FormatOptions,
+                     out_stream: anytype,
     ) !void {
-        if (fmt.len == 0) {
-            if (self.patch == 0) {
-                if (self.minor == 0) {
-                    return std.fmt.format(out_stream, "{}", .{self.major});
-                } else {
-                    return std.fmt.format(out_stream, "{}.{}", .{ self.major, self.minor });
-                }
-            } else {
-                return std.fmt.format(out_stream, "{}.{}.{}", .{ self.major, self.minor, self.patch });
-            }
-        } else {
-            @compileError("Unknown format string: '" ++ fmt ++ "'");
-        }
+                     if (fmt.len == 0) {
+                                      if (self.patch == 0) {
+                                          if (self.minor == 0) {
+                                                           return std.fmt.format(out_stream, "{}", .{self.major});
+                                          } else {
+                                                           return std.fmt.format(out_stream, "{}.{}", .{ self.major, self.minor });
+                                          }
+                                      } else {
+                                          return std.fmt.format(out_stream, "{}.{}.{}", .{ self.major, self.minor, self.patch });
+                                      }
+                     } else {
+                                      @compileError("Unknown format string: '" ++ fmt ++ "'");
+                     }
     }
 };
 
@@ -543,18 +543,18 @@ test "Version.parse" {
 
 pub fn testVersionParse() !void {
     const f = struct {
-        fn eql(text: []const u8, v1: u32, v2: u32, v3: u32) !void {
-            const v = try Version.parse(text);
-            std.testing.expect(v.major == v1 and v.minor == v2 and v.patch == v3);
-        }
+                     fn eql(text: []const u8, v1: u32, v2: u32, v3: u32) !void {
+                                      const v = try Version.parse(text);
+                                      std.testing.expect(v.major == v1 and v.minor == v2 and v.patch == v3);
+                     }
 
-        fn err(text: []const u8, expected_err: anyerror) !void {
-            _ = Version.parse(text) catch |actual_err| {
-                if (actual_err == expected_err) return;
-                return actual_err;
-            };
-            return error.Unreachable;
-        }
+                     fn err(text: []const u8, expected_err: anyerror) !void {
+                                      _ = Version.parse(text) catch |actual_err| {
+                                          if (actual_err == expected_err) return;
+                                          return actual_err;
+                                      };
+                                      return error.Unreachable;
+                     }
     };
 
     try f.eql("2.6.32.11-svn21605", 2, 6, 32); // Debian PPC
@@ -594,37 +594,37 @@ pub const CallOptions = struct {
     stack: ?[]align(std.Target.stack_align) u8 = null,
 
     pub const Modifier = enum {
-        /// Equivalent to function call syntax.
-        auto,
+                     /// Equivalent to function call syntax.
+                     auto,
 
-        /// Equivalent to async keyword used with function call syntax.
-        async_kw,
+                     /// Equivalent to async keyword used with function call syntax.
+                     async_kw,
 
-        /// Prevents tail call optimization. This guarantees that the return
-        /// address will point to the callsite, as opposed to the callsite's
-        /// callsite. If the call is otherwise required to be tail-called
-        /// or inlined, a compile error is emitted instead.
-        never_tail,
+                     /// Prevents tail call optimization. This guarantees that the return
+                     /// address will point to the callsite, as opposed to the callsite's
+                     /// callsite. If the call is otherwise required to be tail-called
+                     /// or inlined, a compile error is emitted instead.
+                     never_tail,
 
-        /// Guarantees that the call will not be inlined. If the call is
-        /// otherwise required to be inlined, a compile error is emitted instead.
-        never_inline,
+                     /// Guarantees that the call will not be inlined. If the call is
+                     /// otherwise required to be inlined, a compile error is emitted instead.
+                     never_inline,
 
-        /// Asserts that the function call will not suspend. This allows a
-        /// non-async function to call an async function.
-        no_async,
+                     /// Asserts that the function call will not suspend. This allows a
+                     /// non-async function to call an async function.
+                     no_async,
 
-        /// Guarantees that the call will be generated with tail call optimization.
-        /// If this is not possible, a compile error is emitted instead.
-        always_tail,
+                     /// Guarantees that the call will be generated with tail call optimization.
+                     /// If this is not possible, a compile error is emitted instead.
+                     always_tail,
 
-        /// Guarantees that the call will inlined at the callsite.
-        /// If this is not possible, a compile error is emitted instead.
-        always_inline,
+                     /// Guarantees that the call will inlined at the callsite.
+                     /// If this is not possible, a compile error is emitted instead.
+                     always_inline,
 
-        /// Evaluates the call at compile-time. If the call cannot be completed at
-        /// compile-time, a compile error is emitted instead.
-        compile_time,
+                     /// Evaluates the call at compile-time. If the call cannot be completed at
+                     /// compile-time, a compile error is emitted instead.
+                     compile_time,
     };
 };
 
@@ -657,27 +657,27 @@ pub const panic: PanicFn = if (@hasDecl(root, "panic")) root.panic else default_
 pub fn default_panic(msg: []const u8, error_return_trace: ?*StackTrace) noreturn {
     @setCold(true);
     if (@hasDecl(root, "os") and @hasDecl(root.os, "panic")) {
-        root.os.panic(msg, error_return_trace);
-        unreachable;
+                     root.os.panic(msg, error_return_trace);
+                     unreachable;
     }
     switch (os.tag) {
-        .freestanding => {
-            while (true) {
-                @breakpoint();
-            }
-        },
-        .wasi => {
-            std.debug.warn("{}", .{msg});
-            std.os.abort();
-        },
-        .uefi => {
-            // TODO look into using the debug info and logging helpful messages
-            std.os.abort();
-        },
-        else => {
-            const first_trace_addr = @returnAddress();
-            std.debug.panicExtra(error_return_trace, first_trace_addr, "{}", .{msg});
-        },
+                     .freestanding => {
+                                      while (true) {
+                                          @breakpoint();
+                                      }
+                     },
+                     .wasi => {
+                                      std.debug.warn("{}", .{msg});
+                                      std.os.abort();
+                     },
+                     .uefi => {
+                                      // TODO look into using the debug info and logging helpful messages
+                                      std.os.abort();
+                     },
+                     else => {
+                                      const first_trace_addr = @returnAddress();
+                                      std.debug.panicExtra(error_return_trace, first_trace_addr, "{}", .{msg});
+                     },
     }
 }
 

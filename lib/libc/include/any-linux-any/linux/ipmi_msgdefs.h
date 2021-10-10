@@ -5,8 +5,8 @@
  * MontaVista IPMI system management interface
  *
  * Author: MontaVista Software, Inc.
- *         Corey Minyard <minyard@mvista.com>
- *         source@mvista.com
+ *                      Corey Minyard <minyard@mvista.com>
+ *                      source@mvista.com
  *
  * Copyright 2002 MontaVista Software Inc.
  *
@@ -43,7 +43,7 @@
 #define IPMI_BMC_RCV_MSG_INTR     0x01
 #define IPMI_BMC_EVT_MSG_INTR     0x02
 #define IPMI_BMC_EVT_MSG_BUFF     0x04
-#define IPMI_BMC_SYS_LOG          0x08
+#define IPMI_BMC_SYS_LOG                       0x08
 
 #define IPMI_NETFN_STORAGE_REQUEST		0x0a
 #define IPMI_NETFN_STORAGE_RESPONSE		0x0b

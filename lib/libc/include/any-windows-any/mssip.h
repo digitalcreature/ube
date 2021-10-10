@@ -44,9 +44,9 @@ extern "C" {
 #define MSSIP_ADDINFO_BLOB 3
 #define MSSIP_ADDINFO_NONMSSIP 500
     __C89_NAMELESS union {
-      struct MS_ADDINFO_FLAT_ *psFlat;
-      struct MS_ADDINFO_CATALOGMEMBER_ *psCatMember;
-      struct MS_ADDINFO_BLOB_ *psBlob;
+                   struct MS_ADDINFO_FLAT_ *psFlat;
+                   struct MS_ADDINFO_CATALOGMEMBER_ *psCatMember;
+                   struct MS_ADDINFO_BLOB_ *psBlob;
     };
     LPVOID pClientData;
   } SIP_SUBJECTINFO,*LPSIP_SUBJECTINFO;

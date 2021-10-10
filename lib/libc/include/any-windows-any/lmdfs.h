@@ -206,29 +206,29 @@ typedef struct _DFS_SUPPORTED_NAMESPACE_VERSION_INFO {
 } DFS_SUPPORTED_NAMESPACE_VERSION_INFO, *PDFS_SUPPORTED_NAMESPACE_VERSION_INFO;
 
   typedef struct _DFS_INFO_8 {
-    LPWSTR               EntryPath;
-    LPWSTR               Comment;
-    DWORD                State;
-    ULONG                Timeout;
-    GUID                 Guid;
-    ULONG                PropertyFlags;
-    ULONG                MetadataSize;
-    ULONG                SdLengthReserved;
+    LPWSTR                                         EntryPath;
+    LPWSTR                                         Comment;
+    DWORD                                          State;
+    ULONG                                          Timeout;
+    GUID                                           Guid;
+    ULONG                                          PropertyFlags;
+    ULONG                                          MetadataSize;
+    ULONG                                          SdLengthReserved;
     PSECURITY_DESCRIPTOR pSecurityDescriptor;
-    DWORD                NumberOfStorages;
+    DWORD                                          NumberOfStorages;
   } DFS_INFO_8, *PDFS_INFO_8;
 
   typedef struct _DFS_INFO_9 {
-    LPWSTR               EntryPath;
-    LPWSTR               Comment;
-    DWORD                State;
-    ULONG                Timeout;
-    GUID                 Guid;
-    ULONG                PropertyFlags;
-    ULONG                MetadataSize;
-    ULONG                SdLengthReserved;
+    LPWSTR                                         EntryPath;
+    LPWSTR                                         Comment;
+    DWORD                                          State;
+    ULONG                                          Timeout;
+    GUID                                           Guid;
+    ULONG                                          PropertyFlags;
+    ULONG                                          MetadataSize;
+    ULONG                                          SdLengthReserved;
     PSECURITY_DESCRIPTOR pSecurityDescriptor;
-    DWORD                NumberOfStorages;
+    DWORD                                          NumberOfStorages;
     LPDFS_STORAGE_INFO_1 Storage;
   } DFS_INFO_9, *PDFS_INFO_9;
 
@@ -239,17 +239,17 @@ typedef struct _DFS_SUPPORTED_NAMESPACE_VERSION_INFO {
   } DFS_INFO_50, *PDFS_INFO_50;
 
   typedef struct _DFS_INFO_107 {
-    LPWSTR               Comment;
-    DWORD                State;
-    ULONG                Timeout;
-    ULONG                PropertyFlagMask;
-    ULONG                PropertyFlags;
-    ULONG                SdLengthReserved;
+    LPWSTR                                         Comment;
+    DWORD                                          State;
+    ULONG                                          Timeout;
+    ULONG                                          PropertyFlagMask;
+    ULONG                                          PropertyFlags;
+    ULONG                                          SdLengthReserved;
     PSECURITY_DESCRIPTOR pSecurityDescriptor;
   } DFS_INFO_107, *PDFS_INFO_107;
 
   typedef struct _DFS_INFO_150 {
-    ULONG                SdLengthReserved;
+    ULONG                                          SdLengthReserved;
     PSECURITY_DESCRIPTOR pSecurityDescriptor;
   } DFS_INFO_150, *PDFS_INFO_150;
 

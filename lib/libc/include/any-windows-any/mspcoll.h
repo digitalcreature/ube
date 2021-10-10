@@ -30,14 +30,14 @@ public:
     if(!m_Var) return E_OUTOFMEMORY;
     i = 0;
     for(iter = pBegin;iter!=pEnd;iter++) {
-      IDispatch *pDisp = NULL;
-      hr = (*iter)->QueryInterface(IID_IDispatch,(void**)&pDisp);
-      if(hr!=S_OK) return hr;
-      CComVariant& var = m_Var[i];
-      VariantInit(&var);
-      var.vt = VT_DISPATCH;
-      var.pdispVal = pDisp;
-      i++;
+                   IDispatch *pDisp = NULL;
+                   hr = (*iter)->QueryInterface(IID_IDispatch,(void**)&pDisp);
+                   if(hr!=S_OK) return hr;
+                   CComVariant& var = m_Var[i];
+                   VariantInit(&var);
+                   var.vt = VT_DISPATCH;
+                   var.pdispVal = pDisp;
+                   i++;
     }
     LOG((MSP_TRACE,"CTapiCollection::Initialize - exit"));
     return S_OK;
@@ -51,9 +51,9 @@ public:
     HRESULT hr = S_OK;
     LOG((MSP_TRACE,"CTapiCollection::get_Count - enter"));
     try {
-      *retval = m_nSize;
+                   *retval = m_nSize;
     } catch(...) {
-      hr = E_INVALIDARG;
+                   hr = E_INVALIDARG;
     }
     LOG((MSP_TRACE,"CTapiCollection::get_Count - exit"));
     return hr;
@@ -63,9 +63,9 @@ public:
     LOG((MSP_TRACE,"CTapiCollection::get_Item - enter"));
     if(!retval) return E_POINTER;
     try {
-      VariantInit(retval);
+                   VariantInit(retval);
     } catch(...) {
-      hr = E_INVALIDARG;
+                   hr = E_INVALIDARG;
     }
     if(hr!=S_OK) return hr;
     retval->vt = VT_UNKNOWN;
@@ -73,8 +73,8 @@ public:
     if((Index < 1) || (Index > m_nSize)) return E_INVALIDARG;
     hr = VariantCopy(retval,&m_Var[Index-1]);
     if(FAILED(hr)) {
-      LOG((MSP_ERROR,"CTapiCollection::get_Item - VariantCopy failed. hr = %lx",hr));
-      return hr;
+                   LOG((MSP_ERROR,"CTapiCollection::get_Item - VariantCopy failed. hr = %lx",hr));
+                   return hr;
     }
     LOG((MSP_TRACE,"CTapiCollection::get_Item - exit"));
     return S_OK;
@@ -117,10 +117,10 @@ public:
     m_Var = new CComVariant[m_dwSize];
     if(!m_Var) return E_OUTOFMEMORY;
     for(i = pBegin;i!=pEnd;i++) {
-      CComVariant& var = m_Var[dw];
-      var.vt = VT_BSTR;
-      var.bstrVal = *i;
-      dw++;
+                   CComVariant& var = m_Var[dw];
+                   var.vt = VT_BSTR;
+                   var.bstrVal = *i;
+                   dw++;
     }
     LOG((MSP_TRACE,"CTapiBstrCollection::Initialize - exit"));
     return S_OK;
@@ -129,9 +129,9 @@ public:
     HRESULT hr = S_OK;
     LOG((MSP_TRACE,"CTapiBstrCollection::get_Count - enter"));
     try {
-      *retval = m_dwSize;
+                   *retval = m_dwSize;
     } catch(...) {
-      hr = E_INVALIDARG;
+                   hr = E_INVALIDARG;
     }
     LOG((MSP_TRACE,"CTapiBstrCollection::get_Count - exit"));
     return hr;
@@ -141,9 +141,9 @@ public:
     LOG((MSP_TRACE,"CTapiBstrCollection::get_Item - enter"));
     if(!retval) return E_POINTER;
     try {
-      VariantInit(retval);
+                   VariantInit(retval);
     } catch(...) {
-      hr = E_INVALIDARG;
+                   hr = E_INVALIDARG;
     }
     if(hr!=S_OK) return hr;
     retval->vt = VT_BSTR;
@@ -151,8 +151,8 @@ public:
     if((Index < 1) || ((DWORD) Index > m_dwSize)) return E_INVALIDARG;
     hr = VariantCopy(retval,&m_Var[Index-1]);
     if(FAILED(hr)) {
-      LOG((MSP_ERROR,"CTapiBstrCollection::get_Item - VariantCopy failed. hr = %lx",hr));
-      return hr;
+                   LOG((MSP_ERROR,"CTapiBstrCollection::get_Item - VariantCopy failed. hr = %lx",hr));
+                   return hr;
     }
     LOG((MSP_TRACE,"CTapiBstrCollection::get_Item - exit"));
     return S_OK;
@@ -167,7 +167,7 @@ public:
     if(!p) return E_OUTOFMEMORY;
     hr = p->Init(&m_Var[0],&m_Var[m_dwSize],NULL,AtlFlagCopy);
     if(SUCCEEDED(hr)) {
-      hr = p->QueryInterface(IID_IEnumVARIANT,(void**)retval);
+                   hr = p->QueryInterface(IID_IEnumVARIANT,(void**)retval);
     }
     if(FAILED(hr)) delete p;
     LOG((MSP_TRACE,"CTapiBstrCollection::get__NewEnum - exit"));

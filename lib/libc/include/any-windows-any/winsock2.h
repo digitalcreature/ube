@@ -575,23 +575,23 @@ typedef unsigned int GROUP;
   typedef struct _WSACOMPLETION {
     WSACOMPLETIONTYPE Type;
     union {
-      struct {
+                   struct {
 	HWND hWnd;
 	UINT uMsg;
 	WPARAM context;
-      } WindowMessage;
-      struct {
+                   } WindowMessage;
+                   struct {
 	LPWSAOVERLAPPED lpOverlapped;
-      } Event;
-      struct {
+                   } Event;
+                   struct {
 	LPWSAOVERLAPPED lpOverlapped;
 	LPWSAOVERLAPPED_COMPLETION_ROUTINE lpfnCompletionProc;
-      } Apc;
-      struct {
+                   } Apc;
+                   struct {
 	LPWSAOVERLAPPED lpOverlapped;
 	HANDLE hPort;
 	ULONG_PTR Key;
-      } Port;
+                   } Port;
     } Parameters;
   } WSACOMPLETION,*PWSACOMPLETION,*LPWSACOMPLETION;
 
@@ -1136,37 +1136,37 @@ __MINGW_TYPEDEF_AW(PWSANAMESPACE_INFOEX)
 __MINGW_TYPEDEF_AW(LPWSANAMESPACE_INFOEX)
 
 typedef struct _WSAQUERYSET2A {
-  DWORD         dwSize;
-  LPSTR         lpszServiceInstanceName;
+  DWORD                      dwSize;
+  LPSTR                      lpszServiceInstanceName;
   LPWSAVERSION  lpVersion;
-  LPSTR         lpszComment;
-  DWORD         dwNameSpace;
-  LPGUID        lpNSProviderId;
-  LPSTR         lpszContext;
-  DWORD         dwNumberOfProtocols;
+  LPSTR                      lpszComment;
+  DWORD                      dwNameSpace;
+  LPGUID                     lpNSProviderId;
+  LPSTR                      lpszContext;
+  DWORD                      dwNumberOfProtocols;
   LPAFPROTOCOLS lpafpProtocols;
-  LPSTR         lpszQueryString;
-  DWORD         dwNumberOfCsAddrs;
+  LPSTR                      lpszQueryString;
+  DWORD                      dwNumberOfCsAddrs;
   LPCSADDR_INFO lpcsaBuffer;
-  DWORD         dwOutputFlags;
-  LPBLOB        lpBlob;
+  DWORD                      dwOutputFlags;
+  LPBLOB                     lpBlob;
 } WSAQUERYSET2A, *PWSAQUERYSET2A, *LPWSAQUERYSET2A;
 
 typedef struct _WSAQUERYSET2W {
-  DWORD         dwSize;
-  LPWSTR        lpszServiceInstanceName;
+  DWORD                      dwSize;
+  LPWSTR                     lpszServiceInstanceName;
   LPWSAVERSION  lpVersion;
-  LPWSTR        lpszComment;
-  DWORD         dwNameSpace;
-  LPGUID        lpNSProviderId;
-  LPTSTR        lpszContext;
-  DWORD         dwNumberOfProtocols;
+  LPWSTR                     lpszComment;
+  DWORD                      dwNameSpace;
+  LPGUID                     lpNSProviderId;
+  LPTSTR                     lpszContext;
+  DWORD                      dwNumberOfProtocols;
   LPAFPROTOCOLS lpafpProtocols;
-  LPWSTR        lpszQueryString;
-  DWORD         dwNumberOfCsAddrs;
+  LPWSTR                     lpszQueryString;
+  DWORD                      dwNumberOfCsAddrs;
   LPCSADDR_INFO lpcsaBuffer;
-  DWORD         dwOutputFlags;
-  LPBLOB        lpBlob;
+  DWORD                      dwOutputFlags;
+  LPBLOB                     lpBlob;
 } WSAQUERYSET2W, *PWSAQUERYSET2W, *LPWSAQUERYSET2W;
 
 #define POLLRDNORM 0x0100

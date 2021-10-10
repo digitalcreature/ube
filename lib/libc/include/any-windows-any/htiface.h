@@ -103,23 +103,23 @@ extern "C"{
 #else
   typedef struct ITargetFrameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITargetFrame *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITargetFrame *This);
-      ULONG (WINAPI *Release)(ITargetFrame *This);
-      HRESULT (WINAPI *SetFrameName)(ITargetFrame *This,LPCWSTR pszFrameName);
-      HRESULT (WINAPI *GetFrameName)(ITargetFrame *This,LPWSTR *ppszFrameName);
-      HRESULT (WINAPI *GetParentFrame)(ITargetFrame *This,IUnknown **ppunkParent);
-      HRESULT (WINAPI *FindFrame)(ITargetFrame *This,LPCWSTR pszTargetName,IUnknown *ppunkContextFrame,DWORD dwFlags,IUnknown **ppunkTargetFrame);
-      HRESULT (WINAPI *SetFrameSrc)(ITargetFrame *This,LPCWSTR pszFrameSrc);
-      HRESULT (WINAPI *GetFrameSrc)(ITargetFrame *This,LPWSTR *ppszFrameSrc);
-      HRESULT (WINAPI *GetFramesContainer)(ITargetFrame *This,IOleContainer **ppContainer);
-      HRESULT (WINAPI *SetFrameOptions)(ITargetFrame *This,DWORD dwFlags);
-      HRESULT (WINAPI *GetFrameOptions)(ITargetFrame *This,DWORD *pdwFlags);
-      HRESULT (WINAPI *SetFrameMargins)(ITargetFrame *This,DWORD dwWidth,DWORD dwHeight);
-      HRESULT (WINAPI *GetFrameMargins)(ITargetFrame *This,DWORD *pdwWidth,DWORD *pdwHeight);
-      HRESULT (WINAPI *RemoteNavigate)(ITargetFrame *This,ULONG cLength,ULONG *pulData);
-      HRESULT (WINAPI *OnChildFrameActivate)(ITargetFrame *This,IUnknown *pUnkChildFrame);
-      HRESULT (WINAPI *OnChildFrameDeactivate)(ITargetFrame *This,IUnknown *pUnkChildFrame);
+                   HRESULT (WINAPI *QueryInterface)(ITargetFrame *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITargetFrame *This);
+                   ULONG (WINAPI *Release)(ITargetFrame *This);
+                   HRESULT (WINAPI *SetFrameName)(ITargetFrame *This,LPCWSTR pszFrameName);
+                   HRESULT (WINAPI *GetFrameName)(ITargetFrame *This,LPWSTR *ppszFrameName);
+                   HRESULT (WINAPI *GetParentFrame)(ITargetFrame *This,IUnknown **ppunkParent);
+                   HRESULT (WINAPI *FindFrame)(ITargetFrame *This,LPCWSTR pszTargetName,IUnknown *ppunkContextFrame,DWORD dwFlags,IUnknown **ppunkTargetFrame);
+                   HRESULT (WINAPI *SetFrameSrc)(ITargetFrame *This,LPCWSTR pszFrameSrc);
+                   HRESULT (WINAPI *GetFrameSrc)(ITargetFrame *This,LPWSTR *ppszFrameSrc);
+                   HRESULT (WINAPI *GetFramesContainer)(ITargetFrame *This,IOleContainer **ppContainer);
+                   HRESULT (WINAPI *SetFrameOptions)(ITargetFrame *This,DWORD dwFlags);
+                   HRESULT (WINAPI *GetFrameOptions)(ITargetFrame *This,DWORD *pdwFlags);
+                   HRESULT (WINAPI *SetFrameMargins)(ITargetFrame *This,DWORD dwWidth,DWORD dwHeight);
+                   HRESULT (WINAPI *GetFrameMargins)(ITargetFrame *This,DWORD *pdwWidth,DWORD *pdwHeight);
+                   HRESULT (WINAPI *RemoteNavigate)(ITargetFrame *This,ULONG cLength,ULONG *pulData);
+                   HRESULT (WINAPI *OnChildFrameActivate)(ITargetFrame *This,IUnknown *pUnkChildFrame);
+                   HRESULT (WINAPI *OnChildFrameDeactivate)(ITargetFrame *This,IUnknown *pUnkChildFrame);
     END_INTERFACE
   } ITargetFrameVtbl;
   struct ITargetFrame {
@@ -188,10 +188,10 @@ extern "C"{
 #else
   typedef struct ITargetEmbeddingVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITargetEmbedding *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITargetEmbedding *This);
-      ULONG (WINAPI *Release)(ITargetEmbedding *This);
-      HRESULT (WINAPI *GetTargetFrame)(ITargetEmbedding *This,ITargetFrame **ppTargetFrame);
+                   HRESULT (WINAPI *QueryInterface)(ITargetEmbedding *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITargetEmbedding *This);
+                   ULONG (WINAPI *Release)(ITargetEmbedding *This);
+                   HRESULT (WINAPI *GetTargetFrame)(ITargetEmbedding *This,ITargetFrame **ppTargetFrame);
     END_INTERFACE
   } ITargetEmbeddingVtbl;
   struct ITargetEmbedding {
@@ -227,15 +227,15 @@ extern "C"{
 #else
   typedef struct ITargetFramePrivVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITargetFramePriv *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITargetFramePriv *This);
-      ULONG (WINAPI *Release)(ITargetFramePriv *This);
-      HRESULT (WINAPI *FindFrameDownwards)(ITargetFramePriv *This,LPCWSTR pszTargetName,DWORD dwFlags,IUnknown **ppunkTargetFrame);
-      HRESULT (WINAPI *FindFrameInContext)(ITargetFramePriv *This,LPCWSTR pszTargetName,IUnknown *punkContextFrame,DWORD dwFlags,IUnknown **ppunkTargetFrame);
-      HRESULT (WINAPI *OnChildFrameActivate)(ITargetFramePriv *This,IUnknown *pUnkChildFrame);
-      HRESULT (WINAPI *OnChildFrameDeactivate)(ITargetFramePriv *This,IUnknown *pUnkChildFrame);
-      HRESULT (WINAPI *NavigateHack)(ITargetFramePriv *This,DWORD grfHLNF,LPBC pbc,IBindStatusCallback *pibsc,LPCWSTR pszTargetName,LPCWSTR pszUrl,LPCWSTR pszLocation);
-      HRESULT (WINAPI *FindBrowserByIndex)(ITargetFramePriv *This,DWORD dwID,IUnknown **ppunkBrowser);
+                   HRESULT (WINAPI *QueryInterface)(ITargetFramePriv *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITargetFramePriv *This);
+                   ULONG (WINAPI *Release)(ITargetFramePriv *This);
+                   HRESULT (WINAPI *FindFrameDownwards)(ITargetFramePriv *This,LPCWSTR pszTargetName,DWORD dwFlags,IUnknown **ppunkTargetFrame);
+                   HRESULT (WINAPI *FindFrameInContext)(ITargetFramePriv *This,LPCWSTR pszTargetName,IUnknown *punkContextFrame,DWORD dwFlags,IUnknown **ppunkTargetFrame);
+                   HRESULT (WINAPI *OnChildFrameActivate)(ITargetFramePriv *This,IUnknown *pUnkChildFrame);
+                   HRESULT (WINAPI *OnChildFrameDeactivate)(ITargetFramePriv *This,IUnknown *pUnkChildFrame);
+                   HRESULT (WINAPI *NavigateHack)(ITargetFramePriv *This,DWORD grfHLNF,LPBC pbc,IBindStatusCallback *pibsc,LPCWSTR pszTargetName,LPCWSTR pszUrl,LPCWSTR pszLocation);
+                   HRESULT (WINAPI *FindBrowserByIndex)(ITargetFramePriv *This,DWORD dwID,IUnknown **ppunkBrowser);
     END_INTERFACE
   } ITargetFramePrivVtbl;
   struct ITargetFramePriv {

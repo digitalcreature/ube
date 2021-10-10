@@ -204,19 +204,19 @@ extern "C"{
   typedef struct _ADDRESS2 {
     DWORD Type;
     __C89_NAMELESS union {
-      BYTE MACAddress[MAC_ADDRESS_SIZE];
-      BYTE IPAddress[IP_ADDRESS_SIZE];
-      BYTE IP6Address[IP6_ADDRESS_SIZE];
-      BYTE IPXRawAddress[IPX_ADDR_SIZE];
-      IPX_ADDR IPXAddress;
-      BYTE VinesIPRawAddress[VINES_IP_ADDRESS_SIZE];
-      VINES_IP_ADDRESS VinesIPAddress;
-      ETHERNET_SRC_ADDRESS EthernetSrcAddress;
-      ETHERNET_DST_ADDRESS EthernetDstAddress;
-      TOKENRING_SRC_ADDRESS TokenringSrcAddress;
-      TOKENRING_DST_ADDRESS TokenringDstAddress;
-      FDDI_SRC_ADDRESS FddiSrcAddress;
-      FDDI_DST_ADDRESS FddiDstAddress;
+                   BYTE MACAddress[MAC_ADDRESS_SIZE];
+                   BYTE IPAddress[IP_ADDRESS_SIZE];
+                   BYTE IP6Address[IP6_ADDRESS_SIZE];
+                   BYTE IPXRawAddress[IPX_ADDR_SIZE];
+                   IPX_ADDR IPXAddress;
+                   BYTE VinesIPRawAddress[VINES_IP_ADDRESS_SIZE];
+                   VINES_IP_ADDRESS VinesIPAddress;
+                   ETHERNET_SRC_ADDRESS EthernetSrcAddress;
+                   ETHERNET_DST_ADDRESS EthernetDstAddress;
+                   TOKENRING_SRC_ADDRESS TokenringSrcAddress;
+                   TOKENRING_DST_ADDRESS TokenringDstAddress;
+                   FDDI_SRC_ADDRESS FddiSrcAddress;
+                   FDDI_DST_ADDRESS FddiDstAddress;
     };
     WORD Flags;
   } ADDRESS2;
@@ -423,9 +423,9 @@ extern "C"{
     BYTE LowProtocol;
     WORD LowProtocolOffset;
     union {
-      WORD Reserved;
-      BYTE IPPort;
-      WORD ByteSwappedIPXPort;
+                   WORD Reserved;
+                   BYTE IPPort;
+                   WORD ByteSwappedIPXPort;
     } HighPort;
     WORD HighProtocolOffset;
   } FRAME_DESCRIPTOR;
@@ -573,10 +573,10 @@ extern "C"{
     DWORD_PTR lpReserved;
     UINT FramesDropped;
     __C89_NAMELESS union {
-      DWORD Reserved;
-      LPFRAMETABLE lpFrameTable;
-      DWORD_PTR lpPacketQueue;
-      SECURITY_PERMISSION_RESPONSE SecurityResponse;
+                   DWORD Reserved;
+                   LPFRAMETABLE lpFrameTable;
+                   DWORD_PTR lpPacketQueue;
+                   SECURITY_PERMISSION_RESPONSE SecurityResponse;
     };
     LPSTATISTICS lpFinalStats;
   } UPDATE_EVENT;
@@ -659,8 +659,8 @@ extern "C"{
 #pragma pack(push,1)
   typedef struct _CAPTUREFILE_HEADER {
     __C89_NAMELESS union {
-      CAPTUREFILE_HEADER_VALUES ActualHeader;
-      BYTE Buffer[72];
+                   CAPTUREFILE_HEADER_VALUES ActualHeader;
+                   BYTE Buffer[72];
     };
     BYTE Reserved[56];
   } CAPTUREFILE_HEADER;
@@ -807,18 +807,18 @@ extern "C"{
   typedef struct _ADDRESS {
     DWORD Type;
     __C89_NAMELESS union {
-      BYTE MACAddress[MAC_ADDRESS_SIZE];
-      BYTE IPAddress[IP_ADDRESS_SIZE];
-      BYTE IPXRawAddress[IPX_ADDR_SIZE];
-      IPX_ADDR IPXAddress;
-      BYTE VinesIPRawAddress[VINES_IP_ADDRESS_SIZE];
-      VINES_IP_ADDRESS VinesIPAddress;
-      ETHERNET_SRC_ADDRESS EthernetSrcAddress;
-      ETHERNET_DST_ADDRESS EthernetDstAddress;
-      TOKENRING_SRC_ADDRESS TokenringSrcAddress;
-      TOKENRING_DST_ADDRESS TokenringDstAddress;
-      FDDI_SRC_ADDRESS FddiSrcAddress;
-      FDDI_DST_ADDRESS FddiDstAddress;
+                   BYTE MACAddress[MAC_ADDRESS_SIZE];
+                   BYTE IPAddress[IP_ADDRESS_SIZE];
+                   BYTE IPXRawAddress[IPX_ADDR_SIZE];
+                   IPX_ADDR IPXAddress;
+                   BYTE VinesIPRawAddress[VINES_IP_ADDRESS_SIZE];
+                   VINES_IP_ADDRESS VinesIPAddress;
+                   ETHERNET_SRC_ADDRESS EthernetSrcAddress;
+                   ETHERNET_DST_ADDRESS EthernetDstAddress;
+                   TOKENRING_SRC_ADDRESS TokenringSrcAddress;
+                   TOKENRING_DST_ADDRESS TokenringDstAddress;
+                   FDDI_SRC_ADDRESS FddiSrcAddress;
+                   FDDI_DST_ADDRESS FddiDstAddress;
     };
     WORD Flags;
   } ADDRESS;
@@ -886,22 +886,22 @@ extern "C"{
   typedef struct _NMCOLUMNVARIANT {
     NMCOLUMNTYPE Type;
     union {
-      BYTE Uint8Val;
-      char Sint8Val;
-      WORD Uint16Val;
-      short Sint16Val;
-      DWORD Uint32Val;
-      __LONG32 Sint32Val;
-      DOUBLE Float64Val;
-      DWORD FrameVal;
-      WINBOOL YesNoVal;
-      WINBOOL OnOffVal;
-      WINBOOL TrueFalseVal;
-      BYTE MACAddrVal[6];
-      IPX_ADDR IPXAddrVal;
-      DWORD IPAddrVal;
-      DOUBLE VarTimeVal;
-      LPCSTR pStringVal;
+                   BYTE Uint8Val;
+                   char Sint8Val;
+                   WORD Uint16Val;
+                   short Sint16Val;
+                   DWORD Uint32Val;
+                   __LONG32 Sint32Val;
+                   DOUBLE Float64Val;
+                   DWORD FrameVal;
+                   WINBOOL YesNoVal;
+                   WINBOOL OnOffVal;
+                   WINBOOL TrueFalseVal;
+                   BYTE MACAddrVal[6];
+                   IPX_ADDR IPXAddrVal;
+                   DWORD IPAddrVal;
+                   DOUBLE VarTimeVal;
+                   LPCSTR pStringVal;
     } Value;
   } NMCOLUMNVARIANT;
 
@@ -1252,18 +1252,18 @@ extern "C"{
   typedef struct _SET {
     DWORD nEntries;
     __C89_NAMELESS union {
-      LPVOID lpVoidTable;
-      LPBYTE lpByteTable;
-      LPWORD lpWordTable;
-      LPDWORD lpDwordTable;
-      LPLARGEINT lpLargeIntTable;
-      LPSYSTEMTIME lpSystemTimeTable;
-      LPLABELED_BYTE lpLabeledByteTable;
-      LPLABELED_WORD lpLabeledWordTable;
-      LPLABELED_DWORD lpLabeledDwordTable;
-      LPLABELED_LARGEINT lpLabeledLargeIntTable;
-      LPLABELED_SYSTEMTIME lpLabeledSystemTimeTable;
-      LPLABELED_BIT lpLabeledBit;
+                   LPVOID lpVoidTable;
+                   LPBYTE lpByteTable;
+                   LPWORD lpWordTable;
+                   LPDWORD lpDwordTable;
+                   LPLARGEINT lpLargeIntTable;
+                   LPSYSTEMTIME lpSystemTimeTable;
+                   LPLABELED_BYTE lpLabeledByteTable;
+                   LPLABELED_WORD lpLabeledWordTable;
+                   LPLABELED_DWORD lpLabeledDwordTable;
+                   LPLABELED_LARGEINT lpLabeledLargeIntTable;
+                   LPLABELED_SYSTEMTIME lpLabeledSystemTimeTable;
+                   LPLABELED_BIT lpLabeledBit;
     };
   } SET;
 
@@ -1300,11 +1300,11 @@ extern "C"{
     BYTE DataType;
     BYTE DataQualifier;
     __C89_NAMELESS union {
-      LPVOID lpExtendedInfo;
-      LPRANGE lpRange;
-      LPSET lpSet;
-      DWORD Bitmask;
-      DWORD Value;
+                   LPVOID lpExtendedInfo;
+                   LPRANGE lpRange;
+                   LPSET lpSet;
+                   DWORD Bitmask;
+                   DWORD Value;
     };
     WORD FormatStringSize;
     LPVOID InstanceData;
@@ -1319,12 +1319,12 @@ extern "C"{
     WORD LengthEx;
     ULPVOID lpData;
     __C89_NAMELESS union {
-      BYTE Byte[1];
-      WORD Word[1];
-      DWORD Dword[1];
-      LARGE_INTEGER LargeInt[1];
-      SYSTEMTIME SysTime[1];
-      TYPED_STRING TypedString;
+                   BYTE Byte[1];
+                   WORD Word[1];
+                   DWORD Dword[1];
+                   LARGE_INTEGER LargeInt[1];
+                   SYSTEMTIME SysTime[1];
+                   TYPED_STRING TypedString;
     };
   } PROPERTYINSTEX;
   typedef PROPERTYINSTEX *LPPROPERTYINSTEX;
@@ -1336,13 +1336,13 @@ extern "C"{
     LPPROPERTYINFO lpPropertyInfo;
     LPSTR szPropertyText;
     __C89_NAMELESS union {
-      LPVOID lpData;
-      ULPBYTE lpByte;
-      ULPWORD lpWord;
-      ULPDWORD lpDword;
-      ULPLARGEINT lpLargeInt;
-      ULPSYSTEMTIME lpSysTime;
-      LPPROPERTYINSTEX lpPropertyInstEx;
+                   LPVOID lpData;
+                   ULPBYTE lpByte;
+                   ULPWORD lpWord;
+                   ULPDWORD lpDword;
+                   ULPLARGEINT lpLargeInt;
+                   ULPSYSTEMTIME lpSysTime;
+                   LPPROPERTYINSTEX lpPropertyInstEx;
     };
     WORD DataLength;
     WORD Level : 4;
@@ -1646,18 +1646,18 @@ extern "C"{
     FILTERACTIONTYPE Action;
     HPROPERTY hProperty;
     __C89_NAMELESS union {
-      VALUETYPE Value;
-      HPROTOCOL hProtocol;
-      LPVOID lpArray;
-      LPPROTOCOLTABLETYPE lpProtocolTable;
-      LPADDRESS2 lpAddress;
-      ULPLARGEINT lpLargeInt;
-      ULPTIME lpTime;
-      LPOBJECT_IDENTIFIER lpOID;
+                   VALUETYPE Value;
+                   HPROTOCOL hProtocol;
+                   LPVOID lpArray;
+                   LPPROTOCOLTABLETYPE lpProtocolTable;
+                   LPADDRESS2 lpAddress;
+                   ULPLARGEINT lpLargeInt;
+                   ULPTIME lpTime;
+                   LPOBJECT_IDENTIFIER lpOID;
     };
     __C89_NAMELESS union {
-      WORD ByteCount;
-      WORD ByteOffset;
+                   WORD ByteCount;
+                   WORD ByteOffset;
     };
     struct _FILTEROBJECT2 *pNext;
   } FILTEROBJECT2;
@@ -1684,18 +1684,18 @@ extern "C"{
     FILTERACTIONTYPE Action;
     HPROPERTY hProperty;
     __C89_NAMELESS union {
-      VALUETYPE Value;
-      HPROTOCOL hProtocol;
-      LPVOID lpArray;
-      LPPROTOCOLTABLETYPE lpProtocolTable;
-      LPADDRESS lpAddress;
-      ULPLARGEINT lpLargeInt;
-      ULPTIME lpTime;
-      LPOBJECT_IDENTIFIER lpOID;
+                   VALUETYPE Value;
+                   HPROTOCOL hProtocol;
+                   LPVOID lpArray;
+                   LPPROTOCOLTABLETYPE lpProtocolTable;
+                   LPADDRESS lpAddress;
+                   ULPLARGEINT lpLargeInt;
+                   ULPTIME lpTime;
+                   LPOBJECT_IDENTIFIER lpOID;
     };
     __C89_NAMELESS union {
-      WORD ByteCount;
-      WORD ByteOffset;
+                   WORD ByteCount;
+                   WORD ByteOffset;
     };
     struct _FILTEROBJECT *pNext;
   } FILTEROBJECT;
@@ -1804,8 +1804,8 @@ extern "C"{
     BYTE DstAddr[MAX_ADDR_LENGTH];
     BYTE SrcAddr[MAX_ADDR_LENGTH];
     __C89_NAMELESS union {
-      WORD Length;
-      WORD Type;
+                   WORD Length;
+                   WORD Type;
     };
     BYTE Info[0];
   } ETHERNET;
@@ -1851,8 +1851,8 @@ extern "C"{
     BYTE DstAddr[MAX_ADDR_LENGTH];
     BYTE SrcAddr[MAX_ADDR_LENGTH];
     __C89_NAMELESS union {
-      BYTE Info[0];
-      WORD RoutingInfo[0];
+                   BYTE Info[0];
+                   WORD RoutingInfo[0];
     };
   } TOKENRING;
 
@@ -1900,14 +1900,14 @@ extern "C"{
     BYTE dsap;
     BYTE ssap;
     struct {
-      __C89_NAMELESS union {
+                   __C89_NAMELESS union {
 	BYTE Command;
 	BYTE NextSend;
-      };
-      __C89_NAMELESS union {
+                   };
+                   __C89_NAMELESS union {
 	BYTE NextRecv;
 	BYTE Data[1];
-      };
+                   };
     } ControlField;
   } LLC;
 
@@ -1981,7 +1981,7 @@ extern "C"{
 
   INLINE DWORD GetPropertyInstanceExDataLength(LPPROPERTYINST PropertyInst) {
     if(PropertyInst->DataLength==(WORD) -1) {
-      PropertyInst->lpPropertyInstEx->Length;
+                   PropertyInst->lpPropertyInstEx->Length;
     }
     return (WORD) -1;
   }
@@ -2163,8 +2163,8 @@ extern "C"{
     HPROTOCOL hProtocol;
     LPPROPERTYINST lpPropertyInst;
     struct {
-      BYTE BitNumber;
-      WINBOOL bOn;
+                   BYTE BitNumber;
+                   WINBOOL bOn;
     } sBitfield;
   } EXPERTSTARTUPINFO;
 
@@ -2452,15 +2452,15 @@ extern "C"{
 
   typedef struct _IP {
     __C89_NAMELESS union {
-      BYTE Version;
-      BYTE HdrLen;
+                   BYTE Version;
+                   BYTE HdrLen;
     };
     BYTE ServiceType;
     WORD TotalLen;
     WORD ID;
     __C89_NAMELESS union {
-      WORD Flags;
-      WORD FragOff;
+                   WORD Flags;
+                   WORD FragOff;
     };
     BYTE TimeToLive;
     BYTE Protocol;
@@ -2771,16 +2771,16 @@ extern "C"{
     BYTE Code;
     WORD Checksum;
     __C89_NAMELESS union {
-      DWORD Unused;
-      DWORD Address;
-      ReqReply RR;
-      ParmProb PP;
-      RouterAH RAH;
+                   DWORD Unused;
+                   DWORD Address;
+                   ReqReply RR;
+                   ParmProb PP;
+                   RouterAH RAH;
     };
     __C89_NAMELESS union {
-      TS Time;
-      IP IP;
-      RouterAE RAE[0];
+                   TS Time;
+                   IP IP;
+                   RouterAE RAE[0];
     };
   } ICMP;
 
@@ -2918,22 +2918,22 @@ extern "C"{
 #else
   typedef struct IDelaydCVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDelaydC *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDelaydC *This);
-      ULONG (WINAPI *Release)(IDelaydC *This);
-      HRESULT (WINAPI *Connect)(IDelaydC *This,HBLOB hInputBlob,LPVOID StatusCallbackProc,LPVOID UserContext,HBLOB hErrorBlob);
-      HRESULT (WINAPI *Disconnect)(IDelaydC *This);
-      HRESULT (WINAPI *QueryStatus)(IDelaydC *This,NETWORKSTATUS *pNetworkStatus);
-      HRESULT (WINAPI *Configure)(IDelaydC *This,HBLOB hConfigurationBlob,HBLOB hErrorBlob);
-      HRESULT (WINAPI *Start)(IDelaydC *This,char *pFileName);
-      HRESULT (WINAPI *Pause)(IDelaydC *This);
-      HRESULT (WINAPI *Resume)(IDelaydC *This);
-      HRESULT (WINAPI *Stop)(IDelaydC *This,LPSTATISTICS lpStats);
-      HRESULT (WINAPI *GetControlState)(IDelaydC *This,WINBOOL *IsRunnning,WINBOOL *IsPaused);
-      HRESULT (WINAPI *GetTotalStatistics)(IDelaydC *This,LPSTATISTICS lpStats,WINBOOL fClearAfterReading);
-      HRESULT (WINAPI *GetConversationStatistics)(IDelaydC *This,DWORD *nSessions,LPSESSIONSTATS lpSessionStats,DWORD *nStations,LPSTATIONSTATS lpStationStats,WINBOOL fClearAfterReading);
-      HRESULT (WINAPI *InsertSpecialFrame)(IDelaydC *This,DWORD FrameType,DWORD Flags,BYTE *pUserData,DWORD UserDataLength);
-      HRESULT (WINAPI *QueryStations)(IDelaydC *This,QUERYTABLE *lpQueryTable);
+                   HRESULT (WINAPI *QueryInterface)(IDelaydC *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDelaydC *This);
+                   ULONG (WINAPI *Release)(IDelaydC *This);
+                   HRESULT (WINAPI *Connect)(IDelaydC *This,HBLOB hInputBlob,LPVOID StatusCallbackProc,LPVOID UserContext,HBLOB hErrorBlob);
+                   HRESULT (WINAPI *Disconnect)(IDelaydC *This);
+                   HRESULT (WINAPI *QueryStatus)(IDelaydC *This,NETWORKSTATUS *pNetworkStatus);
+                   HRESULT (WINAPI *Configure)(IDelaydC *This,HBLOB hConfigurationBlob,HBLOB hErrorBlob);
+                   HRESULT (WINAPI *Start)(IDelaydC *This,char *pFileName);
+                   HRESULT (WINAPI *Pause)(IDelaydC *This);
+                   HRESULT (WINAPI *Resume)(IDelaydC *This);
+                   HRESULT (WINAPI *Stop)(IDelaydC *This,LPSTATISTICS lpStats);
+                   HRESULT (WINAPI *GetControlState)(IDelaydC *This,WINBOOL *IsRunnning,WINBOOL *IsPaused);
+                   HRESULT (WINAPI *GetTotalStatistics)(IDelaydC *This,LPSTATISTICS lpStats,WINBOOL fClearAfterReading);
+                   HRESULT (WINAPI *GetConversationStatistics)(IDelaydC *This,DWORD *nSessions,LPSESSIONSTATS lpSessionStats,DWORD *nStations,LPSTATIONSTATS lpStationStats,WINBOOL fClearAfterReading);
+                   HRESULT (WINAPI *InsertSpecialFrame)(IDelaydC *This,DWORD FrameType,DWORD Flags,BYTE *pUserData,DWORD UserDataLength);
+                   HRESULT (WINAPI *QueryStations)(IDelaydC *This,QUERYTABLE *lpQueryTable);
     END_INTERFACE
   } IDelaydCVtbl;
   struct IDelaydC {
@@ -3014,22 +3014,22 @@ extern "C"{
 #else
   typedef struct IRTCVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRTC *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRTC *This);
-      ULONG (WINAPI *Release)(IRTC *This);
-      HRESULT (WINAPI *Connect)(IRTC *This,HBLOB hInputBlob,LPVOID StatusCallbackProc,LPVOID FramesCallbackProc,LPVOID UserContext,HBLOB hErrorBlob);
-      HRESULT (WINAPI *Disconnect)(IRTC *This);
-      HRESULT (WINAPI *QueryStatus)(IRTC *This,NETWORKSTATUS *pNetworkStatus);
-      HRESULT (WINAPI *Configure)(IRTC *This,HBLOB hConfigurationBlob,HBLOB hErrorBlob);
-      HRESULT (WINAPI *Start)(IRTC *This);
-      HRESULT (WINAPI *Pause)(IRTC *This);
-      HRESULT (WINAPI *Resume)(IRTC *This);
-      HRESULT (WINAPI *Stop)(IRTC *This);
-      HRESULT (WINAPI *GetControlState)(IRTC *This,WINBOOL *IsRunnning,WINBOOL *IsPaused);
-      HRESULT (WINAPI *GetTotalStatistics)(IRTC *This,LPSTATISTICS lpStats,WINBOOL fClearAfterReading);
-      HRESULT (WINAPI *GetConversationStatistics)(IRTC *This,DWORD *nSessions,LPSESSIONSTATS lpSessionStats,DWORD *nStations,LPSTATIONSTATS lpStationStats,WINBOOL fClearAfterReading);
-      HRESULT (WINAPI *InsertSpecialFrame)(IRTC *This,DWORD FrameType,DWORD Flags,BYTE *pUserData,DWORD UserDataLength);
-      HRESULT (WINAPI *QueryStations)(IRTC *This,QUERYTABLE *lpQueryTable);
+                   HRESULT (WINAPI *QueryInterface)(IRTC *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRTC *This);
+                   ULONG (WINAPI *Release)(IRTC *This);
+                   HRESULT (WINAPI *Connect)(IRTC *This,HBLOB hInputBlob,LPVOID StatusCallbackProc,LPVOID FramesCallbackProc,LPVOID UserContext,HBLOB hErrorBlob);
+                   HRESULT (WINAPI *Disconnect)(IRTC *This);
+                   HRESULT (WINAPI *QueryStatus)(IRTC *This,NETWORKSTATUS *pNetworkStatus);
+                   HRESULT (WINAPI *Configure)(IRTC *This,HBLOB hConfigurationBlob,HBLOB hErrorBlob);
+                   HRESULT (WINAPI *Start)(IRTC *This);
+                   HRESULT (WINAPI *Pause)(IRTC *This);
+                   HRESULT (WINAPI *Resume)(IRTC *This);
+                   HRESULT (WINAPI *Stop)(IRTC *This);
+                   HRESULT (WINAPI *GetControlState)(IRTC *This,WINBOOL *IsRunnning,WINBOOL *IsPaused);
+                   HRESULT (WINAPI *GetTotalStatistics)(IRTC *This,LPSTATISTICS lpStats,WINBOOL fClearAfterReading);
+                   HRESULT (WINAPI *GetConversationStatistics)(IRTC *This,DWORD *nSessions,LPSESSIONSTATS lpSessionStats,DWORD *nStations,LPSTATIONSTATS lpStationStats,WINBOOL fClearAfterReading);
+                   HRESULT (WINAPI *InsertSpecialFrame)(IRTC *This,DWORD FrameType,DWORD Flags,BYTE *pUserData,DWORD UserDataLength);
+                   HRESULT (WINAPI *QueryStations)(IRTC *This,QUERYTABLE *lpQueryTable);
     END_INTERFACE
   } IRTCVtbl;
   struct IRTC {
@@ -3108,22 +3108,22 @@ extern "C"{
 #else
   typedef struct IStatsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IStats *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IStats *This);
-      ULONG (WINAPI *Release)(IStats *This);
-      HRESULT (WINAPI *Connect)(IStats *This,HBLOB hInputBlob,LPVOID StatusCallbackProc,LPVOID UserContext,HBLOB hErrorBlob);
-      HRESULT (WINAPI *Disconnect)(IStats *This);
-      HRESULT (WINAPI *QueryStatus)(IStats *This,NETWORKSTATUS *pNetworkStatus);
-      HRESULT (WINAPI *Configure)(IStats *This,HBLOB hConfigurationBlob,HBLOB hErrorBlob);
-      HRESULT (WINAPI *Start)(IStats *This);
-      HRESULT (WINAPI *Pause)(IStats *This);
-      HRESULT (WINAPI *Resume)(IStats *This);
-      HRESULT (WINAPI *Stop)(IStats *This);
-      HRESULT (WINAPI *GetControlState)(IStats *This,WINBOOL *IsRunnning,WINBOOL *IsPaused);
-      HRESULT (WINAPI *GetTotalStatistics)(IStats *This,LPSTATISTICS lpStats,WINBOOL fClearAfterReading);
-      HRESULT (WINAPI *GetConversationStatistics)(IStats *This,DWORD *nSessions,LPSESSIONSTATS lpSessionStats,DWORD *nStations,LPSTATIONSTATS lpStationStats,WINBOOL fClearAfterReading);
-      HRESULT (WINAPI *InsertSpecialFrame)(IStats *This,DWORD FrameType,DWORD Flags,BYTE *pUserData,DWORD UserDataLength);
-      HRESULT (WINAPI *QueryStations)(IStats *This,QUERYTABLE *lpQueryTable);
+                   HRESULT (WINAPI *QueryInterface)(IStats *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IStats *This);
+                   ULONG (WINAPI *Release)(IStats *This);
+                   HRESULT (WINAPI *Connect)(IStats *This,HBLOB hInputBlob,LPVOID StatusCallbackProc,LPVOID UserContext,HBLOB hErrorBlob);
+                   HRESULT (WINAPI *Disconnect)(IStats *This);
+                   HRESULT (WINAPI *QueryStatus)(IStats *This,NETWORKSTATUS *pNetworkStatus);
+                   HRESULT (WINAPI *Configure)(IStats *This,HBLOB hConfigurationBlob,HBLOB hErrorBlob);
+                   HRESULT (WINAPI *Start)(IStats *This);
+                   HRESULT (WINAPI *Pause)(IStats *This);
+                   HRESULT (WINAPI *Resume)(IStats *This);
+                   HRESULT (WINAPI *Stop)(IStats *This);
+                   HRESULT (WINAPI *GetControlState)(IStats *This,WINBOOL *IsRunnning,WINBOOL *IsPaused);
+                   HRESULT (WINAPI *GetTotalStatistics)(IStats *This,LPSTATISTICS lpStats,WINBOOL fClearAfterReading);
+                   HRESULT (WINAPI *GetConversationStatistics)(IStats *This,DWORD *nSessions,LPSESSIONSTATS lpSessionStats,DWORD *nStations,LPSTATIONSTATS lpStationStats,WINBOOL fClearAfterReading);
+                   HRESULT (WINAPI *InsertSpecialFrame)(IStats *This,DWORD FrameType,DWORD Flags,BYTE *pUserData,DWORD UserDataLength);
+                   HRESULT (WINAPI *QueryStations)(IStats *This,QUERYTABLE *lpQueryTable);
     END_INTERFACE
   } IStatsVtbl;
   struct IStats {

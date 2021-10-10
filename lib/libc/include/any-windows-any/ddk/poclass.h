@@ -78,14 +78,14 @@ DEFINE_GUID(GUID_DEVICE_THERMAL_ZONE,
 #define IOCTL_RUN_ACTIVE_COOLING_METHOD \
   CTL_CODE(FILE_DEVICE_BATTERY, 0x22, METHOD_BUFFERED, FILE_WRITE_ACCESS)
 
-#define SYS_BUTTON_POWER                  0x00000001
-#define SYS_BUTTON_SLEEP                  0x00000002
-#define SYS_BUTTON_LID                    0x00000004
-#define SYS_BUTTON_WAKE                   0x80000000
+#define SYS_BUTTON_POWER                                                         0x00000001
+#define SYS_BUTTON_SLEEP                                                         0x00000002
+#define SYS_BUTTON_LID                                                           0x00000004
+#define SYS_BUTTON_WAKE                                                          0x80000000
 
-#define MAX_ACTIVE_COOLING_LEVELS         10
-#define ACTIVE_COOLING                    0
-#define PASSIVE_COOLING                   1
+#define MAX_ACTIVE_COOLING_LEVELS                      10
+#define ACTIVE_COOLING                                                           0
+#define PASSIVE_COOLING                                                          1
 
 typedef struct _THERMAL_INFORMATION {
   ULONG  ThermalStamp;

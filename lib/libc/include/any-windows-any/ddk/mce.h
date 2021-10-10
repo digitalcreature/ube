@@ -75,7 +75,7 @@ typedef union _MCI_STATS {
 } MCI_STATS, *PMCI_STATS;
 #endif
 
-#define MCA_EXTREG_V2MAX               24
+#define MCA_EXTREG_V2MAX                                         24
 
 #if defined(_X86_) || defined(_AMD64_)
 
@@ -89,15 +89,15 @@ typedef struct _MCA_EXCEPTION {
   ULONG Reserved1;
   union {
     struct {
-      UCHAR BankNumber;
-      UCHAR Reserved2[7];
-      MCI_STATS Status;
-      MCI_ADDR Address;
-      ULONGLONG Misc;
+                   UCHAR BankNumber;
+                   UCHAR Reserved2[7];
+                   MCI_STATS Status;
+                   MCI_ADDR Address;
+                   ULONGLONG Misc;
     } Mca;
     struct {
-      ULONGLONG Address;
-      ULONGLONG Type;
+                   ULONGLONG Address;
+                   ULONGLONG Type;
     } Mce;
   } u;
   ULONG ExtCnt;
@@ -115,15 +115,15 @@ typedef struct _MCA_EXCEPTION {
   ULONG Reserved1;
   union {
     struct {
-      UCHAR BankNumber;
-      UCHAR Reserved2[7];
-      MCI_STATS Status;
-      MCI_ADDR Address;
-      ULONGLONG Misc;
+                   UCHAR BankNumber;
+                   UCHAR Reserved2[7];
+                   MCI_STATS Status;
+                   MCI_ADDR Address;
+                   ULONGLONG Misc;
     } Mca;
     struct {
-      ULONGLONG Address;
-      ULONGLONG Type;
+                   ULONGLONG Address;
+                   ULONGLONG Type;
     } Mce;
   } u;
 } MCA_EXCEPTION, *PMCA_EXCEPTION;
@@ -164,8 +164,8 @@ typedef union _ERROR_REVISION {
 } ERROR_REVISION, *PERROR_REVISION;
 
 #if (NTDDI_VERSION > NTDDI_WINXP)
-#define ERROR_MAJOR_REVISION_SAL_03_00      0
-#define ERROR_MINOR_REVISION_SAL_03_00      2
+#define ERROR_MAJOR_REVISION_SAL_03_00                   0
+#define ERROR_MINOR_REVISION_SAL_03_00                   2
 #define ERROR_REVISION_SAL_03_00 {ERROR_MINOR_REVISION_SAL_03_00,ERROR_MAJOR_REVISION_SAL_03_00}
 #define ERROR_FIXED_SECTION_REVISION {2,0}
 #else
@@ -193,10 +193,10 @@ typedef struct _ERROR_GUID {
   UCHAR Data4[8];
 } ERROR_GUID, *PERROR_GUID;
 
-typedef ERROR_GUID            _ERROR_DEVICE_GUID;
+typedef ERROR_GUID                                      _ERROR_DEVICE_GUID;
 typedef _ERROR_DEVICE_GUID    ERROR_DEVICE_GUID, *PERROR_DEVICE_GUID;
 
-typedef ERROR_GUID            _ERROR_PLATFORM_GUID;
+typedef ERROR_GUID                                      _ERROR_PLATFORM_GUID;
 typedef _ERROR_PLATFORM_GUID  ERROR_PLATFORM_GUID, *PERROR_PLATFORM_GUID;
 
 typedef union _ERROR_RECORD_VALID {
@@ -697,19 +697,19 @@ typedef struct _ERROR_PROCESSOR {
   PROCESSOR_LOCAL_ID CRLid;
 } ERROR_PROCESSOR, *PERROR_PROCESSOR;
 
-#define ERROR_PROCESSOR_STATE_PARAMETER_CACHE_CHECK_SHIFT         59
-#define ERROR_PROCESSOR_STATE_PARAMETER_CACHE_CHECK_MASK          0x1
-#define ERROR_PROCESSOR_STATE_PARAMETER_TLB_CHECK_SHIFT           60
-#define ERROR_PROCESSOR_STATE_PARAMETER_TLB_CHECK_MASK            0x1
-#define ERROR_PROCESSOR_STATE_PARAMETER_BUS_CHECK_SHIFT           61
-#define ERROR_PROCESSOR_STATE_PARAMETER_BUS_CHECK_MASK            0x1
-#define ERROR_PROCESSOR_STATE_PARAMETER_REG_CHECK_SHIFT           62
-#define ERROR_PROCESSOR_STATE_PARAMETER_REG_CHECK_MASK            0x1
+#define ERROR_PROCESSOR_STATE_PARAMETER_CACHE_CHECK_SHIFT                      59
+#define ERROR_PROCESSOR_STATE_PARAMETER_CACHE_CHECK_MASK                       0x1
+#define ERROR_PROCESSOR_STATE_PARAMETER_TLB_CHECK_SHIFT                        60
+#define ERROR_PROCESSOR_STATE_PARAMETER_TLB_CHECK_MASK                                      0x1
+#define ERROR_PROCESSOR_STATE_PARAMETER_BUS_CHECK_SHIFT                        61
+#define ERROR_PROCESSOR_STATE_PARAMETER_BUS_CHECK_MASK                                      0x1
+#define ERROR_PROCESSOR_STATE_PARAMETER_REG_CHECK_SHIFT                        62
+#define ERROR_PROCESSOR_STATE_PARAMETER_REG_CHECK_MASK                                      0x1
 #define ERROR_PROCESSOR_STATE_PARAMETER_MICROARCH_CHECK_SHIFT     63
-#define ERROR_PROCESSOR_STATE_PARAMETER_MICROARCH_CHECK_MASK      0x1
+#define ERROR_PROCESSOR_STATE_PARAMETER_MICROARCH_CHECK_MASK                   0x1
 
-#define ERROR_PROCESSOR_STATE_PARAMETER_UNKNOWN_CHECK_SHIFT       ERROR_PROCESSOR_STATE_PARAMETER_MICROARCH_CHECK_SHIFT
-#define ERROR_PROCESSOR_STATE_PARAMETER_UNKNOWN_CHECK_MASK        ERROR_PROCESSOR_STATE_PARAMETER_MICROARCH_CHECK_MASK
+#define ERROR_PROCESSOR_STATE_PARAMETER_UNKNOWN_CHECK_SHIFT                    ERROR_PROCESSOR_STATE_PARAMETER_MICROARCH_CHECK_SHIFT
+#define ERROR_PROCESSOR_STATE_PARAMETER_UNKNOWN_CHECK_MASK                     ERROR_PROCESSOR_STATE_PARAMETER_MICROARCH_CHECK_MASK
 
 typedef enum _ERR_TYPES {
   ERR_INTERNAL = 1,
@@ -850,11 +850,11 @@ typedef struct _ERROR_PCI_BUS_TYPE {
   UCHAR Reserved;
 } ERROR_PCI_BUS_TYPE, *PERROR_PCI_BUS_TYPE;
 
-#define PciBusUnknownError       ((UCHAR)0)
+#define PciBusUnknownError                    ((UCHAR)0)
 #define PciBusDataParityError    ((UCHAR)1)
-#define PciBusSystemError        ((UCHAR)2)
-#define PciBusMasterAbort        ((UCHAR)3)
-#define PciBusTimeOut            ((UCHAR)4)
+#define PciBusSystemError                     ((UCHAR)2)
+#define PciBusMasterAbort                     ((UCHAR)3)
+#define PciBusTimeOut                                      ((UCHAR)4)
 #define PciMasterDataParityError ((UCHAR)5)
 #define PciAddressParityError    ((UCHAR)6)
 #define PciCommandParityError    ((UCHAR)7)

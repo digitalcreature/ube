@@ -10,7 +10,7 @@ int __cdecl __ms_snprintf(char* buffer, size_t n, const char *format, ...)
 {
   int retval;
   va_list argptr;
-         
+                      
   va_start(argptr, format);
 
   /* _vsnprintf() does not work with zero length buffer

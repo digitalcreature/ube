@@ -47,7 +47,7 @@
 #define JFFS2_COMPR_ZLIB	0x06
 #define JFFS2_COMPR_LZO		0x07
 /* Compatibility flags. */
-#define JFFS2_COMPAT_MASK 0xc000      /* What do to if an unknown nodetype is found */
+#define JFFS2_COMPAT_MASK 0xc000                   /* What do to if an unknown nodetype is found */
 #define JFFS2_NODE_ACCURATE 0x2000
 /* INCOMPAT: Fail to mount the filesystem */
 #define JFFS2_FEATURE_INCOMPAT 0xc000
@@ -139,23 +139,23 @@ struct jffs2_raw_dirent
 */
 struct jffs2_raw_inode
 {
-	jint16_t magic;      /* A constant magic number.  */
+	jint16_t magic;                   /* A constant magic number.  */
 	jint16_t nodetype;   /* == JFFS2_NODETYPE_INODE */
 	jint32_t totlen;     /* Total length of this node (inc data, etc.) */
 	jint32_t hdr_crc;
-	jint32_t ino;        /* Inode number.  */
+	jint32_t ino;                     /* Inode number.  */
 	jint32_t version;    /* Version number.  */
-	jmode_t mode;       /* The file's type or mode.  */
-	jint16_t uid;        /* The file's owner.  */
-	jint16_t gid;        /* The file's group.  */
-	jint32_t isize;      /* Total resultant size of this inode (used for truncations)  */
-	jint32_t atime;      /* Last access time.  */
-	jint32_t mtime;      /* Last modification time.  */
-	jint32_t ctime;      /* Change time.  */
+	jmode_t mode;                    /* The file's type or mode.  */
+	jint16_t uid;                     /* The file's owner.  */
+	jint16_t gid;                     /* The file's group.  */
+	jint32_t isize;                   /* Total resultant size of this inode (used for truncations)  */
+	jint32_t atime;                   /* Last access time.  */
+	jint32_t mtime;                   /* Last modification time.  */
+	jint32_t ctime;                   /* Change time.  */
 	jint32_t offset;     /* Where to begin to write.  */
-	jint32_t csize;      /* (Compressed) data size */
+	jint32_t csize;                   /* (Compressed) data size */
 	jint32_t dsize;	     /* Size of the node's data. (after decompression) */
-	__u8 compr;       /* Compression algorithm used */
+	__u8 compr;                    /* Compression algorithm used */
 	__u8 usercompr;   /* Compression algorithm requested by the user */
 	jint16_t flags;	     /* See JFFS2_INO_FLAG_* */
 	jint32_t data_crc;   /* CRC for the (compressed) data.  */

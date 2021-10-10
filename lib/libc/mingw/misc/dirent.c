@@ -49,29 +49,29 @@ _topendir (const _TCHAR *szPath)
 
   if (!szPath)
     {
-      errno = EFAULT;
-      return (_TDIR *) 0;
+                   errno = EFAULT;
+                   return (_TDIR *) 0;
     }
 
   if (szPath[0] == _T('\0'))
     {
-      errno = ENOTDIR;
-      return (_TDIR *) 0;
+                   errno = ENOTDIR;
+                   return (_TDIR *) 0;
     }
 
   /* Attempt to determine if the given path really is a directory. */
   rc = GetFileAttributes (szPath);
   if (rc == INVALID_FILE_ATTRIBUTES)
     {
-      /* call GetLastError for more error info */
-      errno = ENOENT;
-      return (_TDIR *) 0;
+                   /* call GetLastError for more error info */
+                   errno = ENOENT;
+                   return (_TDIR *) 0;
     }
   if (!(rc & FILE_ATTRIBUTE_DIRECTORY))
     {
-      /* Error, entry exists but not a directory. */
-      errno = ENOTDIR;
-      return (_TDIR *) 0;
+                   /* Error, entry exists but not a directory. */
+                   errno = ENOTDIR;
+                   return (_TDIR *) 0;
     }
 
   /* Make an absolute pathname.  */
@@ -86,9 +86,9 @@ _topendir (const _TCHAR *szPath)
 
   if (!nd)
     {
-      /* Error, out of memory. */
-      errno = ENOMEM;
-      return (_TDIR *) 0;
+                   /* Error, out of memory. */
+                   errno = ENOMEM;
+                   return (_TDIR *) 0;
     }
 
   /* Create the search expression. */
@@ -96,10 +96,10 @@ _topendir (const _TCHAR *szPath)
 
   /* Add on a slash if the path does not end with one. */
   if (nd->dd_name[0] != _T('\0') &&
-      nd->dd_name[_tcslen (nd->dd_name) - 1] != _T('/') &&
-      nd->dd_name[_tcslen (nd->dd_name) - 1] != _T('\\'))
+                   nd->dd_name[_tcslen (nd->dd_name) - 1] != _T('/') &&
+                   nd->dd_name[_tcslen (nd->dd_name) - 1] != _T('\\'))
     {
-      _tcscat (nd->dd_name, SLASH);
+                   _tcscat (nd->dd_name, SLASH);
     }
 
   /* Add on the search pattern */
@@ -138,37 +138,37 @@ _treaddir (_TDIR * dirp)
   /* Check for valid DIR struct. */
   if (!dirp)
     {
-      errno = EFAULT;
-      return (struct _tdirent *) 0;
+                   errno = EFAULT;
+                   return (struct _tdirent *) 0;
     }
 
   if (dirp->dd_stat < 0)
     {
-      /* We have already returned all files in the directory
-       * (or the structure has an invalid dd_stat). */
-      return (struct _tdirent *) 0;
+                   /* We have already returned all files in the directory
+                    * (or the structure has an invalid dd_stat). */
+                   return (struct _tdirent *) 0;
     }
   else if (dirp->dd_stat == 0)
     {
-      /* We haven't started the search yet. */
-      /* Start the search */
-      dirp->dd_handle = _tfindfirst (dirp->dd_name, &(dirp->dd_dta));
+                   /* We haven't started the search yet. */
+                   /* Start the search */
+                   dirp->dd_handle = _tfindfirst (dirp->dd_name, &(dirp->dd_dta));
 
-      if (dirp->dd_handle == -1)
+                   if (dirp->dd_handle == -1)
 	{
 	  /* Whoops! Seems there are no files in that
 	   * directory. */
 	  dirp->dd_stat = -1;
 	}
-      else
+                   else
 	{
 	  dirp->dd_stat = 1;
 	}
     }
   else
     {
-      /* Get the next search entry. */
-      if (_tfindnext (dirp->dd_handle, &(dirp->dd_dta)))
+                   /* Get the next search entry. */
+                   if (_tfindnext (dirp->dd_handle, &(dirp->dd_dta)))
 	{
 	  /* We are off the end or otherwise error.
 	     _findnext sets errno to ENOENT if no more file
@@ -180,7 +180,7 @@ _treaddir (_TDIR * dirp)
 	  dirp->dd_handle = -1;
 	  dirp->dd_stat = -1;
 	}
-      else
+                   else
 	{
 	  /* Update the status to indicate the correct
 	   * number. */
@@ -190,12 +190,12 @@ _treaddir (_TDIR * dirp)
 
   if (dirp->dd_stat > 0)
     {
-      /* Successfully got an entry. Everything about the file is
-       * already appropriately filled in except the length of the
-       * file name. */
-      dirp->dd_dir.d_namlen = _tcslen (dirp->dd_dta.name);
-      _tcscpy (dirp->dd_dir.d_name, dirp->dd_dta.name);
-      return &dirp->dd_dir;
+                   /* Successfully got an entry. Everything about the file is
+                    * already appropriately filled in except the length of the
+                    * file name. */
+                   dirp->dd_dir.d_namlen = _tcslen (dirp->dd_dta.name);
+                   _tcscpy (dirp->dd_dir.d_name, dirp->dd_dta.name);
+                   return &dirp->dd_dir;
     }
 
   return (struct _tdirent *) 0;
@@ -217,13 +217,13 @@ _tclosedir (_TDIR * dirp)
 
   if (!dirp)
     {
-      errno = EFAULT;
-      return -1;
+                   errno = EFAULT;
+                   return -1;
     }
 
   if (dirp->dd_handle != -1)
     {
-      rc = _findclose (dirp->dd_handle);
+                   rc = _findclose (dirp->dd_handle);
     }
 
   /* Delete the dir structure. */
@@ -245,13 +245,13 @@ _trewinddir (_TDIR * dirp)
 
   if (!dirp)
     {
-      errno = EFAULT;
-      return;
+                   errno = EFAULT;
+                   return;
     }
 
   if (dirp->dd_handle != -1)
     {
-      _findclose (dirp->dd_handle);
+                   _findclose (dirp->dd_handle);
     }
 
   dirp->dd_handle = -1;
@@ -271,8 +271,8 @@ _ttelldir (_TDIR * dirp)
 
   if (!dirp)
     {
-      errno = EFAULT;
-      return -1;
+                   errno = EFAULT;
+                   return -1;
     }
   return dirp->dd_stat;
 }
@@ -293,32 +293,32 @@ _tseekdir (_TDIR * dirp, long lPos)
 
   if (!dirp)
     {
-      errno = EFAULT;
-      return;
+                   errno = EFAULT;
+                   return;
     }
 
   if (lPos < -1)
     {
-      /* Seeking to an invalid position. */
-      errno = EINVAL;
-      return;
+                   /* Seeking to an invalid position. */
+                   errno = EINVAL;
+                   return;
     }
   else if (lPos == -1)
     {
-      /* Seek past end. */
-      if (dirp->dd_handle != -1)
+                   /* Seek past end. */
+                   if (dirp->dd_handle != -1)
 	{
 	  _findclose (dirp->dd_handle);
 	}
-      dirp->dd_handle = -1;
-      dirp->dd_stat = -1;
+                   dirp->dd_handle = -1;
+                   dirp->dd_stat = -1;
     }
   else
     {
-      /* Rewind and read forward to the appropriate index. */
-      _trewinddir (dirp);
+                   /* Rewind and read forward to the appropriate index. */
+                   _trewinddir (dirp);
 
-      while ((dirp->dd_stat < lPos) && _treaddir (dirp))
+                   while ((dirp->dd_stat < lPos) && _treaddir (dirp))
 	;
     }
 }

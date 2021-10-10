@@ -743,33 +743,33 @@ extern "C"{
   typedef struct _adsvalue {
     ADSTYPE dwType;
     __C89_NAMELESS union {
-      ADS_DN_STRING DNString;
-      ADS_CASE_EXACT_STRING CaseExactString;
-      ADS_CASE_IGNORE_STRING CaseIgnoreString;
-      ADS_PRINTABLE_STRING PrintableString;
-      ADS_NUMERIC_STRING NumericString;
-      ADS_BOOLEAN Boolean;
-      ADS_INTEGER Integer;
-      ADS_OCTET_STRING OctetString;
-      ADS_UTC_TIME UTCTime;
-      ADS_LARGE_INTEGER LargeInteger;
-      ADS_OBJECT_CLASS ClassName;
-      ADS_PROV_SPECIFIC ProviderSpecific;
-      PADS_CASEIGNORE_LIST pCaseIgnoreList;
-      PADS_OCTET_LIST pOctetList;
-      PADS_PATH pPath;
-      PADS_POSTALADDRESS pPostalAddress;
-      ADS_TIMESTAMP Timestamp;
-      ADS_BACKLINK BackLink;
-      PADS_TYPEDNAME pTypedName;
-      ADS_HOLD Hold;
-      PADS_NETADDRESS pNetAddress;
-      PADS_REPLICAPOINTER pReplicaPointer;
-      PADS_FAXNUMBER pFaxNumber;
-      ADS_EMAIL Email;
-      ADS_NT_SECURITY_DESCRIPTOR SecurityDescriptor;
-      PADS_DN_WITH_BINARY pDNWithBinary;
-      PADS_DN_WITH_STRING pDNWithString;
+                   ADS_DN_STRING DNString;
+                   ADS_CASE_EXACT_STRING CaseExactString;
+                   ADS_CASE_IGNORE_STRING CaseIgnoreString;
+                   ADS_PRINTABLE_STRING PrintableString;
+                   ADS_NUMERIC_STRING NumericString;
+                   ADS_BOOLEAN Boolean;
+                   ADS_INTEGER Integer;
+                   ADS_OCTET_STRING OctetString;
+                   ADS_UTC_TIME UTCTime;
+                   ADS_LARGE_INTEGER LargeInteger;
+                   ADS_OBJECT_CLASS ClassName;
+                   ADS_PROV_SPECIFIC ProviderSpecific;
+                   PADS_CASEIGNORE_LIST pCaseIgnoreList;
+                   PADS_OCTET_LIST pOctetList;
+                   PADS_PATH pPath;
+                   PADS_POSTALADDRESS pPostalAddress;
+                   ADS_TIMESTAMP Timestamp;
+                   ADS_BACKLINK BackLink;
+                   PADS_TYPEDNAME pTypedName;
+                   ADS_HOLD Hold;
+                   PADS_NETADDRESS pNetAddress;
+                   PADS_REPLICAPOINTER pReplicaPointer;
+                   PADS_FAXNUMBER pFaxNumber;
+                   ADS_EMAIL Email;
+                   ADS_NT_SECURITY_DESCRIPTOR SecurityDescriptor;
+                   PADS_DN_WITH_BINARY pDNWithBinary;
+                   PADS_DN_WITH_STRING pDNWithString;
     };
   } ADSVALUE;
   typedef struct _adsvalue *PADSVALUE;
@@ -1067,26 +1067,26 @@ extern "C"{
 #else
   typedef struct IADsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADs *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADs *This);
-      ULONG (WINAPI *Release)(IADs *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADs *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADs *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADs *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADs *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADs *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADs *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADs *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADs *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADs *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADs *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADs *This);
-      HRESULT (WINAPI *SetInfo)(IADs *This);
-      HRESULT (WINAPI *Get)(IADs *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADs *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADs *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADs *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADs *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *QueryInterface)(IADs *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADs *This);
+                   ULONG (WINAPI *Release)(IADs *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADs *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADs *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADs *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADs *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADs *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADs *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADs *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADs *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADs *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADs *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADs *This);
+                   HRESULT (WINAPI *SetInfo)(IADs *This);
+                   HRESULT (WINAPI *Get)(IADs *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADs *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADs *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADs *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADs *This,VARIANT vProperties,__LONG32 lnReserved);
     END_INTERFACE
   } IADsVtbl;
   struct IADs {
@@ -1164,24 +1164,24 @@ extern "C"{
 #else
   typedef struct IADsContainerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsContainer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsContainer *This);
-      ULONG (WINAPI *Release)(IADsContainer *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsContainer *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsContainer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsContainer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsContainer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IADsContainer *This,__LONG32 *retval);
-      HRESULT (WINAPI *get__NewEnum)(IADsContainer *This,IUnknown **retval);
-      HRESULT (WINAPI *get_Filter)(IADsContainer *This,VARIANT *pVar);
-      HRESULT (WINAPI *put_Filter)(IADsContainer *This,VARIANT Var);
-      HRESULT (WINAPI *get_Hints)(IADsContainer *This,VARIANT *pvFilter);
-      HRESULT (WINAPI *put_Hints)(IADsContainer *This,VARIANT vHints);
-      HRESULT (WINAPI *GetObject)(IADsContainer *This,BSTR ClassName,BSTR RelativeName,IDispatch **ppObject);
-      HRESULT (WINAPI *Create)(IADsContainer *This,BSTR ClassName,BSTR RelativeName,IDispatch **ppObject);
-      HRESULT (WINAPI *Delete)(IADsContainer *This,BSTR bstrClassName,BSTR bstrRelativeName);
-      HRESULT (WINAPI *CopyHere)(IADsContainer *This,BSTR SourceName,BSTR NewName,IDispatch **ppObject);
-      HRESULT (WINAPI *MoveHere)(IADsContainer *This,BSTR SourceName,BSTR NewName,IDispatch **ppObject);
+                   HRESULT (WINAPI *QueryInterface)(IADsContainer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsContainer *This);
+                   ULONG (WINAPI *Release)(IADsContainer *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsContainer *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsContainer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsContainer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsContainer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IADsContainer *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get__NewEnum)(IADsContainer *This,IUnknown **retval);
+                   HRESULT (WINAPI *get_Filter)(IADsContainer *This,VARIANT *pVar);
+                   HRESULT (WINAPI *put_Filter)(IADsContainer *This,VARIANT Var);
+                   HRESULT (WINAPI *get_Hints)(IADsContainer *This,VARIANT *pvFilter);
+                   HRESULT (WINAPI *put_Hints)(IADsContainer *This,VARIANT vHints);
+                   HRESULT (WINAPI *GetObject)(IADsContainer *This,BSTR ClassName,BSTR RelativeName,IDispatch **ppObject);
+                   HRESULT (WINAPI *Create)(IADsContainer *This,BSTR ClassName,BSTR RelativeName,IDispatch **ppObject);
+                   HRESULT (WINAPI *Delete)(IADsContainer *This,BSTR bstrClassName,BSTR bstrRelativeName);
+                   HRESULT (WINAPI *CopyHere)(IADsContainer *This,BSTR SourceName,BSTR NewName,IDispatch **ppObject);
+                   HRESULT (WINAPI *MoveHere)(IADsContainer *This,BSTR SourceName,BSTR NewName,IDispatch **ppObject);
     END_INTERFACE
   } IADsContainerVtbl;
   struct IADsContainer {
@@ -1246,17 +1246,17 @@ extern "C"{
 #else
   typedef struct IADsCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsCollection *This);
-      ULONG (WINAPI *Release)(IADsCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(IADsCollection *This,IUnknown **ppEnumerator);
-      HRESULT (WINAPI *Add)(IADsCollection *This,BSTR bstrName,VARIANT vItem);
-      HRESULT (WINAPI *Remove)(IADsCollection *This,BSTR bstrItemToBeRemoved);
-      HRESULT (WINAPI *GetObject)(IADsCollection *This,BSTR bstrName,VARIANT *pvItem);
+                   HRESULT (WINAPI *QueryInterface)(IADsCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsCollection *This);
+                   ULONG (WINAPI *Release)(IADsCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(IADsCollection *This,IUnknown **ppEnumerator);
+                   HRESULT (WINAPI *Add)(IADsCollection *This,BSTR bstrName,VARIANT vItem);
+                   HRESULT (WINAPI *Remove)(IADsCollection *This,BSTR bstrItemToBeRemoved);
+                   HRESULT (WINAPI *GetObject)(IADsCollection *This,BSTR bstrName,VARIANT *pvItem);
     END_INTERFACE
   } IADsCollectionVtbl;
   struct IADsCollection {
@@ -1300,17 +1300,17 @@ extern "C"{
 #else
   typedef struct IADsMembersVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsMembers *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsMembers *This);
-      ULONG (WINAPI *Release)(IADsMembers *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsMembers *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsMembers *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsMembers *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsMembers *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IADsMembers *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(IADsMembers *This,IUnknown **ppEnumerator);
-      HRESULT (WINAPI *get_Filter)(IADsMembers *This,VARIANT *pvFilter);
-      HRESULT (WINAPI *put_Filter)(IADsMembers *This,VARIANT pvFilter);
+                   HRESULT (WINAPI *QueryInterface)(IADsMembers *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsMembers *This);
+                   ULONG (WINAPI *Release)(IADsMembers *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsMembers *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsMembers *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsMembers *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsMembers *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IADsMembers *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(IADsMembers *This,IUnknown **ppEnumerator);
+                   HRESULT (WINAPI *get_Filter)(IADsMembers *This,VARIANT *pvFilter);
+                   HRESULT (WINAPI *put_Filter)(IADsMembers *This,VARIANT pvFilter);
     END_INTERFACE
   } IADsMembersVtbl;
   struct IADsMembers {
@@ -1359,22 +1359,22 @@ extern "C"{
 #else
   typedef struct IADsPropertyListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPropertyList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPropertyList *This);
-      ULONG (WINAPI *Release)(IADsPropertyList *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPropertyList *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPropertyList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPropertyList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPropertyList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_PropertyCount)(IADsPropertyList *This,__LONG32 *plCount);
-      HRESULT (WINAPI *Next)(IADsPropertyList *This,VARIANT *pVariant);
-      HRESULT (WINAPI *Skip)(IADsPropertyList *This,__LONG32 cElements);
-      HRESULT (WINAPI *Reset)(IADsPropertyList *This);
-      HRESULT (WINAPI *Item)(IADsPropertyList *This,VARIANT varIndex,VARIANT *pVariant);
-      HRESULT (WINAPI *GetPropertyItem)(IADsPropertyList *This,BSTR bstrName,LONG lnADsType,VARIANT *pVariant);
-      HRESULT (WINAPI *PutPropertyItem)(IADsPropertyList *This,VARIANT varData);
-      HRESULT (WINAPI *ResetPropertyItem)(IADsPropertyList *This,VARIANT varEntry);
-      HRESULT (WINAPI *PurgePropertyList)(IADsPropertyList *This);
+                   HRESULT (WINAPI *QueryInterface)(IADsPropertyList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPropertyList *This);
+                   ULONG (WINAPI *Release)(IADsPropertyList *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPropertyList *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPropertyList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPropertyList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPropertyList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_PropertyCount)(IADsPropertyList *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *Next)(IADsPropertyList *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *Skip)(IADsPropertyList *This,__LONG32 cElements);
+                   HRESULT (WINAPI *Reset)(IADsPropertyList *This);
+                   HRESULT (WINAPI *Item)(IADsPropertyList *This,VARIANT varIndex,VARIANT *pVariant);
+                   HRESULT (WINAPI *GetPropertyItem)(IADsPropertyList *This,BSTR bstrName,LONG lnADsType,VARIANT *pVariant);
+                   HRESULT (WINAPI *PutPropertyItem)(IADsPropertyList *This,VARIANT varData);
+                   HRESULT (WINAPI *ResetPropertyItem)(IADsPropertyList *This,VARIANT varEntry);
+                   HRESULT (WINAPI *PurgePropertyList)(IADsPropertyList *This);
     END_INTERFACE
   } IADsPropertyListVtbl;
   struct IADsPropertyList {
@@ -1438,22 +1438,22 @@ extern "C"{
 #else
   typedef struct IADsPropertyEntryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPropertyEntry *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPropertyEntry *This);
-      ULONG (WINAPI *Release)(IADsPropertyEntry *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPropertyEntry *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPropertyEntry *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPropertyEntry *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPropertyEntry *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Clear)(IADsPropertyEntry *This);
-      HRESULT (WINAPI *get_Name)(IADsPropertyEntry *This,BSTR *retval);
-      HRESULT (WINAPI *put_Name)(IADsPropertyEntry *This,BSTR bstrName);
-      HRESULT (WINAPI *get_ADsType)(IADsPropertyEntry *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ADsType)(IADsPropertyEntry *This,__LONG32 lnADsType);
-      HRESULT (WINAPI *get_ControlCode)(IADsPropertyEntry *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ControlCode)(IADsPropertyEntry *This,__LONG32 lnControlCode);
-      HRESULT (WINAPI *get_Values)(IADsPropertyEntry *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Values)(IADsPropertyEntry *This,VARIANT vValues);
+                   HRESULT (WINAPI *QueryInterface)(IADsPropertyEntry *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPropertyEntry *This);
+                   ULONG (WINAPI *Release)(IADsPropertyEntry *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPropertyEntry *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPropertyEntry *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPropertyEntry *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPropertyEntry *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Clear)(IADsPropertyEntry *This);
+                   HRESULT (WINAPI *get_Name)(IADsPropertyEntry *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Name)(IADsPropertyEntry *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_ADsType)(IADsPropertyEntry *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ADsType)(IADsPropertyEntry *This,__LONG32 lnADsType);
+                   HRESULT (WINAPI *get_ControlCode)(IADsPropertyEntry *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ControlCode)(IADsPropertyEntry *This,__LONG32 lnControlCode);
+                   HRESULT (WINAPI *get_Values)(IADsPropertyEntry *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Values)(IADsPropertyEntry *This,VARIANT vValues);
     END_INTERFACE
   } IADsPropertyEntryVtbl;
   struct IADsPropertyEntry {
@@ -1538,38 +1538,38 @@ extern "C"{
 #else
   typedef struct IADsPropertyValueVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPropertyValue *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPropertyValue *This);
-      ULONG (WINAPI *Release)(IADsPropertyValue *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPropertyValue *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPropertyValue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPropertyValue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPropertyValue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Clear)(IADsPropertyValue *This);
-      HRESULT (WINAPI *get_ADsType)(IADsPropertyValue *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ADsType)(IADsPropertyValue *This,__LONG32 lnADsType);
-      HRESULT (WINAPI *get_DNString)(IADsPropertyValue *This,BSTR *retval);
-      HRESULT (WINAPI *put_DNString)(IADsPropertyValue *This,BSTR bstrDNString);
-      HRESULT (WINAPI *get_CaseExactString)(IADsPropertyValue *This,BSTR *retval);
-      HRESULT (WINAPI *put_CaseExactString)(IADsPropertyValue *This,BSTR bstrCaseExactString);
-      HRESULT (WINAPI *get_CaseIgnoreString)(IADsPropertyValue *This,BSTR *retval);
-      HRESULT (WINAPI *put_CaseIgnoreString)(IADsPropertyValue *This,BSTR bstrCaseIgnoreString);
-      HRESULT (WINAPI *get_PrintableString)(IADsPropertyValue *This,BSTR *retval);
-      HRESULT (WINAPI *put_PrintableString)(IADsPropertyValue *This,BSTR bstrPrintableString);
-      HRESULT (WINAPI *get_NumericString)(IADsPropertyValue *This,BSTR *retval);
-      HRESULT (WINAPI *put_NumericString)(IADsPropertyValue *This,BSTR bstrNumericString);
-      HRESULT (WINAPI *get_Boolean)(IADsPropertyValue *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Boolean)(IADsPropertyValue *This,__LONG32 lnBoolean);
-      HRESULT (WINAPI *get_Integer)(IADsPropertyValue *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Integer)(IADsPropertyValue *This,__LONG32 lnInteger);
-      HRESULT (WINAPI *get_OctetString)(IADsPropertyValue *This,VARIANT *retval);
-      HRESULT (WINAPI *put_OctetString)(IADsPropertyValue *This,VARIANT vOctetString);
-      HRESULT (WINAPI *get_SecurityDescriptor)(IADsPropertyValue *This,IDispatch **retval);
-      HRESULT (WINAPI *put_SecurityDescriptor)(IADsPropertyValue *This,IDispatch *pSecurityDescriptor);
-      HRESULT (WINAPI *get_LargeInteger)(IADsPropertyValue *This,IDispatch **retval);
-      HRESULT (WINAPI *put_LargeInteger)(IADsPropertyValue *This,IDispatch *pLargeInteger);
-      HRESULT (WINAPI *get_UTCTime)(IADsPropertyValue *This,DATE *retval);
-      HRESULT (WINAPI *put_UTCTime)(IADsPropertyValue *This,DATE daUTCTime);
+                   HRESULT (WINAPI *QueryInterface)(IADsPropertyValue *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPropertyValue *This);
+                   ULONG (WINAPI *Release)(IADsPropertyValue *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPropertyValue *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPropertyValue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPropertyValue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPropertyValue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Clear)(IADsPropertyValue *This);
+                   HRESULT (WINAPI *get_ADsType)(IADsPropertyValue *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ADsType)(IADsPropertyValue *This,__LONG32 lnADsType);
+                   HRESULT (WINAPI *get_DNString)(IADsPropertyValue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_DNString)(IADsPropertyValue *This,BSTR bstrDNString);
+                   HRESULT (WINAPI *get_CaseExactString)(IADsPropertyValue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_CaseExactString)(IADsPropertyValue *This,BSTR bstrCaseExactString);
+                   HRESULT (WINAPI *get_CaseIgnoreString)(IADsPropertyValue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_CaseIgnoreString)(IADsPropertyValue *This,BSTR bstrCaseIgnoreString);
+                   HRESULT (WINAPI *get_PrintableString)(IADsPropertyValue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_PrintableString)(IADsPropertyValue *This,BSTR bstrPrintableString);
+                   HRESULT (WINAPI *get_NumericString)(IADsPropertyValue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_NumericString)(IADsPropertyValue *This,BSTR bstrNumericString);
+                   HRESULT (WINAPI *get_Boolean)(IADsPropertyValue *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Boolean)(IADsPropertyValue *This,__LONG32 lnBoolean);
+                   HRESULT (WINAPI *get_Integer)(IADsPropertyValue *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Integer)(IADsPropertyValue *This,__LONG32 lnInteger);
+                   HRESULT (WINAPI *get_OctetString)(IADsPropertyValue *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_OctetString)(IADsPropertyValue *This,VARIANT vOctetString);
+                   HRESULT (WINAPI *get_SecurityDescriptor)(IADsPropertyValue *This,IDispatch **retval);
+                   HRESULT (WINAPI *put_SecurityDescriptor)(IADsPropertyValue *This,IDispatch *pSecurityDescriptor);
+                   HRESULT (WINAPI *get_LargeInteger)(IADsPropertyValue *This,IDispatch **retval);
+                   HRESULT (WINAPI *put_LargeInteger)(IADsPropertyValue *This,IDispatch *pLargeInteger);
+                   HRESULT (WINAPI *get_UTCTime)(IADsPropertyValue *This,DATE *retval);
+                   HRESULT (WINAPI *put_UTCTime)(IADsPropertyValue *This,DATE daUTCTime);
     END_INTERFACE
   } IADsPropertyValueVtbl;
   struct IADsPropertyValue {
@@ -1674,15 +1674,15 @@ extern "C"{
 #else
   typedef struct IADsPropertyValue2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPropertyValue2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPropertyValue2 *This);
-      ULONG (WINAPI *Release)(IADsPropertyValue2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPropertyValue2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPropertyValue2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPropertyValue2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPropertyValue2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetObjectProperty)(IADsPropertyValue2 *This,__LONG32 *lnADsType,VARIANT *pvProp);
-      HRESULT (WINAPI *PutObjectProperty)(IADsPropertyValue2 *This,__LONG32 lnADsType,VARIANT vProp);
+                   HRESULT (WINAPI *QueryInterface)(IADsPropertyValue2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPropertyValue2 *This);
+                   ULONG (WINAPI *Release)(IADsPropertyValue2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPropertyValue2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPropertyValue2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPropertyValue2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPropertyValue2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetObjectProperty)(IADsPropertyValue2 *This,__LONG32 *lnADsType,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutObjectProperty)(IADsPropertyValue2 *This,__LONG32 lnADsType,VARIANT vProp);
     END_INTERFACE
   } IADsPropertyValue2Vtbl;
   struct IADsPropertyValue2 {
@@ -1726,14 +1726,14 @@ extern "C"{
 #else
   typedef struct IPrivateDispatchVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPrivateDispatch *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPrivateDispatch *This);
-      ULONG (WINAPI *Release)(IPrivateDispatch *This);
-      HRESULT (WINAPI *ADSIInitializeDispatchManager)(IPrivateDispatch *This,__LONG32 dwExtensionId);
-      HRESULT (WINAPI *ADSIGetTypeInfoCount)(IPrivateDispatch *This,UINT *pctinfo);
-      HRESULT (WINAPI *ADSIGetTypeInfo)(IPrivateDispatch *This,UINT itinfo,LCID lcid,ITypeInfo **pptinfo);
-      HRESULT (WINAPI *ADSIGetIDsOfNames)(IPrivateDispatch *This,REFIID riid,OLECHAR **rgszNames,UINT cNames,LCID lcid,DISPID *rgdispid);
-      HRESULT (WINAPI *ADSIInvoke)(IPrivateDispatch *This,DISPID dispidMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pdispparams,VARIANT *pvarResult,EXCEPINFO *pexcepinfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(IPrivateDispatch *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPrivateDispatch *This);
+                   ULONG (WINAPI *Release)(IPrivateDispatch *This);
+                   HRESULT (WINAPI *ADSIInitializeDispatchManager)(IPrivateDispatch *This,__LONG32 dwExtensionId);
+                   HRESULT (WINAPI *ADSIGetTypeInfoCount)(IPrivateDispatch *This,UINT *pctinfo);
+                   HRESULT (WINAPI *ADSIGetTypeInfo)(IPrivateDispatch *This,UINT itinfo,LCID lcid,ITypeInfo **pptinfo);
+                   HRESULT (WINAPI *ADSIGetIDsOfNames)(IPrivateDispatch *This,REFIID riid,OLECHAR **rgszNames,UINT cNames,LCID lcid,DISPID *rgdispid);
+                   HRESULT (WINAPI *ADSIInvoke)(IPrivateDispatch *This,DISPID dispidMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pdispparams,VARIANT *pvarResult,EXCEPINFO *pexcepinfo,UINT *puArgErr);
     END_INTERFACE
   } IPrivateDispatchVtbl;
   struct IPrivateDispatch {
@@ -1774,11 +1774,11 @@ extern "C"{
 #else
   typedef struct IPrivateUnknownVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPrivateUnknown *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPrivateUnknown *This);
-      ULONG (WINAPI *Release)(IPrivateUnknown *This);
-      HRESULT (WINAPI *ADSIInitializeObject)(IPrivateUnknown *This,BSTR lpszUserName,BSTR lpszPassword,__LONG32 lnReserved);
-      HRESULT (WINAPI *ADSIReleaseObject)(IPrivateUnknown *This);
+                   HRESULT (WINAPI *QueryInterface)(IPrivateUnknown *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPrivateUnknown *This);
+                   ULONG (WINAPI *Release)(IPrivateUnknown *This);
+                   HRESULT (WINAPI *ADSIInitializeObject)(IPrivateUnknown *This,BSTR lpszUserName,BSTR lpszPassword,__LONG32 lnReserved);
+                   HRESULT (WINAPI *ADSIReleaseObject)(IPrivateUnknown *This);
     END_INTERFACE
   } IPrivateUnknownVtbl;
   struct IPrivateUnknown {
@@ -1811,12 +1811,12 @@ extern "C"{
 #else
   typedef struct IADsExtensionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsExtension *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsExtension *This);
-      ULONG (WINAPI *Release)(IADsExtension *This);
-      HRESULT (WINAPI *Operate)(IADsExtension *This,DWORD dwCode,VARIANT varData1,VARIANT varData2,VARIANT varData3);
-      HRESULT (WINAPI *PrivateGetIDsOfNames)(IADsExtension *This,REFIID riid,OLECHAR **rgszNames,unsigned int cNames,LCID lcid,DISPID *rgDispid);
-      HRESULT (WINAPI *PrivateInvoke)(IADsExtension *This,DISPID dispidMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pdispparams,VARIANT *pvarResult,EXCEPINFO *pexcepinfo,unsigned int *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(IADsExtension *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsExtension *This);
+                   ULONG (WINAPI *Release)(IADsExtension *This);
+                   HRESULT (WINAPI *Operate)(IADsExtension *This,DWORD dwCode,VARIANT varData1,VARIANT varData2,VARIANT varData3);
+                   HRESULT (WINAPI *PrivateGetIDsOfNames)(IADsExtension *This,REFIID riid,OLECHAR **rgszNames,unsigned int cNames,LCID lcid,DISPID *rgDispid);
+                   HRESULT (WINAPI *PrivateInvoke)(IADsExtension *This,DISPID dispidMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pdispparams,VARIANT *pvarResult,EXCEPINFO *pexcepinfo,unsigned int *puArgErr);
     END_INTERFACE
   } IADsExtensionVtbl;
   struct IADsExtension {
@@ -1850,14 +1850,14 @@ extern "C"{
 #else
   typedef struct IADsDeleteOpsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsDeleteOps *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsDeleteOps *This);
-      ULONG (WINAPI *Release)(IADsDeleteOps *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsDeleteOps *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsDeleteOps *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsDeleteOps *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsDeleteOps *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *DeleteObject)(IADsDeleteOps *This,__LONG32 lnFlags);
+                   HRESULT (WINAPI *QueryInterface)(IADsDeleteOps *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsDeleteOps *This);
+                   ULONG (WINAPI *Release)(IADsDeleteOps *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsDeleteOps *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsDeleteOps *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsDeleteOps *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsDeleteOps *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *DeleteObject)(IADsDeleteOps *This,__LONG32 lnFlags);
     END_INTERFACE
   } IADsDeleteOpsVtbl;
   struct IADsDeleteOps {
@@ -1890,28 +1890,28 @@ extern "C"{
 #else
   typedef struct IADsNamespacesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsNamespaces *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsNamespaces *This);
-      ULONG (WINAPI *Release)(IADsNamespaces *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsNamespaces *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsNamespaces *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsNamespaces *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsNamespaces *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsNamespaces *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsNamespaces *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsNamespaces *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsNamespaces *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsNamespaces *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsNamespaces *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsNamespaces *This);
-      HRESULT (WINAPI *SetInfo)(IADsNamespaces *This);
-      HRESULT (WINAPI *Get)(IADsNamespaces *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsNamespaces *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsNamespaces *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsNamespaces *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsNamespaces *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_DefaultContainer)(IADsNamespaces *This,BSTR *retval);
-      HRESULT (WINAPI *put_DefaultContainer)(IADsNamespaces *This,BSTR bstrDefaultContainer);
+                   HRESULT (WINAPI *QueryInterface)(IADsNamespaces *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsNamespaces *This);
+                   ULONG (WINAPI *Release)(IADsNamespaces *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsNamespaces *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsNamespaces *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsNamespaces *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsNamespaces *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsNamespaces *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsNamespaces *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsNamespaces *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsNamespaces *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsNamespaces *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsNamespaces *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsNamespaces *This);
+                   HRESULT (WINAPI *SetInfo)(IADsNamespaces *This);
+                   HRESULT (WINAPI *Get)(IADsNamespaces *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsNamespaces *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsNamespaces *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsNamespaces *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsNamespaces *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_DefaultContainer)(IADsNamespaces *This,BSTR *retval);
+                   HRESULT (WINAPI *put_DefaultContainer)(IADsNamespaces *This,BSTR bstrDefaultContainer);
     END_INTERFACE
   } IADsNamespacesVtbl;
   struct IADsNamespaces {
@@ -1988,56 +1988,56 @@ extern "C"{
 #else
   typedef struct IADsClassVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsClass *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsClass *This);
-      ULONG (WINAPI *Release)(IADsClass *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsClass *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsClass *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsClass *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsClass *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsClass *This);
-      HRESULT (WINAPI *SetInfo)(IADsClass *This);
-      HRESULT (WINAPI *Get)(IADsClass *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsClass *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsClass *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsClass *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsClass *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_PrimaryInterface)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *get_CLSID)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *put_CLSID)(IADsClass *This,BSTR bstrCLSID);
-      HRESULT (WINAPI *get_OID)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *put_OID)(IADsClass *This,BSTR bstrOID);
-      HRESULT (WINAPI *get_Abstract)(IADsClass *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_Abstract)(IADsClass *This,VARIANT_BOOL fAbstract);
-      HRESULT (WINAPI *get_Auxiliary)(IADsClass *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_Auxiliary)(IADsClass *This,VARIANT_BOOL fAuxiliary);
-      HRESULT (WINAPI *get_MandatoryProperties)(IADsClass *This,VARIANT *retval);
-      HRESULT (WINAPI *put_MandatoryProperties)(IADsClass *This,VARIANT vMandatoryProperties);
-      HRESULT (WINAPI *get_OptionalProperties)(IADsClass *This,VARIANT *retval);
-      HRESULT (WINAPI *put_OptionalProperties)(IADsClass *This,VARIANT vOptionalProperties);
-      HRESULT (WINAPI *get_NamingProperties)(IADsClass *This,VARIANT *retval);
-      HRESULT (WINAPI *put_NamingProperties)(IADsClass *This,VARIANT vNamingProperties);
-      HRESULT (WINAPI *get_DerivedFrom)(IADsClass *This,VARIANT *retval);
-      HRESULT (WINAPI *put_DerivedFrom)(IADsClass *This,VARIANT vDerivedFrom);
-      HRESULT (WINAPI *get_AuxDerivedFrom)(IADsClass *This,VARIANT *retval);
-      HRESULT (WINAPI *put_AuxDerivedFrom)(IADsClass *This,VARIANT vAuxDerivedFrom);
-      HRESULT (WINAPI *get_PossibleSuperiors)(IADsClass *This,VARIANT *retval);
-      HRESULT (WINAPI *put_PossibleSuperiors)(IADsClass *This,VARIANT vPossibleSuperiors);
-      HRESULT (WINAPI *get_Containment)(IADsClass *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Containment)(IADsClass *This,VARIANT vContainment);
-      HRESULT (WINAPI *get_Container)(IADsClass *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_Container)(IADsClass *This,VARIANT_BOOL fContainer);
-      HRESULT (WINAPI *get_HelpFileName)(IADsClass *This,BSTR *retval);
-      HRESULT (WINAPI *put_HelpFileName)(IADsClass *This,BSTR bstrHelpFileName);
-      HRESULT (WINAPI *get_HelpFileContext)(IADsClass *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_HelpFileContext)(IADsClass *This,__LONG32 lnHelpFileContext);
-      HRESULT (WINAPI *Qualifiers)(IADsClass *This,IADsCollection **ppQualifiers);
+                   HRESULT (WINAPI *QueryInterface)(IADsClass *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsClass *This);
+                   ULONG (WINAPI *Release)(IADsClass *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsClass *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsClass *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsClass *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsClass *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsClass *This);
+                   HRESULT (WINAPI *SetInfo)(IADsClass *This);
+                   HRESULT (WINAPI *Get)(IADsClass *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsClass *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsClass *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsClass *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsClass *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_PrimaryInterface)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *get_CLSID)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *put_CLSID)(IADsClass *This,BSTR bstrCLSID);
+                   HRESULT (WINAPI *get_OID)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *put_OID)(IADsClass *This,BSTR bstrOID);
+                   HRESULT (WINAPI *get_Abstract)(IADsClass *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_Abstract)(IADsClass *This,VARIANT_BOOL fAbstract);
+                   HRESULT (WINAPI *get_Auxiliary)(IADsClass *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_Auxiliary)(IADsClass *This,VARIANT_BOOL fAuxiliary);
+                   HRESULT (WINAPI *get_MandatoryProperties)(IADsClass *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_MandatoryProperties)(IADsClass *This,VARIANT vMandatoryProperties);
+                   HRESULT (WINAPI *get_OptionalProperties)(IADsClass *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_OptionalProperties)(IADsClass *This,VARIANT vOptionalProperties);
+                   HRESULT (WINAPI *get_NamingProperties)(IADsClass *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_NamingProperties)(IADsClass *This,VARIANT vNamingProperties);
+                   HRESULT (WINAPI *get_DerivedFrom)(IADsClass *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_DerivedFrom)(IADsClass *This,VARIANT vDerivedFrom);
+                   HRESULT (WINAPI *get_AuxDerivedFrom)(IADsClass *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_AuxDerivedFrom)(IADsClass *This,VARIANT vAuxDerivedFrom);
+                   HRESULT (WINAPI *get_PossibleSuperiors)(IADsClass *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_PossibleSuperiors)(IADsClass *This,VARIANT vPossibleSuperiors);
+                   HRESULT (WINAPI *get_Containment)(IADsClass *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Containment)(IADsClass *This,VARIANT vContainment);
+                   HRESULT (WINAPI *get_Container)(IADsClass *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_Container)(IADsClass *This,VARIANT_BOOL fContainer);
+                   HRESULT (WINAPI *get_HelpFileName)(IADsClass *This,BSTR *retval);
+                   HRESULT (WINAPI *put_HelpFileName)(IADsClass *This,BSTR bstrHelpFileName);
+                   HRESULT (WINAPI *get_HelpFileContext)(IADsClass *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_HelpFileContext)(IADsClass *This,__LONG32 lnHelpFileContext);
+                   HRESULT (WINAPI *Qualifiers)(IADsClass *This,IADsCollection **ppQualifiers);
     END_INTERFACE
   } IADsClassVtbl;
   struct IADsClass {
@@ -2179,37 +2179,37 @@ extern "C"{
 #else
   typedef struct IADsPropertyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsProperty *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsProperty *This);
-      ULONG (WINAPI *Release)(IADsProperty *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsProperty *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsProperty *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsProperty *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsProperty *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsProperty *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsProperty *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsProperty *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsProperty *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsProperty *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsProperty *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsProperty *This);
-      HRESULT (WINAPI *SetInfo)(IADsProperty *This);
-      HRESULT (WINAPI *Get)(IADsProperty *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsProperty *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsProperty *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsProperty *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsProperty *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_OID)(IADsProperty *This,BSTR *retval);
-      HRESULT (WINAPI *put_OID)(IADsProperty *This,BSTR bstrOID);
-      HRESULT (WINAPI *get_Syntax)(IADsProperty *This,BSTR *retval);
-      HRESULT (WINAPI *put_Syntax)(IADsProperty *This,BSTR bstrSyntax);
-      HRESULT (WINAPI *get_MaxRange)(IADsProperty *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MaxRange)(IADsProperty *This,__LONG32 lnMaxRange);
-      HRESULT (WINAPI *get_MinRange)(IADsProperty *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MinRange)(IADsProperty *This,__LONG32 lnMinRange);
-      HRESULT (WINAPI *get_MultiValued)(IADsProperty *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_MultiValued)(IADsProperty *This,VARIANT_BOOL fMultiValued);
-      HRESULT (WINAPI *Qualifiers)(IADsProperty *This,IADsCollection **ppQualifiers);
+                   HRESULT (WINAPI *QueryInterface)(IADsProperty *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsProperty *This);
+                   ULONG (WINAPI *Release)(IADsProperty *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsProperty *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsProperty *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsProperty *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsProperty *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsProperty *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsProperty *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsProperty *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsProperty *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsProperty *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsProperty *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsProperty *This);
+                   HRESULT (WINAPI *SetInfo)(IADsProperty *This);
+                   HRESULT (WINAPI *Get)(IADsProperty *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsProperty *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsProperty *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsProperty *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsProperty *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_OID)(IADsProperty *This,BSTR *retval);
+                   HRESULT (WINAPI *put_OID)(IADsProperty *This,BSTR bstrOID);
+                   HRESULT (WINAPI *get_Syntax)(IADsProperty *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Syntax)(IADsProperty *This,BSTR bstrSyntax);
+                   HRESULT (WINAPI *get_MaxRange)(IADsProperty *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MaxRange)(IADsProperty *This,__LONG32 lnMaxRange);
+                   HRESULT (WINAPI *get_MinRange)(IADsProperty *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MinRange)(IADsProperty *This,__LONG32 lnMinRange);
+                   HRESULT (WINAPI *get_MultiValued)(IADsProperty *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_MultiValued)(IADsProperty *This,VARIANT_BOOL fMultiValued);
+                   HRESULT (WINAPI *Qualifiers)(IADsProperty *This,IADsCollection **ppQualifiers);
     END_INTERFACE
   } IADsPropertyVtbl;
   struct IADsProperty {
@@ -2285,28 +2285,28 @@ extern "C"{
 #else
   typedef struct IADsSyntaxVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsSyntax *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsSyntax *This);
-      ULONG (WINAPI *Release)(IADsSyntax *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsSyntax *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsSyntax *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsSyntax *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsSyntax *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsSyntax *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsSyntax *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsSyntax *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsSyntax *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsSyntax *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsSyntax *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsSyntax *This);
-      HRESULT (WINAPI *SetInfo)(IADsSyntax *This);
-      HRESULT (WINAPI *Get)(IADsSyntax *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsSyntax *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsSyntax *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsSyntax *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsSyntax *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_OleAutoDataType)(IADsSyntax *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_OleAutoDataType)(IADsSyntax *This,__LONG32 lnOleAutoDataType);
+                   HRESULT (WINAPI *QueryInterface)(IADsSyntax *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsSyntax *This);
+                   ULONG (WINAPI *Release)(IADsSyntax *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsSyntax *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsSyntax *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsSyntax *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsSyntax *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsSyntax *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsSyntax *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsSyntax *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsSyntax *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsSyntax *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsSyntax *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsSyntax *This);
+                   HRESULT (WINAPI *SetInfo)(IADsSyntax *This);
+                   HRESULT (WINAPI *Get)(IADsSyntax *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsSyntax *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsSyntax *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsSyntax *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsSyntax *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_OleAutoDataType)(IADsSyntax *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_OleAutoDataType)(IADsSyntax *This,__LONG32 lnOleAutoDataType);
     END_INTERFACE
   } IADsSyntaxVtbl;
   struct IADsSyntax {
@@ -2361,34 +2361,34 @@ extern "C"{
 #else
   typedef struct IADsLocalityVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsLocality *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsLocality *This);
-      ULONG (WINAPI *Release)(IADsLocality *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsLocality *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsLocality *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsLocality *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsLocality *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsLocality *This);
-      HRESULT (WINAPI *SetInfo)(IADsLocality *This);
-      HRESULT (WINAPI *Get)(IADsLocality *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsLocality *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsLocality *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsLocality *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsLocality *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_Description)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsLocality *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_LocalityName)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *put_LocalityName)(IADsLocality *This,BSTR bstrLocalityName);
-      HRESULT (WINAPI *get_PostalAddress)(IADsLocality *This,BSTR *retval);
-      HRESULT (WINAPI *put_PostalAddress)(IADsLocality *This,BSTR bstrPostalAddress);
-      HRESULT (WINAPI *get_SeeAlso)(IADsLocality *This,VARIANT *retval);
-      HRESULT (WINAPI *put_SeeAlso)(IADsLocality *This,VARIANT vSeeAlso);
+                   HRESULT (WINAPI *QueryInterface)(IADsLocality *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsLocality *This);
+                   ULONG (WINAPI *Release)(IADsLocality *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsLocality *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsLocality *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsLocality *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsLocality *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsLocality *This);
+                   HRESULT (WINAPI *SetInfo)(IADsLocality *This);
+                   HRESULT (WINAPI *Get)(IADsLocality *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsLocality *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsLocality *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsLocality *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsLocality *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_Description)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsLocality *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_LocalityName)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *put_LocalityName)(IADsLocality *This,BSTR bstrLocalityName);
+                   HRESULT (WINAPI *get_PostalAddress)(IADsLocality *This,BSTR *retval);
+                   HRESULT (WINAPI *put_PostalAddress)(IADsLocality *This,BSTR bstrPostalAddress);
+                   HRESULT (WINAPI *get_SeeAlso)(IADsLocality *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_SeeAlso)(IADsLocality *This,VARIANT vSeeAlso);
     END_INTERFACE
   } IADsLocalityVtbl;
   struct IADsLocality {
@@ -2465,38 +2465,38 @@ extern "C"{
 #else
   typedef struct IADsOVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsO *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsO *This);
-      ULONG (WINAPI *Release)(IADsO *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsO *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsO *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsO *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsO *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsO *This);
-      HRESULT (WINAPI *SetInfo)(IADsO *This);
-      HRESULT (WINAPI *Get)(IADsO *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsO *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsO *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsO *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsO *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_Description)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsO *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_LocalityName)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *put_LocalityName)(IADsO *This,BSTR bstrLocalityName);
-      HRESULT (WINAPI *get_PostalAddress)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *put_PostalAddress)(IADsO *This,BSTR bstrPostalAddress);
-      HRESULT (WINAPI *get_TelephoneNumber)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *put_TelephoneNumber)(IADsO *This,BSTR bstrTelephoneNumber);
-      HRESULT (WINAPI *get_FaxNumber)(IADsO *This,BSTR *retval);
-      HRESULT (WINAPI *put_FaxNumber)(IADsO *This,BSTR bstrFaxNumber);
-      HRESULT (WINAPI *get_SeeAlso)(IADsO *This,VARIANT *retval);
-      HRESULT (WINAPI *put_SeeAlso)(IADsO *This,VARIANT vSeeAlso);
+                   HRESULT (WINAPI *QueryInterface)(IADsO *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsO *This);
+                   ULONG (WINAPI *Release)(IADsO *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsO *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsO *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsO *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsO *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsO *This);
+                   HRESULT (WINAPI *SetInfo)(IADsO *This);
+                   HRESULT (WINAPI *Get)(IADsO *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsO *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsO *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsO *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsO *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_Description)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsO *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_LocalityName)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *put_LocalityName)(IADsO *This,BSTR bstrLocalityName);
+                   HRESULT (WINAPI *get_PostalAddress)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *put_PostalAddress)(IADsO *This,BSTR bstrPostalAddress);
+                   HRESULT (WINAPI *get_TelephoneNumber)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *put_TelephoneNumber)(IADsO *This,BSTR bstrTelephoneNumber);
+                   HRESULT (WINAPI *get_FaxNumber)(IADsO *This,BSTR *retval);
+                   HRESULT (WINAPI *put_FaxNumber)(IADsO *This,BSTR bstrFaxNumber);
+                   HRESULT (WINAPI *get_SeeAlso)(IADsO *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_SeeAlso)(IADsO *This,VARIANT vSeeAlso);
     END_INTERFACE
   } IADsOVtbl;
   struct IADsO {
@@ -2587,40 +2587,40 @@ extern "C"{
 #else
   typedef struct IADsOUVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsOU *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsOU *This);
-      ULONG (WINAPI *Release)(IADsOU *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsOU *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsOU *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsOU *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsOU *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsOU *This);
-      HRESULT (WINAPI *SetInfo)(IADsOU *This);
-      HRESULT (WINAPI *Get)(IADsOU *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsOU *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsOU *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsOU *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsOU *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_Description)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsOU *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_LocalityName)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *put_LocalityName)(IADsOU *This,BSTR bstrLocalityName);
-      HRESULT (WINAPI *get_PostalAddress)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *put_PostalAddress)(IADsOU *This,BSTR bstrPostalAddress);
-      HRESULT (WINAPI *get_TelephoneNumber)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *put_TelephoneNumber)(IADsOU *This,BSTR bstrTelephoneNumber);
-      HRESULT (WINAPI *get_FaxNumber)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *put_FaxNumber)(IADsOU *This,BSTR bstrFaxNumber);
-      HRESULT (WINAPI *get_SeeAlso)(IADsOU *This,VARIANT *retval);
-      HRESULT (WINAPI *put_SeeAlso)(IADsOU *This,VARIANT vSeeAlso);
-      HRESULT (WINAPI *get_BusinessCategory)(IADsOU *This,BSTR *retval);
-      HRESULT (WINAPI *put_BusinessCategory)(IADsOU *This,BSTR bstrBusinessCategory);
+                   HRESULT (WINAPI *QueryInterface)(IADsOU *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsOU *This);
+                   ULONG (WINAPI *Release)(IADsOU *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsOU *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsOU *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsOU *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsOU *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsOU *This);
+                   HRESULT (WINAPI *SetInfo)(IADsOU *This);
+                   HRESULT (WINAPI *Get)(IADsOU *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsOU *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsOU *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsOU *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsOU *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_Description)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsOU *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_LocalityName)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *put_LocalityName)(IADsOU *This,BSTR bstrLocalityName);
+                   HRESULT (WINAPI *get_PostalAddress)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *put_PostalAddress)(IADsOU *This,BSTR bstrPostalAddress);
+                   HRESULT (WINAPI *get_TelephoneNumber)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *put_TelephoneNumber)(IADsOU *This,BSTR bstrTelephoneNumber);
+                   HRESULT (WINAPI *get_FaxNumber)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *put_FaxNumber)(IADsOU *This,BSTR bstrFaxNumber);
+                   HRESULT (WINAPI *get_SeeAlso)(IADsOU *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_SeeAlso)(IADsOU *This,VARIANT vSeeAlso);
+                   HRESULT (WINAPI *get_BusinessCategory)(IADsOU *This,BSTR *retval);
+                   HRESULT (WINAPI *put_BusinessCategory)(IADsOU *This,BSTR bstrBusinessCategory);
     END_INTERFACE
   } IADsOUVtbl;
   struct IADsOU {
@@ -2720,43 +2720,43 @@ extern "C"{
 #else
   typedef struct IADsDomainVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsDomain *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsDomain *This);
-      ULONG (WINAPI *Release)(IADsDomain *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsDomain *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsDomain *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsDomain *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsDomain *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsDomain *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsDomain *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsDomain *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsDomain *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsDomain *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsDomain *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsDomain *This);
-      HRESULT (WINAPI *SetInfo)(IADsDomain *This);
-      HRESULT (WINAPI *Get)(IADsDomain *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsDomain *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsDomain *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsDomain *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsDomain *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_IsWorkgroup)(IADsDomain *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *get_MinPasswordLength)(IADsDomain *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MinPasswordLength)(IADsDomain *This,__LONG32 lnMinPasswordLength);
-      HRESULT (WINAPI *get_MinPasswordAge)(IADsDomain *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MinPasswordAge)(IADsDomain *This,__LONG32 lnMinPasswordAge);
-      HRESULT (WINAPI *get_MaxPasswordAge)(IADsDomain *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MaxPasswordAge)(IADsDomain *This,__LONG32 lnMaxPasswordAge);
-      HRESULT (WINAPI *get_MaxBadPasswordsAllowed)(IADsDomain *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MaxBadPasswordsAllowed)(IADsDomain *This,__LONG32 lnMaxBadPasswordsAllowed);
-      HRESULT (WINAPI *get_PasswordHistoryLength)(IADsDomain *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_PasswordHistoryLength)(IADsDomain *This,__LONG32 lnPasswordHistoryLength);
-      HRESULT (WINAPI *get_PasswordAttributes)(IADsDomain *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_PasswordAttributes)(IADsDomain *This,__LONG32 lnPasswordAttributes);
-      HRESULT (WINAPI *get_AutoUnlockInterval)(IADsDomain *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_AutoUnlockInterval)(IADsDomain *This,__LONG32 lnAutoUnlockInterval);
-      HRESULT (WINAPI *get_LockoutObservationInterval)(IADsDomain *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_LockoutObservationInterval)(IADsDomain *This,__LONG32 lnLockoutObservationInterval);
+                   HRESULT (WINAPI *QueryInterface)(IADsDomain *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsDomain *This);
+                   ULONG (WINAPI *Release)(IADsDomain *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsDomain *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsDomain *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsDomain *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsDomain *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsDomain *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsDomain *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsDomain *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsDomain *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsDomain *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsDomain *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsDomain *This);
+                   HRESULT (WINAPI *SetInfo)(IADsDomain *This);
+                   HRESULT (WINAPI *Get)(IADsDomain *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsDomain *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsDomain *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsDomain *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsDomain *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_IsWorkgroup)(IADsDomain *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *get_MinPasswordLength)(IADsDomain *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MinPasswordLength)(IADsDomain *This,__LONG32 lnMinPasswordLength);
+                   HRESULT (WINAPI *get_MinPasswordAge)(IADsDomain *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MinPasswordAge)(IADsDomain *This,__LONG32 lnMinPasswordAge);
+                   HRESULT (WINAPI *get_MaxPasswordAge)(IADsDomain *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MaxPasswordAge)(IADsDomain *This,__LONG32 lnMaxPasswordAge);
+                   HRESULT (WINAPI *get_MaxBadPasswordsAllowed)(IADsDomain *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MaxBadPasswordsAllowed)(IADsDomain *This,__LONG32 lnMaxBadPasswordsAllowed);
+                   HRESULT (WINAPI *get_PasswordHistoryLength)(IADsDomain *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_PasswordHistoryLength)(IADsDomain *This,__LONG32 lnPasswordHistoryLength);
+                   HRESULT (WINAPI *get_PasswordAttributes)(IADsDomain *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_PasswordAttributes)(IADsDomain *This,__LONG32 lnPasswordAttributes);
+                   HRESULT (WINAPI *get_AutoUnlockInterval)(IADsDomain *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_AutoUnlockInterval)(IADsDomain *This,__LONG32 lnAutoUnlockInterval);
+                   HRESULT (WINAPI *get_LockoutObservationInterval)(IADsDomain *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_LockoutObservationInterval)(IADsDomain *This,__LONG32 lnLockoutObservationInterval);
     END_INTERFACE
   } IADsDomainVtbl;
   struct IADsDomain {
@@ -2880,58 +2880,58 @@ extern "C"{
 #else
   typedef struct IADsComputerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsComputer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsComputer *This);
-      ULONG (WINAPI *Release)(IADsComputer *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsComputer *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsComputer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsComputer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsComputer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsComputer *This);
-      HRESULT (WINAPI *SetInfo)(IADsComputer *This);
-      HRESULT (WINAPI *Get)(IADsComputer *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsComputer *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsComputer *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsComputer *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsComputer *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_ComputerID)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *get_Site)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *get_Description)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsComputer *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_Location)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_Location)(IADsComputer *This,BSTR bstrLocation);
-      HRESULT (WINAPI *get_PrimaryUser)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_PrimaryUser)(IADsComputer *This,BSTR bstrPrimaryUser);
-      HRESULT (WINAPI *get_Owner)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_Owner)(IADsComputer *This,BSTR bstrOwner);
-      HRESULT (WINAPI *get_Division)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_Division)(IADsComputer *This,BSTR bstrDivision);
-      HRESULT (WINAPI *get_Department)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_Department)(IADsComputer *This,BSTR bstrDepartment);
-      HRESULT (WINAPI *get_Role)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_Role)(IADsComputer *This,BSTR bstrRole);
-      HRESULT (WINAPI *get_OperatingSystem)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_OperatingSystem)(IADsComputer *This,BSTR bstrOperatingSystem);
-      HRESULT (WINAPI *get_OperatingSystemVersion)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_OperatingSystemVersion)(IADsComputer *This,BSTR bstrOperatingSystemVersion);
-      HRESULT (WINAPI *get_Model)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_Model)(IADsComputer *This,BSTR bstrModel);
-      HRESULT (WINAPI *get_Processor)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_Processor)(IADsComputer *This,BSTR bstrProcessor);
-      HRESULT (WINAPI *get_ProcessorCount)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_ProcessorCount)(IADsComputer *This,BSTR bstrProcessorCount);
-      HRESULT (WINAPI *get_MemorySize)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_MemorySize)(IADsComputer *This,BSTR bstrMemorySize);
-      HRESULT (WINAPI *get_StorageCapacity)(IADsComputer *This,BSTR *retval);
-      HRESULT (WINAPI *put_StorageCapacity)(IADsComputer *This,BSTR bstrStorageCapacity);
-      HRESULT (WINAPI *get_NetAddresses)(IADsComputer *This,VARIANT *retval);
-      HRESULT (WINAPI *put_NetAddresses)(IADsComputer *This,VARIANT vNetAddresses);
+                   HRESULT (WINAPI *QueryInterface)(IADsComputer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsComputer *This);
+                   ULONG (WINAPI *Release)(IADsComputer *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsComputer *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsComputer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsComputer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsComputer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsComputer *This);
+                   HRESULT (WINAPI *SetInfo)(IADsComputer *This);
+                   HRESULT (WINAPI *Get)(IADsComputer *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsComputer *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsComputer *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsComputer *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsComputer *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_ComputerID)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Site)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Description)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsComputer *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_Location)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Location)(IADsComputer *This,BSTR bstrLocation);
+                   HRESULT (WINAPI *get_PrimaryUser)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_PrimaryUser)(IADsComputer *This,BSTR bstrPrimaryUser);
+                   HRESULT (WINAPI *get_Owner)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Owner)(IADsComputer *This,BSTR bstrOwner);
+                   HRESULT (WINAPI *get_Division)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Division)(IADsComputer *This,BSTR bstrDivision);
+                   HRESULT (WINAPI *get_Department)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Department)(IADsComputer *This,BSTR bstrDepartment);
+                   HRESULT (WINAPI *get_Role)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Role)(IADsComputer *This,BSTR bstrRole);
+                   HRESULT (WINAPI *get_OperatingSystem)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_OperatingSystem)(IADsComputer *This,BSTR bstrOperatingSystem);
+                   HRESULT (WINAPI *get_OperatingSystemVersion)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_OperatingSystemVersion)(IADsComputer *This,BSTR bstrOperatingSystemVersion);
+                   HRESULT (WINAPI *get_Model)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Model)(IADsComputer *This,BSTR bstrModel);
+                   HRESULT (WINAPI *get_Processor)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Processor)(IADsComputer *This,BSTR bstrProcessor);
+                   HRESULT (WINAPI *get_ProcessorCount)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ProcessorCount)(IADsComputer *This,BSTR bstrProcessorCount);
+                   HRESULT (WINAPI *get_MemorySize)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_MemorySize)(IADsComputer *This,BSTR bstrMemorySize);
+                   HRESULT (WINAPI *get_StorageCapacity)(IADsComputer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_StorageCapacity)(IADsComputer *This,BSTR bstrStorageCapacity);
+                   HRESULT (WINAPI *get_NetAddresses)(IADsComputer *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_NetAddresses)(IADsComputer *This,VARIANT vNetAddresses);
     END_INTERFACE
   } IADsComputerVtbl;
   struct IADsComputer {
@@ -3070,28 +3070,28 @@ extern "C"{
 #else
   typedef struct IADsComputerOperationsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsComputerOperations *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsComputerOperations *This);
-      ULONG (WINAPI *Release)(IADsComputerOperations *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsComputerOperations *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsComputerOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsComputerOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsComputerOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsComputerOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsComputerOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsComputerOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsComputerOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsComputerOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsComputerOperations *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsComputerOperations *This);
-      HRESULT (WINAPI *SetInfo)(IADsComputerOperations *This);
-      HRESULT (WINAPI *Get)(IADsComputerOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsComputerOperations *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsComputerOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsComputerOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsComputerOperations *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *Status)(IADsComputerOperations *This,IDispatch **ppObject);
-      HRESULT (WINAPI *Shutdown)(IADsComputerOperations *This,VARIANT_BOOL bReboot);
+                   HRESULT (WINAPI *QueryInterface)(IADsComputerOperations *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsComputerOperations *This);
+                   ULONG (WINAPI *Release)(IADsComputerOperations *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsComputerOperations *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsComputerOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsComputerOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsComputerOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsComputerOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsComputerOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsComputerOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsComputerOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsComputerOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsComputerOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsComputerOperations *This);
+                   HRESULT (WINAPI *SetInfo)(IADsComputerOperations *This);
+                   HRESULT (WINAPI *Get)(IADsComputerOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsComputerOperations *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsComputerOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsComputerOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsComputerOperations *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *Status)(IADsComputerOperations *This,IDispatch **ppObject);
+                   HRESULT (WINAPI *Shutdown)(IADsComputerOperations *This,VARIANT_BOOL bReboot);
     END_INTERFACE
   } IADsComputerOperationsVtbl;
   struct IADsComputerOperations {
@@ -3144,32 +3144,32 @@ extern "C"{
 #else
   typedef struct IADsGroupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsGroup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsGroup *This);
-      ULONG (WINAPI *Release)(IADsGroup *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsGroup *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsGroup *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsGroup *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsGroup *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsGroup *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsGroup *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsGroup *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsGroup *This);
-      HRESULT (WINAPI *SetInfo)(IADsGroup *This);
-      HRESULT (WINAPI *Get)(IADsGroup *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsGroup *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsGroup *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsGroup *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsGroup *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_Description)(IADsGroup *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsGroup *This,BSTR bstrDescription);
-      HRESULT (WINAPI *Members)(IADsGroup *This,IADsMembers **ppMembers);
-      HRESULT (WINAPI *IsMember)(IADsGroup *This,BSTR bstrMember,VARIANT_BOOL *bMember);
-      HRESULT (WINAPI *Add)(IADsGroup *This,BSTR bstrNewItem);
-      HRESULT (WINAPI *Remove)(IADsGroup *This,BSTR bstrItemToBeRemoved);
+                   HRESULT (WINAPI *QueryInterface)(IADsGroup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsGroup *This);
+                   ULONG (WINAPI *Release)(IADsGroup *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsGroup *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsGroup *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsGroup *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsGroup *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsGroup *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsGroup *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsGroup *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsGroup *This);
+                   HRESULT (WINAPI *SetInfo)(IADsGroup *This);
+                   HRESULT (WINAPI *Get)(IADsGroup *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsGroup *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsGroup *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsGroup *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsGroup *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_Description)(IADsGroup *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsGroup *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *Members)(IADsGroup *This,IADsMembers **ppMembers);
+                   HRESULT (WINAPI *IsMember)(IADsGroup *This,BSTR bstrMember,VARIANT_BOOL *bMember);
+                   HRESULT (WINAPI *Add)(IADsGroup *This,BSTR bstrNewItem);
+                   HRESULT (WINAPI *Remove)(IADsGroup *This,BSTR bstrItemToBeRemoved);
     END_INTERFACE
   } IADsGroupVtbl;
   struct IADsGroup {
@@ -3319,117 +3319,117 @@ extern "C"{
 #else
   typedef struct IADsUserVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsUser *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsUser *This);
-      ULONG (WINAPI *Release)(IADsUser *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsUser *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsUser *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsUser *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsUser *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsUser *This);
-      HRESULT (WINAPI *SetInfo)(IADsUser *This);
-      HRESULT (WINAPI *Get)(IADsUser *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsUser *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsUser *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsUser *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsUser *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_BadLoginAddress)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *get_BadLoginCount)(IADsUser *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_LastLogin)(IADsUser *This,DATE *retval);
-      HRESULT (WINAPI *get_LastLogoff)(IADsUser *This,DATE *retval);
-      HRESULT (WINAPI *get_LastFailedLogin)(IADsUser *This,DATE *retval);
-      HRESULT (WINAPI *get_PasswordLastChanged)(IADsUser *This,DATE *retval);
-      HRESULT (WINAPI *get_Description)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsUser *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_Division)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_Division)(IADsUser *This,BSTR bstrDivision);
-      HRESULT (WINAPI *get_Department)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_Department)(IADsUser *This,BSTR bstrDepartment);
-      HRESULT (WINAPI *get_EmployeeID)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_EmployeeID)(IADsUser *This,BSTR bstrEmployeeID);
-      HRESULT (WINAPI *get_FullName)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_FullName)(IADsUser *This,BSTR bstrFullName);
-      HRESULT (WINAPI *get_FirstName)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_FirstName)(IADsUser *This,BSTR bstrFirstName);
-      HRESULT (WINAPI *get_LastName)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_LastName)(IADsUser *This,BSTR bstrLastName);
-      HRESULT (WINAPI *get_OtherName)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_OtherName)(IADsUser *This,BSTR bstrOtherName);
-      HRESULT (WINAPI *get_NamePrefix)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_NamePrefix)(IADsUser *This,BSTR bstrNamePrefix);
-      HRESULT (WINAPI *get_NameSuffix)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_NameSuffix)(IADsUser *This,BSTR bstrNameSuffix);
-      HRESULT (WINAPI *get_Title)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_Title)(IADsUser *This,BSTR bstrTitle);
-      HRESULT (WINAPI *get_Manager)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_Manager)(IADsUser *This,BSTR bstrManager);
-      HRESULT (WINAPI *get_TelephoneHome)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_TelephoneHome)(IADsUser *This,VARIANT vTelephoneHome);
-      HRESULT (WINAPI *get_TelephoneMobile)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_TelephoneMobile)(IADsUser *This,VARIANT vTelephoneMobile);
-      HRESULT (WINAPI *get_TelephoneNumber)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_TelephoneNumber)(IADsUser *This,VARIANT vTelephoneNumber);
-      HRESULT (WINAPI *get_TelephonePager)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_TelephonePager)(IADsUser *This,VARIANT vTelephonePager);
-      HRESULT (WINAPI *get_FaxNumber)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_FaxNumber)(IADsUser *This,VARIANT vFaxNumber);
-      HRESULT (WINAPI *get_OfficeLocations)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_OfficeLocations)(IADsUser *This,VARIANT vOfficeLocations);
-      HRESULT (WINAPI *get_PostalAddresses)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_PostalAddresses)(IADsUser *This,VARIANT vPostalAddresses);
-      HRESULT (WINAPI *get_PostalCodes)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_PostalCodes)(IADsUser *This,VARIANT vPostalCodes);
-      HRESULT (WINAPI *get_SeeAlso)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_SeeAlso)(IADsUser *This,VARIANT vSeeAlso);
-      HRESULT (WINAPI *get_AccountDisabled)(IADsUser *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_AccountDisabled)(IADsUser *This,VARIANT_BOOL fAccountDisabled);
-      HRESULT (WINAPI *get_AccountExpirationDate)(IADsUser *This,DATE *retval);
-      HRESULT (WINAPI *put_AccountExpirationDate)(IADsUser *This,DATE daAccountExpirationDate);
-      HRESULT (WINAPI *get_GraceLoginsAllowed)(IADsUser *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_GraceLoginsAllowed)(IADsUser *This,__LONG32 lnGraceLoginsAllowed);
-      HRESULT (WINAPI *get_GraceLoginsRemaining)(IADsUser *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_GraceLoginsRemaining)(IADsUser *This,__LONG32 lnGraceLoginsRemaining);
-      HRESULT (WINAPI *get_IsAccountLocked)(IADsUser *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_IsAccountLocked)(IADsUser *This,VARIANT_BOOL fIsAccountLocked);
-      HRESULT (WINAPI *get_LoginHours)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_LoginHours)(IADsUser *This,VARIANT vLoginHours);
-      HRESULT (WINAPI *get_LoginWorkstations)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_LoginWorkstations)(IADsUser *This,VARIANT vLoginWorkstations);
-      HRESULT (WINAPI *get_MaxLogins)(IADsUser *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MaxLogins)(IADsUser *This,__LONG32 lnMaxLogins);
-      HRESULT (WINAPI *get_MaxStorage)(IADsUser *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MaxStorage)(IADsUser *This,__LONG32 lnMaxStorage);
-      HRESULT (WINAPI *get_PasswordExpirationDate)(IADsUser *This,DATE *retval);
-      HRESULT (WINAPI *put_PasswordExpirationDate)(IADsUser *This,DATE daPasswordExpirationDate);
-      HRESULT (WINAPI *get_PasswordMinimumLength)(IADsUser *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_PasswordMinimumLength)(IADsUser *This,__LONG32 lnPasswordMinimumLength);
-      HRESULT (WINAPI *get_PasswordRequired)(IADsUser *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_PasswordRequired)(IADsUser *This,VARIANT_BOOL fPasswordRequired);
-      HRESULT (WINAPI *get_RequireUniquePassword)(IADsUser *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_RequireUniquePassword)(IADsUser *This,VARIANT_BOOL fRequireUniquePassword);
-      HRESULT (WINAPI *get_EmailAddress)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_EmailAddress)(IADsUser *This,BSTR bstrEmailAddress);
-      HRESULT (WINAPI *get_HomeDirectory)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_HomeDirectory)(IADsUser *This,BSTR bstrHomeDirectory);
-      HRESULT (WINAPI *get_Languages)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Languages)(IADsUser *This,VARIANT vLanguages);
-      HRESULT (WINAPI *get_Profile)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_Profile)(IADsUser *This,BSTR bstrProfile);
-      HRESULT (WINAPI *get_LoginScript)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_LoginScript)(IADsUser *This,BSTR bstrLoginScript);
-      HRESULT (WINAPI *get_Picture)(IADsUser *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Picture)(IADsUser *This,VARIANT vPicture);
-      HRESULT (WINAPI *get_HomePage)(IADsUser *This,BSTR *retval);
-      HRESULT (WINAPI *put_HomePage)(IADsUser *This,BSTR bstrHomePage);
-      HRESULT (WINAPI *Groups)(IADsUser *This,IADsMembers **ppGroups);
-      HRESULT (WINAPI *SetPassword)(IADsUser *This,BSTR NewPassword);
-      HRESULT (WINAPI *ChangePassword)(IADsUser *This,BSTR bstrOldPassword,BSTR bstrNewPassword);
+                   HRESULT (WINAPI *QueryInterface)(IADsUser *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsUser *This);
+                   ULONG (WINAPI *Release)(IADsUser *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsUser *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsUser *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsUser *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsUser *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsUser *This);
+                   HRESULT (WINAPI *SetInfo)(IADsUser *This);
+                   HRESULT (WINAPI *Get)(IADsUser *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsUser *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsUser *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsUser *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsUser *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_BadLoginAddress)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *get_BadLoginCount)(IADsUser *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_LastLogin)(IADsUser *This,DATE *retval);
+                   HRESULT (WINAPI *get_LastLogoff)(IADsUser *This,DATE *retval);
+                   HRESULT (WINAPI *get_LastFailedLogin)(IADsUser *This,DATE *retval);
+                   HRESULT (WINAPI *get_PasswordLastChanged)(IADsUser *This,DATE *retval);
+                   HRESULT (WINAPI *get_Description)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsUser *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_Division)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Division)(IADsUser *This,BSTR bstrDivision);
+                   HRESULT (WINAPI *get_Department)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Department)(IADsUser *This,BSTR bstrDepartment);
+                   HRESULT (WINAPI *get_EmployeeID)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_EmployeeID)(IADsUser *This,BSTR bstrEmployeeID);
+                   HRESULT (WINAPI *get_FullName)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_FullName)(IADsUser *This,BSTR bstrFullName);
+                   HRESULT (WINAPI *get_FirstName)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_FirstName)(IADsUser *This,BSTR bstrFirstName);
+                   HRESULT (WINAPI *get_LastName)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_LastName)(IADsUser *This,BSTR bstrLastName);
+                   HRESULT (WINAPI *get_OtherName)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_OtherName)(IADsUser *This,BSTR bstrOtherName);
+                   HRESULT (WINAPI *get_NamePrefix)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_NamePrefix)(IADsUser *This,BSTR bstrNamePrefix);
+                   HRESULT (WINAPI *get_NameSuffix)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_NameSuffix)(IADsUser *This,BSTR bstrNameSuffix);
+                   HRESULT (WINAPI *get_Title)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Title)(IADsUser *This,BSTR bstrTitle);
+                   HRESULT (WINAPI *get_Manager)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Manager)(IADsUser *This,BSTR bstrManager);
+                   HRESULT (WINAPI *get_TelephoneHome)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_TelephoneHome)(IADsUser *This,VARIANT vTelephoneHome);
+                   HRESULT (WINAPI *get_TelephoneMobile)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_TelephoneMobile)(IADsUser *This,VARIANT vTelephoneMobile);
+                   HRESULT (WINAPI *get_TelephoneNumber)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_TelephoneNumber)(IADsUser *This,VARIANT vTelephoneNumber);
+                   HRESULT (WINAPI *get_TelephonePager)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_TelephonePager)(IADsUser *This,VARIANT vTelephonePager);
+                   HRESULT (WINAPI *get_FaxNumber)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_FaxNumber)(IADsUser *This,VARIANT vFaxNumber);
+                   HRESULT (WINAPI *get_OfficeLocations)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_OfficeLocations)(IADsUser *This,VARIANT vOfficeLocations);
+                   HRESULT (WINAPI *get_PostalAddresses)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_PostalAddresses)(IADsUser *This,VARIANT vPostalAddresses);
+                   HRESULT (WINAPI *get_PostalCodes)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_PostalCodes)(IADsUser *This,VARIANT vPostalCodes);
+                   HRESULT (WINAPI *get_SeeAlso)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_SeeAlso)(IADsUser *This,VARIANT vSeeAlso);
+                   HRESULT (WINAPI *get_AccountDisabled)(IADsUser *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_AccountDisabled)(IADsUser *This,VARIANT_BOOL fAccountDisabled);
+                   HRESULT (WINAPI *get_AccountExpirationDate)(IADsUser *This,DATE *retval);
+                   HRESULT (WINAPI *put_AccountExpirationDate)(IADsUser *This,DATE daAccountExpirationDate);
+                   HRESULT (WINAPI *get_GraceLoginsAllowed)(IADsUser *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_GraceLoginsAllowed)(IADsUser *This,__LONG32 lnGraceLoginsAllowed);
+                   HRESULT (WINAPI *get_GraceLoginsRemaining)(IADsUser *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_GraceLoginsRemaining)(IADsUser *This,__LONG32 lnGraceLoginsRemaining);
+                   HRESULT (WINAPI *get_IsAccountLocked)(IADsUser *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_IsAccountLocked)(IADsUser *This,VARIANT_BOOL fIsAccountLocked);
+                   HRESULT (WINAPI *get_LoginHours)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_LoginHours)(IADsUser *This,VARIANT vLoginHours);
+                   HRESULT (WINAPI *get_LoginWorkstations)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_LoginWorkstations)(IADsUser *This,VARIANT vLoginWorkstations);
+                   HRESULT (WINAPI *get_MaxLogins)(IADsUser *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MaxLogins)(IADsUser *This,__LONG32 lnMaxLogins);
+                   HRESULT (WINAPI *get_MaxStorage)(IADsUser *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MaxStorage)(IADsUser *This,__LONG32 lnMaxStorage);
+                   HRESULT (WINAPI *get_PasswordExpirationDate)(IADsUser *This,DATE *retval);
+                   HRESULT (WINAPI *put_PasswordExpirationDate)(IADsUser *This,DATE daPasswordExpirationDate);
+                   HRESULT (WINAPI *get_PasswordMinimumLength)(IADsUser *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_PasswordMinimumLength)(IADsUser *This,__LONG32 lnPasswordMinimumLength);
+                   HRESULT (WINAPI *get_PasswordRequired)(IADsUser *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_PasswordRequired)(IADsUser *This,VARIANT_BOOL fPasswordRequired);
+                   HRESULT (WINAPI *get_RequireUniquePassword)(IADsUser *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_RequireUniquePassword)(IADsUser *This,VARIANT_BOOL fRequireUniquePassword);
+                   HRESULT (WINAPI *get_EmailAddress)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_EmailAddress)(IADsUser *This,BSTR bstrEmailAddress);
+                   HRESULT (WINAPI *get_HomeDirectory)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_HomeDirectory)(IADsUser *This,BSTR bstrHomeDirectory);
+                   HRESULT (WINAPI *get_Languages)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Languages)(IADsUser *This,VARIANT vLanguages);
+                   HRESULT (WINAPI *get_Profile)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Profile)(IADsUser *This,BSTR bstrProfile);
+                   HRESULT (WINAPI *get_LoginScript)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_LoginScript)(IADsUser *This,BSTR bstrLoginScript);
+                   HRESULT (WINAPI *get_Picture)(IADsUser *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Picture)(IADsUser *This,VARIANT vPicture);
+                   HRESULT (WINAPI *get_HomePage)(IADsUser *This,BSTR *retval);
+                   HRESULT (WINAPI *put_HomePage)(IADsUser *This,BSTR bstrHomePage);
+                   HRESULT (WINAPI *Groups)(IADsUser *This,IADsMembers **ppGroups);
+                   HRESULT (WINAPI *SetPassword)(IADsUser *This,BSTR NewPassword);
+                   HRESULT (WINAPI *ChangePassword)(IADsUser *This,BSTR bstrOldPassword,BSTR bstrNewPassword);
     END_INTERFACE
   } IADsUserVtbl;
   struct IADsUser {
@@ -3769,52 +3769,52 @@ extern "C"{
 #else
   typedef struct IADsPrintQueueVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPrintQueue *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPrintQueue *This);
-      ULONG (WINAPI *Release)(IADsPrintQueue *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPrintQueue *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPrintQueue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPrintQueue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPrintQueue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsPrintQueue *This);
-      HRESULT (WINAPI *SetInfo)(IADsPrintQueue *This);
-      HRESULT (WINAPI *Get)(IADsPrintQueue *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsPrintQueue *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsPrintQueue *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsPrintQueue *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsPrintQueue *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_PrinterPath)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *put_PrinterPath)(IADsPrintQueue *This,BSTR bstrPrinterPath);
-      HRESULT (WINAPI *get_Model)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *put_Model)(IADsPrintQueue *This,BSTR bstrModel);
-      HRESULT (WINAPI *get_Datatype)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *put_Datatype)(IADsPrintQueue *This,BSTR bstrDatatype);
-      HRESULT (WINAPI *get_PrintProcessor)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *put_PrintProcessor)(IADsPrintQueue *This,BSTR bstrPrintProcessor);
-      HRESULT (WINAPI *get_Description)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsPrintQueue *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_Location)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *put_Location)(IADsPrintQueue *This,BSTR bstrLocation);
-      HRESULT (WINAPI *get_StartTime)(IADsPrintQueue *This,DATE *retval);
-      HRESULT (WINAPI *put_StartTime)(IADsPrintQueue *This,DATE daStartTime);
-      HRESULT (WINAPI *get_UntilTime)(IADsPrintQueue *This,DATE *retval);
-      HRESULT (WINAPI *put_UntilTime)(IADsPrintQueue *This,DATE daUntilTime);
-      HRESULT (WINAPI *get_DefaultJobPriority)(IADsPrintQueue *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_DefaultJobPriority)(IADsPrintQueue *This,__LONG32 lnDefaultJobPriority);
-      HRESULT (WINAPI *get_Priority)(IADsPrintQueue *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Priority)(IADsPrintQueue *This,__LONG32 lnPriority);
-      HRESULT (WINAPI *get_BannerPage)(IADsPrintQueue *This,BSTR *retval);
-      HRESULT (WINAPI *put_BannerPage)(IADsPrintQueue *This,BSTR bstrBannerPage);
-      HRESULT (WINAPI *get_PrintDevices)(IADsPrintQueue *This,VARIANT *retval);
-      HRESULT (WINAPI *put_PrintDevices)(IADsPrintQueue *This,VARIANT vPrintDevices);
-      HRESULT (WINAPI *get_NetAddresses)(IADsPrintQueue *This,VARIANT *retval);
-      HRESULT (WINAPI *put_NetAddresses)(IADsPrintQueue *This,VARIANT vNetAddresses);
+                   HRESULT (WINAPI *QueryInterface)(IADsPrintQueue *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPrintQueue *This);
+                   ULONG (WINAPI *Release)(IADsPrintQueue *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPrintQueue *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPrintQueue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPrintQueue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPrintQueue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsPrintQueue *This);
+                   HRESULT (WINAPI *SetInfo)(IADsPrintQueue *This);
+                   HRESULT (WINAPI *Get)(IADsPrintQueue *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsPrintQueue *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsPrintQueue *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsPrintQueue *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsPrintQueue *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_PrinterPath)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_PrinterPath)(IADsPrintQueue *This,BSTR bstrPrinterPath);
+                   HRESULT (WINAPI *get_Model)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Model)(IADsPrintQueue *This,BSTR bstrModel);
+                   HRESULT (WINAPI *get_Datatype)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Datatype)(IADsPrintQueue *This,BSTR bstrDatatype);
+                   HRESULT (WINAPI *get_PrintProcessor)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_PrintProcessor)(IADsPrintQueue *This,BSTR bstrPrintProcessor);
+                   HRESULT (WINAPI *get_Description)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsPrintQueue *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_Location)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Location)(IADsPrintQueue *This,BSTR bstrLocation);
+                   HRESULT (WINAPI *get_StartTime)(IADsPrintQueue *This,DATE *retval);
+                   HRESULT (WINAPI *put_StartTime)(IADsPrintQueue *This,DATE daStartTime);
+                   HRESULT (WINAPI *get_UntilTime)(IADsPrintQueue *This,DATE *retval);
+                   HRESULT (WINAPI *put_UntilTime)(IADsPrintQueue *This,DATE daUntilTime);
+                   HRESULT (WINAPI *get_DefaultJobPriority)(IADsPrintQueue *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_DefaultJobPriority)(IADsPrintQueue *This,__LONG32 lnDefaultJobPriority);
+                   HRESULT (WINAPI *get_Priority)(IADsPrintQueue *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Priority)(IADsPrintQueue *This,__LONG32 lnPriority);
+                   HRESULT (WINAPI *get_BannerPage)(IADsPrintQueue *This,BSTR *retval);
+                   HRESULT (WINAPI *put_BannerPage)(IADsPrintQueue *This,BSTR bstrBannerPage);
+                   HRESULT (WINAPI *get_PrintDevices)(IADsPrintQueue *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_PrintDevices)(IADsPrintQueue *This,VARIANT vPrintDevices);
+                   HRESULT (WINAPI *get_NetAddresses)(IADsPrintQueue *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_NetAddresses)(IADsPrintQueue *This,VARIANT vNetAddresses);
     END_INTERFACE
   } IADsPrintQueueVtbl;
   struct IADsPrintQueue {
@@ -3938,31 +3938,31 @@ extern "C"{
 #else
   typedef struct IADsPrintQueueOperationsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPrintQueueOperations *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPrintQueueOperations *This);
-      ULONG (WINAPI *Release)(IADsPrintQueueOperations *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPrintQueueOperations *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPrintQueueOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPrintQueueOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPrintQueueOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsPrintQueueOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsPrintQueueOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsPrintQueueOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsPrintQueueOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsPrintQueueOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsPrintQueueOperations *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsPrintQueueOperations *This);
-      HRESULT (WINAPI *SetInfo)(IADsPrintQueueOperations *This);
-      HRESULT (WINAPI *Get)(IADsPrintQueueOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsPrintQueueOperations *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsPrintQueueOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsPrintQueueOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsPrintQueueOperations *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_Status)(IADsPrintQueueOperations *This,__LONG32 *retval);
-      HRESULT (WINAPI *PrintJobs)(IADsPrintQueueOperations *This,IADsCollection **pObject);
-      HRESULT (WINAPI *Pause)(IADsPrintQueueOperations *This);
-      HRESULT (WINAPI *Resume)(IADsPrintQueueOperations *This);
-      HRESULT (WINAPI *Purge)(IADsPrintQueueOperations *This);
+                   HRESULT (WINAPI *QueryInterface)(IADsPrintQueueOperations *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPrintQueueOperations *This);
+                   ULONG (WINAPI *Release)(IADsPrintQueueOperations *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPrintQueueOperations *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPrintQueueOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPrintQueueOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPrintQueueOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsPrintQueueOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsPrintQueueOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsPrintQueueOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsPrintQueueOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsPrintQueueOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsPrintQueueOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsPrintQueueOperations *This);
+                   HRESULT (WINAPI *SetInfo)(IADsPrintQueueOperations *This);
+                   HRESULT (WINAPI *Get)(IADsPrintQueueOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsPrintQueueOperations *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsPrintQueueOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsPrintQueueOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsPrintQueueOperations *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_Status)(IADsPrintQueueOperations *This,__LONG32 *retval);
+                   HRESULT (WINAPI *PrintJobs)(IADsPrintQueueOperations *This,IADsCollection **pObject);
+                   HRESULT (WINAPI *Pause)(IADsPrintQueueOperations *This);
+                   HRESULT (WINAPI *Resume)(IADsPrintQueueOperations *This);
+                   HRESULT (WINAPI *Purge)(IADsPrintQueueOperations *This);
     END_INTERFACE
   } IADsPrintQueueOperationsVtbl;
   struct IADsPrintQueueOperations {
@@ -4036,44 +4036,44 @@ extern "C"{
 #else
   typedef struct IADsPrintJobVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPrintJob *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPrintJob *This);
-      ULONG (WINAPI *Release)(IADsPrintJob *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPrintJob *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPrintJob *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPrintJob *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPrintJob *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsPrintJob *This);
-      HRESULT (WINAPI *SetInfo)(IADsPrintJob *This);
-      HRESULT (WINAPI *Get)(IADsPrintJob *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsPrintJob *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsPrintJob *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsPrintJob *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsPrintJob *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_HostPrintQueue)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *get_User)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *get_UserPath)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *get_TimeSubmitted)(IADsPrintJob *This,DATE *retval);
-      HRESULT (WINAPI *get_TotalPages)(IADsPrintJob *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_Size)(IADsPrintJob *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_Description)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsPrintJob *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_Priority)(IADsPrintJob *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Priority)(IADsPrintJob *This,__LONG32 lnPriority);
-      HRESULT (WINAPI *get_StartTime)(IADsPrintJob *This,DATE *retval);
-      HRESULT (WINAPI *put_StartTime)(IADsPrintJob *This,DATE daStartTime);
-      HRESULT (WINAPI *get_UntilTime)(IADsPrintJob *This,DATE *retval);
-      HRESULT (WINAPI *put_UntilTime)(IADsPrintJob *This,DATE daUntilTime);
-      HRESULT (WINAPI *get_Notify)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *put_Notify)(IADsPrintJob *This,BSTR bstrNotify);
-      HRESULT (WINAPI *get_NotifyPath)(IADsPrintJob *This,BSTR *retval);
-      HRESULT (WINAPI *put_NotifyPath)(IADsPrintJob *This,BSTR bstrNotifyPath);
+                   HRESULT (WINAPI *QueryInterface)(IADsPrintJob *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPrintJob *This);
+                   ULONG (WINAPI *Release)(IADsPrintJob *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPrintJob *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPrintJob *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPrintJob *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPrintJob *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsPrintJob *This);
+                   HRESULT (WINAPI *SetInfo)(IADsPrintJob *This);
+                   HRESULT (WINAPI *Get)(IADsPrintJob *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsPrintJob *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsPrintJob *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsPrintJob *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsPrintJob *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_HostPrintQueue)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *get_User)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *get_UserPath)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *get_TimeSubmitted)(IADsPrintJob *This,DATE *retval);
+                   HRESULT (WINAPI *get_TotalPages)(IADsPrintJob *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_Size)(IADsPrintJob *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_Description)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsPrintJob *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_Priority)(IADsPrintJob *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Priority)(IADsPrintJob *This,__LONG32 lnPriority);
+                   HRESULT (WINAPI *get_StartTime)(IADsPrintJob *This,DATE *retval);
+                   HRESULT (WINAPI *put_StartTime)(IADsPrintJob *This,DATE daStartTime);
+                   HRESULT (WINAPI *get_UntilTime)(IADsPrintJob *This,DATE *retval);
+                   HRESULT (WINAPI *put_UntilTime)(IADsPrintJob *This,DATE daUntilTime);
+                   HRESULT (WINAPI *get_Notify)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Notify)(IADsPrintJob *This,BSTR bstrNotify);
+                   HRESULT (WINAPI *get_NotifyPath)(IADsPrintJob *This,BSTR *retval);
+                   HRESULT (WINAPI *put_NotifyPath)(IADsPrintJob *This,BSTR bstrNotifyPath);
     END_INTERFACE
   } IADsPrintJobVtbl;
   struct IADsPrintJob {
@@ -4175,33 +4175,33 @@ extern "C"{
 #else
   typedef struct IADsPrintJobOperationsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPrintJobOperations *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPrintJobOperations *This);
-      ULONG (WINAPI *Release)(IADsPrintJobOperations *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPrintJobOperations *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPrintJobOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPrintJobOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPrintJobOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsPrintJobOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsPrintJobOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsPrintJobOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsPrintJobOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsPrintJobOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsPrintJobOperations *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsPrintJobOperations *This);
-      HRESULT (WINAPI *SetInfo)(IADsPrintJobOperations *This);
-      HRESULT (WINAPI *Get)(IADsPrintJobOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsPrintJobOperations *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsPrintJobOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsPrintJobOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsPrintJobOperations *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_Status)(IADsPrintJobOperations *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_TimeElapsed)(IADsPrintJobOperations *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_PagesPrinted)(IADsPrintJobOperations *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_Position)(IADsPrintJobOperations *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Position)(IADsPrintJobOperations *This,__LONG32 lnPosition);
-      HRESULT (WINAPI *Pause)(IADsPrintJobOperations *This);
-      HRESULT (WINAPI *Resume)(IADsPrintJobOperations *This);
+                   HRESULT (WINAPI *QueryInterface)(IADsPrintJobOperations *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPrintJobOperations *This);
+                   ULONG (WINAPI *Release)(IADsPrintJobOperations *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPrintJobOperations *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPrintJobOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPrintJobOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPrintJobOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsPrintJobOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsPrintJobOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsPrintJobOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsPrintJobOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsPrintJobOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsPrintJobOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsPrintJobOperations *This);
+                   HRESULT (WINAPI *SetInfo)(IADsPrintJobOperations *This);
+                   HRESULT (WINAPI *Get)(IADsPrintJobOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsPrintJobOperations *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsPrintJobOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsPrintJobOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsPrintJobOperations *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_Status)(IADsPrintJobOperations *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_TimeElapsed)(IADsPrintJobOperations *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_PagesPrinted)(IADsPrintJobOperations *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_Position)(IADsPrintJobOperations *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Position)(IADsPrintJobOperations *This,__LONG32 lnPosition);
+                   HRESULT (WINAPI *Pause)(IADsPrintJobOperations *This);
+                   HRESULT (WINAPI *Resume)(IADsPrintJobOperations *This);
     END_INTERFACE
   } IADsPrintJobOperationsVtbl;
   struct IADsPrintJobOperations {
@@ -4287,50 +4287,50 @@ extern "C"{
 #else
   typedef struct IADsServiceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsService *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsService *This);
-      ULONG (WINAPI *Release)(IADsService *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsService *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsService *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsService *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsService *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsService *This);
-      HRESULT (WINAPI *SetInfo)(IADsService *This);
-      HRESULT (WINAPI *Get)(IADsService *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsService *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsService *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsService *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsService *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_HostComputer)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *put_HostComputer)(IADsService *This,BSTR bstrHostComputer);
-      HRESULT (WINAPI *get_DisplayName)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *put_DisplayName)(IADsService *This,BSTR bstrDisplayName);
-      HRESULT (WINAPI *get_Version)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *put_Version)(IADsService *This,BSTR bstrVersion);
-      HRESULT (WINAPI *get_ServiceType)(IADsService *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ServiceType)(IADsService *This,__LONG32 lnServiceType);
-      HRESULT (WINAPI *get_StartType)(IADsService *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_StartType)(IADsService *This,__LONG32 lnStartType);
-      HRESULT (WINAPI *get_Path)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *put_Path)(IADsService *This,BSTR bstrPath);
-      HRESULT (WINAPI *get_StartupParameters)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *put_StartupParameters)(IADsService *This,BSTR bstrStartupParameters);
-      HRESULT (WINAPI *get_ErrorControl)(IADsService *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ErrorControl)(IADsService *This,__LONG32 lnErrorControl);
-      HRESULT (WINAPI *get_LoadOrderGroup)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *put_LoadOrderGroup)(IADsService *This,BSTR bstrLoadOrderGroup);
-      HRESULT (WINAPI *get_ServiceAccountName)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *put_ServiceAccountName)(IADsService *This,BSTR bstrServiceAccountName);
-      HRESULT (WINAPI *get_ServiceAccountPath)(IADsService *This,BSTR *retval);
-      HRESULT (WINAPI *put_ServiceAccountPath)(IADsService *This,BSTR bstrServiceAccountPath);
-      HRESULT (WINAPI *get_Dependencies)(IADsService *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Dependencies)(IADsService *This,VARIANT vDependencies);
+                   HRESULT (WINAPI *QueryInterface)(IADsService *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsService *This);
+                   ULONG (WINAPI *Release)(IADsService *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsService *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsService *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsService *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsService *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsService *This);
+                   HRESULT (WINAPI *SetInfo)(IADsService *This);
+                   HRESULT (WINAPI *Get)(IADsService *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsService *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsService *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsService *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsService *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_HostComputer)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_HostComputer)(IADsService *This,BSTR bstrHostComputer);
+                   HRESULT (WINAPI *get_DisplayName)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_DisplayName)(IADsService *This,BSTR bstrDisplayName);
+                   HRESULT (WINAPI *get_Version)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Version)(IADsService *This,BSTR bstrVersion);
+                   HRESULT (WINAPI *get_ServiceType)(IADsService *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ServiceType)(IADsService *This,__LONG32 lnServiceType);
+                   HRESULT (WINAPI *get_StartType)(IADsService *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_StartType)(IADsService *This,__LONG32 lnStartType);
+                   HRESULT (WINAPI *get_Path)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Path)(IADsService *This,BSTR bstrPath);
+                   HRESULT (WINAPI *get_StartupParameters)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_StartupParameters)(IADsService *This,BSTR bstrStartupParameters);
+                   HRESULT (WINAPI *get_ErrorControl)(IADsService *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ErrorControl)(IADsService *This,__LONG32 lnErrorControl);
+                   HRESULT (WINAPI *get_LoadOrderGroup)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_LoadOrderGroup)(IADsService *This,BSTR bstrLoadOrderGroup);
+                   HRESULT (WINAPI *get_ServiceAccountName)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ServiceAccountName)(IADsService *This,BSTR bstrServiceAccountName);
+                   HRESULT (WINAPI *get_ServiceAccountPath)(IADsService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ServiceAccountPath)(IADsService *This,BSTR bstrServiceAccountPath);
+                   HRESULT (WINAPI *get_Dependencies)(IADsService *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Dependencies)(IADsService *This,VARIANT vDependencies);
     END_INTERFACE
   } IADsServiceVtbl;
   struct IADsService {
@@ -4449,32 +4449,32 @@ extern "C"{
 #else
   typedef struct IADsServiceOperationsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsServiceOperations *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsServiceOperations *This);
-      ULONG (WINAPI *Release)(IADsServiceOperations *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsServiceOperations *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsServiceOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsServiceOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsServiceOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsServiceOperations *This);
-      HRESULT (WINAPI *SetInfo)(IADsServiceOperations *This);
-      HRESULT (WINAPI *Get)(IADsServiceOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsServiceOperations *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsServiceOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsServiceOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsServiceOperations *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_Status)(IADsServiceOperations *This,__LONG32 *retval);
-      HRESULT (WINAPI *Start)(IADsServiceOperations *This);
-      HRESULT (WINAPI *Stop)(IADsServiceOperations *This);
-      HRESULT (WINAPI *Pause)(IADsServiceOperations *This);
-      HRESULT (WINAPI *Continue)(IADsServiceOperations *This);
-      HRESULT (WINAPI *SetPassword)(IADsServiceOperations *This,BSTR bstrNewPassword);
+                   HRESULT (WINAPI *QueryInterface)(IADsServiceOperations *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsServiceOperations *This);
+                   ULONG (WINAPI *Release)(IADsServiceOperations *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsServiceOperations *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsServiceOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsServiceOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsServiceOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsServiceOperations *This);
+                   HRESULT (WINAPI *SetInfo)(IADsServiceOperations *This);
+                   HRESULT (WINAPI *Get)(IADsServiceOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsServiceOperations *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsServiceOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsServiceOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsServiceOperations *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_Status)(IADsServiceOperations *This,__LONG32 *retval);
+                   HRESULT (WINAPI *Start)(IADsServiceOperations *This);
+                   HRESULT (WINAPI *Stop)(IADsServiceOperations *This);
+                   HRESULT (WINAPI *Pause)(IADsServiceOperations *This);
+                   HRESULT (WINAPI *Continue)(IADsServiceOperations *This);
+                   HRESULT (WINAPI *SetPassword)(IADsServiceOperations *This,BSTR bstrNewPassword);
     END_INTERFACE
   } IADsServiceOperationsVtbl;
   struct IADsServiceOperations {
@@ -4537,54 +4537,54 @@ extern "C"{
 #else
   typedef struct IADsFileServiceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsFileService *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsFileService *This);
-      ULONG (WINAPI *Release)(IADsFileService *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsFileService *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsFileService *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsFileService *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsFileService *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsFileService *This);
-      HRESULT (WINAPI *SetInfo)(IADsFileService *This);
-      HRESULT (WINAPI *Get)(IADsFileService *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsFileService *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsFileService *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsFileService *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsFileService *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_HostComputer)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_HostComputer)(IADsFileService *This,BSTR bstrHostComputer);
-      HRESULT (WINAPI *get_DisplayName)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_DisplayName)(IADsFileService *This,BSTR bstrDisplayName);
-      HRESULT (WINAPI *get_Version)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_Version)(IADsFileService *This,BSTR bstrVersion);
-      HRESULT (WINAPI *get_ServiceType)(IADsFileService *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ServiceType)(IADsFileService *This,__LONG32 lnServiceType);
-      HRESULT (WINAPI *get_StartType)(IADsFileService *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_StartType)(IADsFileService *This,__LONG32 lnStartType);
-      HRESULT (WINAPI *get_Path)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_Path)(IADsFileService *This,BSTR bstrPath);
-      HRESULT (WINAPI *get_StartupParameters)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_StartupParameters)(IADsFileService *This,BSTR bstrStartupParameters);
-      HRESULT (WINAPI *get_ErrorControl)(IADsFileService *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ErrorControl)(IADsFileService *This,__LONG32 lnErrorControl);
-      HRESULT (WINAPI *get_LoadOrderGroup)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_LoadOrderGroup)(IADsFileService *This,BSTR bstrLoadOrderGroup);
-      HRESULT (WINAPI *get_ServiceAccountName)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_ServiceAccountName)(IADsFileService *This,BSTR bstrServiceAccountName);
-      HRESULT (WINAPI *get_ServiceAccountPath)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_ServiceAccountPath)(IADsFileService *This,BSTR bstrServiceAccountPath);
-      HRESULT (WINAPI *get_Dependencies)(IADsFileService *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Dependencies)(IADsFileService *This,VARIANT vDependencies);
-      HRESULT (WINAPI *get_Description)(IADsFileService *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsFileService *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_MaxUserCount)(IADsFileService *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MaxUserCount)(IADsFileService *This,__LONG32 lnMaxUserCount);
+                   HRESULT (WINAPI *QueryInterface)(IADsFileService *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsFileService *This);
+                   ULONG (WINAPI *Release)(IADsFileService *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsFileService *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsFileService *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsFileService *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsFileService *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsFileService *This);
+                   HRESULT (WINAPI *SetInfo)(IADsFileService *This);
+                   HRESULT (WINAPI *Get)(IADsFileService *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsFileService *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsFileService *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsFileService *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsFileService *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_HostComputer)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_HostComputer)(IADsFileService *This,BSTR bstrHostComputer);
+                   HRESULT (WINAPI *get_DisplayName)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_DisplayName)(IADsFileService *This,BSTR bstrDisplayName);
+                   HRESULT (WINAPI *get_Version)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Version)(IADsFileService *This,BSTR bstrVersion);
+                   HRESULT (WINAPI *get_ServiceType)(IADsFileService *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ServiceType)(IADsFileService *This,__LONG32 lnServiceType);
+                   HRESULT (WINAPI *get_StartType)(IADsFileService *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_StartType)(IADsFileService *This,__LONG32 lnStartType);
+                   HRESULT (WINAPI *get_Path)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Path)(IADsFileService *This,BSTR bstrPath);
+                   HRESULT (WINAPI *get_StartupParameters)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_StartupParameters)(IADsFileService *This,BSTR bstrStartupParameters);
+                   HRESULT (WINAPI *get_ErrorControl)(IADsFileService *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ErrorControl)(IADsFileService *This,__LONG32 lnErrorControl);
+                   HRESULT (WINAPI *get_LoadOrderGroup)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_LoadOrderGroup)(IADsFileService *This,BSTR bstrLoadOrderGroup);
+                   HRESULT (WINAPI *get_ServiceAccountName)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ServiceAccountName)(IADsFileService *This,BSTR bstrServiceAccountName);
+                   HRESULT (WINAPI *get_ServiceAccountPath)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ServiceAccountPath)(IADsFileService *This,BSTR bstrServiceAccountPath);
+                   HRESULT (WINAPI *get_Dependencies)(IADsFileService *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Dependencies)(IADsFileService *This,VARIANT vDependencies);
+                   HRESULT (WINAPI *get_Description)(IADsFileService *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsFileService *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_MaxUserCount)(IADsFileService *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MaxUserCount)(IADsFileService *This,__LONG32 lnMaxUserCount);
     END_INTERFACE
   } IADsFileServiceVtbl;
   struct IADsFileService {
@@ -4663,34 +4663,34 @@ extern "C"{
 #else
   typedef struct IADsFileServiceOperationsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsFileServiceOperations *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsFileServiceOperations *This);
-      ULONG (WINAPI *Release)(IADsFileServiceOperations *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsFileServiceOperations *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsFileServiceOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsFileServiceOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsFileServiceOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsFileServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsFileServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsFileServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsFileServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsFileServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsFileServiceOperations *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsFileServiceOperations *This);
-      HRESULT (WINAPI *SetInfo)(IADsFileServiceOperations *This);
-      HRESULT (WINAPI *Get)(IADsFileServiceOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsFileServiceOperations *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsFileServiceOperations *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsFileServiceOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsFileServiceOperations *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_Status)(IADsFileServiceOperations *This,__LONG32 *retval);
-      HRESULT (WINAPI *Start)(IADsFileServiceOperations *This);
-      HRESULT (WINAPI *Stop)(IADsFileServiceOperations *This);
-      HRESULT (WINAPI *Pause)(IADsFileServiceOperations *This);
-      HRESULT (WINAPI *Continue)(IADsFileServiceOperations *This);
-      HRESULT (WINAPI *SetPassword)(IADsFileServiceOperations *This,BSTR bstrNewPassword);
-      HRESULT (WINAPI *Sessions)(IADsFileServiceOperations *This,IADsCollection **ppSessions);
-      HRESULT (WINAPI *Resources)(IADsFileServiceOperations *This,IADsCollection **ppResources);
+                   HRESULT (WINAPI *QueryInterface)(IADsFileServiceOperations *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsFileServiceOperations *This);
+                   ULONG (WINAPI *Release)(IADsFileServiceOperations *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsFileServiceOperations *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsFileServiceOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsFileServiceOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsFileServiceOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsFileServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsFileServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsFileServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsFileServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsFileServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsFileServiceOperations *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsFileServiceOperations *This);
+                   HRESULT (WINAPI *SetInfo)(IADsFileServiceOperations *This);
+                   HRESULT (WINAPI *Get)(IADsFileServiceOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsFileServiceOperations *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsFileServiceOperations *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsFileServiceOperations *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsFileServiceOperations *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_Status)(IADsFileServiceOperations *This,__LONG32 *retval);
+                   HRESULT (WINAPI *Start)(IADsFileServiceOperations *This);
+                   HRESULT (WINAPI *Stop)(IADsFileServiceOperations *This);
+                   HRESULT (WINAPI *Pause)(IADsFileServiceOperations *This);
+                   HRESULT (WINAPI *Continue)(IADsFileServiceOperations *This);
+                   HRESULT (WINAPI *SetPassword)(IADsFileServiceOperations *This,BSTR bstrNewPassword);
+                   HRESULT (WINAPI *Sessions)(IADsFileServiceOperations *This,IADsCollection **ppSessions);
+                   HRESULT (WINAPI *Resources)(IADsFileServiceOperations *This,IADsCollection **ppResources);
     END_INTERFACE
   } IADsFileServiceOperationsVtbl;
   struct IADsFileServiceOperations {
@@ -4752,35 +4752,35 @@ extern "C"{
 #else
   typedef struct IADsFileShareVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsFileShare *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsFileShare *This);
-      ULONG (WINAPI *Release)(IADsFileShare *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsFileShare *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsFileShare *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsFileShare *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsFileShare *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsFileShare *This);
-      HRESULT (WINAPI *SetInfo)(IADsFileShare *This);
-      HRESULT (WINAPI *Get)(IADsFileShare *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsFileShare *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsFileShare *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsFileShare *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsFileShare *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_CurrentUserCount)(IADsFileShare *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_Description)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *put_Description)(IADsFileShare *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_HostComputer)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *put_HostComputer)(IADsFileShare *This,BSTR bstrHostComputer);
-      HRESULT (WINAPI *get_Path)(IADsFileShare *This,BSTR *retval);
-      HRESULT (WINAPI *put_Path)(IADsFileShare *This,BSTR bstrPath);
-      HRESULT (WINAPI *get_MaxUserCount)(IADsFileShare *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MaxUserCount)(IADsFileShare *This,__LONG32 lnMaxUserCount);
+                   HRESULT (WINAPI *QueryInterface)(IADsFileShare *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsFileShare *This);
+                   ULONG (WINAPI *Release)(IADsFileShare *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsFileShare *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsFileShare *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsFileShare *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsFileShare *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsFileShare *This);
+                   HRESULT (WINAPI *SetInfo)(IADsFileShare *This);
+                   HRESULT (WINAPI *Get)(IADsFileShare *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsFileShare *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsFileShare *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsFileShare *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsFileShare *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_CurrentUserCount)(IADsFileShare *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_Description)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Description)(IADsFileShare *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_HostComputer)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *put_HostComputer)(IADsFileShare *This,BSTR bstrHostComputer);
+                   HRESULT (WINAPI *get_Path)(IADsFileShare *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Path)(IADsFileShare *This,BSTR bstrPath);
+                   HRESULT (WINAPI *get_MaxUserCount)(IADsFileShare *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MaxUserCount)(IADsFileShare *This,__LONG32 lnMaxUserCount);
     END_INTERFACE
   } IADsFileShareVtbl;
   struct IADsFileShare {
@@ -4854,32 +4854,32 @@ extern "C"{
 #else
   typedef struct IADsSessionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsSession *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsSession *This);
-      ULONG (WINAPI *Release)(IADsSession *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsSession *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsSession *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsSession *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsSession *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsSession *This);
-      HRESULT (WINAPI *SetInfo)(IADsSession *This);
-      HRESULT (WINAPI *Get)(IADsSession *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsSession *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsSession *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsSession *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsSession *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_User)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_UserPath)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_Computer)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_ComputerPath)(IADsSession *This,BSTR *retval);
-      HRESULT (WINAPI *get_ConnectTime)(IADsSession *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_IdleTime)(IADsSession *This,__LONG32 *retval);
+                   HRESULT (WINAPI *QueryInterface)(IADsSession *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsSession *This);
+                   ULONG (WINAPI *Release)(IADsSession *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsSession *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsSession *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsSession *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsSession *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsSession *This);
+                   HRESULT (WINAPI *SetInfo)(IADsSession *This);
+                   HRESULT (WINAPI *Get)(IADsSession *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsSession *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsSession *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsSession *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsSession *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_User)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_UserPath)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Computer)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ComputerPath)(IADsSession *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ConnectTime)(IADsSession *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_IdleTime)(IADsSession *This,__LONG32 *retval);
     END_INTERFACE
   } IADsSessionVtbl;
   struct IADsSession {
@@ -4942,30 +4942,30 @@ extern "C"{
 #else
   typedef struct IADsResourceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsResource *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsResource *This);
-      ULONG (WINAPI *Release)(IADsResource *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsResource *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsResource *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsResource *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsResource *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *get_Class)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *get_GUID)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *get_ADsPath)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *get_Parent)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *get_Schema)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *GetInfo)(IADsResource *This);
-      HRESULT (WINAPI *SetInfo)(IADsResource *This);
-      HRESULT (WINAPI *Get)(IADsResource *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *Put)(IADsResource *This,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetEx)(IADsResource *This,BSTR bstrName,VARIANT *pvProp);
-      HRESULT (WINAPI *PutEx)(IADsResource *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
-      HRESULT (WINAPI *GetInfoEx)(IADsResource *This,VARIANT vProperties,__LONG32 lnReserved);
-      HRESULT (WINAPI *get_User)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *get_UserPath)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *get_Path)(IADsResource *This,BSTR *retval);
-      HRESULT (WINAPI *get_LockCount)(IADsResource *This,__LONG32 *retval);
+                   HRESULT (WINAPI *QueryInterface)(IADsResource *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsResource *This);
+                   ULONG (WINAPI *Release)(IADsResource *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsResource *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsResource *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsResource *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsResource *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Class)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *get_GUID)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ADsPath)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Parent)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Schema)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *GetInfo)(IADsResource *This);
+                   HRESULT (WINAPI *SetInfo)(IADsResource *This);
+                   HRESULT (WINAPI *Get)(IADsResource *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *Put)(IADsResource *This,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetEx)(IADsResource *This,BSTR bstrName,VARIANT *pvProp);
+                   HRESULT (WINAPI *PutEx)(IADsResource *This,__LONG32 lnControlCode,BSTR bstrName,VARIANT vProp);
+                   HRESULT (WINAPI *GetInfoEx)(IADsResource *This,VARIANT vProperties,__LONG32 lnReserved);
+                   HRESULT (WINAPI *get_User)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *get_UserPath)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *get_Path)(IADsResource *This,BSTR *retval);
+                   HRESULT (WINAPI *get_LockCount)(IADsResource *This,__LONG32 *retval);
     END_INTERFACE
   } IADsResourceVtbl;
   struct IADsResource {
@@ -5019,14 +5019,14 @@ extern "C"{
 #else
   typedef struct IADsOpenDSObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsOpenDSObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsOpenDSObject *This);
-      ULONG (WINAPI *Release)(IADsOpenDSObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsOpenDSObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsOpenDSObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsOpenDSObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsOpenDSObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *OpenDSObject)(IADsOpenDSObject *This,BSTR lpszDNName,BSTR lpszUserName,BSTR lpszPassword,__LONG32 lnReserved,IDispatch **ppOleDsObj);
+                   HRESULT (WINAPI *QueryInterface)(IADsOpenDSObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsOpenDSObject *This);
+                   ULONG (WINAPI *Release)(IADsOpenDSObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsOpenDSObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsOpenDSObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsOpenDSObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsOpenDSObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *OpenDSObject)(IADsOpenDSObject *This,BSTR lpszDNName,BSTR lpszUserName,BSTR lpszPassword,__LONG32 lnReserved,IDispatch **ppOleDsObj);
     END_INTERFACE
   } IADsOpenDSObjectVtbl;
   struct IADsOpenDSObject {
@@ -5063,14 +5063,14 @@ extern "C"{
 #else
   typedef struct IDirectoryObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDirectoryObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDirectoryObject *This);
-      ULONG (WINAPI *Release)(IDirectoryObject *This);
-      HRESULT (WINAPI *GetObjectInformation)(IDirectoryObject *This,PADS_OBJECT_INFO *ppObjInfo);
-      HRESULT (WINAPI *GetObjectAttributes)(IDirectoryObject *This,LPWSTR *pAttributeNames,DWORD dwNumberAttributes,PADS_ATTR_INFO *ppAttributeEntries,DWORD *pdwNumAttributesReturned);
-      HRESULT (WINAPI *SetObjectAttributes)(IDirectoryObject *This,PADS_ATTR_INFO pAttributeEntries,DWORD dwNumAttributes,DWORD *pdwNumAttributesModified);
-      HRESULT (WINAPI *CreateDSObject)(IDirectoryObject *This,LPWSTR pszRDNName,PADS_ATTR_INFO pAttributeEntries,DWORD dwNumAttributes,IDispatch **ppObject);
-      HRESULT (WINAPI *DeleteDSObject)(IDirectoryObject *This,LPWSTR pszRDNName);
+                   HRESULT (WINAPI *QueryInterface)(IDirectoryObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDirectoryObject *This);
+                   ULONG (WINAPI *Release)(IDirectoryObject *This);
+                   HRESULT (WINAPI *GetObjectInformation)(IDirectoryObject *This,PADS_OBJECT_INFO *ppObjInfo);
+                   HRESULT (WINAPI *GetObjectAttributes)(IDirectoryObject *This,LPWSTR *pAttributeNames,DWORD dwNumberAttributes,PADS_ATTR_INFO *ppAttributeEntries,DWORD *pdwNumAttributesReturned);
+                   HRESULT (WINAPI *SetObjectAttributes)(IDirectoryObject *This,PADS_ATTR_INFO pAttributeEntries,DWORD dwNumAttributes,DWORD *pdwNumAttributesModified);
+                   HRESULT (WINAPI *CreateDSObject)(IDirectoryObject *This,LPWSTR pszRDNName,PADS_ATTR_INFO pAttributeEntries,DWORD dwNumAttributes,IDispatch **ppObject);
+                   HRESULT (WINAPI *DeleteDSObject)(IDirectoryObject *This,LPWSTR pszRDNName);
     END_INTERFACE
   } IDirectoryObjectVtbl;
   struct IDirectoryObject {
@@ -5119,19 +5119,19 @@ extern "C"{
 #else
   typedef struct IDirectorySearchVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDirectorySearch *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDirectorySearch *This);
-      ULONG (WINAPI *Release)(IDirectorySearch *This);
-      HRESULT (WINAPI *SetSearchPreference)(IDirectorySearch *This,PADS_SEARCHPREF_INFO pSearchPrefs,DWORD dwNumPrefs);
-      HRESULT (WINAPI *ExecuteSearch)(IDirectorySearch *This,LPWSTR pszSearchFilter,LPWSTR *pAttributeNames,DWORD dwNumberAttributes,PADS_SEARCH_HANDLE phSearchResult);
-      HRESULT (WINAPI *AbandonSearch)(IDirectorySearch *This,ADS_SEARCH_HANDLE phSearchResult);
-      HRESULT (WINAPI *GetFirstRow)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult);
-      HRESULT (WINAPI *GetNextRow)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult);
-      HRESULT (WINAPI *GetPreviousRow)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult);
-      HRESULT (WINAPI *GetNextColumnName)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchHandle,LPWSTR *ppszColumnName);
-      HRESULT (WINAPI *GetColumn)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult,LPWSTR szColumnName,PADS_SEARCH_COLUMN pSearchColumn);
-      HRESULT (WINAPI *FreeColumn)(IDirectorySearch *This,PADS_SEARCH_COLUMN pSearchColumn);
-      HRESULT (WINAPI *CloseSearchHandle)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult);
+                   HRESULT (WINAPI *QueryInterface)(IDirectorySearch *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDirectorySearch *This);
+                   ULONG (WINAPI *Release)(IDirectorySearch *This);
+                   HRESULT (WINAPI *SetSearchPreference)(IDirectorySearch *This,PADS_SEARCHPREF_INFO pSearchPrefs,DWORD dwNumPrefs);
+                   HRESULT (WINAPI *ExecuteSearch)(IDirectorySearch *This,LPWSTR pszSearchFilter,LPWSTR *pAttributeNames,DWORD dwNumberAttributes,PADS_SEARCH_HANDLE phSearchResult);
+                   HRESULT (WINAPI *AbandonSearch)(IDirectorySearch *This,ADS_SEARCH_HANDLE phSearchResult);
+                   HRESULT (WINAPI *GetFirstRow)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult);
+                   HRESULT (WINAPI *GetNextRow)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult);
+                   HRESULT (WINAPI *GetPreviousRow)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult);
+                   HRESULT (WINAPI *GetNextColumnName)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchHandle,LPWSTR *ppszColumnName);
+                   HRESULT (WINAPI *GetColumn)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult,LPWSTR szColumnName,PADS_SEARCH_COLUMN pSearchColumn);
+                   HRESULT (WINAPI *FreeColumn)(IDirectorySearch *This,PADS_SEARCH_COLUMN pSearchColumn);
+                   HRESULT (WINAPI *CloseSearchHandle)(IDirectorySearch *This,ADS_SEARCH_HANDLE hSearchResult);
     END_INTERFACE
   } IDirectorySearchVtbl;
   struct IDirectorySearch {
@@ -5193,17 +5193,17 @@ extern "C"{
 #else
   typedef struct IDirectorySchemaMgmtVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDirectorySchemaMgmt *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDirectorySchemaMgmt *This);
-      ULONG (WINAPI *Release)(IDirectorySchemaMgmt *This);
-      HRESULT (WINAPI *EnumAttributes)(IDirectorySchemaMgmt *This,LPWSTR *ppszAttrNames,DWORD dwNumAttributes,PADS_ATTR_DEF *ppAttrDefinition,DWORD *pdwNumAttributes);
-      HRESULT (WINAPI *CreateAttributeDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszAttributeName,PADS_ATTR_DEF pAttributeDefinition);
-      HRESULT (WINAPI *WriteAttributeDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszAttributeName,PADS_ATTR_DEF pAttributeDefinition);
-      HRESULT (WINAPI *DeleteAttributeDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszAttributeName);
-      HRESULT (WINAPI *EnumClasses)(IDirectorySchemaMgmt *This,LPWSTR *ppszClassNames,DWORD dwNumClasses,PADS_CLASS_DEF *ppClassDefinition,DWORD *pdwNumClasses);
-      HRESULT (WINAPI *WriteClassDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszClassName,PADS_CLASS_DEF pClassDefinition);
-      HRESULT (WINAPI *CreateClassDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszClassName,PADS_CLASS_DEF pClassDefinition);
-      HRESULT (WINAPI *DeleteClassDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszClassName);
+                   HRESULT (WINAPI *QueryInterface)(IDirectorySchemaMgmt *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDirectorySchemaMgmt *This);
+                   ULONG (WINAPI *Release)(IDirectorySchemaMgmt *This);
+                   HRESULT (WINAPI *EnumAttributes)(IDirectorySchemaMgmt *This,LPWSTR *ppszAttrNames,DWORD dwNumAttributes,PADS_ATTR_DEF *ppAttrDefinition,DWORD *pdwNumAttributes);
+                   HRESULT (WINAPI *CreateAttributeDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszAttributeName,PADS_ATTR_DEF pAttributeDefinition);
+                   HRESULT (WINAPI *WriteAttributeDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszAttributeName,PADS_ATTR_DEF pAttributeDefinition);
+                   HRESULT (WINAPI *DeleteAttributeDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszAttributeName);
+                   HRESULT (WINAPI *EnumClasses)(IDirectorySchemaMgmt *This,LPWSTR *ppszClassNames,DWORD dwNumClasses,PADS_CLASS_DEF *ppClassDefinition,DWORD *pdwNumClasses);
+                   HRESULT (WINAPI *WriteClassDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszClassName,PADS_CLASS_DEF pClassDefinition);
+                   HRESULT (WINAPI *CreateClassDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszClassName,PADS_CLASS_DEF pClassDefinition);
+                   HRESULT (WINAPI *DeleteClassDefinition)(IDirectorySchemaMgmt *This,LPWSTR pszClassName);
     END_INTERFACE
   } IDirectorySchemaMgmtVtbl;
   struct IDirectorySchemaMgmt {
@@ -5255,13 +5255,13 @@ extern "C"{
 #else
   typedef struct IADsAggregateeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsAggregatee *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsAggregatee *This);
-      ULONG (WINAPI *Release)(IADsAggregatee *This);
-      HRESULT (WINAPI *ConnectAsAggregatee)(IADsAggregatee *This,IUnknown *pOuterUnknown);
-      HRESULT (WINAPI *DisconnectAsAggregatee)(IADsAggregatee *This);
-      HRESULT (WINAPI *RelinquishInterface)(IADsAggregatee *This,REFIID riid);
-      HRESULT (WINAPI *RestoreInterface)(IADsAggregatee *This,REFIID riid);
+                   HRESULT (WINAPI *QueryInterface)(IADsAggregatee *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsAggregatee *This);
+                   ULONG (WINAPI *Release)(IADsAggregatee *This);
+                   HRESULT (WINAPI *ConnectAsAggregatee)(IADsAggregatee *This,IUnknown *pOuterUnknown);
+                   HRESULT (WINAPI *DisconnectAsAggregatee)(IADsAggregatee *This);
+                   HRESULT (WINAPI *RelinquishInterface)(IADsAggregatee *This,REFIID riid);
+                   HRESULT (WINAPI *RestoreInterface)(IADsAggregatee *This,REFIID riid);
     END_INTERFACE
   } IADsAggregateeVtbl;
   struct IADsAggregatee {
@@ -5299,11 +5299,11 @@ extern "C"{
 #else
   typedef struct IADsAggregatorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsAggregator *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsAggregator *This);
-      ULONG (WINAPI *Release)(IADsAggregator *This);
-      HRESULT (WINAPI *ConnectAsAggregator)(IADsAggregator *This,IUnknown *pAggregatee);
-      HRESULT (WINAPI *DisconnectAsAggregator)(IADsAggregator *This);
+                   HRESULT (WINAPI *QueryInterface)(IADsAggregator *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsAggregator *This);
+                   ULONG (WINAPI *Release)(IADsAggregator *This);
+                   HRESULT (WINAPI *ConnectAsAggregator)(IADsAggregator *This,IUnknown *pAggregatee);
+                   HRESULT (WINAPI *DisconnectAsAggregator)(IADsAggregator *This);
     END_INTERFACE
   } IADsAggregatorVtbl;
   struct IADsAggregator {
@@ -5347,27 +5347,27 @@ extern "C"{
 #else
   typedef struct IADsAccessControlEntryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsAccessControlEntry *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsAccessControlEntry *This);
-      ULONG (WINAPI *Release)(IADsAccessControlEntry *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsAccessControlEntry *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsAccessControlEntry *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsAccessControlEntry *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsAccessControlEntry *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_AccessMask)(IADsAccessControlEntry *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_AccessMask)(IADsAccessControlEntry *This,__LONG32 lnAccessMask);
-      HRESULT (WINAPI *get_AceType)(IADsAccessControlEntry *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_AceType)(IADsAccessControlEntry *This,__LONG32 lnAceType);
-      HRESULT (WINAPI *get_AceFlags)(IADsAccessControlEntry *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_AceFlags)(IADsAccessControlEntry *This,__LONG32 lnAceFlags);
-      HRESULT (WINAPI *get_Flags)(IADsAccessControlEntry *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Flags)(IADsAccessControlEntry *This,__LONG32 lnFlags);
-      HRESULT (WINAPI *get_ObjectType)(IADsAccessControlEntry *This,BSTR *retval);
-      HRESULT (WINAPI *put_ObjectType)(IADsAccessControlEntry *This,BSTR bstrObjectType);
-      HRESULT (WINAPI *get_InheritedObjectType)(IADsAccessControlEntry *This,BSTR *retval);
-      HRESULT (WINAPI *put_InheritedObjectType)(IADsAccessControlEntry *This,BSTR bstrInheritedObjectType);
-      HRESULT (WINAPI *get_Trustee)(IADsAccessControlEntry *This,BSTR *retval);
-      HRESULT (WINAPI *put_Trustee)(IADsAccessControlEntry *This,BSTR bstrTrustee);
+                   HRESULT (WINAPI *QueryInterface)(IADsAccessControlEntry *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsAccessControlEntry *This);
+                   ULONG (WINAPI *Release)(IADsAccessControlEntry *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsAccessControlEntry *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsAccessControlEntry *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsAccessControlEntry *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsAccessControlEntry *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_AccessMask)(IADsAccessControlEntry *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_AccessMask)(IADsAccessControlEntry *This,__LONG32 lnAccessMask);
+                   HRESULT (WINAPI *get_AceType)(IADsAccessControlEntry *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_AceType)(IADsAccessControlEntry *This,__LONG32 lnAceType);
+                   HRESULT (WINAPI *get_AceFlags)(IADsAccessControlEntry *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_AceFlags)(IADsAccessControlEntry *This,__LONG32 lnAceFlags);
+                   HRESULT (WINAPI *get_Flags)(IADsAccessControlEntry *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Flags)(IADsAccessControlEntry *This,__LONG32 lnFlags);
+                   HRESULT (WINAPI *get_ObjectType)(IADsAccessControlEntry *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ObjectType)(IADsAccessControlEntry *This,BSTR bstrObjectType);
+                   HRESULT (WINAPI *get_InheritedObjectType)(IADsAccessControlEntry *This,BSTR *retval);
+                   HRESULT (WINAPI *put_InheritedObjectType)(IADsAccessControlEntry *This,BSTR bstrInheritedObjectType);
+                   HRESULT (WINAPI *get_Trustee)(IADsAccessControlEntry *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Trustee)(IADsAccessControlEntry *This,BSTR bstrTrustee);
     END_INTERFACE
   } IADsAccessControlEntryVtbl;
   struct IADsAccessControlEntry {
@@ -5450,21 +5450,21 @@ extern "C"{
 #else
   typedef struct IADsAccessControlListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsAccessControlList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsAccessControlList *This);
-      ULONG (WINAPI *Release)(IADsAccessControlList *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsAccessControlList *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsAccessControlList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsAccessControlList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsAccessControlList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_AclRevision)(IADsAccessControlList *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_AclRevision)(IADsAccessControlList *This,__LONG32 lnAclRevision);
-      HRESULT (WINAPI *get_AceCount)(IADsAccessControlList *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_AceCount)(IADsAccessControlList *This,__LONG32 lnAceCount);
-      HRESULT (WINAPI *AddAce)(IADsAccessControlList *This,IDispatch *pAccessControlEntry);
-      HRESULT (WINAPI *RemoveAce)(IADsAccessControlList *This,IDispatch *pAccessControlEntry);
-      HRESULT (WINAPI *CopyAccessList)(IADsAccessControlList *This,IDispatch **ppAccessControlList);
-      HRESULT (WINAPI *get__NewEnum)(IADsAccessControlList *This,IUnknown **retval);
+                   HRESULT (WINAPI *QueryInterface)(IADsAccessControlList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsAccessControlList *This);
+                   ULONG (WINAPI *Release)(IADsAccessControlList *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsAccessControlList *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsAccessControlList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsAccessControlList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsAccessControlList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_AclRevision)(IADsAccessControlList *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_AclRevision)(IADsAccessControlList *This,__LONG32 lnAclRevision);
+                   HRESULT (WINAPI *get_AceCount)(IADsAccessControlList *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_AceCount)(IADsAccessControlList *This,__LONG32 lnAceCount);
+                   HRESULT (WINAPI *AddAce)(IADsAccessControlList *This,IDispatch *pAccessControlEntry);
+                   HRESULT (WINAPI *RemoveAce)(IADsAccessControlList *This,IDispatch *pAccessControlEntry);
+                   HRESULT (WINAPI *CopyAccessList)(IADsAccessControlList *This,IDispatch **ppAccessControlList);
+                   HRESULT (WINAPI *get__NewEnum)(IADsAccessControlList *This,IUnknown **retval);
     END_INTERFACE
   } IADsAccessControlListVtbl;
   struct IADsAccessControlList {
@@ -5542,34 +5542,34 @@ extern "C"{
 #else
   typedef struct IADsSecurityDescriptorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsSecurityDescriptor *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsSecurityDescriptor *This);
-      ULONG (WINAPI *Release)(IADsSecurityDescriptor *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsSecurityDescriptor *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsSecurityDescriptor *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsSecurityDescriptor *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsSecurityDescriptor *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Revision)(IADsSecurityDescriptor *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Revision)(IADsSecurityDescriptor *This,__LONG32 lnRevision);
-      HRESULT (WINAPI *get_Control)(IADsSecurityDescriptor *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Control)(IADsSecurityDescriptor *This,__LONG32 lnControl);
-      HRESULT (WINAPI *get_Owner)(IADsSecurityDescriptor *This,BSTR *retval);
-      HRESULT (WINAPI *put_Owner)(IADsSecurityDescriptor *This,BSTR bstrOwner);
-      HRESULT (WINAPI *get_OwnerDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_OwnerDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL fOwnerDefaulted);
-      HRESULT (WINAPI *get_Group)(IADsSecurityDescriptor *This,BSTR *retval);
-      HRESULT (WINAPI *put_Group)(IADsSecurityDescriptor *This,BSTR bstrGroup);
-      HRESULT (WINAPI *get_GroupDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_GroupDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL fGroupDefaulted);
-      HRESULT (WINAPI *get_DiscretionaryAcl)(IADsSecurityDescriptor *This,IDispatch **retval);
-      HRESULT (WINAPI *put_DiscretionaryAcl)(IADsSecurityDescriptor *This,IDispatch *pDiscretionaryAcl);
-      HRESULT (WINAPI *get_DaclDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_DaclDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL fDaclDefaulted);
-      HRESULT (WINAPI *get_SystemAcl)(IADsSecurityDescriptor *This,IDispatch **retval);
-      HRESULT (WINAPI *put_SystemAcl)(IADsSecurityDescriptor *This,IDispatch *pSystemAcl);
-      HRESULT (WINAPI *get_SaclDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_SaclDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL fSaclDefaulted);
-      HRESULT (WINAPI *CopySecurityDescriptor)(IADsSecurityDescriptor *This,IDispatch **ppSecurityDescriptor);
+                   HRESULT (WINAPI *QueryInterface)(IADsSecurityDescriptor *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsSecurityDescriptor *This);
+                   ULONG (WINAPI *Release)(IADsSecurityDescriptor *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsSecurityDescriptor *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsSecurityDescriptor *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsSecurityDescriptor *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsSecurityDescriptor *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Revision)(IADsSecurityDescriptor *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Revision)(IADsSecurityDescriptor *This,__LONG32 lnRevision);
+                   HRESULT (WINAPI *get_Control)(IADsSecurityDescriptor *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Control)(IADsSecurityDescriptor *This,__LONG32 lnControl);
+                   HRESULT (WINAPI *get_Owner)(IADsSecurityDescriptor *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Owner)(IADsSecurityDescriptor *This,BSTR bstrOwner);
+                   HRESULT (WINAPI *get_OwnerDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_OwnerDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL fOwnerDefaulted);
+                   HRESULT (WINAPI *get_Group)(IADsSecurityDescriptor *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Group)(IADsSecurityDescriptor *This,BSTR bstrGroup);
+                   HRESULT (WINAPI *get_GroupDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_GroupDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL fGroupDefaulted);
+                   HRESULT (WINAPI *get_DiscretionaryAcl)(IADsSecurityDescriptor *This,IDispatch **retval);
+                   HRESULT (WINAPI *put_DiscretionaryAcl)(IADsSecurityDescriptor *This,IDispatch *pDiscretionaryAcl);
+                   HRESULT (WINAPI *get_DaclDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_DaclDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL fDaclDefaulted);
+                   HRESULT (WINAPI *get_SystemAcl)(IADsSecurityDescriptor *This,IDispatch **retval);
+                   HRESULT (WINAPI *put_SystemAcl)(IADsSecurityDescriptor *This,IDispatch *pSystemAcl);
+                   HRESULT (WINAPI *get_SaclDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_SaclDefaulted)(IADsSecurityDescriptor *This,VARIANT_BOOL fSaclDefaulted);
+                   HRESULT (WINAPI *CopySecurityDescriptor)(IADsSecurityDescriptor *This,IDispatch **ppSecurityDescriptor);
     END_INTERFACE
   } IADsSecurityDescriptorVtbl;
   struct IADsSecurityDescriptor {
@@ -5669,17 +5669,17 @@ extern "C"{
 #else
   typedef struct IADsLargeIntegerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsLargeInteger *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsLargeInteger *This);
-      ULONG (WINAPI *Release)(IADsLargeInteger *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsLargeInteger *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsLargeInteger *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsLargeInteger *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsLargeInteger *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_HighPart)(IADsLargeInteger *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_HighPart)(IADsLargeInteger *This,__LONG32 lnHighPart);
-      HRESULT (WINAPI *get_LowPart)(IADsLargeInteger *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_LowPart)(IADsLargeInteger *This,__LONG32 lnLowPart);
+                   HRESULT (WINAPI *QueryInterface)(IADsLargeInteger *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsLargeInteger *This);
+                   ULONG (WINAPI *Release)(IADsLargeInteger *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsLargeInteger *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsLargeInteger *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsLargeInteger *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsLargeInteger *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_HighPart)(IADsLargeInteger *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_HighPart)(IADsLargeInteger *This,__LONG32 lnHighPart);
+                   HRESULT (WINAPI *get_LowPart)(IADsLargeInteger *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_LowPart)(IADsLargeInteger *This,__LONG32 lnLowPart);
     END_INTERFACE
   } IADsLargeIntegerVtbl;
   struct IADsLargeInteger {
@@ -5731,20 +5731,20 @@ extern "C"{
 #else
   typedef struct IADsNameTranslateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsNameTranslate *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsNameTranslate *This);
-      ULONG (WINAPI *Release)(IADsNameTranslate *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsNameTranslate *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsNameTranslate *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsNameTranslate *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsNameTranslate *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_ChaseReferral)(IADsNameTranslate *This,__LONG32 lnChaseReferral);
-      HRESULT (WINAPI *Init)(IADsNameTranslate *This,__LONG32 lnSetType,BSTR bstrADsPath);
-      HRESULT (WINAPI *InitEx)(IADsNameTranslate *This,__LONG32 lnSetType,BSTR bstrADsPath,BSTR bstrUserID,BSTR bstrDomain,BSTR bstrPassword);
-      HRESULT (WINAPI *Set)(IADsNameTranslate *This,__LONG32 lnSetType,BSTR bstrADsPath);
-      HRESULT (WINAPI *Get)(IADsNameTranslate *This,__LONG32 lnFormatType,BSTR *pbstrADsPath);
-      HRESULT (WINAPI *SetEx)(IADsNameTranslate *This,__LONG32 lnFormatType,VARIANT pvar);
-      HRESULT (WINAPI *GetEx)(IADsNameTranslate *This,__LONG32 lnFormatType,VARIANT *pvar);
+                   HRESULT (WINAPI *QueryInterface)(IADsNameTranslate *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsNameTranslate *This);
+                   ULONG (WINAPI *Release)(IADsNameTranslate *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsNameTranslate *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsNameTranslate *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsNameTranslate *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsNameTranslate *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_ChaseReferral)(IADsNameTranslate *This,__LONG32 lnChaseReferral);
+                   HRESULT (WINAPI *Init)(IADsNameTranslate *This,__LONG32 lnSetType,BSTR bstrADsPath);
+                   HRESULT (WINAPI *InitEx)(IADsNameTranslate *This,__LONG32 lnSetType,BSTR bstrADsPath,BSTR bstrUserID,BSTR bstrDomain,BSTR bstrPassword);
+                   HRESULT (WINAPI *Set)(IADsNameTranslate *This,__LONG32 lnSetType,BSTR bstrADsPath);
+                   HRESULT (WINAPI *Get)(IADsNameTranslate *This,__LONG32 lnFormatType,BSTR *pbstrADsPath);
+                   HRESULT (WINAPI *SetEx)(IADsNameTranslate *This,__LONG32 lnFormatType,VARIANT pvar);
+                   HRESULT (WINAPI *GetEx)(IADsNameTranslate *This,__LONG32 lnFormatType,VARIANT *pvar);
     END_INTERFACE
   } IADsNameTranslateVtbl;
   struct IADsNameTranslate {
@@ -5800,15 +5800,15 @@ extern "C"{
 #else
   typedef struct IADsCaseIgnoreListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsCaseIgnoreList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsCaseIgnoreList *This);
-      ULONG (WINAPI *Release)(IADsCaseIgnoreList *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsCaseIgnoreList *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsCaseIgnoreList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsCaseIgnoreList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsCaseIgnoreList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_CaseIgnoreList)(IADsCaseIgnoreList *This,VARIANT *retval);
-      HRESULT (WINAPI *put_CaseIgnoreList)(IADsCaseIgnoreList *This,VARIANT vCaseIgnoreList);
+                   HRESULT (WINAPI *QueryInterface)(IADsCaseIgnoreList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsCaseIgnoreList *This);
+                   ULONG (WINAPI *Release)(IADsCaseIgnoreList *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsCaseIgnoreList *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsCaseIgnoreList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsCaseIgnoreList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsCaseIgnoreList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_CaseIgnoreList)(IADsCaseIgnoreList *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_CaseIgnoreList)(IADsCaseIgnoreList *This,VARIANT vCaseIgnoreList);
     END_INTERFACE
   } IADsCaseIgnoreListVtbl;
   struct IADsCaseIgnoreList {
@@ -5851,17 +5851,17 @@ extern "C"{
 #else
   typedef struct IADsFaxNumberVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsFaxNumber *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsFaxNumber *This);
-      ULONG (WINAPI *Release)(IADsFaxNumber *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsFaxNumber *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsFaxNumber *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsFaxNumber *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsFaxNumber *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_TelephoneNumber)(IADsFaxNumber *This,BSTR *retval);
-      HRESULT (WINAPI *put_TelephoneNumber)(IADsFaxNumber *This,BSTR bstrTelephoneNumber);
-      HRESULT (WINAPI *get_Parameters)(IADsFaxNumber *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Parameters)(IADsFaxNumber *This,VARIANT vParameters);
+                   HRESULT (WINAPI *QueryInterface)(IADsFaxNumber *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsFaxNumber *This);
+                   ULONG (WINAPI *Release)(IADsFaxNumber *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsFaxNumber *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsFaxNumber *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsFaxNumber *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsFaxNumber *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_TelephoneNumber)(IADsFaxNumber *This,BSTR *retval);
+                   HRESULT (WINAPI *put_TelephoneNumber)(IADsFaxNumber *This,BSTR bstrTelephoneNumber);
+                   HRESULT (WINAPI *get_Parameters)(IADsFaxNumber *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Parameters)(IADsFaxNumber *This,VARIANT vParameters);
     END_INTERFACE
   } IADsFaxNumberVtbl;
   struct IADsFaxNumber {
@@ -5910,17 +5910,17 @@ extern "C"{
 #else
   typedef struct IADsNetAddressVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsNetAddress *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsNetAddress *This);
-      ULONG (WINAPI *Release)(IADsNetAddress *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsNetAddress *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsNetAddress *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsNetAddress *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsNetAddress *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_AddressType)(IADsNetAddress *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_AddressType)(IADsNetAddress *This,__LONG32 lnAddressType);
-      HRESULT (WINAPI *get_Address)(IADsNetAddress *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Address)(IADsNetAddress *This,VARIANT vAddress);
+                   HRESULT (WINAPI *QueryInterface)(IADsNetAddress *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsNetAddress *This);
+                   ULONG (WINAPI *Release)(IADsNetAddress *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsNetAddress *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsNetAddress *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsNetAddress *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsNetAddress *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_AddressType)(IADsNetAddress *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_AddressType)(IADsNetAddress *This,__LONG32 lnAddressType);
+                   HRESULT (WINAPI *get_Address)(IADsNetAddress *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Address)(IADsNetAddress *This,VARIANT vAddress);
     END_INTERFACE
   } IADsNetAddressVtbl;
   struct IADsNetAddress {
@@ -5967,15 +5967,15 @@ extern "C"{
 #else
   typedef struct IADsOctetListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsOctetList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsOctetList *This);
-      ULONG (WINAPI *Release)(IADsOctetList *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsOctetList *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsOctetList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsOctetList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsOctetList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_OctetList)(IADsOctetList *This,VARIANT *retval);
-      HRESULT (WINAPI *put_OctetList)(IADsOctetList *This,VARIANT vOctetList);
+                   HRESULT (WINAPI *QueryInterface)(IADsOctetList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsOctetList *This);
+                   ULONG (WINAPI *Release)(IADsOctetList *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsOctetList *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsOctetList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsOctetList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsOctetList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_OctetList)(IADsOctetList *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_OctetList)(IADsOctetList *This,VARIANT vOctetList);
     END_INTERFACE
   } IADsOctetListVtbl;
   struct IADsOctetList {
@@ -6018,17 +6018,17 @@ extern "C"{
 #else
   typedef struct IADsEmailVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsEmail *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsEmail *This);
-      ULONG (WINAPI *Release)(IADsEmail *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsEmail *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsEmail *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsEmail *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsEmail *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Type)(IADsEmail *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Type)(IADsEmail *This,__LONG32 lnType);
-      HRESULT (WINAPI *get_Address)(IADsEmail *This,BSTR *retval);
-      HRESULT (WINAPI *put_Address)(IADsEmail *This,BSTR bstrAddress);
+                   HRESULT (WINAPI *QueryInterface)(IADsEmail *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsEmail *This);
+                   ULONG (WINAPI *Release)(IADsEmail *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsEmail *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsEmail *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsEmail *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsEmail *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Type)(IADsEmail *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Type)(IADsEmail *This,__LONG32 lnType);
+                   HRESULT (WINAPI *get_Address)(IADsEmail *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Address)(IADsEmail *This,BSTR bstrAddress);
     END_INTERFACE
   } IADsEmailVtbl;
   struct IADsEmail {
@@ -6079,19 +6079,19 @@ extern "C"{
 #else
   typedef struct IADsPathVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPath *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPath *This);
-      ULONG (WINAPI *Release)(IADsPath *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPath *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPath *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPath *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPath *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Type)(IADsPath *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Type)(IADsPath *This,__LONG32 lnType);
-      HRESULT (WINAPI *get_VolumeName)(IADsPath *This,BSTR *retval);
-      HRESULT (WINAPI *put_VolumeName)(IADsPath *This,BSTR bstrVolumeName);
-      HRESULT (WINAPI *get_Path)(IADsPath *This,BSTR *retval);
-      HRESULT (WINAPI *put_Path)(IADsPath *This,BSTR bstrPath);
+                   HRESULT (WINAPI *QueryInterface)(IADsPath *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPath *This);
+                   ULONG (WINAPI *Release)(IADsPath *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPath *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPath *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPath *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPath *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Type)(IADsPath *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Type)(IADsPath *This,__LONG32 lnType);
+                   HRESULT (WINAPI *get_VolumeName)(IADsPath *This,BSTR *retval);
+                   HRESULT (WINAPI *put_VolumeName)(IADsPath *This,BSTR bstrVolumeName);
+                   HRESULT (WINAPI *get_Path)(IADsPath *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Path)(IADsPath *This,BSTR bstrPath);
     END_INTERFACE
   } IADsPathVtbl;
   struct IADsPath {
@@ -6152,23 +6152,23 @@ extern "C"{
 #else
   typedef struct IADsReplicaPointerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsReplicaPointer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsReplicaPointer *This);
-      ULONG (WINAPI *Release)(IADsReplicaPointer *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsReplicaPointer *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsReplicaPointer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsReplicaPointer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsReplicaPointer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ServerName)(IADsReplicaPointer *This,BSTR *retval);
-      HRESULT (WINAPI *put_ServerName)(IADsReplicaPointer *This,BSTR bstrServerName);
-      HRESULT (WINAPI *get_ReplicaType)(IADsReplicaPointer *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ReplicaType)(IADsReplicaPointer *This,__LONG32 lnReplicaType);
-      HRESULT (WINAPI *get_ReplicaNumber)(IADsReplicaPointer *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_ReplicaNumber)(IADsReplicaPointer *This,__LONG32 lnReplicaNumber);
-      HRESULT (WINAPI *get_Count)(IADsReplicaPointer *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Count)(IADsReplicaPointer *This,__LONG32 lnCount);
-      HRESULT (WINAPI *get_ReplicaAddressHints)(IADsReplicaPointer *This,VARIANT *retval);
-      HRESULT (WINAPI *put_ReplicaAddressHints)(IADsReplicaPointer *This,VARIANT vReplicaAddressHints);
+                   HRESULT (WINAPI *QueryInterface)(IADsReplicaPointer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsReplicaPointer *This);
+                   ULONG (WINAPI *Release)(IADsReplicaPointer *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsReplicaPointer *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsReplicaPointer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsReplicaPointer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsReplicaPointer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ServerName)(IADsReplicaPointer *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ServerName)(IADsReplicaPointer *This,BSTR bstrServerName);
+                   HRESULT (WINAPI *get_ReplicaType)(IADsReplicaPointer *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ReplicaType)(IADsReplicaPointer *This,__LONG32 lnReplicaType);
+                   HRESULT (WINAPI *get_ReplicaNumber)(IADsReplicaPointer *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_ReplicaNumber)(IADsReplicaPointer *This,__LONG32 lnReplicaNumber);
+                   HRESULT (WINAPI *get_Count)(IADsReplicaPointer *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Count)(IADsReplicaPointer *This,__LONG32 lnCount);
+                   HRESULT (WINAPI *get_ReplicaAddressHints)(IADsReplicaPointer *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_ReplicaAddressHints)(IADsReplicaPointer *This,VARIANT vReplicaAddressHints);
     END_INTERFACE
   } IADsReplicaPointerVtbl;
   struct IADsReplicaPointer {
@@ -6238,20 +6238,20 @@ extern "C"{
 #else
   typedef struct IADsAclVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsAcl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsAcl *This);
-      ULONG (WINAPI *Release)(IADsAcl *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsAcl *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsAcl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsAcl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsAcl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ProtectedAttrName)(IADsAcl *This,BSTR *retval);
-      HRESULT (WINAPI *put_ProtectedAttrName)(IADsAcl *This,BSTR bstrProtectedAttrName);
-      HRESULT (WINAPI *get_SubjectName)(IADsAcl *This,BSTR *retval);
-      HRESULT (WINAPI *put_SubjectName)(IADsAcl *This,BSTR bstrSubjectName);
-      HRESULT (WINAPI *get_Privileges)(IADsAcl *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Privileges)(IADsAcl *This,__LONG32 lnPrivileges);
-      HRESULT (WINAPI *CopyAcl)(IADsAcl *This,IDispatch **ppAcl);
+                   HRESULT (WINAPI *QueryInterface)(IADsAcl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsAcl *This);
+                   ULONG (WINAPI *Release)(IADsAcl *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsAcl *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsAcl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsAcl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsAcl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ProtectedAttrName)(IADsAcl *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ProtectedAttrName)(IADsAcl *This,BSTR bstrProtectedAttrName);
+                   HRESULT (WINAPI *get_SubjectName)(IADsAcl *This,BSTR *retval);
+                   HRESULT (WINAPI *put_SubjectName)(IADsAcl *This,BSTR bstrSubjectName);
+                   HRESULT (WINAPI *get_Privileges)(IADsAcl *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Privileges)(IADsAcl *This,__LONG32 lnPrivileges);
+                   HRESULT (WINAPI *CopyAcl)(IADsAcl *This,IDispatch **ppAcl);
     END_INTERFACE
   } IADsAclVtbl;
   struct IADsAcl {
@@ -6304,17 +6304,17 @@ extern "C"{
 #else
   typedef struct IADsTimestampVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsTimestamp *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsTimestamp *This);
-      ULONG (WINAPI *Release)(IADsTimestamp *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsTimestamp *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsTimestamp *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsTimestamp *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsTimestamp *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_WholeSeconds)(IADsTimestamp *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_WholeSeconds)(IADsTimestamp *This,__LONG32 lnWholeSeconds);
-      HRESULT (WINAPI *get_EventID)(IADsTimestamp *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_EventID)(IADsTimestamp *This,__LONG32 lnEventID);
+                   HRESULT (WINAPI *QueryInterface)(IADsTimestamp *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsTimestamp *This);
+                   ULONG (WINAPI *Release)(IADsTimestamp *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsTimestamp *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsTimestamp *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsTimestamp *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsTimestamp *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_WholeSeconds)(IADsTimestamp *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_WholeSeconds)(IADsTimestamp *This,__LONG32 lnWholeSeconds);
+                   HRESULT (WINAPI *get_EventID)(IADsTimestamp *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_EventID)(IADsTimestamp *This,__LONG32 lnEventID);
     END_INTERFACE
   } IADsTimestampVtbl;
   struct IADsTimestamp {
@@ -6361,15 +6361,15 @@ extern "C"{
 #else
   typedef struct IADsPostalAddressVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPostalAddress *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPostalAddress *This);
-      ULONG (WINAPI *Release)(IADsPostalAddress *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPostalAddress *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPostalAddress *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPostalAddress *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPostalAddress *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_PostalAddress)(IADsPostalAddress *This,VARIANT *retval);
-      HRESULT (WINAPI *put_PostalAddress)(IADsPostalAddress *This,VARIANT vPostalAddress);
+                   HRESULT (WINAPI *QueryInterface)(IADsPostalAddress *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPostalAddress *This);
+                   ULONG (WINAPI *Release)(IADsPostalAddress *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPostalAddress *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPostalAddress *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPostalAddress *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPostalAddress *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_PostalAddress)(IADsPostalAddress *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_PostalAddress)(IADsPostalAddress *This,VARIANT vPostalAddress);
     END_INTERFACE
   } IADsPostalAddressVtbl;
   struct IADsPostalAddress {
@@ -6412,17 +6412,17 @@ extern "C"{
 #else
   typedef struct IADsBackLinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsBackLink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsBackLink *This);
-      ULONG (WINAPI *Release)(IADsBackLink *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsBackLink *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsBackLink *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsBackLink *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsBackLink *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_RemoteID)(IADsBackLink *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_RemoteID)(IADsBackLink *This,__LONG32 lnRemoteID);
-      HRESULT (WINAPI *get_ObjectName)(IADsBackLink *This,BSTR *retval);
-      HRESULT (WINAPI *put_ObjectName)(IADsBackLink *This,BSTR bstrObjectName);
+                   HRESULT (WINAPI *QueryInterface)(IADsBackLink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsBackLink *This);
+                   ULONG (WINAPI *Release)(IADsBackLink *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsBackLink *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsBackLink *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsBackLink *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsBackLink *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_RemoteID)(IADsBackLink *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_RemoteID)(IADsBackLink *This,__LONG32 lnRemoteID);
+                   HRESULT (WINAPI *get_ObjectName)(IADsBackLink *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ObjectName)(IADsBackLink *This,BSTR bstrObjectName);
     END_INTERFACE
   } IADsBackLinkVtbl;
   struct IADsBackLink {
@@ -6473,19 +6473,19 @@ extern "C"{
 #else
   typedef struct IADsTypedNameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsTypedName *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsTypedName *This);
-      ULONG (WINAPI *Release)(IADsTypedName *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsTypedName *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsTypedName *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsTypedName *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsTypedName *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ObjectName)(IADsTypedName *This,BSTR *retval);
-      HRESULT (WINAPI *put_ObjectName)(IADsTypedName *This,BSTR bstrObjectName);
-      HRESULT (WINAPI *get_Level)(IADsTypedName *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Level)(IADsTypedName *This,__LONG32 lnLevel);
-      HRESULT (WINAPI *get_Interval)(IADsTypedName *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Interval)(IADsTypedName *This,__LONG32 lnInterval);
+                   HRESULT (WINAPI *QueryInterface)(IADsTypedName *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsTypedName *This);
+                   ULONG (WINAPI *Release)(IADsTypedName *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsTypedName *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsTypedName *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsTypedName *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsTypedName *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ObjectName)(IADsTypedName *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ObjectName)(IADsTypedName *This,BSTR bstrObjectName);
+                   HRESULT (WINAPI *get_Level)(IADsTypedName *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Level)(IADsTypedName *This,__LONG32 lnLevel);
+                   HRESULT (WINAPI *get_Interval)(IADsTypedName *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Interval)(IADsTypedName *This,__LONG32 lnInterval);
     END_INTERFACE
   } IADsTypedNameVtbl;
   struct IADsTypedName {
@@ -6540,17 +6540,17 @@ extern "C"{
 #else
   typedef struct IADsHoldVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsHold *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsHold *This);
-      ULONG (WINAPI *Release)(IADsHold *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsHold *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsHold *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsHold *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsHold *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ObjectName)(IADsHold *This,BSTR *retval);
-      HRESULT (WINAPI *put_ObjectName)(IADsHold *This,BSTR bstrObjectName);
-      HRESULT (WINAPI *get_Amount)(IADsHold *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_Amount)(IADsHold *This,__LONG32 lnAmount);
+                   HRESULT (WINAPI *QueryInterface)(IADsHold *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsHold *This);
+                   ULONG (WINAPI *Release)(IADsHold *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsHold *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsHold *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsHold *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsHold *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ObjectName)(IADsHold *This,BSTR *retval);
+                   HRESULT (WINAPI *put_ObjectName)(IADsHold *This,BSTR bstrObjectName);
+                   HRESULT (WINAPI *get_Amount)(IADsHold *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_Amount)(IADsHold *This,__LONG32 lnAmount);
     END_INTERFACE
   } IADsHoldVtbl;
   struct IADsHold {
@@ -6597,15 +6597,15 @@ extern "C"{
 #else
   typedef struct IADsObjectOptionsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsObjectOptions *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsObjectOptions *This);
-      ULONG (WINAPI *Release)(IADsObjectOptions *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsObjectOptions *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsObjectOptions *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsObjectOptions *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsObjectOptions *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetOption)(IADsObjectOptions *This,__LONG32 lnOption,VARIANT *pvValue);
-      HRESULT (WINAPI *SetOption)(IADsObjectOptions *This,__LONG32 lnOption,VARIANT vValue);
+                   HRESULT (WINAPI *QueryInterface)(IADsObjectOptions *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsObjectOptions *This);
+                   ULONG (WINAPI *Release)(IADsObjectOptions *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsObjectOptions *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsObjectOptions *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsObjectOptions *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsObjectOptions *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetOption)(IADsObjectOptions *This,__LONG32 lnOption,VARIANT *pvValue);
+                   HRESULT (WINAPI *SetOption)(IADsObjectOptions *This,__LONG32 lnOption,VARIANT vValue);
     END_INTERFACE
   } IADsObjectOptionsVtbl;
   struct IADsObjectOptions {
@@ -6650,24 +6650,24 @@ extern "C"{
 #else
   typedef struct IADsPathnameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsPathname *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsPathname *This);
-      ULONG (WINAPI *Release)(IADsPathname *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsPathname *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsPathname *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsPathname *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsPathname *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Set)(IADsPathname *This,BSTR bstrADsPath,__LONG32 lnSetType);
-      HRESULT (WINAPI *SetDisplayType)(IADsPathname *This,__LONG32 lnDisplayType);
-      HRESULT (WINAPI *Retrieve)(IADsPathname *This,__LONG32 lnFormatType,BSTR *pbstrADsPath);
-      HRESULT (WINAPI *GetNumElements)(IADsPathname *This,__LONG32 *plnNumPathElements);
-      HRESULT (WINAPI *GetElement)(IADsPathname *This,__LONG32 lnElementIndex,BSTR *pbstrElement);
-      HRESULT (WINAPI *AddLeafElement)(IADsPathname *This,BSTR bstrLeafElement);
-      HRESULT (WINAPI *RemoveLeafElement)(IADsPathname *This);
-      HRESULT (WINAPI *CopyPath)(IADsPathname *This,IDispatch **ppAdsPath);
-      HRESULT (WINAPI *GetEscapedElement)(IADsPathname *This,__LONG32 lnReserved,BSTR bstrInStr,BSTR *pbstrOutStr);
-      HRESULT (WINAPI *get_EscapedMode)(IADsPathname *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_EscapedMode)(IADsPathname *This,__LONG32 lnEscapedMode);
+                   HRESULT (WINAPI *QueryInterface)(IADsPathname *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsPathname *This);
+                   ULONG (WINAPI *Release)(IADsPathname *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsPathname *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsPathname *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsPathname *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsPathname *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Set)(IADsPathname *This,BSTR bstrADsPath,__LONG32 lnSetType);
+                   HRESULT (WINAPI *SetDisplayType)(IADsPathname *This,__LONG32 lnDisplayType);
+                   HRESULT (WINAPI *Retrieve)(IADsPathname *This,__LONG32 lnFormatType,BSTR *pbstrADsPath);
+                   HRESULT (WINAPI *GetNumElements)(IADsPathname *This,__LONG32 *plnNumPathElements);
+                   HRESULT (WINAPI *GetElement)(IADsPathname *This,__LONG32 lnElementIndex,BSTR *pbstrElement);
+                   HRESULT (WINAPI *AddLeafElement)(IADsPathname *This,BSTR bstrLeafElement);
+                   HRESULT (WINAPI *RemoveLeafElement)(IADsPathname *This);
+                   HRESULT (WINAPI *CopyPath)(IADsPathname *This,IDispatch **ppAdsPath);
+                   HRESULT (WINAPI *GetEscapedElement)(IADsPathname *This,__LONG32 lnReserved,BSTR bstrInStr,BSTR *pbstrOutStr);
+                   HRESULT (WINAPI *get_EscapedMode)(IADsPathname *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_EscapedMode)(IADsPathname *This,__LONG32 lnEscapedMode);
     END_INTERFACE
   } IADsPathnameVtbl;
   struct IADsPathname {
@@ -6746,26 +6746,26 @@ extern "C"{
 #else
   typedef struct IADsADSystemInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsADSystemInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsADSystemInfo *This);
-      ULONG (WINAPI *Release)(IADsADSystemInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsADSystemInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsADSystemInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsADSystemInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsADSystemInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_UserName)(IADsADSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_ComputerName)(IADsADSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_SiteName)(IADsADSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_DomainShortName)(IADsADSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_DomainDNSName)(IADsADSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_ForestDNSName)(IADsADSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_PDCRoleOwner)(IADsADSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_SchemaRoleOwner)(IADsADSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_IsNativeMode)(IADsADSystemInfo *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *GetAnyDCName)(IADsADSystemInfo *This,BSTR *pszDCName);
-      HRESULT (WINAPI *GetDCSiteName)(IADsADSystemInfo *This,BSTR szServer,BSTR *pszSiteName);
-      HRESULT (WINAPI *RefreshSchemaCache)(IADsADSystemInfo *This);
-      HRESULT (WINAPI *GetTrees)(IADsADSystemInfo *This,VARIANT *pvTrees);
+                   HRESULT (WINAPI *QueryInterface)(IADsADSystemInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsADSystemInfo *This);
+                   ULONG (WINAPI *Release)(IADsADSystemInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsADSystemInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsADSystemInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsADSystemInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsADSystemInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_UserName)(IADsADSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ComputerName)(IADsADSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_SiteName)(IADsADSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_DomainShortName)(IADsADSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_DomainDNSName)(IADsADSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ForestDNSName)(IADsADSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_PDCRoleOwner)(IADsADSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_SchemaRoleOwner)(IADsADSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_IsNativeMode)(IADsADSystemInfo *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *GetAnyDCName)(IADsADSystemInfo *This,BSTR *pszDCName);
+                   HRESULT (WINAPI *GetDCSiteName)(IADsADSystemInfo *This,BSTR szServer,BSTR *pszSiteName);
+                   HRESULT (WINAPI *RefreshSchemaCache)(IADsADSystemInfo *This);
+                   HRESULT (WINAPI *GetTrees)(IADsADSystemInfo *This,VARIANT *pvTrees);
     END_INTERFACE
   } IADsADSystemInfoVtbl;
   struct IADsADSystemInfo {
@@ -6841,17 +6841,17 @@ extern "C"{
 #else
   typedef struct IADsWinNTSystemInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsWinNTSystemInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsWinNTSystemInfo *This);
-      ULONG (WINAPI *Release)(IADsWinNTSystemInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsWinNTSystemInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsWinNTSystemInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsWinNTSystemInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsWinNTSystemInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_UserName)(IADsWinNTSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_ComputerName)(IADsWinNTSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_DomainName)(IADsWinNTSystemInfo *This,BSTR *retval);
-      HRESULT (WINAPI *get_PDC)(IADsWinNTSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *QueryInterface)(IADsWinNTSystemInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsWinNTSystemInfo *This);
+                   ULONG (WINAPI *Release)(IADsWinNTSystemInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsWinNTSystemInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsWinNTSystemInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsWinNTSystemInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsWinNTSystemInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_UserName)(IADsWinNTSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_ComputerName)(IADsWinNTSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_DomainName)(IADsWinNTSystemInfo *This,BSTR *retval);
+                   HRESULT (WINAPI *get_PDC)(IADsWinNTSystemInfo *This,BSTR *retval);
     END_INTERFACE
   } IADsWinNTSystemInfoVtbl;
   struct IADsWinNTSystemInfo {
@@ -6900,17 +6900,17 @@ extern "C"{
 #else
   typedef struct IADsDNWithBinaryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsDNWithBinary *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsDNWithBinary *This);
-      ULONG (WINAPI *Release)(IADsDNWithBinary *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsDNWithBinary *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsDNWithBinary *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsDNWithBinary *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsDNWithBinary *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_BinaryValue)(IADsDNWithBinary *This,VARIANT *retval);
-      HRESULT (WINAPI *put_BinaryValue)(IADsDNWithBinary *This,VARIANT vBinaryValue);
-      HRESULT (WINAPI *get_DNString)(IADsDNWithBinary *This,BSTR *retval);
-      HRESULT (WINAPI *put_DNString)(IADsDNWithBinary *This,BSTR bstrDNString);
+                   HRESULT (WINAPI *QueryInterface)(IADsDNWithBinary *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsDNWithBinary *This);
+                   ULONG (WINAPI *Release)(IADsDNWithBinary *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsDNWithBinary *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsDNWithBinary *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsDNWithBinary *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsDNWithBinary *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_BinaryValue)(IADsDNWithBinary *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_BinaryValue)(IADsDNWithBinary *This,VARIANT vBinaryValue);
+                   HRESULT (WINAPI *get_DNString)(IADsDNWithBinary *This,BSTR *retval);
+                   HRESULT (WINAPI *put_DNString)(IADsDNWithBinary *This,BSTR bstrDNString);
     END_INTERFACE
   } IADsDNWithBinaryVtbl;
   struct IADsDNWithBinary {
@@ -6959,17 +6959,17 @@ extern "C"{
 #else
   typedef struct IADsDNWithStringVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsDNWithString *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsDNWithString *This);
-      ULONG (WINAPI *Release)(IADsDNWithString *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsDNWithString *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsDNWithString *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsDNWithString *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsDNWithString *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_StringValue)(IADsDNWithString *This,BSTR *retval);
-      HRESULT (WINAPI *put_StringValue)(IADsDNWithString *This,BSTR bstrStringValue);
-      HRESULT (WINAPI *get_DNString)(IADsDNWithString *This,BSTR *retval);
-      HRESULT (WINAPI *put_DNString)(IADsDNWithString *This,BSTR bstrDNString);
+                   HRESULT (WINAPI *QueryInterface)(IADsDNWithString *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsDNWithString *This);
+                   ULONG (WINAPI *Release)(IADsDNWithString *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsDNWithString *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsDNWithString *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsDNWithString *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsDNWithString *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_StringValue)(IADsDNWithString *This,BSTR *retval);
+                   HRESULT (WINAPI *put_StringValue)(IADsDNWithString *This,BSTR bstrStringValue);
+                   HRESULT (WINAPI *get_DNString)(IADsDNWithString *This,BSTR *retval);
+                   HRESULT (WINAPI *put_DNString)(IADsDNWithString *This,BSTR bstrDNString);
     END_INTERFACE
   } IADsDNWithStringVtbl;
   struct IADsDNWithString {
@@ -7019,18 +7019,18 @@ extern "C"{
 #else
   typedef struct IADsSecurityUtilityVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IADsSecurityUtility *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IADsSecurityUtility *This);
-      ULONG (WINAPI *Release)(IADsSecurityUtility *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IADsSecurityUtility *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IADsSecurityUtility *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IADsSecurityUtility *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IADsSecurityUtility *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetSecurityDescriptor)(IADsSecurityUtility *This,VARIANT varPath,__LONG32 lPathFormat,__LONG32 lFormat,VARIANT *pVariant);
-      HRESULT (WINAPI *SetSecurityDescriptor)(IADsSecurityUtility *This,VARIANT varPath,__LONG32 lPathFormat,VARIANT varData,__LONG32 lDataFormat);
-      HRESULT (WINAPI *ConvertSecurityDescriptor)(IADsSecurityUtility *This,VARIANT varSD,__LONG32 lDataFormat,__LONG32 lOutFormat,VARIANT *pResult);
-      HRESULT (WINAPI *get_SecurityMask)(IADsSecurityUtility *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_SecurityMask)(IADsSecurityUtility *This,__LONG32 lnSecurityMask);
+                   HRESULT (WINAPI *QueryInterface)(IADsSecurityUtility *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IADsSecurityUtility *This);
+                   ULONG (WINAPI *Release)(IADsSecurityUtility *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IADsSecurityUtility *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IADsSecurityUtility *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IADsSecurityUtility *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IADsSecurityUtility *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetSecurityDescriptor)(IADsSecurityUtility *This,VARIANT varPath,__LONG32 lPathFormat,__LONG32 lFormat,VARIANT *pVariant);
+                   HRESULT (WINAPI *SetSecurityDescriptor)(IADsSecurityUtility *This,VARIANT varPath,__LONG32 lPathFormat,VARIANT varData,__LONG32 lDataFormat);
+                   HRESULT (WINAPI *ConvertSecurityDescriptor)(IADsSecurityUtility *This,VARIANT varSD,__LONG32 lDataFormat,__LONG32 lOutFormat,VARIANT *pResult);
+                   HRESULT (WINAPI *get_SecurityMask)(IADsSecurityUtility *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_SecurityMask)(IADsSecurityUtility *This,__LONG32 lnSecurityMask);
     END_INTERFACE
   } IADsSecurityUtilityVtbl;
   struct IADsSecurityUtility {

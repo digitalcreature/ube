@@ -63,9 +63,9 @@
 #define SIOCSDEBSERINT	(SIOCDEVPRIVATE + 3)
 
 /* Packet encapsulations for net-interfaces */
-#define ISDN_NET_ENCAP_ETHER      0
-#define ISDN_NET_ENCAP_RAWIP      1
-#define ISDN_NET_ENCAP_IPTYP      2
+#define ISDN_NET_ENCAP_ETHER                   0
+#define ISDN_NET_ENCAP_RAWIP                   1
+#define ISDN_NET_ENCAP_IPTYP                   2
 #define ISDN_NET_ENCAP_CISCOHDLC  3 /* Without SLARP and keepalive */
 #define ISDN_NET_ENCAP_SYNCPPP    4
 #define ISDN_NET_ENCAP_UIHDLC     5
@@ -74,26 +74,26 @@
 #define ISDN_NET_ENCAP_MAX_ENCAP  ISDN_NET_ENCAP_X25IFACE
 
 /* Facility which currently uses an ISDN-channel */
-#define ISDN_USAGE_NONE       0
-#define ISDN_USAGE_RAW        1
-#define ISDN_USAGE_MODEM      2
-#define ISDN_USAGE_NET        3
-#define ISDN_USAGE_VOICE      4
-#define ISDN_USAGE_FAX        5
-#define ISDN_USAGE_MASK       7 /* Mask to get plain usage */
+#define ISDN_USAGE_NONE                    0
+#define ISDN_USAGE_RAW                     1
+#define ISDN_USAGE_MODEM                   2
+#define ISDN_USAGE_NET                     3
+#define ISDN_USAGE_VOICE                   4
+#define ISDN_USAGE_FAX                     5
+#define ISDN_USAGE_MASK                    7 /* Mask to get plain usage */
 #define ISDN_USAGE_DISABLED  32 /* This bit is set, if channel is disabled */
 #define ISDN_USAGE_EXCLUSIVE 64 /* This bit is set, if channel is exclusive */
 #define ISDN_USAGE_OUTGOING 128 /* This bit is set, if channel is outgoing  */
 
-#define ISDN_MODEM_NUMREG    24        /* Number of Modem-Registers        */
-#define ISDN_LMSNLEN         255 /* Length of tty's Listen-MSN string */
+#define ISDN_MODEM_NUMREG    24                     /* Number of Modem-Registers                     */
+#define ISDN_LMSNLEN                      255 /* Length of tty's Listen-MSN string */
 #define ISDN_CMSGLEN	     50	 /* Length of CONNECT-Message to add for Modem */
 
-#define ISDN_MSNLEN          32
+#define ISDN_MSNLEN                       32
 #define NET_DV 0x06  /* Data version for isdn_net_ioctl_cfg   */
-#define TTY_DV 0x06  /* Data version for iprofd etc.          */
+#define TTY_DV 0x06  /* Data version for iprofd etc.                       */
 
-#define INF_DV 0x01  /* Data version for /dev/isdninfo        */
+#define INF_DV 0x01  /* Data version for /dev/isdninfo                     */
 
 typedef struct {
   char drvid[25];
@@ -107,35 +107,35 @@ typedef struct {
 } isdn_net_ioctl_phone;
 
 typedef struct {
-  char name[10];     /* Name of interface                     */
-  char master[10];   /* Name of Master for Bundling           */
-  char slave[10];    /* Name of Slave for Bundling            */
-  char eaz[256];     /* EAZ/MSN                               */
-  char drvid[25];    /* DriverId for Bindings                 */
-  int  onhtime;      /* Hangup-Timeout                        */
-  int  charge;       /* Charge-Units                          */
-  int  l2_proto;     /* Layer-2 protocol                      */
-  int  l3_proto;     /* Layer-3 protocol                      */
-  int  p_encap;      /* Encapsulation                         */
-  int  exclusive;    /* Channel, if bound exclusive           */
-  int  dialmax;      /* Dial Retry-Counter                    */
-  int  slavedelay;   /* Delay until slave starts up           */
-  int  cbdelay;      /* Delay before Callback                 */
-  int  chargehup;    /* Flag: Charge-Hangup                   */
-  int  ihup;         /* Flag: Hangup-Timeout on incoming line */
-  int  secure;       /* Flag: Secure                          */
-  int  callback;     /* Flag: Callback                        */
-  int  cbhup;        /* Flag: Reject Call before Callback     */
-  int  pppbind;      /* ippp device for bindings              */
-  int  chargeint;    /* Use fixed charge interval length      */
+  char name[10];     /* Name of interface                                                            */
+  char master[10];   /* Name of Master for Bundling                        */
+  char slave[10];    /* Name of Slave for Bundling                                      */
+  char eaz[256];     /* EAZ/MSN                                                                                                */
+  char drvid[25];    /* DriverId for Bindings                                           */
+  int  onhtime;                   /* Hangup-Timeout                                                                            */
+  int  charge;                    /* Charge-Units                                                                              */
+  int  l2_proto;     /* Layer-2 protocol                                                             */
+  int  l3_proto;     /* Layer-3 protocol                                                             */
+  int  p_encap;                   /* Encapsulation                                                                             */
+  int  exclusive;    /* Channel, if bound exclusive                        */
+  int  dialmax;                   /* Dial Retry-Counter                                                           */
+  int  slavedelay;   /* Delay until slave starts up                        */
+  int  cbdelay;                   /* Delay before Callback                                           */
+  int  chargehup;    /* Flag: Charge-Hangup                                                          */
+  int  ihup;                      /* Flag: Hangup-Timeout on incoming line */
+  int  secure;                    /* Flag: Secure                                                                              */
+  int  callback;     /* Flag: Callback                                                                            */
+  int  cbhup;                     /* Flag: Reject Call before Callback     */
+  int  pppbind;                   /* ippp device for bindings                                        */
+  int  chargeint;    /* Use fixed charge interval length                   */
   int  triggercps;   /* BogoCPS needed for triggering slave   */
-  int  dialtimeout;  /* Dial-Timeout                          */
-  int  dialwait;     /* Time to wait after failed dial        */
-  int  dialmode;     /* Flag: off / on / auto                 */
+  int  dialtimeout;  /* Dial-Timeout                                                                              */
+  int  dialwait;     /* Time to wait after failed dial                     */
+  int  dialmode;     /* Flag: off / on / auto                                           */
 } isdn_net_ioctl_cfg;
 
-#define ISDN_NET_DIALMODE_MASK  0xC0    /* bits for status                */
-#define ISDN_NET_DM_OFF	        0x00    /* this interface is stopped      */
+#define ISDN_NET_DIALMODE_MASK  0xC0    /* bits for status                                          */
+#define ISDN_NET_DM_OFF	                     0x00    /* this interface is stopped                   */
 #define ISDN_NET_DM_MANUAL	0x40    /* this interface is on (manual)  */
 #define ISDN_NET_DM_AUTO	0x80    /* this interface is autodial     */
 #define ISDN_NET_DIALMODE(x) ((&(x))->flags & ISDN_NET_DIALMODE_MASK)

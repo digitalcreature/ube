@@ -112,13 +112,13 @@ extern int posix_spawnattr_setsigdefault (posix_spawnattr_t *__restrict __attr,
 
 /* Store signal mask for the new process from ATTR in SIGMASK.  */
 extern int posix_spawnattr_getsigmask (const posix_spawnattr_t *__restrict
-				       __attr,
-				       sigset_t *__restrict __sigmask)
+				                    __attr,
+				                    sigset_t *__restrict __sigmask)
     __THROW __nonnull ((1, 2));
 
 /* Set signal mask for the new process in ATTR to SIGMASK.  */
 extern int posix_spawnattr_setsigmask (posix_spawnattr_t *__restrict __attr,
-				       const sigset_t *__restrict __sigmask)
+				                    const sigset_t *__restrict __sigmask)
      __THROW __nonnull ((1, 2));
 
 /* Get flag word from the attribute structure.  */
@@ -134,12 +134,12 @@ extern int posix_spawnattr_setflags (posix_spawnattr_t *_attr,
 
 /* Get process group ID from the attribute structure.  */
 extern int posix_spawnattr_getpgroup (const posix_spawnattr_t *__restrict
-				      __attr, pid_t *__restrict __pgroup)
+				                   __attr, pid_t *__restrict __pgroup)
      __THROW __nonnull ((1, 2));
 
 /* Store process group ID in the attribute structure.  */
 extern int posix_spawnattr_setpgroup (posix_spawnattr_t *__attr,
-				      pid_t __pgroup)
+				                   pid_t __pgroup)
      __THROW __nonnull ((1));
 
 /* Get scheduling policy from the attribute structure.  */
@@ -189,7 +189,7 @@ extern int posix_spawn_file_actions_addopen (posix_spawn_file_actions_t *
 /* Add an action to FILE-ACTIONS which tells the implementation to call
    `close' for the given file descriptor during the `spawn' call.  */
 extern int posix_spawn_file_actions_addclose (posix_spawn_file_actions_t *
-					      __file_actions, int __fd)
+					                   __file_actions, int __fd)
      __THROW __nonnull ((1));
 
 /* Add an action to FILE-ACTIONS which tells the implementation to call

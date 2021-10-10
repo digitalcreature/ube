@@ -29,43 +29,43 @@ typedef LONG NTSTATUS, *PNTSTATUS;
 
 enum tagPROPVAR_CHANGE_FLAGS
 {
-    PVCHF_DEFAULT           = 0x00000000,
-    PVCHF_NOVALUEPROP       = 0x00000001,
-    PVCHF_ALPHABOOL         = 0x00000002,
+    PVCHF_DEFAULT                        = 0x00000000,
+    PVCHF_NOVALUEPROP                    = 0x00000001,
+    PVCHF_ALPHABOOL                      = 0x00000002,
     PVCHF_NOUSEROVERRIDE    = 0x00000004,
-    PVCHF_LOCALBOOL         = 0x00000008,
-    PVCHF_NOHEXSTRING       = 0x00000010,
+    PVCHF_LOCALBOOL                      = 0x00000008,
+    PVCHF_NOHEXSTRING                    = 0x00000010,
 };
 
 typedef int PROPVAR_CHANGE_FLAGS;
 
 enum tagPROPVAR_COMPARE_UNIT
 {
-    PVCU_DEFAULT           = 0x00000000,
-    PVCU_SECOND            = 0x00000001,
-    PVCU_MINUTE            = 0x00000002,
-    PVCU_HOUR              = 0x00000003,
-    PVCU_DAY               = 0x00000004,
-    PVCU_MONTH             = 0x00000005,
-    PVCU_YEAR              = 0x00000006,
+    PVCU_DEFAULT                        = 0x00000000,
+    PVCU_SECOND                                      = 0x00000001,
+    PVCU_MINUTE                                      = 0x00000002,
+    PVCU_HOUR                                        = 0x00000003,
+    PVCU_DAY                                         = 0x00000004,
+    PVCU_MONTH                                       = 0x00000005,
+    PVCU_YEAR                                        = 0x00000006,
 };
 
 typedef int PROPVAR_COMPARE_UNIT;
 
 enum tagPROPVAR_COMPARE_FLAGS
 {
-    PVCF_DEFAULT           = 0x00000000,
+    PVCF_DEFAULT                        = 0x00000000,
     PVCF_TREATEMPTYASGREATERTHAN = 0x00000001,
-    PVCF_USESTRCMP         = 0x00000002,
-    PVCF_USESTRCMPC        = 0x00000004,
-    PVCF_USESTRCMPI        = 0x00000008,
-    PVCF_USESTRCMPIC       = 0x00000010,
+    PVCF_USESTRCMP                      = 0x00000002,
+    PVCF_USESTRCMPC                     = 0x00000004,
+    PVCF_USESTRCMPI                     = 0x00000008,
+    PVCF_USESTRCMPIC                    = 0x00000010,
 };
 
 typedef int PROPVAR_COMPARE_FLAGS;
 
 HRESULT WINAPI PropVariantChangeType(PROPVARIANT *ppropvarDest, REFPROPVARIANT propvarSrc,
-                                     PROPVAR_CHANGE_FLAGS flags, VARTYPE vt);
+                                                                                                                   PROPVAR_CHANGE_FLAGS flags, VARTYPE vt);
 HRESULT WINAPI InitPropVariantFromGUIDAsString(REFGUID guid, PROPVARIANT *ppropvar);
 HRESULT WINAPI InitVariantFromGUIDAsString(REFGUID guid, VARIANT *pvar);
 HRESULT WINAPI InitPropVariantFromBuffer(const VOID *pv, UINT cb, PROPVARIANT *ppropvar);
@@ -73,7 +73,7 @@ HRESULT WINAPI InitVariantFromBuffer(const VOID *pv, UINT cb, VARIANT *pvar);
 HRESULT WINAPI PropVariantToGUID(const PROPVARIANT *ppropvar, GUID *guid);
 HRESULT WINAPI VariantToGUID(const VARIANT *pvar, GUID *guid);
 INT WINAPI PropVariantCompareEx(REFPROPVARIANT propvar1, REFPROPVARIANT propvar2,
-                                PROPVAR_COMPARE_UNIT uint, PROPVAR_COMPARE_FLAGS flags);
+                                                                                                 PROPVAR_COMPARE_UNIT uint, PROPVAR_COMPARE_FLAGS flags);
 
 HRESULT WINAPI PropVariantToInt16(REFPROPVARIANT propvarIn, SHORT *ret);
 HRESULT WINAPI PropVariantToInt32(REFPROPVARIANT propvarIn, LONG *ret);
@@ -105,9 +105,9 @@ inline HRESULT InitPropVariantFromString(PCWSTR psz, PROPVARIANT *ppropvar)
 
     hres = SHStrDupW(psz, &ppropvar->pwszVal);
     if(SUCCEEDED(hres))
-        ppropvar->vt = VT_LPWSTR;
+                     ppropvar->vt = VT_LPWSTR;
     else
-        PropVariantInit(ppropvar);
+                     PropVariantInit(ppropvar);
 
     return hres;
 }

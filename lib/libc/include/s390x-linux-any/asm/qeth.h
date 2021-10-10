@@ -13,12 +13,12 @@
 #include <linux/ioctl.h>
 
 #define SIOC_QETH_ARP_SET_NO_ENTRIES    (SIOCDEVPRIVATE)
-#define SIOC_QETH_ARP_QUERY_INFO        (SIOCDEVPRIVATE + 1)
-#define SIOC_QETH_ARP_ADD_ENTRY         (SIOCDEVPRIVATE + 2)
-#define SIOC_QETH_ARP_REMOVE_ENTRY      (SIOCDEVPRIVATE + 3)
-#define SIOC_QETH_ARP_FLUSH_CACHE       (SIOCDEVPRIVATE + 4)
+#define SIOC_QETH_ARP_QUERY_INFO                     (SIOCDEVPRIVATE + 1)
+#define SIOC_QETH_ARP_ADD_ENTRY                      (SIOCDEVPRIVATE + 2)
+#define SIOC_QETH_ARP_REMOVE_ENTRY                   (SIOCDEVPRIVATE + 3)
+#define SIOC_QETH_ARP_FLUSH_CACHE                    (SIOCDEVPRIVATE + 4)
 #define SIOC_QETH_ADP_SET_SNMP_CONTROL  (SIOCDEVPRIVATE + 5)
-#define SIOC_QETH_GET_CARD_TYPE         (SIOCDEVPRIVATE + 6)
+#define SIOC_QETH_GET_CARD_TYPE                      (SIOCDEVPRIVATE + 6)
 #define SIOC_QETH_QUERY_OAT		(SIOCDEVPRIVATE + 7)
 
 struct qeth_arp_cache_entry {

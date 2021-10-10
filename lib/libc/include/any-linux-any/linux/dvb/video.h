@@ -3,8 +3,8 @@
  * video.h
  *
  * Copyright (C) 2000 Marcus Metzler <marcus@convergence.de>
- *                  & Ralph  Metzler <ralph@convergence.de>
- *                    for convergence integrated media GmbH
+ *                                                         & Ralph  Metzler <ralph@convergence.de>
+ *                                                           for convergence integrated media GmbH
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public License
@@ -36,7 +36,7 @@ typedef enum {
 
 
 typedef enum {
-	VIDEO_PAN_SCAN,       /* use pan and scan format */
+	VIDEO_PAN_SCAN,                    /* use pan and scan format */
 	VIDEO_LETTER_BOX,     /* use letterbox format */
 	VIDEO_CENTER_CUT_OUT  /* use center cut out format */
 } video_displayformat_t;
@@ -50,8 +50,8 @@ typedef struct {
 typedef enum {
 	VIDEO_SOURCE_DEMUX, /* Select the demux as the main source */
 	VIDEO_SOURCE_MEMORY /* If this source is selected, the stream
-			       comes from the user through the write
-			       system call */
+			                    comes from the user through the write
+			                    system call */
 } video_stream_source_t;
 
 
@@ -63,9 +63,9 @@ typedef enum {
 
 
 /* Decoder commands */
-#define VIDEO_CMD_PLAY        (0)
-#define VIDEO_CMD_STOP        (1)
-#define VIDEO_CMD_FREEZE      (2)
+#define VIDEO_CMD_PLAY                     (0)
+#define VIDEO_CMD_STOP                     (1)
+#define VIDEO_CMD_FREEZE                   (2)
 #define VIDEO_CMD_CONTINUE    (3)
 
 /* Flags for VIDEO_CMD_FREEZE */
@@ -77,9 +77,9 @@ typedef enum {
 
 /* Play input formats: */
 /* The decoder has no special format requirements */
-#define VIDEO_PLAY_FMT_NONE         (0)
+#define VIDEO_PLAY_FMT_NONE                      (0)
 /* The decoder requires full GOPs */
-#define VIDEO_PLAY_FMT_GOP          (1)
+#define VIDEO_PLAY_FMT_GOP                       (1)
 
 /* The structure must be zeroed before use by the application
    This ensures it can be extended safely in the future. */
@@ -132,16 +132,16 @@ struct video_event {
 
 
 struct video_status {
-	int                   video_blank;   /* blank video on freeze? */
+	int                                                          video_blank;   /* blank video on freeze? */
 	video_play_state_t    play_state;    /* current state of playback */
 	video_stream_source_t stream_source; /* current source (demux/memory) */
-	video_format_t        video_format;  /* current aspect ratio of stream*/
+	video_format_t                     video_format;  /* current aspect ratio of stream*/
 	video_displayformat_t display_format;/* selected cropping mode */
 };
 
 
 struct video_still_picture {
-	char *iFrame;        /* pointer to a single iframe in memory */
+	char *iFrame;                     /* pointer to a single iframe in memory */
 	__s32 size;
 };
 
@@ -176,23 +176,23 @@ typedef __u16 video_attributes_t;
 #define VIDEO_CAP_CSS    64
 
 
-#define VIDEO_STOP                 _IO('o', 21)
-#define VIDEO_PLAY                 _IO('o', 22)
-#define VIDEO_FREEZE               _IO('o', 23)
-#define VIDEO_CONTINUE             _IO('o', 24)
-#define VIDEO_SELECT_SOURCE        _IO('o', 25)
-#define VIDEO_SET_BLANK            _IO('o', 26)
-#define VIDEO_GET_STATUS           _IOR('o', 27, struct video_status)
-#define VIDEO_GET_EVENT            _IOR('o', 28, struct video_event)
+#define VIDEO_STOP                                           _IO('o', 21)
+#define VIDEO_PLAY                                           _IO('o', 22)
+#define VIDEO_FREEZE                                         _IO('o', 23)
+#define VIDEO_CONTINUE                                       _IO('o', 24)
+#define VIDEO_SELECT_SOURCE                     _IO('o', 25)
+#define VIDEO_SET_BLANK                                      _IO('o', 26)
+#define VIDEO_GET_STATUS                        _IOR('o', 27, struct video_status)
+#define VIDEO_GET_EVENT                                      _IOR('o', 28, struct video_event)
 #define VIDEO_SET_DISPLAY_FORMAT   _IO('o', 29)
-#define VIDEO_STILLPICTURE         _IOW('o', 30, struct video_still_picture)
-#define VIDEO_FAST_FORWARD         _IO('o', 31)
-#define VIDEO_SLOWMOTION           _IO('o', 32)
+#define VIDEO_STILLPICTURE                      _IOW('o', 30, struct video_still_picture)
+#define VIDEO_FAST_FORWARD                      _IO('o', 31)
+#define VIDEO_SLOWMOTION                        _IO('o', 32)
 #define VIDEO_GET_CAPABILITIES     _IOR('o', 33, unsigned int)
-#define VIDEO_CLEAR_BUFFER         _IO('o',  34)
-#define VIDEO_SET_STREAMTYPE       _IO('o', 36)
-#define VIDEO_SET_FORMAT           _IO('o', 37)
-#define VIDEO_GET_SIZE             _IOR('o', 55, video_size_t)
+#define VIDEO_CLEAR_BUFFER                      _IO('o',  34)
+#define VIDEO_SET_STREAMTYPE                    _IO('o', 36)
+#define VIDEO_SET_FORMAT                        _IO('o', 37)
+#define VIDEO_GET_SIZE                                       _IOR('o', 55, video_size_t)
 
 /**
  * VIDEO_GET_PTS
@@ -205,7 +205,7 @@ typedef __u16 video_attributes_t;
  * like the PTS of the last decoded frame or the last PTS
  * extracted by the PES parser.
  */
-#define VIDEO_GET_PTS              _IOR('o', 57, __u64)
+#define VIDEO_GET_PTS                                        _IOR('o', 57, __u64)
 
 /* Read the number of displayed frames since the decoder was started */
 #define VIDEO_GET_FRAME_COUNT	   _IOR('o', 58, __u64)

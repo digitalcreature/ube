@@ -27,5 +27,5 @@
  */
 #ifndef _INT32_T
 #define _INT32_T
-typedef int                     int32_t;
+typedef int                                                            int32_t;
 #endif /* _INT32_T */

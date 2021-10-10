@@ -20,9 +20,9 @@ const Complex = cmath.Complex;
 pub fn atan(z: anytype) @TypeOf(z) {
     const T = @TypeOf(z.re);
     return switch (T) {
-        f32 => atan32(z),
-        f64 => atan64(z),
-        else => @compileError("atan not implemented for " ++ @typeName(z)),
+                     f32 => atan32(z),
+                     f64 => atan64(z),
+                     else => @compileError("atan not implemented for " ++ @typeName(z)),
     };
 }
 
@@ -33,9 +33,9 @@ fn redupif32(x: f32) f32 {
 
     var t = x / math.pi;
     if (t >= 0.0) {
-        t += 0.5;
+                     t += 0.5;
     } else {
-        t -= 0.5;
+                     t -= 0.5;
     }
 
     const u = @intToFloat(f32, @floatToInt(i32, t));
@@ -49,15 +49,15 @@ fn atan32(z: Complex(f32)) Complex(f32) {
     const y = z.im;
 
     if ((x == 0.0) and (y > 1.0)) {
-        // overflow
-        return Complex(f32).new(maxnum, maxnum);
+                     // overflow
+                     return Complex(f32).new(maxnum, maxnum);
     }
 
     const x2 = x * x;
     var a = 1.0 - x2 - (y * y);
     if (a == 0.0) {
-        // overflow
-        return Complex(f32).new(maxnum, maxnum);
+                     // overflow
+                     return Complex(f32).new(maxnum, maxnum);
     }
 
     var t = 0.5 * math.atan2(f32, 2.0 * x, a);
@@ -66,8 +66,8 @@ fn atan32(z: Complex(f32)) Complex(f32) {
     t = y - 1.0;
     a = x2 + t * t;
     if (a == 0.0) {
-        // overflow
-        return Complex(f32).new(maxnum, maxnum);
+                     // overflow
+                     return Complex(f32).new(maxnum, maxnum);
     }
 
     t = y + 1.0;
@@ -82,9 +82,9 @@ fn redupif64(x: f64) f64 {
 
     var t = x / math.pi;
     if (t >= 0.0) {
-        t += 0.5;
+                     t += 0.5;
     } else {
-        t -= 0.5;
+                     t -= 0.5;
     }
 
     const u = @intToFloat(f64, @floatToInt(i64, t));
@@ -98,15 +98,15 @@ fn atan64(z: Complex(f64)) Complex(f64) {
     const y = z.im;
 
     if ((x == 0.0) and (y > 1.0)) {
-        // overflow
-        return Complex(f64).new(maxnum, maxnum);
+                     // overflow
+                     return Complex(f64).new(maxnum, maxnum);
     }
 
     const x2 = x * x;
     var a = 1.0 - x2 - (y * y);
     if (a == 0.0) {
-        // overflow
-        return Complex(f64).new(maxnum, maxnum);
+                     // overflow
+                     return Complex(f64).new(maxnum, maxnum);
     }
 
     var t = 0.5 * math.atan2(f64, 2.0 * x, a);
@@ -115,8 +115,8 @@ fn atan64(z: Complex(f64)) Complex(f64) {
     t = y - 1.0;
     a = x2 + t * t;
     if (a == 0.0) {
-        // overflow
-        return Complex(f64).new(maxnum, maxnum);
+                     // overflow
+                     return Complex(f64).new(maxnum, maxnum);
     }
 
     t = y + 1.0;

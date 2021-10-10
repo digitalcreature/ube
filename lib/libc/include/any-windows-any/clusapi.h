@@ -167,8 +167,8 @@ extern "C" {
 #ifndef _CLUSTER_API_TYPES_
   typedef enum CLUSTER_NODE_ENUM {
     CLUSTER_NODE_ENUM_NETINTERFACES   = 0x00000001,
-    CLUSTER_NODE_ENUM_GROUPS          = 0x00000002,
-    CLUSTER_NODE_ENUM_ALL             = (CLUSTER_NODE_ENUM_NETINTERFACES|CLUSTER_NODE_ENUM_GROUPS)
+    CLUSTER_NODE_ENUM_GROUPS                       = 0x00000002,
+    CLUSTER_NODE_ENUM_ALL                                       = (CLUSTER_NODE_ENUM_NETINTERFACES|CLUSTER_NODE_ENUM_GROUPS)
   } CLUSTER_NODE_ENUM;
 
   typedef enum CLUSTER_NODE_STATE {
@@ -265,8 +265,8 @@ extern "C" {
     CLUSPROP_TYPE_UNKNOWN = -1,CLUSPROP_TYPE_ENDMARK = 0,CLUSPROP_TYPE_LIST_VALUE,CLUSPROP_TYPE_RESCLASS,CLUSPROP_TYPE_RESERVED1,CLUSPROP_TYPE_NAME,
     CLUSPROP_TYPE_SIGNATURE,CLUSPROP_TYPE_SCSI_ADDRESS,CLUSPROP_TYPE_DISK_NUMBER,CLUSPROP_TYPE_PARTITION_INFO,CLUSPROP_TYPE_FTSET_INFO,
     CLUSPROP_TYPE_DISK_SERIALNUMBER,
-    CLUSPROP_TYPE_DISK_GUID           = 11,
-    CLUSPROP_TYPE_DISK_SIZE           = 12,
+    CLUSPROP_TYPE_DISK_GUID                        = 11,
+    CLUSPROP_TYPE_DISK_SIZE                        = 12,
     CLUSPROP_TYPE_PARTITION_INFO_EX   = 13,
     CLUSPROP_TYPE_USER=32768
   } CLUSTER_PROPERTY_TYPE;
@@ -275,7 +275,7 @@ extern "C" {
     CLUSPROP_FORMAT_UNKNOWN = 0,CLUSPROP_FORMAT_BINARY,CLUSPROP_FORMAT_DWORD,CLUSPROP_FORMAT_SZ,CLUSPROP_FORMAT_EXPAND_SZ,CLUSPROP_FORMAT_MULTI_SZ,
     CLUSPROP_FORMAT_ULARGE_INTEGER,CLUSPROP_FORMAT_LONG,CLUSPROP_FORMAT_EXPANDED_SZ,CLUSPROP_FORMAT_SECURITY_DESCRIPTOR,CLUSPROP_FORMAT_LARGE_INTEGER,
     CLUSPROP_FORMAT_WORD,
-    CLUSPROP_FORMAT_FILETIME              = 12,
+    CLUSPROP_FORMAT_FILETIME                                        = 12,
     CLUSPROP_FORMAT_USER=32768
   } CLUSTER_PROPERTY_FORMAT;
 #endif
@@ -364,9 +364,9 @@ extern "C" {
     CLCTL_GET_ID = CLCTL_EXTERNAL_CODE(14,CLUS_ACCESS_READ,CLUS_NO_MODIFY),
     CLCTL_GET_FQDN = CLCTL_EXTERNAL_CODE(15,CLUS_ACCESS_READ,CLUS_NO_MODIFY),
     CLCTL_GET_CLUSTER_SERVICE_ACCOUNT_NAME = CLCTL_EXTERNAL_CODE(16,CLUS_ACCESS_READ,CLUS_NO_MODIFY),
-    CLCTL_CHECK_VOTER_EVICT                    = CLCTL_EXTERNAL_CODE(17,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000045*/
-    CLCTL_CHECK_VOTER_DOWN                     = CLCTL_EXTERNAL_CODE(18,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000049*/
-    CLCTL_SHUTDOWN                             = CLCTL_EXTERNAL_CODE(19,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x0000004d*/
+    CLCTL_CHECK_VOTER_EVICT                                                           = CLCTL_EXTERNAL_CODE(17,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000045*/
+    CLCTL_CHECK_VOTER_DOWN                                                            = CLCTL_EXTERNAL_CODE(18,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000049*/
+    CLCTL_SHUTDOWN                                                                                 = CLCTL_EXTERNAL_CODE(19,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x0000004d*/
     CLCTL_ENUM_COMMON_PROPERTIES = CLCTL_EXTERNAL_CODE(20,CLUS_ACCESS_READ,CLUS_NO_MODIFY),
     CLCTL_GET_RO_COMMON_PROPERTIES = CLCTL_EXTERNAL_CODE(21,CLUS_ACCESS_READ,CLUS_NO_MODIFY),
     CLCTL_GET_COMMON_PROPERTIES = CLCTL_EXTERNAL_CODE(22,CLUS_ACCESS_READ,CLUS_NO_MODIFY),
@@ -402,33 +402,33 @@ extern "C" {
     CLCTL_QUERY_DELETE = CLCTL_EXTERNAL_CODE(110,CLUS_ACCESS_READ,CLUS_NO_MODIFY),
     CLCTL_QUERY_MAINTENANCE_MODE = CLCTL_EXTERNAL_CODE(120,CLUS_ACCESS_READ,CLUS_NO_MODIFY),
     CLCTL_SET_MAINTENANCE_MODE = CLCTL_EXTERNAL_CODE(121,CLUS_ACCESS_WRITE,CLUS_MODIFY),
-    CLCTL_STORAGE_SET_DRIVELETTER              = CLCTL_EXTERNAL_CODE(122,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x004001ea*/
-    CLCTL_STORAGE_GET_DRIVELETTERS             = CLCTL_EXTERNAL_CODE(123,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x000001ed*/
-    CLCTL_STORAGE_GET_DISK_INFO_EX             = CLCTL_EXTERNAL_CODE(124,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x000001f1*/
-    CLCTL_STORAGE_GET_AVAILABLE_DISKS_EX       = CLCTL_EXTERNAL_CODE(125,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x000001f5*/
-    CLCTL_STORAGE_REMAP_DRIVELETTER            = CLCTL_EXTERNAL_CODE(128,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000201,*/
-    CLCTL_STORAGE_GET_DISKID                   = CLCTL_EXTERNAL_CODE(129,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000205*/
-    CLCTL_STORAGE_IS_CLUSTERABLE               = CLCTL_EXTERNAL_CODE(130,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000209*/
-    CLCTL_STORAGE_REMOVE_VM_OWNERSHIP          = CLCTL_EXTERNAL_CODE(131,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x0040020e*/
-    CLCTL_STORAGE_GET_MOUNTPOINTS              = CLCTL_EXTERNAL_CODE(132,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000211*/
-    CLCTL_STORAGE_CLUSTER_DISK                 = (CLCTL_EXTERNAL_CODE(132,CLUS_ACCESS_WRITE,CLUS_MODIFY)|CLCTL_GLOBAL_MASK),/*0x00c00212*/
-    CLCTL_STORAGE_GET_DIRTY                    = CLCTL_EXTERNAL_CODE(134,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000219*/
-    CLCTL_STORAGE_GET_SHARED_VOLUME_INFO       = CLCTL_EXTERNAL_CODE(137,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/* 0x00000225 */
-    CLCTL_STORAGE_IS_CSV_FILE                  = CLCTL_EXTERNAL_CODE(138,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000229*/
-    CLCTL_VALIDATE_PATH                        = CLCTL_EXTERNAL_CODE(140,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000231,*/
-    CLCTL_VALIDATE_NETNAME                     = CLCTL_EXTERNAL_CODE(141,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000235*/
-    CLCTL_VALIDATE_DIRECTORY                   = CLCTL_EXTERNAL_CODE(142,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000239*/
-    CLCTL_BATCH_BLOCK_KEY                      = CLCTL_EXTERNAL_CODE(143,CLUS_ACCESS_WRITE,CLUS_NO_MODIFY),/*0x0000023e*/
-    CLCTL_BATCH_UNBLOCK_KEY                    = CLCTL_EXTERNAL_CODE(144,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000241*/
-    CLCTL_FILESERVER_SHARE_ADD                 = CLCTL_EXTERNAL_CODE(145,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00400245*/
-    CLCTL_FILESERVER_SHARE_DEL                 = CLCTL_EXTERNAL_CODE(146,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00400249*/
-    CLCTL_FILESERVER_SHARE_MODIFY              = CLCTL_EXTERNAL_CODE(147,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x0040024d*/
-    CLCTL_FILESERVER_SHARE_REPORT              = CLCTL_EXTERNAL_CODE(148,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000251*/
-    CLCTL_ENABLE_SHARED_VOLUME_DIRECTIO        = CLCTL_EXTERNAL_CODE(162,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x0040028a*/
-    CLCTL_DISABLE_SHARED_VOLUME_DIRECTIO       = CLCTL_EXTERNAL_CODE(163,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x0040028e*/
-    CLCTL_GET_SHARED_VOLUME_ID                 = CLCTL_EXTERNAL_CODE(164,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000291*/
-    CLCTL_SET_CSV_MAINTENANCE_MODE             = CLCTL_EXTERNAL_CODE(165,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x00400296*/
-    CLCTL_SET_SHARED_VOLUME_BACKUP_MODE        = CLCTL_EXTERNAL_CODE(166,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x0040029a,*/
+    CLCTL_STORAGE_SET_DRIVELETTER                                        = CLCTL_EXTERNAL_CODE(122,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x004001ea*/
+    CLCTL_STORAGE_GET_DRIVELETTERS                                       = CLCTL_EXTERNAL_CODE(123,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x000001ed*/
+    CLCTL_STORAGE_GET_DISK_INFO_EX                                       = CLCTL_EXTERNAL_CODE(124,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x000001f1*/
+    CLCTL_STORAGE_GET_AVAILABLE_DISKS_EX                    = CLCTL_EXTERNAL_CODE(125,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x000001f5*/
+    CLCTL_STORAGE_REMAP_DRIVELETTER                                      = CLCTL_EXTERNAL_CODE(128,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000201,*/
+    CLCTL_STORAGE_GET_DISKID                                                          = CLCTL_EXTERNAL_CODE(129,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000205*/
+    CLCTL_STORAGE_IS_CLUSTERABLE                                         = CLCTL_EXTERNAL_CODE(130,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000209*/
+    CLCTL_STORAGE_REMOVE_VM_OWNERSHIP                       = CLCTL_EXTERNAL_CODE(131,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x0040020e*/
+    CLCTL_STORAGE_GET_MOUNTPOINTS                                        = CLCTL_EXTERNAL_CODE(132,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000211*/
+    CLCTL_STORAGE_CLUSTER_DISK                                           = (CLCTL_EXTERNAL_CODE(132,CLUS_ACCESS_WRITE,CLUS_MODIFY)|CLCTL_GLOBAL_MASK),/*0x00c00212*/
+    CLCTL_STORAGE_GET_DIRTY                                                           = CLCTL_EXTERNAL_CODE(134,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000219*/
+    CLCTL_STORAGE_GET_SHARED_VOLUME_INFO                    = CLCTL_EXTERNAL_CODE(137,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/* 0x00000225 */
+    CLCTL_STORAGE_IS_CSV_FILE                                                         = CLCTL_EXTERNAL_CODE(138,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000229*/
+    CLCTL_VALIDATE_PATH                                                                            = CLCTL_EXTERNAL_CODE(140,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000231,*/
+    CLCTL_VALIDATE_NETNAME                                                            = CLCTL_EXTERNAL_CODE(141,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000235*/
+    CLCTL_VALIDATE_DIRECTORY                                                          = CLCTL_EXTERNAL_CODE(142,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000239*/
+    CLCTL_BATCH_BLOCK_KEY                                                             = CLCTL_EXTERNAL_CODE(143,CLUS_ACCESS_WRITE,CLUS_NO_MODIFY),/*0x0000023e*/
+    CLCTL_BATCH_UNBLOCK_KEY                                                           = CLCTL_EXTERNAL_CODE(144,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000241*/
+    CLCTL_FILESERVER_SHARE_ADD                                           = CLCTL_EXTERNAL_CODE(145,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00400245*/
+    CLCTL_FILESERVER_SHARE_DEL                                           = CLCTL_EXTERNAL_CODE(146,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00400249*/
+    CLCTL_FILESERVER_SHARE_MODIFY                                        = CLCTL_EXTERNAL_CODE(147,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x0040024d*/
+    CLCTL_FILESERVER_SHARE_REPORT                                        = CLCTL_EXTERNAL_CODE(148,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000251*/
+    CLCTL_ENABLE_SHARED_VOLUME_DIRECTIO                     = CLCTL_EXTERNAL_CODE(162,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x0040028a*/
+    CLCTL_DISABLE_SHARED_VOLUME_DIRECTIO                    = CLCTL_EXTERNAL_CODE(163,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x0040028e*/
+    CLCTL_GET_SHARED_VOLUME_ID                                           = CLCTL_EXTERNAL_CODE(164,CLUS_ACCESS_READ,CLUS_NO_MODIFY),/*0x00000291*/
+    CLCTL_SET_CSV_MAINTENANCE_MODE                                       = CLCTL_EXTERNAL_CODE(165,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x00400296*/
+    CLCTL_SET_SHARED_VOLUME_BACKUP_MODE                     = CLCTL_EXTERNAL_CODE(166,CLUS_ACCESS_WRITE,CLUS_MODIFY),/*0x0040029a,*/
     CLCTL_DELETE = CLCTL_INTERNAL_CODE(1,CLUS_ACCESS_WRITE,CLUS_MODIFY),
     CLCTL_INSTALL_NODE = CLCTL_INTERNAL_CODE(2,CLUS_ACCESS_WRITE,CLUS_MODIFY),
     CLCTL_EVICT_NODE = CLCTL_INTERNAL_CODE(3,CLUS_ACCESS_WRITE,CLUS_MODIFY),
@@ -510,20 +510,20 @@ extern "C" {
     CLUSCTL_RESOURCE_ADD_REGISTRY_CHECKPOINT_32BIT = CLUSCTL_RESOURCE_CODE(CLCTL_ADD_REGISTRY_CHECKPOINT_32BIT),
     CLUSCTL_RESOURCE_QUERY_MAINTENANCE_MODE = CLUSCTL_RESOURCE_CODE(CLCTL_QUERY_MAINTENANCE_MODE),
     CLUSCTL_RESOURCE_SET_MAINTENANCE_MODE = CLUSCTL_RESOURCE_CODE(CLCTL_SET_MAINTENANCE_MODE),
-    CLUSCTL_RESOURCE_STORAGE_SET_DRIVELETTER            = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_SET_DRIVELETTER),/*0x014001ea*/
-    CLUSCTL_RESOURCE_STORAGE_GET_DISK_INFO_EX           = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_GET_DISK_INFO_EX),/*0x010001f1*/
-    CLUSCTL_RESOURCE_FILESERVER_SHARE_ADD               = CLUSCTL_RESOURCE_CODE(CLCTL_FILESERVER_SHARE_ADD),/*0x01400245*/
-    CLUSCTL_RESOURCE_FILESERVER_SHARE_DEL               = CLUSCTL_RESOURCE_CODE(CLCTL_FILESERVER_SHARE_DEL),/*0x01400249*/
-    CLUSCTL_RESOURCE_FILESERVER_SHARE_MODIFY            = CLUSCTL_RESOURCE_CODE(CLCTL_FILESERVER_SHARE_MODIFY),/*0x0140024d*/
-    CLUSCTL_RESOURCE_FILESERVER_SHARE_REPORT            = CLUSCTL_RESOURCE_CODE(CLCTL_FILESERVER_SHARE_REPORT),/*0x01000251*/
-    CLUSCTL_RESOURCE_STORAGE_GET_MOUNTPOINTS            = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_GET_MOUNTPOINTS),/*0x01000211*/
-    CLUSCTL_RESOURCE_STORAGE_CLUSTER_DISK               = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_CLUSTER_DISK),/*0x01c00212*/
-    CLUSCTL_RESOURCE_STORAGE_GET_DIRTY                  = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_GET_DIRTY),/*0x01000219*/
+    CLUSCTL_RESOURCE_STORAGE_SET_DRIVELETTER                                      = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_SET_DRIVELETTER),/*0x014001ea*/
+    CLUSCTL_RESOURCE_STORAGE_GET_DISK_INFO_EX                        = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_GET_DISK_INFO_EX),/*0x010001f1*/
+    CLUSCTL_RESOURCE_FILESERVER_SHARE_ADD                                         = CLUSCTL_RESOURCE_CODE(CLCTL_FILESERVER_SHARE_ADD),/*0x01400245*/
+    CLUSCTL_RESOURCE_FILESERVER_SHARE_DEL                                         = CLUSCTL_RESOURCE_CODE(CLCTL_FILESERVER_SHARE_DEL),/*0x01400249*/
+    CLUSCTL_RESOURCE_FILESERVER_SHARE_MODIFY                                      = CLUSCTL_RESOURCE_CODE(CLCTL_FILESERVER_SHARE_MODIFY),/*0x0140024d*/
+    CLUSCTL_RESOURCE_FILESERVER_SHARE_REPORT                                      = CLUSCTL_RESOURCE_CODE(CLCTL_FILESERVER_SHARE_REPORT),/*0x01000251*/
+    CLUSCTL_RESOURCE_STORAGE_GET_MOUNTPOINTS                                      = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_GET_MOUNTPOINTS),/*0x01000211*/
+    CLUSCTL_RESOURCE_STORAGE_CLUSTER_DISK                                         = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_CLUSTER_DISK),/*0x01c00212*/
+    CLUSCTL_RESOURCE_STORAGE_GET_DIRTY                                                         = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_GET_DIRTY),/*0x01000219*/
     CLUSCTL_RESOURCE_STORAGE_GET_SHARED_VOLUME_INFO     = CLUSCTL_RESOURCE_CODE(CLCTL_STORAGE_GET_SHARED_VOLUME_INFO),
-    CLUSCTL_RESOURCE_SET_CSV_MAINTENANCE_MODE           = CLUSCTL_RESOURCE_CODE(CLCTL_SET_CSV_MAINTENANCE_MODE),/*0x00400296*/
-    CLUSCTL_RESOURCE_ENABLE_SHARED_VOLUME_DIRECTIO      = CLUSCTL_RESOURCE_CODE(CLCTL_ENABLE_SHARED_VOLUME_DIRECTIO),/*0x0140028a*/
+    CLUSCTL_RESOURCE_SET_CSV_MAINTENANCE_MODE                        = CLUSCTL_RESOURCE_CODE(CLCTL_SET_CSV_MAINTENANCE_MODE),/*0x00400296*/
+    CLUSCTL_RESOURCE_ENABLE_SHARED_VOLUME_DIRECTIO                   = CLUSCTL_RESOURCE_CODE(CLCTL_ENABLE_SHARED_VOLUME_DIRECTIO),/*0x0140028a*/
     CLUSCTL_RESOURCE_DISABLE_SHARED_VOLUME_DIRECTIO     = CLUSCTL_RESOURCE_CODE(CLCTL_DISABLE_SHARED_VOLUME_DIRECTIO),/*0x0140028e*/
-    CLUSCTL_RESOURCE_SET_SHARED_VOLUME_BACKUP_MODE      = CLUSCTL_RESOURCE_CODE(CLCTL_SET_SHARED_VOLUME_BACKUP_MODE),/*0x0140029a*/
+    CLUSCTL_RESOURCE_SET_SHARED_VOLUME_BACKUP_MODE                   = CLUSCTL_RESOURCE_CODE(CLCTL_SET_SHARED_VOLUME_BACKUP_MODE),/*0x0140029a*/
     CLUSCTL_RESOURCE_DELETE = CLUSCTL_RESOURCE_CODE(CLCTL_DELETE),
     CLUSCTL_RESOURCE_INSTALL_NODE = CLUSCTL_RESOURCE_CODE(CLCTL_INSTALL_NODE),
     CLUSCTL_RESOURCE_EVICT_NODE = CLUSCTL_RESOURCE_CODE(CLCTL_EVICT_NODE),
@@ -686,12 +686,12 @@ extern "C" {
     CLUSCTL_CLUSTER_VALIDATE_PRIVATE_PROPERTIES = CLUSCTL_CLUSTER_CODE(CLCTL_VALIDATE_PRIVATE_PROPERTIES),
     CLUSCTL_CLUSTER_GET_COMMON_PROPERTY_FMTS = CLUSCTL_CLUSTER_CODE(CLCTL_GET_COMMON_PROPERTY_FMTS),
     CLUSCTL_CLUSTER_GET_PRIVATE_PROPERTY_FMTS = CLUSCTL_CLUSTER_CODE(CLCTL_GET_PRIVATE_PROPERTY_FMTS),
-    CLUSCTL_CLUSTER_CHECK_VOTER_EVICT             = CLUSCTL_CLUSTER_CODE(CLCTL_CHECK_VOTER_EVICT),/*0x07000045*/
-    CLUSCTL_CLUSTER_CHECK_VOTER_DOWN              = CLUSCTL_CLUSTER_CODE(CLCTL_CHECK_VOTER_DOWN),/*0x07000049*/
-    CLUSCTL_CLUSTER_SHUTDOWN                      = CLUSCTL_CLUSTER_CODE(CLCTL_SHUTDOWN),/*0x0700004d*/
-    CLUSCTL_CLUSTER_BATCH_BLOCK_KEY               = CLUSCTL_CLUSTER_CODE(CLCTL_BATCH_BLOCK_KEY),/*0x0700023e*/
-    CLUSCTL_CLUSTER_BATCH_UNBLOCK_KEY             = CLUSCTL_CLUSTER_CODE(CLCTL_BATCH_UNBLOCK_KEY),/*0x07000241*/
-    CLUSCTL_CLUSTER_GET_SHARED_VOLUME_ID          = CLUSCTL_CLUSTER_CODE(CLCTL_GET_SHARED_VOLUME_ID),/*0x07000291*/
+    CLUSCTL_CLUSTER_CHECK_VOTER_EVICT                                       = CLUSCTL_CLUSTER_CODE(CLCTL_CHECK_VOTER_EVICT),/*0x07000045*/
+    CLUSCTL_CLUSTER_CHECK_VOTER_DOWN                                        = CLUSCTL_CLUSTER_CODE(CLCTL_CHECK_VOTER_DOWN),/*0x07000049*/
+    CLUSCTL_CLUSTER_SHUTDOWN                                                             = CLUSCTL_CLUSTER_CODE(CLCTL_SHUTDOWN),/*0x0700004d*/
+    CLUSCTL_CLUSTER_BATCH_BLOCK_KEY                                         = CLUSCTL_CLUSTER_CODE(CLCTL_BATCH_BLOCK_KEY),/*0x0700023e*/
+    CLUSCTL_CLUSTER_BATCH_UNBLOCK_KEY                                       = CLUSCTL_CLUSTER_CODE(CLCTL_BATCH_UNBLOCK_KEY),/*0x07000241*/
+    CLUSCTL_CLUSTER_GET_SHARED_VOLUME_ID                       = CLUSCTL_CLUSTER_CODE(CLCTL_GET_SHARED_VOLUME_ID),/*0x07000291*/
   } CLUSCTL_CLUSTER_CODES;
 
   typedef enum CLUSTER_RESOURCE_CLASS {
@@ -705,9 +705,9 @@ extern "C" {
   typedef enum CLUS_CHARACTERISTICS {
     CLUS_CHAR_UNKNOWN = 0x00000000,CLUS_CHAR_QUORUM = 0x00000001,CLUS_CHAR_DELETE_REQUIRES_ALL_NODES = 0x00000002,CLUS_CHAR_LOCAL_QUORUM = 0x00000004,
     CLUS_CHAR_LOCAL_QUORUM_DEBUG = 0x00000008,CLUS_CHAR_REQUIRES_STATE_CHANGE_REASON = 0x00000010,
-    CLUS_CHAR_BROADCAST_DELETE               = 0x00000020,
-    CLUS_CHAR_SINGLE_CLUSTER_INSTANCE        = 0x00000040,
-    CLUS_CHAR_SINGLE_GROUP_INSTANCE          = 0x00000080 
+    CLUS_CHAR_BROADCAST_DELETE                                         = 0x00000020,
+    CLUS_CHAR_SINGLE_CLUSTER_INSTANCE                     = 0x00000040,
+    CLUS_CHAR_SINGLE_GROUP_INSTANCE                       = 0x00000080 
   } CLUS_CHARACTERISTICS;
 
   typedef enum CLUS_FLAGS {
@@ -725,8 +725,8 @@ extern "C" {
   typedef union CLUSPROP_SYNTAX {
     DWORD dw;
     __C89_NAMELESS struct {
-      WORD wFormat;
-      WORD wType;
+                   WORD wFormat;
+                   WORD wType;
     };
   } CLUSPROP_SYNTAX,*PCLUSPROP_SYNTAX;
 
@@ -824,21 +824,21 @@ extern "C" {
     CLUSPROP_VALUE;
 #endif
     __C89_NAMELESS union {
-      SECURITY_DESCRIPTOR_RELATIVE sd;
-      BYTE rgbSecurityDescriptor[1];
+                   SECURITY_DESCRIPTOR_RELATIVE sd;
+                   BYTE rgbSecurityDescriptor[1];
     };
   } CLUSPROP_SECURITY_DESCRIPTOR,*PCLUSPROP_SECURITY_DESCRIPTOR;
 
   typedef struct CLUS_RESOURCE_CLASS_INFO {
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	__C89_NAMELESS union {
 	  DWORD dw;
 	  CLUSTER_RESOURCE_CLASS rc;
 	};
 	DWORD SubClass;
-      };
-      ULARGE_INTEGER li;
+                   };
+                   ULARGE_INTEGER li;
     };
   } CLUS_RESOURCE_CLASS_INFO,*PCLUS_RESOURCE_CLASS_INFO;
 
@@ -926,13 +926,13 @@ extern "C" {
   typedef CLUSPROP_DWORD CLUSPROP_DISK_SIGNATURE,*PCLUSPROP_DISK_SIGNATURE;
   typedef struct CLUS_SCSI_ADDRESS {
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	UCHAR PortNumber;
 	UCHAR PathId;
 	UCHAR TargetId;
 	UCHAR Lun;
-      };
-      DWORD dw;
+                   };
+                   DWORD dw;
     };
   } CLUS_SCSI_ADDRESS,*PCLUS_SCSI_ADDRESS;
 
@@ -1090,119 +1090,119 @@ typedef HCLUSTER (WINAPI *PCLUSAPI_OPEN_CLUSTER)(
 
 typedef enum _MAINTENANCE_MODE_TYPE_ENUM {
   MaintenanceModeTypeDisableIsAliveCheck   = 1,
-  MaintenanceModeTypeOfflineResource       = 2,
+  MaintenanceModeTypeOfflineResource                    = 2,
   MaintenanceModeTypeUnclusterResource     = 3 
 } MAINTENANCE_MODE_TYPE_ENUM, *PMAINTENANCE_MODE_TYPE_ENUM;
 
 typedef enum CLUSTER_RESOURCE_STATE {
   ClusterResourceStateUnknown     = -1,
-  ClusterResourceInherited        = 0,
+  ClusterResourceInherited                     = 0,
   ClusterResourceInitializing     = 1,
-  ClusterResourceOnline           = 2,
-  ClusterResourceOffline          = 3,
-  ClusterResourceFailed           = 4,
-  ClusterResourcePending          = 128,  // 0x80
+  ClusterResourceOnline                        = 2,
+  ClusterResourceOffline                       = 3,
+  ClusterResourceFailed                        = 4,
+  ClusterResourcePending                       = 128,  // 0x80
   ClusterResourceOnlinePending    = 129,  // 0x81
   ClusterResourceOfflinePending   = 130   // 0x82
 } CLUSTER_RESOURCE_STATE;
 
 typedef enum _CLUSTER_REG_COMMAND {
-  CLUSREG_COMMAND_NONE       = 0,
-  CLUSREG_SET_VALUE          = 1,
-  CLUSREG_CREATE_KEY         = 2,
-  CLUSREG_DELETE_KEY         = 3,
-  CLUSREG_DELETE_VALUE       = 4,
+  CLUSREG_COMMAND_NONE                    = 0,
+  CLUSREG_SET_VALUE                       = 1,
+  CLUSREG_CREATE_KEY                      = 2,
+  CLUSREG_DELETE_KEY                      = 3,
+  CLUSREG_DELETE_VALUE                    = 4,
   CLUSREG_SET_KEY_SECURITY   = 5,
-  CLUSREG_VALUE_DELETED      = 6,
-  CLUSREG_LAST_COMMAND       = 7 
+  CLUSREG_VALUE_DELETED                   = 6,
+  CLUSREG_LAST_COMMAND                    = 7 
 } CLUSTER_REG_COMMAND;
 
 typedef enum CLUSTER_GROUP_STATE {
   ClusterGroupStateUnknown    = -1,
-  ClusterGroupOnline          = 0,
-  ClusterGroupOffline         = 1,
-  ClusterGroupFailed          = 2,
+  ClusterGroupOnline                       = 0,
+  ClusterGroupOffline                      = 1,
+  ClusterGroupFailed                       = 2,
   ClusterGroupPartialOnline   = 3,
-  ClusterGroupPending         = 4 
+  ClusterGroupPending                      = 4 
 } CLUSTER_GROUP_STATE;
 
 typedef enum CLUSTER_QUORUM_TYPE {
   OperationalQuorum   = 0,
-  ModifyQuorum        = 1 
+  ModifyQuorum                     = 1 
 } CLUSTER_QUORUM_TYPE;
 
 typedef enum CLUSTER_QUORUM_VALUE {
   CLUSTER_QUORUM_MAINTAINED   = 0,
-  CLUSTER_QUORUM_LOST         = 1 
+  CLUSTER_QUORUM_LOST                      = 1 
 } CLUSTER_QUORUM_VALUE;
 
 typedef enum CLUSTER_RESOURCE_CLASS {
   CLUS_RESCLASS_UNKNOWN   = 0,
   CLUS_RESCLASS_STORAGE   = 1,
   CLUS_RESCLASS_NETWORK   = 2,
-  CLUS_RESCLASS_USER      = 32768 
+  CLUS_RESCLASS_USER                   = 32768 
 } CLUSTER_RESOURCE_CLASS;
 
 typedef enum CLUSTER_RESOURCE_CREATE_FLAGS {
   CLUSTER_RESOURCE_DEFAULT_MONITOR    = 0,
   CLUSTER_RESOURCE_SEPARATE_MONITOR   = 1,
-  CLUSTER_RESOURCE_VALID_FLAGS        = 1 
+  CLUSTER_RESOURCE_VALID_FLAGS                     = 1 
 } CLUSTER_RESOURCE_CREATE_FLAGS;
 
 typedef enum _CLUSTER_SETUP_PHASE {
-  ClusterSetupPhaseInitialize                   = 1,
-  ClusterSetupPhaseValidateNodeState            = 100,
-  ClusterSetupPhaseValidateNetft                = 102,
-  ClusterSetupPhaseValidateClusDisk             = 103,
-  ClusterSetupPhaseConfigureClusSvc             = 104,
-  ClusterSetupPhaseStartingClusSvc              = 105,
-  ClusterSetupPhaseQueryClusterNameAccount      = 106,
+  ClusterSetupPhaseInitialize                                                          = 1,
+  ClusterSetupPhaseValidateNodeState                                      = 100,
+  ClusterSetupPhaseValidateNetft                                          = 102,
+  ClusterSetupPhaseValidateClusDisk                                       = 103,
+  ClusterSetupPhaseConfigureClusSvc                                       = 104,
+  ClusterSetupPhaseStartingClusSvc                                        = 105,
+  ClusterSetupPhaseQueryClusterNameAccount                   = 106,
   ClusterSetupPhaseValidateClusterNameAccount   = 107,
-  ClusterSetupPhaseCreateClusterAccount         = 108,
-  ClusterSetupPhaseConfigureClusterAccount      = 109,
-  ClusterSetupPhaseFormingCluster               = 200,
-  ClusterSetupPhaseAddClusterProperties         = 201,
-  ClusterSetupPhaseCreateResourceTypes          = 202,
-  ClusterSetupPhaseCreateGroups                 = 203,
+  ClusterSetupPhaseCreateClusterAccount                      = 108,
+  ClusterSetupPhaseConfigureClusterAccount                   = 109,
+  ClusterSetupPhaseFormingCluster                                         = 200,
+  ClusterSetupPhaseAddClusterProperties                      = 201,
+  ClusterSetupPhaseCreateResourceTypes                       = 202,
+  ClusterSetupPhaseCreateGroups                                           = 203,
   ClusterSetupPhaseCreateIPAddressResources     = 204,
-  ClusterSetupPhaseCreateNetworkName            = 205,
-  ClusterSetupPhaseClusterGroupOnline           = 206,
+  ClusterSetupPhaseCreateNetworkName                                      = 205,
+  ClusterSetupPhaseClusterGroupOnline                        = 206,
   ClusterSetupPhaseGettingCurrentMembership     = 300,
-  ClusterSetupPhaseAddNodeToCluster             = 301,
-  ClusterSetupPhaseNodeUp                       = 302,
-  ClusterSetupPhaseMoveGroup                    = 400,
-  ClusterSetupPhaseDeleteGroup                  = 401,
-  ClusterSetupPhaseCleanupCOs                   = 402,
-  ClusterSetupPhaseOfflineGroup                 = 403,
-  ClusterSetupPhaseEvictNode                    = 404,
-  ClusterSetupPhaseCleanupNode                  = 405,
-  ClusterSetupPhaseCoreGroupCleanup             = 406,
-  ClusterSetupPhaseFailureCleanup               = 999 
+  ClusterSetupPhaseAddNodeToCluster                                       = 301,
+  ClusterSetupPhaseNodeUp                                                              = 302,
+  ClusterSetupPhaseMoveGroup                                                           = 400,
+  ClusterSetupPhaseDeleteGroup                                                         = 401,
+  ClusterSetupPhaseCleanupCOs                                                          = 402,
+  ClusterSetupPhaseOfflineGroup                                           = 403,
+  ClusterSetupPhaseEvictNode                                                           = 404,
+  ClusterSetupPhaseCleanupNode                                                         = 405,
+  ClusterSetupPhaseCoreGroupCleanup                                       = 406,
+  ClusterSetupPhaseFailureCleanup                                         = 999 
 } CLUSTER_SETUP_PHASE;
 
 typedef enum _CLUSTER_SETUP_PHASE_TYPE {
-  ClusterSetupPhaseStart      = 1,
+  ClusterSetupPhaseStart                   = 1,
   ClusterSetupPhaseContinue   = 2,
-  ClusterSetupPhaseEnd        = 3 
+  ClusterSetupPhaseEnd                     = 3 
 } CLUSTER_SETUP_PHASE_TYPE;
 
 typedef enum _CLUSTER_SETUP_PHASE_SEVERITY {
   ClusterSetupPhaseInformational   = 1,
-  ClusterSetupPhaseWarning         = 2,
-  ClusterSetupPhaseFatal           = 3 
+  ClusterSetupPhaseWarning                      = 2,
+  ClusterSetupPhaseFatal                        = 3 
 } CLUSTER_SETUP_PHASE_SEVERITY;
 
 typedef struct _CLUSPROP_FILETIME {
   CLUSPROP_SYNTAX Syntax;
-  DWORD           cbLength;
-  FILETIME        ft;
+  DWORD                        cbLength;
+  FILETIME                     ft;
 } CLUSPROP_FILETIME, *PCLUSPROP_FILETIME;
 
 typedef struct _CLUS_MAINTENANCE_MODE_INFOEX {
-  WINBOOL                    InMaintenance;
+  WINBOOL                                                           InMaintenance;
   MAINTENANCE_MODE_TYPE_ENUM MaintainenceModeType;
   CLUSTER_RESOURCE_STATE     InternalState;
-  DWORD                      Signature;
+  DWORD                                                             Signature;
 } CLUS_MAINTENANCE_MODE_INFOEX, *PCLUS_MAINTENANCE_MODE_INFOEX;
 
 typedef struct CLUS_NETNAME_PWD_INFO {
@@ -1219,24 +1219,24 @@ typedef struct CLUS_NETNAME_VS_TOKEN_INFO {
 } CLUS_NETNAME_VS_TOKEN_INFO, *PCLUS_NETNAME_VS_TOKEN_INFO;
 
 typedef struct CLUS_PARTITION_INFO_EX {
-  DWORD          dwFlags;
-  WCHAR          szDeviceName[MAX_PATH];
-  WCHAR          szVolumeLabel[MAX_PATH];
-  DWORD          dwSerialNumber;
-  DWORD          rgdwMaximumComponentLength;
-  DWORD          dwFileSystemFlags;
-  WCHAR          szFileSystem[32];
+  DWORD                       dwFlags;
+  WCHAR                       szDeviceName[MAX_PATH];
+  WCHAR                       szVolumeLabel[MAX_PATH];
+  DWORD                       dwSerialNumber;
+  DWORD                       rgdwMaximumComponentLength;
+  DWORD                       dwFileSystemFlags;
+  WCHAR                       szFileSystem[32];
   ULARGE_INTEGER TotalSizeInBytes;
   ULARGE_INTEGER FreeSizeInBytes;
-  DWORD          DeviceNumber;
-  DWORD          PartitionNumber;
-  GUID           VolumeGuid;
+  DWORD                       DeviceNumber;
+  DWORD                       PartitionNumber;
+  GUID                        VolumeGuid;
 } CLUS_PARTITION_INFO_EX, *PCLUS_PARTITION_INFO_EX;
 
 typedef struct _CLUS_PROVIDER_STATE_CHANGE_INFO {
-  DWORD                  dwSize;
+  DWORD                                                         dwSize;
   CLUSTER_RESOURCE_STATE resourceState;
-  WCHAR                  szProviderId[1];
+  WCHAR                                                         szProviderId[1];
 } CLUS_PROVIDER_STATE_CHANGE_INFO, *PCLUS_PROVIDER_STATE_CHANGE_INFO;
 
 typedef struct _CLUS_STORAGE_GET_AVAILABLE_DRIVELETTERS {
@@ -1255,27 +1255,27 @@ typedef struct _CLUS_STORAGE_SET_DRIVELETTER {
 
 typedef struct _CLUSPROP_PARTITION_INFO_EX {
   CLUSPROP_SYNTAX Syntax;
-  DWORD           cbLength;
-  DWORD           dwFlags;
-  WCHAR           szDeviceName[MAX_PATH];
-  WCHAR           szVolumeLabel[MAX_PATH];
-  DWORD           dwSerialNumber;
-  DWORD           rgdwMaximumComponentLength;
-  DWORD           dwFileSystemFlags;
-  WCHAR           szFileSystem[32];
+  DWORD                        cbLength;
+  DWORD                        dwFlags;
+  WCHAR                        szDeviceName[MAX_PATH];
+  WCHAR                        szVolumeLabel[MAX_PATH];
+  DWORD                        dwSerialNumber;
+  DWORD                        rgdwMaximumComponentLength;
+  DWORD                        dwFileSystemFlags;
+  WCHAR                        szFileSystem[32];
   ULARGE_INTEGER  TotalSizeInBytes;
   ULARGE_INTEGER  FreeSizeInBytes;
-  DWORD           DeviceNumber;
-  DWORD           PartitionNumber;
-  GUID            VolumeGuid;
+  DWORD                        DeviceNumber;
+  DWORD                        PartitionNumber;
+  GUID                                      VolumeGuid;
 } CLUSPROP_PARTITION_INFO_EX, *PCLUSPROP_PARTITION_INFO_EX;
 
 typedef struct _CLUSTER_BATCH_COMMAND {
   CLUSTER_REG_COMMAND Command;
-  DWORD               dwOptions;
-  LPCWSTR             wzName;
-  BYTE CONST *        lpData;
-  DWORD               cbData;
+  DWORD                                         dwOptions;
+  LPCWSTR                                       wzName;
+  BYTE CONST *                     lpData;
+  DWORD                                         cbData;
 } CLUSTER_BATCH_COMMAND;
 
 typedef struct _CLUSTER_IP_ENTRY {
@@ -1284,13 +1284,13 @@ typedef struct _CLUSTER_IP_ENTRY {
 } CLUSTER_IP_ENTRY, *PCLUSTER_IP_ENTRY;
 
 typedef struct _CREATE_CLUSTER_CONFIG {
-  DWORD             dwVersion;
-  PCWSTR            lpszClusterName;
-  DWORD             cNodes;
-  PCWSTR            *ppszNodeNames;
-  DWORD             cIpEntries;
+  DWORD                                       dwVersion;
+  PCWSTR                                      lpszClusterName;
+  DWORD                                       cNodes;
+  PCWSTR                                      *ppszNodeNames;
+  DWORD                                       cIpEntries;
   PCLUSTER_IP_ENTRY pIpEntries;
-  BOOLEAN           fEmptyCluster;
+  BOOLEAN                        fEmptyCluster;
 } CREATE_CLUSTER_CONFIG, *PCREATE_CLUSTER_CONFIG;
 
 typedef struct _CLUSTER_VALIDATE_DIRECTORY {
@@ -1403,20 +1403,20 @@ DWORD DestroyClusterGroup(
 
 typedef enum _FILESHARE_CHANGE_ENUM {
   FILESHARE_CHANGE_NONE     = 0,
-  FILESHARE_CHANGE_ADD      = 1,
-  FILESHARE_CHANGE_DEL      = 2,
+  FILESHARE_CHANGE_ADD                   = 1,
+  FILESHARE_CHANGE_DEL                   = 2,
   FILESHARE_CHANGE_MODIFY   = 3 
 } FILESHARE_CHANGE_ENUM;
 
-#define NNLEN       80                  /* Net name length (share name) */
+#define NNLEN                    80                                                         /* Net name length (share name) */
 
 typedef struct _FILESHARE_CHANGE {
   FILESHARE_CHANGE_ENUM Change;
-  WCHAR                 ShareName[NNLEN+4];
+  WCHAR                                           ShareName[NNLEN+4];
 } FILESHARE_CHANGE, *PFILESHARE_CHANGE;
 
 typedef struct _FILESHARE_CHANGE_LIST {
-  DWORD            NumEntries;
+  DWORD                                      NumEntries;
   __MINGW_EXTENSION FILESHARE_CHANGE ChangeEntry[0];
 } FILESHARE_CHANGE_LIST, *PFILESHARE_CHANGE_LIST;
 
@@ -1434,7 +1434,7 @@ DWORD WINAPI SetClusterResourceDependencyExpression(
 #endif /* (_WIN32_WINNT >= 0x0600) */
 #if (_WIN32_WINNT >= 0x0601)
 typedef enum _CLUSTER_SHARED_VOLUME_BACKUP_STATE {
-  VolumeBackupNone         = 0x00000000,
+  VolumeBackupNone                      = 0x00000000,
   VolumeBackupInProgress   = 0x00000001 
 } CLUSTER_SHARED_VOLUME_BACKUP_STATE, *PCLUSTER_SHARED_VOLUME_BACKUP_STATE;
 #endif /* (_WIN32_WINNT >= 0x0601) */

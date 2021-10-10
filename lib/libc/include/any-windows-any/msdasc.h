@@ -121,10 +121,10 @@ extern "C" {
 #else
   typedef struct IServiceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IService *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IService *This);
-      ULONG (WINAPI *Release)(IService *This);
-      HRESULT (WINAPI *InvokeService)(IService *This,IUnknown *pUnkInner);
+                   HRESULT (WINAPI *QueryInterface)(IService *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IService *This);
+                   ULONG (WINAPI *Release)(IService *This);
+                   HRESULT (WINAPI *InvokeService)(IService *This,IUnknown *pUnkInner);
     END_INTERFACE
   } IServiceVtbl;
   struct IService {
@@ -163,11 +163,11 @@ extern "C" {
 #else
   typedef struct IDBPromptInitializeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDBPromptInitialize *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDBPromptInitialize *This);
-      ULONG (WINAPI *Release)(IDBPromptInitialize *This);
-      HRESULT (WINAPI *PromptDataSource)(IDBPromptInitialize *This,IUnknown *pUnkOuter,HWND hWndParent,DBPROMPTOPTIONS dwPromptOptions,ULONG cSourceTypeFilter,DBSOURCETYPE *rgSourceTypeFilter,LPCOLESTR pwszszzProviderFilter,REFIID riid,IUnknown **ppDataSource);
-      HRESULT (WINAPI *PromptFileName)(IDBPromptInitialize *This,HWND hWndParent,DBPROMPTOPTIONS dwPromptOptions,LPCOLESTR pwszInitialDirectory,LPCOLESTR pwszInitialFile,LPOLESTR *ppwszSelectedFile);
+                   HRESULT (WINAPI *QueryInterface)(IDBPromptInitialize *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDBPromptInitialize *This);
+                   ULONG (WINAPI *Release)(IDBPromptInitialize *This);
+                   HRESULT (WINAPI *PromptDataSource)(IDBPromptInitialize *This,IUnknown *pUnkOuter,HWND hWndParent,DBPROMPTOPTIONS dwPromptOptions,ULONG cSourceTypeFilter,DBSOURCETYPE *rgSourceTypeFilter,LPCOLESTR pwszszzProviderFilter,REFIID riid,IUnknown **ppDataSource);
+                   HRESULT (WINAPI *PromptFileName)(IDBPromptInitialize *This,HWND hWndParent,DBPROMPTOPTIONS dwPromptOptions,LPCOLESTR pwszInitialDirectory,LPCOLESTR pwszInitialFile,LPOLESTR *ppwszSelectedFile);
     END_INTERFACE
   } IDBPromptInitializeVtbl;
   struct IDBPromptInitialize {
@@ -203,15 +203,15 @@ extern "C" {
 #else
   typedef struct IDataInitializeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDataInitialize *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDataInitialize *This);
-      ULONG (WINAPI *Release)(IDataInitialize *This);
-      HRESULT (WINAPI *GetDataSource)(IDataInitialize *This,IUnknown *pUnkOuter,DWORD dwClsCtx,LPCOLESTR pwszInitializationString,REFIID riid,IUnknown **ppDataSource);
-      HRESULT (WINAPI *GetInitializationString)(IDataInitialize *This,IUnknown *pDataSource,boolean fIncludePassword,LPOLESTR *ppwszInitString);
-      HRESULT (WINAPI *CreateDBInstance)(IDataInitialize *This,REFCLSID clsidProvider,IUnknown *pUnkOuter,DWORD dwClsCtx,LPOLESTR pwszReserved,REFIID riid,IUnknown **ppDataSource);
-      HRESULT (WINAPI *CreateDBInstanceEx)(IDataInitialize *This,REFCLSID clsidProvider,IUnknown *pUnkOuter,DWORD dwClsCtx,LPOLESTR pwszReserved,COSERVERINFO *pServerInfo,ULONG cmq,MULTI_QI *rgmqResults);
-      HRESULT (WINAPI *LoadStringFromStorage)(IDataInitialize *This,LPCOLESTR pwszFileName,LPOLESTR *ppwszInitializationString);
-      HRESULT (WINAPI *WriteStringToStorage)(IDataInitialize *This,LPCOLESTR pwszFileName,LPCOLESTR pwszInitializationString,DWORD dwCreationDisposition);
+                   HRESULT (WINAPI *QueryInterface)(IDataInitialize *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDataInitialize *This);
+                   ULONG (WINAPI *Release)(IDataInitialize *This);
+                   HRESULT (WINAPI *GetDataSource)(IDataInitialize *This,IUnknown *pUnkOuter,DWORD dwClsCtx,LPCOLESTR pwszInitializationString,REFIID riid,IUnknown **ppDataSource);
+                   HRESULT (WINAPI *GetInitializationString)(IDataInitialize *This,IUnknown *pDataSource,boolean fIncludePassword,LPOLESTR *ppwszInitString);
+                   HRESULT (WINAPI *CreateDBInstance)(IDataInitialize *This,REFCLSID clsidProvider,IUnknown *pUnkOuter,DWORD dwClsCtx,LPOLESTR pwszReserved,REFIID riid,IUnknown **ppDataSource);
+                   HRESULT (WINAPI *CreateDBInstanceEx)(IDataInitialize *This,REFCLSID clsidProvider,IUnknown *pUnkOuter,DWORD dwClsCtx,LPOLESTR pwszReserved,COSERVERINFO *pServerInfo,ULONG cmq,MULTI_QI *rgmqResults);
+                   HRESULT (WINAPI *LoadStringFromStorage)(IDataInitialize *This,LPCOLESTR pwszFileName,LPOLESTR *ppwszInitializationString);
+                   HRESULT (WINAPI *WriteStringToStorage)(IDataInitialize *This,LPCOLESTR pwszFileName,LPCOLESTR pwszInitializationString,DWORD dwCreationDisposition);
     END_INTERFACE
   } IDataInitializeVtbl;
   struct IDataInitialize {
@@ -260,17 +260,17 @@ extern "C" {
 #else
   typedef struct IDataSourceLocatorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDataSourceLocator *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDataSourceLocator *This);
-      ULONG (WINAPI *Release)(IDataSourceLocator *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IDataSourceLocator *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IDataSourceLocator *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IDataSourceLocator *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IDataSourceLocator *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_hWnd)(IDataSourceLocator *This,COMPATIBLE_LONG *phwndParent);
-      HRESULT (WINAPI *put_hWnd)(IDataSourceLocator *This,COMPATIBLE_LONG hwndParent);
-      HRESULT (WINAPI *PromptNew)(IDataSourceLocator *This,IDispatch **ppADOConnection);
-      HRESULT (WINAPI *PromptEdit)(IDataSourceLocator *This,IDispatch **ppADOConnection,VARIANT_BOOL *pbSuccess);
+                   HRESULT (WINAPI *QueryInterface)(IDataSourceLocator *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDataSourceLocator *This);
+                   ULONG (WINAPI *Release)(IDataSourceLocator *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IDataSourceLocator *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IDataSourceLocator *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IDataSourceLocator *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IDataSourceLocator *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_hWnd)(IDataSourceLocator *This,COMPATIBLE_LONG *phwndParent);
+                   HRESULT (WINAPI *put_hWnd)(IDataSourceLocator *This,COMPATIBLE_LONG hwndParent);
+                   HRESULT (WINAPI *PromptNew)(IDataSourceLocator *This,IDispatch **ppADOConnection);
+                   HRESULT (WINAPI *PromptEdit)(IDataSourceLocator *This,IDispatch **ppADOConnection,VARIANT_BOOL *pbSuccess);
     END_INTERFACE
   } IDataSourceLocatorVtbl;
   struct IDataSourceLocator {

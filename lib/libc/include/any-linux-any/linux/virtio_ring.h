@@ -139,7 +139,7 @@ struct vring {
 #define vring_avail_event(vr) (*(__virtio16 *)&(vr)->used->ring[(vr)->num])
 
 static __inline__ void vring_init(struct vring *vr, unsigned int num, void *p,
-			      unsigned long align)
+			                   unsigned long align)
 {
 	vr->num = num;
 	vr->desc = p;

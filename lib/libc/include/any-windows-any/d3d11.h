@@ -604,7 +604,7 @@ interface ID3D11VideoProcessorInputView;
 
 #define D3D11_DEFAULT_VIEWPORT_WIDTH (0)
 
-#define D3D11_FLOAT32_MAX         (3.402823466e+38f)
+#define D3D11_FLOAT32_MAX                      (3.402823466e+38f)
 #define D3D11_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT (32)
 
 #define D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT (8)
@@ -762,13 +762,13 @@ interface ID3D11VideoProcessorInputView;
 
 #define D3D11_SPEC_DATE_YEAR (2011)
 
-#define D3D11_SPEC_VERSION                   (1.07)
-#define D3D11_SRGB_GAMMA                     (2.2f)
+#define D3D11_SPEC_VERSION                                                          (1.07)
+#define D3D11_SRGB_GAMMA                                                            (2.2f)
 #define D3D11_SRGB_TO_FLOAT_DENOMINATOR_1    (12.92f)
 #define D3D11_SRGB_TO_FLOAT_DENOMINATOR_2    (1.055f)
-#define D3D11_SRGB_TO_FLOAT_EXPONENT         (2.4f)
-#define D3D11_SRGB_TO_FLOAT_OFFSET           (0.055f)
-#define D3D11_SRGB_TO_FLOAT_THRESHOLD        (0.04045f)
+#define D3D11_SRGB_TO_FLOAT_EXPONENT                      (2.4f)
+#define D3D11_SRGB_TO_FLOAT_OFFSET                        (0.055f)
+#define D3D11_SRGB_TO_FLOAT_THRESHOLD                     (0.04045f)
 #define D3D11_SRGB_TO_FLOAT_TOLERANCE_IN_ULP (0.5f)
 #define D3D11_STANDARD_COMPONENT_BIT_COUNT (32)
 
@@ -994,22 +994,22 @@ typedef struct D3D11_BOX {
 } D3D11_BOX;
 typedef struct D3D11_BUFFER_RTV {
     __C89_NAMELESS union {
-        UINT FirstElement;
-        UINT ElementOffset;
+                     UINT FirstElement;
+                     UINT ElementOffset;
     } __C89_NAMELESSUNIONNAME1;
     __C89_NAMELESS union {
-        UINT NumElements;
-        UINT ElementWidth;
+                     UINT NumElements;
+                     UINT ElementWidth;
     } __C89_NAMELESSUNIONNAME2;
 } D3D11_BUFFER_RTV;
 typedef struct D3D11_BUFFER_SRV {
     __C89_NAMELESS union {
-        UINT FirstElement;
-        UINT ElementOffset;
+                     UINT FirstElement;
+                     UINT ElementOffset;
     } __C89_NAMELESSUNIONNAME1;
     __C89_NAMELESS union {
-        UINT NumElements;
-        UINT ElementWidth;
+                     UINT NumElements;
+                     UINT ElementWidth;
     } __C89_NAMELESSUNIONNAME2;
 } D3D11_BUFFER_SRV;
 typedef struct D3D11_BUFFER_UAV {
@@ -1235,13 +1235,13 @@ typedef enum D3D11_FILTER_TYPE {
 
 #define D3D11_ENCODE_BASIC_FILTER(min, mag, mip, bComparison) \
     ((D3D11_FILTER)(((bComparison) ? D3D11_COMPARISON_FILTERING_BIT : 0 ) | \
-                    (((min)&D3D11_FILTER_TYPE_MASK) << D3D11_MIN_FILTER_SHIFT) | \
-                    (((mag)&D3D11_FILTER_TYPE_MASK) << D3D11_MAG_FILTER_SHIFT) | \
-                    (((mip)&D3D11_FILTER_TYPE_MASK) << D3D11_MIP_FILTER_SHIFT)))
+                                                           (((min)&D3D11_FILTER_TYPE_MASK) << D3D11_MIN_FILTER_SHIFT) | \
+                                                           (((mag)&D3D11_FILTER_TYPE_MASK) << D3D11_MAG_FILTER_SHIFT) | \
+                                                           (((mip)&D3D11_FILTER_TYPE_MASK) << D3D11_MIP_FILTER_SHIFT)))
 #define D3D11_ENCODE_ANISOTROPIC_FILTER(bComparison) \
     ((D3D11_FILTER)(D3D11_ANISOTROPIC_FILTERING_BIT | \
-                    D3D11_ENCODE_BASIC_FILTER(D3D11_FILTER_TYPE_LINEAR,D3D11_FILTER_TYPE_LINEAR, \
-                                              D3D11_FILTER_TYPE_LINEAR,bComparison)))
+                                                           D3D11_ENCODE_BASIC_FILTER(D3D11_FILTER_TYPE_LINEAR,D3D11_FILTER_TYPE_LINEAR, \
+                                                                                                                                         D3D11_FILTER_TYPE_LINEAR,bComparison)))
 #define D3D11_DECODE_MIN_FILTER(d3d11Filter) \
     ((D3D11_FILTER_TYPE)(((d3d11Filter) >> D3D11_MIN_FILTER_SHIFT) & D3D11_FILTER_TYPE_MASK))
 #define D3D11_DECODE_MAG_FILTER(d3d11Filter) \
@@ -1391,11 +1391,11 @@ struct CD3D11_QUERY_DESC : public D3D11_QUERY_DESC {
     ~CD3D11_QUERY_DESC() {}
     explicit CD3D11_QUERY_DESC(const D3D11_QUERY_DESC &other) : D3D11_QUERY_DESC(other) {}
     explicit CD3D11_QUERY_DESC(D3D11_QUERY query, UINT misc_flags = 0) {
-        Query = query;
-        MiscFlags = misc_flags;
+                     Query = query;
+                     MiscFlags = misc_flags;
     }
     operator const D3D11_QUERY_DESC&() const {
-        return *this;
+                     return *this;
     }
 };
 #endif
@@ -1416,30 +1416,30 @@ struct CD3D11_RASTERIZER_DESC : public D3D11_RASTERIZER_DESC {
     CD3D11_RASTERIZER_DESC() {}
     explicit CD3D11_RASTERIZER_DESC(const D3D11_RASTERIZER_DESC &o) : D3D11_RASTERIZER_DESC(o) {}
     explicit CD3D11_RASTERIZER_DESC(CD3D11_DEFAULT) {
-        FillMode = D3D11_FILL_SOLID;
-        CullMode = D3D11_CULL_BACK;
-        FrontCounterClockwise = FALSE;
-        DepthBias = D3D11_DEFAULT_DEPTH_BIAS;
-        DepthBiasClamp = D3D11_DEFAULT_DEPTH_BIAS_CLAMP;
-        SlopeScaledDepthBias = D3D11_DEFAULT_SLOPE_SCALED_DEPTH_BIAS;
-        DepthClipEnable = TRUE;
-        ScissorEnable = FALSE;
-        MultisampleEnable = FALSE;
-        AntialiasedLineEnable = FALSE;
+                     FillMode = D3D11_FILL_SOLID;
+                     CullMode = D3D11_CULL_BACK;
+                     FrontCounterClockwise = FALSE;
+                     DepthBias = D3D11_DEFAULT_DEPTH_BIAS;
+                     DepthBiasClamp = D3D11_DEFAULT_DEPTH_BIAS_CLAMP;
+                     SlopeScaledDepthBias = D3D11_DEFAULT_SLOPE_SCALED_DEPTH_BIAS;
+                     DepthClipEnable = TRUE;
+                     ScissorEnable = FALSE;
+                     MultisampleEnable = FALSE;
+                     AntialiasedLineEnable = FALSE;
     }
     explicit CD3D11_RASTERIZER_DESC(D3D11_FILL_MODE fillMode, D3D11_CULL_MODE cullMode,
-            WINBOOL frontCounterClockwise, INT depthBias, FLOAT depthBiasClamp, FLOAT slopeScaledDepthBias,
-            BOOL depthClipEnable, WINBOOL scissorEnable, WINBOOL multisampleEnable, WINBOOL antialiasedLineEnable) {
-        FillMode = fillMode;
-        CullMode = cullMode;
-        FrontCounterClockwise = frontCounterClockwise;
-        DepthBias = depthBias;
-        DepthBiasClamp = depthBiasClamp;
-        SlopeScaledDepthBias = slopeScaledDepthBias;
-        DepthClipEnable = depthClipEnable;
-        ScissorEnable = scissorEnable;
-        MultisampleEnable = multisampleEnable;
-        AntialiasedLineEnable = antialiasedLineEnable;
+                                      WINBOOL frontCounterClockwise, INT depthBias, FLOAT depthBiasClamp, FLOAT slopeScaledDepthBias,
+                                      BOOL depthClipEnable, WINBOOL scissorEnable, WINBOOL multisampleEnable, WINBOOL antialiasedLineEnable) {
+                     FillMode = fillMode;
+                     CullMode = cullMode;
+                     FrontCounterClockwise = frontCounterClockwise;
+                     DepthBias = depthBias;
+                     DepthBiasClamp = depthBiasClamp;
+                     SlopeScaledDepthBias = slopeScaledDepthBias;
+                     DepthClipEnable = depthClipEnable;
+                     ScissorEnable = scissorEnable;
+                     MultisampleEnable = multisampleEnable;
+                     AntialiasedLineEnable = antialiasedLineEnable;
     }
     ~CD3D11_RASTERIZER_DESC() {}
     operator const D3D11_RASTERIZER_DESC&() const { return *this; }
@@ -1626,12 +1626,12 @@ typedef struct D3D11_UNORDERED_ACCESS_VIEW_DESC {
     DXGI_FORMAT Format;
     D3D11_UAV_DIMENSION ViewDimension;
     __C89_NAMELESS union {
-        D3D11_BUFFER_UAV Buffer;
-        D3D11_TEX1D_UAV Texture1D;
-        D3D11_TEX1D_ARRAY_UAV Texture1DArray;
-        D3D11_TEX2D_UAV Texture2D;
-        D3D11_TEX2D_ARRAY_UAV Texture2DArray;
-        D3D11_TEX3D_UAV Texture3D;
+                     D3D11_BUFFER_UAV Buffer;
+                     D3D11_TEX1D_UAV Texture1D;
+                     D3D11_TEX1D_ARRAY_UAV Texture1DArray;
+                     D3D11_TEX2D_UAV Texture2D;
+                     D3D11_TEX2D_ARRAY_UAV Texture2DArray;
+                     D3D11_TEX3D_UAV Texture3D;
     } __C89_NAMELESSUNIONNAME;
 } D3D11_UNORDERED_ACCESS_VIEW_DESC;
 typedef enum D3D11_USAGE {
@@ -1728,17 +1728,17 @@ struct CD3D11_BLEND_DESC : public D3D11_BLEND_DESC {
     CD3D11_BLEND_DESC() {}
     explicit CD3D11_BLEND_DESC(const D3D11_BLEND_DESC &o) : D3D11_BLEND_DESC(o) {}
     explicit CD3D11_BLEND_DESC(CD3D11_DEFAULT) {
-        AlphaToCoverageEnable = FALSE;
-        IndependentBlendEnable = FALSE;
-        for(D3D11_RENDER_TARGET_BLEND_DESC *target = RenderTarget;
-                target < RenderTarget + D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT;
-                target++) {
-            target->BlendEnable = FALSE;
-            target->SrcBlend = target->SrcBlendAlpha = D3D11_BLEND_ONE;
-            target->DestBlend = target->DestBlendAlpha = D3D11_BLEND_ZERO;
-            target->BlendOp = target->BlendOpAlpha = D3D11_BLEND_OP_ADD;
-            target->RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
-        }
+                     AlphaToCoverageEnable = FALSE;
+                     IndependentBlendEnable = FALSE;
+                     for(D3D11_RENDER_TARGET_BLEND_DESC *target = RenderTarget;
+                                          target < RenderTarget + D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT;
+                                          target++) {
+                                      target->BlendEnable = FALSE;
+                                      target->SrcBlend = target->SrcBlendAlpha = D3D11_BLEND_ONE;
+                                      target->DestBlend = target->DestBlendAlpha = D3D11_BLEND_ZERO;
+                                      target->BlendOp = target->BlendOpAlpha = D3D11_BLEND_OP_ADD;
+                                      target->RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
+                     }
     }
     ~CD3D11_BLEND_DESC() {}
     operator const D3D11_BLEND_DESC&() const { return *this; }
@@ -1757,14 +1757,14 @@ struct CD3D11_BUFFER_DESC : public D3D11_BUFFER_DESC {
     CD3D11_BUFFER_DESC() {}
     explicit CD3D11_BUFFER_DESC(const D3D11_BUFFER_DESC &o) : D3D11_BUFFER_DESC(o) {}
     explicit CD3D11_BUFFER_DESC(UINT byteWidth,UINT bindFlags,
-            D3D11_USAGE usage = D3D11_USAGE_DEFAULT, UINT cpuaccessFlags = 0,
-            UINT miscFlags = 0, UINT structureByteStride = 0 ) {
-        ByteWidth = byteWidth;
-        Usage = usage;
-        BindFlags = bindFlags;
-        CPUAccessFlags = cpuaccessFlags;
-        MiscFlags = miscFlags;
-        StructureByteStride = structureByteStride;
+                                      D3D11_USAGE usage = D3D11_USAGE_DEFAULT, UINT cpuaccessFlags = 0,
+                                      UINT miscFlags = 0, UINT structureByteStride = 0 ) {
+                     ByteWidth = byteWidth;
+                     Usage = usage;
+                     BindFlags = bindFlags;
+                     CPUAccessFlags = cpuaccessFlags;
+                     MiscFlags = miscFlags;
+                     StructureByteStride = structureByteStride;
     }
     ~CD3D11_BUFFER_DESC() {}
     operator const D3D11_BUFFER_DESC&() const { return *this; }
@@ -1775,12 +1775,12 @@ typedef struct D3D11_DEPTH_STENCIL_VIEW_DESC {
     D3D11_DSV_DIMENSION ViewDimension;
     UINT Flags;
     __C89_NAMELESS union {
-        D3D11_TEX1D_DSV Texture1D;
-        D3D11_TEX1D_ARRAY_DSV Texture1DArray;
-        D3D11_TEX2D_DSV Texture2D;
-        D3D11_TEX2D_ARRAY_DSV Texture2DArray;
-        D3D11_TEX2DMS_DSV Texture2DMS;
-        D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray;
+                     D3D11_TEX1D_DSV Texture1D;
+                     D3D11_TEX1D_ARRAY_DSV Texture1DArray;
+                     D3D11_TEX2D_DSV Texture2D;
+                     D3D11_TEX2D_ARRAY_DSV Texture2DArray;
+                     D3D11_TEX2DMS_DSV Texture2DMS;
+                     D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray;
     } __C89_NAMELESSUNIONNAME;
 } D3D11_DEPTH_STENCIL_VIEW_DESC;
 typedef struct D3D11_DEPTH_STENCILOP_DESC {
@@ -1804,46 +1804,46 @@ struct CD3D11_DEPTH_STENCIL_DESC : public D3D11_DEPTH_STENCIL_DESC {
     CD3D11_DEPTH_STENCIL_DESC() {}
     explicit CD3D11_DEPTH_STENCIL_DESC(const D3D11_DEPTH_STENCIL_DESC &other) : D3D11_DEPTH_STENCIL_DESC(other) {}
     explicit CD3D11_DEPTH_STENCIL_DESC(CD3D11_DEFAULT) {
-        const D3D11_DEPTH_STENCILOP_DESC default_op =
-            {D3D11_STENCIL_OP_KEEP, D3D11_STENCIL_OP_KEEP, D3D11_STENCIL_OP_KEEP, D3D11_COMPARISON_ALWAYS};
-        DepthEnable = TRUE;
-        DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL;
-        DepthFunc = D3D11_COMPARISON_LESS;
-        StencilEnable = FALSE;
-        StencilReadMask = D3D11_DEFAULT_STENCIL_READ_MASK;
-        StencilWriteMask = D3D11_DEFAULT_STENCIL_WRITE_MASK;
-        FrontFace = default_op;
-        BackFace = default_op;
+                     const D3D11_DEPTH_STENCILOP_DESC default_op =
+                                      {D3D11_STENCIL_OP_KEEP, D3D11_STENCIL_OP_KEEP, D3D11_STENCIL_OP_KEEP, D3D11_COMPARISON_ALWAYS};
+                     DepthEnable = TRUE;
+                     DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL;
+                     DepthFunc = D3D11_COMPARISON_LESS;
+                     StencilEnable = FALSE;
+                     StencilReadMask = D3D11_DEFAULT_STENCIL_READ_MASK;
+                     StencilWriteMask = D3D11_DEFAULT_STENCIL_WRITE_MASK;
+                     FrontFace = default_op;
+                     BackFace = default_op;
     }
     explicit CD3D11_DEPTH_STENCIL_DESC(
-            WINBOOL depth_enable,
-            D3D11_DEPTH_WRITE_MASK depth_write_mask,
-            D3D11_COMPARISON_FUNC depth_func,
-            WINBOOL stencil_enable,
-            UINT8 stencil_read_mask,
-            UINT8 stencil_write_mask,
-            D3D11_STENCIL_OP front_stencil_fail_op,
-            D3D11_STENCIL_OP front_stencil_depth_fail_op,
-            D3D11_STENCIL_OP front_stencil_pass_op,
-            D3D11_COMPARISON_FUNC front_stencil_func,
-            D3D11_STENCIL_OP back_stencil_fail_op,
-            D3D11_STENCIL_OP back_stencil_depth_fail_op,
-            D3D11_STENCIL_OP back_stencil_pass_op,
-            D3D11_COMPARISON_FUNC back_stencil_func) {
-        DepthEnable = depth_enable;
-        DepthWriteMask = depth_write_mask;
-        DepthFunc = depth_func;
-        StencilEnable = stencil_enable;
-        StencilReadMask = stencil_read_mask;
-        StencilWriteMask = stencil_write_mask;
-        FrontFace.StencilFailOp = front_stencil_fail_op;
-        FrontFace.StencilDepthFailOp = front_stencil_depth_fail_op;
-        FrontFace.StencilPassOp = front_stencil_pass_op;
-        FrontFace.StencilFunc = front_stencil_func;
-        BackFace.StencilFailOp = back_stencil_fail_op;
-        BackFace.StencilDepthFailOp = back_stencil_depth_fail_op;
-        BackFace.StencilPassOp = back_stencil_pass_op;
-        BackFace.StencilFunc = back_stencil_func;
+                                      WINBOOL depth_enable,
+                                      D3D11_DEPTH_WRITE_MASK depth_write_mask,
+                                      D3D11_COMPARISON_FUNC depth_func,
+                                      WINBOOL stencil_enable,
+                                      UINT8 stencil_read_mask,
+                                      UINT8 stencil_write_mask,
+                                      D3D11_STENCIL_OP front_stencil_fail_op,
+                                      D3D11_STENCIL_OP front_stencil_depth_fail_op,
+                                      D3D11_STENCIL_OP front_stencil_pass_op,
+                                      D3D11_COMPARISON_FUNC front_stencil_func,
+                                      D3D11_STENCIL_OP back_stencil_fail_op,
+                                      D3D11_STENCIL_OP back_stencil_depth_fail_op,
+                                      D3D11_STENCIL_OP back_stencil_pass_op,
+                                      D3D11_COMPARISON_FUNC back_stencil_func) {
+                     DepthEnable = depth_enable;
+                     DepthWriteMask = depth_write_mask;
+                     DepthFunc = depth_func;
+                     StencilEnable = stencil_enable;
+                     StencilReadMask = stencil_read_mask;
+                     StencilWriteMask = stencil_write_mask;
+                     FrontFace.StencilFailOp = front_stencil_fail_op;
+                     FrontFace.StencilDepthFailOp = front_stencil_depth_fail_op;
+                     FrontFace.StencilPassOp = front_stencil_pass_op;
+                     FrontFace.StencilFunc = front_stencil_func;
+                     BackFace.StencilFailOp = back_stencil_fail_op;
+                     BackFace.StencilDepthFailOp = back_stencil_depth_fail_op;
+                     BackFace.StencilPassOp = back_stencil_pass_op;
+                     BackFace.StencilFunc = back_stencil_func;
     }
     ~CD3D11_DEPTH_STENCIL_DESC() {}
     operator const D3D11_DEPTH_STENCIL_DESC&() const { return *this; }
@@ -1853,77 +1853,77 @@ typedef struct D3D11_RENDER_TARGET_VIEW_DESC {
     DXGI_FORMAT Format;
     D3D11_RTV_DIMENSION ViewDimension;
     __C89_NAMELESS union {
-        D3D11_BUFFER_RTV Buffer;
-        D3D11_TEX1D_RTV Texture1D;
-        D3D11_TEX1D_ARRAY_RTV Texture1DArray;
-        D3D11_TEX2D_RTV Texture2D;
-        D3D11_TEX2D_ARRAY_RTV Texture2DArray;
-        D3D11_TEX2DMS_RTV Texture2DMS;
-        D3D11_TEX2DMS_ARRAY_RTV Texture2DMSArray;
-        D3D11_TEX3D_RTV Texture3D;
+                     D3D11_BUFFER_RTV Buffer;
+                     D3D11_TEX1D_RTV Texture1D;
+                     D3D11_TEX1D_ARRAY_RTV Texture1DArray;
+                     D3D11_TEX2D_RTV Texture2D;
+                     D3D11_TEX2D_ARRAY_RTV Texture2DArray;
+                     D3D11_TEX2DMS_RTV Texture2DMS;
+                     D3D11_TEX2DMS_ARRAY_RTV Texture2DMSArray;
+                     D3D11_TEX3D_RTV Texture3D;
     } __C89_NAMELESSUNIONNAME;
 } D3D11_RENDER_TARGET_VIEW_DESC;
 #if !defined(D3D11_NO_HELPERS) && defined(__cplusplus)
 struct CD3D11_RENDER_TARGET_VIEW_DESC : public D3D11_RENDER_TARGET_VIEW_DESC {
     CD3D11_RENDER_TARGET_VIEW_DESC() {}
     explicit CD3D11_RENDER_TARGET_VIEW_DESC(D3D11_RTV_DIMENSION dim, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN,
-            UINT mip_slice = 0, UINT first_slice = 0, UINT array_size = -1) {
-        Format = format;
-        ViewDimension = dim;
-        switch(dim) {
-        case D3D11_RTV_DIMENSION_BUFFER:
-            Buffer.FirstElement = mip_slice;
-            Buffer.NumElements = first_slice;
-            break;
-        case D3D11_RTV_DIMENSION_TEXTURE1D:
-            Texture1D.MipSlice = mip_slice;
-            break;
-        case D3D11_RTV_DIMENSION_TEXTURE1DARRAY:
-            Texture1DArray.MipSlice = mip_slice;
-            Texture1DArray.FirstArraySlice = first_slice;
-            Texture1DArray.ArraySize = array_size;
-            break;
-        case D3D11_RTV_DIMENSION_TEXTURE2D:
-            Texture2D.MipSlice = mip_slice;
-            break;
-        case D3D11_RTV_DIMENSION_TEXTURE2DARRAY:
-            Texture2DArray.MipSlice = mip_slice;
-            Texture2DArray.FirstArraySlice = first_slice;
-            Texture2DArray.ArraySize = array_size;
-            break;
-        case D3D11_RTV_DIMENSION_TEXTURE2DMSARRAY:
-            Texture2DMSArray.FirstArraySlice = first_slice;
-            Texture2DMSArray.ArraySize = array_size;
-            break;
-        case D3D11_RTV_DIMENSION_TEXTURE3D:
-            Texture3D.MipSlice = mip_slice;
-            Texture3D.FirstWSlice = first_slice;
-            Texture3D.WSize = array_size;
-            break;
-        default:
-            break;
-        }
+                                      UINT mip_slice = 0, UINT first_slice = 0, UINT array_size = -1) {
+                     Format = format;
+                     ViewDimension = dim;
+                     switch(dim) {
+                     case D3D11_RTV_DIMENSION_BUFFER:
+                                      Buffer.FirstElement = mip_slice;
+                                      Buffer.NumElements = first_slice;
+                                      break;
+                     case D3D11_RTV_DIMENSION_TEXTURE1D:
+                                      Texture1D.MipSlice = mip_slice;
+                                      break;
+                     case D3D11_RTV_DIMENSION_TEXTURE1DARRAY:
+                                      Texture1DArray.MipSlice = mip_slice;
+                                      Texture1DArray.FirstArraySlice = first_slice;
+                                      Texture1DArray.ArraySize = array_size;
+                                      break;
+                     case D3D11_RTV_DIMENSION_TEXTURE2D:
+                                      Texture2D.MipSlice = mip_slice;
+                                      break;
+                     case D3D11_RTV_DIMENSION_TEXTURE2DARRAY:
+                                      Texture2DArray.MipSlice = mip_slice;
+                                      Texture2DArray.FirstArraySlice = first_slice;
+                                      Texture2DArray.ArraySize = array_size;
+                                      break;
+                     case D3D11_RTV_DIMENSION_TEXTURE2DMSARRAY:
+                                      Texture2DMSArray.FirstArraySlice = first_slice;
+                                      Texture2DMSArray.ArraySize = array_size;
+                                      break;
+                     case D3D11_RTV_DIMENSION_TEXTURE3D:
+                                      Texture3D.MipSlice = mip_slice;
+                                      Texture3D.FirstWSlice = first_slice;
+                                      Texture3D.WSize = array_size;
+                                      break;
+                     default:
+                                      break;
+                     }
     }
     explicit CD3D11_RENDER_TARGET_VIEW_DESC(ID3D11Buffer*, DXGI_FORMAT format, UINT first_elem,
-            UINT elem_cnt) {
-        Format = format;
-        ViewDimension = D3D11_RTV_DIMENSION_BUFFER;
-        Buffer.FirstElement = first_elem;
-        Buffer.NumElements = elem_cnt;
+                                      UINT elem_cnt) {
+                     Format = format;
+                     ViewDimension = D3D11_RTV_DIMENSION_BUFFER;
+                     Buffer.FirstElement = first_elem;
+                     Buffer.NumElements = elem_cnt;
     }
     explicit CD3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture1D *texture, D3D11_RTV_DIMENSION dim,
-            DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT mip_slice = 0, UINT first_slice = 0,
-            UINT array_size = -1);
+                                      DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT mip_slice = 0, UINT first_slice = 0,
+                                      UINT array_size = -1);
     explicit CD3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture2D *texture, D3D11_RTV_DIMENSION dim,
-            DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT mip_slice = 0, UINT first_slice = 0,
-            UINT array_size = -1);
+                                      DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT mip_slice = 0, UINT first_slice = 0,
+                                      UINT array_size = -1);
     explicit CD3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture3D *texture, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN,
-            UINT mip_slice = 0, UINT first_w_slice = 0, UINT w_slice = -1 );
+                                      UINT mip_slice = 0, UINT first_w_slice = 0, UINT w_slice = -1 );
     ~CD3D11_RENDER_TARGET_VIEW_DESC() {}
     explicit CD3D11_RENDER_TARGET_VIEW_DESC(const D3D11_RENDER_TARGET_VIEW_DESC &other)
-        : D3D11_RENDER_TARGET_VIEW_DESC(other) {}
+                     : D3D11_RENDER_TARGET_VIEW_DESC(other) {}
     operator const D3D11_RENDER_TARGET_VIEW_DESC&() const {
-        return *this;
+                     return *this;
     }
 };
 #endif
@@ -1944,38 +1944,38 @@ struct CD3D11_SAMPLER_DESC : public D3D11_SAMPLER_DESC {
     CD3D11_SAMPLER_DESC() {}
     explicit CD3D11_SAMPLER_DESC(const D3D11_SAMPLER_DESC &o) : D3D11_SAMPLER_DESC(o) {}
     explicit CD3D11_SAMPLER_DESC(CD3D11_DEFAULT) {
-        Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
-        AddressU = D3D11_TEXTURE_ADDRESS_CLAMP;
-        AddressV = D3D11_TEXTURE_ADDRESS_CLAMP;
-        AddressW = D3D11_TEXTURE_ADDRESS_CLAMP;
-        MipLODBias = 0;
-        MaxAnisotropy = 1;
-        ComparisonFunc = D3D11_COMPARISON_NEVER;
-        BorderColor[0] = BorderColor[1] = BorderColor[2] = BorderColor[3] = 1.0f;
-        MinLOD = -3.402823466e+38f;
-        MaxLOD = 3.402823466e+38f;
+                     Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+                     AddressU = D3D11_TEXTURE_ADDRESS_CLAMP;
+                     AddressV = D3D11_TEXTURE_ADDRESS_CLAMP;
+                     AddressW = D3D11_TEXTURE_ADDRESS_CLAMP;
+                     MipLODBias = 0;
+                     MaxAnisotropy = 1;
+                     ComparisonFunc = D3D11_COMPARISON_NEVER;
+                     BorderColor[0] = BorderColor[1] = BorderColor[2] = BorderColor[3] = 1.0f;
+                     MinLOD = -3.402823466e+38f;
+                     MaxLOD = 3.402823466e+38f;
     }
     explicit CD3D11_SAMPLER_DESC(D3D11_FILTER filter, D3D11_TEXTURE_ADDRESS_MODE addressU,
-            D3D11_TEXTURE_ADDRESS_MODE addressV, D3D11_TEXTURE_ADDRESS_MODE addressW,
-            FLOAT mipLODBias, UINT maxAnisotropy, D3D11_COMPARISON_FUNC comparisonFunc,
-            const FLOAT *borderColor, FLOAT minLOD, FLOAT maxLOD) {
-        Filter = filter;
-        AddressU = addressU;
-        AddressV = addressV;
-        AddressW = addressW;
-        MipLODBias = mipLODBias;
-        MaxAnisotropy = maxAnisotropy;
-        ComparisonFunc = comparisonFunc;
-        if(borderColor) {
-            BorderColor[0] = borderColor[0];
-            BorderColor[1] = borderColor[1];
-            BorderColor[2] = borderColor[2];
-            BorderColor[3] = borderColor[3];
-        }else {
-            BorderColor[0] = BorderColor[1] = BorderColor[2] = BorderColor[3] = 1.0f;
-        }
-        MinLOD = minLOD;
-        MaxLOD = maxLOD;
+                                      D3D11_TEXTURE_ADDRESS_MODE addressV, D3D11_TEXTURE_ADDRESS_MODE addressW,
+                                      FLOAT mipLODBias, UINT maxAnisotropy, D3D11_COMPARISON_FUNC comparisonFunc,
+                                      const FLOAT *borderColor, FLOAT minLOD, FLOAT maxLOD) {
+                     Filter = filter;
+                     AddressU = addressU;
+                     AddressV = addressV;
+                     AddressW = addressW;
+                     MipLODBias = mipLODBias;
+                     MaxAnisotropy = maxAnisotropy;
+                     ComparisonFunc = comparisonFunc;
+                     if(borderColor) {
+                                      BorderColor[0] = borderColor[0];
+                                      BorderColor[1] = borderColor[1];
+                                      BorderColor[2] = borderColor[2];
+                                      BorderColor[3] = borderColor[3];
+                     }else {
+                                      BorderColor[0] = BorderColor[1] = BorderColor[2] = BorderColor[3] = 1.0f;
+                     }
+                     MinLOD = minLOD;
+                     MaxLOD = maxLOD;
     }
     ~CD3D11_SAMPLER_DESC() {}
     operator const D3D11_SAMPLER_DESC&() const { return *this; }
@@ -1985,94 +1985,94 @@ typedef struct D3D11_SHADER_RESOURCE_VIEW_DESC {
     DXGI_FORMAT Format;
     D3D11_SRV_DIMENSION ViewDimension;
     __C89_NAMELESS union {
-        D3D11_BUFFER_SRV Buffer;
-        D3D11_TEX1D_SRV Texture1D;
-        D3D11_TEX1D_ARRAY_SRV Texture1DArray;
-        D3D11_TEX2D_SRV Texture2D;
-        D3D11_TEX2D_ARRAY_SRV Texture2DArray;
-        D3D11_TEX2DMS_SRV Texture2DMS;
-        D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray;
-        D3D11_TEX3D_SRV Texture3D;
-        D3D11_TEXCUBE_SRV TextureCube;
-        D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray;
-        D3D11_BUFFEREX_SRV BufferEx;
+                     D3D11_BUFFER_SRV Buffer;
+                     D3D11_TEX1D_SRV Texture1D;
+                     D3D11_TEX1D_ARRAY_SRV Texture1DArray;
+                     D3D11_TEX2D_SRV Texture2D;
+                     D3D11_TEX2D_ARRAY_SRV Texture2DArray;
+                     D3D11_TEX2DMS_SRV Texture2DMS;
+                     D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray;
+                     D3D11_TEX3D_SRV Texture3D;
+                     D3D11_TEXCUBE_SRV TextureCube;
+                     D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray;
+                     D3D11_BUFFEREX_SRV BufferEx;
     } __C89_NAMELESSUNIONNAME;
 } D3D11_SHADER_RESOURCE_VIEW_DESC;
 #if !defined(D3D11_NO_HELPERS) && defined( __cplusplus )
 struct CD3D11_SHADER_RESOURCE_VIEW_DESC : public D3D11_SHADER_RESOURCE_VIEW_DESC {
     CD3D11_SHADER_RESOURCE_VIEW_DESC() {}
     explicit CD3D11_SHADER_RESOURCE_VIEW_DESC(D3D11_SRV_DIMENSION dim,
-            DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT most_detailed_mip = 0,
-            UINT mip_levels = -1, UINT first_slice = 0, UINT array_size = -1, UINT flags = 0) {
-        Format = format;
-        ViewDimension = dim;
-        switch(ViewDimension) {
-        case D3D11_SRV_DIMENSION_BUFFER:
-            Buffer.FirstElement = most_detailed_mip;
-            Buffer.NumElements = mip_levels;
-            break;
-        case D3D11_SRV_DIMENSION_TEXTURE1D:
-            Texture1D.MostDetailedMip = most_detailed_mip;
-            Texture1D.MipLevels = mip_levels;
-            break;
-        case D3D11_SRV_DIMENSION_TEXTURE1DARRAY:
-            Texture1DArray.MostDetailedMip = most_detailed_mip;
-            Texture1DArray.MipLevels = mip_levels;
-            Texture1DArray.FirstArraySlice = first_slice;
-            Texture1DArray.ArraySize = array_size;
-            break;
-        case D3D11_SRV_DIMENSION_TEXTURE2D:
-            Texture2D.MostDetailedMip = most_detailed_mip;
-            Texture2D.MipLevels = mip_levels;
-            break;
-        case D3D11_SRV_DIMENSION_TEXTURE2DARRAY:
-            Texture2DArray.MostDetailedMip = most_detailed_mip;
-            Texture2DArray.MipLevels = mip_levels;
-            Texture2DArray.FirstArraySlice = first_slice;
-            Texture2DArray.ArraySize = array_size;
-            break;
-        case D3D11_SRV_DIMENSION_TEXTURE2DMSARRAY:
-            Texture2DMSArray.FirstArraySlice = first_slice;
-            Texture2DMSArray.ArraySize = array_size;
-            break;
-        case D3D11_SRV_DIMENSION_TEXTURE3D:
-            Texture3D.MostDetailedMip = most_detailed_mip;
-            Texture3D.MipLevels = mip_levels;
-            break;
-        case D3D11_SRV_DIMENSION_TEXTURECUBE:
-            TextureCube.MostDetailedMip = most_detailed_mip;
-            TextureCube.MipLevels = mip_levels;
-            break;
-        case D3D11_SRV_DIMENSION_TEXTURECUBEARRAY:
-            TextureCubeArray.MostDetailedMip = most_detailed_mip;
-            TextureCubeArray.MipLevels = mip_levels;
-            TextureCubeArray.First2DArrayFace = first_slice;
-            TextureCubeArray.NumCubes = array_size;
-            break;
-        case D3D11_SRV_DIMENSION_BUFFEREX:
-            BufferEx.FirstElement = most_detailed_mip;
-            BufferEx.NumElements = mip_levels;
-            BufferEx.Flags = flags;
-            break;
-        default:
-            break;
-        }
+                                      DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT most_detailed_mip = 0,
+                                      UINT mip_levels = -1, UINT first_slice = 0, UINT array_size = -1, UINT flags = 0) {
+                     Format = format;
+                     ViewDimension = dim;
+                     switch(ViewDimension) {
+                     case D3D11_SRV_DIMENSION_BUFFER:
+                                      Buffer.FirstElement = most_detailed_mip;
+                                      Buffer.NumElements = mip_levels;
+                                      break;
+                     case D3D11_SRV_DIMENSION_TEXTURE1D:
+                                      Texture1D.MostDetailedMip = most_detailed_mip;
+                                      Texture1D.MipLevels = mip_levels;
+                                      break;
+                     case D3D11_SRV_DIMENSION_TEXTURE1DARRAY:
+                                      Texture1DArray.MostDetailedMip = most_detailed_mip;
+                                      Texture1DArray.MipLevels = mip_levels;
+                                      Texture1DArray.FirstArraySlice = first_slice;
+                                      Texture1DArray.ArraySize = array_size;
+                                      break;
+                     case D3D11_SRV_DIMENSION_TEXTURE2D:
+                                      Texture2D.MostDetailedMip = most_detailed_mip;
+                                      Texture2D.MipLevels = mip_levels;
+                                      break;
+                     case D3D11_SRV_DIMENSION_TEXTURE2DARRAY:
+                                      Texture2DArray.MostDetailedMip = most_detailed_mip;
+                                      Texture2DArray.MipLevels = mip_levels;
+                                      Texture2DArray.FirstArraySlice = first_slice;
+                                      Texture2DArray.ArraySize = array_size;
+                                      break;
+                     case D3D11_SRV_DIMENSION_TEXTURE2DMSARRAY:
+                                      Texture2DMSArray.FirstArraySlice = first_slice;
+                                      Texture2DMSArray.ArraySize = array_size;
+                                      break;
+                     case D3D11_SRV_DIMENSION_TEXTURE3D:
+                                      Texture3D.MostDetailedMip = most_detailed_mip;
+                                      Texture3D.MipLevels = mip_levels;
+                                      break;
+                     case D3D11_SRV_DIMENSION_TEXTURECUBE:
+                                      TextureCube.MostDetailedMip = most_detailed_mip;
+                                      TextureCube.MipLevels = mip_levels;
+                                      break;
+                     case D3D11_SRV_DIMENSION_TEXTURECUBEARRAY:
+                                      TextureCubeArray.MostDetailedMip = most_detailed_mip;
+                                      TextureCubeArray.MipLevels = mip_levels;
+                                      TextureCubeArray.First2DArrayFace = first_slice;
+                                      TextureCubeArray.NumCubes = array_size;
+                                      break;
+                     case D3D11_SRV_DIMENSION_BUFFEREX:
+                                      BufferEx.FirstElement = most_detailed_mip;
+                                      BufferEx.NumElements = mip_levels;
+                                      BufferEx.Flags = flags;
+                                      break;
+                     default:
+                                      break;
+                     }
     }
     explicit CD3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Buffer*, DXGI_FORMAT format, UINT first_elem,
-            UINT elem_cnt, UINT flags = 0);
+                                      UINT elem_cnt, UINT flags = 0);
     explicit CD3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture1D *texture, D3D11_SRV_DIMENSION dim,
-            DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT most_detailed_mip = 0, UINT mip_levels = -1,
-            UINT first_slice = 0, UINT array_size = -1 );
+                                      DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT most_detailed_mip = 0, UINT mip_levels = -1,
+                                      UINT first_slice = 0, UINT array_size = -1 );
     explicit CD3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture2D *texture, D3D11_SRV_DIMENSION dim,
-            DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT most_detailed_mip = 0, UINT mip_levels = -1,
-            UINT first_slice = 0, UINT array_size = -1 );
+                                      DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, UINT most_detailed_mip = 0, UINT mip_levels = -1,
+                                      UINT first_slice = 0, UINT array_size = -1 );
     explicit CD3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture3D *texture, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN,
-            UINT most_detailed_mip = 0, UINT mip_levels = -1 );
+                                      UINT most_detailed_mip = 0, UINT mip_levels = -1 );
     ~CD3D11_SHADER_RESOURCE_VIEW_DESC() {}
     explicit CD3D11_SHADER_RESOURCE_VIEW_DESC(const D3D11_SHADER_RESOURCE_VIEW_DESC &other)
-        : D3D11_SHADER_RESOURCE_VIEW_DESC(other) {}
+                     : D3D11_SHADER_RESOURCE_VIEW_DESC(other) {}
     operator const D3D11_SHADER_RESOURCE_VIEW_DESC&() const {
-        return *this;
+                     return *this;
     }
 };
 #endif
@@ -2103,20 +2103,20 @@ struct CD3D11_TEXTURE2D_DESC : public D3D11_TEXTURE2D_DESC {
     CD3D11_TEXTURE2D_DESC() {}
     explicit CD3D11_TEXTURE2D_DESC(const D3D11_TEXTURE2D_DESC &o) : D3D11_TEXTURE2D_DESC(o) {}
     explicit CD3D11_TEXTURE2D_DESC(DXGI_FORMAT format, UINT width, UINT height, UINT arraySize = 1,
-            UINT mipLevels = 0, UINT bindFlags = D3D11_BIND_SHADER_RESOURCE,
-            D3D11_USAGE usage = D3D11_USAGE_DEFAULT, UINT cpuaccessFlags = 0, UINT sampleCount = 1,
-            UINT sampleQuality = 0, UINT miscFlags = 0) {
-        Width = width;
-        Height = height;
-        MipLevels = mipLevels;
-        ArraySize = arraySize;
-        Format = format;
-        SampleDesc.Count = sampleCount;
-        SampleDesc.Quality = sampleQuality;
-        Usage = usage;
-        BindFlags = bindFlags;
-        CPUAccessFlags = cpuaccessFlags;
-        MiscFlags = miscFlags;
+                                      UINT mipLevels = 0, UINT bindFlags = D3D11_BIND_SHADER_RESOURCE,
+                                      D3D11_USAGE usage = D3D11_USAGE_DEFAULT, UINT cpuaccessFlags = 0, UINT sampleCount = 1,
+                                      UINT sampleQuality = 0, UINT miscFlags = 0) {
+                     Width = width;
+                     Height = height;
+                     MipLevels = mipLevels;
+                     ArraySize = arraySize;
+                     Format = format;
+                     SampleDesc.Count = sampleCount;
+                     SampleDesc.Quality = sampleQuality;
+                     Usage = usage;
+                     BindFlags = bindFlags;
+                     CPUAccessFlags = cpuaccessFlags;
+                     MiscFlags = miscFlags;
     }
     ~CD3D11_TEXTURE2D_DESC() {}
     operator const D3D11_TEXTURE2D_DESC&() const { return *this; }
@@ -2234,7 +2234,7 @@ typedef struct D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC {
     GUID DecodeProfile;
     D3D11_VDOV_DIMENSION ViewDimension;
     __C89_NAMELESS union {
-        D3D11_TEX2D_VDOV Texture2D;
+                     D3D11_TEX2D_VDOV Texture2D;
     } __C89_NAMELESSUNIONNAME;
 } D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC;
 typedef enum D3D11_VPIV_DIMENSION {
@@ -2249,7 +2249,7 @@ typedef struct D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC {
     UINT FourCC;
     D3D11_VPIV_DIMENSION ViewDimension;
     __C89_NAMELESS union {
-        D3D11_TEX2D_VPIV Texture2D;
+                     D3D11_TEX2D_VPIV Texture2D;
     } __C89_NAMELESSUNIONNAME;
 } D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC;
 typedef enum D3D11_VPOV_DIMENSION {
@@ -2268,8 +2268,8 @@ typedef struct D3D11_TEX2D_ARRAY_VPOV {
 typedef struct D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC {
     D3D11_VPOV_DIMENSION ViewDimension;
     __C89_NAMELESS union {
-        D3D11_TEX2D_VPOV Texture2D;
-        D3D11_TEX2D_ARRAY_VPOV Texture2DArray;
+                     D3D11_TEX2D_VPOV Texture2D;
+                     D3D11_TEX2D_ARRAY_VPOV Texture2DArray;
     } __C89_NAMELESSUNIONNAME;
 } D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC;
 typedef struct D3D11_VIDEO_CONTENT_PROTECTION_CAPS {
@@ -2322,8 +2322,8 @@ typedef struct D3D11_VIDEO_COLOR_RGBA {
 } D3D11_VIDEO_COLOR_RGBA;
 typedef struct D3D11_VIDEO_COLOR {
     __C89_NAMELESS union {
-        D3D11_VIDEO_COLOR_YCbCrA YCbCr;
-        D3D11_VIDEO_COLOR_RGBA RGBA;
+                     D3D11_VIDEO_COLOR_YCbCrA YCbCr;
+                     D3D11_VIDEO_COLOR_RGBA RGBA;
     } __C89_NAMELESSUNIONNAME;
 } D3D11_VIDEO_COLOR;
 typedef struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE {
@@ -2407,9 +2407,9 @@ typedef struct D3D11_AUTHENTICATED_QUERY_OUTPUT {
 } D3D11_AUTHENTICATED_QUERY_OUTPUT;
 typedef union D3D11_AUTHENTICATED_PROTECTION_FLAGS {
     struct {
-        UINT ProtectionEnabled : 1;
-        UINT OverlayOrFullscreenRequired : 1;
-        UINT Reserved : 30;
+                     UINT ProtectionEnabled : 1;
+                     UINT OverlayOrFullscreenRequired : 1;
+                     UINT Reserved : 30;
     } Flags;
     UINT Value;
 } D3D11_AUTHENTICATED_PROTECTION_FLAGS;
@@ -2537,21 +2537,21 @@ MIDL_INTERFACE("1841e5c8-16b0-489b-bcc8-44cfb0d5deae")
 ID3D11DeviceChild : public IUnknown
 {
     virtual void STDMETHODCALLTYPE GetDevice(
-        ID3D11Device **ppDevice) = 0;
+                     ID3D11Device **ppDevice) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrivateData(
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData) = 0;
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateData(
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData) = 0;
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateDataInterface(
-        REFGUID guid,
-        const IUnknown *pData) = 0;
+                     REFGUID guid,
+                     const IUnknown *pData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2563,37 +2563,37 @@ typedef struct ID3D11DeviceChildVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11DeviceChild *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11DeviceChild *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11DeviceChild *This);
+                     ID3D11DeviceChild *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11DeviceChild *This);
+                     ID3D11DeviceChild *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11DeviceChild *This,
-        ID3D11Device **ppDevice);
+                     ID3D11DeviceChild *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11DeviceChild *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11DeviceChild *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11DeviceChild *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11DeviceChild *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11DeviceChild *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11DeviceChild *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11DeviceChildVtbl;
@@ -2657,7 +2657,7 @@ MIDL_INTERFACE("4b35d0cd-1e15-4258-9c98-1b1333f6dd3b")
 ID3D11Asynchronous : public ID3D11DeviceChild
 {
     virtual UINT STDMETHODCALLTYPE GetDataSize(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2669,41 +2669,41 @@ typedef struct ID3D11AsynchronousVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Asynchronous *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Asynchronous *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Asynchronous *This);
+                     ID3D11Asynchronous *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Asynchronous *This);
+                     ID3D11Asynchronous *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Asynchronous *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Asynchronous *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Asynchronous *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Asynchronous *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Asynchronous *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Asynchronous *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Asynchronous *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Asynchronous *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Asynchronous methods ***/
     UINT (STDMETHODCALLTYPE *GetDataSize)(
-        ID3D11Asynchronous *This);
+                     ID3D11Asynchronous *This);
 
     END_INTERFACE
 } ID3D11AsynchronousVtbl;
@@ -2773,7 +2773,7 @@ MIDL_INTERFACE("d6c00747-87b7-425e-b84d-44d108560afd")
 ID3D11Query : public ID3D11Asynchronous
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_QUERY_DESC *pDesc) = 0;
+                     D3D11_QUERY_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2785,46 +2785,46 @@ typedef struct ID3D11QueryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Query *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Query *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Query *This);
+                     ID3D11Query *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Query *This);
+                     ID3D11Query *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Query *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Query *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Query *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Query *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Query *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Query *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Query *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Query *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Asynchronous methods ***/
     UINT (STDMETHODCALLTYPE *GetDataSize)(
-        ID3D11Query *This);
+                     ID3D11Query *This);
 
     /*** ID3D11Query methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11Query *This,
-        D3D11_QUERY_DESC *pDesc);
+                     ID3D11Query *This,
+                     D3D11_QUERY_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11QueryVtbl;
@@ -2900,13 +2900,13 @@ MIDL_INTERFACE("dc8e63f3-d12b-4952-b47b-5e45026a862d")
 ID3D11Resource : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetType(
-        D3D11_RESOURCE_DIMENSION *pResourceDimension) = 0;
+                     D3D11_RESOURCE_DIMENSION *pResourceDimension) = 0;
 
     virtual void STDMETHODCALLTYPE SetEvictionPriority(
-        UINT EvictionPriority) = 0;
+                     UINT EvictionPriority) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetEvictionPriority(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2918,49 +2918,49 @@ typedef struct ID3D11ResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Resource *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Resource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Resource *This);
+                     ID3D11Resource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Resource *This);
+                     ID3D11Resource *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Resource *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Resource *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Resource *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Resource *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Resource *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Resource *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Resource *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Resource *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Resource methods ***/
     void (STDMETHODCALLTYPE *GetType)(
-        ID3D11Resource *This,
-        D3D11_RESOURCE_DIMENSION *pResourceDimension);
+                     ID3D11Resource *This,
+                     D3D11_RESOURCE_DIMENSION *pResourceDimension);
 
     void (STDMETHODCALLTYPE *SetEvictionPriority)(
-        ID3D11Resource *This,
-        UINT EvictionPriority);
+                     ID3D11Resource *This,
+                     UINT EvictionPriority);
 
     UINT (STDMETHODCALLTYPE *GetEvictionPriority)(
-        ID3D11Resource *This);
+                     ID3D11Resource *This);
 
     END_INTERFACE
 } ID3D11ResourceVtbl;
@@ -3038,7 +3038,7 @@ MIDL_INTERFACE("839d1216-bb2e-412b-b7f4-a9dbebe08ed1")
 ID3D11View : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetResource(
-        ID3D11Resource **ppResource) = 0;
+                     ID3D11Resource **ppResource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3050,42 +3050,42 @@ typedef struct ID3D11ViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11View *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11View *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11View *This);
+                     ID3D11View *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11View *This);
+                     ID3D11View *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11View *This,
-        ID3D11Device **ppDevice);
+                     ID3D11View *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11View *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11View *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11View *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11View *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11View *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11View *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11View methods ***/
     void (STDMETHODCALLTYPE *GetResource)(
-        ID3D11View *This,
-        ID3D11Resource **ppResource);
+                     ID3D11View *This,
+                     ID3D11Resource **ppResource);
 
     END_INTERFACE
 } ID3D11ViewVtbl;
@@ -3155,7 +3155,7 @@ MIDL_INTERFACE("75b68faa-347d-4159-8f45-a0640f01cd9a")
 ID3D11BlendState : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_BLEND_DESC *pDesc) = 0;
+                     D3D11_BLEND_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3167,42 +3167,42 @@ typedef struct ID3D11BlendStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11BlendState *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11BlendState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11BlendState *This);
+                     ID3D11BlendState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11BlendState *This);
+                     ID3D11BlendState *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11BlendState *This,
-        ID3D11Device **ppDevice);
+                     ID3D11BlendState *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11BlendState *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11BlendState *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11BlendState *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11BlendState *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11BlendState *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11BlendState *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11BlendState methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11BlendState *This,
-        D3D11_BLEND_DESC *pDesc);
+                     ID3D11BlendState *This,
+                     D3D11_BLEND_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11BlendStateVtbl;
@@ -3272,7 +3272,7 @@ MIDL_INTERFACE("48570b85-d1ee-4fcd-a250-eb350722b037")
 ID3D11Buffer : public ID3D11Resource
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_BUFFER_DESC *pDesc) = 0;
+                     D3D11_BUFFER_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3284,54 +3284,54 @@ typedef struct ID3D11BufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Buffer *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Buffer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Buffer *This);
+                     ID3D11Buffer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Buffer *This);
+                     ID3D11Buffer *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Buffer *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Buffer *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Buffer *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Buffer *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Buffer *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Buffer *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Buffer *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Buffer *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Resource methods ***/
     void (STDMETHODCALLTYPE *GetType)(
-        ID3D11Buffer *This,
-        D3D11_RESOURCE_DIMENSION *pResourceDimension);
+                     ID3D11Buffer *This,
+                     D3D11_RESOURCE_DIMENSION *pResourceDimension);
 
     void (STDMETHODCALLTYPE *SetEvictionPriority)(
-        ID3D11Buffer *This,
-        UINT EvictionPriority);
+                     ID3D11Buffer *This,
+                     UINT EvictionPriority);
 
     UINT (STDMETHODCALLTYPE *GetEvictionPriority)(
-        ID3D11Buffer *This);
+                     ID3D11Buffer *This);
 
     /*** ID3D11Buffer methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11Buffer *This,
-        D3D11_BUFFER_DESC *pDesc);
+                     ID3D11Buffer *This,
+                     D3D11_BUFFER_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11BufferVtbl;
@@ -3415,18 +3415,18 @@ MIDL_INTERFACE("a6cd7faa-b0b7-4a2f-9436-8662a65797cb")
 ID3D11ClassInstance : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetClassLinkage(
-        ID3D11ClassLinkage **ppLinkage) = 0;
+                     ID3D11ClassLinkage **ppLinkage) = 0;
 
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_CLASS_INSTANCE_DESC *pDesc) = 0;
+                     D3D11_CLASS_INSTANCE_DESC *pDesc) = 0;
 
     virtual void STDMETHODCALLTYPE GetInstanceName(
-        LPSTR pInstanceName,
-        SIZE_T *pBufferLength) = 0;
+                     LPSTR pInstanceName,
+                     SIZE_T *pBufferLength) = 0;
 
     virtual void STDMETHODCALLTYPE GetTypeName(
-        LPSTR pTypeName,
-        SIZE_T *pBufferLength) = 0;
+                     LPSTR pTypeName,
+                     SIZE_T *pBufferLength) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3438,56 +3438,56 @@ typedef struct ID3D11ClassInstanceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11ClassInstance *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11ClassInstance *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11ClassInstance *This);
+                     ID3D11ClassInstance *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11ClassInstance *This);
+                     ID3D11ClassInstance *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11ClassInstance *This,
-        ID3D11Device **ppDevice);
+                     ID3D11ClassInstance *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11ClassInstance *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11ClassInstance *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11ClassInstance *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11ClassInstance *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11ClassInstance *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11ClassInstance *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11ClassInstance methods ***/
     void (STDMETHODCALLTYPE *GetClassLinkage)(
-        ID3D11ClassInstance *This,
-        ID3D11ClassLinkage **ppLinkage);
+                     ID3D11ClassInstance *This,
+                     ID3D11ClassLinkage **ppLinkage);
 
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11ClassInstance *This,
-        D3D11_CLASS_INSTANCE_DESC *pDesc);
+                     ID3D11ClassInstance *This,
+                     D3D11_CLASS_INSTANCE_DESC *pDesc);
 
     void (STDMETHODCALLTYPE *GetInstanceName)(
-        ID3D11ClassInstance *This,
-        LPSTR pInstanceName,
-        SIZE_T *pBufferLength);
+                     ID3D11ClassInstance *This,
+                     LPSTR pInstanceName,
+                     SIZE_T *pBufferLength);
 
     void (STDMETHODCALLTYPE *GetTypeName)(
-        ID3D11ClassInstance *This,
-        LPSTR pTypeName,
-        SIZE_T *pBufferLength);
+                     ID3D11ClassInstance *This,
+                     LPSTR pTypeName,
+                     SIZE_T *pBufferLength);
 
     END_INTERFACE
 } ID3D11ClassInstanceVtbl;
@@ -3569,17 +3569,17 @@ MIDL_INTERFACE("ddf57cba-9543-46e4-a12b-f207a0fe7fed")
 ID3D11ClassLinkage : public ID3D11DeviceChild
 {
     virtual HRESULT STDMETHODCALLTYPE GetClassInstance(
-        LPCSTR pClassInstanceName,
-        UINT InstanceIndex,
-        ID3D11ClassInstance **ppInstance) = 0;
+                     LPCSTR pClassInstanceName,
+                     UINT InstanceIndex,
+                     ID3D11ClassInstance **ppInstance) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateClassInstance(
-        LPCSTR pClassTypeName,
-        UINT ConstantBufferOffset,
-        UINT ConstantVectorOffset,
-        UINT TextureOffset,
-        UINT SamplerOffset,
-        ID3D11ClassInstance **ppInstance) = 0;
+                     LPCSTR pClassTypeName,
+                     UINT ConstantBufferOffset,
+                     UINT ConstantVectorOffset,
+                     UINT TextureOffset,
+                     UINT SamplerOffset,
+                     ID3D11ClassInstance **ppInstance) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3591,53 +3591,53 @@ typedef struct ID3D11ClassLinkageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11ClassLinkage *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11ClassLinkage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11ClassLinkage *This);
+                     ID3D11ClassLinkage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11ClassLinkage *This);
+                     ID3D11ClassLinkage *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11ClassLinkage *This,
-        ID3D11Device **ppDevice);
+                     ID3D11ClassLinkage *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11ClassLinkage *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11ClassLinkage *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11ClassLinkage *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11ClassLinkage *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11ClassLinkage *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11ClassLinkage *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11ClassLinkage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassInstance)(
-        ID3D11ClassLinkage *This,
-        LPCSTR pClassInstanceName,
-        UINT InstanceIndex,
-        ID3D11ClassInstance **ppInstance);
+                     ID3D11ClassLinkage *This,
+                     LPCSTR pClassInstanceName,
+                     UINT InstanceIndex,
+                     ID3D11ClassInstance **ppInstance);
 
     HRESULT (STDMETHODCALLTYPE *CreateClassInstance)(
-        ID3D11ClassLinkage *This,
-        LPCSTR pClassTypeName,
-        UINT ConstantBufferOffset,
-        UINT ConstantVectorOffset,
-        UINT TextureOffset,
-        UINT SamplerOffset,
-        ID3D11ClassInstance **ppInstance);
+                     ID3D11ClassLinkage *This,
+                     LPCSTR pClassTypeName,
+                     UINT ConstantBufferOffset,
+                     UINT ConstantVectorOffset,
+                     UINT TextureOffset,
+                     UINT SamplerOffset,
+                     ID3D11ClassInstance **ppInstance);
 
     END_INTERFACE
 } ID3D11ClassLinkageVtbl;
@@ -3711,7 +3711,7 @@ MIDL_INTERFACE("a24bc4d1-769e-43f7-8013-98ff566c18e2")
 ID3D11CommandList : public ID3D11DeviceChild
 {
     virtual UINT STDMETHODCALLTYPE GetContextFlags(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3723,41 +3723,41 @@ typedef struct ID3D11CommandListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11CommandList *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11CommandList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11CommandList *This);
+                     ID3D11CommandList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11CommandList *This);
+                     ID3D11CommandList *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11CommandList *This,
-        ID3D11Device **ppDevice);
+                     ID3D11CommandList *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11CommandList *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11CommandList *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11CommandList *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11CommandList *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11CommandList *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11CommandList *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11CommandList methods ***/
     UINT (STDMETHODCALLTYPE *GetContextFlags)(
-        ID3D11CommandList *This);
+                     ID3D11CommandList *This);
 
     END_INTERFACE
 } ID3D11CommandListVtbl;
@@ -3836,37 +3836,37 @@ typedef struct ID3D11ComputeShaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11ComputeShader *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11ComputeShader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11ComputeShader *This);
+                     ID3D11ComputeShader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11ComputeShader *This);
+                     ID3D11ComputeShader *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11ComputeShader *This,
-        ID3D11Device **ppDevice);
+                     ID3D11ComputeShader *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11ComputeShader *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11ComputeShader *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11ComputeShader *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11ComputeShader *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11ComputeShader *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11ComputeShader *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11ComputeShaderVtbl;
@@ -3930,7 +3930,7 @@ MIDL_INTERFACE("6e8c49fb-a371-4770-b440-29086022b741")
 ID3D11Counter : public ID3D11Asynchronous
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_COUNTER_DESC *pDesc) = 0;
+                     D3D11_COUNTER_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3942,46 +3942,46 @@ typedef struct ID3D11CounterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Counter *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Counter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Counter *This);
+                     ID3D11Counter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Counter *This);
+                     ID3D11Counter *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Counter *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Counter *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Counter *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Counter *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Counter *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Counter *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Counter *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Counter *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Asynchronous methods ***/
     UINT (STDMETHODCALLTYPE *GetDataSize)(
-        ID3D11Counter *This);
+                     ID3D11Counter *This);
 
     /*** ID3D11Counter methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11Counter *This,
-        D3D11_COUNTER_DESC *pDesc);
+                     ID3D11Counter *This,
+                     D3D11_COUNTER_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11CounterVtbl;
@@ -4057,7 +4057,7 @@ MIDL_INTERFACE("03823efb-8d8f-4e1c-9aa2-f64bb2cbfdf1")
 ID3D11DepthStencilState : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_DEPTH_STENCIL_DESC *pDesc) = 0;
+                     D3D11_DEPTH_STENCIL_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4069,42 +4069,42 @@ typedef struct ID3D11DepthStencilStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11DepthStencilState *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11DepthStencilState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11DepthStencilState *This);
+                     ID3D11DepthStencilState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11DepthStencilState *This);
+                     ID3D11DepthStencilState *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11DepthStencilState *This,
-        ID3D11Device **ppDevice);
+                     ID3D11DepthStencilState *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11DepthStencilState *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11DepthStencilState *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11DepthStencilState *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11DepthStencilState *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11DepthStencilState *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11DepthStencilState *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11DepthStencilState methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11DepthStencilState *This,
-        D3D11_DEPTH_STENCIL_DESC *pDesc);
+                     ID3D11DepthStencilState *This,
+                     D3D11_DEPTH_STENCIL_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11DepthStencilStateVtbl;
@@ -4174,7 +4174,7 @@ MIDL_INTERFACE("9fdac92a-1876-48c3-afad-25b94f84a9b6")
 ID3D11DepthStencilView : public ID3D11View
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_DEPTH_STENCIL_VIEW_DESC *pDesc) = 0;
+                     D3D11_DEPTH_STENCIL_VIEW_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4186,47 +4186,47 @@ typedef struct ID3D11DepthStencilViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11DepthStencilView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11DepthStencilView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11DepthStencilView *This);
+                     ID3D11DepthStencilView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11DepthStencilView *This);
+                     ID3D11DepthStencilView *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11DepthStencilView *This,
-        ID3D11Device **ppDevice);
+                     ID3D11DepthStencilView *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11DepthStencilView *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11DepthStencilView *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11DepthStencilView *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11DepthStencilView *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11DepthStencilView *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11DepthStencilView *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11View methods ***/
     void (STDMETHODCALLTYPE *GetResource)(
-        ID3D11DepthStencilView *This,
-        ID3D11Resource **ppResource);
+                     ID3D11DepthStencilView *This,
+                     ID3D11Resource **ppResource);
 
     /*** ID3D11DepthStencilView methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11DepthStencilView *This,
-        D3D11_DEPTH_STENCIL_VIEW_DESC *pDesc);
+                     ID3D11DepthStencilView *This,
+                     D3D11_DEPTH_STENCIL_VIEW_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11DepthStencilViewVtbl;
@@ -4311,37 +4311,37 @@ typedef struct ID3D11DomainShaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11DomainShader *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11DomainShader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11DomainShader *This);
+                     ID3D11DomainShader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11DomainShader *This);
+                     ID3D11DomainShader *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11DomainShader *This,
-        ID3D11Device **ppDevice);
+                     ID3D11DomainShader *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11DomainShader *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11DomainShader *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11DomainShader *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11DomainShader *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11DomainShader *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11DomainShader *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11DomainShaderVtbl;
@@ -4414,37 +4414,37 @@ typedef struct ID3D11GeometryShaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11GeometryShader *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11GeometryShader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11GeometryShader *This);
+                     ID3D11GeometryShader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11GeometryShader *This);
+                     ID3D11GeometryShader *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11GeometryShader *This,
-        ID3D11Device **ppDevice);
+                     ID3D11GeometryShader *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11GeometryShader *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11GeometryShader *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11GeometryShader *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11GeometryShader *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11GeometryShader *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11GeometryShader *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11GeometryShaderVtbl;
@@ -4517,37 +4517,37 @@ typedef struct ID3D11HullShaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11HullShader *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11HullShader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11HullShader *This);
+                     ID3D11HullShader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11HullShader *This);
+                     ID3D11HullShader *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11HullShader *This,
-        ID3D11Device **ppDevice);
+                     ID3D11HullShader *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11HullShader *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11HullShader *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11HullShader *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11HullShader *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11HullShader *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11HullShader *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11HullShaderVtbl;
@@ -4620,37 +4620,37 @@ typedef struct ID3D11InputLayoutVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11InputLayout *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11InputLayout *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11InputLayout *This);
+                     ID3D11InputLayout *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11InputLayout *This);
+                     ID3D11InputLayout *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11InputLayout *This,
-        ID3D11Device **ppDevice);
+                     ID3D11InputLayout *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11InputLayout *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11InputLayout *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11InputLayout *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11InputLayout *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11InputLayout *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11InputLayout *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11InputLayoutVtbl;
@@ -4723,37 +4723,37 @@ typedef struct ID3D11PixelShaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11PixelShader *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11PixelShader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11PixelShader *This);
+                     ID3D11PixelShader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11PixelShader *This);
+                     ID3D11PixelShader *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11PixelShader *This,
-        ID3D11Device **ppDevice);
+                     ID3D11PixelShader *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11PixelShader *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11PixelShader *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11PixelShader *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11PixelShader *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11PixelShader *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11PixelShader *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11PixelShaderVtbl;
@@ -4826,46 +4826,46 @@ typedef struct ID3D11PredicateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Predicate *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Predicate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Predicate *This);
+                     ID3D11Predicate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Predicate *This);
+                     ID3D11Predicate *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Predicate *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Predicate *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Predicate *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Predicate *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Predicate *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Predicate *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Predicate *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Predicate *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Asynchronous methods ***/
     UINT (STDMETHODCALLTYPE *GetDataSize)(
-        ID3D11Predicate *This);
+                     ID3D11Predicate *This);
 
     /*** ID3D11Query methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11Predicate *This,
-        D3D11_QUERY_DESC *pDesc);
+                     ID3D11Predicate *This,
+                     D3D11_QUERY_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11PredicateVtbl;
@@ -4941,7 +4941,7 @@ MIDL_INTERFACE("9bb4ab81-ab1a-4d8f-b506-fc04200b6ee7")
 ID3D11RasterizerState : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_RASTERIZER_DESC *pDesc) = 0;
+                     D3D11_RASTERIZER_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4953,42 +4953,42 @@ typedef struct ID3D11RasterizerStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11RasterizerState *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11RasterizerState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11RasterizerState *This);
+                     ID3D11RasterizerState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11RasterizerState *This);
+                     ID3D11RasterizerState *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11RasterizerState *This,
-        ID3D11Device **ppDevice);
+                     ID3D11RasterizerState *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11RasterizerState *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11RasterizerState *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11RasterizerState *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11RasterizerState *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11RasterizerState *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11RasterizerState *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11RasterizerState methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11RasterizerState *This,
-        D3D11_RASTERIZER_DESC *pDesc);
+                     ID3D11RasterizerState *This,
+                     D3D11_RASTERIZER_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11RasterizerStateVtbl;
@@ -5058,7 +5058,7 @@ MIDL_INTERFACE("dfdba067-0b8d-4865-875b-d7b4516cc164")
 ID3D11RenderTargetView : public ID3D11View
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_RENDER_TARGET_VIEW_DESC *pDesc) = 0;
+                     D3D11_RENDER_TARGET_VIEW_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5070,47 +5070,47 @@ typedef struct ID3D11RenderTargetViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11RenderTargetView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11RenderTargetView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11RenderTargetView *This);
+                     ID3D11RenderTargetView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11RenderTargetView *This);
+                     ID3D11RenderTargetView *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11RenderTargetView *This,
-        ID3D11Device **ppDevice);
+                     ID3D11RenderTargetView *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11RenderTargetView *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11RenderTargetView *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11RenderTargetView *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11RenderTargetView *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11RenderTargetView *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11RenderTargetView *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11View methods ***/
     void (STDMETHODCALLTYPE *GetResource)(
-        ID3D11RenderTargetView *This,
-        ID3D11Resource **ppResource);
+                     ID3D11RenderTargetView *This,
+                     ID3D11Resource **ppResource);
 
     /*** ID3D11RenderTargetView methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11RenderTargetView *This,
-        D3D11_RENDER_TARGET_VIEW_DESC *pDesc);
+                     ID3D11RenderTargetView *This,
+                     D3D11_RENDER_TARGET_VIEW_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11RenderTargetViewVtbl;
@@ -5186,7 +5186,7 @@ MIDL_INTERFACE("da6fea51-564c-4487-9810-f0d0f9b4e3a5")
 ID3D11SamplerState : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_SAMPLER_DESC *pDesc) = 0;
+                     D3D11_SAMPLER_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5198,42 +5198,42 @@ typedef struct ID3D11SamplerStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11SamplerState *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11SamplerState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11SamplerState *This);
+                     ID3D11SamplerState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11SamplerState *This);
+                     ID3D11SamplerState *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11SamplerState *This,
-        ID3D11Device **ppDevice);
+                     ID3D11SamplerState *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11SamplerState *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11SamplerState *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11SamplerState *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11SamplerState *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11SamplerState *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11SamplerState *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11SamplerState methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11SamplerState *This,
-        D3D11_SAMPLER_DESC *pDesc);
+                     ID3D11SamplerState *This,
+                     D3D11_SAMPLER_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11SamplerStateVtbl;
@@ -5303,7 +5303,7 @@ MIDL_INTERFACE("b0e06fe0-8192-4e1a-b1ca-36d7414710b2")
 ID3D11ShaderResourceView : public ID3D11View
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_SHADER_RESOURCE_VIEW_DESC *pDesc) = 0;
+                     D3D11_SHADER_RESOURCE_VIEW_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5315,47 +5315,47 @@ typedef struct ID3D11ShaderResourceViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11ShaderResourceView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11ShaderResourceView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11ShaderResourceView *This);
+                     ID3D11ShaderResourceView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11ShaderResourceView *This);
+                     ID3D11ShaderResourceView *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11ShaderResourceView *This,
-        ID3D11Device **ppDevice);
+                     ID3D11ShaderResourceView *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11ShaderResourceView *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11ShaderResourceView *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11ShaderResourceView *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11ShaderResourceView *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11ShaderResourceView *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11ShaderResourceView *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11View methods ***/
     void (STDMETHODCALLTYPE *GetResource)(
-        ID3D11ShaderResourceView *This,
-        ID3D11Resource **ppResource);
+                     ID3D11ShaderResourceView *This,
+                     ID3D11Resource **ppResource);
 
     /*** ID3D11ShaderResourceView methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11ShaderResourceView *This,
-        D3D11_SHADER_RESOURCE_VIEW_DESC *pDesc);
+                     ID3D11ShaderResourceView *This,
+                     D3D11_SHADER_RESOURCE_VIEW_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11ShaderResourceViewVtbl;
@@ -5431,7 +5431,7 @@ MIDL_INTERFACE("f8fb5c27-c6b3-4f75-a4c8-439af2ef564c")
 ID3D11Texture1D : public ID3D11Resource
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_TEXTURE1D_DESC *pDesc) = 0;
+                     D3D11_TEXTURE1D_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5443,54 +5443,54 @@ typedef struct ID3D11Texture1DVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Texture1D *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Texture1D *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Texture1D *This);
+                     ID3D11Texture1D *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Texture1D *This);
+                     ID3D11Texture1D *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Texture1D *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Texture1D *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Texture1D *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Texture1D *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Texture1D *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Texture1D *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Texture1D *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Texture1D *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Resource methods ***/
     void (STDMETHODCALLTYPE *GetType)(
-        ID3D11Texture1D *This,
-        D3D11_RESOURCE_DIMENSION *pResourceDimension);
+                     ID3D11Texture1D *This,
+                     D3D11_RESOURCE_DIMENSION *pResourceDimension);
 
     void (STDMETHODCALLTYPE *SetEvictionPriority)(
-        ID3D11Texture1D *This,
-        UINT EvictionPriority);
+                     ID3D11Texture1D *This,
+                     UINT EvictionPriority);
 
     UINT (STDMETHODCALLTYPE *GetEvictionPriority)(
-        ID3D11Texture1D *This);
+                     ID3D11Texture1D *This);
 
     /*** ID3D11Texture1D methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11Texture1D *This,
-        D3D11_TEXTURE1D_DESC *pDesc);
+                     ID3D11Texture1D *This,
+                     D3D11_TEXTURE1D_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11Texture1DVtbl;
@@ -5574,7 +5574,7 @@ MIDL_INTERFACE("6f15aaf2-d208-4e89-9ab4-489535d34f9c")
 ID3D11Texture2D : public ID3D11Resource
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_TEXTURE2D_DESC *pDesc) = 0;
+                     D3D11_TEXTURE2D_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5586,54 +5586,54 @@ typedef struct ID3D11Texture2DVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Texture2D *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Texture2D *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Texture2D *This);
+                     ID3D11Texture2D *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Texture2D *This);
+                     ID3D11Texture2D *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Texture2D *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Texture2D *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Texture2D *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Texture2D *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Texture2D *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Texture2D *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Texture2D *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Texture2D *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Resource methods ***/
     void (STDMETHODCALLTYPE *GetType)(
-        ID3D11Texture2D *This,
-        D3D11_RESOURCE_DIMENSION *pResourceDimension);
+                     ID3D11Texture2D *This,
+                     D3D11_RESOURCE_DIMENSION *pResourceDimension);
 
     void (STDMETHODCALLTYPE *SetEvictionPriority)(
-        ID3D11Texture2D *This,
-        UINT EvictionPriority);
+                     ID3D11Texture2D *This,
+                     UINT EvictionPriority);
 
     UINT (STDMETHODCALLTYPE *GetEvictionPriority)(
-        ID3D11Texture2D *This);
+                     ID3D11Texture2D *This);
 
     /*** ID3D11Texture2D methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11Texture2D *This,
-        D3D11_TEXTURE2D_DESC *pDesc);
+                     ID3D11Texture2D *This,
+                     D3D11_TEXTURE2D_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11Texture2DVtbl;
@@ -5717,7 +5717,7 @@ MIDL_INTERFACE("037e866e-f56d-4357-a8af-9dabbe6e250e")
 ID3D11Texture3D : public ID3D11Resource
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_TEXTURE3D_DESC *pDesc) = 0;
+                     D3D11_TEXTURE3D_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5729,54 +5729,54 @@ typedef struct ID3D11Texture3DVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Texture3D *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Texture3D *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Texture3D *This);
+                     ID3D11Texture3D *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Texture3D *This);
+                     ID3D11Texture3D *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11Texture3D *This,
-        ID3D11Device **ppDevice);
+                     ID3D11Texture3D *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Texture3D *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Texture3D *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Texture3D *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Texture3D *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Texture3D *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Texture3D *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11Resource methods ***/
     void (STDMETHODCALLTYPE *GetType)(
-        ID3D11Texture3D *This,
-        D3D11_RESOURCE_DIMENSION *pResourceDimension);
+                     ID3D11Texture3D *This,
+                     D3D11_RESOURCE_DIMENSION *pResourceDimension);
 
     void (STDMETHODCALLTYPE *SetEvictionPriority)(
-        ID3D11Texture3D *This,
-        UINT EvictionPriority);
+                     ID3D11Texture3D *This,
+                     UINT EvictionPriority);
 
     UINT (STDMETHODCALLTYPE *GetEvictionPriority)(
-        ID3D11Texture3D *This);
+                     ID3D11Texture3D *This);
 
     /*** ID3D11Texture3D methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11Texture3D *This,
-        D3D11_TEXTURE3D_DESC *pDesc);
+                     ID3D11Texture3D *This,
+                     D3D11_TEXTURE3D_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11Texture3DVtbl;
@@ -5860,7 +5860,7 @@ MIDL_INTERFACE("28acf509-7f5c-48f6-8611-f316010a6380")
 ID3D11UnorderedAccessView : public ID3D11View
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_UNORDERED_ACCESS_VIEW_DESC *pDesc) = 0;
+                     D3D11_UNORDERED_ACCESS_VIEW_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5872,47 +5872,47 @@ typedef struct ID3D11UnorderedAccessViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11UnorderedAccessView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11UnorderedAccessView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11UnorderedAccessView *This);
+                     ID3D11UnorderedAccessView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11UnorderedAccessView *This);
+                     ID3D11UnorderedAccessView *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11UnorderedAccessView *This,
-        ID3D11Device **ppDevice);
+                     ID3D11UnorderedAccessView *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11UnorderedAccessView *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11UnorderedAccessView *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11UnorderedAccessView *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11UnorderedAccessView *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11UnorderedAccessView *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11UnorderedAccessView *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11View methods ***/
     void (STDMETHODCALLTYPE *GetResource)(
-        ID3D11UnorderedAccessView *This,
-        ID3D11Resource **ppResource);
+                     ID3D11UnorderedAccessView *This,
+                     ID3D11Resource **ppResource);
 
     /*** ID3D11UnorderedAccessView methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11UnorderedAccessView *This,
-        D3D11_UNORDERED_ACCESS_VIEW_DESC *pDesc);
+                     ID3D11UnorderedAccessView *This,
+                     D3D11_UNORDERED_ACCESS_VIEW_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11UnorderedAccessViewVtbl;
@@ -5997,37 +5997,37 @@ typedef struct ID3D11VertexShaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VertexShader *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VertexShader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VertexShader *This);
+                     ID3D11VertexShader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VertexShader *This);
+                     ID3D11VertexShader *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11VertexShader *This,
-        ID3D11Device **ppDevice);
+                     ID3D11VertexShader *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11VertexShader *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11VertexShader *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VertexShader *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VertexShader *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VertexShader *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VertexShader *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11VertexShaderVtbl;
@@ -6091,522 +6091,522 @@ MIDL_INTERFACE("c0bfa96c-e089-44fb-8eaf-26f8796190da")
 ID3D11DeviceContext : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE VSSetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE PSSetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE PSSetShader(
-        ID3D11PixelShader *pPixelShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances) = 0;
+                     ID3D11PixelShader *pPixelShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE PSSetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE VSSetShader(
-        ID3D11VertexShader *pVertexShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances) = 0;
+                     ID3D11VertexShader *pVertexShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE DrawIndexed(
-        UINT IndexCount,
-        UINT StartIndexLocation,
-        INT BaseVertexLocation) = 0;
+                     UINT IndexCount,
+                     UINT StartIndexLocation,
+                     INT BaseVertexLocation) = 0;
 
     virtual void STDMETHODCALLTYPE Draw(
-        UINT VertexCount,
-        UINT StartVertexLocation) = 0;
+                     UINT VertexCount,
+                     UINT StartVertexLocation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Map(
-        ID3D11Resource *pResource,
-        UINT Subresource,
-        D3D11_MAP MapType,
-        UINT MapFlags,
-        D3D11_MAPPED_SUBRESOURCE *pMappedResource) = 0;
+                     ID3D11Resource *pResource,
+                     UINT Subresource,
+                     D3D11_MAP MapType,
+                     UINT MapFlags,
+                     D3D11_MAPPED_SUBRESOURCE *pMappedResource) = 0;
 
     virtual void STDMETHODCALLTYPE Unmap(
-        ID3D11Resource *pResource,
-        UINT Subresource) = 0;
+                     ID3D11Resource *pResource,
+                     UINT Subresource) = 0;
 
     virtual void STDMETHODCALLTYPE PSSetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE IASetInputLayout(
-        ID3D11InputLayout *pInputLayout) = 0;
+                     ID3D11InputLayout *pInputLayout) = 0;
 
     virtual void STDMETHODCALLTYPE IASetVertexBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppVertexBuffers,
-        const UINT *pStrides,
-        const UINT *pOffsets) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppVertexBuffers,
+                     const UINT *pStrides,
+                     const UINT *pOffsets) = 0;
 
     virtual void STDMETHODCALLTYPE IASetIndexBuffer(
-        ID3D11Buffer *pIndexBuffer,
-        DXGI_FORMAT Format,
-        UINT Offset) = 0;
+                     ID3D11Buffer *pIndexBuffer,
+                     DXGI_FORMAT Format,
+                     UINT Offset) = 0;
 
     virtual void STDMETHODCALLTYPE DrawIndexedInstanced(
-        UINT IndexCountPerInstance,
-        UINT InstanceCount,
-        UINT StartIndexLocation,
-        INT BaseVertexLocation,
-        UINT StartInstanceLocation) = 0;
+                     UINT IndexCountPerInstance,
+                     UINT InstanceCount,
+                     UINT StartIndexLocation,
+                     INT BaseVertexLocation,
+                     UINT StartInstanceLocation) = 0;
 
     virtual void STDMETHODCALLTYPE DrawInstanced(
-        UINT VertexCountPerInstance,
-        UINT InstanceCount,
-        UINT StartVertexLocation,
-        UINT StartInstanceLocation) = 0;
+                     UINT VertexCountPerInstance,
+                     UINT InstanceCount,
+                     UINT StartVertexLocation,
+                     UINT StartInstanceLocation) = 0;
 
     virtual void STDMETHODCALLTYPE GSSetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE GSSetShader(
-        ID3D11GeometryShader *pShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances) = 0;
+                     ID3D11GeometryShader *pShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE IASetPrimitiveTopology(
-        D3D11_PRIMITIVE_TOPOLOGY Topology) = 0;
+                     D3D11_PRIMITIVE_TOPOLOGY Topology) = 0;
 
     virtual void STDMETHODCALLTYPE VSSetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE VSSetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE Begin(
-        ID3D11Asynchronous *pAsync) = 0;
+                     ID3D11Asynchronous *pAsync) = 0;
 
     virtual void STDMETHODCALLTYPE End(
-        ID3D11Asynchronous *pAsync) = 0;
+                     ID3D11Asynchronous *pAsync) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetData(
-        ID3D11Asynchronous *pAsync,
-        void *pData,
-        UINT DataSize,
-        UINT GetDataFlags) = 0;
+                     ID3D11Asynchronous *pAsync,
+                     void *pData,
+                     UINT DataSize,
+                     UINT GetDataFlags) = 0;
 
     virtual void STDMETHODCALLTYPE SetPredication(
-        ID3D11Predicate *pPredicate,
-        WINBOOL PredicateValue) = 0;
+                     ID3D11Predicate *pPredicate,
+                     WINBOOL PredicateValue) = 0;
 
     virtual void STDMETHODCALLTYPE GSSetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE GSSetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE OMSetRenderTargets(
-        UINT NumViews,
-        ID3D11RenderTargetView *const *ppRenderTargetViews,
-        ID3D11DepthStencilView *pDepthStencilView) = 0;
+                     UINT NumViews,
+                     ID3D11RenderTargetView *const *ppRenderTargetViews,
+                     ID3D11DepthStencilView *pDepthStencilView) = 0;
 
     virtual void STDMETHODCALLTYPE OMSetRenderTargetsAndUnorderedAccessViews(
-        UINT NumRTVs,
-        ID3D11RenderTargetView *const *ppRenderTargetViews,
-        ID3D11DepthStencilView *pDepthStencilView,
-        UINT UAVStartSlot,
-        UINT NumUAVs,
-        ID3D11UnorderedAccessView *const *ppUnorderedAccessViews,
-        const UINT *pUAVInitialCounts) = 0;
+                     UINT NumRTVs,
+                     ID3D11RenderTargetView *const *ppRenderTargetViews,
+                     ID3D11DepthStencilView *pDepthStencilView,
+                     UINT UAVStartSlot,
+                     UINT NumUAVs,
+                     ID3D11UnorderedAccessView *const *ppUnorderedAccessViews,
+                     const UINT *pUAVInitialCounts) = 0;
 
     virtual void STDMETHODCALLTYPE OMSetBlendState(
-        ID3D11BlendState *pBlendState,
-        const FLOAT BlendFactor[4],
-        UINT SampleMask) = 0;
+                     ID3D11BlendState *pBlendState,
+                     const FLOAT BlendFactor[4],
+                     UINT SampleMask) = 0;
 
     virtual void STDMETHODCALLTYPE OMSetDepthStencilState(
-        ID3D11DepthStencilState *pDepthStencilState,
-        UINT StencilRef) = 0;
+                     ID3D11DepthStencilState *pDepthStencilState,
+                     UINT StencilRef) = 0;
 
     virtual void STDMETHODCALLTYPE SOSetTargets(
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppSOTargets,
-        const UINT *pOffsets) = 0;
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppSOTargets,
+                     const UINT *pOffsets) = 0;
 
     virtual void STDMETHODCALLTYPE DrawAuto(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE DrawIndexedInstancedIndirect(
-        ID3D11Buffer *pBufferForArgs,
-        UINT AlignedByteOffsetForArgs) = 0;
+                     ID3D11Buffer *pBufferForArgs,
+                     UINT AlignedByteOffsetForArgs) = 0;
 
     virtual void STDMETHODCALLTYPE DrawInstancedIndirect(
-        ID3D11Buffer *pBufferForArgs,
-        UINT AlignedByteOffsetForArgs) = 0;
+                     ID3D11Buffer *pBufferForArgs,
+                     UINT AlignedByteOffsetForArgs) = 0;
 
     virtual void STDMETHODCALLTYPE Dispatch(
-        UINT ThreadGroupCountX,
-        UINT ThreadGroupCountY,
-        UINT ThreadGroupCountZ) = 0;
+                     UINT ThreadGroupCountX,
+                     UINT ThreadGroupCountY,
+                     UINT ThreadGroupCountZ) = 0;
 
     virtual void STDMETHODCALLTYPE DispatchIndirect(
-        ID3D11Buffer *pBufferForArgs,
-        UINT AlignedByteOffsetForArgs) = 0;
+                     ID3D11Buffer *pBufferForArgs,
+                     UINT AlignedByteOffsetForArgs) = 0;
 
     virtual void STDMETHODCALLTYPE RSSetState(
-        ID3D11RasterizerState *pRasterizerState) = 0;
+                     ID3D11RasterizerState *pRasterizerState) = 0;
 
     virtual void STDMETHODCALLTYPE RSSetViewports(
-        UINT NumViewports,
-        const D3D11_VIEWPORT *pViewports) = 0;
+                     UINT NumViewports,
+                     const D3D11_VIEWPORT *pViewports) = 0;
 
     virtual void STDMETHODCALLTYPE RSSetScissorRects(
-        UINT NumRects,
-        const D3D11_RECT *pRects) = 0;
+                     UINT NumRects,
+                     const D3D11_RECT *pRects) = 0;
 
     virtual void STDMETHODCALLTYPE CopySubresourceRegion(
-        ID3D11Resource *pDstResource,
-        UINT DstSubresource,
-        UINT DstX,
-        UINT DstY,
-        UINT DstZ,
-        ID3D11Resource *pSrcResource,
-        UINT SrcSubresource,
-        const D3D11_BOX *pSrcBox) = 0;
+                     ID3D11Resource *pDstResource,
+                     UINT DstSubresource,
+                     UINT DstX,
+                     UINT DstY,
+                     UINT DstZ,
+                     ID3D11Resource *pSrcResource,
+                     UINT SrcSubresource,
+                     const D3D11_BOX *pSrcBox) = 0;
 
     virtual void STDMETHODCALLTYPE CopyResource(
-        ID3D11Resource *pDstResource,
-        ID3D11Resource *pSrcResource) = 0;
+                     ID3D11Resource *pDstResource,
+                     ID3D11Resource *pSrcResource) = 0;
 
     virtual void STDMETHODCALLTYPE UpdateSubresource(
-        ID3D11Resource *pDstResource,
-        UINT DstSubresource,
-        const D3D11_BOX *pDstBox,
-        const void *pSrcData,
-        UINT SrcRowPitch,
-        UINT SrcDepthPitch) = 0;
+                     ID3D11Resource *pDstResource,
+                     UINT DstSubresource,
+                     const D3D11_BOX *pDstBox,
+                     const void *pSrcData,
+                     UINT SrcRowPitch,
+                     UINT SrcDepthPitch) = 0;
 
     virtual void STDMETHODCALLTYPE CopyStructureCount(
-        ID3D11Buffer *pDstBuffer,
-        UINT DstAlignedByteOffset,
-        ID3D11UnorderedAccessView *pSrcView) = 0;
+                     ID3D11Buffer *pDstBuffer,
+                     UINT DstAlignedByteOffset,
+                     ID3D11UnorderedAccessView *pSrcView) = 0;
 
     virtual void STDMETHODCALLTYPE ClearRenderTargetView(
-        ID3D11RenderTargetView *pRenderTargetView,
-        const FLOAT ColorRGBA[4]) = 0;
+                     ID3D11RenderTargetView *pRenderTargetView,
+                     const FLOAT ColorRGBA[4]) = 0;
 
     virtual void STDMETHODCALLTYPE ClearUnorderedAccessViewUint(
-        ID3D11UnorderedAccessView *pUnorderedAccessView,
-        const UINT Values[4]) = 0;
+                     ID3D11UnorderedAccessView *pUnorderedAccessView,
+                     const UINT Values[4]) = 0;
 
     virtual void STDMETHODCALLTYPE ClearUnorderedAccessViewFloat(
-        ID3D11UnorderedAccessView *pUnorderedAccessView,
-        const FLOAT Values[4]) = 0;
+                     ID3D11UnorderedAccessView *pUnorderedAccessView,
+                     const FLOAT Values[4]) = 0;
 
     virtual void STDMETHODCALLTYPE ClearDepthStencilView(
-        ID3D11DepthStencilView *pDepthStencilView,
-        UINT ClearFlags,
-        FLOAT Depth,
-        UINT8 Stencil) = 0;
+                     ID3D11DepthStencilView *pDepthStencilView,
+                     UINT ClearFlags,
+                     FLOAT Depth,
+                     UINT8 Stencil) = 0;
 
     virtual void STDMETHODCALLTYPE GenerateMips(
-        ID3D11ShaderResourceView *pShaderResourceView) = 0;
+                     ID3D11ShaderResourceView *pShaderResourceView) = 0;
 
     virtual void STDMETHODCALLTYPE SetResourceMinLOD(
-        ID3D11Resource *pResource,
-        FLOAT MinLOD) = 0;
+                     ID3D11Resource *pResource,
+                     FLOAT MinLOD) = 0;
 
     virtual FLOAT STDMETHODCALLTYPE GetResourceMinLOD(
-        ID3D11Resource *pResource) = 0;
+                     ID3D11Resource *pResource) = 0;
 
     virtual void STDMETHODCALLTYPE ResolveSubresource(
-        ID3D11Resource *pDstResource,
-        UINT DstSubresource,
-        ID3D11Resource *pSrcResource,
-        UINT SrcSubresource,
-        DXGI_FORMAT Format) = 0;
+                     ID3D11Resource *pDstResource,
+                     UINT DstSubresource,
+                     ID3D11Resource *pSrcResource,
+                     UINT SrcSubresource,
+                     DXGI_FORMAT Format) = 0;
 
     virtual void STDMETHODCALLTYPE ExecuteCommandList(
-        ID3D11CommandList *pCommandList,
-        WINBOOL RestoreContextState) = 0;
+                     ID3D11CommandList *pCommandList,
+                     WINBOOL RestoreContextState) = 0;
 
     virtual void STDMETHODCALLTYPE HSSetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE HSSetShader(
-        ID3D11HullShader *pHullShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances) = 0;
+                     ID3D11HullShader *pHullShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE HSSetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE HSSetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE DSSetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE DSSetShader(
-        ID3D11DomainShader *pDomainShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances) = 0;
+                     ID3D11DomainShader *pDomainShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE DSSetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE DSSetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE CSSetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE CSSetUnorderedAccessViews(
-        UINT StartSlot,
-        UINT NumUAVs,
-        ID3D11UnorderedAccessView *const *ppUnorderedAccessViews,
-        const UINT *pUAVInitialCounts) = 0;
+                     UINT StartSlot,
+                     UINT NumUAVs,
+                     ID3D11UnorderedAccessView *const *ppUnorderedAccessViews,
+                     const UINT *pUAVInitialCounts) = 0;
 
     virtual void STDMETHODCALLTYPE CSSetShader(
-        ID3D11ComputeShader *pComputeShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances) = 0;
+                     ID3D11ComputeShader *pComputeShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE CSSetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE CSSetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE VSGetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE PSGetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE PSGetShader(
-        ID3D11PixelShader **ppPixelShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances) = 0;
+                     ID3D11PixelShader **ppPixelShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE PSGetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE VSGetShader(
-        ID3D11VertexShader **ppVertexShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances) = 0;
+                     ID3D11VertexShader **ppVertexShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE PSGetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE IAGetInputLayout(
-        ID3D11InputLayout **ppInputLayout) = 0;
+                     ID3D11InputLayout **ppInputLayout) = 0;
 
     virtual void STDMETHODCALLTYPE IAGetVertexBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppVertexBuffers,
-        UINT *pStrides,
-        UINT *pOffsets) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppVertexBuffers,
+                     UINT *pStrides,
+                     UINT *pOffsets) = 0;
 
     virtual void STDMETHODCALLTYPE IAGetIndexBuffer(
-        ID3D11Buffer **pIndexBuffer,
-        DXGI_FORMAT *Format,
-        UINT *Offset) = 0;
+                     ID3D11Buffer **pIndexBuffer,
+                     DXGI_FORMAT *Format,
+                     UINT *Offset) = 0;
 
     virtual void STDMETHODCALLTYPE GSGetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE GSGetShader(
-        ID3D11GeometryShader **ppGeometryShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances) = 0;
+                     ID3D11GeometryShader **ppGeometryShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE IAGetPrimitiveTopology(
-        D3D11_PRIMITIVE_TOPOLOGY *pTopology) = 0;
+                     D3D11_PRIMITIVE_TOPOLOGY *pTopology) = 0;
 
     virtual void STDMETHODCALLTYPE VSGetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE VSGetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE GetPredication(
-        ID3D11Predicate **ppPredicate,
-        WINBOOL *pPredicateValue) = 0;
+                     ID3D11Predicate **ppPredicate,
+                     WINBOOL *pPredicateValue) = 0;
 
     virtual void STDMETHODCALLTYPE GSGetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE GSGetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE OMGetRenderTargets(
-        UINT NumViews,
-        ID3D11RenderTargetView **ppRenderTargetViews,
-        ID3D11DepthStencilView **ppDepthStencilView) = 0;
+                     UINT NumViews,
+                     ID3D11RenderTargetView **ppRenderTargetViews,
+                     ID3D11DepthStencilView **ppDepthStencilView) = 0;
 
     virtual void STDMETHODCALLTYPE OMGetRenderTargetsAndUnorderedAccessViews(
-        UINT NumRTVs,
-        ID3D11RenderTargetView **ppRenderTargetViews,
-        ID3D11DepthStencilView **ppDepthStencilView,
-        UINT UAVStartSlot,
-        UINT NumUAVs,
-        ID3D11UnorderedAccessView **ppUnorderedAccessViews) = 0;
+                     UINT NumRTVs,
+                     ID3D11RenderTargetView **ppRenderTargetViews,
+                     ID3D11DepthStencilView **ppDepthStencilView,
+                     UINT UAVStartSlot,
+                     UINT NumUAVs,
+                     ID3D11UnorderedAccessView **ppUnorderedAccessViews) = 0;
 
     virtual void STDMETHODCALLTYPE OMGetBlendState(
-        ID3D11BlendState **ppBlendState,
-        FLOAT BlendFactor[4],
-        UINT *pSampleMask) = 0;
+                     ID3D11BlendState **ppBlendState,
+                     FLOAT BlendFactor[4],
+                     UINT *pSampleMask) = 0;
 
     virtual void STDMETHODCALLTYPE OMGetDepthStencilState(
-        ID3D11DepthStencilState **ppDepthStencilState,
-        UINT *pStencilRef) = 0;
+                     ID3D11DepthStencilState **ppDepthStencilState,
+                     UINT *pStencilRef) = 0;
 
     virtual void STDMETHODCALLTYPE SOGetTargets(
-        UINT NumBuffers,
-        ID3D11Buffer **ppSOTargets) = 0;
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppSOTargets) = 0;
 
     virtual void STDMETHODCALLTYPE RSGetState(
-        ID3D11RasterizerState **ppRasterizerState) = 0;
+                     ID3D11RasterizerState **ppRasterizerState) = 0;
 
     virtual void STDMETHODCALLTYPE RSGetViewports(
-        UINT *pNumViewports,
-        D3D11_VIEWPORT *pViewports) = 0;
+                     UINT *pNumViewports,
+                     D3D11_VIEWPORT *pViewports) = 0;
 
     virtual void STDMETHODCALLTYPE RSGetScissorRects(
-        UINT *pNumRects,
-        D3D11_RECT *pRects) = 0;
+                     UINT *pNumRects,
+                     D3D11_RECT *pRects) = 0;
 
     virtual void STDMETHODCALLTYPE HSGetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE HSGetShader(
-        ID3D11HullShader **ppHullShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances) = 0;
+                     ID3D11HullShader **ppHullShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE HSGetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE HSGetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE DSGetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE DSGetShader(
-        ID3D11DomainShader **ppDomainShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances) = 0;
+                     ID3D11DomainShader **ppDomainShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE DSGetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE DSGetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE CSGetShaderResources(
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews) = 0;
 
     virtual void STDMETHODCALLTYPE CSGetUnorderedAccessViews(
-        UINT StartSlot,
-        UINT NumUAVs,
-        ID3D11UnorderedAccessView **ppUnorderedAccessViews) = 0;
+                     UINT StartSlot,
+                     UINT NumUAVs,
+                     ID3D11UnorderedAccessView **ppUnorderedAccessViews) = 0;
 
     virtual void STDMETHODCALLTYPE CSGetShader(
-        ID3D11ComputeShader **ppComputeShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances) = 0;
+                     ID3D11ComputeShader **ppComputeShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances) = 0;
 
     virtual void STDMETHODCALLTYPE CSGetSamplers(
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers) = 0;
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers) = 0;
 
     virtual void STDMETHODCALLTYPE CSGetConstantBuffers(
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers) = 0;
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers) = 0;
 
     virtual void STDMETHODCALLTYPE ClearState(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE Flush(
-        ) = 0;
+                     ) = 0;
 
     virtual D3D11_DEVICE_CONTEXT_TYPE STDMETHODCALLTYPE GetType(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetContextFlags(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FinishCommandList(
-        WINBOOL RestoreDeferredContextState,
-        ID3D11CommandList **ppCommandList) = 0;
+                     WINBOOL RestoreDeferredContextState,
+                     ID3D11CommandList **ppCommandList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6618,659 +6618,659 @@ typedef struct ID3D11DeviceContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11DeviceContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11DeviceContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11DeviceContext *This);
+                     ID3D11DeviceContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11DeviceContext *This);
+                     ID3D11DeviceContext *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11DeviceContext *This,
-        ID3D11Device **ppDevice);
+                     ID3D11DeviceContext *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11DeviceContext *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11DeviceContext *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11DeviceContext *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11DeviceContext *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11DeviceContext *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11DeviceContext *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11DeviceContext methods ***/
     void (STDMETHODCALLTYPE *VSSetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *PSSetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *PSSetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11PixelShader *pPixelShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11PixelShader *pPixelShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances);
 
     void (STDMETHODCALLTYPE *PSSetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers);
 
     void (STDMETHODCALLTYPE *VSSetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11VertexShader *pVertexShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11VertexShader *pVertexShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances);
 
     void (STDMETHODCALLTYPE *DrawIndexed)(
-        ID3D11DeviceContext *This,
-        UINT IndexCount,
-        UINT StartIndexLocation,
-        INT BaseVertexLocation);
+                     ID3D11DeviceContext *This,
+                     UINT IndexCount,
+                     UINT StartIndexLocation,
+                     INT BaseVertexLocation);
 
     void (STDMETHODCALLTYPE *Draw)(
-        ID3D11DeviceContext *This,
-        UINT VertexCount,
-        UINT StartVertexLocation);
+                     ID3D11DeviceContext *This,
+                     UINT VertexCount,
+                     UINT StartVertexLocation);
 
     HRESULT (STDMETHODCALLTYPE *Map)(
-        ID3D11DeviceContext *This,
-        ID3D11Resource *pResource,
-        UINT Subresource,
-        D3D11_MAP MapType,
-        UINT MapFlags,
-        D3D11_MAPPED_SUBRESOURCE *pMappedResource);
+                     ID3D11DeviceContext *This,
+                     ID3D11Resource *pResource,
+                     UINT Subresource,
+                     D3D11_MAP MapType,
+                     UINT MapFlags,
+                     D3D11_MAPPED_SUBRESOURCE *pMappedResource);
 
     void (STDMETHODCALLTYPE *Unmap)(
-        ID3D11DeviceContext *This,
-        ID3D11Resource *pResource,
-        UINT Subresource);
+                     ID3D11DeviceContext *This,
+                     ID3D11Resource *pResource,
+                     UINT Subresource);
 
     void (STDMETHODCALLTYPE *PSSetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *IASetInputLayout)(
-        ID3D11DeviceContext *This,
-        ID3D11InputLayout *pInputLayout);
+                     ID3D11DeviceContext *This,
+                     ID3D11InputLayout *pInputLayout);
 
     void (STDMETHODCALLTYPE *IASetVertexBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppVertexBuffers,
-        const UINT *pStrides,
-        const UINT *pOffsets);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppVertexBuffers,
+                     const UINT *pStrides,
+                     const UINT *pOffsets);
 
     void (STDMETHODCALLTYPE *IASetIndexBuffer)(
-        ID3D11DeviceContext *This,
-        ID3D11Buffer *pIndexBuffer,
-        DXGI_FORMAT Format,
-        UINT Offset);
+                     ID3D11DeviceContext *This,
+                     ID3D11Buffer *pIndexBuffer,
+                     DXGI_FORMAT Format,
+                     UINT Offset);
 
     void (STDMETHODCALLTYPE *DrawIndexedInstanced)(
-        ID3D11DeviceContext *This,
-        UINT IndexCountPerInstance,
-        UINT InstanceCount,
-        UINT StartIndexLocation,
-        INT BaseVertexLocation,
-        UINT StartInstanceLocation);
+                     ID3D11DeviceContext *This,
+                     UINT IndexCountPerInstance,
+                     UINT InstanceCount,
+                     UINT StartIndexLocation,
+                     INT BaseVertexLocation,
+                     UINT StartInstanceLocation);
 
     void (STDMETHODCALLTYPE *DrawInstanced)(
-        ID3D11DeviceContext *This,
-        UINT VertexCountPerInstance,
-        UINT InstanceCount,
-        UINT StartVertexLocation,
-        UINT StartInstanceLocation);
+                     ID3D11DeviceContext *This,
+                     UINT VertexCountPerInstance,
+                     UINT InstanceCount,
+                     UINT StartVertexLocation,
+                     UINT StartInstanceLocation);
 
     void (STDMETHODCALLTYPE *GSSetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *GSSetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11GeometryShader *pShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11GeometryShader *pShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances);
 
     void (STDMETHODCALLTYPE *IASetPrimitiveTopology)(
-        ID3D11DeviceContext *This,
-        D3D11_PRIMITIVE_TOPOLOGY Topology);
+                     ID3D11DeviceContext *This,
+                     D3D11_PRIMITIVE_TOPOLOGY Topology);
 
     void (STDMETHODCALLTYPE *VSSetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *VSSetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers);
 
     void (STDMETHODCALLTYPE *Begin)(
-        ID3D11DeviceContext *This,
-        ID3D11Asynchronous *pAsync);
+                     ID3D11DeviceContext *This,
+                     ID3D11Asynchronous *pAsync);
 
     void (STDMETHODCALLTYPE *End)(
-        ID3D11DeviceContext *This,
-        ID3D11Asynchronous *pAsync);
+                     ID3D11DeviceContext *This,
+                     ID3D11Asynchronous *pAsync);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ID3D11DeviceContext *This,
-        ID3D11Asynchronous *pAsync,
-        void *pData,
-        UINT DataSize,
-        UINT GetDataFlags);
+                     ID3D11DeviceContext *This,
+                     ID3D11Asynchronous *pAsync,
+                     void *pData,
+                     UINT DataSize,
+                     UINT GetDataFlags);
 
     void (STDMETHODCALLTYPE *SetPredication)(
-        ID3D11DeviceContext *This,
-        ID3D11Predicate *pPredicate,
-        WINBOOL PredicateValue);
+                     ID3D11DeviceContext *This,
+                     ID3D11Predicate *pPredicate,
+                     WINBOOL PredicateValue);
 
     void (STDMETHODCALLTYPE *GSSetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *GSSetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers);
 
     void (STDMETHODCALLTYPE *OMSetRenderTargets)(
-        ID3D11DeviceContext *This,
-        UINT NumViews,
-        ID3D11RenderTargetView *const *ppRenderTargetViews,
-        ID3D11DepthStencilView *pDepthStencilView);
+                     ID3D11DeviceContext *This,
+                     UINT NumViews,
+                     ID3D11RenderTargetView *const *ppRenderTargetViews,
+                     ID3D11DepthStencilView *pDepthStencilView);
 
     void (STDMETHODCALLTYPE *OMSetRenderTargetsAndUnorderedAccessViews)(
-        ID3D11DeviceContext *This,
-        UINT NumRTVs,
-        ID3D11RenderTargetView *const *ppRenderTargetViews,
-        ID3D11DepthStencilView *pDepthStencilView,
-        UINT UAVStartSlot,
-        UINT NumUAVs,
-        ID3D11UnorderedAccessView *const *ppUnorderedAccessViews,
-        const UINT *pUAVInitialCounts);
+                     ID3D11DeviceContext *This,
+                     UINT NumRTVs,
+                     ID3D11RenderTargetView *const *ppRenderTargetViews,
+                     ID3D11DepthStencilView *pDepthStencilView,
+                     UINT UAVStartSlot,
+                     UINT NumUAVs,
+                     ID3D11UnorderedAccessView *const *ppUnorderedAccessViews,
+                     const UINT *pUAVInitialCounts);
 
     void (STDMETHODCALLTYPE *OMSetBlendState)(
-        ID3D11DeviceContext *This,
-        ID3D11BlendState *pBlendState,
-        const FLOAT BlendFactor[4],
-        UINT SampleMask);
+                     ID3D11DeviceContext *This,
+                     ID3D11BlendState *pBlendState,
+                     const FLOAT BlendFactor[4],
+                     UINT SampleMask);
 
     void (STDMETHODCALLTYPE *OMSetDepthStencilState)(
-        ID3D11DeviceContext *This,
-        ID3D11DepthStencilState *pDepthStencilState,
-        UINT StencilRef);
+                     ID3D11DeviceContext *This,
+                     ID3D11DepthStencilState *pDepthStencilState,
+                     UINT StencilRef);
 
     void (STDMETHODCALLTYPE *SOSetTargets)(
-        ID3D11DeviceContext *This,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppSOTargets,
-        const UINT *pOffsets);
+                     ID3D11DeviceContext *This,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppSOTargets,
+                     const UINT *pOffsets);
 
     void (STDMETHODCALLTYPE *DrawAuto)(
-        ID3D11DeviceContext *This);
+                     ID3D11DeviceContext *This);
 
     void (STDMETHODCALLTYPE *DrawIndexedInstancedIndirect)(
-        ID3D11DeviceContext *This,
-        ID3D11Buffer *pBufferForArgs,
-        UINT AlignedByteOffsetForArgs);
+                     ID3D11DeviceContext *This,
+                     ID3D11Buffer *pBufferForArgs,
+                     UINT AlignedByteOffsetForArgs);
 
     void (STDMETHODCALLTYPE *DrawInstancedIndirect)(
-        ID3D11DeviceContext *This,
-        ID3D11Buffer *pBufferForArgs,
-        UINT AlignedByteOffsetForArgs);
+                     ID3D11DeviceContext *This,
+                     ID3D11Buffer *pBufferForArgs,
+                     UINT AlignedByteOffsetForArgs);
 
     void (STDMETHODCALLTYPE *Dispatch)(
-        ID3D11DeviceContext *This,
-        UINT ThreadGroupCountX,
-        UINT ThreadGroupCountY,
-        UINT ThreadGroupCountZ);
+                     ID3D11DeviceContext *This,
+                     UINT ThreadGroupCountX,
+                     UINT ThreadGroupCountY,
+                     UINT ThreadGroupCountZ);
 
     void (STDMETHODCALLTYPE *DispatchIndirect)(
-        ID3D11DeviceContext *This,
-        ID3D11Buffer *pBufferForArgs,
-        UINT AlignedByteOffsetForArgs);
+                     ID3D11DeviceContext *This,
+                     ID3D11Buffer *pBufferForArgs,
+                     UINT AlignedByteOffsetForArgs);
 
     void (STDMETHODCALLTYPE *RSSetState)(
-        ID3D11DeviceContext *This,
-        ID3D11RasterizerState *pRasterizerState);
+                     ID3D11DeviceContext *This,
+                     ID3D11RasterizerState *pRasterizerState);
 
     void (STDMETHODCALLTYPE *RSSetViewports)(
-        ID3D11DeviceContext *This,
-        UINT NumViewports,
-        const D3D11_VIEWPORT *pViewports);
+                     ID3D11DeviceContext *This,
+                     UINT NumViewports,
+                     const D3D11_VIEWPORT *pViewports);
 
     void (STDMETHODCALLTYPE *RSSetScissorRects)(
-        ID3D11DeviceContext *This,
-        UINT NumRects,
-        const D3D11_RECT *pRects);
+                     ID3D11DeviceContext *This,
+                     UINT NumRects,
+                     const D3D11_RECT *pRects);
 
     void (STDMETHODCALLTYPE *CopySubresourceRegion)(
-        ID3D11DeviceContext *This,
-        ID3D11Resource *pDstResource,
-        UINT DstSubresource,
-        UINT DstX,
-        UINT DstY,
-        UINT DstZ,
-        ID3D11Resource *pSrcResource,
-        UINT SrcSubresource,
-        const D3D11_BOX *pSrcBox);
+                     ID3D11DeviceContext *This,
+                     ID3D11Resource *pDstResource,
+                     UINT DstSubresource,
+                     UINT DstX,
+                     UINT DstY,
+                     UINT DstZ,
+                     ID3D11Resource *pSrcResource,
+                     UINT SrcSubresource,
+                     const D3D11_BOX *pSrcBox);
 
     void (STDMETHODCALLTYPE *CopyResource)(
-        ID3D11DeviceContext *This,
-        ID3D11Resource *pDstResource,
-        ID3D11Resource *pSrcResource);
+                     ID3D11DeviceContext *This,
+                     ID3D11Resource *pDstResource,
+                     ID3D11Resource *pSrcResource);
 
     void (STDMETHODCALLTYPE *UpdateSubresource)(
-        ID3D11DeviceContext *This,
-        ID3D11Resource *pDstResource,
-        UINT DstSubresource,
-        const D3D11_BOX *pDstBox,
-        const void *pSrcData,
-        UINT SrcRowPitch,
-        UINT SrcDepthPitch);
+                     ID3D11DeviceContext *This,
+                     ID3D11Resource *pDstResource,
+                     UINT DstSubresource,
+                     const D3D11_BOX *pDstBox,
+                     const void *pSrcData,
+                     UINT SrcRowPitch,
+                     UINT SrcDepthPitch);
 
     void (STDMETHODCALLTYPE *CopyStructureCount)(
-        ID3D11DeviceContext *This,
-        ID3D11Buffer *pDstBuffer,
-        UINT DstAlignedByteOffset,
-        ID3D11UnorderedAccessView *pSrcView);
+                     ID3D11DeviceContext *This,
+                     ID3D11Buffer *pDstBuffer,
+                     UINT DstAlignedByteOffset,
+                     ID3D11UnorderedAccessView *pSrcView);
 
     void (STDMETHODCALLTYPE *ClearRenderTargetView)(
-        ID3D11DeviceContext *This,
-        ID3D11RenderTargetView *pRenderTargetView,
-        const FLOAT ColorRGBA[4]);
+                     ID3D11DeviceContext *This,
+                     ID3D11RenderTargetView *pRenderTargetView,
+                     const FLOAT ColorRGBA[4]);
 
     void (STDMETHODCALLTYPE *ClearUnorderedAccessViewUint)(
-        ID3D11DeviceContext *This,
-        ID3D11UnorderedAccessView *pUnorderedAccessView,
-        const UINT Values[4]);
+                     ID3D11DeviceContext *This,
+                     ID3D11UnorderedAccessView *pUnorderedAccessView,
+                     const UINT Values[4]);
 
     void (STDMETHODCALLTYPE *ClearUnorderedAccessViewFloat)(
-        ID3D11DeviceContext *This,
-        ID3D11UnorderedAccessView *pUnorderedAccessView,
-        const FLOAT Values[4]);
+                     ID3D11DeviceContext *This,
+                     ID3D11UnorderedAccessView *pUnorderedAccessView,
+                     const FLOAT Values[4]);
 
     void (STDMETHODCALLTYPE *ClearDepthStencilView)(
-        ID3D11DeviceContext *This,
-        ID3D11DepthStencilView *pDepthStencilView,
-        UINT ClearFlags,
-        FLOAT Depth,
-        UINT8 Stencil);
+                     ID3D11DeviceContext *This,
+                     ID3D11DepthStencilView *pDepthStencilView,
+                     UINT ClearFlags,
+                     FLOAT Depth,
+                     UINT8 Stencil);
 
     void (STDMETHODCALLTYPE *GenerateMips)(
-        ID3D11DeviceContext *This,
-        ID3D11ShaderResourceView *pShaderResourceView);
+                     ID3D11DeviceContext *This,
+                     ID3D11ShaderResourceView *pShaderResourceView);
 
     void (STDMETHODCALLTYPE *SetResourceMinLOD)(
-        ID3D11DeviceContext *This,
-        ID3D11Resource *pResource,
-        FLOAT MinLOD);
+                     ID3D11DeviceContext *This,
+                     ID3D11Resource *pResource,
+                     FLOAT MinLOD);
 
     FLOAT (STDMETHODCALLTYPE *GetResourceMinLOD)(
-        ID3D11DeviceContext *This,
-        ID3D11Resource *pResource);
+                     ID3D11DeviceContext *This,
+                     ID3D11Resource *pResource);
 
     void (STDMETHODCALLTYPE *ResolveSubresource)(
-        ID3D11DeviceContext *This,
-        ID3D11Resource *pDstResource,
-        UINT DstSubresource,
-        ID3D11Resource *pSrcResource,
-        UINT SrcSubresource,
-        DXGI_FORMAT Format);
+                     ID3D11DeviceContext *This,
+                     ID3D11Resource *pDstResource,
+                     UINT DstSubresource,
+                     ID3D11Resource *pSrcResource,
+                     UINT SrcSubresource,
+                     DXGI_FORMAT Format);
 
     void (STDMETHODCALLTYPE *ExecuteCommandList)(
-        ID3D11DeviceContext *This,
-        ID3D11CommandList *pCommandList,
-        WINBOOL RestoreContextState);
+                     ID3D11DeviceContext *This,
+                     ID3D11CommandList *pCommandList,
+                     WINBOOL RestoreContextState);
 
     void (STDMETHODCALLTYPE *HSSetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *HSSetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11HullShader *pHullShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11HullShader *pHullShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances);
 
     void (STDMETHODCALLTYPE *HSSetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers);
 
     void (STDMETHODCALLTYPE *HSSetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *DSSetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *DSSetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11DomainShader *pDomainShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11DomainShader *pDomainShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances);
 
     void (STDMETHODCALLTYPE *DSSetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers);
 
     void (STDMETHODCALLTYPE *DSSetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *CSSetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView *const *ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView *const *ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *CSSetUnorderedAccessViews)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumUAVs,
-        ID3D11UnorderedAccessView *const *ppUnorderedAccessViews,
-        const UINT *pUAVInitialCounts);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumUAVs,
+                     ID3D11UnorderedAccessView *const *ppUnorderedAccessViews,
+                     const UINT *pUAVInitialCounts);
 
     void (STDMETHODCALLTYPE *CSSetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11ComputeShader *pComputeShader,
-        ID3D11ClassInstance *const *ppClassInstances,
-        UINT NumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11ComputeShader *pComputeShader,
+                     ID3D11ClassInstance *const *ppClassInstances,
+                     UINT NumClassInstances);
 
     void (STDMETHODCALLTYPE *CSSetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState *const *ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState *const *ppSamplers);
 
     void (STDMETHODCALLTYPE *CSSetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer *const *ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer *const *ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *VSGetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *PSGetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *PSGetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11PixelShader **ppPixelShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11PixelShader **ppPixelShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances);
 
     void (STDMETHODCALLTYPE *PSGetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers);
 
     void (STDMETHODCALLTYPE *VSGetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11VertexShader **ppVertexShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11VertexShader **ppVertexShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances);
 
     void (STDMETHODCALLTYPE *PSGetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *IAGetInputLayout)(
-        ID3D11DeviceContext *This,
-        ID3D11InputLayout **ppInputLayout);
+                     ID3D11DeviceContext *This,
+                     ID3D11InputLayout **ppInputLayout);
 
     void (STDMETHODCALLTYPE *IAGetVertexBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppVertexBuffers,
-        UINT *pStrides,
-        UINT *pOffsets);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppVertexBuffers,
+                     UINT *pStrides,
+                     UINT *pOffsets);
 
     void (STDMETHODCALLTYPE *IAGetIndexBuffer)(
-        ID3D11DeviceContext *This,
-        ID3D11Buffer **pIndexBuffer,
-        DXGI_FORMAT *Format,
-        UINT *Offset);
+                     ID3D11DeviceContext *This,
+                     ID3D11Buffer **pIndexBuffer,
+                     DXGI_FORMAT *Format,
+                     UINT *Offset);
 
     void (STDMETHODCALLTYPE *GSGetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *GSGetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11GeometryShader **ppGeometryShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11GeometryShader **ppGeometryShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances);
 
     void (STDMETHODCALLTYPE *IAGetPrimitiveTopology)(
-        ID3D11DeviceContext *This,
-        D3D11_PRIMITIVE_TOPOLOGY *pTopology);
+                     ID3D11DeviceContext *This,
+                     D3D11_PRIMITIVE_TOPOLOGY *pTopology);
 
     void (STDMETHODCALLTYPE *VSGetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *VSGetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers);
 
     void (STDMETHODCALLTYPE *GetPredication)(
-        ID3D11DeviceContext *This,
-        ID3D11Predicate **ppPredicate,
-        WINBOOL *pPredicateValue);
+                     ID3D11DeviceContext *This,
+                     ID3D11Predicate **ppPredicate,
+                     WINBOOL *pPredicateValue);
 
     void (STDMETHODCALLTYPE *GSGetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *GSGetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers);
 
     void (STDMETHODCALLTYPE *OMGetRenderTargets)(
-        ID3D11DeviceContext *This,
-        UINT NumViews,
-        ID3D11RenderTargetView **ppRenderTargetViews,
-        ID3D11DepthStencilView **ppDepthStencilView);
+                     ID3D11DeviceContext *This,
+                     UINT NumViews,
+                     ID3D11RenderTargetView **ppRenderTargetViews,
+                     ID3D11DepthStencilView **ppDepthStencilView);
 
     void (STDMETHODCALLTYPE *OMGetRenderTargetsAndUnorderedAccessViews)(
-        ID3D11DeviceContext *This,
-        UINT NumRTVs,
-        ID3D11RenderTargetView **ppRenderTargetViews,
-        ID3D11DepthStencilView **ppDepthStencilView,
-        UINT UAVStartSlot,
-        UINT NumUAVs,
-        ID3D11UnorderedAccessView **ppUnorderedAccessViews);
+                     ID3D11DeviceContext *This,
+                     UINT NumRTVs,
+                     ID3D11RenderTargetView **ppRenderTargetViews,
+                     ID3D11DepthStencilView **ppDepthStencilView,
+                     UINT UAVStartSlot,
+                     UINT NumUAVs,
+                     ID3D11UnorderedAccessView **ppUnorderedAccessViews);
 
     void (STDMETHODCALLTYPE *OMGetBlendState)(
-        ID3D11DeviceContext *This,
-        ID3D11BlendState **ppBlendState,
-        FLOAT BlendFactor[4],
-        UINT *pSampleMask);
+                     ID3D11DeviceContext *This,
+                     ID3D11BlendState **ppBlendState,
+                     FLOAT BlendFactor[4],
+                     UINT *pSampleMask);
 
     void (STDMETHODCALLTYPE *OMGetDepthStencilState)(
-        ID3D11DeviceContext *This,
-        ID3D11DepthStencilState **ppDepthStencilState,
-        UINT *pStencilRef);
+                     ID3D11DeviceContext *This,
+                     ID3D11DepthStencilState **ppDepthStencilState,
+                     UINT *pStencilRef);
 
     void (STDMETHODCALLTYPE *SOGetTargets)(
-        ID3D11DeviceContext *This,
-        UINT NumBuffers,
-        ID3D11Buffer **ppSOTargets);
+                     ID3D11DeviceContext *This,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppSOTargets);
 
     void (STDMETHODCALLTYPE *RSGetState)(
-        ID3D11DeviceContext *This,
-        ID3D11RasterizerState **ppRasterizerState);
+                     ID3D11DeviceContext *This,
+                     ID3D11RasterizerState **ppRasterizerState);
 
     void (STDMETHODCALLTYPE *RSGetViewports)(
-        ID3D11DeviceContext *This,
-        UINT *pNumViewports,
-        D3D11_VIEWPORT *pViewports);
+                     ID3D11DeviceContext *This,
+                     UINT *pNumViewports,
+                     D3D11_VIEWPORT *pViewports);
 
     void (STDMETHODCALLTYPE *RSGetScissorRects)(
-        ID3D11DeviceContext *This,
-        UINT *pNumRects,
-        D3D11_RECT *pRects);
+                     ID3D11DeviceContext *This,
+                     UINT *pNumRects,
+                     D3D11_RECT *pRects);
 
     void (STDMETHODCALLTYPE *HSGetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *HSGetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11HullShader **ppHullShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11HullShader **ppHullShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances);
 
     void (STDMETHODCALLTYPE *HSGetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers);
 
     void (STDMETHODCALLTYPE *HSGetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *DSGetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *DSGetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11DomainShader **ppDomainShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11DomainShader **ppDomainShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances);
 
     void (STDMETHODCALLTYPE *DSGetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers);
 
     void (STDMETHODCALLTYPE *DSGetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *CSGetShaderResources)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumViews,
-        ID3D11ShaderResourceView **ppShaderResourceViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumViews,
+                     ID3D11ShaderResourceView **ppShaderResourceViews);
 
     void (STDMETHODCALLTYPE *CSGetUnorderedAccessViews)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumUAVs,
-        ID3D11UnorderedAccessView **ppUnorderedAccessViews);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumUAVs,
+                     ID3D11UnorderedAccessView **ppUnorderedAccessViews);
 
     void (STDMETHODCALLTYPE *CSGetShader)(
-        ID3D11DeviceContext *This,
-        ID3D11ComputeShader **ppComputeShader,
-        ID3D11ClassInstance **ppClassInstances,
-        UINT *pNumClassInstances);
+                     ID3D11DeviceContext *This,
+                     ID3D11ComputeShader **ppComputeShader,
+                     ID3D11ClassInstance **ppClassInstances,
+                     UINT *pNumClassInstances);
 
     void (STDMETHODCALLTYPE *CSGetSamplers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumSamplers,
-        ID3D11SamplerState **ppSamplers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumSamplers,
+                     ID3D11SamplerState **ppSamplers);
 
     void (STDMETHODCALLTYPE *CSGetConstantBuffers)(
-        ID3D11DeviceContext *This,
-        UINT StartSlot,
-        UINT NumBuffers,
-        ID3D11Buffer **ppConstantBuffers);
+                     ID3D11DeviceContext *This,
+                     UINT StartSlot,
+                     UINT NumBuffers,
+                     ID3D11Buffer **ppConstantBuffers);
 
     void (STDMETHODCALLTYPE *ClearState)(
-        ID3D11DeviceContext *This);
+                     ID3D11DeviceContext *This);
 
     void (STDMETHODCALLTYPE *Flush)(
-        ID3D11DeviceContext *This);
+                     ID3D11DeviceContext *This);
 
     D3D11_DEVICE_CONTEXT_TYPE (STDMETHODCALLTYPE *GetType)(
-        ID3D11DeviceContext *This);
+                     ID3D11DeviceContext *This);
 
     UINT (STDMETHODCALLTYPE *GetContextFlags)(
-        ID3D11DeviceContext *This);
+                     ID3D11DeviceContext *This);
 
     HRESULT (STDMETHODCALLTYPE *FinishCommandList)(
-        ID3D11DeviceContext *This,
-        WINBOOL RestoreDeferredContextState,
-        ID3D11CommandList **ppCommandList);
+                     ID3D11DeviceContext *This,
+                     WINBOOL RestoreDeferredContextState,
+                     ID3D11CommandList **ppCommandList);
 
     END_INTERFACE
 } ID3D11DeviceContextVtbl;
@@ -7768,14 +7768,14 @@ MIDL_INTERFACE("3015a308-dcbd-47aa-a747-192486d14d4a")
 ID3D11AuthenticatedChannel : public ID3D11DeviceChild
 {
     virtual HRESULT STDMETHODCALLTYPE GetCertificateSize(
-        UINT *pCertificateSize) = 0;
+                     UINT *pCertificateSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCertificate(
-        UINT CertificateSize,
-        BYTE *pCertificate) = 0;
+                     UINT CertificateSize,
+                     BYTE *pCertificate) = 0;
 
     virtual void STDMETHODCALLTYPE GetChannelHandle(
-        HANDLE *pChannelHandle) = 0;
+                     HANDLE *pChannelHandle) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7787,51 +7787,51 @@ typedef struct ID3D11AuthenticatedChannelVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11AuthenticatedChannel *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11AuthenticatedChannel *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11AuthenticatedChannel *This);
+                     ID3D11AuthenticatedChannel *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11AuthenticatedChannel *This);
+                     ID3D11AuthenticatedChannel *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11AuthenticatedChannel *This,
-        ID3D11Device **ppDevice);
+                     ID3D11AuthenticatedChannel *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11AuthenticatedChannel *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11AuthenticatedChannel *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11AuthenticatedChannel *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11AuthenticatedChannel *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11AuthenticatedChannel *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11AuthenticatedChannel *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11AuthenticatedChannel methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCertificateSize)(
-        ID3D11AuthenticatedChannel *This,
-        UINT *pCertificateSize);
+                     ID3D11AuthenticatedChannel *This,
+                     UINT *pCertificateSize);
 
     HRESULT (STDMETHODCALLTYPE *GetCertificate)(
-        ID3D11AuthenticatedChannel *This,
-        UINT CertificateSize,
-        BYTE *pCertificate);
+                     ID3D11AuthenticatedChannel *This,
+                     UINT CertificateSize,
+                     BYTE *pCertificate);
 
     void (STDMETHODCALLTYPE *GetChannelHandle)(
-        ID3D11AuthenticatedChannel *This,
-        HANDLE *pChannelHandle);
+                     ID3D11AuthenticatedChannel *This,
+                     HANDLE *pChannelHandle);
 
     END_INTERFACE
 } ID3D11AuthenticatedChannelVtbl;
@@ -7909,20 +7909,20 @@ MIDL_INTERFACE("9b32f9ad-bdcc-40a6-a39d-d5c865845720")
 ID3D11CryptoSession : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetCryptoType(
-        GUID *pCryptoType) = 0;
+                     GUID *pCryptoType) = 0;
 
     virtual void STDMETHODCALLTYPE GetDecoderProfile(
-        GUID *pDecoderProfile) = 0;
+                     GUID *pDecoderProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCertificateSize(
-        UINT *pCertificateSize) = 0;
+                     UINT *pCertificateSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCertificate(
-        UINT CertificateSize,
-        BYTE *pCertificate) = 0;
+                     UINT CertificateSize,
+                     BYTE *pCertificate) = 0;
 
     virtual void STDMETHODCALLTYPE GetCryptoSessionHandle(
-        HANDLE *pCryptoSessionHandle) = 0;
+                     HANDLE *pCryptoSessionHandle) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7934,59 +7934,59 @@ typedef struct ID3D11CryptoSessionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11CryptoSession *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11CryptoSession *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11CryptoSession *This);
+                     ID3D11CryptoSession *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11CryptoSession *This);
+                     ID3D11CryptoSession *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11CryptoSession *This,
-        ID3D11Device **ppDevice);
+                     ID3D11CryptoSession *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11CryptoSession *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11CryptoSession *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11CryptoSession *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11CryptoSession *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11CryptoSession *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11CryptoSession *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11CryptoSession methods ***/
     void (STDMETHODCALLTYPE *GetCryptoType)(
-        ID3D11CryptoSession *This,
-        GUID *pCryptoType);
+                     ID3D11CryptoSession *This,
+                     GUID *pCryptoType);
 
     void (STDMETHODCALLTYPE *GetDecoderProfile)(
-        ID3D11CryptoSession *This,
-        GUID *pDecoderProfile);
+                     ID3D11CryptoSession *This,
+                     GUID *pDecoderProfile);
 
     HRESULT (STDMETHODCALLTYPE *GetCertificateSize)(
-        ID3D11CryptoSession *This,
-        UINT *pCertificateSize);
+                     ID3D11CryptoSession *This,
+                     UINT *pCertificateSize);
 
     HRESULT (STDMETHODCALLTYPE *GetCertificate)(
-        ID3D11CryptoSession *This,
-        UINT CertificateSize,
-        BYTE *pCertificate);
+                     ID3D11CryptoSession *This,
+                     UINT CertificateSize,
+                     BYTE *pCertificate);
 
     void (STDMETHODCALLTYPE *GetCryptoSessionHandle)(
-        ID3D11CryptoSession *This,
-        HANDLE *pCryptoSessionHandle);
+                     ID3D11CryptoSession *This,
+                     HANDLE *pCryptoSessionHandle);
 
     END_INTERFACE
 } ID3D11CryptoSessionVtbl;
@@ -8072,11 +8072,11 @@ MIDL_INTERFACE("3c9c5b51-995d-48d1-9b8d-fa5caeded65c")
 ID3D11VideoDecoder : public ID3D11DeviceChild
 {
     virtual HRESULT STDMETHODCALLTYPE GetCreationParameters(
-        D3D11_VIDEO_DECODER_DESC *pVideoDesc,
-        D3D11_VIDEO_DECODER_CONFIG *pConfig) = 0;
+                     D3D11_VIDEO_DECODER_DESC *pVideoDesc,
+                     D3D11_VIDEO_DECODER_CONFIG *pConfig) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDriverHandle(
-        HANDLE *pDriverHandle) = 0;
+                     HANDLE *pDriverHandle) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8088,47 +8088,47 @@ typedef struct ID3D11VideoDecoderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VideoDecoder *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VideoDecoder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VideoDecoder *This);
+                     ID3D11VideoDecoder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VideoDecoder *This);
+                     ID3D11VideoDecoder *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11VideoDecoder *This,
-        ID3D11Device **ppDevice);
+                     ID3D11VideoDecoder *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11VideoDecoder *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11VideoDecoder *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VideoDecoder *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VideoDecoder *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VideoDecoder *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VideoDecoder *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11VideoDecoder methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCreationParameters)(
-        ID3D11VideoDecoder *This,
-        D3D11_VIDEO_DECODER_DESC *pVideoDesc,
-        D3D11_VIDEO_DECODER_CONFIG *pConfig);
+                     ID3D11VideoDecoder *This,
+                     D3D11_VIDEO_DECODER_DESC *pVideoDesc,
+                     D3D11_VIDEO_DECODER_CONFIG *pConfig);
 
     HRESULT (STDMETHODCALLTYPE *GetDriverHandle)(
-        ID3D11VideoDecoder *This,
-        HANDLE *pDriverHandle);
+                     ID3D11VideoDecoder *This,
+                     HANDLE *pDriverHandle);
 
     END_INTERFACE
 } ID3D11VideoDecoderVtbl;
@@ -8202,27 +8202,27 @@ MIDL_INTERFACE("31627037-53ab-4200-9061-05faa9ab45f9")
 ID3D11VideoProcessorEnumerator : public ID3D11DeviceChild
 {
     virtual HRESULT STDMETHODCALLTYPE GetVideoProcessorContentDesc(
-        D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pContentDesc) = 0;
+                     D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pContentDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckVideoProcessorFormat(
-        DXGI_FORMAT Format,
-        UINT *pFlags) = 0;
+                     DXGI_FORMAT Format,
+                     UINT *pFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoProcessorCaps(
-        D3D11_VIDEO_PROCESSOR_CAPS *pCaps) = 0;
+                     D3D11_VIDEO_PROCESSOR_CAPS *pCaps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoProcessorRateConversionCaps(
-        UINT TypeIndex,
-        D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *pCaps) = 0;
+                     UINT TypeIndex,
+                     D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *pCaps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoProcessorCustomRate(
-        UINT TypeIndex,
-        UINT CustomRateIndex,
-        D3D11_VIDEO_PROCESSOR_CUSTOM_RATE *pRate) = 0;
+                     UINT TypeIndex,
+                     UINT CustomRateIndex,
+                     D3D11_VIDEO_PROCESSOR_CUSTOM_RATE *pRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoProcessorFilterRange(
-        D3D11_VIDEO_PROCESSOR_FILTER Filter,
-        D3D11_VIDEO_PROCESSOR_FILTER_RANGE *pRange) = 0;
+                     D3D11_VIDEO_PROCESSOR_FILTER Filter,
+                     D3D11_VIDEO_PROCESSOR_FILTER_RANGE *pRange) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8234,67 +8234,67 @@ typedef struct ID3D11VideoProcessorEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VideoProcessorEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VideoProcessorEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VideoProcessorEnumerator *This);
+                     ID3D11VideoProcessorEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VideoProcessorEnumerator *This);
+                     ID3D11VideoProcessorEnumerator *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11VideoProcessorEnumerator *This,
-        ID3D11Device **ppDevice);
+                     ID3D11VideoProcessorEnumerator *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11VideoProcessorEnumerator *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11VideoProcessorEnumerator *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VideoProcessorEnumerator *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VideoProcessorEnumerator *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VideoProcessorEnumerator *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VideoProcessorEnumerator *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11VideoProcessorEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *GetVideoProcessorContentDesc)(
-        ID3D11VideoProcessorEnumerator *This,
-        D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pContentDesc);
+                     ID3D11VideoProcessorEnumerator *This,
+                     D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pContentDesc);
 
     HRESULT (STDMETHODCALLTYPE *CheckVideoProcessorFormat)(
-        ID3D11VideoProcessorEnumerator *This,
-        DXGI_FORMAT Format,
-        UINT *pFlags);
+                     ID3D11VideoProcessorEnumerator *This,
+                     DXGI_FORMAT Format,
+                     UINT *pFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoProcessorCaps)(
-        ID3D11VideoProcessorEnumerator *This,
-        D3D11_VIDEO_PROCESSOR_CAPS *pCaps);
+                     ID3D11VideoProcessorEnumerator *This,
+                     D3D11_VIDEO_PROCESSOR_CAPS *pCaps);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoProcessorRateConversionCaps)(
-        ID3D11VideoProcessorEnumerator *This,
-        UINT TypeIndex,
-        D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *pCaps);
+                     ID3D11VideoProcessorEnumerator *This,
+                     UINT TypeIndex,
+                     D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *pCaps);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoProcessorCustomRate)(
-        ID3D11VideoProcessorEnumerator *This,
-        UINT TypeIndex,
-        UINT CustomRateIndex,
-        D3D11_VIDEO_PROCESSOR_CUSTOM_RATE *pRate);
+                     ID3D11VideoProcessorEnumerator *This,
+                     UINT TypeIndex,
+                     UINT CustomRateIndex,
+                     D3D11_VIDEO_PROCESSOR_CUSTOM_RATE *pRate);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoProcessorFilterRange)(
-        ID3D11VideoProcessorEnumerator *This,
-        D3D11_VIDEO_PROCESSOR_FILTER Filter,
-        D3D11_VIDEO_PROCESSOR_FILTER_RANGE *pRange);
+                     ID3D11VideoProcessorEnumerator *This,
+                     D3D11_VIDEO_PROCESSOR_FILTER Filter,
+                     D3D11_VIDEO_PROCESSOR_FILTER_RANGE *pRange);
 
     END_INTERFACE
 } ID3D11VideoProcessorEnumeratorVtbl;
@@ -8384,10 +8384,10 @@ MIDL_INTERFACE("1d7b0652-185f-41c6-85ce-0c5be3d4ae6c")
 ID3D11VideoProcessor : public ID3D11DeviceChild
 {
     virtual void STDMETHODCALLTYPE GetContentDesc(
-        D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pDesc) = 0;
+                     D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pDesc) = 0;
 
     virtual void STDMETHODCALLTYPE GetRateConversionCaps(
-        D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *pCaps) = 0;
+                     D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *pCaps) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8399,46 +8399,46 @@ typedef struct ID3D11VideoProcessorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VideoProcessor *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VideoProcessor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VideoProcessor *This);
+                     ID3D11VideoProcessor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VideoProcessor *This);
+                     ID3D11VideoProcessor *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11VideoProcessor *This,
-        ID3D11Device **ppDevice);
+                     ID3D11VideoProcessor *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11VideoProcessor *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11VideoProcessor *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VideoProcessor *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VideoProcessor *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VideoProcessor *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VideoProcessor *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11VideoProcessor methods ***/
     void (STDMETHODCALLTYPE *GetContentDesc)(
-        ID3D11VideoProcessor *This,
-        D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pDesc);
+                     ID3D11VideoProcessor *This,
+                     D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pDesc);
 
     void (STDMETHODCALLTYPE *GetRateConversionCaps)(
-        ID3D11VideoProcessor *This,
-        D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *pCaps);
+                     ID3D11VideoProcessor *This,
+                     D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *pCaps);
 
     END_INTERFACE
 } ID3D11VideoProcessorVtbl;
@@ -8512,7 +8512,7 @@ MIDL_INTERFACE("c2931aea-2a85-4f20-860f-fba1fd256e18")
 ID3D11VideoDecoderOutputView : public ID3D11View
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *pDesc) = 0;
+                     D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8524,47 +8524,47 @@ typedef struct ID3D11VideoDecoderOutputViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VideoDecoderOutputView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VideoDecoderOutputView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VideoDecoderOutputView *This);
+                     ID3D11VideoDecoderOutputView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VideoDecoderOutputView *This);
+                     ID3D11VideoDecoderOutputView *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11VideoDecoderOutputView *This,
-        ID3D11Device **ppDevice);
+                     ID3D11VideoDecoderOutputView *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11VideoDecoderOutputView *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11VideoDecoderOutputView *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VideoDecoderOutputView *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VideoDecoderOutputView *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VideoDecoderOutputView *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VideoDecoderOutputView *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11View methods ***/
     void (STDMETHODCALLTYPE *GetResource)(
-        ID3D11VideoDecoderOutputView *This,
-        ID3D11Resource **ppResource);
+                     ID3D11VideoDecoderOutputView *This,
+                     ID3D11Resource **ppResource);
 
     /*** ID3D11VideoDecoderOutputView methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11VideoDecoderOutputView *This,
-        D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *pDesc);
+                     ID3D11VideoDecoderOutputView *This,
+                     D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11VideoDecoderOutputViewVtbl;
@@ -8640,7 +8640,7 @@ MIDL_INTERFACE("11ec5a5f-51dc-4945-ab34-6e8c21300ea5")
 ID3D11VideoProcessorInputView : public ID3D11View
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *pDesc) = 0;
+                     D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8652,47 +8652,47 @@ typedef struct ID3D11VideoProcessorInputViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VideoProcessorInputView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VideoProcessorInputView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VideoProcessorInputView *This);
+                     ID3D11VideoProcessorInputView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VideoProcessorInputView *This);
+                     ID3D11VideoProcessorInputView *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11VideoProcessorInputView *This,
-        ID3D11Device **ppDevice);
+                     ID3D11VideoProcessorInputView *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11VideoProcessorInputView *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11VideoProcessorInputView *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VideoProcessorInputView *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VideoProcessorInputView *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VideoProcessorInputView *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VideoProcessorInputView *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11View methods ***/
     void (STDMETHODCALLTYPE *GetResource)(
-        ID3D11VideoProcessorInputView *This,
-        ID3D11Resource **ppResource);
+                     ID3D11VideoProcessorInputView *This,
+                     ID3D11Resource **ppResource);
 
     /*** ID3D11VideoProcessorInputView methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11VideoProcessorInputView *This,
-        D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *pDesc);
+                     ID3D11VideoProcessorInputView *This,
+                     D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11VideoProcessorInputViewVtbl;
@@ -8768,7 +8768,7 @@ MIDL_INTERFACE("a048285e-25a9-4527-bd93-d68b68c44254")
 ID3D11VideoProcessorOutputView : public ID3D11View
 {
     virtual void STDMETHODCALLTYPE GetDesc(
-        D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC *pDesc) = 0;
+                     D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC *pDesc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8780,47 +8780,47 @@ typedef struct ID3D11VideoProcessorOutputViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VideoProcessorOutputView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VideoProcessorOutputView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VideoProcessorOutputView *This);
+                     ID3D11VideoProcessorOutputView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VideoProcessorOutputView *This);
+                     ID3D11VideoProcessorOutputView *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11VideoProcessorOutputView *This,
-        ID3D11Device **ppDevice);
+                     ID3D11VideoProcessorOutputView *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11VideoProcessorOutputView *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11VideoProcessorOutputView *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VideoProcessorOutputView *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VideoProcessorOutputView *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VideoProcessorOutputView *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VideoProcessorOutputView *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11View methods ***/
     void (STDMETHODCALLTYPE *GetResource)(
-        ID3D11VideoProcessorOutputView *This,
-        ID3D11Resource **ppResource);
+                     ID3D11VideoProcessorOutputView *This,
+                     ID3D11Resource **ppResource);
 
     /*** ID3D11VideoProcessorOutputView methods ***/
     void (STDMETHODCALLTYPE *GetDesc)(
-        ID3D11VideoProcessorOutputView *This,
-        D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC *pDesc);
+                     ID3D11VideoProcessorOutputView *This,
+                     D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC *pDesc);
 
     END_INTERFACE
 } ID3D11VideoProcessorOutputViewVtbl;
@@ -8896,86 +8896,86 @@ MIDL_INTERFACE("10ec4d5b-975a-4689-b9e4-d0aac30fe333")
 ID3D11VideoDevice : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateVideoDecoder(
-        const D3D11_VIDEO_DECODER_DESC *pVideoDesc,
-        const D3D11_VIDEO_DECODER_CONFIG *pConfig,
-        ID3D11VideoDecoder **ppDecoder) = 0;
+                     const D3D11_VIDEO_DECODER_DESC *pVideoDesc,
+                     const D3D11_VIDEO_DECODER_CONFIG *pConfig,
+                     ID3D11VideoDecoder **ppDecoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateVideoProcessor(
-        ID3D11VideoProcessorEnumerator *pEnum,
-        UINT RateConversionIndex,
-        ID3D11VideoProcessor **ppVideoProcessor) = 0;
+                     ID3D11VideoProcessorEnumerator *pEnum,
+                     UINT RateConversionIndex,
+                     ID3D11VideoProcessor **ppVideoProcessor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAuthenticatedChannel(
-        D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType,
-        ID3D11AuthenticatedChannel **ppAuthenticatedChannel) = 0;
+                     D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType,
+                     ID3D11AuthenticatedChannel **ppAuthenticatedChannel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCryptoSession(
-        const GUID *pCryptoType,
-        const GUID *pDecoderProfile,
-        const GUID *pKeyExchangeType,
-        ID3D11CryptoSession **ppCryptoSession) = 0;
+                     const GUID *pCryptoType,
+                     const GUID *pDecoderProfile,
+                     const GUID *pKeyExchangeType,
+                     ID3D11CryptoSession **ppCryptoSession) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateVideoDecoderOutputView(
-        ID3D11Resource *pResource,
-        const D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *pDesc,
-        ID3D11VideoDecoderOutputView **ppVDOVView) = 0;
+                     ID3D11Resource *pResource,
+                     const D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *pDesc,
+                     ID3D11VideoDecoderOutputView **ppVDOVView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateVideoProcessorInputView(
-        ID3D11Resource *pResource,
-        ID3D11VideoProcessorEnumerator *pEnum,
-        const D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *pDesc,
-        ID3D11VideoProcessorInputView **ppVPIView) = 0;
+                     ID3D11Resource *pResource,
+                     ID3D11VideoProcessorEnumerator *pEnum,
+                     const D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *pDesc,
+                     ID3D11VideoProcessorInputView **ppVPIView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateVideoProcessorOutputView(
-        ID3D11Resource *pResource,
-        ID3D11VideoProcessorEnumerator *pEnum,
-        const D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC *pDesc,
-        ID3D11VideoProcessorOutputView **ppVPOView) = 0;
+                     ID3D11Resource *pResource,
+                     ID3D11VideoProcessorEnumerator *pEnum,
+                     const D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC *pDesc,
+                     ID3D11VideoProcessorOutputView **ppVPOView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateVideoProcessorEnumerator(
-        const D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pDesc,
-        ID3D11VideoProcessorEnumerator **ppEnum) = 0;
+                     const D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pDesc,
+                     ID3D11VideoProcessorEnumerator **ppEnum) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetVideoDecoderProfileCount(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoDecoderProfile(
-        UINT Index,
-        GUID *pDecoderProfile) = 0;
+                     UINT Index,
+                     GUID *pDecoderProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckVideoDecoderFormat(
-        const GUID *pDecoderProfile,
-        DXGI_FORMAT Format,
-        WINBOOL *pSupported) = 0;
+                     const GUID *pDecoderProfile,
+                     DXGI_FORMAT Format,
+                     WINBOOL *pSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoDecoderConfigCount(
-        const D3D11_VIDEO_DECODER_DESC *pDesc,
-        UINT *pCount) = 0;
+                     const D3D11_VIDEO_DECODER_DESC *pDesc,
+                     UINT *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoDecoderConfig(
-        const D3D11_VIDEO_DECODER_DESC *pDesc,
-        UINT Index,
-        D3D11_VIDEO_DECODER_CONFIG *pConfig) = 0;
+                     const D3D11_VIDEO_DECODER_DESC *pDesc,
+                     UINT Index,
+                     D3D11_VIDEO_DECODER_CONFIG *pConfig) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContentProtectionCaps(
-        const GUID *pCryptoType,
-        const GUID *pDecoderProfile,
-        D3D11_VIDEO_CONTENT_PROTECTION_CAPS *pCaps) = 0;
+                     const GUID *pCryptoType,
+                     const GUID *pDecoderProfile,
+                     D3D11_VIDEO_CONTENT_PROTECTION_CAPS *pCaps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckCryptoKeyExchange(
-        const GUID *pCryptoType,
-        const GUID *pDecoderProfile,
-        UINT Index,
-        GUID *pKeyExchangeType) = 0;
+                     const GUID *pCryptoType,
+                     const GUID *pDecoderProfile,
+                     UINT Index,
+                     GUID *pKeyExchangeType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateData(
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData) = 0;
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateDataInterface(
-        REFGUID guid,
-        const IUnknown *pData) = 0;
+                     REFGUID guid,
+                     const IUnknown *pData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8987,114 +8987,114 @@ typedef struct ID3D11VideoDeviceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VideoDevice *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VideoDevice *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VideoDevice *This);
+                     ID3D11VideoDevice *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VideoDevice *This);
+                     ID3D11VideoDevice *This);
 
     /*** ID3D11VideoDevice methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateVideoDecoder)(
-        ID3D11VideoDevice *This,
-        const D3D11_VIDEO_DECODER_DESC *pVideoDesc,
-        const D3D11_VIDEO_DECODER_CONFIG *pConfig,
-        ID3D11VideoDecoder **ppDecoder);
+                     ID3D11VideoDevice *This,
+                     const D3D11_VIDEO_DECODER_DESC *pVideoDesc,
+                     const D3D11_VIDEO_DECODER_CONFIG *pConfig,
+                     ID3D11VideoDecoder **ppDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateVideoProcessor)(
-        ID3D11VideoDevice *This,
-        ID3D11VideoProcessorEnumerator *pEnum,
-        UINT RateConversionIndex,
-        ID3D11VideoProcessor **ppVideoProcessor);
+                     ID3D11VideoDevice *This,
+                     ID3D11VideoProcessorEnumerator *pEnum,
+                     UINT RateConversionIndex,
+                     ID3D11VideoProcessor **ppVideoProcessor);
 
     HRESULT (STDMETHODCALLTYPE *CreateAuthenticatedChannel)(
-        ID3D11VideoDevice *This,
-        D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType,
-        ID3D11AuthenticatedChannel **ppAuthenticatedChannel);
+                     ID3D11VideoDevice *This,
+                     D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType,
+                     ID3D11AuthenticatedChannel **ppAuthenticatedChannel);
 
     HRESULT (STDMETHODCALLTYPE *CreateCryptoSession)(
-        ID3D11VideoDevice *This,
-        const GUID *pCryptoType,
-        const GUID *pDecoderProfile,
-        const GUID *pKeyExchangeType,
-        ID3D11CryptoSession **ppCryptoSession);
+                     ID3D11VideoDevice *This,
+                     const GUID *pCryptoType,
+                     const GUID *pDecoderProfile,
+                     const GUID *pKeyExchangeType,
+                     ID3D11CryptoSession **ppCryptoSession);
 
     HRESULT (STDMETHODCALLTYPE *CreateVideoDecoderOutputView)(
-        ID3D11VideoDevice *This,
-        ID3D11Resource *pResource,
-        const D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *pDesc,
-        ID3D11VideoDecoderOutputView **ppVDOVView);
+                     ID3D11VideoDevice *This,
+                     ID3D11Resource *pResource,
+                     const D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *pDesc,
+                     ID3D11VideoDecoderOutputView **ppVDOVView);
 
     HRESULT (STDMETHODCALLTYPE *CreateVideoProcessorInputView)(
-        ID3D11VideoDevice *This,
-        ID3D11Resource *pResource,
-        ID3D11VideoProcessorEnumerator *pEnum,
-        const D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *pDesc,
-        ID3D11VideoProcessorInputView **ppVPIView);
+                     ID3D11VideoDevice *This,
+                     ID3D11Resource *pResource,
+                     ID3D11VideoProcessorEnumerator *pEnum,
+                     const D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *pDesc,
+                     ID3D11VideoProcessorInputView **ppVPIView);
 
     HRESULT (STDMETHODCALLTYPE *CreateVideoProcessorOutputView)(
-        ID3D11VideoDevice *This,
-        ID3D11Resource *pResource,
-        ID3D11VideoProcessorEnumerator *pEnum,
-        const D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC *pDesc,
-        ID3D11VideoProcessorOutputView **ppVPOView);
+                     ID3D11VideoDevice *This,
+                     ID3D11Resource *pResource,
+                     ID3D11VideoProcessorEnumerator *pEnum,
+                     const D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC *pDesc,
+                     ID3D11VideoProcessorOutputView **ppVPOView);
 
     HRESULT (STDMETHODCALLTYPE *CreateVideoProcessorEnumerator)(
-        ID3D11VideoDevice *This,
-        const D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pDesc,
-        ID3D11VideoProcessorEnumerator **ppEnum);
+                     ID3D11VideoDevice *This,
+                     const D3D11_VIDEO_PROCESSOR_CONTENT_DESC *pDesc,
+                     ID3D11VideoProcessorEnumerator **ppEnum);
 
     UINT (STDMETHODCALLTYPE *GetVideoDecoderProfileCount)(
-        ID3D11VideoDevice *This);
+                     ID3D11VideoDevice *This);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoDecoderProfile)(
-        ID3D11VideoDevice *This,
-        UINT Index,
-        GUID *pDecoderProfile);
+                     ID3D11VideoDevice *This,
+                     UINT Index,
+                     GUID *pDecoderProfile);
 
     HRESULT (STDMETHODCALLTYPE *CheckVideoDecoderFormat)(
-        ID3D11VideoDevice *This,
-        const GUID *pDecoderProfile,
-        DXGI_FORMAT Format,
-        WINBOOL *pSupported);
+                     ID3D11VideoDevice *This,
+                     const GUID *pDecoderProfile,
+                     DXGI_FORMAT Format,
+                     WINBOOL *pSupported);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoDecoderConfigCount)(
-        ID3D11VideoDevice *This,
-        const D3D11_VIDEO_DECODER_DESC *pDesc,
-        UINT *pCount);
+                     ID3D11VideoDevice *This,
+                     const D3D11_VIDEO_DECODER_DESC *pDesc,
+                     UINT *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoDecoderConfig)(
-        ID3D11VideoDevice *This,
-        const D3D11_VIDEO_DECODER_DESC *pDesc,
-        UINT Index,
-        D3D11_VIDEO_DECODER_CONFIG *pConfig);
+                     ID3D11VideoDevice *This,
+                     const D3D11_VIDEO_DECODER_DESC *pDesc,
+                     UINT Index,
+                     D3D11_VIDEO_DECODER_CONFIG *pConfig);
 
     HRESULT (STDMETHODCALLTYPE *GetContentProtectionCaps)(
-        ID3D11VideoDevice *This,
-        const GUID *pCryptoType,
-        const GUID *pDecoderProfile,
-        D3D11_VIDEO_CONTENT_PROTECTION_CAPS *pCaps);
+                     ID3D11VideoDevice *This,
+                     const GUID *pCryptoType,
+                     const GUID *pDecoderProfile,
+                     D3D11_VIDEO_CONTENT_PROTECTION_CAPS *pCaps);
 
     HRESULT (STDMETHODCALLTYPE *CheckCryptoKeyExchange)(
-        ID3D11VideoDevice *This,
-        const GUID *pCryptoType,
-        const GUID *pDecoderProfile,
-        UINT Index,
-        GUID *pKeyExchangeType);
+                     ID3D11VideoDevice *This,
+                     const GUID *pCryptoType,
+                     const GUID *pDecoderProfile,
+                     UINT Index,
+                     GUID *pKeyExchangeType);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VideoDevice *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VideoDevice *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VideoDevice *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VideoDevice *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     END_INTERFACE
 } ID3D11VideoDeviceVtbl;
@@ -9210,340 +9210,340 @@ MIDL_INTERFACE("61f21c45-3c0e-4a74-9cea-67100d9ad5e4")
 ID3D11VideoContext : public ID3D11DeviceChild
 {
     virtual HRESULT STDMETHODCALLTYPE GetDecoderBuffer(
-        ID3D11VideoDecoder *decoder,
-        D3D11_VIDEO_DECODER_BUFFER_TYPE type,
-        UINT *buffer_size,
-        void **buffer) = 0;
+                     ID3D11VideoDecoder *decoder,
+                     D3D11_VIDEO_DECODER_BUFFER_TYPE type,
+                     UINT *buffer_size,
+                     void **buffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseDecoderBuffer(
-        ID3D11VideoDecoder *decoder,
-        D3D11_VIDEO_DECODER_BUFFER_TYPE type) = 0;
+                     ID3D11VideoDecoder *decoder,
+                     D3D11_VIDEO_DECODER_BUFFER_TYPE type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DecoderBeginFrame(
-        ID3D11VideoDecoder *decoder,
-        ID3D11VideoDecoderOutputView *view,
-        UINT key_size,
-        const void *key) = 0;
+                     ID3D11VideoDecoder *decoder,
+                     ID3D11VideoDecoderOutputView *view,
+                     UINT key_size,
+                     const void *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DecoderEndFrame(
-        ID3D11VideoDecoder *decoder) = 0;
+                     ID3D11VideoDecoder *decoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubmitDecoderBuffers(
-        ID3D11VideoDecoder *decoder,
-        UINT buffers_count,
-        const D3D11_VIDEO_DECODER_BUFFER_DESC *buffer_desc) = 0;
+                     ID3D11VideoDecoder *decoder,
+                     UINT buffers_count,
+                     const D3D11_VIDEO_DECODER_BUFFER_DESC *buffer_desc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DecoderExtension(
-        ID3D11VideoDecoder *decoder,
-        const D3D11_VIDEO_DECODER_EXTENSION *extension) = 0;
+                     ID3D11VideoDecoder *decoder,
+                     const D3D11_VIDEO_DECODER_EXTENSION *extension) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetOutputTargetRect(
-        ID3D11VideoProcessor *processor,
-        WINBOOL enable,
-        const RECT *rect) = 0;
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL enable,
+                     const RECT *rect) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetOutputBackgroundColor(
-        ID3D11VideoProcessor *processor,
-        WINBOOL y_cb_cr,
-        const D3D11_VIDEO_COLOR *color) = 0;
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL y_cb_cr,
+                     const D3D11_VIDEO_COLOR *color) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetOutputColorSpace(
-        ID3D11VideoProcessor *processor,
-        const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space) = 0;
+                     ID3D11VideoProcessor *processor,
+                     const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetOutputAlphaFillMode(
-        ID3D11VideoProcessor *processor,
-        D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE alpha_fill_mode,
-        UINT stream_idx) = 0;
+                     ID3D11VideoProcessor *processor,
+                     D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE alpha_fill_mode,
+                     UINT stream_idx) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetOutputConstriction(
-        ID3D11VideoProcessor *processor,
-        WINBOOL enable,
-        SIZE size) = 0;
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL enable,
+                     SIZE size) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetOutputStereoMode(
-        ID3D11VideoProcessor *processor,
-        WINBOOL enable) = 0;
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL enable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE VideoProcessorSetOutputExtension(
-        ID3D11VideoProcessor *processor,
-        const GUID *guid,
-        UINT data_size,
-        void *data) = 0;
+                     ID3D11VideoProcessor *processor,
+                     const GUID *guid,
+                     UINT data_size,
+                     void *data) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetOutputTargetRect(
-        ID3D11VideoProcessor *processor,
-        WINBOOL *enabled,
-        RECT *rect) = 0;
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL *enabled,
+                     RECT *rect) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetOutputBackgroundColor(
-        ID3D11VideoProcessor *processor,
-        WINBOOL *y_cb_cr,
-        D3D11_VIDEO_COLOR *color) = 0;
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL *y_cb_cr,
+                     D3D11_VIDEO_COLOR *color) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetOutputColorSpace(
-        ID3D11VideoProcessor *processor,
-        D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space) = 0;
+                     ID3D11VideoProcessor *processor,
+                     D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetOutputAlphaFillMode(
-        ID3D11VideoProcessor *processor,
-        D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE *alpha_fill_mode,
-        UINT *stream_idx) = 0;
+                     ID3D11VideoProcessor *processor,
+                     D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE *alpha_fill_mode,
+                     UINT *stream_idx) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetOutputConstriction(
-        ID3D11VideoProcessor *processor,
-        WINBOOL *enabled,
-        SIZE *size) = 0;
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL *enabled,
+                     SIZE *size) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetOutputStereoMode(
-        ID3D11VideoProcessor *processor,
-        WINBOOL *enabled) = 0;
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE VideoProcessorGetOutputExtension(
-        ID3D11VideoProcessor *processor,
-        const GUID *guid,
-        UINT data_size,
-        void *data) = 0;
+                     ID3D11VideoProcessor *processor,
+                     const GUID *guid,
+                     UINT data_size,
+                     void *data) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamFrameFormat(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_FRAME_FORMAT format) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_FRAME_FORMAT format) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamColorSpace(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamOutputRate(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_OUTPUT_RATE rate,
-        WINBOOL repeat,
-        const DXGI_RATIONAL *custom_rate) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_OUTPUT_RATE rate,
+                     WINBOOL repeat,
+                     const DXGI_RATIONAL *custom_rate) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamSourceRect(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        const RECT *rect) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     const RECT *rect) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamDestRect(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        const RECT *rect) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     const RECT *rect) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamAlpha(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        float alpha) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     float alpha) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamPalette(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        UINT entry_count,
-        const UINT *entries) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     UINT entry_count,
+                     const UINT *entries) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamPixelAspectRatio(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        const DXGI_RATIONAL *src_aspect_ratio,
-        const DXGI_RATIONAL *dst_aspect_ratio) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     const DXGI_RATIONAL *src_aspect_ratio,
+                     const DXGI_RATIONAL *dst_aspect_ratio) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamLumaKey(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        float lower,
-        float upper) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     float lower,
+                     float upper) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamStereoFormat(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        D3D11_VIDEO_PROCESSOR_STEREO_FORMAT format,
-        WINBOOL left_view_frame0,
-        WINBOOL base_view_frame0,
-        D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE flip_mode,
-        int mono_offset) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     D3D11_VIDEO_PROCESSOR_STEREO_FORMAT format,
+                     WINBOOL left_view_frame0,
+                     WINBOOL base_view_frame0,
+                     D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE flip_mode,
+                     int mono_offset) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamAutoProcessingMode(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamFilter(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_FILTER filter,
-        WINBOOL enable,
-        int level) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_FILTER filter,
+                     WINBOOL enable,
+                     int level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE VideoProcessorSetStreamExtension(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        const GUID *guid,
-        UINT data_size,
-        void *data) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     const GUID *guid,
+                     UINT data_size,
+                     void *data) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamFrameFormat(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_FRAME_FORMAT *format) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_FRAME_FORMAT *format) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamColorSpace(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamOutputRate(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_OUTPUT_RATE *rate,
-        WINBOOL *repeat,
-        DXGI_RATIONAL *custom_rate) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_OUTPUT_RATE *rate,
+                     WINBOOL *repeat,
+                     DXGI_RATIONAL *custom_rate) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamSourceRect(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        RECT *rect) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     RECT *rect) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamDestRect(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        RECT *rect) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     RECT *rect) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamAlpha(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        float *alpha) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     float *alpha) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamPalette(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        UINT entry_count,
-        UINT *entries) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     UINT entry_count,
+                     UINT *entries) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamPixelAspectRatio(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        DXGI_RATIONAL *src_aspect_ratio,
-        DXGI_RATIONAL *dst_aspect_ratio) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     DXGI_RATIONAL *src_aspect_ratio,
+                     DXGI_RATIONAL *dst_aspect_ratio) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamLumaKey(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        float *lower,
-        float *upper) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     float *lower,
+                     float *upper) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamStereoFormat(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        D3D11_VIDEO_PROCESSOR_STEREO_FORMAT *format,
-        WINBOOL *left_view_frame0,
-        WINBOOL *base_view_frame0,
-        D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE *flip_mode,
-        int *mono_offset) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     D3D11_VIDEO_PROCESSOR_STEREO_FORMAT *format,
+                     WINBOOL *left_view_frame0,
+                     WINBOOL *base_view_frame0,
+                     D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE *flip_mode,
+                     int *mono_offset) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamAutoProcessingMode(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamFilter(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_FILTER filter,
-        WINBOOL *enabled,
-        int *level) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_FILTER filter,
+                     WINBOOL *enabled,
+                     int *level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE VideoProcessorGetStreamExtension(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        const GUID *guid,
-        UINT data_size,
-        void *data) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     const GUID *guid,
+                     UINT data_size,
+                     void *data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE VideoProcessorBlt(
-        ID3D11VideoProcessor *processor,
-        ID3D11VideoProcessorOutputView *view,
-        UINT frame_idx,
-        UINT stream_count,
-        const D3D11_VIDEO_PROCESSOR_STREAM *streams) = 0;
+                     ID3D11VideoProcessor *processor,
+                     ID3D11VideoProcessorOutputView *view,
+                     UINT frame_idx,
+                     UINT stream_count,
+                     const D3D11_VIDEO_PROCESSOR_STREAM *streams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NegotiateCryptoSessionKeyExchange(
-        ID3D11CryptoSession *session,
-        UINT data_size,
-        void *data) = 0;
+                     ID3D11CryptoSession *session,
+                     UINT data_size,
+                     void *data) = 0;
 
     virtual void STDMETHODCALLTYPE EncryptionBlt(
-        ID3D11CryptoSession *session,
-        ID3D11Texture2D *src_surface,
-        ID3D11Texture2D *dst_surface,
-        UINT iv_size,
-        void *iv) = 0;
+                     ID3D11CryptoSession *session,
+                     ID3D11Texture2D *src_surface,
+                     ID3D11Texture2D *dst_surface,
+                     UINT iv_size,
+                     void *iv) = 0;
 
     virtual void STDMETHODCALLTYPE DecryptionBlt(
-        ID3D11CryptoSession *session,
-        ID3D11Texture2D *src_surface,
-        ID3D11Texture2D *dst_surface,
-        D3D11_ENCRYPTED_BLOCK_INFO *block_info,
-        UINT key_size,
-        const void *key,
-        UINT iv_size,
-        void *iv) = 0;
+                     ID3D11CryptoSession *session,
+                     ID3D11Texture2D *src_surface,
+                     ID3D11Texture2D *dst_surface,
+                     D3D11_ENCRYPTED_BLOCK_INFO *block_info,
+                     UINT key_size,
+                     const void *key,
+                     UINT iv_size,
+                     void *iv) = 0;
 
     virtual void STDMETHODCALLTYPE StartSessionKeyRefresh(
-        ID3D11CryptoSession *session,
-        UINT random_number_size,
-        void *random_number) = 0;
+                     ID3D11CryptoSession *session,
+                     UINT random_number_size,
+                     void *random_number) = 0;
 
     virtual void STDMETHODCALLTYPE FinishSessionKeyRefresh(
-        ID3D11CryptoSession *session) = 0;
+                     ID3D11CryptoSession *session) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEncryptionBltKey(
-        ID3D11CryptoSession *session,
-        UINT key_size,
-        void *key) = 0;
+                     ID3D11CryptoSession *session,
+                     UINT key_size,
+                     void *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NegotiateAuthenticatedChannelKeyExchange(
-        ID3D11AuthenticatedChannel *channel,
-        UINT data_size,
-        void *data) = 0;
+                     ID3D11AuthenticatedChannel *channel,
+                     UINT data_size,
+                     void *data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryAuthenticatedChannel(
-        ID3D11AuthenticatedChannel *channel,
-        UINT input_size,
-        const void *input,
-        UINT output_size,
-        void *output) = 0;
+                     ID3D11AuthenticatedChannel *channel,
+                     UINT input_size,
+                     const void *input,
+                     UINT output_size,
+                     void *output) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConfigureAuthenticatedChannel(
-        ID3D11AuthenticatedChannel *channel,
-        UINT input_size,
-        const void *input,
-        D3D11_AUTHENTICATED_CONFIGURE_OUTPUT *output) = 0;
+                     ID3D11AuthenticatedChannel *channel,
+                     UINT input_size,
+                     const void *input,
+                     D3D11_AUTHENTICATED_CONFIGURE_OUTPUT *output) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorSetStreamRotation(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        D3D11_VIDEO_PROCESSOR_ROTATION rotation) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     D3D11_VIDEO_PROCESSOR_ROTATION rotation) = 0;
 
     virtual void STDMETHODCALLTYPE VideoProcessorGetStreamRotation(
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enable,
-        D3D11_VIDEO_PROCESSOR_ROTATION *rotation) = 0;
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enable,
+                     D3D11_VIDEO_PROCESSOR_ROTATION *rotation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9555,432 +9555,432 @@ typedef struct ID3D11VideoContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11VideoContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11VideoContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11VideoContext *This);
+                     ID3D11VideoContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11VideoContext *This);
+                     ID3D11VideoContext *This);
 
     /*** ID3D11DeviceChild methods ***/
     void (STDMETHODCALLTYPE *GetDevice)(
-        ID3D11VideoContext *This,
-        ID3D11Device **ppDevice);
+                     ID3D11VideoContext *This,
+                     ID3D11Device **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11VideoContext *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11VideoContext *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11VideoContext *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11VideoContext *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11VideoContext *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11VideoContext *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     /*** ID3D11VideoContext methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDecoderBuffer)(
-        ID3D11VideoContext *This,
-        ID3D11VideoDecoder *decoder,
-        D3D11_VIDEO_DECODER_BUFFER_TYPE type,
-        UINT *buffer_size,
-        void **buffer);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoDecoder *decoder,
+                     D3D11_VIDEO_DECODER_BUFFER_TYPE type,
+                     UINT *buffer_size,
+                     void **buffer);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseDecoderBuffer)(
-        ID3D11VideoContext *This,
-        ID3D11VideoDecoder *decoder,
-        D3D11_VIDEO_DECODER_BUFFER_TYPE type);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoDecoder *decoder,
+                     D3D11_VIDEO_DECODER_BUFFER_TYPE type);
 
     HRESULT (STDMETHODCALLTYPE *DecoderBeginFrame)(
-        ID3D11VideoContext *This,
-        ID3D11VideoDecoder *decoder,
-        ID3D11VideoDecoderOutputView *view,
-        UINT key_size,
-        const void *key);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoDecoder *decoder,
+                     ID3D11VideoDecoderOutputView *view,
+                     UINT key_size,
+                     const void *key);
 
     HRESULT (STDMETHODCALLTYPE *DecoderEndFrame)(
-        ID3D11VideoContext *This,
-        ID3D11VideoDecoder *decoder);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoDecoder *decoder);
 
     HRESULT (STDMETHODCALLTYPE *SubmitDecoderBuffers)(
-        ID3D11VideoContext *This,
-        ID3D11VideoDecoder *decoder,
-        UINT buffers_count,
-        const D3D11_VIDEO_DECODER_BUFFER_DESC *buffer_desc);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoDecoder *decoder,
+                     UINT buffers_count,
+                     const D3D11_VIDEO_DECODER_BUFFER_DESC *buffer_desc);
 
     HRESULT (STDMETHODCALLTYPE *DecoderExtension)(
-        ID3D11VideoContext *This,
-        ID3D11VideoDecoder *decoder,
-        const D3D11_VIDEO_DECODER_EXTENSION *extension);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoDecoder *decoder,
+                     const D3D11_VIDEO_DECODER_EXTENSION *extension);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetOutputTargetRect)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        WINBOOL enable,
-        const RECT *rect);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL enable,
+                     const RECT *rect);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetOutputBackgroundColor)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        WINBOOL y_cb_cr,
-        const D3D11_VIDEO_COLOR *color);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL y_cb_cr,
+                     const D3D11_VIDEO_COLOR *color);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetOutputColorSpace)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetOutputAlphaFillMode)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE alpha_fill_mode,
-        UINT stream_idx);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE alpha_fill_mode,
+                     UINT stream_idx);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetOutputConstriction)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        WINBOOL enable,
-        SIZE size);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL enable,
+                     SIZE size);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetOutputStereoMode)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        WINBOOL enable);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL enable);
 
     HRESULT (STDMETHODCALLTYPE *VideoProcessorSetOutputExtension)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        const GUID *guid,
-        UINT data_size,
-        void *data);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     const GUID *guid,
+                     UINT data_size,
+                     void *data);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetOutputTargetRect)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        WINBOOL *enabled,
-        RECT *rect);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL *enabled,
+                     RECT *rect);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetOutputBackgroundColor)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        WINBOOL *y_cb_cr,
-        D3D11_VIDEO_COLOR *color);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL *y_cb_cr,
+                     D3D11_VIDEO_COLOR *color);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetOutputColorSpace)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetOutputAlphaFillMode)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE *alpha_fill_mode,
-        UINT *stream_idx);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE *alpha_fill_mode,
+                     UINT *stream_idx);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetOutputConstriction)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        WINBOOL *enabled,
-        SIZE *size);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL *enabled,
+                     SIZE *size);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetOutputStereoMode)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        WINBOOL *enabled);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     WINBOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *VideoProcessorGetOutputExtension)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        const GUID *guid,
-        UINT data_size,
-        void *data);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     const GUID *guid,
+                     UINT data_size,
+                     void *data);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamFrameFormat)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_FRAME_FORMAT format);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_FRAME_FORMAT format);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamColorSpace)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamOutputRate)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_OUTPUT_RATE rate,
-        WINBOOL repeat,
-        const DXGI_RATIONAL *custom_rate);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_OUTPUT_RATE rate,
+                     WINBOOL repeat,
+                     const DXGI_RATIONAL *custom_rate);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamSourceRect)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        const RECT *rect);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     const RECT *rect);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamDestRect)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        const RECT *rect);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     const RECT *rect);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamAlpha)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        float alpha);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     float alpha);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamPalette)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        UINT entry_count,
-        const UINT *entries);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     UINT entry_count,
+                     const UINT *entries);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamPixelAspectRatio)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        const DXGI_RATIONAL *src_aspect_ratio,
-        const DXGI_RATIONAL *dst_aspect_ratio);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     const DXGI_RATIONAL *src_aspect_ratio,
+                     const DXGI_RATIONAL *dst_aspect_ratio);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamLumaKey)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        float lower,
-        float upper);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     float lower,
+                     float upper);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamStereoFormat)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        D3D11_VIDEO_PROCESSOR_STEREO_FORMAT format,
-        WINBOOL left_view_frame0,
-        WINBOOL base_view_frame0,
-        D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE flip_mode,
-        int mono_offset);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     D3D11_VIDEO_PROCESSOR_STEREO_FORMAT format,
+                     WINBOOL left_view_frame0,
+                     WINBOOL base_view_frame0,
+                     D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE flip_mode,
+                     int mono_offset);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamAutoProcessingMode)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamFilter)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_FILTER filter,
-        WINBOOL enable,
-        int level);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_FILTER filter,
+                     WINBOOL enable,
+                     int level);
 
     HRESULT (STDMETHODCALLTYPE *VideoProcessorSetStreamExtension)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        const GUID *guid,
-        UINT data_size,
-        void *data);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     const GUID *guid,
+                     UINT data_size,
+                     void *data);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamFrameFormat)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_FRAME_FORMAT *format);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_FRAME_FORMAT *format);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamColorSpace)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_COLOR_SPACE *color_space);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamOutputRate)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_OUTPUT_RATE *rate,
-        WINBOOL *repeat,
-        DXGI_RATIONAL *custom_rate);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_OUTPUT_RATE *rate,
+                     WINBOOL *repeat,
+                     DXGI_RATIONAL *custom_rate);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamSourceRect)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        RECT *rect);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     RECT *rect);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamDestRect)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        RECT *rect);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     RECT *rect);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamAlpha)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        float *alpha);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     float *alpha);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamPalette)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        UINT entry_count,
-        UINT *entries);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     UINT entry_count,
+                     UINT *entries);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamPixelAspectRatio)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        DXGI_RATIONAL *src_aspect_ratio,
-        DXGI_RATIONAL *dst_aspect_ratio);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     DXGI_RATIONAL *src_aspect_ratio,
+                     DXGI_RATIONAL *dst_aspect_ratio);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamLumaKey)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        float *lower,
-        float *upper);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     float *lower,
+                     float *upper);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamStereoFormat)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled,
-        D3D11_VIDEO_PROCESSOR_STEREO_FORMAT *format,
-        WINBOOL *left_view_frame0,
-        WINBOOL *base_view_frame0,
-        D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE *flip_mode,
-        int *mono_offset);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled,
+                     D3D11_VIDEO_PROCESSOR_STEREO_FORMAT *format,
+                     WINBOOL *left_view_frame0,
+                     WINBOOL *base_view_frame0,
+                     D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE *flip_mode,
+                     int *mono_offset);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamAutoProcessingMode)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enabled);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enabled);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamFilter)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        D3D11_VIDEO_PROCESSOR_FILTER filter,
-        WINBOOL *enabled,
-        int *level);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     D3D11_VIDEO_PROCESSOR_FILTER filter,
+                     WINBOOL *enabled,
+                     int *level);
 
     HRESULT (STDMETHODCALLTYPE *VideoProcessorGetStreamExtension)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        const GUID *guid,
-        UINT data_size,
-        void *data);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     const GUID *guid,
+                     UINT data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *VideoProcessorBlt)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        ID3D11VideoProcessorOutputView *view,
-        UINT frame_idx,
-        UINT stream_count,
-        const D3D11_VIDEO_PROCESSOR_STREAM *streams);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     ID3D11VideoProcessorOutputView *view,
+                     UINT frame_idx,
+                     UINT stream_count,
+                     const D3D11_VIDEO_PROCESSOR_STREAM *streams);
 
     HRESULT (STDMETHODCALLTYPE *NegotiateCryptoSessionKeyExchange)(
-        ID3D11VideoContext *This,
-        ID3D11CryptoSession *session,
-        UINT data_size,
-        void *data);
+                     ID3D11VideoContext *This,
+                     ID3D11CryptoSession *session,
+                     UINT data_size,
+                     void *data);
 
     void (STDMETHODCALLTYPE *EncryptionBlt)(
-        ID3D11VideoContext *This,
-        ID3D11CryptoSession *session,
-        ID3D11Texture2D *src_surface,
-        ID3D11Texture2D *dst_surface,
-        UINT iv_size,
-        void *iv);
+                     ID3D11VideoContext *This,
+                     ID3D11CryptoSession *session,
+                     ID3D11Texture2D *src_surface,
+                     ID3D11Texture2D *dst_surface,
+                     UINT iv_size,
+                     void *iv);
 
     void (STDMETHODCALLTYPE *DecryptionBlt)(
-        ID3D11VideoContext *This,
-        ID3D11CryptoSession *session,
-        ID3D11Texture2D *src_surface,
-        ID3D11Texture2D *dst_surface,
-        D3D11_ENCRYPTED_BLOCK_INFO *block_info,
-        UINT key_size,
-        const void *key,
-        UINT iv_size,
-        void *iv);
+                     ID3D11VideoContext *This,
+                     ID3D11CryptoSession *session,
+                     ID3D11Texture2D *src_surface,
+                     ID3D11Texture2D *dst_surface,
+                     D3D11_ENCRYPTED_BLOCK_INFO *block_info,
+                     UINT key_size,
+                     const void *key,
+                     UINT iv_size,
+                     void *iv);
 
     void (STDMETHODCALLTYPE *StartSessionKeyRefresh)(
-        ID3D11VideoContext *This,
-        ID3D11CryptoSession *session,
-        UINT random_number_size,
-        void *random_number);
+                     ID3D11VideoContext *This,
+                     ID3D11CryptoSession *session,
+                     UINT random_number_size,
+                     void *random_number);
 
     void (STDMETHODCALLTYPE *FinishSessionKeyRefresh)(
-        ID3D11VideoContext *This,
-        ID3D11CryptoSession *session);
+                     ID3D11VideoContext *This,
+                     ID3D11CryptoSession *session);
 
     HRESULT (STDMETHODCALLTYPE *GetEncryptionBltKey)(
-        ID3D11VideoContext *This,
-        ID3D11CryptoSession *session,
-        UINT key_size,
-        void *key);
+                     ID3D11VideoContext *This,
+                     ID3D11CryptoSession *session,
+                     UINT key_size,
+                     void *key);
 
     HRESULT (STDMETHODCALLTYPE *NegotiateAuthenticatedChannelKeyExchange)(
-        ID3D11VideoContext *This,
-        ID3D11AuthenticatedChannel *channel,
-        UINT data_size,
-        void *data);
+                     ID3D11VideoContext *This,
+                     ID3D11AuthenticatedChannel *channel,
+                     UINT data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *QueryAuthenticatedChannel)(
-        ID3D11VideoContext *This,
-        ID3D11AuthenticatedChannel *channel,
-        UINT input_size,
-        const void *input,
-        UINT output_size,
-        void *output);
+                     ID3D11VideoContext *This,
+                     ID3D11AuthenticatedChannel *channel,
+                     UINT input_size,
+                     const void *input,
+                     UINT output_size,
+                     void *output);
 
     HRESULT (STDMETHODCALLTYPE *ConfigureAuthenticatedChannel)(
-        ID3D11VideoContext *This,
-        ID3D11AuthenticatedChannel *channel,
-        UINT input_size,
-        const void *input,
-        D3D11_AUTHENTICATED_CONFIGURE_OUTPUT *output);
+                     ID3D11VideoContext *This,
+                     ID3D11AuthenticatedChannel *channel,
+                     UINT input_size,
+                     const void *input,
+                     D3D11_AUTHENTICATED_CONFIGURE_OUTPUT *output);
 
     void (STDMETHODCALLTYPE *VideoProcessorSetStreamRotation)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL enable,
-        D3D11_VIDEO_PROCESSOR_ROTATION rotation);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL enable,
+                     D3D11_VIDEO_PROCESSOR_ROTATION rotation);
 
     void (STDMETHODCALLTYPE *VideoProcessorGetStreamRotation)(
-        ID3D11VideoContext *This,
-        ID3D11VideoProcessor *processor,
-        UINT stream_idx,
-        WINBOOL *enable,
-        D3D11_VIDEO_PROCESSOR_ROTATION *rotation);
+                     ID3D11VideoContext *This,
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_idx,
+                     WINBOOL *enable,
+                     D3D11_VIDEO_PROCESSOR_ROTATION *rotation);
 
     END_INTERFACE
 } ID3D11VideoContextVtbl;
@@ -10278,198 +10278,198 @@ MIDL_INTERFACE("db6f6ddb-ac77-4e88-8253-819df9bbf140")
 ID3D11Device : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateBuffer(
-        const D3D11_BUFFER_DESC *pDesc,
-        const D3D11_SUBRESOURCE_DATA *pInitialData,
-        ID3D11Buffer **ppBuffer) = 0;
+                     const D3D11_BUFFER_DESC *pDesc,
+                     const D3D11_SUBRESOURCE_DATA *pInitialData,
+                     ID3D11Buffer **ppBuffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTexture1D(
-        const D3D11_TEXTURE1D_DESC *pDesc,
-        const D3D11_SUBRESOURCE_DATA *pInitialData,
-        ID3D11Texture1D **ppTexture1D) = 0;
+                     const D3D11_TEXTURE1D_DESC *pDesc,
+                     const D3D11_SUBRESOURCE_DATA *pInitialData,
+                     ID3D11Texture1D **ppTexture1D) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTexture2D(
-        const D3D11_TEXTURE2D_DESC *pDesc,
-        const D3D11_SUBRESOURCE_DATA *pInitialData,
-        ID3D11Texture2D **ppTexture2D) = 0;
+                     const D3D11_TEXTURE2D_DESC *pDesc,
+                     const D3D11_SUBRESOURCE_DATA *pInitialData,
+                     ID3D11Texture2D **ppTexture2D) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTexture3D(
-        const D3D11_TEXTURE3D_DESC *pDesc,
-        const D3D11_SUBRESOURCE_DATA *pInitialData,
-        ID3D11Texture3D **ppTexture3D) = 0;
+                     const D3D11_TEXTURE3D_DESC *pDesc,
+                     const D3D11_SUBRESOURCE_DATA *pInitialData,
+                     ID3D11Texture3D **ppTexture3D) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateShaderResourceView(
-        ID3D11Resource *pResource,
-        const D3D11_SHADER_RESOURCE_VIEW_DESC *pDesc,
-        ID3D11ShaderResourceView **ppSRView) = 0;
+                     ID3D11Resource *pResource,
+                     const D3D11_SHADER_RESOURCE_VIEW_DESC *pDesc,
+                     ID3D11ShaderResourceView **ppSRView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateUnorderedAccessView(
-        ID3D11Resource *pResource,
-        const D3D11_UNORDERED_ACCESS_VIEW_DESC *pDesc,
-        ID3D11UnorderedAccessView **ppUAView) = 0;
+                     ID3D11Resource *pResource,
+                     const D3D11_UNORDERED_ACCESS_VIEW_DESC *pDesc,
+                     ID3D11UnorderedAccessView **ppUAView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRenderTargetView(
-        ID3D11Resource *pResource,
-        const D3D11_RENDER_TARGET_VIEW_DESC *pDesc,
-        ID3D11RenderTargetView **ppRTView) = 0;
+                     ID3D11Resource *pResource,
+                     const D3D11_RENDER_TARGET_VIEW_DESC *pDesc,
+                     ID3D11RenderTargetView **ppRTView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDepthStencilView(
-        ID3D11Resource *pResource,
-        const D3D11_DEPTH_STENCIL_VIEW_DESC *pDesc,
-        ID3D11DepthStencilView **ppDepthStencilView) = 0;
+                     ID3D11Resource *pResource,
+                     const D3D11_DEPTH_STENCIL_VIEW_DESC *pDesc,
+                     ID3D11DepthStencilView **ppDepthStencilView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInputLayout(
-        const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs,
-        UINT NumElements,
-        const void *pShaderBytecodeWithInputSignature,
-        SIZE_T BytecodeLength,
-        ID3D11InputLayout **ppInputLayout) = 0;
+                     const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs,
+                     UINT NumElements,
+                     const void *pShaderBytecodeWithInputSignature,
+                     SIZE_T BytecodeLength,
+                     ID3D11InputLayout **ppInputLayout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateVertexShader(
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11VertexShader **ppVertexShader) = 0;
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11VertexShader **ppVertexShader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGeometryShader(
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11GeometryShader **ppGeometryShader) = 0;
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11GeometryShader **ppGeometryShader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGeometryShaderWithStreamOutput(
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        const D3D11_SO_DECLARATION_ENTRY *pSODeclaration,
-        UINT NumEntries,
-        const UINT *pBufferStrides,
-        UINT NumStrides,
-        UINT RasterizedStream,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11GeometryShader **ppGeometryShader) = 0;
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     const D3D11_SO_DECLARATION_ENTRY *pSODeclaration,
+                     UINT NumEntries,
+                     const UINT *pBufferStrides,
+                     UINT NumStrides,
+                     UINT RasterizedStream,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11GeometryShader **ppGeometryShader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePixelShader(
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11PixelShader **ppPixelShader) = 0;
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11PixelShader **ppPixelShader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateHullShader(
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11HullShader **ppHullShader) = 0;
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11HullShader **ppHullShader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDomainShader(
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11DomainShader **ppDomainShader) = 0;
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11DomainShader **ppDomainShader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateComputeShader(
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11ComputeShader **ppComputeShader) = 0;
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11ComputeShader **ppComputeShader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateClassLinkage(
-        ID3D11ClassLinkage **ppLinkage) = 0;
+                     ID3D11ClassLinkage **ppLinkage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBlendState(
-        const D3D11_BLEND_DESC *pBlendStateDesc,
-        ID3D11BlendState **ppBlendState) = 0;
+                     const D3D11_BLEND_DESC *pBlendStateDesc,
+                     ID3D11BlendState **ppBlendState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDepthStencilState(
-        const D3D11_DEPTH_STENCIL_DESC *pDepthStencilDesc,
-        ID3D11DepthStencilState **ppDepthStencilState) = 0;
+                     const D3D11_DEPTH_STENCIL_DESC *pDepthStencilDesc,
+                     ID3D11DepthStencilState **ppDepthStencilState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRasterizerState(
-        const D3D11_RASTERIZER_DESC *pRasterizerDesc,
-        ID3D11RasterizerState **ppRasterizerState) = 0;
+                     const D3D11_RASTERIZER_DESC *pRasterizerDesc,
+                     ID3D11RasterizerState **ppRasterizerState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSamplerState(
-        const D3D11_SAMPLER_DESC *pSamplerDesc,
-        ID3D11SamplerState **ppSamplerState) = 0;
+                     const D3D11_SAMPLER_DESC *pSamplerDesc,
+                     ID3D11SamplerState **ppSamplerState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateQuery(
-        const D3D11_QUERY_DESC *pQueryDesc,
-        ID3D11Query **ppQuery) = 0;
+                     const D3D11_QUERY_DESC *pQueryDesc,
+                     ID3D11Query **ppQuery) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePredicate(
-        const D3D11_QUERY_DESC *pPredicateDesc,
-        ID3D11Predicate **ppPredicate) = 0;
+                     const D3D11_QUERY_DESC *pPredicateDesc,
+                     ID3D11Predicate **ppPredicate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCounter(
-        const D3D11_COUNTER_DESC *pCounterDesc,
-        ID3D11Counter **ppCounter) = 0;
+                     const D3D11_COUNTER_DESC *pCounterDesc,
+                     ID3D11Counter **ppCounter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDeferredContext(
-        UINT ContextFlags,
-        ID3D11DeviceContext **ppDeferredContext) = 0;
+                     UINT ContextFlags,
+                     ID3D11DeviceContext **ppDeferredContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenSharedResource(
-        HANDLE hResource,
-        REFIID ReturnedInterface,
-        void **ppResource) = 0;
+                     HANDLE hResource,
+                     REFIID ReturnedInterface,
+                     void **ppResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckFormatSupport(
-        DXGI_FORMAT Format,
-        UINT *pFormatSupport) = 0;
+                     DXGI_FORMAT Format,
+                     UINT *pFormatSupport) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckMultisampleQualityLevels(
-        DXGI_FORMAT Format,
-        UINT SampleCount,
-        UINT *pNumQualityLevels) = 0;
+                     DXGI_FORMAT Format,
+                     UINT SampleCount,
+                     UINT *pNumQualityLevels) = 0;
 
     virtual void STDMETHODCALLTYPE CheckCounterInfo(
-        D3D11_COUNTER_INFO *pCounterInfo) = 0;
+                     D3D11_COUNTER_INFO *pCounterInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckCounter(
-        const D3D11_COUNTER_DESC *pDesc,
-        D3D11_COUNTER_TYPE *pType,
-        UINT *pActiveCounters,
-        LPSTR szName,
-        UINT *pNameLength,
-        LPSTR szUnits,
-        UINT *pUnitsLength,
-        LPSTR szDescription,
-        UINT *pDescriptionLength) = 0;
+                     const D3D11_COUNTER_DESC *pDesc,
+                     D3D11_COUNTER_TYPE *pType,
+                     UINT *pActiveCounters,
+                     LPSTR szName,
+                     UINT *pNameLength,
+                     LPSTR szUnits,
+                     UINT *pUnitsLength,
+                     LPSTR szDescription,
+                     UINT *pDescriptionLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckFeatureSupport(
-        D3D11_FEATURE Feature,
-        void *pFeatureSupportData,
-        UINT FeatureSupportDataSize) = 0;
+                     D3D11_FEATURE Feature,
+                     void *pFeatureSupportData,
+                     UINT FeatureSupportDataSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrivateData(
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData) = 0;
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateData(
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData) = 0;
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateDataInterface(
-        REFGUID guid,
-        const IUnknown *pData) = 0;
+                     REFGUID guid,
+                     const IUnknown *pData) = 0;
 
     virtual D3D_FEATURE_LEVEL STDMETHODCALLTYPE GetFeatureLevel(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetCreationFlags(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceRemovedReason(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE GetImmediateContext(
-        ID3D11DeviceContext **ppImmediateContext) = 0;
+                     ID3D11DeviceContext **ppImmediateContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetExceptionMode(
-        UINT RaiseFlags) = 0;
+                     UINT RaiseFlags) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetExceptionMode(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10481,246 +10481,246 @@ typedef struct ID3D11DeviceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D11Device *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D11Device *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D11Device *This);
+                     ID3D11Device *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D11Device *This);
+                     ID3D11Device *This);
 
     /*** ID3D11Device methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateBuffer)(
-        ID3D11Device *This,
-        const D3D11_BUFFER_DESC *pDesc,
-        const D3D11_SUBRESOURCE_DATA *pInitialData,
-        ID3D11Buffer **ppBuffer);
+                     ID3D11Device *This,
+                     const D3D11_BUFFER_DESC *pDesc,
+                     const D3D11_SUBRESOURCE_DATA *pInitialData,
+                     ID3D11Buffer **ppBuffer);
 
     HRESULT (STDMETHODCALLTYPE *CreateTexture1D)(
-        ID3D11Device *This,
-        const D3D11_TEXTURE1D_DESC *pDesc,
-        const D3D11_SUBRESOURCE_DATA *pInitialData,
-        ID3D11Texture1D **ppTexture1D);
+                     ID3D11Device *This,
+                     const D3D11_TEXTURE1D_DESC *pDesc,
+                     const D3D11_SUBRESOURCE_DATA *pInitialData,
+                     ID3D11Texture1D **ppTexture1D);
 
     HRESULT (STDMETHODCALLTYPE *CreateTexture2D)(
-        ID3D11Device *This,
-        const D3D11_TEXTURE2D_DESC *pDesc,
-        const D3D11_SUBRESOURCE_DATA *pInitialData,
-        ID3D11Texture2D **ppTexture2D);
+                     ID3D11Device *This,
+                     const D3D11_TEXTURE2D_DESC *pDesc,
+                     const D3D11_SUBRESOURCE_DATA *pInitialData,
+                     ID3D11Texture2D **ppTexture2D);
 
     HRESULT (STDMETHODCALLTYPE *CreateTexture3D)(
-        ID3D11Device *This,
-        const D3D11_TEXTURE3D_DESC *pDesc,
-        const D3D11_SUBRESOURCE_DATA *pInitialData,
-        ID3D11Texture3D **ppTexture3D);
+                     ID3D11Device *This,
+                     const D3D11_TEXTURE3D_DESC *pDesc,
+                     const D3D11_SUBRESOURCE_DATA *pInitialData,
+                     ID3D11Texture3D **ppTexture3D);
 
     HRESULT (STDMETHODCALLTYPE *CreateShaderResourceView)(
-        ID3D11Device *This,
-        ID3D11Resource *pResource,
-        const D3D11_SHADER_RESOURCE_VIEW_DESC *pDesc,
-        ID3D11ShaderResourceView **ppSRView);
+                     ID3D11Device *This,
+                     ID3D11Resource *pResource,
+                     const D3D11_SHADER_RESOURCE_VIEW_DESC *pDesc,
+                     ID3D11ShaderResourceView **ppSRView);
 
     HRESULT (STDMETHODCALLTYPE *CreateUnorderedAccessView)(
-        ID3D11Device *This,
-        ID3D11Resource *pResource,
-        const D3D11_UNORDERED_ACCESS_VIEW_DESC *pDesc,
-        ID3D11UnorderedAccessView **ppUAView);
+                     ID3D11Device *This,
+                     ID3D11Resource *pResource,
+                     const D3D11_UNORDERED_ACCESS_VIEW_DESC *pDesc,
+                     ID3D11UnorderedAccessView **ppUAView);
 
     HRESULT (STDMETHODCALLTYPE *CreateRenderTargetView)(
-        ID3D11Device *This,
-        ID3D11Resource *pResource,
-        const D3D11_RENDER_TARGET_VIEW_DESC *pDesc,
-        ID3D11RenderTargetView **ppRTView);
+                     ID3D11Device *This,
+                     ID3D11Resource *pResource,
+                     const D3D11_RENDER_TARGET_VIEW_DESC *pDesc,
+                     ID3D11RenderTargetView **ppRTView);
 
     HRESULT (STDMETHODCALLTYPE *CreateDepthStencilView)(
-        ID3D11Device *This,
-        ID3D11Resource *pResource,
-        const D3D11_DEPTH_STENCIL_VIEW_DESC *pDesc,
-        ID3D11DepthStencilView **ppDepthStencilView);
+                     ID3D11Device *This,
+                     ID3D11Resource *pResource,
+                     const D3D11_DEPTH_STENCIL_VIEW_DESC *pDesc,
+                     ID3D11DepthStencilView **ppDepthStencilView);
 
     HRESULT (STDMETHODCALLTYPE *CreateInputLayout)(
-        ID3D11Device *This,
-        const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs,
-        UINT NumElements,
-        const void *pShaderBytecodeWithInputSignature,
-        SIZE_T BytecodeLength,
-        ID3D11InputLayout **ppInputLayout);
+                     ID3D11Device *This,
+                     const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs,
+                     UINT NumElements,
+                     const void *pShaderBytecodeWithInputSignature,
+                     SIZE_T BytecodeLength,
+                     ID3D11InputLayout **ppInputLayout);
 
     HRESULT (STDMETHODCALLTYPE *CreateVertexShader)(
-        ID3D11Device *This,
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11VertexShader **ppVertexShader);
+                     ID3D11Device *This,
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11VertexShader **ppVertexShader);
 
     HRESULT (STDMETHODCALLTYPE *CreateGeometryShader)(
-        ID3D11Device *This,
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11GeometryShader **ppGeometryShader);
+                     ID3D11Device *This,
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11GeometryShader **ppGeometryShader);
 
     HRESULT (STDMETHODCALLTYPE *CreateGeometryShaderWithStreamOutput)(
-        ID3D11Device *This,
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        const D3D11_SO_DECLARATION_ENTRY *pSODeclaration,
-        UINT NumEntries,
-        const UINT *pBufferStrides,
-        UINT NumStrides,
-        UINT RasterizedStream,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11GeometryShader **ppGeometryShader);
+                     ID3D11Device *This,
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     const D3D11_SO_DECLARATION_ENTRY *pSODeclaration,
+                     UINT NumEntries,
+                     const UINT *pBufferStrides,
+                     UINT NumStrides,
+                     UINT RasterizedStream,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11GeometryShader **ppGeometryShader);
 
     HRESULT (STDMETHODCALLTYPE *CreatePixelShader)(
-        ID3D11Device *This,
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11PixelShader **ppPixelShader);
+                     ID3D11Device *This,
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11PixelShader **ppPixelShader);
 
     HRESULT (STDMETHODCALLTYPE *CreateHullShader)(
-        ID3D11Device *This,
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11HullShader **ppHullShader);
+                     ID3D11Device *This,
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11HullShader **ppHullShader);
 
     HRESULT (STDMETHODCALLTYPE *CreateDomainShader)(
-        ID3D11Device *This,
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11DomainShader **ppDomainShader);
+                     ID3D11Device *This,
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11DomainShader **ppDomainShader);
 
     HRESULT (STDMETHODCALLTYPE *CreateComputeShader)(
-        ID3D11Device *This,
-        const void *pShaderBytecode,
-        SIZE_T BytecodeLength,
-        ID3D11ClassLinkage *pClassLinkage,
-        ID3D11ComputeShader **ppComputeShader);
+                     ID3D11Device *This,
+                     const void *pShaderBytecode,
+                     SIZE_T BytecodeLength,
+                     ID3D11ClassLinkage *pClassLinkage,
+                     ID3D11ComputeShader **ppComputeShader);
 
     HRESULT (STDMETHODCALLTYPE *CreateClassLinkage)(
-        ID3D11Device *This,
-        ID3D11ClassLinkage **ppLinkage);
+                     ID3D11Device *This,
+                     ID3D11ClassLinkage **ppLinkage);
 
     HRESULT (STDMETHODCALLTYPE *CreateBlendState)(
-        ID3D11Device *This,
-        const D3D11_BLEND_DESC *pBlendStateDesc,
-        ID3D11BlendState **ppBlendState);
+                     ID3D11Device *This,
+                     const D3D11_BLEND_DESC *pBlendStateDesc,
+                     ID3D11BlendState **ppBlendState);
 
     HRESULT (STDMETHODCALLTYPE *CreateDepthStencilState)(
-        ID3D11Device *This,
-        const D3D11_DEPTH_STENCIL_DESC *pDepthStencilDesc,
-        ID3D11DepthStencilState **ppDepthStencilState);
+                     ID3D11Device *This,
+                     const D3D11_DEPTH_STENCIL_DESC *pDepthStencilDesc,
+                     ID3D11DepthStencilState **ppDepthStencilState);
 
     HRESULT (STDMETHODCALLTYPE *CreateRasterizerState)(
-        ID3D11Device *This,
-        const D3D11_RASTERIZER_DESC *pRasterizerDesc,
-        ID3D11RasterizerState **ppRasterizerState);
+                     ID3D11Device *This,
+                     const D3D11_RASTERIZER_DESC *pRasterizerDesc,
+                     ID3D11RasterizerState **ppRasterizerState);
 
     HRESULT (STDMETHODCALLTYPE *CreateSamplerState)(
-        ID3D11Device *This,
-        const D3D11_SAMPLER_DESC *pSamplerDesc,
-        ID3D11SamplerState **ppSamplerState);
+                     ID3D11Device *This,
+                     const D3D11_SAMPLER_DESC *pSamplerDesc,
+                     ID3D11SamplerState **ppSamplerState);
 
     HRESULT (STDMETHODCALLTYPE *CreateQuery)(
-        ID3D11Device *This,
-        const D3D11_QUERY_DESC *pQueryDesc,
-        ID3D11Query **ppQuery);
+                     ID3D11Device *This,
+                     const D3D11_QUERY_DESC *pQueryDesc,
+                     ID3D11Query **ppQuery);
 
     HRESULT (STDMETHODCALLTYPE *CreatePredicate)(
-        ID3D11Device *This,
-        const D3D11_QUERY_DESC *pPredicateDesc,
-        ID3D11Predicate **ppPredicate);
+                     ID3D11Device *This,
+                     const D3D11_QUERY_DESC *pPredicateDesc,
+                     ID3D11Predicate **ppPredicate);
 
     HRESULT (STDMETHODCALLTYPE *CreateCounter)(
-        ID3D11Device *This,
-        const D3D11_COUNTER_DESC *pCounterDesc,
-        ID3D11Counter **ppCounter);
+                     ID3D11Device *This,
+                     const D3D11_COUNTER_DESC *pCounterDesc,
+                     ID3D11Counter **ppCounter);
 
     HRESULT (STDMETHODCALLTYPE *CreateDeferredContext)(
-        ID3D11Device *This,
-        UINT ContextFlags,
-        ID3D11DeviceContext **ppDeferredContext);
+                     ID3D11Device *This,
+                     UINT ContextFlags,
+                     ID3D11DeviceContext **ppDeferredContext);
 
     HRESULT (STDMETHODCALLTYPE *OpenSharedResource)(
-        ID3D11Device *This,
-        HANDLE hResource,
-        REFIID ReturnedInterface,
-        void **ppResource);
+                     ID3D11Device *This,
+                     HANDLE hResource,
+                     REFIID ReturnedInterface,
+                     void **ppResource);
 
     HRESULT (STDMETHODCALLTYPE *CheckFormatSupport)(
-        ID3D11Device *This,
-        DXGI_FORMAT Format,
-        UINT *pFormatSupport);
+                     ID3D11Device *This,
+                     DXGI_FORMAT Format,
+                     UINT *pFormatSupport);
 
     HRESULT (STDMETHODCALLTYPE *CheckMultisampleQualityLevels)(
-        ID3D11Device *This,
-        DXGI_FORMAT Format,
-        UINT SampleCount,
-        UINT *pNumQualityLevels);
+                     ID3D11Device *This,
+                     DXGI_FORMAT Format,
+                     UINT SampleCount,
+                     UINT *pNumQualityLevels);
 
     void (STDMETHODCALLTYPE *CheckCounterInfo)(
-        ID3D11Device *This,
-        D3D11_COUNTER_INFO *pCounterInfo);
+                     ID3D11Device *This,
+                     D3D11_COUNTER_INFO *pCounterInfo);
 
     HRESULT (STDMETHODCALLTYPE *CheckCounter)(
-        ID3D11Device *This,
-        const D3D11_COUNTER_DESC *pDesc,
-        D3D11_COUNTER_TYPE *pType,
-        UINT *pActiveCounters,
-        LPSTR szName,
-        UINT *pNameLength,
-        LPSTR szUnits,
-        UINT *pUnitsLength,
-        LPSTR szDescription,
-        UINT *pDescriptionLength);
+                     ID3D11Device *This,
+                     const D3D11_COUNTER_DESC *pDesc,
+                     D3D11_COUNTER_TYPE *pType,
+                     UINT *pActiveCounters,
+                     LPSTR szName,
+                     UINT *pNameLength,
+                     LPSTR szUnits,
+                     UINT *pUnitsLength,
+                     LPSTR szDescription,
+                     UINT *pDescriptionLength);
 
     HRESULT (STDMETHODCALLTYPE *CheckFeatureSupport)(
-        ID3D11Device *This,
-        D3D11_FEATURE Feature,
-        void *pFeatureSupportData,
-        UINT FeatureSupportDataSize);
+                     ID3D11Device *This,
+                     D3D11_FEATURE Feature,
+                     void *pFeatureSupportData,
+                     UINT FeatureSupportDataSize);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D11Device *This,
-        REFGUID guid,
-        UINT *pDataSize,
-        void *pData);
+                     ID3D11Device *This,
+                     REFGUID guid,
+                     UINT *pDataSize,
+                     void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D11Device *This,
-        REFGUID guid,
-        UINT DataSize,
-        const void *pData);
+                     ID3D11Device *This,
+                     REFGUID guid,
+                     UINT DataSize,
+                     const void *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D11Device *This,
-        REFGUID guid,
-        const IUnknown *pData);
+                     ID3D11Device *This,
+                     REFGUID guid,
+                     const IUnknown *pData);
 
     D3D_FEATURE_LEVEL (STDMETHODCALLTYPE *GetFeatureLevel)(
-        ID3D11Device *This);
+                     ID3D11Device *This);
 
     UINT (STDMETHODCALLTYPE *GetCreationFlags)(
-        ID3D11Device *This);
+                     ID3D11Device *This);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceRemovedReason)(
-        ID3D11Device *This);
+                     ID3D11Device *This);
 
     void (STDMETHODCALLTYPE *GetImmediateContext)(
-        ID3D11Device *This,
-        ID3D11DeviceContext **ppImmediateContext);
+                     ID3D11Device *This,
+                     ID3D11DeviceContext **ppImmediateContext);
 
     HRESULT (STDMETHODCALLTYPE *SetExceptionMode)(
-        ID3D11Device *This,
-        UINT RaiseFlags);
+                     ID3D11Device *This,
+                     UINT RaiseFlags);
 
     UINT (STDMETHODCALLTYPE *GetExceptionMode)(
-        ID3D11Device *This);
+                     ID3D11Device *This);
 
     END_INTERFACE
 } ID3D11DeviceVtbl;

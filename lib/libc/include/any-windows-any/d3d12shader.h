@@ -252,37 +252,37 @@ ID3D12ShaderReflectionType
     BEGIN_INTERFACE
 
     virtual HRESULT STDMETHODCALLTYPE GetDesc(
-        D3D12_SHADER_TYPE_DESC *desc) = 0;
+                     D3D12_SHADER_TYPE_DESC *desc) = 0;
 
     virtual ID3D12ShaderReflectionType * STDMETHODCALLTYPE GetMemberTypeByIndex(
-        UINT index) = 0;
+                     UINT index) = 0;
 
     virtual ID3D12ShaderReflectionType * STDMETHODCALLTYPE GetMemberTypeByName(
-        const char *name) = 0;
+                     const char *name) = 0;
 
     virtual const char * STDMETHODCALLTYPE GetMemberTypeName(
-        UINT index) = 0;
+                     UINT index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEqual(
-        ID3D12ShaderReflectionType *type) = 0;
+                     ID3D12ShaderReflectionType *type) = 0;
 
     virtual ID3D12ShaderReflectionType * STDMETHODCALLTYPE GetSubType(
-        ) = 0;
+                     ) = 0;
 
     virtual ID3D12ShaderReflectionType * STDMETHODCALLTYPE GetBaseClass(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetNumInterfaces(
-        ) = 0;
+                     ) = 0;
 
     virtual ID3D12ShaderReflectionType * STDMETHODCALLTYPE GetInterfaceByIndex(
-        UINT index) = 0;
+                     UINT index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsOfType(
-        ID3D12ShaderReflectionType *type) = 0;
+                     ID3D12ShaderReflectionType *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImplementsInterface(
-        ID3D12ShaderReflectionType *base) = 0;
+                     ID3D12ShaderReflectionType *base) = 0;
 
     END_INTERFACE
 
@@ -296,45 +296,45 @@ typedef struct ID3D12ShaderReflectionTypeVtbl {
 
     /*** ID3D12ShaderReflectionType methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12ShaderReflectionType *This,
-        D3D12_SHADER_TYPE_DESC *desc);
+                     ID3D12ShaderReflectionType *This,
+                     D3D12_SHADER_TYPE_DESC *desc);
 
     ID3D12ShaderReflectionType * (STDMETHODCALLTYPE *GetMemberTypeByIndex)(
-        ID3D12ShaderReflectionType *This,
-        UINT index);
+                     ID3D12ShaderReflectionType *This,
+                     UINT index);
 
     ID3D12ShaderReflectionType * (STDMETHODCALLTYPE *GetMemberTypeByName)(
-        ID3D12ShaderReflectionType *This,
-        const char *name);
+                     ID3D12ShaderReflectionType *This,
+                     const char *name);
 
     const char * (STDMETHODCALLTYPE *GetMemberTypeName)(
-        ID3D12ShaderReflectionType *This,
-        UINT index);
+                     ID3D12ShaderReflectionType *This,
+                     UINT index);
 
     HRESULT (STDMETHODCALLTYPE *IsEqual)(
-        ID3D12ShaderReflectionType *This,
-        ID3D12ShaderReflectionType *type);
+                     ID3D12ShaderReflectionType *This,
+                     ID3D12ShaderReflectionType *type);
 
     ID3D12ShaderReflectionType * (STDMETHODCALLTYPE *GetSubType)(
-        ID3D12ShaderReflectionType *This);
+                     ID3D12ShaderReflectionType *This);
 
     ID3D12ShaderReflectionType * (STDMETHODCALLTYPE *GetBaseClass)(
-        ID3D12ShaderReflectionType *This);
+                     ID3D12ShaderReflectionType *This);
 
     UINT (STDMETHODCALLTYPE *GetNumInterfaces)(
-        ID3D12ShaderReflectionType *This);
+                     ID3D12ShaderReflectionType *This);
 
     ID3D12ShaderReflectionType * (STDMETHODCALLTYPE *GetInterfaceByIndex)(
-        ID3D12ShaderReflectionType *This,
-        UINT index);
+                     ID3D12ShaderReflectionType *This,
+                     UINT index);
 
     HRESULT (STDMETHODCALLTYPE *IsOfType)(
-        ID3D12ShaderReflectionType *This,
-        ID3D12ShaderReflectionType *type);
+                     ID3D12ShaderReflectionType *This,
+                     ID3D12ShaderReflectionType *type);
 
     HRESULT (STDMETHODCALLTYPE *ImplementsInterface)(
-        ID3D12ShaderReflectionType *This,
-        ID3D12ShaderReflectionType *base);
+                     ID3D12ShaderReflectionType *This,
+                     ID3D12ShaderReflectionType *base);
 
     END_INTERFACE
 } ID3D12ShaderReflectionTypeVtbl;
@@ -415,16 +415,16 @@ ID3D12ShaderReflectionVariable
     BEGIN_INTERFACE
 
     virtual HRESULT STDMETHODCALLTYPE GetDesc(
-        D3D12_SHADER_VARIABLE_DESC *desc) = 0;
+                     D3D12_SHADER_VARIABLE_DESC *desc) = 0;
 
     virtual ID3D12ShaderReflectionType * STDMETHODCALLTYPE GetType(
-        ) = 0;
+                     ) = 0;
 
     virtual ID3D12ShaderReflectionConstantBuffer * STDMETHODCALLTYPE GetBuffer(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetInterfaceSlot(
-        UINT index) = 0;
+                     UINT index) = 0;
 
     END_INTERFACE
 
@@ -438,18 +438,18 @@ typedef struct ID3D12ShaderReflectionVariableVtbl {
 
     /*** ID3D12ShaderReflectionVariable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12ShaderReflectionVariable *This,
-        D3D12_SHADER_VARIABLE_DESC *desc);
+                     ID3D12ShaderReflectionVariable *This,
+                     D3D12_SHADER_VARIABLE_DESC *desc);
 
     ID3D12ShaderReflectionType * (STDMETHODCALLTYPE *GetType)(
-        ID3D12ShaderReflectionVariable *This);
+                     ID3D12ShaderReflectionVariable *This);
 
     ID3D12ShaderReflectionConstantBuffer * (STDMETHODCALLTYPE *GetBuffer)(
-        ID3D12ShaderReflectionVariable *This);
+                     ID3D12ShaderReflectionVariable *This);
 
     UINT (STDMETHODCALLTYPE *GetInterfaceSlot)(
-        ID3D12ShaderReflectionVariable *This,
-        UINT index);
+                     ID3D12ShaderReflectionVariable *This,
+                     UINT index);
 
     END_INTERFACE
 } ID3D12ShaderReflectionVariableVtbl;
@@ -502,13 +502,13 @@ ID3D12ShaderReflectionConstantBuffer
     BEGIN_INTERFACE
 
     virtual HRESULT STDMETHODCALLTYPE GetDesc(
-        D3D12_SHADER_BUFFER_DESC *desc) = 0;
+                     D3D12_SHADER_BUFFER_DESC *desc) = 0;
 
     virtual ID3D12ShaderReflectionVariable * STDMETHODCALLTYPE GetVariableByIndex(
-        UINT index) = 0;
+                     UINT index) = 0;
 
     virtual ID3D12ShaderReflectionVariable * STDMETHODCALLTYPE GetVariableByName(
-        const char *name) = 0;
+                     const char *name) = 0;
 
     END_INTERFACE
 
@@ -522,16 +522,16 @@ typedef struct ID3D12ShaderReflectionConstantBufferVtbl {
 
     /*** ID3D12ShaderReflectionConstantBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12ShaderReflectionConstantBuffer *This,
-        D3D12_SHADER_BUFFER_DESC *desc);
+                     ID3D12ShaderReflectionConstantBuffer *This,
+                     D3D12_SHADER_BUFFER_DESC *desc);
 
     ID3D12ShaderReflectionVariable * (STDMETHODCALLTYPE *GetVariableByIndex)(
-        ID3D12ShaderReflectionConstantBuffer *This,
-        UINT index);
+                     ID3D12ShaderReflectionConstantBuffer *This,
+                     UINT index);
 
     ID3D12ShaderReflectionVariable * (STDMETHODCALLTYPE *GetVariableByName)(
-        ID3D12ShaderReflectionConstantBuffer *This,
-        const char *name);
+                     ID3D12ShaderReflectionConstantBuffer *This,
+                     const char *name);
 
     END_INTERFACE
 } ID3D12ShaderReflectionConstantBufferVtbl;
@@ -577,68 +577,68 @@ MIDL_INTERFACE("5a58797d-a72c-478d-8ba2-efc6b0efe88e")
 ID3D12ShaderReflection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDesc(
-        D3D12_SHADER_DESC *desc) = 0;
+                     D3D12_SHADER_DESC *desc) = 0;
 
     virtual ID3D12ShaderReflectionConstantBuffer * STDMETHODCALLTYPE GetConstantBufferByIndex(
-        UINT index) = 0;
+                     UINT index) = 0;
 
     virtual ID3D12ShaderReflectionConstantBuffer * STDMETHODCALLTYPE GetConstantBufferByName(
-        const char *name) = 0;
+                     const char *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResourceBindingDesc(
-        UINT index,
-        D3D12_SHADER_INPUT_BIND_DESC *desc) = 0;
+                     UINT index,
+                     D3D12_SHADER_INPUT_BIND_DESC *desc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputParameterDesc(
-        UINT index,
-        D3D12_SIGNATURE_PARAMETER_DESC *desc) = 0;
+                     UINT index,
+                     D3D12_SIGNATURE_PARAMETER_DESC *desc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputParameterDesc(
-        UINT index,
-        D3D12_SIGNATURE_PARAMETER_DESC *desc) = 0;
+                     UINT index,
+                     D3D12_SIGNATURE_PARAMETER_DESC *desc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPatchConstantParameterDesc(
-        UINT index,
-        D3D12_SIGNATURE_PARAMETER_DESC *desc) = 0;
+                     UINT index,
+                     D3D12_SIGNATURE_PARAMETER_DESC *desc) = 0;
 
     virtual ID3D12ShaderReflectionVariable * STDMETHODCALLTYPE GetVariableByName(
-        const char *name) = 0;
+                     const char *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResourceBindingDescByName(
-        const char *name,
-        D3D12_SHADER_INPUT_BIND_DESC *desc) = 0;
+                     const char *name,
+                     D3D12_SHADER_INPUT_BIND_DESC *desc) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetMovInstructionCount(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetMovcInstructionCount(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetConversionInstructionCount(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetBitwiseInstructionCount(
-        ) = 0;
+                     ) = 0;
 
     virtual D3D_PRIMITIVE STDMETHODCALLTYPE GetGSInputPrimitive(
-        ) = 0;
+                     ) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE IsSampleFrequencyShader(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetNumInterfaceSlots(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMinFeatureLevel(
-        D3D_FEATURE_LEVEL *level) = 0;
+                     D3D_FEATURE_LEVEL *level) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetThreadGroupSize(
-        UINT *sizex,
-        UINT *sizey,
-        UINT *sizez) = 0;
+                     UINT *sizex,
+                     UINT *sizey,
+                     UINT *sizez) = 0;
 
     virtual UINT64 STDMETHODCALLTYPE GetRequiresFlags(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -650,91 +650,91 @@ typedef struct ID3D12ShaderReflectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12ShaderReflection *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12ShaderReflection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     /*** ID3D12ShaderReflection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12ShaderReflection *This,
-        D3D12_SHADER_DESC *desc);
+                     ID3D12ShaderReflection *This,
+                     D3D12_SHADER_DESC *desc);
 
     ID3D12ShaderReflectionConstantBuffer * (STDMETHODCALLTYPE *GetConstantBufferByIndex)(
-        ID3D12ShaderReflection *This,
-        UINT index);
+                     ID3D12ShaderReflection *This,
+                     UINT index);
 
     ID3D12ShaderReflectionConstantBuffer * (STDMETHODCALLTYPE *GetConstantBufferByName)(
-        ID3D12ShaderReflection *This,
-        const char *name);
+                     ID3D12ShaderReflection *This,
+                     const char *name);
 
     HRESULT (STDMETHODCALLTYPE *GetResourceBindingDesc)(
-        ID3D12ShaderReflection *This,
-        UINT index,
-        D3D12_SHADER_INPUT_BIND_DESC *desc);
+                     ID3D12ShaderReflection *This,
+                     UINT index,
+                     D3D12_SHADER_INPUT_BIND_DESC *desc);
 
     HRESULT (STDMETHODCALLTYPE *GetInputParameterDesc)(
-        ID3D12ShaderReflection *This,
-        UINT index,
-        D3D12_SIGNATURE_PARAMETER_DESC *desc);
+                     ID3D12ShaderReflection *This,
+                     UINT index,
+                     D3D12_SIGNATURE_PARAMETER_DESC *desc);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputParameterDesc)(
-        ID3D12ShaderReflection *This,
-        UINT index,
-        D3D12_SIGNATURE_PARAMETER_DESC *desc);
+                     ID3D12ShaderReflection *This,
+                     UINT index,
+                     D3D12_SIGNATURE_PARAMETER_DESC *desc);
 
     HRESULT (STDMETHODCALLTYPE *GetPatchConstantParameterDesc)(
-        ID3D12ShaderReflection *This,
-        UINT index,
-        D3D12_SIGNATURE_PARAMETER_DESC *desc);
+                     ID3D12ShaderReflection *This,
+                     UINT index,
+                     D3D12_SIGNATURE_PARAMETER_DESC *desc);
 
     ID3D12ShaderReflectionVariable * (STDMETHODCALLTYPE *GetVariableByName)(
-        ID3D12ShaderReflection *This,
-        const char *name);
+                     ID3D12ShaderReflection *This,
+                     const char *name);
 
     HRESULT (STDMETHODCALLTYPE *GetResourceBindingDescByName)(
-        ID3D12ShaderReflection *This,
-        const char *name,
-        D3D12_SHADER_INPUT_BIND_DESC *desc);
+                     ID3D12ShaderReflection *This,
+                     const char *name,
+                     D3D12_SHADER_INPUT_BIND_DESC *desc);
 
     UINT (STDMETHODCALLTYPE *GetMovInstructionCount)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     UINT (STDMETHODCALLTYPE *GetMovcInstructionCount)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     UINT (STDMETHODCALLTYPE *GetConversionInstructionCount)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     UINT (STDMETHODCALLTYPE *GetBitwiseInstructionCount)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     D3D_PRIMITIVE (STDMETHODCALLTYPE *GetGSInputPrimitive)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     WINBOOL (STDMETHODCALLTYPE *IsSampleFrequencyShader)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     UINT (STDMETHODCALLTYPE *GetNumInterfaceSlots)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     HRESULT (STDMETHODCALLTYPE *GetMinFeatureLevel)(
-        ID3D12ShaderReflection *This,
-        D3D_FEATURE_LEVEL *level);
+                     ID3D12ShaderReflection *This,
+                     D3D_FEATURE_LEVEL *level);
 
     UINT (STDMETHODCALLTYPE *GetThreadGroupSize)(
-        ID3D12ShaderReflection *This,
-        UINT *sizex,
-        UINT *sizey,
-        UINT *sizez);
+                     ID3D12ShaderReflection *This,
+                     UINT *sizex,
+                     UINT *sizey,
+                     UINT *sizez);
 
     UINT64 (STDMETHODCALLTYPE *GetRequiresFlags)(
-        ID3D12ShaderReflection *This);
+                     ID3D12ShaderReflection *This);
 
     END_INTERFACE
 } ID3D12ShaderReflectionVtbl;
@@ -861,7 +861,7 @@ ID3D12FunctionParameterReflection
     BEGIN_INTERFACE
 
     virtual HRESULT STDMETHODCALLTYPE GetDesc(
-        D3D12_PARAMETER_DESC *desc) = 0;
+                     D3D12_PARAMETER_DESC *desc) = 0;
 
     END_INTERFACE
 
@@ -875,8 +875,8 @@ typedef struct ID3D12FunctionParameterReflectionVtbl {
 
     /*** ID3D12FunctionParameterReflection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12FunctionParameterReflection *This,
-        D3D12_PARAMETER_DESC *desc);
+                     ID3D12FunctionParameterReflection *This,
+                     D3D12_PARAMETER_DESC *desc);
 
     END_INTERFACE
 } ID3D12FunctionParameterReflectionVtbl;
@@ -917,27 +917,27 @@ ID3D12FunctionReflection
     BEGIN_INTERFACE
 
     virtual HRESULT STDMETHODCALLTYPE GetDesc(
-        D3D12_FUNCTION_DESC *desc) = 0;
+                     D3D12_FUNCTION_DESC *desc) = 0;
 
     virtual ID3D12ShaderReflectionConstantBuffer * STDMETHODCALLTYPE GetConstantBufferByIndex(
-        UINT index) = 0;
+                     UINT index) = 0;
 
     virtual ID3D12ShaderReflectionConstantBuffer * STDMETHODCALLTYPE GetConstantBufferByName(
-        const char *name) = 0;
+                     const char *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResourceBindingDesc(
-        UINT index,
-        D3D12_SHADER_INPUT_BIND_DESC *desc) = 0;
+                     UINT index,
+                     D3D12_SHADER_INPUT_BIND_DESC *desc) = 0;
 
     virtual ID3D12ShaderReflectionVariable * STDMETHODCALLTYPE GetVariableByName(
-        const char *name) = 0;
+                     const char *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResourceBindingDescByName(
-        const char *name,
-        D3D12_SHADER_INPUT_BIND_DESC *desc) = 0;
+                     const char *name,
+                     D3D12_SHADER_INPUT_BIND_DESC *desc) = 0;
 
     virtual ID3D12FunctionParameterReflection * STDMETHODCALLTYPE GetFunctionParameter(
-        INT index) = 0;
+                     INT index) = 0;
 
     END_INTERFACE
 
@@ -951,34 +951,34 @@ typedef struct ID3D12FunctionReflectionVtbl {
 
     /*** ID3D12FunctionReflection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12FunctionReflection *This,
-        D3D12_FUNCTION_DESC *desc);
+                     ID3D12FunctionReflection *This,
+                     D3D12_FUNCTION_DESC *desc);
 
     ID3D12ShaderReflectionConstantBuffer * (STDMETHODCALLTYPE *GetConstantBufferByIndex)(
-        ID3D12FunctionReflection *This,
-        UINT index);
+                     ID3D12FunctionReflection *This,
+                     UINT index);
 
     ID3D12ShaderReflectionConstantBuffer * (STDMETHODCALLTYPE *GetConstantBufferByName)(
-        ID3D12FunctionReflection *This,
-        const char *name);
+                     ID3D12FunctionReflection *This,
+                     const char *name);
 
     HRESULT (STDMETHODCALLTYPE *GetResourceBindingDesc)(
-        ID3D12FunctionReflection *This,
-        UINT index,
-        D3D12_SHADER_INPUT_BIND_DESC *desc);
+                     ID3D12FunctionReflection *This,
+                     UINT index,
+                     D3D12_SHADER_INPUT_BIND_DESC *desc);
 
     ID3D12ShaderReflectionVariable * (STDMETHODCALLTYPE *GetVariableByName)(
-        ID3D12FunctionReflection *This,
-        const char *name);
+                     ID3D12FunctionReflection *This,
+                     const char *name);
 
     HRESULT (STDMETHODCALLTYPE *GetResourceBindingDescByName)(
-        ID3D12FunctionReflection *This,
-        const char *name,
-        D3D12_SHADER_INPUT_BIND_DESC *desc);
+                     ID3D12FunctionReflection *This,
+                     const char *name,
+                     D3D12_SHADER_INPUT_BIND_DESC *desc);
 
     ID3D12FunctionParameterReflection * (STDMETHODCALLTYPE *GetFunctionParameter)(
-        ID3D12FunctionReflection *This,
-        INT index);
+                     ID3D12FunctionReflection *This,
+                     INT index);
 
     END_INTERFACE
 } ID3D12FunctionReflectionVtbl;
@@ -1040,10 +1040,10 @@ MIDL_INTERFACE("8e349d19-54db-4a56-9dc9-119d87bdb804")
 ID3D12LibraryReflection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDesc(
-        D3D12_LIBRARY_DESC *desc) = 0;
+                     D3D12_LIBRARY_DESC *desc) = 0;
 
     virtual ID3D12FunctionReflection * STDMETHODCALLTYPE GetFunctionByIndex(
-        INT index) = 0;
+                     INT index) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1055,24 +1055,24 @@ typedef struct ID3D12LibraryReflectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12LibraryReflection *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12LibraryReflection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12LibraryReflection *This);
+                     ID3D12LibraryReflection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12LibraryReflection *This);
+                     ID3D12LibraryReflection *This);
 
     /*** ID3D12LibraryReflection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12LibraryReflection *This,
-        D3D12_LIBRARY_DESC *desc);
+                     ID3D12LibraryReflection *This,
+                     D3D12_LIBRARY_DESC *desc);
 
     ID3D12FunctionReflection * (STDMETHODCALLTYPE *GetFunctionByIndex)(
-        ID3D12LibraryReflection *This,
-        INT index);
+                     ID3D12LibraryReflection *This,
+                     INT index);
 
     END_INTERFACE
 } ID3D12LibraryReflectionVtbl;

@@ -14,23 +14,23 @@ pub const WSASYS_STATUS_LEN = 128;
 
 pub const WSADATA = if (@sizeOf(usize) == @sizeOf(u64))
     extern struct {
-        wVersion: WORD,
-        wHighVersion: WORD,
-        iMaxSockets: u16,
-        iMaxUdpDg: u16,
-        lpVendorInfo: *u8,
-        szDescription: [WSADESCRIPTION_LEN + 1]u8,
-        szSystemStatus: [WSASYS_STATUS_LEN + 1]u8,
+                     wVersion: WORD,
+                     wHighVersion: WORD,
+                     iMaxSockets: u16,
+                     iMaxUdpDg: u16,
+                     lpVendorInfo: *u8,
+                     szDescription: [WSADESCRIPTION_LEN + 1]u8,
+                     szSystemStatus: [WSASYS_STATUS_LEN + 1]u8,
     }
 else
     extern struct {
-        wVersion: WORD,
-        wHighVersion: WORD,
-        szDescription: [WSADESCRIPTION_LEN + 1]u8,
-        szSystemStatus: [WSASYS_STATUS_LEN + 1]u8,
-        iMaxSockets: u16,
-        iMaxUdpDg: u16,
-        lpVendorInfo: *u8,
+                     wVersion: WORD,
+                     wHighVersion: WORD,
+                     szDescription: [WSADESCRIPTION_LEN + 1]u8,
+                     szSystemStatus: [WSASYS_STATUS_LEN + 1]u8,
+                     iMaxSockets: u16,
+                     iMaxUdpDg: u16,
+                     lpVendorInfo: *u8,
     };
 
 pub const MAX_PROTOCOL_CHAIN = 7;

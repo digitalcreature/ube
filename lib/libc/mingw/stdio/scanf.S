@@ -33,12 +33,12 @@
     .align 16
 
     /* scl   2: C_EXT  - External (public) symbol - covers globals and externs
-       type 32: DT_FCN - function returning T
+                    type 32: DT_FCN - function returning T
 	 */
     .def __argtos;    .scl    2;    .type    32;    .endef
 
     /* The max number of pointers we support.  Must be an even number
-       to keep the 64bit stack 16byte aligned.  Must not be less than 4.  */
+                    to keep the 64bit stack 16byte aligned.  Must not be less than 4.  */
     .equ entries, 30
 
     /* 64bit pointers are 8 bytes.  */
@@ -54,28 +54,28 @@
 __argtos:
 
     /* When we are done:
-      - s must be in rcx.  That's where it is on entry.
-      - format must be in rdx.  That's where it is on entry.
-      - The first pointer in arg must be in r8. arg is in r8 on entry.
-      - The second pointer in arg must be in r9. arg is in r8 on entry.
-      - The ($entries - 2) other pointers in arg must be on the stack,
+                   - s must be in rcx.  That's where it is on entry.
+                   - format must be in rdx.  That's where it is on entry.
+                   - The first pointer in arg must be in r8. arg is in r8 on entry.
+                   - The second pointer in arg must be in r9. arg is in r8 on entry.
+                   - The ($entries - 2) other pointers in arg must be on the stack,
 	starting 32bytes into rsp.  */
 
     /* We need enough room to shadow (s + format)
-       + (enough room for all the other args).  */
+                    + (enough room for all the other args).  */
     subq $(iOffset + iBytes), %rsp
     .seh_stackalloc iOffset + iBytes
 
     .seh_endprologue
 
     /* We are going to copy $entries pointers from arg to our
-       local stack.  Except the first 2, since they will be
-       loaded in registers.  */
+                    local stack.  Except the first 2, since they will be
+                    loaded in registers.  */
     movq $entries - 2, %r10 /* # of ptrs to copy.  */
 
     /* The first 32 bytes are in registers, but by spec, space
 	   must still be reserved for them on the stack.  Put the
-       rest of the pointers in the stack after that.  */
+                    rest of the pointers in the stack after that.  */
     lea 32(%rsp), %r11 /* dst.  */
 
 .LOOP:
@@ -87,11 +87,11 @@ __argtos:
     jnz .LOOP
 
     /* r9 contains the routine we are going to call.  Since we are about to
-       overwrite it, move it somewhere safe.  */
+                    overwrite it, move it somewhere safe.  */
     movq %r9, %r10
 
     /* The stack is now correctly populated, and so are rcx and rdx.
-       But we need to load the last 2 regs before making the call.  */
+                    But we need to load the last 2 regs before making the call.  */
     movq 0x8(%r8), %r9 /* 2nd dest location (may be garbage if only 1 arg).  */
     movq (%r8), %r8 /* 1st dest location.  */
 
@@ -109,7 +109,7 @@ __argtos:
     .align 16
 
     /* scl   2: C_EXT  - External (public) symbol - covers globals and externs
-       type 32: DT_FCN - function returning T
+                    type 32: DT_FCN - function returning T
 	 */
     .def __argtos;    .scl    2;    .type    32;    .endef
 
@@ -132,10 +132,10 @@ __argtos:
 
     /* Reserve enough stack space for everything.
 
-       Stack usage will look like:
-       4 bytes - s
-       4 bytes - format
-       (iBytes) bytes - variable # of parameters for sscanf (all ptrs).  */
+                    Stack usage will look like:
+                    4 bytes - s
+                    4 bytes - format
+                    (iBytes) bytes - variable # of parameters for sscanf (all ptrs).  */
 
     subl $(iOffset + iBytes), %esp
 
@@ -146,7 +146,7 @@ __argtos:
     movl %edx, 0x4(%esp)  /* format.  */
 
     /* We are going to copy $entries pointers from arg to our
-       local stack.  */
+                    local stack.  */
     movl $entries, %ecx /* # of ptrs to copy.  */
     lea iOffset(%esp), %edi /* dst.  */
     movl 16(%ebp), %edx /* src.  */

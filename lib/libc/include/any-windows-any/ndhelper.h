@@ -19,9 +19,9 @@ typedef struct tagDiagnosticsInfo {
 } DiagnosticsInfo, *PDiagnosticsInfo;
 
 typedef struct tagHYPOTHESIS {
-  LPWSTR                  pwszClassName;
-  LPWSTR                  pwszDescription;
-  ULONG                   celt;
+  LPWSTR                                                         pwszClassName;
+  LPWSTR                                                         pwszDescription;
+  ULONG                                                          celt;
   PHELPER_ATTRIBUTE rgAttributes[ ];
 } HYPOTHESIS, *PHYPOTHESIS;
 
@@ -121,7 +121,7 @@ DECLARE_INTERFACE_(INetDiagHelper,IUnknown)
 
 #if (_WIN32_WINNT >= 0x0601)
 typedef struct tagHypothesisResult {
-  HYPOTHESIS       hypothesis;
+  HYPOTHESIS                    hypothesis;
   DIAGNOSIS_STATUS pathStatus;
 } HypothesisResult;
 

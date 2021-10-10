@@ -22,8 +22,8 @@ enum qrtr_pkt_type {
 	QRTR_TYPE_DEL_SERVER	= 5,
 	QRTR_TYPE_DEL_CLIENT	= 6,
 	QRTR_TYPE_RESUME_TX	= 7,
-	QRTR_TYPE_EXIT          = 8,
-	QRTR_TYPE_PING          = 9,
+	QRTR_TYPE_EXIT                       = 8,
+	QRTR_TYPE_PING                       = 9,
 	QRTR_TYPE_NEW_LOOKUP	= 10,
 	QRTR_TYPE_DEL_LOOKUP	= 11,
 };

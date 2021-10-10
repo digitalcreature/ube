@@ -40,7 +40,7 @@
    This is the canonical entry point, usually the first thing in the text
    segment. Most registers' values are unspecified, except for:
 
-   %r14         Contains a function pointer to be registered with `atexit'.
+   %r14                      Contains a function pointer to be registered with `atexit'.
 		This is how the dynamic linker arranges to have DT_FINI
 		functions called for shared libraries that have been loaded
 		before this code runs.
@@ -93,10 +93,10 @@ _start:
 
 	/* Obtain the needed values from the auxiliary vector.  */
 
-	lhi	%r7,16	       /* AT_HWCAP */
-	lhi	%r8,3	       /* AT_PHDR */
-	lhi	%r9,5          /* AT_PHNUM */
-	lhi	%r2,4          /* AT_PHENT */
+	lhi	%r7,16	                    /* AT_HWCAP */
+	lhi	%r8,3	                    /* AT_PHDR */
+	lhi	%r9,5                       /* AT_PHNUM */
+	lhi	%r2,4                       /* AT_PHENT */
 .L13:	l	%r5,0(%r6)
 	clr	%r5,%r7
 	jne	.L15
@@ -117,8 +117,8 @@ _start:
 	/* Locate the ELF header by looking for the first PT_LOAD
 	   segment with a p_offset of zero.  */
 
-	lr	%r4,%r11       /* Backup AT_PHDR.  */
-	lhi	%r7,1          /* PT_LOAD id */
+	lr	%r4,%r11                    /* Backup AT_PHDR.  */
+	lhi	%r7,1                       /* PT_LOAD id */
 	lhi	%r8,0
 .L19:	cl	%r7,0(%r4)     /* p_type == PT_LOAD? */
 	jne	.L20
@@ -126,31 +126,31 @@ _start:
 	jne	.L20
 	l	%r9,8(%r4)     /* r9 = PT_LOAD.p_vaddr <- ELF header address  */
 	j	.L24
-.L20:	alr	%r4,%r0        /* r4 += AT_PHENT value */
+.L20:	alr	%r4,%r0                     /* r4 += AT_PHENT value */
 	brct	%r12,.L19
 
-	j	.+2            /* Trap, there must be such a phdr.  */
+	j	.+2                                      /* Trap, there must be such a phdr.  */
 
-.L24:	lr	%r4,%r11       /* Backup AT_PHDR.  */
-	lhi	%r2,6          /* PT_PHDR id */
+.L24:	lr	%r4,%r11                    /* Backup AT_PHDR.  */
+	lhi	%r2,6                       /* PT_PHDR id */
 .L23:	cl	%r2,0(%r4)
 	jne	.L22
 	l	%r3,8(%r4)     /* r3 = PT_PHDR p_vaddr */
 	j	.L25
-.L22:	alr	%r4,%r0        /* r4 += AT_PHENT value */
+.L22:	alr	%r4,%r0                     /* r4 += AT_PHENT value */
 	brct	%r12,.L23
 
-	j	.L14	       /* No PT_PHDR found - skip checking.  */
+	j	.L14	                    /* No PT_PHDR found - skip checking.  */
 
-.L25:	slr	%r11,%r3       /* AT_PHDR - PT_PHDR.p_vaddr (relocation offset)*/
-	alr	%r9,%r11       /* PT_LOAD.p_vaddr += relocation offset */
+.L25:	slr	%r11,%r3                    /* AT_PHDR - PT_PHDR.p_vaddr (relocation offset)*/
+	alr	%r9,%r11                    /* PT_LOAD.p_vaddr += relocation offset */
 
 	l	%r5,36(%r9)    /* Load the e_flags field.  */
 	tml	%r5,1
-	jz	.L14	       /* Binary does not require highgprs facility.  */
+	jz	.L14	                    /* Binary does not require highgprs facility.  */
 
-	tml	%r10,512       /* Check the AT_HWCAP value.  */
-	jz	2              /* Trap if no highgprs facility available.  */
+	tml	%r10,512                    /* Check the AT_HWCAP value.  */
+	jz	2                                        /* Trap if no highgprs facility available.  */
 .L14:
 
 	/* Setup pointer to literal pool of _start */
@@ -158,29 +158,29 @@ _start:
 .L0:    ahi     %r13,.Llit-.L0
 
 	/* load argc and argv from stack */
-	la      %r4,4(%r15)             # get argv
-	l       %r3,0(%r15)             # get argc
+	la                   %r4,4(%r15)                                       # get argv
+	l                    %r3,0(%r15)                                       # get argc
 
 	/* align the stack to a double word boundary */
 	lhi     %r0,-8
-	nr      %r15,%r0
+	nr                   %r15,%r0
 
 	/* Setup a stack frame and a parameter area */
-	ahi     %r15,-104               # make room on stack
-	xc      0(4,%r15),0(%r15)       # clear back-chain
+	ahi     %r15,-104                                         # make room on stack
+	xc                   0(4,%r15),0(%r15)                    # clear back-chain
 
 	/* set up arguments for __libc_start_main:
 	   main, argc, argv, envp, _init, _fini, rtld_fini, stack_end
 	   Note that envp will be determined later in __libc_start_main
 	 */
-	stm     %r14,%r15,96(%r15)      # store rtld_fini/stack_end to parameter area
-	la      %r7,96(%r15)
-	l       %r6,.L2-.Llit(%r13)     # load pointer to __libc_csu_fini
-	l       %r5,.L1-.Llit(%r13)     # load pointer to __libc_csu_init
-	l       %r2,.L3-.Llit(%r13)     # load pointer to main
-	l       %r1,.L4-.Llit(%r13)	# load pointer to __libc_start_main
+	stm     %r14,%r15,96(%r15)                   # store rtld_fini/stack_end to parameter area
+	la                   %r7,96(%r15)
+	l                    %r6,.L2-.Llit(%r13)     # load pointer to __libc_csu_fini
+	l                    %r5,.L1-.Llit(%r13)     # load pointer to __libc_csu_init
+	l                    %r2,.L3-.Llit(%r13)     # load pointer to main
+	l                    %r1,.L4-.Llit(%r13)	# load pointer to __libc_start_main
 #ifdef PIC
-	l       %r12,.L5-.Llit(%r13)    # load .got pointer
+	l                    %r12,.L5-.Llit(%r13)    # load .got pointer
 	la	%r6,0(%r13,%r6)
 	la	%r5,0(%r13,%r5)
 	la	%r12,0(%r13,%r12)

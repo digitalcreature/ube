@@ -28,7 +28,7 @@ typedef struct avmb1_loaddef {
 typedef struct avmb1_loadandconfigdef {
 	int contr;
 	avmb1_t4file t4file;
-        avmb1_t4file t4config; 
+                     avmb1_t4file t4config; 
 } avmb1_loadandconfigdef;
 
 typedef struct avmb1_resetdef {
@@ -57,8 +57,8 @@ typedef struct avmb1_carddef {
 typedef struct avmb1_extcarddef {
 	int port;
 	int irq;
-        int cardtype;
-        int cardnr;  /* for HEMA/T1 */
+                     int cardtype;
+                     int cardnr;  /* for HEMA/T1 */
 } avmb1_extcarddef;
 
 #define	AVMB1_LOAD		0	/* load image to card */

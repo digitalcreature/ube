@@ -12,9 +12,9 @@
 extern "C" {
 #endif
 
-#define SCSI_GET_CONFIGURATION_REQUEST_TYPE_ALL          0x0
-#define SCSI_GET_CONFIGURATION_REQUEST_TYPE_CURRENT      0x1
-#define SCSI_GET_CONFIGURATION_REQUEST_TYPE_ONE          0x2
+#define SCSI_GET_CONFIGURATION_REQUEST_TYPE_ALL                       0x0
+#define SCSI_GET_CONFIGURATION_REQUEST_TYPE_CURRENT                   0x1
+#define SCSI_GET_CONFIGURATION_REQUEST_TYPE_ONE                       0x2
 
 typedef struct _GET_CONFIGURATION_HEADER {
   UCHAR DataLength[4];

@@ -61,7 +61,7 @@ struct crypt_data
    returned, if not NULL, will point within DATA.  (It will still be
    overwritten by the next call to 'crypt_r' with the same DATA.)  */
 extern char *crypt_r (const char *__phrase, const char *__salt,
-		      struct crypt_data * __restrict __data)
+		                   struct crypt_data * __restrict __data)
      __THROW __nonnull ((1, 2, 3));
 #endif
 

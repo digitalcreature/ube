@@ -115,7 +115,7 @@ __extension__ extern long long int atoll (const char *__nptr)
 
 /* Convert a string to a floating-point number.  */
 extern double strtod (const char *__restrict __nptr,
-		      char **__restrict __endptr)
+		                   char **__restrict __endptr)
      __THROW __nonnull ((1));
 
 #ifdef	__USE_ISOC99
@@ -168,7 +168,7 @@ extern _Float64x strtof64x (const char *__restrict __nptr,
 
 #if __HAVE_FLOAT128X && __GLIBC_USE (IEC_60559_TYPES_EXT)
 extern _Float128x strtof128x (const char *__restrict __nptr,
-			      char **__restrict __endptr)
+			                   char **__restrict __endptr)
      __THROW __nonnull ((1));
 #endif
 
@@ -190,7 +190,7 @@ extern long long int strtoq (const char *__restrict __nptr,
 /* Convert a string to an unsigned quadword integer.  */
 __extension__
 extern unsigned long long int strtouq (const char *__restrict __nptr,
-				       char **__restrict __endptr, int __base)
+				                    char **__restrict __endptr, int __base)
      __THROW __nonnull ((1));
 #endif /* Use misc.  */
 
@@ -198,7 +198,7 @@ extern unsigned long long int strtouq (const char *__restrict __nptr,
 /* Convert a string to a quadword integer.  */
 __extension__
 extern long long int strtoll (const char *__restrict __nptr,
-			      char **__restrict __endptr, int __base)
+			                   char **__restrict __endptr, int __base)
      __THROW __nonnull ((1));
 /* Convert a string to an unsigned quadword integer.  */
 __extension__
@@ -224,19 +224,19 @@ extern int strfroml (char *__dest, size_t __size, const char *__format,
 
 #if __HAVE_FLOAT16 && __GLIBC_USE (IEC_60559_TYPES_EXT)
 extern int strfromf16 (char *__dest, size_t __size, const char * __format,
-		       _Float16 __f)
+		                    _Float16 __f)
      __THROW __nonnull ((3));
 #endif
 
 #if __HAVE_FLOAT32 && __GLIBC_USE (IEC_60559_TYPES_EXT)
 extern int strfromf32 (char *__dest, size_t __size, const char * __format,
-		       _Float32 __f)
+		                    _Float32 __f)
      __THROW __nonnull ((3));
 #endif
 
 #if __HAVE_FLOAT64 && __GLIBC_USE (IEC_60559_TYPES_EXT)
 extern int strfromf64 (char *__dest, size_t __size, const char * __format,
-		       _Float64 __f)
+		                    _Float64 __f)
      __THROW __nonnull ((3));
 #endif
 
@@ -297,12 +297,12 @@ extern double strtod_l (const char *__restrict __nptr,
      __THROW __nonnull ((1, 3));
 
 extern float strtof_l (const char *__restrict __nptr,
-		       char **__restrict __endptr, locale_t __loc)
+		                    char **__restrict __endptr, locale_t __loc)
      __THROW __nonnull ((1, 3));
 
 extern long double strtold_l (const char *__restrict __nptr,
-			      char **__restrict __endptr,
-			      locale_t __loc)
+			                   char **__restrict __endptr,
+			                   locale_t __loc)
      __THROW __nonnull ((1, 3));
 
 # if __HAVE_FLOAT16
@@ -328,22 +328,22 @@ extern _Float64 strtof64_l (const char *__restrict __nptr,
 
 # if __HAVE_FLOAT128
 extern _Float128 strtof128_l (const char *__restrict __nptr,
-			      char **__restrict __endptr,
-			      locale_t __loc)
+			                   char **__restrict __endptr,
+			                   locale_t __loc)
      __THROW __nonnull ((1, 3));
 # endif
 
 # if __HAVE_FLOAT32X
 extern _Float32x strtof32x_l (const char *__restrict __nptr,
-			      char **__restrict __endptr,
-			      locale_t __loc)
+			                   char **__restrict __endptr,
+			                   locale_t __loc)
      __THROW __nonnull ((1, 3));
 # endif
 
 # if __HAVE_FLOAT64X
 extern _Float64x strtof64x_l (const char *__restrict __nptr,
-			      char **__restrict __endptr,
-			      locale_t __loc)
+			                   char **__restrict __endptr,
+			                   locale_t __loc)
      __THROW __nonnull ((1, 3));
 # endif
 
@@ -443,7 +443,7 @@ extern int initstate_r (unsigned int __seed, char *__restrict __statebuf,
      __THROW __nonnull ((2, 4));
 
 extern int setstate_r (char *__restrict __statebuf,
-		       struct random_data *__restrict __buf)
+		                    struct random_data *__restrict __buf)
      __THROW __nonnull ((1, 2));
 # endif	/* Use misc.  */
 #endif	/* Use extended X/Open || misc. */
@@ -499,27 +499,27 @@ struct drand48_data
 
 /* Return non-negative, double-precision floating-point value in [0.0,1.0).  */
 extern int drand48_r (struct drand48_data *__restrict __buffer,
-		      double *__restrict __result) __THROW __nonnull ((1, 2));
+		                   double *__restrict __result) __THROW __nonnull ((1, 2));
 extern int erand48_r (unsigned short int __xsubi[3],
-		      struct drand48_data *__restrict __buffer,
-		      double *__restrict __result) __THROW __nonnull ((1, 2));
+		                   struct drand48_data *__restrict __buffer,
+		                   double *__restrict __result) __THROW __nonnull ((1, 2));
 
 /* Return non-negative, long integer in [0,2^31).  */
 extern int lrand48_r (struct drand48_data *__restrict __buffer,
-		      long int *__restrict __result)
+		                   long int *__restrict __result)
      __THROW __nonnull ((1, 2));
 extern int nrand48_r (unsigned short int __xsubi[3],
-		      struct drand48_data *__restrict __buffer,
-		      long int *__restrict __result)
+		                   struct drand48_data *__restrict __buffer,
+		                   long int *__restrict __result)
      __THROW __nonnull ((1, 2));
 
 /* Return signed, long integers in [-2^31,2^31).  */
 extern int mrand48_r (struct drand48_data *__restrict __buffer,
-		      long int *__restrict __result)
+		                   long int *__restrict __result)
      __THROW __nonnull ((1, 2));
 extern int jrand48_r (unsigned short int __xsubi[3],
-		      struct drand48_data *__restrict __buffer,
-		      long int *__restrict __result)
+		                   struct drand48_data *__restrict __buffer,
+		                   long int *__restrict __result)
      __THROW __nonnull ((1, 2));
 
 /* Seed random number generator.  */
@@ -530,7 +530,7 @@ extern int seed48_r (unsigned short int __seed16v[3],
 		     struct drand48_data *__buffer) __THROW __nonnull ((1, 2));
 
 extern int lcong48_r (unsigned short int __param[7],
-		      struct drand48_data *__buffer)
+		                   struct drand48_data *__buffer)
      __THROW __nonnull ((1, 2));
 # endif	/* Use misc.  */
 #endif	/* Use misc or X/Open.  */
@@ -711,7 +711,7 @@ extern int mkstemps (char *__template, int __suffixlen) __nonnull ((1)) __wur;
 # else
 #  ifdef __REDIRECT
 extern int __REDIRECT (mkstemps, (char *__template, int __suffixlen),
-		       mkstemps64) __nonnull ((1)) __wur;
+		                    mkstemps64) __nonnull ((1)) __wur;
 #  else
 #   define mkstemps mkstemps64
 #  endif
@@ -798,7 +798,7 @@ extern char *canonicalize_file_name (const char *__name)
    ENAMETOOLONG; if the name fits in fewer than PATH_MAX chars,
    returns the name in RESOLVED.  */
 extern char *realpath (const char *__restrict __name,
-		       char *__restrict __resolved) __THROW __wur;
+		                    char *__restrict __resolved) __THROW __wur;
 #endif
 
 
@@ -818,7 +818,7 @@ typedef int (*__compar_d_fn_t) (const void *, const void *, void *);
 /* Do a binary search for KEY in BASE, which consists of NMEMB elements
    of SIZE bytes each, using COMPAR to perform the comparisons.  */
 extern void *bsearch (const void *__key, const void *__base,
-		      size_t __nmemb, size_t __size, __compar_fn_t __compar)
+		                   size_t __nmemb, size_t __size, __compar_fn_t __compar)
      __nonnull ((1, 2, 5)) __wur;
 
 #ifdef __USE_EXTERN_INLINES
@@ -956,8 +956,8 @@ extern int rpmatch (const char *__response) __THROW __nonnull ((1)) __wur;
    suboption.  On exit *OPTIONP is set to the beginning of the next
    token or at the terminating NUL character.  */
 extern int getsubopt (char **__restrict __optionp,
-		      char *const *__restrict __tokens,
-		      char **__restrict __valuep)
+		                   char *const *__restrict __tokens,
+		                   char **__restrict __valuep)
      __THROW __nonnull ((1, 2, 3)) __wur;
 #endif
 

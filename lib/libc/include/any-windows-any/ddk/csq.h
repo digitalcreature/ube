@@ -144,10 +144,10 @@ typedef IO_CSQ_REMOVE_IRP *PIO_CSQ_REMOVE_IRP;
     KdPrint(("Peeking for next IRP\n"));
 
     if(Irp)
-      return CONTAINING_RECORD(&Irp->Tail.Overlay.ListEntry.Flink, IRP, Tail.Overlay.ListEntry);
+                   return CONTAINING_RECORD(&Irp->Tail.Overlay.ListEntry.Flink, IRP, Tail.Overlay.ListEntry);
 
     if(IsListEmpty(&IrpQueue))
-      return NULL;
+                   return NULL;
 
     return CONTAINING_RECORD(IrpQueue.Flink, IRP, Tail.Overlay.ListEntry);
   }
@@ -276,12 +276,12 @@ typedef IO_CSQ_INSERT_IRP_EX *PIO_CSQ_INSERT_IRP_EX;
  */
 NTKERNELAPI
 NTSTATUS NTAPI IoCsqInitialize(PIO_CSQ Csq,
-                               PIO_CSQ_INSERT_IRP CsqInsertIrp,
-                               PIO_CSQ_REMOVE_IRP CsqRemoveIrp,
-                               PIO_CSQ_PEEK_NEXT_IRP CsqPeekNextIrp,
-                               PIO_CSQ_ACQUIRE_LOCK CsqAcquireLock,
-                               PIO_CSQ_RELEASE_LOCK CsqReleaseLock,
-                               PIO_CSQ_COMPLETE_CANCELED_IRP CsqCompleteCanceledIrp);
+                                                                                                PIO_CSQ_INSERT_IRP CsqInsertIrp,
+                                                                                                PIO_CSQ_REMOVE_IRP CsqRemoveIrp,
+                                                                                                PIO_CSQ_PEEK_NEXT_IRP CsqPeekNextIrp,
+                                                                                                PIO_CSQ_ACQUIRE_LOCK CsqAcquireLock,
+                                                                                                PIO_CSQ_RELEASE_LOCK CsqReleaseLock,
+                                                                                                PIO_CSQ_COMPLETE_CANCELED_IRP CsqCompleteCanceledIrp);
 
 /*
  * Same as above, except you provide a CsqInsertIrpEx routine instead of
@@ -290,20 +290,20 @@ NTSTATUS NTAPI IoCsqInitialize(PIO_CSQ Csq,
  */
 NTKERNELAPI
 NTSTATUS NTAPI IoCsqInitializeEx(PIO_CSQ Csq,
-                                 PIO_CSQ_INSERT_IRP_EX CsqInsertIrpEx,
-                                 PIO_CSQ_REMOVE_IRP CsqRemoveIrp,
-                                 PIO_CSQ_PEEK_NEXT_IRP CsqPeekNextIrp,
-                                 PIO_CSQ_ACQUIRE_LOCK CsqAcquireLock,
-                                 PIO_CSQ_RELEASE_LOCK CsqReleaseLock,
-                                 PIO_CSQ_COMPLETE_CANCELED_IRP CsqCompleteCanceledIrp);
+                                                                                                  PIO_CSQ_INSERT_IRP_EX CsqInsertIrpEx,
+                                                                                                  PIO_CSQ_REMOVE_IRP CsqRemoveIrp,
+                                                                                                  PIO_CSQ_PEEK_NEXT_IRP CsqPeekNextIrp,
+                                                                                                  PIO_CSQ_ACQUIRE_LOCK CsqAcquireLock,
+                                                                                                  PIO_CSQ_RELEASE_LOCK CsqReleaseLock,
+                                                                                                  PIO_CSQ_COMPLETE_CANCELED_IRP CsqCompleteCanceledIrp);
 
 /*
  * Insert an IRP into the queue
  */
 NTKERNELAPI
 VOID NTAPI IoCsqInsertIrp(PIO_CSQ Csq,
-                          PIRP Irp,
-                          PIO_CSQ_IRP_CONTEXT Context);
+                                                                              PIRP Irp,
+                                                                              PIO_CSQ_IRP_CONTEXT Context);
 
 /*
  * Insert an IRP into the queue, with special context maintained that
@@ -311,23 +311,23 @@ VOID NTAPI IoCsqInsertIrp(PIO_CSQ Csq,
  */
 NTKERNELAPI
 NTSTATUS NTAPI IoCsqInsertIrpEx(PIO_CSQ Csq,
-                                PIRP Irp,
-                                PIO_CSQ_IRP_CONTEXT Context,
-                                PVOID InsertContext);
+                                                                                                 PIRP Irp,
+                                                                                                 PIO_CSQ_IRP_CONTEXT Context,
+                                                                                                 PVOID InsertContext);
 
 /*
  * Remove a particular IRP from the queue
  */
 NTKERNELAPI
 PIRP NTAPI IoCsqRemoveIrp(PIO_CSQ Csq,
-                          PIO_CSQ_IRP_CONTEXT Context);
+                                                                              PIO_CSQ_IRP_CONTEXT Context);
 
 /*
  * Remove the next IRP from the queue
  */
 NTKERNELAPI
 PIRP NTAPI IoCsqRemoveNextIrp(PIO_CSQ Csq,
-                              PVOID PeekContext);
+                                                                                               PVOID PeekContext);
 
 #ifdef __cplusplus
 }

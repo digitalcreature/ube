@@ -35,16 +35,16 @@ static unsigned int __cdecl init_codepage_func(void)
     unsigned int (__cdecl *func)(void) = NULL;
 
     if(msvcrt) {
-        func = (void*)GetProcAddress(msvcrt, "___lc_codepage_func");
-        if(!func) {
-            msvcrt__lc_codepage = (unsigned int*)GetProcAddress(msvcrt, "__lc_codepage");
-            if(msvcrt__lc_codepage)
-                func = msvcrt___lc_codepage_func;
-        }
+                     func = (void*)GetProcAddress(msvcrt, "___lc_codepage_func");
+                     if(!func) {
+                                      msvcrt__lc_codepage = (unsigned int*)GetProcAddress(msvcrt, "__lc_codepage");
+                                      if(msvcrt__lc_codepage)
+                                          func = msvcrt___lc_codepage_func;
+                     }
     }
 
     if(!func)
-        func = setlocale_codepage_hack;
+                     func = setlocale_codepage_hack;
 
     return (__MINGW_IMP_SYMBOL(___lc_codepage_func) = func)();
 }

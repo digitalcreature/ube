@@ -5,7 +5,7 @@
  * Definitions for CAN network layer (socket addr / CAN frame / CAN filter)
  *
  * Authors: Oliver Hartkopp <oliver.hartkopp@volkswagen.de>
- *          Urs Thuermann   <urs.thuermann@volkswagen.de>
+ *                       Urs Thuermann   <urs.thuermann@volkswagen.de>
  * Copyright (c) 2002-2007 Volkswagen Group Electronic Research
  * All rights reserved.
  *
@@ -94,8 +94,8 @@ typedef __u32 can_err_mask_t;
  * struct can_frame - basic CAN frame structure
  * @can_id:  CAN ID of the frame and CAN_*_FLAG flags, see canid_t definition
  * @can_dlc: frame payload length in byte (0 .. 8) aka data length code
- *           N.B. the DLC field from ISO 11898-1 Chapter 8.4.2.3 has a 1:1
- *           mapping of the 'data length code' to the real payload length
+ *                        N.B. the DLC field from ISO 11898-1 Chapter 8.4.2.3 has a 1:1
+ *                        mapping of the 'data length code' to the real payload length
  * @__pad:   padding
  * @__res0:  reserved / padding
  * @__res1:  reserved / padding
@@ -169,7 +169,7 @@ struct canfd_frame {
  */
 struct sockaddr_can {
 	__kernel_sa_family_t can_family;
-	int         can_ifindex;
+	int                      can_ifindex;
 	union {
 		/* transport protocol class address information (e.g. ISOTP) */
 		struct { canid_t rx_id, tx_id; } tp;
@@ -186,7 +186,7 @@ struct sockaddr_can {
  * Description:
  * A filter matches, when
  *
- *          <received_can_id> & mask == can_id & mask
+ *                       <received_can_id> & mask == can_id & mask
  *
  * The filter can be inverted (CAN_INV_FILTER bit set in can_id) or it can
  * filter for error message frames (CAN_ERR_FLAG bit set in mask).

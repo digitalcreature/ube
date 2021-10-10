@@ -65,7 +65,7 @@
 # define O_NDELAY	O_NONBLOCK
 #endif
 #ifndef O_SYNC
-# define O_SYNC	       04010000
+# define O_SYNC	                    04010000
 #endif
 #define O_FSYNC		O_SYNC
 #ifndef O_ASYNC
@@ -404,7 +404,7 @@ extern __ssize_t splice (int __fdin, __off64_t *__offin, int __fdout,
    This function is a possible cancellation point and therefore not
    marked with __THROW.  */
 extern __ssize_t tee (int __fdin, int __fdout, size_t __len,
-		      unsigned int __flags);
+		                   unsigned int __flags);
 
 /* Reserve storage for the data of the file associated with FD.
 
@@ -416,7 +416,7 @@ extern int fallocate (int __fd, int __mode, __off_t __offset, __off_t __len);
 #  ifdef __REDIRECT
 extern int __REDIRECT (fallocate, (int __fd, int __mode, __off64_t __offset,
 				   __off64_t __len),
-		       fallocate64);
+		                    fallocate64);
 #  else
 #   define fallocate fallocate64
 #  endif
@@ -429,15 +429,15 @@ extern int fallocate64 (int __fd, int __mode, __off64_t __offset,
 
 /* Map file name to file handle.  */
 extern int name_to_handle_at (int __dfd, const char *__name,
-			      struct file_handle *__handle, int *__mnt_id,
-			      int __flags) __THROW;
+			                   struct file_handle *__handle, int *__mnt_id,
+			                   int __flags) __THROW;
 
 /* Open file using the file handle.
 
    This function is a possible cancellation point and therefore not
    marked with __THROW.  */
 extern int open_by_handle_at (int __mountdirfd, struct file_handle *__handle,
-			      int __flags);
+			                   int __flags);
 
 #endif	/* use GNU */
 

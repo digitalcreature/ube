@@ -10,8 +10,8 @@ extern "C" {
 #define ADDR_COMPAT_LAYOUT 0x0200000
 #define READ_IMPLIES_EXEC  0x0400000
 #define ADDR_LIMIT_32BIT   0x0800000
-#define SHORT_INODE        0x1000000
-#define WHOLE_SECONDS      0x2000000
+#define SHORT_INODE                     0x1000000
+#define WHOLE_SECONDS                   0x2000000
 #define STICKY_TIMEOUTS    0x4000000
 #define ADDR_LIMIT_3GB     0x8000000
 

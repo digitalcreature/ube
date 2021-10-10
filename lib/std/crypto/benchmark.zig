@@ -45,7 +45,7 @@ pub fn benchmarkHash(comptime Hash: anytype, comptime bytes: comptime_int) !u64 
     var timer = try Timer.start();
     const start = timer.lap();
     while (offset < bytes) : (offset += block.len) {
-        h.update(block[0..]);
+                     h.update(block[0..]);
     }
     mem.doNotOptimizeAway(&h);
     const end = timer.read();
@@ -82,8 +82,8 @@ pub fn benchmarkMac(comptime Mac: anytype, comptime bytes: comptime_int) !u64 {
     var timer = try Timer.start();
     const start = timer.lap();
     while (offset < bytes) : (offset += in.len) {
-        Mac.create(mac[0..], in[0..], key[0..]);
-        mem.doNotOptimizeAway(&mac);
+                     Mac.create(mac[0..], in[0..], key[0..]);
+                     mem.doNotOptimizeAway(&mac);
     }
     const end = timer.read();
 
@@ -107,13 +107,13 @@ pub fn benchmarkKeyExchange(comptime DhKeyExchange: anytype, comptime exchange_c
     var timer = try Timer.start();
     const start = timer.lap();
     {
-        var i: usize = 0;
-        while (i < exchange_count) : (i += 1) {
-            const out = try DhKeyExchange.scalarmult(secret, public);
-            mem.copy(u8, secret[0..16], out[0..16]);
-            mem.copy(u8, public[0..16], out[16..32]);
-            mem.doNotOptimizeAway(&out);
-        }
+                     var i: usize = 0;
+                     while (i < exchange_count) : (i += 1) {
+                                      const out = try DhKeyExchange.scalarmult(secret, public);
+                                      mem.copy(u8, secret[0..16], out[0..16]);
+                                      mem.copy(u8, public[0..16], out[16..32]);
+                                      mem.doNotOptimizeAway(&out);
+                     }
     }
     const end = timer.read();
 
@@ -132,11 +132,11 @@ pub fn benchmarkSignature(comptime Signature: anytype, comptime signatures_count
     var timer = try Timer.start();
     const start = timer.lap();
     {
-        var i: usize = 0;
-        while (i < signatures_count) : (i += 1) {
-            const sig = try Signature.sign(&msg, key_pair, null);
-            mem.doNotOptimizeAway(&sig);
-        }
+                     var i: usize = 0;
+                     while (i < signatures_count) : (i += 1) {
+                                      const sig = try Signature.sign(&msg, key_pair, null);
+                                      mem.doNotOptimizeAway(&sig);
+                     }
     }
     const end = timer.read();
 
@@ -156,11 +156,11 @@ pub fn benchmarkSignatureVerification(comptime Signature: anytype, comptime sign
     var timer = try Timer.start();
     const start = timer.lap();
     {
-        var i: usize = 0;
-        while (i < signatures_count) : (i += 1) {
-            try Signature.verify(sig, &msg, key_pair.public_key);
-            mem.doNotOptimizeAway(&sig);
-        }
+                     var i: usize = 0;
+                     while (i < signatures_count) : (i += 1) {
+                                      try Signature.verify(sig, &msg, key_pair.public_key);
+                                      mem.doNotOptimizeAway(&sig);
+                     }
     }
     const end = timer.read();
 
@@ -179,17 +179,17 @@ pub fn benchmarkBatchSignatureVerification(comptime Signature: anytype, comptime
 
     var batch: [64]Signature.BatchElement = undefined;
     for (batch) |*element| {
-        element.* = Signature.BatchElement{ .sig = sig, .msg = &msg, .public_key = key_pair.public_key };
+                     element.* = Signature.BatchElement{ .sig = sig, .msg = &msg, .public_key = key_pair.public_key };
     }
 
     var timer = try Timer.start();
     const start = timer.lap();
     {
-        var i: usize = 0;
-        while (i < signatures_count) : (i += 1) {
-            try Signature.verifyBatch(batch.len, batch);
-            mem.doNotOptimizeAway(&sig);
-        }
+                     var i: usize = 0;
+                     while (i < signatures_count) : (i += 1) {
+                                      try Signature.verifyBatch(batch.len, batch);
+                                      mem.doNotOptimizeAway(&sig);
+                     }
     }
     const end = timer.read();
 
@@ -226,8 +226,8 @@ pub fn benchmarkAead(comptime Aead: anytype, comptime bytes: comptime_int) !u64 
     var timer = try Timer.start();
     const start = timer.lap();
     while (offset < bytes) : (offset += in.len) {
-        Aead.encrypt(in[0..], tag[0..], in[0..], &[_]u8{}, nonce, key);
-        try Aead.decrypt(in[0..], in[0..], tag, &[_]u8{}, nonce, key);
+                     Aead.encrypt(in[0..], tag[0..], in[0..], &[_]u8{}, nonce, key);
+                     try Aead.decrypt(in[0..], in[0..], tag, &[_]u8{}, nonce, key);
     }
     mem.doNotOptimizeAway(&in);
     const end = timer.read();
@@ -253,10 +253,10 @@ pub fn benchmarkAes(comptime Aes: anytype, comptime count: comptime_int) !u64 {
     var timer = try Timer.start();
     const start = timer.lap();
     {
-        var i: usize = 0;
-        while (i < count) : (i += 1) {
-            ctx.encrypt(&in, &in);
-        }
+                     var i: usize = 0;
+                     while (i < count) : (i += 1) {
+                                      ctx.encrypt(&in, &in);
+                     }
     }
     mem.doNotOptimizeAway(&in);
     const end = timer.read();
@@ -282,10 +282,10 @@ pub fn benchmarkAes8(comptime Aes: anytype, comptime count: comptime_int) !u64 {
     var timer = try Timer.start();
     const start = timer.lap();
     {
-        var i: usize = 0;
-        while (i < count) : (i += 1) {
-            ctx.encryptWide(8, &in, &in);
-        }
+                     var i: usize = 0;
+                     while (i < count) : (i += 1) {
+                                      ctx.encryptWide(8, &in, &in);
+                     }
     }
     mem.doNotOptimizeAway(&in);
     const end = timer.read();
@@ -298,13 +298,13 @@ pub fn benchmarkAes8(comptime Aes: anytype, comptime count: comptime_int) !u64 {
 
 fn usage() void {
     std.debug.warn(
-        \\throughput_test [options]
-        \\
-        \\Options:
-        \\  --filter [test-name]
-        \\  --seed   [int]
-        \\  --help
-        \\
+                     \\throughput_test [options]
+                     \\
+                     \\Options:
+                     \\  --filter [test-name]
+                     \\  --seed   [int]
+                     \\  --help
+                     \\
     , .{});
 }
 
@@ -323,95 +323,95 @@ pub fn main() !void {
 
     var i: usize = 1;
     while (i < args.len) : (i += 1) {
-        if (std.mem.eql(u8, args[i], "--mode")) {
-            try stdout.print("{}\n", .{builtin.mode});
-            return;
-        } else if (std.mem.eql(u8, args[i], "--seed")) {
-            i += 1;
-            if (i == args.len) {
-                usage();
-                std.os.exit(1);
-            }
+                     if (std.mem.eql(u8, args[i], "--mode")) {
+                                      try stdout.print("{}\n", .{builtin.mode});
+                                      return;
+                     } else if (std.mem.eql(u8, args[i], "--seed")) {
+                                      i += 1;
+                                      if (i == args.len) {
+                                          usage();
+                                          std.os.exit(1);
+                                      }
 
-            const seed = try std.fmt.parseUnsigned(u32, args[i], 10);
-            prng.seed(seed);
-        } else if (std.mem.eql(u8, args[i], "--filter")) {
-            i += 1;
-            if (i == args.len) {
-                usage();
-                std.os.exit(1);
-            }
+                                      const seed = try std.fmt.parseUnsigned(u32, args[i], 10);
+                                      prng.seed(seed);
+                     } else if (std.mem.eql(u8, args[i], "--filter")) {
+                                      i += 1;
+                                      if (i == args.len) {
+                                          usage();
+                                          std.os.exit(1);
+                                      }
 
-            filter = args[i];
-        } else if (std.mem.eql(u8, args[i], "--help")) {
-            usage();
-            return;
-        } else {
-            usage();
-            std.os.exit(1);
-        }
+                                      filter = args[i];
+                     } else if (std.mem.eql(u8, args[i], "--help")) {
+                                      usage();
+                                      return;
+                     } else {
+                                      usage();
+                                      std.os.exit(1);
+                     }
     }
 
     inline for (hashes) |H| {
-        if (filter == null or std.mem.indexOf(u8, H.name, filter.?) != null) {
-            const throughput = try benchmarkHash(H.ty, mode(128 * MiB));
-            try stdout.print("{:>17}: {:10} MiB/s\n", .{ H.name, throughput / (1 * MiB) });
-        }
+                     if (filter == null or std.mem.indexOf(u8, H.name, filter.?) != null) {
+                                      const throughput = try benchmarkHash(H.ty, mode(128 * MiB));
+                                      try stdout.print("{:>17}: {:10} MiB/s\n", .{ H.name, throughput / (1 * MiB) });
+                     }
     }
 
     inline for (macs) |M| {
-        if (filter == null or std.mem.indexOf(u8, M.name, filter.?) != null) {
-            const throughput = try benchmarkMac(M.ty, mode(128 * MiB));
-            try stdout.print("{:>17}: {:10} MiB/s\n", .{ M.name, throughput / (1 * MiB) });
-        }
+                     if (filter == null or std.mem.indexOf(u8, M.name, filter.?) != null) {
+                                      const throughput = try benchmarkMac(M.ty, mode(128 * MiB));
+                                      try stdout.print("{:>17}: {:10} MiB/s\n", .{ M.name, throughput / (1 * MiB) });
+                     }
     }
 
     inline for (exchanges) |E| {
-        if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
-            const throughput = try benchmarkKeyExchange(E.ty, mode(1000));
-            try stdout.print("{:>17}: {:10} exchanges/s\n", .{ E.name, throughput });
-        }
+                     if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
+                                      const throughput = try benchmarkKeyExchange(E.ty, mode(1000));
+                                      try stdout.print("{:>17}: {:10} exchanges/s\n", .{ E.name, throughput });
+                     }
     }
 
     inline for (signatures) |E| {
-        if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
-            const throughput = try benchmarkSignature(E.ty, mode(1000));
-            try stdout.print("{:>17}: {:10} signatures/s\n", .{ E.name, throughput });
-        }
+                     if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
+                                      const throughput = try benchmarkSignature(E.ty, mode(1000));
+                                      try stdout.print("{:>17}: {:10} signatures/s\n", .{ E.name, throughput });
+                     }
     }
 
     inline for (signature_verifications) |E| {
-        if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
-            const throughput = try benchmarkSignatureVerification(E.ty, mode(1000));
-            try stdout.print("{:>17}: {:10} verifications/s\n", .{ E.name, throughput });
-        }
+                     if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
+                                      const throughput = try benchmarkSignatureVerification(E.ty, mode(1000));
+                                      try stdout.print("{:>17}: {:10} verifications/s\n", .{ E.name, throughput });
+                     }
     }
 
     inline for (batch_signature_verifications) |E| {
-        if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
-            const throughput = try benchmarkBatchSignatureVerification(E.ty, mode(1000));
-            try stdout.print("{:>17}: {:10} verifications/s (batch)\n", .{ E.name, throughput });
-        }
+                     if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
+                                      const throughput = try benchmarkBatchSignatureVerification(E.ty, mode(1000));
+                                      try stdout.print("{:>17}: {:10} verifications/s (batch)\n", .{ E.name, throughput });
+                     }
     }
 
     inline for (aeads) |E| {
-        if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
-            const throughput = try benchmarkAead(E.ty, mode(128 * MiB));
-            try stdout.print("{:>17}: {:10} MiB/s\n", .{ E.name, throughput / (1 * MiB) });
-        }
+                     if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
+                                      const throughput = try benchmarkAead(E.ty, mode(128 * MiB));
+                                      try stdout.print("{:>17}: {:10} MiB/s\n", .{ E.name, throughput / (1 * MiB) });
+                     }
     }
 
     inline for (aes) |E| {
-        if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
-            const throughput = try benchmarkAes(E.ty, mode(100000000));
-            try stdout.print("{:>17}: {:10} ops/s\n", .{ E.name, throughput });
-        }
+                     if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
+                                      const throughput = try benchmarkAes(E.ty, mode(100000000));
+                                      try stdout.print("{:>17}: {:10} ops/s\n", .{ E.name, throughput });
+                     }
     }
 
     inline for (aes8) |E| {
-        if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
-            const throughput = try benchmarkAes8(E.ty, mode(10000000));
-            try stdout.print("{:>17}: {:10} ops/s\n", .{ E.name, throughput });
-        }
+                     if (filter == null or std.mem.indexOf(u8, E.name, filter.?) != null) {
+                                      const throughput = try benchmarkAes8(E.ty, mode(10000000));
+                                      try stdout.print("{:>17}: {:10} ops/s\n", .{ E.name, throughput });
+                     }
     }
 }

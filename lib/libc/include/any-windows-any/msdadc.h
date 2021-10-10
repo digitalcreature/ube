@@ -74,12 +74,12 @@ extern "C" {
 #else
   typedef struct IDataConvertVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDataConvert *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDataConvert *This);
-      ULONG (WINAPI *Release)(IDataConvert *This);
-      HRESULT (WINAPI *DataConvert)(IDataConvert *This,DBTYPE wSrcType,DBTYPE wDstType,DBLENGTH cbSrcLength,DBLENGTH *pcbDstLength,void *pSrc,void *pDst,DBLENGTH cbDstMaxLength,DBSTATUS dbsSrcStatus,DBSTATUS *pdbsStatus,BYTE bPrecision,BYTE bScale,DBDATACONVERT dwFlags);
-      HRESULT (WINAPI *CanConvert)(IDataConvert *This,DBTYPE wSrcType,DBTYPE wDstType);
-      HRESULT (WINAPI *GetConversionSize)(IDataConvert *This,DBTYPE wSrcType,DBTYPE wDstType,DBLENGTH *pcbSrcLength,DBLENGTH *pcbDstLength,void *pSrc);
+                   HRESULT (WINAPI *QueryInterface)(IDataConvert *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDataConvert *This);
+                   ULONG (WINAPI *Release)(IDataConvert *This);
+                   HRESULT (WINAPI *DataConvert)(IDataConvert *This,DBTYPE wSrcType,DBTYPE wDstType,DBLENGTH cbSrcLength,DBLENGTH *pcbDstLength,void *pSrc,void *pDst,DBLENGTH cbDstMaxLength,DBSTATUS dbsSrcStatus,DBSTATUS *pdbsStatus,BYTE bPrecision,BYTE bScale,DBDATACONVERT dwFlags);
+                   HRESULT (WINAPI *CanConvert)(IDataConvert *This,DBTYPE wSrcType,DBTYPE wDstType);
+                   HRESULT (WINAPI *GetConversionSize)(IDataConvert *This,DBTYPE wSrcType,DBTYPE wDstType,DBLENGTH *pcbSrcLength,DBLENGTH *pcbDstLength,void *pSrc);
     END_INTERFACE
   } IDataConvertVtbl;
   struct IDataConvert {
@@ -124,11 +124,11 @@ extern "C" {
 #else
   typedef struct IDCInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDCInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDCInfo *This);
-      ULONG (WINAPI *Release)(IDCInfo *This);
-      HRESULT (WINAPI *GetInfo)(IDCInfo *This,ULONG cInfo,DCINFOTYPE rgeInfoType[],DCINFO **prgInfo);
-      HRESULT (WINAPI *SetInfo)(IDCInfo *This,ULONG cInfo,DCINFO rgInfo[]);
+                   HRESULT (WINAPI *QueryInterface)(IDCInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDCInfo *This);
+                   ULONG (WINAPI *Release)(IDCInfo *This);
+                   HRESULT (WINAPI *GetInfo)(IDCInfo *This,ULONG cInfo,DCINFOTYPE rgeInfoType[],DCINFO **prgInfo);
+                   HRESULT (WINAPI *SetInfo)(IDCInfo *This,ULONG cInfo,DCINFO rgInfo[]);
     END_INTERFACE
   } IDCInfoVtbl;
   struct IDCInfo {

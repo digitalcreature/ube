@@ -96,13 +96,13 @@ MIDL_INTERFACE("8fdf6ca1-0189-47e4-b670-1a8a4636e340")
 IWPCSettings : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsLoggingRequired(
-        WINBOOL *pfRequired) = 0;
+                     WINBOOL *pfRequired) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastSettingsChangeTime(
-        SYSTEMTIME *pTime) = 0;
+                     SYSTEMTIME *pTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRestrictions(
-        DWORD *pdwRestrictions) = 0;
+                     DWORD *pdwRestrictions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -114,28 +114,28 @@ typedef struct IWPCSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWPCSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWPCSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWPCSettings *This);
+                     IWPCSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWPCSettings *This);
+                     IWPCSettings *This);
 
     /*** IWPCSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *IsLoggingRequired)(
-        IWPCSettings *This,
-        WINBOOL *pfRequired);
+                     IWPCSettings *This,
+                     WINBOOL *pfRequired);
 
     HRESULT (STDMETHODCALLTYPE *GetLastSettingsChangeTime)(
-        IWPCSettings *This,
-        SYSTEMTIME *pTime);
+                     IWPCSettings *This,
+                     SYSTEMTIME *pTime);
 
     HRESULT (STDMETHODCALLTYPE *GetRestrictions)(
-        IWPCSettings *This,
-        DWORD *pdwRestrictions);
+                     IWPCSettings *This,
+                     DWORD *pdwRestrictions);
 
     END_INTERFACE
 } IWPCSettingsVtbl;
@@ -195,8 +195,8 @@ MIDL_INTERFACE("95e87780-e158-489e-b452-bbb850790715")
 IWPCGamesSettings : public IWPCSettings
 {
     virtual HRESULT STDMETHODCALLTYPE IsBlocked(
-        GUID guidAppID,
-        DWORD *pdwReasons) = 0;
+                     GUID guidAppID,
+                     DWORD *pdwReasons) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -208,34 +208,34 @@ typedef struct IWPCGamesSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWPCGamesSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWPCGamesSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWPCGamesSettings *This);
+                     IWPCGamesSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWPCGamesSettings *This);
+                     IWPCGamesSettings *This);
 
     /*** IWPCSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *IsLoggingRequired)(
-        IWPCGamesSettings *This,
-        WINBOOL *pfRequired);
+                     IWPCGamesSettings *This,
+                     WINBOOL *pfRequired);
 
     HRESULT (STDMETHODCALLTYPE *GetLastSettingsChangeTime)(
-        IWPCGamesSettings *This,
-        SYSTEMTIME *pTime);
+                     IWPCGamesSettings *This,
+                     SYSTEMTIME *pTime);
 
     HRESULT (STDMETHODCALLTYPE *GetRestrictions)(
-        IWPCGamesSettings *This,
-        DWORD *pdwRestrictions);
+                     IWPCGamesSettings *This,
+                     DWORD *pdwRestrictions);
 
     /*** IWPCGamesSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *IsBlocked)(
-        IWPCGamesSettings *This,
-        GUID guidAppID,
-        DWORD *pdwReasons);
+                     IWPCGamesSettings *This,
+                     GUID guidAppID,
+                     DWORD *pdwReasons);
 
     END_INTERFACE
 } IWPCGamesSettingsVtbl;
@@ -305,14 +305,14 @@ MIDL_INTERFACE("ffccbdb8-0992-4c30-b0f1-1cbb09c240aa")
 IWPCWebSettings : public IWPCSettings
 {
     virtual HRESULT STDMETHODCALLTYPE GetSettings(
-        DWORD *pdwSettings) = 0;
+                     DWORD *pdwSettings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestURLOverride(
-        HWND hWnd,
-        LPCWSTR pcszURL,
-        DWORD cURLs,
-        LPCWSTR *ppcszSubURLs,
-        WINBOOL *pfChanged) = 0;
+                     HWND hWnd,
+                     LPCWSTR pcszURL,
+                     DWORD cURLs,
+                     LPCWSTR *ppcszSubURLs,
+                     WINBOOL *pfChanged) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -324,41 +324,41 @@ typedef struct IWPCWebSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWPCWebSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWPCWebSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWPCWebSettings *This);
+                     IWPCWebSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWPCWebSettings *This);
+                     IWPCWebSettings *This);
 
     /*** IWPCSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *IsLoggingRequired)(
-        IWPCWebSettings *This,
-        WINBOOL *pfRequired);
+                     IWPCWebSettings *This,
+                     WINBOOL *pfRequired);
 
     HRESULT (STDMETHODCALLTYPE *GetLastSettingsChangeTime)(
-        IWPCWebSettings *This,
-        SYSTEMTIME *pTime);
+                     IWPCWebSettings *This,
+                     SYSTEMTIME *pTime);
 
     HRESULT (STDMETHODCALLTYPE *GetRestrictions)(
-        IWPCWebSettings *This,
-        DWORD *pdwRestrictions);
+                     IWPCWebSettings *This,
+                     DWORD *pdwRestrictions);
 
     /*** IWPCWebSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSettings)(
-        IWPCWebSettings *This,
-        DWORD *pdwSettings);
+                     IWPCWebSettings *This,
+                     DWORD *pdwSettings);
 
     HRESULT (STDMETHODCALLTYPE *RequestURLOverride)(
-        IWPCWebSettings *This,
-        HWND hWnd,
-        LPCWSTR pcszURL,
-        DWORD cURLs,
-        LPCWSTR *ppcszSubURLs,
-        WINBOOL *pfChanged);
+                     IWPCWebSettings *This,
+                     HWND hWnd,
+                     LPCWSTR pcszURL,
+                     DWORD cURLs,
+                     LPCWSTR *ppcszSubURLs,
+                     WINBOOL *pfChanged);
 
     END_INTERFACE
 } IWPCWebSettingsVtbl;
@@ -432,19 +432,19 @@ MIDL_INTERFACE("4ff40a0f-3f3b-4d7c-a41b-4f39d7b44d05")
 IWindowsParentalControlsCore : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetVisibility(
-        WPCFLAG_VISIBILITY *peVisibility) = 0;
+                     WPCFLAG_VISIBILITY *peVisibility) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserSettings(
-        LPCWSTR pcszSID,
-        IWPCSettings **ppSettings) = 0;
+                     LPCWSTR pcszSID,
+                     IWPCSettings **ppSettings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWebSettings(
-        LPCWSTR pcszSID,
-        IWPCWebSettings **ppSettings) = 0;
+                     LPCWSTR pcszSID,
+                     IWPCWebSettings **ppSettings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWebFilterInfo(
-        GUID *pguidID,
-        LPWSTR *ppszName) = 0;
+                     GUID *pguidID,
+                     LPWSTR *ppszName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -456,35 +456,35 @@ typedef struct IWindowsParentalControlsCoreVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWindowsParentalControlsCore *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWindowsParentalControlsCore *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWindowsParentalControlsCore *This);
+                     IWindowsParentalControlsCore *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWindowsParentalControlsCore *This);
+                     IWindowsParentalControlsCore *This);
 
     /*** IWindowsParentalControlsCore methods ***/
     HRESULT (STDMETHODCALLTYPE *GetVisibility)(
-        IWindowsParentalControlsCore *This,
-        WPCFLAG_VISIBILITY *peVisibility);
+                     IWindowsParentalControlsCore *This,
+                     WPCFLAG_VISIBILITY *peVisibility);
 
     HRESULT (STDMETHODCALLTYPE *GetUserSettings)(
-        IWindowsParentalControlsCore *This,
-        LPCWSTR pcszSID,
-        IWPCSettings **ppSettings);
+                     IWindowsParentalControlsCore *This,
+                     LPCWSTR pcszSID,
+                     IWPCSettings **ppSettings);
 
     HRESULT (STDMETHODCALLTYPE *GetWebSettings)(
-        IWindowsParentalControlsCore *This,
-        LPCWSTR pcszSID,
-        IWPCWebSettings **ppSettings);
+                     IWindowsParentalControlsCore *This,
+                     LPCWSTR pcszSID,
+                     IWPCWebSettings **ppSettings);
 
     HRESULT (STDMETHODCALLTYPE *GetWebFilterInfo)(
-        IWindowsParentalControlsCore *This,
-        GUID *pguidID,
-        LPWSTR *ppszName);
+                     IWindowsParentalControlsCore *This,
+                     GUID *pguidID,
+                     LPWSTR *ppszName);
 
     END_INTERFACE
 } IWindowsParentalControlsCoreVtbl;
@@ -548,8 +548,8 @@ MIDL_INTERFACE("28b4d88b-e072-49e6-804d-26edbe21a7b9")
 IWindowsParentalControls : public IWindowsParentalControlsCore
 {
     virtual HRESULT STDMETHODCALLTYPE GetGamesSettings(
-        LPCWSTR pcszSID,
-        IWPCGamesSettings **ppSettings) = 0;
+                     LPCWSTR pcszSID,
+                     IWPCGamesSettings **ppSettings) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -561,41 +561,41 @@ typedef struct IWindowsParentalControlsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWindowsParentalControls *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWindowsParentalControls *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWindowsParentalControls *This);
+                     IWindowsParentalControls *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWindowsParentalControls *This);
+                     IWindowsParentalControls *This);
 
     /*** IWindowsParentalControlsCore methods ***/
     HRESULT (STDMETHODCALLTYPE *GetVisibility)(
-        IWindowsParentalControls *This,
-        WPCFLAG_VISIBILITY *peVisibility);
+                     IWindowsParentalControls *This,
+                     WPCFLAG_VISIBILITY *peVisibility);
 
     HRESULT (STDMETHODCALLTYPE *GetUserSettings)(
-        IWindowsParentalControls *This,
-        LPCWSTR pcszSID,
-        IWPCSettings **ppSettings);
+                     IWindowsParentalControls *This,
+                     LPCWSTR pcszSID,
+                     IWPCSettings **ppSettings);
 
     HRESULT (STDMETHODCALLTYPE *GetWebSettings)(
-        IWindowsParentalControls *This,
-        LPCWSTR pcszSID,
-        IWPCWebSettings **ppSettings);
+                     IWindowsParentalControls *This,
+                     LPCWSTR pcszSID,
+                     IWPCWebSettings **ppSettings);
 
     HRESULT (STDMETHODCALLTYPE *GetWebFilterInfo)(
-        IWindowsParentalControls *This,
-        GUID *pguidID,
-        LPWSTR *ppszName);
+                     IWindowsParentalControls *This,
+                     GUID *pguidID,
+                     LPWSTR *ppszName);
 
     /*** IWindowsParentalControls methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGamesSettings)(
-        IWindowsParentalControls *This,
-        LPCWSTR pcszSID,
-        IWPCGamesSettings **ppSettings);
+                     IWindowsParentalControls *This,
+                     LPCWSTR pcszSID,
+                     IWPCGamesSettings **ppSettings);
 
     END_INTERFACE
 } IWindowsParentalControlsVtbl;
@@ -668,10 +668,10 @@ __CRT_UUID_DECL(WindowsParentalControls, 0xe77cc89b, 0x7401, 0x4c04, 0x8c,0xed, 
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
 
 /* End additional prototypes */
 

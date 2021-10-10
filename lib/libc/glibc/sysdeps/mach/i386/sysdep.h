@@ -25,28 +25,28 @@
 
 #define LOSE asm volatile ("hlt")
 
-#define SNARF_ARGS(entry_sp, argc, argv, envp)				      \
-  do									      \
-    {									      \
-      char **p;								      \
-      argc = (int) *entry_sp;						      \
-      argv = (char **) (entry_sp + 1);					      \
-      p = argv;								      \
-      while (*p++ != NULL)						      \
-	;								      \
-      if (p >= (char **) argv[0])					      \
-	--p;								      \
-      envp = p;							      \
+#define SNARF_ARGS(entry_sp, argc, argv, envp)				                   \
+  do									                   \
+    {									                   \
+                   char **p;								                   \
+                   argc = (int) *entry_sp;						                   \
+                   argv = (char **) (entry_sp + 1);					                   \
+                   p = argv;								                   \
+                   while (*p++ != NULL)						                   \
+	;								                   \
+                   if (p >= (char **) argv[0])					                   \
+	--p;								                   \
+                   envp = p;							                   \
     } while (0)
 
 #define CALL_WITH_SP(fn, info, sp) \
-  do {									      \
-	void **ptr = (void **) sp;					      \
-	*--(__typeof (info) *) ptr = info;				      \
-	ptr[-1] = ptr;							      \
-	--ptr;								      \
-    asm volatile ("movl %0, %%esp; call %1" : : 			      \
-		  "g" (ptr), "m" (*(long int *) (fn)) : "%esp"); 	      \
+  do {									                   \
+	void **ptr = (void **) sp;					                   \
+	*--(__typeof (info) *) ptr = info;				                   \
+	ptr[-1] = ptr;							                   \
+	--ptr;								                   \
+    asm volatile ("movl %0, %%esp; call %1" : : 			                   \
+		  "g" (ptr), "m" (*(long int *) (fn)) : "%esp"); 	                   \
   } while (0)
 
 #define RETURN_TO(sp, pc, retval) \

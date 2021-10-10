@@ -59,34 +59,34 @@ MIDL_INTERFACE("432a1da5-3888-4b9a-a734-cff1e448c5b9")
 INapClientManagement : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNapClientInfo(
-        WINBOOL *isNapEnabled,
-        CountedString **clientName,
-        CountedString **clientDescription,
-        CountedString **protocolVersion) = 0;
+                     WINBOOL *isNapEnabled,
+                     CountedString **clientName,
+                     CountedString **clientDescription,
+                     CountedString **protocolVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSystemIsolationInfo(
-        IsolationInfo **isolationInfo,
-        WINBOOL *unknownConnections) = 0;
+                     IsolationInfo **isolationInfo,
+                     WINBOOL *unknownConnections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterSystemHealthAgent(
-        const NapComponentRegistrationInfo *agent) = 0;
+                     const NapComponentRegistrationInfo *agent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterSystemHealthAgent(
-        SystemHealthEntityId id) = 0;
+                     SystemHealthEntityId id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterEnforcementClient(
-        const NapComponentRegistrationInfo *enforcer) = 0;
+                     const NapComponentRegistrationInfo *enforcer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterEnforcementClient(
-        EnforcementEntityId id) = 0;
+                     EnforcementEntityId id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRegisteredSystemHealthAgents(
-        SystemHealthEntityCount *count,
-        NapComponentRegistrationInfo **agents) = 0;
+                     SystemHealthEntityCount *count,
+                     NapComponentRegistrationInfo **agents) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRegisteredEnforcementClients(
-        EnforcementEntityCount *count,
-        NapComponentRegistrationInfo **enforcers) = 0;
+                     EnforcementEntityCount *count,
+                     NapComponentRegistrationInfo **enforcers) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -98,54 +98,54 @@ typedef struct INapClientManagementVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapClientManagement *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapClientManagement *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapClientManagement *This);
+                     INapClientManagement *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapClientManagement *This);
+                     INapClientManagement *This);
 
     /*** INapClientManagement methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNapClientInfo)(
-        INapClientManagement *This,
-        WINBOOL *isNapEnabled,
-        CountedString **clientName,
-        CountedString **clientDescription,
-        CountedString **protocolVersion);
+                     INapClientManagement *This,
+                     WINBOOL *isNapEnabled,
+                     CountedString **clientName,
+                     CountedString **clientDescription,
+                     CountedString **protocolVersion);
 
     HRESULT (STDMETHODCALLTYPE *GetSystemIsolationInfo)(
-        INapClientManagement *This,
-        IsolationInfo **isolationInfo,
-        WINBOOL *unknownConnections);
+                     INapClientManagement *This,
+                     IsolationInfo **isolationInfo,
+                     WINBOOL *unknownConnections);
 
     HRESULT (STDMETHODCALLTYPE *RegisterSystemHealthAgent)(
-        INapClientManagement *This,
-        const NapComponentRegistrationInfo *agent);
+                     INapClientManagement *This,
+                     const NapComponentRegistrationInfo *agent);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterSystemHealthAgent)(
-        INapClientManagement *This,
-        SystemHealthEntityId id);
+                     INapClientManagement *This,
+                     SystemHealthEntityId id);
 
     HRESULT (STDMETHODCALLTYPE *RegisterEnforcementClient)(
-        INapClientManagement *This,
-        const NapComponentRegistrationInfo *enforcer);
+                     INapClientManagement *This,
+                     const NapComponentRegistrationInfo *enforcer);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterEnforcementClient)(
-        INapClientManagement *This,
-        EnforcementEntityId id);
+                     INapClientManagement *This,
+                     EnforcementEntityId id);
 
     HRESULT (STDMETHODCALLTYPE *GetRegisteredSystemHealthAgents)(
-        INapClientManagement *This,
-        SystemHealthEntityCount *count,
-        NapComponentRegistrationInfo **agents);
+                     INapClientManagement *This,
+                     SystemHealthEntityCount *count,
+                     NapComponentRegistrationInfo **agents);
 
     HRESULT (STDMETHODCALLTYPE *GetRegisteredEnforcementClients)(
-        INapClientManagement *This,
-        EnforcementEntityCount *count,
-        NapComponentRegistrationInfo **enforcers);
+                     INapClientManagement *This,
+                     EnforcementEntityCount *count,
+                     NapComponentRegistrationInfo **enforcers);
 
     END_INTERFACE
 } INapClientManagementVtbl;
@@ -225,8 +225,8 @@ MIDL_INTERFACE("07a1127b-18cc-422a-b988-e892600fcc74")
 INapClientManagement2 : public INapClientManagement
 {
     virtual HRESULT STDMETHODCALLTYPE GetSystemIsolationInfoEx(
-        IsolationInfoEx **isolationInfo,
-        WINBOOL *unknownConnections) = 0;
+                     IsolationInfoEx **isolationInfo,
+                     WINBOOL *unknownConnections) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -238,60 +238,60 @@ typedef struct INapClientManagement2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapClientManagement2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapClientManagement2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapClientManagement2 *This);
+                     INapClientManagement2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapClientManagement2 *This);
+                     INapClientManagement2 *This);
 
     /*** INapClientManagement methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNapClientInfo)(
-        INapClientManagement2 *This,
-        WINBOOL *isNapEnabled,
-        CountedString **clientName,
-        CountedString **clientDescription,
-        CountedString **protocolVersion);
+                     INapClientManagement2 *This,
+                     WINBOOL *isNapEnabled,
+                     CountedString **clientName,
+                     CountedString **clientDescription,
+                     CountedString **protocolVersion);
 
     HRESULT (STDMETHODCALLTYPE *GetSystemIsolationInfo)(
-        INapClientManagement2 *This,
-        IsolationInfo **isolationInfo,
-        WINBOOL *unknownConnections);
+                     INapClientManagement2 *This,
+                     IsolationInfo **isolationInfo,
+                     WINBOOL *unknownConnections);
 
     HRESULT (STDMETHODCALLTYPE *RegisterSystemHealthAgent)(
-        INapClientManagement2 *This,
-        const NapComponentRegistrationInfo *agent);
+                     INapClientManagement2 *This,
+                     const NapComponentRegistrationInfo *agent);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterSystemHealthAgent)(
-        INapClientManagement2 *This,
-        SystemHealthEntityId id);
+                     INapClientManagement2 *This,
+                     SystemHealthEntityId id);
 
     HRESULT (STDMETHODCALLTYPE *RegisterEnforcementClient)(
-        INapClientManagement2 *This,
-        const NapComponentRegistrationInfo *enforcer);
+                     INapClientManagement2 *This,
+                     const NapComponentRegistrationInfo *enforcer);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterEnforcementClient)(
-        INapClientManagement2 *This,
-        EnforcementEntityId id);
+                     INapClientManagement2 *This,
+                     EnforcementEntityId id);
 
     HRESULT (STDMETHODCALLTYPE *GetRegisteredSystemHealthAgents)(
-        INapClientManagement2 *This,
-        SystemHealthEntityCount *count,
-        NapComponentRegistrationInfo **agents);
+                     INapClientManagement2 *This,
+                     SystemHealthEntityCount *count,
+                     NapComponentRegistrationInfo **agents);
 
     HRESULT (STDMETHODCALLTYPE *GetRegisteredEnforcementClients)(
-        INapClientManagement2 *This,
-        EnforcementEntityCount *count,
-        NapComponentRegistrationInfo **enforcers);
+                     INapClientManagement2 *This,
+                     EnforcementEntityCount *count,
+                     NapComponentRegistrationInfo **enforcers);
 
     /*** INapClientManagement2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSystemIsolationInfoEx)(
-        INapClientManagement2 *This,
-        IsolationInfoEx **isolationInfo,
-        WINBOOL *unknownConnections);
+                     INapClientManagement2 *This,
+                     IsolationInfoEx **isolationInfo,
+                     WINBOOL *unknownConnections);
 
     END_INTERFACE
 } INapClientManagement2Vtbl;

@@ -119,19 +119,19 @@ extern "C" {
 #else
   typedef struct IWbemPathKeyListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWbemPathKeyList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWbemPathKeyList *This);
-      ULONG (WINAPI *Release)(IWbemPathKeyList *This);
-      HRESULT (WINAPI *GetCount)(IWbemPathKeyList *This,ULONG *puKeyCount);
-      HRESULT (WINAPI *SetKey)(IWbemPathKeyList *This,LPCWSTR wszName,ULONG uFlags,ULONG uCimType,LPVOID pKeyVal);
-      HRESULT (WINAPI *SetKey2)(IWbemPathKeyList *This,LPCWSTR wszName,ULONG uFlags,ULONG uCimType,VARIANT *pKeyVal);
-      HRESULT (WINAPI *GetKey)(IWbemPathKeyList *This,ULONG uKeyIx,ULONG uFlags,ULONG *puNameBufSize,LPWSTR pszKeyName,ULONG *puKeyValBufSize,LPVOID pKeyVal,ULONG *puApparentCimType);
-      HRESULT (WINAPI *GetKey2)(IWbemPathKeyList *This,ULONG uKeyIx,ULONG uFlags,ULONG *puNameBufSize,LPWSTR pszKeyName,VARIANT *pKeyValue,ULONG *puApparentCimType);
-      HRESULT (WINAPI *RemoveKey)(IWbemPathKeyList *This,LPCWSTR wszName,ULONG uFlags);
-      HRESULT (WINAPI *RemoveAllKeys)(IWbemPathKeyList *This,ULONG uFlags);
-      HRESULT (WINAPI *MakeSingleton)(IWbemPathKeyList *This,boolean bSet);
-      HRESULT (WINAPI *GetInfo)(IWbemPathKeyList *This,ULONG uRequestedInfo,ULONGLONG *puResponse);
-      HRESULT (WINAPI *GetText)(IWbemPathKeyList *This,__LONG32 lFlags,ULONG *puBuffLength,LPWSTR pszText);
+                   HRESULT (WINAPI *QueryInterface)(IWbemPathKeyList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWbemPathKeyList *This);
+                   ULONG (WINAPI *Release)(IWbemPathKeyList *This);
+                   HRESULT (WINAPI *GetCount)(IWbemPathKeyList *This,ULONG *puKeyCount);
+                   HRESULT (WINAPI *SetKey)(IWbemPathKeyList *This,LPCWSTR wszName,ULONG uFlags,ULONG uCimType,LPVOID pKeyVal);
+                   HRESULT (WINAPI *SetKey2)(IWbemPathKeyList *This,LPCWSTR wszName,ULONG uFlags,ULONG uCimType,VARIANT *pKeyVal);
+                   HRESULT (WINAPI *GetKey)(IWbemPathKeyList *This,ULONG uKeyIx,ULONG uFlags,ULONG *puNameBufSize,LPWSTR pszKeyName,ULONG *puKeyValBufSize,LPVOID pKeyVal,ULONG *puApparentCimType);
+                   HRESULT (WINAPI *GetKey2)(IWbemPathKeyList *This,ULONG uKeyIx,ULONG uFlags,ULONG *puNameBufSize,LPWSTR pszKeyName,VARIANT *pKeyValue,ULONG *puApparentCimType);
+                   HRESULT (WINAPI *RemoveKey)(IWbemPathKeyList *This,LPCWSTR wszName,ULONG uFlags);
+                   HRESULT (WINAPI *RemoveAllKeys)(IWbemPathKeyList *This,ULONG uFlags);
+                   HRESULT (WINAPI *MakeSingleton)(IWbemPathKeyList *This,boolean bSet);
+                   HRESULT (WINAPI *GetInfo)(IWbemPathKeyList *This,ULONG uRequestedInfo,ULONGLONG *puResponse);
+                   HRESULT (WINAPI *GetText)(IWbemPathKeyList *This,__LONG32 lFlags,ULONG *puBuffLength,LPWSTR pszText);
     END_INTERFACE
   } IWbemPathKeyListVtbl;
   struct IWbemPathKeyList {
@@ -211,35 +211,35 @@ extern "C" {
 #else
   typedef struct IWbemPathVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWbemPath *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWbemPath *This);
-      ULONG (WINAPI *Release)(IWbemPath *This);
-      HRESULT (WINAPI *SetText)(IWbemPath *This,ULONG uMode,LPCWSTR pszPath);
-      HRESULT (WINAPI *GetText)(IWbemPath *This,__LONG32 lFlags,ULONG *puBuffLength,LPWSTR pszText);
-      HRESULT (WINAPI *GetInfo)(IWbemPath *This,ULONG uRequestedInfo,ULONGLONG *puResponse);
-      HRESULT (WINAPI *SetServer)(IWbemPath *This,LPCWSTR Name);
-      HRESULT (WINAPI *GetServer)(IWbemPath *This,ULONG *puNameBufLength,LPWSTR pName);
-      HRESULT (WINAPI *GetNamespaceCount)(IWbemPath *This,ULONG *puCount);
-      HRESULT (WINAPI *SetNamespaceAt)(IWbemPath *This,ULONG uIndex,LPCWSTR pszName);
-      HRESULT (WINAPI *GetNamespaceAt)(IWbemPath *This,ULONG uIndex,ULONG *puNameBufLength,LPWSTR pName);
-      HRESULT (WINAPI *RemoveNamespaceAt)(IWbemPath *This,ULONG uIndex);
-      HRESULT (WINAPI *RemoveAllNamespaces)(IWbemPath *This);
-      HRESULT (WINAPI *GetScopeCount)(IWbemPath *This,ULONG *puCount);
-      HRESULT (WINAPI *SetScope)(IWbemPath *This,ULONG uIndex,LPWSTR pszClass);
-      HRESULT (WINAPI *SetScopeFromText)(IWbemPath *This,ULONG uIndex,LPWSTR pszText);
-      HRESULT (WINAPI *GetScope)(IWbemPath *This,ULONG uIndex,ULONG *puClassNameBufSize,LPWSTR pszClass,IWbemPathKeyList **pKeyList);
-      HRESULT (WINAPI *GetScopeAsText)(IWbemPath *This,ULONG uIndex,ULONG *puTextBufSize,LPWSTR pszText);
-      HRESULT (WINAPI *RemoveScope)(IWbemPath *This,ULONG uIndex);
-      HRESULT (WINAPI *RemoveAllScopes)(IWbemPath *This);
-      HRESULT (WINAPI *SetClassName)(IWbemPath *This,LPCWSTR Name);
-      HRESULT (WINAPI *GetClassName)(IWbemPath *This,ULONG *puBuffLength,LPWSTR pszName);
-      HRESULT (WINAPI *GetKeyList)(IWbemPath *This,IWbemPathKeyList **pOut);
-      HRESULT (WINAPI *CreateClassPart)(IWbemPath *This,__LONG32 lFlags,LPCWSTR Name);
-      HRESULT (WINAPI *DeleteClassPart)(IWbemPath *This,__LONG32 lFlags);
-      WINBOOL (WINAPI *IsRelative)(IWbemPath *This,LPWSTR wszMachine,LPWSTR wszNamespace);
-      WINBOOL (WINAPI *IsRelativeOrChild)(IWbemPath *This,LPWSTR wszMachine,LPWSTR wszNamespace,__LONG32 lFlags);
-      WINBOOL (WINAPI *IsLocal)(IWbemPath *This,LPCWSTR wszMachine);
-      WINBOOL (WINAPI *IsSameClassName)(IWbemPath *This,LPCWSTR wszClass);
+                   HRESULT (WINAPI *QueryInterface)(IWbemPath *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWbemPath *This);
+                   ULONG (WINAPI *Release)(IWbemPath *This);
+                   HRESULT (WINAPI *SetText)(IWbemPath *This,ULONG uMode,LPCWSTR pszPath);
+                   HRESULT (WINAPI *GetText)(IWbemPath *This,__LONG32 lFlags,ULONG *puBuffLength,LPWSTR pszText);
+                   HRESULT (WINAPI *GetInfo)(IWbemPath *This,ULONG uRequestedInfo,ULONGLONG *puResponse);
+                   HRESULT (WINAPI *SetServer)(IWbemPath *This,LPCWSTR Name);
+                   HRESULT (WINAPI *GetServer)(IWbemPath *This,ULONG *puNameBufLength,LPWSTR pName);
+                   HRESULT (WINAPI *GetNamespaceCount)(IWbemPath *This,ULONG *puCount);
+                   HRESULT (WINAPI *SetNamespaceAt)(IWbemPath *This,ULONG uIndex,LPCWSTR pszName);
+                   HRESULT (WINAPI *GetNamespaceAt)(IWbemPath *This,ULONG uIndex,ULONG *puNameBufLength,LPWSTR pName);
+                   HRESULT (WINAPI *RemoveNamespaceAt)(IWbemPath *This,ULONG uIndex);
+                   HRESULT (WINAPI *RemoveAllNamespaces)(IWbemPath *This);
+                   HRESULT (WINAPI *GetScopeCount)(IWbemPath *This,ULONG *puCount);
+                   HRESULT (WINAPI *SetScope)(IWbemPath *This,ULONG uIndex,LPWSTR pszClass);
+                   HRESULT (WINAPI *SetScopeFromText)(IWbemPath *This,ULONG uIndex,LPWSTR pszText);
+                   HRESULT (WINAPI *GetScope)(IWbemPath *This,ULONG uIndex,ULONG *puClassNameBufSize,LPWSTR pszClass,IWbemPathKeyList **pKeyList);
+                   HRESULT (WINAPI *GetScopeAsText)(IWbemPath *This,ULONG uIndex,ULONG *puTextBufSize,LPWSTR pszText);
+                   HRESULT (WINAPI *RemoveScope)(IWbemPath *This,ULONG uIndex);
+                   HRESULT (WINAPI *RemoveAllScopes)(IWbemPath *This);
+                   HRESULT (WINAPI *SetClassName)(IWbemPath *This,LPCWSTR Name);
+                   HRESULT (WINAPI *GetClassName)(IWbemPath *This,ULONG *puBuffLength,LPWSTR pszName);
+                   HRESULT (WINAPI *GetKeyList)(IWbemPath *This,IWbemPathKeyList **pOut);
+                   HRESULT (WINAPI *CreateClassPart)(IWbemPath *This,__LONG32 lFlags,LPCWSTR Name);
+                   HRESULT (WINAPI *DeleteClassPart)(IWbemPath *This,__LONG32 lFlags);
+                   WINBOOL (WINAPI *IsRelative)(IWbemPath *This,LPWSTR wszMachine,LPWSTR wszNamespace);
+                   WINBOOL (WINAPI *IsRelativeOrChild)(IWbemPath *This,LPWSTR wszMachine,LPWSTR wszNamespace,__LONG32 lFlags);
+                   WINBOOL (WINAPI *IsLocal)(IWbemPath *This,LPCWSTR wszMachine);
+                   WINBOOL (WINAPI *IsSameClassName)(IWbemPath *This,LPCWSTR wszClass);
     END_INTERFACE
   } IWbemPathVtbl;
   struct IWbemPath {
@@ -353,16 +353,16 @@ extern "C" {
 #else
   typedef struct IWbemQueryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWbemQuery *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWbemQuery *This);
-      ULONG (WINAPI *Release)(IWbemQuery *This);
-      HRESULT (WINAPI *Empty)(IWbemQuery *This);
-      HRESULT (WINAPI *SetLanguageFeatures)(IWbemQuery *This,ULONG uFlags,ULONG uArraySize,ULONG *puFeatures);
-      HRESULT (WINAPI *TestLanguageFeatures)(IWbemQuery *This,ULONG uFlags,ULONG *uArraySize,ULONG *puFeatures);
-      HRESULT (WINAPI *Parse)(IWbemQuery *This,LPCWSTR pszLang,LPCWSTR pszQuery,ULONG uFlags);
-      HRESULT (WINAPI *GetAnalysis)(IWbemQuery *This,ULONG uAnalysisType,ULONG uFlags,LPVOID *pAnalysis);
-      HRESULT (WINAPI *FreeMemory)(IWbemQuery *This,LPVOID pMem);
-      HRESULT (WINAPI *GetQueryInfo)(IWbemQuery *This,ULONG uAnalysisType,ULONG uInfoId,ULONG uBufSize,LPVOID pDestBuf);
+                   HRESULT (WINAPI *QueryInterface)(IWbemQuery *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWbemQuery *This);
+                   ULONG (WINAPI *Release)(IWbemQuery *This);
+                   HRESULT (WINAPI *Empty)(IWbemQuery *This);
+                   HRESULT (WINAPI *SetLanguageFeatures)(IWbemQuery *This,ULONG uFlags,ULONG uArraySize,ULONG *puFeatures);
+                   HRESULT (WINAPI *TestLanguageFeatures)(IWbemQuery *This,ULONG uFlags,ULONG *uArraySize,ULONG *puFeatures);
+                   HRESULT (WINAPI *Parse)(IWbemQuery *This,LPCWSTR pszLang,LPCWSTR pszQuery,ULONG uFlags);
+                   HRESULT (WINAPI *GetAnalysis)(IWbemQuery *This,ULONG uAnalysisType,ULONG uFlags,LPVOID *pAnalysis);
+                   HRESULT (WINAPI *FreeMemory)(IWbemQuery *This,LPVOID pMem);
+                   HRESULT (WINAPI *GetQueryInfo)(IWbemQuery *This,ULONG uAnalysisType,ULONG uInfoId,ULONG uBufSize,LPVOID pDestBuf);
     END_INTERFACE
   } IWbemQueryVtbl;
   struct IWbemQuery {

@@ -27,13 +27,13 @@ long long llrintl (long double x)
     // Convert the truncated integral part to an integer.
     retval = intg;
     if (frac < 0.5) {
-      // Round towards zero.
+                   // Round towards zero.
     } else if (frac > 0.5) {
-      // Round towards infinities.
-      retval += signbit(x) ? -1 : 1;
+                   // Round towards infinities.
+                   retval += signbit(x) ? -1 : 1;
     } else {
-      // Round to the nearest even number.
-      retval += retval % 2;
+                   // Round to the nearest even number.
+                   retval += retval % 2;
     }
   }
 #endif

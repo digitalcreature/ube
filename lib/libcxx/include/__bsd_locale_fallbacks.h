@@ -46,7 +46,7 @@ int __libcpp_wctob_l(wint_t __c, locale_t __l)
 
 inline _LIBCPP_INLINE_VISIBILITY
 size_t __libcpp_wcsnrtombs_l(char *__dest, const wchar_t **__src, size_t __nwc,
-                         size_t __len, mbstate_t *__ps, locale_t __l)
+                                                                             size_t __len, mbstate_t *__ps, locale_t __l)
 {
     __libcpp_locale_guard __current(__l);
     return wcsnrtombs(__dest, __src, __nwc, __len, __ps);
@@ -61,7 +61,7 @@ size_t __libcpp_wcrtomb_l(char *__s, wchar_t __wc, mbstate_t *__ps, locale_t __l
 
 inline _LIBCPP_INLINE_VISIBILITY
 size_t __libcpp_mbsnrtowcs_l(wchar_t * __dest, const char **__src, size_t __nms,
-                      size_t __len, mbstate_t *__ps, locale_t __l)
+                                                             size_t __len, mbstate_t *__ps, locale_t __l)
 {
     __libcpp_locale_guard __current(__l);
     return mbsnrtowcs(__dest, __src, __nms, __len, __ps);
@@ -69,7 +69,7 @@ size_t __libcpp_mbsnrtowcs_l(wchar_t * __dest, const char **__src, size_t __nms,
 
 inline _LIBCPP_INLINE_VISIBILITY
 size_t __libcpp_mbrtowc_l(wchar_t *__pwc, const char *__s, size_t __n,
-                   mbstate_t *__ps, locale_t __l)
+                                                          mbstate_t *__ps, locale_t __l)
 {
     __libcpp_locale_guard __current(__l);
     return mbrtowc(__pwc, __s, __n, __ps);
@@ -98,7 +98,7 @@ lconv *__libcpp_localeconv_l(locale_t __l)
 
 inline _LIBCPP_INLINE_VISIBILITY
 size_t __libcpp_mbsrtowcs_l(wchar_t *__dest, const char **__src, size_t __len,
-                     mbstate_t *__ps, locale_t __l)
+                                                            mbstate_t *__ps, locale_t __l)
 {
     __libcpp_locale_guard __current(__l);
     return mbsrtowcs(__dest, __src, __len, __ps);

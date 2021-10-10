@@ -45,33 +45,33 @@ basename (char *path)
 
   if (path && *path)
     {
-      /* allocate sufficient local storage space,
-       * in which to create a wide character reference copy of path
-       */
-      wchar_t refcopy[1 + (len = mbstowcs (NULL, path, 0))];
-      /* create the wide character reference copy of path,
-       * and step over the drive designator, if present ...
-       */
-      wchar_t *refpath = refcopy;
+                   /* allocate sufficient local storage space,
+                    * in which to create a wide character reference copy of path
+                    */
+                   wchar_t refcopy[1 + (len = mbstowcs (NULL, path, 0))];
+                   /* create the wide character reference copy of path,
+                    * and step over the drive designator, if present ...
+                    */
+                   wchar_t *refpath = refcopy;
 
-      if ((len = mbstowcs( refpath, path, len)) > 1 && refpath[1] == L':')
-        {
+                   if ((len = mbstowcs( refpath, path, len)) > 1 && refpath[1] == L':')
+                     {
 	  /* FIXME: maybe should confirm *refpath is a valid drive designator */
 	  refpath += 2;
-        }
-      /* ensure that our wide character reference path is NUL terminated */
-      refcopy[len] = L'\0';
-      /* check again, just to ensure we still have a non-empty path name ... */
-      if (*refpath)
-        {
+                     }
+                   /* ensure that our wide character reference path is NUL terminated */
+                   refcopy[len] = L'\0';
+                   /* check again, just to ensure we still have a non-empty path name ... */
+                   if (*refpath)
+                     {
 	  /* and, when we do, process it in the wide character domain ...
 	   * scanning from left to right, to the char after the final dir separator.  */
 	  wchar_t *refname;
 
 	  for (refname = refpath; *refpath; ++refpath)
 	    {
-	      if (*refpath == L'/' || *refpath == L'\\')
-	        {
+	                   if (*refpath == L'/' || *refpath == L'\\')
+	                     {
 		  /* we found a dir separator ...
 		   * step over it, and any others which immediately follow it.  */
 		  while (*refpath == L'/' || *refpath == L'\\')
@@ -84,39 +84,39 @@ basename (char *path)
 		   * strip off any trailing dir separators which we found.  */
 		  else
 		    while (refpath > refname
-		      && (*--refpath == L'/' || *refpath == L'\\')   )
-		      *refpath = L'\0';
-	        }
+		                   && (*--refpath == L'/' || *refpath == L'\\')   )
+		                   *refpath = L'\0';
+	                     }
 	    }
 	  /* in the wide character domain ...
 	   * refname now points at the resolved base name ...  */
 	  if (*refname)
 	    {
-	      /* if it's not empty,
-	       * then we transform the full normalised path back into 
-	       * the multibyte character domain, and skip over the dirname,
-	       * to return the resolved basename.  */
-	      if ((len = wcstombs( path, refcopy, len)) != (size_t)(-1))
+	                   /* if it's not empty,
+	                    * then we transform the full normalised path back into 
+	                    * the multibyte character domain, and skip over the dirname,
+	                    * to return the resolved basename.  */
+	                   if ((len = wcstombs( path, refcopy, len)) != (size_t)(-1))
 		path[len] = '\0';
-	      *refname = L'\0';
-	      if ((len = wcstombs( NULL, refcopy, 0 )) != (size_t)(-1))
+	                   *refname = L'\0';
+	                   if ((len = wcstombs( NULL, refcopy, 0 )) != (size_t)(-1))
 		path += len;
 	    }
 	  else
 	    {
-	      /* the basename is empty, so return the default value of "/",
-	       * transforming from wide char to multibyte char domain, and
-	       * returning it in our own buffer.  */
-	      retfail = realloc (retfail, len = 1 + wcstombs (NULL, L"/", 0));
-	      wcstombs (path = retfail, L"/", len);
+	                   /* the basename is empty, so return the default value of "/",
+	                    * transforming from wide char to multibyte char domain, and
+	                    * returning it in our own buffer.  */
+	                   retfail = realloc (retfail, len = 1 + wcstombs (NULL, L"/", 0));
+	                   wcstombs (path = retfail, L"/", len);
 	    }
 	  /* restore the caller's locale, clean up, and return the result */
 	  setlocale (LC_CTYPE, locale);
 	  free (locale);
 	  return path;
-        }
-      /* or we had an empty residual path name, after the drive designator,
-       * in which case we simply fall through ...  */
+                     }
+                   /* or we had an empty residual path name, after the drive designator,
+                    * in which case we simply fall through ...  */
     }
   /* and, if we get to here ...
    * the path name is either NULL, or it decomposes to an empty string;

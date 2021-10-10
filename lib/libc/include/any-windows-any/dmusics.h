@@ -51,7 +51,7 @@ DEFINE_GUID(GUID_DMUS_PROP_SinkUsesDSound, 0xbe208857,0x8952,0x11d2,0xba,0x1c,0x
 /*****************************************************************************
  * Flags
  */
-#define REFRESH_F_LASTBUFFER        0x1
+#define REFRESH_F_LASTBUFFER                     0x1
 
 
 /*****************************************************************************
@@ -65,7 +65,7 @@ typedef struct _DMUS_VOICE_STATE DMUS_VOICE_STATE, *LPDMUS_VOICE_STATE;
 
 /* actual structure */
 struct _DMUS_VOICE_STATE {
-	WINBOOL         bExists;
+	WINBOOL                      bExists;
 	SAMPLE_POSITION spPosition;
 }; 
 #endif /* _DMUS_VOICE_STATE_DEFINED */
@@ -104,27 +104,27 @@ DECLARE_INTERFACE_(IDirectMusicSynth,IUnknown)
 
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
-#define IDirectMusicSynth_QueryInterface(p,a,b)       (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectMusicSynth_AddRef(p)                   (p)->lpVtbl->AddRef(p)
-#define IDirectMusicSynth_Release(p)                  (p)->lpVtbl->Release(p)
+#define IDirectMusicSynth_QueryInterface(p,a,b)                    (p)->lpVtbl->QueryInterface(p,a,b)
+#define IDirectMusicSynth_AddRef(p)                                                          (p)->lpVtbl->AddRef(p)
+#define IDirectMusicSynth_Release(p)                                                         (p)->lpVtbl->Release(p)
 /*** IDirectMusicSynth methods ***/
-#define IDirectMusicSynth_Open(p,a)                   (p)->lpVtbl->Open(p,a)
-#define IDirectMusicSynth_Close(p)                    (p)->lpVtbl->Close(p)
+#define IDirectMusicSynth_Open(p,a)                                                          (p)->lpVtbl->Open(p,a)
+#define IDirectMusicSynth_Close(p)                                                           (p)->lpVtbl->Close(p)
 #define IDirectMusicSynth_SetNumChannelGroups(p,a)    (p)->lpVtbl->SetNumChannelGroups(p,a)
-#define IDirectMusicSynth_Download(p,a,b,c)           (p)->lpVtbl->Download(p,a,b,c)
-#define IDirectMusicSynth_Unload(p,a,b,c)             (p)->lpVtbl->Unload(p,a,b,c)
-#define IDirectMusicSynth_PlayBuffer(p,a,b,c)         (p)->lpVtbl->PlayBuffer(p,a,b,c)
-#define IDirectMusicSynth_GetRunningStats(p,a)        (p)->lpVtbl->GetRunningStats(p,a)
-#define IDirectMusicSynth_GetPortCaps(p,a)            (p)->lpVtbl->GetPortCaps(p,a)
-#define IDirectMusicSynth_SetMasterClock(p,a)         (p)->lpVtbl->SetMasterClock(p,a)
-#define IDirectMusicSynth_GetLatencyClock(p,a)        (p)->lpVtbl->GetLatencyClock(p,a)
-#define IDirectMusicSynth_Activate(p,a)               (p)->lpVtbl->Activate(p,a)
-#define IDirectMusicSynth_SetSynthSink(p,a)           (p)->lpVtbl->SetSynthSink(p,a)
-#define IDirectMusicSynth_Render(p,a,b,c)             (p)->lpVtbl->Render(p,a,b,c)
+#define IDirectMusicSynth_Download(p,a,b,c)                        (p)->lpVtbl->Download(p,a,b,c)
+#define IDirectMusicSynth_Unload(p,a,b,c)                                       (p)->lpVtbl->Unload(p,a,b,c)
+#define IDirectMusicSynth_PlayBuffer(p,a,b,c)                      (p)->lpVtbl->PlayBuffer(p,a,b,c)
+#define IDirectMusicSynth_GetRunningStats(p,a)                     (p)->lpVtbl->GetRunningStats(p,a)
+#define IDirectMusicSynth_GetPortCaps(p,a)                                      (p)->lpVtbl->GetPortCaps(p,a)
+#define IDirectMusicSynth_SetMasterClock(p,a)                      (p)->lpVtbl->SetMasterClock(p,a)
+#define IDirectMusicSynth_GetLatencyClock(p,a)                     (p)->lpVtbl->GetLatencyClock(p,a)
+#define IDirectMusicSynth_Activate(p,a)                                         (p)->lpVtbl->Activate(p,a)
+#define IDirectMusicSynth_SetSynthSink(p,a)                        (p)->lpVtbl->SetSynthSink(p,a)
+#define IDirectMusicSynth_Render(p,a,b,c)                                       (p)->lpVtbl->Render(p,a,b,c)
 #define IDirectMusicSynth_SetChannelPriority(p,a,b,c) (p)->lpVtbl->SetChannelPriority(p,a,b,c)
 #define IDirectMusicSynth_GetChannelPriority(p,a,b,c) (p)->lpVtbl->GetChannelPriority(p,a,b,c)
-#define IDirectMusicSynth_GetFormat(p,a,b)            (p)->lpVtbl->GetFormat(p,a,b)
-#define IDirectMusicSynth_GetAppend(p,a)              (p)->lpVtbl->GetAppend(p,a)
+#define IDirectMusicSynth_GetFormat(p,a,b)                                      (p)->lpVtbl->GetFormat(p,a,b)
+#define IDirectMusicSynth_GetAppend(p,a)                                        (p)->lpVtbl->GetAppend(p,a)
 #endif
 
 
@@ -167,32 +167,32 @@ DECLARE_INTERFACE_(IDirectMusicSynth8,IDirectMusicSynth)
 
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
-#define IDirectMusicSynth8_QueryInterface(p,a,b)            (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectMusicSynth8_AddRef(p)                        (p)->lpVtbl->AddRef(p)
-#define IDirectMusicSynth8_Release(p)                       (p)->lpVtbl->Release(p)
+#define IDirectMusicSynth8_QueryInterface(p,a,b)                                      (p)->lpVtbl->QueryInterface(p,a,b)
+#define IDirectMusicSynth8_AddRef(p)                                                                            (p)->lpVtbl->AddRef(p)
+#define IDirectMusicSynth8_Release(p)                                                              (p)->lpVtbl->Release(p)
 /*** IDirectMusicSynth methods ***/
-#define IDirectMusicSynth8_Open(p,a)                        (p)->lpVtbl->Open(p,a)
-#define IDirectMusicSynth8_Close(p)                         (p)->lpVtbl->Close(p)
-#define IDirectMusicSynth8_SetNumChannelGroups(p,a)         (p)->lpVtbl->SetNumChannelGroups(p,a)
-#define IDirectMusicSynth8_Download(p,a,b,c)                (p)->lpVtbl->Download(p,a,b,c)
-#define IDirectMusicSynth8_Unload(p,a,b,c)                  (p)->lpVtbl->Unload(p,a,b,c)
-#define IDirectMusicSynth8_PlayBuffer(p,a,b,c)              (p)->lpVtbl->PlayBuffer(p,a,b,c)
-#define IDirectMusicSynth8_GetRunningStats(p,a)             (p)->lpVtbl->GetRunningStats(p,a)
-#define IDirectMusicSynth8_GetPortCaps(p,a)                 (p)->lpVtbl->GetPortCaps(p,a)
-#define IDirectMusicSynth8_SetMasterClock(p,a)              (p)->lpVtbl->SetMasterClock(p,a)
-#define IDirectMusicSynth8_GetLatencyClock(p,a)             (p)->lpVtbl->GetLatencyClock(p,a)
-#define IDirectMusicSynth8_Activate(p,a)                    (p)->lpVtbl->Activate(p,a)
-#define IDirectMusicSynth8_SetSynthSink(p,a)                (p)->lpVtbl->SetSynthSink(p,a)
-#define IDirectMusicSynth8_Render(p,a,b,c)                  (p)->lpVtbl->Render(p,a,b,c)
-#define IDirectMusicSynth8_SetChannelPriority(p,a,b,c)      (p)->lpVtbl->SetChannelPriority(p,a,b,c)
-#define IDirectMusicSynth8_GetChannelPriority(p,a,b,c)      (p)->lpVtbl->GetChannelPriority(p,a,b,c)
-#define IDirectMusicSynth8_GetFormat(p,a,b)                 (p)->lpVtbl->GetFormat(p,a,b)
-#define IDirectMusicSynth8_GetAppend(p,a)                   (p)->lpVtbl->GetAppend(p,a)
+#define IDirectMusicSynth8_Open(p,a)                                                                            (p)->lpVtbl->Open(p,a)
+#define IDirectMusicSynth8_Close(p)                                                                             (p)->lpVtbl->Close(p)
+#define IDirectMusicSynth8_SetNumChannelGroups(p,a)                      (p)->lpVtbl->SetNumChannelGroups(p,a)
+#define IDirectMusicSynth8_Download(p,a,b,c)                                          (p)->lpVtbl->Download(p,a,b,c)
+#define IDirectMusicSynth8_Unload(p,a,b,c)                                                         (p)->lpVtbl->Unload(p,a,b,c)
+#define IDirectMusicSynth8_PlayBuffer(p,a,b,c)                                        (p)->lpVtbl->PlayBuffer(p,a,b,c)
+#define IDirectMusicSynth8_GetRunningStats(p,a)                                       (p)->lpVtbl->GetRunningStats(p,a)
+#define IDirectMusicSynth8_GetPortCaps(p,a)                                           (p)->lpVtbl->GetPortCaps(p,a)
+#define IDirectMusicSynth8_SetMasterClock(p,a)                                        (p)->lpVtbl->SetMasterClock(p,a)
+#define IDirectMusicSynth8_GetLatencyClock(p,a)                                       (p)->lpVtbl->GetLatencyClock(p,a)
+#define IDirectMusicSynth8_Activate(p,a)                                                           (p)->lpVtbl->Activate(p,a)
+#define IDirectMusicSynth8_SetSynthSink(p,a)                                          (p)->lpVtbl->SetSynthSink(p,a)
+#define IDirectMusicSynth8_Render(p,a,b,c)                                                         (p)->lpVtbl->Render(p,a,b,c)
+#define IDirectMusicSynth8_SetChannelPriority(p,a,b,c)                   (p)->lpVtbl->SetChannelPriority(p,a,b,c)
+#define IDirectMusicSynth8_GetChannelPriority(p,a,b,c)                   (p)->lpVtbl->GetChannelPriority(p,a,b,c)
+#define IDirectMusicSynth8_GetFormat(p,a,b)                                           (p)->lpVtbl->GetFormat(p,a,b)
+#define IDirectMusicSynth8_GetAppend(p,a)                                                          (p)->lpVtbl->GetAppend(p,a)
 /*** IDirectMusicSynth8 methods ***/
 #define IDirectMusicSynth8_PlayVoice(p,a,b,c,d,e,f,g,h,i,j) (p)->lpVtbl->PlayVoice(p,a,b,c,d,e,f,g,h,i,j)
-#define IDirectMusicSynth8_StopVoice(p,a,b)                 (p)->lpVtbl->StopVoice(p,a,b)
-#define IDirectMusicSynth8_GetVoiceState(p,a,b,c)           (p)->lpVtbl->GetVoiceState(p,a,b,c)
-#define IDirectMusicSynth8_Refresh(p,a,b)                   (p)->lpVtbl->Refresh(p,a,b)
+#define IDirectMusicSynth8_StopVoice(p,a,b)                                           (p)->lpVtbl->StopVoice(p,a,b)
+#define IDirectMusicSynth8_GetVoiceState(p,a,b,c)                        (p)->lpVtbl->GetVoiceState(p,a,b,c)
+#define IDirectMusicSynth8_Refresh(p,a,b)                                                          (p)->lpVtbl->Refresh(p,a,b)
 #define IDirectMusicSynth8_AssignChannelToBuses(p,a,b,c,d)  (p)->lpVtbl->AssignChannelToBuses(p,a,b,c,d)
 #endif
 
@@ -221,17 +221,17 @@ DECLARE_INTERFACE_(IDirectMusicSynthSink,IUnknown)
 
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
-#define IDirectMusicSynthSink_QueryInterface(p,a,b)      (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectMusicSynthSink_AddRef(p)                  (p)->lpVtbl->AddRef(p)
-#define IDirectMusicSynthSink_Release(p)                 (p)->lpVtbl->Release(p)
+#define IDirectMusicSynthSink_QueryInterface(p,a,b)                   (p)->lpVtbl->QueryInterface(p,a,b)
+#define IDirectMusicSynthSink_AddRef(p)                                                         (p)->lpVtbl->AddRef(p)
+#define IDirectMusicSynthSink_Release(p)                                           (p)->lpVtbl->Release(p)
 /*** IDirectMusicSynth methods ***/
-#define IDirectMusicSynthSink_Init(p,a)                  (p)->lpVtbl->Init(p,a)
-#define IDirectMusicSynthSink_SetMasterClock(p,a)        (p)->lpVtbl->SetMasterClock(p,a)
-#define IDirectMusicSynthSink_GetLatencyClock(p,a)       (p)->lpVtbl->GetLatencyClock(p,a)
-#define IDirectMusicSynthSink_Activate(p,a)              (p)->lpVtbl->Activate(p,a)
+#define IDirectMusicSynthSink_Init(p,a)                                                         (p)->lpVtbl->Init(p,a)
+#define IDirectMusicSynthSink_SetMasterClock(p,a)                     (p)->lpVtbl->SetMasterClock(p,a)
+#define IDirectMusicSynthSink_GetLatencyClock(p,a)                    (p)->lpVtbl->GetLatencyClock(p,a)
+#define IDirectMusicSynthSink_Activate(p,a)                                        (p)->lpVtbl->Activate(p,a)
 #define IDirectMusicSynthSink_SampleToRefTime(p,a,b)     (p)->lpVtbl->SampleToRefTime(p,a,b)
 #define IDirectMusicSynthSink_RefTimeToSample(p,a,b)     (p)->lpVtbl->RefTimeToSample(p,a,b)
-#define IDirectMusicSynthSink_SetDirectSound(p,a,b)      (p)->lpVtbl->SetDirectSound(p,a,b)
+#define IDirectMusicSynthSink_SetDirectSound(p,a,b)                   (p)->lpVtbl->SetDirectSound(p,a,b)
 #define IDirectMusicSynthSink_GetDesiredBufferSize(p,a)  (p)->lpVtbl->GetDesiredBufferSize(p,a)
 #endif
 

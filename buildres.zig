@@ -28,14 +28,14 @@ fn readDirIndent(dir: *fs.Dir, indent: u8) anyerror!void {
     std.log.info("{s}{s}/", .{indent_str[0..(indent * 3)], dir.name});
     var iter = dir.iterate();
     while (try iter.next()) |entry| {
-        if (entry.kind == .File) {
-            std.log.info("{s}{s}", .{indent_str[0..(indent * 3)], entry.name});
-        }
-        if (entry.kind == .Directory) {
-            var child = try dir.openDir(entry.name, open_options);
-            defer child.close();
-            try readDirIndent(&child, indent + 1);
-        }
+                     if (entry.kind == .File) {
+                                      std.log.info("{s}{s}", .{indent_str[0..(indent * 3)], entry.name});
+                     }
+                     if (entry.kind == .Directory) {
+                                      var child = try dir.openDir(entry.name, open_options);
+                                      defer child.close();
+                                      try readDirIndent(&child, indent + 1);
+                     }
     }
 }
 
@@ -45,16 +45,16 @@ pub fn createZigFile(dir: fs.Dir) anyerror!void {
     var writer = file.writer();
     defer file.close();
     while (try iter.next()) |entry| {
-        if (entry.kind == .File) {
-            if (!std.mem.eql(u8, entry.name, ".zig")) {
-                try writer.print("pub const @\"{s}\" = @embedFile(\"{s}\");\n", .{ entry.name, entry.name });
-            }
-        }
-        if (entry.kind == .Directory) {
-            try writer.print("pub const @\"{s}\" = @import(\"{s}/.zig\");\n", .{ entry.name, entry.name });
-            var child = try dir.openDir(entry.name, open_options);
-            defer child.close();
-            try createZigFile(child);
-        }
+                     if (entry.kind == .File) {
+                                      if (!std.mem.eql(u8, entry.name, ".zig")) {
+                                          try writer.print("pub const @\"{s}\" = @embedFile(\"{s}\");\n", .{ entry.name, entry.name });
+                                      }
+                     }
+                     if (entry.kind == .Directory) {
+                                      try writer.print("pub const @\"{s}\" = @import(\"{s}/.zig\");\n", .{ entry.name, entry.name });
+                                      var child = try dir.openDir(entry.name, open_options);
+                                      defer child.close();
+                                      try createZigFile(child);
+                     }
     }
 }

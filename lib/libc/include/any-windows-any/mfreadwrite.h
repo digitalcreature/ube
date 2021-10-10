@@ -106,52 +106,52 @@ MIDL_INTERFACE("70ae66f2-c809-4e4f-8915-bdcb406b7993")
 IMFSourceReader : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamSelection(
-        DWORD dwStreamIndex,
-        WINBOOL *pfSelected) = 0;
+                     DWORD dwStreamIndex,
+                     WINBOOL *pfSelected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStreamSelection(
-        DWORD dwStreamIndex,
-        WINBOOL fSelected) = 0;
+                     DWORD dwStreamIndex,
+                     WINBOOL fSelected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNativeMediaType(
-        DWORD dwStreamIndex,
-        DWORD dwMediaTypeIndex,
-        IMFMediaType **ppMediaType) = 0;
+                     DWORD dwStreamIndex,
+                     DWORD dwMediaTypeIndex,
+                     IMFMediaType **ppMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentMediaType(
-        DWORD dwStreamIndex,
-        IMFMediaType **ppMediaType) = 0;
+                     DWORD dwStreamIndex,
+                     IMFMediaType **ppMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCurrentMediaType(
-        DWORD dwStreamIndex,
-        DWORD *pdwReserved,
-        IMFMediaType *pMediaType) = 0;
+                     DWORD dwStreamIndex,
+                     DWORD *pdwReserved,
+                     IMFMediaType *pMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCurrentPosition(
-        REFGUID guidTimeFormat,
-        REFPROPVARIANT varPosition) = 0;
+                     REFGUID guidTimeFormat,
+                     REFPROPVARIANT varPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReadSample(
-        DWORD dwStreamIndex,
-        DWORD dwControlFlags,
-        DWORD *pdwActualStreamIndex,
-        DWORD *pdwStreamFlags,
-        LONGLONG *pllTimestamp,
-        IMFSample **ppSample) = 0;
+                     DWORD dwStreamIndex,
+                     DWORD dwControlFlags,
+                     DWORD *pdwActualStreamIndex,
+                     DWORD *pdwStreamFlags,
+                     LONGLONG *pllTimestamp,
+                     IMFSample **ppSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Flush(
-        DWORD dwStreamIndex) = 0;
+                     DWORD dwStreamIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetServiceForStream(
-        DWORD dwStreamIndex,
-        REFGUID guidService,
-        REFIID riid,
-        LPVOID *ppvObject) = 0;
+                     DWORD dwStreamIndex,
+                     REFGUID guidService,
+                     REFIID riid,
+                     LPVOID *ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPresentationAttribute(
-        DWORD dwStreamIndex,
-        REFGUID guidAttribute,
-        PROPVARIANT *pvarAttribute) = 0;
+                     DWORD dwStreamIndex,
+                     REFGUID guidAttribute,
+                     PROPVARIANT *pvarAttribute) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -163,74 +163,74 @@ typedef struct IMFSourceReaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFSourceReader *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFSourceReader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFSourceReader *This);
+                     IMFSourceReader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFSourceReader *This);
+                     IMFSourceReader *This);
 
     /*** IMFSourceReader methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamSelection)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex,
-        WINBOOL *pfSelected);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex,
+                     WINBOOL *pfSelected);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamSelection)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex,
-        WINBOOL fSelected);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex,
+                     WINBOOL fSelected);
 
     HRESULT (STDMETHODCALLTYPE *GetNativeMediaType)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex,
-        DWORD dwMediaTypeIndex,
-        IMFMediaType **ppMediaType);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex,
+                     DWORD dwMediaTypeIndex,
+                     IMFMediaType **ppMediaType);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentMediaType)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex,
-        IMFMediaType **ppMediaType);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex,
+                     IMFMediaType **ppMediaType);
 
     HRESULT (STDMETHODCALLTYPE *SetCurrentMediaType)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex,
-        DWORD *pdwReserved,
-        IMFMediaType *pMediaType);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex,
+                     DWORD *pdwReserved,
+                     IMFMediaType *pMediaType);
 
     HRESULT (STDMETHODCALLTYPE *SetCurrentPosition)(
-        IMFSourceReader *This,
-        REFGUID guidTimeFormat,
-        REFPROPVARIANT varPosition);
+                     IMFSourceReader *This,
+                     REFGUID guidTimeFormat,
+                     REFPROPVARIANT varPosition);
 
     HRESULT (STDMETHODCALLTYPE *ReadSample)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex,
-        DWORD dwControlFlags,
-        DWORD *pdwActualStreamIndex,
-        DWORD *pdwStreamFlags,
-        LONGLONG *pllTimestamp,
-        IMFSample **ppSample);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex,
+                     DWORD dwControlFlags,
+                     DWORD *pdwActualStreamIndex,
+                     DWORD *pdwStreamFlags,
+                     LONGLONG *pllTimestamp,
+                     IMFSample **ppSample);
 
     HRESULT (STDMETHODCALLTYPE *Flush)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex);
 
     HRESULT (STDMETHODCALLTYPE *GetServiceForStream)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex,
-        REFGUID guidService,
-        REFIID riid,
-        LPVOID *ppvObject);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex,
+                     REFGUID guidService,
+                     REFIID riid,
+                     LPVOID *ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *GetPresentationAttribute)(
-        IMFSourceReader *This,
-        DWORD dwStreamIndex,
-        REFGUID guidAttribute,
-        PROPVARIANT *pvarAttribute);
+                     IMFSourceReader *This,
+                     DWORD dwStreamIndex,
+                     REFGUID guidAttribute,
+                     PROPVARIANT *pvarAttribute);
 
     END_INTERFACE
 } IMFSourceReaderVtbl;
@@ -318,47 +318,47 @@ MIDL_INTERFACE("3137f1cd-fe5e-4805-a5d8-fb477448cb3d")
 IMFSinkWriter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddStream(
-        IMFMediaType *pTargetMediaType,
-        DWORD *pdwStreamIndex) = 0;
+                     IMFMediaType *pTargetMediaType,
+                     DWORD *pdwStreamIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInputMediaType(
-        DWORD dwStreamIndex,
-        IMFMediaType *pInputMediaType,
-        IMFAttributes *pEncodingParameters) = 0;
+                     DWORD dwStreamIndex,
+                     IMFMediaType *pInputMediaType,
+                     IMFAttributes *pEncodingParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginWriting(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteSample(
-        DWORD dwStreamIndex,
-        IMFSample *pSample) = 0;
+                     DWORD dwStreamIndex,
+                     IMFSample *pSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendStreamTick(
-        DWORD dwStreamIndex,
-        LONGLONG llTimestamp) = 0;
+                     DWORD dwStreamIndex,
+                     LONGLONG llTimestamp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlaceMarker(
-        DWORD dwStreamIndex,
-        LPVOID pvContext) = 0;
+                     DWORD dwStreamIndex,
+                     LPVOID pvContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyEndOfSegment(
-        DWORD dwStreamIndex) = 0;
+                     DWORD dwStreamIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Flush(
-        DWORD dwStreamIndex) = 0;
+                     DWORD dwStreamIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finalize(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetServiceForStream(
-        DWORD dwStreamIndex,
-        REFGUID guidService,
-        REFIID riid,
-        LPVOID *ppvObject) = 0;
+                     DWORD dwStreamIndex,
+                     REFGUID guidService,
+                     REFIID riid,
+                     LPVOID *ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatistics(
-        DWORD dwStreamIndex,
-        MF_SINK_WRITER_STATISTICS *pStats) = 0;
+                     DWORD dwStreamIndex,
+                     MF_SINK_WRITER_STATISTICS *pStats) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -370,68 +370,68 @@ typedef struct IMFSinkWriterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFSinkWriter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFSinkWriter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFSinkWriter *This);
+                     IMFSinkWriter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFSinkWriter *This);
+                     IMFSinkWriter *This);
 
     /*** IMFSinkWriter methods ***/
     HRESULT (STDMETHODCALLTYPE *AddStream)(
-        IMFSinkWriter *This,
-        IMFMediaType *pTargetMediaType,
-        DWORD *pdwStreamIndex);
+                     IMFSinkWriter *This,
+                     IMFMediaType *pTargetMediaType,
+                     DWORD *pdwStreamIndex);
 
     HRESULT (STDMETHODCALLTYPE *SetInputMediaType)(
-        IMFSinkWriter *This,
-        DWORD dwStreamIndex,
-        IMFMediaType *pInputMediaType,
-        IMFAttributes *pEncodingParameters);
+                     IMFSinkWriter *This,
+                     DWORD dwStreamIndex,
+                     IMFMediaType *pInputMediaType,
+                     IMFAttributes *pEncodingParameters);
 
     HRESULT (STDMETHODCALLTYPE *BeginWriting)(
-        IMFSinkWriter *This);
+                     IMFSinkWriter *This);
 
     HRESULT (STDMETHODCALLTYPE *WriteSample)(
-        IMFSinkWriter *This,
-        DWORD dwStreamIndex,
-        IMFSample *pSample);
+                     IMFSinkWriter *This,
+                     DWORD dwStreamIndex,
+                     IMFSample *pSample);
 
     HRESULT (STDMETHODCALLTYPE *SendStreamTick)(
-        IMFSinkWriter *This,
-        DWORD dwStreamIndex,
-        LONGLONG llTimestamp);
+                     IMFSinkWriter *This,
+                     DWORD dwStreamIndex,
+                     LONGLONG llTimestamp);
 
     HRESULT (STDMETHODCALLTYPE *PlaceMarker)(
-        IMFSinkWriter *This,
-        DWORD dwStreamIndex,
-        LPVOID pvContext);
+                     IMFSinkWriter *This,
+                     DWORD dwStreamIndex,
+                     LPVOID pvContext);
 
     HRESULT (STDMETHODCALLTYPE *NotifyEndOfSegment)(
-        IMFSinkWriter *This,
-        DWORD dwStreamIndex);
+                     IMFSinkWriter *This,
+                     DWORD dwStreamIndex);
 
     HRESULT (STDMETHODCALLTYPE *Flush)(
-        IMFSinkWriter *This,
-        DWORD dwStreamIndex);
+                     IMFSinkWriter *This,
+                     DWORD dwStreamIndex);
 
     HRESULT (STDMETHODCALLTYPE *Finalize)(
-        IMFSinkWriter *This);
+                     IMFSinkWriter *This);
 
     HRESULT (STDMETHODCALLTYPE *GetServiceForStream)(
-        IMFSinkWriter *This,
-        DWORD dwStreamIndex,
-        REFGUID guidService,
-        REFIID riid,
-        LPVOID *ppvObject);
+                     IMFSinkWriter *This,
+                     DWORD dwStreamIndex,
+                     REFGUID guidService,
+                     REFIID riid,
+                     LPVOID *ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *GetStatistics)(
-        IMFSinkWriter *This,
-        DWORD dwStreamIndex,
-        MF_SINK_WRITER_STATISTICS *pStats);
+                     IMFSinkWriter *This,
+                     DWORD dwStreamIndex,
+                     MF_SINK_WRITER_STATISTICS *pStats);
 
     END_INTERFACE
 } IMFSinkWriterVtbl;
@@ -523,18 +523,18 @@ MIDL_INTERFACE("deec8d99-fa1d-4d82-84c2-2c8969944867")
 IMFSourceReaderCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnReadSample(
-        HRESULT hrStatus,
-        DWORD dwStreamIndex,
-        DWORD dwStreamFlags,
-        LONGLONG llTimestamp,
-        IMFSample *pSample) = 0;
+                     HRESULT hrStatus,
+                     DWORD dwStreamIndex,
+                     DWORD dwStreamFlags,
+                     LONGLONG llTimestamp,
+                     IMFSample *pSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFlush(
-        DWORD dwStreamIndex) = 0;
+                     DWORD dwStreamIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnEvent(
-        DWORD dwStreamIndex,
-        IMFMediaEvent *pEvent) = 0;
+                     DWORD dwStreamIndex,
+                     IMFMediaEvent *pEvent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -546,33 +546,33 @@ typedef struct IMFSourceReaderCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFSourceReaderCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFSourceReaderCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFSourceReaderCallback *This);
+                     IMFSourceReaderCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFSourceReaderCallback *This);
+                     IMFSourceReaderCallback *This);
 
     /*** IMFSourceReaderCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *OnReadSample)(
-        IMFSourceReaderCallback *This,
-        HRESULT hrStatus,
-        DWORD dwStreamIndex,
-        DWORD dwStreamFlags,
-        LONGLONG llTimestamp,
-        IMFSample *pSample);
+                     IMFSourceReaderCallback *This,
+                     HRESULT hrStatus,
+                     DWORD dwStreamIndex,
+                     DWORD dwStreamFlags,
+                     LONGLONG llTimestamp,
+                     IMFSample *pSample);
 
     HRESULT (STDMETHODCALLTYPE *OnFlush)(
-        IMFSourceReaderCallback *This,
-        DWORD dwStreamIndex);
+                     IMFSourceReaderCallback *This,
+                     DWORD dwStreamIndex);
 
     HRESULT (STDMETHODCALLTYPE *OnEvent)(
-        IMFSourceReaderCallback *This,
-        DWORD dwStreamIndex,
-        IMFMediaEvent *pEvent);
+                     IMFSourceReaderCallback *This,
+                     DWORD dwStreamIndex,
+                     IMFMediaEvent *pEvent);
 
     END_INTERFACE
 } IMFSourceReaderCallbackVtbl;

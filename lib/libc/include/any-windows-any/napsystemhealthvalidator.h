@@ -106,9 +106,9 @@ MIDL_INTERFACE("ef43d87c-5b6d-4820-8620-868907fe07d3")
 INapSystemHealthValidator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Validate(
-        INapSystemHealthValidationRequest *request,
-        UINT32 hintTimeOutInMsec,
-        INapServerCallback *callback) = 0;
+                     INapSystemHealthValidationRequest *request,
+                     UINT32 hintTimeOutInMsec,
+                     INapServerCallback *callback) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -120,22 +120,22 @@ typedef struct INapSystemHealthValidatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSystemHealthValidator *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSystemHealthValidator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSystemHealthValidator *This);
+                     INapSystemHealthValidator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSystemHealthValidator *This);
+                     INapSystemHealthValidator *This);
 
     /*** INapSystemHealthValidator methods ***/
     HRESULT (STDMETHODCALLTYPE *Validate)(
-        INapSystemHealthValidator *This,
-        INapSystemHealthValidationRequest *request,
-        UINT32 hintTimeOutInMsec,
-        INapServerCallback *callback);
+                     INapSystemHealthValidator *This,
+                     INapSystemHealthValidationRequest *request,
+                     UINT32 hintTimeOutInMsec,
+                     INapServerCallback *callback);
 
     END_INTERFACE
 } INapSystemHealthValidatorVtbl;
@@ -187,12 +187,12 @@ MIDL_INTERFACE("2516031a-a391-454d-b53d-c5dc84c7f2db")
 AsyncINapSystemHealthValidator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Begin_Validate(
-        INapSystemHealthValidationRequest *request,
-        UINT32 hintTimeOutInMsec,
-        INapServerCallback *callback) = 0;
+                     INapSystemHealthValidationRequest *request,
+                     UINT32 hintTimeOutInMsec,
+                     INapServerCallback *callback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_Validate(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -204,25 +204,25 @@ typedef struct AsyncINapSystemHealthValidatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncINapSystemHealthValidator *This,
-        REFIID riid,
-        void **ppvObject);
+                     AsyncINapSystemHealthValidator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncINapSystemHealthValidator *This);
+                     AsyncINapSystemHealthValidator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncINapSystemHealthValidator *This);
+                     AsyncINapSystemHealthValidator *This);
 
     /*** AsyncINapSystemHealthValidator methods ***/
     HRESULT (STDMETHODCALLTYPE *Begin_Validate)(
-        AsyncINapSystemHealthValidator *This,
-        INapSystemHealthValidationRequest *request,
-        UINT32 hintTimeOutInMsec,
-        INapServerCallback *callback);
+                     AsyncINapSystemHealthValidator *This,
+                     INapSystemHealthValidationRequest *request,
+                     UINT32 hintTimeOutInMsec,
+                     INapServerCallback *callback);
 
     HRESULT (STDMETHODCALLTYPE *Finish_Validate)(
-        AsyncINapSystemHealthValidator *This);
+                     AsyncINapSystemHealthValidator *This);
 
     END_INTERFACE
 } AsyncINapSystemHealthValidatorVtbl;
@@ -278,8 +278,8 @@ MIDL_INTERFACE("09c20568-f30c-489b-ae9c-4930ad7f165f")
 INapServerCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnComplete(
-        INapSystemHealthValidationRequest *request,
-        HRESULT errorCode) = 0;
+                     INapSystemHealthValidationRequest *request,
+                     HRESULT errorCode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -291,21 +291,21 @@ typedef struct INapServerCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapServerCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapServerCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapServerCallback *This);
+                     INapServerCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapServerCallback *This);
+                     INapServerCallback *This);
 
     /*** INapServerCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *OnComplete)(
-        INapServerCallback *This,
-        INapSystemHealthValidationRequest *request,
-        HRESULT errorCode);
+                     INapServerCallback *This,
+                     INapSystemHealthValidationRequest *request,
+                     HRESULT errorCode);
 
     END_INTERFACE
 } INapServerCallbackVtbl;
@@ -357,29 +357,29 @@ MIDL_INTERFACE("adacb3a0-d4f4-4f17-8933-51d60fcca606")
 INapSystemHealthValidationRequest : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCorrelationId(
-        CorrelationId *correlationId) = 0;
+                     CorrelationId *correlationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringCorrelationId(
-        StringCorrelationId **correlationId) = 0;
+                     StringCorrelationId **correlationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMachineName(
-        CountedString **machineName) = 0;
+                     CountedString **machineName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSoHRequest(
-        SoHRequest **sohRequest,
-        WINBOOL *napSystemGenerated) = 0;
+                     SoHRequest **sohRequest,
+                     WINBOOL *napSystemGenerated) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSoHResponse(
-        const SoHResponse *sohResponse) = 0;
+                     const SoHResponse *sohResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSoHResponse(
-        SoHResponse **sohResponse) = 0;
+                     SoHResponse **sohResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateData(
-        const PrivateData *privateData) = 0;
+                     const PrivateData *privateData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrivateData(
-        PrivateData **privateData) = 0;
+                     PrivateData **privateData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -391,49 +391,49 @@ typedef struct INapSystemHealthValidationRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSystemHealthValidationRequest *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSystemHealthValidationRequest *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSystemHealthValidationRequest *This);
+                     INapSystemHealthValidationRequest *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSystemHealthValidationRequest *This);
+                     INapSystemHealthValidationRequest *This);
 
     /*** INapSystemHealthValidationRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCorrelationId)(
-        INapSystemHealthValidationRequest *This,
-        CorrelationId *correlationId);
+                     INapSystemHealthValidationRequest *This,
+                     CorrelationId *correlationId);
 
     HRESULT (STDMETHODCALLTYPE *GetStringCorrelationId)(
-        INapSystemHealthValidationRequest *This,
-        StringCorrelationId **correlationId);
+                     INapSystemHealthValidationRequest *This,
+                     StringCorrelationId **correlationId);
 
     HRESULT (STDMETHODCALLTYPE *GetMachineName)(
-        INapSystemHealthValidationRequest *This,
-        CountedString **machineName);
+                     INapSystemHealthValidationRequest *This,
+                     CountedString **machineName);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHRequest)(
-        INapSystemHealthValidationRequest *This,
-        SoHRequest **sohRequest,
-        WINBOOL *napSystemGenerated);
+                     INapSystemHealthValidationRequest *This,
+                     SoHRequest **sohRequest,
+                     WINBOOL *napSystemGenerated);
 
     HRESULT (STDMETHODCALLTYPE *SetSoHResponse)(
-        INapSystemHealthValidationRequest *This,
-        const SoHResponse *sohResponse);
+                     INapSystemHealthValidationRequest *This,
+                     const SoHResponse *sohResponse);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHResponse)(
-        INapSystemHealthValidationRequest *This,
-        SoHResponse **sohResponse);
+                     INapSystemHealthValidationRequest *This,
+                     SoHResponse **sohResponse);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        INapSystemHealthValidationRequest *This,
-        const PrivateData *privateData);
+                     INapSystemHealthValidationRequest *This,
+                     const PrivateData *privateData);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        INapSystemHealthValidationRequest *This,
-        PrivateData **privateData);
+                     INapSystemHealthValidationRequest *This,
+                     PrivateData **privateData);
 
     END_INTERFACE
 } INapSystemHealthValidationRequestVtbl;
@@ -513,7 +513,7 @@ MIDL_INTERFACE("91a5d706-0cb4-4a84-8315-9380d453e385")
 INapSystemHealthValidationRequest2 : public INapSystemHealthValidationRequest
 {
     virtual HRESULT STDMETHODCALLTYPE GetConfigID(
-        UINT32 *configID) = 0;
+                     UINT32 *configID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -525,54 +525,54 @@ typedef struct INapSystemHealthValidationRequest2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSystemHealthValidationRequest2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSystemHealthValidationRequest2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSystemHealthValidationRequest2 *This);
+                     INapSystemHealthValidationRequest2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSystemHealthValidationRequest2 *This);
+                     INapSystemHealthValidationRequest2 *This);
 
     /*** INapSystemHealthValidationRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCorrelationId)(
-        INapSystemHealthValidationRequest2 *This,
-        CorrelationId *correlationId);
+                     INapSystemHealthValidationRequest2 *This,
+                     CorrelationId *correlationId);
 
     HRESULT (STDMETHODCALLTYPE *GetStringCorrelationId)(
-        INapSystemHealthValidationRequest2 *This,
-        StringCorrelationId **correlationId);
+                     INapSystemHealthValidationRequest2 *This,
+                     StringCorrelationId **correlationId);
 
     HRESULT (STDMETHODCALLTYPE *GetMachineName)(
-        INapSystemHealthValidationRequest2 *This,
-        CountedString **machineName);
+                     INapSystemHealthValidationRequest2 *This,
+                     CountedString **machineName);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHRequest)(
-        INapSystemHealthValidationRequest2 *This,
-        SoHRequest **sohRequest,
-        WINBOOL *napSystemGenerated);
+                     INapSystemHealthValidationRequest2 *This,
+                     SoHRequest **sohRequest,
+                     WINBOOL *napSystemGenerated);
 
     HRESULT (STDMETHODCALLTYPE *SetSoHResponse)(
-        INapSystemHealthValidationRequest2 *This,
-        const SoHResponse *sohResponse);
+                     INapSystemHealthValidationRequest2 *This,
+                     const SoHResponse *sohResponse);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHResponse)(
-        INapSystemHealthValidationRequest2 *This,
-        SoHResponse **sohResponse);
+                     INapSystemHealthValidationRequest2 *This,
+                     SoHResponse **sohResponse);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        INapSystemHealthValidationRequest2 *This,
-        const PrivateData *privateData);
+                     INapSystemHealthValidationRequest2 *This,
+                     const PrivateData *privateData);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        INapSystemHealthValidationRequest2 *This,
-        PrivateData **privateData);
+                     INapSystemHealthValidationRequest2 *This,
+                     PrivateData **privateData);
 
     /*** INapSystemHealthValidationRequest2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetConfigID)(
-        INapSystemHealthValidationRequest2 *This,
-        UINT32 *configID);
+                     INapSystemHealthValidationRequest2 *This,
+                     UINT32 *configID);
 
     END_INTERFACE
 } INapSystemHealthValidationRequest2Vtbl;

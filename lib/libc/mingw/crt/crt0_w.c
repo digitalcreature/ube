@@ -16,7 +16,7 @@ extern DWORD __mingw_winmain_nShowCmd;
 int wmain (int, wchar_t **, wchar_t **);
 
 /*ARGSUSED*/
-int wmain (int        __UNUSED_PARAM(flags),
+int wmain (int                     __UNUSED_PARAM(flags),
 	   wchar_t ** __UNUSED_PARAM(cmdline),
 	   wchar_t ** __UNUSED_PARAM(inst))
 {

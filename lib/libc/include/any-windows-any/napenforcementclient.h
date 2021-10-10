@@ -106,27 +106,27 @@ MIDL_INTERFACE("92b93223-7487-42d9-9a91-5b8507720384")
 INapEnforcementClientBinding : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        EnforcementEntityId id,
-        INapEnforcementClientCallback *callback) = 0;
+                     EnforcementEntityId id,
+                     INapEnforcementClientCallback *callback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Uninitialize(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateConnection(
-        INapEnforcementClientConnection **connection) = 0;
+                     INapEnforcementClientConnection **connection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSoHRequest(
-        INapEnforcementClientConnection *connection,
-        WINBOOL *retriggerHint) = 0;
+                     INapEnforcementClientConnection *connection,
+                     WINBOOL *retriggerHint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessSoHResponse(
-        INapEnforcementClientConnection *connection) = 0;
+                     INapEnforcementClientConnection *connection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyConnectionStateDown(
-        INapEnforcementClientConnection *downCxn) = 0;
+                     INapEnforcementClientConnection *downCxn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifySoHChangeFailure(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -138,44 +138,44 @@ typedef struct INapEnforcementClientBindingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapEnforcementClientBinding *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapEnforcementClientBinding *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapEnforcementClientBinding *This);
+                     INapEnforcementClientBinding *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapEnforcementClientBinding *This);
+                     INapEnforcementClientBinding *This);
 
     /*** INapEnforcementClientBinding methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INapEnforcementClientBinding *This,
-        EnforcementEntityId id,
-        INapEnforcementClientCallback *callback);
+                     INapEnforcementClientBinding *This,
+                     EnforcementEntityId id,
+                     INapEnforcementClientCallback *callback);
 
     HRESULT (STDMETHODCALLTYPE *Uninitialize)(
-        INapEnforcementClientBinding *This);
+                     INapEnforcementClientBinding *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateConnection)(
-        INapEnforcementClientBinding *This,
-        INapEnforcementClientConnection **connection);
+                     INapEnforcementClientBinding *This,
+                     INapEnforcementClientConnection **connection);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHRequest)(
-        INapEnforcementClientBinding *This,
-        INapEnforcementClientConnection *connection,
-        WINBOOL *retriggerHint);
+                     INapEnforcementClientBinding *This,
+                     INapEnforcementClientConnection *connection,
+                     WINBOOL *retriggerHint);
 
     HRESULT (STDMETHODCALLTYPE *ProcessSoHResponse)(
-        INapEnforcementClientBinding *This,
-        INapEnforcementClientConnection *connection);
+                     INapEnforcementClientBinding *This,
+                     INapEnforcementClientConnection *connection);
 
     HRESULT (STDMETHODCALLTYPE *NotifyConnectionStateDown)(
-        INapEnforcementClientBinding *This,
-        INapEnforcementClientConnection *downCxn);
+                     INapEnforcementClientBinding *This,
+                     INapEnforcementClientConnection *downCxn);
 
     HRESULT (STDMETHODCALLTYPE *NotifySoHChangeFailure)(
-        INapEnforcementClientBinding *This);
+                     INapEnforcementClientBinding *This);
 
     END_INTERFACE
 } INapEnforcementClientBindingVtbl;
@@ -255,10 +255,10 @@ MIDL_INTERFACE("f5a0b90a-83a1-4f76-ba3f-025418682814")
 INapEnforcementClientCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE NotifySoHChange(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnections(
-        Connections **connections) = 0;
+                     Connections **connections) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -270,23 +270,23 @@ typedef struct INapEnforcementClientCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapEnforcementClientCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapEnforcementClientCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapEnforcementClientCallback *This);
+                     INapEnforcementClientCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapEnforcementClientCallback *This);
+                     INapEnforcementClientCallback *This);
 
     /*** INapEnforcementClientCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *NotifySoHChange)(
-        INapEnforcementClientCallback *This);
+                     INapEnforcementClientCallback *This);
 
     HRESULT (STDMETHODCALLTYPE *GetConnections)(
-        INapEnforcementClientCallback *This,
-        Connections **connections);
+                     INapEnforcementClientCallback *This,
+                     Connections **connections);
 
     END_INTERFACE
 } INapEnforcementClientCallbackVtbl;
@@ -349,64 +349,64 @@ MIDL_INTERFACE("fb3a3505-ddb1-468a-b307-f328a57419d8")
 INapEnforcementClientConnection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        EnforcementEntityId id) = 0;
+                     EnforcementEntityId id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMaxSize(
-        ProtocolMaxSize maxSize) = 0;
+                     ProtocolMaxSize maxSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxSize(
-        ProtocolMaxSize *maxSize) = 0;
+                     ProtocolMaxSize *maxSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        UINT8 flags) = 0;
+                     UINT8 flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlags(
-        UINT8 *flags) = 0;
+                     UINT8 *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetConnectionId(
-        const ConnectionId *connectionId) = 0;
+                     const ConnectionId *connectionId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectionId(
-        ConnectionId **connectionId) = 0;
+                     ConnectionId **connectionId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCorrelationId(
-        CorrelationId *correlationId) = 0;
+                     CorrelationId *correlationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringCorrelationId(
-        StringCorrelationId **correlationId) = 0;
+                     StringCorrelationId **correlationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCorrelationId(
-        CorrelationId correlationId) = 0;
+                     CorrelationId correlationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSoHRequest(
-        const NetworkSoHRequest *sohRequest) = 0;
+                     const NetworkSoHRequest *sohRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSoHRequest(
-        NetworkSoHRequest **sohRequest) = 0;
+                     NetworkSoHRequest **sohRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSoHResponse(
-        const NetworkSoHResponse *sohResponse) = 0;
+                     const NetworkSoHResponse *sohResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSoHResponse(
-        NetworkSoHResponse **sohResponse) = 0;
+                     NetworkSoHResponse **sohResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIsolationInfo(
-        const IsolationInfo *isolationInfo) = 0;
+                     const IsolationInfo *isolationInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIsolationInfo(
-        IsolationInfo **isolationInfo) = 0;
+                     IsolationInfo **isolationInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateData(
-        const PrivateData *privateData) = 0;
+                     const PrivateData *privateData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrivateData(
-        PrivateData **privateData) = 0;
+                     PrivateData **privateData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEnforcerPrivateData(
-        const PrivateData *privateData) = 0;
+                     const PrivateData *privateData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnforcerPrivateData(
-        PrivateData **privateData) = 0;
+                     PrivateData **privateData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -418,96 +418,96 @@ typedef struct INapEnforcementClientConnectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapEnforcementClientConnection *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapEnforcementClientConnection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapEnforcementClientConnection *This);
+                     INapEnforcementClientConnection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapEnforcementClientConnection *This);
+                     INapEnforcementClientConnection *This);
 
     /*** INapEnforcementClientConnection methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INapEnforcementClientConnection *This,
-        EnforcementEntityId id);
+                     INapEnforcementClientConnection *This,
+                     EnforcementEntityId id);
 
     HRESULT (STDMETHODCALLTYPE *SetMaxSize)(
-        INapEnforcementClientConnection *This,
-        ProtocolMaxSize maxSize);
+                     INapEnforcementClientConnection *This,
+                     ProtocolMaxSize maxSize);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxSize)(
-        INapEnforcementClientConnection *This,
-        ProtocolMaxSize *maxSize);
+                     INapEnforcementClientConnection *This,
+                     ProtocolMaxSize *maxSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        INapEnforcementClientConnection *This,
-        UINT8 flags);
+                     INapEnforcementClientConnection *This,
+                     UINT8 flags);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        INapEnforcementClientConnection *This,
-        UINT8 *flags);
+                     INapEnforcementClientConnection *This,
+                     UINT8 *flags);
 
     HRESULT (STDMETHODCALLTYPE *SetConnectionId)(
-        INapEnforcementClientConnection *This,
-        const ConnectionId *connectionId);
+                     INapEnforcementClientConnection *This,
+                     const ConnectionId *connectionId);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectionId)(
-        INapEnforcementClientConnection *This,
-        ConnectionId **connectionId);
+                     INapEnforcementClientConnection *This,
+                     ConnectionId **connectionId);
 
     HRESULT (STDMETHODCALLTYPE *GetCorrelationId)(
-        INapEnforcementClientConnection *This,
-        CorrelationId *correlationId);
+                     INapEnforcementClientConnection *This,
+                     CorrelationId *correlationId);
 
     HRESULT (STDMETHODCALLTYPE *GetStringCorrelationId)(
-        INapEnforcementClientConnection *This,
-        StringCorrelationId **correlationId);
+                     INapEnforcementClientConnection *This,
+                     StringCorrelationId **correlationId);
 
     HRESULT (STDMETHODCALLTYPE *SetCorrelationId)(
-        INapEnforcementClientConnection *This,
-        CorrelationId correlationId);
+                     INapEnforcementClientConnection *This,
+                     CorrelationId correlationId);
 
     HRESULT (STDMETHODCALLTYPE *SetSoHRequest)(
-        INapEnforcementClientConnection *This,
-        const NetworkSoHRequest *sohRequest);
+                     INapEnforcementClientConnection *This,
+                     const NetworkSoHRequest *sohRequest);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHRequest)(
-        INapEnforcementClientConnection *This,
-        NetworkSoHRequest **sohRequest);
+                     INapEnforcementClientConnection *This,
+                     NetworkSoHRequest **sohRequest);
 
     HRESULT (STDMETHODCALLTYPE *SetSoHResponse)(
-        INapEnforcementClientConnection *This,
-        const NetworkSoHResponse *sohResponse);
+                     INapEnforcementClientConnection *This,
+                     const NetworkSoHResponse *sohResponse);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHResponse)(
-        INapEnforcementClientConnection *This,
-        NetworkSoHResponse **sohResponse);
+                     INapEnforcementClientConnection *This,
+                     NetworkSoHResponse **sohResponse);
 
     HRESULT (STDMETHODCALLTYPE *SetIsolationInfo)(
-        INapEnforcementClientConnection *This,
-        const IsolationInfo *isolationInfo);
+                     INapEnforcementClientConnection *This,
+                     const IsolationInfo *isolationInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIsolationInfo)(
-        INapEnforcementClientConnection *This,
-        IsolationInfo **isolationInfo);
+                     INapEnforcementClientConnection *This,
+                     IsolationInfo **isolationInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        INapEnforcementClientConnection *This,
-        const PrivateData *privateData);
+                     INapEnforcementClientConnection *This,
+                     const PrivateData *privateData);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        INapEnforcementClientConnection *This,
-        PrivateData **privateData);
+                     INapEnforcementClientConnection *This,
+                     PrivateData **privateData);
 
     HRESULT (STDMETHODCALLTYPE *SetEnforcerPrivateData)(
-        INapEnforcementClientConnection *This,
-        const PrivateData *privateData);
+                     INapEnforcementClientConnection *This,
+                     const PrivateData *privateData);
 
     HRESULT (STDMETHODCALLTYPE *GetEnforcerPrivateData)(
-        INapEnforcementClientConnection *This,
-        PrivateData **privateData);
+                     INapEnforcementClientConnection *This,
+                     PrivateData **privateData);
 
     END_INTERFACE
 } INapEnforcementClientConnectionVtbl;
@@ -635,18 +635,18 @@ MIDL_INTERFACE("bd244906-70dd-4690-beea-648653393500")
 INapEnforcementClientConnection2 : public INapEnforcementClientConnection
 {
     virtual HRESULT STDMETHODCALLTYPE SetIsolationInfoEx(
-        const IsolationInfoEx *isolationInfo) = 0;
+                     const IsolationInfoEx *isolationInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIsolationInfoEx(
-        IsolationInfoEx **isolationInfo) = 0;
+                     IsolationInfoEx **isolationInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInstalledShvs(
-        SystemHealthEntityCount *count,
-        SystemHealthEntityId **ids) = 0;
+                     SystemHealthEntityCount *count,
+                     SystemHealthEntityId **ids) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInstalledShvs(
-        SystemHealthEntityCount count,
-        SystemHealthEntityId *ids) = 0;
+                     SystemHealthEntityCount count,
+                     SystemHealthEntityId *ids) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -658,115 +658,115 @@ typedef struct INapEnforcementClientConnection2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapEnforcementClientConnection2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapEnforcementClientConnection2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapEnforcementClientConnection2 *This);
+                     INapEnforcementClientConnection2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapEnforcementClientConnection2 *This);
+                     INapEnforcementClientConnection2 *This);
 
     /*** INapEnforcementClientConnection methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INapEnforcementClientConnection2 *This,
-        EnforcementEntityId id);
+                     INapEnforcementClientConnection2 *This,
+                     EnforcementEntityId id);
 
     HRESULT (STDMETHODCALLTYPE *SetMaxSize)(
-        INapEnforcementClientConnection2 *This,
-        ProtocolMaxSize maxSize);
+                     INapEnforcementClientConnection2 *This,
+                     ProtocolMaxSize maxSize);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxSize)(
-        INapEnforcementClientConnection2 *This,
-        ProtocolMaxSize *maxSize);
+                     INapEnforcementClientConnection2 *This,
+                     ProtocolMaxSize *maxSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        INapEnforcementClientConnection2 *This,
-        UINT8 flags);
+                     INapEnforcementClientConnection2 *This,
+                     UINT8 flags);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        INapEnforcementClientConnection2 *This,
-        UINT8 *flags);
+                     INapEnforcementClientConnection2 *This,
+                     UINT8 *flags);
 
     HRESULT (STDMETHODCALLTYPE *SetConnectionId)(
-        INapEnforcementClientConnection2 *This,
-        const ConnectionId *connectionId);
+                     INapEnforcementClientConnection2 *This,
+                     const ConnectionId *connectionId);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectionId)(
-        INapEnforcementClientConnection2 *This,
-        ConnectionId **connectionId);
+                     INapEnforcementClientConnection2 *This,
+                     ConnectionId **connectionId);
 
     HRESULT (STDMETHODCALLTYPE *GetCorrelationId)(
-        INapEnforcementClientConnection2 *This,
-        CorrelationId *correlationId);
+                     INapEnforcementClientConnection2 *This,
+                     CorrelationId *correlationId);
 
     HRESULT (STDMETHODCALLTYPE *GetStringCorrelationId)(
-        INapEnforcementClientConnection2 *This,
-        StringCorrelationId **correlationId);
+                     INapEnforcementClientConnection2 *This,
+                     StringCorrelationId **correlationId);
 
     HRESULT (STDMETHODCALLTYPE *SetCorrelationId)(
-        INapEnforcementClientConnection2 *This,
-        CorrelationId correlationId);
+                     INapEnforcementClientConnection2 *This,
+                     CorrelationId correlationId);
 
     HRESULT (STDMETHODCALLTYPE *SetSoHRequest)(
-        INapEnforcementClientConnection2 *This,
-        const NetworkSoHRequest *sohRequest);
+                     INapEnforcementClientConnection2 *This,
+                     const NetworkSoHRequest *sohRequest);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHRequest)(
-        INapEnforcementClientConnection2 *This,
-        NetworkSoHRequest **sohRequest);
+                     INapEnforcementClientConnection2 *This,
+                     NetworkSoHRequest **sohRequest);
 
     HRESULT (STDMETHODCALLTYPE *SetSoHResponse)(
-        INapEnforcementClientConnection2 *This,
-        const NetworkSoHResponse *sohResponse);
+                     INapEnforcementClientConnection2 *This,
+                     const NetworkSoHResponse *sohResponse);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHResponse)(
-        INapEnforcementClientConnection2 *This,
-        NetworkSoHResponse **sohResponse);
+                     INapEnforcementClientConnection2 *This,
+                     NetworkSoHResponse **sohResponse);
 
     HRESULT (STDMETHODCALLTYPE *SetIsolationInfo)(
-        INapEnforcementClientConnection2 *This,
-        const IsolationInfo *isolationInfo);
+                     INapEnforcementClientConnection2 *This,
+                     const IsolationInfo *isolationInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIsolationInfo)(
-        INapEnforcementClientConnection2 *This,
-        IsolationInfo **isolationInfo);
+                     INapEnforcementClientConnection2 *This,
+                     IsolationInfo **isolationInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        INapEnforcementClientConnection2 *This,
-        const PrivateData *privateData);
+                     INapEnforcementClientConnection2 *This,
+                     const PrivateData *privateData);
 
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        INapEnforcementClientConnection2 *This,
-        PrivateData **privateData);
+                     INapEnforcementClientConnection2 *This,
+                     PrivateData **privateData);
 
     HRESULT (STDMETHODCALLTYPE *SetEnforcerPrivateData)(
-        INapEnforcementClientConnection2 *This,
-        const PrivateData *privateData);
+                     INapEnforcementClientConnection2 *This,
+                     const PrivateData *privateData);
 
     HRESULT (STDMETHODCALLTYPE *GetEnforcerPrivateData)(
-        INapEnforcementClientConnection2 *This,
-        PrivateData **privateData);
+                     INapEnforcementClientConnection2 *This,
+                     PrivateData **privateData);
 
     /*** INapEnforcementClientConnection2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetIsolationInfoEx)(
-        INapEnforcementClientConnection2 *This,
-        const IsolationInfoEx *isolationInfo);
+                     INapEnforcementClientConnection2 *This,
+                     const IsolationInfoEx *isolationInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIsolationInfoEx)(
-        INapEnforcementClientConnection2 *This,
-        IsolationInfoEx **isolationInfo);
+                     INapEnforcementClientConnection2 *This,
+                     IsolationInfoEx **isolationInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetInstalledShvs)(
-        INapEnforcementClientConnection2 *This,
-        SystemHealthEntityCount *count,
-        SystemHealthEntityId **ids);
+                     INapEnforcementClientConnection2 *This,
+                     SystemHealthEntityCount *count,
+                     SystemHealthEntityId **ids);
 
     HRESULT (STDMETHODCALLTYPE *SetInstalledShvs)(
-        INapEnforcementClientConnection2 *This,
-        SystemHealthEntityCount count,
-        SystemHealthEntityId *ids);
+                     INapEnforcementClientConnection2 *This,
+                     SystemHealthEntityCount count,
+                     SystemHealthEntityId *ids);
 
     END_INTERFACE
 } INapEnforcementClientConnection2Vtbl;

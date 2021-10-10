@@ -43,21 +43,21 @@ protected:
     virtual int_type pbackfail(int_type c = EOF);
     virtual int_type underflow();
     virtual pos_type seekoff(off_type off, ios_base::seekdir way,
-                             ios_base::openmode which = ios_base::in | ios_base::out);
+                                                                                 ios_base::openmode which = ios_base::in | ios_base::out);
     virtual pos_type seekpos(pos_type sp,
-                             ios_base::openmode which = ios_base::in | ios_base::out);
+                                                                                 ios_base::openmode which = ios_base::in | ios_base::out);
     virtual streambuf* setbuf(char* s, streamsize n);
 
 private:
-    typedef T1 strstate;                // exposition only
+    typedef T1 strstate;                                          // exposition only
     static const strstate allocated;    // exposition only
     static const strstate constant;     // exposition only
-    static const strstate dynamic;      // exposition only
-    static const strstate frozen;       // exposition only
-    strstate strmode;                   // exposition only
-    streamsize alsize;                  // exposition only
-    void* (*palloc)(size_t);            // exposition only
-    void (*pfree)(void*);               // exposition only
+    static const strstate dynamic;                   // exposition only
+    static const strstate frozen;                    // exposition only
+    strstate strmode;                                                          // exposition only
+    streamsize alsize;                                                         // exposition only
+    void* (*palloc)(size_t);                                      // exposition only
+    void (*pfree)(void*);                                         // exposition only
 };
 
 class istrstream
@@ -101,7 +101,7 @@ class strstream
 {
 public:
     // Types
-    typedef char                        char_type;
+    typedef char                                                                            char_type;
     typedef char_traits<char>::int_type int_type;
     typedef char_traits<char>::pos_type pos_type;
     typedef char_traits<char>::off_type off_type;
@@ -170,9 +170,9 @@ protected:
     virtual int_type pbackfail(int_type __c = EOF);
     virtual int_type underflow();
     virtual pos_type seekoff(off_type __off, ios_base::seekdir __way,
-                             ios_base::openmode __which = ios_base::in | ios_base::out);
+                                                                                 ios_base::openmode __which = ios_base::in | ios_base::out);
     virtual pos_type seekpos(pos_type __sp,
-                             ios_base::openmode __which = ios_base::in | ios_base::out);
+                                                                                 ios_base::openmode __which = ios_base::in | ios_base::out);
 
 private:
     typedef unsigned __mode_type;
@@ -195,10 +195,10 @@ private:
 inline _LIBCPP_INLINE_VISIBILITY
 strstreambuf::strstreambuf(strstreambuf&& __rhs)
     : streambuf(__rhs),
-      __strmode_(__rhs.__strmode_),
-      __alsize_(__rhs.__alsize_),
-      __palloc_(__rhs.__palloc_),
-      __pfree_(__rhs.__pfree_)
+                   __strmode_(__rhs.__strmode_),
+                   __alsize_(__rhs.__alsize_),
+                   __palloc_(__rhs.__palloc_),
+                   __pfree_(__rhs.__pfree_)
 {
     __rhs.setg(nullptr, nullptr, nullptr);
     __rhs.setp(nullptr, nullptr);
@@ -210,10 +210,10 @@ strstreambuf::operator=(strstreambuf&& __rhs)
 {
     if (eback() && (__strmode_ & __allocated) != 0 && (__strmode_ & __frozen) == 0)
     {
-        if (__pfree_)
-            __pfree_(eback());
-        else
-            delete [] eback();
+                     if (__pfree_)
+                                      __pfree_(eback());
+                     else
+                                      delete [] eback();
     }
     streambuf::operator=(__rhs);
     __strmode_ = __rhs.__strmode_;
@@ -233,32 +233,32 @@ class _LIBCPP_TYPE_VIS istrstream
 public:
     _LIBCPP_INLINE_VISIBILITY
     explicit istrstream(const char* __s)
-        : istream(&__sb_), __sb_(__s, 0) {}
+                     : istream(&__sb_), __sb_(__s, 0) {}
     _LIBCPP_INLINE_VISIBILITY
     explicit istrstream(char* __s)
-        : istream(&__sb_), __sb_(__s, 0) {}
+                     : istream(&__sb_), __sb_(__s, 0) {}
     _LIBCPP_INLINE_VISIBILITY
     istrstream(const char* __s, streamsize __n)
-        : istream(&__sb_), __sb_(__s, __n) {}
+                     : istream(&__sb_), __sb_(__s, __n) {}
     _LIBCPP_INLINE_VISIBILITY
     istrstream(char* __s, streamsize __n)
-        : istream(&__sb_), __sb_(__s, __n) {}
+                     : istream(&__sb_), __sb_(__s, __n) {}
 
 #ifndef _LIBCPP_CXX03_LANG
     _LIBCPP_INLINE_VISIBILITY
     istrstream(istrstream&& __rhs)
-        : istream(_VSTD::move(__rhs)),
-          __sb_(_VSTD::move(__rhs.__sb_))
+                     : istream(_VSTD::move(__rhs)),
+                       __sb_(_VSTD::move(__rhs.__sb_))
     {
-        istream::set_rdbuf(&__sb_);
+                     istream::set_rdbuf(&__sb_);
     }
 
     _LIBCPP_INLINE_VISIBILITY
     istrstream& operator=(istrstream&& __rhs)
     {
-        istream::operator=(_VSTD::move(__rhs));
-        __sb_ = _VSTD::move(__rhs.__sb_);
-        return *this;
+                     istream::operator=(_VSTD::move(__rhs));
+                     __sb_ = _VSTD::move(__rhs.__sb_);
+                     return *this;
     }
 #endif  // _LIBCPP_CXX03_LANG
 
@@ -267,8 +267,8 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     void swap(istrstream& __rhs)
     {
-        istream::swap(__rhs);
-        __sb_.swap(__rhs.__sb_);
+                     istream::swap(__rhs);
+                     __sb_.swap(__rhs.__sb_);
     }
 
     _LIBCPP_INLINE_VISIBILITY
@@ -286,28 +286,28 @@ class _LIBCPP_TYPE_VIS ostrstream
 public:
     _LIBCPP_INLINE_VISIBILITY
     ostrstream()
-        : ostream(&__sb_) {}
+                     : ostream(&__sb_) {}
     _LIBCPP_INLINE_VISIBILITY
     ostrstream(char* __s, int __n, ios_base::openmode __mode = ios_base::out)
-        : ostream(&__sb_),
-          __sb_(__s, __n, __s + (__mode & ios::app ? strlen(__s) : 0))
-        {}
+                     : ostream(&__sb_),
+                       __sb_(__s, __n, __s + (__mode & ios::app ? strlen(__s) : 0))
+                     {}
 
 #ifndef _LIBCPP_CXX03_LANG
     _LIBCPP_INLINE_VISIBILITY
     ostrstream(ostrstream&& __rhs)
-        : ostream(_VSTD::move(__rhs)),
-          __sb_(_VSTD::move(__rhs.__sb_))
+                     : ostream(_VSTD::move(__rhs)),
+                       __sb_(_VSTD::move(__rhs.__sb_))
     {
-        ostream::set_rdbuf(&__sb_);
+                     ostream::set_rdbuf(&__sb_);
     }
 
     _LIBCPP_INLINE_VISIBILITY
     ostrstream& operator=(ostrstream&& __rhs)
     {
-        ostream::operator=(_VSTD::move(__rhs));
-        __sb_ = _VSTD::move(__rhs.__sb_);
-        return *this;
+                     ostream::operator=(_VSTD::move(__rhs));
+                     __sb_ = _VSTD::move(__rhs.__sb_);
+                     return *this;
     }
 #endif  // _LIBCPP_CXX03_LANG
 
@@ -316,8 +316,8 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     void swap(ostrstream& __rhs)
     {
-        ostream::swap(__rhs);
-        __sb_.swap(__rhs.__sb_);
+                     ostream::swap(__rhs);
+                     __sb_.swap(__rhs.__sb_);
     }
 
     _LIBCPP_INLINE_VISIBILITY
@@ -325,7 +325,7 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     void freeze(bool __freezefl = true) {__sb_.freeze(__freezefl);}
     _LIBCPP_INLINE_VISIBILITY
-    char* str()         {return __sb_.str();}
+    char* str()                      {return __sb_.str();}
     _LIBCPP_INLINE_VISIBILITY
     int pcount() const  {return __sb_.pcount();}
 
@@ -338,7 +338,7 @@ class _LIBCPP_TYPE_VIS strstream
 {
 public:
     // Types
-    typedef char                        char_type;
+    typedef char                                                                            char_type;
     typedef char_traits<char>::int_type int_type;
     typedef char_traits<char>::pos_type pos_type;
     typedef char_traits<char>::off_type off_type;
@@ -346,28 +346,28 @@ public:
     // constructors/destructor
     _LIBCPP_INLINE_VISIBILITY
     strstream()
-        : iostream(&__sb_) {}
+                     : iostream(&__sb_) {}
     _LIBCPP_INLINE_VISIBILITY
     strstream(char* __s, int __n, ios_base::openmode __mode = ios_base::in | ios_base::out)
-        : iostream(&__sb_),
-          __sb_(__s, __n, __s + (__mode & ios::app ? strlen(__s) : 0))
-        {}
+                     : iostream(&__sb_),
+                       __sb_(__s, __n, __s + (__mode & ios::app ? strlen(__s) : 0))
+                     {}
 
 #ifndef _LIBCPP_CXX03_LANG
     _LIBCPP_INLINE_VISIBILITY
     strstream(strstream&& __rhs)
-        : iostream(_VSTD::move(__rhs)),
-          __sb_(_VSTD::move(__rhs.__sb_))
+                     : iostream(_VSTD::move(__rhs)),
+                       __sb_(_VSTD::move(__rhs.__sb_))
     {
-        iostream::set_rdbuf(&__sb_);
+                     iostream::set_rdbuf(&__sb_);
     }
 
     _LIBCPP_INLINE_VISIBILITY
     strstream& operator=(strstream&& __rhs)
     {
-        iostream::operator=(_VSTD::move(__rhs));
-        __sb_ = _VSTD::move(__rhs.__sb_);
-        return *this;
+                     iostream::operator=(_VSTD::move(__rhs));
+                     __sb_ = _VSTD::move(__rhs.__sb_);
+                     return *this;
     }
 #endif  // _LIBCPP_CXX03_LANG
 
@@ -376,8 +376,8 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     void swap(strstream& __rhs)
     {
-        iostream::swap(__rhs);
-        __sb_.swap(__rhs.__sb_);
+                     iostream::swap(__rhs);
+                     __sb_.swap(__rhs.__sb_);
     }
 
     // Members:
@@ -388,7 +388,7 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     int pcount() const {return __sb_.pcount();}
     _LIBCPP_INLINE_VISIBILITY
-    char* str()        {return __sb_.str();}
+    char* str()                     {return __sb_.str();}
 
 private:
     strstreambuf __sb_; // exposition only

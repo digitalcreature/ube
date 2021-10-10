@@ -146,7 +146,7 @@ _mm_abs_epi32(__m128i __a)
 ///    value.
 #define _mm_alignr_epi8(a, b, n) \
   (__m128i)__builtin_ia32_palignr128((__v16qi)(__m128i)(a), \
-                                     (__v16qi)(__m128i)(b), (n))
+                                                                                                                   (__v16qi)(__m128i)(b), (n))
 
 /// Concatenates the two 64-bit integer vector operands, and right-shifts
 ///    the result by the number of bytes specified in the immediate operand.

@@ -291,7 +291,7 @@ static __inline__ __u8 uac_mixer_unit_iChannelNames(struct uac_mixer_unit_descri
 }
 
 static __inline__ __u8 *uac_mixer_unit_bmControls(struct uac_mixer_unit_descriptor *desc,
-					      int protocol)
+					                   int protocol)
 {
 	switch (protocol) {
 	case UAC_VERSION_1:
@@ -367,7 +367,7 @@ static __inline__ __u8 uac_processing_unit_bNrChannels(struct uac_processing_uni
 }
 
 static __inline__ __u32 uac_processing_unit_wChannelConfig(struct uac_processing_unit_descriptor *desc,
-						       int protocol)
+						                    int protocol)
 {
 	if (protocol == UAC_VERSION_1)
 		return (desc->baSourceID[desc->bNrInPins + 2] << 8) |

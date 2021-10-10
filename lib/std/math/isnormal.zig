@@ -12,21 +12,21 @@ const maxInt = std.math.maxInt;
 pub fn isNormal(x: anytype) bool {
     const T = @TypeOf(x);
     switch (T) {
-        f16 => {
-            const bits = @bitCast(u16, x);
-            return (bits + 1024) & 0x7FFF >= 2048;
-        },
-        f32 => {
-            const bits = @bitCast(u32, x);
-            return (bits + 0x00800000) & 0x7FFFFFFF >= 0x01000000;
-        },
-        f64 => {
-            const bits = @bitCast(u64, x);
-            return (bits + (1 << 52)) & (maxInt(u64) >> 1) >= (1 << 53);
-        },
-        else => {
-            @compileError("isNormal not implemented for " ++ @typeName(T));
-        },
+                     f16 => {
+                                      const bits = @bitCast(u16, x);
+                                      return (bits + 1024) & 0x7FFF >= 2048;
+                     },
+                     f32 => {
+                                      const bits = @bitCast(u32, x);
+                                      return (bits + 0x00800000) & 0x7FFFFFFF >= 0x01000000;
+                     },
+                     f64 => {
+                                      const bits = @bitCast(u64, x);
+                                      return (bits + (1 << 52)) & (maxInt(u64) >> 1) >= (1 << 53);
+                     },
+                     else => {
+                                      @compileError("isNormal not implemented for " ++ @typeName(T));
+                     },
     }
 }
 

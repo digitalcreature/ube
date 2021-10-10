@@ -432,9 +432,9 @@ typedef struct WAVEFORMATEX {
 typedef struct __WIDL_xaudio2_generated_name_00000020 {
     WAVEFORMATEX Format;
     union {
-        WORD wValidBitsPerSample;
-        WORD wSamplesPerBlock;
-        WORD wReserved;
+                     WORD wValidBitsPerSample;
+                     WORD wSamplesPerBlock;
+                     WORD wReserved;
     } Samples;
     DWORD dwChannelMask;
     GUID SubFormat;
@@ -638,13 +638,13 @@ interface IXAudio2EngineCallback
     BEGIN_INTERFACE
 
     virtual void STDMETHODCALLTYPE OnProcessingPassStart(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE OnProcessingPassEnd(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE OnCriticalError(
-        HRESULT Error) = 0;
+                     HRESULT Error) = 0;
 
     END_INTERFACE
 
@@ -655,14 +655,14 @@ typedef struct IXAudio2EngineCallbackVtbl {
 
     /*** IXAudio2EngineCallback methods ***/
     void (STDMETHODCALLTYPE *OnProcessingPassStart)(
-        IXAudio2EngineCallback *This);
+                     IXAudio2EngineCallback *This);
 
     void (STDMETHODCALLTYPE *OnProcessingPassEnd)(
-        IXAudio2EngineCallback *This);
+                     IXAudio2EngineCallback *This);
 
     void (STDMETHODCALLTYPE *OnCriticalError)(
-        IXAudio2EngineCallback *This,
-        HRESULT Error);
+                     IXAudio2EngineCallback *This,
+                     HRESULT Error);
 
     END_INTERFACE
 } IXAudio2EngineCallbackVtbl;
@@ -720,75 +720,75 @@ interface IXAudio20Voice
     BEGIN_INTERFACE
 
     virtual void STDMETHODCALLTYPE GetVoiceDetails(
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails) = 0;
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputVoices(
-        const XAUDIO23_VOICE_SENDS *pSendList) = 0;
+                     const XAUDIO23_VOICE_SENDS *pSendList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEffectChain(
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain) = 0;
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableEffect(
-        UINT32 EffectIndex,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisableEffect(
-        UINT32 EffectIndex,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetEffectState(
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled) = 0;
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEffectParameters(
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEffectParameters(
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize) = 0;
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFilterParameters(
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetFilterParameters(
-        XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
+                     XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVolume(
-        float Volume,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     float Volume,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetVolume(
-        float *pVolume) = 0;
+                     float *pVolume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetChannelVolumes(
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetChannelVolumes(
-        UINT32 Channels,
-        float *pVolumes) = 0;
+                     UINT32 Channels,
+                     float *pVolumes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputMatrix(
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputMatrix(
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix) = 0;
 
     virtual void STDMETHODCALLTYPE DestroyVoice(
-        ) = 0;
+                     ) = 0;
 
     END_INTERFACE
 
@@ -799,91 +799,91 @@ typedef struct IXAudio20VoiceVtbl {
 
     /*** IXAudio20Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio20Voice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio20Voice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio20Voice *This,
-        const XAUDIO23_VOICE_SENDS *pSendList);
+                     IXAudio20Voice *This,
+                     const XAUDIO23_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio20Voice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio20Voice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio20Voice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio20Voice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio20Voice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio20Voice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio20Voice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio20Voice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio20Voice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio20Voice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio20Voice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio20Voice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio20Voice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio20Voice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio20Voice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio20Voice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio20Voice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio20Voice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio20Voice *This,
-        float *pVolume);
+                     IXAudio20Voice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio20Voice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio20Voice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio20Voice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio20Voice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio20Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio20Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio20Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio20Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio20Voice *This);
+                     IXAudio20Voice *This);
 
     END_INTERFACE
 } IXAudio20VoiceVtbl;
@@ -986,75 +986,75 @@ interface IXAudio23Voice
     BEGIN_INTERFACE
 
     virtual void STDMETHODCALLTYPE GetVoiceDetails(
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails) = 0;
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputVoices(
-        const XAUDIO23_VOICE_SENDS *pSendList) = 0;
+                     const XAUDIO23_VOICE_SENDS *pSendList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEffectChain(
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain) = 0;
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableEffect(
-        UINT32 EffectIndex,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisableEffect(
-        UINT32 EffectIndex,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetEffectState(
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled) = 0;
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEffectParameters(
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEffectParameters(
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize) = 0;
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFilterParameters(
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetFilterParameters(
-        XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
+                     XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVolume(
-        float Volume,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     float Volume,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetVolume(
-        float *pVolume) = 0;
+                     float *pVolume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetChannelVolumes(
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetChannelVolumes(
-        UINT32 Channels,
-        float *pVolumes) = 0;
+                     UINT32 Channels,
+                     float *pVolumes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputMatrix(
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetOutputMatrix(
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix) = 0;
 
     virtual void STDMETHODCALLTYPE DestroyVoice(
-        ) = 0;
+                     ) = 0;
 
     END_INTERFACE
 
@@ -1065,91 +1065,91 @@ typedef struct IXAudio23VoiceVtbl {
 
     /*** IXAudio23Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio23Voice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio23Voice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio23Voice *This,
-        const XAUDIO23_VOICE_SENDS *pSendList);
+                     IXAudio23Voice *This,
+                     const XAUDIO23_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio23Voice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio23Voice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio23Voice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio23Voice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio23Voice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio23Voice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio23Voice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio23Voice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio23Voice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio23Voice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio23Voice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio23Voice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio23Voice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio23Voice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio23Voice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio23Voice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio23Voice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio23Voice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio23Voice *This,
-        float *pVolume);
+                     IXAudio23Voice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio23Voice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio23Voice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio23Voice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio23Voice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio23Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio23Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio23Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio23Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio23Voice *This);
+                     IXAudio23Voice *This);
 
     END_INTERFACE
 } IXAudio23VoiceVtbl;
@@ -1252,84 +1252,84 @@ interface IXAudio27Voice
     BEGIN_INTERFACE
 
     virtual void STDMETHODCALLTYPE GetVoiceDetails(
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails) = 0;
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputVoices(
-        const XAUDIO2_VOICE_SENDS *pSendList) = 0;
+                     const XAUDIO2_VOICE_SENDS *pSendList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEffectChain(
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain) = 0;
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableEffect(
-        UINT32 EffectIndex,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisableEffect(
-        UINT32 EffectIndex,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetEffectState(
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled) = 0;
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEffectParameters(
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEffectParameters(
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize) = 0;
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFilterParameters(
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetFilterParameters(
-        XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
+                     XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputFilterParameters(
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetOutputFilterParameters(
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVolume(
-        float Volume,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     float Volume,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetVolume(
-        float *pVolume) = 0;
+                     float *pVolume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetChannelVolumes(
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetChannelVolumes(
-        UINT32 Channels,
-        float *pVolumes) = 0;
+                     UINT32 Channels,
+                     float *pVolumes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputMatrix(
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetOutputMatrix(
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix) = 0;
 
     virtual void STDMETHODCALLTYPE DestroyVoice(
-        ) = 0;
+                     ) = 0;
 
     END_INTERFACE
 
@@ -1340,102 +1340,102 @@ typedef struct IXAudio27VoiceVtbl {
 
     /*** IXAudio27Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio27Voice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio27Voice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio27Voice *This,
-        const XAUDIO2_VOICE_SENDS *pSendList);
+                     IXAudio27Voice *This,
+                     const XAUDIO2_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio27Voice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio27Voice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio27Voice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio27Voice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio27Voice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio27Voice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio27Voice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio27Voice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio27Voice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio27Voice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio27Voice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio27Voice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio27Voice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio27Voice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio27Voice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio27Voice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFilterParameters)(
-        IXAudio27Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio27Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputFilterParameters)(
-        IXAudio27Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio27Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio27Voice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio27Voice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio27Voice *This,
-        float *pVolume);
+                     IXAudio27Voice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio27Voice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio27Voice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio27Voice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio27Voice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio27Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio27Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio27Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio27Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio27Voice *This);
+                     IXAudio27Voice *This);
 
     END_INTERFACE
 } IXAudio27VoiceVtbl;
@@ -1546,84 +1546,84 @@ interface IXAudio2Voice
     BEGIN_INTERFACE
 
     virtual void STDMETHODCALLTYPE GetVoiceDetails(
-        XAUDIO2_VOICE_DETAILS *pVoiceDetails) = 0;
+                     XAUDIO2_VOICE_DETAILS *pVoiceDetails) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputVoices(
-        const XAUDIO2_VOICE_SENDS *pSendList) = 0;
+                     const XAUDIO2_VOICE_SENDS *pSendList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEffectChain(
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain) = 0;
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableEffect(
-        UINT32 EffectIndex,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisableEffect(
-        UINT32 EffectIndex,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetEffectState(
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled) = 0;
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEffectParameters(
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEffectParameters(
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize) = 0;
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFilterParameters(
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetFilterParameters(
-        XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
+                     XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputFilterParameters(
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetOutputFilterParameters(
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVolume(
-        float Volume,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     float Volume,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetVolume(
-        float *pVolume) = 0;
+                     float *pVolume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetChannelVolumes(
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetChannelVolumes(
-        UINT32 Channels,
-        float *pVolumes) = 0;
+                     UINT32 Channels,
+                     float *pVolumes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputMatrix(
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetOutputMatrix(
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix) = 0;
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix) = 0;
 
     virtual void STDMETHODCALLTYPE DestroyVoice(
-        ) = 0;
+                     ) = 0;
 
     END_INTERFACE
 
@@ -1634,102 +1634,102 @@ typedef struct IXAudio2VoiceVtbl {
 
     /*** IXAudio2Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio2Voice *This,
-        XAUDIO2_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio2Voice *This,
+                     XAUDIO2_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio2Voice *This,
-        const XAUDIO2_VOICE_SENDS *pSendList);
+                     IXAudio2Voice *This,
+                     const XAUDIO2_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio2Voice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio2Voice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio2Voice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio2Voice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio2Voice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio2Voice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio2Voice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio2Voice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio2Voice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio2Voice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio2Voice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio2Voice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio2Voice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio2Voice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio2Voice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio2Voice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFilterParameters)(
-        IXAudio2Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio2Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputFilterParameters)(
-        IXAudio2Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio2Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio2Voice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio2Voice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio2Voice *This,
-        float *pVolume);
+                     IXAudio2Voice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio2Voice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio2Voice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio2Voice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio2Voice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio2Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio2Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio2Voice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio2Voice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio2Voice *This);
+                     IXAudio2Voice *This);
 
     END_INTERFACE
 } IXAudio2VoiceVtbl;
@@ -1857,35 +1857,35 @@ typedef struct XAUDIO2_VOICE_STATE {
 interface IXAudio20SourceVoice : public IXAudio20Voice
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        UINT32 Flags = 0,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Flags = 0,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        UINT32 Flags = 0,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Flags = 0,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubmitSourceBuffer(
-        const XAUDIO2_BUFFER *pBuffer,
-        const XAUDIO2_BUFFER_WMA *pBufferWMA = 0) = 0;
+                     const XAUDIO2_BUFFER *pBuffer,
+                     const XAUDIO2_BUFFER_WMA *pBufferWMA = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FlushSourceBuffers(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Discontinuity(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExitLoop(
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetState(
-        XAUDIO2_VOICE_STATE *pVoiceState) = 0;
+                     XAUDIO2_VOICE_STATE *pVoiceState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFrequencyRatio(
-        float Ratio,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     float Ratio,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetFrequencyRatio(
-        float *pRatio) = 0;
+                     float *pRatio) = 0;
 
 };
 #else
@@ -1894,130 +1894,130 @@ typedef struct IXAudio20SourceVoiceVtbl {
 
     /*** IXAudio20Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio20SourceVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio20SourceVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio20SourceVoice *This,
-        const XAUDIO23_VOICE_SENDS *pSendList);
+                     IXAudio20SourceVoice *This,
+                     const XAUDIO23_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio20SourceVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio20SourceVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio20SourceVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio20SourceVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio20SourceVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio20SourceVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio20SourceVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio20SourceVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio20SourceVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio20SourceVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio20SourceVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio20SourceVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio20SourceVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio20SourceVoice *This,
-        float *pVolume);
+                     IXAudio20SourceVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio20SourceVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio20SourceVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio20SourceVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio20SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio20SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio20SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio20SourceVoice *This);
+                     IXAudio20SourceVoice *This);
 
     /*** IXAudio20SourceVoice methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IXAudio20SourceVoice *This,
-        UINT32 Flags,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     UINT32 Flags,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IXAudio20SourceVoice *This,
-        UINT32 Flags,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     UINT32 Flags,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *SubmitSourceBuffer)(
-        IXAudio20SourceVoice *This,
-        const XAUDIO2_BUFFER *pBuffer,
-        const XAUDIO2_BUFFER_WMA *pBufferWMA);
+                     IXAudio20SourceVoice *This,
+                     const XAUDIO2_BUFFER *pBuffer,
+                     const XAUDIO2_BUFFER_WMA *pBufferWMA);
 
     HRESULT (STDMETHODCALLTYPE *FlushSourceBuffers)(
-        IXAudio20SourceVoice *This);
+                     IXAudio20SourceVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *Discontinuity)(
-        IXAudio20SourceVoice *This);
+                     IXAudio20SourceVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *ExitLoop)(
-        IXAudio20SourceVoice *This,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetState)(
-        IXAudio20SourceVoice *This,
-        XAUDIO2_VOICE_STATE *pVoiceState);
+                     IXAudio20SourceVoice *This,
+                     XAUDIO2_VOICE_STATE *pVoiceState);
 
     HRESULT (STDMETHODCALLTYPE *SetFrequencyRatio)(
-        IXAudio20SourceVoice *This,
-        float Ratio,
-        UINT32 OperationSet);
+                     IXAudio20SourceVoice *This,
+                     float Ratio,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFrequencyRatio)(
-        IXAudio20SourceVoice *This,
-        float *pRatio);
+                     IXAudio20SourceVoice *This,
+                     float *pRatio);
 
     END_INTERFACE
 } IXAudio20SourceVoiceVtbl;
@@ -2155,35 +2155,35 @@ static FORCEINLINE void IXAudio20SourceVoice_GetFrequencyRatio(IXAudio20SourceVo
 interface IXAudio23SourceVoice : public IXAudio23Voice
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        UINT32 Flags = 0,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Flags = 0,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        UINT32 Flags = 0,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Flags = 0,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubmitSourceBuffer(
-        const XAUDIO2_BUFFER *pBuffer,
-        const XAUDIO2_BUFFER_WMA *pBufferWMA = 0) = 0;
+                     const XAUDIO2_BUFFER *pBuffer,
+                     const XAUDIO2_BUFFER_WMA *pBufferWMA = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FlushSourceBuffers(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Discontinuity(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExitLoop(
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetState(
-        XAUDIO2_VOICE_STATE *pVoiceState) = 0;
+                     XAUDIO2_VOICE_STATE *pVoiceState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFrequencyRatio(
-        float Ratio,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     float Ratio,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetFrequencyRatio(
-        float *pRatio) = 0;
+                     float *pRatio) = 0;
 
 };
 #else
@@ -2192,130 +2192,130 @@ typedef struct IXAudio23SourceVoiceVtbl {
 
     /*** IXAudio23Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio23SourceVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio23SourceVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio23SourceVoice *This,
-        const XAUDIO23_VOICE_SENDS *pSendList);
+                     IXAudio23SourceVoice *This,
+                     const XAUDIO23_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio23SourceVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio23SourceVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio23SourceVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio23SourceVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio23SourceVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio23SourceVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio23SourceVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio23SourceVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio23SourceVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio23SourceVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio23SourceVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio23SourceVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio23SourceVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio23SourceVoice *This,
-        float *pVolume);
+                     IXAudio23SourceVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio23SourceVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio23SourceVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio23SourceVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio23SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio23SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio23SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio23SourceVoice *This);
+                     IXAudio23SourceVoice *This);
 
     /*** IXAudio23SourceVoice methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IXAudio23SourceVoice *This,
-        UINT32 Flags,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     UINT32 Flags,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IXAudio23SourceVoice *This,
-        UINT32 Flags,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     UINT32 Flags,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *SubmitSourceBuffer)(
-        IXAudio23SourceVoice *This,
-        const XAUDIO2_BUFFER *pBuffer,
-        const XAUDIO2_BUFFER_WMA *pBufferWMA);
+                     IXAudio23SourceVoice *This,
+                     const XAUDIO2_BUFFER *pBuffer,
+                     const XAUDIO2_BUFFER_WMA *pBufferWMA);
 
     HRESULT (STDMETHODCALLTYPE *FlushSourceBuffers)(
-        IXAudio23SourceVoice *This);
+                     IXAudio23SourceVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *Discontinuity)(
-        IXAudio23SourceVoice *This);
+                     IXAudio23SourceVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *ExitLoop)(
-        IXAudio23SourceVoice *This,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetState)(
-        IXAudio23SourceVoice *This,
-        XAUDIO2_VOICE_STATE *pVoiceState);
+                     IXAudio23SourceVoice *This,
+                     XAUDIO2_VOICE_STATE *pVoiceState);
 
     HRESULT (STDMETHODCALLTYPE *SetFrequencyRatio)(
-        IXAudio23SourceVoice *This,
-        float Ratio,
-        UINT32 OperationSet);
+                     IXAudio23SourceVoice *This,
+                     float Ratio,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFrequencyRatio)(
-        IXAudio23SourceVoice *This,
-        float *pRatio);
+                     IXAudio23SourceVoice *This,
+                     float *pRatio);
 
     END_INTERFACE
 } IXAudio23SourceVoiceVtbl;
@@ -2453,38 +2453,38 @@ static FORCEINLINE void IXAudio23SourceVoice_GetFrequencyRatio(IXAudio23SourceVo
 interface IXAudio27SourceVoice : public IXAudio27Voice
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        UINT32 Flags = 0,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Flags = 0,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        UINT32 Flags = 0,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Flags = 0,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubmitSourceBuffer(
-        const XAUDIO2_BUFFER *pBuffer,
-        const XAUDIO2_BUFFER_WMA *pBufferWMA = 0) = 0;
+                     const XAUDIO2_BUFFER *pBuffer,
+                     const XAUDIO2_BUFFER_WMA *pBufferWMA = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FlushSourceBuffers(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Discontinuity(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExitLoop(
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetState(
-        XAUDIO2_VOICE_STATE *pVoiceState) = 0;
+                     XAUDIO2_VOICE_STATE *pVoiceState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFrequencyRatio(
-        float Ratio,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     float Ratio,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetFrequencyRatio(
-        float *pRatio) = 0;
+                     float *pRatio) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSourceSampleRate(
-        UINT32 NewSourceSampleRate) = 0;
+                     UINT32 NewSourceSampleRate) = 0;
 
 };
 #else
@@ -2493,145 +2493,145 @@ typedef struct IXAudio27SourceVoiceVtbl {
 
     /*** IXAudio27Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio27SourceVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio27SourceVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio27SourceVoice *This,
-        const XAUDIO2_VOICE_SENDS *pSendList);
+                     IXAudio27SourceVoice *This,
+                     const XAUDIO2_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio27SourceVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio27SourceVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio27SourceVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio27SourceVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio27SourceVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio27SourceVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio27SourceVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio27SourceVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio27SourceVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio27SourceVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio27SourceVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio27SourceVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFilterParameters)(
-        IXAudio27SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputFilterParameters)(
-        IXAudio27SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio27SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio27SourceVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio27SourceVoice *This,
-        float *pVolume);
+                     IXAudio27SourceVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio27SourceVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio27SourceVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio27SourceVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio27SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio27SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio27SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio27SourceVoice *This);
+                     IXAudio27SourceVoice *This);
 
     /*** IXAudio27SourceVoice methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IXAudio27SourceVoice *This,
-        UINT32 Flags,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     UINT32 Flags,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IXAudio27SourceVoice *This,
-        UINT32 Flags,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     UINT32 Flags,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *SubmitSourceBuffer)(
-        IXAudio27SourceVoice *This,
-        const XAUDIO2_BUFFER *pBuffer,
-        const XAUDIO2_BUFFER_WMA *pBufferWMA);
+                     IXAudio27SourceVoice *This,
+                     const XAUDIO2_BUFFER *pBuffer,
+                     const XAUDIO2_BUFFER_WMA *pBufferWMA);
 
     HRESULT (STDMETHODCALLTYPE *FlushSourceBuffers)(
-        IXAudio27SourceVoice *This);
+                     IXAudio27SourceVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *Discontinuity)(
-        IXAudio27SourceVoice *This);
+                     IXAudio27SourceVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *ExitLoop)(
-        IXAudio27SourceVoice *This,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetState)(
-        IXAudio27SourceVoice *This,
-        XAUDIO2_VOICE_STATE *pVoiceState);
+                     IXAudio27SourceVoice *This,
+                     XAUDIO2_VOICE_STATE *pVoiceState);
 
     HRESULT (STDMETHODCALLTYPE *SetFrequencyRatio)(
-        IXAudio27SourceVoice *This,
-        float Ratio,
-        UINT32 OperationSet);
+                     IXAudio27SourceVoice *This,
+                     float Ratio,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFrequencyRatio)(
-        IXAudio27SourceVoice *This,
-        float *pRatio);
+                     IXAudio27SourceVoice *This,
+                     float *pRatio);
 
     HRESULT (STDMETHODCALLTYPE *SetSourceSampleRate)(
-        IXAudio27SourceVoice *This,
-        UINT32 NewSourceSampleRate);
+                     IXAudio27SourceVoice *This,
+                     UINT32 NewSourceSampleRate);
 
     END_INTERFACE
 } IXAudio27SourceVoiceVtbl;
@@ -2781,39 +2781,39 @@ static FORCEINLINE HRESULT IXAudio27SourceVoice_SetSourceSampleRate(IXAudio27Sou
 interface IXAudio2SourceVoice : public IXAudio2Voice
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        UINT32 Flags = 0,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Flags = 0,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        UINT32 Flags = 0,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 Flags = 0,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubmitSourceBuffer(
-        const XAUDIO2_BUFFER *pBuffer,
-        const XAUDIO2_BUFFER_WMA *pBufferWMA = 0) = 0;
+                     const XAUDIO2_BUFFER *pBuffer,
+                     const XAUDIO2_BUFFER_WMA *pBufferWMA = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FlushSourceBuffers(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Discontinuity(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExitLoop(
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetState(
-        XAUDIO2_VOICE_STATE *pVoiceState,
-        UINT32 Flags = 0) = 0;
+                     XAUDIO2_VOICE_STATE *pVoiceState,
+                     UINT32 Flags = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFrequencyRatio(
-        float Ratio,
-        UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
+                     float Ratio,
+                     UINT32 OperationSet = XAUDIO2_COMMIT_NOW) = 0;
 
     virtual void STDMETHODCALLTYPE GetFrequencyRatio(
-        float *pRatio) = 0;
+                     float *pRatio) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSourceSampleRate(
-        UINT32 NewSourceSampleRate) = 0;
+                     UINT32 NewSourceSampleRate) = 0;
 
 };
 #else
@@ -2822,146 +2822,146 @@ typedef struct IXAudio2SourceVoiceVtbl {
 
     /*** IXAudio2Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio2SourceVoice *This,
-        XAUDIO2_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio2SourceVoice *This,
+                     XAUDIO2_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio2SourceVoice *This,
-        const XAUDIO2_VOICE_SENDS *pSendList);
+                     IXAudio2SourceVoice *This,
+                     const XAUDIO2_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio2SourceVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio2SourceVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio2SourceVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio2SourceVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio2SourceVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio2SourceVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio2SourceVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio2SourceVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio2SourceVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio2SourceVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio2SourceVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio2SourceVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFilterParameters)(
-        IXAudio2SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputFilterParameters)(
-        IXAudio2SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio2SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio2SourceVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio2SourceVoice *This,
-        float *pVolume);
+                     IXAudio2SourceVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio2SourceVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio2SourceVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio2SourceVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio2SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio2SourceVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio2SourceVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio2SourceVoice *This);
+                     IXAudio2SourceVoice *This);
 
     /*** IXAudio2SourceVoice methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IXAudio2SourceVoice *This,
-        UINT32 Flags,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     UINT32 Flags,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IXAudio2SourceVoice *This,
-        UINT32 Flags,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     UINT32 Flags,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *SubmitSourceBuffer)(
-        IXAudio2SourceVoice *This,
-        const XAUDIO2_BUFFER *pBuffer,
-        const XAUDIO2_BUFFER_WMA *pBufferWMA);
+                     IXAudio2SourceVoice *This,
+                     const XAUDIO2_BUFFER *pBuffer,
+                     const XAUDIO2_BUFFER_WMA *pBufferWMA);
 
     HRESULT (STDMETHODCALLTYPE *FlushSourceBuffers)(
-        IXAudio2SourceVoice *This);
+                     IXAudio2SourceVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *Discontinuity)(
-        IXAudio2SourceVoice *This);
+                     IXAudio2SourceVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *ExitLoop)(
-        IXAudio2SourceVoice *This,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetState)(
-        IXAudio2SourceVoice *This,
-        XAUDIO2_VOICE_STATE *pVoiceState,
-        UINT32 Flags);
+                     IXAudio2SourceVoice *This,
+                     XAUDIO2_VOICE_STATE *pVoiceState,
+                     UINT32 Flags);
 
     HRESULT (STDMETHODCALLTYPE *SetFrequencyRatio)(
-        IXAudio2SourceVoice *This,
-        float Ratio,
-        UINT32 OperationSet);
+                     IXAudio2SourceVoice *This,
+                     float Ratio,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFrequencyRatio)(
-        IXAudio2SourceVoice *This,
-        float *pRatio);
+                     IXAudio2SourceVoice *This,
+                     float *pRatio);
 
     HRESULT (STDMETHODCALLTYPE *SetSourceSampleRate)(
-        IXAudio2SourceVoice *This,
-        UINT32 NewSourceSampleRate);
+                     IXAudio2SourceVoice *This,
+                     UINT32 NewSourceSampleRate);
 
     END_INTERFACE
 } IXAudio2SourceVoiceVtbl;
@@ -3117,91 +3117,91 @@ typedef struct IXAudio20SubmixVoiceVtbl {
 
     /*** IXAudio20Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio20SubmixVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio20SubmixVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio20SubmixVoice *This,
-        const XAUDIO23_VOICE_SENDS *pSendList);
+                     IXAudio20SubmixVoice *This,
+                     const XAUDIO23_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio20SubmixVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio20SubmixVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio20SubmixVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio20SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio20SubmixVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio20SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio20SubmixVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio20SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio20SubmixVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio20SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio20SubmixVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio20SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio20SubmixVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio20SubmixVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio20SubmixVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio20SubmixVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio20SubmixVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio20SubmixVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio20SubmixVoice *This,
-        float *pVolume);
+                     IXAudio20SubmixVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio20SubmixVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio20SubmixVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio20SubmixVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio20SubmixVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio20SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio20SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio20SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio20SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio20SubmixVoice *This);
+                     IXAudio20SubmixVoice *This);
 
     END_INTERFACE
 } IXAudio20SubmixVoiceVtbl;
@@ -3307,91 +3307,91 @@ typedef struct IXAudio23SubmixVoiceVtbl {
 
     /*** IXAudio23Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio23SubmixVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio23SubmixVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio23SubmixVoice *This,
-        const XAUDIO23_VOICE_SENDS *pSendList);
+                     IXAudio23SubmixVoice *This,
+                     const XAUDIO23_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio23SubmixVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio23SubmixVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio23SubmixVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio23SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio23SubmixVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio23SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio23SubmixVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio23SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio23SubmixVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio23SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio23SubmixVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio23SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio23SubmixVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio23SubmixVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio23SubmixVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio23SubmixVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio23SubmixVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio23SubmixVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio23SubmixVoice *This,
-        float *pVolume);
+                     IXAudio23SubmixVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio23SubmixVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio23SubmixVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio23SubmixVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio23SubmixVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio23SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio23SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio23SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio23SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio23SubmixVoice *This);
+                     IXAudio23SubmixVoice *This);
 
     END_INTERFACE
 } IXAudio23SubmixVoiceVtbl;
@@ -3497,102 +3497,102 @@ typedef struct IXAudio27SubmixVoiceVtbl {
 
     /*** IXAudio27Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio27SubmixVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio27SubmixVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio27SubmixVoice *This,
-        const XAUDIO2_VOICE_SENDS *pSendList);
+                     IXAudio27SubmixVoice *This,
+                     const XAUDIO2_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio27SubmixVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio27SubmixVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio27SubmixVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio27SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio27SubmixVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio27SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio27SubmixVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio27SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio27SubmixVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio27SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio27SubmixVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio27SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio27SubmixVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio27SubmixVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio27SubmixVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio27SubmixVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFilterParameters)(
-        IXAudio27SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio27SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputFilterParameters)(
-        IXAudio27SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio27SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio27SubmixVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio27SubmixVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio27SubmixVoice *This,
-        float *pVolume);
+                     IXAudio27SubmixVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio27SubmixVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio27SubmixVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio27SubmixVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio27SubmixVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio27SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio27SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio27SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio27SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio27SubmixVoice *This);
+                     IXAudio27SubmixVoice *This);
 
     END_INTERFACE
 } IXAudio27SubmixVoiceVtbl;
@@ -3706,102 +3706,102 @@ typedef struct IXAudio2SubmixVoiceVtbl {
 
     /*** IXAudio2Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio2SubmixVoice *This,
-        XAUDIO2_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio2SubmixVoice *This,
+                     XAUDIO2_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio2SubmixVoice *This,
-        const XAUDIO2_VOICE_SENDS *pSendList);
+                     IXAudio2SubmixVoice *This,
+                     const XAUDIO2_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio2SubmixVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio2SubmixVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio2SubmixVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio2SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio2SubmixVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio2SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio2SubmixVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio2SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio2SubmixVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio2SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio2SubmixVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio2SubmixVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio2SubmixVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio2SubmixVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio2SubmixVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio2SubmixVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFilterParameters)(
-        IXAudio2SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio2SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputFilterParameters)(
-        IXAudio2SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio2SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio2SubmixVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio2SubmixVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio2SubmixVoice *This,
-        float *pVolume);
+                     IXAudio2SubmixVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio2SubmixVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio2SubmixVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio2SubmixVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio2SubmixVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio2SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio2SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio2SubmixVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio2SubmixVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio2SubmixVoice *This);
+                     IXAudio2SubmixVoice *This);
 
     END_INTERFACE
 } IXAudio2SubmixVoiceVtbl;
@@ -3915,91 +3915,91 @@ typedef struct IXAudio20MasteringVoiceVtbl {
 
     /*** IXAudio20Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio20MasteringVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio20MasteringVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio20MasteringVoice *This,
-        const XAUDIO23_VOICE_SENDS *pSendList);
+                     IXAudio20MasteringVoice *This,
+                     const XAUDIO23_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio20MasteringVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio20MasteringVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio20MasteringVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio20MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio20MasteringVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio20MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio20MasteringVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio20MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio20MasteringVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio20MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio20MasteringVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio20MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio20MasteringVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio20MasteringVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio20MasteringVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio20MasteringVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio20MasteringVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio20MasteringVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio20MasteringVoice *This,
-        float *pVolume);
+                     IXAudio20MasteringVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio20MasteringVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio20MasteringVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio20MasteringVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio20MasteringVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio20MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio20MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio20MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio20MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio20MasteringVoice *This);
+                     IXAudio20MasteringVoice *This);
 
     END_INTERFACE
 } IXAudio20MasteringVoiceVtbl;
@@ -4105,91 +4105,91 @@ typedef struct IXAudio23MasteringVoiceVtbl {
 
     /*** IXAudio23Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio23MasteringVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio23MasteringVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio23MasteringVoice *This,
-        const XAUDIO23_VOICE_SENDS *pSendList);
+                     IXAudio23MasteringVoice *This,
+                     const XAUDIO23_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio23MasteringVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio23MasteringVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio23MasteringVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio23MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio23MasteringVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio23MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio23MasteringVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio23MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio23MasteringVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio23MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio23MasteringVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio23MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio23MasteringVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio23MasteringVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio23MasteringVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio23MasteringVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio23MasteringVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio23MasteringVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio23MasteringVoice *This,
-        float *pVolume);
+                     IXAudio23MasteringVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio23MasteringVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio23MasteringVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio23MasteringVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio23MasteringVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio23MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio23MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio23MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio23MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio23MasteringVoice *This);
+                     IXAudio23MasteringVoice *This);
 
     END_INTERFACE
 } IXAudio23MasteringVoiceVtbl;
@@ -4295,102 +4295,102 @@ typedef struct IXAudio27MasteringVoiceVtbl {
 
     /*** IXAudio27Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio27MasteringVoice *This,
-        XAUDIO27_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio27MasteringVoice *This,
+                     XAUDIO27_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio27MasteringVoice *This,
-        const XAUDIO2_VOICE_SENDS *pSendList);
+                     IXAudio27MasteringVoice *This,
+                     const XAUDIO2_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio27MasteringVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio27MasteringVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio27MasteringVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio27MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio27MasteringVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio27MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio27MasteringVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio27MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio27MasteringVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio27MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio27MasteringVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio27MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio27MasteringVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio27MasteringVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio27MasteringVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio27MasteringVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFilterParameters)(
-        IXAudio27MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio27MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputFilterParameters)(
-        IXAudio27MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio27MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio27MasteringVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio27MasteringVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio27MasteringVoice *This,
-        float *pVolume);
+                     IXAudio27MasteringVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio27MasteringVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio27MasteringVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio27MasteringVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio27MasteringVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio27MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio27MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio27MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio27MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio27MasteringVoice *This);
+                     IXAudio27MasteringVoice *This);
 
     END_INTERFACE
 } IXAudio27MasteringVoiceVtbl;
@@ -4498,7 +4498,7 @@ static FORCEINLINE void IXAudio27MasteringVoice_DestroyVoice(IXAudio27MasteringV
 interface IXAudio2MasteringVoice : public IXAudio2Voice
 {
     virtual void STDMETHODCALLTYPE GetChannelMask(
-        DWORD *pChannelMask) = 0;
+                     DWORD *pChannelMask) = 0;
 
 };
 #else
@@ -4507,107 +4507,107 @@ typedef struct IXAudio2MasteringVoiceVtbl {
 
     /*** IXAudio2Voice methods ***/
     void (STDMETHODCALLTYPE *GetVoiceDetails)(
-        IXAudio2MasteringVoice *This,
-        XAUDIO2_VOICE_DETAILS *pVoiceDetails);
+                     IXAudio2MasteringVoice *This,
+                     XAUDIO2_VOICE_DETAILS *pVoiceDetails);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputVoices)(
-        IXAudio2MasteringVoice *This,
-        const XAUDIO2_VOICE_SENDS *pSendList);
+                     IXAudio2MasteringVoice *This,
+                     const XAUDIO2_VOICE_SENDS *pSendList);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectChain)(
-        IXAudio2MasteringVoice *This,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio2MasteringVoice *This,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffect)(
-        IXAudio2MasteringVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio2MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *DisableEffect)(
-        IXAudio2MasteringVoice *This,
-        UINT32 EffectIndex,
-        UINT32 OperationSet);
+                     IXAudio2MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetEffectState)(
-        IXAudio2MasteringVoice *This,
-        UINT32 EffectIndex,
-        WINBOOL *pEnabled);
+                     IXAudio2MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     WINBOOL *pEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEffectParameters)(
-        IXAudio2MasteringVoice *This,
-        UINT32 EffectIndex,
-        const void *pParameters,
-        UINT32 ParametersByteSize,
-        UINT32 OperationSet);
+                     IXAudio2MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     const void *pParameters,
+                     UINT32 ParametersByteSize,
+                     UINT32 OperationSet);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectParameters)(
-        IXAudio2MasteringVoice *This,
-        UINT32 EffectIndex,
-        void *pParameters,
-        UINT32 ParametersByteSize);
+                     IXAudio2MasteringVoice *This,
+                     UINT32 EffectIndex,
+                     void *pParameters,
+                     UINT32 ParametersByteSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFilterParameters)(
-        IXAudio2MasteringVoice *This,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio2MasteringVoice *This,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetFilterParameters)(
-        IXAudio2MasteringVoice *This,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio2MasteringVoice *This,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFilterParameters)(
-        IXAudio2MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        const XAUDIO2_FILTER_PARAMETERS *pParameters,
-        UINT32 OperationSet);
+                     IXAudio2MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     const XAUDIO2_FILTER_PARAMETERS *pParameters,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputFilterParameters)(
-        IXAudio2MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        XAUDIO2_FILTER_PARAMETERS *pParameters);
+                     IXAudio2MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     XAUDIO2_FILTER_PARAMETERS *pParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IXAudio2MasteringVoice *This,
-        float Volume,
-        UINT32 OperationSet);
+                     IXAudio2MasteringVoice *This,
+                     float Volume,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetVolume)(
-        IXAudio2MasteringVoice *This,
-        float *pVolume);
+                     IXAudio2MasteringVoice *This,
+                     float *pVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetChannelVolumes)(
-        IXAudio2MasteringVoice *This,
-        UINT32 Channels,
-        const float *pVolumes,
-        UINT32 OperationSet);
+                     IXAudio2MasteringVoice *This,
+                     UINT32 Channels,
+                     const float *pVolumes,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetChannelVolumes)(
-        IXAudio2MasteringVoice *This,
-        UINT32 Channels,
-        float *pVolumes);
+                     IXAudio2MasteringVoice *This,
+                     UINT32 Channels,
+                     float *pVolumes);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMatrix)(
-        IXAudio2MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        const float *pLevelMatrix,
-        UINT32 OperationSet);
+                     IXAudio2MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     const float *pLevelMatrix,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetOutputMatrix)(
-        IXAudio2MasteringVoice *This,
-        IXAudio2Voice *pDestinationVoice,
-        UINT32 SourceChannels,
-        UINT32 DestinationChannels,
-        float *pLevelMatrix);
+                     IXAudio2MasteringVoice *This,
+                     IXAudio2Voice *pDestinationVoice,
+                     UINT32 SourceChannels,
+                     UINT32 DestinationChannels,
+                     float *pLevelMatrix);
 
     void (STDMETHODCALLTYPE *DestroyVoice)(
-        IXAudio2MasteringVoice *This);
+                     IXAudio2MasteringVoice *This);
 
     /*** IXAudio2MasteringVoice methods ***/
     void (STDMETHODCALLTYPE *GetChannelMask)(
-        IXAudio2MasteringVoice *This,
-        DWORD *pChannelMask);
+                     IXAudio2MasteringVoice *This,
+                     DWORD *pChannelMask);
 
     END_INTERFACE
 } IXAudio2MasteringVoiceVtbl;
@@ -4724,26 +4724,26 @@ interface IXAudio20VoiceCallback
     BEGIN_INTERFACE
 
     virtual void STDMETHODCALLTYPE OnVoiceProcessingPassStart(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE OnVoiceProcessingPassEnd(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE OnStreamEnd(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE OnBufferStart(
-        void *pBufferContext) = 0;
+                     void *pBufferContext) = 0;
 
     virtual void STDMETHODCALLTYPE OnBufferEnd(
-        void *pBufferContext) = 0;
+                     void *pBufferContext) = 0;
 
     virtual void STDMETHODCALLTYPE OnLoopEnd(
-        void *pBufferContext) = 0;
+                     void *pBufferContext) = 0;
 
     virtual void STDMETHODCALLTYPE OnVoiceError(
-        void *pBuffercontext,
-        HRESULT Error) = 0;
+                     void *pBuffercontext,
+                     HRESULT Error) = 0;
 
     END_INTERFACE
 
@@ -4754,30 +4754,30 @@ typedef struct IXAudio20VoiceCallbackVtbl {
 
     /*** IXAudio20VoiceCallback methods ***/
     void (STDMETHODCALLTYPE *OnVoiceProcessingPassStart)(
-        IXAudio20VoiceCallback *This);
+                     IXAudio20VoiceCallback *This);
 
     void (STDMETHODCALLTYPE *OnVoiceProcessingPassEnd)(
-        IXAudio20VoiceCallback *This);
+                     IXAudio20VoiceCallback *This);
 
     void (STDMETHODCALLTYPE *OnStreamEnd)(
-        IXAudio20VoiceCallback *This);
+                     IXAudio20VoiceCallback *This);
 
     void (STDMETHODCALLTYPE *OnBufferStart)(
-        IXAudio20VoiceCallback *This,
-        void *pBufferContext);
+                     IXAudio20VoiceCallback *This,
+                     void *pBufferContext);
 
     void (STDMETHODCALLTYPE *OnBufferEnd)(
-        IXAudio20VoiceCallback *This,
-        void *pBufferContext);
+                     IXAudio20VoiceCallback *This,
+                     void *pBufferContext);
 
     void (STDMETHODCALLTYPE *OnLoopEnd)(
-        IXAudio20VoiceCallback *This,
-        void *pBufferContext);
+                     IXAudio20VoiceCallback *This,
+                     void *pBufferContext);
 
     void (STDMETHODCALLTYPE *OnVoiceError)(
-        IXAudio20VoiceCallback *This,
-        void *pBuffercontext,
-        HRESULT Error);
+                     IXAudio20VoiceCallback *This,
+                     void *pBuffercontext,
+                     HRESULT Error);
 
     END_INTERFACE
 } IXAudio20VoiceCallbackVtbl;
@@ -4840,26 +4840,26 @@ interface IXAudio2VoiceCallback
     BEGIN_INTERFACE
 
     virtual void STDMETHODCALLTYPE OnVoiceProcessingPassStart(
-        UINT32 BytesRequired) = 0;
+                     UINT32 BytesRequired) = 0;
 
     virtual void STDMETHODCALLTYPE OnVoiceProcessingPassEnd(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE OnStreamEnd(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE OnBufferStart(
-        void *pBufferContext) = 0;
+                     void *pBufferContext) = 0;
 
     virtual void STDMETHODCALLTYPE OnBufferEnd(
-        void *pBufferContext) = 0;
+                     void *pBufferContext) = 0;
 
     virtual void STDMETHODCALLTYPE OnLoopEnd(
-        void *pBufferContext) = 0;
+                     void *pBufferContext) = 0;
 
     virtual void STDMETHODCALLTYPE OnVoiceError(
-        void *pBuffercontext,
-        HRESULT Error) = 0;
+                     void *pBuffercontext,
+                     HRESULT Error) = 0;
 
     END_INTERFACE
 
@@ -4870,31 +4870,31 @@ typedef struct IXAudio2VoiceCallbackVtbl {
 
     /*** IXAudio2VoiceCallback methods ***/
     void (STDMETHODCALLTYPE *OnVoiceProcessingPassStart)(
-        IXAudio2VoiceCallback *This,
-        UINT32 BytesRequired);
+                     IXAudio2VoiceCallback *This,
+                     UINT32 BytesRequired);
 
     void (STDMETHODCALLTYPE *OnVoiceProcessingPassEnd)(
-        IXAudio2VoiceCallback *This);
+                     IXAudio2VoiceCallback *This);
 
     void (STDMETHODCALLTYPE *OnStreamEnd)(
-        IXAudio2VoiceCallback *This);
+                     IXAudio2VoiceCallback *This);
 
     void (STDMETHODCALLTYPE *OnBufferStart)(
-        IXAudio2VoiceCallback *This,
-        void *pBufferContext);
+                     IXAudio2VoiceCallback *This,
+                     void *pBufferContext);
 
     void (STDMETHODCALLTYPE *OnBufferEnd)(
-        IXAudio2VoiceCallback *This,
-        void *pBufferContext);
+                     IXAudio2VoiceCallback *This,
+                     void *pBufferContext);
 
     void (STDMETHODCALLTYPE *OnLoopEnd)(
-        IXAudio2VoiceCallback *This,
-        void *pBufferContext);
+                     IXAudio2VoiceCallback *This,
+                     void *pBufferContext);
 
     void (STDMETHODCALLTYPE *OnVoiceError)(
-        IXAudio2VoiceCallback *This,
-        void *pBuffercontext,
-        HRESULT Error);
+                     IXAudio2VoiceCallback *This,
+                     void *pBuffercontext,
+                     HRESULT Error);
 
     END_INTERFACE
 } IXAudio2VoiceCallbackVtbl;
@@ -4964,63 +4964,63 @@ MIDL_INTERFACE("8bcf1f58-9fe7-4583-8ac6-e2adc465c8bb")
 IXAudio20 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeviceCount(
-        UINT32 *pCount) = 0;
+                     UINT32 *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceDetails(
-        UINT32 Index,
-        XAUDIO2_DEVICE_DETAILS *pDeviceDetails) = 0;
+                     UINT32 Index,
+                     XAUDIO2_DEVICE_DETAILS *pDeviceDetails) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        UINT32 Flags = 0,
-        XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
+                     UINT32 Flags = 0,
+                     XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual void STDMETHODCALLTYPE UnregisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags = 0,
-        float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
-        IXAudio2VoiceCallback *pCallback = 0,
-        const XAUDIO23_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags = 0,
+                     float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
+                     IXAudio2VoiceCallback *pCallback = 0,
+                     const XAUDIO23_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags = 0,
-        UINT32 ProcessingStage = 0,
-        const XAUDIO23_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags = 0,
+                     UINT32 ProcessingStage = 0,
+                     const XAUDIO23_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
-        UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
-        UINT32 Flags = 0,
-        UINT32 DeviceIndex = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
+                     UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
+                     UINT32 Flags = 0,
+                     UINT32 DeviceIndex = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE StopEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitChanges(
-        UINT32 OperationSet) = 0;
+                     UINT32 OperationSet) = 0;
 
     virtual void STDMETHODCALLTYPE GetPerformanceData(
-        XAUDIO20_PERFORMANCE_DATA *pPerfData) = 0;
+                     XAUDIO20_PERFORMANCE_DATA *pPerfData) = 0;
 
     virtual void STDMETHODCALLTYPE SetDebugConfiguration(
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved = 0) = 0;
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5032,86 +5032,86 @@ typedef struct IXAudio20Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXAudio20 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXAudio20 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXAudio20 *This);
+                     IXAudio20 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXAudio20 *This);
+                     IXAudio20 *This);
 
     /*** IXAudio20 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeviceCount)(
-        IXAudio20 *This,
-        UINT32 *pCount);
+                     IXAudio20 *This,
+                     UINT32 *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceDetails)(
-        IXAudio20 *This,
-        UINT32 Index,
-        XAUDIO2_DEVICE_DETAILS *pDeviceDetails);
+                     IXAudio20 *This,
+                     UINT32 Index,
+                     XAUDIO2_DEVICE_DETAILS *pDeviceDetails);
 
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IXAudio20 *This,
-        UINT32 Flags,
-        XAUDIO2_PROCESSOR XAudio2Processor);
+                     IXAudio20 *This,
+                     UINT32 Flags,
+                     XAUDIO2_PROCESSOR XAudio2Processor);
 
     HRESULT (STDMETHODCALLTYPE *RegisterForCallbacks)(
-        IXAudio20 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio20 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     void (STDMETHODCALLTYPE *UnregisterForCallbacks)(
-        IXAudio20 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio20 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     HRESULT (STDMETHODCALLTYPE *CreateSourceVoice)(
-        IXAudio20 *This,
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags,
-        float MaxFrequencyRatio,
-        IXAudio2VoiceCallback *pCallback,
-        const XAUDIO23_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio20 *This,
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags,
+                     float MaxFrequencyRatio,
+                     IXAudio2VoiceCallback *pCallback,
+                     const XAUDIO23_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateSubmixVoice)(
-        IXAudio20 *This,
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 ProcessingStage,
-        const XAUDIO23_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio20 *This,
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 ProcessingStage,
+                     const XAUDIO23_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateMasteringVoice)(
-        IXAudio20 *This,
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 DeviceIndex,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio20 *This,
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 DeviceIndex,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *StartEngine)(
-        IXAudio20 *This);
+                     IXAudio20 *This);
 
     void (STDMETHODCALLTYPE *StopEngine)(
-        IXAudio20 *This);
+                     IXAudio20 *This);
 
     HRESULT (STDMETHODCALLTYPE *CommitChanges)(
-        IXAudio20 *This,
-        UINT32 OperationSet);
+                     IXAudio20 *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetPerformanceData)(
-        IXAudio20 *This,
-        XAUDIO20_PERFORMANCE_DATA *pPerfData);
+                     IXAudio20 *This,
+                     XAUDIO20_PERFORMANCE_DATA *pPerfData);
 
     void (STDMETHODCALLTYPE *SetDebugConfiguration)(
-        IXAudio20 *This,
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved);
+                     IXAudio20 *This,
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved);
 
     END_INTERFACE
 } IXAudio20Vtbl;
@@ -5211,63 +5211,63 @@ MIDL_INTERFACE("8bcf1f58-9fe7-4583-8ac6-e2adc465c8bb")
 IXAudio22 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeviceCount(
-        UINT32 *pCount) = 0;
+                     UINT32 *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceDetails(
-        UINT32 Index,
-        XAUDIO2_DEVICE_DETAILS *pDeviceDetails) = 0;
+                     UINT32 Index,
+                     XAUDIO2_DEVICE_DETAILS *pDeviceDetails) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        UINT32 Flags = 0,
-        XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
+                     UINT32 Flags = 0,
+                     XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual void STDMETHODCALLTYPE UnregisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags = 0,
-        float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
-        IXAudio2VoiceCallback *pCallback = 0,
-        const XAUDIO23_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags = 0,
+                     float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
+                     IXAudio2VoiceCallback *pCallback = 0,
+                     const XAUDIO23_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags = 0,
-        UINT32 ProcessingStage = 0,
-        const XAUDIO23_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags = 0,
+                     UINT32 ProcessingStage = 0,
+                     const XAUDIO23_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
-        UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
-        UINT32 Flags = 0,
-        UINT32 DeviceIndex = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
+                     UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
+                     UINT32 Flags = 0,
+                     UINT32 DeviceIndex = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE StopEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitChanges(
-        UINT32 OperationSet) = 0;
+                     UINT32 OperationSet) = 0;
 
     virtual void STDMETHODCALLTYPE GetPerformanceData(
-        XAUDIO22_PERFORMANCE_DATA *pPerfData) = 0;
+                     XAUDIO22_PERFORMANCE_DATA *pPerfData) = 0;
 
     virtual void STDMETHODCALLTYPE SetDebugConfiguration(
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved = 0) = 0;
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5279,86 +5279,86 @@ typedef struct IXAudio22Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXAudio22 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXAudio22 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXAudio22 *This);
+                     IXAudio22 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXAudio22 *This);
+                     IXAudio22 *This);
 
     /*** IXAudio22 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeviceCount)(
-        IXAudio22 *This,
-        UINT32 *pCount);
+                     IXAudio22 *This,
+                     UINT32 *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceDetails)(
-        IXAudio22 *This,
-        UINT32 Index,
-        XAUDIO2_DEVICE_DETAILS *pDeviceDetails);
+                     IXAudio22 *This,
+                     UINT32 Index,
+                     XAUDIO2_DEVICE_DETAILS *pDeviceDetails);
 
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IXAudio22 *This,
-        UINT32 Flags,
-        XAUDIO2_PROCESSOR XAudio2Processor);
+                     IXAudio22 *This,
+                     UINT32 Flags,
+                     XAUDIO2_PROCESSOR XAudio2Processor);
 
     HRESULT (STDMETHODCALLTYPE *RegisterForCallbacks)(
-        IXAudio22 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio22 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     void (STDMETHODCALLTYPE *UnregisterForCallbacks)(
-        IXAudio22 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio22 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     HRESULT (STDMETHODCALLTYPE *CreateSourceVoice)(
-        IXAudio22 *This,
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags,
-        float MaxFrequencyRatio,
-        IXAudio2VoiceCallback *pCallback,
-        const XAUDIO23_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio22 *This,
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags,
+                     float MaxFrequencyRatio,
+                     IXAudio2VoiceCallback *pCallback,
+                     const XAUDIO23_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateSubmixVoice)(
-        IXAudio22 *This,
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 ProcessingStage,
-        const XAUDIO23_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio22 *This,
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 ProcessingStage,
+                     const XAUDIO23_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateMasteringVoice)(
-        IXAudio22 *This,
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 DeviceIndex,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio22 *This,
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 DeviceIndex,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *StartEngine)(
-        IXAudio22 *This);
+                     IXAudio22 *This);
 
     void (STDMETHODCALLTYPE *StopEngine)(
-        IXAudio22 *This);
+                     IXAudio22 *This);
 
     HRESULT (STDMETHODCALLTYPE *CommitChanges)(
-        IXAudio22 *This,
-        UINT32 OperationSet);
+                     IXAudio22 *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetPerformanceData)(
-        IXAudio22 *This,
-        XAUDIO22_PERFORMANCE_DATA *pPerfData);
+                     IXAudio22 *This,
+                     XAUDIO22_PERFORMANCE_DATA *pPerfData);
 
     void (STDMETHODCALLTYPE *SetDebugConfiguration)(
-        IXAudio22 *This,
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved);
+                     IXAudio22 *This,
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved);
 
     END_INTERFACE
 } IXAudio22Vtbl;
@@ -5458,63 +5458,63 @@ MIDL_INTERFACE("8bcf1f58-9fe7-4583-8ac6-e2adc465c8bb")
 IXAudio23 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeviceCount(
-        UINT32 *pCount) = 0;
+                     UINT32 *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceDetails(
-        UINT32 Index,
-        XAUDIO2_DEVICE_DETAILS *pDeviceDetails) = 0;
+                     UINT32 Index,
+                     XAUDIO2_DEVICE_DETAILS *pDeviceDetails) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        UINT32 Flags = 0,
-        XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
+                     UINT32 Flags = 0,
+                     XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual void STDMETHODCALLTYPE UnregisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags = 0,
-        float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
-        IXAudio2VoiceCallback *pCallback = 0,
-        const XAUDIO23_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags = 0,
+                     float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
+                     IXAudio2VoiceCallback *pCallback = 0,
+                     const XAUDIO23_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags = 0,
-        UINT32 ProcessingStage = 0,
-        const XAUDIO23_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags = 0,
+                     UINT32 ProcessingStage = 0,
+                     const XAUDIO23_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
-        UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
-        UINT32 Flags = 0,
-        UINT32 DeviceIndex = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
+                     UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
+                     UINT32 Flags = 0,
+                     UINT32 DeviceIndex = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE StopEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitChanges(
-        UINT32 OperationSet) = 0;
+                     UINT32 OperationSet) = 0;
 
     virtual void STDMETHODCALLTYPE GetPerformanceData(
-        XAUDIO2_PERFORMANCE_DATA *pPerfData) = 0;
+                     XAUDIO2_PERFORMANCE_DATA *pPerfData) = 0;
 
     virtual void STDMETHODCALLTYPE SetDebugConfiguration(
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved = 0) = 0;
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5526,86 +5526,86 @@ typedef struct IXAudio23Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXAudio23 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXAudio23 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXAudio23 *This);
+                     IXAudio23 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXAudio23 *This);
+                     IXAudio23 *This);
 
     /*** IXAudio23 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeviceCount)(
-        IXAudio23 *This,
-        UINT32 *pCount);
+                     IXAudio23 *This,
+                     UINT32 *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceDetails)(
-        IXAudio23 *This,
-        UINT32 Index,
-        XAUDIO2_DEVICE_DETAILS *pDeviceDetails);
+                     IXAudio23 *This,
+                     UINT32 Index,
+                     XAUDIO2_DEVICE_DETAILS *pDeviceDetails);
 
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IXAudio23 *This,
-        UINT32 Flags,
-        XAUDIO2_PROCESSOR XAudio2Processor);
+                     IXAudio23 *This,
+                     UINT32 Flags,
+                     XAUDIO2_PROCESSOR XAudio2Processor);
 
     HRESULT (STDMETHODCALLTYPE *RegisterForCallbacks)(
-        IXAudio23 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio23 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     void (STDMETHODCALLTYPE *UnregisterForCallbacks)(
-        IXAudio23 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio23 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     HRESULT (STDMETHODCALLTYPE *CreateSourceVoice)(
-        IXAudio23 *This,
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags,
-        float MaxFrequencyRatio,
-        IXAudio2VoiceCallback *pCallback,
-        const XAUDIO23_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio23 *This,
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags,
+                     float MaxFrequencyRatio,
+                     IXAudio2VoiceCallback *pCallback,
+                     const XAUDIO23_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateSubmixVoice)(
-        IXAudio23 *This,
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 ProcessingStage,
-        const XAUDIO23_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio23 *This,
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 ProcessingStage,
+                     const XAUDIO23_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateMasteringVoice)(
-        IXAudio23 *This,
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 DeviceIndex,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio23 *This,
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 DeviceIndex,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *StartEngine)(
-        IXAudio23 *This);
+                     IXAudio23 *This);
 
     void (STDMETHODCALLTYPE *StopEngine)(
-        IXAudio23 *This);
+                     IXAudio23 *This);
 
     HRESULT (STDMETHODCALLTYPE *CommitChanges)(
-        IXAudio23 *This,
-        UINT32 OperationSet);
+                     IXAudio23 *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetPerformanceData)(
-        IXAudio23 *This,
-        XAUDIO2_PERFORMANCE_DATA *pPerfData);
+                     IXAudio23 *This,
+                     XAUDIO2_PERFORMANCE_DATA *pPerfData);
 
     void (STDMETHODCALLTYPE *SetDebugConfiguration)(
-        IXAudio23 *This,
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved);
+                     IXAudio23 *This,
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved);
 
     END_INTERFACE
 } IXAudio23Vtbl;
@@ -5705,63 +5705,63 @@ MIDL_INTERFACE("8bcf1f58-9fe7-4583-8ac6-e2adc465c8bb")
 IXAudio27 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeviceCount(
-        UINT32 *pCount) = 0;
+                     UINT32 *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceDetails(
-        UINT32 Index,
-        XAUDIO2_DEVICE_DETAILS *pDeviceDetails) = 0;
+                     UINT32 Index,
+                     XAUDIO2_DEVICE_DETAILS *pDeviceDetails) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        UINT32 Flags = 0,
-        XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
+                     UINT32 Flags = 0,
+                     XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual void STDMETHODCALLTYPE UnregisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags = 0,
-        float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
-        IXAudio2VoiceCallback *pCallback = 0,
-        const XAUDIO2_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags = 0,
+                     float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
+                     IXAudio2VoiceCallback *pCallback = 0,
+                     const XAUDIO2_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags = 0,
-        UINT32 ProcessingStage = 0,
-        const XAUDIO2_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags = 0,
+                     UINT32 ProcessingStage = 0,
+                     const XAUDIO2_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
-        UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
-        UINT32 Flags = 0,
-        UINT32 DeviceIndex = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
+                     UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
+                     UINT32 Flags = 0,
+                     UINT32 DeviceIndex = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE StopEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitChanges(
-        UINT32 OperationSet) = 0;
+                     UINT32 OperationSet) = 0;
 
     virtual void STDMETHODCALLTYPE GetPerformanceData(
-        XAUDIO2_PERFORMANCE_DATA *pPerfData) = 0;
+                     XAUDIO2_PERFORMANCE_DATA *pPerfData) = 0;
 
     virtual void STDMETHODCALLTYPE SetDebugConfiguration(
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved = 0) = 0;
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5773,86 +5773,86 @@ typedef struct IXAudio27Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXAudio27 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXAudio27 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXAudio27 *This);
+                     IXAudio27 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXAudio27 *This);
+                     IXAudio27 *This);
 
     /*** IXAudio27 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeviceCount)(
-        IXAudio27 *This,
-        UINT32 *pCount);
+                     IXAudio27 *This,
+                     UINT32 *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceDetails)(
-        IXAudio27 *This,
-        UINT32 Index,
-        XAUDIO2_DEVICE_DETAILS *pDeviceDetails);
+                     IXAudio27 *This,
+                     UINT32 Index,
+                     XAUDIO2_DEVICE_DETAILS *pDeviceDetails);
 
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IXAudio27 *This,
-        UINT32 Flags,
-        XAUDIO2_PROCESSOR XAudio2Processor);
+                     IXAudio27 *This,
+                     UINT32 Flags,
+                     XAUDIO2_PROCESSOR XAudio2Processor);
 
     HRESULT (STDMETHODCALLTYPE *RegisterForCallbacks)(
-        IXAudio27 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio27 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     void (STDMETHODCALLTYPE *UnregisterForCallbacks)(
-        IXAudio27 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio27 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     HRESULT (STDMETHODCALLTYPE *CreateSourceVoice)(
-        IXAudio27 *This,
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags,
-        float MaxFrequencyRatio,
-        IXAudio2VoiceCallback *pCallback,
-        const XAUDIO2_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio27 *This,
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags,
+                     float MaxFrequencyRatio,
+                     IXAudio2VoiceCallback *pCallback,
+                     const XAUDIO2_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateSubmixVoice)(
-        IXAudio27 *This,
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 ProcessingStage,
-        const XAUDIO2_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio27 *This,
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 ProcessingStage,
+                     const XAUDIO2_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateMasteringVoice)(
-        IXAudio27 *This,
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 DeviceIndex,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio27 *This,
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 DeviceIndex,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *StartEngine)(
-        IXAudio27 *This);
+                     IXAudio27 *This);
 
     void (STDMETHODCALLTYPE *StopEngine)(
-        IXAudio27 *This);
+                     IXAudio27 *This);
 
     HRESULT (STDMETHODCALLTYPE *CommitChanges)(
-        IXAudio27 *This,
-        UINT32 OperationSet);
+                     IXAudio27 *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetPerformanceData)(
-        IXAudio27 *This,
-        XAUDIO2_PERFORMANCE_DATA *pPerfData);
+                     IXAudio27 *This,
+                     XAUDIO2_PERFORMANCE_DATA *pPerfData);
 
     void (STDMETHODCALLTYPE *SetDebugConfiguration)(
-        IXAudio27 *This,
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved);
+                     IXAudio27 *This,
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved);
 
     END_INTERFACE
 } IXAudio27Vtbl;
@@ -5953,53 +5953,53 @@ MIDL_INTERFACE("2b02e3cf-2e0b-4ec3-be45-1b2a3fe7210d")
 IXAudio2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual void STDMETHODCALLTYPE UnregisterForCallbacks(
-        IXAudio2EngineCallback *pCallback) = 0;
+                     IXAudio2EngineCallback *pCallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags = 0,
-        float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
-        IXAudio2VoiceCallback *pCallback = 0,
-        const XAUDIO2_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags = 0,
+                     float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
+                     IXAudio2VoiceCallback *pCallback = 0,
+                     const XAUDIO2_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags = 0,
-        UINT32 ProcessingStage = 0,
-        const XAUDIO2_VOICE_SENDS *pSendList = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags = 0,
+                     UINT32 ProcessingStage = 0,
+                     const XAUDIO2_VOICE_SENDS *pSendList = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
-        UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
-        UINT32 Flags = 0,
-        LPCWSTR DeviceId = 0,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0,
-        AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects) = 0;
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
+                     UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
+                     UINT32 Flags = 0,
+                     LPCWSTR DeviceId = 0,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0,
+                     AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE StopEngine(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitChanges(
-        UINT32 OperationSet) = 0;
+                     UINT32 OperationSet) = 0;
 
     virtual void STDMETHODCALLTYPE GetPerformanceData(
-        XAUDIO2_PERFORMANCE_DATA *pPerfData) = 0;
+                     XAUDIO2_PERFORMANCE_DATA *pPerfData) = 0;
 
     virtual void STDMETHODCALLTYPE SetDebugConfiguration(
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved = 0) = 0;
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6011,73 +6011,73 @@ typedef struct IXAudio2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXAudio2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXAudio2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXAudio2 *This);
+                     IXAudio2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXAudio2 *This);
+                     IXAudio2 *This);
 
     /*** IXAudio2 methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterForCallbacks)(
-        IXAudio2 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio2 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     void (STDMETHODCALLTYPE *UnregisterForCallbacks)(
-        IXAudio2 *This,
-        IXAudio2EngineCallback *pCallback);
+                     IXAudio2 *This,
+                     IXAudio2EngineCallback *pCallback);
 
     HRESULT (STDMETHODCALLTYPE *CreateSourceVoice)(
-        IXAudio2 *This,
-        IXAudio2SourceVoice **ppSourceVoice,
-        const WAVEFORMATEX *pSourceFormat,
-        UINT32 Flags,
-        float MaxFrequencyRatio,
-        IXAudio2VoiceCallback *pCallback,
-        const XAUDIO2_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio2 *This,
+                     IXAudio2SourceVoice **ppSourceVoice,
+                     const WAVEFORMATEX *pSourceFormat,
+                     UINT32 Flags,
+                     float MaxFrequencyRatio,
+                     IXAudio2VoiceCallback *pCallback,
+                     const XAUDIO2_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateSubmixVoice)(
-        IXAudio2 *This,
-        IXAudio2SubmixVoice **ppSubmixVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        UINT32 ProcessingStage,
-        const XAUDIO2_VOICE_SENDS *pSendList,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain);
+                     IXAudio2 *This,
+                     IXAudio2SubmixVoice **ppSubmixVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     UINT32 ProcessingStage,
+                     const XAUDIO2_VOICE_SENDS *pSendList,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain);
 
     HRESULT (STDMETHODCALLTYPE *CreateMasteringVoice)(
-        IXAudio2 *This,
-        IXAudio2MasteringVoice **ppMasteringVoice,
-        UINT32 InputChannels,
-        UINT32 InputSampleRate,
-        UINT32 Flags,
-        LPCWSTR DeviceId,
-        const XAUDIO2_EFFECT_CHAIN *pEffectChain,
-        AUDIO_STREAM_CATEGORY StreamCategory);
+                     IXAudio2 *This,
+                     IXAudio2MasteringVoice **ppMasteringVoice,
+                     UINT32 InputChannels,
+                     UINT32 InputSampleRate,
+                     UINT32 Flags,
+                     LPCWSTR DeviceId,
+                     const XAUDIO2_EFFECT_CHAIN *pEffectChain,
+                     AUDIO_STREAM_CATEGORY StreamCategory);
 
     HRESULT (STDMETHODCALLTYPE *StartEngine)(
-        IXAudio2 *This);
+                     IXAudio2 *This);
 
     void (STDMETHODCALLTYPE *StopEngine)(
-        IXAudio2 *This);
+                     IXAudio2 *This);
 
     HRESULT (STDMETHODCALLTYPE *CommitChanges)(
-        IXAudio2 *This,
-        UINT32 OperationSet);
+                     IXAudio2 *This,
+                     UINT32 OperationSet);
 
     void (STDMETHODCALLTYPE *GetPerformanceData)(
-        IXAudio2 *This,
-        XAUDIO2_PERFORMANCE_DATA *pPerfData);
+                     IXAudio2 *This,
+                     XAUDIO2_PERFORMANCE_DATA *pPerfData);
 
     void (STDMETHODCALLTYPE *SetDebugConfiguration)(
-        IXAudio2 *This,
-        const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-        void *pReserved);
+                     IXAudio2 *This,
+                     const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
+                     void *pReserved);
 
     END_INTERFACE
 } IXAudio2Vtbl;

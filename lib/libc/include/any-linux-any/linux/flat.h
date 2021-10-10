@@ -1,8 +1,8 @@
 /* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
 /*
  * Copyright (C) 2002-2003  David McCullough <davidm@snapgear.com>
- * Copyright (C) 1998       Kenneth Albanowski <kjahds@kjahds.com>
- *                          The Silver Hammer Group, Ltd.
+ * Copyright (C) 1998                    Kenneth Albanowski <kjahds@kjahds.com>
+ *                                                                              The Silver Hammer Group, Ltd.
  *
  * This file provides the definitions and structures needed to
  * support uClinux flat-format executables.
@@ -27,23 +27,23 @@
 
 struct flat_hdr {
 	char magic[4];
-	unsigned long rev;          /* version (as above) */
-	unsigned long entry;        /* Offset of first executable instruction
-	                               with text segment from beginning of file */
+	unsigned long rev;                       /* version (as above) */
+	unsigned long entry;                     /* Offset of first executable instruction
+	                                                                                                with text segment from beginning of file */
 	unsigned long data_start;   /* Offset of data segment from beginning of
-	                               file */
+	                                                                                                file */
 	unsigned long data_end;     /* Offset of end of data segment
-	                               from beginning of file */
-	unsigned long bss_end;      /* Offset of end of bss segment from beginning
-	                               of file */
+	                                                                                                from beginning of file */
+	unsigned long bss_end;                   /* Offset of end of bss segment from beginning
+	                                                                                                of file */
 
 	/* (It is assumed that data_end through bss_end forms the bss segment.) */
 
 	unsigned long stack_size;   /* Size of stack, in bytes */
 	unsigned long reloc_start;  /* Offset of relocation records from
-	                               beginning of file */
+	                                                                                                beginning of file */
 	unsigned long reloc_count;  /* Number of relocation records */
-	unsigned long flags;       
+	unsigned long flags;                    
 	unsigned long build_date;   /* When the program/library was built */
 	unsigned long filler[5];    /* Reservered, set to zero */
 };

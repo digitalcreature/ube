@@ -102,24 +102,24 @@ static const PCHAR IrpMjFuncDesc[] = {
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 #  define _DbgPrintFEx(component, lvl, strings) {		\
     if ((lvl) <= DEBUG_VARIABLE) {				\
-      DbgPrintEx(component, lvl, STR_MODULENAME);		\
-      DbgPrintEx(component, lvl, strings);			\
-      DbgPrintEx(component, lvl, "\n");				\
-      if ((lvl) == DEBUGLVL_ERROR) {				\
+                   DbgPrintEx(component, lvl, STR_MODULENAME);		\
+                   DbgPrintEx(component, lvl, strings);			\
+                   DbgPrintEx(component, lvl, "\n");				\
+                   if ((lvl) == DEBUGLVL_ERROR) {				\
 	DbgBreakPoint();					\
-      }								\
+                   }								\
     }								\
   }
 #endif /* (NTDDI_VERSION >= NTDDI_WINXP) */
 
 #  define _DbgPrintF(lvl, strings) {				\
     if (((lvl)==DEBUG_VARIABLE) || (lvl < DEBUG_VARIABLE)) {	\
-      DbgPrint(STR_MODULENAME);					\
-      DbgPrint##strings;					\
-      DbgPrint("\n");						\
-      if ((lvl) == DEBUGLVL_ERROR) {				\
+                   DbgPrint(STR_MODULENAME);					\
+                   DbgPrint##strings;					\
+                   DbgPrint("\n");						\
+                   if ((lvl) == DEBUGLVL_ERROR) {				\
 	DbgBreakPoint();					\
-      }								\
+                   }								\
     }								\
   }
 

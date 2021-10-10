@@ -232,7 +232,7 @@ enum dccp_packet_dequeueing_policy {
 #define DCCP_SOCKOPT_CCID_TX_INFO	192
 
 /* maximum number of services provided on the same listening port */
-#define DCCP_SERVICE_LIST_MAX_LEN      32
+#define DCCP_SERVICE_LIST_MAX_LEN                   32
 
 
 #endif /* _LINUX_DCCP_H */

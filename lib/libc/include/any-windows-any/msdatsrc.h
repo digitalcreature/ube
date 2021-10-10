@@ -60,12 +60,12 @@ extern "C" {
 #else
   typedef struct DataSourceListenerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DataSourceListener *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DataSourceListener *This);
-      ULONG (WINAPI *Release)(DataSourceListener *This);
-      HRESULT (WINAPI *dataMemberChanged)(DataSourceListener *This,DataMember bstrDM);
-      HRESULT (WINAPI *dataMemberAdded)(DataSourceListener *This,DataMember bstrDM);
-      HRESULT (WINAPI *dataMemberRemoved)(DataSourceListener *This,DataMember bstrDM);
+                   HRESULT (WINAPI *QueryInterface)(DataSourceListener *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DataSourceListener *This);
+                   ULONG (WINAPI *Release)(DataSourceListener *This);
+                   HRESULT (WINAPI *dataMemberChanged)(DataSourceListener *This,DataMember bstrDM);
+                   HRESULT (WINAPI *dataMemberAdded)(DataSourceListener *This,DataMember bstrDM);
+                   HRESULT (WINAPI *dataMemberRemoved)(DataSourceListener *This,DataMember bstrDM);
     END_INTERFACE
   } DataSourceListenerVtbl;
   struct DataSourceListener {
@@ -103,14 +103,14 @@ extern "C" {
 #else
   typedef struct DataSourceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DataSource *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DataSource *This);
-      ULONG (WINAPI *Release)(DataSource *This);
-      HRESULT (WINAPI *getDataMember)(DataSource *This,DataMember bstrDM,REFIID riid,IUnknown **ppunk);
-      HRESULT (WINAPI *getDataMemberName)(DataSource *This,__LONG32 lIndex,DataMember *pbstrDM);
-      HRESULT (WINAPI *getDataMemberCount)(DataSource *This,__LONG32 *plCount);
-      HRESULT (WINAPI *addDataSourceListener)(DataSource *This,DataSourceListener *pDSL);
-      HRESULT (WINAPI *removeDataSourceListener)(DataSource *This,DataSourceListener *pDSL);
+                   HRESULT (WINAPI *QueryInterface)(DataSource *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DataSource *This);
+                   ULONG (WINAPI *Release)(DataSource *This);
+                   HRESULT (WINAPI *getDataMember)(DataSource *This,DataMember bstrDM,REFIID riid,IUnknown **ppunk);
+                   HRESULT (WINAPI *getDataMemberName)(DataSource *This,__LONG32 lIndex,DataMember *pbstrDM);
+                   HRESULT (WINAPI *getDataMemberCount)(DataSource *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *addDataSourceListener)(DataSource *This,DataSourceListener *pDSL);
+                   HRESULT (WINAPI *removeDataSourceListener)(DataSource *This,DataSourceListener *pDSL);
     END_INTERFACE
   } DataSourceVtbl;
   struct DataSource {

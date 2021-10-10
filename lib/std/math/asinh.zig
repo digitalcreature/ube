@@ -23,9 +23,9 @@ const maxInt = std.math.maxInt;
 pub fn asinh(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => asinh32(x),
-        f64 => asinh64(x),
-        else => @compileError("asinh not implemented for " ++ @typeName(T)),
+                     f32 => asinh32(x),
+                     f64 => asinh64(x),
+                     else => @compileError("asinh not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -39,24 +39,24 @@ fn asinh32(x: f32) f32 {
 
     // TODO: Shouldn't need this explicit check.
     if (math.isNegativeInf(x)) {
-        return x;
+                     return x;
     }
 
     // |x| >= 0x1p12 or inf or nan
     if (i >= 0x3F800000 + (12 << 23)) {
-        rx = math.ln(rx) + 0.69314718055994530941723212145817656;
+                     rx = math.ln(rx) + 0.69314718055994530941723212145817656;
     }
     // |x| >= 2
     else if (i >= 0x3F800000 + (1 << 23)) {
-        rx = math.ln(2 * x + 1 / (math.sqrt(x * x + 1) + x));
+                     rx = math.ln(2 * x + 1 / (math.sqrt(x * x + 1) + x));
     }
     // |x| >= 0x1p-12, up to 1.6ulp error
     else if (i >= 0x3F800000 - (12 << 23)) {
-        rx = math.log1p(x + x * x / (math.sqrt(x * x + 1) + 1));
+                     rx = math.log1p(x + x * x / (math.sqrt(x * x + 1) + 1));
     }
     // |x| < 0x1p-12, inexact if x != 0
     else {
-        math.doNotOptimizeAway(x + 0x1.0p120);
+                     math.doNotOptimizeAway(x + 0x1.0p120);
     }
 
     return if (s != 0) -rx else rx;
@@ -70,24 +70,24 @@ fn asinh64(x: f64) f64 {
     var rx = @bitCast(f64, u & (maxInt(u64) >> 1)); // |x|
 
     if (math.isNegativeInf(x)) {
-        return x;
+                     return x;
     }
 
     // |x| >= 0x1p26 or inf or nan
     if (e >= 0x3FF + 26) {
-        rx = math.ln(rx) + 0.693147180559945309417232121458176568;
+                     rx = math.ln(rx) + 0.693147180559945309417232121458176568;
     }
     // |x| >= 2
     else if (e >= 0x3FF + 1) {
-        rx = math.ln(2 * x + 1 / (math.sqrt(x * x + 1) + x));
+                     rx = math.ln(2 * x + 1 / (math.sqrt(x * x + 1) + x));
     }
     // |x| >= 0x1p-12, up to 1.6ulp error
     else if (e >= 0x3FF - 26) {
-        rx = math.log1p(x + x * x / (math.sqrt(x * x + 1) + 1));
+                     rx = math.log1p(x + x * x / (math.sqrt(x * x + 1) + 1));
     }
     // |x| < 0x1p-12, inexact if x != 0
     else {
-        math.doNotOptimizeAway(x + 0x1.0p120);
+                     math.doNotOptimizeAway(x + 0x1.0p120);
     }
 
     return if (s != 0) -rx else rx;

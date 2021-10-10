@@ -28,21 +28,21 @@ extern "C" {
 
 DEFINE_GUID(GUID_AGP_BUS_INTERFACE_STANDARD, 0x2ef74803, 0xd8d3, 0x11d1, 0x9c, 0xaa, 0x00, 0xc0, 0xf0, 0x16, 0x56, 0x36);
 
-#define AGP_BUS_INTERFACE_V1                     1
-#define AGP_BUS_INTERFACE_V2                     2
-#define AGP_BUS_INTERFACE_V3                     3
-#define AGP_BUS_INTERFACE_V4                     4
-#define AGP_BUS_INTERFACE_V5                     5
+#define AGP_BUS_INTERFACE_V1                                                            1
+#define AGP_BUS_INTERFACE_V2                                                            2
+#define AGP_BUS_INTERFACE_V3                                                            3
+#define AGP_BUS_INTERFACE_V4                                                            4
+#define AGP_BUS_INTERFACE_V5                                                            5
 
 /* Indicates wether the GART supports mapping of physical memory for the CPU */
-#define AGP_CAPABILITIES_MAP_PHYSICAL            0x00000001
-#define AGP_CAPABILITIES_CACHE_COHERENT          0x00000002
-#define AGP_CAPABILITIES_REQUIRES_GPU_FLUSH      0x00000004
+#define AGP_CAPABILITIES_MAP_PHYSICAL                                      0x00000001
+#define AGP_CAPABILITIES_CACHE_COHERENT                       0x00000002
+#define AGP_CAPABILITIES_REQUIRES_GPU_FLUSH                   0x00000004
 
-#define AGP_SET_RATE_DISABLE_SBA                 0x00010000
-#define AGP_SET_RATE_DISABLE_FW                  0x00020000
+#define AGP_SET_RATE_DISABLE_SBA                                           0x00010000
+#define AGP_SET_RATE_DISABLE_FW                                                         0x00020000
 
-#define AGP_GUARD_PAGE_CHECK_FIRST_ULONG         0x00000001
+#define AGP_GUARD_PAGE_CHECK_FIRST_ULONG                      0x00000001
 #define AGP_GUARD_PAGE_CHECK_USE_SAME_OFFSET     0x00000002
 #define AGP_GUARD_PAGE_CHECK_DO_NOT_BUGCHECK     0x00000004
 

@@ -19,7 +19,7 @@ typedef enum _tag_NAPI_PROVIDER_TYPE {
 } NAPI_PROVIDER_TYPE;
 
 typedef enum _tag_NAPI_PROVIDER_LEVEL {
-  ProviderLevel_None        = 0,
+  ProviderLevel_None                     = 0,
   ProviderLevel_Secondary,
   ProviderLevel_Primary 
 } NAPI_PROVIDER_LEVEL;

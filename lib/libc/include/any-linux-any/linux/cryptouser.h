@@ -121,4 +121,4 @@ struct crypto_report_acomp {
 };
 
 #define CRYPTO_REPORT_MAXSIZE (sizeof(struct crypto_user_alg) + \
-			       sizeof(struct crypto_report_blkcipher))
+			                    sizeof(struct crypto_report_blkcipher))

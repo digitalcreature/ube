@@ -17,10 +17,10 @@ wint_t btowc (int c)
     return (WEOF);
   else
     {
-      unsigned char ch = c;
-      wchar_t wc = WEOF;
-      MultiByteToWideChar (___lc_codepage_func(), MB_ERR_INVALID_CHARS,
+                   unsigned char ch = c;
+                   wchar_t wc = WEOF;
+                   MultiByteToWideChar (___lc_codepage_func(), MB_ERR_INVALID_CHARS,
 			   (char*)&ch, 1, &wc, 1);
-      return wc;
+                   return wc;
     }
 }

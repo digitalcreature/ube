@@ -234,17 +234,17 @@ MIDL_INTERFACE("dcb00008-570f-4a9b-8d69-199fdba5723b")
 INetworkCostManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCost(
-        DWORD *pCost,
-        NLM_SOCKADDR *pDestIPAddr) = 0;
+                     DWORD *pCost,
+                     NLM_SOCKADDR *pDestIPAddr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataPlanStatus(
-        NLM_DATAPLAN_STATUS *pDataPlanStatus,
-        NLM_SOCKADDR *pDestIPAddr) = 0;
+                     NLM_DATAPLAN_STATUS *pDataPlanStatus,
+                     NLM_SOCKADDR *pDestIPAddr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDestinationAddresses(
-        UINT32 length,
-        NLM_SOCKADDR *pDestIPAddrList,
-        VARIANT_BOOL bAppend) = 0;
+                     UINT32 length,
+                     NLM_SOCKADDR *pDestIPAddrList,
+                     VARIANT_BOOL bAppend) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -256,32 +256,32 @@ typedef struct INetworkCostManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetworkCostManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetworkCostManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetworkCostManager *This);
+                     INetworkCostManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetworkCostManager *This);
+                     INetworkCostManager *This);
 
     /*** INetworkCostManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCost)(
-        INetworkCostManager *This,
-        DWORD *pCost,
-        NLM_SOCKADDR *pDestIPAddr);
+                     INetworkCostManager *This,
+                     DWORD *pCost,
+                     NLM_SOCKADDR *pDestIPAddr);
 
     HRESULT (STDMETHODCALLTYPE *GetDataPlanStatus)(
-        INetworkCostManager *This,
-        NLM_DATAPLAN_STATUS *pDataPlanStatus,
-        NLM_SOCKADDR *pDestIPAddr);
+                     INetworkCostManager *This,
+                     NLM_DATAPLAN_STATUS *pDataPlanStatus,
+                     NLM_SOCKADDR *pDestIPAddr);
 
     HRESULT (STDMETHODCALLTYPE *SetDestinationAddresses)(
-        INetworkCostManager *This,
-        UINT32 length,
-        NLM_SOCKADDR *pDestIPAddrList,
-        VARIANT_BOOL bAppend);
+                     INetworkCostManager *This,
+                     UINT32 length,
+                     NLM_SOCKADDR *pDestIPAddrList,
+                     VARIANT_BOOL bAppend);
 
     END_INTERFACE
 } INetworkCostManagerVtbl;
@@ -341,10 +341,10 @@ MIDL_INTERFACE("dcb0000a-570f-4a9b-8d69-199fdba5723b")
 INetworkConnectionCost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCost(
-        DWORD *pCost) = 0;
+                     DWORD *pCost) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataPlanStatus(
-        NLM_DATAPLAN_STATUS *pDataPlanStatus) = 0;
+                     NLM_DATAPLAN_STATUS *pDataPlanStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -356,24 +356,24 @@ typedef struct INetworkConnectionCostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetworkConnectionCost *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetworkConnectionCost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetworkConnectionCost *This);
+                     INetworkConnectionCost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetworkConnectionCost *This);
+                     INetworkConnectionCost *This);
 
     /*** INetworkConnectionCost methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCost)(
-        INetworkConnectionCost *This,
-        DWORD *pCost);
+                     INetworkConnectionCost *This,
+                     DWORD *pCost);
 
     HRESULT (STDMETHODCALLTYPE *GetDataPlanStatus)(
-        INetworkConnectionCost *This,
-        NLM_DATAPLAN_STATUS *pDataPlanStatus);
+                     INetworkConnectionCost *This,
+                     NLM_DATAPLAN_STATUS *pDataPlanStatus);
 
     END_INTERFACE
 } INetworkConnectionCostVtbl;
@@ -429,11 +429,11 @@ MIDL_INTERFACE("dcb00009-570f-4a9b-8d69-199fdba5723b")
 INetworkCostManagerEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CostChanged(
-        DWORD newCost,
-        NLM_SOCKADDR *pDestAddr) = 0;
+                     DWORD newCost,
+                     NLM_SOCKADDR *pDestAddr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DataPlanStatusChanged(
-        NLM_SOCKADDR *pDestAddr) = 0;
+                     NLM_SOCKADDR *pDestAddr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -445,25 +445,25 @@ typedef struct INetworkCostManagerEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetworkCostManagerEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetworkCostManagerEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetworkCostManagerEvents *This);
+                     INetworkCostManagerEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetworkCostManagerEvents *This);
+                     INetworkCostManagerEvents *This);
 
     /*** INetworkCostManagerEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *CostChanged)(
-        INetworkCostManagerEvents *This,
-        DWORD newCost,
-        NLM_SOCKADDR *pDestAddr);
+                     INetworkCostManagerEvents *This,
+                     DWORD newCost,
+                     NLM_SOCKADDR *pDestAddr);
 
     HRESULT (STDMETHODCALLTYPE *DataPlanStatusChanged)(
-        INetworkCostManagerEvents *This,
-        NLM_SOCKADDR *pDestAddr);
+                     INetworkCostManagerEvents *This,
+                     NLM_SOCKADDR *pDestAddr);
 
     END_INTERFACE
 } INetworkCostManagerEventsVtbl;
@@ -519,21 +519,21 @@ MIDL_INTERFACE("dcb00003-570f-4a9b-8d69-199fdba5723b")
 IEnumNetworks : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IEnumVARIANT **ppEnumVar) = 0;
+                     IEnumVARIANT **ppEnumVar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        INetwork **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     INetwork **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumNetworks **ppEnumNetwork) = 0;
+                     IEnumNetworks **ppEnumNetwork) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -545,67 +545,67 @@ typedef struct IEnumNetworksVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumNetworks *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumNetworks *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumNetworks *This);
+                     IEnumNetworks *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumNetworks *This);
+                     IEnumNetworks *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IEnumNetworks *This,
-        UINT *pctinfo);
+                     IEnumNetworks *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IEnumNetworks *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IEnumNetworks *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IEnumNetworks *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IEnumNetworks *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IEnumNetworks *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IEnumNetworks *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IEnumNetworks methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IEnumNetworks *This,
-        IEnumVARIANT **ppEnumVar);
+                     IEnumNetworks *This,
+                     IEnumVARIANT **ppEnumVar);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumNetworks *This,
-        ULONG celt,
-        INetwork **rgelt,
-        ULONG *pceltFetched);
+                     IEnumNetworks *This,
+                     ULONG celt,
+                     INetwork **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumNetworks *This,
-        ULONG celt);
+                     IEnumNetworks *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumNetworks *This);
+                     IEnumNetworks *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumNetworks *This,
-        IEnumNetworks **ppEnumNetwork);
+                     IEnumNetworks *This,
+                     IEnumNetworks **ppEnumNetwork);
 
     END_INTERFACE
 } IEnumNetworksVtbl;
@@ -691,21 +691,21 @@ MIDL_INTERFACE("dcb00006-570f-4a9b-8d69-199fdba5723b")
 IEnumNetworkConnections : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IEnumVARIANT **ppEnumVar) = 0;
+                     IEnumVARIANT **ppEnumVar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        INetworkConnection **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     INetworkConnection **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumNetworkConnections **ppEnumNetwork) = 0;
+                     IEnumNetworkConnections **ppEnumNetwork) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -717,67 +717,67 @@ typedef struct IEnumNetworkConnectionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumNetworkConnections *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumNetworkConnections *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumNetworkConnections *This);
+                     IEnumNetworkConnections *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumNetworkConnections *This);
+                     IEnumNetworkConnections *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IEnumNetworkConnections *This,
-        UINT *pctinfo);
+                     IEnumNetworkConnections *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IEnumNetworkConnections *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IEnumNetworkConnections *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IEnumNetworkConnections *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IEnumNetworkConnections *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IEnumNetworkConnections *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IEnumNetworkConnections *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IEnumNetworkConnections methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IEnumNetworkConnections *This,
-        IEnumVARIANT **ppEnumVar);
+                     IEnumNetworkConnections *This,
+                     IEnumVARIANT **ppEnumVar);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumNetworkConnections *This,
-        ULONG celt,
-        INetworkConnection **rgelt,
-        ULONG *pceltFetched);
+                     IEnumNetworkConnections *This,
+                     ULONG celt,
+                     INetworkConnection **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumNetworkConnections *This,
-        ULONG celt);
+                     IEnumNetworkConnections *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumNetworkConnections *This);
+                     IEnumNetworkConnections *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumNetworkConnections *This,
-        IEnumNetworkConnections **ppEnumNetwork);
+                     IEnumNetworkConnections *This,
+                     IEnumNetworkConnections **ppEnumNetwork);
 
     END_INTERFACE
 } IEnumNetworkConnectionsVtbl;
@@ -863,28 +863,28 @@ MIDL_INTERFACE("dcb00000-570f-4a9b-8d69-199fdba5723b")
 INetworkListManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetNetworks(
-        NLM_ENUM_NETWORK Flags,
-        IEnumNetworks **ppEnumNetwork) = 0;
+                     NLM_ENUM_NETWORK Flags,
+                     IEnumNetworks **ppEnumNetwork) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNetwork(
-        GUID gdNetworkId,
-        INetwork **ppNetwork) = 0;
+                     GUID gdNetworkId,
+                     INetwork **ppNetwork) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNetworkConnections(
-        IEnumNetworkConnections **ppEnum) = 0;
+                     IEnumNetworkConnections **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNetworkConnection(
-        GUID gdNetworkConnectionId,
-        INetworkConnection **ppNetworkConnection) = 0;
+                     GUID gdNetworkConnectionId,
+                     INetworkConnection **ppNetworkConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsConnectedToInternet(
-        VARIANT_BOOL *pbIsConnected) = 0;
+                     VARIANT_BOOL *pbIsConnected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsConnected(
-        VARIANT_BOOL *pbIsConnected) = 0;
+                     VARIANT_BOOL *pbIsConnected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectivity(
-        NLM_CONNECTIVITY *pConnectivity) = 0;
+                     NLM_CONNECTIVITY *pConnectivity) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -896,77 +896,77 @@ typedef struct INetworkListManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetworkListManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetworkListManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetworkListManager *This);
+                     INetworkListManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetworkListManager *This);
+                     INetworkListManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetworkListManager *This,
-        UINT *pctinfo);
+                     INetworkListManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetworkListManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetworkListManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetworkListManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetworkListManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetworkListManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetworkListManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetworkListManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNetworks)(
-        INetworkListManager *This,
-        NLM_ENUM_NETWORK Flags,
-        IEnumNetworks **ppEnumNetwork);
+                     INetworkListManager *This,
+                     NLM_ENUM_NETWORK Flags,
+                     IEnumNetworks **ppEnumNetwork);
 
     HRESULT (STDMETHODCALLTYPE *GetNetwork)(
-        INetworkListManager *This,
-        GUID gdNetworkId,
-        INetwork **ppNetwork);
+                     INetworkListManager *This,
+                     GUID gdNetworkId,
+                     INetwork **ppNetwork);
 
     HRESULT (STDMETHODCALLTYPE *GetNetworkConnections)(
-        INetworkListManager *This,
-        IEnumNetworkConnections **ppEnum);
+                     INetworkListManager *This,
+                     IEnumNetworkConnections **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetNetworkConnection)(
-        INetworkListManager *This,
-        GUID gdNetworkConnectionId,
-        INetworkConnection **ppNetworkConnection);
+                     INetworkListManager *This,
+                     GUID gdNetworkConnectionId,
+                     INetworkConnection **ppNetworkConnection);
 
     HRESULT (STDMETHODCALLTYPE *IsConnectedToInternet)(
-        INetworkListManager *This,
-        VARIANT_BOOL *pbIsConnected);
+                     INetworkListManager *This,
+                     VARIANT_BOOL *pbIsConnected);
 
     HRESULT (STDMETHODCALLTYPE *IsConnected)(
-        INetworkListManager *This,
-        VARIANT_BOOL *pbIsConnected);
+                     INetworkListManager *This,
+                     VARIANT_BOOL *pbIsConnected);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectivity)(
-        INetworkListManager *This,
-        NLM_CONNECTIVITY *pConnectivity);
+                     INetworkListManager *This,
+                     NLM_CONNECTIVITY *pConnectivity);
 
     END_INTERFACE
 } INetworkListManagerVtbl;
@@ -1073,7 +1073,7 @@ MIDL_INTERFACE("dcb00001-570f-4a9b-8d69-199fdba5723b")
 INetworkListManagerEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ConnectivityChanged(
-        NLM_CONNECTIVITY newConnectivity) = 0;
+                     NLM_CONNECTIVITY newConnectivity) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1085,20 +1085,20 @@ typedef struct INetworkListManagerEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetworkListManagerEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetworkListManagerEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetworkListManagerEvents *This);
+                     INetworkListManagerEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetworkListManagerEvents *This);
+                     INetworkListManagerEvents *This);
 
     /*** INetworkListManagerEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *ConnectivityChanged)(
-        INetworkListManagerEvents *This,
-        NLM_CONNECTIVITY newConnectivity);
+                     INetworkListManagerEvents *This,
+                     NLM_CONNECTIVITY newConnectivity);
 
     END_INTERFACE
 } INetworkListManagerEventsVtbl;
@@ -1153,12 +1153,12 @@ MIDL_INTERFACE("dcb00007-570f-4a9b-8d69-199fdba5723b")
 INetworkConnectionEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE NetworkConnectionConnectivityChanged(
-        GUID connectionId,
-        NLM_CONNECTIVITY newConnectivity) = 0;
+                     GUID connectionId,
+                     NLM_CONNECTIVITY newConnectivity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NetworkConnectionPropertyChanged(
-        GUID connectionId,
-        NLM_CONNECTION_PROPERTY_CHANGE flags) = 0;
+                     GUID connectionId,
+                     NLM_CONNECTION_PROPERTY_CHANGE flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1170,26 +1170,26 @@ typedef struct INetworkConnectionEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetworkConnectionEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetworkConnectionEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetworkConnectionEvents *This);
+                     INetworkConnectionEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetworkConnectionEvents *This);
+                     INetworkConnectionEvents *This);
 
     /*** INetworkConnectionEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *NetworkConnectionConnectivityChanged)(
-        INetworkConnectionEvents *This,
-        GUID connectionId,
-        NLM_CONNECTIVITY newConnectivity);
+                     INetworkConnectionEvents *This,
+                     GUID connectionId,
+                     NLM_CONNECTIVITY newConnectivity);
 
     HRESULT (STDMETHODCALLTYPE *NetworkConnectionPropertyChanged)(
-        INetworkConnectionEvents *This,
-        GUID connectionId,
-        NLM_CONNECTION_PROPERTY_CHANGE flags);
+                     INetworkConnectionEvents *This,
+                     GUID connectionId,
+                     NLM_CONNECTION_PROPERTY_CHANGE flags);
 
     END_INTERFACE
 } INetworkConnectionEventsVtbl;
@@ -1245,25 +1245,25 @@ MIDL_INTERFACE("dcb00005-570f-4a9b-8d69-199fdba5723b")
 INetworkConnection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetNetwork(
-        INetwork **ppNetwork) = 0;
+                     INetwork **ppNetwork) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsConnectedToInternet(
-        VARIANT_BOOL *pbIsConnected) = 0;
+                     VARIANT_BOOL *pbIsConnected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsConnected(
-        VARIANT_BOOL *pbIsConnected) = 0;
+                     VARIANT_BOOL *pbIsConnected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectivity(
-        NLM_CONNECTIVITY *pConnectivity) = 0;
+                     NLM_CONNECTIVITY *pConnectivity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectionId(
-        GUID *pgdConnectionId) = 0;
+                     GUID *pgdConnectionId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAdapterId(
-        GUID *pgdAdapterId) = 0;
+                     GUID *pgdAdapterId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDomainType(
-        NLM_DOMAIN_TYPE *pDomainType) = 0;
+                     NLM_DOMAIN_TYPE *pDomainType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1275,74 +1275,74 @@ typedef struct INetworkConnectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetworkConnection *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetworkConnection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetworkConnection *This);
+                     INetworkConnection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetworkConnection *This);
+                     INetworkConnection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetworkConnection *This,
-        UINT *pctinfo);
+                     INetworkConnection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetworkConnection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetworkConnection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetworkConnection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetworkConnection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetworkConnection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetworkConnection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetworkConnection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNetwork)(
-        INetworkConnection *This,
-        INetwork **ppNetwork);
+                     INetworkConnection *This,
+                     INetwork **ppNetwork);
 
     HRESULT (STDMETHODCALLTYPE *get_IsConnectedToInternet)(
-        INetworkConnection *This,
-        VARIANT_BOOL *pbIsConnected);
+                     INetworkConnection *This,
+                     VARIANT_BOOL *pbIsConnected);
 
     HRESULT (STDMETHODCALLTYPE *get_IsConnected)(
-        INetworkConnection *This,
-        VARIANT_BOOL *pbIsConnected);
+                     INetworkConnection *This,
+                     VARIANT_BOOL *pbIsConnected);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectivity)(
-        INetworkConnection *This,
-        NLM_CONNECTIVITY *pConnectivity);
+                     INetworkConnection *This,
+                     NLM_CONNECTIVITY *pConnectivity);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectionId)(
-        INetworkConnection *This,
-        GUID *pgdConnectionId);
+                     INetworkConnection *This,
+                     GUID *pgdConnectionId);
 
     HRESULT (STDMETHODCALLTYPE *GetAdapterId)(
-        INetworkConnection *This,
-        GUID *pgdAdapterId);
+                     INetworkConnection *This,
+                     GUID *pgdAdapterId);
 
     HRESULT (STDMETHODCALLTYPE *GetDomainType)(
-        INetworkConnection *This,
-        NLM_DOMAIN_TYPE *pDomainType);
+                     INetworkConnection *This,
+                     NLM_DOMAIN_TYPE *pDomainType);
 
     END_INTERFACE
 } INetworkConnectionVtbl;
@@ -1441,46 +1441,46 @@ MIDL_INTERFACE("dcb00002-570f-4a9b-8d69-199fdba5723b")
 INetwork : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        BSTR *pszNetworkName) = 0;
+                     BSTR *pszNetworkName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetName(
-        BSTR szNetworkNewName) = 0;
+                     BSTR szNetworkNewName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        BSTR *pszDescription) = 0;
+                     BSTR *pszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDescription(
-        BSTR szDescription) = 0;
+                     BSTR szDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNetworkId(
-        GUID *pgdGuidNetworkId) = 0;
+                     GUID *pgdGuidNetworkId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDomainType(
-        NLM_DOMAIN_TYPE *pNetworkType) = 0;
+                     NLM_DOMAIN_TYPE *pNetworkType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNetworkConnections(
-        IEnumNetworkConnections **ppEnumNetworkConnection) = 0;
+                     IEnumNetworkConnections **ppEnumNetworkConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimeCreatedAndConnected(
-        DWORD *pdwLowDateTimeCreated,
-        DWORD *pdwHighDateTimeCreated,
-        DWORD *pdwLowDateTimeConnected,
-        DWORD *pdwHighDateTimeConnected) = 0;
+                     DWORD *pdwLowDateTimeCreated,
+                     DWORD *pdwHighDateTimeCreated,
+                     DWORD *pdwLowDateTimeConnected,
+                     DWORD *pdwHighDateTimeConnected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsConnectedToInternet(
-        VARIANT_BOOL *pbIsConnected) = 0;
+                     VARIANT_BOOL *pbIsConnected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsConnected(
-        VARIANT_BOOL *pbIsConnected) = 0;
+                     VARIANT_BOOL *pbIsConnected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectivity(
-        NLM_CONNECTIVITY *pConnectivity) = 0;
+                     NLM_CONNECTIVITY *pConnectivity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategory(
-        NLM_NETWORK_CATEGORY *pCategory) = 0;
+                     NLM_NETWORK_CATEGORY *pCategory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCategory(
-        NLM_NETWORK_CATEGORY NewCategory) = 0;
+                     NLM_NETWORK_CATEGORY NewCategory) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1492,101 +1492,101 @@ typedef struct INetworkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetwork *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetwork *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetwork *This);
+                     INetwork *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetwork *This);
+                     INetwork *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetwork *This,
-        UINT *pctinfo);
+                     INetwork *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetwork *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetwork *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetwork *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetwork *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetwork *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetwork *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetwork methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        INetwork *This,
-        BSTR *pszNetworkName);
+                     INetwork *This,
+                     BSTR *pszNetworkName);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        INetwork *This,
-        BSTR szNetworkNewName);
+                     INetwork *This,
+                     BSTR szNetworkNewName);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        INetwork *This,
-        BSTR *pszDescription);
+                     INetwork *This,
+                     BSTR *pszDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetDescription)(
-        INetwork *This,
-        BSTR szDescription);
+                     INetwork *This,
+                     BSTR szDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetNetworkId)(
-        INetwork *This,
-        GUID *pgdGuidNetworkId);
+                     INetwork *This,
+                     GUID *pgdGuidNetworkId);
 
     HRESULT (STDMETHODCALLTYPE *GetDomainType)(
-        INetwork *This,
-        NLM_DOMAIN_TYPE *pNetworkType);
+                     INetwork *This,
+                     NLM_DOMAIN_TYPE *pNetworkType);
 
     HRESULT (STDMETHODCALLTYPE *GetNetworkConnections)(
-        INetwork *This,
-        IEnumNetworkConnections **ppEnumNetworkConnection);
+                     INetwork *This,
+                     IEnumNetworkConnections **ppEnumNetworkConnection);
 
     HRESULT (STDMETHODCALLTYPE *GetTimeCreatedAndConnected)(
-        INetwork *This,
-        DWORD *pdwLowDateTimeCreated,
-        DWORD *pdwHighDateTimeCreated,
-        DWORD *pdwLowDateTimeConnected,
-        DWORD *pdwHighDateTimeConnected);
+                     INetwork *This,
+                     DWORD *pdwLowDateTimeCreated,
+                     DWORD *pdwHighDateTimeCreated,
+                     DWORD *pdwLowDateTimeConnected,
+                     DWORD *pdwHighDateTimeConnected);
 
     HRESULT (STDMETHODCALLTYPE *get_IsConnectedToInternet)(
-        INetwork *This,
-        VARIANT_BOOL *pbIsConnected);
+                     INetwork *This,
+                     VARIANT_BOOL *pbIsConnected);
 
     HRESULT (STDMETHODCALLTYPE *get_IsConnected)(
-        INetwork *This,
-        VARIANT_BOOL *pbIsConnected);
+                     INetwork *This,
+                     VARIANT_BOOL *pbIsConnected);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectivity)(
-        INetwork *This,
-        NLM_CONNECTIVITY *pConnectivity);
+                     INetwork *This,
+                     NLM_CONNECTIVITY *pConnectivity);
 
     HRESULT (STDMETHODCALLTYPE *GetCategory)(
-        INetwork *This,
-        NLM_NETWORK_CATEGORY *pCategory);
+                     INetwork *This,
+                     NLM_NETWORK_CATEGORY *pCategory);
 
     HRESULT (STDMETHODCALLTYPE *SetCategory)(
-        INetwork *This,
-        NLM_NETWORK_CATEGORY NewCategory);
+                     INetwork *This,
+                     NLM_NETWORK_CATEGORY NewCategory);
 
     END_INTERFACE
 } INetworkVtbl;
@@ -1694,10 +1694,10 @@ static FORCEINLINE HRESULT INetwork_SetCategory(INetwork* This,NLM_NETWORK_CATEG
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

@@ -63,9 +63,9 @@ enum perf_hw_id {
 /*
  * Generalized hardware cache events:
  *
- *       { L1-D, L1-I, LLC, ITLB, DTLB, BPU, NODE } x
- *       { read, write, prefetch } x
- *       { accesses, misses }
+ *                    { L1-D, L1-I, LLC, ITLB, DTLB, BPU, NODE } x
+ *                    { read, write, prefetch } x
+ *                    { accesses, misses }
  */
 enum perf_hw_cache_id {
 	PERF_COUNT_HW_CACHE_L1D			= 0,
@@ -247,16 +247,16 @@ enum perf_sample_regs_abi {
  * abort events. Multiple bits can be set.
  */
 enum {
-	PERF_TXN_ELISION        = (1 << 0), /* From elision */
+	PERF_TXN_ELISION                     = (1 << 0), /* From elision */
 	PERF_TXN_TRANSACTION    = (1 << 1), /* From transaction */
-	PERF_TXN_SYNC           = (1 << 2), /* Instruction is related */
-	PERF_TXN_ASYNC          = (1 << 3), /* Instruction not related */
-	PERF_TXN_RETRY          = (1 << 4), /* Retry possible */
-	PERF_TXN_CONFLICT       = (1 << 5), /* Conflict abort */
+	PERF_TXN_SYNC                        = (1 << 2), /* Instruction is related */
+	PERF_TXN_ASYNC                       = (1 << 3), /* Instruction not related */
+	PERF_TXN_RETRY                       = (1 << 4), /* Retry possible */
+	PERF_TXN_CONFLICT                    = (1 << 5), /* Conflict abort */
 	PERF_TXN_CAPACITY_WRITE = (1 << 6), /* Capacity write abort */
 	PERF_TXN_CAPACITY_READ  = (1 << 7), /* Capacity read abort */
 
-	PERF_TXN_MAX	        = (1 << 8), /* non-ABI */
+	PERF_TXN_MAX	                     = (1 << 8), /* non-ABI */
 
 	/* bits 32..63 are reserved for the abort code */
 
@@ -272,14 +272,14 @@ enum {
  *	{ u64		value;
  *	  { u64		time_enabled; } && PERF_FORMAT_TOTAL_TIME_ENABLED
  *	  { u64		time_running; } && PERF_FORMAT_TOTAL_TIME_RUNNING
- *	  { u64		id;           } && PERF_FORMAT_ID
+ *	  { u64		id;                        } && PERF_FORMAT_ID
  *	} && !PERF_FORMAT_GROUP
  *
  *	{ u64		nr;
  *	  { u64		time_enabled; } && PERF_FORMAT_TOTAL_TIME_ENABLED
  *	  { u64		time_running; } && PERF_FORMAT_TOTAL_TIME_RUNNING
  *	  { u64		value;
- *	    { u64	id;           } && PERF_FORMAT_ID
+ *	    { u64	id;                        } && PERF_FORMAT_ID
  *	  }		cntr[nr];
  *	} && PERF_FORMAT_GROUP
  * };
@@ -305,7 +305,7 @@ enum perf_event_read_format {
  * Hardware event_id to monitor via a performance monitoring event:
  *
  * @sample_max_stack: Max number of frame pointers in a callchain,
- *		      should be < /proc/sys/kernel/perf_event_max_stack
+ *		                   should be < /proc/sys/kernel/perf_event_max_stack
  */
 struct perf_event_attr {
 
@@ -332,21 +332,21 @@ struct perf_event_attr {
 	__u64			sample_type;
 	__u64			read_format;
 
-	__u64			disabled       :  1, /* off by default        */
-				inherit	       :  1, /* children inherit it   */
-				pinned	       :  1, /* must always be on PMU */
-				exclusive      :  1, /* only group on PMU     */
-				exclude_user   :  1, /* don't count user      */
-				exclude_kernel :  1, /* ditto kernel          */
-				exclude_hv     :  1, /* ditto hypervisor      */
+	__u64			disabled                    :  1, /* off by default                     */
+				inherit	                    :  1, /* children inherit it   */
+				pinned	                    :  1, /* must always be on PMU */
+				exclusive                   :  1, /* only group on PMU     */
+				exclude_user   :  1, /* don't count user                   */
+				exclude_kernel :  1, /* ditto kernel                       */
+				exclude_hv     :  1, /* ditto hypervisor                   */
 				exclude_idle   :  1, /* don't count when idle */
-				mmap           :  1, /* include mmap data     */
-				comm	       :  1, /* include comm data     */
-				freq           :  1, /* use freq, not period  */
-				inherit_stat   :  1, /* per task counts       */
+				mmap                        :  1, /* include mmap data     */
+				comm	                    :  1, /* include comm data     */
+				freq                        :  1, /* use freq, not period  */
+				inherit_stat   :  1, /* per task counts                    */
 				enable_on_exec :  1, /* next exec enables     */
-				task           :  1, /* trace fork/exit       */
-				watermark      :  1, /* wakeup_watermark      */
+				task                        :  1, /* trace fork/exit                    */
+				watermark                   :  1, /* wakeup_watermark                   */
 				/*
 				 * precise_ip:
 				 *
@@ -357,8 +357,8 @@ struct perf_event_attr {
 				 *
 				 *  See also PERF_RECORD_MISC_EXACT_IP
 				 */
-				precise_ip     :  2, /* skid constraint       */
-				mmap_data      :  1, /* non-exec mmap data    */
+				precise_ip     :  2, /* skid constraint                    */
+				mmap_data                   :  1, /* non-exec mmap data    */
 				sample_id_all  :  1, /* sample_type all events */
 
 				exclude_host   :  1, /* don't count in host   */
@@ -366,8 +366,8 @@ struct perf_event_attr {
 
 				exclude_callchain_kernel : 1, /* exclude kernel callchains */
 				exclude_callchain_user   : 1, /* exclude user callchains */
-				mmap2          :  1, /* include mmap with inode data     */
-				comm_exec      :  1, /* flag comm events that are due to an exec */
+				mmap2                       :  1, /* include mmap with inode data     */
+				comm_exec                   :  1, /* flag comm events that are due to an exec */
 				use_clockid    :  1, /* use @clockid for time fields */
 				context_switch :  1, /* context switch data */
 				write_backward :  1, /* Write ring buffer from end to beginning */
@@ -490,24 +490,24 @@ struct perf_event_mmap_page {
 	 *     running = pc->time_running;
 	 *
 	 *     if (pc->cap_usr_time && enabled != running) {
-	 *       cyc = rdtsc();
-	 *       time_offset = pc->time_offset;
-	 *       time_mult   = pc->time_mult;
-	 *       time_shift  = pc->time_shift;
+	 *                    cyc = rdtsc();
+	 *                    time_offset = pc->time_offset;
+	 *                    time_mult   = pc->time_mult;
+	 *                    time_shift  = pc->time_shift;
 	 *     }
 	 *
 	 *     index = pc->index;
 	 *     count = pc->offset;
 	 *     if (pc->cap_user_rdpmc && index) {
-	 *       width = pc->pmc_width;
-	 *       pmc = rdpmc(index - 1);
+	 *                    width = pc->pmc_width;
+	 *                    pmc = rdpmc(index - 1);
 	 *     }
 	 *
 	 *     barrier();
 	 *   } while (pc->lock != seq);
 	 *
 	 * NOTE: for obvious reason this only works on self-monitoring
-	 *       processes.
+	 *                    processes.
 	 */
 	__u32	lock;			/* seqlock for synchronization */
 	__u32	index;			/* hardware event identifier */
@@ -548,7 +548,7 @@ struct perf_event_mmap_page {
 	 *   quot = (cyc >> time_shift);
 	 *   rem = cyc & (((u64)1 << time_shift) - 1);
 	 *   delta = time_offset + quot * time_mult +
-	 *              ((rem * time_mult) >> time_shift);
+	 *                                        ((rem * time_mult) >> time_shift);
 	 *
 	 * Where time_offset,time_mult,time_shift and cyc are read in the
 	 * seqcount loop described above. This delta can then be added to
@@ -579,7 +579,7 @@ struct perf_event_mmap_page {
 	 *   quot = cyc >> time_shift;
 	 *   rem  = cyc & (((u64)1 << time_shift) - 1);
 	 *   timestamp = time_zero + quot * time_mult +
-	 *               ((rem * time_mult) >> time_shift);
+	 *                                         ((rem * time_mult) >> time_shift);
 	 */
 	__u64	time_zero;
 	__u32	size;			/* Header size up to __reserved[] fields. */
@@ -655,7 +655,7 @@ struct perf_event_mmap_page {
  * These PERF_RECORD_MISC_* flags below are safely reused
  * for the following events:
  *
- *   PERF_RECORD_MISC_EXACT_IP           - PERF_RECORD_SAMPLE of precise events
+ *   PERF_RECORD_MISC_EXACT_IP                        - PERF_RECORD_SAMPLE of precise events
  *   PERF_RECORD_MISC_SWITCH_OUT_PREEMPT - PERF_RECORD_SWITCH* events
  *
  *
@@ -712,7 +712,7 @@ enum perf_event_type {
 	 * struct sample_id {
 	 * 	{ u32			pid, tid; } && PERF_SAMPLE_TID
 	 * 	{ u64			time;     } && PERF_SAMPLE_TIME
-	 * 	{ u64			id;       } && PERF_SAMPLE_ID
+	 * 	{ u64			id;                    } && PERF_SAMPLE_ID
 	 * 	{ u64			stream_id;} && PERF_SAMPLE_STREAM_ID
 	 * 	{ u32			cpu, res; } && PERF_SAMPLE_CPU
 	 *	{ u64			id;	  } && PERF_SAMPLE_IDENTIFIER
@@ -843,10 +843,10 @@ enum perf_event_type {
 	 *	#
 	 *
 	 *	{ u32			size;
-	 *	  char                  data[size];}&& PERF_SAMPLE_RAW
+	 *	  char                                                         data[size];}&& PERF_SAMPLE_RAW
 	 *
-	 *	{ u64                   nr;
-	 *        { u64 from, to, flags } lbr[nr];} && PERF_SAMPLE_BRANCH_STACK
+	 *	{ u64                                                          nr;
+	 *                     { u64 from, to, flags } lbr[nr];} && PERF_SAMPLE_BRANCH_STACK
 	 *
 	 * 	{ u64			abi; # enum perf_sample_regs_abi
 	 * 	  u64			regs[weight(mask)]; } && PERF_SAMPLE_REGS_USER
@@ -1102,8 +1102,8 @@ union perf_mem_data_src {
 /*
  * single taken branch record layout:
  *
- *      from: source instruction (may not always be a branch insn)
- *        to: branch target
+ *                   from: source instruction (may not always be a branch insn)
+ *                     to: branch target
  *   mispred: branch target was mispredicted
  * predicted: branch target was predicted
  *
@@ -1113,7 +1113,7 @@ union perf_mem_data_src {
  *     in_tx: running in a hardware transaction
  *     abort: aborting a hardware transaction
  *    cycles: cycles from last branch (or 0 if not supported)
- *      type: branch type
+ *                   type: branch type
  */
 struct perf_branch_entry {
 	__u64	from;

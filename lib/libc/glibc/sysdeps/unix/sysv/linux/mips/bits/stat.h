@@ -64,15 +64,15 @@ struct stat
 #endif
 #ifdef __USE_XOPEN2K8
     /* Nanosecond resolution timestamps are stored in a format
-       equivalent to 'struct timespec'.  This is the type used
-       whenever possible but the Unix namespace rules do not allow the
-       identifier 'timespec' to appear in the <sys/stat.h> header.
-       Therefore we have to handle the use of this header in strictly
-       standard-compliant sources special.  */
-    struct timespec st_atim;            /* Time of last access.  */
-    struct timespec st_mtim;            /* Time of last modification.  */
-    struct timespec st_ctim;            /* Time of last status change.  */
-# define st_atime st_atim.tv_sec        /* Backward compatibility.  */
+                    equivalent to 'struct timespec'.  This is the type used
+                    whenever possible but the Unix namespace rules do not allow the
+                    identifier 'timespec' to appear in the <sys/stat.h> header.
+                    Therefore we have to handle the use of this header in strictly
+                    standard-compliant sources special.  */
+    struct timespec st_atim;                                      /* Time of last access.  */
+    struct timespec st_mtim;                                      /* Time of last modification.  */
+    struct timespec st_ctim;                                      /* Time of last status change.  */
+# define st_atime st_atim.tv_sec                     /* Backward compatibility.  */
 # define st_mtime st_mtim.tv_sec
 # define st_ctime st_ctim.tv_sec
 #else
@@ -108,14 +108,14 @@ struct stat64
     __off64_t st_size;		/* Size of file, in bytes.  */
 # ifdef __USE_XOPEN2K8
     /* Nanosecond resolution timestamps are stored in a format
-       equivalent to 'struct timespec'.  This is the type used
-       whenever possible but the Unix namespace rules do not allow the
-       identifier 'timespec' to appear in the <sys/stat.h> header.
-       Therefore we have to handle the use of this header in strictly
-       standard-compliant sources special.  */
-    struct timespec st_atim;            /* Time of last access.  */
-    struct timespec st_mtim;            /* Time of last modification.  */
-    struct timespec st_ctim;            /* Time of last status change.  */
+                    equivalent to 'struct timespec'.  This is the type used
+                    whenever possible but the Unix namespace rules do not allow the
+                    identifier 'timespec' to appear in the <sys/stat.h> header.
+                    Therefore we have to handle the use of this header in strictly
+                    standard-compliant sources special.  */
+    struct timespec st_atim;                                      /* Time of last access.  */
+    struct timespec st_mtim;                                      /* Time of last modification.  */
+    struct timespec st_ctim;                                      /* Time of last status change.  */
 # else
     __time_t st_atime;			/* Time of last access.  */
     unsigned long int st_atimensec;	/* Nscecs of last access.  */
@@ -155,15 +155,15 @@ struct stat
 #endif
 #ifdef __USE_XOPEN2K8
     /* Nanosecond resolution timestamps are stored in a format
-       equivalent to 'struct timespec'.  This is the type used
-       whenever possible but the Unix namespace rules do not allow the
-       identifier 'timespec' to appear in the <sys/stat.h> header.
-       Therefore we have to handle the use of this header in strictly
-       standard-compliant sources special.  */
-    struct timespec st_atim;            /* Time of last access.  */
-    struct timespec st_mtim;            /* Time of last modification.  */
-    struct timespec st_ctim;            /* Time of last status change.  */
-# define st_atime st_atim.tv_sec        /* Backward compatibility.  */
+                    equivalent to 'struct timespec'.  This is the type used
+                    whenever possible but the Unix namespace rules do not allow the
+                    identifier 'timespec' to appear in the <sys/stat.h> header.
+                    Therefore we have to handle the use of this header in strictly
+                    standard-compliant sources special.  */
+    struct timespec st_atim;                                      /* Time of last access.  */
+    struct timespec st_mtim;                                      /* Time of last modification.  */
+    struct timespec st_ctim;                                      /* Time of last status change.  */
+# define st_atime st_atim.tv_sec                     /* Backward compatibility.  */
 # define st_mtime st_mtim.tv_sec
 # define st_ctime st_ctim.tv_sec
 #else
@@ -199,14 +199,14 @@ struct stat64
     __off64_t st_size;
 # ifdef __USE_XOPEN2K8
     /* Nanosecond resolution timestamps are stored in a format
-       equivalent to 'struct timespec'.  This is the type used
-       whenever possible but the Unix namespace rules do not allow the
-       identifier 'timespec' to appear in the <sys/stat.h> header.
-       Therefore we have to handle the use of this header in strictly
-       standard-compliant sources special.  */
-    struct timespec st_atim;            /* Time of last access.  */
-    struct timespec st_mtim;            /* Time of last modification.  */
-    struct timespec st_ctim;            /* Time of last status change.  */
+                    equivalent to 'struct timespec'.  This is the type used
+                    whenever possible but the Unix namespace rules do not allow the
+                    identifier 'timespec' to appear in the <sys/stat.h> header.
+                    Therefore we have to handle the use of this header in strictly
+                    standard-compliant sources special.  */
+    struct timespec st_atim;                                      /* Time of last access.  */
+    struct timespec st_mtim;                                      /* Time of last modification.  */
+    struct timespec st_ctim;                                      /* Time of last status change.  */
 # else
     __time_t st_atime;			/* Time of last access.  */
     unsigned long int st_atimensec;	/* Nscecs of last access.  */

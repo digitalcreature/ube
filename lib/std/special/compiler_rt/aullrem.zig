@@ -29,54 +29,54 @@ pub fn _aullrem() callconv(.Naked) void {
     // ESP   return address
 
     asm volatile (
-        \\  push   %%ebx
-        \\  mov    0x14(%%esp),%%eax
-        \\  or     %%eax,%%eax
-        \\  jne    1f
-        \\  mov    0x10(%%esp),%%ecx
-        \\  mov    0xc(%%esp),%%eax
-        \\  xor    %%edx,%%edx
-        \\  div    %%ecx
-        \\  mov    0x8(%%esp),%%eax
-        \\  div    %%ecx
-        \\  mov    %%edx,%%eax
-        \\  xor    %%edx,%%edx
-        \\  jmp    6f
-        \\ 1:
-        \\  mov    %%eax,%%ecx
-        \\  mov    0x10(%%esp),%%ebx
-        \\  mov    0xc(%%esp),%%edx
-        \\  mov    0x8(%%esp),%%eax
-        \\ 2:
-        \\  shr    %%ecx
-        \\  rcr    %%ebx
-        \\  shr    %%edx
-        \\  rcr    %%eax
-        \\  or     %%ecx,%%ecx
-        \\  jne    2b
-        \\  div    %%ebx
-        \\  mov    %%eax,%%ecx
-        \\  mull   0x14(%%esp)
-        \\  xchg   %%eax,%%ecx
-        \\  mull   0x10(%%esp)
-        \\  add    %%ecx,%%edx
-        \\  jb     3f
-        \\  cmp    0xc(%%esp),%%edx
-        \\  ja     3f
-        \\  jb     4f
-        \\  cmp    0x8(%%esp),%%eax
-        \\  jbe    4f
-        \\ 3:
-        \\  sub    0x10(%%esp),%%eax
-        \\  sbb    0x14(%%esp),%%edx
-        \\ 4:
-        \\  sub    0x8(%%esp),%%eax
-        \\  sbb    0xc(%%esp),%%edx
-        \\  neg    %%edx
-        \\  neg    %%eax
-        \\  sbb    $0x0,%%edx
-        \\ 6:
-        \\  pop    %%ebx
-        \\  ret    $0x10
+                     \\  push   %%ebx
+                     \\  mov    0x14(%%esp),%%eax
+                     \\  or     %%eax,%%eax
+                     \\  jne    1f
+                     \\  mov    0x10(%%esp),%%ecx
+                     \\  mov    0xc(%%esp),%%eax
+                     \\  xor    %%edx,%%edx
+                     \\  div    %%ecx
+                     \\  mov    0x8(%%esp),%%eax
+                     \\  div    %%ecx
+                     \\  mov    %%edx,%%eax
+                     \\  xor    %%edx,%%edx
+                     \\  jmp    6f
+                     \\ 1:
+                     \\  mov    %%eax,%%ecx
+                     \\  mov    0x10(%%esp),%%ebx
+                     \\  mov    0xc(%%esp),%%edx
+                     \\  mov    0x8(%%esp),%%eax
+                     \\ 2:
+                     \\  shr    %%ecx
+                     \\  rcr    %%ebx
+                     \\  shr    %%edx
+                     \\  rcr    %%eax
+                     \\  or     %%ecx,%%ecx
+                     \\  jne    2b
+                     \\  div    %%ebx
+                     \\  mov    %%eax,%%ecx
+                     \\  mull   0x14(%%esp)
+                     \\  xchg   %%eax,%%ecx
+                     \\  mull   0x10(%%esp)
+                     \\  add    %%ecx,%%edx
+                     \\  jb     3f
+                     \\  cmp    0xc(%%esp),%%edx
+                     \\  ja     3f
+                     \\  jb     4f
+                     \\  cmp    0x8(%%esp),%%eax
+                     \\  jbe    4f
+                     \\ 3:
+                     \\  sub    0x10(%%esp),%%eax
+                     \\  sbb    0x14(%%esp),%%edx
+                     \\ 4:
+                     \\  sub    0x8(%%esp),%%eax
+                     \\  sbb    0xc(%%esp),%%edx
+                     \\  neg    %%edx
+                     \\  neg    %%eax
+                     \\  sbb    $0x0,%%edx
+                     \\ 6:
+                     \\  pop    %%ebx
+                     \\  ret    $0x10
     );
 }

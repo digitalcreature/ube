@@ -21,14 +21,14 @@
 
 # include <endian.h>
 
-# define __SIZEOF_PTHREAD_ATTR_T         36
-# define __SIZEOF_PTHREAD_MUTEX_T        24
+# define __SIZEOF_PTHREAD_ATTR_T                      36
+# define __SIZEOF_PTHREAD_MUTEX_T                     24
 # define __SIZEOF_PTHREAD_MUTEXATTR_T     4
-# define __SIZEOF_PTHREAD_COND_T         48
-# define __SIZEOF_PTHREAD_CONDATTR_T      4
-# define __SIZEOF_PTHREAD_RWLOCK_T       32
+# define __SIZEOF_PTHREAD_COND_T                      48
+# define __SIZEOF_PTHREAD_CONDATTR_T                   4
+# define __SIZEOF_PTHREAD_RWLOCK_T                    32
 # define __SIZEOF_PTHREAD_RWLOCKATTR_T    8
-# define __SIZEOF_PTHREAD_BARRIER_T      20
+# define __SIZEOF_PTHREAD_BARRIER_T                   20
 # define __SIZEOF_PTHREAD_BARRIERATTR_T   4
 
 /* Definitions for internal mutex struct.  */
@@ -36,7 +36,7 @@
 #define __PTHREAD_COMPAT_PADDING_END
 #define __PTHREAD_MUTEX_LOCK_ELISION    0
 #define __PTHREAD_MUTEX_NUSERS_AFTER_KIND  1
-#define __PTHREAD_MUTEX_USE_UNION          1
+#define __PTHREAD_MUTEX_USE_UNION                       1
 
 #define __LOCK_ALIGNMENT
 #define __ONCE_ALIGNMENT

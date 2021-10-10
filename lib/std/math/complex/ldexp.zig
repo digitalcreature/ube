@@ -20,9 +20,9 @@ pub fn ldexp_cexp(z: anytype, expt: i32) @TypeOf(z) {
     const T = @TypeOf(z.re);
 
     return switch (T) {
-        f32 => ldexp_cexp32(z, expt),
-        f64 => ldexp_cexp64(z, expt),
-        else => unreachable,
+                     f32 => ldexp_cexp32(z, expt),
+                     f64 => ldexp_cexp64(z, expt),
+                     else => unreachable,
     };
 }
 
@@ -79,7 +79,7 @@ fn ldexp_cexp64(z: Complex(f64), expt: i32) Complex(f64) {
     const scale2 = @bitCast(f64, (0x3ff + half_expt2) << 20);
 
     return Complex(f64).new(
-        math.cos(z.im) * exp_x * scale1 * scale2,
-        math.sin(z.im) * exp_x * scale1 * scale2,
+                     math.cos(z.im) * exp_x * scale1 * scale2,
+                     math.sin(z.im) * exp_x * scale1 * scale2,
     );
 }

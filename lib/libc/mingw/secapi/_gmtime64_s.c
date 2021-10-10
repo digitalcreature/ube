@@ -41,7 +41,7 @@ _int_gmtime64_s (struct tm *ptm, const __time64_t *pt)
     memset (ptm, 0xff, sizeof (*ptm));
   if (!ptm || !pt)
      {
-        errno = EINVAL;
+                     errno = EINVAL;
 	return EINVAL;
      }
   if ((ltm = _gmtime64 (pt)) == NULL)

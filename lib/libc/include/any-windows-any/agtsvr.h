@@ -333,18 +333,18 @@ extern "C"{
 #else
   typedef struct IAgentUserInputVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentUserInput *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentUserInput *This);
-      ULONG (WINAPI *Release)(IAgentUserInput *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentUserInput *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentUserInput *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentUserInput *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentUserInput *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetCount)(IAgentUserInput *This,__LONG32 *pdwCount);
-      HRESULT (WINAPI *GetItemID)(IAgentUserInput *This,__LONG32 dwItemIndex,__LONG32 *pdwCommandID);
-      HRESULT (WINAPI *GetItemConfidence)(IAgentUserInput *This,__LONG32 dwItemIndex,__LONG32 *plConfidence);
-      HRESULT (WINAPI *GetItemText)(IAgentUserInput *This,__LONG32 dwItemIndex,BSTR *pbszText);
-      HRESULT (WINAPI *GetAllItemData)(IAgentUserInput *This,VARIANT *pdwItemIndices,VARIANT *plConfidences,VARIANT *pbszText);
+                   HRESULT (WINAPI *QueryInterface)(IAgentUserInput *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentUserInput *This);
+                   ULONG (WINAPI *Release)(IAgentUserInput *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentUserInput *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentUserInput *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentUserInput *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentUserInput *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetCount)(IAgentUserInput *This,__LONG32 *pdwCount);
+                   HRESULT (WINAPI *GetItemID)(IAgentUserInput *This,__LONG32 dwItemIndex,__LONG32 *pdwCommandID);
+                   HRESULT (WINAPI *GetItemConfidence)(IAgentUserInput *This,__LONG32 dwItemIndex,__LONG32 *plConfidence);
+                   HRESULT (WINAPI *GetItemText)(IAgentUserInput *This,__LONG32 dwItemIndex,BSTR *pbszText);
+                   HRESULT (WINAPI *GetAllItemData)(IAgentUserInput *This,VARIANT *pdwItemIndices,VARIANT *plConfidences,VARIANT *pbszText);
     END_INTERFACE
   } IAgentUserInputVtbl;
   struct IAgentUserInput {
@@ -400,26 +400,26 @@ extern "C"{
 #else
   typedef struct IAgentCommandVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentCommand *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentCommand *This);
-      ULONG (WINAPI *Release)(IAgentCommand *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommand *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentCommand *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentCommand *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentCommand *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetCaption)(IAgentCommand *This,BSTR bszCaption);
-      HRESULT (WINAPI *GetCaption)(IAgentCommand *This,BSTR *pbszCaption);
-      HRESULT (WINAPI *SetVoice)(IAgentCommand *This,BSTR bszVoice);
-      HRESULT (WINAPI *GetVoice)(IAgentCommand *This,BSTR *pbszVoice);
-      HRESULT (WINAPI *SetEnabled)(IAgentCommand *This,__LONG32 bEnabled);
-      HRESULT (WINAPI *GetEnabled)(IAgentCommand *This,__LONG32 *pbEnabled);
-      HRESULT (WINAPI *SetVisible)(IAgentCommand *This,__LONG32 bVisible);
-      HRESULT (WINAPI *GetVisible)(IAgentCommand *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *SetConfidenceThreshold)(IAgentCommand *This,__LONG32 lThreshold);
-      HRESULT (WINAPI *GetConfidenceThreshold)(IAgentCommand *This,__LONG32 *plThreshold);
-      HRESULT (WINAPI *SetConfidenceText)(IAgentCommand *This,BSTR bszTipText);
-      HRESULT (WINAPI *GetConfidenceText)(IAgentCommand *This,BSTR *pbszTipText);
-      HRESULT (WINAPI *GetID)(IAgentCommand *This,__LONG32 *pdwID);
+                   HRESULT (WINAPI *QueryInterface)(IAgentCommand *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentCommand *This);
+                   ULONG (WINAPI *Release)(IAgentCommand *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommand *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentCommand *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentCommand *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentCommand *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetCaption)(IAgentCommand *This,BSTR bszCaption);
+                   HRESULT (WINAPI *GetCaption)(IAgentCommand *This,BSTR *pbszCaption);
+                   HRESULT (WINAPI *SetVoice)(IAgentCommand *This,BSTR bszVoice);
+                   HRESULT (WINAPI *GetVoice)(IAgentCommand *This,BSTR *pbszVoice);
+                   HRESULT (WINAPI *SetEnabled)(IAgentCommand *This,__LONG32 bEnabled);
+                   HRESULT (WINAPI *GetEnabled)(IAgentCommand *This,__LONG32 *pbEnabled);
+                   HRESULT (WINAPI *SetVisible)(IAgentCommand *This,__LONG32 bVisible);
+                   HRESULT (WINAPI *GetVisible)(IAgentCommand *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *SetConfidenceThreshold)(IAgentCommand *This,__LONG32 lThreshold);
+                   HRESULT (WINAPI *GetConfidenceThreshold)(IAgentCommand *This,__LONG32 *plThreshold);
+                   HRESULT (WINAPI *SetConfidenceText)(IAgentCommand *This,BSTR bszTipText);
+                   HRESULT (WINAPI *GetConfidenceText)(IAgentCommand *This,BSTR *pbszTipText);
+                   HRESULT (WINAPI *GetID)(IAgentCommand *This,__LONG32 *pdwID);
     END_INTERFACE
   } IAgentCommandVtbl;
   struct IAgentCommand {
@@ -491,30 +491,30 @@ extern "C"{
 #else
   typedef struct IAgentCommandExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentCommandEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentCommandEx *This);
-      ULONG (WINAPI *Release)(IAgentCommandEx *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommandEx *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentCommandEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentCommandEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentCommandEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetCaption)(IAgentCommandEx *This,BSTR bszCaption);
-      HRESULT (WINAPI *GetCaption)(IAgentCommandEx *This,BSTR *pbszCaption);
-      HRESULT (WINAPI *SetVoice)(IAgentCommandEx *This,BSTR bszVoice);
-      HRESULT (WINAPI *GetVoice)(IAgentCommandEx *This,BSTR *pbszVoice);
-      HRESULT (WINAPI *SetEnabled)(IAgentCommandEx *This,__LONG32 bEnabled);
-      HRESULT (WINAPI *GetEnabled)(IAgentCommandEx *This,__LONG32 *pbEnabled);
-      HRESULT (WINAPI *SetVisible)(IAgentCommandEx *This,__LONG32 bVisible);
-      HRESULT (WINAPI *GetVisible)(IAgentCommandEx *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *SetConfidenceThreshold)(IAgentCommandEx *This,__LONG32 lThreshold);
-      HRESULT (WINAPI *GetConfidenceThreshold)(IAgentCommandEx *This,__LONG32 *plThreshold);
-      HRESULT (WINAPI *SetConfidenceText)(IAgentCommandEx *This,BSTR bszTipText);
-      HRESULT (WINAPI *GetConfidenceText)(IAgentCommandEx *This,BSTR *pbszTipText);
-      HRESULT (WINAPI *GetID)(IAgentCommandEx *This,__LONG32 *pdwID);
-      HRESULT (WINAPI *SetHelpContextID)(IAgentCommandEx *This,__LONG32 ulID);
-      HRESULT (WINAPI *GetHelpContextID)(IAgentCommandEx *This,__LONG32 *pulID);
-      HRESULT (WINAPI *SetVoiceCaption)(IAgentCommandEx *This,BSTR bszVoiceCaption);
-      HRESULT (WINAPI *GetVoiceCaption)(IAgentCommandEx *This,BSTR *pbszVoiceCaption);
+                   HRESULT (WINAPI *QueryInterface)(IAgentCommandEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentCommandEx *This);
+                   ULONG (WINAPI *Release)(IAgentCommandEx *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommandEx *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentCommandEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentCommandEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentCommandEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetCaption)(IAgentCommandEx *This,BSTR bszCaption);
+                   HRESULT (WINAPI *GetCaption)(IAgentCommandEx *This,BSTR *pbszCaption);
+                   HRESULT (WINAPI *SetVoice)(IAgentCommandEx *This,BSTR bszVoice);
+                   HRESULT (WINAPI *GetVoice)(IAgentCommandEx *This,BSTR *pbszVoice);
+                   HRESULT (WINAPI *SetEnabled)(IAgentCommandEx *This,__LONG32 bEnabled);
+                   HRESULT (WINAPI *GetEnabled)(IAgentCommandEx *This,__LONG32 *pbEnabled);
+                   HRESULT (WINAPI *SetVisible)(IAgentCommandEx *This,__LONG32 bVisible);
+                   HRESULT (WINAPI *GetVisible)(IAgentCommandEx *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *SetConfidenceThreshold)(IAgentCommandEx *This,__LONG32 lThreshold);
+                   HRESULT (WINAPI *GetConfidenceThreshold)(IAgentCommandEx *This,__LONG32 *plThreshold);
+                   HRESULT (WINAPI *SetConfidenceText)(IAgentCommandEx *This,BSTR bszTipText);
+                   HRESULT (WINAPI *GetConfidenceText)(IAgentCommandEx *This,BSTR *pbszTipText);
+                   HRESULT (WINAPI *GetID)(IAgentCommandEx *This,__LONG32 *pdwID);
+                   HRESULT (WINAPI *SetHelpContextID)(IAgentCommandEx *This,__LONG32 ulID);
+                   HRESULT (WINAPI *GetHelpContextID)(IAgentCommandEx *This,__LONG32 *pulID);
+                   HRESULT (WINAPI *SetVoiceCaption)(IAgentCommandEx *This,BSTR bszVoiceCaption);
+                   HRESULT (WINAPI *GetVoiceCaption)(IAgentCommandEx *This,BSTR *pbszVoiceCaption);
     END_INTERFACE
   } IAgentCommandExVtbl;
   struct IAgentCommandEx {
@@ -579,25 +579,25 @@ extern "C"{
 #else
   typedef struct IAgentCommandsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentCommands *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentCommands *This);
-      ULONG (WINAPI *Release)(IAgentCommands *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommands *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentCommands *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentCommands *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentCommands *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetCommand)(IAgentCommands *This,__LONG32 dwCommandID,IUnknown **ppunkCommand);
-      HRESULT (WINAPI *GetCount)(IAgentCommands *This,__LONG32 *pdwCount);
-      HRESULT (WINAPI *SetCaption)(IAgentCommands *This,BSTR bszCaption);
-      HRESULT (WINAPI *GetCaption)(IAgentCommands *This,BSTR *pbszCaption);
-      HRESULT (WINAPI *SetVoice)(IAgentCommands *This,BSTR bszVoice);
-      HRESULT (WINAPI *GetVoice)(IAgentCommands *This,BSTR *pbszVoice);
-      HRESULT (WINAPI *SetVisible)(IAgentCommands *This,__LONG32 bVisible);
-      HRESULT (WINAPI *GetVisible)(IAgentCommands *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *Add)(IAgentCommands *This,BSTR bszCaption,BSTR bszVoice,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 *pdwID);
-      HRESULT (WINAPI *Insert)(IAgentCommands *This,BSTR bszCaption,BSTR bszVoice,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 dwRefID,__LONG32 bBefore,__LONG32 *pdwID);
-      HRESULT (WINAPI *Remove)(IAgentCommands *This,__LONG32 dwID);
-      HRESULT (WINAPI *RemoveAll)(IAgentCommands *This);
+                   HRESULT (WINAPI *QueryInterface)(IAgentCommands *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentCommands *This);
+                   ULONG (WINAPI *Release)(IAgentCommands *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommands *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentCommands *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentCommands *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentCommands *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetCommand)(IAgentCommands *This,__LONG32 dwCommandID,IUnknown **ppunkCommand);
+                   HRESULT (WINAPI *GetCount)(IAgentCommands *This,__LONG32 *pdwCount);
+                   HRESULT (WINAPI *SetCaption)(IAgentCommands *This,BSTR bszCaption);
+                   HRESULT (WINAPI *GetCaption)(IAgentCommands *This,BSTR *pbszCaption);
+                   HRESULT (WINAPI *SetVoice)(IAgentCommands *This,BSTR bszVoice);
+                   HRESULT (WINAPI *GetVoice)(IAgentCommands *This,BSTR *pbszVoice);
+                   HRESULT (WINAPI *SetVisible)(IAgentCommands *This,__LONG32 bVisible);
+                   HRESULT (WINAPI *GetVisible)(IAgentCommands *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *Add)(IAgentCommands *This,BSTR bszCaption,BSTR bszVoice,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 *pdwID);
+                   HRESULT (WINAPI *Insert)(IAgentCommands *This,BSTR bszCaption,BSTR bszVoice,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 dwRefID,__LONG32 bBefore,__LONG32 *pdwID);
+                   HRESULT (WINAPI *Remove)(IAgentCommands *This,__LONG32 dwID);
+                   HRESULT (WINAPI *RemoveAll)(IAgentCommands *This);
     END_INTERFACE
   } IAgentCommandsVtbl;
   struct IAgentCommands {
@@ -676,40 +676,40 @@ extern "C"{
 #else
   typedef struct IAgentCommandsExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentCommandsEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentCommandsEx *This);
-      ULONG (WINAPI *Release)(IAgentCommandsEx *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommandsEx *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentCommandsEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentCommandsEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentCommandsEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetCommand)(IAgentCommandsEx *This,__LONG32 dwCommandID,IUnknown **ppunkCommand);
-      HRESULT (WINAPI *GetCount)(IAgentCommandsEx *This,__LONG32 *pdwCount);
-      HRESULT (WINAPI *SetCaption)(IAgentCommandsEx *This,BSTR bszCaption);
-      HRESULT (WINAPI *GetCaption)(IAgentCommandsEx *This,BSTR *pbszCaption);
-      HRESULT (WINAPI *SetVoice)(IAgentCommandsEx *This,BSTR bszVoice);
-      HRESULT (WINAPI *GetVoice)(IAgentCommandsEx *This,BSTR *pbszVoice);
-      HRESULT (WINAPI *SetVisible)(IAgentCommandsEx *This,__LONG32 bVisible);
-      HRESULT (WINAPI *GetVisible)(IAgentCommandsEx *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *Add)(IAgentCommandsEx *This,BSTR bszCaption,BSTR bszVoice,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 *pdwID);
-      HRESULT (WINAPI *Insert)(IAgentCommandsEx *This,BSTR bszCaption,BSTR bszVoice,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 dwRefID,__LONG32 bBefore,__LONG32 *pdwID);
-      HRESULT (WINAPI *Remove)(IAgentCommandsEx *This,__LONG32 dwID);
-      HRESULT (WINAPI *RemoveAll)(IAgentCommandsEx *This);
-      HRESULT (WINAPI *GetCommandEx)(IAgentCommandsEx *This,__LONG32 dwCommandID,IAgentCommandEx **ppCommandEx);
-      HRESULT (WINAPI *SetDefaultID)(IAgentCommandsEx *This,__LONG32 dwID);
-      HRESULT (WINAPI *GetDefaultID)(IAgentCommandsEx *This,__LONG32 *pdwID);
-      HRESULT (WINAPI *SetHelpContextID)(IAgentCommandsEx *This,__LONG32 ulHelpID);
-      HRESULT (WINAPI *GetHelpContextID)(IAgentCommandsEx *This,__LONG32 *pulHelpID);
-      HRESULT (WINAPI *SetFontName)(IAgentCommandsEx *This,BSTR bszFontName);
-      HRESULT (WINAPI *GetFontName)(IAgentCommandsEx *This,BSTR *pbszFontName);
-      HRESULT (WINAPI *SetFontSize)(IAgentCommandsEx *This,__LONG32 lFontSize);
-      HRESULT (WINAPI *GetFontSize)(IAgentCommandsEx *This,__LONG32 *lFontSize);
-      HRESULT (WINAPI *SetVoiceCaption)(IAgentCommandsEx *This,BSTR bszVoiceCaption);
-      HRESULT (WINAPI *GetVoiceCaption)(IAgentCommandsEx *This,BSTR *bszVoiceCaption);
-      HRESULT (WINAPI *AddEx)(IAgentCommandsEx *This,BSTR bszCaption,BSTR bszVoice,BSTR bszVoiceCaption,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 ulHelpId,__LONG32 *pdwID);
-      HRESULT (WINAPI *InsertEx)(IAgentCommandsEx *This,BSTR bszCaption,BSTR bszVoice,BSTR bszVoiceCaption,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 ulHelpId,__LONG32 dwRefID,__LONG32 bBefore,__LONG32 *pdwID);
-      HRESULT (WINAPI *SetGlobalVoiceCommandsEnabled)(IAgentCommandsEx *This,__LONG32 bEnable);
-      HRESULT (WINAPI *GetGlobalVoiceCommandsEnabled)(IAgentCommandsEx *This,__LONG32 *pbEnabled);
+                   HRESULT (WINAPI *QueryInterface)(IAgentCommandsEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentCommandsEx *This);
+                   ULONG (WINAPI *Release)(IAgentCommandsEx *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommandsEx *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentCommandsEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentCommandsEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentCommandsEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetCommand)(IAgentCommandsEx *This,__LONG32 dwCommandID,IUnknown **ppunkCommand);
+                   HRESULT (WINAPI *GetCount)(IAgentCommandsEx *This,__LONG32 *pdwCount);
+                   HRESULT (WINAPI *SetCaption)(IAgentCommandsEx *This,BSTR bszCaption);
+                   HRESULT (WINAPI *GetCaption)(IAgentCommandsEx *This,BSTR *pbszCaption);
+                   HRESULT (WINAPI *SetVoice)(IAgentCommandsEx *This,BSTR bszVoice);
+                   HRESULT (WINAPI *GetVoice)(IAgentCommandsEx *This,BSTR *pbszVoice);
+                   HRESULT (WINAPI *SetVisible)(IAgentCommandsEx *This,__LONG32 bVisible);
+                   HRESULT (WINAPI *GetVisible)(IAgentCommandsEx *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *Add)(IAgentCommandsEx *This,BSTR bszCaption,BSTR bszVoice,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 *pdwID);
+                   HRESULT (WINAPI *Insert)(IAgentCommandsEx *This,BSTR bszCaption,BSTR bszVoice,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 dwRefID,__LONG32 bBefore,__LONG32 *pdwID);
+                   HRESULT (WINAPI *Remove)(IAgentCommandsEx *This,__LONG32 dwID);
+                   HRESULT (WINAPI *RemoveAll)(IAgentCommandsEx *This);
+                   HRESULT (WINAPI *GetCommandEx)(IAgentCommandsEx *This,__LONG32 dwCommandID,IAgentCommandEx **ppCommandEx);
+                   HRESULT (WINAPI *SetDefaultID)(IAgentCommandsEx *This,__LONG32 dwID);
+                   HRESULT (WINAPI *GetDefaultID)(IAgentCommandsEx *This,__LONG32 *pdwID);
+                   HRESULT (WINAPI *SetHelpContextID)(IAgentCommandsEx *This,__LONG32 ulHelpID);
+                   HRESULT (WINAPI *GetHelpContextID)(IAgentCommandsEx *This,__LONG32 *pulHelpID);
+                   HRESULT (WINAPI *SetFontName)(IAgentCommandsEx *This,BSTR bszFontName);
+                   HRESULT (WINAPI *GetFontName)(IAgentCommandsEx *This,BSTR *pbszFontName);
+                   HRESULT (WINAPI *SetFontSize)(IAgentCommandsEx *This,__LONG32 lFontSize);
+                   HRESULT (WINAPI *GetFontSize)(IAgentCommandsEx *This,__LONG32 *lFontSize);
+                   HRESULT (WINAPI *SetVoiceCaption)(IAgentCommandsEx *This,BSTR bszVoiceCaption);
+                   HRESULT (WINAPI *GetVoiceCaption)(IAgentCommandsEx *This,BSTR *bszVoiceCaption);
+                   HRESULT (WINAPI *AddEx)(IAgentCommandsEx *This,BSTR bszCaption,BSTR bszVoice,BSTR bszVoiceCaption,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 ulHelpId,__LONG32 *pdwID);
+                   HRESULT (WINAPI *InsertEx)(IAgentCommandsEx *This,BSTR bszCaption,BSTR bszVoice,BSTR bszVoiceCaption,__LONG32 bEnabled,__LONG32 bVisible,__LONG32 ulHelpId,__LONG32 dwRefID,__LONG32 bBefore,__LONG32 *pdwID);
+                   HRESULT (WINAPI *SetGlobalVoiceCommandsEnabled)(IAgentCommandsEx *This,__LONG32 bEnable);
+                   HRESULT (WINAPI *GetGlobalVoiceCommandsEnabled)(IAgentCommandsEx *This,__LONG32 *pbEnabled);
     END_INTERFACE
   } IAgentCommandsExVtbl;
   struct IAgentCommandsEx {
@@ -798,17 +798,17 @@ extern "C"{
 #else
   typedef struct IAgentCommandWindowVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentCommandWindow *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentCommandWindow *This);
-      ULONG (WINAPI *Release)(IAgentCommandWindow *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommandWindow *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentCommandWindow *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentCommandWindow *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentCommandWindow *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetVisible)(IAgentCommandWindow *This,__LONG32 bVisible);
-      HRESULT (WINAPI *GetVisible)(IAgentCommandWindow *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *GetPosition)(IAgentCommandWindow *This,__LONG32 *plLeft,__LONG32 *plTop);
-      HRESULT (WINAPI *GetSize)(IAgentCommandWindow *This,__LONG32 *plWidth,__LONG32 *plHeight);
+                   HRESULT (WINAPI *QueryInterface)(IAgentCommandWindow *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentCommandWindow *This);
+                   ULONG (WINAPI *Release)(IAgentCommandWindow *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentCommandWindow *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentCommandWindow *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentCommandWindow *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentCommandWindow *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetVisible)(IAgentCommandWindow *This,__LONG32 bVisible);
+                   HRESULT (WINAPI *GetVisible)(IAgentCommandWindow *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *GetPosition)(IAgentCommandWindow *This,__LONG32 *plLeft,__LONG32 *plTop);
+                   HRESULT (WINAPI *GetSize)(IAgentCommandWindow *This,__LONG32 *plWidth,__LONG32 *plHeight);
     END_INTERFACE
   } IAgentCommandWindowVtbl;
   struct IAgentCommandWindow {
@@ -855,20 +855,20 @@ extern "C"{
 #else
   typedef struct IAgentSpeechInputPropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentSpeechInputProperties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentSpeechInputProperties *This);
-      ULONG (WINAPI *Release)(IAgentSpeechInputProperties *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentSpeechInputProperties *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentSpeechInputProperties *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentSpeechInputProperties *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentSpeechInputProperties *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetInstalled)(IAgentSpeechInputProperties *This,__LONG32 *pbInstalled);
-      HRESULT (WINAPI *GetEnabled)(IAgentSpeechInputProperties *This,__LONG32 *pbEnabled);
-      HRESULT (WINAPI *GetHotKey)(IAgentSpeechInputProperties *This,BSTR *pbszHotCharKey);
-      HRESULT (WINAPI *GetLCID)(IAgentSpeechInputProperties *This,LCID *plcidCurrent);
-      HRESULT (WINAPI *GetEngine)(IAgentSpeechInputProperties *This,BSTR *pbszEngine);
-      HRESULT (WINAPI *SetEngine)(IAgentSpeechInputProperties *This,BSTR bszEngine);
-      HRESULT (WINAPI *GetListeningTip)(IAgentSpeechInputProperties *This,__LONG32 *pbListeningTip);
+                   HRESULT (WINAPI *QueryInterface)(IAgentSpeechInputProperties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentSpeechInputProperties *This);
+                   ULONG (WINAPI *Release)(IAgentSpeechInputProperties *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentSpeechInputProperties *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentSpeechInputProperties *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentSpeechInputProperties *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentSpeechInputProperties *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetInstalled)(IAgentSpeechInputProperties *This,__LONG32 *pbInstalled);
+                   HRESULT (WINAPI *GetEnabled)(IAgentSpeechInputProperties *This,__LONG32 *pbEnabled);
+                   HRESULT (WINAPI *GetHotKey)(IAgentSpeechInputProperties *This,BSTR *pbszHotCharKey);
+                   HRESULT (WINAPI *GetLCID)(IAgentSpeechInputProperties *This,LCID *plcidCurrent);
+                   HRESULT (WINAPI *GetEngine)(IAgentSpeechInputProperties *This,BSTR *pbszEngine);
+                   HRESULT (WINAPI *SetEngine)(IAgentSpeechInputProperties *This,BSTR bszEngine);
+                   HRESULT (WINAPI *GetListeningTip)(IAgentSpeechInputProperties *This,__LONG32 *pbListeningTip);
     END_INTERFACE
   } IAgentSpeechInputPropertiesVtbl;
   struct IAgentSpeechInputProperties {
@@ -919,15 +919,15 @@ extern "C"{
 #else
   typedef struct IAgentAudioOutputPropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentAudioOutputProperties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentAudioOutputProperties *This);
-      ULONG (WINAPI *Release)(IAgentAudioOutputProperties *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentAudioOutputProperties *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentAudioOutputProperties *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentAudioOutputProperties *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentAudioOutputProperties *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetEnabled)(IAgentAudioOutputProperties *This,__LONG32 *pbEnabled);
-      HRESULT (WINAPI *GetUsingSoundEffects)(IAgentAudioOutputProperties *This,__LONG32 *pbUsingSoundEffects);
+                   HRESULT (WINAPI *QueryInterface)(IAgentAudioOutputProperties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentAudioOutputProperties *This);
+                   ULONG (WINAPI *Release)(IAgentAudioOutputProperties *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentAudioOutputProperties *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentAudioOutputProperties *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentAudioOutputProperties *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentAudioOutputProperties *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetEnabled)(IAgentAudioOutputProperties *This,__LONG32 *pbEnabled);
+                   HRESULT (WINAPI *GetUsingSoundEffects)(IAgentAudioOutputProperties *This,__LONG32 *pbUsingSoundEffects);
     END_INTERFACE
   } IAgentAudioOutputPropertiesVtbl;
   struct IAgentAudioOutputProperties {
@@ -962,16 +962,16 @@ extern "C"{
 #else
   typedef struct IAgentAudioOutputPropertiesExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentAudioOutputPropertiesEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentAudioOutputPropertiesEx *This);
-      ULONG (WINAPI *Release)(IAgentAudioOutputPropertiesEx *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentAudioOutputPropertiesEx *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentAudioOutputPropertiesEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentAudioOutputPropertiesEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentAudioOutputPropertiesEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetEnabled)(IAgentAudioOutputPropertiesEx *This,__LONG32 *pbEnabled);
-      HRESULT (WINAPI *GetUsingSoundEffects)(IAgentAudioOutputPropertiesEx *This,__LONG32 *pbUsingSoundEffects);
-      HRESULT (WINAPI *GetStatus)(IAgentAudioOutputPropertiesEx *This,__LONG32 *plStatus);
+                   HRESULT (WINAPI *QueryInterface)(IAgentAudioOutputPropertiesEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentAudioOutputPropertiesEx *This);
+                   ULONG (WINAPI *Release)(IAgentAudioOutputPropertiesEx *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentAudioOutputPropertiesEx *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentAudioOutputPropertiesEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentAudioOutputPropertiesEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentAudioOutputPropertiesEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetEnabled)(IAgentAudioOutputPropertiesEx *This,__LONG32 *pbEnabled);
+                   HRESULT (WINAPI *GetUsingSoundEffects)(IAgentAudioOutputPropertiesEx *This,__LONG32 *pbUsingSoundEffects);
+                   HRESULT (WINAPI *GetStatus)(IAgentAudioOutputPropertiesEx *This,__LONG32 *plStatus);
     END_INTERFACE
   } IAgentAudioOutputPropertiesExVtbl;
   struct IAgentAudioOutputPropertiesEx {
@@ -1010,19 +1010,19 @@ extern "C"{
 #else
   typedef struct IAgentPropertySheetVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentPropertySheet *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentPropertySheet *This);
-      ULONG (WINAPI *Release)(IAgentPropertySheet *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentPropertySheet *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentPropertySheet *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentPropertySheet *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentPropertySheet *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetVisible)(IAgentPropertySheet *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *SetVisible)(IAgentPropertySheet *This,__LONG32 bVisible);
-      HRESULT (WINAPI *GetPosition)(IAgentPropertySheet *This,__LONG32 *plLeft,__LONG32 *plTop);
-      HRESULT (WINAPI *GetSize)(IAgentPropertySheet *This,__LONG32 *plWidth,__LONG32 *plHeight);
-      HRESULT (WINAPI *GetPage)(IAgentPropertySheet *This,BSTR *pbszPage);
-      HRESULT (WINAPI *SetPage)(IAgentPropertySheet *This,BSTR bszPage);
+                   HRESULT (WINAPI *QueryInterface)(IAgentPropertySheet *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentPropertySheet *This);
+                   ULONG (WINAPI *Release)(IAgentPropertySheet *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentPropertySheet *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentPropertySheet *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentPropertySheet *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentPropertySheet *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetVisible)(IAgentPropertySheet *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *SetVisible)(IAgentPropertySheet *This,__LONG32 bVisible);
+                   HRESULT (WINAPI *GetPosition)(IAgentPropertySheet *This,__LONG32 *plLeft,__LONG32 *plTop);
+                   HRESULT (WINAPI *GetSize)(IAgentPropertySheet *This,__LONG32 *plWidth,__LONG32 *plHeight);
+                   HRESULT (WINAPI *GetPage)(IAgentPropertySheet *This,BSTR *pbszPage);
+                   HRESULT (WINAPI *SetPage)(IAgentPropertySheet *This,BSTR bszPage);
     END_INTERFACE
   } IAgentPropertySheetVtbl;
   struct IAgentPropertySheet {
@@ -1086,31 +1086,31 @@ extern "C"{
 #else
   typedef struct IAgentBalloonVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentBalloon *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentBalloon *This);
-      ULONG (WINAPI *Release)(IAgentBalloon *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentBalloon *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentBalloon *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentBalloon *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentBalloon *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetEnabled)(IAgentBalloon *This,__LONG32 *pbEnabled);
-      HRESULT (WINAPI *GetNumLines)(IAgentBalloon *This,__LONG32 *plLines);
-      HRESULT (WINAPI *GetNumCharsPerLine)(IAgentBalloon *This,__LONG32 *plCharsPerLine);
-      HRESULT (WINAPI *GetFontName)(IAgentBalloon *This,BSTR *pbszFontName);
-      HRESULT (WINAPI *GetFontSize)(IAgentBalloon *This,__LONG32 *plFontSize);
-      HRESULT (WINAPI *GetFontBold)(IAgentBalloon *This,__LONG32 *pbFontBold);
-      HRESULT (WINAPI *GetFontItalic)(IAgentBalloon *This,__LONG32 *pbFontItalic);
-      HRESULT (WINAPI *GetFontStrikethru)(IAgentBalloon *This,__LONG32 *pbFontStrikethru);
-      HRESULT (WINAPI *GetFontUnderline)(IAgentBalloon *This,__LONG32 *pbFontUnderline);
-      HRESULT (WINAPI *GetForeColor)(IAgentBalloon *This,__LONG32 *plFGColor);
-      HRESULT (WINAPI *GetBackColor)(IAgentBalloon *This,__LONG32 *plBGColor);
-      HRESULT (WINAPI *GetBorderColor)(IAgentBalloon *This,__LONG32 *plBorderColor);
-      HRESULT (WINAPI *SetVisible)(IAgentBalloon *This,__LONG32 bVisible);
-      HRESULT (WINAPI *GetVisible)(IAgentBalloon *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *SetFontName)(IAgentBalloon *This,BSTR bszFontName);
-      HRESULT (WINAPI *SetFontSize)(IAgentBalloon *This,__LONG32 lFontSize);
-      HRESULT (WINAPI *SetFontCharSet)(IAgentBalloon *This,short sFontCharSet);
-      HRESULT (WINAPI *GetFontCharSet)(IAgentBalloon *This,short *psFontCharSet);
+                   HRESULT (WINAPI *QueryInterface)(IAgentBalloon *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentBalloon *This);
+                   ULONG (WINAPI *Release)(IAgentBalloon *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentBalloon *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentBalloon *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentBalloon *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentBalloon *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetEnabled)(IAgentBalloon *This,__LONG32 *pbEnabled);
+                   HRESULT (WINAPI *GetNumLines)(IAgentBalloon *This,__LONG32 *plLines);
+                   HRESULT (WINAPI *GetNumCharsPerLine)(IAgentBalloon *This,__LONG32 *plCharsPerLine);
+                   HRESULT (WINAPI *GetFontName)(IAgentBalloon *This,BSTR *pbszFontName);
+                   HRESULT (WINAPI *GetFontSize)(IAgentBalloon *This,__LONG32 *plFontSize);
+                   HRESULT (WINAPI *GetFontBold)(IAgentBalloon *This,__LONG32 *pbFontBold);
+                   HRESULT (WINAPI *GetFontItalic)(IAgentBalloon *This,__LONG32 *pbFontItalic);
+                   HRESULT (WINAPI *GetFontStrikethru)(IAgentBalloon *This,__LONG32 *pbFontStrikethru);
+                   HRESULT (WINAPI *GetFontUnderline)(IAgentBalloon *This,__LONG32 *pbFontUnderline);
+                   HRESULT (WINAPI *GetForeColor)(IAgentBalloon *This,__LONG32 *plFGColor);
+                   HRESULT (WINAPI *GetBackColor)(IAgentBalloon *This,__LONG32 *plBGColor);
+                   HRESULT (WINAPI *GetBorderColor)(IAgentBalloon *This,__LONG32 *plBorderColor);
+                   HRESULT (WINAPI *SetVisible)(IAgentBalloon *This,__LONG32 bVisible);
+                   HRESULT (WINAPI *GetVisible)(IAgentBalloon *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *SetFontName)(IAgentBalloon *This,BSTR bszFontName);
+                   HRESULT (WINAPI *SetFontSize)(IAgentBalloon *This,__LONG32 lFontSize);
+                   HRESULT (WINAPI *SetFontCharSet)(IAgentBalloon *This,short sFontCharSet);
+                   HRESULT (WINAPI *GetFontCharSet)(IAgentBalloon *This,short *psFontCharSet);
     END_INTERFACE
   } IAgentBalloonVtbl;
   struct IAgentBalloon {
@@ -1196,35 +1196,35 @@ extern "C"{
 #else
   typedef struct IAgentBalloonExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentBalloonEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentBalloonEx *This);
-      ULONG (WINAPI *Release)(IAgentBalloonEx *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentBalloonEx *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentBalloonEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentBalloonEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentBalloonEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetEnabled)(IAgentBalloonEx *This,__LONG32 *pbEnabled);
-      HRESULT (WINAPI *GetNumLines)(IAgentBalloonEx *This,__LONG32 *plLines);
-      HRESULT (WINAPI *GetNumCharsPerLine)(IAgentBalloonEx *This,__LONG32 *plCharsPerLine);
-      HRESULT (WINAPI *GetFontName)(IAgentBalloonEx *This,BSTR *pbszFontName);
-      HRESULT (WINAPI *GetFontSize)(IAgentBalloonEx *This,__LONG32 *plFontSize);
-      HRESULT (WINAPI *GetFontBold)(IAgentBalloonEx *This,__LONG32 *pbFontBold);
-      HRESULT (WINAPI *GetFontItalic)(IAgentBalloonEx *This,__LONG32 *pbFontItalic);
-      HRESULT (WINAPI *GetFontStrikethru)(IAgentBalloonEx *This,__LONG32 *pbFontStrikethru);
-      HRESULT (WINAPI *GetFontUnderline)(IAgentBalloonEx *This,__LONG32 *pbFontUnderline);
-      HRESULT (WINAPI *GetForeColor)(IAgentBalloonEx *This,__LONG32 *plFGColor);
-      HRESULT (WINAPI *GetBackColor)(IAgentBalloonEx *This,__LONG32 *plBGColor);
-      HRESULT (WINAPI *GetBorderColor)(IAgentBalloonEx *This,__LONG32 *plBorderColor);
-      HRESULT (WINAPI *SetVisible)(IAgentBalloonEx *This,__LONG32 bVisible);
-      HRESULT (WINAPI *GetVisible)(IAgentBalloonEx *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *SetFontName)(IAgentBalloonEx *This,BSTR bszFontName);
-      HRESULT (WINAPI *SetFontSize)(IAgentBalloonEx *This,__LONG32 lFontSize);
-      HRESULT (WINAPI *SetFontCharSet)(IAgentBalloonEx *This,short sFontCharSet);
-      HRESULT (WINAPI *GetFontCharSet)(IAgentBalloonEx *This,short *psFontCharSet);
-      HRESULT (WINAPI *SetStyle)(IAgentBalloonEx *This,__LONG32 lStyle);
-      HRESULT (WINAPI *GetStyle)(IAgentBalloonEx *This,__LONG32 *plStyle);
-      HRESULT (WINAPI *SetNumLines)(IAgentBalloonEx *This,__LONG32 lLines);
-      HRESULT (WINAPI *SetNumCharsPerLine)(IAgentBalloonEx *This,__LONG32 lCharsPerLine);
+                   HRESULT (WINAPI *QueryInterface)(IAgentBalloonEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentBalloonEx *This);
+                   ULONG (WINAPI *Release)(IAgentBalloonEx *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentBalloonEx *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentBalloonEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentBalloonEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentBalloonEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetEnabled)(IAgentBalloonEx *This,__LONG32 *pbEnabled);
+                   HRESULT (WINAPI *GetNumLines)(IAgentBalloonEx *This,__LONG32 *plLines);
+                   HRESULT (WINAPI *GetNumCharsPerLine)(IAgentBalloonEx *This,__LONG32 *plCharsPerLine);
+                   HRESULT (WINAPI *GetFontName)(IAgentBalloonEx *This,BSTR *pbszFontName);
+                   HRESULT (WINAPI *GetFontSize)(IAgentBalloonEx *This,__LONG32 *plFontSize);
+                   HRESULT (WINAPI *GetFontBold)(IAgentBalloonEx *This,__LONG32 *pbFontBold);
+                   HRESULT (WINAPI *GetFontItalic)(IAgentBalloonEx *This,__LONG32 *pbFontItalic);
+                   HRESULT (WINAPI *GetFontStrikethru)(IAgentBalloonEx *This,__LONG32 *pbFontStrikethru);
+                   HRESULT (WINAPI *GetFontUnderline)(IAgentBalloonEx *This,__LONG32 *pbFontUnderline);
+                   HRESULT (WINAPI *GetForeColor)(IAgentBalloonEx *This,__LONG32 *plFGColor);
+                   HRESULT (WINAPI *GetBackColor)(IAgentBalloonEx *This,__LONG32 *plBGColor);
+                   HRESULT (WINAPI *GetBorderColor)(IAgentBalloonEx *This,__LONG32 *plBorderColor);
+                   HRESULT (WINAPI *SetVisible)(IAgentBalloonEx *This,__LONG32 bVisible);
+                   HRESULT (WINAPI *GetVisible)(IAgentBalloonEx *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *SetFontName)(IAgentBalloonEx *This,BSTR bszFontName);
+                   HRESULT (WINAPI *SetFontSize)(IAgentBalloonEx *This,__LONG32 lFontSize);
+                   HRESULT (WINAPI *SetFontCharSet)(IAgentBalloonEx *This,short sFontCharSet);
+                   HRESULT (WINAPI *GetFontCharSet)(IAgentBalloonEx *This,short *psFontCharSet);
+                   HRESULT (WINAPI *SetStyle)(IAgentBalloonEx *This,__LONG32 lStyle);
+                   HRESULT (WINAPI *GetStyle)(IAgentBalloonEx *This,__LONG32 *plStyle);
+                   HRESULT (WINAPI *SetNumLines)(IAgentBalloonEx *This,__LONG32 lLines);
+                   HRESULT (WINAPI *SetNumCharsPerLine)(IAgentBalloonEx *This,__LONG32 lCharsPerLine);
     END_INTERFACE
   } IAgentBalloonExVtbl;
   struct IAgentBalloonEx {
@@ -1313,44 +1313,44 @@ extern "C"{
 #else
   typedef struct IAgentCharacterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentCharacter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentCharacter *This);
-      ULONG (WINAPI *Release)(IAgentCharacter *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentCharacter *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentCharacter *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentCharacter *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentCharacter *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetVisible)(IAgentCharacter *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *SetPosition)(IAgentCharacter *This,__LONG32 lLeft,__LONG32 lTop);
-      HRESULT (WINAPI *GetPosition)(IAgentCharacter *This,__LONG32 *plLeft,__LONG32 *plTop);
-      HRESULT (WINAPI *SetSize)(IAgentCharacter *This,__LONG32 lWidth,__LONG32 lHeight);
-      HRESULT (WINAPI *GetSize)(IAgentCharacter *This,__LONG32 *plWidth,__LONG32 *plHeight);
-      HRESULT (WINAPI *GetName)(IAgentCharacter *This,BSTR *pbszName);
-      HRESULT (WINAPI *GetDescription)(IAgentCharacter *This,BSTR *pbszDescription);
-      HRESULT (WINAPI *GetTTSSpeed)(IAgentCharacter *This,__LONG32 *pdwSpeed);
-      HRESULT (WINAPI *GetTTSPitch)(IAgentCharacter *This,short *pwPitch);
-      HRESULT (WINAPI *Activate)(IAgentCharacter *This,short sState);
-      HRESULT (WINAPI *SetIdleOn)(IAgentCharacter *This,__LONG32 bOn);
-      HRESULT (WINAPI *GetIdleOn)(IAgentCharacter *This,__LONG32 *pbOn);
-      HRESULT (WINAPI *Prepare)(IAgentCharacter *This,__LONG32 dwType,BSTR bszName,__LONG32 bQueue,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Play)(IAgentCharacter *This,BSTR bszAnimation,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Stop)(IAgentCharacter *This,__LONG32 dwReqID);
-      HRESULT (WINAPI *StopAll)(IAgentCharacter *This,__LONG32 lTypes);
-      HRESULT (WINAPI *Wait)(IAgentCharacter *This,__LONG32 dwReqID,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Interrupt)(IAgentCharacter *This,__LONG32 dwReqID,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Show)(IAgentCharacter *This,__LONG32 bFast,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Hide)(IAgentCharacter *This,__LONG32 bFast,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Speak)(IAgentCharacter *This,BSTR bszText,BSTR bszUrl,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *MoveTo)(IAgentCharacter *This,short x,short y,__LONG32 lSpeed,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *GestureAt)(IAgentCharacter *This,short x,short y,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *GetMoveCause)(IAgentCharacter *This,__LONG32 *pdwCause);
-      HRESULT (WINAPI *GetVisibilityCause)(IAgentCharacter *This,__LONG32 *pdwCause);
-      HRESULT (WINAPI *HasOtherClients)(IAgentCharacter *This,__LONG32 *plNumOtherClients);
-      HRESULT (WINAPI *SetSoundEffectsOn)(IAgentCharacter *This,__LONG32 bOn);
-      HRESULT (WINAPI *GetSoundEffectsOn)(IAgentCharacter *This,__LONG32 *pbOn);
-      HRESULT (WINAPI *SetName)(IAgentCharacter *This,BSTR bszName);
-      HRESULT (WINAPI *SetDescription)(IAgentCharacter *This,BSTR bszDescription);
-      HRESULT (WINAPI *GetExtraData)(IAgentCharacter *This,BSTR *pbszExtraData);
+                   HRESULT (WINAPI *QueryInterface)(IAgentCharacter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentCharacter *This);
+                   ULONG (WINAPI *Release)(IAgentCharacter *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentCharacter *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentCharacter *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentCharacter *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentCharacter *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetVisible)(IAgentCharacter *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *SetPosition)(IAgentCharacter *This,__LONG32 lLeft,__LONG32 lTop);
+                   HRESULT (WINAPI *GetPosition)(IAgentCharacter *This,__LONG32 *plLeft,__LONG32 *plTop);
+                   HRESULT (WINAPI *SetSize)(IAgentCharacter *This,__LONG32 lWidth,__LONG32 lHeight);
+                   HRESULT (WINAPI *GetSize)(IAgentCharacter *This,__LONG32 *plWidth,__LONG32 *plHeight);
+                   HRESULT (WINAPI *GetName)(IAgentCharacter *This,BSTR *pbszName);
+                   HRESULT (WINAPI *GetDescription)(IAgentCharacter *This,BSTR *pbszDescription);
+                   HRESULT (WINAPI *GetTTSSpeed)(IAgentCharacter *This,__LONG32 *pdwSpeed);
+                   HRESULT (WINAPI *GetTTSPitch)(IAgentCharacter *This,short *pwPitch);
+                   HRESULT (WINAPI *Activate)(IAgentCharacter *This,short sState);
+                   HRESULT (WINAPI *SetIdleOn)(IAgentCharacter *This,__LONG32 bOn);
+                   HRESULT (WINAPI *GetIdleOn)(IAgentCharacter *This,__LONG32 *pbOn);
+                   HRESULT (WINAPI *Prepare)(IAgentCharacter *This,__LONG32 dwType,BSTR bszName,__LONG32 bQueue,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Play)(IAgentCharacter *This,BSTR bszAnimation,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Stop)(IAgentCharacter *This,__LONG32 dwReqID);
+                   HRESULT (WINAPI *StopAll)(IAgentCharacter *This,__LONG32 lTypes);
+                   HRESULT (WINAPI *Wait)(IAgentCharacter *This,__LONG32 dwReqID,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Interrupt)(IAgentCharacter *This,__LONG32 dwReqID,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Show)(IAgentCharacter *This,__LONG32 bFast,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Hide)(IAgentCharacter *This,__LONG32 bFast,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Speak)(IAgentCharacter *This,BSTR bszText,BSTR bszUrl,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *MoveTo)(IAgentCharacter *This,short x,short y,__LONG32 lSpeed,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *GestureAt)(IAgentCharacter *This,short x,short y,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *GetMoveCause)(IAgentCharacter *This,__LONG32 *pdwCause);
+                   HRESULT (WINAPI *GetVisibilityCause)(IAgentCharacter *This,__LONG32 *pdwCause);
+                   HRESULT (WINAPI *HasOtherClients)(IAgentCharacter *This,__LONG32 *plNumOtherClients);
+                   HRESULT (WINAPI *SetSoundEffectsOn)(IAgentCharacter *This,__LONG32 bOn);
+                   HRESULT (WINAPI *GetSoundEffectsOn)(IAgentCharacter *This,__LONG32 *pbOn);
+                   HRESULT (WINAPI *SetName)(IAgentCharacter *This,BSTR bszName);
+                   HRESULT (WINAPI *SetDescription)(IAgentCharacter *This,BSTR bszDescription);
+                   HRESULT (WINAPI *GetExtraData)(IAgentCharacter *This,BSTR *pbszExtraData);
     END_INTERFACE
   } IAgentCharacterVtbl;
   struct IAgentCharacter {
@@ -1494,67 +1494,67 @@ extern "C"{
 #else
   typedef struct IAgentCharacterExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentCharacterEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentCharacterEx *This);
-      ULONG (WINAPI *Release)(IAgentCharacterEx *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentCharacterEx *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentCharacterEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentCharacterEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentCharacterEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetVisible)(IAgentCharacterEx *This,__LONG32 *pbVisible);
-      HRESULT (WINAPI *SetPosition)(IAgentCharacterEx *This,__LONG32 lLeft,__LONG32 lTop);
-      HRESULT (WINAPI *GetPosition)(IAgentCharacterEx *This,__LONG32 *plLeft,__LONG32 *plTop);
-      HRESULT (WINAPI *SetSize)(IAgentCharacterEx *This,__LONG32 lWidth,__LONG32 lHeight);
-      HRESULT (WINAPI *GetSize)(IAgentCharacterEx *This,__LONG32 *plWidth,__LONG32 *plHeight);
-      HRESULT (WINAPI *GetName)(IAgentCharacterEx *This,BSTR *pbszName);
-      HRESULT (WINAPI *GetDescription)(IAgentCharacterEx *This,BSTR *pbszDescription);
-      HRESULT (WINAPI *GetTTSSpeed)(IAgentCharacterEx *This,__LONG32 *pdwSpeed);
-      HRESULT (WINAPI *GetTTSPitch)(IAgentCharacterEx *This,short *pwPitch);
-      HRESULT (WINAPI *Activate)(IAgentCharacterEx *This,short sState);
-      HRESULT (WINAPI *SetIdleOn)(IAgentCharacterEx *This,__LONG32 bOn);
-      HRESULT (WINAPI *GetIdleOn)(IAgentCharacterEx *This,__LONG32 *pbOn);
-      HRESULT (WINAPI *Prepare)(IAgentCharacterEx *This,__LONG32 dwType,BSTR bszName,__LONG32 bQueue,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Play)(IAgentCharacterEx *This,BSTR bszAnimation,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Stop)(IAgentCharacterEx *This,__LONG32 dwReqID);
-      HRESULT (WINAPI *StopAll)(IAgentCharacterEx *This,__LONG32 lTypes);
-      HRESULT (WINAPI *Wait)(IAgentCharacterEx *This,__LONG32 dwReqID,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Interrupt)(IAgentCharacterEx *This,__LONG32 dwReqID,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Show)(IAgentCharacterEx *This,__LONG32 bFast,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Hide)(IAgentCharacterEx *This,__LONG32 bFast,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Speak)(IAgentCharacterEx *This,BSTR bszText,BSTR bszUrl,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *MoveTo)(IAgentCharacterEx *This,short x,short y,__LONG32 lSpeed,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *GestureAt)(IAgentCharacterEx *This,short x,short y,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *GetMoveCause)(IAgentCharacterEx *This,__LONG32 *pdwCause);
-      HRESULT (WINAPI *GetVisibilityCause)(IAgentCharacterEx *This,__LONG32 *pdwCause);
-      HRESULT (WINAPI *HasOtherClients)(IAgentCharacterEx *This,__LONG32 *plNumOtherClients);
-      HRESULT (WINAPI *SetSoundEffectsOn)(IAgentCharacterEx *This,__LONG32 bOn);
-      HRESULT (WINAPI *GetSoundEffectsOn)(IAgentCharacterEx *This,__LONG32 *pbOn);
-      HRESULT (WINAPI *SetName)(IAgentCharacterEx *This,BSTR bszName);
-      HRESULT (WINAPI *SetDescription)(IAgentCharacterEx *This,BSTR bszDescription);
-      HRESULT (WINAPI *GetExtraData)(IAgentCharacterEx *This,BSTR *pbszExtraData);
-      HRESULT (WINAPI *ShowPopupMenu)(IAgentCharacterEx *This,short x,short y);
-      HRESULT (WINAPI *SetAutoPopupMenu)(IAgentCharacterEx *This,__LONG32 bAutoPopupMenu);
-      HRESULT (WINAPI *GetAutoPopupMenu)(IAgentCharacterEx *This,__LONG32 *pbAutoPopupMenu);
-      HRESULT (WINAPI *GetHelpFileName)(IAgentCharacterEx *This,BSTR *pbszName);
-      HRESULT (WINAPI *SetHelpFileName)(IAgentCharacterEx *This,BSTR bszName);
-      HRESULT (WINAPI *SetHelpModeOn)(IAgentCharacterEx *This,__LONG32 bHelpModeOn);
-      HRESULT (WINAPI *GetHelpModeOn)(IAgentCharacterEx *This,__LONG32 *pbHelpModeOn);
-      HRESULT (WINAPI *SetHelpContextID)(IAgentCharacterEx *This,__LONG32 ulID);
-      HRESULT (WINAPI *GetHelpContextID)(IAgentCharacterEx *This,__LONG32 *pulID);
-      HRESULT (WINAPI *GetActive)(IAgentCharacterEx *This,short *psState);
-      HRESULT (WINAPI *Listen)(IAgentCharacterEx *This,__LONG32 bListen);
-      HRESULT (WINAPI *SetLanguageID)(IAgentCharacterEx *This,__LONG32 langid);
-      HRESULT (WINAPI *GetLanguageID)(IAgentCharacterEx *This,__LONG32 *plangid);
-      HRESULT (WINAPI *GetTTSModeID)(IAgentCharacterEx *This,BSTR *pbszModeID);
-      HRESULT (WINAPI *SetTTSModeID)(IAgentCharacterEx *This,BSTR bszModeID);
-      HRESULT (WINAPI *GetSRModeID)(IAgentCharacterEx *This,BSTR *pbszModeID);
-      HRESULT (WINAPI *SetSRModeID)(IAgentCharacterEx *This,BSTR bszModeID);
-      HRESULT (WINAPI *GetGUID)(IAgentCharacterEx *This,BSTR *pbszID);
-      HRESULT (WINAPI *GetOriginalSize)(IAgentCharacterEx *This,__LONG32 *plWidth,__LONG32 *plHeight);
-      HRESULT (WINAPI *Think)(IAgentCharacterEx *This,BSTR bszText,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *GetVersion)(IAgentCharacterEx *This,short *psMajor,short *psMinor);
-      HRESULT (WINAPI *GetAnimationNames)(IAgentCharacterEx *This,IUnknown **punkEnum);
-      HRESULT (WINAPI *GetSRStatus)(IAgentCharacterEx *This,__LONG32 *plStatus);
+                   HRESULT (WINAPI *QueryInterface)(IAgentCharacterEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentCharacterEx *This);
+                   ULONG (WINAPI *Release)(IAgentCharacterEx *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentCharacterEx *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentCharacterEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentCharacterEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentCharacterEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetVisible)(IAgentCharacterEx *This,__LONG32 *pbVisible);
+                   HRESULT (WINAPI *SetPosition)(IAgentCharacterEx *This,__LONG32 lLeft,__LONG32 lTop);
+                   HRESULT (WINAPI *GetPosition)(IAgentCharacterEx *This,__LONG32 *plLeft,__LONG32 *plTop);
+                   HRESULT (WINAPI *SetSize)(IAgentCharacterEx *This,__LONG32 lWidth,__LONG32 lHeight);
+                   HRESULT (WINAPI *GetSize)(IAgentCharacterEx *This,__LONG32 *plWidth,__LONG32 *plHeight);
+                   HRESULT (WINAPI *GetName)(IAgentCharacterEx *This,BSTR *pbszName);
+                   HRESULT (WINAPI *GetDescription)(IAgentCharacterEx *This,BSTR *pbszDescription);
+                   HRESULT (WINAPI *GetTTSSpeed)(IAgentCharacterEx *This,__LONG32 *pdwSpeed);
+                   HRESULT (WINAPI *GetTTSPitch)(IAgentCharacterEx *This,short *pwPitch);
+                   HRESULT (WINAPI *Activate)(IAgentCharacterEx *This,short sState);
+                   HRESULT (WINAPI *SetIdleOn)(IAgentCharacterEx *This,__LONG32 bOn);
+                   HRESULT (WINAPI *GetIdleOn)(IAgentCharacterEx *This,__LONG32 *pbOn);
+                   HRESULT (WINAPI *Prepare)(IAgentCharacterEx *This,__LONG32 dwType,BSTR bszName,__LONG32 bQueue,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Play)(IAgentCharacterEx *This,BSTR bszAnimation,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Stop)(IAgentCharacterEx *This,__LONG32 dwReqID);
+                   HRESULT (WINAPI *StopAll)(IAgentCharacterEx *This,__LONG32 lTypes);
+                   HRESULT (WINAPI *Wait)(IAgentCharacterEx *This,__LONG32 dwReqID,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Interrupt)(IAgentCharacterEx *This,__LONG32 dwReqID,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Show)(IAgentCharacterEx *This,__LONG32 bFast,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Hide)(IAgentCharacterEx *This,__LONG32 bFast,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Speak)(IAgentCharacterEx *This,BSTR bszText,BSTR bszUrl,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *MoveTo)(IAgentCharacterEx *This,short x,short y,__LONG32 lSpeed,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *GestureAt)(IAgentCharacterEx *This,short x,short y,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *GetMoveCause)(IAgentCharacterEx *This,__LONG32 *pdwCause);
+                   HRESULT (WINAPI *GetVisibilityCause)(IAgentCharacterEx *This,__LONG32 *pdwCause);
+                   HRESULT (WINAPI *HasOtherClients)(IAgentCharacterEx *This,__LONG32 *plNumOtherClients);
+                   HRESULT (WINAPI *SetSoundEffectsOn)(IAgentCharacterEx *This,__LONG32 bOn);
+                   HRESULT (WINAPI *GetSoundEffectsOn)(IAgentCharacterEx *This,__LONG32 *pbOn);
+                   HRESULT (WINAPI *SetName)(IAgentCharacterEx *This,BSTR bszName);
+                   HRESULT (WINAPI *SetDescription)(IAgentCharacterEx *This,BSTR bszDescription);
+                   HRESULT (WINAPI *GetExtraData)(IAgentCharacterEx *This,BSTR *pbszExtraData);
+                   HRESULT (WINAPI *ShowPopupMenu)(IAgentCharacterEx *This,short x,short y);
+                   HRESULT (WINAPI *SetAutoPopupMenu)(IAgentCharacterEx *This,__LONG32 bAutoPopupMenu);
+                   HRESULT (WINAPI *GetAutoPopupMenu)(IAgentCharacterEx *This,__LONG32 *pbAutoPopupMenu);
+                   HRESULT (WINAPI *GetHelpFileName)(IAgentCharacterEx *This,BSTR *pbszName);
+                   HRESULT (WINAPI *SetHelpFileName)(IAgentCharacterEx *This,BSTR bszName);
+                   HRESULT (WINAPI *SetHelpModeOn)(IAgentCharacterEx *This,__LONG32 bHelpModeOn);
+                   HRESULT (WINAPI *GetHelpModeOn)(IAgentCharacterEx *This,__LONG32 *pbHelpModeOn);
+                   HRESULT (WINAPI *SetHelpContextID)(IAgentCharacterEx *This,__LONG32 ulID);
+                   HRESULT (WINAPI *GetHelpContextID)(IAgentCharacterEx *This,__LONG32 *pulID);
+                   HRESULT (WINAPI *GetActive)(IAgentCharacterEx *This,short *psState);
+                   HRESULT (WINAPI *Listen)(IAgentCharacterEx *This,__LONG32 bListen);
+                   HRESULT (WINAPI *SetLanguageID)(IAgentCharacterEx *This,__LONG32 langid);
+                   HRESULT (WINAPI *GetLanguageID)(IAgentCharacterEx *This,__LONG32 *plangid);
+                   HRESULT (WINAPI *GetTTSModeID)(IAgentCharacterEx *This,BSTR *pbszModeID);
+                   HRESULT (WINAPI *SetTTSModeID)(IAgentCharacterEx *This,BSTR bszModeID);
+                   HRESULT (WINAPI *GetSRModeID)(IAgentCharacterEx *This,BSTR *pbszModeID);
+                   HRESULT (WINAPI *SetSRModeID)(IAgentCharacterEx *This,BSTR bszModeID);
+                   HRESULT (WINAPI *GetGUID)(IAgentCharacterEx *This,BSTR *pbszID);
+                   HRESULT (WINAPI *GetOriginalSize)(IAgentCharacterEx *This,__LONG32 *plWidth,__LONG32 *plHeight);
+                   HRESULT (WINAPI *Think)(IAgentCharacterEx *This,BSTR bszText,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *GetVersion)(IAgentCharacterEx *This,short *psMajor,short *psMinor);
+                   HRESULT (WINAPI *GetAnimationNames)(IAgentCharacterEx *This,IUnknown **punkEnum);
+                   HRESULT (WINAPI *GetSRStatus)(IAgentCharacterEx *This,__LONG32 *plStatus);
     END_INTERFACE
   } IAgentCharacterExVtbl;
   struct IAgentCharacterEx {
@@ -1688,19 +1688,19 @@ extern "C"{
 #else
   typedef struct IAgentVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgent *This);
-      ULONG (WINAPI *Release)(IAgent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Load)(IAgent *This,VARIANT vLoadKey,__LONG32 *pdwCharID,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Unload)(IAgent *This,__LONG32 dwCharID);
-      HRESULT (WINAPI *Register)(IAgent *This,IUnknown *punkNotifySink,__LONG32 *pdwSinkID);
-      HRESULT (WINAPI *Unregister)(IAgent *This,__LONG32 dwSinkID);
-      HRESULT (WINAPI *GetCharacter)(IAgent *This,__LONG32 dwCharID,IDispatch **ppunkCharacter);
-      HRESULT (WINAPI *GetSuspended)(IAgent *This,__LONG32 *pbSuspended);
+                   HRESULT (WINAPI *QueryInterface)(IAgent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgent *This);
+                   ULONG (WINAPI *Release)(IAgent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Load)(IAgent *This,VARIANT vLoadKey,__LONG32 *pdwCharID,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Unload)(IAgent *This,__LONG32 dwCharID);
+                   HRESULT (WINAPI *Register)(IAgent *This,IUnknown *punkNotifySink,__LONG32 *pdwSinkID);
+                   HRESULT (WINAPI *Unregister)(IAgent *This,__LONG32 dwSinkID);
+                   HRESULT (WINAPI *GetCharacter)(IAgent *This,__LONG32 dwCharID,IDispatch **ppunkCharacter);
+                   HRESULT (WINAPI *GetSuspended)(IAgent *This,__LONG32 *pbSuspended);
     END_INTERFACE
   } IAgentVtbl;
   struct IAgent {
@@ -1749,22 +1749,22 @@ extern "C"{
 #else
   typedef struct IAgentExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentEx *This);
-      ULONG (WINAPI *Release)(IAgentEx *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentEx *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Load)(IAgentEx *This,VARIANT vLoadKey,__LONG32 *pdwCharID,__LONG32 *pdwReqID);
-      HRESULT (WINAPI *Unload)(IAgentEx *This,__LONG32 dwCharID);
-      HRESULT (WINAPI *Register)(IAgentEx *This,IUnknown *punkNotifySink,__LONG32 *pdwSinkID);
-      HRESULT (WINAPI *Unregister)(IAgentEx *This,__LONG32 dwSinkID);
-      HRESULT (WINAPI *GetCharacter)(IAgentEx *This,__LONG32 dwCharID,IDispatch **ppunkCharacter);
-      HRESULT (WINAPI *GetSuspended)(IAgentEx *This,__LONG32 *pbSuspended);
-      HRESULT (WINAPI *GetCharacterEx)(IAgentEx *This,__LONG32 dwCharID,IAgentCharacterEx **ppCharacterEx);
-      HRESULT (WINAPI *GetVersion)(IAgentEx *This,short *psMajor,short *psMinor);
-      HRESULT (WINAPI *ShowDefaultCharacterProperties)(IAgentEx *This,short x,short y,__LONG32 bUseDefaultPosition);
+                   HRESULT (WINAPI *QueryInterface)(IAgentEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentEx *This);
+                   ULONG (WINAPI *Release)(IAgentEx *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentEx *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Load)(IAgentEx *This,VARIANT vLoadKey,__LONG32 *pdwCharID,__LONG32 *pdwReqID);
+                   HRESULT (WINAPI *Unload)(IAgentEx *This,__LONG32 dwCharID);
+                   HRESULT (WINAPI *Register)(IAgentEx *This,IUnknown *punkNotifySink,__LONG32 *pdwSinkID);
+                   HRESULT (WINAPI *Unregister)(IAgentEx *This,__LONG32 dwSinkID);
+                   HRESULT (WINAPI *GetCharacter)(IAgentEx *This,__LONG32 dwCharID,IDispatch **ppunkCharacter);
+                   HRESULT (WINAPI *GetSuspended)(IAgentEx *This,__LONG32 *pbSuspended);
+                   HRESULT (WINAPI *GetCharacterEx)(IAgentEx *This,__LONG32 dwCharID,IAgentCharacterEx **ppCharacterEx);
+                   HRESULT (WINAPI *GetVersion)(IAgentEx *This,short *psMajor,short *psMinor);
+                   HRESULT (WINAPI *ShowDefaultCharacterProperties)(IAgentEx *This,short x,short y,__LONG32 bUseDefaultPosition);
     END_INTERFACE
   } IAgentExVtbl;
   struct IAgentEx {
@@ -1823,29 +1823,29 @@ extern "C"{
 #else
   typedef struct IAgentNotifySinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentNotifySink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentNotifySink *This);
-      ULONG (WINAPI *Release)(IAgentNotifySink *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentNotifySink *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentNotifySink *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentNotifySink *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentNotifySink *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Command)(IAgentNotifySink *This,__LONG32 dwCommandID,IUnknown *punkUserInput);
-      HRESULT (WINAPI *ActivateInputState)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 bActivated);
-      HRESULT (WINAPI *Restart)(IAgentNotifySink *This);
-      HRESULT (WINAPI *Shutdown)(IAgentNotifySink *This);
-      HRESULT (WINAPI *VisibleState)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 bVisible,__LONG32 dwCause);
-      HRESULT (WINAPI *Click)(IAgentNotifySink *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
-      HRESULT (WINAPI *DblClick)(IAgentNotifySink *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
-      HRESULT (WINAPI *DragStart)(IAgentNotifySink *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
-      HRESULT (WINAPI *DragComplete)(IAgentNotifySink *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
-      HRESULT (WINAPI *RequestStart)(IAgentNotifySink *This,__LONG32 dwRequestID);
-      HRESULT (WINAPI *RequestComplete)(IAgentNotifySink *This,__LONG32 dwRequestID,__LONG32 hrStatus);
-      HRESULT (WINAPI *BookMark)(IAgentNotifySink *This,__LONG32 dwBookMarkID);
-      HRESULT (WINAPI *Idle)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 bStart);
-      HRESULT (WINAPI *Move)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 x,__LONG32 y,__LONG32 dwCause);
-      HRESULT (WINAPI *Size)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 lWidth,__LONG32 lHeight);
-      HRESULT (WINAPI *BalloonVisibleState)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 bVisible);
+                   HRESULT (WINAPI *QueryInterface)(IAgentNotifySink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentNotifySink *This);
+                   ULONG (WINAPI *Release)(IAgentNotifySink *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentNotifySink *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentNotifySink *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentNotifySink *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentNotifySink *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Command)(IAgentNotifySink *This,__LONG32 dwCommandID,IUnknown *punkUserInput);
+                   HRESULT (WINAPI *ActivateInputState)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 bActivated);
+                   HRESULT (WINAPI *Restart)(IAgentNotifySink *This);
+                   HRESULT (WINAPI *Shutdown)(IAgentNotifySink *This);
+                   HRESULT (WINAPI *VisibleState)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 bVisible,__LONG32 dwCause);
+                   HRESULT (WINAPI *Click)(IAgentNotifySink *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
+                   HRESULT (WINAPI *DblClick)(IAgentNotifySink *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
+                   HRESULT (WINAPI *DragStart)(IAgentNotifySink *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
+                   HRESULT (WINAPI *DragComplete)(IAgentNotifySink *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
+                   HRESULT (WINAPI *RequestStart)(IAgentNotifySink *This,__LONG32 dwRequestID);
+                   HRESULT (WINAPI *RequestComplete)(IAgentNotifySink *This,__LONG32 dwRequestID,__LONG32 hrStatus);
+                   HRESULT (WINAPI *BookMark)(IAgentNotifySink *This,__LONG32 dwBookMarkID);
+                   HRESULT (WINAPI *Idle)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 bStart);
+                   HRESULT (WINAPI *Move)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 x,__LONG32 y,__LONG32 dwCause);
+                   HRESULT (WINAPI *Size)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 lWidth,__LONG32 lHeight);
+                   HRESULT (WINAPI *BalloonVisibleState)(IAgentNotifySink *This,__LONG32 dwCharID,__LONG32 bVisible);
     END_INTERFACE
   } IAgentNotifySinkVtbl;
   struct IAgentNotifySink {
@@ -1926,34 +1926,34 @@ extern "C"{
 #else
   typedef struct IAgentNotifySinkExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentNotifySinkEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentNotifySinkEx *This);
-      ULONG (WINAPI *Release)(IAgentNotifySinkEx *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAgentNotifySinkEx *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAgentNotifySinkEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAgentNotifySinkEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAgentNotifySinkEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Command)(IAgentNotifySinkEx *This,__LONG32 dwCommandID,IUnknown *punkUserInput);
-      HRESULT (WINAPI *ActivateInputState)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bActivated);
-      HRESULT (WINAPI *Restart)(IAgentNotifySinkEx *This);
-      HRESULT (WINAPI *Shutdown)(IAgentNotifySinkEx *This);
-      HRESULT (WINAPI *VisibleState)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bVisible,__LONG32 dwCause);
-      HRESULT (WINAPI *Click)(IAgentNotifySinkEx *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
-      HRESULT (WINAPI *DblClick)(IAgentNotifySinkEx *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
-      HRESULT (WINAPI *DragStart)(IAgentNotifySinkEx *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
-      HRESULT (WINAPI *DragComplete)(IAgentNotifySinkEx *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
-      HRESULT (WINAPI *RequestStart)(IAgentNotifySinkEx *This,__LONG32 dwRequestID);
-      HRESULT (WINAPI *RequestComplete)(IAgentNotifySinkEx *This,__LONG32 dwRequestID,__LONG32 hrStatus);
-      HRESULT (WINAPI *BookMark)(IAgentNotifySinkEx *This,__LONG32 dwBookMarkID);
-      HRESULT (WINAPI *Idle)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bStart);
-      HRESULT (WINAPI *Move)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 x,__LONG32 y,__LONG32 dwCause);
-      HRESULT (WINAPI *Size)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 lWidth,__LONG32 lHeight);
-      HRESULT (WINAPI *BalloonVisibleState)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bVisible);
-      HRESULT (WINAPI *HelpComplete)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 dwCommandID,__LONG32 dwCause);
-      HRESULT (WINAPI *ListeningState)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bListening,__LONG32 dwCause);
-      HRESULT (WINAPI *DefaultCharacterChange)(IAgentNotifySinkEx *This,BSTR bszGUID);
-      HRESULT (WINAPI *AgentPropertyChange)(IAgentNotifySinkEx *This);
-      HRESULT (WINAPI *ActiveClientChange)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 lStatus);
+                   HRESULT (WINAPI *QueryInterface)(IAgentNotifySinkEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentNotifySinkEx *This);
+                   ULONG (WINAPI *Release)(IAgentNotifySinkEx *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAgentNotifySinkEx *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAgentNotifySinkEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAgentNotifySinkEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAgentNotifySinkEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Command)(IAgentNotifySinkEx *This,__LONG32 dwCommandID,IUnknown *punkUserInput);
+                   HRESULT (WINAPI *ActivateInputState)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bActivated);
+                   HRESULT (WINAPI *Restart)(IAgentNotifySinkEx *This);
+                   HRESULT (WINAPI *Shutdown)(IAgentNotifySinkEx *This);
+                   HRESULT (WINAPI *VisibleState)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bVisible,__LONG32 dwCause);
+                   HRESULT (WINAPI *Click)(IAgentNotifySinkEx *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
+                   HRESULT (WINAPI *DblClick)(IAgentNotifySinkEx *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
+                   HRESULT (WINAPI *DragStart)(IAgentNotifySinkEx *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
+                   HRESULT (WINAPI *DragComplete)(IAgentNotifySinkEx *This,__LONG32 dwCharID,short fwKeys,__LONG32 x,__LONG32 y);
+                   HRESULT (WINAPI *RequestStart)(IAgentNotifySinkEx *This,__LONG32 dwRequestID);
+                   HRESULT (WINAPI *RequestComplete)(IAgentNotifySinkEx *This,__LONG32 dwRequestID,__LONG32 hrStatus);
+                   HRESULT (WINAPI *BookMark)(IAgentNotifySinkEx *This,__LONG32 dwBookMarkID);
+                   HRESULT (WINAPI *Idle)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bStart);
+                   HRESULT (WINAPI *Move)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 x,__LONG32 y,__LONG32 dwCause);
+                   HRESULT (WINAPI *Size)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 lWidth,__LONG32 lHeight);
+                   HRESULT (WINAPI *BalloonVisibleState)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bVisible);
+                   HRESULT (WINAPI *HelpComplete)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 dwCommandID,__LONG32 dwCause);
+                   HRESULT (WINAPI *ListeningState)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 bListening,__LONG32 dwCause);
+                   HRESULT (WINAPI *DefaultCharacterChange)(IAgentNotifySinkEx *This,BSTR bszGUID);
+                   HRESULT (WINAPI *AgentPropertyChange)(IAgentNotifySinkEx *This);
+                   HRESULT (WINAPI *ActiveClientChange)(IAgentNotifySinkEx *This,__LONG32 dwCharID,__LONG32 lStatus);
     END_INTERFACE
   } IAgentNotifySinkExVtbl;
   struct IAgentNotifySinkEx {
@@ -2015,12 +2015,12 @@ extern "C"{
 #else
   typedef struct IAgentPrivateNotifySinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentPrivateNotifySink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentPrivateNotifySink *This);
-      ULONG (WINAPI *Release)(IAgentPrivateNotifySink *This);
-      HRESULT (WINAPI *ReleaseAll)(IAgentPrivateNotifySink *This);
-      HRESULT (WINAPI *ReleaseOne)(IAgentPrivateNotifySink *This,void *pnNotify);
-      HRESULT (WINAPI *GetClientID)(IAgentPrivateNotifySink *This,DWORD *pdwClientID);
+                   HRESULT (WINAPI *QueryInterface)(IAgentPrivateNotifySink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentPrivateNotifySink *This);
+                   ULONG (WINAPI *Release)(IAgentPrivateNotifySink *This);
+                   HRESULT (WINAPI *ReleaseAll)(IAgentPrivateNotifySink *This);
+                   HRESULT (WINAPI *ReleaseOne)(IAgentPrivateNotifySink *This,void *pnNotify);
+                   HRESULT (WINAPI *GetClientID)(IAgentPrivateNotifySink *This,DWORD *pdwClientID);
     END_INTERFACE
   } IAgentPrivateNotifySinkVtbl;
   struct IAgentPrivateNotifySink {
@@ -2055,10 +2055,10 @@ extern "C"{
 #else
   typedef struct IAgentCustomMarshalMakerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentCustomMarshalMaker *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentCustomMarshalMaker *This);
-      ULONG (WINAPI *Release)(IAgentCustomMarshalMaker *This);
-      HRESULT (WINAPI *Create)(IAgentCustomMarshalMaker *This,IUnknown *pSink,REFIID riidSink,IUnknown **pMarshaledSink);
+                   HRESULT (WINAPI *QueryInterface)(IAgentCustomMarshalMaker *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentCustomMarshalMaker *This);
+                   ULONG (WINAPI *Release)(IAgentCustomMarshalMaker *This);
+                   HRESULT (WINAPI *Create)(IAgentCustomMarshalMaker *This,IUnknown *pSink,REFIID riidSink,IUnknown **pMarshaledSink);
     END_INTERFACE
   } IAgentCustomMarshalMakerVtbl;
   struct IAgentCustomMarshalMaker {
@@ -2086,10 +2086,10 @@ extern "C"{
 #else
   typedef struct IAgentClientStatusVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAgentClientStatus *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAgentClientStatus *This);
-      ULONG (WINAPI *Release)(IAgentClientStatus *This);
-      HRESULT (WINAPI *Ping)(IAgentClientStatus *This);
+                   HRESULT (WINAPI *QueryInterface)(IAgentClientStatus *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAgentClientStatus *This);
+                   ULONG (WINAPI *Release)(IAgentClientStatus *This);
+                   HRESULT (WINAPI *Ping)(IAgentClientStatus *This);
     END_INTERFACE
   } IAgentClientStatusVtbl;
   struct IAgentClientStatus {

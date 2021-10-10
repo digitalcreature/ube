@@ -8,13 +8,13 @@
 
 #include <dxva2api.h>
 
-#define OPM_OMAC_SIZE                                16
-#define OPM_CONFIGURE_SETTING_DATA_SIZE              4056
-#define OPM_REQUESTED_INFORMATION_SIZE               4076
+#define OPM_OMAC_SIZE                                                                                                 16
+#define OPM_CONFIGURE_SETTING_DATA_SIZE                                        4056
+#define OPM_REQUESTED_INFORMATION_SIZE                                         4076
 #define OPM_ENCRYPTED_INITIALIZATION_PARAMETERS_SIZE 256
-#define OPM_GET_INFORMATION_PARAMETERS_SIZE          4056
-#define OPM_HDCP_KEY_SELECTION_VECTOR_SIZE           5
-#define OPM_128_BIT_RANDOM_NUMBER_SIZE               16
+#define OPM_GET_INFORMATION_PARAMETERS_SIZE                       4056
+#define OPM_HDCP_KEY_SELECTION_VECTOR_SIZE                        5
+#define OPM_128_BIT_RANDOM_NUMBER_SIZE                                         16
 
 #define OPM_CGMSA_OFF 0x00
 #define OPM_CGMSA_COPY_FREELY 0x01
@@ -51,7 +51,7 @@ typedef enum _OPM_VIDEO_OUTPUT_SEMANTICS {
 } OPM_VIDEO_OUTPUT_SEMANTICS;
 
 typedef enum _OPM_ACP_PROTECTION_LEVEL {
-  OPM_ACP_OFF           = 0,
+  OPM_ACP_OFF                        = 0,
   OPM_ACP_LEVEL_ONE     = 1,
   OPM_ACP_LEVEL_TWO     = 2,
   OPM_ACP_LEVEL_THREE   = 3,
@@ -59,27 +59,27 @@ typedef enum _OPM_ACP_PROTECTION_LEVEL {
 } OPM_ACP_PROTECTION_LEVEL;
 
 typedef enum _OPM_DPCP_PROTECTION_LEVEL {
-  OPM_DPCP_OFF           = 0,
-  OPM_DPCP_ON            = 1,
+  OPM_DPCP_OFF                        = 0,
+  OPM_DPCP_ON                                      = 1,
   OPM_DPCP_FORCE_ULONG   = 0x7fffffff
 } OPM_DPCP_PROTECTION_LEVEL;
 
 typedef enum _OPM_HDCP_PROTECTION_LEVEL {
-  OPM_HDCP_OFF           = 0,
-  OPM_HDCP_ON            = 1,
+  OPM_HDCP_OFF                        = 0,
+  OPM_HDCP_ON                                      = 1,
   OPM_HDCP_FORCE_ULONG   = 0x7fffffff
 } OPM_HDCP_PROTECTION_LEVEL;
 
 typedef enum _OPM_IMAGE_ASPECT_RATIO_EN300294 {
-  OPM_ASPECT_RATIO_EN300294_FULL_FORMAT_4_BY_3                    = 0,
-  OPM_ASPECT_RATIO_EN300294_BOX_14_BY_9_CENTER                    = 1,
-  OPM_ASPECT_RATIO_EN300294_BOX_14_BY_9_TOP                       = 2,
-  OPM_ASPECT_RATIO_EN300294_BOX_16_BY_9_CENTER                    = 3,
-  OPM_ASPECT_RATIO_EN300294_BOX_16_BY_9_TOP                       = 4,
-  OPM_ASPECT_RATIO_EN300294_BOX_GT_16_BY_9_CENTER                 = 5,
+  OPM_ASPECT_RATIO_EN300294_FULL_FORMAT_4_BY_3                                                           = 0,
+  OPM_ASPECT_RATIO_EN300294_BOX_14_BY_9_CENTER                                                           = 1,
+  OPM_ASPECT_RATIO_EN300294_BOX_14_BY_9_TOP                                                              = 2,
+  OPM_ASPECT_RATIO_EN300294_BOX_16_BY_9_CENTER                                                           = 3,
+  OPM_ASPECT_RATIO_EN300294_BOX_16_BY_9_TOP                                                              = 4,
+  OPM_ASPECT_RATIO_EN300294_BOX_GT_16_BY_9_CENTER                                           = 5,
   OPM_ASPECT_RATIO_EN300294_FULL_FORMAT_4_BY_3_PROTECTED_CENTER   = 6,
-  OPM_ASPECT_RATIO_EN300294_FULL_FORMAT_16_BY_9_ANAMORPHIC        = 7,
-  OPM_ASPECT_RATIO_FORCE_ULONG                                    = 0x7FFFFFFF
+  OPM_ASPECT_RATIO_EN300294_FULL_FORMAT_16_BY_9_ANAMORPHIC                     = 7,
+  OPM_ASPECT_RATIO_FORCE_ULONG                                                                                                                  = 0x7FFFFFFF
 } OPM_IMAGE_ASPECT_RATIO_EN300294;
 
 typedef struct _OPM_OMAC {
@@ -101,47 +101,47 @@ typedef struct _OPM_RANDOM_NUMBER {
 } OPM_RANDOM_NUMBER;
 
 typedef struct _OPM_GET_INFO_PARAMETERS {
-  OPM_OMAC          omac;
+  OPM_OMAC                       omac;
   OPM_RANDOM_NUMBER rnRandomNumber;
-  GUID              guidInformation;
-  ULONG             ulSequenceNumber;
-  ULONG             cbParametersSize;
-  BYTE              abParameters[OPM_GET_INFORMATION_PARAMETERS_SIZE];
+  GUID                                        guidInformation;
+  ULONG                                       ulSequenceNumber;
+  ULONG                                       cbParametersSize;
+  BYTE                                        abParameters[OPM_GET_INFORMATION_PARAMETERS_SIZE];
 } OPM_GET_INFO_PARAMETERS;
 
 typedef struct _OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS {
   OPM_RANDOM_NUMBER rnRandomNumber;
-  GUID              guidInformation;
-  ULONG             ulSequenceNumber;
-  ULONG             cbParametersSize;
-  BYTE              abParameters[OPM_GET_INFORMATION_PARAMETERS_SIZE];
+  GUID                                        guidInformation;
+  ULONG                                       ulSequenceNumber;
+  ULONG                                       cbParametersSize;
+  BYTE                                        abParameters[OPM_GET_INFORMATION_PARAMETERS_SIZE];
 } OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS;
 
 typedef struct _OPM_ACP_AND_CGMSA_SIGNALING {
   OPM_RANDOM_NUMBER rnRandomNumber;
-  ULONG             ulStatusFlags;
-  ULONG             ulAvailableTVProtectionStandards;
-  ULONG             ulActiveTVProtectionStandard;
-  ULONG             ulReserved;
-  ULONG             ulAspectRatioValidMask1;
-  ULONG             ulAspectRatioData1;
-  ULONG             ulAspectRatioValidMask2;
-  ULONG             ulAspectRatioData2;
-  ULONG             ulAspectRatioValidMask3;
-  ULONG             ulAspectRatioData3;
-  ULONG             ulReserved2[4];
-  ULONG             ulReserved3[4];
+  ULONG                                       ulStatusFlags;
+  ULONG                                       ulAvailableTVProtectionStandards;
+  ULONG                                       ulActiveTVProtectionStandard;
+  ULONG                                       ulReserved;
+  ULONG                                       ulAspectRatioValidMask1;
+  ULONG                                       ulAspectRatioData1;
+  ULONG                                       ulAspectRatioValidMask2;
+  ULONG                                       ulAspectRatioData2;
+  ULONG                                       ulAspectRatioValidMask3;
+  ULONG                                       ulAspectRatioData3;
+  ULONG                                       ulReserved2[4];
+  ULONG                                       ulReserved3[4];
 } OPM_ACP_AND_CGMSA_SIGNALING;
 
 typedef struct _OPM_ACTUAL_OUTPUT_FORMAT {
   OPM_RANDOM_NUMBER  rnRandomNumber;
-  ULONG              ulStatusFlags;
-  ULONG              ulDisplayWidth;
-  ULONG              ulDisplayHeight;
+  ULONG                                        ulStatusFlags;
+  ULONG                                        ulDisplayWidth;
+  ULONG                                        ulDisplayHeight;
   DXVA2_SampleFormat dsfSampleInterleaveFormat;
-  D3DFORMAT          d3dFormat;
-  ULONG              ulFrequencyNumerator;
-  ULONG              ulFrequencyDenominator;
+  D3DFORMAT                       d3dFormat;
+  ULONG                                        ulFrequencyNumerator;
+  ULONG                                        ulFrequencyDenominator;
 } OPM_ACTUAL_OUTPUT_FORMAT;
 
 typedef struct _OPM_CONFIGURE_PARAMETERS {
@@ -160,19 +160,19 @@ typedef struct _OPM_HDCP_KEY_SELECTION_VECTOR {
 #define OPM_HDCP_FLAG_REPEATER 0x01
 
 typedef struct _OPM_CONNECTED_HDCP_DEVICE_INFORMATION {
-  OPM_RANDOM_NUMBER             rnRandomNumber;
-  ULONG                         ulStatusFlags;
-  ULONG                         ulHDCPFlags;
+  OPM_RANDOM_NUMBER                                       rnRandomNumber;
+  ULONG                                                                             ulStatusFlags;
+  ULONG                                                                             ulHDCPFlags;
   OPM_HDCP_KEY_SELECTION_VECTOR ksvB;
-  BYTE                          Reserved[11];
-  BYTE                          Reserved2[16];
-  BYTE                          Reserved3[16];
+  BYTE                                                                              Reserved[11];
+  BYTE                                                                              Reserved2[16];
+  BYTE                                                                              Reserved3[16];
 } OPM_CONNECTED_HDCP_DEVICE_INFORMATION;
 
 typedef struct _OPM_OUTPUT_ID_DATA {
   OPM_RANDOM_NUMBER rnRandomNumber;
-  ULONG             ulStatusFlags;
-  UINT64            OutputId;
+  ULONG                                       ulStatusFlags;
+  UINT64                                      OutputId;
 } OPM_OUTPUT_ID_DATA;
 
 typedef struct _OPM_SET_ACP_AND_CGMSA_SIGNALING_PARAMETERS {
@@ -201,10 +201,10 @@ typedef struct _OPM_SET_PROTECTION_LEVEL_PARAMETERS {
 
 typedef struct _OPM_STANDARD_INFORMATION {
   OPM_RANDOM_NUMBER rnRandomNumber;
-  ULONG             ulStatusFlags;
-  ULONG             ulInformation;
-  ULONG             ulReserved;
-  ULONG             ulReserved2;
+  ULONG                                       ulStatusFlags;
+  ULONG                                       ulInformation;
+  ULONG                                       ulReserved;
+  ULONG                                       ulReserved2;
 } OPM_STANDARD_INFORMATION;
 
 #ifdef __cplusplus
@@ -262,7 +262,7 @@ HRESULT WINAPI OPMGetVideoOutputsFromIDirect3DDevice9Object(
 
 typedef struct _OPM_GET_CODEC_INFO_INFORMATION {
   OPM_RANDOM_NUMBER rnRandomNumber;
-  DWORD             Merit;
+  DWORD                                       Merit;
 } OPM_GET_CODEC_INFO_INFORMATION;
 
 typedef struct _OPM_GET_CODEC_INFO_PARAMETERS {

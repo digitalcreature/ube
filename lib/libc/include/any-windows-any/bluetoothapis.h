@@ -34,15 +34,15 @@ typedef struct _BLUETOOTH_COD_PAIRS {
 } BLUETOOTH_COD_PAIRS;
 
 typedef struct _BLUETOOTH_DEVICE_INFO {
-  DWORD             dwSize;
+  DWORD                                       dwSize;
   BLUETOOTH_ADDRESS Address;
-  ULONG             ulClassofDevice;
-  WINBOOL           fConnected;
-  WINBOOL           fRemembered;
-  WINBOOL           fAuthenticated;
-  SYSTEMTIME        stLastSeen;
-  SYSTEMTIME        stLastUsed;
-  WCHAR             szName[BLUETOOTH_MAX_NAME_SIZE];
+  ULONG                                       ulClassofDevice;
+  WINBOOL                        fConnected;
+  WINBOOL                        fRemembered;
+  WINBOOL                        fAuthenticated;
+  SYSTEMTIME                     stLastSeen;
+  SYSTEMTIME                     stLastUsed;
+  WCHAR                                       szName[BLUETOOTH_MAX_NAME_SIZE];
 } BLUETOOTH_DEVICE_INFO, *PBLUETOOTH_DEVICE_INFO;
 
 typedef struct _BLUETOOTH_DEVICE_SEARCH_PARAMS {
@@ -61,16 +61,16 @@ typedef struct _BLUETOOTH_FIND_RADIO_PARAMS {
 } BLUETOOTH_FIND_RADIO_PARAMS;
 
 typedef struct _BLUETOOTH_RADIO_INFO {
-  DWORD             dwSize;
+  DWORD                                       dwSize;
   BLUETOOTH_ADDRESS address;
-  WCHAR             szName[BLUETOOTH_MAX_NAME_SIZE];
-  ULONG             ulClassofDevice;
-  USHORT            lmpSubversion;
-  USHORT            manufacturer;
+  WCHAR                                       szName[BLUETOOTH_MAX_NAME_SIZE];
+  ULONG                                       ulClassofDevice;
+  USHORT                                      lmpSubversion;
+  USHORT                                      manufacturer;
 } BLUETOOTH_RADIO_INFO, *PBLUETOOTH_RADIO_INFO;
 
 typedef enum _BLUETOOTH_AUTHENTICATION_METHOD {
-  BLUETOOTH_AUTHENTICATION_METHOD_LEGACY                 = 0x1,
+  BLUETOOTH_AUTHENTICATION_METHOD_LEGACY                                           = 0x1,
   BLUETOOTH_AUTHENTICATION_METHOD_OOB,
   BLUETOOTH_AUTHENTICATION_METHOD_NUMERIC_COMPARISON,
   BLUETOOTH_AUTHENTICATION_METHOD_PASSKEY_NOTIFICATION,
@@ -78,27 +78,27 @@ typedef enum _BLUETOOTH_AUTHENTICATION_METHOD {
 } BLUETOOTH_AUTHENTICATION_METHOD;
 
 typedef enum _BLUETOOTH_IO_CAPABILITY {
-  BLUETOOTH_IO_CAPABILITY_DISPLAYONLY       = 0x00,
-  BLUETOOTH_IO_CAPABILITY_DISPLAYYESNO      = 0x01,
-  BLUETOOTH_IO_CAPABILITY_KEYBOARDONLY      = 0x02,
+  BLUETOOTH_IO_CAPABILITY_DISPLAYONLY                    = 0x00,
+  BLUETOOTH_IO_CAPABILITY_DISPLAYYESNO                   = 0x01,
+  BLUETOOTH_IO_CAPABILITY_KEYBOARDONLY                   = 0x02,
   BLUETOOTH_IO_CAPABILITY_NOINPUTNOOUTPUT   = 0x03,
-  BLUETOOTH_IO_CAPABILITY_UNDEFINED         = 0xff
+  BLUETOOTH_IO_CAPABILITY_UNDEFINED                      = 0xff
 } BLUETOOTH_IO_CAPABILITY;
 
 typedef enum _BLUETOOTH_AUTHENTICATION_REQUIREMENTS {
-  MITMProtectionNotRequired                 = 0x00,
-  MITMProtectionRequired                    = 0x01,
-  MITMProtectionNotRequiredBonding          = 0x02,
-  MITMProtectionRequiredBonding             = 0x03,
+  MITMProtectionNotRequired                                           = 0x00,
+  MITMProtectionRequired                                                           = 0x01,
+  MITMProtectionNotRequiredBonding                       = 0x02,
+  MITMProtectionRequiredBonding                                       = 0x03,
   MITMProtectionNotRequiredGeneralBonding   = 0x04,
-  MITMProtectionRequiredGeneralBonding      = 0x05,
-  MITMProtectionNotDefined                  = 0xff
+  MITMProtectionRequiredGeneralBonding                   = 0x05,
+  MITMProtectionNotDefined                                                         = 0xff
 } BLUETOOTH_AUTHENTICATION_REQUIREMENTS;
 
 typedef struct _BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS {
-  BLUETOOTH_DEVICE_INFO                 deviceInfo;
-  BLUETOOTH_AUTHENTICATION_METHOD       authenticationMethod;
-  BLUETOOTH_IO_CAPABILITY               ioCapability;
+  BLUETOOTH_DEVICE_INFO                                           deviceInfo;
+  BLUETOOTH_AUTHENTICATION_METHOD                    authenticationMethod;
+  BLUETOOTH_IO_CAPABILITY                                         ioCapability;
   BLUETOOTH_AUTHENTICATION_REQUIREMENTS authenticationRequirements;
   __C89_NAMELESS union {
     ULONG Numeric_Value;
@@ -109,10 +109,10 @@ typedef struct _BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS {
 #define BLUETOOTH_MAX_SERVICE_NAME_SIZE 256
 #define BLUETOOTH_DEVICE_NAME_SIZE 256
 typedef struct _BLUETOOTH_LOCAL_SERVICE_INFO {
-  BOOL              Enabled;
+  BOOL                                        Enabled;
   BLUETOOTH_ADDRESS btAddr;
-  WCHAR             szName[BLUETOOTH_MAX_SERVICE_NAME_SIZE];
-  WCHAR             szDeviceString[BLUETOOTH_DEVICE_NAME_SIZE];
+  WCHAR                                       szName[BLUETOOTH_MAX_SERVICE_NAME_SIZE];
+  WCHAR                                       szDeviceString[BLUETOOTH_DEVICE_NAME_SIZE];
 } BLUETOOTH_LOCAL_SERVICE_INFO;
 
 #define BTH_MAX_PIN_SIZE 16
@@ -135,15 +135,15 @@ typedef struct _BLUETOOTH_PASSKEY_INFO {
 } BLUETOOTH_PASSKEY_INFO, *PBLUETOOTH_PASSKEY_INFO;
 
 typedef struct _BLUETOOTH_AUTHENTICATE_RESPONSE {
-  BLUETOOTH_ADDRESS               bthAddressRemote;
+  BLUETOOTH_ADDRESS                                         bthAddressRemote;
   BLUETOOTH_AUTHENTICATION_METHOD authMethod;
   __C89_NAMELESS union {
-    BLUETOOTH_PIN_INFO                pinInfo;
-    BLUETOOTH_OOB_DATA_INFO           oobInfo;
+    BLUETOOTH_PIN_INFO                                          pinInfo;
+    BLUETOOTH_OOB_DATA_INFO                        oobInfo;
     BLUETOOTH_NUMERIC_COMPARISON_INFO numericCompInfo;
-    BLUETOOTH_PASSKEY_INFO            passkeyInfo;
+    BLUETOOTH_PASSKEY_INFO                                      passkeyInfo;
   };
-  UCHAR                           negativeResponse;
+  UCHAR                                                                               negativeResponse;
 } BLUETOOTH_AUTHENTICATE_RESPONSE, *PBLUETOOTH_AUTHENTICATE_RESPONSE;
 
 typedef WINBOOL (*PFN_DEVICE_CALLBACK)(LPVOID pvParam,PBLUETOOTH_DEVICE_INFO pDevice);
@@ -152,20 +152,20 @@ typedef WINBOOL (*PFN_AUTHENTICATION_CALLBACK)(LPVOID pvParam,PBLUETOOTH_DEVICE_
 typedef WINBOOL (*PFN_BLUETOOTH_ENUM_ATTRIBUTES_CALLBACK)(ULONG uAttribId,LPBYTE pValueStream,ULONG cbStreamSize,LPVOID pvParam);
 
 typedef struct _BLUETOOTH_SELECT_DEVICE_PARAMS {
-  DWORD                  dwSize;
-  ULONG                  cNumOfClasses;
+  DWORD                                                         dwSize;
+  ULONG                                                         cNumOfClasses;
   BLUETOOTH_COD_PAIRS    *prgClassOfDevices;
-  LPWSTR                 pszInfo;
-  HWND                   hwndParent;
-  BOOL                   fForceAuthentication;
-  BOOL                   fShowAuthenticated;
-  BOOL                   fShowRemembered;
-  BOOL                   fShowUnknown;
-  BOOL                   fAddNewDeviceWizard;
-  BOOL                   fSkipServicesPage;
+  LPWSTR                                           pszInfo;
+  HWND                                                          hwndParent;
+  BOOL                                                          fForceAuthentication;
+  BOOL                                                          fShowAuthenticated;
+  BOOL                                                          fShowRemembered;
+  BOOL                                                          fShowUnknown;
+  BOOL                                                          fAddNewDeviceWizard;
+  BOOL                                                          fSkipServicesPage;
   PFN_DEVICE_CALLBACK    pfnDeviceCallback;
-  LPVOID                 pvParam;
-  DWORD                  cNumDevices;
+  LPVOID                                           pvParam;
+  DWORD                                                         cNumDevices;
   PBLUETOOTH_DEVICE_INFO pDevices;
 } BLUETOOTH_SELECT_DEVICE_PARAMS;
 

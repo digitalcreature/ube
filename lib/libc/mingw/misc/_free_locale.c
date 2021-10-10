@@ -22,10 +22,10 @@ static void __cdecl init_func(_locale_t locale)
     void (__cdecl *func)(_locale_t) = NULL;
 
     if (msvcrt)
-        func = (void*)GetProcAddress(msvcrt, "_free_locale");
+                     func = (void*)GetProcAddress(msvcrt, "_free_locale");
 
     if (!func)
-        func = stub_func;
+                     func = stub_func;
 
     (__MINGW_IMP_SYMBOL(_free_locale) = func)(locale);
 }

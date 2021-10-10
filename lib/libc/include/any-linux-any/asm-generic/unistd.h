@@ -149,16 +149,16 @@ __SYSCALL(__NR_nfsservctl, sys_ni_syscall)
 /* fs/open.c */
 #define __NR3264_statfs 43
 __SC_COMP_3264(__NR3264_statfs, sys_statfs64, sys_statfs, \
-	       compat_sys_statfs64)
+	                    compat_sys_statfs64)
 #define __NR3264_fstatfs 44
 __SC_COMP_3264(__NR3264_fstatfs, sys_fstatfs64, sys_fstatfs, \
-	       compat_sys_fstatfs64)
+	                    compat_sys_fstatfs64)
 #define __NR3264_truncate 45
 __SC_COMP_3264(__NR3264_truncate, sys_truncate64, sys_truncate, \
-	       compat_sys_truncate64)
+	                    compat_sys_truncate64)
 #define __NR3264_ftruncate 46
 __SC_COMP_3264(__NR3264_ftruncate, sys_ftruncate64, sys_ftruncate, \
-	       compat_sys_ftruncate64)
+	                    compat_sys_ftruncate64)
 
 #define __NR_fallocate 47
 __SC_COMP(__NR_fallocate, sys_fallocate, compat_sys_fallocate)
@@ -673,9 +673,9 @@ __SYSCALL(__NR_prlimit64, sys_prlimit64)
 __SYSCALL(__NR_fanotify_init, sys_fanotify_init)
 #define __NR_fanotify_mark 263
 __SYSCALL(__NR_fanotify_mark, sys_fanotify_mark)
-#define __NR_name_to_handle_at         264
+#define __NR_name_to_handle_at                      264
 __SYSCALL(__NR_name_to_handle_at, sys_name_to_handle_at)
-#define __NR_open_by_handle_at         265
+#define __NR_open_by_handle_at                      265
 __SC_COMP(__NR_open_by_handle_at, sys_open_by_handle_at, \
 	  compat_sys_open_by_handle_at)
 #define __NR_clock_adjtime 266
@@ -688,10 +688,10 @@ __SYSCALL(__NR_setns, sys_setns)
 __SC_COMP(__NR_sendmmsg, sys_sendmmsg, compat_sys_sendmmsg)
 #define __NR_process_vm_readv 270
 __SC_COMP(__NR_process_vm_readv, sys_process_vm_readv, \
-          compat_sys_process_vm_readv)
+                       compat_sys_process_vm_readv)
 #define __NR_process_vm_writev 271
 __SC_COMP(__NR_process_vm_writev, sys_process_vm_writev, \
-          compat_sys_process_vm_writev)
+                       compat_sys_process_vm_writev)
 #define __NR_kcmp 272
 __SYSCALL(__NR_kcmp, sys_kcmp)
 #define __NR_finit_module 273

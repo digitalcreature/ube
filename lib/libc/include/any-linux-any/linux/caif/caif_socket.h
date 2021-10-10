@@ -109,32 +109,32 @@ enum caif_debug_service {
  * @family:		     Address family number, must be AF_CAIF.
  * @u:			     Union of address data 'switched' by family.
  * :
- * @u.at:                    Applies when family = CAIFPROTO_AT.
+ * @u.at:                                                           Applies when family = CAIFPROTO_AT.
  *
- * @u.at.type:               Type of AT link to set up (enum caif_at_type).
+ * @u.at.type:                                         Type of AT link to set up (enum caif_at_type).
  *
- * @u.util:                  Applies when family = CAIFPROTO_UTIL
+ * @u.util:                                                         Applies when family = CAIFPROTO_UTIL
  *
- * @u.util.service:          Utility service name.
+ * @u.util.service:                       Utility service name.
  *
- * @u.dgm:                   Applies when family = CAIFPROTO_DATAGRAM
+ * @u.dgm:                                                          Applies when family = CAIFPROTO_DATAGRAM
  *
  * @u.dgm.connection_id:     Datagram connection id.
  *
- * @u.dgm.nsapi:             NSAPI of the PDP-Context.
+ * @u.dgm.nsapi:                                       NSAPI of the PDP-Context.
  *
- * @u.rfm:                   Applies when family = CAIFPROTO_RFM
+ * @u.rfm:                                                          Applies when family = CAIFPROTO_RFM
  *
  * @u.rfm.connection_id:     Connection ID for RFM.
  *
- * @u.rfm.volume:            Volume to mount.
+ * @u.rfm.volume:                                      Volume to mount.
  *
- * @u.dbg:		      Applies when family = CAIFPROTO_DEBUG.
+ * @u.dbg:		                   Applies when family = CAIFPROTO_DEBUG.
  *
  * @u.dbg.type:			     Type of debug connection to set up
- *			      (caif_debug_type).
+ *			                   (caif_debug_type).
  *
- * @u.dbg.service:	      Service sub-system to connect (caif_debug_service
+ * @u.dbg.service:	                   Service sub-system to connect (caif_debug_service
  * Description:
  * This structure holds the connect parameters used for setting up a
  * CAIF Channel. It defines the service to connect to on the modem.
@@ -170,7 +170,7 @@ struct sockaddr_caif {
  *				available. Either a high bandwidth
  *				link can be selected (CAIF_LINK_HIGH_BANDW) or
  *				or a low latency link (CAIF_LINK_LOW_LATENCY).
- *                              This option is of type __u32.
+ *                                                                                               This option is of type __u32.
  *				Alternatively SO_BINDTODEVICE can be used.
  *
  * @CAIFSO_REQ_PARAM:		Used to set the request parameters for a

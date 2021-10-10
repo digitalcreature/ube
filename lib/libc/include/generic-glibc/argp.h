@@ -77,7 +77,7 @@ struct argp_option
 #define OPTION_ARG_OPTIONAL	0x1
 
 /* This option isn't displayed in any help messages.  */
-#define OPTION_HIDDEN	       	0x2
+#define OPTION_HIDDEN	                    	0x2
 
 /* This option is an alias for the closest previous non-alias option.  This
    means that it will be displayed in the same help entry, and will inherit
@@ -126,9 +126,9 @@ typedef error_t (*argp_parser_t) (int __key, char *__arg,
    The sequence of keys to a parsing function is either (where each
    uppercased word should be prefixed by `ARGP_KEY_' and opt is a user key):
 
-       INIT opt... NO_ARGS END SUCCESS  -- No non-option arguments at all
+                    INIT opt... NO_ARGS END SUCCESS  -- No non-option arguments at all
    or  INIT (opt | ARG)... END SUCCESS  -- All non-option args parsed
-   or  INIT (opt | ARG)... SUCCESS      -- Some non-option arg unrecognized
+   or  INIT (opt | ARG)... SUCCESS                   -- Some non-option arg unrecognized
 
    The third case is where every parser returned ARGP_KEY_UNKNOWN for an
    argument, in which case parsing stops at that argument (returning the
@@ -348,7 +348,7 @@ struct argp_state
 #define ARGP_IN_ORDER	0x08
 
 /* Don't provide the standard long option --help, which causes usage and
-      option help information to be output to stdout, and exit (0) called. */
+                   option help information to be output to stdout, and exit (0) called. */
 #define ARGP_NO_HELP	0x10
 
 /* Don't exit on errors (they may still result in error messages).  */
@@ -437,8 +437,8 @@ extern error_t argp_err_exit_status;
 /* Output a usage message for ARGP to STREAM.  FLAGS are from the set
    ARGP_HELP_*.  */
 extern void argp_help (const struct argp *__restrict __argp,
-		       FILE *__restrict __stream,
-		       unsigned __flags, char *__restrict __name);
+		                    FILE *__restrict __stream,
+		                    unsigned __flags, char *__restrict __name);
 extern void __argp_help (const struct argp *__restrict __argp,
 			 FILE *__restrict __stream, unsigned __flags,
 			 char *__name);
@@ -457,8 +457,8 @@ extern void argp_state_help (const struct argp_state *__restrict __state,
 			     FILE *__restrict __stream,
 			     unsigned int __flags);
 extern void __argp_state_help (const struct argp_state *__restrict __state,
-			       FILE *__restrict __stream,
-			       unsigned int __flags);
+			                    FILE *__restrict __stream,
+			                    unsigned int __flags);
 
 /* Possibly output the standard usage message for ARGP to stderr and exit.  */
 extern void argp_usage (const struct argp_state *__state);
@@ -535,8 +535,8 @@ __NTH (__option_is_short (const struct argp_option *__opt))
     return 0;
   else
     {
-      int __key = __opt->key;
-      return __key > 0 && __key <= UCHAR_MAX && isprint (__key);
+                   int __key = __opt->key;
+                   return __key > 0 && __key <= UCHAR_MAX && isprint (__key);
     }
 }
 

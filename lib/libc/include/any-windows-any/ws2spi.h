@@ -274,23 +274,23 @@ typedef int (WSAAPI *LPNSPV2STARTUP)(
 );
 
 typedef struct _NSPV2_ROUTINE {
-  DWORD                       cbSize;
-  DWORD                       dwMajorVersion;
-  DWORD                       dwMinorVersion;
-  LPNSPV2STARTUP              NSPv2Startup;
-  LPNSPV2CLEANUP              NSPv2Cleanup;
+  DWORD                                                              cbSize;
+  DWORD                                                              dwMajorVersion;
+  DWORD                                                              dwMinorVersion;
+  LPNSPV2STARTUP                                        NSPv2Startup;
+  LPNSPV2CLEANUP                                        NSPv2Cleanup;
   LPNSPV2LOOKUPSERVICEBEGIN   NSPv2LookupServiceBegin;
   LPNSPV2LOOKUPSERVICENEXTEX  NSPv2LookupServiceNextEx;
   LPNSPV2LOOKUPSERVICEEND     NSPv2LookupServiceEnd;
-  LPNSPV2SETSERVICEEX         NSPv2SetServiceEx;
+  LPNSPV2SETSERVICEEX                      NSPv2SetServiceEx;
   LPNSPV2CLIENTSESSIONRUNDOWN NSPv2ClientSessionRundown;
 } NSPV2_ROUTINE, *PNSPV2_ROUTINE, *LPCNSPV2_ROUTINE;
 
-#define LSP_SYSTEM          0x80000000
-#define LSP_INSPECTOR       0x00000001
-#define LSP_REDIRECTOR      0x00000002
-#define LSP_PROXY           0x00000004
-#define LSP_FIREWALL        0x00000008
+#define LSP_SYSTEM                       0x80000000
+#define LSP_INSPECTOR                    0x00000001
+#define LSP_REDIRECTOR                   0x00000002
+#define LSP_PROXY                        0x00000004
+#define LSP_FIREWALL                     0x00000008
 #define LSP_INBOUND_MODIFY  0x00000010
 #define LSP_OUTBOUND_MODIFY 0x00000020
 #define LSP_CRYPTO_COMPRESS 0x00000040

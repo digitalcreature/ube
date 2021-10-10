@@ -542,25 +542,25 @@ extern "C"{
 #else
   typedef struct IGPMVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPM *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPM *This);
-      ULONG (WINAPI *Release)(IGPM *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPM *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPM *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPM *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPM *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetDomain)(IGPM *This,BSTR bstrDomain,BSTR bstrDomainController,__LONG32 lDCFlags,IGPMDomain **pIGPMDomain);
-      HRESULT (WINAPI *GetBackupDir)(IGPM *This,BSTR bstrBackupDir,IGPMBackupDir **pIGPMBackupDir);
-      HRESULT (WINAPI *GetSitesContainer)(IGPM *This,BSTR bstrForest,BSTR bstrDomain,BSTR bstrDomainController,__LONG32 lDCFlags,IGPMSitesContainer **ppIGPMSitesContainer);
-      HRESULT (WINAPI *GetRSOP)(IGPM *This,GPMRSOPMode gpmRSoPMode,BSTR bstrNamespace,__LONG32 lFlags,IGPMRSOP **ppIGPMRSOP);
-      HRESULT (WINAPI *CreatePermission)(IGPM *This,BSTR bstrTrustee,GPMPermissionType perm,VARIANT_BOOL bInheritable,IGPMPermission **ppPerm);
-      HRESULT (WINAPI *CreateSearchCriteria)(IGPM *This,IGPMSearchCriteria **ppIGPMSearchCriteria);
-      HRESULT (WINAPI *CreateTrustee)(IGPM *This,BSTR bstrTrustee,IGPMTrustee **ppIGPMTrustee);
-      HRESULT (WINAPI *GetClientSideExtensions)(IGPM *This,IGPMCSECollection **ppIGPMCSECollection);
-      HRESULT (WINAPI *GetConstants)(IGPM *This,IGPMConstants **ppIGPMConstants);
-      HRESULT (WINAPI *GetMigrationTable)(IGPM *This,BSTR bstrMigrationTablePath,IGPMMigrationTable **ppMigrationTable);
-      HRESULT (WINAPI *CreateMigrationTable)(IGPM *This,IGPMMigrationTable **ppMigrationTable);
-      HRESULT (WINAPI *InitializeReporting)(IGPM *This,BSTR bstrAdmPath);
+                   HRESULT (WINAPI *QueryInterface)(IGPM *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPM *This);
+                   ULONG (WINAPI *Release)(IGPM *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPM *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPM *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPM *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPM *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetDomain)(IGPM *This,BSTR bstrDomain,BSTR bstrDomainController,__LONG32 lDCFlags,IGPMDomain **pIGPMDomain);
+                   HRESULT (WINAPI *GetBackupDir)(IGPM *This,BSTR bstrBackupDir,IGPMBackupDir **pIGPMBackupDir);
+                   HRESULT (WINAPI *GetSitesContainer)(IGPM *This,BSTR bstrForest,BSTR bstrDomain,BSTR bstrDomainController,__LONG32 lDCFlags,IGPMSitesContainer **ppIGPMSitesContainer);
+                   HRESULT (WINAPI *GetRSOP)(IGPM *This,GPMRSOPMode gpmRSoPMode,BSTR bstrNamespace,__LONG32 lFlags,IGPMRSOP **ppIGPMRSOP);
+                   HRESULT (WINAPI *CreatePermission)(IGPM *This,BSTR bstrTrustee,GPMPermissionType perm,VARIANT_BOOL bInheritable,IGPMPermission **ppPerm);
+                   HRESULT (WINAPI *CreateSearchCriteria)(IGPM *This,IGPMSearchCriteria **ppIGPMSearchCriteria);
+                   HRESULT (WINAPI *CreateTrustee)(IGPM *This,BSTR bstrTrustee,IGPMTrustee **ppIGPMTrustee);
+                   HRESULT (WINAPI *GetClientSideExtensions)(IGPM *This,IGPMCSECollection **ppIGPMCSECollection);
+                   HRESULT (WINAPI *GetConstants)(IGPM *This,IGPMConstants **ppIGPMConstants);
+                   HRESULT (WINAPI *GetMigrationTable)(IGPM *This,BSTR bstrMigrationTablePath,IGPMMigrationTable **ppMigrationTable);
+                   HRESULT (WINAPI *CreateMigrationTable)(IGPM *This,IGPMMigrationTable **ppMigrationTable);
+                   HRESULT (WINAPI *InitializeReporting)(IGPM *This,BSTR bstrAdmPath);
     END_INTERFACE
   } IGPMVtbl;
   struct IGPM {
@@ -634,23 +634,23 @@ extern "C"{
 #else
   typedef struct IGPMDomainVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMDomain *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMDomain *This);
-      ULONG (WINAPI *Release)(IGPMDomain *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMDomain *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMDomain *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMDomain *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMDomain *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DomainController)(IGPMDomain *This,BSTR *pVal);
-      HRESULT (WINAPI *get_Domain)(IGPMDomain *This,BSTR *pVal);
-      HRESULT (WINAPI *CreateGPO)(IGPMDomain *This,IGPMGPO **ppNewGPO);
-      HRESULT (WINAPI *GetGPO)(IGPMDomain *This,BSTR bstrGuid,IGPMGPO **ppGPO);
-      HRESULT (WINAPI *SearchGPOs)(IGPMDomain *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMGPOCollection **ppIGPMGPOCollection);
-      HRESULT (WINAPI *RestoreGPO)(IGPMDomain *This,IGPMBackup *pIGPMBackup,__LONG32 lDCFlags,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
-      HRESULT (WINAPI *GetSOM)(IGPMDomain *This,BSTR bstrPath,IGPMSOM **ppSOM);
-      HRESULT (WINAPI *SearchSOMs)(IGPMDomain *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMSOMCollection **ppIGPMSOMCollection);
-      HRESULT (WINAPI *GetWMIFilter)(IGPMDomain *This,BSTR bstrPath,IGPMWMIFilter **ppWMIFilter);
-      HRESULT (WINAPI *SearchWMIFilters)(IGPMDomain *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMWMIFilterCollection **ppIGPMWMIFilterCollection);
+                   HRESULT (WINAPI *QueryInterface)(IGPMDomain *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMDomain *This);
+                   ULONG (WINAPI *Release)(IGPMDomain *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMDomain *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMDomain *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMDomain *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMDomain *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DomainController)(IGPMDomain *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_Domain)(IGPMDomain *This,BSTR *pVal);
+                   HRESULT (WINAPI *CreateGPO)(IGPMDomain *This,IGPMGPO **ppNewGPO);
+                   HRESULT (WINAPI *GetGPO)(IGPMDomain *This,BSTR bstrGuid,IGPMGPO **ppGPO);
+                   HRESULT (WINAPI *SearchGPOs)(IGPMDomain *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMGPOCollection **ppIGPMGPOCollection);
+                   HRESULT (WINAPI *RestoreGPO)(IGPMDomain *This,IGPMBackup *pIGPMBackup,__LONG32 lDCFlags,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *GetSOM)(IGPMDomain *This,BSTR bstrPath,IGPMSOM **ppSOM);
+                   HRESULT (WINAPI *SearchSOMs)(IGPMDomain *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMSOMCollection **ppIGPMSOMCollection);
+                   HRESULT (WINAPI *GetWMIFilter)(IGPMDomain *This,BSTR bstrPath,IGPMWMIFilter **ppWMIFilter);
+                   HRESULT (WINAPI *SearchWMIFilters)(IGPMDomain *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMWMIFilterCollection **ppIGPMWMIFilterCollection);
     END_INTERFACE
   } IGPMDomainVtbl;
   struct IGPMDomain {
@@ -711,16 +711,16 @@ extern "C"{
 #else
   typedef struct IGPMBackupDirVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMBackupDir *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMBackupDir *This);
-      ULONG (WINAPI *Release)(IGPMBackupDir *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMBackupDir *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMBackupDir *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMBackupDir *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMBackupDir *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_BackupDirectory)(IGPMBackupDir *This,BSTR *pVal);
-      HRESULT (WINAPI *GetBackup)(IGPMBackupDir *This,BSTR bstrID,IGPMBackup **ppBackup);
-      HRESULT (WINAPI *SearchBackups)(IGPMBackupDir *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMBackupCollection **ppIGPMBackupCollection);
+                   HRESULT (WINAPI *QueryInterface)(IGPMBackupDir *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMBackupDir *This);
+                   ULONG (WINAPI *Release)(IGPMBackupDir *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMBackupDir *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMBackupDir *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMBackupDir *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMBackupDir *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_BackupDirectory)(IGPMBackupDir *This,BSTR *pVal);
+                   HRESULT (WINAPI *GetBackup)(IGPMBackupDir *This,BSTR bstrID,IGPMBackup **ppBackup);
+                   HRESULT (WINAPI *SearchBackups)(IGPMBackupDir *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMBackupCollection **ppIGPMBackupCollection);
     END_INTERFACE
   } IGPMBackupDirVtbl;
   struct IGPMBackupDir {
@@ -762,18 +762,18 @@ extern "C"{
 #else
   typedef struct IGPMSitesContainerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMSitesContainer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMSitesContainer *This);
-      ULONG (WINAPI *Release)(IGPMSitesContainer *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMSitesContainer *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMSitesContainer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMSitesContainer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMSitesContainer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DomainController)(IGPMSitesContainer *This,BSTR *pVal);
-      HRESULT (WINAPI *get_Domain)(IGPMSitesContainer *This,BSTR *pVal);
-      HRESULT (WINAPI *get_Forest)(IGPMSitesContainer *This,BSTR *pVal);
-      HRESULT (WINAPI *GetSite)(IGPMSitesContainer *This,BSTR bstrSiteName,IGPMSOM **ppSOM);
-      HRESULT (WINAPI *SearchSites)(IGPMSitesContainer *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMSOMCollection **ppIGPMSOMCollection);
+                   HRESULT (WINAPI *QueryInterface)(IGPMSitesContainer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMSitesContainer *This);
+                   ULONG (WINAPI *Release)(IGPMSitesContainer *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMSitesContainer *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMSitesContainer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMSitesContainer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMSitesContainer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DomainController)(IGPMSitesContainer *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_Domain)(IGPMSitesContainer *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_Forest)(IGPMSitesContainer *This,BSTR *pVal);
+                   HRESULT (WINAPI *GetSite)(IGPMSitesContainer *This,BSTR bstrSiteName,IGPMSOM **ppSOM);
+                   HRESULT (WINAPI *SearchSites)(IGPMSitesContainer *This,IGPMSearchCriteria *pIGPMSearchCriteria,IGPMSOMCollection **ppIGPMSOMCollection);
     END_INTERFACE
   } IGPMSitesContainerVtbl;
   struct IGPMSitesContainer {
@@ -817,14 +817,14 @@ extern "C"{
 #else
   typedef struct IGPMSearchCriteriaVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMSearchCriteria *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMSearchCriteria *This);
-      ULONG (WINAPI *Release)(IGPMSearchCriteria *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMSearchCriteria *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMSearchCriteria *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMSearchCriteria *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMSearchCriteria *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Add)(IGPMSearchCriteria *This,GPMSearchProperty searchProperty,GPMSearchOperation searchOperation,VARIANT varValue);
+                   HRESULT (WINAPI *QueryInterface)(IGPMSearchCriteria *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMSearchCriteria *This);
+                   ULONG (WINAPI *Release)(IGPMSearchCriteria *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMSearchCriteria *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMSearchCriteria *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMSearchCriteria *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMSearchCriteria *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Add)(IGPMSearchCriteria *This,GPMSearchProperty searchProperty,GPMSearchOperation searchOperation,VARIANT varValue);
     END_INTERFACE
   } IGPMSearchCriteriaVtbl;
   struct IGPMSearchCriteria {
@@ -860,18 +860,18 @@ extern "C"{
 #else
   typedef struct IGPMTrusteeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMTrustee *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMTrustee *This);
-      ULONG (WINAPI *Release)(IGPMTrustee *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMTrustee *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMTrustee *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMTrustee *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMTrustee *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_TrusteeSid)(IGPMTrustee *This,BSTR *bstrVal);
-      HRESULT (WINAPI *get_TrusteeName)(IGPMTrustee *This,BSTR *bstrVal);
-      HRESULT (WINAPI *get_TrusteeDomain)(IGPMTrustee *This,BSTR *bstrVal);
-      HRESULT (WINAPI *get_TrusteeDSPath)(IGPMTrustee *This,BSTR *pVal);
-      HRESULT (WINAPI *get_TrusteeType)(IGPMTrustee *This,__LONG32 *lVal);
+                   HRESULT (WINAPI *QueryInterface)(IGPMTrustee *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMTrustee *This);
+                   ULONG (WINAPI *Release)(IGPMTrustee *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMTrustee *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMTrustee *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMTrustee *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMTrustee *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_TrusteeSid)(IGPMTrustee *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *get_TrusteeName)(IGPMTrustee *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *get_TrusteeDomain)(IGPMTrustee *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *get_TrusteeDSPath)(IGPMTrustee *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_TrusteeType)(IGPMTrustee *This,__LONG32 *lVal);
     END_INTERFACE
   } IGPMTrusteeVtbl;
   struct IGPMTrustee {
@@ -919,18 +919,18 @@ extern "C"{
 #else
   typedef struct IGPMPermissionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMPermission *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMPermission *This);
-      ULONG (WINAPI *Release)(IGPMPermission *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMPermission *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMPermission *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMPermission *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMPermission *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Inherited)(IGPMPermission *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_Inheritable)(IGPMPermission *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_Denied)(IGPMPermission *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_Permission)(IGPMPermission *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_Trustee)(IGPMPermission *This,IGPMTrustee **ppIGPMTrustee);
+                   HRESULT (WINAPI *QueryInterface)(IGPMPermission *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMPermission *This);
+                   ULONG (WINAPI *Release)(IGPMPermission *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMPermission *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMPermission *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMPermission *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMPermission *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Inherited)(IGPMPermission *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_Inheritable)(IGPMPermission *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_Denied)(IGPMPermission *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_Permission)(IGPMPermission *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_Trustee)(IGPMPermission *This,IGPMTrustee **ppIGPMTrustee);
     END_INTERFACE
   } IGPMPermissionVtbl;
   struct IGPMPermission {
@@ -979,19 +979,19 @@ extern "C"{
 #else
   typedef struct IGPMSecurityInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMSecurityInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMSecurityInfo *This);
-      ULONG (WINAPI *Release)(IGPMSecurityInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMSecurityInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMSecurityInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMSecurityInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMSecurityInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMSecurityInfo *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMSecurityInfo *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMSecurityInfo *This,IEnumVARIANT **ppEnum);
-      HRESULT (WINAPI *Add)(IGPMSecurityInfo *This,IGPMPermission *pPerm);
-      HRESULT (WINAPI *Remove)(IGPMSecurityInfo *This,IGPMPermission *pPerm);
-      HRESULT (WINAPI *RemoveTrustee)(IGPMSecurityInfo *This,BSTR bstrTrustee);
+                   HRESULT (WINAPI *QueryInterface)(IGPMSecurityInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMSecurityInfo *This);
+                   ULONG (WINAPI *Release)(IGPMSecurityInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMSecurityInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMSecurityInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMSecurityInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMSecurityInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMSecurityInfo *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMSecurityInfo *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMSecurityInfo *This,IEnumVARIANT **ppEnum);
+                   HRESULT (WINAPI *Add)(IGPMSecurityInfo *This,IGPMPermission *pPerm);
+                   HRESULT (WINAPI *Remove)(IGPMSecurityInfo *This,IGPMPermission *pPerm);
+                   HRESULT (WINAPI *RemoveTrustee)(IGPMSecurityInfo *This,BSTR bstrTrustee);
     END_INTERFACE
   } IGPMSecurityInfoVtbl;
   struct IGPMSecurityInfo {
@@ -1047,23 +1047,23 @@ extern "C"{
 #else
   typedef struct IGPMBackupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMBackup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMBackup *This);
-      ULONG (WINAPI *Release)(IGPMBackup *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMBackup *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMBackup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMBackup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMBackup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ID)(IGPMBackup *This,BSTR *pVal);
-      HRESULT (WINAPI *get_GPOID)(IGPMBackup *This,BSTR *pVal);
-      HRESULT (WINAPI *get_GPODomain)(IGPMBackup *This,BSTR *pVal);
-      HRESULT (WINAPI *get_GPODisplayName)(IGPMBackup *This,BSTR *pVal);
-      HRESULT (WINAPI *get_Timestamp)(IGPMBackup *This,DATE *pVal);
-      HRESULT (WINAPI *get_Comment)(IGPMBackup *This,BSTR *pVal);
-      HRESULT (WINAPI *get_BackupDir)(IGPMBackup *This,BSTR *pVal);
-      HRESULT (WINAPI *Delete)(IGPMBackup *This);
-      HRESULT (WINAPI *GenerateReport)(IGPMBackup *This,GPMReportType gpmReportType,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
-      HRESULT (WINAPI *GenerateReportToFile)(IGPMBackup *This,GPMReportType gpmReportType,BSTR bstrTargetFilePath,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *QueryInterface)(IGPMBackup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMBackup *This);
+                   ULONG (WINAPI *Release)(IGPMBackup *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMBackup *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMBackup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMBackup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMBackup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ID)(IGPMBackup *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_GPOID)(IGPMBackup *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_GPODomain)(IGPMBackup *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_GPODisplayName)(IGPMBackup *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_Timestamp)(IGPMBackup *This,DATE *pVal);
+                   HRESULT (WINAPI *get_Comment)(IGPMBackup *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_BackupDir)(IGPMBackup *This,BSTR *pVal);
+                   HRESULT (WINAPI *Delete)(IGPMBackup *This);
+                   HRESULT (WINAPI *GenerateReport)(IGPMBackup *This,GPMReportType gpmReportType,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *GenerateReportToFile)(IGPMBackup *This,GPMReportType gpmReportType,BSTR bstrTargetFilePath,IGPMResult **ppIGPMResult);
     END_INTERFACE
   } IGPMBackupVtbl;
   struct IGPMBackup {
@@ -1124,16 +1124,16 @@ extern "C"{
 #else
   typedef struct IGPMBackupCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMBackupCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMBackupCollection *This);
-      ULONG (WINAPI *Release)(IGPMBackupCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMBackupCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMBackupCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMBackupCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMBackupCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMBackupCollection *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMBackupCollection *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMBackupCollection *This,IEnumVARIANT **ppIGPMBackup);
+                   HRESULT (WINAPI *QueryInterface)(IGPMBackupCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMBackupCollection *This);
+                   ULONG (WINAPI *Release)(IGPMBackupCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMBackupCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMBackupCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMBackupCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMBackupCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMBackupCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMBackupCollection *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMBackupCollection *This,IEnumVARIANT **ppIGPMBackup);
     END_INTERFACE
   } IGPMBackupCollectionVtbl;
   struct IGPMBackupCollection {
@@ -1184,23 +1184,23 @@ extern "C"{
 #else
   typedef struct IGPMSOMVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMSOM *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMSOM *This);
-      ULONG (WINAPI *Release)(IGPMSOM *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMSOM *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMSOM *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMSOM *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMSOM *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_GPOInheritanceBlocked)(IGPMSOM *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_GPOInheritanceBlocked)(IGPMSOM *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_Name)(IGPMSOM *This,BSTR *pVal);
-      HRESULT (WINAPI *get_Path)(IGPMSOM *This,BSTR *pVal);
-      HRESULT (WINAPI *CreateGPOLink)(IGPMSOM *This,__LONG32 lLinkPos,IGPMGPO *pGPO,IGPMGPOLink **ppNewGPOLink);
-      HRESULT (WINAPI *get_Type)(IGPMSOM *This,GPMSOMType *pVal);
-      HRESULT (WINAPI *GetGPOLinks)(IGPMSOM *This,IGPMGPOLinksCollection **ppGPOLinks);
-      HRESULT (WINAPI *GetInheritedGPOLinks)(IGPMSOM *This,IGPMGPOLinksCollection **ppGPOLinks);
-      HRESULT (WINAPI *GetSecurityInfo)(IGPMSOM *This,IGPMSecurityInfo **ppSecurityInfo);
-      HRESULT (WINAPI *SetSecurityInfo)(IGPMSOM *This,IGPMSecurityInfo *pSecurityInfo);
+                   HRESULT (WINAPI *QueryInterface)(IGPMSOM *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMSOM *This);
+                   ULONG (WINAPI *Release)(IGPMSOM *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMSOM *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMSOM *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMSOM *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMSOM *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_GPOInheritanceBlocked)(IGPMSOM *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_GPOInheritanceBlocked)(IGPMSOM *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_Name)(IGPMSOM *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_Path)(IGPMSOM *This,BSTR *pVal);
+                   HRESULT (WINAPI *CreateGPOLink)(IGPMSOM *This,__LONG32 lLinkPos,IGPMGPO *pGPO,IGPMGPOLink **ppNewGPOLink);
+                   HRESULT (WINAPI *get_Type)(IGPMSOM *This,GPMSOMType *pVal);
+                   HRESULT (WINAPI *GetGPOLinks)(IGPMSOM *This,IGPMGPOLinksCollection **ppGPOLinks);
+                   HRESULT (WINAPI *GetInheritedGPOLinks)(IGPMSOM *This,IGPMGPOLinksCollection **ppGPOLinks);
+                   HRESULT (WINAPI *GetSecurityInfo)(IGPMSOM *This,IGPMSecurityInfo **ppSecurityInfo);
+                   HRESULT (WINAPI *SetSecurityInfo)(IGPMSOM *This,IGPMSecurityInfo *pSecurityInfo);
     END_INTERFACE
   } IGPMSOMVtbl;
   struct IGPMSOM {
@@ -1261,16 +1261,16 @@ extern "C"{
 #else
   typedef struct IGPMSOMCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMSOMCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMSOMCollection *This);
-      ULONG (WINAPI *Release)(IGPMSOMCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMSOMCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMSOMCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMSOMCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMSOMCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMSOMCollection *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMSOMCollection *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMSOMCollection *This,IEnumVARIANT **ppIGPMSOM);
+                   HRESULT (WINAPI *QueryInterface)(IGPMSOMCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMSOMCollection *This);
+                   ULONG (WINAPI *Release)(IGPMSOMCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMSOMCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMSOMCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMSOMCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMSOMCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMSOMCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMSOMCollection *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMSOMCollection *This,IEnumVARIANT **ppIGPMSOM);
     END_INTERFACE
   } IGPMSOMCollectionVtbl;
   struct IGPMSOMCollection {
@@ -1315,21 +1315,21 @@ extern "C"{
 #else
   typedef struct IGPMWMIFilterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMWMIFilter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMWMIFilter *This);
-      ULONG (WINAPI *Release)(IGPMWMIFilter *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMWMIFilter *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMWMIFilter *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMWMIFilter *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMWMIFilter *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Path)(IGPMWMIFilter *This,BSTR *pVal);
-      HRESULT (WINAPI *put_Name)(IGPMWMIFilter *This,BSTR newVal);
-      HRESULT (WINAPI *get_Name)(IGPMWMIFilter *This,BSTR *pVal);
-      HRESULT (WINAPI *put_Description)(IGPMWMIFilter *This,BSTR newVal);
-      HRESULT (WINAPI *get_Description)(IGPMWMIFilter *This,BSTR *pVal);
-      HRESULT (WINAPI *GetQueryList)(IGPMWMIFilter *This,VARIANT *pQryList);
-      HRESULT (WINAPI *GetSecurityInfo)(IGPMWMIFilter *This,IGPMSecurityInfo **ppSecurityInfo);
-      HRESULT (WINAPI *SetSecurityInfo)(IGPMWMIFilter *This,IGPMSecurityInfo *pSecurityInfo);
+                   HRESULT (WINAPI *QueryInterface)(IGPMWMIFilter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMWMIFilter *This);
+                   ULONG (WINAPI *Release)(IGPMWMIFilter *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMWMIFilter *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMWMIFilter *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMWMIFilter *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMWMIFilter *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Path)(IGPMWMIFilter *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_Name)(IGPMWMIFilter *This,BSTR newVal);
+                   HRESULT (WINAPI *get_Name)(IGPMWMIFilter *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_Description)(IGPMWMIFilter *This,BSTR newVal);
+                   HRESULT (WINAPI *get_Description)(IGPMWMIFilter *This,BSTR *pVal);
+                   HRESULT (WINAPI *GetQueryList)(IGPMWMIFilter *This,VARIANT *pQryList);
+                   HRESULT (WINAPI *GetSecurityInfo)(IGPMWMIFilter *This,IGPMSecurityInfo **ppSecurityInfo);
+                   HRESULT (WINAPI *SetSecurityInfo)(IGPMWMIFilter *This,IGPMSecurityInfo *pSecurityInfo);
     END_INTERFACE
   } IGPMWMIFilterVtbl;
   struct IGPMWMIFilter {
@@ -1384,16 +1384,16 @@ extern "C"{
 #else
   typedef struct IGPMWMIFilterCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMWMIFilterCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMWMIFilterCollection *This);
-      ULONG (WINAPI *Release)(IGPMWMIFilterCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMWMIFilterCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMWMIFilterCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMWMIFilterCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMWMIFilterCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMWMIFilterCollection *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMWMIFilterCollection *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMWMIFilterCollection *This,IEnumVARIANT **pVal);
+                   HRESULT (WINAPI *QueryInterface)(IGPMWMIFilterCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMWMIFilterCollection *This);
+                   ULONG (WINAPI *Release)(IGPMWMIFilterCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMWMIFilterCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMWMIFilterCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMWMIFilterCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMWMIFilterCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMWMIFilterCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMWMIFilterCollection *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMWMIFilterCollection *This,IEnumVARIANT **pVal);
     END_INTERFACE
   } IGPMWMIFilterCollectionVtbl;
   struct IGPMWMIFilterCollection {
@@ -1465,48 +1465,48 @@ extern "C"{
 #else
   typedef struct IGPMRSOPVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMRSOP *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMRSOP *This);
-      ULONG (WINAPI *Release)(IGPMRSOP *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMRSOP *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMRSOP *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMRSOP *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMRSOP *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Mode)(IGPMRSOP *This,GPMRSOPMode *pVal);
-      HRESULT (WINAPI *get_Namespace)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_LoggingComputer)(IGPMRSOP *This,BSTR bstrVal);
-      HRESULT (WINAPI *get_LoggingComputer)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_LoggingUser)(IGPMRSOP *This,BSTR bstrVal);
-      HRESULT (WINAPI *get_LoggingUser)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_LoggingFlags)(IGPMRSOP *This,__LONG32 lVal);
-      HRESULT (WINAPI *get_LoggingFlags)(IGPMRSOP *This,__LONG32 *lVal);
-      HRESULT (WINAPI *put_PlanningFlags)(IGPMRSOP *This,__LONG32 lVal);
-      HRESULT (WINAPI *get_PlanningFlags)(IGPMRSOP *This,__LONG32 *lVal);
-      HRESULT (WINAPI *put_PlanningDomainController)(IGPMRSOP *This,BSTR bstrVal);
-      HRESULT (WINAPI *get_PlanningDomainController)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_PlanningSiteName)(IGPMRSOP *This,BSTR bstrVal);
-      HRESULT (WINAPI *get_PlanningSiteName)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_PlanningUser)(IGPMRSOP *This,BSTR bstrVal);
-      HRESULT (WINAPI *get_PlanningUser)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_PlanningUserSOM)(IGPMRSOP *This,BSTR bstrVal);
-      HRESULT (WINAPI *get_PlanningUserSOM)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_PlanningUserWMIFilters)(IGPMRSOP *This,VARIANT varVal);
-      HRESULT (WINAPI *get_PlanningUserWMIFilters)(IGPMRSOP *This,VARIANT *varVal);
-      HRESULT (WINAPI *put_PlanningUserSecurityGroups)(IGPMRSOP *This,VARIANT varVal);
-      HRESULT (WINAPI *get_PlanningUserSecurityGroups)(IGPMRSOP *This,VARIANT *varVal);
-      HRESULT (WINAPI *put_PlanningComputer)(IGPMRSOP *This,BSTR bstrVal);
-      HRESULT (WINAPI *get_PlanningComputer)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_PlanningComputerSOM)(IGPMRSOP *This,BSTR bstrVal);
-      HRESULT (WINAPI *get_PlanningComputerSOM)(IGPMRSOP *This,BSTR *bstrVal);
-      HRESULT (WINAPI *put_PlanningComputerWMIFilters)(IGPMRSOP *This,VARIANT varVal);
-      HRESULT (WINAPI *get_PlanningComputerWMIFilters)(IGPMRSOP *This,VARIANT *varVal);
-      HRESULT (WINAPI *put_PlanningComputerSecurityGroups)(IGPMRSOP *This,VARIANT varVal);
-      HRESULT (WINAPI *get_PlanningComputerSecurityGroups)(IGPMRSOP *This,VARIANT *varVal);
-      HRESULT (WINAPI *LoggingEnumerateUsers)(IGPMRSOP *This,VARIANT *varVal);
-      HRESULT (WINAPI *CreateQueryResults)(IGPMRSOP *This);
-      HRESULT (WINAPI *ReleaseQueryResults)(IGPMRSOP *This);
-      HRESULT (WINAPI *GenerateReport)(IGPMRSOP *This,GPMReportType gpmReportType,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
-      HRESULT (WINAPI *GenerateReportToFile)(IGPMRSOP *This,GPMReportType gpmReportType,BSTR bstrTargetFilePath,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *QueryInterface)(IGPMRSOP *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMRSOP *This);
+                   ULONG (WINAPI *Release)(IGPMRSOP *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMRSOP *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMRSOP *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMRSOP *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMRSOP *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Mode)(IGPMRSOP *This,GPMRSOPMode *pVal);
+                   HRESULT (WINAPI *get_Namespace)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_LoggingComputer)(IGPMRSOP *This,BSTR bstrVal);
+                   HRESULT (WINAPI *get_LoggingComputer)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_LoggingUser)(IGPMRSOP *This,BSTR bstrVal);
+                   HRESULT (WINAPI *get_LoggingUser)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_LoggingFlags)(IGPMRSOP *This,__LONG32 lVal);
+                   HRESULT (WINAPI *get_LoggingFlags)(IGPMRSOP *This,__LONG32 *lVal);
+                   HRESULT (WINAPI *put_PlanningFlags)(IGPMRSOP *This,__LONG32 lVal);
+                   HRESULT (WINAPI *get_PlanningFlags)(IGPMRSOP *This,__LONG32 *lVal);
+                   HRESULT (WINAPI *put_PlanningDomainController)(IGPMRSOP *This,BSTR bstrVal);
+                   HRESULT (WINAPI *get_PlanningDomainController)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_PlanningSiteName)(IGPMRSOP *This,BSTR bstrVal);
+                   HRESULT (WINAPI *get_PlanningSiteName)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_PlanningUser)(IGPMRSOP *This,BSTR bstrVal);
+                   HRESULT (WINAPI *get_PlanningUser)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_PlanningUserSOM)(IGPMRSOP *This,BSTR bstrVal);
+                   HRESULT (WINAPI *get_PlanningUserSOM)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_PlanningUserWMIFilters)(IGPMRSOP *This,VARIANT varVal);
+                   HRESULT (WINAPI *get_PlanningUserWMIFilters)(IGPMRSOP *This,VARIANT *varVal);
+                   HRESULT (WINAPI *put_PlanningUserSecurityGroups)(IGPMRSOP *This,VARIANT varVal);
+                   HRESULT (WINAPI *get_PlanningUserSecurityGroups)(IGPMRSOP *This,VARIANT *varVal);
+                   HRESULT (WINAPI *put_PlanningComputer)(IGPMRSOP *This,BSTR bstrVal);
+                   HRESULT (WINAPI *get_PlanningComputer)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_PlanningComputerSOM)(IGPMRSOP *This,BSTR bstrVal);
+                   HRESULT (WINAPI *get_PlanningComputerSOM)(IGPMRSOP *This,BSTR *bstrVal);
+                   HRESULT (WINAPI *put_PlanningComputerWMIFilters)(IGPMRSOP *This,VARIANT varVal);
+                   HRESULT (WINAPI *get_PlanningComputerWMIFilters)(IGPMRSOP *This,VARIANT *varVal);
+                   HRESULT (WINAPI *put_PlanningComputerSecurityGroups)(IGPMRSOP *This,VARIANT varVal);
+                   HRESULT (WINAPI *get_PlanningComputerSecurityGroups)(IGPMRSOP *This,VARIANT *varVal);
+                   HRESULT (WINAPI *LoggingEnumerateUsers)(IGPMRSOP *This,VARIANT *varVal);
+                   HRESULT (WINAPI *CreateQueryResults)(IGPMRSOP *This);
+                   HRESULT (WINAPI *ReleaseQueryResults)(IGPMRSOP *This);
+                   HRESULT (WINAPI *GenerateReport)(IGPMRSOP *This,GPMReportType gpmReportType,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *GenerateReportToFile)(IGPMRSOP *This,GPMReportType gpmReportType,BSTR bstrTargetFilePath,IGPMResult **ppIGPMResult);
     END_INTERFACE
   } IGPMRSOPVtbl;
   struct IGPMRSOP {
@@ -1668,42 +1668,42 @@ extern "C"{
 #else
   typedef struct IGPMGPOVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMGPO *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMGPO *This);
-      ULONG (WINAPI *Release)(IGPMGPO *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMGPO *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMGPO *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMGPO *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMGPO *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DisplayName)(IGPMGPO *This,BSTR *pVal);
-      HRESULT (WINAPI *put_DisplayName)(IGPMGPO *This,BSTR newVal);
-      HRESULT (WINAPI *get_Path)(IGPMGPO *This,BSTR *pVal);
-      HRESULT (WINAPI *get_ID)(IGPMGPO *This,BSTR *pVal);
-      HRESULT (WINAPI *get_DomainName)(IGPMGPO *This,BSTR *pVal);
-      HRESULT (WINAPI *get_CreationTime)(IGPMGPO *This,DATE *pDate);
-      HRESULT (WINAPI *get_ModificationTime)(IGPMGPO *This,DATE *pDate);
-      HRESULT (WINAPI *get_UserDSVersionNumber)(IGPMGPO *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_ComputerDSVersionNumber)(IGPMGPO *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_UserSysvolVersionNumber)(IGPMGPO *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_ComputerSysvolVersionNumber)(IGPMGPO *This,__LONG32 *pVal);
-      HRESULT (WINAPI *GetWMIFilter)(IGPMGPO *This,IGPMWMIFilter **ppIGPMWMIFilter);
-      HRESULT (WINAPI *SetWMIFilter)(IGPMGPO *This,IGPMWMIFilter *pIGPMWMIFilter);
-      HRESULT (WINAPI *SetUserEnabled)(IGPMGPO *This,VARIANT_BOOL vbEnabled);
-      HRESULT (WINAPI *SetComputerEnabled)(IGPMGPO *This,VARIANT_BOOL vbEnabled);
-      HRESULT (WINAPI *IsUserEnabled)(IGPMGPO *This,VARIANT_BOOL *pvbEnabled);
-      HRESULT (WINAPI *IsComputerEnabled)(IGPMGPO *This,VARIANT_BOOL *pvbEnabled);
-      HRESULT (WINAPI *GetSecurityInfo)(IGPMGPO *This,IGPMSecurityInfo **ppSecurityInfo);
-      HRESULT (WINAPI *SetSecurityInfo)(IGPMGPO *This,IGPMSecurityInfo *pSecurityInfo);
-      HRESULT (WINAPI *Delete)(IGPMGPO *This);
-      HRESULT (WINAPI *Backup)(IGPMGPO *This,BSTR bstrBackupDir,BSTR bstrComment,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
-      HRESULT (WINAPI *Import)(IGPMGPO *This,__LONG32 lFlags,IGPMBackup *pIGPMBackup,VARIANT *pvarMigrationTable,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
-      HRESULT (WINAPI *GenerateReport)(IGPMGPO *This,GPMReportType gpmReportType,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
-      HRESULT (WINAPI *GenerateReportToFile)(IGPMGPO *This,GPMReportType gpmReportType,BSTR bstrTargetFilePath,IGPMResult **ppIGPMResult);
-      HRESULT (WINAPI *CopyTo)(IGPMGPO *This,__LONG32 lFlags,IGPMDomain *pIGPMDomain,VARIANT *pvarNewDisplayName,VARIANT *pvarMigrationTable,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
-      HRESULT (WINAPI *SetSecurityDescriptor)(IGPMGPO *This,__LONG32 lFlags,IDispatch *pSD);
-      HRESULT (WINAPI *GetSecurityDescriptor)(IGPMGPO *This,__LONG32 lFlags,IDispatch **ppSD);
-      HRESULT (WINAPI *IsACLConsistent)(IGPMGPO *This,VARIANT_BOOL *pvbConsistent);
-      HRESULT (WINAPI *MakeACLConsistent)(IGPMGPO *This);
+                   HRESULT (WINAPI *QueryInterface)(IGPMGPO *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMGPO *This);
+                   ULONG (WINAPI *Release)(IGPMGPO *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMGPO *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMGPO *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMGPO *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMGPO *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DisplayName)(IGPMGPO *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_DisplayName)(IGPMGPO *This,BSTR newVal);
+                   HRESULT (WINAPI *get_Path)(IGPMGPO *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_ID)(IGPMGPO *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_DomainName)(IGPMGPO *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_CreationTime)(IGPMGPO *This,DATE *pDate);
+                   HRESULT (WINAPI *get_ModificationTime)(IGPMGPO *This,DATE *pDate);
+                   HRESULT (WINAPI *get_UserDSVersionNumber)(IGPMGPO *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_ComputerDSVersionNumber)(IGPMGPO *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_UserSysvolVersionNumber)(IGPMGPO *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_ComputerSysvolVersionNumber)(IGPMGPO *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *GetWMIFilter)(IGPMGPO *This,IGPMWMIFilter **ppIGPMWMIFilter);
+                   HRESULT (WINAPI *SetWMIFilter)(IGPMGPO *This,IGPMWMIFilter *pIGPMWMIFilter);
+                   HRESULT (WINAPI *SetUserEnabled)(IGPMGPO *This,VARIANT_BOOL vbEnabled);
+                   HRESULT (WINAPI *SetComputerEnabled)(IGPMGPO *This,VARIANT_BOOL vbEnabled);
+                   HRESULT (WINAPI *IsUserEnabled)(IGPMGPO *This,VARIANT_BOOL *pvbEnabled);
+                   HRESULT (WINAPI *IsComputerEnabled)(IGPMGPO *This,VARIANT_BOOL *pvbEnabled);
+                   HRESULT (WINAPI *GetSecurityInfo)(IGPMGPO *This,IGPMSecurityInfo **ppSecurityInfo);
+                   HRESULT (WINAPI *SetSecurityInfo)(IGPMGPO *This,IGPMSecurityInfo *pSecurityInfo);
+                   HRESULT (WINAPI *Delete)(IGPMGPO *This);
+                   HRESULT (WINAPI *Backup)(IGPMGPO *This,BSTR bstrBackupDir,BSTR bstrComment,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *Import)(IGPMGPO *This,__LONG32 lFlags,IGPMBackup *pIGPMBackup,VARIANT *pvarMigrationTable,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *GenerateReport)(IGPMGPO *This,GPMReportType gpmReportType,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *GenerateReportToFile)(IGPMGPO *This,GPMReportType gpmReportType,BSTR bstrTargetFilePath,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *CopyTo)(IGPMGPO *This,__LONG32 lFlags,IGPMDomain *pIGPMDomain,VARIANT *pvarNewDisplayName,VARIANT *pvarMigrationTable,VARIANT *pvarGPMProgress,VARIANT *pvarGPMCancel,IGPMResult **ppIGPMResult);
+                   HRESULT (WINAPI *SetSecurityDescriptor)(IGPMGPO *This,__LONG32 lFlags,IDispatch *pSD);
+                   HRESULT (WINAPI *GetSecurityDescriptor)(IGPMGPO *This,__LONG32 lFlags,IDispatch **ppSD);
+                   HRESULT (WINAPI *IsACLConsistent)(IGPMGPO *This,VARIANT_BOOL *pvbConsistent);
+                   HRESULT (WINAPI *MakeACLConsistent)(IGPMGPO *This);
     END_INTERFACE
   } IGPMGPOVtbl;
   struct IGPMGPO {
@@ -1821,16 +1821,16 @@ extern "C"{
 #else
   typedef struct IGPMGPOCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMGPOCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMGPOCollection *This);
-      ULONG (WINAPI *Release)(IGPMGPOCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMGPOCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMGPOCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMGPOCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMGPOCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMGPOCollection *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMGPOCollection *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMGPOCollection *This,IEnumVARIANT **ppIGPMGPOs);
+                   HRESULT (WINAPI *QueryInterface)(IGPMGPOCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMGPOCollection *This);
+                   ULONG (WINAPI *Release)(IGPMGPOCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMGPOCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMGPOCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMGPOCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMGPOCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMGPOCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMGPOCollection *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMGPOCollection *This,IEnumVARIANT **ppIGPMGPOs);
     END_INTERFACE
   } IGPMGPOCollectionVtbl;
   struct IGPMGPOCollection {
@@ -1876,22 +1876,22 @@ extern "C"{
 #else
   typedef struct IGPMGPOLinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMGPOLink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMGPOLink *This);
-      ULONG (WINAPI *Release)(IGPMGPOLink *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMGPOLink *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMGPOLink *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMGPOLink *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMGPOLink *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_GPOID)(IGPMGPOLink *This,BSTR *pVal);
-      HRESULT (WINAPI *get_GPODomain)(IGPMGPOLink *This,BSTR *pVal);
-      HRESULT (WINAPI *get_Enabled)(IGPMGPOLink *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_Enabled)(IGPMGPOLink *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_Enforced)(IGPMGPOLink *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_Enforced)(IGPMGPOLink *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_SOMLinkOrder)(IGPMGPOLink *This,__LONG32 *lVal);
-      HRESULT (WINAPI *get_SOM)(IGPMGPOLink *This,IGPMSOM **ppIGPMSOM);
-      HRESULT (WINAPI *Delete)(IGPMGPOLink *This);
+                   HRESULT (WINAPI *QueryInterface)(IGPMGPOLink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMGPOLink *This);
+                   ULONG (WINAPI *Release)(IGPMGPOLink *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMGPOLink *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMGPOLink *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMGPOLink *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMGPOLink *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_GPOID)(IGPMGPOLink *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_GPODomain)(IGPMGPOLink *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_Enabled)(IGPMGPOLink *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_Enabled)(IGPMGPOLink *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_Enforced)(IGPMGPOLink *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_Enforced)(IGPMGPOLink *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_SOMLinkOrder)(IGPMGPOLink *This,__LONG32 *lVal);
+                   HRESULT (WINAPI *get_SOM)(IGPMGPOLink *This,IGPMSOM **ppIGPMSOM);
+                   HRESULT (WINAPI *Delete)(IGPMGPOLink *This);
     END_INTERFACE
   } IGPMGPOLinkVtbl;
   struct IGPMGPOLink {
@@ -1949,16 +1949,16 @@ extern "C"{
 #else
   typedef struct IGPMGPOLinksCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMGPOLinksCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMGPOLinksCollection *This);
-      ULONG (WINAPI *Release)(IGPMGPOLinksCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMGPOLinksCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMGPOLinksCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMGPOLinksCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMGPOLinksCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMGPOLinksCollection *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMGPOLinksCollection *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMGPOLinksCollection *This,IEnumVARIANT **ppIGPMLinks);
+                   HRESULT (WINAPI *QueryInterface)(IGPMGPOLinksCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMGPOLinksCollection *This);
+                   ULONG (WINAPI *Release)(IGPMGPOLinksCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMGPOLinksCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMGPOLinksCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMGPOLinksCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMGPOLinksCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMGPOLinksCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMGPOLinksCollection *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMGPOLinksCollection *This,IEnumVARIANT **ppIGPMLinks);
     END_INTERFACE
   } IGPMGPOLinksCollectionVtbl;
   struct IGPMGPOLinksCollection {
@@ -1998,16 +1998,16 @@ extern "C"{
 #else
   typedef struct IGPMCSECollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMCSECollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMCSECollection *This);
-      ULONG (WINAPI *Release)(IGPMCSECollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMCSECollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMCSECollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMCSECollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMCSECollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMCSECollection *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMCSECollection *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMCSECollection *This,IEnumVARIANT **ppIGPMCSEs);
+                   HRESULT (WINAPI *QueryInterface)(IGPMCSECollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMCSECollection *This);
+                   ULONG (WINAPI *Release)(IGPMCSECollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMCSECollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMCSECollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMCSECollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMCSECollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMCSECollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMCSECollection *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMCSECollection *This,IEnumVARIANT **ppIGPMCSEs);
     END_INTERFACE
   } IGPMCSECollectionVtbl;
   struct IGPMCSECollection {
@@ -2048,17 +2048,17 @@ extern "C"{
 #else
   typedef struct IGPMClientSideExtensionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMClientSideExtension *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMClientSideExtension *This);
-      ULONG (WINAPI *Release)(IGPMClientSideExtension *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMClientSideExtension *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMClientSideExtension *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMClientSideExtension *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMClientSideExtension *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ID)(IGPMClientSideExtension *This,BSTR *pVal);
-      HRESULT (WINAPI *get_DisplayName)(IGPMClientSideExtension *This,BSTR *pVal);
-      HRESULT (WINAPI *IsUserEnabled)(IGPMClientSideExtension *This,VARIANT_BOOL *pvbEnabled);
-      HRESULT (WINAPI *IsComputerEnabled)(IGPMClientSideExtension *This,VARIANT_BOOL *pvbEnabled);
+                   HRESULT (WINAPI *QueryInterface)(IGPMClientSideExtension *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMClientSideExtension *This);
+                   ULONG (WINAPI *Release)(IGPMClientSideExtension *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMClientSideExtension *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMClientSideExtension *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMClientSideExtension *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMClientSideExtension *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ID)(IGPMClientSideExtension *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_DisplayName)(IGPMClientSideExtension *This,BSTR *pVal);
+                   HRESULT (WINAPI *IsUserEnabled)(IGPMClientSideExtension *This,VARIANT_BOOL *pvbEnabled);
+                   HRESULT (WINAPI *IsComputerEnabled)(IGPMClientSideExtension *This,VARIANT_BOOL *pvbEnabled);
     END_INTERFACE
   } IGPMClientSideExtensionVtbl;
   struct IGPMClientSideExtension {
@@ -2099,14 +2099,14 @@ extern "C"{
 #else
   typedef struct IGPMAsyncCancelVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMAsyncCancel *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMAsyncCancel *This);
-      ULONG (WINAPI *Release)(IGPMAsyncCancel *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMAsyncCancel *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMAsyncCancel *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMAsyncCancel *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMAsyncCancel *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Cancel)(IGPMAsyncCancel *This);
+                   HRESULT (WINAPI *QueryInterface)(IGPMAsyncCancel *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMAsyncCancel *This);
+                   ULONG (WINAPI *Release)(IGPMAsyncCancel *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMAsyncCancel *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMAsyncCancel *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMAsyncCancel *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMAsyncCancel *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Cancel)(IGPMAsyncCancel *This);
     END_INTERFACE
   } IGPMAsyncCancelVtbl;
   struct IGPMAsyncCancel {
@@ -2138,14 +2138,14 @@ extern "C"{
 #else
   typedef struct IGPMAsyncProgressVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMAsyncProgress *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMAsyncProgress *This);
-      ULONG (WINAPI *Release)(IGPMAsyncProgress *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMAsyncProgress *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMAsyncProgress *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMAsyncProgress *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMAsyncProgress *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Status)(IGPMAsyncProgress *This,__LONG32 lProgressNumerator,__LONG32 lProgressDenominator,HRESULT hrStatus,VARIANT *pResult,IGPMStatusMsgCollection *ppIGPMStatusMsgCollection);
+                   HRESULT (WINAPI *QueryInterface)(IGPMAsyncProgress *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMAsyncProgress *This);
+                   ULONG (WINAPI *Release)(IGPMAsyncProgress *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMAsyncProgress *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMAsyncProgress *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMAsyncProgress *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMAsyncProgress *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Status)(IGPMAsyncProgress *This,__LONG32 lProgressNumerator,__LONG32 lProgressDenominator,HRESULT hrStatus,VARIANT *pResult,IGPMStatusMsgCollection *ppIGPMStatusMsgCollection);
     END_INTERFACE
   } IGPMAsyncProgressVtbl;
   struct IGPMAsyncProgress {
@@ -2179,16 +2179,16 @@ extern "C"{
 #else
   typedef struct IGPMStatusMsgCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMStatusMsgCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMStatusMsgCollection *This);
-      ULONG (WINAPI *Release)(IGPMStatusMsgCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMStatusMsgCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMStatusMsgCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMStatusMsgCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMStatusMsgCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMStatusMsgCollection *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMStatusMsgCollection *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMStatusMsgCollection *This,IEnumVARIANT **pVal);
+                   HRESULT (WINAPI *QueryInterface)(IGPMStatusMsgCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMStatusMsgCollection *This);
+                   ULONG (WINAPI *Release)(IGPMStatusMsgCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMStatusMsgCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMStatusMsgCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMStatusMsgCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMStatusMsgCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMStatusMsgCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMStatusMsgCollection *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMStatusMsgCollection *This,IEnumVARIANT **pVal);
     END_INTERFACE
   } IGPMStatusMsgCollectionVtbl;
   struct IGPMStatusMsgCollection {
@@ -2231,19 +2231,19 @@ extern "C"{
 #else
   typedef struct IGPMStatusMessageVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMStatusMessage *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMStatusMessage *This);
-      ULONG (WINAPI *Release)(IGPMStatusMessage *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMStatusMessage *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMStatusMessage *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMStatusMessage *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMStatusMessage *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ObjectPath)(IGPMStatusMessage *This,BSTR *pVal);
-      HRESULT (WINAPI *ErrorCode)(IGPMStatusMessage *This);
-      HRESULT (WINAPI *get_ExtensionName)(IGPMStatusMessage *This,BSTR *pVal);
-      HRESULT (WINAPI *get_SettingsName)(IGPMStatusMessage *This,BSTR *pVal);
-      HRESULT (WINAPI *OperationCode)(IGPMStatusMessage *This);
-      HRESULT (WINAPI *get_Message)(IGPMStatusMessage *This,BSTR *pVal);
+                   HRESULT (WINAPI *QueryInterface)(IGPMStatusMessage *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMStatusMessage *This);
+                   ULONG (WINAPI *Release)(IGPMStatusMessage *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMStatusMessage *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMStatusMessage *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMStatusMessage *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMStatusMessage *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ObjectPath)(IGPMStatusMessage *This,BSTR *pVal);
+                   HRESULT (WINAPI *ErrorCode)(IGPMStatusMessage *This);
+                   HRESULT (WINAPI *get_ExtensionName)(IGPMStatusMessage *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_SettingsName)(IGPMStatusMessage *This,BSTR *pVal);
+                   HRESULT (WINAPI *OperationCode)(IGPMStatusMessage *This);
+                   HRESULT (WINAPI *get_Message)(IGPMStatusMessage *This,BSTR *pVal);
     END_INTERFACE
   } IGPMStatusMessageVtbl;
   struct IGPMStatusMessage {
@@ -2349,73 +2349,73 @@ extern "C"{
 #else
   typedef struct IGPMConstantsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMConstants *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMConstants *This);
-      ULONG (WINAPI *Release)(IGPMConstants *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMConstants *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMConstants *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMConstants *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMConstants *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_PermGPOApply)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermGPORead)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermGPOEdit)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermGPOEditSecurityAndDelete)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermGPOCustom)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermWMIFilterEdit)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermWMIFilterFullControl)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermWMIFilterCustom)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermSOMLink)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermSOMLogging)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermSOMPlanning)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermSOMGPOCreate)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermSOMWMICreate)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_PermSOMWMIFullControl)(IGPMConstants *This,GPMPermissionType *pVal);
-      HRESULT (WINAPI *get_SearchPropertyGPOPermissions)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertyGPOEffectivePermissions)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertyGPODisplayName)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertyGPOWMIFilter)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertyGPOID)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertyGPOComputerExtensions)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertyGPOUserExtensions)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertySOMLinks)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertyGPODomain)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchPropertyBackupMostRecent)(IGPMConstants *This,GPMSearchProperty *pVal);
-      HRESULT (WINAPI *get_SearchOpEquals)(IGPMConstants *This,GPMSearchOperation *pVal);
-      HRESULT (WINAPI *get_SearchOpContains)(IGPMConstants *This,GPMSearchOperation *pVal);
-      HRESULT (WINAPI *get_SearchOpNotContains)(IGPMConstants *This,GPMSearchOperation *pVal);
-      HRESULT (WINAPI *get_SearchOpNotEquals)(IGPMConstants *This,GPMSearchOperation *pVal);
-      HRESULT (WINAPI *get_UsePDC)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_UseAnyDC)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_DoNotUseW2KDC)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_SOMSite)(IGPMConstants *This,GPMSOMType *pVal);
-      HRESULT (WINAPI *get_SOMDomain)(IGPMConstants *This,GPMSOMType *pVal);
-      HRESULT (WINAPI *get_SOMOU)(IGPMConstants *This,GPMSOMType *pVal);
-      HRESULT (WINAPI *get_SecurityFlags)(IGPMConstants *This,VARIANT_BOOL vbOwner,VARIANT_BOOL vbGroup,VARIANT_BOOL vbDACL,VARIANT_BOOL vbSACL,__LONG32 *pVal);
-      HRESULT (WINAPI *get_DoNotValidateDC)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_ReportHTML)(IGPMConstants *This,GPMReportType *pVal);
-      HRESULT (WINAPI *get_ReportXML)(IGPMConstants *This,GPMReportType *pVal);
-      HRESULT (WINAPI *get_RSOPModeUnknown)(IGPMConstants *This,GPMRSOPMode *pVal);
-      HRESULT (WINAPI *get_RSOPModePlanning)(IGPMConstants *This,GPMRSOPMode *pVal);
-      HRESULT (WINAPI *get_RSOPModeLogging)(IGPMConstants *This,GPMRSOPMode *pVal);
-      HRESULT (WINAPI *get_EntryTypeUser)(IGPMConstants *This,GPMEntryType *pVal);
-      HRESULT (WINAPI *get_EntryTypeComputer)(IGPMConstants *This,GPMEntryType *pVal);
-      HRESULT (WINAPI *get_EntryTypeLocalGroup)(IGPMConstants *This,GPMEntryType *pVal);
-      HRESULT (WINAPI *get_EntryTypeGlobalGroup)(IGPMConstants *This,GPMEntryType *pVal);
-      HRESULT (WINAPI *get_EntryTypeUniversalGroup)(IGPMConstants *This,GPMEntryType *pVal);
-      HRESULT (WINAPI *get_EntryTypeUNCPath)(IGPMConstants *This,GPMEntryType *pVal);
-      HRESULT (WINAPI *get_EntryTypeUnknown)(IGPMConstants *This,GPMEntryType *pVal);
-      HRESULT (WINAPI *get_DestinationOptionSameAsSource)(IGPMConstants *This,GPMDestinationOption *pVal);
-      HRESULT (WINAPI *get_DestinationOptionNone)(IGPMConstants *This,GPMDestinationOption *pVal);
-      HRESULT (WINAPI *get_DestinationOptionByRelativeName)(IGPMConstants *This,GPMDestinationOption *pVal);
-      HRESULT (WINAPI *get_DestinationOptionSet)(IGPMConstants *This,GPMDestinationOption *pVal);
-      HRESULT (WINAPI *get_MigrationTableOnly)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_ProcessSecurity)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_RsopLoggingNoComputer)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_RsopLoggingNoUser)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_RsopPlanningAssumeSlowLink)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_RsopPlanningLoopbackOption)(IGPMConstants *This,VARIANT_BOOL vbMerge,__LONG32 *pVal);
-      HRESULT (WINAPI *get_RsopPlanningAssumeUserWQLFilterTrue)(IGPMConstants *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_RsopPlanningAssumeCompWQLFilterTrue)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *QueryInterface)(IGPMConstants *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMConstants *This);
+                   ULONG (WINAPI *Release)(IGPMConstants *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMConstants *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMConstants *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMConstants *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMConstants *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_PermGPOApply)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermGPORead)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermGPOEdit)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermGPOEditSecurityAndDelete)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermGPOCustom)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermWMIFilterEdit)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermWMIFilterFullControl)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermWMIFilterCustom)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermSOMLink)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermSOMLogging)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermSOMPlanning)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermSOMGPOCreate)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermSOMWMICreate)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_PermSOMWMIFullControl)(IGPMConstants *This,GPMPermissionType *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyGPOPermissions)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyGPOEffectivePermissions)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyGPODisplayName)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyGPOWMIFilter)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyGPOID)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyGPOComputerExtensions)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyGPOUserExtensions)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertySOMLinks)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyGPODomain)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchPropertyBackupMostRecent)(IGPMConstants *This,GPMSearchProperty *pVal);
+                   HRESULT (WINAPI *get_SearchOpEquals)(IGPMConstants *This,GPMSearchOperation *pVal);
+                   HRESULT (WINAPI *get_SearchOpContains)(IGPMConstants *This,GPMSearchOperation *pVal);
+                   HRESULT (WINAPI *get_SearchOpNotContains)(IGPMConstants *This,GPMSearchOperation *pVal);
+                   HRESULT (WINAPI *get_SearchOpNotEquals)(IGPMConstants *This,GPMSearchOperation *pVal);
+                   HRESULT (WINAPI *get_UsePDC)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_UseAnyDC)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_DoNotUseW2KDC)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_SOMSite)(IGPMConstants *This,GPMSOMType *pVal);
+                   HRESULT (WINAPI *get_SOMDomain)(IGPMConstants *This,GPMSOMType *pVal);
+                   HRESULT (WINAPI *get_SOMOU)(IGPMConstants *This,GPMSOMType *pVal);
+                   HRESULT (WINAPI *get_SecurityFlags)(IGPMConstants *This,VARIANT_BOOL vbOwner,VARIANT_BOOL vbGroup,VARIANT_BOOL vbDACL,VARIANT_BOOL vbSACL,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_DoNotValidateDC)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_ReportHTML)(IGPMConstants *This,GPMReportType *pVal);
+                   HRESULT (WINAPI *get_ReportXML)(IGPMConstants *This,GPMReportType *pVal);
+                   HRESULT (WINAPI *get_RSOPModeUnknown)(IGPMConstants *This,GPMRSOPMode *pVal);
+                   HRESULT (WINAPI *get_RSOPModePlanning)(IGPMConstants *This,GPMRSOPMode *pVal);
+                   HRESULT (WINAPI *get_RSOPModeLogging)(IGPMConstants *This,GPMRSOPMode *pVal);
+                   HRESULT (WINAPI *get_EntryTypeUser)(IGPMConstants *This,GPMEntryType *pVal);
+                   HRESULT (WINAPI *get_EntryTypeComputer)(IGPMConstants *This,GPMEntryType *pVal);
+                   HRESULT (WINAPI *get_EntryTypeLocalGroup)(IGPMConstants *This,GPMEntryType *pVal);
+                   HRESULT (WINAPI *get_EntryTypeGlobalGroup)(IGPMConstants *This,GPMEntryType *pVal);
+                   HRESULT (WINAPI *get_EntryTypeUniversalGroup)(IGPMConstants *This,GPMEntryType *pVal);
+                   HRESULT (WINAPI *get_EntryTypeUNCPath)(IGPMConstants *This,GPMEntryType *pVal);
+                   HRESULT (WINAPI *get_EntryTypeUnknown)(IGPMConstants *This,GPMEntryType *pVal);
+                   HRESULT (WINAPI *get_DestinationOptionSameAsSource)(IGPMConstants *This,GPMDestinationOption *pVal);
+                   HRESULT (WINAPI *get_DestinationOptionNone)(IGPMConstants *This,GPMDestinationOption *pVal);
+                   HRESULT (WINAPI *get_DestinationOptionByRelativeName)(IGPMConstants *This,GPMDestinationOption *pVal);
+                   HRESULT (WINAPI *get_DestinationOptionSet)(IGPMConstants *This,GPMDestinationOption *pVal);
+                   HRESULT (WINAPI *get_MigrationTableOnly)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_ProcessSecurity)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_RsopLoggingNoComputer)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_RsopLoggingNoUser)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_RsopPlanningAssumeSlowLink)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_RsopPlanningLoopbackOption)(IGPMConstants *This,VARIANT_BOOL vbMerge,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_RsopPlanningAssumeUserWQLFilterTrue)(IGPMConstants *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_RsopPlanningAssumeCompWQLFilterTrue)(IGPMConstants *This,__LONG32 *pVal);
     END_INTERFACE
   } IGPMConstantsVtbl;
   struct IGPMConstants {
@@ -2626,16 +2626,16 @@ extern "C"{
 #else
   typedef struct IGPMResultVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMResult *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMResult *This);
-      ULONG (WINAPI *Release)(IGPMResult *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMResult *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMResult *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMResult *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMResult *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Status)(IGPMResult *This,IGPMStatusMsgCollection **ppIGPMStatusMsgCollection);
-      HRESULT (WINAPI *get_Result)(IGPMResult *This,VARIANT *pvarResult);
-      HRESULT (WINAPI *OverallStatus)(IGPMResult *This);
+                   HRESULT (WINAPI *QueryInterface)(IGPMResult *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMResult *This);
+                   ULONG (WINAPI *Release)(IGPMResult *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMResult *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMResult *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMResult *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMResult *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Status)(IGPMResult *This,IGPMStatusMsgCollection **ppIGPMStatusMsgCollection);
+                   HRESULT (WINAPI *get_Result)(IGPMResult *This,VARIANT *pvarResult);
+                   HRESULT (WINAPI *OverallStatus)(IGPMResult *This);
     END_INTERFACE
   } IGPMResultVtbl;
   struct IGPMResult {
@@ -2675,16 +2675,16 @@ extern "C"{
 #else
   typedef struct IGPMMapEntryCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMMapEntryCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMMapEntryCollection *This);
-      ULONG (WINAPI *Release)(IGPMMapEntryCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMMapEntryCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMMapEntryCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMMapEntryCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMMapEntryCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IGPMMapEntryCollection *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Item)(IGPMMapEntryCollection *This,__LONG32 lIndex,VARIANT *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IGPMMapEntryCollection *This,IEnumVARIANT **pVal);
+                   HRESULT (WINAPI *QueryInterface)(IGPMMapEntryCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMMapEntryCollection *This);
+                   ULONG (WINAPI *Release)(IGPMMapEntryCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMMapEntryCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMMapEntryCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMMapEntryCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMMapEntryCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IGPMMapEntryCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Item)(IGPMMapEntryCollection *This,__LONG32 lIndex,VARIANT *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IGPMMapEntryCollection *This,IEnumVARIANT **pVal);
     END_INTERFACE
   } IGPMMapEntryCollectionVtbl;
   struct IGPMMapEntryCollection {
@@ -2726,17 +2726,17 @@ extern "C"{
 #else
   typedef struct IGPMMapEntryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMMapEntry *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMMapEntry *This);
-      ULONG (WINAPI *Release)(IGPMMapEntry *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMMapEntry *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMMapEntry *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMMapEntry *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMMapEntry *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Source)(IGPMMapEntry *This,BSTR *pbstrSource);
-      HRESULT (WINAPI *get_Destination)(IGPMMapEntry *This,BSTR *pbstrDestination);
-      HRESULT (WINAPI *get_DestinationOption)(IGPMMapEntry *This,GPMDestinationOption *pgpmDestOption);
-      HRESULT (WINAPI *get_EntryType)(IGPMMapEntry *This,GPMEntryType *pgpmEntryType);
+                   HRESULT (WINAPI *QueryInterface)(IGPMMapEntry *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMMapEntry *This);
+                   ULONG (WINAPI *Release)(IGPMMapEntry *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMMapEntry *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMMapEntry *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMMapEntry *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMMapEntry *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Source)(IGPMMapEntry *This,BSTR *pbstrSource);
+                   HRESULT (WINAPI *get_Destination)(IGPMMapEntry *This,BSTR *pbstrDestination);
+                   HRESULT (WINAPI *get_DestinationOption)(IGPMMapEntry *This,GPMDestinationOption *pgpmDestOption);
+                   HRESULT (WINAPI *get_EntryType)(IGPMMapEntry *This,GPMEntryType *pgpmEntryType);
     END_INTERFACE
   } IGPMMapEntryVtbl;
   struct IGPMMapEntry {
@@ -2784,21 +2784,21 @@ extern "C"{
 #else
   typedef struct IGPMMigrationTableVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGPMMigrationTable *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGPMMigrationTable *This);
-      ULONG (WINAPI *Release)(IGPMMigrationTable *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IGPMMigrationTable *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IGPMMigrationTable *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IGPMMigrationTable *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IGPMMigrationTable *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Save)(IGPMMigrationTable *This,BSTR bstrMigrationTablePath);
-      HRESULT (WINAPI *Add)(IGPMMigrationTable *This,__LONG32 lFlags,VARIANT var);
-      HRESULT (WINAPI *AddEntry)(IGPMMigrationTable *This,BSTR bstrSource,GPMEntryType gpmEntryType,VARIANT *pvarDestination,IGPMMapEntry **ppEntry);
-      HRESULT (WINAPI *GetEntry)(IGPMMigrationTable *This,BSTR bstrSource,IGPMMapEntry **ppEntry);
-      HRESULT (WINAPI *DeleteEntry)(IGPMMigrationTable *This,BSTR bstrSource);
-      HRESULT (WINAPI *UpdateDestination)(IGPMMigrationTable *This,BSTR bstrSource,VARIANT *pvarDestination,IGPMMapEntry **ppEntry);
-      HRESULT (WINAPI *Validate)(IGPMMigrationTable *This,IGPMResult **ppResult);
-      HRESULT (WINAPI *GetEntries)(IGPMMigrationTable *This,IGPMMapEntryCollection **ppEntries);
+                   HRESULT (WINAPI *QueryInterface)(IGPMMigrationTable *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGPMMigrationTable *This);
+                   ULONG (WINAPI *Release)(IGPMMigrationTable *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IGPMMigrationTable *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IGPMMigrationTable *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IGPMMigrationTable *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IGPMMigrationTable *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Save)(IGPMMigrationTable *This,BSTR bstrMigrationTablePath);
+                   HRESULT (WINAPI *Add)(IGPMMigrationTable *This,__LONG32 lFlags,VARIANT var);
+                   HRESULT (WINAPI *AddEntry)(IGPMMigrationTable *This,BSTR bstrSource,GPMEntryType gpmEntryType,VARIANT *pvarDestination,IGPMMapEntry **ppEntry);
+                   HRESULT (WINAPI *GetEntry)(IGPMMigrationTable *This,BSTR bstrSource,IGPMMapEntry **ppEntry);
+                   HRESULT (WINAPI *DeleteEntry)(IGPMMigrationTable *This,BSTR bstrSource);
+                   HRESULT (WINAPI *UpdateDestination)(IGPMMigrationTable *This,BSTR bstrSource,VARIANT *pvarDestination,IGPMMapEntry **ppEntry);
+                   HRESULT (WINAPI *Validate)(IGPMMigrationTable *This,IGPMResult **ppResult);
+                   HRESULT (WINAPI *GetEntries)(IGPMMigrationTable *This,IGPMMapEntryCollection **ppEntries);
     END_INTERFACE
   } IGPMMigrationTableVtbl;
   struct IGPMMigrationTable {

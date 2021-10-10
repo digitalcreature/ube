@@ -8,13 +8,13 @@
 #include <dshow.h>
 
 typedef struct _DVR_STREAM_DESC {
-  DWORD         version;
-  DWORD         StreamId;
-  WINBOOL       Default;
-  WINBOOL       Creation;
-  DWORD         Reserved;
-  GUID          guidSubMediaType;
-  GUID          guidFormatType;
+  DWORD                      version;
+  DWORD                      StreamId;
+  WINBOOL                    Default;
+  WINBOOL                    Creation;
+  DWORD                      Reserved;
+  GUID                       guidSubMediaType;
+  GUID                       guidFormatType;
   AM_MEDIA_TYPE MediaType;
 } DVR_STREAM_DESC, *PDVR_STREAM_DESC;
 

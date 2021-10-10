@@ -458,9 +458,9 @@ typedef __UINTMAX_TYPE__ uintmax_t;
  */
 
 #ifdef __INT64_TYPE__
-# define INT64_MAX           INT64_C( 9223372036854775807)
-# define INT64_MIN         (-INT64_C( 9223372036854775807)-1)
-# define UINT64_MAX         UINT64_C(18446744073709551615)
+# define INT64_MAX                        INT64_C( 9223372036854775807)
+# define INT64_MIN                      (-INT64_C( 9223372036854775807)-1)
+# define UINT64_MAX                      UINT64_C(18446744073709551615)
 # define __INT_LEAST64_MIN   INT64_MIN
 # define __INT_LEAST64_MAX   INT64_MAX
 # define __UINT_LEAST64_MAX UINT64_MAX
@@ -486,14 +486,14 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 
 
 #ifdef __INT56_TYPE__
-# define INT56_MAX           INT56_C(36028797018963967)
-# define INT56_MIN         (-INT56_C(36028797018963967)-1)
-# define UINT56_MAX         UINT56_C(72057594037927935)
+# define INT56_MAX                        INT56_C(36028797018963967)
+# define INT56_MIN                      (-INT56_C(36028797018963967)-1)
+# define UINT56_MAX                      UINT56_C(72057594037927935)
 # define INT_LEAST56_MIN     INT56_MIN
 # define INT_LEAST56_MAX     INT56_MAX
 # define UINT_LEAST56_MAX   UINT56_MAX
-# define INT_FAST56_MIN      INT56_MIN
-# define INT_FAST56_MAX      INT56_MAX
+# define INT_FAST56_MIN                   INT56_MIN
+# define INT_FAST56_MAX                   INT56_MAX
 # define UINT_FAST56_MAX    UINT56_MAX
 # define __INT_LEAST32_MIN   INT56_MIN
 # define __INT_LEAST32_MAX   INT56_MAX
@@ -508,14 +508,14 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 
 
 #ifdef __INT48_TYPE__
-# define INT48_MAX           INT48_C(140737488355327)
-# define INT48_MIN         (-INT48_C(140737488355327)-1)
-# define UINT48_MAX         UINT48_C(281474976710655)
+# define INT48_MAX                        INT48_C(140737488355327)
+# define INT48_MIN                      (-INT48_C(140737488355327)-1)
+# define UINT48_MAX                      UINT48_C(281474976710655)
 # define INT_LEAST48_MIN     INT48_MIN
 # define INT_LEAST48_MAX     INT48_MAX
 # define UINT_LEAST48_MAX   UINT48_MAX
-# define INT_FAST48_MIN      INT48_MIN
-# define INT_FAST48_MAX      INT48_MAX
+# define INT_FAST48_MIN                   INT48_MIN
+# define INT_FAST48_MAX                   INT48_MAX
 # define UINT_FAST48_MAX    UINT48_MAX
 # define __INT_LEAST32_MIN   INT48_MIN
 # define __INT_LEAST32_MAX   INT48_MAX
@@ -530,14 +530,14 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 
 
 #ifdef __INT40_TYPE__
-# define INT40_MAX           INT40_C(549755813887)
-# define INT40_MIN         (-INT40_C(549755813887)-1)
-# define UINT40_MAX         UINT40_C(1099511627775)
+# define INT40_MAX                        INT40_C(549755813887)
+# define INT40_MIN                      (-INT40_C(549755813887)-1)
+# define UINT40_MAX                      UINT40_C(1099511627775)
 # define INT_LEAST40_MIN     INT40_MIN
 # define INT_LEAST40_MAX     INT40_MAX
 # define UINT_LEAST40_MAX   UINT40_MAX
-# define INT_FAST40_MIN      INT40_MIN
-# define INT_FAST40_MAX      INT40_MAX
+# define INT_FAST40_MIN                   INT40_MIN
+# define INT_FAST40_MAX                   INT40_MAX
 # define UINT_FAST40_MAX    UINT40_MAX
 # define __INT_LEAST32_MIN   INT40_MIN
 # define __INT_LEAST32_MAX   INT40_MAX
@@ -552,9 +552,9 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 
 
 #ifdef __INT32_TYPE__
-# define INT32_MAX           INT32_C(2147483647)
-# define INT32_MIN         (-INT32_C(2147483647)-1)
-# define UINT32_MAX         UINT32_C(4294967295)
+# define INT32_MAX                        INT32_C(2147483647)
+# define INT32_MIN                      (-INT32_C(2147483647)-1)
+# define UINT32_MAX                      UINT32_C(4294967295)
 # define __INT_LEAST32_MIN   INT32_MIN
 # define __INT_LEAST32_MAX   INT32_MAX
 # define __UINT_LEAST32_MAX UINT32_MAX
@@ -577,14 +577,14 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 
 
 #ifdef __INT24_TYPE__
-# define INT24_MAX           INT24_C(8388607)
-# define INT24_MIN         (-INT24_C(8388607)-1)
-# define UINT24_MAX         UINT24_C(16777215)
+# define INT24_MAX                        INT24_C(8388607)
+# define INT24_MIN                      (-INT24_C(8388607)-1)
+# define UINT24_MAX                      UINT24_C(16777215)
 # define INT_LEAST24_MIN     INT24_MIN
 # define INT_LEAST24_MAX     INT24_MAX
 # define UINT_LEAST24_MAX   UINT24_MAX
-# define INT_FAST24_MIN      INT24_MIN
-# define INT_FAST24_MAX      INT24_MAX
+# define INT_FAST24_MIN                   INT24_MIN
+# define INT_FAST24_MAX                   INT24_MAX
 # define UINT_FAST24_MAX    UINT24_MAX
 # define __INT_LEAST16_MIN   INT24_MIN
 # define __INT_LEAST16_MAX   INT24_MAX
@@ -596,9 +596,9 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 
 
 #ifdef __INT16_TYPE__
-#define INT16_MAX            INT16_C(32767)
-#define INT16_MIN          (-INT16_C(32767)-1)
-#define UINT16_MAX          UINT16_C(65535)
+#define INT16_MAX                                      INT16_C(32767)
+#define INT16_MIN                       (-INT16_C(32767)-1)
+#define UINT16_MAX                       UINT16_C(65535)
 # define __INT_LEAST16_MIN   INT16_MIN
 # define __INT_LEAST16_MAX   INT16_MAX
 # define __UINT_LEAST16_MAX UINT16_MAX
@@ -618,9 +618,9 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 
 
 #ifdef __INT8_TYPE__
-# define INT8_MAX            INT8_C(127)
-# define INT8_MIN          (-INT8_C(127)-1)
-# define UINT8_MAX          UINT8_C(255)
+# define INT8_MAX                                      INT8_C(127)
+# define INT8_MIN                       (-INT8_C(127)-1)
+# define UINT8_MAX                       UINT8_C(255)
 # define __INT_LEAST8_MIN    INT8_MIN
 # define __INT_LEAST8_MAX    INT8_MAX
 # define __UINT_LEAST8_MAX  UINT8_MAX
@@ -650,12 +650,12 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 #define UINTPTR_MAX   __UINTPTR_MAX__
 #define PTRDIFF_MIN (-__PTRDIFF_MAX__-1)
 #define PTRDIFF_MAX   __PTRDIFF_MAX__
-#define    SIZE_MAX      __SIZE_MAX__
+#define    SIZE_MAX                   __SIZE_MAX__
 
 /* ISO9899:2011 7.20 (C11 Annex K): Define RSIZE_MAX if __STDC_WANT_LIB_EXT1__
  * is enabled. */
 #if defined(__STDC_WANT_LIB_EXT1__) && __STDC_WANT_LIB_EXT1__ >= 1
-#define   RSIZE_MAX            (SIZE_MAX >> 1)
+#define   RSIZE_MAX                                      (SIZE_MAX >> 1)
 #endif
 
 /* C99 7.18.2.5 Limits of greatest-width integer types. */
@@ -667,11 +667,11 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 #define SIG_ATOMIC_MIN __INTN_MIN(__SIG_ATOMIC_WIDTH__)
 #define SIG_ATOMIC_MAX __INTN_MAX(__SIG_ATOMIC_WIDTH__)
 #ifdef __WINT_UNSIGNED__
-# define WINT_MIN       __UINTN_C(__WINT_WIDTH__, 0)
-# define WINT_MAX       __UINTN_MAX(__WINT_WIDTH__)
+# define WINT_MIN                    __UINTN_C(__WINT_WIDTH__, 0)
+# define WINT_MAX                    __UINTN_MAX(__WINT_WIDTH__)
 #else
-# define WINT_MIN       __INTN_MIN(__WINT_WIDTH__)
-# define WINT_MAX       __INTN_MAX(__WINT_WIDTH__)
+# define WINT_MIN                    __INTN_MIN(__WINT_WIDTH__)
+# define WINT_MAX                    __INTN_MAX(__WINT_WIDTH__)
 #endif
 
 #ifndef WCHAR_MAX

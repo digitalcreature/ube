@@ -311,16 +311,16 @@ typedef struct _EVENT_TRACE_HEADER {
   __C89_NAMELESS union {
     USHORT FieldTypeFlags;
     __C89_NAMELESS struct {
-      UCHAR HeaderType;
-      UCHAR MarkerFlags;
+                   UCHAR HeaderType;
+                   UCHAR MarkerFlags;
     } DUMMYSTRUCTNAME;
   } DUMMYUNIONNAME;
   __C89_NAMELESS union {
     ULONG Version;
     struct {
-      UCHAR Type;
-      UCHAR Level;
-      USHORT Version;
+                   UCHAR Type;
+                   UCHAR Level;
+                   USHORT Version;
     } Class;
   } DUMMYUNIONNAME2;
   ULONG ThreadId;
@@ -332,13 +332,13 @@ typedef struct _EVENT_TRACE_HEADER {
   } DUMMYUNIONNAME3;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      ULONG KernelTime;
-      ULONG UserTime;
+                   ULONG KernelTime;
+                   ULONG UserTime;
     } DUMMYSTRUCTNAME;
     ULONG64 ProcessorTime;
     __C89_NAMELESS struct {
-      ULONG ClientContext;
-      ULONG Flags;
+                   ULONG ClientContext;
+                   ULONG Flags;
     } DUMMYSTRUCTNAME2;
   } DUMMYUNIONNAME4;
 } EVENT_TRACE_HEADER,*PEVENT_TRACE_HEADER;
@@ -348,16 +348,16 @@ typedef struct _EVENT_INSTANCE_HEADER {
   __C89_NAMELESS union {
     USHORT FieldTypeFlags;
     __C89_NAMELESS struct {
-      UCHAR HeaderType;
-      UCHAR MarkerFlags;
+                   UCHAR HeaderType;
+                   UCHAR MarkerFlags;
     } DUMMYSTRUCTNAME;
   } DUMMYUNIONNAME;
   __C89_NAMELESS union {
     ULONG Version;
     struct {
-      UCHAR Type;
-      UCHAR Level;
-      USHORT Version;
+                   UCHAR Type;
+                   UCHAR Level;
+                   USHORT Version;
     } Class;
   } DUMMYUNIONNAME2;
   ULONG ThreadId;
@@ -368,13 +368,13 @@ typedef struct _EVENT_INSTANCE_HEADER {
   ULONG ParentInstanceId;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      ULONG KernelTime;
-      ULONG UserTime;
+                   ULONG KernelTime;
+                   ULONG UserTime;
     } DUMMYSTRUCTNAME;
     ULONG64 ProcessorTime;
     __C89_NAMELESS struct {
-      ULONG EventId;
-      ULONG Flags;
+                   ULONG EventId;
+                   ULONG Flags;
     } DUMMYSTRUCTNAME2;
   } DUMMYUNIONNAME3;
   ULONGLONG ParentRegHandle;
@@ -432,10 +432,10 @@ typedef struct _TRACE_LOGFILE_HEADER {
   __C89_NAMELESS union {
     ULONG Version;
     struct {
-      UCHAR MajorVersion;
-      UCHAR MinorVersion;
-      UCHAR SubVersion;
-      UCHAR SubMinorVersion;
+                   UCHAR MajorVersion;
+                   UCHAR MinorVersion;
+                   UCHAR SubVersion;
+                   UCHAR SubMinorVersion;
     } VersionDetail;
   } DUMMYUNIONNAME;
   ULONG ProviderVersion;
@@ -448,10 +448,10 @@ typedef struct _TRACE_LOGFILE_HEADER {
   __C89_NAMELESS union {
     GUID LogInstanceGuid;
     __C89_NAMELESS struct {
-      ULONG StartBuffers;
-      ULONG PointerSize;
-      ULONG EventsLost;
-      ULONG CpuSpeedInMHz;
+                   ULONG StartBuffers;
+                   ULONG PointerSize;
+                   ULONG EventsLost;
+                   ULONG CpuSpeedInMHz;
     } DUMMYSTRUCTNAME;
   } DUMMYUNIONNAME2;
 #if defined (_WMIKM_)
@@ -475,10 +475,10 @@ typedef struct _TRACE_LOGFILE_HEADER32 {
   __C89_NAMELESS union {
     ULONG Version;
     struct {
-      UCHAR MajorVersion;
-      UCHAR MinorVersion;
-      UCHAR SubVersion;
-      UCHAR SubMinorVersion;
+                   UCHAR MajorVersion;
+                   UCHAR MinorVersion;
+                   UCHAR SubVersion;
+                   UCHAR SubMinorVersion;
     } VersionDetail;
   };
   ULONG ProviderVersion;
@@ -491,10 +491,10 @@ typedef struct _TRACE_LOGFILE_HEADER32 {
   __C89_NAMELESS union {
     GUID LogInstanceGuid;
     __C89_NAMELESS struct {
-      ULONG StartBuffers;
-      ULONG PointerSize;
-      ULONG EventsLost;
-      ULONG CpuSpeedInMHz;
+                   ULONG StartBuffers;
+                   ULONG PointerSize;
+                   ULONG EventsLost;
+                   ULONG CpuSpeedInMHz;
     };
   };
   ULONG32 LoggerName;
@@ -516,10 +516,10 @@ typedef struct _TRACE_LOGFILE_HEADER64 {
   __C89_NAMELESS union {
     ULONG Version;
     __C89_NAMELESS struct {
-      UCHAR MajorVersion;
-      UCHAR MinorVersion;
-      UCHAR SubVersion;
-      UCHAR SubMinorVersion;
+                   UCHAR MajorVersion;
+                   UCHAR MinorVersion;
+                   UCHAR SubVersion;
+                   UCHAR SubMinorVersion;
     } VersionDetail;
   };
   ULONG ProviderVersion;
@@ -532,10 +532,10 @@ typedef struct _TRACE_LOGFILE_HEADER64 {
   __C89_NAMELESS union {
     GUID LogInstanceGuid;
     __C89_NAMELESS struct {
-      ULONG StartBuffers;
-      ULONG PointerSize;
-      ULONG EventsLost;
-      ULONG CpuSpeedInMHz;
+                   ULONG StartBuffers;
+                   ULONG PointerSize;
+                   ULONG EventsLost;
+                   ULONG CpuSpeedInMHz;
     };
   };
   ULONG64 LoggerName;
@@ -593,8 +593,8 @@ typedef struct _EVENT_TRACE_PROPERTIES_V2 {
   ULONG FlushTimer;
   ULONG EnableFlags;
   __C89_NAMELESS union {
-      LONG  AgeLimit;
-      LONG  FlushThreshold;
+                   LONG  AgeLimit;
+                   LONG  FlushThreshold;
   };
   ULONG NumberOfBuffers;
   ULONG FreeBuffers;
@@ -606,19 +606,19 @@ typedef struct _EVENT_TRACE_PROPERTIES_V2 {
   ULONG LogFileNameOffset;
   ULONG LoggerNameOffset;
   __C89_NAMELESS union {
-      __C89_NAMELESS struct {
-          ULONG VersionNumber : 8;
-      };
-      ULONG V2Control;
+                   __C89_NAMELESS struct {
+                       ULONG VersionNumber : 8;
+                   };
+                   ULONG V2Control;
   };
   ULONG FilterDescCount;
   PEVENT_FILTER_DESCRIPTOR FilterDesc;
   __C89_NAMELESS union {
-      __C89_NAMELESS struct {
-          ULONG Wow : 1;
-          ULONG QpcDeltaTracking : 1;
-      };
-      ULONG64 V2Options;
+                   __C89_NAMELESS struct {
+                       ULONG Wow : 1;
+                       ULONG QpcDeltaTracking : 1;
+                   };
+                   ULONG64 V2Options;
   };
 } EVENT_TRACE_PROPERTIES_V2, *PEVENT_TRACE_PROPERTIES_V2;
 
@@ -643,8 +643,8 @@ typedef struct _TRACE_GUID_PROPERTIES {
 typedef struct _ETW_BUFFER_CONTEXT {
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      UCHAR ProcessorNumber;
-      UCHAR Alignment;
+                   UCHAR ProcessorNumber;
+                   UCHAR Alignment;
     } DUMMYSTRUCTNAME;
     USHORT ProcessorIndex;
   } DUMMYUNIONNAME;
@@ -813,20 +813,20 @@ typedef enum _TRACE_QUERY_INFO_CLASS {
 typedef struct _EVENT_FILTER_DESCRIPTOR EVENT_FILTER_DESCRIPTOR,*PEVENT_FILTER_DESCRIPTOR;
 
 typedef struct _ENABLE_TRACE_PARAMETERS_V1 {
-    ULONG                    Version;
-    ULONG                    EnableProperty;
-    ULONG                    ControlFlags;
-    GUID                     SourceId;
+    ULONG                                                           Version;
+    ULONG                                                           EnableProperty;
+    ULONG                                                           ControlFlags;
+    GUID                                                            SourceId;
     PEVENT_FILTER_DESCRIPTOR EnableFilterDesc;
 } ENABLE_TRACE_PARAMETERS_V1, *PENABLE_TRACE_PARAMETERS_V1;
 
 typedef struct _ENABLE_TRACE_PARAMETERS {
-    ULONG                    Version;
-    ULONG                    EnableProperty;
-    ULONG                    ControlFlags;
-    GUID                     SourceId;
+    ULONG                                                           Version;
+    ULONG                                                           EnableProperty;
+    ULONG                                                           ControlFlags;
+    GUID                                                            SourceId;
     PEVENT_FILTER_DESCRIPTOR EnableFilterDesc;
-    ULONG                    FilterDescCount;
+    ULONG                                                           FilterDescCount;
 } ENABLE_TRACE_PARAMETERS, *PENABLE_TRACE_PARAMETERS;
 
 /*To enable the read event type for disk IO events, set GUID to 3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c and Type to 10.*/

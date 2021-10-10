@@ -34,22 +34,22 @@ public:
   }
   ~CPlugTerminalClassInfo() {
     if(m_bstrName) {
-      SysFreeString(m_bstrName);
+                   SysFreeString(m_bstrName);
     }
     if(m_bstrCompany) {
-      SysFreeString(m_bstrCompany);
+                   SysFreeString(m_bstrCompany);
     }
     if(m_bstrVersion) {
-      SysFreeString(m_bstrVersion);
+                   SysFreeString(m_bstrVersion);
     }
     if(m_bstrCLSID) {
-      SysFreeString(m_bstrCLSID);
+                   SysFreeString(m_bstrCLSID);
     }
     if(m_bstrTerminalClass) {
-      SysFreeString(m_bstrTerminalClass);
+                   SysFreeString(m_bstrTerminalClass);
     }
     if(m_pFTM) {
-      m_pFTM->Release();
+                   m_pFTM->Release();
     }
   }
 public:
@@ -97,13 +97,13 @@ public:
   }
   ~CPlugTerminalSuperclassInfo() {
     if(m_bstrName) {
-      SysFreeString(m_bstrName);
+                   SysFreeString(m_bstrName);
     }
     if(m_bstrCLSID) {
-      SysFreeString(m_bstrCLSID);
+                   SysFreeString(m_bstrCLSID);
     }
     if(m_pFTM) {
-      m_pFTM->Release();
+                   m_pFTM->Release();
     }
   }
 public:

@@ -20,10 +20,10 @@ VERSIONHELPERAPI IsWindowsVersionOrGreater(WORD major, WORD minor, WORD servpack
 {
     OSVERSIONINFOEXW vi = {sizeof(vi),major,minor,0,0,{0},servpack};
     return VerifyVersionInfoW(&vi, VER_MAJORVERSION|VER_MINORVERSION|VER_SERVICEPACKMAJOR,
-        VerSetConditionMask(VerSetConditionMask(VerSetConditionMask(0,
-            VER_MAJORVERSION,VER_GREATER_EQUAL),
-            VER_MINORVERSION,VER_GREATER_EQUAL),
-            VER_SERVICEPACKMAJOR, VER_GREATER_EQUAL));
+                     VerSetConditionMask(VerSetConditionMask(VerSetConditionMask(0,
+                                      VER_MAJORVERSION,VER_GREATER_EQUAL),
+                                      VER_MINORVERSION,VER_GREATER_EQUAL),
+                                      VER_SERVICEPACKMAJOR, VER_GREATER_EQUAL));
 }
 
 VERSIONHELPERAPI IsWindowsXPOrGreater(void) {

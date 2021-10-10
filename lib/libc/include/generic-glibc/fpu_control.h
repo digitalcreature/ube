@@ -22,10 +22,10 @@
 /* MIPS FPU floating point control register bits.
  *
  * 31-25  -> floating point conditions code bits 7-1.  These bits are only
- *           available in MIPS IV.
+ *                        available in MIPS IV.
  * 24     -> flush denormalized results to zero instead of
- *           causing unimplemented operation exception.  This bit is only
- *           available for MIPS III and newer.
+ *                        causing unimplemented operation exception.  This bit is only
+ *                        available for MIPS III and newer.
  * 23     -> Condition bit
  * 22-21  -> reserved for architecture implementers
  * 20     -> reserved (read as 0, write with 0)
@@ -73,8 +73,8 @@ extern fpu_control_t __fpu_control;
 /* Masks for interrupts.  */
 #define _FPU_MASK_V     0x0800  /* Invalid operation */
 #define _FPU_MASK_Z     0x0400  /* Division by zero  */
-#define _FPU_MASK_O     0x0200  /* Overflow          */
-#define _FPU_MASK_U     0x0100  /* Underflow         */
+#define _FPU_MASK_O     0x0200  /* Overflow                       */
+#define _FPU_MASK_U     0x0100  /* Underflow                      */
 #define _FPU_MASK_I     0x0080  /* Inexact operation */
 
 /* Flush denormalized numbers to zero.  */
@@ -87,7 +87,7 @@ extern fpu_control_t __fpu_control;
 /* Rounding control.  */
 #define _FPU_RC_NEAREST 0x0     /* RECOMMENDED */
 #define _FPU_RC_ZERO    0x1
-#define _FPU_RC_UP      0x2
+#define _FPU_RC_UP                   0x2
 #define _FPU_RC_DOWN    0x3
 /* Mask for rounding control.  */
 #define _FPU_RC_MASK	0x3

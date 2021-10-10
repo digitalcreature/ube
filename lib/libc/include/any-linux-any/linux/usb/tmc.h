@@ -55,7 +55,7 @@ struct usbtmc_termchar {
 #define USBTMC_IOCTL_CLEAR_IN_HALT	_IO(USBTMC_IOC_NR, 7)
 #define USBTMC_IOCTL_GET_TIMEOUT	_IOR(USBTMC_IOC_NR, 9, __u32)
 #define USBTMC_IOCTL_SET_TIMEOUT	_IOW(USBTMC_IOC_NR, 10, __u32)
-#define USBTMC_IOCTL_EOM_ENABLE	        _IOW(USBTMC_IOC_NR, 11, __u8)
+#define USBTMC_IOCTL_EOM_ENABLE	                     _IOW(USBTMC_IOC_NR, 11, __u8)
 #define USBTMC_IOCTL_CONFIG_TERMCHAR	_IOW(USBTMC_IOC_NR, 12, struct usbtmc_termchar)
 
 #define USBTMC488_IOCTL_GET_CAPS	_IOR(USBTMC_IOC_NR, 17, unsigned char)
@@ -66,15 +66,15 @@ struct usbtmc_termchar {
 #define USBTMC488_IOCTL_TRIGGER		_IO(USBTMC_IOC_NR, 22)
 
 /* Driver encoded usb488 capabilities */
-#define USBTMC488_CAPABILITY_TRIGGER         1
-#define USBTMC488_CAPABILITY_SIMPLE          2
+#define USBTMC488_CAPABILITY_TRIGGER                      1
+#define USBTMC488_CAPABILITY_SIMPLE                       2
 #define USBTMC488_CAPABILITY_REN_CONTROL     2
-#define USBTMC488_CAPABILITY_GOTO_LOCAL      2
+#define USBTMC488_CAPABILITY_GOTO_LOCAL                   2
 #define USBTMC488_CAPABILITY_LOCAL_LOCKOUT   2
-#define USBTMC488_CAPABILITY_488_DOT_2       4
-#define USBTMC488_CAPABILITY_DT1             16
-#define USBTMC488_CAPABILITY_RL1             32
-#define USBTMC488_CAPABILITY_SR1             64
-#define USBTMC488_CAPABILITY_FULL_SCPI       128
+#define USBTMC488_CAPABILITY_488_DOT_2                    4
+#define USBTMC488_CAPABILITY_DT1                                       16
+#define USBTMC488_CAPABILITY_RL1                                       32
+#define USBTMC488_CAPABILITY_SR1                                       64
+#define USBTMC488_CAPABILITY_FULL_SCPI                    128
 
 #endif

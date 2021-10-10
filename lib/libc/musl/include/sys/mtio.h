@@ -85,24 +85,24 @@ struct mt_tape_info {
 };
 
 #define MT_TAPE_INFO \
-{									      \
-	{MT_ISUNKNOWN,		"Unknown type of tape device"},		      \
-	{MT_ISQIC02,		"Generic QIC-02 tape streamer"},	      \
-	{MT_ISWT5150,		"Wangtek 5150, QIC-150"},		      \
-	{MT_ISARCHIVE_5945L2,	"Archive 5945L-2"},			      \
-	{MT_ISCMSJ500,		"CMS Jumbo 500"},			      \
-	{MT_ISTDC3610,		"Tandberg TDC 3610, QIC-24"},		      \
-	{MT_ISARCHIVE_VP60I,	"Archive VP60i, QIC-02"},		      \
-	{MT_ISARCHIVE_2150L,	"Archive Viper 2150L"},			      \
-	{MT_ISARCHIVE_2060L,	"Archive Viper 2060L"},			      \
-	{MT_ISARCHIVESC499,	"Archive SC-499 QIC-36 controller"},	      \
-	{MT_ISQIC02_ALL_FEATURES, "Generic QIC-02 tape, all features"},	      \
-	{MT_ISWT5099EEN24,	"Wangtek 5099-een24, 60MB"},		      \
+{									                   \
+	{MT_ISUNKNOWN,		"Unknown type of tape device"},		                   \
+	{MT_ISQIC02,		"Generic QIC-02 tape streamer"},	                   \
+	{MT_ISWT5150,		"Wangtek 5150, QIC-150"},		                   \
+	{MT_ISARCHIVE_5945L2,	"Archive 5945L-2"},			                   \
+	{MT_ISCMSJ500,		"CMS Jumbo 500"},			                   \
+	{MT_ISTDC3610,		"Tandberg TDC 3610, QIC-24"},		                   \
+	{MT_ISARCHIVE_VP60I,	"Archive VP60i, QIC-02"},		                   \
+	{MT_ISARCHIVE_2150L,	"Archive Viper 2150L"},			                   \
+	{MT_ISARCHIVE_2060L,	"Archive Viper 2060L"},			                   \
+	{MT_ISARCHIVESC499,	"Archive SC-499 QIC-36 controller"},	                   \
+	{MT_ISQIC02_ALL_FEATURES, "Generic QIC-02 tape, all features"},	                   \
+	{MT_ISWT5099EEN24,	"Wangtek 5099-een24, 60MB"},		                   \
 	{MT_ISTEAC_MT2ST,	"Teac MT-2ST 155mb data cassette drive"},     \
-	{MT_ISEVEREX_FT40A,	"Everex FT40A, QIC-40"},		      \
-	{MT_ISSCSI1,		"Generic SCSI-1 tape"},			      \
-	{MT_ISSCSI2,		"Generic SCSI-2 tape"},			      \
-	{0, 0}								      \
+	{MT_ISEVEREX_FT40A,	"Everex FT40A, QIC-40"},		                   \
+	{MT_ISSCSI1,		"Generic SCSI-1 tape"},			                   \
+	{MT_ISSCSI2,		"Generic SCSI-2 tape"},			                   \
+	{0, 0}								                   \
 }
 
 struct mtpos {
@@ -138,18 +138,18 @@ struct mtconfiginfo  {
 #define	MTIOCGETCONFIG	_IOR('m', 4, struct mtconfiginfo)
 #define	MTIOCSETCONFIG	_IOW('m', 5, struct mtconfiginfo)
 
-#define GMT_EOF(x)              ((x) & 0x80000000)
-#define GMT_BOT(x)              ((x) & 0x40000000)
-#define GMT_EOT(x)              ((x) & 0x20000000)
-#define GMT_SM(x)               ((x) & 0x10000000)
-#define GMT_EOD(x)              ((x) & 0x08000000)
-#define GMT_WR_PROT(x)          ((x) & 0x04000000)
-#define GMT_ONLINE(x)           ((x) & 0x01000000)
-#define GMT_D_6250(x)           ((x) & 0x00800000)
-#define GMT_D_1600(x)           ((x) & 0x00400000)
-#define GMT_D_800(x)            ((x) & 0x00200000)
-#define GMT_DR_OPEN(x)          ((x) & 0x00040000)
-#define GMT_IM_REP_EN(x)        ((x) & 0x00010000)
+#define GMT_EOF(x)                                        ((x) & 0x80000000)
+#define GMT_BOT(x)                                        ((x) & 0x40000000)
+#define GMT_EOT(x)                                        ((x) & 0x20000000)
+#define GMT_SM(x)                                         ((x) & 0x10000000)
+#define GMT_EOD(x)                                        ((x) & 0x08000000)
+#define GMT_WR_PROT(x)                       ((x) & 0x04000000)
+#define GMT_ONLINE(x)                        ((x) & 0x01000000)
+#define GMT_D_6250(x)                        ((x) & 0x00800000)
+#define GMT_D_1600(x)                        ((x) & 0x00400000)
+#define GMT_D_800(x)                                      ((x) & 0x00200000)
+#define GMT_DR_OPEN(x)                       ((x) & 0x00040000)
+#define GMT_IM_REP_EN(x)                     ((x) & 0x00010000)
 
 #define MT_ST_BLKSIZE_SHIFT	0
 #define MT_ST_BLKSIZE_MASK	0xffffff
@@ -175,7 +175,7 @@ struct mtconfiginfo  {
 #define MT_ST_CAN_BSR		0x100
 #define MT_ST_NO_BLKLIMS	0x200
 #define MT_ST_CAN_PARTITIONS    0x400
-#define MT_ST_SCSI2LOGICAL      0x800
+#define MT_ST_SCSI2LOGICAL                   0x800
 #define MT_ST_CLEAR_DEFAULT	0xfffff
 #define MT_ST_DEF_DENSITY	(MT_ST_DEF_OPTIONS | 0x100000)
 #define MT_ST_DEF_COMPRESSION	(MT_ST_DEF_OPTIONS | 0x200000)

@@ -23,8 +23,8 @@
 /* delete node with given key */
 void *
 tdelete(const void *vkey,	/* key to be deleted */
-	void      **vrootp,	/* address of the root of tree */
-	int       (*compar)(const void *, const void *))
+	void                   **vrootp,	/* address of the root of tree */
+	int                    (*compar)(const void *, const void *))
 {
 	node_t **rootp = (node_t **)vrootp;
 	node_t *p, *q, *r;

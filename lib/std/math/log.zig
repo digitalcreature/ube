@@ -16,37 +16,37 @@ const expect = std.testing.expect;
 /// Returns the logarithm of x for the provided base.
 pub fn log(comptime T: type, base: T, x: T) T {
     if (base == 2) {
-        return math.log2(x);
+                     return math.log2(x);
     } else if (base == 10) {
-        return math.log10(x);
+                     return math.log10(x);
     } else if ((@typeInfo(T) == .Float or @typeInfo(T) == .ComptimeFloat) and base == math.e) {
-        return math.ln(x);
+                     return math.ln(x);
     }
 
     const float_base = math.lossyCast(f64, base);
     switch (@typeInfo(T)) {
-        .ComptimeFloat => {
-            return @as(comptime_float, math.ln(@as(f64, x)) / math.ln(float_base));
-        },
-        .ComptimeInt => {
-            return @as(comptime_int, math.floor(math.ln(@as(f64, x)) / math.ln(float_base)));
-        },
-        .Int => {
-            // TODO implement integer log without using float math
-            return @floatToInt(T, math.floor(math.ln(@intToFloat(f64, x)) / math.ln(float_base)));
-        },
+                     .ComptimeFloat => {
+                                      return @as(comptime_float, math.ln(@as(f64, x)) / math.ln(float_base));
+                     },
+                     .ComptimeInt => {
+                                      return @as(comptime_int, math.floor(math.ln(@as(f64, x)) / math.ln(float_base)));
+                     },
+                     .Int => {
+                                      // TODO implement integer log without using float math
+                                      return @floatToInt(T, math.floor(math.ln(@intToFloat(f64, x)) / math.ln(float_base)));
+                     },
 
-        .Float => {
-            switch (T) {
-                f32 => return @floatCast(f32, math.ln(@as(f64, x)) / math.ln(float_base)),
-                f64 => return math.ln(x) / math.ln(float_base),
-                else => @compileError("log not implemented for " ++ @typeName(T)),
-            }
-        },
+                     .Float => {
+                                      switch (T) {
+                                          f32 => return @floatCast(f32, math.ln(@as(f64, x)) / math.ln(float_base)),
+                                          f64 => return math.ln(x) / math.ln(float_base),
+                                          else => @compileError("log not implemented for " ++ @typeName(T)),
+                                      }
+                     },
 
-        else => {
-            @compileError("log expects integer or float, found '" ++ @typeName(T) ++ "'");
-        },
+                     else => {
+                                      @compileError("log expects integer or float, found '" ++ @typeName(T) ++ "'");
+                     },
     }
 }
 

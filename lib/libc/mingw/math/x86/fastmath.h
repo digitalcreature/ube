@@ -43,9 +43,9 @@ static __inline__ double __fast_log (double x)
    double res;
    asm __volatile__
      ("fldln2\n\t"
-      "fxch\n\t"
-      "fyl2x"
-       : "=t" (res) : "0" (x) : "st(1)");
+                   "fxch\n\t"
+                   "fyl2x"
+                    : "=t" (res) : "0" (x) : "st(1)");
    return res;
 }
 
@@ -54,9 +54,9 @@ static __inline__ long double __fast_logl (long double x)
   long double res;
    asm __volatile__
      ("fldln2\n\t"
-      "fxch\n\t"
-      "fyl2x"
-       : "=t" (res) : "0" (x) : "st(1)");
+                   "fxch\n\t"
+                   "fyl2x"
+                    : "=t" (res) : "0" (x) : "st(1)");
    return res;
 }
 
@@ -66,9 +66,9 @@ static __inline__ float __fast_logf (float x)
    float res;
    asm __volatile__
      ("fldln2\n\t"
-      "fxch\n\t"
-      "fyl2x"
-       : "=t" (res) : "0" (x) : "st(1)");
+                   "fxch\n\t"
+                   "fyl2x"
+                    : "=t" (res) : "0" (x) : "st(1)");
    return res;
 }
 
@@ -80,10 +80,10 @@ static __inline__ double __fast_log1p (double x)
     res = __fast_log (1.0 + x);
   else
     asm __volatile__
-      ("fldln2\n\t"
-       "fxch\n\t"
-       "fyl2xp1"
-       : "=t" (res) : "0" (x) : "st(1)");
+                   ("fldln2\n\t"
+                    "fxch\n\t"
+                    "fyl2xp1"
+                    : "=t" (res) : "0" (x) : "st(1)");
    return res;
 }
 
@@ -95,10 +95,10 @@ static __inline__ long double __fast_log1pl (long double x)
     res = __fast_logl (1.0L + x);
   else
     asm __volatile__
-      ("fldln2\n\t"
-       "fxch\n\t"
-       "fyl2xp1"
-       : "=t" (res) : "0" (x) : "st(1)");
+                   ("fldln2\n\t"
+                    "fxch\n\t"
+                    "fyl2xp1"
+                    : "=t" (res) : "0" (x) : "st(1)");
    return res;
 }
 
@@ -110,10 +110,10 @@ static __inline__ float __fast_log1pf (float x)
     res = __fast_logf (1.0 + x);
   else
     asm __volatile__
-      ("fldln2\n\t"
-       "fxch\n\t"
-       "fyl2xp1"
-       : "=t" (res) : "0" (x) : "st(1)");
+                   ("fldln2\n\t"
+                    "fxch\n\t"
+                    "fyl2xp1"
+                    : "=t" (res) : "0" (x) : "st(1)");
    return res;
 }
 

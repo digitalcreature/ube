@@ -16,26 +16,26 @@ pub const GraphicsOutputProtocol = extern struct {
 
     /// Returns information for an available graphics mode that the graphics device and the set of active video output devices supports.
     pub fn queryMode(self: *const GraphicsOutputProtocol, mode: u32, size_of_info: *usize, info: **GraphicsOutputModeInformation) Status {
-        return self._query_mode(self, mode, size_of_info, info);
+                     return self._query_mode(self, mode, size_of_info, info);
     }
 
     /// Set the video device into the specified mode and clears the visible portions of the output display to black.
     pub fn setMode(self: *const GraphicsOutputProtocol, mode: u32) Status {
-        return self._set_mode(self, mode);
+                     return self._set_mode(self, mode);
     }
 
     /// Blt a rectangle of pixels on the graphics screen. Blt stands for BLock Transfer.
     pub fn blt(self: *const GraphicsOutputProtocol, blt_buffer: ?[*]GraphicsOutputBltPixel, blt_operation: GraphicsOutputBltOperation, source_x: usize, source_y: usize, destination_x: usize, destination_y: usize, width: usize, height: usize, delta: usize) Status {
-        return self._blt(self, blt_buffer, blt_operation, source_x, source_y, destination_x, destination_y, width, height, delta);
+                     return self._blt(self, blt_buffer, blt_operation, source_x, source_y, destination_x, destination_y, width, height, delta);
     }
 
     pub const guid align(8) = Guid{
-        .time_low = 0x9042a9de,
-        .time_mid = 0x23dc,
-        .time_high_and_version = 0x4a38,
-        .clock_seq_high_and_reserved = 0x96,
-        .clock_seq_low = 0xfb,
-        .node = [_]u8{ 0x7a, 0xde, 0xd0, 0x80, 0x51, 0x6a },
+                     .time_low = 0x9042a9de,
+                     .time_mid = 0x23dc,
+                     .time_high_and_version = 0x4a38,
+                     .clock_seq_high_and_reserved = 0x96,
+                     .clock_seq_low = 0xfb,
+                     .node = [_]u8{ 0x7a, 0xde, 0xd0, 0x80, 0x51, 0x6a },
     };
 };
 

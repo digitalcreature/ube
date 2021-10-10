@@ -33,7 +33,7 @@ namespace rel_ops
 template<class T>
 void
 swap(T& a, T& b) noexcept(is_nothrow_move_constructible<T>::value &&
-                          is_nothrow_move_assignable<T>::value);
+                                                                              is_nothrow_move_assignable<T>::value);
 
 template <class T, size_t N>
 void
@@ -42,19 +42,19 @@ swap(T (&a)[N], T (&b)[N]) noexcept(noexcept(swap(*a, *b)));
 template <class T> T&& forward(typename remove_reference<T>::type& t) noexcept;  // constexpr in C++14
 template <class T> T&& forward(typename remove_reference<T>::type&& t) noexcept; // constexpr in C++14
 
-template <class T> typename remove_reference<T>::type&& move(T&&) noexcept;      // constexpr in C++14
+template <class T> typename remove_reference<T>::type&& move(T&&) noexcept;                   // constexpr in C++14
 
 template <class T>
     typename conditional
     <
-        !is_nothrow_move_constructible<T>::value && is_copy_constructible<T>::value,
-        const T&,
-        T&&
+                     !is_nothrow_move_constructible<T>::value && is_copy_constructible<T>::value,
+                     const T&,
+                     T&&
     >::type
     move_if_noexcept(T& x) noexcept; // constexpr in C++14
 
-template <class T> constexpr add_const_t<T>& as_const(T& t) noexcept;      // C++17
-template <class T>                      void as_const(const T&&) = delete; // C++17
+template <class T> constexpr add_const_t<T>& as_const(T& t) noexcept;                   // C++17
+template <class T>                                                             void as_const(const T&&) = delete; // C++17
 
 template <class T> typename add_rvalue_reference<T>::type declval() noexcept;
 
@@ -70,21 +70,21 @@ struct pair
     pair(const pair&) = default;
     pair(pair&&) = default;
     explicit(see-below) constexpr pair();
-    explicit(see-below) pair(const T1& x, const T2& y);                          // constexpr in C++14
-    template <class U, class V> explicit(see-below) pair(U&& x, V&& y);          // constexpr in C++14
+    explicit(see-below) pair(const T1& x, const T2& y);                                                                              // constexpr in C++14
+    template <class U, class V> explicit(see-below) pair(U&& x, V&& y);                       // constexpr in C++14
     template <class U, class V> explicit(see-below) pair(const pair<U, V>& p);   // constexpr in C++14
-    template <class U, class V> explicit(see-below) pair(pair<U, V>&& p);        // constexpr in C++14
+    template <class U, class V> explicit(see-below) pair(pair<U, V>&& p);                     // constexpr in C++14
     template <class... Args1, class... Args2>
-        pair(piecewise_construct_t, tuple<Args1...> first_args,
-             tuple<Args2...> second_args);
+                     pair(piecewise_construct_t, tuple<Args1...> first_args,
+                                       tuple<Args2...> second_args);
 
     template <class U, class V> pair& operator=(const pair<U, V>& p);
     pair& operator=(pair&& p) noexcept(is_nothrow_move_assignable<T1>::value &&
-                                       is_nothrow_move_assignable<T2>::value);
+                                                                                                                     is_nothrow_move_assignable<T2>::value);
     template <class U, class V> pair& operator=(pair<U, V>&& p);
 
     void swap(pair& p) noexcept(is_nothrow_swappable_v<T1> &&
-                                is_nothrow_swappable_v<T2>);
+                                                                                                 is_nothrow_swappable_v<T2>);
 };
 
 template <class T1, class T2> bool operator==(const pair<T1,T2>&, const pair<T1,T2>&); // constexpr in C++14
@@ -273,7 +273,7 @@ move_if_noexcept(_Tp& __x) _NOEXCEPT
 
 #if _LIBCPP_STD_VER > 14
 template <class _Tp> constexpr add_const_t<_Tp>& as_const(_Tp& __t) noexcept { return __t; }
-template <class _Tp>                        void as_const(const _Tp&&) = delete;
+template <class _Tp>                                                                            void as_const(const _Tp&&) = delete;
 #endif
 
 struct _LIBCPP_TEMPLATE_VIS piecewise_construct_t { explicit piecewise_construct_t() = default; };
@@ -325,243 +325,243 @@ struct _LIBCPP_TEMPLATE_VIS pair
 
     _LIBCPP_INLINE_VISIBILITY
     pair& operator=(pair const& __p) {
-        first = __p.first;
-        second = __p.second;
-        return *this;
+                     first = __p.first;
+                     second = __p.second;
+                     return *this;
     }
 #else
     template <bool _Val>
     using _EnableB _LIBCPP_NODEBUG_TYPE = typename enable_if<_Val, bool>::type;
 
     struct _CheckArgs {
-      template <int&...>
-      static constexpr bool __enable_explicit_default() {
-          return is_default_constructible<_T1>::value
-              && is_default_constructible<_T2>::value
-              && !__enable_implicit_default<>();
-      }
+                   template <int&...>
+                   static constexpr bool __enable_explicit_default() {
+                       return is_default_constructible<_T1>::value
+                                        && is_default_constructible<_T2>::value
+                                        && !__enable_implicit_default<>();
+                   }
 
-      template <int&...>
-      static constexpr bool __enable_implicit_default() {
-          return __is_implicitly_default_constructible<_T1>::value
-              && __is_implicitly_default_constructible<_T2>::value;
-      }
+                   template <int&...>
+                   static constexpr bool __enable_implicit_default() {
+                       return __is_implicitly_default_constructible<_T1>::value
+                                        && __is_implicitly_default_constructible<_T2>::value;
+                   }
 
-      template <class _U1, class _U2>
-      static constexpr bool __enable_explicit() {
-          return is_constructible<first_type, _U1>::value
-              && is_constructible<second_type, _U2>::value
-              && (!is_convertible<_U1, first_type>::value
-                  || !is_convertible<_U2, second_type>::value);
-      }
+                   template <class _U1, class _U2>
+                   static constexpr bool __enable_explicit() {
+                       return is_constructible<first_type, _U1>::value
+                                        && is_constructible<second_type, _U2>::value
+                                        && (!is_convertible<_U1, first_type>::value
+                                                         || !is_convertible<_U2, second_type>::value);
+                   }
 
-      template <class _U1, class _U2>
-      static constexpr bool __enable_implicit() {
-          return is_constructible<first_type, _U1>::value
-              && is_constructible<second_type, _U2>::value
-              && is_convertible<_U1, first_type>::value
-              && is_convertible<_U2, second_type>::value;
-      }
+                   template <class _U1, class _U2>
+                   static constexpr bool __enable_implicit() {
+                       return is_constructible<first_type, _U1>::value
+                                        && is_constructible<second_type, _U2>::value
+                                        && is_convertible<_U1, first_type>::value
+                                        && is_convertible<_U2, second_type>::value;
+                   }
     };
 
     template <bool _MaybeEnable>
     using _CheckArgsDep _LIBCPP_NODEBUG_TYPE = typename conditional<
-      _MaybeEnable, _CheckArgs, __check_tuple_constructor_fail>::type;
+                   _MaybeEnable, _CheckArgs, __check_tuple_constructor_fail>::type;
 
     struct _CheckTupleLikeConstructor {
-        template <class _Tuple>
-        static constexpr bool __enable_implicit() {
-            return __tuple_convertible<_Tuple, pair>::value;
-        }
+                     template <class _Tuple>
+                     static constexpr bool __enable_implicit() {
+                                      return __tuple_convertible<_Tuple, pair>::value;
+                     }
 
-        template <class _Tuple>
-        static constexpr bool __enable_explicit() {
-            return __tuple_constructible<_Tuple, pair>::value
-               && !__tuple_convertible<_Tuple, pair>::value;
-        }
+                     template <class _Tuple>
+                     static constexpr bool __enable_explicit() {
+                                      return __tuple_constructible<_Tuple, pair>::value
+                                         && !__tuple_convertible<_Tuple, pair>::value;
+                     }
 
-        template <class _Tuple>
-        static constexpr bool __enable_assign() {
-            return __tuple_assignable<_Tuple, pair>::value;
-        }
+                     template <class _Tuple>
+                     static constexpr bool __enable_assign() {
+                                      return __tuple_assignable<_Tuple, pair>::value;
+                     }
     };
 
     template <class _Tuple>
     using _CheckTLC _LIBCPP_NODEBUG_TYPE = typename conditional<
-        __tuple_like_with_size<_Tuple, 2>::value
-            && !is_same<typename decay<_Tuple>::type, pair>::value,
-        _CheckTupleLikeConstructor,
-        __check_tuple_constructor_fail
+                     __tuple_like_with_size<_Tuple, 2>::value
+                                      && !is_same<typename decay<_Tuple>::type, pair>::value,
+                     _CheckTupleLikeConstructor,
+                     __check_tuple_constructor_fail
     >::type;
 
     template<bool _Dummy = true, _EnableB<
-            _CheckArgsDep<_Dummy>::__enable_explicit_default()
+                                      _CheckArgsDep<_Dummy>::__enable_explicit_default()
     > = false>
     explicit _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
     pair() _NOEXCEPT_(is_nothrow_default_constructible<first_type>::value &&
-                      is_nothrow_default_constructible<second_type>::value)
-        : first(), second() {}
+                                                             is_nothrow_default_constructible<second_type>::value)
+                     : first(), second() {}
 
     template<bool _Dummy = true, _EnableB<
-            _CheckArgsDep<_Dummy>::__enable_implicit_default()
+                                      _CheckArgsDep<_Dummy>::__enable_implicit_default()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
     pair() _NOEXCEPT_(is_nothrow_default_constructible<first_type>::value &&
-                      is_nothrow_default_constructible<second_type>::value)
-        : first(), second() {}
+                                                             is_nothrow_default_constructible<second_type>::value)
+                     : first(), second() {}
 
     template <bool _Dummy = true, _EnableB<
-             _CheckArgsDep<_Dummy>::template __enable_explicit<_T1 const&, _T2 const&>()
+                                       _CheckArgsDep<_Dummy>::template __enable_explicit<_T1 const&, _T2 const&>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     explicit pair(_T1 const& __t1, _T2 const& __t2)
-        _NOEXCEPT_(is_nothrow_copy_constructible<first_type>::value &&
-                   is_nothrow_copy_constructible<second_type>::value)
-        : first(__t1), second(__t2) {}
+                     _NOEXCEPT_(is_nothrow_copy_constructible<first_type>::value &&
+                                                          is_nothrow_copy_constructible<second_type>::value)
+                     : first(__t1), second(__t2) {}
 
     template<bool _Dummy = true, _EnableB<
-            _CheckArgsDep<_Dummy>::template __enable_implicit<_T1 const&, _T2 const&>()
+                                      _CheckArgsDep<_Dummy>::template __enable_implicit<_T1 const&, _T2 const&>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     pair(_T1 const& __t1, _T2 const& __t2)
-        _NOEXCEPT_(is_nothrow_copy_constructible<first_type>::value &&
-                   is_nothrow_copy_constructible<second_type>::value)
-        : first(__t1), second(__t2) {}
+                     _NOEXCEPT_(is_nothrow_copy_constructible<first_type>::value &&
+                                                          is_nothrow_copy_constructible<second_type>::value)
+                     : first(__t1), second(__t2) {}
 
     template<class _U1, class _U2, _EnableB<
-             _CheckArgs::template __enable_explicit<_U1, _U2>()
+                                       _CheckArgs::template __enable_explicit<_U1, _U2>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     explicit pair(_U1&& __u1, _U2&& __u2)
-        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1>::value &&
-                    is_nothrow_constructible<second_type, _U2>::value))
-        : first(_VSTD::forward<_U1>(__u1)), second(_VSTD::forward<_U2>(__u2)) {}
+                     _NOEXCEPT_((is_nothrow_constructible<first_type, _U1>::value &&
+                                                           is_nothrow_constructible<second_type, _U2>::value))
+                     : first(_VSTD::forward<_U1>(__u1)), second(_VSTD::forward<_U2>(__u2)) {}
 
     template<class _U1, class _U2, _EnableB<
-            _CheckArgs::template __enable_implicit<_U1, _U2>()
+                                      _CheckArgs::template __enable_implicit<_U1, _U2>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     pair(_U1&& __u1, _U2&& __u2)
-        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1>::value &&
-                    is_nothrow_constructible<second_type, _U2>::value))
-        : first(_VSTD::forward<_U1>(__u1)), second(_VSTD::forward<_U2>(__u2)) {}
+                     _NOEXCEPT_((is_nothrow_constructible<first_type, _U1>::value &&
+                                                           is_nothrow_constructible<second_type, _U2>::value))
+                     : first(_VSTD::forward<_U1>(__u1)), second(_VSTD::forward<_U2>(__u2)) {}
 
     template<class _U1, class _U2, _EnableB<
-            _CheckArgs::template __enable_explicit<_U1 const&, _U2 const&>()
+                                      _CheckArgs::template __enable_explicit<_U1 const&, _U2 const&>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     explicit pair(pair<_U1, _U2> const& __p)
-        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1 const&>::value &&
-                    is_nothrow_constructible<second_type, _U2 const&>::value))
-        : first(__p.first), second(__p.second) {}
+                     _NOEXCEPT_((is_nothrow_constructible<first_type, _U1 const&>::value &&
+                                                           is_nothrow_constructible<second_type, _U2 const&>::value))
+                     : first(__p.first), second(__p.second) {}
 
     template<class _U1, class _U2, _EnableB<
-            _CheckArgs::template __enable_implicit<_U1 const&, _U2 const&>()
+                                      _CheckArgs::template __enable_implicit<_U1 const&, _U2 const&>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     pair(pair<_U1, _U2> const& __p)
-        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1 const&>::value &&
-                    is_nothrow_constructible<second_type, _U2 const&>::value))
-        : first(__p.first), second(__p.second) {}
+                     _NOEXCEPT_((is_nothrow_constructible<first_type, _U1 const&>::value &&
+                                                           is_nothrow_constructible<second_type, _U2 const&>::value))
+                     : first(__p.first), second(__p.second) {}
 
     template<class _U1, class _U2, _EnableB<
-            _CheckArgs::template __enable_explicit<_U1, _U2>()
+                                      _CheckArgs::template __enable_explicit<_U1, _U2>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     explicit pair(pair<_U1, _U2>&&__p)
-        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1&&>::value &&
-                    is_nothrow_constructible<second_type, _U2&&>::value))
-        : first(_VSTD::forward<_U1>(__p.first)), second(_VSTD::forward<_U2>(__p.second)) {}
+                     _NOEXCEPT_((is_nothrow_constructible<first_type, _U1&&>::value &&
+                                                           is_nothrow_constructible<second_type, _U2&&>::value))
+                     : first(_VSTD::forward<_U1>(__p.first)), second(_VSTD::forward<_U2>(__p.second)) {}
 
     template<class _U1, class _U2, _EnableB<
-            _CheckArgs::template __enable_implicit<_U1, _U2>()
+                                      _CheckArgs::template __enable_implicit<_U1, _U2>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     pair(pair<_U1, _U2>&& __p)
-        _NOEXCEPT_((is_nothrow_constructible<first_type, _U1&&>::value &&
-                    is_nothrow_constructible<second_type, _U2&&>::value))
-        : first(_VSTD::forward<_U1>(__p.first)), second(_VSTD::forward<_U2>(__p.second)) {}
+                     _NOEXCEPT_((is_nothrow_constructible<first_type, _U1&&>::value &&
+                                                           is_nothrow_constructible<second_type, _U2&&>::value))
+                     : first(_VSTD::forward<_U1>(__p.first)), second(_VSTD::forward<_U2>(__p.second)) {}
 
     template<class _Tuple, _EnableB<
-            _CheckTLC<_Tuple>::template __enable_explicit<_Tuple>()
+                                      _CheckTLC<_Tuple>::template __enable_explicit<_Tuple>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     explicit pair(_Tuple&& __p)
-        : first(_VSTD::get<0>(_VSTD::forward<_Tuple>(__p))),
-          second(_VSTD::get<1>(_VSTD::forward<_Tuple>(__p))) {}
+                     : first(_VSTD::get<0>(_VSTD::forward<_Tuple>(__p))),
+                       second(_VSTD::get<1>(_VSTD::forward<_Tuple>(__p))) {}
 
     template<class _Tuple, _EnableB<
-            _CheckTLC<_Tuple>::template __enable_implicit<_Tuple>()
+                                      _CheckTLC<_Tuple>::template __enable_implicit<_Tuple>()
     > = false>
     _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
     pair(_Tuple&& __p)
-        : first(_VSTD::get<0>(_VSTD::forward<_Tuple>(__p))),
-          second(_VSTD::get<1>(_VSTD::forward<_Tuple>(__p))) {}
+                     : first(_VSTD::get<0>(_VSTD::forward<_Tuple>(__p))),
+                       second(_VSTD::get<1>(_VSTD::forward<_Tuple>(__p))) {}
 
     template <class... _Args1, class... _Args2>
     _LIBCPP_INLINE_VISIBILITY
     pair(piecewise_construct_t __pc,
-         tuple<_Args1...> __first_args, tuple<_Args2...> __second_args)
-        _NOEXCEPT_((is_nothrow_constructible<first_type, _Args1...>::value &&
-                    is_nothrow_constructible<second_type, _Args2...>::value))
-        : pair(__pc, __first_args, __second_args,
-                typename __make_tuple_indices<sizeof...(_Args1)>::type(),
-                typename __make_tuple_indices<sizeof...(_Args2) >::type()) {}
+                      tuple<_Args1...> __first_args, tuple<_Args2...> __second_args)
+                     _NOEXCEPT_((is_nothrow_constructible<first_type, _Args1...>::value &&
+                                                           is_nothrow_constructible<second_type, _Args2...>::value))
+                     : pair(__pc, __first_args, __second_args,
+                                          typename __make_tuple_indices<sizeof...(_Args1)>::type(),
+                                          typename __make_tuple_indices<sizeof...(_Args2) >::type()) {}
 
     _LIBCPP_INLINE_VISIBILITY
     pair& operator=(typename conditional<
-                        is_copy_assignable<first_type>::value &&
-                        is_copy_assignable<second_type>::value,
-                    pair, __nat>::type const& __p)
-        _NOEXCEPT_(is_nothrow_copy_assignable<first_type>::value &&
-                   is_nothrow_copy_assignable<second_type>::value)
+                                                                            is_copy_assignable<first_type>::value &&
+                                                                            is_copy_assignable<second_type>::value,
+                                                           pair, __nat>::type const& __p)
+                     _NOEXCEPT_(is_nothrow_copy_assignable<first_type>::value &&
+                                                          is_nothrow_copy_assignable<second_type>::value)
     {
-        first = __p.first;
-        second = __p.second;
-        return *this;
+                     first = __p.first;
+                     second = __p.second;
+                     return *this;
     }
 
     _LIBCPP_INLINE_VISIBILITY
     pair& operator=(typename conditional<
-                        is_move_assignable<first_type>::value &&
-                        is_move_assignable<second_type>::value,
-                    pair, __nat>::type&& __p)
-        _NOEXCEPT_(is_nothrow_move_assignable<first_type>::value &&
-                   is_nothrow_move_assignable<second_type>::value)
+                                                                            is_move_assignable<first_type>::value &&
+                                                                            is_move_assignable<second_type>::value,
+                                                           pair, __nat>::type&& __p)
+                     _NOEXCEPT_(is_nothrow_move_assignable<first_type>::value &&
+                                                          is_nothrow_move_assignable<second_type>::value)
     {
-        first = _VSTD::forward<first_type>(__p.first);
-        second = _VSTD::forward<second_type>(__p.second);
-        return *this;
+                     first = _VSTD::forward<first_type>(__p.first);
+                     second = _VSTD::forward<second_type>(__p.second);
+                     return *this;
     }
 
     template <class _Tuple, _EnableB<
-            _CheckTLC<_Tuple>::template __enable_assign<_Tuple>()
+                                      _CheckTLC<_Tuple>::template __enable_assign<_Tuple>()
      > = false>
     _LIBCPP_INLINE_VISIBILITY
     pair& operator=(_Tuple&& __p) {
-        first = _VSTD::get<0>(_VSTD::forward<_Tuple>(__p));
-        second = _VSTD::get<1>(_VSTD::forward<_Tuple>(__p));
-        return *this;
+                     first = _VSTD::get<0>(_VSTD::forward<_Tuple>(__p));
+                     second = _VSTD::get<1>(_VSTD::forward<_Tuple>(__p));
+                     return *this;
     }
 #endif
 
     _LIBCPP_INLINE_VISIBILITY
     void
     swap(pair& __p) _NOEXCEPT_(__is_nothrow_swappable<first_type>::value &&
-                               __is_nothrow_swappable<second_type>::value)
+                                                                                                __is_nothrow_swappable<second_type>::value)
     {
-        using _VSTD::swap;
-        swap(first,  __p.first);
-        swap(second, __p.second);
+                     using _VSTD::swap;
+                     swap(first,  __p.first);
+                     swap(second, __p.second);
     }
 private:
 
 #ifndef _LIBCPP_CXX03_LANG
     template <class... _Args1, class... _Args2, size_t... _I1, size_t... _I2>
-        _LIBCPP_INLINE_VISIBILITY
-        pair(piecewise_construct_t,
-             tuple<_Args1...>& __first_args, tuple<_Args2...>& __second_args,
-             __tuple_indices<_I1...>, __tuple_indices<_I2...>);
+                     _LIBCPP_INLINE_VISIBILITY
+                     pair(piecewise_construct_t,
+                                       tuple<_Args1...>& __first_args, tuple<_Args2...>& __second_args,
+                                       __tuple_indices<_I1...>, __tuple_indices<_I2...>);
 #endif
 };
 
@@ -627,8 +627,8 @@ typename enable_if
     void
 >::type
 swap(pair<_T1, _T2>& __x, pair<_T1, _T2>& __y)
-                     _NOEXCEPT_((__is_nothrow_swappable<_T1>::value &&
-                                 __is_nothrow_swappable<_T2>::value))
+                                                            _NOEXCEPT_((__is_nothrow_swappable<_T1>::value &&
+                                                                                                  __is_nothrow_swappable<_T2>::value))
 {
     __x.swap(__y);
 }
@@ -664,7 +664,7 @@ pair<typename __unwrap_ref_decay<_T1>::type, typename __unwrap_ref_decay<_T2>::t
 make_pair(_T1&& __t1, _T2&& __t2)
 {
     return pair<typename __unwrap_ref_decay<_T1>::type, typename __unwrap_ref_decay<_T2>::type>
-               (_VSTD::forward<_T1>(__t1), _VSTD::forward<_T2>(__t2));
+                                         (_VSTD::forward<_T1>(__t1), _VSTD::forward<_T2>(__t2));
 }
 
 #else  // _LIBCPP_CXX03_LANG
@@ -863,7 +863,7 @@ struct _LIBCPP_TEMPLATE_VIS integer_sequence
 {
     typedef _Tp value_type;
     static_assert( is_integral<_Tp>::value,
-                  "std::integer_sequence can only be instantiated with an integral type" );
+                                                         "std::integer_sequence can only be instantiated with an integral type" );
     static
     _LIBCPP_INLINE_VISIBILITY
     constexpr
@@ -888,7 +888,7 @@ template <class _Tp, _Tp _Ep>
 struct __make_integer_sequence_checked
 {
     static_assert(is_integral<_Tp>::value,
-                  "std::make_integer_sequence can only be instantiated with an integral type" );
+                                                         "std::make_integer_sequence can only be instantiated with an integral type" );
     static_assert(0 <= _Ep, "std::make_integer_sequence must have a non-negative sequence length");
     // Workaround GCC bug by preventing bad installations when 0 <= _Ep
     // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=68929
@@ -984,7 +984,7 @@ template <class _Size>
 struct __murmur2_or_cityhash<_Size, 32>
 {
     inline _Size operator()(const void* __key, _Size __len)
-         _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK;
+                      _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK;
 };
 
 // murmur2
@@ -998,24 +998,24 @@ __murmur2_or_cityhash<_Size, 32>::operator()(const void* __key, _Size __len)
     const unsigned char* __data = static_cast<const unsigned char*>(__key);
     for (; __len >= 4; __data += 4, __len -= 4)
     {
-        _Size __k = __loadword<_Size>(__data);
-        __k *= __m;
-        __k ^= __k >> __r;
-        __k *= __m;
-        __h *= __m;
-        __h ^= __k;
+                     _Size __k = __loadword<_Size>(__data);
+                     __k *= __m;
+                     __k ^= __k >> __r;
+                     __k *= __m;
+                     __h *= __m;
+                     __h ^= __k;
     }
     switch (__len)
     {
     case 3:
-        __h ^= __data[2] << 16;
-        _LIBCPP_FALLTHROUGH();
+                     __h ^= __data[2] << 16;
+                     _LIBCPP_FALLTHROUGH();
     case 2:
-        __h ^= __data[1] << 8;
-        _LIBCPP_FALLTHROUGH();
+                     __h ^= __data[1] << 8;
+                     _LIBCPP_FALLTHROUGH();
     case 1:
-        __h ^= __data[0];
-        __h *= __m;
+                     __h ^= __data[0];
+                     __h *= __m;
     }
     __h ^= __h >> 13;
     __h *= __m;
@@ -1063,23 +1063,23 @@ struct __murmur2_or_cityhash<_Size, 64>
      _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK
   {
     if (__len > 8) {
-      const _Size __a = __loadword<_Size>(__s);
-      const _Size __b = __loadword<_Size>(__s + __len - 8);
-      return __hash_len_16(__a, __rotate_by_at_least_1(__b + __len, __len)) ^ __b;
+                   const _Size __a = __loadword<_Size>(__s);
+                   const _Size __b = __loadword<_Size>(__s + __len - 8);
+                   return __hash_len_16(__a, __rotate_by_at_least_1(__b + __len, __len)) ^ __b;
     }
     if (__len >= 4) {
-      const uint32_t __a = __loadword<uint32_t>(__s);
-      const uint32_t __b = __loadword<uint32_t>(__s + __len - 4);
-      return __hash_len_16(__len + (__a << 3), __b);
+                   const uint32_t __a = __loadword<uint32_t>(__s);
+                   const uint32_t __b = __loadword<uint32_t>(__s + __len - 4);
+                   return __hash_len_16(__len + (__a << 3), __b);
     }
     if (__len > 0) {
-      const unsigned char __a = __s[0];
-      const unsigned char __b = __s[__len >> 1];
-      const unsigned char __c = __s[__len - 1];
-      const uint32_t __y = static_cast<uint32_t>(__a) +
-                           (static_cast<uint32_t>(__b) << 8);
-      const uint32_t __z = __len + (static_cast<uint32_t>(__c) << 2);
-      return __shift_mix(__y * __k2 ^ __z * __k3) * __k2;
+                   const unsigned char __a = __s[0];
+                   const unsigned char __b = __s[__len >> 1];
+                   const unsigned char __c = __s[__len - 1];
+                   const uint32_t __y = static_cast<uint32_t>(__a) +
+                                                                               (static_cast<uint32_t>(__b) << 8);
+                   const uint32_t __z = __len + (static_cast<uint32_t>(__c) << 2);
+                   return __shift_mix(__y * __k2 ^ __z * __k3) * __k2;
     }
     return __k2;
   }
@@ -1092,14 +1092,14 @@ struct __murmur2_or_cityhash<_Size, 64>
     const _Size __c = __loadword<_Size>(__s + __len - 8) * __k2;
     const _Size __d = __loadword<_Size>(__s + __len - 16) * __k0;
     return __hash_len_16(__rotate(__a - __b, 43) + __rotate(__c, 30) + __d,
-                         __a + __rotate(__b ^ __k3, 20) - __c + __len);
+                                                                             __a + __rotate(__b ^ __k3, 20) - __c + __len);
   }
 
   // Return a 16-byte hash for 48 bytes.  Quick and dirty.
   // Callers do best to use "random-looking" values for a and b.
   static pair<_Size, _Size> __weak_hash_len_32_with_seeds(
-      _Size __w, _Size __x, _Size __y, _Size __z, _Size __a, _Size __b)
-        _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK
+                   _Size __w, _Size __x, _Size __y, _Size __z, _Size __a, _Size __b)
+                     _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK
   {
     __a += __w;
     __b = __rotate(__b + __a + __z, 21);
@@ -1112,15 +1112,15 @@ struct __murmur2_or_cityhash<_Size, 64>
 
   // Return a 16-byte hash for s[0] ... s[31], a, and b.  Quick and dirty.
   static pair<_Size, _Size> __weak_hash_len_32_with_seeds(
-      const char* __s, _Size __a, _Size __b)
+                   const char* __s, _Size __a, _Size __b)
     _LIBCPP_DISABLE_UBSAN_UNSIGNED_INTEGER_CHECK
   {
     return __weak_hash_len_32_with_seeds(__loadword<_Size>(__s),
-                                         __loadword<_Size>(__s + 8),
-                                         __loadword<_Size>(__s + 16),
-                                         __loadword<_Size>(__s + 24),
-                                         __a,
-                                         __b);
+                                                                                                                       __loadword<_Size>(__s + 8),
+                                                                                                                       __loadword<_Size>(__s + 16),
+                                                                                                                       __loadword<_Size>(__s + 24),
+                                                                                                                       __a,
+                                                                                                                       __b);
   }
 
   // Return an 8-byte hash for 33 to 64 bytes.
@@ -1129,7 +1129,7 @@ struct __murmur2_or_cityhash<_Size, 64>
   {
     _Size __z = __loadword<_Size>(__s + 24);
     _Size __a = __loadword<_Size>(__s) +
-                (__len + __loadword<_Size>(__s + __len - 16)) * __k0;
+                                          (__len + __loadword<_Size>(__s + __len - 16)) * __k0;
     _Size __b = __rotate(__a + __z, 52);
     _Size __c = __rotate(__a, 37);
     __a += __loadword<_Size>(__s + 8);
@@ -1159,9 +1159,9 @@ __murmur2_or_cityhash<_Size, 64>::operator()(const void* __key, _Size __len)
   const char* __s = static_cast<const char*>(__key);
   if (__len <= 32) {
     if (__len <= 16) {
-      return __hash_len_0_to_16(__s, __len);
+                   return __hash_len_0_to_16(__s, __len);
     } else {
-      return __hash_len_17_to_32(__s, __len);
+                   return __hash_len_17_to_32(__s, __len);
     }
   } else if (__len <= 64) {
     return __hash_len_33_to_64(__s, __len);
@@ -1171,9 +1171,9 @@ __murmur2_or_cityhash<_Size, 64>::operator()(const void* __key, _Size __len)
   // loop we keep 56 bytes of state: v, w, x, y, and z.
   _Size __x = __loadword<_Size>(__s + __len - 40);
   _Size __y = __loadword<_Size>(__s + __len - 16) +
-              __loadword<_Size>(__s + __len - 56);
+                                        __loadword<_Size>(__s + __len - 56);
   _Size __z = __hash_len_16(__loadword<_Size>(__s + __len - 48) + __len,
-                          __loadword<_Size>(__s + __len - 24));
+                                                                              __loadword<_Size>(__s + __len - 24));
   pair<_Size, _Size> __v = __weak_hash_len_32_with_seeds(__s + __len - 64, __len, __z);
   pair<_Size, _Size> __w = __weak_hash_len_32_with_seeds(__s + __len - 32, __y + __k1, __x);
   __x = __x * __k1 + __loadword<_Size>(__s);
@@ -1188,14 +1188,14 @@ __murmur2_or_cityhash<_Size, 64>::operator()(const void* __key, _Size __len)
     __z = __rotate(__z + __w.first, 33) * __k1;
     __v = __weak_hash_len_32_with_seeds(__s, __v.second * __k1, __x + __w.first);
     __w = __weak_hash_len_32_with_seeds(__s + 32, __z + __w.second,
-                                        __y + __loadword<_Size>(__s + 16));
+                                                                                                                      __y + __loadword<_Size>(__s + 16));
     std::swap(__z, __x);
     __s += 64;
     __len -= 64;
   } while (__len != 0);
   return __hash_len_16(
-      __hash_len_16(__v.first, __w.first) + __shift_mix(__y) * __k1 + __z,
-      __hash_len_16(__v.second, __w.second) + __x);
+                   __hash_len_16(__v.first, __w.first) + __shift_mix(__y) * __k1 + __z,
+                   __hash_len_16(__v.second, __w.second) + __x);
 }
 
 template <class _Tp, size_t = sizeof(_Tp) / sizeof(size_t)>
@@ -1208,14 +1208,14 @@ struct __scalar_hash<_Tp, 0>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(_Tp __v) const _NOEXCEPT
     {
-        union
-        {
-            _Tp    __t;
-            size_t __a;
-        } __u;
-        __u.__a = 0;
-        __u.__t = __v;
-        return __u.__a;
+                     union
+                     {
+                                      _Tp    __t;
+                                      size_t __a;
+                     } __u;
+                     __u.__a = 0;
+                     __u.__t = __v;
+                     return __u.__a;
     }
 };
 
@@ -1226,13 +1226,13 @@ struct __scalar_hash<_Tp, 1>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(_Tp __v) const _NOEXCEPT
     {
-        union
-        {
-            _Tp    __t;
-            size_t __a;
-        } __u;
-        __u.__t = __v;
-        return __u.__a;
+                     union
+                     {
+                                      _Tp    __t;
+                                      size_t __a;
+                     } __u;
+                     __u.__t = __v;
+                     return __u.__a;
     }
 };
 
@@ -1243,17 +1243,17 @@ struct __scalar_hash<_Tp, 2>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(_Tp __v) const _NOEXCEPT
     {
-        union
-        {
-            _Tp __t;
-            struct
-            {
-                size_t __a;
-                size_t __b;
-            } __s;
-        } __u;
-        __u.__t = __v;
-        return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
+                     union
+                     {
+                                      _Tp __t;
+                                      struct
+                                      {
+                                          size_t __a;
+                                          size_t __b;
+                                      } __s;
+                     } __u;
+                     __u.__t = __v;
+                     return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
     }
 };
 
@@ -1264,18 +1264,18 @@ struct __scalar_hash<_Tp, 3>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(_Tp __v) const _NOEXCEPT
     {
-        union
-        {
-            _Tp __t;
-            struct
-            {
-                size_t __a;
-                size_t __b;
-                size_t __c;
-            } __s;
-        } __u;
-        __u.__t = __v;
-        return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
+                     union
+                     {
+                                      _Tp __t;
+                                      struct
+                                      {
+                                          size_t __a;
+                                          size_t __b;
+                                          size_t __c;
+                                      } __s;
+                     } __u;
+                     __u.__t = __v;
+                     return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
     }
 };
 
@@ -1286,19 +1286,19 @@ struct __scalar_hash<_Tp, 4>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(_Tp __v) const _NOEXCEPT
     {
-        union
-        {
-            _Tp __t;
-            struct
-            {
-                size_t __a;
-                size_t __b;
-                size_t __c;
-                size_t __d;
-            } __s;
-        } __u;
-        __u.__t = __v;
-        return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
+                     union
+                     {
+                                      _Tp __t;
+                                      struct
+                                      {
+                                          size_t __a;
+                                          size_t __b;
+                                          size_t __c;
+                                          size_t __d;
+                                      } __s;
+                     } __u;
+                     __u.__t = __v;
+                     return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
     }
 };
 
@@ -1321,13 +1321,13 @@ struct _LIBCPP_TEMPLATE_VIS hash<_Tp*>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(_Tp* __v) const _NOEXCEPT
     {
-        union
-        {
-            _Tp* __t;
-            size_t __a;
-        } __u;
-        __u.__t = __v;
-        return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
+                     union
+                     {
+                                      _Tp* __t;
+                                      size_t __a;
+                     } __u;
+                     __u.__t = __v;
+                     return __murmur2_or_cityhash<size_t>()(&__u, sizeof(__u));
     }
 };
 
@@ -1475,10 +1475,10 @@ struct _LIBCPP_TEMPLATE_VIS hash<float>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(float __v) const _NOEXCEPT
     {
-        // -0.0 and 0.0 should return same hash
-       if (__v == 0.0f)
-           return 0;
-        return __scalar_hash<float>::operator()(__v);
+                     // -0.0 and 0.0 should return same hash
+                    if (__v == 0.0f)
+                        return 0;
+                     return __scalar_hash<float>::operator()(__v);
     }
 };
 
@@ -1489,10 +1489,10 @@ struct _LIBCPP_TEMPLATE_VIS hash<double>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(double __v) const _NOEXCEPT
     {
-        // -0.0 and 0.0 should return same hash
-       if (__v == 0.0)
-           return 0;
-        return __scalar_hash<double>::operator()(__v);
+                     // -0.0 and 0.0 should return same hash
+                    if (__v == 0.0)
+                        return 0;
+                     return __scalar_hash<double>::operator()(__v);
     }
 };
 
@@ -1503,45 +1503,45 @@ struct _LIBCPP_TEMPLATE_VIS hash<long double>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(long double __v) const _NOEXCEPT
     {
-        // -0.0 and 0.0 should return same hash
-        if (__v == 0.0L)
-            return 0;
+                     // -0.0 and 0.0 should return same hash
+                     if (__v == 0.0L)
+                                      return 0;
 #if defined(__i386__)
-        // Zero out padding bits
-        union
-        {
-            long double __t;
-            struct
-            {
-                size_t __a;
-                size_t __b;
-                size_t __c;
-                size_t __d;
-            } __s;
-        } __u;
-        __u.__s.__a = 0;
-        __u.__s.__b = 0;
-        __u.__s.__c = 0;
-        __u.__s.__d = 0;
-        __u.__t = __v;
-        return __u.__s.__a ^ __u.__s.__b ^ __u.__s.__c ^ __u.__s.__d;
+                     // Zero out padding bits
+                     union
+                     {
+                                      long double __t;
+                                      struct
+                                      {
+                                          size_t __a;
+                                          size_t __b;
+                                          size_t __c;
+                                          size_t __d;
+                                      } __s;
+                     } __u;
+                     __u.__s.__a = 0;
+                     __u.__s.__b = 0;
+                     __u.__s.__c = 0;
+                     __u.__s.__d = 0;
+                     __u.__t = __v;
+                     return __u.__s.__a ^ __u.__s.__b ^ __u.__s.__c ^ __u.__s.__d;
 #elif defined(__x86_64__)
-        // Zero out padding bits
-        union
-        {
-            long double __t;
-            struct
-            {
-                size_t __a;
-                size_t __b;
-            } __s;
-        } __u;
-        __u.__s.__a = 0;
-        __u.__s.__b = 0;
-        __u.__t = __v;
-        return __u.__s.__a ^ __u.__s.__b;
+                     // Zero out padding bits
+                     union
+                     {
+                                      long double __t;
+                                      struct
+                                      {
+                                          size_t __a;
+                                          size_t __b;
+                                      } __s;
+                     } __u;
+                     __u.__s.__a = 0;
+                     __u.__s.__b = 0;
+                     __u.__t = __v;
+                     return __u.__s.__a ^ __u.__s.__b;
 #else
-        return __scalar_hash<long double>::operator()(__v);
+                     return __scalar_hash<long double>::operator()(__v);
 #endif
     }
 };
@@ -1555,8 +1555,8 @@ struct _LIBCPP_TEMPLATE_VIS __enum_hash
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(_Tp __v) const _NOEXCEPT
     {
-        typedef typename underlying_type<_Tp>::type type;
-        return hash<type>{}(static_cast<type>(__v));
+                     typedef typename underlying_type<_Tp>::type type;
+                     return hash<type>{}(static_cast<type>(__v));
     }
 };
 template <class _Tp>

@@ -258,9 +258,9 @@ enum {
 #define RTPROT_DNROUTED	13	/* DECnet routing daemon */
 #define RTPROT_XORP	14	/* XORP */
 #define RTPROT_NTK	15	/* Netsukuku */
-#define RTPROT_DHCP	16      /* DHCP client */
-#define RTPROT_MROUTED	17      /* Multicast daemon */
-#define RTPROT_BABEL	42      /* Babel daemon */
+#define RTPROT_DHCP	16                   /* DHCP client */
+#define RTPROT_MROUTED	17                   /* Multicast daemon */
+#define RTPROT_BABEL	42                   /* Babel daemon */
 #define RTPROT_BGP	186     /* BGP Routes */
 #define RTPROT_ISIS	187     /* ISIS Routes */
 #define RTPROT_OSPF	188     /* OSPF Routes */
@@ -294,7 +294,7 @@ enum rt_scope_t {
 #define RTM_F_EQUALIZE		0x400	/* Multipath equalizer: NI	*/
 #define RTM_F_PREFIX		0x800	/* Prefix addresses		*/
 #define RTM_F_LOOKUP_TABLE	0x1000	/* set rtm_table to FIB lookup result */
-#define RTM_F_FIB_MATCH	        0x2000	/* return full fib lookup match */
+#define RTM_F_FIB_MATCH	                     0x2000	/* return full fib lookup match */
 
 /* Reserved table identifiers */
 

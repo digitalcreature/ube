@@ -211,7 +211,7 @@ size_t wcsxfrm_l(wchar_t *__ws1, const wchar_t *__ws2, size_t __n,
 // implemented yet.
 static inline
 size_t strftime_l(char *__s, size_t __size, const char *__fmt,
-                  const struct tm *__tm, locale_t locale) {
+                                                         const struct tm *__tm, locale_t locale) {
   return __xstrftime(locale, __s, __size, __fmt, __tm);
 }
 
@@ -256,7 +256,7 @@ int vasprintf(char **strp, const char *fmt, va_list ap)
   {
     if ((*strp = (char *)realloc(*strp, str_size + 1)) == NULL)
     {
-      return -1;
+                   return -1;
     }
     str_size = vsnprintf(*strp, str_size + 1, fmt,  ap);
   }

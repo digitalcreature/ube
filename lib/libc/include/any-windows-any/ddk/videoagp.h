@@ -28,10 +28,10 @@
 extern "C" {
 #endif
 
-#define VIDEO_AGP_RATE_1X                 0x00000001
-#define VIDEO_AGP_RATE_2X                 0x00000002
-#define VIDEO_AGP_RATE_4X                 0x00000004
-#define VIDEO_AGP_RATE_8X                 0x00000008
+#define VIDEO_AGP_RATE_1X                                           0x00000001
+#define VIDEO_AGP_RATE_2X                                           0x00000002
+#define VIDEO_AGP_RATE_4X                                           0x00000004
+#define VIDEO_AGP_RATE_8X                                           0x00000008
 
 typedef enum _VIDEO_PORT_CACHE_TYPE {
   VpNonCached = 0,

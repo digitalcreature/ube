@@ -170,15 +170,15 @@ extern "C"{
 #else
   typedef struct IDEGetBlockFmtNamesParamVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDEGetBlockFmtNamesParam *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDEGetBlockFmtNamesParam *This);
-      ULONG (WINAPI *Release)(IDEGetBlockFmtNamesParam *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IDEGetBlockFmtNamesParam *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IDEGetBlockFmtNamesParam *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IDEGetBlockFmtNamesParam *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IDEGetBlockFmtNamesParam *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Names)(IDEGetBlockFmtNamesParam *This,VARIANT *pVal);
-      HRESULT (WINAPI *put_Names)(IDEGetBlockFmtNamesParam *This,VARIANT *newVal);
+                   HRESULT (WINAPI *QueryInterface)(IDEGetBlockFmtNamesParam *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDEGetBlockFmtNamesParam *This);
+                   ULONG (WINAPI *Release)(IDEGetBlockFmtNamesParam *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IDEGetBlockFmtNamesParam *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IDEGetBlockFmtNamesParam *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IDEGetBlockFmtNamesParam *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IDEGetBlockFmtNamesParam *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Names)(IDEGetBlockFmtNamesParam *This,VARIANT *pVal);
+                   HRESULT (WINAPI *put_Names)(IDEGetBlockFmtNamesParam *This,VARIANT *newVal);
     END_INTERFACE
   } IDEGetBlockFmtNamesParamVtbl;
   struct IDEGetBlockFmtNamesParam {
@@ -256,57 +256,57 @@ extern "C"{
 #else
   typedef struct IDHTMLSafeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDHTMLSafe *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDHTMLSafe *This);
-      ULONG (WINAPI *Release)(IDHTMLSafe *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IDHTMLSafe *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IDHTMLSafe *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IDHTMLSafe *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IDHTMLSafe *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *ExecCommand)(IDHTMLSafe *This,DHTMLEDITCMDID cmdID,OLECMDEXECOPT cmdexecopt,VARIANT *pInVar,VARIANT *pOutVar);
-      HRESULT (WINAPI *QueryStatus)(IDHTMLSafe *This,DHTMLEDITCMDID cmdID,DHTMLEDITCMDF *retval);
-      HRESULT (WINAPI *SetContextMenu)(IDHTMLSafe *This,VARIANT *menuStrings,VARIANT *menuStates);
-      HRESULT (WINAPI *NewDocument)(IDHTMLSafe *This);
-      HRESULT (WINAPI *LoadURL)(IDHTMLSafe *This,BSTR url);
-      HRESULT (WINAPI *FilterSourceCode)(IDHTMLSafe *This,BSTR sourceCodeIn,BSTR *sourceCodeOut);
-      HRESULT (WINAPI *Refresh)(IDHTMLSafe *This);
-      HRESULT (WINAPI *get_DOM)(IDHTMLSafe *This,IHTMLDocument2 **pVal);
-      HRESULT (WINAPI *get_DocumentHTML)(IDHTMLSafe *This,BSTR *docHTML);
-      HRESULT (WINAPI *put_DocumentHTML)(IDHTMLSafe *This,BSTR docHTML);
-      HRESULT (WINAPI *get_ActivateApplets)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ActivateApplets)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ActivateActiveXControls)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ActivateActiveXControls)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ActivateDTCs)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ActivateDTCs)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowDetails)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowDetails)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowBorders)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowBorders)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_Appearance)(IDHTMLSafe *This,DHTMLEDITAPPEARANCE *pVal);
-      HRESULT (WINAPI *put_Appearance)(IDHTMLSafe *This,DHTMLEDITAPPEARANCE newVal);
-      HRESULT (WINAPI *get_Scrollbars)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_Scrollbars)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ScrollbarAppearance)(IDHTMLSafe *This,DHTMLEDITAPPEARANCE *pVal);
-      HRESULT (WINAPI *put_ScrollbarAppearance)(IDHTMLSafe *This,DHTMLEDITAPPEARANCE newVal);
-      HRESULT (WINAPI *get_SourceCodePreservation)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_SourceCodePreservation)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_AbsoluteDropMode)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_AbsoluteDropMode)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_SnapToGridX)(IDHTMLSafe *This,__LONG32 *pVal);
-      HRESULT (WINAPI *put_SnapToGridX)(IDHTMLSafe *This,__LONG32 newVal);
-      HRESULT (WINAPI *get_SnapToGridY)(IDHTMLSafe *This,__LONG32 *pVal);
-      HRESULT (WINAPI *put_SnapToGridY)(IDHTMLSafe *This,__LONG32 newVal);
-      HRESULT (WINAPI *get_SnapToGrid)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_SnapToGrid)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_IsDirty)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_CurrentDocumentPath)(IDHTMLSafe *This,BSTR *docPath);
-      HRESULT (WINAPI *get_BaseURL)(IDHTMLSafe *This,BSTR *baseURL);
-      HRESULT (WINAPI *put_BaseURL)(IDHTMLSafe *This,BSTR baseURL);
-      HRESULT (WINAPI *get_DocumentTitle)(IDHTMLSafe *This,BSTR *docTitle);
-      HRESULT (WINAPI *get_UseDivOnCarriageReturn)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_UseDivOnCarriageReturn)(IDHTMLSafe *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_Busy)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *QueryInterface)(IDHTMLSafe *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDHTMLSafe *This);
+                   ULONG (WINAPI *Release)(IDHTMLSafe *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IDHTMLSafe *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IDHTMLSafe *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IDHTMLSafe *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IDHTMLSafe *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *ExecCommand)(IDHTMLSafe *This,DHTMLEDITCMDID cmdID,OLECMDEXECOPT cmdexecopt,VARIANT *pInVar,VARIANT *pOutVar);
+                   HRESULT (WINAPI *QueryStatus)(IDHTMLSafe *This,DHTMLEDITCMDID cmdID,DHTMLEDITCMDF *retval);
+                   HRESULT (WINAPI *SetContextMenu)(IDHTMLSafe *This,VARIANT *menuStrings,VARIANT *menuStates);
+                   HRESULT (WINAPI *NewDocument)(IDHTMLSafe *This);
+                   HRESULT (WINAPI *LoadURL)(IDHTMLSafe *This,BSTR url);
+                   HRESULT (WINAPI *FilterSourceCode)(IDHTMLSafe *This,BSTR sourceCodeIn,BSTR *sourceCodeOut);
+                   HRESULT (WINAPI *Refresh)(IDHTMLSafe *This);
+                   HRESULT (WINAPI *get_DOM)(IDHTMLSafe *This,IHTMLDocument2 **pVal);
+                   HRESULT (WINAPI *get_DocumentHTML)(IDHTMLSafe *This,BSTR *docHTML);
+                   HRESULT (WINAPI *put_DocumentHTML)(IDHTMLSafe *This,BSTR docHTML);
+                   HRESULT (WINAPI *get_ActivateApplets)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ActivateApplets)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ActivateActiveXControls)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ActivateActiveXControls)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ActivateDTCs)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ActivateDTCs)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowDetails)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowDetails)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowBorders)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowBorders)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_Appearance)(IDHTMLSafe *This,DHTMLEDITAPPEARANCE *pVal);
+                   HRESULT (WINAPI *put_Appearance)(IDHTMLSafe *This,DHTMLEDITAPPEARANCE newVal);
+                   HRESULT (WINAPI *get_Scrollbars)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_Scrollbars)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ScrollbarAppearance)(IDHTMLSafe *This,DHTMLEDITAPPEARANCE *pVal);
+                   HRESULT (WINAPI *put_ScrollbarAppearance)(IDHTMLSafe *This,DHTMLEDITAPPEARANCE newVal);
+                   HRESULT (WINAPI *get_SourceCodePreservation)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_SourceCodePreservation)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_AbsoluteDropMode)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_AbsoluteDropMode)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_SnapToGridX)(IDHTMLSafe *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *put_SnapToGridX)(IDHTMLSafe *This,__LONG32 newVal);
+                   HRESULT (WINAPI *get_SnapToGridY)(IDHTMLSafe *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *put_SnapToGridY)(IDHTMLSafe *This,__LONG32 newVal);
+                   HRESULT (WINAPI *get_SnapToGrid)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_SnapToGrid)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_IsDirty)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_CurrentDocumentPath)(IDHTMLSafe *This,BSTR *docPath);
+                   HRESULT (WINAPI *get_BaseURL)(IDHTMLSafe *This,BSTR *baseURL);
+                   HRESULT (WINAPI *put_BaseURL)(IDHTMLSafe *This,BSTR baseURL);
+                   HRESULT (WINAPI *get_DocumentTitle)(IDHTMLSafe *This,BSTR *docTitle);
+                   HRESULT (WINAPI *get_UseDivOnCarriageReturn)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_UseDivOnCarriageReturn)(IDHTMLSafe *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_Busy)(IDHTMLSafe *This,VARIANT_BOOL *pVal);
     END_INTERFACE
   } IDHTMLSafeVtbl;
   struct IDHTMLSafe {
@@ -471,62 +471,62 @@ extern "C"{
 #else
   typedef struct IDHTMLEditVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDHTMLEdit *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDHTMLEdit *This);
-      ULONG (WINAPI *Release)(IDHTMLEdit *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IDHTMLEdit *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IDHTMLEdit *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IDHTMLEdit *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IDHTMLEdit *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *ExecCommand)(IDHTMLEdit *This,DHTMLEDITCMDID cmdID,OLECMDEXECOPT cmdexecopt,VARIANT *pInVar,VARIANT *pOutVar);
-      HRESULT (WINAPI *QueryStatus)(IDHTMLEdit *This,DHTMLEDITCMDID cmdID,DHTMLEDITCMDF *retval);
-      HRESULT (WINAPI *SetContextMenu)(IDHTMLEdit *This,VARIANT *menuStrings,VARIANT *menuStates);
-      HRESULT (WINAPI *NewDocument)(IDHTMLEdit *This);
-      HRESULT (WINAPI *LoadURL)(IDHTMLEdit *This,BSTR url);
-      HRESULT (WINAPI *FilterSourceCode)(IDHTMLEdit *This,BSTR sourceCodeIn,BSTR *sourceCodeOut);
-      HRESULT (WINAPI *Refresh)(IDHTMLEdit *This);
-      HRESULT (WINAPI *get_DOM)(IDHTMLEdit *This,IHTMLDocument2 **pVal);
-      HRESULT (WINAPI *get_DocumentHTML)(IDHTMLEdit *This,BSTR *docHTML);
-      HRESULT (WINAPI *put_DocumentHTML)(IDHTMLEdit *This,BSTR docHTML);
-      HRESULT (WINAPI *get_ActivateApplets)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ActivateApplets)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ActivateActiveXControls)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ActivateActiveXControls)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ActivateDTCs)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ActivateDTCs)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowDetails)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowDetails)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowBorders)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowBorders)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_Appearance)(IDHTMLEdit *This,DHTMLEDITAPPEARANCE *pVal);
-      HRESULT (WINAPI *put_Appearance)(IDHTMLEdit *This,DHTMLEDITAPPEARANCE newVal);
-      HRESULT (WINAPI *get_Scrollbars)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_Scrollbars)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ScrollbarAppearance)(IDHTMLEdit *This,DHTMLEDITAPPEARANCE *pVal);
-      HRESULT (WINAPI *put_ScrollbarAppearance)(IDHTMLEdit *This,DHTMLEDITAPPEARANCE newVal);
-      HRESULT (WINAPI *get_SourceCodePreservation)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_SourceCodePreservation)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_AbsoluteDropMode)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_AbsoluteDropMode)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_SnapToGridX)(IDHTMLEdit *This,__LONG32 *pVal);
-      HRESULT (WINAPI *put_SnapToGridX)(IDHTMLEdit *This,__LONG32 newVal);
-      HRESULT (WINAPI *get_SnapToGridY)(IDHTMLEdit *This,__LONG32 *pVal);
-      HRESULT (WINAPI *put_SnapToGridY)(IDHTMLEdit *This,__LONG32 newVal);
-      HRESULT (WINAPI *get_SnapToGrid)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_SnapToGrid)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_IsDirty)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_CurrentDocumentPath)(IDHTMLEdit *This,BSTR *docPath);
-      HRESULT (WINAPI *get_BaseURL)(IDHTMLEdit *This,BSTR *baseURL);
-      HRESULT (WINAPI *put_BaseURL)(IDHTMLEdit *This,BSTR baseURL);
-      HRESULT (WINAPI *get_DocumentTitle)(IDHTMLEdit *This,BSTR *docTitle);
-      HRESULT (WINAPI *get_UseDivOnCarriageReturn)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_UseDivOnCarriageReturn)(IDHTMLEdit *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_Busy)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *LoadDocument)(IDHTMLEdit *This,VARIANT *pathIn,VARIANT *promptUser);
-      HRESULT (WINAPI *SaveDocument)(IDHTMLEdit *This,VARIANT *pathIn,VARIANT *promptUser);
-      HRESULT (WINAPI *PrintDocument)(IDHTMLEdit *This,VARIANT *withUI);
-      HRESULT (WINAPI *get_BrowseMode)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_BrowseMode)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *QueryInterface)(IDHTMLEdit *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDHTMLEdit *This);
+                   ULONG (WINAPI *Release)(IDHTMLEdit *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IDHTMLEdit *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IDHTMLEdit *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IDHTMLEdit *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IDHTMLEdit *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *ExecCommand)(IDHTMLEdit *This,DHTMLEDITCMDID cmdID,OLECMDEXECOPT cmdexecopt,VARIANT *pInVar,VARIANT *pOutVar);
+                   HRESULT (WINAPI *QueryStatus)(IDHTMLEdit *This,DHTMLEDITCMDID cmdID,DHTMLEDITCMDF *retval);
+                   HRESULT (WINAPI *SetContextMenu)(IDHTMLEdit *This,VARIANT *menuStrings,VARIANT *menuStates);
+                   HRESULT (WINAPI *NewDocument)(IDHTMLEdit *This);
+                   HRESULT (WINAPI *LoadURL)(IDHTMLEdit *This,BSTR url);
+                   HRESULT (WINAPI *FilterSourceCode)(IDHTMLEdit *This,BSTR sourceCodeIn,BSTR *sourceCodeOut);
+                   HRESULT (WINAPI *Refresh)(IDHTMLEdit *This);
+                   HRESULT (WINAPI *get_DOM)(IDHTMLEdit *This,IHTMLDocument2 **pVal);
+                   HRESULT (WINAPI *get_DocumentHTML)(IDHTMLEdit *This,BSTR *docHTML);
+                   HRESULT (WINAPI *put_DocumentHTML)(IDHTMLEdit *This,BSTR docHTML);
+                   HRESULT (WINAPI *get_ActivateApplets)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ActivateApplets)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ActivateActiveXControls)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ActivateActiveXControls)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ActivateDTCs)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ActivateDTCs)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowDetails)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowDetails)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowBorders)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowBorders)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_Appearance)(IDHTMLEdit *This,DHTMLEDITAPPEARANCE *pVal);
+                   HRESULT (WINAPI *put_Appearance)(IDHTMLEdit *This,DHTMLEDITAPPEARANCE newVal);
+                   HRESULT (WINAPI *get_Scrollbars)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_Scrollbars)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ScrollbarAppearance)(IDHTMLEdit *This,DHTMLEDITAPPEARANCE *pVal);
+                   HRESULT (WINAPI *put_ScrollbarAppearance)(IDHTMLEdit *This,DHTMLEDITAPPEARANCE newVal);
+                   HRESULT (WINAPI *get_SourceCodePreservation)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_SourceCodePreservation)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_AbsoluteDropMode)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_AbsoluteDropMode)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_SnapToGridX)(IDHTMLEdit *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *put_SnapToGridX)(IDHTMLEdit *This,__LONG32 newVal);
+                   HRESULT (WINAPI *get_SnapToGridY)(IDHTMLEdit *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *put_SnapToGridY)(IDHTMLEdit *This,__LONG32 newVal);
+                   HRESULT (WINAPI *get_SnapToGrid)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_SnapToGrid)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_IsDirty)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_CurrentDocumentPath)(IDHTMLEdit *This,BSTR *docPath);
+                   HRESULT (WINAPI *get_BaseURL)(IDHTMLEdit *This,BSTR *baseURL);
+                   HRESULT (WINAPI *put_BaseURL)(IDHTMLEdit *This,BSTR baseURL);
+                   HRESULT (WINAPI *get_DocumentTitle)(IDHTMLEdit *This,BSTR *docTitle);
+                   HRESULT (WINAPI *get_UseDivOnCarriageReturn)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_UseDivOnCarriageReturn)(IDHTMLEdit *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_Busy)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *LoadDocument)(IDHTMLEdit *This,VARIANT *pathIn,VARIANT *promptUser);
+                   HRESULT (WINAPI *SaveDocument)(IDHTMLEdit *This,VARIANT *pathIn,VARIANT *promptUser);
+                   HRESULT (WINAPI *PrintDocument)(IDHTMLEdit *This,VARIANT *withUI);
+                   HRESULT (WINAPI *get_BrowseMode)(IDHTMLEdit *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_BrowseMode)(IDHTMLEdit *This,VARIANT_BOOL newVal);
     END_INTERFACE
   } IDHTMLEditVtbl;
   struct IDHTMLEdit {
@@ -623,23 +623,23 @@ extern "C"{
 #else
   typedef struct IDEInsertTableParamVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDEInsertTableParam *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDEInsertTableParam *This);
-      ULONG (WINAPI *Release)(IDEInsertTableParam *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IDEInsertTableParam *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IDEInsertTableParam *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IDEInsertTableParam *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IDEInsertTableParam *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_NumRows)(IDEInsertTableParam *This,__LONG32 *pVal);
-      HRESULT (WINAPI *put_NumRows)(IDEInsertTableParam *This,__LONG32 newVal);
-      HRESULT (WINAPI *get_NumCols)(IDEInsertTableParam *This,__LONG32 *pVal);
-      HRESULT (WINAPI *put_NumCols)(IDEInsertTableParam *This,__LONG32 newVal);
-      HRESULT (WINAPI *get_TableAttrs)(IDEInsertTableParam *This,BSTR *pVal);
-      HRESULT (WINAPI *put_TableAttrs)(IDEInsertTableParam *This,BSTR newVal);
-      HRESULT (WINAPI *get_CellAttrs)(IDEInsertTableParam *This,BSTR *pVal);
-      HRESULT (WINAPI *put_CellAttrs)(IDEInsertTableParam *This,BSTR newVal);
-      HRESULT (WINAPI *get_Caption)(IDEInsertTableParam *This,BSTR *pVal);
-      HRESULT (WINAPI *put_Caption)(IDEInsertTableParam *This,BSTR newVal);
+                   HRESULT (WINAPI *QueryInterface)(IDEInsertTableParam *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDEInsertTableParam *This);
+                   ULONG (WINAPI *Release)(IDEInsertTableParam *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IDEInsertTableParam *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IDEInsertTableParam *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IDEInsertTableParam *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IDEInsertTableParam *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_NumRows)(IDEInsertTableParam *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *put_NumRows)(IDEInsertTableParam *This,__LONG32 newVal);
+                   HRESULT (WINAPI *get_NumCols)(IDEInsertTableParam *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *put_NumCols)(IDEInsertTableParam *This,__LONG32 newVal);
+                   HRESULT (WINAPI *get_TableAttrs)(IDEInsertTableParam *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_TableAttrs)(IDEInsertTableParam *This,BSTR newVal);
+                   HRESULT (WINAPI *get_CellAttrs)(IDEInsertTableParam *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_CellAttrs)(IDEInsertTableParam *This,BSTR newVal);
+                   HRESULT (WINAPI *get_Caption)(IDEInsertTableParam *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_Caption)(IDEInsertTableParam *This,BSTR newVal);
     END_INTERFACE
   } IDEInsertTableParamVtbl;
   struct IDEInsertTableParam {
@@ -696,13 +696,13 @@ extern "C"{
 #else
   typedef struct _DHTMLSafeEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(_DHTMLSafeEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(_DHTMLSafeEvents *This);
-      ULONG (WINAPI *Release)(_DHTMLSafeEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(_DHTMLSafeEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(_DHTMLSafeEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(_DHTMLSafeEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(_DHTMLSafeEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(_DHTMLSafeEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(_DHTMLSafeEvents *This);
+                   ULONG (WINAPI *Release)(_DHTMLSafeEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(_DHTMLSafeEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(_DHTMLSafeEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(_DHTMLSafeEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(_DHTMLSafeEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } _DHTMLSafeEventsVtbl;
   struct _DHTMLSafeEvents {
@@ -729,13 +729,13 @@ extern "C"{
 #else
   typedef struct _DHTMLEditEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(_DHTMLEditEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(_DHTMLEditEvents *This);
-      ULONG (WINAPI *Release)(_DHTMLEditEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(_DHTMLEditEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(_DHTMLEditEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(_DHTMLEditEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(_DHTMLEditEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(_DHTMLEditEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(_DHTMLEditEvents *This);
+                   ULONG (WINAPI *Release)(_DHTMLEditEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(_DHTMLEditEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(_DHTMLEditEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(_DHTMLEditEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(_DHTMLEditEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } _DHTMLEditEventsVtbl;
   struct _DHTMLEditEvents {

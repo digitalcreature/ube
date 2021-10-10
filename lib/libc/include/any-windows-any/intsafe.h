@@ -50,8 +50,8 @@ together, and code using signed chars will not be affected. */
 { \
   if (__builtin_##operation##_overflow(x, y, result)) \
   { \
-      *result = overflow; \
-      return INTSAFE_E_ARITHMETIC_OVERFLOW; \
+                   *result = overflow; \
+                   return INTSAFE_E_ARITHMETIC_OVERFLOW; \
   } \
   return S_OK; \
 }

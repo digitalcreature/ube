@@ -14,31 +14,31 @@ _matherr (struct _exception *pexcept)
 
   switch(pexcept->type)
     {
-      case _DOMAIN:
+                   case _DOMAIN:
 	type = "Argument domain error (DOMAIN)";
 	break;
 
-      case _SING:
+                   case _SING:
 	type = "Argument singularity (SIGN)";
 	break;
 
-      case _OVERFLOW:
+                   case _OVERFLOW:
 	type = "Overflow range error (OVERFLOW)";
 	break;
 
-      case _PLOSS:
+                   case _PLOSS:
 	type = "Partial loss of significance (PLOSS)";
 	break;
 
-      case _TLOSS:
+                   case _TLOSS:
 	type = "Total loss of significance (TLOSS)";
 	break;
 
-      case _UNDERFLOW:
+                   case _UNDERFLOW:
 	type = "The result is too small to be represented (UNDERFLOW)";
 	break;
 
-      default:
+                   default:
 	type = "Unknown error";
 	break;
     }

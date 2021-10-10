@@ -89,9 +89,9 @@ extern const __int32_t **__ctype_toupper_loc (void)
   ((*__ctype_b_loc ())[(int) (c)] & (unsigned short int) type)
 #elif defined __USE_EXTERN_INLINES
 # define __isctype_f(type) \
-  __extern_inline int							      \
-  is##type (int __c) __THROW						      \
-  {									      \
+  __extern_inline int							                   \
+  is##type (int __c) __THROW						                   \
+  {									                   \
     return (*__ctype_b_loc ())[(int) (__c)] & (unsigned short int) _IS##type; \
   }
 #endif
@@ -153,21 +153,21 @@ __exctype (_tolower);
 
 /* This code is needed for the optimized mapping functions.  */
 #define __tobody(c, f, a, args) \
-  (__extension__							      \
-   ({ int __res;							      \
-      if (sizeof (c) > 1)						      \
-	{								      \
-	  if (__builtin_constant_p (c))					      \
-	    {								      \
-	      int __c = (c);						      \
-	      __res = __c < -128 || __c > 255 ? __c : (a)[__c];		      \
-	    }								      \
-	  else								      \
-	    __res = f args;						      \
-	}								      \
-      else								      \
-	__res = (a)[(int) (c)];						      \
-      __res; }))
+  (__extension__							                   \
+   ({ int __res;							                   \
+                   if (sizeof (c) > 1)						                   \
+	{								                   \
+	  if (__builtin_constant_p (c))					                   \
+	    {								                   \
+	                   int __c = (c);						                   \
+	                   __res = __c < -128 || __c > 255 ? __c : (a)[__c];		                   \
+	    }								                   \
+	  else								                   \
+	    __res = f args;						                   \
+	}								                   \
+                   else								                   \
+	__res = (a)[(int) (c)];						                   \
+                   __res; }))
 
 #if !defined __NO_CTYPE
 # ifdef __isctype_f
@@ -241,7 +241,7 @@ __NTH (toupper (int __c))
 #  define __isctype_l(c, type, locale) \
   ((locale)->__ctype_b[(int) (c)] & (unsigned short int) type)
 
-# define __exctype_l(name) 						      \
+# define __exctype_l(name) 						                   \
   extern int name (int, locale_t) __THROW
 
 /* The following names are all functions:

@@ -28,19 +28,19 @@ enum
   {
     FE_INVALID =
 #define FE_INVALID	(1 << 9)
-      FE_INVALID,
+                   FE_INVALID,
     FE_OVERFLOW =
 #define FE_OVERFLOW	(1 << 8)
-      FE_OVERFLOW,
+                   FE_OVERFLOW,
     FE_UNDERFLOW =
 #define FE_UNDERFLOW	(1 << 7)
-      FE_UNDERFLOW,
+                   FE_UNDERFLOW,
     FE_DIVBYZERO =
 #define FE_DIVBYZERO	(1 << 6)
-      FE_DIVBYZERO,
+                   FE_DIVBYZERO,
     FE_INEXACT =
 #define FE_INEXACT	(1 << 5)
-      FE_INEXACT
+                   FE_INEXACT
   };
 
 #define FE_ALL_EXCEPT \
@@ -53,16 +53,16 @@ enum
   {
     FE_TONEAREST =
 #define FE_TONEAREST	(0 << 30)
-      FE_TONEAREST,
+                   FE_TONEAREST,
     FE_TOWARDZERO =
 #define FE_TOWARDZERO	(1 << 30)
-      FE_TOWARDZERO,
+                   FE_TOWARDZERO,
     FE_UPWARD =
 #define FE_UPWARD	(-0x7fffffff - 1) /* (2 << 30) */
-      FE_UPWARD,
+                   FE_UPWARD,
     FE_DOWNWARD =
 #define FE_DOWNWARD	(-0x40000000) /* (3 << 30) */
-      FE_DOWNWARD
+                   FE_DOWNWARD
   };
 
 #define __FE_ROUND_MASK	(3U << 30)

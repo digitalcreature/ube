@@ -15,75 +15,75 @@ const Lock = std.event.Lock;
 /// At this point the value remains forever available, and another resolve() is not allowed.
 pub fn Future(comptime T: type) type {
     return struct {
-        lock: Lock,
-        data: T,
-        available: Available,
+                     lock: Lock,
+                     data: T,
+                     available: Available,
 
-        const Available = enum(u8) {
-            NotStarted,
-            Started,
-            Finished,
-        };
+                     const Available = enum(u8) {
+                                      NotStarted,
+                                      Started,
+                                      Finished,
+                     };
 
-        const Self = @This();
-        const Queue = std.atomic.Queue(anyframe);
+                     const Self = @This();
+                     const Queue = std.atomic.Queue(anyframe);
 
-        pub fn init() Self {
-            return Self{
-                .lock = Lock.initLocked(),
-                .available = .NotStarted,
-                .data = undefined,
-            };
-        }
+                     pub fn init() Self {
+                                      return Self{
+                                          .lock = Lock.initLocked(),
+                                          .available = .NotStarted,
+                                          .data = undefined,
+                                      };
+                     }
 
-        /// Obtain the value. If it's not available, wait until it becomes
-        /// available.
-        /// Thread-safe.
-        pub fn get(self: *Self) callconv(.Async) *T {
-            if (@atomicLoad(Available, &self.available, .SeqCst) == .Finished) {
-                return &self.data;
-            }
-            const held = self.lock.acquire();
-            held.release();
+                     /// Obtain the value. If it's not available, wait until it becomes
+                     /// available.
+                     /// Thread-safe.
+                     pub fn get(self: *Self) callconv(.Async) *T {
+                                      if (@atomicLoad(Available, &self.available, .SeqCst) == .Finished) {
+                                          return &self.data;
+                                      }
+                                      const held = self.lock.acquire();
+                                      held.release();
 
-            return &self.data;
-        }
+                                      return &self.data;
+                     }
 
-        /// Gets the data without waiting for it. If it's available, a pointer is
-        /// returned. Otherwise, null is returned.
-        pub fn getOrNull(self: *Self) ?*T {
-            if (@atomicLoad(Available, &self.available, .SeqCst) == .Finished) {
-                return &self.data;
-            } else {
-                return null;
-            }
-        }
+                     /// Gets the data without waiting for it. If it's available, a pointer is
+                     /// returned. Otherwise, null is returned.
+                     pub fn getOrNull(self: *Self) ?*T {
+                                      if (@atomicLoad(Available, &self.available, .SeqCst) == .Finished) {
+                                          return &self.data;
+                                      } else {
+                                          return null;
+                                      }
+                     }
 
-        /// If someone else has started working on the data, wait for them to complete
-        /// and return a pointer to the data. Otherwise, return null, and the caller
-        /// should start working on the data.
-        /// It's not required to call start() before resolve() but it can be useful since
-        /// this method is thread-safe.
-        pub fn start(self: *Self) callconv(.Async) ?*T {
-            const state = @cmpxchgStrong(Available, &self.available, .NotStarted, .Started, .SeqCst, .SeqCst) orelse return null;
-            switch (state) {
-                .Started => {
-                    const held = self.lock.acquire();
-                    held.release();
-                    return &self.data;
-                },
-                .Finished => return &self.data,
-                else => unreachable,
-            }
-        }
+                     /// If someone else has started working on the data, wait for them to complete
+                     /// and return a pointer to the data. Otherwise, return null, and the caller
+                     /// should start working on the data.
+                     /// It's not required to call start() before resolve() but it can be useful since
+                     /// this method is thread-safe.
+                     pub fn start(self: *Self) callconv(.Async) ?*T {
+                                      const state = @cmpxchgStrong(Available, &self.available, .NotStarted, .Started, .SeqCst, .SeqCst) orelse return null;
+                                      switch (state) {
+                                          .Started => {
+                                                           const held = self.lock.acquire();
+                                                           held.release();
+                                                           return &self.data;
+                                          },
+                                          .Finished => return &self.data,
+                                          else => unreachable,
+                                      }
+                     }
 
-        /// Make the data become available. May be called only once.
-        /// Before calling this, modify the `data` property.
-        pub fn resolve(self: *Self) void {
-            const prev = @atomicRmw(Available, &self.available, .Xchg, .Finished, .SeqCst);
-            assert(prev != .Finished); // resolve() called twice
-            Lock.Held.release(Lock.Held{ .lock = &self.lock });
-        }
+                     /// Make the data become available. May be called only once.
+                     /// Before calling this, modify the `data` property.
+                     pub fn resolve(self: *Self) void {
+                                      const prev = @atomicRmw(Available, &self.available, .Xchg, .Finished, .SeqCst);
+                                      assert(prev != .Finished); // resolve() called twice
+                                      Lock.Held.release(Lock.Held{ .lock = &self.lock });
+                     }
     };
 }
 

@@ -169,9 +169,9 @@ __MATHCALL (fmod,, (_Mdouble_ __x, _Mdouble_ __y));
 
 #ifdef __USE_MISC
 # if ((!defined __cplusplus \
-       || __cplusplus < 201103L /* isinf conflicts with C++11.  */ \
-       || __MATH_DECLARING_DOUBLE == 0)) /* isinff or isinfl don't.  */ \
-      && !__MATH_DECLARING_FLOATN
+                    || __cplusplus < 201103L /* isinf conflicts with C++11.  */ \
+                    || __MATH_DECLARING_DOUBLE == 0)) /* isinff or isinfl don't.  */ \
+                   && !__MATH_DECLARING_FLOATN
 /* Return 0 if VALUE is finite or NaN, +1 if it
    is +Infinity, -1 if it is -Infinity.  */
 __MATHDECL_ALIAS (int,isinf,, (_Mdouble_ __value), isinf)
@@ -206,9 +206,9 @@ __MATHCALL (nan,, (const char *__tagb));
 
 #if defined __USE_MISC || (defined __USE_XOPEN && !defined __USE_XOPEN2K)
 # if ((!defined __cplusplus \
-       || __cplusplus < 201103L /* isnan conflicts with C++11.  */ \
-       || __MATH_DECLARING_DOUBLE == 0)) /* isnanf or isnanl don't.  */ \
-      && !__MATH_DECLARING_FLOATN
+                    || __cplusplus < 201103L /* isnan conflicts with C++11.  */ \
+                    || __MATH_DECLARING_DOUBLE == 0)) /* isnanf or isnanl don't.  */ \
+                   && !__MATH_DECLARING_FLOATN
 /* Return nonzero if VALUE is not a number.  */
 __MATHDECL_ALIAS (int,isnan,, (_Mdouble_ __value), isnan)
   __attribute__ ((__const__));

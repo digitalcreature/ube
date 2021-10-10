@@ -16,77 +16,77 @@
 
 __MINGW_USYMBOL(ceilf):
 #if defined(_AMD64_) || defined(__x86_64__)
-        subq    $24, %rsp
-        .seh_stackalloc 24
-        .seh_endprologue
-        movd    %xmm0, 12(%rsp)
-        movl    12(%rsp), %eax
-        movl    %eax, %ecx
-        movl    %eax, %edx
-        sarl    $23, %ecx
-        andl    $255, %ecx
-        subl    $127, %ecx
-        cmpl    $22, %ecx
-        jg      .l4
-        testl   %ecx, %ecx
-        js      .l5
-        movl    $8388607, %r8d
-        sarl    %cl, %r8d
-        testl   %eax, %r8d
-        je      .l3
-        addss   .hugeval(%rip), %xmm0
-        ucomiss .zeroval(%rip), %xmm0
-        jbe     .l2
-        testl   %eax, %eax
-        jle     .l1
-        movl    $8388608, %eax
-        sarl    %cl, %eax
-        addl    %eax, %edx
+                     subq    $24, %rsp
+                     .seh_stackalloc 24
+                     .seh_endprologue
+                     movd    %xmm0, 12(%rsp)
+                     movl    12(%rsp), %eax
+                     movl    %eax, %ecx
+                     movl    %eax, %edx
+                     sarl    $23, %ecx
+                     andl    $255, %ecx
+                     subl    $127, %ecx
+                     cmpl    $22, %ecx
+                     jg                   .l4
+                     testl   %ecx, %ecx
+                     js                   .l5
+                     movl    $8388607, %r8d
+                     sarl    %cl, %r8d
+                     testl   %eax, %r8d
+                     je                   .l3
+                     addss   .hugeval(%rip), %xmm0
+                     ucomiss .zeroval(%rip), %xmm0
+                     jbe     .l2
+                     testl   %eax, %eax
+                     jle     .l1
+                     movl    $8388608, %eax
+                     sarl    %cl, %eax
+                     addl    %eax, %edx
 .l1:
-        movl    %r8d, %eax
-        notl    %eax
-        andl    %edx, %eax
+                     movl    %r8d, %eax
+                     notl    %eax
+                     andl    %edx, %eax
 .l2:
-        movl    %eax, 8(%rsp)
-        movss   8(%rsp), %xmm0
+                     movl    %eax, 8(%rsp)
+                     movss   8(%rsp), %xmm0
 .l3:
-        addq    $24, %rsp
-        ret
-        .p2align 4,,10
+                     addq    $24, %rsp
+                     ret
+                     .p2align 4,,10
 .l4:
-        addl    $-128, %ecx
-        jne     .l3
-        addss   %xmm0, %xmm0
-        addq    $24, %rsp
-        ret
-        .p2align 4,,10
+                     addl    $-128, %ecx
+                     jne     .l3
+                     addss   %xmm0, %xmm0
+                     addq    $24, %rsp
+                     ret
+                     .p2align 4,,10
 .l5:
-        addss   .hugeval(%rip), %xmm0
-        ucomiss .zeroval(%rip), %xmm0
-        jbe     .islesseqzero
-        testl   %eax, %eax
-        js      .l6
-        movl    $1065353216, %edx
-        cmovne  %edx, %eax
+                     addss   .hugeval(%rip), %xmm0
+                     ucomiss .zeroval(%rip), %xmm0
+                     jbe     .islesseqzero
+                     testl   %eax, %eax
+                     js                   .l6
+                     movl    $1065353216, %edx
+                     cmovne  %edx, %eax
 .islesseqzero:
-        movl    %eax, 8(%rsp)
-        movss   8(%rsp), %xmm0
-        addq    $24, %rsp
-        ret
-        .p2align 4,,10
+                     movl    %eax, 8(%rsp)
+                     movss   8(%rsp), %xmm0
+                     addq    $24, %rsp
+                     ret
+                     .p2align 4,,10
 .l6:
-        movl    $-2147483648, 8(%rsp)
-        movss   8(%rsp), %xmm0
-        addq    $24, %rsp
-        ret
-        .seh_endproc
-        .section .rdata,"dr"
-        .align 4
+                     movl    $-2147483648, 8(%rsp)
+                     movss   8(%rsp), %xmm0
+                     addq    $24, %rsp
+                     ret
+                     .seh_endproc
+                     .section .rdata,"dr"
+                     .align 4
 .hugeval:
-        .long   1900671690
-        .align 4
+                     .long   1900671690
+                     .align 4
 .zeroval:
-        .long   0
+                     .long   0
 #elif defined(_X86_) || defined(__i386__)
 	flds	4(%esp)
 	subl	$8,%esp

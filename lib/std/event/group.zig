@@ -17,107 +17,107 @@ const Allocator = std.mem.Allocator;
 /// will be deleted.
 pub fn Group(comptime ReturnType: type) type {
     return struct {
-        frame_stack: Stack,
-        alloc_stack: AllocStack,
-        lock: Lock,
-        allocator: *Allocator,
+                     frame_stack: Stack,
+                     alloc_stack: AllocStack,
+                     lock: Lock,
+                     allocator: *Allocator,
 
-        const Self = @This();
+                     const Self = @This();
 
-        const Error = switch (@typeInfo(ReturnType)) {
-            .ErrorUnion => |payload| payload.error_set,
-            else => void,
-        };
-        const Stack = std.atomic.Stack(anyframe->ReturnType);
-        const AllocStack = std.atomic.Stack(Node);
+                     const Error = switch (@typeInfo(ReturnType)) {
+                                      .ErrorUnion => |payload| payload.error_set,
+                                      else => void,
+                     };
+                     const Stack = std.atomic.Stack(anyframe->ReturnType);
+                     const AllocStack = std.atomic.Stack(Node);
 
-        pub const Node = struct {
-            bytes: []const u8 = &[0]u8{},
-            handle: anyframe->ReturnType,
-        };
+                     pub const Node = struct {
+                                      bytes: []const u8 = &[0]u8{},
+                                      handle: anyframe->ReturnType,
+                     };
 
-        pub fn init(allocator: *Allocator) Self {
-            return Self{
-                .frame_stack = Stack.init(),
-                .alloc_stack = AllocStack.init(),
-                .lock = Lock.init(),
-                .allocator = allocator,
-            };
-        }
+                     pub fn init(allocator: *Allocator) Self {
+                                      return Self{
+                                          .frame_stack = Stack.init(),
+                                          .alloc_stack = AllocStack.init(),
+                                          .lock = Lock.init(),
+                                          .allocator = allocator,
+                                      };
+                     }
 
-        /// Add a frame to the group. Thread-safe.
-        pub fn add(self: *Self, handle: anyframe->ReturnType) (error{OutOfMemory}!void) {
-            const node = try self.allocator.create(AllocStack.Node);
-            node.* = AllocStack.Node{
-                .next = undefined,
-                .data = Node{
-                    .handle = handle,
-                },
-            };
-            self.alloc_stack.push(node);
-        }
+                     /// Add a frame to the group. Thread-safe.
+                     pub fn add(self: *Self, handle: anyframe->ReturnType) (error{OutOfMemory}!void) {
+                                      const node = try self.allocator.create(AllocStack.Node);
+                                      node.* = AllocStack.Node{
+                                          .next = undefined,
+                                          .data = Node{
+                                                           .handle = handle,
+                                          },
+                                      };
+                                      self.alloc_stack.push(node);
+                     }
 
-        /// Add a node to the group. Thread-safe. Cannot fail.
-        /// `node.data` should be the frame handle to add to the group.
-        /// The node's memory should be in the function frame of
-        /// the handle that is in the node, or somewhere guaranteed to live
-        /// at least as long.
-        pub fn addNode(self: *Self, node: *Stack.Node) void {
-            self.frame_stack.push(node);
-        }
+                     /// Add a node to the group. Thread-safe. Cannot fail.
+                     /// `node.data` should be the frame handle to add to the group.
+                     /// The node's memory should be in the function frame of
+                     /// the handle that is in the node, or somewhere guaranteed to live
+                     /// at least as long.
+                     pub fn addNode(self: *Self, node: *Stack.Node) void {
+                                      self.frame_stack.push(node);
+                     }
 
-        /// This is equivalent to adding a frame to the group but the memory of its frame is
-        /// allocated by the group and freed by `wait`.
-        /// `func` must be async and have return type `ReturnType`.
-        /// Thread-safe.
-        pub fn call(self: *Self, comptime func: anytype, args: anytype) error{OutOfMemory}!void {
-            var frame = try self.allocator.create(@TypeOf(@call(.{ .modifier = .async_kw }, func, args)));
-            errdefer self.allocator.destroy(frame);
-            const node = try self.allocator.create(AllocStack.Node);
-            errdefer self.allocator.destroy(node);
-            node.* = AllocStack.Node{
-                .next = undefined,
-                .data = Node{
-                    .handle = frame,
-                    .bytes = std.mem.asBytes(frame),
-                },
-            };
-            frame.* = @call(.{ .modifier = .async_kw }, func, args);
-            self.alloc_stack.push(node);
-        }
+                     /// This is equivalent to adding a frame to the group but the memory of its frame is
+                     /// allocated by the group and freed by `wait`.
+                     /// `func` must be async and have return type `ReturnType`.
+                     /// Thread-safe.
+                     pub fn call(self: *Self, comptime func: anytype, args: anytype) error{OutOfMemory}!void {
+                                      var frame = try self.allocator.create(@TypeOf(@call(.{ .modifier = .async_kw }, func, args)));
+                                      errdefer self.allocator.destroy(frame);
+                                      const node = try self.allocator.create(AllocStack.Node);
+                                      errdefer self.allocator.destroy(node);
+                                      node.* = AllocStack.Node{
+                                          .next = undefined,
+                                          .data = Node{
+                                                           .handle = frame,
+                                                           .bytes = std.mem.asBytes(frame),
+                                          },
+                                      };
+                                      frame.* = @call(.{ .modifier = .async_kw }, func, args);
+                                      self.alloc_stack.push(node);
+                     }
 
-        /// Wait for all the calls and promises of the group to complete.
-        /// Thread-safe.
-        /// Safe to call any number of times.
-        pub fn wait(self: *Self) callconv(.Async) ReturnType {
-            const held = self.lock.acquire();
-            defer held.release();
+                     /// Wait for all the calls and promises of the group to complete.
+                     /// Thread-safe.
+                     /// Safe to call any number of times.
+                     pub fn wait(self: *Self) callconv(.Async) ReturnType {
+                                      const held = self.lock.acquire();
+                                      defer held.release();
 
-            var result: ReturnType = {};
+                                      var result: ReturnType = {};
 
-            while (self.frame_stack.pop()) |node| {
-                if (Error == void) {
-                    await node.data;
-                } else {
-                    (await node.data) catch |err| {
-                        result = err;
-                    };
-                }
-            }
-            while (self.alloc_stack.pop()) |node| {
-                const handle = node.data.handle;
-                if (Error == void) {
-                    await handle;
-                } else {
-                    (await handle) catch |err| {
-                        result = err;
-                    };
-                }
-                self.allocator.free(node.data.bytes);
-                self.allocator.destroy(node);
-            }
-            return result;
-        }
+                                      while (self.frame_stack.pop()) |node| {
+                                          if (Error == void) {
+                                                           await node.data;
+                                          } else {
+                                                           (await node.data) catch |err| {
+                                                                            result = err;
+                                                           };
+                                          }
+                                      }
+                                      while (self.alloc_stack.pop()) |node| {
+                                          const handle = node.data.handle;
+                                          if (Error == void) {
+                                                           await handle;
+                                          } else {
+                                                           (await handle) catch |err| {
+                                                                            result = err;
+                                                           };
+                                          }
+                                          self.allocator.free(node.data.bytes);
+                                          self.allocator.destroy(node);
+                                      }
+                                      return result;
+                     }
     };
 }
 
@@ -156,7 +156,7 @@ fn sleepALittle(count: *usize) callconv(.Async) void {
 fn increaseByTen(count: *usize) callconv(.Async) void {
     var i: usize = 0;
     while (i < 10) : (i += 1) {
-        _ = @atomicRmw(usize, count, .Add, 1, .SeqCst);
+                     _ = @atomicRmw(usize, count, .Add, 1, .SeqCst);
     }
 }
 fn doSomethingThatFails() callconv(.Async) anyerror!void {}

@@ -60,10 +60,10 @@ extern "C"{
 #else
   typedef struct IContextCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IContextCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IContextCallback *This);
-      ULONG (WINAPI *Release)(IContextCallback *This);
-      HRESULT (WINAPI *ContextCallback)(IContextCallback *This,PFNCONTEXTCALL pfnCallback,ComCallData *pParam,REFIID riid,int iMethod,IUnknown *pUnk);
+                   HRESULT (WINAPI *QueryInterface)(IContextCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IContextCallback *This);
+                   ULONG (WINAPI *Release)(IContextCallback *This);
+                   HRESULT (WINAPI *ContextCallback)(IContextCallback *This,PFNCONTEXTCALL pfnCallback,ComCallData *pParam,REFIID riid,int iMethod,IUnknown *pUnk);
     END_INTERFACE
   } IContextCallbackVtbl;
   struct IContextCallback {

@@ -120,53 +120,53 @@ typedef struct __WIDL_amvideo_generated_name_0000000E *LPBITMAPINFOHEADER;
 interface IDirectDrawVideo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSwitches(
-        DWORD *pSwitches) = 0;
+                     DWORD *pSwitches) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSwitches(
-        DWORD Switches) = 0;
+                     DWORD Switches) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCaps(
-        DDCAPS *pCaps) = 0;
+                     DDCAPS *pCaps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEmulatedCaps(
-        DDCAPS *pCaps) = 0;
+                     DDCAPS *pCaps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSurfaceDesc(
-        DDSURFACEDESC *pSurfaceDesc) = 0;
+                     DDSURFACEDESC *pSurfaceDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFourCCCodes(
-        DWORD *pCount,
-        DWORD *pCodes) = 0;
+                     DWORD *pCount,
+                     DWORD *pCodes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDirectDraw(
-        IDirectDraw *ddraw) = 0;
+                     IDirectDraw *ddraw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDirectDraw(
-        IDirectDraw **ddraw) = 0;
+                     IDirectDraw **ddraw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSurfaceType(
-        DWORD *pSurfaceType) = 0;
+                     DWORD *pSurfaceType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefault(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UseScanLine(
-        LONG UseScanLine) = 0;
+                     LONG UseScanLine) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CanUseScanLine(
-        LONG *UseScanLine) = 0;
+                     LONG *UseScanLine) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UseOverlayStretch(
-        LONG UseOverlayStretch) = 0;
+                     LONG UseOverlayStretch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CanUseOverlayStretch(
-        LONG *UseOverlayStretch) = 0;
+                     LONG *UseOverlayStretch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UseWhenFullScreen(
-        LONG UseWhenFullScreen) = 0;
+                     LONG UseWhenFullScreen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WillUseFullScreen(
-        LONG *UseWhenFullScreen) = 0;
+                     LONG *UseWhenFullScreen) = 0;
 
 };
 #else
@@ -175,80 +175,80 @@ typedef struct IDirectDrawVideoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDirectDrawVideo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDirectDrawVideo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDirectDrawVideo *This);
+                     IDirectDrawVideo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDirectDrawVideo *This);
+                     IDirectDrawVideo *This);
 
     /*** IDirectDrawVideo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSwitches)(
-        IDirectDrawVideo *This,
-        DWORD *pSwitches);
+                     IDirectDrawVideo *This,
+                     DWORD *pSwitches);
 
     HRESULT (STDMETHODCALLTYPE *SetSwitches)(
-        IDirectDrawVideo *This,
-        DWORD Switches);
+                     IDirectDrawVideo *This,
+                     DWORD Switches);
 
     HRESULT (STDMETHODCALLTYPE *GetCaps)(
-        IDirectDrawVideo *This,
-        DDCAPS *pCaps);
+                     IDirectDrawVideo *This,
+                     DDCAPS *pCaps);
 
     HRESULT (STDMETHODCALLTYPE *GetEmulatedCaps)(
-        IDirectDrawVideo *This,
-        DDCAPS *pCaps);
+                     IDirectDrawVideo *This,
+                     DDCAPS *pCaps);
 
     HRESULT (STDMETHODCALLTYPE *GetSurfaceDesc)(
-        IDirectDrawVideo *This,
-        DDSURFACEDESC *pSurfaceDesc);
+                     IDirectDrawVideo *This,
+                     DDSURFACEDESC *pSurfaceDesc);
 
     HRESULT (STDMETHODCALLTYPE *GetFourCCCodes)(
-        IDirectDrawVideo *This,
-        DWORD *pCount,
-        DWORD *pCodes);
+                     IDirectDrawVideo *This,
+                     DWORD *pCount,
+                     DWORD *pCodes);
 
     HRESULT (STDMETHODCALLTYPE *SetDirectDraw)(
-        IDirectDrawVideo *This,
-        IDirectDraw *ddraw);
+                     IDirectDrawVideo *This,
+                     IDirectDraw *ddraw);
 
     HRESULT (STDMETHODCALLTYPE *GetDirectDraw)(
-        IDirectDrawVideo *This,
-        IDirectDraw **ddraw);
+                     IDirectDrawVideo *This,
+                     IDirectDraw **ddraw);
 
     HRESULT (STDMETHODCALLTYPE *GetSurfaceType)(
-        IDirectDrawVideo *This,
-        DWORD *pSurfaceType);
+                     IDirectDrawVideo *This,
+                     DWORD *pSurfaceType);
 
     HRESULT (STDMETHODCALLTYPE *SetDefault)(
-        IDirectDrawVideo *This);
+                     IDirectDrawVideo *This);
 
     HRESULT (STDMETHODCALLTYPE *UseScanLine)(
-        IDirectDrawVideo *This,
-        LONG UseScanLine);
+                     IDirectDrawVideo *This,
+                     LONG UseScanLine);
 
     HRESULT (STDMETHODCALLTYPE *CanUseScanLine)(
-        IDirectDrawVideo *This,
-        LONG *UseScanLine);
+                     IDirectDrawVideo *This,
+                     LONG *UseScanLine);
 
     HRESULT (STDMETHODCALLTYPE *UseOverlayStretch)(
-        IDirectDrawVideo *This,
-        LONG UseOverlayStretch);
+                     IDirectDrawVideo *This,
+                     LONG UseOverlayStretch);
 
     HRESULT (STDMETHODCALLTYPE *CanUseOverlayStretch)(
-        IDirectDrawVideo *This,
-        LONG *UseOverlayStretch);
+                     IDirectDrawVideo *This,
+                     LONG *UseOverlayStretch);
 
     HRESULT (STDMETHODCALLTYPE *UseWhenFullScreen)(
-        IDirectDrawVideo *This,
-        LONG UseWhenFullScreen);
+                     IDirectDrawVideo *This,
+                     LONG UseWhenFullScreen);
 
     HRESULT (STDMETHODCALLTYPE *WillUseFullScreen)(
-        IDirectDrawVideo *This,
-        LONG *UseWhenFullScreen);
+                     IDirectDrawVideo *This,
+                     LONG *UseWhenFullScreen);
 
     END_INTERFACE
 } IDirectDrawVideoVtbl;
@@ -358,22 +358,22 @@ static FORCEINLINE HRESULT IDirectDrawVideo_WillUseFullScreen(IDirectDrawVideo* 
 interface IQualProp : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_FramesDroppedInRenderer(
-        int *pcFrames) = 0;
+                     int *pcFrames) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FramesDrawn(
-        int *pcFramesDrawn) = 0;
+                     int *pcFramesDrawn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AvgFrameRate(
-        int *piAvgFrameRate) = 0;
+                     int *piAvgFrameRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Jitter(
-        int *iJitter) = 0;
+                     int *iJitter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AvgSyncOffset(
-        int *piAvg) = 0;
+                     int *piAvg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DevSyncOffset(
-        int *piDev) = 0;
+                     int *piDev) = 0;
 
 };
 #else
@@ -382,40 +382,40 @@ typedef struct IQualPropVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IQualProp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IQualProp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IQualProp *This);
+                     IQualProp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IQualProp *This);
+                     IQualProp *This);
 
     /*** IQualProp methods ***/
     HRESULT (STDMETHODCALLTYPE *get_FramesDroppedInRenderer)(
-        IQualProp *This,
-        int *pcFrames);
+                     IQualProp *This,
+                     int *pcFrames);
 
     HRESULT (STDMETHODCALLTYPE *get_FramesDrawn)(
-        IQualProp *This,
-        int *pcFramesDrawn);
+                     IQualProp *This,
+                     int *pcFramesDrawn);
 
     HRESULT (STDMETHODCALLTYPE *get_AvgFrameRate)(
-        IQualProp *This,
-        int *piAvgFrameRate);
+                     IQualProp *This,
+                     int *piAvgFrameRate);
 
     HRESULT (STDMETHODCALLTYPE *get_Jitter)(
-        IQualProp *This,
-        int *iJitter);
+                     IQualProp *This,
+                     int *iJitter);
 
     HRESULT (STDMETHODCALLTYPE *get_AvgSyncOffset)(
-        IQualProp *This,
-        int *piAvg);
+                     IQualProp *This,
+                     int *piAvg);
 
     HRESULT (STDMETHODCALLTYPE *get_DevSyncOffset)(
-        IQualProp *This,
-        int *piDev);
+                     IQualProp *This,
+                     int *piDev);
 
     END_INTERFACE
 } IQualPropVtbl;
@@ -485,59 +485,59 @@ static FORCEINLINE HRESULT IQualProp_get_DevSyncOffset(IQualProp* This,int *piDe
 interface IFullScreenVideo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CountModes(
-        LONG *pModes) = 0;
+                     LONG *pModes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetModeInfo(
-        LONG Mode,
-        LONG *pWidth,
-        LONG *pHeight,
-        LONG *pDepth) = 0;
+                     LONG Mode,
+                     LONG *pWidth,
+                     LONG *pHeight,
+                     LONG *pDepth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentMode(
-        LONG *pMode) = 0;
+                     LONG *pMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsModeAvailable(
-        LONG Mode) = 0;
+                     LONG Mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsModeEnabled(
-        LONG Mode) = 0;
+                     LONG Mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEnabled(
-        LONG Mode,
-        LONG bEnabled) = 0;
+                     LONG Mode,
+                     LONG bEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClipFactor(
-        LONG *pClipFactor) = 0;
+                     LONG *pClipFactor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetClipFactor(
-        LONG ClipFactor) = 0;
+                     LONG ClipFactor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMessageDrain(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMessageDrain(
-        HWND *hwnd) = 0;
+                     HWND *hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMonitor(
-        LONG Monitor) = 0;
+                     LONG Monitor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMonitor(
-        LONG *Monitor) = 0;
+                     LONG *Monitor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HideOnDeactivate(
-        LONG Hide) = 0;
+                     LONG Hide) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsHideOnDeactivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCaption(
-        BSTR strCaption) = 0;
+                     BSTR strCaption) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCaption(
-        BSTR *pstrCaption) = 0;
+                     BSTR *pstrCaption) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefault(
-        ) = 0;
+                     ) = 0;
 
 };
 #else
@@ -546,86 +546,86 @@ typedef struct IFullScreenVideoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFullScreenVideo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFullScreenVideo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFullScreenVideo *This);
+                     IFullScreenVideo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFullScreenVideo *This);
+                     IFullScreenVideo *This);
 
     /*** IFullScreenVideo methods ***/
     HRESULT (STDMETHODCALLTYPE *CountModes)(
-        IFullScreenVideo *This,
-        LONG *pModes);
+                     IFullScreenVideo *This,
+                     LONG *pModes);
 
     HRESULT (STDMETHODCALLTYPE *GetModeInfo)(
-        IFullScreenVideo *This,
-        LONG Mode,
-        LONG *pWidth,
-        LONG *pHeight,
-        LONG *pDepth);
+                     IFullScreenVideo *This,
+                     LONG Mode,
+                     LONG *pWidth,
+                     LONG *pHeight,
+                     LONG *pDepth);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentMode)(
-        IFullScreenVideo *This,
-        LONG *pMode);
+                     IFullScreenVideo *This,
+                     LONG *pMode);
 
     HRESULT (STDMETHODCALLTYPE *IsModeAvailable)(
-        IFullScreenVideo *This,
-        LONG Mode);
+                     IFullScreenVideo *This,
+                     LONG Mode);
 
     HRESULT (STDMETHODCALLTYPE *IsModeEnabled)(
-        IFullScreenVideo *This,
-        LONG Mode);
+                     IFullScreenVideo *This,
+                     LONG Mode);
 
     HRESULT (STDMETHODCALLTYPE *SetEnabled)(
-        IFullScreenVideo *This,
-        LONG Mode,
-        LONG bEnabled);
+                     IFullScreenVideo *This,
+                     LONG Mode,
+                     LONG bEnabled);
 
     HRESULT (STDMETHODCALLTYPE *GetClipFactor)(
-        IFullScreenVideo *This,
-        LONG *pClipFactor);
+                     IFullScreenVideo *This,
+                     LONG *pClipFactor);
 
     HRESULT (STDMETHODCALLTYPE *SetClipFactor)(
-        IFullScreenVideo *This,
-        LONG ClipFactor);
+                     IFullScreenVideo *This,
+                     LONG ClipFactor);
 
     HRESULT (STDMETHODCALLTYPE *SetMessageDrain)(
-        IFullScreenVideo *This,
-        HWND hwnd);
+                     IFullScreenVideo *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *GetMessageDrain)(
-        IFullScreenVideo *This,
-        HWND *hwnd);
+                     IFullScreenVideo *This,
+                     HWND *hwnd);
 
     HRESULT (STDMETHODCALLTYPE *SetMonitor)(
-        IFullScreenVideo *This,
-        LONG Monitor);
+                     IFullScreenVideo *This,
+                     LONG Monitor);
 
     HRESULT (STDMETHODCALLTYPE *GetMonitor)(
-        IFullScreenVideo *This,
-        LONG *Monitor);
+                     IFullScreenVideo *This,
+                     LONG *Monitor);
 
     HRESULT (STDMETHODCALLTYPE *HideOnDeactivate)(
-        IFullScreenVideo *This,
-        LONG Hide);
+                     IFullScreenVideo *This,
+                     LONG Hide);
 
     HRESULT (STDMETHODCALLTYPE *IsHideOnDeactivate)(
-        IFullScreenVideo *This);
+                     IFullScreenVideo *This);
 
     HRESULT (STDMETHODCALLTYPE *SetCaption)(
-        IFullScreenVideo *This,
-        BSTR strCaption);
+                     IFullScreenVideo *This,
+                     BSTR strCaption);
 
     HRESULT (STDMETHODCALLTYPE *GetCaption)(
-        IFullScreenVideo *This,
-        BSTR *pstrCaption);
+                     IFullScreenVideo *This,
+                     BSTR *pstrCaption);
 
     HRESULT (STDMETHODCALLTYPE *SetDefault)(
-        IFullScreenVideo *This);
+                     IFullScreenVideo *This);
 
     END_INTERFACE
 } IFullScreenVideoVtbl;
@@ -739,18 +739,18 @@ static FORCEINLINE HRESULT IFullScreenVideo_SetDefault(IFullScreenVideo* This) {
 interface IFullScreenVideoEx : public IFullScreenVideo
 {
     virtual HRESULT STDMETHODCALLTYPE SetAcceleratorTable(
-        HWND hwnd,
-        HACCEL hAccel) = 0;
+                     HWND hwnd,
+                     HACCEL hAccel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAcceleratorTable(
-        HWND *phwnd,
-        HACCEL *phAccel) = 0;
+                     HWND *phwnd,
+                     HACCEL *phAccel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE KeepPixelAspectRatio(
-        LONG KeepAspect) = 0;
+                     LONG KeepAspect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsKeepPixelAspectRatio(
-        LONG *pKeepAspect) = 0;
+                     LONG *pKeepAspect) = 0;
 
 };
 #else
@@ -759,105 +759,105 @@ typedef struct IFullScreenVideoExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFullScreenVideoEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFullScreenVideoEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFullScreenVideoEx *This);
+                     IFullScreenVideoEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFullScreenVideoEx *This);
+                     IFullScreenVideoEx *This);
 
     /*** IFullScreenVideo methods ***/
     HRESULT (STDMETHODCALLTYPE *CountModes)(
-        IFullScreenVideoEx *This,
-        LONG *pModes);
+                     IFullScreenVideoEx *This,
+                     LONG *pModes);
 
     HRESULT (STDMETHODCALLTYPE *GetModeInfo)(
-        IFullScreenVideoEx *This,
-        LONG Mode,
-        LONG *pWidth,
-        LONG *pHeight,
-        LONG *pDepth);
+                     IFullScreenVideoEx *This,
+                     LONG Mode,
+                     LONG *pWidth,
+                     LONG *pHeight,
+                     LONG *pDepth);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentMode)(
-        IFullScreenVideoEx *This,
-        LONG *pMode);
+                     IFullScreenVideoEx *This,
+                     LONG *pMode);
 
     HRESULT (STDMETHODCALLTYPE *IsModeAvailable)(
-        IFullScreenVideoEx *This,
-        LONG Mode);
+                     IFullScreenVideoEx *This,
+                     LONG Mode);
 
     HRESULT (STDMETHODCALLTYPE *IsModeEnabled)(
-        IFullScreenVideoEx *This,
-        LONG Mode);
+                     IFullScreenVideoEx *This,
+                     LONG Mode);
 
     HRESULT (STDMETHODCALLTYPE *SetEnabled)(
-        IFullScreenVideoEx *This,
-        LONG Mode,
-        LONG bEnabled);
+                     IFullScreenVideoEx *This,
+                     LONG Mode,
+                     LONG bEnabled);
 
     HRESULT (STDMETHODCALLTYPE *GetClipFactor)(
-        IFullScreenVideoEx *This,
-        LONG *pClipFactor);
+                     IFullScreenVideoEx *This,
+                     LONG *pClipFactor);
 
     HRESULT (STDMETHODCALLTYPE *SetClipFactor)(
-        IFullScreenVideoEx *This,
-        LONG ClipFactor);
+                     IFullScreenVideoEx *This,
+                     LONG ClipFactor);
 
     HRESULT (STDMETHODCALLTYPE *SetMessageDrain)(
-        IFullScreenVideoEx *This,
-        HWND hwnd);
+                     IFullScreenVideoEx *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *GetMessageDrain)(
-        IFullScreenVideoEx *This,
-        HWND *hwnd);
+                     IFullScreenVideoEx *This,
+                     HWND *hwnd);
 
     HRESULT (STDMETHODCALLTYPE *SetMonitor)(
-        IFullScreenVideoEx *This,
-        LONG Monitor);
+                     IFullScreenVideoEx *This,
+                     LONG Monitor);
 
     HRESULT (STDMETHODCALLTYPE *GetMonitor)(
-        IFullScreenVideoEx *This,
-        LONG *Monitor);
+                     IFullScreenVideoEx *This,
+                     LONG *Monitor);
 
     HRESULT (STDMETHODCALLTYPE *HideOnDeactivate)(
-        IFullScreenVideoEx *This,
-        LONG Hide);
+                     IFullScreenVideoEx *This,
+                     LONG Hide);
 
     HRESULT (STDMETHODCALLTYPE *IsHideOnDeactivate)(
-        IFullScreenVideoEx *This);
+                     IFullScreenVideoEx *This);
 
     HRESULT (STDMETHODCALLTYPE *SetCaption)(
-        IFullScreenVideoEx *This,
-        BSTR strCaption);
+                     IFullScreenVideoEx *This,
+                     BSTR strCaption);
 
     HRESULT (STDMETHODCALLTYPE *GetCaption)(
-        IFullScreenVideoEx *This,
-        BSTR *pstrCaption);
+                     IFullScreenVideoEx *This,
+                     BSTR *pstrCaption);
 
     HRESULT (STDMETHODCALLTYPE *SetDefault)(
-        IFullScreenVideoEx *This);
+                     IFullScreenVideoEx *This);
 
     /*** IFullScreenVideoEx methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAcceleratorTable)(
-        IFullScreenVideoEx *This,
-        HWND hwnd,
-        HACCEL hAccel);
+                     IFullScreenVideoEx *This,
+                     HWND hwnd,
+                     HACCEL hAccel);
 
     HRESULT (STDMETHODCALLTYPE *GetAcceleratorTable)(
-        IFullScreenVideoEx *This,
-        HWND *phwnd,
-        HACCEL *phAccel);
+                     IFullScreenVideoEx *This,
+                     HWND *phwnd,
+                     HACCEL *phAccel);
 
     HRESULT (STDMETHODCALLTYPE *KeepPixelAspectRatio)(
-        IFullScreenVideoEx *This,
-        LONG KeepAspect);
+                     IFullScreenVideoEx *This,
+                     LONG KeepAspect);
 
     HRESULT (STDMETHODCALLTYPE *IsKeepPixelAspectRatio)(
-        IFullScreenVideoEx *This,
-        LONG *pKeepAspect);
+                     IFullScreenVideoEx *This,
+                     LONG *pKeepAspect);
 
     END_INTERFACE
 } IFullScreenVideoExVtbl;
@@ -989,25 +989,25 @@ static FORCEINLINE HRESULT IFullScreenVideoEx_IsKeepPixelAspectRatio(IFullScreen
 interface IBaseVideoMixer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetLeadPin(
-        int iPin) = 0;
+                     int iPin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLeadPin(
-        int *piPin) = 0;
+                     int *piPin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputPinCount(
-        int *piPinCount) = 0;
+                     int *piPinCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUsingClock(
-        int *pbValue) = 0;
+                     int *pbValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUsingClock(
-        int bValue) = 0;
+                     int bValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClockPeriod(
-        int *pbValue) = 0;
+                     int *pbValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetClockPeriod(
-        int bValue) = 0;
+                     int bValue) = 0;
 
 };
 #else
@@ -1016,44 +1016,44 @@ typedef struct IBaseVideoMixerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBaseVideoMixer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBaseVideoMixer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBaseVideoMixer *This);
+                     IBaseVideoMixer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBaseVideoMixer *This);
+                     IBaseVideoMixer *This);
 
     /*** IBaseVideoMixer methods ***/
     HRESULT (STDMETHODCALLTYPE *SetLeadPin)(
-        IBaseVideoMixer *This,
-        int iPin);
+                     IBaseVideoMixer *This,
+                     int iPin);
 
     HRESULT (STDMETHODCALLTYPE *GetLeadPin)(
-        IBaseVideoMixer *This,
-        int *piPin);
+                     IBaseVideoMixer *This,
+                     int *piPin);
 
     HRESULT (STDMETHODCALLTYPE *GetInputPinCount)(
-        IBaseVideoMixer *This,
-        int *piPinCount);
+                     IBaseVideoMixer *This,
+                     int *piPinCount);
 
     HRESULT (STDMETHODCALLTYPE *IsUsingClock)(
-        IBaseVideoMixer *This,
-        int *pbValue);
+                     IBaseVideoMixer *This,
+                     int *pbValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUsingClock)(
-        IBaseVideoMixer *This,
-        int bValue);
+                     IBaseVideoMixer *This,
+                     int bValue);
 
     HRESULT (STDMETHODCALLTYPE *GetClockPeriod)(
-        IBaseVideoMixer *This,
-        int *pbValue);
+                     IBaseVideoMixer *This,
+                     int *pbValue);
 
     HRESULT (STDMETHODCALLTYPE *SetClockPeriod)(
-        IBaseVideoMixer *This,
-        int bValue);
+                     IBaseVideoMixer *This,
+                     int bValue);
 
     END_INTERFACE
 } IBaseVideoMixerVtbl;
@@ -1146,9 +1146,9 @@ typedef struct tagVIDEOINFO {
     REFERENCE_TIME AvgTimePerFrame;
     BITMAPINFOHEADER bmiHeader;
     __C89_NAMELESS union {
-        RGBQUAD bmiColors[256];
-        DWORD dwBitMasks[3];
-        TRUECOLORINFO TrueColorInfo;
+                     RGBQUAD bmiColors[256];
+                     DWORD dwBitMasks[3];
+                     TRUECOLORINFO TrueColorInfo;
     } __C89_NAMELESSUNIONNAME;
 } VIDEOINFO;
 typedef struct tagMPEG1VIDEOINFO {
@@ -1177,14 +1177,14 @@ typedef struct _AM_FRAMESTEP_STEP {
 } AM_FRAMESTEP_STEP;
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

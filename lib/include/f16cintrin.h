@@ -67,7 +67,7 @@ _cvtsh_ss(unsigned short __a)
 /// \returns The converted 16-bit half-precision float value.
 #define _cvtss_sh(a, imm) \
   (unsigned short)(((__v8hi)__builtin_ia32_vcvtps2ph((__v4sf){a, 0, 0, 0}, \
-                                                     (imm)))[0])
+                                                                                                                                                             (imm)))[0])
 
 /// Converts a 128-bit vector containing 32-bit float values into a
 ///    128-bit vector containing 16-bit half-precision float values.

@@ -18,7 +18,7 @@
 #define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__, __target__("lwp")))
 
 /// Parses the LWPCB at the specified address and enables
-///        profiling if valid.
+///                     profiling if valid.
 ///
 /// \headerfile <x86intrin.h>
 ///
@@ -50,7 +50,7 @@ __slwpcb (void)
 }
 
 /// Inserts programmed event record into the LWP event ring buffer
-///        and advances the ring buffer pointer.
+///                     and advances the ring buffer pointer.
 ///
 /// \headerfile <x86intrin.h>
 ///
@@ -68,11 +68,11 @@ __slwpcb (void)
 ///    1 is returned. Otherwise 0 is returned.
 #define __lwpins32(DATA2, DATA1, FLAGS) \
   (__builtin_ia32_lwpins32((unsigned int) (DATA2), (unsigned int) (DATA1), \
-                           (unsigned int) (FLAGS)))
+                                                                               (unsigned int) (FLAGS)))
 
 /// Decrements the LWP programmed value sample event counter. If the result is
-///        negative, inserts an event record into the LWP event ring buffer in memory
-///        and advances the ring buffer pointer.
+///                     negative, inserts an event record into the LWP event ring buffer in memory
+///                     and advances the ring buffer pointer.
 ///
 /// \headerfile <x86intrin.h>
 ///
@@ -86,12 +86,12 @@ __slwpcb (void)
 ///    A 32-bit immediate value is inserted into the 32-bit Flags field.
 #define __lwpval32(DATA2, DATA1, FLAGS) \
   (__builtin_ia32_lwpval32((unsigned int) (DATA2), (unsigned int) (DATA1), \
-                           (unsigned int) (FLAGS)))
+                                                                               (unsigned int) (FLAGS)))
 
 #ifdef __x86_64__
 
 /// Inserts programmed event record into the LWP event ring buffer
-///        and advances the ring buffer pointer.
+///                     and advances the ring buffer pointer.
 ///
 /// \headerfile <x86intrin.h>
 ///
@@ -109,11 +109,11 @@ __slwpcb (void)
 ///    1 is returned. Otherwise 0 is returned.
 #define __lwpins64(DATA2, DATA1, FLAGS) \
   (__builtin_ia32_lwpins64((unsigned long long) (DATA2), (unsigned int) (DATA1), \
-                           (unsigned int) (FLAGS)))
+                                                                               (unsigned int) (FLAGS)))
 
 /// Decrements the LWP programmed value sample event counter. If the result is
-///        negative, inserts an event record into the LWP event ring buffer in memory
-///        and advances the ring buffer pointer.
+///                     negative, inserts an event record into the LWP event ring buffer in memory
+///                     and advances the ring buffer pointer.
 ///
 /// \headerfile <x86intrin.h>
 ///
@@ -127,7 +127,7 @@ __slwpcb (void)
 ///    A 32-bit immediate value is inserted into the 32-bit Flags field.
 #define __lwpval64(DATA2, DATA1, FLAGS) \
   (__builtin_ia32_lwpval64((unsigned long long) (DATA2), (unsigned int) (DATA1), \
-                           (unsigned int) (FLAGS)))
+                                                                               (unsigned int) (FLAGS)))
 
 #endif
 

@@ -5,11 +5,11 @@
  */
 #include <_mingw_mac.h>
 
-        .file "truncf.S"
-        .text
-        .p2align 2
-        .globl __MINGW_USYMBOL(truncf)
-        .def    __MINGW_USYMBOL(truncf);  .scl    2;      .type   32;     .endef
+                     .file "truncf.S"
+                     .text
+                     .p2align 2
+                     .globl __MINGW_USYMBOL(truncf)
+                     .def    __MINGW_USYMBOL(truncf);  .scl    2;                   .type   32;     .endef
 
 __MINGW_USYMBOL(truncf):
 	frintz	s0, s0

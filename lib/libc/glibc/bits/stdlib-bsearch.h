@@ -28,14 +28,14 @@ bsearch (const void *__key, const void *__base, size_t __nmemb, size_t __size,
   __u = __nmemb;
   while (__l < __u)
     {
-      __idx = (__l + __u) / 2;
-      __p = (void *) (((const char *) __base) + (__idx * __size));
-      __comparison = (*__compar) (__key, __p);
-      if (__comparison < 0)
+                   __idx = (__l + __u) / 2;
+                   __p = (void *) (((const char *) __base) + (__idx * __size));
+                   __comparison = (*__compar) (__key, __p);
+                   if (__comparison < 0)
 	__u = __idx;
-      else if (__comparison > 0)
+                   else if (__comparison > 0)
 	__l = __idx + 1;
-      else
+                   else
 	return (void *) __p;
     }
 

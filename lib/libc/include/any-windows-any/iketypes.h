@@ -38,31 +38,31 @@ extern "C" {
 
 /* Please keep in sync with winerror.h defines.  */
 
-#define IKEEXT_CERT_FLAG_ENABLE_ACCOUNT_MAPPING          (0x1)
-#define IKEEXT_CERT_FLAG_DISABLE_REQUEST_PAYLOAD         (0x2)
-#define IKEEXT_CERT_FLAG_USE_NAP_CERTIFICATE             (0x4)
-#define IKEEXT_CERT_FLAG_INTERMEDIATE_CA                 (0x8)
+#define IKEEXT_CERT_FLAG_ENABLE_ACCOUNT_MAPPING                       (0x1)
+#define IKEEXT_CERT_FLAG_DISABLE_REQUEST_PAYLOAD                      (0x2)
+#define IKEEXT_CERT_FLAG_USE_NAP_CERTIFICATE                                       (0x4)
+#define IKEEXT_CERT_FLAG_INTERMEDIATE_CA                                           (0x8)
 #define IKEEXT_CERT_FLAG_IGNORE_INIT_CERT_MAP_FAILURE    (0x10)
 #define IKEEXT_CERT_FLAG_PREFER_NAP_CERTIFICATE_OUTBOUND (0x20)
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-#define IKEEXT_CERT_FLAG_SELECT_NAP_CERTIFICATE          (0x40)
-#define IKEEXT_CERT_FLAG_VERIFY_NAP_CERTIFICATE          (0x80)
-#define IKEEXT_CERT_FLAG_FOLLOW_RENEWAL_CERTIFICATE      (0x100)
+#define IKEEXT_CERT_FLAG_SELECT_NAP_CERTIFICATE                       (0x40)
+#define IKEEXT_CERT_FLAG_VERIFY_NAP_CERTIFICATE                       (0x80)
+#define IKEEXT_CERT_FLAG_FOLLOW_RENEWAL_CERTIFICATE                   (0x100)
 #endif
 
-#define IKEEXT_CERT_AUTH_FLAG_SSL_ONE_WAY            (0x1)
-#define IKEEXT_CERT_AUTH_FLAG_DISABLE_CRL_CHECK      (0x2)
+#define IKEEXT_CERT_AUTH_FLAG_SSL_ONE_WAY                                      (0x1)
+#define IKEEXT_CERT_AUTH_FLAG_DISABLE_CRL_CHECK                   (0x2)
 #define IKEEXT_CERT_AUTH_ENABLE_CRL_CHECK_STRONG     (0x4)
 #define IKEEXT_CERT_AUTH_DISABLE_SSL_CERT_VALIDATION (0x8)
 #if (NTDDI_VERSION >= NTDDI_WIN7)
-#define IKEEXT_CERT_AUTH_ALLOW_HTTP_CERT_LOOKUP      (0x10)
-#define IKEEXT_CERT_AUTH_URL_CONTAINS_BUNDLE         (0x20)
+#define IKEEXT_CERT_AUTH_ALLOW_HTTP_CERT_LOOKUP                   (0x10)
+#define IKEEXT_CERT_AUTH_URL_CONTAINS_BUNDLE                      (0x20)
 #endif
 
 #define IKEEXT_KERB_AUTH_DISABLE_INITIATOR_TOKEN_GENERATION (0x1)
 #define IKEEXT_KERB_AUTH_DONT_ACCEPT_EXPLICIT_CREDENTIALS   (0x2)
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-#define IKEEXT_KERB_AUTH_FORCE_PROXY_ON_INITIATOR           (0x4)
+#define IKEEXT_KERB_AUTH_FORCE_PROXY_ON_INITIATOR                        (0x4)
 #endif
 
 #define IKEEXT_RESERVED_AUTH_DISABLE_INITIATOR_TOKEN_GENERATION (0x1)
@@ -217,21 +217,21 @@ typedef struct IKEEXT_PRESHARED_KEY_AUTHENTICATION1__ {
 typedef struct IKEEXT_CERTIFICATE_AUTHENTICATION0_ {
     IKEEXT_CERT_CONFIG_TYPE inboundConfigType;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            UINT32 inboundRootArraySize;
-            IKEEXT_CERT_ROOT_CONFIG0 *inboundRootArray;
-        } __C89_NAMELESSSTRUCTNAME;
-        IKEEXT_CERT_ROOT_CONFIG0 *inboundEnterpriseStoreConfig;
-        IKEEXT_CERT_ROOT_CONFIG0 *inboundTrustedRootStoreConfig;
+                     __C89_NAMELESS struct {
+                                      UINT32 inboundRootArraySize;
+                                      IKEEXT_CERT_ROOT_CONFIG0 *inboundRootArray;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     IKEEXT_CERT_ROOT_CONFIG0 *inboundEnterpriseStoreConfig;
+                     IKEEXT_CERT_ROOT_CONFIG0 *inboundTrustedRootStoreConfig;
     } __C89_NAMELESSUNIONNAME1;
     IKEEXT_CERT_CONFIG_TYPE outboundConfigType;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            UINT32 outboundRootArraySize;
-            IKEEXT_CERT_ROOT_CONFIG0 *outboundRootArray;
-        } __C89_NAMELESSSTRUCTNAME;
-        IKEEXT_CERT_ROOT_CONFIG0 *outboundEnterpriseStoreConfig;
-        IKEEXT_CERT_ROOT_CONFIG0 *outboundTrustedRootStoreConfig;
+                     __C89_NAMELESS struct {
+                                      UINT32 outboundRootArraySize;
+                                      IKEEXT_CERT_ROOT_CONFIG0 *outboundRootArray;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     IKEEXT_CERT_ROOT_CONFIG0 *outboundEnterpriseStoreConfig;
+                     IKEEXT_CERT_ROOT_CONFIG0 *outboundTrustedRootStoreConfig;
     } __C89_NAMELESSUNIONNAME2;
     UINT32 flags;
 } IKEEXT_CERTIFICATE_AUTHENTICATION0;
@@ -240,21 +240,21 @@ typedef struct IKEEXT_CERTIFICATE_AUTHENTICATION0_ {
 typedef struct IKEEXT_CERTIFICATE_AUTHENTICATION1_ {
     IKEEXT_CERT_CONFIG_TYPE inboundConfigType;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            UINT32 inboundRootArraySize;
-            IKEEXT_CERT_ROOT_CONFIG0 *inboundRootArray;
-        } __C89_NAMELESSSTRUCTNAME;
-        IKEEXT_CERT_ROOT_CONFIG0 *inboundEnterpriseStoreConfig;
-        IKEEXT_CERT_ROOT_CONFIG0 *inboundTrustedRootStoreConfig;
+                     __C89_NAMELESS struct {
+                                      UINT32 inboundRootArraySize;
+                                      IKEEXT_CERT_ROOT_CONFIG0 *inboundRootArray;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     IKEEXT_CERT_ROOT_CONFIG0 *inboundEnterpriseStoreConfig;
+                     IKEEXT_CERT_ROOT_CONFIG0 *inboundTrustedRootStoreConfig;
     } __C89_NAMELESSUNIONNAME1;
     IKEEXT_CERT_CONFIG_TYPE outboundConfigType;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            UINT32 outboundRootArraySize;
-            IKEEXT_CERT_ROOT_CONFIG0 *outboundRootArray;
-        } __C89_NAMELESSSTRUCTNAME;
-        IKEEXT_CERT_ROOT_CONFIG0 *outboundEnterpriseStoreConfig;
-        IKEEXT_CERT_ROOT_CONFIG0 *outboundTrustedRootStoreConfig;
+                     __C89_NAMELESS struct {
+                                      UINT32 outboundRootArraySize;
+                                      IKEEXT_CERT_ROOT_CONFIG0 *outboundRootArray;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     IKEEXT_CERT_ROOT_CONFIG0 *outboundEnterpriseStoreConfig;
+                     IKEEXT_CERT_ROOT_CONFIG0 *outboundTrustedRootStoreConfig;
     } __C89_NAMELESSUNIONNAME2;
     UINT32 flags;
     FWP_BYTE_BLOB localCertLocationUrl;
@@ -294,33 +294,33 @@ typedef struct IKEEXT_CERTIFICATE_CRITERIA0_ {
 typedef struct IKEEXT_CERTIFICATE_AUTHENTICATION2_ {
     IKEEXT_CERT_CONFIG_TYPE inboundConfigType;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            UINT32 inboundRootArraySize;
-            IKEEXT_CERTIFICATE_CRITERIA0 *inboundRootCriteria;
-        } __C89_NAMELESSSTRUCTNAME1;
-        __C89_NAMELESS struct {
-            UINT32 inboundEnterpriseStoreArraySize;
-            IKEEXT_CERTIFICATE_CRITERIA0 *inboundEnterpriseStoreCriteria;
-        } __C89_NAMELESSSTRUCTNAME2;
-        __C89_NAMELESS struct {
-            UINT32 inboundRootStoreArraySize;
-            IKEEXT_CERTIFICATE_CRITERIA0 *inboundTrustedRootStoreCriteria;
-        } __C89_NAMELESSSTRUCTNAME3;
+                     __C89_NAMELESS struct {
+                                      UINT32 inboundRootArraySize;
+                                      IKEEXT_CERTIFICATE_CRITERIA0 *inboundRootCriteria;
+                     } __C89_NAMELESSSTRUCTNAME1;
+                     __C89_NAMELESS struct {
+                                      UINT32 inboundEnterpriseStoreArraySize;
+                                      IKEEXT_CERTIFICATE_CRITERIA0 *inboundEnterpriseStoreCriteria;
+                     } __C89_NAMELESSSTRUCTNAME2;
+                     __C89_NAMELESS struct {
+                                      UINT32 inboundRootStoreArraySize;
+                                      IKEEXT_CERTIFICATE_CRITERIA0 *inboundTrustedRootStoreCriteria;
+                     } __C89_NAMELESSSTRUCTNAME3;
     } __C89_NAMELESSUNIONNAME1;
     IKEEXT_CERT_CONFIG_TYPE outboundConfigType;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            UINT32 outboundRootArraySize;
-            IKEEXT_CERTIFICATE_CRITERIA0 *outboundRootCriteria;
-        } __C89_NAMELESSSTRUCTNAME1;
-        __C89_NAMELESS struct {
-            UINT32 outboundEnterpriseStoreArraySize;
-            IKEEXT_CERTIFICATE_CRITERIA0 *outboundEnterpriseStoreCriteria;
-        } __C89_NAMELESSSTRUCTNAME2;
-        __C89_NAMELESS struct {
-            UINT32 outboundRootStoreArraySize;
-            IKEEXT_CERTIFICATE_CRITERIA0 *outboundTrustedRootStoreCriteria;
-        } __C89_NAMELESSSTRUCTNAME3;
+                     __C89_NAMELESS struct {
+                                      UINT32 outboundRootArraySize;
+                                      IKEEXT_CERTIFICATE_CRITERIA0 *outboundRootCriteria;
+                     } __C89_NAMELESSSTRUCTNAME1;
+                     __C89_NAMELESS struct {
+                                      UINT32 outboundEnterpriseStoreArraySize;
+                                      IKEEXT_CERTIFICATE_CRITERIA0 *outboundEnterpriseStoreCriteria;
+                     } __C89_NAMELESSSTRUCTNAME2;
+                     __C89_NAMELESS struct {
+                                      UINT32 outboundRootStoreArraySize;
+                                      IKEEXT_CERTIFICATE_CRITERIA0 *outboundTrustedRootStoreCriteria;
+                     } __C89_NAMELESSSTRUCTNAME3;
     } __C89_NAMELESSUNIONNAME2;
     UINT32 flags;
     FWP_BYTE_BLOB localCertLocationUrl;
@@ -355,12 +355,12 @@ typedef struct IKEEXT_EAP_AUTHENTICATION0__ {
 typedef struct IKEEXT_AUTHENTICATION_METHOD0_ {
     IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
     __C89_NAMELESS union {
-        IKEEXT_PRESHARED_KEY_AUTHENTICATION0 presharedKeyAuthentication;
-        IKEEXT_CERTIFICATE_AUTHENTICATION0 certificateAuthentication;
-        IKEEXT_KERBEROS_AUTHENTICATION0 kerberosAuthentication;
-        IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication;
-        IKEEXT_CERTIFICATE_AUTHENTICATION0 sslAuthentication;
-        IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication;
+                     IKEEXT_PRESHARED_KEY_AUTHENTICATION0 presharedKeyAuthentication;
+                     IKEEXT_CERTIFICATE_AUTHENTICATION0 certificateAuthentication;
+                     IKEEXT_KERBEROS_AUTHENTICATION0 kerberosAuthentication;
+                     IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication;
+                     IKEEXT_CERTIFICATE_AUTHENTICATION0 sslAuthentication;
+                     IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication;
     } __C89_NAMELESSUNIONNAME;
 } IKEEXT_AUTHENTICATION_METHOD0;
 
@@ -368,13 +368,13 @@ typedef struct IKEEXT_AUTHENTICATION_METHOD0_ {
 typedef struct IKEEXT_AUTHENTICATION_METHOD1_ {
     IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
     __C89_NAMELESS union {
-        IKEEXT_PRESHARED_KEY_AUTHENTICATION1 presharedKeyAuthentication;
-        IKEEXT_CERTIFICATE_AUTHENTICATION1 certificateAuthentication;
-        IKEEXT_KERBEROS_AUTHENTICATION0 kerberosAuthentication;
-        IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication;
-        IKEEXT_CERTIFICATE_AUTHENTICATION1 sslAuthentication;
-        IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication;
-        IKEEXT_EAP_AUTHENTICATION0 eapAuthentication;
+                     IKEEXT_PRESHARED_KEY_AUTHENTICATION1 presharedKeyAuthentication;
+                     IKEEXT_CERTIFICATE_AUTHENTICATION1 certificateAuthentication;
+                     IKEEXT_KERBEROS_AUTHENTICATION0 kerberosAuthentication;
+                     IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication;
+                     IKEEXT_CERTIFICATE_AUTHENTICATION1 sslAuthentication;
+                     IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication;
+                     IKEEXT_EAP_AUTHENTICATION0 eapAuthentication;
     } __C89_NAMELESSUNIONNAME;
 } IKEEXT_AUTHENTICATION_METHOD1;
 #endif
@@ -383,14 +383,14 @@ typedef struct IKEEXT_AUTHENTICATION_METHOD1_ {
 typedef struct IKEEXT_AUTHENTICATION_METHOD2_ {
     IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
     __C89_NAMELESS union {
-        IKEEXT_PRESHARED_KEY_AUTHENTICATION1 presharedKeyAuthentication;
-        IKEEXT_CERTIFICATE_AUTHENTICATION2 certificateAuthentication;
-        IKEEXT_KERBEROS_AUTHENTICATION1 kerberosAuthentication;
-        IKEEXT_RESERVED_AUTHENTICATION0 reservedAuthentication;
-        IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication;
-        IKEEXT_CERTIFICATE_AUTHENTICATION2 sslAuthentication;
-        IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication;
-        IKEEXT_EAP_AUTHENTICATION0 eapAuthentication;
+                     IKEEXT_PRESHARED_KEY_AUTHENTICATION1 presharedKeyAuthentication;
+                     IKEEXT_CERTIFICATE_AUTHENTICATION2 certificateAuthentication;
+                     IKEEXT_KERBEROS_AUTHENTICATION1 kerberosAuthentication;
+                     IKEEXT_RESERVED_AUTHENTICATION0 reservedAuthentication;
+                     IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication;
+                     IKEEXT_CERTIFICATE_AUTHENTICATION2 sslAuthentication;
+                     IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication;
+                     IKEEXT_EAP_AUTHENTICATION0 eapAuthentication;
     } __C89_NAMELESSUNIONNAME;
 } IKEEXT_AUTHENTICATION_METHOD2;
 #endif
@@ -586,12 +586,12 @@ typedef struct IKEEXT_STATISTICS1_ {
 typedef struct IKEEXT_TRAFFIC0_ {
     FWP_IP_VERSION ipVersion;
     __C89_NAMELESS union {
-        UINT32 localV4Address;
-        UINT8 localV6Address[16];
+                     UINT32 localV4Address;
+                     UINT8 localV6Address[16];
     } __C89_NAMELESSUNIONNAME1;
     __C89_NAMELESS union {
-        UINT32 remoteV4Address;
-        UINT8 remoteV6Address[16];
+                     UINT32 remoteV4Address;
+                     UINT8 remoteV6Address[16];
     } __C89_NAMELESSUNIONNAME2;
     UINT64 authIpFilterId;
 } IKEEXT_TRAFFIC0;
@@ -614,9 +614,9 @@ typedef struct IKEEXT_CREDENTIAL0_ {
     IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
     IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
     __C89_NAMELESS union {
-        IKEEXT_PRESHARED_KEY_AUTHENTICATION0 *presharedKey;
-        IKEEXT_CERTIFICATE_CREDENTIAL0 *certificate;
-        IKEEXT_NAME_CREDENTIAL0 *name;
+                     IKEEXT_PRESHARED_KEY_AUTHENTICATION0 *presharedKey;
+                     IKEEXT_CERTIFICATE_CREDENTIAL0 *certificate;
+                     IKEEXT_NAME_CREDENTIAL0 *name;
     } __C89_NAMELESSUNIONNAME;
 } IKEEXT_CREDENTIAL0;
 
@@ -635,7 +635,7 @@ typedef struct IKEEXT_SA_DETAILS0_ {
     IKEEXT_KEY_MODULE_TYPE keyModuleType;
     FWP_IP_VERSION ipVersion;
     __C89_NAMELESS union {
-        IPSEC_V4_UDP_ENCAPSULATION0 *v4UdpEncapsulation;
+                     IPSEC_V4_UDP_ENCAPSULATION0 *v4UdpEncapsulation;
     } __C89_NAMELESSUNIONNAME;
     IKEEXT_TRAFFIC0 ikeTraffic;
     IKEEXT_PROPOSAL0 ikeProposal;
@@ -657,9 +657,9 @@ typedef struct IKEEXT_CREDENTIAL1_ {
     IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
     IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
     __C89_NAMELESS union {
-        IKEEXT_PRESHARED_KEY_AUTHENTICATION1 *presharedKey;
-        IKEEXT_CERTIFICATE_CREDENTIAL1 *certificate;
-        IKEEXT_NAME_CREDENTIAL0 *name;
+                     IKEEXT_PRESHARED_KEY_AUTHENTICATION1 *presharedKey;
+                     IKEEXT_CERTIFICATE_CREDENTIAL1 *certificate;
+                     IKEEXT_NAME_CREDENTIAL0 *name;
     } __C89_NAMELESSUNIONNAME;
 } IKEEXT_CREDENTIAL1;
 
@@ -678,7 +678,7 @@ typedef struct IKEEXT_SA_DETAILS1_ {
     IKEEXT_KEY_MODULE_TYPE keyModuleType;
     FWP_IP_VERSION ipVersion;
     __C89_NAMELESS union {
-        IPSEC_V4_UDP_ENCAPSULATION0 *v4UdpEncapsulation;
+                     IPSEC_V4_UDP_ENCAPSULATION0 *v4UdpEncapsulation;
     } __C89_NAMELESSUNIONNAME;
     IKEEXT_TRAFFIC0 ikeTraffic;
     IKEEXT_PROPOSAL0 ikeProposal;
@@ -695,9 +695,9 @@ typedef struct IKEEXT_CREDENTIAL2_ {
     IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
     IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
     __C89_NAMELESS union {
-        IKEEXT_PRESHARED_KEY_AUTHENTICATION1 *presharedKey;
-        IKEEXT_CERTIFICATE_CREDENTIAL1 *certificate;
-        IKEEXT_NAME_CREDENTIAL0 *name;
+                     IKEEXT_PRESHARED_KEY_AUTHENTICATION1 *presharedKey;
+                     IKEEXT_CERTIFICATE_CREDENTIAL1 *certificate;
+                     IKEEXT_NAME_CREDENTIAL0 *name;
     } __C89_NAMELESSUNIONNAME;
 } IKEEXT_CREDENTIAL2;
 
@@ -716,7 +716,7 @@ typedef struct IKEEXT_SA_DETAILS2_ {
     IKEEXT_KEY_MODULE_TYPE keyModuleType;
     FWP_IP_VERSION ipVersion;
     __C89_NAMELESS union {
-        IPSEC_V4_UDP_ENCAPSULATION0 *v4UdpEncapsulation;
+                     IPSEC_V4_UDP_ENCAPSULATION0 *v4UdpEncapsulation;
     } __C89_NAMELESSUNIONNAME;
     IKEEXT_TRAFFIC0 ikeTraffic;
     IKEEXT_PROPOSAL0 ikeProposal;

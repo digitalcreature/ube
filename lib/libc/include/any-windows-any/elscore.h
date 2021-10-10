@@ -44,14 +44,14 @@ typedef struct _MAPPING_ENUM_OPTIONS {
 } MAPPING_ENUM_OPTIONS, *PMAPPING_ENUM_OPTIONS;
 
 typedef struct _MAPPING_PROPERTY_BAG {
-  size_t              Size;
+  size_t                                        Size;
   PMAPPING_DATA_RANGE prgResultRanges;
-  DWORD               dwRangesCount;
-  LPVOID              pServiceData;
-  DWORD               dwServiceDataSize;
-  LPVOID              pCallerData;
-  DWORD               dwCallerDataSize;
-  LPVOID              pContext;
+  DWORD                                         dwRangesCount;
+  LPVOID                                        pServiceData;
+  DWORD                                         dwServiceDataSize;
+  LPVOID                                        pCallerData;
+  DWORD                                         dwCallerDataSize;
+  LPVOID                                        pContext;
 } MAPPING_PROPERTY_BAG, *PMAPPING_PROPERTY_BAG;
 
 typedef void (CALLBACK *PFN_MAPPINGCALLBACKPROC)(
@@ -62,22 +62,22 @@ typedef void (CALLBACK *PFN_MAPPINGCALLBACKPROC)(
 );
 
 typedef struct _MAPPING_OPTIONS {
-  size_t                  Size;
-  LPWSTR                  pszInputLanguage;
-  LPWSTR                  pszOutputLanguage;
-  LPWSTR                  pszInputScript;
-  LPWSTR                  pszOutputScript;
-  LPWSTR                  pszInputContentType;
-  LPWSTR                  pszOutputContentType;
-  LPWSTR                  pszUILanguage;
+  size_t                                                         Size;
+  LPWSTR                                                         pszInputLanguage;
+  LPWSTR                                                         pszOutputLanguage;
+  LPWSTR                                                         pszInputScript;
+  LPWSTR                                                         pszOutputScript;
+  LPWSTR                                                         pszInputContentType;
+  LPWSTR                                                         pszOutputContentType;
+  LPWSTR                                                         pszUILanguage;
   PFN_MAPPINGCALLBACKPROC pfnRecognizeCallback;
-  LPVOID                  pRecognizeCallerData;
-  DWORD                   dwRecognizeCallerDataSize;
+  LPVOID                                                         pRecognizeCallerData;
+  DWORD                                                          dwRecognizeCallerDataSize;
   PFN_MAPPINGCALLBACKPROC pfnActionCallback;
-  LPVOID                  pActionCallerData;
-  DWORD                   dwActionCallerDataSize;
-  DWORD                   dwServiceFlag;
-  unsigned                GetActionDisplayName  :1;
+  LPVOID                                                         pActionCallerData;
+  DWORD                                                          dwActionCallerDataSize;
+  DWORD                                                          dwServiceFlag;
+  unsigned                                          GetActionDisplayName  :1;
 } MAPPING_OPTIONS, *PMAPPING_OPTIONS;
 
 typedef struct _MAPPING_SERVICE_INFO {

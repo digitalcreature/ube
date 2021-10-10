@@ -65,7 +65,7 @@ static __inline__ void cec_msg_request_active_source(struct cec_msg *msg,
 }
 
 static __inline__ void cec_msg_routing_information(struct cec_msg *msg,
-					       __u16 phys_addr)
+					                    __u16 phys_addr)
 {
 	msg->len = 4;
 	msg->msg[0] |= 0xf; /* broadcast */
@@ -75,7 +75,7 @@ static __inline__ void cec_msg_routing_information(struct cec_msg *msg,
 }
 
 static __inline__ void cec_ops_routing_information(const struct cec_msg *msg,
-					       __u16 *phys_addr)
+					                    __u16 *phys_addr)
 {
 	*phys_addr = (msg->msg[2] << 8) | msg->msg[3];
 }
@@ -188,7 +188,7 @@ struct cec_op_record_src {
 };
 
 static __inline__ void cec_set_digital_service_id(__u8 *msg,
-	      const struct cec_op_digital_service_id *digital)
+	                   const struct cec_op_digital_service_id *digital)
 {
 	*msg++ = (digital->service_id_method << 7) | digital->dig_bcast_system;
 	if (digital->service_id_method == CEC_OP_SERVICE_ID_METHOD_BY_CHANNEL) {
@@ -225,7 +225,7 @@ static __inline__ void cec_set_digital_service_id(__u8 *msg,
 }
 
 static __inline__ void cec_get_digital_service_id(const __u8 *msg,
-	      struct cec_op_digital_service_id *digital)
+	                   struct cec_op_digital_service_id *digital)
 {
 	digital->service_id_method = msg[0] >> 7;
 	digital->dig_bcast_system = msg[0] & 0x7f;
@@ -280,7 +280,7 @@ static __inline__ void cec_msg_record_on_plug(struct cec_msg *msg,
 }
 
 static __inline__ void cec_msg_record_on_phys_addr(struct cec_msg *msg,
-					       __u16 phys_addr)
+					                    __u16 phys_addr)
 {
 	msg->len = 5;
 	msg->msg[1] = CEC_MSG_RECORD_ON;
@@ -587,17 +587,17 @@ static __inline__ void cec_ops_clear_ext_timer(const struct cec_msg *msg,
 }
 
 static __inline__ void cec_msg_set_analogue_timer(struct cec_msg *msg,
-					      int reply,
-					      __u8 day,
-					      __u8 month,
-					      __u8 start_hr,
-					      __u8 start_min,
-					      __u8 duration_hr,
-					      __u8 duration_min,
-					      __u8 recording_seq,
-					      __u8 ana_bcast_type,
-					      __u16 ana_freq,
-					      __u8 bcast_system)
+					                   int reply,
+					                   __u8 day,
+					                   __u8 month,
+					                   __u8 start_hr,
+					                   __u8 start_min,
+					                   __u8 duration_hr,
+					                   __u8 duration_min,
+					                   __u8 recording_seq,
+					                   __u8 ana_bcast_type,
+					                   __u16 ana_freq,
+					                   __u8 bcast_system)
 {
 	msg->len = 13;
 	msg->msg[1] = CEC_MSG_SET_ANALOGUE_TIMER;
@@ -617,16 +617,16 @@ static __inline__ void cec_msg_set_analogue_timer(struct cec_msg *msg,
 }
 
 static __inline__ void cec_ops_set_analogue_timer(const struct cec_msg *msg,
-					      __u8 *day,
-					      __u8 *month,
-					      __u8 *start_hr,
-					      __u8 *start_min,
-					      __u8 *duration_hr,
-					      __u8 *duration_min,
-					      __u8 *recording_seq,
-					      __u8 *ana_bcast_type,
-					      __u16 *ana_freq,
-					      __u8 *bcast_system)
+					                   __u8 *day,
+					                   __u8 *month,
+					                   __u8 *start_hr,
+					                   __u8 *start_min,
+					                   __u8 *duration_hr,
+					                   __u8 *duration_min,
+					                   __u8 *recording_seq,
+					                   __u8 *ana_bcast_type,
+					                   __u16 *ana_freq,
+					                   __u8 *bcast_system)
 {
 	*day = msg->msg[2];
 	*month = msg->msg[3];
@@ -774,7 +774,7 @@ static __inline__ void cec_msg_cec_version(struct cec_msg *msg, __u8 cec_version
 }
 
 static __inline__ void cec_ops_cec_version(const struct cec_msg *msg,
-				       __u8 *cec_version)
+				                    __u8 *cec_version)
 {
 	*cec_version = msg->msg[2];
 }
@@ -806,7 +806,7 @@ static __inline__ void cec_ops_report_physical_addr(const struct cec_msg *msg,
 }
 
 static __inline__ void cec_msg_give_physical_addr(struct cec_msg *msg,
-					      int reply)
+					                   int reply)
 {
 	msg->len = 2;
 	msg->msg[1] = CEC_MSG_GIVE_PHYSICAL_ADDR;
@@ -903,7 +903,7 @@ static __inline__ void cec_ops_deck_control(const struct cec_msg *msg,
 }
 
 static __inline__ void cec_msg_deck_status(struct cec_msg *msg,
-				       __u8 deck_info)
+				                    __u8 deck_info)
 {
 	msg->len = 3;
 	msg->msg[1] = CEC_MSG_DECK_STATUS;
@@ -911,7 +911,7 @@ static __inline__ void cec_msg_deck_status(struct cec_msg *msg,
 }
 
 static __inline__ void cec_ops_deck_status(const struct cec_msg *msg,
-				       __u8 *deck_info)
+				                    __u8 *deck_info)
 {
 	*deck_info = msg->msg[2];
 }
@@ -963,11 +963,11 @@ struct cec_op_tuner_device_info {
 };
 
 static __inline__ void cec_msg_tuner_device_status_analog(struct cec_msg *msg,
-						      __u8 rec_flag,
-						      __u8 tuner_display_info,
-						      __u8 ana_bcast_type,
-						      __u16 ana_freq,
-						      __u8 bcast_system)
+						                   __u8 rec_flag,
+						                   __u8 tuner_display_info,
+						                   __u8 ana_bcast_type,
+						                   __u16 ana_freq,
+						                   __u8 bcast_system)
 {
 	msg->len = 7;
 	msg->msg[1] = CEC_MSG_TUNER_DEVICE_STATUS;
@@ -1250,7 +1250,7 @@ static __inline__ void cec_msg_give_osd_name(struct cec_msg *msg,
 
 /* Device Menu Control Feature */
 static __inline__ void cec_msg_menu_status(struct cec_msg *msg,
-				       __u8 menu_state)
+				                    __u8 menu_state)
 {
 	msg->len = 3;
 	msg->msg[1] = CEC_MSG_MENU_STATUS;
@@ -1258,7 +1258,7 @@ static __inline__ void cec_msg_menu_status(struct cec_msg *msg,
 }
 
 static __inline__ void cec_ops_menu_status(const struct cec_msg *msg,
-				       __u8 *menu_state)
+				                    __u8 *menu_state)
 {
 	*menu_state = msg->msg[2];
 }
@@ -1315,7 +1315,7 @@ static __inline__ void cec_msg_user_control_pressed(struct cec_msg *msg,
 	case 0x67:
 		msg->len += 4;
 		msg->msg[3] = (ui_cmd->channel_identifier.channel_number_fmt << 2) |
-			      (ui_cmd->channel_identifier.major >> 8);
+			                   (ui_cmd->channel_identifier.major >> 8);
 		msg->msg[4] = ui_cmd->channel_identifier.major & 0xff;
 		msg->msg[5] = ui_cmd->channel_identifier.minor >> 8;
 		msg->msg[6] = ui_cmd->channel_identifier.minor & 0xff;
@@ -1362,7 +1362,7 @@ static __inline__ void cec_msg_user_control_released(struct cec_msg *msg)
 
 /* Power Status Feature */
 static __inline__ void cec_msg_report_power_status(struct cec_msg *msg,
-					       __u8 pwr_state)
+					                    __u8 pwr_state)
 {
 	msg->len = 3;
 	msg->msg[1] = CEC_MSG_REPORT_POWER_STATUS;
@@ -1370,7 +1370,7 @@ static __inline__ void cec_msg_report_power_status(struct cec_msg *msg,
 }
 
 static __inline__ void cec_ops_report_power_status(const struct cec_msg *msg,
-					       __u8 *pwr_state)
+					                    __u8 *pwr_state)
 {
 	*pwr_state = msg->msg[2];
 }
@@ -1419,8 +1419,8 @@ static __inline__ void cec_msg_abort(struct cec_msg *msg)
 
 /* System Audio Control Feature */
 static __inline__ void cec_msg_report_audio_status(struct cec_msg *msg,
-					       __u8 aud_mute_status,
-					       __u8 aud_vol_status)
+					                    __u8 aud_mute_status,
+					                    __u8 aud_vol_status)
 {
 	msg->len = 3;
 	msg->msg[1] = CEC_MSG_REPORT_AUDIO_STATUS;
@@ -1428,8 +1428,8 @@ static __inline__ void cec_msg_report_audio_status(struct cec_msg *msg,
 }
 
 static __inline__ void cec_ops_report_audio_status(const struct cec_msg *msg,
-					       __u8 *aud_mute_status,
-					       __u8 *aud_vol_status)
+					                    __u8 *aud_mute_status,
+					                    __u8 *aud_vol_status)
 {
 	*aud_mute_status = msg->msg[2] >> 7;
 	*aud_vol_status = msg->msg[2] & 0x7f;
@@ -1728,9 +1728,9 @@ static __inline__ void cec_msg_cdc_hec_report_state(struct cec_msg *msg,
 	msg->msg[5] = target_phys_addr >> 8;
 	msg->msg[6] = target_phys_addr & 0xff;
 	msg->msg[7] = (hec_func_state << 6) |
-		      (host_func_state << 4) |
-		      (enc_func_state << 2) |
-		      cdc_errcode;
+		                   (host_func_state << 4) |
+		                   (enc_func_state << 2) |
+		                   cdc_errcode;
 	if (has_field) {
 		msg->msg[8] = hec_field >> 8;
 		msg->msg[9] = hec_field & 0xff;
@@ -1812,8 +1812,8 @@ static __inline__ void cec_ops_cdc_hec_set_state(const struct cec_msg *msg,
 }
 
 static __inline__ void cec_msg_cdc_hec_set_state_adjacent(struct cec_msg *msg,
-						      __u16 phys_addr1,
-						      __u8 hec_set_state)
+						                   __u16 phys_addr1,
+						                   __u8 hec_set_state)
 {
 	msg->len = 8;
 	msg->msg[0] |= 0xf; /* broadcast */
@@ -1826,9 +1826,9 @@ static __inline__ void cec_msg_cdc_hec_set_state_adjacent(struct cec_msg *msg,
 }
 
 static __inline__ void cec_ops_cdc_hec_set_state_adjacent(const struct cec_msg *msg,
-						      __u16 *phys_addr,
-						      __u16 *phys_addr1,
-						      __u8 *hec_set_state)
+						                   __u16 *phys_addr,
+						                   __u16 *phys_addr1,
+						                   __u8 *hec_set_state)
 {
 	*phys_addr = (msg->msg[2] << 8) | msg->msg[3];
 	*phys_addr1 = (msg->msg[5] << 8) | msg->msg[6];

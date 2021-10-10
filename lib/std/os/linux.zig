@@ -42,8 +42,8 @@ pub fn getauxval(index: usize) usize {
     const auxv = elf_aux_maybe orelse return 0;
     var i: usize = 0;
     while (auxv[i].a_type != std.elf.AT_NULL) : (i += 1) {
-        if (auxv[i].a_type == index)
-            return auxv[i].a_un.a_val;
+                     if (auxv[i].a_type == index)
+                                      return auxv[i].a_un.a_val;
     }
     return 0;
 }
@@ -58,14 +58,14 @@ const require_aligned_register_pair = //
 // Split a 64bit value into a {LSB,MSB} pair.
 fn splitValue64(val: u64) [2]u32 {
     switch (builtin.endian) {
-        .Little => return [2]u32{
-            @truncate(u32, val),
-            @truncate(u32, val >> 32),
-        },
-        .Big => return [2]u32{
-            @truncate(u32, val >> 32),
-            @truncate(u32, val),
-        },
+                     .Little => return [2]u32{
+                                      @truncate(u32, val),
+                                      @truncate(u32, val >> 32),
+                     },
+                     .Big => return [2]u32{
+                                      @truncate(u32, val >> 32),
+                                      @truncate(u32, val),
+                     },
     }
 }
 
@@ -77,17 +77,17 @@ pub fn getErrno(r: usize) u12 {
 
 pub fn dup2(old: i32, new: i32) usize {
     if (@hasField(SYS, "dup2")) {
-        return syscall2(.dup2, @bitCast(usize, @as(isize, old)), @bitCast(usize, @as(isize, new)));
+                     return syscall2(.dup2, @bitCast(usize, @as(isize, old)), @bitCast(usize, @as(isize, new)));
     } else {
-        if (old == new) {
-            if (std.debug.runtime_safety) {
-                const rc = syscall2(.fcntl, @bitCast(usize, @as(isize, old)), F_GETFD);
-                if (@bitCast(isize, rc) < 0) return rc;
-            }
-            return @intCast(usize, old);
-        } else {
-            return syscall3(.dup3, @bitCast(usize, @as(isize, old)), @bitCast(usize, @as(isize, new)), 0);
-        }
+                     if (old == new) {
+                                      if (std.debug.runtime_safety) {
+                                          const rc = syscall2(.fcntl, @bitCast(usize, @as(isize, old)), F_GETFD);
+                                          if (@bitCast(isize, rc) < 0) return rc;
+                                      }
+                                      return @intCast(usize, old);
+                     } else {
+                                      return syscall3(.dup3, @bitCast(usize, @as(isize, old)), @bitCast(usize, @as(isize, new)), 0);
+                     }
     }
 }
 
@@ -113,9 +113,9 @@ pub fn execve(path: [*:0]const u8, argv: [*:null]const ?[*:0]const u8, envp: [*:
 
 pub fn fork() usize {
     if (@hasField(SYS, "fork")) {
-        return syscall0(.fork);
+                     return syscall0(.fork);
     } else {
-        return syscall2(.clone, SIGCHLD, 0);
+                     return syscall2(.clone, SIGCHLD, 0);
     }
 }
 
@@ -138,25 +138,25 @@ pub fn utimensat(dirfd: i32, path: ?[*:0]const u8, times: *const [2]timespec, fl
 
 pub fn fallocate(fd: i32, mode: i32, offset: u64, length: u64) usize {
     if (@sizeOf(usize) == 4) {
-        const offset_halves = splitValue64(offset);
-        const length_halves = splitValue64(length);
-        return syscall6(
-            .fallocate,
-            @bitCast(usize, @as(isize, fd)),
-            @bitCast(usize, @as(isize, mode)),
-            offset_halves[0],
-            offset_halves[1],
-            length_halves[0],
-            length_halves[1],
-        );
+                     const offset_halves = splitValue64(offset);
+                     const length_halves = splitValue64(length);
+                     return syscall6(
+                                      .fallocate,
+                                      @bitCast(usize, @as(isize, fd)),
+                                      @bitCast(usize, @as(isize, mode)),
+                                      offset_halves[0],
+                                      offset_halves[1],
+                                      length_halves[0],
+                                      length_halves[1],
+                     );
     } else {
-        return syscall4(
-            .fallocate,
-            @bitCast(usize, @as(isize, fd)),
-            @bitCast(usize, @as(isize, mode)),
-            offset,
-            length,
-        );
+                     return syscall4(
+                                      .fallocate,
+                                      @bitCast(usize, @as(isize, fd)),
+                                      @bitCast(usize, @as(isize, mode)),
+                                      offset,
+                                      length,
+                     );
     }
 }
 
@@ -174,19 +174,19 @@ pub fn getcwd(buf: [*]u8, size: usize) usize {
 
 pub fn getdents(fd: i32, dirp: [*]u8, len: usize) usize {
     return syscall3(
-        .getdents,
-        @bitCast(usize, @as(isize, fd)),
-        @ptrToInt(dirp),
-        std.math.min(len, maxInt(c_int)),
+                     .getdents,
+                     @bitCast(usize, @as(isize, fd)),
+                     @ptrToInt(dirp),
+                     std.math.min(len, maxInt(c_int)),
     );
 }
 
 pub fn getdents64(fd: i32, dirp: [*]u8, len: usize) usize {
     return syscall3(
-        .getdents64,
-        @bitCast(usize, @as(isize, fd)),
-        @ptrToInt(dirp),
-        std.math.min(len, maxInt(c_int)),
+                     .getdents64,
+                     @bitCast(usize, @as(isize, fd)),
+                     @ptrToInt(dirp),
+                     std.math.min(len, maxInt(c_int)),
     );
 }
 
@@ -204,9 +204,9 @@ pub fn inotify_rm_watch(fd: i32, wd: i32) usize {
 
 pub fn readlink(noalias path: [*:0]const u8, noalias buf_ptr: [*]u8, buf_len: usize) usize {
     if (@hasField(SYS, "readlink")) {
-        return syscall3(.readlink, @ptrToInt(path), @ptrToInt(buf_ptr), buf_len);
+                     return syscall3(.readlink, @ptrToInt(path), @ptrToInt(buf_ptr), buf_len);
     } else {
-        return syscall4(.readlinkat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), @ptrToInt(buf_ptr), buf_len);
+                     return syscall4(.readlinkat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), @ptrToInt(buf_ptr), buf_len);
     }
 }
 
@@ -216,9 +216,9 @@ pub fn readlinkat(dirfd: i32, noalias path: [*:0]const u8, noalias buf_ptr: [*]u
 
 pub fn mkdir(path: [*:0]const u8, mode: u32) usize {
     if (@hasField(SYS, "mkdir")) {
-        return syscall2(.mkdir, @ptrToInt(path), mode);
+                     return syscall2(.mkdir, @ptrToInt(path), mode);
     } else {
-        return syscall3(.mkdirat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), mode);
+                     return syscall3(.mkdirat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), mode);
     }
 }
 
@@ -240,29 +240,29 @@ pub fn umount2(special: [*:0]const u8, flags: u32) usize {
 
 pub fn mmap(address: ?[*]u8, length: usize, prot: usize, flags: u32, fd: i32, offset: u64) usize {
     if (@hasField(SYS, "mmap2")) {
-        // Make sure the offset is also specified in multiples of page size
-        if ((offset & (MMAP2_UNIT - 1)) != 0)
-            return @bitCast(usize, @as(isize, -EINVAL));
+                     // Make sure the offset is also specified in multiples of page size
+                     if ((offset & (MMAP2_UNIT - 1)) != 0)
+                                      return @bitCast(usize, @as(isize, -EINVAL));
 
-        return syscall6(
-            .mmap2,
-            @ptrToInt(address),
-            length,
-            prot,
-            flags,
-            @bitCast(usize, @as(isize, fd)),
-            @truncate(usize, offset / MMAP2_UNIT),
-        );
+                     return syscall6(
+                                      .mmap2,
+                                      @ptrToInt(address),
+                                      length,
+                                      prot,
+                                      flags,
+                                      @bitCast(usize, @as(isize, fd)),
+                                      @truncate(usize, offset / MMAP2_UNIT),
+                     );
     } else {
-        return syscall6(
-            .mmap,
-            @ptrToInt(address),
-            length,
-            prot,
-            flags,
-            @bitCast(usize, @as(isize, fd)),
-            offset,
-        );
+                     return syscall6(
+                                      .mmap,
+                                      @ptrToInt(address),
+                                      length,
+                                      prot,
+                                      flags,
+                                      @bitCast(usize, @as(isize, fd)),
+                                      offset,
+                     );
     }
 }
 
@@ -276,23 +276,23 @@ pub fn munmap(address: [*]const u8, length: usize) usize {
 
 pub fn poll(fds: [*]pollfd, n: nfds_t, timeout: i32) usize {
     if (@hasField(SYS, "poll")) {
-        return syscall3(.poll, @ptrToInt(fds), n, @bitCast(u32, timeout));
+                     return syscall3(.poll, @ptrToInt(fds), n, @bitCast(u32, timeout));
     } else {
-        return syscall6(
-            .ppoll,
-            @ptrToInt(fds),
-            n,
-            @ptrToInt(if (timeout >= 0)
-                &timespec{
-                    .tv_sec = @divTrunc(timeout, 1000),
-                    .tv_nsec = @rem(timeout, 1000) * 1000000,
-                }
-            else
-                null),
-            0,
-            0,
-            NSIG / 8,
-        );
+                     return syscall6(
+                                      .ppoll,
+                                      @ptrToInt(fds),
+                                      n,
+                                      @ptrToInt(if (timeout >= 0)
+                                          &timespec{
+                                                           .tv_sec = @divTrunc(timeout, 1000),
+                                                           .tv_nsec = @rem(timeout, 1000) * 1000000,
+                                          }
+                                      else
+                                          null),
+                                      0,
+                                      0,
+                                      NSIG / 8,
+                     );
     }
 }
 
@@ -303,25 +303,25 @@ pub fn read(fd: i32, buf: [*]u8, count: usize) usize {
 pub fn preadv(fd: i32, iov: [*]const iovec, count: usize, offset: u64) usize {
     const offset_halves = splitValue64(offset);
     return syscall5(
-        .preadv,
-        @bitCast(usize, @as(isize, fd)),
-        @ptrToInt(iov),
-        count,
-        offset_halves[0],
-        offset_halves[1],
+                     .preadv,
+                     @bitCast(usize, @as(isize, fd)),
+                     @ptrToInt(iov),
+                     count,
+                     offset_halves[0],
+                     offset_halves[1],
     );
 }
 
 pub fn preadv2(fd: i32, iov: [*]const iovec, count: usize, offset: u64, flags: kernel_rwf) usize {
     const offset_halves = splitValue64(offset);
     return syscall6(
-        .preadv2,
-        @bitCast(usize, @as(isize, fd)),
-        @ptrToInt(iov),
-        count,
-        offset_halves[0],
-        offset_halves[1],
-        flags,
+                     .preadv2,
+                     @bitCast(usize, @as(isize, fd)),
+                     @ptrToInt(iov),
+                     count,
+                     offset_halves[0],
+                     offset_halves[1],
+                     flags,
     );
 }
 
@@ -336,41 +336,41 @@ pub fn writev(fd: i32, iov: [*]const iovec_const, count: usize) usize {
 pub fn pwritev(fd: i32, iov: [*]const iovec_const, count: usize, offset: u64) usize {
     const offset_halves = splitValue64(offset);
     return syscall5(
-        .pwritev,
-        @bitCast(usize, @as(isize, fd)),
-        @ptrToInt(iov),
-        count,
-        offset_halves[0],
-        offset_halves[1],
+                     .pwritev,
+                     @bitCast(usize, @as(isize, fd)),
+                     @ptrToInt(iov),
+                     count,
+                     offset_halves[0],
+                     offset_halves[1],
     );
 }
 
 pub fn pwritev2(fd: i32, iov: [*]const iovec_const, count: usize, offset: u64, flags: kernel_rwf) usize {
     const offset_halves = splitValue64(offset);
     return syscall6(
-        .pwritev2,
-        @bitCast(usize, @as(isize, fd)),
-        @ptrToInt(iov),
-        count,
-        offset_halves[0],
-        offset_halves[1],
-        flags,
+                     .pwritev2,
+                     @bitCast(usize, @as(isize, fd)),
+                     @ptrToInt(iov),
+                     count,
+                     offset_halves[0],
+                     offset_halves[1],
+                     flags,
     );
 }
 
 pub fn rmdir(path: [*:0]const u8) usize {
     if (@hasField(SYS, "rmdir")) {
-        return syscall1(.rmdir, @ptrToInt(path));
+                     return syscall1(.rmdir, @ptrToInt(path));
     } else {
-        return syscall3(.unlinkat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), AT_REMOVEDIR);
+                     return syscall3(.unlinkat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), AT_REMOVEDIR);
     }
 }
 
 pub fn symlink(existing: [*:0]const u8, new: [*:0]const u8) usize {
     if (@hasField(SYS, "symlink")) {
-        return syscall2(.symlink, @ptrToInt(existing), @ptrToInt(new));
+                     return syscall2(.symlink, @ptrToInt(existing), @ptrToInt(new));
     } else {
-        return syscall3(.symlinkat, @ptrToInt(existing), @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(new));
+                     return syscall3(.symlinkat, @ptrToInt(existing), @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(new));
     }
 }
 
@@ -380,43 +380,43 @@ pub fn symlinkat(existing: [*:0]const u8, newfd: i32, newpath: [*:0]const u8) us
 
 pub fn pread(fd: i32, buf: [*]u8, count: usize, offset: u64) usize {
     if (@hasField(SYS, "pread64")) {
-        const offset_halves = splitValue64(offset);
-        if (require_aligned_register_pair) {
-            return syscall6(
-                .pread64,
-                @bitCast(usize, @as(isize, fd)),
-                @ptrToInt(buf),
-                count,
-                0,
-                offset_halves[0],
-                offset_halves[1],
-            );
-        } else {
-            return syscall5(
-                .pread64,
-                @bitCast(usize, @as(isize, fd)),
-                @ptrToInt(buf),
-                count,
-                offset_halves[0],
-                offset_halves[1],
-            );
-        }
+                     const offset_halves = splitValue64(offset);
+                     if (require_aligned_register_pair) {
+                                      return syscall6(
+                                          .pread64,
+                                          @bitCast(usize, @as(isize, fd)),
+                                          @ptrToInt(buf),
+                                          count,
+                                          0,
+                                          offset_halves[0],
+                                          offset_halves[1],
+                                      );
+                     } else {
+                                      return syscall5(
+                                          .pread64,
+                                          @bitCast(usize, @as(isize, fd)),
+                                          @ptrToInt(buf),
+                                          count,
+                                          offset_halves[0],
+                                          offset_halves[1],
+                                      );
+                     }
     } else {
-        return syscall4(
-            .pread,
-            @bitCast(usize, @as(isize, fd)),
-            @ptrToInt(buf),
-            count,
-            offset,
-        );
+                     return syscall4(
+                                      .pread,
+                                      @bitCast(usize, @as(isize, fd)),
+                                      @ptrToInt(buf),
+                                      count,
+                                      offset,
+                     );
     }
 }
 
 pub fn access(path: [*:0]const u8, mode: u32) usize {
     if (@hasField(SYS, "access")) {
-        return syscall2(.access, @ptrToInt(path), mode);
+                     return syscall2(.access, @ptrToInt(path), mode);
     } else {
-        return syscall4(.faccessat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), mode, 0);
+                     return syscall4(.faccessat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), mode, 0);
     }
 }
 
@@ -426,11 +426,11 @@ pub fn faccessat(dirfd: i32, path: [*:0]const u8, mode: u32, flags: u32) usize {
 
 pub fn pipe(fd: *[2]i32) usize {
     if (comptime (builtin.arch.isMIPS() or builtin.arch.isSPARC())) {
-        return syscall_pipe(fd);
+                     return syscall_pipe(fd);
     } else if (@hasField(SYS, "pipe")) {
-        return syscall1(.pipe, @ptrToInt(fd));
+                     return syscall1(.pipe, @ptrToInt(fd));
     } else {
-        return syscall2(.pipe2, @ptrToInt(fd), 0);
+                     return syscall2(.pipe2, @ptrToInt(fd), 0);
     }
 }
 
@@ -444,120 +444,120 @@ pub fn write(fd: i32, buf: [*]const u8, count: usize) usize {
 
 pub fn ftruncate(fd: i32, length: u64) usize {
     if (@hasField(SYS, "ftruncate64")) {
-        const length_halves = splitValue64(length);
-        if (require_aligned_register_pair) {
-            return syscall4(
-                .ftruncate64,
-                @bitCast(usize, @as(isize, fd)),
-                0,
-                length_halves[0],
-                length_halves[1],
-            );
-        } else {
-            return syscall3(
-                .ftruncate64,
-                @bitCast(usize, @as(isize, fd)),
-                length_halves[0],
-                length_halves[1],
-            );
-        }
+                     const length_halves = splitValue64(length);
+                     if (require_aligned_register_pair) {
+                                      return syscall4(
+                                          .ftruncate64,
+                                          @bitCast(usize, @as(isize, fd)),
+                                          0,
+                                          length_halves[0],
+                                          length_halves[1],
+                                      );
+                     } else {
+                                      return syscall3(
+                                          .ftruncate64,
+                                          @bitCast(usize, @as(isize, fd)),
+                                          length_halves[0],
+                                          length_halves[1],
+                                      );
+                     }
     } else {
-        return syscall2(
-            .ftruncate,
-            @bitCast(usize, @as(isize, fd)),
-            @truncate(usize, length),
-        );
+                     return syscall2(
+                                      .ftruncate,
+                                      @bitCast(usize, @as(isize, fd)),
+                                      @truncate(usize, length),
+                     );
     }
 }
 
 pub fn pwrite(fd: i32, buf: [*]const u8, count: usize, offset: u64) usize {
     if (@hasField(SYS, "pwrite64")) {
-        const offset_halves = splitValue64(offset);
+                     const offset_halves = splitValue64(offset);
 
-        if (require_aligned_register_pair) {
-            return syscall6(
-                .pwrite64,
-                @bitCast(usize, @as(isize, fd)),
-                @ptrToInt(buf),
-                count,
-                0,
-                offset_halves[0],
-                offset_halves[1],
-            );
-        } else {
-            return syscall5(
-                .pwrite64,
-                @bitCast(usize, @as(isize, fd)),
-                @ptrToInt(buf),
-                count,
-                offset_halves[0],
-                offset_halves[1],
-            );
-        }
+                     if (require_aligned_register_pair) {
+                                      return syscall6(
+                                          .pwrite64,
+                                          @bitCast(usize, @as(isize, fd)),
+                                          @ptrToInt(buf),
+                                          count,
+                                          0,
+                                          offset_halves[0],
+                                          offset_halves[1],
+                                      );
+                     } else {
+                                      return syscall5(
+                                          .pwrite64,
+                                          @bitCast(usize, @as(isize, fd)),
+                                          @ptrToInt(buf),
+                                          count,
+                                          offset_halves[0],
+                                          offset_halves[1],
+                                      );
+                     }
     } else {
-        return syscall4(
-            .pwrite,
-            @bitCast(usize, @as(isize, fd)),
-            @ptrToInt(buf),
-            count,
-            offset,
-        );
+                     return syscall4(
+                                      .pwrite,
+                                      @bitCast(usize, @as(isize, fd)),
+                                      @ptrToInt(buf),
+                                      count,
+                                      offset,
+                     );
     }
 }
 
 pub fn rename(old: [*:0]const u8, new: [*:0]const u8) usize {
     if (@hasField(SYS, "rename")) {
-        return syscall2(.rename, @ptrToInt(old), @ptrToInt(new));
+                     return syscall2(.rename, @ptrToInt(old), @ptrToInt(new));
     } else if (@hasField(SYS, "renameat")) {
-        return syscall4(.renameat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(old), @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(new));
+                     return syscall4(.renameat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(old), @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(new));
     } else {
-        return syscall5(.renameat2, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(old), @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(new), 0);
+                     return syscall5(.renameat2, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(old), @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(new), 0);
     }
 }
 
 pub fn renameat(oldfd: i32, oldpath: [*]const u8, newfd: i32, newpath: [*]const u8) usize {
     if (@hasField(SYS, "renameat")) {
-        return syscall4(
-            .renameat,
-            @bitCast(usize, @as(isize, oldfd)),
-            @ptrToInt(oldpath),
-            @bitCast(usize, @as(isize, newfd)),
-            @ptrToInt(newpath),
-        );
+                     return syscall4(
+                                      .renameat,
+                                      @bitCast(usize, @as(isize, oldfd)),
+                                      @ptrToInt(oldpath),
+                                      @bitCast(usize, @as(isize, newfd)),
+                                      @ptrToInt(newpath),
+                     );
     } else {
-        return syscall5(
-            .renameat2,
-            @bitCast(usize, @as(isize, oldfd)),
-            @ptrToInt(oldpath),
-            @bitCast(usize, @as(isize, newfd)),
-            @ptrToInt(newpath),
-            0,
-        );
+                     return syscall5(
+                                      .renameat2,
+                                      @bitCast(usize, @as(isize, oldfd)),
+                                      @ptrToInt(oldpath),
+                                      @bitCast(usize, @as(isize, newfd)),
+                                      @ptrToInt(newpath),
+                                      0,
+                     );
     }
 }
 
 pub fn renameat2(oldfd: i32, oldpath: [*:0]const u8, newfd: i32, newpath: [*:0]const u8, flags: u32) usize {
     return syscall5(
-        .renameat2,
-        @bitCast(usize, @as(isize, oldfd)),
-        @ptrToInt(oldpath),
-        @bitCast(usize, @as(isize, newfd)),
-        @ptrToInt(newpath),
-        flags,
+                     .renameat2,
+                     @bitCast(usize, @as(isize, oldfd)),
+                     @ptrToInt(oldpath),
+                     @bitCast(usize, @as(isize, newfd)),
+                     @ptrToInt(newpath),
+                     flags,
     );
 }
 
 pub fn open(path: [*:0]const u8, flags: u32, perm: mode_t) usize {
     if (@hasField(SYS, "open")) {
-        return syscall3(.open, @ptrToInt(path), flags, perm);
+                     return syscall3(.open, @ptrToInt(path), flags, perm);
     } else {
-        return syscall4(
-            .openat,
-            @bitCast(usize, @as(isize, AT_FDCWD)),
-            @ptrToInt(path),
-            flags,
-            perm,
-        );
+                     return syscall4(
+                                      .openat,
+                                      @bitCast(usize, @as(isize, AT_FDCWD)),
+                                      @ptrToInt(path),
+                                      flags,
+                                      perm,
+                     );
     }
 }
 
@@ -589,12 +589,12 @@ pub fn llseek(fd: i32, offset: u64, result: ?*u64, whence: usize) usize {
     // NOTE: The offset parameter splitting is independent from the target
     // endianness.
     return syscall5(
-        ._llseek,
-        @bitCast(usize, @as(isize, fd)),
-        @truncate(usize, offset >> 32),
-        @truncate(usize, offset),
-        @ptrToInt(result),
-        whence,
+                     ._llseek,
+                     @bitCast(usize, @as(isize, fd)),
+                     @truncate(usize, offset >> 32),
+                     @truncate(usize, offset),
+                     @ptrToInt(result),
+                     whence,
     );
 }
 
@@ -631,9 +631,9 @@ pub fn tgkill(tgid: pid_t, tid: pid_t, sig: i32) usize {
 
 pub fn unlink(path: [*:0]const u8) usize {
     if (@hasField(SYS, "unlink")) {
-        return syscall1(.unlink, @ptrToInt(path));
+                     return syscall1(.unlink, @ptrToInt(path));
     } else {
-        return syscall3(.unlinkat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), 0);
+                     return syscall3(.unlinkat, @bitCast(usize, @as(isize, AT_FDCWD)), @ptrToInt(path), 0);
     }
 }
 
@@ -660,15 +660,15 @@ const vdso_clock_gettime_ty = fn (i32, *timespec) callconv(.C) usize;
 
 pub fn clock_gettime(clk_id: i32, tp: *timespec) usize {
     if (@hasDecl(@This(), "VDSO_CGT_SYM")) {
-        const ptr = @atomicLoad(?*const c_void, &vdso_clock_gettime, .Unordered);
-        if (ptr) |fn_ptr| {
-            const f = @ptrCast(vdso_clock_gettime_ty, fn_ptr);
-            const rc = f(clk_id, tp);
-            switch (rc) {
-                0, @bitCast(usize, @as(isize, -EINVAL)) => return rc,
-                else => {},
-            }
-        }
+                     const ptr = @atomicLoad(?*const c_void, &vdso_clock_gettime, .Unordered);
+                     if (ptr) |fn_ptr| {
+                                      const f = @ptrCast(vdso_clock_gettime_ty, fn_ptr);
+                                      const rc = f(clk_id, tp);
+                                      switch (rc) {
+                                          0, @bitCast(usize, @as(isize, -EINVAL)) => return rc,
+                                          else => {},
+                                      }
+                     }
     }
     return syscall2(.clock_gettime, @bitCast(usize, @as(isize, clk_id)), @ptrToInt(tp));
 }
@@ -680,8 +680,8 @@ fn init_vdso_clock_gettime(clk: i32, ts: *timespec) callconv(.C) usize {
     @atomicStore(?*const c_void, &vdso_clock_gettime, ptr, .Monotonic);
     // Call into the VDSO if available
     if (ptr) |fn_ptr| {
-        const f = @ptrCast(vdso_clock_gettime_ty, fn_ptr);
-        return f(clk, ts);
+                     const f = @ptrCast(vdso_clock_gettime_ty, fn_ptr);
+                     return f(clk, ts);
     }
     return @bitCast(usize, @as(isize, -ENOSYS));
 }
@@ -708,65 +708,65 @@ pub fn nanosleep(req: *const timespec, rem: ?*timespec) usize {
 
 pub fn setuid(uid: uid_t) usize {
     if (@hasField(SYS, "setuid32")) {
-        return syscall1(.setuid32, uid);
+                     return syscall1(.setuid32, uid);
     } else {
-        return syscall1(.setuid, uid);
+                     return syscall1(.setuid, uid);
     }
 }
 
 pub fn setgid(gid: gid_t) usize {
     if (@hasField(SYS, "setgid32")) {
-        return syscall1(.setgid32, gid);
+                     return syscall1(.setgid32, gid);
     } else {
-        return syscall1(.setgid, gid);
+                     return syscall1(.setgid, gid);
     }
 }
 
 pub fn setreuid(ruid: uid_t, euid: uid_t) usize {
     if (@hasField(SYS, "setreuid32")) {
-        return syscall2(.setreuid32, ruid, euid);
+                     return syscall2(.setreuid32, ruid, euid);
     } else {
-        return syscall2(.setreuid, ruid, euid);
+                     return syscall2(.setreuid, ruid, euid);
     }
 }
 
 pub fn setregid(rgid: gid_t, egid: gid_t) usize {
     if (@hasField(SYS, "setregid32")) {
-        return syscall2(.setregid32, rgid, egid);
+                     return syscall2(.setregid32, rgid, egid);
     } else {
-        return syscall2(.setregid, rgid, egid);
+                     return syscall2(.setregid, rgid, egid);
     }
 }
 
 pub fn getuid() uid_t {
     if (@hasField(SYS, "getuid32")) {
-        return @as(uid_t, syscall0(.getuid32));
+                     return @as(uid_t, syscall0(.getuid32));
     } else {
-        return @as(uid_t, syscall0(.getuid));
+                     return @as(uid_t, syscall0(.getuid));
     }
 }
 
 pub fn getgid() gid_t {
     if (@hasField(SYS, "getgid32")) {
-        return @as(gid_t, syscall0(.getgid32));
+                     return @as(gid_t, syscall0(.getgid32));
     } else {
-        return @as(gid_t, syscall0(.getgid));
+                     return @as(gid_t, syscall0(.getgid));
     }
 }
 
 pub fn geteuid() uid_t {
     if (@hasField(SYS, "geteuid32")) {
-        return @as(uid_t, syscall0(.geteuid32));
+                     return @as(uid_t, syscall0(.geteuid32));
     } else {
-        return @as(uid_t, syscall0(.geteuid));
+                     return @as(uid_t, syscall0(.geteuid));
     }
 }
 
 pub fn getegid() gid_t {
     if (@hasField(SYS, "getegid32")) {
-        return @as(gid_t, syscall0(.getegid32));
+                     return @as(gid_t, syscall0(.getegid32));
     } else {
-        return @as(gid_t, syscall0(.getegid));
+                     return @as(gid_t, syscall0(.getegid));
     }
 }
 
@@ -794,49 +794,49 @@ pub fn setegid(egid: gid_t) usize {
 
 pub fn getresuid(ruid: *uid_t, euid: *uid_t, suid: *uid_t) usize {
     if (@hasField(SYS, "getresuid32")) {
-        return syscall3(.getresuid32, @ptrToInt(ruid), @ptrToInt(euid), @ptrToInt(suid));
+                     return syscall3(.getresuid32, @ptrToInt(ruid), @ptrToInt(euid), @ptrToInt(suid));
     } else {
-        return syscall3(.getresuid, @ptrToInt(ruid), @ptrToInt(euid), @ptrToInt(suid));
+                     return syscall3(.getresuid, @ptrToInt(ruid), @ptrToInt(euid), @ptrToInt(suid));
     }
 }
 
 pub fn getresgid(rgid: *gid_t, egid: *gid_t, sgid: *gid_t) usize {
     if (@hasField(SYS, "getresgid32")) {
-        return syscall3(.getresgid32, @ptrToInt(rgid), @ptrToInt(egid), @ptrToInt(sgid));
+                     return syscall3(.getresgid32, @ptrToInt(rgid), @ptrToInt(egid), @ptrToInt(sgid));
     } else {
-        return syscall3(.getresgid, @ptrToInt(rgid), @ptrToInt(egid), @ptrToInt(sgid));
+                     return syscall3(.getresgid, @ptrToInt(rgid), @ptrToInt(egid), @ptrToInt(sgid));
     }
 }
 
 pub fn setresuid(ruid: uid_t, euid: uid_t, suid: uid_t) usize {
     if (@hasField(SYS, "setresuid32")) {
-        return syscall3(.setresuid32, ruid, euid, suid);
+                     return syscall3(.setresuid32, ruid, euid, suid);
     } else {
-        return syscall3(.setresuid, ruid, euid, suid);
+                     return syscall3(.setresuid, ruid, euid, suid);
     }
 }
 
 pub fn setresgid(rgid: gid_t, egid: gid_t, sgid: gid_t) usize {
     if (@hasField(SYS, "setresgid32")) {
-        return syscall3(.setresgid32, rgid, egid, sgid);
+                     return syscall3(.setresgid32, rgid, egid, sgid);
     } else {
-        return syscall3(.setresgid, rgid, egid, sgid);
+                     return syscall3(.setresgid, rgid, egid, sgid);
     }
 }
 
 pub fn getgroups(size: usize, list: *gid_t) usize {
     if (@hasField(SYS, "getgroups32")) {
-        return syscall2(.getgroups32, size, @ptrToInt(list));
+                     return syscall2(.getgroups32, size, @ptrToInt(list));
     } else {
-        return syscall2(.getgroups, size, @ptrToInt(list));
+                     return syscall2(.getgroups, size, @ptrToInt(list));
     }
 }
 
 pub fn setgroups(size: usize, list: *const gid_t) usize {
     if (@hasField(SYS, "setgroups32")) {
-        return syscall2(.setgroups32, size, @ptrToInt(list));
+                     return syscall2(.setgroups32, size, @ptrToInt(list));
     } else {
-        return syscall2(.setgroups, size, @ptrToInt(list));
+                     return syscall2(.setgroups, size, @ptrToInt(list));
     }
 }
 
@@ -859,27 +859,27 @@ pub fn sigaction(sig: u6, noalias act: *const Sigaction, noalias oact: ?*Sigacti
 
     const restorer_fn = if ((act.flags & SA_SIGINFO) != 0) restore_rt else restore;
     var ksa = k_sigaction{
-        .sigaction = act.sigaction,
-        .flags = act.flags | SA_RESTORER,
-        .mask = undefined,
-        .restorer = @ptrCast(fn () callconv(.C) void, restorer_fn),
+                     .sigaction = act.sigaction,
+                     .flags = act.flags | SA_RESTORER,
+                     .mask = undefined,
+                     .restorer = @ptrCast(fn () callconv(.C) void, restorer_fn),
     };
     var ksa_old: k_sigaction = undefined;
     const ksa_mask_size = @sizeOf(@TypeOf(ksa_old.mask));
     @memcpy(@ptrCast([*]u8, &ksa.mask), @ptrCast([*]const u8, &act.mask), ksa_mask_size);
     const result = switch (builtin.arch) {
-        // The sparc version of rt_sigaction needs the restorer function to be passed as an argument too.
-        .sparc, .sparcv9 => syscall5(.rt_sigaction, sig, @ptrToInt(&ksa), @ptrToInt(&ksa_old), @ptrToInt(ksa.restorer), ksa_mask_size),
-        else => syscall4(.rt_sigaction, sig, @ptrToInt(&ksa), @ptrToInt(&ksa_old), ksa_mask_size),
+                     // The sparc version of rt_sigaction needs the restorer function to be passed as an argument too.
+                     .sparc, .sparcv9 => syscall5(.rt_sigaction, sig, @ptrToInt(&ksa), @ptrToInt(&ksa_old), @ptrToInt(ksa.restorer), ksa_mask_size),
+                     else => syscall4(.rt_sigaction, sig, @ptrToInt(&ksa), @ptrToInt(&ksa_old), ksa_mask_size),
     };
     const err = getErrno(result);
     if (err != 0) {
-        return result;
+                     return result;
     }
     if (oact) |old| {
-        old.sigaction = ksa_old.sigaction;
-        old.flags = @truncate(u32, ksa_old.flags);
-        @memcpy(@ptrCast([*]u8, &old.mask), @ptrCast([*]const u8, &ksa_old.mask), ksa_mask_size);
+                     old.sigaction = ksa_old.sigaction;
+                     old.flags = @truncate(u32, ksa_old.flags);
+                     @memcpy(@ptrCast([*]u8, &old.mask), @ptrCast([*]const u8, &ksa_old.mask), ksa_mask_size);
     }
     return 0;
 }
@@ -901,218 +901,218 @@ pub fn sigismember(set: *const sigset_t, sig: u6) bool {
 
 pub fn getsockname(fd: i32, noalias addr: *sockaddr, noalias len: *socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_getsockname, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len) });
+                     return socketcall(SC_getsockname, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len) });
     }
     return syscall3(.getsockname, @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len));
 }
 
 pub fn getpeername(fd: i32, noalias addr: *sockaddr, noalias len: *socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_getpeername, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len) });
+                     return socketcall(SC_getpeername, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len) });
     }
     return syscall3(.getpeername, @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len));
 }
 
 pub fn socket(domain: u32, socket_type: u32, protocol: u32) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_socket, &[3]usize{ domain, socket_type, protocol });
+                     return socketcall(SC_socket, &[3]usize{ domain, socket_type, protocol });
     }
     return syscall3(.socket, domain, socket_type, protocol);
 }
 
 pub fn setsockopt(fd: i32, level: u32, optname: u32, optval: [*]const u8, optlen: socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_setsockopt, &[5]usize{ @bitCast(usize, @as(isize, fd)), level, optname, @ptrToInt(optval), @intCast(usize, optlen) });
+                     return socketcall(SC_setsockopt, &[5]usize{ @bitCast(usize, @as(isize, fd)), level, optname, @ptrToInt(optval), @intCast(usize, optlen) });
     }
     return syscall5(.setsockopt, @bitCast(usize, @as(isize, fd)), level, optname, @ptrToInt(optval), @intCast(usize, optlen));
 }
 
 pub fn getsockopt(fd: i32, level: u32, optname: u32, noalias optval: [*]u8, noalias optlen: *socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_getsockopt, &[5]usize{ @bitCast(usize, @as(isize, fd)), level, optname, @ptrToInt(optval), @ptrToInt(optlen) });
+                     return socketcall(SC_getsockopt, &[5]usize{ @bitCast(usize, @as(isize, fd)), level, optname, @ptrToInt(optval), @ptrToInt(optlen) });
     }
     return syscall5(.getsockopt, @bitCast(usize, @as(isize, fd)), level, optname, @ptrToInt(optval), @ptrToInt(optlen));
 }
 
 pub fn sendmsg(fd: i32, msg: *msghdr_const, flags: u32) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_sendmsg, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(msg), flags });
+                     return socketcall(SC_sendmsg, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(msg), flags });
     }
     return syscall3(.sendmsg, @bitCast(usize, @as(isize, fd)), @ptrToInt(msg), flags);
 }
 
 pub fn sendmmsg(fd: i32, msgvec: [*]mmsghdr_const, vlen: u32, flags: u32) usize {
     if (@typeInfo(usize).Int.bits > @typeInfo(@TypeOf(mmsghdr(undefined).msg_len)).Int.bits) {
-        // workaround kernel brokenness:
-        // if adding up all iov_len overflows a i32 then split into multiple calls
-        // see https://www.openwall.com/lists/musl/2014/06/07/5
-        const kvlen = if (vlen > IOV_MAX) IOV_MAX else vlen; // matches kernel
-        var next_unsent: usize = 0;
-        for (msgvec[0..kvlen]) |*msg, i| {
-            var size: i32 = 0;
-            const msg_iovlen = @intCast(usize, msg.msg_hdr.msg_iovlen); // kernel side this is treated as unsigned
-            for (msg.msg_hdr.msg_iov[0..msg_iovlen]) |iov, j| {
-                if (iov.iov_len > std.math.maxInt(i32) or @addWithOverflow(i32, size, @intCast(i32, iov.iov_len), &size)) {
-                    // batch-send all messages up to the current message
-                    if (next_unsent < i) {
-                        const batch_size = i - next_unsent;
-                        const r = syscall4(.sendmmsg, @bitCast(usize, @as(isize, fd)), @ptrToInt(&msgvec[next_unsent]), batch_size, flags);
-                        if (getErrno(r) != 0) return next_unsent;
-                        if (r < batch_size) return next_unsent + r;
-                    }
-                    // send current message as own packet
-                    const r = sendmsg(fd, &msg.msg_hdr, flags);
-                    if (getErrno(r) != 0) return r;
-                    // Linux limits the total bytes sent by sendmsg to INT_MAX, so this cast is safe.
-                    msg.msg_len = @intCast(u32, r);
-                    next_unsent = i + 1;
-                    break;
-                }
-            }
-        }
-        if (next_unsent < kvlen or next_unsent == 0) { // want to make sure at least one syscall occurs (e.g. to trigger MSG_EOR)
-            const batch_size = kvlen - next_unsent;
-            const r = syscall4(.sendmmsg, @bitCast(usize, @as(isize, fd)), @ptrToInt(&msgvec[next_unsent]), batch_size, flags);
-            if (getErrno(r) != 0) return r;
-            return next_unsent + r;
-        }
-        return kvlen;
+                     // workaround kernel brokenness:
+                     // if adding up all iov_len overflows a i32 then split into multiple calls
+                     // see https://www.openwall.com/lists/musl/2014/06/07/5
+                     const kvlen = if (vlen > IOV_MAX) IOV_MAX else vlen; // matches kernel
+                     var next_unsent: usize = 0;
+                     for (msgvec[0..kvlen]) |*msg, i| {
+                                      var size: i32 = 0;
+                                      const msg_iovlen = @intCast(usize, msg.msg_hdr.msg_iovlen); // kernel side this is treated as unsigned
+                                      for (msg.msg_hdr.msg_iov[0..msg_iovlen]) |iov, j| {
+                                          if (iov.iov_len > std.math.maxInt(i32) or @addWithOverflow(i32, size, @intCast(i32, iov.iov_len), &size)) {
+                                                           // batch-send all messages up to the current message
+                                                           if (next_unsent < i) {
+                                                                            const batch_size = i - next_unsent;
+                                                                            const r = syscall4(.sendmmsg, @bitCast(usize, @as(isize, fd)), @ptrToInt(&msgvec[next_unsent]), batch_size, flags);
+                                                                            if (getErrno(r) != 0) return next_unsent;
+                                                                            if (r < batch_size) return next_unsent + r;
+                                                           }
+                                                           // send current message as own packet
+                                                           const r = sendmsg(fd, &msg.msg_hdr, flags);
+                                                           if (getErrno(r) != 0) return r;
+                                                           // Linux limits the total bytes sent by sendmsg to INT_MAX, so this cast is safe.
+                                                           msg.msg_len = @intCast(u32, r);
+                                                           next_unsent = i + 1;
+                                                           break;
+                                          }
+                                      }
+                     }
+                     if (next_unsent < kvlen or next_unsent == 0) { // want to make sure at least one syscall occurs (e.g. to trigger MSG_EOR)
+                                      const batch_size = kvlen - next_unsent;
+                                      const r = syscall4(.sendmmsg, @bitCast(usize, @as(isize, fd)), @ptrToInt(&msgvec[next_unsent]), batch_size, flags);
+                                      if (getErrno(r) != 0) return r;
+                                      return next_unsent + r;
+                     }
+                     return kvlen;
     }
     return syscall4(.sendmmsg, @bitCast(usize, @as(isize, fd)), @ptrToInt(msgvec), vlen, flags);
 }
 
 pub fn connect(fd: i32, addr: *const c_void, len: socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_connect, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), len });
+                     return socketcall(SC_connect, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), len });
     }
     return syscall3(.connect, @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), len);
 }
 
 pub fn recvmsg(fd: i32, msg: *msghdr, flags: u32) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_recvmsg, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(msg), flags });
+                     return socketcall(SC_recvmsg, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(msg), flags });
     }
     return syscall3(.recvmsg, @bitCast(usize, @as(isize, fd)), @ptrToInt(msg), flags);
 }
 
 pub fn recvfrom(fd: i32, noalias buf: [*]u8, len: usize, flags: u32, noalias addr: ?*sockaddr, noalias alen: ?*socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_recvfrom, &[6]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(buf), len, flags, @ptrToInt(addr), @ptrToInt(alen) });
+                     return socketcall(SC_recvfrom, &[6]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(buf), len, flags, @ptrToInt(addr), @ptrToInt(alen) });
     }
     return syscall6(.recvfrom, @bitCast(usize, @as(isize, fd)), @ptrToInt(buf), len, flags, @ptrToInt(addr), @ptrToInt(alen));
 }
 
 pub fn shutdown(fd: i32, how: i32) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_shutdown, &[2]usize{ @bitCast(usize, @as(isize, fd)), @bitCast(usize, @as(isize, how)) });
+                     return socketcall(SC_shutdown, &[2]usize{ @bitCast(usize, @as(isize, fd)), @bitCast(usize, @as(isize, how)) });
     }
     return syscall2(.shutdown, @bitCast(usize, @as(isize, fd)), @bitCast(usize, @as(isize, how)));
 }
 
 pub fn bind(fd: i32, addr: *const sockaddr, len: socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_bind, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @intCast(usize, len) });
+                     return socketcall(SC_bind, &[3]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @intCast(usize, len) });
     }
     return syscall3(.bind, @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @intCast(usize, len));
 }
 
 pub fn listen(fd: i32, backlog: u32) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_listen, &[2]usize{ @bitCast(usize, @as(isize, fd)), backlog });
+                     return socketcall(SC_listen, &[2]usize{ @bitCast(usize, @as(isize, fd)), backlog });
     }
     return syscall2(.listen, @bitCast(usize, @as(isize, fd)), backlog);
 }
 
 pub fn sendto(fd: i32, buf: [*]const u8, len: usize, flags: u32, addr: ?*const sockaddr, alen: socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_sendto, &[6]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(buf), len, flags, @ptrToInt(addr), @intCast(usize, alen) });
+                     return socketcall(SC_sendto, &[6]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(buf), len, flags, @ptrToInt(addr), @intCast(usize, alen) });
     }
     return syscall6(.sendto, @bitCast(usize, @as(isize, fd)), @ptrToInt(buf), len, flags, @ptrToInt(addr), @intCast(usize, alen));
 }
 
 pub fn sendfile(outfd: i32, infd: i32, offset: ?*i64, count: usize) usize {
     if (@hasField(SYS, "sendfile64")) {
-        return syscall4(
-            .sendfile64,
-            @bitCast(usize, @as(isize, outfd)),
-            @bitCast(usize, @as(isize, infd)),
-            @ptrToInt(offset),
-            count,
-        );
+                     return syscall4(
+                                      .sendfile64,
+                                      @bitCast(usize, @as(isize, outfd)),
+                                      @bitCast(usize, @as(isize, infd)),
+                                      @ptrToInt(offset),
+                                      count,
+                     );
     } else {
-        return syscall4(
-            .sendfile,
-            @bitCast(usize, @as(isize, outfd)),
-            @bitCast(usize, @as(isize, infd)),
-            @ptrToInt(offset),
-            count,
-        );
+                     return syscall4(
+                                      .sendfile,
+                                      @bitCast(usize, @as(isize, outfd)),
+                                      @bitCast(usize, @as(isize, infd)),
+                                      @ptrToInt(offset),
+                                      count,
+                     );
     }
 }
 
 pub fn socketpair(domain: i32, socket_type: i32, protocol: i32, fd: [2]i32) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_socketpair, &[4]usize{ @intCast(usize, domain), @intCast(usize, socket_type), @intCast(usize, protocol), @ptrToInt(&fd[0]) });
+                     return socketcall(SC_socketpair, &[4]usize{ @intCast(usize, domain), @intCast(usize, socket_type), @intCast(usize, protocol), @ptrToInt(&fd[0]) });
     }
     return syscall4(.socketpair, @intCast(usize, domain), @intCast(usize, socket_type), @intCast(usize, protocol), @ptrToInt(&fd[0]));
 }
 
 pub fn accept(fd: i32, noalias addr: ?*sockaddr, noalias len: ?*socklen_t) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_accept, &[4]usize{ fd, addr, len, 0 });
+                     return socketcall(SC_accept, &[4]usize{ fd, addr, len, 0 });
     }
     return accept4(fd, addr, len, 0);
 }
 
 pub fn accept4(fd: i32, noalias addr: ?*sockaddr, noalias len: ?*socklen_t, flags: u32) usize {
     if (builtin.arch == .i386) {
-        return socketcall(SC_accept4, &[4]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len), flags });
+                     return socketcall(SC_accept4, &[4]usize{ @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len), flags });
     }
     return syscall4(.accept4, @bitCast(usize, @as(isize, fd)), @ptrToInt(addr), @ptrToInt(len), flags);
 }
 
 pub fn fstat(fd: i32, stat_buf: *kernel_stat) usize {
     if (@hasField(SYS, "fstat64")) {
-        return syscall2(.fstat64, @bitCast(usize, @as(isize, fd)), @ptrToInt(stat_buf));
+                     return syscall2(.fstat64, @bitCast(usize, @as(isize, fd)), @ptrToInt(stat_buf));
     } else {
-        return syscall2(.fstat, @bitCast(usize, @as(isize, fd)), @ptrToInt(stat_buf));
+                     return syscall2(.fstat, @bitCast(usize, @as(isize, fd)), @ptrToInt(stat_buf));
     }
 }
 
 pub fn stat(pathname: [*:0]const u8, statbuf: *kernel_stat) usize {
     if (@hasField(SYS, "stat64")) {
-        return syscall2(.stat64, @ptrToInt(pathname), @ptrToInt(statbuf));
+                     return syscall2(.stat64, @ptrToInt(pathname), @ptrToInt(statbuf));
     } else {
-        return syscall2(.stat, @ptrToInt(pathname), @ptrToInt(statbuf));
+                     return syscall2(.stat, @ptrToInt(pathname), @ptrToInt(statbuf));
     }
 }
 
 pub fn lstat(pathname: [*:0]const u8, statbuf: *kernel_stat) usize {
     if (@hasField(SYS, "lstat64")) {
-        return syscall2(.lstat64, @ptrToInt(pathname), @ptrToInt(statbuf));
+                     return syscall2(.lstat64, @ptrToInt(pathname), @ptrToInt(statbuf));
     } else {
-        return syscall2(.lstat, @ptrToInt(pathname), @ptrToInt(statbuf));
+                     return syscall2(.lstat, @ptrToInt(pathname), @ptrToInt(statbuf));
     }
 }
 
 pub fn fstatat(dirfd: i32, path: [*:0]const u8, stat_buf: *kernel_stat, flags: u32) usize {
     if (@hasField(SYS, "fstatat64")) {
-        return syscall4(.fstatat64, @bitCast(usize, @as(isize, dirfd)), @ptrToInt(path), @ptrToInt(stat_buf), flags);
+                     return syscall4(.fstatat64, @bitCast(usize, @as(isize, dirfd)), @ptrToInt(path), @ptrToInt(stat_buf), flags);
     } else {
-        return syscall4(.fstatat, @bitCast(usize, @as(isize, dirfd)), @ptrToInt(path), @ptrToInt(stat_buf), flags);
+                     return syscall4(.fstatat, @bitCast(usize, @as(isize, dirfd)), @ptrToInt(path), @ptrToInt(stat_buf), flags);
     }
 }
 
 pub fn statx(dirfd: i32, path: [*]const u8, flags: u32, mask: u32, statx_buf: *Statx) usize {
     if (@hasField(SYS, "statx")) {
-        return syscall5(
-            .statx,
-            @bitCast(usize, @as(isize, dirfd)),
-            @ptrToInt(path),
-            flags,
-            mask,
-            @ptrToInt(statx_buf),
-        );
+                     return syscall5(
+                                      .statx,
+                                      @bitCast(usize, @as(isize, dirfd)),
+                                      @ptrToInt(path),
+                                      flags,
+                                      mask,
+                                      @ptrToInt(statx_buf),
+                     );
     }
     return @bitCast(usize, @as(isize, -ENOSYS));
 }
@@ -1194,13 +1194,13 @@ pub fn epoll_wait(epoll_fd: i32, events: [*]epoll_event, maxevents: u32, timeout
 
 pub fn epoll_pwait(epoll_fd: i32, events: [*]epoll_event, maxevents: u32, timeout: i32, sigmask: ?*sigset_t) usize {
     return syscall6(
-        .epoll_pwait,
-        @bitCast(usize, @as(isize, epoll_fd)),
-        @ptrToInt(events),
-        @intCast(usize, maxevents),
-        @bitCast(usize, @as(isize, timeout)),
-        @ptrToInt(sigmask),
-        @sizeOf(sigset_t),
+                     .epoll_pwait,
+                     @bitCast(usize, @as(isize, epoll_fd)),
+                     @ptrToInt(events),
+                     @intCast(usize, maxevents),
+                     @bitCast(usize, @as(isize, timeout)),
+                     @ptrToInt(sigmask),
+                     @sizeOf(sigset_t),
     );
 }
 
@@ -1283,13 +1283,13 @@ pub fn signalfd(fd: fd_t, mask: *const sigset_t, flags: u32) usize {
 
 pub fn copy_file_range(fd_in: fd_t, off_in: ?*i64, fd_out: fd_t, off_out: ?*i64, len: usize, flags: u32) usize {
     return syscall6(
-        .copy_file_range,
-        @bitCast(usize, @as(isize, fd_in)),
-        @ptrToInt(off_in),
-        @bitCast(usize, @as(isize, fd_out)),
-        @ptrToInt(off_out),
-        len,
-        flags,
+                     .copy_file_range,
+                     @bitCast(usize, @as(isize, fd_in)),
+                     @ptrToInt(off_in),
+                     @bitCast(usize, @as(isize, fd_out)),
+                     @ptrToInt(off_out),
+                     len,
+                     flags,
     );
 }
 
@@ -1329,16 +1329,16 @@ pub fn setrlimit(resource: rlimit_resource, rlim: *const rlimit) usize {
 
 pub fn prlimit(pid: pid_t, resource: rlimit_resource, new_limit: ?*const rlimit, old_limit: ?*rlimit) usize {
     return syscall4(
-        .prlimit64,
-        @bitCast(usize, @as(isize, pid)),
-        @bitCast(usize, @as(isize, @enumToInt(resource))),
-        @ptrToInt(new_limit),
-        @ptrToInt(old_limit),
+                     .prlimit64,
+                     @bitCast(usize, @as(isize, pid)),
+                     @bitCast(usize, @as(isize, @enumToInt(resource))),
+                     @ptrToInt(new_limit),
+                     @ptrToInt(old_limit),
     );
 }
 
 test "" {
     if (builtin.os.tag == .linux) {
-        _ = @import("linux/test.zig");
+                     _ = @import("linux/test.zig");
     }
 }

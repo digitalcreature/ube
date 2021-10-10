@@ -17,35 +17,35 @@ const start_sym_name = if (builtin.arch.isMIPS()) "__start" else "_start";
 
 comptime {
     if (builtin.output_mode == .Lib and builtin.link_mode == .Dynamic) {
-        if (builtin.os.tag == .windows and !@hasDecl(root, "_DllMainCRTStartup")) {
-            @export(_DllMainCRTStartup, .{ .name = "_DllMainCRTStartup" });
-        }
+                     if (builtin.os.tag == .windows and !@hasDecl(root, "_DllMainCRTStartup")) {
+                                      @export(_DllMainCRTStartup, .{ .name = "_DllMainCRTStartup" });
+                     }
     } else if (builtin.output_mode == .Exe or @hasDecl(root, "main")) {
-        if (builtin.link_libc and @hasDecl(root, "main")) {
-            if (@typeInfo(@TypeOf(root.main)).Fn.calling_convention != .C) {
-                @export(main, .{ .name = "main", .linkage = .Weak });
-            }
-        } else if (builtin.os.tag == .windows) {
-            if (!@hasDecl(root, "WinMain") and !@hasDecl(root, "WinMainCRTStartup") and
-                !@hasDecl(root, "wWinMain") and !@hasDecl(root, "wWinMainCRTStartup"))
-            {
-                @export(WinStartup, .{ .name = "wWinMainCRTStartup" });
-            } else if (@hasDecl(root, "WinMain") and !@hasDecl(root, "WinMainCRTStartup") and
-                !@hasDecl(root, "wWinMain") and !@hasDecl(root, "wWinMainCRTStartup"))
-            {
-                @compileError("WinMain not supported; declare wWinMain or main instead");
-            } else if (@hasDecl(root, "wWinMain") and !@hasDecl(root, "wWinMainCRTStartup") and
-                !@hasDecl(root, "WinMain") and !@hasDecl(root, "WinMainCRTStartup"))
-            {
-                @export(wWinMainCRTStartup, .{ .name = "wWinMainCRTStartup" });
-            }
-        } else if (builtin.os.tag == .uefi) {
-            if (!@hasDecl(root, "EfiMain")) @export(EfiMain, .{ .name = "EfiMain" });
-        } else if (builtin.arch.isWasm() and builtin.os.tag == .freestanding) {
-            if (!@hasDecl(root, start_sym_name)) @export(wasm_freestanding_start, .{ .name = start_sym_name });
-        } else if (builtin.os.tag != .other and builtin.os.tag != .freestanding) {
-            if (!@hasDecl(root, start_sym_name)) @export(_start, .{ .name = start_sym_name });
-        }
+                     if (builtin.link_libc and @hasDecl(root, "main")) {
+                                      if (@typeInfo(@TypeOf(root.main)).Fn.calling_convention != .C) {
+                                          @export(main, .{ .name = "main", .linkage = .Weak });
+                                      }
+                     } else if (builtin.os.tag == .windows) {
+                                      if (!@hasDecl(root, "WinMain") and !@hasDecl(root, "WinMainCRTStartup") and
+                                          !@hasDecl(root, "wWinMain") and !@hasDecl(root, "wWinMainCRTStartup"))
+                                      {
+                                          @export(WinStartup, .{ .name = "wWinMainCRTStartup" });
+                                      } else if (@hasDecl(root, "WinMain") and !@hasDecl(root, "WinMainCRTStartup") and
+                                          !@hasDecl(root, "wWinMain") and !@hasDecl(root, "wWinMainCRTStartup"))
+                                      {
+                                          @compileError("WinMain not supported; declare wWinMain or main instead");
+                                      } else if (@hasDecl(root, "wWinMain") and !@hasDecl(root, "wWinMainCRTStartup") and
+                                          !@hasDecl(root, "WinMain") and !@hasDecl(root, "WinMainCRTStartup"))
+                                      {
+                                          @export(wWinMainCRTStartup, .{ .name = "wWinMainCRTStartup" });
+                                      }
+                     } else if (builtin.os.tag == .uefi) {
+                                      if (!@hasDecl(root, "EfiMain")) @export(EfiMain, .{ .name = "EfiMain" });
+                     } else if (builtin.arch.isWasm() and builtin.os.tag == .freestanding) {
+                                      if (!@hasDecl(root, start_sym_name)) @export(wasm_freestanding_start, .{ .name = start_sym_name });
+                     } else if (builtin.os.tag != .other and builtin.os.tag != .freestanding) {
+                                      if (!@hasDecl(root, start_sym_name)) @export(_start, .{ .name = start_sym_name });
+                     }
     }
 }
 
@@ -55,11 +55,11 @@ fn _DllMainCRTStartup(
     lpReserved: std.os.windows.LPVOID,
 ) callconv(.Stdcall) std.os.windows.BOOL {
     if (!builtin.single_threaded and !builtin.link_libc) {
-        _ = @import("start_windows_tls.zig");
+                     _ = @import("start_windows_tls.zig");
     }
 
     if (@hasDecl(root, "DllMain")) {
-        return root.DllMain(hinstDLL, fdwReason, lpReserved);
+                     return root.DllMain(hinstDLL, fdwReason, lpReserved);
     }
 
     return std.os.windows.TRUE;
@@ -76,86 +76,86 @@ fn EfiMain(handle: uefi.Handle, system_table: *uefi.tables.SystemTable) callconv
     uefi.system_table = system_table;
 
     switch (@typeInfo(@TypeOf(root.main)).Fn.return_type.?) {
-        noreturn => {
-            root.main();
-        },
-        void => {
-            root.main();
-            return 0;
-        },
-        usize => {
-            return root.main();
-        },
-        uefi.Status => {
-            return @enumToInt(root.main());
-        },
-        else => @compileError("expected return type of main to be 'void', 'noreturn', 'usize', or 'std.os.uefi.Status'"),
+                     noreturn => {
+                                      root.main();
+                     },
+                     void => {
+                                      root.main();
+                                      return 0;
+                     },
+                     usize => {
+                                      return root.main();
+                     },
+                     uefi.Status => {
+                                      return @enumToInt(root.main());
+                     },
+                     else => @compileError("expected return type of main to be 'void', 'noreturn', 'usize', or 'std.os.uefi.Status'"),
     }
 }
 
 fn _start() callconv(.Naked) noreturn {
     if (builtin.os.tag == .wasi) {
-        // This is marked inline because for some reason LLVM in release mode fails to inline it,
-        // and we want fewer call frames in stack traces.
-        std.os.wasi.proc_exit(@call(.{ .modifier = .always_inline }, callMain, .{}));
+                     // This is marked inline because for some reason LLVM in release mode fails to inline it,
+                     // and we want fewer call frames in stack traces.
+                     std.os.wasi.proc_exit(@call(.{ .modifier = .always_inline }, callMain, .{}));
     }
 
     switch (builtin.arch) {
-        .x86_64 => {
-            argc_argv_ptr = asm volatile (
-                \\ xor %%rbp, %%rbp
-                : [argc] "={rsp}" (-> [*]usize)
-            );
-        },
-        .i386 => {
-            argc_argv_ptr = asm volatile (
-                \\ xor %%ebp, %%ebp
-                : [argc] "={esp}" (-> [*]usize)
-            );
-        },
-        .aarch64, .aarch64_be, .arm, .armeb => {
-            argc_argv_ptr = asm volatile (
-                \\ mov fp, #0
-                \\ mov lr, #0
-                : [argc] "={sp}" (-> [*]usize)
-            );
-        },
-        .riscv64 => {
-            argc_argv_ptr = asm volatile (
-                \\ li s0, 0
-                \\ li ra, 0
-                : [argc] "={sp}" (-> [*]usize)
-            );
-        },
-        .mips, .mipsel => {
-            // The lr is already zeroed on entry, as specified by the ABI.
-            argc_argv_ptr = asm volatile (
-                \\ move $fp, $0
-                : [argc] "={sp}" (-> [*]usize)
-            );
-        },
-        .powerpc64le => {
-            // Setup the initial stack frame and clear the back chain pointer.
-            // TODO: Support powerpc64 (big endian) on ELFv2.
-            argc_argv_ptr = asm volatile (
-                \\ mr 4, 1
-                \\ li 0, 0
-                \\ stdu 0, -32(1)
-                \\ mtlr 0
-                : [argc] "={r4}" (-> [*]usize)
-                :
-                : "r0"
-            );
-        },
-        .sparcv9 => {
-            // argc is stored after a register window (16 registers) plus stack bias
-            argc_argv_ptr = asm (
-                \\ mov %%g0, %%i6
-                \\ add %%o6, 2175, %[argc]
-                : [argc] "=r" (-> [*]usize)
-            );
-        },
-        else => @compileError("unsupported arch"),
+                     .x86_64 => {
+                                      argc_argv_ptr = asm volatile (
+                                          \\ xor %%rbp, %%rbp
+                                          : [argc] "={rsp}" (-> [*]usize)
+                                      );
+                     },
+                     .i386 => {
+                                      argc_argv_ptr = asm volatile (
+                                          \\ xor %%ebp, %%ebp
+                                          : [argc] "={esp}" (-> [*]usize)
+                                      );
+                     },
+                     .aarch64, .aarch64_be, .arm, .armeb => {
+                                      argc_argv_ptr = asm volatile (
+                                          \\ mov fp, #0
+                                          \\ mov lr, #0
+                                          : [argc] "={sp}" (-> [*]usize)
+                                      );
+                     },
+                     .riscv64 => {
+                                      argc_argv_ptr = asm volatile (
+                                          \\ li s0, 0
+                                          \\ li ra, 0
+                                          : [argc] "={sp}" (-> [*]usize)
+                                      );
+                     },
+                     .mips, .mipsel => {
+                                      // The lr is already zeroed on entry, as specified by the ABI.
+                                      argc_argv_ptr = asm volatile (
+                                          \\ move $fp, $0
+                                          : [argc] "={sp}" (-> [*]usize)
+                                      );
+                     },
+                     .powerpc64le => {
+                                      // Setup the initial stack frame and clear the back chain pointer.
+                                      // TODO: Support powerpc64 (big endian) on ELFv2.
+                                      argc_argv_ptr = asm volatile (
+                                          \\ mr 4, 1
+                                          \\ li 0, 0
+                                          \\ stdu 0, -32(1)
+                                          \\ mtlr 0
+                                          : [argc] "={r4}" (-> [*]usize)
+                                          :
+                                          : "r0"
+                                      );
+                     },
+                     .sparcv9 => {
+                                      // argc is stored after a register window (16 registers) plus stack bias
+                                      argc_argv_ptr = asm (
+                                          \\ mov %%g0, %%i6
+                                          \\ add %%o6, 2175, %[argc]
+                                          : [argc] "=r" (-> [*]usize)
+                                      );
+                     },
+                     else => @compileError("unsupported arch"),
     }
     // If LLVM inlines stack variables into _start, they will overwrite
     // the command line argument data.
@@ -165,7 +165,7 @@ fn _start() callconv(.Naked) noreturn {
 fn WinStartup() callconv(.Stdcall) noreturn {
     @setAlignStack(16);
     if (!builtin.single_threaded) {
-        _ = @import("start_windows_tls.zig");
+                     _ = @import("start_windows_tls.zig");
     }
 
     std.debug.maybeEnableSegfaultHandler();
@@ -176,7 +176,7 @@ fn WinStartup() callconv(.Stdcall) noreturn {
 fn wWinMainCRTStartup() callconv(.Stdcall) noreturn {
     @setAlignStack(16);
     if (!builtin.single_threaded) {
-        _ = @import("start_windows_tls.zig");
+                     _ = @import("start_windows_tls.zig");
     }
 
     std.debug.maybeEnableSegfaultHandler();
@@ -188,7 +188,7 @@ fn wWinMainCRTStartup() callconv(.Stdcall) noreturn {
 // TODO https://github.com/ziglang/zig/issues/265
 fn posixCallMainAndExit() noreturn {
     if (builtin.os.tag == .freebsd) {
-        @setAlignStack(16);
+                     @setAlignStack(16);
     }
     const argc = argc_argv_ptr[0];
     const argv = @ptrCast([*][*:0]u8, argc_argv_ptr + 1);
@@ -199,32 +199,32 @@ fn posixCallMainAndExit() noreturn {
     const envp = @ptrCast([*][*:0]u8, envp_optional)[0..envp_count];
 
     if (builtin.os.tag == .linux) {
-        // Find the beginning of the auxiliary vector
-        const auxv = @ptrCast([*]std.elf.Auxv, @alignCast(@alignOf(usize), envp.ptr + envp_count + 1));
-        std.os.linux.elf_aux_maybe = auxv;
-        // Initialize the TLS area
-        std.os.linux.tls.initStaticTLS();
+                     // Find the beginning of the auxiliary vector
+                     const auxv = @ptrCast([*]std.elf.Auxv, @alignCast(@alignOf(usize), envp.ptr + envp_count + 1));
+                     std.os.linux.elf_aux_maybe = auxv;
+                     // Initialize the TLS area
+                     std.os.linux.tls.initStaticTLS();
 
-        // TODO This is disabled because what should we do when linking libc and this code
-        // does not execute? And also it's causing a test failure in stack traces in release modes.
+                     // TODO This is disabled because what should we do when linking libc and this code
+                     // does not execute? And also it's causing a test failure in stack traces in release modes.
 
-        //// Linux ignores the stack size from the ELF file, and instead always does 8 MiB. A further
-        //// problem is that it uses PROT_GROWSDOWN which prevents stores to addresses too far down
-        //// the stack and requires "probing". So here we allocate our own stack.
-        //const wanted_stack_size = gnu_stack_phdr.p_memsz;
-        //assert(wanted_stack_size % std.mem.page_size == 0);
-        //// Allocate an extra page as the guard page.
-        //const total_size = wanted_stack_size + std.mem.page_size;
-        //const new_stack = std.os.mmap(
-        //    null,
-        //    total_size,
-        //    std.os.PROT_READ | std.os.PROT_WRITE,
-        //    std.os.MAP_PRIVATE | std.os.MAP_ANONYMOUS,
-        //    -1,
-        //    0,
-        //) catch @panic("out of memory");
-        //std.os.mprotect(new_stack[0..std.mem.page_size], std.os.PROT_NONE) catch {};
-        //std.os.exit(@call(.{.stack = new_stack}, callMainWithArgs, .{argc, argv, envp}));
+                     //// Linux ignores the stack size from the ELF file, and instead always does 8 MiB. A further
+                     //// problem is that it uses PROT_GROWSDOWN which prevents stores to addresses too far down
+                     //// the stack and requires "probing". So here we allocate our own stack.
+                     //const wanted_stack_size = gnu_stack_phdr.p_memsz;
+                     //assert(wanted_stack_size % std.mem.page_size == 0);
+                     //// Allocate an extra page as the guard page.
+                     //const total_size = wanted_stack_size + std.mem.page_size;
+                     //const new_stack = std.os.mmap(
+                     //    null,
+                     //    total_size,
+                     //    std.os.PROT_READ | std.os.PROT_WRITE,
+                     //    std.os.MAP_PRIVATE | std.os.MAP_ANONYMOUS,
+                     //    -1,
+                     //    0,
+                     //) catch @panic("out of memory");
+                     //std.os.mprotect(new_stack[0..std.mem.page_size], std.os.PROT_NONE) catch {};
+                     //std.os.exit(@call(.{.stack = new_stack}, callMainWithArgs, .{argc, argv, envp}));
     }
 
     std.os.exit(@call(.{ .modifier = .always_inline }, callMainWithArgs, .{ argc, argv, envp }));
@@ -253,22 +253,22 @@ const bad_main_ret = "expected return type of main to be 'void', '!void', 'noret
 // and we want fewer call frames in stack traces.
 inline fn initEventLoopAndCallMain() u8 {
     if (std.event.Loop.instance) |loop| {
-        if (!@hasDecl(root, "event_loop")) {
-            loop.init() catch |err| {
-                std.log.err("{}", .{@errorName(err)});
-                if (@errorReturnTrace()) |trace| {
-                    std.debug.dumpStackTrace(trace.*);
-                }
-                return 1;
-            };
-            defer loop.deinit();
+                     if (!@hasDecl(root, "event_loop")) {
+                                      loop.init() catch |err| {
+                                          std.log.err("{}", .{@errorName(err)});
+                                          if (@errorReturnTrace()) |trace| {
+                                                           std.debug.dumpStackTrace(trace.*);
+                                          }
+                                          return 1;
+                                      };
+                                      defer loop.deinit();
 
-            var result: u8 = undefined;
-            var frame: @Frame(callMainAsync) = undefined;
-            _ = @asyncCall(&frame, &result, callMainAsync, .{loop});
-            loop.run();
-            return result;
-        }
+                                      var result: u8 = undefined;
+                                      var frame: @Frame(callMainAsync) = undefined;
+                                      _ = @asyncCall(&frame, &result, callMainAsync, .{loop});
+                                      loop.run();
+                                      return result;
+                     }
     }
 
     // This is marked inline because for some reason LLVM in release mode fails to inline it,
@@ -282,22 +282,22 @@ inline fn initEventLoopAndCallMain() u8 {
 // because it is working around stage1 compiler bugs.
 inline fn initEventLoopAndCallWinMain() std.os.windows.INT {
     if (std.event.Loop.instance) |loop| {
-        if (!@hasDecl(root, "event_loop")) {
-            loop.init() catch |err| {
-                std.log.err("{}", .{@errorName(err)});
-                if (@errorReturnTrace()) |trace| {
-                    std.debug.dumpStackTrace(trace.*);
-                }
-                return 1;
-            };
-            defer loop.deinit();
+                     if (!@hasDecl(root, "event_loop")) {
+                                      loop.init() catch |err| {
+                                          std.log.err("{}", .{@errorName(err)});
+                                          if (@errorReturnTrace()) |trace| {
+                                                           std.debug.dumpStackTrace(trace.*);
+                                          }
+                                          return 1;
+                                      };
+                                      defer loop.deinit();
 
-            var result: u8 = undefined;
-            var frame: @Frame(callMainAsync) = undefined;
-            _ = @asyncCall(&frame, &result, callMainAsync, .{loop});
-            loop.run();
-            return result;
-        }
+                                      var result: u8 = undefined;
+                                      var frame: @Frame(callMainAsync) = undefined;
+                                      _ = @asyncCall(&frame, &result, callMainAsync, .{loop});
+                                      loop.run();
+                                      return result;
+                     }
     }
 
     // This is marked inline because for some reason LLVM in release mode fails to inline it,
@@ -317,39 +317,39 @@ fn callMainAsync(loop: *std.event.Loop) callconv(.Async) u8 {
 // there is an event loop.
 pub fn callMain() u8 {
     switch (@typeInfo(@typeInfo(@TypeOf(root.main)).Fn.return_type.?)) {
-        .NoReturn => {
-            root.main();
-        },
-        .Void => {
-            root.main();
-            return 0;
-        },
-        .Int => |info| {
-            if (info.bits != 8 or info.is_signed) {
-                @compileError(bad_main_ret);
-            }
-            return root.main();
-        },
-        .ErrorUnion => {
-            const result = root.main() catch |err| {
-                std.log.err("{}", .{@errorName(err)});
-                if (@errorReturnTrace()) |trace| {
-                    std.debug.dumpStackTrace(trace.*);
-                }
-                return 1;
-            };
-            switch (@typeInfo(@TypeOf(result))) {
-                .Void => return 0,
-                .Int => |info| {
-                    if (info.bits != 8 or info.is_signed) {
-                        @compileError(bad_main_ret);
-                    }
-                    return result;
-                },
-                else => @compileError(bad_main_ret),
-            }
-        },
-        else => @compileError(bad_main_ret),
+                     .NoReturn => {
+                                      root.main();
+                     },
+                     .Void => {
+                                      root.main();
+                                      return 0;
+                     },
+                     .Int => |info| {
+                                      if (info.bits != 8 or info.is_signed) {
+                                          @compileError(bad_main_ret);
+                                      }
+                                      return root.main();
+                     },
+                     .ErrorUnion => {
+                                      const result = root.main() catch |err| {
+                                          std.log.err("{}", .{@errorName(err)});
+                                          if (@errorReturnTrace()) |trace| {
+                                                           std.debug.dumpStackTrace(trace.*);
+                                          }
+                                          return 1;
+                                      };
+                                      switch (@typeInfo(@TypeOf(result))) {
+                                          .Void => return 0,
+                                          .Int => |info| {
+                                                           if (info.bits != 8 or info.is_signed) {
+                                                                            @compileError(bad_main_ret);
+                                                           }
+                                                           return result;
+                                          },
+                                          else => @compileError(bad_main_ret),
+                                      }
+                     },
+                     else => @compileError(bad_main_ret),
     }
 }
 

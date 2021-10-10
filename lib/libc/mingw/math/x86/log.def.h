@@ -12,21 +12,21 @@
  modification, are permitted provided that the following conditions are met:
 
    1. Redistributions in source code must retain the accompanying copyright
-      notice, this list of conditions, and the following disclaimer.
+                   notice, this list of conditions, and the following disclaimer.
    2. Redistributions in binary form must reproduce the accompanying
-      copyright notice, this list of conditions, and the following disclaimer
-      in the documentation and/or other materials provided with the
-      distribution.
+                   copyright notice, this list of conditions, and the following disclaimer
+                   in the documentation and/or other materials provided with the
+                   distribution.
    3. Names of the copyright holders must not be used to endorse or promote
-      products derived from this software without prior written permission
-      from the copyright holders.
+                   products derived from this software without prior written permission
+                   from the copyright holders.
    4. The right to distribute this software or to use it for any purpose does
-      not give you the right to use Servicemarks (sm) or Trademarks (tm) of
-      the copyright holders.  Use of them is covered by separate agreement
-      with the copyright holders.
+                   not give you the right to use Servicemarks (sm) or Trademarks (tm) of
+                   the copyright holders.  Use of them is covered by separate agreement
+                   with the copyright holders.
    5. If any files are modified, you must cause the modified files to carry
-      prominent notices stating that you changed the files and the date of
-      any change.
+                   prominent notices stating that you changed the files and the date of
+                   any change.
 
  Disclaimer
 
@@ -53,15 +53,15 @@ __FLT_ABI(log) (__FLT_TYPE x)
   int x_class = fpclassify (x);
   if (x_class == FP_ZERO)
     {
-      __FLT_RPT_ERANGE ("log", x, 0.0, -__FLT_HUGE_VAL, 1);
-      return -__FLT_HUGE_VAL;
+                   __FLT_RPT_ERANGE ("log", x, 0.0, -__FLT_HUGE_VAL, 1);
+                   return -__FLT_HUGE_VAL;
     }
   else if (x_class == FP_NAN)
     return x;
   else if (signbit (x))
     {
-      __FLT_RPT_DOMAIN ("log", x, 0.0, __FLT_NAN);
-      return __FLT_NAN;
+                   __FLT_RPT_DOMAIN ("log", x, 0.0, __FLT_NAN);
+                   return __FLT_NAN;
     }
   else if (x_class == FP_INFINITE)
     return __FLT_HUGE_VAL;

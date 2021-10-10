@@ -63,7 +63,7 @@ extern int __REDIRECT_NTH (statvfs,
 #endif
 #ifdef __USE_LARGEFILE64
 extern int statvfs64 (const char *__restrict __file,
-		      struct statvfs64 *__restrict __buf)
+		                   struct statvfs64 *__restrict __buf)
      __THROW __nonnull ((1, 2));
 #endif
 

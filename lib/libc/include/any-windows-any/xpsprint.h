@@ -75,7 +75,7 @@ MIDL_INTERFACE("7a77dc5f-45d6-4dff-9307-d8cb846347ca")
 IXpsPrintJobStream : public ISequentialStream
 {
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -87,32 +87,32 @@ typedef struct IXpsPrintJobStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsPrintJobStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsPrintJobStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsPrintJobStream *This);
+                     IXpsPrintJobStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsPrintJobStream *This);
+                     IXpsPrintJobStream *This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IXpsPrintJobStream *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     IXpsPrintJobStream *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IXpsPrintJobStream *This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     IXpsPrintJobStream *This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IXpsPrintJobStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IXpsPrintJobStream *This);
+                     IXpsPrintJobStream *This);
 
     END_INTERFACE
 } IXpsPrintJobStreamVtbl;
@@ -174,10 +174,10 @@ MIDL_INTERFACE("5ab89b06-8194-425f-ab3b-d7a96e350161")
 IXpsPrintJob : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetJobStatus(
-        XPS_JOB_STATUS *jobStatus) = 0;
+                     XPS_JOB_STATUS *jobStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -189,23 +189,23 @@ typedef struct IXpsPrintJobVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsPrintJob *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsPrintJob *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsPrintJob *This);
+                     IXpsPrintJob *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsPrintJob *This);
+                     IXpsPrintJob *This);
 
     /*** IXpsPrintJob methods ***/
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IXpsPrintJob *This);
+                     IXpsPrintJob *This);
 
     HRESULT (STDMETHODCALLTYPE *GetJobStatus)(
-        IXpsPrintJob *This,
-        XPS_JOB_STATUS *jobStatus);
+                     IXpsPrintJob *This,
+                     XPS_JOB_STATUS *jobStatus);
 
     END_INTERFACE
 } IXpsPrintJobVtbl;

@@ -38,7 +38,7 @@ struct pkey_seckey {
 struct pkey_protkey {
 	__u32 type;	     /* key type, one of the PKEY_KEYTYPE values */
 	__u32 len;		/* bytes actually stored in protkey[]	 */
-	__u8  protkey[MAXPROTKEYSIZE];	       /* the protected key blob */
+	__u8  protkey[MAXPROTKEYSIZE];	                    /* the protected key blob */
 };
 
 /* Struct to hold a clear key value */
@@ -95,9 +95,9 @@ struct pkey_clr2protk {
  * Verification Pattern provided inside a secure key.
  */
 struct pkey_findcard {
-	struct pkey_seckey seckey;	       /* in: the secure key blob */
-	__u16  cardnr;			       /* out: card number	  */
-	__u16  domain;			       /* out: domain number	  */
+	struct pkey_seckey seckey;	                    /* in: the secure key blob */
+	__u16  cardnr;			                    /* out: card number	  */
+	__u16  domain;			                    /* out: domain number	  */
 };
 #define PKEY_FINDCARD _IOWR(PKEY_IOCTL_MAGIC, 0x05, struct pkey_findcard)
 
@@ -119,11 +119,11 @@ struct pkey_skey2pkey {
  * only AES), flag if key is wrapped with an old MKVP.
  */
 struct pkey_verifykey {
-	struct pkey_seckey seckey;	       /* in: the secure key blob */
-	__u16  cardnr;			       /* out: card number	  */
-	__u16  domain;			       /* out: domain number	  */
-	__u16  keysize;			       /* out: key size in bits   */
-	__u32  attributes;		       /* out: attribute bits	  */
+	struct pkey_seckey seckey;	                    /* in: the secure key blob */
+	__u16  cardnr;			                    /* out: card number	  */
+	__u16  domain;			                    /* out: domain number	  */
+	__u16  keysize;			                    /* out: key size in bits   */
+	__u32  attributes;		                    /* out: attribute bits	  */
 };
 #define PKEY_VERIFYKEY _IOWR(PKEY_IOCTL_MAGIC, 0x07, struct pkey_verifykey)
 #define PKEY_VERIFY_ATTR_AES	   0x00000001  /* key is an AES key */

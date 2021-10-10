@@ -54,12 +54,12 @@ struct xt_entry_target {
 	unsigned char data[0];
 };
 
-#define XT_TARGET_INIT(__name, __size)					       \
-{									       \
-	.target.u.user = {						       \
-		.target_size	= XT_ALIGN(__size),			       \
-		.name		= __name,				       \
-	},								       \
+#define XT_TARGET_INIT(__name, __size)					                    \
+{									                    \
+	.target.u.user = {						                    \
+		.target_size	= XT_ALIGN(__size),			                    \
+		.name		= __name,				                    \
+	},								                    \
 }
 
 struct xt_standard_target {
@@ -178,9 +178,9 @@ struct xt_counters_info {
 #define xt_ematch_foreach(pos, entry) \
 	for ((pos) = (struct xt_entry_match *)entry->elems; \
 	     (pos) < (struct xt_entry_match *)((char *)(entry) + \
-	             (entry)->target_offset); \
+	                                       (entry)->target_offset); \
 	     (pos) = (struct xt_entry_match *)((char *)(pos) + \
-	             (pos)->u.match_size))
+	                                       (pos)->u.match_size))
 
 
 #endif /* _X_TABLES_H */

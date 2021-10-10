@@ -30,8 +30,8 @@
 # define MAP_DENYWRITE	0x2000		/* ETXTBSY */
 # define MAP_EXECUTABLE	0x4000		/* mark it as an executable */
 # define MAP_LOCKED	0x8000		/* pages are locked */
-# define MAP_POPULATE   0x10000         /* populate (prefault) pagetables */
-# define MAP_NONBLOCK   0x20000         /* do not block on IO */
+# define MAP_POPULATE   0x10000                      /* populate (prefault) pagetables */
+# define MAP_NONBLOCK   0x20000                      /* do not block on IO */
 # define MAP_STACK	0x40000		/* Allocation is for a stack.  */
 # define MAP_HUGETLB	0x80000		/* Create huge page mapping.  */
 # define MAP_FIXED_NOREPLACE 0x100000	/* MAP_FIXED but do not unmap

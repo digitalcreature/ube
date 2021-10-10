@@ -67,7 +67,7 @@ struct __riscv_mc_q_ext_state
     unsigned long long int __f[64] __attribute__ ((__aligned__ (16)));
     unsigned int __fcsr;
     /* Reserved for expansion of sigcontext structure.  Currently zeroed
-       upon signal, and must be zero upon sigreturn.  */
+                    upon signal, and must be zero upon sigreturn.  */
     unsigned int __glibc_reserved[3];
   };
 
@@ -89,21 +89,21 @@ typedef struct ucontext_t
   {
     unsigned long int  __uc_flags;
     struct ucontext_t *uc_link;
-    stack_t            uc_stack;
-    sigset_t           uc_sigmask;
+    stack_t                                      uc_stack;
+    sigset_t                        uc_sigmask;
     /* There's some padding here to allow sigset_t to be expanded in the
-       future.  Though this is unlikely, other architectures put uc_sigmask
-       at the end of this structure and explicitly state it can be
-       expanded, so we didn't want to box ourselves in here.  */
-    char               __glibc_reserved[1024 / 8 - sizeof (sigset_t)];
+                    future.  Though this is unlikely, other architectures put uc_sigmask
+                    at the end of this structure and explicitly state it can be
+                    expanded, so we didn't want to box ourselves in here.  */
+    char                                         __glibc_reserved[1024 / 8 - sizeof (sigset_t)];
     /* We can't put uc_sigmask at the end of this structure because we need
-       to be able to expand sigcontext in the future.  For example, the
-       vector ISA extension will almost certainly add ISA state.  We want
-       to ensure all user-visible ISA state can be saved and restored via a
-       ucontext, so we're putting this at the end in order to allow for
-       infinite extensibility.  Since we know this will be extended and we
-       assume sigset_t won't be extended an extreme amount, we're
-       prioritizing this.  */
+                    to be able to expand sigcontext in the future.  For example, the
+                    vector ISA extension will almost certainly add ISA state.  We want
+                    to ensure all user-visible ISA state can be saved and restored via a
+                    ucontext, so we're putting this at the end in order to allow for
+                    infinite extensibility.  Since we know this will be extended and we
+                    assume sigset_t won't be extended an extreme amount, we're
+                    prioritizing this.  */
     mcontext_t uc_mcontext;
   } ucontext_t;
 

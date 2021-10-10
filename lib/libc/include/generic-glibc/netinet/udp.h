@@ -58,17 +58,17 @@ struct udphdr
   {
     struct
     {
-      uint16_t uh_sport;	/* source port */
-      uint16_t uh_dport;	/* destination port */
-      uint16_t uh_ulen;		/* udp length */
-      uint16_t uh_sum;		/* udp checksum */
+                   uint16_t uh_sport;	/* source port */
+                   uint16_t uh_dport;	/* destination port */
+                   uint16_t uh_ulen;		/* udp length */
+                   uint16_t uh_sum;		/* udp checksum */
     };
     struct
     {
-      uint16_t source;
-      uint16_t dest;
-      uint16_t len;
-      uint16_t check;
+                   uint16_t source;
+                   uint16_t dest;
+                   uint16_t len;
+                   uint16_t check;
     };
   };
 };
@@ -91,6 +91,6 @@ struct udphdr
 #define UDP_ENCAP_GTP0		4	/* GSM TS 09.60 */
 #define UDP_ENCAP_GTP1U		5	/* 3GPP TS 29.060 */
 
-#define SOL_UDP            17      /* sockopt level for UDP */
+#define SOL_UDP                                      17                   /* sockopt level for UDP */
 
 #endif /* netinet/udp.h */

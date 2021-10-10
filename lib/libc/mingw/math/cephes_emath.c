@@ -592,7 +592,7 @@ void __toe64(short unsigned int *a, short unsigned int *b)
 #else
 #ifdef INFINITY
 	if (__eiisinf(a))
-        {
+                     {
 	/* Intel long double infinity.  */
 		*q-- = 0x8000;
 		*q-- = 0;
@@ -613,9 +613,9 @@ void __toe64(short unsigned int *a, short unsigned int *b)
  * ecmp( a, b );
  *
  *  returns +1 if a > b
- *           0 if a == b
- *          -1 if a < b
- *          -2 if either a or b is a NaN.
+ *                        0 if a == b
+ *                       -1 if a < b
+ *                       -2 if either a or b is a NaN.
  */
 int __ecmp(const short unsigned int * __restrict__ a,
 		const short unsigned int *  __restrict__ b)

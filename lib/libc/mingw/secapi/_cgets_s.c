@@ -41,8 +41,8 @@ _int_cgets_s (char *s, size_t l, size_t *r_len)
     s[0] = 0;
   if (!s || !l || !r_len)
     {
-      _cgets (NULL);
-      return EINVAL;
+                   _cgets (NULL);
+                   return EINVAL;
     }
   p = (char *) alloca (l + 2);
   p[0] = l;

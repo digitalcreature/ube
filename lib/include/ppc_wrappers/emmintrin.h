@@ -674,7 +674,7 @@ _mm_set_epi32 (int __q3, int __q2, int __q1, int __q0)
 
 extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
 _mm_set_epi16 (short __q7, short __q6, short __q5, short __q4,
-	       short __q3, short __q2, short __q1, short __q0)
+	                    short __q3, short __q2, short __q1, short __q0)
 {
   return __extension__ (__m128i)(__v8hi){
     __q0, __q1, __q2, __q3, __q4, __q5, __q6, __q7 };
@@ -682,9 +682,9 @@ _mm_set_epi16 (short __q7, short __q6, short __q5, short __q4,
 
 extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
 _mm_set_epi8 (char __q15, char __q14, char __q13, char __q12,
-	      char __q11, char __q10, char __q09, char __q08,
-	      char __q07, char __q06, char __q05, char __q04,
-	      char __q03, char __q02, char __q01, char __q00)
+	                   char __q11, char __q10, char __q09, char __q08,
+	                   char __q07, char __q06, char __q05, char __q04,
+	                   char __q03, char __q02, char __q01, char __q00)
 {
   return __extension__ (__m128i)(__v16qi){
     __q00, __q01, __q02, __q03, __q04, __q05, __q06, __q07,
@@ -721,7 +721,7 @@ extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __arti
 _mm_set1_epi8 (char __A)
 {
   return _mm_set_epi8 (__A, __A, __A, __A, __A, __A, __A, __A,
-		       __A, __A, __A, __A, __A, __A, __A, __A);
+		                    __A, __A, __A, __A, __A, __A, __A, __A);
 }
 
 /* Create a vector of Qi, where i is the element number.
@@ -740,19 +740,19 @@ _mm_setr_epi32 (int __q0, int __q1, int __q2, int __q3)
 
 extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
 _mm_setr_epi16 (short __q0, short __q1, short __q2, short __q3,
-	        short __q4, short __q5, short __q6, short __q7)
+	                     short __q4, short __q5, short __q6, short __q7)
 {
   return _mm_set_epi16 (__q7, __q6, __q5, __q4, __q3, __q2, __q1, __q0);
 }
 
 extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
 _mm_setr_epi8 (char __q00, char __q01, char __q02, char __q03,
-	       char __q04, char __q05, char __q06, char __q07,
-	       char __q08, char __q09, char __q10, char __q11,
-	       char __q12, char __q13, char __q14, char __q15)
+	                    char __q04, char __q05, char __q06, char __q07,
+	                    char __q08, char __q09, char __q10, char __q11,
+	                    char __q12, char __q13, char __q14, char __q15)
 {
   return _mm_set_epi8 (__q15, __q14, __q13, __q12, __q11, __q10, __q09, __q08,
-		       __q07, __q06, __q05, __q04, __q03, __q02, __q01, __q00);
+		                    __q07, __q06, __q05, __q04, __q03, __q02, __q01, __q00);
 }
 
 /* Create a vector with element 0 as *P and the rest zero.  */
@@ -855,10 +855,10 @@ _mm_cvtpd_epi32 (__m128d __A)
   /* VSX Vector truncate Double-Precision to integer and Convert to
    Signed Integer Word format with Saturate.  */
   __asm__(
-      "xvcvdpsxws %x0,%x1"
-      : "=wa" (temp)
-      : "wa" (rounded)
-      : );
+                   "xvcvdpsxws %x0,%x1"
+                   : "=wa" (temp)
+                   : "wa" (rounded)
+                   : );
 
 #ifdef _ARCH_PWR8
   temp = vec_mergeo (temp, temp);
@@ -890,10 +890,10 @@ _mm_cvtpd_ps (__m128d __A)
   const __v4si vzero = { 0, 0, 0, 0 };
 
   __asm__(
-      "xvcvdpsp %x0,%x1"
-      : "=wa" (temp)
-      : "wa" (__A)
-      : );
+                   "xvcvdpsp %x0,%x1"
+                   : "=wa" (temp)
+                   : "wa" (__A)
+                   : );
 
 #ifdef _ARCH_PWR8
   temp = vec_mergeo (temp, temp);
@@ -919,10 +919,10 @@ _mm_cvttpd_epi32 (__m128d __A)
   /* VSX Vector truncate Double-Precision to integer and Convert to
    Signed Integer Word format with Saturate.  */
   __asm__(
-      "xvcvdpsxws %x0,%x1"
-      : "=wa" (temp)
-      : "wa" (__A)
-      : );
+                   "xvcvdpsxws %x0,%x1"
+                   : "=wa" (temp)
+                   : "wa" (__A)
+                   : );
 
 #ifdef _ARCH_PWR8
   temp = vec_mergeo (temp, temp);
@@ -1015,10 +1015,10 @@ _mm_cvtps_pd (__m128 __A)
   temp = vec_vmrghw (a, a);
 #endif
   __asm__(
-      " xvcvspdp %x0,%x1"
-      : "=wa" (result)
-      : "wa" (temp)
-      : );
+                   " xvcvspdp %x0,%x1"
+                   : "=wa" (result)
+                   : "wa" (temp)
+                   : );
   return (__m128d) result;
 #endif
 }
@@ -1086,10 +1086,10 @@ _mm_cvtsd_ss (__m128 __A, __m128d __B)
   result = __builtin_vsx_xxsldwi (result, result, 3);
   /* Convert double to single float scalar in a vector.  */
   __asm__(
-      "xscvdpsp %x0,%x1"
-      : "=wa" (temp_s)
-      : "wa" (temp_b)
-      : );
+                   "xscvdpsp %x0,%x1"
+                   : "=wa" (temp_s)
+                   : "wa" (temp_b)
+                   : );
   /* Shift the resulting scalar into vector element [0].  */
   result = __builtin_vsx_xxsldwi (result, temp_s, 1);
 #else
@@ -1133,10 +1133,10 @@ _mm_cvtss_sd (__m128d __A, __m128 __B)
   __v2df res;
   /* Convert single float scalar to double in a vector.  */
   __asm__(
-      "xscvspdp %x0,%x1"
-      : "=wa" (res)
-      : "wa" (temp)
-      : );
+                   "xscvspdp %x0,%x1"
+                   : "=wa" (res)
+                   : "wa" (temp)
+                   : );
   return (__m128d) vec_mergel (res, (__v2df)__A);
 #else
   __v2df res = (__v2df)__A;
@@ -1211,7 +1211,7 @@ _mm_movemask_pd (__m128d  __A)
 #ifdef __LITTLE_ENDIAN__
 	0x80800040, 0x80808080, 0x80808080, 0x80808080
 #else
-      0x80808080, 0x80808080, 0x80808080, 0x80804000
+                   0x80808080, 0x80808080, 0x80808080, 0x80804000
 #endif
     };
 
@@ -1267,7 +1267,7 @@ extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __arti
 _mm_unpackhi_epi64 (__m128i __A, __m128i __B)
 {
   return (__m128i) vec_mergel ((__vector long long) __A,
-			       (__vector long long) __B);
+			                    (__vector long long) __B);
 }
 
 extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
@@ -1292,7 +1292,7 @@ extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __arti
 _mm_unpacklo_epi64 (__m128i __A, __m128i __B)
 {
   return (__m128i) vec_mergeh ((__vector long long) __A,
-			       (__vector long long) __B);
+			                    (__vector long long) __B);
 }
 
 extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
@@ -1406,11 +1406,11 @@ _mm_mulhi_epi16 (__m128i __A, __m128i __B)
 
   __vector unsigned char xform1 = {
 #ifdef __LITTLE_ENDIAN__
-      0x02, 0x03, 0x12, 0x13,  0x06, 0x07, 0x16, 0x17,
-      0x0A, 0x0B, 0x1A, 0x1B,  0x0E, 0x0F, 0x1E, 0x1F
+                   0x02, 0x03, 0x12, 0x13,  0x06, 0x07, 0x16, 0x17,
+                   0x0A, 0x0B, 0x1A, 0x1B,  0x0E, 0x0F, 0x1E, 0x1F
 #else
-      0x00, 0x01, 0x10, 0x11,  0x04, 0x05, 0x14, 0x15,
-      0x08, 0x09, 0x18, 0x19,  0x0C, 0x0D, 0x1C, 0x1D
+                   0x00, 0x01, 0x10, 0x11,  0x04, 0x05, 0x14, 0x15,
+                   0x08, 0x09, 0x18, 0x19,  0x0C, 0x0D, 0x1C, 0x1D
 #endif
     };
 
@@ -1443,17 +1443,17 @@ _mm_mul_epu32 (__m128i __A, __m128i __B)
 #ifdef __LITTLE_ENDIAN__
   /* VMX Vector Multiply Odd Unsigned Word.  */
   __asm__(
-      "vmulouw %0,%1,%2"
-      : "=v" (result)
-      : "v" (__A), "v" (__B)
-      : );
+                   "vmulouw %0,%1,%2"
+                   : "=v" (result)
+                   : "v" (__A), "v" (__B)
+                   : );
 #else
   /* VMX Vector Multiply Even Unsigned Word.  */
   __asm__(
-      "vmuleuw %0,%1,%2"
-      : "=v" (result)
-      : "v" (__A), "v" (__B)
-      : );
+                   "vmuleuw %0,%1,%2"
+                   : "=v" (result)
+                   : "v" (__A), "v" (__B)
+                   : );
 #endif
   return (__m128i) result;
 #else
@@ -1469,12 +1469,12 @@ _mm_slli_epi16 (__m128i __A, int __B)
 
   if (__B >= 0 && __B < 16)
     {
-      if (__builtin_constant_p(__B))
+                   if (__builtin_constant_p(__B))
 	lshift = (__v8hu) vec_splat_s16(__B);
-      else
+                   else
 	lshift = vec_splats ((unsigned short) __B);
 
-      result = vec_sl ((__v8hi) __A, lshift);
+                   result = vec_sl ((__v8hi) __A, lshift);
     }
 
   return (__m128i) result;
@@ -1488,12 +1488,12 @@ _mm_slli_epi32 (__m128i __A, int __B)
 
   if (__B >= 0 && __B < 32)
     {
-      if (__builtin_constant_p(__B) && __B < 16)
+                   if (__builtin_constant_p(__B) && __B < 16)
 	lshift = (__v4su) vec_splat_s32(__B);
-      else
+                   else
 	lshift = vec_splats ((unsigned int) __B);
 
-      result = vec_sl ((__v4si) __A, lshift);
+                   result = vec_sl ((__v4si) __A, lshift);
     }
 
   return (__m128i) result;
@@ -1508,12 +1508,12 @@ _mm_slli_epi64 (__m128i __A, int __B)
 
   if (__B >= 0 && __B < 64)
     {
-      if (__builtin_constant_p(__B) && __B < 16)
+                   if (__builtin_constant_p(__B) && __B < 16)
 	lshift = (__v2du) vec_splat_s32(__B);
-      else
+                   else
 	lshift = (__v2du) vec_splats ((unsigned int) __B);
 
-      result = vec_sl ((__v2di) __A, lshift);
+                   result = vec_sl ((__v2di) __A, lshift);
     }
 
   return (__m128i) result;
@@ -1528,9 +1528,9 @@ _mm_srai_epi16 (__m128i __A, int __B)
 
   if (__B < 16)
     {
-      if (__builtin_constant_p(__B))
+                   if (__builtin_constant_p(__B))
 	rshift = (__v8hu) vec_splat_s16(__B);
-      else
+                   else
 	rshift = vec_splats ((unsigned short) __B);
     }
   result = vec_sra ((__v8hi) __A, rshift);
@@ -1546,14 +1546,14 @@ _mm_srai_epi32 (__m128i __A, int __B)
 
   if (__B < 32)
     {
-      if (__builtin_constant_p(__B))
+                   if (__builtin_constant_p(__B))
 	{
 	  if (__B < 16)
-	      rshift = (__v4su) vec_splat_s32(__B);
+	                   rshift = (__v4su) vec_splat_s32(__B);
 	    else
-	      rshift = (__v4su) vec_splats((unsigned int)__B);
+	                   rshift = (__v4su) vec_splats((unsigned int)__B);
 	}
-      else
+                   else
 	rshift = vec_splats ((unsigned int) __B);
     }
   result = vec_sra ((__v4si) __A, rshift);
@@ -1584,20 +1584,20 @@ _mm_bsrli_si128 (__m128i __A, const int __N)
   if (__N < 16)
 #ifdef __LITTLE_ENDIAN__
     if (__builtin_constant_p(__N))
-      /* Would like to use Vector Shift Left Double by Octet
+                   /* Would like to use Vector Shift Left Double by Octet
 	 Immediate here to use the immediate form and avoid
 	 load of __N * 8 value into a separate VR.  */
-      result = vec_sld (zeros, (__v16qu) __A, (16 - __N));
+                   result = vec_sld (zeros, (__v16qu) __A, (16 - __N));
     else
 #endif
-      {
+                   {
 	__v16qu shift = vec_splats((unsigned char)(__N*8));
 #ifdef __LITTLE_ENDIAN__
 	result = vec_sro ((__v16qu)__A, shift);
 #else
 	result = vec_slo ((__v16qu)__A, shift);
 #endif
-      }
+                   }
   else
     result = zeros;
 
@@ -1637,12 +1637,12 @@ _mm_srli_epi16 (__m128i  __A, int __B)
 
   if (__B < 16)
     {
-      if (__builtin_constant_p(__B))
+                   if (__builtin_constant_p(__B))
 	rshift = (__v8hu) vec_splat_s16(__B);
-      else
+                   else
 	rshift = vec_splats ((unsigned short) __B);
 
-      result = vec_sr ((__v8hi) __A, rshift);
+                   result = vec_sr ((__v8hi) __A, rshift);
     }
 
   return (__m128i) result;
@@ -1656,17 +1656,17 @@ _mm_srli_epi32 (__m128i __A, int __B)
 
   if (__B < 32)
     {
-      if (__builtin_constant_p(__B))
+                   if (__builtin_constant_p(__B))
 	{
 	  if (__B < 16)
-	      rshift = (__v4su) vec_splat_s32(__B);
+	                   rshift = (__v4su) vec_splat_s32(__B);
 	    else
-	      rshift = (__v4su) vec_splats((unsigned int)__B);
+	                   rshift = (__v4su) vec_splats((unsigned int)__B);
 	}
-      else
+                   else
 	rshift = vec_splats ((unsigned int) __B);
 
-      result = vec_sr ((__v4si) __A, rshift);
+                   result = vec_sr ((__v4si) __A, rshift);
     }
 
   return (__m128i) result;
@@ -1681,17 +1681,17 @@ _mm_srli_epi64 (__m128i __A, int __B)
 
   if (__B < 64)
     {
-      if (__builtin_constant_p(__B))
+                   if (__builtin_constant_p(__B))
 	{
 	  if (__B < 16)
-	      rshift = (__v2du) vec_splat_s32(__B);
+	                   rshift = (__v2du) vec_splat_s32(__B);
 	    else
-	      rshift = (__v2du) vec_splats((unsigned long long)__B);
+	                   rshift = (__v2du) vec_splats((unsigned long long)__B);
 	}
-      else
+                   else
 	rshift = (__v2du) vec_splats ((unsigned int) __B);
 
-      result = vec_sr ((__v2di) __A, rshift);
+                   result = vec_sr ((__v2di) __A, rshift);
     }
 
   return (__m128i) result;
@@ -2024,11 +2024,11 @@ _mm_mulhi_epu16 (__m128i __A, __m128i __B)
   __v4su w0, w1;
   __v16qu xform1 = {
 #ifdef __LITTLE_ENDIAN__
-      0x02, 0x03, 0x12, 0x13,  0x06, 0x07, 0x16, 0x17,
-      0x0A, 0x0B, 0x1A, 0x1B,  0x0E, 0x0F, 0x1E, 0x1F
+                   0x02, 0x03, 0x12, 0x13,  0x06, 0x07, 0x16, 0x17,
+                   0x0A, 0x0B, 0x1A, 0x1B,  0x0E, 0x0F, 0x1E, 0x1F
 #else
-      0x00, 0x01, 0x10, 0x11,  0x04, 0x05, 0x14, 0x15,
-      0x08, 0x09, 0x18, 0x19,  0x0C, 0x0D, 0x1C, 0x1D
+                   0x00, 0x01, 0x10, 0x11,  0x04, 0x05, 0x14, 0x15,
+                   0x08, 0x09, 0x18, 0x19,  0x0C, 0x0D, 0x1C, 0x1D
 #endif
     };
 
@@ -2047,16 +2047,16 @@ _mm_shufflehi_epi16 (__m128i __A, const int __mask)
   static const unsigned short permute_selectors[4] =
     {
 #ifdef __LITTLE_ENDIAN__
-	      0x0908, 0x0B0A, 0x0D0C, 0x0F0E
+	                   0x0908, 0x0B0A, 0x0D0C, 0x0F0E
 #else
-	      0x0809, 0x0A0B, 0x0C0D, 0x0E0F
+	                   0x0809, 0x0A0B, 0x0C0D, 0x0E0F
 #endif
     };
   __v2du pmask =
 #ifdef __LITTLE_ENDIAN__
-      { 0x1716151413121110UL,  0UL};
+                   { 0x1716151413121110UL,  0UL};
 #else
-      { 0x1011121314151617UL,  0UL};
+                   { 0x1011121314151617UL,  0UL};
 #endif
   __m64_union t;
   __v2du a, r;
@@ -2081,16 +2081,16 @@ _mm_shufflelo_epi16 (__m128i __A, const int __mask)
   static const unsigned short permute_selectors[4] =
     {
 #ifdef __LITTLE_ENDIAN__
-	      0x0100, 0x0302, 0x0504, 0x0706
+	                   0x0100, 0x0302, 0x0504, 0x0706
 #else
-	      0x0001, 0x0203, 0x0405, 0x0607
+	                   0x0001, 0x0203, 0x0405, 0x0607
 #endif
     };
   __v2du pmask =
 #ifdef __LITTLE_ENDIAN__
-                 { 0UL,  0x1f1e1d1c1b1a1918UL};
+                                           { 0UL,  0x1f1e1d1c1b1a1918UL};
 #else
-                 { 0UL,  0x18191a1b1c1d1e1fUL};
+                                           { 0UL,  0x18191a1b1c1d1e1fUL};
 #endif
   __m64_union t;
   __v2du a, r;
@@ -2116,7 +2116,7 @@ _mm_shuffle_epi32 (__m128i __A, const int __mask)
 #ifdef __LITTLE_ENDIAN__
 	0x03020100, 0x07060504, 0x0B0A0908, 0x0F0E0D0C
 #else
-      0x00010203, 0x04050607, 0x08090A0B, 0x0C0D0E0F
+                   0x00010203, 0x04050607, 0x08090A0B, 0x0C0D0E0F
 #endif
     };
   __v4su t;

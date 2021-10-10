@@ -46,28 +46,28 @@
 #define EDDMAGIC2 0xAA55
 
 
-#define READ_SECTORS 0x02         /* int13 AH=0x02 is READ_SECTORS command */
+#define READ_SECTORS 0x02                      /* int13 AH=0x02 is READ_SECTORS command */
 #define EDD_MBR_SIG_OFFSET 0x1B8  /* offset of signature in the MBR */
 #define EDD_MBR_SIG_BUF    0x290  /* addr in boot params */
-#define EDD_MBR_SIG_MAX 16        /* max number of signatures to store */
+#define EDD_MBR_SIG_MAX 16                     /* max number of signatures to store */
 #define EDD_MBR_SIG_NR_BUF 0x1ea  /* addr of number of MBR signtaures at EDD_MBR_SIG_BUF
 				     in boot_params - treat this as 1 byte  */
 
 #ifndef __ASSEMBLY__
 
-#define EDD_EXT_FIXED_DISK_ACCESS           (1 << 0)
+#define EDD_EXT_FIXED_DISK_ACCESS                        (1 << 0)
 #define EDD_EXT_DEVICE_LOCKING_AND_EJECTING (1 << 1)
 #define EDD_EXT_ENHANCED_DISK_DRIVE_SUPPORT (1 << 2)
-#define EDD_EXT_64BIT_EXTENSIONS            (1 << 3)
+#define EDD_EXT_64BIT_EXTENSIONS                                      (1 << 3)
 
 #define EDD_INFO_DMA_BOUNDARY_ERROR_TRANSPARENT (1 << 0)
-#define EDD_INFO_GEOMETRY_VALID                (1 << 1)
-#define EDD_INFO_REMOVABLE                     (1 << 2)
-#define EDD_INFO_WRITE_VERIFY                  (1 << 3)
+#define EDD_INFO_GEOMETRY_VALID                                          (1 << 1)
+#define EDD_INFO_REMOVABLE                                                            (1 << 2)
+#define EDD_INFO_WRITE_VERIFY                                                         (1 << 3)
 #define EDD_INFO_MEDIA_CHANGE_NOTIFICATION     (1 << 4)
-#define EDD_INFO_LOCKABLE                      (1 << 5)
-#define EDD_INFO_NO_MEDIA_PRESENT              (1 << 6)
-#define EDD_INFO_USE_INT13_FN50                (1 << 7)
+#define EDD_INFO_LOCKABLE                                                             (1 << 5)
+#define EDD_INFO_NO_MEDIA_PRESENT                                        (1 << 6)
+#define EDD_INFO_USE_INT13_FN50                                          (1 << 7)
 
 struct edd_device_params {
 	__u16 length;

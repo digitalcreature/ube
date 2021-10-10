@@ -229,12 +229,12 @@ MIDL_INTERFACE("53dec138-a51e-11d2-861e-00c04fa35c89")
 IHostDialogHelper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ShowHTMLDialog(
-        HWND hwndParent,
-        IMoniker *pMk,
-        VARIANT *pvarArgIn,
-        WCHAR *pchOptions,
-        VARIANT *pvarArgOut,
-        IUnknown *punkHost) = 0;
+                     HWND hwndParent,
+                     IMoniker *pMk,
+                     VARIANT *pvarArgIn,
+                     WCHAR *pchOptions,
+                     VARIANT *pvarArgOut,
+                     IUnknown *punkHost) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -246,25 +246,25 @@ typedef struct IHostDialogHelperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHostDialogHelper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHostDialogHelper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHostDialogHelper *This);
+                     IHostDialogHelper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHostDialogHelper *This);
+                     IHostDialogHelper *This);
 
     /*** IHostDialogHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *ShowHTMLDialog)(
-        IHostDialogHelper *This,
-        HWND hwndParent,
-        IMoniker *pMk,
-        VARIANT *pvarArgIn,
-        WCHAR *pchOptions,
-        VARIANT *pvarArgOut,
-        IUnknown *punkHost);
+                     IHostDialogHelper *This,
+                     HWND hwndParent,
+                     IMoniker *pMk,
+                     VARIANT *pvarArgIn,
+                     WCHAR *pchOptions,
+                     VARIANT *pvarArgOut,
+                     IUnknown *punkHost);
 
     END_INTERFACE
 } IHostDialogHelperVtbl;
@@ -329,65 +329,65 @@ MIDL_INTERFACE("bd3f23c0-d43e-11cf-893b-00aa00bdce1a")
 IDocHostUIHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ShowContextMenu(
-        DWORD dwID,
-        POINT *ppt,
-        IUnknown *pcmdtReserved,
-        IDispatch *pdispReserved) = 0;
+                     DWORD dwID,
+                     POINT *ppt,
+                     IUnknown *pcmdtReserved,
+                     IDispatch *pdispReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHostInfo(
-        DOCHOSTUIINFO *pInfo) = 0;
+                     DOCHOSTUIINFO *pInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowUI(
-        DWORD dwID,
-        IOleInPlaceActiveObject *pActiveObject,
-        IOleCommandTarget *pCommandTarget,
-        IOleInPlaceFrame *pFrame,
-        IOleInPlaceUIWindow *pDoc) = 0;
+                     DWORD dwID,
+                     IOleInPlaceActiveObject *pActiveObject,
+                     IOleCommandTarget *pCommandTarget,
+                     IOleInPlaceFrame *pFrame,
+                     IOleInPlaceUIWindow *pDoc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HideUI(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateUI(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableModeless(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDocWindowActivate(
-        WINBOOL fActivate) = 0;
+                     WINBOOL fActivate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFrameWindowActivate(
-        WINBOOL fActivate) = 0;
+                     WINBOOL fActivate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResizeBorder(
-        LPCRECT prcBorder,
-        IOleInPlaceUIWindow *pUIWindow,
-        WINBOOL fRameWindow) = 0;
+                     LPCRECT prcBorder,
+                     IOleInPlaceUIWindow *pUIWindow,
+                     WINBOOL fRameWindow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        LPMSG lpMsg,
-        const GUID *pguidCmdGroup,
-        DWORD nCmdID) = 0;
+                     LPMSG lpMsg,
+                     const GUID *pguidCmdGroup,
+                     DWORD nCmdID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOptionKeyPath(
-        LPOLESTR *pchKey,
-        DWORD dw) = 0;
+                     LPOLESTR *pchKey,
+                     DWORD dw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDropTarget(
-        IDropTarget *pDropTarget,
-        IDropTarget **ppDropTarget) = 0;
+                     IDropTarget *pDropTarget,
+                     IDropTarget **ppDropTarget) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExternal(
-        IDispatch **ppDispatch) = 0;
+                     IDispatch **ppDispatch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateUrl(
-        DWORD dwTranslate,
-        LPWSTR pchURLIn,
-        LPWSTR *ppchURLOut) = 0;
+                     DWORD dwTranslate,
+                     LPWSTR pchURLIn,
+                     LPWSTR *ppchURLOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FilterDataObject(
-        IDataObject *pDO,
-        IDataObject **ppDORet) = 0;
+                     IDataObject *pDO,
+                     IDataObject **ppDORet) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -399,90 +399,90 @@ typedef struct IDocHostUIHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDocHostUIHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDocHostUIHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDocHostUIHandler *This);
+                     IDocHostUIHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDocHostUIHandler *This);
+                     IDocHostUIHandler *This);
 
     /*** IDocHostUIHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *ShowContextMenu)(
-        IDocHostUIHandler *This,
-        DWORD dwID,
-        POINT *ppt,
-        IUnknown *pcmdtReserved,
-        IDispatch *pdispReserved);
+                     IDocHostUIHandler *This,
+                     DWORD dwID,
+                     POINT *ppt,
+                     IUnknown *pcmdtReserved,
+                     IDispatch *pdispReserved);
 
     HRESULT (STDMETHODCALLTYPE *GetHostInfo)(
-        IDocHostUIHandler *This,
-        DOCHOSTUIINFO *pInfo);
+                     IDocHostUIHandler *This,
+                     DOCHOSTUIINFO *pInfo);
 
     HRESULT (STDMETHODCALLTYPE *ShowUI)(
-        IDocHostUIHandler *This,
-        DWORD dwID,
-        IOleInPlaceActiveObject *pActiveObject,
-        IOleCommandTarget *pCommandTarget,
-        IOleInPlaceFrame *pFrame,
-        IOleInPlaceUIWindow *pDoc);
+                     IDocHostUIHandler *This,
+                     DWORD dwID,
+                     IOleInPlaceActiveObject *pActiveObject,
+                     IOleCommandTarget *pCommandTarget,
+                     IOleInPlaceFrame *pFrame,
+                     IOleInPlaceUIWindow *pDoc);
 
     HRESULT (STDMETHODCALLTYPE *HideUI)(
-        IDocHostUIHandler *This);
+                     IDocHostUIHandler *This);
 
     HRESULT (STDMETHODCALLTYPE *UpdateUI)(
-        IDocHostUIHandler *This);
+                     IDocHostUIHandler *This);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IDocHostUIHandler *This,
-        WINBOOL fEnable);
+                     IDocHostUIHandler *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *OnDocWindowActivate)(
-        IDocHostUIHandler *This,
-        WINBOOL fActivate);
+                     IDocHostUIHandler *This,
+                     WINBOOL fActivate);
 
     HRESULT (STDMETHODCALLTYPE *OnFrameWindowActivate)(
-        IDocHostUIHandler *This,
-        WINBOOL fActivate);
+                     IDocHostUIHandler *This,
+                     WINBOOL fActivate);
 
     HRESULT (STDMETHODCALLTYPE *ResizeBorder)(
-        IDocHostUIHandler *This,
-        LPCRECT prcBorder,
-        IOleInPlaceUIWindow *pUIWindow,
-        WINBOOL fRameWindow);
+                     IDocHostUIHandler *This,
+                     LPCRECT prcBorder,
+                     IOleInPlaceUIWindow *pUIWindow,
+                     WINBOOL fRameWindow);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IDocHostUIHandler *This,
-        LPMSG lpMsg,
-        const GUID *pguidCmdGroup,
-        DWORD nCmdID);
+                     IDocHostUIHandler *This,
+                     LPMSG lpMsg,
+                     const GUID *pguidCmdGroup,
+                     DWORD nCmdID);
 
     HRESULT (STDMETHODCALLTYPE *GetOptionKeyPath)(
-        IDocHostUIHandler *This,
-        LPOLESTR *pchKey,
-        DWORD dw);
+                     IDocHostUIHandler *This,
+                     LPOLESTR *pchKey,
+                     DWORD dw);
 
     HRESULT (STDMETHODCALLTYPE *GetDropTarget)(
-        IDocHostUIHandler *This,
-        IDropTarget *pDropTarget,
-        IDropTarget **ppDropTarget);
+                     IDocHostUIHandler *This,
+                     IDropTarget *pDropTarget,
+                     IDropTarget **ppDropTarget);
 
     HRESULT (STDMETHODCALLTYPE *GetExternal)(
-        IDocHostUIHandler *This,
-        IDispatch **ppDispatch);
+                     IDocHostUIHandler *This,
+                     IDispatch **ppDispatch);
 
     HRESULT (STDMETHODCALLTYPE *TranslateUrl)(
-        IDocHostUIHandler *This,
-        DWORD dwTranslate,
-        LPWSTR pchURLIn,
-        LPWSTR *ppchURLOut);
+                     IDocHostUIHandler *This,
+                     DWORD dwTranslate,
+                     LPWSTR pchURLIn,
+                     LPWSTR *ppchURLOut);
 
     HRESULT (STDMETHODCALLTYPE *FilterDataObject)(
-        IDocHostUIHandler *This,
-        IDataObject *pDO,
-        IDataObject **ppDORet);
+                     IDocHostUIHandler *This,
+                     IDataObject *pDO,
+                     IDataObject **ppDORet);
 
     END_INTERFACE
 } IDocHostUIHandlerVtbl;
@@ -590,8 +590,8 @@ MIDL_INTERFACE("3050f6d0-98b5-11cf-bb82-00aa00bdce0b")
 IDocHostUIHandler2 : public IDocHostUIHandler
 {
     virtual HRESULT STDMETHODCALLTYPE GetOverrideKeyPath(
-        LPOLESTR *pchKey,
-        DWORD dw) = 0;
+                     LPOLESTR *pchKey,
+                     DWORD dw) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -603,96 +603,96 @@ typedef struct IDocHostUIHandler2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDocHostUIHandler2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDocHostUIHandler2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDocHostUIHandler2 *This);
+                     IDocHostUIHandler2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDocHostUIHandler2 *This);
+                     IDocHostUIHandler2 *This);
 
     /*** IDocHostUIHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *ShowContextMenu)(
-        IDocHostUIHandler2 *This,
-        DWORD dwID,
-        POINT *ppt,
-        IUnknown *pcmdtReserved,
-        IDispatch *pdispReserved);
+                     IDocHostUIHandler2 *This,
+                     DWORD dwID,
+                     POINT *ppt,
+                     IUnknown *pcmdtReserved,
+                     IDispatch *pdispReserved);
 
     HRESULT (STDMETHODCALLTYPE *GetHostInfo)(
-        IDocHostUIHandler2 *This,
-        DOCHOSTUIINFO *pInfo);
+                     IDocHostUIHandler2 *This,
+                     DOCHOSTUIINFO *pInfo);
 
     HRESULT (STDMETHODCALLTYPE *ShowUI)(
-        IDocHostUIHandler2 *This,
-        DWORD dwID,
-        IOleInPlaceActiveObject *pActiveObject,
-        IOleCommandTarget *pCommandTarget,
-        IOleInPlaceFrame *pFrame,
-        IOleInPlaceUIWindow *pDoc);
+                     IDocHostUIHandler2 *This,
+                     DWORD dwID,
+                     IOleInPlaceActiveObject *pActiveObject,
+                     IOleCommandTarget *pCommandTarget,
+                     IOleInPlaceFrame *pFrame,
+                     IOleInPlaceUIWindow *pDoc);
 
     HRESULT (STDMETHODCALLTYPE *HideUI)(
-        IDocHostUIHandler2 *This);
+                     IDocHostUIHandler2 *This);
 
     HRESULT (STDMETHODCALLTYPE *UpdateUI)(
-        IDocHostUIHandler2 *This);
+                     IDocHostUIHandler2 *This);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IDocHostUIHandler2 *This,
-        WINBOOL fEnable);
+                     IDocHostUIHandler2 *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *OnDocWindowActivate)(
-        IDocHostUIHandler2 *This,
-        WINBOOL fActivate);
+                     IDocHostUIHandler2 *This,
+                     WINBOOL fActivate);
 
     HRESULT (STDMETHODCALLTYPE *OnFrameWindowActivate)(
-        IDocHostUIHandler2 *This,
-        WINBOOL fActivate);
+                     IDocHostUIHandler2 *This,
+                     WINBOOL fActivate);
 
     HRESULT (STDMETHODCALLTYPE *ResizeBorder)(
-        IDocHostUIHandler2 *This,
-        LPCRECT prcBorder,
-        IOleInPlaceUIWindow *pUIWindow,
-        WINBOOL fRameWindow);
+                     IDocHostUIHandler2 *This,
+                     LPCRECT prcBorder,
+                     IOleInPlaceUIWindow *pUIWindow,
+                     WINBOOL fRameWindow);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IDocHostUIHandler2 *This,
-        LPMSG lpMsg,
-        const GUID *pguidCmdGroup,
-        DWORD nCmdID);
+                     IDocHostUIHandler2 *This,
+                     LPMSG lpMsg,
+                     const GUID *pguidCmdGroup,
+                     DWORD nCmdID);
 
     HRESULT (STDMETHODCALLTYPE *GetOptionKeyPath)(
-        IDocHostUIHandler2 *This,
-        LPOLESTR *pchKey,
-        DWORD dw);
+                     IDocHostUIHandler2 *This,
+                     LPOLESTR *pchKey,
+                     DWORD dw);
 
     HRESULT (STDMETHODCALLTYPE *GetDropTarget)(
-        IDocHostUIHandler2 *This,
-        IDropTarget *pDropTarget,
-        IDropTarget **ppDropTarget);
+                     IDocHostUIHandler2 *This,
+                     IDropTarget *pDropTarget,
+                     IDropTarget **ppDropTarget);
 
     HRESULT (STDMETHODCALLTYPE *GetExternal)(
-        IDocHostUIHandler2 *This,
-        IDispatch **ppDispatch);
+                     IDocHostUIHandler2 *This,
+                     IDispatch **ppDispatch);
 
     HRESULT (STDMETHODCALLTYPE *TranslateUrl)(
-        IDocHostUIHandler2 *This,
-        DWORD dwTranslate,
-        LPWSTR pchURLIn,
-        LPWSTR *ppchURLOut);
+                     IDocHostUIHandler2 *This,
+                     DWORD dwTranslate,
+                     LPWSTR pchURLIn,
+                     LPWSTR *ppchURLOut);
 
     HRESULT (STDMETHODCALLTYPE *FilterDataObject)(
-        IDocHostUIHandler2 *This,
-        IDataObject *pDO,
-        IDataObject **ppDORet);
+                     IDocHostUIHandler2 *This,
+                     IDataObject *pDO,
+                     IDataObject **ppDORet);
 
     /*** IDocHostUIHandler2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOverrideKeyPath)(
-        IDocHostUIHandler2 *This,
-        LPOLESTR *pchKey,
-        DWORD dw);
+                     IDocHostUIHandler2 *This,
+                     LPOLESTR *pchKey,
+                     DWORD dw);
 
     END_INTERFACE
 } IDocHostUIHandler2Vtbl;
@@ -806,7 +806,7 @@ MIDL_INTERFACE("3050f3f0-98b5-11cf-bb82-00aa00bdce0b")
 ICustomDoc : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetUIHandler(
-        IDocHostUIHandler *pUIHandler) = 0;
+                     IDocHostUIHandler *pUIHandler) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -818,20 +818,20 @@ typedef struct ICustomDocVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICustomDoc *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICustomDoc *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICustomDoc *This);
+                     ICustomDoc *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICustomDoc *This);
+                     ICustomDoc *This);
 
     /*** ICustomDoc methods ***/
     HRESULT (STDMETHODCALLTYPE *SetUIHandler)(
-        ICustomDoc *This,
-        IDocHostUIHandler *pUIHandler);
+                     ICustomDoc *This,
+                     IDocHostUIHandler *pUIHandler);
 
     END_INTERFACE
 } ICustomDocVtbl;
@@ -883,21 +883,21 @@ MIDL_INTERFACE("c4d244b0-d43e-11cf-893b-00aa00bdce1a")
 IDocHostShowUI : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ShowMessage(
-        HWND hwnd,
-        LPOLESTR lpstrText,
-        LPOLESTR lpstrCaption,
-        DWORD dwType,
-        LPOLESTR lpstrHelpFile,
-        DWORD dwHelpContext,
-        LRESULT *plResult) = 0;
+                     HWND hwnd,
+                     LPOLESTR lpstrText,
+                     LPOLESTR lpstrCaption,
+                     DWORD dwType,
+                     LPOLESTR lpstrHelpFile,
+                     DWORD dwHelpContext,
+                     LRESULT *plResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowHelp(
-        HWND hwnd,
-        LPOLESTR pszHelpFile,
-        UINT uCommand,
-        DWORD dwData,
-        POINT ptMouse,
-        IDispatch *pDispatchObjectHit) = 0;
+                     HWND hwnd,
+                     LPOLESTR pszHelpFile,
+                     UINT uCommand,
+                     DWORD dwData,
+                     POINT ptMouse,
+                     IDispatch *pDispatchObjectHit) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -909,35 +909,35 @@ typedef struct IDocHostShowUIVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDocHostShowUI *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDocHostShowUI *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDocHostShowUI *This);
+                     IDocHostShowUI *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDocHostShowUI *This);
+                     IDocHostShowUI *This);
 
     /*** IDocHostShowUI methods ***/
     HRESULT (STDMETHODCALLTYPE *ShowMessage)(
-        IDocHostShowUI *This,
-        HWND hwnd,
-        LPOLESTR lpstrText,
-        LPOLESTR lpstrCaption,
-        DWORD dwType,
-        LPOLESTR lpstrHelpFile,
-        DWORD dwHelpContext,
-        LRESULT *plResult);
+                     IDocHostShowUI *This,
+                     HWND hwnd,
+                     LPOLESTR lpstrText,
+                     LPOLESTR lpstrCaption,
+                     DWORD dwType,
+                     LPOLESTR lpstrHelpFile,
+                     DWORD dwHelpContext,
+                     LRESULT *plResult);
 
     HRESULT (STDMETHODCALLTYPE *ShowHelp)(
-        IDocHostShowUI *This,
-        HWND hwnd,
-        LPOLESTR pszHelpFile,
-        UINT uCommand,
-        DWORD dwData,
-        POINT ptMouse,
-        IDispatch *pDispatchObjectHit);
+                     IDocHostShowUI *This,
+                     HWND hwnd,
+                     LPOLESTR pszHelpFile,
+                     UINT uCommand,
+                     DWORD dwData,
+                     POINT ptMouse,
+                     IDispatch *pDispatchObjectHit);
 
     END_INTERFACE
 } IDocHostShowUIVtbl;
@@ -996,10 +996,10 @@ MIDL_INTERFACE("342d1ea0-ae25-11d1-89c5-006008c3fbfc")
 IClassFactoryEx : public IClassFactory
 {
     virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithContext(
-        IUnknown *punkContext,
-        IUnknown *punkOuter,
-        REFIID riid,
-        void **ppv) = 0;
+                     IUnknown *punkContext,
+                     IUnknown *punkOuter,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1011,34 +1011,34 @@ typedef struct IClassFactoryExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IClassFactoryEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IClassFactoryEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IClassFactoryEx *This);
+                     IClassFactoryEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IClassFactoryEx *This);
+                     IClassFactoryEx *This);
 
     /*** IClassFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        IClassFactoryEx *This,
-        IUnknown *pUnkOuter,
-        REFIID riid,
-        void **ppvObject);
+                     IClassFactoryEx *This,
+                     IUnknown *pUnkOuter,
+                     REFIID riid,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *LockServer)(
-        IClassFactoryEx *This,
-        WINBOOL fLock);
+                     IClassFactoryEx *This,
+                     WINBOOL fLock);
 
     /*** IClassFactoryEx methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateInstanceWithContext)(
-        IClassFactoryEx *This,
-        IUnknown *punkContext,
-        IUnknown *punkOuter,
-        REFIID riid,
-        void **ppv);
+                     IClassFactoryEx *This,
+                     IUnknown *punkContext,
+                     IUnknown *punkOuter,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IClassFactoryExVtbl;
@@ -1100,20 +1100,20 @@ MIDL_INTERFACE("3050f5fc-98b5-11cf-bb82-00aa00bdce0b")
 IHTMLOMWindowServices : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE moveTo(
-        LONG x,
-        LONG y) = 0;
+                     LONG x,
+                     LONG y) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE moveBy(
-        LONG x,
-        LONG y) = 0;
+                     LONG x,
+                     LONG y) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE resizeTo(
-        LONG x,
-        LONG y) = 0;
+                     LONG x,
+                     LONG y) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE resizeBy(
-        LONG x,
-        LONG y) = 0;
+                     LONG x,
+                     LONG y) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1125,36 +1125,36 @@ typedef struct IHTMLOMWindowServicesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHTMLOMWindowServices *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHTMLOMWindowServices *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHTMLOMWindowServices *This);
+                     IHTMLOMWindowServices *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHTMLOMWindowServices *This);
+                     IHTMLOMWindowServices *This);
 
     /*** IHTMLOMWindowServices methods ***/
     HRESULT (STDMETHODCALLTYPE *moveTo)(
-        IHTMLOMWindowServices *This,
-        LONG x,
-        LONG y);
+                     IHTMLOMWindowServices *This,
+                     LONG x,
+                     LONG y);
 
     HRESULT (STDMETHODCALLTYPE *moveBy)(
-        IHTMLOMWindowServices *This,
-        LONG x,
-        LONG y);
+                     IHTMLOMWindowServices *This,
+                     LONG x,
+                     LONG y);
 
     HRESULT (STDMETHODCALLTYPE *resizeTo)(
-        IHTMLOMWindowServices *This,
-        LONG x,
-        LONG y);
+                     IHTMLOMWindowServices *This,
+                     LONG x,
+                     LONG y);
 
     HRESULT (STDMETHODCALLTYPE *resizeBy)(
-        IHTMLOMWindowServices *This,
-        LONG x,
-        LONG y);
+                     IHTMLOMWindowServices *This,
+                     LONG x,
+                     LONG y);
 
     END_INTERFACE
 } IHTMLOMWindowServicesVtbl;

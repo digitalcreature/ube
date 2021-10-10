@@ -17,20 +17,20 @@ pub const SimpleTextInputProtocol = extern struct {
 
     /// Resets the input device hardware.
     pub fn reset(self: *const SimpleTextInputProtocol, verify: bool) Status {
-        return self._reset(self, verify);
+                     return self._reset(self, verify);
     }
 
     /// Reads the next keystroke from the input device.
     pub fn readKeyStroke(self: *const SimpleTextInputProtocol, input_key: *InputKey) Status {
-        return self._read_key_stroke(self, input_key);
+                     return self._read_key_stroke(self, input_key);
     }
 
     pub const guid align(8) = Guid{
-        .time_low = 0x387477c1,
-        .time_mid = 0x69c7,
-        .time_high_and_version = 0x11d2,
-        .clock_seq_high_and_reserved = 0x8e,
-        .clock_seq_low = 0x39,
-        .node = [_]u8{ 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x3b },
+                     .time_low = 0x387477c1,
+                     .time_mid = 0x69c7,
+                     .time_high_and_version = 0x11d2,
+                     .clock_seq_high_and_reserved = 0x8e,
+                     .clock_seq_low = 0x39,
+                     .node = [_]u8{ 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x3b },
     };
 };

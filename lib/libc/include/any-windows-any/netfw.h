@@ -254,64 +254,64 @@ MIDL_INTERFACE("a6207b2e-7cdd-426a-951e-5e1cbc5afead")
 INetFwIcmpSettings : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_AllowOutboundDestinationUnreachable(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowOutboundDestinationUnreachable(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowRedirect(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowRedirect(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowInboundEchoRequest(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowInboundEchoRequest(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowOutboundTimeExceeded(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowOutboundTimeExceeded(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowOutboundParameterProblem(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowOutboundParameterProblem(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowOutboundSourceQuench(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowOutboundSourceQuench(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowInboundRouterRequest(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowInboundRouterRequest(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowInboundTimestampRequest(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowInboundTimestampRequest(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowInboundMaskRequest(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowInboundMaskRequest(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowOutboundPacketTooBig(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowOutboundPacketTooBig(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -323,126 +323,126 @@ typedef struct INetFwIcmpSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwIcmpSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwIcmpSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwIcmpSettings *This);
+                     INetFwIcmpSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwIcmpSettings *This);
+                     INetFwIcmpSettings *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwIcmpSettings *This,
-        UINT *pctinfo);
+                     INetFwIcmpSettings *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwIcmpSettings *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwIcmpSettings *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwIcmpSettings *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwIcmpSettings *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwIcmpSettings *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwIcmpSettings *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwIcmpSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *get_AllowOutboundDestinationUnreachable)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowOutboundDestinationUnreachable)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowRedirect)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowRedirect)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowInboundEchoRequest)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowInboundEchoRequest)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowOutboundTimeExceeded)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowOutboundTimeExceeded)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowOutboundParameterProblem)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowOutboundParameterProblem)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowOutboundSourceQuench)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowOutboundSourceQuench)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowInboundRouterRequest)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowInboundRouterRequest)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowInboundTimestampRequest)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowInboundTimestampRequest)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowInboundMaskRequest)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowInboundMaskRequest)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowOutboundPacketTooBig)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL *allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowOutboundPacketTooBig)(
-        INetFwIcmpSettings *This,
-        VARIANT_BOOL allow);
+                     INetFwIcmpSettings *This,
+                     VARIANT_BOOL allow);
 
     END_INTERFACE
 } INetFwIcmpSettingsVtbl;
@@ -588,49 +588,49 @@ MIDL_INTERFACE("e0483ba0-47ff-4d9c-a6d6-7741d0b195f7")
 INetFwOpenPort : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IpVersion(
-        NET_FW_IP_VERSION *ipVersion) = 0;
+                     NET_FW_IP_VERSION *ipVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IpVersion(
-        NET_FW_IP_VERSION ipVersion) = 0;
+                     NET_FW_IP_VERSION ipVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Protocol(
-        NET_FW_IP_PROTOCOL *ipProtocol) = 0;
+                     NET_FW_IP_PROTOCOL *ipProtocol) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Protocol(
-        NET_FW_IP_PROTOCOL ipProtocol) = 0;
+                     NET_FW_IP_PROTOCOL ipProtocol) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Port(
-        LONG *portNumber) = 0;
+                     LONG *portNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Port(
-        LONG portNumber) = 0;
+                     LONG portNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Scope(
-        NET_FW_SCOPE *scope) = 0;
+                     NET_FW_SCOPE *scope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Scope(
-        NET_FW_SCOPE scope) = 0;
+                     NET_FW_SCOPE scope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoteAddresses(
-        BSTR *remoteAddrs) = 0;
+                     BSTR *remoteAddrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RemoteAddresses(
-        BSTR remoteAddrs) = 0;
+                     BSTR remoteAddrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BuiltIn(
-        VARIANT_BOOL *builtIn) = 0;
+                     VARIANT_BOOL *builtIn) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -642,106 +642,106 @@ typedef struct INetFwOpenPortVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwOpenPort *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwOpenPort *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwOpenPort *This);
+                     INetFwOpenPort *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwOpenPort *This);
+                     INetFwOpenPort *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwOpenPort *This,
-        UINT *pctinfo);
+                     INetFwOpenPort *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwOpenPort *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwOpenPort *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwOpenPort *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwOpenPort *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwOpenPort *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwOpenPort *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwOpenPort methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        INetFwOpenPort *This,
-        BSTR *name);
+                     INetFwOpenPort *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        INetFwOpenPort *This,
-        BSTR name);
+                     INetFwOpenPort *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_IpVersion)(
-        INetFwOpenPort *This,
-        NET_FW_IP_VERSION *ipVersion);
+                     INetFwOpenPort *This,
+                     NET_FW_IP_VERSION *ipVersion);
 
     HRESULT (STDMETHODCALLTYPE *put_IpVersion)(
-        INetFwOpenPort *This,
-        NET_FW_IP_VERSION ipVersion);
+                     INetFwOpenPort *This,
+                     NET_FW_IP_VERSION ipVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_Protocol)(
-        INetFwOpenPort *This,
-        NET_FW_IP_PROTOCOL *ipProtocol);
+                     INetFwOpenPort *This,
+                     NET_FW_IP_PROTOCOL *ipProtocol);
 
     HRESULT (STDMETHODCALLTYPE *put_Protocol)(
-        INetFwOpenPort *This,
-        NET_FW_IP_PROTOCOL ipProtocol);
+                     INetFwOpenPort *This,
+                     NET_FW_IP_PROTOCOL ipProtocol);
 
     HRESULT (STDMETHODCALLTYPE *get_Port)(
-        INetFwOpenPort *This,
-        LONG *portNumber);
+                     INetFwOpenPort *This,
+                     LONG *portNumber);
 
     HRESULT (STDMETHODCALLTYPE *put_Port)(
-        INetFwOpenPort *This,
-        LONG portNumber);
+                     INetFwOpenPort *This,
+                     LONG portNumber);
 
     HRESULT (STDMETHODCALLTYPE *get_Scope)(
-        INetFwOpenPort *This,
-        NET_FW_SCOPE *scope);
+                     INetFwOpenPort *This,
+                     NET_FW_SCOPE *scope);
 
     HRESULT (STDMETHODCALLTYPE *put_Scope)(
-        INetFwOpenPort *This,
-        NET_FW_SCOPE scope);
+                     INetFwOpenPort *This,
+                     NET_FW_SCOPE scope);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteAddresses)(
-        INetFwOpenPort *This,
-        BSTR *remoteAddrs);
+                     INetFwOpenPort *This,
+                     BSTR *remoteAddrs);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteAddresses)(
-        INetFwOpenPort *This,
-        BSTR remoteAddrs);
+                     INetFwOpenPort *This,
+                     BSTR remoteAddrs);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        INetFwOpenPort *This,
-        VARIANT_BOOL *enabled);
+                     INetFwOpenPort *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        INetFwOpenPort *This,
-        VARIANT_BOOL enabled);
+                     INetFwOpenPort *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_BuiltIn)(
-        INetFwOpenPort *This,
-        VARIANT_BOOL *builtIn);
+                     INetFwOpenPort *This,
+                     VARIANT_BOOL *builtIn);
 
     END_INTERFACE
 } INetFwOpenPortVtbl;
@@ -867,22 +867,22 @@ MIDL_INTERFACE("c0e9d7fa-e07e-430a-b19a-090ce82d92e2")
 INetFwOpenPorts : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        INetFwOpenPort *port) = 0;
+                     INetFwOpenPort *port) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        LONG portNumber,
-        NET_FW_IP_PROTOCOL ipProtocol) = 0;
+                     LONG portNumber,
+                     NET_FW_IP_PROTOCOL ipProtocol) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG portNumber,
-        NET_FW_IP_PROTOCOL ipProtocol,
-        INetFwOpenPort **openPort) = 0;
+                     LONG portNumber,
+                     NET_FW_IP_PROTOCOL ipProtocol,
+                     INetFwOpenPort **openPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **newEnum) = 0;
+                     IUnknown **newEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -894,69 +894,69 @@ typedef struct INetFwOpenPortsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwOpenPorts *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwOpenPorts *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwOpenPorts *This);
+                     INetFwOpenPorts *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwOpenPorts *This);
+                     INetFwOpenPorts *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwOpenPorts *This,
-        UINT *pctinfo);
+                     INetFwOpenPorts *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwOpenPorts *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwOpenPorts *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwOpenPorts *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwOpenPorts *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwOpenPorts *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwOpenPorts *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwOpenPorts methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        INetFwOpenPorts *This,
-        LONG *count);
+                     INetFwOpenPorts *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        INetFwOpenPorts *This,
-        INetFwOpenPort *port);
+                     INetFwOpenPorts *This,
+                     INetFwOpenPort *port);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        INetFwOpenPorts *This,
-        LONG portNumber,
-        NET_FW_IP_PROTOCOL ipProtocol);
+                     INetFwOpenPorts *This,
+                     LONG portNumber,
+                     NET_FW_IP_PROTOCOL ipProtocol);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        INetFwOpenPorts *This,
-        LONG portNumber,
-        NET_FW_IP_PROTOCOL ipProtocol,
-        INetFwOpenPort **openPort);
+                     INetFwOpenPorts *This,
+                     LONG portNumber,
+                     NET_FW_IP_PROTOCOL ipProtocol,
+                     INetFwOpenPort **openPort);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        INetFwOpenPorts *This,
-        IUnknown **newEnum);
+                     INetFwOpenPorts *This,
+                     IUnknown **newEnum);
 
     END_INTERFACE
 } INetFwOpenPortsVtbl;
@@ -1042,40 +1042,40 @@ MIDL_INTERFACE("79fd57c8-908e-4a36-9888-d5b3f0a444cf")
 INetFwService : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        NET_FW_SERVICE_TYPE *type) = 0;
+                     NET_FW_SERVICE_TYPE *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Customized(
-        VARIANT_BOOL *customized) = 0;
+                     VARIANT_BOOL *customized) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IpVersion(
-        NET_FW_IP_VERSION *ipVersion) = 0;
+                     NET_FW_IP_VERSION *ipVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IpVersion(
-        NET_FW_IP_VERSION ipVersion) = 0;
+                     NET_FW_IP_VERSION ipVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Scope(
-        NET_FW_SCOPE *scope) = 0;
+                     NET_FW_SCOPE *scope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Scope(
-        NET_FW_SCOPE scope) = 0;
+                     NET_FW_SCOPE scope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoteAddresses(
-        BSTR *remoteAddrs) = 0;
+                     BSTR *remoteAddrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RemoteAddresses(
-        BSTR remoteAddrs) = 0;
+                     BSTR remoteAddrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_GloballyOpenPorts(
-        INetFwOpenPorts **openPorts) = 0;
+                     INetFwOpenPorts **openPorts) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1087,94 +1087,94 @@ typedef struct INetFwServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwService *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwService *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwService *This);
+                     INetFwService *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwService *This);
+                     INetFwService *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwService *This,
-        UINT *pctinfo);
+                     INetFwService *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwService *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwService *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwService *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwService *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwService *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwService *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwService methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        INetFwService *This,
-        BSTR *name);
+                     INetFwService *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        INetFwService *This,
-        NET_FW_SERVICE_TYPE *type);
+                     INetFwService *This,
+                     NET_FW_SERVICE_TYPE *type);
 
     HRESULT (STDMETHODCALLTYPE *get_Customized)(
-        INetFwService *This,
-        VARIANT_BOOL *customized);
+                     INetFwService *This,
+                     VARIANT_BOOL *customized);
 
     HRESULT (STDMETHODCALLTYPE *get_IpVersion)(
-        INetFwService *This,
-        NET_FW_IP_VERSION *ipVersion);
+                     INetFwService *This,
+                     NET_FW_IP_VERSION *ipVersion);
 
     HRESULT (STDMETHODCALLTYPE *put_IpVersion)(
-        INetFwService *This,
-        NET_FW_IP_VERSION ipVersion);
+                     INetFwService *This,
+                     NET_FW_IP_VERSION ipVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_Scope)(
-        INetFwService *This,
-        NET_FW_SCOPE *scope);
+                     INetFwService *This,
+                     NET_FW_SCOPE *scope);
 
     HRESULT (STDMETHODCALLTYPE *put_Scope)(
-        INetFwService *This,
-        NET_FW_SCOPE scope);
+                     INetFwService *This,
+                     NET_FW_SCOPE scope);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteAddresses)(
-        INetFwService *This,
-        BSTR *remoteAddrs);
+                     INetFwService *This,
+                     BSTR *remoteAddrs);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteAddresses)(
-        INetFwService *This,
-        BSTR remoteAddrs);
+                     INetFwService *This,
+                     BSTR remoteAddrs);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        INetFwService *This,
-        VARIANT_BOOL *enabled);
+                     INetFwService *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        INetFwService *This,
-        VARIANT_BOOL enabled);
+                     INetFwService *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_GloballyOpenPorts)(
-        INetFwService *This,
-        INetFwOpenPorts **openPorts);
+                     INetFwService *This,
+                     INetFwOpenPorts **openPorts);
 
     END_INTERFACE
 } INetFwServiceVtbl;
@@ -1288,14 +1288,14 @@ MIDL_INTERFACE("79649bb4-903e-421b-94c9-79848e79f6ee")
 INetFwServices : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        NET_FW_SERVICE_TYPE svcType,
-        INetFwService **service) = 0;
+                     NET_FW_SERVICE_TYPE svcType,
+                     INetFwService **service) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **newEnum) = 0;
+                     IUnknown **newEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1307,59 +1307,59 @@ typedef struct INetFwServicesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwServices *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwServices *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwServices *This);
+                     INetFwServices *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwServices *This);
+                     INetFwServices *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwServices *This,
-        UINT *pctinfo);
+                     INetFwServices *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwServices *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwServices *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwServices *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwServices *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwServices *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwServices *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwServices methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        INetFwServices *This,
-        LONG *count);
+                     INetFwServices *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        INetFwServices *This,
-        NET_FW_SERVICE_TYPE svcType,
-        INetFwService **service);
+                     INetFwServices *This,
+                     NET_FW_SERVICE_TYPE svcType,
+                     INetFwService **service);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        INetFwServices *This,
-        IUnknown **newEnum);
+                     INetFwServices *This,
+                     IUnknown **newEnum);
 
     END_INTERFACE
 } INetFwServicesVtbl;
@@ -1437,40 +1437,40 @@ MIDL_INTERFACE("b5e64ffa-c2c5-444e-a301-fb5e00018050")
 INetFwAuthorizedApplication : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ProcessImageFileName(
-        BSTR *imageFileName) = 0;
+                     BSTR *imageFileName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ProcessImageFileName(
-        BSTR imageFileName) = 0;
+                     BSTR imageFileName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IpVersion(
-        NET_FW_IP_VERSION *ipVersion) = 0;
+                     NET_FW_IP_VERSION *ipVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IpVersion(
-        NET_FW_IP_VERSION ipVersion) = 0;
+                     NET_FW_IP_VERSION ipVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Scope(
-        NET_FW_SCOPE *scope) = 0;
+                     NET_FW_SCOPE *scope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Scope(
-        NET_FW_SCOPE scope) = 0;
+                     NET_FW_SCOPE scope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoteAddresses(
-        BSTR *remoteAddrs) = 0;
+                     BSTR *remoteAddrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RemoteAddresses(
-        BSTR remoteAddrs) = 0;
+                     BSTR remoteAddrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1482,94 +1482,94 @@ typedef struct INetFwAuthorizedApplicationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwAuthorizedApplication *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwAuthorizedApplication *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwAuthorizedApplication *This);
+                     INetFwAuthorizedApplication *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwAuthorizedApplication *This);
+                     INetFwAuthorizedApplication *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwAuthorizedApplication *This,
-        UINT *pctinfo);
+                     INetFwAuthorizedApplication *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwAuthorizedApplication *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwAuthorizedApplication *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwAuthorizedApplication *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwAuthorizedApplication *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwAuthorizedApplication *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwAuthorizedApplication *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwAuthorizedApplication methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        INetFwAuthorizedApplication *This,
-        BSTR *name);
+                     INetFwAuthorizedApplication *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        INetFwAuthorizedApplication *This,
-        BSTR name);
+                     INetFwAuthorizedApplication *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_ProcessImageFileName)(
-        INetFwAuthorizedApplication *This,
-        BSTR *imageFileName);
+                     INetFwAuthorizedApplication *This,
+                     BSTR *imageFileName);
 
     HRESULT (STDMETHODCALLTYPE *put_ProcessImageFileName)(
-        INetFwAuthorizedApplication *This,
-        BSTR imageFileName);
+                     INetFwAuthorizedApplication *This,
+                     BSTR imageFileName);
 
     HRESULT (STDMETHODCALLTYPE *get_IpVersion)(
-        INetFwAuthorizedApplication *This,
-        NET_FW_IP_VERSION *ipVersion);
+                     INetFwAuthorizedApplication *This,
+                     NET_FW_IP_VERSION *ipVersion);
 
     HRESULT (STDMETHODCALLTYPE *put_IpVersion)(
-        INetFwAuthorizedApplication *This,
-        NET_FW_IP_VERSION ipVersion);
+                     INetFwAuthorizedApplication *This,
+                     NET_FW_IP_VERSION ipVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_Scope)(
-        INetFwAuthorizedApplication *This,
-        NET_FW_SCOPE *scope);
+                     INetFwAuthorizedApplication *This,
+                     NET_FW_SCOPE *scope);
 
     HRESULT (STDMETHODCALLTYPE *put_Scope)(
-        INetFwAuthorizedApplication *This,
-        NET_FW_SCOPE scope);
+                     INetFwAuthorizedApplication *This,
+                     NET_FW_SCOPE scope);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteAddresses)(
-        INetFwAuthorizedApplication *This,
-        BSTR *remoteAddrs);
+                     INetFwAuthorizedApplication *This,
+                     BSTR *remoteAddrs);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteAddresses)(
-        INetFwAuthorizedApplication *This,
-        BSTR remoteAddrs);
+                     INetFwAuthorizedApplication *This,
+                     BSTR remoteAddrs);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        INetFwAuthorizedApplication *This,
-        VARIANT_BOOL *enabled);
+                     INetFwAuthorizedApplication *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        INetFwAuthorizedApplication *This,
-        VARIANT_BOOL enabled);
+                     INetFwAuthorizedApplication *This,
+                     VARIANT_BOOL enabled);
 
     END_INTERFACE
 } INetFwAuthorizedApplicationVtbl;
@@ -1683,28 +1683,28 @@ MIDL_INTERFACE("d4becddf-6f73-4a83-b832-9c66874cd20e")
 INetFwRemoteAdminSettings : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_IpVersion(
-        NET_FW_IP_VERSION *ipVersion) = 0;
+                     NET_FW_IP_VERSION *ipVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IpVersion(
-        NET_FW_IP_VERSION ipVersion) = 0;
+                     NET_FW_IP_VERSION ipVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Scope(
-        NET_FW_SCOPE *scope) = 0;
+                     NET_FW_SCOPE *scope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Scope(
-        NET_FW_SCOPE scope) = 0;
+                     NET_FW_SCOPE scope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoteAddresses(
-        BSTR *remoteAddrs) = 0;
+                     BSTR *remoteAddrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RemoteAddresses(
-        BSTR remoteAddrs) = 0;
+                     BSTR remoteAddrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1716,78 +1716,78 @@ typedef struct INetFwRemoteAdminSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwRemoteAdminSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwRemoteAdminSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwRemoteAdminSettings *This);
+                     INetFwRemoteAdminSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwRemoteAdminSettings *This);
+                     INetFwRemoteAdminSettings *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwRemoteAdminSettings *This,
-        UINT *pctinfo);
+                     INetFwRemoteAdminSettings *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwRemoteAdminSettings *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwRemoteAdminSettings *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwRemoteAdminSettings *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwRemoteAdminSettings *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwRemoteAdminSettings *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwRemoteAdminSettings *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwRemoteAdminSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *get_IpVersion)(
-        INetFwRemoteAdminSettings *This,
-        NET_FW_IP_VERSION *ipVersion);
+                     INetFwRemoteAdminSettings *This,
+                     NET_FW_IP_VERSION *ipVersion);
 
     HRESULT (STDMETHODCALLTYPE *put_IpVersion)(
-        INetFwRemoteAdminSettings *This,
-        NET_FW_IP_VERSION ipVersion);
+                     INetFwRemoteAdminSettings *This,
+                     NET_FW_IP_VERSION ipVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_Scope)(
-        INetFwRemoteAdminSettings *This,
-        NET_FW_SCOPE *scope);
+                     INetFwRemoteAdminSettings *This,
+                     NET_FW_SCOPE *scope);
 
     HRESULT (STDMETHODCALLTYPE *put_Scope)(
-        INetFwRemoteAdminSettings *This,
-        NET_FW_SCOPE scope);
+                     INetFwRemoteAdminSettings *This,
+                     NET_FW_SCOPE scope);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteAddresses)(
-        INetFwRemoteAdminSettings *This,
-        BSTR *remoteAddrs);
+                     INetFwRemoteAdminSettings *This,
+                     BSTR *remoteAddrs);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteAddresses)(
-        INetFwRemoteAdminSettings *This,
-        BSTR remoteAddrs);
+                     INetFwRemoteAdminSettings *This,
+                     BSTR remoteAddrs);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        INetFwRemoteAdminSettings *This,
-        VARIANT_BOOL *enabled);
+                     INetFwRemoteAdminSettings *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        INetFwRemoteAdminSettings *This,
-        VARIANT_BOOL enabled);
+                     INetFwRemoteAdminSettings *This,
+                     VARIANT_BOOL enabled);
 
     END_INTERFACE
 } INetFwRemoteAdminSettingsVtbl;
@@ -1885,20 +1885,20 @@ MIDL_INTERFACE("644efd52-ccf9-486c-97a2-39f352570b30")
 INetFwAuthorizedApplications : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        INetFwAuthorizedApplication *app) = 0;
+                     INetFwAuthorizedApplication *app) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        BSTR imageFileName) = 0;
+                     BSTR imageFileName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        BSTR imageFileName,
-        INetFwAuthorizedApplication **app) = 0;
+                     BSTR imageFileName,
+                     INetFwAuthorizedApplication **app) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **newEnum) = 0;
+                     IUnknown **newEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1910,67 +1910,67 @@ typedef struct INetFwAuthorizedApplicationsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwAuthorizedApplications *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwAuthorizedApplications *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwAuthorizedApplications *This);
+                     INetFwAuthorizedApplications *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwAuthorizedApplications *This);
+                     INetFwAuthorizedApplications *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwAuthorizedApplications *This,
-        UINT *pctinfo);
+                     INetFwAuthorizedApplications *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwAuthorizedApplications *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwAuthorizedApplications *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwAuthorizedApplications *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwAuthorizedApplications *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwAuthorizedApplications *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwAuthorizedApplications *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwAuthorizedApplications methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        INetFwAuthorizedApplications *This,
-        LONG *count);
+                     INetFwAuthorizedApplications *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        INetFwAuthorizedApplications *This,
-        INetFwAuthorizedApplication *app);
+                     INetFwAuthorizedApplications *This,
+                     INetFwAuthorizedApplication *app);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        INetFwAuthorizedApplications *This,
-        BSTR imageFileName);
+                     INetFwAuthorizedApplications *This,
+                     BSTR imageFileName);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        INetFwAuthorizedApplications *This,
-        BSTR imageFileName,
-        INetFwAuthorizedApplication **app);
+                     INetFwAuthorizedApplications *This,
+                     BSTR imageFileName,
+                     INetFwAuthorizedApplication **app);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        INetFwAuthorizedApplications *This,
-        IUnknown **newEnum);
+                     INetFwAuthorizedApplications *This,
+                     IUnknown **newEnum);
 
     END_INTERFACE
 } INetFwAuthorizedApplicationsVtbl;
@@ -2056,112 +2056,112 @@ MIDL_INTERFACE("af230d27-baba-4e42-aced-f524f22cfce2")
 INetFwRule : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Description(
-        BSTR *desc) = 0;
+                     BSTR *desc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Description(
-        BSTR desc) = 0;
+                     BSTR desc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ApplicationName(
-        BSTR *imagename) = 0;
+                     BSTR *imagename) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ApplicationName(
-        BSTR imagename) = 0;
+                     BSTR imagename) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ServiceName(
-        BSTR *service) = 0;
+                     BSTR *service) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ServiceName(
-        BSTR service) = 0;
+                     BSTR service) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Protocol(
-        LONG *protocol) = 0;
+                     LONG *protocol) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Protocol(
-        LONG protocol) = 0;
+                     LONG protocol) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalPorts(
-        BSTR *ports) = 0;
+                     BSTR *ports) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalPorts(
-        BSTR ports) = 0;
+                     BSTR ports) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemotePorts(
-        BSTR *ports) = 0;
+                     BSTR *ports) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RemotePorts(
-        BSTR ports) = 0;
+                     BSTR ports) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalAddresses(
-        BSTR *address) = 0;
+                     BSTR *address) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalAddresses(
-        BSTR address) = 0;
+                     BSTR address) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoteAddresses(
-        BSTR *address) = 0;
+                     BSTR *address) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RemoteAddresses(
-        BSTR address) = 0;
+                     BSTR address) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IcmpTypesAndCodes(
-        BSTR *codes) = 0;
+                     BSTR *codes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IcmpTypesAndCodes(
-        BSTR codes) = 0;
+                     BSTR codes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Direction(
-        NET_FW_RULE_DIRECTION *dir) = 0;
+                     NET_FW_RULE_DIRECTION *dir) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Direction(
-        NET_FW_RULE_DIRECTION dir) = 0;
+                     NET_FW_RULE_DIRECTION dir) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Interfaces(
-        VARIANT *interfaces) = 0;
+                     VARIANT *interfaces) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Interfaces(
-        VARIANT interfaces) = 0;
+                     VARIANT interfaces) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InterfaceTypes(
-        BSTR *types) = 0;
+                     BSTR *types) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_InterfaceTypes(
-        BSTR types) = 0;
+                     BSTR types) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Grouping(
-        BSTR *context) = 0;
+                     BSTR *context) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Grouping(
-        BSTR context) = 0;
+                     BSTR context) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Profiles(
-        LONG *profiles) = 0;
+                     LONG *profiles) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Profiles(
-        LONG profiles) = 0;
+                     LONG profiles) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EdgeTraversal(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EdgeTraversal(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Action(
-        NET_FW_ACTION *action) = 0;
+                     NET_FW_ACTION *action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Action(
-        NET_FW_ACTION action) = 0;
+                     NET_FW_ACTION action) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2173,190 +2173,190 @@ typedef struct INetFwRuleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwRule *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwRule *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwRule *This);
+                     INetFwRule *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwRule *This);
+                     INetFwRule *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwRule *This,
-        UINT *pctinfo);
+                     INetFwRule *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwRule *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwRule *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwRule *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwRule *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwRule *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwRule *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwRule methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        INetFwRule *This,
-        BSTR *name);
+                     INetFwRule *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        INetFwRule *This,
-        BSTR name);
+                     INetFwRule *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        INetFwRule *This,
-        BSTR *desc);
+                     INetFwRule *This,
+                     BSTR *desc);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        INetFwRule *This,
-        BSTR desc);
+                     INetFwRule *This,
+                     BSTR desc);
 
     HRESULT (STDMETHODCALLTYPE *get_ApplicationName)(
-        INetFwRule *This,
-        BSTR *imagename);
+                     INetFwRule *This,
+                     BSTR *imagename);
 
     HRESULT (STDMETHODCALLTYPE *put_ApplicationName)(
-        INetFwRule *This,
-        BSTR imagename);
+                     INetFwRule *This,
+                     BSTR imagename);
 
     HRESULT (STDMETHODCALLTYPE *get_ServiceName)(
-        INetFwRule *This,
-        BSTR *service);
+                     INetFwRule *This,
+                     BSTR *service);
 
     HRESULT (STDMETHODCALLTYPE *put_ServiceName)(
-        INetFwRule *This,
-        BSTR service);
+                     INetFwRule *This,
+                     BSTR service);
 
     HRESULT (STDMETHODCALLTYPE *get_Protocol)(
-        INetFwRule *This,
-        LONG *protocol);
+                     INetFwRule *This,
+                     LONG *protocol);
 
     HRESULT (STDMETHODCALLTYPE *put_Protocol)(
-        INetFwRule *This,
-        LONG protocol);
+                     INetFwRule *This,
+                     LONG protocol);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalPorts)(
-        INetFwRule *This,
-        BSTR *ports);
+                     INetFwRule *This,
+                     BSTR *ports);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalPorts)(
-        INetFwRule *This,
-        BSTR ports);
+                     INetFwRule *This,
+                     BSTR ports);
 
     HRESULT (STDMETHODCALLTYPE *get_RemotePorts)(
-        INetFwRule *This,
-        BSTR *ports);
+                     INetFwRule *This,
+                     BSTR *ports);
 
     HRESULT (STDMETHODCALLTYPE *put_RemotePorts)(
-        INetFwRule *This,
-        BSTR ports);
+                     INetFwRule *This,
+                     BSTR ports);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalAddresses)(
-        INetFwRule *This,
-        BSTR *address);
+                     INetFwRule *This,
+                     BSTR *address);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalAddresses)(
-        INetFwRule *This,
-        BSTR address);
+                     INetFwRule *This,
+                     BSTR address);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteAddresses)(
-        INetFwRule *This,
-        BSTR *address);
+                     INetFwRule *This,
+                     BSTR *address);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteAddresses)(
-        INetFwRule *This,
-        BSTR address);
+                     INetFwRule *This,
+                     BSTR address);
 
     HRESULT (STDMETHODCALLTYPE *get_IcmpTypesAndCodes)(
-        INetFwRule *This,
-        BSTR *codes);
+                     INetFwRule *This,
+                     BSTR *codes);
 
     HRESULT (STDMETHODCALLTYPE *put_IcmpTypesAndCodes)(
-        INetFwRule *This,
-        BSTR codes);
+                     INetFwRule *This,
+                     BSTR codes);
 
     HRESULT (STDMETHODCALLTYPE *get_Direction)(
-        INetFwRule *This,
-        NET_FW_RULE_DIRECTION *dir);
+                     INetFwRule *This,
+                     NET_FW_RULE_DIRECTION *dir);
 
     HRESULT (STDMETHODCALLTYPE *put_Direction)(
-        INetFwRule *This,
-        NET_FW_RULE_DIRECTION dir);
+                     INetFwRule *This,
+                     NET_FW_RULE_DIRECTION dir);
 
     HRESULT (STDMETHODCALLTYPE *get_Interfaces)(
-        INetFwRule *This,
-        VARIANT *interfaces);
+                     INetFwRule *This,
+                     VARIANT *interfaces);
 
     HRESULT (STDMETHODCALLTYPE *put_Interfaces)(
-        INetFwRule *This,
-        VARIANT interfaces);
+                     INetFwRule *This,
+                     VARIANT interfaces);
 
     HRESULT (STDMETHODCALLTYPE *get_InterfaceTypes)(
-        INetFwRule *This,
-        BSTR *types);
+                     INetFwRule *This,
+                     BSTR *types);
 
     HRESULT (STDMETHODCALLTYPE *put_InterfaceTypes)(
-        INetFwRule *This,
-        BSTR types);
+                     INetFwRule *This,
+                     BSTR types);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        INetFwRule *This,
-        VARIANT_BOOL *enabled);
+                     INetFwRule *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        INetFwRule *This,
-        VARIANT_BOOL enabled);
+                     INetFwRule *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Grouping)(
-        INetFwRule *This,
-        BSTR *context);
+                     INetFwRule *This,
+                     BSTR *context);
 
     HRESULT (STDMETHODCALLTYPE *put_Grouping)(
-        INetFwRule *This,
-        BSTR context);
+                     INetFwRule *This,
+                     BSTR context);
 
     HRESULT (STDMETHODCALLTYPE *get_Profiles)(
-        INetFwRule *This,
-        LONG *profiles);
+                     INetFwRule *This,
+                     LONG *profiles);
 
     HRESULT (STDMETHODCALLTYPE *put_Profiles)(
-        INetFwRule *This,
-        LONG profiles);
+                     INetFwRule *This,
+                     LONG profiles);
 
     HRESULT (STDMETHODCALLTYPE *get_EdgeTraversal)(
-        INetFwRule *This,
-        VARIANT_BOOL *enabled);
+                     INetFwRule *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_EdgeTraversal)(
-        INetFwRule *This,
-        VARIANT_BOOL enabled);
+                     INetFwRule *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Action)(
-        INetFwRule *This,
-        NET_FW_ACTION *action);
+                     INetFwRule *This,
+                     NET_FW_ACTION *action);
 
     HRESULT (STDMETHODCALLTYPE *put_Action)(
-        INetFwRule *This,
-        NET_FW_ACTION action);
+                     INetFwRule *This,
+                     NET_FW_ACTION action);
 
     END_INTERFACE
 } INetFwRuleVtbl;
@@ -2566,10 +2566,10 @@ MIDL_INTERFACE("9c27c8da-189b-4dde-89f7-8b39a316782c")
 INetFwRule2 : public INetFwRule
 {
     virtual HRESULT STDMETHODCALLTYPE get_EdgeTraversalOptions(
-        LONG *lOptions) = 0;
+                     LONG *lOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EdgeTraversalOptions(
-        LONG lOptions) = 0;
+                     LONG lOptions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2581,199 +2581,199 @@ typedef struct INetFwRule2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwRule2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwRule2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwRule2 *This);
+                     INetFwRule2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwRule2 *This);
+                     INetFwRule2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwRule2 *This,
-        UINT *pctinfo);
+                     INetFwRule2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwRule2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwRule2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwRule2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwRule2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwRule2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwRule2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwRule methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        INetFwRule2 *This,
-        BSTR *name);
+                     INetFwRule2 *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        INetFwRule2 *This,
-        BSTR name);
+                     INetFwRule2 *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        INetFwRule2 *This,
-        BSTR *desc);
+                     INetFwRule2 *This,
+                     BSTR *desc);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        INetFwRule2 *This,
-        BSTR desc);
+                     INetFwRule2 *This,
+                     BSTR desc);
 
     HRESULT (STDMETHODCALLTYPE *get_ApplicationName)(
-        INetFwRule2 *This,
-        BSTR *imagename);
+                     INetFwRule2 *This,
+                     BSTR *imagename);
 
     HRESULT (STDMETHODCALLTYPE *put_ApplicationName)(
-        INetFwRule2 *This,
-        BSTR imagename);
+                     INetFwRule2 *This,
+                     BSTR imagename);
 
     HRESULT (STDMETHODCALLTYPE *get_ServiceName)(
-        INetFwRule2 *This,
-        BSTR *service);
+                     INetFwRule2 *This,
+                     BSTR *service);
 
     HRESULT (STDMETHODCALLTYPE *put_ServiceName)(
-        INetFwRule2 *This,
-        BSTR service);
+                     INetFwRule2 *This,
+                     BSTR service);
 
     HRESULT (STDMETHODCALLTYPE *get_Protocol)(
-        INetFwRule2 *This,
-        LONG *protocol);
+                     INetFwRule2 *This,
+                     LONG *protocol);
 
     HRESULT (STDMETHODCALLTYPE *put_Protocol)(
-        INetFwRule2 *This,
-        LONG protocol);
+                     INetFwRule2 *This,
+                     LONG protocol);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalPorts)(
-        INetFwRule2 *This,
-        BSTR *ports);
+                     INetFwRule2 *This,
+                     BSTR *ports);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalPorts)(
-        INetFwRule2 *This,
-        BSTR ports);
+                     INetFwRule2 *This,
+                     BSTR ports);
 
     HRESULT (STDMETHODCALLTYPE *get_RemotePorts)(
-        INetFwRule2 *This,
-        BSTR *ports);
+                     INetFwRule2 *This,
+                     BSTR *ports);
 
     HRESULT (STDMETHODCALLTYPE *put_RemotePorts)(
-        INetFwRule2 *This,
-        BSTR ports);
+                     INetFwRule2 *This,
+                     BSTR ports);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalAddresses)(
-        INetFwRule2 *This,
-        BSTR *address);
+                     INetFwRule2 *This,
+                     BSTR *address);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalAddresses)(
-        INetFwRule2 *This,
-        BSTR address);
+                     INetFwRule2 *This,
+                     BSTR address);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteAddresses)(
-        INetFwRule2 *This,
-        BSTR *address);
+                     INetFwRule2 *This,
+                     BSTR *address);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteAddresses)(
-        INetFwRule2 *This,
-        BSTR address);
+                     INetFwRule2 *This,
+                     BSTR address);
 
     HRESULT (STDMETHODCALLTYPE *get_IcmpTypesAndCodes)(
-        INetFwRule2 *This,
-        BSTR *codes);
+                     INetFwRule2 *This,
+                     BSTR *codes);
 
     HRESULT (STDMETHODCALLTYPE *put_IcmpTypesAndCodes)(
-        INetFwRule2 *This,
-        BSTR codes);
+                     INetFwRule2 *This,
+                     BSTR codes);
 
     HRESULT (STDMETHODCALLTYPE *get_Direction)(
-        INetFwRule2 *This,
-        NET_FW_RULE_DIRECTION *dir);
+                     INetFwRule2 *This,
+                     NET_FW_RULE_DIRECTION *dir);
 
     HRESULT (STDMETHODCALLTYPE *put_Direction)(
-        INetFwRule2 *This,
-        NET_FW_RULE_DIRECTION dir);
+                     INetFwRule2 *This,
+                     NET_FW_RULE_DIRECTION dir);
 
     HRESULT (STDMETHODCALLTYPE *get_Interfaces)(
-        INetFwRule2 *This,
-        VARIANT *interfaces);
+                     INetFwRule2 *This,
+                     VARIANT *interfaces);
 
     HRESULT (STDMETHODCALLTYPE *put_Interfaces)(
-        INetFwRule2 *This,
-        VARIANT interfaces);
+                     INetFwRule2 *This,
+                     VARIANT interfaces);
 
     HRESULT (STDMETHODCALLTYPE *get_InterfaceTypes)(
-        INetFwRule2 *This,
-        BSTR *types);
+                     INetFwRule2 *This,
+                     BSTR *types);
 
     HRESULT (STDMETHODCALLTYPE *put_InterfaceTypes)(
-        INetFwRule2 *This,
-        BSTR types);
+                     INetFwRule2 *This,
+                     BSTR types);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        INetFwRule2 *This,
-        VARIANT_BOOL *enabled);
+                     INetFwRule2 *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        INetFwRule2 *This,
-        VARIANT_BOOL enabled);
+                     INetFwRule2 *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Grouping)(
-        INetFwRule2 *This,
-        BSTR *context);
+                     INetFwRule2 *This,
+                     BSTR *context);
 
     HRESULT (STDMETHODCALLTYPE *put_Grouping)(
-        INetFwRule2 *This,
-        BSTR context);
+                     INetFwRule2 *This,
+                     BSTR context);
 
     HRESULT (STDMETHODCALLTYPE *get_Profiles)(
-        INetFwRule2 *This,
-        LONG *profiles);
+                     INetFwRule2 *This,
+                     LONG *profiles);
 
     HRESULT (STDMETHODCALLTYPE *put_Profiles)(
-        INetFwRule2 *This,
-        LONG profiles);
+                     INetFwRule2 *This,
+                     LONG profiles);
 
     HRESULT (STDMETHODCALLTYPE *get_EdgeTraversal)(
-        INetFwRule2 *This,
-        VARIANT_BOOL *enabled);
+                     INetFwRule2 *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_EdgeTraversal)(
-        INetFwRule2 *This,
-        VARIANT_BOOL enabled);
+                     INetFwRule2 *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Action)(
-        INetFwRule2 *This,
-        NET_FW_ACTION *action);
+                     INetFwRule2 *This,
+                     NET_FW_ACTION *action);
 
     HRESULT (STDMETHODCALLTYPE *put_Action)(
-        INetFwRule2 *This,
-        NET_FW_ACTION action);
+                     INetFwRule2 *This,
+                     NET_FW_ACTION action);
 
     /*** INetFwRule2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_EdgeTraversalOptions)(
-        INetFwRule2 *This,
-        LONG *lOptions);
+                     INetFwRule2 *This,
+                     LONG *lOptions);
 
     HRESULT (STDMETHODCALLTYPE *put_EdgeTraversalOptions)(
-        INetFwRule2 *This,
-        LONG lOptions);
+                     INetFwRule2 *This,
+                     LONG lOptions);
 
     END_INTERFACE
 } INetFwRule2Vtbl;
@@ -2993,40 +2993,40 @@ MIDL_INTERFACE("b21563ff-d696-4222-ab46-4e89b73ab34a")
 INetFwRule3 : public INetFwRule2
 {
     virtual HRESULT STDMETHODCALLTYPE get_LocalAppPackageId(
-        BSTR *wszPackageId) = 0;
+                     BSTR *wszPackageId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalAppPackageId(
-        BSTR wszPackageId) = 0;
+                     BSTR wszPackageId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalUserOwner(
-        BSTR *wszUserOwner) = 0;
+                     BSTR *wszUserOwner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalUserOwner(
-        BSTR wszUserOwner) = 0;
+                     BSTR wszUserOwner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalUserAuthorizedList(
-        BSTR *wszUserAuthList) = 0;
+                     BSTR *wszUserAuthList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalUserAuthorizedList(
-        BSTR wszUserAuthList) = 0;
+                     BSTR wszUserAuthList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoteUserAuthorizedList(
-        BSTR *wszUserAuthList) = 0;
+                     BSTR *wszUserAuthList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RemoteUserAuthorizedList(
-        BSTR wszUserAuthList) = 0;
+                     BSTR wszUserAuthList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoteMachineAuthorizedList(
-        BSTR *wszUserAuthList) = 0;
+                     BSTR *wszUserAuthList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RemoteMachineAuthorizedList(
-        BSTR wszUserAuthList) = 0;
+                     BSTR wszUserAuthList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SecureFlags(
-        LONG *lOptions) = 0;
+                     LONG *lOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SecureFlags(
-        LONG lOptions) = 0;
+                     LONG lOptions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3038,248 +3038,248 @@ typedef struct INetFwRule3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwRule3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwRule3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwRule3 *This);
+                     INetFwRule3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwRule3 *This);
+                     INetFwRule3 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwRule3 *This,
-        UINT *pctinfo);
+                     INetFwRule3 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwRule3 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwRule3 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwRule3 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwRule3 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwRule3 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwRule3 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwRule methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        INetFwRule3 *This,
-        BSTR *name);
+                     INetFwRule3 *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        INetFwRule3 *This,
-        BSTR name);
+                     INetFwRule3 *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        INetFwRule3 *This,
-        BSTR *desc);
+                     INetFwRule3 *This,
+                     BSTR *desc);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        INetFwRule3 *This,
-        BSTR desc);
+                     INetFwRule3 *This,
+                     BSTR desc);
 
     HRESULT (STDMETHODCALLTYPE *get_ApplicationName)(
-        INetFwRule3 *This,
-        BSTR *imagename);
+                     INetFwRule3 *This,
+                     BSTR *imagename);
 
     HRESULT (STDMETHODCALLTYPE *put_ApplicationName)(
-        INetFwRule3 *This,
-        BSTR imagename);
+                     INetFwRule3 *This,
+                     BSTR imagename);
 
     HRESULT (STDMETHODCALLTYPE *get_ServiceName)(
-        INetFwRule3 *This,
-        BSTR *service);
+                     INetFwRule3 *This,
+                     BSTR *service);
 
     HRESULT (STDMETHODCALLTYPE *put_ServiceName)(
-        INetFwRule3 *This,
-        BSTR service);
+                     INetFwRule3 *This,
+                     BSTR service);
 
     HRESULT (STDMETHODCALLTYPE *get_Protocol)(
-        INetFwRule3 *This,
-        LONG *protocol);
+                     INetFwRule3 *This,
+                     LONG *protocol);
 
     HRESULT (STDMETHODCALLTYPE *put_Protocol)(
-        INetFwRule3 *This,
-        LONG protocol);
+                     INetFwRule3 *This,
+                     LONG protocol);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalPorts)(
-        INetFwRule3 *This,
-        BSTR *ports);
+                     INetFwRule3 *This,
+                     BSTR *ports);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalPorts)(
-        INetFwRule3 *This,
-        BSTR ports);
+                     INetFwRule3 *This,
+                     BSTR ports);
 
     HRESULT (STDMETHODCALLTYPE *get_RemotePorts)(
-        INetFwRule3 *This,
-        BSTR *ports);
+                     INetFwRule3 *This,
+                     BSTR *ports);
 
     HRESULT (STDMETHODCALLTYPE *put_RemotePorts)(
-        INetFwRule3 *This,
-        BSTR ports);
+                     INetFwRule3 *This,
+                     BSTR ports);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalAddresses)(
-        INetFwRule3 *This,
-        BSTR *address);
+                     INetFwRule3 *This,
+                     BSTR *address);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalAddresses)(
-        INetFwRule3 *This,
-        BSTR address);
+                     INetFwRule3 *This,
+                     BSTR address);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteAddresses)(
-        INetFwRule3 *This,
-        BSTR *address);
+                     INetFwRule3 *This,
+                     BSTR *address);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteAddresses)(
-        INetFwRule3 *This,
-        BSTR address);
+                     INetFwRule3 *This,
+                     BSTR address);
 
     HRESULT (STDMETHODCALLTYPE *get_IcmpTypesAndCodes)(
-        INetFwRule3 *This,
-        BSTR *codes);
+                     INetFwRule3 *This,
+                     BSTR *codes);
 
     HRESULT (STDMETHODCALLTYPE *put_IcmpTypesAndCodes)(
-        INetFwRule3 *This,
-        BSTR codes);
+                     INetFwRule3 *This,
+                     BSTR codes);
 
     HRESULT (STDMETHODCALLTYPE *get_Direction)(
-        INetFwRule3 *This,
-        NET_FW_RULE_DIRECTION *dir);
+                     INetFwRule3 *This,
+                     NET_FW_RULE_DIRECTION *dir);
 
     HRESULT (STDMETHODCALLTYPE *put_Direction)(
-        INetFwRule3 *This,
-        NET_FW_RULE_DIRECTION dir);
+                     INetFwRule3 *This,
+                     NET_FW_RULE_DIRECTION dir);
 
     HRESULT (STDMETHODCALLTYPE *get_Interfaces)(
-        INetFwRule3 *This,
-        VARIANT *interfaces);
+                     INetFwRule3 *This,
+                     VARIANT *interfaces);
 
     HRESULT (STDMETHODCALLTYPE *put_Interfaces)(
-        INetFwRule3 *This,
-        VARIANT interfaces);
+                     INetFwRule3 *This,
+                     VARIANT interfaces);
 
     HRESULT (STDMETHODCALLTYPE *get_InterfaceTypes)(
-        INetFwRule3 *This,
-        BSTR *types);
+                     INetFwRule3 *This,
+                     BSTR *types);
 
     HRESULT (STDMETHODCALLTYPE *put_InterfaceTypes)(
-        INetFwRule3 *This,
-        BSTR types);
+                     INetFwRule3 *This,
+                     BSTR types);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        INetFwRule3 *This,
-        VARIANT_BOOL *enabled);
+                     INetFwRule3 *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        INetFwRule3 *This,
-        VARIANT_BOOL enabled);
+                     INetFwRule3 *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Grouping)(
-        INetFwRule3 *This,
-        BSTR *context);
+                     INetFwRule3 *This,
+                     BSTR *context);
 
     HRESULT (STDMETHODCALLTYPE *put_Grouping)(
-        INetFwRule3 *This,
-        BSTR context);
+                     INetFwRule3 *This,
+                     BSTR context);
 
     HRESULT (STDMETHODCALLTYPE *get_Profiles)(
-        INetFwRule3 *This,
-        LONG *profiles);
+                     INetFwRule3 *This,
+                     LONG *profiles);
 
     HRESULT (STDMETHODCALLTYPE *put_Profiles)(
-        INetFwRule3 *This,
-        LONG profiles);
+                     INetFwRule3 *This,
+                     LONG profiles);
 
     HRESULT (STDMETHODCALLTYPE *get_EdgeTraversal)(
-        INetFwRule3 *This,
-        VARIANT_BOOL *enabled);
+                     INetFwRule3 *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_EdgeTraversal)(
-        INetFwRule3 *This,
-        VARIANT_BOOL enabled);
+                     INetFwRule3 *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Action)(
-        INetFwRule3 *This,
-        NET_FW_ACTION *action);
+                     INetFwRule3 *This,
+                     NET_FW_ACTION *action);
 
     HRESULT (STDMETHODCALLTYPE *put_Action)(
-        INetFwRule3 *This,
-        NET_FW_ACTION action);
+                     INetFwRule3 *This,
+                     NET_FW_ACTION action);
 
     /*** INetFwRule2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_EdgeTraversalOptions)(
-        INetFwRule3 *This,
-        LONG *lOptions);
+                     INetFwRule3 *This,
+                     LONG *lOptions);
 
     HRESULT (STDMETHODCALLTYPE *put_EdgeTraversalOptions)(
-        INetFwRule3 *This,
-        LONG lOptions);
+                     INetFwRule3 *This,
+                     LONG lOptions);
 
     /*** INetFwRule3 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LocalAppPackageId)(
-        INetFwRule3 *This,
-        BSTR *wszPackageId);
+                     INetFwRule3 *This,
+                     BSTR *wszPackageId);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalAppPackageId)(
-        INetFwRule3 *This,
-        BSTR wszPackageId);
+                     INetFwRule3 *This,
+                     BSTR wszPackageId);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalUserOwner)(
-        INetFwRule3 *This,
-        BSTR *wszUserOwner);
+                     INetFwRule3 *This,
+                     BSTR *wszUserOwner);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalUserOwner)(
-        INetFwRule3 *This,
-        BSTR wszUserOwner);
+                     INetFwRule3 *This,
+                     BSTR wszUserOwner);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalUserAuthorizedList)(
-        INetFwRule3 *This,
-        BSTR *wszUserAuthList);
+                     INetFwRule3 *This,
+                     BSTR *wszUserAuthList);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalUserAuthorizedList)(
-        INetFwRule3 *This,
-        BSTR wszUserAuthList);
+                     INetFwRule3 *This,
+                     BSTR wszUserAuthList);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteUserAuthorizedList)(
-        INetFwRule3 *This,
-        BSTR *wszUserAuthList);
+                     INetFwRule3 *This,
+                     BSTR *wszUserAuthList);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteUserAuthorizedList)(
-        INetFwRule3 *This,
-        BSTR wszUserAuthList);
+                     INetFwRule3 *This,
+                     BSTR wszUserAuthList);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteMachineAuthorizedList)(
-        INetFwRule3 *This,
-        BSTR *wszUserAuthList);
+                     INetFwRule3 *This,
+                     BSTR *wszUserAuthList);
 
     HRESULT (STDMETHODCALLTYPE *put_RemoteMachineAuthorizedList)(
-        INetFwRule3 *This,
-        BSTR wszUserAuthList);
+                     INetFwRule3 *This,
+                     BSTR wszUserAuthList);
 
     HRESULT (STDMETHODCALLTYPE *get_SecureFlags)(
-        INetFwRule3 *This,
-        LONG *lOptions);
+                     INetFwRule3 *This,
+                     LONG *lOptions);
 
     HRESULT (STDMETHODCALLTYPE *put_SecureFlags)(
-        INetFwRule3 *This,
-        LONG lOptions);
+                     INetFwRule3 *This,
+                     LONG lOptions);
 
     END_INTERFACE
 } INetFwRule3Vtbl;
@@ -3549,20 +3549,20 @@ MIDL_INTERFACE("9c4c6277-5027-441e-afae-ca1f542da009")
 INetFwRules : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        INetFwRule *rule) = 0;
+                     INetFwRule *rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        BSTR name,
-        INetFwRule **rule) = 0;
+                     BSTR name,
+                     INetFwRule **rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **newEnum) = 0;
+                     IUnknown **newEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3574,67 +3574,67 @@ typedef struct INetFwRulesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwRules *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwRules *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwRules *This);
+                     INetFwRules *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwRules *This);
+                     INetFwRules *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwRules *This,
-        UINT *pctinfo);
+                     INetFwRules *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwRules *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwRules *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwRules *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwRules *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwRules *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwRules *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwRules methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        INetFwRules *This,
-        LONG *count);
+                     INetFwRules *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        INetFwRules *This,
-        INetFwRule *rule);
+                     INetFwRules *This,
+                     INetFwRule *rule);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        INetFwRules *This,
-        BSTR name);
+                     INetFwRules *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        INetFwRules *This,
-        BSTR name,
-        INetFwRule **rule);
+                     INetFwRules *This,
+                     BSTR name,
+                     INetFwRule **rule);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        INetFwRules *This,
-        IUnknown **newEnum);
+                     INetFwRules *This,
+                     IUnknown **newEnum);
 
     END_INTERFACE
 } INetFwRulesVtbl;
@@ -3720,18 +3720,18 @@ MIDL_INTERFACE("8267bbe3-f890-491c-b7b6-2db1ef0e5d2b")
 INetFwServiceRestriction : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE RestrictService(
-        BSTR serviceName,
-        BSTR appName,
-        VARIANT_BOOL restrictService,
-        VARIANT_BOOL serviceSidRestricted) = 0;
+                     BSTR serviceName,
+                     BSTR appName,
+                     VARIANT_BOOL restrictService,
+                     VARIANT_BOOL serviceSidRestricted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ServiceRestricted(
-        BSTR serviceName,
-        BSTR appName,
-        VARIANT_BOOL *serviceRestricted) = 0;
+                     BSTR serviceName,
+                     BSTR appName,
+                     VARIANT_BOOL *serviceRestricted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Rules(
-        INetFwRules **rules) = 0;
+                     INetFwRules **rules) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3743,63 +3743,63 @@ typedef struct INetFwServiceRestrictionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwServiceRestriction *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwServiceRestriction *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwServiceRestriction *This);
+                     INetFwServiceRestriction *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwServiceRestriction *This);
+                     INetFwServiceRestriction *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwServiceRestriction *This,
-        UINT *pctinfo);
+                     INetFwServiceRestriction *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwServiceRestriction *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwServiceRestriction *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwServiceRestriction *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwServiceRestriction *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwServiceRestriction *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwServiceRestriction *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwServiceRestriction methods ***/
     HRESULT (STDMETHODCALLTYPE *RestrictService)(
-        INetFwServiceRestriction *This,
-        BSTR serviceName,
-        BSTR appName,
-        VARIANT_BOOL restrictService,
-        VARIANT_BOOL serviceSidRestricted);
+                     INetFwServiceRestriction *This,
+                     BSTR serviceName,
+                     BSTR appName,
+                     VARIANT_BOOL restrictService,
+                     VARIANT_BOOL serviceSidRestricted);
 
     HRESULT (STDMETHODCALLTYPE *ServiceRestricted)(
-        INetFwServiceRestriction *This,
-        BSTR serviceName,
-        BSTR appName,
-        VARIANT_BOOL *serviceRestricted);
+                     INetFwServiceRestriction *This,
+                     BSTR serviceName,
+                     BSTR appName,
+                     VARIANT_BOOL *serviceRestricted);
 
     HRESULT (STDMETHODCALLTYPE *get_Rules)(
-        INetFwServiceRestriction *This,
-        INetFwRules **rules);
+                     INetFwServiceRestriction *This,
+                     INetFwRules **rules);
 
     END_INTERFACE
 } INetFwServiceRestrictionVtbl;
@@ -3877,46 +3877,46 @@ MIDL_INTERFACE("174a0dda-e9f9-449d-993b-21ab667ca456")
 INetFwProfile : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        NET_FW_PROFILE_TYPE *type) = 0;
+                     NET_FW_PROFILE_TYPE *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FirewallEnabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FirewallEnabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExceptionsNotAllowed(
-        VARIANT_BOOL *notAllowed) = 0;
+                     VARIANT_BOOL *notAllowed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ExceptionsNotAllowed(
-        VARIANT_BOOL notAllowed) = 0;
+                     VARIANT_BOOL notAllowed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NotificationsDisabled(
-        VARIANT_BOOL *disabled) = 0;
+                     VARIANT_BOOL *disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NotificationsDisabled(
-        VARIANT_BOOL disabled) = 0;
+                     VARIANT_BOOL disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UnicastResponsesToMulticastBroadcastDisabled(
-        VARIANT_BOOL *disabled) = 0;
+                     VARIANT_BOOL *disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UnicastResponsesToMulticastBroadcastDisabled(
-        VARIANT_BOOL disabled) = 0;
+                     VARIANT_BOOL disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoteAdminSettings(
-        INetFwRemoteAdminSettings **remoteAdminSettings) = 0;
+                     INetFwRemoteAdminSettings **remoteAdminSettings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IcmpSettings(
-        INetFwIcmpSettings **icmpSettings) = 0;
+                     INetFwIcmpSettings **icmpSettings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_GloballyOpenPorts(
-        INetFwOpenPorts **openPorts) = 0;
+                     INetFwOpenPorts **openPorts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Services(
-        INetFwServices **services) = 0;
+                     INetFwServices **services) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AuthorizedApplications(
-        INetFwAuthorizedApplications **apps) = 0;
+                     INetFwAuthorizedApplications **apps) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3928,102 +3928,102 @@ typedef struct INetFwProfileVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwProfile *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwProfile *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwProfile *This);
+                     INetFwProfile *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwProfile *This);
+                     INetFwProfile *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwProfile *This,
-        UINT *pctinfo);
+                     INetFwProfile *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwProfile *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwProfile *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwProfile *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwProfile *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwProfile *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwProfile *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwProfile methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        INetFwProfile *This,
-        NET_FW_PROFILE_TYPE *type);
+                     INetFwProfile *This,
+                     NET_FW_PROFILE_TYPE *type);
 
     HRESULT (STDMETHODCALLTYPE *get_FirewallEnabled)(
-        INetFwProfile *This,
-        VARIANT_BOOL *enabled);
+                     INetFwProfile *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_FirewallEnabled)(
-        INetFwProfile *This,
-        VARIANT_BOOL enabled);
+                     INetFwProfile *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_ExceptionsNotAllowed)(
-        INetFwProfile *This,
-        VARIANT_BOOL *notAllowed);
+                     INetFwProfile *This,
+                     VARIANT_BOOL *notAllowed);
 
     HRESULT (STDMETHODCALLTYPE *put_ExceptionsNotAllowed)(
-        INetFwProfile *This,
-        VARIANT_BOOL notAllowed);
+                     INetFwProfile *This,
+                     VARIANT_BOOL notAllowed);
 
     HRESULT (STDMETHODCALLTYPE *get_NotificationsDisabled)(
-        INetFwProfile *This,
-        VARIANT_BOOL *disabled);
+                     INetFwProfile *This,
+                     VARIANT_BOOL *disabled);
 
     HRESULT (STDMETHODCALLTYPE *put_NotificationsDisabled)(
-        INetFwProfile *This,
-        VARIANT_BOOL disabled);
+                     INetFwProfile *This,
+                     VARIANT_BOOL disabled);
 
     HRESULT (STDMETHODCALLTYPE *get_UnicastResponsesToMulticastBroadcastDisabled)(
-        INetFwProfile *This,
-        VARIANT_BOOL *disabled);
+                     INetFwProfile *This,
+                     VARIANT_BOOL *disabled);
 
     HRESULT (STDMETHODCALLTYPE *put_UnicastResponsesToMulticastBroadcastDisabled)(
-        INetFwProfile *This,
-        VARIANT_BOOL disabled);
+                     INetFwProfile *This,
+                     VARIANT_BOOL disabled);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoteAdminSettings)(
-        INetFwProfile *This,
-        INetFwRemoteAdminSettings **remoteAdminSettings);
+                     INetFwProfile *This,
+                     INetFwRemoteAdminSettings **remoteAdminSettings);
 
     HRESULT (STDMETHODCALLTYPE *get_IcmpSettings)(
-        INetFwProfile *This,
-        INetFwIcmpSettings **icmpSettings);
+                     INetFwProfile *This,
+                     INetFwIcmpSettings **icmpSettings);
 
     HRESULT (STDMETHODCALLTYPE *get_GloballyOpenPorts)(
-        INetFwProfile *This,
-        INetFwOpenPorts **openPorts);
+                     INetFwProfile *This,
+                     INetFwOpenPorts **openPorts);
 
     HRESULT (STDMETHODCALLTYPE *get_Services)(
-        INetFwProfile *This,
-        INetFwServices **services);
+                     INetFwProfile *This,
+                     INetFwServices **services);
 
     HRESULT (STDMETHODCALLTYPE *get_AuthorizedApplications)(
-        INetFwProfile *This,
-        INetFwAuthorizedApplications **apps);
+                     INetFwProfile *This,
+                     INetFwAuthorizedApplications **apps);
 
     END_INTERFACE
 } INetFwProfileVtbl;
@@ -4145,11 +4145,11 @@ MIDL_INTERFACE("d46d2478-9ac9-4008-9dc7-5563ce5536cc")
 INetFwPolicy : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_CurrentProfile(
-        INetFwProfile **profile) = 0;
+                     INetFwProfile **profile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProfileByType(
-        NET_FW_PROFILE_TYPE profileType,
-        INetFwProfile **profile) = 0;
+                     NET_FW_PROFILE_TYPE profileType,
+                     INetFwProfile **profile) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4161,55 +4161,55 @@ typedef struct INetFwPolicyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwPolicy *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwPolicy *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwPolicy *This);
+                     INetFwPolicy *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwPolicy *This);
+                     INetFwPolicy *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwPolicy *This,
-        UINT *pctinfo);
+                     INetFwPolicy *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwPolicy *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwPolicy *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwPolicy *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwPolicy *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwPolicy *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwPolicy *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwPolicy methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CurrentProfile)(
-        INetFwPolicy *This,
-        INetFwProfile **profile);
+                     INetFwPolicy *This,
+                     INetFwProfile **profile);
 
     HRESULT (STDMETHODCALLTYPE *GetProfileByType)(
-        INetFwPolicy *This,
-        NET_FW_PROFILE_TYPE profileType,
-        INetFwProfile **profile);
+                     INetFwPolicy *This,
+                     NET_FW_PROFILE_TYPE profileType,
+                     INetFwProfile **profile);
 
     END_INTERFACE
 } INetFwPolicyVtbl;
@@ -4283,89 +4283,89 @@ MIDL_INTERFACE("98325047-c671-4174-8d81-defcd3f03186")
 INetFwPolicy2 : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_CurrentProfileTypes(
-        LONG *profile) = 0;
+                     LONG *profile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FirewallEnabled(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL *enabled) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FirewallEnabled(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL enabled) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExcludedInterfaces(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT *interfaces) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT *interfaces) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ExcludedInterfaces(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT interfaces) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT interfaces) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BlockAllInboundTraffic(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL *block) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL *block) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_BlockAllInboundTraffic(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL block) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL block) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NotificationsDisabled(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL *disabled) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL *disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NotificationsDisabled(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL disabled) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UnicastResponsesToMulticastBroadcastDisabled(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL *disabled) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL *disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UnicastResponsesToMulticastBroadcastDisabled(
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL disabled) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Rules(
-        INetFwRules **rules) = 0;
+                     INetFwRules **rules) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ServiceRestriction(
-        INetFwServiceRestriction **ServiceRestriction) = 0;
+                     INetFwServiceRestriction **ServiceRestriction) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableRuleGroup(
-        LONG profileTypesBitmask,
-        BSTR group,
-        VARIANT_BOOL enable) = 0;
+                     LONG profileTypesBitmask,
+                     BSTR group,
+                     VARIANT_BOOL enable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRuleGroupEnabled(
-        LONG profileTypesBitmask,
-        BSTR group,
-        VARIANT_BOOL *enabled) = 0;
+                     LONG profileTypesBitmask,
+                     BSTR group,
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RestoreLocalFirewallDefaults(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DefaultInboundAction(
-        NET_FW_PROFILE_TYPE2 profileType,
-        NET_FW_ACTION *action) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     NET_FW_ACTION *action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DefaultInboundAction(
-        NET_FW_PROFILE_TYPE2 profileType,
-        NET_FW_ACTION action) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     NET_FW_ACTION action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DefaultOutboundAction(
-        NET_FW_PROFILE_TYPE2 profileType,
-        NET_FW_ACTION *action) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     NET_FW_ACTION *action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DefaultOutboundAction(
-        NET_FW_PROFILE_TYPE2 profileType,
-        NET_FW_ACTION action) = 0;
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     NET_FW_ACTION action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsRuleGroupCurrentlyEnabled(
-        BSTR group,
-        VARIANT_BOOL *enabled) = 0;
+                     BSTR group,
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalPolicyModifyState(
-        NET_FW_MODIFY_STATE *modifyState) = 0;
+                     NET_FW_MODIFY_STATE *modifyState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4377,152 +4377,152 @@ typedef struct INetFwPolicy2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwPolicy2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwPolicy2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwPolicy2 *This);
+                     INetFwPolicy2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwPolicy2 *This);
+                     INetFwPolicy2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwPolicy2 *This,
-        UINT *pctinfo);
+                     INetFwPolicy2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwPolicy2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwPolicy2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwPolicy2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwPolicy2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwPolicy2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwPolicy2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwPolicy2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CurrentProfileTypes)(
-        INetFwPolicy2 *This,
-        LONG *profile);
+                     INetFwPolicy2 *This,
+                     LONG *profile);
 
     HRESULT (STDMETHODCALLTYPE *get_FirewallEnabled)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL *enabled);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_FirewallEnabled)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL enabled);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_ExcludedInterfaces)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT *interfaces);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT *interfaces);
 
     HRESULT (STDMETHODCALLTYPE *put_ExcludedInterfaces)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT interfaces);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT interfaces);
 
     HRESULT (STDMETHODCALLTYPE *get_BlockAllInboundTraffic)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL *block);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL *block);
 
     HRESULT (STDMETHODCALLTYPE *put_BlockAllInboundTraffic)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL block);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL block);
 
     HRESULT (STDMETHODCALLTYPE *get_NotificationsDisabled)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL *disabled);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL *disabled);
 
     HRESULT (STDMETHODCALLTYPE *put_NotificationsDisabled)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL disabled);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL disabled);
 
     HRESULT (STDMETHODCALLTYPE *get_UnicastResponsesToMulticastBroadcastDisabled)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL *disabled);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL *disabled);
 
     HRESULT (STDMETHODCALLTYPE *put_UnicastResponsesToMulticastBroadcastDisabled)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        VARIANT_BOOL disabled);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     VARIANT_BOOL disabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Rules)(
-        INetFwPolicy2 *This,
-        INetFwRules **rules);
+                     INetFwPolicy2 *This,
+                     INetFwRules **rules);
 
     HRESULT (STDMETHODCALLTYPE *get_ServiceRestriction)(
-        INetFwPolicy2 *This,
-        INetFwServiceRestriction **ServiceRestriction);
+                     INetFwPolicy2 *This,
+                     INetFwServiceRestriction **ServiceRestriction);
 
     HRESULT (STDMETHODCALLTYPE *EnableRuleGroup)(
-        INetFwPolicy2 *This,
-        LONG profileTypesBitmask,
-        BSTR group,
-        VARIANT_BOOL enable);
+                     INetFwPolicy2 *This,
+                     LONG profileTypesBitmask,
+                     BSTR group,
+                     VARIANT_BOOL enable);
 
     HRESULT (STDMETHODCALLTYPE *IsRuleGroupEnabled)(
-        INetFwPolicy2 *This,
-        LONG profileTypesBitmask,
-        BSTR group,
-        VARIANT_BOOL *enabled);
+                     INetFwPolicy2 *This,
+                     LONG profileTypesBitmask,
+                     BSTR group,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *RestoreLocalFirewallDefaults)(
-        INetFwPolicy2 *This);
+                     INetFwPolicy2 *This);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultInboundAction)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        NET_FW_ACTION *action);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     NET_FW_ACTION *action);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultInboundAction)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        NET_FW_ACTION action);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     NET_FW_ACTION action);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultOutboundAction)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        NET_FW_ACTION *action);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     NET_FW_ACTION *action);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultOutboundAction)(
-        INetFwPolicy2 *This,
-        NET_FW_PROFILE_TYPE2 profileType,
-        NET_FW_ACTION action);
+                     INetFwPolicy2 *This,
+                     NET_FW_PROFILE_TYPE2 profileType,
+                     NET_FW_ACTION action);
 
     HRESULT (STDMETHODCALLTYPE *get_IsRuleGroupCurrentlyEnabled)(
-        INetFwPolicy2 *This,
-        BSTR group,
-        VARIANT_BOOL *enabled);
+                     INetFwPolicy2 *This,
+                     BSTR group,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalPolicyModifyState)(
-        INetFwPolicy2 *This,
-        NET_FW_MODIFY_STATE *modifyState);
+                     INetFwPolicy2 *This,
+                     NET_FW_MODIFY_STATE *modifyState);
 
     END_INTERFACE
 } INetFwPolicy2Vtbl;
@@ -4676,29 +4676,29 @@ MIDL_INTERFACE("f7898af5-cac4-4632-a2ec-da06e5111af2")
 INetFwMgr : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_LocalPolicy(
-        INetFwPolicy **localPolicy) = 0;
+                     INetFwPolicy **localPolicy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentProfileType(
-        NET_FW_PROFILE_TYPE *profileType) = 0;
+                     NET_FW_PROFILE_TYPE *profileType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RestoreDefaults(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPortAllowed(
-        BSTR imageFileName,
-        NET_FW_IP_VERSION ipVersion,
-        LONG portNumber,
-        BSTR localAddress,
-        NET_FW_IP_PROTOCOL ipProtocol,
-        VARIANT *allowed,
-        VARIANT *restricted) = 0;
+                     BSTR imageFileName,
+                     NET_FW_IP_VERSION ipVersion,
+                     LONG portNumber,
+                     BSTR localAddress,
+                     NET_FW_IP_PROTOCOL ipProtocol,
+                     VARIANT *allowed,
+                     VARIANT *restricted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsIcmpTypeAllowed(
-        NET_FW_IP_VERSION ipVersion,
-        BSTR localAddress,
-        BYTE type,
-        VARIANT *allowed,
-        VARIANT *restricted) = 0;
+                     NET_FW_IP_VERSION ipVersion,
+                     BSTR localAddress,
+                     BYTE type,
+                     VARIANT *allowed,
+                     VARIANT *restricted) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4710,75 +4710,75 @@ typedef struct INetFwMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwMgr *This);
+                     INetFwMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwMgr *This);
+                     INetFwMgr *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwMgr *This,
-        UINT *pctinfo);
+                     INetFwMgr *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwMgr *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwMgr *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwMgr *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwMgr *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwMgr *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwMgr *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LocalPolicy)(
-        INetFwMgr *This,
-        INetFwPolicy **localPolicy);
+                     INetFwMgr *This,
+                     INetFwPolicy **localPolicy);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentProfileType)(
-        INetFwMgr *This,
-        NET_FW_PROFILE_TYPE *profileType);
+                     INetFwMgr *This,
+                     NET_FW_PROFILE_TYPE *profileType);
 
     HRESULT (STDMETHODCALLTYPE *RestoreDefaults)(
-        INetFwMgr *This);
+                     INetFwMgr *This);
 
     HRESULT (STDMETHODCALLTYPE *IsPortAllowed)(
-        INetFwMgr *This,
-        BSTR imageFileName,
-        NET_FW_IP_VERSION ipVersion,
-        LONG portNumber,
-        BSTR localAddress,
-        NET_FW_IP_PROTOCOL ipProtocol,
-        VARIANT *allowed,
-        VARIANT *restricted);
+                     INetFwMgr *This,
+                     BSTR imageFileName,
+                     NET_FW_IP_VERSION ipVersion,
+                     LONG portNumber,
+                     BSTR localAddress,
+                     NET_FW_IP_PROTOCOL ipProtocol,
+                     VARIANT *allowed,
+                     VARIANT *restricted);
 
     HRESULT (STDMETHODCALLTYPE *IsIcmpTypeAllowed)(
-        INetFwMgr *This,
-        NET_FW_IP_VERSION ipVersion,
-        BSTR localAddress,
-        BYTE type,
-        VARIANT *allowed,
-        VARIANT *restricted);
+                     INetFwMgr *This,
+                     NET_FW_IP_VERSION ipVersion,
+                     BSTR localAddress,
+                     BYTE type,
+                     VARIANT *allowed,
+                     VARIANT *restricted);
 
     END_INTERFACE
 } INetFwMgrVtbl;
@@ -4864,19 +4864,19 @@ MIDL_INTERFACE("71881699-18f4-458b-b892-3ffce5e07f75")
 INetFwProduct : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_RuleCategories(
-        VARIANT *ruleCategories) = 0;
+                     VARIANT *ruleCategories) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RuleCategories(
-        VARIANT ruleCategories) = 0;
+                     VARIANT ruleCategories) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
-        BSTR *displayName) = 0;
+                     BSTR *displayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DisplayName(
-        BSTR displayName) = 0;
+                     BSTR displayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PathToSignedProductExe(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4888,66 +4888,66 @@ typedef struct INetFwProductVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwProduct *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwProduct *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwProduct *This);
+                     INetFwProduct *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwProduct *This);
+                     INetFwProduct *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwProduct *This,
-        UINT *pctinfo);
+                     INetFwProduct *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwProduct *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwProduct *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwProduct *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwProduct *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwProduct *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwProduct *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwProduct methods ***/
     HRESULT (STDMETHODCALLTYPE *get_RuleCategories)(
-        INetFwProduct *This,
-        VARIANT *ruleCategories);
+                     INetFwProduct *This,
+                     VARIANT *ruleCategories);
 
     HRESULT (STDMETHODCALLTYPE *put_RuleCategories)(
-        INetFwProduct *This,
-        VARIANT ruleCategories);
+                     INetFwProduct *This,
+                     VARIANT ruleCategories);
 
     HRESULT (STDMETHODCALLTYPE *get_DisplayName)(
-        INetFwProduct *This,
-        BSTR *displayName);
+                     INetFwProduct *This,
+                     BSTR *displayName);
 
     HRESULT (STDMETHODCALLTYPE *put_DisplayName)(
-        INetFwProduct *This,
-        BSTR displayName);
+                     INetFwProduct *This,
+                     BSTR displayName);
 
     HRESULT (STDMETHODCALLTYPE *get_PathToSignedProductExe)(
-        INetFwProduct *This,
-        BSTR *path);
+                     INetFwProduct *This,
+                     BSTR *path);
 
     END_INTERFACE
 } INetFwProductVtbl;
@@ -5033,18 +5033,18 @@ MIDL_INTERFACE("39eb36e0-2097-40bd-8af2-63a13b525362")
 INetFwProducts : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Register(
-        INetFwProduct *product,
-        IUnknown **registration) = 0;
+                     INetFwProduct *product,
+                     IUnknown **registration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG index,
-        INetFwProduct **product) = 0;
+                     LONG index,
+                     INetFwProduct **product) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **newEnum) = 0;
+                     IUnknown **newEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5056,64 +5056,64 @@ typedef struct INetFwProductsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetFwProducts *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetFwProducts *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetFwProducts *This);
+                     INetFwProducts *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetFwProducts *This);
+                     INetFwProducts *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetFwProducts *This,
-        UINT *pctinfo);
+                     INetFwProducts *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetFwProducts *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetFwProducts *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetFwProducts *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetFwProducts *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetFwProducts *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetFwProducts *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetFwProducts methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        INetFwProducts *This,
-        LONG *count);
+                     INetFwProducts *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *Register)(
-        INetFwProducts *This,
-        INetFwProduct *product,
-        IUnknown **registration);
+                     INetFwProducts *This,
+                     INetFwProduct *product,
+                     IUnknown **registration);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        INetFwProducts *This,
-        LONG index,
-        INetFwProduct **product);
+                     INetFwProducts *This,
+                     LONG index,
+                     INetFwProduct **product);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        INetFwProducts *This,
-        IUnknown **newEnum);
+                     INetFwProducts *This,
+                     IUnknown **newEnum);
 
     END_INTERFACE
 } INetFwProductsVtbl;
@@ -5415,14 +5415,14 @@ __CRT_UUID_DECL(NetFwProducts, 0xcc19079b, 0x8272, 0x4d73, 0xbb,0x70, 0xcd,0xb5,
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

@@ -79,7 +79,7 @@ extern struct mntent *getmntent_r (FILE *__restrict __stream,
 /* Write the mount table entry described by MNT to STREAM.
    Return zero on success, nonzero on failure.  */
 extern int addmntent (FILE *__restrict __stream,
-		      const struct mntent *__restrict __mnt) __THROW;
+		                   const struct mntent *__restrict __mnt) __THROW;
 
 /* Close a stream opened with `setmntent'.  */
 extern int endmntent (FILE *__stream) __THROW;

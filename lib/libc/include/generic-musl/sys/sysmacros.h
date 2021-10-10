@@ -7,9 +7,9 @@
 	((unsigned)( (((x)>>12) & 0xffffff00) | ((x) & 0x000000ff) ))
 
 #define makedev(x,y) ( \
-        (((x)&0xfffff000ULL) << 32) | \
+                     (((x)&0xfffff000ULL) << 32) | \
 	(((x)&0x00000fffULL) << 8) | \
-        (((y)&0xffffff00ULL) << 12) | \
+                     (((y)&0xffffff00ULL) << 12) | \
 	(((y)&0x000000ffULL)) )
 
 #endif

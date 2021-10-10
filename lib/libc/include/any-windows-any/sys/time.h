@@ -40,7 +40,7 @@ struct timezone
 #ifndef _GETTIMEOFDAY_DEFINED
 #define _GETTIMEOFDAY_DEFINED
 int __cdecl gettimeofday(struct timeval *__restrict__,
-                         void *__restrict__  /* tzp (unused) */);
+                                                                             void *__restrict__  /* tzp (unused) */);
 #endif
 
 #ifdef  __cplusplus

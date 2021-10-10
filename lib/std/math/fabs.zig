@@ -22,11 +22,11 @@ const maxInt = std.math.maxInt;
 pub fn fabs(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f16 => fabs16(x),
-        f32 => fabs32(x),
-        f64 => fabs64(x),
-        f128 => fabs128(x),
-        else => @compileError("fabs not implemented for " ++ @typeName(T)),
+                     f16 => fabs16(x),
+                     f32 => fabs32(x),
+                     f64 => fabs64(x),
+                     f128 => fabs128(x),
+                     else => @compileError("fabs not implemented for " ++ @typeName(T)),
     };
 }
 

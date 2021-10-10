@@ -53,7 +53,7 @@ extern "C" {
 
 #define FWP_ACTION_FLAG_TERMINATING     (0x00001000)
 #define FWP_ACTION_FLAG_NON_TERMINATING (0x00002000)
-#define FWP_ACTION_FLAG_CALLOUT         (0x00004000)
+#define FWP_ACTION_FLAG_CALLOUT                      (0x00004000)
 
 #define FWP_ACTION_BLOCK  (0x1 | FWP_ACTION_FLAG_TERMINATING)
 #define FWP_ACTION_PERMIT (0x2 | FWP_ACTION_FLAG_TERMINATING)
@@ -64,54 +64,54 @@ extern "C" {
 #define FWP_ACTION_NONE (0x7)
 #define FWP_ACTION_NONE_NO_MATCH (0x8)
 
-#define FWP_CONDITION_FLAG_IS_LOOPBACK              (0x00000001)
-#define FWP_CONDITION_FLAG_IS_IPSEC_SECURED         (0x00000002)
-#define FWP_CONDITION_FLAG_IS_REAUTHORIZE           (0x00000004)
-#define FWP_CONDITION_FLAG_IS_WILDCARD_BIND         (0x00000008)
-#define FWP_CONDITION_FLAG_IS_RAW_ENDPOINT          (0x00000010)
-#define FWP_CONDITION_FLAG_IS_FRAGMENT              (0x00000020)
-#define FWP_CONDITION_FLAG_IS_FRAGMENT_GROUP        (0x00000040)
+#define FWP_CONDITION_FLAG_IS_LOOPBACK                                        (0x00000001)
+#define FWP_CONDITION_FLAG_IS_IPSEC_SECURED                      (0x00000002)
+#define FWP_CONDITION_FLAG_IS_REAUTHORIZE                        (0x00000004)
+#define FWP_CONDITION_FLAG_IS_WILDCARD_BIND                      (0x00000008)
+#define FWP_CONDITION_FLAG_IS_RAW_ENDPOINT                       (0x00000010)
+#define FWP_CONDITION_FLAG_IS_FRAGMENT                                        (0x00000020)
+#define FWP_CONDITION_FLAG_IS_FRAGMENT_GROUP                     (0x00000040)
 #define FWP_CONDITION_FLAG_IS_IPSEC_NATT_RECLASSIFY (0x00000080)
 #define FWP_CONDITION_FLAG_REQUIRES_ALE_CLASSIFY    (0x00000100)
-#define FWP_CONDITION_FLAG_IS_IMPLICIT_BIND         (0x00000200)
+#define FWP_CONDITION_FLAG_IS_IMPLICIT_BIND                      (0x00000200)
 #if (NTDDI_VERSION >= NTDDI_WIN6SP1)
-#define FWP_CONDITION_FLAG_IS_REASSEMBLED           (0x00000400)
+#define FWP_CONDITION_FLAG_IS_REASSEMBLED                        (0x00000400)
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 #define FWP_CONDITION_FLAG_IS_NAME_APP_SPECIFIED    (0x00004000)
-#define FWP_CONDITION_FLAG_IS_PROMISCUOUS           (0x00008000)
-#define FWP_CONDITION_FLAG_IS_AUTH_FW               (0x00010000)
-#define FWP_CONDITION_FLAG_IS_RECLASSIFY            (0x00020000)
+#define FWP_CONDITION_FLAG_IS_PROMISCUOUS                        (0x00008000)
+#define FWP_CONDITION_FLAG_IS_AUTH_FW                                         (0x00010000)
+#define FWP_CONDITION_FLAG_IS_RECLASSIFY                                      (0x00020000)
 #define FWP_CONDITION_FLAG_IS_OUTBOUND_PASS_THRU    (0x00040000)
 #define FWP_CONDITION_FLAG_IS_INBOUND_PASS_THRU     (0x00080000)
 #define FWP_CONDITION_FLAG_IS_CONNECTION_REDIRECTED (0x00100000)
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-#define FWP_CONDITION_FLAG_IS_PROXY_CONNECTION      (0x00200000)
+#define FWP_CONDITION_FLAG_IS_PROXY_CONNECTION                   (0x00200000)
 #define FWP_CONDITION_FLAG_IS_APPCONTAINER_LOOPBACK (0x00400000)
 #define FWP_CONDITION_FLAG_IS_NON_APPCONTAINER_LOOPBACK (0x00800000)
-#define FWP_CONDITION_FLAG_IS_RESERVED              (0x01000000)
+#define FWP_CONDITION_FLAG_IS_RESERVED                                        (0x01000000)
 #define FWP_CONDITION_FLAG_IS_HONORING_POLICY_AUTHORIZE (0x02000000)
 #endif
 
-#define FWP_CONDITION_REAUTHORIZE_REASON_POLICY_CHANGE             (0x00000001)
+#define FWP_CONDITION_REAUTHORIZE_REASON_POLICY_CHANGE                                       (0x00000001)
 #define FWP_CONDITION_REAUTHORIZE_REASON_NEW_ARRIVAL_INTERFACE     (0x00000002)
 #define FWP_CONDITION_REAUTHORIZE_REASON_NEW_NEXTHOP_INTERFACE     (0x00000004)
-#define FWP_CONDITION_REAUTHORIZE_REASON_PROFILE_CROSSING          (0x00000008)
-#define FWP_CONDITION_REAUTHORIZE_REASON_CLASSIFY_COMPLETION       (0x00000010)
+#define FWP_CONDITION_REAUTHORIZE_REASON_PROFILE_CROSSING                       (0x00000008)
+#define FWP_CONDITION_REAUTHORIZE_REASON_CLASSIFY_COMPLETION                    (0x00000010)
 #define FWP_CONDITION_REAUTHORIZE_REASON_IPSEC_PROPERTIES_CHANGED  (0x00000020)
 #define FWP_CONDITION_REAUTHORIZE_REASON_MID_STREAM_INSPECTION     (0x00000040)
 #define FWP_CONDITION_REAUTHORIZE_REASON_SOCKET_PROPERTY_CHANGED   (0x00000080)
 #define FWP_CONDITION_REAUTHORIZE_REASON_NEW_INBOUND_MCAST_BCAST_PACKET (0x00000100)
 
-#define FWP_CONDITION_SOCKET_PROPERTY_FLAG_IS_SYSTEM_PORT_RPC      (0x00000001)
-#define FWP_CONDITION_SOCKET_PROPERTY_FLAG_ALLOW_EDGE_TRAFFIC      (0x00000002)
-#define FWP_CONDITION_SOCKET_PROPERTY_FLAG_DENY_EDGE_TRAFFIC       (0x00000004)
+#define FWP_CONDITION_SOCKET_PROPERTY_FLAG_IS_SYSTEM_PORT_RPC                   (0x00000001)
+#define FWP_CONDITION_SOCKET_PROPERTY_FLAG_ALLOW_EDGE_TRAFFIC                   (0x00000002)
+#define FWP_CONDITION_SOCKET_PROPERTY_FLAG_DENY_EDGE_TRAFFIC                    (0x00000004)
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 #define FWP_CONDITION_L2_IS_NATIVE_ETHERNET	 (0x00000001)
-#define FWP_CONDITION_L2_IS_WIFI	         (0x00000002)
+#define FWP_CONDITION_L2_IS_WIFI	                      (0x00000002)
 #define FWP_CONDITION_L2_IS_MOBILE_BROADBAND	 (0x00000004)
 #define FWP_CONDITION_L2_IS_WIFI_DIRECT_DATA	 (0x00000008)
-#define FWP_CONDITION_L2_IS_VM2VM	         (0x00000010)
+#define FWP_CONDITION_L2_IS_VM2VM	                      (0x00000010)
 #define FWP_CONDITION_L2_IS_MALFORMED_PACKET	 (0x00000020)
 #define FWP_CONDITION_L2_IS_IP_FRAGMENT_GROUP (0x00000040)
 #define FWP_CONDITION_L2_IF_CONNECTOR_PRESENT (0x00000080)
@@ -120,25 +120,25 @@ extern "C" {
 #endif
 
 #define FWP_FILTER_ENUM_FLAG_BEST_TERMINATING_MATCH (0x00000001)
-#define FWP_FILTER_ENUM_FLAG_SORTED                 (0x00000002)
-#define FWP_FILTER_ENUM_FLAG_BOOTTIME_ONLY          (0x00000004)
-#define FWP_FILTER_ENUM_FLAG_INCLUDE_BOOTTIME       (0x00000008)
-#define FWP_FILTER_ENUM_FLAG_INCLUDE_DISABLED       (0x00000010)
+#define FWP_FILTER_ENUM_FLAG_SORTED                                           (0x00000002)
+#define FWP_FILTER_ENUM_FLAG_BOOTTIME_ONLY                       (0x00000004)
+#define FWP_FILTER_ENUM_FLAG_INCLUDE_BOOTTIME                    (0x00000008)
+#define FWP_FILTER_ENUM_FLAG_INCLUDE_DISABLED                    (0x00000010)
 
 #define FWP_FILTER_ENUM_VALID_FLAGS (FWP_FILTER_ENUM_FLAG_BEST_TERMINATING_MATCH | FWP_FILTER_ENUM_FLAG_SORTED)
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-#define FWP_FILTER_ENUM_FLAG_RESERVED1              (0x00000020)
+#define FWP_FILTER_ENUM_FLAG_RESERVED1                                        (0x00000020)
 #endif
 
-#define FWP_CALLOUT_FLAG_CONDITIONAL_ON_FLOW        	(0x00000001)
-#define FWP_CALLOUT_FLAG_ALLOW_OFFLOAD               (0x00000002)
+#define FWP_CALLOUT_FLAG_CONDITIONAL_ON_FLOW                     	(0x00000001)
+#define FWP_CALLOUT_FLAG_ALLOW_OFFLOAD                                         (0x00000002)
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 #define FWP_CALLOUT_FLAG_ENABLE_COMMIT_ADD_NOTIFY    (0x00000004)
 #define FWP_CALLOUT_FLAG_ALLOW_MID_STREAM_INSPECTION (0x00000008)
-#define FWP_CALLOUT_FLAG_ALLOW_RECLASSIFY            (0x00000010)
+#define FWP_CALLOUT_FLAG_ALLOW_RECLASSIFY                                      (0x00000010)
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-#define FWP_CALLOUT_FLAG_RESERVED1                   (0x00000020)
-#define FWP_CALLOUT_FLAG_ALLOW_RSC                   (0x00000040)
+#define FWP_CALLOUT_FLAG_RESERVED1                                                          (0x00000020)
+#define FWP_CALLOUT_FLAG_ALLOW_RSC                                                          (0x00000040)
 #define FWP_CALLOUT_FLAG_ALLOW_L2_BATCH_CLASSIFY     (0x00000080)
 #endif
 #endif
@@ -271,24 +271,24 @@ typedef struct FWP_TOKEN_INFORMATION_ {
 typedef struct FWP_VALUE0_ {
     FWP_DATA_TYPE type;
     __C89_NAMELESS union {
-        UINT8 uint8;
-        UINT16 uint16;
-        UINT32 uint32;
-        UINT64 *uint64;
-        INT8 int8;
-        INT16 int16;
-        INT32 int32;
-        INT64 *int64;
-        float float32;
-        double *double64;
-        FWP_BYTE_ARRAY16 *byteArray16;
-        FWP_BYTE_BLOB *byteBlob;
-        SID *sid;
-        FWP_BYTE_BLOB *sd;
-        FWP_TOKEN_INFORMATION *tokenInformation;
-        FWP_BYTE_BLOB *tokenAccessInformation;
-        LPWSTR unicodeString;
-        FWP_BYTE_ARRAY6 *byteArray6;
+                     UINT8 uint8;
+                     UINT16 uint16;
+                     UINT32 uint32;
+                     UINT64 *uint64;
+                     INT8 int8;
+                     INT16 int16;
+                     INT32 int32;
+                     INT64 *int64;
+                     float float32;
+                     double *double64;
+                     FWP_BYTE_ARRAY16 *byteArray16;
+                     FWP_BYTE_BLOB *byteBlob;
+                     SID *sid;
+                     FWP_BYTE_BLOB *sd;
+                     FWP_TOKEN_INFORMATION *tokenInformation;
+                     FWP_BYTE_BLOB *tokenAccessInformation;
+                     LPWSTR unicodeString;
+                     FWP_BYTE_ARRAY6 *byteArray6;
     } __C89_NAMELESSUNIONNAME;
 } FWP_VALUE0;
 
@@ -310,27 +310,27 @@ typedef struct FWP_RANGE0_ {
 typedef struct FWP_CONDITION_VALUE0_ {
     FWP_DATA_TYPE type;
     __C89_NAMELESS union {
-        UINT8 uint8;
-        UINT16 uint16;
-        UINT32 uint32;
-        UINT64 *uint64;
-        INT8 int8;
-        INT16 int16;
-        INT32 int32;
-        INT64 *int64;
-        float float32;
-        double *double64;
-        FWP_BYTE_ARRAY16 *byteArray16;
-        FWP_BYTE_BLOB *byteBlob;
-        SID *sid;
-        FWP_BYTE_BLOB *sd;
-        FWP_TOKEN_INFORMATION *tokenInformation;
-        FWP_BYTE_BLOB *tokenAccessInformation;
-        LPWSTR unicodeString;
-        FWP_BYTE_ARRAY6 *byteArray6;
-        FWP_V4_ADDR_AND_MASK *v4AddrMask;
-        FWP_V6_ADDR_AND_MASK *v6AddrMask;
-        FWP_RANGE0 *rangeValue;
+                     UINT8 uint8;
+                     UINT16 uint16;
+                     UINT32 uint32;
+                     UINT64 *uint64;
+                     INT8 int8;
+                     INT16 int16;
+                     INT32 int32;
+                     INT64 *int64;
+                     float float32;
+                     double *double64;
+                     FWP_BYTE_ARRAY16 *byteArray16;
+                     FWP_BYTE_BLOB *byteBlob;
+                     SID *sid;
+                     FWP_BYTE_BLOB *sd;
+                     FWP_TOKEN_INFORMATION *tokenInformation;
+                     FWP_BYTE_BLOB *tokenAccessInformation;
+                     LPWSTR unicodeString;
+                     FWP_BYTE_ARRAY6 *byteArray6;
+                     FWP_V4_ADDR_AND_MASK *v4AddrMask;
+                     FWP_V6_ADDR_AND_MASK *v6AddrMask;
+                     FWP_RANGE0 *rangeValue;
     } __C89_NAMELESSUNIONNAME;
 } FWP_CONDITION_VALUE0;
 

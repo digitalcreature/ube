@@ -62,14 +62,14 @@ struct __pthread_mutex_s
 #if __WORDSIZE == 64
   int __spins;
   __pthread_list_t __list;
-# define __PTHREAD_MUTEX_HAVE_PREV      1
+# define __PTHREAD_MUTEX_HAVE_PREV                   1
 #else
   __extension__ union
   {
     int __spins;
     __pthread_slist_t __list;
   };
-# define __PTHREAD_MUTEX_HAVE_PREV      0
+# define __PTHREAD_MUTEX_HAVE_PREV                   0
 #endif
 };
 

@@ -15,18 +15,18 @@
 #endif
 __MINGW_USYMBOL(floorf):
 #if defined(_AMD64_) || defined(__x86_64__)
-        subq    $40, %rsp
-        .seh_stackalloc 40
-        .seh_endprologue
-        unpcklps        %xmm0, %xmm0
-        cvtps2pd        %xmm0, %xmm0
-        call    floor
-        unpcklpd        %xmm0, %xmm0
-        cvtpd2ps        %xmm0, %xmm0
-        addq    $40, %rsp
-        ret
-        .seh_endproc
-        .def    __MINGW_USYMBOL(floor);  .scl    2;      .type   32;     .endef
+                     subq    $40, %rsp
+                     .seh_stackalloc 40
+                     .seh_endprologue
+                     unpcklps                     %xmm0, %xmm0
+                     cvtps2pd                     %xmm0, %xmm0
+                     call    floor
+                     unpcklpd                     %xmm0, %xmm0
+                     cvtpd2ps                     %xmm0, %xmm0
+                     addq    $40, %rsp
+                     ret
+                     .seh_endproc
+                     .def    __MINGW_USYMBOL(floor);  .scl    2;                   .type   32;     .endef
 #elif defined(_X86_) || defined(__i386__)
 	flds	4(%esp)
 	subl	$8,%esp

@@ -28,12 +28,12 @@ extern "C" {
 
 #pragma pack(push,4)
 
-#define MEDIA_ERASEABLE                   0x00000001
-#define MEDIA_WRITE_ONCE                  0x00000002
-#define MEDIA_READ_ONLY                   0x00000004
-#define MEDIA_READ_WRITE                  0x00000008
-#define MEDIA_WRITE_PROTECTED             0x00000100
-#define MEDIA_CURRENTLY_MOUNTED           0x80000000
+#define MEDIA_ERASEABLE                                                          0x00000001
+#define MEDIA_WRITE_ONCE                                                         0x00000002
+#define MEDIA_READ_ONLY                                                          0x00000004
+#define MEDIA_READ_WRITE                                                         0x00000008
+#define MEDIA_WRITE_PROTECTED                                       0x00000100
+#define MEDIA_CURRENTLY_MOUNTED                        0x80000000
 
 typedef enum _TAPE_STATUS {
 	TAPE_STATUS_SEND_SRB_AND_CALLBACK,
@@ -177,9 +177,9 @@ typedef TAPE_STATUS NTAPI
   IN TAPE_STATUS  StatusOfLastCommand,
   IN OUT PULONG  RetryFlags);
 
-#define TAPE_RETRY_MASK                   0x0000FFFF
-#define IGNORE_ERRORS                     0x00010000
-#define RETURN_ERRORS                     0x00020000
+#define TAPE_RETRY_MASK                                                          0x0000FFFF
+#define IGNORE_ERRORS                                                            0x00010000
+#define RETURN_ERRORS                                                            0x00020000
 
 typedef struct _TAPE_INIT_DATA {
   TAPE_VERIFY_INQUIRY_ROUTINE  VerifyInquiry;

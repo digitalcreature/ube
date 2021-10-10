@@ -36,7 +36,7 @@ typedef int error_t;
    ARGZ, and the total length in LEN.  If a memory allocation error occurs,
    ENOMEM is returned, otherwise 0.  The result can be destroyed using free. */
 extern error_t __argz_create (char *const __argv[], char **__restrict __argz,
-			      size_t *__restrict __len) __THROW;
+			                   size_t *__restrict __len) __THROW;
 extern error_t argz_create (char *const __argv[], char **__restrict __argz,
 			    size_t *__restrict __len) __THROW;
 
@@ -115,13 +115,13 @@ extern error_t argz_replace (char **__restrict __argz,
 
     char *entry = 0;
     while ((entry = argz_next (argz, argz_len, entry)))
-      ...;
+                   ...;
 
    or
 
     char *entry;
     for (entry = argz; entry; entry = argz_next (argz, argz_len, entry))
-      ...;
+                   ...;
 */
 extern char *__argz_next (const char *__restrict __argz, size_t __argz_len,
 			  const char *__restrict __entry) __THROW;
@@ -135,10 +135,10 @@ __NTH (__argz_next (const char *__argz, size_t __argz_len,
 {
   if (__entry)
     {
-      if (__entry < __argz + __argz_len)
+                   if (__entry < __argz + __argz_len)
 	__entry = strchr (__entry, '\0') + 1;
 
-      return __entry >= __argz + __argz_len ? (char *) NULL : (char *) __entry;
+                   return __entry >= __argz + __argz_len ? (char *) NULL : (char *) __entry;
     }
   else
     return __argz_len > 0 ? (char *) __argz : 0;

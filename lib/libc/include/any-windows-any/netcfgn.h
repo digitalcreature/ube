@@ -127,11 +127,11 @@ MIDL_INTERFACE("8d84bd35-e227-11d2-b700-00a0c98a6a85")
 INetCfgPnpReconfigCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SendPnpReconfig(
-        NCPNP_RECONFIG_LAYER Layer,
-        LPCWSTR pszwUpper,
-        LPCWSTR pszwLower,
-        PVOID pvData,
-        DWORD dwSizeOfData) = 0;
+                     NCPNP_RECONFIG_LAYER Layer,
+                     LPCWSTR pszwUpper,
+                     LPCWSTR pszwLower,
+                     PVOID pvData,
+                     DWORD dwSizeOfData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -143,24 +143,24 @@ typedef struct INetCfgPnpReconfigCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgPnpReconfigCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgPnpReconfigCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgPnpReconfigCallback *This);
+                     INetCfgPnpReconfigCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgPnpReconfigCallback *This);
+                     INetCfgPnpReconfigCallback *This);
 
     /*** INetCfgPnpReconfigCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *SendPnpReconfig)(
-        INetCfgPnpReconfigCallback *This,
-        NCPNP_RECONFIG_LAYER Layer,
-        LPCWSTR pszwUpper,
-        LPCWSTR pszwLower,
-        PVOID pvData,
-        DWORD dwSizeOfData);
+                     INetCfgPnpReconfigCallback *This,
+                     NCPNP_RECONFIG_LAYER Layer,
+                     LPCWSTR pszwUpper,
+                     LPCWSTR pszwLower,
+                     PVOID pvData,
+                     DWORD dwSizeOfData);
 
     END_INTERFACE
 } INetCfgPnpReconfigCallbackVtbl;
@@ -213,18 +213,18 @@ MIDL_INTERFACE("932238df-bea1-11d0-9298-00c04fc99dcf")
 INetCfgComponentControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        INetCfgComponent *pIComp,
-        INetCfg *pINetCfg,
-        WINBOOL fInstalling) = 0;
+                     INetCfgComponent *pIComp,
+                     INetCfg *pINetCfg,
+                     WINBOOL fInstalling) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyRegistryChanges(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyPnpChanges(
-        INetCfgPnpReconfigCallback *pICallback) = 0;
+                     INetCfgPnpReconfigCallback *pICallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CancelChanges(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -236,32 +236,32 @@ typedef struct INetCfgComponentControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponentControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponentControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponentControl *This);
+                     INetCfgComponentControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponentControl *This);
+                     INetCfgComponentControl *This);
 
     /*** INetCfgComponentControl methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INetCfgComponentControl *This,
-        INetCfgComponent *pIComp,
-        INetCfg *pINetCfg,
-        WINBOOL fInstalling);
+                     INetCfgComponentControl *This,
+                     INetCfgComponent *pIComp,
+                     INetCfg *pINetCfg,
+                     WINBOOL fInstalling);
 
     HRESULT (STDMETHODCALLTYPE *ApplyRegistryChanges)(
-        INetCfgComponentControl *This);
+                     INetCfgComponentControl *This);
 
     HRESULT (STDMETHODCALLTYPE *ApplyPnpChanges)(
-        INetCfgComponentControl *This,
-        INetCfgPnpReconfigCallback *pICallback);
+                     INetCfgComponentControl *This,
+                     INetCfgPnpReconfigCallback *pICallback);
 
     HRESULT (STDMETHODCALLTYPE *CancelChanges)(
-        INetCfgComponentControl *This);
+                     INetCfgComponentControl *This);
 
     END_INTERFACE
 } INetCfgComponentControlVtbl;
@@ -338,18 +338,18 @@ MIDL_INTERFACE("932238e3-bea1-11d0-9298-00c04fc99dcf")
 INetCfgComponentSetup : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Install(
-        DWORD dwSetupFlags) = 0;
+                     DWORD dwSetupFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Upgrade(
-        DWORD dwSetupFlags,
-        DWORD dwUpgradeFomBuildNo) = 0;
+                     DWORD dwSetupFlags,
+                     DWORD dwUpgradeFomBuildNo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReadAnswerFile(
-        LPCWSTR pszwAnswerFile,
-        LPCWSTR pszwAnswerSections) = 0;
+                     LPCWSTR pszwAnswerFile,
+                     LPCWSTR pszwAnswerSections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Removing(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -361,33 +361,33 @@ typedef struct INetCfgComponentSetupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponentSetup *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponentSetup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponentSetup *This);
+                     INetCfgComponentSetup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponentSetup *This);
+                     INetCfgComponentSetup *This);
 
     /*** INetCfgComponentSetup methods ***/
     HRESULT (STDMETHODCALLTYPE *Install)(
-        INetCfgComponentSetup *This,
-        DWORD dwSetupFlags);
+                     INetCfgComponentSetup *This,
+                     DWORD dwSetupFlags);
 
     HRESULT (STDMETHODCALLTYPE *Upgrade)(
-        INetCfgComponentSetup *This,
-        DWORD dwSetupFlags,
-        DWORD dwUpgradeFomBuildNo);
+                     INetCfgComponentSetup *This,
+                     DWORD dwSetupFlags,
+                     DWORD dwUpgradeFomBuildNo);
 
     HRESULT (STDMETHODCALLTYPE *ReadAnswerFile)(
-        INetCfgComponentSetup *This,
-        LPCWSTR pszwAnswerFile,
-        LPCWSTR pszwAnswerSections);
+                     INetCfgComponentSetup *This,
+                     LPCWSTR pszwAnswerFile,
+                     LPCWSTR pszwAnswerSections);
 
     HRESULT (STDMETHODCALLTYPE *Removing)(
-        INetCfgComponentSetup *This);
+                     INetCfgComponentSetup *This);
 
     END_INTERFACE
 } INetCfgComponentSetupVtbl;
@@ -455,26 +455,26 @@ MIDL_INTERFACE("932238e0-bea1-11d0-9298-00c04fc99dcf")
 INetCfgComponentPropertyUi : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryPropertyUi(
-        IUnknown *pUnkReserved) = 0;
+                     IUnknown *pUnkReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContext(
-        IUnknown *pUnkReserved) = 0;
+                     IUnknown *pUnkReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MergePropPages(
-        DWORD *pdwDefPages,
-        BYTE **pahpspPrivate,
-        UINT *pcPages,
-        HWND hwndParent,
-        LPCWSTR *pszStartPage) = 0;
+                     DWORD *pdwDefPages,
+                     BYTE **pahpspPrivate,
+                     UINT *pcPages,
+                     HWND hwndParent,
+                     LPCWSTR *pszStartPage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ValidateProperties(
-        HWND hwndSheet) = 0;
+                     HWND hwndSheet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyProperties(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CancelProperties(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -486,42 +486,42 @@ typedef struct INetCfgComponentPropertyUiVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponentPropertyUi *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponentPropertyUi *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponentPropertyUi *This);
+                     INetCfgComponentPropertyUi *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponentPropertyUi *This);
+                     INetCfgComponentPropertyUi *This);
 
     /*** INetCfgComponentPropertyUi methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryPropertyUi)(
-        INetCfgComponentPropertyUi *This,
-        IUnknown *pUnkReserved);
+                     INetCfgComponentPropertyUi *This,
+                     IUnknown *pUnkReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetContext)(
-        INetCfgComponentPropertyUi *This,
-        IUnknown *pUnkReserved);
+                     INetCfgComponentPropertyUi *This,
+                     IUnknown *pUnkReserved);
 
     HRESULT (STDMETHODCALLTYPE *MergePropPages)(
-        INetCfgComponentPropertyUi *This,
-        DWORD *pdwDefPages,
-        BYTE **pahpspPrivate,
-        UINT *pcPages,
-        HWND hwndParent,
-        LPCWSTR *pszStartPage);
+                     INetCfgComponentPropertyUi *This,
+                     DWORD *pdwDefPages,
+                     BYTE **pahpspPrivate,
+                     UINT *pcPages,
+                     HWND hwndParent,
+                     LPCWSTR *pszStartPage);
 
     HRESULT (STDMETHODCALLTYPE *ValidateProperties)(
-        INetCfgComponentPropertyUi *This,
-        HWND hwndSheet);
+                     INetCfgComponentPropertyUi *This,
+                     HWND hwndSheet);
 
     HRESULT (STDMETHODCALLTYPE *ApplyProperties)(
-        INetCfgComponentPropertyUi *This);
+                     INetCfgComponentPropertyUi *This);
 
     HRESULT (STDMETHODCALLTYPE *CancelProperties)(
-        INetCfgComponentPropertyUi *This);
+                     INetCfgComponentPropertyUi *This);
 
     END_INTERFACE
 } INetCfgComponentPropertyUiVtbl;
@@ -607,12 +607,12 @@ MIDL_INTERFACE("932238e1-bea1-11d0-9298-00c04fc99dcf")
 INetCfgComponentNotifyBinding : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryBindingPath(
-        DWORD dwChangeFlag,
-        INetCfgBindingPath *pIPath) = 0;
+                     DWORD dwChangeFlag,
+                     INetCfgBindingPath *pIPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyBindingPath(
-        DWORD dwChangeFlag,
-        INetCfgBindingPath *pIPath) = 0;
+                     DWORD dwChangeFlag,
+                     INetCfgBindingPath *pIPath) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -624,26 +624,26 @@ typedef struct INetCfgComponentNotifyBindingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponentNotifyBinding *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponentNotifyBinding *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponentNotifyBinding *This);
+                     INetCfgComponentNotifyBinding *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponentNotifyBinding *This);
+                     INetCfgComponentNotifyBinding *This);
 
     /*** INetCfgComponentNotifyBinding methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryBindingPath)(
-        INetCfgComponentNotifyBinding *This,
-        DWORD dwChangeFlag,
-        INetCfgBindingPath *pIPath);
+                     INetCfgComponentNotifyBinding *This,
+                     DWORD dwChangeFlag,
+                     INetCfgBindingPath *pIPath);
 
     HRESULT (STDMETHODCALLTYPE *NotifyBindingPath)(
-        INetCfgComponentNotifyBinding *This,
-        DWORD dwChangeFlag,
-        INetCfgBindingPath *pIPath);
+                     INetCfgComponentNotifyBinding *This,
+                     DWORD dwChangeFlag,
+                     INetCfgBindingPath *pIPath);
 
     END_INTERFACE
 } INetCfgComponentNotifyBindingVtbl;
@@ -700,19 +700,19 @@ MIDL_INTERFACE("932238e2-bea1-11d0-9298-00c04fc99dcf")
 INetCfgComponentNotifyGlobal : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSupportedNotifications(
-        DWORD *dwNotifications) = 0;
+                     DWORD *dwNotifications) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SysQueryBindingPath(
-        DWORD dwChangeFlag,
-        INetCfgBindingPath *pIPath) = 0;
+                     DWORD dwChangeFlag,
+                     INetCfgBindingPath *pIPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SysNotifyBindingPath(
-        DWORD dwChangeFlag,
-        INetCfgBindingPath *pIPath) = 0;
+                     DWORD dwChangeFlag,
+                     INetCfgBindingPath *pIPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SysNotifyComponent(
-        DWORD dwChangeFlag,
-        INetCfgComponent *pIComp) = 0;
+                     DWORD dwChangeFlag,
+                     INetCfgComponent *pIComp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -724,35 +724,35 @@ typedef struct INetCfgComponentNotifyGlobalVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponentNotifyGlobal *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponentNotifyGlobal *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponentNotifyGlobal *This);
+                     INetCfgComponentNotifyGlobal *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponentNotifyGlobal *This);
+                     INetCfgComponentNotifyGlobal *This);
 
     /*** INetCfgComponentNotifyGlobal methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSupportedNotifications)(
-        INetCfgComponentNotifyGlobal *This,
-        DWORD *dwNotifications);
+                     INetCfgComponentNotifyGlobal *This,
+                     DWORD *dwNotifications);
 
     HRESULT (STDMETHODCALLTYPE *SysQueryBindingPath)(
-        INetCfgComponentNotifyGlobal *This,
-        DWORD dwChangeFlag,
-        INetCfgBindingPath *pIPath);
+                     INetCfgComponentNotifyGlobal *This,
+                     DWORD dwChangeFlag,
+                     INetCfgBindingPath *pIPath);
 
     HRESULT (STDMETHODCALLTYPE *SysNotifyBindingPath)(
-        INetCfgComponentNotifyGlobal *This,
-        DWORD dwChangeFlag,
-        INetCfgBindingPath *pIPath);
+                     INetCfgComponentNotifyGlobal *This,
+                     DWORD dwChangeFlag,
+                     INetCfgBindingPath *pIPath);
 
     HRESULT (STDMETHODCALLTYPE *SysNotifyComponent)(
-        INetCfgComponentNotifyGlobal *This,
-        DWORD dwChangeFlag,
-        INetCfgComponent *pIComp);
+                     INetCfgComponentNotifyGlobal *This,
+                     DWORD dwChangeFlag,
+                     INetCfgComponent *pIComp);
 
     END_INTERFACE
 } INetCfgComponentNotifyGlobalVtbl;
@@ -817,18 +817,18 @@ MIDL_INTERFACE("932238e4-bea1-11d0-9298-00c04fc99dcf")
 INetCfgComponentUpperEdge : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetInterfaceIdsForAdapter(
-        INetCfgComponent *pAdapter,
-        DWORD *pdwNumInterfaces,
-        GUID **ppguidInterfaceIds) = 0;
+                     INetCfgComponent *pAdapter,
+                     DWORD *pdwNumInterfaces,
+                     GUID **ppguidInterfaceIds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddInterfacesToAdapter(
-        INetCfgComponent *pAdapter,
-        DWORD dwNumInterfaces) = 0;
+                     INetCfgComponent *pAdapter,
+                     DWORD dwNumInterfaces) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveInterfacesFromAdapter(
-        INetCfgComponent *pAdapter,
-        DWORD dwNumInterfaces,
-        const GUID *pguidInterfaceIds) = 0;
+                     INetCfgComponent *pAdapter,
+                     DWORD dwNumInterfaces,
+                     const GUID *pguidInterfaceIds) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -840,33 +840,33 @@ typedef struct INetCfgComponentUpperEdgeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponentUpperEdge *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponentUpperEdge *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponentUpperEdge *This);
+                     INetCfgComponentUpperEdge *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponentUpperEdge *This);
+                     INetCfgComponentUpperEdge *This);
 
     /*** INetCfgComponentUpperEdge methods ***/
     HRESULT (STDMETHODCALLTYPE *GetInterfaceIdsForAdapter)(
-        INetCfgComponentUpperEdge *This,
-        INetCfgComponent *pAdapter,
-        DWORD *pdwNumInterfaces,
-        GUID **ppguidInterfaceIds);
+                     INetCfgComponentUpperEdge *This,
+                     INetCfgComponent *pAdapter,
+                     DWORD *pdwNumInterfaces,
+                     GUID **ppguidInterfaceIds);
 
     HRESULT (STDMETHODCALLTYPE *AddInterfacesToAdapter)(
-        INetCfgComponentUpperEdge *This,
-        INetCfgComponent *pAdapter,
-        DWORD dwNumInterfaces);
+                     INetCfgComponentUpperEdge *This,
+                     INetCfgComponent *pAdapter,
+                     DWORD dwNumInterfaces);
 
     HRESULT (STDMETHODCALLTYPE *RemoveInterfacesFromAdapter)(
-        INetCfgComponentUpperEdge *This,
-        INetCfgComponent *pAdapter,
-        DWORD dwNumInterfaces,
-        const GUID *pguidInterfaceIds);
+                     INetCfgComponentUpperEdge *This,
+                     INetCfgComponent *pAdapter,
+                     DWORD dwNumInterfaces,
+                     const GUID *pguidInterfaceIds);
 
     END_INTERFACE
 } INetCfgComponentUpperEdgeVtbl;
@@ -927,7 +927,7 @@ MIDL_INTERFACE("c08956a6-1cd3-11d1-b1c5-00805fc1270e")
 INetLanConnectionUiInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeviceGuid(
-        GUID *pguid) = 0;
+                     GUID *pguid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -939,20 +939,20 @@ typedef struct INetLanConnectionUiInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetLanConnectionUiInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetLanConnectionUiInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetLanConnectionUiInfo *This);
+                     INetLanConnectionUiInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetLanConnectionUiInfo *This);
+                     INetLanConnectionUiInfo *This);
 
     /*** INetLanConnectionUiInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeviceGuid)(
-        INetLanConnectionUiInfo *This,
-        GUID *pguid);
+                     INetLanConnectionUiInfo *This,
+                     GUID *pguid);
 
     END_INTERFACE
 } INetLanConnectionUiInfoVtbl;
@@ -1040,7 +1040,7 @@ MIDL_INTERFACE("faedcf58-31fe-11d1-aad2-00805fc1270e")
 INetRasConnectionIpUiInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetUiInfo(
-        RASCON_IPUI *pInfo) = 0;
+                     RASCON_IPUI *pInfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1052,20 +1052,20 @@ typedef struct INetRasConnectionIpUiInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetRasConnectionIpUiInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetRasConnectionIpUiInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetRasConnectionIpUiInfo *This);
+                     INetRasConnectionIpUiInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetRasConnectionIpUiInfo *This);
+                     INetRasConnectionIpUiInfo *This);
 
     /*** INetRasConnectionIpUiInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetUiInfo)(
-        INetRasConnectionIpUiInfo *This,
-        RASCON_IPUI *pInfo);
+                     INetRasConnectionIpUiInfo *This,
+                     RASCON_IPUI *pInfo);
 
     END_INTERFACE
 } INetRasConnectionIpUiInfoVtbl;
@@ -1118,14 +1118,14 @@ MIDL_INTERFACE("c0e8ae9a-306e-11d1-aacf-00805fc1270e")
 INetCfgComponentSysPrep : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SaveAdapterParameters(
-        INetCfgSysPrep *pncsp,
-        LPCWSTR pszwAnswerSections,
-        GUID *pAdapterInstanceGuid) = 0;
+                     INetCfgSysPrep *pncsp,
+                     LPCWSTR pszwAnswerSections,
+                     GUID *pAdapterInstanceGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RestoreAdapterParameters(
-        LPCWSTR pszwAnswerFile,
-        LPCWSTR pszwAnswerSection,
-        GUID *pAdapterInstanceGuid) = 0;
+                     LPCWSTR pszwAnswerFile,
+                     LPCWSTR pszwAnswerSection,
+                     GUID *pAdapterInstanceGuid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1137,28 +1137,28 @@ typedef struct INetCfgComponentSysPrepVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetCfgComponentSysPrep *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetCfgComponentSysPrep *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetCfgComponentSysPrep *This);
+                     INetCfgComponentSysPrep *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetCfgComponentSysPrep *This);
+                     INetCfgComponentSysPrep *This);
 
     /*** INetCfgComponentSysPrep methods ***/
     HRESULT (STDMETHODCALLTYPE *SaveAdapterParameters)(
-        INetCfgComponentSysPrep *This,
-        INetCfgSysPrep *pncsp,
-        LPCWSTR pszwAnswerSections,
-        GUID *pAdapterInstanceGuid);
+                     INetCfgComponentSysPrep *This,
+                     INetCfgSysPrep *pncsp,
+                     LPCWSTR pszwAnswerSections,
+                     GUID *pAdapterInstanceGuid);
 
     HRESULT (STDMETHODCALLTYPE *RestoreAdapterParameters)(
-        INetCfgComponentSysPrep *This,
-        LPCWSTR pszwAnswerFile,
-        LPCWSTR pszwAnswerSection,
-        GUID *pAdapterInstanceGuid);
+                     INetCfgComponentSysPrep *This,
+                     LPCWSTR pszwAnswerFile,
+                     LPCWSTR pszwAnswerSection,
+                     GUID *pAdapterInstanceGuid);
 
     END_INTERFACE
 } INetCfgComponentSysPrepVtbl;

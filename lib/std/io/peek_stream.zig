@@ -16,70 +16,70 @@ pub fn PeekStream(
     comptime ReaderType: type,
 ) type {
     return struct {
-        unbuffered_in_stream: ReaderType,
-        fifo: FifoType,
+                     unbuffered_in_stream: ReaderType,
+                     fifo: FifoType,
 
-        pub const Error = ReaderType.Error;
-        pub const Reader = io.Reader(*Self, Error, read);
-        /// Deprecated: use `Reader`
-        pub const InStream = Reader;
+                     pub const Error = ReaderType.Error;
+                     pub const Reader = io.Reader(*Self, Error, read);
+                     /// Deprecated: use `Reader`
+                     pub const InStream = Reader;
 
-        const Self = @This();
-        const FifoType = std.fifo.LinearFifo(u8, buffer_type);
+                     const Self = @This();
+                     const FifoType = std.fifo.LinearFifo(u8, buffer_type);
 
-        pub usingnamespace switch (buffer_type) {
-            .Static => struct {
-                pub fn init(base: ReaderType) Self {
-                    return .{
-                        .unbuffered_in_stream = base,
-                        .fifo = FifoType.init(),
-                    };
-                }
-            },
-            .Slice => struct {
-                pub fn init(base: ReaderType, buf: []u8) Self {
-                    return .{
-                        .unbuffered_in_stream = base,
-                        .fifo = FifoType.init(buf),
-                    };
-                }
-            },
-            .Dynamic => struct {
-                pub fn init(base: ReaderType, allocator: *mem.Allocator) Self {
-                    return .{
-                        .unbuffered_in_stream = base,
-                        .fifo = FifoType.init(allocator),
-                    };
-                }
-            },
-        };
+                     pub usingnamespace switch (buffer_type) {
+                                      .Static => struct {
+                                          pub fn init(base: ReaderType) Self {
+                                                           return .{
+                                                                            .unbuffered_in_stream = base,
+                                                                            .fifo = FifoType.init(),
+                                                           };
+                                          }
+                                      },
+                                      .Slice => struct {
+                                          pub fn init(base: ReaderType, buf: []u8) Self {
+                                                           return .{
+                                                                            .unbuffered_in_stream = base,
+                                                                            .fifo = FifoType.init(buf),
+                                                           };
+                                          }
+                                      },
+                                      .Dynamic => struct {
+                                          pub fn init(base: ReaderType, allocator: *mem.Allocator) Self {
+                                                           return .{
+                                                                            .unbuffered_in_stream = base,
+                                                                            .fifo = FifoType.init(allocator),
+                                                           };
+                                          }
+                                      },
+                     };
 
-        pub fn putBackByte(self: *Self, byte: u8) !void {
-            try self.putBack(&[_]u8{byte});
-        }
+                     pub fn putBackByte(self: *Self, byte: u8) !void {
+                                      try self.putBack(&[_]u8{byte});
+                     }
 
-        pub fn putBack(self: *Self, bytes: []const u8) !void {
-            try self.fifo.unget(bytes);
-        }
+                     pub fn putBack(self: *Self, bytes: []const u8) !void {
+                                      try self.fifo.unget(bytes);
+                     }
 
-        pub fn read(self: *Self, dest: []u8) Error!usize {
-            // copy over anything putBack()'d
-            var dest_index = self.fifo.read(dest);
-            if (dest_index == dest.len) return dest_index;
+                     pub fn read(self: *Self, dest: []u8) Error!usize {
+                                      // copy over anything putBack()'d
+                                      var dest_index = self.fifo.read(dest);
+                                      if (dest_index == dest.len) return dest_index;
 
-            // ask the backing stream for more
-            dest_index += try self.unbuffered_in_stream.read(dest[dest_index..]);
-            return dest_index;
-        }
+                                      // ask the backing stream for more
+                                      dest_index += try self.unbuffered_in_stream.read(dest[dest_index..]);
+                                      return dest_index;
+                     }
 
-        pub fn reader(self: *Self) Reader {
-            return .{ .context = self };
-        }
+                     pub fn reader(self: *Self) Reader {
+                                      return .{ .context = self };
+                     }
 
-        /// Deprecated: use `reader`
-        pub fn inStream(self: *Self) InStream {
-            return .{ .context = self };
-        }
+                     /// Deprecated: use `reader`
+                     pub fn inStream(self: *Self) InStream {
+                                      return .{ .context = self };
+                     }
     };
 }
 

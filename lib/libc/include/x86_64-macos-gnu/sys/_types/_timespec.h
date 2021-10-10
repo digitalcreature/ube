@@ -26,13 +26,13 @@
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 #ifndef _STRUCT_TIMESPEC
-#define _STRUCT_TIMESPEC        struct timespec
+#define _STRUCT_TIMESPEC                     struct timespec
 
 #include <machine/types.h> /* __darwin_time_t */
 
 _STRUCT_TIMESPEC
 {
 	__darwin_time_t tv_sec;
-	long            tv_nsec;
+	long                                      tv_nsec;
 };
 #endif /* _STRUCT_TIMESPEC */

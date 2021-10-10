@@ -252,28 +252,28 @@ MIDL_INTERFACE("f309ad18-d86a-11d0-a075-00c04fb68820")
 IWbemLevel1Login : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EstablishPosition(
-        LPWSTR wszLocaleList,
-        DWORD dwNumLocales,
-        DWORD *reserved) = 0;
+                     LPWSTR wszLocaleList,
+                     DWORD dwNumLocales,
+                     DWORD *reserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestChallenge(
-        LPWSTR wszNetworkResource,
-        LPWSTR wszUser,
-        WBEM_128BITS Nonce) = 0;
+                     LPWSTR wszNetworkResource,
+                     LPWSTR wszUser,
+                     WBEM_128BITS Nonce) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WBEMLogin(
-        LPWSTR wszPreferredLocale,
-        WBEM_128BITS AccessToken,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        IWbemServices **ppNamespace) = 0;
+                     LPWSTR wszPreferredLocale,
+                     WBEM_128BITS AccessToken,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     IWbemServices **ppNamespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NTLMLogin(
-        LPWSTR wszNetworkResource,
-        LPWSTR wszPreferredLocale,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        IWbemServices **ppNamespace) = 0;
+                     LPWSTR wszNetworkResource,
+                     LPWSTR wszPreferredLocale,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     IWbemServices **ppNamespace) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -285,44 +285,44 @@ typedef struct IWbemLevel1LoginVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemLevel1Login *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemLevel1Login *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemLevel1Login *This);
+                     IWbemLevel1Login *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemLevel1Login *This);
+                     IWbemLevel1Login *This);
 
     /*** IWbemLevel1Login methods ***/
     HRESULT (STDMETHODCALLTYPE *EstablishPosition)(
-        IWbemLevel1Login *This,
-        LPWSTR wszLocaleList,
-        DWORD dwNumLocales,
-        DWORD *reserved);
+                     IWbemLevel1Login *This,
+                     LPWSTR wszLocaleList,
+                     DWORD dwNumLocales,
+                     DWORD *reserved);
 
     HRESULT (STDMETHODCALLTYPE *RequestChallenge)(
-        IWbemLevel1Login *This,
-        LPWSTR wszNetworkResource,
-        LPWSTR wszUser,
-        WBEM_128BITS Nonce);
+                     IWbemLevel1Login *This,
+                     LPWSTR wszNetworkResource,
+                     LPWSTR wszUser,
+                     WBEM_128BITS Nonce);
 
     HRESULT (STDMETHODCALLTYPE *WBEMLogin)(
-        IWbemLevel1Login *This,
-        LPWSTR wszPreferredLocale,
-        WBEM_128BITS AccessToken,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        IWbemServices **ppNamespace);
+                     IWbemLevel1Login *This,
+                     LPWSTR wszPreferredLocale,
+                     WBEM_128BITS AccessToken,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     IWbemServices **ppNamespace);
 
     HRESULT (STDMETHODCALLTYPE *NTLMLogin)(
-        IWbemLevel1Login *This,
-        LPWSTR wszNetworkResource,
-        LPWSTR wszPreferredLocale,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        IWbemServices **ppNamespace);
+                     IWbemLevel1Login *This,
+                     LPWSTR wszNetworkResource,
+                     LPWSTR wszPreferredLocale,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     IWbemServices **ppNamespace);
 
     END_INTERFACE
 } IWbemLevel1LoginVtbl;
@@ -386,12 +386,12 @@ MIDL_INTERFACE("d8ec9cb1-b135-4f10-8b1b-c7188bb0d186")
 IWbemConnectorLogin : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ConnectorLogin(
-        LPWSTR wszNetworkResource,
-        LPWSTR wszPreferredLocale,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        REFIID riid,
-        void **pInterface) = 0;
+                     LPWSTR wszNetworkResource,
+                     LPWSTR wszPreferredLocale,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     REFIID riid,
+                     void **pInterface) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -403,25 +403,25 @@ typedef struct IWbemConnectorLoginVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemConnectorLogin *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemConnectorLogin *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemConnectorLogin *This);
+                     IWbemConnectorLogin *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemConnectorLogin *This);
+                     IWbemConnectorLogin *This);
 
     /*** IWbemConnectorLogin methods ***/
     HRESULT (STDMETHODCALLTYPE *ConnectorLogin)(
-        IWbemConnectorLogin *This,
-        LPWSTR wszNetworkResource,
-        LPWSTR wszPreferredLocale,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        REFIID riid,
-        void **pInterface);
+                     IWbemConnectorLogin *This,
+                     LPWSTR wszNetworkResource,
+                     LPWSTR wszPreferredLocale,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     REFIID riid,
+                     void **pInterface);
 
     END_INTERFACE
 } IWbemConnectorLoginVtbl;
@@ -473,10 +473,10 @@ MIDL_INTERFACE("f7ce2e12-8c90-11d1-9e7b-00c04fc324a8")
 IWbemAddressResolution : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Resolve(
-        LPWSTR wszNamespacePath,
-        LPWSTR wszAddressType,
-        DWORD *pdwAddressLength,
-        BYTE **pabBinaryAddress) = 0;
+                     LPWSTR wszNamespacePath,
+                     LPWSTR wszAddressType,
+                     DWORD *pdwAddressLength,
+                     BYTE **pabBinaryAddress) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -488,23 +488,23 @@ typedef struct IWbemAddressResolutionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemAddressResolution *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemAddressResolution *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemAddressResolution *This);
+                     IWbemAddressResolution *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemAddressResolution *This);
+                     IWbemAddressResolution *This);
 
     /*** IWbemAddressResolution methods ***/
     HRESULT (STDMETHODCALLTYPE *Resolve)(
-        IWbemAddressResolution *This,
-        LPWSTR wszNamespacePath,
-        LPWSTR wszAddressType,
-        DWORD *pdwAddressLength,
-        BYTE **pabBinaryAddress);
+                     IWbemAddressResolution *This,
+                     LPWSTR wszNamespacePath,
+                     LPWSTR wszAddressType,
+                     DWORD *pdwAddressLength,
+                     BYTE **pabBinaryAddress);
 
     END_INTERFACE
 } IWbemAddressResolutionVtbl;
@@ -556,7 +556,7 @@ MIDL_INTERFACE("553fe584-2156-11d0-b6ae-00aa003240c7")
 IWbemTransport : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -568,19 +568,19 @@ typedef struct IWbemTransportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemTransport *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemTransport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemTransport *This);
+                     IWbemTransport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemTransport *This);
+                     IWbemTransport *This);
 
     /*** IWbemTransport methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWbemTransport *This);
+                     IWbemTransport *This);
 
     END_INTERFACE
 } IWbemTransportVtbl;
@@ -632,20 +632,20 @@ MIDL_INTERFACE("9ef76194-70d5-11d1-ad90-00c04fd8fdff")
 IWbemConstructClassObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetInheritanceChain(
-        LONG lNumAntecedents,
-        LPWSTR *awszAntecedents) = 0;
+                     LONG lNumAntecedents,
+                     LPWSTR *awszAntecedents) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPropertyOrigin(
-        LPCWSTR wszPropertyName,
-        LONG lOriginIndex) = 0;
+                     LPCWSTR wszPropertyName,
+                     LONG lOriginIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMethodOrigin(
-        LPCWSTR wszMethodName,
-        LONG lOriginIndex) = 0;
+                     LPCWSTR wszMethodName,
+                     LONG lOriginIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetServerNamespace(
-        LPCWSTR wszServer,
-        LPCWSTR wszNamespace) = 0;
+                     LPCWSTR wszServer,
+                     LPCWSTR wszNamespace) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -657,36 +657,36 @@ typedef struct IWbemConstructClassObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemConstructClassObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemConstructClassObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemConstructClassObject *This);
+                     IWbemConstructClassObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemConstructClassObject *This);
+                     IWbemConstructClassObject *This);
 
     /*** IWbemConstructClassObject methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInheritanceChain)(
-        IWbemConstructClassObject *This,
-        LONG lNumAntecedents,
-        LPWSTR *awszAntecedents);
+                     IWbemConstructClassObject *This,
+                     LONG lNumAntecedents,
+                     LPWSTR *awszAntecedents);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertyOrigin)(
-        IWbemConstructClassObject *This,
-        LPCWSTR wszPropertyName,
-        LONG lOriginIndex);
+                     IWbemConstructClassObject *This,
+                     LPCWSTR wszPropertyName,
+                     LONG lOriginIndex);
 
     HRESULT (STDMETHODCALLTYPE *SetMethodOrigin)(
-        IWbemConstructClassObject *This,
-        LPCWSTR wszMethodName,
-        LONG lOriginIndex);
+                     IWbemConstructClassObject *This,
+                     LPCWSTR wszMethodName,
+                     LONG lOriginIndex);
 
     HRESULT (STDMETHODCALLTYPE *SetServerNamespace)(
-        IWbemConstructClassObject *This,
-        LPCWSTR wszServer,
-        LPCWSTR wszNamespace);
+                     IWbemConstructClassObject *This,
+                     LPCWSTR wszServer,
+                     LPCWSTR wszNamespace);
 
     END_INTERFACE
 } IWbemConstructClassObjectVtbl;
@@ -750,17 +750,17 @@ MIDL_INTERFACE("f7ce2e11-8c90-11d1-9e7b-00c04fc324a8")
 IWbemClientTransport : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ConnectServer(
-        BSTR strAddressType,
-        DWORD dwBinaryAddressLength,
-        BYTE *abBinaryAddress,
-        BSTR strNetworkResource,
-        BSTR strUser,
-        BSTR strPassword,
-        BSTR strLocale,
-        LONG lSecurityFlags,
-        BSTR strAuthority,
-        IWbemContext *pCtx,
-        IWbemServices **ppNamespace) = 0;
+                     BSTR strAddressType,
+                     DWORD dwBinaryAddressLength,
+                     BYTE *abBinaryAddress,
+                     BSTR strNetworkResource,
+                     BSTR strUser,
+                     BSTR strPassword,
+                     BSTR strLocale,
+                     LONG lSecurityFlags,
+                     BSTR strAuthority,
+                     IWbemContext *pCtx,
+                     IWbemServices **ppNamespace) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -772,30 +772,30 @@ typedef struct IWbemClientTransportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemClientTransport *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemClientTransport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemClientTransport *This);
+                     IWbemClientTransport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemClientTransport *This);
+                     IWbemClientTransport *This);
 
     /*** IWbemClientTransport methods ***/
     HRESULT (STDMETHODCALLTYPE *ConnectServer)(
-        IWbemClientTransport *This,
-        BSTR strAddressType,
-        DWORD dwBinaryAddressLength,
-        BYTE *abBinaryAddress,
-        BSTR strNetworkResource,
-        BSTR strUser,
-        BSTR strPassword,
-        BSTR strLocale,
-        LONG lSecurityFlags,
-        BSTR strAuthority,
-        IWbemContext *pCtx,
-        IWbemServices **ppNamespace);
+                     IWbemClientTransport *This,
+                     BSTR strAddressType,
+                     DWORD dwBinaryAddressLength,
+                     BYTE *abBinaryAddress,
+                     BSTR strNetworkResource,
+                     BSTR strUser,
+                     BSTR strPassword,
+                     BSTR strLocale,
+                     LONG lSecurityFlags,
+                     BSTR strAuthority,
+                     IWbemContext *pCtx,
+                     IWbemServices **ppNamespace);
 
     END_INTERFACE
 } IWbemClientTransportVtbl;
@@ -847,35 +847,35 @@ MIDL_INTERFACE("a889c72a-fcc1-4a9e-af61-ed071333fb5b")
 IWbemClientConnectionTransport : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Open(
-        BSTR strAddressType,
-        DWORD dwBinaryAddressLength,
-        BYTE *abBinaryAddress,
-        const BSTR strObject,
-        const BSTR strUser,
-        const BSTR strPassword,
-        const BSTR strLocale,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        REFIID riid,
-        void **pInterface,
-        IWbemCallResult **pCallRes) = 0;
+                     BSTR strAddressType,
+                     DWORD dwBinaryAddressLength,
+                     BYTE *abBinaryAddress,
+                     const BSTR strObject,
+                     const BSTR strUser,
+                     const BSTR strPassword,
+                     const BSTR strLocale,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     REFIID riid,
+                     void **pInterface,
+                     IWbemCallResult **pCallRes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenAsync(
-        BSTR strAddressType,
-        DWORD dwBinaryAddressLength,
-        BYTE *abBinaryAddress,
-        const BSTR strObject,
-        const BSTR strUser,
-        const BSTR strPassword,
-        const BSTR strLocale,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        REFIID riid,
-        IWbemObjectSink *pResponseHandler) = 0;
+                     BSTR strAddressType,
+                     DWORD dwBinaryAddressLength,
+                     BYTE *abBinaryAddress,
+                     const BSTR strObject,
+                     const BSTR strUser,
+                     const BSTR strPassword,
+                     const BSTR strLocale,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     REFIID riid,
+                     IWbemObjectSink *pResponseHandler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        LONG lFlags,
-        IWbemObjectSink *pHandler) = 0;
+                     LONG lFlags,
+                     IWbemObjectSink *pHandler) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -887,50 +887,50 @@ typedef struct IWbemClientConnectionTransportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemClientConnectionTransport *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemClientConnectionTransport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemClientConnectionTransport *This);
+                     IWbemClientConnectionTransport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemClientConnectionTransport *This);
+                     IWbemClientConnectionTransport *This);
 
     /*** IWbemClientConnectionTransport methods ***/
     HRESULT (STDMETHODCALLTYPE *Open)(
-        IWbemClientConnectionTransport *This,
-        BSTR strAddressType,
-        DWORD dwBinaryAddressLength,
-        BYTE *abBinaryAddress,
-        const BSTR strObject,
-        const BSTR strUser,
-        const BSTR strPassword,
-        const BSTR strLocale,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        REFIID riid,
-        void **pInterface,
-        IWbemCallResult **pCallRes);
+                     IWbemClientConnectionTransport *This,
+                     BSTR strAddressType,
+                     DWORD dwBinaryAddressLength,
+                     BYTE *abBinaryAddress,
+                     const BSTR strObject,
+                     const BSTR strUser,
+                     const BSTR strPassword,
+                     const BSTR strLocale,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     REFIID riid,
+                     void **pInterface,
+                     IWbemCallResult **pCallRes);
 
     HRESULT (STDMETHODCALLTYPE *OpenAsync)(
-        IWbemClientConnectionTransport *This,
-        BSTR strAddressType,
-        DWORD dwBinaryAddressLength,
-        BYTE *abBinaryAddress,
-        const BSTR strObject,
-        const BSTR strUser,
-        const BSTR strPassword,
-        const BSTR strLocale,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        REFIID riid,
-        IWbemObjectSink *pResponseHandler);
+                     IWbemClientConnectionTransport *This,
+                     BSTR strAddressType,
+                     DWORD dwBinaryAddressLength,
+                     BYTE *abBinaryAddress,
+                     const BSTR strObject,
+                     const BSTR strUser,
+                     const BSTR strPassword,
+                     const BSTR strLocale,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     REFIID riid,
+                     IWbemObjectSink *pResponseHandler);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IWbemClientConnectionTransport *This,
-        LONG lFlags,
-        IWbemObjectSink *pHandler);
+                     IWbemClientConnectionTransport *This,
+                     LONG lFlags,
+                     IWbemObjectSink *pHandler);
 
     END_INTERFACE
 } IWbemClientConnectionTransportVtbl;

@@ -7,26 +7,26 @@
 /* There are 3 separate ways this file is intended to be used:
 
    1) Included from intrin.h.  In this case, all intrinsics in this file get declarations and
-      implementations.  No special #defines are needed for this case.
+                   implementations.  No special #defines are needed for this case.
 
    2) Included from the library versions of these functions (ie mingw-w64-crt\intrincs\*.c).  All
-      intrinsics in this file must also be included in the library.  In this case, only the 
-      specific functions requested will get defined, and they will not be defined as inline.  If
-      you have followed the instructions (below) for adding functions to this file, then all you 
-      need to have in the .c file is the following:
+                   intrinsics in this file must also be included in the library.  In this case, only the 
+                   specific functions requested will get defined, and they will not be defined as inline.  If
+                   you have followed the instructions (below) for adding functions to this file, then all you 
+                   need to have in the .c file is the following:
 
-      #define __INTRINSIC_ONLYSPECIAL
-      #define __INTRINSIC_SPECIAL___stosb // Causes code generation in intrin-impl.h
+                   #define __INTRINSIC_ONLYSPECIAL
+                   #define __INTRINSIC_SPECIAL___stosb // Causes code generation in intrin-impl.h
 
-      #include <intrin.h>
+                   #include <intrin.h>
 
    3) Included from various platform sdk headers.  Some platform sdk headers (such as winnt.h)
-      define a subset of intrinsics.  To avoid potential conflicts, this file is designed to
-      allow for specific subsets of functions to be defined.  This is done by defining the 
-      appropriate variable before including this file:
+                   define a subset of intrinsics.  To avoid potential conflicts, this file is designed to
+                   allow for specific subsets of functions to be defined.  This is done by defining the 
+                   appropriate variable before including this file:
 
-      #define __INTRINSIC_GROUP_WINNT
-      #include <psdk_inc/intrin-impl.h>
+                   #define __INTRINSIC_GROUP_WINNT
+                   #include <psdk_inc/intrin-impl.h>
 
    In all cases, it is acceptable to include this file multiple times in any order (ie include 
    winnt.h to get its subset, then include intrin.h to get everything, or vice versa).
@@ -98,9 +98,9 @@ __INTRINSICS_USEINLINE
 #define __buildstos(x, y, z) void x(y *Dest, y Data, size_t Count) \
 { \
    __asm__ __volatile__ ("rep stos{" z "}" \
-      : "+D" (Dest), "+c" (Count) \
-      : [Data] "a" (Data) \
-      : "memory"); \
+                   : "+D" (Dest), "+c" (Count) \
+                   : [Data] "a" (Data) \
+                   : "memory"); \
 }
 
 /* This macro is used by InterlockedAnd, InterlockedOr, InterlockedXor, InterlockedAnd64, InterlockedOr64, InterlockedXor64 */
@@ -128,9 +128,9 @@ __INTRINSICS_USEINLINE
 { \
    unsigned char old; \
    __asm__ __volatile__ (z \
-      : [old] __FLAGCONSTRAINT (old), [Base] "+m" (*Base) \
-      : [Offset] a "r" (Offset) \
-      : "memory" __FLAGCLOBBER1); \
+                   : [old] __FLAGCONSTRAINT (old), [Base] "+m" (*Base) \
+                   : [Offset] a "r" (Offset) \
+                   : "memory" __FLAGCLOBBER1); \
    return old; \
 }
 #elif defined(__arm__) || defined(_ARM_)
@@ -139,16 +139,16 @@ __INTRINSICS_USEINLINE
    unsigned int old, tmp1, tmp2; \
    unsigned int bit = 1 << Offset; \
    __asm__ __volatile__ ("dmb	sy\n\t" \
-        "1: ldrex	%[old], %[Base]\n\t" \
-        "mov	%[tmp1], %[old]\n\t" \
-        z "	%[tmp1], %[tmp1], %[bit]\n\t" \
-        "strex	%[tmp2], %[tmp1], %[Base]\n\t" \
-        "cmp	%[tmp2], #0\n\t" \
-        "bne	1b\n\t" \
-        "dmb	sy" \
-      : [old] "=&r" (old), [tmp1] "=&r" (tmp1), [tmp2] "=&r" (tmp2), [Base] "+m" (*Base) \
-      : [bit] a "r" (bit) \
-      : "memory", "cc"); \
+                     "1: ldrex	%[old], %[Base]\n\t" \
+                     "mov	%[tmp1], %[old]\n\t" \
+                     z "	%[tmp1], %[tmp1], %[bit]\n\t" \
+                     "strex	%[tmp2], %[tmp1], %[Base]\n\t" \
+                     "cmp	%[tmp2], #0\n\t" \
+                     "bne	1b\n\t" \
+                     "dmb	sy" \
+                   : [old] "=&r" (old), [tmp1] "=&r" (tmp1), [tmp2] "=&r" (tmp2), [Base] "+m" (*Base) \
+                   : [bit] a "r" (bit) \
+                   : "memory", "cc"); \
    return (old >> Offset) & 1; \
 }
 #elif defined(__aarch64__) || defined(_ARM64_)
@@ -157,16 +157,16 @@ __INTRINSICS_USEINLINE
    unsigned int old, tmp1, tmp2; \
    unsigned int bit = 1 << Offset; \
    __asm__ __volatile__ ("dmb	sy\n\t" \
-        "1: ldxr	%w[old], %[Base]\n\t" \
-        "mov	%w[tmp1], %w[old]\n\t" \
-        z "	%w[tmp1], %w[tmp1], %w[bit]\n\t" \
-        "stxr	%w[tmp2], %w[tmp1], %[Base]\n\t" \
-        "cmp	%w[tmp2], #0\n\t" \
-        "b.ne	1b\n\t" \
-        "dmb	sy" \
-      : [old] "=&r" (old), [tmp1] "=&r" (tmp1), [tmp2] "=&r" (tmp2), [Base] "+m" (*Base) \
-      : [bit] a "r" (bit) \
-      : "memory", "cc"); \
+                     "1: ldxr	%w[old], %[Base]\n\t" \
+                     "mov	%w[tmp1], %w[old]\n\t" \
+                     z "	%w[tmp1], %w[tmp1], %w[bit]\n\t" \
+                     "stxr	%w[tmp2], %w[tmp1], %[Base]\n\t" \
+                     "cmp	%w[tmp2], #0\n\t" \
+                     "b.ne	1b\n\t" \
+                     "dmb	sy" \
+                   : [old] "=&r" (old), [tmp1] "=&r" (tmp1), [tmp2] "=&r" (tmp2), [Base] "+m" (*Base) \
+                   : [bit] a "r" (bit) \
+                   : "memory", "cc"); \
    return (old >> Offset) & 1; \
 }
 #define __buildbittesti64(x, y, z, a) unsigned char x(y volatile *Base, y Offset) \
@@ -175,16 +175,16 @@ __INTRINSICS_USEINLINE
    unsigned int tmp2; \
    unsigned __int64 bit = 1ULL << Offset; \
    __asm__ __volatile__ ("dmb	sy\n\t" \
-        "1: ldxr	%[old], %[Base]\n\t" \
-        "mov	%[tmp1], %[old]\n\t" \
-        z "	%[tmp1], %[tmp1], %[bit]\n\t" \
-        "stxr	%w[tmp2], %[tmp1], %[Base]\n\t" \
-        "cmp	%w[tmp2], #0\n\t" \
-        "b.ne	1b\n\t" \
-        "dmb	sy" \
-      : [old] "=&r" (old), [tmp1] "=&r" (tmp1), [tmp2] "=&r" (tmp2), [Base] "+m" (*Base) \
-      : [bit] a "r" (bit) \
-      : "memory", "cc"); \
+                     "1: ldxr	%[old], %[Base]\n\t" \
+                     "mov	%[tmp1], %[old]\n\t" \
+                     z "	%[tmp1], %[tmp1], %[bit]\n\t" \
+                     "stxr	%w[tmp2], %[tmp1], %[Base]\n\t" \
+                     "cmp	%w[tmp2], #0\n\t" \
+                     "b.ne	1b\n\t" \
+                     "dmb	sy" \
+                   : [old] "=&r" (old), [tmp1] "=&r" (tmp1), [tmp2] "=&r" (tmp2), [Base] "+m" (*Base) \
+                   : [bit] a "r" (bit) \
+                   : "memory", "cc"); \
    return (old >> Offset) & 1; \
 }
 #endif /* defined(__x86_64__) || defined(_AMD64_) || defined(__i386__) || defined(_X86_) */
@@ -208,7 +208,7 @@ __asm__ __volatile__("xchg{b %%| }al, %0" :"=m" (Barrier) : /* no inputs */ : "e
 }
 
 /* This macro is used by __readfsbyte, __readfsword, __readfsdword
-                         __readgsbyte, __readgsword, __readgsdword, __readgsqword
+                                                                             __readgsbyte, __readgsword, __readgsdword, __readgsqword
 
 Parameters: (FunctionName, DataType, Segment)
    FunctionName: Any valid function name
@@ -220,13 +220,13 @@ Parameters: (FunctionName, DataType, Segment)
 #define __buildreadseg(x, y, z, a) y x(unsigned __LONG32 Offset) { \
     y ret; \
     __asm__ ("mov{" a " %%" z ":%[offset], %[ret] | %[ret], %%" z ":%[offset]}" \
-        : [ret] "=r" (ret) \
-        : [offset] "m" ((*(y *) (size_t) Offset))); \
+                     : [ret] "=r" (ret) \
+                     : [offset] "m" ((*(y *) (size_t) Offset))); \
     return ret; \
 }
 
 /* This macro is used by __writefsbyte, __writefsword, __writefsdword
-                         __writegsbyte, __writegsword, __writegsdword, __writegsqword
+                                                                             __writegsbyte, __writegsword, __writegsdword, __writegsqword
 
 Parameters: (FunctionName, DataType, Segment)
    FunctionName: Any valid function name
@@ -237,8 +237,8 @@ Parameters: (FunctionName, DataType, Segment)
 
 #define __buildwriteseg(x, y, z, a) void x(unsigned __LONG32 Offset, y Data) { \
     __asm__ ("mov{" a " %[Data], %%" z ":%[offset] | %%" z ":%[offset], %[Data]}" \
-        : [offset] "=m" ((*(y *) (size_t) Offset)) \
-        : [Data] "ri" (Data)); \
+                     : [offset] "=m" ((*(y *) (size_t) Offset)) \
+                     : [Data] "ri" (Data)); \
 }
 
 /* This macro is used by _BitScanForward, _BitScanForward64, _BitScanReverse _BitScanReverse64
@@ -255,9 +255,9 @@ Parameters: (FunctionName, DataType, Segment)
 { \
    y n; \
    __asm__ (z \
-      : [Index] "=r" (n) \
-      : [Mask] "r" (Mask) \
-      : "cc"); \
+                   : [Index] "=r" (n) \
+                   : [Mask] "r" (Mask) \
+                   : "cc"); \
    *Index = n; \
    return Mask!=0; \
 }
@@ -267,8 +267,8 @@ Parameters: (FunctionName, DataType, Segment)
    y n; \
    unsigned char old; \
    __asm__ (z \
-      : "=@ccnz" (old), [Index] "=r" (n) \
-      : [Mask] "r" (Mask)); \
+                   : "=@ccnz" (old), [Index] "=r" (n) \
+                   : [Mask] "r" (Mask)); \
    *Index = n; \
    return old; \
 }
@@ -287,9 +287,9 @@ Parameters: (FunctionName, DataType, OffsetConstraint)
 { \
    unsigned char old; \
    __asm__ ("bt{" z " %[Offset],%[Base] | %[Base],%[Offset]}" __FLAGSET \
-      : [old] __FLAGCONSTRAINT (old) \
-      : [Offset] a "r" (Offset), [Base] "rm" (*Base) \
-      : __FLAGCLOBBER2); \
+                   : [old] __FLAGCONSTRAINT (old) \
+                   : [Offset] a "r" (Offset), [Base] "rm" (*Base) \
+                   : __FLAGCLOBBER2); \
    return old; \
 }
 
@@ -307,9 +307,9 @@ Parameters: (FunctionName, DataType, Statement, OffsetConstraint)
 { \
    unsigned char old; \
    __asm__ (z "{" b " %[Offset],%[Base] | %[Base],%[Offset]}" __FLAGSET \
-      : [old] __FLAGCONSTRAINT (old), [Base] "+rm" (*Base) \
-      : [Offset] a "r" (Offset) \
-      : __FLAGCLOBBER2); \
+                   : [old] __FLAGCONSTRAINT (old), [Base] "+rm" (*Base) \
+                   : [Offset] a "r" (Offset) \
+                   : __FLAGCLOBBER2); \
    return old; \
 }
 
@@ -322,10 +322,10 @@ Parameters: (FunctionName, DataType)
    */
 #define __build_inport(x, y, z) y x(unsigned short Port) { \
    y value; \
-      __asm__ __volatile__ ("in{" z " %w[port],%[value]| %[value],%w[port]}" \
-          : [value] "=a" (value) \
-          : [port] "Nd" (Port)); \
-      return value; \
+                   __asm__ __volatile__ ("in{" z " %w[port],%[value]| %[value],%w[port]}" \
+                       : [value] "=a" (value) \
+                       : [port] "Nd" (Port)); \
+                   return value; \
    }
 
 /* This macro is used by __outbyte, __outword, __outdword
@@ -336,9 +336,9 @@ Parameters: (FunctionName, DataType)
    Type: b, w, l
    */
 #define __build_outport(x, y, z) void x(unsigned short Port, y Data) { \
-      __asm__ __volatile__ ("out{" z " %[data],%w[port]| %w[port],%[data]}" \
-          : \
-          : [data] "a" (Data), [port] "Nd" (Port)); \
+                   __asm__ __volatile__ ("out{" z " %[data],%w[port]| %w[port],%[data]}" \
+                       : \
+                       : [data] "a" (Data), [port] "Nd" (Port)); \
    }
 
 /* This macro is used by __inbytestring, __inwordstring, __indwordstring
@@ -351,9 +351,9 @@ Parameters: (FunctionName, DataType, InstructionSizeAtt, InstructionSizeIntel)
    */
 #define __build_inportstring(x, y, z, a) void x(unsigned short Port, y *Buffer, unsigned __LONG32 Count) { \
    __asm__ __volatile__ ("cld ; rep ins{" z "|" a "}" \
-      : "=D" (Buffer), "=c" (Count) \
-      : "d"(Port), "0"(Buffer), "1" (Count) \
-      : "memory"); \
+                   : "=D" (Buffer), "=c" (Count) \
+                   : "d"(Port), "0"(Buffer), "1" (Count) \
+                   : "memory"); \
    }
 
 /* This macro is used by __outbytestring, __outwordstring, __outdwordstring
@@ -367,9 +367,9 @@ Parameters: (FunctionName, DataType, InstructionSizeAtt, InstructionSizeIntel)
    */
 #define __build_outportstring(x, y, z, a) void x(unsigned short Port, y *Buffer, unsigned __LONG32 Count) { \
    __asm__ __volatile__ ("cld ; rep outs{" z "|" a "}" \
-      : "=S" (Buffer), "=c" (Count) \
-      : "d"(Port), "0"(Buffer), "1" (Count) \
-      : "memory"); \
+                   : "=S" (Buffer), "=c" (Count) \
+                   : "d"(Port), "0"(Buffer), "1" (Count) \
+                   : "memory"); \
   }
 
 /* This macro is used by __readcr0, __readcr2, __readcr3, __readcr4, __readcr8
@@ -381,10 +381,10 @@ Parameters: (FunctionName, DataType, RegisterNumber)
 
    */
 #define __build_readcr(x, y, z) y x(void) { \
-      y value; \
-      __asm__ __volatile__ ("mov {%%cr" z ", %[value] | %[value], %%cr" z "}" \
-          : [value] "=q" (value)); \
-      return value; \
+                   y value; \
+                   __asm__ __volatile__ ("mov {%%cr" z ", %[value] | %[value], %%cr" z "}" \
+                       : [value] "=q" (value)); \
+                   return value; \
   }
 
 /* This macro is used by __writecr0, __writecr2, __writecr3, __writecr4, __writecr8
@@ -397,9 +397,9 @@ Parameters: (FunctionName, DataType, RegisterNumber)
    */
 #define __build_writecr(x, y, z) void x(y Data) { \
    __asm__ __volatile__ ("mov {%[Data], %%cr" z "|%%cr" z ", %[Data]}" \
-       : \
-       : [Data] "q" (Data) \
-       : "memory"); \
+                    : \
+                    : [Data] "q" (Data) \
+                    : "memory"); \
    }
 
 /* This macro is used by __movsb, __movsd, __movsq, __movsw
@@ -414,9 +414,9 @@ Parameters: (FunctionName, DataType, RegisterNumber)
 { \
   __asm__ __volatile__ ( \
     "rep movs" z \
-       : "=D" (Destination), "=S" (Source), "=c" (Count) \
-       : "0" (Destination), "1" (Source), "2" (Count) \
-       : "memory"); \
+                    : "=D" (Destination), "=S" (Source), "=c" (Count) \
+                    : "0" (Destination), "1" (Source), "2" (Count) \
+                    : "memory"); \
 }
 
 #endif /* _INTRIN_MAC_ */
@@ -434,9 +434,9 @@ supports ReadWriteBarrier, map all 3 to do the same. */
 /* The logic for this macro is:
    if the function is not yet defined AND
    (
-       (if we are not just defining special OR 
-           (we are defining special AND this is one of the ones we are defining)
-       )
+                    (if we are not just defining special OR 
+                        (we are defining special AND this is one of the ones we are defining)
+                    )
    )
 */
 #define __INTRINSIC_PROLOG(name) (!defined(__INTRINSIC_DEFINED_ ## name)) && ((!defined (__INTRINSIC_ONLYSPECIAL)) || (defined (__INTRINSIC_ONLYSPECIAL) && defined(__INTRINSIC_SPECIAL_ ## name)))
@@ -1013,9 +1013,9 @@ unsigned __int64 __shiftleft128 (unsigned __int64  LowPart, unsigned __int64 Hig
    unsigned __int64 ret;
 
    __asm__ ("shld {%[Shift],%[LowPart],%[HighPart]|%[HighPart], %[LowPart], %[Shift]}" 
-      : [ret] "=r" (ret)
-      : [LowPart] "r" (LowPart), [HighPart] "0" (HighPart), [Shift] "Jc" (Shift)
-      : "cc");
+                   : [ret] "=r" (ret)
+                   : [LowPart] "r" (LowPart), [HighPart] "0" (HighPart), [Shift] "Jc" (Shift)
+                   : "cc");
 
    return ret;
 }
@@ -1032,9 +1032,9 @@ unsigned __int64 __shiftright128 (unsigned __int64  LowPart, unsigned __int64 Hi
    unsigned __int64 ret;
 
    __asm__ ("shrd {%[Shift],%[HighPart],%[LowPart]|%[LowPart], %[HighPart], %[Shift]}" 
-      : [ret] "=r" (ret)
-      : [LowPart] "0" (LowPart), [HighPart] "r" (HighPart), [Shift] "Jc" (Shift)
-      : "cc");
+                   : [ret] "=r" (ret)
+                   : [LowPart] "0" (LowPart), [HighPart] "r" (HighPart), [Shift] "Jc" (Shift)
+                   : "cc");
 
    return ret;
 }
@@ -1109,7 +1109,7 @@ __MINGW_EXTENSION __INTRINSICS_USEINLINE
 unsigned char _BitScanForward(unsigned __LONG32 *Index, unsigned __LONG32 Mask)
 {
     if (Mask == 0)
-        return 0;
+                     return 0;
     *Index = __builtin_ctz(Mask);
     return 1;
 }
@@ -1124,7 +1124,7 @@ __MINGW_EXTENSION __INTRINSICS_USEINLINE
 unsigned char _BitScanReverse(unsigned __LONG32 *Index, unsigned __LONG32 Mask)
 {
     if (Mask == 0)
-        return 0;
+                     return 0;
     *Index = 31 - __builtin_clz(Mask);
     return 1;
 }
@@ -1322,7 +1322,7 @@ __MINGW_EXTENSION __INTRINSICS_USEINLINE
 unsigned char _BitScanForward(unsigned __LONG32 *Index, unsigned __LONG32 Mask)
 {
     if (Mask == 0)
-        return 0;
+                     return 0;
     *Index = __builtin_ctz(Mask);
     return 1;
 }
@@ -1337,7 +1337,7 @@ __MINGW_EXTENSION __INTRINSICS_USEINLINE
 unsigned char _BitScanReverse(unsigned __LONG32 *Index, unsigned __LONG32 Mask)
 {
     if (Mask == 0)
-        return 0;
+                     return 0;
     *Index = 31 - __builtin_clz(Mask);
     return 1;
 }
@@ -1352,7 +1352,7 @@ __MINGW_EXTENSION __INTRINSICS_USEINLINE
 unsigned char _BitScanForward64(unsigned __LONG32 *Index, unsigned __int64 Mask)
 {
     if (Mask == 0)
-        return 0;
+                     return 0;
     *Index = __builtin_ctzll(Mask);
     return 1;
 }
@@ -1367,7 +1367,7 @@ __MINGW_EXTENSION __INTRINSICS_USEINLINE
 unsigned char _BitScanReverse64(unsigned __LONG32 *Index, unsigned __int64 Mask)
 {
     if (Mask == 0)
-        return 0;
+                     return 0;
     *Index = 63 - __builtin_clzll(Mask);
     return 1;
 }
@@ -1850,9 +1850,9 @@ void __cpuid(int CPUInfo[4], int InfoType);
 __INTRINSICS_USEINLINE
 void __cpuid(int CPUInfo[4], int InfoType) {
    __asm__ __volatile__ (
-      "cpuid"
-      : "=a" (CPUInfo [0]), "=b" (CPUInfo [1]), "=c" (CPUInfo [2]), "=d" (CPUInfo [3])
-      : "a" (InfoType));
+                   "cpuid"
+                   : "=a" (CPUInfo [0]), "=b" (CPUInfo [1]), "=c" (CPUInfo [2]), "=d" (CPUInfo [3])
+                   : "a" (InfoType));
 }
 #endif
 #define __INTRINSIC_DEFINED___cpuid
@@ -1864,9 +1864,9 @@ void __cpuidex(int CPUInfo[4], int, int);
 __INTRINSICS_USEINLINE
 void __cpuidex(int CPUInfo[4], int function_id, int subfunction_id) {
    __asm__ __volatile__ (
-      "cpuid"
-      : "=a" (CPUInfo [0]), "=b" (CPUInfo [1]), "=c" (CPUInfo [2]), "=d" (CPUInfo [3])
-      : "a" (function_id), "c" (subfunction_id));
+                   "cpuid"
+                   : "=a" (CPUInfo [0]), "=b" (CPUInfo [1]), "=c" (CPUInfo [2]), "=d" (CPUInfo [3])
+                   : "a" (function_id), "c" (subfunction_id));
 }
 #endif
 #define __INTRINSIC_DEFINED___cpuidex
@@ -1885,9 +1885,9 @@ unsigned __int64 __readmsr(unsigned __LONG32 msr)
 #endif /* defined(__x86_64__) || defined(_AMD64_) */
 
    __asm__ __volatile__(
-      "rdmsr"
-      : "=a" (val1), "=d" (val2)
-      : "c" (msr));
+                   "rdmsr"
+                   : "=a" (val1), "=d" (val2)
+                   : "c" (msr));
 
    return ((unsigned __int64) val1) | (((unsigned __int64)val2) << 32);
 }
@@ -1903,9 +1903,9 @@ void __writemsr(unsigned __LONG32 msr, unsigned __int64 Value)
 {
    unsigned __LONG32 val1 = Value, val2 = Value >> 32;
    __asm__ __volatile__ (
-      "wrmsr"
-      :
-      : "c" (msr), "a" (val1), "d" (val2));
+                   "wrmsr"
+                   :
+                   : "c" (msr), "a" (val1), "d" (val2));
 }
 #endif
 #define __INTRINSIC_DEFINED___writemsr
@@ -1955,9 +1955,9 @@ unsigned __int64 _xgetbv(unsigned int index)
 #endif /* defined(__x86_64__) || defined(_AMD64_) */
 
    __asm__ __volatile__(
-      "xgetbv"
-      : "=a" (val1), "=d" (val2)
-      : "c" (index));
+                   "xgetbv"
+                   : "=a" (val1), "=d" (val2)
+                   : "c" (index));
 
    return (((unsigned __int64)val2) << 32) | val1;
 }

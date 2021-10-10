@@ -20,7 +20,7 @@ enum nfnetlink_groups {
 	NFNLGRP_CONNTRACK_EXP_DESTROY,
 #define NFNLGRP_CONNTRACK_EXP_DESTROY	NFNLGRP_CONNTRACK_EXP_DESTROY
 	NFNLGRP_NFTABLES,
-#define NFNLGRP_NFTABLES                NFNLGRP_NFTABLES
+#define NFNLGRP_NFTABLES                                          NFNLGRP_NFTABLES
 	NFNLGRP_ACCT_QUOTA,
 #define NFNLGRP_ACCT_QUOTA		NFNLGRP_ACCT_QUOTA
 	NFNLGRP_NFTRACE,
@@ -72,9 +72,9 @@ struct nfgenmsg {
  * @NFNL_BATCH_GENID: generation ID for this changeset (NLA_U32)
  */
 enum nfnl_batch_attributes {
-        NFNL_BATCH_UNSPEC,
-        NFNL_BATCH_GENID,
-        __NFNL_BATCH_MAX
+                     NFNL_BATCH_UNSPEC,
+                     NFNL_BATCH_GENID,
+                     __NFNL_BATCH_MAX
 };
 #define NFNL_BATCH_MAX			(__NFNL_BATCH_MAX - 1)
 

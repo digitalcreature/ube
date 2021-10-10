@@ -11,19 +11,19 @@ extern "C" {
 #endif
 
 #if (_WIN32_WINNT >= 0x0600)
-#define DAV_AUTHN_SCHEME_BASIC      0x00000001
-#define DAV_AUTHN_SCHEME_NTLM       0x00000002
+#define DAV_AUTHN_SCHEME_BASIC                   0x00000001
+#define DAV_AUTHN_SCHEME_NTLM                    0x00000002
 #define DAV_AUTHN_SCHEME_PASSPORT   0x00000004
 #define DAV_AUTHN_SCHEME_DIGEST     0x00000008
 #define DAV_AUTHN_SCHEME_NEGOTIATE  0x00000010
-#define DAV_AUTHN_SCHEME_CERT       0x00010000
-#define DAV_AUTHN_SCHEME_FBA        0x00100000
+#define DAV_AUTHN_SCHEME_CERT                    0x00010000
+#define DAV_AUTHN_SCHEME_FBA                     0x00100000
 
 #define OPAQUE_HANDLE DWORD
 
 typedef enum AUTHNEXTSTEP {
   DefaultBehavior   = 0,
-  RetryRequest      = 1,
+  RetryRequest                   = 1,
   CancelRequest     = 2 
 } AUTHNEXTSTEP;
 
@@ -43,8 +43,8 @@ typedef struct _DAV_CALLBACK_AUTH_UNP {
 typedef struct _DAV_CALLBACK_CRED {
   DAV_CALLBACK_AUTH_BLOB AuthBlob;
   DAV_CALLBACK_AUTH_UNP  UNPBlob;
-  WINBOOL                bAuthBlobValid;
-  WINBOOL                bSave;
+  WINBOOL                                          bAuthBlobValid;
+  WINBOOL                                          bSave;
 }DAV_CALLBACK_CRED, *PDAV_CALLBACK_CRED;
 
 typedef DWORD (*PFNDAVAUTHCALLBACK_FREECRED)(

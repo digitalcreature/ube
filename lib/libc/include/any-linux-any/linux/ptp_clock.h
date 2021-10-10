@@ -50,7 +50,7 @@ struct ptp_clock_caps {
 	int n_alarm;   /* Number of programmable alarms. */
 	int n_ext_ts;  /* Number of external time stamp channels. */
 	int n_per_out; /* Number of programmable periodic signals. */
-	int pps;       /* Whether the clock supports a PPS callback. */
+	int pps;                    /* Whether the clock supports a PPS callback. */
 	int n_pins;    /* Number of input/output pins. */
 	/* Whether the clock supports precise system-device cross timestamps */
 	int cross_timestamping;
@@ -66,9 +66,9 @@ struct ptp_extts_request {
 struct ptp_perout_request {
 	struct ptp_clock_time start;  /* Absolute start time. */
 	struct ptp_clock_time period; /* Desired period, zero means disable. */
-	unsigned int index;           /* Which channel to configure. */
-	unsigned int flags;           /* Reserved for future use. */
-	unsigned int rsv[4];          /* Reserved for future use. */
+	unsigned int index;                        /* Which channel to configure. */
+	unsigned int flags;                        /* Reserved for future use. */
+	unsigned int rsv[4];                       /* Reserved for future use. */
 };
 
 #define PTP_MAX_SAMPLES 25 /* Maximum allowed offset measurement samples. */
@@ -139,8 +139,8 @@ struct ptp_pin_desc {
 
 struct ptp_extts_event {
 	struct ptp_clock_time t; /* Time event occured. */
-	unsigned int index;      /* Which channel produced the event. */
-	unsigned int flags;      /* Reserved for future use. */
+	unsigned int index;                   /* Which channel produced the event. */
+	unsigned int flags;                   /* Reserved for future use. */
 	unsigned int rsv[2];     /* Reserved for future use. */
 };
 

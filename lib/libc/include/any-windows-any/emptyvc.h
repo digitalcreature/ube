@@ -80,11 +80,11 @@ extern "C"{
 #else
   typedef struct IEmptyVolumeCacheCallBackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEmptyVolumeCacheCallBack *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEmptyVolumeCacheCallBack *This);
-      ULONG (WINAPI *Release)(IEmptyVolumeCacheCallBack *This);
-      HRESULT (WINAPI *ScanProgress)(IEmptyVolumeCacheCallBack *This,DWORDLONG dwlSpaceUsed,DWORD dwFlags,LPCWSTR pcwszStatus);
-      HRESULT (WINAPI *PurgeProgress)(IEmptyVolumeCacheCallBack *This,DWORDLONG dwlSpaceFreed,DWORDLONG dwlSpaceToFree,DWORD dwFlags,LPCWSTR pcwszStatus);
+                   HRESULT (WINAPI *QueryInterface)(IEmptyVolumeCacheCallBack *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEmptyVolumeCacheCallBack *This);
+                   ULONG (WINAPI *Release)(IEmptyVolumeCacheCallBack *This);
+                   HRESULT (WINAPI *ScanProgress)(IEmptyVolumeCacheCallBack *This,DWORDLONG dwlSpaceUsed,DWORD dwFlags,LPCWSTR pcwszStatus);
+                   HRESULT (WINAPI *PurgeProgress)(IEmptyVolumeCacheCallBack *This,DWORDLONG dwlSpaceFreed,DWORDLONG dwlSpaceToFree,DWORD dwFlags,LPCWSTR pcwszStatus);
     END_INTERFACE
   } IEmptyVolumeCacheCallBackVtbl;
   struct IEmptyVolumeCacheCallBack {
@@ -125,14 +125,14 @@ extern "C"{
 #else
   typedef struct IEmptyVolumeCacheVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEmptyVolumeCache *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEmptyVolumeCache *This);
-      ULONG (WINAPI *Release)(IEmptyVolumeCache *This);
-      HRESULT (WINAPI *Initialize)(IEmptyVolumeCache *This,HKEY hkRegKey,LPCWSTR pcwszVolume,LPWSTR *ppwszDisplayName,LPWSTR *ppwszDescription,DWORD *pdwFlags);
-      HRESULT (WINAPI *GetSpaceUsed)(IEmptyVolumeCache *This,DWORDLONG *pdwlSpaceUsed,IEmptyVolumeCacheCallBack *picb);
-      HRESULT (WINAPI *Purge)(IEmptyVolumeCache *This,DWORDLONG dwlSpaceToFree,IEmptyVolumeCacheCallBack *picb);
-      HRESULT (WINAPI *ShowProperties)(IEmptyVolumeCache *This,HWND hwnd);
-      HRESULT (WINAPI *Deactivate)(IEmptyVolumeCache *This,DWORD *pdwFlags);
+                   HRESULT (WINAPI *QueryInterface)(IEmptyVolumeCache *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEmptyVolumeCache *This);
+                   ULONG (WINAPI *Release)(IEmptyVolumeCache *This);
+                   HRESULT (WINAPI *Initialize)(IEmptyVolumeCache *This,HKEY hkRegKey,LPCWSTR pcwszVolume,LPWSTR *ppwszDisplayName,LPWSTR *ppwszDescription,DWORD *pdwFlags);
+                   HRESULT (WINAPI *GetSpaceUsed)(IEmptyVolumeCache *This,DWORDLONG *pdwlSpaceUsed,IEmptyVolumeCacheCallBack *picb);
+                   HRESULT (WINAPI *Purge)(IEmptyVolumeCache *This,DWORDLONG dwlSpaceToFree,IEmptyVolumeCacheCallBack *picb);
+                   HRESULT (WINAPI *ShowProperties)(IEmptyVolumeCache *This,HWND hwnd);
+                   HRESULT (WINAPI *Deactivate)(IEmptyVolumeCache *This,DWORD *pdwFlags);
     END_INTERFACE
   } IEmptyVolumeCacheVtbl;
   struct IEmptyVolumeCache {
@@ -178,15 +178,15 @@ extern "C"{
 #else
   typedef struct IEmptyVolumeCache2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEmptyVolumeCache2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEmptyVolumeCache2 *This);
-      ULONG (WINAPI *Release)(IEmptyVolumeCache2 *This);
-      HRESULT (WINAPI *Initialize)(IEmptyVolumeCache2 *This,HKEY hkRegKey,LPCWSTR pcwszVolume,LPWSTR *ppwszDisplayName,LPWSTR *ppwszDescription,DWORD *pdwFlags);
-      HRESULT (WINAPI *GetSpaceUsed)(IEmptyVolumeCache2 *This,DWORDLONG *pdwlSpaceUsed,IEmptyVolumeCacheCallBack *picb);
-      HRESULT (WINAPI *Purge)(IEmptyVolumeCache2 *This,DWORDLONG dwlSpaceToFree,IEmptyVolumeCacheCallBack *picb);
-      HRESULT (WINAPI *ShowProperties)(IEmptyVolumeCache2 *This,HWND hwnd);
-      HRESULT (WINAPI *Deactivate)(IEmptyVolumeCache2 *This,DWORD *pdwFlags);
-      HRESULT (WINAPI *InitializeEx)(IEmptyVolumeCache2 *This,HKEY hkRegKey,LPCWSTR pcwszVolume,LPCWSTR pcwszKeyName,LPWSTR *ppwszDisplayName,LPWSTR *ppwszDescription,LPWSTR *ppwszBtnText,DWORD *pdwFlags);
+                   HRESULT (WINAPI *QueryInterface)(IEmptyVolumeCache2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEmptyVolumeCache2 *This);
+                   ULONG (WINAPI *Release)(IEmptyVolumeCache2 *This);
+                   HRESULT (WINAPI *Initialize)(IEmptyVolumeCache2 *This,HKEY hkRegKey,LPCWSTR pcwszVolume,LPWSTR *ppwszDisplayName,LPWSTR *ppwszDescription,DWORD *pdwFlags);
+                   HRESULT (WINAPI *GetSpaceUsed)(IEmptyVolumeCache2 *This,DWORDLONG *pdwlSpaceUsed,IEmptyVolumeCacheCallBack *picb);
+                   HRESULT (WINAPI *Purge)(IEmptyVolumeCache2 *This,DWORDLONG dwlSpaceToFree,IEmptyVolumeCacheCallBack *picb);
+                   HRESULT (WINAPI *ShowProperties)(IEmptyVolumeCache2 *This,HWND hwnd);
+                   HRESULT (WINAPI *Deactivate)(IEmptyVolumeCache2 *This,DWORD *pdwFlags);
+                   HRESULT (WINAPI *InitializeEx)(IEmptyVolumeCache2 *This,HKEY hkRegKey,LPCWSTR pcwszVolume,LPCWSTR pcwszKeyName,LPWSTR *ppwszDisplayName,LPWSTR *ppwszDescription,LPWSTR *ppwszBtnText,DWORD *pdwFlags);
     END_INTERFACE
   } IEmptyVolumeCache2Vtbl;
   struct IEmptyVolumeCache2 {

@@ -15,5 +15,4 @@ currently only windows is supported. linux is the next on the target list
 3. `$ zig build run`
 
 ## contributing
-
 this is really more of a personal project atm, but if you have ideas open an issue, submit a pr or contact me! you can often find me on the zig discord server.

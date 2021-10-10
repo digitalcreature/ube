@@ -116,14 +116,14 @@ DWORD WINAPI EapPeerGetResult(
 );
 
 typedef struct tagEapPeerMethodResult {
-  WINBOOL        fIsSuccess;
-  DWORD          dwFailureReasonCode;
-  WINBOOL        fSaveConnectionData;
-  DWORD          dwSizeOfConnectionData;
-  BYTE *         pConnectionData;
-  WINBOOL        fSaveUserData;
-  DWORD          dwSizeofUserData;
-  BYTE *         pUserData;
+  WINBOOL                     fIsSuccess;
+  DWORD                       dwFailureReasonCode;
+  WINBOOL                     fSaveConnectionData;
+  DWORD                       dwSizeOfConnectionData;
+  BYTE *                      pConnectionData;
+  WINBOOL                     fSaveUserData;
+  DWORD                       dwSizeofUserData;
+  BYTE *                      pUserData;
   EAP_ATTRIBUTES *pAttribArray;
   EAP_ERROR *    pEapError;
 } EapPeerMethodResult;

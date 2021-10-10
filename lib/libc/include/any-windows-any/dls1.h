@@ -46,10 +46,10 @@
  * Flags
  */
 
-#define CONN_DST_NONE             0x000
-#define CONN_DST_ATTENUATION      0x001
-#define CONN_DST_PITCH            0x003
-#define CONN_DST_PAN              0x004
+#define CONN_DST_NONE                                       0x000
+#define CONN_DST_ATTENUATION                   0x001
+#define CONN_DST_PITCH                                      0x003
+#define CONN_DST_PAN                                        0x004
 
 #define CONN_DST_LFO_FREQUENCY    0x104
 #define CONN_DST_LFO_STARTDELAY   0x105
@@ -64,21 +64,21 @@
 #define CONN_DST_EG2_RELEASETIME  0x30D
 #define CONN_DST_EG2_SUSTAINLEVEL 0x30E
 
-#define CONN_SRC_NONE             0x000
-#define CONN_SRC_LFO              0x001
+#define CONN_SRC_NONE                                       0x000
+#define CONN_SRC_LFO                                        0x001
 #define CONN_SRC_KEYONVELOCITY    0x002
-#define CONN_SRC_KEYNUMBER        0x003
-#define CONN_SRC_EG1              0x004
-#define CONN_SRC_EG2              0x005
-#define CONN_SRC_PITCHWHEEL       0x006
+#define CONN_SRC_KEYNUMBER                     0x003
+#define CONN_SRC_EG1                                        0x004
+#define CONN_SRC_EG2                                        0x005
+#define CONN_SRC_PITCHWHEEL                    0x006
 
-#define CONN_SRC_CC1              0x081
-#define CONN_SRC_CC7              0x087
-#define CONN_SRC_CC10             0x08A
-#define CONN_SRC_CC11             0x08B
+#define CONN_SRC_CC1                                        0x081
+#define CONN_SRC_CC7                                        0x087
+#define CONN_SRC_CC10                                       0x08A
+#define CONN_SRC_CC11                                       0x08B
 
-#define CONN_TRN_NONE             0x000
-#define CONN_TRN_CONCAVE          0x001
+#define CONN_TRN_NONE                                       0x000
+#define CONN_TRN_CONCAVE                       0x001
 
 #define F_INSTRUMENT_DRUMS 0x80000000
 
@@ -144,7 +144,7 @@ typedef struct _RGNHEADER {
 } RGNHEADER, *LPRGNHEADER;
 
 typedef struct _INSTHEADER {
-	ULONG      cRegions;
+	ULONG                   cRegions;
 	MIDILOCALE Locale;
 } INSTHEADER, *LPINSTHEADER;
 

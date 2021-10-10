@@ -1676,7 +1676,7 @@ extern "C" {
     WORD dmDriverExtra;
     DWORD dmFields;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	short dmOrientation;
 	short dmPaperSize;
 	short dmPaperLength;
@@ -1685,12 +1685,12 @@ extern "C" {
 	short dmCopies;
 	short dmDefaultSource;
 	short dmPrintQuality;
-      };
-      struct {
+                   };
+                   struct {
 	POINTL dmPosition;
 	DWORD dmDisplayOrientation;
 	DWORD dmDisplayFixedOutput;
-      };
+                   };
     };
     short dmColor;
     short dmDuplex;
@@ -1703,8 +1703,8 @@ extern "C" {
     DWORD dmPelsWidth;
     DWORD dmPelsHeight;
     __C89_NAMELESS union {
-      DWORD dmDisplayFlags;
-      DWORD dmNup;
+                   DWORD dmDisplayFlags;
+                   DWORD dmNup;
     };
     DWORD dmDisplayFrequency;
     DWORD dmICMMethod;
@@ -1725,7 +1725,7 @@ extern "C" {
     WORD dmDriverExtra;
     DWORD dmFields;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	short dmOrientation;
 	short dmPaperSize;
 	short dmPaperLength;
@@ -1734,12 +1734,12 @@ extern "C" {
 	short dmCopies;
 	short dmDefaultSource;
 	short dmPrintQuality;
-      };
-      __C89_NAMELESS struct {
+                   };
+                   __C89_NAMELESS struct {
 	POINTL dmPosition;
 	DWORD dmDisplayOrientation;
 	DWORD dmDisplayFixedOutput;
-      };
+                   };
     };
     short dmColor;
     short dmDuplex;
@@ -1752,8 +1752,8 @@ extern "C" {
     DWORD dmPelsWidth;
     DWORD dmPelsHeight;
     __C89_NAMELESS union {
-      DWORD dmDisplayFlags;
-      DWORD dmNup;
+                   DWORD dmDisplayFlags;
+                   DWORD dmNup;
     };
     DWORD dmDisplayFrequency;
     DWORD dmICMMethod;
@@ -2117,12 +2117,12 @@ extern "C" {
     DISPLAYCONFIG_2DREGION activeSize;
     DISPLAYCONFIG_2DREGION totalSize;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
-        UINT32 videoStandard : 16;
-        UINT32 vSyncFreqDivider : 6;
-        UINT32 reserved : 10;
-      } AdditionalSignalInfo;
-      UINT32 videoStandard;
+                   __C89_NAMELESS struct {
+                     UINT32 videoStandard : 16;
+                     UINT32 vSyncFreqDivider : 6;
+                     UINT32 reserved : 10;
+                   } AdditionalSignalInfo;
+                   UINT32 videoStandard;
     };
     DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
   } DISPLAYCONFIG_VIDEO_SIGNAL_INFO;
@@ -2183,8 +2183,8 @@ extern "C" {
     UINT32 id;
     LUID adapterId;
     __C89_NAMELESS union {
-      DISPLAYCONFIG_TARGET_MODE targetMode;
-      DISPLAYCONFIG_SOURCE_MODE sourceMode;
+                   DISPLAYCONFIG_TARGET_MODE targetMode;
+                   DISPLAYCONFIG_SOURCE_MODE sourceMode;
     };
   } DISPLAYCONFIG_MODE_INFO;
 
@@ -2198,11 +2198,11 @@ extern "C" {
     LUID adapterId;
     UINT32 id;
     __C89_NAMELESS union {
-      UINT32 modeInfoIdx;
-      __C89_NAMELESS struct {
-        UINT32 cloneGroupId : 16;
-        UINT32 sourceModeInfoIdx : 16;
-      };
+                   UINT32 modeInfoIdx;
+                   __C89_NAMELESS struct {
+                     UINT32 cloneGroupId : 16;
+                     UINT32 sourceModeInfoIdx : 16;
+                   };
     };
     UINT32 statusFlags;
   } DISPLAYCONFIG_PATH_SOURCE_INFO;
@@ -2213,11 +2213,11 @@ extern "C" {
     LUID adapterId;
     UINT32 id;
     __C89_NAMELESS union {
-      UINT32 modeInfoIdx;
-      __C89_NAMELESS struct {
-        UINT32 desktopModeInfoIdx : 16;
-        UINT32 targetModeInfoIdx  : 16;
-      };
+                   UINT32 modeInfoIdx;
+                   __C89_NAMELESS struct {
+                     UINT32 desktopModeInfoIdx : 16;
+                     UINT32 targetModeInfoIdx  : 16;
+                   };
     };
     DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
     DISPLAYCONFIG_ROTATION rotation;
@@ -2286,13 +2286,13 @@ extern "C" {
 
   typedef struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS {
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
-        UINT32 friendlyNameFromEdid : 1;
-        UINT32 friendlyNameForced : 1;
-        UINT32 edidIdsValid : 1;
-        UINT32 reserved : 29;
-      };
-      UINT32 value;
+                   __C89_NAMELESS struct {
+                     UINT32 friendlyNameFromEdid : 1;
+                     UINT32 friendlyNameForced : 1;
+                     UINT32 edidIdsValid : 1;
+                     UINT32 reserved : 29;
+                   };
+                   UINT32 value;
     };
   } DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS;
 
@@ -2327,22 +2327,22 @@ extern "C" {
   typedef struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE {
     DISPLAYCONFIG_DEVICE_INFO_HEADER header;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
-        UINT32 bootPersistenceOn : 1;
-        UINT32 reserved : 31;
-      };
-      UINT32 value;
+                   __C89_NAMELESS struct {
+                     UINT32 bootPersistenceOn : 1;
+                     UINT32 reserved : 31;
+                   };
+                   UINT32 value;
     };
   } DISPLAYCONFIG_SET_TARGET_PERSISTENCE;
 
   typedef struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION {
     DISPLAYCONFIG_DEVICE_INFO_HEADER header;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
-        UINT32 disableMonitorVirtualResolution : 1;
-        UINT32 reserved : 31;
-      };
-      UINT32 value;
+                   __C89_NAMELESS struct {
+                     UINT32 disableMonitorVirtualResolution : 1;
+                     UINT32 reserved : 31;
+                   };
+                   UINT32 value;
     };
   } DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION;
 
@@ -2358,14 +2358,14 @@ extern "C" {
   typedef struct _DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO {
     DISPLAYCONFIG_DEVICE_INFO_HEADER header;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
-        UINT32 advancedColorSupported :1;
-        UINT32 advancedColorEnabled :1;
-        UINT32 wideColorEnforced :1;
-        UINT32 advancedColorForceDisabled :1;
-        UINT32 reserved :28;
-      };
-      UINT32 value;
+                   __C89_NAMELESS struct {
+                     UINT32 advancedColorSupported :1;
+                     UINT32 advancedColorEnabled :1;
+                     UINT32 wideColorEnforced :1;
+                     UINT32 advancedColorForceDisabled :1;
+                     UINT32 reserved :28;
+                   };
+                   UINT32 value;
     };
     DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
     UINT32 bitsPerColorChannel;
@@ -2374,11 +2374,11 @@ extern "C" {
   typedef struct _DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE {
     DISPLAYCONFIG_DEVICE_INFO_HEADER header;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
-        UINT32 enableAdvancedColor  :1;
-        UINT32 reserved  :31;
-      };
-      UINT32 value;
+                   __C89_NAMELESS struct {
+                     UINT32 enableAdvancedColor  :1;
+                     UINT32 reserved  :31;
+                   };
+                   UINT32 value;
     };
 } DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE;
 
@@ -2404,15 +2404,15 @@ extern "C" {
   | SDC_TOPOLOGY_EXTEND | SDC_TOPOLOGY_EXTERNAL)
 
 #define SDC_USE_SUPPLIED_DISPLAY_CONFIG 0x00000020
-#define SDC_VALIDATE                    0x00000040
-#define SDC_APPLY                       0x00000080
-#define SDC_NO_OPTIMIZATION             0x00000100
-#define SDC_SAVE_TO_DATABASE            0x00000200
-#define SDC_ALLOW_CHANGES               0x00000400
+#define SDC_VALIDATE                                                           0x00000040
+#define SDC_APPLY                                                              0x00000080
+#define SDC_NO_OPTIMIZATION                                       0x00000100
+#define SDC_SAVE_TO_DATABASE                                      0x00000200
+#define SDC_ALLOW_CHANGES                                         0x00000400
 #define SDC_PATH_PERSIST_IF_REQUIRED    0x00000800
-#define SDC_FORCE_MODE_ENUMERATION      0x00001000
+#define SDC_FORCE_MODE_ENUMERATION                   0x00001000
 #define SDC_ALLOW_PATH_ORDER_CHANGES    0x00002000
-#define SDC_VIRTUAL_MODE_AWARE          0x00008000
+#define SDC_VIRTUAL_MODE_AWARE                       0x00008000
 
 #endif /* WINVER >= 0x0601 */
 
@@ -3204,9 +3204,9 @@ extern "C" {
 #if defined (COMBOX_SANDBOX) &&  _WIN32_WINNT >= 0x0600
   typedef PVOID (WINAPI *GDIMARSHALLOC)(DWORD dwSize, LPVOID pGdiRef);
   typedef HRESULT (WINAPI *DDRAWMARSHCALLBACKMARSHAL)(HGDIOBJ hGdiObj,
-                   LPVOID pGdiRef, LPVOID *ppDDrawRef);
+                                                          LPVOID pGdiRef, LPVOID *ppDDrawRef);
   typedef HRESULT (WINAPI *DDRAWMARSHCALLBACKUNMARSHAL)(LPVOID pData, HDC *phdc,
-                   LPVOID *ppDDrawRef);
+                                                          LPVOID *ppDDrawRef);
   typedef HRESULT (WINAPI *DDRAWMARSHCALLBACKRELEASE)(LPVOID pDDrawRef);
 
 #define GDIREGISTERDDRAWPACKETVERSION 0x1
@@ -3220,10 +3220,10 @@ extern "C" {
   } GDIREGISTERDDRAWPACKET, *PGDIREGISTERDDRAWPACKET;
 
 WINGDIAPI BOOL WINAPI GdiRegisterDdraw(PGDIREGISTERDDRAWPACKET pPacket,
-                                       GDIMARSHALLOC *ppfnGdiAlloc);
+                                                                                                                     GDIMARSHALLOC *ppfnGdiAlloc);
 WINGDIAPI ULONG WINAPI GdiMarshalSize(VOID);
 WINGDIAPI VOID WINAPI GdiMarshal(DWORD dwProcessIdTo, HGDIOBJ hGdiObj,
-                                 PVOID pData, ULONG ulFlags);
+                                                                                                  PVOID pData, ULONG ulFlags);
 WINGDIAPI HGDIOBJ WINAPI GdiUnmarshal(PVOID pData, ULONG ulFlags);
 #endif
 

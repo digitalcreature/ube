@@ -33,25 +33,25 @@
 typedef void _Argument_type_is_not_arithmetic;
 static _Argument_type_is_not_arithmetic __tg_promote(...)
   __attribute__((__unavailable__,__overloadable__));
-static double               _TG_ATTRSp __tg_promote(int);
-static double               _TG_ATTRSp __tg_promote(unsigned int);
-static double               _TG_ATTRSp __tg_promote(long);
-static double               _TG_ATTRSp __tg_promote(unsigned long);
-static double               _TG_ATTRSp __tg_promote(long long);
-static double               _TG_ATTRSp __tg_promote(unsigned long long);
-static float                _TG_ATTRSp __tg_promote(float);
-static double               _TG_ATTRSp __tg_promote(double);
-static long double          _TG_ATTRSp __tg_promote(long double);
-static float _Complex       _TG_ATTRSp __tg_promote(float _Complex);
-static double _Complex      _TG_ATTRSp __tg_promote(double _Complex);
+static double                                         _TG_ATTRSp __tg_promote(int);
+static double                                         _TG_ATTRSp __tg_promote(unsigned int);
+static double                                         _TG_ATTRSp __tg_promote(long);
+static double                                         _TG_ATTRSp __tg_promote(unsigned long);
+static double                                         _TG_ATTRSp __tg_promote(long long);
+static double                                         _TG_ATTRSp __tg_promote(unsigned long long);
+static float                                          _TG_ATTRSp __tg_promote(float);
+static double                                         _TG_ATTRSp __tg_promote(double);
+static long double                       _TG_ATTRSp __tg_promote(long double);
+static float _Complex                    _TG_ATTRSp __tg_promote(float _Complex);
+static double _Complex                   _TG_ATTRSp __tg_promote(double _Complex);
 static long double _Complex _TG_ATTRSp __tg_promote(long double _Complex);
 
-#define __tg_promote1(__x)           (__typeof__(__tg_promote(__x)))
-#define __tg_promote2(__x, __y)      (__typeof__(__tg_promote(__x) + \
-                                                 __tg_promote(__y)))
+#define __tg_promote1(__x)                        (__typeof__(__tg_promote(__x)))
+#define __tg_promote2(__x, __y)                   (__typeof__(__tg_promote(__x) + \
+                                                                                                                                                         __tg_promote(__y)))
 #define __tg_promote3(__x, __y, __z) (__typeof__(__tg_promote(__x) + \
-                                                 __tg_promote(__y) + \
-                                                 __tg_promote(__z)))
+                                                                                                                                                         __tg_promote(__y) + \
+                                                                                                                                                         __tg_promote(__z)))
 
 // acos
 
@@ -488,7 +488,7 @@ static long double _Complex
 
 #undef pow
 #define pow(__x, __y) __tg_pow(__tg_promote2((__x), (__y))(__x), \
-                               __tg_promote2((__x), (__y))(__y))
+                                                                                                __tg_promote2((__x), (__y))(__y))
 
 // sqrt
 
@@ -564,7 +564,7 @@ static long double
 
 #undef atan2
 #define atan2(__x, __y) __tg_atan2(__tg_promote2((__x), (__y))(__x), \
-                                   __tg_promote2((__x), (__y))(__y))
+                                                                                                    __tg_promote2((__x), (__y))(__y))
 
 // cbrt
 
@@ -616,7 +616,7 @@ static long double
 
 #undef copysign
 #define copysign(__x, __y) __tg_copysign(__tg_promote2((__x), (__y))(__x), \
-                                         __tg_promote2((__x), (__y))(__y))
+                                                                                                                       __tg_promote2((__x), (__y))(__y))
 
 // erf
 
@@ -702,7 +702,7 @@ static long double
 
 #undef fdim
 #define fdim(__x, __y) __tg_fdim(__tg_promote2((__x), (__y))(__x), \
-                                 __tg_promote2((__x), (__y))(__y))
+                                                                                                  __tg_promote2((__x), (__y))(__y))
 
 // floor
 
@@ -739,10 +739,10 @@ static long double
     {return fmal(__x, __y, __z);}
 
 #undef fma
-#define fma(__x, __y, __z)                                \
-        __tg_fma(__tg_promote3((__x), (__y), (__z))(__x), \
-                 __tg_promote3((__x), (__y), (__z))(__y), \
-                 __tg_promote3((__x), (__y), (__z))(__z))
+#define fma(__x, __y, __z)                                                                                                 \
+                     __tg_fma(__tg_promote3((__x), (__y), (__z))(__x), \
+                                           __tg_promote3((__x), (__y), (__z))(__y), \
+                                           __tg_promote3((__x), (__y), (__z))(__z))
 
 // fmax
 
@@ -760,7 +760,7 @@ static long double
 
 #undef fmax
 #define fmax(__x, __y) __tg_fmax(__tg_promote2((__x), (__y))(__x), \
-                                 __tg_promote2((__x), (__y))(__y))
+                                                                                                  __tg_promote2((__x), (__y))(__y))
 
 // fmin
 
@@ -778,7 +778,7 @@ static long double
 
 #undef fmin
 #define fmin(__x, __y) __tg_fmin(__tg_promote2((__x), (__y))(__x), \
-                                 __tg_promote2((__x), (__y))(__y))
+                                                                                                  __tg_promote2((__x), (__y))(__y))
 
 // fmod
 
@@ -796,7 +796,7 @@ static long double
 
 #undef fmod
 #define fmod(__x, __y) __tg_fmod(__tg_promote2((__x), (__y))(__x), \
-                                 __tg_promote2((__x), (__y))(__y))
+                                                                                                  __tg_promote2((__x), (__y))(__y))
 
 // frexp
 
@@ -831,7 +831,7 @@ static long double
 
 #undef hypot
 #define hypot(__x, __y) __tg_hypot(__tg_promote2((__x), (__y))(__x), \
-                                   __tg_promote2((__x), (__y))(__y))
+                                                                                                    __tg_promote2((__x), (__y))(__y))
 
 // ilogb
 
@@ -1053,7 +1053,7 @@ static long double
 
 #undef nextafter
 #define nextafter(__x, __y) __tg_nextafter(__tg_promote2((__x), (__y))(__x), \
-                                           __tg_promote2((__x), (__y))(__y))
+                                                                                                                                      __tg_promote2((__x), (__y))(__y))
 
 // nexttoward
 
@@ -1088,7 +1088,7 @@ static long double
 
 #undef remainder
 #define remainder(__x, __y) __tg_remainder(__tg_promote2((__x), (__y))(__x), \
-                                           __tg_promote2((__x), (__y))(__y))
+                                                                                                                                      __tg_promote2((__x), (__y))(__y))
 
 // remquo
 
@@ -1108,10 +1108,10 @@ static long double
     {return remquol(__x, __y, __z);}
 
 #undef remquo
-#define remquo(__x, __y, __z)                         \
-        __tg_remquo(__tg_promote2((__x), (__y))(__x), \
-                    __tg_promote2((__x), (__y))(__y), \
-                    (__z))
+#define remquo(__x, __y, __z)                                                                             \
+                     __tg_remquo(__tg_promote2((__x), (__y))(__x), \
+                                                           __tg_promote2((__x), (__y))(__y), \
+                                                           (__z))
 
 // rint
 

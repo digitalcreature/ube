@@ -103,8 +103,8 @@ enum v4l2_power_line_frequency {
 #define V4L2_CID_WHITE_BALANCE_TEMPERATURE	(V4L2_CID_BASE+26)
 #define V4L2_CID_SHARPNESS			(V4L2_CID_BASE+27)
 #define V4L2_CID_BACKLIGHT_COMPENSATION		(V4L2_CID_BASE+28)
-#define V4L2_CID_CHROMA_AGC                     (V4L2_CID_BASE+29)
-#define V4L2_CID_COLOR_KILLER                   (V4L2_CID_BASE+30)
+#define V4L2_CID_CHROMA_AGC                                                            (V4L2_CID_BASE+29)
+#define V4L2_CID_COLOR_KILLER                                                          (V4L2_CID_BASE+30)
 #define V4L2_CID_COLORFX			(V4L2_CID_BASE+31)
 enum v4l2_colorfx {
 	V4L2_COLORFX_NONE			= 0,
@@ -130,7 +130,7 @@ enum v4l2_colorfx {
 #define V4L2_CID_ROTATE				(V4L2_CID_BASE+34)
 #define V4L2_CID_BG_COLOR			(V4L2_CID_BASE+35)
 
-#define V4L2_CID_CHROMA_GAIN                    (V4L2_CID_BASE+36)
+#define V4L2_CID_CHROMA_GAIN                                                           (V4L2_CID_BASE+36)
 
 #define V4L2_CID_ILLUMINATORS_1			(V4L2_CID_BASE+37)
 #define V4L2_CID_ILLUMINATORS_2			(V4L2_CID_BASE+38)
@@ -142,7 +142,7 @@ enum v4l2_colorfx {
 #define V4L2_CID_COLORFX_CBCR			(V4L2_CID_BASE+42)
 
 /* last CID + 1 */
-#define V4L2_CID_LASTP1                         (V4L2_CID_BASE+43)
+#define V4L2_CID_LASTP1                                                                             (V4L2_CID_BASE+43)
 
 /* USER-class private control IDs */
 
@@ -287,10 +287,10 @@ enum v4l2_mpeg_audio_l3_bitrate {
 };
 #define V4L2_CID_MPEG_AUDIO_MODE		(V4L2_CID_MPEG_BASE+105)
 enum v4l2_mpeg_audio_mode {
-	V4L2_MPEG_AUDIO_MODE_STEREO       = 0,
+	V4L2_MPEG_AUDIO_MODE_STEREO                    = 0,
 	V4L2_MPEG_AUDIO_MODE_JOINT_STEREO = 1,
-	V4L2_MPEG_AUDIO_MODE_DUAL         = 2,
-	V4L2_MPEG_AUDIO_MODE_MONO         = 3,
+	V4L2_MPEG_AUDIO_MODE_DUAL                      = 2,
+	V4L2_MPEG_AUDIO_MODE_MONO                      = 3,
 };
 #define V4L2_CID_MPEG_AUDIO_MODE_EXTENSION	(V4L2_CID_MPEG_BASE+106)
 enum v4l2_mpeg_audio_mode_extension {
@@ -301,7 +301,7 @@ enum v4l2_mpeg_audio_mode_extension {
 };
 #define V4L2_CID_MPEG_AUDIO_EMPHASIS		(V4L2_CID_MPEG_BASE+107)
 enum v4l2_mpeg_audio_emphasis {
-	V4L2_MPEG_AUDIO_EMPHASIS_NONE         = 0,
+	V4L2_MPEG_AUDIO_EMPHASIS_NONE                      = 0,
 	V4L2_MPEG_AUDIO_EMPHASIS_50_DIV_15_uS = 1,
 	V4L2_MPEG_AUDIO_EMPHASIS_CCITT_J17    = 2,
 };
@@ -707,10 +707,10 @@ enum v4l2_mpeg_cx2341x_video_spatial_filter_mode {
 #define V4L2_CID_MPEG_CX2341X_VIDEO_SPATIAL_FILTER		(V4L2_CID_MPEG_CX2341X_BASE+1)
 #define V4L2_CID_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE	(V4L2_CID_MPEG_CX2341X_BASE+2)
 enum v4l2_mpeg_cx2341x_video_luma_spatial_filter_type {
-	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_OFF                  = 0,
-	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_1D_HOR               = 1,
-	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_1D_VERT              = 2,
-	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_2D_HV_SEPARABLE      = 3,
+	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_OFF                                                         = 0,
+	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_1D_HOR                                         = 1,
+	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_1D_VERT                                        = 2,
+	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_2D_HV_SEPARABLE                   = 3,
 	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_2D_SYM_NON_SEPARABLE = 4,
 };
 #define V4L2_CID_MPEG_CX2341X_VIDEO_CHROMA_SPATIAL_FILTER_TYPE	(V4L2_CID_MPEG_CX2341X_BASE+3)
@@ -726,8 +726,8 @@ enum v4l2_mpeg_cx2341x_video_temporal_filter_mode {
 #define V4L2_CID_MPEG_CX2341X_VIDEO_TEMPORAL_FILTER		(V4L2_CID_MPEG_CX2341X_BASE+5)
 #define V4L2_CID_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE		(V4L2_CID_MPEG_CX2341X_BASE+6)
 enum v4l2_mpeg_cx2341x_video_median_filter_type {
-	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_OFF      = 0,
-	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_HOR      = 1,
+	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_OFF                   = 0,
+	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_HOR                   = 1,
 	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_VERT     = 2,
 	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_HOR_VERT = 3,
 	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_DIAG     = 4,

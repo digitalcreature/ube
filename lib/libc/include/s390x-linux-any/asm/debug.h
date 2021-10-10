@@ -16,20 +16,20 @@
  */
 
 struct __debug_entry{
-        union {
-                struct {
-                        unsigned long long clock:52;
-                        unsigned long long exception:1;
-                        unsigned long long level:3;
-                        unsigned long long cpuid:8;
-                } fields;
+                     union {
+                                          struct {
+                                                                            unsigned long long clock:52;
+                                                                            unsigned long long exception:1;
+                                                                            unsigned long long level:3;
+                                                                            unsigned long long cpuid:8;
+                                          } fields;
 
-                unsigned long long stck;
-        } id;
-        void* caller;
+                                          unsigned long long stck;
+                     } id;
+                     void* caller;
 } __attribute__((packed));
 
 
-#define __DEBUG_FEATURE_VERSION      2  /* version of debug feature */
+#define __DEBUG_FEATURE_VERSION                   2  /* version of debug feature */
 
 #endif /* DEBUG_H */

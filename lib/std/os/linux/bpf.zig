@@ -170,11 +170,11 @@ pub const F_TEST_RND_HI32 = 0x4;
 
 /// When BPF ldimm64's insn[0].src_reg != 0 then this can have two extensions:
 /// insn[0].src_reg:  BPF_PSEUDO_MAP_FD   BPF_PSEUDO_MAP_VALUE
-/// insn[0].imm:      map fd              map fd
-/// insn[1].imm:      0                   offset into value
-/// insn[0].off:      0                   0
-/// insn[1].off:      0                   0
-/// ldimm64 rewrite:  address of map      address of map[0]+offset
+/// insn[0].imm:                   map fd                                        map fd
+/// insn[1].imm:                   0                                                          offset into value
+/// insn[0].off:                   0                                                          0
+/// insn[1].off:                   0                                                          0
+/// ldimm64 rewrite:  address of map                   address of map[0]+offset
 /// verifier type:    CONST_PTR_TO_MAP    PTR_TO_MAP_VALUE
 pub const PSEUDO_MAP_FD = 1;
 pub const PSEUDO_MAP_VALUE = 2;
@@ -402,337 +402,337 @@ pub const Insn = packed struct {
     const Source = packed enum(u1) { reg, imm };
 
     const Mode = packed enum(u8) {
-        imm = IMM,
-        abs = ABS,
-        ind = IND,
-        mem = MEM,
-        len = LEN,
-        msh = MSH,
+                     imm = IMM,
+                     abs = ABS,
+                     ind = IND,
+                     mem = MEM,
+                     len = LEN,
+                     msh = MSH,
     };
 
     const AluOp = packed enum(u8) {
-        add = ADD,
-        sub = SUB,
-        mul = MUL,
-        div = DIV,
-        alu_or = OR,
-        alu_and = AND,
-        lsh = LSH,
-        rsh = RSH,
-        neg = NEG,
-        mod = MOD,
-        xor = XOR,
-        mov = MOV,
-        arsh = ARSH,
+                     add = ADD,
+                     sub = SUB,
+                     mul = MUL,
+                     div = DIV,
+                     alu_or = OR,
+                     alu_and = AND,
+                     lsh = LSH,
+                     rsh = RSH,
+                     neg = NEG,
+                     mod = MOD,
+                     xor = XOR,
+                     mov = MOV,
+                     arsh = ARSH,
     };
 
     pub const Size = packed enum(u8) {
-        byte = B,
-        half_word = H,
-        word = W,
-        double_word = DW,
+                     byte = B,
+                     half_word = H,
+                     word = W,
+                     double_word = DW,
     };
 
     const JmpOp = packed enum(u8) {
-        ja = JA,
-        jeq = JEQ,
-        jgt = JGT,
-        jge = JGE,
-        jset = JSET,
-        jlt = JLT,
-        jle = JLE,
-        jne = JNE,
-        jsgt = JSGT,
-        jsge = JSGE,
-        jslt = JSLT,
-        jsle = JSLE,
+                     ja = JA,
+                     jeq = JEQ,
+                     jgt = JGT,
+                     jge = JGE,
+                     jset = JSET,
+                     jlt = JLT,
+                     jle = JLE,
+                     jne = JNE,
+                     jsgt = JSGT,
+                     jsge = JSGE,
+                     jslt = JSLT,
+                     jsle = JSLE,
     };
 
     const ImmOrReg = union(Source) {
-        imm: i32,
-        reg: Reg,
+                     imm: i32,
+                     reg: Reg,
     };
 
     fn imm_reg(code: u8, dst: Reg, src: anytype, off: i16) Insn {
-        const imm_or_reg = if (@typeInfo(@TypeOf(src)) == .EnumLiteral)
-            ImmOrReg{ .reg = @as(Reg, src) }
-        else
-            ImmOrReg{ .imm = src };
+                     const imm_or_reg = if (@typeInfo(@TypeOf(src)) == .EnumLiteral)
+                                      ImmOrReg{ .reg = @as(Reg, src) }
+                     else
+                                      ImmOrReg{ .imm = src };
 
-        const src_type = switch (imm_or_reg) {
-            .imm => K,
-            .reg => X,
-        };
+                     const src_type = switch (imm_or_reg) {
+                                      .imm => K,
+                                      .reg => X,
+                     };
 
-        return Insn{
-            .code = code | src_type,
-            .dst = @enumToInt(dst),
-            .src = switch (imm_or_reg) {
-                .imm => 0,
-                .reg => |r| @enumToInt(r),
-            },
-            .off = off,
-            .imm = switch (imm_or_reg) {
-                .imm => |i| i,
-                .reg => 0,
-            },
-        };
+                     return Insn{
+                                      .code = code | src_type,
+                                      .dst = @enumToInt(dst),
+                                      .src = switch (imm_or_reg) {
+                                          .imm => 0,
+                                          .reg => |r| @enumToInt(r),
+                                      },
+                                      .off = off,
+                                      .imm = switch (imm_or_reg) {
+                                          .imm => |i| i,
+                                          .reg => 0,
+                                      },
+                     };
     }
 
     fn alu(comptime width: comptime_int, op: AluOp, dst: Reg, src: anytype) Insn {
-        const width_bitfield = switch (width) {
-            32 => ALU,
-            64 => ALU64,
-            else => @compileError("width must be 32 or 64"),
-        };
+                     const width_bitfield = switch (width) {
+                                      32 => ALU,
+                                      64 => ALU64,
+                                      else => @compileError("width must be 32 or 64"),
+                     };
 
-        return imm_reg(width_bitfield | @enumToInt(op), dst, src, 0);
+                     return imm_reg(width_bitfield | @enumToInt(op), dst, src, 0);
     }
 
     pub fn mov(dst: Reg, src: anytype) Insn {
-        return alu(64, .mov, dst, src);
+                     return alu(64, .mov, dst, src);
     }
 
     pub fn add(dst: Reg, src: anytype) Insn {
-        return alu(64, .add, dst, src);
+                     return alu(64, .add, dst, src);
     }
 
     pub fn sub(dst: Reg, src: anytype) Insn {
-        return alu(64, .sub, dst, src);
+                     return alu(64, .sub, dst, src);
     }
 
     pub fn mul(dst: Reg, src: anytype) Insn {
-        return alu(64, .mul, dst, src);
+                     return alu(64, .mul, dst, src);
     }
 
     pub fn div(dst: Reg, src: anytype) Insn {
-        return alu(64, .div, dst, src);
+                     return alu(64, .div, dst, src);
     }
 
     pub fn alu_or(dst: Reg, src: anytype) Insn {
-        return alu(64, .alu_or, dst, src);
+                     return alu(64, .alu_or, dst, src);
     }
 
     pub fn alu_and(dst: Reg, src: anytype) Insn {
-        return alu(64, .alu_and, dst, src);
+                     return alu(64, .alu_and, dst, src);
     }
 
     pub fn lsh(dst: Reg, src: anytype) Insn {
-        return alu(64, .lsh, dst, src);
+                     return alu(64, .lsh, dst, src);
     }
 
     pub fn rsh(dst: Reg, src: anytype) Insn {
-        return alu(64, .rsh, dst, src);
+                     return alu(64, .rsh, dst, src);
     }
 
     pub fn neg(dst: Reg) Insn {
-        return alu(64, .neg, dst, 0);
+                     return alu(64, .neg, dst, 0);
     }
 
     pub fn mod(dst: Reg, src: anytype) Insn {
-        return alu(64, .mod, dst, src);
+                     return alu(64, .mod, dst, src);
     }
 
     pub fn xor(dst: Reg, src: anytype) Insn {
-        return alu(64, .xor, dst, src);
+                     return alu(64, .xor, dst, src);
     }
 
     pub fn arsh(dst: Reg, src: anytype) Insn {
-        return alu(64, .arsh, dst, src);
+                     return alu(64, .arsh, dst, src);
     }
 
     fn jmp(op: JmpOp, dst: Reg, src: anytype, off: i16) Insn {
-        return imm_reg(JMP | @enumToInt(op), dst, src, off);
+                     return imm_reg(JMP | @enumToInt(op), dst, src, off);
     }
 
     pub fn ja(off: i16) Insn {
-        return jmp(.ja, .r0, 0, off);
+                     return jmp(.ja, .r0, 0, off);
     }
 
     pub fn jeq(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jeq, dst, src, off);
+                     return jmp(.jeq, dst, src, off);
     }
 
     pub fn jgt(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jgt, dst, src, off);
+                     return jmp(.jgt, dst, src, off);
     }
 
     pub fn jge(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jge, dst, src, off);
+                     return jmp(.jge, dst, src, off);
     }
 
     pub fn jlt(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jlt, dst, src, off);
+                     return jmp(.jlt, dst, src, off);
     }
 
     pub fn jle(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jle, dst, src, off);
+                     return jmp(.jle, dst, src, off);
     }
 
     pub fn jset(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jset, dst, src, off);
+                     return jmp(.jset, dst, src, off);
     }
 
     pub fn jne(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jne, dst, src, off);
+                     return jmp(.jne, dst, src, off);
     }
 
     pub fn jsgt(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jsgt, dst, src, off);
+                     return jmp(.jsgt, dst, src, off);
     }
 
     pub fn jsge(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jsge, dst, src, off);
+                     return jmp(.jsge, dst, src, off);
     }
 
     pub fn jslt(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jslt, dst, src, off);
+                     return jmp(.jslt, dst, src, off);
     }
 
     pub fn jsle(dst: Reg, src: anytype, off: i16) Insn {
-        return jmp(.jsle, dst, src, off);
+                     return jmp(.jsle, dst, src, off);
     }
 
     pub fn xadd(dst: Reg, src: Reg) Insn {
-        return Insn{
-            .code = STX | XADD | DW,
-            .dst = @enumToInt(dst),
-            .src = @enumToInt(src),
-            .off = 0,
-            .imm = 0,
-        };
+                     return Insn{
+                                      .code = STX | XADD | DW,
+                                      .dst = @enumToInt(dst),
+                                      .src = @enumToInt(src),
+                                      .off = 0,
+                                      .imm = 0,
+                     };
     }
 
     fn ld(mode: Mode, size: Size, dst: Reg, src: Reg, imm: i32) Insn {
-        return Insn{
-            .code = @enumToInt(mode) | @enumToInt(size) | LD,
-            .dst = @enumToInt(dst),
-            .src = @enumToInt(src),
-            .off = 0,
-            .imm = imm,
-        };
+                     return Insn{
+                                      .code = @enumToInt(mode) | @enumToInt(size) | LD,
+                                      .dst = @enumToInt(dst),
+                                      .src = @enumToInt(src),
+                                      .off = 0,
+                                      .imm = imm,
+                     };
     }
 
     pub fn ld_abs(size: Size, dst: Reg, src: Reg, imm: i32) Insn {
-        return ld(.abs, size, dst, src, imm);
+                     return ld(.abs, size, dst, src, imm);
     }
 
     pub fn ld_ind(size: Size, dst: Reg, src: Reg, imm: i32) Insn {
-        return ld(.ind, size, dst, src, imm);
+                     return ld(.ind, size, dst, src, imm);
     }
 
     pub fn ldx(size: Size, dst: Reg, src: Reg, off: i16) Insn {
-        return Insn{
-            .code = MEM | @enumToInt(size) | LDX,
-            .dst = @enumToInt(dst),
-            .src = @enumToInt(src),
-            .off = off,
-            .imm = 0,
-        };
+                     return Insn{
+                                      .code = MEM | @enumToInt(size) | LDX,
+                                      .dst = @enumToInt(dst),
+                                      .src = @enumToInt(src),
+                                      .off = off,
+                                      .imm = 0,
+                     };
     }
 
     fn ld_imm_impl1(dst: Reg, src: Reg, imm: u64) Insn {
-        return Insn{
-            .code = LD | DW | IMM,
-            .dst = @enumToInt(dst),
-            .src = @enumToInt(src),
-            .off = 0,
-            .imm = @intCast(i32, @truncate(u32, imm)),
-        };
+                     return Insn{
+                                      .code = LD | DW | IMM,
+                                      .dst = @enumToInt(dst),
+                                      .src = @enumToInt(src),
+                                      .off = 0,
+                                      .imm = @intCast(i32, @truncate(u32, imm)),
+                     };
     }
 
     fn ld_imm_impl2(imm: u64) Insn {
-        return Insn{
-            .code = 0,
-            .dst = 0,
-            .src = 0,
-            .off = 0,
-            .imm = @intCast(i32, @truncate(u32, imm >> 32)),
-        };
+                     return Insn{
+                                      .code = 0,
+                                      .dst = 0,
+                                      .src = 0,
+                                      .off = 0,
+                                      .imm = @intCast(i32, @truncate(u32, imm >> 32)),
+                     };
     }
 
     pub fn ld_dw1(dst: Reg, imm: u64) Insn {
-        return ld_imm_impl1(dst, .r0, imm);
+                     return ld_imm_impl1(dst, .r0, imm);
     }
 
     pub fn ld_dw2(imm: u64) Insn {
-        return ld_imm_impl2(imm);
+                     return ld_imm_impl2(imm);
     }
 
     pub fn ld_map_fd1(dst: Reg, map_fd: fd_t) Insn {
-        return ld_imm_impl1(dst, @intToEnum(Reg, PSEUDO_MAP_FD), @intCast(u64, map_fd));
+                     return ld_imm_impl1(dst, @intToEnum(Reg, PSEUDO_MAP_FD), @intCast(u64, map_fd));
     }
 
     pub fn ld_map_fd2(map_fd: fd_t) Insn {
-        return ld_imm_impl2(@intCast(u64, map_fd));
+                     return ld_imm_impl2(@intCast(u64, map_fd));
     }
 
     pub fn st(comptime size: Size, dst: Reg, off: i16, imm: i32) Insn {
-        if (size == .double_word) @compileError("TODO: need to determine how to correctly handle double words");
-        return Insn{
-            .code = MEM | @enumToInt(size) | ST,
-            .dst = @enumToInt(dst),
-            .src = 0,
-            .off = off,
-            .imm = imm,
-        };
+                     if (size == .double_word) @compileError("TODO: need to determine how to correctly handle double words");
+                     return Insn{
+                                      .code = MEM | @enumToInt(size) | ST,
+                                      .dst = @enumToInt(dst),
+                                      .src = 0,
+                                      .off = off,
+                                      .imm = imm,
+                     };
     }
 
     pub fn stx(size: Size, dst: Reg, off: i16, src: Reg) Insn {
-        return Insn{
-            .code = MEM | @enumToInt(size) | STX,
-            .dst = @enumToInt(dst),
-            .src = @enumToInt(src),
-            .off = off,
-            .imm = 0,
-        };
+                     return Insn{
+                                      .code = MEM | @enumToInt(size) | STX,
+                                      .dst = @enumToInt(dst),
+                                      .src = @enumToInt(src),
+                                      .off = off,
+                                      .imm = 0,
+                     };
     }
 
     fn endian_swap(endian: std.builtin.Endian, comptime size: Size, dst: Reg) Insn {
-        return Insn{
-            .code = switch (endian) {
-                .Big => 0xdc,
-                .Little => 0xd4,
-            },
-            .dst = @enumToInt(dst),
-            .src = 0,
-            .off = 0,
-            .imm = switch (size) {
-                .byte => @compileError("can't swap a single byte"),
-                .half_word => 16,
-                .word => 32,
-                .double_word => 64,
-            },
-        };
+                     return Insn{
+                                      .code = switch (endian) {
+                                          .Big => 0xdc,
+                                          .Little => 0xd4,
+                                      },
+                                      .dst = @enumToInt(dst),
+                                      .src = 0,
+                                      .off = 0,
+                                      .imm = switch (size) {
+                                          .byte => @compileError("can't swap a single byte"),
+                                          .half_word => 16,
+                                          .word => 32,
+                                          .double_word => 64,
+                                      },
+                     };
     }
 
     pub fn le(comptime size: Size, dst: Reg) Insn {
-        return endian_swap(.Little, size, dst);
+                     return endian_swap(.Little, size, dst);
     }
 
     pub fn be(comptime size: Size, dst: Reg) Insn {
-        return endian_swap(.Big, size, dst);
+                     return endian_swap(.Big, size, dst);
     }
 
     pub fn call(helper: Helper) Insn {
-        return Insn{
-            .code = JMP | CALL,
-            .dst = 0,
-            .src = 0,
-            .off = 0,
-            .imm = @enumToInt(helper),
-        };
+                     return Insn{
+                                      .code = JMP | CALL,
+                                      .dst = 0,
+                                      .src = 0,
+                                      .off = 0,
+                                      .imm = @enumToInt(helper),
+                     };
     }
 
     /// exit BPF program
     pub fn exit() Insn {
-        return Insn{
-            .code = JMP | EXIT,
-            .dst = 0,
-            .src = 0,
-            .off = 0,
-            .imm = 0,
-        };
+                     return Insn{
+                                      .code = JMP | EXIT,
+                                      .dst = 0,
+                                      .src = 0,
+                                      .off = 0,
+                                      .imm = 0,
+                     };
     }
 };
 
@@ -1227,8 +1227,8 @@ pub const MapElemAttr = extern struct {
     map_fd: fd_t,
     key: u64,
     result: extern union {
-        value: u64,
-        next_key: u64,
+                     value: u64,
+                     next_key: u64,
     },
     flags: u64,
 };
@@ -1356,11 +1356,11 @@ pub const TestRunAttr = extern struct {
 /// struct used by Cmd.*_get_*_id commands
 pub const GetIdAttr = extern struct {
     id: extern union {
-        start_id: u32,
-        prog_id: u32,
-        map_id: u32,
-        btf_id: u32,
-        link_id: u32,
+                     start_id: u32,
+                     prog_id: u32,
+                     map_id: u32,
+                     btf_id: u32,
+                     link_id: u32,
     },
     next_id: u32,
     open_flags: u32,
@@ -1499,7 +1499,7 @@ pub const Log = struct {
 
 pub fn map_create(map_type: MapType, key_size: u32, value_size: u32, max_entries: u32) !fd_t {
     var attr = Attr{
-        .map_create = std.mem.zeroes(MapCreateAttr),
+                     .map_create = std.mem.zeroes(MapCreateAttr),
     };
 
     attr.map_create.map_type = @enumToInt(map_type);
@@ -1509,11 +1509,11 @@ pub fn map_create(map_type: MapType, key_size: u32, value_size: u32, max_entries
 
     const rc = bpf(.map_create, &attr, @sizeOf(MapCreateAttr));
     return switch (errno(rc)) {
-        0 => @intCast(fd_t, rc),
-        EINVAL => error.MapTypeOrAttrInvalid,
-        ENOMEM => error.SystemResources,
-        EPERM => error.AccessDenied,
-        else => |err| unexpectedErrno(rc),
+                     0 => @intCast(fd_t, rc),
+                     EINVAL => error.MapTypeOrAttrInvalid,
+                     ENOMEM => error.SystemResources,
+                     EPERM => error.AccessDenied,
+                     else => |err| unexpectedErrno(rc),
     };
 }
 
@@ -1524,7 +1524,7 @@ test "map_create" {
 
 pub fn map_lookup_elem(fd: fd_t, key: []const u8, value: []u8) !void {
     var attr = Attr{
-        .map_elem = std.mem.zeroes(MapElemAttr),
+                     .map_elem = std.mem.zeroes(MapElemAttr),
     };
 
     attr.map_elem.map_fd = fd;
@@ -1533,19 +1533,19 @@ pub fn map_lookup_elem(fd: fd_t, key: []const u8, value: []u8) !void {
 
     const rc = bpf(.map_lookup_elem, &attr, @sizeOf(MapElemAttr));
     switch (errno(rc)) {
-        0 => return,
-        EBADF => return error.BadFd,
-        EFAULT => unreachable,
-        EINVAL => return error.FieldInAttrNeedsZeroing,
-        ENOENT => return error.NotFound,
-        EPERM => return error.AccessDenied,
-        else => |err| return unexpectedErrno(rc),
+                     0 => return,
+                     EBADF => return error.BadFd,
+                     EFAULT => unreachable,
+                     EINVAL => return error.FieldInAttrNeedsZeroing,
+                     ENOENT => return error.NotFound,
+                     EPERM => return error.AccessDenied,
+                     else => |err| return unexpectedErrno(rc),
     }
 }
 
 pub fn map_update_elem(fd: fd_t, key: []const u8, value: []const u8, flags: u64) !void {
     var attr = Attr{
-        .map_elem = std.mem.zeroes(MapElemAttr),
+                     .map_elem = std.mem.zeroes(MapElemAttr),
     };
 
     attr.map_elem.map_fd = fd;
@@ -1555,20 +1555,20 @@ pub fn map_update_elem(fd: fd_t, key: []const u8, value: []const u8, flags: u64)
 
     const rc = bpf(.map_update_elem, &attr, @sizeOf(MapElemAttr));
     switch (errno(rc)) {
-        0 => return,
-        E2BIG => return error.ReachedMaxEntries,
-        EBADF => return error.BadFd,
-        EFAULT => unreachable,
-        EINVAL => return error.FieldInAttrNeedsZeroing,
-        ENOMEM => return error.SystemResources,
-        EPERM => return error.AccessDenied,
-        else => |err| return unexpectedErrno(err),
+                     0 => return,
+                     E2BIG => return error.ReachedMaxEntries,
+                     EBADF => return error.BadFd,
+                     EFAULT => unreachable,
+                     EINVAL => return error.FieldInAttrNeedsZeroing,
+                     ENOMEM => return error.SystemResources,
+                     EPERM => return error.AccessDenied,
+                     else => |err| return unexpectedErrno(err),
     }
 }
 
 pub fn map_delete_elem(fd: fd_t, key: []const u8) !void {
     var attr = Attr{
-        .map_elem = std.mem.zeroes(MapElemAttr),
+                     .map_elem = std.mem.zeroes(MapElemAttr),
     };
 
     attr.map_elem.map_fd = fd;
@@ -1576,13 +1576,13 @@ pub fn map_delete_elem(fd: fd_t, key: []const u8) !void {
 
     const rc = bpf(.map_delete_elem, &attr, @sizeOf(MapElemAttr));
     switch (errno(rc)) {
-        0 => return,
-        EBADF => return error.BadFd,
-        EFAULT => unreachable,
-        EINVAL => return error.FieldInAttrNeedsZeroing,
-        ENOENT => return error.NotFound,
-        EPERM => return error.AccessDenied,
-        else => |err| return unexpectedErrno(err),
+                     0 => return,
+                     EBADF => return error.BadFd,
+                     EFAULT => unreachable,
+                     EINVAL => return error.FieldInAttrNeedsZeroing,
+                     ENOENT => return error.NotFound,
+                     EPERM => return error.AccessDenied,
+                     else => |err| return unexpectedErrno(err),
     }
 }
 
@@ -1622,7 +1622,7 @@ pub fn prog_load(
     kern_version: u32,
 ) !fd_t {
     var attr = Attr{
-        .prog_load = std.mem.zeroes(ProgLoadAttr),
+                     .prog_load = std.mem.zeroes(ProgLoadAttr),
     };
 
     attr.prog_load.prog_type = @enumToInt(prog_type);
@@ -1632,31 +1632,31 @@ pub fn prog_load(
     attr.prog_load.kern_version = kern_version;
 
     if (log) |l| {
-        attr.prog_load.log_buf = @ptrToInt(l.buf.ptr);
-        attr.prog_load.log_size = @intCast(u32, l.buf.len);
-        attr.prog_load.log_level = l.level;
+                     attr.prog_load.log_buf = @ptrToInt(l.buf.ptr);
+                     attr.prog_load.log_size = @intCast(u32, l.buf.len);
+                     attr.prog_load.log_level = l.level;
     }
 
     const rc = bpf(.prog_load, &attr, @sizeOf(ProgLoadAttr));
     return switch (errno(rc)) {
-        0 => @intCast(fd_t, rc),
-        EACCES => error.UnsafeProgram,
-        EFAULT => unreachable,
-        EINVAL => error.InvalidProgram,
-        EPERM => error.AccessDenied,
-        else => |err| unexpectedErrno(err),
+                     0 => @intCast(fd_t, rc),
+                     EACCES => error.UnsafeProgram,
+                     EFAULT => unreachable,
+                     EINVAL => error.InvalidProgram,
+                     EPERM => error.AccessDenied,
+                     else => |err| unexpectedErrno(err),
     };
 }
 
 test "prog_load" {
     // this should fail because it does not set r0 before exiting
     const bad_prog = [_]Insn{
-        Insn.exit(),
+                     Insn.exit(),
     };
 
     const good_prog = [_]Insn{
-        Insn.mov(.r0, 0),
-        Insn.exit(),
+                     Insn.mov(.r0, 0),
+                     Insn.exit(),
     };
 
     const prog = try prog_load(.socket_filter, &good_prog, null, "MIT", 0);

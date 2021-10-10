@@ -145,22 +145,22 @@ l:							\
 /*
  * LEAF - declare leaf routine
  */
-#define	LEAF(symbol)                                    \
-		.globl	symbol;                         \
-		.align	2;                              \
-		.type	symbol,@function;               \
-		.ent	symbol,0;                       \
+#define	LEAF(symbol)                                                                                                                  \
+		.globl	symbol;                                                                             \
+		.align	2;                                                                                               \
+		.type	symbol,@function;                                         \
+		.ent	symbol,0;                                                              \
 symbol:		.frame	sp,0,ra;			\
 		__mips_cfi_startproc
 
 /*
  * NESTED - declare nested routine entry point
  */
-#define	NESTED(symbol, framesize, rpc)                  \
-		.globl	symbol;                         \
-		.align	2;                              \
-		.type	symbol,@function;               \
-		.ent	symbol,0;                       \
+#define	NESTED(symbol, framesize, rpc)                                                         \
+		.globl	symbol;                                                                             \
+		.align	2;                                                                                               \
+		.type	symbol,@function;                                         \
+		.ent	symbol,0;                                                              \
 symbol:		.frame	sp, framesize, rpc;		\
 		__mips_cfi_startproc
 
@@ -168,60 +168,60 @@ symbol:		.frame	sp, framesize, rpc;		\
  * END - mark end of function
  */
 #ifndef END
-# define END(function)                                   \
+# define END(function)                                                                                                    \
 		__mips_cfi_endproc;			\
-		.end	function;		        \
+		.end	function;		                     \
 		.size	function,.-function
 #endif
 
 /*
  * EXPORT - export definition of symbol
  */
-#define	EXPORT(symbol)                                  \
-		.globl	symbol;                         \
+#define	EXPORT(symbol)                                                                                                   \
+		.globl	symbol;                                                                             \
 symbol:		__mips_cfi_startproc
 
 /*
  * ABS - export absolute symbol
  */
-#define	ABS(symbol,value)                               \
-		.globl	symbol;                         \
+#define	ABS(symbol,value)                                                                                                \
+		.globl	symbol;                                                                             \
 symbol		=	value
 
-#define	PANIC(msg)                                      \
+#define	PANIC(msg)                                                                                                                    \
 		.set	push;				\
-		.set	reorder;                        \
-		la	a0,8f;                          \
-		jal	panic;                          \
-9:		b	9b;                             \
+		.set	reorder;                                                                            \
+		la	a0,8f;                                                                              \
+		jal	panic;                                                                              \
+9:		b	9b;                                                                                 \
 		.set	pop;				\
 		TEXT(msg)
 
 /*
  * Print formated string
  */
-#define PRINT(string)                                   \
+#define PRINT(string)                                                                                                    \
 		.set	push;				\
-		.set	reorder;                        \
-		la	a0,8f;                          \
-		jal	printk;                         \
+		.set	reorder;                                                                            \
+		la	a0,8f;                                                                              \
+		jal	printk;                                                                             \
 		.set	pop;				\
 		TEXT(string)
 
-#define	TEXT(msg)                                       \
-		.data;                                  \
-8:		.asciiz	msg;                            \
+#define	TEXT(msg)                                                                                                                     \
+		.data;                                                                                                   \
+8:		.asciiz	msg;                                                                                \
 		.previous;
 
 /*
  * Build text tables
  */
-#define TTABLE(string)                                  \
-		.text;                                  \
-		.word	1f;                             \
-		.previous;                              \
-		.data;                                  \
-1:		.asciz	string;                         \
+#define TTABLE(string)                                                                                                   \
+		.text;                                                                                                   \
+		.word	1f;                                                                                 \
+		.previous;                                                                                               \
+		.data;                                                                                                   \
+1:		.asciz	string;                                                                             \
 		.previous
 
 /*
@@ -233,9 +233,9 @@ symbol		=	value
  */
 #if (_MIPS_ISA == _MIPS_ISA_MIPS4) || (_MIPS_ISA == _MIPS_ISA_MIPS5) \
     || (_MIPS_ISA == _MIPS_ISA_MIPS32) || (_MIPS_ISA == _MIPS_ISA_MIPS64)
-# define PREF(hint,addr)                                 \
+# define PREF(hint,addr)                                                                                                  \
 		pref	hint,addr
-# define PREFX(hint,addr)                                \
+# define PREFX(hint,addr)                                                                                                 \
 		prefx	hint,addr
 #else
 # define PREF(hint,addr)
@@ -423,10 +423,10 @@ symbol		=	value
 # define PTR_SUBU	sub /* no u */
 # define PTR_SUBIU	sub /* no u */
 #else
-# define PTR_ADDU       addu
-# define PTR_ADDIU      addiu
-# define PTR_SUBU       subu
-# define PTR_SUBIU      subu
+# define PTR_ADDU                    addu
+# define PTR_ADDIU                   addiu
+# define PTR_SUBU                    subu
+# define PTR_SUBIU                   subu
 #endif
 # define PTR_L		lw
 # define PTR_LA		la

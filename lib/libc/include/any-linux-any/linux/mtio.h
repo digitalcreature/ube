@@ -106,7 +106,7 @@ struct	mtget {
 #define MT_ISEVEREX_FT40A	0x32	/* Everex FT40A (QIC-40) */
 #define MT_ISDDS1		0x51	/* DDS device without partitions */
 #define MT_ISDDS2		0x52	/* DDS device with partitions */
-#define MT_ISONSTREAM_SC        0x61   /* OnStream SCSI tape drives (SC-x0)
+#define MT_ISONSTREAM_SC                     0x61   /* OnStream SCSI tape drives (SC-x0)
 					  and SCSI emulated (DI, DP, USB) */
 #define MT_ISSCSI1		0x71	/* Generic ANSI SCSI-1 tape unit */
 #define MT_ISSCSI2		0x72	/* Generic ANSI SCSI-2 tape unit */
@@ -137,23 +137,23 @@ struct	mtpos {
  * know which of them are reserved. At least three or so should
  * be added to make this really useful.
  */
-#define GMT_EOF(x)              ((x) & 0x80000000)
-#define GMT_BOT(x)              ((x) & 0x40000000)
-#define GMT_EOT(x)              ((x) & 0x20000000)
-#define GMT_SM(x)               ((x) & 0x10000000)  /* DDS setmark */
-#define GMT_EOD(x)              ((x) & 0x08000000)  /* DDS EOD */
-#define GMT_WR_PROT(x)          ((x) & 0x04000000)
+#define GMT_EOF(x)                                        ((x) & 0x80000000)
+#define GMT_BOT(x)                                        ((x) & 0x40000000)
+#define GMT_EOT(x)                                        ((x) & 0x20000000)
+#define GMT_SM(x)                                         ((x) & 0x10000000)  /* DDS setmark */
+#define GMT_EOD(x)                                        ((x) & 0x08000000)  /* DDS EOD */
+#define GMT_WR_PROT(x)                       ((x) & 0x04000000)
 /* #define GMT_ ? 		((x) & 0x02000000) */
-#define GMT_ONLINE(x)           ((x) & 0x01000000)
-#define GMT_D_6250(x)           ((x) & 0x00800000)
-#define GMT_D_1600(x)           ((x) & 0x00400000)
-#define GMT_D_800(x)            ((x) & 0x00200000)
+#define GMT_ONLINE(x)                        ((x) & 0x01000000)
+#define GMT_D_6250(x)                        ((x) & 0x00800000)
+#define GMT_D_1600(x)                        ((x) & 0x00400000)
+#define GMT_D_800(x)                                      ((x) & 0x00200000)
 /* #define GMT_ ? 		((x) & 0x00100000) */
 /* #define GMT_ ? 		((x) & 0x00080000) */
-#define GMT_DR_OPEN(x)          ((x) & 0x00040000)  /* door open (no tape) */
+#define GMT_DR_OPEN(x)                       ((x) & 0x00040000)  /* door open (no tape) */
 /* #define GMT_ ? 		((x) & 0x00020000) */
-#define GMT_IM_REP_EN(x)        ((x) & 0x00010000)  /* immediate report mode */
-#define GMT_CLN(x)              ((x) & 0x00008000)  /* cleaning requested */
+#define GMT_IM_REP_EN(x)                     ((x) & 0x00010000)  /* immediate report mode */
+#define GMT_CLN(x)                                        ((x) & 0x00008000)  /* cleaning requested */
 /* 15 generic status bits unused */
 
 
@@ -191,9 +191,9 @@ struct	mtpos {
 #define MT_ST_CAN_BSR		0x100
 #define MT_ST_NO_BLKLIMS	0x200
 #define MT_ST_CAN_PARTITIONS    0x400
-#define MT_ST_SCSI2LOGICAL      0x800
-#define MT_ST_SYSV              0x1000
-#define MT_ST_NOWAIT            0x2000
+#define MT_ST_SCSI2LOGICAL                   0x800
+#define MT_ST_SYSV                                        0x1000
+#define MT_ST_NOWAIT                                      0x2000
 #define MT_ST_SILI		0x4000
 #define MT_ST_NOWAIT_EOF	0x8000
 

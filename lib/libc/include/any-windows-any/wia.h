@@ -174,18 +174,18 @@ extern "C" {
 #else
   typedef struct IWiaDevMgrVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaDevMgr *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaDevMgr *This);
-      ULONG (WINAPI *Release)(IWiaDevMgr *This);
-      HRESULT (WINAPI *EnumDeviceInfo)(IWiaDevMgr *This,LONG lFlag,IEnumWIA_DEV_INFO **ppIEnum);
-      HRESULT (WINAPI *CreateDevice)(IWiaDevMgr *This,BSTR bstrDeviceID,IWiaItem **ppWiaItemRoot);
-      HRESULT (WINAPI *SelectDeviceDlg)(IWiaDevMgr *This,HWND hwndParent,LONG lDeviceType,LONG lFlags,BSTR *pbstrDeviceID,IWiaItem **ppItemRoot);
-      HRESULT (WINAPI *SelectDeviceDlgID)(IWiaDevMgr *This,HWND hwndParent,LONG lDeviceType,LONG lFlags,BSTR *pbstrDeviceID);
-      HRESULT (WINAPI *GetImageDlg)(IWiaDevMgr *This,HWND hwndParent,LONG lDeviceType,LONG lFlags,LONG lIntent,IWiaItem *pItemRoot,BSTR bstrFilename,GUID *pguidFormat);
-      HRESULT (WINAPI *RegisterEventCallbackProgram)(IWiaDevMgr *This,LONG lFlags,BSTR bstrDeviceID,const GUID *pEventGUID,BSTR bstrCommandline,BSTR bstrName,BSTR bstrDescription,BSTR bstrIcon);
-      HRESULT (WINAPI *RegisterEventCallbackInterface)(IWiaDevMgr *This,LONG lFlags,BSTR bstrDeviceID,const GUID *pEventGUID,IWiaEventCallback *pIWiaEventCallback,IUnknown **pEventObject);
-      HRESULT (WINAPI *RegisterEventCallbackCLSID)(IWiaDevMgr *This,LONG lFlags,BSTR bstrDeviceID,const GUID *pEventGUID,const GUID *pClsID,BSTR bstrName,BSTR bstrDescription,BSTR bstrIcon);
-      HRESULT (WINAPI *AddDeviceDlg)(IWiaDevMgr *This,HWND hwndParent,LONG lFlags);
+                   HRESULT (WINAPI *QueryInterface)(IWiaDevMgr *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaDevMgr *This);
+                   ULONG (WINAPI *Release)(IWiaDevMgr *This);
+                   HRESULT (WINAPI *EnumDeviceInfo)(IWiaDevMgr *This,LONG lFlag,IEnumWIA_DEV_INFO **ppIEnum);
+                   HRESULT (WINAPI *CreateDevice)(IWiaDevMgr *This,BSTR bstrDeviceID,IWiaItem **ppWiaItemRoot);
+                   HRESULT (WINAPI *SelectDeviceDlg)(IWiaDevMgr *This,HWND hwndParent,LONG lDeviceType,LONG lFlags,BSTR *pbstrDeviceID,IWiaItem **ppItemRoot);
+                   HRESULT (WINAPI *SelectDeviceDlgID)(IWiaDevMgr *This,HWND hwndParent,LONG lDeviceType,LONG lFlags,BSTR *pbstrDeviceID);
+                   HRESULT (WINAPI *GetImageDlg)(IWiaDevMgr *This,HWND hwndParent,LONG lDeviceType,LONG lFlags,LONG lIntent,IWiaItem *pItemRoot,BSTR bstrFilename,GUID *pguidFormat);
+                   HRESULT (WINAPI *RegisterEventCallbackProgram)(IWiaDevMgr *This,LONG lFlags,BSTR bstrDeviceID,const GUID *pEventGUID,BSTR bstrCommandline,BSTR bstrName,BSTR bstrDescription,BSTR bstrIcon);
+                   HRESULT (WINAPI *RegisterEventCallbackInterface)(IWiaDevMgr *This,LONG lFlags,BSTR bstrDeviceID,const GUID *pEventGUID,IWiaEventCallback *pIWiaEventCallback,IUnknown **pEventObject);
+                   HRESULT (WINAPI *RegisterEventCallbackCLSID)(IWiaDevMgr *This,LONG lFlags,BSTR bstrDeviceID,const GUID *pEventGUID,const GUID *pClsID,BSTR bstrName,BSTR bstrDescription,BSTR bstrIcon);
+                   HRESULT (WINAPI *AddDeviceDlg)(IWiaDevMgr *This,HWND hwndParent,LONG lFlags);
     END_INTERFACE
   } IWiaDevMgrVtbl;
   struct IWiaDevMgr {
@@ -241,14 +241,14 @@ extern "C" {
 #else
   typedef struct IEnumWIA_DEV_INFOVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumWIA_DEV_INFO *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumWIA_DEV_INFO *This);
-      ULONG (WINAPI *Release)(IEnumWIA_DEV_INFO *This);
-      HRESULT (WINAPI *Next)(IEnumWIA_DEV_INFO *This,ULONG celt,IWiaPropertyStorage **rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumWIA_DEV_INFO *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumWIA_DEV_INFO *This);
-      HRESULT (WINAPI *Clone)(IEnumWIA_DEV_INFO *This,IEnumWIA_DEV_INFO **ppIEnum);
-      HRESULT (WINAPI *GetCount)(IEnumWIA_DEV_INFO *This,ULONG *celt);
+                   HRESULT (WINAPI *QueryInterface)(IEnumWIA_DEV_INFO *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumWIA_DEV_INFO *This);
+                   ULONG (WINAPI *Release)(IEnumWIA_DEV_INFO *This);
+                   HRESULT (WINAPI *Next)(IEnumWIA_DEV_INFO *This,ULONG celt,IWiaPropertyStorage **rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumWIA_DEV_INFO *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumWIA_DEV_INFO *This);
+                   HRESULT (WINAPI *Clone)(IEnumWIA_DEV_INFO *This,IEnumWIA_DEV_INFO **ppIEnum);
+                   HRESULT (WINAPI *GetCount)(IEnumWIA_DEV_INFO *This,ULONG *celt);
     END_INTERFACE
   } IEnumWIA_DEV_INFOVtbl;
   struct IEnumWIA_DEV_INFO {
@@ -288,10 +288,10 @@ extern "C" {
 #else
   typedef struct IWiaEventCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaEventCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaEventCallback *This);
-      ULONG (WINAPI *Release)(IWiaEventCallback *This);
-      HRESULT (WINAPI *ImageEventCallback)(IWiaEventCallback *This,const GUID *pEventGUID,BSTR bstrEventDescription,BSTR bstrDeviceID,BSTR bstrDeviceDescription,DWORD dwDeviceType,BSTR bstrFullItemName,ULONG *pulEventType,ULONG ulReserved);
+                   HRESULT (WINAPI *QueryInterface)(IWiaEventCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaEventCallback *This);
+                   ULONG (WINAPI *Release)(IWiaEventCallback *This);
+                   HRESULT (WINAPI *ImageEventCallback)(IWiaEventCallback *This,const GUID *pEventGUID,BSTR bstrEventDescription,BSTR bstrDeviceID,BSTR bstrDeviceDescription,DWORD dwDeviceType,BSTR bstrFullItemName,ULONG *pulEventType,ULONG ulReserved);
     END_INTERFACE
   } IWiaEventCallbackVtbl;
   struct IWiaEventCallback {
@@ -330,10 +330,10 @@ extern "C" {
 #else
   typedef struct IWiaDataCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaDataCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaDataCallback *This);
-      ULONG (WINAPI *Release)(IWiaDataCallback *This);
-      HRESULT (WINAPI *BandedDataCallback)(IWiaDataCallback *This,LONG lMessage,LONG lStatus,LONG lPercentComplete,LONG lOffset,LONG lLength,LONG lReserved,LONG lResLength,BYTE *pbBuffer);
+                   HRESULT (WINAPI *QueryInterface)(IWiaDataCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaDataCallback *This);
+                   ULONG (WINAPI *Release)(IWiaDataCallback *This);
+                   HRESULT (WINAPI *BandedDataCallback)(IWiaDataCallback *This,LONG lMessage,LONG lStatus,LONG lPercentComplete,LONG lOffset,LONG lLength,LONG lReserved,LONG lResLength,BYTE *pbBuffer);
     END_INTERFACE
   } IWiaDataCallbackVtbl;
   struct IWiaDataCallback {
@@ -389,14 +389,14 @@ extern "C" {
 #else
   typedef struct IWiaDataTransferVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaDataTransfer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaDataTransfer *This);
-      ULONG (WINAPI *Release)(IWiaDataTransfer *This);
-      HRESULT (WINAPI *idtGetData)(IWiaDataTransfer *This,LPSTGMEDIUM pMedium,IWiaDataCallback *pIWiaDataCallback);
-      HRESULT (WINAPI *idtGetBandedData)(IWiaDataTransfer *This,PWIA_DATA_TRANSFER_INFO pWiaDataTransInfo,IWiaDataCallback *pIWiaDataCallback);
-      HRESULT (WINAPI *idtQueryGetData)(IWiaDataTransfer *This,WIA_FORMAT_INFO *pfe);
-      HRESULT (WINAPI *idtEnumWIA_FORMAT_INFO)(IWiaDataTransfer *This,IEnumWIA_FORMAT_INFO **ppEnum);
-      HRESULT (WINAPI *idtGetExtendedTransferInfo)(IWiaDataTransfer *This,PWIA_EXTENDED_TRANSFER_INFO pExtendedTransferInfo);
+                   HRESULT (WINAPI *QueryInterface)(IWiaDataTransfer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaDataTransfer *This);
+                   ULONG (WINAPI *Release)(IWiaDataTransfer *This);
+                   HRESULT (WINAPI *idtGetData)(IWiaDataTransfer *This,LPSTGMEDIUM pMedium,IWiaDataCallback *pIWiaDataCallback);
+                   HRESULT (WINAPI *idtGetBandedData)(IWiaDataTransfer *This,PWIA_DATA_TRANSFER_INFO pWiaDataTransInfo,IWiaDataCallback *pIWiaDataCallback);
+                   HRESULT (WINAPI *idtQueryGetData)(IWiaDataTransfer *This,WIA_FORMAT_INFO *pfe);
+                   HRESULT (WINAPI *idtEnumWIA_FORMAT_INFO)(IWiaDataTransfer *This,IEnumWIA_FORMAT_INFO **ppEnum);
+                   HRESULT (WINAPI *idtGetExtendedTransferInfo)(IWiaDataTransfer *This,PWIA_EXTENDED_TRANSFER_INFO pExtendedTransferInfo);
     END_INTERFACE
   } IWiaDataTransferVtbl;
   struct IWiaDataTransfer {
@@ -450,24 +450,24 @@ extern "C" {
 #else
   typedef struct IWiaItemVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaItem *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaItem *This);
-      ULONG (WINAPI *Release)(IWiaItem *This);
-      HRESULT (WINAPI *GetItemType)(IWiaItem *This,LONG *pItemType);
-      HRESULT (WINAPI *AnalyzeItem)(IWiaItem *This,LONG lFlags);
-      HRESULT (WINAPI *EnumChildItems)(IWiaItem *This,IEnumWiaItem **ppIEnumWiaItem);
-      HRESULT (WINAPI *DeleteItem)(IWiaItem *This,LONG lFlags);
-      HRESULT (WINAPI *CreateChildItem)(IWiaItem *This,LONG lFlags,BSTR bstrItemName,BSTR bstrFullItemName,IWiaItem **ppIWiaItem);
-      HRESULT (WINAPI *EnumRegisterEventInfo)(IWiaItem *This,LONG lFlags,const GUID *pEventGUID,IEnumWIA_DEV_CAPS **ppIEnum);
-      HRESULT (WINAPI *FindItemByName)(IWiaItem *This,LONG lFlags,BSTR bstrFullItemName,IWiaItem **ppIWiaItem);
-      HRESULT (WINAPI *DeviceDlg)(IWiaItem *This,HWND hwndParent,LONG lFlags,LONG lIntent,LONG *plItemCount,IWiaItem ***ppIWiaItem);
-      HRESULT (WINAPI *DeviceCommand)(IWiaItem *This,LONG lFlags,const GUID *pCmdGUID,IWiaItem **pIWiaItem);
-      HRESULT (WINAPI *GetRootItem)(IWiaItem *This,IWiaItem **ppIWiaItem);
-      HRESULT (WINAPI *EnumDeviceCapabilities)(IWiaItem *This,LONG lFlags,IEnumWIA_DEV_CAPS **ppIEnumWIA_DEV_CAPS);
-      HRESULT (WINAPI *DumpItemData)(IWiaItem *This,BSTR *bstrData);
-      HRESULT (WINAPI *DumpDrvItemData)(IWiaItem *This,BSTR *bstrData);
-      HRESULT (WINAPI *DumpTreeItemData)(IWiaItem *This,BSTR *bstrData);
-      HRESULT (WINAPI *Diagnostic)(IWiaItem *This,ULONG ulSize,BYTE *pBuffer);
+                   HRESULT (WINAPI *QueryInterface)(IWiaItem *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaItem *This);
+                   ULONG (WINAPI *Release)(IWiaItem *This);
+                   HRESULT (WINAPI *GetItemType)(IWiaItem *This,LONG *pItemType);
+                   HRESULT (WINAPI *AnalyzeItem)(IWiaItem *This,LONG lFlags);
+                   HRESULT (WINAPI *EnumChildItems)(IWiaItem *This,IEnumWiaItem **ppIEnumWiaItem);
+                   HRESULT (WINAPI *DeleteItem)(IWiaItem *This,LONG lFlags);
+                   HRESULT (WINAPI *CreateChildItem)(IWiaItem *This,LONG lFlags,BSTR bstrItemName,BSTR bstrFullItemName,IWiaItem **ppIWiaItem);
+                   HRESULT (WINAPI *EnumRegisterEventInfo)(IWiaItem *This,LONG lFlags,const GUID *pEventGUID,IEnumWIA_DEV_CAPS **ppIEnum);
+                   HRESULT (WINAPI *FindItemByName)(IWiaItem *This,LONG lFlags,BSTR bstrFullItemName,IWiaItem **ppIWiaItem);
+                   HRESULT (WINAPI *DeviceDlg)(IWiaItem *This,HWND hwndParent,LONG lFlags,LONG lIntent,LONG *plItemCount,IWiaItem ***ppIWiaItem);
+                   HRESULT (WINAPI *DeviceCommand)(IWiaItem *This,LONG lFlags,const GUID *pCmdGUID,IWiaItem **pIWiaItem);
+                   HRESULT (WINAPI *GetRootItem)(IWiaItem *This,IWiaItem **ppIWiaItem);
+                   HRESULT (WINAPI *EnumDeviceCapabilities)(IWiaItem *This,LONG lFlags,IEnumWIA_DEV_CAPS **ppIEnumWIA_DEV_CAPS);
+                   HRESULT (WINAPI *DumpItemData)(IWiaItem *This,BSTR *bstrData);
+                   HRESULT (WINAPI *DumpDrvItemData)(IWiaItem *This,BSTR *bstrData);
+                   HRESULT (WINAPI *DumpTreeItemData)(IWiaItem *This,BSTR *bstrData);
+                   HRESULT (WINAPI *Diagnostic)(IWiaItem *This,ULONG ulSize,BYTE *pBuffer);
     END_INTERFACE
   } IWiaItemVtbl;
   struct IWiaItem {
@@ -552,25 +552,25 @@ extern "C" {
 #else
   typedef struct IWiaPropertyStorageVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaPropertyStorage *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaPropertyStorage *This);
-      ULONG (WINAPI *Release)(IWiaPropertyStorage *This);
-      HRESULT (WINAPI *ReadMultiple)(IWiaPropertyStorage *This,ULONG cpspec,const PROPSPEC rgpspec[],PROPVARIANT rgpropvar[]);
-      HRESULT (WINAPI *WriteMultiple)(IWiaPropertyStorage *This,ULONG cpspec,const PROPSPEC rgpspec[],const PROPVARIANT rgpropvar[],PROPID propidNameFirst);
-      HRESULT (WINAPI *DeleteMultiple)(IWiaPropertyStorage *This,ULONG cpspec,const PROPSPEC rgpspec[]);
-      HRESULT (WINAPI *ReadPropertyNames)(IWiaPropertyStorage *This,ULONG cpropid,const PROPID rgpropid[],LPOLESTR rglpwstrName[]);
-      HRESULT (WINAPI *WritePropertyNames)(IWiaPropertyStorage *This,ULONG cpropid,const PROPID rgpropid[],const LPOLESTR rglpwstrName[]);
-      HRESULT (WINAPI *DeletePropertyNames)(IWiaPropertyStorage *This,ULONG cpropid,const PROPID rgpropid[]);
-      HRESULT (WINAPI *Commit)(IWiaPropertyStorage *This,DWORD grfCommitFlags);
-      HRESULT (WINAPI *Revert)(IWiaPropertyStorage *This);
-      HRESULT (WINAPI *Enum)(IWiaPropertyStorage *This,IEnumSTATPROPSTG **ppenum);
-      HRESULT (WINAPI *SetTimes)(IWiaPropertyStorage *This,const FILETIME *pctime,const FILETIME *patime,const FILETIME *pmtime);
-      HRESULT (WINAPI *SetClass)(IWiaPropertyStorage *This,REFCLSID clsid);
-      HRESULT (WINAPI *Stat)(IWiaPropertyStorage *This,STATPROPSETSTG *pstatpsstg);
-      HRESULT (WINAPI *GetPropertyAttributes)(IWiaPropertyStorage *This,ULONG cpspec,PROPSPEC rgpspec[],ULONG rgflags[],PROPVARIANT rgpropvar[]);
-      HRESULT (WINAPI *GetCount)(IWiaPropertyStorage *This,ULONG *pulNumProps);
-      HRESULT (WINAPI *GetPropertyStream)(IWiaPropertyStorage *This,GUID *pCompatibilityId,IStream **ppIStream);
-      HRESULT (WINAPI *SetPropertyStream)(IWiaPropertyStorage *This,GUID *pCompatibilityId,IStream *pIStream);
+                   HRESULT (WINAPI *QueryInterface)(IWiaPropertyStorage *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaPropertyStorage *This);
+                   ULONG (WINAPI *Release)(IWiaPropertyStorage *This);
+                   HRESULT (WINAPI *ReadMultiple)(IWiaPropertyStorage *This,ULONG cpspec,const PROPSPEC rgpspec[],PROPVARIANT rgpropvar[]);
+                   HRESULT (WINAPI *WriteMultiple)(IWiaPropertyStorage *This,ULONG cpspec,const PROPSPEC rgpspec[],const PROPVARIANT rgpropvar[],PROPID propidNameFirst);
+                   HRESULT (WINAPI *DeleteMultiple)(IWiaPropertyStorage *This,ULONG cpspec,const PROPSPEC rgpspec[]);
+                   HRESULT (WINAPI *ReadPropertyNames)(IWiaPropertyStorage *This,ULONG cpropid,const PROPID rgpropid[],LPOLESTR rglpwstrName[]);
+                   HRESULT (WINAPI *WritePropertyNames)(IWiaPropertyStorage *This,ULONG cpropid,const PROPID rgpropid[],const LPOLESTR rglpwstrName[]);
+                   HRESULT (WINAPI *DeletePropertyNames)(IWiaPropertyStorage *This,ULONG cpropid,const PROPID rgpropid[]);
+                   HRESULT (WINAPI *Commit)(IWiaPropertyStorage *This,DWORD grfCommitFlags);
+                   HRESULT (WINAPI *Revert)(IWiaPropertyStorage *This);
+                   HRESULT (WINAPI *Enum)(IWiaPropertyStorage *This,IEnumSTATPROPSTG **ppenum);
+                   HRESULT (WINAPI *SetTimes)(IWiaPropertyStorage *This,const FILETIME *pctime,const FILETIME *patime,const FILETIME *pmtime);
+                   HRESULT (WINAPI *SetClass)(IWiaPropertyStorage *This,REFCLSID clsid);
+                   HRESULT (WINAPI *Stat)(IWiaPropertyStorage *This,STATPROPSETSTG *pstatpsstg);
+                   HRESULT (WINAPI *GetPropertyAttributes)(IWiaPropertyStorage *This,ULONG cpspec,PROPSPEC rgpspec[],ULONG rgflags[],PROPVARIANT rgpropvar[]);
+                   HRESULT (WINAPI *GetCount)(IWiaPropertyStorage *This,ULONG *pulNumProps);
+                   HRESULT (WINAPI *GetPropertyStream)(IWiaPropertyStorage *This,GUID *pCompatibilityId,IStream **ppIStream);
+                   HRESULT (WINAPI *SetPropertyStream)(IWiaPropertyStorage *This,GUID *pCompatibilityId,IStream *pIStream);
     END_INTERFACE
   } IWiaPropertyStorageVtbl;
   struct IWiaPropertyStorage {
@@ -647,14 +647,14 @@ extern "C" {
 #else
   typedef struct IEnumWiaItemVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumWiaItem *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumWiaItem *This);
-      ULONG (WINAPI *Release)(IEnumWiaItem *This);
-      HRESULT (WINAPI *Next)(IEnumWiaItem *This,ULONG celt,IWiaItem **ppIWiaItem,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumWiaItem *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumWiaItem *This);
-      HRESULT (WINAPI *Clone)(IEnumWiaItem *This,IEnumWiaItem **ppIEnum);
-      HRESULT (WINAPI *GetCount)(IEnumWiaItem *This,ULONG *celt);
+                   HRESULT (WINAPI *QueryInterface)(IEnumWiaItem *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumWiaItem *This);
+                   ULONG (WINAPI *Release)(IEnumWiaItem *This);
+                   HRESULT (WINAPI *Next)(IEnumWiaItem *This,ULONG celt,IWiaItem **ppIWiaItem,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumWiaItem *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumWiaItem *This);
+                   HRESULT (WINAPI *Clone)(IEnumWiaItem *This,IEnumWiaItem **ppIEnum);
+                   HRESULT (WINAPI *GetCount)(IEnumWiaItem *This,ULONG *celt);
     END_INTERFACE
   } IEnumWiaItemVtbl;
   struct IEnumWiaItem {
@@ -713,14 +713,14 @@ extern "C" {
 #else
   typedef struct IEnumWIA_DEV_CAPSVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumWIA_DEV_CAPS *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumWIA_DEV_CAPS *This);
-      ULONG (WINAPI *Release)(IEnumWIA_DEV_CAPS *This);
-      HRESULT (WINAPI *Next)(IEnumWIA_DEV_CAPS *This,ULONG celt,WIA_DEV_CAP *rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumWIA_DEV_CAPS *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumWIA_DEV_CAPS *This);
-      HRESULT (WINAPI *Clone)(IEnumWIA_DEV_CAPS *This,IEnumWIA_DEV_CAPS **ppIEnum);
-      HRESULT (WINAPI *GetCount)(IEnumWIA_DEV_CAPS *This,ULONG *pcelt);
+                   HRESULT (WINAPI *QueryInterface)(IEnumWIA_DEV_CAPS *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumWIA_DEV_CAPS *This);
+                   ULONG (WINAPI *Release)(IEnumWIA_DEV_CAPS *This);
+                   HRESULT (WINAPI *Next)(IEnumWIA_DEV_CAPS *This,ULONG celt,WIA_DEV_CAP *rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumWIA_DEV_CAPS *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumWIA_DEV_CAPS *This);
+                   HRESULT (WINAPI *Clone)(IEnumWIA_DEV_CAPS *This,IEnumWIA_DEV_CAPS **ppIEnum);
+                   HRESULT (WINAPI *GetCount)(IEnumWIA_DEV_CAPS *This,ULONG *pcelt);
     END_INTERFACE
   } IEnumWIA_DEV_CAPSVtbl;
   struct IEnumWIA_DEV_CAPS {
@@ -764,14 +764,14 @@ extern "C" {
 #else
   typedef struct IEnumWIA_FORMAT_INFOVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumWIA_FORMAT_INFO *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumWIA_FORMAT_INFO *This);
-      ULONG (WINAPI *Release)(IEnumWIA_FORMAT_INFO *This);
-      HRESULT (WINAPI *Next)(IEnumWIA_FORMAT_INFO *This,ULONG celt,WIA_FORMAT_INFO *rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumWIA_FORMAT_INFO *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumWIA_FORMAT_INFO *This);
-      HRESULT (WINAPI *Clone)(IEnumWIA_FORMAT_INFO *This,IEnumWIA_FORMAT_INFO **ppIEnum);
-      HRESULT (WINAPI *GetCount)(IEnumWIA_FORMAT_INFO *This,ULONG *pcelt);
+                   HRESULT (WINAPI *QueryInterface)(IEnumWIA_FORMAT_INFO *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumWIA_FORMAT_INFO *This);
+                   ULONG (WINAPI *Release)(IEnumWIA_FORMAT_INFO *This);
+                   HRESULT (WINAPI *Next)(IEnumWIA_FORMAT_INFO *This,ULONG celt,WIA_FORMAT_INFO *rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumWIA_FORMAT_INFO *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumWIA_FORMAT_INFO *This);
+                   HRESULT (WINAPI *Clone)(IEnumWIA_FORMAT_INFO *This,IEnumWIA_FORMAT_INFO **ppIEnum);
+                   HRESULT (WINAPI *GetCount)(IEnumWIA_FORMAT_INFO *This,ULONG *pcelt);
     END_INTERFACE
   } IEnumWIA_FORMAT_INFOVtbl;
   struct IEnumWIA_FORMAT_INFO {
@@ -813,12 +813,12 @@ extern "C" {
 #else
   typedef struct IWiaLogVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaLog *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaLog *This);
-      ULONG (WINAPI *Release)(IWiaLog *This);
-      HRESULT (WINAPI *InitializeLog)(IWiaLog *This,LONG hInstance);
-      HRESULT (WINAPI *hResult)(IWiaLog *This,HRESULT hResult);
-      HRESULT (WINAPI *Log)(IWiaLog *This,LONG lFlags,LONG lResID,LONG lDetail,BSTR bstrText);
+                   HRESULT (WINAPI *QueryInterface)(IWiaLog *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaLog *This);
+                   ULONG (WINAPI *Release)(IWiaLog *This);
+                   HRESULT (WINAPI *InitializeLog)(IWiaLog *This,LONG hInstance);
+                   HRESULT (WINAPI *hResult)(IWiaLog *This,HRESULT hResult);
+                   HRESULT (WINAPI *Log)(IWiaLog *This,LONG lFlags,LONG lResID,LONG lDetail,BSTR bstrText);
     END_INTERFACE
   } IWiaLogVtbl;
   struct IWiaLog {
@@ -856,14 +856,14 @@ extern "C" {
 #else
   typedef struct IWiaLogExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaLogEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaLogEx *This);
-      ULONG (WINAPI *Release)(IWiaLogEx *This);
-      HRESULT (WINAPI *InitializeLogEx)(IWiaLogEx *This,BYTE *hInstance);
-      HRESULT (WINAPI *hResult)(IWiaLogEx *This,HRESULT hResult);
-      HRESULT (WINAPI *Log)(IWiaLogEx *This,LONG lFlags,LONG lResID,LONG lDetail,BSTR bstrText);
-      HRESULT (WINAPI *hResultEx)(IWiaLogEx *This,LONG lMethodId,HRESULT hResult);
-      HRESULT (WINAPI *LogEx)(IWiaLogEx *This,LONG lMethodId,LONG lFlags,LONG lResID,LONG lDetail,BSTR bstrText);
+                   HRESULT (WINAPI *QueryInterface)(IWiaLogEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaLogEx *This);
+                   ULONG (WINAPI *Release)(IWiaLogEx *This);
+                   HRESULT (WINAPI *InitializeLogEx)(IWiaLogEx *This,BYTE *hInstance);
+                   HRESULT (WINAPI *hResult)(IWiaLogEx *This,HRESULT hResult);
+                   HRESULT (WINAPI *Log)(IWiaLogEx *This,LONG lFlags,LONG lResID,LONG lDetail,BSTR bstrText);
+                   HRESULT (WINAPI *hResultEx)(IWiaLogEx *This,LONG lMethodId,HRESULT hResult);
+                   HRESULT (WINAPI *LogEx)(IWiaLogEx *This,LONG lMethodId,LONG lFlags,LONG lResID,LONG lDetail,BSTR bstrText);
     END_INTERFACE
   } IWiaLogExVtbl;
   struct IWiaLogEx {
@@ -903,10 +903,10 @@ extern "C" {
 #else
   typedef struct IWiaNotifyDevMgrVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaNotifyDevMgr *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaNotifyDevMgr *This);
-      ULONG (WINAPI *Release)(IWiaNotifyDevMgr *This);
-      HRESULT (WINAPI *NewDeviceArrival)(IWiaNotifyDevMgr *This);
+                   HRESULT (WINAPI *QueryInterface)(IWiaNotifyDevMgr *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaNotifyDevMgr *This);
+                   ULONG (WINAPI *Release)(IWiaNotifyDevMgr *This);
+                   HRESULT (WINAPI *NewDeviceArrival)(IWiaNotifyDevMgr *This);
     END_INTERFACE
   } IWiaNotifyDevMgrVtbl;
   struct IWiaNotifyDevMgr {
@@ -936,12 +936,12 @@ extern "C" {
 #else
   typedef struct IWiaItemExtrasVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWiaItemExtras *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWiaItemExtras *This);
-      ULONG (WINAPI *Release)(IWiaItemExtras *This);
-      HRESULT (WINAPI *GetExtendedErrorInfo)(IWiaItemExtras *This,BSTR *bstrErrorText);
-      HRESULT (WINAPI *Escape)(IWiaItemExtras *This,DWORD dwEscapeCode,BYTE *lpInData,DWORD cbInDataSize,BYTE *pOutData,DWORD dwOutDataSize,DWORD *pdwActualDataSize);
-      HRESULT (WINAPI *CancelPendingIO)(IWiaItemExtras *This);
+                   HRESULT (WINAPI *QueryInterface)(IWiaItemExtras *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWiaItemExtras *This);
+                   ULONG (WINAPI *Release)(IWiaItemExtras *This);
+                   HRESULT (WINAPI *GetExtendedErrorInfo)(IWiaItemExtras *This,BSTR *bstrErrorText);
+                   HRESULT (WINAPI *Escape)(IWiaItemExtras *This,DWORD dwEscapeCode,BYTE *lpInData,DWORD cbInDataSize,BYTE *pOutData,DWORD dwOutDataSize,DWORD *pdwActualDataSize);
+                   HRESULT (WINAPI *CancelPendingIO)(IWiaItemExtras *This);
     END_INTERFACE
   } IWiaItemExtrasVtbl;
   struct IWiaItemExtras {

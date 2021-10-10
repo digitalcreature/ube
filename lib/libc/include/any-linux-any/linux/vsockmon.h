@@ -9,14 +9,14 @@
  * following layout:
  *
  *   +-----------------------------------+
- *   |           vsockmon header         |
- *   |      (struct af_vsockmon_hdr)     |
+ *   |                        vsockmon header                      |
+ *   |                   (struct af_vsockmon_hdr)     |
  *   +-----------------------------------+
- *   |          transport header         |
+ *   |                       transport header                      |
  *   | (af_vsockmon_hdr->len bytes long) |
  *   +-----------------------------------+
- *   |              payload              |
- *   |       (until end of packet)       |
+ *   |                                        payload                                        |
+ *   |                    (until end of packet)                    |
  *   +-----------------------------------+
  *
  * The vsockmon header is a transport-independent description of the packet.

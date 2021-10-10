@@ -101,7 +101,7 @@ extern "C" {
 /* FIXME: #include <gcghost.h> */
 /* FIXME: #include <ivalidator.h> */
 HRESULT     WINAPI CorBindToRuntimeHost(LPCWSTR,LPCWSTR,LPCWSTR,VOID*,DWORD,REFCLSID,REFIID,LPVOID*);
-void        WINAPI CorExitProcess(int);
+void                     WINAPI CorExitProcess(int);
 HRESULT     WINAPI GetCORSystemDirectory(LPWSTR,DWORD,DWORD*);
 HRESULT     WINAPI GetCORVersion(LPWSTR,DWORD,DWORD*);
 HRESULT     WINAPI GetRequestedRuntimeInfo(LPCWSTR,LPCWSTR,LPCWSTR,DWORD,DWORD,LPWSTR,DWORD,DWORD*,LPWSTR,DWORD,DWORD*);
@@ -135,13 +135,13 @@ MIDL_INTERFACE("f31d1788-c397-4725-87a5-6af3472c2791")
 IGCThreadControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ThreadIsBlockingForSuspension(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SuspensionStarting(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SuspensionEnding(
-        DWORD generation) = 0;
+                     DWORD generation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -153,26 +153,26 @@ typedef struct IGCThreadControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IGCThreadControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IGCThreadControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IGCThreadControl *This);
+                     IGCThreadControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IGCThreadControl *This);
+                     IGCThreadControl *This);
 
     /*** IGCThreadControl methods ***/
     HRESULT (STDMETHODCALLTYPE *ThreadIsBlockingForSuspension)(
-        IGCThreadControl *This);
+                     IGCThreadControl *This);
 
     HRESULT (STDMETHODCALLTYPE *SuspensionStarting)(
-        IGCThreadControl *This);
+                     IGCThreadControl *This);
 
     HRESULT (STDMETHODCALLTYPE *SuspensionEnding)(
-        IGCThreadControl *This,
-        DWORD generation);
+                     IGCThreadControl *This,
+                     DWORD generation);
 
     END_INTERFACE
 } IGCThreadControlVtbl;
@@ -232,8 +232,8 @@ MIDL_INTERFACE("5513d564-8374-4cb9-aed9-0083f4160a1d")
 IGCHostControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RequestVirtualMemLimit(
-        SIZE_T nMaxVirtualMemMB,
-        SIZE_T *nNewMaxVirtualMemMB) = 0;
+                     SIZE_T nMaxVirtualMemMB,
+                     SIZE_T *nNewMaxVirtualMemMB) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -245,21 +245,21 @@ typedef struct IGCHostControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IGCHostControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IGCHostControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IGCHostControl *This);
+                     IGCHostControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IGCHostControl *This);
+                     IGCHostControl *This);
 
     /*** IGCHostControl methods ***/
     HRESULT (STDMETHODCALLTYPE *RequestVirtualMemLimit)(
-        IGCHostControl *This,
-        SIZE_T nMaxVirtualMemMB,
-        SIZE_T *nNewMaxVirtualMemMB);
+                     IGCHostControl *This,
+                     SIZE_T nMaxVirtualMemMB,
+                     SIZE_T *nNewMaxVirtualMemMB);
 
     END_INTERFACE
 } IGCHostControlVtbl;
@@ -311,13 +311,13 @@ MIDL_INTERFACE("23d86786-0bb5-4774-8fb5-e3522add6246")
 IDebuggerThreadControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ThreadIsBlockingForDebugger(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseAllRuntimeThreads(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartBlockingForDebugger(
-        DWORD dwUnused) = 0;
+                     DWORD dwUnused) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -329,26 +329,26 @@ typedef struct IDebuggerThreadControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebuggerThreadControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebuggerThreadControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebuggerThreadControl *This);
+                     IDebuggerThreadControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebuggerThreadControl *This);
+                     IDebuggerThreadControl *This);
 
     /*** IDebuggerThreadControl methods ***/
     HRESULT (STDMETHODCALLTYPE *ThreadIsBlockingForDebugger)(
-        IDebuggerThreadControl *This);
+                     IDebuggerThreadControl *This);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseAllRuntimeThreads)(
-        IDebuggerThreadControl *This);
+                     IDebuggerThreadControl *This);
 
     HRESULT (STDMETHODCALLTYPE *StartBlockingForDebugger)(
-        IDebuggerThreadControl *This,
-        DWORD dwUnused);
+                     IDebuggerThreadControl *This,
+                     DWORD dwUnused);
 
     END_INTERFACE
 } IDebuggerThreadControlVtbl;
@@ -408,16 +408,16 @@ MIDL_INTERFACE("5c2b07a5-1e98-11d3-872f-00c04f79ed0d")
 ICorConfiguration : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetGCThreadControl(
-        IGCThreadControl *GCThreadControl) = 0;
+                     IGCThreadControl *GCThreadControl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGCHostControl(
-        IGCHostControl *GCHostControl) = 0;
+                     IGCHostControl *GCHostControl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDebuggerThreadControl(
-        IDebuggerThreadControl *debuggerThreadControl) = 0;
+                     IDebuggerThreadControl *debuggerThreadControl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddDebuggerSpecialThread(
-        DWORD specialThreadId) = 0;
+                     DWORD specialThreadId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -429,32 +429,32 @@ typedef struct ICorConfigurationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICorConfiguration *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICorConfiguration *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICorConfiguration *This);
+                     ICorConfiguration *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICorConfiguration *This);
+                     ICorConfiguration *This);
 
     /*** ICorConfiguration methods ***/
     HRESULT (STDMETHODCALLTYPE *SetGCThreadControl)(
-        ICorConfiguration *This,
-        IGCThreadControl *GCThreadControl);
+                     ICorConfiguration *This,
+                     IGCThreadControl *GCThreadControl);
 
     HRESULT (STDMETHODCALLTYPE *SetGCHostControl)(
-        ICorConfiguration *This,
-        IGCHostControl *GCHostControl);
+                     ICorConfiguration *This,
+                     IGCHostControl *GCHostControl);
 
     HRESULT (STDMETHODCALLTYPE *SetDebuggerThreadControl)(
-        ICorConfiguration *This,
-        IDebuggerThreadControl *debuggerThreadControl);
+                     ICorConfiguration *This,
+                     IDebuggerThreadControl *debuggerThreadControl);
 
     HRESULT (STDMETHODCALLTYPE *AddDebuggerSpecialThread)(
-        ICorConfiguration *This,
-        DWORD specialThreadId);
+                     ICorConfiguration *This,
+                     DWORD specialThreadId);
 
     END_INTERFACE
 } ICorConfigurationVtbl;
@@ -518,12 +518,12 @@ MIDL_INTERFACE("9065597e-d1a1-4fb2-b6ba-7e1fce230f61")
 ICLRControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCLRManager(
-        REFIID riid,
-        void **ppObject) = 0;
+                     REFIID riid,
+                     void **ppObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAppDomainManagerType(
-        LPCWSTR appDomainManagerAssembly,
-        LPCWSTR appDomainManagerType) = 0;
+                     LPCWSTR appDomainManagerAssembly,
+                     LPCWSTR appDomainManagerType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -535,26 +535,26 @@ typedef struct ICLRControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICLRControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICLRControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICLRControl *This);
+                     ICLRControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICLRControl *This);
+                     ICLRControl *This);
 
     /*** ICLRControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCLRManager)(
-        ICLRControl *This,
-        REFIID riid,
-        void **ppObject);
+                     ICLRControl *This,
+                     REFIID riid,
+                     void **ppObject);
 
     HRESULT (STDMETHODCALLTYPE *SetAppDomainManagerType)(
-        ICLRControl *This,
-        LPCWSTR appDomainManagerAssembly,
-        LPCWSTR appDomainManagerType);
+                     ICLRControl *This,
+                     LPCWSTR appDomainManagerAssembly,
+                     LPCWSTR appDomainManagerType);
 
     END_INTERFACE
 } ICLRControlVtbl;
@@ -610,12 +610,12 @@ MIDL_INTERFACE("02ca073c-7079-4860-880a-c2f7a449c991")
 IHostControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetHostManager(
-        REFIID riid,
-        void **ppObject) = 0;
+                     REFIID riid,
+                     void **ppObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAppDomainManager(
-        DWORD appDomainID,
-        IUnknown *appDomainManager) = 0;
+                     DWORD appDomainID,
+                     IUnknown *appDomainManager) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -627,26 +627,26 @@ typedef struct IHostControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHostControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHostControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHostControl *This);
+                     IHostControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHostControl *This);
+                     IHostControl *This);
 
     /*** IHostControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetHostManager)(
-        IHostControl *This,
-        REFIID riid,
-        void **ppObject);
+                     IHostControl *This,
+                     REFIID riid,
+                     void **ppObject);
 
     HRESULT (STDMETHODCALLTYPE *SetAppDomainManager)(
-        IHostControl *This,
-        DWORD appDomainID,
-        IUnknown *appDomainManager);
+                     IHostControl *This,
+                     DWORD appDomainID,
+                     IUnknown *appDomainManager);
 
     END_INTERFACE
 } IHostControlVtbl;
@@ -703,68 +703,68 @@ MIDL_INTERFACE("cb2f6722-ab3a-11d2-9c40-00c04fa30a3e")
 ICorRuntimeHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateLogicalThreadState(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteLogicalThreadState(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SwitchInLogicalThreadState(
-        DWORD *fiberCookie) = 0;
+                     DWORD *fiberCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SwitchOutLogicalThreadState(
-        DWORD **fiberCookie) = 0;
+                     DWORD **fiberCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LocksHeldByLogicalThread(
-        DWORD *pCount) = 0;
+                     DWORD *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MapFile(
-        HANDLE hFile,
-        HMODULE *mapAddress) = 0;
+                     HANDLE hFile,
+                     HMODULE *mapAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConfiguration(
-        ICorConfiguration **pConfiguration) = 0;
+                     ICorConfiguration **pConfiguration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Start(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDomain(
-        LPCWSTR friendlyName,
-        IUnknown *identityArray,
-        IUnknown **appDomain) = 0;
+                     LPCWSTR friendlyName,
+                     IUnknown *identityArray,
+                     IUnknown **appDomain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultDomain(
-        IUnknown **pAppDomain) = 0;
+                     IUnknown **pAppDomain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumDomains(
-        HDOMAINENUM *hEnum) = 0;
+                     HDOMAINENUM *hEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NextDomain(
-        HDOMAINENUM hEnum,
-        IUnknown **appDomain) = 0;
+                     HDOMAINENUM hEnum,
+                     IUnknown **appDomain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CloseEnum(
-        HDOMAINENUM hEnum) = 0;
+                     HDOMAINENUM hEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDomainEx(
-        LPCWSTR friendlyName,
-        IUnknown *setup,
-        IUnknown *evidence,
-        IUnknown **appDomain) = 0;
+                     LPCWSTR friendlyName,
+                     IUnknown *setup,
+                     IUnknown *evidence,
+                     IUnknown **appDomain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDomainSetup(
-        IUnknown **appDomainSetup) = 0;
+                     IUnknown **appDomainSetup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateEvidence(
-        IUnknown **evidence) = 0;
+                     IUnknown **evidence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnloadDomain(
-        IUnknown *appDomain) = 0;
+                     IUnknown *appDomain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CurrentDomain(
-        IUnknown **appDomain) = 0;
+                     IUnknown **appDomain) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -776,95 +776,95 @@ typedef struct ICorRuntimeHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICorRuntimeHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICorRuntimeHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICorRuntimeHost *This);
+                     ICorRuntimeHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICorRuntimeHost *This);
+                     ICorRuntimeHost *This);
 
     /*** ICorRuntimeHost methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateLogicalThreadState)(
-        ICorRuntimeHost *This);
+                     ICorRuntimeHost *This);
 
     HRESULT (STDMETHODCALLTYPE *DeleteLogicalThreadState)(
-        ICorRuntimeHost *This);
+                     ICorRuntimeHost *This);
 
     HRESULT (STDMETHODCALLTYPE *SwitchInLogicalThreadState)(
-        ICorRuntimeHost *This,
-        DWORD *fiberCookie);
+                     ICorRuntimeHost *This,
+                     DWORD *fiberCookie);
 
     HRESULT (STDMETHODCALLTYPE *SwitchOutLogicalThreadState)(
-        ICorRuntimeHost *This,
-        DWORD **fiberCookie);
+                     ICorRuntimeHost *This,
+                     DWORD **fiberCookie);
 
     HRESULT (STDMETHODCALLTYPE *LocksHeldByLogicalThread)(
-        ICorRuntimeHost *This,
-        DWORD *pCount);
+                     ICorRuntimeHost *This,
+                     DWORD *pCount);
 
     HRESULT (STDMETHODCALLTYPE *MapFile)(
-        ICorRuntimeHost *This,
-        HANDLE hFile,
-        HMODULE *mapAddress);
+                     ICorRuntimeHost *This,
+                     HANDLE hFile,
+                     HMODULE *mapAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetConfiguration)(
-        ICorRuntimeHost *This,
-        ICorConfiguration **pConfiguration);
+                     ICorRuntimeHost *This,
+                     ICorConfiguration **pConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *Start)(
-        ICorRuntimeHost *This);
+                     ICorRuntimeHost *This);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        ICorRuntimeHost *This);
+                     ICorRuntimeHost *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateDomain)(
-        ICorRuntimeHost *This,
-        LPCWSTR friendlyName,
-        IUnknown *identityArray,
-        IUnknown **appDomain);
+                     ICorRuntimeHost *This,
+                     LPCWSTR friendlyName,
+                     IUnknown *identityArray,
+                     IUnknown **appDomain);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultDomain)(
-        ICorRuntimeHost *This,
-        IUnknown **pAppDomain);
+                     ICorRuntimeHost *This,
+                     IUnknown **pAppDomain);
 
     HRESULT (STDMETHODCALLTYPE *EnumDomains)(
-        ICorRuntimeHost *This,
-        HDOMAINENUM *hEnum);
+                     ICorRuntimeHost *This,
+                     HDOMAINENUM *hEnum);
 
     HRESULT (STDMETHODCALLTYPE *NextDomain)(
-        ICorRuntimeHost *This,
-        HDOMAINENUM hEnum,
-        IUnknown **appDomain);
+                     ICorRuntimeHost *This,
+                     HDOMAINENUM hEnum,
+                     IUnknown **appDomain);
 
     HRESULT (STDMETHODCALLTYPE *CloseEnum)(
-        ICorRuntimeHost *This,
-        HDOMAINENUM hEnum);
+                     ICorRuntimeHost *This,
+                     HDOMAINENUM hEnum);
 
     HRESULT (STDMETHODCALLTYPE *CreateDomainEx)(
-        ICorRuntimeHost *This,
-        LPCWSTR friendlyName,
-        IUnknown *setup,
-        IUnknown *evidence,
-        IUnknown **appDomain);
+                     ICorRuntimeHost *This,
+                     LPCWSTR friendlyName,
+                     IUnknown *setup,
+                     IUnknown *evidence,
+                     IUnknown **appDomain);
 
     HRESULT (STDMETHODCALLTYPE *CreateDomainSetup)(
-        ICorRuntimeHost *This,
-        IUnknown **appDomainSetup);
+                     ICorRuntimeHost *This,
+                     IUnknown **appDomainSetup);
 
     HRESULT (STDMETHODCALLTYPE *CreateEvidence)(
-        ICorRuntimeHost *This,
-        IUnknown **evidence);
+                     ICorRuntimeHost *This,
+                     IUnknown **evidence);
 
     HRESULT (STDMETHODCALLTYPE *UnloadDomain)(
-        ICorRuntimeHost *This,
-        IUnknown *appDomain);
+                     ICorRuntimeHost *This,
+                     IUnknown *appDomain);
 
     HRESULT (STDMETHODCALLTYPE *CurrentDomain)(
-        ICorRuntimeHost *This,
-        IUnknown **appDomain);
+                     ICorRuntimeHost *This,
+                     IUnknown **appDomain);
 
     END_INTERFACE
 } ICorRuntimeHostVtbl;
@@ -989,43 +989,43 @@ MIDL_INTERFACE("90f1a06c-7712-4762-86b5-7a5eba6bdb02")
 ICLRRuntimeHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetHostControl(
-        IHostControl *pHostControl) = 0;
+                     IHostControl *pHostControl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCLRControl(
-        ICLRControl **pCLRControl) = 0;
+                     ICLRControl **pCLRControl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnloadAppDomain(
-        DWORD dwAppDomainId,
-        WINBOOL fWaitUntilDone) = 0;
+                     DWORD dwAppDomainId,
+                     WINBOOL fWaitUntilDone) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecuteInAppDomain(
-        DWORD dwAppDomainId,
-        FExecuteInAppDomainCallback pCallback,
-        void *cookie) = 0;
+                     DWORD dwAppDomainId,
+                     FExecuteInAppDomainCallback pCallback,
+                     void *cookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentAppDomainId(
-        DWORD *pdwAppDomainId) = 0;
+                     DWORD *pdwAppDomainId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecuteApplication(
-        LPCWSTR pwzAppFullName,
-        DWORD dwManifestPaths,
-        LPCWSTR *ppwzManifestPaths,
-        DWORD dwActivationData,
-        LPCWSTR *ppwzActivationData,
-        int *pReturnValue) = 0;
+                     LPCWSTR pwzAppFullName,
+                     DWORD dwManifestPaths,
+                     LPCWSTR *ppwzManifestPaths,
+                     DWORD dwActivationData,
+                     LPCWSTR *ppwzActivationData,
+                     int *pReturnValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecuteInDefaultAppDomain(
-        LPCWSTR pwzAssemblyPath,
-        LPCWSTR pwzTypeName,
-        LPCWSTR pwzMethodName,
-        LPCWSTR pwzArgument,
-        DWORD *pReturnValue) = 0;
+                     LPCWSTR pwzAssemblyPath,
+                     LPCWSTR pwzTypeName,
+                     LPCWSTR pwzMethodName,
+                     LPCWSTR pwzArgument,
+                     DWORD *pReturnValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1037,62 +1037,62 @@ typedef struct ICLRRuntimeHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICLRRuntimeHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICLRRuntimeHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICLRRuntimeHost *This);
+                     ICLRRuntimeHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICLRRuntimeHost *This);
+                     ICLRRuntimeHost *This);
 
     /*** ICLRRuntimeHost methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        ICLRRuntimeHost *This);
+                     ICLRRuntimeHost *This);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        ICLRRuntimeHost *This);
+                     ICLRRuntimeHost *This);
 
     HRESULT (STDMETHODCALLTYPE *SetHostControl)(
-        ICLRRuntimeHost *This,
-        IHostControl *pHostControl);
+                     ICLRRuntimeHost *This,
+                     IHostControl *pHostControl);
 
     HRESULT (STDMETHODCALLTYPE *GetCLRControl)(
-        ICLRRuntimeHost *This,
-        ICLRControl **pCLRControl);
+                     ICLRRuntimeHost *This,
+                     ICLRControl **pCLRControl);
 
     HRESULT (STDMETHODCALLTYPE *UnloadAppDomain)(
-        ICLRRuntimeHost *This,
-        DWORD dwAppDomainId,
-        WINBOOL fWaitUntilDone);
+                     ICLRRuntimeHost *This,
+                     DWORD dwAppDomainId,
+                     WINBOOL fWaitUntilDone);
 
     HRESULT (STDMETHODCALLTYPE *ExecuteInAppDomain)(
-        ICLRRuntimeHost *This,
-        DWORD dwAppDomainId,
-        FExecuteInAppDomainCallback pCallback,
-        void *cookie);
+                     ICLRRuntimeHost *This,
+                     DWORD dwAppDomainId,
+                     FExecuteInAppDomainCallback pCallback,
+                     void *cookie);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentAppDomainId)(
-        ICLRRuntimeHost *This,
-        DWORD *pdwAppDomainId);
+                     ICLRRuntimeHost *This,
+                     DWORD *pdwAppDomainId);
 
     HRESULT (STDMETHODCALLTYPE *ExecuteApplication)(
-        ICLRRuntimeHost *This,
-        LPCWSTR pwzAppFullName,
-        DWORD dwManifestPaths,
-        LPCWSTR *ppwzManifestPaths,
-        DWORD dwActivationData,
-        LPCWSTR *ppwzActivationData,
-        int *pReturnValue);
+                     ICLRRuntimeHost *This,
+                     LPCWSTR pwzAppFullName,
+                     DWORD dwManifestPaths,
+                     LPCWSTR *ppwzManifestPaths,
+                     DWORD dwActivationData,
+                     LPCWSTR *ppwzActivationData,
+                     int *pReturnValue);
 
     HRESULT (STDMETHODCALLTYPE *ExecuteInDefaultAppDomain)(
-        ICLRRuntimeHost *This,
-        LPCWSTR pwzAssemblyPath,
-        LPCWSTR pwzTypeName,
-        LPCWSTR pwzMethodName,
-        LPCWSTR pwzArgument,
-        DWORD *pReturnValue);
+                     ICLRRuntimeHost *This,
+                     LPCWSTR pwzAssemblyPath,
+                     LPCWSTR pwzTypeName,
+                     LPCWSTR pwzMethodName,
+                     LPCWSTR pwzArgument,
+                     DWORD *pReturnValue);
 
     END_INTERFACE
 } ICLRRuntimeHostVtbl;
@@ -1176,12 +1176,12 @@ MIDL_INTERFACE("c3fcc19e-a970-11d2-8b5a-00a0c9b7c9c4")
 IManagedObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSerializedBuffer(
-        BSTR *pBSTR) = 0;
+                     BSTR *pBSTR) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObjectIdentity(
-        BSTR *pBSTRGUID,
-        int *AppDomainID,
-        int *pCCW) = 0;
+                     BSTR *pBSTRGUID,
+                     int *AppDomainID,
+                     int *pCCW) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1193,26 +1193,26 @@ typedef struct IManagedObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IManagedObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IManagedObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IManagedObject *This);
+                     IManagedObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IManagedObject *This);
+                     IManagedObject *This);
 
     /*** IManagedObject methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSerializedBuffer)(
-        IManagedObject *This,
-        BSTR *pBSTR);
+                     IManagedObject *This,
+                     BSTR *pBSTR);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectIdentity)(
-        IManagedObject *This,
-        BSTR *pBSTRGUID,
-        int *AppDomainID,
-        int *pCCW);
+                     IManagedObject *This,
+                     BSTR *pBSTRGUID,
+                     int *AppDomainID,
+                     int *pCCW);
 
     END_INTERFACE
 } IManagedObjectVtbl;

@@ -51,12 +51,12 @@ MIDL_INTERFACE("8a674b48-1f63-11d3-b64c-00c04f79498e")
 ICreatePropBagOnRegKey : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Create(
-        HKEY hkey,
-        LPCOLESTR subkey,
-        DWORD ulOptions,
-        DWORD samDesired,
-        REFIID iid,
-        LPVOID *ppBag) = 0;
+                     HKEY hkey,
+                     LPCOLESTR subkey,
+                     DWORD ulOptions,
+                     DWORD samDesired,
+                     REFIID iid,
+                     LPVOID *ppBag) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -68,25 +68,25 @@ typedef struct ICreatePropBagOnRegKeyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICreatePropBagOnRegKey *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICreatePropBagOnRegKey *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICreatePropBagOnRegKey *This);
+                     ICreatePropBagOnRegKey *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICreatePropBagOnRegKey *This);
+                     ICreatePropBagOnRegKey *This);
 
     /*** ICreatePropBagOnRegKey methods ***/
     HRESULT (STDMETHODCALLTYPE *Create)(
-        ICreatePropBagOnRegKey *This,
-        HKEY hkey,
-        LPCOLESTR subkey,
-        DWORD ulOptions,
-        DWORD samDesired,
-        REFIID iid,
-        LPVOID *ppBag);
+                     ICreatePropBagOnRegKey *This,
+                     HKEY hkey,
+                     LPCOLESTR subkey,
+                     DWORD ulOptions,
+                     DWORD samDesired,
+                     REFIID iid,
+                     LPVOID *ppBag);
 
     END_INTERFACE
 } ICreatePropBagOnRegKeyVtbl;

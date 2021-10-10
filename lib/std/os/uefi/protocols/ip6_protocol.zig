@@ -24,56 +24,56 @@ pub const Ip6Protocol = extern struct {
 
     /// Gets the current operational settings for this instance of the EFI IPv6 Protocol driver.
     pub fn getModeData(self: *const Ip6Protocol, ip6_mode_data: ?*Ip6ModeData, mnp_config_data: ?*ManagedNetworkConfigData, snp_mode_data: ?*SimpleNetworkMode) Status {
-        return self._get_mode_data(self, ip6_mode_data, mnp_config_data, snp_mode_data);
+                     return self._get_mode_data(self, ip6_mode_data, mnp_config_data, snp_mode_data);
     }
 
     /// Assign IPv6 address and other configuration parameter to this EFI IPv6 Protocol driver instance.
     pub fn configure(self: *const Ip6Protocol, ip6_config_data: ?*const Ip6ConfigData) Status {
-        return self._configure(self, ip6_config_data);
+                     return self._configure(self, ip6_config_data);
     }
 
     /// Joins and leaves multicast groups.
     pub fn groups(self: *const Ip6Protocol, join_flag: bool, group_address: ?*const Ip6Address) Status {
-        return self._groups(self, join_flag, group_address);
+                     return self._groups(self, join_flag, group_address);
     }
 
     /// Adds and deletes routing table entries.
     pub fn routes(self: *const Ip6Protocol, delete_route: bool, destination: ?*const Ip6Address, prefix_length: u8, gateway_address: ?*const Ip6Address) Status {
-        return self._routes(self, delete_route, destination, prefix_length, gateway_address);
+                     return self._routes(self, delete_route, destination, prefix_length, gateway_address);
     }
 
     /// Add or delete Neighbor cache entries.
     pub fn neighbors(self: *const Ip6Protocol, delete_flag: bool, target_ip6_address: *const Ip6Address, target_link_address: ?*const MacAddress, timeout: u32, override: bool) Status {
-        return self._neighbors(self, delete_flag, target_ip6_address, target_link_address, timeout, override);
+                     return self._neighbors(self, delete_flag, target_ip6_address, target_link_address, timeout, override);
     }
 
     /// Places outgoing data packets into the transmit queue.
     pub fn transmit(self: *const Ip6Protocol, token: *Ip6CompletionToken) Status {
-        return self._transmit(self, token);
+                     return self._transmit(self, token);
     }
 
     /// Places a receiving request into the receiving queue.
     pub fn receive(self: *const Ip6Protocol, token: *Ip6CompletionToken) Status {
-        return self._receive(self, token);
+                     return self._receive(self, token);
     }
 
     /// Abort an asynchronous transmits or receive request.
     pub fn cancel(self: *const Ip6Protocol, token: ?*Ip6CompletionToken) Status {
-        return self._cancel(self, token);
+                     return self._cancel(self, token);
     }
 
     /// Polls for incoming data packets and processes outgoing data packets.
     pub fn poll(self: *const Ip6Protocol) Status {
-        return self._poll(self);
+                     return self._poll(self);
     }
 
     pub const guid align(8) = Guid{
-        .time_low = 0x2c8759d5,
-        .time_mid = 0x5c2d,
-        .time_high_and_version = 0x66ef,
-        .clock_seq_high_and_reserved = 0x92,
-        .clock_seq_low = 0x5f,
-        .node = [_]u8{ 0xb6, 0x6c, 0x10, 0x19, 0x57, 0xe2 },
+                     .time_low = 0x2c8759d5,
+                     .time_mid = 0x5c2d,
+                     .time_high_and_version = 0x66ef,
+                     .clock_seq_high_and_reserved = 0x92,
+                     .clock_seq_low = 0x5f,
+                     .node = [_]u8{ 0xb6, 0x6c, 0x10, 0x19, 0x57, 0xe2 },
     };
 };
 

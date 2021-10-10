@@ -227,7 +227,7 @@ public:
   // conversion
   _LIBCPP_INLINE_VISIBILITY constexpr operator weak_equality() const noexcept {
     return __value_ == _EqResult::__zero ? weak_equality::equivalent
-          : weak_equality::nonequivalent;
+                       : weak_equality::nonequivalent;
   }
 
   // comparisons
@@ -286,15 +286,15 @@ class partial_ordering {
 
   _LIBCPP_INLINE_VISIBILITY
   explicit constexpr partial_ordering(_EqResult __v) noexcept
-      : __value_(_ValueT(__v)) {}
+                   : __value_(_ValueT(__v)) {}
 
   _LIBCPP_INLINE_VISIBILITY
   explicit constexpr partial_ordering(_OrdResult __v) noexcept
-      : __value_(_ValueT(__v)) {}
+                   : __value_(_ValueT(__v)) {}
 
   _LIBCPP_INLINE_VISIBILITY
   explicit constexpr partial_ordering(_NCmpResult __v) noexcept
-      : __value_(_ValueT(__v)) {}
+                   : __value_(_ValueT(__v)) {}
 
   constexpr bool __is_ordered() const noexcept {
     return __value_ != _ValueT(_NCmpResult::__unordered);
@@ -420,13 +420,13 @@ public:
   _LIBCPP_INLINE_VISIBILITY
   constexpr operator weak_equality() const noexcept {
     return __value_ == 0 ? weak_equality::equivalent
-                         : weak_equality::nonequivalent;
+                                                                             : weak_equality::nonequivalent;
   }
 
   _LIBCPP_INLINE_VISIBILITY
   constexpr operator partial_ordering() const noexcept {
     return __value_ == 0 ? partial_ordering::equivalent
-        : (__value_ < 0 ? partial_ordering::less : partial_ordering::greater);
+                     : (__value_ < 0 ? partial_ordering::less : partial_ordering::greater);
   }
 
   // comparisons
@@ -536,25 +536,25 @@ public:
   _LIBCPP_INLINE_VISIBILITY
   constexpr operator weak_equality() const noexcept {
     return __value_ == 0 ? weak_equality::equivalent
-                         : weak_equality::nonequivalent;
+                                                                             : weak_equality::nonequivalent;
   }
 
   _LIBCPP_INLINE_VISIBILITY
   constexpr operator strong_equality() const noexcept {
     return __value_ == 0 ? strong_equality::equal
-                         : strong_equality::nonequal;
+                                                                             : strong_equality::nonequal;
   }
 
   _LIBCPP_INLINE_VISIBILITY
   constexpr operator partial_ordering() const noexcept {
     return __value_ == 0 ? partial_ordering::equivalent
-        : (__value_ < 0 ? partial_ordering::less : partial_ordering::greater);
+                     : (__value_ < 0 ? partial_ordering::less : partial_ordering::greater);
   }
 
   _LIBCPP_INLINE_VISIBILITY
   constexpr operator weak_ordering() const noexcept {
     return __value_ == 0 ? weak_ordering::equivalent
-        : (__value_ < 0 ? weak_ordering::less : weak_ordering::greater);
+                     : (__value_ < 0 ? weak_ordering::less : weak_ordering::greater);
   }
 
   // comparisons
@@ -720,7 +720,7 @@ constexpr auto __get_comp_type() {
   using _CCC = _ClassifyCompCategory;
   constexpr array<_CCC, sizeof...(_Ts)> __type_kinds{{__comp_detail::__type_to_enum<_Ts>()...}};
   constexpr _CCC _Cat = sizeof...(_Ts) == 0 ? _StrongOrd
-      : __compute_comp_type(__type_kinds);
+                   : __compute_comp_type(__type_kinds);
   if constexpr (_Cat == _None)
     return void();
   else if constexpr (_Cat == _WeakEq)

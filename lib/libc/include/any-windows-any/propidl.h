@@ -223,85 +223,85 @@ typedef WORD PROPVAR_PAD3;
 
   struct tagPROPVARIANT {
     __C89_NAMELESS union {
-      __C89_NAMELESS
+                   __C89_NAMELESS
 struct tag_inner_PROPVARIANT {
     VARTYPE vt;
     PROPVAR_PAD1 wReserved1;
     PROPVAR_PAD2 wReserved2;
     PROPVAR_PAD3 wReserved3;
     __C89_NAMELESS union {
-        CHAR cVal;
-        UCHAR bVal;
-        SHORT iVal;
-        USHORT uiVal;
-        LONG lVal;
-        ULONG ulVal;
-        INT intVal;
-        UINT uintVal;
-        LARGE_INTEGER hVal;
-        ULARGE_INTEGER uhVal;
-        FLOAT fltVal;
-        DOUBLE dblVal;
-        VARIANT_BOOL boolVal;
-        SCODE scode;
-        CY cyVal;
-        DATE date;
-        FILETIME filetime;
-        CLSID *puuid;
-        CLIPDATA *pclipdata;
-        BSTR bstrVal;
-        BSTRBLOB bstrblobVal;
-        BLOB blob;
-        LPSTR pszVal;
-        LPWSTR pwszVal;
-        IUnknown *punkVal;
-        IDispatch *pdispVal;
-        IStream *pStream;
-        IStorage *pStorage;
-        LPVERSIONEDSTREAM pVersionedStream;
-        LPSAFEARRAY parray;
-        CAC cac;
-        CAUB caub;
-        CAI cai;
-        CAUI caui;
-        CAL cal;
-        CAUL caul;
-        CAH cah;
-        CAUH cauh;
-        CAFLT caflt;
-        CADBL cadbl;
-        CABOOL cabool;
-        CASCODE cascode;
-        CACY cacy;
-        CADATE cadate;
-        CAFILETIME cafiletime;
-        CACLSID cauuid;
-        CACLIPDATA caclipdata;
-        CABSTR cabstr;
-        CABSTRBLOB cabstrblob;
-        CALPSTR calpstr;
-        CALPWSTR calpwstr;
-        CAPROPVARIANT capropvar;
-        CHAR *pcVal;
-        UCHAR *pbVal;
-        SHORT *piVal;
-        USHORT *puiVal;
-        LONG *plVal;
-        ULONG *pulVal;
-        INT *pintVal;
-        UINT *puintVal;
-        FLOAT *pfltVal;
-        DOUBLE *pdblVal;
-        VARIANT_BOOL *pboolVal;
-        DECIMAL *pdecVal;
-        SCODE *pscode;
-        CY *pcyVal;
-        DATE *pdate;
-        BSTR *pbstrVal;
-        IUnknown **ppunkVal;
-        IDispatch **ppdispVal;
-        LPSAFEARRAY *pparray;
-        PROPVARIANT *pvarVal;
+                     CHAR cVal;
+                     UCHAR bVal;
+                     SHORT iVal;
+                     USHORT uiVal;
+                     LONG lVal;
+                     ULONG ulVal;
+                     INT intVal;
+                     UINT uintVal;
+                     LARGE_INTEGER hVal;
+                     ULARGE_INTEGER uhVal;
+                     FLOAT fltVal;
+                     DOUBLE dblVal;
+                     VARIANT_BOOL boolVal;
+                     SCODE scode;
+                     CY cyVal;
+                     DATE date;
+                     FILETIME filetime;
+                     CLSID *puuid;
+                     CLIPDATA *pclipdata;
+                     BSTR bstrVal;
+                     BSTRBLOB bstrblobVal;
+                     BLOB blob;
+                     LPSTR pszVal;
+                     LPWSTR pwszVal;
+                     IUnknown *punkVal;
+                     IDispatch *pdispVal;
+                     IStream *pStream;
+                     IStorage *pStorage;
+                     LPVERSIONEDSTREAM pVersionedStream;
+                     LPSAFEARRAY parray;
+                     CAC cac;
+                     CAUB caub;
+                     CAI cai;
+                     CAUI caui;
+                     CAL cal;
+                     CAUL caul;
+                     CAH cah;
+                     CAUH cauh;
+                     CAFLT caflt;
+                     CADBL cadbl;
+                     CABOOL cabool;
+                     CASCODE cascode;
+                     CACY cacy;
+                     CADATE cadate;
+                     CAFILETIME cafiletime;
+                     CACLSID cauuid;
+                     CACLIPDATA caclipdata;
+                     CABSTR cabstr;
+                     CABSTRBLOB cabstrblob;
+                     CALPSTR calpstr;
+                     CALPWSTR calpwstr;
+                     CAPROPVARIANT capropvar;
+                     CHAR *pcVal;
+                     UCHAR *pbVal;
+                     SHORT *piVal;
+                     USHORT *puiVal;
+                     LONG *plVal;
+                     ULONG *pulVal;
+                     INT *pintVal;
+                     UINT *puintVal;
+                     FLOAT *pfltVal;
+                     DOUBLE *pdblVal;
+                     VARIANT_BOOL *pboolVal;
+                     DECIMAL *pdecVal;
+                     SCODE *pscode;
+                     CY *pcyVal;
+                     DATE *pdate;
+                     BSTR *pbstrVal;
+                     IUnknown **ppunkVal;
+                     IDispatch **ppdispVal;
+                     LPSAFEARRAY *pparray;
+                     PROPVARIANT *pvarVal;
     } __C89_NAMELESSUNIONNAME;
 };
     DECIMAL decVal;
@@ -424,8 +424,8 @@ enum PIDMSI_STATUS_VALUE {
 typedef struct tagPROPSPEC {
     ULONG ulKind;
     union {
-        PROPID propid;
-        LPOLESTR lpwstr;
+                     PROPID propid;
+                     LPOLESTR lpwstr;
     } DUMMYUNIONNAME;
 } PROPSPEC;
 
@@ -462,53 +462,53 @@ MIDL_INTERFACE("00000138-0000-0000-c000-000000000046")
 IPropertyStorage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ReadMultiple(
-        ULONG cpspec,
-        const PROPSPEC rgpspec[],
-        PROPVARIANT rgpropvar[]) = 0;
+                     ULONG cpspec,
+                     const PROPSPEC rgpspec[],
+                     PROPVARIANT rgpropvar[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteMultiple(
-        ULONG cpspec,
-        const PROPSPEC rgpspec[],
-        const PROPVARIANT rgpropvar[],
-        PROPID propidNameFirst) = 0;
+                     ULONG cpspec,
+                     const PROPSPEC rgpspec[],
+                     const PROPVARIANT rgpropvar[],
+                     PROPID propidNameFirst) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteMultiple(
-        ULONG cpspec,
-        const PROPSPEC rgpspec[]) = 0;
+                     ULONG cpspec,
+                     const PROPSPEC rgpspec[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReadPropertyNames(
-        ULONG cpropid,
-        const PROPID rgpropid[],
-        LPOLESTR rglpwstrName[]) = 0;
+                     ULONG cpropid,
+                     const PROPID rgpropid[],
+                     LPOLESTR rglpwstrName[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WritePropertyNames(
-        ULONG cpropid,
-        const PROPID rgpropid[],
-        const LPOLESTR rglpwstrName[]) = 0;
+                     ULONG cpropid,
+                     const PROPID rgpropid[],
+                     const LPOLESTR rglpwstrName[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeletePropertyNames(
-        ULONG cpropid,
-        const PROPID rgpropid[]) = 0;
+                     ULONG cpropid,
+                     const PROPID rgpropid[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        DWORD grfCommitFlags) = 0;
+                     DWORD grfCommitFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Revert(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Enum(
-        IEnumSTATPROPSTG **ppenum) = 0;
+                     IEnumSTATPROPSTG **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimes(
-        const FILETIME *pctime,
-        const FILETIME *patime,
-        const FILETIME *pmtime) = 0;
+                     const FILETIME *pctime,
+                     const FILETIME *patime,
+                     const FILETIME *pmtime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetClass(
-        REFCLSID clsid) = 0;
+                     REFCLSID clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stat(
-        STATPROPSETSTG *pstatpsstg) = 0;
+                     STATPROPSETSTG *pstatpsstg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -520,76 +520,76 @@ typedef struct IPropertyStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyStorage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyStorage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyStorage *This);
+                     IPropertyStorage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyStorage *This);
+                     IPropertyStorage *This);
 
     /*** IPropertyStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *ReadMultiple)(
-        IPropertyStorage *This,
-        ULONG cpspec,
-        const PROPSPEC rgpspec[],
-        PROPVARIANT rgpropvar[]);
+                     IPropertyStorage *This,
+                     ULONG cpspec,
+                     const PROPSPEC rgpspec[],
+                     PROPVARIANT rgpropvar[]);
 
     HRESULT (STDMETHODCALLTYPE *WriteMultiple)(
-        IPropertyStorage *This,
-        ULONG cpspec,
-        const PROPSPEC rgpspec[],
-        const PROPVARIANT rgpropvar[],
-        PROPID propidNameFirst);
+                     IPropertyStorage *This,
+                     ULONG cpspec,
+                     const PROPSPEC rgpspec[],
+                     const PROPVARIANT rgpropvar[],
+                     PROPID propidNameFirst);
 
     HRESULT (STDMETHODCALLTYPE *DeleteMultiple)(
-        IPropertyStorage *This,
-        ULONG cpspec,
-        const PROPSPEC rgpspec[]);
+                     IPropertyStorage *This,
+                     ULONG cpspec,
+                     const PROPSPEC rgpspec[]);
 
     HRESULT (STDMETHODCALLTYPE *ReadPropertyNames)(
-        IPropertyStorage *This,
-        ULONG cpropid,
-        const PROPID rgpropid[],
-        LPOLESTR rglpwstrName[]);
+                     IPropertyStorage *This,
+                     ULONG cpropid,
+                     const PROPID rgpropid[],
+                     LPOLESTR rglpwstrName[]);
 
     HRESULT (STDMETHODCALLTYPE *WritePropertyNames)(
-        IPropertyStorage *This,
-        ULONG cpropid,
-        const PROPID rgpropid[],
-        const LPOLESTR rglpwstrName[]);
+                     IPropertyStorage *This,
+                     ULONG cpropid,
+                     const PROPID rgpropid[],
+                     const LPOLESTR rglpwstrName[]);
 
     HRESULT (STDMETHODCALLTYPE *DeletePropertyNames)(
-        IPropertyStorage *This,
-        ULONG cpropid,
-        const PROPID rgpropid[]);
+                     IPropertyStorage *This,
+                     ULONG cpropid,
+                     const PROPID rgpropid[]);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IPropertyStorage *This,
-        DWORD grfCommitFlags);
+                     IPropertyStorage *This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        IPropertyStorage *This);
+                     IPropertyStorage *This);
 
     HRESULT (STDMETHODCALLTYPE *Enum)(
-        IPropertyStorage *This,
-        IEnumSTATPROPSTG **ppenum);
+                     IPropertyStorage *This,
+                     IEnumSTATPROPSTG **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *SetTimes)(
-        IPropertyStorage *This,
-        const FILETIME *pctime,
-        const FILETIME *patime,
-        const FILETIME *pmtime);
+                     IPropertyStorage *This,
+                     const FILETIME *pctime,
+                     const FILETIME *patime,
+                     const FILETIME *pmtime);
 
     HRESULT (STDMETHODCALLTYPE *SetClass)(
-        IPropertyStorage *This,
-        REFCLSID clsid);
+                     IPropertyStorage *This,
+                     REFCLSID clsid);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        IPropertyStorage *This,
-        STATPROPSETSTG *pstatpsstg);
+                     IPropertyStorage *This,
+                     STATPROPSETSTG *pstatpsstg);
 
     END_INTERFACE
 } IPropertyStorageVtbl;
@@ -688,22 +688,22 @@ MIDL_INTERFACE("0000013a-0000-0000-c000-000000000046")
 IPropertySetStorage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Create(
-        REFFMTID rfmtid,
-        const CLSID *pclsid,
-        DWORD grfFlags,
-        DWORD grfMode,
-        IPropertyStorage **ppprstg) = 0;
+                     REFFMTID rfmtid,
+                     const CLSID *pclsid,
+                     DWORD grfFlags,
+                     DWORD grfMode,
+                     IPropertyStorage **ppprstg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Open(
-        REFFMTID rfmtid,
-        DWORD grfMode,
-        IPropertyStorage **ppprstg) = 0;
+                     REFFMTID rfmtid,
+                     DWORD grfMode,
+                     IPropertyStorage **ppprstg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        REFFMTID rfmtid) = 0;
+                     REFFMTID rfmtid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Enum(
-        IEnumSTATPROPSETSTG **ppenum) = 0;
+                     IEnumSTATPROPSETSTG **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -715,38 +715,38 @@ typedef struct IPropertySetStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertySetStorage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertySetStorage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertySetStorage *This);
+                     IPropertySetStorage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertySetStorage *This);
+                     IPropertySetStorage *This);
 
     /*** IPropertySetStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IPropertySetStorage *This,
-        REFFMTID rfmtid,
-        const CLSID *pclsid,
-        DWORD grfFlags,
-        DWORD grfMode,
-        IPropertyStorage **ppprstg);
+                     IPropertySetStorage *This,
+                     REFFMTID rfmtid,
+                     const CLSID *pclsid,
+                     DWORD grfFlags,
+                     DWORD grfMode,
+                     IPropertyStorage **ppprstg);
 
     HRESULT (STDMETHODCALLTYPE *Open)(
-        IPropertySetStorage *This,
-        REFFMTID rfmtid,
-        DWORD grfMode,
-        IPropertyStorage **ppprstg);
+                     IPropertySetStorage *This,
+                     REFFMTID rfmtid,
+                     DWORD grfMode,
+                     IPropertyStorage **ppprstg);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IPropertySetStorage *This,
-        REFFMTID rfmtid);
+                     IPropertySetStorage *This,
+                     REFFMTID rfmtid);
 
     HRESULT (STDMETHODCALLTYPE *Enum)(
-        IPropertySetStorage *This,
-        IEnumSTATPROPSETSTG **ppenum);
+                     IPropertySetStorage *This,
+                     IEnumSTATPROPSETSTG **ppenum);
 
     END_INTERFACE
 } IPropertySetStorageVtbl;
@@ -813,18 +813,18 @@ MIDL_INTERFACE("00000139-0000-0000-c000-000000000046")
 IEnumSTATPROPSTG : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        STATPROPSTG *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     STATPROPSTG *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumSTATPROPSTG **ppenum) = 0;
+                     IEnumSTATPROPSTG **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -836,33 +836,33 @@ typedef struct IEnumSTATPROPSTGVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumSTATPROPSTG *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumSTATPROPSTG *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumSTATPROPSTG *This);
+                     IEnumSTATPROPSTG *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumSTATPROPSTG *This);
+                     IEnumSTATPROPSTG *This);
 
     /*** IEnumSTATPROPSTG methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumSTATPROPSTG *This,
-        ULONG celt,
-        STATPROPSTG *rgelt,
-        ULONG *pceltFetched);
+                     IEnumSTATPROPSTG *This,
+                     ULONG celt,
+                     STATPROPSTG *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumSTATPROPSTG *This,
-        ULONG celt);
+                     IEnumSTATPROPSTG *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumSTATPROPSTG *This);
+                     IEnumSTATPROPSTG *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumSTATPROPSTG *This,
-        IEnumSTATPROPSTG **ppenum);
+                     IEnumSTATPROPSTG *This,
+                     IEnumSTATPROPSTG **ppenum);
 
     END_INTERFACE
 } IEnumSTATPROPSTGVtbl;
@@ -949,18 +949,18 @@ MIDL_INTERFACE("0000013b-0000-0000-c000-000000000046")
 IEnumSTATPROPSETSTG : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        STATPROPSETSTG *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     STATPROPSETSTG *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumSTATPROPSETSTG **ppenum) = 0;
+                     IEnumSTATPROPSETSTG **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -972,33 +972,33 @@ typedef struct IEnumSTATPROPSETSTGVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumSTATPROPSETSTG *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumSTATPROPSETSTG *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumSTATPROPSETSTG *This);
+                     IEnumSTATPROPSETSTG *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumSTATPROPSETSTG *This);
+                     IEnumSTATPROPSETSTG *This);
 
     /*** IEnumSTATPROPSETSTG methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumSTATPROPSETSTG *This,
-        ULONG celt,
-        STATPROPSETSTG *rgelt,
-        ULONG *pceltFetched);
+                     IEnumSTATPROPSETSTG *This,
+                     ULONG celt,
+                     STATPROPSETSTG *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumSTATPROPSETSTG *This,
-        ULONG celt);
+                     IEnumSTATPROPSETSTG *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumSTATPROPSETSTG *This);
+                     IEnumSTATPROPSETSTG *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumSTATPROPSETSTG *This,
-        IEnumSTATPROPSETSTG **ppenum);
+                     IEnumSTATPROPSETSTG *This,
+                     IEnumSTATPROPSETSTG **ppenum);
 
     END_INTERFACE
 } IEnumSTATPROPSETSTGVtbl;
@@ -1116,14 +1116,14 @@ EXTERN_C BOOLEAN __stdcall StgConvertPropertyToVariant(const SERIALIZEDPROPERTYV
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
 
 /* End additional prototypes */
 

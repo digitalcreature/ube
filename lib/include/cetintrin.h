@@ -15,7 +15,7 @@
 #define __CETINTRIN_H
 
 /* Define the default attributes for the functions in this file. */
-#define __DEFAULT_FN_ATTRS                                                     \
+#define __DEFAULT_FN_ATTRS                                                                                                                                                             \
   __attribute__((__always_inline__, __nodebug__, __target__("shstk")))
 
 static __inline__ void __DEFAULT_FN_ATTRS _incsspd(int __a) {

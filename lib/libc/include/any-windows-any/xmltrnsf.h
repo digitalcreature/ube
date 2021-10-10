@@ -110,42 +110,42 @@ extern "C" {
 #else
   typedef struct IWmiXMLTransformerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWmiXMLTransformer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWmiXMLTransformer *This);
-      ULONG (WINAPI *Release)(IWmiXMLTransformer *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IWmiXMLTransformer *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IWmiXMLTransformer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IWmiXMLTransformer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IWmiXMLTransformer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_XMLEncodingType)(IWmiXMLTransformer *This,WmiXMLEncoding *piEncoding);
-      HRESULT (WINAPI *put_XMLEncodingType)(IWmiXMLTransformer *This,WmiXMLEncoding iEncoding);
-      HRESULT (WINAPI *get_QualifierFilter)(IWmiXMLTransformer *This,VARIANT_BOOL *bQualifierFilter);
-      HRESULT (WINAPI *put_QualifierFilter)(IWmiXMLTransformer *This,VARIANT_BOOL bQualifierFilter);
-      HRESULT (WINAPI *get_ClassOriginFilter)(IWmiXMLTransformer *This,VARIANT_BOOL *bClassOriginFilter);
-      HRESULT (WINAPI *put_ClassOriginFilter)(IWmiXMLTransformer *This,VARIANT_BOOL bClassOriginFilter);
-      HRESULT (WINAPI *get_User)(IWmiXMLTransformer *This,BSTR *strUser);
-      HRESULT (WINAPI *put_User)(IWmiXMLTransformer *This,BSTR strUser);
-      HRESULT (WINAPI *get_Password)(IWmiXMLTransformer *This,BSTR *strPassword);
-      HRESULT (WINAPI *put_Password)(IWmiXMLTransformer *This,BSTR strPassword);
-      HRESULT (WINAPI *get_Authority)(IWmiXMLTransformer *This,BSTR *strAuthority);
-      HRESULT (WINAPI *put_Authority)(IWmiXMLTransformer *This,BSTR strAuthority);
-      HRESULT (WINAPI *get_ImpersonationLevel)(IWmiXMLTransformer *This,DWORD *pdwImpersonationLevel);
-      HRESULT (WINAPI *put_ImpersonationLevel)(IWmiXMLTransformer *This,DWORD dwImpersonationLevel);
-      HRESULT (WINAPI *get_AuthenticationLevel)(IWmiXMLTransformer *This,DWORD *pdwAuthenticationLevel);
-      HRESULT (WINAPI *put_AuthenticationLevel)(IWmiXMLTransformer *This,DWORD dwAuthenticationLevel);
-      HRESULT (WINAPI *get_Locale)(IWmiXMLTransformer *This,BSTR *strLocale);
-      HRESULT (WINAPI *put_Locale)(IWmiXMLTransformer *This,BSTR strLocale);
-      HRESULT (WINAPI *get_LocalOnly)(IWmiXMLTransformer *This,VARIANT_BOOL *bLocalOnly);
-      HRESULT (WINAPI *put_LocalOnly)(IWmiXMLTransformer *This,VARIANT_BOOL bLocalOnly);
-      HRESULT (WINAPI *GetObject)(IWmiXMLTransformer *This,BSTR strObjectPath,IDispatch *pCtx,IXMLDOMDocument **ppXMLDocument);
-      HRESULT (WINAPI *ExecQuery)(IWmiXMLTransformer *This,BSTR strNamespacePath,BSTR strQuery,BSTR strQueryLanguage,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
-      HRESULT (WINAPI *EnumClasses)(IWmiXMLTransformer *This,BSTR strSuperClassPath,VARIANT_BOOL bDeep,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
-      HRESULT (WINAPI *EnumInstances)(IWmiXMLTransformer *This,BSTR strClassPath,VARIANT_BOOL bDeep,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
-      HRESULT (WINAPI *EnumClassNames)(IWmiXMLTransformer *This,BSTR strSuperClassPath,VARIANT_BOOL bDeep,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
-      HRESULT (WINAPI *EnumInstanceNames)(IWmiXMLTransformer *This,BSTR strClassPath,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
-      HRESULT (WINAPI *Compile)(IWmiXMLTransformer *This,VARIANT *pvInputSource,BSTR strNamespacePath,LONG lClassFlags,LONG lInstanceFlags,WmiXMLCompilationTypeEnum iOperation,IDispatch *pCtx,VARIANT_BOOL *pStatus);
-      HRESULT (WINAPI *get_Privileges)(IWmiXMLTransformer *This,ISWbemPrivilegeSet **objWbemPrivilegeSet);
-      HRESULT (WINAPI *get_CompilationErrors)(IWmiXMLTransformer *This,BSTR *pstrErrors);
+                   HRESULT (WINAPI *QueryInterface)(IWmiXMLTransformer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWmiXMLTransformer *This);
+                   ULONG (WINAPI *Release)(IWmiXMLTransformer *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IWmiXMLTransformer *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IWmiXMLTransformer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IWmiXMLTransformer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IWmiXMLTransformer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_XMLEncodingType)(IWmiXMLTransformer *This,WmiXMLEncoding *piEncoding);
+                   HRESULT (WINAPI *put_XMLEncodingType)(IWmiXMLTransformer *This,WmiXMLEncoding iEncoding);
+                   HRESULT (WINAPI *get_QualifierFilter)(IWmiXMLTransformer *This,VARIANT_BOOL *bQualifierFilter);
+                   HRESULT (WINAPI *put_QualifierFilter)(IWmiXMLTransformer *This,VARIANT_BOOL bQualifierFilter);
+                   HRESULT (WINAPI *get_ClassOriginFilter)(IWmiXMLTransformer *This,VARIANT_BOOL *bClassOriginFilter);
+                   HRESULT (WINAPI *put_ClassOriginFilter)(IWmiXMLTransformer *This,VARIANT_BOOL bClassOriginFilter);
+                   HRESULT (WINAPI *get_User)(IWmiXMLTransformer *This,BSTR *strUser);
+                   HRESULT (WINAPI *put_User)(IWmiXMLTransformer *This,BSTR strUser);
+                   HRESULT (WINAPI *get_Password)(IWmiXMLTransformer *This,BSTR *strPassword);
+                   HRESULT (WINAPI *put_Password)(IWmiXMLTransformer *This,BSTR strPassword);
+                   HRESULT (WINAPI *get_Authority)(IWmiXMLTransformer *This,BSTR *strAuthority);
+                   HRESULT (WINAPI *put_Authority)(IWmiXMLTransformer *This,BSTR strAuthority);
+                   HRESULT (WINAPI *get_ImpersonationLevel)(IWmiXMLTransformer *This,DWORD *pdwImpersonationLevel);
+                   HRESULT (WINAPI *put_ImpersonationLevel)(IWmiXMLTransformer *This,DWORD dwImpersonationLevel);
+                   HRESULT (WINAPI *get_AuthenticationLevel)(IWmiXMLTransformer *This,DWORD *pdwAuthenticationLevel);
+                   HRESULT (WINAPI *put_AuthenticationLevel)(IWmiXMLTransformer *This,DWORD dwAuthenticationLevel);
+                   HRESULT (WINAPI *get_Locale)(IWmiXMLTransformer *This,BSTR *strLocale);
+                   HRESULT (WINAPI *put_Locale)(IWmiXMLTransformer *This,BSTR strLocale);
+                   HRESULT (WINAPI *get_LocalOnly)(IWmiXMLTransformer *This,VARIANT_BOOL *bLocalOnly);
+                   HRESULT (WINAPI *put_LocalOnly)(IWmiXMLTransformer *This,VARIANT_BOOL bLocalOnly);
+                   HRESULT (WINAPI *GetObject)(IWmiXMLTransformer *This,BSTR strObjectPath,IDispatch *pCtx,IXMLDOMDocument **ppXMLDocument);
+                   HRESULT (WINAPI *ExecQuery)(IWmiXMLTransformer *This,BSTR strNamespacePath,BSTR strQuery,BSTR strQueryLanguage,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
+                   HRESULT (WINAPI *EnumClasses)(IWmiXMLTransformer *This,BSTR strSuperClassPath,VARIANT_BOOL bDeep,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
+                   HRESULT (WINAPI *EnumInstances)(IWmiXMLTransformer *This,BSTR strClassPath,VARIANT_BOOL bDeep,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
+                   HRESULT (WINAPI *EnumClassNames)(IWmiXMLTransformer *This,BSTR strSuperClassPath,VARIANT_BOOL bDeep,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
+                   HRESULT (WINAPI *EnumInstanceNames)(IWmiXMLTransformer *This,BSTR strClassPath,IDispatch *pCtx,ISWbemXMLDocumentSet **ppXMLDocumentSet);
+                   HRESULT (WINAPI *Compile)(IWmiXMLTransformer *This,VARIANT *pvInputSource,BSTR strNamespacePath,LONG lClassFlags,LONG lInstanceFlags,WmiXMLCompilationTypeEnum iOperation,IDispatch *pCtx,VARIANT_BOOL *pStatus);
+                   HRESULT (WINAPI *get_Privileges)(IWmiXMLTransformer *This,ISWbemPrivilegeSet **objWbemPrivilegeSet);
+                   HRESULT (WINAPI *get_CompilationErrors)(IWmiXMLTransformer *This,BSTR *pstrErrors);
     END_INTERFACE
   } IWmiXMLTransformerVtbl;
   struct IWmiXMLTransformer {
@@ -271,18 +271,18 @@ extern "C" {
 #else
   typedef struct ISWbemXMLDocumentSetVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISWbemXMLDocumentSet *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISWbemXMLDocumentSet *This);
-      ULONG (WINAPI *Release)(ISWbemXMLDocumentSet *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISWbemXMLDocumentSet *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISWbemXMLDocumentSet *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISWbemXMLDocumentSet *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISWbemXMLDocumentSet *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(ISWbemXMLDocumentSet *This,IUnknown **pUnk);
-      HRESULT (WINAPI *Item)(ISWbemXMLDocumentSet *This,BSTR strObjectPath,__LONG32 iFlags,IXMLDOMDocument **ppXMLDocument);
-      HRESULT (WINAPI *get_Count)(ISWbemXMLDocumentSet *This,__LONG32 *iCount);
-      HRESULT (WINAPI *NextDocument)(ISWbemXMLDocumentSet *This,IXMLDOMDocument **ppDoc);
-      HRESULT (WINAPI *SkipNextDocument)(ISWbemXMLDocumentSet *This);
+                   HRESULT (WINAPI *QueryInterface)(ISWbemXMLDocumentSet *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISWbemXMLDocumentSet *This);
+                   ULONG (WINAPI *Release)(ISWbemXMLDocumentSet *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISWbemXMLDocumentSet *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISWbemXMLDocumentSet *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISWbemXMLDocumentSet *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISWbemXMLDocumentSet *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(ISWbemXMLDocumentSet *This,IUnknown **pUnk);
+                   HRESULT (WINAPI *Item)(ISWbemXMLDocumentSet *This,BSTR strObjectPath,__LONG32 iFlags,IXMLDOMDocument **ppXMLDocument);
+                   HRESULT (WINAPI *get_Count)(ISWbemXMLDocumentSet *This,__LONG32 *iCount);
+                   HRESULT (WINAPI *NextDocument)(ISWbemXMLDocumentSet *This,IXMLDOMDocument **ppDoc);
+                   HRESULT (WINAPI *SkipNextDocument)(ISWbemXMLDocumentSet *This);
     END_INTERFACE
   } ISWbemXMLDocumentSetVtbl;
   struct ISWbemXMLDocumentSet {

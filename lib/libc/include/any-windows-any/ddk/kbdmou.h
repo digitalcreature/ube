@@ -27,30 +27,30 @@
 #include <ntddkbd.h>
 #include <ntddmou.h>
 
-#define DD_KEYBOARD_PORT_DEVICE_NAME      "\\Device\\KeyboardPort"
+#define DD_KEYBOARD_PORT_DEVICE_NAME                   "\\Device\\KeyboardPort"
 #define DD_KEYBOARD_PORT_DEVICE_NAME_U    L"\\Device\\KeyboardPort"
-#define DD_KEYBOARD_PORT_BASE_NAME_U      L"KeyboardPort"
-#define DD_POINTER_PORT_DEVICE_NAME       "\\Device\\PointerPort"
+#define DD_KEYBOARD_PORT_BASE_NAME_U                   L"KeyboardPort"
+#define DD_POINTER_PORT_DEVICE_NAME                    "\\Device\\PointerPort"
 #define DD_POINTER_PORT_DEVICE_NAME_U     L"\\Device\\PointerPort"
-#define DD_POINTER_PORT_BASE_NAME_U       L"PointerPort"
+#define DD_POINTER_PORT_BASE_NAME_U                    L"PointerPort"
 
 #define DD_KEYBOARD_CLASS_BASE_NAME_U     L"KeyboardClass"
-#define DD_POINTER_CLASS_BASE_NAME_U      L"PointerClass"
+#define DD_POINTER_CLASS_BASE_NAME_U                   L"PointerClass"
 
-#define DD_KEYBOARD_RESOURCE_CLASS_NAME_U             L"Keyboard"
-#define DD_POINTER_RESOURCE_CLASS_NAME_U              L"Pointer"
+#define DD_KEYBOARD_RESOURCE_CLASS_NAME_U                                       L"Keyboard"
+#define DD_POINTER_RESOURCE_CLASS_NAME_U                                        L"Pointer"
 #define DD_KEYBOARD_MOUSE_COMBO_RESOURCE_CLASS_NAME_U L"Keyboard/Pointer"
 
-#define POINTER_PORTS_MAXIMUM             8
-#define KEYBOARD_PORTS_MAXIMUM            8
+#define POINTER_PORTS_MAXIMUM                                       8
+#define KEYBOARD_PORTS_MAXIMUM                                      8
 
 #define KBDMOU_COULD_NOT_SEND_COMMAND     0x0000
-#define KBDMOU_COULD_NOT_SEND_PARAM       0x0001
-#define KBDMOU_NO_RESPONSE                0x0002
-#define KBDMOU_INCORRECT_RESPONSE         0x0004
+#define KBDMOU_COULD_NOT_SEND_PARAM                    0x0001
+#define KBDMOU_NO_RESPONSE                                          0x0002
+#define KBDMOU_INCORRECT_RESPONSE                      0x0004
 
-#define I8042_ERROR_VALUE_BASE            1000
-#define INPORT_ERROR_VALUE_BASE           2000
+#define I8042_ERROR_VALUE_BASE                                      1000
+#define INPORT_ERROR_VALUE_BASE                        2000
 #define SERIAL_MOUSE_ERROR_VALUE_BASE     3000
 
 #define IOCTL_INTERNAL_KEYBOARD_CONNECT \

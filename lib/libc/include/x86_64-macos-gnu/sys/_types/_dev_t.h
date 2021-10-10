@@ -28,5 +28,5 @@
 #ifndef _DEV_T
 #define _DEV_T
 #include <sys/_types.h> /* __darwin_dev_t */
-typedef __darwin_dev_t        dev_t;    /* device number */
+typedef __darwin_dev_t                     dev_t;    /* device number */
 #endif  /* _DEV_T */

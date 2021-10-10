@@ -99,8 +99,8 @@ typedef struct _ftsent {
 	struct _ftsent *fts_cycle;	/* cycle node */
 	struct _ftsent *fts_parent;	/* parent directory */
 	struct _ftsent *fts_link;	/* next file in directory */
-	long fts_number;	        /* local numeric value */
-	void *fts_pointer;	        /* local address value */
+	long fts_number;	                     /* local numeric value */
+	void *fts_pointer;	                     /* local address value */
 	char *fts_accpath;		/* access path */
 	char *fts_path;			/* root path */
 	int fts_errno;			/* errno for this node */
@@ -151,8 +151,8 @@ typedef struct _ftsent64 {
 	struct _ftsent64 *fts_cycle;	/* cycle node */
 	struct _ftsent64 *fts_parent;	/* parent directory */
 	struct _ftsent64 *fts_link;	/* next file in directory */
-	long fts_number;	        /* local numeric value */
-	void *fts_pointer;	        /* local address value */
+	long fts_number;	                     /* local numeric value */
+	void *fts_pointer;	                     /* local address value */
 	char *fts_accpath;		/* access path */
 	char *fts_path;			/* root path */
 	int fts_errno;			/* errno for this node */
@@ -206,7 +206,7 @@ int	 __REDIRECT_NTH (fts_set, (FTS *, FTSENT *, int), fts64_set);
 FTSENT64 *fts64_children (FTS64 *, int);
 int	  fts64_close (FTS64 *);
 FTS64	 *fts64_open (char * const *, int,
-		      int (*)(const FTSENT64 **, const FTSENT64 **));
+		                   int (*)(const FTSENT64 **, const FTSENT64 **));
 FTSENT64 *fts64_read (FTS64 *);
 int	 fts64_set (FTS64 *, FTSENT64 *, int) __THROW;
 #endif

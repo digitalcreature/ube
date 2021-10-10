@@ -57,16 +57,16 @@ static LPWSTR xp_normalize_fn(const LPWSTR fn) {
   while ((walker < len) && !(drives[walker] == L'\0' && drives[walker + 1] == L'\0')){
     /* search through alphabets */
     if(iswalpha(drives[walker])) {
-      *tmplt = drives[walker]; /* Put drive letter */
-      err = QueryDosDeviceW(tmplt,target,MAX_PATH);
-      if(!err) {
-        free(drives);
-        free(target);
-        return NULL;
-      }
-      if( _wcsnicmp(target,fn,wcslen(target)) == 0) break;
-      wmemset(target,L'\0',MAX_PATH);
-      walker++;
+                   *tmplt = drives[walker]; /* Put drive letter */
+                   err = QueryDosDeviceW(tmplt,target,MAX_PATH);
+                   if(!err) {
+                     free(drives);
+                     free(target);
+                     return NULL;
+                   }
+                   if( _wcsnicmp(target,fn,wcslen(target)) == 0) break;
+                   wmemset(target,L'\0',MAX_PATH);
+                   walker++;
     } else walker++;
   }
 
@@ -211,8 +211,8 @@ checkfreespace (const HANDLE f, const ULONGLONG requiredspace)
     check = GetVolumeInformationW(volumeid,volumepath,MAX_PATH+1,&volumeserial,NULL,NULL,NULL,0);
     /* wprintf(L"GetVolumeInformationW %d id %ws path %ws error %d\n",check,volumeid,volumepath,GetLastError()); */
     if(volumeserial == fileinfo.dwVolumeSerialNumber) {
-      dirpath = volumeid; 
-      break;
+                   dirpath = volumeid; 
+                   break;
     }
   } while (FindNextVolumeW(vol,volumeid,50));
   FindVolumeClose(vol);
@@ -278,15 +278,15 @@ int ftruncate64(int __fd, _off64_t __length) {
   check = SetFilePointer(f, (LONG)quad.LowPart, &(quad.HighPart), FILE_BEGIN);
   if (check == INVALID_SET_FILE_POINTER && quad.LowPart != INVALID_SET_FILE_POINTER) {
     switch (GetLastError()) {
-      case ERROR_NEGATIVE_SEEK:
-        _set_errno(EFBIG); /* file too big? */
-        return -1;
-      case INVALID_SET_FILE_POINTER:
-        _set_errno(EINVAL); /* shouldn't happen */
-        return -1;
-      default:
-        _set_errno(EINVAL); /* shouldn't happen */
-        return -1;
+                   case ERROR_NEGATIVE_SEEK:
+                     _set_errno(EFBIG); /* file too big? */
+                     return -1;
+                   case INVALID_SET_FILE_POINTER:
+                     _set_errno(EINVAL); /* shouldn't happen */
+                     return -1;
+                   default:
+                     _set_errno(EINVAL); /* shouldn't happen */
+                     return -1;
     }
   }
 

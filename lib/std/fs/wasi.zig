@@ -28,19 +28,19 @@ pub const PreopenType = union(PreopenTypeTag) {
     const Self = @This();
 
     pub fn eql(self: Self, other: PreopenType) bool {
-        if (!mem.eql(u8, @tagName(self), @tagName(other))) return false;
+                     if (!mem.eql(u8, @tagName(self), @tagName(other))) return false;
 
-        switch (self) {
-            PreopenTypeTag.Dir => |this_path| return mem.eql(u8, this_path, other.Dir),
-        }
+                     switch (self) {
+                                      PreopenTypeTag.Dir => |this_path| return mem.eql(u8, this_path, other.Dir),
+                     }
     }
 
     pub fn format(self: Self, comptime fmt: []const u8, options: std.fmt.FormatOptions, out_stream: anytype) !void {
-        try out_stream.print("PreopenType{{ ", .{});
-        switch (self) {
-            PreopenType.Dir => |path| try out_stream.print(".Dir = '{}'", .{path}),
-        }
-        return out_stream.print(" }}", .{});
+                     try out_stream.print("PreopenType{{ ", .{});
+                     switch (self) {
+                                      PreopenType.Dir => |path| try out_stream.print(".Dir = '{}'", .{path}),
+                     }
+                     return out_stream.print(" }}", .{});
     }
 };
 
@@ -56,10 +56,10 @@ pub const Preopen = struct {
 
     /// Construct new `Preopen` instance.
     pub fn new(fd: fd_t, preopen_type: PreopenType) Preopen {
-        return Preopen{
-            .fd = fd,
-            .@"type" = preopen_type,
-        };
+                     return Preopen{
+                                      .fd = fd,
+                                      .@"type" = preopen_type,
+                     };
     }
 };
 
@@ -82,17 +82,17 @@ pub const PreopenList = struct {
 
     /// Deinitialize with `deinit`.
     pub fn init(allocator: *Allocator) Self {
-        return Self{ .buffer = InnerList.init(allocator) };
+                     return Self{ .buffer = InnerList.init(allocator) };
     }
 
     /// Release all allocated memory.
     pub fn deinit(pm: Self) void {
-        for (pm.buffer.items) |preopen| {
-            switch (preopen.@"type") {
-                PreopenType.Dir => |path| pm.buffer.allocator.free(path),
-            }
-        }
-        pm.buffer.deinit();
+                     for (pm.buffer.items) |preopen| {
+                                      switch (preopen.@"type") {
+                                          PreopenType.Dir => |path| pm.buffer.allocator.free(path),
+                                      }
+                     }
+                     pm.buffer.deinit();
     }
 
     /// Populate the list with the preopens by issuing `std.os.wasi.fd_prestat_get`
@@ -107,62 +107,62 @@ pub const PreopenList = struct {
     /// for use. Therefore, it is fine to call `find`, `asSlice`, or `toOwnedSlice`. Finally,
     /// `deinit` still must be called!
     pub fn populate(self: *Self) Error!void {
-        // Clear contents if we're being called again
-        for (self.toOwnedSlice()) |preopen| {
-            switch (preopen.@"type") {
-                PreopenType.Dir => |path| self.buffer.allocator.free(path),
-            }
-        }
-        errdefer self.deinit();
-        var fd: fd_t = 3; // start fd has to be beyond stdio fds
+                     // Clear contents if we're being called again
+                     for (self.toOwnedSlice()) |preopen| {
+                                      switch (preopen.@"type") {
+                                          PreopenType.Dir => |path| self.buffer.allocator.free(path),
+                                      }
+                     }
+                     errdefer self.deinit();
+                     var fd: fd_t = 3; // start fd has to be beyond stdio fds
 
-        while (true) {
-            var buf: prestat_t = undefined;
-            switch (fd_prestat_get(fd, &buf)) {
-                ESUCCESS => {},
-                ENOTSUP => {
-                    // not a preopen, so keep going
-                    fd = try math.add(fd_t, fd, 1);
-                    continue;
-                },
-                EBADF => {
-                    // OK, no more fds available
-                    break;
-                },
-                else => |err| return os.unexpectedErrno(err),
-            }
-            const preopen_len = buf.u.dir.pr_name_len;
-            const path_buf = try self.buffer.allocator.alloc(u8, preopen_len);
-            mem.set(u8, path_buf, 0);
-            switch (fd_prestat_dir_name(fd, path_buf.ptr, preopen_len)) {
-                ESUCCESS => {},
-                else => |err| return os.unexpectedErrno(err),
-            }
-            const preopen = Preopen.new(fd, PreopenType{ .Dir = path_buf });
-            try self.buffer.append(preopen);
-            fd = try math.add(fd_t, fd, 1);
-        }
+                     while (true) {
+                                      var buf: prestat_t = undefined;
+                                      switch (fd_prestat_get(fd, &buf)) {
+                                          ESUCCESS => {},
+                                          ENOTSUP => {
+                                                           // not a preopen, so keep going
+                                                           fd = try math.add(fd_t, fd, 1);
+                                                           continue;
+                                          },
+                                          EBADF => {
+                                                           // OK, no more fds available
+                                                           break;
+                                          },
+                                          else => |err| return os.unexpectedErrno(err),
+                                      }
+                                      const preopen_len = buf.u.dir.pr_name_len;
+                                      const path_buf = try self.buffer.allocator.alloc(u8, preopen_len);
+                                      mem.set(u8, path_buf, 0);
+                                      switch (fd_prestat_dir_name(fd, path_buf.ptr, preopen_len)) {
+                                          ESUCCESS => {},
+                                          else => |err| return os.unexpectedErrno(err),
+                                      }
+                                      const preopen = Preopen.new(fd, PreopenType{ .Dir = path_buf });
+                                      try self.buffer.append(preopen);
+                                      fd = try math.add(fd_t, fd, 1);
+                     }
     }
 
     /// Find preopen by type. If the preopen exists, return it.
     /// Otherwise, return `null`.
     pub fn find(self: Self, preopen_type: PreopenType) ?*const Preopen {
-        for (self.buffer.items) |*preopen| {
-            if (preopen.@"type".eql(preopen_type)) {
-                return preopen;
-            }
-        }
-        return null;
+                     for (self.buffer.items) |*preopen| {
+                                      if (preopen.@"type".eql(preopen_type)) {
+                                          return preopen;
+                                      }
+                     }
+                     return null;
     }
 
     /// Return the inner buffer as read-only slice.
     pub fn asSlice(self: Self) []const Preopen {
-        return self.buffer.items;
+                     return self.buffer.items;
     }
 
     /// The caller owns the returned memory. ArrayList becomes empty.
     pub fn toOwnedSlice(self: *Self) []Preopen {
-        return self.buffer.toOwnedSlice();
+                     return self.buffer.toOwnedSlice();
     }
 };
 

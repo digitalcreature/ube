@@ -68,7 +68,7 @@ typedef struct __libc_lock_recursive_opaque__ __libc_lock_recursive_t;
 /* Finalize the named lock variable, which must be locked.  It cannot be
    used again until __libc_lock_init is called again on it.  This must be
    called on a lock variable before the containing storage is reused.  */
-#define __libc_lock_fini             __libc_lock_unlock
+#define __libc_lock_fini                                       __libc_lock_unlock
 #define __libc_lock_fini_recursive   __libc_lock_unlock_recursive
 #define __rtld_lock_fini_recursive   __rtld_lock_unlock_recursive
 
@@ -110,9 +110,9 @@ typedef struct __libc_lock_recursive_opaque__ __libc_lock_recursive_t;
      void *__self = __libc_lock_owner_self ();   \
      int __r = 0;   \
      if (__self == __lock->owner)   \
-       ++__lock->cnt;   \
+                    ++__lock->cnt;   \
      else if ((__r = lll_trylock (&__lock->lock)) == 0)   \
-       __lock->owner = __self, __lock->cnt = 1;   \
+                    __lock->owner = __self, __lock->cnt = 1;   \
      __r;   \
    })
 
@@ -121,10 +121,10 @@ typedef struct __libc_lock_recursive_opaque__ __libc_lock_recursive_t;
      __libc_lock_recursive_t *const __lock = &(NAME);   \
      void *__self = __libc_lock_owner_self ();   \
      if (__self != __lock->owner)   \
-       {   \
-         lll_lock (&__lock->lock, 0);   \
-         __lock->owner = __self;   \
-       }   \
+                    {   \
+                      lll_lock (&__lock->lock, 0);   \
+                      __lock->owner = __self;   \
+                    }   \
      ++__lock->cnt;   \
      (void)0;   \
    })
@@ -133,10 +133,10 @@ typedef struct __libc_lock_recursive_opaque__ __libc_lock_recursive_t;
   ({   \
      __libc_lock_recursive_t *const __lock = &(NAME);   \
      if (--__lock->cnt == 0)   \
-       {   \
-         __lock->owner = 0;   \
-         lll_unlock (&__lock->lock, 0);   \
-       }   \
+                    {   \
+                      __lock->owner = 0;   \
+                      lll_unlock (&__lock->lock, 0);   \
+                    }   \
    })
 
 
@@ -178,13 +178,13 @@ __libc_cleanup_fct (struct __libc_cleanup_frame *framep)
 #define __libc_cleanup_region_start(DOIT, FCT, ARG)   \
   do   \
     {   \
-      struct __libc_cleanup_frame __cleanup   \
-        __attribute__ ((__cleanup__ (__libc_cleanup_fct))) =   \
-        { .__fct = (FCT), .__argp = (ARG), .__doit = (DOIT) };
+                   struct __libc_cleanup_frame __cleanup   \
+                     __attribute__ ((__cleanup__ (__libc_cleanup_fct))) =   \
+                     { .__fct = (FCT), .__argp = (ARG), .__doit = (DOIT) };
 
 /* This one closes the brace above.  */
 #define __libc_cleanup_region_end(DOIT)   \
-      __cleanup.__doit = (DOIT);   \
+                   __cleanup.__doit = (DOIT);   \
     }   \
   while (0)
 
@@ -206,12 +206,12 @@ struct __libc_once
 
 /* Call handler iff the first call.  */
 #define __libc_once(ONCE_CONTROL, INIT_FUNCTION) \
-  do {									      \
-    __libc_lock_lock (ONCE_CONTROL.lock);				      \
-    if (!ONCE_CONTROL.done)						      \
-      (INIT_FUNCTION) ();						      \
-    ONCE_CONTROL.done = 1;						      \
-    __libc_lock_unlock (ONCE_CONTROL.lock);				      \
+  do {									                   \
+    __libc_lock_lock (ONCE_CONTROL.lock);				                   \
+    if (!ONCE_CONTROL.done)						                   \
+                   (INIT_FUNCTION) ();						                   \
+    ONCE_CONTROL.done = 1;						                   \
+    __libc_lock_unlock (ONCE_CONTROL.lock);				                   \
   } while (0)
 
 /* Get once control variable.  */

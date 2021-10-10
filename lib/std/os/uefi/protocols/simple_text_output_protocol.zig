@@ -22,56 +22,56 @@ pub const SimpleTextOutputProtocol = extern struct {
 
     /// Resets the text output device hardware.
     pub fn reset(self: *const SimpleTextOutputProtocol, verify: bool) Status {
-        return self._reset(self, verify);
+                     return self._reset(self, verify);
     }
 
     /// Writes a string to the output device.
     pub fn outputString(self: *const SimpleTextOutputProtocol, msg: [*:0]const u16) Status {
-        return self._output_string(self, msg);
+                     return self._output_string(self, msg);
     }
 
     /// Verifies that all characters in a string can be output to the target device.
     pub fn testString(self: *const SimpleTextOutputProtocol, msg: [*:0]const u16) Status {
-        return self._test_string(self, msg);
+                     return self._test_string(self, msg);
     }
 
     /// Returns information for an available text mode that the output device(s) supports.
     pub fn queryMode(self: *const SimpleTextOutputProtocol, mode_number: usize, columns: *usize, rows: *usize) Status {
-        return self._query_mode(self, mode_number, columns, rows);
+                     return self._query_mode(self, mode_number, columns, rows);
     }
 
     /// Sets the output device(s) to a specified mode.
     pub fn setMode(self: *const SimpleTextOutputProtocol, mode_number: usize) Status {
-        return self._set_mode(self, mode_number);
+                     return self._set_mode(self, mode_number);
     }
 
     /// Sets the background and foreground colors for the outputString() and clearScreen() functions.
     pub fn setAttribute(self: *const SimpleTextOutputProtocol, attribute: usize) Status {
-        return self._set_attribute(self, attribute);
+                     return self._set_attribute(self, attribute);
     }
 
     /// Clears the output device(s) display to the currently selected background color.
     pub fn clearScreen(self: *const SimpleTextOutputProtocol) Status {
-        return self._clear_screen(self);
+                     return self._clear_screen(self);
     }
 
     /// Sets the current coordinates of the cursor position.
     pub fn setCursorPosition(self: *const SimpleTextOutputProtocol, column: usize, row: usize) Status {
-        return self._set_cursor_position(self, column, row);
+                     return self._set_cursor_position(self, column, row);
     }
 
     /// Makes the cursor visible or invisible.
     pub fn enableCursor(self: *const SimpleTextOutputProtocol, visible: bool) Status {
-        return self._enable_cursor(self, visible);
+                     return self._enable_cursor(self, visible);
     }
 
     pub const guid align(8) = Guid{
-        .time_low = 0x387477c2,
-        .time_mid = 0x69c7,
-        .time_high_and_version = 0x11d2,
-        .clock_seq_high_and_reserved = 0x8e,
-        .clock_seq_low = 0x39,
-        .node = [_]u8{ 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x3b },
+                     .time_low = 0x387477c2,
+                     .time_mid = 0x69c7,
+                     .time_high_and_version = 0x11d2,
+                     .clock_seq_high_and_reserved = 0x8e,
+                     .clock_seq_low = 0x39,
+                     .node = [_]u8{ 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x3b },
     };
     pub const boxdraw_horizontal: u16 = 0x2500;
     pub const boxdraw_vertical: u16 = 0x2502;

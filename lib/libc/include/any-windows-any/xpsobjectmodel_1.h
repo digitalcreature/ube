@@ -117,76 +117,76 @@ MIDL_INTERFACE("0a91b617-d612-4181-bf7c-be5824e9cc8f")
 IXpsOMObjectFactory1 : public IXpsOMObjectFactory
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentTypeFromFile(
-        LPCWSTR filename,
-        XPS_DOCUMENT_TYPE *documentType) = 0;
+                     LPCWSTR filename,
+                     XPS_DOCUMENT_TYPE *documentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDocumentTypeFromStream(
-        IStream *xpsDocumentStream,
-        XPS_DOCUMENT_TYPE *documentType) = 0;
+                     IStream *xpsDocumentStream,
+                     XPS_DOCUMENT_TYPE *documentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertHDPhotoToJpegXR(
-        IXpsOMImageResource *imageResource) = 0;
+                     IXpsOMImageResource *imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertJpegXRToHDPhoto(
-        IXpsOMImageResource *imageResource) = 0;
+                     IXpsOMImageResource *imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackageWriterOnFile1(
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        XPS_DOCUMENT_TYPE documentType,
-        IXpsOMPackageWriter **packageWriter) = 0;
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     XPS_DOCUMENT_TYPE documentType,
+                     IXpsOMPackageWriter **packageWriter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackageWriterOnStream1(
-        ISequentialStream *outputStream,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        XPS_DOCUMENT_TYPE documentType,
-        IXpsOMPackageWriter **packageWriter) = 0;
+                     ISequentialStream *outputStream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     XPS_DOCUMENT_TYPE documentType,
+                     IXpsOMPackageWriter **packageWriter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackage1(
-        IXpsOMPackage1 **package) = 0;
+                     IXpsOMPackage1 **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackageFromStream1(
-        IStream *stream,
-        WINBOOL reuseObjects,
-        IXpsOMPackage1 **package) = 0;
+                     IStream *stream,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage1 **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackageFromFile1(
-        LPCWSTR filename,
-        WINBOOL reuseObjects,
-        IXpsOMPackage1 **package) = 0;
+                     LPCWSTR filename,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage1 **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePage1(
-        const XPS_SIZE *pageDimensions,
-        LPCWSTR language,
-        IOpcPartUri *partUri,
-        IXpsOMPage1 **page) = 0;
+                     const XPS_SIZE *pageDimensions,
+                     LPCWSTR language,
+                     IOpcPartUri *partUri,
+                     IXpsOMPage1 **page) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePageFromStream1(
-        IStream *pageMarkupStream,
-        IOpcPartUri *partUri,
-        IXpsOMPartResources *resources,
-        WINBOOL reuseObjects,
-        IXpsOMPage1 **page) = 0;
+                     IStream *pageMarkupStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPartResources *resources,
+                     WINBOOL reuseObjects,
+                     IXpsOMPage1 **page) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRemoteDictionaryResourceFromStream1(
-        IStream *dictionaryMarkupStream,
-        IOpcPartUri *partUri,
-        IXpsOMPartResources *resources,
-        IXpsOMRemoteDictionaryResource **dictionaryResource) = 0;
+                     IStream *dictionaryMarkupStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPartResources *resources,
+                     IXpsOMRemoteDictionaryResource **dictionaryResource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -198,328 +198,328 @@ typedef struct IXpsOMObjectFactory1Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMObjectFactory1 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMObjectFactory1 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMObjectFactory1 *This);
+                     IXpsOMObjectFactory1 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMObjectFactory1 *This);
+                     IXpsOMObjectFactory1 *This);
 
     /*** IXpsOMObjectFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreatePackage)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMPackage **package);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageFromFile)(
-        IXpsOMObjectFactory1 *This,
-        LPCWSTR filename,
-        WINBOOL reuseObjects,
-        IXpsOMPackage **package);
+                     IXpsOMObjectFactory1 *This,
+                     LPCWSTR filename,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageFromStream)(
-        IXpsOMObjectFactory1 *This,
-        IStream *stream,
-        WINBOOL reuseObjects,
-        IXpsOMPackage **package);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *stream,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *CreateStoryFragmentsResource)(
-        IXpsOMObjectFactory1 *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMStoryFragmentsResource **storyFragmentsResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMStoryFragmentsResource **storyFragmentsResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateDocumentStructureResource)(
-        IXpsOMObjectFactory1 *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMDocumentStructureResource **documentStructureResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMDocumentStructureResource **documentStructureResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateSignatureBlockResource)(
-        IXpsOMObjectFactory1 *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMSignatureBlockResource **signatureBlockResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMSignatureBlockResource **signatureBlockResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateRemoteDictionaryResource)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMDictionary *dictionary,
-        IOpcPartUri *partUri,
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMDictionary *dictionary,
+                     IOpcPartUri *partUri,
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateRemoteDictionaryResourceFromStream)(
-        IXpsOMObjectFactory1 *This,
-        IStream *dictionaryMarkupStream,
-        IOpcPartUri *dictionaryPartUri,
-        IXpsOMPartResources *resources,
-        IXpsOMRemoteDictionaryResource **dictionaryResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *dictionaryMarkupStream,
+                     IOpcPartUri *dictionaryPartUri,
+                     IXpsOMPartResources *resources,
+                     IXpsOMRemoteDictionaryResource **dictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *CreatePartResources)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMPartResources **partResources);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMPartResources **partResources);
 
     HRESULT (STDMETHODCALLTYPE *CreateDocumentSequence)(
-        IXpsOMObjectFactory1 *This,
-        IOpcPartUri *partUri,
-        IXpsOMDocumentSequence **documentSequence);
+                     IXpsOMObjectFactory1 *This,
+                     IOpcPartUri *partUri,
+                     IXpsOMDocumentSequence **documentSequence);
 
     HRESULT (STDMETHODCALLTYPE *CreateDocument)(
-        IXpsOMObjectFactory1 *This,
-        IOpcPartUri *partUri,
-        IXpsOMDocument **document);
+                     IXpsOMObjectFactory1 *This,
+                     IOpcPartUri *partUri,
+                     IXpsOMDocument **document);
 
     HRESULT (STDMETHODCALLTYPE *CreatePageReference)(
-        IXpsOMObjectFactory1 *This,
-        const XPS_SIZE *advisoryPageDimensions,
-        IXpsOMPageReference **pageReference);
+                     IXpsOMObjectFactory1 *This,
+                     const XPS_SIZE *advisoryPageDimensions,
+                     IXpsOMPageReference **pageReference);
 
     HRESULT (STDMETHODCALLTYPE *CreatePage)(
-        IXpsOMObjectFactory1 *This,
-        const XPS_SIZE *pageDimensions,
-        LPCWSTR language,
-        IOpcPartUri *partUri,
-        IXpsOMPage **page);
+                     IXpsOMObjectFactory1 *This,
+                     const XPS_SIZE *pageDimensions,
+                     LPCWSTR language,
+                     IOpcPartUri *partUri,
+                     IXpsOMPage **page);
 
     HRESULT (STDMETHODCALLTYPE *CreatePageFromStream)(
-        IXpsOMObjectFactory1 *This,
-        IStream *pageMarkupStream,
-        IOpcPartUri *partUri,
-        IXpsOMPartResources *resources,
-        WINBOOL reuseObjects,
-        IXpsOMPage **page);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *pageMarkupStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPartResources *resources,
+                     WINBOOL reuseObjects,
+                     IXpsOMPage **page);
 
     HRESULT (STDMETHODCALLTYPE *CreateCanvas)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMCanvas **canvas);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMCanvas **canvas);
 
     HRESULT (STDMETHODCALLTYPE *CreateGlyphs)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMFontResource *fontResource,
-        IXpsOMGlyphs **glyphs);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMFontResource *fontResource,
+                     IXpsOMGlyphs **glyphs);
 
     HRESULT (STDMETHODCALLTYPE *CreatePath)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMPath **path);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMPath **path);
 
     HRESULT (STDMETHODCALLTYPE *CreateGeometry)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMGeometry **geometry);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMGeometry **geometry);
 
     HRESULT (STDMETHODCALLTYPE *CreateGeometryFigure)(
-        IXpsOMObjectFactory1 *This,
-        const XPS_POINT *startPoint,
-        IXpsOMGeometryFigure **figure);
+                     IXpsOMObjectFactory1 *This,
+                     const XPS_POINT *startPoint,
+                     IXpsOMGeometryFigure **figure);
 
     HRESULT (STDMETHODCALLTYPE *CreateMatrixTransform)(
-        IXpsOMObjectFactory1 *This,
-        const XPS_MATRIX *matrix,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMObjectFactory1 *This,
+                     const XPS_MATRIX *matrix,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *CreateSolidColorBrush)(
-        IXpsOMObjectFactory1 *This,
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile,
-        IXpsOMSolidColorBrush **solidColorBrush);
+                     IXpsOMObjectFactory1 *This,
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile,
+                     IXpsOMSolidColorBrush **solidColorBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateColorProfileResource)(
-        IXpsOMObjectFactory1 *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMColorProfileResource **colorProfileResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMColorProfileResource **colorProfileResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateImageBrush)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMImageResource *image,
-        const XPS_RECT *viewBox,
-        const XPS_RECT *viewPort,
-        IXpsOMImageBrush **imageBrush);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMImageResource *image,
+                     const XPS_RECT *viewBox,
+                     const XPS_RECT *viewPort,
+                     IXpsOMImageBrush **imageBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateVisualBrush)(
-        IXpsOMObjectFactory1 *This,
-        const XPS_RECT *viewBox,
-        const XPS_RECT *viewPort,
-        IXpsOMVisualBrush **visualBrush);
+                     IXpsOMObjectFactory1 *This,
+                     const XPS_RECT *viewBox,
+                     const XPS_RECT *viewPort,
+                     IXpsOMVisualBrush **visualBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateImageResource)(
-        IXpsOMObjectFactory1 *This,
-        IStream *acquiredStream,
-        XPS_IMAGE_TYPE contentType,
-        IOpcPartUri *partUri,
-        IXpsOMImageResource **imageResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *acquiredStream,
+                     XPS_IMAGE_TYPE contentType,
+                     IOpcPartUri *partUri,
+                     IXpsOMImageResource **imageResource);
 
     HRESULT (STDMETHODCALLTYPE *CreatePrintTicketResource)(
-        IXpsOMObjectFactory1 *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMPrintTicketResource **printTicketResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPrintTicketResource **printTicketResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateFontResource)(
-        IXpsOMObjectFactory1 *This,
-        IStream *acquiredStream,
-        XPS_FONT_EMBEDDING fontEmbedding,
-        IOpcPartUri *partUri,
-        WINBOOL isObfSourceStream,
-        IXpsOMFontResource **fontResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *acquiredStream,
+                     XPS_FONT_EMBEDDING fontEmbedding,
+                     IOpcPartUri *partUri,
+                     WINBOOL isObfSourceStream,
+                     IXpsOMFontResource **fontResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateGradientStop)(
-        IXpsOMObjectFactory1 *This,
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile,
-        FLOAT offset,
-        IXpsOMGradientStop **gradientStop);
+                     IXpsOMObjectFactory1 *This,
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile,
+                     FLOAT offset,
+                     IXpsOMGradientStop **gradientStop);
 
     HRESULT (STDMETHODCALLTYPE *CreateLinearGradientBrush)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMGradientStop *gradStop1,
-        IXpsOMGradientStop *gradStop2,
-        const XPS_POINT *startPoint,
-        const XPS_POINT *endPoint,
-        IXpsOMLinearGradientBrush **linearGradientBrush);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMGradientStop *gradStop1,
+                     IXpsOMGradientStop *gradStop2,
+                     const XPS_POINT *startPoint,
+                     const XPS_POINT *endPoint,
+                     IXpsOMLinearGradientBrush **linearGradientBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateRadialGradientBrush)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMGradientStop *gradStop1,
-        IXpsOMGradientStop *gradStop2,
-        const XPS_POINT *centerPoint,
-        const XPS_POINT *gradientOrigin,
-        const XPS_SIZE *radiiSizes,
-        IXpsOMRadialGradientBrush **radialGradientBrush);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMGradientStop *gradStop1,
+                     IXpsOMGradientStop *gradStop2,
+                     const XPS_POINT *centerPoint,
+                     const XPS_POINT *gradientOrigin,
+                     const XPS_SIZE *radiiSizes,
+                     IXpsOMRadialGradientBrush **radialGradientBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateCoreProperties)(
-        IXpsOMObjectFactory1 *This,
-        IOpcPartUri *partUri,
-        IXpsOMCoreProperties **coreProperties);
+                     IXpsOMObjectFactory1 *This,
+                     IOpcPartUri *partUri,
+                     IXpsOMCoreProperties **coreProperties);
 
     HRESULT (STDMETHODCALLTYPE *CreateDictionary)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMDictionary **dictionary);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMDictionary **dictionary);
 
     HRESULT (STDMETHODCALLTYPE *CreatePartUriCollection)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMPartUriCollection **partUriCollection);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMPartUriCollection **partUriCollection);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageWriterOnFile)(
-        IXpsOMObjectFactory1 *This,
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter);
+                     IXpsOMObjectFactory1 *This,
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageWriterOnStream)(
-        IXpsOMObjectFactory1 *This,
-        ISequentialStream *outputStream,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter);
+                     IXpsOMObjectFactory1 *This,
+                     ISequentialStream *outputStream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter);
 
     HRESULT (STDMETHODCALLTYPE *CreatePartUri)(
-        IXpsOMObjectFactory1 *This,
-        LPCWSTR uri,
-        IOpcPartUri **partUri);
+                     IXpsOMObjectFactory1 *This,
+                     LPCWSTR uri,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *CreateReadOnlyStreamOnFile)(
-        IXpsOMObjectFactory1 *This,
-        LPCWSTR filename,
-        IStream **stream);
+                     IXpsOMObjectFactory1 *This,
+                     LPCWSTR filename,
+                     IStream **stream);
 
     /*** IXpsOMObjectFactory1 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentTypeFromFile)(
-        IXpsOMObjectFactory1 *This,
-        LPCWSTR filename,
-        XPS_DOCUMENT_TYPE *documentType);
+                     IXpsOMObjectFactory1 *This,
+                     LPCWSTR filename,
+                     XPS_DOCUMENT_TYPE *documentType);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentTypeFromStream)(
-        IXpsOMObjectFactory1 *This,
-        IStream *xpsDocumentStream,
-        XPS_DOCUMENT_TYPE *documentType);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *xpsDocumentStream,
+                     XPS_DOCUMENT_TYPE *documentType);
 
     HRESULT (STDMETHODCALLTYPE *ConvertHDPhotoToJpegXR)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMImageResource *imageResource);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMImageResource *imageResource);
 
     HRESULT (STDMETHODCALLTYPE *ConvertJpegXRToHDPhoto)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMImageResource *imageResource);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMImageResource *imageResource);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageWriterOnFile1)(
-        IXpsOMObjectFactory1 *This,
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        XPS_DOCUMENT_TYPE documentType,
-        IXpsOMPackageWriter **packageWriter);
+                     IXpsOMObjectFactory1 *This,
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     XPS_DOCUMENT_TYPE documentType,
+                     IXpsOMPackageWriter **packageWriter);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageWriterOnStream1)(
-        IXpsOMObjectFactory1 *This,
-        ISequentialStream *outputStream,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        XPS_DOCUMENT_TYPE documentType,
-        IXpsOMPackageWriter **packageWriter);
+                     IXpsOMObjectFactory1 *This,
+                     ISequentialStream *outputStream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     XPS_DOCUMENT_TYPE documentType,
+                     IXpsOMPackageWriter **packageWriter);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackage1)(
-        IXpsOMObjectFactory1 *This,
-        IXpsOMPackage1 **package);
+                     IXpsOMObjectFactory1 *This,
+                     IXpsOMPackage1 **package);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageFromStream1)(
-        IXpsOMObjectFactory1 *This,
-        IStream *stream,
-        WINBOOL reuseObjects,
-        IXpsOMPackage1 **package);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *stream,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage1 **package);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageFromFile1)(
-        IXpsOMObjectFactory1 *This,
-        LPCWSTR filename,
-        WINBOOL reuseObjects,
-        IXpsOMPackage1 **package);
+                     IXpsOMObjectFactory1 *This,
+                     LPCWSTR filename,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage1 **package);
 
     HRESULT (STDMETHODCALLTYPE *CreatePage1)(
-        IXpsOMObjectFactory1 *This,
-        const XPS_SIZE *pageDimensions,
-        LPCWSTR language,
-        IOpcPartUri *partUri,
-        IXpsOMPage1 **page);
+                     IXpsOMObjectFactory1 *This,
+                     const XPS_SIZE *pageDimensions,
+                     LPCWSTR language,
+                     IOpcPartUri *partUri,
+                     IXpsOMPage1 **page);
 
     HRESULT (STDMETHODCALLTYPE *CreatePageFromStream1)(
-        IXpsOMObjectFactory1 *This,
-        IStream *pageMarkupStream,
-        IOpcPartUri *partUri,
-        IXpsOMPartResources *resources,
-        WINBOOL reuseObjects,
-        IXpsOMPage1 **page);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *pageMarkupStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPartResources *resources,
+                     WINBOOL reuseObjects,
+                     IXpsOMPage1 **page);
 
     HRESULT (STDMETHODCALLTYPE *CreateRemoteDictionaryResourceFromStream1)(
-        IXpsOMObjectFactory1 *This,
-        IStream *dictionaryMarkupStream,
-        IOpcPartUri *partUri,
-        IXpsOMPartResources *resources,
-        IXpsOMRemoteDictionaryResource **dictionaryResource);
+                     IXpsOMObjectFactory1 *This,
+                     IStream *dictionaryMarkupStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPartResources *resources,
+                     IXpsOMRemoteDictionaryResource **dictionaryResource);
 
     END_INTERFACE
 } IXpsOMObjectFactory1Vtbl;
@@ -765,19 +765,19 @@ MIDL_INTERFACE("95a9435e-12bb-461b-8e7f-c6adb04cd96a")
 IXpsOMPackage1 : public IXpsOMPackage
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentType(
-        XPS_DOCUMENT_TYPE *documentType) = 0;
+                     XPS_DOCUMENT_TYPE *documentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteToFile1(
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize,
-        XPS_DOCUMENT_TYPE documentType) = 0;
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_DOCUMENT_TYPE documentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteToStream1(
-        ISequentialStream *outputStream,
-        WINBOOL optimizeMarkupSize,
-        XPS_DOCUMENT_TYPE documentType) = 0;
+                     ISequentialStream *outputStream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_DOCUMENT_TYPE documentType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -789,79 +789,79 @@ typedef struct IXpsOMPackage1Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPackage1 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPackage1 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPackage1 *This);
+                     IXpsOMPackage1 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPackage1 *This);
+                     IXpsOMPackage1 *This);
 
     /*** IXpsOMPackage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentSequence)(
-        IXpsOMPackage1 *This,
-        IXpsOMDocumentSequence **documentSequence);
+                     IXpsOMPackage1 *This,
+                     IXpsOMDocumentSequence **documentSequence);
 
     HRESULT (STDMETHODCALLTYPE *SetDocumentSequence)(
-        IXpsOMPackage1 *This,
-        IXpsOMDocumentSequence *documentSequence);
+                     IXpsOMPackage1 *This,
+                     IXpsOMDocumentSequence *documentSequence);
 
     HRESULT (STDMETHODCALLTYPE *GetCoreProperties)(
-        IXpsOMPackage1 *This,
-        IXpsOMCoreProperties **coreProperties);
+                     IXpsOMPackage1 *This,
+                     IXpsOMCoreProperties **coreProperties);
 
     HRESULT (STDMETHODCALLTYPE *SetCoreProperties)(
-        IXpsOMPackage1 *This,
-        IXpsOMCoreProperties *coreProperties);
+                     IXpsOMPackage1 *This,
+                     IXpsOMCoreProperties *coreProperties);
 
     HRESULT (STDMETHODCALLTYPE *GetDiscardControlPartName)(
-        IXpsOMPackage1 *This,
-        IOpcPartUri **discardControlPartUri);
+                     IXpsOMPackage1 *This,
+                     IOpcPartUri **discardControlPartUri);
 
     HRESULT (STDMETHODCALLTYPE *SetDiscardControlPartName)(
-        IXpsOMPackage1 *This,
-        IOpcPartUri *discardControlPartUri);
+                     IXpsOMPackage1 *This,
+                     IOpcPartUri *discardControlPartUri);
 
     HRESULT (STDMETHODCALLTYPE *GetThumbnailResource)(
-        IXpsOMPackage1 *This,
-        IXpsOMImageResource **imageResource);
+                     IXpsOMPackage1 *This,
+                     IXpsOMImageResource **imageResource);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnailResource)(
-        IXpsOMPackage1 *This,
-        IXpsOMImageResource *imageResource);
+                     IXpsOMPackage1 *This,
+                     IXpsOMImageResource *imageResource);
 
     HRESULT (STDMETHODCALLTYPE *WriteToFile)(
-        IXpsOMPackage1 *This,
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize);
+                     IXpsOMPackage1 *This,
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize);
 
     HRESULT (STDMETHODCALLTYPE *WriteToStream)(
-        IXpsOMPackage1 *This,
-        ISequentialStream *stream,
-        WINBOOL optimizeMarkupSize);
+                     IXpsOMPackage1 *This,
+                     ISequentialStream *stream,
+                     WINBOOL optimizeMarkupSize);
 
     /*** IXpsOMPackage1 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentType)(
-        IXpsOMPackage1 *This,
-        XPS_DOCUMENT_TYPE *documentType);
+                     IXpsOMPackage1 *This,
+                     XPS_DOCUMENT_TYPE *documentType);
 
     HRESULT (STDMETHODCALLTYPE *WriteToFile1)(
-        IXpsOMPackage1 *This,
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize,
-        XPS_DOCUMENT_TYPE documentType);
+                     IXpsOMPackage1 *This,
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_DOCUMENT_TYPE documentType);
 
     HRESULT (STDMETHODCALLTYPE *WriteToStream1)(
-        IXpsOMPackage1 *This,
-        ISequentialStream *outputStream,
-        WINBOOL optimizeMarkupSize,
-        XPS_DOCUMENT_TYPE documentType);
+                     IXpsOMPackage1 *This,
+                     ISequentialStream *outputStream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_DOCUMENT_TYPE documentType);
 
     END_INTERFACE
 } IXpsOMPackage1Vtbl;
@@ -963,12 +963,12 @@ MIDL_INTERFACE("305b60ef-6892-4dda-9cbb-3aa65974508a")
 IXpsOMPage1 : public IXpsOMPage
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentType(
-        XPS_DOCUMENT_TYPE *documentType) = 0;
+                     XPS_DOCUMENT_TYPE *documentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Write1(
-        ISequentialStream *stream,
-        WINBOOL optimizeMarkupSize,
-        XPS_DOCUMENT_TYPE documentType) = 0;
+                     ISequentialStream *stream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_DOCUMENT_TYPE documentType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -980,126 +980,126 @@ typedef struct IXpsOMPage1Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPage1 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPage1 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPage1 *This);
+                     IXpsOMPage1 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPage1 *This);
+                     IXpsOMPage1 *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMPage1 *This,
-        IOpcPartUri **partUri);
+                     IXpsOMPage1 *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMPage1 *This,
-        IOpcPartUri *partUri);
+                     IXpsOMPage1 *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMPage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMPage1 *This,
-        IXpsOMPageReference **pageReference);
+                     IXpsOMPage1 *This,
+                     IXpsOMPageReference **pageReference);
 
     HRESULT (STDMETHODCALLTYPE *GetVisuals)(
-        IXpsOMPage1 *This,
-        IXpsOMVisualCollection **visuals);
+                     IXpsOMPage1 *This,
+                     IXpsOMVisualCollection **visuals);
 
     HRESULT (STDMETHODCALLTYPE *GetPageDimensions)(
-        IXpsOMPage1 *This,
-        XPS_SIZE *pageDimensions);
+                     IXpsOMPage1 *This,
+                     XPS_SIZE *pageDimensions);
 
     HRESULT (STDMETHODCALLTYPE *SetPageDimensions)(
-        IXpsOMPage1 *This,
-        const XPS_SIZE *pageDimensions);
+                     IXpsOMPage1 *This,
+                     const XPS_SIZE *pageDimensions);
 
     HRESULT (STDMETHODCALLTYPE *GetContentBox)(
-        IXpsOMPage1 *This,
-        XPS_RECT *contentBox);
+                     IXpsOMPage1 *This,
+                     XPS_RECT *contentBox);
 
     HRESULT (STDMETHODCALLTYPE *SetContentBox)(
-        IXpsOMPage1 *This,
-        const XPS_RECT *contentBox);
+                     IXpsOMPage1 *This,
+                     const XPS_RECT *contentBox);
 
     HRESULT (STDMETHODCALLTYPE *GetBleedBox)(
-        IXpsOMPage1 *This,
-        XPS_RECT *bleedBox);
+                     IXpsOMPage1 *This,
+                     XPS_RECT *bleedBox);
 
     HRESULT (STDMETHODCALLTYPE *SetBleedBox)(
-        IXpsOMPage1 *This,
-        const XPS_RECT *bleedBox);
+                     IXpsOMPage1 *This,
+                     const XPS_RECT *bleedBox);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IXpsOMPage1 *This,
-        LPWSTR *language);
+                     IXpsOMPage1 *This,
+                     LPWSTR *language);
 
     HRESULT (STDMETHODCALLTYPE *SetLanguage)(
-        IXpsOMPage1 *This,
-        LPCWSTR language);
+                     IXpsOMPage1 *This,
+                     LPCWSTR language);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IXpsOMPage1 *This,
-        LPWSTR *name);
+                     IXpsOMPage1 *This,
+                     LPWSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IXpsOMPage1 *This,
-        LPCWSTR name);
+                     IXpsOMPage1 *This,
+                     LPCWSTR name);
 
     HRESULT (STDMETHODCALLTYPE *GetIsHyperlinkTarget)(
-        IXpsOMPage1 *This,
-        WINBOOL *isHyperlinkTarget);
+                     IXpsOMPage1 *This,
+                     WINBOOL *isHyperlinkTarget);
 
     HRESULT (STDMETHODCALLTYPE *SetIsHyperlinkTarget)(
-        IXpsOMPage1 *This,
-        WINBOOL isHyperlinkTarget);
+                     IXpsOMPage1 *This,
+                     WINBOOL isHyperlinkTarget);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionary)(
-        IXpsOMPage1 *This,
-        IXpsOMDictionary **resourceDictionary);
+                     IXpsOMPage1 *This,
+                     IXpsOMDictionary **resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionaryLocal)(
-        IXpsOMPage1 *This,
-        IXpsOMDictionary **resourceDictionary);
+                     IXpsOMPage1 *This,
+                     IXpsOMDictionary **resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *SetDictionaryLocal)(
-        IXpsOMPage1 *This,
-        IXpsOMDictionary *resourceDictionary);
+                     IXpsOMPage1 *This,
+                     IXpsOMDictionary *resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionaryResource)(
-        IXpsOMPage1 *This,
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
+                     IXpsOMPage1 *This,
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *SetDictionaryResource)(
-        IXpsOMPage1 *This,
-        IXpsOMRemoteDictionaryResource *remoteDictionaryResource);
+                     IXpsOMPage1 *This,
+                     IXpsOMRemoteDictionaryResource *remoteDictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IXpsOMPage1 *This,
-        ISequentialStream *stream,
-        WINBOOL optimizeMarkupSize);
+                     IXpsOMPage1 *This,
+                     ISequentialStream *stream,
+                     WINBOOL optimizeMarkupSize);
 
     HRESULT (STDMETHODCALLTYPE *GenerateUnusedLookupKey)(
-        IXpsOMPage1 *This,
-        XPS_OBJECT_TYPE type,
-        LPWSTR *key);
+                     IXpsOMPage1 *This,
+                     XPS_OBJECT_TYPE type,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMPage1 *This,
-        IXpsOMPage **page);
+                     IXpsOMPage1 *This,
+                     IXpsOMPage **page);
 
     /*** IXpsOMPage1 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentType)(
-        IXpsOMPage1 *This,
-        XPS_DOCUMENT_TYPE *documentType);
+                     IXpsOMPage1 *This,
+                     XPS_DOCUMENT_TYPE *documentType);
 
     HRESULT (STDMETHODCALLTYPE *Write1)(
-        IXpsOMPage1 *This,
-        ISequentialStream *stream,
-        WINBOOL optimizeMarkupSize,
-        XPS_DOCUMENT_TYPE documentType);
+                     IXpsOMPage1 *This,
+                     ISequentialStream *stream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_DOCUMENT_TYPE documentType);
 
     END_INTERFACE
 } IXpsOMPage1Vtbl;
@@ -1255,15 +1255,15 @@ MIDL_INTERFACE("3b0b6d38-53ad-41da-b212-d37637a6714e")
 IXpsDocumentPackageTarget : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetXpsOMPackageWriter(
-        IOpcPartUri *documentSequencePartName,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter) = 0;
+                     IOpcPartUri *documentSequencePartName,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXpsOMFactory(
-        IXpsOMObjectFactory **xpsFactory) = 0;
+                     IXpsOMObjectFactory **xpsFactory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXpsType(
-        XPS_DOCUMENT_TYPE *documentType) = 0;
+                     XPS_DOCUMENT_TYPE *documentType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1275,30 +1275,30 @@ typedef struct IXpsDocumentPackageTargetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsDocumentPackageTarget *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsDocumentPackageTarget *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsDocumentPackageTarget *This);
+                     IXpsDocumentPackageTarget *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsDocumentPackageTarget *This);
+                     IXpsDocumentPackageTarget *This);
 
     /*** IXpsDocumentPackageTarget methods ***/
     HRESULT (STDMETHODCALLTYPE *GetXpsOMPackageWriter)(
-        IXpsDocumentPackageTarget *This,
-        IOpcPartUri *documentSequencePartName,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter);
+                     IXpsDocumentPackageTarget *This,
+                     IOpcPartUri *documentSequencePartName,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter);
 
     HRESULT (STDMETHODCALLTYPE *GetXpsOMFactory)(
-        IXpsDocumentPackageTarget *This,
-        IXpsOMObjectFactory **xpsFactory);
+                     IXpsDocumentPackageTarget *This,
+                     IXpsOMObjectFactory **xpsFactory);
 
     HRESULT (STDMETHODCALLTYPE *GetXpsType)(
-        IXpsDocumentPackageTarget *This,
-        XPS_DOCUMENT_TYPE *documentType);
+                     IXpsDocumentPackageTarget *This,
+                     XPS_DOCUMENT_TYPE *documentType);
 
     END_INTERFACE
 } IXpsDocumentPackageTargetVtbl;
@@ -1358,11 +1358,11 @@ MIDL_INTERFACE("bf8fc1d4-9d46-4141-ba5f-94bb9250d041")
 IXpsOMRemoteDictionaryResource1 : public IXpsOMRemoteDictionaryResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentType(
-        XPS_DOCUMENT_TYPE *documentType) = 0;
+                     XPS_DOCUMENT_TYPE *documentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Write1(
-        ISequentialStream *stream,
-        XPS_DOCUMENT_TYPE documentType) = 0;
+                     ISequentialStream *stream,
+                     XPS_DOCUMENT_TYPE documentType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1374,43 +1374,43 @@ typedef struct IXpsOMRemoteDictionaryResource1Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMRemoteDictionaryResource1 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMRemoteDictionaryResource1 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMRemoteDictionaryResource1 *This);
+                     IXpsOMRemoteDictionaryResource1 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMRemoteDictionaryResource1 *This);
+                     IXpsOMRemoteDictionaryResource1 *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMRemoteDictionaryResource1 *This,
-        IOpcPartUri **partUri);
+                     IXpsOMRemoteDictionaryResource1 *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMRemoteDictionaryResource1 *This,
-        IOpcPartUri *partUri);
+                     IXpsOMRemoteDictionaryResource1 *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMRemoteDictionaryResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDictionary)(
-        IXpsOMRemoteDictionaryResource1 *This,
-        IXpsOMDictionary **dictionary);
+                     IXpsOMRemoteDictionaryResource1 *This,
+                     IXpsOMDictionary **dictionary);
 
     HRESULT (STDMETHODCALLTYPE *SetDictionary)(
-        IXpsOMRemoteDictionaryResource1 *This,
-        IXpsOMDictionary *dictionary);
+                     IXpsOMRemoteDictionaryResource1 *This,
+                     IXpsOMDictionary *dictionary);
 
     /*** IXpsOMRemoteDictionaryResource1 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentType)(
-        IXpsOMRemoteDictionaryResource1 *This,
-        XPS_DOCUMENT_TYPE *documentType);
+                     IXpsOMRemoteDictionaryResource1 *This,
+                     XPS_DOCUMENT_TYPE *documentType);
 
     HRESULT (STDMETHODCALLTYPE *Write1)(
-        IXpsOMRemoteDictionaryResource1 *This,
-        ISequentialStream *stream,
-        XPS_DOCUMENT_TYPE documentType);
+                     IXpsOMRemoteDictionaryResource1 *This,
+                     ISequentialStream *stream,
+                     XPS_DOCUMENT_TYPE documentType);
 
     END_INTERFACE
 } IXpsOMRemoteDictionaryResource1Vtbl;

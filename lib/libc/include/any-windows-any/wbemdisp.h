@@ -1235,18 +1235,18 @@ MIDL_INTERFACE("76a6415b-cb41-11d1-8b02-00600806d9b6")
 ISWbemLocator : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE ConnectServer(
-        BSTR strServer = L".",
-        BSTR strNamespace = L"",
-        BSTR strUser = L"",
-        BSTR strPassword = L"",
-        BSTR strLocale = L"",
-        BSTR strAuthority = L"",
-        LONG iSecurityFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemServices **objWbemServices = 0) = 0;
+                     BSTR strServer = L".",
+                     BSTR strNamespace = L"",
+                     BSTR strUser = L"",
+                     BSTR strPassword = L"",
+                     BSTR strLocale = L"",
+                     BSTR strAuthority = L"",
+                     LONG iSecurityFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemServices **objWbemServices = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Security_(
-        ISWbemSecurity **objWbemSecurity) = 0;
+                     ISWbemSecurity **objWbemSecurity) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1258,62 +1258,62 @@ typedef struct ISWbemLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemLocator *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemLocator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemLocator *This);
+                     ISWbemLocator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemLocator *This);
+                     ISWbemLocator *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemLocator *This,
-        UINT *pctinfo);
+                     ISWbemLocator *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemLocator *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemLocator *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemLocator *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemLocator *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemLocator *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemLocator *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *ConnectServer)(
-        ISWbemLocator *This,
-        BSTR strServer,
-        BSTR strNamespace,
-        BSTR strUser,
-        BSTR strPassword,
-        BSTR strLocale,
-        BSTR strAuthority,
-        LONG iSecurityFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemServices **objWbemServices);
+                     ISWbemLocator *This,
+                     BSTR strServer,
+                     BSTR strNamespace,
+                     BSTR strUser,
+                     BSTR strPassword,
+                     BSTR strLocale,
+                     BSTR strAuthority,
+                     LONG iSecurityFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemServices **objWbemServices);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemLocator *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemLocator *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     END_INTERFACE
 } ISWbemLocatorVtbl;
@@ -1387,157 +1387,157 @@ MIDL_INTERFACE("76a6415c-cb41-11d1-8b02-00600806d9b6")
 ISWbemServices : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE Get(
-        BSTR strObjectPath = L"",
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObject **objWbemObject = 0) = 0;
+                     BSTR strObjectPath = L"",
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObject **objWbemObject = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAsync(
-        IDispatch *objWbemSink,
-        BSTR strObjectPath = L"",
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath = L"",
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        BSTR strObjectPath,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0) = 0;
+                     BSTR strObjectPath,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteAsync(
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstancesOf(
-        BSTR strClass,
-        LONG iFlags = wbemFlagReturnImmediately,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     BSTR strClass,
+                     LONG iFlags = wbemFlagReturnImmediately,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstancesOfAsync(
-        IDispatch *objWbemSink,
-        BSTR strClass,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strClass,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubclassesOf(
-        BSTR strSuperclass = L"",
-        LONG iFlags = wbemFlagReturnImmediately | wbemQueryFlagDeep,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     BSTR strSuperclass = L"",
+                     LONG iFlags = wbemFlagReturnImmediately | wbemQueryFlagDeep,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubclassesOfAsync(
-        IDispatch *objWbemSink,
-        BSTR strSuperclass = L"",
-        LONG iFlags = wbemQueryFlagDeep,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strSuperclass = L"",
+                     LONG iFlags = wbemQueryFlagDeep,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecQuery(
-        BSTR strQuery,
-        BSTR strQueryLanguage = L"WQL",
-        LONG iFlags = wbemFlagReturnImmediately,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     BSTR strQuery,
+                     BSTR strQueryLanguage = L"WQL",
+                     LONG iFlags = wbemFlagReturnImmediately,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecQueryAsync(
-        IDispatch *objWbemSink,
-        BSTR strQuery,
-        BSTR strQueryLanguage = L"WQL",
-        LONG lFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage = L"WQL",
+                     LONG lFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AssociatorsOf(
-        BSTR strObjectPath,
-        BSTR strAssocClass = L"",
-        BSTR strResultClass = L"",
-        BSTR strResultRole = L"",
-        BSTR strRole = L"",
-        VARIANT_BOOL bClassesOnly = FALSE,
-        VARIANT_BOOL bSchemaOnly = FALSE,
-        BSTR strRequiredAssocQualifier = L"",
-        BSTR strRequiredQualifier = L"",
-        LONG iFlags = wbemFlagReturnImmediately,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     BSTR strObjectPath,
+                     BSTR strAssocClass = L"",
+                     BSTR strResultClass = L"",
+                     BSTR strResultRole = L"",
+                     BSTR strRole = L"",
+                     VARIANT_BOOL bClassesOnly = FALSE,
+                     VARIANT_BOOL bSchemaOnly = FALSE,
+                     BSTR strRequiredAssocQualifier = L"",
+                     BSTR strRequiredQualifier = L"",
+                     LONG iFlags = wbemFlagReturnImmediately,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AssociatorsOfAsync(
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strAssocClass = L"",
-        BSTR strResultClass = L"",
-        BSTR strResultRole = L"",
-        BSTR strRole = L"",
-        VARIANT_BOOL bClassesOnly = FALSE,
-        VARIANT_BOOL bSchemaOnly = FALSE,
-        BSTR strRequiredAssocQualifier = L"",
-        BSTR strRequiredQualifier = L"",
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strAssocClass = L"",
+                     BSTR strResultClass = L"",
+                     BSTR strResultRole = L"",
+                     BSTR strRole = L"",
+                     VARIANT_BOOL bClassesOnly = FALSE,
+                     VARIANT_BOOL bSchemaOnly = FALSE,
+                     BSTR strRequiredAssocQualifier = L"",
+                     BSTR strRequiredQualifier = L"",
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReferencesTo(
-        BSTR strObjectPath,
-        BSTR strResultClass = L"",
-        BSTR strRole = L"",
-        VARIANT_BOOL bClassesOnly = FALSE,
-        VARIANT_BOOL bSchemaOnly = FALSE,
-        BSTR strRequiredQualifier = L"",
-        LONG iFlags = wbemFlagReturnImmediately,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     BSTR strObjectPath,
+                     BSTR strResultClass = L"",
+                     BSTR strRole = L"",
+                     VARIANT_BOOL bClassesOnly = FALSE,
+                     VARIANT_BOOL bSchemaOnly = FALSE,
+                     BSTR strRequiredQualifier = L"",
+                     LONG iFlags = wbemFlagReturnImmediately,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReferencesToAsync(
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strResultClass = L"",
-        BSTR strRole = L"",
-        VARIANT_BOOL bClassesOnly = FALSE,
-        VARIANT_BOOL bSchemaOnly = FALSE,
-        BSTR strRequiredQualifier = L"",
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strResultClass = L"",
+                     BSTR strRole = L"",
+                     VARIANT_BOOL bClassesOnly = FALSE,
+                     VARIANT_BOOL bSchemaOnly = FALSE,
+                     BSTR strRequiredQualifier = L"",
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecNotificationQuery(
-        BSTR strQuery,
-        BSTR strQueryLanguage = L"WQL",
-        LONG iFlags = wbemFlagReturnImmediately | wbemFlagForwardOnly,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemEventSource **objWbemEventSource = 0) = 0;
+                     BSTR strQuery,
+                     BSTR strQueryLanguage = L"WQL",
+                     LONG iFlags = wbemFlagReturnImmediately | wbemFlagForwardOnly,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemEventSource **objWbemEventSource = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecNotificationQueryAsync(
-        IDispatch *objWbemSink,
-        BSTR strQuery,
-        BSTR strQueryLanguage = L"WQL",
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage = L"WQL",
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecMethod(
-        BSTR strObjectPath,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters = 0,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObject **objWbemOutParameters = 0) = 0;
+                     BSTR strObjectPath,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters = 0,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObject **objWbemOutParameters = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecMethodAsync(
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters = 0,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters = 0,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Security_(
-        ISWbemSecurity **objWbemSecurity) = 0;
+                     ISWbemSecurity **objWbemSecurity) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1549,218 +1549,218 @@ typedef struct ISWbemServicesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemServices *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemServices *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemServices *This);
+                     ISWbemServices *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemServices *This);
+                     ISWbemServices *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemServices *This,
-        UINT *pctinfo);
+                     ISWbemServices *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemServices *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemServices *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemServices *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemServices *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemServices *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemServices *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemServices methods ***/
     HRESULT (STDMETHODCALLTYPE *Get)(
-        ISWbemServices *This,
-        BSTR strObjectPath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObject **objWbemObject);
+                     ISWbemServices *This,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *GetAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        ISWbemServices *This,
-        BSTR strObjectPath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet);
+                     ISWbemServices *This,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *InstancesOf)(
-        ISWbemServices *This,
-        BSTR strClass,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServices *This,
+                     BSTR strClass,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *InstancesOfAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strClass,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strClass,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *SubclassesOf)(
-        ISWbemServices *This,
-        BSTR strSuperclass,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServices *This,
+                     BSTR strSuperclass,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *SubclassesOfAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strSuperclass,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strSuperclass,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecQuery)(
-        ISWbemServices *This,
-        BSTR strQuery,
-        BSTR strQueryLanguage,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServices *This,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *ExecQueryAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strQuery,
-        BSTR strQueryLanguage,
-        LONG lFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage,
+                     LONG lFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *AssociatorsOf)(
-        ISWbemServices *This,
-        BSTR strObjectPath,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServices *This,
+                     BSTR strObjectPath,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *AssociatorsOfAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ReferencesTo)(
-        ISWbemServices *This,
-        BSTR strObjectPath,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServices *This,
+                     BSTR strObjectPath,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *ReferencesToAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecNotificationQuery)(
-        ISWbemServices *This,
-        BSTR strQuery,
-        BSTR strQueryLanguage,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemEventSource **objWbemEventSource);
+                     ISWbemServices *This,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemEventSource **objWbemEventSource);
 
     HRESULT (STDMETHODCALLTYPE *ExecNotificationQueryAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strQuery,
-        BSTR strQueryLanguage,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethod)(
-        ISWbemServices *This,
-        BSTR strObjectPath,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObject **objWbemOutParameters);
+                     ISWbemServices *This,
+                     BSTR strObjectPath,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObject **objWbemOutParameters);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethodAsync)(
-        ISWbemServices *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServices *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemServices *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemServices *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     END_INTERFACE
 } ISWbemServicesVtbl;
@@ -1902,17 +1902,17 @@ MIDL_INTERFACE("d2f68443-85dc-427e-91d8-366554cc754c")
 ISWbemServicesEx : public ISWbemServices
 {
     virtual HRESULT STDMETHODCALLTYPE Put(
-        ISWbemObjectEx *objWbemObject,
-        LONG iFlags = wbemChangeFlagCreateOrUpdate,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectPath **objWbemObjectPath = 0) = 0;
+                     ISWbemObjectEx *objWbemObject,
+                     LONG iFlags = wbemChangeFlagCreateOrUpdate,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectPath **objWbemObjectPath = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutAsync(
-        ISWbemSink *objWbemSink,
-        ISWbemObjectEx *objWbemObject,
-        LONG iFlags = wbemChangeFlagCreateOrUpdate,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     ISWbemSink *objWbemSink,
+                     ISWbemObjectEx *objWbemObject,
+                     LONG iFlags = wbemChangeFlagCreateOrUpdate,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1924,234 +1924,234 @@ typedef struct ISWbemServicesExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemServicesEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemServicesEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemServicesEx *This);
+                     ISWbemServicesEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemServicesEx *This);
+                     ISWbemServicesEx *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemServicesEx *This,
-        UINT *pctinfo);
+                     ISWbemServicesEx *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemServicesEx *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemServicesEx *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemServicesEx *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemServicesEx *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemServicesEx *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemServicesEx *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemServices methods ***/
     HRESULT (STDMETHODCALLTYPE *Get)(
-        ISWbemServicesEx *This,
-        BSTR strObjectPath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObject **objWbemObject);
+                     ISWbemServicesEx *This,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *GetAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        ISWbemServicesEx *This,
-        BSTR strObjectPath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet);
+                     ISWbemServicesEx *This,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *InstancesOf)(
-        ISWbemServicesEx *This,
-        BSTR strClass,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServicesEx *This,
+                     BSTR strClass,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *InstancesOfAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strClass,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strClass,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *SubclassesOf)(
-        ISWbemServicesEx *This,
-        BSTR strSuperclass,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServicesEx *This,
+                     BSTR strSuperclass,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *SubclassesOfAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strSuperclass,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strSuperclass,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecQuery)(
-        ISWbemServicesEx *This,
-        BSTR strQuery,
-        BSTR strQueryLanguage,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServicesEx *This,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *ExecQueryAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strQuery,
-        BSTR strQueryLanguage,
-        LONG lFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage,
+                     LONG lFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *AssociatorsOf)(
-        ISWbemServicesEx *This,
-        BSTR strObjectPath,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServicesEx *This,
+                     BSTR strObjectPath,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *AssociatorsOfAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ReferencesTo)(
-        ISWbemServicesEx *This,
-        BSTR strObjectPath,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemServicesEx *This,
+                     BSTR strObjectPath,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *ReferencesToAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecNotificationQuery)(
-        ISWbemServicesEx *This,
-        BSTR strQuery,
-        BSTR strQueryLanguage,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemEventSource **objWbemEventSource);
+                     ISWbemServicesEx *This,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemEventSource **objWbemEventSource);
 
     HRESULT (STDMETHODCALLTYPE *ExecNotificationQueryAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strQuery,
-        BSTR strQueryLanguage,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strQuery,
+                     BSTR strQueryLanguage,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethod)(
-        ISWbemServicesEx *This,
-        BSTR strObjectPath,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObject **objWbemOutParameters);
+                     ISWbemServicesEx *This,
+                     BSTR strObjectPath,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObject **objWbemOutParameters);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethodAsync)(
-        ISWbemServicesEx *This,
-        IDispatch *objWbemSink,
-        BSTR strObjectPath,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strObjectPath,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemServicesEx *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemServicesEx *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     /*** ISWbemServicesEx methods ***/
     HRESULT (STDMETHODCALLTYPE *Put)(
-        ISWbemServicesEx *This,
-        ISWbemObjectEx *objWbemObject,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectPath **objWbemObjectPath);
+                     ISWbemServicesEx *This,
+                     ISWbemObjectEx *objWbemObject,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectPath **objWbemObjectPath);
 
     HRESULT (STDMETHODCALLTYPE *PutAsync)(
-        ISWbemServicesEx *This,
-        ISWbemSink *objWbemSink,
-        ISWbemObjectEx *objWbemObject,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemServicesEx *This,
+                     ISWbemSink *objWbemSink,
+                     ISWbemObjectEx *objWbemObject,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     END_INTERFACE
 } ISWbemServicesExVtbl;
@@ -2303,148 +2303,148 @@ MIDL_INTERFACE("76a6415a-cb41-11d1-8b02-00600806d9b6")
 ISWbemObject : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE Put_(
-        LONG iFlags = wbemChangeFlagCreateOrUpdate,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectPath **objWbemObjectPath = 0) = 0;
+                     LONG iFlags = wbemChangeFlagCreateOrUpdate,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectPath **objWbemObjectPath = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutAsync_(
-        IDispatch *objWbemSink,
-        LONG iFlags = wbemChangeFlagCreateOrUpdate,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     LONG iFlags = wbemChangeFlagCreateOrUpdate,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete_(
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0) = 0;
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteAsync_(
-        IDispatch *objWbemSink,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Instances_(
-        LONG iFlags = wbemFlagReturnImmediately,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     LONG iFlags = wbemFlagReturnImmediately,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstancesAsync_(
-        IDispatch *objWbemSink,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Subclasses_(
-        LONG iFlags = wbemFlagReturnImmediately | wbemQueryFlagDeep,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     LONG iFlags = wbemFlagReturnImmediately | wbemQueryFlagDeep,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubclassesAsync_(
-        IDispatch *objWbemSink,
-        LONG iFlags = wbemQueryFlagDeep,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     LONG iFlags = wbemQueryFlagDeep,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Associators_(
-        BSTR strAssocClass = L"",
-        BSTR strResultClass = L"",
-        BSTR strResultRole = L"",
-        BSTR strRole = L"",
-        VARIANT_BOOL bClassesOnly = FALSE,
-        VARIANT_BOOL bSchemaOnly = FALSE,
-        BSTR strRequiredAssocQualifier = L"",
-        BSTR strRequiredQualifier = L"",
-        LONG iFlags = wbemFlagReturnImmediately,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     BSTR strAssocClass = L"",
+                     BSTR strResultClass = L"",
+                     BSTR strResultRole = L"",
+                     BSTR strRole = L"",
+                     VARIANT_BOOL bClassesOnly = FALSE,
+                     VARIANT_BOOL bSchemaOnly = FALSE,
+                     BSTR strRequiredAssocQualifier = L"",
+                     BSTR strRequiredQualifier = L"",
+                     LONG iFlags = wbemFlagReturnImmediately,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AssociatorsAsync_(
-        IDispatch *objWbemSink,
-        BSTR strAssocClass = L"",
-        BSTR strResultClass = L"",
-        BSTR strResultRole = L"",
-        BSTR strRole = L"",
-        VARIANT_BOOL bClassesOnly = FALSE,
-        VARIANT_BOOL bSchemaOnly = FALSE,
-        BSTR strRequiredAssocQualifier = L"",
-        BSTR strRequiredQualifier = L"",
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strAssocClass = L"",
+                     BSTR strResultClass = L"",
+                     BSTR strResultRole = L"",
+                     BSTR strRole = L"",
+                     VARIANT_BOOL bClassesOnly = FALSE,
+                     VARIANT_BOOL bSchemaOnly = FALSE,
+                     BSTR strRequiredAssocQualifier = L"",
+                     BSTR strRequiredQualifier = L"",
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE References_(
-        BSTR strResultClass = L"",
-        BSTR strRole = L"",
-        VARIANT_BOOL bClassesOnly = FALSE,
-        VARIANT_BOOL bSchemaOnly = FALSE,
-        BSTR strRequiredQualifier = L"",
-        LONG iFlags = wbemFlagReturnImmediately,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObjectSet **objWbemObjectSet = 0) = 0;
+                     BSTR strResultClass = L"",
+                     BSTR strRole = L"",
+                     VARIANT_BOOL bClassesOnly = FALSE,
+                     VARIANT_BOOL bSchemaOnly = FALSE,
+                     BSTR strRequiredQualifier = L"",
+                     LONG iFlags = wbemFlagReturnImmediately,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObjectSet **objWbemObjectSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReferencesAsync_(
-        IDispatch *objWbemSink,
-        BSTR strResultClass = L"",
-        BSTR strRole = L"",
-        VARIANT_BOOL bClassesOnly = FALSE,
-        VARIANT_BOOL bSchemaOnly = FALSE,
-        BSTR strRequiredQualifier = L"",
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strResultClass = L"",
+                     BSTR strRole = L"",
+                     VARIANT_BOOL bClassesOnly = FALSE,
+                     VARIANT_BOOL bSchemaOnly = FALSE,
+                     BSTR strRequiredQualifier = L"",
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecMethod_(
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters = 0,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemObject **objWbemOutParameters = 0) = 0;
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters = 0,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemObject **objWbemOutParameters = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecMethodAsync_(
-        IDispatch *objWbemSink,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters = 0,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        IDispatch *objWbemAsyncContext = 0) = 0;
+                     IDispatch *objWbemSink,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters = 0,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     IDispatch *objWbemAsyncContext = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone_(
-        ISWbemObject **objWbemObject) = 0;
+                     ISWbemObject **objWbemObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObjectText_(
-        LONG iFlags = 0,
-        BSTR *strObjectText = 0) = 0;
+                     LONG iFlags = 0,
+                     BSTR *strObjectText = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpawnDerivedClass_(
-        LONG iFlags = 0,
-        ISWbemObject **objWbemObject = 0) = 0;
+                     LONG iFlags = 0,
+                     ISWbemObject **objWbemObject = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpawnInstance_(
-        LONG iFlags = 0,
-        ISWbemObject **objWbemObject = 0) = 0;
+                     LONG iFlags = 0,
+                     ISWbemObject **objWbemObject = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompareTo_(
-        IDispatch *objWbemObject,
-        LONG iFlags = wbemComparisonFlagIncludeAll,
-        VARIANT_BOOL *bResult = 0) = 0;
+                     IDispatch *objWbemObject,
+                     LONG iFlags = wbemComparisonFlagIncludeAll,
+                     VARIANT_BOOL *bResult = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Qualifiers_(
-        ISWbemQualifierSet **objWbemQualifierSet) = 0;
+                     ISWbemQualifierSet **objWbemQualifierSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Properties_(
-        ISWbemPropertySet **objWbemPropertySet) = 0;
+                     ISWbemPropertySet **objWbemPropertySet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Methods_(
-        ISWbemMethodSet **objWbemMethodSet) = 0;
+                     ISWbemMethodSet **objWbemMethodSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Derivation_(
-        VARIANT *strClassNameArray) = 0;
+                     VARIANT *strClassNameArray) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Path_(
-        ISWbemObjectPath **objWbemObjectPath) = 0;
+                     ISWbemObjectPath **objWbemObjectPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Security_(
-        ISWbemSecurity **objWbemSecurity) = 0;
+                     ISWbemSecurity **objWbemSecurity) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2456,215 +2456,215 @@ typedef struct ISWbemObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemObject *This);
+                     ISWbemObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemObject *This);
+                     ISWbemObject *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemObject *This,
-        UINT *pctinfo);
+                     ISWbemObject *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemObject *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemObject *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemObject *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemObject *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemObject *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemObject *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemObject methods ***/
     HRESULT (STDMETHODCALLTYPE *Put_)(
-        ISWbemObject *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectPath **objWbemObjectPath);
+                     ISWbemObject *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectPath **objWbemObjectPath);
 
     HRESULT (STDMETHODCALLTYPE *PutAsync_)(
-        ISWbemObject *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObject *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Delete_)(
-        ISWbemObject *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet);
+                     ISWbemObject *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsync_)(
-        ISWbemObject *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObject *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Instances_)(
-        ISWbemObject *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemObject *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *InstancesAsync_)(
-        ISWbemObject *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObject *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Subclasses_)(
-        ISWbemObject *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemObject *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *SubclassesAsync_)(
-        ISWbemObject *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObject *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Associators_)(
-        ISWbemObject *This,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemObject *This,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *AssociatorsAsync_)(
-        ISWbemObject *This,
-        IDispatch *objWbemSink,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObject *This,
+                     IDispatch *objWbemSink,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *References_)(
-        ISWbemObject *This,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemObject *This,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *ReferencesAsync_)(
-        ISWbemObject *This,
-        IDispatch *objWbemSink,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObject *This,
+                     IDispatch *objWbemSink,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethod_)(
-        ISWbemObject *This,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObject **objWbemOutParameters);
+                     ISWbemObject *This,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObject **objWbemOutParameters);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethodAsync_)(
-        ISWbemObject *This,
-        IDispatch *objWbemSink,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObject *This,
+                     IDispatch *objWbemSink,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Clone_)(
-        ISWbemObject *This,
-        ISWbemObject **objWbemObject);
+                     ISWbemObject *This,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectText_)(
-        ISWbemObject *This,
-        LONG iFlags,
-        BSTR *strObjectText);
+                     ISWbemObject *This,
+                     LONG iFlags,
+                     BSTR *strObjectText);
 
     HRESULT (STDMETHODCALLTYPE *SpawnDerivedClass_)(
-        ISWbemObject *This,
-        LONG iFlags,
-        ISWbemObject **objWbemObject);
+                     ISWbemObject *This,
+                     LONG iFlags,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *SpawnInstance_)(
-        ISWbemObject *This,
-        LONG iFlags,
-        ISWbemObject **objWbemObject);
+                     ISWbemObject *This,
+                     LONG iFlags,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *CompareTo_)(
-        ISWbemObject *This,
-        IDispatch *objWbemObject,
-        LONG iFlags,
-        VARIANT_BOOL *bResult);
+                     ISWbemObject *This,
+                     IDispatch *objWbemObject,
+                     LONG iFlags,
+                     VARIANT_BOOL *bResult);
 
     HRESULT (STDMETHODCALLTYPE *get_Qualifiers_)(
-        ISWbemObject *This,
-        ISWbemQualifierSet **objWbemQualifierSet);
+                     ISWbemObject *This,
+                     ISWbemQualifierSet **objWbemQualifierSet);
 
     HRESULT (STDMETHODCALLTYPE *get_Properties_)(
-        ISWbemObject *This,
-        ISWbemPropertySet **objWbemPropertySet);
+                     ISWbemObject *This,
+                     ISWbemPropertySet **objWbemPropertySet);
 
     HRESULT (STDMETHODCALLTYPE *get_Methods_)(
-        ISWbemObject *This,
-        ISWbemMethodSet **objWbemMethodSet);
+                     ISWbemObject *This,
+                     ISWbemMethodSet **objWbemMethodSet);
 
     HRESULT (STDMETHODCALLTYPE *get_Derivation_)(
-        ISWbemObject *This,
-        VARIANT *strClassNameArray);
+                     ISWbemObject *This,
+                     VARIANT *strClassNameArray);
 
     HRESULT (STDMETHODCALLTYPE *get_Path_)(
-        ISWbemObject *This,
-        ISWbemObjectPath **objWbemObjectPath);
+                     ISWbemObject *This,
+                     ISWbemObjectPath **objWbemObjectPath);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemObject *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemObject *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     END_INTERFACE
 } ISWbemObjectVtbl;
@@ -2830,23 +2830,23 @@ MIDL_INTERFACE("269ad56a-8a67-4129-bc8c-0506dcfe9880")
 ISWbemObjectEx : public ISWbemObject
 {
     virtual HRESULT STDMETHODCALLTYPE Refresh_(
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0) = 0;
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SystemProperties_(
-        ISWbemPropertySet **objWbemPropertySet) = 0;
+                     ISWbemPropertySet **objWbemPropertySet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetText_(
-        WbemObjectTextFormatEnum iObjectTextFormat,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        BSTR *bsText = 0) = 0;
+                     WbemObjectTextFormatEnum iObjectTextFormat,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     BSTR *bsText = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFromText_(
-        BSTR bsText,
-        WbemObjectTextFormatEnum iObjectTextFormat,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0) = 0;
+                     BSTR bsText,
+                     WbemObjectTextFormatEnum iObjectTextFormat,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2858,239 +2858,239 @@ typedef struct ISWbemObjectExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemObjectEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemObjectEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemObjectEx *This);
+                     ISWbemObjectEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemObjectEx *This);
+                     ISWbemObjectEx *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemObjectEx *This,
-        UINT *pctinfo);
+                     ISWbemObjectEx *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemObjectEx *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemObjectEx *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemObjectEx *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemObjectEx *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemObjectEx *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemObjectEx *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemObject methods ***/
     HRESULT (STDMETHODCALLTYPE *Put_)(
-        ISWbemObjectEx *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectPath **objWbemObjectPath);
+                     ISWbemObjectEx *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectPath **objWbemObjectPath);
 
     HRESULT (STDMETHODCALLTYPE *PutAsync_)(
-        ISWbemObjectEx *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObjectEx *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Delete_)(
-        ISWbemObjectEx *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet);
+                     ISWbemObjectEx *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsync_)(
-        ISWbemObjectEx *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObjectEx *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Instances_)(
-        ISWbemObjectEx *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemObjectEx *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *InstancesAsync_)(
-        ISWbemObjectEx *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObjectEx *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Subclasses_)(
-        ISWbemObjectEx *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemObjectEx *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *SubclassesAsync_)(
-        ISWbemObjectEx *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObjectEx *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Associators_)(
-        ISWbemObjectEx *This,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemObjectEx *This,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *AssociatorsAsync_)(
-        ISWbemObjectEx *This,
-        IDispatch *objWbemSink,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObjectEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *References_)(
-        ISWbemObjectEx *This,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemObjectEx *This,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *ReferencesAsync_)(
-        ISWbemObjectEx *This,
-        IDispatch *objWbemSink,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObjectEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethod_)(
-        ISWbemObjectEx *This,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObject **objWbemOutParameters);
+                     ISWbemObjectEx *This,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObject **objWbemOutParameters);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethodAsync_)(
-        ISWbemObjectEx *This,
-        IDispatch *objWbemSink,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemObjectEx *This,
+                     IDispatch *objWbemSink,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Clone_)(
-        ISWbemObjectEx *This,
-        ISWbemObject **objWbemObject);
+                     ISWbemObjectEx *This,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectText_)(
-        ISWbemObjectEx *This,
-        LONG iFlags,
-        BSTR *strObjectText);
+                     ISWbemObjectEx *This,
+                     LONG iFlags,
+                     BSTR *strObjectText);
 
     HRESULT (STDMETHODCALLTYPE *SpawnDerivedClass_)(
-        ISWbemObjectEx *This,
-        LONG iFlags,
-        ISWbemObject **objWbemObject);
+                     ISWbemObjectEx *This,
+                     LONG iFlags,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *SpawnInstance_)(
-        ISWbemObjectEx *This,
-        LONG iFlags,
-        ISWbemObject **objWbemObject);
+                     ISWbemObjectEx *This,
+                     LONG iFlags,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *CompareTo_)(
-        ISWbemObjectEx *This,
-        IDispatch *objWbemObject,
-        LONG iFlags,
-        VARIANT_BOOL *bResult);
+                     ISWbemObjectEx *This,
+                     IDispatch *objWbemObject,
+                     LONG iFlags,
+                     VARIANT_BOOL *bResult);
 
     HRESULT (STDMETHODCALLTYPE *get_Qualifiers_)(
-        ISWbemObjectEx *This,
-        ISWbemQualifierSet **objWbemQualifierSet);
+                     ISWbemObjectEx *This,
+                     ISWbemQualifierSet **objWbemQualifierSet);
 
     HRESULT (STDMETHODCALLTYPE *get_Properties_)(
-        ISWbemObjectEx *This,
-        ISWbemPropertySet **objWbemPropertySet);
+                     ISWbemObjectEx *This,
+                     ISWbemPropertySet **objWbemPropertySet);
 
     HRESULT (STDMETHODCALLTYPE *get_Methods_)(
-        ISWbemObjectEx *This,
-        ISWbemMethodSet **objWbemMethodSet);
+                     ISWbemObjectEx *This,
+                     ISWbemMethodSet **objWbemMethodSet);
 
     HRESULT (STDMETHODCALLTYPE *get_Derivation_)(
-        ISWbemObjectEx *This,
-        VARIANT *strClassNameArray);
+                     ISWbemObjectEx *This,
+                     VARIANT *strClassNameArray);
 
     HRESULT (STDMETHODCALLTYPE *get_Path_)(
-        ISWbemObjectEx *This,
-        ISWbemObjectPath **objWbemObjectPath);
+                     ISWbemObjectEx *This,
+                     ISWbemObjectPath **objWbemObjectPath);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemObjectEx *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemObjectEx *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     /*** ISWbemObjectEx methods ***/
     HRESULT (STDMETHODCALLTYPE *Refresh_)(
-        ISWbemObjectEx *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet);
+                     ISWbemObjectEx *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet);
 
     HRESULT (STDMETHODCALLTYPE *get_SystemProperties_)(
-        ISWbemObjectEx *This,
-        ISWbemPropertySet **objWbemPropertySet);
+                     ISWbemObjectEx *This,
+                     ISWbemPropertySet **objWbemPropertySet);
 
     HRESULT (STDMETHODCALLTYPE *GetText_)(
-        ISWbemObjectEx *This,
-        WbemObjectTextFormatEnum iObjectTextFormat,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        BSTR *bsText);
+                     ISWbemObjectEx *This,
+                     WbemObjectTextFormatEnum iObjectTextFormat,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     BSTR *bsText);
 
     HRESULT (STDMETHODCALLTYPE *SetFromText_)(
-        ISWbemObjectEx *This,
-        BSTR bsText,
-        WbemObjectTextFormatEnum iObjectTextFormat,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet);
+                     ISWbemObjectEx *This,
+                     BSTR bsText,
+                     WbemObjectTextFormatEnum iObjectTextFormat,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet);
 
     END_INTERFACE
 } ISWbemObjectExVtbl;
@@ -3283,215 +3283,215 @@ typedef struct ISWbemLastErrorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemLastError *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemLastError *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemLastError *This);
+                     ISWbemLastError *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemLastError *This);
+                     ISWbemLastError *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemLastError *This,
-        UINT *pctinfo);
+                     ISWbemLastError *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemLastError *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemLastError *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemLastError *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemLastError *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemLastError *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemLastError *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemObject methods ***/
     HRESULT (STDMETHODCALLTYPE *Put_)(
-        ISWbemLastError *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectPath **objWbemObjectPath);
+                     ISWbemLastError *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectPath **objWbemObjectPath);
 
     HRESULT (STDMETHODCALLTYPE *PutAsync_)(
-        ISWbemLastError *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemLastError *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Delete_)(
-        ISWbemLastError *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet);
+                     ISWbemLastError *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsync_)(
-        ISWbemLastError *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemLastError *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Instances_)(
-        ISWbemLastError *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemLastError *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *InstancesAsync_)(
-        ISWbemLastError *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemLastError *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Subclasses_)(
-        ISWbemLastError *This,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemLastError *This,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *SubclassesAsync_)(
-        ISWbemLastError *This,
-        IDispatch *objWbemSink,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemLastError *This,
+                     IDispatch *objWbemSink,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Associators_)(
-        ISWbemLastError *This,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemLastError *This,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *AssociatorsAsync_)(
-        ISWbemLastError *This,
-        IDispatch *objWbemSink,
-        BSTR strAssocClass,
-        BSTR strResultClass,
-        BSTR strResultRole,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredAssocQualifier,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemLastError *This,
+                     IDispatch *objWbemSink,
+                     BSTR strAssocClass,
+                     BSTR strResultClass,
+                     BSTR strResultRole,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredAssocQualifier,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *References_)(
-        ISWbemLastError *This,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemLastError *This,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *ReferencesAsync_)(
-        ISWbemLastError *This,
-        IDispatch *objWbemSink,
-        BSTR strResultClass,
-        BSTR strRole,
-        VARIANT_BOOL bClassesOnly,
-        VARIANT_BOOL bSchemaOnly,
-        BSTR strRequiredQualifier,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemLastError *This,
+                     IDispatch *objWbemSink,
+                     BSTR strResultClass,
+                     BSTR strRole,
+                     VARIANT_BOOL bClassesOnly,
+                     VARIANT_BOOL bSchemaOnly,
+                     BSTR strRequiredQualifier,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethod_)(
-        ISWbemLastError *This,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemObject **objWbemOutParameters);
+                     ISWbemLastError *This,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemObject **objWbemOutParameters);
 
     HRESULT (STDMETHODCALLTYPE *ExecMethodAsync_)(
-        ISWbemLastError *This,
-        IDispatch *objWbemSink,
-        BSTR strMethodName,
-        IDispatch *objWbemInParameters,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        IDispatch *objWbemAsyncContext);
+                     ISWbemLastError *This,
+                     IDispatch *objWbemSink,
+                     BSTR strMethodName,
+                     IDispatch *objWbemInParameters,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     IDispatch *objWbemAsyncContext);
 
     HRESULT (STDMETHODCALLTYPE *Clone_)(
-        ISWbemLastError *This,
-        ISWbemObject **objWbemObject);
+                     ISWbemLastError *This,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectText_)(
-        ISWbemLastError *This,
-        LONG iFlags,
-        BSTR *strObjectText);
+                     ISWbemLastError *This,
+                     LONG iFlags,
+                     BSTR *strObjectText);
 
     HRESULT (STDMETHODCALLTYPE *SpawnDerivedClass_)(
-        ISWbemLastError *This,
-        LONG iFlags,
-        ISWbemObject **objWbemObject);
+                     ISWbemLastError *This,
+                     LONG iFlags,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *SpawnInstance_)(
-        ISWbemLastError *This,
-        LONG iFlags,
-        ISWbemObject **objWbemObject);
+                     ISWbemLastError *This,
+                     LONG iFlags,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *CompareTo_)(
-        ISWbemLastError *This,
-        IDispatch *objWbemObject,
-        LONG iFlags,
-        VARIANT_BOOL *bResult);
+                     ISWbemLastError *This,
+                     IDispatch *objWbemObject,
+                     LONG iFlags,
+                     VARIANT_BOOL *bResult);
 
     HRESULT (STDMETHODCALLTYPE *get_Qualifiers_)(
-        ISWbemLastError *This,
-        ISWbemQualifierSet **objWbemQualifierSet);
+                     ISWbemLastError *This,
+                     ISWbemQualifierSet **objWbemQualifierSet);
 
     HRESULT (STDMETHODCALLTYPE *get_Properties_)(
-        ISWbemLastError *This,
-        ISWbemPropertySet **objWbemPropertySet);
+                     ISWbemLastError *This,
+                     ISWbemPropertySet **objWbemPropertySet);
 
     HRESULT (STDMETHODCALLTYPE *get_Methods_)(
-        ISWbemLastError *This,
-        ISWbemMethodSet **objWbemMethodSet);
+                     ISWbemLastError *This,
+                     ISWbemMethodSet **objWbemMethodSet);
 
     HRESULT (STDMETHODCALLTYPE *get_Derivation_)(
-        ISWbemLastError *This,
-        VARIANT *strClassNameArray);
+                     ISWbemLastError *This,
+                     VARIANT *strClassNameArray);
 
     HRESULT (STDMETHODCALLTYPE *get_Path_)(
-        ISWbemLastError *This,
-        ISWbemObjectPath **objWbemObjectPath);
+                     ISWbemLastError *This,
+                     ISWbemObjectPath **objWbemObjectPath);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemLastError *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemLastError *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     END_INTERFACE
 } ISWbemLastErrorVtbl;
@@ -3657,22 +3657,22 @@ MIDL_INTERFACE("76a6415f-cb41-11d1-8b02-00600806d9b6")
 ISWbemObjectSet : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **pUnk) = 0;
+                     IUnknown **pUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        BSTR strObjectPath,
-        LONG iFlags = 0,
-        ISWbemObject **objWbemObject = 0) = 0;
+                     BSTR strObjectPath,
+                     LONG iFlags = 0,
+                     ISWbemObject **objWbemObject = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *iCount) = 0;
+                     LONG *iCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Security_(
-        ISWbemSecurity **objWbemSecurity) = 0;
+                     ISWbemSecurity **objWbemSecurity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ItemIndex(
-        LONG lIndex,
-        ISWbemObject **objWbemObject) = 0;
+                     LONG lIndex,
+                     ISWbemObject **objWbemObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3684,69 +3684,69 @@ typedef struct ISWbemObjectSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemObjectSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemObjectSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemObjectSet *This);
+                     ISWbemObjectSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemObjectSet *This);
+                     ISWbemObjectSet *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemObjectSet *This,
-        UINT *pctinfo);
+                     ISWbemObjectSet *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemObjectSet *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemObjectSet *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemObjectSet *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemObjectSet *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemObjectSet *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemObjectSet *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemObjectSet methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISWbemObjectSet *This,
-        IUnknown **pUnk);
+                     ISWbemObjectSet *This,
+                     IUnknown **pUnk);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISWbemObjectSet *This,
-        BSTR strObjectPath,
-        LONG iFlags,
-        ISWbemObject **objWbemObject);
+                     ISWbemObjectSet *This,
+                     BSTR strObjectPath,
+                     LONG iFlags,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISWbemObjectSet *This,
-        LONG *iCount);
+                     ISWbemObjectSet *This,
+                     LONG *iCount);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemObjectSet *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemObjectSet *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     HRESULT (STDMETHODCALLTYPE *ItemIndex)(
-        ISWbemObjectSet *This,
-        LONG lIndex,
-        ISWbemObject **objWbemObject);
+                     ISWbemObjectSet *This,
+                     LONG lIndex,
+                     ISWbemObject **objWbemObject);
 
     END_INTERFACE
 } ISWbemObjectSetVtbl;
@@ -3832,31 +3832,31 @@ MIDL_INTERFACE("cf2376ea-ce8c-11d1-8b05-00600806d9b6")
 ISWbemNamedValueSet : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **pUnk) = 0;
+                     IUnknown **pUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        BSTR strName,
-        LONG iFlags = 0,
-        ISWbemNamedValue **objWbemNamedValue = 0) = 0;
+                     BSTR strName,
+                     LONG iFlags = 0,
+                     ISWbemNamedValue **objWbemNamedValue = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *iCount) = 0;
+                     LONG *iCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        BSTR strName,
-        VARIANT *varValue,
-        LONG iFlags = 0,
-        ISWbemNamedValue **objWbemNamedValue = 0) = 0;
+                     BSTR strName,
+                     VARIANT *varValue,
+                     LONG iFlags = 0,
+                     ISWbemNamedValue **objWbemNamedValue = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        BSTR strName,
-        LONG iFlags = 0) = 0;
+                     BSTR strName,
+                     LONG iFlags = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        ISWbemNamedValueSet **objWbemNamedValueSet) = 0;
+                     ISWbemNamedValueSet **objWbemNamedValueSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteAll(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3868,79 +3868,79 @@ typedef struct ISWbemNamedValueSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemNamedValueSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemNamedValueSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemNamedValueSet *This);
+                     ISWbemNamedValueSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemNamedValueSet *This);
+                     ISWbemNamedValueSet *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemNamedValueSet *This,
-        UINT *pctinfo);
+                     ISWbemNamedValueSet *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemNamedValueSet *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemNamedValueSet *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemNamedValueSet *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemNamedValueSet *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemNamedValueSet *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemNamedValueSet *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemNamedValueSet methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISWbemNamedValueSet *This,
-        IUnknown **pUnk);
+                     ISWbemNamedValueSet *This,
+                     IUnknown **pUnk);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISWbemNamedValueSet *This,
-        BSTR strName,
-        LONG iFlags,
-        ISWbemNamedValue **objWbemNamedValue);
+                     ISWbemNamedValueSet *This,
+                     BSTR strName,
+                     LONG iFlags,
+                     ISWbemNamedValue **objWbemNamedValue);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISWbemNamedValueSet *This,
-        LONG *iCount);
+                     ISWbemNamedValueSet *This,
+                     LONG *iCount);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ISWbemNamedValueSet *This,
-        BSTR strName,
-        VARIANT *varValue,
-        LONG iFlags,
-        ISWbemNamedValue **objWbemNamedValue);
+                     ISWbemNamedValueSet *This,
+                     BSTR strName,
+                     VARIANT *varValue,
+                     LONG iFlags,
+                     ISWbemNamedValue **objWbemNamedValue);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISWbemNamedValueSet *This,
-        BSTR strName,
-        LONG iFlags);
+                     ISWbemNamedValueSet *This,
+                     BSTR strName,
+                     LONG iFlags);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ISWbemNamedValueSet *This,
-        ISWbemNamedValueSet **objWbemNamedValueSet);
+                     ISWbemNamedValueSet *This,
+                     ISWbemNamedValueSet **objWbemNamedValueSet);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAll)(
-        ISWbemNamedValueSet *This);
+                     ISWbemNamedValueSet *This);
 
     END_INTERFACE
 } ISWbemNamedValueSetVtbl;
@@ -4034,13 +4034,13 @@ MIDL_INTERFACE("76a64164-cb41-11d1-8b02-00600806d9b6")
 ISWbemNamedValue : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Value(
-        VARIANT *varValue) = 0;
+                     VARIANT *varValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Value(
-        VARIANT *varValue) = 0;
+                     VARIANT *varValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *strName) = 0;
+                     BSTR *strName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4052,58 +4052,58 @@ typedef struct ISWbemNamedValueVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemNamedValue *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemNamedValue *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemNamedValue *This);
+                     ISWbemNamedValue *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemNamedValue *This);
+                     ISWbemNamedValue *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemNamedValue *This,
-        UINT *pctinfo);
+                     ISWbemNamedValue *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemNamedValue *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemNamedValue *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemNamedValue *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemNamedValue *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemNamedValue *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemNamedValue *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemNamedValue methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Value)(
-        ISWbemNamedValue *This,
-        VARIANT *varValue);
+                     ISWbemNamedValue *This,
+                     VARIANT *varValue);
 
     HRESULT (STDMETHODCALLTYPE *put_Value)(
-        ISWbemNamedValue *This,
-        VARIANT *varValue);
+                     ISWbemNamedValue *This,
+                     VARIANT *varValue);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ISWbemNamedValue *This,
-        BSTR *strName);
+                     ISWbemNamedValue *This,
+                     BSTR *strName);
 
     END_INTERFACE
 } ISWbemNamedValueVtbl;
@@ -4181,73 +4181,73 @@ MIDL_INTERFACE("5791bc27-ce9c-11d1-97bf-0000f81e849c")
 ISWbemObjectPath : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *strPath) = 0;
+                     BSTR *strPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Path(
-        BSTR strPath) = 0;
+                     BSTR strPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RelPath(
-        BSTR *strRelPath) = 0;
+                     BSTR *strRelPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RelPath(
-        BSTR strRelPath) = 0;
+                     BSTR strRelPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Server(
-        BSTR *strServer) = 0;
+                     BSTR *strServer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Server(
-        BSTR strServer) = 0;
+                     BSTR strServer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Namespace(
-        BSTR *strNamespace) = 0;
+                     BSTR *strNamespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Namespace(
-        BSTR strNamespace) = 0;
+                     BSTR strNamespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ParentNamespace(
-        BSTR *strParentNamespace) = 0;
+                     BSTR *strParentNamespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
-        BSTR *strDisplayName) = 0;
+                     BSTR *strDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DisplayName(
-        BSTR strDisplayName) = 0;
+                     BSTR strDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Class(
-        BSTR *strClass) = 0;
+                     BSTR *strClass) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Class(
-        BSTR strClass) = 0;
+                     BSTR strClass) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsClass(
-        VARIANT_BOOL *bIsClass) = 0;
+                     VARIANT_BOOL *bIsClass) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAsClass(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsSingleton(
-        VARIANT_BOOL *bIsSingleton) = 0;
+                     VARIANT_BOOL *bIsSingleton) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAsSingleton(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Keys(
-        ISWbemNamedValueSet **objWbemNamedValueSet) = 0;
+                     ISWbemNamedValueSet **objWbemNamedValueSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Security_(
-        ISWbemSecurity **objWbemSecurity) = 0;
+                     ISWbemSecurity **objWbemSecurity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Locale(
-        BSTR *strLocale) = 0;
+                     BSTR *strLocale) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Locale(
-        BSTR strLocale) = 0;
+                     BSTR strLocale) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Authority(
-        BSTR *strAuthority) = 0;
+                     BSTR *strAuthority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Authority(
-        BSTR strAuthority) = 0;
+                     BSTR strAuthority) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4259,136 +4259,136 @@ typedef struct ISWbemObjectPathVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemObjectPath *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemObjectPath *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemObjectPath *This);
+                     ISWbemObjectPath *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemObjectPath *This);
+                     ISWbemObjectPath *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemObjectPath *This,
-        UINT *pctinfo);
+                     ISWbemObjectPath *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemObjectPath *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemObjectPath *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemObjectPath *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemObjectPath *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemObjectPath *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemObjectPath *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemObjectPath methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        ISWbemObjectPath *This,
-        BSTR *strPath);
+                     ISWbemObjectPath *This,
+                     BSTR *strPath);
 
     HRESULT (STDMETHODCALLTYPE *put_Path)(
-        ISWbemObjectPath *This,
-        BSTR strPath);
+                     ISWbemObjectPath *This,
+                     BSTR strPath);
 
     HRESULT (STDMETHODCALLTYPE *get_RelPath)(
-        ISWbemObjectPath *This,
-        BSTR *strRelPath);
+                     ISWbemObjectPath *This,
+                     BSTR *strRelPath);
 
     HRESULT (STDMETHODCALLTYPE *put_RelPath)(
-        ISWbemObjectPath *This,
-        BSTR strRelPath);
+                     ISWbemObjectPath *This,
+                     BSTR strRelPath);
 
     HRESULT (STDMETHODCALLTYPE *get_Server)(
-        ISWbemObjectPath *This,
-        BSTR *strServer);
+                     ISWbemObjectPath *This,
+                     BSTR *strServer);
 
     HRESULT (STDMETHODCALLTYPE *put_Server)(
-        ISWbemObjectPath *This,
-        BSTR strServer);
+                     ISWbemObjectPath *This,
+                     BSTR strServer);
 
     HRESULT (STDMETHODCALLTYPE *get_Namespace)(
-        ISWbemObjectPath *This,
-        BSTR *strNamespace);
+                     ISWbemObjectPath *This,
+                     BSTR *strNamespace);
 
     HRESULT (STDMETHODCALLTYPE *put_Namespace)(
-        ISWbemObjectPath *This,
-        BSTR strNamespace);
+                     ISWbemObjectPath *This,
+                     BSTR strNamespace);
 
     HRESULT (STDMETHODCALLTYPE *get_ParentNamespace)(
-        ISWbemObjectPath *This,
-        BSTR *strParentNamespace);
+                     ISWbemObjectPath *This,
+                     BSTR *strParentNamespace);
 
     HRESULT (STDMETHODCALLTYPE *get_DisplayName)(
-        ISWbemObjectPath *This,
-        BSTR *strDisplayName);
+                     ISWbemObjectPath *This,
+                     BSTR *strDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *put_DisplayName)(
-        ISWbemObjectPath *This,
-        BSTR strDisplayName);
+                     ISWbemObjectPath *This,
+                     BSTR strDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *get_Class)(
-        ISWbemObjectPath *This,
-        BSTR *strClass);
+                     ISWbemObjectPath *This,
+                     BSTR *strClass);
 
     HRESULT (STDMETHODCALLTYPE *put_Class)(
-        ISWbemObjectPath *This,
-        BSTR strClass);
+                     ISWbemObjectPath *This,
+                     BSTR strClass);
 
     HRESULT (STDMETHODCALLTYPE *get_IsClass)(
-        ISWbemObjectPath *This,
-        VARIANT_BOOL *bIsClass);
+                     ISWbemObjectPath *This,
+                     VARIANT_BOOL *bIsClass);
 
     HRESULT (STDMETHODCALLTYPE *SetAsClass)(
-        ISWbemObjectPath *This);
+                     ISWbemObjectPath *This);
 
     HRESULT (STDMETHODCALLTYPE *get_IsSingleton)(
-        ISWbemObjectPath *This,
-        VARIANT_BOOL *bIsSingleton);
+                     ISWbemObjectPath *This,
+                     VARIANT_BOOL *bIsSingleton);
 
     HRESULT (STDMETHODCALLTYPE *SetAsSingleton)(
-        ISWbemObjectPath *This);
+                     ISWbemObjectPath *This);
 
     HRESULT (STDMETHODCALLTYPE *get_Keys)(
-        ISWbemObjectPath *This,
-        ISWbemNamedValueSet **objWbemNamedValueSet);
+                     ISWbemObjectPath *This,
+                     ISWbemNamedValueSet **objWbemNamedValueSet);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemObjectPath *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemObjectPath *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     HRESULT (STDMETHODCALLTYPE *get_Locale)(
-        ISWbemObjectPath *This,
-        BSTR *strLocale);
+                     ISWbemObjectPath *This,
+                     BSTR *strLocale);
 
     HRESULT (STDMETHODCALLTYPE *put_Locale)(
-        ISWbemObjectPath *This,
-        BSTR strLocale);
+                     ISWbemObjectPath *This,
+                     BSTR strLocale);
 
     HRESULT (STDMETHODCALLTYPE *get_Authority)(
-        ISWbemObjectPath *This,
-        BSTR *strAuthority);
+                     ISWbemObjectPath *This,
+                     BSTR *strAuthority);
 
     HRESULT (STDMETHODCALLTYPE *put_Authority)(
-        ISWbemObjectPath *This,
-        BSTR strAuthority);
+                     ISWbemObjectPath *This,
+                     BSTR strAuthority);
 
     END_INTERFACE
 } ISWbemObjectPathVtbl;
@@ -4546,28 +4546,28 @@ MIDL_INTERFACE("1a388f98-d4ba-11d1-8b09-00600806d9b6")
 ISWbemProperty : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Value(
-        VARIANT *varValue) = 0;
+                     VARIANT *varValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Value(
-        VARIANT *varValue) = 0;
+                     VARIANT *varValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *strName) = 0;
+                     BSTR *strName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsLocal(
-        VARIANT_BOOL *bIsLocal) = 0;
+                     VARIANT_BOOL *bIsLocal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Origin(
-        BSTR *strOrigin) = 0;
+                     BSTR *strOrigin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CIMType(
-        WbemCimtypeEnum *iCimType) = 0;
+                     WbemCimtypeEnum *iCimType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Qualifiers_(
-        ISWbemQualifierSet **objWbemQualifierSet) = 0;
+                     ISWbemQualifierSet **objWbemQualifierSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsArray(
-        VARIANT_BOOL *bIsArray) = 0;
+                     VARIANT_BOOL *bIsArray) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4579,78 +4579,78 @@ typedef struct ISWbemPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemProperty *This);
+                     ISWbemProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemProperty *This);
+                     ISWbemProperty *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemProperty *This,
-        UINT *pctinfo);
+                     ISWbemProperty *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemProperty *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemProperty *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemProperty *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemProperty *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemProperty *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemProperty *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Value)(
-        ISWbemProperty *This,
-        VARIANT *varValue);
+                     ISWbemProperty *This,
+                     VARIANT *varValue);
 
     HRESULT (STDMETHODCALLTYPE *put_Value)(
-        ISWbemProperty *This,
-        VARIANT *varValue);
+                     ISWbemProperty *This,
+                     VARIANT *varValue);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ISWbemProperty *This,
-        BSTR *strName);
+                     ISWbemProperty *This,
+                     BSTR *strName);
 
     HRESULT (STDMETHODCALLTYPE *get_IsLocal)(
-        ISWbemProperty *This,
-        VARIANT_BOOL *bIsLocal);
+                     ISWbemProperty *This,
+                     VARIANT_BOOL *bIsLocal);
 
     HRESULT (STDMETHODCALLTYPE *get_Origin)(
-        ISWbemProperty *This,
-        BSTR *strOrigin);
+                     ISWbemProperty *This,
+                     BSTR *strOrigin);
 
     HRESULT (STDMETHODCALLTYPE *get_CIMType)(
-        ISWbemProperty *This,
-        WbemCimtypeEnum *iCimType);
+                     ISWbemProperty *This,
+                     WbemCimtypeEnum *iCimType);
 
     HRESULT (STDMETHODCALLTYPE *get_Qualifiers_)(
-        ISWbemProperty *This,
-        ISWbemQualifierSet **objWbemQualifierSet);
+                     ISWbemProperty *This,
+                     ISWbemQualifierSet **objWbemQualifierSet);
 
     HRESULT (STDMETHODCALLTYPE *get_IsArray)(
-        ISWbemProperty *This,
-        VARIANT_BOOL *bIsArray);
+                     ISWbemProperty *This,
+                     VARIANT_BOOL *bIsArray);
 
     END_INTERFACE
 } ISWbemPropertyVtbl;
@@ -4748,26 +4748,26 @@ MIDL_INTERFACE("dea0a7b2-d4ba-11d1-8b09-00600806d9b6")
 ISWbemPropertySet : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **pUnk) = 0;
+                     IUnknown **pUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        BSTR strName,
-        LONG iFlags = 0,
-        ISWbemProperty **objWbemProperty = 0) = 0;
+                     BSTR strName,
+                     LONG iFlags = 0,
+                     ISWbemProperty **objWbemProperty = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *iCount) = 0;
+                     LONG *iCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        BSTR strName,
-        WbemCimtypeEnum iCIMType,
-        VARIANT_BOOL bIsArray = FALSE,
-        LONG iFlags = 0,
-        ISWbemProperty **objWbemProperty = 0) = 0;
+                     BSTR strName,
+                     WbemCimtypeEnum iCIMType,
+                     VARIANT_BOOL bIsArray = FALSE,
+                     LONG iFlags = 0,
+                     ISWbemProperty **objWbemProperty = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        BSTR strName,
-        LONG iFlags = 0) = 0;
+                     BSTR strName,
+                     LONG iFlags = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4779,73 +4779,73 @@ typedef struct ISWbemPropertySetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemPropertySet *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemPropertySet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemPropertySet *This);
+                     ISWbemPropertySet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemPropertySet *This);
+                     ISWbemPropertySet *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemPropertySet *This,
-        UINT *pctinfo);
+                     ISWbemPropertySet *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemPropertySet *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemPropertySet *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemPropertySet *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemPropertySet *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemPropertySet *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemPropertySet *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemPropertySet methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISWbemPropertySet *This,
-        IUnknown **pUnk);
+                     ISWbemPropertySet *This,
+                     IUnknown **pUnk);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISWbemPropertySet *This,
-        BSTR strName,
-        LONG iFlags,
-        ISWbemProperty **objWbemProperty);
+                     ISWbemPropertySet *This,
+                     BSTR strName,
+                     LONG iFlags,
+                     ISWbemProperty **objWbemProperty);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISWbemPropertySet *This,
-        LONG *iCount);
+                     ISWbemPropertySet *This,
+                     LONG *iCount);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ISWbemPropertySet *This,
-        BSTR strName,
-        WbemCimtypeEnum iCIMType,
-        VARIANT_BOOL bIsArray,
-        LONG iFlags,
-        ISWbemProperty **objWbemProperty);
+                     ISWbemPropertySet *This,
+                     BSTR strName,
+                     WbemCimtypeEnum iCIMType,
+                     VARIANT_BOOL bIsArray,
+                     LONG iFlags,
+                     ISWbemProperty **objWbemProperty);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISWbemPropertySet *This,
-        BSTR strName,
-        LONG iFlags);
+                     ISWbemPropertySet *This,
+                     BSTR strName,
+                     LONG iFlags);
 
     END_INTERFACE
 } ISWbemPropertySetVtbl;
@@ -4931,37 +4931,37 @@ MIDL_INTERFACE("79b05932-d3b7-11d1-8b06-00600806d9b6")
 ISWbemQualifier : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Value(
-        VARIANT *varValue) = 0;
+                     VARIANT *varValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Value(
-        VARIANT *varValue) = 0;
+                     VARIANT *varValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *strName) = 0;
+                     BSTR *strName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsLocal(
-        VARIANT_BOOL *bIsLocal) = 0;
+                     VARIANT_BOOL *bIsLocal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PropagatesToSubclass(
-        VARIANT_BOOL *bPropagatesToSubclass) = 0;
+                     VARIANT_BOOL *bPropagatesToSubclass) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PropagatesToSubclass(
-        VARIANT_BOOL bPropagatesToSubclass) = 0;
+                     VARIANT_BOOL bPropagatesToSubclass) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PropagatesToInstance(
-        VARIANT_BOOL *bPropagatesToInstance) = 0;
+                     VARIANT_BOOL *bPropagatesToInstance) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PropagatesToInstance(
-        VARIANT_BOOL bPropagatesToInstance) = 0;
+                     VARIANT_BOOL bPropagatesToInstance) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsOverridable(
-        VARIANT_BOOL *bIsOverridable) = 0;
+                     VARIANT_BOOL *bIsOverridable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IsOverridable(
-        VARIANT_BOOL bIsOverridable) = 0;
+                     VARIANT_BOOL bIsOverridable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsAmended(
-        VARIANT_BOOL *bIsAmended) = 0;
+                     VARIANT_BOOL *bIsAmended) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4973,90 +4973,90 @@ typedef struct ISWbemQualifierVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemQualifier *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemQualifier *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemQualifier *This);
+                     ISWbemQualifier *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemQualifier *This);
+                     ISWbemQualifier *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemQualifier *This,
-        UINT *pctinfo);
+                     ISWbemQualifier *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemQualifier *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemQualifier *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemQualifier *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemQualifier *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemQualifier *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemQualifier *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemQualifier methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Value)(
-        ISWbemQualifier *This,
-        VARIANT *varValue);
+                     ISWbemQualifier *This,
+                     VARIANT *varValue);
 
     HRESULT (STDMETHODCALLTYPE *put_Value)(
-        ISWbemQualifier *This,
-        VARIANT *varValue);
+                     ISWbemQualifier *This,
+                     VARIANT *varValue);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ISWbemQualifier *This,
-        BSTR *strName);
+                     ISWbemQualifier *This,
+                     BSTR *strName);
 
     HRESULT (STDMETHODCALLTYPE *get_IsLocal)(
-        ISWbemQualifier *This,
-        VARIANT_BOOL *bIsLocal);
+                     ISWbemQualifier *This,
+                     VARIANT_BOOL *bIsLocal);
 
     HRESULT (STDMETHODCALLTYPE *get_PropagatesToSubclass)(
-        ISWbemQualifier *This,
-        VARIANT_BOOL *bPropagatesToSubclass);
+                     ISWbemQualifier *This,
+                     VARIANT_BOOL *bPropagatesToSubclass);
 
     HRESULT (STDMETHODCALLTYPE *put_PropagatesToSubclass)(
-        ISWbemQualifier *This,
-        VARIANT_BOOL bPropagatesToSubclass);
+                     ISWbemQualifier *This,
+                     VARIANT_BOOL bPropagatesToSubclass);
 
     HRESULT (STDMETHODCALLTYPE *get_PropagatesToInstance)(
-        ISWbemQualifier *This,
-        VARIANT_BOOL *bPropagatesToInstance);
+                     ISWbemQualifier *This,
+                     VARIANT_BOOL *bPropagatesToInstance);
 
     HRESULT (STDMETHODCALLTYPE *put_PropagatesToInstance)(
-        ISWbemQualifier *This,
-        VARIANT_BOOL bPropagatesToInstance);
+                     ISWbemQualifier *This,
+                     VARIANT_BOOL bPropagatesToInstance);
 
     HRESULT (STDMETHODCALLTYPE *get_IsOverridable)(
-        ISWbemQualifier *This,
-        VARIANT_BOOL *bIsOverridable);
+                     ISWbemQualifier *This,
+                     VARIANT_BOOL *bIsOverridable);
 
     HRESULT (STDMETHODCALLTYPE *put_IsOverridable)(
-        ISWbemQualifier *This,
-        VARIANT_BOOL bIsOverridable);
+                     ISWbemQualifier *This,
+                     VARIANT_BOOL bIsOverridable);
 
     HRESULT (STDMETHODCALLTYPE *get_IsAmended)(
-        ISWbemQualifier *This,
-        VARIANT_BOOL *bIsAmended);
+                     ISWbemQualifier *This,
+                     VARIANT_BOOL *bIsAmended);
 
     END_INTERFACE
 } ISWbemQualifierVtbl;
@@ -5166,28 +5166,28 @@ MIDL_INTERFACE("9b16ed16-d3df-11d1-8b08-00600806d9b6")
 ISWbemQualifierSet : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **pUnk) = 0;
+                     IUnknown **pUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        BSTR name,
-        LONG iFlags = 0,
-        ISWbemQualifier **objWbemQualifier = 0) = 0;
+                     BSTR name,
+                     LONG iFlags = 0,
+                     ISWbemQualifier **objWbemQualifier = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *iCount) = 0;
+                     LONG *iCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        BSTR strName,
-        VARIANT *varVal,
-        VARIANT_BOOL bPropagatesToSubclass = TRUE,
-        VARIANT_BOOL bPropagatesToInstance = TRUE,
-        VARIANT_BOOL bIsOverridable = TRUE,
-        LONG iFlags = 0,
-        ISWbemQualifier **objWbemQualifier = 0) = 0;
+                     BSTR strName,
+                     VARIANT *varVal,
+                     VARIANT_BOOL bPropagatesToSubclass = TRUE,
+                     VARIANT_BOOL bPropagatesToInstance = TRUE,
+                     VARIANT_BOOL bIsOverridable = TRUE,
+                     LONG iFlags = 0,
+                     ISWbemQualifier **objWbemQualifier = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        BSTR strName,
-        LONG iFlags = 0) = 0;
+                     BSTR strName,
+                     LONG iFlags = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5199,75 +5199,75 @@ typedef struct ISWbemQualifierSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemQualifierSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemQualifierSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemQualifierSet *This);
+                     ISWbemQualifierSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemQualifierSet *This);
+                     ISWbemQualifierSet *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemQualifierSet *This,
-        UINT *pctinfo);
+                     ISWbemQualifierSet *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemQualifierSet *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemQualifierSet *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemQualifierSet *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemQualifierSet *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemQualifierSet *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemQualifierSet *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemQualifierSet methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISWbemQualifierSet *This,
-        IUnknown **pUnk);
+                     ISWbemQualifierSet *This,
+                     IUnknown **pUnk);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISWbemQualifierSet *This,
-        BSTR name,
-        LONG iFlags,
-        ISWbemQualifier **objWbemQualifier);
+                     ISWbemQualifierSet *This,
+                     BSTR name,
+                     LONG iFlags,
+                     ISWbemQualifier **objWbemQualifier);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISWbemQualifierSet *This,
-        LONG *iCount);
+                     ISWbemQualifierSet *This,
+                     LONG *iCount);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ISWbemQualifierSet *This,
-        BSTR strName,
-        VARIANT *varVal,
-        VARIANT_BOOL bPropagatesToSubclass,
-        VARIANT_BOOL bPropagatesToInstance,
-        VARIANT_BOOL bIsOverridable,
-        LONG iFlags,
-        ISWbemQualifier **objWbemQualifier);
+                     ISWbemQualifierSet *This,
+                     BSTR strName,
+                     VARIANT *varVal,
+                     VARIANT_BOOL bPropagatesToSubclass,
+                     VARIANT_BOOL bPropagatesToInstance,
+                     VARIANT_BOOL bIsOverridable,
+                     LONG iFlags,
+                     ISWbemQualifier **objWbemQualifier);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISWbemQualifierSet *This,
-        BSTR strName,
-        LONG iFlags);
+                     ISWbemQualifierSet *This,
+                     BSTR strName,
+                     LONG iFlags);
 
     END_INTERFACE
 } ISWbemQualifierSetVtbl;
@@ -5353,19 +5353,19 @@ MIDL_INTERFACE("422e8e90-d955-11d1-8b09-00600806d9b6")
 ISWbemMethod : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *strName) = 0;
+                     BSTR *strName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Origin(
-        BSTR *strOrigin) = 0;
+                     BSTR *strOrigin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InParameters(
-        ISWbemObject **objWbemInParameters) = 0;
+                     ISWbemObject **objWbemInParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OutParameters(
-        ISWbemObject **objWbemOutParameters) = 0;
+                     ISWbemObject **objWbemOutParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Qualifiers_(
-        ISWbemQualifierSet **objWbemQualifierSet) = 0;
+                     ISWbemQualifierSet **objWbemQualifierSet) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5377,66 +5377,66 @@ typedef struct ISWbemMethodVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemMethod *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemMethod *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemMethod *This);
+                     ISWbemMethod *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemMethod *This);
+                     ISWbemMethod *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemMethod *This,
-        UINT *pctinfo);
+                     ISWbemMethod *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemMethod *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemMethod *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemMethod *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemMethod *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemMethod *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemMethod *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemMethod methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ISWbemMethod *This,
-        BSTR *strName);
+                     ISWbemMethod *This,
+                     BSTR *strName);
 
     HRESULT (STDMETHODCALLTYPE *get_Origin)(
-        ISWbemMethod *This,
-        BSTR *strOrigin);
+                     ISWbemMethod *This,
+                     BSTR *strOrigin);
 
     HRESULT (STDMETHODCALLTYPE *get_InParameters)(
-        ISWbemMethod *This,
-        ISWbemObject **objWbemInParameters);
+                     ISWbemMethod *This,
+                     ISWbemObject **objWbemInParameters);
 
     HRESULT (STDMETHODCALLTYPE *get_OutParameters)(
-        ISWbemMethod *This,
-        ISWbemObject **objWbemOutParameters);
+                     ISWbemMethod *This,
+                     ISWbemObject **objWbemOutParameters);
 
     HRESULT (STDMETHODCALLTYPE *get_Qualifiers_)(
-        ISWbemMethod *This,
-        ISWbemQualifierSet **objWbemQualifierSet);
+                     ISWbemMethod *This,
+                     ISWbemQualifierSet **objWbemQualifierSet);
 
     END_INTERFACE
 } ISWbemMethodVtbl;
@@ -5522,15 +5522,15 @@ MIDL_INTERFACE("c93ba292-d955-11d1-8b09-00600806d9b6")
 ISWbemMethodSet : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **pUnk) = 0;
+                     IUnknown **pUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        BSTR strName,
-        LONG iFlags = 0,
-        ISWbemMethod **objWbemMethod = 0) = 0;
+                     BSTR strName,
+                     LONG iFlags = 0,
+                     ISWbemMethod **objWbemMethod = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *iCount) = 0;
+                     LONG *iCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5542,60 +5542,60 @@ typedef struct ISWbemMethodSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemMethodSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemMethodSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemMethodSet *This);
+                     ISWbemMethodSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemMethodSet *This);
+                     ISWbemMethodSet *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemMethodSet *This,
-        UINT *pctinfo);
+                     ISWbemMethodSet *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemMethodSet *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemMethodSet *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemMethodSet *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemMethodSet *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemMethodSet *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemMethodSet *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemMethodSet methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISWbemMethodSet *This,
-        IUnknown **pUnk);
+                     ISWbemMethodSet *This,
+                     IUnknown **pUnk);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISWbemMethodSet *This,
-        BSTR strName,
-        LONG iFlags,
-        ISWbemMethod **objWbemMethod);
+                     ISWbemMethodSet *This,
+                     BSTR strName,
+                     LONG iFlags,
+                     ISWbemMethod **objWbemMethod);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISWbemMethodSet *This,
-        LONG *iCount);
+                     ISWbemMethodSet *This,
+                     LONG *iCount);
 
     END_INTERFACE
 } ISWbemMethodSetVtbl;
@@ -5673,7 +5673,7 @@ MIDL_INTERFACE("75718c9f-f029-11d1-a1ac-00c04fb6c223")
 ISWbemSink : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5685,49 +5685,49 @@ typedef struct ISWbemSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemSink *This);
+                     ISWbemSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemSink *This);
+                     ISWbemSink *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemSink *This,
-        UINT *pctinfo);
+                     ISWbemSink *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemSink *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemSink *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemSink *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemSink *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemSink *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemSink *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemSink methods ***/
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        ISWbemSink *This);
+                     ISWbemSink *This);
 
     END_INTERFACE
 } ISWbemSinkVtbl;
@@ -5806,45 +5806,45 @@ typedef struct ISWbemSinkEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemSinkEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemSinkEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemSinkEvents *This);
+                     ISWbemSinkEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemSinkEvents *This);
+                     ISWbemSinkEvents *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemSinkEvents *This,
-        UINT *pctinfo);
+                     ISWbemSinkEvents *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemSinkEvents *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemSinkEvents *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemSinkEvents *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemSinkEvents *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemSinkEvents *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemSinkEvents *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } ISWbemSinkEventsVtbl;
@@ -5907,11 +5907,11 @@ MIDL_INTERFACE("27d54d92-0ebe-11d2-8b22-00600806d9b6")
 ISWbemEventSource : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE NextEvent(
-        LONG iTimeoutMs = wbemTimeoutInfinite,
-        ISWbemObject **objWbemObject = 0) = 0;
+                     LONG iTimeoutMs = wbemTimeoutInfinite,
+                     ISWbemObject **objWbemObject = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Security_(
-        ISWbemSecurity **objWbemSecurity) = 0;
+                     ISWbemSecurity **objWbemSecurity) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5923,55 +5923,55 @@ typedef struct ISWbemEventSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemEventSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemEventSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemEventSource *This);
+                     ISWbemEventSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemEventSource *This);
+                     ISWbemEventSource *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemEventSource *This,
-        UINT *pctinfo);
+                     ISWbemEventSource *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemEventSource *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemEventSource *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemEventSource *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemEventSource *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemEventSource *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemEventSource *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemEventSource methods ***/
     HRESULT (STDMETHODCALLTYPE *NextEvent)(
-        ISWbemEventSource *This,
-        LONG iTimeoutMs,
-        ISWbemObject **objWbemObject);
+                     ISWbemEventSource *This,
+                     LONG iTimeoutMs,
+                     ISWbemObject **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *get_Security_)(
-        ISWbemEventSource *This,
-        ISWbemSecurity **objWbemSecurity);
+                     ISWbemEventSource *This,
+                     ISWbemSecurity **objWbemSecurity);
 
     END_INTERFACE
 } ISWbemEventSourceVtbl;
@@ -6045,19 +6045,19 @@ MIDL_INTERFACE("b54d66e6-2287-11d2-8b33-00600806d9b6")
 ISWbemSecurity : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_ImpersonationLevel(
-        WbemImpersonationLevelEnum *iImpersonationLevel) = 0;
+                     WbemImpersonationLevelEnum *iImpersonationLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ImpersonationLevel(
-        WbemImpersonationLevelEnum iImpersonationLevel) = 0;
+                     WbemImpersonationLevelEnum iImpersonationLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AuthenticationLevel(
-        WbemAuthenticationLevelEnum *iAuthenticationLevel) = 0;
+                     WbemAuthenticationLevelEnum *iAuthenticationLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AuthenticationLevel(
-        WbemAuthenticationLevelEnum iAuthenticationLevel) = 0;
+                     WbemAuthenticationLevelEnum iAuthenticationLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Privileges(
-        ISWbemPrivilegeSet **objWbemPrivilegeSet) = 0;
+                     ISWbemPrivilegeSet **objWbemPrivilegeSet) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6069,66 +6069,66 @@ typedef struct ISWbemSecurityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemSecurity *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemSecurity *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemSecurity *This);
+                     ISWbemSecurity *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemSecurity *This);
+                     ISWbemSecurity *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemSecurity *This,
-        UINT *pctinfo);
+                     ISWbemSecurity *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemSecurity *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemSecurity *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemSecurity *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemSecurity *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemSecurity *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemSecurity *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemSecurity methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ImpersonationLevel)(
-        ISWbemSecurity *This,
-        WbemImpersonationLevelEnum *iImpersonationLevel);
+                     ISWbemSecurity *This,
+                     WbemImpersonationLevelEnum *iImpersonationLevel);
 
     HRESULT (STDMETHODCALLTYPE *put_ImpersonationLevel)(
-        ISWbemSecurity *This,
-        WbemImpersonationLevelEnum iImpersonationLevel);
+                     ISWbemSecurity *This,
+                     WbemImpersonationLevelEnum iImpersonationLevel);
 
     HRESULT (STDMETHODCALLTYPE *get_AuthenticationLevel)(
-        ISWbemSecurity *This,
-        WbemAuthenticationLevelEnum *iAuthenticationLevel);
+                     ISWbemSecurity *This,
+                     WbemAuthenticationLevelEnum *iAuthenticationLevel);
 
     HRESULT (STDMETHODCALLTYPE *put_AuthenticationLevel)(
-        ISWbemSecurity *This,
-        WbemAuthenticationLevelEnum iAuthenticationLevel);
+                     ISWbemSecurity *This,
+                     WbemAuthenticationLevelEnum iAuthenticationLevel);
 
     HRESULT (STDMETHODCALLTYPE *get_Privileges)(
-        ISWbemSecurity *This,
-        ISWbemPrivilegeSet **objWbemPrivilegeSet);
+                     ISWbemSecurity *This,
+                     ISWbemPrivilegeSet **objWbemPrivilegeSet);
 
     END_INTERFACE
 } ISWbemSecurityVtbl;
@@ -6214,19 +6214,19 @@ MIDL_INTERFACE("26ee67bd-5804-11d2-8b4a-00600806d9b6")
 ISWbemPrivilege : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
-        VARIANT_BOOL *bIsEnabled) = 0;
+                     VARIANT_BOOL *bIsEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IsEnabled(
-        VARIANT_BOOL bIsEnabled) = 0;
+                     VARIANT_BOOL bIsEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *strDisplayName) = 0;
+                     BSTR *strDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
-        BSTR *strDisplayName) = 0;
+                     BSTR *strDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Identifier(
-        WbemPrivilegeEnum *iPrivilege) = 0;
+                     WbemPrivilegeEnum *iPrivilege) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6238,66 +6238,66 @@ typedef struct ISWbemPrivilegeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemPrivilege *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemPrivilege *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemPrivilege *This);
+                     ISWbemPrivilege *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemPrivilege *This);
+                     ISWbemPrivilege *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemPrivilege *This,
-        UINT *pctinfo);
+                     ISWbemPrivilege *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemPrivilege *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemPrivilege *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemPrivilege *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemPrivilege *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemPrivilege *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemPrivilege *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemPrivilege methods ***/
     HRESULT (STDMETHODCALLTYPE *get_IsEnabled)(
-        ISWbemPrivilege *This,
-        VARIANT_BOOL *bIsEnabled);
+                     ISWbemPrivilege *This,
+                     VARIANT_BOOL *bIsEnabled);
 
     HRESULT (STDMETHODCALLTYPE *put_IsEnabled)(
-        ISWbemPrivilege *This,
-        VARIANT_BOOL bIsEnabled);
+                     ISWbemPrivilege *This,
+                     VARIANT_BOOL bIsEnabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ISWbemPrivilege *This,
-        BSTR *strDisplayName);
+                     ISWbemPrivilege *This,
+                     BSTR *strDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *get_DisplayName)(
-        ISWbemPrivilege *This,
-        BSTR *strDisplayName);
+                     ISWbemPrivilege *This,
+                     BSTR *strDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *get_Identifier)(
-        ISWbemPrivilege *This,
-        WbemPrivilegeEnum *iPrivilege);
+                     ISWbemPrivilege *This,
+                     WbemPrivilegeEnum *iPrivilege);
 
     END_INTERFACE
 } ISWbemPrivilegeVtbl;
@@ -6383,30 +6383,30 @@ MIDL_INTERFACE("26ee67bf-5804-11d2-8b4a-00600806d9b6")
 ISWbemPrivilegeSet : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **pUnk) = 0;
+                     IUnknown **pUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        WbemPrivilegeEnum iPrivilege,
-        ISWbemPrivilege **objWbemPrivilege) = 0;
+                     WbemPrivilegeEnum iPrivilege,
+                     ISWbemPrivilege **objWbemPrivilege) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *iCount) = 0;
+                     LONG *iCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        WbemPrivilegeEnum iPrivilege,
-        VARIANT_BOOL bIsEnabled = TRUE,
-        ISWbemPrivilege **objWbemPrivilege = 0) = 0;
+                     WbemPrivilegeEnum iPrivilege,
+                     VARIANT_BOOL bIsEnabled = TRUE,
+                     ISWbemPrivilege **objWbemPrivilege = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        WbemPrivilegeEnum iPrivilege) = 0;
+                     WbemPrivilegeEnum iPrivilege) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteAll(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddAsString(
-        BSTR strPrivilege,
-        VARIANT_BOOL bIsEnabled = TRUE,
-        ISWbemPrivilege **objWbemPrivilege = 0) = 0;
+                     BSTR strPrivilege,
+                     VARIANT_BOOL bIsEnabled = TRUE,
+                     ISWbemPrivilege **objWbemPrivilege = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6418,78 +6418,78 @@ typedef struct ISWbemPrivilegeSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemPrivilegeSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemPrivilegeSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemPrivilegeSet *This);
+                     ISWbemPrivilegeSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemPrivilegeSet *This);
+                     ISWbemPrivilegeSet *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemPrivilegeSet *This,
-        UINT *pctinfo);
+                     ISWbemPrivilegeSet *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemPrivilegeSet *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemPrivilegeSet *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemPrivilegeSet *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemPrivilegeSet *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemPrivilegeSet *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemPrivilegeSet *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemPrivilegeSet methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISWbemPrivilegeSet *This,
-        IUnknown **pUnk);
+                     ISWbemPrivilegeSet *This,
+                     IUnknown **pUnk);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISWbemPrivilegeSet *This,
-        WbemPrivilegeEnum iPrivilege,
-        ISWbemPrivilege **objWbemPrivilege);
+                     ISWbemPrivilegeSet *This,
+                     WbemPrivilegeEnum iPrivilege,
+                     ISWbemPrivilege **objWbemPrivilege);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISWbemPrivilegeSet *This,
-        LONG *iCount);
+                     ISWbemPrivilegeSet *This,
+                     LONG *iCount);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ISWbemPrivilegeSet *This,
-        WbemPrivilegeEnum iPrivilege,
-        VARIANT_BOOL bIsEnabled,
-        ISWbemPrivilege **objWbemPrivilege);
+                     ISWbemPrivilegeSet *This,
+                     WbemPrivilegeEnum iPrivilege,
+                     VARIANT_BOOL bIsEnabled,
+                     ISWbemPrivilege **objWbemPrivilege);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISWbemPrivilegeSet *This,
-        WbemPrivilegeEnum iPrivilege);
+                     ISWbemPrivilegeSet *This,
+                     WbemPrivilegeEnum iPrivilege);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAll)(
-        ISWbemPrivilegeSet *This);
+                     ISWbemPrivilegeSet *This);
 
     HRESULT (STDMETHODCALLTYPE *AddAsString)(
-        ISWbemPrivilegeSet *This,
-        BSTR strPrivilege,
-        VARIANT_BOOL bIsEnabled,
-        ISWbemPrivilege **objWbemPrivilege);
+                     ISWbemPrivilegeSet *This,
+                     BSTR strPrivilege,
+                     VARIANT_BOOL bIsEnabled,
+                     ISWbemPrivilege **objWbemPrivilege);
 
     END_INTERFACE
 } ISWbemPrivilegeSetVtbl;
@@ -6583,128 +6583,128 @@ MIDL_INTERFACE("5e97458a-cf77-11d3-b38f-00105a1f473a")
 ISWbemDateTime : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Value(
-        BSTR *strValue) = 0;
+                     BSTR *strValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Value(
-        BSTR strValue) = 0;
+                     BSTR strValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Year(
-        LONG *iYear) = 0;
+                     LONG *iYear) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Year(
-        LONG iYear) = 0;
+                     LONG iYear) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_YearSpecified(
-        VARIANT_BOOL *bYearSpecified) = 0;
+                     VARIANT_BOOL *bYearSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_YearSpecified(
-        VARIANT_BOOL bYearSpecified) = 0;
+                     VARIANT_BOOL bYearSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Month(
-        LONG *iMonth) = 0;
+                     LONG *iMonth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Month(
-        LONG iMonth) = 0;
+                     LONG iMonth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MonthSpecified(
-        VARIANT_BOOL *bMonthSpecified) = 0;
+                     VARIANT_BOOL *bMonthSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MonthSpecified(
-        VARIANT_BOOL bMonthSpecified) = 0;
+                     VARIANT_BOOL bMonthSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Day(
-        LONG *iDay) = 0;
+                     LONG *iDay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Day(
-        LONG iDay) = 0;
+                     LONG iDay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DaySpecified(
-        VARIANT_BOOL *bDaySpecified) = 0;
+                     VARIANT_BOOL *bDaySpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DaySpecified(
-        VARIANT_BOOL bDaySpecified) = 0;
+                     VARIANT_BOOL bDaySpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Hours(
-        LONG *iHours) = 0;
+                     LONG *iHours) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Hours(
-        LONG iHours) = 0;
+                     LONG iHours) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HoursSpecified(
-        VARIANT_BOOL *bHoursSpecified) = 0;
+                     VARIANT_BOOL *bHoursSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_HoursSpecified(
-        VARIANT_BOOL bHoursSpecified) = 0;
+                     VARIANT_BOOL bHoursSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Minutes(
-        LONG *iMinutes) = 0;
+                     LONG *iMinutes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Minutes(
-        LONG iMinutes) = 0;
+                     LONG iMinutes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MinutesSpecified(
-        VARIANT_BOOL *bMinutesSpecified) = 0;
+                     VARIANT_BOOL *bMinutesSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinutesSpecified(
-        VARIANT_BOOL bMinutesSpecified) = 0;
+                     VARIANT_BOOL bMinutesSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Seconds(
-        LONG *iSeconds) = 0;
+                     LONG *iSeconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Seconds(
-        LONG iSeconds) = 0;
+                     LONG iSeconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SecondsSpecified(
-        VARIANT_BOOL *bSecondsSpecified) = 0;
+                     VARIANT_BOOL *bSecondsSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SecondsSpecified(
-        VARIANT_BOOL bSecondsSpecified) = 0;
+                     VARIANT_BOOL bSecondsSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Microseconds(
-        LONG *iMicroseconds) = 0;
+                     LONG *iMicroseconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Microseconds(
-        LONG iMicroseconds) = 0;
+                     LONG iMicroseconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MicrosecondsSpecified(
-        VARIANT_BOOL *bMicrosecondsSpecified) = 0;
+                     VARIANT_BOOL *bMicrosecondsSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MicrosecondsSpecified(
-        VARIANT_BOOL bMicrosecondsSpecified) = 0;
+                     VARIANT_BOOL bMicrosecondsSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UTC(
-        LONG *iUTC) = 0;
+                     LONG *iUTC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UTC(
-        LONG iUTC) = 0;
+                     LONG iUTC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UTCSpecified(
-        VARIANT_BOOL *bUTCSpecified) = 0;
+                     VARIANT_BOOL *bUTCSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UTCSpecified(
-        VARIANT_BOOL bUTCSpecified) = 0;
+                     VARIANT_BOOL bUTCSpecified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsInterval(
-        VARIANT_BOOL *bIsInterval) = 0;
+                     VARIANT_BOOL *bIsInterval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IsInterval(
-        VARIANT_BOOL bIsInterval) = 0;
+                     VARIANT_BOOL bIsInterval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVarDate(
-        VARIANT_BOOL bIsLocal = TRUE,
-        DATE *dVarDate = 0) = 0;
+                     VARIANT_BOOL bIsLocal = TRUE,
+                     DATE *dVarDate = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVarDate(
-        DATE dVarDate,
-        VARIANT_BOOL bIsLocal = TRUE) = 0;
+                     DATE dVarDate,
+                     VARIANT_BOOL bIsLocal = TRUE) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileTime(
-        VARIANT_BOOL bIsLocal = TRUE,
-        BSTR *strFileTime = 0) = 0;
+                     VARIANT_BOOL bIsLocal = TRUE,
+                     BSTR *strFileTime = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFileTime(
-        BSTR strFileTime,
-        VARIANT_BOOL bIsLocal = TRUE) = 0;
+                     BSTR strFileTime,
+                     VARIANT_BOOL bIsLocal = TRUE) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6716,210 +6716,210 @@ typedef struct ISWbemDateTimeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemDateTime *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemDateTime *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemDateTime *This);
+                     ISWbemDateTime *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemDateTime *This);
+                     ISWbemDateTime *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemDateTime *This,
-        UINT *pctinfo);
+                     ISWbemDateTime *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemDateTime *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemDateTime *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemDateTime *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemDateTime *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemDateTime *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemDateTime *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemDateTime methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Value)(
-        ISWbemDateTime *This,
-        BSTR *strValue);
+                     ISWbemDateTime *This,
+                     BSTR *strValue);
 
     HRESULT (STDMETHODCALLTYPE *put_Value)(
-        ISWbemDateTime *This,
-        BSTR strValue);
+                     ISWbemDateTime *This,
+                     BSTR strValue);
 
     HRESULT (STDMETHODCALLTYPE *get_Year)(
-        ISWbemDateTime *This,
-        LONG *iYear);
+                     ISWbemDateTime *This,
+                     LONG *iYear);
 
     HRESULT (STDMETHODCALLTYPE *put_Year)(
-        ISWbemDateTime *This,
-        LONG iYear);
+                     ISWbemDateTime *This,
+                     LONG iYear);
 
     HRESULT (STDMETHODCALLTYPE *get_YearSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bYearSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bYearSpecified);
 
     HRESULT (STDMETHODCALLTYPE *put_YearSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bYearSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bYearSpecified);
 
     HRESULT (STDMETHODCALLTYPE *get_Month)(
-        ISWbemDateTime *This,
-        LONG *iMonth);
+                     ISWbemDateTime *This,
+                     LONG *iMonth);
 
     HRESULT (STDMETHODCALLTYPE *put_Month)(
-        ISWbemDateTime *This,
-        LONG iMonth);
+                     ISWbemDateTime *This,
+                     LONG iMonth);
 
     HRESULT (STDMETHODCALLTYPE *get_MonthSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bMonthSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bMonthSpecified);
 
     HRESULT (STDMETHODCALLTYPE *put_MonthSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bMonthSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bMonthSpecified);
 
     HRESULT (STDMETHODCALLTYPE *get_Day)(
-        ISWbemDateTime *This,
-        LONG *iDay);
+                     ISWbemDateTime *This,
+                     LONG *iDay);
 
     HRESULT (STDMETHODCALLTYPE *put_Day)(
-        ISWbemDateTime *This,
-        LONG iDay);
+                     ISWbemDateTime *This,
+                     LONG iDay);
 
     HRESULT (STDMETHODCALLTYPE *get_DaySpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bDaySpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bDaySpecified);
 
     HRESULT (STDMETHODCALLTYPE *put_DaySpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bDaySpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bDaySpecified);
 
     HRESULT (STDMETHODCALLTYPE *get_Hours)(
-        ISWbemDateTime *This,
-        LONG *iHours);
+                     ISWbemDateTime *This,
+                     LONG *iHours);
 
     HRESULT (STDMETHODCALLTYPE *put_Hours)(
-        ISWbemDateTime *This,
-        LONG iHours);
+                     ISWbemDateTime *This,
+                     LONG iHours);
 
     HRESULT (STDMETHODCALLTYPE *get_HoursSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bHoursSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bHoursSpecified);
 
     HRESULT (STDMETHODCALLTYPE *put_HoursSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bHoursSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bHoursSpecified);
 
     HRESULT (STDMETHODCALLTYPE *get_Minutes)(
-        ISWbemDateTime *This,
-        LONG *iMinutes);
+                     ISWbemDateTime *This,
+                     LONG *iMinutes);
 
     HRESULT (STDMETHODCALLTYPE *put_Minutes)(
-        ISWbemDateTime *This,
-        LONG iMinutes);
+                     ISWbemDateTime *This,
+                     LONG iMinutes);
 
     HRESULT (STDMETHODCALLTYPE *get_MinutesSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bMinutesSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bMinutesSpecified);
 
     HRESULT (STDMETHODCALLTYPE *put_MinutesSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bMinutesSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bMinutesSpecified);
 
     HRESULT (STDMETHODCALLTYPE *get_Seconds)(
-        ISWbemDateTime *This,
-        LONG *iSeconds);
+                     ISWbemDateTime *This,
+                     LONG *iSeconds);
 
     HRESULT (STDMETHODCALLTYPE *put_Seconds)(
-        ISWbemDateTime *This,
-        LONG iSeconds);
+                     ISWbemDateTime *This,
+                     LONG iSeconds);
 
     HRESULT (STDMETHODCALLTYPE *get_SecondsSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bSecondsSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bSecondsSpecified);
 
     HRESULT (STDMETHODCALLTYPE *put_SecondsSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bSecondsSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bSecondsSpecified);
 
     HRESULT (STDMETHODCALLTYPE *get_Microseconds)(
-        ISWbemDateTime *This,
-        LONG *iMicroseconds);
+                     ISWbemDateTime *This,
+                     LONG *iMicroseconds);
 
     HRESULT (STDMETHODCALLTYPE *put_Microseconds)(
-        ISWbemDateTime *This,
-        LONG iMicroseconds);
+                     ISWbemDateTime *This,
+                     LONG iMicroseconds);
 
     HRESULT (STDMETHODCALLTYPE *get_MicrosecondsSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bMicrosecondsSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bMicrosecondsSpecified);
 
     HRESULT (STDMETHODCALLTYPE *put_MicrosecondsSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bMicrosecondsSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bMicrosecondsSpecified);
 
     HRESULT (STDMETHODCALLTYPE *get_UTC)(
-        ISWbemDateTime *This,
-        LONG *iUTC);
+                     ISWbemDateTime *This,
+                     LONG *iUTC);
 
     HRESULT (STDMETHODCALLTYPE *put_UTC)(
-        ISWbemDateTime *This,
-        LONG iUTC);
+                     ISWbemDateTime *This,
+                     LONG iUTC);
 
     HRESULT (STDMETHODCALLTYPE *get_UTCSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bUTCSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bUTCSpecified);
 
     HRESULT (STDMETHODCALLTYPE *put_UTCSpecified)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bUTCSpecified);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bUTCSpecified);
 
     HRESULT (STDMETHODCALLTYPE *get_IsInterval)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL *bIsInterval);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL *bIsInterval);
 
     HRESULT (STDMETHODCALLTYPE *put_IsInterval)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bIsInterval);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bIsInterval);
 
     HRESULT (STDMETHODCALLTYPE *GetVarDate)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bIsLocal,
-        DATE *dVarDate);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bIsLocal,
+                     DATE *dVarDate);
 
     HRESULT (STDMETHODCALLTYPE *SetVarDate)(
-        ISWbemDateTime *This,
-        DATE dVarDate,
-        VARIANT_BOOL bIsLocal);
+                     ISWbemDateTime *This,
+                     DATE dVarDate,
+                     VARIANT_BOOL bIsLocal);
 
     HRESULT (STDMETHODCALLTYPE *GetFileTime)(
-        ISWbemDateTime *This,
-        VARIANT_BOOL bIsLocal,
-        BSTR *strFileTime);
+                     ISWbemDateTime *This,
+                     VARIANT_BOOL bIsLocal,
+                     BSTR *strFileTime);
 
     HRESULT (STDMETHODCALLTYPE *SetFileTime)(
-        ISWbemDateTime *This,
-        BSTR strFileTime,
-        VARIANT_BOOL bIsLocal);
+                     ISWbemDateTime *This,
+                     BSTR strFileTime,
+                     VARIANT_BOOL bIsLocal);
 
     END_INTERFACE
 } ISWbemDateTimeVtbl;
@@ -7145,22 +7145,22 @@ MIDL_INTERFACE("5ad4bf92-daab-11d3-b38f-00105a1f473a")
 ISWbemRefreshableItem : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Index(
-        LONG *iIndex) = 0;
+                     LONG *iIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Refresher(
-        ISWbemRefresher **objWbemRefresher) = 0;
+                     ISWbemRefresher **objWbemRefresher) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsSet(
-        VARIANT_BOOL *bIsSet) = 0;
+                     VARIANT_BOOL *bIsSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Object(
-        ISWbemObjectEx **objWbemObject) = 0;
+                     ISWbemObjectEx **objWbemObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ObjectSet(
-        ISWbemObjectSet **objWbemObjectSet) = 0;
+                     ISWbemObjectSet **objWbemObjectSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        LONG iFlags = 0) = 0;
+                     LONG iFlags = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7172,70 +7172,70 @@ typedef struct ISWbemRefreshableItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemRefreshableItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemRefreshableItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemRefreshableItem *This);
+                     ISWbemRefreshableItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemRefreshableItem *This);
+                     ISWbemRefreshableItem *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemRefreshableItem *This,
-        UINT *pctinfo);
+                     ISWbemRefreshableItem *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemRefreshableItem *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemRefreshableItem *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemRefreshableItem *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemRefreshableItem *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemRefreshableItem *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemRefreshableItem *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemRefreshableItem methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Index)(
-        ISWbemRefreshableItem *This,
-        LONG *iIndex);
+                     ISWbemRefreshableItem *This,
+                     LONG *iIndex);
 
     HRESULT (STDMETHODCALLTYPE *get_Refresher)(
-        ISWbemRefreshableItem *This,
-        ISWbemRefresher **objWbemRefresher);
+                     ISWbemRefreshableItem *This,
+                     ISWbemRefresher **objWbemRefresher);
 
     HRESULT (STDMETHODCALLTYPE *get_IsSet)(
-        ISWbemRefreshableItem *This,
-        VARIANT_BOOL *bIsSet);
+                     ISWbemRefreshableItem *This,
+                     VARIANT_BOOL *bIsSet);
 
     HRESULT (STDMETHODCALLTYPE *get_Object)(
-        ISWbemRefreshableItem *This,
-        ISWbemObjectEx **objWbemObject);
+                     ISWbemRefreshableItem *This,
+                     ISWbemObjectEx **objWbemObject);
 
     HRESULT (STDMETHODCALLTYPE *get_ObjectSet)(
-        ISWbemRefreshableItem *This,
-        ISWbemObjectSet **objWbemObjectSet);
+                     ISWbemRefreshableItem *This,
+                     ISWbemObjectSet **objWbemObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISWbemRefreshableItem *This,
-        LONG iFlags);
+                     ISWbemRefreshableItem *This,
+                     LONG iFlags);
 
     END_INTERFACE
 } ISWbemRefreshableItemVtbl;
@@ -7325,44 +7325,44 @@ MIDL_INTERFACE("14d8250e-d9c2-11d3-b38f-00105a1f473a")
 ISWbemRefresher : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **pUnk) = 0;
+                     IUnknown **pUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG iIndex,
-        ISWbemRefreshableItem **objWbemRefreshableItem) = 0;
+                     LONG iIndex,
+                     ISWbemRefreshableItem **objWbemRefreshableItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *iCount) = 0;
+                     LONG *iCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        ISWbemServicesEx *objWbemServices,
-        BSTR bsInstancePath,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemRefreshableItem **objWbemRefreshableItem = 0) = 0;
+                     ISWbemServicesEx *objWbemServices,
+                     BSTR bsInstancePath,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemRefreshableItem **objWbemRefreshableItem = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddEnum(
-        ISWbemServicesEx *objWbemServices,
-        BSTR bsClassName,
-        LONG iFlags = 0,
-        IDispatch *objWbemNamedValueSet = 0,
-        ISWbemRefreshableItem **objWbemRefreshableItem = 0) = 0;
+                     ISWbemServicesEx *objWbemServices,
+                     BSTR bsClassName,
+                     LONG iFlags = 0,
+                     IDispatch *objWbemNamedValueSet = 0,
+                     ISWbemRefreshableItem **objWbemRefreshableItem = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        LONG iIndex,
-        LONG iFlags = 0) = 0;
+                     LONG iIndex,
+                     LONG iFlags = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Refresh(
-        LONG iFlags = 0) = 0;
+                     LONG iFlags = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AutoReconnect(
-        VARIANT_BOOL *bCount) = 0;
+                     VARIANT_BOOL *bCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AutoReconnect(
-        VARIANT_BOOL bCount) = 0;
+                     VARIANT_BOOL bCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteAll(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7374,95 +7374,95 @@ typedef struct ISWbemRefresherVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISWbemRefresher *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISWbemRefresher *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISWbemRefresher *This);
+                     ISWbemRefresher *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISWbemRefresher *This);
+                     ISWbemRefresher *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISWbemRefresher *This,
-        UINT *pctinfo);
+                     ISWbemRefresher *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISWbemRefresher *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISWbemRefresher *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISWbemRefresher *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISWbemRefresher *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISWbemRefresher *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISWbemRefresher *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISWbemRefresher methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISWbemRefresher *This,
-        IUnknown **pUnk);
+                     ISWbemRefresher *This,
+                     IUnknown **pUnk);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISWbemRefresher *This,
-        LONG iIndex,
-        ISWbemRefreshableItem **objWbemRefreshableItem);
+                     ISWbemRefresher *This,
+                     LONG iIndex,
+                     ISWbemRefreshableItem **objWbemRefreshableItem);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISWbemRefresher *This,
-        LONG *iCount);
+                     ISWbemRefresher *This,
+                     LONG *iCount);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ISWbemRefresher *This,
-        ISWbemServicesEx *objWbemServices,
-        BSTR bsInstancePath,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemRefreshableItem **objWbemRefreshableItem);
+                     ISWbemRefresher *This,
+                     ISWbemServicesEx *objWbemServices,
+                     BSTR bsInstancePath,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemRefreshableItem **objWbemRefreshableItem);
 
     HRESULT (STDMETHODCALLTYPE *AddEnum)(
-        ISWbemRefresher *This,
-        ISWbemServicesEx *objWbemServices,
-        BSTR bsClassName,
-        LONG iFlags,
-        IDispatch *objWbemNamedValueSet,
-        ISWbemRefreshableItem **objWbemRefreshableItem);
+                     ISWbemRefresher *This,
+                     ISWbemServicesEx *objWbemServices,
+                     BSTR bsClassName,
+                     LONG iFlags,
+                     IDispatch *objWbemNamedValueSet,
+                     ISWbemRefreshableItem **objWbemRefreshableItem);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISWbemRefresher *This,
-        LONG iIndex,
-        LONG iFlags);
+                     ISWbemRefresher *This,
+                     LONG iIndex,
+                     LONG iFlags);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        ISWbemRefresher *This,
-        LONG iFlags);
+                     ISWbemRefresher *This,
+                     LONG iFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_AutoReconnect)(
-        ISWbemRefresher *This,
-        VARIANT_BOOL *bCount);
+                     ISWbemRefresher *This,
+                     VARIANT_BOOL *bCount);
 
     HRESULT (STDMETHODCALLTYPE *put_AutoReconnect)(
-        ISWbemRefresher *This,
-        VARIANT_BOOL bCount);
+                     ISWbemRefresher *This,
+                     VARIANT_BOOL bCount);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAll)(
-        ISWbemRefresher *This);
+                     ISWbemRefresher *This);
 
     END_INTERFACE
 } ISWbemRefresherVtbl;

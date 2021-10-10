@@ -111,10 +111,10 @@ struct in_addr {
 #define IP_RECVRETOPTS	IP_RETOPTS
 
 /* TProxy original addresses */
-#define IP_ORIGDSTADDR       20
+#define IP_ORIGDSTADDR                    20
 #define IP_RECVORIGDSTADDR   IP_ORIGDSTADDR
 
-#define IP_MINTTL       21
+#define IP_MINTTL                    21
 #define IP_NODEFRAG     22
 #define IP_CHECKSUM	23
 #define IP_BIND_ADDRESS_NO_PORT	24
@@ -124,7 +124,7 @@ struct in_addr {
 #define IP_PMTUDISC_DONT		0	/* Never send DF frames */
 #define IP_PMTUDISC_WANT		1	/* Use per route hints	*/
 #define IP_PMTUDISC_DO			2	/* Always DF		*/
-#define IP_PMTUDISC_PROBE		3       /* Ignore dst pmtu      */
+#define IP_PMTUDISC_PROBE		3                    /* Ignore dst pmtu                   */
 /* Always use interface mtu (ignores dst pmtu) but don't set DF flag.
  * Also incoming ICMP frag_needed notifications will be ignored on
  * this socket to prevent accepting spoofed ones.
@@ -159,8 +159,8 @@ struct in_addr {
 #define MCAST_INCLUDE	1
 
 /* These need to appear somewhere around here */
-#define IP_DEFAULT_MULTICAST_TTL        1
-#define IP_DEFAULT_MULTICAST_LOOP       1
+#define IP_DEFAULT_MULTICAST_TTL                     1
+#define IP_DEFAULT_MULTICAST_LOOP                    1
 
 /* Request struct for multicast socket ops */
 

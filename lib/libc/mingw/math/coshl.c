@@ -24,29 +24,29 @@ long double coshl(long double x)
   int x_class = fpclassify (x);
   if (x_class == FP_NAN)
     {
-      errno = EDOM;
-      return x;
+                   errno = EDOM;
+                   return x;
     }
   else if (x_class == FP_INFINITE)
     {
-       errno = ERANGE;
-       return INFINITY;
+                    errno = ERANGE;
+                    return INFINITY;
     }
   x = fabsl (x);
   if (x > (MAXLOGL + LOGE2L))
     {
-      errno = ERANGE;
+                   errno = ERANGE;
 #ifdef INFINITIES
-      return (INFINITYL);
+                   return (INFINITYL);
 #else
-      return (MAXNUML);
+                   return (MAXNUML);
 #endif
     }
   if (x >= (MAXLOGL - LOGE2L))
     {
-      y = expl(0.5L * x);
-      y = (0.5L * y) * y;
-      return y;
+                   y = expl(0.5L * x);
+                   y = (0.5L * y) * y;
+                   return y;
     }
   y = expl(x);
   y = 0.5L * (y + 1.0L / y);

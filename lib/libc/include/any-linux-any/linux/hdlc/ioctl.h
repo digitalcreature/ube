@@ -41,14 +41,14 @@ typedef struct {
 	unsigned int clock_rate; /* bits per second */
 	unsigned int clock_type; /* internal, external, TX-internal etc. */
 	unsigned short loopback;
-} sync_serial_settings;          /* V.35, V.24, X.21 */
+} sync_serial_settings;                       /* V.35, V.24, X.21 */
 
 typedef struct {
 	unsigned int clock_rate; /* bits per second */
 	unsigned int clock_type; /* internal, external, TX-internal etc. */
 	unsigned short loopback;
 	unsigned int slot_map;
-} te1_settings;                  /* T1, E1 */
+} te1_settings;                                                         /* T1, E1 */
 
 typedef struct {
 	unsigned short encoding;
@@ -67,7 +67,7 @@ typedef struct {
 
 typedef struct {
 	unsigned int dlci;
-} fr_proto_pvc;          /* for creating/deleting FR PVCs */
+} fr_proto_pvc;                       /* for creating/deleting FR PVCs */
 
 typedef struct {
 	unsigned int dlci;

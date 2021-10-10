@@ -167,12 +167,12 @@ typedef __u8 virtio_net_ctrl_ack;
  * Commands 2-5 are added with VIRTIO_NET_F_CTRL_RX_EXTRA.
  */
 #define VIRTIO_NET_CTRL_RX    0
- #define VIRTIO_NET_CTRL_RX_PROMISC      0
+ #define VIRTIO_NET_CTRL_RX_PROMISC                   0
  #define VIRTIO_NET_CTRL_RX_ALLMULTI     1
- #define VIRTIO_NET_CTRL_RX_ALLUNI       2
- #define VIRTIO_NET_CTRL_RX_NOMULTI      3
- #define VIRTIO_NET_CTRL_RX_NOUNI        4
- #define VIRTIO_NET_CTRL_RX_NOBCAST      5
+ #define VIRTIO_NET_CTRL_RX_ALLUNI                    2
+ #define VIRTIO_NET_CTRL_RX_NOMULTI                   3
+ #define VIRTIO_NET_CTRL_RX_NOUNI                     4
+ #define VIRTIO_NET_CTRL_RX_NOBCAST                   5
 
 /*
  * Control the MAC
@@ -199,8 +199,8 @@ struct virtio_net_ctrl_mac {
 } __attribute__((packed));
 
 #define VIRTIO_NET_CTRL_MAC    1
- #define VIRTIO_NET_CTRL_MAC_TABLE_SET        0
- #define VIRTIO_NET_CTRL_MAC_ADDR_SET         1
+ #define VIRTIO_NET_CTRL_MAC_TABLE_SET                     0
+ #define VIRTIO_NET_CTRL_MAC_ADDR_SET                      1
 
 /*
  * Control VLAN filtering
@@ -211,9 +211,9 @@ struct virtio_net_ctrl_mac {
  * byte VLAN ID.  VLAN filterting is available with the
  * VIRTIO_NET_F_CTRL_VLAN feature bit.
  */
-#define VIRTIO_NET_CTRL_VLAN       2
- #define VIRTIO_NET_CTRL_VLAN_ADD             0
- #define VIRTIO_NET_CTRL_VLAN_DEL             1
+#define VIRTIO_NET_CTRL_VLAN                    2
+ #define VIRTIO_NET_CTRL_VLAN_ADD                                       0
+ #define VIRTIO_NET_CTRL_VLAN_DEL                                       1
 
 /*
  * Control link announce acknowledgement
@@ -223,8 +223,8 @@ struct virtio_net_ctrl_mac {
  * VIRTIO_NET_S_ANNOUNCE bit in the status field after it receives
  * this command.
  */
-#define VIRTIO_NET_CTRL_ANNOUNCE       3
- #define VIRTIO_NET_CTRL_ANNOUNCE_ACK         0
+#define VIRTIO_NET_CTRL_ANNOUNCE                    3
+ #define VIRTIO_NET_CTRL_ANNOUNCE_ACK                      0
 
 /*
  * Control Receive Flow Steering
@@ -242,9 +242,9 @@ struct virtio_net_ctrl_mq {
 };
 
 #define VIRTIO_NET_CTRL_MQ   4
- #define VIRTIO_NET_CTRL_MQ_VQ_PAIRS_SET        0
- #define VIRTIO_NET_CTRL_MQ_VQ_PAIRS_MIN        1
- #define VIRTIO_NET_CTRL_MQ_VQ_PAIRS_MAX        0x8000
+ #define VIRTIO_NET_CTRL_MQ_VQ_PAIRS_SET                     0
+ #define VIRTIO_NET_CTRL_MQ_VQ_PAIRS_MIN                     1
+ #define VIRTIO_NET_CTRL_MQ_VQ_PAIRS_MAX                     0x8000
 
 /*
  * Control network offloads
@@ -259,6 +259,6 @@ struct virtio_net_ctrl_mq {
  * that can be enabled/disabled.
  */
 #define VIRTIO_NET_CTRL_GUEST_OFFLOADS   5
-#define VIRTIO_NET_CTRL_GUEST_OFFLOADS_SET        0
+#define VIRTIO_NET_CTRL_GUEST_OFFLOADS_SET                     0
 
 #endif /* _LINUX_VIRTIO_NET_H */

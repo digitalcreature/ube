@@ -54,29 +54,29 @@
 .Lsyscall_error ## name:					\
 	li t1, -4096;						\
 	neg a0, a0;						\
-        sw a0, rtld_errno, t1;					\
-        li a0, -1;
+                     sw a0, rtld_errno, t1;					\
+                     li a0, -1;
 #  elif defined (__PIC__)
 #   define SYSCALL_ERROR_HANDLER(name)				\
 .Lsyscall_error ## name:					\
-        la.tls.ie t1, errno;					\
+                     la.tls.ie t1, errno;					\
 	add t1, t1, tp;						\
 	neg a0, a0;						\
 	sw a0, 0(t1);						\
-        li a0, -1;
+                     li a0, -1;
 #  else
 #   define SYSCALL_ERROR_HANDLER(name)				\
 .Lsyscall_error ## name:					\
-        lui t1, %tprel_hi(errno);				\
-        add t1, t1, tp, %tprel_add(errno);			\
+                     lui t1, %tprel_hi(errno);				\
+                     add t1, t1, tp, %tprel_add(errno);			\
 	neg a0, a0;						\
-        sw a0, %tprel_lo(errno)(t1);				\
-        li a0, -1;
+                     sw a0, %tprel_lo(errno)(t1);				\
+                     li a0, -1;
 #  endif
 # else
 #  define SYSCALL_ERROR_HANDLER(name)				\
 .Lsyscall_error ## name:					\
-        j       __syscall_error;
+                     j                    __syscall_error;
 # endif
 
 /* Performs a system call, not setting errno.  */
@@ -137,16 +137,16 @@
   ({ INTERNAL_SYSCALL_DECL (err);					\
      long int __sys_result = INTERNAL_SYSCALL (name, err, nr, args);	\
      if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (__sys_result, )))  \
-       {								\
-         __set_errno (INTERNAL_SYSCALL_ERRNO (__sys_result, ));		\
+                    {								\
+                      __set_errno (INTERNAL_SYSCALL_ERRNO (__sys_result, ));		\
 	 __sys_result = (unsigned long) -1;				\
-       }								\
+                    }								\
      __sys_result; })
 
 # define INTERNAL_SYSCALL_DECL(err) do { } while (0)
 
 # define INTERNAL_SYSCALL_ERROR_P(val, err) \
-        ((unsigned long int) (val) > -4096UL)
+                     ((unsigned long int) (val) > -4096UL)
 
 # define INTERNAL_SYSCALL_ERRNO(val, err)     (-val)
 
@@ -208,7 +208,7 @@
 	_sys_result;							\
 })
 
-# define internal_syscall3(number, err, arg0, arg1, arg2)      		\
+# define internal_syscall3(number, err, arg0, arg1, arg2)                   		\
 ({ 									\
 	long int _sys_result;						\
 									\

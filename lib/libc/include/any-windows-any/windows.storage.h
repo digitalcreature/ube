@@ -209,39 +209,39 @@ MIDL_INTERFACE("4207a996-ca2f-42f7-bde8-8b10457a7f30")
 IStorageItem : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE RenameAsyncOverloadDefaultOptions(
-        HSTRING desiredName,
-        IInspectable **action) = 0;
+                     HSTRING desiredName,
+                     IInspectable **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenameAsync(
-        HSTRING desiredName,
-        NameCollisionOption option,
-        IInspectable **action) = 0;
+                     HSTRING desiredName,
+                     NameCollisionOption option,
+                     IInspectable **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteAsyncOverloadDefaultOptions(
-        IInspectable **action) = 0;
+                     IInspectable **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteAsync(
-        StorageDeleteOption option,
-        IInspectable **action) = 0;
+                     StorageDeleteOption option,
+                     IInspectable **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBasicPropertiesAsync(
-        IInspectable **action) = 0;
+                     IInspectable **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        HSTRING *value) = 0;
+                     HSTRING *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        HSTRING *value) = 0;
+                     HSTRING *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Attributes(
-        FileAttributes *value) = 0;
+                     FileAttributes *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DateCreated(
-        DateTime *value) = 0;
+                     DateTime *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsOfType(
-        StorageItemTypes itemType,
-        boolean *value) = 0;
+                     StorageItemTypes itemType,
+                     boolean *value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -253,75 +253,75 @@ typedef struct IStorageItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStorageItem* This,
-        REFIID riid,
-        void **ppvObject);
+                     IStorageItem* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStorageItem* This);
+                     IStorageItem* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStorageItem* This);
+                     IStorageItem* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IStorageItem* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IStorageItem* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IStorageItem* This,
-        HSTRING *className);
+                     IStorageItem* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IStorageItem* This,
-        TrustLevel *trustLevel);
+                     IStorageItem* This,
+                     TrustLevel *trustLevel);
 
     /*** IStorageItem methods ***/
     HRESULT (STDMETHODCALLTYPE *RenameAsyncOverloadDefaultOptions)(
-        IStorageItem* This,
-        HSTRING desiredName,
-        IInspectable **action);
+                     IStorageItem* This,
+                     HSTRING desiredName,
+                     IInspectable **action);
 
     HRESULT (STDMETHODCALLTYPE *RenameAsync)(
-        IStorageItem* This,
-        HSTRING desiredName,
-        NameCollisionOption option,
-        IInspectable **action);
+                     IStorageItem* This,
+                     HSTRING desiredName,
+                     NameCollisionOption option,
+                     IInspectable **action);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsyncOverloadDefaultOptions)(
-        IStorageItem* This,
-        IInspectable **action);
+                     IStorageItem* This,
+                     IInspectable **action);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAsync)(
-        IStorageItem* This,
-        StorageDeleteOption option,
-        IInspectable **action);
+                     IStorageItem* This,
+                     StorageDeleteOption option,
+                     IInspectable **action);
 
     HRESULT (STDMETHODCALLTYPE *GetBasicPropertiesAsync)(
-        IStorageItem* This,
-        IInspectable **action);
+                     IStorageItem* This,
+                     IInspectable **action);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IStorageItem* This,
-        HSTRING *value);
+                     IStorageItem* This,
+                     HSTRING *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IStorageItem* This,
-        HSTRING *value);
+                     IStorageItem* This,
+                     HSTRING *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Attributes)(
-        IStorageItem* This,
-        FileAttributes *value);
+                     IStorageItem* This,
+                     FileAttributes *value);
 
     HRESULT (STDMETHODCALLTYPE *get_DateCreated)(
-        IStorageItem* This,
-        DateTime *value);
+                     IStorageItem* This,
+                     DateTime *value);
 
     HRESULT (STDMETHODCALLTYPE *IsOfType)(
-        IStorageItem* This,
-        StorageItemTypes itemType,
-        boolean *value);
+                     IStorageItem* This,
+                     StorageItemTypes itemType,
+                     boolean *value);
 
     END_INTERFACE
 } IStorageItemVtbl;
@@ -507,25 +507,25 @@ MIDL_INTERFACE("5a2a7520-4802-452d-9ad9-4351ada7ec35")
 IKnownFoldersStatics : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_MusicLibrary(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PicturesLibrary(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_VideosLibrary(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DocumentsLibrary(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HomeGroup(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemovableDevices(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MediaServerDevices(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -537,58 +537,58 @@ typedef struct IKnownFoldersStaticsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKnownFoldersStatics* This,
-        REFIID riid,
-        void **ppvObject);
+                     IKnownFoldersStatics* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKnownFoldersStatics* This);
+                     IKnownFoldersStatics* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKnownFoldersStatics* This);
+                     IKnownFoldersStatics* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IKnownFoldersStatics* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IKnownFoldersStatics* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IKnownFoldersStatics* This,
-        HSTRING *className);
+                     IKnownFoldersStatics* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IKnownFoldersStatics* This,
-        TrustLevel *trustLevel);
+                     IKnownFoldersStatics* This,
+                     TrustLevel *trustLevel);
 
     /*** IKnownFoldersStatics methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MusicLibrary)(
-        IKnownFoldersStatics* This,
-        IStorageFolder **value);
+                     IKnownFoldersStatics* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *get_PicturesLibrary)(
-        IKnownFoldersStatics* This,
-        IStorageFolder **value);
+                     IKnownFoldersStatics* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *get_VideosLibrary)(
-        IKnownFoldersStatics* This,
-        IStorageFolder **value);
+                     IKnownFoldersStatics* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *get_DocumentsLibrary)(
-        IKnownFoldersStatics* This,
-        IStorageFolder **value);
+                     IKnownFoldersStatics* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *get_HomeGroup)(
-        IKnownFoldersStatics* This,
-        IStorageFolder **value);
+                     IKnownFoldersStatics* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *get_RemovableDevices)(
-        IKnownFoldersStatics* This,
-        IStorageFolder **value);
+                     IKnownFoldersStatics* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaServerDevices)(
-        IKnownFoldersStatics* This,
-        IStorageFolder **value);
+                     IKnownFoldersStatics* This,
+                     IStorageFolder **value);
 
     END_INTERFACE
 } IKnownFoldersStaticsVtbl;
@@ -733,43 +733,43 @@ MIDL_INTERFACE("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b")
 IStorageFolder : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE CreateFileAsyncOverloadDefaultOptions(
-        HSTRING desiredName,
-        IInspectable **operation) = 0;
+                     HSTRING desiredName,
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFileAsync(
-        HSTRING desiredName,
-        CreationCollisionOption options,
-        IInspectable **operation) = 0;
+                     HSTRING desiredName,
+                     CreationCollisionOption options,
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFolderAsyncOverloadDefaultOptions(
-        HSTRING desiredName,
-        IInspectable **operation) = 0;
+                     HSTRING desiredName,
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFolderAsync(
-        HSTRING desiredName,
-        CreationCollisionOption options,
-        IInspectable **operation) = 0;
+                     HSTRING desiredName,
+                     CreationCollisionOption options,
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileAsync(
-        HSTRING name,
-        IInspectable **operation) = 0;
+                     HSTRING name,
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderAsync(
-        HSTRING name,
-        IInspectable **operation) = 0;
+                     HSTRING name,
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemAsync(
-        HSTRING name,
-        IInspectable **operation) = 0;
+                     HSTRING name,
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFilesAsyncOverloadDefaultOptionsStartAndCount(
-        IInspectable **operation) = 0;
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFoldersAsyncOverloadDefaultOptionsStartAndCount(
-        IInspectable **operation) = 0;
+                     IInspectable **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemsAsyncOverloadDefaultStartAndCount(
-        IInspectable **operation) = 0;
+                     IInspectable **operation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -781,79 +781,79 @@ typedef struct IStorageFolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStorageFolder* This,
-        REFIID riid,
-        void **ppvObject);
+                     IStorageFolder* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStorageFolder* This);
+                     IStorageFolder* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStorageFolder* This);
+                     IStorageFolder* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IStorageFolder* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IStorageFolder* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IStorageFolder* This,
-        HSTRING *className);
+                     IStorageFolder* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IStorageFolder* This,
-        TrustLevel *trustLevel);
+                     IStorageFolder* This,
+                     TrustLevel *trustLevel);
 
     /*** IStorageFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateFileAsyncOverloadDefaultOptions)(
-        IStorageFolder* This,
-        HSTRING desiredName,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     HSTRING desiredName,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *CreateFileAsync)(
-        IStorageFolder* This,
-        HSTRING desiredName,
-        CreationCollisionOption options,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     HSTRING desiredName,
+                     CreationCollisionOption options,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *CreateFolderAsyncOverloadDefaultOptions)(
-        IStorageFolder* This,
-        HSTRING desiredName,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     HSTRING desiredName,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *CreateFolderAsync)(
-        IStorageFolder* This,
-        HSTRING desiredName,
-        CreationCollisionOption options,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     HSTRING desiredName,
+                     CreationCollisionOption options,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetFileAsync)(
-        IStorageFolder* This,
-        HSTRING name,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     HSTRING name,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderAsync)(
-        IStorageFolder* This,
-        HSTRING name,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     HSTRING name,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetItemAsync)(
-        IStorageFolder* This,
-        HSTRING name,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     HSTRING name,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetFilesAsyncOverloadDefaultOptionsStartAndCount)(
-        IStorageFolder* This,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetFoldersAsyncOverloadDefaultOptionsStartAndCount)(
-        IStorageFolder* This,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     IInspectable **operation);
 
     HRESULT (STDMETHODCALLTYPE *GetItemsAsyncOverloadDefaultStartAndCount)(
-        IStorageFolder* This,
-        IInspectable **operation);
+                     IStorageFolder* This,
+                     IInspectable **operation);
 
     END_INTERFACE
 } IStorageFolderVtbl;
@@ -1043,24 +1043,24 @@ MIDL_INTERFACE("c5aefd1e-f467-40ba-8566-ab640a441e1d")
 IApplicationDataContainer : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        HSTRING *value) = 0;
+                     HSTRING *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Locality(
-        ApplicationDataLocality *value) = 0;
+                     ApplicationDataLocality *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Values(
-        IInspectable **value) = 0;
+                     IInspectable **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Containers(
-        IInspectable **value) = 0;
+                     IInspectable **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateContainer(
-        HSTRING name,
-        ApplicationDataCreateDisposition disposition,
-        IApplicationDataContainer **container) = 0;
+                     HSTRING name,
+                     ApplicationDataCreateDisposition disposition,
+                     IApplicationDataContainer **container) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteContainer(
-        HSTRING name) = 0;
+                     HSTRING name) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1072,56 +1072,56 @@ typedef struct IApplicationDataContainerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationDataContainer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationDataContainer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationDataContainer* This);
+                     IApplicationDataContainer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationDataContainer* This);
+                     IApplicationDataContainer* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IApplicationDataContainer* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IApplicationDataContainer* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IApplicationDataContainer* This,
-        HSTRING *className);
+                     IApplicationDataContainer* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IApplicationDataContainer* This,
-        TrustLevel *trustLevel);
+                     IApplicationDataContainer* This,
+                     TrustLevel *trustLevel);
 
     /*** IApplicationDataContainer methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IApplicationDataContainer* This,
-        HSTRING *value);
+                     IApplicationDataContainer* This,
+                     HSTRING *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Locality)(
-        IApplicationDataContainer* This,
-        ApplicationDataLocality *value);
+                     IApplicationDataContainer* This,
+                     ApplicationDataLocality *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Values)(
-        IApplicationDataContainer* This,
-        IInspectable **value);
+                     IApplicationDataContainer* This,
+                     IInspectable **value);
 
     HRESULT (STDMETHODCALLTYPE *get_Containers)(
-        IApplicationDataContainer* This,
-        IInspectable **value);
+                     IApplicationDataContainer* This,
+                     IInspectable **value);
 
     HRESULT (STDMETHODCALLTYPE *CreateContainer)(
-        IApplicationDataContainer* This,
-        HSTRING name,
-        ApplicationDataCreateDisposition disposition,
-        IApplicationDataContainer **container);
+                     IApplicationDataContainer* This,
+                     HSTRING name,
+                     ApplicationDataCreateDisposition disposition,
+                     IApplicationDataContainer **container);
 
     HRESULT (STDMETHODCALLTYPE *DeleteContainer)(
-        IApplicationDataContainer* This,
-        HSTRING name);
+                     IApplicationDataContainer* This,
+                     HSTRING name);
 
     END_INTERFACE
 } IApplicationDataContainerVtbl;
@@ -1256,43 +1256,43 @@ MIDL_INTERFACE("c3da6fb7-b744-4b45-b0b8-223a0938d0dc")
 IApplicationData : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_Version(
-        int *value) = 0;
+                     int *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVersionAsync(
-        int desiredVersion,
-        ApplicationDataSetVersionHandler *handler,
-        IInspectable **setVersionOperation) = 0;
+                     int desiredVersion,
+                     ApplicationDataSetVersionHandler *handler,
+                     IInspectable **setVersionOperation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearAllAsync(
-        IInspectable **clearOperation) = 0;
+                     IInspectable **clearOperation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearAsync(
-        ApplicationDataLocality locality,
-        IInspectable **clearOperation) = 0;
+                     ApplicationDataLocality locality,
+                     IInspectable **clearOperation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalSettings(
-        IApplicationDataContainer **value) = 0;
+                     IApplicationDataContainer **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RoamingSettings(
-        IApplicationDataContainer **value) = 0;
+                     IApplicationDataContainer **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalFolder(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RoamingFolder(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TemporaryFolder(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DataChanged(
-        EventRegistrationToken token) = 0;
+                     EventRegistrationToken token) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SignalDataChanged(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RoamingStorageQuota(
-        UINT64 *value) = 0;
+                     UINT64 *value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1304,80 +1304,80 @@ typedef struct IApplicationDataVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationData* This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationData* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationData* This);
+                     IApplicationData* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationData* This);
+                     IApplicationData* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IApplicationData* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IApplicationData* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IApplicationData* This,
-        HSTRING *className);
+                     IApplicationData* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IApplicationData* This,
-        TrustLevel *trustLevel);
+                     IApplicationData* This,
+                     TrustLevel *trustLevel);
 
     /*** IApplicationData methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Version)(
-        IApplicationData* This,
-        int *value);
+                     IApplicationData* This,
+                     int *value);
 
     HRESULT (STDMETHODCALLTYPE *SetVersionAsync)(
-        IApplicationData* This,
-        int desiredVersion,
-        ApplicationDataSetVersionHandler *handler,
-        IInspectable **setVersionOperation);
+                     IApplicationData* This,
+                     int desiredVersion,
+                     ApplicationDataSetVersionHandler *handler,
+                     IInspectable **setVersionOperation);
 
     HRESULT (STDMETHODCALLTYPE *ClearAllAsync)(
-        IApplicationData* This,
-        IInspectable **clearOperation);
+                     IApplicationData* This,
+                     IInspectable **clearOperation);
 
     HRESULT (STDMETHODCALLTYPE *ClearAsync)(
-        IApplicationData* This,
-        ApplicationDataLocality locality,
-        IInspectable **clearOperation);
+                     IApplicationData* This,
+                     ApplicationDataLocality locality,
+                     IInspectable **clearOperation);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalSettings)(
-        IApplicationData* This,
-        IApplicationDataContainer **value);
+                     IApplicationData* This,
+                     IApplicationDataContainer **value);
 
     HRESULT (STDMETHODCALLTYPE *get_RoamingSettings)(
-        IApplicationData* This,
-        IApplicationDataContainer **value);
+                     IApplicationData* This,
+                     IApplicationDataContainer **value);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalFolder)(
-        IApplicationData* This,
-        IStorageFolder **value);
+                     IApplicationData* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *get_RoamingFolder)(
-        IApplicationData* This,
-        IStorageFolder **value);
+                     IApplicationData* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *get_TemporaryFolder)(
-        IApplicationData* This,
-        IStorageFolder **value);
+                     IApplicationData* This,
+                     IStorageFolder **value);
 
     HRESULT (STDMETHODCALLTYPE *DataChanged)(
-        IApplicationData* This,
-        EventRegistrationToken token);
+                     IApplicationData* This,
+                     EventRegistrationToken token);
 
     HRESULT (STDMETHODCALLTYPE *SignalDataChanged)(
-        IApplicationData* This);
+                     IApplicationData* This);
 
     HRESULT (STDMETHODCALLTYPE *RoamingStorageQuota)(
-        IApplicationData* This,
-        UINT64 *value);
+                     IApplicationData* This,
+                     UINT64 *value);
 
     END_INTERFACE
 } IApplicationDataVtbl;
@@ -1584,7 +1584,7 @@ MIDL_INTERFACE("9e65cd69-0ba3-4e32-be29-b02de6607638")
 IApplicationData2 : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_LocalCacheFolder(
-        IStorageFolder **value) = 0;
+                     IStorageFolder **value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1596,34 +1596,34 @@ typedef struct IApplicationData2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationData2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationData2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationData2 *This);
+                     IApplicationData2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationData2 *This);
+                     IApplicationData2 *This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IApplicationData2 *This,
-        ULONG *iidCount,
-        IID **iids);
+                     IApplicationData2 *This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IApplicationData2 *This,
-        HSTRING *className);
+                     IApplicationData2 *This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IApplicationData2 *This,
-        TrustLevel *trustLevel);
+                     IApplicationData2 *This,
+                     TrustLevel *trustLevel);
 
     /*** IApplicationData2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LocalCacheFolder)(
-        IApplicationData2 *This,
-        IStorageFolder **value);
+                     IApplicationData2 *This,
+                     IStorageFolder **value);
 
     END_INTERFACE
 } IApplicationData2Vtbl;
@@ -1688,7 +1688,7 @@ MIDL_INTERFACE("5612147b-e843-45e3-94d8-06169e3c8e17")
 IApplicationDataStatics : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_Current(
-        IApplicationData **data) = 0;
+                     IApplicationData **data) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1700,34 +1700,34 @@ typedef struct IApplicationDataStaticsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationDataStatics* This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationDataStatics* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationDataStatics* This);
+                     IApplicationDataStatics* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationDataStatics* This);
+                     IApplicationDataStatics* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IApplicationDataStatics* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IApplicationDataStatics* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IApplicationDataStatics* This,
-        HSTRING *className);
+                     IApplicationDataStatics* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IApplicationDataStatics* This,
-        TrustLevel *trustLevel);
+                     IApplicationDataStatics* This,
+                     TrustLevel *trustLevel);
 
     /*** IApplicationDataStatics methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Current)(
-        IApplicationDataStatics* This,
-        IApplicationData **data);
+                     IApplicationDataStatics* This,
+                     IApplicationData **data);
 
     END_INTERFACE
 } IApplicationDataStaticsVtbl;
@@ -1800,7 +1800,7 @@ MIDL_INTERFACE("a05791e6-cc9f-4687-acab-a364fd785463")
 ApplicationDataSetVersionHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ApplicationDataSetVersionHandler(
-        ISetVersionRequest *setVersionRequest) = 0;
+                     ISetVersionRequest *setVersionRequest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1812,20 +1812,20 @@ typedef struct ApplicationDataSetVersionHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ApplicationDataSetVersionHandler* This,
-        REFIID riid,
-        void **ppvObject);
+                     ApplicationDataSetVersionHandler* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ApplicationDataSetVersionHandler* This);
+                     ApplicationDataSetVersionHandler* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ApplicationDataSetVersionHandler* This);
+                     ApplicationDataSetVersionHandler* This);
 
     /*** ApplicationDataSetVersionHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *ApplicationDataSetVersionHandler)(
-        ApplicationDataSetVersionHandler* This,
-        ISetVersionRequest *setVersionRequest);
+                     ApplicationDataSetVersionHandler* This,
+                     ISetVersionRequest *setVersionRequest);
 
     END_INTERFACE
 } ApplicationDataSetVersionHandlerVtbl;
@@ -1884,13 +1884,13 @@ MIDL_INTERFACE("b9c76b9b-1056-4e69-8330-162619956f9b")
 ISetVersionRequest : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_CurrentVersion(
-        UINT32 *currentVersion) = 0;
+                     UINT32 *currentVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DesiredVersion(
-        UINT32 *desiredVersion) = 0;
+                     UINT32 *desiredVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeferral(
-        ISetVersionDeferral **deferral) = 0;
+                     ISetVersionDeferral **deferral) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1902,42 +1902,42 @@ typedef struct ISetVersionRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISetVersionRequest* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISetVersionRequest* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISetVersionRequest* This);
+                     ISetVersionRequest* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISetVersionRequest* This);
+                     ISetVersionRequest* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        ISetVersionRequest* This,
-        ULONG *iidCount,
-        IID **iids);
+                     ISetVersionRequest* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        ISetVersionRequest* This,
-        HSTRING *className);
+                     ISetVersionRequest* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        ISetVersionRequest* This,
-        TrustLevel *trustLevel);
+                     ISetVersionRequest* This,
+                     TrustLevel *trustLevel);
 
     /*** ISetVersionRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CurrentVersion)(
-        ISetVersionRequest* This,
-        UINT32 *currentVersion);
+                     ISetVersionRequest* This,
+                     UINT32 *currentVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_DesiredVersion)(
-        ISetVersionRequest* This,
-        UINT32 *desiredVersion);
+                     ISetVersionRequest* This,
+                     UINT32 *desiredVersion);
 
     HRESULT (STDMETHODCALLTYPE *GetDeferral)(
-        ISetVersionRequest* This,
-        ISetVersionDeferral **deferral);
+                     ISetVersionRequest* This,
+                     ISetVersionDeferral **deferral);
 
     END_INTERFACE
 } ISetVersionRequestVtbl;
@@ -2034,7 +2034,7 @@ MIDL_INTERFACE("033508a2-781a-437a-b078-3f32badcfe47")
 ISetVersionDeferral : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE Complete(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2046,33 +2046,33 @@ typedef struct ISetVersionDeferralVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISetVersionDeferral* This,
-        REFIID riid,
-        void **ppvObject);
+                     ISetVersionDeferral* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISetVersionDeferral* This);
+                     ISetVersionDeferral* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISetVersionDeferral* This);
+                     ISetVersionDeferral* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        ISetVersionDeferral* This,
-        ULONG *iidCount,
-        IID **iids);
+                     ISetVersionDeferral* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        ISetVersionDeferral* This,
-        HSTRING *className);
+                     ISetVersionDeferral* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        ISetVersionDeferral* This,
-        TrustLevel *trustLevel);
+                     ISetVersionDeferral* This,
+                     TrustLevel *trustLevel);
 
     /*** ISetVersionDeferral methods ***/
     HRESULT (STDMETHODCALLTYPE *Complete)(
-        ISetVersionDeferral* This);
+                     ISetVersionDeferral* This);
 
     END_INTERFACE
 } ISetVersionDeferralVtbl;
@@ -2134,10 +2134,10 @@ void __RPC_STUB ISetVersionDeferral_Complete_Stub(
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);
+ULONG                        __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);
 unsigned char * __RPC_USER HSTRING_UserMarshal  (ULONG *, unsigned char *, HSTRING *);
 unsigned char * __RPC_USER HSTRING_UserUnmarshal(ULONG *, unsigned char *, HSTRING *);
-void            __RPC_USER HSTRING_UserFree     (ULONG *, HSTRING *);
+void                                      __RPC_USER HSTRING_UserFree     (ULONG *, HSTRING *);
 
 /* End additional prototypes */
 

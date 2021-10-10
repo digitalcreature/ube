@@ -33,18 +33,18 @@ typedef struct __sparc64_jmp_buf
     unsigned long		__uc_flags;
     unsigned long		__uc_sigmask;
     struct __sparc64_jmp_buf_mcontext
-      {
+                   {
 	unsigned long		__mc_gregs[19];
 	unsigned long		__mc_fp;
 	unsigned long		__mc_i7;
 	struct __sparc64_jmp_buf_fpu
 	  {
 	    union
-	      {
+	                   {
 		unsigned int	__sregs[32];
 		unsigned long	__dregs[32];
 		long double	__qregs[16];
-	      }			__mcfpu_fpregs;
+	                   }			__mcfpu_fpregs;
 	    unsigned long	__mcfpu_fprs;
 	    unsigned long	__mcfpu_gsr;
 	    void		*__mcfpu_fq;
@@ -52,7 +52,7 @@ typedef struct __sparc64_jmp_buf
 	    unsigned char	__mcfpu_qentsz;
 	    unsigned char	__mcfpu_enab;
 	  }			__mc_fpregs;
-      }				__uc_mcontext;
+                   }				__uc_mcontext;
   } __jmp_buf[1];
 #endif
 

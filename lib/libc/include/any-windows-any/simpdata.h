@@ -97,17 +97,17 @@ extern "C"{
 #else
   typedef struct OLEDBSimpleProviderListenerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(OLEDBSimpleProviderListener *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(OLEDBSimpleProviderListener *This);
-      ULONG (WINAPI *Release)(OLEDBSimpleProviderListener *This);
-      HRESULT (WINAPI *aboutToChangeCell)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DB_LORDINAL iColumn);
-      HRESULT (WINAPI *cellChanged)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DB_LORDINAL iColumn);
-      HRESULT (WINAPI *aboutToDeleteRows)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
-      HRESULT (WINAPI *deletedRows)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
-      HRESULT (WINAPI *aboutToInsertRows)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
-      HRESULT (WINAPI *insertedRows)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
-      HRESULT (WINAPI *rowsAvailable)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
-      HRESULT (WINAPI *transferComplete)(OLEDBSimpleProviderListener *This,OSPXFER xfer);
+                   HRESULT (WINAPI *QueryInterface)(OLEDBSimpleProviderListener *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(OLEDBSimpleProviderListener *This);
+                   ULONG (WINAPI *Release)(OLEDBSimpleProviderListener *This);
+                   HRESULT (WINAPI *aboutToChangeCell)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DB_LORDINAL iColumn);
+                   HRESULT (WINAPI *cellChanged)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DB_LORDINAL iColumn);
+                   HRESULT (WINAPI *aboutToDeleteRows)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
+                   HRESULT (WINAPI *deletedRows)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
+                   HRESULT (WINAPI *aboutToInsertRows)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
+                   HRESULT (WINAPI *insertedRows)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
+                   HRESULT (WINAPI *rowsAvailable)(OLEDBSimpleProviderListener *This,DBROWCOUNT iRow,DBROWCOUNT cRows);
+                   HRESULT (WINAPI *transferComplete)(OLEDBSimpleProviderListener *This,OSPXFER xfer);
     END_INTERFACE
   } OLEDBSimpleProviderListenerVtbl;
   struct OLEDBSimpleProviderListener {
@@ -169,23 +169,23 @@ extern "C"{
 #else
   typedef struct OLEDBSimpleProviderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(OLEDBSimpleProvider *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(OLEDBSimpleProvider *This);
-      ULONG (WINAPI *Release)(OLEDBSimpleProvider *This);
-      HRESULT (WINAPI *getRowCount)(OLEDBSimpleProvider *This,DBROWCOUNT *pcRows);
-      HRESULT (WINAPI *getColumnCount)(OLEDBSimpleProvider *This,DB_LORDINAL *pcColumns);
-      HRESULT (WINAPI *getRWStatus)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DB_LORDINAL iColumn,OSPRW *prwStatus);
-      HRESULT (WINAPI *getVariant)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DB_LORDINAL iColumn,OSPFORMAT format,VARIANT *pVar);
-      HRESULT (WINAPI *setVariant)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DB_LORDINAL iColumn,OSPFORMAT format,VARIANT Var);
-      HRESULT (WINAPI *getLocale)(OLEDBSimpleProvider *This,BSTR *pbstrLocale);
-      HRESULT (WINAPI *deleteRows)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DBROWCOUNT cRows,DBROWCOUNT *pcRowsDeleted);
-      HRESULT (WINAPI *insertRows)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DBROWCOUNT cRows,DBROWCOUNT *pcRowsInserted);
-      HRESULT (WINAPI *find)(OLEDBSimpleProvider *This,DBROWCOUNT iRowStart,DB_LORDINAL iColumn,VARIANT val,OSPFIND findFlags,OSPCOMP compType,DBROWCOUNT *piRowFound);
-      HRESULT (WINAPI *addOLEDBSimpleProviderListener)(OLEDBSimpleProvider *This,OLEDBSimpleProviderListener *pospIListener);
-      HRESULT (WINAPI *removeOLEDBSimpleProviderListener)(OLEDBSimpleProvider *This,OLEDBSimpleProviderListener *pospIListener);
-      HRESULT (WINAPI *isAsync)(OLEDBSimpleProvider *This,WINBOOL *pbAsynch);
-      HRESULT (WINAPI *getEstimatedRows)(OLEDBSimpleProvider *This,DBROWCOUNT *piRows);
-      HRESULT (WINAPI *stopTransfer)(OLEDBSimpleProvider *This);
+                   HRESULT (WINAPI *QueryInterface)(OLEDBSimpleProvider *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(OLEDBSimpleProvider *This);
+                   ULONG (WINAPI *Release)(OLEDBSimpleProvider *This);
+                   HRESULT (WINAPI *getRowCount)(OLEDBSimpleProvider *This,DBROWCOUNT *pcRows);
+                   HRESULT (WINAPI *getColumnCount)(OLEDBSimpleProvider *This,DB_LORDINAL *pcColumns);
+                   HRESULT (WINAPI *getRWStatus)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DB_LORDINAL iColumn,OSPRW *prwStatus);
+                   HRESULT (WINAPI *getVariant)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DB_LORDINAL iColumn,OSPFORMAT format,VARIANT *pVar);
+                   HRESULT (WINAPI *setVariant)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DB_LORDINAL iColumn,OSPFORMAT format,VARIANT Var);
+                   HRESULT (WINAPI *getLocale)(OLEDBSimpleProvider *This,BSTR *pbstrLocale);
+                   HRESULT (WINAPI *deleteRows)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DBROWCOUNT cRows,DBROWCOUNT *pcRowsDeleted);
+                   HRESULT (WINAPI *insertRows)(OLEDBSimpleProvider *This,DBROWCOUNT iRow,DBROWCOUNT cRows,DBROWCOUNT *pcRowsInserted);
+                   HRESULT (WINAPI *find)(OLEDBSimpleProvider *This,DBROWCOUNT iRowStart,DB_LORDINAL iColumn,VARIANT val,OSPFIND findFlags,OSPCOMP compType,DBROWCOUNT *piRowFound);
+                   HRESULT (WINAPI *addOLEDBSimpleProviderListener)(OLEDBSimpleProvider *This,OLEDBSimpleProviderListener *pospIListener);
+                   HRESULT (WINAPI *removeOLEDBSimpleProviderListener)(OLEDBSimpleProvider *This,OLEDBSimpleProviderListener *pospIListener);
+                   HRESULT (WINAPI *isAsync)(OLEDBSimpleProvider *This,WINBOOL *pbAsynch);
+                   HRESULT (WINAPI *getEstimatedRows)(OLEDBSimpleProvider *This,DBROWCOUNT *piRows);
+                   HRESULT (WINAPI *stopTransfer)(OLEDBSimpleProvider *This);
     END_INTERFACE
   } OLEDBSimpleProviderVtbl;
   struct OLEDBSimpleProvider {

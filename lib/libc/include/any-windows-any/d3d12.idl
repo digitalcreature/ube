@@ -63,7 +63,7 @@ cpp_quote("#endif")
 const UINT D3D12_SHADER_COMPONENT_MAPPING_MASK = 0x7;
 const UINT D3D12_SHADER_COMPONENT_MAPPING_SHIFT = 3;
 const UINT D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES
-        = 1 << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 4);
+                     = 1 << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 4);
 
 typedef enum D3D12_SHADER_MIN_PRECISION_SUPPORT
 {
@@ -357,8 +357,8 @@ typedef struct D3D12_CLEAR_VALUE
     DXGI_FORMAT Format;
     union
     {
-        FLOAT Color[4];
-        D3D12_DEPTH_STENCIL_VALUE DepthStencil;
+                     FLOAT Color[4];
+                     D3D12_DEPTH_STENCIL_VALUE DepthStencil;
     };
 } D3D12_CLEAR_VALUE;
 
@@ -432,9 +432,9 @@ typedef struct D3D12_RESOURCE_BARRIER
     D3D12_RESOURCE_BARRIER_FLAGS Flags;
     union
     {
-        D3D12_RESOURCE_TRANSITION_BARRIER Transition;
-        D3D12_RESOURCE_ALIASING_BARRIER Aliasing;
-        D3D12_RESOURCE_UAV_BARRIER UAV;
+                     D3D12_RESOURCE_TRANSITION_BARRIER Transition;
+                     D3D12_RESOURCE_ALIASING_BARRIER Aliasing;
+                     D3D12_RESOURCE_UAV_BARRIER UAV;
     };
 } D3D12_RESOURCE_BARRIER;
 
@@ -508,8 +508,8 @@ typedef struct D3D12_TEXTURE_COPY_LOCATION
     D3D12_TEXTURE_COPY_TYPE Type;
     union
     {
-        D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint;
-        UINT SubresourceIndex;
+                     D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint;
+                     UINT SubresourceIndex;
     };
 } D3D12_TEXTURE_COPY_LOCATION;
 
@@ -606,9 +606,9 @@ typedef struct D3D12_ROOT_PARAMETER
     D3D12_ROOT_PARAMETER_TYPE ParameterType;
     union
     {
-        D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable;
-        D3D12_ROOT_CONSTANTS Constants;
-        D3D12_ROOT_DESCRIPTOR Descriptor;
+                     D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable;
+                     D3D12_ROOT_CONSTANTS Constants;
+                     D3D12_ROOT_DESCRIPTOR Descriptor;
     };
     D3D12_SHADER_VISIBILITY ShaderVisibility;
 } D3D12_ROOT_PARAMETER;
@@ -618,9 +618,9 @@ typedef struct D3D12_ROOT_PARAMETER1
     D3D12_ROOT_PARAMETER_TYPE ParameterType;
     union
     {
-        D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable;
-        D3D12_ROOT_CONSTANTS Constants;
-        D3D12_ROOT_DESCRIPTOR1 Descriptor;
+                     D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable;
+                     D3D12_ROOT_CONSTANTS Constants;
+                     D3D12_ROOT_DESCRIPTOR1 Descriptor;
     };
     D3D12_SHADER_VISIBILITY ShaderVisibility;
 } D3D12_ROOT_PARAMETER1;
@@ -798,8 +798,8 @@ typedef struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC
     D3D_ROOT_SIGNATURE_VERSION Version;
     union
     {
-        D3D12_ROOT_SIGNATURE_DESC Desc_1_0;
-        D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1;
+                     D3D12_ROOT_SIGNATURE_DESC Desc_1_0;
+                     D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1;
     };
 } D3D12_VERSIONED_ROOT_SIGNATURE_DESC;
 
@@ -866,11 +866,11 @@ typedef enum D3D12_SHADER_COMPONENT_MAPPING
 } D3D12_SHADER_COMPONENT_MAPPING;
 
 cpp_quote("#define D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING(x, y, z, w) \\")
-cpp_quote("        (((x) & D3D12_SHADER_COMPONENT_MAPPING_MASK) \\")
-cpp_quote("        | (((y) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << D3D12_SHADER_COMPONENT_MAPPING_SHIFT) \\")
-cpp_quote("        | (((z) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 2)) \\")
-cpp_quote("        | (((w) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 3)) \\")
-cpp_quote("        | D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES)")
+cpp_quote("                     (((x) & D3D12_SHADER_COMPONENT_MAPPING_MASK) \\")
+cpp_quote("                     | (((y) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << D3D12_SHADER_COMPONENT_MAPPING_SHIFT) \\")
+cpp_quote("                     | (((z) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 2)) \\")
+cpp_quote("                     | (((w) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 3)) \\")
+cpp_quote("                     | D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES)")
 cpp_quote("#define D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING(0, 1, 2, 3)")
 
 typedef struct D3D12_BUFFER_SRV
@@ -956,16 +956,16 @@ typedef struct D3D12_SHADER_RESOURCE_VIEW_DESC
     UINT Shader4ComponentMapping;
     union
     {
-        D3D12_BUFFER_SRV Buffer;
-        D3D12_TEX1D_SRV Texture1D;
-        D3D12_TEX1D_ARRAY_SRV Texture1DArray;
-        D3D12_TEX2D_SRV Texture2D;
-        D3D12_TEX2D_ARRAY_SRV Texture2DArray;
-        D3D12_TEX2DMS_SRV Texture2DMS;
-        D3D12_TEX2DMS_ARRAY_SRV Texture2DMSArray;
-        D3D12_TEX3D_SRV Texture3D;
-        D3D12_TEXCUBE_SRV TextureCube;
-        D3D12_TEXCUBE_ARRAY_SRV TextureCubeArray;
+                     D3D12_BUFFER_SRV Buffer;
+                     D3D12_TEX1D_SRV Texture1D;
+                     D3D12_TEX1D_ARRAY_SRV Texture1DArray;
+                     D3D12_TEX2D_SRV Texture2D;
+                     D3D12_TEX2D_ARRAY_SRV Texture2DArray;
+                     D3D12_TEX2DMS_SRV Texture2DMS;
+                     D3D12_TEX2DMS_ARRAY_SRV Texture2DMSArray;
+                     D3D12_TEX3D_SRV Texture3D;
+                     D3D12_TEXCUBE_SRV TextureCube;
+                     D3D12_TEXCUBE_ARRAY_SRV TextureCubeArray;
     };
 } D3D12_SHADER_RESOURCE_VIEW_DESC;
 
@@ -1034,12 +1034,12 @@ typedef struct D3D12_UNORDERED_ACCESS_VIEW_DESC
     D3D12_UAV_DIMENSION ViewDimension;
     union
     {
-        D3D12_BUFFER_UAV Buffer;
-        D3D12_TEX1D_UAV Texture1D;
-        D3D12_TEX1D_ARRAY_UAV Texture1DArray;
-        D3D12_TEX2D_UAV Texture2D;
-        D3D12_TEX2D_ARRAY_UAV Texture2DArray;
-        D3D12_TEX3D_UAV Texture3D;
+                     D3D12_BUFFER_UAV Buffer;
+                     D3D12_TEX1D_UAV Texture1D;
+                     D3D12_TEX1D_ARRAY_UAV Texture1DArray;
+                     D3D12_TEX2D_UAV Texture2D;
+                     D3D12_TEX2D_ARRAY_UAV Texture2DArray;
+                     D3D12_TEX3D_UAV Texture3D;
     };
 } D3D12_UNORDERED_ACCESS_VIEW_DESC;
 
@@ -1112,14 +1112,14 @@ typedef struct D3D12_RENDER_TARGET_VIEW_DESC
     D3D12_RTV_DIMENSION ViewDimension;
     union
     {
-        D3D12_BUFFER_RTV Buffer;
-        D3D12_TEX1D_RTV Texture1D;
-        D3D12_TEX1D_ARRAY_RTV Texture1DArray;
-        D3D12_TEX2D_RTV Texture2D;
-        D3D12_TEX2D_ARRAY_RTV Texture2DArray;
-        D3D12_TEX2DMS_RTV Texture2DMS;
-        D3D12_TEX2DMS_ARRAY_RTV Texture2DMSArray;
-        D3D12_TEX3D_RTV Texture3D;
+                     D3D12_BUFFER_RTV Buffer;
+                     D3D12_TEX1D_RTV Texture1D;
+                     D3D12_TEX1D_ARRAY_RTV Texture1DArray;
+                     D3D12_TEX2D_RTV Texture2D;
+                     D3D12_TEX2D_ARRAY_RTV Texture2DArray;
+                     D3D12_TEX2DMS_RTV Texture2DMS;
+                     D3D12_TEX2DMS_ARRAY_RTV Texture2DMSArray;
+                     D3D12_TEX3D_RTV Texture3D;
     };
 } D3D12_RENDER_TARGET_VIEW_DESC;
 
@@ -1184,12 +1184,12 @@ typedef struct D3D12_DEPTH_STENCIL_VIEW_DESC
     D3D12_DSV_FLAGS Flags;
     union
     {
-        D3D12_TEX1D_DSV Texture1D;
-        D3D12_TEX1D_ARRAY_DSV Texture1DArray;
-        D3D12_TEX2D_DSV Texture2D;
-        D3D12_TEX2D_ARRAY_DSV Texture2DArray;
-        D3D12_TEX2DMS_DSV Texture2DMS;
-        D3D12_TEX2DMS_ARRAY_DSV Texture2DMSArray;
+                     D3D12_TEX1D_DSV Texture1D;
+                     D3D12_TEX1D_ARRAY_DSV Texture1DArray;
+                     D3D12_TEX2D_DSV Texture2D;
+                     D3D12_TEX2D_ARRAY_DSV Texture2DArray;
+                     D3D12_TEX2DMS_DSV Texture2DMS;
+                     D3D12_TEX2DMS_ARRAY_DSV Texture2DMSArray;
     };
 } D3D12_DEPTH_STENCIL_VIEW_DESC;
 
@@ -1301,8 +1301,8 @@ typedef enum D3D12_COLOR_WRITE_ENABLE
     D3D12_COLOR_WRITE_ENABLE_BLUE = 0x4,
     D3D12_COLOR_WRITE_ENABLE_ALPHA = 0x8,
     D3D12_COLOR_WRITE_ENABLE_ALL = (D3D12_COLOR_WRITE_ENABLE_RED
-            | D3D12_COLOR_WRITE_ENABLE_GREEN | D3D12_COLOR_WRITE_ENABLE_BLUE
-            | D3D12_COLOR_WRITE_ENABLE_ALPHA),
+                                      | D3D12_COLOR_WRITE_ENABLE_GREEN | D3D12_COLOR_WRITE_ENABLE_BLUE
+                                      | D3D12_COLOR_WRITE_ENABLE_ALPHA),
 } D3D12_COLOR_WRITE_ENABLE;
 
 typedef struct D3D12_RENDER_TARGET_BLEND_DESC
@@ -1590,9 +1590,9 @@ interface ID3D12Resource : ID3D12Pageable
     D3D12_GPU_VIRTUAL_ADDRESS GetGPUVirtualAddress();
 
     HRESULT WriteToSubresource(UINT dst_sub_resource, const D3D12_BOX *dst_box,
-            const void *src_data, UINT src_row_pitch, UINT src_slice_pitch);
+                                      const void *src_data, UINT src_row_pitch, UINT src_slice_pitch);
     HRESULT ReadFromSubresource(void *dst_data, UINT dst_row_pitch, UINT dst_slice_pitch,
-            UINT src_sub_resource, const D3D12_BOX *src_box);
+                                      UINT src_sub_resource, const D3D12_BOX *src_box);
 
     HRESULT GetHeapProperties(D3D12_HEAP_PROPERTIES *heap_properties, D3D12_HEAP_FLAGS *flags);
 }
@@ -1734,29 +1734,29 @@ interface ID3D12GraphicsCommandList : ID3D12CommandList
     HRESULT ClearState(ID3D12PipelineState *pipeline_state);
 
     void DrawInstanced(UINT vertex_count_per_instance, UINT instance_count,
-            UINT start_vertex_location, UINT start_instance_location);
+                                      UINT start_vertex_location, UINT start_instance_location);
     void DrawIndexedInstanced(UINT index_count_per_instance, UINT instance_count,
-            UINT start_vertex_location, INT base_vertex_location, UINT start_instance_location);
+                                      UINT start_vertex_location, INT base_vertex_location, UINT start_instance_location);
 
     void Dispatch(UINT x, UINT u, UINT z);
 
     void CopyBufferRegion(ID3D12Resource *dst_buffer, UINT64 dst_offset,
-            ID3D12Resource *src_buffer, UINT64 src_offset, UINT64 byte_count);
+                                      ID3D12Resource *src_buffer, UINT64 src_offset, UINT64 byte_count);
     void CopyTextureRegion(const D3D12_TEXTURE_COPY_LOCATION *dst,
-            UINT dst_x, UINT dst_y, UINT dst_z,
-            const D3D12_TEXTURE_COPY_LOCATION *src, const D3D12_BOX *src_box);
+                                      UINT dst_x, UINT dst_y, UINT dst_z,
+                                      const D3D12_TEXTURE_COPY_LOCATION *src, const D3D12_BOX *src_box);
     void CopyResource(ID3D12Resource *dst_resource, ID3D12Resource *src_resource);
 
     void CopyTiles(ID3D12Resource *tiled_resource,
-            const D3D12_TILED_RESOURCE_COORDINATE *tile_region_start_coordinate,
-            const D3D12_TILE_REGION_SIZE *tile_region_size,
-            ID3D12Resource *buffer,
-            UINT64 buffer_offset,
-            D3D12_TILE_COPY_FLAGS flags);
+                                      const D3D12_TILED_RESOURCE_COORDINATE *tile_region_start_coordinate,
+                                      const D3D12_TILE_REGION_SIZE *tile_region_size,
+                                      ID3D12Resource *buffer,
+                                      UINT64 buffer_offset,
+                                      D3D12_TILE_COPY_FLAGS flags);
 
     void ResolveSubresource(ID3D12Resource *dst_resource, UINT dst_sub_resource,
-            ID3D12Resource *src_resource, UINT src_sub_resource,
-            DXGI_FORMAT format);
+                                      ID3D12Resource *src_resource, UINT src_sub_resource,
+                                      DXGI_FORMAT format);
 
     void IASetPrimitiveTopology(D3D12_PRIMITIVE_TOPOLOGY primitive_topology);
 
@@ -1784,9 +1784,9 @@ interface ID3D12GraphicsCommandList : ID3D12CommandList
     void SetGraphicsRoot32BitConstant(UINT root_parameter_index, UINT data, UINT dst_offset);
 
     void SetComputeRoot32BitConstants(UINT root_parameter_index, UINT constant_count, const void *data,
-            UINT dst_offset);
+                                      UINT dst_offset);
     void SetGraphicsRoot32BitConstants(UINT root_parameter_index, UINT constant_count, const void *data,
-            UINT dst_offset);
+                                      UINT dst_offset);
 
     void SetComputeRootConstantBufferView(UINT root_parameter_index, D3D12_GPU_VIRTUAL_ADDRESS address);
     void SetGraphicsRootConstantBufferView(UINT root_parameter_index, D3D12_GPU_VIRTUAL_ADDRESS address);
@@ -1803,39 +1803,39 @@ interface ID3D12GraphicsCommandList : ID3D12CommandList
     void SOSetTargets(UINT start_slot, UINT view_count, const D3D12_STREAM_OUTPUT_BUFFER_VIEW *views);
 
     void OMSetRenderTargets(UINT render_target_descriptor_count,
-            const D3D12_CPU_DESCRIPTOR_HANDLE *render_target_descriptors,
-            BOOL single_descriptor_handle,
-            const D3D12_CPU_DESCRIPTOR_HANDLE *depth_stencil_descriptor);
+                                      const D3D12_CPU_DESCRIPTOR_HANDLE *render_target_descriptors,
+                                      BOOL single_descriptor_handle,
+                                      const D3D12_CPU_DESCRIPTOR_HANDLE *depth_stencil_descriptor);
 
     void ClearDepthStencilView(D3D12_CPU_DESCRIPTOR_HANDLE dsv, D3D12_CLEAR_FLAGS flags,
-            FLOAT depth, UINT8 stencil, UINT rect_count, const D3D12_RECT *rects);
+                                      FLOAT depth, UINT8 stencil, UINT rect_count, const D3D12_RECT *rects);
     void ClearRenderTargetView(D3D12_CPU_DESCRIPTOR_HANDLE rtv, const FLOAT color[4],
-            UINT rect_count, const D3D12_RECT *rects);
+                                      UINT rect_count, const D3D12_RECT *rects);
     void ClearUnorderedAccessViewUint(D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
-            D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle, ID3D12Resource *resource, const UINT values[4],
-            UINT rect_count, const D3D12_RECT *rects);
+                                      D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle, ID3D12Resource *resource, const UINT values[4],
+                                      UINT rect_count, const D3D12_RECT *rects);
     void ClearUnorderedAccessViewFloat(D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
-            D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle, ID3D12Resource *resource, const float values[4],
-            UINT rect_count, const D3D12_RECT *rects);
+                                      D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle, ID3D12Resource *resource, const float values[4],
+                                      UINT rect_count, const D3D12_RECT *rects);
 
     void DiscardResource(ID3D12Resource *resource, const D3D12_DISCARD_REGION *region);
 
     void BeginQuery(ID3D12QueryHeap *heap, D3D12_QUERY_TYPE type, UINT index);
     void EndQuery(ID3D12QueryHeap *heap, D3D12_QUERY_TYPE type, UINT index);
     void ResolveQueryData(ID3D12QueryHeap *heap, D3D12_QUERY_TYPE type,
-            UINT start_index, UINT query_count,
-            ID3D12Resource *dst_buffer, UINT64 aligned_dst_buffer_offset);
+                                      UINT start_index, UINT query_count,
+                                      ID3D12Resource *dst_buffer, UINT64 aligned_dst_buffer_offset);
 
     void SetPredication(ID3D12Resource *buffer, UINT64 aligned_buffer_offset,
-            D3D12_PREDICATION_OP operation);
+                                      D3D12_PREDICATION_OP operation);
 
     void SetMarker(UINT metadata, const void *data, UINT size);
     void BeginEvent(UINT metadata, const void *data, UINT size);
     void EndEvent();
 
     void ExecuteIndirect(ID3D12CommandSignature *command_signature,
-            UINT max_command_count, ID3D12Resource *arg_buffer, UINT64 arg_buffer_offset,
-            ID3D12Resource *count_buffer, UINT64 count_buffer_offset);
+                                      UINT max_command_count, ID3D12Resource *arg_buffer, UINT64 arg_buffer_offset,
+                                      ID3D12Resource *count_buffer, UINT64 count_buffer_offset);
 }
 
 typedef enum D3D12_TILE_RANGE_FLAGS
@@ -1861,23 +1861,23 @@ typedef enum D3D12_TILE_MAPPING_FLAGS
 interface ID3D12CommandQueue : ID3D12Pageable
 {
     void UpdateTileMappings(ID3D12Resource *resource, UINT region_count,
-            const D3D12_TILED_RESOURCE_COORDINATE *region_start_coordinates,
-            const D3D12_TILE_REGION_SIZE *region_sizes,
-            UINT range_count,
-            const D3D12_TILE_RANGE_FLAGS *range_flags,
-            UINT *heap_range_offsets,
-            UINT *range_tile_counts,
-            D3D12_TILE_MAPPING_FLAGS flags);
+                                      const D3D12_TILED_RESOURCE_COORDINATE *region_start_coordinates,
+                                      const D3D12_TILE_REGION_SIZE *region_sizes,
+                                      UINT range_count,
+                                      const D3D12_TILE_RANGE_FLAGS *range_flags,
+                                      UINT *heap_range_offsets,
+                                      UINT *range_tile_counts,
+                                      D3D12_TILE_MAPPING_FLAGS flags);
 
     void CopyTileMappings(ID3D12Resource *dst_resource,
-            const D3D12_TILED_RESOURCE_COORDINATE *dst_region_start_coordinate,
-            ID3D12Resource *src_resource,
-            const D3D12_TILED_RESOURCE_COORDINATE *src_region_start_coordinate,
-            const D3D12_TILE_REGION_SIZE *region_size,
-            D3D12_TILE_MAPPING_FLAGS flags);
+                                      const D3D12_TILED_RESOURCE_COORDINATE *dst_region_start_coordinate,
+                                      ID3D12Resource *src_resource,
+                                      const D3D12_TILED_RESOURCE_COORDINATE *src_region_start_coordinate,
+                                      const D3D12_TILE_REGION_SIZE *region_size,
+                                      D3D12_TILE_MAPPING_FLAGS flags);
 
     void ExecuteCommandLists(UINT command_list_count,
-            ID3D12CommandList * const * command_lists);
+                                      ID3D12CommandList * const * command_lists);
 
     void SetMarker(UINT metadata, const void *data, UINT size);
     void BeginEvent(UINT metadata, const void *data, UINT size);
@@ -1932,28 +1932,28 @@ typedef struct D3D12_INDIRECT_ARGUMENT_DESC
     D3D12_INDIRECT_ARGUMENT_TYPE Type;
     union
     {
-        struct
-        {
-            UINT Slot;
-        } VertexBuffer;
-        struct
-        {
-            UINT RootParameterIndex;
-            UINT DestOffsetIn32BitValues;
-            UINT Num32BitValuesToSet;
-        } Constant;
-        struct
-        {
-            UINT RootParameterIndex;
-        } ConstantBufferView;
-        struct
-        {
-            UINT RootParameterIndex;
-        } ShaderResourceView;
-        struct
-        {
-            UINT RootParameterIndex;
-        } UnorderedAccessView;
+                     struct
+                     {
+                                      UINT Slot;
+                     } VertexBuffer;
+                     struct
+                     {
+                                      UINT RootParameterIndex;
+                                      UINT DestOffsetIn32BitValues;
+                                      UINT Num32BitValuesToSet;
+                     } Constant;
+                     struct
+                     {
+                                      UINT RootParameterIndex;
+                     } ConstantBufferView;
+                     struct
+                     {
+                                      UINT RootParameterIndex;
+                     } ShaderResourceView;
+                     struct
+                     {
+                                      UINT RootParameterIndex;
+                     } UnorderedAccessView;
     };
 } D3D12_INDIRECT_ARGUMENT_DESC;
 
@@ -2021,85 +2021,85 @@ interface ID3D12Device : ID3D12Object
     UINT GetNodeCount();
 
     HRESULT CreateCommandQueue(const D3D12_COMMAND_QUEUE_DESC *desc,
-            REFIID riid, void **command_queue);
+                                      REFIID riid, void **command_queue);
     HRESULT CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE type,
-            REFIID riid, void **command_allocator);
+                                      REFIID riid, void **command_allocator);
     HRESULT CreateGraphicsPipelineState(const D3D12_GRAPHICS_PIPELINE_STATE_DESC *desc,
-            REFIID riid, void **pipeline_state);
+                                      REFIID riid, void **pipeline_state);
     HRESULT CreateComputePipelineState(const D3D12_COMPUTE_PIPELINE_STATE_DESC *desc,
-            REFIID riid, void **pipeline_state);
+                                      REFIID riid, void **pipeline_state);
     HRESULT CreateCommandList(UINT node_mask,
-            D3D12_COMMAND_LIST_TYPE type,
-            ID3D12CommandAllocator *command_allocator,
-            ID3D12PipelineState *initial_pipeline_state,
-            REFIID riid, void **command_list);
+                                      D3D12_COMMAND_LIST_TYPE type,
+                                      ID3D12CommandAllocator *command_allocator,
+                                      ID3D12PipelineState *initial_pipeline_state,
+                                      REFIID riid, void **command_list);
 
     HRESULT CheckFeatureSupport(D3D12_FEATURE feature,
-            void *feature_data, UINT feature_data_size);
+                                      void *feature_data, UINT feature_data_size);
 
     HRESULT CreateDescriptorHeap(const D3D12_DESCRIPTOR_HEAP_DESC *desc,
-            REFIID riid, void **descriptor_heap);
+                                      REFIID riid, void **descriptor_heap);
     UINT GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
 
     HRESULT CreateRootSignature(UINT node_mask,
-            const void *bytecode, SIZE_T bytecode_length,
-            REFIID riid, void **root_signature);
+                                      const void *bytecode, SIZE_T bytecode_length,
+                                      REFIID riid, void **root_signature);
 
     void CreateConstantBufferView(const D3D12_CONSTANT_BUFFER_VIEW_DESC *desc,
-            D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                                      D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
     void CreateShaderResourceView(ID3D12Resource *resource,
-            const D3D12_SHADER_RESOURCE_VIEW_DESC *desc,
-            D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                                      const D3D12_SHADER_RESOURCE_VIEW_DESC *desc,
+                                      D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
     void CreateUnorderedAccessView(ID3D12Resource *resource, ID3D12Resource *counter_resource,
-            const D3D12_UNORDERED_ACCESS_VIEW_DESC *desc,
-            D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                                      const D3D12_UNORDERED_ACCESS_VIEW_DESC *desc,
+                                      D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
     void CreateRenderTargetView(ID3D12Resource *resource,
-            const D3D12_RENDER_TARGET_VIEW_DESC *desc,
-            D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                                      const D3D12_RENDER_TARGET_VIEW_DESC *desc,
+                                      D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
     void CreateDepthStencilView(ID3D12Resource *resource,
-            const D3D12_DEPTH_STENCIL_VIEW_DESC *desc,
-            D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                                      const D3D12_DEPTH_STENCIL_VIEW_DESC *desc,
+                                      D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
     void CreateSampler(const D3D12_SAMPLER_DESC *desc,
-            D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                                      D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
 
     void CopyDescriptors(UINT dst_descriptor_range_count,
-            const D3D12_CPU_DESCRIPTOR_HANDLE *dst_descriptor_range_offsets,
-            const UINT *dst_descriptor_range_sizes,
-            UINT src_descriptor_range_count,
-            const D3D12_CPU_DESCRIPTOR_HANDLE *src_descriptor_range_offsets,
-            const UINT *src_descriptor_range_sizes,
-            D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
+                                      const D3D12_CPU_DESCRIPTOR_HANDLE *dst_descriptor_range_offsets,
+                                      const UINT *dst_descriptor_range_sizes,
+                                      UINT src_descriptor_range_count,
+                                      const D3D12_CPU_DESCRIPTOR_HANDLE *src_descriptor_range_offsets,
+                                      const UINT *src_descriptor_range_sizes,
+                                      D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
     void CopyDescriptorsSimple(UINT descriptor_count,
-            const D3D12_CPU_DESCRIPTOR_HANDLE dst_descriptor_range_offset,
-            const D3D12_CPU_DESCRIPTOR_HANDLE src_descriptor_range_offset,
-            D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
+                                      const D3D12_CPU_DESCRIPTOR_HANDLE dst_descriptor_range_offset,
+                                      const D3D12_CPU_DESCRIPTOR_HANDLE src_descriptor_range_offset,
+                                      D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
 
     D3D12_RESOURCE_ALLOCATION_INFO GetResourceAllocationInfo(UINT visible_mask,
-            UINT reource_desc_count, const D3D12_RESOURCE_DESC *resource_descs);
+                                      UINT reource_desc_count, const D3D12_RESOURCE_DESC *resource_descs);
 
     D3D12_HEAP_PROPERTIES GetCustomHeapProperties(UINT node_mask,
-            D3D12_HEAP_TYPE heap_type);
+                                      D3D12_HEAP_TYPE heap_type);
 
     HRESULT CreateCommittedResource(const D3D12_HEAP_PROPERTIES *heap_properties, D3D12_HEAP_FLAGS heap_flags,
-            const D3D12_RESOURCE_DESC *desc, D3D12_RESOURCE_STATES initial_state,
-            const D3D12_CLEAR_VALUE *optimized_clear_value,
-            REFIID riid, void **resource);
+                                      const D3D12_RESOURCE_DESC *desc, D3D12_RESOURCE_STATES initial_state,
+                                      const D3D12_CLEAR_VALUE *optimized_clear_value,
+                                      REFIID riid, void **resource);
 
     HRESULT CreateHeap(const D3D12_HEAP_DESC *desc, REFIID riid, void **heap);
 
     HRESULT CreatePlacedResource(ID3D12Heap *heap, UINT64 heap_offset,
-            const D3D12_RESOURCE_DESC *desc, D3D12_RESOURCE_STATES initial_state,
-            const D3D12_CLEAR_VALUE *optimized_clear_value,
-            REFIID riid, void **resource);
+                                      const D3D12_RESOURCE_DESC *desc, D3D12_RESOURCE_STATES initial_state,
+                                      const D3D12_CLEAR_VALUE *optimized_clear_value,
+                                      REFIID riid, void **resource);
     HRESULT CreateReservedResource(const D3D12_RESOURCE_DESC *desc, D3D12_RESOURCE_STATES initial_state,
-            const D3D12_CLEAR_VALUE *optimized_clear_value,
-            REFIID riid, void **resource);
+                                      const D3D12_CLEAR_VALUE *optimized_clear_value,
+                                      REFIID riid, void **resource);
 
     HRESULT CreateSharedHandle(ID3D12DeviceChild *object,
-            const SECURITY_ATTRIBUTES *attributes, DWORD access,
-            const WCHAR *name, HANDLE *handle);
+                                      const SECURITY_ATTRIBUTES *attributes, DWORD access,
+                                      const WCHAR *name, HANDLE *handle);
     HRESULT OpenSharedHandle(HANDLE handle,
-            REFIID riid, void **object);
+                                      REFIID riid, void **object);
     HRESULT OpenSharedHandleByName(const WCHAR *name, DWORD access, HANDLE *handle);
 
     HRESULT MakeResident(UINT object_count, ID3D12Pageable * const *objects);
@@ -2110,30 +2110,30 @@ interface ID3D12Device : ID3D12Object
     HRESULT GetDeviceRemovedReason();
 
     void GetCopyableFootprints(const D3D12_RESOURCE_DESC *desc,
-            UINT first_sub_resource,
-            UINT sub_resource_count,
-            UINT64 base_offset,
-            D3D12_PLACED_SUBRESOURCE_FOOTPRINT *layouts,
-            UINT *row_count,
-            UINT64 *row_size,
-            UINT64 *total_bytes);
+                                      UINT first_sub_resource,
+                                      UINT sub_resource_count,
+                                      UINT64 base_offset,
+                                      D3D12_PLACED_SUBRESOURCE_FOOTPRINT *layouts,
+                                      UINT *row_count,
+                                      UINT64 *row_size,
+                                      UINT64 *total_bytes);
 
     HRESULT CreateQueryHeap(const D3D12_QUERY_HEAP_DESC *desc,
-            REFIID riid, void **heap);
+                                      REFIID riid, void **heap);
 
     HRESULT SetStablePowerState(BOOL enable);
 
     HRESULT CreateCommandSignature(const D3D12_COMMAND_SIGNATURE_DESC *desc,
-            ID3D12RootSignature *root_signature,
-            REFIID riid, void **command_signature);
+                                      ID3D12RootSignature *root_signature,
+                                      REFIID riid, void **command_signature);
 
     void GetResourceTiling(ID3D12Resource *resource,
-            UINT *total_tile_count,
-            D3D12_PACKED_MIP_INFO *packed_mip_info,
-            D3D12_TILE_SHAPE *standard_tile_shape,
-            UINT *sub_resource_tiling_count,
-            UINT first_sub_resource_tiling,
-            D3D12_SUBRESOURCE_TILING *sub_resource_tilings);
+                                      UINT *total_tile_count,
+                                      D3D12_PACKED_MIP_INFO *packed_mip_info,
+                                      D3D12_TILE_SHAPE *standard_tile_shape,
+                                      UINT *sub_resource_tiling_count,
+                                      UINT first_sub_resource_tiling,
+                                      D3D12_SUBRESOURCE_TILING *sub_resource_tilings);
 
     LUID GetAdapterLuid();
 }
@@ -2161,25 +2161,25 @@ interface ID3D12RootSignatureDeserializer : IUnknown
 }
 
 [local] HRESULT __stdcall D3D12CreateRootSignatureDeserializer(
-        const void *data, SIZE_T data_size, REFIID iid, void **deserializer);
+                     const void *data, SIZE_T data_size, REFIID iid, void **deserializer);
 
 [local] HRESULT __stdcall D3D12SerializeRootSignature(
-        const D3D12_ROOT_SIGNATURE_DESC *root_signature_desc,
-        D3D_ROOT_SIGNATURE_VERSION version, ID3DBlob **blob, ID3DBlob **error_blob);
+                     const D3D12_ROOT_SIGNATURE_DESC *root_signature_desc,
+                     D3D_ROOT_SIGNATURE_VERSION version, ID3DBlob **blob, ID3DBlob **error_blob);
 
 [local] HRESULT __stdcall D3D12SerializeVersionedRootSignature(
-        const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *root_signature_desc,
-        ID3DBlob **blob, ID3DBlob **error_blob);
+                     const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *root_signature_desc,
+                     ID3DBlob **blob, ID3DBlob **error_blob);
 
 typedef HRESULT (__stdcall *PFN_D3D12_CREATE_DEVICE)(IUnknown *adapter,
-        D3D_FEATURE_LEVEL minimum_feature_level, REFIID iid, void **device);
+                     D3D_FEATURE_LEVEL minimum_feature_level, REFIID iid, void **device);
 
 [local] HRESULT __stdcall D3D12CreateDevice(IUnknown *adapter,
-        D3D_FEATURE_LEVEL minimum_feature_level, REFIID iid, void **device);
+                     D3D_FEATURE_LEVEL minimum_feature_level, REFIID iid, void **device);
 
 typedef HRESULT (__stdcall *PFN_D3D12_GET_DEBUG_INTERFACE)(REFIID iid, void **debug);
 
 [local] HRESULT __stdcall D3D12GetDebugInterface(REFIID iid, void **debug);
 
 [local] HRESULT __stdcall D3D12EnableExperimentalFeatures(UINT feature_count,
-        const IID *iids, void *configurations, UINT *configurations_sizes);
+                     const IID *iids, void *configurations, UINT *configurations_sizes);

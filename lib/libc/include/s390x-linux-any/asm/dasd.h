@@ -27,34 +27,34 @@
  *  including foramt and featueres.
  */
 typedef struct dasd_information2_t {
-        unsigned int devno;         /* S/390 devno */
-        unsigned int real_devno;    /* for aliases */
-        unsigned int schid;         /* S/390 subchannel identifier */
-        unsigned int cu_type  : 16; /* from SenseID */
-        unsigned int cu_model :  8; /* from SenseID */
-        unsigned int dev_type : 16; /* from SenseID */
-        unsigned int dev_model : 8; /* from SenseID */
-        unsigned int open_count; 
-        unsigned int req_queue_len; 
-        unsigned int chanq_len;     /* length of chanq */
-        char type[4];               /* from discipline.name, 'none' for unknown */
-        unsigned int status;        /* current device level */
-        unsigned int label_block;   /* where to find the VOLSER */
-        unsigned int FBA_layout;    /* fixed block size (like AIXVOL) */
-        unsigned int characteristics_size;
-        unsigned int confdata_size;
-        char characteristics[64];   /* from read_device_characteristics */
-        char configuration_data[256]; /* from read_configuration_data */
-        unsigned int format;          /* format info like formatted/cdl/ldl/... */
-        unsigned int features;        /* dasd features like 'ro',...            */
-        unsigned int reserved0;       /* reserved for further use ,...          */
-        unsigned int reserved1;       /* reserved for further use ,...          */
-        unsigned int reserved2;       /* reserved for further use ,...          */
-        unsigned int reserved3;       /* reserved for further use ,...          */
-        unsigned int reserved4;       /* reserved for further use ,...          */
-        unsigned int reserved5;       /* reserved for further use ,...          */
-        unsigned int reserved6;       /* reserved for further use ,...          */
-        unsigned int reserved7;       /* reserved for further use ,...          */
+                     unsigned int devno;                      /* S/390 devno */
+                     unsigned int real_devno;    /* for aliases */
+                     unsigned int schid;                      /* S/390 subchannel identifier */
+                     unsigned int cu_type  : 16; /* from SenseID */
+                     unsigned int cu_model :  8; /* from SenseID */
+                     unsigned int dev_type : 16; /* from SenseID */
+                     unsigned int dev_model : 8; /* from SenseID */
+                     unsigned int open_count; 
+                     unsigned int req_queue_len; 
+                     unsigned int chanq_len;     /* length of chanq */
+                     char type[4];                                         /* from discipline.name, 'none' for unknown */
+                     unsigned int status;                     /* current device level */
+                     unsigned int label_block;   /* where to find the VOLSER */
+                     unsigned int FBA_layout;    /* fixed block size (like AIXVOL) */
+                     unsigned int characteristics_size;
+                     unsigned int confdata_size;
+                     char characteristics[64];   /* from read_device_characteristics */
+                     char configuration_data[256]; /* from read_configuration_data */
+                     unsigned int format;                       /* format info like formatted/cdl/ldl/... */
+                     unsigned int features;                     /* dasd features like 'ro',...                                      */
+                     unsigned int reserved0;                    /* reserved for further use ,...                       */
+                     unsigned int reserved1;                    /* reserved for further use ,...                       */
+                     unsigned int reserved2;                    /* reserved for further use ,...                       */
+                     unsigned int reserved3;                    /* reserved for further use ,...                       */
+                     unsigned int reserved4;                    /* reserved for further use ,...                       */
+                     unsigned int reserved5;                    /* reserved for further use ,...                       */
+                     unsigned int reserved6;                    /* reserved for further use ,...                       */
+                     unsigned int reserved7;                    /* reserved for further use ,...                       */
 } dasd_information2_t;
 
 /*
@@ -79,16 +79,16 @@ typedef struct dasd_information2_t {
  * 0x080: enable discard support
  * 0x100: enable autodisable for IFCC errors (default)
  */
-#define DASD_FEATURE_READONLY	      0x001
-#define DASD_FEATURE_USEDIAG	      0x002
+#define DASD_FEATURE_READONLY	                   0x001
+#define DASD_FEATURE_USEDIAG	                   0x002
 #define DASD_FEATURE_INITIAL_ONLINE   0x004
-#define DASD_FEATURE_ERPLOG	      0x008
-#define DASD_FEATURE_FAILFAST	      0x010
-#define DASD_FEATURE_FAILONSLCK       0x020
-#define DASD_FEATURE_USERAW	      0x040
-#define DASD_FEATURE_DISCARD	      0x080
+#define DASD_FEATURE_ERPLOG	                   0x008
+#define DASD_FEATURE_FAILFAST	                   0x010
+#define DASD_FEATURE_FAILONSLCK                    0x020
+#define DASD_FEATURE_USERAW	                   0x040
+#define DASD_FEATURE_DISCARD	                   0x080
 #define DASD_FEATURE_PATH_AUTODISABLE 0x100
-#define DASD_FEATURE_DEFAULT	      DASD_FEATURE_PATH_AUTODISABLE
+#define DASD_FEATURE_DEFAULT	                   DASD_FEATURE_PATH_AUTODISABLE
 
 #define DASD_PARTN_BITS 2
 
@@ -97,24 +97,24 @@ typedef struct dasd_information2_t {
  * represents any data about the data, which is visible to userspace
  */
 typedef struct dasd_information_t {
-        unsigned int devno;         /* S/390 devno */
-        unsigned int real_devno;    /* for aliases */
-        unsigned int schid;         /* S/390 subchannel identifier */
-        unsigned int cu_type  : 16; /* from SenseID */
-        unsigned int cu_model :  8; /* from SenseID */
-        unsigned int dev_type : 16; /* from SenseID */
-        unsigned int dev_model : 8; /* from SenseID */
-        unsigned int open_count; 
-        unsigned int req_queue_len; 
-        unsigned int chanq_len;     /* length of chanq */
-        char type[4];               /* from discipline.name, 'none' for unknown */
-        unsigned int status;        /* current device level */
-        unsigned int label_block;   /* where to find the VOLSER */
-        unsigned int FBA_layout;    /* fixed block size (like AIXVOL) */
-        unsigned int characteristics_size;
-        unsigned int confdata_size;
-        char characteristics[64];   /* from read_device_characteristics */
-        char configuration_data[256]; /* from read_configuration_data */
+                     unsigned int devno;                      /* S/390 devno */
+                     unsigned int real_devno;    /* for aliases */
+                     unsigned int schid;                      /* S/390 subchannel identifier */
+                     unsigned int cu_type  : 16; /* from SenseID */
+                     unsigned int cu_model :  8; /* from SenseID */
+                     unsigned int dev_type : 16; /* from SenseID */
+                     unsigned int dev_model : 8; /* from SenseID */
+                     unsigned int open_count; 
+                     unsigned int req_queue_len; 
+                     unsigned int chanq_len;     /* length of chanq */
+                     char type[4];                                         /* from discipline.name, 'none' for unknown */
+                     unsigned int status;                     /* current device level */
+                     unsigned int label_block;   /* where to find the VOLSER */
+                     unsigned int FBA_layout;    /* fixed block size (like AIXVOL) */
+                     unsigned int characteristics_size;
+                     unsigned int confdata_size;
+                     char characteristics[64];   /* from read_device_characteristics */
+                     char configuration_data[256]; /* from read_configuration_data */
 } dasd_information_t;
 
 /*
@@ -159,16 +159,16 @@ typedef struct dasd_rssd_perf_stats_t {
  * holds the profinling information 
  */
 typedef struct dasd_profile_info_t {
-        unsigned int dasd_io_reqs;	 /* number of requests processed at all */
-        unsigned int dasd_io_sects;	 /* number of sectors processed at all */
-        unsigned int dasd_io_secs[32];	 /* histogram of request's sizes */
-        unsigned int dasd_io_times[32];	 /* histogram of requests's times */
-        unsigned int dasd_io_timps[32];	 /* histogram of requests's times per sector */
-        unsigned int dasd_io_time1[32];	 /* histogram of time from build to start */
-        unsigned int dasd_io_time2[32];	 /* histogram of time from start to irq */
-        unsigned int dasd_io_time2ps[32]; /* histogram of time from start to irq */
-        unsigned int dasd_io_time3[32];	 /* histogram of time from irq to end */
-        unsigned int dasd_io_nr_req[32]; /* histogram of # of requests in chanq */
+                     unsigned int dasd_io_reqs;	 /* number of requests processed at all */
+                     unsigned int dasd_io_sects;	 /* number of sectors processed at all */
+                     unsigned int dasd_io_secs[32];	 /* histogram of request's sizes */
+                     unsigned int dasd_io_times[32];	 /* histogram of requests's times */
+                     unsigned int dasd_io_timps[32];	 /* histogram of requests's times per sector */
+                     unsigned int dasd_io_time1[32];	 /* histogram of time from build to start */
+                     unsigned int dasd_io_time2[32];	 /* histogram of time from start to irq */
+                     unsigned int dasd_io_time2ps[32]; /* histogram of time from start to irq */
+                     unsigned int dasd_io_time3[32];	 /* histogram of time from irq to end */
+                     unsigned int dasd_io_nr_req[32]; /* histogram of # of requests in chanq */
 } dasd_profile_info_t;
 
 /*
@@ -232,9 +232,9 @@ typedef struct format_check_t {
  */
 typedef struct attrib_data_t {
 	unsigned char operation:3;     /* cache operation mode */
-	unsigned char reserved:5;      /* cache operation mode */
-	__u16         nr_cyl;          /* no of cyliners for read ahaed */
-	__u8          reserved2[29];   /* for future use */
+	unsigned char reserved:5;                   /* cache operation mode */
+	__u16                      nr_cyl;                       /* no of cyliners for read ahaed */
+	__u8                       reserved2[29];   /* for future use */
 } __attribute__ ((packed)) attrib_data_t;
 
 /* definition of operation (cache) bits within attributes of DE */

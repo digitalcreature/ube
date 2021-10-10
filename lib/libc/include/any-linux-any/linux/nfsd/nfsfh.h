@@ -48,8 +48,8 @@ struct nfs_fhbase_old {
  *    encoded.
  *  Current values:
  *     0  - 4 byte device id (ms-2-bytes major, ls-2-bytes minor), 4byte inode number
- *        NOTE: we cannot use the kdev_t device id value, because kdev_t.h
- *              says we mustn't.  We must break it up and reassemble.
+ *                     NOTE: we cannot use the kdev_t device id value, because kdev_t.h
+ *                                        says we mustn't.  We must break it up and reassemble.
  *     1  - 4 byte user specified identifier
  *     2  - 4 byte major, 4 byte minor, 4 byte inode number - DEPRECATED
  *     3  - 4 byte device id, encoded for user-space, 4 byte inode number

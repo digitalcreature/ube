@@ -54,7 +54,7 @@ MIDL_INTERFACE("784cfd40-9f89-456e-a1a6-873b006a664e")
 IAudioEndpointFormatControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ResetToDefault(
-        DWORD ResetFlags) = 0;
+                     DWORD ResetFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -66,20 +66,20 @@ typedef struct IAudioEndpointFormatControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioEndpointFormatControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioEndpointFormatControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioEndpointFormatControl *This);
+                     IAudioEndpointFormatControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioEndpointFormatControl *This);
+                     IAudioEndpointFormatControl *This);
 
     /*** IAudioEndpointFormatControl methods ***/
     HRESULT (STDMETHODCALLTYPE *ResetToDefault)(
-        IAudioEndpointFormatControl *This,
-        DWORD ResetFlags);
+                     IAudioEndpointFormatControl *This,
+                     DWORD ResetFlags);
 
     END_INTERFACE
 } IAudioEndpointFormatControlVtbl;

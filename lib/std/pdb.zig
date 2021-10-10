@@ -400,12 +400,12 @@ pub const LineNumberEntry = packed struct {
 
     /// TODO runtime crash when I make the actual type of Flags this
     pub const Flags = packed struct {
-        /// Start line number
-        Start: u24,
-        /// Delta of lines to the end of the expression. Still unclear.
-        // TODO figure out the point of this field.
-        End: u7,
-        IsStatement: bool,
+                     /// Start line number
+                     Start: u24,
+                     /// Delta of lines to the end of the expression. Still unclear.
+                     // TODO figure out the point of this field.
+                     End: u7,
+                     IsStatement: bool,
     };
 };
 
@@ -475,22 +475,22 @@ pub const Pdb = struct {
     msf: Msf,
 
     pub fn openFile(self: *Pdb, coff_ptr: *coff.Coff, file_name: []const u8) !void {
-        self.in_file = try fs.cwd().openFile(file_name, .{ .intended_io_mode = .blocking });
-        self.allocator = coff_ptr.allocator;
-        self.coff = coff_ptr;
+                     self.in_file = try fs.cwd().openFile(file_name, .{ .intended_io_mode = .blocking });
+                     self.allocator = coff_ptr.allocator;
+                     self.coff = coff_ptr;
 
-        try self.msf.openFile(self.allocator, self.in_file);
+                     try self.msf.openFile(self.allocator, self.in_file);
     }
 
     pub fn getStreamById(self: *Pdb, id: u32) ?*MsfStream {
-        if (id >= self.msf.streams.len)
-            return null;
-        return &self.msf.streams[id];
+                     if (id >= self.msf.streams.len)
+                                      return null;
+                     return &self.msf.streams[id];
     }
 
     pub fn getStream(self: *Pdb, stream: StreamType) ?*MsfStream {
-        const id = @enumToInt(stream);
-        return self.getStreamById(id);
+                     const id = @enumToInt(stream);
+                     return self.getStreamById(id);
     }
 };
 
@@ -500,82 +500,82 @@ const Msf = struct {
     streams: []MsfStream,
 
     fn openFile(self: *Msf, allocator: *mem.Allocator, file: File) !void {
-        const in = file.reader();
+                     const in = file.reader();
 
-        const superblock = try in.readStruct(SuperBlock);
+                     const superblock = try in.readStruct(SuperBlock);
 
-        // Sanity checks
-        if (!mem.eql(u8, &superblock.FileMagic, SuperBlock.file_magic))
-            return error.InvalidDebugInfo;
-        if (superblock.FreeBlockMapBlock != 1 and superblock.FreeBlockMapBlock != 2)
-            return error.InvalidDebugInfo;
-        if (superblock.NumBlocks * superblock.BlockSize != try file.getEndPos())
-            return error.InvalidDebugInfo;
-        switch (superblock.BlockSize) {
-            // llvm only supports 4096 but we can handle any of these values
-            512, 1024, 2048, 4096 => {},
-            else => return error.InvalidDebugInfo,
-        }
+                     // Sanity checks
+                     if (!mem.eql(u8, &superblock.FileMagic, SuperBlock.file_magic))
+                                      return error.InvalidDebugInfo;
+                     if (superblock.FreeBlockMapBlock != 1 and superblock.FreeBlockMapBlock != 2)
+                                      return error.InvalidDebugInfo;
+                     if (superblock.NumBlocks * superblock.BlockSize != try file.getEndPos())
+                                      return error.InvalidDebugInfo;
+                     switch (superblock.BlockSize) {
+                                      // llvm only supports 4096 but we can handle any of these values
+                                      512, 1024, 2048, 4096 => {},
+                                      else => return error.InvalidDebugInfo,
+                     }
 
-        const dir_block_count = blockCountFromSize(superblock.NumDirectoryBytes, superblock.BlockSize);
-        if (dir_block_count > superblock.BlockSize / @sizeOf(u32))
-            return error.UnhandledBigDirectoryStream; // cf. BlockMapAddr comment.
+                     const dir_block_count = blockCountFromSize(superblock.NumDirectoryBytes, superblock.BlockSize);
+                     if (dir_block_count > superblock.BlockSize / @sizeOf(u32))
+                                      return error.UnhandledBigDirectoryStream; // cf. BlockMapAddr comment.
 
-        try file.seekTo(superblock.BlockSize * superblock.BlockMapAddr);
-        var dir_blocks = try allocator.alloc(u32, dir_block_count);
-        for (dir_blocks) |*b| {
-            b.* = try in.readIntLittle(u32);
-        }
-        self.directory = MsfStream.init(
-            superblock.BlockSize,
-            file,
-            dir_blocks,
-        );
+                     try file.seekTo(superblock.BlockSize * superblock.BlockMapAddr);
+                     var dir_blocks = try allocator.alloc(u32, dir_block_count);
+                     for (dir_blocks) |*b| {
+                                      b.* = try in.readIntLittle(u32);
+                     }
+                     self.directory = MsfStream.init(
+                                      superblock.BlockSize,
+                                      file,
+                                      dir_blocks,
+                     );
 
-        const begin = self.directory.pos;
-        const stream_count = try self.directory.reader().readIntLittle(u32);
-        const stream_sizes = try allocator.alloc(u32, stream_count);
-        defer allocator.free(stream_sizes);
+                     const begin = self.directory.pos;
+                     const stream_count = try self.directory.reader().readIntLittle(u32);
+                     const stream_sizes = try allocator.alloc(u32, stream_count);
+                     defer allocator.free(stream_sizes);
 
-        // Microsoft's implementation uses @as(u32, -1) for inexistant streams.
-        // These streams are not used, but still participate in the file
-        // and must be taken into account when resolving stream indices.
-        const Nil = 0xFFFFFFFF;
-        for (stream_sizes) |*s, i| {
-            const size = try self.directory.reader().readIntLittle(u32);
-            s.* = if (size == Nil) 0 else blockCountFromSize(size, superblock.BlockSize);
-        }
+                     // Microsoft's implementation uses @as(u32, -1) for inexistant streams.
+                     // These streams are not used, but still participate in the file
+                     // and must be taken into account when resolving stream indices.
+                     const Nil = 0xFFFFFFFF;
+                     for (stream_sizes) |*s, i| {
+                                      const size = try self.directory.reader().readIntLittle(u32);
+                                      s.* = if (size == Nil) 0 else blockCountFromSize(size, superblock.BlockSize);
+                     }
 
-        self.streams = try allocator.alloc(MsfStream, stream_count);
-        for (self.streams) |*stream, i| {
-            const size = stream_sizes[i];
-            if (size == 0) {
-                stream.* = MsfStream{
-                    .blocks = &[_]u32{},
-                };
-            } else {
-                var blocks = try allocator.alloc(u32, size);
-                var j: u32 = 0;
-                while (j < size) : (j += 1) {
-                    const block_id = try self.directory.reader().readIntLittle(u32);
-                    const n = (block_id % superblock.BlockSize);
-                    // 0 is for SuperBlock, 1 and 2 for FPMs.
-                    if (block_id == 0 or n == 1 or n == 2 or block_id * superblock.BlockSize > try file.getEndPos())
-                        return error.InvalidBlockIndex;
-                    blocks[j] = block_id;
-                }
+                     self.streams = try allocator.alloc(MsfStream, stream_count);
+                     for (self.streams) |*stream, i| {
+                                      const size = stream_sizes[i];
+                                      if (size == 0) {
+                                          stream.* = MsfStream{
+                                                           .blocks = &[_]u32{},
+                                          };
+                                      } else {
+                                          var blocks = try allocator.alloc(u32, size);
+                                          var j: u32 = 0;
+                                          while (j < size) : (j += 1) {
+                                                           const block_id = try self.directory.reader().readIntLittle(u32);
+                                                           const n = (block_id % superblock.BlockSize);
+                                                           // 0 is for SuperBlock, 1 and 2 for FPMs.
+                                                           if (block_id == 0 or n == 1 or n == 2 or block_id * superblock.BlockSize > try file.getEndPos())
+                                                                            return error.InvalidBlockIndex;
+                                                           blocks[j] = block_id;
+                                          }
 
-                stream.* = MsfStream.init(
-                    superblock.BlockSize,
-                    file,
-                    blocks,
-                );
-            }
-        }
+                                          stream.* = MsfStream.init(
+                                                           superblock.BlockSize,
+                                                           file,
+                                                           blocks,
+                                          );
+                                      }
+                     }
 
-        const end = self.directory.pos;
-        if (end - begin != superblock.NumDirectoryBytes)
-            return error.InvalidStreamDirectory;
+                     const end = self.directory.pos;
+                     if (end - begin != superblock.NumDirectoryBytes)
+                                      return error.InvalidStreamDirectory;
     }
 };
 
@@ -639,85 +639,85 @@ const MsfStream = struct {
     pub const Error = @typeInfo(@typeInfo(@TypeOf(read)).Fn.return_type.?).ErrorUnion.error_set;
 
     fn init(block_size: u32, file: File, blocks: []u32) MsfStream {
-        const stream = MsfStream{
-            .in_file = file,
-            .pos = 0,
-            .blocks = blocks,
-            .block_size = block_size,
-        };
+                     const stream = MsfStream{
+                                      .in_file = file,
+                                      .pos = 0,
+                                      .blocks = blocks,
+                                      .block_size = block_size,
+                     };
 
-        return stream;
+                     return stream;
     }
 
     pub fn readNullTermString(self: *MsfStream, allocator: *mem.Allocator) ![]u8 {
-        var list = ArrayList(u8).init(allocator);
-        while (true) {
-            const byte = try self.reader().readByte();
-            if (byte == 0) {
-                return list.span();
-            }
-            try list.append(byte);
-        }
+                     var list = ArrayList(u8).init(allocator);
+                     while (true) {
+                                      const byte = try self.reader().readByte();
+                                      if (byte == 0) {
+                                          return list.span();
+                                      }
+                                      try list.append(byte);
+                     }
     }
 
     fn read(self: *MsfStream, buffer: []u8) !usize {
-        var block_id = @intCast(usize, self.pos / self.block_size);
-        var block = self.blocks[block_id];
-        var offset = self.pos % self.block_size;
+                     var block_id = @intCast(usize, self.pos / self.block_size);
+                     var block = self.blocks[block_id];
+                     var offset = self.pos % self.block_size;
 
-        try self.in_file.seekTo(block * self.block_size + offset);
-        const in = self.in_file.reader();
+                     try self.in_file.seekTo(block * self.block_size + offset);
+                     const in = self.in_file.reader();
 
-        var size: usize = 0;
-        var rem_buffer = buffer;
-        while (size < buffer.len) {
-            const size_to_read = math.min(self.block_size - offset, rem_buffer.len);
-            size += try in.read(rem_buffer[0..size_to_read]);
-            rem_buffer = buffer[size..];
-            offset += size_to_read;
+                     var size: usize = 0;
+                     var rem_buffer = buffer;
+                     while (size < buffer.len) {
+                                      const size_to_read = math.min(self.block_size - offset, rem_buffer.len);
+                                      size += try in.read(rem_buffer[0..size_to_read]);
+                                      rem_buffer = buffer[size..];
+                                      offset += size_to_read;
 
-            // If we're at the end of a block, go to the next one.
-            if (offset == self.block_size) {
-                offset = 0;
-                block_id += 1;
-                block = self.blocks[block_id];
-                try self.in_file.seekTo(block * self.block_size);
-            }
-        }
+                                      // If we're at the end of a block, go to the next one.
+                                      if (offset == self.block_size) {
+                                          offset = 0;
+                                          block_id += 1;
+                                          block = self.blocks[block_id];
+                                          try self.in_file.seekTo(block * self.block_size);
+                                      }
+                     }
 
-        self.pos += buffer.len;
-        return buffer.len;
+                     self.pos += buffer.len;
+                     return buffer.len;
     }
 
     pub fn seekBy(self: *MsfStream, len: i64) !void {
-        self.pos = @intCast(u64, @intCast(i64, self.pos) + len);
-        if (self.pos >= self.blocks.len * self.block_size)
-            return error.EOF;
+                     self.pos = @intCast(u64, @intCast(i64, self.pos) + len);
+                     if (self.pos >= self.blocks.len * self.block_size)
+                                      return error.EOF;
     }
 
     pub fn seekTo(self: *MsfStream, len: u64) !void {
-        self.pos = len;
-        if (self.pos >= self.blocks.len * self.block_size)
-            return error.EOF;
+                     self.pos = len;
+                     if (self.pos >= self.blocks.len * self.block_size)
+                                      return error.EOF;
     }
 
     fn getSize(self: *const MsfStream) u64 {
-        return self.blocks.len * self.block_size;
+                     return self.blocks.len * self.block_size;
     }
 
     fn getFilePos(self: MsfStream) u64 {
-        const block_id = self.pos / self.block_size;
-        const block = self.blocks[block_id];
-        const offset = self.pos % self.block_size;
+                     const block_id = self.pos / self.block_size;
+                     const block = self.blocks[block_id];
+                     const offset = self.pos % self.block_size;
 
-        return block * self.block_size + offset;
+                     return block * self.block_size + offset;
     }
 
     pub fn reader(self: *MsfStream) std.io.Reader(*MsfStream, Error, read) {
-        return .{ .context = self };
+                     return .{ .context = self };
     }
     /// Deprecated: use `reader`
     pub fn inStream(self: *MsfStream) std.io.InStream(*MsfStream, Error, read) {
-        return .{ .context = self };
+                     return .{ .context = self };
     }
 };

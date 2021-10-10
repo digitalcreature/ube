@@ -35,7 +35,7 @@
 #ifndef _LINUX_TIPC_NETLINK_H_
 #define _LINUX_TIPC_NETLINK_H_
 
-#define TIPC_GENL_V2_NAME      "TIPCv2"
+#define TIPC_GENL_V2_NAME                   "TIPCv2"
 #define TIPC_GENL_V2_VERSION   0x1
 
 /* Netlink commands */

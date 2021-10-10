@@ -90,9 +90,9 @@ extern "C" {
     RM_FILTER_TRIGGER FilterTrigger;
     DWORD cbNextOffset;
     __C89_NAMELESS union {
-      LPWSTR strFilename;
-      RM_UNIQUE_PROCESS Process;
-      LPWSTR strServiceShortName;
+                   LPWSTR strFilename;
+                   RM_UNIQUE_PROCESS Process;
+                   LPWSTR strServiceShortName;
     };
   } RM_FILTER_INFO, *PRM_FILTER_INFO;
 

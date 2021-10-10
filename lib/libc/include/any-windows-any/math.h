@@ -120,7 +120,7 @@ extern "C" {
     double x;
     unsigned long long val;
     __C89_NAMELESS struct {
-      unsigned int low, high;
+                   unsigned int low, high;
     } lh;
   } __mingw_dbl_type_t;
 
@@ -133,10 +133,10 @@ extern "C" {
   {
     long double x;
     __C89_NAMELESS struct {
-      unsigned int low, high;
-      int sign_exponent : 16;
-      int res1 : 16;
-      int res0 : 32;
+                   unsigned int low, high;
+                   int sign_exponent : 16;
+                   int res1 : 16;
+                   int res0 : 32;
     } lh;
   } __mingw_ldbl_type_t;
 
@@ -164,7 +164,7 @@ extern "C" {
   };
 
   void __mingw_raise_matherr (int typ, const char *name, double a1, double a2,
-			      double rslt);
+			                   double rslt);
   void __mingw_setusermatherr (int (__cdecl *)(struct _exception *));
   _CRTIMP void __setusermatherr(int (__cdecl *)(struct _exception *));
   #define __setusermatherr __mingw_setusermatherr
@@ -406,16 +406,16 @@ typedef long double double_t;
     hlp.x = x;
     e = hlp.lh.sign_exponent & 0x7fff;
     if (!e)
-      {
-        unsigned int h = hlp.lh.high;
-        if (!(hlp.lh.low | h))
-          return FP_ZERO;
-        else if (!(h & 0x80000000))
-          return FP_SUBNORMAL;
-      }
+                   {
+                     unsigned int h = hlp.lh.high;
+                     if (!(hlp.lh.low | h))
+                       return FP_ZERO;
+                     else if (!(h & 0x80000000))
+                       return FP_SUBNORMAL;
+                   }
     else if (e == 0x7fff)
-      return (((hlp.lh.high & 0x7fffffff) | hlp.lh.low) == 0 ?
-              FP_INFINITE : FP_NAN);
+                   return (((hlp.lh.high & 0x7fffffff) | hlp.lh.low) == 0 ?
+                                        FP_INFINITE : FP_NAN);
     return FP_NORMAL;
 #elif defined(__arm__) || defined(_ARM_) || defined(__aarch64__) || defined(_ARM64_)
     return __fpclassify(x);
@@ -435,11 +435,11 @@ typedef long double double_t;
     l = hlp.lh.low | (h & 0xfffff);
     h &= 0x7ff00000;
     if ((h | l) == 0)
-      return FP_ZERO;
+                   return FP_ZERO;
     if (!h)
-      return FP_SUBNORMAL;
+                   return FP_SUBNORMAL;
     if (h == 0x7ff00000)
-      return (l ? FP_NAN : FP_INFINITE);
+                   return (l ? FP_NAN : FP_INFINITE);
     return FP_NORMAL;
 #elif defined(__i386__) || defined(_X86_)
     unsigned short sw;
@@ -454,11 +454,11 @@ typedef long double double_t;
     hlp.x = x;
     hlp.val &= 0x7fffffff;
     if (hlp.val == 0)
-      return FP_ZERO;
+                   return FP_ZERO;
     if (hlp.val < 0x800000)
-      return FP_SUBNORMAL;
+                   return FP_SUBNORMAL;
     if (hlp.val >= 0x7f800000)
-      return (hlp.val > 0x7f800000 ? FP_NAN : FP_INFINITE);
+                   return (hlp.val > 0x7f800000 ? FP_NAN : FP_INFINITE);
     return FP_NORMAL;
 #elif defined(__i386__) || defined(_X86_)
     unsigned short sw;
@@ -470,30 +470,30 @@ typedef long double double_t;
 
 #ifdef __STDC_WANT_DEC_FP__
 #define __dfp_expansion(__call,__fin,x) \
-__mingw_choose_expr (                                  \
-      __mingw_types_compatible_p (__typeof__ (x), _Decimal32),    \
-        __call##d32(x),                                         \
-    __mingw_choose_expr (                                     \
-      __mingw_types_compatible_p (__typeof__ (x), _Decimal64),    \
-        __call##d64(x),                                         \
-    __mingw_choose_expr (                                     \
-      __mingw_types_compatible_p (__typeof__ (x), _Decimal128),   \
-        __call##d128(x),                                        \
+__mingw_choose_expr (                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), _Decimal32),    \
+                     __call##d32(x),                                                                                                                       \
+    __mingw_choose_expr (                                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), _Decimal64),    \
+                     __call##d64(x),                                                                                                                       \
+    __mingw_choose_expr (                                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), _Decimal128),   \
+                     __call##d128(x),                                                                                                                      \
 __fin)))
 #else
 #define __dfp_expansion(__call,__fin,x) __fin
 #endif
 
 #define fpclassify(x) \
-__mingw_choose_expr (                                         \
-  __mingw_types_compatible_p (__typeof__ (x), double),            \
-    __fpclassify(x),                                            \
-    __mingw_choose_expr (                                     \
-      __mingw_types_compatible_p (__typeof__ (x), float),         \
-        __fpclassifyf(x),                                       \
-    __mingw_choose_expr (                                     \
-      __mingw_types_compatible_p (__typeof__ (x), long double),   \
-        __fpclassifyl(x),                                       \
+__mingw_choose_expr (                                                                                                                       \
+  __mingw_types_compatible_p (__typeof__ (x), double),                                      \
+    __fpclassify(x),                                                                                                                                       \
+    __mingw_choose_expr (                                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), float),                      \
+                     __fpclassifyf(x),                                                                                                                     \
+    __mingw_choose_expr (                                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), long double),   \
+                     __fpclassifyl(x),                                                                                                                     \
     __dfp_expansion(__fpclassify,(__builtin_trap(),0),x))))
 
 
@@ -527,9 +527,9 @@ __mingw_choose_expr (                                         \
 #elif defined(__i386__) || defined(_X86_)
     unsigned short sw;
     __asm__ __volatile__ ("fxam;"
-      "fstsw %%ax": "=a" (sw) : "t" (_x));
+                   "fstsw %%ax": "=a" (sw) : "t" (_x));
     return (sw & (FP_NAN | FP_NORMAL | FP_INFINITE | FP_ZERO | FP_SUBNORMAL))
-      == FP_NAN;
+                   == FP_NAN;
 #endif
   }
 
@@ -546,9 +546,9 @@ __mingw_choose_expr (                                         \
 #elif defined(__i386__) || defined(_X86_)
     unsigned short sw;
     __asm__ __volatile__ ("fxam;"
-      "fstsw %%ax": "=a" (sw) : "t" (_x));
+                   "fstsw %%ax": "=a" (sw) : "t" (_x));
     return (sw & (FP_NAN | FP_NORMAL | FP_INFINITE | FP_ZERO | FP_SUBNORMAL))
-      == FP_NAN;
+                   == FP_NAN;
 #endif
   }
 
@@ -569,9 +569,9 @@ __mingw_choose_expr (                                         \
 #elif defined(__i386__) || defined(_X86_)
     unsigned short sw;
     __asm__ __volatile__ ("fxam;"
-      "fstsw %%ax": "=a" (sw) : "t" (_x));
+                   "fstsw %%ax": "=a" (sw) : "t" (_x));
     return (sw & (FP_NAN | FP_NORMAL | FP_INFINITE | FP_ZERO | FP_SUBNORMAL))
-      == FP_NAN;
+                   == FP_NAN;
 #endif
   }
 #endif
@@ -579,15 +579,15 @@ __mingw_choose_expr (                                         \
 
 
 #define isnan(x) \
-__mingw_choose_expr (                                         \
-  __mingw_types_compatible_p (__typeof__ (x), double),            \
-    __isnan(x),                                                 \
-    __mingw_choose_expr (                                     \
-      __mingw_types_compatible_p (__typeof__ (x), float),         \
-        __isnanf(x),                                            \
-    __mingw_choose_expr (                                     \
-      __mingw_types_compatible_p (__typeof__ (x), long double),   \
-        __isnanl(x),                                            \
+__mingw_choose_expr (                                                                                                                       \
+  __mingw_types_compatible_p (__typeof__ (x), double),                                      \
+    __isnan(x),                                                                                                                                                         \
+    __mingw_choose_expr (                                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), float),                      \
+                     __isnanf(x),                                                                                                                                       \
+    __mingw_choose_expr (                                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), long double),   \
+                     __isnanl(x),                                                                                                                                       \
     __dfp_expansion(__isnan,(__builtin_trap(),x),x))))
 
 /* 7.12.3.5 */
@@ -639,15 +639,15 @@ __mingw_choose_expr (                                         \
 #endif
 
 #define signbit(x) \
-__mingw_choose_expr (                                         \
-  __mingw_types_compatible_p (__typeof__ (x), double),            \
-    __signbit(x),                                               \
-    __mingw_choose_expr (                                     \
-      __mingw_types_compatible_p (__typeof__ (x), float),         \
-        __signbitf(x),                                          \
-    __mingw_choose_expr (                                     \
-      __mingw_types_compatible_p (__typeof__ (x), long double),   \
-        __signbitl(x),                                          \
+__mingw_choose_expr (                                                                                                                       \
+  __mingw_types_compatible_p (__typeof__ (x), double),                                      \
+    __signbit(x),                                                                                                                                          \
+    __mingw_choose_expr (                                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), float),                      \
+                     __signbitf(x),                                                                                                                                     \
+    __mingw_choose_expr (                                                                                                                   \
+                   __mingw_types_compatible_p (__typeof__ (x), long double),   \
+                     __signbitl(x),                                                                                                                                     \
      __dfp_expansion(__signbit,(__builtin_trap(),x),x))))
 
 /* 7.12.4 Trigonometric functions: Double in C89 */
@@ -797,7 +797,7 @@ __mingw_choose_expr (                                         \
 #elif defined(__i386__) || defined(_X86_)
     double res = 0.0;
     __asm__ __volatile__ ("fxtract\n\t"
-      "fstp	%%st" : "=t" (res) : "0" (x));
+                   "fstp	%%st" : "=t" (res) : "0" (x));
     return res;
 #endif
   }
@@ -809,18 +809,18 @@ __mingw_choose_expr (                                         \
     __mingw_flt_type_t hlp;
 
     hlp.x = x;
-    v = hlp.val & 0x7fffffff;                     /* high |x| */
+    v = hlp.val & 0x7fffffff;                                                            /* high |x| */
     if (!v)
-      return (float)-1.0 / fabsf (x);
+                   return (float)-1.0 / fabsf (x);
     if (v >= 0x7f800000)
     return x * x;
     if ((v >>= 23) == 0)
-      return -127.0 - (__builtin_clzl(hlp.val & 0x7fffff) - 9);
+                   return -127.0 - (__builtin_clzl(hlp.val & 0x7fffff) - 9);
   return (float) (v - 127);
 #elif defined(__i386__) || defined(_X86_)
     float res = 0.0F;
     __asm__ __volatile__ ("fxtract\n\t"
-      "fstp	%%st" : "=t" (res) : "0" (x));
+                   "fstp	%%st" : "=t" (res) : "0" (x));
     return res;
 #endif
   }
@@ -846,7 +846,7 @@ __mingw_choose_expr (                                         \
 #elif defined(__x86_64__) || defined(_AMD64_) || defined(__i386__) || defined(_X86_)
     long double res = 0.0l;
     __asm__ __volatile__ ("fxtract\n\t"
-      "fstp	%%st" : "=t" (res) : "0" (x));
+                   "fstp	%%st" : "=t" (res) : "0" (x));
     return res;
 #endif
   }
@@ -972,49 +972,49 @@ __MINGW_EXTENSION long long __cdecl llrintl (long double);
   __CRT_INLINE long __cdecl lrint (double x) 
   {
     long retval = 0;
-    __asm__ __volatile__							      \
-      ("fistpl %0"  : "=m" (retval) : "t" (x) : "st");				      \
-      return retval;
+    __asm__ __volatile__							                   \
+                   ("fistpl %0"  : "=m" (retval) : "t" (x) : "st");				                   \
+                   return retval;
   }
 
   __CRT_INLINE long __cdecl lrintf (float x) 
   {
     long retval = 0;
-    __asm__ __volatile__							      \
-      ("fistpl %0"  : "=m" (retval) : "t" (x) : "st");				      \
-      return retval;
+    __asm__ __volatile__							                   \
+                   ("fistpl %0"  : "=m" (retval) : "t" (x) : "st");				                   \
+                   return retval;
   }
 
   __CRT_INLINE long __cdecl lrintl (long double x) 
   {
     long retval = 0;
-    __asm__ __volatile__							      \
-      ("fistpl %0"  : "=m" (retval) : "t" (x) : "st");				      \
-      return retval;
+    __asm__ __volatile__							                   \
+                   ("fistpl %0"  : "=m" (retval) : "t" (x) : "st");				                   \
+                   return retval;
   }
 
   __MINGW_EXTENSION __CRT_INLINE long long __cdecl llrint (double x) 
   {
     __MINGW_EXTENSION long long retval = 0ll;
-    __asm__ __volatile__							      \
-      ("fistpll %0"  : "=m" (retval) : "t" (x) : "st");				      \
-      return retval;
+    __asm__ __volatile__							                   \
+                   ("fistpll %0"  : "=m" (retval) : "t" (x) : "st");				                   \
+                   return retval;
   }
 
   __MINGW_EXTENSION __CRT_INLINE long long __cdecl llrintf (float x) 
   {
     __MINGW_EXTENSION long long retval = 0ll;
-    __asm__ __volatile__							      \
-      ("fistpll %0"  : "=m" (retval) : "t" (x) : "st");				      \
-      return retval;
+    __asm__ __volatile__							                   \
+                   ("fistpll %0"  : "=m" (retval) : "t" (x) : "st");				                   \
+                   return retval;
   }
 
   __MINGW_EXTENSION __CRT_INLINE long long __cdecl llrintl (long double x) 
   {
     __MINGW_EXTENSION long long retval = 0ll;
-    __asm__ __volatile__							      \
-      ("fistpll %0"  : "=m" (retval) : "t" (x) : "st");				      \
-      return retval;
+    __asm__ __volatile__							                   \
+                   ("fistpll %0"  : "=m" (retval) : "t" (x) : "st");				                   \
+                   return retval;
   }
 #endif /* defined(__GNUC__) && defined(__FAST_MATH__) */
 #endif /* !__CRT__NO_INLINE */
@@ -1148,10 +1148,10 @@ __MINGW_EXTENSION long long __cdecl llrintl (long double);
 #ifndef __CRT__NO_INLINE
   __CRT_INLINE int  __cdecl
     __fp_unordered_compare (long double x, long double y){
-      unsigned short retval;
-      __asm__ __volatile__ ("fucom %%st(1);"
+                   unsigned short retval;
+                   __asm__ __volatile__ ("fucom %%st(1);"
 	"fnstsw;": "=a" (retval) : "t" (x), "u" (y));
-      return retval;
+                   return retval;
   }
 #endif /* __GNUC__ */
 

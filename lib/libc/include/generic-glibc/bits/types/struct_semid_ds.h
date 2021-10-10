@@ -23,11 +23,11 @@
 /* Data structure describing a set of semaphores.  */
 struct semid_ds
 {
-  struct ipc_perm sem_perm;        /* operation permission struct */
+  struct ipc_perm sem_perm;                     /* operation permission struct */
 #if __TIMESIZE == 32
-  __time_t sem_otime;              /* last semop() time */
+  __time_t sem_otime;                                        /* last semop() time */
   __syscall_ulong_t __sem_otime_high;
-  __time_t sem_ctime;             /* last time changed by semctl() */
+  __time_t sem_ctime;                                       /* last time changed by semctl() */
   __syscall_ulong_t __sem_ctime_high;
 #else
   __time_t sem_otime;

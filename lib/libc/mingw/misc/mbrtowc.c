@@ -14,8 +14,8 @@
 
 static int __MINGW_ATTRIB_NONNULL(1) __MINGW_ATTRIB_NONNULL(4)
 __mbrtowc_cp (wchar_t * __restrict__ pwc, const char * __restrict__ s,
-	      size_t n, mbstate_t* __restrict__ ps,
-	      const unsigned int cp, const unsigned int mb_max) 
+	                   size_t n, mbstate_t* __restrict__ ps,
+	                   const unsigned int cp, const unsigned int mb_max) 
 {
   union {
     mbstate_t val;
@@ -28,7 +28,7 @@ __mbrtowc_cp (wchar_t * __restrict__ pwc, const char * __restrict__ s,
 
   if (n == 0)
     /* The standard doesn't mention this case explicitly. Tell
-       caller that the conversion from a non-null s is incomplete. */
+                    caller that the conversion from a non-null s is incomplete. */
     return -2;
 
   /* Save the current shift state, in case we need it in DBCS case.  */
@@ -37,13 +37,13 @@ __mbrtowc_cp (wchar_t * __restrict__ pwc, const char * __restrict__ s,
 
   if (!*s)
     {
-      *pwc = 0;
-      return 0;
+                   *pwc = 0;
+                   return 0;
     }
 
   if (mb_max > 1)
     {
-      if (shift_state.mbcs[0] != 0)
+                   if (shift_state.mbcs[0] != 0)
 	{
 	  /* Complete the mb char with the trailing byte.  */
 	  shift_state.mbcs[1] = *s;  /* the second byte */
@@ -51,28 +51,28 @@ __mbrtowc_cp (wchar_t * __restrict__ pwc, const char * __restrict__ s,
 				  shift_state.mbcs, 2, pwc, 1)
 		 == 0)
 	    {
-	      /* An invalid trailing byte */
-	      errno = EILSEQ;
-	      return -1;
+	                   /* An invalid trailing byte */
+	                   errno = EILSEQ;
+	                   return -1;
 	    }
 	  return 2;
 	}
-      else if (IsDBCSLeadByteEx (cp, *s))
+                   else if (IsDBCSLeadByteEx (cp, *s))
 	{
 	  /* If told to translate one byte, just save the leadbyte
 	     in *ps.  */
 	  if (n < 2)
 	    {
-	      ((char*) ps)[0] = *s;
-	      return -2;
+	                   ((char*) ps)[0] = *s;
+	                   return -2;
 	    }
 	  /* Else translate the first two bytes  */  
 	  else if (MultiByteToWideChar (cp, MB_ERR_INVALID_CHARS,
 					s, 2, pwc, 1)
 		    == 0)
 	    {
-	      errno = EILSEQ;
-	      return -1;
+	                   errno = EILSEQ;
+	                   return -1;
 	    }
 	  return 2;
 	}
@@ -80,13 +80,13 @@ __mbrtowc_cp (wchar_t * __restrict__ pwc, const char * __restrict__ s,
 
   /* Fall through to single byte char  */
   if (cp == 0)
-      *pwc = (wchar_t)(unsigned char)*s;
+                   *pwc = (wchar_t)(unsigned char)*s;
 
   else if (MultiByteToWideChar (cp, MB_ERR_INVALID_CHARS, s, 1, pwc, 1)
 	    == 0)
     {
-      errno = EILSEQ;
-      return  -1;
+                   errno = EILSEQ;
+                   return  -1;
     }
 
   return 1;
@@ -121,7 +121,7 @@ mbsrtowcs (wchar_t* __restrict__ dst,  const char ** __restrict__ src,
 
   if (dst != NULL)
     {
-      while (n < len
+                   while (n < len
 	     && (ret = __mbrtowc_cp(dst, *src, len - n,
 				    internal_ps, cp, mb_max))
 		  > 0)
@@ -131,13 +131,13 @@ mbsrtowcs (wchar_t* __restrict__ dst,  const char ** __restrict__ src,
 	  n += ret;
 	}
 
-      if (n < len && ret == 0)
+                   if (n < len && ret == 0)
 	*src = (char *)NULL;
     }
   else
     {
-      wchar_t byte_bucket = 0;
-      while ((ret = __mbrtowc_cp (&byte_bucket, *src + n, mb_max,
+                   wchar_t byte_bucket = 0;
+                   while ((ret = __mbrtowc_cp (&byte_bucket, *src + n, mb_max,
 				     internal_ps, cp, mb_max))
 		  > 0)
 	n += ret;
@@ -152,5 +152,5 @@ mbrlen (const char * __restrict__ s, size_t n,
   static mbstate_t s_mbstate = 0;
   wchar_t byte_bucket = 0;
   return __mbrtowc_cp (&byte_bucket, s, n, (ps) ? ps : &s_mbstate,
-		       ___lc_codepage_func(), MB_CUR_MAX);
+		                    ___lc_codepage_func(), MB_CUR_MAX);
 }

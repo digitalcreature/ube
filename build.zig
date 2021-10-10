@@ -7,60 +7,60 @@ fn addDeps(step: *LibExeObjStep) void {
     // SRC libs
 
     const math: Pkg = .{
-        .name = "math",
-        .path = "src/math/lib.zig",
+                     .name = "math",
+                     .path = "src/math/lib.zig",
     };
     const res: Pkg = .{
-        .name = "res",
-        .path = "res/.zig",
+                     .name = "res",
+                     .path = "res/.zig",
     };
     const utils: Pkg = .{
-        .name = "utils",
-        .path = "src/utils/lib.zig",
+                     .name = "utils",
+                     .path = "src/utils/lib.zig",
     };
     const c: Pkg = .{
-        .name = "c",
-        .path = "src/c.zig",
+                     .name = "c",
+                     .path = "src/c.zig",
     };
     const gl: Pkg = .{
-        .name = "gl",
-        .path = "src/gl/lib.zig",
-        .dependencies = &[_]Pkg{ math, c },
+                     .name = "gl",
+                     .path = "src/gl/lib.zig",
+                     .dependencies = &[_]Pkg{ math, c },
     };
     const glfw: Pkg = .{
-        .name = "glfw",
-        .path = "src/glfw/lib.zig",
-        .dependencies = &[_]Pkg{ math, c },
+                     .name = "glfw",
+                     .path = "src/glfw/lib.zig",
+                     .dependencies = &[_]Pkg{ math, c },
     };
     const imgui: Pkg = .{
-        .name = "imgui",
-        .path = "src/imgui/lib.zig",
-        .dependencies = &[_]Pkg{ math, c, glfw },
+                     .name = "imgui",
+                     .path = "src/imgui/lib.zig",
+                     .dependencies = &[_]Pkg{ math, c, glfw },
     };
     const threading: Pkg = .{
-        .name = "threading",
-        .path = "src/threading/lib.zig",
-        .dependencies = &[_]Pkg{},
+                     .name = "threading",
+                     .path = "src/threading/lib.zig",
+                     .dependencies = &[_]Pkg{},
     };
     const voxel: Pkg = .{
-        .name = "voxel",
-        .path = "src/voxel/lib.zig",
-        .dependencies = &[_]Pkg{ gl, math, threading, res },
+                     .name = "voxel",
+                     .path = "src/voxel/lib.zig",
+                     .dependencies = &[_]Pkg{ gl, math, threading, res },
     };
     const camera: Pkg = .{
-        .name = "camera",
-        .path = "src/camera/lib.zig",
-        .dependencies = &[_]Pkg{ imgui, math, glfw },
+                     .name = "camera",
+                     .path = "src/camera/lib.zig",
+                     .dependencies = &[_]Pkg{ imgui, math, glfw },
     };
     const debughud: Pkg = .{
-        .name = "debughud",
-        .path = "src/debughud/lib.zig",
-        .dependencies = &[_]Pkg{ imgui, math, glfw, camera },
+                     .name = "debughud",
+                     .path = "src/debughud/lib.zig",
+                     .dependencies = &[_]Pkg{ imgui, math, glfw, camera },
     };
     const mesh: Pkg = .{
-        .name = "mesh",
-        .path = "src/mesh/lib.zig",
-        .dependencies = &[_]Pkg{ math, gl },
+                     .name = "mesh",
+                     .path = "src/mesh/lib.zig",
+                     .dependencies = &[_]Pkg{ math, gl },
     };
 
     //END SRC libs
@@ -83,25 +83,25 @@ fn addDeps(step: *LibExeObjStep) void {
 
     // Windows specific libs
     {
-        step.addIncludeDir("deps/inc");
-        // step.addIncludeDir("C:/Users/sam/zig-windows-x86_64-0.8.0/lib/libc/include/any-windows-any");
-        // step.addIncludeDir("C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/include");
-        step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
-        step.addCSourceFile("deps/src/stb_image.c", &[_][]const u8{"-std=c99"});
-        // step.addIncludeDir("GLFW/include/GLFW");
+                     step.addIncludeDir("deps/inc");
+                     // step.addIncludeDir("C:/Users/sam/zig-windows-x86_64-0.8.0/lib/libc/include/any-windows-any");
+                     // step.addIncludeDir("C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/include");
+                     step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
+                     step.addCSourceFile("deps/src/stb_image.c", &[_][]const u8{"-std=c99"});
+                     // step.addIncludeDir("GLFW/include/GLFW");
 
-        step.addLibPath("deps/lib");
-        step.linkSystemLibrary("glfw3");
-        // step.linkSystemLibrary("user32");
-        // step.linkSystemLibrary("gdi32");
-        // step.linkSystemLibrary("shell32");
-        // step.linkSystemLibrary("opengl32");
-        step.linkSystemLibrary("deps/lib/cimguid");
+                     step.addLibPath("deps/lib");
+                     step.linkSystemLibrary("glfw3");
+                     // step.linkSystemLibrary("user32");
+                     // step.linkSystemLibrary("gdi32");
+                     // step.linkSystemLibrary("shell32");
+                     // step.linkSystemLibrary("opengl32");
+                     step.linkSystemLibrary("deps/lib/cimguid");
 
-        // END windows specific libs
+                     // END windows specific libs
 
-        // Ew libC use reLibC
-        step.linkLibC();
+                     // Ew libC use reLibC
+                     step.linkLibC();
     }
 }
 
@@ -141,7 +141,7 @@ pub fn build(b: *Builder) void {
     const run_cmd = exe.run();
     run_cmd.step.dependOn(b.getInstallStep());
     if (b.args) |args| {
-        run_cmd.addArgs(args);
+                     run_cmd.addArgs(args);
     }
 
     const run_step = b.step("run", "Run the app");

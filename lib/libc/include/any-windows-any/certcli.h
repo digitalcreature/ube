@@ -117,14 +117,14 @@ extern "C"{
 #else
   typedef struct ICertGetConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertGetConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertGetConfig *This);
-      ULONG (WINAPI *Release)(ICertGetConfig *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertGetConfig *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertGetConfig *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertGetConfig *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertGetConfig *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetConfig)(ICertGetConfig *This,LONG Flags,BSTR *pstrOut);
+                   HRESULT (WINAPI *QueryInterface)(ICertGetConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertGetConfig *This);
+                   ULONG (WINAPI *Release)(ICertGetConfig *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertGetConfig *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertGetConfig *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertGetConfig *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertGetConfig *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetConfig)(ICertGetConfig *This,LONG Flags,BSTR *pstrOut);
     END_INTERFACE
   } ICertGetConfigVtbl;
   struct ICertGetConfig {
@@ -186,17 +186,17 @@ extern "C"{
 #else
   typedef struct ICertConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertConfig *This);
-      ULONG (WINAPI *Release)(ICertConfig *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertConfig *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertConfig *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertConfig *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertConfig *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Reset)(ICertConfig *This,LONG Index,LONG *pCount);
-      HRESULT (WINAPI *Next)(ICertConfig *This,LONG *pIndex);
-      HRESULT (WINAPI *GetField)(ICertConfig *This,const BSTR strFieldName,BSTR *pstrOut);
-      HRESULT (WINAPI *GetConfig)(ICertConfig *This,LONG Flags,BSTR *pstrOut);
+                   HRESULT (WINAPI *QueryInterface)(ICertConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertConfig *This);
+                   ULONG (WINAPI *Release)(ICertConfig *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertConfig *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertConfig *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertConfig *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertConfig *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Reset)(ICertConfig *This,LONG Index,LONG *pCount);
+                   HRESULT (WINAPI *Next)(ICertConfig *This,LONG *pIndex);
+                   HRESULT (WINAPI *GetField)(ICertConfig *This,const BSTR strFieldName,BSTR *pstrOut);
+                   HRESULT (WINAPI *GetConfig)(ICertConfig *This,LONG Flags,BSTR *pstrOut);
     END_INTERFACE
   } ICertConfigVtbl;
   struct ICertConfig {
@@ -237,18 +237,18 @@ extern "C"{
 #else
   typedef struct ICertConfig2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertConfig2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertConfig2 *This);
-      ULONG (WINAPI *Release)(ICertConfig2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertConfig2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertConfig2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertConfig2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertConfig2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Reset)(ICertConfig2 *This,LONG Index,LONG *pCount);
-      HRESULT (WINAPI *Next)(ICertConfig2 *This,LONG *pIndex);
-      HRESULT (WINAPI *GetField)(ICertConfig2 *This,const BSTR strFieldName,BSTR *pstrOut);
-      HRESULT (WINAPI *GetConfig)(ICertConfig2 *This,LONG Flags,BSTR *pstrOut);
-      HRESULT (WINAPI *SetSharedFolder)(ICertConfig2 *This,const BSTR strSharedFolder);
+                   HRESULT (WINAPI *QueryInterface)(ICertConfig2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertConfig2 *This);
+                   ULONG (WINAPI *Release)(ICertConfig2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertConfig2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertConfig2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertConfig2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertConfig2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Reset)(ICertConfig2 *This,LONG Index,LONG *pCount);
+                   HRESULT (WINAPI *Next)(ICertConfig2 *This,LONG *pIndex);
+                   HRESULT (WINAPI *GetField)(ICertConfig2 *This,const BSTR strFieldName,BSTR *pstrOut);
+                   HRESULT (WINAPI *GetConfig)(ICertConfig2 *This,LONG Flags,BSTR *pstrOut);
+                   HRESULT (WINAPI *SetSharedFolder)(ICertConfig2 *This,const BSTR strSharedFolder);
     END_INTERFACE
   } ICertConfig2Vtbl;
   struct ICertConfig2 {
@@ -395,20 +395,20 @@ extern "C"{
 #else
   typedef struct ICertRequestVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertRequest *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertRequest *This);
-      ULONG (WINAPI *Release)(ICertRequest *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertRequest *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertRequest *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertRequest *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertRequest *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Submit)(ICertRequest *This,LONG Flags,const BSTR strRequest,const BSTR strAttributes,const BSTR strConfig,LONG *pDisposition);
-      HRESULT (WINAPI *RetrievePending)(ICertRequest *This,LONG RequestId,const BSTR strConfig,LONG *pDisposition);
-      HRESULT (WINAPI *GetLastStatus)(ICertRequest *This,LONG *pStatus);
-      HRESULT (WINAPI *GetRequestId)(ICertRequest *This,LONG *pRequestId);
-      HRESULT (WINAPI *GetDispositionMessage)(ICertRequest *This,BSTR *pstrDispositionMessage);
-      HRESULT (WINAPI *GetCACertificate)(ICertRequest *This,LONG fExchangeCertificate,const BSTR strConfig,LONG Flags,BSTR *pstrCertificate);
-      HRESULT (WINAPI *GetCertificate)(ICertRequest *This,LONG Flags,BSTR *pstrCertificate);
+                   HRESULT (WINAPI *QueryInterface)(ICertRequest *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertRequest *This);
+                   ULONG (WINAPI *Release)(ICertRequest *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertRequest *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertRequest *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertRequest *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertRequest *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Submit)(ICertRequest *This,LONG Flags,const BSTR strRequest,const BSTR strAttributes,const BSTR strConfig,LONG *pDisposition);
+                   HRESULT (WINAPI *RetrievePending)(ICertRequest *This,LONG RequestId,const BSTR strConfig,LONG *pDisposition);
+                   HRESULT (WINAPI *GetLastStatus)(ICertRequest *This,LONG *pStatus);
+                   HRESULT (WINAPI *GetRequestId)(ICertRequest *This,LONG *pRequestId);
+                   HRESULT (WINAPI *GetDispositionMessage)(ICertRequest *This,BSTR *pstrDispositionMessage);
+                   HRESULT (WINAPI *GetCACertificate)(ICertRequest *This,LONG fExchangeCertificate,const BSTR strConfig,LONG Flags,BSTR *pstrCertificate);
+                   HRESULT (WINAPI *GetCertificate)(ICertRequest *This,LONG Flags,BSTR *pstrCertificate);
     END_INTERFACE
   } ICertRequestVtbl;
   struct ICertRequest {
@@ -463,26 +463,26 @@ extern "C"{
 #else
   typedef struct ICertRequest2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertRequest2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertRequest2 *This);
-      ULONG (WINAPI *Release)(ICertRequest2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertRequest2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertRequest2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertRequest2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertRequest2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Submit)(ICertRequest2 *This,LONG Flags,const BSTR strRequest,const BSTR strAttributes,const BSTR strConfig,LONG *pDisposition);
-      HRESULT (WINAPI *RetrievePending)(ICertRequest2 *This,LONG RequestId,const BSTR strConfig,LONG *pDisposition);
-      HRESULT (WINAPI *GetLastStatus)(ICertRequest2 *This,LONG *pStatus);
-      HRESULT (WINAPI *GetRequestId)(ICertRequest2 *This,LONG *pRequestId);
-      HRESULT (WINAPI *GetDispositionMessage)(ICertRequest2 *This,BSTR *pstrDispositionMessage);
-      HRESULT (WINAPI *GetCACertificate)(ICertRequest2 *This,LONG fExchangeCertificate,const BSTR strConfig,LONG Flags,BSTR *pstrCertificate);
-      HRESULT (WINAPI *GetCertificate)(ICertRequest2 *This,LONG Flags,BSTR *pstrCertificate);
-      HRESULT (WINAPI *GetIssuedCertificate)(ICertRequest2 *This,const BSTR strConfig,LONG RequestId,const BSTR strSerialNumber,LONG *pDisposition);
-      HRESULT (WINAPI *GetErrorMessageText)(ICertRequest2 *This,LONG hrMessage,LONG Flags,BSTR *pstrErrorMessageText);
-      HRESULT (WINAPI *GetCAProperty)(ICertRequest2 *This,const BSTR strConfig,LONG PropId,LONG PropIndex,LONG PropType,LONG Flags,VARIANT *pvarPropertyValue);
-      HRESULT (WINAPI *GetCAPropertyFlags)(ICertRequest2 *This,const BSTR strConfig,LONG PropId,LONG *pPropFlags);
-      HRESULT (WINAPI *GetCAPropertyDisplayName)(ICertRequest2 *This,const BSTR strConfig,LONG PropId,BSTR *pstrDisplayName);
-      HRESULT (WINAPI *GetFullResponseProperty)(ICertRequest2 *This,LONG PropId,LONG PropIndex,LONG PropType,LONG Flags,VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *QueryInterface)(ICertRequest2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertRequest2 *This);
+                   ULONG (WINAPI *Release)(ICertRequest2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertRequest2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertRequest2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertRequest2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertRequest2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Submit)(ICertRequest2 *This,LONG Flags,const BSTR strRequest,const BSTR strAttributes,const BSTR strConfig,LONG *pDisposition);
+                   HRESULT (WINAPI *RetrievePending)(ICertRequest2 *This,LONG RequestId,const BSTR strConfig,LONG *pDisposition);
+                   HRESULT (WINAPI *GetLastStatus)(ICertRequest2 *This,LONG *pStatus);
+                   HRESULT (WINAPI *GetRequestId)(ICertRequest2 *This,LONG *pRequestId);
+                   HRESULT (WINAPI *GetDispositionMessage)(ICertRequest2 *This,BSTR *pstrDispositionMessage);
+                   HRESULT (WINAPI *GetCACertificate)(ICertRequest2 *This,LONG fExchangeCertificate,const BSTR strConfig,LONG Flags,BSTR *pstrCertificate);
+                   HRESULT (WINAPI *GetCertificate)(ICertRequest2 *This,LONG Flags,BSTR *pstrCertificate);
+                   HRESULT (WINAPI *GetIssuedCertificate)(ICertRequest2 *This,const BSTR strConfig,LONG RequestId,const BSTR strSerialNumber,LONG *pDisposition);
+                   HRESULT (WINAPI *GetErrorMessageText)(ICertRequest2 *This,LONG hrMessage,LONG Flags,BSTR *pstrErrorMessageText);
+                   HRESULT (WINAPI *GetCAProperty)(ICertRequest2 *This,const BSTR strConfig,LONG PropId,LONG PropIndex,LONG PropType,LONG Flags,VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *GetCAPropertyFlags)(ICertRequest2 *This,const BSTR strConfig,LONG PropId,LONG *pPropFlags);
+                   HRESULT (WINAPI *GetCAPropertyDisplayName)(ICertRequest2 *This,const BSTR strConfig,LONG PropId,BSTR *pstrDisplayName);
+                   HRESULT (WINAPI *GetFullResponseProperty)(ICertRequest2 *This,LONG PropId,LONG PropIndex,LONG PropType,LONG Flags,VARIANT *pvarPropertyValue);
     END_INTERFACE
   } ICertRequest2Vtbl;
   struct ICertRequest2 {

@@ -40,9 +40,9 @@ typedef enum _CARD_DIRECTORY_ACCESS_CONDITION {
 
 typedef enum _CARD_FILE_ACCESS_CONDITION {
   EveryoneReadUserWriteAc    = 1,
-  UserWriteExecuteAc         = 2,
+  UserWriteExecuteAc                      = 2,
   EveryoneReadAdminWriteAc   = 3,
-  UnknownAc                  = 4 
+  UnknownAc                                                         = 4 
 } CARD_FILE_ACCESS_CONDITION;
 
 typedef struct _CARD_SIGNING_INFO {
@@ -117,8 +117,8 @@ typedef struct _CARD_DERIVE_KEY {
 } CARD_DERIVE_KEY, *PCARD_DERIVE_KEY;
 
 typedef struct _CARD_FILE_INFO {
-  DWORD                      dwVersion;
-  DWORD                      cbFileSize;
+  DWORD                                                             dwVersion;
+  DWORD                                                             cbFileSize;
   CARD_FILE_ACCESS_CONDITION AccessCondition;
 } CARD_FILE_INFO, *PCARD_FILE_INFO;
 
@@ -351,50 +351,50 @@ typedef LPVOID PFN_CSP_GET_DH_AGREEMENT;
 #endif /*(_WIN32_WINNT >= 0x0600)*/
 
 typedef struct _CARD_DATA {
-  DWORD                           dwVersion;
-  PBYTE                           pbAtr;
-  DWORD                           cbAtr;
-  LPWSTR                          pwszCardName;
-  PFN_CSP_ALLOC                   pfnCspAlloc;
-  PFN_CSP_REALLOC                 pfnCspReAlloc;
-  PFN_CSP_FREE                    pfnCspFree;
-  PFN_CSP_CACHE_ADD_FILE          pfnCspCacheAddFile;
-  PFN_CSP_CACHE_LOOKUP_FILE       pfnCspCacheLookupFile;
-  PFN_CSP_CACHE_DELETE_FILE       pfnCspCacheDeleteFile;
-  PVOID                           pvCacheContext;
-  PFN_CSP_PAD_DATA                pfnCspPadData;
-  SCARDCONTEXT                    hSCardCtx;
-  SCARDHANDLE                     hScard;
-  PVOID                           pvVendorSpecific;
-  PFN_CARD_DELETE_CONTEXT         pfnCardDeleteContext;
+  DWORD                                                                               dwVersion;
+  PBYTE                                                                               pbAtr;
+  DWORD                                                                               cbAtr;
+  LPWSTR                                                                              pwszCardName;
+  PFN_CSP_ALLOC                                                          pfnCspAlloc;
+  PFN_CSP_REALLOC                                           pfnCspReAlloc;
+  PFN_CSP_FREE                                                           pfnCspFree;
+  PFN_CSP_CACHE_ADD_FILE                       pfnCspCacheAddFile;
+  PFN_CSP_CACHE_LOOKUP_FILE                    pfnCspCacheLookupFile;
+  PFN_CSP_CACHE_DELETE_FILE                    pfnCspCacheDeleteFile;
+  PVOID                                                                               pvCacheContext;
+  PFN_CSP_PAD_DATA                                          pfnCspPadData;
+  SCARDCONTEXT                                                           hSCardCtx;
+  SCARDHANDLE                                                            hScard;
+  PVOID                                                                               pvVendorSpecific;
+  PFN_CARD_DELETE_CONTEXT                      pfnCardDeleteContext;
   PFN_CARD_QUERY_CAPABILITIES     pfnCardQueryCapabilities;
-  PFN_CARD_DELETE_CONTAINER       pfnCardDeleteContainer;
-  PFN_CARD_CREATE_CONTAINER       pfnCardCreateContainer;
+  PFN_CARD_DELETE_CONTAINER                    pfnCardDeleteContainer;
+  PFN_CARD_CREATE_CONTAINER                    pfnCardCreateContainer;
   PFN_CARD_GET_CONTAINER_INFO     pfnCardGetContainerInfo;
-  PFN_CARD_AUTHENTICATE_PIN       pfnCardAuthenticatePin;
-  PFN_CARD_GET_CHALLENGE          pfnCardGetChallenge;
+  PFN_CARD_AUTHENTICATE_PIN                    pfnCardAuthenticatePin;
+  PFN_CARD_GET_CHALLENGE                       pfnCardGetChallenge;
   PFN_CARD_AUTHENTICATE_CHALLENGE pfnCardAuthenticateChallenge;
-  PFN_CARD_UNBLOCK_PIN            pfnCardUnblockPin;
+  PFN_CARD_UNBLOCK_PIN                                      pfnCardUnblockPin;
   PFN_CARD_CHANGE_AUTHENTICATOR   pfnCardChangeAuthenticator;
-  PFN_CARD_DEAUTHENTICATE         pfnCardDeauthenticate;
-  PFN_CARD_CREATE_DIRECTORY       pfnCardCreateDirectory;
-  PFN_CARD_DELETE_DIRECTORY       pfnCardDeleteDirectory;
-  LPVOID                          pvUnused3;
-  LPVOID                          pvUnused4;
-  PFN_CARD_CREATE_FILE            pfnCardCreateFile;
-  PFN_CARD_READ_FILE              pfnCardReadFile;
-  PFN_CARD_WRITE_FILE             pfnCardWriteFile;
-  PFN_CARD_DELETE_FILE            pfnCardDeleteFile;
-  PFN_CARD_ENUM_FILES             pfnCardEnumFiles;
-  PFN_CARD_GET_FILE_INFO          pfnCardGetFileInfo;
-  PFN_CARD_QUERY_FREE_SPACE       pfnCardQueryFreeSpace;
-  PFN_CARD_QUERY_KEY_SIZES        pfnCardQueryKeySizes;
-  PFN_CARD_SIGN_DATA              pfnCardSignData;
-  PFN_CARD_RSA_DECRYPT            pfnCardRSADecrypt;
+  PFN_CARD_DEAUTHENTICATE                      pfnCardDeauthenticate;
+  PFN_CARD_CREATE_DIRECTORY                    pfnCardCreateDirectory;
+  PFN_CARD_DELETE_DIRECTORY                    pfnCardDeleteDirectory;
+  LPVOID                                                                              pvUnused3;
+  LPVOID                                                                              pvUnused4;
+  PFN_CARD_CREATE_FILE                                      pfnCardCreateFile;
+  PFN_CARD_READ_FILE                                        pfnCardReadFile;
+  PFN_CARD_WRITE_FILE                                       pfnCardWriteFile;
+  PFN_CARD_DELETE_FILE                                      pfnCardDeleteFile;
+  PFN_CARD_ENUM_FILES                                       pfnCardEnumFiles;
+  PFN_CARD_GET_FILE_INFO                       pfnCardGetFileInfo;
+  PFN_CARD_QUERY_FREE_SPACE                    pfnCardQueryFreeSpace;
+  PFN_CARD_QUERY_KEY_SIZES                     pfnCardQueryKeySizes;
+  PFN_CARD_SIGN_DATA                                        pfnCardSignData;
+  PFN_CARD_RSA_DECRYPT                                      pfnCardRSADecrypt;
   PFN_CARD_CONSTRUCT_DH_AGREEMENT pfnCardConstructDHAgreement;
-  PFN_CARD_DERIVE_KEY             pfnCardDeriveKey;
+  PFN_CARD_DERIVE_KEY                                       pfnCardDeriveKey;
   PFN_CARD_DESTROY_DH_AGREEMENT   pfnCardDestroyDHAgreement;
-  PFN_CSP_GET_DH_AGREEMENT        pfnCspGetDHAgreement;
+  PFN_CSP_GET_DH_AGREEMENT                     pfnCspGetDHAgreement;
 } CARD_DATA, *PCARD_DATA;
 
 DWORD WINAPI CardAcquireContext(

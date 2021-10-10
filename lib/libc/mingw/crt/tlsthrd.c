@@ -77,18 +77,18 @@ ___w64_mingwthr_remove_key_dtor (DWORD key)
 
   while (cur_key != NULL)
     {
-      if ( cur_key->key == key)
-        {
-          if (prev_key == NULL)
-            key_dtor_list = cur_key->next;
-          else
-            prev_key->next = cur_key->next;
+                   if ( cur_key->key == key)
+                     {
+                       if (prev_key == NULL)
+                                      key_dtor_list = cur_key->next;
+                       else
+                                      prev_key->next = cur_key->next;
 
-          free ((void*)cur_key);
-          break;
-        }
-      prev_key = cur_key;
-      cur_key = cur_key->next;
+                       free ((void*)cur_key);
+                       break;
+                     }
+                   prev_key = cur_key;
+                   cur_key = cur_key->next;
     }
 
   LeaveCriticalSection (&__mingwthr_cs);
@@ -106,13 +106,13 @@ __mingwthr_run_key_dtors (void)
 
   for (keyp = key_dtor_list; keyp; )
     {
-      LPVOID value = TlsGetValue (keyp->key);
-      if (GetLastError () == ERROR_SUCCESS)
-        {
-          if (value)
-            (*keyp->dtor) (value);
-        }
-      keyp = keyp->next;
+                   LPVOID value = TlsGetValue (keyp->key);
+                   if (GetLastError () == ERROR_SUCCESS)
+                     {
+                       if (value)
+                                      (*keyp->dtor) (value);
+                     }
+                   keyp = keyp->next;
     }
 
   LeaveCriticalSection (&__mingwthr_cs);
@@ -126,32 +126,32 @@ __mingw_TLScallback (HANDLE __UNUSED_PARAM(hDllHandle),
   switch (reason)
     {
     case DLL_PROCESS_ATTACH:
-      if (__mingwthr_cs_init == 0)
-        InitializeCriticalSection (&__mingwthr_cs);
-      __mingwthr_cs_init = 1;
-      break;
+                   if (__mingwthr_cs_init == 0)
+                     InitializeCriticalSection (&__mingwthr_cs);
+                   __mingwthr_cs_init = 1;
+                   break;
     case DLL_PROCESS_DETACH:
-      __mingwthr_run_key_dtors();
-      if (__mingwthr_cs_init == 1)
-        {
-          __mingwthr_key_t volatile *keyp, *t;
-          for (keyp = key_dtor_list; keyp; )
-          {
-            t = keyp->next;
-            free((void *)keyp);
-            keyp = t;
-          }
-          key_dtor_list = NULL;
-          __mingwthr_cs_init = 0;
-          DeleteCriticalSection (&__mingwthr_cs);
-        }
-      break;
+                   __mingwthr_run_key_dtors();
+                   if (__mingwthr_cs_init == 1)
+                     {
+                       __mingwthr_key_t volatile *keyp, *t;
+                       for (keyp = key_dtor_list; keyp; )
+                       {
+                                      t = keyp->next;
+                                      free((void *)keyp);
+                                      keyp = t;
+                       }
+                       key_dtor_list = NULL;
+                       __mingwthr_cs_init = 0;
+                       DeleteCriticalSection (&__mingwthr_cs);
+                     }
+                   break;
     case DLL_THREAD_ATTACH:
-      _fpreset();
-      break;
+                   _fpreset();
+                   break;
     case DLL_THREAD_DETACH:
-      __mingwthr_run_key_dtors();
-      break;
+                   __mingwthr_run_key_dtors();
+                   break;
     }
   return TRUE;
 }

@@ -33,8 +33,8 @@ nexttoward (double x, long double y)
   u.d = x; 
   if (x == 0.0)
     {
-      u.ll = 1;
-      return y > 0.0L ? u.d : -u.d;
+                   u.ll = 1;
+                   return y > 0.0L ? u.d : -u.d;
     }
 
   /* Non-extended encodings are lexicographically ordered,

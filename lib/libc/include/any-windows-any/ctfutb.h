@@ -119,16 +119,16 @@ MIDL_INTERFACE("73540d69-edeb-4ee9-96c9-23aa30b25916")
 ITfLangBarItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetInfo(
-        TF_LANGBARITEMINFO *pInfo) = 0;
+                     TF_LANGBARITEMINFO *pInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        DWORD *pdwStatus) = 0;
+                     DWORD *pdwStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Show(
-        WINBOOL fShow) = 0;
+                     WINBOOL fShow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTooltipString(
-        BSTR *pbstrToolTip) = 0;
+                     BSTR *pbstrToolTip) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -140,32 +140,32 @@ typedef struct ITfLangBarItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfLangBarItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfLangBarItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfLangBarItem *This);
+                     ITfLangBarItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfLangBarItem *This);
+                     ITfLangBarItem *This);
 
     /*** ITfLangBarItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetInfo)(
-        ITfLangBarItem *This,
-        TF_LANGBARITEMINFO *pInfo);
+                     ITfLangBarItem *This,
+                     TF_LANGBARITEMINFO *pInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        ITfLangBarItem *This,
-        DWORD *pdwStatus);
+                     ITfLangBarItem *This,
+                     DWORD *pdwStatus);
 
     HRESULT (STDMETHODCALLTYPE *Show)(
-        ITfLangBarItem *This,
-        WINBOOL fShow);
+                     ITfLangBarItem *This,
+                     WINBOOL fShow);
 
     HRESULT (STDMETHODCALLTYPE *GetTooltipString)(
-        ITfLangBarItem *This,
-        BSTR *pbstrToolTip);
+                     ITfLangBarItem *This,
+                     BSTR *pbstrToolTip);
 
     END_INTERFACE
 } ITfLangBarItemVtbl;
@@ -229,18 +229,18 @@ MIDL_INTERFACE("583f34d0-de25-11d2-afdd-00105a2799b5")
 IEnumTfLangBarItems : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfLangBarItems **ppEnum) = 0;
+                     IEnumTfLangBarItems **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG ulCount,
-        ITfLangBarItem **ppItem,
-        ULONG *pcFetched) = 0;
+                     ULONG ulCount,
+                     ITfLangBarItem **ppItem,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG ulCount) = 0;
+                     ULONG ulCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -252,33 +252,33 @@ typedef struct IEnumTfLangBarItemsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfLangBarItems *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfLangBarItems *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfLangBarItems *This);
+                     IEnumTfLangBarItems *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfLangBarItems *This);
+                     IEnumTfLangBarItems *This);
 
     /*** IEnumTfLangBarItems methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfLangBarItems *This,
-        IEnumTfLangBarItems **ppEnum);
+                     IEnumTfLangBarItems *This,
+                     IEnumTfLangBarItems **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfLangBarItems *This,
-        ULONG ulCount,
-        ITfLangBarItem **ppItem,
-        ULONG *pcFetched);
+                     IEnumTfLangBarItems *This,
+                     ULONG ulCount,
+                     ITfLangBarItem **ppItem,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfLangBarItems *This);
+                     IEnumTfLangBarItems *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfLangBarItems *This,
-        ULONG ulCount);
+                     IEnumTfLangBarItems *This,
+                     ULONG ulCount);
 
     END_INTERFACE
 } IEnumTfLangBarItemsVtbl;
@@ -342,7 +342,7 @@ MIDL_INTERFACE("57dbe1a0-de25-11d2-afdd-00105a2799b5")
 ITfLangBarItemSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnUpdate(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -354,20 +354,20 @@ typedef struct ITfLangBarItemSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfLangBarItemSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfLangBarItemSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfLangBarItemSink *This);
+                     ITfLangBarItemSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfLangBarItemSink *This);
+                     ITfLangBarItemSink *This);
 
     /*** ITfLangBarItemSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnUpdate)(
-        ITfLangBarItemSink *This,
-        DWORD dwFlags);
+                     ITfLangBarItemSink *This,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } ITfLangBarItemSinkVtbl;
@@ -419,55 +419,55 @@ MIDL_INTERFACE("ba468c55-9956-4fb1-a59d-52a7dd7cc6aa")
 ITfLangBarItemMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnumItems(
-        IEnumTfLangBarItems **ppEnum) = 0;
+                     IEnumTfLangBarItems **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItem(
-        REFGUID rguid,
-        ITfLangBarItem **ppItem) = 0;
+                     REFGUID rguid,
+                     ITfLangBarItem **ppItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddItem(
-        ITfLangBarItem *punk) = 0;
+                     ITfLangBarItem *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveItem(
-        ITfLangBarItem *punk) = 0;
+                     ITfLangBarItem *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdviseItemSink(
-        ITfLangBarItemSink *punk,
-        DWORD *pdwCookie,
-        REFGUID rguidItem) = 0;
+                     ITfLangBarItemSink *punk,
+                     DWORD *pdwCookie,
+                     REFGUID rguidItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnadviseItemSink(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemFloatingRect(
-        DWORD dwThreadId,
-        REFGUID rguid,
-        RECT *prc) = 0;
+                     DWORD dwThreadId,
+                     REFGUID rguid,
+                     RECT *prc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemsStatus(
-        ULONG ulCount,
-        const GUID *prgguid,
-        DWORD *pdwStatus) = 0;
+                     ULONG ulCount,
+                     const GUID *prgguid,
+                     DWORD *pdwStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemNum(
-        ULONG *pulCount) = 0;
+                     ULONG *pulCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItems(
-        ULONG ulCount,
-        ITfLangBarItem **ppItem,
-        TF_LANGBARITEMINFO *pInfo,
-        DWORD *pdwStatus,
-        ULONG *pcFetched) = 0;
+                     ULONG ulCount,
+                     ITfLangBarItem **ppItem,
+                     TF_LANGBARITEMINFO *pInfo,
+                     DWORD *pdwStatus,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdviseItemsSink(
-        ULONG ulCount,
-        ITfLangBarItemSink **ppunk,
-        const GUID *pguidItem,
-        DWORD *pdwCookie) = 0;
+                     ULONG ulCount,
+                     ITfLangBarItemSink **ppunk,
+                     const GUID *pguidItem,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnadviseItemsSink(
-        ULONG ulCount,
-        DWORD *pdwCookie) = 0;
+                     ULONG ulCount,
+                     DWORD *pdwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -479,79 +479,79 @@ typedef struct ITfLangBarItemMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfLangBarItemMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfLangBarItemMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfLangBarItemMgr *This);
+                     ITfLangBarItemMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfLangBarItemMgr *This);
+                     ITfLangBarItemMgr *This);
 
     /*** ITfLangBarItemMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumItems)(
-        ITfLangBarItemMgr *This,
-        IEnumTfLangBarItems **ppEnum);
+                     ITfLangBarItemMgr *This,
+                     IEnumTfLangBarItems **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        ITfLangBarItemMgr *This,
-        REFGUID rguid,
-        ITfLangBarItem **ppItem);
+                     ITfLangBarItemMgr *This,
+                     REFGUID rguid,
+                     ITfLangBarItem **ppItem);
 
     HRESULT (STDMETHODCALLTYPE *AddItem)(
-        ITfLangBarItemMgr *This,
-        ITfLangBarItem *punk);
+                     ITfLangBarItemMgr *This,
+                     ITfLangBarItem *punk);
 
     HRESULT (STDMETHODCALLTYPE *RemoveItem)(
-        ITfLangBarItemMgr *This,
-        ITfLangBarItem *punk);
+                     ITfLangBarItemMgr *This,
+                     ITfLangBarItem *punk);
 
     HRESULT (STDMETHODCALLTYPE *AdviseItemSink)(
-        ITfLangBarItemMgr *This,
-        ITfLangBarItemSink *punk,
-        DWORD *pdwCookie,
-        REFGUID rguidItem);
+                     ITfLangBarItemMgr *This,
+                     ITfLangBarItemSink *punk,
+                     DWORD *pdwCookie,
+                     REFGUID rguidItem);
 
     HRESULT (STDMETHODCALLTYPE *UnadviseItemSink)(
-        ITfLangBarItemMgr *This,
-        DWORD dwCookie);
+                     ITfLangBarItemMgr *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *GetItemFloatingRect)(
-        ITfLangBarItemMgr *This,
-        DWORD dwThreadId,
-        REFGUID rguid,
-        RECT *prc);
+                     ITfLangBarItemMgr *This,
+                     DWORD dwThreadId,
+                     REFGUID rguid,
+                     RECT *prc);
 
     HRESULT (STDMETHODCALLTYPE *GetItemsStatus)(
-        ITfLangBarItemMgr *This,
-        ULONG ulCount,
-        const GUID *prgguid,
-        DWORD *pdwStatus);
+                     ITfLangBarItemMgr *This,
+                     ULONG ulCount,
+                     const GUID *prgguid,
+                     DWORD *pdwStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetItemNum)(
-        ITfLangBarItemMgr *This,
-        ULONG *pulCount);
+                     ITfLangBarItemMgr *This,
+                     ULONG *pulCount);
 
     HRESULT (STDMETHODCALLTYPE *GetItems)(
-        ITfLangBarItemMgr *This,
-        ULONG ulCount,
-        ITfLangBarItem **ppItem,
-        TF_LANGBARITEMINFO *pInfo,
-        DWORD *pdwStatus,
-        ULONG *pcFetched);
+                     ITfLangBarItemMgr *This,
+                     ULONG ulCount,
+                     ITfLangBarItem **ppItem,
+                     TF_LANGBARITEMINFO *pInfo,
+                     DWORD *pdwStatus,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *AdviseItemsSink)(
-        ITfLangBarItemMgr *This,
-        ULONG ulCount,
-        ITfLangBarItemSink **ppunk,
-        const GUID *pguidItem,
-        DWORD *pdwCookie);
+                     ITfLangBarItemMgr *This,
+                     ULONG ulCount,
+                     ITfLangBarItemSink **ppunk,
+                     const GUID *pguidItem,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *UnadviseItemsSink)(
-        ITfLangBarItemMgr *This,
-        ULONG ulCount,
-        DWORD *pdwCookie);
+                     ITfLangBarItemMgr *This,
+                     ULONG ulCount,
+                     DWORD *pdwCookie);
 
     END_INTERFACE
 } ITfLangBarItemMgrVtbl;
@@ -647,44 +647,44 @@ MIDL_INTERFACE("87955690-e627-11d2-8ddb-00105a2799b5")
 ITfLangBarMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AdviseEventSink(
-        ITfLangBarEventSink *pSink,
-        HWND hwnd,
-        DWORD dwflags,
-        DWORD *pdwCookie) = 0;
+                     ITfLangBarEventSink *pSink,
+                     HWND hwnd,
+                     DWORD dwflags,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnAdviseEventSink(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThreadMarshalInterface(
-        DWORD dwThreadId,
-        DWORD dwType,
-        REFIID riid,
-        IUnknown **ppunk) = 0;
+                     DWORD dwThreadId,
+                     DWORD dwType,
+                     REFIID riid,
+                     IUnknown **ppunk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThreadLangBarItemMgr(
-        DWORD dwThreadId,
-        ITfLangBarItemMgr **pplbie,
-        DWORD *pdwThreadid) = 0;
+                     DWORD dwThreadId,
+                     ITfLangBarItemMgr **pplbie,
+                     DWORD *pdwThreadid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputProcessorProfiles(
-        DWORD dwThreadId,
-        ITfInputProcessorProfiles **ppaip,
-        DWORD *pdwThreadid) = 0;
+                     DWORD dwThreadId,
+                     ITfInputProcessorProfiles **ppaip,
+                     DWORD *pdwThreadid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RestoreLastFocus(
-        DWORD *dwThreadId,
-        WINBOOL fPrev) = 0;
+                     DWORD *dwThreadId,
+                     WINBOOL fPrev) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetModalInput(
-        ITfLangBarEventSink *pSink,
-        DWORD dwThreadId,
-        DWORD dwFlags) = 0;
+                     ITfLangBarEventSink *pSink,
+                     DWORD dwThreadId,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowFloating(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetShowFloatingStatus(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -696,65 +696,65 @@ typedef struct ITfLangBarMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfLangBarMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfLangBarMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfLangBarMgr *This);
+                     ITfLangBarMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfLangBarMgr *This);
+                     ITfLangBarMgr *This);
 
     /*** ITfLangBarMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *AdviseEventSink)(
-        ITfLangBarMgr *This,
-        ITfLangBarEventSink *pSink,
-        HWND hwnd,
-        DWORD dwflags,
-        DWORD *pdwCookie);
+                     ITfLangBarMgr *This,
+                     ITfLangBarEventSink *pSink,
+                     HWND hwnd,
+                     DWORD dwflags,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *UnAdviseEventSink)(
-        ITfLangBarMgr *This,
-        DWORD dwCookie);
+                     ITfLangBarMgr *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *GetThreadMarshalInterface)(
-        ITfLangBarMgr *This,
-        DWORD dwThreadId,
-        DWORD dwType,
-        REFIID riid,
-        IUnknown **ppunk);
+                     ITfLangBarMgr *This,
+                     DWORD dwThreadId,
+                     DWORD dwType,
+                     REFIID riid,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *GetThreadLangBarItemMgr)(
-        ITfLangBarMgr *This,
-        DWORD dwThreadId,
-        ITfLangBarItemMgr **pplbie,
-        DWORD *pdwThreadid);
+                     ITfLangBarMgr *This,
+                     DWORD dwThreadId,
+                     ITfLangBarItemMgr **pplbie,
+                     DWORD *pdwThreadid);
 
     HRESULT (STDMETHODCALLTYPE *GetInputProcessorProfiles)(
-        ITfLangBarMgr *This,
-        DWORD dwThreadId,
-        ITfInputProcessorProfiles **ppaip,
-        DWORD *pdwThreadid);
+                     ITfLangBarMgr *This,
+                     DWORD dwThreadId,
+                     ITfInputProcessorProfiles **ppaip,
+                     DWORD *pdwThreadid);
 
     HRESULT (STDMETHODCALLTYPE *RestoreLastFocus)(
-        ITfLangBarMgr *This,
-        DWORD *dwThreadId,
-        WINBOOL fPrev);
+                     ITfLangBarMgr *This,
+                     DWORD *dwThreadId,
+                     WINBOOL fPrev);
 
     HRESULT (STDMETHODCALLTYPE *SetModalInput)(
-        ITfLangBarMgr *This,
-        ITfLangBarEventSink *pSink,
-        DWORD dwThreadId,
-        DWORD dwFlags);
+                     ITfLangBarMgr *This,
+                     ITfLangBarEventSink *pSink,
+                     DWORD dwThreadId,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *ShowFloating)(
-        ITfLangBarMgr *This,
-        DWORD dwFlags);
+                     ITfLangBarMgr *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetShowFloatingStatus)(
-        ITfLangBarMgr *This,
-        DWORD *pdwFlags);
+                     ITfLangBarMgr *This,
+                     DWORD *pdwFlags);
 
     END_INTERFACE
 } ITfLangBarMgrVtbl;
@@ -838,27 +838,27 @@ MIDL_INTERFACE("18a4e900-e0ae-11d2-afdd-00105a2799b5")
 ITfLangBarEventSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnSetFocus(
-        DWORD dwThreadId) = 0;
+                     DWORD dwThreadId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnThreadTerminate(
-        DWORD dwThreadId) = 0;
+                     DWORD dwThreadId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnThreadItemChange(
-        DWORD dwThreadId) = 0;
+                     DWORD dwThreadId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnModalInput(
-        DWORD dwThreadId,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     DWORD dwThreadId,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowFloating(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemFloatingRect(
-        DWORD dwThreadId,
-        REFGUID rguid,
-        RECT *prc) = 0;
+                     DWORD dwThreadId,
+                     REFGUID rguid,
+                     RECT *prc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -870,45 +870,45 @@ typedef struct ITfLangBarEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfLangBarEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfLangBarEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfLangBarEventSink *This);
+                     ITfLangBarEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfLangBarEventSink *This);
+                     ITfLangBarEventSink *This);
 
     /*** ITfLangBarEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnSetFocus)(
-        ITfLangBarEventSink *This,
-        DWORD dwThreadId);
+                     ITfLangBarEventSink *This,
+                     DWORD dwThreadId);
 
     HRESULT (STDMETHODCALLTYPE *OnThreadTerminate)(
-        ITfLangBarEventSink *This,
-        DWORD dwThreadId);
+                     ITfLangBarEventSink *This,
+                     DWORD dwThreadId);
 
     HRESULT (STDMETHODCALLTYPE *OnThreadItemChange)(
-        ITfLangBarEventSink *This,
-        DWORD dwThreadId);
+                     ITfLangBarEventSink *This,
+                     DWORD dwThreadId);
 
     HRESULT (STDMETHODCALLTYPE *OnModalInput)(
-        ITfLangBarEventSink *This,
-        DWORD dwThreadId,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ITfLangBarEventSink *This,
+                     DWORD dwThreadId,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *ShowFloating)(
-        ITfLangBarEventSink *This,
-        DWORD dwFlags);
+                     ITfLangBarEventSink *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetItemFloatingRect)(
-        ITfLangBarEventSink *This,
-        DWORD dwThreadId,
-        REFGUID rguid,
-        RECT *prc);
+                     ITfLangBarEventSink *This,
+                     DWORD dwThreadId,
+                     REFGUID rguid,
+                     RECT *prc);
 
     END_INTERFACE
 } ITfLangBarEventSinkVtbl;
@@ -970,14 +970,14 @@ static FORCEINLINE HRESULT ITfLangBarEventSink_GetItemFloatingRect(ITfLangBarEve
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
 
 /* End additional prototypes */
 

@@ -574,8 +574,8 @@ extern "C" {
     LCID lcid;
 #if _RICHEDIT_VER >= 0x0500
     __C89_NAMELESS union {
-      DWORD dwReserved;
-      DWORD dwCookie;
+                   DWORD dwReserved;
+                   DWORD dwCookie;
     };
 #else
     DWORD dwReserved;
@@ -597,8 +597,8 @@ extern "C" {
     LCID lcid;
 #if _RICHEDIT_VER >= 0x0500
     __C89_NAMELESS union {
-      DWORD dwReserved;
-      DWORD dwCookie;
+                   DWORD dwReserved;
+                   DWORD dwCookie;
     };
 #else
     DWORD dwReserved;
@@ -629,8 +629,8 @@ extern "C" {
     LCID lcid;
 #if _RICHEDIT_VER >= 0x0500
     __C89_NAMELESS union {
-      DWORD dwReserved;
-      DWORD dwCookie;
+                   DWORD dwReserved;
+                   DWORD dwCookie;
     };
 #else
     DWORD dwReserved;
@@ -661,8 +661,8 @@ extern "C" {
     LCID lcid;
 #if _RICHEDIT_VER >= 0x0500
     __C89_NAMELESS union {
-      DWORD dwReserved;
-      DWORD dwCookie;
+                   DWORD dwReserved;
+                   DWORD dwCookie;
     };
 #else
     DWORD dwReserved;
@@ -907,8 +907,8 @@ extern "C" {
     DWORD dwMask;
     WORD wNumbering;
     __C89_NAMELESS union {
-      WORD wReserved;
-      WORD wEffects;
+                   WORD wReserved;
+                   WORD wEffects;
     };
     LONG dxStartIndent;
     LONG dxRightIndent;
@@ -941,8 +941,8 @@ extern "C" {
     DWORD dwMask;
     WORD wNumbering;
     __C89_NAMELESS union {
-      WORD wReserved;
-      WORD wEffects;
+                   WORD wReserved;
+                   WORD wEffects;
     };
     LONG dxStartIndent;
     LONG dxRightIndent;

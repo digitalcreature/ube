@@ -37,7 +37,7 @@ extern int __sigtimedwait (const sigset_t *__set, siginfo_t *__info,
 			   const struct timespec *__timeout);
 libc_hidden_proto (__sigtimedwait)
 extern int __sigqueue (__pid_t __pid, int __sig,
-		       const union sigval __val);
+		                    const union sigval __val);
 #ifdef __USE_MISC
 extern int __sigreturn (struct sigcontext *__scp);
 #endif

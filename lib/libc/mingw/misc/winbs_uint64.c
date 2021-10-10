@@ -10,8 +10,8 @@ unsigned long long __cdecl _byteswap_uint64(unsigned long long _Int64)
   union {
     long long int64part;
     struct {
-      unsigned long lowpart;
-      unsigned long hipart;
+                   unsigned long lowpart;
+                   unsigned long hipart;
     };
   } retval;
   retval.int64part = _Int64;

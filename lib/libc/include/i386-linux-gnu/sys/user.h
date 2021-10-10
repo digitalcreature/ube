@@ -84,13 +84,13 @@ struct user
   int				reserved;
   __extension__ union
     {
-      struct user_regs_struct*	u_ar0;
-      __extension__ unsigned long long int	__u_ar0_word;
+                   struct user_regs_struct*	u_ar0;
+                   __extension__ unsigned long long int	__u_ar0_word;
     };
   __extension__ union
     {
-      struct user_fpregs_struct*	u_fpstate;
-      __extension__ unsigned long long int	__u_fpstate_word;
+                   struct user_fpregs_struct*	u_fpstate;
+                   __extension__ unsigned long long int	__u_fpstate_word;
     };
   __extension__ unsigned long long int	magic;
   char				u_comm [32];

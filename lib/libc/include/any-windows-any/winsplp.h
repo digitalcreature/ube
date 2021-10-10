@@ -31,27 +31,27 @@ extern "C" {
 #endif
 
 #define PRINTER_NOTIFY_STATUS_ENDPOINT  1
-#define PRINTER_NOTIFY_STATUS_POLL      2
-#define PRINTER_NOTIFY_STATUS_INFO      4
+#define PRINTER_NOTIFY_STATUS_POLL                   2
+#define PRINTER_NOTIFY_STATUS_INFO                   4
 
-#define ROUTER_UNKNOWN      0
-#define ROUTER_SUCCESS      1
+#define ROUTER_UNKNOWN                   0
+#define ROUTER_SUCCESS                   1
 #define ROUTER_STOP_ROUTING 2
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 #define MONITOR2_SIZE_WIN2K (sizeof(DWORD) + (sizeof(PVOID)*18))
 #endif
 
-#define COPYFILE_EVENT_SET_PRINTER_DATAEX           1
-#define COPYFILE_EVENT_DELETE_PRINTER               2
-#define COPYFILE_EVENT_ADD_PRINTER_CONNECTION       3
+#define COPYFILE_EVENT_SET_PRINTER_DATAEX                        1
+#define COPYFILE_EVENT_DELETE_PRINTER                                         2
+#define COPYFILE_EVENT_ADD_PRINTER_CONNECTION                    3
 #define COPYFILE_EVENT_DELETE_PRINTER_CONNECTION    4
-#define COPYFILE_EVENT_FILES_CHANGED                5
+#define COPYFILE_EVENT_FILES_CHANGED                                          5
 
-#define COPYFILE_FLAG_CLIENT_SPOOLER             0x00000001
-#define COPYFILE_FLAG_SERVER_SPOOLER             0x00000002
+#define COPYFILE_FLAG_CLIENT_SPOOLER                                       0x00000001
+#define COPYFILE_FLAG_SERVER_SPOOLER                                       0x00000002
 
-#define PRINTER_NOTIFY_INFO_DATA_COMPACT         1
+#define PRINTER_NOTIFY_INFO_DATA_COMPACT                      1
 
 typedef struct _PRINTER_NOTIFY_INIT {
   DWORD Size;
@@ -87,184 +87,184 @@ typedef struct _SPLCLIENT_INFO_2_V3{
 
 typedef struct _PRINTPROVIDOR {
   WINBOOL (WINAPI *fpOpenPrinter)(PWSTR lpPrinterName, HANDLE *phPrinter,
-                               PPRINTER_DEFAULTSW pDefault);
+                                                                                                PPRINTER_DEFAULTSW pDefault);
   WINBOOL (WINAPI *fpSetJob)(HANDLE hPrinter, DWORD JobID, DWORD Level,
-                          LPBYTE pJob, DWORD Command);
+                                                                              LPBYTE pJob, DWORD Command);
   WINBOOL (WINAPI *fpGetJob)(HANDLE hPrinter, DWORD JobID, DWORD Level,
-                          LPBYTE pJob, DWORD cbBuf, LPDWORD pcbNeeded);
+                                                                              LPBYTE pJob, DWORD cbBuf, LPDWORD pcbNeeded);
   WINBOOL (WINAPI *fpEnumJobs)(HANDLE hPrinter, DWORD FirstJob, DWORD NoJobs,
-                            DWORD Level, LPBYTE pJob, DWORD cbBuf, LPDWORD pcbNeeded,
-                            LPDWORD pcReturned);
+                                                                                DWORD Level, LPBYTE pJob, DWORD cbBuf, LPDWORD pcbNeeded,
+                                                                                LPDWORD pcReturned);
   HANDLE (WINAPI *fpAddPrinter)(LPWSTR pName, DWORD Level, LPBYTE pPrinter);
   WINBOOL (WINAPI *fpDeletePrinter)(HANDLE hPrinter);
   WINBOOL (WINAPI *fpSetPrinter)(HANDLE hPrinter, DWORD Level, LPBYTE pPrinter,
-                              DWORD Command);
+                                                                                               DWORD Command);
   WINBOOL (WINAPI *fpGetPrinter)(HANDLE hPrinter, DWORD Level, LPBYTE pPrinter,
-                              DWORD cbBuf, LPDWORD pcbNeeded);
+                                                                                               DWORD cbBuf, LPDWORD pcbNeeded);
   WINBOOL (WINAPI *fpEnumPrinters)(DWORD dwType, LPWSTR lpszName, DWORD dwLevel,
-                                LPBYTE lpbPrinters, DWORD cbBuf, LPDWORD lpdwNeeded,
-                                LPDWORD lpdwReturned);
+                                                                                                 LPBYTE lpbPrinters, DWORD cbBuf, LPDWORD lpdwNeeded,
+                                                                                                 LPDWORD lpdwReturned);
   WINBOOL (WINAPI *fpAddPrinterDriver)(LPWSTR pName, DWORD Level, LPBYTE pDriverInfo);
   WINBOOL (WINAPI *fpEnumPrinterDrivers)(LPWSTR pName, LPWSTR pEnvironment,
-                                      DWORD Level, LPBYTE pDriverInfo, DWORD cbBuf,
-                                      LPDWORD pcbNeeded, LPDWORD pcbReturned);
+                                                                                                                    DWORD Level, LPBYTE pDriverInfo, DWORD cbBuf,
+                                                                                                                    LPDWORD pcbNeeded, LPDWORD pcbReturned);
   WINBOOL (WINAPI *fpGetPrinterDriver)(HANDLE hPrinter, LPWSTR pEnvironment,
-                                    DWORD Level, LPBYTE pDriverInfo, DWORD cbBuf,
-                                    LPDWORD pcbNeeded);
+                                                                                                                  DWORD Level, LPBYTE pDriverInfo, DWORD cbBuf,
+                                                                                                                  LPDWORD pcbNeeded);
   WINBOOL (WINAPI *fpGetPrinterDriverDirectory)(LPWSTR pName, LPWSTR pEnvironment,
-                                             DWORD Level, LPBYTE pDriverDirectory,
-                                             DWORD cbBuf, LPDWORD pcbNeeded);
+                                                                                                                                        DWORD Level, LPBYTE pDriverDirectory,
+                                                                                                                                        DWORD cbBuf, LPDWORD pcbNeeded);
   WINBOOL (WINAPI *fpDeletePrinterDriver)(LPWSTR pName, LPWSTR pEnvironment,
-                                       LPWSTR pDriverName);
+                                                                                                                     LPWSTR pDriverName);
   WINBOOL (WINAPI *fpAddPrintProcessor)(LPWSTR pName, LPWSTR pEnvironment,
-                                     LPWSTR pPathName, LPWSTR pPrintProcessorName);
+                                                                                                                   LPWSTR pPathName, LPWSTR pPrintProcessorName);
   WINBOOL (WINAPI *fpEnumPrintProcessors)(LPWSTR pName, LPWSTR pEnvironment,
-                                       DWORD Level, LPBYTE pPrintProcessorInfo,
-                                       DWORD cbBuf, LPDWORD pcbNeeded,
-                                       LPDWORD pcbReturned);
+                                                                                                                     DWORD Level, LPBYTE pPrintProcessorInfo,
+                                                                                                                     DWORD cbBuf, LPDWORD pcbNeeded,
+                                                                                                                     LPDWORD pcbReturned);
   WINBOOL (WINAPI *fpGetPrintProcessorDirectory)(LPWSTR pName, LPWSTR pEnvironment,
-                                              DWORD Level, LPBYTE pPrintProcessorInfo,
-                                              DWORD cbBuf, LPDWORD pcbNeeded);
+                                                                                                                                         DWORD Level, LPBYTE pPrintProcessorInfo,
+                                                                                                                                         DWORD cbBuf, LPDWORD pcbNeeded);
   WINBOOL (WINAPI *fpDeletePrintProcessor)(LPWSTR pName, LPWSTR pEnvironment,
-                 LPWSTR pPrintProcessorName);
+                                           LPWSTR pPrintProcessorName);
   WINBOOL (WINAPI *fpEnumPrintProcessorDatatypes)(LPWSTR pName,
-                                               LPWSTR pPrintProcessorName,
-                                               DWORD Level, LPBYTE pDatatypes,
-                                               DWORD cbBuf, LPDWORD pcbNeeded,
-                                               LPDWORD pcbReturned);
+                                                                                                                                          LPWSTR pPrintProcessorName,
+                                                                                                                                          DWORD Level, LPBYTE pDatatypes,
+                                                                                                                                          DWORD cbBuf, LPDWORD pcbNeeded,
+                                                                                                                                          LPDWORD pcbReturned);
   DWORD (WINAPI *fpStartDocPrinter)(HANDLE hPrinter, DWORD Level, LPBYTE pDocInfo);
   WINBOOL (WINAPI *fpStartPagePrinter)(HANDLE hPrinter);
   WINBOOL (WINAPI *fpWritePrinter)(HANDLE hPrinter, LPVOID pBuf, DWORD cbBuf,
-                                LPDWORD pcWritten);
+                                                                                                 LPDWORD pcWritten);
   WINBOOL (WINAPI *fpEndPagePrinter)(HANDLE hPrinter);
   WINBOOL (WINAPI *fpAbortPrinter)(HANDLE hPrinter);
   WINBOOL (WINAPI *fpReadPrinter)(HANDLE hPrinter, LPVOID pBuf, DWORD cbBuf,
-                               LPDWORD pNoBytesRead);
+                                                                                                LPDWORD pNoBytesRead);
   WINBOOL (WINAPI *fpEndDocPrinter)(HANDLE hPrinter);
   WINBOOL (WINAPI *fpAddJob)(HANDLE hPrinter, DWORD Level, LPBYTE pData,
-                          DWORD cbBuf, LPDWORD pcbNeeded);
+                                                                              DWORD cbBuf, LPDWORD pcbNeeded);
   WINBOOL (WINAPI *fpScheduleJob)(HANDLE hPrinter, DWORD JobID);
   DWORD (WINAPI *fpGetPrinterData)(HANDLE hPrinter, LPWSTR pValueName,
-                                   LPDWORD pType, LPBYTE pData, DWORD nSize,
-                                   LPDWORD pcbNeeded);
+                                                                                                    LPDWORD pType, LPBYTE pData, DWORD nSize,
+                                                                                                    LPDWORD pcbNeeded);
   DWORD (WINAPI *fpSetPrinterData)(HANDLE hPrinter, LPWSTR pValueName,
-                                   DWORD Type, LPBYTE pData, DWORD cbData);
+                                                                                                    DWORD Type, LPBYTE pData, DWORD cbData);
   DWORD (WINAPI *fpWaitForPrinterChange)(HANDLE hPrinter, DWORD Flags);
   WINBOOL (WINAPI *fpClosePrinter)(HANDLE phPrinter);
   WINBOOL (WINAPI *fpAddForm)(HANDLE hPrinter, DWORD Level, LPBYTE pForm);
   WINBOOL (WINAPI *fpDeleteForm)(HANDLE hPrinter, LPWSTR pFormName);
   WINBOOL (WINAPI *fpGetForm)(HANDLE hPrinter, LPWSTR pFormName, DWORD Level,
-                           LPBYTE pForm, DWORD cbBuf, LPDWORD pcbNeeded);
+                                                                               LPBYTE pForm, DWORD cbBuf, LPDWORD pcbNeeded);
   WINBOOL (WINAPI *fpSetForm)(HANDLE hPrinter, LPWSTR pFormName, DWORD Level,
-                           LPBYTE pForm);
+                                                                               LPBYTE pForm);
   WINBOOL (WINAPI *fpEnumForms)(HANDLE hPrinter, DWORD Level, LPBYTE pForm,
-                             DWORD cbBuf, LPDWORD pcbNeeded, LPDWORD pcReturned);
+                                                                                 DWORD cbBuf, LPDWORD pcbNeeded, LPDWORD pcReturned);
   WINBOOL (WINAPI *fpEnumMonitors)(LPWSTR pName, DWORD Level, LPBYTE pMonitors,
-                                DWORD cbBuf, LPDWORD pcbNeeded,
-                                LPDWORD pcReturned);
+                                                                                                 DWORD cbBuf, LPDWORD pcbNeeded,
+                                                                                                 LPDWORD pcReturned);
   WINBOOL (WINAPI *fpEnumPorts)(LPWSTR pName, DWORD Level, LPBYTE pPorts,
-                             DWORD cbBuf, LPDWORD pcbNeeded, LPDWORD pcReturned);
+                                                                                 DWORD cbBuf, LPDWORD pcbNeeded, LPDWORD pcReturned);
   WINBOOL (WINAPI *fpAddPort)(LPWSTR pName, HWND hWnd, LPWSTR pMonitorName);
   WINBOOL (WINAPI *fpConfigurePort)(LPWSTR pName, HWND hWnd, LPWSTR pPortName);
   WINBOOL (WINAPI *fpDeletePort)(LPWSTR pName, HWND hWnd, LPWSTR pPortName);
   HANDLE (WINAPI *fpCreatePrinterIC)(HANDLE hPrinter, LPDEVMODEW pDevMode);
   WINBOOL (WINAPI *fpPlayGdiScriptOnPrinterIC)(HANDLE hPrinterIC, LPBYTE pIn,
-                                            DWORD cIn, LPBYTE pOut, DWORD cOut,
-                                            DWORD ul);
+                                                                                                                                       DWORD cIn, LPBYTE pOut, DWORD cOut,
+                                                                                                                                       DWORD ul);
   WINBOOL (WINAPI *fpDeletePrinterIC)(HANDLE hPrinterIC);
   WINBOOL (WINAPI *fpAddPrinterConnection)(LPWSTR pName);
   WINBOOL (WINAPI *fpDeletePrinterConnection)(LPWSTR pName);
   DWORD (WINAPI *fpPrinterMessageBox)(HANDLE hPrinter, DWORD Error, HWND hWnd,
-                                      LPWSTR pText, LPWSTR pCaption,
-                                      DWORD dwType);
+                                                                                                                    LPWSTR pText, LPWSTR pCaption,
+                                                                                                                    DWORD dwType);
   WINBOOL (WINAPI *fpAddMonitor)(LPWSTR pName, DWORD Level, LPBYTE pMonitors);
   WINBOOL (WINAPI *fpDeleteMonitor)(LPWSTR pName, LPWSTR pEnvironment,
-                                 LPWSTR pMonitorName);
+                                                                                                  LPWSTR pMonitorName);
   WINBOOL (WINAPI *fpResetPrinter)(HANDLE hPrinter, LPPRINTER_DEFAULTSW pDefault);
   WINBOOL (WINAPI *fpGetPrinterDriverEx)(HANDLE hPrinter, LPWSTR pEnvironment,
-                                      DWORD Level, LPBYTE pDriverInfo,
-                                      DWORD cbBuf, LPDWORD pcbNeeded,
-                                      DWORD dwClientMajorVersion,
-                                      DWORD dwClientMinorVersion,
-                                      PDWORD pdwServerMajorVersion,
-                                      PDWORD pdwServerMinorVersion);
+                                                                                                                    DWORD Level, LPBYTE pDriverInfo,
+                                                                                                                    DWORD cbBuf, LPDWORD pcbNeeded,
+                                                                                                                    DWORD dwClientMajorVersion,
+                                                                                                                    DWORD dwClientMinorVersion,
+                                                                                                                    PDWORD pdwServerMajorVersion,
+                                                                                                                    PDWORD pdwServerMinorVersion);
   HANDLE (WINAPI *fpFindFirstPrinterChangeNotification)(HANDLE hPrinter,
-                                                        DWORD fdwFlags,
-                                                        DWORD fdwOptions,
-                                                        LPVOID pPrinterNotifyOptions);
+                                                                                                                                                                             DWORD fdwFlags,
+                                                                                                                                                                             DWORD fdwOptions,
+                                                                                                                                                                             LPVOID pPrinterNotifyOptions);
   WINBOOL (WINAPI *fpFindClosePrinterChangeNotification)(HANDLE hChange);
   WINBOOL (WINAPI *fpAddPortEx)(LPWSTR pName, DWORD Level, LPBYTE lpBuffer,
-                             LPWSTR lpMonitorName);
+                                                                                 LPWSTR lpMonitorName);
   WINBOOL (WINAPI *fpShutDown)(LPVOID pvReserved);
   WINBOOL (WINAPI *fpRefreshPrinterChangeNotification)(HANDLE hPrinter,
-                                                    DWORD Reserved,
-                                                    PVOID pvReserved,
-                                                    PVOID pPrinterNotifyInfo);
+                                                                                                                                                            DWORD Reserved,
+                                                                                                                                                            PVOID pvReserved,
+                                                                                                                                                            PVOID pPrinterNotifyInfo);
   WINBOOL (WINAPI *fpOpenPrinterEx)(LPWSTR pPrinterName, LPHANDLE phPrinter,
-                                 LPPRINTER_DEFAULTSW pDefault, LPBYTE pClientInfo,
-                                 DWORD Level);
+                                                                                                  LPPRINTER_DEFAULTSW pDefault, LPBYTE pClientInfo,
+                                                                                                  DWORD Level);
   HANDLE (WINAPI *fpAddPrinterEx)(LPWSTR pName, DWORD Level, LPBYTE pPrinter,
-                                  LPBYTE pClientInfo, DWORD ClientInfoLevel);
+                                                                                                   LPBYTE pClientInfo, DWORD ClientInfoLevel);
   WINBOOL (WINAPI *fpSetPort)(LPWSTR pName, LPWSTR pPortName, DWORD dwLevel,
-                           LPBYTE pPortInfo);
+                                                                               LPBYTE pPortInfo);
   DWORD (WINAPI *fpEnumPrinterData)(HANDLE hPrinter, DWORD dwIndex,
-                                    LPWSTR pValueName, DWORD cbValueName,
-                                    LPDWORD pcbValueName, LPDWORD pType,
-                                    LPBYTE pData, DWORD cbData, LPDWORD pcbData);
+                                                                                                                  LPWSTR pValueName, DWORD cbValueName,
+                                                                                                                  LPDWORD pcbValueName, LPDWORD pType,
+                                                                                                                  LPBYTE pData, DWORD cbData, LPDWORD pcbData);
   DWORD (WINAPI *fpDeletePrinterData)(HANDLE hPrinter, LPWSTR pValueName);
   DWORD (WINAPI *fpClusterSplOpen)(LPCWSTR pszServer, LPCWSTR pszResource,
-                                   PHANDLE phSpooler, LPCWSTR pszName,
-                                   LPCWSTR pszAddress);
+                                                                                                    PHANDLE phSpooler, LPCWSTR pszName,
+                                                                                                    LPCWSTR pszAddress);
   DWORD (WINAPI *fpClusterSplClose)(HANDLE hSpooler);
   DWORD (WINAPI *fpClusterSplIsAlive)(HANDLE hSpooler);
   DWORD (WINAPI *fpSetPrinterDataEx)(HANDLE hPrinter, LPCWSTR pKeyName,
-                                     LPCWSTR pValueName, DWORD Type,
-                                     LPBYTE pData, DWORD cbData);
+                                                                                                                   LPCWSTR pValueName, DWORD Type,
+                                                                                                                   LPBYTE pData, DWORD cbData);
   DWORD (WINAPI *fpGetPrinterDataEx)(HANDLE hPrinter, LPCWSTR pKeyName,
-                                     LPCWSTR pValueName, LPDWORD pType,
-                                     LPBYTE pData, DWORD nSize, LPDWORD pcbNeeded);
+                                                                                                                   LPCWSTR pValueName, LPDWORD pType,
+                                                                                                                   LPBYTE pData, DWORD nSize, LPDWORD pcbNeeded);
   DWORD (WINAPI *fpEnumPrinterDataEx)(HANDLE hPrinter, LPCWSTR pKeyName,
-                                      LPBYTE pEnumValues, DWORD cbEnumValues,
-                                      LPDWORD pcbEnumValues, LPDWORD pnEnumValues);
+                                                                                                                    LPBYTE pEnumValues, DWORD cbEnumValues,
+                                                                                                                    LPDWORD pcbEnumValues, LPDWORD pnEnumValues);
   DWORD (WINAPI *fpEnumPrinterKey)(HANDLE hPrinter, LPCWSTR pKeyName,
-                                   LPWSTR pSubkey, DWORD cbSubkey, LPDWORD pcbSubkey);
+                                                                                                    LPWSTR pSubkey, DWORD cbSubkey, LPDWORD pcbSubkey);
   DWORD (WINAPI *fpDeletePrinterDataEx)(HANDLE hPrinter, LPCWSTR pKeyName,
-                                        LPCWSTR pValueName);
+                                                                                                                      LPCWSTR pValueName);
   DWORD (WINAPI *fpDeletePrinterKey)(HANDLE hPrinter, LPCWSTR pKeyName);
   WINBOOL (WINAPI *fpSeekPrinter)(HANDLE hPrinter, LARGE_INTEGER liDistanceToMove,
-                               PLARGE_INTEGER pliNewPointer, DWORD dwMoveMethod,
-                               WINBOOL bWrite);
+                                                                                                PLARGE_INTEGER pliNewPointer, DWORD dwMoveMethod,
+                                                                                                WINBOOL bWrite);
   WINBOOL (WINAPI *fpDeletePrinterDriverEx)(LPWSTR pName, LPWSTR pEnvironment,
-                                         LPWSTR pDriverName, DWORD dwDeleteFlag,
-                                         DWORD dwVersionNum);
+                                                                                                                       LPWSTR pDriverName, DWORD dwDeleteFlag,
+                                                                                                                       DWORD dwVersionNum);
   WINBOOL (WINAPI *fpAddPerMachineConnection)(LPCWSTR pServer,
-                                           LPCWSTR pPrinterName, LPCWSTR pPrintServer,
-                                           LPCWSTR pProvider);
+                                                                                                                                      LPCWSTR pPrinterName, LPCWSTR pPrintServer,
+                                                                                                                                      LPCWSTR pProvider);
   WINBOOL (WINAPI *fpDeletePerMachineConnection)(LPCWSTR pServer,
-                                              LPCWSTR pPrinterName);
+                                                                                                                                         LPCWSTR pPrinterName);
   WINBOOL (WINAPI *fpEnumPerMachineConnections)(LPCWSTR pServer,
-                                             LPBYTE pPrinterEnum, DWORD cbBuf,
-                                             LPDWORD pcbNeeded,
-                 LPDWORD pcReturned);
+                                                                                                                                        LPBYTE pPrinterEnum, DWORD cbBuf,
+                                                                                                                                        LPDWORD pcbNeeded,
+                                           LPDWORD pcReturned);
   WINBOOL (WINAPI *fpXcvData)(HANDLE hXcv, LPCWSTR pszDataName, PBYTE pInputData,
-                           DWORD cbInputData, PBYTE pOutputData, DWORD cbOutputData,
-                           PDWORD pcbOutputNeeded, PDWORD pdwStatus);
+                                                                               DWORD cbInputData, PBYTE pOutputData, DWORD cbOutputData,
+                                                                               PDWORD pcbOutputNeeded, PDWORD pdwStatus);
   WINBOOL (WINAPI *fpAddPrinterDriverEx)(LPWSTR pName, DWORD Level,
-                                      LPBYTE pDriverInfo, DWORD dwFileCopyFlags);
+                                                                                                                    LPBYTE pDriverInfo, DWORD dwFileCopyFlags);
   WINBOOL (WINAPI *fpSplReadPrinter)(HANDLE hPrinter, LPBYTE *pBuf, DWORD cbBuf);
   WINBOOL (WINAPI *fpDriverUnloadComplete)(LPWSTR pDriverFile);
   WINBOOL (WINAPI *fpGetSpoolFileInfo)(HANDLE hPrinter, LPWSTR *pSpoolDir,
-                                    LPHANDLE phFile, HANDLE hSpoolerProcess,
-                                    HANDLE hAppProcess);
+                                                                                                                  LPHANDLE phFile, HANDLE hSpoolerProcess,
+                                                                                                                  HANDLE hAppProcess);
   WINBOOL (WINAPI *fpCommitSpoolData)(HANDLE hPrinter, DWORD cbCommit);
   WINBOOL (WINAPI *fpCloseSpoolFileHandle)(HANDLE hPrinter);
   WINBOOL (WINAPI *fpFlushPrinter)(HANDLE hPrinter, LPBYTE pBuf, DWORD cbBuf,
-                                LPDWORD pcWritten, DWORD cSleep);
+                                                                                                 LPDWORD pcWritten, DWORD cSleep);
   DWORD (WINAPI *fpSendRecvBidiData)(HANDLE hPort, LPCWSTR pAction,
-                                     LPBIDI_REQUEST_CONTAINER pReqData,
-                                     LPBIDI_RESPONSE_CONTAINER *ppResData);
+                                                                                                                   LPBIDI_REQUEST_CONTAINER pReqData,
+                                                                                                                   LPBIDI_RESPONSE_CONTAINER *ppResData);
   WINBOOL (WINAPI *fpAddDriverCatalog)(HANDLE hPrinter, DWORD dwLevel,
-                                    VOID *pvDriverInfCatInfo, DWORD dwCatalogCopyFlags);
+                                                                                                                  VOID *pvDriverInfCatInfo, DWORD dwCatalogCopyFlags);
 } PRINTPROVIDOR, *LPPRINTPROVIDOR;
 
 typedef struct _PRINTPROCESSOROPENDATA {
@@ -280,30 +280,30 @@ typedef struct _PRINTPROCESSOROPENDATA {
 typedef struct _MONITORREG {
   DWORD cbSize;
   LONG (WINAPI *fpCreateKey)(HANDLE hcKey, LPCWSTR pszSubKey, DWORD dwOptions,
-                             REGSAM samDesired,
-                             PSECURITY_ATTRIBUTES pSecurityAttributes,
-                             PHANDLE phckResult, PDWORD pdwDisposition,
-                             HANDLE hSpooler);
+                                                                                 REGSAM samDesired,
+                                                                                 PSECURITY_ATTRIBUTES pSecurityAttributes,
+                                                                                 PHANDLE phckResult, PDWORD pdwDisposition,
+                                                                                 HANDLE hSpooler);
   LONG (WINAPI *fpOpenKey)(HANDLE hcKey, LPCWSTR pszSubKey, REGSAM samDesired,
-                           PHANDLE phkResult, HANDLE hSpooler);
+                                                                               PHANDLE phkResult, HANDLE hSpooler);
   LONG (WINAPI *fpCloseKey)(HANDLE hcKey, HANDLE hSpooler);
   LONG (WINAPI *fpDeleteKey)(HANDLE hcKey, LPCWSTR pszSubKey, HANDLE hSpooler);
   LONG (WINAPI *fpEnumKey)(HANDLE hcKey, DWORD dwIndex, LPWSTR pszName,
-                           PDWORD pcchName, PFILETIME pftLastWriteTime,
-                           HANDLE hSpooler);
+                                                                               PDWORD pcchName, PFILETIME pftLastWriteTime,
+                                                                               HANDLE hSpooler);
   LONG (WINAPI *fpQueryInfoKey)(HANDLE hcKey, PDWORD pcSubKeys, PDWORD pcbKey,
-                                PDWORD pcValues, PDWORD pcbValue, PDWORD pcbData,
-                                PDWORD pcbSecurityDescriptor,
-                                PFILETIME pftLastWriteTime,
-                                HANDLE hSpooler);
+                                                                                                 PDWORD pcValues, PDWORD pcbValue, PDWORD pcbData,
+                                                                                                 PDWORD pcbSecurityDescriptor,
+                                                                                                 PFILETIME pftLastWriteTime,
+                                                                                                 HANDLE hSpooler);
   LONG (WINAPI *fpSetValue)(HANDLE hcKey, LPCWSTR pszValue, DWORD dwType,
-                const BYTE* pData, DWORD cbData, HANDLE hSpooler);
+                                          const BYTE* pData, DWORD cbData, HANDLE hSpooler);
   LONG (WINAPI *fpDeleteValue)(HANDLE hcKey, LPCWSTR pszValue, HANDLE hSpooler);
   LONG (WINAPI *fpEnumValue)(HANDLE hcKey, DWORD dwIndex, LPWSTR pszValue,
-                             PDWORD pcbValue, PDWORD pType, PBYTE pData, PDWORD pcbData,
-                             HANDLE hSpooler);
+                                                                                 PDWORD pcbValue, PDWORD pType, PBYTE pData, PDWORD pcbData,
+                                                                                 HANDLE hSpooler);
   LONG (WINAPI *fpQueryValue)(HANDLE hcKey, LPCWSTR pszValue, PDWORD pType,
-                              PBYTE pData, PDWORD pcbData, HANDLE hSpooler);
+                                                                                               PBYTE pData, PDWORD pcbData, HANDLE hSpooler);
 } MONITORREG, *PMONITORREG;
 
 typedef struct _MONITORINIT {
@@ -317,34 +317,34 @@ typedef struct _MONITORINIT {
 
 typedef struct _MONITOR {
   WINBOOL (WINAPI *pfnEnumPorts)(LPWSTR pName, DWORD Level, LPBYTE pPorts,
-                              DWORD cbBuf, LPDWORD pcbNeeded, LPDWORD pcReturned);
+                                                                                               DWORD cbBuf, LPDWORD pcbNeeded, LPDWORD pcReturned);
   WINBOOL (WINAPI *pfnOpenPort)(LPWSTR pName, PHANDLE pHandle);
   WINBOOL (WINAPI *pfnOpenPortEx)(LPWSTR pPortName, LPWSTR pPrinterName,
-                               PHANDLE pHandle, struct _MONITOR *pMonitor);
+                                                                                                PHANDLE pHandle, struct _MONITOR *pMonitor);
   WINBOOL (WINAPI *pfnStartDocPort)(HANDLE hPort, LPWSTR pPrinterName,
-                                 DWORD JobId, DWORD Level, LPBYTE pDocInfo);
+                                                                                                  DWORD JobId, DWORD Level, LPBYTE pDocInfo);
   WINBOOL (WINAPI *pfnWritePort)(HANDLE hPort, LPBYTE pBuffer, DWORD cbBuf,
-                              LPDWORD pcbWritten);
+                                                                                               LPDWORD pcbWritten);
   WINBOOL (WINAPI *pfnReadPort)(HANDLE hPort, LPBYTE pBuffer, DWORD cbBuffer,
-                             LPDWORD pcbRead);
+                                                                                 LPDWORD pcbRead);
   WINBOOL (WINAPI *pfnEndDocPort)(HANDLE hPort);
   WINBOOL (WINAPI *pfnClosePort)(HANDLE hPort);
   WINBOOL (WINAPI *pfnAddPort)(LPWSTR pName, HWND hWnd, LPWSTR pMonitorName);
   WINBOOL (WINAPI *pfnAddPortEx)(LPWSTR pName, DWORD Level, LPBYTE lpBuffer,
-                              LPWSTR lpMonitorName);
+                                                                                               LPWSTR lpMonitorName);
   WINBOOL (WINAPI *pfnConfigurePort)(LPWSTR pName, HWND hWnd, LPWSTR pPortName);
   WINBOOL (WINAPI *pfnDeletePort)(LPWSTR pName, HWND hWnd, LPWSTR pPortName);
   WINBOOL (WINAPI *pfnGetPrinterDataFromPort)(HANDLE hPort, DWORD ControlID,
-                                           LPWSTR pValueName, LPWSTR lpInBuffer,
-                                           DWORD cbInBuffer, LPWSTR lpOutBuffer,
-                                           DWORD cbOutBuffer, LPDWORD lpcbReturned);
+                                                                                                                                      LPWSTR pValueName, LPWSTR lpInBuffer,
+                                                                                                                                      DWORD cbInBuffer, LPWSTR lpOutBuffer,
+                                                                                                                                      DWORD cbOutBuffer, LPDWORD lpcbReturned);
   WINBOOL (WINAPI *pfnSetPortTimeOuts)(HANDLE hPort, LPCOMMTIMEOUTS lpCTO,
-                                    DWORD reserved);
+                                                                                                                  DWORD reserved);
   WINBOOL (WINAPI *pfnXcvOpenPort)(LPCWSTR pszObject, ACCESS_MASK GrantedAccess, PHANDLE phXcv);
   DWORD (WINAPI *pfnXcvDataPort)(HANDLE hXcv, LPCWSTR pszDataName,
-                                 PBYTE pInputData, DWORD cbInputData,
-                                 PBYTE pOutputData, DWORD cbOutputData,
-                                 PDWORD pcbOutputNeeded);
+                                                                                                  PBYTE pInputData, DWORD cbInputData,
+                                                                                                  PBYTE pOutputData, DWORD cbOutputData,
+                                                                                                  PDWORD pcbOutputNeeded);
   WINBOOL (WINAPI *pfnXcvClosePort)(HANDLE hXcv);
 } MONITOR, *LPMONITOR;
 
@@ -356,57 +356,57 @@ typedef struct _MONITOREX {
 typedef struct _MONITOR2 {
   DWORD cbSize;
   WINBOOL (WINAPI *pfnEnumPorts)(HANDLE hMonitor, LPWSTR pName, DWORD Level, LPBYTE pPorts,
-                              DWORD cbBuf, LPDWORD pcbNeeded,
-                              LPDWORD pcReturned);
+                                                                                               DWORD cbBuf, LPDWORD pcbNeeded,
+                                                                                               LPDWORD pcReturned);
   WINBOOL (WINAPI *pfnOpenPort)(HANDLE hMonitor, LPWSTR pName, PHANDLE pHandle);
   WINBOOL (WINAPI *pfnOpenPortEx)(HANDLE hMonitor, HANDLE hMonitorPort, LPWSTR pPortName, LPWSTR pPrinterName,
-                               PHANDLE pHandle, struct _MONITOR2 *pMonitor2);
+                                                                                                PHANDLE pHandle, struct _MONITOR2 *pMonitor2);
   WINBOOL (WINAPI *pfnStartDocPort)(HANDLE hPort, LPWSTR pPrinterName,
-                                 DWORD JobId, DWORD Level, LPBYTE pDocInfo);
+                                                                                                  DWORD JobId, DWORD Level, LPBYTE pDocInfo);
   WINBOOL (WINAPI *pfnWritePort)(HANDLE hPort, LPBYTE pBuffer, DWORD cbBuf,
-                              LPDWORD pcbWritten);
+                                                                                               LPDWORD pcbWritten);
   WINBOOL (WINAPI *pfnReadPort)(HANDLE hPort, LPBYTE pBuffer, DWORD cbBuffer,
-                             LPDWORD pcbRead);
+                                                                                 LPDWORD pcbRead);
   WINBOOL (WINAPI *pfnEndDocPort)(HANDLE hPort);
   WINBOOL (WINAPI *pfnClosePort)(HANDLE hPort);
   WINBOOL (WINAPI *pfnAddPort)(HANDLE hMonitor, LPWSTR pName, HWND hWnd, LPWSTR pMonitorName);
   WINBOOL (WINAPI *pfnAddPortEx)(HANDLE hMonitor, LPWSTR pName, DWORD Level, LPBYTE lpBuffer,
-                              LPWSTR lpMonitorName);
+                                                                                               LPWSTR lpMonitorName);
   WINBOOL (WINAPI *pfnConfigurePort)(HANDLE hMonitor, LPWSTR pName, HWND hWnd, LPWSTR pPortName);
   WINBOOL (WINAPI *pfnDeletePort)(HANDLE hMonitor, LPWSTR pName, HWND hWnd, LPWSTR pPortName);
   WINBOOL (WINAPI *pfnGetPrinterDataFromPort)(HANDLE hPort, DWORD ControlID,
-                                           LPWSTR pValueName, LPWSTR lpInBuffer,
-                                           DWORD cbInBuffer, LPWSTR lpOutBuffer,
-                                           DWORD cbOutBuffer, LPDWORD lpcbReturned);
+                                                                                                                                      LPWSTR pValueName, LPWSTR lpInBuffer,
+                                                                                                                                      DWORD cbInBuffer, LPWSTR lpOutBuffer,
+                                                                                                                                      DWORD cbOutBuffer, LPDWORD lpcbReturned);
   WINBOOL (WINAPI *pfnSetPortTimeOuts)(HANDLE hPort, LPCOMMTIMEOUTS lpCTO,
-                                    DWORD reserved);
+                                                                                                                  DWORD reserved);
   WINBOOL (WINAPI *pfnXcvOpenPort)(HANDLE hMonitor, LPCWSTR pszObject,
-                                ACCESS_MASK GrantedAccess, PHANDLE phXcv);
+                                                                                                 ACCESS_MASK GrantedAccess, PHANDLE phXcv);
   DWORD (WINAPI *pfnXcvDataPort)(HANDLE hXcv, LPCWSTR pszDataName,
-                                 PBYTE pInputData, DWORD cbInputData,
-                                 PBYTE pOutputData, DWORD cbOutputData,
-                                 PDWORD pcbOutputNeeded);
+                                                                                                  PBYTE pInputData, DWORD cbInputData,
+                                                                                                  PBYTE pOutputData, DWORD cbOutputData,
+                                                                                                  PDWORD pcbOutputNeeded);
   WINBOOL (WINAPI *pfnXcvClosePort)(HANDLE hXcv);
   VOID (WINAPI *pfnShutdown)(HANDLE hMonitor);
 #if (NTDDI_VERSION >= NTDDI_WINXP)
  DWORD (WINAPI *pfnSendRecvBidiDataFromPort)(HANDLE hPort, DWORD dwAccessBit,
-                                             LPCWSTR pAction,
-                                             PBIDI_REQUEST_CONTAINER pReqData,
-                                             PBIDI_RESPONSE_CONTAINER *ppResData);
+                                                                                                                                        LPCWSTR pAction,
+                                                                                                                                        PBIDI_REQUEST_CONTAINER pReqData,
+                                                                                                                                        PBIDI_RESPONSE_CONTAINER *ppResData);
 #endif
 #if (NTDDI_VERSION >= NTDDI_WIN7)
   DWORD (WINAPI *pfnNotifyUsedPorts)(HANDLE hMonitor, DWORD cPorts,
-                                   PCWSTR *ppszPorts);
+                                                                                                    PCWSTR *ppszPorts);
 
   DWORD (WINAPI *pfnNotifyUnusedPorts)(HANDLE hMonitor, DWORD cPorts,
-                                       PCWSTR *ppszPorts);
+                                                                                                                     PCWSTR *ppszPorts);
 #endif
 } MONITOR2, *LPMONITOR2, *PMONITOR2;
 
 typedef struct _MONITORUI {
   DWORD dwMonitorUISize;
   WINBOOL (WINAPI *pfnAddPortUI)(PCWSTR pszServer, HWND hWnd,
-                              PCWSTR pszPortNameIn, PWSTR *ppszPortNameOut);
+                                                                                               PCWSTR pszPortNameIn, PWSTR *ppszPortNameOut);
   WINBOOL (WINAPI *pfnConfigurePortUI)(PCWSTR pName, HWND hWnd, PCWSTR pPortName);
   WINBOOL (WINAPI *pfnDeletePortUI)(PCWSTR pszServer, HWND hWnd, PCWSTR pszPortName);
 } MONITORUI, *PMONITORUI;
@@ -519,13 +519,13 @@ typedef struct _ATTRIBUTE_INFO_4 {
 #define REVERSE_PAGES_FOR_REVERSE_DUPLEX (0x00000001)
 #define DONT_SEND_EXTRA_PAGES_FOR_DUPLEX (0x00000001 << 1)
 
-#define RIGHT_THEN_DOWN                  (0x00000001)
-#define DOWN_THEN_RIGHT                  (0x00000001 << 1)
-#define LEFT_THEN_DOWN                   (0x00000001 << 2)
-#define DOWN_THEN_LEFT                   (0x00000001 << 3)
+#define RIGHT_THEN_DOWN                                                         (0x00000001)
+#define DOWN_THEN_RIGHT                                                         (0x00000001 << 1)
+#define LEFT_THEN_DOWN                                                          (0x00000001 << 2)
+#define DOWN_THEN_LEFT                                                          (0x00000001 << 3)
 
-#define BOOKLET_EDGE_LEFT                0x00000000
-#define BOOKLET_EDGE_RIGHT               0x00000001
+#define BOOKLET_EDGE_LEFT                                          0x00000000
+#define BOOKLET_EDGE_RIGHT                                         0x00000001
 
 #endif /* __ATTRIBUTE_INFO_4__ */
 
@@ -688,54 +688,54 @@ GenerateCopyFilePaths(
 
 HANDLE WINAPI CreatePrinterIC(HANDLE hPrinter, LPDEVMODEW pDevMode);
 WINBOOL WINAPI PlayGdiScriptOnPrinterIC(HANDLE hPrinterIC, LPBYTE pIn,
-                                     DWORD cIn, LPBYTE pOut, DWORD cOut, DWORD ul);
+                                                                                                                   DWORD cIn, LPBYTE pOut, DWORD cOut, DWORD ul);
 WINBOOL WINAPI DeletePrinterIC(HANDLE hPrinterIC);
 WINBOOL WINAPI DevQueryPrint(HANDLE hPrinter, LPDEVMODEW pDevMode, DWORD *pResID);
 HANDLE WINAPI RevertToPrinterSelf(VOID);
 WINBOOL WINAPI ImpersonatePrinterClient(HANDLE hToken);
 WINBOOL WINAPI ReplyPrinterChangeNotification(HANDLE hNotify, DWORD fdwFlags,
-                                           PDWORD pdwResult, PVOID pPrinterNotifyInfo);
+                                                                                                                                      PDWORD pdwResult, PVOID pPrinterNotifyInfo);
 WINBOOL WINAPI ReplyPrinterChangeNotificationEx(HANDLE hNotify, DWORD dwColor,
-                                             DWORD fdwFlags, PDWORD pdwResult,
-                                             PVOID pPrinterNotifyInfo);
+                                                                                                                                        DWORD fdwFlags, PDWORD pdwResult,
+                                                                                                                                        PVOID pPrinterNotifyInfo);
 WINBOOL WINAPI PartialReplyPrinterChangeNotification(HANDLE hNotify,
-                                                  PPRINTER_NOTIFY_INFO_DATA pInfoDataSrc);
+                                                                                                                                                          PPRINTER_NOTIFY_INFO_DATA pInfoDataSrc);
 PPRINTER_NOTIFY_INFO WINAPI RouterAllocPrinterNotifyInfo(DWORD cPrinterNotifyInfoData);
 WINBOOL WINAPI RouterFreePrinterNotifyInfo(PPRINTER_NOTIFY_INFO pInfo);
 
 WINBOOL WINAPI AppendPrinterNotifyInfoData(PPRINTER_NOTIFY_INFO pInfoDest,
-                                        PPRINTER_NOTIFY_INFO_DATA pInfoDataSrc,
-                                        DWORD fdwFlags);
+                                                                                                                      PPRINTER_NOTIFY_INFO_DATA pInfoDataSrc,
+                                                                                                                      DWORD fdwFlags);
 DWORD WINAPI CallRouterFindFirstPrinterChangeNotification(HANDLE hPrinter,
-                                                          DWORD fdwFlags,
-                                                          DWORD fdwOptions,
-                                                          HANDLE hNotify,
-                                                          PPRINTER_NOTIFY_OPTIONS pPrinterNotifyOptions);
+                                                                                                                                                                               DWORD fdwFlags,
+                                                                                                                                                                               DWORD fdwOptions,
+                                                                                                                                                                               HANDLE hNotify,
+                                                                                                                                                                               PPRINTER_NOTIFY_OPTIONS pPrinterNotifyOptions);
 WINBOOL WINAPI ProvidorFindFirstPrinterChangeNotification(HANDLE hPrinter,
-                                                       DWORD fdwFlags,
-                                                       DWORD fdwOptions,
-                                                       HANDLE hNotify,
-                                                       PVOID pvReserved0,
-                                                       PVOID pvReserved1);
+                                                                                                                                                                            DWORD fdwFlags,
+                                                                                                                                                                            DWORD fdwOptions,
+                                                                                                                                                                            HANDLE hNotify,
+                                                                                                                                                                            PVOID pvReserved0,
+                                                                                                                                                                            PVOID pvReserved1);
 WINBOOL WINAPI ProvidorFindClosePrinterChangeNotification(HANDLE hPrinter);
 
 /* Spooler */
 WINBOOL WINAPI SpoolerFindFirstPrinterChangeNotification(HANDLE hPrinter,
-                                                      DWORD fdwFlags,
-                                                      DWORD fdwOptions,
-                                                      PHANDLE phEvent,
-                                                      PVOID pPrinterNotifyOptions,
-                                                      PVOID pvReserved);
+                                                                                                                                                                           DWORD fdwFlags,
+                                                                                                                                                                           DWORD fdwOptions,
+                                                                                                                                                                           PHANDLE phEvent,
+                                                                                                                                                                           PVOID pPrinterNotifyOptions,
+                                                                                                                                                                           PVOID pvReserved);
 WINBOOL WINAPI SpoolerFindNextPrinterChangeNotification(HANDLE hPrinter,
-                                                     LPDWORD pfdwChange,
-                                                     PVOID pvReserved0,
-                                                     PVOID ppPrinterNotifyInfo);
+                                                                                                                                                             LPDWORD pfdwChange,
+                                                                                                                                                             PVOID pvReserved0,
+                                                                                                                                                             PVOID ppPrinterNotifyInfo);
 VOID WINAPI SpoolerFreePrinterNotifyInfo(PPRINTER_NOTIFY_INFO pInfo);
 WINBOOL WINAPI SpoolerFindClosePrinterChangeNotification(HANDLE hPrinter);
 
 /* Port monitor / Language monitor / Print monitor */
 LPMONITOR2 WINAPI InitializePrintMonitor2(PMONITORINIT pMonitorInit,
-                                          PHANDLE phMonitor);
+                                                                                                                                     PHANDLE phMonitor);
 PMONITORUI WINAPI InitializePrintMonitorUI(VOID);
 LPMONITOREX WINAPI InitializePrintMonitor(LPWSTR pRegistryRoot);
 WINBOOL WINAPI InitializeMonitorEx(LPWSTR pRegistryRoot, LPMONITOR pMonitor);
@@ -788,9 +788,9 @@ GetJobAttributesEx(
   DWORD dwFlags);
 
 WINBOOL WINAPI SpoolerRefreshPrinterChangeNotification(HANDLE hPrinter,
-                                                    DWORD dwColor,
-                                                    PPRINTER_NOTIFY_OPTIONS pOptions,
-                                                    PPRINTER_NOTIFY_INFO *ppInfo);
+                                                                                                                                                            DWORD dwColor,
+                                                                                                                                                            PPRINTER_NOTIFY_OPTIONS pOptions,
+                                                                                                                                                            PPRINTER_NOTIFY_INFO *ppInfo);
 
 #endif /* (NTDDI_VERSION >= NTDDI_VISTA) */
 

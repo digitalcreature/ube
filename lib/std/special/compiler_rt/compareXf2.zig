@@ -51,11 +51,11 @@ pub fn cmp(comptime T: type, comptime RT: type, a: T, b: T) RT {
     // If at least one of a and b is positive, we get the same result comparing
     // a and b as signed integers as we would with a fp_ting-point compare.
     if ((aInt & bInt) >= 0) {
-        if (aInt < bInt) {
-            return .Less;
-        } else if (aInt == bInt) {
-            return .Equal;
-        } else return .Greater;
+                     if (aInt < bInt) {
+                                      return .Less;
+                     } else if (aInt == bInt) {
+                                      return .Equal;
+                     } else return .Greater;
     }
 
     // Otherwise, both are negative, so we need to flip the sense of the
@@ -63,11 +63,11 @@ pub fn cmp(comptime T: type, comptime RT: type, a: T, b: T) RT {
     // complement integer representation; if integers are represented in a
     // sign-magnitude representation, then this flip is incorrect).
     else {
-        if (aInt > bInt) {
-            return .Less;
-        } else if (aInt == bInt) {
-            return .Equal;
-        } else return .Greater;
+                     if (aInt > bInt) {
+                                      return .Less;
+                     } else if (aInt == bInt) {
+                                      return .Equal;
+                     } else return .Greater;
     }
 }
 

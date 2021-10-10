@@ -122,13 +122,13 @@ iswxdigit(wint_t _wc)
 __DARWIN_WCTYPE_TOP_inline wint_t
 towlower(wint_t _wc)
 {
-        return (__tolower(_wc));
+                     return (__tolower(_wc));
 }
 
 __DARWIN_WCTYPE_TOP_inline wint_t
 towupper(wint_t _wc)
 {
-        return (__toupper(_wc));
+                     return (__toupper(_wc));
 }
 
 #else /* not using inlines */

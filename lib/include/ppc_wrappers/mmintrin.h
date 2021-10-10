@@ -28,7 +28,7 @@
    efficient standard C or GNU C extensions with 64-bit scalar
    operations, or 128-bit SSE/Altivec operations, which are more
    recommended. */
-#error                                                                         \
+#error                                                                                                                                                                                                                                     \
     "Please read comment above.  Use -DNO_WARN_X86_INTRINSICS to disable this error."
 #endif
 
@@ -154,9 +154,9 @@ extern __inline __m64
 
   vm1 = (__vector signed short)(__vector unsigned long long)
 #ifdef __LITTLE_ENDIAN__
-      {__m1, __m2};
+                   {__m1, __m2};
 #else
-      {__m2, __m1};
+                   {__m2, __m1};
 #endif
   vresult = vec_packs(vm1, vm1);
   return (__m64)((__vector long long)vresult)[0];
@@ -179,9 +179,9 @@ extern __inline __m64
 
   vm1 = (__vector signed int)(__vector unsigned long long)
 #ifdef __LITTLE_ENDIAN__
-      {__m1, __m2};
+                   {__m1, __m2};
 #else
-      {__m2, __m1};
+                   {__m2, __m1};
 #endif
   vresult = vec_packs(vm1, vm1);
   return (__m64)((__vector long long)vresult)[0];
@@ -202,9 +202,9 @@ extern __inline __m64
   __vector unsigned char r;
   __vector signed short vm1 = (__vector signed short)(__vector long long)
 #ifdef __LITTLE_ENDIAN__
-      {__m1, __m2};
+                   {__m1, __m2};
 #else
-      {__m2, __m1};
+                   {__m2, __m1};
 #endif
   const __vector signed short __zero = {0};
   __vector __bool short __select = vec_cmplt(vm1, __zero);
@@ -1077,11 +1077,11 @@ extern __inline __m64
   __vector signed int w0, w1;
   __vector unsigned char xform1 = {
 #ifdef __LITTLE_ENDIAN__
-      0x02, 0x03, 0x12, 0x13, 0x06, 0x07, 0x16, 0x17, 0x0A,
-      0x0B, 0x1A, 0x1B, 0x0E, 0x0F, 0x1E, 0x1F
+                   0x02, 0x03, 0x12, 0x13, 0x06, 0x07, 0x16, 0x17, 0x0A,
+                   0x0B, 0x1A, 0x1B, 0x0E, 0x0F, 0x1E, 0x1F
 #else
-      0x00, 0x01, 0x10, 0x11, 0x04, 0x05, 0x14, 0x15, 0x00,
-      0x01, 0x10, 0x11, 0x04, 0x05, 0x14, 0x15
+                   0x00, 0x01, 0x10, 0x11, 0x04, 0x05, 0x14, 0x15, 0x00,
+                   0x01, 0x10, 0x11, 0x04, 0x05, 0x14, 0x15
 #endif
   };
 
@@ -1350,7 +1350,7 @@ extern __inline __m64
 extern __inline __m64
     __attribute__((__gnu_inline__, __always_inline__, __artificial__))
     _mm_set_pi8(char __b7, char __b6, char __b5, char __b4, char __b3,
-                char __b2, char __b1, char __b0) {
+                                          char __b2, char __b1, char __b0) {
   __m64_union res;
 
   res.as_char[0] = __b0;
@@ -1384,7 +1384,7 @@ extern __inline __m64
 extern __inline __m64
     __attribute__((__gnu_inline__, __always_inline__, __artificial__))
     _mm_setr_pi8(char __b0, char __b1, char __b2, char __b3, char __b4,
-                 char __b5, char __b6, char __b7) {
+                                           char __b5, char __b6, char __b7) {
   return _mm_set_pi8(__b7, __b6, __b5, __b4, __b3, __b2, __b1, __b0);
 }
 

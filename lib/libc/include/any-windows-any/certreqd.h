@@ -58,12 +58,12 @@ extern "C"{
 #else
   typedef struct ICertRequestDVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertRequestD *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertRequestD *This);
-      ULONG (WINAPI *Release)(ICertRequestD *This);
-      HRESULT (WINAPI *Request)(ICertRequestD *This,DWORD dwFlags,const wchar_t *pwszAuthority,DWORD *pdwRequestId,DWORD *pdwDisposition,const wchar_t *pwszAttributes,const CERTTRANSBLOB *pctbRequest,CERTTRANSBLOB *pctbCertChain,CERTTRANSBLOB *pctbEncodedCert,CERTTRANSBLOB *pctbDispositionMessage);
-      HRESULT (WINAPI *GetCACert)(ICertRequestD *This,DWORD fchain,const wchar_t *pwszAuthority,CERTTRANSBLOB *pctbOut);
-      HRESULT (WINAPI *Ping)(ICertRequestD *This,const wchar_t *pwszAuthority);
+                   HRESULT (WINAPI *QueryInterface)(ICertRequestD *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertRequestD *This);
+                   ULONG (WINAPI *Release)(ICertRequestD *This);
+                   HRESULT (WINAPI *Request)(ICertRequestD *This,DWORD dwFlags,const wchar_t *pwszAuthority,DWORD *pdwRequestId,DWORD *pdwDisposition,const wchar_t *pwszAttributes,const CERTTRANSBLOB *pctbRequest,CERTTRANSBLOB *pctbCertChain,CERTTRANSBLOB *pctbEncodedCert,CERTTRANSBLOB *pctbDispositionMessage);
+                   HRESULT (WINAPI *GetCACert)(ICertRequestD *This,DWORD fchain,const wchar_t *pwszAuthority,CERTTRANSBLOB *pctbOut);
+                   HRESULT (WINAPI *Ping)(ICertRequestD *This,const wchar_t *pwszAuthority);
     END_INTERFACE
   } ICertRequestDVtbl;
   struct ICertRequestD {
@@ -100,16 +100,16 @@ extern "C"{
 #else
   typedef struct ICertRequestD2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertRequestD2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertRequestD2 *This);
-      ULONG (WINAPI *Release)(ICertRequestD2 *This);
-      HRESULT (WINAPI *Request)(ICertRequestD2 *This,DWORD dwFlags,const wchar_t *pwszAuthority,DWORD *pdwRequestId,DWORD *pdwDisposition,const wchar_t *pwszAttributes,const CERTTRANSBLOB *pctbRequest,CERTTRANSBLOB *pctbCertChain,CERTTRANSBLOB *pctbEncodedCert,CERTTRANSBLOB *pctbDispositionMessage);
-      HRESULT (WINAPI *GetCACert)(ICertRequestD2 *This,DWORD fchain,const wchar_t *pwszAuthority,CERTTRANSBLOB *pctbOut);
-      HRESULT (WINAPI *Ping)(ICertRequestD2 *This,const wchar_t *pwszAuthority);
-      HRESULT (WINAPI *Request2)(ICertRequestD2 *This,const wchar_t *pwszAuthority,DWORD dwFlags,const wchar_t *pwszSerialNumber,DWORD *pdwRequestId,DWORD *pdwDisposition,const wchar_t *pwszAttributes,const CERTTRANSBLOB *pctbRequest,CERTTRANSBLOB *pctbFullResponse,CERTTRANSBLOB *pctbEncodedCert,CERTTRANSBLOB *pctbDispositionMessage);
-      HRESULT (WINAPI *GetCAProperty)(ICertRequestD2 *This,const wchar_t *pwszAuthority,LONG PropId,LONG PropIndex,LONG PropType,CERTTRANSBLOB *pctbPropertyValue);
-      HRESULT (WINAPI *GetCAPropertyInfo)(ICertRequestD2 *This,const wchar_t *pwszAuthority,LONG *pcProperty,CERTTRANSBLOB *pctbPropInfo);
-      HRESULT (WINAPI *Ping2)(ICertRequestD2 *This,const wchar_t *pwszAuthority);
+                   HRESULT (WINAPI *QueryInterface)(ICertRequestD2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertRequestD2 *This);
+                   ULONG (WINAPI *Release)(ICertRequestD2 *This);
+                   HRESULT (WINAPI *Request)(ICertRequestD2 *This,DWORD dwFlags,const wchar_t *pwszAuthority,DWORD *pdwRequestId,DWORD *pdwDisposition,const wchar_t *pwszAttributes,const CERTTRANSBLOB *pctbRequest,CERTTRANSBLOB *pctbCertChain,CERTTRANSBLOB *pctbEncodedCert,CERTTRANSBLOB *pctbDispositionMessage);
+                   HRESULT (WINAPI *GetCACert)(ICertRequestD2 *This,DWORD fchain,const wchar_t *pwszAuthority,CERTTRANSBLOB *pctbOut);
+                   HRESULT (WINAPI *Ping)(ICertRequestD2 *This,const wchar_t *pwszAuthority);
+                   HRESULT (WINAPI *Request2)(ICertRequestD2 *This,const wchar_t *pwszAuthority,DWORD dwFlags,const wchar_t *pwszSerialNumber,DWORD *pdwRequestId,DWORD *pdwDisposition,const wchar_t *pwszAttributes,const CERTTRANSBLOB *pctbRequest,CERTTRANSBLOB *pctbFullResponse,CERTTRANSBLOB *pctbEncodedCert,CERTTRANSBLOB *pctbDispositionMessage);
+                   HRESULT (WINAPI *GetCAProperty)(ICertRequestD2 *This,const wchar_t *pwszAuthority,LONG PropId,LONG PropIndex,LONG PropType,CERTTRANSBLOB *pctbPropertyValue);
+                   HRESULT (WINAPI *GetCAPropertyInfo)(ICertRequestD2 *This,const wchar_t *pwszAuthority,LONG *pcProperty,CERTTRANSBLOB *pctbPropInfo);
+                   HRESULT (WINAPI *Ping2)(ICertRequestD2 *This,const wchar_t *pwszAuthority);
     END_INTERFACE
   } ICertRequestD2Vtbl;
   struct ICertRequestD2 {

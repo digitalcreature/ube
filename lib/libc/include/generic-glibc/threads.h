@@ -89,7 +89,7 @@ extern thrd_t thrd_current (void);
    that case, if __REMAINING is not NULL, the remaining time is stored in
    the object pointed by it.  */
 extern int thrd_sleep (const struct timespec *__time_point,
-		       struct timespec *__remaining);
+		                    struct timespec *__remaining);
 
 /* Terminate current thread execution, cleaning up any thread local
    storage and freeing resources.  Returns the value specified in __RES.  */

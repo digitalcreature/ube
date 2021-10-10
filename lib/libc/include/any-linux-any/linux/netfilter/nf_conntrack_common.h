@@ -13,7 +13,7 @@ enum ip_conntrack_info {
 	IP_CT_RELATED,
 
 	/* Started a new connection to track (only
-           IP_CT_DIR_ORIGINAL); may be a retransmission. */
+                        IP_CT_DIR_ORIGINAL); may be a retransmission. */
 	IP_CT_NEW,
 
 	/* >= this indicates reply direction */

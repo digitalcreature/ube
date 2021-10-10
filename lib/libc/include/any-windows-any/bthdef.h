@@ -56,7 +56,7 @@ DEFINE_GUID(L2CAP_PROTOCOL_UUID,0x00000100,0x0000,0x1000,0x80,0x00,0x00,0x80,0x5
 #define TCSBIN_PROTOCOL_UUID16  0x0005
 #define TCSAT_PROTOCOL_UUID16   0x0006
 #define OBEX_PROTOCOL_UUID16    0x0008
-#define IP_PROTOCOL_UUID16      0x0009
+#define IP_PROTOCOL_UUID16                   0x0009
 #define FTP_PROTOCOL_UUID16     0x000A
 #define HTTP_PROTOCOL_UUID16    0x000C
 #define WSP_PROTOCOL_UUID16     0x000E
@@ -434,7 +434,7 @@ typedef struct _BTH_DEVICE_INFO {
 
 typedef struct _BTH_RADIO_IN_RANGE {
   BTH_DEVICE_INFO deviceInfo;
-  ULONG           previousDeviceFlags;
+  ULONG                        previousDeviceFlags;
 } BTH_RADIO_IN_RANGE, *PBTH_RADIO_IN_RANGE;
 
 typedef struct _BTH_L2CAP_EVENT_INFO {

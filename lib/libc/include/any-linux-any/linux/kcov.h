@@ -28,8 +28,8 @@ enum {
  * Bit 0 shows whether one of the arguments is a compile-time constant.
  * Bits 1 & 2 contain log2 of the argument size, up to 8 bytes.
  */
-#define KCOV_CMP_CONST          (1 << 0)
-#define KCOV_CMP_SIZE(n)        ((n) << 1)
-#define KCOV_CMP_MASK           KCOV_CMP_SIZE(3)
+#define KCOV_CMP_CONST                       (1 << 0)
+#define KCOV_CMP_SIZE(n)                     ((n) << 1)
+#define KCOV_CMP_MASK                        KCOV_CMP_SIZE(3)
 
 #endif /* _LINUX_KCOV_IOCTLS_H */

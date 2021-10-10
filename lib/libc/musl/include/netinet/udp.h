@@ -36,7 +36,7 @@ struct udphdr {
 #define UDP_ENCAP_GTP1U		5
 #define UDP_ENCAP_RXRPC		6
 
-#define SOL_UDP            17
+#define SOL_UDP                                      17
 
 #ifdef __cplusplus
 }

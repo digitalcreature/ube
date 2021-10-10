@@ -22,92 +22,92 @@ static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_dpbusd_epi32(__m512i __S, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_vpdpbusd512((__v16si)__S, (__v16si)__A,
-                                             (__v16si)__B);
+                                                                                                                                        (__v16si)__B);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_mask_dpbusd_epi32(__m512i __S, __mmask16 __U, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_selectd_512(__U,
-                                    (__v16si)_mm512_dpbusd_epi32(__S, __A, __B),
-                                    (__v16si)__S);
+                                                                                                                  (__v16si)_mm512_dpbusd_epi32(__S, __A, __B),
+                                                                                                                  (__v16si)__S);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_maskz_dpbusd_epi32(__mmask16 __U, __m512i __S, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_selectd_512(__U,
-                                    (__v16si)_mm512_dpbusd_epi32(__S, __A, __B),
-                                    (__v16si)_mm512_setzero_si512());
+                                                                                                                  (__v16si)_mm512_dpbusd_epi32(__S, __A, __B),
+                                                                                                                  (__v16si)_mm512_setzero_si512());
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_dpbusds_epi32(__m512i __S, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_vpdpbusds512((__v16si)__S, (__v16si)__A,
-                                              (__v16si)__B);
+                                                                                                                                         (__v16si)__B);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_mask_dpbusds_epi32(__m512i __S, __mmask16 __U, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_selectd_512(__U,
-                                   (__v16si)_mm512_dpbusds_epi32(__S, __A, __B),
-                                   (__v16si)__S);
+                                                                                                    (__v16si)_mm512_dpbusds_epi32(__S, __A, __B),
+                                                                                                    (__v16si)__S);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_maskz_dpbusds_epi32(__mmask16 __U, __m512i __S, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_selectd_512(__U,
-                                   (__v16si)_mm512_dpbusds_epi32(__S, __A, __B),
-                                   (__v16si)_mm512_setzero_si512());
+                                                                                                    (__v16si)_mm512_dpbusds_epi32(__S, __A, __B),
+                                                                                                    (__v16si)_mm512_setzero_si512());
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_dpwssd_epi32(__m512i __S, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_vpdpwssd512((__v16si)__S, (__v16si)__A,
-                                             (__v16si)__B);
+                                                                                                                                        (__v16si)__B);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_mask_dpwssd_epi32(__m512i __S, __mmask16 __U, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_selectd_512(__U,
-                                    (__v16si)_mm512_dpwssd_epi32(__S, __A, __B),
-                                    (__v16si)__S);
+                                                                                                                  (__v16si)_mm512_dpwssd_epi32(__S, __A, __B),
+                                                                                                                  (__v16si)__S);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_maskz_dpwssd_epi32(__mmask16 __U, __m512i __S, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_selectd_512(__U,
-                                    (__v16si)_mm512_dpwssd_epi32(__S, __A, __B),
-                                    (__v16si)_mm512_setzero_si512());
+                                                                                                                  (__v16si)_mm512_dpwssd_epi32(__S, __A, __B),
+                                                                                                                  (__v16si)_mm512_setzero_si512());
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_dpwssds_epi32(__m512i __S, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_vpdpwssds512((__v16si)__S, (__v16si)__A,
-                                              (__v16si)__B);
+                                                                                                                                         (__v16si)__B);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_mask_dpwssds_epi32(__m512i __S, __mmask16 __U, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_selectd_512(__U,
-                                   (__v16si)_mm512_dpwssds_epi32(__S, __A, __B),
-                                   (__v16si)__S);
+                                                                                                    (__v16si)_mm512_dpwssds_epi32(__S, __A, __B),
+                                                                                                    (__v16si)__S);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_maskz_dpwssds_epi32(__mmask16 __U, __m512i __S, __m512i __A, __m512i __B)
 {
   return (__m512i)__builtin_ia32_selectd_512(__U,
-                                   (__v16si)_mm512_dpwssds_epi32(__S, __A, __B),
-                                   (__v16si)_mm512_setzero_si512());
+                                                                                                    (__v16si)_mm512_dpwssds_epi32(__S, __A, __B),
+                                                                                                    (__v16si)_mm512_setzero_si512());
 }
 
 #undef __DEFAULT_FN_ATTRS

@@ -49,17 +49,17 @@ extern "C" {
     WCT_OBJECT_TYPE   ObjectType;
     WCT_OBJECT_STATUS ObjectStatus;
     __C89_NAMELESS union {
-      struct {
+                   struct {
 	WCHAR ObjectName[WCT_OBJNAME_LENGTH];
 	LARGE_INTEGER Timeout;
 	WINBOOL Alertable;
-      } LockObject;
-      struct {
+                   } LockObject;
+                   struct {
 	DWORD ProcessId;
 	DWORD ThreadId;
 	DWORD WaitTime;
 	DWORD ContextSwitches;
-      } ThreadObject;
+                   } ThreadObject;
     };
   } WAITCHAIN_NODE_INFO, *PWAITCHAIN_NODE_INFO;
 

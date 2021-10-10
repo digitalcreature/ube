@@ -25,7 +25,7 @@ struct sock_filter {	/* Filter block */
 	__u16	code;   /* Actual filter code */
 	__u8	jt;	/* Jump true */
 	__u8	jf;	/* Jump false */
-	__u32	k;      /* Generic multiuse field */
+	__u32	k;                   /* Generic multiuse field */
 };
 
 struct sock_fprog {	/* Required for SO_ATTACH_FILTER. */
@@ -35,12 +35,12 @@ struct sock_fprog {	/* Required for SO_ATTACH_FILTER. */
 
 /* ret - BPF_K and BPF_X also apply */
 #define BPF_RVAL(code)  ((code) & 0x18)
-#define         BPF_A           0x10
+#define                      BPF_A                        0x10
 
 /* misc */
 #define BPF_MISCOP(code) ((code) & 0xf8)
-#define         BPF_TAX         0x00
-#define         BPF_TXA         0x80
+#define                      BPF_TAX                      0x00
+#define                      BPF_TXA                      0x80
 
 /*
  * Macros for filter block array initializers.

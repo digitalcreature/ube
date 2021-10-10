@@ -7,7 +7,7 @@
  * Copyright IBM Corp. 2008, 2018
  *
  *    Author(s): Carsten Otte <cotte@de.ibm.com>
- *               Christian Borntraeger <borntraeger@de.ibm.com>
+ *                                         Christian Borntraeger <borntraeger@de.ibm.com>
  */
 #include <linux/types.h>
 

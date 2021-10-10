@@ -17,17 +17,17 @@
 
 typedef union WHV_EMULATOR_STATUS {
     __C89_NAMELESS struct {
-        UINT32 EmulationSuccessful : 1;
-        UINT32 InternalEmulationFailure : 1;
-        UINT32 IoPortCallbackFailed : 1;
-        UINT32 MemoryCallbackFailed : 1;
-        UINT32 TranslateGvaPageCallbackFailed : 1;
-        UINT32 TranslateGvaPageCallbackGpaIsNotAligned : 1;
-        UINT32 GetVirtualProcessorRegistersCallbackFailed : 1;
-        UINT32 SetVirtualProcessorRegistersCallbackFailed : 1;
-        UINT32 InterruptCausedIntercept : 1;
-        UINT32 GuestCannotBeFaulted : 1;
-        UINT32 Reserved : 22;
+                     UINT32 EmulationSuccessful : 1;
+                     UINT32 InternalEmulationFailure : 1;
+                     UINT32 IoPortCallbackFailed : 1;
+                     UINT32 MemoryCallbackFailed : 1;
+                     UINT32 TranslateGvaPageCallbackFailed : 1;
+                     UINT32 TranslateGvaPageCallbackGpaIsNotAligned : 1;
+                     UINT32 GetVirtualProcessorRegistersCallbackFailed : 1;
+                     UINT32 SetVirtualProcessorRegistersCallbackFailed : 1;
+                     UINT32 InterruptCausedIntercept : 1;
+                     UINT32 GuestCannotBeFaulted : 1;
+                     UINT32 Reserved : 22;
     };
     UINT32 AsUINT32;
 } WHV_EMULATOR_STATUS;

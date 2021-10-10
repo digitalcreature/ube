@@ -323,10 +323,10 @@ __local_syscall_error:						\
 #define INLINE_SYSCALL(name, nr, args...)				\
   ({ unsigned int _sys_result = INTERNAL_SYSCALL (name, , nr, args);	\
      if (__builtin_expect (INTERNAL_SYSCALL_ERROR_P (_sys_result, ), 0))	\
-       {								\
+                    {								\
 	 __set_errno (INTERNAL_SYSCALL_ERRNO (_sys_result, ));		\
 	 _sys_result = (unsigned int) -1;				\
-       }								\
+                    }								\
      (int) _sys_result; })
 
 #undef INTERNAL_SYSCALL_DECL
@@ -350,27 +350,27 @@ __local_syscall_error:						\
 # undef INTERNAL_SYSCALL_RAW
 # define INTERNAL_SYSCALL_RAW(name, err, nr, args...)		\
   ({								\
-      register int _a1 asm ("a1");				\
-      int _nametmp = name;					\
-      LOAD_ARGS_##nr (args)					\
-      register int _name asm ("ip") = _nametmp;			\
-      asm volatile ("bl      __libc_do_syscall"			\
-                    : "=r" (_a1)				\
-                    : "r" (_name) ASM_ARGS_##nr			\
-                    : "memory", "lr");				\
-      _a1; })
+                   register int _a1 asm ("a1");				\
+                   int _nametmp = name;					\
+                   LOAD_ARGS_##nr (args)					\
+                   register int _name asm ("ip") = _nametmp;			\
+                   asm volatile ("bl                   __libc_do_syscall"			\
+                                                           : "=r" (_a1)				\
+                                                           : "r" (_name) ASM_ARGS_##nr			\
+                                                           : "memory", "lr");				\
+                   _a1; })
 #else /* ARM */
 # undef INTERNAL_SYSCALL_RAW
 # define INTERNAL_SYSCALL_RAW(name, err, nr, args...)		\
   ({								\
-       register int _a1 asm ("r0"), _nr asm ("r7");		\
-       LOAD_ARGS_##nr (args)					\
-       _nr = name;						\
-       asm volatile ("swi	0x0	@ syscall " #name	\
+                    register int _a1 asm ("r0"), _nr asm ("r7");		\
+                    LOAD_ARGS_##nr (args)					\
+                    _nr = name;						\
+                    asm volatile ("swi	0x0	@ syscall " #name	\
 		     : "=r" (_a1)				\
 		     : "r" (_nr) ASM_ARGS_##nr			\
 		     : "memory");				\
-       _a1; })
+                    _a1; })
 #endif
 
 #undef INTERNAL_SYSCALL
@@ -434,7 +434,7 @@ __local_syscall_error:						\
 
 /* For EABI, non-constant syscalls are actually pretty easy...  */
 #undef INTERNAL_SYSCALL_NCS
-#define INTERNAL_SYSCALL_NCS(number, err, nr, args...)          \
+#define INTERNAL_SYSCALL_NCS(number, err, nr, args...)                       \
   INTERNAL_SYSCALL_RAW (number, err, nr, args)
 
 #define SINGLE_THREAD_BY_GLOBAL	1

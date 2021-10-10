@@ -701,16 +701,16 @@ typedef struct {
 typedef struct {
   Elf32_Sword d_tag;
   union {
-      Elf32_Word d_val;
-      Elf32_Addr d_ptr;
+                   Elf32_Word d_val;
+                   Elf32_Addr d_ptr;
   } d_un;
 } Elf32_Dyn;
 
 typedef struct {
   Elf64_Sxword d_tag;
   union {
-      Elf64_Xword d_val;
-      Elf64_Addr d_ptr;
+                   Elf64_Xword d_val;
+                   Elf64_Addr d_ptr;
   } d_un;
 } Elf64_Dyn;
 
@@ -812,7 +812,7 @@ typedef struct {
 
 
 #define DT_AUXILIARY    0x7ffffffd
-#define DT_FILTER       0x7fffffff
+#define DT_FILTER                    0x7fffffff
 #define DT_EXTRATAGIDX(tag)	((Elf32_Word)-((Elf32_Sword) (tag) <<1>>1)-1)
 #define DT_EXTRANUM	3
 
@@ -964,14 +964,14 @@ typedef struct {
 typedef struct {
   uint32_t a_type;
   union {
-      uint32_t a_val;
+                   uint32_t a_val;
   } a_un;
 } Elf32_auxv_t;
 
 typedef struct {
   uint64_t a_type;
   union {
-      uint64_t a_val;
+                   uint64_t a_val;
   } a_un;
 } Elf64_auxv_t;
 
@@ -1194,7 +1194,7 @@ typedef struct {
 #define R_386_TLS_DTPMOD32 35
 #define R_386_TLS_DTPOFF32 36
 #define R_386_TLS_TPOFF32  37
-#define R_386_SIZE32       38
+#define R_386_SIZE32                    38
 #define R_386_TLS_GOTDESC  39
 #define R_386_TLS_DESC_CALL 40
 #define R_386_TLS_DESC     41
@@ -1368,42 +1368,42 @@ typedef struct {
 
 
 
-#define SHT_MIPS_LIBLIST       0x70000000
-#define SHT_MIPS_MSYM	       0x70000001
-#define SHT_MIPS_CONFLICT      0x70000002
-#define SHT_MIPS_GPTAB	       0x70000003
-#define SHT_MIPS_UCODE	       0x70000004
-#define SHT_MIPS_DEBUG	       0x70000005
-#define SHT_MIPS_REGINFO       0x70000006
-#define SHT_MIPS_PACKAGE       0x70000007
-#define SHT_MIPS_PACKSYM       0x70000008
-#define SHT_MIPS_RELD	       0x70000009
-#define SHT_MIPS_IFACE         0x7000000b
-#define SHT_MIPS_CONTENT       0x7000000c
-#define SHT_MIPS_OPTIONS       0x7000000d
-#define SHT_MIPS_SHDR	       0x70000010
-#define SHT_MIPS_FDESC	       0x70000011
-#define SHT_MIPS_EXTSYM	       0x70000012
-#define SHT_MIPS_DENSE	       0x70000013
-#define SHT_MIPS_PDESC	       0x70000014
-#define SHT_MIPS_LOCSYM	       0x70000015
-#define SHT_MIPS_AUXSYM	       0x70000016
-#define SHT_MIPS_OPTSYM	       0x70000017
-#define SHT_MIPS_LOCSTR	       0x70000018
-#define SHT_MIPS_LINE	       0x70000019
-#define SHT_MIPS_RFDESC	       0x7000001a
-#define SHT_MIPS_DELTASYM      0x7000001b
+#define SHT_MIPS_LIBLIST                    0x70000000
+#define SHT_MIPS_MSYM	                    0x70000001
+#define SHT_MIPS_CONFLICT                   0x70000002
+#define SHT_MIPS_GPTAB	                    0x70000003
+#define SHT_MIPS_UCODE	                    0x70000004
+#define SHT_MIPS_DEBUG	                    0x70000005
+#define SHT_MIPS_REGINFO                    0x70000006
+#define SHT_MIPS_PACKAGE                    0x70000007
+#define SHT_MIPS_PACKSYM                    0x70000008
+#define SHT_MIPS_RELD	                    0x70000009
+#define SHT_MIPS_IFACE                      0x7000000b
+#define SHT_MIPS_CONTENT                    0x7000000c
+#define SHT_MIPS_OPTIONS                    0x7000000d
+#define SHT_MIPS_SHDR	                    0x70000010
+#define SHT_MIPS_FDESC	                    0x70000011
+#define SHT_MIPS_EXTSYM	                    0x70000012
+#define SHT_MIPS_DENSE	                    0x70000013
+#define SHT_MIPS_PDESC	                    0x70000014
+#define SHT_MIPS_LOCSYM	                    0x70000015
+#define SHT_MIPS_AUXSYM	                    0x70000016
+#define SHT_MIPS_OPTSYM	                    0x70000017
+#define SHT_MIPS_LOCSTR	                    0x70000018
+#define SHT_MIPS_LINE	                    0x70000019
+#define SHT_MIPS_RFDESC	                    0x7000001a
+#define SHT_MIPS_DELTASYM                   0x7000001b
 #define SHT_MIPS_DELTAINST     0x7000001c
 #define SHT_MIPS_DELTACLASS    0x7000001d
-#define SHT_MIPS_DWARF         0x7000001e
+#define SHT_MIPS_DWARF                      0x7000001e
 #define SHT_MIPS_DELTADECL     0x7000001f
 #define SHT_MIPS_SYMBOL_LIB    0x70000020
-#define SHT_MIPS_EVENTS	       0x70000021
+#define SHT_MIPS_EVENTS	                    0x70000021
 #define SHT_MIPS_TRANSLATE     0x70000022
-#define SHT_MIPS_PIXIE	       0x70000023
-#define SHT_MIPS_XLATE	       0x70000024
+#define SHT_MIPS_PIXIE	                    0x70000023
+#define SHT_MIPS_XLATE	                    0x70000024
 #define SHT_MIPS_XLATE_DEBUG   0x70000025
-#define SHT_MIPS_WHIRL	       0x70000026
+#define SHT_MIPS_WHIRL	                    0x70000026
 #define SHT_MIPS_EH_REGION     0x70000027
 #define SHT_MIPS_XLATE_OLD     0x70000028
 #define SHT_MIPS_PDR_EXCEPTION 0x70000029
@@ -1437,12 +1437,12 @@ typedef struct {
 
 typedef union {
   struct {
-      Elf32_Word gt_current_g_value;
-      Elf32_Word gt_unused;
+                   Elf32_Word gt_current_g_value;
+                   Elf32_Word gt_unused;
   } gt_header;
   struct {
-      Elf32_Word gt_g_value;
-      Elf32_Word gt_bytes;
+                   Elf32_Word gt_g_value;
+                   Elf32_Word gt_bytes;
   } gt_entry;
 } Elf32_gptab;
 
@@ -1569,7 +1569,7 @@ typedef struct {
 #define R_MIPS_TLS_TPREL_LO16	50
 #define R_MIPS_GLOB_DAT		51
 #define R_MIPS_COPY		126
-#define R_MIPS_JUMP_SLOT        127
+#define R_MIPS_JUMP_SLOT                     127
 
 #define R_MIPS_NUM		128
 
@@ -1641,7 +1641,7 @@ typedef struct {
 
 #define DT_MIPS_PLTGOT	     0x70000032
 
-#define DT_MIPS_RWPLT        0x70000034
+#define DT_MIPS_RWPLT                     0x70000034
 #define DT_MIPS_RLD_MAP_REL  0x70000035
 #define DT_MIPS_NUM	     0x36
 
@@ -2356,7 +2356,7 @@ enum
 #define SHT_ARM_PREEMPTMAP	(SHT_LOPROC + 2)
 #define SHT_ARM_ATTRIBUTES	(SHT_LOPROC + 3)
 
-#define R_AARCH64_NONE            0
+#define R_AARCH64_NONE                                      0
 #define R_AARCH64_P32_ABS32	1
 #define R_AARCH64_P32_COPY	180
 #define R_AARCH64_P32_GLOB_DAT	181
@@ -2367,8 +2367,8 @@ enum
 #define R_AARCH64_P32_TLS_TPREL	186
 #define R_AARCH64_P32_TLSDESC	187
 #define R_AARCH64_P32_IRELATIVE	188
-#define R_AARCH64_ABS64         257
-#define R_AARCH64_ABS32         258
+#define R_AARCH64_ABS64                      257
+#define R_AARCH64_ABS32                      258
 #define R_AARCH64_ABS16		259
 #define R_AARCH64_PREL64	260
 #define R_AARCH64_PREL32	261
@@ -2480,7 +2480,7 @@ enum
 #define R_AARCH64_TLSLE_LDST128_TPREL_LO12_NC 571
 #define R_AARCH64_TLSLD_LDST128_DTPREL_LO12 572
 #define R_AARCH64_TLSLD_LDST128_DTPREL_LO12_NC 573
-#define R_AARCH64_COPY         1024
+#define R_AARCH64_COPY                      1024
 #define R_AARCH64_GLOB_DAT     1025
 #define R_AARCH64_JUMP_SLOT    1026
 #define R_AARCH64_RELATIVE     1027
@@ -2490,7 +2490,7 @@ enum
 #define R_AARCH64_TLS_DTPREL64 1029
 #define R_AARCH64_TLS_TPREL    1030
 #define R_AARCH64_TLS_TPREL64  1030
-#define R_AARCH64_TLSDESC      1031
+#define R_AARCH64_TLSDESC                   1031
 
 
 #define R_ARM_NONE		0
@@ -2626,61 +2626,61 @@ enum
 #define R_ARM_NUM		256
 
 
-#define R_CKCORE_NONE               0
-#define R_CKCORE_ADDR32             1
-#define R_CKCORE_PCRELIMM8BY4       2
-#define R_CKCORE_PCRELIMM11BY2      3
-#define R_CKCORE_PCREL32            5
+#define R_CKCORE_NONE                                         0
+#define R_CKCORE_ADDR32                                       1
+#define R_CKCORE_PCRELIMM8BY4                    2
+#define R_CKCORE_PCRELIMM11BY2                   3
+#define R_CKCORE_PCREL32                                      5
 #define R_CKCORE_PCRELJSR_IMM11BY2  6
-#define R_CKCORE_RELATIVE           9
-#define R_CKCORE_COPY               10
-#define R_CKCORE_GLOB_DAT           11
-#define R_CKCORE_JUMP_SLOT          12
-#define R_CKCORE_GOTOFF             13
-#define R_CKCORE_GOTPC              14
-#define R_CKCORE_GOT32              15
-#define R_CKCORE_PLT32              16
-#define R_CKCORE_ADDRGOT            17
-#define R_CKCORE_ADDRPLT            18
+#define R_CKCORE_RELATIVE                        9
+#define R_CKCORE_COPY                                         10
+#define R_CKCORE_GLOB_DAT                        11
+#define R_CKCORE_JUMP_SLOT                       12
+#define R_CKCORE_GOTOFF                                       13
+#define R_CKCORE_GOTPC                                        14
+#define R_CKCORE_GOT32                                        15
+#define R_CKCORE_PLT32                                        16
+#define R_CKCORE_ADDRGOT                                      17
+#define R_CKCORE_ADDRPLT                                      18
 #define R_CKCORE_PCREL_IMM26BY2     19
 #define R_CKCORE_PCREL_IMM16BY2     20
 #define R_CKCORE_PCREL_IMM16BY4     21
 #define R_CKCORE_PCREL_IMM10BY2     22
 #define R_CKCORE_PCREL_IMM10BY4     23
-#define R_CKCORE_ADDR_HI16          24
-#define R_CKCORE_ADDR_LO16          25
-#define R_CKCORE_GOTPC_HI16         26
-#define R_CKCORE_GOTPC_LO16         27
-#define R_CKCORE_GOTOFF_HI16        28
-#define R_CKCORE_GOTOFF_LO16        29
-#define R_CKCORE_GOT12              30
-#define R_CKCORE_GOT_HI16           31
-#define R_CKCORE_GOT_LO16           32
-#define R_CKCORE_PLT12              33
-#define R_CKCORE_PLT_HI16           34
-#define R_CKCORE_PLT_LO16           35
-#define R_CKCORE_ADDRGOT_HI16       36
-#define R_CKCORE_ADDRGOT_LO16       37
-#define R_CKCORE_ADDRPLT_HI16       38
-#define R_CKCORE_ADDRPLT_LO16       39
+#define R_CKCORE_ADDR_HI16                       24
+#define R_CKCORE_ADDR_LO16                       25
+#define R_CKCORE_GOTPC_HI16                      26
+#define R_CKCORE_GOTPC_LO16                      27
+#define R_CKCORE_GOTOFF_HI16                     28
+#define R_CKCORE_GOTOFF_LO16                     29
+#define R_CKCORE_GOT12                                        30
+#define R_CKCORE_GOT_HI16                        31
+#define R_CKCORE_GOT_LO16                        32
+#define R_CKCORE_PLT12                                        33
+#define R_CKCORE_PLT_HI16                        34
+#define R_CKCORE_PLT_LO16                        35
+#define R_CKCORE_ADDRGOT_HI16                    36
+#define R_CKCORE_ADDRGOT_LO16                    37
+#define R_CKCORE_ADDRPLT_HI16                    38
+#define R_CKCORE_ADDRPLT_LO16                    39
 #define R_CKCORE_PCREL_JSR_IMM26BY2 40
-#define R_CKCORE_TOFFSET_LO16       41
-#define R_CKCORE_DOFFSET_LO16       42
+#define R_CKCORE_TOFFSET_LO16                    41
+#define R_CKCORE_DOFFSET_LO16                    42
 #define R_CKCORE_PCREL_IMM18BY2     43
-#define R_CKCORE_DOFFSET_IMM18      44
+#define R_CKCORE_DOFFSET_IMM18                   44
 #define R_CKCORE_DOFFSET_IMM18BY2   45
 #define R_CKCORE_DOFFSET_IMM18BY4   46
-#define R_CKCORE_GOT_IMM18BY4       48
-#define R_CKCORE_PLT_IMM18BY4       49
-#define R_CKCORE_PCREL_IMM7BY4      50
-#define R_CKCORE_TLS_LE32           51
-#define R_CKCORE_TLS_IE32           52
-#define R_CKCORE_TLS_GD32           53
-#define R_CKCORE_TLS_LDM32          54
-#define R_CKCORE_TLS_LDO32          55
-#define R_CKCORE_TLS_DTPMOD32       56
-#define R_CKCORE_TLS_DTPOFF32       57
-#define R_CKCORE_TLS_TPOFF32        58
+#define R_CKCORE_GOT_IMM18BY4                    48
+#define R_CKCORE_PLT_IMM18BY4                    49
+#define R_CKCORE_PCREL_IMM7BY4                   50
+#define R_CKCORE_TLS_LE32                        51
+#define R_CKCORE_TLS_IE32                        52
+#define R_CKCORE_TLS_GD32                        53
+#define R_CKCORE_TLS_LDM32                       54
+#define R_CKCORE_TLS_LDO32                       55
+#define R_CKCORE_TLS_DTPMOD32                    56
+#define R_CKCORE_TLS_DTPOFF32                    57
+#define R_CKCORE_TLS_TPOFF32                     58
 
 
 #define EF_IA_64_MASKOS		0x0000000f
@@ -3017,7 +3017,7 @@ enum
 #define R_X86_64_GOTPC32_TLSDESC 34
 #define R_X86_64_TLSDESC_CALL   35
 
-#define R_X86_64_TLSDESC        36
+#define R_X86_64_TLSDESC                     36
 #define R_X86_64_IRELATIVE	37
 #define R_X86_64_RELATIVE64	38
 #define R_X86_64_GOTPCRELX	41
@@ -3140,7 +3140,7 @@ enum
 #define R_MICROBLAZE_TLSGOTTPREL32 28
 #define R_MICROBLAZE_TLSTPREL32	 29
 
-#define DT_NIOS2_GP             0x70000002
+#define DT_NIOS2_GP                                       0x70000002
 
 #define R_NIOS2_NONE		0
 #define R_NIOS2_S16		1
@@ -3228,12 +3228,12 @@ enum
 #define R_BPF_NONE		0
 #define R_BPF_MAP_FD		1
 
-#define R_RISCV_NONE            0
-#define R_RISCV_32              1
-#define R_RISCV_64              2
-#define R_RISCV_RELATIVE        3
-#define R_RISCV_COPY            4
-#define R_RISCV_JUMP_SLOT       5
+#define R_RISCV_NONE                                      0
+#define R_RISCV_32                                        1
+#define R_RISCV_64                                        2
+#define R_RISCV_RELATIVE                     3
+#define R_RISCV_COPY                                      4
+#define R_RISCV_JUMP_SLOT                    5
 #define R_RISCV_TLS_DTPMOD32    6
 #define R_RISCV_TLS_DTPMOD64    7
 #define R_RISCV_TLS_DTPREL32    8
@@ -3241,48 +3241,48 @@ enum
 #define R_RISCV_TLS_TPREL32     10
 #define R_RISCV_TLS_TPREL64     11
 
-#define R_RISCV_BRANCH          16
-#define R_RISCV_JAL             17
-#define R_RISCV_CALL            18
-#define R_RISCV_CALL_PLT        19
-#define R_RISCV_GOT_HI20        20
+#define R_RISCV_BRANCH                       16
+#define R_RISCV_JAL                                       17
+#define R_RISCV_CALL                                      18
+#define R_RISCV_CALL_PLT                     19
+#define R_RISCV_GOT_HI20                     20
 #define R_RISCV_TLS_GOT_HI20    21
 #define R_RISCV_TLS_GD_HI20     22
-#define R_RISCV_PCREL_HI20      23
+#define R_RISCV_PCREL_HI20                   23
 #define R_RISCV_PCREL_LO12_I    24
 #define R_RISCV_PCREL_LO12_S    25
-#define R_RISCV_HI20            26
-#define R_RISCV_LO12_I          27
-#define R_RISCV_LO12_S          28
-#define R_RISCV_TPREL_HI20      29
+#define R_RISCV_HI20                                      26
+#define R_RISCV_LO12_I                       27
+#define R_RISCV_LO12_S                       28
+#define R_RISCV_TPREL_HI20                   29
 #define R_RISCV_TPREL_LO12_I    30
 #define R_RISCV_TPREL_LO12_S    31
-#define R_RISCV_TPREL_ADD       32
-#define R_RISCV_ADD8            33
-#define R_RISCV_ADD16           34
-#define R_RISCV_ADD32           35
-#define R_RISCV_ADD64           36
-#define R_RISCV_SUB8            37
-#define R_RISCV_SUB16           38
-#define R_RISCV_SUB32           39
-#define R_RISCV_SUB64           40
+#define R_RISCV_TPREL_ADD                    32
+#define R_RISCV_ADD8                                      33
+#define R_RISCV_ADD16                        34
+#define R_RISCV_ADD32                        35
+#define R_RISCV_ADD64                        36
+#define R_RISCV_SUB8                                      37
+#define R_RISCV_SUB16                        38
+#define R_RISCV_SUB32                        39
+#define R_RISCV_SUB64                        40
 #define R_RISCV_GNU_VTINHERIT   41
 #define R_RISCV_GNU_VTENTRY     42
-#define R_RISCV_ALIGN           43
-#define R_RISCV_RVC_BRANCH      44
-#define R_RISCV_RVC_JUMP        45
-#define R_RISCV_RVC_LUI         46
-#define R_RISCV_GPREL_I         47
-#define R_RISCV_GPREL_S         48
-#define R_RISCV_TPREL_I         49
-#define R_RISCV_TPREL_S         50
-#define R_RISCV_RELAX           51
-#define R_RISCV_SUB6            52
-#define R_RISCV_SET6            53
-#define R_RISCV_SET8            54
-#define R_RISCV_SET16           55
-#define R_RISCV_SET32           56
-#define R_RISCV_32_PCREL        57
+#define R_RISCV_ALIGN                        43
+#define R_RISCV_RVC_BRANCH                   44
+#define R_RISCV_RVC_JUMP                     45
+#define R_RISCV_RVC_LUI                      46
+#define R_RISCV_GPREL_I                      47
+#define R_RISCV_GPREL_S                      48
+#define R_RISCV_TPREL_I                      49
+#define R_RISCV_TPREL_S                      50
+#define R_RISCV_RELAX                        51
+#define R_RISCV_SUB6                                      52
+#define R_RISCV_SET6                                      53
+#define R_RISCV_SET8                                      54
+#define R_RISCV_SET16                        55
+#define R_RISCV_SET32                        56
+#define R_RISCV_32_PCREL                     57
 
 #ifdef __cplusplus
 }

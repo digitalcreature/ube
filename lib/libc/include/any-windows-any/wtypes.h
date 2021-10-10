@@ -227,8 +227,8 @@ typedef USHORT LANGID;
 typedef struct _userCLIPFORMAT {
     LONG fContext;
     union {
-        DWORD dwValue;
-        wchar_t *pwszName;
+                     DWORD dwValue;
+                     wchar_t *pwszName;
     } u;
 } userCLIPFORMAT;
 
@@ -238,17 +238,17 @@ typedef WORD CLIPFORMAT;
 typedef struct _GDI_NONREMOTE {
     LONG fContext;
     union {
-        LONG hInproc;
-        DWORD_BLOB *hRemote;
+                     LONG hInproc;
+                     DWORD_BLOB *hRemote;
     } u;
 } GDI_NONREMOTE;
 
 typedef struct _userHGLOBAL {
     LONG fContext;
     union {
-        LONG hInproc;
-        FLAGGED_BYTE_BLOB *hRemote;
-        INT64 hInproc64;
+                     LONG hInproc;
+                     FLAGGED_BYTE_BLOB *hRemote;
+                     INT64 hInproc64;
     } u;
 } userHGLOBAL;
 
@@ -257,9 +257,9 @@ typedef userHGLOBAL *wireHGLOBAL;
 typedef struct _userHMETAFILE {
     LONG fContext;
     union {
-        LONG hInproc;
-        BYTE_BLOB *hRemote;
-        INT64 hInproc64;
+                     LONG hInproc;
+                     BYTE_BLOB *hRemote;
+                     INT64 hInproc64;
     } u;
 } userHMETAFILE;
 
@@ -273,18 +273,18 @@ typedef struct _remoteMETAFILEPICT {
 typedef struct _userHMETAFILEPICT {
     LONG fContext;
     union {
-        LONG hInproc;
-        remoteMETAFILEPICT *hRemote;
-        INT64 hInproc64;
+                     LONG hInproc;
+                     remoteMETAFILEPICT *hRemote;
+                     INT64 hInproc64;
     } u;
 } userHMETAFILEPICT;
 
 typedef struct _userHENHMETAFILE {
     LONG fContext;
     union {
-        LONG hInproc;
-        BYTE_BLOB *hRemote;
-        INT64 hInproc64;
+                     LONG hInproc;
+                     BYTE_BLOB *hRemote;
+                     INT64 hInproc64;
     } u;
 } userHENHMETAFILE;
 
@@ -302,26 +302,26 @@ typedef struct _userBITMAP {
 typedef struct _userHBITMAP {
     LONG fContext;
     union {
-        LONG hInproc;
-        userBITMAP *hRemote;
-        INT64 hInproc64;
+                     LONG hInproc;
+                     userBITMAP *hRemote;
+                     INT64 hInproc64;
     } u;
 } userHBITMAP;
 
 typedef struct _userHPALETTE {
     LONG fContext;
     union {
-        LONG hInproc;
-        LOGPALETTE *hRemote;
-        INT64 hInproc64;
+                     LONG hInproc;
+                     LOGPALETTE *hRemote;
+                     INT64 hInproc64;
     } u;
 } userHPALETTE;
 
 typedef struct _RemotableHandle {
     LONG fContext;
     union {
-        LONG hInproc;
-        LONG hRemote;
+                     LONG hInproc;
+                     LONG hRemote;
     } u;
 } RemotableHandle;
 
@@ -454,16 +454,16 @@ typedef struct tagDEC {
   USHORT wReserved;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      BYTE scale;
-      BYTE sign;
+                   BYTE scale;
+                   BYTE sign;
     } DUMMYSTRUCTNAME;
     USHORT signscale;
   } DUMMYUNIONNAME;
   ULONG Hi32;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      ULONG Lo32;
-      ULONG Mid32;
+                   ULONG Lo32;
+                   ULONG Mid32;
     } DUMMYSTRUCTNAME2;
     ULONGLONG Lo64;
   } DUMMYUNIONNAME2;
@@ -604,19 +604,19 @@ typedef enum tagTYSPEC {
 typedef struct __WIDL_wtypes_generated_name_00000001 {
     DWORD tyspec;
     union {
-        CLSID clsid;
-        LPOLESTR pFileExt;
-        LPOLESTR pMimeType;
-        LPOLESTR pProgId;
-        LPOLESTR pFileName;
-        struct {
-            LPOLESTR pPackageName;
-            GUID PolicyId;
-        } ByName;
-        struct {
-            GUID ObjectId;
-            GUID PolicyId;
-        } ByObjectId;
+                     CLSID clsid;
+                     LPOLESTR pFileExt;
+                     LPOLESTR pMimeType;
+                     LPOLESTR pProgId;
+                     LPOLESTR pFileName;
+                     struct {
+                                      LPOLESTR pPackageName;
+                                      GUID PolicyId;
+                     } ByName;
+                     struct {
+                                      GUID ObjectId;
+                                      GUID PolicyId;
+                     } ByObjectId;
     } tagged_union;
 } uCLSSPEC;
 /* Begin additional prototypes for all interfaces */

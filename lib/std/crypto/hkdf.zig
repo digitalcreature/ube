@@ -19,41 +19,41 @@ pub const HkdfSha512 = Hkdf(hmac.sha2.HmacSha512);
 /// derives one or more uniform keys from it.
 pub fn Hkdf(comptime Hmac: type) type {
     return struct {
-        /// Return a master key from a salt and initial keying material.
-        pub fn extract(salt: []const u8, ikm: []const u8) [Hmac.mac_length]u8 {
-            var prk: [Hmac.mac_length]u8 = undefined;
-            Hmac.create(&prk, ikm, salt);
-            return prk;
-        }
+                     /// Return a master key from a salt and initial keying material.
+                     pub fn extract(salt: []const u8, ikm: []const u8) [Hmac.mac_length]u8 {
+                                      var prk: [Hmac.mac_length]u8 = undefined;
+                                      Hmac.create(&prk, ikm, salt);
+                                      return prk;
+                     }
 
-        /// Derive a subkey from a master key `prk` and a subkey description `ctx`.
-        pub fn expand(out: []u8, ctx: []const u8, prk: [Hmac.mac_length]u8) void {
-            assert(out.len < Hmac.mac_length * 255); // output size is too large for the Hkdf construction
-            var i: usize = 0;
-            var counter = [1]u8{1};
-            while (i + Hmac.mac_length <= out.len) : (i += Hmac.mac_length) {
-                var st = Hmac.init(&prk);
-                if (i != 0) {
-                    st.update(out[i - Hmac.mac_length ..][0..Hmac.mac_length]);
-                }
-                st.update(ctx);
-                st.update(&counter);
-                st.final(out[i..][0..Hmac.mac_length]);
-                counter[0] += 1;
-            }
-            const left = out.len % Hmac.mac_length;
-            if (left > 0) {
-                var st = Hmac.init(&prk);
-                if (i != 0) {
-                    st.update(out[i - Hmac.mac_length ..][0..Hmac.mac_length]);
-                }
-                st.update(ctx);
-                st.update(&counter);
-                var tmp: [Hmac.mac_length]u8 = undefined;
-                st.final(tmp[0..Hmac.mac_length]);
-                mem.copy(u8, out[i..][0..left], tmp[0..left]);
-            }
-        }
+                     /// Derive a subkey from a master key `prk` and a subkey description `ctx`.
+                     pub fn expand(out: []u8, ctx: []const u8, prk: [Hmac.mac_length]u8) void {
+                                      assert(out.len < Hmac.mac_length * 255); // output size is too large for the Hkdf construction
+                                      var i: usize = 0;
+                                      var counter = [1]u8{1};
+                                      while (i + Hmac.mac_length <= out.len) : (i += Hmac.mac_length) {
+                                          var st = Hmac.init(&prk);
+                                          if (i != 0) {
+                                                           st.update(out[i - Hmac.mac_length ..][0..Hmac.mac_length]);
+                                          }
+                                          st.update(ctx);
+                                          st.update(&counter);
+                                          st.final(out[i..][0..Hmac.mac_length]);
+                                          counter[0] += 1;
+                                      }
+                                      const left = out.len % Hmac.mac_length;
+                                      if (left > 0) {
+                                          var st = Hmac.init(&prk);
+                                          if (i != 0) {
+                                                           st.update(out[i - Hmac.mac_length ..][0..Hmac.mac_length]);
+                                          }
+                                          st.update(ctx);
+                                          st.update(&counter);
+                                          var tmp: [Hmac.mac_length]u8 = undefined;
+                                          st.final(tmp[0..Hmac.mac_length]);
+                                          mem.copy(u8, out[i..][0..left], tmp[0..left]);
+                                      }
+                     }
     };
 }
 

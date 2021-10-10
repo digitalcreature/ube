@@ -25,7 +25,7 @@ float asinhf(float x)
   /* Use log1p to avoid cancellation with small x. Put
      x * x in denom, so overflow is harmless. 
      asinh(x) = log1p (x + sqrt (x * x + 1.0) - 1.0)
-              = log1p (x + x * x / (sqrt (x * x + 1.0) + 1.0))  */
+                                        = log1p (x + x * x / (sqrt (x * x + 1.0) + 1.0))  */
 
   z = __fast_log1p (z + z * z / (__fast_sqrt (z * z + 1.0) + 1.0));
 

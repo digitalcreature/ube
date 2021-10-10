@@ -10,46 +10,46 @@ const testing = std.testing;
 
 pub fn BufferedReader(comptime buffer_size: usize, comptime ReaderType: type) type {
     return struct {
-        unbuffered_reader: ReaderType,
-        fifo: FifoType = FifoType.init(),
+                     unbuffered_reader: ReaderType,
+                     fifo: FifoType = FifoType.init(),
 
-        pub const Error = ReaderType.Error;
-        pub const Reader = io.Reader(*Self, Error, read);
-        /// Deprecated: use `Reader`
-        pub const InStream = Reader;
+                     pub const Error = ReaderType.Error;
+                     pub const Reader = io.Reader(*Self, Error, read);
+                     /// Deprecated: use `Reader`
+                     pub const InStream = Reader;
 
-        const Self = @This();
-        const FifoType = std.fifo.LinearFifo(u8, std.fifo.LinearFifoBufferType{ .Static = buffer_size });
+                     const Self = @This();
+                     const FifoType = std.fifo.LinearFifo(u8, std.fifo.LinearFifoBufferType{ .Static = buffer_size });
 
-        pub fn read(self: *Self, dest: []u8) Error!usize {
-            var dest_index: usize = 0;
-            while (dest_index < dest.len) {
-                const written = self.fifo.read(dest[dest_index..]);
-                if (written == 0) {
-                    // fifo empty, fill it
-                    const writable = self.fifo.writableSlice(0);
-                    assert(writable.len > 0);
-                    const n = try self.unbuffered_reader.read(writable);
-                    if (n == 0) {
-                        // reading from the unbuffered stream returned nothing
-                        // so we have nothing left to read.
-                        return dest_index;
-                    }
-                    self.fifo.update(n);
-                }
-                dest_index += written;
-            }
-            return dest.len;
-        }
+                     pub fn read(self: *Self, dest: []u8) Error!usize {
+                                      var dest_index: usize = 0;
+                                      while (dest_index < dest.len) {
+                                          const written = self.fifo.read(dest[dest_index..]);
+                                          if (written == 0) {
+                                                           // fifo empty, fill it
+                                                           const writable = self.fifo.writableSlice(0);
+                                                           assert(writable.len > 0);
+                                                           const n = try self.unbuffered_reader.read(writable);
+                                                           if (n == 0) {
+                                                                            // reading from the unbuffered stream returned nothing
+                                                                            // so we have nothing left to read.
+                                                                            return dest_index;
+                                                           }
+                                                           self.fifo.update(n);
+                                          }
+                                          dest_index += written;
+                                      }
+                                      return dest.len;
+                     }
 
-        pub fn reader(self: *Self) Reader {
-            return .{ .context = self };
-        }
+                     pub fn reader(self: *Self) Reader {
+                                      return .{ .context = self };
+                     }
 
-        /// Deprecated: use `reader`
-        pub fn inStream(self: *Self) InStream {
-            return .{ .context = self };
-        }
+                     /// Deprecated: use `reader`
+                     pub fn inStream(self: *Self) InStream {
+                                      return .{ .context = self };
+                     }
     };
 }
 
@@ -59,32 +59,32 @@ pub fn bufferedReader(underlying_stream: anytype) BufferedReader(4096, @TypeOf(u
 
 test "io.BufferedReader" {
     const OneByteReadReader = struct {
-        str: []const u8,
-        curr: usize,
+                     str: []const u8,
+                     curr: usize,
 
-        const Error = error{NoError};
-        const Self = @This();
-        const Reader = io.Reader(*Self, Error, read);
+                     const Error = error{NoError};
+                     const Self = @This();
+                     const Reader = io.Reader(*Self, Error, read);
 
-        fn init(str: []const u8) Self {
-            return Self{
-                .str = str,
-                .curr = 0,
-            };
-        }
+                     fn init(str: []const u8) Self {
+                                      return Self{
+                                          .str = str,
+                                          .curr = 0,
+                                      };
+                     }
 
-        fn read(self: *Self, dest: []u8) Error!usize {
-            if (self.str.len <= self.curr or dest.len == 0)
-                return 0;
+                     fn read(self: *Self, dest: []u8) Error!usize {
+                                      if (self.str.len <= self.curr or dest.len == 0)
+                                          return 0;
 
-            dest[0] = self.str[self.curr];
-            self.curr += 1;
-            return 1;
-        }
+                                      dest[0] = self.str[self.curr];
+                                      self.curr += 1;
+                                      return 1;
+                     }
 
-        fn reader(self: *Self) Reader {
-            return .{ .context = self };
-        }
+                     fn reader(self: *Self) Reader {
+                                      return .{ .context = self };
+                     }
     };
 
     const str = "This is a test";

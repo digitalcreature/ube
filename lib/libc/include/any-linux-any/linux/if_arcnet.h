@@ -1,17 +1,17 @@
 /* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
 /*
- * INET         An implementation of the TCP/IP protocol suite for the LINUX
- *              operating system.  INET is implemented using the  BSD Socket
- *              interface as the means of communication with the user level.
+ * INET                      An implementation of the TCP/IP protocol suite for the LINUX
+ *                                        operating system.  INET is implemented using the  BSD Socket
+ *                                        interface as the means of communication with the user level.
  *
- *              Global definitions for the ARCnet interface.
+ *                                        Global definitions for the ARCnet interface.
  *
  * Authors:     David Woodhouse and Avery Pennarun
  *
- *              This program is free software; you can redistribute it and/or
- *              modify it under the terms of the GNU General Public License
- *              as published by the Free Software Foundation; either version
- *              2 of the License, or (at your option) any later version.
+ *                                        This program is free software; you can redistribute it and/or
+ *                                        modify it under the terms of the GNU General Public License
+ *                                        as published by the Free Software Foundation; either version
+ *                                        2 of the License, or (at your option) any later version.
  */
 
 #ifndef _LINUX_IF_ARCNET_H
@@ -122,7 +122,7 @@ struct archdr {
 		struct arc_rfc1201   rfc1201;
 		struct arc_rfc1051   rfc1051;
 		struct arc_eth_encap eth_encap;
-		struct arc_cap       cap;
+		struct arc_cap                    cap;
 		__u8 raw[0];	/* 508 bytes				*/
 	} soft;
 };

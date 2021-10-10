@@ -44,16 +44,16 @@ pub const HIISimplifiedFontPackage = extern struct {
     number_of_wide_glyphs: u16,
 
     pub fn getNarrowGlyphs(self: *HIISimplifiedFontPackage) []NarrowGlyph {
-        return @ptrCast([*]NarrowGlyph, @ptrCast([*]u8, self) + @sizeOf(HIISimplifiedFontPackage))[0..self.number_of_narrow_glyphs];
+                     return @ptrCast([*]NarrowGlyph, @ptrCast([*]u8, self) + @sizeOf(HIISimplifiedFontPackage))[0..self.number_of_narrow_glyphs];
     }
 };
 
 pub const NarrowGlyph = extern struct {
     unicode_weight: u16,
     attributes: packed struct {
-        non_spacing: bool,
-        wide: bool,
-        _pad: u6,
+                     non_spacing: bool,
+                     wide: bool,
+                     _pad: u6,
     },
     glyph_col_1: [19]u8,
 };
@@ -61,9 +61,9 @@ pub const NarrowGlyph = extern struct {
 pub const WideGlyph = extern struct {
     unicode_weight: u16,
     attributes: packed struct {
-        non_spacing: bool,
-        wide: bool,
-        _pad: u6,
+                     non_spacing: bool,
+                     wide: bool,
+                     _pad: u6,
     },
     glyph_col_1: [19]u8,
     glyph_col_2: [19]u8,

@@ -54,8 +54,8 @@ extern "C" {
 #define INTERFACE ITnef
   DECLARE_MAPI_INTERFACE_(ITnef,IUnknown) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_ITNEF_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_ITNEF_METHODS(PURE)
   };
 
   STDMETHODIMP OpenTnefStream(LPVOID lpvSupport,LPSTREAM lpStream,LPTSTR lpszStreamName,ULONG ulFlags,LPMESSAGE lpMessage,WORD wKeyVal,LPITNEF *lppTNEF);
@@ -152,8 +152,8 @@ extern "C" {
     XTYPE xtype;
     LONG lTime;
     union {
-      ADDRALIAS alias;
-      char rgchInterNet[1];
+                   ADDRALIAS alias;
+                   char rgchInterNet[1];
     } address;
   } NSID,*LPNSID;
 #define cbNSID sizeof(NSID)

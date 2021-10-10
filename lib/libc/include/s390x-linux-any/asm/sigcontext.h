@@ -40,8 +40,8 @@
 
 typedef struct 
 {
-        unsigned long mask;
-        unsigned long addr;
+                     unsigned long mask;
+                     unsigned long addr;
 } __attribute__ ((aligned(8))) _psw_t;
 
 typedef struct
@@ -77,7 +77,7 @@ typedef struct
 struct sigcontext
 {
 	unsigned long	oldmask[_SIGCONTEXT_NSIG_WORDS];
-	_sigregs        *sregs;
+	_sigregs                     *sregs;
 };
 
 

@@ -95,7 +95,7 @@ static char EMSG[] = "";
 static int getopt_internal(int, char * const *, const char *,
 			   const struct option *, int *, int);
 static int parse_long_options(char * const *, const char *,
-			      const struct option *, int *, int);
+			                   const struct option *, int *, int);
 static int gcd(int, int);
 static void permute_args(int, int, int, char * const *);
 
@@ -199,9 +199,9 @@ parse_long_options(char * const *nargv, const char *options,
 	size_t current_argv_len;
 	int i, ambiguous, match;
 
-#define IDENTICAL_INTERPRETATION(_x, _y)                                \
+#define IDENTICAL_INTERPRETATION(_x, _y)                                                                                                 \
 	(long_options[(_x)].has_arg == long_options[(_y)].has_arg &&    \
-	 long_options[(_x)].flag == long_options[(_y)].flag &&          \
+	 long_options[(_x)].flag == long_options[(_y)].flag &&                       \
 	 long_options[(_x)].val == long_options[(_y)].val)
 
 	current_argv = place;
@@ -342,7 +342,7 @@ getopt_internal(int nargc, char * const *nargv, const char *options,
 	 * string begins with a '+'.
 	 *
 	 * CV, 2009-12-14: Check POSIXLY_CORRECT anew if optind == 0 or
-	 *                 optreset != 0 for GNU compatibility.
+	 *                                           optreset != 0 for GNU compatibility.
 	 */
 	if (posixly_correct == -1 || optreset != 0)
 		posixly_correct = (GetEnvironmentVariableW(L"POSIXLY_CORRECT", NULL, 0) != 0);
@@ -359,7 +359,7 @@ getopt_internal(int nargc, char * const *nargv, const char *options,
 start:
 	if (optreset || !*place) {		/* update scanning pointer */
 		optreset = 0;
-		if (optind >= nargc) {          /* end of argument vector */
+		if (optind >= nargc) {                       /* end of argument vector */
 			place = EMSG;
 			if (nonopt_end != -1) {
 				/* do permutation, if we have to */

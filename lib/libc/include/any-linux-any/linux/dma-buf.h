@@ -27,11 +27,11 @@ struct dma_buf_sync {
 	__u64 flags;
 };
 
-#define DMA_BUF_SYNC_READ      (1 << 0)
+#define DMA_BUF_SYNC_READ                   (1 << 0)
 #define DMA_BUF_SYNC_WRITE     (2 << 0)
-#define DMA_BUF_SYNC_RW        (DMA_BUF_SYNC_READ | DMA_BUF_SYNC_WRITE)
+#define DMA_BUF_SYNC_RW                     (DMA_BUF_SYNC_READ | DMA_BUF_SYNC_WRITE)
 #define DMA_BUF_SYNC_START     (0 << 2)
-#define DMA_BUF_SYNC_END       (1 << 2)
+#define DMA_BUF_SYNC_END                    (1 << 2)
 #define DMA_BUF_SYNC_VALID_FLAGS_MASK \
 	(DMA_BUF_SYNC_RW | DMA_BUF_SYNC_END)
 

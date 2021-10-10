@@ -39,9 +39,9 @@
 
 #ifdef __USE_GNU
 /* Cloning flags.  */
-# define CSIGNAL       0x000000ff /* Signal mask to be sent at exit.  */
-# define CLONE_VM      0x00000100 /* Set if VM shared between processes.  */
-# define CLONE_FS      0x00000200 /* Set if fs info shared between processes.  */
+# define CSIGNAL                    0x000000ff /* Signal mask to be sent at exit.  */
+# define CLONE_VM                   0x00000100 /* Set if VM shared between processes.  */
+# define CLONE_FS                   0x00000200 /* Set if fs info shared between processes.  */
 # define CLONE_FILES   0x00000400 /* Set if open files shared between processes.  */
 # define CLONE_SIGHAND 0x00000800 /* Set if signal handlers shared.  */
 # define CLONE_PIDFD   0x00001000 /* Set if a pidfd should be placed
@@ -61,7 +61,7 @@
 					    location to clear.  */
 # define CLONE_DETACHED 0x00400000 /* Create clone detached.  */
 # define CLONE_UNTRACED 0x00800000 /* Set if the tracing process can't
-				      force CLONE_PTRACE on this clone.  */
+				                   force CLONE_PTRACE on this clone.  */
 # define CLONE_CHILD_SETTID 0x01000000 /* Store TID in userlevel buffer in
 					  the child.  */
 # define CLONE_NEWCGROUP    0x02000000	/* New cgroup namespace.  */

@@ -15,161 +15,161 @@ const math = std.math;
 /// Creates a stream which allows for reading bit fields from another stream
 pub fn BitReader(endian: builtin.Endian, comptime ReaderType: type) type {
     return struct {
-        forward_reader: ReaderType,
-        bit_buffer: u7,
-        bit_count: u3,
+                     forward_reader: ReaderType,
+                     bit_buffer: u7,
+                     bit_count: u3,
 
-        pub const Error = ReaderType.Error;
-        pub const Reader = io.Reader(*Self, Error, read);
-        /// Deprecated: use `Reader`
-        pub const InStream = io.InStream(*Self, Error, read);
+                     pub const Error = ReaderType.Error;
+                     pub const Reader = io.Reader(*Self, Error, read);
+                     /// Deprecated: use `Reader`
+                     pub const InStream = io.InStream(*Self, Error, read);
 
-        const Self = @This();
-        const u8_bit_count = comptime meta.bitCount(u8);
-        const u7_bit_count = comptime meta.bitCount(u7);
-        const u4_bit_count = comptime meta.bitCount(u4);
+                     const Self = @This();
+                     const u8_bit_count = comptime meta.bitCount(u8);
+                     const u7_bit_count = comptime meta.bitCount(u7);
+                     const u4_bit_count = comptime meta.bitCount(u4);
 
-        pub fn init(forward_reader: ReaderType) Self {
-            return Self{
-                .forward_reader = forward_reader,
-                .bit_buffer = 0,
-                .bit_count = 0,
-            };
-        }
+                     pub fn init(forward_reader: ReaderType) Self {
+                                      return Self{
+                                          .forward_reader = forward_reader,
+                                          .bit_buffer = 0,
+                                          .bit_count = 0,
+                                      };
+                     }
 
-        /// Reads `bits` bits from the stream and returns a specified unsigned int type
-        ///  containing them in the least significant end, returning an error if the
-        ///  specified number of bits could not be read.
-        pub fn readBitsNoEof(self: *Self, comptime U: type, bits: usize) !U {
-            var n: usize = undefined;
-            const result = try self.readBits(U, bits, &n);
-            if (n < bits) return error.EndOfStream;
-            return result;
-        }
+                     /// Reads `bits` bits from the stream and returns a specified unsigned int type
+                     ///  containing them in the least significant end, returning an error if the
+                     ///  specified number of bits could not be read.
+                     pub fn readBitsNoEof(self: *Self, comptime U: type, bits: usize) !U {
+                                      var n: usize = undefined;
+                                      const result = try self.readBits(U, bits, &n);
+                                      if (n < bits) return error.EndOfStream;
+                                      return result;
+                     }
 
-        /// Reads `bits` bits from the stream and returns a specified unsigned int type
-        ///  containing them in the least significant end. The number of bits successfully
-        ///  read is placed in `out_bits`, as reaching the end of the stream is not an error.
-        pub fn readBits(self: *Self, comptime U: type, bits: usize, out_bits: *usize) Error!U {
-            comptime assert(trait.isUnsignedInt(U));
+                     /// Reads `bits` bits from the stream and returns a specified unsigned int type
+                     ///  containing them in the least significant end. The number of bits successfully
+                     ///  read is placed in `out_bits`, as reaching the end of the stream is not an error.
+                     pub fn readBits(self: *Self, comptime U: type, bits: usize, out_bits: *usize) Error!U {
+                                      comptime assert(trait.isUnsignedInt(U));
 
-            //by extending the buffer to a minimum of u8 we can cover a number of edge cases
-            // related to shifting and casting.
-            const u_bit_count = comptime meta.bitCount(U);
-            const buf_bit_count = bc: {
-                assert(u_bit_count >= bits);
-                break :bc if (u_bit_count <= u8_bit_count) u8_bit_count else u_bit_count;
-            };
-            const Buf = std.meta.Int(.unsigned, buf_bit_count);
-            const BufShift = math.Log2Int(Buf);
+                                      //by extending the buffer to a minimum of u8 we can cover a number of edge cases
+                                      // related to shifting and casting.
+                                      const u_bit_count = comptime meta.bitCount(U);
+                                      const buf_bit_count = bc: {
+                                          assert(u_bit_count >= bits);
+                                          break :bc if (u_bit_count <= u8_bit_count) u8_bit_count else u_bit_count;
+                                      };
+                                      const Buf = std.meta.Int(.unsigned, buf_bit_count);
+                                      const BufShift = math.Log2Int(Buf);
 
-            out_bits.* = @as(usize, 0);
-            if (U == u0 or bits == 0) return 0;
-            var out_buffer = @as(Buf, 0);
+                                      out_bits.* = @as(usize, 0);
+                                      if (U == u0 or bits == 0) return 0;
+                                      var out_buffer = @as(Buf, 0);
 
-            if (self.bit_count > 0) {
-                const n = if (self.bit_count >= bits) @intCast(u3, bits) else self.bit_count;
-                const shift = u7_bit_count - n;
-                switch (endian) {
-                    .Big => {
-                        out_buffer = @as(Buf, self.bit_buffer >> shift);
-                        if (n >= u7_bit_count)
-                            self.bit_buffer = 0
-                        else
-                            self.bit_buffer <<= n;
-                    },
-                    .Little => {
-                        const value = (self.bit_buffer << shift) >> shift;
-                        out_buffer = @as(Buf, value);
-                        if (n >= u7_bit_count)
-                            self.bit_buffer = 0
-                        else
-                            self.bit_buffer >>= n;
-                    },
-                }
-                self.bit_count -= n;
-                out_bits.* = n;
-            }
-            //at this point we know bit_buffer is empty
+                                      if (self.bit_count > 0) {
+                                          const n = if (self.bit_count >= bits) @intCast(u3, bits) else self.bit_count;
+                                          const shift = u7_bit_count - n;
+                                          switch (endian) {
+                                                           .Big => {
+                                                                            out_buffer = @as(Buf, self.bit_buffer >> shift);
+                                                                            if (n >= u7_bit_count)
+                                                                                self.bit_buffer = 0
+                                                                            else
+                                                                                self.bit_buffer <<= n;
+                                                           },
+                                                           .Little => {
+                                                                            const value = (self.bit_buffer << shift) >> shift;
+                                                                            out_buffer = @as(Buf, value);
+                                                                            if (n >= u7_bit_count)
+                                                                                self.bit_buffer = 0
+                                                                            else
+                                                                                self.bit_buffer >>= n;
+                                                           },
+                                          }
+                                          self.bit_count -= n;
+                                          out_bits.* = n;
+                                      }
+                                      //at this point we know bit_buffer is empty
 
-            //copy bytes until we have enough bits, then leave the rest in bit_buffer
-            while (out_bits.* < bits) {
-                const n = bits - out_bits.*;
-                const next_byte = self.forward_reader.readByte() catch |err| {
-                    if (err == error.EndOfStream) {
-                        return @intCast(U, out_buffer);
-                    }
-                    //@BUG: See #1810. Not sure if the bug is that I have to do this for some
-                    // streams, or that I don't for streams with emtpy errorsets.
-                    return @errSetCast(Error, err);
-                };
+                                      //copy bytes until we have enough bits, then leave the rest in bit_buffer
+                                      while (out_bits.* < bits) {
+                                          const n = bits - out_bits.*;
+                                          const next_byte = self.forward_reader.readByte() catch |err| {
+                                                           if (err == error.EndOfStream) {
+                                                                            return @intCast(U, out_buffer);
+                                                           }
+                                                           //@BUG: See #1810. Not sure if the bug is that I have to do this for some
+                                                           // streams, or that I don't for streams with emtpy errorsets.
+                                                           return @errSetCast(Error, err);
+                                          };
 
-                switch (endian) {
-                    .Big => {
-                        if (n >= u8_bit_count) {
-                            out_buffer <<= @intCast(u3, u8_bit_count - 1);
-                            out_buffer <<= 1;
-                            out_buffer |= @as(Buf, next_byte);
-                            out_bits.* += u8_bit_count;
-                            continue;
-                        }
+                                          switch (endian) {
+                                                           .Big => {
+                                                                            if (n >= u8_bit_count) {
+                                                                                out_buffer <<= @intCast(u3, u8_bit_count - 1);
+                                                                                out_buffer <<= 1;
+                                                                                out_buffer |= @as(Buf, next_byte);
+                                                                                out_bits.* += u8_bit_count;
+                                                                                continue;
+                                                                            }
 
-                        const shift = @intCast(u3, u8_bit_count - n);
-                        out_buffer <<= @intCast(BufShift, n);
-                        out_buffer |= @as(Buf, next_byte >> shift);
-                        out_bits.* += n;
-                        self.bit_buffer = @truncate(u7, next_byte << @intCast(u3, n - 1));
-                        self.bit_count = shift;
-                    },
-                    .Little => {
-                        if (n >= u8_bit_count) {
-                            out_buffer |= @as(Buf, next_byte) << @intCast(BufShift, out_bits.*);
-                            out_bits.* += u8_bit_count;
-                            continue;
-                        }
+                                                                            const shift = @intCast(u3, u8_bit_count - n);
+                                                                            out_buffer <<= @intCast(BufShift, n);
+                                                                            out_buffer |= @as(Buf, next_byte >> shift);
+                                                                            out_bits.* += n;
+                                                                            self.bit_buffer = @truncate(u7, next_byte << @intCast(u3, n - 1));
+                                                                            self.bit_count = shift;
+                                                           },
+                                                           .Little => {
+                                                                            if (n >= u8_bit_count) {
+                                                                                out_buffer |= @as(Buf, next_byte) << @intCast(BufShift, out_bits.*);
+                                                                                out_bits.* += u8_bit_count;
+                                                                                continue;
+                                                                            }
 
-                        const shift = @intCast(u3, u8_bit_count - n);
-                        const value = (next_byte << shift) >> shift;
-                        out_buffer |= @as(Buf, value) << @intCast(BufShift, out_bits.*);
-                        out_bits.* += n;
-                        self.bit_buffer = @truncate(u7, next_byte >> @intCast(u3, n));
-                        self.bit_count = shift;
-                    },
-                }
-            }
+                                                                            const shift = @intCast(u3, u8_bit_count - n);
+                                                                            const value = (next_byte << shift) >> shift;
+                                                                            out_buffer |= @as(Buf, value) << @intCast(BufShift, out_bits.*);
+                                                                            out_bits.* += n;
+                                                                            self.bit_buffer = @truncate(u7, next_byte >> @intCast(u3, n));
+                                                                            self.bit_count = shift;
+                                                           },
+                                          }
+                                      }
 
-            return @intCast(U, out_buffer);
-        }
+                                      return @intCast(U, out_buffer);
+                     }
 
-        pub fn alignToByte(self: *Self) void {
-            self.bit_buffer = 0;
-            self.bit_count = 0;
-        }
+                     pub fn alignToByte(self: *Self) void {
+                                      self.bit_buffer = 0;
+                                      self.bit_count = 0;
+                     }
 
-        pub fn read(self: *Self, buffer: []u8) Error!usize {
-            var out_bits: usize = undefined;
-            var out_bits_total = @as(usize, 0);
-            //@NOTE: I'm not sure this is a good idea, maybe alignToByte should be forced
-            if (self.bit_count > 0) {
-                for (buffer) |*b, i| {
-                    b.* = try self.readBits(u8, u8_bit_count, &out_bits);
-                    out_bits_total += out_bits;
-                }
-                const incomplete_byte = @boolToInt(out_bits_total % u8_bit_count > 0);
-                return (out_bits_total / u8_bit_count) + incomplete_byte;
-            }
+                     pub fn read(self: *Self, buffer: []u8) Error!usize {
+                                      var out_bits: usize = undefined;
+                                      var out_bits_total = @as(usize, 0);
+                                      //@NOTE: I'm not sure this is a good idea, maybe alignToByte should be forced
+                                      if (self.bit_count > 0) {
+                                          for (buffer) |*b, i| {
+                                                           b.* = try self.readBits(u8, u8_bit_count, &out_bits);
+                                                           out_bits_total += out_bits;
+                                          }
+                                          const incomplete_byte = @boolToInt(out_bits_total % u8_bit_count > 0);
+                                          return (out_bits_total / u8_bit_count) + incomplete_byte;
+                                      }
 
-            return self.forward_reader.read(buffer);
-        }
+                                      return self.forward_reader.read(buffer);
+                     }
 
-        pub fn reader(self: *Self) Reader {
-            return .{ .context = self };
-        }
+                     pub fn reader(self: *Self) Reader {
+                                      return .{ .context = self };
+                     }
 
-        /// Deprecated: use `reader`
-        pub fn inStream(self: *Self) InStream {
-            return .{ .context = self };
-        }
+                     /// Deprecated: use `reader`
+                     pub fn inStream(self: *Self) InStream {
+                                      return .{ .context = self };
+                     }
     };
 }
 

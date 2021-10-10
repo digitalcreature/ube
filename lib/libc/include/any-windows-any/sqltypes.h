@@ -176,8 +176,8 @@ extern "C" {
     SQLINTERVAL interval_type;
     SQLSMALLINT interval_sign;
     union {
-      SQL_YEAR_MONTH_STRUCT year_month;
-      SQL_DAY_SECOND_STRUCT day_second;
+                   SQL_YEAR_MONTH_STRUCT year_month;
+                   SQL_DAY_SECOND_STRUCT day_second;
     } intval;
   } SQL_INTERVAL_STRUCT;
 #endif

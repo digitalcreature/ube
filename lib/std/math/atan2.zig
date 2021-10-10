@@ -35,9 +35,9 @@ const expect = std.testing.expect;
 ///  - atan2(-inf, x)    = -pi/2
 pub fn atan2(comptime T: type, y: T, x: T) T {
     return switch (T) {
-        f32 => atan2_32(y, x),
-        f64 => atan2_64(y, x),
-        else => @compileError("atan2 not implemented for " ++ @typeName(T)),
+                     f32 => atan2_32(y, x),
+                     f64 => atan2_64(y, x),
+                     else => @compileError("atan2 not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -46,7 +46,7 @@ fn atan2_32(y: f32, x: f32) f32 {
     const pi_lo: f32 = -8.7422776573e-08;
 
     if (math.isNan(x) or math.isNan(y)) {
-        return x + y;
+                     return x + y;
     }
 
     var ix = @bitCast(u32, x);
@@ -54,7 +54,7 @@ fn atan2_32(y: f32, x: f32) f32 {
 
     // x = 1.0
     if (ix == 0x3F800000) {
-        return math.atan(y);
+                     return math.atan(y);
     }
 
     // 2 * sign(x) + sign(y)
@@ -63,66 +63,66 @@ fn atan2_32(y: f32, x: f32) f32 {
     iy &= 0x7FFFFFFF;
 
     if (iy == 0) {
-        switch (m) {
-            0, 1 => return y, // atan(+-0, +...)
-            2 => return pi, // atan(+0, -...)
-            3 => return -pi, // atan(-0, -...)
-            else => unreachable,
-        }
+                     switch (m) {
+                                      0, 1 => return y, // atan(+-0, +...)
+                                      2 => return pi, // atan(+0, -...)
+                                      3 => return -pi, // atan(-0, -...)
+                                      else => unreachable,
+                     }
     }
 
     if (ix == 0) {
-        if (m & 1 != 0) {
-            return -pi / 2;
-        } else {
-            return pi / 2;
-        }
+                     if (m & 1 != 0) {
+                                      return -pi / 2;
+                     } else {
+                                      return pi / 2;
+                     }
     }
 
     if (ix == 0x7F800000) {
-        if (iy == 0x7F800000) {
-            switch (m) {
-                0 => return pi / 4, // atan(+inf, +inf)
-                1 => return -pi / 4, // atan(-inf, +inf)
-                2 => return 3 * pi / 4, // atan(+inf, -inf)
-                3 => return -3 * pi / 4, // atan(-inf, -inf)
-                else => unreachable,
-            }
-        } else {
-            switch (m) {
-                0 => return 0.0, // atan(+..., +inf)
-                1 => return -0.0, // atan(-..., +inf)
-                2 => return pi, // atan(+..., -inf)
-                3 => return -pi, // atan(-...f, -inf)
-                else => unreachable,
-            }
-        }
+                     if (iy == 0x7F800000) {
+                                      switch (m) {
+                                          0 => return pi / 4, // atan(+inf, +inf)
+                                          1 => return -pi / 4, // atan(-inf, +inf)
+                                          2 => return 3 * pi / 4, // atan(+inf, -inf)
+                                          3 => return -3 * pi / 4, // atan(-inf, -inf)
+                                          else => unreachable,
+                                      }
+                     } else {
+                                      switch (m) {
+                                          0 => return 0.0, // atan(+..., +inf)
+                                          1 => return -0.0, // atan(-..., +inf)
+                                          2 => return pi, // atan(+..., -inf)
+                                          3 => return -pi, // atan(-...f, -inf)
+                                          else => unreachable,
+                                      }
+                     }
     }
 
     // |y / x| > 0x1p26
     if (ix + (26 << 23) < iy or iy == 0x7F800000) {
-        if (m & 1 != 0) {
-            return -pi / 2;
-        } else {
-            return pi / 2;
-        }
+                     if (m & 1 != 0) {
+                                      return -pi / 2;
+                     } else {
+                                      return pi / 2;
+                     }
     }
 
     // z = atan(|y / x|) with correct underflow
     var z = z: {
-        if ((m & 2) != 0 and iy + (26 << 23) < ix) {
-            break :z 0.0;
-        } else {
-            break :z math.atan(math.fabs(y / x));
-        }
+                     if ((m & 2) != 0 and iy + (26 << 23) < ix) {
+                                      break :z 0.0;
+                     } else {
+                                      break :z math.atan(math.fabs(y / x));
+                     }
     };
 
     switch (m) {
-        0 => return z, // atan(+, +)
-        1 => return -z, // atan(-, +)
-        2 => return pi - (z - pi_lo), // atan(+, -)
-        3 => return (z - pi_lo) - pi, // atan(-, -)
-        else => unreachable,
+                     0 => return z, // atan(+, +)
+                     1 => return -z, // atan(-, +)
+                     2 => return pi - (z - pi_lo), // atan(+, -)
+                     3 => return (z - pi_lo) - pi, // atan(-, -)
+                     else => unreachable,
     }
 }
 
@@ -131,7 +131,7 @@ fn atan2_64(y: f64, x: f64) f64 {
     const pi_lo: f64 = 1.2246467991473531772E-16;
 
     if (math.isNan(x) or math.isNan(y)) {
-        return x + y;
+                     return x + y;
     }
 
     var ux = @bitCast(u64, x);
@@ -144,7 +144,7 @@ fn atan2_64(y: f64, x: f64) f64 {
 
     // x = 1.0
     if ((ix -% 0x3FF00000) | lx == 0) {
-        return math.atan(y);
+                     return math.atan(y);
     }
 
     // 2 * sign(x) + sign(y)
@@ -153,66 +153,66 @@ fn atan2_64(y: f64, x: f64) f64 {
     iy &= 0x7FFFFFFF;
 
     if (iy | ly == 0) {
-        switch (m) {
-            0, 1 => return y, // atan(+-0, +...)
-            2 => return pi, // atan(+0, -...)
-            3 => return -pi, // atan(-0, -...)
-            else => unreachable,
-        }
+                     switch (m) {
+                                      0, 1 => return y, // atan(+-0, +...)
+                                      2 => return pi, // atan(+0, -...)
+                                      3 => return -pi, // atan(-0, -...)
+                                      else => unreachable,
+                     }
     }
 
     if (ix | lx == 0) {
-        if (m & 1 != 0) {
-            return -pi / 2;
-        } else {
-            return pi / 2;
-        }
+                     if (m & 1 != 0) {
+                                      return -pi / 2;
+                     } else {
+                                      return pi / 2;
+                     }
     }
 
     if (ix == 0x7FF00000) {
-        if (iy == 0x7FF00000) {
-            switch (m) {
-                0 => return pi / 4, // atan(+inf, +inf)
-                1 => return -pi / 4, // atan(-inf, +inf)
-                2 => return 3 * pi / 4, // atan(+inf, -inf)
-                3 => return -3 * pi / 4, // atan(-inf, -inf)
-                else => unreachable,
-            }
-        } else {
-            switch (m) {
-                0 => return 0.0, // atan(+..., +inf)
-                1 => return -0.0, // atan(-..., +inf)
-                2 => return pi, // atan(+..., -inf)
-                3 => return -pi, // atan(-...f, -inf)
-                else => unreachable,
-            }
-        }
+                     if (iy == 0x7FF00000) {
+                                      switch (m) {
+                                          0 => return pi / 4, // atan(+inf, +inf)
+                                          1 => return -pi / 4, // atan(-inf, +inf)
+                                          2 => return 3 * pi / 4, // atan(+inf, -inf)
+                                          3 => return -3 * pi / 4, // atan(-inf, -inf)
+                                          else => unreachable,
+                                      }
+                     } else {
+                                      switch (m) {
+                                          0 => return 0.0, // atan(+..., +inf)
+                                          1 => return -0.0, // atan(-..., +inf)
+                                          2 => return pi, // atan(+..., -inf)
+                                          3 => return -pi, // atan(-...f, -inf)
+                                          else => unreachable,
+                                      }
+                     }
     }
 
     // |y / x| > 0x1p64
     if (ix +% (64 << 20) < iy or iy == 0x7FF00000) {
-        if (m & 1 != 0) {
-            return -pi / 2;
-        } else {
-            return pi / 2;
-        }
+                     if (m & 1 != 0) {
+                                      return -pi / 2;
+                     } else {
+                                      return pi / 2;
+                     }
     }
 
     // z = atan(|y / x|) with correct underflow
     var z = z: {
-        if ((m & 2) != 0 and iy +% (64 << 20) < ix) {
-            break :z 0.0;
-        } else {
-            break :z math.atan(math.fabs(y / x));
-        }
+                     if ((m & 2) != 0 and iy +% (64 << 20) < ix) {
+                                      break :z 0.0;
+                     } else {
+                                      break :z math.atan(math.fabs(y / x));
+                     }
     };
 
     switch (m) {
-        0 => return z, // atan(+, +)
-        1 => return -z, // atan(-, +)
-        2 => return pi - (z - pi_lo), // atan(+, -)
-        3 => return (z - pi_lo) - pi, // atan(-, -)
-        else => unreachable,
+                     0 => return z, // atan(+, +)
+                     1 => return -z, // atan(-, +)
+                     2 => return pi - (z - pi_lo), // atan(+, -)
+                     3 => return (z - pi_lo) - pi, // atan(-, -)
+                     else => unreachable,
     }
 }
 

@@ -87,14 +87,14 @@ interface IDXGISwapChain2 : IDXGISwapChain1
     HRESULT SetSourceSize(UINT width, UINT height);
 
     HRESULT GetSourceSize(
-        [out] UINT *width,
-        [out] UINT *height
+                     [out] UINT *width,
+                     [out] UINT *height
     );
 
     HRESULT SetMaximumFrameLatency(UINT max_latency);
 
     HRESULT GetMaximumFrameLatency(
-        [out] UINT *max_latency
+                     [out] UINT *max_latency
     );
 
     HANDLE  GetFrameLatencyWaitableObject();
@@ -102,7 +102,7 @@ interface IDXGISwapChain2 : IDXGISwapChain1
     HRESULT SetMatrixTransform(const DXGI_MATRIX_3X2_F *matrix);
 
     HRESULT GetMatrixTransform(
-        [out] DXGI_MATRIX_3X2_F *matrix
+                     [out] DXGI_MATRIX_3X2_F *matrix
     );
 }
 
@@ -145,16 +145,16 @@ interface IDXGIDecodeSwapChain : IUnknown
     HRESULT SetDestSize(UINT width, UINT height);
 
     HRESULT GetSourceRect(
-        [out] RECT *rect
+                     [out] RECT *rect
     );
 
     HRESULT GetTargetRect(
-        [out] RECT *rect
+                     [out] RECT *rect
     );
 
     HRESULT GetDestSize(
-        [out] UINT *width,
-        [out] UINT *height
+                     [out] UINT *width,
+                     [out] UINT *height
     );
 
     HRESULT SetColorSpace(DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS colorspace);
@@ -171,20 +171,20 @@ interface IDXGIDecodeSwapChain : IUnknown
 interface IDXGIFactoryMedia : IUnknown
 {
     HRESULT CreateSwapChainForCompositionSurfaceHandle(
-        [in] IUnknown *device,
-        [in] HANDLE surface,
-        [in] const DXGI_SWAP_CHAIN_DESC1 *desc,
-        [in] IDXGIOutput *restrict_to_output,
-        [out] IDXGISwapChain1 **swapchain
+                     [in] IUnknown *device,
+                     [in] HANDLE surface,
+                     [in] const DXGI_SWAP_CHAIN_DESC1 *desc,
+                     [in] IDXGIOutput *restrict_to_output,
+                     [out] IDXGISwapChain1 **swapchain
     );
 
     HRESULT CreateDecodeSwapChainForCompositionSurfaceHandle(
-        [in] IUnknown *device,
-        [in] HANDLE surface,
-        [in] DXGI_DECODE_SWAP_CHAIN_DESC *desc,
-        [in] IDXGIResource *yuv_decode_buffers,
-        [in] IDXGIOutput *restrict_to_output,
-        [out] IDXGIDecodeSwapChain **swapchain
+                     [in] IUnknown *device,
+                     [in] HANDLE surface,
+                     [in] DXGI_DECODE_SWAP_CHAIN_DESC *desc,
+                     [in] IDXGIResource *yuv_decode_buffers,
+                     [in] IDXGIOutput *restrict_to_output,
+                     [out] IDXGIDecodeSwapChain **swapchain
     );
 }
 
@@ -197,15 +197,15 @@ interface IDXGIFactoryMedia : IUnknown
 interface IDXGISwapChainMedia : IUnknown
 {
     HRESULT GetFrameStatisticsMedia(
-        [out] DXGI_FRAME_STATISTICS_MEDIA *stats
+                     [out] DXGI_FRAME_STATISTICS_MEDIA *stats
     );
 
     HRESULT SetPresentDuration(UINT duration);
 
     HRESULT CheckPresentDurationSupport(
-        UINT desired_present_duration,
-        [out] UINT *closest_smaller_present_duration,
-        [out] UINT *closest_larger_present_duration
+                     UINT desired_present_duration,
+                     [out] UINT *closest_smaller_present_duration,
+                     [out] UINT *closest_larger_present_duration
     );
 }
 
@@ -218,9 +218,9 @@ interface IDXGISwapChainMedia : IUnknown
 interface IDXGIOutput3 : IDXGIOutput2
 {
     HRESULT CheckOverlaySupport(
-        [in] DXGI_FORMAT enum_format,
-        [out] IUnknown *concerned_device,
-        [out] UINT *flags
+                     [in] DXGI_FORMAT enum_format,
+                     [out] IUnknown *concerned_device,
+                     [out] UINT *flags
     );
 }
 

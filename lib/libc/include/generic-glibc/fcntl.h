@@ -94,17 +94,17 @@ typedef __pid_t pid_t;
 
 /* Protection bits.  */
 
-# define S_ISUID	__S_ISUID       /* Set user ID on execution.  */
-# define S_ISGID	__S_ISGID       /* Set group ID on execution.  */
+# define S_ISUID	__S_ISUID                    /* Set user ID on execution.  */
+# define S_ISGID	__S_ISGID                    /* Set group ID on execution.  */
 
 # if defined __USE_MISC || defined __USE_XOPEN
 /* Save swapped text after use (sticky bit).  This is pretty well obsolete.  */
 #  define S_ISVTX	__S_ISVTX
 # endif
 
-# define S_IRUSR	__S_IREAD       /* Read by owner.  */
-# define S_IWUSR	__S_IWRITE      /* Write by owner.  */
-# define S_IXUSR	__S_IEXEC       /* Execute by owner.  */
+# define S_IRUSR	__S_IREAD                    /* Read by owner.  */
+# define S_IWUSR	__S_IWRITE                   /* Write by owner.  */
+# define S_IXUSR	__S_IEXEC                    /* Execute by owner.  */
 /* Read, write, and execute by owner.  */
 # define S_IRWXU	(__S_IREAD|__S_IWRITE|__S_IEXEC)
 
@@ -243,7 +243,7 @@ extern int creat (const char *__file, mode_t __mode) __nonnull ((1));
 #else
 # ifdef __REDIRECT
 extern int __REDIRECT (creat, (const char *__file, mode_t __mode),
-		       creat64) __nonnull ((1));
+		                    creat64) __nonnull ((1));
 # else
 #  define creat creat64
 # endif
@@ -253,7 +253,7 @@ extern int creat64 (const char *__file, mode_t __mode) __nonnull ((1));
 #endif
 
 #if !defined F_LOCK && (defined __USE_MISC || (defined __USE_XOPEN_EXTENDED \
-					       && !defined __USE_POSIX))
+					                    && !defined __USE_POSIX))
 /* NOTE: These declarations also appear in <unistd.h>; be sure to keep both
    files consistent.  Some systems have them there and some here, and some
    software depends on the macros being defined without including both.  */
@@ -312,7 +312,7 @@ extern int posix_fallocate (int __fd, off_t __offset, off_t __len);
  # ifdef __REDIRECT
 extern int __REDIRECT (posix_fallocate, (int __fd, __off64_t __offset,
 					 __off64_t __len),
-		       posix_fallocate64);
+		                    posix_fallocate64);
 #  else
 #   define posix_fallocate posix_fallocate64
 #  endif

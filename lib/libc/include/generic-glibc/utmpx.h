@@ -99,7 +99,7 @@ extern int utmpxname (const char *__file);
    or due to the implementation it is a cancellation point and
    therefore not marked with __THROW.  */
 extern void updwtmpx (const char *__wtmpx_file,
-		      const struct utmpx *__utmpx);
+		                   const struct utmpx *__utmpx);
 
 
 /* Copy the information in UTMPX to UTMP.

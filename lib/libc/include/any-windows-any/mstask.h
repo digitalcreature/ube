@@ -181,12 +181,12 @@ extern "C" {
 #else
   typedef struct ITaskTriggerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITaskTrigger *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITaskTrigger *This);
-      ULONG (WINAPI *Release)(ITaskTrigger *This);
-      HRESULT (WINAPI *SetTrigger)(ITaskTrigger *This,const PTASK_TRIGGER pTrigger);
-      HRESULT (WINAPI *GetTrigger)(ITaskTrigger *This,PTASK_TRIGGER pTrigger);
-      HRESULT (WINAPI *GetTriggerString)(ITaskTrigger *This,LPWSTR *ppwszTrigger);
+                   HRESULT (WINAPI *QueryInterface)(ITaskTrigger *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITaskTrigger *This);
+                   ULONG (WINAPI *Release)(ITaskTrigger *This);
+                   HRESULT (WINAPI *SetTrigger)(ITaskTrigger *This,const PTASK_TRIGGER pTrigger);
+                   HRESULT (WINAPI *GetTrigger)(ITaskTrigger *This,PTASK_TRIGGER pTrigger);
+                   HRESULT (WINAPI *GetTriggerString)(ITaskTrigger *This,LPWSTR *ppwszTrigger);
     END_INTERFACE
   } ITaskTriggerVtbl;
   struct ITaskTrigger {
@@ -251,38 +251,38 @@ extern "C" {
 #else
   typedef struct IScheduledWorkItemVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IScheduledWorkItem *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IScheduledWorkItem *This);
-      ULONG (WINAPI *Release)(IScheduledWorkItem *This);
-      HRESULT (WINAPI *CreateTrigger)(IScheduledWorkItem *This,WORD *piNewTrigger,ITaskTrigger **ppTrigger);
-      HRESULT (WINAPI *DeleteTrigger)(IScheduledWorkItem *This,WORD iTrigger);
-      HRESULT (WINAPI *GetTriggerCount)(IScheduledWorkItem *This,WORD *pwCount);
-      HRESULT (WINAPI *GetTrigger)(IScheduledWorkItem *This,WORD iTrigger,ITaskTrigger **ppTrigger);
-      HRESULT (WINAPI *GetTriggerString)(IScheduledWorkItem *This,WORD iTrigger,LPWSTR *ppwszTrigger);
-      HRESULT (WINAPI *GetRunTimes)(IScheduledWorkItem *This,const LPSYSTEMTIME pstBegin,const LPSYSTEMTIME pstEnd,WORD *pCount,LPSYSTEMTIME *rgstTaskTimes);
-      HRESULT (WINAPI *GetNextRunTime)(IScheduledWorkItem *This,SYSTEMTIME *pstNextRun);
-      HRESULT (WINAPI *SetIdleWait)(IScheduledWorkItem *This,WORD wIdleMinutes,WORD wDeadlineMinutes);
-      HRESULT (WINAPI *GetIdleWait)(IScheduledWorkItem *This,WORD *pwIdleMinutes,WORD *pwDeadlineMinutes);
-      HRESULT (WINAPI *Run)(IScheduledWorkItem *This);
-      HRESULT (WINAPI *Terminate)(IScheduledWorkItem *This);
-      HRESULT (WINAPI *EditWorkItem)(IScheduledWorkItem *This,HWND hParent,DWORD dwReserved);
-      HRESULT (WINAPI *GetMostRecentRunTime)(IScheduledWorkItem *This,SYSTEMTIME *pstLastRun);
-      HRESULT (WINAPI *GetStatus)(IScheduledWorkItem *This,HRESULT *phrStatus);
-      HRESULT (WINAPI *GetExitCode)(IScheduledWorkItem *This,DWORD *pdwExitCode);
-      HRESULT (WINAPI *SetComment)(IScheduledWorkItem *This,LPCWSTR pwszComment);
-      HRESULT (WINAPI *GetComment)(IScheduledWorkItem *This,LPWSTR *ppwszComment);
-      HRESULT (WINAPI *SetCreator)(IScheduledWorkItem *This,LPCWSTR pwszCreator);
-      HRESULT (WINAPI *GetCreator)(IScheduledWorkItem *This,LPWSTR *ppwszCreator);
-      HRESULT (WINAPI *SetWorkItemData)(IScheduledWorkItem *This,WORD cbData,BYTE rgbData[]);
-      HRESULT (WINAPI *GetWorkItemData)(IScheduledWorkItem *This,WORD *pcbData,BYTE **prgbData);
-      HRESULT (WINAPI *SetErrorRetryCount)(IScheduledWorkItem *This,WORD wRetryCount);
-      HRESULT (WINAPI *GetErrorRetryCount)(IScheduledWorkItem *This,WORD *pwRetryCount);
-      HRESULT (WINAPI *SetErrorRetryInterval)(IScheduledWorkItem *This,WORD wRetryInterval);
-      HRESULT (WINAPI *GetErrorRetryInterval)(IScheduledWorkItem *This,WORD *pwRetryInterval);
-      HRESULT (WINAPI *SetFlags)(IScheduledWorkItem *This,DWORD dwFlags);
-      HRESULT (WINAPI *GetFlags)(IScheduledWorkItem *This,DWORD *pdwFlags);
-      HRESULT (WINAPI *SetAccountInformation)(IScheduledWorkItem *This,LPCWSTR pwszAccountName,LPCWSTR pwszPassword);
-      HRESULT (WINAPI *GetAccountInformation)(IScheduledWorkItem *This,LPWSTR *ppwszAccountName);
+                   HRESULT (WINAPI *QueryInterface)(IScheduledWorkItem *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IScheduledWorkItem *This);
+                   ULONG (WINAPI *Release)(IScheduledWorkItem *This);
+                   HRESULT (WINAPI *CreateTrigger)(IScheduledWorkItem *This,WORD *piNewTrigger,ITaskTrigger **ppTrigger);
+                   HRESULT (WINAPI *DeleteTrigger)(IScheduledWorkItem *This,WORD iTrigger);
+                   HRESULT (WINAPI *GetTriggerCount)(IScheduledWorkItem *This,WORD *pwCount);
+                   HRESULT (WINAPI *GetTrigger)(IScheduledWorkItem *This,WORD iTrigger,ITaskTrigger **ppTrigger);
+                   HRESULT (WINAPI *GetTriggerString)(IScheduledWorkItem *This,WORD iTrigger,LPWSTR *ppwszTrigger);
+                   HRESULT (WINAPI *GetRunTimes)(IScheduledWorkItem *This,const LPSYSTEMTIME pstBegin,const LPSYSTEMTIME pstEnd,WORD *pCount,LPSYSTEMTIME *rgstTaskTimes);
+                   HRESULT (WINAPI *GetNextRunTime)(IScheduledWorkItem *This,SYSTEMTIME *pstNextRun);
+                   HRESULT (WINAPI *SetIdleWait)(IScheduledWorkItem *This,WORD wIdleMinutes,WORD wDeadlineMinutes);
+                   HRESULT (WINAPI *GetIdleWait)(IScheduledWorkItem *This,WORD *pwIdleMinutes,WORD *pwDeadlineMinutes);
+                   HRESULT (WINAPI *Run)(IScheduledWorkItem *This);
+                   HRESULT (WINAPI *Terminate)(IScheduledWorkItem *This);
+                   HRESULT (WINAPI *EditWorkItem)(IScheduledWorkItem *This,HWND hParent,DWORD dwReserved);
+                   HRESULT (WINAPI *GetMostRecentRunTime)(IScheduledWorkItem *This,SYSTEMTIME *pstLastRun);
+                   HRESULT (WINAPI *GetStatus)(IScheduledWorkItem *This,HRESULT *phrStatus);
+                   HRESULT (WINAPI *GetExitCode)(IScheduledWorkItem *This,DWORD *pdwExitCode);
+                   HRESULT (WINAPI *SetComment)(IScheduledWorkItem *This,LPCWSTR pwszComment);
+                   HRESULT (WINAPI *GetComment)(IScheduledWorkItem *This,LPWSTR *ppwszComment);
+                   HRESULT (WINAPI *SetCreator)(IScheduledWorkItem *This,LPCWSTR pwszCreator);
+                   HRESULT (WINAPI *GetCreator)(IScheduledWorkItem *This,LPWSTR *ppwszCreator);
+                   HRESULT (WINAPI *SetWorkItemData)(IScheduledWorkItem *This,WORD cbData,BYTE rgbData[]);
+                   HRESULT (WINAPI *GetWorkItemData)(IScheduledWorkItem *This,WORD *pcbData,BYTE **prgbData);
+                   HRESULT (WINAPI *SetErrorRetryCount)(IScheduledWorkItem *This,WORD wRetryCount);
+                   HRESULT (WINAPI *GetErrorRetryCount)(IScheduledWorkItem *This,WORD *pwRetryCount);
+                   HRESULT (WINAPI *SetErrorRetryInterval)(IScheduledWorkItem *This,WORD wRetryInterval);
+                   HRESULT (WINAPI *GetErrorRetryInterval)(IScheduledWorkItem *This,WORD *pwRetryInterval);
+                   HRESULT (WINAPI *SetFlags)(IScheduledWorkItem *This,DWORD dwFlags);
+                   HRESULT (WINAPI *GetFlags)(IScheduledWorkItem *This,DWORD *pdwFlags);
+                   HRESULT (WINAPI *SetAccountInformation)(IScheduledWorkItem *This,LPCWSTR pwszAccountName,LPCWSTR pwszPassword);
+                   HRESULT (WINAPI *GetAccountInformation)(IScheduledWorkItem *This,LPWSTR *ppwszAccountName);
     END_INTERFACE
   } IScheduledWorkItemVtbl;
   struct IScheduledWorkItem {
@@ -410,50 +410,50 @@ extern "C" {
 #else
   typedef struct ITaskVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITask *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITask *This);
-      ULONG (WINAPI *Release)(ITask *This);
-      HRESULT (WINAPI *CreateTrigger)(ITask *This,WORD *piNewTrigger,ITaskTrigger **ppTrigger);
-      HRESULT (WINAPI *DeleteTrigger)(ITask *This,WORD iTrigger);
-      HRESULT (WINAPI *GetTriggerCount)(ITask *This,WORD *pwCount);
-      HRESULT (WINAPI *GetTrigger)(ITask *This,WORD iTrigger,ITaskTrigger **ppTrigger);
-      HRESULT (WINAPI *GetTriggerString)(ITask *This,WORD iTrigger,LPWSTR *ppwszTrigger);
-      HRESULT (WINAPI *GetRunTimes)(ITask *This,const LPSYSTEMTIME pstBegin,const LPSYSTEMTIME pstEnd,WORD *pCount,LPSYSTEMTIME *rgstTaskTimes);
-      HRESULT (WINAPI *GetNextRunTime)(ITask *This,SYSTEMTIME *pstNextRun);
-      HRESULT (WINAPI *SetIdleWait)(ITask *This,WORD wIdleMinutes,WORD wDeadlineMinutes);
-      HRESULT (WINAPI *GetIdleWait)(ITask *This,WORD *pwIdleMinutes,WORD *pwDeadlineMinutes);
-      HRESULT (WINAPI *Run)(ITask *This);
-      HRESULT (WINAPI *Terminate)(ITask *This);
-      HRESULT (WINAPI *EditWorkItem)(ITask *This,HWND hParent,DWORD dwReserved);
-      HRESULT (WINAPI *GetMostRecentRunTime)(ITask *This,SYSTEMTIME *pstLastRun);
-      HRESULT (WINAPI *GetStatus)(ITask *This,HRESULT *phrStatus);
-      HRESULT (WINAPI *GetExitCode)(ITask *This,DWORD *pdwExitCode);
-      HRESULT (WINAPI *SetComment)(ITask *This,LPCWSTR pwszComment);
-      HRESULT (WINAPI *GetComment)(ITask *This,LPWSTR *ppwszComment);
-      HRESULT (WINAPI *SetCreator)(ITask *This,LPCWSTR pwszCreator);
-      HRESULT (WINAPI *GetCreator)(ITask *This,LPWSTR *ppwszCreator);
-      HRESULT (WINAPI *SetWorkItemData)(ITask *This,WORD cbData,BYTE rgbData[]);
-      HRESULT (WINAPI *GetWorkItemData)(ITask *This,WORD *pcbData,BYTE **prgbData);
-      HRESULT (WINAPI *SetErrorRetryCount)(ITask *This,WORD wRetryCount);
-      HRESULT (WINAPI *GetErrorRetryCount)(ITask *This,WORD *pwRetryCount);
-      HRESULT (WINAPI *SetErrorRetryInterval)(ITask *This,WORD wRetryInterval);
-      HRESULT (WINAPI *GetErrorRetryInterval)(ITask *This,WORD *pwRetryInterval);
-      HRESULT (WINAPI *SetFlags)(ITask *This,DWORD dwFlags);
-      HRESULT (WINAPI *GetFlags)(ITask *This,DWORD *pdwFlags);
-      HRESULT (WINAPI *SetAccountInformation)(ITask *This,LPCWSTR pwszAccountName,LPCWSTR pwszPassword);
-      HRESULT (WINAPI *GetAccountInformation)(ITask *This,LPWSTR *ppwszAccountName);
-      HRESULT (WINAPI *SetApplicationName)(ITask *This,LPCWSTR pwszApplicationName);
-      HRESULT (WINAPI *GetApplicationName)(ITask *This,LPWSTR *ppwszApplicationName);
-      HRESULT (WINAPI *SetParameters)(ITask *This,LPCWSTR pwszParameters);
-      HRESULT (WINAPI *GetParameters)(ITask *This,LPWSTR *ppwszParameters);
-      HRESULT (WINAPI *SetWorkingDirectory)(ITask *This,LPCWSTR pwszWorkingDirectory);
-      HRESULT (WINAPI *GetWorkingDirectory)(ITask *This,LPWSTR *ppwszWorkingDirectory);
-      HRESULT (WINAPI *SetPriority)(ITask *This,DWORD dwPriority);
-      HRESULT (WINAPI *GetPriority)(ITask *This,DWORD *pdwPriority);
-      HRESULT (WINAPI *SetTaskFlags)(ITask *This,DWORD dwFlags);
-      HRESULT (WINAPI *GetTaskFlags)(ITask *This,DWORD *pdwFlags);
-      HRESULT (WINAPI *SetMaxRunTime)(ITask *This,DWORD dwMaxRunTimeMS);
-      HRESULT (WINAPI *GetMaxRunTime)(ITask *This,DWORD *pdwMaxRunTimeMS);
+                   HRESULT (WINAPI *QueryInterface)(ITask *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITask *This);
+                   ULONG (WINAPI *Release)(ITask *This);
+                   HRESULT (WINAPI *CreateTrigger)(ITask *This,WORD *piNewTrigger,ITaskTrigger **ppTrigger);
+                   HRESULT (WINAPI *DeleteTrigger)(ITask *This,WORD iTrigger);
+                   HRESULT (WINAPI *GetTriggerCount)(ITask *This,WORD *pwCount);
+                   HRESULT (WINAPI *GetTrigger)(ITask *This,WORD iTrigger,ITaskTrigger **ppTrigger);
+                   HRESULT (WINAPI *GetTriggerString)(ITask *This,WORD iTrigger,LPWSTR *ppwszTrigger);
+                   HRESULT (WINAPI *GetRunTimes)(ITask *This,const LPSYSTEMTIME pstBegin,const LPSYSTEMTIME pstEnd,WORD *pCount,LPSYSTEMTIME *rgstTaskTimes);
+                   HRESULT (WINAPI *GetNextRunTime)(ITask *This,SYSTEMTIME *pstNextRun);
+                   HRESULT (WINAPI *SetIdleWait)(ITask *This,WORD wIdleMinutes,WORD wDeadlineMinutes);
+                   HRESULT (WINAPI *GetIdleWait)(ITask *This,WORD *pwIdleMinutes,WORD *pwDeadlineMinutes);
+                   HRESULT (WINAPI *Run)(ITask *This);
+                   HRESULT (WINAPI *Terminate)(ITask *This);
+                   HRESULT (WINAPI *EditWorkItem)(ITask *This,HWND hParent,DWORD dwReserved);
+                   HRESULT (WINAPI *GetMostRecentRunTime)(ITask *This,SYSTEMTIME *pstLastRun);
+                   HRESULT (WINAPI *GetStatus)(ITask *This,HRESULT *phrStatus);
+                   HRESULT (WINAPI *GetExitCode)(ITask *This,DWORD *pdwExitCode);
+                   HRESULT (WINAPI *SetComment)(ITask *This,LPCWSTR pwszComment);
+                   HRESULT (WINAPI *GetComment)(ITask *This,LPWSTR *ppwszComment);
+                   HRESULT (WINAPI *SetCreator)(ITask *This,LPCWSTR pwszCreator);
+                   HRESULT (WINAPI *GetCreator)(ITask *This,LPWSTR *ppwszCreator);
+                   HRESULT (WINAPI *SetWorkItemData)(ITask *This,WORD cbData,BYTE rgbData[]);
+                   HRESULT (WINAPI *GetWorkItemData)(ITask *This,WORD *pcbData,BYTE **prgbData);
+                   HRESULT (WINAPI *SetErrorRetryCount)(ITask *This,WORD wRetryCount);
+                   HRESULT (WINAPI *GetErrorRetryCount)(ITask *This,WORD *pwRetryCount);
+                   HRESULT (WINAPI *SetErrorRetryInterval)(ITask *This,WORD wRetryInterval);
+                   HRESULT (WINAPI *GetErrorRetryInterval)(ITask *This,WORD *pwRetryInterval);
+                   HRESULT (WINAPI *SetFlags)(ITask *This,DWORD dwFlags);
+                   HRESULT (WINAPI *GetFlags)(ITask *This,DWORD *pdwFlags);
+                   HRESULT (WINAPI *SetAccountInformation)(ITask *This,LPCWSTR pwszAccountName,LPCWSTR pwszPassword);
+                   HRESULT (WINAPI *GetAccountInformation)(ITask *This,LPWSTR *ppwszAccountName);
+                   HRESULT (WINAPI *SetApplicationName)(ITask *This,LPCWSTR pwszApplicationName);
+                   HRESULT (WINAPI *GetApplicationName)(ITask *This,LPWSTR *ppwszApplicationName);
+                   HRESULT (WINAPI *SetParameters)(ITask *This,LPCWSTR pwszParameters);
+                   HRESULT (WINAPI *GetParameters)(ITask *This,LPWSTR *ppwszParameters);
+                   HRESULT (WINAPI *SetWorkingDirectory)(ITask *This,LPCWSTR pwszWorkingDirectory);
+                   HRESULT (WINAPI *GetWorkingDirectory)(ITask *This,LPWSTR *ppwszWorkingDirectory);
+                   HRESULT (WINAPI *SetPriority)(ITask *This,DWORD dwPriority);
+                   HRESULT (WINAPI *GetPriority)(ITask *This,DWORD *pdwPriority);
+                   HRESULT (WINAPI *SetTaskFlags)(ITask *This,DWORD dwFlags);
+                   HRESULT (WINAPI *GetTaskFlags)(ITask *This,DWORD *pdwFlags);
+                   HRESULT (WINAPI *SetMaxRunTime)(ITask *This,DWORD dwMaxRunTimeMS);
+                   HRESULT (WINAPI *GetMaxRunTime)(ITask *This,DWORD *pdwMaxRunTimeMS);
     END_INTERFACE
   } ITaskVtbl;
   struct ITask {
@@ -551,13 +551,13 @@ extern "C" {
 #else
   typedef struct IEnumWorkItemsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumWorkItems *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumWorkItems *This);
-      ULONG (WINAPI *Release)(IEnumWorkItems *This);
-      HRESULT (WINAPI *Next)(IEnumWorkItems *This,ULONG celt,LPWSTR **rgpwszNames,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumWorkItems *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumWorkItems *This);
-      HRESULT (WINAPI *Clone)(IEnumWorkItems *This,IEnumWorkItems **ppEnumWorkItems);
+                   HRESULT (WINAPI *QueryInterface)(IEnumWorkItems *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumWorkItems *This);
+                   ULONG (WINAPI *Release)(IEnumWorkItems *This);
+                   HRESULT (WINAPI *Next)(IEnumWorkItems *This,ULONG celt,LPWSTR **rgpwszNames,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumWorkItems *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumWorkItems *This);
+                   HRESULT (WINAPI *Clone)(IEnumWorkItems *This,IEnumWorkItems **ppEnumWorkItems);
     END_INTERFACE
   } IEnumWorkItemsVtbl;
   struct IEnumWorkItems {
@@ -606,17 +606,17 @@ extern "C" {
 #else
   typedef struct ITaskSchedulerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITaskScheduler *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITaskScheduler *This);
-      ULONG (WINAPI *Release)(ITaskScheduler *This);
-      HRESULT (WINAPI *SetTargetComputer)(ITaskScheduler *This,LPCWSTR pwszComputer);
-      HRESULT (WINAPI *GetTargetComputer)(ITaskScheduler *This,LPWSTR *ppwszComputer);
-      HRESULT (WINAPI *Enum)(ITaskScheduler *This,IEnumWorkItems **ppEnumWorkItems);
-      HRESULT (WINAPI *Activate)(ITaskScheduler *This,LPCWSTR pwszName,REFIID riid,IUnknown **ppUnk);
-      HRESULT (WINAPI *Delete)(ITaskScheduler *This,LPCWSTR pwszName);
-      HRESULT (WINAPI *NewWorkItem)(ITaskScheduler *This,LPCWSTR pwszTaskName,REFCLSID rclsid,REFIID riid,IUnknown **ppUnk);
-      HRESULT (WINAPI *AddWorkItem)(ITaskScheduler *This,LPCWSTR pwszTaskName,IScheduledWorkItem *pWorkItem);
-      HRESULT (WINAPI *IsOfType)(ITaskScheduler *This,LPCWSTR pwszName,REFIID riid);
+                   HRESULT (WINAPI *QueryInterface)(ITaskScheduler *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITaskScheduler *This);
+                   ULONG (WINAPI *Release)(ITaskScheduler *This);
+                   HRESULT (WINAPI *SetTargetComputer)(ITaskScheduler *This,LPCWSTR pwszComputer);
+                   HRESULT (WINAPI *GetTargetComputer)(ITaskScheduler *This,LPWSTR *ppwszComputer);
+                   HRESULT (WINAPI *Enum)(ITaskScheduler *This,IEnumWorkItems **ppEnumWorkItems);
+                   HRESULT (WINAPI *Activate)(ITaskScheduler *This,LPCWSTR pwszName,REFIID riid,IUnknown **ppUnk);
+                   HRESULT (WINAPI *Delete)(ITaskScheduler *This,LPCWSTR pwszName);
+                   HRESULT (WINAPI *NewWorkItem)(ITaskScheduler *This,LPCWSTR pwszTaskName,REFCLSID rclsid,REFIID riid,IUnknown **ppUnk);
+                   HRESULT (WINAPI *AddWorkItem)(ITaskScheduler *This,LPCWSTR pwszTaskName,IScheduledWorkItem *pWorkItem);
+                   HRESULT (WINAPI *IsOfType)(ITaskScheduler *This,LPCWSTR pwszName,REFIID riid);
     END_INTERFACE
   } ITaskSchedulerVtbl;
   struct ITaskScheduler {
@@ -682,10 +682,10 @@ extern "C" {
 #else
   typedef struct IProvideTaskPageVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IProvideTaskPage *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IProvideTaskPage *This);
-      ULONG (WINAPI *Release)(IProvideTaskPage *This);
-      HRESULT (WINAPI *GetPage)(IProvideTaskPage *This,TASKPAGE tpType,WINBOOL fPersistChanges,HPROPSHEETPAGE *phPage);
+                   HRESULT (WINAPI *QueryInterface)(IProvideTaskPage *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IProvideTaskPage *This);
+                   ULONG (WINAPI *Release)(IProvideTaskPage *This);
+                   HRESULT (WINAPI *GetPage)(IProvideTaskPage *This,TASKPAGE tpType,WINBOOL fPersistChanges,HPROPSHEETPAGE *phPage);
     END_INTERFACE
   } IProvideTaskPageVtbl;
   struct IProvideTaskPage {

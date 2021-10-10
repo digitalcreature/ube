@@ -25,12 +25,12 @@
 #ifndef __USE_FILE_OFFSET64
 extern int __open_2 (const char *__path, int __oflag) __nonnull ((1));
 extern int __REDIRECT (__open_alias, (const char *__path, int __oflag, ...),
-		       open) __nonnull ((1));
+		                    open) __nonnull ((1));
 #else
 extern int __REDIRECT (__open_2, (const char *__path, int __oflag),
-		       __open64_2) __nonnull ((1));
+		                    __open64_2) __nonnull ((1));
 extern int __REDIRECT (__open_alias, (const char *__path, int __oflag, ...),
-		       open64) __nonnull ((1));
+		                    open64) __nonnull ((1));
 #endif
 __errordecl (__open_too_many_args,
 	     "open can be called either with 2 or 3 arguments, not more");
@@ -45,12 +45,12 @@ open (const char *__path, int __oflag, ...)
 
   if (__builtin_constant_p (__oflag))
     {
-      if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
+                   if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
 	{
 	  __open_missing_mode ();
 	  return __open_2 (__path, __oflag);
 	}
-      return __open_alias (__path, __oflag, __va_arg_pack ());
+                   return __open_alias (__path, __oflag, __va_arg_pack ());
     }
 
   if (__va_arg_pack_len () < 1)
@@ -77,12 +77,12 @@ open64 (const char *__path, int __oflag, ...)
 
   if (__builtin_constant_p (__oflag))
     {
-      if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
+                   if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
 	{
 	  __open64_missing_mode ();
 	  return __open64_2 (__path, __oflag);
 	}
-      return __open64_alias (__path, __oflag, __va_arg_pack ());
+                   return __open64_alias (__path, __oflag, __va_arg_pack ());
     }
 
   if (__va_arg_pack_len () < 1)
@@ -121,12 +121,12 @@ openat (int __fd, const char *__path, int __oflag, ...)
 
   if (__builtin_constant_p (__oflag))
     {
-      if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
+                   if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
 	{
 	  __openat_missing_mode ();
 	  return __openat_2 (__fd, __path, __oflag);
 	}
-      return __openat_alias (__fd, __path, __oflag, __va_arg_pack ());
+                   return __openat_alias (__fd, __path, __oflag, __va_arg_pack ());
     }
 
   if (__va_arg_pack_len () < 1)
@@ -155,12 +155,12 @@ openat64 (int __fd, const char *__path, int __oflag, ...)
 
   if (__builtin_constant_p (__oflag))
     {
-      if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
+                   if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
 	{
 	  __openat64_missing_mode ();
 	  return __openat64_2 (__fd, __path, __oflag);
 	}
-      return __openat64_alias (__fd, __path, __oflag, __va_arg_pack ());
+                   return __openat64_alias (__fd, __path, __oflag, __va_arg_pack ());
     }
 
   if (__va_arg_pack_len () < 1)

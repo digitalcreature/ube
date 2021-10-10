@@ -166,12 +166,12 @@ extern "C" {
 #else
   typedef struct ITransactionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransaction *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransaction *This);
-      ULONG (WINAPI *Release)(ITransaction *This);
-      HRESULT (WINAPI *Commit)(ITransaction *This,WINBOOL fRetaining,DWORD grfTC,DWORD grfRM);
-      HRESULT (WINAPI *Abort)(ITransaction *This,BOID *pboidReason,WINBOOL fRetaining,WINBOOL fAsync);
-      HRESULT (WINAPI *GetTransactionInfo)(ITransaction *This,XACTTRANSINFO *pinfo);
+                   HRESULT (WINAPI *QueryInterface)(ITransaction *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransaction *This);
+                   ULONG (WINAPI *Release)(ITransaction *This);
+                   HRESULT (WINAPI *Commit)(ITransaction *This,WINBOOL fRetaining,DWORD grfTC,DWORD grfRM);
+                   HRESULT (WINAPI *Abort)(ITransaction *This,BOID *pboidReason,WINBOOL fRetaining,WINBOOL fAsync);
+                   HRESULT (WINAPI *GetTransactionInfo)(ITransaction *This,XACTTRANSINFO *pinfo);
     END_INTERFACE
   } ITransactionVtbl;
   struct ITransaction {
@@ -205,13 +205,13 @@ extern "C" {
 #else
   typedef struct ITransactionClonerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionCloner *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionCloner *This);
-      ULONG (WINAPI *Release)(ITransactionCloner *This);
-      HRESULT (WINAPI *Commit)(ITransactionCloner *This,WINBOOL fRetaining,DWORD grfTC,DWORD grfRM);
-      HRESULT (WINAPI *Abort)(ITransactionCloner *This,BOID *pboidReason,WINBOOL fRetaining,WINBOOL fAsync);
-      HRESULT (WINAPI *GetTransactionInfo)(ITransactionCloner *This,XACTTRANSINFO *pinfo);
-      HRESULT (WINAPI *CloneWithCommitDisabled)(ITransactionCloner *This,ITransaction **ppITransaction);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionCloner *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionCloner *This);
+                   ULONG (WINAPI *Release)(ITransactionCloner *This);
+                   HRESULT (WINAPI *Commit)(ITransactionCloner *This,WINBOOL fRetaining,DWORD grfTC,DWORD grfRM);
+                   HRESULT (WINAPI *Abort)(ITransactionCloner *This,BOID *pboidReason,WINBOOL fRetaining,WINBOOL fAsync);
+                   HRESULT (WINAPI *GetTransactionInfo)(ITransactionCloner *This,XACTTRANSINFO *pinfo);
+                   HRESULT (WINAPI *CloneWithCommitDisabled)(ITransactionCloner *This,ITransaction **ppITransaction);
     END_INTERFACE
   } ITransactionClonerVtbl;
   struct ITransactionCloner {
@@ -242,14 +242,14 @@ extern "C" {
 #else
   typedef struct ITransaction2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransaction2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransaction2 *This);
-      ULONG (WINAPI *Release)(ITransaction2 *This);
-      HRESULT (WINAPI *Commit)(ITransaction2 *This,WINBOOL fRetaining,DWORD grfTC,DWORD grfRM);
-      HRESULT (WINAPI *Abort)(ITransaction2 *This,BOID *pboidReason,WINBOOL fRetaining,WINBOOL fAsync);
-      HRESULT (WINAPI *GetTransactionInfo)(ITransaction2 *This,XACTTRANSINFO *pinfo);
-      HRESULT (WINAPI *CloneWithCommitDisabled)(ITransaction2 *This,ITransaction **ppITransaction);
-      HRESULT (WINAPI *GetTransactionInfo2)(ITransaction2 *This,XACTTRANSINFO *pinfo);
+                   HRESULT (WINAPI *QueryInterface)(ITransaction2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransaction2 *This);
+                   ULONG (WINAPI *Release)(ITransaction2 *This);
+                   HRESULT (WINAPI *Commit)(ITransaction2 *This,WINBOOL fRetaining,DWORD grfTC,DWORD grfRM);
+                   HRESULT (WINAPI *Abort)(ITransaction2 *This,BOID *pboidReason,WINBOOL fRetaining,WINBOOL fAsync);
+                   HRESULT (WINAPI *GetTransactionInfo)(ITransaction2 *This,XACTTRANSINFO *pinfo);
+                   HRESULT (WINAPI *CloneWithCommitDisabled)(ITransaction2 *This,ITransaction **ppITransaction);
+                   HRESULT (WINAPI *GetTransactionInfo2)(ITransaction2 *This,XACTTRANSINFO *pinfo);
     END_INTERFACE
   } ITransaction2Vtbl;
   struct ITransaction2 {
@@ -282,11 +282,11 @@ extern "C" {
 #else
   typedef struct ITransactionDispenserVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionDispenser *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionDispenser *This);
-      ULONG (WINAPI *Release)(ITransactionDispenser *This);
-      HRESULT (WINAPI *GetOptionsObject)(ITransactionDispenser *This,ITransactionOptions **ppOptions);
-      HRESULT (WINAPI *BeginTransaction)(ITransactionDispenser *This,IUnknown *punkOuter,ISOLEVEL isoLevel,ULONG isoFlags,ITransactionOptions *pOptions,ITransaction **ppTransaction);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionDispenser *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionDispenser *This);
+                   ULONG (WINAPI *Release)(ITransactionDispenser *This);
+                   HRESULT (WINAPI *GetOptionsObject)(ITransactionDispenser *This,ITransactionOptions **ppOptions);
+                   HRESULT (WINAPI *BeginTransaction)(ITransactionDispenser *This,IUnknown *punkOuter,ISOLEVEL isoLevel,ULONG isoFlags,ITransactionOptions *pOptions,ITransaction **ppTransaction);
     END_INTERFACE
   } ITransactionDispenserVtbl;
   struct ITransactionDispenser {
@@ -318,11 +318,11 @@ extern "C" {
 #else
   typedef struct ITransactionOptionsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionOptions *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionOptions *This);
-      ULONG (WINAPI *Release)(ITransactionOptions *This);
-      HRESULT (WINAPI *SetOptions)(ITransactionOptions *This,XACTOPT *pOptions);
-      HRESULT (WINAPI *GetOptions)(ITransactionOptions *This,XACTOPT *pOptions);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionOptions *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionOptions *This);
+                   ULONG (WINAPI *Release)(ITransactionOptions *This);
+                   HRESULT (WINAPI *SetOptions)(ITransactionOptions *This,XACTOPT *pOptions);
+                   HRESULT (WINAPI *GetOptions)(ITransactionOptions *This,XACTOPT *pOptions);
     END_INTERFACE
   } ITransactionOptionsVtbl;
   struct ITransactionOptions {
@@ -356,13 +356,13 @@ extern "C" {
 #else
   typedef struct ITransactionOutcomeEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionOutcomeEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionOutcomeEvents *This);
-      ULONG (WINAPI *Release)(ITransactionOutcomeEvents *This);
-      HRESULT (WINAPI *Committed)(ITransactionOutcomeEvents *This,WINBOOL fRetaining,XACTUOW *pNewUOW,HRESULT hr);
-      HRESULT (WINAPI *Aborted)(ITransactionOutcomeEvents *This,BOID *pboidReason,WINBOOL fRetaining,XACTUOW *pNewUOW,HRESULT hr);
-      HRESULT (WINAPI *HeuristicDecision)(ITransactionOutcomeEvents *This,DWORD dwDecision,BOID *pboidReason,HRESULT hr);
-      HRESULT (WINAPI *Indoubt)(ITransactionOutcomeEvents *This);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionOutcomeEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionOutcomeEvents *This);
+                   ULONG (WINAPI *Release)(ITransactionOutcomeEvents *This);
+                   HRESULT (WINAPI *Committed)(ITransactionOutcomeEvents *This,WINBOOL fRetaining,XACTUOW *pNewUOW,HRESULT hr);
+                   HRESULT (WINAPI *Aborted)(ITransactionOutcomeEvents *This,BOID *pboidReason,WINBOOL fRetaining,XACTUOW *pNewUOW,HRESULT hr);
+                   HRESULT (WINAPI *HeuristicDecision)(ITransactionOutcomeEvents *This,DWORD dwDecision,BOID *pboidReason,HRESULT hr);
+                   HRESULT (WINAPI *Indoubt)(ITransactionOutcomeEvents *This);
     END_INTERFACE
   } ITransactionOutcomeEventsVtbl;
   struct ITransactionOutcomeEvents {
@@ -400,11 +400,11 @@ extern "C" {
 #else
   typedef struct ITmNodeNameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITmNodeName *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITmNodeName *This);
-      ULONG (WINAPI *Release)(ITmNodeName *This);
-      HRESULT (WINAPI *GetNodeNameSize)(ITmNodeName *This,ULONG *pcbNodeNameSize);
-      HRESULT (WINAPI *GetNodeName)(ITmNodeName *This,ULONG cbNodeNameBufferSize,LPWSTR pNodeNameBuffer);
+                   HRESULT (WINAPI *QueryInterface)(ITmNodeName *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITmNodeName *This);
+                   ULONG (WINAPI *Release)(ITmNodeName *This);
+                   HRESULT (WINAPI *GetNodeNameSize)(ITmNodeName *This,ULONG *pcbNodeNameSize);
+                   HRESULT (WINAPI *GetNodeName)(ITmNodeName *This,ULONG cbNodeNameBufferSize,LPWSTR pNodeNameBuffer);
     END_INTERFACE
   } ITmNodeNameVtbl;
   struct ITmNodeName {

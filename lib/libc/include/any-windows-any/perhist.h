@@ -62,14 +62,14 @@ extern "C"{
 #else
   typedef struct IPersistHistoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPersistHistory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPersistHistory *This);
-      ULONG (WINAPI *Release)(IPersistHistory *This);
-      HRESULT (WINAPI *GetClassID)(IPersistHistory *This,CLSID *pClassID);
-      HRESULT (WINAPI *LoadHistory)(IPersistHistory *This,IStream *pStream,IBindCtx *pbc);
-      HRESULT (WINAPI *SaveHistory)(IPersistHistory *This,IStream *pStream);
-      HRESULT (WINAPI *SetPositionCookie)(IPersistHistory *This,DWORD dwPositioncookie);
-      HRESULT (WINAPI *GetPositionCookie)(IPersistHistory *This,DWORD *pdwPositioncookie);
+                   HRESULT (WINAPI *QueryInterface)(IPersistHistory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPersistHistory *This);
+                   ULONG (WINAPI *Release)(IPersistHistory *This);
+                   HRESULT (WINAPI *GetClassID)(IPersistHistory *This,CLSID *pClassID);
+                   HRESULT (WINAPI *LoadHistory)(IPersistHistory *This,IStream *pStream,IBindCtx *pbc);
+                   HRESULT (WINAPI *SaveHistory)(IPersistHistory *This,IStream *pStream);
+                   HRESULT (WINAPI *SetPositionCookie)(IPersistHistory *This,DWORD dwPositioncookie);
+                   HRESULT (WINAPI *GetPositionCookie)(IPersistHistory *This,DWORD *pdwPositioncookie);
     END_INTERFACE
   } IPersistHistoryVtbl;
   struct IPersistHistory {

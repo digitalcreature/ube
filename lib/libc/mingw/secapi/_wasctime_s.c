@@ -42,7 +42,7 @@ _int_wasctime_s (wchar_t *d, size_t dn, const struct tm *pt)
     d[0] = 0;
   if (!d || dn < 26 || !pt || (tmp = _wasctime (pt)) == NULL)
      {
-        errno = EINVAL;
+                     errno = EINVAL;
 	return EINVAL;
      }
   for (i = 0; tmp[i] != 0; i++)

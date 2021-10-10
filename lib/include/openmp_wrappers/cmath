@@ -24,7 +24,7 @@
 // which might live in cstdlib.
 #include <cstdlib>
 
-#pragma omp begin declare variant match(                                       \
+#pragma omp begin declare variant match(                                                                                                                     \
     device = {arch(nvptx, nvptx64)}, implementation = {extension(match_any)})
 
 #define __CUDA__

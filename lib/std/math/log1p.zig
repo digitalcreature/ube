@@ -25,9 +25,9 @@ const expect = std.testing.expect;
 pub fn log1p(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => log1p_32(x),
-        f64 => log1p_64(x),
-        else => @compileError("log1p not implemented for " ++ @typeName(T)),
+                     f32 => log1p_32(x),
+                     f64 => log1p_64(x),
+                     else => @compileError("log1p not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -47,52 +47,52 @@ fn log1p_32(x: f32) f32 {
 
     // 1 + x < sqrt(2)+
     if (ix < 0x3ED413D0 or ix >> 31 != 0) {
-        // x <= -1.0
-        if (ix >= 0xBF800000) {
-            // log1p(-1) = -inf
-            if (x == -1.0) {
-                return -math.inf(f32);
-            }
-            // log1p(x < -1) = nan
-            else {
-                return math.nan(f32);
-            }
-        }
-        // |x| < 2^(-24)
-        if ((ix << 1) < (0x33800000 << 1)) {
-            // underflow if subnormal
-            if (ix & 0x7F800000 == 0) {
-                math.doNotOptimizeAway(x * x);
-            }
-            return x;
-        }
-        // sqrt(2) / 2- <= 1 + x < sqrt(2)+
-        if (ix <= 0xBE95F619) {
-            k = 0;
-            c = 0;
-            f = x;
-        }
+                     // x <= -1.0
+                     if (ix >= 0xBF800000) {
+                                      // log1p(-1) = -inf
+                                      if (x == -1.0) {
+                                          return -math.inf(f32);
+                                      }
+                                      // log1p(x < -1) = nan
+                                      else {
+                                          return math.nan(f32);
+                                      }
+                     }
+                     // |x| < 2^(-24)
+                     if ((ix << 1) < (0x33800000 << 1)) {
+                                      // underflow if subnormal
+                                      if (ix & 0x7F800000 == 0) {
+                                          math.doNotOptimizeAway(x * x);
+                                      }
+                                      return x;
+                     }
+                     // sqrt(2) / 2- <= 1 + x < sqrt(2)+
+                     if (ix <= 0xBE95F619) {
+                                      k = 0;
+                                      c = 0;
+                                      f = x;
+                     }
     } else if (ix >= 0x7F800000) {
-        return x;
+                     return x;
     }
 
     if (k != 0) {
-        const uf = 1 + x;
-        var iu = @bitCast(u32, uf);
-        iu += 0x3F800000 - 0x3F3504F3;
-        k = @intCast(i32, iu >> 23) - 0x7F;
+                     const uf = 1 + x;
+                     var iu = @bitCast(u32, uf);
+                     iu += 0x3F800000 - 0x3F3504F3;
+                     k = @intCast(i32, iu >> 23) - 0x7F;
 
-        // correction to avoid underflow in c / u
-        if (k < 25) {
-            c = if (k >= 2) 1 - (uf - x) else x - (uf - 1);
-            c /= uf;
-        } else {
-            c = 0;
-        }
+                     // correction to avoid underflow in c / u
+                     if (k < 25) {
+                                      c = if (k >= 2) 1 - (uf - x) else x - (uf - 1);
+                                      c /= uf;
+                     } else {
+                                      c = 0;
+                     }
 
-        // u into [sqrt(2)/2, sqrt(2)]
-        iu = (iu & 0x007FFFFF) + 0x3F3504F3;
-        f = @bitCast(f32, iu) - 1;
+                     // u into [sqrt(2)/2, sqrt(2)]
+                     iu = (iu & 0x007FFFFF) + 0x3F3504F3;
+                     f = @bitCast(f32, iu) - 1;
     }
 
     const s = f / (2.0 + f);
@@ -126,53 +126,53 @@ fn log1p_64(x: f64) f64 {
 
     // 1 + x < sqrt(2)
     if (hx < 0x3FDA827A or hx >> 31 != 0) {
-        // x <= -1.0
-        if (hx >= 0xBFF00000) {
-            // log1p(-1) = -inf
-            if (x == -1.0) {
-                return -math.inf(f64);
-            }
-            // log1p(x < -1) = nan
-            else {
-                return math.nan(f64);
-            }
-        }
-        // |x| < 2^(-53)
-        if ((hx << 1) < (0x3CA00000 << 1)) {
-            if ((hx & 0x7FF00000) == 0) {
-                math.raiseUnderflow();
-            }
-            return x;
-        }
-        // sqrt(2) / 2- <= 1 + x < sqrt(2)+
-        if (hx <= 0xBFD2BEC4) {
-            k = 0;
-            c = 0;
-            f = x;
-        }
+                     // x <= -1.0
+                     if (hx >= 0xBFF00000) {
+                                      // log1p(-1) = -inf
+                                      if (x == -1.0) {
+                                          return -math.inf(f64);
+                                      }
+                                      // log1p(x < -1) = nan
+                                      else {
+                                          return math.nan(f64);
+                                      }
+                     }
+                     // |x| < 2^(-53)
+                     if ((hx << 1) < (0x3CA00000 << 1)) {
+                                      if ((hx & 0x7FF00000) == 0) {
+                                          math.raiseUnderflow();
+                                      }
+                                      return x;
+                     }
+                     // sqrt(2) / 2- <= 1 + x < sqrt(2)+
+                     if (hx <= 0xBFD2BEC4) {
+                                      k = 0;
+                                      c = 0;
+                                      f = x;
+                     }
     } else if (hx >= 0x7FF00000) {
-        return x;
+                     return x;
     }
 
     if (k != 0) {
-        const uf = 1 + x;
-        const hu = @bitCast(u64, uf);
-        var iu = @intCast(u32, hu >> 32);
-        iu += 0x3FF00000 - 0x3FE6A09E;
-        k = @intCast(i32, iu >> 20) - 0x3FF;
+                     const uf = 1 + x;
+                     const hu = @bitCast(u64, uf);
+                     var iu = @intCast(u32, hu >> 32);
+                     iu += 0x3FF00000 - 0x3FE6A09E;
+                     k = @intCast(i32, iu >> 20) - 0x3FF;
 
-        // correction to avoid underflow in c / u
-        if (k < 54) {
-            c = if (k >= 2) 1 - (uf - x) else x - (uf - 1);
-            c /= uf;
-        } else {
-            c = 0;
-        }
+                     // correction to avoid underflow in c / u
+                     if (k < 54) {
+                                      c = if (k >= 2) 1 - (uf - x) else x - (uf - 1);
+                                      c /= uf;
+                     } else {
+                                      c = 0;
+                     }
 
-        // u into [sqrt(2)/2, sqrt(2)]
-        iu = (iu & 0x000FFFFF) + 0x3FE6A09E;
-        const iq = (@as(u64, iu) << 32) | (hu & 0xFFFFFFFF);
-        f = @bitCast(f64, iq) - 1;
+                     // u into [sqrt(2)/2, sqrt(2)]
+                     iu = (iu & 0x000FFFFF) + 0x3FE6A09E;
+                     const iq = (@as(u64, iu) << 32) | (hu & 0xFFFFFFFF);
+                     f = @bitCast(f64, iq) - 1;
     }
 
     const hfsq = 0.5 * f * f;

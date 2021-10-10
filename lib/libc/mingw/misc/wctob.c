@@ -20,10 +20,10 @@ int wctob (wint_t wc )
     char c;
     int invalid_char = 0;
     if (!WideCharToMultiByte (___lc_codepage_func(),
-			      0 /* Is this correct flag? */,
-			      &w, 1, &c, 1, NULL, &invalid_char)
+			                   0 /* Is this correct flag? */,
+			                   &w, 1, &c, 1, NULL, &invalid_char)
 	 || invalid_char)
-      return EOF;
+                   return EOF;
 
     return (int) c;
 }

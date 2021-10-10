@@ -80,11 +80,11 @@ extern "C"{
 #else
   typedef struct ITargetNotifyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITargetNotify *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITargetNotify *This);
-      ULONG (WINAPI *Release)(ITargetNotify *This);
-      HRESULT (WINAPI *OnCreate)(ITargetNotify *This,IUnknown *pUnkDestination,ULONG cbCookie);
-      HRESULT (WINAPI *OnReuse)(ITargetNotify *This,IUnknown *pUnkDestination);
+                   HRESULT (WINAPI *QueryInterface)(ITargetNotify *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITargetNotify *This);
+                   ULONG (WINAPI *Release)(ITargetNotify *This);
+                   HRESULT (WINAPI *OnCreate)(ITargetNotify *This,IUnknown *pUnkDestination,ULONG cbCookie);
+                   HRESULT (WINAPI *OnReuse)(ITargetNotify *This,IUnknown *pUnkDestination);
     END_INTERFACE
   } ITargetNotifyVtbl;
   struct ITargetNotify {
@@ -117,12 +117,12 @@ extern "C"{
 #else
   typedef struct ITargetNotify2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITargetNotify2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITargetNotify2 *This);
-      ULONG (WINAPI *Release)(ITargetNotify2 *This);
-      HRESULT (WINAPI *OnCreate)(ITargetNotify2 *This,IUnknown *pUnkDestination,ULONG cbCookie);
-      HRESULT (WINAPI *OnReuse)(ITargetNotify2 *This,IUnknown *pUnkDestination);
-      HRESULT (WINAPI *GetOptionString)(ITargetNotify2 *This,BSTR *pbstrOptions);
+                   HRESULT (WINAPI *QueryInterface)(ITargetNotify2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITargetNotify2 *This);
+                   ULONG (WINAPI *Release)(ITargetNotify2 *This);
+                   HRESULT (WINAPI *OnCreate)(ITargetNotify2 *This,IUnknown *pUnkDestination,ULONG cbCookie);
+                   HRESULT (WINAPI *OnReuse)(ITargetNotify2 *This,IUnknown *pUnkDestination);
+                   HRESULT (WINAPI *GetOptionString)(ITargetNotify2 *This,BSTR *pbstrOptions);
     END_INTERFACE
   } ITargetNotify2Vtbl;
   struct ITargetNotify2 {
@@ -146,7 +146,7 @@ extern "C"{
   typedef ITargetFrame2 *LPTARGETFRAME2;
   typedef
     enum __MIDL_ITargetFrame2_0001 {
-      FINDFRAME_NONE = 0,FINDFRAME_JUSTTESTEXISTENCE = 1,FINDFRAME_INTERNAL = 0x80000000
+                   FINDFRAME_NONE = 0,FINDFRAME_JUSTTESTEXISTENCE = 1,FINDFRAME_INTERNAL = 0x80000000
   } FINDFRAME_FLAGS;
 
   typedef enum __MIDL_ITargetFrame2_0002 {
@@ -174,21 +174,21 @@ extern "C"{
 #else
   typedef struct ITargetFrame2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITargetFrame2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITargetFrame2 *This);
-      ULONG (WINAPI *Release)(ITargetFrame2 *This);
-      HRESULT (WINAPI *SetFrameName)(ITargetFrame2 *This,LPCWSTR pszFrameName);
-      HRESULT (WINAPI *GetFrameName)(ITargetFrame2 *This,LPWSTR *ppszFrameName);
-      HRESULT (WINAPI *GetParentFrame)(ITargetFrame2 *This,IUnknown **ppunkParent);
-      HRESULT (WINAPI *SetFrameSrc)(ITargetFrame2 *This,LPCWSTR pszFrameSrc);
-      HRESULT (WINAPI *GetFrameSrc)(ITargetFrame2 *This,LPWSTR *ppszFrameSrc);
-      HRESULT (WINAPI *GetFramesContainer)(ITargetFrame2 *This,IOleContainer **ppContainer);
-      HRESULT (WINAPI *SetFrameOptions)(ITargetFrame2 *This,DWORD dwFlags);
-      HRESULT (WINAPI *GetFrameOptions)(ITargetFrame2 *This,DWORD *pdwFlags);
-      HRESULT (WINAPI *SetFrameMargins)(ITargetFrame2 *This,DWORD dwWidth,DWORD dwHeight);
-      HRESULT (WINAPI *GetFrameMargins)(ITargetFrame2 *This,DWORD *pdwWidth,DWORD *pdwHeight);
-      HRESULT (WINAPI *FindFrame)(ITargetFrame2 *This,LPCWSTR pszTargetName,DWORD dwFlags,IUnknown **ppunkTargetFrame);
-      HRESULT (WINAPI *GetTargetAlias)(ITargetFrame2 *This,LPCWSTR pszTargetName,LPWSTR *ppszTargetAlias);
+                   HRESULT (WINAPI *QueryInterface)(ITargetFrame2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITargetFrame2 *This);
+                   ULONG (WINAPI *Release)(ITargetFrame2 *This);
+                   HRESULT (WINAPI *SetFrameName)(ITargetFrame2 *This,LPCWSTR pszFrameName);
+                   HRESULT (WINAPI *GetFrameName)(ITargetFrame2 *This,LPWSTR *ppszFrameName);
+                   HRESULT (WINAPI *GetParentFrame)(ITargetFrame2 *This,IUnknown **ppunkParent);
+                   HRESULT (WINAPI *SetFrameSrc)(ITargetFrame2 *This,LPCWSTR pszFrameSrc);
+                   HRESULT (WINAPI *GetFrameSrc)(ITargetFrame2 *This,LPWSTR *ppszFrameSrc);
+                   HRESULT (WINAPI *GetFramesContainer)(ITargetFrame2 *This,IOleContainer **ppContainer);
+                   HRESULT (WINAPI *SetFrameOptions)(ITargetFrame2 *This,DWORD dwFlags);
+                   HRESULT (WINAPI *GetFrameOptions)(ITargetFrame2 *This,DWORD *pdwFlags);
+                   HRESULT (WINAPI *SetFrameMargins)(ITargetFrame2 *This,DWORD dwWidth,DWORD dwHeight);
+                   HRESULT (WINAPI *GetFrameMargins)(ITargetFrame2 *This,DWORD *pdwWidth,DWORD *pdwHeight);
+                   HRESULT (WINAPI *FindFrame)(ITargetFrame2 *This,LPCWSTR pszTargetName,DWORD dwFlags,IUnknown **ppunkTargetFrame);
+                   HRESULT (WINAPI *GetTargetAlias)(ITargetFrame2 *This,LPCWSTR pszTargetName,LPWSTR *ppszTargetAlias);
     END_INTERFACE
   } ITargetFrame2Vtbl;
   struct ITargetFrame2 {
@@ -252,11 +252,11 @@ extern "C"{
 #else
   typedef struct ITargetContainerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITargetContainer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITargetContainer *This);
-      ULONG (WINAPI *Release)(ITargetContainer *This);
-      HRESULT (WINAPI *GetFrameUrl)(ITargetContainer *This,LPWSTR *ppszFrameSrc);
-      HRESULT (WINAPI *GetFramesContainer)(ITargetContainer *This,IOleContainer **ppContainer);
+                   HRESULT (WINAPI *QueryInterface)(ITargetContainer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITargetContainer *This);
+                   ULONG (WINAPI *Release)(ITargetContainer *This);
+                   HRESULT (WINAPI *GetFrameUrl)(ITargetContainer *This,LPWSTR *ppszFrameSrc);
+                   HRESULT (WINAPI *GetFramesContainer)(ITargetContainer *This,IOleContainer **ppContainer);
     END_INTERFACE
   } ITargetContainerVtbl;
   struct ITargetContainer {

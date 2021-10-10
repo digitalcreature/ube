@@ -26,7 +26,7 @@ extern "C" {
 
 #define AMOVIEAPI
 
-#define VFW_FIRST_CODE      0x200
+#define VFW_FIRST_CODE                   0x200
 #define MAX_ERROR_TEXT_LEN  160
 
 #include <vfwmsgs.h>

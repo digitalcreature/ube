@@ -130,21 +130,21 @@ inline const TCHAR *_com_error::ErrorMessage() const throw() {
   if(!m_pszMsg) {
     FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER|FORMAT_MESSAGE_FROM_SYSTEM,NULL,m_hresult,MAKELANGID(LANG_NEUTRAL,SUBLANG_DEFAULT),(LPTSTR)&m_pszMsg,0,NULL);
     if(m_pszMsg!=NULL) {
-      int nLen = lstrlen(m_pszMsg);
-      if(nLen > 1 && m_pszMsg[nLen - 1]=='\n') {
+                   int nLen = lstrlen(m_pszMsg);
+                   if(nLen > 1 && m_pszMsg[nLen - 1]=='\n') {
 	m_pszMsg[nLen-1] = 0;
 	if(m_pszMsg[nLen - 2]=='\r') m_pszMsg[nLen-2] = 0;
-      }
+                   }
     } else {
-      m_pszMsg = (LPTSTR)LocalAlloc(0,32 *sizeof(TCHAR));
-      if(m_pszMsg!=NULL) {
+                   m_pszMsg = (LPTSTR)LocalAlloc(0,32 *sizeof(TCHAR));
+                   if(m_pszMsg!=NULL) {
 	WORD wCode = WCode();
 	if(wCode!=0) {
 	  _COM_PRINTF_S_1(m_pszMsg,32,TEXT("IDispatch error #%d"),wCode);
 	} else {
 	  _COM_PRINTF_S_1(m_pszMsg,32,TEXT("Unknown error 0x%0lX"),m_hresult);
 	}
-      }
+                   }
     }
   }
   return m_pszMsg;

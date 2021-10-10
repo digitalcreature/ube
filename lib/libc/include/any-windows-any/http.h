@@ -108,18 +108,18 @@ extern "C" {
   typedef struct _HTTP_DATA_CHUNK {
     HTTP_DATA_CHUNK_TYPE DataChunkType;
     __C89_NAMELESS union {
-      struct {
+                   struct {
 	PVOID pBuffer;
 	ULONG BufferLength;
-      } FromMemory;
-      struct {
+                   } FromMemory;
+                   struct {
 	HTTP_BYTE_RANGE ByteRange;
 	HANDLE FileHandle;
-      } FromFileHandle;
-      struct {
+                   } FromFileHandle;
+                   struct {
 	USHORT FragmentNameLength;
 	PCWSTR pFragmentName;
-      } FromFragmentCache;
+                   } FromFragmentCache;
     };
   } HTTP_DATA_CHUNK,*PHTTP_DATA_CHUNK;
 
@@ -203,13 +203,13 @@ extern "C" {
 
   typedef struct _HTTP_REQUEST_INFO {
     HTTP_REQUEST_INFO_TYPE InfoType;
-    ULONG                  InfoLength;
-    PVOID                  pInfo;
+    ULONG                                                         InfoLength;
+    PVOID                                                         pInfo;
   } HTTP_REQUEST_INFO, *PHTTP_REQUEST_INFO;
 
 #ifdef __cplusplus
   typedef struct _HTTP_REQUEST_V2 : HTTP_REQUEST_V1 {
-    USHORT             RequestInfoCount;
+    USHORT                                       RequestInfoCount;
     PHTTP_REQUEST_INFO pRequestInfo;
   } HTTP_REQUEST_V2, *PHTTP_REQUEST_V2;
 #else
@@ -235,7 +235,7 @@ extern "C" {
     HTTP_RAW_CONNECTION_ID RawConnectionId;
     PHTTP_SSL_INFO pSslInfo;
     };
-    USHORT             RequestInfoCount;
+    USHORT                                       RequestInfoCount;
     PHTTP_REQUEST_INFO pRequestInfo;
   } HTTP_REQUEST_V2, *PHTTP_REQUEST_V2;
 #endif
@@ -268,13 +268,13 @@ extern "C" {
 
   typedef struct _HTTP_RESPONSE_INFO {
     HTTP_RESPONSE_INFO_TYPE Type;
-    ULONG                   Length;
-    PVOID                   pInfo;
+    ULONG                                                          Length;
+    PVOID                                                          pInfo;
   } HTTP_RESPONSE_INFO, *PHTTP_RESPONSE_INFO;
 
 #ifdef __cplusplus
   typedef struct _HTTP_RESPONSE_V2 : HTTP_RESPONSE_V1 {
-    USHORT              ResponseInfoCount;
+    USHORT                                        ResponseInfoCount;
     PHTTP_RESPONSE_INFO pResponseInfo;
   } HTTP_RESPONSE_V2, *PHTTP_RESPONSE_V2;
 #else
@@ -290,7 +290,7 @@ extern "C" {
     USHORT EntityChunkCount;
     PHTTP_DATA_CHUNK pEntityChunks;
     };
-    USHORT              ResponseInfoCount;
+    USHORT                                        ResponseInfoCount;
     PHTTP_RESPONSE_INFO pResponseInfo;
   } HTTP_RESPONSE_V2, *PHTTP_RESPONSE_V2;
 #endif
@@ -479,8 +479,8 @@ extern "C" {
 
   typedef enum _HTTP_SERVICE_BINDING_TYPE {
     HttpServiceBindingTypeNone   = 0,
-    HttpServiceBindingTypeW      = 1,
-    HttpServiceBindingTypeA      = 2
+    HttpServiceBindingTypeW                   = 1,
+    HttpServiceBindingTypeA                   = 2
   } HTTP_SERVICE_BINDING_TYPE;
 
   typedef enum _HTTP_LOG_DATA_TYPE {
@@ -519,7 +519,7 @@ extern "C" {
 
   typedef struct _HTTP_CONNECTION_LIMIT_INFO {
     HTTP_PROPERTY_FLAGS Flags;
-    ULONG               MaxConnections;
+    ULONG                                         MaxConnections;
   } HTTP_CONNECTION_LIMIT_INFO, *PHTTP_CONNECTION_LIMIT_INFO;
 
   typedef struct _HTTP_STATE_INFO {
@@ -529,7 +529,7 @@ extern "C" {
 
   typedef struct _HTTP_QOS_SETTING_INFO {
     HTTP_QOS_SETTING_TYPE  QosType;
-    PVOID               QosSetting;
+    PVOID                                         QosSetting;
   } HTTP_QOS_SETTING_INFO, *PHTTP_QOS_SETTING_INFO;
 
   typedef struct _HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS {
@@ -545,41 +545,41 @@ extern "C" {
   } HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS, *PHTTP_SERVER_AUTHENTICATION_BASIC_PARAMS;
 
   typedef struct _HTTP_SERVER_AUTHENTICATION_INFO {
-    HTTP_PROPERTY_FLAGS                      Flags;
-    ULONG                                    AuthSchemes;
-    BOOLEAN                                  ReceiveMutualAuth;
-    BOOLEAN                                  ReceiveContextHandle;
-    BOOLEAN                                  DisableNTLMCredentialCaching;
-    UCHAR                                    ExFlags;
+    HTTP_PROPERTY_FLAGS                                                             Flags;
+    ULONG                                                                                                                  AuthSchemes;
+    BOOLEAN                                                                                                   ReceiveMutualAuth;
+    BOOLEAN                                                                                                   ReceiveContextHandle;
+    BOOLEAN                                                                                                   DisableNTLMCredentialCaching;
+    UCHAR                                                                                                                  ExFlags;
     HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS DigestParams;
     HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS  BasicParams;
   } HTTP_SERVER_AUTHENTICATION_INFO, *PHTTP_SERVER_AUTHENTICATION_INFO;
 
   typedef struct _HTTP_LOGGING_INFO {
-    HTTP_PROPERTY_FLAGS        Flags;
-    ULONG                      LoggingFlags;
-    PCWSTR                     SoftwareName;
-    USHORT                     SoftwareNameLength;
-    USHORT                     DirectoryNameLength;
-    PCWSTR                     DirectoryName;
-    HTTP_LOGGING_TYPE          Format;
-    ULONG                      Fields;
-    PVOID                      pExtFields;
-    USHORT                     NumOfExtFields;
-    USHORT                     MaxRecordSize;
+    HTTP_PROPERTY_FLAGS                     Flags;
+    ULONG                                                             LoggingFlags;
+    PCWSTR                                                            SoftwareName;
+    USHORT                                                            SoftwareNameLength;
+    USHORT                                                            DirectoryNameLength;
+    PCWSTR                                                            DirectoryName;
+    HTTP_LOGGING_TYPE                       Format;
+    ULONG                                                             Fields;
+    PVOID                                                             pExtFields;
+    USHORT                                                            NumOfExtFields;
+    USHORT                                                            MaxRecordSize;
     HTTP_LOGGING_ROLLOVER_TYPE RolloverType;
-    ULONG                      RolloverSize;
-    PSECURITY_DESCRIPTOR       pSecurityDescriptor;
+    ULONG                                                             RolloverSize;
+    PSECURITY_DESCRIPTOR                    pSecurityDescriptor;
   } HTTP_LOGGING_INFO, *PHTTP_LOGGING_INFO;
 
   typedef struct _HTTP_TIMEOUT_LIMIT_INFO {
     HTTP_PROPERTY_FLAGS Flags;
-    USHORT              EntityBody;
-    USHORT              DrainEntityBody;
-    USHORT              RequestQueue;
-    USHORT              IdleConnection;
-    USHORT              HeaderWait;
-    ULONG               MinSendRate;
+    USHORT                                        EntityBody;
+    USHORT                                        DrainEntityBody;
+    USHORT                                        RequestQueue;
+    USHORT                                        IdleConnection;
+    USHORT                                        HeaderWait;
+    ULONG                                         MinSendRate;
   } HTTP_TIMEOUT_LIMIT_INFO, *PHTTP_TIMEOUT_LIMIT_INFO;
 
   typedef struct _HTTP_SERVICE_BINDING_BASE {
@@ -588,82 +588,82 @@ extern "C" {
 
   typedef struct _HTTP_CHANNEL_BIND_INFO {
     HTTP_AUTHENTICATION_HARDENING_LEVELS Hardening;
-    ULONG                                Flags;
-    PHTTP_SERVICE_BINDING_BASE           *ServiceNames;
-    ULONG                                NumberOfServiceNames;
+    ULONG                                                                                                 Flags;
+    PHTTP_SERVICE_BINDING_BASE                        *ServiceNames;
+    ULONG                                                                                                 NumberOfServiceNames;
   } HTTP_CHANNEL_BIND_INFO, *PHTTP_CHANNEL_BIND_INFO;
 
   typedef struct _HTTP_REQUEST_CHANNEL_BIND_STATUS {
     PHTTP_SERVICE_BINDING_BASE ServiceName;
-    PUCHAR                     ChannelToken;
-    ULONG                      ChannelTokenSize;
-    ULONG                      Flags;
+    PUCHAR                                                            ChannelToken;
+    ULONG                                                             ChannelTokenSize;
+    ULONG                                                             Flags;
   } HTTP_REQUEST_CHANNEL_BIND_STATUS, *PHTTP_REQUEST_CHANNEL_BIND_STATUS;
 
   typedef struct _HTTP_SERVICE_BINDING_A {
     HTTP_SERVICE_BINDING_BASE Base;
-    PCHAR                     Buffer;
-    ULONG                     BufferSize;
+    PCHAR                                                            Buffer;
+    ULONG                                                            BufferSize;
   } HTTP_SERVICE_BINDING_A, *PHTTP_SERVICE_BINDING_A;
 
   typedef struct _HTTP_SERVICE_BINDING_W {
     HTTP_SERVICE_BINDING_BASE Base;
-    PWCHAR                    Buffer;
-    ULONG                     BufferSize;
+    PWCHAR                                                           Buffer;
+    ULONG                                                            BufferSize;
   } HTTP_SERVICE_BINDING_W, *PHTTP_SERVICE_BINDING_W;
 
   /* TODO: Is there the abstract unicode type HTTP_SERVICE_BINDING present, too? */
 
   typedef struct _HTTP_LOG_FIELDS_DATA {
     HTTP_LOG_DATA Base;
-    USHORT        UserNameLength;
-    USHORT        UriStemLength;
-    USHORT        ClientIpLength;
-    USHORT        ServerNameLength;
-    USHORT        ServerIpLength;
-    USHORT        MethodLength;
-    USHORT        UriQueryLength;
-    USHORT        HostLength;
-    USHORT        UserAgentLength;
-    USHORT        CookieLength;
-    USHORT        ReferrerLength;
-    PWCHAR        UserName;
-    PWCHAR        UriStem;
-    PCHAR         ClientIp;
-    PCHAR         ServerName;
-    PCHAR         ServiceName;
-    PCHAR         ServerIp;
-    PCHAR         Method;
-    PCHAR         UriQuery;
-    PCHAR         Host;
-    PCHAR         UserAgent;
-    PCHAR         Cookie;
-    PCHAR         Referrer;
-    USHORT        ServerPort;
-    USHORT        ProtocolStatus;
-    ULONG         Win32Status;
+    USHORT                     UserNameLength;
+    USHORT                     UriStemLength;
+    USHORT                     ClientIpLength;
+    USHORT                     ServerNameLength;
+    USHORT                     ServerIpLength;
+    USHORT                     MethodLength;
+    USHORT                     UriQueryLength;
+    USHORT                     HostLength;
+    USHORT                     UserAgentLength;
+    USHORT                     CookieLength;
+    USHORT                     ReferrerLength;
+    PWCHAR                     UserName;
+    PWCHAR                     UriStem;
+    PCHAR                      ClientIp;
+    PCHAR                      ServerName;
+    PCHAR                      ServiceName;
+    PCHAR                      ServerIp;
+    PCHAR                      Method;
+    PCHAR                      UriQuery;
+    PCHAR                      Host;
+    PCHAR                      UserAgent;
+    PCHAR                      Cookie;
+    PCHAR                      Referrer;
+    USHORT                     ServerPort;
+    USHORT                     ProtocolStatus;
+    ULONG                      Win32Status;
     HTTP_VERB     MethodNum;
-    USHORT        SubStatus;
+    USHORT                     SubStatus;
   } HTTP_LOG_FIELDS_DATA, *PHTTP_LOG_FIELDS_DATA;
 
   typedef struct _HTTP_REQUEST_AUTH_INFO {
-    HTTP_AUTH_STATUS       AuthStatus;
-    SECURITY_STATUS        SecStatus;
-    ULONG                  Flags;
+    HTTP_AUTH_STATUS                    AuthStatus;
+    SECURITY_STATUS                     SecStatus;
+    ULONG                                                         Flags;
     HTTP_REQUEST_AUTH_TYPE AuthType;
-    HANDLE                 AccessToken;
-    ULONG                  ContextAttributes;
-    ULONG                  PackedContextLength;
-    ULONG                  PackedContextType;
-    PVOID                  PackedContext;
-    ULONG                  MutualAuthDataLength;
-    PCHAR                  pMutualAuthData;
+    HANDLE                                           AccessToken;
+    ULONG                                                         ContextAttributes;
+    ULONG                                                         PackedContextLength;
+    ULONG                                                         PackedContextType;
+    PVOID                                                         PackedContext;
+    ULONG                                                         MutualAuthDataLength;
+    PCHAR                                                         pMutualAuthData;
   } HTTP_REQUEST_AUTH_INFO, *PHTTP_REQUEST_AUTH_INFO;
 
   typedef struct _HTTP_MULTIPLE_KNOWN_HEADERS {
     HTTP_HEADER_ID     HeaderId;
-    ULONG              Flags;
-    USHORT             KnownHeaderCount;
+    ULONG                                        Flags;
+    USHORT                                       KnownHeaderCount;
     PHTTP_KNOWN_HEADER KnownHeaders;
   } HTTP_MULTIPLE_KNOWN_HEADERS, *PHTTP_MULTIPLE_KNOWN_HEADERS;
 
@@ -674,17 +674,17 @@ extern "C" {
 
   typedef struct _HTTP_BANDWIDTH_LIMIT_INFO {
     HTTP_PROPERTY_FLAGS Flags;
-    ULONG               MaxBandwidth;
+    ULONG                                         MaxBandwidth;
   } HTTP_BANDWIDTH_LIMIT_INFO, *PHTTP_BANDWIDTH_LIMIT_INFO;
 
   typedef struct _HTTP_BINDING_INFO {
     HTTP_PROPERTY_FLAGS Flags;
-    HANDLE              RequestQueueHandle;
+    HANDLE                                        RequestQueueHandle;
   } HTTP_BINDING_INFO, *PHTTP_BINDING_INFO;
 
   typedef struct _HTTP_LISTEN_ENDPOINT_INFO {
     HTTP_PROPERTY_FLAGS Flags;
-    BOOLEAN             EnableSharing;
+    BOOLEAN                                       EnableSharing;
   } HTTP_LISTEN_ENDPOINT_INFO, *PHTTP_LISTEN_ENDPOINT_INFO;
 
   HTTPAPI_LINKAGE ULONG WINAPI HttpSetRequestQueueProperty(HANDLE Handle,HTTP_SERVER_PROPERTY Property,PVOID pPropertyInformation,ULONG PropertyInformationLength,ULONG Reserved,PVOID pReserved);
@@ -715,9 +715,9 @@ extern "C" {
 
   typedef struct _HTTP_FLOWRATE_INFO {
     HTTP_PROPERTY_FLAGS  Flags;
-    ULONG                MaxBandwidth;
-    ULONG                MaxPeakBandwidth;
-    ULONG                BurstSize;
+    ULONG                                          MaxBandwidth;
+    ULONG                                          MaxPeakBandwidth;
+    ULONG                                          BurstSize;
   } HTTP_FLOWRATE_INFO, *PHTTP_FLOWRATE_INFO;
 
 typedef struct _HTTP_SERVICE_CONFIG_CACHE_SET {

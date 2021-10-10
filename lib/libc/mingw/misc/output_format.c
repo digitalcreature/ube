@@ -30,7 +30,7 @@ static unsigned int init_set_output_format(unsigned int format)
 
   sof = (f_set_output_format) GetProcAddress (__mingw_get_msvcrt_handle(), "_set_output_format");
   if(!sof)
-      sof = fake_set_output_format;
+                   sof = fake_set_output_format;
 
   return (__MINGW_IMP_SYMBOL(_set_output_format) = sof)(format);
 }
@@ -56,7 +56,7 @@ static unsigned int init_get_output_format(void)
 
   gof = (f_get_output_format) GetProcAddress (__mingw_get_msvcrt_handle(), "_get_output_format");
   if(!gof)
-      gof = fake_get_output_format;
+                   gof = fake_get_output_format;
 
   return (__MINGW_IMP_SYMBOL(_get_output_format) = gof)();
 }

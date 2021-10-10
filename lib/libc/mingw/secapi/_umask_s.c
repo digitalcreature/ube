@@ -37,7 +37,7 @@ _int_umask_s (int m, int *pold)
 {
   if (!pold)
      {
-        errno = EINVAL;
+                     errno = EINVAL;
 	return EINVAL;
      }
   *pold = _umask (m);

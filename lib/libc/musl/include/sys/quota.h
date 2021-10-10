@@ -28,8 +28,8 @@ extern "C" {
 #define NR_DQHASH 43
 #define NR_DQUOTS 256
 
-#define SUBCMDMASK       0x00ff
-#define SUBCMDSHIFT      8
+#define SUBCMDMASK                    0x00ff
+#define SUBCMDSHIFT                   8
 #define QCMD(cmd, type)  (((cmd) << SUBCMDSHIFT) | ((type) & SUBCMDMASK))
 
 #define Q_SYNC     0x800001
@@ -79,7 +79,7 @@ struct dqblk {
 #define	dq_btime	dq_dqb.dqb_btime
 #define	dq_itime	dq_dqb.dqb_itime
 
-#define dqoff(UID)      ((long long)(UID) * sizeof (struct dqblk))
+#define dqoff(UID)                   ((long long)(UID) * sizeof (struct dqblk))
 
 #define IIF_BGRACE	1
 #define IIF_IGRACE	2

@@ -66,17 +66,17 @@ wcstoumax(nptr, endptr, base)
 		++nptr;
 
 	if ( base == 0 )
-        {
+                     {
 		if ( *nptr == L'0' )
-            {
+                                      {
 			if ( nptr[1] == L'X' || nptr[1] == L'x' )
 				base = 16;
 			else
 				base = 8;
-            }
+                                      }
 		else
 				base = 10;
-        }
+                     }
 	/* optional "0x" or "0X" for base 16 */
 
 	if ( base == 16 && *nptr == L'0'

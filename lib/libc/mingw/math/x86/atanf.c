@@ -17,7 +17,7 @@ atanf (float x)
   float res = 0.0F;
 
   asm volatile (
-       "fld1\n\t"
-       "fpatan" : "=t" (res) : "0" (x));
+                    "fld1\n\t"
+                    "fpatan" : "=t" (res) : "0" (x));
   return res;
 }

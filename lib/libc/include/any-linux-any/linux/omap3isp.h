@@ -129,9 +129,9 @@ struct omap3isp_stat_event_status {
  * @blk_ver_win_start: Black Vertical Windows Start. Range 0 - 4095.
  * @blk_win_height: Black Window Height. Range 2 - 256, even values only.
  * @subsample_ver_inc: Subsample Vertical points increment Range 2 - 32, even
- *                     values only.
+ *                                                            values only.
  * @subsample_hor_inc: Subsample Horizontal points increment Range 2 - 32, even
- *                     values only.
+ *                                                            values only.
  * @alaw_enable: AEW ALAW EN flag.
  */
 struct omap3isp_h3a_aewb_config {
@@ -321,13 +321,13 @@ enum omap3isp_alaw_ipwidth {
  * @gain_format: Gain table format.
  * @fmtsph: Start pixel horizontal from start of the HS sync pulse.
  * @fmtlnh: Number of pixels in horizontal direction to use for the data
- *          reformatter.
+ *                       reformatter.
  * @fmtslv: Start line from start of VS sync pulse for the data reformatter.
  * @fmtlnv: Number of lines in vertical direction for the data reformatter.
  * @initial_x: X position, in pixels, of the first active pixel in reference
- *             to the first active paxel. Must be an even number.
+ *                                       to the first active paxel. Must be an even number.
  * @initial_y: Y position, in pixels, of the first active pixel in reference
- *             to the first active paxel. Must be an even number.
+ *                                       to the first active paxel. Must be an even number.
  * @size: Size of LSC gain table. Filled when loaded from userspace.
  */
 struct omap3isp_ccdc_lsc_config {
@@ -450,7 +450,7 @@ struct omap3isp_ccdc_update_config {
  * struct omap3isp_prev_hmed - Horizontal Median Filter
  * @odddist: Distance between consecutive pixels of same color in the odd line.
  * @evendist: Distance between consecutive pixels of same color in the even
- *            line.
+ *                                      line.
  * @thres: Horizontal median filter threshold.
  */
 struct omap3isp_prev_hmed {
@@ -531,9 +531,9 @@ struct omap3isp_prev_blkadj {
 /**
  * struct omap3isp_prev_rgbtorgb - RGB to RGB Blending
  * @matrix: Blending values(S12Q8 format)
- *              [RR] [GR] [BR]
- *              [RG] [GG] [BG]
- *              [RB] [GB] [BB]
+ *                                        [RR] [GR] [BR]
+ *                                        [RG] [GG] [BG]
+ *                                        [RB] [GB] [BB]
  * @offset: Blending offset value for R,G,B in 2's complement integer format.
  */
 struct omap3isp_prev_rgbtorgb {
@@ -544,9 +544,9 @@ struct omap3isp_prev_rgbtorgb {
 /**
  * struct omap3isp_prev_csc - Color Space Conversion from RGB-YCbYCr
  * @matrix: Color space conversion coefficients(S10Q8)
- *              [CSCRY]  [CSCGY]  [CSCBY]
- *              [CSCRCB] [CSCGCB] [CSCBCB]
- *              [CSCRCR] [CSCGCR] [CSCBCR]
+ *                                        [CSCRY]  [CSCGY]  [CSCBY]
+ *                                        [CSCRCB] [CSCGCB] [CSCBCB]
+ *                                        [CSCRCR] [CSCGCR] [CSCBCR]
  * @offset: CSC offset values for Y offset, CB offset and CR offset respectively
  */
 struct omap3isp_prev_csc {
@@ -615,9 +615,9 @@ struct omap3isp_prev_luma {
  * @shading_shift: 3bit value of shift used in shading compensation.
  * @luma: Pointer to luma enhancement structure.
  * @hmed: Pointer to structure containing the odd and even distance.
- *        between the pixels in the image along with the filter threshold.
+ *                     between the pixels in the image along with the filter threshold.
  * @cfa: Pointer to structure containing the CFA interpolation table, CFA.
- *       format in the image, vertical and horizontal gradient threshold.
+ *                    format in the image, vertical and horizontal gradient threshold.
  * @csup: Pointer to Structure for Chrominance Suppression coefficients.
  * @wbal: Pointer to structure for White Balance.
  * @blkadj: Pointer to structure for Black Adjustment.

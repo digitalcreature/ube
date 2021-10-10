@@ -72,7 +72,7 @@
 #define _POSIX_THREADS	200809L
 
 /* We have the reentrant functions described in POSIX.  */
-#define _POSIX_REENTRANT_FUNCTIONS      1
+#define _POSIX_REENTRANT_FUNCTIONS                   1
 #define _POSIX_THREAD_SAFE_FUNCTIONS	200809L
 
 /* We provide priority scheduling for threads.  */

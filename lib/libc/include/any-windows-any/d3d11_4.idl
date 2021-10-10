@@ -36,11 +36,11 @@ typedef struct D3D11_FEATURE_DATA_D3D11_OPTIONS4
 interface ID3D11Device4 : ID3D11Device3
 {
     HRESULT RegisterDeviceRemovedEvent(
-        [in] HANDLE event,
-        [out] DWORD *cookie
+                     [in] HANDLE event,
+                     [out] DWORD *cookie
     );
     void UnregisterDeviceRemoved(
-        [in] DWORD cookie
+                     [in] DWORD cookie
     );
 }
 
@@ -53,15 +53,15 @@ interface ID3D11Device4 : ID3D11Device3
 interface ID3D11Device5 : ID3D11Device4
 {
     HRESULT OpenSharedFence(
-        [in] HANDLE handle,
-        [in] REFIID iid,
-        [out] void **fence
+                     [in] HANDLE handle,
+                     [in] REFIID iid,
+                     [out] void **fence
     );
     HRESULT CreateFence(
-        [in] UINT64 initial_value,
-        [in] D3D11_FENCE_FLAG flags,
-        [in] REFIID iid,
-        [out] void **fence
+                     [in] UINT64 initial_value,
+                     [in] D3D11_FENCE_FLAG flags,
+                     [in] REFIID iid,
+                     [out] void **fence
     );
 }
 
@@ -76,7 +76,7 @@ interface ID3D11Multithread : IUnknown
     void Enter();
     void Leave();
     BOOL SetMultithreadProtected(
-        [in] BOOL enable
+                     [in] BOOL enable
     );
     BOOL GetMultithreadProtected();
 }
@@ -90,31 +90,31 @@ interface ID3D11Multithread : IUnknown
 interface ID3D11VideoContext2 : ID3D11VideoContext1
 {
     void VideoProcessorSetOutputHDRMetaData(
-        [in] ID3D11VideoProcessor *processor,
-        [in] DXGI_HDR_METADATA_TYPE type,
-        [in] UINT size,
-        [in] const void *meta_data
+                     [in] ID3D11VideoProcessor *processor,
+                     [in] DXGI_HDR_METADATA_TYPE type,
+                     [in] UINT size,
+                     [in] const void *meta_data
     );
     void VideoProcessorGetOutputHDRMetaData(
-        [in] ID3D11VideoProcessor *processor,
-        [out] DXGI_HDR_METADATA_TYPE *type,
-        [in] UINT size,
-        [out] void *meta_data
+                     [in] ID3D11VideoProcessor *processor,
+                     [out] DXGI_HDR_METADATA_TYPE *type,
+                     [in] UINT size,
+                     [out] void *meta_data
     );
 
     void VideoProcessorSetStreamHDRMetaData(
-        [in] ID3D11VideoProcessor *processor,
-        [in] UINT stream_index,
-        [in] DXGI_HDR_METADATA_TYPE type,
-        [in] UINT size,
-        [in] const void *meta_data
+                     [in] ID3D11VideoProcessor *processor,
+                     [in] UINT stream_index,
+                     [in] DXGI_HDR_METADATA_TYPE type,
+                     [in] UINT size,
+                     [in] const void *meta_data
     );
 
     void VideoProcessorGetStreamHDRMetaData(
-        [in] ID3D11VideoProcessor *processor,
-        [in] UINT stream_index,
-        [out] DXGI_HDR_METADATA_TYPE *type,
-        [in] UINT size,
-        [out] void *meta_data
+                     [in] ID3D11VideoProcessor *processor,
+                     [in] UINT stream_index,
+                     [out] DXGI_HDR_METADATA_TYPE *type,
+                     [in] UINT size,
+                     [out] void *meta_data
     );
 }

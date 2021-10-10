@@ -69,13 +69,13 @@ struct ip6_frag {
 };
 
 #if __BYTE_ORDER == __BIG_ENDIAN
-#define IP6F_OFF_MASK       0xfff8
+#define IP6F_OFF_MASK                    0xfff8
 #define IP6F_RESERVED_MASK  0x0006
-#define IP6F_MORE_FRAG      0x0001
+#define IP6F_MORE_FRAG                   0x0001
 #else
-#define IP6F_OFF_MASK       0xf8ff
+#define IP6F_OFF_MASK                    0xf8ff
 #define IP6F_RESERVED_MASK  0x0600
-#define IP6F_MORE_FRAG      0x0100
+#define IP6F_MORE_FRAG                   0x0100
 #endif
 
 struct ip6_opt {

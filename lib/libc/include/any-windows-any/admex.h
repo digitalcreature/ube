@@ -70,14 +70,14 @@ extern "C"{
 #else
   typedef struct IMSAdminReplicationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSAdminReplication *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSAdminReplication *This);
-      ULONG (WINAPI *Release)(IMSAdminReplication *This);
-      HRESULT (WINAPI *GetSignature)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *Propagate)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pszBuffer);
-      HRESULT (WINAPI *Propagate2)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pszBuffer,DWORD dwSignatureMismatch);
-      HRESULT (WINAPI *Serialize)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *DeSerialize)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pbBuffer);
+                   HRESULT (WINAPI *QueryInterface)(IMSAdminReplication *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSAdminReplication *This);
+                   ULONG (WINAPI *Release)(IMSAdminReplication *This);
+                   HRESULT (WINAPI *GetSignature)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *Propagate)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pszBuffer);
+                   HRESULT (WINAPI *Propagate2)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pszBuffer,DWORD dwSignatureMismatch);
+                   HRESULT (WINAPI *Serialize)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *DeSerialize)(IMSAdminReplication *This,DWORD dwBufferSize,unsigned char *pbBuffer);
     END_INTERFACE
   } IMSAdminReplicationVtbl;
   struct IMSAdminReplication {
@@ -125,14 +125,14 @@ extern "C"{
 #else
   typedef struct IMSAdminCryptoCapabilitiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSAdminCryptoCapabilities *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSAdminCryptoCapabilities *This);
-      ULONG (WINAPI *Release)(IMSAdminCryptoCapabilities *This);
-      HRESULT (WINAPI *GetProtocols)(IMSAdminCryptoCapabilities *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *GetMaximumCipherStrength)(IMSAdminCryptoCapabilities *This,LPDWORD pdwMaximumCipherStrength);
-      HRESULT (WINAPI *GetRootCertificates)(IMSAdminCryptoCapabilities *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *GetSupportedAlgs)(IMSAdminCryptoCapabilities *This,DWORD dwBufferSize,DWORD *pbBuffer,DWORD *pdwMDRequiredBufferSize);
-      HRESULT (WINAPI *SetCAList)(IMSAdminCryptoCapabilities *This,DWORD dwBufferSize,unsigned char *pbBuffer);
+                   HRESULT (WINAPI *QueryInterface)(IMSAdminCryptoCapabilities *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSAdminCryptoCapabilities *This);
+                   ULONG (WINAPI *Release)(IMSAdminCryptoCapabilities *This);
+                   HRESULT (WINAPI *GetProtocols)(IMSAdminCryptoCapabilities *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *GetMaximumCipherStrength)(IMSAdminCryptoCapabilities *This,LPDWORD pdwMaximumCipherStrength);
+                   HRESULT (WINAPI *GetRootCertificates)(IMSAdminCryptoCapabilities *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *GetSupportedAlgs)(IMSAdminCryptoCapabilities *This,DWORD dwBufferSize,DWORD *pbBuffer,DWORD *pdwMDRequiredBufferSize);
+                   HRESULT (WINAPI *SetCAList)(IMSAdminCryptoCapabilities *This,DWORD dwBufferSize,unsigned char *pbBuffer);
     END_INTERFACE
   } IMSAdminCryptoCapabilitiesVtbl;
   struct IMSAdminCryptoCapabilities {

@@ -34,80 +34,80 @@ pub fn powi(comptime T: type, x: T, y: T) (error{
 
     //  powi(x, +-0)   = 1 for any x
     if (y == 0 or y == -0) {
-        return 1;
+                     return 1;
     }
 
     switch (x) {
-        //  powi(0, y)     = 0 for any y
-        0 => return 0,
+                     //  powi(0, y)     = 0 for any y
+                     0 => return 0,
 
-        //  powi(1, y)     = 1 for any y
-        1 => return 1,
+                     //  powi(1, y)     = 1 for any y
+                     1 => return 1,
 
-        else => {
-            //  powi(x, y)     = Overflow for for y >= @sizeOf(x) - 1 y > 0
-            //  powi(x, y)     = Underflow for for y > @sizeOf(x) - 1 y < 0
-            const bit_size = @sizeOf(T) * 8;
-            if (info.Int.is_signed) {
-                if (x == -1) {
-                    //  powi(-1, y)    = -1 for for y an odd integer
-                    //  powi(-1, y)    = 1 for for y an even integer
-                    if (@mod(y, 2) == 0) {
-                        return 1;
-                    } else {
-                        return -1;
-                    }
-                }
+                     else => {
+                                      //  powi(x, y)     = Overflow for for y >= @sizeOf(x) - 1 y > 0
+                                      //  powi(x, y)     = Underflow for for y > @sizeOf(x) - 1 y < 0
+                                      const bit_size = @sizeOf(T) * 8;
+                                      if (info.Int.is_signed) {
+                                          if (x == -1) {
+                                                           //  powi(-1, y)    = -1 for for y an odd integer
+                                                           //  powi(-1, y)    = 1 for for y an even integer
+                                                           if (@mod(y, 2) == 0) {
+                                                                            return 1;
+                                                           } else {
+                                                                            return -1;
+                                                           }
+                                          }
 
-                if (x > 0 and y >= bit_size - 1) {
-                    return error.Overflow;
-                } else if (x < 0 and y > bit_size - 1) {
-                    return error.Underflow;
-                }
-            } else {
-                if (y >= bit_size) {
-                    return error.Overflow;
-                }
-            }
+                                          if (x > 0 and y >= bit_size - 1) {
+                                                           return error.Overflow;
+                                          } else if (x < 0 and y > bit_size - 1) {
+                                                           return error.Underflow;
+                                          }
+                                      } else {
+                                          if (y >= bit_size) {
+                                                           return error.Overflow;
+                                          }
+                                      }
 
-            var base = x;
-            var exp = y;
-            var acc: T = 1;
+                                      var base = x;
+                                      var exp = y;
+                                      var acc: T = 1;
 
-            while (exp > 1) {
-                if (exp & 1 == 1) {
-                    if (@mulWithOverflow(T, acc, base, &acc)) {
-                        if (x > 0) {
-                            return error.Overflow;
-                        } else {
-                            return error.Underflow;
-                        }
-                    }
-                }
+                                      while (exp > 1) {
+                                          if (exp & 1 == 1) {
+                                                           if (@mulWithOverflow(T, acc, base, &acc)) {
+                                                                            if (x > 0) {
+                                                                                return error.Overflow;
+                                                                            } else {
+                                                                                return error.Underflow;
+                                                                            }
+                                                           }
+                                          }
 
-                exp >>= 1;
+                                          exp >>= 1;
 
-                if (@mulWithOverflow(T, base, base, &base)) {
-                    if (x > 0) {
-                        return error.Overflow;
-                    } else {
-                        return error.Underflow;
-                    }
-                }
-            }
+                                          if (@mulWithOverflow(T, base, base, &base)) {
+                                                           if (x > 0) {
+                                                                            return error.Overflow;
+                                                           } else {
+                                                                            return error.Underflow;
+                                                           }
+                                          }
+                                      }
 
-            if (exp == 1) {
-                if (@mulWithOverflow(T, acc, base, &acc)) {
-                    if (x > 0) {
-                        return error.Overflow;
-                    } else {
-                        return error.Underflow;
-                    }
-                }
-            }
+                                      if (exp == 1) {
+                                          if (@mulWithOverflow(T, acc, base, &acc)) {
+                                                           if (x > 0) {
+                                                                            return error.Overflow;
+                                                           } else {
+                                                                            return error.Underflow;
+                                                           }
+                                          }
+                                      }
 
-            return acc;
-        },
+                                      return acc;
+                     },
     }
 }
 

@@ -17,17 +17,17 @@ pub const timespec = struct {
     tv_nsec: isize,
 
     pub fn fromTimestamp(tm: timestamp_t) timespec {
-        const tv_sec: timestamp_t = tm / 1_000_000_000;
-        const tv_nsec = tm - tv_sec * 1_000_000_000;
-        return timespec{
-            .tv_sec = @intCast(time_t, tv_sec),
-            .tv_nsec = @intCast(isize, tv_nsec),
-        };
+                     const tv_sec: timestamp_t = tm / 1_000_000_000;
+                     const tv_nsec = tm - tv_sec * 1_000_000_000;
+                     return timespec{
+                                      .tv_sec = @intCast(time_t, tv_sec),
+                                      .tv_nsec = @intCast(isize, tv_nsec),
+                     };
     }
 
     pub fn toTimestamp(ts: timespec) timestamp_t {
-        const tm = @intCast(timestamp_t, ts.tv_sec * 1_000_000_000) + @intCast(timestamp_t, ts.tv_nsec);
-        return tm;
+                     const tm = @intCast(timestamp_t, ts.tv_sec * 1_000_000_000) + @intCast(timestamp_t, ts.tv_nsec);
+                     return tm;
     }
 };
 
@@ -45,29 +45,29 @@ pub const kernel_stat = struct {
     const Self = @This();
 
     pub fn fromFilestat(stat: filestat_t) Self {
-        return Self{
-            .dev = stat.dev,
-            .ino = stat.ino,
-            .mode = 0,
-            .filetype = stat.filetype,
-            .nlink = stat.nlink,
-            .size = stat.size,
-            .atim = stat.atime(),
-            .mtim = stat.mtime(),
-            .ctim = stat.ctime(),
-        };
+                     return Self{
+                                      .dev = stat.dev,
+                                      .ino = stat.ino,
+                                      .mode = 0,
+                                      .filetype = stat.filetype,
+                                      .nlink = stat.nlink,
+                                      .size = stat.size,
+                                      .atim = stat.atime(),
+                                      .mtim = stat.mtime(),
+                                      .ctim = stat.ctime(),
+                     };
     }
 
     pub fn atime(self: Self) timespec {
-        return self.atim;
+                     return self.atim;
     }
 
     pub fn mtime(self: Self) timespec {
-        return self.mtim;
+                     return self.mtim;
     }
 
     pub fn ctime(self: Self) timespec {
-        return self.ctim;
+                     return self.ctim;
     }
 };
 
@@ -235,15 +235,15 @@ pub const filestat_t = extern struct {
     ctim: timestamp_t,
 
     pub fn atime(self: filestat_t) timespec {
-        return timespec.fromTimestamp(self.atim);
+                     return timespec.fromTimestamp(self.atim);
     }
 
     pub fn mtime(self: filestat_t) timespec {
-        return timespec.fromTimestamp(self.mtim);
+                     return timespec.fromTimestamp(self.mtim);
     }
 
     pub fn ctime(self: filestat_t) timespec {
-        return timespec.fromTimestamp(self.ctim);
+                     return timespec.fromTimestamp(self.ctim);
     }
 };
 

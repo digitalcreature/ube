@@ -24,53 +24,53 @@ pub const ManagedNetworkProtocol = extern struct {
     /// Returns the operational parameters for the current MNP child driver.
     /// May also support returning the underlying SNP driver mode data.
     pub fn getModeData(self: *const ManagedNetworkProtocol, mnp_config_data: ?*ManagedNetworkConfigData, snp_mode_data: ?*SimpleNetworkMode) Status {
-        return self._get_mode_data(self, mnp_config_data, snp_mode_data);
+                     return self._get_mode_data(self, mnp_config_data, snp_mode_data);
     }
 
     /// Sets or clears the operational parameters for the MNP child driver.
     pub fn configure(self: *const ManagedNetworkProtocol, mnp_config_data: ?*const ManagedNetworkConfigData) Status {
-        return self._configure(self, mnp_config_data);
+                     return self._configure(self, mnp_config_data);
     }
 
     /// Translates an IP multicast address to a hardware (MAC) multicast address.
     /// This function may be unsupported in some MNP implementations.
     pub fn mcastIpToMac(self: *const ManagedNetworkProtocol, ipv6flag: bool, ipaddress: *const c_void, mac_address: *MacAddress) Status {
-        return self._mcast_ip_to_mac(self, ipv6flag, ipaddress);
+                     return self._mcast_ip_to_mac(self, ipv6flag, ipaddress);
     }
 
     /// Enables and disables receive filters for multicast address.
     /// This function may be unsupported in some MNP implementations.
     pub fn groups(self: *const ManagedNetworkProtocol, join_flag: bool, mac_address: ?*const MacAddress) Status {
-        return self._groups(self, join_flag, mac_address);
+                     return self._groups(self, join_flag, mac_address);
     }
 
     /// Places asynchronous outgoing data packets into the transmit queue.
     pub fn transmit(self: *const ManagedNetworkProtocol, token: *const ManagedNetworkCompletionToken) Status {
-        return self._transmit(self, token);
+                     return self._transmit(self, token);
     }
 
     /// Places an asynchronous receiving request into the receiving queue.
     pub fn receive(self: *const ManagedNetworkProtocol, token: *const ManagedNetworkCompletionToken) Status {
-        return self._receive(self, token);
+                     return self._receive(self, token);
     }
 
     /// Aborts an asynchronous transmit or receive request.
     pub fn cancel(self: *const ManagedNetworkProtocol, token: ?*const ManagedNetworkCompletionToken) Status {
-        return self._cancel(self, token);
+                     return self._cancel(self, token);
     }
 
     /// Polls for incoming data packets and processes outgoing data packets.
     pub fn poll(self: *const ManagedNetworkProtocol) Status {
-        return self._poll(self);
+                     return self._poll(self);
     }
 
     pub const guid align(8) = Guid{
-        .time_low = 0x7ab33a91,
-        .time_mid = 0xace5,
-        .time_high_and_version = 0x4326,
-        .clock_seq_high_and_reserved = 0xb5,
-        .clock_seq_low = 0x72,
-        .node = [_]u8{ 0xe7, 0xee, 0x33, 0xd3, 0x9f, 0x16 },
+                     .time_low = 0x7ab33a91,
+                     .time_mid = 0xace5,
+                     .time_high_and_version = 0x4326,
+                     .clock_seq_high_and_reserved = 0xb5,
+                     .clock_seq_low = 0x72,
+                     .node = [_]u8{ 0xe7, 0xee, 0x33, 0xd3, 0x9f, 0x16 },
     };
 };
 
@@ -91,8 +91,8 @@ pub const ManagedNetworkCompletionToken = extern struct {
     event: Event,
     status: Status,
     packet: extern union {
-        RxData: *ManagedNetworkReceiveData,
-        TxData: *ManagedNetworkTransmitData,
+                     RxData: *ManagedNetworkReceiveData,
+                     TxData: *ManagedNetworkTransmitData,
     },
 };
 
@@ -122,7 +122,7 @@ pub const ManagedNetworkTransmitData = extern struct {
     fragment_count: u16,
 
     pub fn getFragments(self: *ManagedNetworkTransmitData) []ManagedNetworkFragmentData {
-        return @ptrCast([*]ManagedNetworkFragmentData, @ptrCast([*]u8, self) + @sizeOf(ManagedNetworkTransmitData))[0..self.fragment_count];
+                     return @ptrCast([*]ManagedNetworkFragmentData, @ptrCast([*]u8, self) + @sizeOf(ManagedNetworkTransmitData))[0..self.fragment_count];
     }
 };
 

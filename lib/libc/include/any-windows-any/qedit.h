@@ -147,13 +147,13 @@ MIDL_INTERFACE("0579154a-2b53-4994-b0d0-e773148eff85")
 ISampleGrabberCB : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SampleCB(
-        double SampleTime,
-        IMediaSample *pSample) = 0;
+                     double SampleTime,
+                     IMediaSample *pSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BufferCB(
-        double SampleTime,
-        BYTE *pBuffer,
-        LONG BufferLen) = 0;
+                     double SampleTime,
+                     BYTE *pBuffer,
+                     LONG BufferLen) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -165,27 +165,27 @@ typedef struct ISampleGrabberCBVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISampleGrabberCB *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISampleGrabberCB *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISampleGrabberCB *This);
+                     ISampleGrabberCB *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISampleGrabberCB *This);
+                     ISampleGrabberCB *This);
 
     /*** ISampleGrabberCB methods ***/
     HRESULT (STDMETHODCALLTYPE *SampleCB)(
-        ISampleGrabberCB *This,
-        double SampleTime,
-        IMediaSample *pSample);
+                     ISampleGrabberCB *This,
+                     double SampleTime,
+                     IMediaSample *pSample);
 
     HRESULT (STDMETHODCALLTYPE *BufferCB)(
-        ISampleGrabberCB *This,
-        double SampleTime,
-        BYTE *pBuffer,
-        LONG BufferLen);
+                     ISampleGrabberCB *This,
+                     double SampleTime,
+                     BYTE *pBuffer,
+                     LONG BufferLen);
 
     END_INTERFACE
 } ISampleGrabberCBVtbl;
@@ -241,27 +241,27 @@ MIDL_INTERFACE("6b652fff-11fe-4fce-92ad-0266b5d7c78f")
 ISampleGrabber : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetOneShot(
-        WINBOOL OneShot) = 0;
+                     WINBOOL OneShot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaType(
-        const AM_MEDIA_TYPE *pType) = 0;
+                     const AM_MEDIA_TYPE *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectedMediaType(
-        AM_MEDIA_TYPE *pType) = 0;
+                     AM_MEDIA_TYPE *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBufferSamples(
-        WINBOOL BufferThem) = 0;
+                     WINBOOL BufferThem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentBuffer(
-        LONG *pBufferSize,
-        LONG *pBuffer) = 0;
+                     LONG *pBufferSize,
+                     LONG *pBuffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentSample(
-        IMediaSample **ppSample) = 0;
+                     IMediaSample **ppSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCallback(
-        ISampleGrabberCB *pCallback,
-        LONG WhichMethodToCallback) = 0;
+                     ISampleGrabberCB *pCallback,
+                     LONG WhichMethodToCallback) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -273,46 +273,46 @@ typedef struct ISampleGrabberVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISampleGrabber *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISampleGrabber *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISampleGrabber *This);
+                     ISampleGrabber *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISampleGrabber *This);
+                     ISampleGrabber *This);
 
     /*** ISampleGrabber methods ***/
     HRESULT (STDMETHODCALLTYPE *SetOneShot)(
-        ISampleGrabber *This,
-        WINBOOL OneShot);
+                     ISampleGrabber *This,
+                     WINBOOL OneShot);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaType)(
-        ISampleGrabber *This,
-        const AM_MEDIA_TYPE *pType);
+                     ISampleGrabber *This,
+                     const AM_MEDIA_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectedMediaType)(
-        ISampleGrabber *This,
-        AM_MEDIA_TYPE *pType);
+                     ISampleGrabber *This,
+                     AM_MEDIA_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *SetBufferSamples)(
-        ISampleGrabber *This,
-        WINBOOL BufferThem);
+                     ISampleGrabber *This,
+                     WINBOOL BufferThem);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentBuffer)(
-        ISampleGrabber *This,
-        LONG *pBufferSize,
-        LONG *pBuffer);
+                     ISampleGrabber *This,
+                     LONG *pBufferSize,
+                     LONG *pBuffer);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSample)(
-        ISampleGrabber *This,
-        IMediaSample **ppSample);
+                     ISampleGrabber *This,
+                     IMediaSample **ppSample);
 
     HRESULT (STDMETHODCALLTYPE *SetCallback)(
-        ISampleGrabber *This,
-        ISampleGrabberCB *pCallback,
-        LONG WhichMethodToCallback);
+                     ISampleGrabber *This,
+                     ISampleGrabberCB *pCallback,
+                     LONG WhichMethodToCallback);
 
     END_INTERFACE
 } ISampleGrabberVtbl;
@@ -388,59 +388,59 @@ MIDL_INTERFACE("65bd0710-24d2-4ff7-9324-ed2e5d3abafa")
 IMediaDet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_Filter(
-        IUnknown **pVal) = 0;
+                     IUnknown **pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Filter(
-        IUnknown *newVal) = 0;
+                     IUnknown *newVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OutputStreams(
-        LONG *pVal) = 0;
+                     LONG *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentStream(
-        LONG *pVal) = 0;
+                     LONG *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CurrentStream(
-        LONG newVal) = 0;
+                     LONG newVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StreamType(
-        GUID *pVal) = 0;
+                     GUID *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StreamTypeB(
-        BSTR *pVal) = 0;
+                     BSTR *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StreamLength(
-        double *pVal) = 0;
+                     double *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Filename(
-        BSTR *pVal) = 0;
+                     BSTR *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Filename(
-        BSTR newVal) = 0;
+                     BSTR newVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBitmapBits(
-        double StreamTime,
-        LONG *pBufferSize,
-        char *pBuffer,
-        LONG Width,
-        LONG Height) = 0;
+                     double StreamTime,
+                     LONG *pBufferSize,
+                     char *pBuffer,
+                     LONG Width,
+                     LONG Height) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteBitmapBits(
-        double StreamTime,
-        LONG Width,
-        LONG Height,
-        BSTR Filename) = 0;
+                     double StreamTime,
+                     LONG Width,
+                     LONG Height,
+                     BSTR Filename) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StreamMediaType(
-        AM_MEDIA_TYPE *pVal) = 0;
+                     AM_MEDIA_TYPE *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSampleGrabber(
-        ISampleGrabber **ppVal) = 0;
+                     ISampleGrabber **ppVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FrameRate(
-        double *pVal) = 0;
+                     double *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnterBitmapGrabMode(
-        double SeekTime) = 0;
+                     double SeekTime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -452,87 +452,87 @@ typedef struct IMediaDetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaDet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaDet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaDet *This);
+                     IMediaDet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaDet *This);
+                     IMediaDet *This);
 
     /*** IMediaDet methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Filter)(
-        IMediaDet *This,
-        IUnknown **pVal);
+                     IMediaDet *This,
+                     IUnknown **pVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Filter)(
-        IMediaDet *This,
-        IUnknown *newVal);
+                     IMediaDet *This,
+                     IUnknown *newVal);
 
     HRESULT (STDMETHODCALLTYPE *get_OutputStreams)(
-        IMediaDet *This,
-        LONG *pVal);
+                     IMediaDet *This,
+                     LONG *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentStream)(
-        IMediaDet *This,
-        LONG *pVal);
+                     IMediaDet *This,
+                     LONG *pVal);
 
     HRESULT (STDMETHODCALLTYPE *put_CurrentStream)(
-        IMediaDet *This,
-        LONG newVal);
+                     IMediaDet *This,
+                     LONG newVal);
 
     HRESULT (STDMETHODCALLTYPE *get_StreamType)(
-        IMediaDet *This,
-        GUID *pVal);
+                     IMediaDet *This,
+                     GUID *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_StreamTypeB)(
-        IMediaDet *This,
-        BSTR *pVal);
+                     IMediaDet *This,
+                     BSTR *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_StreamLength)(
-        IMediaDet *This,
-        double *pVal);
+                     IMediaDet *This,
+                     double *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Filename)(
-        IMediaDet *This,
-        BSTR *pVal);
+                     IMediaDet *This,
+                     BSTR *pVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Filename)(
-        IMediaDet *This,
-        BSTR newVal);
+                     IMediaDet *This,
+                     BSTR newVal);
 
     HRESULT (STDMETHODCALLTYPE *GetBitmapBits)(
-        IMediaDet *This,
-        double StreamTime,
-        LONG *pBufferSize,
-        char *pBuffer,
-        LONG Width,
-        LONG Height);
+                     IMediaDet *This,
+                     double StreamTime,
+                     LONG *pBufferSize,
+                     char *pBuffer,
+                     LONG Width,
+                     LONG Height);
 
     HRESULT (STDMETHODCALLTYPE *WriteBitmapBits)(
-        IMediaDet *This,
-        double StreamTime,
-        LONG Width,
-        LONG Height,
-        BSTR Filename);
+                     IMediaDet *This,
+                     double StreamTime,
+                     LONG Width,
+                     LONG Height,
+                     BSTR Filename);
 
     HRESULT (STDMETHODCALLTYPE *get_StreamMediaType)(
-        IMediaDet *This,
-        AM_MEDIA_TYPE *pVal);
+                     IMediaDet *This,
+                     AM_MEDIA_TYPE *pVal);
 
     HRESULT (STDMETHODCALLTYPE *GetSampleGrabber)(
-        IMediaDet *This,
-        ISampleGrabber **ppVal);
+                     IMediaDet *This,
+                     ISampleGrabber **ppVal);
 
     HRESULT (STDMETHODCALLTYPE *get_FrameRate)(
-        IMediaDet *This,
-        double *pVal);
+                     IMediaDet *This,
+                     double *pVal);
 
     HRESULT (STDMETHODCALLTYPE *EnterBitmapGrabMode)(
-        IMediaDet *This,
-        double SeekTime);
+                     IMediaDet *This,
+                     double SeekTime);
 
     END_INTERFACE
 } IMediaDetVtbl;
@@ -657,13 +657,13 @@ MIDL_INTERFACE("288581e0-66ce-11d2-918f-00c0df10d434")
 IMediaLocator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FindMediaFile(
-        BSTR input,
-        BSTR filter,
-        BSTR *output,
-        LONG flags) = 0;
+                     BSTR input,
+                     BSTR filter,
+                     BSTR *output,
+                     LONG flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddFoundLocation(
-        BSTR dir) = 0;
+                     BSTR dir) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -675,27 +675,27 @@ typedef struct IMediaLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaLocator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaLocator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaLocator *This);
+                     IMediaLocator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaLocator *This);
+                     IMediaLocator *This);
 
     /*** IMediaLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *FindMediaFile)(
-        IMediaLocator *This,
-        BSTR input,
-        BSTR filter,
-        BSTR *output,
-        LONG flags);
+                     IMediaLocator *This,
+                     BSTR input,
+                     BSTR filter,
+                     BSTR *output,
+                     LONG flags);
 
     HRESULT (STDMETHODCALLTYPE *AddFoundLocation)(
-        IMediaLocator *This,
-        BSTR dir);
+                     IMediaLocator *This,
+                     BSTR dir);
 
     END_INTERFACE
 } IMediaLocatorVtbl;
@@ -761,47 +761,47 @@ MIDL_INTERFACE("ae9472bd-b0c3-11d2-8d24-00a0c9441e20")
 IPropertySetter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE LoadXML(
-        IUnknown *pxml) = 0;
+                     IUnknown *pxml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PrintXML(
-        char *xml,
-        int size,
-        int *printed,
-        int indent) = 0;
+                     char *xml,
+                     int size,
+                     int *printed,
+                     int indent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CloneProps(
-        IPropertySetter **setter,
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop) = 0;
+                     IPropertySetter **setter,
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddProp(
-        DEXTER_PARAM param,
-        DEXTER_VALUE *value) = 0;
+                     DEXTER_PARAM param,
+                     DEXTER_VALUE *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProps(
-        LONG *params,
-        DEXTER_PARAM **param,
-        DEXTER_VALUE **value) = 0;
+                     LONG *params,
+                     DEXTER_PARAM **param,
+                     DEXTER_VALUE **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FreeProps(
-        LONG params,
-        DEXTER_PARAM *param,
-        DEXTER_VALUE *value) = 0;
+                     LONG params,
+                     DEXTER_PARAM *param,
+                     DEXTER_VALUE *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearProps(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveToBlob(
-        LONG *size,
-        BYTE **blob) = 0;
+                     LONG *size,
+                     BYTE **blob) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadFromBlob(
-        LONG size,
-        BYTE *blob) = 0;
+                     LONG size,
+                     BYTE *blob) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProps(
-        IUnknown *target,
-        REFERENCE_TIME now) = 0;
+                     IUnknown *target,
+                     REFERENCE_TIME now) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -813,68 +813,68 @@ typedef struct IPropertySetterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertySetter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertySetter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertySetter *This);
+                     IPropertySetter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertySetter *This);
+                     IPropertySetter *This);
 
     /*** IPropertySetter methods ***/
     HRESULT (STDMETHODCALLTYPE *LoadXML)(
-        IPropertySetter *This,
-        IUnknown *pxml);
+                     IPropertySetter *This,
+                     IUnknown *pxml);
 
     HRESULT (STDMETHODCALLTYPE *PrintXML)(
-        IPropertySetter *This,
-        char *xml,
-        int size,
-        int *printed,
-        int indent);
+                     IPropertySetter *This,
+                     char *xml,
+                     int size,
+                     int *printed,
+                     int indent);
 
     HRESULT (STDMETHODCALLTYPE *CloneProps)(
-        IPropertySetter *This,
-        IPropertySetter **setter,
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop);
+                     IPropertySetter *This,
+                     IPropertySetter **setter,
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop);
 
     HRESULT (STDMETHODCALLTYPE *AddProp)(
-        IPropertySetter *This,
-        DEXTER_PARAM param,
-        DEXTER_VALUE *value);
+                     IPropertySetter *This,
+                     DEXTER_PARAM param,
+                     DEXTER_VALUE *value);
 
     HRESULT (STDMETHODCALLTYPE *GetProps)(
-        IPropertySetter *This,
-        LONG *params,
-        DEXTER_PARAM **param,
-        DEXTER_VALUE **value);
+                     IPropertySetter *This,
+                     LONG *params,
+                     DEXTER_PARAM **param,
+                     DEXTER_VALUE **value);
 
     HRESULT (STDMETHODCALLTYPE *FreeProps)(
-        IPropertySetter *This,
-        LONG params,
-        DEXTER_PARAM *param,
-        DEXTER_VALUE *value);
+                     IPropertySetter *This,
+                     LONG params,
+                     DEXTER_PARAM *param,
+                     DEXTER_VALUE *value);
 
     HRESULT (STDMETHODCALLTYPE *ClearProps)(
-        IPropertySetter *This);
+                     IPropertySetter *This);
 
     HRESULT (STDMETHODCALLTYPE *SaveToBlob)(
-        IPropertySetter *This,
-        LONG *size,
-        BYTE **blob);
+                     IPropertySetter *This,
+                     LONG *size,
+                     BYTE **blob);
 
     HRESULT (STDMETHODCALLTYPE *LoadFromBlob)(
-        IPropertySetter *This,
-        LONG size,
-        BYTE *blob);
+                     IPropertySetter *This,
+                     LONG size,
+                     BYTE *blob);
 
     HRESULT (STDMETHODCALLTYPE *SetProps)(
-        IPropertySetter *This,
-        IUnknown *target,
-        REFERENCE_TIME now);
+                     IPropertySetter *This,
+                     IUnknown *target,
+                     REFERENCE_TIME now);
 
     END_INTERFACE
 } IPropertySetterVtbl;
@@ -962,11 +962,11 @@ MIDL_INTERFACE("e43e73a2-0efa-11d3-9601-00a0c9441e20")
 IAMErrorLog : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE LogError(
-        LONG severity,
-        BSTR error_str,
-        LONG error_code,
-        LONG hresult,
-        VARIANT *extra) = 0;
+                     LONG severity,
+                     BSTR error_str,
+                     LONG error_code,
+                     LONG hresult,
+                     VARIANT *extra) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -978,24 +978,24 @@ typedef struct IAMErrorLogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMErrorLog *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMErrorLog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMErrorLog *This);
+                     IAMErrorLog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMErrorLog *This);
+                     IAMErrorLog *This);
 
     /*** IAMErrorLog methods ***/
     HRESULT (STDMETHODCALLTYPE *LogError)(
-        IAMErrorLog *This,
-        LONG severity,
-        BSTR error_str,
-        LONG error_code,
-        LONG hresult,
-        VARIANT *extra);
+                     IAMErrorLog *This,
+                     LONG severity,
+                     BSTR error_str,
+                     LONG error_code,
+                     LONG hresult,
+                     VARIANT *extra);
 
     END_INTERFACE
 } IAMErrorLogVtbl;
@@ -1047,10 +1047,10 @@ MIDL_INTERFACE("963566da-be21-4eaf-88e9-35704f8f52a1")
 IAMSetErrorLog : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_ErrorLog(
-        IAMErrorLog **log) = 0;
+                     IAMErrorLog **log) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ErrorLog(
-        IAMErrorLog *log) = 0;
+                     IAMErrorLog *log) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1062,24 +1062,24 @@ typedef struct IAMSetErrorLogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMSetErrorLog *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMSetErrorLog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMSetErrorLog *This);
+                     IAMSetErrorLog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMSetErrorLog *This);
+                     IAMSetErrorLog *This);
 
     /*** IAMSetErrorLog methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ErrorLog)(
-        IAMSetErrorLog *This,
-        IAMErrorLog **log);
+                     IAMSetErrorLog *This,
+                     IAMErrorLog **log);
 
     HRESULT (STDMETHODCALLTYPE *put_ErrorLog)(
-        IAMSetErrorLog *This,
-        IAMErrorLog *log);
+                     IAMSetErrorLog *This,
+                     IAMErrorLog *log);
 
     END_INTERFACE
 } IAMSetErrorLogVtbl;
@@ -1175,100 +1175,100 @@ MIDL_INTERFACE("78530b74-61f9-11d2-8cad-00a024580902")
 IAMTimeline : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateEmptyNode(
-        IAMTimelineObj **obj,
-        TIMELINE_MAJOR_TYPE type) = 0;
+                     IAMTimelineObj **obj,
+                     TIMELINE_MAJOR_TYPE type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddGroup(
-        IAMTimelineObj *group) = 0;
+                     IAMTimelineObj *group) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemGroupFromList(
-        IAMTimelineObj *group) = 0;
+                     IAMTimelineObj *group) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroup(
-        IAMTimelineObj **group,
-        LONG index) = 0;
+                     IAMTimelineObj **group,
+                     LONG index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupCount(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearAllGroups(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInsertMode(
-        LONG *mode) = 0;
+                     LONG *mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInsertMode(
-        LONG mode) = 0;
+                     LONG mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableTransitions(
-        WINBOOL enabled) = 0;
+                     WINBOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TransitionsEnabled(
-        WINBOOL *enabled) = 0;
+                     WINBOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableEffects(
-        WINBOOL enabled) = 0;
+                     WINBOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EffectsEnabled(
-        WINBOOL *enabled) = 0;
+                     WINBOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInterestRange(
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop) = 0;
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration(
-        REFERENCE_TIME *duration) = 0;
+                     REFERENCE_TIME *duration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration2(
-        double *duration) = 0;
+                     double *duration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultFPS(
-        double fps) = 0;
+                     double fps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultFPS(
-        double *fps) = 0;
+                     double *fps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDirty(
-        WINBOOL *dirty) = 0;
+                     WINBOOL *dirty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDirtyRange(
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop) = 0;
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCountOfType(
-        LONG group,
-        LONG *value,
-        LONG *value_with_comps,
-        TIMELINE_MAJOR_TYPE type) = 0;
+                     LONG group,
+                     LONG *value,
+                     LONG *value_with_comps,
+                     TIMELINE_MAJOR_TYPE type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ValidateSourceNames(
-        LONG flags,
-        IMediaLocator *override,
-        LONG_PTR notify_event) = 0;
+                     LONG flags,
+                     IMediaLocator *override,
+                     LONG_PTR notify_event) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultTransition(
-        GUID *guid) = 0;
+                     GUID *guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultTransition(
-        GUID *guid) = 0;
+                     GUID *guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultEffect(
-        GUID *guid) = 0;
+                     GUID *guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultEffect(
-        GUID *guid) = 0;
+                     GUID *guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultTransitionB(
-        BSTR guidb) = 0;
+                     BSTR guidb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultTransitionB(
-        BSTR *guidb) = 0;
+                     BSTR *guidb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultEffectB(
-        BSTR guidb) = 0;
+                     BSTR guidb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultEffectB(
-        BSTR *guidb) = 0;
+                     BSTR *guidb) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1280,140 +1280,140 @@ typedef struct IAMTimelineVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMTimeline *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMTimeline *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMTimeline *This);
+                     IAMTimeline *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMTimeline *This);
+                     IAMTimeline *This);
 
     /*** IAMTimeline methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateEmptyNode)(
-        IAMTimeline *This,
-        IAMTimelineObj **obj,
-        TIMELINE_MAJOR_TYPE type);
+                     IAMTimeline *This,
+                     IAMTimelineObj **obj,
+                     TIMELINE_MAJOR_TYPE type);
 
     HRESULT (STDMETHODCALLTYPE *AddGroup)(
-        IAMTimeline *This,
-        IAMTimelineObj *group);
+                     IAMTimeline *This,
+                     IAMTimelineObj *group);
 
     HRESULT (STDMETHODCALLTYPE *RemGroupFromList)(
-        IAMTimeline *This,
-        IAMTimelineObj *group);
+                     IAMTimeline *This,
+                     IAMTimelineObj *group);
 
     HRESULT (STDMETHODCALLTYPE *GetGroup)(
-        IAMTimeline *This,
-        IAMTimelineObj **group,
-        LONG index);
+                     IAMTimeline *This,
+                     IAMTimelineObj **group,
+                     LONG index);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupCount)(
-        IAMTimeline *This,
-        LONG *count);
+                     IAMTimeline *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *ClearAllGroups)(
-        IAMTimeline *This);
+                     IAMTimeline *This);
 
     HRESULT (STDMETHODCALLTYPE *GetInsertMode)(
-        IAMTimeline *This,
-        LONG *mode);
+                     IAMTimeline *This,
+                     LONG *mode);
 
     HRESULT (STDMETHODCALLTYPE *SetInsertMode)(
-        IAMTimeline *This,
-        LONG mode);
+                     IAMTimeline *This,
+                     LONG mode);
 
     HRESULT (STDMETHODCALLTYPE *EnableTransitions)(
-        IAMTimeline *This,
-        WINBOOL enabled);
+                     IAMTimeline *This,
+                     WINBOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *TransitionsEnabled)(
-        IAMTimeline *This,
-        WINBOOL *enabled);
+                     IAMTimeline *This,
+                     WINBOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *EnableEffects)(
-        IAMTimeline *This,
-        WINBOOL enabled);
+                     IAMTimeline *This,
+                     WINBOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *EffectsEnabled)(
-        IAMTimeline *This,
-        WINBOOL *enabled);
+                     IAMTimeline *This,
+                     WINBOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *SetInterestRange)(
-        IAMTimeline *This,
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop);
+                     IAMTimeline *This,
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration)(
-        IAMTimeline *This,
-        REFERENCE_TIME *duration);
+                     IAMTimeline *This,
+                     REFERENCE_TIME *duration);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration2)(
-        IAMTimeline *This,
-        double *duration);
+                     IAMTimeline *This,
+                     double *duration);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultFPS)(
-        IAMTimeline *This,
-        double fps);
+                     IAMTimeline *This,
+                     double fps);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultFPS)(
-        IAMTimeline *This,
-        double *fps);
+                     IAMTimeline *This,
+                     double *fps);
 
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IAMTimeline *This,
-        WINBOOL *dirty);
+                     IAMTimeline *This,
+                     WINBOOL *dirty);
 
     HRESULT (STDMETHODCALLTYPE *GetDirtyRange)(
-        IAMTimeline *This,
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop);
+                     IAMTimeline *This,
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *GetCountOfType)(
-        IAMTimeline *This,
-        LONG group,
-        LONG *value,
-        LONG *value_with_comps,
-        TIMELINE_MAJOR_TYPE type);
+                     IAMTimeline *This,
+                     LONG group,
+                     LONG *value,
+                     LONG *value_with_comps,
+                     TIMELINE_MAJOR_TYPE type);
 
     HRESULT (STDMETHODCALLTYPE *ValidateSourceNames)(
-        IAMTimeline *This,
-        LONG flags,
-        IMediaLocator *override,
-        LONG_PTR notify_event);
+                     IAMTimeline *This,
+                     LONG flags,
+                     IMediaLocator *override,
+                     LONG_PTR notify_event);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultTransition)(
-        IAMTimeline *This,
-        GUID *guid);
+                     IAMTimeline *This,
+                     GUID *guid);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultTransition)(
-        IAMTimeline *This,
-        GUID *guid);
+                     IAMTimeline *This,
+                     GUID *guid);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultEffect)(
-        IAMTimeline *This,
-        GUID *guid);
+                     IAMTimeline *This,
+                     GUID *guid);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultEffect)(
-        IAMTimeline *This,
-        GUID *guid);
+                     IAMTimeline *This,
+                     GUID *guid);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultTransitionB)(
-        IAMTimeline *This,
-        BSTR guidb);
+                     IAMTimeline *This,
+                     BSTR guidb);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultTransitionB)(
-        IAMTimeline *This,
-        BSTR *guidb);
+                     IAMTimeline *This,
+                     BSTR *guidb);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultEffectB)(
-        IAMTimeline *This,
-        BSTR guidb);
+                     IAMTimeline *This,
+                     BSTR guidb);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultEffectB)(
-        IAMTimeline *This,
-        BSTR *guidb);
+                     IAMTimeline *This,
+                     BSTR *guidb);
 
     END_INTERFACE
 } IAMTimelineVtbl;
@@ -1590,64 +1590,64 @@ MIDL_INTERFACE("9eed4f00-b8a6-11d2-8023-00c0df10d434")
 IAMTimelineGroup : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetTimeline(
-        IAMTimeline *timeline) = 0;
+                     IAMTimeline *timeline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimeline(
-        IAMTimeline **timeline) = 0;
+                     IAMTimeline **timeline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPriority(
-        LONG *priority) = 0;
+                     LONG *priority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaType(
-        AM_MEDIA_TYPE *a) = 0;
+                     AM_MEDIA_TYPE *a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaType(
-        AM_MEDIA_TYPE *a) = 0;
+                     AM_MEDIA_TYPE *a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputFPS(
-        double fps) = 0;
+                     double fps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputFPS(
-        double *fps) = 0;
+                     double *fps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGroupName(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupName(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPreviewMode(
-        WINBOOL preview) = 0;
+                     WINBOOL preview) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreviewMode(
-        WINBOOL *preview) = 0;
+                     WINBOOL *preview) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaTypeForVB(
-        LONG type) = 0;
+                     LONG type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputBuffering(
-        int *buffer) = 0;
+                     int *buffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputBuffering(
-        int buffer) = 0;
+                     int buffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSmartRecompressFormat(
-        LONG *format) = 0;
+                     LONG *format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSmartRecompressFormat(
-        LONG **format) = 0;
+                     LONG **format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSmartRecompressFormatSet(
-        WINBOOL *set) = 0;
+                     WINBOOL *set) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRecompressFormatDirty(
-        WINBOOL *dirty) = 0;
+                     WINBOOL *dirty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearRecompressFormatDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRecompFormatFromSource(
-        IAMTimelineSrc *source) = 0;
+                     IAMTimelineSrc *source) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1659,95 +1659,95 @@ typedef struct IAMTimelineGroupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMTimelineGroup *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMTimelineGroup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMTimelineGroup *This);
+                     IAMTimelineGroup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMTimelineGroup *This);
+                     IAMTimelineGroup *This);
 
     /*** IAMTimelineGroup methods ***/
     HRESULT (STDMETHODCALLTYPE *SetTimeline)(
-        IAMTimelineGroup *This,
-        IAMTimeline *timeline);
+                     IAMTimelineGroup *This,
+                     IAMTimeline *timeline);
 
     HRESULT (STDMETHODCALLTYPE *GetTimeline)(
-        IAMTimelineGroup *This,
-        IAMTimeline **timeline);
+                     IAMTimelineGroup *This,
+                     IAMTimeline **timeline);
 
     HRESULT (STDMETHODCALLTYPE *GetPriority)(
-        IAMTimelineGroup *This,
-        LONG *priority);
+                     IAMTimelineGroup *This,
+                     LONG *priority);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaType)(
-        IAMTimelineGroup *This,
-        AM_MEDIA_TYPE *a);
+                     IAMTimelineGroup *This,
+                     AM_MEDIA_TYPE *a);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaType)(
-        IAMTimelineGroup *This,
-        AM_MEDIA_TYPE *a);
+                     IAMTimelineGroup *This,
+                     AM_MEDIA_TYPE *a);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFPS)(
-        IAMTimelineGroup *This,
-        double fps);
+                     IAMTimelineGroup *This,
+                     double fps);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputFPS)(
-        IAMTimelineGroup *This,
-        double *fps);
+                     IAMTimelineGroup *This,
+                     double *fps);
 
     HRESULT (STDMETHODCALLTYPE *SetGroupName)(
-        IAMTimelineGroup *This,
-        BSTR name);
+                     IAMTimelineGroup *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupName)(
-        IAMTimelineGroup *This,
-        BSTR *name);
+                     IAMTimelineGroup *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetPreviewMode)(
-        IAMTimelineGroup *This,
-        WINBOOL preview);
+                     IAMTimelineGroup *This,
+                     WINBOOL preview);
 
     HRESULT (STDMETHODCALLTYPE *GetPreviewMode)(
-        IAMTimelineGroup *This,
-        WINBOOL *preview);
+                     IAMTimelineGroup *This,
+                     WINBOOL *preview);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaTypeForVB)(
-        IAMTimelineGroup *This,
-        LONG type);
+                     IAMTimelineGroup *This,
+                     LONG type);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputBuffering)(
-        IAMTimelineGroup *This,
-        int *buffer);
+                     IAMTimelineGroup *This,
+                     int *buffer);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputBuffering)(
-        IAMTimelineGroup *This,
-        int buffer);
+                     IAMTimelineGroup *This,
+                     int buffer);
 
     HRESULT (STDMETHODCALLTYPE *SetSmartRecompressFormat)(
-        IAMTimelineGroup *This,
-        LONG *format);
+                     IAMTimelineGroup *This,
+                     LONG *format);
 
     HRESULT (STDMETHODCALLTYPE *GetSmartRecompressFormat)(
-        IAMTimelineGroup *This,
-        LONG **format);
+                     IAMTimelineGroup *This,
+                     LONG **format);
 
     HRESULT (STDMETHODCALLTYPE *IsSmartRecompressFormatSet)(
-        IAMTimelineGroup *This,
-        WINBOOL *set);
+                     IAMTimelineGroup *This,
+                     WINBOOL *set);
 
     HRESULT (STDMETHODCALLTYPE *IsRecompressFormatDirty)(
-        IAMTimelineGroup *This,
-        WINBOOL *dirty);
+                     IAMTimelineGroup *This,
+                     WINBOOL *dirty);
 
     HRESULT (STDMETHODCALLTYPE *ClearRecompressFormatDirty)(
-        IAMTimelineGroup *This);
+                     IAMTimelineGroup *This);
 
     HRESULT (STDMETHODCALLTYPE *SetRecompFormatFromSource)(
-        IAMTimelineGroup *This,
-        IAMTimelineSrc *source);
+                     IAMTimelineGroup *This,
+                     IAMTimelineSrc *source);
 
     END_INTERFACE
 } IAMTimelineGroupVtbl;
@@ -1875,130 +1875,130 @@ MIDL_INTERFACE("78530b77-61f9-11d2-8cad-00a024580902")
 IAMTimelineObj : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStartStop(
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop) = 0;
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStartStop2(
-        REFTIME *start,
-        REFTIME *stop) = 0;
+                     REFTIME *start,
+                     REFTIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FixTimes(
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop) = 0;
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FixTimes2(
-        REFTIME *start,
-        REFTIME *stop) = 0;
+                     REFTIME *start,
+                     REFTIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStartStop(
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop) = 0;
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStartStop2(
-        REFTIME start,
-        REFTIME stop) = 0;
+                     REFTIME start,
+                     REFTIME stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertySetter(
-        IPropertySetter **setter) = 0;
+                     IPropertySetter **setter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPropertySetter(
-        IPropertySetter *setter) = 0;
+                     IPropertySetter *setter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubObject(
-        IUnknown **obj) = 0;
+                     IUnknown **obj) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSubObject(
-        IUnknown *obj) = 0;
+                     IUnknown *obj) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSubObjectGUID(
-        GUID guid) = 0;
+                     GUID guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSubObjectGUIDB(
-        BSTR guidb) = 0;
+                     BSTR guidb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubObjectGUID(
-        GUID *guid) = 0;
+                     GUID *guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubObjectGUIDB(
-        BSTR *guidb) = 0;
+                     BSTR *guidb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubObjectLoaded(
-        WINBOOL *loaded) = 0;
+                     WINBOOL *loaded) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimelineType(
-        TIMELINE_MAJOR_TYPE *type) = 0;
+                     TIMELINE_MAJOR_TYPE *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimelineType(
-        TIMELINE_MAJOR_TYPE type) = 0;
+                     TIMELINE_MAJOR_TYPE type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserID(
-        LONG *id) = 0;
+                     LONG *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUserID(
-        LONG id) = 0;
+                     LONG id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGenID(
-        LONG *id) = 0;
+                     LONG *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserName(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUserName(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserData(
-        BYTE *data,
-        LONG *size) = 0;
+                     BYTE *data,
+                     LONG *size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUserData(
-        BYTE *data,
-        LONG size) = 0;
+                     BYTE *data,
+                     LONG size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMuted(
-        WINBOOL *muted) = 0;
+                     WINBOOL *muted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMuted(
-        WINBOOL muted) = 0;
+                     WINBOOL muted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocked(
-        WINBOOL *locked) = 0;
+                     WINBOOL *locked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLocked(
-        WINBOOL locked) = 0;
+                     WINBOOL locked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDirtyRange(
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop) = 0;
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDirtyRange2(
-        REFTIME *start,
-        REFTIME *stop) = 0;
+                     REFTIME *start,
+                     REFTIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDirtyRange(
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop) = 0;
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDirtyRange2(
-        REFTIME start,
-        REFTIME stop) = 0;
+                     REFTIME start,
+                     REFTIME stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAll(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimelineNoRef(
-        IAMTimeline **timeline) = 0;
+                     IAMTimeline **timeline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupIBelongTo(
-        IAMTimelineGroup **group) = 0;
+                     IAMTimelineGroup **group) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEmbedDepth(
-        LONG *depth) = 0;
+                     LONG *depth) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2010,177 +2010,177 @@ typedef struct IAMTimelineObjVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMTimelineObj *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMTimelineObj *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMTimelineObj *This);
+                     IAMTimelineObj *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMTimelineObj *This);
+                     IAMTimelineObj *This);
 
     /*** IAMTimelineObj methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStartStop)(
-        IAMTimelineObj *This,
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop);
+                     IAMTimelineObj *This,
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *GetStartStop2)(
-        IAMTimelineObj *This,
-        REFTIME *start,
-        REFTIME *stop);
+                     IAMTimelineObj *This,
+                     REFTIME *start,
+                     REFTIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *FixTimes)(
-        IAMTimelineObj *This,
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop);
+                     IAMTimelineObj *This,
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *FixTimes2)(
-        IAMTimelineObj *This,
-        REFTIME *start,
-        REFTIME *stop);
+                     IAMTimelineObj *This,
+                     REFTIME *start,
+                     REFTIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *SetStartStop)(
-        IAMTimelineObj *This,
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop);
+                     IAMTimelineObj *This,
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop);
 
     HRESULT (STDMETHODCALLTYPE *SetStartStop2)(
-        IAMTimelineObj *This,
-        REFTIME start,
-        REFTIME stop);
+                     IAMTimelineObj *This,
+                     REFTIME start,
+                     REFTIME stop);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertySetter)(
-        IAMTimelineObj *This,
-        IPropertySetter **setter);
+                     IAMTimelineObj *This,
+                     IPropertySetter **setter);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertySetter)(
-        IAMTimelineObj *This,
-        IPropertySetter *setter);
+                     IAMTimelineObj *This,
+                     IPropertySetter *setter);
 
     HRESULT (STDMETHODCALLTYPE *GetSubObject)(
-        IAMTimelineObj *This,
-        IUnknown **obj);
+                     IAMTimelineObj *This,
+                     IUnknown **obj);
 
     HRESULT (STDMETHODCALLTYPE *SetSubObject)(
-        IAMTimelineObj *This,
-        IUnknown *obj);
+                     IAMTimelineObj *This,
+                     IUnknown *obj);
 
     HRESULT (STDMETHODCALLTYPE *SetSubObjectGUID)(
-        IAMTimelineObj *This,
-        GUID guid);
+                     IAMTimelineObj *This,
+                     GUID guid);
 
     HRESULT (STDMETHODCALLTYPE *SetSubObjectGUIDB)(
-        IAMTimelineObj *This,
-        BSTR guidb);
+                     IAMTimelineObj *This,
+                     BSTR guidb);
 
     HRESULT (STDMETHODCALLTYPE *GetSubObjectGUID)(
-        IAMTimelineObj *This,
-        GUID *guid);
+                     IAMTimelineObj *This,
+                     GUID *guid);
 
     HRESULT (STDMETHODCALLTYPE *GetSubObjectGUIDB)(
-        IAMTimelineObj *This,
-        BSTR *guidb);
+                     IAMTimelineObj *This,
+                     BSTR *guidb);
 
     HRESULT (STDMETHODCALLTYPE *GetSubObjectLoaded)(
-        IAMTimelineObj *This,
-        WINBOOL *loaded);
+                     IAMTimelineObj *This,
+                     WINBOOL *loaded);
 
     HRESULT (STDMETHODCALLTYPE *GetTimelineType)(
-        IAMTimelineObj *This,
-        TIMELINE_MAJOR_TYPE *type);
+                     IAMTimelineObj *This,
+                     TIMELINE_MAJOR_TYPE *type);
 
     HRESULT (STDMETHODCALLTYPE *SetTimelineType)(
-        IAMTimelineObj *This,
-        TIMELINE_MAJOR_TYPE type);
+                     IAMTimelineObj *This,
+                     TIMELINE_MAJOR_TYPE type);
 
     HRESULT (STDMETHODCALLTYPE *GetUserID)(
-        IAMTimelineObj *This,
-        LONG *id);
+                     IAMTimelineObj *This,
+                     LONG *id);
 
     HRESULT (STDMETHODCALLTYPE *SetUserID)(
-        IAMTimelineObj *This,
-        LONG id);
+                     IAMTimelineObj *This,
+                     LONG id);
 
     HRESULT (STDMETHODCALLTYPE *GetGenID)(
-        IAMTimelineObj *This,
-        LONG *id);
+                     IAMTimelineObj *This,
+                     LONG *id);
 
     HRESULT (STDMETHODCALLTYPE *GetUserName)(
-        IAMTimelineObj *This,
-        BSTR *name);
+                     IAMTimelineObj *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetUserName)(
-        IAMTimelineObj *This,
-        BSTR name);
+                     IAMTimelineObj *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *GetUserData)(
-        IAMTimelineObj *This,
-        BYTE *data,
-        LONG *size);
+                     IAMTimelineObj *This,
+                     BYTE *data,
+                     LONG *size);
 
     HRESULT (STDMETHODCALLTYPE *SetUserData)(
-        IAMTimelineObj *This,
-        BYTE *data,
-        LONG size);
+                     IAMTimelineObj *This,
+                     BYTE *data,
+                     LONG size);
 
     HRESULT (STDMETHODCALLTYPE *GetMuted)(
-        IAMTimelineObj *This,
-        WINBOOL *muted);
+                     IAMTimelineObj *This,
+                     WINBOOL *muted);
 
     HRESULT (STDMETHODCALLTYPE *SetMuted)(
-        IAMTimelineObj *This,
-        WINBOOL muted);
+                     IAMTimelineObj *This,
+                     WINBOOL muted);
 
     HRESULT (STDMETHODCALLTYPE *GetLocked)(
-        IAMTimelineObj *This,
-        WINBOOL *locked);
+                     IAMTimelineObj *This,
+                     WINBOOL *locked);
 
     HRESULT (STDMETHODCALLTYPE *SetLocked)(
-        IAMTimelineObj *This,
-        WINBOOL locked);
+                     IAMTimelineObj *This,
+                     WINBOOL locked);
 
     HRESULT (STDMETHODCALLTYPE *GetDirtyRange)(
-        IAMTimelineObj *This,
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop);
+                     IAMTimelineObj *This,
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *GetDirtyRange2)(
-        IAMTimelineObj *This,
-        REFTIME *start,
-        REFTIME *stop);
+                     IAMTimelineObj *This,
+                     REFTIME *start,
+                     REFTIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *SetDirtyRange)(
-        IAMTimelineObj *This,
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop);
+                     IAMTimelineObj *This,
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop);
 
     HRESULT (STDMETHODCALLTYPE *SetDirtyRange2)(
-        IAMTimelineObj *This,
-        REFTIME start,
-        REFTIME stop);
+                     IAMTimelineObj *This,
+                     REFTIME start,
+                     REFTIME stop);
 
     HRESULT (STDMETHODCALLTYPE *ClearDirty)(
-        IAMTimelineObj *This);
+                     IAMTimelineObj *This);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IAMTimelineObj *This);
+                     IAMTimelineObj *This);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAll)(
-        IAMTimelineObj *This);
+                     IAMTimelineObj *This);
 
     HRESULT (STDMETHODCALLTYPE *GetTimelineNoRef)(
-        IAMTimelineObj *This,
-        IAMTimeline **timeline);
+                     IAMTimelineObj *This,
+                     IAMTimeline **timeline);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupIBelongTo)(
-        IAMTimelineObj *This,
-        IAMTimelineGroup **group);
+                     IAMTimelineObj *This,
+                     IAMTimelineGroup **group);
 
     HRESULT (STDMETHODCALLTYPE *GetEmbedDepth)(
-        IAMTimelineObj *This,
-        LONG *depth);
+                     IAMTimelineObj *This,
+                     LONG *depth);
 
     END_INTERFACE
 } IAMTimelineObjVtbl;
@@ -2380,76 +2380,76 @@ MIDL_INTERFACE("78530b79-61f9-11d2-8cad-00a024580902")
 IAMTimelineSrc : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetMediaTimes(
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop) = 0;
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaTimes2(
-        REFTIME *start,
-        REFTIME *stop) = 0;
+                     REFTIME *start,
+                     REFTIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ModifyStopTime(
-        REFERENCE_TIME stop) = 0;
+                     REFERENCE_TIME stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ModifyStopTime2(
-        REFTIME stop) = 0;
+                     REFTIME stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FixMediaTimes(
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop) = 0;
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FixMediaTimes2(
-        REFTIME *start,
-        REFTIME *stop) = 0;
+                     REFTIME *start,
+                     REFTIME *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaTimes(
-        REFERENCE_TIME Start,
-        REFERENCE_TIME Stop) = 0;
+                     REFERENCE_TIME Start,
+                     REFERENCE_TIME Stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaTimes2(
-        REFTIME Start,
-        REFTIME Stop) = 0;
+                     REFTIME Start,
+                     REFTIME Stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaLength(
-        REFERENCE_TIME length) = 0;
+                     REFERENCE_TIME length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaLength2(
-        REFTIME length) = 0;
+                     REFTIME length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaLength(
-        REFERENCE_TIME *length) = 0;
+                     REFERENCE_TIME *length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaLength2(
-        REFTIME *length) = 0;
+                     REFTIME *length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaName(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaName(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpliceWithNext(
-        IAMTimelineObj *next) = 0;
+                     IAMTimelineObj *next) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamNumber(
-        LONG *num) = 0;
+                     LONG *num) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStreamNumber(
-        LONG num) = 0;
+                     LONG num) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsNormalRate(
-        WINBOOL *normal) = 0;
+                     WINBOOL *normal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultFPS(
-        double *fps) = 0;
+                     double *fps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultFPS(
-        double fps) = 0;
+                     double fps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStretchMode(
-        int *mode) = 0;
+                     int *mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStretchMode(
-        int mode) = 0;
+                     int mode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2461,110 +2461,110 @@ typedef struct IAMTimelineSrcVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMTimelineSrc *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMTimelineSrc *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMTimelineSrc *This);
+                     IAMTimelineSrc *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMTimelineSrc *This);
+                     IAMTimelineSrc *This);
 
     /*** IAMTimelineSrc methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMediaTimes)(
-        IAMTimelineSrc *This,
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop);
+                     IAMTimelineSrc *This,
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaTimes2)(
-        IAMTimelineSrc *This,
-        REFTIME *start,
-        REFTIME *stop);
+                     IAMTimelineSrc *This,
+                     REFTIME *start,
+                     REFTIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *ModifyStopTime)(
-        IAMTimelineSrc *This,
-        REFERENCE_TIME stop);
+                     IAMTimelineSrc *This,
+                     REFERENCE_TIME stop);
 
     HRESULT (STDMETHODCALLTYPE *ModifyStopTime2)(
-        IAMTimelineSrc *This,
-        REFTIME stop);
+                     IAMTimelineSrc *This,
+                     REFTIME stop);
 
     HRESULT (STDMETHODCALLTYPE *FixMediaTimes)(
-        IAMTimelineSrc *This,
-        REFERENCE_TIME *start,
-        REFERENCE_TIME *stop);
+                     IAMTimelineSrc *This,
+                     REFERENCE_TIME *start,
+                     REFERENCE_TIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *FixMediaTimes2)(
-        IAMTimelineSrc *This,
-        REFTIME *start,
-        REFTIME *stop);
+                     IAMTimelineSrc *This,
+                     REFTIME *start,
+                     REFTIME *stop);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaTimes)(
-        IAMTimelineSrc *This,
-        REFERENCE_TIME Start,
-        REFERENCE_TIME Stop);
+                     IAMTimelineSrc *This,
+                     REFERENCE_TIME Start,
+                     REFERENCE_TIME Stop);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaTimes2)(
-        IAMTimelineSrc *This,
-        REFTIME Start,
-        REFTIME Stop);
+                     IAMTimelineSrc *This,
+                     REFTIME Start,
+                     REFTIME Stop);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaLength)(
-        IAMTimelineSrc *This,
-        REFERENCE_TIME length);
+                     IAMTimelineSrc *This,
+                     REFERENCE_TIME length);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaLength2)(
-        IAMTimelineSrc *This,
-        REFTIME length);
+                     IAMTimelineSrc *This,
+                     REFTIME length);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaLength)(
-        IAMTimelineSrc *This,
-        REFERENCE_TIME *length);
+                     IAMTimelineSrc *This,
+                     REFERENCE_TIME *length);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaLength2)(
-        IAMTimelineSrc *This,
-        REFTIME *length);
+                     IAMTimelineSrc *This,
+                     REFTIME *length);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaName)(
-        IAMTimelineSrc *This,
-        BSTR *name);
+                     IAMTimelineSrc *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaName)(
-        IAMTimelineSrc *This,
-        BSTR name);
+                     IAMTimelineSrc *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *SpliceWithNext)(
-        IAMTimelineSrc *This,
-        IAMTimelineObj *next);
+                     IAMTimelineSrc *This,
+                     IAMTimelineObj *next);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamNumber)(
-        IAMTimelineSrc *This,
-        LONG *num);
+                     IAMTimelineSrc *This,
+                     LONG *num);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamNumber)(
-        IAMTimelineSrc *This,
-        LONG num);
+                     IAMTimelineSrc *This,
+                     LONG num);
 
     HRESULT (STDMETHODCALLTYPE *IsNormalRate)(
-        IAMTimelineSrc *This,
-        WINBOOL *normal);
+                     IAMTimelineSrc *This,
+                     WINBOOL *normal);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultFPS)(
-        IAMTimelineSrc *This,
-        double *fps);
+                     IAMTimelineSrc *This,
+                     double *fps);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultFPS)(
-        IAMTimelineSrc *This,
-        double fps);
+                     IAMTimelineSrc *This,
+                     double fps);
 
     HRESULT (STDMETHODCALLTYPE *GetStretchMode)(
-        IAMTimelineSrc *This,
-        int *mode);
+                     IAMTimelineSrc *This,
+                     int *mode);
 
     HRESULT (STDMETHODCALLTYPE *SetStretchMode)(
-        IAMTimelineSrc *This,
-        int mode);
+                     IAMTimelineSrc *This,
+                     int mode);
 
     END_INTERFACE
 } IAMTimelineSrcVtbl;
@@ -2698,14 +2698,14 @@ enum {
 };
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

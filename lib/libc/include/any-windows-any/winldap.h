@@ -130,10 +130,10 @@ extern "C" {
 
   typedef struct ldap {
     struct {
-      UINT_PTR sb_sd;
-      UCHAR Reserved1[(10*sizeof(ULONG))+1];
-      ULONG_PTR sb_naddr;
-      UCHAR Reserved2[(6*sizeof(ULONG))];
+                   UINT_PTR sb_sd;
+                   UCHAR Reserved1[(10*sizeof(ULONG))+1];
+                   ULONG_PTR sb_naddr;
+                   UCHAR Reserved2[(6*sizeof(ULONG))];
     } ld_sb;
     PCHAR ld_host;
     ULONG ld_version;
@@ -211,8 +211,8 @@ extern "C" {
     ULONG mod_op;
     PWCHAR mod_type;
     union {
-      PWCHAR *modv_strvals;
-      struct berval **modv_bvals;
+                   PWCHAR *modv_strvals;
+                   struct berval **modv_bvals;
     } mod_vals;
   } LDAPModW,*PLDAPModW;
 
@@ -220,8 +220,8 @@ extern "C" {
     ULONG mod_op;
     PCHAR mod_type;
     union {
-      PCHAR *modv_strvals;
-      struct berval **modv_bvals;
+                   PCHAR *modv_strvals;
+                   struct berval **modv_bvals;
     } mod_vals;
   } LDAPModA,*PLDAPModA;
 

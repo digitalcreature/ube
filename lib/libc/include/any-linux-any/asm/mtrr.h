@@ -19,7 +19,7 @@
 
     Richard Gooch may be reached by email at  rgooch@atnf.csiro.au
     The postal address is:
-      Richard Gooch, c/o ATNF, P. O. Box 76, Epping, N.S.W., 2121, Australia.
+                   Richard Gooch, c/o ATNF, P. O. Box 76, Epping, N.S.W., 2121, Australia.
 */
 #ifndef _ASM_X86_MTRR_H
 #define _ASM_X86_MTRR_H
@@ -93,11 +93,11 @@ struct mtrr_state_type {
 #define MTRRphysMask_MSR(reg) (0x200 + 2 * (reg) + 1)
 
 /*  These are the various ioctls  */
-#define MTRRIOC_ADD_ENTRY        _IOW(MTRR_IOCTL_BASE,  0, struct mtrr_sentry)
-#define MTRRIOC_SET_ENTRY        _IOW(MTRR_IOCTL_BASE,  1, struct mtrr_sentry)
-#define MTRRIOC_DEL_ENTRY        _IOW(MTRR_IOCTL_BASE,  2, struct mtrr_sentry)
-#define MTRRIOC_GET_ENTRY        _IOWR(MTRR_IOCTL_BASE, 3, struct mtrr_gentry)
-#define MTRRIOC_KILL_ENTRY       _IOW(MTRR_IOCTL_BASE,  4, struct mtrr_sentry)
+#define MTRRIOC_ADD_ENTRY                     _IOW(MTRR_IOCTL_BASE,  0, struct mtrr_sentry)
+#define MTRRIOC_SET_ENTRY                     _IOW(MTRR_IOCTL_BASE,  1, struct mtrr_sentry)
+#define MTRRIOC_DEL_ENTRY                     _IOW(MTRR_IOCTL_BASE,  2, struct mtrr_sentry)
+#define MTRRIOC_GET_ENTRY                     _IOWR(MTRR_IOCTL_BASE, 3, struct mtrr_gentry)
+#define MTRRIOC_KILL_ENTRY                    _IOW(MTRR_IOCTL_BASE,  4, struct mtrr_sentry)
 #define MTRRIOC_ADD_PAGE_ENTRY   _IOW(MTRR_IOCTL_BASE,  5, struct mtrr_sentry)
 #define MTRRIOC_SET_PAGE_ENTRY   _IOW(MTRR_IOCTL_BASE,  6, struct mtrr_sentry)
 #define MTRRIOC_DEL_PAGE_ENTRY   _IOW(MTRR_IOCTL_BASE,  7, struct mtrr_sentry)
@@ -107,12 +107,12 @@ struct mtrr_state_type {
 /* MTRR memory types, which are defined in SDM */
 #define MTRR_TYPE_UNCACHABLE 0
 #define MTRR_TYPE_WRCOMB     1
-/*#define MTRR_TYPE_         2*/
-/*#define MTRR_TYPE_         3*/
+/*#define MTRR_TYPE_                      2*/
+/*#define MTRR_TYPE_                      3*/
 #define MTRR_TYPE_WRTHROUGH  4
 #define MTRR_TYPE_WRPROT     5
 #define MTRR_TYPE_WRBACK     6
-#define MTRR_NUM_TYPES       7
+#define MTRR_NUM_TYPES                    7
 
 /*
  * Invalid MTRR memory type.  mtrr_type_lookup() returns this value when

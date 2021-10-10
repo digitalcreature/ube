@@ -23,7 +23,7 @@ typedef enum _DRM_STATUS_MSG {
 } DRM_STATUS_MSG;
 
 typedef enum _DRMGLOBALOPTIONS {
-  DRMGLOBALOPTIONS_USE_WINHTTP                   = 0x00,
+  DRMGLOBALOPTIONS_USE_WINHTTP                                                          = 0x00,
   DRMGLOBALOPTIONS_USE_SERVERSECURITYPROCESSOR   = 0x01 
 } DRMGLOBALOPTIONS;
 
@@ -89,13 +89,13 @@ typedef struct _DRMID {
 } DRMID;
 
 typedef struct _DRMBOUNDLICENSEPARAMS {
-  UINT      uVersion;
+  UINT                   uVersion;
   DRMHANDLE hEnablingPrincipal;
   DRMHANDLE hSecureStore;
   PWSTR     wszRightsRequested;
   PWSTR     wszRightsGroup;
   DRMID     idResource;
-  UINT      cAuthenticatorCount;
+  UINT                   cAuthenticatorCount;
   DRMHANDLE *rghAuthenticators;
   PWSTR     wszDefaultEnablingPrincipalCredentials;
   DWORD     dwFlags;

@@ -13,7 +13,7 @@ fdiml (long double x, long double y)
   long double r;
 
   if (cx == FP_NAN || cy == FP_NAN
-      || (y < 0 && cx == FP_INFINITE && cy == FP_INFINITE))
+                   || (y < 0 && cx == FP_INFINITE && cy == FP_INFINITE))
     return x - y;  /* Take care invalid flag is raised.  */
   if (x <= y)
     return 0.0;

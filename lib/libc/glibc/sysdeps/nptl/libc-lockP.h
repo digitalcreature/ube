@@ -238,14 +238,14 @@ _Static_assert (LLL_LOCK_INITIALIZER == 0, "LLL_LOCK_INITIALIZER != 0");
 
 /* Call handler iff the first call.  */
 #define __libc_once(ONCE_CONTROL, INIT_FUNCTION) \
-  do {									      \
-    if (PTFAVAIL (__pthread_once))					      \
-      __libc_ptf_call_always (__pthread_once, (&(ONCE_CONTROL),		      \
-					       INIT_FUNCTION));		      \
-    else if ((ONCE_CONTROL) == PTHREAD_ONCE_INIT) {			      \
-      INIT_FUNCTION ();							      \
-      (ONCE_CONTROL) |= 2;						      \
-    }									      \
+  do {									                   \
+    if (PTFAVAIL (__pthread_once))					                   \
+                   __libc_ptf_call_always (__pthread_once, (&(ONCE_CONTROL),		                   \
+					                    INIT_FUNCTION));		                   \
+    else if ((ONCE_CONTROL) == PTHREAD_ONCE_INIT) {			                   \
+                   INIT_FUNCTION ();							                   \
+                   (ONCE_CONTROL) |= 2;						                   \
+    }									                   \
   } while (0)
 
 /* Get once control variable.  */
@@ -266,10 +266,10 @@ extern void _pthread_cleanup_pop_restore (struct _pthread_cleanup_buffer *buffer
 
 /* Sometimes we have to exit the block in the middle.  */
 #define __libc_cleanup_end(DOIT) \
-    if (_avail) {							      \
-      __libc_ptf_call_always (_pthread_cleanup_pop_restore, (&_buffer, DOIT));\
-    } else if (DOIT)							      \
-      _buffer.__routine (_buffer.__arg)
+    if (_avail) {							                   \
+                   __libc_ptf_call_always (_pthread_cleanup_pop_restore, (&_buffer, DOIT));\
+    } else if (DOIT)							                   \
+                   _buffer.__routine (_buffer.__arg)
 
 
 /* Normal cleanup handling, based on C cleanup attribute.  */
@@ -281,14 +281,14 @@ __libc_cleanup_routine (struct __pthread_cleanup_frame *f)
 }
 
 #define __libc_cleanup_push(fct, arg) \
-  do {									      \
-    struct __pthread_cleanup_frame __clframe				      \
-      __attribute__ ((__cleanup__ (__libc_cleanup_routine)))		      \
-      = { .__cancel_routine = (fct), .__cancel_arg = (arg),		      \
+  do {									                   \
+    struct __pthread_cleanup_frame __clframe				                   \
+                   __attribute__ ((__cleanup__ (__libc_cleanup_routine)))		                   \
+                   = { .__cancel_routine = (fct), .__cancel_arg = (arg),		                   \
 	  .__do_it = 1 };
 
 #define __libc_cleanup_pop(execute) \
-    __clframe.__do_it = (execute);					      \
+    __clframe.__do_it = (execute);					                   \
   } while (0)
 
 
@@ -309,9 +309,9 @@ __libc_cleanup_routine (struct __pthread_cleanup_frame *f)
    last parameter is NULL.  The handlers registered by the libc are
    never removed so this is OK.  */
 extern int __register_atfork (void (*__prepare) (void),
-			      void (*__parent) (void),
-			      void (*__child) (void),
-			      void *__dso_handle);
+			                   void (*__parent) (void),
+			                   void (*__child) (void),
+			                   void *__dso_handle);
 
 /* Functions that are used by this file and are internal to the GNU C
    library.  */

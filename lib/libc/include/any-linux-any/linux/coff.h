@@ -11,8 +11,8 @@
    more information about COFF, then O'Reilly has a very excellent book.
 */
 
-#define  E_SYMNMLEN  8   /* Number of characters in a symbol name         */
-#define  E_FILNMLEN 14   /* Number of characters in a file name           */
+#define  E_SYMNMLEN  8   /* Number of characters in a symbol name                      */
+#define  E_FILNMLEN 14   /* Number of characters in a file name                        */
 #define  E_DIMNUM    4   /* Number of array dimensions in auxiliary entry */
 
 /*
@@ -99,9 +99,9 @@ struct COFF_filehdr {
 #define  COFF_F_PATCH		0002000
 #define  COFF_F_NODF		0002000
 
-#define	COFF_I386MAGIC	        0x14c   /* Linux's system    */
+#define	COFF_I386MAGIC	                     0x14c   /* Linux's system    */
 
-#if 0   /* Perhaps, someday, these formats may be used.      */
+#if 0   /* Perhaps, someday, these formats may be used.                   */
 #define COFF_I386PTXMAGIC	0x154
 #define COFF_I386AIXMAGIC	0x175   /* IBM's AIX system  */
 #define COFF_I386BADMAG(x) ((COFF_SHORT((x).f_magic) != COFF_I386MAGIC) \
@@ -135,8 +135,8 @@ typedef struct
   char	dsize[4];		/* initialized   data "   "		 */
   char	bsize[4];		/* uninitialized data "   "		 */
   char	entry[4];		/* entry pt.				 */
-  char 	text_start[4];		/* base of text used for this file       */
-  char 	data_start[4];		/* base of data used for this file       */
+  char 	text_start[4];		/* base of text used for this file                    */
+  char 	data_start[4];		/* base of data used for this file                    */
 }
 COFF_AOUTHDR;
 
@@ -145,9 +145,9 @@ COFF_AOUTHDR;
 #define COFF_STMAGIC	0401
 #define COFF_OMAGIC     0404
 #define COFF_JMAGIC     0407    /* dirty text and data image, can't share  */
-#define COFF_DMAGIC     0410    /* dirty text segment, data aligned        */
+#define COFF_DMAGIC     0410    /* dirty text segment, data aligned                     */
 #define COFF_ZMAGIC     0413    /* The proper magic number for executables  */
-#define COFF_SHMAGIC	0443	/* shared library header                   */
+#define COFF_SHMAGIC	0443	/* shared library header                                                          */
 
 /********************** SECTION HEADER **********************/
 
@@ -175,25 +175,25 @@ struct COFF_scnhdr {
 #define COFF_DATA	".data"
 #define COFF_BSS	".bss"
 #define COFF_COMMENT    ".comment"
-#define COFF_LIB        ".lib"
+#define COFF_LIB                     ".lib"
 
-#define COFF_SECT_TEXT  0      /* Section for instruction code             */
-#define COFF_SECT_DATA  1      /* Section for initialized globals          */
-#define COFF_SECT_BSS   2      /* Section for un-initialized globals       */
-#define COFF_SECT_REQD  3      /* Minimum number of sections for good file */
+#define COFF_SECT_TEXT  0                   /* Section for instruction code                                       */
+#define COFF_SECT_DATA  1                   /* Section for initialized globals                       */
+#define COFF_SECT_BSS   2                   /* Section for un-initialized globals                    */
+#define COFF_SECT_REQD  3                   /* Minimum number of sections for good file */
 
-#define COFF_STYP_REG     0x00 /* regular segment                          */
-#define COFF_STYP_DSECT   0x01 /* dummy segment                            */
-#define COFF_STYP_NOLOAD  0x02 /* no-load segment                          */
-#define COFF_STYP_GROUP   0x04 /* group segment                            */
-#define COFF_STYP_PAD     0x08 /* .pad segment                             */
-#define COFF_STYP_COPY    0x10 /* copy section                             */
-#define COFF_STYP_TEXT    0x20 /* .text segment                            */
-#define COFF_STYP_DATA    0x40 /* .data segment                            */
-#define COFF_STYP_BSS     0x80 /* .bss segment                             */
-#define COFF_STYP_INFO   0x200 /* .comment section                         */
-#define COFF_STYP_OVER   0x400 /* overlay section                          */
-#define COFF_STYP_LIB    0x800 /* library section                          */
+#define COFF_STYP_REG     0x00 /* regular segment                                                                              */
+#define COFF_STYP_DSECT   0x01 /* dummy segment                                                                                */
+#define COFF_STYP_NOLOAD  0x02 /* no-load segment                                                                              */
+#define COFF_STYP_GROUP   0x04 /* group segment                                                                                */
+#define COFF_STYP_PAD     0x08 /* .pad segment                                                                                 */
+#define COFF_STYP_COPY    0x10 /* copy section                                                                                 */
+#define COFF_STYP_TEXT    0x20 /* .text segment                                                                                */
+#define COFF_STYP_DATA    0x40 /* .data segment                                                                                */
+#define COFF_STYP_BSS     0x80 /* .bss segment                                                                                 */
+#define COFF_STYP_INFO   0x200 /* .comment section                                                                             */
+#define COFF_STYP_OVER   0x400 /* overlay section                                                                              */
+#define COFF_STYP_LIB    0x800 /* library section                                                                              */
 
 /*
  * Shared libraries have the following section header in the data field for
@@ -201,8 +201,8 @@ struct COFF_scnhdr {
  */
 
 struct COFF_slib {
-  char		sl_entsz[4];	/* Size of this entry               */
-  char		sl_pathndx[4];	/* size of the header field         */
+  char		sl_entsz[4];	/* Size of this entry                                         */
+  char		sl_pathndx[4];	/* size of the header field                      */
 };
 
 #define	COFF_SLIBHD	struct COFF_slib
@@ -242,16 +242,16 @@ struct COFF_syment
   union {
     char e_name[E_SYMNMLEN];    /* Symbol name (first 8 characters) */
     struct {
-      char e_zeroes[4];         /* Leading zeros */
-      char e_offset[4];         /* Offset if this is a header section */
+                   char e_zeroes[4];                      /* Leading zeros */
+                   char e_offset[4];                      /* Offset if this is a header section */
     } e;
   } e;
 
-  char e_value[4];              /* Value (address) of the segment */
-  char e_scnum[2];              /* Section number */
-  char e_type[2];               /* Type of section */
-  char e_sclass[1];             /* Loader class */
-  char e_numaux[1];             /* Number of auxiliary entries which follow */
+  char e_value[4];                                        /* Value (address) of the segment */
+  char e_scnum[2];                                        /* Section number */
+  char e_type[2];                                         /* Type of section */
+  char e_sclass[1];                                       /* Loader class */
+  char e_numaux[1];                                       /* Number of auxiliary entries which follow */
 };
 
 #define COFF_N_BTMASK	(0xf)   /* Mask for important class bits */
@@ -270,24 +270,24 @@ union COFF_auxent {
  */
 
   struct {
-    char x_tagndx[4];	        /* str, un, or enum tag indx */
+    char x_tagndx[4];	                     /* str, un, or enum tag indx */
     union {
-      struct {
-	char  x_lnno[2];        /* declaration line number */
-	char  x_size[2];        /* str/union/array size */
-      } x_lnsz;
-      char x_fsize[4];	        /* size of function */
+                   struct {
+	char  x_lnno[2];                     /* declaration line number */
+	char  x_size[2];                     /* str/union/array size */
+                   } x_lnsz;
+                   char x_fsize[4];	                     /* size of function */
     } x_misc;
 
     union {
-      struct {		        /* if ISFCN, tag, or .bb */
+                   struct {		                     /* if ISFCN, tag, or .bb */
 	char x_lnnoptr[4];	/* ptr to fcn line # */
 	char x_endndx[4];	/* entry ndx past block end */
-      } x_fcn;
+                   } x_fcn;
 
-      struct {		        /* if ISARY, up to 4 dimen. */
+                   struct {		                     /* if ISARY, up to 4 dimen. */
 	char x_dimen[E_DIMNUM][2];
-      } x_ary;
+                   } x_ary;
     } x_fcnary;
 
     char x_tvndx[2];	/* tv index */
@@ -300,8 +300,8 @@ union COFF_auxent {
   union {
     char x_fname[E_FILNMLEN];
     struct {
-      char x_zeroes[4];
-      char x_offset[4];
+                   char x_zeroes[4];
+                   char x_offset[4];
     } x_n;
   } x_file;
 
@@ -336,9 +336,9 @@ union COFF_auxent {
 /********************** RELOCATION DIRECTIVES **********************/
 
 struct COFF_reloc {
-  char r_vaddr[4];        /* Virtual address of item    */
-  char r_symndx[4];       /* Symbol index in the symtab */
-  char r_type[2];         /* Relocation type            */
+  char r_vaddr[4];                     /* Virtual address of item    */
+  char r_symndx[4];                    /* Symbol index in the symtab */
+  char r_type[2];                      /* Relocation type                                      */
 };
 
 #define COFF_RELOC struct COFF_reloc
@@ -349,4 +349,4 @@ struct COFF_reloc {
 #define COFF_DEF_TEXT_SECTION_ALIGNMENT  4
 
 /* For new sections we haven't heard of before */
-#define COFF_DEF_SECTION_ALIGNMENT       4
+#define COFF_DEF_SECTION_ALIGNMENT                    4

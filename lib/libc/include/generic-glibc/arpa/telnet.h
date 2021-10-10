@@ -51,7 +51,7 @@
 #define	DM	242		/* data mark--for connect. cleaning */
 #define	NOP	241		/* nop */
 #define	SE	240		/* end sub negotiation */
-#define EOR     239             /* end of record (transparent mode) */
+#define EOR     239                                       /* end of record (transparent mode) */
 #define	ABORT	238		/* Abort process */
 #define	SUSP	237		/* Suspend process */
 #define	xEOF	236		/* End of file: EOF is already used... */

@@ -24,29 +24,29 @@ const maxInt = std.math.maxInt;
 pub fn log2(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     switch (@typeInfo(T)) {
-        .ComptimeFloat => {
-            return @as(comptime_float, log2_64(x));
-        },
-        .Float => {
-            return switch (T) {
-                f32 => log2_32(x),
-                f64 => log2_64(x),
-                else => @compileError("log2 not implemented for " ++ @typeName(T)),
-            };
-        },
-        .ComptimeInt => comptime {
-            var result = 0;
-            var x_shifted = x;
-            while (b: {
-                x_shifted >>= 1;
-                break :b x_shifted != 0;
-            }) : (result += 1) {}
-            return result;
-        },
-        .Int => {
-            return math.log2_int(T, x);
-        },
-        else => @compileError("log2 not implemented for " ++ @typeName(T)),
+                     .ComptimeFloat => {
+                                      return @as(comptime_float, log2_64(x));
+                     },
+                     .Float => {
+                                      return switch (T) {
+                                          f32 => log2_32(x),
+                                          f64 => log2_64(x),
+                                          else => @compileError("log2 not implemented for " ++ @typeName(T)),
+                                      };
+                     },
+                     .ComptimeInt => comptime {
+                                      var result = 0;
+                                      var x_shifted = x;
+                                      while (b: {
+                                          x_shifted >>= 1;
+                                          break :b x_shifted != 0;
+                                      }) : (result += 1) {}
+                                      return result;
+                     },
+                     .Int => {
+                                      return math.log2_int(T, x);
+                     },
+                     else => @compileError("log2 not implemented for " ++ @typeName(T)),
     }
 }
 
@@ -65,22 +65,22 @@ pub fn log2_32(x_: f32) f32 {
 
     // x < 2^(-126)
     if (ix < 0x00800000 or ix >> 31 != 0) {
-        // log(+-0) = -inf
-        if (ix << 1 == 0) {
-            return -math.inf(f32);
-        }
-        // log(-#) = nan
-        if (ix >> 31 != 0) {
-            return math.nan(f32);
-        }
+                     // log(+-0) = -inf
+                     if (ix << 1 == 0) {
+                                      return -math.inf(f32);
+                     }
+                     // log(-#) = nan
+                     if (ix >> 31 != 0) {
+                                      return math.nan(f32);
+                     }
 
-        k -= 25;
-        x *= 0x1.0p25;
-        ix = @bitCast(u32, x);
+                     k -= 25;
+                     x *= 0x1.0p25;
+                     ix = @bitCast(u32, x);
     } else if (ix >= 0x7F800000) {
-        return x;
+                     return x;
     } else if (ix == 0x3F800000) {
-        return 0;
+                     return 0;
     }
 
     // x into [sqrt(2) / 2, sqrt(2)]
@@ -123,23 +123,23 @@ pub fn log2_64(x_: f64) f64 {
     var k: i32 = 0;
 
     if (hx < 0x00100000 or hx >> 31 != 0) {
-        // log(+-0) = -inf
-        if (ix << 1 == 0) {
-            return -math.inf(f64);
-        }
-        // log(-#) = nan
-        if (hx >> 31 != 0) {
-            return math.nan(f64);
-        }
+                     // log(+-0) = -inf
+                     if (ix << 1 == 0) {
+                                      return -math.inf(f64);
+                     }
+                     // log(-#) = nan
+                     if (hx >> 31 != 0) {
+                                      return math.nan(f64);
+                     }
 
-        // subnormal, scale x
-        k -= 54;
-        x *= 0x1.0p54;
-        hx = @intCast(u32, @bitCast(u64, x) >> 32);
+                     // subnormal, scale x
+                     k -= 54;
+                     x *= 0x1.0p54;
+                     hx = @intCast(u32, @bitCast(u64, x) >> 32);
     } else if (hx >= 0x7FF00000) {
-        return x;
+                     return x;
     } else if (hx == 0x3FF00000 and ix << 32 == 0) {
-        return 0;
+                     return 0;
     }
 
     // x into [sqrt(2) / 2, sqrt(2)]

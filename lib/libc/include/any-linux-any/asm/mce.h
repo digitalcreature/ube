@@ -38,7 +38,7 @@ struct mce {
 };
 
 #define MCE_GET_RECORD_LEN   _IOR('M', 1, int)
-#define MCE_GET_LOG_LEN      _IOR('M', 2, int)
+#define MCE_GET_LOG_LEN                   _IOR('M', 2, int)
 #define MCE_GETCLEAR_FLAGS   _IOR('M', 3, int)
 
 #endif /* _ASM_X86_MCE_H */

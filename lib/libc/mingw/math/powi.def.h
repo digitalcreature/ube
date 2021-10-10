@@ -12,21 +12,21 @@
  modification, are permitted provided that the following conditions are met:
 
    1. Redistributions in source code must retain the accompanying copyright
-      notice, this list of conditions, and the following disclaimer.
+                   notice, this list of conditions, and the following disclaimer.
    2. Redistributions in binary form must reproduce the accompanying
-      copyright notice, this list of conditions, and the following disclaimer
-      in the documentation and/or other materials provided with the
-      distribution.
+                   copyright notice, this list of conditions, and the following disclaimer
+                   in the documentation and/or other materials provided with the
+                   distribution.
    3. Names of the copyright holders must not be used to endorse or promote
-      products derived from this software without prior written permission
-      from the copyright holders.
+                   products derived from this software without prior written permission
+                   from the copyright holders.
    4. The right to distribute this software or to use it for any purpose does
-      not give you the right to use Servicemarks (sm) or Trademarks (tm) of
-      the copyright holders.  Use of them is covered by separate agreement
-      with the copyright holders.
+                   not give you the right to use Servicemarks (sm) or Trademarks (tm) of
+                   the copyright holders.  Use of them is covered by separate agreement
+                   with the copyright holders.
    5. If any files are modified, you must cause the modified files to carry
-      prominent notices stating that you changed the files and the date of
-      any change.
+                   prominent notices stating that you changed the files and the date of
+                   any change.
 
  Disclaimer
 
@@ -82,51 +82,51 @@ __FLT_ABI(__powi) (__FLT_TYPE x, int y)
     return __FLT_CST(1.0);
   else if (x_class == FP_NAN)
     {
-      rslt = (signbit(x) ? -__FLT_NAN : __FLT_NAN);
-      __FLT_RPT_DOMAIN ("__powi", x, (__FLT_TYPE) y, rslt);
-      return rslt;
+                   rslt = (signbit(x) ? -__FLT_NAN : __FLT_NAN);
+                   __FLT_RPT_DOMAIN ("__powi", x, (__FLT_TYPE) y, rslt);
+                   return rslt;
     }
   else if (x_class == FP_ZERO)
     {
-      if (y >= 0)
+                   if (y >= 0)
 	{
 	  if (!odd_y || !signbit (x))
 	    return __FLT_CST (0.0);
 	  return -__FLT_CST(0.0);
 	}
 
-      if (!odd_y || !signbit (x))
+                   if (!odd_y || !signbit (x))
 	return __FLT_HUGE_VAL;
-      return (signbit(x) ? -__FLT_HUGE_VAL : __FLT_HUGE_VAL);
+                   return (signbit(x) ? -__FLT_HUGE_VAL : __FLT_HUGE_VAL);
     }
   else if (x_class == FP_INFINITE)
     {
-      /* pow( -inf, y) = +0 for y<0 and not an odd integer,  */
-      if (signbit(x) && y < 0 && !odd_y)
+                   /* pow( -inf, y) = +0 for y<0 and not an odd integer,  */
+                   if (signbit(x) && y < 0 && !odd_y)
 	return __FLT_CST(0.0);
-      /* pow( -inf, y) = -inf for y an odd integer > 0.  */
-      if (signbit(x) && y >= 0 && odd_y)
+                   /* pow( -inf, y) = -inf for y an odd integer > 0.  */
+                   if (signbit(x) && y >= 0 && odd_y)
 	return -__FLT_HUGE_VAL;
-      /* pow( -inf, y) = +inf for y>0 and not an odd integer.  */
-      if (signbit(x) && y >= 0 && !odd_y)
+                   /* pow( -inf, y) = +inf for y>0 and not an odd integer.  */
+                   if (signbit(x) && y >= 0 && !odd_y)
 	return __FLT_HUGE_VAL;
-      /* pow (+/-inf, y) is +/-0 with no exception for y an odd integer < 0. */
-      if (y < 0)
-      {
-        /* pow (+/-inf, y) is +0 with no exception for finite y < 0 and not an odd integer.  */
+                   /* pow (+/-inf, y) is +/-0 with no exception for y an odd integer < 0. */
+                   if (y < 0)
+                   {
+                     /* pow (+/-inf, y) is +0 with no exception for finite y < 0 and not an odd integer.  */
 	return (odd_y && signbit(x) ? -__FLT_CST(0.0) : __FLT_CST(0.0));
-      }
-      /* pow (+/-inf, y) is +/-inf with no exception for finite y > 0 an odd integer.  */
-      /* pow (+/-inf, y) is +inf with no exception for finite y > 0 and not an odd integer.  */
-      return (odd_y && signbit(x) ? -__FLT_HUGE_VAL : __FLT_HUGE_VAL);
+                   }
+                   /* pow (+/-inf, y) is +/-inf with no exception for finite y > 0 an odd integer.  */
+                   /* pow (+/-inf, y) is +inf with no exception for finite y > 0 and not an odd integer.  */
+                   return (odd_y && signbit(x) ? -__FLT_HUGE_VAL : __FLT_HUGE_VAL);
     }
 
   d = __FLT_ABI(fabs) (x);
 
   if (y < 0)
     {
-      d = __FLT_CST(1.0) / d;
-      y = -y;
+                   d = __FLT_CST(1.0) / d;
+                   y = -y;
     }
 
   if (!y)
@@ -135,17 +135,17 @@ __FLT_ABI(__powi) (__FLT_TYPE x, int y)
     rslt = d;
   else
     {
-      unsigned int u = (unsigned int) y;
-      rslt = ((u & 1) != 0) ? d : __FLT_CST(1.0);
-      u >>= 1;
-      do
+                   unsigned int u = (unsigned int) y;
+                   rslt = ((u & 1) != 0) ? d : __FLT_CST(1.0);
+                   u >>= 1;
+                   do
 	{
 	  d *= d;
 	  if ((u & 1) != 0)
 	    rslt *= d;
 	  u >>= 1;
 	}
-      while (u > 0);
+                   while (u > 0);
     }
   if (signbit (x) && odd_y)
     rslt = -rslt;

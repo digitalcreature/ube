@@ -160,11 +160,11 @@ extern "C" {
   } MEMORY_PRIORITY_INFORMATION, *PMEMORY_PRIORITY_INFORMATION;
 #endif
 
-#define MEMORY_PRIORITY_VERY_LOW      1
-#define MEMORY_PRIORITY_LOW           2
-#define MEMORY_PRIORITY_MEDIUM        3
+#define MEMORY_PRIORITY_VERY_LOW                   1
+#define MEMORY_PRIORITY_LOW                        2
+#define MEMORY_PRIORITY_MEDIUM                     3
 #define MEMORY_PRIORITY_BELOW_NORMAL  4
-#define MEMORY_PRIORITY_NORMAL        5
+#define MEMORY_PRIORITY_NORMAL                     5
 
 #endif
 

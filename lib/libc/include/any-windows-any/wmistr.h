@@ -11,8 +11,8 @@ typedef struct _WNODE_HEADER {
   __C89_NAMELESS union {
     ULONG64 HistoricalContext;
     __C89_NAMELESS struct {
-      ULONG Version;
-      ULONG Linkage;
+                   ULONG Version;
+                   ULONG Linkage;
     };
   };
   __C89_NAMELESS union {

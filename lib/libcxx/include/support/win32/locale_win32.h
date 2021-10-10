@@ -22,42 +22,42 @@
 #define LC_TIME_MASK _M_TIME
 #define LC_MESSAGES_MASK _M_MESSAGES
 #define LC_ALL_MASK (  LC_COLLATE_MASK \
-                     | LC_CTYPE_MASK \
-                     | LC_MESSAGES_MASK \
-                     | LC_MONETARY_MASK \
-                     | LC_NUMERIC_MASK \
-                     | LC_TIME_MASK )
+                                                            | LC_CTYPE_MASK \
+                                                            | LC_MESSAGES_MASK \
+                                                            | LC_MONETARY_MASK \
+                                                            | LC_NUMERIC_MASK \
+                                                            | LC_TIME_MASK )
 
 class __lconv_storage {
 public:
     __lconv_storage(const lconv *__lc_input) {
-        __lc = *__lc_input;
+                     __lc = *__lc_input;
 
-        __decimal_point = __lc_input->decimal_point;
-        __thousands_sep = __lc_input->thousands_sep;
-        __grouping = __lc_input->grouping;
-        __int_curr_symbol = __lc_input->int_curr_symbol;
-        __currency_symbol = __lc_input->currency_symbol;
-        __mon_decimal_point = __lc_input->mon_decimal_point;
-        __mon_thousands_sep = __lc_input->mon_thousands_sep;
-        __mon_grouping = __lc_input->mon_grouping;
-        __positive_sign = __lc_input->positive_sign;
-        __negative_sign = __lc_input->negative_sign;
+                     __decimal_point = __lc_input->decimal_point;
+                     __thousands_sep = __lc_input->thousands_sep;
+                     __grouping = __lc_input->grouping;
+                     __int_curr_symbol = __lc_input->int_curr_symbol;
+                     __currency_symbol = __lc_input->currency_symbol;
+                     __mon_decimal_point = __lc_input->mon_decimal_point;
+                     __mon_thousands_sep = __lc_input->mon_thousands_sep;
+                     __mon_grouping = __lc_input->mon_grouping;
+                     __positive_sign = __lc_input->positive_sign;
+                     __negative_sign = __lc_input->negative_sign;
 
-        __lc.decimal_point = const_cast<char *>(__decimal_point.c_str());
-        __lc.thousands_sep = const_cast<char *>(__thousands_sep.c_str());
-        __lc.grouping = const_cast<char *>(__grouping.c_str());
-        __lc.int_curr_symbol = const_cast<char *>(__int_curr_symbol.c_str());
-        __lc.currency_symbol = const_cast<char *>(__currency_symbol.c_str());
-        __lc.mon_decimal_point = const_cast<char *>(__mon_decimal_point.c_str());
-        __lc.mon_thousands_sep = const_cast<char *>(__mon_thousands_sep.c_str());
-        __lc.mon_grouping = const_cast<char *>(__mon_grouping.c_str());
-        __lc.positive_sign = const_cast<char *>(__positive_sign.c_str());
-        __lc.negative_sign = const_cast<char *>(__negative_sign.c_str());
+                     __lc.decimal_point = const_cast<char *>(__decimal_point.c_str());
+                     __lc.thousands_sep = const_cast<char *>(__thousands_sep.c_str());
+                     __lc.grouping = const_cast<char *>(__grouping.c_str());
+                     __lc.int_curr_symbol = const_cast<char *>(__int_curr_symbol.c_str());
+                     __lc.currency_symbol = const_cast<char *>(__currency_symbol.c_str());
+                     __lc.mon_decimal_point = const_cast<char *>(__mon_decimal_point.c_str());
+                     __lc.mon_thousands_sep = const_cast<char *>(__mon_thousands_sep.c_str());
+                     __lc.mon_grouping = const_cast<char *>(__mon_grouping.c_str());
+                     __lc.positive_sign = const_cast<char *>(__positive_sign.c_str());
+                     __lc.negative_sign = const_cast<char *>(__negative_sign.c_str());
     }
 
     lconv *__get() {
-        return &__lc;
+                     return &__lc;
     }
 private:
     lconv __lc;
@@ -76,87 +76,87 @@ private:
 class locale_t {
 public:
     locale_t()
-        : __locale(nullptr), __locale_str(nullptr), __lc(nullptr) {}
+                     : __locale(nullptr), __locale_str(nullptr), __lc(nullptr) {}
     locale_t(std::nullptr_t)
-        : __locale(nullptr), __locale_str(nullptr), __lc(nullptr) {}
+                     : __locale(nullptr), __locale_str(nullptr), __lc(nullptr) {}
     locale_t(_locale_t __xlocale, const char* __xlocale_str)
-        : __locale(__xlocale), __locale_str(__xlocale_str), __lc(nullptr) {}
+                     : __locale(__xlocale), __locale_str(__xlocale_str), __lc(nullptr) {}
     locale_t(const locale_t &__l)
-        : __locale(__l.__locale), __locale_str(__l.__locale_str), __lc(nullptr) {}
+                     : __locale(__l.__locale), __locale_str(__l.__locale_str), __lc(nullptr) {}
 
     ~locale_t() {
-        delete __lc;
+                     delete __lc;
     }
 
     locale_t &operator =(const locale_t &__l) {
-        __locale = __l.__locale;
-        __locale_str = __l.__locale_str;
-        // __lc not copied
-        return *this;
+                     __locale = __l.__locale;
+                     __locale_str = __l.__locale_str;
+                     // __lc not copied
+                     return *this;
     }
 
     friend bool operator==(const locale_t& __left, const locale_t& __right) {
-        return __left.__locale == __right.__locale;
+                     return __left.__locale == __right.__locale;
     }
 
     friend bool operator==(const locale_t& __left, int __right) {
-        return __left.__locale == nullptr && __right == 0;
+                     return __left.__locale == nullptr && __right == 0;
     }
 
     friend bool operator==(const locale_t& __left, long long __right) {
-        return __left.__locale == nullptr && __right == 0;
+                     return __left.__locale == nullptr && __right == 0;
     }
 
     friend bool operator==(const locale_t& __left, std::nullptr_t) {
-        return __left.__locale == nullptr;
+                     return __left.__locale == nullptr;
     }
 
     friend bool operator==(int __left, const locale_t& __right) {
-        return __left == 0 && nullptr == __right.__locale;
+                     return __left == 0 && nullptr == __right.__locale;
     }
 
     friend bool operator==(std::nullptr_t, const locale_t& __right) {
-        return nullptr == __right.__locale;
+                     return nullptr == __right.__locale;
     }
 
     friend bool operator!=(const locale_t& __left, const locale_t& __right) {
-        return !(__left == __right);
+                     return !(__left == __right);
     }
 
     friend bool operator!=(const locale_t& __left, int __right) {
-        return !(__left == __right);
+                     return !(__left == __right);
     }
 
     friend bool operator!=(const locale_t& __left, long long __right) {
-        return !(__left == __right);
+                     return !(__left == __right);
     }
 
     friend bool operator!=(const locale_t& __left, std::nullptr_t __right) {
-        return !(__left == __right);
+                     return !(__left == __right);
     }
 
     friend bool operator!=(int __left, const locale_t& __right) {
-        return !(__left == __right);
+                     return !(__left == __right);
     }
 
     friend bool operator!=(std::nullptr_t __left, const locale_t& __right) {
-        return !(__left == __right);
+                     return !(__left == __right);
     }
 
     operator bool() const {
-        return __locale != nullptr;
+                     return __locale != nullptr;
     }
 
     const char* __get_locale() const { return __locale_str; }
 
     operator _locale_t() const {
-        return __locale;
+                     return __locale;
     }
 
     lconv *__store_lconv(const lconv *__input_lc) {
-        delete __lc;
-        __lc = new __lconv_storage(__input_lc);
-        return __lc->__get();
+                     delete __lc;
+                     __lc = new __lconv_storage(__input_lc);
+                     return __lc->__get();
     }
 private:
     _locale_t __locale;
@@ -176,17 +176,17 @@ locale_t newlocale( int mask, const char * locale, locale_t base );
 
 lconv *localeconv_l( locale_t &loc );
 size_t mbrlen_l( const char *__restrict s, size_t n,
-                 mbstate_t *__restrict ps, locale_t loc);
+                                           mbstate_t *__restrict ps, locale_t loc);
 size_t mbsrtowcs_l( wchar_t *__restrict dst, const char **__restrict src,
-                    size_t len, mbstate_t *__restrict ps, locale_t loc );
+                                                           size_t len, mbstate_t *__restrict ps, locale_t loc );
 size_t wcrtomb_l( char *__restrict s, wchar_t wc, mbstate_t *__restrict ps,
-                  locale_t loc);
+                                                         locale_t loc);
 size_t mbrtowc_l( wchar_t *__restrict pwc, const char *__restrict s,
-                  size_t n, mbstate_t *__restrict ps, locale_t loc);
+                                                         size_t n, mbstate_t *__restrict ps, locale_t loc);
 size_t mbsnrtowcs_l( wchar_t *__restrict dst, const char **__restrict src,
-                     size_t nms, size_t len, mbstate_t *__restrict ps, locale_t loc);
+                                                            size_t nms, size_t len, mbstate_t *__restrict ps, locale_t loc);
 size_t wcsnrtombs_l( char *__restrict dst, const wchar_t **__restrict src,
-                     size_t nwc, size_t len, mbstate_t *__restrict ps, locale_t loc);
+                                                            size_t nwc, size_t len, mbstate_t *__restrict ps, locale_t loc);
 wint_t btowc_l( int c, locale_t loc );
 int wctob_l( wint_t c, locale_t loc );
 
@@ -239,7 +239,7 @@ isupper_l(int c, _locale_t loc)
 #define towlower_l _towlower_l
 #if defined(__MINGW32__) && __MSVCRT_VERSION__ < 0x0800
 _LIBCPP_FUNC_VIS size_t strftime_l(char *ret, size_t n, const char *format,
-                                   const struct tm *tm, locale_t loc);
+                                                                                                    const struct tm *tm, locale_t loc);
 #else
 #define strftime_l _strftime_l
 #endif

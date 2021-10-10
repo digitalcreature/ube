@@ -75,14 +75,14 @@ extern "C" {
     NET_IF_ACCESS_TYPE AccessType;
     NET_IF_DIRECTION_TYPE DirectionType;
     struct {
-      BOOLEAN HardwareInterface : 1;
-      BOOLEAN FilterInterface : 1;
-      BOOLEAN ConnectorPresent : 1;
-      BOOLEAN NotAuthenticated : 1;
-      BOOLEAN NotMediaConnected : 1;
-      BOOLEAN Paused : 1;
-      BOOLEAN LowPower : 1;
-      BOOLEAN EndPointInterface : 1;
+                   BOOLEAN HardwareInterface : 1;
+                   BOOLEAN FilterInterface : 1;
+                   BOOLEAN ConnectorPresent : 1;
+                   BOOLEAN NotAuthenticated : 1;
+                   BOOLEAN NotMediaConnected : 1;
+                   BOOLEAN Paused : 1;
+                   BOOLEAN LowPower : 1;
+                   BOOLEAN EndPointInterface : 1;
     } InterfaceAndOperStatusFlags;
     IF_OPER_STATUS OperStatus;
     NET_IF_ADMIN_STATUS AdminStatus;
@@ -266,8 +266,8 @@ extern "C" {
     ULONG RttMean;
     ULONG RttDeviation;
     __C89_NAMELESS union {
-      ULONG LastReachable;
-      ULONG LastUnreachable;
+                   ULONG LastReachable;
+                   ULONG LastUnreachable;
     };
     BOOLEAN IsReachable;
     ULONG64 LinkTransmitSpeed;
@@ -287,15 +287,15 @@ extern "C" {
     ULONG PhysicalAddressLength;
     NL_NEIGHBOR_STATE State;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	BOOLEAN IsRouter : 1;
 	BOOLEAN IsUnreachable : 1;
-      };
-      UCHAR Flags;
+                   };
+                   UCHAR Flags;
     };
     union {
-      ULONG LastReachable;
-      ULONG LastUnreachable;
+                   ULONG LastReachable;
+                   ULONG LastUnreachable;
     } ReachabilityTime;
   } MIB_IPNET_ROW2, *PMIB_IPNET_ROW2;
 

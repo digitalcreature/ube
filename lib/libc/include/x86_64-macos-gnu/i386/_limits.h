@@ -22,6 +22,6 @@
 #ifndef _I386__LIMITS_H_
 #define _I386__LIMITS_H_
 
-#define __DARWIN_CLK_TCK                100     /* ticks per second */
+#define __DARWIN_CLK_TCK                                          100     /* ticks per second */
 
 #endif  /* _I386__LIMITS_H_ */

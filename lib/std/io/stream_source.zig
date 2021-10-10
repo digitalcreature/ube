@@ -28,82 +28,82 @@ pub const StreamSource = union(enum) {
     /// Deprecated: use `Writer`
     pub const OutStream = Writer;
     pub const SeekableStream = io.SeekableStream(
-        *StreamSource,
-        SeekError,
-        GetSeekPosError,
-        seekTo,
-        seekBy,
-        getPos,
-        getEndPos,
+                     *StreamSource,
+                     SeekError,
+                     GetSeekPosError,
+                     seekTo,
+                     seekBy,
+                     getPos,
+                     getEndPos,
     );
 
     pub fn read(self: *StreamSource, dest: []u8) ReadError!usize {
-        switch (self.*) {
-            .buffer => |*x| return x.read(dest),
-            .const_buffer => |*x| return x.read(dest),
-            .file => |x| return x.read(dest),
-        }
+                     switch (self.*) {
+                                      .buffer => |*x| return x.read(dest),
+                                      .const_buffer => |*x| return x.read(dest),
+                                      .file => |x| return x.read(dest),
+                     }
     }
 
     pub fn write(self: *StreamSource, bytes: []const u8) WriteError!usize {
-        switch (self.*) {
-            .buffer => |*x| return x.write(bytes),
-            .const_buffer => return error.AccessDenied,
-            .file => |x| return x.write(bytes),
-        }
+                     switch (self.*) {
+                                      .buffer => |*x| return x.write(bytes),
+                                      .const_buffer => return error.AccessDenied,
+                                      .file => |x| return x.write(bytes),
+                     }
     }
 
     pub fn seekTo(self: *StreamSource, pos: u64) SeekError!void {
-        switch (self.*) {
-            .buffer => |*x| return x.seekTo(pos),
-            .const_buffer => |*x| return x.seekTo(pos),
-            .file => |x| return x.seekTo(pos),
-        }
+                     switch (self.*) {
+                                      .buffer => |*x| return x.seekTo(pos),
+                                      .const_buffer => |*x| return x.seekTo(pos),
+                                      .file => |x| return x.seekTo(pos),
+                     }
     }
 
     pub fn seekBy(self: *StreamSource, amt: i64) SeekError!void {
-        switch (self.*) {
-            .buffer => |*x| return x.seekBy(amt),
-            .const_buffer => |*x| return x.seekBy(amt),
-            .file => |x| return x.seekBy(amt),
-        }
+                     switch (self.*) {
+                                      .buffer => |*x| return x.seekBy(amt),
+                                      .const_buffer => |*x| return x.seekBy(amt),
+                                      .file => |x| return x.seekBy(amt),
+                     }
     }
 
     pub fn getEndPos(self: *StreamSource) GetSeekPosError!u64 {
-        switch (self.*) {
-            .buffer => |*x| return x.getEndPos(),
-            .const_buffer => |*x| return x.getEndPos(),
-            .file => |x| return x.getEndPos(),
-        }
+                     switch (self.*) {
+                                      .buffer => |*x| return x.getEndPos(),
+                                      .const_buffer => |*x| return x.getEndPos(),
+                                      .file => |x| return x.getEndPos(),
+                     }
     }
 
     pub fn getPos(self: *StreamSource) GetSeekPosError!u64 {
-        switch (self.*) {
-            .buffer => |*x| return x.getPos(),
-            .const_buffer => |*x| return x.getPos(),
-            .file => |x| return x.getPos(),
-        }
+                     switch (self.*) {
+                                      .buffer => |*x| return x.getPos(),
+                                      .const_buffer => |*x| return x.getPos(),
+                                      .file => |x| return x.getPos(),
+                     }
     }
 
     pub fn reader(self: *StreamSource) Reader {
-        return .{ .context = self };
+                     return .{ .context = self };
     }
 
     /// Deprecated: use `reader`
     pub fn inStream(self: *StreamSource) InStream {
-        return .{ .context = self };
+                     return .{ .context = self };
     }
 
     pub fn writer(self: *StreamSource) Writer {
-        return .{ .context = self };
+                     return .{ .context = self };
     }
 
     /// Deprecated: use `writer`
     pub fn outStream(self: *StreamSource) OutStream {
-        return .{ .context = self };
+                     return .{ .context = self };
     }
 
     pub fn seekableStream(self: *StreamSource) SeekableStream {
-        return .{ .context = self };
+                     return .{ .context = self };
     }
 };

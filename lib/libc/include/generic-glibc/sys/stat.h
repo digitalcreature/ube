@@ -247,7 +247,7 @@ extern int __REDIRECT_NTH (fstatat, (int __fd, const char *__restrict __file,
 
 # ifdef __USE_LARGEFILE64
 extern int fstatat64 (int __fd, const char *__restrict __file,
-		      struct stat64 *__restrict __buf, int __flag)
+		                   struct stat64 *__restrict __buf, int __flag)
      __THROW __nonnull ((2, 3));
 # endif
 #endif
@@ -358,8 +358,8 @@ extern int mkfifoat (int __fd, const char *__path, __mode_t __mode)
 /* Set file access and modification times relative to directory file
    descriptor.  */
 extern int utimensat (int __fd, const char *__path,
-		      const struct timespec __times[2],
-		      int __flags)
+		                   const struct timespec __times[2],
+		                   int __flags)
      __THROW __nonnull ((2));
 #endif
 
@@ -399,18 +399,18 @@ extern int __xstat (int __ver, const char *__filename,
 extern int __lxstat (int __ver, const char *__filename,
 		     struct stat *__stat_buf) __THROW __nonnull ((2, 3));
 extern int __fxstatat (int __ver, int __fildes, const char *__filename,
-		       struct stat *__stat_buf, int __flag)
+		                    struct stat *__stat_buf, int __flag)
      __THROW __nonnull ((3, 4));
 #else
 # ifdef __REDIRECT_NTH
 extern int __REDIRECT_NTH (__fxstat, (int __ver, int __fildes,
-				      struct stat *__stat_buf), __fxstat64)
+				                   struct stat *__stat_buf), __fxstat64)
      __nonnull ((3));
 extern int __REDIRECT_NTH (__xstat, (int __ver, const char *__filename,
 				     struct stat *__stat_buf), __xstat64)
      __nonnull ((2, 3));
 extern int __REDIRECT_NTH (__lxstat, (int __ver, const char *__filename,
-				      struct stat *__stat_buf), __lxstat64)
+				                   struct stat *__stat_buf), __lxstat64)
      __nonnull ((2, 3));
 extern int __REDIRECT_NTH (__fxstatat, (int __ver, int __fildes,
 					const char *__filename,
@@ -428,9 +428,9 @@ extern int __REDIRECT_NTH (__fxstatat, (int __ver, int __fildes,
 extern int __fxstat64 (int __ver, int __fildes, struct stat64 *__stat_buf)
      __THROW __nonnull ((3));
 extern int __xstat64 (int __ver, const char *__filename,
-		      struct stat64 *__stat_buf) __THROW __nonnull ((2, 3));
+		                   struct stat64 *__stat_buf) __THROW __nonnull ((2, 3));
 extern int __lxstat64 (int __ver, const char *__filename,
-		       struct stat64 *__stat_buf) __THROW __nonnull ((2, 3));
+		                    struct stat64 *__stat_buf) __THROW __nonnull ((2, 3));
 extern int __fxstatat64 (int __ver, int __fildes, const char *__filename,
 			 struct stat64 *__stat_buf, int __flag)
      __THROW __nonnull ((3, 4));
@@ -439,7 +439,7 @@ extern int __xmknod (int __ver, const char *__path, __mode_t __mode,
 		     __dev_t *__dev) __THROW __nonnull ((2, 4));
 
 extern int __xmknodat (int __ver, int __fd, const char *__path,
-		       __mode_t __mode, __dev_t *__dev)
+		                    __mode_t __mode, __dev_t *__dev)
      __THROW __nonnull ((3, 5));
 
 #ifdef __USE_GNU
@@ -497,7 +497,7 @@ __NTH (mknodat (int __fd, const char *__path, __mode_t __mode,
 
 # if defined __USE_LARGEFILE64 \
   && (! defined __USE_FILE_OFFSET64 \
-      || (defined __REDIRECT_NTH && defined __OPTIMIZE__))
+                   || (defined __REDIRECT_NTH && defined __OPTIMIZE__))
 __extern_inline int
 __NTH (stat64 (const char *__path, struct stat64 *__statbuf))
 {

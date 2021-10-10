@@ -35,7 +35,7 @@
 /* Unix98 demands the following flag which is the inverse to RTLD_GLOBAL.
    The implementation does this by default and so we can define the
    value to zero.  */
-#define RTLD_LOCAL      0
+#define RTLD_LOCAL                   0
 
 /* Do not delete object when closed.  */
 #define RTLD_NODELETE	0x01000
@@ -49,7 +49,7 @@
    Rewrite
 	foo = (*fctp) (arg1, arg2);
    into
-        foo = DL_CALL_FCT (fctp, (arg1, arg2));
+                     foo = DL_CALL_FCT (fctp, (arg1, arg2));
 */
 # define DL_CALL_FCT(fctp, args) \
   (_dl_mcount_wrapper_check ((void *) (fctp)), (*(fctp)) args)

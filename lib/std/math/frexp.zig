@@ -15,8 +15,8 @@ const expect = std.testing.expect;
 
 fn frexp_result(comptime T: type) type {
     return struct {
-        significand: T,
-        exponent: i32,
+                     significand: T,
+                     exponent: i32,
     };
 }
 pub const frexp32_result = frexp_result(f32);
@@ -32,9 +32,9 @@ pub const frexp64_result = frexp_result(f64);
 pub fn frexp(x: anytype) frexp_result(@TypeOf(x)) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => frexp32(x),
-        f64 => frexp64(x),
-        else => @compileError("frexp not implemented for " ++ @typeName(T)),
+                     f32 => frexp32(x),
+                     f64 => frexp64(x),
+                     else => @compileError("frexp not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -45,27 +45,27 @@ fn frexp32(x: f32) frexp32_result {
     const e = @intCast(i32, y >> 23) & 0xFF;
 
     if (e == 0) {
-        if (x != 0) {
-            // subnormal
-            result = frexp32(x * 0x1.0p64);
-            result.exponent -= 64;
-        } else {
-            // frexp(+-0) = (+-0, 0)
-            result.significand = x;
-            result.exponent = 0;
-        }
-        return result;
+                     if (x != 0) {
+                                      // subnormal
+                                      result = frexp32(x * 0x1.0p64);
+                                      result.exponent -= 64;
+                     } else {
+                                      // frexp(+-0) = (+-0, 0)
+                                      result.significand = x;
+                                      result.exponent = 0;
+                     }
+                     return result;
     } else if (e == 0xFF) {
-        // frexp(nan) = (nan, undefined)
-        result.significand = x;
-        result.exponent = undefined;
+                     // frexp(nan) = (nan, undefined)
+                     result.significand = x;
+                     result.exponent = undefined;
 
-        // frexp(+-inf) = (+-inf, 0)
-        if (math.isInf(x)) {
-            result.exponent = 0;
-        }
+                     // frexp(+-inf) = (+-inf, 0)
+                     if (math.isInf(x)) {
+                                      result.exponent = 0;
+                     }
 
-        return result;
+                     return result;
     }
 
     result.exponent = e - 0x7E;
@@ -82,27 +82,27 @@ fn frexp64(x: f64) frexp64_result {
     const e = @intCast(i32, y >> 52) & 0x7FF;
 
     if (e == 0) {
-        if (x != 0) {
-            // subnormal
-            result = frexp64(x * 0x1.0p64);
-            result.exponent -= 64;
-        } else {
-            // frexp(+-0) = (+-0, 0)
-            result.significand = x;
-            result.exponent = 0;
-        }
-        return result;
+                     if (x != 0) {
+                                      // subnormal
+                                      result = frexp64(x * 0x1.0p64);
+                                      result.exponent -= 64;
+                     } else {
+                                      // frexp(+-0) = (+-0, 0)
+                                      result.significand = x;
+                                      result.exponent = 0;
+                     }
+                     return result;
     } else if (e == 0x7FF) {
-        // frexp(nan) = (nan, undefined)
-        result.significand = x;
-        result.exponent = undefined;
+                     // frexp(nan) = (nan, undefined)
+                     result.significand = x;
+                     result.exponent = undefined;
 
-        // frexp(+-inf) = (+-inf, 0)
-        if (math.isInf(x)) {
-            result.exponent = 0;
-        }
+                     // frexp(+-inf) = (+-inf, 0)
+                     if (math.isInf(x)) {
+                                      result.exponent = 0;
+                     }
 
-        return result;
+                     return result;
     }
 
     result.exponent = e - 0x3FE;

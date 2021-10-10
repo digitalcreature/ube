@@ -3759,16 +3759,16 @@ typedef struct {
     MEDIUM_INFO MediumInfo;
     TRANSPORT_STATE XPrtState;
     struct {
-      BYTE frame;
-      BYTE second;
-      BYTE minute;
-      BYTE hour;
+                   BYTE frame;
+                   BYTE second;
+                   BYTE minute;
+                   BYTE hour;
     } Timecode;
     DWORD dwTimecode;
     DWORD dwAbsTrackNumber;
     struct {
-      ULONG PayloadSize;
-      BYTE Payload[512];
+                   ULONG PayloadSize;
+                   BYTE Payload[512];
     } RawAVC;
   } u;
 } KSPROPERTY_EXTXPORT_S,*PKSPROPERTY_EXTXPORT_S;
@@ -3782,16 +3782,16 @@ typedef struct {
     MEDIUM_INFO MediumInfo;
     TRANSPORT_STATE XPrtState;
     struct {
-      BYTE frame;
-      BYTE second;
-      BYTE minute;
-      BYTE hour;
+                   BYTE frame;
+                   BYTE second;
+                   BYTE minute;
+                   BYTE hour;
     } Timecode;
     DWORD dwTimecode;
     DWORD dwAbsTrackNumber;
     struct {
-      ULONG PayloadSize;
-      BYTE Payload[512];
+                   ULONG PayloadSize;
+                   BYTE Payload[512];
     } RawAVC;
   } u;
 } KSPROPERTY_EXTXPORT_NODE_S,*PKSPROPERTY_EXTXPORT_NODE_S;
@@ -4519,9 +4519,9 @@ typedef enum {
 
 #if (_WIN32_WINNT >= 0x0601)
 typedef enum _TunerDecoderLockType {
-  Tuner_LockType_None                        = 0x00,
+  Tuner_LockType_None                                                                            = 0x00,
   Tuner_LockType_Within_Scan_Sensing_Range   = 0x01,
-  Tuner_LockType_Locked                      = 0x02 
+  Tuner_LockType_Locked                                                             = 0x02 
 } TunerLockType;
 #endif /*(_WIN32_WINNT >= 0x0601)*/
 

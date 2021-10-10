@@ -100,17 +100,17 @@ typedef struct TintParams {
 	INT amount;
 } TintParams;
 
-extern const GUID BlurEffectGuid;                    /* ? */
-extern const GUID BrightnessContrastEffectGuid;      /* ? */
-extern const GUID ColorBalanceEffectGuid;            /* ? */
-extern const GUID ColorCurveEffectGuid;              /* ? */
-extern const GUID ColorLUTEffectGuid;                /* ? */
-extern const GUID ColorMatrixEffectGuid;             /* ? */
+extern const GUID BlurEffectGuid;                                                           /* ? */
+extern const GUID BrightnessContrastEffectGuid;                   /* ? */
+extern const GUID ColorBalanceEffectGuid;                                      /* ? */
+extern const GUID ColorCurveEffectGuid;                                        /* ? */
+extern const GUID ColorLUTEffectGuid;                                          /* ? */
+extern const GUID ColorMatrixEffectGuid;                                       /* ? */
 extern const GUID HueSaturationLightnessEffectGuid;  /* ? */
-extern const GUID LevelsEffectGuid;                  /* ? */
-extern const GUID RedEyeCorrectionEffectGuid;        /* ? */
-extern const GUID SharpenEffectGuid;                 /* ? */
-extern const GUID TintEffectGuid;                    /* ? */
+extern const GUID LevelsEffectGuid;                                                         /* ? */
+extern const GUID RedEyeCorrectionEffectGuid;                     /* ? */
+extern const GUID SharpenEffectGuid;                                           /* ? */
+extern const GUID TintEffectGuid;                                                           /* ? */
 
 
 #endif /* __GDIPLUS_EFFECTS_H */

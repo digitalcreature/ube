@@ -12,21 +12,21 @@ extern "C" {
 #endif
 
 typedef enum _EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION {
-  EAP_METHOD_AUTHENTICATOR_RESPONSE_DISCARD           = 0,
-  EAP_METHOD_AUTHENTICATOR_RESPONSE_SEND              = 1,
-  EAP_METHOD_AUTHENTICATOR_RESPONSE_RESULT            = 2,
-  EAP_METHOD_AUTHENTICATOR_RESPONSE_RESPOND           = 3,
-  EAP_METHOD_AUTHENTICATOR_RESPONSE_AUTHENTICATE      = 4,
+  EAP_METHOD_AUTHENTICATOR_RESPONSE_DISCARD                        = 0,
+  EAP_METHOD_AUTHENTICATOR_RESPONSE_SEND                                        = 1,
+  EAP_METHOD_AUTHENTICATOR_RESPONSE_RESULT                                      = 2,
+  EAP_METHOD_AUTHENTICATOR_RESPONSE_RESPOND                        = 3,
+  EAP_METHOD_AUTHENTICATOR_RESPONSE_AUTHENTICATE                   = 4,
   EAP_METHOD_AUTHENTICATOR_RESPONSE_HANDLE_IDENTITY   = 5 
 } EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION;
 
 typedef enum _EapPeerMethodResponseAction {
   EapPeerMethodResponseActionDiscard    = 0,
-  EapPeerMethodResponseActionSend       = 1,
+  EapPeerMethodResponseActionSend                    = 1,
   EapPeerMethodResponseActionResult     = 2,
   EapPeerMethodResponseActionInvokeUI   = 3,
   EapPeerMethodResponseActionRespond    = 4,
-  EapPeerMethodResponseActionNone       = 5 
+  EapPeerMethodResponseActionNone                    = 5 
 } EapPeerMethodResponseAction;
 
 typedef enum  {
@@ -36,14 +36,14 @@ typedef enum  {
 } EapPeerMethodResultReason;
 
 typedef struct _EAP_METHOD_AUTHENTICATOR_RESULT {
-  BOOL           fIsSuccess;
-  DWORD          dwFailureReason;
+  BOOL                        fIsSuccess;
+  DWORD                       dwFailureReason;
   EAP_ATTRIBUTES *pAuthAttribs;
 } EAP_METHOD_AUTHENTICATOR_RESULT;
 
 typedef struct tagEapPeerMethodOutput {
   EapPeerMethodResponseAction action;
-  WINBOOL                     fAllowNotifications;
+  WINBOOL                                                            fAllowNotifications;
 } EapPeerMethodOutput;
 
 #ifdef __cplusplus

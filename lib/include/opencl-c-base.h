@@ -175,16 +175,16 @@ typedef double double16 __attribute__((ext_vector_type(16)));
 #define FLT_MIN 0x1.0p-126f
 #define FLT_EPSILON 0x1.0p-23f
 
-#define M_E_F         2.71828182845904523536028747135266250f
+#define M_E_F                      2.71828182845904523536028747135266250f
 #define M_LOG2E_F     1.44269504088896340735992468100189214f
 #define M_LOG10E_F    0.434294481903251827651128918916605082f
-#define M_LN2_F       0.693147180559945309417232121458176568f
-#define M_LN10_F      2.30258509299404568401799145468436421f
-#define M_PI_F        3.14159265358979323846264338327950288f
-#define M_PI_2_F      1.57079632679489661923132169163975144f
-#define M_PI_4_F      0.785398163397448309615660845819875721f
-#define M_1_PI_F      0.318309886183790671537767526745028724f
-#define M_2_PI_F      0.636619772367581343075535053490057448f
+#define M_LN2_F                    0.693147180559945309417232121458176568f
+#define M_LN10_F                   2.30258509299404568401799145468436421f
+#define M_PI_F                     3.14159265358979323846264338327950288f
+#define M_PI_2_F                   1.57079632679489661923132169163975144f
+#define M_PI_4_F                   0.785398163397448309615660845819875721f
+#define M_1_PI_F                   0.318309886183790671537767526745028724f
+#define M_2_PI_F                   0.636619772367581343075535053490057448f
 #define M_2_SQRTPI_F  1.12837916709551257389615890312154517f
 #define M_SQRT2_F     1.41421356237309504880168872420969808f
 #define M_SQRT1_2_F   0.707106781186547524400844362104849039f
@@ -200,18 +200,18 @@ typedef double double16 __attribute__((ext_vector_type(16)));
 #define DBL_MIN 0x1.0p-1022
 #define DBL_EPSILON 0x1.0p-52
 
-#define M_E           0x1.5bf0a8b145769p+1
-#define M_LOG2E       0x1.71547652b82fep+0
-#define M_LOG10E      0x1.bcb7b1526e50ep-2
-#define M_LN2         0x1.62e42fefa39efp-1
-#define M_LN10        0x1.26bb1bbb55516p+1
-#define M_PI          0x1.921fb54442d18p+1
-#define M_PI_2        0x1.921fb54442d18p+0
-#define M_PI_4        0x1.921fb54442d18p-1
-#define M_1_PI        0x1.45f306dc9c883p-2
-#define M_2_PI        0x1.45f306dc9c883p-1
+#define M_E                        0x1.5bf0a8b145769p+1
+#define M_LOG2E                    0x1.71547652b82fep+0
+#define M_LOG10E                   0x1.bcb7b1526e50ep-2
+#define M_LN2                      0x1.62e42fefa39efp-1
+#define M_LN10                     0x1.26bb1bbb55516p+1
+#define M_PI                       0x1.921fb54442d18p+1
+#define M_PI_2                     0x1.921fb54442d18p+0
+#define M_PI_4                     0x1.921fb54442d18p-1
+#define M_1_PI                     0x1.45f306dc9c883p-2
+#define M_2_PI                     0x1.45f306dc9c883p-1
 #define M_2_SQRTPI    0x1.20dd750429b6dp+0
-#define M_SQRT2       0x1.6a09e667f3bcdp+0
+#define M_SQRT2                    0x1.6a09e667f3bcdp+0
 #define M_SQRT1_2     0x1.6a09e667f3bcdp-1
 
 #ifdef cl_khr_fp16
@@ -227,16 +227,16 @@ typedef double double16 __attribute__((ext_vector_type(16)));
 #define HALF_MIN ((0x1.0p-14h))
 #define HALF_EPSILON ((0x1.0p-10h))
 
-#define M_E_H         2.71828182845904523536028747135266250h
+#define M_E_H                      2.71828182845904523536028747135266250h
 #define M_LOG2E_H     1.44269504088896340735992468100189214h
 #define M_LOG10E_H    0.434294481903251827651128918916605082h
-#define M_LN2_H       0.693147180559945309417232121458176568h
-#define M_LN10_H      2.30258509299404568401799145468436421h
-#define M_PI_H        3.14159265358979323846264338327950288h
-#define M_PI_2_H      1.57079632679489661923132169163975144h
-#define M_PI_4_H      0.785398163397448309615660845819875721h
-#define M_1_PI_H      0.318309886183790671537767526745028724h
-#define M_2_PI_H      0.636619772367581343075535053490057448h
+#define M_LN2_H                    0.693147180559945309417232121458176568h
+#define M_LN10_H                   2.30258509299404568401799145468436421h
+#define M_PI_H                     3.14159265358979323846264338327950288h
+#define M_PI_2_H                   1.57079632679489661923132169163975144h
+#define M_PI_4_H                   0.785398163397448309615660845819875721h
+#define M_1_PI_H                   0.318309886183790671537767526745028724h
+#define M_2_PI_H                   0.636619772367581343075535053490057448h
 #define M_2_SQRTPI_H  1.12837916709551257389615890312154517h
 #define M_SQRT2_H     1.41421356237309504880168872420969808h
 #define M_SQRT1_2_H   0.707106781186547524400844362104849039h
@@ -318,23 +318,23 @@ typedef enum memory_order
 //
 // Addressing Mode.
 //
-#define CLK_ADDRESS_NONE                0
-#define CLK_ADDRESS_CLAMP_TO_EDGE       2
-#define CLK_ADDRESS_CLAMP               4
-#define CLK_ADDRESS_REPEAT              6
+#define CLK_ADDRESS_NONE                                          0
+#define CLK_ADDRESS_CLAMP_TO_EDGE                    2
+#define CLK_ADDRESS_CLAMP                                         4
+#define CLK_ADDRESS_REPEAT                                        6
 #define CLK_ADDRESS_MIRRORED_REPEAT     8
 
 //
 // Coordination Normalization
 //
 #define CLK_NORMALIZED_COORDS_FALSE     0
-#define CLK_NORMALIZED_COORDS_TRUE      1
+#define CLK_NORMALIZED_COORDS_TRUE                   1
 
 //
 // Filtering Mode.
 //
-#define CLK_FILTER_NEAREST              0x10
-#define CLK_FILTER_LINEAR               0x20
+#define CLK_FILTER_NEAREST                                        0x10
+#define CLK_FILTER_LINEAR                                         0x20
 
 #ifdef cl_khr_gl_msaa_sharing
 #pragma OPENCL EXTENSION cl_khr_gl_msaa_sharing : enable
@@ -343,46 +343,46 @@ typedef enum memory_order
 //
 // Channel Datatype.
 //
-#define CLK_SNORM_INT8        0x10D0
-#define CLK_SNORM_INT16       0x10D1
-#define CLK_UNORM_INT8        0x10D2
-#define CLK_UNORM_INT16       0x10D3
+#define CLK_SNORM_INT8                     0x10D0
+#define CLK_SNORM_INT16                    0x10D1
+#define CLK_UNORM_INT8                     0x10D2
+#define CLK_UNORM_INT16                    0x10D3
 #define CLK_UNORM_SHORT_565   0x10D4
 #define CLK_UNORM_SHORT_555   0x10D5
 #define CLK_UNORM_INT_101010  0x10D6
-#define CLK_SIGNED_INT8       0x10D7
-#define CLK_SIGNED_INT16      0x10D8
-#define CLK_SIGNED_INT32      0x10D9
+#define CLK_SIGNED_INT8                    0x10D7
+#define CLK_SIGNED_INT16                   0x10D8
+#define CLK_SIGNED_INT32                   0x10D9
 #define CLK_UNSIGNED_INT8     0x10DA
 #define CLK_UNSIGNED_INT16    0x10DB
 #define CLK_UNSIGNED_INT32    0x10DC
-#define CLK_HALF_FLOAT        0x10DD
-#define CLK_FLOAT             0x10DE
-#define CLK_UNORM_INT24       0x10DF
+#define CLK_HALF_FLOAT                     0x10DD
+#define CLK_FLOAT                                       0x10DE
+#define CLK_UNORM_INT24                    0x10DF
 
 // Channel order, numbering must be aligned with cl_channel_order in cl.h
 //
-#define CLK_R         0x10B0
-#define CLK_A         0x10B1
-#define CLK_RG        0x10B2
-#define CLK_RA        0x10B3
-#define CLK_RGB       0x10B4
-#define CLK_RGBA      0x10B5
-#define CLK_BGRA      0x10B6
-#define CLK_ARGB      0x10B7
+#define CLK_R                      0x10B0
+#define CLK_A                      0x10B1
+#define CLK_RG                     0x10B2
+#define CLK_RA                     0x10B3
+#define CLK_RGB                    0x10B4
+#define CLK_RGBA                   0x10B5
+#define CLK_BGRA                   0x10B6
+#define CLK_ARGB                   0x10B7
 #define CLK_INTENSITY 0x10B8
 #define CLK_LUMINANCE 0x10B9
-#define CLK_Rx                0x10BA
-#define CLK_RGx               0x10BB
-#define CLK_RGBx              0x10BC
-#define CLK_DEPTH             0x10BD
+#define CLK_Rx                                          0x10BA
+#define CLK_RGx                                         0x10BB
+#define CLK_RGBx                                        0x10BC
+#define CLK_DEPTH                                       0x10BD
 #define CLK_DEPTH_STENCIL     0x10BE
 #if __OPENCL_C_VERSION__ >= CL_VERSION_2_0
-#define CLK_sRGB              0x10BF
-#define CLK_sRGBx             0x10C0
-#define CLK_sRGBA             0x10C1
-#define CLK_sBGRA             0x10C2
-#define CLK_ABGR              0x10C3
+#define CLK_sRGB                                        0x10BF
+#define CLK_sRGBx                                       0x10C0
+#define CLK_sRGBA                                       0x10C1
+#define CLK_sBGRA                                       0x10C2
+#define CLK_ABGR                                        0x10C3
 #endif //__OPENCL_C_VERSION__ >= CL_VERSION_2_0
 
 // OpenCL v2.0 s6.13.16 - Pipe Functions
@@ -390,28 +390,28 @@ typedef enum memory_order
 #define CLK_NULL_RESERVE_ID (__builtin_astype(((void*)(__SIZE_MAX__)), reserve_id_t))
 
 // OpenCL v2.0 s6.13.17 - Enqueue Kernels
-#define CL_COMPLETE                                 0x0
-#define CL_RUNNING                                  0x1
-#define CL_SUBMITTED                                0x2
-#define CL_QUEUED                                   0x3
+#define CL_COMPLETE                                                                                                  0x0
+#define CL_RUNNING                                                                                                   0x1
+#define CL_SUBMITTED                                                                                                 0x2
+#define CL_QUEUED                                                                                                    0x3
 
-#define CLK_SUCCESS                                 0
-#define CLK_ENQUEUE_FAILURE                         -101
-#define CLK_INVALID_QUEUE                           -102
-#define CLK_INVALID_NDRANGE                         -160
-#define CLK_INVALID_EVENT_WAIT_LIST                 -57
-#define CLK_DEVICE_QUEUE_FULL                       -161
-#define CLK_INVALID_ARG_SIZE                        -51
-#define CLK_EVENT_ALLOCATION_FAILURE                -100
-#define CLK_OUT_OF_RESOURCES                        -5
+#define CLK_SUCCESS                                                                                                  0
+#define CLK_ENQUEUE_FAILURE                                                                             -101
+#define CLK_INVALID_QUEUE                                                                               -102
+#define CLK_INVALID_NDRANGE                                                                             -160
+#define CLK_INVALID_EVENT_WAIT_LIST                                           -57
+#define CLK_DEVICE_QUEUE_FULL                                                              -161
+#define CLK_INVALID_ARG_SIZE                                                                            -51
+#define CLK_EVENT_ALLOCATION_FAILURE                                          -100
+#define CLK_OUT_OF_RESOURCES                                                                            -5
 
-#define CLK_NULL_QUEUE                              0
+#define CLK_NULL_QUEUE                                                                                               0
 #define CLK_NULL_EVENT (__builtin_astype(((__SIZE_MAX__)), clk_event_t))
 
 // execution model related definitions
-#define CLK_ENQUEUE_FLAGS_NO_WAIT                   0x0
-#define CLK_ENQUEUE_FLAGS_WAIT_KERNEL               0x1
-#define CLK_ENQUEUE_FLAGS_WAIT_WORK_GROUP           0x2
+#define CLK_ENQUEUE_FLAGS_NO_WAIT                                                          0x0
+#define CLK_ENQUEUE_FLAGS_WAIT_KERNEL                                         0x1
+#define CLK_ENQUEUE_FLAGS_WAIT_WORK_GROUP                        0x2
 
 typedef int kernel_enqueue_flags_t;
 typedef int clk_profiling_info;

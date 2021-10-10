@@ -65,7 +65,7 @@ namespace Windows {
     { RoUninitialize (); }
 
     template<class T> __inline HRESULT GetActivationFactory(HSTRING classid, T **factory) {
-      return RoGetActivationFactory(classid, IID_INS_ARGS(factory));
+                   return RoGetActivationFactory(classid, IID_INS_ARGS(factory));
     }
   }
 }
@@ -73,17 +73,17 @@ namespace Windows {
 namespace ABI {
   namespace Windows {
     namespace Foundation {
-      __inline HRESULT Initialze (RO_INIT_TYPE it
+                   __inline HRESULT Initialze (RO_INIT_TYPE it
 #if WINAPI_FAMILY_PARTITION (WINAPI_PARTITION_DESKTOP)
 	= RO_INIT_SINGLETHREADED
 #endif
-      ) { return RoInitialize (it); }
-      __inline void Uninitialize ()
-      { RoUninitialize (); }
+                   ) { return RoInitialize (it); }
+                   __inline void Uninitialize ()
+                   { RoUninitialize (); }
     }
 
     template<class T> __inline HRESULT GetActivationFactory(HSTRING classid, T **factory) {
-      return RoGetActivationFactory(classid, IID_INS_ARGS(factory));
+                   return RoGetActivationFactory(classid, IID_INS_ARGS(factory));
     }
   }
 }

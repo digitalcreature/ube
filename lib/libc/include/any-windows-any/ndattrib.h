@@ -22,7 +22,7 @@ extern "C" {
 typedef struct tagDIAG_SOCKADDR DIAG_SOCKADDR;
 
 typedef enum tagATTRIBUTE_TYPE {
-  AT_INVALID        = 0,
+  AT_INVALID                     = 0,
   AT_BOOLEAN,
   AT_INT8,
   AT_UINT8,
@@ -40,40 +40,40 @@ typedef enum tagATTRIBUTE_TYPE {
 } ATTRIBUTE_TYPE;
 
 typedef enum tagREPAIR_SCOPE {
-  RS_SYSTEM        = 0,
-  RS_USER          = 1,
+  RS_SYSTEM                     = 0,
+  RS_USER                       = 1,
   RS_APPLICATION   = 2,
-  RS_PROCESS       = 3
+  RS_PROCESS                    = 3
 } REPAIR_SCOPE;
 
 typedef enum tagREPAIR_RISK {
   RR_NOROLLBACK   = 0,
   RR_ROLLBACK     = 1,
-  RR_NORISK       = 2
+  RR_NORISK                    = 2
 } REPAIR_RISK;
 
 typedef enum tagUI_INFO_TYPE {
-  UIT_NONE            = 0,
+  UIT_NONE                                      = 0,
   UIT_SHELL_COMMAND,
   UIT_HELP_PANE,
   UIT_DUI
 } UI_INFO_TYPE;
 
 typedef enum tagPROBLEM_TYPE {
-  PT_LOW_HEALTH              = 1,
-  PT_LOWER_HEALTH            = 2,
-  PT_DOWN_STREAM_HEALTH      = 4,
-  PT_HIGH_UTILIZATION        = 8,
-  PT_HIGHER_UTILIZATION      = 16,
+  PT_LOW_HEALTH                                        = 1,
+  PT_LOWER_HEALTH                                      = 2,
+  PT_DOWN_STREAM_HEALTH                   = 4,
+  PT_HIGH_UTILIZATION                     = 8,
+  PT_HIGHER_UTILIZATION                   = 16,
   PT_UP_STREAM_UTILIZATION   = 32
 } PROBLEM_TYPE;
 
 typedef enum tagREPAIR_STATUS {
   RS_NOT_IMPLEMENTED   = 0,
-  RS_REPAIRED          = 1,
-  RS_UNREPAIRED        = 2,
-  RS_DEFERRED          = 3,
-  RS_USER_ACTION       = 4
+  RS_REPAIRED                       = 1,
+  RS_UNREPAIRED                     = 2,
+  RS_DEFERRED                       = 3,
+  RS_USER_ACTION                    = 4
 } REPAIR_STATUS;
 
 typedef struct tagLIFE_TIME {
@@ -97,15 +97,15 @@ typedef struct tagUiInfo {
 } UiInfo, *PUiInfo;
 
 typedef struct tagRepairInfo {
-  GUID            guid;
-  LPWSTR          pwszClassName;
-  LPWSTR          pwszDescription;
-  DWORD           sidType;
-  __LONG32            cost;
-  ULONG           flags;
+  GUID                                      guid;
+  LPWSTR                       pwszClassName;
+  LPWSTR                       pwszDescription;
+  DWORD                        sidType;
+  __LONG32                                      cost;
+  ULONG                        flags;
   REPAIR_SCOPE    scope;
   REPAIR_RISK     risk;
-  UiInfo          UiInfo;
+  UiInfo                       UiInfo;
 } RepairInfo, *PRepairInfo;
 
 typedef struct tagShellCommandInfo {
@@ -158,12 +158,12 @@ typedef struct tagRepairInfoEx {
 } RepairInfoEx, *PRepairInfoEx;
 
 typedef struct tagRootCauseInfo {
-  LPWSTR       pwszDescription;
-  GUID         rootCauseID;
-  DWORD        rootCauseFlags;
-  GUID         networkInterfaceID;
+  LPWSTR                    pwszDescription;
+  GUID                      rootCauseID;
+  DWORD                     rootCauseFlags;
+  GUID                      networkInterfaceID;
   RepairInfoEx *pRepairs;
-  USHORT       repairCount;
+  USHORT                    repairCount;
 } RootCauseInfo;
 
 #ifdef __cplusplus

@@ -139,11 +139,11 @@ extern "C" {
     ULONG Flags;
     ULONG ValueCount;
     union {
-      PLONG64 pInt64;
-      PULONG64 pUint64;
-      PWSTR *ppString;
-      PAUTHZ_SECURITY_ATTRIBUTE_FQBN_VALUE pFqbn;
-      PAUTHZ_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE pOctetString;
+                   PLONG64 pInt64;
+                   PULONG64 pUint64;
+                   PWSTR *ppString;
+                   PAUTHZ_SECURITY_ATTRIBUTE_FQBN_VALUE pFqbn;
+                   PAUTHZ_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE pOctetString;
     } Values;
   } AUTHZ_SECURITY_ATTRIBUTE_V1,*PAUTHZ_SECURITY_ATTRIBUTE_V1;
 
@@ -152,7 +152,7 @@ extern "C" {
     USHORT Reserved;
     ULONG AttributeCount;
     union {
-      PAUTHZ_SECURITY_ATTRIBUTE_V1 pAttributeV1;
+                   PAUTHZ_SECURITY_ATTRIBUTE_V1 pAttributeV1;
     } Attribute;
   } AUTHZ_SECURITY_ATTRIBUTES_INFORMATION,*PAUTHZ_SECURITY_ATTRIBUTES_INFORMATION;
 
@@ -262,8 +262,8 @@ extern "C" {
     PWSTR szEventAccessStringsFile;
     PWSTR szExecutableImagePath;
     __C89_NAMELESS union {
-      PVOID pReserved;
-      GUID *pProviderGuid;
+                   PVOID pReserved;
+                   GUID *pProviderGuid;
     };
     DWORD dwObjectTypeNameCount;
     AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET ObjectTypeNames[ANYSIZE_ARRAY];

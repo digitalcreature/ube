@@ -27,10 +27,10 @@
 extern "C" {
 #endif
 
-#define DD_IPFLTRDRVR_DEVICE_NAME         L"\\Device\\IPFILTERDRIVER"
+#define DD_IPFLTRDRVR_DEVICE_NAME                      L"\\Device\\IPFILTERDRIVER"
 
-#define INVALID_PF_IF_INDEX               0xffffffff
-#define ZERO_PF_IP_ADDR                   0
+#define INVALID_PF_IF_INDEX                                         0xffffffff
+#define ZERO_PF_IP_ADDR                                                          0
 
 typedef ULONG IPAddr;
 
@@ -55,7 +55,7 @@ typedef struct _PF_SET_EXTENSION_HOOK_INFO {
   PacketFilterExtensionPtr  ExtensionPointer;
 } PF_SET_EXTENSION_HOOK_INFO, *PPF_SET_EXTENSION_HOOK_INFO;
 
-#define FSCTL_IPFLTRDRVR_BASE             FILE_DEVICE_NETWORK
+#define FSCTL_IPFLTRDRVR_BASE                                       FILE_DEVICE_NETWORK
 
 #define _IPFLTRDRVR_CTL_CODE(function, method, access) \
   CTL_CODE(FSCTL_IPFLTRDRVR_BASE, function, method, access)

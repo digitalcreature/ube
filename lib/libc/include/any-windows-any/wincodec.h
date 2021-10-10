@@ -623,25 +623,25 @@ MIDL_INTERFACE("3c613a02-34b2-44ea-9a7c-45aea9c6fd6d")
 IWICColorContext : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitializeFromFilename(
-        LPCWSTR wzFilename) = 0;
+                     LPCWSTR wzFilename) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeFromMemory(
-        const BYTE *pbBuffer,
-        UINT cbBufferSize) = 0;
+                     const BYTE *pbBuffer,
+                     UINT cbBufferSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeFromExifColorSpace(
-        UINT value) = 0;
+                     UINT value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        WICColorContextType *pType) = 0;
+                     WICColorContextType *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProfileBytes(
-        UINT cbBuffer,
-        BYTE *pbBuffer,
-        UINT *pcbActual) = 0;
+                     UINT cbBuffer,
+                     BYTE *pbBuffer,
+                     UINT *pcbActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExifColorSpace(
-        UINT *pValue) = 0;
+                     UINT *pValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -653,43 +653,43 @@ typedef struct IWICColorContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICColorContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICColorContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICColorContext *This);
+                     IWICColorContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICColorContext *This);
+                     IWICColorContext *This);
 
     /*** IWICColorContext methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializeFromFilename)(
-        IWICColorContext *This,
-        LPCWSTR wzFilename);
+                     IWICColorContext *This,
+                     LPCWSTR wzFilename);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromMemory)(
-        IWICColorContext *This,
-        const BYTE *pbBuffer,
-        UINT cbBufferSize);
+                     IWICColorContext *This,
+                     const BYTE *pbBuffer,
+                     UINT cbBufferSize);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromExifColorSpace)(
-        IWICColorContext *This,
-        UINT value);
+                     IWICColorContext *This,
+                     UINT value);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IWICColorContext *This,
-        WICColorContextType *pType);
+                     IWICColorContext *This,
+                     WICColorContextType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetProfileBytes)(
-        IWICColorContext *This,
-        UINT cbBuffer,
-        BYTE *pbBuffer,
-        UINT *pcbActual);
+                     IWICColorContext *This,
+                     UINT cbBuffer,
+                     BYTE *pbBuffer,
+                     UINT *pcbActual);
 
     HRESULT (STDMETHODCALLTYPE *GetExifColorSpace)(
-        IWICColorContext *This,
-        UINT *pValue);
+                     IWICColorContext *This,
+                     UINT *pValue);
 
     END_INTERFACE
 } IWICColorContextVtbl;
@@ -761,24 +761,24 @@ MIDL_INTERFACE("00000120-a8f2-4877-ba0a-fd2b6645fb94")
 IWICBitmapSource : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSize(
-        UINT *puiWidth,
-        UINT *puiHeight) = 0;
+                     UINT *puiWidth,
+                     UINT *puiHeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPixelFormat(
-        WICPixelFormatGUID *pPixelFormat) = 0;
+                     WICPixelFormatGUID *pPixelFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResolution(
-        double *pDpiX,
-        double *pDpiY) = 0;
+                     double *pDpiX,
+                     double *pDpiY) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyPalette(
-        IWICPalette *pIPalette) = 0;
+                     IWICPalette *pIPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyPixels(
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer) = 0;
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -790,41 +790,41 @@ typedef struct IWICBitmapSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapSource *This);
+                     IWICBitmapSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapSource *This);
+                     IWICBitmapSource *This);
 
     /*** IWICBitmapSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICBitmapSource *This,
-        UINT *puiWidth,
-        UINT *puiHeight);
+                     IWICBitmapSource *This,
+                     UINT *puiWidth,
+                     UINT *puiHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICBitmapSource *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICBitmapSource *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetResolution)(
-        IWICBitmapSource *This,
-        double *pDpiX,
-        double *pDpiY);
+                     IWICBitmapSource *This,
+                     double *pDpiX,
+                     double *pDpiY);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICBitmapSource *This,
-        IWICPalette *pIPalette);
+                     IWICBitmapSource *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CopyPixels)(
-        IWICBitmapSource *This,
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer);
+                     IWICBitmapSource *This,
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer);
 
     END_INTERFACE
 } IWICBitmapSourceVtbl;
@@ -892,18 +892,18 @@ MIDL_INTERFACE("00000123-a8f2-4877-ba0a-fd2b6645fb94")
 IWICBitmapLock : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSize(
-        UINT *pWidth,
-        UINT *pHeight) = 0;
+                     UINT *pWidth,
+                     UINT *pHeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStride(
-        UINT *pcbStride) = 0;
+                     UINT *pcbStride) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataPointer(
-        UINT *pcbBufferSize,
-        BYTE **ppbData) = 0;
+                     UINT *pcbBufferSize,
+                     BYTE **ppbData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPixelFormat(
-        WICPixelFormatGUID *pPixelFormat) = 0;
+                     WICPixelFormatGUID *pPixelFormat) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -915,34 +915,34 @@ typedef struct IWICBitmapLockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapLock *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapLock *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapLock *This);
+                     IWICBitmapLock *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapLock *This);
+                     IWICBitmapLock *This);
 
     /*** IWICBitmapLock methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICBitmapLock *This,
-        UINT *pWidth,
-        UINT *pHeight);
+                     IWICBitmapLock *This,
+                     UINT *pWidth,
+                     UINT *pHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetStride)(
-        IWICBitmapLock *This,
-        UINT *pcbStride);
+                     IWICBitmapLock *This,
+                     UINT *pcbStride);
 
     HRESULT (STDMETHODCALLTYPE *GetDataPointer)(
-        IWICBitmapLock *This,
-        UINT *pcbBufferSize,
-        BYTE **ppbData);
+                     IWICBitmapLock *This,
+                     UINT *pcbBufferSize,
+                     BYTE **ppbData);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICBitmapLock *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICBitmapLock *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     END_INTERFACE
 } IWICBitmapLockVtbl;
@@ -1006,8 +1006,8 @@ MIDL_INTERFACE("5009834f-2d6a-41ce-9e1b-17c5aff7a782")
 IWICBitmapFlipRotator : public IWICBitmapSource
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IWICBitmapSource *pISource,
-        WICBitmapTransformOptions options) = 0;
+                     IWICBitmapSource *pISource,
+                     WICBitmapTransformOptions options) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1019,47 +1019,47 @@ typedef struct IWICBitmapFlipRotatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapFlipRotator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapFlipRotator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapFlipRotator *This);
+                     IWICBitmapFlipRotator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapFlipRotator *This);
+                     IWICBitmapFlipRotator *This);
 
     /*** IWICBitmapSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICBitmapFlipRotator *This,
-        UINT *puiWidth,
-        UINT *puiHeight);
+                     IWICBitmapFlipRotator *This,
+                     UINT *puiWidth,
+                     UINT *puiHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICBitmapFlipRotator *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICBitmapFlipRotator *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetResolution)(
-        IWICBitmapFlipRotator *This,
-        double *pDpiX,
-        double *pDpiY);
+                     IWICBitmapFlipRotator *This,
+                     double *pDpiX,
+                     double *pDpiY);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICBitmapFlipRotator *This,
-        IWICPalette *pIPalette);
+                     IWICBitmapFlipRotator *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CopyPixels)(
-        IWICBitmapFlipRotator *This,
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer);
+                     IWICBitmapFlipRotator *This,
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer);
 
     /*** IWICBitmapFlipRotator methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICBitmapFlipRotator *This,
-        IWICBitmapSource *pISource,
-        WICBitmapTransformOptions options);
+                     IWICBitmapFlipRotator *This,
+                     IWICBitmapSource *pISource,
+                     WICBitmapTransformOptions options);
 
     END_INTERFACE
 } IWICBitmapFlipRotatorVtbl;
@@ -1133,16 +1133,16 @@ MIDL_INTERFACE("00000121-a8f2-4877-ba0a-fd2b6645fb94")
 IWICBitmap : public IWICBitmapSource
 {
     virtual HRESULT STDMETHODCALLTYPE Lock(
-        const WICRect *prcLock,
-        DWORD flags,
-        IWICBitmapLock **ppILock) = 0;
+                     const WICRect *prcLock,
+                     DWORD flags,
+                     IWICBitmapLock **ppILock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPalette(
-        IWICPalette *pIPalette) = 0;
+                     IWICPalette *pIPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetResolution(
-        double dpiX,
-        double dpiY) = 0;
+                     double dpiX,
+                     double dpiY) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1154,57 +1154,57 @@ typedef struct IWICBitmapVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmap *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmap *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmap *This);
+                     IWICBitmap *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmap *This);
+                     IWICBitmap *This);
 
     /*** IWICBitmapSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICBitmap *This,
-        UINT *puiWidth,
-        UINT *puiHeight);
+                     IWICBitmap *This,
+                     UINT *puiWidth,
+                     UINT *puiHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICBitmap *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICBitmap *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetResolution)(
-        IWICBitmap *This,
-        double *pDpiX,
-        double *pDpiY);
+                     IWICBitmap *This,
+                     double *pDpiX,
+                     double *pDpiY);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICBitmap *This,
-        IWICPalette *pIPalette);
+                     IWICBitmap *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CopyPixels)(
-        IWICBitmap *This,
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer);
+                     IWICBitmap *This,
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer);
 
     /*** IWICBitmap methods ***/
     HRESULT (STDMETHODCALLTYPE *Lock)(
-        IWICBitmap *This,
-        const WICRect *prcLock,
-        DWORD flags,
-        IWICBitmapLock **ppILock);
+                     IWICBitmap *This,
+                     const WICRect *prcLock,
+                     DWORD flags,
+                     IWICBitmapLock **ppILock);
 
     HRESULT (STDMETHODCALLTYPE *SetPalette)(
-        IWICBitmap *This,
-        IWICPalette *pIPalette);
+                     IWICBitmap *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *SetResolution)(
-        IWICBitmap *This,
-        double dpiX,
-        double dpiY);
+                     IWICBitmap *This,
+                     double dpiX,
+                     double dpiY);
 
     END_INTERFACE
 } IWICBitmapVtbl;
@@ -1286,40 +1286,40 @@ MIDL_INTERFACE("00000040-a8f2-4877-ba0a-fd2b6645fb94")
 IWICPalette : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitializePredefined(
-        WICBitmapPaletteType ePaletteType,
-        WINBOOL fAddTransparentColor) = 0;
+                     WICBitmapPaletteType ePaletteType,
+                     WINBOOL fAddTransparentColor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeCustom(
-        WICColor *pColors,
-        UINT colorCount) = 0;
+                     WICColor *pColors,
+                     UINT colorCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeFromBitmap(
-        IWICBitmapSource *pISurface,
-        UINT colorCount,
-        WINBOOL fAddTransparentColor) = 0;
+                     IWICBitmapSource *pISurface,
+                     UINT colorCount,
+                     WINBOOL fAddTransparentColor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeFromPalette(
-        IWICPalette *pIPalette) = 0;
+                     IWICPalette *pIPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        WICBitmapPaletteType *pePaletteType) = 0;
+                     WICBitmapPaletteType *pePaletteType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorCount(
-        UINT *pcCount) = 0;
+                     UINT *pcCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColors(
-        UINT colorCount,
-        WICColor *pColors,
-        UINT *pcActualColors) = 0;
+                     UINT colorCount,
+                     WICColor *pColors,
+                     UINT *pcActualColors) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsBlackWhite(
-        WINBOOL *pfIsBlackWhite) = 0;
+                     WINBOOL *pfIsBlackWhite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsGrayscale(
-        WINBOOL *pfIsGrayscale) = 0;
+                     WINBOOL *pfIsGrayscale) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasAlpha(
-        WINBOOL *pfHasAlpha) = 0;
+                     WINBOOL *pfHasAlpha) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1331,62 +1331,62 @@ typedef struct IWICPaletteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICPalette *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICPalette *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICPalette *This);
+                     IWICPalette *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICPalette *This);
+                     IWICPalette *This);
 
     /*** IWICPalette methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializePredefined)(
-        IWICPalette *This,
-        WICBitmapPaletteType ePaletteType,
-        WINBOOL fAddTransparentColor);
+                     IWICPalette *This,
+                     WICBitmapPaletteType ePaletteType,
+                     WINBOOL fAddTransparentColor);
 
     HRESULT (STDMETHODCALLTYPE *InitializeCustom)(
-        IWICPalette *This,
-        WICColor *pColors,
-        UINT colorCount);
+                     IWICPalette *This,
+                     WICColor *pColors,
+                     UINT colorCount);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromBitmap)(
-        IWICPalette *This,
-        IWICBitmapSource *pISurface,
-        UINT colorCount,
-        WINBOOL fAddTransparentColor);
+                     IWICPalette *This,
+                     IWICBitmapSource *pISurface,
+                     UINT colorCount,
+                     WINBOOL fAddTransparentColor);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromPalette)(
-        IWICPalette *This,
-        IWICPalette *pIPalette);
+                     IWICPalette *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IWICPalette *This,
-        WICBitmapPaletteType *pePaletteType);
+                     IWICPalette *This,
+                     WICBitmapPaletteType *pePaletteType);
 
     HRESULT (STDMETHODCALLTYPE *GetColorCount)(
-        IWICPalette *This,
-        UINT *pcCount);
+                     IWICPalette *This,
+                     UINT *pcCount);
 
     HRESULT (STDMETHODCALLTYPE *GetColors)(
-        IWICPalette *This,
-        UINT colorCount,
-        WICColor *pColors,
-        UINT *pcActualColors);
+                     IWICPalette *This,
+                     UINT colorCount,
+                     WICColor *pColors,
+                     UINT *pcActualColors);
 
     HRESULT (STDMETHODCALLTYPE *IsBlackWhite)(
-        IWICPalette *This,
-        WINBOOL *pfIsBlackWhite);
+                     IWICPalette *This,
+                     WINBOOL *pfIsBlackWhite);
 
     HRESULT (STDMETHODCALLTYPE *IsGrayscale)(
-        IWICPalette *This,
-        WINBOOL *pfIsGrayscale);
+                     IWICPalette *This,
+                     WINBOOL *pfIsGrayscale);
 
     HRESULT (STDMETHODCALLTYPE *HasAlpha)(
-        IWICPalette *This,
-        WINBOOL *pfHasAlpha);
+                     IWICPalette *This,
+                     WINBOOL *pfHasAlpha);
 
     END_INTERFACE
 } IWICPaletteVtbl;
@@ -1474,36 +1474,36 @@ MIDL_INTERFACE("23bc3f0a-698b-4357-886b-f24d50671334")
 IWICComponentInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetComponentType(
-        WICComponentType *pType) = 0;
+                     WICComponentType *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCLSID(
-        CLSID *pclsid) = 0;
+                     CLSID *pclsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSigningStatus(
-        DWORD *pStatus) = 0;
+                     DWORD *pStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAuthor(
-        UINT cchAuthor,
-        WCHAR *wzAuthor,
-        UINT *pcchActual) = 0;
+                     UINT cchAuthor,
+                     WCHAR *wzAuthor,
+                     UINT *pcchActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVendorGUID(
-        GUID *pguidVendor) = 0;
+                     GUID *pguidVendor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVersion(
-        UINT cchVersion,
-        WCHAR *wzVersion,
-        UINT *pcchActual) = 0;
+                     UINT cchVersion,
+                     WCHAR *wzVersion,
+                     UINT *pcchActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSpecVersion(
-        UINT cchSpecVersion,
-        WCHAR *wzSpecVersion,
-        UINT *pcchActual) = 0;
+                     UINT cchSpecVersion,
+                     WCHAR *wzSpecVersion,
+                     UINT *pcchActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFriendlyName(
-        UINT cchFriendlyName,
-        WCHAR *wzFriendlyName,
-        UINT *pcchActual) = 0;
+                     UINT cchFriendlyName,
+                     WCHAR *wzFriendlyName,
+                     UINT *pcchActual) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1515,56 +1515,56 @@ typedef struct IWICComponentInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICComponentInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICComponentInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICComponentInfo *This);
+                     IWICComponentInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICComponentInfo *This);
+                     IWICComponentInfo *This);
 
     /*** IWICComponentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetComponentType)(
-        IWICComponentInfo *This,
-        WICComponentType *pType);
+                     IWICComponentInfo *This,
+                     WICComponentType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetCLSID)(
-        IWICComponentInfo *This,
-        CLSID *pclsid);
+                     IWICComponentInfo *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningStatus)(
-        IWICComponentInfo *This,
-        DWORD *pStatus);
+                     IWICComponentInfo *This,
+                     DWORD *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthor)(
-        IWICComponentInfo *This,
-        UINT cchAuthor,
-        WCHAR *wzAuthor,
-        UINT *pcchActual);
+                     IWICComponentInfo *This,
+                     UINT cchAuthor,
+                     WCHAR *wzAuthor,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetVendorGUID)(
-        IWICComponentInfo *This,
-        GUID *pguidVendor);
+                     IWICComponentInfo *This,
+                     GUID *pguidVendor);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IWICComponentInfo *This,
-        UINT cchVersion,
-        WCHAR *wzVersion,
-        UINT *pcchActual);
+                     IWICComponentInfo *This,
+                     UINT cchVersion,
+                     WCHAR *wzVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetSpecVersion)(
-        IWICComponentInfo *This,
-        UINT cchSpecVersion,
-        WCHAR *wzSpecVersion,
-        UINT *pcchActual);
+                     IWICComponentInfo *This,
+                     UINT cchSpecVersion,
+                     WCHAR *wzSpecVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        IWICComponentInfo *This,
-        UINT cchFriendlyName,
-        WCHAR *wzFriendlyName,
-        UINT *pcchActual);
+                     IWICComponentInfo *This,
+                     UINT cchFriendlyName,
+                     WCHAR *wzFriendlyName,
+                     UINT *pcchActual);
 
     END_INTERFACE
 } IWICComponentInfoVtbl;
@@ -1644,19 +1644,19 @@ MIDL_INTERFACE("30989668-e1c9-4597-b395-458eedb808df")
 IWICMetadataQueryReader : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetContainerFormat(
-        GUID *pguidContainerFormat) = 0;
+                     GUID *pguidContainerFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocation(
-        UINT cchMaxLength,
-        WCHAR *wzNamespace,
-        UINT *pcchActualLength) = 0;
+                     UINT cchMaxLength,
+                     WCHAR *wzNamespace,
+                     UINT *pcchActualLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetadataByName(
-        LPCWSTR wzName,
-        PROPVARIANT *pvarValue) = 0;
+                     LPCWSTR wzName,
+                     PROPVARIANT *pvarValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IEnumString **ppIEnumString) = 0;
+                     IEnumString **ppIEnumString) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1668,35 +1668,35 @@ typedef struct IWICMetadataQueryReaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICMetadataQueryReader *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICMetadataQueryReader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICMetadataQueryReader *This);
+                     IWICMetadataQueryReader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICMetadataQueryReader *This);
+                     IWICMetadataQueryReader *This);
 
     /*** IWICMetadataQueryReader methods ***/
     HRESULT (STDMETHODCALLTYPE *GetContainerFormat)(
-        IWICMetadataQueryReader *This,
-        GUID *pguidContainerFormat);
+                     IWICMetadataQueryReader *This,
+                     GUID *pguidContainerFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetLocation)(
-        IWICMetadataQueryReader *This,
-        UINT cchMaxLength,
-        WCHAR *wzNamespace,
-        UINT *pcchActualLength);
+                     IWICMetadataQueryReader *This,
+                     UINT cchMaxLength,
+                     WCHAR *wzNamespace,
+                     UINT *pcchActualLength);
 
     HRESULT (STDMETHODCALLTYPE *GetMetadataByName)(
-        IWICMetadataQueryReader *This,
-        LPCWSTR wzName,
-        PROPVARIANT *pvarValue);
+                     IWICMetadataQueryReader *This,
+                     LPCWSTR wzName,
+                     PROPVARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IWICMetadataQueryReader *This,
-        IEnumString **ppIEnumString);
+                     IWICMetadataQueryReader *This,
+                     IEnumString **ppIEnumString);
 
     END_INTERFACE
 } IWICMetadataQueryReaderVtbl;
@@ -1760,11 +1760,11 @@ MIDL_INTERFACE("a721791a-0def-4d06-bd91-2118bf1db10b")
 IWICMetadataQueryWriter : public IWICMetadataQueryReader
 {
     virtual HRESULT STDMETHODCALLTYPE SetMetadataByName(
-        LPCWSTR wzName,
-        const PROPVARIANT *pvarValue) = 0;
+                     LPCWSTR wzName,
+                     const PROPVARIANT *pvarValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveMetadataByName(
-        LPCWSTR wzName) = 0;
+                     LPCWSTR wzName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1776,45 +1776,45 @@ typedef struct IWICMetadataQueryWriterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICMetadataQueryWriter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICMetadataQueryWriter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICMetadataQueryWriter *This);
+                     IWICMetadataQueryWriter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICMetadataQueryWriter *This);
+                     IWICMetadataQueryWriter *This);
 
     /*** IWICMetadataQueryReader methods ***/
     HRESULT (STDMETHODCALLTYPE *GetContainerFormat)(
-        IWICMetadataQueryWriter *This,
-        GUID *pguidContainerFormat);
+                     IWICMetadataQueryWriter *This,
+                     GUID *pguidContainerFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetLocation)(
-        IWICMetadataQueryWriter *This,
-        UINT cchMaxLength,
-        WCHAR *wzNamespace,
-        UINT *pcchActualLength);
+                     IWICMetadataQueryWriter *This,
+                     UINT cchMaxLength,
+                     WCHAR *wzNamespace,
+                     UINT *pcchActualLength);
 
     HRESULT (STDMETHODCALLTYPE *GetMetadataByName)(
-        IWICMetadataQueryWriter *This,
-        LPCWSTR wzName,
-        PROPVARIANT *pvarValue);
+                     IWICMetadataQueryWriter *This,
+                     LPCWSTR wzName,
+                     PROPVARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IWICMetadataQueryWriter *This,
-        IEnumString **ppIEnumString);
+                     IWICMetadataQueryWriter *This,
+                     IEnumString **ppIEnumString);
 
     /*** IWICMetadataQueryWriter methods ***/
     HRESULT (STDMETHODCALLTYPE *SetMetadataByName)(
-        IWICMetadataQueryWriter *This,
-        LPCWSTR wzName,
-        const PROPVARIANT *pvarValue);
+                     IWICMetadataQueryWriter *This,
+                     LPCWSTR wzName,
+                     const PROPVARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *RemoveMetadataByName)(
-        IWICMetadataQueryWriter *This,
-        LPCWSTR wzName);
+                     IWICMetadataQueryWriter *This,
+                     LPCWSTR wzName);
 
     END_INTERFACE
 } IWICMetadataQueryWriterVtbl;
@@ -1888,15 +1888,15 @@ MIDL_INTERFACE("3b16811b-6a43-4ec9-a813-3d930c13b940")
 IWICBitmapFrameDecode : public IWICBitmapSource
 {
     virtual HRESULT STDMETHODCALLTYPE GetMetadataQueryReader(
-        IWICMetadataQueryReader **ppIMetadataQueryReader) = 0;
+                     IWICMetadataQueryReader **ppIMetadataQueryReader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorContexts(
-        UINT cCount,
-        IWICColorContext **ppIColorContexts,
-        UINT *pcActualCount) = 0;
+                     UINT cCount,
+                     IWICColorContext **ppIColorContexts,
+                     UINT *pcActualCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThumbnail(
-        IWICBitmapSource **ppIThumbnail) = 0;
+                     IWICBitmapSource **ppIThumbnail) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1908,56 +1908,56 @@ typedef struct IWICBitmapFrameDecodeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapFrameDecode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapFrameDecode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapFrameDecode *This);
+                     IWICBitmapFrameDecode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapFrameDecode *This);
+                     IWICBitmapFrameDecode *This);
 
     /*** IWICBitmapSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICBitmapFrameDecode *This,
-        UINT *puiWidth,
-        UINT *puiHeight);
+                     IWICBitmapFrameDecode *This,
+                     UINT *puiWidth,
+                     UINT *puiHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICBitmapFrameDecode *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICBitmapFrameDecode *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetResolution)(
-        IWICBitmapFrameDecode *This,
-        double *pDpiX,
-        double *pDpiY);
+                     IWICBitmapFrameDecode *This,
+                     double *pDpiX,
+                     double *pDpiY);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICBitmapFrameDecode *This,
-        IWICPalette *pIPalette);
+                     IWICBitmapFrameDecode *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CopyPixels)(
-        IWICBitmapFrameDecode *This,
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer);
+                     IWICBitmapFrameDecode *This,
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer);
 
     /*** IWICBitmapFrameDecode methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMetadataQueryReader)(
-        IWICBitmapFrameDecode *This,
-        IWICMetadataQueryReader **ppIMetadataQueryReader);
+                     IWICBitmapFrameDecode *This,
+                     IWICMetadataQueryReader **ppIMetadataQueryReader);
 
     HRESULT (STDMETHODCALLTYPE *GetColorContexts)(
-        IWICBitmapFrameDecode *This,
-        UINT cCount,
-        IWICColorContext **ppIColorContexts,
-        UINT *pcActualCount);
+                     IWICBitmapFrameDecode *This,
+                     UINT cCount,
+                     IWICColorContext **ppIColorContexts,
+                     UINT *pcActualCount);
 
     HRESULT (STDMETHODCALLTYPE *GetThumbnail)(
-        IWICBitmapFrameDecode *This,
-        IWICBitmapSource **ppIThumbnail);
+                     IWICBitmapFrameDecode *This,
+                     IWICBitmapSource **ppIThumbnail);
 
     END_INTERFACE
 } IWICBitmapFrameDecodeVtbl;
@@ -2039,22 +2039,22 @@ MIDL_INTERFACE("e8eda601-3d48-431a-ab44-69059be88bbe")
 IWICPixelFormatInfo : public IWICComponentInfo
 {
     virtual HRESULT STDMETHODCALLTYPE GetFormatGUID(
-        GUID *pFormat) = 0;
+                     GUID *pFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorContext(
-        IWICColorContext **ppIColorContext) = 0;
+                     IWICColorContext **ppIColorContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBitsPerPixel(
-        UINT *puiBitsPerPixel) = 0;
+                     UINT *puiBitsPerPixel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetChannelCount(
-        UINT *puiChannelCount) = 0;
+                     UINT *puiChannelCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetChannelMask(
-        UINT uiChannelIndex,
-        UINT cbMaskBuffer,
-        BYTE *pbMaskBuffer,
-        UINT *pcbActual) = 0;
+                     UINT uiChannelIndex,
+                     UINT cbMaskBuffer,
+                     BYTE *pbMaskBuffer,
+                     UINT *pcbActual) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2066,80 +2066,80 @@ typedef struct IWICPixelFormatInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICPixelFormatInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICPixelFormatInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICPixelFormatInfo *This);
+                     IWICPixelFormatInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICPixelFormatInfo *This);
+                     IWICPixelFormatInfo *This);
 
     /*** IWICComponentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetComponentType)(
-        IWICPixelFormatInfo *This,
-        WICComponentType *pType);
+                     IWICPixelFormatInfo *This,
+                     WICComponentType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetCLSID)(
-        IWICPixelFormatInfo *This,
-        CLSID *pclsid);
+                     IWICPixelFormatInfo *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningStatus)(
-        IWICPixelFormatInfo *This,
-        DWORD *pStatus);
+                     IWICPixelFormatInfo *This,
+                     DWORD *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthor)(
-        IWICPixelFormatInfo *This,
-        UINT cchAuthor,
-        WCHAR *wzAuthor,
-        UINT *pcchActual);
+                     IWICPixelFormatInfo *This,
+                     UINT cchAuthor,
+                     WCHAR *wzAuthor,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetVendorGUID)(
-        IWICPixelFormatInfo *This,
-        GUID *pguidVendor);
+                     IWICPixelFormatInfo *This,
+                     GUID *pguidVendor);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IWICPixelFormatInfo *This,
-        UINT cchVersion,
-        WCHAR *wzVersion,
-        UINT *pcchActual);
+                     IWICPixelFormatInfo *This,
+                     UINT cchVersion,
+                     WCHAR *wzVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetSpecVersion)(
-        IWICPixelFormatInfo *This,
-        UINT cchSpecVersion,
-        WCHAR *wzSpecVersion,
-        UINT *pcchActual);
+                     IWICPixelFormatInfo *This,
+                     UINT cchSpecVersion,
+                     WCHAR *wzSpecVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        IWICPixelFormatInfo *This,
-        UINT cchFriendlyName,
-        WCHAR *wzFriendlyName,
-        UINT *pcchActual);
+                     IWICPixelFormatInfo *This,
+                     UINT cchFriendlyName,
+                     WCHAR *wzFriendlyName,
+                     UINT *pcchActual);
 
     /*** IWICPixelFormatInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFormatGUID)(
-        IWICPixelFormatInfo *This,
-        GUID *pFormat);
+                     IWICPixelFormatInfo *This,
+                     GUID *pFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetColorContext)(
-        IWICPixelFormatInfo *This,
-        IWICColorContext **ppIColorContext);
+                     IWICPixelFormatInfo *This,
+                     IWICColorContext **ppIColorContext);
 
     HRESULT (STDMETHODCALLTYPE *GetBitsPerPixel)(
-        IWICPixelFormatInfo *This,
-        UINT *puiBitsPerPixel);
+                     IWICPixelFormatInfo *This,
+                     UINT *puiBitsPerPixel);
 
     HRESULT (STDMETHODCALLTYPE *GetChannelCount)(
-        IWICPixelFormatInfo *This,
-        UINT *puiChannelCount);
+                     IWICPixelFormatInfo *This,
+                     UINT *puiChannelCount);
 
     HRESULT (STDMETHODCALLTYPE *GetChannelMask)(
-        IWICPixelFormatInfo *This,
-        UINT uiChannelIndex,
-        UINT cbMaskBuffer,
-        BYTE *pbMaskBuffer,
-        UINT *pcbActual);
+                     IWICPixelFormatInfo *This,
+                     UINT uiChannelIndex,
+                     UINT cbMaskBuffer,
+                     BYTE *pbMaskBuffer,
+                     UINT *pcbActual);
 
     END_INTERFACE
 } IWICPixelFormatInfoVtbl;
@@ -2241,10 +2241,10 @@ MIDL_INTERFACE("a9db33a2-af5f-43c7-b679-74f5984b5aa4")
 IWICPixelFormatInfo2 : public IWICPixelFormatInfo
 {
     virtual HRESULT STDMETHODCALLTYPE SupportsTransparency(
-        WINBOOL *pfSupportsTransparency) = 0;
+                     WINBOOL *pfSupportsTransparency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumericRepresentation(
-        WICPixelFormatNumericRepresentation *pNumericRepresentation) = 0;
+                     WICPixelFormatNumericRepresentation *pNumericRepresentation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2256,89 +2256,89 @@ typedef struct IWICPixelFormatInfo2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICPixelFormatInfo2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICPixelFormatInfo2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICPixelFormatInfo2 *This);
+                     IWICPixelFormatInfo2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICPixelFormatInfo2 *This);
+                     IWICPixelFormatInfo2 *This);
 
     /*** IWICComponentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetComponentType)(
-        IWICPixelFormatInfo2 *This,
-        WICComponentType *pType);
+                     IWICPixelFormatInfo2 *This,
+                     WICComponentType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetCLSID)(
-        IWICPixelFormatInfo2 *This,
-        CLSID *pclsid);
+                     IWICPixelFormatInfo2 *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningStatus)(
-        IWICPixelFormatInfo2 *This,
-        DWORD *pStatus);
+                     IWICPixelFormatInfo2 *This,
+                     DWORD *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthor)(
-        IWICPixelFormatInfo2 *This,
-        UINT cchAuthor,
-        WCHAR *wzAuthor,
-        UINT *pcchActual);
+                     IWICPixelFormatInfo2 *This,
+                     UINT cchAuthor,
+                     WCHAR *wzAuthor,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetVendorGUID)(
-        IWICPixelFormatInfo2 *This,
-        GUID *pguidVendor);
+                     IWICPixelFormatInfo2 *This,
+                     GUID *pguidVendor);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IWICPixelFormatInfo2 *This,
-        UINT cchVersion,
-        WCHAR *wzVersion,
-        UINT *pcchActual);
+                     IWICPixelFormatInfo2 *This,
+                     UINT cchVersion,
+                     WCHAR *wzVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetSpecVersion)(
-        IWICPixelFormatInfo2 *This,
-        UINT cchSpecVersion,
-        WCHAR *wzSpecVersion,
-        UINT *pcchActual);
+                     IWICPixelFormatInfo2 *This,
+                     UINT cchSpecVersion,
+                     WCHAR *wzSpecVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        IWICPixelFormatInfo2 *This,
-        UINT cchFriendlyName,
-        WCHAR *wzFriendlyName,
-        UINT *pcchActual);
+                     IWICPixelFormatInfo2 *This,
+                     UINT cchFriendlyName,
+                     WCHAR *wzFriendlyName,
+                     UINT *pcchActual);
 
     /*** IWICPixelFormatInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFormatGUID)(
-        IWICPixelFormatInfo2 *This,
-        GUID *pFormat);
+                     IWICPixelFormatInfo2 *This,
+                     GUID *pFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetColorContext)(
-        IWICPixelFormatInfo2 *This,
-        IWICColorContext **ppIColorContext);
+                     IWICPixelFormatInfo2 *This,
+                     IWICColorContext **ppIColorContext);
 
     HRESULT (STDMETHODCALLTYPE *GetBitsPerPixel)(
-        IWICPixelFormatInfo2 *This,
-        UINT *puiBitsPerPixel);
+                     IWICPixelFormatInfo2 *This,
+                     UINT *puiBitsPerPixel);
 
     HRESULT (STDMETHODCALLTYPE *GetChannelCount)(
-        IWICPixelFormatInfo2 *This,
-        UINT *puiChannelCount);
+                     IWICPixelFormatInfo2 *This,
+                     UINT *puiChannelCount);
 
     HRESULT (STDMETHODCALLTYPE *GetChannelMask)(
-        IWICPixelFormatInfo2 *This,
-        UINT uiChannelIndex,
-        UINT cbMaskBuffer,
-        BYTE *pbMaskBuffer,
-        UINT *pcbActual);
+                     IWICPixelFormatInfo2 *This,
+                     UINT uiChannelIndex,
+                     UINT cbMaskBuffer,
+                     BYTE *pbMaskBuffer,
+                     UINT *pcbActual);
 
     /*** IWICPixelFormatInfo2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SupportsTransparency)(
-        IWICPixelFormatInfo2 *This,
-        WINBOOL *pfSupportsTransparency);
+                     IWICPixelFormatInfo2 *This,
+                     WINBOOL *pfSupportsTransparency);
 
     HRESULT (STDMETHODCALLTYPE *GetNumericRepresentation)(
-        IWICPixelFormatInfo2 *This,
-        WICPixelFormatNumericRepresentation *pNumericRepresentation);
+                     IWICPixelFormatInfo2 *This,
+                     WICPixelFormatNumericRepresentation *pNumericRepresentation);
 
     END_INTERFACE
 } IWICPixelFormatInfo2Vtbl;
@@ -2450,53 +2450,53 @@ MIDL_INTERFACE("e87a44c4-b76e-4c47-8b09-298eb12a2714")
 IWICBitmapCodecInfo : public IWICComponentInfo
 {
     virtual HRESULT STDMETHODCALLTYPE GetContainerFormat(
-        GUID *pguidContainerFormat) = 0;
+                     GUID *pguidContainerFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPixelFormats(
-        UINT cFormats,
-        GUID *pguidPixelFormats,
-        UINT *pcActual) = 0;
+                     UINT cFormats,
+                     GUID *pguidPixelFormats,
+                     UINT *pcActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorManagementVersion(
-        UINT cchColorManagementVersion,
-        WCHAR *wzColorManagementVersion,
-        UINT *pcchActual) = 0;
+                     UINT cchColorManagementVersion,
+                     WCHAR *wzColorManagementVersion,
+                     UINT *pcchActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceManufacturer(
-        UINT cchDeviceManufacturer,
-        WCHAR *wzDeviceManufacturer,
-        UINT *pcchActual) = 0;
+                     UINT cchDeviceManufacturer,
+                     WCHAR *wzDeviceManufacturer,
+                     UINT *pcchActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceModels(
-        UINT cchDeviceModels,
-        WCHAR *wzDeviceModels,
-        UINT *pcchActual) = 0;
+                     UINT cchDeviceModels,
+                     WCHAR *wzDeviceModels,
+                     UINT *pcchActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMimeTypes(
-        UINT cchMimeTypes,
-        WCHAR *wzMimeTypes,
-        UINT *pcchActual) = 0;
+                     UINT cchMimeTypes,
+                     WCHAR *wzMimeTypes,
+                     UINT *pcchActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileExtensions(
-        UINT cchFileExtensions,
-        WCHAR *wzFileExtensions,
-        UINT *pcchActual) = 0;
+                     UINT cchFileExtensions,
+                     WCHAR *wzFileExtensions,
+                     UINT *pcchActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoesSupportAnimation(
-        WINBOOL *pfSupportAnimation) = 0;
+                     WINBOOL *pfSupportAnimation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoesSupportChromaKey(
-        WINBOOL *pfSupportChromaKey) = 0;
+                     WINBOOL *pfSupportChromaKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoesSupportLossless(
-        WINBOOL *pfSupportLossless) = 0;
+                     WINBOOL *pfSupportLossless) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoesSupportMultiframe(
-        WINBOOL *pfSupportMultiframe) = 0;
+                     WINBOOL *pfSupportMultiframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchesMimeType(
-        LPCWSTR wzMimeType,
-        WINBOOL *pfMatches) = 0;
+                     LPCWSTR wzMimeType,
+                     WINBOOL *pfMatches) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2508,118 +2508,118 @@ typedef struct IWICBitmapCodecInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapCodecInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapCodecInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapCodecInfo *This);
+                     IWICBitmapCodecInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapCodecInfo *This);
+                     IWICBitmapCodecInfo *This);
 
     /*** IWICComponentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetComponentType)(
-        IWICBitmapCodecInfo *This,
-        WICComponentType *pType);
+                     IWICBitmapCodecInfo *This,
+                     WICComponentType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetCLSID)(
-        IWICBitmapCodecInfo *This,
-        CLSID *pclsid);
+                     IWICBitmapCodecInfo *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningStatus)(
-        IWICBitmapCodecInfo *This,
-        DWORD *pStatus);
+                     IWICBitmapCodecInfo *This,
+                     DWORD *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthor)(
-        IWICBitmapCodecInfo *This,
-        UINT cchAuthor,
-        WCHAR *wzAuthor,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchAuthor,
+                     WCHAR *wzAuthor,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetVendorGUID)(
-        IWICBitmapCodecInfo *This,
-        GUID *pguidVendor);
+                     IWICBitmapCodecInfo *This,
+                     GUID *pguidVendor);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IWICBitmapCodecInfo *This,
-        UINT cchVersion,
-        WCHAR *wzVersion,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchVersion,
+                     WCHAR *wzVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetSpecVersion)(
-        IWICBitmapCodecInfo *This,
-        UINT cchSpecVersion,
-        WCHAR *wzSpecVersion,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchSpecVersion,
+                     WCHAR *wzSpecVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        IWICBitmapCodecInfo *This,
-        UINT cchFriendlyName,
-        WCHAR *wzFriendlyName,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchFriendlyName,
+                     WCHAR *wzFriendlyName,
+                     UINT *pcchActual);
 
     /*** IWICBitmapCodecInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetContainerFormat)(
-        IWICBitmapCodecInfo *This,
-        GUID *pguidContainerFormat);
+                     IWICBitmapCodecInfo *This,
+                     GUID *pguidContainerFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormats)(
-        IWICBitmapCodecInfo *This,
-        UINT cFormats,
-        GUID *pguidPixelFormats,
-        UINT *pcActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cFormats,
+                     GUID *pguidPixelFormats,
+                     UINT *pcActual);
 
     HRESULT (STDMETHODCALLTYPE *GetColorManagementVersion)(
-        IWICBitmapCodecInfo *This,
-        UINT cchColorManagementVersion,
-        WCHAR *wzColorManagementVersion,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchColorManagementVersion,
+                     WCHAR *wzColorManagementVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceManufacturer)(
-        IWICBitmapCodecInfo *This,
-        UINT cchDeviceManufacturer,
-        WCHAR *wzDeviceManufacturer,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchDeviceManufacturer,
+                     WCHAR *wzDeviceManufacturer,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceModels)(
-        IWICBitmapCodecInfo *This,
-        UINT cchDeviceModels,
-        WCHAR *wzDeviceModels,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchDeviceModels,
+                     WCHAR *wzDeviceModels,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetMimeTypes)(
-        IWICBitmapCodecInfo *This,
-        UINT cchMimeTypes,
-        WCHAR *wzMimeTypes,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchMimeTypes,
+                     WCHAR *wzMimeTypes,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFileExtensions)(
-        IWICBitmapCodecInfo *This,
-        UINT cchFileExtensions,
-        WCHAR *wzFileExtensions,
-        UINT *pcchActual);
+                     IWICBitmapCodecInfo *This,
+                     UINT cchFileExtensions,
+                     WCHAR *wzFileExtensions,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportAnimation)(
-        IWICBitmapCodecInfo *This,
-        WINBOOL *pfSupportAnimation);
+                     IWICBitmapCodecInfo *This,
+                     WINBOOL *pfSupportAnimation);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportChromaKey)(
-        IWICBitmapCodecInfo *This,
-        WINBOOL *pfSupportChromaKey);
+                     IWICBitmapCodecInfo *This,
+                     WINBOOL *pfSupportChromaKey);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportLossless)(
-        IWICBitmapCodecInfo *This,
-        WINBOOL *pfSupportLossless);
+                     IWICBitmapCodecInfo *This,
+                     WINBOOL *pfSupportLossless);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportMultiframe)(
-        IWICBitmapCodecInfo *This,
-        WINBOOL *pfSupportMultiframe);
+                     IWICBitmapCodecInfo *This,
+                     WINBOOL *pfSupportMultiframe);
 
     HRESULT (STDMETHODCALLTYPE *MatchesMimeType)(
-        IWICBitmapCodecInfo *This,
-        LPCWSTR wzMimeType,
-        WINBOOL *pfMatches);
+                     IWICBitmapCodecInfo *This,
+                     LPCWSTR wzMimeType,
+                     WINBOOL *pfMatches);
 
     END_INTERFACE
 } IWICBitmapCodecInfoVtbl;
@@ -2757,17 +2757,17 @@ MIDL_INTERFACE("d8cd007f-d08f-4191-9bfc-236ea7f0e4b5")
 IWICBitmapDecoderInfo : public IWICBitmapCodecInfo
 {
     virtual HRESULT STDMETHODCALLTYPE GetPatterns(
-        UINT cbSizePatterns,
-        WICBitmapPattern *pPatterns,
-        UINT *pcPatterns,
-        UINT *pcbPatternsActual) = 0;
+                     UINT cbSizePatterns,
+                     WICBitmapPattern *pPatterns,
+                     UINT *pcPatterns,
+                     UINT *pcbPatternsActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchesPattern(
-        IStream *pIStream,
-        WINBOOL *pfMatches) = 0;
+                     IStream *pIStream,
+                     WINBOOL *pfMatches) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-        IWICBitmapDecoder **ppIBitmapDecoder) = 0;
+                     IWICBitmapDecoder **ppIBitmapDecoder) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2779,135 +2779,135 @@ typedef struct IWICBitmapDecoderInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapDecoderInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapDecoderInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapDecoderInfo *This);
+                     IWICBitmapDecoderInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapDecoderInfo *This);
+                     IWICBitmapDecoderInfo *This);
 
     /*** IWICComponentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetComponentType)(
-        IWICBitmapDecoderInfo *This,
-        WICComponentType *pType);
+                     IWICBitmapDecoderInfo *This,
+                     WICComponentType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetCLSID)(
-        IWICBitmapDecoderInfo *This,
-        CLSID *pclsid);
+                     IWICBitmapDecoderInfo *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningStatus)(
-        IWICBitmapDecoderInfo *This,
-        DWORD *pStatus);
+                     IWICBitmapDecoderInfo *This,
+                     DWORD *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthor)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchAuthor,
-        WCHAR *wzAuthor,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchAuthor,
+                     WCHAR *wzAuthor,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetVendorGUID)(
-        IWICBitmapDecoderInfo *This,
-        GUID *pguidVendor);
+                     IWICBitmapDecoderInfo *This,
+                     GUID *pguidVendor);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchVersion,
-        WCHAR *wzVersion,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchVersion,
+                     WCHAR *wzVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetSpecVersion)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchSpecVersion,
-        WCHAR *wzSpecVersion,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchSpecVersion,
+                     WCHAR *wzSpecVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchFriendlyName,
-        WCHAR *wzFriendlyName,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchFriendlyName,
+                     WCHAR *wzFriendlyName,
+                     UINT *pcchActual);
 
     /*** IWICBitmapCodecInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetContainerFormat)(
-        IWICBitmapDecoderInfo *This,
-        GUID *pguidContainerFormat);
+                     IWICBitmapDecoderInfo *This,
+                     GUID *pguidContainerFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormats)(
-        IWICBitmapDecoderInfo *This,
-        UINT cFormats,
-        GUID *pguidPixelFormats,
-        UINT *pcActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cFormats,
+                     GUID *pguidPixelFormats,
+                     UINT *pcActual);
 
     HRESULT (STDMETHODCALLTYPE *GetColorManagementVersion)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchColorManagementVersion,
-        WCHAR *wzColorManagementVersion,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchColorManagementVersion,
+                     WCHAR *wzColorManagementVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceManufacturer)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchDeviceManufacturer,
-        WCHAR *wzDeviceManufacturer,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchDeviceManufacturer,
+                     WCHAR *wzDeviceManufacturer,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceModels)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchDeviceModels,
-        WCHAR *wzDeviceModels,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchDeviceModels,
+                     WCHAR *wzDeviceModels,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetMimeTypes)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchMimeTypes,
-        WCHAR *wzMimeTypes,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchMimeTypes,
+                     WCHAR *wzMimeTypes,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFileExtensions)(
-        IWICBitmapDecoderInfo *This,
-        UINT cchFileExtensions,
-        WCHAR *wzFileExtensions,
-        UINT *pcchActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cchFileExtensions,
+                     WCHAR *wzFileExtensions,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportAnimation)(
-        IWICBitmapDecoderInfo *This,
-        WINBOOL *pfSupportAnimation);
+                     IWICBitmapDecoderInfo *This,
+                     WINBOOL *pfSupportAnimation);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportChromaKey)(
-        IWICBitmapDecoderInfo *This,
-        WINBOOL *pfSupportChromaKey);
+                     IWICBitmapDecoderInfo *This,
+                     WINBOOL *pfSupportChromaKey);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportLossless)(
-        IWICBitmapDecoderInfo *This,
-        WINBOOL *pfSupportLossless);
+                     IWICBitmapDecoderInfo *This,
+                     WINBOOL *pfSupportLossless);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportMultiframe)(
-        IWICBitmapDecoderInfo *This,
-        WINBOOL *pfSupportMultiframe);
+                     IWICBitmapDecoderInfo *This,
+                     WINBOOL *pfSupportMultiframe);
 
     HRESULT (STDMETHODCALLTYPE *MatchesMimeType)(
-        IWICBitmapDecoderInfo *This,
-        LPCWSTR wzMimeType,
-        WINBOOL *pfMatches);
+                     IWICBitmapDecoderInfo *This,
+                     LPCWSTR wzMimeType,
+                     WINBOOL *pfMatches);
 
     /*** IWICBitmapDecoderInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPatterns)(
-        IWICBitmapDecoderInfo *This,
-        UINT cbSizePatterns,
-        WICBitmapPattern *pPatterns,
-        UINT *pcPatterns,
-        UINT *pcbPatternsActual);
+                     IWICBitmapDecoderInfo *This,
+                     UINT cbSizePatterns,
+                     WICBitmapPattern *pPatterns,
+                     UINT *pcPatterns,
+                     UINT *pcbPatternsActual);
 
     HRESULT (STDMETHODCALLTYPE *MatchesPattern)(
-        IWICBitmapDecoderInfo *This,
-        IStream *pIStream,
-        WINBOOL *pfMatches);
+                     IWICBitmapDecoderInfo *This,
+                     IStream *pIStream,
+                     WINBOOL *pfMatches);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        IWICBitmapDecoderInfo *This,
-        IWICBitmapDecoder **ppIBitmapDecoder);
+                     IWICBitmapDecoderInfo *This,
+                     IWICBitmapDecoder **ppIBitmapDecoder);
 
     END_INTERFACE
 } IWICBitmapDecoderInfoVtbl;
@@ -3051,42 +3051,42 @@ MIDL_INTERFACE("9edde9e7-8dee-47ea-99df-e6faf2ed44bf")
 IWICBitmapDecoder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryCapability(
-        IStream *pIStream,
-        DWORD *pdwCapability) = 0;
+                     IStream *pIStream,
+                     DWORD *pdwCapability) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IStream *pIStream,
-        WICDecodeOptions cacheOptions) = 0;
+                     IStream *pIStream,
+                     WICDecodeOptions cacheOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContainerFormat(
-        GUID *pguidContainerFormat) = 0;
+                     GUID *pguidContainerFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDecoderInfo(
-        IWICBitmapDecoderInfo **ppIDecoderInfo) = 0;
+                     IWICBitmapDecoderInfo **ppIDecoderInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyPalette(
-        IWICPalette *pIPalette) = 0;
+                     IWICPalette *pIPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetadataQueryReader(
-        IWICMetadataQueryReader **ppIMetadataQueryReader) = 0;
+                     IWICMetadataQueryReader **ppIMetadataQueryReader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreview(
-        IWICBitmapSource **ppIBitmapSource) = 0;
+                     IWICBitmapSource **ppIBitmapSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorContexts(
-        UINT cCount,
-        IWICColorContext **ppIColorContexts,
-        UINT *pcActualCount) = 0;
+                     UINT cCount,
+                     IWICColorContext **ppIColorContexts,
+                     UINT *pcActualCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThumbnail(
-        IWICBitmapSource **ppIThumbnail) = 0;
+                     IWICBitmapSource **ppIThumbnail) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFrameCount(
-        UINT *pCount) = 0;
+                     UINT *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFrame(
-        UINT index,
-        IWICBitmapFrameDecode **ppIBitmapFrame) = 0;
+                     UINT index,
+                     IWICBitmapFrameDecode **ppIBitmapFrame) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3098,65 +3098,65 @@ typedef struct IWICBitmapDecoderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapDecoder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapDecoder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapDecoder *This);
+                     IWICBitmapDecoder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapDecoder *This);
+                     IWICBitmapDecoder *This);
 
     /*** IWICBitmapDecoder methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryCapability)(
-        IWICBitmapDecoder *This,
-        IStream *pIStream,
-        DWORD *pdwCapability);
+                     IWICBitmapDecoder *This,
+                     IStream *pIStream,
+                     DWORD *pdwCapability);
 
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICBitmapDecoder *This,
-        IStream *pIStream,
-        WICDecodeOptions cacheOptions);
+                     IWICBitmapDecoder *This,
+                     IStream *pIStream,
+                     WICDecodeOptions cacheOptions);
 
     HRESULT (STDMETHODCALLTYPE *GetContainerFormat)(
-        IWICBitmapDecoder *This,
-        GUID *pguidContainerFormat);
+                     IWICBitmapDecoder *This,
+                     GUID *pguidContainerFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetDecoderInfo)(
-        IWICBitmapDecoder *This,
-        IWICBitmapDecoderInfo **ppIDecoderInfo);
+                     IWICBitmapDecoder *This,
+                     IWICBitmapDecoderInfo **ppIDecoderInfo);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICBitmapDecoder *This,
-        IWICPalette *pIPalette);
+                     IWICBitmapDecoder *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *GetMetadataQueryReader)(
-        IWICBitmapDecoder *This,
-        IWICMetadataQueryReader **ppIMetadataQueryReader);
+                     IWICBitmapDecoder *This,
+                     IWICMetadataQueryReader **ppIMetadataQueryReader);
 
     HRESULT (STDMETHODCALLTYPE *GetPreview)(
-        IWICBitmapDecoder *This,
-        IWICBitmapSource **ppIBitmapSource);
+                     IWICBitmapDecoder *This,
+                     IWICBitmapSource **ppIBitmapSource);
 
     HRESULT (STDMETHODCALLTYPE *GetColorContexts)(
-        IWICBitmapDecoder *This,
-        UINT cCount,
-        IWICColorContext **ppIColorContexts,
-        UINT *pcActualCount);
+                     IWICBitmapDecoder *This,
+                     UINT cCount,
+                     IWICColorContext **ppIColorContexts,
+                     UINT *pcActualCount);
 
     HRESULT (STDMETHODCALLTYPE *GetThumbnail)(
-        IWICBitmapDecoder *This,
-        IWICBitmapSource **ppIThumbnail);
+                     IWICBitmapDecoder *This,
+                     IWICBitmapSource **ppIThumbnail);
 
     HRESULT (STDMETHODCALLTYPE *GetFrameCount)(
-        IWICBitmapDecoder *This,
-        UINT *pCount);
+                     IWICBitmapDecoder *This,
+                     UINT *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetFrame)(
-        IWICBitmapDecoder *This,
-        UINT index,
-        IWICBitmapFrameDecode **ppIBitmapFrame);
+                     IWICBitmapDecoder *This,
+                     UINT index,
+                     IWICBitmapFrameDecode **ppIBitmapFrame);
 
     END_INTERFACE
 } IWICBitmapDecoderVtbl;
@@ -3248,44 +3248,44 @@ MIDL_INTERFACE("00000105-a8f2-4877-ba0a-fd2b6645fb94")
 IWICBitmapFrameEncode : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IPropertyBag2 *pIEncoderOptions) = 0;
+                     IPropertyBag2 *pIEncoderOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSize(
-        UINT uiWidth,
-        UINT uiHeight) = 0;
+                     UINT uiWidth,
+                     UINT uiHeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetResolution(
-        double dpiX,
-        double dpiY) = 0;
+                     double dpiX,
+                     double dpiY) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPixelFormat(
-        WICPixelFormatGUID *pPixelFormat) = 0;
+                     WICPixelFormatGUID *pPixelFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColorContexts(
-        UINT cCount,
-        IWICColorContext **ppIColorContext) = 0;
+                     UINT cCount,
+                     IWICColorContext **ppIColorContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPalette(
-        IWICPalette *pIPalette) = 0;
+                     IWICPalette *pIPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetThumbnail(
-        IWICBitmapSource *pIThumbnail) = 0;
+                     IWICBitmapSource *pIThumbnail) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WritePixels(
-        UINT lineCount,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbPixels) = 0;
+                     UINT lineCount,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbPixels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteSource(
-        IWICBitmapSource *pIBitmapSource,
-        WICRect *prc) = 0;
+                     IWICBitmapSource *pIBitmapSource,
+                     WICRect *prc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetadataQueryWriter(
-        IWICMetadataQueryWriter **ppIMetadataQueryWriter) = 0;
+                     IWICMetadataQueryWriter **ppIMetadataQueryWriter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3297,66 +3297,66 @@ typedef struct IWICBitmapFrameEncodeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapFrameEncode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapFrameEncode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapFrameEncode *This);
+                     IWICBitmapFrameEncode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapFrameEncode *This);
+                     IWICBitmapFrameEncode *This);
 
     /*** IWICBitmapFrameEncode methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICBitmapFrameEncode *This,
-        IPropertyBag2 *pIEncoderOptions);
+                     IWICBitmapFrameEncode *This,
+                     IPropertyBag2 *pIEncoderOptions);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        IWICBitmapFrameEncode *This,
-        UINT uiWidth,
-        UINT uiHeight);
+                     IWICBitmapFrameEncode *This,
+                     UINT uiWidth,
+                     UINT uiHeight);
 
     HRESULT (STDMETHODCALLTYPE *SetResolution)(
-        IWICBitmapFrameEncode *This,
-        double dpiX,
-        double dpiY);
+                     IWICBitmapFrameEncode *This,
+                     double dpiX,
+                     double dpiY);
 
     HRESULT (STDMETHODCALLTYPE *SetPixelFormat)(
-        IWICBitmapFrameEncode *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICBitmapFrameEncode *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *SetColorContexts)(
-        IWICBitmapFrameEncode *This,
-        UINT cCount,
-        IWICColorContext **ppIColorContext);
+                     IWICBitmapFrameEncode *This,
+                     UINT cCount,
+                     IWICColorContext **ppIColorContext);
 
     HRESULT (STDMETHODCALLTYPE *SetPalette)(
-        IWICBitmapFrameEncode *This,
-        IWICPalette *pIPalette);
+                     IWICBitmapFrameEncode *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnail)(
-        IWICBitmapFrameEncode *This,
-        IWICBitmapSource *pIThumbnail);
+                     IWICBitmapFrameEncode *This,
+                     IWICBitmapSource *pIThumbnail);
 
     HRESULT (STDMETHODCALLTYPE *WritePixels)(
-        IWICBitmapFrameEncode *This,
-        UINT lineCount,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbPixels);
+                     IWICBitmapFrameEncode *This,
+                     UINT lineCount,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbPixels);
 
     HRESULT (STDMETHODCALLTYPE *WriteSource)(
-        IWICBitmapFrameEncode *This,
-        IWICBitmapSource *pIBitmapSource,
-        WICRect *prc);
+                     IWICBitmapFrameEncode *This,
+                     IWICBitmapSource *pIBitmapSource,
+                     WICRect *prc);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWICBitmapFrameEncode *This);
+                     IWICBitmapFrameEncode *This);
 
     HRESULT (STDMETHODCALLTYPE *GetMetadataQueryWriter)(
-        IWICBitmapFrameEncode *This,
-        IWICMetadataQueryWriter **ppIMetadataQueryWriter);
+                     IWICBitmapFrameEncode *This,
+                     IWICMetadataQueryWriter **ppIMetadataQueryWriter);
 
     END_INTERFACE
 } IWICBitmapFrameEncodeVtbl;
@@ -3456,7 +3456,7 @@ MIDL_INTERFACE("94c9b4ee-a09f-4f92-8a1e-4a9bce7e76fb")
 IWICBitmapEncoderInfo : public IWICBitmapCodecInfo
 {
     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-        IWICBitmapEncoder **ppIBitmapEncoder) = 0;
+                     IWICBitmapEncoder **ppIBitmapEncoder) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3468,123 +3468,123 @@ typedef struct IWICBitmapEncoderInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapEncoderInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapEncoderInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapEncoderInfo *This);
+                     IWICBitmapEncoderInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapEncoderInfo *This);
+                     IWICBitmapEncoderInfo *This);
 
     /*** IWICComponentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetComponentType)(
-        IWICBitmapEncoderInfo *This,
-        WICComponentType *pType);
+                     IWICBitmapEncoderInfo *This,
+                     WICComponentType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetCLSID)(
-        IWICBitmapEncoderInfo *This,
-        CLSID *pclsid);
+                     IWICBitmapEncoderInfo *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningStatus)(
-        IWICBitmapEncoderInfo *This,
-        DWORD *pStatus);
+                     IWICBitmapEncoderInfo *This,
+                     DWORD *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthor)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchAuthor,
-        WCHAR *wzAuthor,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchAuthor,
+                     WCHAR *wzAuthor,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetVendorGUID)(
-        IWICBitmapEncoderInfo *This,
-        GUID *pguidVendor);
+                     IWICBitmapEncoderInfo *This,
+                     GUID *pguidVendor);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchVersion,
-        WCHAR *wzVersion,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchVersion,
+                     WCHAR *wzVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetSpecVersion)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchSpecVersion,
-        WCHAR *wzSpecVersion,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchSpecVersion,
+                     WCHAR *wzSpecVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchFriendlyName,
-        WCHAR *wzFriendlyName,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchFriendlyName,
+                     WCHAR *wzFriendlyName,
+                     UINT *pcchActual);
 
     /*** IWICBitmapCodecInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetContainerFormat)(
-        IWICBitmapEncoderInfo *This,
-        GUID *pguidContainerFormat);
+                     IWICBitmapEncoderInfo *This,
+                     GUID *pguidContainerFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormats)(
-        IWICBitmapEncoderInfo *This,
-        UINT cFormats,
-        GUID *pguidPixelFormats,
-        UINT *pcActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cFormats,
+                     GUID *pguidPixelFormats,
+                     UINT *pcActual);
 
     HRESULT (STDMETHODCALLTYPE *GetColorManagementVersion)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchColorManagementVersion,
-        WCHAR *wzColorManagementVersion,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchColorManagementVersion,
+                     WCHAR *wzColorManagementVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceManufacturer)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchDeviceManufacturer,
-        WCHAR *wzDeviceManufacturer,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchDeviceManufacturer,
+                     WCHAR *wzDeviceManufacturer,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceModels)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchDeviceModels,
-        WCHAR *wzDeviceModels,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchDeviceModels,
+                     WCHAR *wzDeviceModels,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetMimeTypes)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchMimeTypes,
-        WCHAR *wzMimeTypes,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchMimeTypes,
+                     WCHAR *wzMimeTypes,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFileExtensions)(
-        IWICBitmapEncoderInfo *This,
-        UINT cchFileExtensions,
-        WCHAR *wzFileExtensions,
-        UINT *pcchActual);
+                     IWICBitmapEncoderInfo *This,
+                     UINT cchFileExtensions,
+                     WCHAR *wzFileExtensions,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportAnimation)(
-        IWICBitmapEncoderInfo *This,
-        WINBOOL *pfSupportAnimation);
+                     IWICBitmapEncoderInfo *This,
+                     WINBOOL *pfSupportAnimation);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportChromaKey)(
-        IWICBitmapEncoderInfo *This,
-        WINBOOL *pfSupportChromaKey);
+                     IWICBitmapEncoderInfo *This,
+                     WINBOOL *pfSupportChromaKey);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportLossless)(
-        IWICBitmapEncoderInfo *This,
-        WINBOOL *pfSupportLossless);
+                     IWICBitmapEncoderInfo *This,
+                     WINBOOL *pfSupportLossless);
 
     HRESULT (STDMETHODCALLTYPE *DoesSupportMultiframe)(
-        IWICBitmapEncoderInfo *This,
-        WINBOOL *pfSupportMultiframe);
+                     IWICBitmapEncoderInfo *This,
+                     WINBOOL *pfSupportMultiframe);
 
     HRESULT (STDMETHODCALLTYPE *MatchesMimeType)(
-        IWICBitmapEncoderInfo *This,
-        LPCWSTR wzMimeType,
-        WINBOOL *pfMatches);
+                     IWICBitmapEncoderInfo *This,
+                     LPCWSTR wzMimeType,
+                     WINBOOL *pfMatches);
 
     /*** IWICBitmapEncoderInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        IWICBitmapEncoderInfo *This,
-        IWICBitmapEncoder **ppIBitmapEncoder);
+                     IWICBitmapEncoderInfo *This,
+                     IWICBitmapEncoder **ppIBitmapEncoder);
 
     END_INTERFACE
 } IWICBitmapEncoderInfoVtbl;
@@ -3720,37 +3720,37 @@ MIDL_INTERFACE("00000103-a8f2-4877-ba0a-fd2b6645fb94")
 IWICBitmapEncoder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IStream *pIStream,
-        WICBitmapEncoderCacheOption cacheOption) = 0;
+                     IStream *pIStream,
+                     WICBitmapEncoderCacheOption cacheOption) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContainerFormat(
-        GUID *pguidContainerFormat) = 0;
+                     GUID *pguidContainerFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEncoderInfo(
-        IWICBitmapEncoderInfo **ppIEncoderInfo) = 0;
+                     IWICBitmapEncoderInfo **ppIEncoderInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColorContexts(
-        UINT cCount,
-        IWICColorContext **ppIColorContext) = 0;
+                     UINT cCount,
+                     IWICColorContext **ppIColorContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPalette(
-        IWICPalette *pIPalette) = 0;
+                     IWICPalette *pIPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetThumbnail(
-        IWICBitmapSource *pIThumbnail) = 0;
+                     IWICBitmapSource *pIThumbnail) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPreview(
-        IWICBitmapSource *pIPreview) = 0;
+                     IWICBitmapSource *pIPreview) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateNewFrame(
-        IWICBitmapFrameEncode **ppIFrameEncode,
-        IPropertyBag2 **ppIEncoderOptions) = 0;
+                     IWICBitmapFrameEncode **ppIFrameEncode,
+                     IPropertyBag2 **ppIEncoderOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetadataQueryWriter(
-        IWICMetadataQueryWriter **ppIMetadataQueryWriter) = 0;
+                     IWICMetadataQueryWriter **ppIMetadataQueryWriter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3762,58 +3762,58 @@ typedef struct IWICBitmapEncoderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapEncoder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapEncoder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapEncoder *This);
+                     IWICBitmapEncoder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapEncoder *This);
+                     IWICBitmapEncoder *This);
 
     /*** IWICBitmapEncoder methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICBitmapEncoder *This,
-        IStream *pIStream,
-        WICBitmapEncoderCacheOption cacheOption);
+                     IWICBitmapEncoder *This,
+                     IStream *pIStream,
+                     WICBitmapEncoderCacheOption cacheOption);
 
     HRESULT (STDMETHODCALLTYPE *GetContainerFormat)(
-        IWICBitmapEncoder *This,
-        GUID *pguidContainerFormat);
+                     IWICBitmapEncoder *This,
+                     GUID *pguidContainerFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetEncoderInfo)(
-        IWICBitmapEncoder *This,
-        IWICBitmapEncoderInfo **ppIEncoderInfo);
+                     IWICBitmapEncoder *This,
+                     IWICBitmapEncoderInfo **ppIEncoderInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetColorContexts)(
-        IWICBitmapEncoder *This,
-        UINT cCount,
-        IWICColorContext **ppIColorContext);
+                     IWICBitmapEncoder *This,
+                     UINT cCount,
+                     IWICColorContext **ppIColorContext);
 
     HRESULT (STDMETHODCALLTYPE *SetPalette)(
-        IWICBitmapEncoder *This,
-        IWICPalette *pIPalette);
+                     IWICBitmapEncoder *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnail)(
-        IWICBitmapEncoder *This,
-        IWICBitmapSource *pIThumbnail);
+                     IWICBitmapEncoder *This,
+                     IWICBitmapSource *pIThumbnail);
 
     HRESULT (STDMETHODCALLTYPE *SetPreview)(
-        IWICBitmapEncoder *This,
-        IWICBitmapSource *pIPreview);
+                     IWICBitmapEncoder *This,
+                     IWICBitmapSource *pIPreview);
 
     HRESULT (STDMETHODCALLTYPE *CreateNewFrame)(
-        IWICBitmapEncoder *This,
-        IWICBitmapFrameEncode **ppIFrameEncode,
-        IPropertyBag2 **ppIEncoderOptions);
+                     IWICBitmapEncoder *This,
+                     IWICBitmapFrameEncode **ppIFrameEncode,
+                     IPropertyBag2 **ppIEncoderOptions);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWICBitmapEncoder *This);
+                     IWICBitmapEncoder *This);
 
     HRESULT (STDMETHODCALLTYPE *GetMetadataQueryWriter)(
-        IWICBitmapEncoder *This,
-        IWICMetadataQueryWriter **ppIMetadataQueryWriter);
+                     IWICBitmapEncoder *This,
+                     IWICMetadataQueryWriter **ppIMetadataQueryWriter);
 
     END_INTERFACE
 } IWICBitmapEncoderVtbl;
@@ -3901,17 +3901,17 @@ MIDL_INTERFACE("00000301-a8f2-4877-ba0a-fd2b6645fb94")
 IWICFormatConverter : public IWICBitmapSource
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IWICBitmapSource *pISource,
-        REFWICPixelFormatGUID dstFormat,
-        WICBitmapDitherType dither,
-        IWICPalette *pIPalette,
-        double alphaThresholdPercent,
-        WICBitmapPaletteType paletteTranslate) = 0;
+                     IWICBitmapSource *pISource,
+                     REFWICPixelFormatGUID dstFormat,
+                     WICBitmapDitherType dither,
+                     IWICPalette *pIPalette,
+                     double alphaThresholdPercent,
+                     WICBitmapPaletteType paletteTranslate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CanConvert(
-        REFWICPixelFormatGUID srcPixelFormat,
-        REFWICPixelFormatGUID dstPixelFormat,
-        WINBOOL *pfCanConvert) = 0;
+                     REFWICPixelFormatGUID srcPixelFormat,
+                     REFWICPixelFormatGUID dstPixelFormat,
+                     WINBOOL *pfCanConvert) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3923,57 +3923,57 @@ typedef struct IWICFormatConverterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICFormatConverter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICFormatConverter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICFormatConverter *This);
+                     IWICFormatConverter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICFormatConverter *This);
+                     IWICFormatConverter *This);
 
     /*** IWICBitmapSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICFormatConverter *This,
-        UINT *puiWidth,
-        UINT *puiHeight);
+                     IWICFormatConverter *This,
+                     UINT *puiWidth,
+                     UINT *puiHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICFormatConverter *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICFormatConverter *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetResolution)(
-        IWICFormatConverter *This,
-        double *pDpiX,
-        double *pDpiY);
+                     IWICFormatConverter *This,
+                     double *pDpiX,
+                     double *pDpiY);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICFormatConverter *This,
-        IWICPalette *pIPalette);
+                     IWICFormatConverter *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CopyPixels)(
-        IWICFormatConverter *This,
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer);
+                     IWICFormatConverter *This,
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer);
 
     /*** IWICFormatConverter methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICFormatConverter *This,
-        IWICBitmapSource *pISource,
-        REFWICPixelFormatGUID dstFormat,
-        WICBitmapDitherType dither,
-        IWICPalette *pIPalette,
-        double alphaThresholdPercent,
-        WICBitmapPaletteType paletteTranslate);
+                     IWICFormatConverter *This,
+                     IWICBitmapSource *pISource,
+                     REFWICPixelFormatGUID dstFormat,
+                     WICBitmapDitherType dither,
+                     IWICPalette *pIPalette,
+                     double alphaThresholdPercent,
+                     WICBitmapPaletteType paletteTranslate);
 
     HRESULT (STDMETHODCALLTYPE *CanConvert)(
-        IWICFormatConverter *This,
-        REFWICPixelFormatGUID srcPixelFormat,
-        REFWICPixelFormatGUID dstPixelFormat,
-        WINBOOL *pfCanConvert);
+                     IWICFormatConverter *This,
+                     REFWICPixelFormatGUID srcPixelFormat,
+                     REFWICPixelFormatGUID dstPixelFormat,
+                     WINBOOL *pfCanConvert);
 
     END_INTERFACE
 } IWICFormatConverterVtbl;
@@ -4051,12 +4051,12 @@ MIDL_INTERFACE("9f34fb65-13f4-4f15-bc57-3726b5e53d9f")
 IWICFormatConverterInfo : public IWICComponentInfo
 {
     virtual HRESULT STDMETHODCALLTYPE GetPixelFormats(
-        UINT cFormats,
-        WICPixelFormatGUID *pPixelFormatGUIDs,
-        UINT *pcActual) = 0;
+                     UINT cFormats,
+                     WICPixelFormatGUID *pPixelFormatGUIDs,
+                     UINT *pcActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-        IWICFormatConverter **ppIConverter) = 0;
+                     IWICFormatConverter **ppIConverter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4068,67 +4068,67 @@ typedef struct IWICFormatConverterInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICFormatConverterInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICFormatConverterInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICFormatConverterInfo *This);
+                     IWICFormatConverterInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICFormatConverterInfo *This);
+                     IWICFormatConverterInfo *This);
 
     /*** IWICComponentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetComponentType)(
-        IWICFormatConverterInfo *This,
-        WICComponentType *pType);
+                     IWICFormatConverterInfo *This,
+                     WICComponentType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetCLSID)(
-        IWICFormatConverterInfo *This,
-        CLSID *pclsid);
+                     IWICFormatConverterInfo *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningStatus)(
-        IWICFormatConverterInfo *This,
-        DWORD *pStatus);
+                     IWICFormatConverterInfo *This,
+                     DWORD *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthor)(
-        IWICFormatConverterInfo *This,
-        UINT cchAuthor,
-        WCHAR *wzAuthor,
-        UINT *pcchActual);
+                     IWICFormatConverterInfo *This,
+                     UINT cchAuthor,
+                     WCHAR *wzAuthor,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetVendorGUID)(
-        IWICFormatConverterInfo *This,
-        GUID *pguidVendor);
+                     IWICFormatConverterInfo *This,
+                     GUID *pguidVendor);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IWICFormatConverterInfo *This,
-        UINT cchVersion,
-        WCHAR *wzVersion,
-        UINT *pcchActual);
+                     IWICFormatConverterInfo *This,
+                     UINT cchVersion,
+                     WCHAR *wzVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetSpecVersion)(
-        IWICFormatConverterInfo *This,
-        UINT cchSpecVersion,
-        WCHAR *wzSpecVersion,
-        UINT *pcchActual);
+                     IWICFormatConverterInfo *This,
+                     UINT cchSpecVersion,
+                     WCHAR *wzSpecVersion,
+                     UINT *pcchActual);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        IWICFormatConverterInfo *This,
-        UINT cchFriendlyName,
-        WCHAR *wzFriendlyName,
-        UINT *pcchActual);
+                     IWICFormatConverterInfo *This,
+                     UINT cchFriendlyName,
+                     WCHAR *wzFriendlyName,
+                     UINT *pcchActual);
 
     /*** IWICFormatConverterInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPixelFormats)(
-        IWICFormatConverterInfo *This,
-        UINT cFormats,
-        WICPixelFormatGUID *pPixelFormatGUIDs,
-        UINT *pcActual);
+                     IWICFormatConverterInfo *This,
+                     UINT cFormats,
+                     WICPixelFormatGUID *pPixelFormatGUIDs,
+                     UINT *pcActual);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        IWICFormatConverterInfo *This,
-        IWICFormatConverter **ppIConverter);
+                     IWICFormatConverterInfo *This,
+                     IWICFormatConverter **ppIConverter);
 
     END_INTERFACE
 } IWICFormatConverterInfoVtbl;
@@ -4218,20 +4218,20 @@ MIDL_INTERFACE("135ff860-22b7-4ddf-b0f6-218f4f299a43")
 IWICStream : public IStream
 {
     virtual HRESULT STDMETHODCALLTYPE InitializeFromIStream(
-        IStream *pIStream) = 0;
+                     IStream *pIStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeFromFilename(
-        LPCWSTR wzFileName,
-        DWORD dwAccessMode) = 0;
+                     LPCWSTR wzFileName,
+                     DWORD dwAccessMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeFromMemory(
-        BYTE *pbBuffer,
-        DWORD cbBufferSize) = 0;
+                     BYTE *pbBuffer,
+                     DWORD cbBufferSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeFromIStreamRegion(
-        IStream *pIStream,
-        ULARGE_INTEGER ulOffset,
-        ULARGE_INTEGER ulMaxSize) = 0;
+                     IStream *pIStream,
+                     ULARGE_INTEGER ulOffset,
+                     ULARGE_INTEGER ulMaxSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4243,95 +4243,95 @@ typedef struct IWICStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICStream *This);
+                     IWICStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICStream *This);
+                     IWICStream *This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IWICStream *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     IWICStream *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IWICStream *This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     IWICStream *This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        IWICStream *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     IWICStream *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        IWICStream *This,
-        ULARGE_INTEGER libNewSize);
+                     IWICStream *This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        IWICStream *This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     IWICStream *This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWICStream *This,
-        DWORD grfCommitFlags);
+                     IWICStream *This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        IWICStream *This);
+                     IWICStream *This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        IWICStream *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     IWICStream *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        IWICStream *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     IWICStream *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        IWICStream *This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     IWICStream *This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IWICStream *This,
-        IStream **ppstm);
+                     IWICStream *This,
+                     IStream **ppstm);
 
     /*** IWICStream methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializeFromIStream)(
-        IWICStream *This,
-        IStream *pIStream);
+                     IWICStream *This,
+                     IStream *pIStream);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromFilename)(
-        IWICStream *This,
-        LPCWSTR wzFileName,
-        DWORD dwAccessMode);
+                     IWICStream *This,
+                     LPCWSTR wzFileName,
+                     DWORD dwAccessMode);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromMemory)(
-        IWICStream *This,
-        BYTE *pbBuffer,
-        DWORD cbBufferSize);
+                     IWICStream *This,
+                     BYTE *pbBuffer,
+                     DWORD cbBufferSize);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromIStreamRegion)(
-        IWICStream *This,
-        IStream *pIStream,
-        ULARGE_INTEGER ulOffset,
-        ULARGE_INTEGER ulMaxSize);
+                     IWICStream *This,
+                     IStream *pIStream,
+                     ULARGE_INTEGER ulOffset,
+                     ULARGE_INTEGER ulMaxSize);
 
     END_INTERFACE
 } IWICStreamVtbl;
@@ -4443,10 +4443,10 @@ MIDL_INTERFACE("00000302-a8f2-4877-ba0a-fd2b6645fb94")
 IWICBitmapScaler : public IWICBitmapSource
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IWICBitmapSource *pISource,
-        UINT uiWidth,
-        UINT uiHeight,
-        WICBitmapInterpolationMode mode) = 0;
+                     IWICBitmapSource *pISource,
+                     UINT uiWidth,
+                     UINT uiHeight,
+                     WICBitmapInterpolationMode mode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4458,49 +4458,49 @@ typedef struct IWICBitmapScalerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapScaler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapScaler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapScaler *This);
+                     IWICBitmapScaler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapScaler *This);
+                     IWICBitmapScaler *This);
 
     /*** IWICBitmapSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICBitmapScaler *This,
-        UINT *puiWidth,
-        UINT *puiHeight);
+                     IWICBitmapScaler *This,
+                     UINT *puiWidth,
+                     UINT *puiHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICBitmapScaler *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICBitmapScaler *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetResolution)(
-        IWICBitmapScaler *This,
-        double *pDpiX,
-        double *pDpiY);
+                     IWICBitmapScaler *This,
+                     double *pDpiX,
+                     double *pDpiY);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICBitmapScaler *This,
-        IWICPalette *pIPalette);
+                     IWICBitmapScaler *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CopyPixels)(
-        IWICBitmapScaler *This,
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer);
+                     IWICBitmapScaler *This,
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer);
 
     /*** IWICBitmapScaler methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICBitmapScaler *This,
-        IWICBitmapSource *pISource,
-        UINT uiWidth,
-        UINT uiHeight,
-        WICBitmapInterpolationMode mode);
+                     IWICBitmapScaler *This,
+                     IWICBitmapSource *pISource,
+                     UINT uiWidth,
+                     UINT uiHeight,
+                     WICBitmapInterpolationMode mode);
 
     END_INTERFACE
 } IWICBitmapScalerVtbl;
@@ -4574,8 +4574,8 @@ MIDL_INTERFACE("e4fbcf03-223d-4e81-9333-d635556dd1b5")
 IWICBitmapClipper : public IWICBitmapSource
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IWICBitmapSource *pISource,
-        const WICRect *prc) = 0;
+                     IWICBitmapSource *pISource,
+                     const WICRect *prc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4587,47 +4587,47 @@ typedef struct IWICBitmapClipperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICBitmapClipper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICBitmapClipper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICBitmapClipper *This);
+                     IWICBitmapClipper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICBitmapClipper *This);
+                     IWICBitmapClipper *This);
 
     /*** IWICBitmapSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICBitmapClipper *This,
-        UINT *puiWidth,
-        UINT *puiHeight);
+                     IWICBitmapClipper *This,
+                     UINT *puiWidth,
+                     UINT *puiHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICBitmapClipper *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICBitmapClipper *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetResolution)(
-        IWICBitmapClipper *This,
-        double *pDpiX,
-        double *pDpiY);
+                     IWICBitmapClipper *This,
+                     double *pDpiX,
+                     double *pDpiY);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICBitmapClipper *This,
-        IWICPalette *pIPalette);
+                     IWICBitmapClipper *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CopyPixels)(
-        IWICBitmapClipper *This,
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer);
+                     IWICBitmapClipper *This,
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer);
 
     /*** IWICBitmapClipper methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICBitmapClipper *This,
-        IWICBitmapSource *pISource,
-        const WICRect *prc);
+                     IWICBitmapClipper *This,
+                     IWICBitmapSource *pISource,
+                     const WICRect *prc);
 
     END_INTERFACE
 } IWICBitmapClipperVtbl;
@@ -4701,10 +4701,10 @@ MIDL_INTERFACE("b66f034f-d0e2-40ab-b436-6de39e321a94")
 IWICColorTransform : public IWICBitmapSource
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IWICBitmapSource *pIBitmapSource,
-        IWICColorContext *pIContextSource,
-        IWICColorContext *pIContextDest,
-        REFWICPixelFormatGUID pixelFmtDest) = 0;
+                     IWICBitmapSource *pIBitmapSource,
+                     IWICColorContext *pIContextSource,
+                     IWICColorContext *pIContextDest,
+                     REFWICPixelFormatGUID pixelFmtDest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4716,49 +4716,49 @@ typedef struct IWICColorTransformVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICColorTransform *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICColorTransform *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICColorTransform *This);
+                     IWICColorTransform *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICColorTransform *This);
+                     IWICColorTransform *This);
 
     /*** IWICBitmapSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IWICColorTransform *This,
-        UINT *puiWidth,
-        UINT *puiHeight);
+                     IWICColorTransform *This,
+                     UINT *puiWidth,
+                     UINT *puiHeight);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelFormat)(
-        IWICColorTransform *This,
-        WICPixelFormatGUID *pPixelFormat);
+                     IWICColorTransform *This,
+                     WICPixelFormatGUID *pPixelFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetResolution)(
-        IWICColorTransform *This,
-        double *pDpiX,
-        double *pDpiY);
+                     IWICColorTransform *This,
+                     double *pDpiX,
+                     double *pDpiY);
 
     HRESULT (STDMETHODCALLTYPE *CopyPalette)(
-        IWICColorTransform *This,
-        IWICPalette *pIPalette);
+                     IWICColorTransform *This,
+                     IWICPalette *pIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CopyPixels)(
-        IWICColorTransform *This,
-        const WICRect *prc,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer);
+                     IWICColorTransform *This,
+                     const WICRect *prc,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer);
 
     /*** IWICColorTransform methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICColorTransform *This,
-        IWICBitmapSource *pIBitmapSource,
-        IWICColorContext *pIContextSource,
-        IWICColorContext *pIContextDest,
-        REFWICPixelFormatGUID pixelFmtDest);
+                     IWICColorTransform *This,
+                     IWICBitmapSource *pIBitmapSource,
+                     IWICColorContext *pIContextSource,
+                     IWICColorContext *pIContextDest,
+                     REFWICPixelFormatGUID pixelFmtDest);
 
     END_INTERFACE
 } IWICColorTransformVtbl;
@@ -4832,10 +4832,10 @@ MIDL_INTERFACE("b84e2c09-78c9-4ac4-8bd3-524ae1663a2f")
 IWICFastMetadataEncoder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetadataQueryWriter(
-        IWICMetadataQueryWriter **ppIMetadataQueryWriter) = 0;
+                     IWICMetadataQueryWriter **ppIMetadataQueryWriter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4847,23 +4847,23 @@ typedef struct IWICFastMetadataEncoderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICFastMetadataEncoder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICFastMetadataEncoder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICFastMetadataEncoder *This);
+                     IWICFastMetadataEncoder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICFastMetadataEncoder *This);
+                     IWICFastMetadataEncoder *This);
 
     /*** IWICFastMetadataEncoder methods ***/
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWICFastMetadataEncoder *This);
+                     IWICFastMetadataEncoder *This);
 
     HRESULT (STDMETHODCALLTYPE *GetMetadataQueryWriter)(
-        IWICFastMetadataEncoder *This,
-        IWICMetadataQueryWriter **ppIMetadataQueryWriter);
+                     IWICFastMetadataEncoder *This,
+                     IWICMetadataQueryWriter **ppIMetadataQueryWriter);
 
     END_INTERFACE
 } IWICFastMetadataEncoderVtbl;
@@ -4919,19 +4919,19 @@ MIDL_INTERFACE("04c75bf8-3ce1-473b-acc5-3cc4f5e94999")
 IWICImageEncoder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE WriteFrame(
-        ID2D1Image *image,
-        IWICBitmapFrameEncode *encode,
-        const WICImageParameters *parameters) = 0;
+                     ID2D1Image *image,
+                     IWICBitmapFrameEncode *encode,
+                     const WICImageParameters *parameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteFrameThumbnail(
-        ID2D1Image *image,
-        IWICBitmapFrameEncode *encode,
-        const WICImageParameters *parameters) = 0;
+                     ID2D1Image *image,
+                     IWICBitmapFrameEncode *encode,
+                     const WICImageParameters *parameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteThumbnail(
-        ID2D1Image *image,
-        IWICBitmapEncoder *encoder,
-        const WICImageParameters *parameters) = 0;
+                     ID2D1Image *image,
+                     IWICBitmapEncoder *encoder,
+                     const WICImageParameters *parameters) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4943,34 +4943,34 @@ typedef struct IWICImageEncoderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICImageEncoder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICImageEncoder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICImageEncoder *This);
+                     IWICImageEncoder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICImageEncoder *This);
+                     IWICImageEncoder *This);
 
     /*** IWICImageEncoder methods ***/
     HRESULT (STDMETHODCALLTYPE *WriteFrame)(
-        IWICImageEncoder *This,
-        ID2D1Image *image,
-        IWICBitmapFrameEncode *encode,
-        const WICImageParameters *parameters);
+                     IWICImageEncoder *This,
+                     ID2D1Image *image,
+                     IWICBitmapFrameEncode *encode,
+                     const WICImageParameters *parameters);
 
     HRESULT (STDMETHODCALLTYPE *WriteFrameThumbnail)(
-        IWICImageEncoder *This,
-        ID2D1Image *image,
-        IWICBitmapFrameEncode *encode,
-        const WICImageParameters *parameters);
+                     IWICImageEncoder *This,
+                     ID2D1Image *image,
+                     IWICBitmapFrameEncode *encode,
+                     const WICImageParameters *parameters);
 
     HRESULT (STDMETHODCALLTYPE *WriteThumbnail)(
-        IWICImageEncoder *This,
-        ID2D1Image *image,
-        IWICBitmapEncoder *encoder,
-        const WICImageParameters *parameters);
+                     IWICImageEncoder *This,
+                     ID2D1Image *image,
+                     IWICBitmapEncoder *encoder,
+                     const WICImageParameters *parameters);
 
     END_INTERFACE
 } IWICImageEncoderVtbl;
@@ -5033,123 +5033,123 @@ MIDL_INTERFACE("ec5ec8a9-c395-4314-9c77-54d7a935ff70")
 IWICImagingFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateDecoderFromFilename(
-        LPCWSTR wzFilename,
-        const GUID *pguidVendor,
-        DWORD dwDesiredAccess,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder) = 0;
+                     LPCWSTR wzFilename,
+                     const GUID *pguidVendor,
+                     DWORD dwDesiredAccess,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDecoderFromStream(
-        IStream *pIStream,
-        const GUID *pguidVendor,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder) = 0;
+                     IStream *pIStream,
+                     const GUID *pguidVendor,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDecoderFromFileHandle(
-        ULONG_PTR hFile,
-        const GUID *pguidVendor,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder) = 0;
+                     ULONG_PTR hFile,
+                     const GUID *pguidVendor,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateComponentInfo(
-        REFCLSID clsidComponent,
-        IWICComponentInfo **ppIInfo) = 0;
+                     REFCLSID clsidComponent,
+                     IWICComponentInfo **ppIInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDecoder(
-        REFGUID guidContainerFormat,
-        const GUID *pguidVendor,
-        IWICBitmapDecoder **ppIDecoder) = 0;
+                     REFGUID guidContainerFormat,
+                     const GUID *pguidVendor,
+                     IWICBitmapDecoder **ppIDecoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateEncoder(
-        REFGUID guidContainerFormat,
-        const GUID *pguidVendor,
-        IWICBitmapEncoder **ppIEncoder) = 0;
+                     REFGUID guidContainerFormat,
+                     const GUID *pguidVendor,
+                     IWICBitmapEncoder **ppIEncoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePalette(
-        IWICPalette **ppIPalette) = 0;
+                     IWICPalette **ppIPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFormatConverter(
-        IWICFormatConverter **ppIFormatConverter) = 0;
+                     IWICFormatConverter **ppIFormatConverter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapScaler(
-        IWICBitmapScaler **ppIBitmapScaler) = 0;
+                     IWICBitmapScaler **ppIBitmapScaler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapClipper(
-        IWICBitmapClipper **ppIBitmapClipper) = 0;
+                     IWICBitmapClipper **ppIBitmapClipper) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapFlipRotator(
-        IWICBitmapFlipRotator **ppIBitmapFlipRotator) = 0;
+                     IWICBitmapFlipRotator **ppIBitmapFlipRotator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStream(
-        IWICStream **ppIWICStream) = 0;
+                     IWICStream **ppIWICStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateColorContext(
-        IWICColorContext **ppIWICColorContext) = 0;
+                     IWICColorContext **ppIWICColorContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateColorTransformer(
-        IWICColorTransform **ppIWICColorTransform) = 0;
+                     IWICColorTransform **ppIWICColorTransform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmap(
-        UINT uiWidth,
-        UINT uiHeight,
-        REFWICPixelFormatGUID pixelFormat,
-        WICBitmapCreateCacheOption option,
-        IWICBitmap **ppIBitmap) = 0;
+                     UINT uiWidth,
+                     UINT uiHeight,
+                     REFWICPixelFormatGUID pixelFormat,
+                     WICBitmapCreateCacheOption option,
+                     IWICBitmap **ppIBitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapFromSource(
-        IWICBitmapSource *piBitmapSource,
-        WICBitmapCreateCacheOption option,
-        IWICBitmap **ppIBitmap) = 0;
+                     IWICBitmapSource *piBitmapSource,
+                     WICBitmapCreateCacheOption option,
+                     IWICBitmap **ppIBitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapFromSourceRect(
-        IWICBitmapSource *piBitmapSource,
-        UINT x,
-        UINT y,
-        UINT width,
-        UINT height,
-        IWICBitmap **ppIBitmap) = 0;
+                     IWICBitmapSource *piBitmapSource,
+                     UINT x,
+                     UINT y,
+                     UINT width,
+                     UINT height,
+                     IWICBitmap **ppIBitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapFromMemory(
-        UINT uiWidth,
-        UINT uiHeight,
-        REFWICPixelFormatGUID pixelFormat,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer,
-        IWICBitmap **ppIBitmap) = 0;
+                     UINT uiWidth,
+                     UINT uiHeight,
+                     REFWICPixelFormatGUID pixelFormat,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer,
+                     IWICBitmap **ppIBitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapFromHBITMAP(
-        HBITMAP hBitmap,
-        HPALETTE hPalette,
-        WICBitmapAlphaChannelOption options,
-        IWICBitmap **ppIBitmap) = 0;
+                     HBITMAP hBitmap,
+                     HPALETTE hPalette,
+                     WICBitmapAlphaChannelOption options,
+                     IWICBitmap **ppIBitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapFromHICON(
-        HICON hIcon,
-        IWICBitmap **ppIBitmap) = 0;
+                     HICON hIcon,
+                     IWICBitmap **ppIBitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateComponentEnumerator(
-        DWORD componentTypes,
-        DWORD options,
-        IEnumUnknown **ppIEnumUnknown) = 0;
+                     DWORD componentTypes,
+                     DWORD options,
+                     IEnumUnknown **ppIEnumUnknown) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFastMetadataEncoderFromDecoder(
-        IWICBitmapDecoder *pIDecoder,
-        IWICFastMetadataEncoder **ppIFastEncoder) = 0;
+                     IWICBitmapDecoder *pIDecoder,
+                     IWICFastMetadataEncoder **ppIFastEncoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFastMetadataEncoderFromFrameDecode(
-        IWICBitmapFrameDecode *pIFrameDecoder,
-        IWICFastMetadataEncoder **ppIFastEncoder) = 0;
+                     IWICBitmapFrameDecode *pIFrameDecoder,
+                     IWICFastMetadataEncoder **ppIFastEncoder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateQueryWriter(
-        REFGUID guidMetadataFormat,
-        const GUID *pguidVendor,
-        IWICMetadataQueryWriter **ppIQueryWriter) = 0;
+                     REFGUID guidMetadataFormat,
+                     const GUID *pguidVendor,
+                     IWICMetadataQueryWriter **ppIQueryWriter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateQueryWriterFromReader(
-        IWICMetadataQueryReader *pIQueryReader,
-        const GUID *pguidVendor,
-        IWICMetadataQueryWriter **ppIQueryWriter) = 0;
+                     IWICMetadataQueryReader *pIQueryReader,
+                     const GUID *pguidVendor,
+                     IWICMetadataQueryWriter **ppIQueryWriter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5161,160 +5161,160 @@ typedef struct IWICImagingFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICImagingFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICImagingFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICImagingFactory *This);
+                     IWICImagingFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICImagingFactory *This);
+                     IWICImagingFactory *This);
 
     /*** IWICImagingFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateDecoderFromFilename)(
-        IWICImagingFactory *This,
-        LPCWSTR wzFilename,
-        const GUID *pguidVendor,
-        DWORD dwDesiredAccess,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder);
+                     IWICImagingFactory *This,
+                     LPCWSTR wzFilename,
+                     const GUID *pguidVendor,
+                     DWORD dwDesiredAccess,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateDecoderFromStream)(
-        IWICImagingFactory *This,
-        IStream *pIStream,
-        const GUID *pguidVendor,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder);
+                     IWICImagingFactory *This,
+                     IStream *pIStream,
+                     const GUID *pguidVendor,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateDecoderFromFileHandle)(
-        IWICImagingFactory *This,
-        ULONG_PTR hFile,
-        const GUID *pguidVendor,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder);
+                     IWICImagingFactory *This,
+                     ULONG_PTR hFile,
+                     const GUID *pguidVendor,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateComponentInfo)(
-        IWICImagingFactory *This,
-        REFCLSID clsidComponent,
-        IWICComponentInfo **ppIInfo);
+                     IWICImagingFactory *This,
+                     REFCLSID clsidComponent,
+                     IWICComponentInfo **ppIInfo);
 
     HRESULT (STDMETHODCALLTYPE *CreateDecoder)(
-        IWICImagingFactory *This,
-        REFGUID guidContainerFormat,
-        const GUID *pguidVendor,
-        IWICBitmapDecoder **ppIDecoder);
+                     IWICImagingFactory *This,
+                     REFGUID guidContainerFormat,
+                     const GUID *pguidVendor,
+                     IWICBitmapDecoder **ppIDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateEncoder)(
-        IWICImagingFactory *This,
-        REFGUID guidContainerFormat,
-        const GUID *pguidVendor,
-        IWICBitmapEncoder **ppIEncoder);
+                     IWICImagingFactory *This,
+                     REFGUID guidContainerFormat,
+                     const GUID *pguidVendor,
+                     IWICBitmapEncoder **ppIEncoder);
 
     HRESULT (STDMETHODCALLTYPE *CreatePalette)(
-        IWICImagingFactory *This,
-        IWICPalette **ppIPalette);
+                     IWICImagingFactory *This,
+                     IWICPalette **ppIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CreateFormatConverter)(
-        IWICImagingFactory *This,
-        IWICFormatConverter **ppIFormatConverter);
+                     IWICImagingFactory *This,
+                     IWICFormatConverter **ppIFormatConverter);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapScaler)(
-        IWICImagingFactory *This,
-        IWICBitmapScaler **ppIBitmapScaler);
+                     IWICImagingFactory *This,
+                     IWICBitmapScaler **ppIBitmapScaler);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapClipper)(
-        IWICImagingFactory *This,
-        IWICBitmapClipper **ppIBitmapClipper);
+                     IWICImagingFactory *This,
+                     IWICBitmapClipper **ppIBitmapClipper);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFlipRotator)(
-        IWICImagingFactory *This,
-        IWICBitmapFlipRotator **ppIBitmapFlipRotator);
+                     IWICImagingFactory *This,
+                     IWICBitmapFlipRotator **ppIBitmapFlipRotator);
 
     HRESULT (STDMETHODCALLTYPE *CreateStream)(
-        IWICImagingFactory *This,
-        IWICStream **ppIWICStream);
+                     IWICImagingFactory *This,
+                     IWICStream **ppIWICStream);
 
     HRESULT (STDMETHODCALLTYPE *CreateColorContext)(
-        IWICImagingFactory *This,
-        IWICColorContext **ppIWICColorContext);
+                     IWICImagingFactory *This,
+                     IWICColorContext **ppIWICColorContext);
 
     HRESULT (STDMETHODCALLTYPE *CreateColorTransformer)(
-        IWICImagingFactory *This,
-        IWICColorTransform **ppIWICColorTransform);
+                     IWICImagingFactory *This,
+                     IWICColorTransform **ppIWICColorTransform);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmap)(
-        IWICImagingFactory *This,
-        UINT uiWidth,
-        UINT uiHeight,
-        REFWICPixelFormatGUID pixelFormat,
-        WICBitmapCreateCacheOption option,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory *This,
+                     UINT uiWidth,
+                     UINT uiHeight,
+                     REFWICPixelFormatGUID pixelFormat,
+                     WICBitmapCreateCacheOption option,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromSource)(
-        IWICImagingFactory *This,
-        IWICBitmapSource *piBitmapSource,
-        WICBitmapCreateCacheOption option,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory *This,
+                     IWICBitmapSource *piBitmapSource,
+                     WICBitmapCreateCacheOption option,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromSourceRect)(
-        IWICImagingFactory *This,
-        IWICBitmapSource *piBitmapSource,
-        UINT x,
-        UINT y,
-        UINT width,
-        UINT height,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory *This,
+                     IWICBitmapSource *piBitmapSource,
+                     UINT x,
+                     UINT y,
+                     UINT width,
+                     UINT height,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromMemory)(
-        IWICImagingFactory *This,
-        UINT uiWidth,
-        UINT uiHeight,
-        REFWICPixelFormatGUID pixelFormat,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory *This,
+                     UINT uiWidth,
+                     UINT uiHeight,
+                     REFWICPixelFormatGUID pixelFormat,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromHBITMAP)(
-        IWICImagingFactory *This,
-        HBITMAP hBitmap,
-        HPALETTE hPalette,
-        WICBitmapAlphaChannelOption options,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory *This,
+                     HBITMAP hBitmap,
+                     HPALETTE hPalette,
+                     WICBitmapAlphaChannelOption options,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromHICON)(
-        IWICImagingFactory *This,
-        HICON hIcon,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory *This,
+                     HICON hIcon,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateComponentEnumerator)(
-        IWICImagingFactory *This,
-        DWORD componentTypes,
-        DWORD options,
-        IEnumUnknown **ppIEnumUnknown);
+                     IWICImagingFactory *This,
+                     DWORD componentTypes,
+                     DWORD options,
+                     IEnumUnknown **ppIEnumUnknown);
 
     HRESULT (STDMETHODCALLTYPE *CreateFastMetadataEncoderFromDecoder)(
-        IWICImagingFactory *This,
-        IWICBitmapDecoder *pIDecoder,
-        IWICFastMetadataEncoder **ppIFastEncoder);
+                     IWICImagingFactory *This,
+                     IWICBitmapDecoder *pIDecoder,
+                     IWICFastMetadataEncoder **ppIFastEncoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateFastMetadataEncoderFromFrameDecode)(
-        IWICImagingFactory *This,
-        IWICBitmapFrameDecode *pIFrameDecoder,
-        IWICFastMetadataEncoder **ppIFastEncoder);
+                     IWICImagingFactory *This,
+                     IWICBitmapFrameDecode *pIFrameDecoder,
+                     IWICFastMetadataEncoder **ppIFastEncoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateQueryWriter)(
-        IWICImagingFactory *This,
-        REFGUID guidMetadataFormat,
-        const GUID *pguidVendor,
-        IWICMetadataQueryWriter **ppIQueryWriter);
+                     IWICImagingFactory *This,
+                     REFGUID guidMetadataFormat,
+                     const GUID *pguidVendor,
+                     IWICMetadataQueryWriter **ppIQueryWriter);
 
     HRESULT (STDMETHODCALLTYPE *CreateQueryWriterFromReader)(
-        IWICImagingFactory *This,
-        IWICMetadataQueryReader *pIQueryReader,
-        const GUID *pguidVendor,
-        IWICMetadataQueryWriter **ppIQueryWriter);
+                     IWICImagingFactory *This,
+                     IWICMetadataQueryReader *pIQueryReader,
+                     const GUID *pguidVendor,
+                     IWICMetadataQueryWriter **ppIQueryWriter);
 
     END_INTERFACE
 } IWICImagingFactoryVtbl;
@@ -5462,8 +5462,8 @@ MIDL_INTERFACE("7b816b45-1996-4476-b132-de9e247c8af0")
 IWICImagingFactory2 : public IWICImagingFactory
 {
     virtual HRESULT STDMETHODCALLTYPE CreateImageEncoder(
-        ID2D1Device *device,
-        IWICImageEncoder **encoder) = 0;
+                     ID2D1Device *device,
+                     IWICImageEncoder **encoder) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5475,166 +5475,166 @@ typedef struct IWICImagingFactory2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICImagingFactory2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICImagingFactory2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICImagingFactory2 *This);
+                     IWICImagingFactory2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICImagingFactory2 *This);
+                     IWICImagingFactory2 *This);
 
     /*** IWICImagingFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateDecoderFromFilename)(
-        IWICImagingFactory2 *This,
-        LPCWSTR wzFilename,
-        const GUID *pguidVendor,
-        DWORD dwDesiredAccess,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder);
+                     IWICImagingFactory2 *This,
+                     LPCWSTR wzFilename,
+                     const GUID *pguidVendor,
+                     DWORD dwDesiredAccess,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateDecoderFromStream)(
-        IWICImagingFactory2 *This,
-        IStream *pIStream,
-        const GUID *pguidVendor,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder);
+                     IWICImagingFactory2 *This,
+                     IStream *pIStream,
+                     const GUID *pguidVendor,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateDecoderFromFileHandle)(
-        IWICImagingFactory2 *This,
-        ULONG_PTR hFile,
-        const GUID *pguidVendor,
-        WICDecodeOptions metadataOptions,
-        IWICBitmapDecoder **ppIDecoder);
+                     IWICImagingFactory2 *This,
+                     ULONG_PTR hFile,
+                     const GUID *pguidVendor,
+                     WICDecodeOptions metadataOptions,
+                     IWICBitmapDecoder **ppIDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateComponentInfo)(
-        IWICImagingFactory2 *This,
-        REFCLSID clsidComponent,
-        IWICComponentInfo **ppIInfo);
+                     IWICImagingFactory2 *This,
+                     REFCLSID clsidComponent,
+                     IWICComponentInfo **ppIInfo);
 
     HRESULT (STDMETHODCALLTYPE *CreateDecoder)(
-        IWICImagingFactory2 *This,
-        REFGUID guidContainerFormat,
-        const GUID *pguidVendor,
-        IWICBitmapDecoder **ppIDecoder);
+                     IWICImagingFactory2 *This,
+                     REFGUID guidContainerFormat,
+                     const GUID *pguidVendor,
+                     IWICBitmapDecoder **ppIDecoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateEncoder)(
-        IWICImagingFactory2 *This,
-        REFGUID guidContainerFormat,
-        const GUID *pguidVendor,
-        IWICBitmapEncoder **ppIEncoder);
+                     IWICImagingFactory2 *This,
+                     REFGUID guidContainerFormat,
+                     const GUID *pguidVendor,
+                     IWICBitmapEncoder **ppIEncoder);
 
     HRESULT (STDMETHODCALLTYPE *CreatePalette)(
-        IWICImagingFactory2 *This,
-        IWICPalette **ppIPalette);
+                     IWICImagingFactory2 *This,
+                     IWICPalette **ppIPalette);
 
     HRESULT (STDMETHODCALLTYPE *CreateFormatConverter)(
-        IWICImagingFactory2 *This,
-        IWICFormatConverter **ppIFormatConverter);
+                     IWICImagingFactory2 *This,
+                     IWICFormatConverter **ppIFormatConverter);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapScaler)(
-        IWICImagingFactory2 *This,
-        IWICBitmapScaler **ppIBitmapScaler);
+                     IWICImagingFactory2 *This,
+                     IWICBitmapScaler **ppIBitmapScaler);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapClipper)(
-        IWICImagingFactory2 *This,
-        IWICBitmapClipper **ppIBitmapClipper);
+                     IWICImagingFactory2 *This,
+                     IWICBitmapClipper **ppIBitmapClipper);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFlipRotator)(
-        IWICImagingFactory2 *This,
-        IWICBitmapFlipRotator **ppIBitmapFlipRotator);
+                     IWICImagingFactory2 *This,
+                     IWICBitmapFlipRotator **ppIBitmapFlipRotator);
 
     HRESULT (STDMETHODCALLTYPE *CreateStream)(
-        IWICImagingFactory2 *This,
-        IWICStream **ppIWICStream);
+                     IWICImagingFactory2 *This,
+                     IWICStream **ppIWICStream);
 
     HRESULT (STDMETHODCALLTYPE *CreateColorContext)(
-        IWICImagingFactory2 *This,
-        IWICColorContext **ppIWICColorContext);
+                     IWICImagingFactory2 *This,
+                     IWICColorContext **ppIWICColorContext);
 
     HRESULT (STDMETHODCALLTYPE *CreateColorTransformer)(
-        IWICImagingFactory2 *This,
-        IWICColorTransform **ppIWICColorTransform);
+                     IWICImagingFactory2 *This,
+                     IWICColorTransform **ppIWICColorTransform);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmap)(
-        IWICImagingFactory2 *This,
-        UINT uiWidth,
-        UINT uiHeight,
-        REFWICPixelFormatGUID pixelFormat,
-        WICBitmapCreateCacheOption option,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory2 *This,
+                     UINT uiWidth,
+                     UINT uiHeight,
+                     REFWICPixelFormatGUID pixelFormat,
+                     WICBitmapCreateCacheOption option,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromSource)(
-        IWICImagingFactory2 *This,
-        IWICBitmapSource *piBitmapSource,
-        WICBitmapCreateCacheOption option,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory2 *This,
+                     IWICBitmapSource *piBitmapSource,
+                     WICBitmapCreateCacheOption option,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromSourceRect)(
-        IWICImagingFactory2 *This,
-        IWICBitmapSource *piBitmapSource,
-        UINT x,
-        UINT y,
-        UINT width,
-        UINT height,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory2 *This,
+                     IWICBitmapSource *piBitmapSource,
+                     UINT x,
+                     UINT y,
+                     UINT width,
+                     UINT height,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromMemory)(
-        IWICImagingFactory2 *This,
-        UINT uiWidth,
-        UINT uiHeight,
-        REFWICPixelFormatGUID pixelFormat,
-        UINT cbStride,
-        UINT cbBufferSize,
-        BYTE *pbBuffer,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory2 *This,
+                     UINT uiWidth,
+                     UINT uiHeight,
+                     REFWICPixelFormatGUID pixelFormat,
+                     UINT cbStride,
+                     UINT cbBufferSize,
+                     BYTE *pbBuffer,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromHBITMAP)(
-        IWICImagingFactory2 *This,
-        HBITMAP hBitmap,
-        HPALETTE hPalette,
-        WICBitmapAlphaChannelOption options,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory2 *This,
+                     HBITMAP hBitmap,
+                     HPALETTE hPalette,
+                     WICBitmapAlphaChannelOption options,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapFromHICON)(
-        IWICImagingFactory2 *This,
-        HICON hIcon,
-        IWICBitmap **ppIBitmap);
+                     IWICImagingFactory2 *This,
+                     HICON hIcon,
+                     IWICBitmap **ppIBitmap);
 
     HRESULT (STDMETHODCALLTYPE *CreateComponentEnumerator)(
-        IWICImagingFactory2 *This,
-        DWORD componentTypes,
-        DWORD options,
-        IEnumUnknown **ppIEnumUnknown);
+                     IWICImagingFactory2 *This,
+                     DWORD componentTypes,
+                     DWORD options,
+                     IEnumUnknown **ppIEnumUnknown);
 
     HRESULT (STDMETHODCALLTYPE *CreateFastMetadataEncoderFromDecoder)(
-        IWICImagingFactory2 *This,
-        IWICBitmapDecoder *pIDecoder,
-        IWICFastMetadataEncoder **ppIFastEncoder);
+                     IWICImagingFactory2 *This,
+                     IWICBitmapDecoder *pIDecoder,
+                     IWICFastMetadataEncoder **ppIFastEncoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateFastMetadataEncoderFromFrameDecode)(
-        IWICImagingFactory2 *This,
-        IWICBitmapFrameDecode *pIFrameDecoder,
-        IWICFastMetadataEncoder **ppIFastEncoder);
+                     IWICImagingFactory2 *This,
+                     IWICBitmapFrameDecode *pIFrameDecoder,
+                     IWICFastMetadataEncoder **ppIFastEncoder);
 
     HRESULT (STDMETHODCALLTYPE *CreateQueryWriter)(
-        IWICImagingFactory2 *This,
-        REFGUID guidMetadataFormat,
-        const GUID *pguidVendor,
-        IWICMetadataQueryWriter **ppIQueryWriter);
+                     IWICImagingFactory2 *This,
+                     REFGUID guidMetadataFormat,
+                     const GUID *pguidVendor,
+                     IWICMetadataQueryWriter **ppIQueryWriter);
 
     HRESULT (STDMETHODCALLTYPE *CreateQueryWriterFromReader)(
-        IWICImagingFactory2 *This,
-        IWICMetadataQueryReader *pIQueryReader,
-        const GUID *pguidVendor,
-        IWICMetadataQueryWriter **ppIQueryWriter);
+                     IWICImagingFactory2 *This,
+                     IWICMetadataQueryReader *pIQueryReader,
+                     const GUID *pguidVendor,
+                     IWICMetadataQueryWriter **ppIQueryWriter);
 
     /*** IWICImagingFactory2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateImageEncoder)(
-        IWICImagingFactory2 *This,
-        ID2D1Device *device,
-        IWICImageEncoder **encoder);
+                     IWICImagingFactory2 *This,
+                     ID2D1Device *device,
+                     IWICImageEncoder **encoder);
 
     END_INTERFACE
 } IWICImagingFactory2Vtbl;
@@ -5788,20 +5788,20 @@ MIDL_INTERFACE("dc2bb46d-3f07-481e-8625-220c4aedbb33")
 IWICEnumMetadataItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        PROPVARIANT *rgeltSchema,
-        PROPVARIANT *rgeltId,
-        PROPVARIANT *rgeltValue,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     PROPVARIANT *rgeltSchema,
+                     PROPVARIANT *rgeltId,
+                     PROPVARIANT *rgeltValue,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IWICEnumMetadataItem **ppIEnumMetadataItem) = 0;
+                     IWICEnumMetadataItem **ppIEnumMetadataItem) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5813,35 +5813,35 @@ typedef struct IWICEnumMetadataItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICEnumMetadataItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICEnumMetadataItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICEnumMetadataItem *This);
+                     IWICEnumMetadataItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICEnumMetadataItem *This);
+                     IWICEnumMetadataItem *This);
 
     /*** IWICEnumMetadataItem methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IWICEnumMetadataItem *This,
-        ULONG celt,
-        PROPVARIANT *rgeltSchema,
-        PROPVARIANT *rgeltId,
-        PROPVARIANT *rgeltValue,
-        ULONG *pceltFetched);
+                     IWICEnumMetadataItem *This,
+                     ULONG celt,
+                     PROPVARIANT *rgeltSchema,
+                     PROPVARIANT *rgeltId,
+                     PROPVARIANT *rgeltValue,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IWICEnumMetadataItem *This,
-        ULONG celt);
+                     IWICEnumMetadataItem *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IWICEnumMetadataItem *This);
+                     IWICEnumMetadataItem *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IWICEnumMetadataItem *This,
-        IWICEnumMetadataItem **ppIEnumMetadataItem);
+                     IWICEnumMetadataItem *This,
+                     IWICEnumMetadataItem **ppIEnumMetadataItem);
 
     END_INTERFACE
 } IWICEnumMetadataItemVtbl;
@@ -5905,13 +5905,13 @@ MIDL_INTERFACE("409cd537-8532-40cb-9774-e2feb2df4e9c")
 IWICDdsDecoder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetParameters(
-        WICDdsParameters *parameters) = 0;
+                     WICDdsParameters *parameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFrame(
-        UINT arrayIndex,
-        UINT mipLevel,
-        UINT sliceIndex,
-        IWICBitmapFrameDecode **bitmapFrame) = 0;
+                     UINT arrayIndex,
+                     UINT mipLevel,
+                     UINT sliceIndex,
+                     IWICBitmapFrameDecode **bitmapFrame) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5923,27 +5923,27 @@ typedef struct IWICDdsDecoderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICDdsDecoder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICDdsDecoder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICDdsDecoder *This);
+                     IWICDdsDecoder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICDdsDecoder *This);
+                     IWICDdsDecoder *This);
 
     /*** IWICDdsDecoder methods ***/
     HRESULT (STDMETHODCALLTYPE *GetParameters)(
-        IWICDdsDecoder *This,
-        WICDdsParameters *parameters);
+                     IWICDdsDecoder *This,
+                     WICDdsParameters *parameters);
 
     HRESULT (STDMETHODCALLTYPE *GetFrame)(
-        IWICDdsDecoder *This,
-        UINT arrayIndex,
-        UINT mipLevel,
-        UINT sliceIndex,
-        IWICBitmapFrameDecode **bitmapFrame);
+                     IWICDdsDecoder *This,
+                     UINT arrayIndex,
+                     UINT mipLevel,
+                     UINT sliceIndex,
+                     IWICBitmapFrameDecode **bitmapFrame);
 
     END_INTERFACE
 } IWICDdsDecoderVtbl;
@@ -5999,17 +5999,17 @@ MIDL_INTERFACE("3d4c0c61-18a4-41e4-bd80-481a4fc9f464")
 IWICDdsFrameDecode : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSizeInBlocks(
-        UINT *widthInBlocks,
-        UINT *heightInBlocks) = 0;
+                     UINT *widthInBlocks,
+                     UINT *heightInBlocks) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFormatInfo(
-        WICDdsFormatInfo *formatInfo) = 0;
+                     WICDdsFormatInfo *formatInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyBlocks(
-        const WICRect *boundsInBlocks,
-        UINT stride,
-        UINT bufferSize,
-        BYTE *buffer) = 0;
+                     const WICRect *boundsInBlocks,
+                     UINT stride,
+                     UINT bufferSize,
+                     BYTE *buffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6021,32 +6021,32 @@ typedef struct IWICDdsFrameDecodeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICDdsFrameDecode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICDdsFrameDecode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICDdsFrameDecode *This);
+                     IWICDdsFrameDecode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICDdsFrameDecode *This);
+                     IWICDdsFrameDecode *This);
 
     /*** IWICDdsFrameDecode methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSizeInBlocks)(
-        IWICDdsFrameDecode *This,
-        UINT *widthInBlocks,
-        UINT *heightInBlocks);
+                     IWICDdsFrameDecode *This,
+                     UINT *widthInBlocks,
+                     UINT *heightInBlocks);
 
     HRESULT (STDMETHODCALLTYPE *GetFormatInfo)(
-        IWICDdsFrameDecode *This,
-        WICDdsFormatInfo *formatInfo);
+                     IWICDdsFrameDecode *This,
+                     WICDdsFormatInfo *formatInfo);
 
     HRESULT (STDMETHODCALLTYPE *CopyBlocks)(
-        IWICDdsFrameDecode *This,
-        const WICRect *boundsInBlocks,
-        UINT stride,
-        UINT bufferSize,
-        BYTE *buffer);
+                     IWICDdsFrameDecode *This,
+                     const WICRect *boundsInBlocks,
+                     UINT stride,
+                     UINT bufferSize,
+                     BYTE *buffer);
 
     END_INTERFACE
 } IWICDdsFrameDecodeVtbl;
@@ -6106,8 +6106,8 @@ MIDL_INTERFACE("b9bd430d-28a8-41d3-a1f5-f36ee02840bf")
 IWICWineDecoder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IStream *stream,
-        WICDecodeOptions options) = 0;
+                     IStream *stream,
+                     WICDecodeOptions options) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6119,21 +6119,21 @@ typedef struct IWICWineDecoderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWICWineDecoder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWICWineDecoder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWICWineDecoder *This);
+                     IWICWineDecoder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWICWineDecoder *This);
+                     IWICWineDecoder *This);
 
     /*** IWICWineDecoder methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWICWineDecoder *This,
-        IStream *stream,
-        WICDecodeOptions options);
+                     IWICWineDecoder *This,
+                     IStream *stream,
+                     WICDecodeOptions options);
 
     END_INTERFACE
 } IWICWineDecoderVtbl;
@@ -6230,26 +6230,26 @@ DEFINE_GUID(CATID_WICMetadataWriter, 0xabe3b9a4,0x257d,0x4b97,0xbd,0x1a,0x29,0x4
 DEFINE_GUID(CATID_WICPixelFormats, 0x2b46e70f,0xcda7,0x473e,0x89,0xf6,0xdc,0x96,0x30,0xa2,0x39,0x0b);
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
-ULONG           __RPC_USER HBITMAP_UserSize     (ULONG *, ULONG, HBITMAP *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+ULONG                        __RPC_USER HBITMAP_UserSize     (ULONG *, ULONG, HBITMAP *);
 unsigned char * __RPC_USER HBITMAP_UserMarshal  (ULONG *, unsigned char *, HBITMAP *);
 unsigned char * __RPC_USER HBITMAP_UserUnmarshal(ULONG *, unsigned char *, HBITMAP *);
-void            __RPC_USER HBITMAP_UserFree     (ULONG *, HBITMAP *);
-ULONG           __RPC_USER HPALETTE_UserSize     (ULONG *, ULONG, HPALETTE *);
+void                                      __RPC_USER HBITMAP_UserFree     (ULONG *, HBITMAP *);
+ULONG                        __RPC_USER HPALETTE_UserSize     (ULONG *, ULONG, HPALETTE *);
 unsigned char * __RPC_USER HPALETTE_UserMarshal  (ULONG *, unsigned char *, HPALETTE *);
 unsigned char * __RPC_USER HPALETTE_UserUnmarshal(ULONG *, unsigned char *, HPALETTE *);
-void            __RPC_USER HPALETTE_UserFree     (ULONG *, HPALETTE *);
-ULONG           __RPC_USER HICON_UserSize     (ULONG *, ULONG, HICON *);
+void                                      __RPC_USER HPALETTE_UserFree     (ULONG *, HPALETTE *);
+ULONG                        __RPC_USER HICON_UserSize     (ULONG *, ULONG, HICON *);
 unsigned char * __RPC_USER HICON_UserMarshal  (ULONG *, unsigned char *, HICON *);
 unsigned char * __RPC_USER HICON_UserUnmarshal(ULONG *, unsigned char *, HICON *);
-void            __RPC_USER HICON_UserFree     (ULONG *, HICON *);
+void                                      __RPC_USER HICON_UserFree     (ULONG *, HICON *);
 
 /* End additional prototypes */
 

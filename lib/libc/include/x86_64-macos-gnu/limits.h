@@ -91,9 +91,9 @@
 
 #if __DARWIN_C_LEVEL >= 199309L
 #define _POSIX_AIO_LISTIO_MAX   2
-#define _POSIX_AIO_MAX          1
+#define _POSIX_AIO_MAX                       1
 #define _POSIX_DELAYTIMER_MAX   32
-#define _POSIX_MQ_OPEN_MAX      8
+#define _POSIX_MQ_OPEN_MAX                   8
 #define _POSIX_MQ_PRIO_MAX	32
 #define _POSIX_RTSIG_MAX 			8
 #define _POSIX_SEM_NSEMS_MAX 			256

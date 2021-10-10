@@ -29,7 +29,7 @@ struct hdlcdrv_channel_params {
 	int slottime;  /* the slottime in 10ms; usually 10 = 100ms */
 	int ppersist;  /* the p-persistence 0..255 */
 	int fulldup;   /* some driver do not support full duplex, setting */
-	               /* this just makes them send even if DCD is on */
+	                                         /* this just makes them send even if DCD is on */
 };	
 
 struct hdlcdrv_old_channel_state {
@@ -67,36 +67,36 @@ struct hdlcdrv_ioctl {
 /*
  * ioctl values
  */
-#define HDLCDRVCTL_GETMODEMPAR       0
-#define HDLCDRVCTL_SETMODEMPAR       1
-#define HDLCDRVCTL_MODEMPARMASK      2  /* not handled by hdlcdrv */
+#define HDLCDRVCTL_GETMODEMPAR                    0
+#define HDLCDRVCTL_SETMODEMPAR                    1
+#define HDLCDRVCTL_MODEMPARMASK                   2  /* not handled by hdlcdrv */
 #define HDLCDRVCTL_GETCHANNELPAR    10
 #define HDLCDRVCTL_SETCHANNELPAR    11
-#define HDLCDRVCTL_OLDGETSTAT       20
-#define HDLCDRVCTL_CALIBRATE        21
-#define HDLCDRVCTL_GETSTAT          22
+#define HDLCDRVCTL_OLDGETSTAT                    20
+#define HDLCDRVCTL_CALIBRATE                     21
+#define HDLCDRVCTL_GETSTAT                       22
 
 /*
  * these are mainly for debugging purposes
  */
-#define HDLCDRVCTL_GETSAMPLES       30
-#define HDLCDRVCTL_GETBITS          31
+#define HDLCDRVCTL_GETSAMPLES                    30
+#define HDLCDRVCTL_GETBITS                       31
 
 /*
  * not handled by hdlcdrv, but by its depending drivers
  */
-#define HDLCDRVCTL_GETMODE          40
-#define HDLCDRVCTL_SETMODE          41
-#define HDLCDRVCTL_MODELIST         42
-#define HDLCDRVCTL_DRIVERNAME       43
+#define HDLCDRVCTL_GETMODE                       40
+#define HDLCDRVCTL_SETMODE                       41
+#define HDLCDRVCTL_MODELIST                      42
+#define HDLCDRVCTL_DRIVERNAME                    43
 
 /*
  * mask of needed modem parameters, returned by HDLCDRVCTL_MODEMPARMASK
  */
-#define HDLCDRV_PARMASK_IOBASE      (1<<0)
-#define HDLCDRV_PARMASK_IRQ         (1<<1)
-#define HDLCDRV_PARMASK_DMA         (1<<2)
-#define HDLCDRV_PARMASK_DMA2        (1<<3)
+#define HDLCDRV_PARMASK_IOBASE                   (1<<0)
+#define HDLCDRV_PARMASK_IRQ                      (1<<1)
+#define HDLCDRV_PARMASK_DMA                      (1<<2)
+#define HDLCDRV_PARMASK_DMA2                     (1<<3)
 #define HDLCDRV_PARMASK_SERIOBASE   (1<<4)
 #define HDLCDRV_PARMASK_PARIOBASE   (1<<5)
 #define HDLCDRV_PARMASK_MIDIIOBASE  (1<<6)

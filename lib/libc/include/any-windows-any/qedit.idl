@@ -31,13 +31,13 @@ import "msxml.idl";
 interface ISampleGrabberCB : IUnknown
 {
     HRESULT SampleCB(
-        double SampleTime,
-        IMediaSample * pSample
+                     double SampleTime,
+                     IMediaSample * pSample
     );
     HRESULT BufferCB(
-        double SampleTime,
-        BYTE * pBuffer,
-        LONG BufferLen
+                     double SampleTime,
+                     BYTE * pBuffer,
+                     LONG BufferLen
     );
 }
 
@@ -50,33 +50,33 @@ interface ISampleGrabberCB : IUnknown
 interface ISampleGrabber: IUnknown
 {
     HRESULT SetOneShot(
-        BOOL OneShot
+                     BOOL OneShot
     );
 
     HRESULT SetMediaType(
-        const AM_MEDIA_TYPE * pType
+                     const AM_MEDIA_TYPE * pType
     );
 
     HRESULT GetConnectedMediaType(
-        AM_MEDIA_TYPE * pType
+                     AM_MEDIA_TYPE * pType
     );
 
     HRESULT SetBufferSamples(
-        BOOL BufferThem
+                     BOOL BufferThem
     );
 
     HRESULT GetCurrentBuffer(
-        [in,out] LONG * pBufferSize,
-        [out] LONG * pBuffer
+                     [in,out] LONG * pBufferSize,
+                     [out] LONG * pBuffer
     );
 
     HRESULT GetCurrentSample(
-        [out] IMediaSample ** ppSample
+                     [out] IMediaSample ** ppSample
     );
 
     HRESULT SetCallback(
-        ISampleGrabberCB * pCallback,
-        LONG WhichMethodToCallback
+                     ISampleGrabberCB * pCallback,
+                     LONG WhichMethodToCallback
     );
 }
 
@@ -88,74 +88,74 @@ interface ISampleGrabber: IUnknown
 interface IMediaDet : IUnknown
 {
     HRESULT get_Filter(
-        [out] IUnknown* *pVal
+                     [out] IUnknown* *pVal
     );
 
     HRESULT put_Filter(
-        IUnknown* newVal
+                     IUnknown* newVal
     );
 
     HRESULT get_OutputStreams(
-        [out] LONG *pVal
+                     [out] LONG *pVal
     );
 
     HRESULT get_CurrentStream(
-        [out] LONG *pVal
+                     [out] LONG *pVal
     );
 
     HRESULT put_CurrentStream(
-        LONG newVal
+                     LONG newVal
     );
 
     HRESULT get_StreamType(
-        [out] GUID *pVal
+                     [out] GUID *pVal
     );
 
     HRESULT get_StreamTypeB(
-        [out] BSTR *pVal
+                     [out] BSTR *pVal
     );
 
     HRESULT get_StreamLength(
-        [out] double *pVal
+                     [out] double *pVal
     );
 
     HRESULT get_Filename(
-        [out] BSTR *pVal
+                     [out] BSTR *pVal
     );
 
     HRESULT put_Filename(
-        BSTR newVal
+                     BSTR newVal
     );
 
     HRESULT GetBitmapBits(
-        double StreamTime,
-        LONG * pBufferSize,
-        char * pBuffer,
-        LONG Width,
-        LONG Height
+                     double StreamTime,
+                     LONG * pBufferSize,
+                     char * pBuffer,
+                     LONG Width,
+                     LONG Height
     );
 
     HRESULT WriteBitmapBits(
-        double StreamTime,
-        LONG Width,
-        LONG Height,
-        BSTR Filename
+                     double StreamTime,
+                     LONG Width,
+                     LONG Height,
+                     BSTR Filename
     );
 
     HRESULT get_StreamMediaType(
-        [out] AM_MEDIA_TYPE * pVal
+                     [out] AM_MEDIA_TYPE * pVal
     );
 
     HRESULT GetSampleGrabber(
-        [out] ISampleGrabber ** ppVal
+                     [out] ISampleGrabber ** ppVal
     );
 
     HRESULT get_FrameRate(
-        [out] double *pVal
+                     [out] double *pVal
     );
 
     HRESULT EnterBitmapGrabMode(
-        double SeekTime
+                     double SeekTime
     );
 }
 
@@ -176,14 +176,14 @@ coclass MediaDet
 interface IMediaLocator : IUnknown
 {
     HRESULT FindMediaFile(
-        BSTR input,
-        BSTR filter,
-        BSTR * output,
-        long flags
+                     BSTR input,
+                     BSTR filter,
+                     BSTR * output,
+                     long flags
     );
 
     HRESULT AddFoundLocation(
-        BSTR dir
+                     BSTR dir
     );
 }
 
@@ -209,54 +209,54 @@ typedef struct
 interface IPropertySetter : IUnknown
 {
     HRESULT LoadXML(
-        [in] IUnknown * pxml
+                     [in] IUnknown * pxml
     );
 
     HRESULT PrintXML(
-        [out] char * xml,
-        [in] int size,
-        [out] int * printed,
-        [in] int indent
+                     [out] char * xml,
+                     [in] int size,
+                     [out] int * printed,
+                     [in] int indent
     );
 
     HRESULT CloneProps(
-        [out] IPropertySetter ** setter,
-        [in] REFERENCE_TIME start,
-        [in] REFERENCE_TIME stop
+                     [out] IPropertySetter ** setter,
+                     [in] REFERENCE_TIME start,
+                     [in] REFERENCE_TIME stop
     );
 
     HRESULT AddProp(
-        [in] DEXTER_PARAM param,
-        [in] DEXTER_VALUE * value
+                     [in] DEXTER_PARAM param,
+                     [in] DEXTER_VALUE * value
     );
 
     HRESULT GetProps(
-        [out] LONG * params,
-        [out] DEXTER_PARAM ** param,
-        [out] DEXTER_VALUE ** value
+                     [out] LONG * params,
+                     [out] DEXTER_PARAM ** param,
+                     [out] DEXTER_VALUE ** value
     );
 
     HRESULT FreeProps(
-        [in] LONG params,
-        [in] DEXTER_PARAM * param,
-        [in] DEXTER_VALUE * value
+                     [in] LONG params,
+                     [in] DEXTER_PARAM * param,
+                     [in] DEXTER_VALUE * value
     );
 
     HRESULT ClearProps();
 
     HRESULT SaveToBlob(
-        [out] LONG * size,
-        [out] BYTE ** blob
+                     [out] LONG * size,
+                     [out] BYTE ** blob
     );
 
     HRESULT LoadFromBlob(
-        [in] LONG size,
-        [in] BYTE * blob
+                     [in] LONG size,
+                     [in] BYTE * blob
     );
 
     HRESULT SetProps(
-        [in] IUnknown * target,
-        [in] REFERENCE_TIME now
+                     [in] IUnknown * target,
+                     [in] REFERENCE_TIME now
     );
 }
 
@@ -269,11 +269,11 @@ interface IPropertySetter : IUnknown
 interface IAMErrorLog : IUnknown
 {
     HRESULT LogError(
-        long severity,
-        BSTR error_str,
-        long error_code,
-        long hresult,
-        [in] VARIANT * extra
+                     long severity,
+                     BSTR error_str,
+                     long error_code,
+                     long hresult,
+                     [in] VARIANT * extra
     );
 }
 
@@ -286,11 +286,11 @@ interface IAMErrorLog : IUnknown
 interface IAMSetErrorLog : IUnknown
 {
     [propget] HRESULT ErrorLog(
-        [out, retval] IAMErrorLog ** log
+                     [out, retval] IAMErrorLog ** log
     );
 
     [propput] HRESULT ErrorLog(
-        [in] IAMErrorLog * log
+                     [in] IAMErrorLog * log
     );
 }
 
@@ -318,126 +318,126 @@ typedef enum
 interface IAMTimeline : IUnknown
 {
     HRESULT CreateEmptyNode(
-        [out] IAMTimelineObj ** obj,
-        TIMELINE_MAJOR_TYPE type
+                     [out] IAMTimelineObj ** obj,
+                     TIMELINE_MAJOR_TYPE type
     );
 
     HRESULT AddGroup(
-        IAMTimelineObj * group
+                     IAMTimelineObj * group
     );
 
     HRESULT RemGroupFromList(
-        IAMTimelineObj * group
+                     IAMTimelineObj * group
     );
 
     HRESULT GetGroup(
-        [out] IAMTimelineObj ** group,
-        long index
+                     [out] IAMTimelineObj ** group,
+                     long index
     );
 
     HRESULT GetGroupCount(
-        long * count
+                     long * count
     );
 
     HRESULT ClearAllGroups();
 
     HRESULT GetInsertMode(
-        long * mode
+                     long * mode
     );
 
     HRESULT SetInsertMode(
-        long mode
+                     long mode
     );
 
     HRESULT EnableTransitions(
-        BOOL enabled
+                     BOOL enabled
     );
 
     HRESULT TransitionsEnabled(
-        BOOL * enabled
+                     BOOL * enabled
     );
 
     HRESULT EnableEffects(
-        BOOL enabled
+                     BOOL enabled
     );
 
     HRESULT EffectsEnabled(
-        BOOL * enabled
+                     BOOL * enabled
     );
 
     HRESULT SetInterestRange(
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop
     );
 
     HRESULT GetDuration(
-        REFERENCE_TIME * duration
+                     REFERENCE_TIME * duration
     );
 
     HRESULT GetDuration2(
-        double * duration
+                     double * duration
     );
 
     HRESULT SetDefaultFPS(
-        double fps
+                     double fps
     );
 
     HRESULT GetDefaultFPS(
-        double * fps
+                     double * fps
     );
 
     HRESULT IsDirty(
-        BOOL * dirty
+                     BOOL * dirty
     );
 
     HRESULT GetDirtyRange(
-        REFERENCE_TIME * start,
-        REFERENCE_TIME * stop
+                     REFERENCE_TIME * start,
+                     REFERENCE_TIME * stop
     );
 
     HRESULT GetCountOfType(
-        long group,
-        long * value,
-        long * value_with_comps,
-        TIMELINE_MAJOR_TYPE type
+                     long group,
+                     long * value,
+                     long * value_with_comps,
+                     TIMELINE_MAJOR_TYPE type
     );
 
     HRESULT ValidateSourceNames(
-        long flags,
-        IMediaLocator * override,
-        LONG_PTR notify_event
+                     long flags,
+                     IMediaLocator * override,
+                     LONG_PTR notify_event
     );
 
     HRESULT SetDefaultTransition(
-        GUID * guid
+                     GUID * guid
     );
 
     HRESULT GetDefaultTransition(
-        GUID * guid
+                     GUID * guid
     );
 
     HRESULT SetDefaultEffect(
-        GUID * guid
+                     GUID * guid
     );
 
     HRESULT GetDefaultEffect(
-        GUID * guid
+                     GUID * guid
     );
 
     HRESULT SetDefaultTransitionB(
-        BSTR guidb
+                     BSTR guidb
     );
 
     HRESULT GetDefaultTransitionB(
-        [out,retval] BSTR * guidb
+                     [out,retval] BSTR * guidb
     );
 
     HRESULT SetDefaultEffectB(
-        BSTR guidb
+                     BSTR guidb
     );
 
     HRESULT GetDefaultEffectB(
-        [out,retval] BSTR * guidb
+                     [out,retval] BSTR * guidb
     );
 }
 
@@ -460,81 +460,81 @@ coclass AMTimeline
 interface IAMTimelineGroup : IUnknown
 {
     HRESULT SetTimeline(
-        IAMTimeline * timeline
+                     IAMTimeline * timeline
     );
 
     HRESULT GetTimeline(
-        [out] IAMTimeline ** timeline
+                     [out] IAMTimeline ** timeline
     );
 
     HRESULT GetPriority(
-        long * priority
+                     long * priority
     );
 
     HRESULT GetMediaType(
-        [out] AM_MEDIA_TYPE *
+                     [out] AM_MEDIA_TYPE *
     );
 
     HRESULT SetMediaType(
-        [in] AM_MEDIA_TYPE *
+                     [in] AM_MEDIA_TYPE *
     );
 
     HRESULT SetOutputFPS(
-        double fps
+                     double fps
     );
 
     HRESULT GetOutputFPS(
-        double * fps
+                     double * fps
     );
 
     HRESULT SetGroupName(
-        BSTR name
+                     BSTR name
     );
 
     HRESULT GetGroupName(
-        [out,retval] BSTR * name
+                     [out,retval] BSTR * name
     );
 
     HRESULT SetPreviewMode(
-        BOOL preview
+                     BOOL preview
     );
 
     HRESULT GetPreviewMode(
-        BOOL * preview
+                     BOOL * preview
     );
 
     HRESULT SetMediaTypeForVB(
-        [in] long type
+                     [in] long type
     );
 
     HRESULT GetOutputBuffering(
-        [out] int * buffer
+                     [out] int * buffer
     );
 
     HRESULT SetOutputBuffering(
-        [in] int buffer
+                     [in] int buffer
     );
 
     HRESULT SetSmartRecompressFormat(
-        long * format
+                     long * format
     );
 
     HRESULT GetSmartRecompressFormat(
-        long ** format
+                     long ** format
     );
 
     HRESULT IsSmartRecompressFormatSet(
-        BOOL * set
+                     BOOL * set
     );
 
     HRESULT IsRecompressFormatDirty(
-        BOOL * dirty
+                     BOOL * dirty
     );
 
     HRESULT ClearRecompressFormatDirty();
 
     HRESULT SetRecompFormatFromSource(
-        IAMTimelineSrc * source
+                     IAMTimelineSrc * source
     );
 }
 
@@ -548,140 +548,140 @@ interface IAMTimelineGroup : IUnknown
 interface IAMTimelineObj : IUnknown
 {
     HRESULT GetStartStop(
-        REFERENCE_TIME * start,
-        REFERENCE_TIME * stop
+                     REFERENCE_TIME * start,
+                     REFERENCE_TIME * stop
     );
 
     HRESULT GetStartStop2(
-        REFTIME * start, REFTIME * stop
+                     REFTIME * start, REFTIME * stop
     );
 
     HRESULT FixTimes(
-        REFERENCE_TIME * start, REFERENCE_TIME * stop
+                     REFERENCE_TIME * start, REFERENCE_TIME * stop
     );
 
     HRESULT FixTimes2(
-        REFTIME * start, REFTIME * stop
+                     REFTIME * start, REFTIME * stop
     );
 
     HRESULT SetStartStop(
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop
     );
 
     HRESULT SetStartStop2(
-        REFTIME start,
-        REFTIME stop
+                     REFTIME start,
+                     REFTIME stop
     );
 
     HRESULT GetPropertySetter(
-        [out,retval] IPropertySetter ** setter
+                     [out,retval] IPropertySetter ** setter
     );
 
     HRESULT SetPropertySetter(
-        IPropertySetter * setter
+                     IPropertySetter * setter
     );
 
     HRESULT GetSubObject(
-        [out,retval] IUnknown ** obj
+                     [out,retval] IUnknown ** obj
     );
 
     HRESULT SetSubObject(
-        IUnknown * obj
+                     IUnknown * obj
     );
 
     HRESULT SetSubObjectGUID(
-        GUID guid
+                     GUID guid
     );
 
     HRESULT SetSubObjectGUIDB(
-        BSTR guidb
+                     BSTR guidb
     );
 
     HRESULT GetSubObjectGUID(
-        GUID * guid
+                     GUID * guid
     );
 
     HRESULT GetSubObjectGUIDB(
-        [out,retval] BSTR * guidb
+                     [out,retval] BSTR * guidb
     );
 
     HRESULT GetSubObjectLoaded(
-        BOOL * loaded
+                     BOOL * loaded
     );
 
     HRESULT GetTimelineType(
-        TIMELINE_MAJOR_TYPE * type
+                     TIMELINE_MAJOR_TYPE * type
     );
 
     HRESULT SetTimelineType(
-        TIMELINE_MAJOR_TYPE type
+                     TIMELINE_MAJOR_TYPE type
     );
 
     HRESULT GetUserID(
-        long * id
+                     long * id
     );
 
     HRESULT SetUserID(
-        long id
+                     long id
     );
 
     HRESULT GetGenID(
-        long * id
+                     long * id
     );
 
     HRESULT GetUserName(
-        [out,retval] BSTR * name
+                     [out,retval] BSTR * name
     );
 
     HRESULT SetUserName(
-        BSTR name
+                     BSTR name
     );
 
     HRESULT GetUserData(
-        BYTE * data,
-        long * size
+                     BYTE * data,
+                     long * size
     );
 
     HRESULT SetUserData(
-        BYTE * data,
-        long size
+                     BYTE * data,
+                     long size
     );
 
     HRESULT GetMuted(
-        BOOL * muted
+                     BOOL * muted
     );
 
     HRESULT SetMuted(
-        BOOL muted
+                     BOOL muted
     );
 
     HRESULT GetLocked(
-        BOOL * locked
+                     BOOL * locked
     );
 
     HRESULT SetLocked(
-        BOOL locked
+                     BOOL locked
     );
 
     HRESULT GetDirtyRange(
-        REFERENCE_TIME * start,
-        REFERENCE_TIME * stop
+                     REFERENCE_TIME * start,
+                     REFERENCE_TIME * stop
     );
 
     HRESULT GetDirtyRange2(
-        REFTIME * start,
-        REFTIME * stop
+                     REFTIME * start,
+                     REFTIME * stop
     );
 
     HRESULT SetDirtyRange(
-        REFERENCE_TIME start,
-        REFERENCE_TIME stop
+                     REFERENCE_TIME start,
+                     REFERENCE_TIME stop
     );
 
     HRESULT SetDirtyRange2(
-        REFTIME start,
-        REFTIME stop
+                     REFTIME start,
+                     REFTIME stop
     );
 
     HRESULT ClearDirty();
@@ -691,15 +691,15 @@ interface IAMTimelineObj : IUnknown
     HRESULT RemoveAll();
 
     HRESULT GetTimelineNoRef(
-        IAMTimeline ** timeline
+                     IAMTimeline ** timeline
     );
 
     HRESULT GetGroupIBelongTo(
-        [out] IAMTimelineGroup ** group
+                     [out] IAMTimelineGroup ** group
     );
 
     HRESULT GetEmbedDepth(
-        long * depth
+                     long * depth
     );
 }
 
@@ -712,97 +712,97 @@ interface IAMTimelineObj : IUnknown
 interface IAMTimelineSrc : IUnknown
 {
     HRESULT GetMediaTimes(
-        REFERENCE_TIME * start,
-        REFERENCE_TIME * stop
+                     REFERENCE_TIME * start,
+                     REFERENCE_TIME * stop
     );
 
     HRESULT GetMediaTimes2(
-        REFTIME * start,
-        REFTIME * stop
+                     REFTIME * start,
+                     REFTIME * stop
     );
 
     HRESULT ModifyStopTime(
-        REFERENCE_TIME stop
+                     REFERENCE_TIME stop
     );
 
     HRESULT ModifyStopTime2(
-        REFTIME stop
+                     REFTIME stop
     );
 
     HRESULT FixMediaTimes(
-        REFERENCE_TIME * start,
-        REFERENCE_TIME * stop
+                     REFERENCE_TIME * start,
+                     REFERENCE_TIME * stop
     );
 
     HRESULT FixMediaTimes2(
-        REFTIME * start,
-        REFTIME * stop
+                     REFTIME * start,
+                     REFTIME * stop
     );
 
     HRESULT SetMediaTimes(
-        REFERENCE_TIME Start,
-        REFERENCE_TIME Stop
+                     REFERENCE_TIME Start,
+                     REFERENCE_TIME Stop
     );
 
     HRESULT SetMediaTimes2(
-        REFTIME Start,
-        REFTIME Stop
+                     REFTIME Start,
+                     REFTIME Stop
     );
 
     HRESULT SetMediaLength(
-        REFERENCE_TIME length
+                     REFERENCE_TIME length
     );
 
     HRESULT SetMediaLength2(
-        REFTIME length
+                     REFTIME length
     );
 
     HRESULT GetMediaLength(
-        REFERENCE_TIME * length
+                     REFERENCE_TIME * length
     );
 
     HRESULT GetMediaLength2(
-        REFTIME * length
+                     REFTIME * length
     );
 
     HRESULT GetMediaName(
-        [out,retval] BSTR * name
+                     [out,retval] BSTR * name
     );
 
     HRESULT SetMediaName(
-        BSTR name
+                     BSTR name
     );
 
     HRESULT SpliceWithNext(
-        IAMTimelineObj * next
+                     IAMTimelineObj * next
     );
 
     HRESULT GetStreamNumber(
-        long * num
+                     long * num
     );
 
     HRESULT SetStreamNumber(
-        long num
+                     long num
     );
 
     HRESULT IsNormalRate(
-        BOOL * normal
+                     BOOL * normal
     );
 
     HRESULT GetDefaultFPS(
-        double * fps
+                     double * fps
     );
 
     HRESULT SetDefaultFPS(
-        double fps
+                     double fps
     );
 
     HRESULT GetStretchMode(
-        int * mode
+                     int * mode
     );
 
     HRESULT SetStretchMode(
-        int mode
+                     int mode
     );
 }
 

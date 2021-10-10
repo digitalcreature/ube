@@ -224,7 +224,7 @@ _mm_hsub_pd(__m128d __a, __m128d __b)
 ///    A pointer to a double-precision value to be moved and duplicated.
 /// \returns A 128-bit vector of [2 x double] containing the moved and
 ///    duplicated values.
-#define        _mm_loaddup_pd(dp)        _mm_load1_pd(dp)
+#define                     _mm_loaddup_pd(dp)                     _mm_load1_pd(dp)
 
 /// Moves and duplicates the double-precision value in the lower bits of
 ///    a 128-bit vector of [2 x double] to double-precision values stored in a

@@ -28,7 +28,7 @@ extern "C" {
 
 typedef DWORD D3DXF_FILEFORMAT;
 #define D3DXF_FILEFORMAT_BINARY     0
-#define D3DXF_FILEFORMAT_TEXT       1
+#define D3DXF_FILEFORMAT_TEXT                    1
 #define D3DXF_FILEFORMAT_COMPRESSED 2
 
 typedef DWORD D3DXF_FILESAVEOPTIONS;
@@ -56,11 +56,11 @@ typedef struct _D3DXF_FILELOADMEMORY
 
 
 #ifndef _NO_COM
-DEFINE_GUID(IID_ID3DXFile,           0xcef08cf9, 0x7b4f, 0x4429, 0x96, 0x24, 0x2a, 0x69, 0x0a, 0x93, 0x32, 0x01);
+DEFINE_GUID(IID_ID3DXFile,                        0xcef08cf9, 0x7b4f, 0x4429, 0x96, 0x24, 0x2a, 0x69, 0x0a, 0x93, 0x32, 0x01);
 DEFINE_GUID(IID_ID3DXFileSaveObject, 0xcef08cfa, 0x7b4f, 0x4429, 0x96, 0x24, 0x2a, 0x69, 0x0a, 0x93, 0x32, 0x01);
 DEFINE_GUID(IID_ID3DXFileSaveData,   0xcef08cfb, 0x7b4f, 0x4429, 0x96, 0x24, 0x2a, 0x69, 0x0a, 0x93, 0x32, 0x01);
 DEFINE_GUID(IID_ID3DXFileEnumObject, 0xcef08cfc, 0x7b4f, 0x4429, 0x96, 0x24, 0x2a, 0x69, 0x0a, 0x93, 0x32, 0x01);
-DEFINE_GUID(IID_ID3DXFileData,       0xcef08cfd, 0x7b4f, 0x4429, 0x96, 0x24, 0x2a, 0x69, 0x0a, 0x93, 0x32, 0x01);
+DEFINE_GUID(IID_ID3DXFileData,                    0xcef08cfd, 0x7b4f, 0x4429, 0x96, 0x24, 0x2a, 0x69, 0x0a, 0x93, 0x32, 0x01);
 #endif /* _NO_COM */
 
 typedef interface ID3DXFile *LPD3DXFILE, **LPLPD3DXFILE;
@@ -80,9 +80,9 @@ DECLARE_INTERFACE_IID_(ID3DXFile,IUnknown,"cef08cf9-7b4f-4429-9624-2a690a933201"
     STDMETHOD_(ULONG,Release)(THIS) PURE;
     /*** ID3DXFile methods ***/
     STDMETHOD(CreateEnumObject)(THIS_ const void *src, D3DXF_FILELOADOPTIONS type,
-            struct ID3DXFileEnumObject **enum_obj) PURE;
+                                      struct ID3DXFileEnumObject **enum_obj) PURE;
     STDMETHOD(CreateSaveObject)(THIS_ const void *data, D3DXF_FILESAVEOPTIONS flags,
-            D3DXF_FILEFORMAT format, struct ID3DXFileSaveObject **save_obj) PURE;
+                                      D3DXF_FILEFORMAT format, struct ID3DXFileSaveObject **save_obj) PURE;
     STDMETHOD(RegisterTemplates)(THIS_ const void *data, SIZE_T data_size) PURE;
     STDMETHOD(RegisterEnumTemplates)(THIS_ struct ID3DXFileEnumObject *enum_obj) PURE;
 };
@@ -98,7 +98,7 @@ DECLARE_INTERFACE_IID_(ID3DXFileSaveObject,IUnknown,"cef08cfa-7b4f-4429-9624-2a6
     /*** ID3DXFileSaveObject methods ***/
     STDMETHOD(GetFile)(THIS_ ID3DXFile **file) PURE;
     STDMETHOD(AddDataObject)(THIS_ REFGUID template_guid, const char *name, const GUID *guid,
-            SIZE_T data_size, const void *data, struct ID3DXFileSaveData **obj) PURE;
+                                      SIZE_T data_size, const void *data, struct ID3DXFileSaveData **obj) PURE;
     STDMETHOD(Save)(THIS) PURE;
 };
 #undef INTERFACE
@@ -116,7 +116,7 @@ DECLARE_INTERFACE_IID_(ID3DXFileSaveData,IUnknown,"cef08cfb-7b4f-4429-9624-2a690
     STDMETHOD(GetId)(THIS_ LPGUID) PURE;
     STDMETHOD(GetType)(THIS_ GUID*) PURE;
     STDMETHOD(AddDataObject)(THIS_ REFGUID template_guid, const char *name, const GUID *guid,
-            SIZE_T data_size, const void *data, ID3DXFileSaveData **obj) PURE;
+                                      SIZE_T data_size, const void *data, ID3DXFileSaveData **obj) PURE;
     STDMETHOD(AddDataReference)(THIS_ const char *name, const GUID *id) PURE;
 };
 #undef INTERFACE
@@ -161,24 +161,24 @@ DECLARE_INTERFACE_IID_(ID3DXFileData,IUnknown,"cef08cfd-7b4f-4429-9624-2a690a933
 /* D3DX File errors */
 #define _FACD3DXF 0x876
 
-#define D3DXFERR_BADOBJECT          MAKE_HRESULT(1,_FACD3DXF,900)
-#define D3DXFERR_BADVALUE           MAKE_HRESULT(1,_FACD3DXF,901)
-#define D3DXFERR_BADTYPE            MAKE_HRESULT(1,_FACD3DXF,902)
-#define D3DXFERR_NOTFOUND           MAKE_HRESULT(1,_FACD3DXF,903)
-#define D3DXFERR_NOTDONEYET         MAKE_HRESULT(1,_FACD3DXF,904)
-#define D3DXFERR_FILENOTFOUND       MAKE_HRESULT(1,_FACD3DXF,905)
+#define D3DXFERR_BADOBJECT                       MAKE_HRESULT(1,_FACD3DXF,900)
+#define D3DXFERR_BADVALUE                        MAKE_HRESULT(1,_FACD3DXF,901)
+#define D3DXFERR_BADTYPE                                      MAKE_HRESULT(1,_FACD3DXF,902)
+#define D3DXFERR_NOTFOUND                        MAKE_HRESULT(1,_FACD3DXF,903)
+#define D3DXFERR_NOTDONEYET                      MAKE_HRESULT(1,_FACD3DXF,904)
+#define D3DXFERR_FILENOTFOUND                    MAKE_HRESULT(1,_FACD3DXF,905)
 #define D3DXFERR_RESOURCENOTFOUND   MAKE_HRESULT(1,_FACD3DXF,906)
-#define D3DXFERR_BADRESOURCE        MAKE_HRESULT(1,_FACD3DXF,907)
-#define D3DXFERR_BADFILETYPE        MAKE_HRESULT(1,_FACD3DXF,908)
+#define D3DXFERR_BADRESOURCE                     MAKE_HRESULT(1,_FACD3DXF,907)
+#define D3DXFERR_BADFILETYPE                     MAKE_HRESULT(1,_FACD3DXF,908)
 #define D3DXFERR_BADFILEVERSION     MAKE_HRESULT(1,_FACD3DXF,909)
 #define D3DXFERR_BADFILEFLOATSIZE   MAKE_HRESULT(1,_FACD3DXF,910)
-#define D3DXFERR_BADFILE            MAKE_HRESULT(1,_FACD3DXF,911)
-#define D3DXFERR_PARSEERROR         MAKE_HRESULT(1,_FACD3DXF,912)
-#define D3DXFERR_BADARRAYSIZE       MAKE_HRESULT(1,_FACD3DXF,913)
+#define D3DXFERR_BADFILE                                      MAKE_HRESULT(1,_FACD3DXF,911)
+#define D3DXFERR_PARSEERROR                      MAKE_HRESULT(1,_FACD3DXF,912)
+#define D3DXFERR_BADARRAYSIZE                    MAKE_HRESULT(1,_FACD3DXF,913)
 #define D3DXFERR_BADDATAREFERENCE   MAKE_HRESULT(1,_FACD3DXF,914)
-#define D3DXFERR_NOMOREOBJECTS      MAKE_HRESULT(1,_FACD3DXF,915)
-#define D3DXFERR_NOMOREDATA         MAKE_HRESULT(1,_FACD3DXF,916)
-#define D3DXFERR_BADCACHEFILE       MAKE_HRESULT(1,_FACD3DXF,917)
+#define D3DXFERR_NOMOREOBJECTS                   MAKE_HRESULT(1,_FACD3DXF,915)
+#define D3DXFERR_NOMOREDATA                      MAKE_HRESULT(1,_FACD3DXF,916)
+#define D3DXFERR_BADCACHEFILE                    MAKE_HRESULT(1,_FACD3DXF,917)
 
 #ifdef __cplusplus
 }

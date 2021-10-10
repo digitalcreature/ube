@@ -17,7 +17,7 @@
 #define FBIOGETCMAP		0x4604
 #define FBIOPUTCMAP		0x4605
 #define FBIOPAN_DISPLAY		0x4606
-#define FBIO_CURSOR            _IOWR('F', 0x08, struct fb_cursor)
+#define FBIO_CURSOR                                      _IOWR('F', 0x08, struct fb_cursor)
 /* 0x4607-0x460B are defined below */
 /* #define FBIOGET_MONITORSPEC	0x460C */
 /* #define FBIOPUT_MONITORSPEC	0x460D */
@@ -26,12 +26,12 @@
 #define FBIOPUT_CON2FBMAP	0x4610
 #define FBIOBLANK		0x4611		/* arg: 0 or vesa level + 1 */
 #define FBIOGET_VBLANK		_IOR('F', 0x12, struct fb_vblank)
-#define FBIO_ALLOC              0x4613
-#define FBIO_FREE               0x4614
-#define FBIOGET_GLYPH           0x4615
-#define FBIOGET_HWCINFO         0x4616
-#define FBIOPUT_MODEINFO        0x4617
-#define FBIOGET_DISPINFO        0x4618
+#define FBIO_ALLOC                                        0x4613
+#define FBIO_FREE                                         0x4614
+#define FBIOGET_GLYPH                        0x4615
+#define FBIOGET_HWCINFO                      0x4616
+#define FBIOPUT_MODEINFO                     0x4617
+#define FBIOGET_DISPINFO                     0x4618
 #define FBIO_WAITFORVSYNC	_IOW('F', 0x20, __u32)
 
 #define FB_TYPE_PACKED_PIXELS		0	/* Packed Pixels	*/
@@ -45,7 +45,7 @@
 #define FB_AUX_TEXT_CGA		1	/* CGA/EGA/VGA Color text */
 #define FB_AUX_TEXT_S3_MMIO	2	/* S3 MMIO fasttext */
 #define FB_AUX_TEXT_MGA_STEP16	3	/* MGA Millenium I: text, attr, 14 reserved bytes */
-#define FB_AUX_TEXT_MGA_STEP8	4	/* other MGAs:      text, attr,  6 reserved bytes */
+#define FB_AUX_TEXT_MGA_STEP8	4	/* other MGAs:                   text, attr,  6 reserved bytes */
 #define FB_AUX_TEXT_SVGA_GROUP	8	/* 8-15: SVGA tileblit compatible modes */
 #define FB_AUX_TEXT_SVGA_MASK	7	/* lower three bits says step */
 #define FB_AUX_TEXT_SVGA_STEP2	8	/* SVGA text mode:  text, attr */
@@ -68,9 +68,9 @@
 
 #define FB_ACCEL_NONE		0	/* no hardware accelerator	*/
 #define FB_ACCEL_ATARIBLITT	1	/* Atari Blitter		*/
-#define FB_ACCEL_AMIGABLITT	2	/* Amiga Blitter                */
+#define FB_ACCEL_AMIGABLITT	2	/* Amiga Blitter                                          */
 #define FB_ACCEL_S3_TRIO64	3	/* Cybervision64 (S3 Trio64)    */
-#define FB_ACCEL_NCR_77C32BLT	4	/* RetinaZ3 (NCR 77C32BLT)      */
+#define FB_ACCEL_NCR_77C32BLT	4	/* RetinaZ3 (NCR 77C32BLT)                   */
 #define FB_ACCEL_S3_VIRGE	5	/* Cybervision64/3D (S3 ViRGE)	*/
 #define FB_ACCEL_ATI_MACH64GX	6	/* ATI Mach 64GX family		*/
 #define FB_ACCEL_DEC_TGA	7	/* DEC 21030 TGA		*/
@@ -93,7 +93,7 @@
 #define FB_ACCEL_SUN_CGTHREE	24	/* Sun cgthree			*/
 #define FB_ACCEL_SUN_TCX	25	/* Sun tcx			*/
 #define FB_ACCEL_MATROX_MGAG400	26	/* Matrox G400			*/
-#define FB_ACCEL_NV3		27	/* nVidia RIVA 128              */
+#define FB_ACCEL_NV3		27	/* nVidia RIVA 128                                        */
 #define FB_ACCEL_NV4		28	/* nVidia RIVA TNT		*/
 #define FB_ACCEL_NV5		29	/* nVidia RIVA TNT2		*/
 #define FB_ACCEL_CT_6555x	30	/* C&T 6555x			*/
@@ -102,51 +102,51 @@
 #define FB_ACCEL_IGS_CYBER2000	33	/* CyberPro 2000		*/
 #define FB_ACCEL_IGS_CYBER2010	34	/* CyberPro 2010		*/
 #define FB_ACCEL_IGS_CYBER5000	35	/* CyberPro 5000		*/
-#define FB_ACCEL_SIS_GLAMOUR    36	/* SiS 300/630/540              */
+#define FB_ACCEL_SIS_GLAMOUR    36	/* SiS 300/630/540                                        */
 #define FB_ACCEL_3DLABS_PERMEDIA3 37	/* 3Dlabs Permedia 3		*/
 #define FB_ACCEL_ATI_RADEON	38	/* ATI Radeon family		*/
-#define FB_ACCEL_I810           39      /* Intel 810/815                */
+#define FB_ACCEL_I810                        39                   /* Intel 810/815                                          */
 #define FB_ACCEL_SIS_GLAMOUR_2  40	/* SiS 315, 650, 740		*/
-#define FB_ACCEL_SIS_XABRE      41	/* SiS 330 ("Xabre")		*/
-#define FB_ACCEL_I830           42      /* Intel 830M/845G/85x/865G     */
-#define FB_ACCEL_NV_10          43      /* nVidia Arch 10               */
-#define FB_ACCEL_NV_20          44      /* nVidia Arch 20               */
-#define FB_ACCEL_NV_30          45      /* nVidia Arch 30               */
-#define FB_ACCEL_NV_40          46      /* nVidia Arch 40               */
-#define FB_ACCEL_XGI_VOLARI_V	47	/* XGI Volari V3XT, V5, V8      */
-#define FB_ACCEL_XGI_VOLARI_Z	48	/* XGI Volari Z7                */
-#define FB_ACCEL_OMAP1610	49	/* TI OMAP16xx                  */
+#define FB_ACCEL_SIS_XABRE                   41	/* SiS 330 ("Xabre")		*/
+#define FB_ACCEL_I830                        42                   /* Intel 830M/845G/85x/865G     */
+#define FB_ACCEL_NV_10                       43                   /* nVidia Arch 10                                         */
+#define FB_ACCEL_NV_20                       44                   /* nVidia Arch 20                                         */
+#define FB_ACCEL_NV_30                       45                   /* nVidia Arch 30                                         */
+#define FB_ACCEL_NV_40                       46                   /* nVidia Arch 40                                         */
+#define FB_ACCEL_XGI_VOLARI_V	47	/* XGI Volari V3XT, V5, V8                   */
+#define FB_ACCEL_XGI_VOLARI_Z	48	/* XGI Volari Z7                                          */
+#define FB_ACCEL_OMAP1610	49	/* TI OMAP16xx                                                         */
 #define FB_ACCEL_TRIDENT_TGUI	50	/* Trident TGUI			*/
 #define FB_ACCEL_TRIDENT_3DIMAGE 51	/* Trident 3DImage		*/
 #define FB_ACCEL_TRIDENT_BLADE3D 52	/* Trident Blade3D		*/
 #define FB_ACCEL_TRIDENT_BLADEXP 53	/* Trident BladeXP		*/
 #define FB_ACCEL_CIRRUS_ALPINE   53	/* Cirrus Logic 543x/544x/5480	*/
-#define FB_ACCEL_NEOMAGIC_NM2070 90	/* NeoMagic NM2070              */
-#define FB_ACCEL_NEOMAGIC_NM2090 91	/* NeoMagic NM2090              */
-#define FB_ACCEL_NEOMAGIC_NM2093 92	/* NeoMagic NM2093              */
-#define FB_ACCEL_NEOMAGIC_NM2097 93	/* NeoMagic NM2097              */
-#define FB_ACCEL_NEOMAGIC_NM2160 94	/* NeoMagic NM2160              */
-#define FB_ACCEL_NEOMAGIC_NM2200 95	/* NeoMagic NM2200              */
-#define FB_ACCEL_NEOMAGIC_NM2230 96	/* NeoMagic NM2230              */
-#define FB_ACCEL_NEOMAGIC_NM2360 97	/* NeoMagic NM2360              */
-#define FB_ACCEL_NEOMAGIC_NM2380 98	/* NeoMagic NM2380              */
+#define FB_ACCEL_NEOMAGIC_NM2070 90	/* NeoMagic NM2070                                        */
+#define FB_ACCEL_NEOMAGIC_NM2090 91	/* NeoMagic NM2090                                        */
+#define FB_ACCEL_NEOMAGIC_NM2093 92	/* NeoMagic NM2093                                        */
+#define FB_ACCEL_NEOMAGIC_NM2097 93	/* NeoMagic NM2097                                        */
+#define FB_ACCEL_NEOMAGIC_NM2160 94	/* NeoMagic NM2160                                        */
+#define FB_ACCEL_NEOMAGIC_NM2200 95	/* NeoMagic NM2200                                        */
+#define FB_ACCEL_NEOMAGIC_NM2230 96	/* NeoMagic NM2230                                        */
+#define FB_ACCEL_NEOMAGIC_NM2360 97	/* NeoMagic NM2360                                        */
+#define FB_ACCEL_NEOMAGIC_NM2380 98	/* NeoMagic NM2380                                        */
 #define FB_ACCEL_PXA3XX		 99	/* PXA3xx			*/
 
-#define FB_ACCEL_SAVAGE4        0x80	/* S3 Savage4                   */
-#define FB_ACCEL_SAVAGE3D       0x81	/* S3 Savage3D                  */
-#define FB_ACCEL_SAVAGE3D_MV    0x82	/* S3 Savage3D-MV               */
-#define FB_ACCEL_SAVAGE2000     0x83	/* S3 Savage2000                */
-#define FB_ACCEL_SAVAGE_MX_MV   0x84	/* S3 Savage/MX-MV              */
-#define FB_ACCEL_SAVAGE_MX      0x85	/* S3 Savage/MX                 */
-#define FB_ACCEL_SAVAGE_IX_MV   0x86	/* S3 Savage/IX-MV              */
-#define FB_ACCEL_SAVAGE_IX      0x87	/* S3 Savage/IX                 */
-#define FB_ACCEL_PROSAVAGE_PM   0x88	/* S3 ProSavage PM133           */
-#define FB_ACCEL_PROSAVAGE_KM   0x89	/* S3 ProSavage KM133           */
-#define FB_ACCEL_S3TWISTER_P    0x8a	/* S3 Twister                   */
-#define FB_ACCEL_S3TWISTER_K    0x8b	/* S3 TwisterK                  */
-#define FB_ACCEL_SUPERSAVAGE    0x8c    /* S3 Supersavage               */
-#define FB_ACCEL_PROSAVAGE_DDR  0x8d	/* S3 ProSavage DDR             */
-#define FB_ACCEL_PROSAVAGE_DDRK 0x8e	/* S3 ProSavage DDR-K           */
+#define FB_ACCEL_SAVAGE4                     0x80	/* S3 Savage4                                                          */
+#define FB_ACCEL_SAVAGE3D                    0x81	/* S3 Savage3D                                                         */
+#define FB_ACCEL_SAVAGE3D_MV    0x82	/* S3 Savage3D-MV                                         */
+#define FB_ACCEL_SAVAGE2000     0x83	/* S3 Savage2000                                          */
+#define FB_ACCEL_SAVAGE_MX_MV   0x84	/* S3 Savage/MX-MV                                        */
+#define FB_ACCEL_SAVAGE_MX                   0x85	/* S3 Savage/MX                                           */
+#define FB_ACCEL_SAVAGE_IX_MV   0x86	/* S3 Savage/IX-MV                                        */
+#define FB_ACCEL_SAVAGE_IX                   0x87	/* S3 Savage/IX                                           */
+#define FB_ACCEL_PROSAVAGE_PM   0x88	/* S3 ProSavage PM133                        */
+#define FB_ACCEL_PROSAVAGE_KM   0x89	/* S3 ProSavage KM133                        */
+#define FB_ACCEL_S3TWISTER_P    0x8a	/* S3 Twister                                                          */
+#define FB_ACCEL_S3TWISTER_K    0x8b	/* S3 TwisterK                                                         */
+#define FB_ACCEL_SUPERSAVAGE    0x8c    /* S3 Supersavage                                         */
+#define FB_ACCEL_PROSAVAGE_DDR  0x8d	/* S3 ProSavage DDR                                       */
+#define FB_ACCEL_PROSAVAGE_DDRK 0x8e	/* S3 ProSavage DDR-K                        */
 
 #define FB_ACCEL_PUV3_UNIGFX	0xa0	/* PKUnity-v3 Unigfx		*/
 
@@ -190,19 +190,19 @@ struct fb_bitfield {
 					/* right */ 
 };
 
-#define FB_NONSTD_HAM		1	/* Hold-And-Modify (HAM)        */
+#define FB_NONSTD_HAM		1	/* Hold-And-Modify (HAM)                     */
 #define FB_NONSTD_REV_PIX_IN_B	2	/* order of pixels in each byte is reversed */
 
 #define FB_ACTIVATE_NOW		0	/* set values immediately (or vbl)*/
 #define FB_ACTIVATE_NXTOPEN	1	/* activate on next open	*/
 #define FB_ACTIVATE_TEST	2	/* don't set, round up impossible */
-#define FB_ACTIVATE_MASK       15
+#define FB_ACTIVATE_MASK                    15
 					/* values			*/
-#define FB_ACTIVATE_VBL	       16	/* activate values on next vbl  */
+#define FB_ACTIVATE_VBL	                    16	/* activate values on next vbl  */
 #define FB_CHANGE_CMAP_VBL     32	/* change colormap on vbl	*/
-#define FB_ACTIVATE_ALL	       64	/* change all VCs on this fb	*/
+#define FB_ACTIVATE_ALL	                    64	/* change all VCs on this fb	*/
 #define FB_ACTIVATE_FORCE     128	/* force apply even when no change*/
-#define FB_ACTIVATE_INV_MODE  256       /* invalidate videomode */
+#define FB_ACTIVATE_INV_MODE  256                    /* invalidate videomode */
 
 #define FB_ACCELF_TEXT		1	/* (OBSOLETE) see fb_info.flags and vc_mode */
 
@@ -210,7 +210,7 @@ struct fb_bitfield {
 #define FB_SYNC_VERT_HIGH_ACT	2	/* vertical sync high active	*/
 #define FB_SYNC_EXT		4	/* external sync		*/
 #define FB_SYNC_COMP_HIGH_ACT	8	/* composite sync high active   */
-#define FB_SYNC_BROADCAST	16	/* broadcast video timings      */
+#define FB_SYNC_BROADCAST	16	/* broadcast video timings                   */
 					/* vtotal = 144d/288n/576i => PAL  */
 					/* vtotal = 121d/242n/484i => NTSC */
 #define FB_SYNC_ON_GREEN	32	/* sync on green */
@@ -228,9 +228,9 @@ struct fb_bitfield {
 /*
  * Display rotation support
  */
-#define FB_ROTATE_UR      0
-#define FB_ROTATE_CW      1
-#define FB_ROTATE_UD      2
+#define FB_ROTATE_UR                   0
+#define FB_ROTATE_CW                   1
+#define FB_ROTATE_UD                   2
 #define FB_ROTATE_CCW     3
 
 #define PICOS2KHZ(a) (1000000000UL/(a))
@@ -291,18 +291,18 @@ struct fb_con2fbmap {
 };
 
 /* VESA Blanking Levels */
-#define VESA_NO_BLANKING        0
-#define VESA_VSYNC_SUSPEND      1
-#define VESA_HSYNC_SUSPEND      2
-#define VESA_POWERDOWN          3
+#define VESA_NO_BLANKING                     0
+#define VESA_VSYNC_SUSPEND                   1
+#define VESA_HSYNC_SUSPEND                   2
+#define VESA_POWERDOWN                       3
 
 
 enum {
 	/* screen: unblanked, hsync: on,  vsync: on */
-	FB_BLANK_UNBLANK       = VESA_NO_BLANKING,
+	FB_BLANK_UNBLANK                    = VESA_NO_BLANKING,
 
 	/* screen: blanked,   hsync: on,  vsync: on */
-	FB_BLANK_NORMAL        = VESA_NO_BLANKING + 1,
+	FB_BLANK_NORMAL                     = VESA_NO_BLANKING + 1,
 
 	/* screen: blanked,   hsync: on,  vsync: off */
 	FB_BLANK_VSYNC_SUSPEND = VESA_VSYNC_SUSPEND + 1,

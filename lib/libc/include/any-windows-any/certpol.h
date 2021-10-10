@@ -59,17 +59,17 @@ extern "C"{
 #else
   typedef struct ICertPolicyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertPolicy *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertPolicy *This);
-      ULONG (WINAPI *Release)(ICertPolicy *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertPolicy *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertPolicy *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertPolicy *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertPolicy *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Initialize)(ICertPolicy *This,const BSTR strConfig);
-      HRESULT (WINAPI *VerifyRequest)(ICertPolicy *This,const BSTR strConfig,LONG Context,LONG bNewRequest,LONG Flags,LONG *pDisposition);
-      HRESULT (WINAPI *GetDescription)(ICertPolicy *This,BSTR *pstrDescription);
-      HRESULT (WINAPI *ShutDown)(ICertPolicy *This);
+                   HRESULT (WINAPI *QueryInterface)(ICertPolicy *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertPolicy *This);
+                   ULONG (WINAPI *Release)(ICertPolicy *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertPolicy *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertPolicy *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertPolicy *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertPolicy *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Initialize)(ICertPolicy *This,const BSTR strConfig);
+                   HRESULT (WINAPI *VerifyRequest)(ICertPolicy *This,const BSTR strConfig,LONG Context,LONG bNewRequest,LONG Flags,LONG *pDisposition);
+                   HRESULT (WINAPI *GetDescription)(ICertPolicy *This,BSTR *pstrDescription);
+                   HRESULT (WINAPI *ShutDown)(ICertPolicy *This);
     END_INTERFACE
   } ICertPolicyVtbl;
   struct ICertPolicy {
@@ -110,18 +110,18 @@ extern "C"{
 #else
   typedef struct ICertPolicy2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertPolicy2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertPolicy2 *This);
-      ULONG (WINAPI *Release)(ICertPolicy2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertPolicy2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertPolicy2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertPolicy2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertPolicy2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Initialize)(ICertPolicy2 *This,const BSTR strConfig);
-      HRESULT (WINAPI *VerifyRequest)(ICertPolicy2 *This,const BSTR strConfig,LONG Context,LONG bNewRequest,LONG Flags,LONG *pDisposition);
-      HRESULT (WINAPI *GetDescription)(ICertPolicy2 *This,BSTR *pstrDescription);
-      HRESULT (WINAPI *ShutDown)(ICertPolicy2 *This);
-      HRESULT (WINAPI *GetManageModule)(ICertPolicy2 *This,ICertManageModule **ppManageModule);
+                   HRESULT (WINAPI *QueryInterface)(ICertPolicy2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertPolicy2 *This);
+                   ULONG (WINAPI *Release)(ICertPolicy2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertPolicy2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertPolicy2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertPolicy2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertPolicy2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Initialize)(ICertPolicy2 *This,const BSTR strConfig);
+                   HRESULT (WINAPI *VerifyRequest)(ICertPolicy2 *This,const BSTR strConfig,LONG Context,LONG bNewRequest,LONG Flags,LONG *pDisposition);
+                   HRESULT (WINAPI *GetDescription)(ICertPolicy2 *This,BSTR *pstrDescription);
+                   HRESULT (WINAPI *ShutDown)(ICertPolicy2 *This);
+                   HRESULT (WINAPI *GetManageModule)(ICertPolicy2 *This,ICertManageModule **ppManageModule);
     END_INTERFACE
   } ICertPolicy2Vtbl;
   struct ICertPolicy2 {

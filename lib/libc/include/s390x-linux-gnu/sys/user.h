@@ -37,9 +37,9 @@ struct _user_fpregs_struct
 struct _user_per_struct
 {
   unsigned long control_regs[3];
-  unsigned single_step       : 1;
+  unsigned single_step                    : 1;
   unsigned instruction_fetch : 1;
-  unsigned                   : 30;
+  unsigned                                                          : 30;
   unsigned long starting_addr;
   unsigned long ending_addr;
   unsigned short perc_atmid;

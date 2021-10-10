@@ -50,7 +50,7 @@ struct passwd
 {
   char *pw_name;		/* Username.  */
   char *pw_passwd;		/* Hashed passphrase, if shadow database
-                                   not in use (see shadow.h).  */
+                                                                                                    not in use (see shadow.h).  */
   __uid_t pw_uid;		/* User ID.  */
   __gid_t pw_gid;		/* Group ID.  */
   char *pw_gecos;		/* Real name.  */
@@ -137,22 +137,22 @@ extern struct passwd *getpwnam (const char *__name) __nonnull ((1));
    or due to the implementation it is a cancellation point and
    therefore not marked with __THROW.  */
 extern int getpwent_r (struct passwd *__restrict __resultbuf,
-		       char *__restrict __buffer, size_t __buflen,
-		       struct passwd **__restrict __result)
-		       __nonnull ((1, 2, 4));
+		                    char *__restrict __buffer, size_t __buflen,
+		                    struct passwd **__restrict __result)
+		                    __nonnull ((1, 2, 4));
 # endif
 
 extern int getpwuid_r (__uid_t __uid,
-		       struct passwd *__restrict __resultbuf,
-		       char *__restrict __buffer, size_t __buflen,
-		       struct passwd **__restrict __result)
-		       __nonnull ((2, 3, 5));
+		                    struct passwd *__restrict __resultbuf,
+		                    char *__restrict __buffer, size_t __buflen,
+		                    struct passwd **__restrict __result)
+		                    __nonnull ((2, 3, 5));
 
 extern int getpwnam_r (const char *__restrict __name,
-		       struct passwd *__restrict __resultbuf,
-		       char *__restrict __buffer, size_t __buflen,
-		       struct passwd **__restrict __result)
-		       __nonnull ((1, 2, 3, 5));
+		                    struct passwd *__restrict __resultbuf,
+		                    char *__restrict __buffer, size_t __buflen,
+		                    struct passwd **__restrict __result)
+		                    __nonnull ((1, 2, 3, 5));
 
 
 # ifdef	__USE_MISC

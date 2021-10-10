@@ -98,14 +98,14 @@ extern "C"{
 #else
   typedef struct IChannelMgrVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IChannelMgr *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IChannelMgr *This);
-      ULONG (WINAPI *Release)(IChannelMgr *This);
-      HRESULT (WINAPI *AddChannelShortcut)(IChannelMgr *This,CHANNELSHORTCUTINFO *pChannelInfo);
-      HRESULT (WINAPI *DeleteChannelShortcut)(IChannelMgr *This,LPWSTR pszTitle);
-      HRESULT (WINAPI *AddCategory)(IChannelMgr *This,CHANNELCATEGORYINFO *pCategoryInfo);
-      HRESULT (WINAPI *DeleteCategory)(IChannelMgr *This,LPWSTR pszTitle);
-      HRESULT (WINAPI *EnumChannels)(IChannelMgr *This,DWORD dwEnumFlags,LPCWSTR pszURL,IEnumChannels **pIEnumChannels);
+                   HRESULT (WINAPI *QueryInterface)(IChannelMgr *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IChannelMgr *This);
+                   ULONG (WINAPI *Release)(IChannelMgr *This);
+                   HRESULT (WINAPI *AddChannelShortcut)(IChannelMgr *This,CHANNELSHORTCUTINFO *pChannelInfo);
+                   HRESULT (WINAPI *DeleteChannelShortcut)(IChannelMgr *This,LPWSTR pszTitle);
+                   HRESULT (WINAPI *AddCategory)(IChannelMgr *This,CHANNELCATEGORYINFO *pCategoryInfo);
+                   HRESULT (WINAPI *DeleteCategory)(IChannelMgr *This,LPWSTR pszTitle);
+                   HRESULT (WINAPI *EnumChannels)(IChannelMgr *This,DWORD dwEnumFlags,LPCWSTR pszURL,IEnumChannels **pIEnumChannels);
     END_INTERFACE
   } IChannelMgrVtbl;
   struct IChannelMgr {
@@ -159,13 +159,13 @@ extern "C"{
 #else
   typedef struct IEnumChannelsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumChannels *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumChannels *This);
-      ULONG (WINAPI *Release)(IEnumChannels *This);
-      HRESULT (WINAPI *Next)(IEnumChannels *This,ULONG celt,CHANNELENUMINFO *rgChanInf,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumChannels *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumChannels *This);
-      HRESULT (WINAPI *Clone)(IEnumChannels *This,IEnumChannels **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumChannels *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumChannels *This);
+                   ULONG (WINAPI *Release)(IEnumChannels *This);
+                   HRESULT (WINAPI *Next)(IEnumChannels *This,ULONG celt,CHANNELENUMINFO *rgChanInf,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumChannels *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumChannels *This);
+                   HRESULT (WINAPI *Clone)(IEnumChannels *This,IEnumChannels **ppenum);
     END_INTERFACE
   } IEnumChannelsVtbl;
   struct IEnumChannels {

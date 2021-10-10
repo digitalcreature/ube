@@ -49,17 +49,17 @@
  */
 enum batadv_packettype {
 	/* 0x00 - 0x3f: local packets or special rules for handling */
-	BATADV_IV_OGM           = 0x00,
-	BATADV_BCAST            = 0x01,
-	BATADV_CODED            = 0x02,
+	BATADV_IV_OGM                        = 0x00,
+	BATADV_BCAST                                      = 0x01,
+	BATADV_CODED                                      = 0x02,
 	BATADV_ELP		= 0x03,
 	BATADV_OGM2		= 0x04,
 	/* 0x40 - 0x7f: unicast */
 #define BATADV_UNICAST_MIN     0x40
-	BATADV_UNICAST          = 0x40,
+	BATADV_UNICAST                       = 0x40,
 	BATADV_UNICAST_FRAG     = 0x41,
 	BATADV_UNICAST_4ADDR    = 0x42,
-	BATADV_ICMP             = 0x43,
+	BATADV_ICMP                                       = 0x43,
 	BATADV_UNICAST_TVLV     = 0x44,
 #define BATADV_UNICAST_MAX     0x7f
 	/* 0x80 - 0xff: reserved */
@@ -93,7 +93,7 @@ enum batadv_subtype {
 enum batadv_iv_flags {
 	BATADV_NOT_BEST_NEXT_HOP   = 1UL << 0,
 	BATADV_PRIMARIES_FIRST_HOP = 1UL << 1,
-	BATADV_DIRECTLINK          = 1UL << 2,
+	BATADV_DIRECTLINK                       = 1UL << 2,
 };
 
 /**
@@ -106,12 +106,12 @@ enum batadv_iv_flags {
  * @BATADV_TP: throughput meter packet
  */
 enum batadv_icmp_packettype {
-	BATADV_ECHO_REPLY	       = 0,
+	BATADV_ECHO_REPLY	                    = 0,
 	BATADV_DESTINATION_UNREACHABLE = 3,
-	BATADV_ECHO_REQUEST	       = 8,
-	BATADV_TTL_EXCEEDED	       = 11,
-	BATADV_PARAMETER_PROBLEM       = 12,
-	BATADV_TP		       = 15,
+	BATADV_ECHO_REQUEST	                    = 8,
+	BATADV_TTL_EXCEEDED	                    = 11,
+	BATADV_PARAMETER_PROBLEM                    = 12,
+	BATADV_TP		                    = 15,
 };
 
 /**

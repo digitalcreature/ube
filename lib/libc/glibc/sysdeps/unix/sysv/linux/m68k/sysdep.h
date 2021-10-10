@@ -51,26 +51,26 @@
 #endif
 
 #undef PSEUDO
-#define	PSEUDO(name, syscall_name, args)				      \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
-    cmp.l &-4095, %d0;							      \
+#define	PSEUDO(name, syscall_name, args)				                   \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
+    cmp.l &-4095, %d0;							                   \
     jcc SYSCALL_ERROR_LABEL
 
 #undef PSEUDO_END
-#define PSEUDO_END(name)						      \
-  SYSCALL_ERROR_HANDLER;						      \
+#define PSEUDO_END(name)						                   \
+  SYSCALL_ERROR_HANDLER;						                   \
   END (name)
 
 #undef PSEUDO_NOERRNO
-#define	PSEUDO_NOERRNO(name, syscall_name, args)			      \
-  .text;								      \
-  ENTRY (name)								      \
+#define	PSEUDO_NOERRNO(name, syscall_name, args)			                   \
+  .text;								                   \
+  ENTRY (name)								                   \
     DO_CALL (syscall_name, args)
 
 #undef PSEUDO_END_NOERRNO
-#define PSEUDO_END_NOERRNO(name)					      \
+#define PSEUDO_END_NOERRNO(name)					                   \
   END (name)
 
 #define ret_NOERRNO rts
@@ -78,9 +78,9 @@
 /* The function has to return the error code.  */
 #undef	PSEUDO_ERRVAL
 #define	PSEUDO_ERRVAL(name, syscall_name, args) \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
     negl %d0
 
 #undef	PSEUDO_END_ERRVAL
@@ -91,15 +91,15 @@
 
 #ifdef PIC
 # if RTLD_PRIVATE_ERRNO
-#  define SYSCALL_ERROR_HANDLER						      \
-SYSCALL_ERROR_LABEL:							      \
-    PCREL_OP (lea, rtld_errno, %a0, %a0);				      \
-    neg.l %d0;								      \
-    move.l %d0, (%a0);							      \
-    move.l &-1, %d0;							      \
-    /* Copy return value to %a0 for syscalls that are declared to return      \
-       a pointer (e.g., mmap).  */					      \
-    move.l %d0, %a0;							      \
+#  define SYSCALL_ERROR_HANDLER						                   \
+SYSCALL_ERROR_LABEL:							                   \
+    PCREL_OP (lea, rtld_errno, %a0, %a0);				                   \
+    neg.l %d0;								                   \
+    move.l %d0, (%a0);							                   \
+    move.l &-1, %d0;							                   \
+    /* Copy return value to %a0 for syscalls that are declared to return                   \
+                    a pointer (e.g., mmap).  */					                   \
+    move.l %d0, %a0;							                   \
     rts;
 # elif defined _LIBC_REENTRANT
 #  if IS_IN (libc)
@@ -107,32 +107,32 @@ SYSCALL_ERROR_LABEL:							      \
 #  else
 #   define SYSCALL_ERROR_ERRNO errno
 #  endif
-#  define SYSCALL_ERROR_HANDLER						      \
-SYSCALL_ERROR_LABEL:							      \
-    neg.l %d0;								      \
-    move.l %d0, -(%sp);							      \
-    cfi_adjust_cfa_offset (4);						      \
-    jbsr __m68k_read_tp@PLTPC;						      \
-    SYSCALL_ERROR_LOAD_GOT (%a1);					      \
-    add.l (SYSCALL_ERROR_ERRNO@TLSIE, %a1), %a0;			      \
-    move.l (%sp)+, (%a0);						      \
-    cfi_adjust_cfa_offset (-4);						      \
-    move.l &-1, %d0;							      \
-    /* Copy return value to %a0 for syscalls that are declared to return      \
-       a pointer (e.g., mmap).  */					      \
-    move.l %d0, %a0;							      \
+#  define SYSCALL_ERROR_HANDLER						                   \
+SYSCALL_ERROR_LABEL:							                   \
+    neg.l %d0;								                   \
+    move.l %d0, -(%sp);							                   \
+    cfi_adjust_cfa_offset (4);						                   \
+    jbsr __m68k_read_tp@PLTPC;						                   \
+    SYSCALL_ERROR_LOAD_GOT (%a1);					                   \
+    add.l (SYSCALL_ERROR_ERRNO@TLSIE, %a1), %a0;			                   \
+    move.l (%sp)+, (%a0);						                   \
+    cfi_adjust_cfa_offset (-4);						                   \
+    move.l &-1, %d0;							                   \
+    /* Copy return value to %a0 for syscalls that are declared to return                   \
+                    a pointer (e.g., mmap).  */					                   \
+    move.l %d0, %a0;							                   \
     rts;
 # else /* !_LIBC_REENTRANT */
 /* Store (- %d0) into errno through the GOT.  */
-#  define SYSCALL_ERROR_HANDLER						      \
-SYSCALL_ERROR_LABEL:							      \
-    move.l (errno@GOTPC, %pc), %a0;					      \
-    neg.l %d0;								      \
-    move.l %d0, (%a0);							      \
-    move.l &-1, %d0;							      \
-    /* Copy return value to %a0 for syscalls that are declared to return      \
-       a pointer (e.g., mmap).  */					      \
-    move.l %d0, %a0;							      \
+#  define SYSCALL_ERROR_HANDLER						                   \
+SYSCALL_ERROR_LABEL:							                   \
+    move.l (errno@GOTPC, %pc), %a0;					                   \
+    neg.l %d0;								                   \
+    move.l %d0, (%a0);							                   \
+    move.l &-1, %d0;							                   \
+    /* Copy return value to %a0 for syscalls that are declared to return                   \
+                    a pointer (e.g., mmap).  */					                   \
+    move.l %d0, %a0;							                   \
     rts;
 # endif /* _LIBC_REENTRANT */
 #else
@@ -166,10 +166,10 @@ SYSCALL_ERROR_LABEL:							      \
    speed is more important, we don't use movem.  Since %a0 and %a1 are
    scratch registers, we can use them for saving as well.  */
 
-#define DO_CALL(syscall_name, args)			      		      \
-    move.l &SYS_ify(syscall_name), %d0;					      \
-    DOARGS_##args							      \
-    trap &0;								      \
+#define DO_CALL(syscall_name, args)			                   		                   \
+    move.l &SYS_ify(syscall_name), %d0;					                   \
+    DOARGS_##args							                   \
+    trap &0;								                   \
     UNDOARGS_##args
 
 #define	DOARGS_0	/* No arguments to frob.  */
@@ -181,34 +181,34 @@ SYSCALL_ERROR_LABEL:							      \
 #define	UNDOARGS_1	UNDOARGS_0
 
 #define	DOARGS_2	_DOARGS_2 (8)
-#define	_DOARGS_2(n)	move.l %d2, %a0; cfi_register (%d2, %a0);	      \
+#define	_DOARGS_2(n)	move.l %d2, %a0; cfi_register (%d2, %a0);	                   \
 			move.l n(%sp), %d2; _DOARGS_1 (n-4)
 #define	UNDOARGS_2	UNDOARGS_1; move.l %a0, %d2; cfi_restore (%d2)
 
 #define DOARGS_3	_DOARGS_3 (12)
-#define _DOARGS_3(n)	move.l %d3, %a1; cfi_register (%d3, %a1);	      \
+#define _DOARGS_3(n)	move.l %d3, %a1; cfi_register (%d3, %a1);	                   \
 			move.l n(%sp), %d3; _DOARGS_2 (n-4)
 #define UNDOARGS_3	UNDOARGS_2; move.l %a1, %d3; cfi_restore (%d3)
 
 #define DOARGS_4	_DOARGS_4 (16)
-#define _DOARGS_4(n)	move.l %d4, -(%sp);				      \
+#define _DOARGS_4(n)	move.l %d4, -(%sp);				                   \
 			cfi_adjust_cfa_offset (4); cfi_rel_offset (%d4, 0);   \
 			move.l n+4(%sp), %d4; _DOARGS_3 (n)
-#define UNDOARGS_4	UNDOARGS_3; move.l (%sp)+, %d4;			      \
+#define UNDOARGS_4	UNDOARGS_3; move.l (%sp)+, %d4;			                   \
 			cfi_adjust_cfa_offset (-4); cfi_restore (%d4)
 
 #define DOARGS_5	_DOARGS_5 (20)
-#define _DOARGS_5(n)	move.l %d5, -(%sp); 				      \
+#define _DOARGS_5(n)	move.l %d5, -(%sp); 				                   \
 			cfi_adjust_cfa_offset (4); cfi_rel_offset (%d5, 0);   \
 			move.l n+4(%sp), %d5; _DOARGS_4 (n)
-#define UNDOARGS_5	UNDOARGS_4; move.l (%sp)+, %d5;			      \
+#define UNDOARGS_5	UNDOARGS_4; move.l (%sp)+, %d5;			                   \
 			cfi_adjust_cfa_offset (-4); cfi_restore (%d5)
 
 #define DOARGS_6	_DOARGS_6 (24)
-#define _DOARGS_6(n)	_DOARGS_5 (n-4); move.l %a0, -(%sp);		      \
-			cfi_adjust_cfa_offset (4);			      \
+#define _DOARGS_6(n)	_DOARGS_5 (n-4); move.l %a0, -(%sp);		                   \
+			cfi_adjust_cfa_offset (4);			                   \
 			move.l n+12(%sp), %a0;
-#define UNDOARGS_6	move.l (%sp)+, %a0; cfi_adjust_cfa_offset (-4);	      \
+#define UNDOARGS_6	move.l (%sp)+, %a0; cfi_adjust_cfa_offset (-4);	                   \
 			UNDOARGS_5
 
 
@@ -227,10 +227,10 @@ SYSCALL_ERROR_LABEL:							      \
 #define INLINE_SYSCALL(name, nr, args...)				\
   ({ unsigned int _sys_result = INTERNAL_SYSCALL (name, , nr, args);	\
      if (__builtin_expect (INTERNAL_SYSCALL_ERROR_P (_sys_result, ), 0))\
-       {								\
+                    {								\
 	 __set_errno (INTERNAL_SYSCALL_ERRNO (_sys_result, ));		\
 	 _sys_result = (unsigned int) -1;				\
-       }								\
+                    }								\
      (int) _sys_result; })
 
 #undef INTERNAL_SYSCALL_DECL
@@ -244,17 +244,17 @@ SYSCALL_ERROR_LABEL:							      \
 #define INTERNAL_SYSCALL_NCS(name, err, nr, args...)	\
   ({ unsigned int _sys_result;				\
      {							\
-       /* Load argument values in temporary variables
+                    /* Load argument values in temporary variables
 	  to perform side effects like function calls
 	  before the call used registers are set.  */	\
-       LOAD_ARGS_##nr (args)				\
-       LOAD_REGS_##nr					\
-       register int _d0 asm ("%d0") = name;		\
-       asm volatile ("trap #0"				\
+                    LOAD_ARGS_##nr (args)				\
+                    LOAD_REGS_##nr					\
+                    register int _d0 asm ("%d0") = name;		\
+                    asm volatile ("trap #0"				\
 		     : "=d" (_d0)			\
 		     : "0" (_d0) ASM_ARGS_##nr		\
 		     : "memory");			\
-       _sys_result = _d0;				\
+                    _sys_result = _d0;				\
      }							\
      (int) _sys_result; })
 #define INTERNAL_SYSCALL(name, err, nr, args...)	\

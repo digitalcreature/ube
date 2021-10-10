@@ -57,8 +57,8 @@ extern "C" {
     BYTE Reserved4[8];
     PVOID Reserved5[3];
     __C89_NAMELESS union {
-      ULONG CheckSum;
-      PVOID Reserved6;
+                   ULONG CheckSum;
+                   PVOID Reserved6;
     };
     ULONG TimeDateStamp;
   } LDR_DATA_TABLE_ENTRY,*PLDR_DATA_TABLE_ENTRY;
@@ -556,12 +556,12 @@ typedef struct _RTL_USER_PROCESS_PARAMETERS {
     FILE_BASIC_INFORMATION     BasicInformation;
     FILE_STANDARD_INFORMATION  StandardInformation;
     FILE_INTERNAL_INFORMATION  InternalInformation;
-    FILE_EA_INFORMATION        EaInformation;
+    FILE_EA_INFORMATION                     EaInformation;
     FILE_ACCESS_INFORMATION    AccessInformation;
     FILE_POSITION_INFORMATION  PositionInformation;
-    FILE_MODE_INFORMATION      ModeInformation;
+    FILE_MODE_INFORMATION                   ModeInformation;
     FILE_ALIGNMENT_INFORMATION AlignmentInformation;
-    FILE_NAME_INFORMATION      NameInformation;
+    FILE_NAME_INFORMATION                   NameInformation;
   } FILE_ALL_INFORMATION, *PFILE_ALL_INFORMATION;
 
   typedef enum _FSINFOCLASS {
@@ -625,8 +625,8 @@ typedef struct _RTL_USER_PROCESS_PARAMETERS {
 
   typedef struct _IO_STATUS_BLOCK {
     __C89_NAMELESS union {
-      NTSTATUS Status;
-      PVOID Pointer;
+                   NTSTATUS Status;
+                   PVOID Pointer;
     };
     ULONG_PTR Information;
   } IO_STATUS_BLOCK,*PIO_STATUS_BLOCK;

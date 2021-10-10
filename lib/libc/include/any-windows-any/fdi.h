@@ -167,19 +167,19 @@ extern "C" {
     FDIDECRYPTTYPE fdidt;
     void *pvUser;
     __C89_NAMELESS union {
-      struct {
+                   struct {
 	void *pHeaderReserve;
 	USHORT cbHeaderReserve;
 	USHORT setID;
 	int iCabinet;
-      } cabinet;
-      struct {
+                   } cabinet;
+                   struct {
 	void *pFolderReserve;
 	USHORT cbFolderReserve;
 	USHORT iFolder;
-      } folder;
+                   } folder;
 
-      struct {
+                   struct {
 	void *pDataReserve;
 	USHORT cbDataReserve;
 	void *pbData;
@@ -187,7 +187,7 @@ extern "C" {
 	WINBOOL fSplit;
 	USHORT cbPartial;
 
-      } decrypt;
+                   } decrypt;
     };
   } FDIDECRYPT;
 

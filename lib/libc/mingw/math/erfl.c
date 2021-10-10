@@ -21,13 +21,13 @@
  *
  * The integral is
  *
- *                           x 
- *                            -
- *                 2         | |          2
+ *                                                                               x 
+ *                                                                                -
+ *                                           2                      | |                       2
  *   erf(x)  =  --------     |    exp( - t  ) dt.
- *              sqrt(pi)   | |
- *                          -
- *                           0
+ *                                        sqrt(pi)   | |
+ *                                                                              -
+ *                                                                               0
  *
  * The magnitude of x is limited to about 106.56 for IEEE
  * arithmetic; 1 or -1 is returned outside this range.
@@ -39,9 +39,9 @@
  *
  * ACCURACY:
  *
- *                      Relative error:
- * arithmetic   domain     # trials      peak         rms
- *    IEEE      0,1         50000       2.0e-19     5.7e-20
+ *                                                             Relative error:
+ * arithmetic   domain     # trials                   peak                      rms
+ *    IEEE                   0,1                      50000                    2.0e-19     5.7e-20
  *
  */
 
@@ -64,13 +64,13 @@
  *
  *  1 - erf(x) =
  *
- *                           inf. 
- *                             -
- *                  2         | |          2
+ *                                                                               inf. 
+ *                                                                                 -
+ *                                                         2                      | |                       2
  *   erfc(x)  =  --------     |    exp( - t  ) dt
- *               sqrt(pi)   | |
- *                           -
- *                            x
+ *                                         sqrt(pi)   | |
+ *                                                                               -
+ *                                                                                x
  *
  *
  * For small x, erfc(x) = 1 - erf(x); otherwise rational
@@ -82,16 +82,16 @@
  *
  * ACCURACY:
  *
- *                      Relative error:
- * arithmetic   domain     # trials      peak         rms
- *    IEEE      0,13        50000      8.4e-19      9.7e-20
- *    IEEE      6,106.56    20000      2.9e-19      7.1e-20
+ *                                                             Relative error:
+ * arithmetic   domain     # trials                   peak                      rms
+ *    IEEE                   0,13                     50000                   8.4e-19                   9.7e-20
+ *    IEEE                   6,106.56    20000                   2.9e-19                   7.1e-20
  *
  *
  * ERROR MESSAGES:
  *
- *   message          condition              value returned
- * erfcl underflow    x^2 > MAXLOGL              0.0
+ *   message                       condition                                        value returned
+ * erfcl underflow    x^2 > MAXLOGL                                        0.0
  *
  *
  */
@@ -215,9 +215,9 @@ static const uLD U[] = {
  *
  * ACCURACY:
  *
- *                      Relative error:
- * arithmetic      domain        # trials      peak         rms
- *   IEEE     -106.566, 106.566    10^5       1.6e-19     4.4e-20
+ *                                                             Relative error:
+ * arithmetic                   domain                     # trials                   peak                      rms
+ *   IEEE     -106.566, 106.566    10^5                    1.6e-19     4.4e-20
  *
  */
 

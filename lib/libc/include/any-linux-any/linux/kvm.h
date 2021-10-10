@@ -17,43 +17,43 @@
 
 /* *** Deprecated interfaces *** */
 
-#define KVM_TRC_SHIFT           16
+#define KVM_TRC_SHIFT                        16
 
-#define KVM_TRC_ENTRYEXIT       (1 << KVM_TRC_SHIFT)
-#define KVM_TRC_HANDLER         (1 << (KVM_TRC_SHIFT + 1))
+#define KVM_TRC_ENTRYEXIT                    (1 << KVM_TRC_SHIFT)
+#define KVM_TRC_HANDLER                      (1 << (KVM_TRC_SHIFT + 1))
 
-#define KVM_TRC_VMENTRY         (KVM_TRC_ENTRYEXIT + 0x01)
-#define KVM_TRC_VMEXIT          (KVM_TRC_ENTRYEXIT + 0x02)
-#define KVM_TRC_PAGE_FAULT      (KVM_TRC_HANDLER + 0x01)
+#define KVM_TRC_VMENTRY                      (KVM_TRC_ENTRYEXIT + 0x01)
+#define KVM_TRC_VMEXIT                       (KVM_TRC_ENTRYEXIT + 0x02)
+#define KVM_TRC_PAGE_FAULT                   (KVM_TRC_HANDLER + 0x01)
 
-#define KVM_TRC_HEAD_SIZE       12
-#define KVM_TRC_CYCLE_SIZE      8
-#define KVM_TRC_EXTRA_MAX       7
+#define KVM_TRC_HEAD_SIZE                    12
+#define KVM_TRC_CYCLE_SIZE                   8
+#define KVM_TRC_EXTRA_MAX                    7
 
-#define KVM_TRC_INJ_VIRQ         (KVM_TRC_HANDLER + 0x02)
+#define KVM_TRC_INJ_VIRQ                      (KVM_TRC_HANDLER + 0x02)
 #define KVM_TRC_REDELIVER_EVT    (KVM_TRC_HANDLER + 0x03)
-#define KVM_TRC_PEND_INTR        (KVM_TRC_HANDLER + 0x04)
-#define KVM_TRC_IO_READ          (KVM_TRC_HANDLER + 0x05)
-#define KVM_TRC_IO_WRITE         (KVM_TRC_HANDLER + 0x06)
-#define KVM_TRC_CR_READ          (KVM_TRC_HANDLER + 0x07)
-#define KVM_TRC_CR_WRITE         (KVM_TRC_HANDLER + 0x08)
-#define KVM_TRC_DR_READ          (KVM_TRC_HANDLER + 0x09)
-#define KVM_TRC_DR_WRITE         (KVM_TRC_HANDLER + 0x0A)
-#define KVM_TRC_MSR_READ         (KVM_TRC_HANDLER + 0x0B)
-#define KVM_TRC_MSR_WRITE        (KVM_TRC_HANDLER + 0x0C)
-#define KVM_TRC_CPUID            (KVM_TRC_HANDLER + 0x0D)
-#define KVM_TRC_INTR             (KVM_TRC_HANDLER + 0x0E)
-#define KVM_TRC_NMI              (KVM_TRC_HANDLER + 0x0F)
-#define KVM_TRC_VMMCALL          (KVM_TRC_HANDLER + 0x10)
-#define KVM_TRC_HLT              (KVM_TRC_HANDLER + 0x11)
-#define KVM_TRC_CLTS             (KVM_TRC_HANDLER + 0x12)
-#define KVM_TRC_LMSW             (KVM_TRC_HANDLER + 0x13)
-#define KVM_TRC_APIC_ACCESS      (KVM_TRC_HANDLER + 0x14)
-#define KVM_TRC_TDP_FAULT        (KVM_TRC_HANDLER + 0x15)
-#define KVM_TRC_GTLB_WRITE       (KVM_TRC_HANDLER + 0x16)
-#define KVM_TRC_STLB_WRITE       (KVM_TRC_HANDLER + 0x17)
-#define KVM_TRC_STLB_INVAL       (KVM_TRC_HANDLER + 0x18)
-#define KVM_TRC_PPC_INSTR        (KVM_TRC_HANDLER + 0x19)
+#define KVM_TRC_PEND_INTR                     (KVM_TRC_HANDLER + 0x04)
+#define KVM_TRC_IO_READ                       (KVM_TRC_HANDLER + 0x05)
+#define KVM_TRC_IO_WRITE                      (KVM_TRC_HANDLER + 0x06)
+#define KVM_TRC_CR_READ                       (KVM_TRC_HANDLER + 0x07)
+#define KVM_TRC_CR_WRITE                      (KVM_TRC_HANDLER + 0x08)
+#define KVM_TRC_DR_READ                       (KVM_TRC_HANDLER + 0x09)
+#define KVM_TRC_DR_WRITE                      (KVM_TRC_HANDLER + 0x0A)
+#define KVM_TRC_MSR_READ                      (KVM_TRC_HANDLER + 0x0B)
+#define KVM_TRC_MSR_WRITE                     (KVM_TRC_HANDLER + 0x0C)
+#define KVM_TRC_CPUID                                      (KVM_TRC_HANDLER + 0x0D)
+#define KVM_TRC_INTR                                       (KVM_TRC_HANDLER + 0x0E)
+#define KVM_TRC_NMI                                        (KVM_TRC_HANDLER + 0x0F)
+#define KVM_TRC_VMMCALL                       (KVM_TRC_HANDLER + 0x10)
+#define KVM_TRC_HLT                                        (KVM_TRC_HANDLER + 0x11)
+#define KVM_TRC_CLTS                                       (KVM_TRC_HANDLER + 0x12)
+#define KVM_TRC_LMSW                                       (KVM_TRC_HANDLER + 0x13)
+#define KVM_TRC_APIC_ACCESS                   (KVM_TRC_HANDLER + 0x14)
+#define KVM_TRC_TDP_FAULT                     (KVM_TRC_HANDLER + 0x15)
+#define KVM_TRC_GTLB_WRITE                    (KVM_TRC_HANDLER + 0x16)
+#define KVM_TRC_STLB_WRITE                    (KVM_TRC_HANDLER + 0x17)
+#define KVM_TRC_STLB_INVAL                    (KVM_TRC_HANDLER + 0x18)
+#define KVM_TRC_PPC_INSTR                     (KVM_TRC_HANDLER + 0x19)
 
 struct kvm_user_trace_setup {
 	__u32 buf_size;
@@ -129,7 +129,7 @@ struct kvm_irq_level {
 struct kvm_irqchip {
 	__u32 chip_id;
 	__u32 pad;
-        union {
+                     union {
 		char dummy[512];  /* reserving space */
 #ifdef __KVM_HAVE_PIT
 		struct kvm_pic_state pic;
@@ -167,9 +167,9 @@ struct kvm_s390_skeys {
  * @count: Size of the result buffer.
  * @flags: Control operation mode via KVM_S390_CMMA_* flags
  * @remaining: Used with KVM_S390_GET_CMMA_BITS. Indicates how many dirty
- *             pages are still remaining.
+ *                                       pages are still remaining.
  * @mask: Used with KVM_S390_SET_CMMA_BITS. Bitmap of bits to actually set
- *        in the PGSTE.
+ *                     in the PGSTE.
  * @values: Pointer to the values buffer.
  *
  * Used in KVM_S390_{G,S}ET_CMMA_BITS ioctls.
@@ -186,8 +186,8 @@ struct kvm_s390_cmma_log {
 };
 
 struct kvm_hyperv_exit {
-#define KVM_EXIT_HYPERV_SYNIC          1
-#define KVM_EXIT_HYPERV_HCALL          2
+#define KVM_EXIT_HYPERV_SYNIC                       1
+#define KVM_EXIT_HYPERV_HCALL                       2
 	__u32 type;
 	union {
 		struct {
@@ -205,36 +205,36 @@ struct kvm_hyperv_exit {
 };
 
 #define KVM_S390_GET_SKEYS_NONE   1
-#define KVM_S390_SKEYS_MAX        1048576
+#define KVM_S390_SKEYS_MAX                     1048576
 
-#define KVM_EXIT_UNKNOWN          0
-#define KVM_EXIT_EXCEPTION        1
-#define KVM_EXIT_IO               2
-#define KVM_EXIT_HYPERCALL        3
-#define KVM_EXIT_DEBUG            4
-#define KVM_EXIT_HLT              5
-#define KVM_EXIT_MMIO             6
+#define KVM_EXIT_UNKNOWN                       0
+#define KVM_EXIT_EXCEPTION                     1
+#define KVM_EXIT_IO                                         2
+#define KVM_EXIT_HYPERCALL                     3
+#define KVM_EXIT_DEBUG                                      4
+#define KVM_EXIT_HLT                                        5
+#define KVM_EXIT_MMIO                                       6
 #define KVM_EXIT_IRQ_WINDOW_OPEN  7
-#define KVM_EXIT_SHUTDOWN         8
-#define KVM_EXIT_FAIL_ENTRY       9
-#define KVM_EXIT_INTR             10
-#define KVM_EXIT_SET_TPR          11
-#define KVM_EXIT_TPR_ACCESS       12
-#define KVM_EXIT_S390_SIEIC       13
-#define KVM_EXIT_S390_RESET       14
-#define KVM_EXIT_DCR              15 /* deprecated */
-#define KVM_EXIT_NMI              16
+#define KVM_EXIT_SHUTDOWN                      8
+#define KVM_EXIT_FAIL_ENTRY                    9
+#define KVM_EXIT_INTR                                       10
+#define KVM_EXIT_SET_TPR                       11
+#define KVM_EXIT_TPR_ACCESS                    12
+#define KVM_EXIT_S390_SIEIC                    13
+#define KVM_EXIT_S390_RESET                    14
+#define KVM_EXIT_DCR                                        15 /* deprecated */
+#define KVM_EXIT_NMI                                        16
 #define KVM_EXIT_INTERNAL_ERROR   17
-#define KVM_EXIT_OSI              18
+#define KVM_EXIT_OSI                                        18
 #define KVM_EXIT_PAPR_HCALL	  19
 #define KVM_EXIT_S390_UCONTROL	  20
-#define KVM_EXIT_WATCHDOG         21
-#define KVM_EXIT_S390_TSCH        22
-#define KVM_EXIT_EPR              23
+#define KVM_EXIT_WATCHDOG                      21
+#define KVM_EXIT_S390_TSCH                     22
+#define KVM_EXIT_EPR                                        23
 #define KVM_EXIT_SYSTEM_EVENT     24
-#define KVM_EXIT_S390_STSI        25
-#define KVM_EXIT_IOAPIC_EOI       26
-#define KVM_EXIT_HYPERV           27
+#define KVM_EXIT_S390_STSI                     25
+#define KVM_EXIT_IOAPIC_EOI                    26
+#define KVM_EXIT_HYPERV                        27
 
 /* For KVM_EXIT_INTERNAL_ERROR */
 /* Emulate instruction failed. */
@@ -322,11 +322,11 @@ struct kvm_run {
 			__u32 ipb;
 		} s390_sieic;
 		/* KVM_EXIT_S390_RESET */
-#define KVM_S390_RESET_POR       1
+#define KVM_S390_RESET_POR                    1
 #define KVM_S390_RESET_CLEAR     2
 #define KVM_S390_RESET_SUBSYSTEM 4
 #define KVM_S390_RESET_CPU_INIT  8
-#define KVM_S390_RESET_IPL       16
+#define KVM_S390_RESET_IPL                    16
 		__u64 s390_reset_flags;
 		/* KVM_EXIT_S390_UCONTROL */
 		struct {
@@ -371,9 +371,9 @@ struct kvm_run {
 		} epr;
 		/* KVM_EXIT_SYSTEM_EVENT */
 		struct {
-#define KVM_SYSTEM_EVENT_SHUTDOWN       1
-#define KVM_SYSTEM_EVENT_RESET          2
-#define KVM_SYSTEM_EVENT_CRASH          3
+#define KVM_SYSTEM_EVENT_SHUTDOWN                    1
+#define KVM_SYSTEM_EVENT_RESET                       2
+#define KVM_SYSTEM_EVENT_CRASH                       3
 			__u32 type;
 			__u64 flags;
 		} system_event;
@@ -507,15 +507,15 @@ struct kvm_vapic_addr {
 /* for KVM_SET_MP_STATE */
 
 /* not all states are valid on all architectures */
-#define KVM_MP_STATE_RUNNABLE          0
+#define KVM_MP_STATE_RUNNABLE                       0
 #define KVM_MP_STATE_UNINITIALIZED     1
 #define KVM_MP_STATE_INIT_RECEIVED     2
-#define KVM_MP_STATE_HALTED            3
+#define KVM_MP_STATE_HALTED                                      3
 #define KVM_MP_STATE_SIPI_RECEIVED     4
-#define KVM_MP_STATE_STOPPED           5
-#define KVM_MP_STATE_CHECK_STOP        6
-#define KVM_MP_STATE_OPERATING         7
-#define KVM_MP_STATE_LOAD              8
+#define KVM_MP_STATE_STOPPED                        5
+#define KVM_MP_STATE_CHECK_STOP                     6
+#define KVM_MP_STATE_OPERATING                      7
+#define KVM_MP_STATE_LOAD                                        8
 
 struct kvm_mp_state {
 	__u32 mp_state;
@@ -542,9 +542,9 @@ struct kvm_s390_psw {
 #define KVM_S390_INT_EXTERNAL_CALL	0xffff1202u
 /* Anything below 0xfffe0000u is taken by INT_IO */
 #define KVM_S390_INT_IO(ai,cssid,ssid,schid)   \
-	(((schid)) |			       \
-	 ((ssid) << 16) |		       \
-	 ((cssid) << 18) |		       \
+	(((schid)) |			                    \
+	 ((ssid) << 16) |		                    \
+	 ((cssid) << 18) |		                    \
 	 ((ai) << 26))
 #define KVM_S390_INT_IO_MIN		0x00000000u
 #define KVM_S390_INT_IO_MAX		0xfffdffffu
@@ -634,7 +634,7 @@ struct kvm_s390_irq {
 
 struct kvm_s390_irq_state {
 	__u64 buf;
-	__u32 flags;        /* will stay unused for compatibility reasons */
+	__u32 flags;                     /* will stay unused for compatibility reasons */
 	__u32 len;
 	__u32 reserved[4];  /* will stay unused for compatibility reasons */
 };
@@ -660,7 +660,7 @@ enum {
 };
 
 #define KVM_IOEVENTFD_FLAG_DATAMATCH (1 << kvm_ioeventfd_flag_nr_datamatch)
-#define KVM_IOEVENTFD_FLAG_PIO       (1 << kvm_ioeventfd_flag_nr_pio)
+#define KVM_IOEVENTFD_FLAG_PIO                    (1 << kvm_ioeventfd_flag_nr_pio)
 #define KVM_IOEVENTFD_FLAG_DEASSIGN  (1 << kvm_ioeventfd_flag_nr_deassign)
 #define KVM_IOEVENTFD_FLAG_VIRTIO_CCW_NOTIFY \
 	(1 << kvm_ioeventfd_flag_nr_virtio_ccw_notify)
@@ -669,19 +669,19 @@ enum {
 
 struct kvm_ioeventfd {
 	__u64 datamatch;
-	__u64 addr;        /* legal pio/mmio address */
-	__u32 len;         /* 1, 2, 4, or 8 bytes; or 0 to ignore length */
+	__u64 addr;                     /* legal pio/mmio address */
+	__u32 len;                      /* 1, 2, 4, or 8 bytes; or 0 to ignore length */
 	__s32 fd;
 	__u32 flags;
 	__u8  pad[36];
 };
 
-#define KVM_X86_DISABLE_EXITS_MWAIT          (1 << 0)
-#define KVM_X86_DISABLE_EXITS_HLT            (1 << 1)
-#define KVM_X86_DISABLE_EXITS_PAUSE          (1 << 2)
-#define KVM_X86_DISABLE_VALID_EXITS          (KVM_X86_DISABLE_EXITS_MWAIT | \
-                                              KVM_X86_DISABLE_EXITS_HLT | \
-                                              KVM_X86_DISABLE_EXITS_PAUSE)
+#define KVM_X86_DISABLE_EXITS_MWAIT                       (1 << 0)
+#define KVM_X86_DISABLE_EXITS_HLT                                      (1 << 1)
+#define KVM_X86_DISABLE_EXITS_PAUSE                       (1 << 2)
+#define KVM_X86_DISABLE_VALID_EXITS                       (KVM_X86_DISABLE_EXITS_MWAIT | \
+                                                                                                                                         KVM_X86_DISABLE_EXITS_HLT | \
+                                                                                                                                         KVM_X86_DISABLE_EXITS_PAUSE)
 
 /* for KVM_ENABLE_CAP */
 struct kvm_enable_cap {
@@ -753,24 +753,24 @@ struct kvm_ppc_resize_hpt {
 /*
  * ioctls for /dev/kvm fds:
  */
-#define KVM_GET_API_VERSION       _IO(KVMIO,   0x00)
-#define KVM_CREATE_VM             _IO(KVMIO,   0x01) /* returns a VM fd */
+#define KVM_GET_API_VERSION                    _IO(KVMIO,   0x00)
+#define KVM_CREATE_VM                                       _IO(KVMIO,   0x01) /* returns a VM fd */
 #define KVM_GET_MSR_INDEX_LIST    _IOWR(KVMIO, 0x02, struct kvm_msr_list)
 
-#define KVM_S390_ENABLE_SIE       _IO(KVMIO,   0x06)
+#define KVM_S390_ENABLE_SIE                    _IO(KVMIO,   0x06)
 /*
  * Check if a kvm extension is available.  Argument is extension number,
  * return is 1 (yes) or 0 (no, sorry).
  */
-#define KVM_CHECK_EXTENSION       _IO(KVMIO,   0x03)
+#define KVM_CHECK_EXTENSION                    _IO(KVMIO,   0x03)
 /*
  * Get size for mmap(vcpu_fd)
  */
 #define KVM_GET_VCPU_MMAP_SIZE    _IO(KVMIO,   0x04) /* in bytes */
 #define KVM_GET_SUPPORTED_CPUID   _IOWR(KVMIO, 0x05, struct kvm_cpuid2)
-#define KVM_TRACE_ENABLE          __KVM_DEPRECATED_MAIN_W_0x06
-#define KVM_TRACE_PAUSE           __KVM_DEPRECATED_MAIN_0x07
-#define KVM_TRACE_DISABLE         __KVM_DEPRECATED_MAIN_0x08
+#define KVM_TRACE_ENABLE                       __KVM_DEPRECATED_MAIN_W_0x06
+#define KVM_TRACE_PAUSE                        __KVM_DEPRECATED_MAIN_0x07
+#define KVM_TRACE_DISABLE                      __KVM_DEPRECATED_MAIN_0x08
 #define KVM_GET_EMULATED_CPUID	  _IOWR(KVMIO, 0x09, struct kvm_cpuid2)
 #define KVM_GET_MSR_FEATURE_INDEX_LIST    _IOWR(KVMIO, 0x0a, struct kvm_msr_list)
 
@@ -785,7 +785,7 @@ struct kvm_ppc_resize_hpt {
 #define KVM_CAP_VAPIC 6
 #define KVM_CAP_EXT_CPUID 7
 #define KVM_CAP_CLOCKSOURCE 8
-#define KVM_CAP_NR_VCPUS 9       /* returns recommended max vcpus per vm */
+#define KVM_CAP_NR_VCPUS 9                    /* returns recommended max vcpus per vm */
 #define KVM_CAP_NR_MEMSLOTS 10   /* returns max memory slots per vm */
 #define KVM_CAP_PIT 11
 #define KVM_CAP_NOP_IO_DELAY 12
@@ -859,7 +859,7 @@ struct kvm_ppc_resize_hpt {
 #define KVM_CAP_SPAPR_TCE 63
 #define KVM_CAP_PPC_SMT 64
 #define KVM_CAP_PPC_RMA	65
-#define KVM_CAP_MAX_VCPUS 66       /* returns max vcpus per vm */
+#define KVM_CAP_MAX_VCPUS 66                    /* returns max vcpus per vm */
 #define KVM_CAP_PPC_HIOR 67
 #define KVM_CAP_PPC_PAPR 68
 #define KVM_CAP_SW_TLB 69
@@ -1192,15 +1192,15 @@ struct kvm_vfio_spapr_tce {
  * KVM_CREATE_VCPU receives as a parameter the vcpu slot, and returns
  * a vcpu fd.
  */
-#define KVM_CREATE_VCPU           _IO(KVMIO,   0x41)
-#define KVM_GET_DIRTY_LOG         _IOW(KVMIO,  0x42, struct kvm_dirty_log)
+#define KVM_CREATE_VCPU                        _IO(KVMIO,   0x41)
+#define KVM_GET_DIRTY_LOG                      _IOW(KVMIO,  0x42, struct kvm_dirty_log)
 /* KVM_SET_MEMORY_ALIAS is obsolete: */
-#define KVM_SET_MEMORY_ALIAS      _IOW(KVMIO,  0x43, struct kvm_memory_alias)
-#define KVM_SET_NR_MMU_PAGES      _IO(KVMIO,   0x44)
-#define KVM_GET_NR_MMU_PAGES      _IO(KVMIO,   0x45)
+#define KVM_SET_MEMORY_ALIAS                   _IOW(KVMIO,  0x43, struct kvm_memory_alias)
+#define KVM_SET_NR_MMU_PAGES                   _IO(KVMIO,   0x44)
+#define KVM_GET_NR_MMU_PAGES                   _IO(KVMIO,   0x45)
 #define KVM_SET_USER_MEMORY_REGION _IOW(KVMIO, 0x46, \
 					struct kvm_userspace_memory_region)
-#define KVM_SET_TSS_ADDR          _IO(KVMIO,   0x47)
+#define KVM_SET_TSS_ADDR                       _IO(KVMIO,   0x47)
 #define KVM_SET_IDENTITY_MAP_ADDR _IOW(KVMIO,  0x48, __u64)
 
 /* enable ucontrol for s390 */
@@ -1209,64 +1209,64 @@ struct kvm_s390_ucas_mapping {
 	__u64 vcpu_addr;
 	__u64 length;
 };
-#define KVM_S390_UCAS_MAP        _IOW(KVMIO, 0x50, struct kvm_s390_ucas_mapping)
-#define KVM_S390_UCAS_UNMAP      _IOW(KVMIO, 0x51, struct kvm_s390_ucas_mapping)
+#define KVM_S390_UCAS_MAP                     _IOW(KVMIO, 0x50, struct kvm_s390_ucas_mapping)
+#define KVM_S390_UCAS_UNMAP                   _IOW(KVMIO, 0x51, struct kvm_s390_ucas_mapping)
 #define KVM_S390_VCPU_FAULT	 _IOW(KVMIO, 0x52, unsigned long)
 
 /* Device model IOC */
-#define KVM_CREATE_IRQCHIP        _IO(KVMIO,   0x60)
-#define KVM_IRQ_LINE              _IOW(KVMIO,  0x61, struct kvm_irq_level)
-#define KVM_GET_IRQCHIP           _IOWR(KVMIO, 0x62, struct kvm_irqchip)
-#define KVM_SET_IRQCHIP           _IOR(KVMIO,  0x63, struct kvm_irqchip)
-#define KVM_CREATE_PIT            _IO(KVMIO,   0x64)
-#define KVM_GET_PIT               _IOWR(KVMIO, 0x65, struct kvm_pit_state)
-#define KVM_SET_PIT               _IOR(KVMIO,  0x66, struct kvm_pit_state)
-#define KVM_IRQ_LINE_STATUS       _IOWR(KVMIO, 0x67, struct kvm_irq_level)
+#define KVM_CREATE_IRQCHIP                     _IO(KVMIO,   0x60)
+#define KVM_IRQ_LINE                                        _IOW(KVMIO,  0x61, struct kvm_irq_level)
+#define KVM_GET_IRQCHIP                        _IOWR(KVMIO, 0x62, struct kvm_irqchip)
+#define KVM_SET_IRQCHIP                        _IOR(KVMIO,  0x63, struct kvm_irqchip)
+#define KVM_CREATE_PIT                                      _IO(KVMIO,   0x64)
+#define KVM_GET_PIT                                         _IOWR(KVMIO, 0x65, struct kvm_pit_state)
+#define KVM_SET_PIT                                         _IOR(KVMIO,  0x66, struct kvm_pit_state)
+#define KVM_IRQ_LINE_STATUS                    _IOWR(KVMIO, 0x67, struct kvm_irq_level)
 #define KVM_REGISTER_COALESCED_MMIO \
 			_IOW(KVMIO,  0x67, struct kvm_coalesced_mmio_zone)
 #define KVM_UNREGISTER_COALESCED_MMIO \
 			_IOW(KVMIO,  0x68, struct kvm_coalesced_mmio_zone)
 #define KVM_ASSIGN_PCI_DEVICE     _IOR(KVMIO,  0x69, \
-				       struct kvm_assigned_pci_dev)
-#define KVM_SET_GSI_ROUTING       _IOW(KVMIO,  0x6a, struct kvm_irq_routing)
+				                    struct kvm_assigned_pci_dev)
+#define KVM_SET_GSI_ROUTING                    _IOW(KVMIO,  0x6a, struct kvm_irq_routing)
 /* deprecated, replaced by KVM_ASSIGN_DEV_IRQ */
-#define KVM_ASSIGN_IRQ            __KVM_DEPRECATED_VM_R_0x70
-#define KVM_ASSIGN_DEV_IRQ        _IOW(KVMIO,  0x70, struct kvm_assigned_irq)
-#define KVM_REINJECT_CONTROL      _IO(KVMIO,   0x71)
+#define KVM_ASSIGN_IRQ                                      __KVM_DEPRECATED_VM_R_0x70
+#define KVM_ASSIGN_DEV_IRQ                     _IOW(KVMIO,  0x70, struct kvm_assigned_irq)
+#define KVM_REINJECT_CONTROL                   _IO(KVMIO,   0x71)
 #define KVM_DEASSIGN_PCI_DEVICE   _IOW(KVMIO,  0x72, \
-				       struct kvm_assigned_pci_dev)
+				                    struct kvm_assigned_pci_dev)
 #define KVM_ASSIGN_SET_MSIX_NR    _IOW(KVMIO,  0x73, \
-				       struct kvm_assigned_msix_nr)
+				                    struct kvm_assigned_msix_nr)
 #define KVM_ASSIGN_SET_MSIX_ENTRY _IOW(KVMIO,  0x74, \
-				       struct kvm_assigned_msix_entry)
-#define KVM_DEASSIGN_DEV_IRQ      _IOW(KVMIO,  0x75, struct kvm_assigned_irq)
-#define KVM_IRQFD                 _IOW(KVMIO,  0x76, struct kvm_irqfd)
+				                    struct kvm_assigned_msix_entry)
+#define KVM_DEASSIGN_DEV_IRQ                   _IOW(KVMIO,  0x75, struct kvm_assigned_irq)
+#define KVM_IRQFD                                           _IOW(KVMIO,  0x76, struct kvm_irqfd)
 #define KVM_CREATE_PIT2		  _IOW(KVMIO,  0x77, struct kvm_pit_config)
-#define KVM_SET_BOOT_CPU_ID       _IO(KVMIO,   0x78)
-#define KVM_IOEVENTFD             _IOW(KVMIO,  0x79, struct kvm_ioeventfd)
-#define KVM_XEN_HVM_CONFIG        _IOW(KVMIO,  0x7a, struct kvm_xen_hvm_config)
-#define KVM_SET_CLOCK             _IOW(KVMIO,  0x7b, struct kvm_clock_data)
-#define KVM_GET_CLOCK             _IOR(KVMIO,  0x7c, struct kvm_clock_data)
+#define KVM_SET_BOOT_CPU_ID                    _IO(KVMIO,   0x78)
+#define KVM_IOEVENTFD                                       _IOW(KVMIO,  0x79, struct kvm_ioeventfd)
+#define KVM_XEN_HVM_CONFIG                     _IOW(KVMIO,  0x7a, struct kvm_xen_hvm_config)
+#define KVM_SET_CLOCK                                       _IOW(KVMIO,  0x7b, struct kvm_clock_data)
+#define KVM_GET_CLOCK                                       _IOR(KVMIO,  0x7c, struct kvm_clock_data)
 /* Available with KVM_CAP_PIT_STATE2 */
-#define KVM_GET_PIT2              _IOR(KVMIO,  0x9f, struct kvm_pit_state2)
-#define KVM_SET_PIT2              _IOW(KVMIO,  0xa0, struct kvm_pit_state2)
+#define KVM_GET_PIT2                                        _IOR(KVMIO,  0x9f, struct kvm_pit_state2)
+#define KVM_SET_PIT2                                        _IOW(KVMIO,  0xa0, struct kvm_pit_state2)
 /* Available with KVM_CAP_PPC_GET_PVINFO */
 #define KVM_PPC_GET_PVINFO	  _IOW(KVMIO,  0xa1, struct kvm_ppc_pvinfo)
 /* Available with KVM_CAP_TSC_CONTROL */
-#define KVM_SET_TSC_KHZ           _IO(KVMIO,  0xa2)
-#define KVM_GET_TSC_KHZ           _IO(KVMIO,  0xa3)
+#define KVM_SET_TSC_KHZ                        _IO(KVMIO,  0xa2)
+#define KVM_GET_TSC_KHZ                        _IO(KVMIO,  0xa3)
 /* Available with KVM_CAP_PCI_2_3 */
 #define KVM_ASSIGN_SET_INTX_MASK  _IOW(KVMIO,  0xa4, \
-				       struct kvm_assigned_pci_dev)
+				                    struct kvm_assigned_pci_dev)
 /* Available with KVM_CAP_SIGNAL_MSI */
-#define KVM_SIGNAL_MSI            _IOW(KVMIO,  0xa5, struct kvm_msi)
+#define KVM_SIGNAL_MSI                                      _IOW(KVMIO,  0xa5, struct kvm_msi)
 /* Available with KVM_CAP_PPC_GET_SMMU_INFO */
 #define KVM_PPC_GET_SMMU_INFO	  _IOR(KVMIO,  0xa6, struct kvm_ppc_smmu_info)
 /* Available with KVM_CAP_PPC_ALLOC_HTAB */
 #define KVM_PPC_ALLOCATE_HTAB	  _IOWR(KVMIO, 0xa7, __u32)
 #define KVM_CREATE_SPAPR_TCE	  _IOW(KVMIO,  0xa8, struct kvm_create_spapr_tce)
 #define KVM_CREATE_SPAPR_TCE_64	  _IOW(KVMIO,  0xa8, \
-				       struct kvm_create_spapr_tce_64)
+				                    struct kvm_create_spapr_tce_64)
 /* Available with KVM_CAP_RMA */
 #define KVM_ALLOCATE_RMA	  _IOR(KVMIO,  0xa9, struct kvm_allocate_rma)
 /* Available with KVM_CAP_PPC_HTAB_FD */
@@ -1296,31 +1296,31 @@ struct kvm_s390_ucas_mapping {
 /*
  * ioctls for vcpu fds
  */
-#define KVM_RUN                   _IO(KVMIO,   0x80)
-#define KVM_GET_REGS              _IOR(KVMIO,  0x81, struct kvm_regs)
-#define KVM_SET_REGS              _IOW(KVMIO,  0x82, struct kvm_regs)
-#define KVM_GET_SREGS             _IOR(KVMIO,  0x83, struct kvm_sregs)
-#define KVM_SET_SREGS             _IOW(KVMIO,  0x84, struct kvm_sregs)
-#define KVM_TRANSLATE             _IOWR(KVMIO, 0x85, struct kvm_translation)
-#define KVM_INTERRUPT             _IOW(KVMIO,  0x86, struct kvm_interrupt)
+#define KVM_RUN                                                          _IO(KVMIO,   0x80)
+#define KVM_GET_REGS                                        _IOR(KVMIO,  0x81, struct kvm_regs)
+#define KVM_SET_REGS                                        _IOW(KVMIO,  0x82, struct kvm_regs)
+#define KVM_GET_SREGS                                       _IOR(KVMIO,  0x83, struct kvm_sregs)
+#define KVM_SET_SREGS                                       _IOW(KVMIO,  0x84, struct kvm_sregs)
+#define KVM_TRANSLATE                                       _IOWR(KVMIO, 0x85, struct kvm_translation)
+#define KVM_INTERRUPT                                       _IOW(KVMIO,  0x86, struct kvm_interrupt)
 /* KVM_DEBUG_GUEST is no longer supported, use KVM_SET_GUEST_DEBUG instead */
-#define KVM_DEBUG_GUEST           __KVM_DEPRECATED_VCPU_W_0x87
-#define KVM_GET_MSRS              _IOWR(KVMIO, 0x88, struct kvm_msrs)
-#define KVM_SET_MSRS              _IOW(KVMIO,  0x89, struct kvm_msrs)
-#define KVM_SET_CPUID             _IOW(KVMIO,  0x8a, struct kvm_cpuid)
-#define KVM_SET_SIGNAL_MASK       _IOW(KVMIO,  0x8b, struct kvm_signal_mask)
-#define KVM_GET_FPU               _IOR(KVMIO,  0x8c, struct kvm_fpu)
-#define KVM_SET_FPU               _IOW(KVMIO,  0x8d, struct kvm_fpu)
-#define KVM_GET_LAPIC             _IOR(KVMIO,  0x8e, struct kvm_lapic_state)
-#define KVM_SET_LAPIC             _IOW(KVMIO,  0x8f, struct kvm_lapic_state)
-#define KVM_SET_CPUID2            _IOW(KVMIO,  0x90, struct kvm_cpuid2)
-#define KVM_GET_CPUID2            _IOWR(KVMIO, 0x91, struct kvm_cpuid2)
+#define KVM_DEBUG_GUEST                        __KVM_DEPRECATED_VCPU_W_0x87
+#define KVM_GET_MSRS                                        _IOWR(KVMIO, 0x88, struct kvm_msrs)
+#define KVM_SET_MSRS                                        _IOW(KVMIO,  0x89, struct kvm_msrs)
+#define KVM_SET_CPUID                                       _IOW(KVMIO,  0x8a, struct kvm_cpuid)
+#define KVM_SET_SIGNAL_MASK                    _IOW(KVMIO,  0x8b, struct kvm_signal_mask)
+#define KVM_GET_FPU                                         _IOR(KVMIO,  0x8c, struct kvm_fpu)
+#define KVM_SET_FPU                                         _IOW(KVMIO,  0x8d, struct kvm_fpu)
+#define KVM_GET_LAPIC                                       _IOR(KVMIO,  0x8e, struct kvm_lapic_state)
+#define KVM_SET_LAPIC                                       _IOW(KVMIO,  0x8f, struct kvm_lapic_state)
+#define KVM_SET_CPUID2                                      _IOW(KVMIO,  0x90, struct kvm_cpuid2)
+#define KVM_GET_CPUID2                                      _IOWR(KVMIO, 0x91, struct kvm_cpuid2)
 /* Available with KVM_CAP_VAPIC */
 #define KVM_TPR_ACCESS_REPORTING  _IOWR(KVMIO, 0x92, struct kvm_tpr_access_ctl)
 /* Available with KVM_CAP_VAPIC */
-#define KVM_SET_VAPIC_ADDR        _IOW(KVMIO,  0x93, struct kvm_vapic_addr)
+#define KVM_SET_VAPIC_ADDR                     _IOW(KVMIO,  0x93, struct kvm_vapic_addr)
 /* valid for virtual machine (for floating interrupt)_and_ vcpu */
-#define KVM_S390_INTERRUPT        _IOW(KVMIO,  0x94, struct kvm_s390_interrupt)
+#define KVM_S390_INTERRUPT                     _IOW(KVMIO,  0x94, struct kvm_s390_interrupt)
 /* store status for s390 */
 #define KVM_S390_STORE_STATUS_NOADDR    (-1ul)
 #define KVM_S390_STORE_STATUS_PREFIXED  (-2ul)
@@ -1329,27 +1329,27 @@ struct kvm_s390_ucas_mapping {
 #define KVM_S390_SET_INITIAL_PSW  _IOW(KVMIO,  0x96, struct kvm_s390_psw)
 /* initial reset for s390 */
 #define KVM_S390_INITIAL_RESET    _IO(KVMIO,   0x97)
-#define KVM_GET_MP_STATE          _IOR(KVMIO,  0x98, struct kvm_mp_state)
-#define KVM_SET_MP_STATE          _IOW(KVMIO,  0x99, struct kvm_mp_state)
+#define KVM_GET_MP_STATE                       _IOR(KVMIO,  0x98, struct kvm_mp_state)
+#define KVM_SET_MP_STATE                       _IOW(KVMIO,  0x99, struct kvm_mp_state)
 /* Available with KVM_CAP_USER_NMI */
-#define KVM_NMI                   _IO(KVMIO,   0x9a)
+#define KVM_NMI                                                          _IO(KVMIO,   0x9a)
 /* Available with KVM_CAP_SET_GUEST_DEBUG */
-#define KVM_SET_GUEST_DEBUG       _IOW(KVMIO,  0x9b, struct kvm_guest_debug)
+#define KVM_SET_GUEST_DEBUG                    _IOW(KVMIO,  0x9b, struct kvm_guest_debug)
 /* MCE for x86 */
-#define KVM_X86_SETUP_MCE         _IOW(KVMIO,  0x9c, __u64)
+#define KVM_X86_SETUP_MCE                      _IOW(KVMIO,  0x9c, __u64)
 #define KVM_X86_GET_MCE_CAP_SUPPORTED _IOR(KVMIO,  0x9d, __u64)
-#define KVM_X86_SET_MCE           _IOW(KVMIO,  0x9e, struct kvm_x86_mce)
+#define KVM_X86_SET_MCE                        _IOW(KVMIO,  0x9e, struct kvm_x86_mce)
 /* Available with KVM_CAP_VCPU_EVENTS */
-#define KVM_GET_VCPU_EVENTS       _IOR(KVMIO,  0x9f, struct kvm_vcpu_events)
-#define KVM_SET_VCPU_EVENTS       _IOW(KVMIO,  0xa0, struct kvm_vcpu_events)
+#define KVM_GET_VCPU_EVENTS                    _IOR(KVMIO,  0x9f, struct kvm_vcpu_events)
+#define KVM_SET_VCPU_EVENTS                    _IOW(KVMIO,  0xa0, struct kvm_vcpu_events)
 /* Available with KVM_CAP_DEBUGREGS */
-#define KVM_GET_DEBUGREGS         _IOR(KVMIO,  0xa1, struct kvm_debugregs)
-#define KVM_SET_DEBUGREGS         _IOW(KVMIO,  0xa2, struct kvm_debugregs)
+#define KVM_GET_DEBUGREGS                      _IOR(KVMIO,  0xa1, struct kvm_debugregs)
+#define KVM_SET_DEBUGREGS                      _IOW(KVMIO,  0xa2, struct kvm_debugregs)
 /*
  * vcpu version available with KVM_ENABLE_CAP
  * vm version available with KVM_CAP_ENABLE_CAP_VM
  */
-#define KVM_ENABLE_CAP            _IOW(KVMIO,  0xa3, struct kvm_enable_cap)
+#define KVM_ENABLE_CAP                                      _IOW(KVMIO,  0xa3, struct kvm_enable_cap)
 /* Available with KVM_CAP_XSAVE */
 #define KVM_GET_XSAVE		  _IOR(KVMIO,  0xa4, struct kvm_xsave)
 #define KVM_SET_XSAVE		  _IOW(KVMIO,  0xa5, struct kvm_xsave)
@@ -1369,20 +1369,20 @@ struct kvm_s390_ucas_mapping {
 /* Available with KVM_CAP_S390_MEM_OP */
 #define KVM_S390_MEM_OP		  _IOW(KVMIO,  0xb1, struct kvm_s390_mem_op)
 /* Available with KVM_CAP_S390_SKEYS */
-#define KVM_S390_GET_SKEYS      _IOW(KVMIO, 0xb2, struct kvm_s390_skeys)
-#define KVM_S390_SET_SKEYS      _IOW(KVMIO, 0xb3, struct kvm_s390_skeys)
+#define KVM_S390_GET_SKEYS                   _IOW(KVMIO, 0xb2, struct kvm_s390_skeys)
+#define KVM_S390_SET_SKEYS                   _IOW(KVMIO, 0xb3, struct kvm_s390_skeys)
 /* Available with KVM_CAP_S390_INJECT_IRQ */
-#define KVM_S390_IRQ              _IOW(KVMIO,  0xb4, struct kvm_s390_irq)
+#define KVM_S390_IRQ                                        _IOW(KVMIO,  0xb4, struct kvm_s390_irq)
 /* Available with KVM_CAP_S390_IRQ_STATE */
 #define KVM_S390_SET_IRQ_STATE	  _IOW(KVMIO, 0xb5, struct kvm_s390_irq_state)
 #define KVM_S390_GET_IRQ_STATE	  _IOW(KVMIO, 0xb6, struct kvm_s390_irq_state)
 /* Available with KVM_CAP_X86_SMM */
-#define KVM_SMI                   _IO(KVMIO,   0xb7)
+#define KVM_SMI                                                          _IO(KVMIO,   0xb7)
 /* Available with KVM_CAP_S390_CMMA_MIGRATION */
-#define KVM_S390_GET_CMMA_BITS      _IOWR(KVMIO, 0xb8, struct kvm_s390_cmma_log)
-#define KVM_S390_SET_CMMA_BITS      _IOW(KVMIO, 0xb9, struct kvm_s390_cmma_log)
+#define KVM_S390_GET_CMMA_BITS                   _IOWR(KVMIO, 0xb8, struct kvm_s390_cmma_log)
+#define KVM_S390_SET_CMMA_BITS                   _IOW(KVMIO, 0xb9, struct kvm_s390_cmma_log)
 /* Memory Encryption Commands */
-#define KVM_MEMORY_ENCRYPT_OP      _IOWR(KVMIO, 0xba, unsigned long)
+#define KVM_MEMORY_ENCRYPT_OP                   _IOWR(KVMIO, 0xba, unsigned long)
 
 struct kvm_enc_region {
 	__u64 addr;
@@ -1393,11 +1393,11 @@ struct kvm_enc_region {
 #define KVM_MEMORY_ENCRYPT_UNREG_REGION  _IOR(KVMIO, 0xbc, struct kvm_enc_region)
 
 /* Available with KVM_CAP_HYPERV_EVENTFD */
-#define KVM_HYPERV_EVENTFD        _IOW(KVMIO,  0xbd, struct kvm_hyperv_eventfd)
+#define KVM_HYPERV_EVENTFD                     _IOW(KVMIO,  0xbd, struct kvm_hyperv_eventfd)
 
 /* Available with KVM_CAP_NESTED_STATE */
-#define KVM_GET_NESTED_STATE         _IOWR(KVMIO, 0xbe, struct kvm_nested_state)
-#define KVM_SET_NESTED_STATE         _IOW(KVMIO,  0xbf, struct kvm_nested_state)
+#define KVM_GET_NESTED_STATE                      _IOWR(KVMIO, 0xbe, struct kvm_nested_state)
+#define KVM_SET_NESTED_STATE                      _IOW(KVMIO,  0xbf, struct kvm_nested_state)
 
 /* Secure Encrypted Virtualization command */
 enum sev_cmd_id {
@@ -1529,7 +1529,7 @@ struct kvm_assigned_msix_entry {
 	__u16 padding[3];
 };
 
-#define KVM_X2APIC_API_USE_32BIT_IDS            (1ULL << 0)
+#define KVM_X2APIC_API_USE_32BIT_IDS                                      (1ULL << 0)
 #define KVM_X2APIC_API_DISABLE_BROADCAST_QUIRK  (1ULL << 1)
 
 /* Available with KVM_CAP_ARM_USER_IRQ */

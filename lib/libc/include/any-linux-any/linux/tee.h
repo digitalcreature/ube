@@ -342,10 +342,10 @@ struct tee_iocl_supp_send_arg {
 
 /**
  * struct tee_ioctl_shm_register_data - Shared memory register argument
- * @addr:      [in] Start address of shared memory to register
+ * @addr:                   [in] Start address of shared memory to register
  * @length:    [in/out] Length of shared memory to register
  * @flags:     [in/out] Flags to/from registration.
- * @id:                [out] Identifier of the shared memory
+ * @id:                                          [out] Identifier of the shared memory
  *
  * The flags field should currently be zero as input. Updated by the call
  * with actual flags as defined by TEE_IOCTL_SHM_* above.

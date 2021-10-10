@@ -177,7 +177,7 @@ enum {
  * xor = init_xor_val
  *
  * for (i = from_idx .. to_idx)
- *      xor ^= can_frame.data[i]
+ *                   xor ^= can_frame.data[i]
  *
  * can_frame.data[ result_idx ] = xor
  *
@@ -191,7 +191,7 @@ enum {
  * crc = init_crc_val
  *
  * for (i = from_idx .. to_idx)
- *      crc = crctab[ crc ^ can_frame.data[i] ]
+ *                   crc = crctab[ crc ^ can_frame.data[i] ]
  *
  * can_frame.data[ result_idx ] = crc ^ final_xor_val
  *
@@ -203,7 +203,7 @@ enum {
  * So far only three profiles have been implemented for illustration.
  *
  * Remark: In general the attribute data is a linear buffer.
- *         Beware of sending unpacked or aligned structs!
+ *                      Beware of sending unpacked or aligned structs!
  */
 
 #endif /* !_UAPI_CAN_GW_H */

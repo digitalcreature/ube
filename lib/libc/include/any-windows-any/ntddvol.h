@@ -27,7 +27,7 @@
 extern "C" {
 #endif
 
-#define IOCTL_VOLUME_BASE                 ((ULONG) 'V')
+#define IOCTL_VOLUME_BASE                                           ((ULONG) 'V')
 
 #define IOCTL_VOLUME_LOGICAL_TO_PHYSICAL \
   CTL_CODE(IOCTL_VOLUME_BASE, 8, METHOD_BUFFERED, FILE_ANY_ACCESS)

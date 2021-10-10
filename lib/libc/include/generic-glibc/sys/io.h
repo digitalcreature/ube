@@ -30,7 +30,7 @@ __BEGIN_DECLS
    platforms based on the PC I/O architecture probably will, however.
    E.g., Linux/Alpha for Alpha PCs supports this.  */
 extern int ioperm (unsigned long int __from, unsigned long int __num,
-                   int __turn_on) __THROW;
+                                                          int __turn_on) __THROW;
 
 /* Set the I/O privilege level to LEVEL.  If LEVEL>3, permission to
    access any I/O port is granted.  This call requires root
@@ -155,7 +155,7 @@ insl (unsigned short int __port, void *__addr, unsigned long int __count)
 
 static __inline void
 outsb (unsigned short int __port, const void *__addr,
-       unsigned long int __count)
+                    unsigned long int __count)
 {
   __asm__ __volatile__ ("cld ; rep ; outsb":"=S" (__addr), "=c" (__count)
 			:"d" (__port), "0" (__addr), "1" (__count));
@@ -163,7 +163,7 @@ outsb (unsigned short int __port, const void *__addr,
 
 static __inline void
 outsw (unsigned short int __port, const void *__addr,
-       unsigned long int __count)
+                    unsigned long int __count)
 {
   __asm__ __volatile__ ("cld ; rep ; outsw":"=S" (__addr), "=c" (__count)
 			:"d" (__port), "0" (__addr), "1" (__count));
@@ -171,7 +171,7 @@ outsw (unsigned short int __port, const void *__addr,
 
 static __inline void
 outsl (unsigned short int __port, const void *__addr,
-       unsigned long int __count)
+                    unsigned long int __count)
 {
   __asm__ __volatile__ ("cld ; rep ; outsl":"=S" (__addr), "=c" (__count)
 			:"d" (__port), "0" (__addr), "1" (__count));

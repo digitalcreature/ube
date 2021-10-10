@@ -91,10 +91,10 @@
 #if     defined(KERNEL) || (!defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE))
 
 #define LITTLE_ENDIAN   __DARWIN_LITTLE_ENDIAN
-#define BIG_ENDIAN      __DARWIN_BIG_ENDIAN
-#define PDP_ENDIAN      __DARWIN_PDP_ENDIAN
+#define BIG_ENDIAN                   __DARWIN_BIG_ENDIAN
+#define PDP_ENDIAN                   __DARWIN_PDP_ENDIAN
 
-#define BYTE_ORDER      __DARWIN_BYTE_ORDER
+#define BYTE_ORDER                   __DARWIN_BYTE_ORDER
 
 #include <sys/_endian.h>
 

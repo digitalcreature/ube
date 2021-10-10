@@ -150,12 +150,12 @@ extern "C" {
 #else
   typedef struct ISceSvcAttachmentPersistInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISceSvcAttachmentPersistInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISceSvcAttachmentPersistInfo *This);
-      ULONG (WINAPI *Release)(ISceSvcAttachmentPersistInfo *This);
-      HRESULT (WINAPI *Save)(ISceSvcAttachmentPersistInfo *This,LPTSTR lpTemplateName,SCESVC_HANDLE scesvcHandle,PVOID *ppvData,PBOOL pbOverwriteAll);
-      HRESULT (WINAPI *FreeBuffer)(ISceSvcAttachmentPersistInfo *This,PVOID pvData);
-      HRESULT (WINAPI *IsDirty)(ISceSvcAttachmentPersistInfo *This,LPTSTR lpTemplateName);
+                   HRESULT (WINAPI *QueryInterface)(ISceSvcAttachmentPersistInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISceSvcAttachmentPersistInfo *This);
+                   ULONG (WINAPI *Release)(ISceSvcAttachmentPersistInfo *This);
+                   HRESULT (WINAPI *Save)(ISceSvcAttachmentPersistInfo *This,LPTSTR lpTemplateName,SCESVC_HANDLE scesvcHandle,PVOID *ppvData,PBOOL pbOverwriteAll);
+                   HRESULT (WINAPI *FreeBuffer)(ISceSvcAttachmentPersistInfo *This,PVOID pvData);
+                   HRESULT (WINAPI *IsDirty)(ISceSvcAttachmentPersistInfo *This,LPTSTR lpTemplateName);
     END_INTERFACE
   } ISceSvcAttachmentPersistInfoVtbl;
   struct ISceSvcAttachmentPersistInfo {
@@ -184,13 +184,13 @@ extern "C" {
 #else
   typedef struct ISceSvcAttachmentDataVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISceSvcAttachmentData *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISceSvcAttachmentData *This);
-      ULONG (WINAPI *Release)(ISceSvcAttachmentData *This);
-      HRESULT (WINAPI *Initialize)(ISceSvcAttachmentData *This,LPCTSTR lpServiceName,LPCTSTR lpTemplateName,LPSCESVCATTACHMENTPERSISTINFO lpSceSvcPersistInfo,SCESVC_HANDLE *pscesvcHandle);
-      HRESULT (WINAPI *GetData)(ISceSvcAttachmentData *This,SCESVC_HANDLE scesvcHandle,SCESVC_INFO_TYPE sceType,PVOID *ppvData,PSCE_ENUMERATION_CONTEXT psceEnumHandle);
-      HRESULT (WINAPI *FreeBuffer)(ISceSvcAttachmentData *This,PVOID pvData);
-      HRESULT (WINAPI *CloseHandle)(ISceSvcAttachmentData *This,SCESVC_HANDLE scesvcHandle);
+                   HRESULT (WINAPI *QueryInterface)(ISceSvcAttachmentData *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISceSvcAttachmentData *This);
+                   ULONG (WINAPI *Release)(ISceSvcAttachmentData *This);
+                   HRESULT (WINAPI *Initialize)(ISceSvcAttachmentData *This,LPCTSTR lpServiceName,LPCTSTR lpTemplateName,LPSCESVCATTACHMENTPERSISTINFO lpSceSvcPersistInfo,SCESVC_HANDLE *pscesvcHandle);
+                   HRESULT (WINAPI *GetData)(ISceSvcAttachmentData *This,SCESVC_HANDLE scesvcHandle,SCESVC_INFO_TYPE sceType,PVOID *ppvData,PSCE_ENUMERATION_CONTEXT psceEnumHandle);
+                   HRESULT (WINAPI *FreeBuffer)(ISceSvcAttachmentData *This,PVOID pvData);
+                   HRESULT (WINAPI *CloseHandle)(ISceSvcAttachmentData *This,SCESVC_HANDLE scesvcHandle);
     END_INTERFACE
   } ISceSvcAttachmentDataVtbl;
   struct ISceSvcAttachmentData {

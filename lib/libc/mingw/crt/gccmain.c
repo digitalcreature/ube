@@ -27,8 +27,8 @@ __do_global_dtors (void)
 
   while (*p)
     {
-      (*(p)) ();
-      p++;
+                   (*(p)) ();
+                   p++;
     }
 }
 
@@ -59,12 +59,12 @@ __do_global_ctors (void)
 
   if (nptrs == (unsigned long) -1)
     {
-      for (nptrs = 0; __CTOR_LIST__[nptrs + 1] != 0; nptrs++);
+                   for (nptrs = 0; __CTOR_LIST__[nptrs + 1] != 0; nptrs++);
     }
 
   for (i = nptrs; i >= 1; i--)
     {
-      __CTOR_LIST__[i] ();
+                   __CTOR_LIST__[i] ();
     }
 
   atexit (__do_global_dtors);
@@ -79,7 +79,7 @@ __main (void)
 {
   if (!initialized)
     {
-      initialized = 1;
-      __do_global_ctors ();
+                   initialized = 1;
+                   __do_global_ctors ();
     }
 }

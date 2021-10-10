@@ -40,9 +40,9 @@
 typedef struct {
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      GUID Set;
-      ULONG Id;
-      ULONG Flags;
+                   GUID Set;
+                   ULONG Id;
+                   ULONG Flags;
     };
     LONGLONG Alignment;
   };

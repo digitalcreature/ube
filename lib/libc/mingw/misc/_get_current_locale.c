@@ -16,11 +16,11 @@ static _locale_t __cdecl init_func(void)
     _locale_t (__cdecl *func)(void) = NULL;
 
     if (msvcrt) {
-        func = (void*)GetProcAddress(msvcrt, "_get_current_locale");
+                     func = (void*)GetProcAddress(msvcrt, "_get_current_locale");
     }
 
     if (!func)
-        func = null_func;
+                     func = null_func;
 
     return (__MINGW_IMP_SYMBOL(_get_current_locale) = func)();
 }

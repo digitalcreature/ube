@@ -12,25 +12,25 @@ const maxInt = std.math.maxInt;
 pub fn isInf(x: anytype) bool {
     const T = @TypeOf(x);
     switch (T) {
-        f16 => {
-            const bits = @bitCast(u16, x);
-            return bits & 0x7FFF == 0x7C00;
-        },
-        f32 => {
-            const bits = @bitCast(u32, x);
-            return bits & 0x7FFFFFFF == 0x7F800000;
-        },
-        f64 => {
-            const bits = @bitCast(u64, x);
-            return bits & (maxInt(u64) >> 1) == (0x7FF << 52);
-        },
-        f128 => {
-            const bits = @bitCast(u128, x);
-            return bits & (maxInt(u128) >> 1) == (0x7FFF << 112);
-        },
-        else => {
-            @compileError("isInf not implemented for " ++ @typeName(T));
-        },
+                     f16 => {
+                                      const bits = @bitCast(u16, x);
+                                      return bits & 0x7FFF == 0x7C00;
+                     },
+                     f32 => {
+                                      const bits = @bitCast(u32, x);
+                                      return bits & 0x7FFFFFFF == 0x7F800000;
+                     },
+                     f64 => {
+                                      const bits = @bitCast(u64, x);
+                                      return bits & (maxInt(u64) >> 1) == (0x7FF << 52);
+                     },
+                     f128 => {
+                                      const bits = @bitCast(u128, x);
+                                      return bits & (maxInt(u128) >> 1) == (0x7FFF << 112);
+                     },
+                     else => {
+                                      @compileError("isInf not implemented for " ++ @typeName(T));
+                     },
     }
 }
 
@@ -38,21 +38,21 @@ pub fn isInf(x: anytype) bool {
 pub fn isPositiveInf(x: anytype) bool {
     const T = @TypeOf(x);
     switch (T) {
-        f16 => {
-            return @bitCast(u16, x) == 0x7C00;
-        },
-        f32 => {
-            return @bitCast(u32, x) == 0x7F800000;
-        },
-        f64 => {
-            return @bitCast(u64, x) == 0x7FF << 52;
-        },
-        f128 => {
-            return @bitCast(u128, x) == 0x7FFF << 112;
-        },
-        else => {
-            @compileError("isPositiveInf not implemented for " ++ @typeName(T));
-        },
+                     f16 => {
+                                      return @bitCast(u16, x) == 0x7C00;
+                     },
+                     f32 => {
+                                      return @bitCast(u32, x) == 0x7F800000;
+                     },
+                     f64 => {
+                                      return @bitCast(u64, x) == 0x7FF << 52;
+                     },
+                     f128 => {
+                                      return @bitCast(u128, x) == 0x7FFF << 112;
+                     },
+                     else => {
+                                      @compileError("isPositiveInf not implemented for " ++ @typeName(T));
+                     },
     }
 }
 
@@ -60,21 +60,21 @@ pub fn isPositiveInf(x: anytype) bool {
 pub fn isNegativeInf(x: anytype) bool {
     const T = @TypeOf(x);
     switch (T) {
-        f16 => {
-            return @bitCast(u16, x) == 0xFC00;
-        },
-        f32 => {
-            return @bitCast(u32, x) == 0xFF800000;
-        },
-        f64 => {
-            return @bitCast(u64, x) == 0xFFF << 52;
-        },
-        f128 => {
-            return @bitCast(u128, x) == 0xFFFF << 112;
-        },
-        else => {
-            @compileError("isNegativeInf not implemented for " ++ @typeName(T));
-        },
+                     f16 => {
+                                      return @bitCast(u16, x) == 0xFC00;
+                     },
+                     f32 => {
+                                      return @bitCast(u32, x) == 0xFF800000;
+                     },
+                     f64 => {
+                                      return @bitCast(u64, x) == 0xFFF << 52;
+                     },
+                     f128 => {
+                                      return @bitCast(u128, x) == 0xFFFF << 112;
+                     },
+                     else => {
+                                      @compileError("isNegativeInf not implemented for " ++ @typeName(T));
+                     },
     }
 }
 

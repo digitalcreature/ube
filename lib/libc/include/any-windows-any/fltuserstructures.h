@@ -90,16 +90,16 @@ typedef struct _FILTER_AGGREGATE_BASIC_INFORMATION {
   ULONG Flags;
   union {
     struct {
-      ULONG FrameID;
-      ULONG NumberOfInstances;
-      USHORT FilterNameLength;
-      USHORT FilterNameBufferOffset;
-      USHORT FilterAltitudeLength;
-      USHORT FilterAltitudeBufferOffset;
+                   ULONG FrameID;
+                   ULONG NumberOfInstances;
+                   USHORT FilterNameLength;
+                   USHORT FilterNameBufferOffset;
+                   USHORT FilterAltitudeLength;
+                   USHORT FilterAltitudeBufferOffset;
     } MiniFilter;
     struct {
-      USHORT FilterNameLength;
-      USHORT FilterNameBufferOffset;
+                   USHORT FilterNameLength;
+                   USHORT FilterNameBufferOffset;
     } LegacyFilter;
   } Type;
 } FILTER_AGGREGATE_BASIC_INFORMATION, *PFILTER_AGGREGATE_BASIC_INFORMATION;
@@ -110,20 +110,20 @@ typedef struct _FILTER_AGGREGATE_STANDARD_INFORMATION {
   ULONG Flags;
   union {
     struct {
-      ULONG Flags;
-      ULONG FrameID;
-      ULONG NumberOfInstances;
-      USHORT FilterNameLength;
-      USHORT FilterNameBufferOffset;
-      USHORT FilterAltitudeLength;
-      USHORT FilterAltitudeBufferOffset;
+                   ULONG Flags;
+                   ULONG FrameID;
+                   ULONG NumberOfInstances;
+                   USHORT FilterNameLength;
+                   USHORT FilterNameBufferOffset;
+                   USHORT FilterAltitudeLength;
+                   USHORT FilterAltitudeBufferOffset;
     } MiniFilter;
     struct {
-      ULONG Flags;
-      USHORT FilterNameLength;
-      USHORT FilterNameBufferOffset;
-      USHORT FilterAltitudeLength;
-      USHORT FilterAltitudeBufferOffset;
+                   ULONG Flags;
+                   USHORT FilterNameLength;
+                   USHORT FilterNameBufferOffset;
+                   USHORT FilterAltitudeLength;
+                   USHORT FilterAltitudeBufferOffset;
     } LegacyFilter;
   } Type;
 } FILTER_AGGREGATE_STANDARD_INFORMATION, *PFILTER_AGGREGATE_STANDARD_INFORMATION;
@@ -177,31 +177,31 @@ typedef struct _INSTANCE_AGGREGATE_STANDARD_INFORMATION {
   ULONG Flags;
   union {
     struct {
-      ULONG Flags;
-      ULONG FrameID;
-      FLT_FILESYSTEM_TYPE VolumeFileSystemType;
-      USHORT InstanceNameLength;
-      USHORT InstanceNameBufferOffset;
-      USHORT AltitudeLength;
-      USHORT AltitudeBufferOffset;
-      USHORT VolumeNameLength;
-      USHORT VolumeNameBufferOffset;
-      USHORT FilterNameLength;
-      USHORT FilterNameBufferOffset;
+                   ULONG Flags;
+                   ULONG FrameID;
+                   FLT_FILESYSTEM_TYPE VolumeFileSystemType;
+                   USHORT InstanceNameLength;
+                   USHORT InstanceNameBufferOffset;
+                   USHORT AltitudeLength;
+                   USHORT AltitudeBufferOffset;
+                   USHORT VolumeNameLength;
+                   USHORT VolumeNameBufferOffset;
+                   USHORT FilterNameLength;
+                   USHORT FilterNameBufferOffset;
 #if NTDDI_VERSION >= NTDDI_WIN8
-      ULONG SupportedFeatures;
+                   ULONG SupportedFeatures;
 #endif
     } MiniFilter;
     struct {
-      ULONG Flags;
-      USHORT AltitudeLength;
-      USHORT AltitudeBufferOffset;
-      USHORT VolumeNameLength;
-      USHORT VolumeNameBufferOffset;
-      USHORT FilterNameLength;
-      USHORT FilterNameBufferOffset;
+                   ULONG Flags;
+                   USHORT AltitudeLength;
+                   USHORT AltitudeBufferOffset;
+                   USHORT VolumeNameLength;
+                   USHORT VolumeNameBufferOffset;
+                   USHORT FilterNameLength;
+                   USHORT FilterNameBufferOffset;
 #if NTDDI_VERSION >= NTDDI_WIN8
-      ULONG SupportedFeatures;
+                   ULONG SupportedFeatures;
 #endif
     } LegacyFilter;
   } Type;

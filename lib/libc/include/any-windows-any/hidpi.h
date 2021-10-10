@@ -68,16 +68,16 @@ typedef struct _HIDP_BUTTON_CAPS {
   ULONG Reserved[10];
   __C89_NAMELESS union {
     struct {
-      USAGE UsageMin, UsageMax;
-      USHORT StringMin, StringMax;
-      USHORT DesignatorMin, DesignatorMax;
-      USHORT DataIndexMin, DataIndexMax;
+                   USAGE UsageMin, UsageMax;
+                   USHORT StringMin, StringMax;
+                   USHORT DesignatorMin, DesignatorMax;
+                   USHORT DataIndexMin, DataIndexMax;
     } Range;
     struct {
-      USAGE Usage, Reserved1;
-      USHORT StringIndex, Reserved2;
-      USHORT DesignatorIndex, Reserved3;
-      USHORT DataIndex, Reserved4;
+                   USAGE Usage, Reserved1;
+                   USHORT StringIndex, Reserved2;
+                   USHORT DesignatorIndex, Reserved3;
+                   USHORT DataIndex, Reserved4;
     } NotRange;
   };
 } HIDP_BUTTON_CAPS,*PHIDP_BUTTON_CAPS;
@@ -105,16 +105,16 @@ typedef struct _HIDP_VALUE_CAPS {
   LONG PhysicalMin, PhysicalMax;
   __C89_NAMELESS union {
     struct {
-      USAGE UsageMin, UsageMax;
-      USHORT StringMin, StringMax;
-      USHORT DesignatorMin, DesignatorMax;
-      USHORT DataIndexMin, DataIndexMax;
+                   USAGE UsageMin, UsageMax;
+                   USHORT StringMin, StringMax;
+                   USHORT DesignatorMin, DesignatorMax;
+                   USHORT DataIndexMin, DataIndexMax;
     } Range;
     struct {
-      USAGE Usage, Reserved1;
-      USHORT StringIndex, Reserved2;
-      USHORT DesignatorIndex, Reserved3;
-      USHORT DataIndex, Reserved4;
+                   USAGE Usage, Reserved1;
+                   USHORT StringIndex, Reserved2;
+                   USHORT DesignatorIndex, Reserved3;
+                   USHORT DataIndex, Reserved4;
     } NotRange;
   };
 } HIDP_VALUE_CAPS,*PHIDP_VALUE_CAPS;
@@ -181,18 +181,18 @@ typedef enum _HIDP_KEYBOARD_DIRECTION {
 typedef struct _HIDP_KEYBOARD_MODIFIER_STATE {
   __C89_NAMELESS union {
     struct {
-      ULONG LeftControl: 1;
-      ULONG LeftShift: 1;
-      ULONG LeftAlt: 1;
-      ULONG LeftGUI: 1;
-      ULONG RightControl: 1;
-      ULONG RightShift: 1;
-      ULONG RightAlt: 1;
-      ULONG RigthGUI: 1;
-      ULONG CapsLock: 1;
-      ULONG ScollLock: 1;
-      ULONG NumLock: 1;
-      ULONG Reserved: 21;
+                   ULONG LeftControl: 1;
+                   ULONG LeftShift: 1;
+                   ULONG LeftAlt: 1;
+                   ULONG LeftGUI: 1;
+                   ULONG RightControl: 1;
+                   ULONG RightShift: 1;
+                   ULONG RightAlt: 1;
+                   ULONG RigthGUI: 1;
+                   ULONG CapsLock: 1;
+                   ULONG ScollLock: 1;
+                   ULONG NumLock: 1;
+                   ULONG Reserved: 21;
     };
     ULONG ul;
   };

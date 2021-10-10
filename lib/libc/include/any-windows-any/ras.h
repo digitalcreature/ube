@@ -994,8 +994,8 @@ typedef struct in6_addr RASIPV6ADDR;
 #if (_WIN32_WINNT >= 0x0600)
 
 typedef struct _tagRasNapState {
-  DWORD          dwSize;
-  DWORD          dwFlags;
+  DWORD                       dwSize;
+  DWORD                       dwFlags;
   IsolationState isolationState;
   ProbationTime  probationTime;
 } RASNAPSTATE, *LPRASNAPSTATE;
@@ -1034,9 +1034,9 @@ typedef struct _RASTUNNELENDPOINT {
 
 typedef struct _RASUPDATECONN {
   RASAPIVERSION     version;
-  DWORD             dwSize;
-  DWORD             dwFlags;
-  DWORD             dwIfIndex;
+  DWORD                                       dwSize;
+  DWORD                                       dwFlags;
+  DWORD                                       dwIfIndex;
   RASTUNNELENDPOINT  localEndPoint;
   RASTUNNELENDPOINT  remoteEndPoint;
 } RASUPDATECONN, *LPRASUPDATECONN;

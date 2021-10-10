@@ -1355,10 +1355,10 @@ _mm_set_pi16(short __s3, short __s2, short __s1, short __s0)
 /// \returns An initialized 64-bit integer vector.
 static __inline__ __m64 __DEFAULT_FN_ATTRS
 _mm_set_pi8(char __b7, char __b6, char __b5, char __b4, char __b3, char __b2,
-            char __b1, char __b0)
+                                      char __b1, char __b0)
 {
     return (__m64)__builtin_ia32_vec_init_v8qi(__b0, __b1, __b2, __b3,
-                                               __b4, __b5, __b6, __b7);
+                                                                                                                                          __b4, __b5, __b6, __b7);
 }
 
 /// Constructs a 64-bit integer vector of [2 x i32], with each of the
@@ -1488,7 +1488,7 @@ _mm_setr_pi16(short __w0, short __w1, short __w2, short __w3)
 /// \returns An initialized 64-bit integer vector.
 static __inline__ __m64 __DEFAULT_FN_ATTRS
 _mm_setr_pi8(char __b0, char __b1, char __b2, char __b3, char __b4, char __b5,
-             char __b6, char __b7)
+                                       char __b6, char __b7)
 {
     return _mm_set_pi8(__b7, __b6, __b5, __b4, __b3, __b2, __b1, __b0);
 }

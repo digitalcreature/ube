@@ -21,18 +21,18 @@ const maxInt = std.math.maxInt;
 //
 // PBKDF2 (P, S, c, dkLen)
 //
-// Options:        PRF        underlying pseudorandom function (hLen
-//                            denotes the length in octets of the
-//                            pseudorandom function output)
+// Options:                     PRF                     underlying pseudorandom function (hLen
+//                                                                                denotes the length in octets of the
+//                                                                                pseudorandom function output)
 //
-// Input:          P          password, an octet string
-//                 S          salt, an octet string
-//                 c          iteration count, a positive integer
-//                 dkLen      intended length in octets of the derived
-//                            key, a positive integer, at most
-//                            (2^32 - 1) * hLen
+// Input:                       P                       password, an octet string
+//                                           S                       salt, an octet string
+//                                           c                       iteration count, a positive integer
+//                                           dkLen                   intended length in octets of the derived
+//                                                                                key, a positive integer, at most
+//                                                                                (2^32 - 1) * hLen
 //
-// Output:         DK         derived key, a dkLen-octet string
+// Output:                      DK                      derived key, a dkLen-octet string
 
 // Based on Apple's CommonKeyDerivation, based originally on code by Damien Bergamini.
 
@@ -49,17 +49,17 @@ pub const Pbkdf2Error = error{
 /// PBKDF2 is defined in RFC 2898, and is a recommendation of NIST SP 800-132.
 ///
 /// derivedKey: Slice of appropriate size for generated key. Generally 16 or 32 bytes in length.
-///             May be uninitialized. All bytes will be overwritten.
-///             Maximum size is `maxInt(u32) * Hash.digest_length`
-///             It is a programming error to pass buffer longer than the maximum size.
+///                                       May be uninitialized. All bytes will be overwritten.
+///                                       Maximum size is `maxInt(u32) * Hash.digest_length`
+///                                       It is a programming error to pass buffer longer than the maximum size.
 ///
 /// password: Arbitrary sequence of bytes of any length, including empty.
 ///
 /// salt: Arbitrary sequence of bytes of any length, including empty. A common length is 8 bytes.
 ///
 /// rounds: Iteration count. Must be greater than 0. Common values range from 1,000 to 100,000.
-///         Larger iteration counts improve security by increasing the time required to compute
-///         the derivedKey. It is common to tune this parameter to achieve approximately 100ms.
+///                      Larger iteration counts improve security by increasing the time required to compute
+///                      the derivedKey. It is common to tune this parameter to achieve approximately 100ms.
 ///
 /// Prf: Pseudo-random function to use. A common choice is `std.crypto.auth.hmac.HmacSha256`.
 pub fn pbkdf2(derivedKey: []u8, password: []const u8, salt: []const u8, rounds: u32, comptime Prf: type) Pbkdf2Error!void {
@@ -72,18 +72,18 @@ pub fn pbkdf2(derivedKey: []u8, password: []const u8, salt: []const u8, rounds: 
     // FromSpec:
     //
     //   1. If dkLen > maxInt(u32) * hLen, output "derived key too long" and
-    //      stop.
+    //                   stop.
     //
     if (comptime (maxInt(usize) > maxInt(u32) * hLen) and (dkLen > @as(usize, maxInt(u32) * hLen))) {
-        // If maxInt(usize) is less than `maxInt(u32) * hLen` then dkLen is always inbounds
-        return error.DerivedKeyTooLong;
+                     // If maxInt(usize) is less than `maxInt(u32) * hLen` then dkLen is always inbounds
+                     return error.DerivedKeyTooLong;
     }
 
     // FromSpec:
     //
     //   2. Let l be the number of hLen-long blocks of bytes in the derived key,
-    //      rounding up, and let r be the number of bytes in the last
-    //      block
+    //                   rounding up, and let r be the number of bytes in the last
+    //                   block
     //
 
     // l will not overflow, proof:
@@ -100,27 +100,27 @@ pub fn pbkdf2(derivedKey: []u8, password: []const u8, salt: []const u8, rounds: 
     // FromSpec:
     //
     //   3. For each block of the derived key apply the function F defined
-    //      below to the password P, the salt S, the iteration count c, and
-    //      the block index to compute the block:
+    //                   below to the password P, the salt S, the iteration count c, and
+    //                   the block index to compute the block:
     //
-    //                T_1 = F (P, S, c, 1) ,
-    //                T_2 = F (P, S, c, 2) ,
-    //                ...
-    //                T_l = F (P, S, c, l) ,
+    //                                          T_1 = F (P, S, c, 1) ,
+    //                                          T_2 = F (P, S, c, 2) ,
+    //                                          ...
+    //                                          T_l = F (P, S, c, l) ,
     //
-    //      where the function F is defined as the exclusive-or sum of the
-    //      first c iterates of the underlying pseudorandom function PRF
-    //      applied to the password P and the concatenation of the salt S
-    //      and the block index i:
+    //                   where the function F is defined as the exclusive-or sum of the
+    //                   first c iterates of the underlying pseudorandom function PRF
+    //                   applied to the password P and the concatenation of the salt S
+    //                   and the block index i:
     //
-    //                F (P, S, c, i) = U_1 \xor U_2 \xor ... \xor U_c
+    //                                          F (P, S, c, i) = U_1 \xor U_2 \xor ... \xor U_c
     //
     //  where
     //
-    //            U_1 = PRF (P, S || INT (i)) ,
-    //            U_2 = PRF (P, U_1) ,
-    //            ...
-    //            U_c = PRF (P, U_{c-1}) .
+    //                                      U_1 = PRF (P, S || INT (i)) ,
+    //                                      U_2 = PRF (P, U_1) ,
+    //                                      ...
+    //                                      U_c = PRF (P, U_{c-1}) .
     //
     //  Here, INT (i) is a four-octet encoding of the integer i, most
     //  significant octet first.
@@ -128,36 +128,36 @@ pub fn pbkdf2(derivedKey: []u8, password: []const u8, salt: []const u8, rounds: 
     //  4. Concatenate the blocks and extract the first dkLen octets to
     //  produce a derived key DK:
     //
-    //            DK = T_1 || T_2 ||  ...  || T_l<0..r-1>
+    //                                      DK = T_1 || T_2 ||  ...  || T_l<0..r-1>
     var block: u32 = 0; // Spec limits to u32
     while (block < l) : (block += 1) {
-        var prevBlock: [hLen]u8 = undefined;
-        var newBlock: [hLen]u8 = undefined;
+                     var prevBlock: [hLen]u8 = undefined;
+                     var newBlock: [hLen]u8 = undefined;
 
-        // U_1 = PRF (P, S || INT (i))
-        const blockIndex = mem.toBytes(mem.nativeToBig(u32, block + 1)); // Block index starts at 0001
-        var ctx = Prf.init(password);
-        ctx.update(salt);
-        ctx.update(blockIndex[0..]);
-        ctx.final(prevBlock[0..]);
+                     // U_1 = PRF (P, S || INT (i))
+                     const blockIndex = mem.toBytes(mem.nativeToBig(u32, block + 1)); // Block index starts at 0001
+                     var ctx = Prf.init(password);
+                     ctx.update(salt);
+                     ctx.update(blockIndex[0..]);
+                     ctx.final(prevBlock[0..]);
 
-        // Choose portion of DK to write into (T_n) and initialize
-        const offset = block * hLen;
-        const blockLen = if (block != l - 1) hLen else r;
-        const dkBlock: []u8 = derivedKey[offset..][0..blockLen];
-        mem.copy(u8, dkBlock, prevBlock[0..dkBlock.len]);
+                     // Choose portion of DK to write into (T_n) and initialize
+                     const offset = block * hLen;
+                     const blockLen = if (block != l - 1) hLen else r;
+                     const dkBlock: []u8 = derivedKey[offset..][0..blockLen];
+                     mem.copy(u8, dkBlock, prevBlock[0..dkBlock.len]);
 
-        var i: u32 = 1;
-        while (i < rounds) : (i += 1) {
-            // U_c = PRF (P, U_{c-1})
-            Prf.create(&newBlock, prevBlock[0..], password);
-            mem.copy(u8, prevBlock[0..], newBlock[0..]);
+                     var i: u32 = 1;
+                     while (i < rounds) : (i += 1) {
+                                      // U_c = PRF (P, U_{c-1})
+                                      Prf.create(&newBlock, prevBlock[0..], password);
+                                      mem.copy(u8, prevBlock[0..], newBlock[0..]);
 
-            // F (P, S, c, i) = U_1 \xor U_2 \xor ... \xor U_c
-            for (dkBlock) |_, j| {
-                dkBlock[j] ^= newBlock[j];
-            }
-        }
+                                      // F (P, S, c, i) = U_1 \xor U_2 \xor ... \xor U_c
+                                      for (dkBlock) |_, j| {
+                                          dkBlock[j] ^= newBlock[j];
+                                      }
+                     }
     }
 }
 
@@ -213,7 +213,7 @@ test "RFC 6070 4096 iterations" {
 test "RFC 6070 16,777,216 iterations" {
     // These iteration tests are slow so we always skip them. Results have been verified.
     if (true) {
-        return error.SkipZigTest;
+                     return error.SkipZigTest;
     }
 
     const p = "password";
@@ -263,7 +263,7 @@ test "RFC 6070 embedded NUL" {
 test "Very large dkLen" {
     // This test allocates 8GB of memory and is expected to take several hours to run.
     if (true) {
-        return error.SkipZigTest;
+                     return error.SkipZigTest;
     }
     const p = "password";
     const s = "salt";
@@ -272,7 +272,7 @@ test "Very large dkLen" {
 
     var derivedKey = try std.testing.allocator.alloc(u8, dkLen);
     defer {
-        std.testing.allocator.free(derivedKey);
+                     std.testing.allocator.free(derivedKey);
     }
 
     try pbkdf2(derivedKey, p, s, c, HmacSha1);

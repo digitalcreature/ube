@@ -11,8 +11,8 @@
 
 /* msgrcv options */
 #define MSG_NOERROR     010000  /* no error if message is too big */
-#define MSG_EXCEPT      020000  /* recv any msg except of specified type.*/
-#define MSG_COPY        040000  /* copy (not remove) all queue messages */
+#define MSG_EXCEPT                   020000  /* recv any msg except of specified type.*/
+#define MSG_COPY                     040000  /* copy (not remove) all queue messages */
 
 /* Obsolete, used only for backwards compatibility and libc5 compiles */
 struct msqid_ds {
@@ -36,8 +36,8 @@ struct msqid_ds {
 
 /* message buffer for msgsnd and msgrcv calls */
 struct msgbuf {
-	__kernel_long_t mtype;          /* type of message */
-	char mtext[1];                  /* message text */
+	__kernel_long_t mtype;                       /* type of message */
+	char mtext[1];                                                         /* message text */
 };
 
 /* buffer for msgctl calls IPC_INFO, MSG_INFO */
@@ -80,9 +80,9 @@ struct msginfo {
 
 /* unused */
 #define MSGPOOL (MSGMNI * MSGMNB / 1024) /* size in kbytes of message pool */
-#define MSGTQL  MSGMNB            /* number of system message headers */
-#define MSGMAP  MSGMNB            /* number of entries in message map */
-#define MSGSSZ  16                /* message segment size */
+#define MSGTQL  MSGMNB                                      /* number of system message headers */
+#define MSGMAP  MSGMNB                                      /* number of entries in message map */
+#define MSGSSZ  16                                          /* message segment size */
 #define __MSGSEG ((MSGPOOL * 1024) / MSGSSZ) /* max no. of segments */
 #define MSGSEG (__MSGSEG <= 0xffff ? __MSGSEG : 0xffff)
 

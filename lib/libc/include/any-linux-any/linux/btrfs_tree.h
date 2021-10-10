@@ -212,24 +212,24 @@
  * There's only one instance of this key present,
  * (0, BTRFS_QGROUP_STATUS_KEY, 0)
  */
-#define BTRFS_QGROUP_STATUS_KEY         240
+#define BTRFS_QGROUP_STATUS_KEY                      240
 /*
  * Records the currently used space of the qgroup.
  * One key per qgroup, (0, BTRFS_QGROUP_INFO_KEY, qgroupid).
  */
-#define BTRFS_QGROUP_INFO_KEY           242
+#define BTRFS_QGROUP_INFO_KEY                        242
 /*
  * Contains the user configured limits for the qgroup.
  * One key per qgroup, (0, BTRFS_QGROUP_LIMIT_KEY, qgroupid).
  */
-#define BTRFS_QGROUP_LIMIT_KEY          244
+#define BTRFS_QGROUP_LIMIT_KEY                       244
 /*
  * Records the child-parent relationship of qgroups. For
  * each relation, 2 keys are present:
  * (childid, BTRFS_QGROUP_RELATION_KEY, parentid)
  * (parentid, BTRFS_QGROUP_RELATION_KEY, childid)
  */
-#define BTRFS_QGROUP_RELATION_KEY       246
+#define BTRFS_QGROUP_RELATION_KEY                    246
 
 /*
  * Obsolete name, see BTRFS_TEMPORARY_ITEM_KEY.
@@ -834,8 +834,8 @@ struct btrfs_dev_replace_item {
 #define BTRFS_BLOCK_GROUP_RAID1		(1ULL << 4)
 #define BTRFS_BLOCK_GROUP_DUP		(1ULL << 5)
 #define BTRFS_BLOCK_GROUP_RAID10	(1ULL << 6)
-#define BTRFS_BLOCK_GROUP_RAID5         (1ULL << 7)
-#define BTRFS_BLOCK_GROUP_RAID6         (1ULL << 8)
+#define BTRFS_BLOCK_GROUP_RAID5                      (1ULL << 7)
+#define BTRFS_BLOCK_GROUP_RAID6                      (1ULL << 8)
 #define BTRFS_BLOCK_GROUP_RESERVED	(BTRFS_AVAIL_ALLOC_BIT_SINGLE | \
 					 BTRFS_SPACE_INFO_GLOBAL_RSV)
 
@@ -929,7 +929,7 @@ static __inline__ __u64 btrfs_qgroup_level(__u64 qgroupid)
  */
 #define BTRFS_QGROUP_STATUS_FLAG_INCONSISTENT	(1ULL << 2)
 
-#define BTRFS_QGROUP_STATUS_VERSION        1
+#define BTRFS_QGROUP_STATUS_VERSION                     1
 
 struct btrfs_qgroup_status_item {
 	__le64 version;

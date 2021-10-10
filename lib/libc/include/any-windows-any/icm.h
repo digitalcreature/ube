@@ -86,8 +86,8 @@ extern "C" {
     struct NAMEDCOLOR named;
     struct HiFiCOLOR hifi;
     struct {
-      DWORD reserved1;
-      VOID *reserved2;
+                   DWORD reserved1;
+                   VOID *reserved2;
     };
   } COLOR;
   typedef COLOR *PCOLOR,*LPCOLOR;
@@ -467,7 +467,7 @@ extern "C" {
 
 #if (_WIN32_WINNT >= 0x0600)
   typedef enum tagCOLORDATATYPE {
-  COLOR_BYTE                 = 1,
+  COLOR_BYTE                                           = 1,
   COLOR_WORD,
   COLOR_FLOAT,
   COLOR_S2DOT13FIXED,
@@ -481,9 +481,9 @@ extern "C" {
 #define INTENT_ABSOLUTE_COLORIMETRIC 3
 
 typedef enum tagCOLORPROFILESUBTYPE {
-  CPST_PERCEPTUAL            = INTENT_PERCEPTUAL,
+  CPST_PERCEPTUAL                                      = INTENT_PERCEPTUAL,
   CPST_RELATIVE_COLORIMETRIC = INTENT_RELATIVE_COLORIMETRIC,
-  CPST_SATURATION            = INTENT_SATURATION,
+  CPST_SATURATION                                      = INTENT_SATURATION,
   CPST_ABSOLUTE_COLORIMETRIC = INTENT_ABSOLUTE_COLORIMETRIC,
   CPST_NONE,
   CPST_RGB_WORKING_SPACE,

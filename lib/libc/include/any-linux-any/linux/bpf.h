@@ -205,9 +205,9 @@ enum bpf_attach_type {
  * Ex1:
  * cgrp1 (MULTI progs A, B) ->
  *    cgrp2 (OVERRIDE prog C) ->
- *      cgrp3 (MULTI prog D) ->
- *        cgrp4 (OVERRIDE prog E) ->
- *          cgrp5 (NONE prog F)
+ *                   cgrp3 (MULTI prog D) ->
+ *                     cgrp4 (OVERRIDE prog E) ->
+ *                       cgrp5 (NONE prog F)
  * the event in cgrp5 triggers execution of F,D,A,B in that order.
  * if prog F is detached, the execution is E,D,A,B
  * if prog F and D are detached, the execution is E,A,B
@@ -417,7 +417,7 @@ union bpf_attr {
  * and requires the rst2man utility:
  *
  *     $ ./scripts/bpf_helpers_doc.py \
- *             --filename include/uapi/linux/bpf.h > /tmp/bpf-helpers.rst
+ *                                       --filename include/uapi/linux/bpf.h > /tmp/bpf-helpers.rst
  *     $ rst2man /tmp/bpf-helpers.rst > /tmp/bpf-helpers.7
  *     $ man /tmp/bpf-helpers.7
  *
@@ -1341,9 +1341,9 @@ union bpf_attr {
  * 			SEC("kprobe/sys_open")
  * 			void bpf_sys_open(struct pt_regs *ctx)
  * 			{
- * 			        char buf[PATHLEN]; // PATHLEN is defined to 256
- * 			        int res = bpf_probe_read_str(buf, sizeof(buf),
- * 				                             ctx->di);
+ * 			                     char buf[PATHLEN]; // PATHLEN is defined to 256
+ * 			                     int res = bpf_probe_read_str(buf, sizeof(buf),
+ * 				                                                                                 ctx->di);
  *
  * 				// Consume buf, for example push it to
  * 				// userspace via bpf_perf_event_output(); we
@@ -1882,9 +1882,9 @@ union bpf_attr {
  *		is set to metric from route (IPv4/IPv6 only), and ifindex
  *		is set to the device index of the nexthop from the FIB lookup.
  *
- *             *plen* argument is the size of the passed in struct.
- *             *flags* argument can be a combination of one or more of the
- *             following values:
+ *                                       *plen* argument is the size of the passed in struct.
+ *                                       *flags* argument can be a combination of one or more of the
+ *                                       following values:
  *
  *		**BPF_FIB_LOOKUP_DIRECT**
  *			Do a direct table lookup vs full lookup using FIB
@@ -1893,8 +1893,8 @@ union bpf_attr {
  *			Perform lookup from an egress perspective (default is
  *			ingress).
  *
- *             *ctx* is either **struct xdp_md** for XDP programs or
- *             **struct sk_buff** tc cls_act programs.
+ *                                       *ctx* is either **struct xdp_md** for XDP programs or
+ *                                       **struct sk_buff** tc cls_act programs.
  *     Return
  *		* < 0 if any input argument is invalid
  *		*   0 on success (packet is forwarded, nexthop neighbor exists)
@@ -2596,7 +2596,7 @@ struct bpf_sock_ops {
 #define BPF_SOCK_OPS_RTO_CB_FLAG	(1<<0)
 #define BPF_SOCK_OPS_RETRANS_CB_FLAG	(1<<1)
 #define BPF_SOCK_OPS_STATE_CB_FLAG	(1<<2)
-#define BPF_SOCK_OPS_ALL_CB_FLAGS       0x7		/* Mask of all currently
+#define BPF_SOCK_OPS_ALL_CB_FLAGS                    0x7		/* Mask of all currently
 							 * supported cb flags
 							 */
 
@@ -2642,7 +2642,7 @@ enum {
 					 * Arg1: sequence number of 1st byte
 					 * Arg2: # segments
 					 * Arg3: return value of
-					 *       tcp_transmit_skb (0 => success)
+					 *                    tcp_transmit_skb (0 => success)
 					 */
 	BPF_SOCK_OPS_STATE_CB,		/* Called when TCP changes state.
 					 * Arg1: old_state
@@ -2709,7 +2709,7 @@ struct bpf_raw_tracepoint_args {
 #define BPF_FIB_LOOKUP_OUTPUT  BIT(1)
 
 enum {
-	BPF_FIB_LKUP_RET_SUCCESS,      /* lookup successful */
+	BPF_FIB_LKUP_RET_SUCCESS,                   /* lookup successful */
 	BPF_FIB_LKUP_RET_BLACKHOLE,    /* dest is blackholed; can be dropped */
 	BPF_FIB_LKUP_RET_UNREACHABLE,  /* dest is unreachable; can be dropped */
 	BPF_FIB_LKUP_RET_PROHIBIT,     /* dest not allowed; can be dropped */

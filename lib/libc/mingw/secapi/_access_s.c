@@ -37,8 +37,8 @@ _int_access_s (const char *s, int m)
 {
   if (!s || (m & ~6) != 0)
     {
-      _access (NULL, m);
-      return EINVAL;
+                   _access (NULL, m);
+                   return EINVAL;
     }
   if (!_access (s, m))
     return 0;

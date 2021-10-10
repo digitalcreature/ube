@@ -86,9 +86,9 @@ extern "C"{
 #else
   typedef struct IDummyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDummy *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDummy *This);
-      ULONG (WINAPI *Release)(IDummy *This);
+                   HRESULT (WINAPI *QueryInterface)(IDummy *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDummy *This);
+                   ULONG (WINAPI *Release)(IDummy *This);
     END_INTERFACE
   } IDummyVtbl;
   struct IDummy {
@@ -114,15 +114,15 @@ extern "C"{
 #else
   typedef struct ITLocalParticipantVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITLocalParticipant *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITLocalParticipant *This);
-      ULONG (WINAPI *Release)(ITLocalParticipant *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITLocalParticipant *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITLocalParticipant *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITLocalParticipant *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITLocalParticipant *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_LocalParticipantTypedInfo)(ITLocalParticipant *This,PARTICIPANT_TYPED_INFO InfoType,BSTR *ppInfo);
-      HRESULT (WINAPI *put_LocalParticipantTypedInfo)(ITLocalParticipant *This,PARTICIPANT_TYPED_INFO InfoType,BSTR pInfo);
+                   HRESULT (WINAPI *QueryInterface)(ITLocalParticipant *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITLocalParticipant *This);
+                   ULONG (WINAPI *Release)(ITLocalParticipant *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITLocalParticipant *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITLocalParticipant *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITLocalParticipant *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITLocalParticipant *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_LocalParticipantTypedInfo)(ITLocalParticipant *This,PARTICIPANT_TYPED_INFO InfoType,BSTR *ppInfo);
+                   HRESULT (WINAPI *put_LocalParticipantTypedInfo)(ITLocalParticipant *This,PARTICIPANT_TYPED_INFO InfoType,BSTR pInfo);
     END_INTERFACE
   } ITLocalParticipantVtbl;
   struct ITLocalParticipant {
@@ -160,13 +160,13 @@ extern "C"{
 #else
   typedef struct IEnumParticipantVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumParticipant *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumParticipant *This);
-      ULONG (WINAPI *Release)(IEnumParticipant *This);
-      HRESULT (WINAPI *Next)(IEnumParticipant *This,ULONG celt,ITParticipant **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumParticipant *This);
-      HRESULT (WINAPI *Skip)(IEnumParticipant *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumParticipant *This,IEnumParticipant **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumParticipant *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumParticipant *This);
+                   ULONG (WINAPI *Release)(IEnumParticipant *This);
+                   HRESULT (WINAPI *Next)(IEnumParticipant *This,ULONG celt,ITParticipant **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumParticipant *This);
+                   HRESULT (WINAPI *Skip)(IEnumParticipant *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumParticipant *This,IEnumParticipant **ppEnum);
     END_INTERFACE
   } IEnumParticipantVtbl;
   struct IEnumParticipant {
@@ -204,15 +204,15 @@ extern "C"{
 #else
   typedef struct ITParticipantControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITParticipantControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITParticipantControl *This);
-      ULONG (WINAPI *Release)(ITParticipantControl *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITParticipantControl *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITParticipantControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITParticipantControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITParticipantControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *EnumerateParticipants)(ITParticipantControl *This,IEnumParticipant **ppEnumParticipants);
-      HRESULT (WINAPI *get_Participants)(ITParticipantControl *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *QueryInterface)(ITParticipantControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITParticipantControl *This);
+                   ULONG (WINAPI *Release)(ITParticipantControl *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITParticipantControl *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITParticipantControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITParticipantControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITParticipantControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *EnumerateParticipants)(ITParticipantControl *This,IEnumParticipant **ppEnumParticipants);
+                   HRESULT (WINAPI *get_Participants)(ITParticipantControl *This,VARIANT *pVariant);
     END_INTERFACE
   } ITParticipantControlVtbl;
   struct ITParticipantControl {
@@ -249,16 +249,16 @@ extern "C"{
 #else
   typedef struct ITParticipantSubStreamControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITParticipantSubStreamControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITParticipantSubStreamControl *This);
-      ULONG (WINAPI *Release)(ITParticipantSubStreamControl *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITParticipantSubStreamControl *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITParticipantSubStreamControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITParticipantSubStreamControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITParticipantSubStreamControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_SubStreamFromParticipant)(ITParticipantSubStreamControl *This,ITParticipant *pParticipant,ITSubStream **ppITSubStream);
-      HRESULT (WINAPI *get_ParticipantFromSubStream)(ITParticipantSubStreamControl *This,ITSubStream *pITSubStream,ITParticipant **ppParticipant);
-      HRESULT (WINAPI *SwitchTerminalToSubStream)(ITParticipantSubStreamControl *This,ITTerminal *pITTerminal,ITSubStream *pITSubStream);
+                   HRESULT (WINAPI *QueryInterface)(ITParticipantSubStreamControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITParticipantSubStreamControl *This);
+                   ULONG (WINAPI *Release)(ITParticipantSubStreamControl *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITParticipantSubStreamControl *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITParticipantSubStreamControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITParticipantSubStreamControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITParticipantSubStreamControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_SubStreamFromParticipant)(ITParticipantSubStreamControl *This,ITParticipant *pParticipant,ITSubStream **ppITSubStream);
+                   HRESULT (WINAPI *get_ParticipantFromSubStream)(ITParticipantSubStreamControl *This,ITSubStream *pITSubStream,ITParticipant **ppParticipant);
+                   HRESULT (WINAPI *SwitchTerminalToSubStream)(ITParticipantSubStreamControl *This,ITTerminal *pITTerminal,ITSubStream *pITSubStream);
     END_INTERFACE
   } ITParticipantSubStreamControlVtbl;
   struct ITParticipantSubStreamControl {
@@ -298,16 +298,16 @@ extern "C"{
 #else
   typedef struct ITParticipantEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITParticipantEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITParticipantEvent *This);
-      ULONG (WINAPI *Release)(ITParticipantEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITParticipantEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITParticipantEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITParticipantEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITParticipantEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Event)(ITParticipantEvent *This,PARTICIPANT_EVENT *pParticipantEvent);
-      HRESULT (WINAPI *get_Participant)(ITParticipantEvent *This,ITParticipant **ppParticipant);
-      HRESULT (WINAPI *get_SubStream)(ITParticipantEvent *This,ITSubStream **ppSubStream);
+                   HRESULT (WINAPI *QueryInterface)(ITParticipantEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITParticipantEvent *This);
+                   ULONG (WINAPI *Release)(ITParticipantEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITParticipantEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITParticipantEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITParticipantEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITParticipantEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Event)(ITParticipantEvent *This,PARTICIPANT_EVENT *pParticipantEvent);
+                   HRESULT (WINAPI *get_Participant)(ITParticipantEvent *This,ITParticipant **ppParticipant);
+                   HRESULT (WINAPI *get_SubStream)(ITParticipantEvent *This,ITSubStream **ppSubStream);
     END_INTERFACE
   } ITParticipantEventVtbl;
   struct ITParticipantEvent {
@@ -346,15 +346,15 @@ extern "C"{
 #else
   typedef struct IMulticastControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMulticastControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMulticastControl *This);
-      ULONG (WINAPI *Release)(IMulticastControl *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMulticastControl *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMulticastControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMulticastControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMulticastControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_LoopbackMode)(IMulticastControl *This,MULTICAST_LOOPBACK_MODE *pMode);
-      HRESULT (WINAPI *put_LoopbackMode)(IMulticastControl *This,MULTICAST_LOOPBACK_MODE mode);
+                   HRESULT (WINAPI *QueryInterface)(IMulticastControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMulticastControl *This);
+                   ULONG (WINAPI *Release)(IMulticastControl *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMulticastControl *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMulticastControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMulticastControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMulticastControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_LoopbackMode)(IMulticastControl *This,MULTICAST_LOOPBACK_MODE *pMode);
+                   HRESULT (WINAPI *put_LoopbackMode)(IMulticastControl *This,MULTICAST_LOOPBACK_MODE mode);
     END_INTERFACE
   } IMulticastControlVtbl;
   struct IMulticastControl {

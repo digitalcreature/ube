@@ -22,7 +22,7 @@
 #define DDP_MAXSZ	587
 #define DDP_MAXHOPS     15		/* 4 bits of hop counter */
 
-#define SIOCATALKDIFADDR       (SIOCPROTOPRIVATE + 0)
+#define SIOCATALKDIFADDR                    (SIOCPROTOPRIVATE + 0)
 
 struct atalk_addr {
 	__be16	s_net;

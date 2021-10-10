@@ -78,84 +78,84 @@ MIDL_INTERFACE("7279fc81-709d-4095-b63d-69fe4b0d9030")
 IXmlReader : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetInput(
-        IUnknown *input) = 0;
+                     IUnknown *input) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        UINT property,
-        LONG_PTR *value) = 0;
+                     UINT property,
+                     LONG_PTR *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProperty(
-        UINT property,
-        LONG_PTR value) = 0;
+                     UINT property,
+                     LONG_PTR value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Read(
-        XmlNodeType *node_type) = 0;
+                     XmlNodeType *node_type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNodeType(
-        XmlNodeType *node_type) = 0;
+                     XmlNodeType *node_type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveToFirstAttribute(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveToNextAttribute(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveToAttributeByName(
-        LPCWSTR local_name,
-        LPCWSTR namespaceUri) = 0;
+                     LPCWSTR local_name,
+                     LPCWSTR namespaceUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveToElement(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetQualifiedName(
-        LPCWSTR *qualifiedName,
-        UINT *qualifiedName_length) = 0;
+                     LPCWSTR *qualifiedName,
+                     UINT *qualifiedName_length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNamespaceUri(
-        LPCWSTR *namespaceUri,
-        UINT *nnamespaceUri_length) = 0;
+                     LPCWSTR *namespaceUri,
+                     UINT *nnamespaceUri_length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocalName(
-        LPCWSTR *local_name,
-        UINT *locale_name_length) = 0;
+                     LPCWSTR *local_name,
+                     UINT *locale_name_length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrefix(
-        LPCWSTR *prefix,
-        UINT *prefix_length) = 0;
+                     LPCWSTR *prefix,
+                     UINT *prefix_length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        LPCWSTR *value,
-        UINT *value_length) = 0;
+                     LPCWSTR *value,
+                     UINT *value_length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReadValueChunk(
-        WCHAR *buffer,
-        UINT chunk_size,
-        UINT *read) = 0;
+                     WCHAR *buffer,
+                     UINT chunk_size,
+                     UINT *read) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBaseUri(
-        LPCWSTR *baseUri,
-        UINT *baseUri_length) = 0;
+                     LPCWSTR *baseUri,
+                     UINT *baseUri_length) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE IsDefault(
-        ) = 0;
+                     ) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE IsEmptyElement(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLineNumber(
-        UINT *lineNumber) = 0;
+                     UINT *lineNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLinePosition(
-        UINT *linePosition) = 0;
+                     UINT *linePosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAttributeCount(
-        UINT *attributeCount) = 0;
+                     UINT *attributeCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDepth(
-        UINT *depth) = 0;
+                     UINT *depth) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE IsEOF(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -167,113 +167,113 @@ typedef struct IXmlReaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXmlReader *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXmlReader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXmlReader *This);
+                     IXmlReader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXmlReader *This);
+                     IXmlReader *This);
 
     /*** IXmlReader methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInput)(
-        IXmlReader *This,
-        IUnknown *input);
+                     IXmlReader *This,
+                     IUnknown *input);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IXmlReader *This,
-        UINT property,
-        LONG_PTR *value);
+                     IXmlReader *This,
+                     UINT property,
+                     LONG_PTR *value);
 
     HRESULT (STDMETHODCALLTYPE *SetProperty)(
-        IXmlReader *This,
-        UINT property,
-        LONG_PTR value);
+                     IXmlReader *This,
+                     UINT property,
+                     LONG_PTR value);
 
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IXmlReader *This,
-        XmlNodeType *node_type);
+                     IXmlReader *This,
+                     XmlNodeType *node_type);
 
     HRESULT (STDMETHODCALLTYPE *GetNodeType)(
-        IXmlReader *This,
-        XmlNodeType *node_type);
+                     IXmlReader *This,
+                     XmlNodeType *node_type);
 
     HRESULT (STDMETHODCALLTYPE *MoveToFirstAttribute)(
-        IXmlReader *This);
+                     IXmlReader *This);
 
     HRESULT (STDMETHODCALLTYPE *MoveToNextAttribute)(
-        IXmlReader *This);
+                     IXmlReader *This);
 
     HRESULT (STDMETHODCALLTYPE *MoveToAttributeByName)(
-        IXmlReader *This,
-        LPCWSTR local_name,
-        LPCWSTR namespaceUri);
+                     IXmlReader *This,
+                     LPCWSTR local_name,
+                     LPCWSTR namespaceUri);
 
     HRESULT (STDMETHODCALLTYPE *MoveToElement)(
-        IXmlReader *This);
+                     IXmlReader *This);
 
     HRESULT (STDMETHODCALLTYPE *GetQualifiedName)(
-        IXmlReader *This,
-        LPCWSTR *qualifiedName,
-        UINT *qualifiedName_length);
+                     IXmlReader *This,
+                     LPCWSTR *qualifiedName,
+                     UINT *qualifiedName_length);
 
     HRESULT (STDMETHODCALLTYPE *GetNamespaceUri)(
-        IXmlReader *This,
-        LPCWSTR *namespaceUri,
-        UINT *nnamespaceUri_length);
+                     IXmlReader *This,
+                     LPCWSTR *namespaceUri,
+                     UINT *nnamespaceUri_length);
 
     HRESULT (STDMETHODCALLTYPE *GetLocalName)(
-        IXmlReader *This,
-        LPCWSTR *local_name,
-        UINT *locale_name_length);
+                     IXmlReader *This,
+                     LPCWSTR *local_name,
+                     UINT *locale_name_length);
 
     HRESULT (STDMETHODCALLTYPE *GetPrefix)(
-        IXmlReader *This,
-        LPCWSTR *prefix,
-        UINT *prefix_length);
+                     IXmlReader *This,
+                     LPCWSTR *prefix,
+                     UINT *prefix_length);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IXmlReader *This,
-        LPCWSTR *value,
-        UINT *value_length);
+                     IXmlReader *This,
+                     LPCWSTR *value,
+                     UINT *value_length);
 
     HRESULT (STDMETHODCALLTYPE *ReadValueChunk)(
-        IXmlReader *This,
-        WCHAR *buffer,
-        UINT chunk_size,
-        UINT *read);
+                     IXmlReader *This,
+                     WCHAR *buffer,
+                     UINT chunk_size,
+                     UINT *read);
 
     HRESULT (STDMETHODCALLTYPE *GetBaseUri)(
-        IXmlReader *This,
-        LPCWSTR *baseUri,
-        UINT *baseUri_length);
+                     IXmlReader *This,
+                     LPCWSTR *baseUri,
+                     UINT *baseUri_length);
 
     WINBOOL (STDMETHODCALLTYPE *IsDefault)(
-        IXmlReader *This);
+                     IXmlReader *This);
 
     WINBOOL (STDMETHODCALLTYPE *IsEmptyElement)(
-        IXmlReader *This);
+                     IXmlReader *This);
 
     HRESULT (STDMETHODCALLTYPE *GetLineNumber)(
-        IXmlReader *This,
-        UINT *lineNumber);
+                     IXmlReader *This,
+                     UINT *lineNumber);
 
     HRESULT (STDMETHODCALLTYPE *GetLinePosition)(
-        IXmlReader *This,
-        UINT *linePosition);
+                     IXmlReader *This,
+                     UINT *linePosition);
 
     HRESULT (STDMETHODCALLTYPE *GetAttributeCount)(
-        IXmlReader *This,
-        UINT *attributeCount);
+                     IXmlReader *This,
+                     UINT *attributeCount);
 
     HRESULT (STDMETHODCALLTYPE *GetDepth)(
-        IXmlReader *This,
-        UINT *depth);
+                     IXmlReader *This,
+                     UINT *depth);
 
     WINBOOL (STDMETHODCALLTYPE *IsEOF)(
-        IXmlReader *This);
+                     IXmlReader *This);
 
     END_INTERFACE
 } IXmlReaderVtbl;
@@ -413,10 +413,10 @@ MIDL_INTERFACE("7279fc82-709d-4095-b63d-69fe4b0d9030")
 IXmlResolver : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ResolveUri(
-        LPCWSTR base_uri,
-        LPCWSTR public_id,
-        LPCWSTR system_id,
-        IUnknown **input) = 0;
+                     LPCWSTR base_uri,
+                     LPCWSTR public_id,
+                     LPCWSTR system_id,
+                     IUnknown **input) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -428,23 +428,23 @@ typedef struct IXmlResolverVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXmlResolver *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXmlResolver *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXmlResolver *This);
+                     IXmlResolver *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXmlResolver *This);
+                     IXmlResolver *This);
 
     /*** IXmlResolver methods ***/
     HRESULT (STDMETHODCALLTYPE *ResolveUri)(
-        IXmlResolver *This,
-        LPCWSTR base_uri,
-        LPCWSTR public_id,
-        LPCWSTR system_id,
-        IUnknown **input);
+                     IXmlResolver *This,
+                     LPCWSTR base_uri,
+                     LPCWSTR public_id,
+                     LPCWSTR system_id,
+                     IUnknown **input);
 
     END_INTERFACE
 } IXmlResolverVtbl;
@@ -603,8 +603,8 @@ typedef enum XmlError {
 STDAPI CreateXmlReader(REFIID riid, void **ppvObject, IMalloc *pMalloc);
 typedef IUnknown IXmlReaderInput;
 STDAPI CreateXmlReaderInputWithEncodingName(IUnknown *stream, IMalloc *pMalloc,
-                                            LPCWSTR encoding, WINBOOL hint,
-                                            LPCWSTR base_uri, IXmlReaderInput **ppInput);
+                                                                                                                                       LPCWSTR encoding, WINBOOL hint,
+                                                                                                                                       LPCWSTR base_uri, IXmlReaderInput **ppInput);
 typedef enum XmlStandalone {
     XmlStandalone_Omit = 0,
     XmlStandalone_Yes = 1,
@@ -631,112 +631,112 @@ MIDL_INTERFACE("7279fc88-709d-4095-b63d-69fe4b0d9030")
 IXmlWriter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetOutput(
-        IUnknown *pOutput) = 0;
+                     IUnknown *pOutput) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        UINT nProperty,
-        LONG_PTR *ppValue) = 0;
+                     UINT nProperty,
+                     LONG_PTR *ppValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProperty(
-        UINT nProperty,
-        LONG_PTR pValue) = 0;
+                     UINT nProperty,
+                     LONG_PTR pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteAttributes(
-        IXmlReader *pReader,
-        WINBOOL fWriteDefaultAttributes) = 0;
+                     IXmlReader *pReader,
+                     WINBOOL fWriteDefaultAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteAttributeString(
-        LPCWSTR pwszPrefix,
-        LPCWSTR pwszLocalName,
-        LPCWSTR pwszNamespaceUri,
-        LPCWSTR pwszValue) = 0;
+                     LPCWSTR pwszPrefix,
+                     LPCWSTR pwszLocalName,
+                     LPCWSTR pwszNamespaceUri,
+                     LPCWSTR pwszValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteCData(
-        LPCWSTR pwszText) = 0;
+                     LPCWSTR pwszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteCharEntity(
-        WCHAR wch) = 0;
+                     WCHAR wch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteChars(
-        const WCHAR *pwch,
-        UINT cwch) = 0;
+                     const WCHAR *pwch,
+                     UINT cwch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteComment(
-        LPCWSTR pwszComment) = 0;
+                     LPCWSTR pwszComment) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteDocType(
-        LPCWSTR pwszName,
-        LPCWSTR pwszPublicId,
-        LPCWSTR pwszSystemId,
-        LPCWSTR pwszSubset) = 0;
+                     LPCWSTR pwszName,
+                     LPCWSTR pwszPublicId,
+                     LPCWSTR pwszSystemId,
+                     LPCWSTR pwszSubset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteElementString(
-        LPCWSTR pwszPrefix,
-        LPCWSTR pwszLocalName,
-        LPCWSTR pwszNamespaceUri,
-        LPCWSTR pwszValue) = 0;
+                     LPCWSTR pwszPrefix,
+                     LPCWSTR pwszLocalName,
+                     LPCWSTR pwszNamespaceUri,
+                     LPCWSTR pwszValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteEndDocument(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteEndElement(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteEntityRef(
-        LPCWSTR pwszName) = 0;
+                     LPCWSTR pwszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteFullEndElement(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteName(
-        LPCWSTR pwszName) = 0;
+                     LPCWSTR pwszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteNmToken(
-        LPCWSTR pwszNmToken) = 0;
+                     LPCWSTR pwszNmToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteNode(
-        IXmlReader *pReader,
-        WINBOOL fWriteDefaultAttributes) = 0;
+                     IXmlReader *pReader,
+                     WINBOOL fWriteDefaultAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteNodeShallow(
-        IXmlReader *pReader,
-        WINBOOL fWriteDefaultAttributes) = 0;
+                     IXmlReader *pReader,
+                     WINBOOL fWriteDefaultAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteProcessingInstruction(
-        LPCWSTR pwszName,
-        LPCWSTR pwszText) = 0;
+                     LPCWSTR pwszName,
+                     LPCWSTR pwszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteQualifiedName(
-        LPCWSTR pwszLocalName,
-        LPCWSTR pwszNamespaceUri) = 0;
+                     LPCWSTR pwszLocalName,
+                     LPCWSTR pwszNamespaceUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteRaw(
-        LPCWSTR pwszData) = 0;
+                     LPCWSTR pwszData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteRawChars(
-        const WCHAR *pwch,
-        UINT cwch) = 0;
+                     const WCHAR *pwch,
+                     UINT cwch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteStartDocument(
-        XmlStandalone standalone) = 0;
+                     XmlStandalone standalone) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteStartElement(
-        LPCWSTR pwszPrefix,
-        LPCWSTR pwszLocalName,
-        LPCWSTR pwszNamespaceUri) = 0;
+                     LPCWSTR pwszPrefix,
+                     LPCWSTR pwszLocalName,
+                     LPCWSTR pwszNamespaceUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteString(
-        LPCWSTR pwszText) = 0;
+                     LPCWSTR pwszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteSurrogateCharEntity(
-        WCHAR wchLow,
-        WCHAR wchHigh) = 0;
+                     WCHAR wchLow,
+                     WCHAR wchHigh) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteWhitespace(
-        LPCWSTR pwszWhitespace) = 0;
+                     LPCWSTR pwszWhitespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Flush(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -748,149 +748,149 @@ typedef struct IXmlWriterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXmlWriter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXmlWriter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXmlWriter *This);
+                     IXmlWriter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXmlWriter *This);
+                     IXmlWriter *This);
 
     /*** IXmlWriter methods ***/
     HRESULT (STDMETHODCALLTYPE *SetOutput)(
-        IXmlWriter *This,
-        IUnknown *pOutput);
+                     IXmlWriter *This,
+                     IUnknown *pOutput);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IXmlWriter *This,
-        UINT nProperty,
-        LONG_PTR *ppValue);
+                     IXmlWriter *This,
+                     UINT nProperty,
+                     LONG_PTR *ppValue);
 
     HRESULT (STDMETHODCALLTYPE *SetProperty)(
-        IXmlWriter *This,
-        UINT nProperty,
-        LONG_PTR pValue);
+                     IXmlWriter *This,
+                     UINT nProperty,
+                     LONG_PTR pValue);
 
     HRESULT (STDMETHODCALLTYPE *WriteAttributes)(
-        IXmlWriter *This,
-        IXmlReader *pReader,
-        WINBOOL fWriteDefaultAttributes);
+                     IXmlWriter *This,
+                     IXmlReader *pReader,
+                     WINBOOL fWriteDefaultAttributes);
 
     HRESULT (STDMETHODCALLTYPE *WriteAttributeString)(
-        IXmlWriter *This,
-        LPCWSTR pwszPrefix,
-        LPCWSTR pwszLocalName,
-        LPCWSTR pwszNamespaceUri,
-        LPCWSTR pwszValue);
+                     IXmlWriter *This,
+                     LPCWSTR pwszPrefix,
+                     LPCWSTR pwszLocalName,
+                     LPCWSTR pwszNamespaceUri,
+                     LPCWSTR pwszValue);
 
     HRESULT (STDMETHODCALLTYPE *WriteCData)(
-        IXmlWriter *This,
-        LPCWSTR pwszText);
+                     IXmlWriter *This,
+                     LPCWSTR pwszText);
 
     HRESULT (STDMETHODCALLTYPE *WriteCharEntity)(
-        IXmlWriter *This,
-        WCHAR wch);
+                     IXmlWriter *This,
+                     WCHAR wch);
 
     HRESULT (STDMETHODCALLTYPE *WriteChars)(
-        IXmlWriter *This,
-        const WCHAR *pwch,
-        UINT cwch);
+                     IXmlWriter *This,
+                     const WCHAR *pwch,
+                     UINT cwch);
 
     HRESULT (STDMETHODCALLTYPE *WriteComment)(
-        IXmlWriter *This,
-        LPCWSTR pwszComment);
+                     IXmlWriter *This,
+                     LPCWSTR pwszComment);
 
     HRESULT (STDMETHODCALLTYPE *WriteDocType)(
-        IXmlWriter *This,
-        LPCWSTR pwszName,
-        LPCWSTR pwszPublicId,
-        LPCWSTR pwszSystemId,
-        LPCWSTR pwszSubset);
+                     IXmlWriter *This,
+                     LPCWSTR pwszName,
+                     LPCWSTR pwszPublicId,
+                     LPCWSTR pwszSystemId,
+                     LPCWSTR pwszSubset);
 
     HRESULT (STDMETHODCALLTYPE *WriteElementString)(
-        IXmlWriter *This,
-        LPCWSTR pwszPrefix,
-        LPCWSTR pwszLocalName,
-        LPCWSTR pwszNamespaceUri,
-        LPCWSTR pwszValue);
+                     IXmlWriter *This,
+                     LPCWSTR pwszPrefix,
+                     LPCWSTR pwszLocalName,
+                     LPCWSTR pwszNamespaceUri,
+                     LPCWSTR pwszValue);
 
     HRESULT (STDMETHODCALLTYPE *WriteEndDocument)(
-        IXmlWriter *This);
+                     IXmlWriter *This);
 
     HRESULT (STDMETHODCALLTYPE *WriteEndElement)(
-        IXmlWriter *This);
+                     IXmlWriter *This);
 
     HRESULT (STDMETHODCALLTYPE *WriteEntityRef)(
-        IXmlWriter *This,
-        LPCWSTR pwszName);
+                     IXmlWriter *This,
+                     LPCWSTR pwszName);
 
     HRESULT (STDMETHODCALLTYPE *WriteFullEndElement)(
-        IXmlWriter *This);
+                     IXmlWriter *This);
 
     HRESULT (STDMETHODCALLTYPE *WriteName)(
-        IXmlWriter *This,
-        LPCWSTR pwszName);
+                     IXmlWriter *This,
+                     LPCWSTR pwszName);
 
     HRESULT (STDMETHODCALLTYPE *WriteNmToken)(
-        IXmlWriter *This,
-        LPCWSTR pwszNmToken);
+                     IXmlWriter *This,
+                     LPCWSTR pwszNmToken);
 
     HRESULT (STDMETHODCALLTYPE *WriteNode)(
-        IXmlWriter *This,
-        IXmlReader *pReader,
-        WINBOOL fWriteDefaultAttributes);
+                     IXmlWriter *This,
+                     IXmlReader *pReader,
+                     WINBOOL fWriteDefaultAttributes);
 
     HRESULT (STDMETHODCALLTYPE *WriteNodeShallow)(
-        IXmlWriter *This,
-        IXmlReader *pReader,
-        WINBOOL fWriteDefaultAttributes);
+                     IXmlWriter *This,
+                     IXmlReader *pReader,
+                     WINBOOL fWriteDefaultAttributes);
 
     HRESULT (STDMETHODCALLTYPE *WriteProcessingInstruction)(
-        IXmlWriter *This,
-        LPCWSTR pwszName,
-        LPCWSTR pwszText);
+                     IXmlWriter *This,
+                     LPCWSTR pwszName,
+                     LPCWSTR pwszText);
 
     HRESULT (STDMETHODCALLTYPE *WriteQualifiedName)(
-        IXmlWriter *This,
-        LPCWSTR pwszLocalName,
-        LPCWSTR pwszNamespaceUri);
+                     IXmlWriter *This,
+                     LPCWSTR pwszLocalName,
+                     LPCWSTR pwszNamespaceUri);
 
     HRESULT (STDMETHODCALLTYPE *WriteRaw)(
-        IXmlWriter *This,
-        LPCWSTR pwszData);
+                     IXmlWriter *This,
+                     LPCWSTR pwszData);
 
     HRESULT (STDMETHODCALLTYPE *WriteRawChars)(
-        IXmlWriter *This,
-        const WCHAR *pwch,
-        UINT cwch);
+                     IXmlWriter *This,
+                     const WCHAR *pwch,
+                     UINT cwch);
 
     HRESULT (STDMETHODCALLTYPE *WriteStartDocument)(
-        IXmlWriter *This,
-        XmlStandalone standalone);
+                     IXmlWriter *This,
+                     XmlStandalone standalone);
 
     HRESULT (STDMETHODCALLTYPE *WriteStartElement)(
-        IXmlWriter *This,
-        LPCWSTR pwszPrefix,
-        LPCWSTR pwszLocalName,
-        LPCWSTR pwszNamespaceUri);
+                     IXmlWriter *This,
+                     LPCWSTR pwszPrefix,
+                     LPCWSTR pwszLocalName,
+                     LPCWSTR pwszNamespaceUri);
 
     HRESULT (STDMETHODCALLTYPE *WriteString)(
-        IXmlWriter *This,
-        LPCWSTR pwszText);
+                     IXmlWriter *This,
+                     LPCWSTR pwszText);
 
     HRESULT (STDMETHODCALLTYPE *WriteSurrogateCharEntity)(
-        IXmlWriter *This,
-        WCHAR wchLow,
-        WCHAR wchHigh);
+                     IXmlWriter *This,
+                     WCHAR wchLow,
+                     WCHAR wchHigh);
 
     HRESULT (STDMETHODCALLTYPE *WriteWhitespace)(
-        IXmlWriter *This,
-        LPCWSTR pwszWhitespace);
+                     IXmlWriter *This,
+                     LPCWSTR pwszWhitespace);
 
     HRESULT (STDMETHODCALLTYPE *Flush)(
-        IXmlWriter *This);
+                     IXmlWriter *This);
 
     END_INTERFACE
 } IXmlWriterVtbl;
@@ -1045,7 +1045,7 @@ static FORCEINLINE HRESULT IXmlWriter_Flush(IXmlWriter* This) {
 STDAPI CreateXmlWriter(REFIID riid, void **ppvObject, IMalloc *pMalloc);
 typedef IUnknown IXmlWriterOutput;
 STDAPI CreateXmlWriterOutputWithEncodingName(IUnknown *stream, IMalloc *pMalloc,
-                                             LPCWSTR encoding, IXmlWriterOutput **output);
+                                                                                                                                        LPCWSTR encoding, IXmlWriterOutput **output);
 STDAPI CreateXmlWriterOutputWithEncodingCodePage(IUnknown *stream, IMalloc *pMalloc,
     UINT codepage, IXmlWriterOutput **output);
 /* Begin additional prototypes for all interfaces */

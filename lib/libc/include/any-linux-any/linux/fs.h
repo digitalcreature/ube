@@ -201,7 +201,7 @@ struct fsxattr {
 #define BLKSECTGET _IO(0x12,103)/* get max sectors per request (ll_rw_blk.c) */
 #define BLKSSZGET  _IO(0x12,104)/* get block device sector size */
 #if 0
-#define BLKPG      _IO(0x12,105)/* See blkpg.h */
+#define BLKPG                   _IO(0x12,105)/* See blkpg.h */
 
 /* Some people are morons.  Do not use sizeof! */
 

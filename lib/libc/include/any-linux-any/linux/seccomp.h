@@ -48,10 +48,10 @@
  * struct seccomp_data - the format the BPF program executes over.
  * @nr: the system call number
  * @arch: indicates system call convention as an AUDIT_ARCH_* value
- *        as defined in <linux/audit.h>.
+ *                     as defined in <linux/audit.h>.
  * @instruction_pointer: at the time of the system call.
  * @args: up to 6 system call arguments always stored as 64-bit values
- *        regardless of the architecture.
+ *                     regardless of the architecture.
  */
 struct seccomp_data {
 	int nr;

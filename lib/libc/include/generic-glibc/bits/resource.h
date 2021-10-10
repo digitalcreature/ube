@@ -215,8 +215,8 @@ extern int __REDIRECT_NTH (prlimit, (__pid_t __pid,
 # endif
 # ifdef __USE_LARGEFILE64
 extern int prlimit64 (__pid_t __pid, enum __rlimit_resource __resource,
-		      const struct rlimit64 *__new_limit,
-		      struct rlimit64 *__old_limit) __THROW;
+		                   const struct rlimit64 *__new_limit,
+		                   struct rlimit64 *__old_limit) __THROW;
 # endif
 #endif
 

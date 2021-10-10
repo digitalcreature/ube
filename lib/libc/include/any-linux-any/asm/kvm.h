@@ -228,7 +228,7 @@ struct kvm_vcpu_events {
 #define   KVM_DEV_ARM_VGIC_OFFSET_MASK	(0xffffffffULL << KVM_DEV_ARM_VGIC_OFFSET_SHIFT)
 #define   KVM_DEV_ARM_VGIC_SYSREG_INSTR_MASK (0xffff)
 #define KVM_DEV_ARM_VGIC_GRP_NR_IRQS	3
-#define KVM_DEV_ARM_VGIC_GRP_CTRL       4
+#define KVM_DEV_ARM_VGIC_GRP_CTRL                    4
 #define KVM_DEV_ARM_VGIC_GRP_REDIST_REGS 5
 #define KVM_DEV_ARM_VGIC_GRP_CPU_SYSREGS 6
 #define KVM_DEV_ARM_VGIC_GRP_LEVEL_INFO  7
@@ -278,7 +278,7 @@ struct kvm_vcpu_events {
 #define KVM_ARM_IRQ_GIC_MAX		127
 
 /* One single KVM irqchip, ie. the VGIC */
-#define KVM_NR_IRQCHIPS          1
+#define KVM_NR_IRQCHIPS                       1
 
 /* PSCI interface */
 #define KVM_PSCI_FN_BASE		0x95c1ba5e

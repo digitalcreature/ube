@@ -43,8 +43,8 @@
  *    documentation and/or other materials provided with the distribution.
  * 3. All advertising materials mentioning features or use of this software
  *    must display the following acknowledgement:
- *        This product includes software developed by the NetBSD
- *        Foundation, Inc. and its contributors.
+ *                     This product includes software developed by the NetBSD
+ *                     Foundation, Inc. and its contributors.
  * 4. Neither the name of The NetBSD Foundation nor the names of its
  *    contributors may be used to endorse or promote products derived
  *    from this software without specific prior written permission.
@@ -193,7 +193,7 @@ __END_DECLS
 #if __DARWIN_C_LEVEL >= 200809L
 __BEGIN_DECLS
 size_t  mbsnrtowcs(wchar_t * __restrict, const char ** __restrict, size_t,
-            size_t, mbstate_t * __restrict);
+                                      size_t, mbstate_t * __restrict);
 wchar_t *wcpcpy(wchar_t * __restrict, const wchar_t * __restrict) __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_3);
 wchar_t *wcpncpy(wchar_t * __restrict, const wchar_t * __restrict, size_t) __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_3);
 wchar_t *wcsdup(const wchar_t *) __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_3);
@@ -201,7 +201,7 @@ int     wcscasecmp(const wchar_t *, const wchar_t *) __OSX_AVAILABLE_STARTING(__
 int     wcsncasecmp(const wchar_t *, const wchar_t *, size_t n) __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_3);
 size_t  wcsnlen(const wchar_t *, size_t) __pure __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_3);
 size_t  wcsnrtombs(char * __restrict, const wchar_t ** __restrict, size_t,
-            size_t, mbstate_t * __restrict);
+                                      size_t, mbstate_t * __restrict);
 FILE *open_wmemstream(wchar_t ** __bufp, size_t * __sizep) __API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0), watchos(4.0));
 __END_DECLS
 #endif /* __DARWIN_C_LEVEL >= 200809L */

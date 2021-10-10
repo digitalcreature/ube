@@ -52,8 +52,8 @@ extern "C" {
   union RAS_PARAMS_VALUE {
     DWORD Number;
     struct {
-      DWORD Length;
-      PCHAR Data;
+                   DWORD Length;
+                   PCHAR Data;
     } String;
   };
   typedef union RAS_PARAMS_VALUE RAS_PARAMS_VALUE;

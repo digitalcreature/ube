@@ -53,39 +53,39 @@
     {
 
     public:
-      typedef remove_reference_t<decltype(*declval<T&>())> element_type;
+                   typedef remove_reference_t<decltype(*declval<T&>())> element_type;
 
-      // [propagate_const.ctor], constructors
-      constexpr propagate_const() = default;
-      propagate_const(const propagate_const& p) = delete;
-      constexpr propagate_const(propagate_const&& p) = default;
-      template <class U> EXPLICIT constexpr propagate_const(propagate_const<_Up>&& pu); // see below
-      template <class U> EXPLICIT constexpr propagate_const(U&& u); // see below
+                   // [propagate_const.ctor], constructors
+                   constexpr propagate_const() = default;
+                   propagate_const(const propagate_const& p) = delete;
+                   constexpr propagate_const(propagate_const&& p) = default;
+                   template <class U> EXPLICIT constexpr propagate_const(propagate_const<_Up>&& pu); // see below
+                   template <class U> EXPLICIT constexpr propagate_const(U&& u); // see below
 
-      // [propagate_const.assignment], assignment
-      propagate_const& operator=(const propagate_const& p) = delete;
-      constexpr propagate_const& operator=(propagate_const&& p) = default;
-      template <class U> constexpr propagate_const& operator=(propagate_const<_Up>&& pu);
-      template <class U> constexpr propagate_const& operator=(U&& u); // see below
+                   // [propagate_const.assignment], assignment
+                   propagate_const& operator=(const propagate_const& p) = delete;
+                   constexpr propagate_const& operator=(propagate_const&& p) = default;
+                   template <class U> constexpr propagate_const& operator=(propagate_const<_Up>&& pu);
+                   template <class U> constexpr propagate_const& operator=(U&& u); // see below
 
-      // [propagate_const.const_observers], const observers
-      explicit constexpr operator bool() const;
-      constexpr const element_type* operator->() const;
-      constexpr operator const element_type*() const; // Not always defined
-      constexpr const element_type& operator*() const;
-      constexpr const element_type* get() const;
+                   // [propagate_const.const_observers], const observers
+                   explicit constexpr operator bool() const;
+                   constexpr const element_type* operator->() const;
+                   constexpr operator const element_type*() const; // Not always defined
+                   constexpr const element_type& operator*() const;
+                   constexpr const element_type* get() const;
 
-      // [propagate_const.non_const_observers], non-const observers
-      constexpr element_type* operator->();
-      constexpr operator element_type*(); // Not always defined
-      constexpr element_type& operator*();
-      constexpr element_type* get();
+                   // [propagate_const.non_const_observers], non-const observers
+                   constexpr element_type* operator->();
+                   constexpr operator element_type*(); // Not always defined
+                   constexpr element_type& operator*();
+                   constexpr element_type* get();
 
-      // [propagate_const.modifiers], modifiers
-      constexpr void swap(propagate_const& pt) noexcept(see below)
+                   // [propagate_const.modifiers], modifiers
+                   constexpr void swap(propagate_const& pt) noexcept(see below)
 
     private:
-      T t_; // exposition only
+                   T t_; // exposition only
     };
 
   } // namespace fundamentals_v2
@@ -138,13 +138,13 @@ public:
   typedef remove_reference_t<decltype(*_VSTD::declval<_Tp&>())> element_type;
 
   static_assert(!is_array<_Tp>::value,
-      "Instantiation of propagate_const with an array type is ill-formed.");
+                   "Instantiation of propagate_const with an array type is ill-formed.");
   static_assert(!is_reference<_Tp>::value,
-      "Instantiation of propagate_const with a reference type is ill-formed.");
+                   "Instantiation of propagate_const with a reference type is ill-formed.");
   static_assert(!(is_pointer<_Tp>::value && is_function<typename remove_pointer<_Tp>::type>::value),
-      "Instantiation of propagate_const with a function-pointer type is ill-formed.");
+                   "Instantiation of propagate_const with a function-pointer type is ill-formed.");
   static_assert(!(is_pointer<_Tp>::value && is_same<typename remove_cv<typename remove_pointer<_Tp>::type>::type, void>::value),
-      "Instantiation of propagate_const with a pointer to (possibly cv-qualified) void is ill-formed.");
+                   "Instantiation of propagate_const with a pointer to (possibly cv-qualified) void is ill-formed.");
 
 private:
   template <class _Up>
@@ -195,32 +195,32 @@ public:
   _LIBCPP_CONSTEXPR propagate_const(propagate_const&&) = default;
 
   template <class _Up, enable_if_t<!is_convertible<_Up, _Tp>::value &&
-                                 is_constructible<_Tp, _Up&&>::value,bool> = true>
+                                                                                                  is_constructible<_Tp, _Up&&>::value,bool> = true>
   explicit _LIBCPP_CONSTEXPR propagate_const(propagate_const<_Up>&& __pu)
-      : __t_(std::move(_VSTD_LFTS_V2::get_underlying(__pu)))
+                   : __t_(std::move(_VSTD_LFTS_V2::get_underlying(__pu)))
   {
   }
 
   template <class _Up, enable_if_t<is_convertible<_Up&&, _Tp>::value &&
-                                 is_constructible<_Tp, _Up&&>::value,bool> = false>
+                                                                                                  is_constructible<_Tp, _Up&&>::value,bool> = false>
   _LIBCPP_CONSTEXPR propagate_const(propagate_const<_Up>&& __pu)
-      : __t_(std::move(_VSTD_LFTS_V2::get_underlying(__pu)))
+                   : __t_(std::move(_VSTD_LFTS_V2::get_underlying(__pu)))
   {
   }
 
   template <class _Up, enable_if_t<!is_convertible<_Up&&, _Tp>::value &&
-                                 is_constructible<_Tp, _Up&&>::value &&
-                                 !__is_propagate_const<decay_t<_Up>>::value,bool> = true>
+                                                                                                  is_constructible<_Tp, _Up&&>::value &&
+                                                                                                  !__is_propagate_const<decay_t<_Up>>::value,bool> = true>
   explicit _LIBCPP_CONSTEXPR propagate_const(_Up&& __u)
-      : __t_(std::forward<_Up>(__u))
+                   : __t_(std::forward<_Up>(__u))
   {
   }
 
   template <class _Up, enable_if_t<is_convertible<_Up&&, _Tp>::value &&
-                                 is_constructible<_Tp, _Up&&>::value &&
-                                 !__is_propagate_const<decay_t<_Up>>::value,bool> = false>
+                                                                                                  is_constructible<_Tp, _Up&&>::value &&
+                                                                                                  !__is_propagate_const<decay_t<_Up>>::value,bool> = false>
   _LIBCPP_CONSTEXPR propagate_const(_Up&& __u)
-      : __t_(std::forward<_Up>(__u))
+                   : __t_(std::forward<_Up>(__u))
   {
   }
 
@@ -263,7 +263,7 @@ public:
   }
 
   template <class _Tp_ = _Tp, class _Up = enable_if_t<is_convertible<
-                                  const _Tp_, const element_type *>::value>>
+                                                                                                   const _Tp_, const element_type *>::value>>
   _LIBCPP_CONSTEXPR operator const element_type *() const {
     return get();
   }
@@ -279,7 +279,7 @@ public:
   }
 
   template <class _Tp_ = _Tp, class _Up = enable_if_t<
-                                  is_convertible<_Tp_, element_type *>::value>>
+                                                                                                   is_convertible<_Tp_, element_type *>::value>>
   _LIBCPP_CONSTEXPR operator element_type *() {
     return get();
   }
@@ -328,7 +328,7 @@ _LIBCPP_CONSTEXPR bool operator!=(nullptr_t, const propagate_const<_Tp>& __pt)
 template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR bool operator==(const propagate_const<_Tp>& __pt,
-                          const propagate_const<_Up>& __pu)
+                                                                              const propagate_const<_Up>& __pu)
 {
   return _VSTD_LFTS_V2::get_underlying(__pt) == _VSTD_LFTS_V2::get_underlying(__pu);
 }
@@ -336,7 +336,7 @@ _LIBCPP_CONSTEXPR bool operator==(const propagate_const<_Tp>& __pt,
 template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR bool operator!=(const propagate_const<_Tp>& __pt,
-                          const propagate_const<_Up>& __pu)
+                                                                              const propagate_const<_Up>& __pu)
 {
   return _VSTD_LFTS_V2::get_underlying(__pt) != _VSTD_LFTS_V2::get_underlying(__pu);
 }
@@ -344,7 +344,7 @@ _LIBCPP_CONSTEXPR bool operator!=(const propagate_const<_Tp>& __pt,
 template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR bool operator<(const propagate_const<_Tp>& __pt,
-                         const propagate_const<_Up>& __pu)
+                                                                             const propagate_const<_Up>& __pu)
 {
   return _VSTD_LFTS_V2::get_underlying(__pt) < _VSTD_LFTS_V2::get_underlying(__pu);
 }
@@ -352,7 +352,7 @@ _LIBCPP_CONSTEXPR bool operator<(const propagate_const<_Tp>& __pt,
 template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR bool operator>(const propagate_const<_Tp>& __pt,
-                         const propagate_const<_Up>& __pu)
+                                                                             const propagate_const<_Up>& __pu)
 {
   return _VSTD_LFTS_V2::get_underlying(__pt) > _VSTD_LFTS_V2::get_underlying(__pu);
 }
@@ -360,7 +360,7 @@ _LIBCPP_CONSTEXPR bool operator>(const propagate_const<_Tp>& __pt,
 template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR bool operator<=(const propagate_const<_Tp>& __pt,
-                          const propagate_const<_Up>& __pu)
+                                                                              const propagate_const<_Up>& __pu)
 {
   return _VSTD_LFTS_V2::get_underlying(__pt) <= _VSTD_LFTS_V2::get_underlying(__pu);
 }
@@ -368,7 +368,7 @@ _LIBCPP_CONSTEXPR bool operator<=(const propagate_const<_Tp>& __pt,
 template <class _Tp, class _Up>
 _LIBCPP_INLINE_VISIBILITY
 _LIBCPP_CONSTEXPR bool operator>=(const propagate_const<_Tp>& __pt,
-                          const propagate_const<_Up>& __pu)
+                                                                              const propagate_const<_Up>& __pu)
 {
   return _VSTD_LFTS_V2::get_underlying(__pt) >= _VSTD_LFTS_V2::get_underlying(__pu);
 }
@@ -500,7 +500,7 @@ struct equal_to<experimental::fundamentals_v2::propagate_const<_Tp>>
   typedef experimental::fundamentals_v2::propagate_const<_Tp> second_argument_type;
 
   bool operator()(const experimental::fundamentals_v2::propagate_const<_Tp>& __pc1,
-      const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
+                   const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
   {
     return std::equal_to<_Tp>()(_VSTD_LFTS_V2::get_underlying(__pc1), _VSTD_LFTS_V2::get_underlying(__pc2));
   }
@@ -513,7 +513,7 @@ struct not_equal_to<experimental::fundamentals_v2::propagate_const<_Tp>>
   typedef experimental::fundamentals_v2::propagate_const<_Tp> second_argument_type;
 
   bool operator()(const experimental::fundamentals_v2::propagate_const<_Tp>& __pc1,
-      const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
+                   const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
   {
     return std::not_equal_to<_Tp>()(_VSTD_LFTS_V2::get_underlying(__pc1), _VSTD_LFTS_V2::get_underlying(__pc2));
   }
@@ -526,7 +526,7 @@ struct less<experimental::fundamentals_v2::propagate_const<_Tp>>
   typedef experimental::fundamentals_v2::propagate_const<_Tp> second_argument_type;
 
   bool operator()(const experimental::fundamentals_v2::propagate_const<_Tp>& __pc1,
-      const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
+                   const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
   {
     return std::less<_Tp>()(_VSTD_LFTS_V2::get_underlying(__pc1), _VSTD_LFTS_V2::get_underlying(__pc2));
   }
@@ -539,7 +539,7 @@ struct greater<experimental::fundamentals_v2::propagate_const<_Tp>>
   typedef experimental::fundamentals_v2::propagate_const<_Tp> second_argument_type;
 
   bool operator()(const experimental::fundamentals_v2::propagate_const<_Tp>& __pc1,
-      const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
+                   const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
   {
     return std::greater<_Tp>()(_VSTD_LFTS_V2::get_underlying(__pc1), _VSTD_LFTS_V2::get_underlying(__pc2));
   }
@@ -552,7 +552,7 @@ struct less_equal<experimental::fundamentals_v2::propagate_const<_Tp>>
   typedef experimental::fundamentals_v2::propagate_const<_Tp> second_argument_type;
 
   bool operator()(const experimental::fundamentals_v2::propagate_const<_Tp>& __pc1,
-      const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
+                   const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
   {
     return std::less_equal<_Tp>()(_VSTD_LFTS_V2::get_underlying(__pc1), _VSTD_LFTS_V2::get_underlying(__pc2));
   }
@@ -565,7 +565,7 @@ struct greater_equal<experimental::fundamentals_v2::propagate_const<_Tp>>
   typedef experimental::fundamentals_v2::propagate_const<_Tp> second_argument_type;
 
   bool operator()(const experimental::fundamentals_v2::propagate_const<_Tp>& __pc1,
-      const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
+                   const experimental::fundamentals_v2::propagate_const<_Tp>& __pc2) const
   {
     return std::greater_equal<_Tp>()(_VSTD_LFTS_V2::get_underlying(__pc1), _VSTD_LFTS_V2::get_underlying(__pc2));
   }

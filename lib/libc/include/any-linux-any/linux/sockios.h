@@ -23,7 +23,7 @@
 
 /* Linux-specific socket ioctls */
 #define SIOCINQ		FIONREAD
-#define SIOCOUTQ	TIOCOUTQ        /* output queue size (not sent + not acked) */
+#define SIOCOUTQ	TIOCOUTQ                     /* output queue size (not sent + not acked) */
 
 #define SOCK_IOC_TYPE	0x89
 
@@ -54,7 +54,7 @@
 #define SIOCSIFMTU	0x8922		/* set MTU size			*/
 #define SIOCSIFNAME	0x8923		/* set interface name */
 #define	SIOCSIFHWADDR	0x8924		/* set hardware address 	*/
-#define SIOCGIFENCAP	0x8925		/* get/set encapsulations       */
+#define SIOCGIFENCAP	0x8925		/* get/set encapsulations                    */
 #define SIOCSIFENCAP	0x8926		
 #define SIOCGIFHWADDR	0x8927		/* Get hardware address		*/
 #define SIOCGIFSLAVE	0x8929		/* Driver slaving support	*/
@@ -117,15 +117,15 @@
 
 #define SIOCBONDENSLAVE	0x8990		/* enslave a device to the bond */
 #define SIOCBONDRELEASE 0x8991		/* release a slave from the bond*/
-#define SIOCBONDSETHWADDR      0x8992	/* set the hw addr of the bond  */
+#define SIOCBONDSETHWADDR                   0x8992	/* set the hw addr of the bond  */
 #define SIOCBONDSLAVEINFOQUERY 0x8993   /* rtn info about slave state   */
-#define SIOCBONDINFOQUERY      0x8994	/* rtn info about bond state    */
+#define SIOCBONDINFOQUERY                   0x8994	/* rtn info about bond state    */
 #define SIOCBONDCHANGEACTIVE   0x8995   /* update to a new active slave */
 			
 /* bridge calls */
 #define SIOCBRADDBR     0x89a0		/* create new bridge device     */
-#define SIOCBRDELBR     0x89a1		/* remove bridge device         */
-#define SIOCBRADDIF	0x89a2		/* add interface to bridge      */
+#define SIOCBRDELBR     0x89a1		/* remove bridge device                      */
+#define SIOCBRADDIF	0x89a2		/* add interface to bridge                   */
 #define SIOCBRDELIF	0x89a3		/* remove interface from bridge */
 
 /* hardware time stamping: parameters in linux/net_tstamp.h */

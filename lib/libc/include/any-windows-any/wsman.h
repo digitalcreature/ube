@@ -164,9 +164,9 @@ extern "C" {
   typedef struct _WSMAN_DATA {
     WSManDataType type;
     __C89_NAMELESS union {
-      WSMAN_DATA_TEXT text;
-      WSMAN_DATA_BINARY binaryData;
-      DWORD number;
+                   WSMAN_DATA_TEXT text;
+                   WSMAN_DATA_BINARY binaryData;
+                   DWORD number;
     };
   } WSMAN_DATA;
 
@@ -186,8 +186,8 @@ extern "C" {
   typedef struct _WSMAN_AUTHENTICATION_CREDENTIALS {
     DWORD authenticationMechanism;
     __C89_NAMELESS union {
-      WSMAN_USERNAME_PASSWORD_CREDS userAccount;
-      PCWSTR certificateThumbprint;
+                   WSMAN_USERNAME_PASSWORD_CREDS userAccount;
+                   PCWSTR certificateThumbprint;
     };
   } WSMAN_AUTHENTICATION_CREDENTIALS;
 

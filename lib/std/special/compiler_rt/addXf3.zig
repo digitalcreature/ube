@@ -106,46 +106,46 @@ fn addXf3(comptime T: type, a: T, b: T) T {
 
     // Detect if a or b is zero, infinity, or NaN.
     if (aAbs -% @as(Z, 1) >= infRep - @as(Z, 1) or
-        bAbs -% @as(Z, 1) >= infRep - @as(Z, 1))
+                     bAbs -% @as(Z, 1) >= infRep - @as(Z, 1))
     {
-        // NaN + anything = qNaN
-        if (aAbs > infRep) return @bitCast(T, @bitCast(Z, a) | quietBit);
-        // anything + NaN = qNaN
-        if (bAbs > infRep) return @bitCast(T, @bitCast(Z, b) | quietBit);
+                     // NaN + anything = qNaN
+                     if (aAbs > infRep) return @bitCast(T, @bitCast(Z, a) | quietBit);
+                     // anything + NaN = qNaN
+                     if (bAbs > infRep) return @bitCast(T, @bitCast(Z, b) | quietBit);
 
-        if (aAbs == infRep) {
-            // +/-infinity + -/+infinity = qNaN
-            if ((@bitCast(Z, a) ^ @bitCast(Z, b)) == signBit) {
-                return @bitCast(T, qnanRep);
-            }
-            // +/-infinity + anything remaining = +/- infinity
-            else {
-                return a;
-            }
-        }
+                     if (aAbs == infRep) {
+                                      // +/-infinity + -/+infinity = qNaN
+                                      if ((@bitCast(Z, a) ^ @bitCast(Z, b)) == signBit) {
+                                          return @bitCast(T, qnanRep);
+                                      }
+                                      // +/-infinity + anything remaining = +/- infinity
+                                      else {
+                                          return a;
+                                      }
+                     }
 
-        // anything remaining + +/-infinity = +/-infinity
-        if (bAbs == infRep) return b;
+                     // anything remaining + +/-infinity = +/-infinity
+                     if (bAbs == infRep) return b;
 
-        // zero + anything = anything
-        if (aAbs == 0) {
-            // but we need to get the sign right for zero + zero
-            if (bAbs == 0) {
-                return @bitCast(T, @bitCast(Z, a) & @bitCast(Z, b));
-            } else {
-                return b;
-            }
-        }
+                     // zero + anything = anything
+                     if (aAbs == 0) {
+                                      // but we need to get the sign right for zero + zero
+                                      if (bAbs == 0) {
+                                          return @bitCast(T, @bitCast(Z, a) & @bitCast(Z, b));
+                                      } else {
+                                          return b;
+                                      }
+                     }
 
-        // anything + zero = anything
-        if (bAbs == 0) return a;
+                     // anything + zero = anything
+                     if (bAbs == 0) return a;
     }
 
     // Swap a and b if necessary so that a has the larger absolute value.
     if (bAbs > aAbs) {
-        const temp = aRep;
-        aRep = bRep;
-        bRep = temp;
+                     const temp = aRep;
+                     aRep = bRep;
+                     bRep = temp;
     }
 
     // Extract the exponent and significand from the (possibly swapped) a and b.
@@ -174,47 +174,47 @@ fn addXf3(comptime T: type, a: T, b: T) T {
     // bottom bit to get rounding correct.
     const @"align" = @intCast(Z, aExponent - bExponent);
     if (@"align" != 0) {
-        if (@"align" < typeWidth) {
-            const sticky = if (bSignificand << @intCast(S, typeWidth - @"align") != 0) @as(Z, 1) else 0;
-            bSignificand = (bSignificand >> @truncate(S, @"align")) | sticky;
-        } else {
-            bSignificand = 1; // sticky; b is known to be non-zero.
-        }
+                     if (@"align" < typeWidth) {
+                                      const sticky = if (bSignificand << @intCast(S, typeWidth - @"align") != 0) @as(Z, 1) else 0;
+                                      bSignificand = (bSignificand >> @truncate(S, @"align")) | sticky;
+                     } else {
+                                      bSignificand = 1; // sticky; b is known to be non-zero.
+                     }
     }
     if (subtraction) {
-        aSignificand -= bSignificand;
-        // If a == -b, return +zero.
-        if (aSignificand == 0) return @bitCast(T, @as(Z, 0));
+                     aSignificand -= bSignificand;
+                     // If a == -b, return +zero.
+                     if (aSignificand == 0) return @bitCast(T, @as(Z, 0));
 
-        // If partial cancellation occured, we need to left-shift the result
-        // and adjust the exponent:
-        if (aSignificand < implicitBit << 3) {
-            const shift = @intCast(i32, @clz(Z, aSignificand)) - @intCast(i32, @clz(std.meta.Int(.unsigned, bits), implicitBit << 3));
-            aSignificand <<= @intCast(S, shift);
-            aExponent -= shift;
-        }
+                     // If partial cancellation occured, we need to left-shift the result
+                     // and adjust the exponent:
+                     if (aSignificand < implicitBit << 3) {
+                                      const shift = @intCast(i32, @clz(Z, aSignificand)) - @intCast(i32, @clz(std.meta.Int(.unsigned, bits), implicitBit << 3));
+                                      aSignificand <<= @intCast(S, shift);
+                                      aExponent -= shift;
+                     }
     } else { // addition
-        aSignificand += bSignificand;
+                     aSignificand += bSignificand;
 
-        // If the addition carried up, we need to right-shift the result and
-        // adjust the exponent:
-        if (aSignificand & (implicitBit << 4) != 0) {
-            const sticky = aSignificand & 1;
-            aSignificand = aSignificand >> 1 | sticky;
-            aExponent += 1;
-        }
+                     // If the addition carried up, we need to right-shift the result and
+                     // adjust the exponent:
+                     if (aSignificand & (implicitBit << 4) != 0) {
+                                      const sticky = aSignificand & 1;
+                                      aSignificand = aSignificand >> 1 | sticky;
+                                      aExponent += 1;
+                     }
     }
 
     // If we have overflowed the type, return +/- infinity:
     if (aExponent >= maxExponent) return @bitCast(T, infRep | resultSign);
 
     if (aExponent <= 0) {
-        // Result is denormal before rounding; the exponent is zero and we
-        // need to shift the significand.
-        const shift = @intCast(Z, 1 - aExponent);
-        const sticky = if (aSignificand << @intCast(S, typeWidth - shift) != 0) @as(Z, 1) else 0;
-        aSignificand = aSignificand >> @intCast(S, shift | sticky);
-        aExponent = 0;
+                     // Result is denormal before rounding; the exponent is zero and we
+                     // need to shift the significand.
+                     const shift = @intCast(Z, 1 - aExponent);
+                     const sticky = if (aSignificand << @intCast(S, typeWidth - shift) != 0) @as(Z, 1) else 0;
+                     aSignificand = aSignificand >> @intCast(S, shift | sticky);
+                     aExponent = 0;
     }
 
     // Low three bits are round, guard, and sticky.

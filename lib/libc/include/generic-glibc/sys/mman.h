@@ -59,9 +59,9 @@ extern void *mmap (void *__addr, size_t __len, int __prot,
 #else
 # ifdef __REDIRECT_NTH
 extern void * __REDIRECT_NTH (mmap,
-			      (void *__addr, size_t __len, int __prot,
-			       int __flags, int __fd, __off64_t __offset),
-			      mmap64);
+			                   (void *__addr, size_t __len, int __prot,
+			                    int __flags, int __fd, __off64_t __offset),
+			                   mmap64);
 # else
 #  define mmap mmap64
 # endif

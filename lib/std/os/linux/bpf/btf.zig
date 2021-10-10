@@ -40,15 +40,15 @@ pub const max_vlen = 0xffff;
 pub const Type = packed struct {
     name_off: u32,
     info: packed struct {
-        /// number of struct's members
-        vlen: u16,
+                     /// number of struct's members
+                     vlen: u16,
 
-        unused_1: u8,
-        kind: Kind,
-        unused_2: u3,
+                     unused_1: u8,
+                     kind: Kind,
+                     unused_2: u3,
 
-        /// used by Struct, Union, and Fwd
-        kind_flag: bool,
+                     /// used by Struct, Union, and Fwd
+                     kind_flag: bool,
     },
 
     /// size is used by Int, Enum, Struct, Union, and DataSec, it tells the size
@@ -85,9 +85,9 @@ pub const IntInfo = packed struct {
     unused: u8,
     offset: u8,
     encoding: enum(u4) {
-        signed = 1 << 0,
-        char = 1 << 1,
-        boolean = 1 << 2,
+                     signed = 1 << 0,
+                     char = 1 << 1,
+                     boolean = 1 << 2,
     },
 };
 
@@ -118,8 +118,8 @@ pub const Member = packed struct {
     /// bit offset, the bitfield size is set for bitfield members. If the type
     /// info kind_flag is not set, the offset contains only bit offset
     offset: packed struct {
-        bit: u24,
-        bitfield_size: u8,
+                     bit: u24,
+                     bitfield_size: u8,
     },
 };
 

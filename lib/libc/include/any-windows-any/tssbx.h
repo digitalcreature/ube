@@ -14,16 +14,16 @@ extern "C" {
 
 typedef enum _WTSSBX_ADDRESS_FAMILY {
   WTSSBX_ADDRESS_FAMILY_AF_UNSPEC    = 0,
-  WTSSBX_ADDRESS_FAMILY_AF_INET      = 1,
+  WTSSBX_ADDRESS_FAMILY_AF_INET                   = 1,
   WTSSBX_ADDRESS_FAMILY_AF_INET6     = 2,
-  WTSSBX_ADDRESS_FAMILY_AF_IPX       = 3,
+  WTSSBX_ADDRESS_FAMILY_AF_IPX                    = 3,
   WTSSBX_ADDRESS_FAMILY_AF_NETBIOS   = 4
 } WTSSBX_ADDRESS_FAMILY;
 
 typedef enum _WTSSBX_MACHINE_DRAIN {
   WTSSBX_MACHINE_DRAIN_UNSPEC   = 0,
-  WTSSBX_MACHINE_DRAIN_OFF      = 1,
-  WTSSBX_MACHINE_DRAIN_ON       = 2
+  WTSSBX_MACHINE_DRAIN_OFF                   = 1,
+  WTSSBX_MACHINE_DRAIN_ON                    = 2
 } WTSSBX_MACHINE_DRAIN;
 
 typedef enum _WTSSBX_NOTIFICATION_TYPE {
@@ -33,8 +33,8 @@ typedef enum _WTSSBX_NOTIFICATION_TYPE {
 } WTSSBX_NOTIFICATION_TYPE;
 
 typedef enum _WTSSBX_MACHINE_STATE {
-  WTSSBX_MACHINE_STATE_UNSPEC          = 0,
-  WTSSBX_MACHINE_STATE_READY           = 1,
+  WTSSBX_MACHINE_STATE_UNSPEC                       = 0,
+  WTSSBX_MACHINE_STATE_READY                        = 1,
   WTSSBX_MACHINE_STATE_SYNCHRONIZING   = 2
 } WTSSBX_MACHINE_STATE;
 
@@ -46,25 +46,25 @@ typedef enum _WTSSBX_NOTIFICATION_TYPE {
 } WTSSBX_NOTIFICATION_TYPE;
 
 typedef enum _WTSSBX_SESSION_STATE {
-  WTSSBX_SESSION_STATE_UNSPEC         = 0,
-  WTSSBX_SESSION_STATE_ACTIVE         = 1,
+  WTSSBX_SESSION_STATE_UNSPEC                      = 0,
+  WTSSBX_SESSION_STATE_ACTIVE                      = 1,
   WTSSBX_SESSION_STATE_DISCONNECTED   = 2
 } WTSSBX_SESSION_STATE;
 
 typedef struct _WTSSBX_IP_ADDRESS {
   WTSSBX_ADDRESS_FAMILY  AddressFamily;
-  BYTE                   Address[16];
-  unsigned short         PortNumber;
-  DWORD                  dwScope;
+  BYTE                                                          Address[16];
+  unsigned short                      PortNumber;
+  DWORD                                                         dwScope;
 } WTSSBX_IP_ADDRESS;
 
 #define MaxFQDN_Len 256
 #define MaxNetBiosName_Len 16
 
 typedef struct _WTSSBX_MACHINE_CONNECT_INFO {
-  WCHAR              wczMachineFQDN[MaxFQDN_Len + 1];
-  WCHAR              wczMachineNetBiosName[MaxNetBiosName_Len + 1];
-  DWORD              dwNumOfIPAddr;
+  WCHAR                                        wczMachineFQDN[MaxFQDN_Len + 1];
+  WCHAR                                        wczMachineNetBiosName[MaxNetBiosName_Len + 1];
+  DWORD                                        dwNumOfIPAddr;
   WTSSBX_IP_ADDRESS  IPaddr[MaxNumOfExposed_IPs];
 } WTSSBX_MACHINE_CONNECT_INFO;
 
@@ -72,13 +72,13 @@ typedef struct _WTSSBX_MACHINE_CONNECT_INFO {
 
 typedef struct _WTSSBX_MACHINE_INFO {
   WTSSBX_MACHINE_CONNECT_INFO  ClientConnectInfo;
-  WCHAR                        wczFarmName[MaxFarm_Len + 1];
-  WTSSBX_IP_ADDRESS            InternalIPAddress;
-  DWORD                        dwMaxSessionsLimit;
-  DWORD                        ServerWeight;
+  WCHAR                                                                            wczFarmName[MaxFarm_Len + 1];
+  WTSSBX_IP_ADDRESS                                      InternalIPAddress;
+  DWORD                                                                            dwMaxSessionsLimit;
+  DWORD                                                                            ServerWeight;
   WTSSBX_MACHINE_SESSION_MODE  SingleSessionMode;
-  WTSSBX_MACHINE_DRAIN         InDrain;
-  WTSSBX_MACHINE_STATE         MachineState;
+  WTSSBX_MACHINE_DRAIN                      InDrain;
+  WTSSBX_MACHINE_STATE                      MachineState;
 } WTSSBX_MACHINE_INFO;
 
 #define MaxUserName_Len 104
@@ -86,12 +86,12 @@ typedef struct _WTSSBX_MACHINE_INFO {
 #define MaxAppName_Len 256
 
 typedef struct _WTSSBX_SESSION_INFO {
-  WCHAR                 wszUserName[MaxUserName_Len + 1];
-  WCHAR                 wszDomainName[MaxDomainName_Len + 1];
-  WCHAR                 ApplicationType[MaxAppName_Len + 1];
-  DWORD                 dwSessionId;
-  FILETIME              CreateTime;
-  FILETIME              DisconnectTime;
+  WCHAR                                           wszUserName[MaxUserName_Len + 1];
+  WCHAR                                           wszDomainName[MaxDomainName_Len + 1];
+  WCHAR                                           ApplicationType[MaxAppName_Len + 1];
+  DWORD                                           dwSessionId;
+  FILETIME                                        CreateTime;
+  FILETIME                                        DisconnectTime;
   WTSSBX_SESSION_STATE  SessionState;
 } WTSSBX_SESSION_INFO;
 

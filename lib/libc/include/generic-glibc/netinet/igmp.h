@@ -64,9 +64,9 @@ __BEGIN_DECLS
  */
 
 struct igmp {
-  uint8_t igmp_type;             /* IGMP type */
-  uint8_t igmp_code;             /* routing code */
-  uint16_t igmp_cksum;           /* checksum */
+  uint8_t igmp_type;                                       /* IGMP type */
+  uint8_t igmp_code;                                       /* routing code */
+  uint16_t igmp_cksum;                        /* checksum */
   struct in_addr igmp_group;     /* group address */
 };
 
@@ -75,13 +75,13 @@ struct igmp {
 /*
  * Message types, including version number.
  */
-#define IGMP_MEMBERSHIP_QUERY   	0x11	/* membership query         */
+#define IGMP_MEMBERSHIP_QUERY   	0x11	/* membership query                      */
 #define IGMP_V1_MEMBERSHIP_REPORT	0x12	/* Ver. 1 membership report */
 #define IGMP_V2_MEMBERSHIP_REPORT	0x16	/* Ver. 2 membership report */
 #define IGMP_V2_LEAVE_GROUP		0x17	/* Leave-group message	    */
 
 #define IGMP_DVMRP			0x13	/* DVMRP routing message    */
-#define IGMP_PIM			0x14	/* PIM routing message      */
+#define IGMP_PIM			0x14	/* PIM routing message                   */
 #define IGMP_TRACE			0x15
 
 #define IGMP_MTRACE_RESP		0x1e	/* traceroute resp.(to sender)*/
@@ -90,7 +90,7 @@ struct igmp {
 
 #define IGMP_MAX_HOST_REPORT_DELAY	10	/* max delay for response to     */
 						/*  query (in seconds) according */
-						/*  to RFC1112                   */
+						/*  to RFC1112                                                          */
 #define IGMP_TIMER_SCALE		10	/* denotes that the igmp code field */
 						/* specifies time in 10th of seconds*/
 

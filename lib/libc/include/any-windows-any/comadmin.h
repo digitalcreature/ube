@@ -361,118 +361,118 @@ MIDL_INTERFACE("dd662187-dfc2-11d1-a2cf-00805fc79235")
 ICOMAdminCatalog : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetCollection(
-        BSTR bstrCollName,
-        IDispatch **ppCatalogCollection) = 0;
+                     BSTR bstrCollName,
+                     IDispatch **ppCatalogCollection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Connect(
-        BSTR bstrCatalogServerName,
-        IDispatch **ppCatalogCollection) = 0;
+                     BSTR bstrCatalogServerName,
+                     IDispatch **ppCatalogCollection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MajorVersion(
-        LONG *plMajorVersion) = 0;
+                     LONG *plMajorVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MinorVersion(
-        LONG *plMinorVersion) = 0;
+                     LONG *plMinorVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCollectionByQuery(
-        BSTR bstrCollName,
-        SAFEARRAY **ppsaVarQuery,
-        IDispatch **ppCatalogCollection) = 0;
+                     BSTR bstrCollName,
+                     SAFEARRAY **ppsaVarQuery,
+                     IDispatch **ppCatalogCollection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportComponent(
-        BSTR bstrApplIDOrName,
-        BSTR bstrCLSIDOrProgID) = 0;
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrCLSIDOrProgID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstallComponent(
-        BSTR bstrApplIDOrName,
-        BSTR bstrDLL,
-        BSTR bstrTLB,
-        BSTR bstrPSDLL) = 0;
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrDLL,
+                     BSTR bstrTLB,
+                     BSTR bstrPSDLL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShutdownApplication(
-        BSTR bstrApplIDOrName) = 0;
+                     BSTR bstrApplIDOrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExportApplication(
-        BSTR bstrApplIDOrName,
-        BSTR bstrApplicationFile,
-        LONG lOptions) = 0;
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrApplicationFile,
+                     LONG lOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstallApplication(
-        BSTR bstrApplicationFile,
-        BSTR bstrDestinationDirectory,
-        LONG lOptions,
-        BSTR bstrUserId,
-        BSTR bstrPassword,
-        BSTR bstrRSN) = 0;
+                     BSTR bstrApplicationFile,
+                     BSTR bstrDestinationDirectory,
+                     LONG lOptions,
+                     BSTR bstrUserId,
+                     BSTR bstrPassword,
+                     BSTR bstrRSN) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopRouter(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RefreshRouter(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartRouter(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reserved1(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reserved2(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstallMultipleComponents(
-        BSTR bstrApplIDOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDs) = 0;
+                     BSTR bstrApplIDOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMultipleComponentsInfo(
-        BSTR bstrApplIdOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDs,
-        SAFEARRAY **ppsaVarClassNames,
-        SAFEARRAY **ppsaVarFileFlags,
-        SAFEARRAY **ppsaVarComponentFlags) = 0;
+                     BSTR bstrApplIdOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDs,
+                     SAFEARRAY **ppsaVarClassNames,
+                     SAFEARRAY **ppsaVarFileFlags,
+                     SAFEARRAY **ppsaVarComponentFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RefreshComponents(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BackupREGDB(
-        BSTR bstrBackupFilePath) = 0;
+                     BSTR bstrBackupFilePath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RestoreREGDB(
-        BSTR bstrBackupFilePath) = 0;
+                     BSTR bstrBackupFilePath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryApplicationFile(
-        BSTR bstrApplicationFile,
-        BSTR *pbstrApplicationName,
-        BSTR *pbstrApplicationDescription,
-        VARIANT_BOOL *pbHasUsers,
-        VARIANT_BOOL *pbIsProxy,
-        SAFEARRAY **ppsaVarFileNames) = 0;
+                     BSTR bstrApplicationFile,
+                     BSTR *pbstrApplicationName,
+                     BSTR *pbstrApplicationDescription,
+                     VARIANT_BOOL *pbHasUsers,
+                     VARIANT_BOOL *pbIsProxy,
+                     SAFEARRAY **ppsaVarFileNames) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartApplication(
-        BSTR bstrApplIdOrName) = 0;
+                     BSTR bstrApplIdOrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ServiceCheck(
-        LONG lService,
-        LONG *plStatus) = 0;
+                     LONG lService,
+                     LONG *plStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstallMultipleEventClasses(
-        BSTR bstrApplIdOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDS) = 0;
+                     BSTR bstrApplIdOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDS) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstallEventClass(
-        BSTR bstrApplIdOrName,
-        BSTR bstrDLL,
-        BSTR bstrTLB,
-        BSTR bstrPSDLL) = 0;
+                     BSTR bstrApplIdOrName,
+                     BSTR bstrDLL,
+                     BSTR bstrTLB,
+                     BSTR bstrPSDLL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEventClassesForIID(
-        BSTR bstrIID,
-        SAFEARRAY **ppsaVarCLSIDs,
-        SAFEARRAY **ppsaVarProgIDs,
-        SAFEARRAY **ppsaVarDescriptions) = 0;
+                     BSTR bstrIID,
+                     SAFEARRAY **ppsaVarCLSIDs,
+                     SAFEARRAY **ppsaVarProgIDs,
+                     SAFEARRAY **ppsaVarDescriptions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -484,180 +484,180 @@ typedef struct ICOMAdminCatalogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICOMAdminCatalog *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICOMAdminCatalog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICOMAdminCatalog *This);
+                     ICOMAdminCatalog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICOMAdminCatalog *This);
+                     ICOMAdminCatalog *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ICOMAdminCatalog *This,
-        UINT *pctinfo);
+                     ICOMAdminCatalog *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ICOMAdminCatalog *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ICOMAdminCatalog *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ICOMAdminCatalog *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ICOMAdminCatalog *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ICOMAdminCatalog *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ICOMAdminCatalog *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ICOMAdminCatalog methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCollection)(
-        ICOMAdminCatalog *This,
-        BSTR bstrCollName,
-        IDispatch **ppCatalogCollection);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrCollName,
+                     IDispatch **ppCatalogCollection);
 
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        ICOMAdminCatalog *This,
-        BSTR bstrCatalogServerName,
-        IDispatch **ppCatalogCollection);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrCatalogServerName,
+                     IDispatch **ppCatalogCollection);
 
     HRESULT (STDMETHODCALLTYPE *get_MajorVersion)(
-        ICOMAdminCatalog *This,
-        LONG *plMajorVersion);
+                     ICOMAdminCatalog *This,
+                     LONG *plMajorVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_MinorVersion)(
-        ICOMAdminCatalog *This,
-        LONG *plMinorVersion);
+                     ICOMAdminCatalog *This,
+                     LONG *plMinorVersion);
 
     HRESULT (STDMETHODCALLTYPE *GetCollectionByQuery)(
-        ICOMAdminCatalog *This,
-        BSTR bstrCollName,
-        SAFEARRAY **ppsaVarQuery,
-        IDispatch **ppCatalogCollection);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrCollName,
+                     SAFEARRAY **ppsaVarQuery,
+                     IDispatch **ppCatalogCollection);
 
     HRESULT (STDMETHODCALLTYPE *ImportComponent)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIDOrName,
-        BSTR bstrCLSIDOrProgID);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrCLSIDOrProgID);
 
     HRESULT (STDMETHODCALLTYPE *InstallComponent)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIDOrName,
-        BSTR bstrDLL,
-        BSTR bstrTLB,
-        BSTR bstrPSDLL);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrDLL,
+                     BSTR bstrTLB,
+                     BSTR bstrPSDLL);
 
     HRESULT (STDMETHODCALLTYPE *ShutdownApplication)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIDOrName);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIDOrName);
 
     HRESULT (STDMETHODCALLTYPE *ExportApplication)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIDOrName,
-        BSTR bstrApplicationFile,
-        LONG lOptions);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrApplicationFile,
+                     LONG lOptions);
 
     HRESULT (STDMETHODCALLTYPE *InstallApplication)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplicationFile,
-        BSTR bstrDestinationDirectory,
-        LONG lOptions,
-        BSTR bstrUserId,
-        BSTR bstrPassword,
-        BSTR bstrRSN);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplicationFile,
+                     BSTR bstrDestinationDirectory,
+                     LONG lOptions,
+                     BSTR bstrUserId,
+                     BSTR bstrPassword,
+                     BSTR bstrRSN);
 
     HRESULT (STDMETHODCALLTYPE *StopRouter)(
-        ICOMAdminCatalog *This);
+                     ICOMAdminCatalog *This);
 
     HRESULT (STDMETHODCALLTYPE *RefreshRouter)(
-        ICOMAdminCatalog *This);
+                     ICOMAdminCatalog *This);
 
     HRESULT (STDMETHODCALLTYPE *StartRouter)(
-        ICOMAdminCatalog *This);
+                     ICOMAdminCatalog *This);
 
     HRESULT (STDMETHODCALLTYPE *Reserved1)(
-        ICOMAdminCatalog *This);
+                     ICOMAdminCatalog *This);
 
     HRESULT (STDMETHODCALLTYPE *Reserved2)(
-        ICOMAdminCatalog *This);
+                     ICOMAdminCatalog *This);
 
     HRESULT (STDMETHODCALLTYPE *InstallMultipleComponents)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIDOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDs);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIDOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDs);
 
     HRESULT (STDMETHODCALLTYPE *GetMultipleComponentsInfo)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIdOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDs,
-        SAFEARRAY **ppsaVarClassNames,
-        SAFEARRAY **ppsaVarFileFlags,
-        SAFEARRAY **ppsaVarComponentFlags);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIdOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDs,
+                     SAFEARRAY **ppsaVarClassNames,
+                     SAFEARRAY **ppsaVarFileFlags,
+                     SAFEARRAY **ppsaVarComponentFlags);
 
     HRESULT (STDMETHODCALLTYPE *RefreshComponents)(
-        ICOMAdminCatalog *This);
+                     ICOMAdminCatalog *This);
 
     HRESULT (STDMETHODCALLTYPE *BackupREGDB)(
-        ICOMAdminCatalog *This,
-        BSTR bstrBackupFilePath);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrBackupFilePath);
 
     HRESULT (STDMETHODCALLTYPE *RestoreREGDB)(
-        ICOMAdminCatalog *This,
-        BSTR bstrBackupFilePath);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrBackupFilePath);
 
     HRESULT (STDMETHODCALLTYPE *QueryApplicationFile)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplicationFile,
-        BSTR *pbstrApplicationName,
-        BSTR *pbstrApplicationDescription,
-        VARIANT_BOOL *pbHasUsers,
-        VARIANT_BOOL *pbIsProxy,
-        SAFEARRAY **ppsaVarFileNames);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplicationFile,
+                     BSTR *pbstrApplicationName,
+                     BSTR *pbstrApplicationDescription,
+                     VARIANT_BOOL *pbHasUsers,
+                     VARIANT_BOOL *pbIsProxy,
+                     SAFEARRAY **ppsaVarFileNames);
 
     HRESULT (STDMETHODCALLTYPE *StartApplication)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIdOrName);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIdOrName);
 
     HRESULT (STDMETHODCALLTYPE *ServiceCheck)(
-        ICOMAdminCatalog *This,
-        LONG lService,
-        LONG *plStatus);
+                     ICOMAdminCatalog *This,
+                     LONG lService,
+                     LONG *plStatus);
 
     HRESULT (STDMETHODCALLTYPE *InstallMultipleEventClasses)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIdOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDS);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIdOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDS);
 
     HRESULT (STDMETHODCALLTYPE *InstallEventClass)(
-        ICOMAdminCatalog *This,
-        BSTR bstrApplIdOrName,
-        BSTR bstrDLL,
-        BSTR bstrTLB,
-        BSTR bstrPSDLL);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrApplIdOrName,
+                     BSTR bstrDLL,
+                     BSTR bstrTLB,
+                     BSTR bstrPSDLL);
 
     HRESULT (STDMETHODCALLTYPE *GetEventClassesForIID)(
-        ICOMAdminCatalog *This,
-        BSTR bstrIID,
-        SAFEARRAY **ppsaVarCLSIDs,
-        SAFEARRAY **ppsaVarProgIDs,
-        SAFEARRAY **ppsaVarDescriptions);
+                     ICOMAdminCatalog *This,
+                     BSTR bstrIID,
+                     SAFEARRAY **ppsaVarCLSIDs,
+                     SAFEARRAY **ppsaVarProgIDs,
+                     SAFEARRAY **ppsaVarDescriptions);
 
     END_INTERFACE
 } ICOMAdminCatalogVtbl;
@@ -827,140 +827,140 @@ MIDL_INTERFACE("790c6e0b-9194-4cc9-9426-a48a63185696")
 ICOMAdminCatalog2 : public ICOMAdminCatalog
 {
     virtual HRESULT STDMETHODCALLTYPE GetCollectionByQuery2(
-        BSTR bstrCollectionName,
-        VARIANT *pVarQueryStrings,
-        IDispatch **ppCatalogCollection) = 0;
+                     BSTR bstrCollectionName,
+                     VARIANT *pVarQueryStrings,
+                     IDispatch **ppCatalogCollection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetApplicationInstanceIDFromProcessID(
-        LONG lProcessID,
-        BSTR *pbstrApplicationInstanceID) = 0;
+                     LONG lProcessID,
+                     BSTR *pbstrApplicationInstanceID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShutdownApplicationInstances(
-        VARIANT *pVarApplicationInstanceID) = 0;
+                     VARIANT *pVarApplicationInstanceID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PauseApplicationInstances(
-        VARIANT *pVarApplicationInstanceID) = 0;
+                     VARIANT *pVarApplicationInstanceID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResumeApplicationInstances(
-        VARIANT *pVarApplicationInstanceID) = 0;
+                     VARIANT *pVarApplicationInstanceID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RecycleApplicationInstances(
-        VARIANT *pVarApplicationInstanceID,
-        LONG lReasonCode) = 0;
+                     VARIANT *pVarApplicationInstanceID,
+                     LONG lReasonCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AreApplicationInstancesPaused(
-        VARIANT *pVarApplicationInstanceID,
-        VARIANT_BOOL *pVarBoolPaused) = 0;
+                     VARIANT *pVarApplicationInstanceID,
+                     VARIANT_BOOL *pVarBoolPaused) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DumpApplicationInstance(
-        BSTR bstrApplicationInstanceID,
-        BSTR bstrDirectory,
-        LONG lMaxImages,
-        BSTR *pbstrDumpFile) = 0;
+                     BSTR bstrApplicationInstanceID,
+                     BSTR bstrDirectory,
+                     LONG lMaxImages,
+                     BSTR *pbstrDumpFile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsApplicationInstanceDumpSupported(
-        VARIANT_BOOL *pVarBoolDumpSupported) = 0;
+                     VARIANT_BOOL *pVarBoolDumpSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateServiceForApplication(
-        BSTR bstrApplicationIDOrName,
-        BSTR bstrServiceName,
-        BSTR bstrStartType,
-        BSTR bstrErrorControl,
-        BSTR bstrDependencies,
-        BSTR bstrRunAs,
-        BSTR bstrPassword,
-        VARIANT_BOOL bDesktopOk) = 0;
+                     BSTR bstrApplicationIDOrName,
+                     BSTR bstrServiceName,
+                     BSTR bstrStartType,
+                     BSTR bstrErrorControl,
+                     BSTR bstrDependencies,
+                     BSTR bstrRunAs,
+                     BSTR bstrPassword,
+                     VARIANT_BOOL bDesktopOk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteServiceForApplication(
-        BSTR bstrApplicationIDOrName) = 0;
+                     BSTR bstrApplicationIDOrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPartitionID(
-        BSTR bstrApplicationIDOrName,
-        BSTR *pbstrPartitionID) = 0;
+                     BSTR bstrApplicationIDOrName,
+                     BSTR *pbstrPartitionID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPartitionName(
-        BSTR bstrApplicationIDOrName,
-        BSTR *pbstrPartitionName) = 0;
+                     BSTR bstrApplicationIDOrName,
+                     BSTR *pbstrPartitionName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CurrentPartition(
-        BSTR bstrPartitionIDOrName) = 0;
+                     BSTR bstrPartitionIDOrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentPartitionID(
-        BSTR *pbstrPartitionID) = 0;
+                     BSTR *pbstrPartitionID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentPartitionName(
-        BSTR *pbstrPartitionName) = 0;
+                     BSTR *pbstrPartitionName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_GlobalPartitionID(
-        BSTR *pbstrGlobalPartitionID) = 0;
+                     BSTR *pbstrGlobalPartitionID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FlushPartitionCache(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyApplications(
-        BSTR bstrSourcePartitionIDOrName,
-        VARIANT *pVarApplicationID,
-        BSTR bstrDestinationPartitionIDOrName) = 0;
+                     BSTR bstrSourcePartitionIDOrName,
+                     VARIANT *pVarApplicationID,
+                     BSTR bstrDestinationPartitionIDOrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyComponents(
-        BSTR bstrSourceApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        BSTR bstrDestinationApplicationIDOrName) = 0;
+                     BSTR bstrSourceApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     BSTR bstrDestinationApplicationIDOrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveComponents(
-        BSTR bstrSourceApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        BSTR bstrDestinationApplicationIDOrName) = 0;
+                     BSTR bstrSourceApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     BSTR bstrDestinationApplicationIDOrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AliasComponent(
-        BSTR bstrSrcApplicationIDOrName,
-        BSTR bstrCLSIDOrProgID,
-        BSTR bstrDestApplicationIDOrName,
-        BSTR bstrNewProgId,
-        BSTR bstrNewClsid) = 0;
+                     BSTR bstrSrcApplicationIDOrName,
+                     BSTR bstrCLSIDOrProgID,
+                     BSTR bstrDestApplicationIDOrName,
+                     BSTR bstrNewProgId,
+                     BSTR bstrNewClsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSafeToDelete(
-        BSTR bstrDllName,
-        COMAdminInUse *pCOMAdminInUse) = 0;
+                     BSTR bstrDllName,
+                     COMAdminInUse *pCOMAdminInUse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportUnconfiguredComponents(
-        BSTR bstrApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        VARIANT *pVarComponentType) = 0;
+                     BSTR bstrApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     VARIANT *pVarComponentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PromoteUnconfiguredComponents(
-        BSTR bstrApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        VARIANT *pVarComponentType) = 0;
+                     BSTR bstrApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     VARIANT *pVarComponentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportComponents(
-        BSTR bstrApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        VARIANT *pVarComponentType) = 0;
+                     BSTR bstrApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     VARIANT *pVarComponentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Is64BitCatalogServer(
-        VARIANT_BOOL *pbIs64Bit) = 0;
+                     VARIANT_BOOL *pbIs64Bit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExportPartition(
-        BSTR bstrPartitionIDOrName,
-        BSTR bstrPartitionFileName,
-        LONG lOptions) = 0;
+                     BSTR bstrPartitionIDOrName,
+                     BSTR bstrPartitionFileName,
+                     LONG lOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstallPartition(
-        BSTR bstrFileName,
-        BSTR bstrDestDirectory,
-        LONG lOptions,
-        BSTR bstrUserID,
-        BSTR bstrPassword,
-        BSTR bstrRSN) = 0;
+                     BSTR bstrFileName,
+                     BSTR bstrDestDirectory,
+                     LONG lOptions,
+                     BSTR bstrUserID,
+                     BSTR bstrPassword,
+                     BSTR bstrRSN) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryApplicationFile2(
-        BSTR bstrApplicationFile,
-        IDispatch **ppFilesForImport) = 0;
+                     BSTR bstrApplicationFile,
+                     IDispatch **ppFilesForImport) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetComponentVersionCount(
-        BSTR bstrCLSIDOrProgID,
-        LONG *plVersionCount) = 0;
+                     BSTR bstrCLSIDOrProgID,
+                     LONG *plVersionCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -972,347 +972,347 @@ typedef struct ICOMAdminCatalog2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICOMAdminCatalog2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICOMAdminCatalog2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ICOMAdminCatalog2 *This,
-        UINT *pctinfo);
+                     ICOMAdminCatalog2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ICOMAdminCatalog2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ICOMAdminCatalog2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ICOMAdminCatalog2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ICOMAdminCatalog2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ICOMAdminCatalog2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ICOMAdminCatalog2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ICOMAdminCatalog methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCollection)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrCollName,
-        IDispatch **ppCatalogCollection);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrCollName,
+                     IDispatch **ppCatalogCollection);
 
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrCatalogServerName,
-        IDispatch **ppCatalogCollection);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrCatalogServerName,
+                     IDispatch **ppCatalogCollection);
 
     HRESULT (STDMETHODCALLTYPE *get_MajorVersion)(
-        ICOMAdminCatalog2 *This,
-        LONG *plMajorVersion);
+                     ICOMAdminCatalog2 *This,
+                     LONG *plMajorVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_MinorVersion)(
-        ICOMAdminCatalog2 *This,
-        LONG *plMinorVersion);
+                     ICOMAdminCatalog2 *This,
+                     LONG *plMinorVersion);
 
     HRESULT (STDMETHODCALLTYPE *GetCollectionByQuery)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrCollName,
-        SAFEARRAY **ppsaVarQuery,
-        IDispatch **ppCatalogCollection);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrCollName,
+                     SAFEARRAY **ppsaVarQuery,
+                     IDispatch **ppCatalogCollection);
 
     HRESULT (STDMETHODCALLTYPE *ImportComponent)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIDOrName,
-        BSTR bstrCLSIDOrProgID);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrCLSIDOrProgID);
 
     HRESULT (STDMETHODCALLTYPE *InstallComponent)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIDOrName,
-        BSTR bstrDLL,
-        BSTR bstrTLB,
-        BSTR bstrPSDLL);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrDLL,
+                     BSTR bstrTLB,
+                     BSTR bstrPSDLL);
 
     HRESULT (STDMETHODCALLTYPE *ShutdownApplication)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIDOrName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIDOrName);
 
     HRESULT (STDMETHODCALLTYPE *ExportApplication)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIDOrName,
-        BSTR bstrApplicationFile,
-        LONG lOptions);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIDOrName,
+                     BSTR bstrApplicationFile,
+                     LONG lOptions);
 
     HRESULT (STDMETHODCALLTYPE *InstallApplication)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationFile,
-        BSTR bstrDestinationDirectory,
-        LONG lOptions,
-        BSTR bstrUserId,
-        BSTR bstrPassword,
-        BSTR bstrRSN);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationFile,
+                     BSTR bstrDestinationDirectory,
+                     LONG lOptions,
+                     BSTR bstrUserId,
+                     BSTR bstrPassword,
+                     BSTR bstrRSN);
 
     HRESULT (STDMETHODCALLTYPE *StopRouter)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     HRESULT (STDMETHODCALLTYPE *RefreshRouter)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     HRESULT (STDMETHODCALLTYPE *StartRouter)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Reserved1)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Reserved2)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     HRESULT (STDMETHODCALLTYPE *InstallMultipleComponents)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIDOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDs);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIDOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDs);
 
     HRESULT (STDMETHODCALLTYPE *GetMultipleComponentsInfo)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIdOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDs,
-        SAFEARRAY **ppsaVarClassNames,
-        SAFEARRAY **ppsaVarFileFlags,
-        SAFEARRAY **ppsaVarComponentFlags);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIdOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDs,
+                     SAFEARRAY **ppsaVarClassNames,
+                     SAFEARRAY **ppsaVarFileFlags,
+                     SAFEARRAY **ppsaVarComponentFlags);
 
     HRESULT (STDMETHODCALLTYPE *RefreshComponents)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     HRESULT (STDMETHODCALLTYPE *BackupREGDB)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrBackupFilePath);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrBackupFilePath);
 
     HRESULT (STDMETHODCALLTYPE *RestoreREGDB)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrBackupFilePath);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrBackupFilePath);
 
     HRESULT (STDMETHODCALLTYPE *QueryApplicationFile)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationFile,
-        BSTR *pbstrApplicationName,
-        BSTR *pbstrApplicationDescription,
-        VARIANT_BOOL *pbHasUsers,
-        VARIANT_BOOL *pbIsProxy,
-        SAFEARRAY **ppsaVarFileNames);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationFile,
+                     BSTR *pbstrApplicationName,
+                     BSTR *pbstrApplicationDescription,
+                     VARIANT_BOOL *pbHasUsers,
+                     VARIANT_BOOL *pbIsProxy,
+                     SAFEARRAY **ppsaVarFileNames);
 
     HRESULT (STDMETHODCALLTYPE *StartApplication)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIdOrName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIdOrName);
 
     HRESULT (STDMETHODCALLTYPE *ServiceCheck)(
-        ICOMAdminCatalog2 *This,
-        LONG lService,
-        LONG *plStatus);
+                     ICOMAdminCatalog2 *This,
+                     LONG lService,
+                     LONG *plStatus);
 
     HRESULT (STDMETHODCALLTYPE *InstallMultipleEventClasses)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIdOrName,
-        SAFEARRAY **ppsaVarFileNames,
-        SAFEARRAY **ppsaVarCLSIDS);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIdOrName,
+                     SAFEARRAY **ppsaVarFileNames,
+                     SAFEARRAY **ppsaVarCLSIDS);
 
     HRESULT (STDMETHODCALLTYPE *InstallEventClass)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplIdOrName,
-        BSTR bstrDLL,
-        BSTR bstrTLB,
-        BSTR bstrPSDLL);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplIdOrName,
+                     BSTR bstrDLL,
+                     BSTR bstrTLB,
+                     BSTR bstrPSDLL);
 
     HRESULT (STDMETHODCALLTYPE *GetEventClassesForIID)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrIID,
-        SAFEARRAY **ppsaVarCLSIDs,
-        SAFEARRAY **ppsaVarProgIDs,
-        SAFEARRAY **ppsaVarDescriptions);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrIID,
+                     SAFEARRAY **ppsaVarCLSIDs,
+                     SAFEARRAY **ppsaVarProgIDs,
+                     SAFEARRAY **ppsaVarDescriptions);
 
     /*** ICOMAdminCatalog2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCollectionByQuery2)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrCollectionName,
-        VARIANT *pVarQueryStrings,
-        IDispatch **ppCatalogCollection);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrCollectionName,
+                     VARIANT *pVarQueryStrings,
+                     IDispatch **ppCatalogCollection);
 
     HRESULT (STDMETHODCALLTYPE *GetApplicationInstanceIDFromProcessID)(
-        ICOMAdminCatalog2 *This,
-        LONG lProcessID,
-        BSTR *pbstrApplicationInstanceID);
+                     ICOMAdminCatalog2 *This,
+                     LONG lProcessID,
+                     BSTR *pbstrApplicationInstanceID);
 
     HRESULT (STDMETHODCALLTYPE *ShutdownApplicationInstances)(
-        ICOMAdminCatalog2 *This,
-        VARIANT *pVarApplicationInstanceID);
+                     ICOMAdminCatalog2 *This,
+                     VARIANT *pVarApplicationInstanceID);
 
     HRESULT (STDMETHODCALLTYPE *PauseApplicationInstances)(
-        ICOMAdminCatalog2 *This,
-        VARIANT *pVarApplicationInstanceID);
+                     ICOMAdminCatalog2 *This,
+                     VARIANT *pVarApplicationInstanceID);
 
     HRESULT (STDMETHODCALLTYPE *ResumeApplicationInstances)(
-        ICOMAdminCatalog2 *This,
-        VARIANT *pVarApplicationInstanceID);
+                     ICOMAdminCatalog2 *This,
+                     VARIANT *pVarApplicationInstanceID);
 
     HRESULT (STDMETHODCALLTYPE *RecycleApplicationInstances)(
-        ICOMAdminCatalog2 *This,
-        VARIANT *pVarApplicationInstanceID,
-        LONG lReasonCode);
+                     ICOMAdminCatalog2 *This,
+                     VARIANT *pVarApplicationInstanceID,
+                     LONG lReasonCode);
 
     HRESULT (STDMETHODCALLTYPE *AreApplicationInstancesPaused)(
-        ICOMAdminCatalog2 *This,
-        VARIANT *pVarApplicationInstanceID,
-        VARIANT_BOOL *pVarBoolPaused);
+                     ICOMAdminCatalog2 *This,
+                     VARIANT *pVarApplicationInstanceID,
+                     VARIANT_BOOL *pVarBoolPaused);
 
     HRESULT (STDMETHODCALLTYPE *DumpApplicationInstance)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationInstanceID,
-        BSTR bstrDirectory,
-        LONG lMaxImages,
-        BSTR *pbstrDumpFile);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationInstanceID,
+                     BSTR bstrDirectory,
+                     LONG lMaxImages,
+                     BSTR *pbstrDumpFile);
 
     HRESULT (STDMETHODCALLTYPE *get_IsApplicationInstanceDumpSupported)(
-        ICOMAdminCatalog2 *This,
-        VARIANT_BOOL *pVarBoolDumpSupported);
+                     ICOMAdminCatalog2 *This,
+                     VARIANT_BOOL *pVarBoolDumpSupported);
 
     HRESULT (STDMETHODCALLTYPE *CreateServiceForApplication)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationIDOrName,
-        BSTR bstrServiceName,
-        BSTR bstrStartType,
-        BSTR bstrErrorControl,
-        BSTR bstrDependencies,
-        BSTR bstrRunAs,
-        BSTR bstrPassword,
-        VARIANT_BOOL bDesktopOk);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationIDOrName,
+                     BSTR bstrServiceName,
+                     BSTR bstrStartType,
+                     BSTR bstrErrorControl,
+                     BSTR bstrDependencies,
+                     BSTR bstrRunAs,
+                     BSTR bstrPassword,
+                     VARIANT_BOOL bDesktopOk);
 
     HRESULT (STDMETHODCALLTYPE *DeleteServiceForApplication)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationIDOrName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationIDOrName);
 
     HRESULT (STDMETHODCALLTYPE *GetPartitionID)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationIDOrName,
-        BSTR *pbstrPartitionID);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationIDOrName,
+                     BSTR *pbstrPartitionID);
 
     HRESULT (STDMETHODCALLTYPE *GetPartitionName)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationIDOrName,
-        BSTR *pbstrPartitionName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationIDOrName,
+                     BSTR *pbstrPartitionName);
 
     HRESULT (STDMETHODCALLTYPE *put_CurrentPartition)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrPartitionIDOrName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrPartitionIDOrName);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentPartitionID)(
-        ICOMAdminCatalog2 *This,
-        BSTR *pbstrPartitionID);
+                     ICOMAdminCatalog2 *This,
+                     BSTR *pbstrPartitionID);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentPartitionName)(
-        ICOMAdminCatalog2 *This,
-        BSTR *pbstrPartitionName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR *pbstrPartitionName);
 
     HRESULT (STDMETHODCALLTYPE *get_GlobalPartitionID)(
-        ICOMAdminCatalog2 *This,
-        BSTR *pbstrGlobalPartitionID);
+                     ICOMAdminCatalog2 *This,
+                     BSTR *pbstrGlobalPartitionID);
 
     HRESULT (STDMETHODCALLTYPE *FlushPartitionCache)(
-        ICOMAdminCatalog2 *This);
+                     ICOMAdminCatalog2 *This);
 
     HRESULT (STDMETHODCALLTYPE *CopyApplications)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrSourcePartitionIDOrName,
-        VARIANT *pVarApplicationID,
-        BSTR bstrDestinationPartitionIDOrName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrSourcePartitionIDOrName,
+                     VARIANT *pVarApplicationID,
+                     BSTR bstrDestinationPartitionIDOrName);
 
     HRESULT (STDMETHODCALLTYPE *CopyComponents)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrSourceApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        BSTR bstrDestinationApplicationIDOrName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrSourceApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     BSTR bstrDestinationApplicationIDOrName);
 
     HRESULT (STDMETHODCALLTYPE *MoveComponents)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrSourceApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        BSTR bstrDestinationApplicationIDOrName);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrSourceApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     BSTR bstrDestinationApplicationIDOrName);
 
     HRESULT (STDMETHODCALLTYPE *AliasComponent)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrSrcApplicationIDOrName,
-        BSTR bstrCLSIDOrProgID,
-        BSTR bstrDestApplicationIDOrName,
-        BSTR bstrNewProgId,
-        BSTR bstrNewClsid);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrSrcApplicationIDOrName,
+                     BSTR bstrCLSIDOrProgID,
+                     BSTR bstrDestApplicationIDOrName,
+                     BSTR bstrNewProgId,
+                     BSTR bstrNewClsid);
 
     HRESULT (STDMETHODCALLTYPE *IsSafeToDelete)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrDllName,
-        COMAdminInUse *pCOMAdminInUse);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrDllName,
+                     COMAdminInUse *pCOMAdminInUse);
 
     HRESULT (STDMETHODCALLTYPE *ImportUnconfiguredComponents)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        VARIANT *pVarComponentType);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     VARIANT *pVarComponentType);
 
     HRESULT (STDMETHODCALLTYPE *PromoteUnconfiguredComponents)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        VARIANT *pVarComponentType);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     VARIANT *pVarComponentType);
 
     HRESULT (STDMETHODCALLTYPE *ImportComponents)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationIDOrName,
-        VARIANT *pVarCLSIDOrProgID,
-        VARIANT *pVarComponentType);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationIDOrName,
+                     VARIANT *pVarCLSIDOrProgID,
+                     VARIANT *pVarComponentType);
 
     HRESULT (STDMETHODCALLTYPE *get_Is64BitCatalogServer)(
-        ICOMAdminCatalog2 *This,
-        VARIANT_BOOL *pbIs64Bit);
+                     ICOMAdminCatalog2 *This,
+                     VARIANT_BOOL *pbIs64Bit);
 
     HRESULT (STDMETHODCALLTYPE *ExportPartition)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrPartitionIDOrName,
-        BSTR bstrPartitionFileName,
-        LONG lOptions);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrPartitionIDOrName,
+                     BSTR bstrPartitionFileName,
+                     LONG lOptions);
 
     HRESULT (STDMETHODCALLTYPE *InstallPartition)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrFileName,
-        BSTR bstrDestDirectory,
-        LONG lOptions,
-        BSTR bstrUserID,
-        BSTR bstrPassword,
-        BSTR bstrRSN);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrFileName,
+                     BSTR bstrDestDirectory,
+                     LONG lOptions,
+                     BSTR bstrUserID,
+                     BSTR bstrPassword,
+                     BSTR bstrRSN);
 
     HRESULT (STDMETHODCALLTYPE *QueryApplicationFile2)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrApplicationFile,
-        IDispatch **ppFilesForImport);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrApplicationFile,
+                     IDispatch **ppFilesForImport);
 
     HRESULT (STDMETHODCALLTYPE *GetComponentVersionCount)(
-        ICOMAdminCatalog2 *This,
-        BSTR bstrCLSIDOrProgID,
-        LONG *plVersionCount);
+                     ICOMAdminCatalog2 *This,
+                     BSTR bstrCLSIDOrProgID,
+                     LONG *plVersionCount);
 
     END_INTERFACE
 } ICOMAdminCatalog2Vtbl;
@@ -1608,29 +1608,29 @@ MIDL_INTERFACE("6eb22871-8a19-11d0-81b6-00a0c9231c29")
 ICatalogObject : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Value(
-        BSTR bstrPropName,
-        VARIANT *pvarRetVal) = 0;
+                     BSTR bstrPropName,
+                     VARIANT *pvarRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Value(
-        BSTR bstrPropName,
-        VARIANT val) = 0;
+                     BSTR bstrPropName,
+                     VARIANT val) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Key(
-        VARIANT *pvarRetVal) = 0;
+                     VARIANT *pvarRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        VARIANT *pvarRetVal) = 0;
+                     VARIANT *pvarRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPropertyReadOnly(
-        BSTR bstrPropName,
-        VARIANT_BOOL *pbRetVal) = 0;
+                     BSTR bstrPropName,
+                     VARIANT_BOOL *pbRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Valid(
-        VARIANT_BOOL *pbRetVal) = 0;
+                     VARIANT_BOOL *pbRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPropertyWriteOnly(
-        BSTR bstrPropName,
-        VARIANT_BOOL *pbRetVal) = 0;
+                     BSTR bstrPropName,
+                     VARIANT_BOOL *pbRetVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1642,78 +1642,78 @@ typedef struct ICatalogObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICatalogObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICatalogObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICatalogObject *This);
+                     ICatalogObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICatalogObject *This);
+                     ICatalogObject *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ICatalogObject *This,
-        UINT *pctinfo);
+                     ICatalogObject *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ICatalogObject *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ICatalogObject *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ICatalogObject *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ICatalogObject *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ICatalogObject *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ICatalogObject *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ICatalogObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Value)(
-        ICatalogObject *This,
-        BSTR bstrPropName,
-        VARIANT *pvarRetVal);
+                     ICatalogObject *This,
+                     BSTR bstrPropName,
+                     VARIANT *pvarRetVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Value)(
-        ICatalogObject *This,
-        BSTR bstrPropName,
-        VARIANT val);
+                     ICatalogObject *This,
+                     BSTR bstrPropName,
+                     VARIANT val);
 
     HRESULT (STDMETHODCALLTYPE *get_Key)(
-        ICatalogObject *This,
-        VARIANT *pvarRetVal);
+                     ICatalogObject *This,
+                     VARIANT *pvarRetVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ICatalogObject *This,
-        VARIANT *pvarRetVal);
+                     ICatalogObject *This,
+                     VARIANT *pvarRetVal);
 
     HRESULT (STDMETHODCALLTYPE *IsPropertyReadOnly)(
-        ICatalogObject *This,
-        BSTR bstrPropName,
-        VARIANT_BOOL *pbRetVal);
+                     ICatalogObject *This,
+                     BSTR bstrPropName,
+                     VARIANT_BOOL *pbRetVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Valid)(
-        ICatalogObject *This,
-        VARIANT_BOOL *pbRetVal);
+                     ICatalogObject *This,
+                     VARIANT_BOOL *pbRetVal);
 
     HRESULT (STDMETHODCALLTYPE *IsPropertyWriteOnly)(
-        ICatalogObject *This,
-        BSTR bstrPropName,
-        VARIANT_BOOL *pbRetVal);
+                     ICatalogObject *This,
+                     BSTR bstrPropName,
+                     VARIANT_BOOL *pbRetVal);
 
     END_INTERFACE
 } ICatalogObjectVtbl;
@@ -1807,56 +1807,56 @@ MIDL_INTERFACE("6eb22872-8a19-11d0-81b6-00a0c9231c29")
 ICatalogCollection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **ppEnumVariant) = 0;
+                     IUnknown **ppEnumVariant) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        LONG lIndex,
-        IDispatch **ppCatalogObject) = 0;
+                     LONG lIndex,
+                     IDispatch **ppCatalogObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *plObjectCount) = 0;
+                     LONG *plObjectCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        LONG lIndex) = 0;
+                     LONG lIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IDispatch **ppCatalogObject) = 0;
+                     IDispatch **ppCatalogObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Populate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveChanges(
-        LONG *pcChanges) = 0;
+                     LONG *pcChanges) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCollection(
-        BSTR bstrCollName,
-        VARIANT varObjectKey,
-        IDispatch **ppCatalogCollection) = 0;
+                     BSTR bstrCollName,
+                     VARIANT varObjectKey,
+                     IDispatch **ppCatalogCollection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        VARIANT *pVarNamel) = 0;
+                     VARIANT *pVarNamel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AddEnabled(
-        VARIANT_BOOL *pVarBool) = 0;
+                     VARIANT_BOOL *pVarBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RemoveEnabled(
-        VARIANT_BOOL *pVarBool) = 0;
+                     VARIANT_BOOL *pVarBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUtilInterface(
-        IDispatch **ppIDispatch) = 0;
+                     IDispatch **ppIDispatch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DataStoreMajorVersion(
-        LONG *plMajorVersion) = 0;
+                     LONG *plMajorVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DataStoreMinorVersion(
-        LONG *plMinorVersionl) = 0;
+                     LONG *plMinorVersionl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PopulateByKey(
-        SAFEARRAY *psaKeys) = 0;
+                     SAFEARRAY *psaKeys) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PopulateByQuery(
-        BSTR bstrQueryString,
-        LONG lQueryType) = 0;
+                     BSTR bstrQueryString,
+                     LONG lQueryType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1868,113 +1868,113 @@ typedef struct ICatalogCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICatalogCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICatalogCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICatalogCollection *This);
+                     ICatalogCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICatalogCollection *This);
+                     ICatalogCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ICatalogCollection *This,
-        UINT *pctinfo);
+                     ICatalogCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ICatalogCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ICatalogCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ICatalogCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ICatalogCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ICatalogCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ICatalogCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ICatalogCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ICatalogCollection *This,
-        IUnknown **ppEnumVariant);
+                     ICatalogCollection *This,
+                     IUnknown **ppEnumVariant);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        ICatalogCollection *This,
-        LONG lIndex,
-        IDispatch **ppCatalogObject);
+                     ICatalogCollection *This,
+                     LONG lIndex,
+                     IDispatch **ppCatalogObject);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ICatalogCollection *This,
-        LONG *plObjectCount);
+                     ICatalogCollection *This,
+                     LONG *plObjectCount);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ICatalogCollection *This,
-        LONG lIndex);
+                     ICatalogCollection *This,
+                     LONG lIndex);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ICatalogCollection *This,
-        IDispatch **ppCatalogObject);
+                     ICatalogCollection *This,
+                     IDispatch **ppCatalogObject);
 
     HRESULT (STDMETHODCALLTYPE *Populate)(
-        ICatalogCollection *This);
+                     ICatalogCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *SaveChanges)(
-        ICatalogCollection *This,
-        LONG *pcChanges);
+                     ICatalogCollection *This,
+                     LONG *pcChanges);
 
     HRESULT (STDMETHODCALLTYPE *GetCollection)(
-        ICatalogCollection *This,
-        BSTR bstrCollName,
-        VARIANT varObjectKey,
-        IDispatch **ppCatalogCollection);
+                     ICatalogCollection *This,
+                     BSTR bstrCollName,
+                     VARIANT varObjectKey,
+                     IDispatch **ppCatalogCollection);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ICatalogCollection *This,
-        VARIANT *pVarNamel);
+                     ICatalogCollection *This,
+                     VARIANT *pVarNamel);
 
     HRESULT (STDMETHODCALLTYPE *get_AddEnabled)(
-        ICatalogCollection *This,
-        VARIANT_BOOL *pVarBool);
+                     ICatalogCollection *This,
+                     VARIANT_BOOL *pVarBool);
 
     HRESULT (STDMETHODCALLTYPE *get_RemoveEnabled)(
-        ICatalogCollection *This,
-        VARIANT_BOOL *pVarBool);
+                     ICatalogCollection *This,
+                     VARIANT_BOOL *pVarBool);
 
     HRESULT (STDMETHODCALLTYPE *GetUtilInterface)(
-        ICatalogCollection *This,
-        IDispatch **ppIDispatch);
+                     ICatalogCollection *This,
+                     IDispatch **ppIDispatch);
 
     HRESULT (STDMETHODCALLTYPE *get_DataStoreMajorVersion)(
-        ICatalogCollection *This,
-        LONG *plMajorVersion);
+                     ICatalogCollection *This,
+                     LONG *plMajorVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_DataStoreMinorVersion)(
-        ICatalogCollection *This,
-        LONG *plMinorVersionl);
+                     ICatalogCollection *This,
+                     LONG *plMinorVersionl);
 
     HRESULT (STDMETHODCALLTYPE *PopulateByKey)(
-        ICatalogCollection *This,
-        SAFEARRAY *psaKeys);
+                     ICatalogCollection *This,
+                     SAFEARRAY *psaKeys);
 
     HRESULT (STDMETHODCALLTYPE *PopulateByQuery)(
-        ICatalogCollection *This,
-        BSTR bstrQueryString,
-        LONG lQueryType);
+                     ICatalogCollection *This,
+                     BSTR bstrQueryString,
+                     LONG lQueryType);
 
     END_INTERFACE
 } ICatalogCollectionVtbl;
@@ -2175,14 +2175,14 @@ __CRT_UUID_DECL(COMAdminCatalogCollection, 0xf618c516, 0xdfb8, 0x11d1, 0xa2,0xcf
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

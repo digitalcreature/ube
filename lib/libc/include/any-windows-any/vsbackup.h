@@ -15,20 +15,20 @@ extern "C" {
 
 typedef struct VSS_COMPONENTINFO {
   VSS_COMPONENT_TYPE type;
-  BSTR               bstrLogicalPath;
-  BSTR               bstrComponentName;
-  BSTR               bstrCaption;
-  BYTE               *pbIcon;
-  UINT               cbIcon;
-  BOOLEAN            bRestoreMetadata;
-  BOOLEAN            bNotifyOnBackupComplete;
-  BOOLEAN            bSelectable;
-  BOOLEAN            bSelectableForRestore;
-  DWORD              dwComponentFlags;
-  UINT               cFileCount;
-  UINT               cDatabases;
-  UINT               cLogFiles;
-  UINT               cDependencies;
+  BSTR                                         bstrLogicalPath;
+  BSTR                                         bstrComponentName;
+  BSTR                                         bstrCaption;
+  BYTE                                         *pbIcon;
+  UINT                                         cbIcon;
+  BOOLEAN                                      bRestoreMetadata;
+  BOOLEAN                                      bNotifyOnBackupComplete;
+  BOOLEAN                                      bSelectable;
+  BOOLEAN                                      bSelectableForRestore;
+  DWORD                                        dwComponentFlags;
+  UINT                                         cFileCount;
+  UINT                                         cDatabases;
+  UINT                                         cLogFiles;
+  UINT                                         cDependencies;
 } VSS_COMPONENTINFO, *PVSSCOMPONENTINFO;
 
 HRESULT WINAPI CreateVssBackupComponentsInternal(

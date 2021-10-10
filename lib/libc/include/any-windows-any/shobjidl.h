@@ -2568,21 +2568,21 @@ MIDL_INTERFACE("000214e4-0000-0000-c000-000000000046")
 IContextMenu : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryContextMenu(
-        HMENU hmenu,
-        UINT indexMenu,
-        UINT idCmdFirst,
-        UINT idCmdLast,
-        UINT uFlags) = 0;
+                     HMENU hmenu,
+                     UINT indexMenu,
+                     UINT idCmdFirst,
+                     UINT idCmdLast,
+                     UINT uFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvokeCommand(
-        CMINVOKECOMMANDINFO *pici) = 0;
+                     CMINVOKECOMMANDINFO *pici) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCommandString(
-        UINT_PTR idCmd,
-        UINT uType,
-        UINT *pReserved,
-        CHAR *pszName,
-        UINT cchMax) = 0;
+                     UINT_PTR idCmd,
+                     UINT uType,
+                     UINT *pReserved,
+                     CHAR *pszName,
+                     UINT cchMax) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2594,36 +2594,36 @@ typedef struct IContextMenuVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IContextMenu *This,
-        REFIID riid,
-        void **ppvObject);
+                     IContextMenu *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IContextMenu *This);
+                     IContextMenu *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IContextMenu *This);
+                     IContextMenu *This);
 
     /*** IContextMenu methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryContextMenu)(
-        IContextMenu *This,
-        HMENU hmenu,
-        UINT indexMenu,
-        UINT idCmdFirst,
-        UINT idCmdLast,
-        UINT uFlags);
+                     IContextMenu *This,
+                     HMENU hmenu,
+                     UINT indexMenu,
+                     UINT idCmdFirst,
+                     UINT idCmdLast,
+                     UINT uFlags);
 
     HRESULT (STDMETHODCALLTYPE *InvokeCommand)(
-        IContextMenu *This,
-        CMINVOKECOMMANDINFO *pici);
+                     IContextMenu *This,
+                     CMINVOKECOMMANDINFO *pici);
 
     HRESULT (STDMETHODCALLTYPE *GetCommandString)(
-        IContextMenu *This,
-        UINT_PTR idCmd,
-        UINT uType,
-        UINT *pReserved,
-        CHAR *pszName,
-        UINT cchMax);
+                     IContextMenu *This,
+                     UINT_PTR idCmd,
+                     UINT uType,
+                     UINT *pReserved,
+                     CHAR *pszName,
+                     UINT cchMax);
 
     END_INTERFACE
 } IContextMenuVtbl;
@@ -2685,9 +2685,9 @@ MIDL_INTERFACE("000214f4-0000-0000-c000-000000000046")
 IContextMenu2 : public IContextMenu
 {
     virtual HRESULT STDMETHODCALLTYPE HandleMenuMsg(
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2699,43 +2699,43 @@ typedef struct IContextMenu2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IContextMenu2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IContextMenu2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IContextMenu2 *This);
+                     IContextMenu2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IContextMenu2 *This);
+                     IContextMenu2 *This);
 
     /*** IContextMenu methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryContextMenu)(
-        IContextMenu2 *This,
-        HMENU hmenu,
-        UINT indexMenu,
-        UINT idCmdFirst,
-        UINT idCmdLast,
-        UINT uFlags);
+                     IContextMenu2 *This,
+                     HMENU hmenu,
+                     UINT indexMenu,
+                     UINT idCmdFirst,
+                     UINT idCmdLast,
+                     UINT uFlags);
 
     HRESULT (STDMETHODCALLTYPE *InvokeCommand)(
-        IContextMenu2 *This,
-        CMINVOKECOMMANDINFO *pici);
+                     IContextMenu2 *This,
+                     CMINVOKECOMMANDINFO *pici);
 
     HRESULT (STDMETHODCALLTYPE *GetCommandString)(
-        IContextMenu2 *This,
-        UINT_PTR idCmd,
-        UINT uType,
-        UINT *pReserved,
-        CHAR *pszName,
-        UINT cchMax);
+                     IContextMenu2 *This,
+                     UINT_PTR idCmd,
+                     UINT uType,
+                     UINT *pReserved,
+                     CHAR *pszName,
+                     UINT cchMax);
 
     /*** IContextMenu2 methods ***/
     HRESULT (STDMETHODCALLTYPE *HandleMenuMsg)(
-        IContextMenu2 *This,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     IContextMenu2 *This,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     END_INTERFACE
 } IContextMenu2Vtbl;
@@ -2803,10 +2803,10 @@ MIDL_INTERFACE("bcfce0a0-ec17-11d0-8d10-00a0c90f2719")
 IContextMenu3 : public IContextMenu2
 {
     virtual HRESULT STDMETHODCALLTYPE HandleMenuMsg2(
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam,
-        LRESULT *plResult) = 0;
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     LRESULT *plResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2818,51 +2818,51 @@ typedef struct IContextMenu3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IContextMenu3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IContextMenu3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IContextMenu3 *This);
+                     IContextMenu3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IContextMenu3 *This);
+                     IContextMenu3 *This);
 
     /*** IContextMenu methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryContextMenu)(
-        IContextMenu3 *This,
-        HMENU hmenu,
-        UINT indexMenu,
-        UINT idCmdFirst,
-        UINT idCmdLast,
-        UINT uFlags);
+                     IContextMenu3 *This,
+                     HMENU hmenu,
+                     UINT indexMenu,
+                     UINT idCmdFirst,
+                     UINT idCmdLast,
+                     UINT uFlags);
 
     HRESULT (STDMETHODCALLTYPE *InvokeCommand)(
-        IContextMenu3 *This,
-        CMINVOKECOMMANDINFO *pici);
+                     IContextMenu3 *This,
+                     CMINVOKECOMMANDINFO *pici);
 
     HRESULT (STDMETHODCALLTYPE *GetCommandString)(
-        IContextMenu3 *This,
-        UINT_PTR idCmd,
-        UINT uType,
-        UINT *pReserved,
-        CHAR *pszName,
-        UINT cchMax);
+                     IContextMenu3 *This,
+                     UINT_PTR idCmd,
+                     UINT uType,
+                     UINT *pReserved,
+                     CHAR *pszName,
+                     UINT cchMax);
 
     /*** IContextMenu2 methods ***/
     HRESULT (STDMETHODCALLTYPE *HandleMenuMsg)(
-        IContextMenu3 *This,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     IContextMenu3 *This,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     /*** IContextMenu3 methods ***/
     HRESULT (STDMETHODCALLTYPE *HandleMenuMsg2)(
-        IContextMenu3 *This,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam,
-        LRESULT *plResult);
+                     IContextMenu3 *This,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     LRESULT *plResult);
 
     END_INTERFACE
 } IContextMenu3Vtbl;
@@ -2936,25 +2936,25 @@ MIDL_INTERFACE("7f9185b0-cb92-43c5-80a9-92277a4f7b54")
 IExecuteCommand : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetKeyState(
-        DWORD grfKeyState) = 0;
+                     DWORD grfKeyState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetParameters(
-        LPCWSTR pszParameters) = 0;
+                     LPCWSTR pszParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPosition(
-        POINT pt) = 0;
+                     POINT pt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetShowWindow(
-        int nShow) = 0;
+                     int nShow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNoShowUI(
-        WINBOOL fNoShowUI) = 0;
+                     WINBOOL fNoShowUI) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDirectory(
-        LPCWSTR pszDirectory) = 0;
+                     LPCWSTR pszDirectory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Execute(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2966,43 +2966,43 @@ typedef struct IExecuteCommandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExecuteCommand *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExecuteCommand *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExecuteCommand *This);
+                     IExecuteCommand *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExecuteCommand *This);
+                     IExecuteCommand *This);
 
     /*** IExecuteCommand methods ***/
     HRESULT (STDMETHODCALLTYPE *SetKeyState)(
-        IExecuteCommand *This,
-        DWORD grfKeyState);
+                     IExecuteCommand *This,
+                     DWORD grfKeyState);
 
     HRESULT (STDMETHODCALLTYPE *SetParameters)(
-        IExecuteCommand *This,
-        LPCWSTR pszParameters);
+                     IExecuteCommand *This,
+                     LPCWSTR pszParameters);
 
     HRESULT (STDMETHODCALLTYPE *SetPosition)(
-        IExecuteCommand *This,
-        POINT pt);
+                     IExecuteCommand *This,
+                     POINT pt);
 
     HRESULT (STDMETHODCALLTYPE *SetShowWindow)(
-        IExecuteCommand *This,
-        int nShow);
+                     IExecuteCommand *This,
+                     int nShow);
 
     HRESULT (STDMETHODCALLTYPE *SetNoShowUI)(
-        IExecuteCommand *This,
-        WINBOOL fNoShowUI);
+                     IExecuteCommand *This,
+                     WINBOOL fNoShowUI);
 
     HRESULT (STDMETHODCALLTYPE *SetDirectory)(
-        IExecuteCommand *This,
-        LPCWSTR pszDirectory);
+                     IExecuteCommand *This,
+                     LPCWSTR pszDirectory);
 
     HRESULT (STDMETHODCALLTYPE *Execute)(
-        IExecuteCommand *This);
+                     IExecuteCommand *This);
 
     END_INTERFACE
 } IExecuteCommandVtbl;
@@ -3079,7 +3079,7 @@ MIDL_INTERFACE("000214ea-0000-0000-c000-000000000046")
 IPersistFolder : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        PCIDLIST_ABSOLUTE pidl) = 0;
+                     PCIDLIST_ABSOLUTE pidl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3091,25 +3091,25 @@ typedef struct IPersistFolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistFolder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistFolder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistFolder *This);
+                     IPersistFolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistFolder *This);
+                     IPersistFolder *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistFolder *This,
-        CLSID *pClassID);
+                     IPersistFolder *This,
+                     CLSID *pClassID);
 
     /*** IPersistFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IPersistFolder *This,
-        PCIDLIST_ABSOLUTE pidl);
+                     IPersistFolder *This,
+                     PCIDLIST_ABSOLUTE pidl);
 
     END_INTERFACE
 } IPersistFolderVtbl;
@@ -3158,10 +3158,10 @@ static FORCEINLINE HRESULT IPersistFolder_Initialize(IPersistFolder* This,PCIDLI
 typedef IPersistFolder *LPPERSISTFOLDER;
 
 #define IRTIR_TASK_NOT_RUNNING   0
-#define IRTIR_TASK_RUNNING       1
+#define IRTIR_TASK_RUNNING                    1
 #define IRTIR_TASK_SUSPENDED     2
-#define IRTIR_TASK_PENDING       3
-#define IRTIR_TASK_FINISHED      4
+#define IRTIR_TASK_PENDING                    3
+#define IRTIR_TASK_FINISHED                   4
 
 /*****************************************************************************
  * IRunnableTask interface
@@ -3175,19 +3175,19 @@ MIDL_INTERFACE("85788d00-6807-11d0-b810-00c04fd706ec")
 IRunnableTask : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Run(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Kill(
-        WINBOOL bWait) = 0;
+                     WINBOOL bWait) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Suspend(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
     virtual ULONG STDMETHODCALLTYPE IsRunning(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3199,32 +3199,32 @@ typedef struct IRunnableTaskVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRunnableTask *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRunnableTask *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRunnableTask *This);
+                     IRunnableTask *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRunnableTask *This);
+                     IRunnableTask *This);
 
     /*** IRunnableTask methods ***/
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IRunnableTask *This);
+                     IRunnableTask *This);
 
     HRESULT (STDMETHODCALLTYPE *Kill)(
-        IRunnableTask *This,
-        WINBOOL bWait);
+                     IRunnableTask *This,
+                     WINBOOL bWait);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IRunnableTask *This);
+                     IRunnableTask *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IRunnableTask *This);
+                     IRunnableTask *This);
 
     ULONG (STDMETHODCALLTYPE *IsRunning)(
-        IRunnableTask *This);
+                     IRunnableTask *This);
 
     END_INTERFACE
 } IRunnableTaskVtbl;
@@ -3309,22 +3309,22 @@ MIDL_INTERFACE("6ccb7be0-6807-11d0-b810-00c04fd706ec")
 IShellTaskScheduler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddTask(
-        IRunnableTask *prt,
-        REFTASKOWNERID rtoid,
-        DWORD_PTR lParam,
-        DWORD dwPriority) = 0;
+                     IRunnableTask *prt,
+                     REFTASKOWNERID rtoid,
+                     DWORD_PTR lParam,
+                     DWORD dwPriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveTasks(
-        REFTASKOWNERID rtoid,
-        DWORD_PTR lParam,
-        WINBOOL bWaitIfRunning) = 0;
+                     REFTASKOWNERID rtoid,
+                     DWORD_PTR lParam,
+                     WINBOOL bWaitIfRunning) = 0;
 
     virtual UINT STDMETHODCALLTYPE CountTasks(
-        REFTASKOWNERID rtoid) = 0;
+                     REFTASKOWNERID rtoid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Status(
-        DWORD dwReleaseStatus,
-        DWORD dwThreadTimeout) = 0;
+                     DWORD dwReleaseStatus,
+                     DWORD dwThreadTimeout) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3336,38 +3336,38 @@ typedef struct IShellTaskSchedulerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellTaskScheduler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellTaskScheduler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellTaskScheduler *This);
+                     IShellTaskScheduler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellTaskScheduler *This);
+                     IShellTaskScheduler *This);
 
     /*** IShellTaskScheduler methods ***/
     HRESULT (STDMETHODCALLTYPE *AddTask)(
-        IShellTaskScheduler *This,
-        IRunnableTask *prt,
-        REFTASKOWNERID rtoid,
-        DWORD_PTR lParam,
-        DWORD dwPriority);
+                     IShellTaskScheduler *This,
+                     IRunnableTask *prt,
+                     REFTASKOWNERID rtoid,
+                     DWORD_PTR lParam,
+                     DWORD dwPriority);
 
     HRESULT (STDMETHODCALLTYPE *RemoveTasks)(
-        IShellTaskScheduler *This,
-        REFTASKOWNERID rtoid,
-        DWORD_PTR lParam,
-        WINBOOL bWaitIfRunning);
+                     IShellTaskScheduler *This,
+                     REFTASKOWNERID rtoid,
+                     DWORD_PTR lParam,
+                     WINBOOL bWaitIfRunning);
 
     UINT (STDMETHODCALLTYPE *CountTasks)(
-        IShellTaskScheduler *This,
-        REFTASKOWNERID rtoid);
+                     IShellTaskScheduler *This,
+                     REFTASKOWNERID rtoid);
 
     HRESULT (STDMETHODCALLTYPE *Status)(
-        IShellTaskScheduler *This,
-        DWORD dwReleaseStatus,
-        DWORD dwThreadTimeout);
+                     IShellTaskScheduler *This,
+                     DWORD dwReleaseStatus,
+                     DWORD dwThreadTimeout);
 
     END_INTERFACE
 } IShellTaskSchedulerVtbl;
@@ -3434,10 +3434,10 @@ MIDL_INTERFACE("c7b236ce-ee80-11d0-985f-006008059382")
 IQueryCodePage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCodePage(
-        UINT *puiCodePage) = 0;
+                     UINT *puiCodePage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCodePage(
-        UINT uiCodePage) = 0;
+                     UINT uiCodePage) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3449,24 +3449,24 @@ typedef struct IQueryCodePageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IQueryCodePage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IQueryCodePage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IQueryCodePage *This);
+                     IQueryCodePage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IQueryCodePage *This);
+                     IQueryCodePage *This);
 
     /*** IQueryCodePage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCodePage)(
-        IQueryCodePage *This,
-        UINT *puiCodePage);
+                     IQueryCodePage *This,
+                     UINT *puiCodePage);
 
     HRESULT (STDMETHODCALLTYPE *SetCodePage)(
-        IQueryCodePage *This,
-        UINT uiCodePage);
+                     IQueryCodePage *This,
+                     UINT uiCodePage);
 
     END_INTERFACE
 } IQueryCodePageVtbl;
@@ -3523,7 +3523,7 @@ MIDL_INTERFACE("1ac3d9f0-175c-11d1-95be-00609797ea4f")
 IPersistFolder2 : public IPersistFolder
 {
     virtual HRESULT STDMETHODCALLTYPE GetCurFolder(
-        PIDLIST_ABSOLUTE *ppidl) = 0;
+                     PIDLIST_ABSOLUTE *ppidl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3535,30 +3535,30 @@ typedef struct IPersistFolder2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistFolder2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistFolder2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistFolder2 *This);
+                     IPersistFolder2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistFolder2 *This);
+                     IPersistFolder2 *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistFolder2 *This,
-        CLSID *pClassID);
+                     IPersistFolder2 *This,
+                     CLSID *pClassID);
 
     /*** IPersistFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IPersistFolder2 *This,
-        PCIDLIST_ABSOLUTE pidl);
+                     IPersistFolder2 *This,
+                     PCIDLIST_ABSOLUTE pidl);
 
     /*** IPersistFolder2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurFolder)(
-        IPersistFolder2 *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IPersistFolder2 *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     END_INTERFACE
 } IPersistFolder2Vtbl;
@@ -3635,12 +3635,12 @@ MIDL_INTERFACE("cef04fdf-fe72-11d2-87a5-00c04f6837cf")
 IPersistFolder3 : public IPersistFolder2
 {
     virtual HRESULT STDMETHODCALLTYPE InitializeEx(
-        IBindCtx *pbc,
-        PCIDLIST_ABSOLUTE pidlRoot,
-        const PERSIST_FOLDER_TARGET_INFO *ppfti) = 0;
+                     IBindCtx *pbc,
+                     PCIDLIST_ABSOLUTE pidlRoot,
+                     const PERSIST_FOLDER_TARGET_INFO *ppfti) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderTargetInfo(
-        PERSIST_FOLDER_TARGET_INFO *ppfti) = 0;
+                     PERSIST_FOLDER_TARGET_INFO *ppfti) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3652,41 +3652,41 @@ typedef struct IPersistFolder3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistFolder3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistFolder3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistFolder3 *This);
+                     IPersistFolder3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistFolder3 *This);
+                     IPersistFolder3 *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistFolder3 *This,
-        CLSID *pClassID);
+                     IPersistFolder3 *This,
+                     CLSID *pClassID);
 
     /*** IPersistFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IPersistFolder3 *This,
-        PCIDLIST_ABSOLUTE pidl);
+                     IPersistFolder3 *This,
+                     PCIDLIST_ABSOLUTE pidl);
 
     /*** IPersistFolder2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurFolder)(
-        IPersistFolder3 *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IPersistFolder3 *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     /*** IPersistFolder3 methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializeEx)(
-        IPersistFolder3 *This,
-        IBindCtx *pbc,
-        PCIDLIST_ABSOLUTE pidlRoot,
-        const PERSIST_FOLDER_TARGET_INFO *ppfti);
+                     IPersistFolder3 *This,
+                     IBindCtx *pbc,
+                     PCIDLIST_ABSOLUTE pidlRoot,
+                     const PERSIST_FOLDER_TARGET_INFO *ppfti);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderTargetInfo)(
-        IPersistFolder3 *This,
-        PERSIST_FOLDER_TARGET_INFO *ppfti);
+                     IPersistFolder3 *This,
+                     PERSIST_FOLDER_TARGET_INFO *ppfti);
 
     END_INTERFACE
 } IPersistFolder3Vtbl;
@@ -3761,10 +3761,10 @@ MIDL_INTERFACE("1079acfc-29bd-11d3-8e0d-00c04f6837d5")
 IPersistIDList : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE SetIDList(
-        PCIDLIST_ABSOLUTE pidl) = 0;
+                     PCIDLIST_ABSOLUTE pidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIDList(
-        PIDLIST_ABSOLUTE *ppidl) = 0;
+                     PIDLIST_ABSOLUTE *ppidl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3776,29 +3776,29 @@ typedef struct IPersistIDListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistIDList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistIDList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistIDList *This);
+                     IPersistIDList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistIDList *This);
+                     IPersistIDList *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistIDList *This,
-        CLSID *pClassID);
+                     IPersistIDList *This,
+                     CLSID *pClassID);
 
     /*** IPersistIDList methods ***/
     HRESULT (STDMETHODCALLTYPE *SetIDList)(
-        IPersistIDList *This,
-        PCIDLIST_ABSOLUTE pidl);
+                     IPersistIDList *This,
+                     PCIDLIST_ABSOLUTE pidl);
 
     HRESULT (STDMETHODCALLTYPE *GetIDList)(
-        IPersistIDList *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IPersistIDList *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     END_INTERFACE
 } IPersistIDListVtbl;
@@ -3861,18 +3861,18 @@ MIDL_INTERFACE("000214f2-0000-0000-c000-000000000046")
 IEnumIDList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        PITEMID_CHILD *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     PITEMID_CHILD *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumIDList **ppenum) = 0;
+                     IEnumIDList **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3884,33 +3884,33 @@ typedef struct IEnumIDListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumIDList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumIDList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumIDList *This);
+                     IEnumIDList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumIDList *This);
+                     IEnumIDList *This);
 
     /*** IEnumIDList methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumIDList *This,
-        ULONG celt,
-        PITEMID_CHILD *rgelt,
-        ULONG *pceltFetched);
+                     IEnumIDList *This,
+                     ULONG celt,
+                     PITEMID_CHILD *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumIDList *This,
-        ULONG celt);
+                     IEnumIDList *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumIDList *This);
+                     IEnumIDList *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumIDList *This,
-        IEnumIDList **ppenum);
+                     IEnumIDList *This,
+                     IEnumIDList **ppenum);
 
     END_INTERFACE
 } IEnumIDListVtbl;
@@ -3996,18 +3996,18 @@ MIDL_INTERFACE("d0191542-7954-4908-bc06-b2360bbe45ba")
 IEnumFullIDList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        PIDLIST_ABSOLUTE *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     PIDLIST_ABSOLUTE *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumFullIDList **ppenum) = 0;
+                     IEnumFullIDList **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4019,33 +4019,33 @@ typedef struct IEnumFullIDListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumFullIDList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumFullIDList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumFullIDList *This);
+                     IEnumFullIDList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumFullIDList *This);
+                     IEnumFullIDList *This);
 
     /*** IEnumFullIDList methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumFullIDList *This,
-        ULONG celt,
-        PIDLIST_ABSOLUTE *rgelt,
-        ULONG *pceltFetched);
+                     IEnumFullIDList *This,
+                     ULONG celt,
+                     PIDLIST_ABSOLUTE *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumFullIDList *This,
-        ULONG celt);
+                     IEnumFullIDList *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumFullIDList *This);
+                     IEnumFullIDList *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumFullIDList *This,
-        IEnumFullIDList **ppenum);
+                     IEnumFullIDList *This,
+                     IEnumFullIDList **ppenum);
 
     END_INTERFACE
 } IEnumFullIDListVtbl;
@@ -4243,10 +4243,10 @@ MIDL_INTERFACE("6a9d9026-0e6e-464c-b000-42ecc07de673")
 IObjectWithFolderEnumMode : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetMode(
-        FOLDER_ENUM_MODE feMode) = 0;
+                     FOLDER_ENUM_MODE feMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMode(
-        FOLDER_ENUM_MODE *pfeMode) = 0;
+                     FOLDER_ENUM_MODE *pfeMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4258,24 +4258,24 @@ typedef struct IObjectWithFolderEnumModeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectWithFolderEnumMode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectWithFolderEnumMode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectWithFolderEnumMode *This);
+                     IObjectWithFolderEnumMode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectWithFolderEnumMode *This);
+                     IObjectWithFolderEnumMode *This);
 
     /*** IObjectWithFolderEnumMode methods ***/
     HRESULT (STDMETHODCALLTYPE *SetMode)(
-        IObjectWithFolderEnumMode *This,
-        FOLDER_ENUM_MODE feMode);
+                     IObjectWithFolderEnumMode *This,
+                     FOLDER_ENUM_MODE feMode);
 
     HRESULT (STDMETHODCALLTYPE *GetMode)(
-        IObjectWithFolderEnumMode *This,
-        FOLDER_ENUM_MODE *pfeMode);
+                     IObjectWithFolderEnumMode *This,
+                     FOLDER_ENUM_MODE *pfeMode);
 
     END_INTERFACE
 } IObjectWithFolderEnumModeVtbl;
@@ -4348,11 +4348,11 @@ MIDL_INTERFACE("67efed0e-e827-4408-b493-78f3982b685c")
 IParseAndCreateItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetItem(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItem(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4364,25 +4364,25 @@ typedef struct IParseAndCreateItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IParseAndCreateItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IParseAndCreateItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IParseAndCreateItem *This);
+                     IParseAndCreateItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IParseAndCreateItem *This);
+                     IParseAndCreateItem *This);
 
     /*** IParseAndCreateItem methods ***/
     HRESULT (STDMETHODCALLTYPE *SetItem)(
-        IParseAndCreateItem *This,
-        IShellItem *psi);
+                     IParseAndCreateItem *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IParseAndCreateItem *This,
-        REFIID riid,
-        void **ppv);
+                     IParseAndCreateItem *This,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IParseAndCreateItemVtbl;
@@ -4451,64 +4451,64 @@ MIDL_INTERFACE("000214e6-0000-0000-c000-000000000046")
 IShellFolder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseDisplayName(
-        HWND hwnd,
-        IBindCtx *pbc,
-        LPWSTR pszDisplayName,
-        ULONG *pchEaten,
-        PIDLIST_RELATIVE *ppidl,
-        ULONG *pdwAttributes) = 0;
+                     HWND hwnd,
+                     IBindCtx *pbc,
+                     LPWSTR pszDisplayName,
+                     ULONG *pchEaten,
+                     PIDLIST_RELATIVE *ppidl,
+                     ULONG *pdwAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumObjects(
-        HWND hwnd,
-        SHCONTF grfFlags,
-        IEnumIDList **ppenumIDList) = 0;
+                     HWND hwnd,
+                     SHCONTF grfFlags,
+                     IEnumIDList **ppenumIDList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BindToObject(
-        PCUIDLIST_RELATIVE pidl,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppv) = 0;
+                     PCUIDLIST_RELATIVE pidl,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BindToStorage(
-        PCUIDLIST_RELATIVE pidl,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppv) = 0;
+                     PCUIDLIST_RELATIVE pidl,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompareIDs(
-        LPARAM lParam,
-        PCUIDLIST_RELATIVE pidl1,
-        PCUIDLIST_RELATIVE pidl2) = 0;
+                     LPARAM lParam,
+                     PCUIDLIST_RELATIVE pidl1,
+                     PCUIDLIST_RELATIVE pidl2) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateViewObject(
-        HWND hwndOwner,
-        REFIID riid,
-        void **ppv) = 0;
+                     HWND hwndOwner,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAttributesOf(
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        SFGAOF *rgfInOut) = 0;
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     SFGAOF *rgfInOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUIObjectOf(
-        HWND hwndOwner,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        REFIID riid,
-        UINT *rgfReserved,
-        void **ppv) = 0;
+                     HWND hwndOwner,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     REFIID riid,
+                     UINT *rgfReserved,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayNameOf(
-        PCUITEMID_CHILD pidl,
-        SHGDNF uFlags,
-        STRRET *pName) = 0;
+                     PCUITEMID_CHILD pidl,
+                     SHGDNF uFlags,
+                     STRRET *pName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNameOf(
-        HWND hwnd,
-        PCUITEMID_CHILD pidl,
-        LPCWSTR pszName,
-        SHGDNF uFlags,
-        PITEMID_CHILD *ppidlOut) = 0;
+                     HWND hwnd,
+                     PCUITEMID_CHILD pidl,
+                     LPCWSTR pszName,
+                     SHGDNF uFlags,
+                     PITEMID_CHILD *ppidlOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4520,86 +4520,86 @@ typedef struct IShellFolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellFolder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellFolder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellFolder *This);
+                     IShellFolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellFolder *This);
+                     IShellFolder *This);
 
     /*** IShellFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseDisplayName)(
-        IShellFolder *This,
-        HWND hwnd,
-        IBindCtx *pbc,
-        LPWSTR pszDisplayName,
-        ULONG *pchEaten,
-        PIDLIST_RELATIVE *ppidl,
-        ULONG *pdwAttributes);
+                     IShellFolder *This,
+                     HWND hwnd,
+                     IBindCtx *pbc,
+                     LPWSTR pszDisplayName,
+                     ULONG *pchEaten,
+                     PIDLIST_RELATIVE *ppidl,
+                     ULONG *pdwAttributes);
 
     HRESULT (STDMETHODCALLTYPE *EnumObjects)(
-        IShellFolder *This,
-        HWND hwnd,
-        SHCONTF grfFlags,
-        IEnumIDList **ppenumIDList);
+                     IShellFolder *This,
+                     HWND hwnd,
+                     SHCONTF grfFlags,
+                     IEnumIDList **ppenumIDList);
 
     HRESULT (STDMETHODCALLTYPE *BindToObject)(
-        IShellFolder *This,
-        PCUIDLIST_RELATIVE pidl,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppv);
+                     IShellFolder *This,
+                     PCUIDLIST_RELATIVE pidl,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *BindToStorage)(
-        IShellFolder *This,
-        PCUIDLIST_RELATIVE pidl,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppv);
+                     IShellFolder *This,
+                     PCUIDLIST_RELATIVE pidl,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CompareIDs)(
-        IShellFolder *This,
-        LPARAM lParam,
-        PCUIDLIST_RELATIVE pidl1,
-        PCUIDLIST_RELATIVE pidl2);
+                     IShellFolder *This,
+                     LPARAM lParam,
+                     PCUIDLIST_RELATIVE pidl1,
+                     PCUIDLIST_RELATIVE pidl2);
 
     HRESULT (STDMETHODCALLTYPE *CreateViewObject)(
-        IShellFolder *This,
-        HWND hwndOwner,
-        REFIID riid,
-        void **ppv);
+                     IShellFolder *This,
+                     HWND hwndOwner,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetAttributesOf)(
-        IShellFolder *This,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        SFGAOF *rgfInOut);
+                     IShellFolder *This,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     SFGAOF *rgfInOut);
 
     HRESULT (STDMETHODCALLTYPE *GetUIObjectOf)(
-        IShellFolder *This,
-        HWND hwndOwner,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        REFIID riid,
-        UINT *rgfReserved,
-        void **ppv);
+                     IShellFolder *This,
+                     HWND hwndOwner,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     REFIID riid,
+                     UINT *rgfReserved,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayNameOf)(
-        IShellFolder *This,
-        PCUITEMID_CHILD pidl,
-        SHGDNF uFlags,
-        STRRET *pName);
+                     IShellFolder *This,
+                     PCUITEMID_CHILD pidl,
+                     SHGDNF uFlags,
+                     STRRET *pName);
 
     HRESULT (STDMETHODCALLTYPE *SetNameOf)(
-        IShellFolder *This,
-        HWND hwnd,
-        PCUITEMID_CHILD pidl,
-        LPCWSTR pszName,
-        SHGDNF uFlags,
-        PITEMID_CHILD *ppidlOut);
+                     IShellFolder *This,
+                     HWND hwnd,
+                     PCUITEMID_CHILD pidl,
+                     LPCWSTR pszName,
+                     SHGDNF uFlags,
+                     PITEMID_CHILD *ppidlOut);
 
     END_INTERFACE
 } IShellFolderVtbl;
@@ -4722,18 +4722,18 @@ MIDL_INTERFACE("0e700be1-9db6-11d1-a1ce-00c04fd75d13")
 IEnumExtraSearch : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        EXTRASEARCH *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     EXTRASEARCH *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumExtraSearch **ppenum) = 0;
+                     IEnumExtraSearch **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4745,33 +4745,33 @@ typedef struct IEnumExtraSearchVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumExtraSearch *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumExtraSearch *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumExtraSearch *This);
+                     IEnumExtraSearch *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumExtraSearch *This);
+                     IEnumExtraSearch *This);
 
     /*** IEnumExtraSearch methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumExtraSearch *This,
-        ULONG celt,
-        EXTRASEARCH *rgelt,
-        ULONG *pceltFetched);
+                     IEnumExtraSearch *This,
+                     ULONG celt,
+                     EXTRASEARCH *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumExtraSearch *This,
-        ULONG celt);
+                     IEnumExtraSearch *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumExtraSearch *This);
+                     IEnumExtraSearch *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumExtraSearch *This,
-        IEnumExtraSearch **ppenum);
+                     IEnumExtraSearch *This,
+                     IEnumExtraSearch **ppenum);
 
     END_INTERFACE
 } IEnumExtraSearchVtbl;
@@ -4837,33 +4837,33 @@ MIDL_INTERFACE("93f2f68c-1d1b-11d3-a30e-00c04f79abd1")
 IShellFolder2 : public IShellFolder
 {
     virtual HRESULT STDMETHODCALLTYPE GetDefaultSearchGUID(
-        GUID *pguid) = 0;
+                     GUID *pguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumSearches(
-        IEnumExtraSearch **ppenum) = 0;
+                     IEnumExtraSearch **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultColumn(
-        DWORD dwRes,
-        ULONG *pSort,
-        ULONG *pDisplay) = 0;
+                     DWORD dwRes,
+                     ULONG *pSort,
+                     ULONG *pDisplay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultColumnState(
-        UINT iColumn,
-        SHCOLSTATEF *pcsFlags) = 0;
+                     UINT iColumn,
+                     SHCOLSTATEF *pcsFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDetailsEx(
-        PCUITEMID_CHILD pidl,
-        const SHCOLUMNID *pscid,
-        VARIANT *pv) = 0;
+                     PCUITEMID_CHILD pidl,
+                     const SHCOLUMNID *pscid,
+                     VARIANT *pv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDetailsOf(
-        PCUITEMID_CHILD pidl,
-        UINT iColumn,
-        SHELLDETAILS *psd) = 0;
+                     PCUITEMID_CHILD pidl,
+                     UINT iColumn,
+                     SHELLDETAILS *psd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MapColumnToSCID(
-        UINT iColumn,
-        SHCOLUMNID *pscid) = 0;
+                     UINT iColumn,
+                     SHCOLUMNID *pscid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4875,123 +4875,123 @@ typedef struct IShellFolder2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellFolder2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellFolder2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellFolder2 *This);
+                     IShellFolder2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellFolder2 *This);
+                     IShellFolder2 *This);
 
     /*** IShellFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseDisplayName)(
-        IShellFolder2 *This,
-        HWND hwnd,
-        IBindCtx *pbc,
-        LPWSTR pszDisplayName,
-        ULONG *pchEaten,
-        PIDLIST_RELATIVE *ppidl,
-        ULONG *pdwAttributes);
+                     IShellFolder2 *This,
+                     HWND hwnd,
+                     IBindCtx *pbc,
+                     LPWSTR pszDisplayName,
+                     ULONG *pchEaten,
+                     PIDLIST_RELATIVE *ppidl,
+                     ULONG *pdwAttributes);
 
     HRESULT (STDMETHODCALLTYPE *EnumObjects)(
-        IShellFolder2 *This,
-        HWND hwnd,
-        SHCONTF grfFlags,
-        IEnumIDList **ppenumIDList);
+                     IShellFolder2 *This,
+                     HWND hwnd,
+                     SHCONTF grfFlags,
+                     IEnumIDList **ppenumIDList);
 
     HRESULT (STDMETHODCALLTYPE *BindToObject)(
-        IShellFolder2 *This,
-        PCUIDLIST_RELATIVE pidl,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppv);
+                     IShellFolder2 *This,
+                     PCUIDLIST_RELATIVE pidl,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *BindToStorage)(
-        IShellFolder2 *This,
-        PCUIDLIST_RELATIVE pidl,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppv);
+                     IShellFolder2 *This,
+                     PCUIDLIST_RELATIVE pidl,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CompareIDs)(
-        IShellFolder2 *This,
-        LPARAM lParam,
-        PCUIDLIST_RELATIVE pidl1,
-        PCUIDLIST_RELATIVE pidl2);
+                     IShellFolder2 *This,
+                     LPARAM lParam,
+                     PCUIDLIST_RELATIVE pidl1,
+                     PCUIDLIST_RELATIVE pidl2);
 
     HRESULT (STDMETHODCALLTYPE *CreateViewObject)(
-        IShellFolder2 *This,
-        HWND hwndOwner,
-        REFIID riid,
-        void **ppv);
+                     IShellFolder2 *This,
+                     HWND hwndOwner,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetAttributesOf)(
-        IShellFolder2 *This,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        SFGAOF *rgfInOut);
+                     IShellFolder2 *This,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     SFGAOF *rgfInOut);
 
     HRESULT (STDMETHODCALLTYPE *GetUIObjectOf)(
-        IShellFolder2 *This,
-        HWND hwndOwner,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        REFIID riid,
-        UINT *rgfReserved,
-        void **ppv);
+                     IShellFolder2 *This,
+                     HWND hwndOwner,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     REFIID riid,
+                     UINT *rgfReserved,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayNameOf)(
-        IShellFolder2 *This,
-        PCUITEMID_CHILD pidl,
-        SHGDNF uFlags,
-        STRRET *pName);
+                     IShellFolder2 *This,
+                     PCUITEMID_CHILD pidl,
+                     SHGDNF uFlags,
+                     STRRET *pName);
 
     HRESULT (STDMETHODCALLTYPE *SetNameOf)(
-        IShellFolder2 *This,
-        HWND hwnd,
-        PCUITEMID_CHILD pidl,
-        LPCWSTR pszName,
-        SHGDNF uFlags,
-        PITEMID_CHILD *ppidlOut);
+                     IShellFolder2 *This,
+                     HWND hwnd,
+                     PCUITEMID_CHILD pidl,
+                     LPCWSTR pszName,
+                     SHGDNF uFlags,
+                     PITEMID_CHILD *ppidlOut);
 
     /*** IShellFolder2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDefaultSearchGUID)(
-        IShellFolder2 *This,
-        GUID *pguid);
+                     IShellFolder2 *This,
+                     GUID *pguid);
 
     HRESULT (STDMETHODCALLTYPE *EnumSearches)(
-        IShellFolder2 *This,
-        IEnumExtraSearch **ppenum);
+                     IShellFolder2 *This,
+                     IEnumExtraSearch **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultColumn)(
-        IShellFolder2 *This,
-        DWORD dwRes,
-        ULONG *pSort,
-        ULONG *pDisplay);
+                     IShellFolder2 *This,
+                     DWORD dwRes,
+                     ULONG *pSort,
+                     ULONG *pDisplay);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultColumnState)(
-        IShellFolder2 *This,
-        UINT iColumn,
-        SHCOLSTATEF *pcsFlags);
+                     IShellFolder2 *This,
+                     UINT iColumn,
+                     SHCOLSTATEF *pcsFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetDetailsEx)(
-        IShellFolder2 *This,
-        PCUITEMID_CHILD pidl,
-        const SHCOLUMNID *pscid,
-        VARIANT *pv);
+                     IShellFolder2 *This,
+                     PCUITEMID_CHILD pidl,
+                     const SHCOLUMNID *pscid,
+                     VARIANT *pv);
 
     HRESULT (STDMETHODCALLTYPE *GetDetailsOf)(
-        IShellFolder2 *This,
-        PCUITEMID_CHILD pidl,
-        UINT iColumn,
-        SHELLDETAILS *psd);
+                     IShellFolder2 *This,
+                     PCUITEMID_CHILD pidl,
+                     UINT iColumn,
+                     SHELLDETAILS *psd);
 
     HRESULT (STDMETHODCALLTYPE *MapColumnToSCID)(
-        IShellFolder2 *This,
-        UINT iColumn,
-        SHCOLUMNID *pscid);
+                     IShellFolder2 *This,
+                     UINT iColumn,
+                     SHCOLUMNID *pscid);
 
     END_INTERFACE
 } IShellFolder2Vtbl;
@@ -5196,11 +5196,11 @@ MIDL_INTERFACE("3cc974d2-b302-4d36-ad3e-06d93f695d3f")
 IFolderViewOptions : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFolderViewOptions(
-        FOLDERVIEWOPTIONS fvoMask,
-        FOLDERVIEWOPTIONS fvoFlags) = 0;
+                     FOLDERVIEWOPTIONS fvoMask,
+                     FOLDERVIEWOPTIONS fvoFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderViewOptions(
-        FOLDERVIEWOPTIONS *pfvoFlags) = 0;
+                     FOLDERVIEWOPTIONS *pfvoFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5212,25 +5212,25 @@ typedef struct IFolderViewOptionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFolderViewOptions *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFolderViewOptions *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFolderViewOptions *This);
+                     IFolderViewOptions *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFolderViewOptions *This);
+                     IFolderViewOptions *This);
 
     /*** IFolderViewOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFolderViewOptions)(
-        IFolderViewOptions *This,
-        FOLDERVIEWOPTIONS fvoMask,
-        FOLDERVIEWOPTIONS fvoFlags);
+                     IFolderViewOptions *This,
+                     FOLDERVIEWOPTIONS fvoMask,
+                     FOLDERVIEWOPTIONS fvoFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderViewOptions)(
-        IFolderViewOptions *This,
-        FOLDERVIEWOPTIONS *pfvoFlags);
+                     IFolderViewOptions *This,
+                     FOLDERVIEWOPTIONS *pfvoFlags);
 
     END_INTERFACE
 } IFolderViewOptionsVtbl;
@@ -5346,46 +5346,46 @@ MIDL_INTERFACE("000214e3-0000-0000-c000-000000000046")
 IShellView : public IOleWindow
 {
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        MSG *pmsg) = 0;
+                     MSG *pmsg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableModeless(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UIActivate(
-        UINT uState) = 0;
+                     UINT uState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Refresh(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateViewWindow(
-        IShellView *psvPrevious,
-        LPCFOLDERSETTINGS pfs,
-        IShellBrowser *psb,
-        RECT *prcView,
-        HWND *phWnd) = 0;
+                     IShellView *psvPrevious,
+                     LPCFOLDERSETTINGS pfs,
+                     IShellBrowser *psb,
+                     RECT *prcView,
+                     HWND *phWnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DestroyViewWindow(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentInfo(
-        LPFOLDERSETTINGS pfs) = 0;
+                     LPFOLDERSETTINGS pfs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPropertySheetPages(
-        DWORD dwReserved,
-        LPFNSVADDPROPSHEETPAGE pfn,
-        LPARAM lparam) = 0;
+                     DWORD dwReserved,
+                     LPFNSVADDPROPSHEETPAGE pfn,
+                     LPARAM lparam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveViewState(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectItem(
-        PCUITEMID_CHILD pidlItem,
-        SVSIF uFlags) = 0;
+                     PCUITEMID_CHILD pidlItem,
+                     SVSIF uFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemObject(
-        UINT uItem,
-        REFIID riid,
-        void **ppv) = 0;
+                     UINT uItem,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5397,75 +5397,75 @@ typedef struct IShellViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellView *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellView *This);
+                     IShellView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellView *This);
+                     IShellView *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IShellView *This,
-        HWND *phwnd);
+                     IShellView *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IShellView *This,
-        WINBOOL fEnterMode);
+                     IShellView *This,
+                     WINBOOL fEnterMode);
 
     /*** IShellView methods ***/
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IShellView *This,
-        MSG *pmsg);
+                     IShellView *This,
+                     MSG *pmsg);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IShellView *This,
-        WINBOOL fEnable);
+                     IShellView *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *UIActivate)(
-        IShellView *This,
-        UINT uState);
+                     IShellView *This,
+                     UINT uState);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IShellView *This);
+                     IShellView *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateViewWindow)(
-        IShellView *This,
-        IShellView *psvPrevious,
-        LPCFOLDERSETTINGS pfs,
-        IShellBrowser *psb,
-        RECT *prcView,
-        HWND *phWnd);
+                     IShellView *This,
+                     IShellView *psvPrevious,
+                     LPCFOLDERSETTINGS pfs,
+                     IShellBrowser *psb,
+                     RECT *prcView,
+                     HWND *phWnd);
 
     HRESULT (STDMETHODCALLTYPE *DestroyViewWindow)(
-        IShellView *This);
+                     IShellView *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentInfo)(
-        IShellView *This,
-        LPFOLDERSETTINGS pfs);
+                     IShellView *This,
+                     LPFOLDERSETTINGS pfs);
 
     HRESULT (STDMETHODCALLTYPE *AddPropertySheetPages)(
-        IShellView *This,
-        DWORD dwReserved,
-        LPFNSVADDPROPSHEETPAGE pfn,
-        LPARAM lparam);
+                     IShellView *This,
+                     DWORD dwReserved,
+                     LPFNSVADDPROPSHEETPAGE pfn,
+                     LPARAM lparam);
 
     HRESULT (STDMETHODCALLTYPE *SaveViewState)(
-        IShellView *This);
+                     IShellView *This);
 
     HRESULT (STDMETHODCALLTYPE *SelectItem)(
-        IShellView *This,
-        PCUITEMID_CHILD pidlItem,
-        SVSIF uFlags);
+                     IShellView *This,
+                     PCUITEMID_CHILD pidlItem,
+                     SVSIF uFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetItemObject)(
-        IShellView *This,
-        UINT uItem,
-        REFIID riid,
-        void **ppv);
+                     IShellView *This,
+                     UINT uItem,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IShellViewVtbl;
@@ -5587,19 +5587,19 @@ MIDL_INTERFACE("88e39e80-3578-11cf-ae69-08002b2e1262")
 IShellView2 : public IShellView
 {
     virtual HRESULT STDMETHODCALLTYPE GetView(
-        SHELLVIEWID *pvid,
-        ULONG uView) = 0;
+                     SHELLVIEWID *pvid,
+                     ULONG uView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateViewWindow2(
-        LPSV2CVW2_PARAMS lpParams) = 0;
+                     LPSV2CVW2_PARAMS lpParams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HandleRename(
-        PCUITEMID_CHILD pidlNew) = 0;
+                     PCUITEMID_CHILD pidlNew) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectAndPositionItem(
-        PCUITEMID_CHILD pidlItem,
-        UINT uFlags,
-        POINT *ppt) = 0;
+                     PCUITEMID_CHILD pidlItem,
+                     UINT uFlags,
+                     POINT *ppt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5611,95 +5611,95 @@ typedef struct IShellView2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellView2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellView2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellView2 *This);
+                     IShellView2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellView2 *This);
+                     IShellView2 *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IShellView2 *This,
-        HWND *phwnd);
+                     IShellView2 *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IShellView2 *This,
-        WINBOOL fEnterMode);
+                     IShellView2 *This,
+                     WINBOOL fEnterMode);
 
     /*** IShellView methods ***/
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IShellView2 *This,
-        MSG *pmsg);
+                     IShellView2 *This,
+                     MSG *pmsg);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IShellView2 *This,
-        WINBOOL fEnable);
+                     IShellView2 *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *UIActivate)(
-        IShellView2 *This,
-        UINT uState);
+                     IShellView2 *This,
+                     UINT uState);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IShellView2 *This);
+                     IShellView2 *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateViewWindow)(
-        IShellView2 *This,
-        IShellView *psvPrevious,
-        LPCFOLDERSETTINGS pfs,
-        IShellBrowser *psb,
-        RECT *prcView,
-        HWND *phWnd);
+                     IShellView2 *This,
+                     IShellView *psvPrevious,
+                     LPCFOLDERSETTINGS pfs,
+                     IShellBrowser *psb,
+                     RECT *prcView,
+                     HWND *phWnd);
 
     HRESULT (STDMETHODCALLTYPE *DestroyViewWindow)(
-        IShellView2 *This);
+                     IShellView2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentInfo)(
-        IShellView2 *This,
-        LPFOLDERSETTINGS pfs);
+                     IShellView2 *This,
+                     LPFOLDERSETTINGS pfs);
 
     HRESULT (STDMETHODCALLTYPE *AddPropertySheetPages)(
-        IShellView2 *This,
-        DWORD dwReserved,
-        LPFNSVADDPROPSHEETPAGE pfn,
-        LPARAM lparam);
+                     IShellView2 *This,
+                     DWORD dwReserved,
+                     LPFNSVADDPROPSHEETPAGE pfn,
+                     LPARAM lparam);
 
     HRESULT (STDMETHODCALLTYPE *SaveViewState)(
-        IShellView2 *This);
+                     IShellView2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SelectItem)(
-        IShellView2 *This,
-        PCUITEMID_CHILD pidlItem,
-        SVSIF uFlags);
+                     IShellView2 *This,
+                     PCUITEMID_CHILD pidlItem,
+                     SVSIF uFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetItemObject)(
-        IShellView2 *This,
-        UINT uItem,
-        REFIID riid,
-        void **ppv);
+                     IShellView2 *This,
+                     UINT uItem,
+                     REFIID riid,
+                     void **ppv);
 
     /*** IShellView2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetView)(
-        IShellView2 *This,
-        SHELLVIEWID *pvid,
-        ULONG uView);
+                     IShellView2 *This,
+                     SHELLVIEWID *pvid,
+                     ULONG uView);
 
     HRESULT (STDMETHODCALLTYPE *CreateViewWindow2)(
-        IShellView2 *This,
-        LPSV2CVW2_PARAMS lpParams);
+                     IShellView2 *This,
+                     LPSV2CVW2_PARAMS lpParams);
 
     HRESULT (STDMETHODCALLTYPE *HandleRename)(
-        IShellView2 *This,
-        PCUITEMID_CHILD pidlNew);
+                     IShellView2 *This,
+                     PCUITEMID_CHILD pidlNew);
 
     HRESULT (STDMETHODCALLTYPE *SelectAndPositionItem)(
-        IShellView2 *This,
-        PCUITEMID_CHILD pidlItem,
-        UINT uFlags,
-        POINT *ppt);
+                     IShellView2 *This,
+                     PCUITEMID_CHILD pidlItem,
+                     UINT uFlags,
+                     POINT *ppt);
 
     END_INTERFACE
 } IShellView2Vtbl;
@@ -5830,15 +5830,15 @@ MIDL_INTERFACE("ec39fa88-f8af-41c5-8421-38bed28f4673")
 IShellView3 : public IShellView2
 {
     virtual HRESULT STDMETHODCALLTYPE CreateViewWindow3(
-        IShellBrowser *psbOwner,
-        IShellView *psvPrev,
-        SV3CVW3_FLAGS dwViewFlags,
-        FOLDERFLAGS dwMask,
-        FOLDERFLAGS dwFlags,
-        FOLDERVIEWMODE fvMode,
-        const SHELLVIEWID *pvid,
-        const RECT *prcView,
-        HWND *phwndView) = 0;
+                     IShellBrowser *psbOwner,
+                     IShellView *psvPrev,
+                     SV3CVW3_FLAGS dwViewFlags,
+                     FOLDERFLAGS dwMask,
+                     FOLDERFLAGS dwFlags,
+                     FOLDERVIEWMODE fvMode,
+                     const SHELLVIEWID *pvid,
+                     const RECT *prcView,
+                     HWND *phwndView) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5850,108 +5850,108 @@ typedef struct IShellView3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellView3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellView3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellView3 *This);
+                     IShellView3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellView3 *This);
+                     IShellView3 *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IShellView3 *This,
-        HWND *phwnd);
+                     IShellView3 *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IShellView3 *This,
-        WINBOOL fEnterMode);
+                     IShellView3 *This,
+                     WINBOOL fEnterMode);
 
     /*** IShellView methods ***/
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IShellView3 *This,
-        MSG *pmsg);
+                     IShellView3 *This,
+                     MSG *pmsg);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IShellView3 *This,
-        WINBOOL fEnable);
+                     IShellView3 *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *UIActivate)(
-        IShellView3 *This,
-        UINT uState);
+                     IShellView3 *This,
+                     UINT uState);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IShellView3 *This);
+                     IShellView3 *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateViewWindow)(
-        IShellView3 *This,
-        IShellView *psvPrevious,
-        LPCFOLDERSETTINGS pfs,
-        IShellBrowser *psb,
-        RECT *prcView,
-        HWND *phWnd);
+                     IShellView3 *This,
+                     IShellView *psvPrevious,
+                     LPCFOLDERSETTINGS pfs,
+                     IShellBrowser *psb,
+                     RECT *prcView,
+                     HWND *phWnd);
 
     HRESULT (STDMETHODCALLTYPE *DestroyViewWindow)(
-        IShellView3 *This);
+                     IShellView3 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentInfo)(
-        IShellView3 *This,
-        LPFOLDERSETTINGS pfs);
+                     IShellView3 *This,
+                     LPFOLDERSETTINGS pfs);
 
     HRESULT (STDMETHODCALLTYPE *AddPropertySheetPages)(
-        IShellView3 *This,
-        DWORD dwReserved,
-        LPFNSVADDPROPSHEETPAGE pfn,
-        LPARAM lparam);
+                     IShellView3 *This,
+                     DWORD dwReserved,
+                     LPFNSVADDPROPSHEETPAGE pfn,
+                     LPARAM lparam);
 
     HRESULT (STDMETHODCALLTYPE *SaveViewState)(
-        IShellView3 *This);
+                     IShellView3 *This);
 
     HRESULT (STDMETHODCALLTYPE *SelectItem)(
-        IShellView3 *This,
-        PCUITEMID_CHILD pidlItem,
-        SVSIF uFlags);
+                     IShellView3 *This,
+                     PCUITEMID_CHILD pidlItem,
+                     SVSIF uFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetItemObject)(
-        IShellView3 *This,
-        UINT uItem,
-        REFIID riid,
-        void **ppv);
+                     IShellView3 *This,
+                     UINT uItem,
+                     REFIID riid,
+                     void **ppv);
 
     /*** IShellView2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetView)(
-        IShellView3 *This,
-        SHELLVIEWID *pvid,
-        ULONG uView);
+                     IShellView3 *This,
+                     SHELLVIEWID *pvid,
+                     ULONG uView);
 
     HRESULT (STDMETHODCALLTYPE *CreateViewWindow2)(
-        IShellView3 *This,
-        LPSV2CVW2_PARAMS lpParams);
+                     IShellView3 *This,
+                     LPSV2CVW2_PARAMS lpParams);
 
     HRESULT (STDMETHODCALLTYPE *HandleRename)(
-        IShellView3 *This,
-        PCUITEMID_CHILD pidlNew);
+                     IShellView3 *This,
+                     PCUITEMID_CHILD pidlNew);
 
     HRESULT (STDMETHODCALLTYPE *SelectAndPositionItem)(
-        IShellView3 *This,
-        PCUITEMID_CHILD pidlItem,
-        UINT uFlags,
-        POINT *ppt);
+                     IShellView3 *This,
+                     PCUITEMID_CHILD pidlItem,
+                     UINT uFlags,
+                     POINT *ppt);
 
     /*** IShellView3 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateViewWindow3)(
-        IShellView3 *This,
-        IShellBrowser *psbOwner,
-        IShellView *psvPrev,
-        SV3CVW3_FLAGS dwViewFlags,
-        FOLDERFLAGS dwMask,
-        FOLDERFLAGS dwFlags,
-        FOLDERVIEWMODE fvMode,
-        const SHELLVIEWID *pvid,
-        const RECT *prcView,
-        HWND *phwndView);
+                     IShellView3 *This,
+                     IShellBrowser *psbOwner,
+                     IShellView *psvPrev,
+                     SV3CVW3_FLAGS dwViewFlags,
+                     FOLDERFLAGS dwMask,
+                     FOLDERFLAGS dwFlags,
+                     FOLDERVIEWMODE fvMode,
+                     const SHELLVIEWID *pvid,
+                     const RECT *prcView,
+                     HWND *phwndView);
 
     END_INTERFACE
 } IShellView3Vtbl;
@@ -6082,56 +6082,56 @@ MIDL_INTERFACE("cde725b0-ccc9-4519-917e-325d72fab4ce")
 IFolderView : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCurrentViewMode(
-        UINT *pViewMode) = 0;
+                     UINT *pViewMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCurrentViewMode(
-        UINT ViewMode) = 0;
+                     UINT ViewMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolder(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        int iItemIndex,
-        PITEMID_CHILD *ppidl) = 0;
+                     int iItemIndex,
+                     PITEMID_CHILD *ppidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ItemCount(
-        UINT uFlags,
-        int *pcItems) = 0;
+                     UINT uFlags,
+                     int *pcItems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Items(
-        UINT uFlags,
-        REFIID riid,
-        void **ppv) = 0;
+                     UINT uFlags,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelectionMarkedItem(
-        int *piItem) = 0;
+                     int *piItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFocusedItem(
-        int *piItem) = 0;
+                     int *piItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemPosition(
-        PCUITEMID_CHILD pidl,
-        POINT *ppt) = 0;
+                     PCUITEMID_CHILD pidl,
+                     POINT *ppt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSpacing(
-        POINT *ppt) = 0;
+                     POINT *ppt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultSpacing(
-        POINT *ppt) = 0;
+                     POINT *ppt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAutoArrange(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectItem(
-        int iItem,
-        DWORD dwFlags) = 0;
+                     int iItem,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectAndPositionItems(
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        POINT *apt,
-        DWORD dwFlags) = 0;
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     POINT *apt,
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6143,81 +6143,81 @@ typedef struct IFolderViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFolderView *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFolderView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFolderView *This);
+                     IFolderView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFolderView *This);
+                     IFolderView *This);
 
     /*** IFolderView methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurrentViewMode)(
-        IFolderView *This,
-        UINT *pViewMode);
+                     IFolderView *This,
+                     UINT *pViewMode);
 
     HRESULT (STDMETHODCALLTYPE *SetCurrentViewMode)(
-        IFolderView *This,
-        UINT ViewMode);
+                     IFolderView *This,
+                     UINT ViewMode);
 
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        IFolderView *This,
-        REFIID riid,
-        void **ppv);
+                     IFolderView *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IFolderView *This,
-        int iItemIndex,
-        PITEMID_CHILD *ppidl);
+                     IFolderView *This,
+                     int iItemIndex,
+                     PITEMID_CHILD *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *ItemCount)(
-        IFolderView *This,
-        UINT uFlags,
-        int *pcItems);
+                     IFolderView *This,
+                     UINT uFlags,
+                     int *pcItems);
 
     HRESULT (STDMETHODCALLTYPE *Items)(
-        IFolderView *This,
-        UINT uFlags,
-        REFIID riid,
-        void **ppv);
+                     IFolderView *This,
+                     UINT uFlags,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectionMarkedItem)(
-        IFolderView *This,
-        int *piItem);
+                     IFolderView *This,
+                     int *piItem);
 
     HRESULT (STDMETHODCALLTYPE *GetFocusedItem)(
-        IFolderView *This,
-        int *piItem);
+                     IFolderView *This,
+                     int *piItem);
 
     HRESULT (STDMETHODCALLTYPE *GetItemPosition)(
-        IFolderView *This,
-        PCUITEMID_CHILD pidl,
-        POINT *ppt);
+                     IFolderView *This,
+                     PCUITEMID_CHILD pidl,
+                     POINT *ppt);
 
     HRESULT (STDMETHODCALLTYPE *GetSpacing)(
-        IFolderView *This,
-        POINT *ppt);
+                     IFolderView *This,
+                     POINT *ppt);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultSpacing)(
-        IFolderView *This,
-        POINT *ppt);
+                     IFolderView *This,
+                     POINT *ppt);
 
     HRESULT (STDMETHODCALLTYPE *GetAutoArrange)(
-        IFolderView *This);
+                     IFolderView *This);
 
     HRESULT (STDMETHODCALLTYPE *SelectItem)(
-        IFolderView *This,
-        int iItem,
-        DWORD dwFlags);
+                     IFolderView *This,
+                     int iItem,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SelectAndPositionItems)(
-        IFolderView *This,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        POINT *apt,
-        DWORD dwFlags);
+                     IFolderView *This,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     POINT *apt,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } IFolderViewVtbl;
@@ -6325,11 +6325,11 @@ MIDL_INTERFACE("6af6e03f-d664-4ef4-9626-f7e0ed36755e")
 ISearchBoxInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCondition(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetText(
-        LPWSTR *ppsz) = 0;
+                     LPWSTR *ppsz) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6341,25 +6341,25 @@ typedef struct ISearchBoxInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISearchBoxInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISearchBoxInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISearchBoxInfo *This);
+                     ISearchBoxInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISearchBoxInfo *This);
+                     ISearchBoxInfo *This);
 
     /*** ISearchBoxInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCondition)(
-        ISearchBoxInfo *This,
-        REFIID riid,
-        void **ppv);
+                     ISearchBoxInfo *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ISearchBoxInfo *This,
-        LPWSTR *ppsz);
+                     ISearchBoxInfo *This,
+                     LPWSTR *ppsz);
 
     END_INTERFACE
 } ISearchBoxInfoVtbl;
@@ -6451,100 +6451,100 @@ MIDL_INTERFACE("1af3a467-214f-4298-908e-06b03e0b39f9")
 IFolderView2 : public IFolderView
 {
     virtual HRESULT STDMETHODCALLTYPE SetGroupBy(
-        REFPROPERTYKEY key,
-        WINBOOL fAscending) = 0;
+                     REFPROPERTYKEY key,
+                     WINBOOL fAscending) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupBy(
-        PROPERTYKEY *pkey,
-        WINBOOL *pfAscending) = 0;
+                     PROPERTYKEY *pkey,
+                     WINBOOL *pfAscending) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetViewProperty(
-        PCUITEMID_CHILD pidl,
-        REFPROPERTYKEY propkey,
-        REFPROPVARIANT propvar) = 0;
+                     PCUITEMID_CHILD pidl,
+                     REFPROPERTYKEY propkey,
+                     REFPROPVARIANT propvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewProperty(
-        PCUITEMID_CHILD pidl,
-        REFPROPERTYKEY propkey,
-        PROPVARIANT *ppropvar) = 0;
+                     PCUITEMID_CHILD pidl,
+                     REFPROPERTYKEY propkey,
+                     PROPVARIANT *ppropvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTileViewProperties(
-        PCUITEMID_CHILD pidl,
-        LPCWSTR pszPropList) = 0;
+                     PCUITEMID_CHILD pidl,
+                     LPCWSTR pszPropList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetExtendedTileViewProperties(
-        PCUITEMID_CHILD pidl,
-        LPCWSTR pszPropList) = 0;
+                     PCUITEMID_CHILD pidl,
+                     LPCWSTR pszPropList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetText(
-        FVTEXTTYPE iType,
-        LPCWSTR pwszText) = 0;
+                     FVTEXTTYPE iType,
+                     LPCWSTR pwszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCurrentFolderFlags(
-        DWORD dwMask,
-        DWORD dwFlags) = 0;
+                     DWORD dwMask,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentFolderFlags(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSortColumnCount(
-        int *pcColumns) = 0;
+                     int *pcColumns) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSortColumns(
-        const SORTCOLUMN *rgSortColumns,
-        int cColumns) = 0;
+                     const SORTCOLUMN *rgSortColumns,
+                     int cColumns) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSortColumns(
-        SORTCOLUMN *rgSortColumns,
-        int cColumns) = 0;
+                     SORTCOLUMN *rgSortColumns,
+                     int cColumns) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItem(
-        int iItem,
-        REFIID riid,
-        void **ppv) = 0;
+                     int iItem,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVisibleItem(
-        int iStart,
-        WINBOOL fPrevious,
-        int *piItem) = 0;
+                     int iStart,
+                     WINBOOL fPrevious,
+                     int *piItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelectedItem(
-        int iStart,
-        int *piItem) = 0;
+                     int iStart,
+                     int *piItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelection(
-        WINBOOL fNoneImpliesFolder,
-        IShellItemArray **ppsia) = 0;
+                     WINBOOL fNoneImpliesFolder,
+                     IShellItemArray **ppsia) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelectionState(
-        PCUITEMID_CHILD pidl,
-        DWORD *pdwFlags) = 0;
+                     PCUITEMID_CHILD pidl,
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvokeVerbOnSelection(
-        LPCSTR pszVerb) = 0;
+                     LPCSTR pszVerb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetViewModeAndIconSize(
-        FOLDERVIEWMODE uViewMode,
-        int iImageSize) = 0;
+                     FOLDERVIEWMODE uViewMode,
+                     int iImageSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewModeAndIconSize(
-        FOLDERVIEWMODE *puViewMode,
-        int *piImageSize) = 0;
+                     FOLDERVIEWMODE *puViewMode,
+                     int *piImageSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGroupSubsetCount(
-        UINT cVisibleRows) = 0;
+                     UINT cVisibleRows) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupSubsetCount(
-        UINT *pcVisibleRows) = 0;
+                     UINT *pcVisibleRows) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRedraw(
-        WINBOOL fRedrawOn) = 0;
+                     WINBOOL fRedrawOn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsMoveInSameFolder(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoRename(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6556,201 +6556,201 @@ typedef struct IFolderView2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFolderView2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFolderView2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFolderView2 *This);
+                     IFolderView2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFolderView2 *This);
+                     IFolderView2 *This);
 
     /*** IFolderView methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurrentViewMode)(
-        IFolderView2 *This,
-        UINT *pViewMode);
+                     IFolderView2 *This,
+                     UINT *pViewMode);
 
     HRESULT (STDMETHODCALLTYPE *SetCurrentViewMode)(
-        IFolderView2 *This,
-        UINT ViewMode);
+                     IFolderView2 *This,
+                     UINT ViewMode);
 
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        IFolderView2 *This,
-        REFIID riid,
-        void **ppv);
+                     IFolderView2 *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IFolderView2 *This,
-        int iItemIndex,
-        PITEMID_CHILD *ppidl);
+                     IFolderView2 *This,
+                     int iItemIndex,
+                     PITEMID_CHILD *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *ItemCount)(
-        IFolderView2 *This,
-        UINT uFlags,
-        int *pcItems);
+                     IFolderView2 *This,
+                     UINT uFlags,
+                     int *pcItems);
 
     HRESULT (STDMETHODCALLTYPE *Items)(
-        IFolderView2 *This,
-        UINT uFlags,
-        REFIID riid,
-        void **ppv);
+                     IFolderView2 *This,
+                     UINT uFlags,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectionMarkedItem)(
-        IFolderView2 *This,
-        int *piItem);
+                     IFolderView2 *This,
+                     int *piItem);
 
     HRESULT (STDMETHODCALLTYPE *GetFocusedItem)(
-        IFolderView2 *This,
-        int *piItem);
+                     IFolderView2 *This,
+                     int *piItem);
 
     HRESULT (STDMETHODCALLTYPE *GetItemPosition)(
-        IFolderView2 *This,
-        PCUITEMID_CHILD pidl,
-        POINT *ppt);
+                     IFolderView2 *This,
+                     PCUITEMID_CHILD pidl,
+                     POINT *ppt);
 
     HRESULT (STDMETHODCALLTYPE *GetSpacing)(
-        IFolderView2 *This,
-        POINT *ppt);
+                     IFolderView2 *This,
+                     POINT *ppt);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultSpacing)(
-        IFolderView2 *This,
-        POINT *ppt);
+                     IFolderView2 *This,
+                     POINT *ppt);
 
     HRESULT (STDMETHODCALLTYPE *GetAutoArrange)(
-        IFolderView2 *This);
+                     IFolderView2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SelectItem)(
-        IFolderView2 *This,
-        int iItem,
-        DWORD dwFlags);
+                     IFolderView2 *This,
+                     int iItem,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SelectAndPositionItems)(
-        IFolderView2 *This,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        POINT *apt,
-        DWORD dwFlags);
+                     IFolderView2 *This,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     POINT *apt,
+                     DWORD dwFlags);
 
     /*** IFolderView2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetGroupBy)(
-        IFolderView2 *This,
-        REFPROPERTYKEY key,
-        WINBOOL fAscending);
+                     IFolderView2 *This,
+                     REFPROPERTYKEY key,
+                     WINBOOL fAscending);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupBy)(
-        IFolderView2 *This,
-        PROPERTYKEY *pkey,
-        WINBOOL *pfAscending);
+                     IFolderView2 *This,
+                     PROPERTYKEY *pkey,
+                     WINBOOL *pfAscending);
 
     HRESULT (STDMETHODCALLTYPE *SetViewProperty)(
-        IFolderView2 *This,
-        PCUITEMID_CHILD pidl,
-        REFPROPERTYKEY propkey,
-        REFPROPVARIANT propvar);
+                     IFolderView2 *This,
+                     PCUITEMID_CHILD pidl,
+                     REFPROPERTYKEY propkey,
+                     REFPROPVARIANT propvar);
 
     HRESULT (STDMETHODCALLTYPE *GetViewProperty)(
-        IFolderView2 *This,
-        PCUITEMID_CHILD pidl,
-        REFPROPERTYKEY propkey,
-        PROPVARIANT *ppropvar);
+                     IFolderView2 *This,
+                     PCUITEMID_CHILD pidl,
+                     REFPROPERTYKEY propkey,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *SetTileViewProperties)(
-        IFolderView2 *This,
-        PCUITEMID_CHILD pidl,
-        LPCWSTR pszPropList);
+                     IFolderView2 *This,
+                     PCUITEMID_CHILD pidl,
+                     LPCWSTR pszPropList);
 
     HRESULT (STDMETHODCALLTYPE *SetExtendedTileViewProperties)(
-        IFolderView2 *This,
-        PCUITEMID_CHILD pidl,
-        LPCWSTR pszPropList);
+                     IFolderView2 *This,
+                     PCUITEMID_CHILD pidl,
+                     LPCWSTR pszPropList);
 
     HRESULT (STDMETHODCALLTYPE *SetText)(
-        IFolderView2 *This,
-        FVTEXTTYPE iType,
-        LPCWSTR pwszText);
+                     IFolderView2 *This,
+                     FVTEXTTYPE iType,
+                     LPCWSTR pwszText);
 
     HRESULT (STDMETHODCALLTYPE *SetCurrentFolderFlags)(
-        IFolderView2 *This,
-        DWORD dwMask,
-        DWORD dwFlags);
+                     IFolderView2 *This,
+                     DWORD dwMask,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentFolderFlags)(
-        IFolderView2 *This,
-        DWORD *pdwFlags);
+                     IFolderView2 *This,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSortColumnCount)(
-        IFolderView2 *This,
-        int *pcColumns);
+                     IFolderView2 *This,
+                     int *pcColumns);
 
     HRESULT (STDMETHODCALLTYPE *SetSortColumns)(
-        IFolderView2 *This,
-        const SORTCOLUMN *rgSortColumns,
-        int cColumns);
+                     IFolderView2 *This,
+                     const SORTCOLUMN *rgSortColumns,
+                     int cColumns);
 
     HRESULT (STDMETHODCALLTYPE *GetSortColumns)(
-        IFolderView2 *This,
-        SORTCOLUMN *rgSortColumns,
-        int cColumns);
+                     IFolderView2 *This,
+                     SORTCOLUMN *rgSortColumns,
+                     int cColumns);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IFolderView2 *This,
-        int iItem,
-        REFIID riid,
-        void **ppv);
+                     IFolderView2 *This,
+                     int iItem,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetVisibleItem)(
-        IFolderView2 *This,
-        int iStart,
-        WINBOOL fPrevious,
-        int *piItem);
+                     IFolderView2 *This,
+                     int iStart,
+                     WINBOOL fPrevious,
+                     int *piItem);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectedItem)(
-        IFolderView2 *This,
-        int iStart,
-        int *piItem);
+                     IFolderView2 *This,
+                     int iStart,
+                     int *piItem);
 
     HRESULT (STDMETHODCALLTYPE *GetSelection)(
-        IFolderView2 *This,
-        WINBOOL fNoneImpliesFolder,
-        IShellItemArray **ppsia);
+                     IFolderView2 *This,
+                     WINBOOL fNoneImpliesFolder,
+                     IShellItemArray **ppsia);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectionState)(
-        IFolderView2 *This,
-        PCUITEMID_CHILD pidl,
-        DWORD *pdwFlags);
+                     IFolderView2 *This,
+                     PCUITEMID_CHILD pidl,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *InvokeVerbOnSelection)(
-        IFolderView2 *This,
-        LPCSTR pszVerb);
+                     IFolderView2 *This,
+                     LPCSTR pszVerb);
 
     HRESULT (STDMETHODCALLTYPE *SetViewModeAndIconSize)(
-        IFolderView2 *This,
-        FOLDERVIEWMODE uViewMode,
-        int iImageSize);
+                     IFolderView2 *This,
+                     FOLDERVIEWMODE uViewMode,
+                     int iImageSize);
 
     HRESULT (STDMETHODCALLTYPE *GetViewModeAndIconSize)(
-        IFolderView2 *This,
-        FOLDERVIEWMODE *puViewMode,
-        int *piImageSize);
+                     IFolderView2 *This,
+                     FOLDERVIEWMODE *puViewMode,
+                     int *piImageSize);
 
     HRESULT (STDMETHODCALLTYPE *SetGroupSubsetCount)(
-        IFolderView2 *This,
-        UINT cVisibleRows);
+                     IFolderView2 *This,
+                     UINT cVisibleRows);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupSubsetCount)(
-        IFolderView2 *This,
-        UINT *pcVisibleRows);
+                     IFolderView2 *This,
+                     UINT *pcVisibleRows);
 
     HRESULT (STDMETHODCALLTYPE *SetRedraw)(
-        IFolderView2 *This,
-        WINBOOL fRedrawOn);
+                     IFolderView2 *This,
+                     WINBOOL fRedrawOn);
 
     HRESULT (STDMETHODCALLTYPE *IsMoveInSameFolder)(
-        IFolderView2 *This);
+                     IFolderView2 *This);
 
     HRESULT (STDMETHODCALLTYPE *DoRename)(
-        IFolderView2 *This);
+                     IFolderView2 *This);
 
     END_INTERFACE
 } IFolderView2Vtbl;
@@ -6975,30 +6975,30 @@ MIDL_INTERFACE("ae8c987d-8797-4ed3-be72-2a47dd938db0")
 IFolderViewSettings : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetColumnPropertyList(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupByProperty(
-        PROPERTYKEY *pkey,
-        WINBOOL *pfGroupAscending) = 0;
+                     PROPERTYKEY *pkey,
+                     WINBOOL *pfGroupAscending) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewMode(
-        FOLDERLOGICALVIEWMODE *plvm) = 0;
+                     FOLDERLOGICALVIEWMODE *plvm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIconSize(
-        UINT *puIconSize) = 0;
+                     UINT *puIconSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderFlags(
-        FOLDERFLAGS *pfolderMask,
-        FOLDERFLAGS *pfolderFlags) = 0;
+                     FOLDERFLAGS *pfolderMask,
+                     FOLDERFLAGS *pfolderFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSortColumns(
-        SORTCOLUMN *rgSortColumns,
-        UINT cColumnsIn,
-        UINT *pcColumnsOut) = 0;
+                     SORTCOLUMN *rgSortColumns,
+                     UINT cColumnsIn,
+                     UINT *pcColumnsOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupSubsetCount(
-        UINT *pcVisibleRows) = 0;
+                     UINT *pcVisibleRows) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7010,49 +7010,49 @@ typedef struct IFolderViewSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFolderViewSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFolderViewSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFolderViewSettings *This);
+                     IFolderViewSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFolderViewSettings *This);
+                     IFolderViewSettings *This);
 
     /*** IFolderViewSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *GetColumnPropertyList)(
-        IFolderViewSettings *This,
-        REFIID riid,
-        void **ppv);
+                     IFolderViewSettings *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupByProperty)(
-        IFolderViewSettings *This,
-        PROPERTYKEY *pkey,
-        WINBOOL *pfGroupAscending);
+                     IFolderViewSettings *This,
+                     PROPERTYKEY *pkey,
+                     WINBOOL *pfGroupAscending);
 
     HRESULT (STDMETHODCALLTYPE *GetViewMode)(
-        IFolderViewSettings *This,
-        FOLDERLOGICALVIEWMODE *plvm);
+                     IFolderViewSettings *This,
+                     FOLDERLOGICALVIEWMODE *plvm);
 
     HRESULT (STDMETHODCALLTYPE *GetIconSize)(
-        IFolderViewSettings *This,
-        UINT *puIconSize);
+                     IFolderViewSettings *This,
+                     UINT *puIconSize);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderFlags)(
-        IFolderViewSettings *This,
-        FOLDERFLAGS *pfolderMask,
-        FOLDERFLAGS *pfolderFlags);
+                     IFolderViewSettings *This,
+                     FOLDERFLAGS *pfolderMask,
+                     FOLDERFLAGS *pfolderFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSortColumns)(
-        IFolderViewSettings *This,
-        SORTCOLUMN *rgSortColumns,
-        UINT cColumnsIn,
-        UINT *pcColumnsOut);
+                     IFolderViewSettings *This,
+                     SORTCOLUMN *rgSortColumns,
+                     UINT cColumnsIn,
+                     UINT *pcColumnsOut);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupSubsetCount)(
-        IFolderViewSettings *This,
-        UINT *pcVisibleRows);
+                     IFolderViewSettings *This,
+                     UINT *pcVisibleRows);
 
     END_INTERFACE
 } IFolderViewSettingsVtbl;
@@ -7132,13 +7132,13 @@ MIDL_INTERFACE("196bf9a5-b346-4ef0-aa1e-5dcdb76768b1")
 IPreviewHandlerVisuals : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetBackgroundColor(
-        COLORREF color) = 0;
+                     COLORREF color) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFont(
-        const LOGFONTW *plf) = 0;
+                     const LOGFONTW *plf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTextColor(
-        COLORREF color) = 0;
+                     COLORREF color) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7150,28 +7150,28 @@ typedef struct IPreviewHandlerVisualsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPreviewHandlerVisuals *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPreviewHandlerVisuals *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPreviewHandlerVisuals *This);
+                     IPreviewHandlerVisuals *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPreviewHandlerVisuals *This);
+                     IPreviewHandlerVisuals *This);
 
     /*** IPreviewHandlerVisuals methods ***/
     HRESULT (STDMETHODCALLTYPE *SetBackgroundColor)(
-        IPreviewHandlerVisuals *This,
-        COLORREF color);
+                     IPreviewHandlerVisuals *This,
+                     COLORREF color);
 
     HRESULT (STDMETHODCALLTYPE *SetFont)(
-        IPreviewHandlerVisuals *This,
-        const LOGFONTW *plf);
+                     IPreviewHandlerVisuals *This,
+                     const LOGFONTW *plf);
 
     HRESULT (STDMETHODCALLTYPE *SetTextColor)(
-        IPreviewHandlerVisuals *This,
-        COLORREF color);
+                     IPreviewHandlerVisuals *This,
+                     COLORREF color);
 
     END_INTERFACE
 } IPreviewHandlerVisualsVtbl;
@@ -7247,33 +7247,33 @@ MIDL_INTERFACE("e693cf68-d967-4112-8763-99172aee5e5a")
 IVisualProperties : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetWatermark(
-        HBITMAP hbmp,
-        VPWATERMARKFLAGS vpwf) = 0;
+                     HBITMAP hbmp,
+                     VPWATERMARKFLAGS vpwf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColor(
-        VPCOLORFLAGS vpcf,
-        COLORREF cr) = 0;
+                     VPCOLORFLAGS vpcf,
+                     COLORREF cr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColor(
-        VPCOLORFLAGS vpcf,
-        COLORREF *pcr) = 0;
+                     VPCOLORFLAGS vpcf,
+                     COLORREF *pcr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetItemHeight(
-        int cyItemInPixels) = 0;
+                     int cyItemInPixels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemHeight(
-        int *cyItemInPixels) = 0;
+                     int *cyItemInPixels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFont(
-        const LOGFONTW *plf,
-        WINBOOL bRedraw) = 0;
+                     const LOGFONTW *plf,
+                     WINBOOL bRedraw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFont(
-        LOGFONTW *plf) = 0;
+                     LOGFONTW *plf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTheme(
-        LPCWSTR pszSubAppName,
-        LPCWSTR pszSubIdList) = 0;
+                     LPCWSTR pszSubAppName,
+                     LPCWSTR pszSubIdList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7285,53 +7285,53 @@ typedef struct IVisualPropertiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVisualProperties *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVisualProperties *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVisualProperties *This);
+                     IVisualProperties *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVisualProperties *This);
+                     IVisualProperties *This);
 
     /*** IVisualProperties methods ***/
     HRESULT (STDMETHODCALLTYPE *SetWatermark)(
-        IVisualProperties *This,
-        HBITMAP hbmp,
-        VPWATERMARKFLAGS vpwf);
+                     IVisualProperties *This,
+                     HBITMAP hbmp,
+                     VPWATERMARKFLAGS vpwf);
 
     HRESULT (STDMETHODCALLTYPE *SetColor)(
-        IVisualProperties *This,
-        VPCOLORFLAGS vpcf,
-        COLORREF cr);
+                     IVisualProperties *This,
+                     VPCOLORFLAGS vpcf,
+                     COLORREF cr);
 
     HRESULT (STDMETHODCALLTYPE *GetColor)(
-        IVisualProperties *This,
-        VPCOLORFLAGS vpcf,
-        COLORREF *pcr);
+                     IVisualProperties *This,
+                     VPCOLORFLAGS vpcf,
+                     COLORREF *pcr);
 
     HRESULT (STDMETHODCALLTYPE *SetItemHeight)(
-        IVisualProperties *This,
-        int cyItemInPixels);
+                     IVisualProperties *This,
+                     int cyItemInPixels);
 
     HRESULT (STDMETHODCALLTYPE *GetItemHeight)(
-        IVisualProperties *This,
-        int *cyItemInPixels);
+                     IVisualProperties *This,
+                     int *cyItemInPixels);
 
     HRESULT (STDMETHODCALLTYPE *SetFont)(
-        IVisualProperties *This,
-        const LOGFONTW *plf,
-        WINBOOL bRedraw);
+                     IVisualProperties *This,
+                     const LOGFONTW *plf,
+                     WINBOOL bRedraw);
 
     HRESULT (STDMETHODCALLTYPE *GetFont)(
-        IVisualProperties *This,
-        LOGFONTW *plf);
+                     IVisualProperties *This,
+                     LOGFONTW *plf);
 
     HRESULT (STDMETHODCALLTYPE *SetTheme)(
-        IVisualProperties *This,
-        LPCWSTR pszSubAppName,
-        LPCWSTR pszSubIdList);
+                     IVisualProperties *This,
+                     LPCWSTR pszSubAppName,
+                     LPCWSTR pszSubIdList);
 
     END_INTERFACE
 } IVisualPropertiesVtbl;
@@ -7419,15 +7419,15 @@ MIDL_INTERFACE("000214f1-0000-0000-c000-000000000046")
 ICommDlgBrowser : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnDefaultCommand(
-        IShellView *ppshv) = 0;
+                     IShellView *ppshv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStateChange(
-        IShellView *ppshv,
-        ULONG uChange) = 0;
+                     IShellView *ppshv,
+                     ULONG uChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IncludeObject(
-        IShellView *ppshv,
-        PCUITEMID_CHILD pidl) = 0;
+                     IShellView *ppshv,
+                     PCUITEMID_CHILD pidl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7439,30 +7439,30 @@ typedef struct ICommDlgBrowserVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICommDlgBrowser *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICommDlgBrowser *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICommDlgBrowser *This);
+                     ICommDlgBrowser *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICommDlgBrowser *This);
+                     ICommDlgBrowser *This);
 
     /*** ICommDlgBrowser methods ***/
     HRESULT (STDMETHODCALLTYPE *OnDefaultCommand)(
-        ICommDlgBrowser *This,
-        IShellView *ppshv);
+                     ICommDlgBrowser *This,
+                     IShellView *ppshv);
 
     HRESULT (STDMETHODCALLTYPE *OnStateChange)(
-        ICommDlgBrowser *This,
-        IShellView *ppshv,
-        ULONG uChange);
+                     ICommDlgBrowser *This,
+                     IShellView *ppshv,
+                     ULONG uChange);
 
     HRESULT (STDMETHODCALLTYPE *IncludeObject)(
-        ICommDlgBrowser *This,
-        IShellView *ppshv,
-        PCUITEMID_CHILD pidl);
+                     ICommDlgBrowser *This,
+                     IShellView *ppshv,
+                     PCUITEMID_CHILD pidl);
 
     END_INTERFACE
 } ICommDlgBrowserVtbl;
@@ -7539,16 +7539,16 @@ MIDL_INTERFACE("10339516-2894-11d2-9039-00c04f8eeb3e")
 ICommDlgBrowser2 : public ICommDlgBrowser
 {
     virtual HRESULT STDMETHODCALLTYPE Notify(
-        IShellView *ppshv,
-        DWORD dwNotifyType) = 0;
+                     IShellView *ppshv,
+                     DWORD dwNotifyType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultMenuText(
-        IShellView *ppshv,
-        LPWSTR pszText,
-        int cchMax) = 0;
+                     IShellView *ppshv,
+                     LPWSTR pszText,
+                     int cchMax) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewFlags(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7560,46 +7560,46 @@ typedef struct ICommDlgBrowser2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICommDlgBrowser2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICommDlgBrowser2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICommDlgBrowser2 *This);
+                     ICommDlgBrowser2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICommDlgBrowser2 *This);
+                     ICommDlgBrowser2 *This);
 
     /*** ICommDlgBrowser methods ***/
     HRESULT (STDMETHODCALLTYPE *OnDefaultCommand)(
-        ICommDlgBrowser2 *This,
-        IShellView *ppshv);
+                     ICommDlgBrowser2 *This,
+                     IShellView *ppshv);
 
     HRESULT (STDMETHODCALLTYPE *OnStateChange)(
-        ICommDlgBrowser2 *This,
-        IShellView *ppshv,
-        ULONG uChange);
+                     ICommDlgBrowser2 *This,
+                     IShellView *ppshv,
+                     ULONG uChange);
 
     HRESULT (STDMETHODCALLTYPE *IncludeObject)(
-        ICommDlgBrowser2 *This,
-        IShellView *ppshv,
-        PCUITEMID_CHILD pidl);
+                     ICommDlgBrowser2 *This,
+                     IShellView *ppshv,
+                     PCUITEMID_CHILD pidl);
 
     /*** ICommDlgBrowser2 methods ***/
     HRESULT (STDMETHODCALLTYPE *Notify)(
-        ICommDlgBrowser2 *This,
-        IShellView *ppshv,
-        DWORD dwNotifyType);
+                     ICommDlgBrowser2 *This,
+                     IShellView *ppshv,
+                     DWORD dwNotifyType);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultMenuText)(
-        ICommDlgBrowser2 *This,
-        IShellView *ppshv,
-        LPWSTR pszText,
-        int cchMax);
+                     ICommDlgBrowser2 *This,
+                     IShellView *ppshv,
+                     LPWSTR pszText,
+                     int cchMax);
 
     HRESULT (STDMETHODCALLTYPE *GetViewFlags)(
-        ICommDlgBrowser2 *This,
-        DWORD *pdwFlags);
+                     ICommDlgBrowser2 *This,
+                     DWORD *pdwFlags);
 
     END_INTERFACE
 } ICommDlgBrowser2Vtbl;
@@ -7676,15 +7676,15 @@ MIDL_INTERFACE("c8ad25a1-3294-41ee-8165-71174bd01c57")
 ICommDlgBrowser3 : public ICommDlgBrowser2
 {
     virtual HRESULT STDMETHODCALLTYPE OnColumnClicked(
-        IShellView *ppshv,
-        int iColumn) = 0;
+                     IShellView *ppshv,
+                     int iColumn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentFilter(
-        LPWSTR pszFileSpec,
-        int cchFileSpec) = 0;
+                     LPWSTR pszFileSpec,
+                     int cchFileSpec) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPreViewCreated(
-        IShellView *ppshv) = 0;
+                     IShellView *ppshv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7696,61 +7696,61 @@ typedef struct ICommDlgBrowser3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICommDlgBrowser3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICommDlgBrowser3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICommDlgBrowser3 *This);
+                     ICommDlgBrowser3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICommDlgBrowser3 *This);
+                     ICommDlgBrowser3 *This);
 
     /*** ICommDlgBrowser methods ***/
     HRESULT (STDMETHODCALLTYPE *OnDefaultCommand)(
-        ICommDlgBrowser3 *This,
-        IShellView *ppshv);
+                     ICommDlgBrowser3 *This,
+                     IShellView *ppshv);
 
     HRESULT (STDMETHODCALLTYPE *OnStateChange)(
-        ICommDlgBrowser3 *This,
-        IShellView *ppshv,
-        ULONG uChange);
+                     ICommDlgBrowser3 *This,
+                     IShellView *ppshv,
+                     ULONG uChange);
 
     HRESULT (STDMETHODCALLTYPE *IncludeObject)(
-        ICommDlgBrowser3 *This,
-        IShellView *ppshv,
-        PCUITEMID_CHILD pidl);
+                     ICommDlgBrowser3 *This,
+                     IShellView *ppshv,
+                     PCUITEMID_CHILD pidl);
 
     /*** ICommDlgBrowser2 methods ***/
     HRESULT (STDMETHODCALLTYPE *Notify)(
-        ICommDlgBrowser3 *This,
-        IShellView *ppshv,
-        DWORD dwNotifyType);
+                     ICommDlgBrowser3 *This,
+                     IShellView *ppshv,
+                     DWORD dwNotifyType);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultMenuText)(
-        ICommDlgBrowser3 *This,
-        IShellView *ppshv,
-        LPWSTR pszText,
-        int cchMax);
+                     ICommDlgBrowser3 *This,
+                     IShellView *ppshv,
+                     LPWSTR pszText,
+                     int cchMax);
 
     HRESULT (STDMETHODCALLTYPE *GetViewFlags)(
-        ICommDlgBrowser3 *This,
-        DWORD *pdwFlags);
+                     ICommDlgBrowser3 *This,
+                     DWORD *pdwFlags);
 
     /*** ICommDlgBrowser3 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnColumnClicked)(
-        ICommDlgBrowser3 *This,
-        IShellView *ppshv,
-        int iColumn);
+                     ICommDlgBrowser3 *This,
+                     IShellView *ppshv,
+                     int iColumn);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentFilter)(
-        ICommDlgBrowser3 *This,
-        LPWSTR pszFileSpec,
-        int cchFileSpec);
+                     ICommDlgBrowser3 *This,
+                     LPWSTR pszFileSpec,
+                     int cchFileSpec);
 
     HRESULT (STDMETHODCALLTYPE *OnPreViewCreated)(
-        ICommDlgBrowser3 *This,
-        IShellView *ppshv);
+                     ICommDlgBrowser3 *This,
+                     IShellView *ppshv);
 
     END_INTERFACE
 } ICommDlgBrowser3Vtbl;
@@ -7881,25 +7881,25 @@ MIDL_INTERFACE("d8ec27bb-3f3b-4042-b10a-4acfd924d453")
 IColumnManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetColumnInfo(
-        REFPROPERTYKEY propkey,
-        const CM_COLUMNINFO *pcmci) = 0;
+                     REFPROPERTYKEY propkey,
+                     const CM_COLUMNINFO *pcmci) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColumnInfo(
-        REFPROPERTYKEY propkey,
-        CM_COLUMNINFO *pcmci) = 0;
+                     REFPROPERTYKEY propkey,
+                     CM_COLUMNINFO *pcmci) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColumnCount(
-        CM_ENUM_FLAGS dwFlags,
-        UINT *puCount) = 0;
+                     CM_ENUM_FLAGS dwFlags,
+                     UINT *puCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColumns(
-        CM_ENUM_FLAGS dwFlags,
-        PROPERTYKEY *rgkeyOrder,
-        UINT cColumns) = 0;
+                     CM_ENUM_FLAGS dwFlags,
+                     PROPERTYKEY *rgkeyOrder,
+                     UINT cColumns) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColumns(
-        const PROPERTYKEY *rgkeyOrder,
-        UINT cVisible) = 0;
+                     const PROPERTYKEY *rgkeyOrder,
+                     UINT cVisible) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7911,42 +7911,42 @@ typedef struct IColumnManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IColumnManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IColumnManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IColumnManager *This);
+                     IColumnManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IColumnManager *This);
+                     IColumnManager *This);
 
     /*** IColumnManager methods ***/
     HRESULT (STDMETHODCALLTYPE *SetColumnInfo)(
-        IColumnManager *This,
-        REFPROPERTYKEY propkey,
-        const CM_COLUMNINFO *pcmci);
+                     IColumnManager *This,
+                     REFPROPERTYKEY propkey,
+                     const CM_COLUMNINFO *pcmci);
 
     HRESULT (STDMETHODCALLTYPE *GetColumnInfo)(
-        IColumnManager *This,
-        REFPROPERTYKEY propkey,
-        CM_COLUMNINFO *pcmci);
+                     IColumnManager *This,
+                     REFPROPERTYKEY propkey,
+                     CM_COLUMNINFO *pcmci);
 
     HRESULT (STDMETHODCALLTYPE *GetColumnCount)(
-        IColumnManager *This,
-        CM_ENUM_FLAGS dwFlags,
-        UINT *puCount);
+                     IColumnManager *This,
+                     CM_ENUM_FLAGS dwFlags,
+                     UINT *puCount);
 
     HRESULT (STDMETHODCALLTYPE *GetColumns)(
-        IColumnManager *This,
-        CM_ENUM_FLAGS dwFlags,
-        PROPERTYKEY *rgkeyOrder,
-        UINT cColumns);
+                     IColumnManager *This,
+                     CM_ENUM_FLAGS dwFlags,
+                     PROPERTYKEY *rgkeyOrder,
+                     UINT cColumns);
 
     HRESULT (STDMETHODCALLTYPE *SetColumns)(
-        IColumnManager *This,
-        const PROPERTYKEY *rgkeyOrder,
-        UINT cVisible);
+                     IColumnManager *This,
+                     const PROPERTYKEY *rgkeyOrder,
+                     UINT cVisible);
 
     END_INTERFACE
 } IColumnManagerVtbl;
@@ -8016,7 +8016,7 @@ MIDL_INTERFACE("c0a651f5-b48b-11d2-b5ed-006097c686f6")
 IFolderFilterSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFilter(
-        IUnknown *punk) = 0;
+                     IUnknown *punk) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8028,20 +8028,20 @@ typedef struct IFolderFilterSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFolderFilterSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFolderFilterSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFolderFilterSite *This);
+                     IFolderFilterSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFolderFilterSite *This);
+                     IFolderFilterSite *This);
 
     /*** IFolderFilterSite methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFilter)(
-        IFolderFilterSite *This,
-        IUnknown *punk);
+                     IFolderFilterSite *This,
+                     IUnknown *punk);
 
     END_INTERFACE
 } IFolderFilterSiteVtbl;
@@ -8094,15 +8094,15 @@ MIDL_INTERFACE("9cc22886-dc8e-11d2-b1d0-00c04f8eeb3e")
 IFolderFilter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ShouldShow(
-        IShellFolder *psf,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        PCUITEMID_CHILD pidlItem) = 0;
+                     IShellFolder *psf,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     PCUITEMID_CHILD pidlItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumFlags(
-        IShellFolder *psf,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        HWND *phwnd,
-        DWORD *pgrfFlags) = 0;
+                     IShellFolder *psf,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     HWND *phwnd,
+                     DWORD *pgrfFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8114,29 +8114,29 @@ typedef struct IFolderFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFolderFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFolderFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFolderFilter *This);
+                     IFolderFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFolderFilter *This);
+                     IFolderFilter *This);
 
     /*** IFolderFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *ShouldShow)(
-        IFolderFilter *This,
-        IShellFolder *psf,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        PCUITEMID_CHILD pidlItem);
+                     IFolderFilter *This,
+                     IShellFolder *psf,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     PCUITEMID_CHILD pidlItem);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumFlags)(
-        IFolderFilter *This,
-        IShellFolder *psf,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        HWND *phwnd,
-        DWORD *pgrfFlags);
+                     IFolderFilter *This,
+                     IShellFolder *psf,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     HWND *phwnd,
+                     DWORD *pgrfFlags);
 
     END_INTERFACE
 } IFolderFilterVtbl;
@@ -8193,8 +8193,8 @@ MIDL_INTERFACE("f1db8392-7331-11d0-8c99-00a0c92dbfe8")
 IInputObjectSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnFocusChangeIS(
-        IUnknown *punkObj,
-        WINBOOL fSetFocus) = 0;
+                     IUnknown *punkObj,
+                     WINBOOL fSetFocus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8206,21 +8206,21 @@ typedef struct IInputObjectSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInputObjectSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInputObjectSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInputObjectSite *This);
+                     IInputObjectSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInputObjectSite *This);
+                     IInputObjectSite *This);
 
     /*** IInputObjectSite methods ***/
     HRESULT (STDMETHODCALLTYPE *OnFocusChangeIS)(
-        IInputObjectSite *This,
-        IUnknown *punkObj,
-        WINBOOL fSetFocus);
+                     IInputObjectSite *This,
+                     IUnknown *punkObj,
+                     WINBOOL fSetFocus);
 
     END_INTERFACE
 } IInputObjectSiteVtbl;
@@ -8273,14 +8273,14 @@ MIDL_INTERFACE("68284faa-6a48-11d0-8c78-00c04fd918b4")
 IInputObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE UIActivateIO(
-        WINBOOL fActivate,
-        MSG *pMsg) = 0;
+                     WINBOOL fActivate,
+                     MSG *pMsg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasFocusIO(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAcceleratorIO(
-        MSG *pMsg) = 0;
+                     MSG *pMsg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8292,28 +8292,28 @@ typedef struct IInputObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInputObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInputObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInputObject *This);
+                     IInputObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInputObject *This);
+                     IInputObject *This);
 
     /*** IInputObject methods ***/
     HRESULT (STDMETHODCALLTYPE *UIActivateIO)(
-        IInputObject *This,
-        WINBOOL fActivate,
-        MSG *pMsg);
+                     IInputObject *This,
+                     WINBOOL fActivate,
+                     MSG *pMsg);
 
     HRESULT (STDMETHODCALLTYPE *HasFocusIO)(
-        IInputObject *This);
+                     IInputObject *This);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAcceleratorIO)(
-        IInputObject *This,
-        MSG *pMsg);
+                     IInputObject *This,
+                     MSG *pMsg);
 
     END_INTERFACE
 } IInputObjectVtbl;
@@ -8374,7 +8374,7 @@ MIDL_INTERFACE("6915c085-510b-44cd-94af-28dfa56cf92b")
 IInputObject2 : public IInputObject
 {
     virtual HRESULT STDMETHODCALLTYPE TranslateAcceleratorGlobal(
-        MSG *pMsg) = 0;
+                     MSG *pMsg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8386,33 +8386,33 @@ typedef struct IInputObject2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInputObject2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInputObject2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInputObject2 *This);
+                     IInputObject2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInputObject2 *This);
+                     IInputObject2 *This);
 
     /*** IInputObject methods ***/
     HRESULT (STDMETHODCALLTYPE *UIActivateIO)(
-        IInputObject2 *This,
-        WINBOOL fActivate,
-        MSG *pMsg);
+                     IInputObject2 *This,
+                     WINBOOL fActivate,
+                     MSG *pMsg);
 
     HRESULT (STDMETHODCALLTYPE *HasFocusIO)(
-        IInputObject2 *This);
+                     IInputObject2 *This);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAcceleratorIO)(
-        IInputObject2 *This,
-        MSG *pMsg);
+                     IInputObject2 *This,
+                     MSG *pMsg);
 
     /*** IInputObject2 methods ***/
     HRESULT (STDMETHODCALLTYPE *TranslateAcceleratorGlobal)(
-        IInputObject2 *This,
-        MSG *pMsg);
+                     IInputObject2 *This,
+                     MSG *pMsg);
 
     END_INTERFACE
 } IInputObject2Vtbl;
@@ -8479,9 +8479,9 @@ MIDL_INTERFACE("000214e5-0000-0000-c000-000000000046")
 IShellIcon : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetIconOf(
-        PCUITEMID_CHILD pidl,
-        UINT flags,
-        int *pIconIndex) = 0;
+                     PCUITEMID_CHILD pidl,
+                     UINT flags,
+                     int *pIconIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8493,22 +8493,22 @@ typedef struct IShellIconVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellIcon *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellIcon *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellIcon *This);
+                     IShellIcon *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellIcon *This);
+                     IShellIcon *This);
 
     /*** IShellIcon methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIconOf)(
-        IShellIcon *This,
-        PCUITEMID_CHILD pidl,
-        UINT flags,
-        int *pIconIndex);
+                     IShellIcon *This,
+                     PCUITEMID_CHILD pidl,
+                     UINT flags,
+                     int *pIconIndex);
 
     END_INTERFACE
 } IShellIconVtbl;
@@ -8618,56 +8618,56 @@ MIDL_INTERFACE("000214e2-0000-0000-c000-000000000046")
 IShellBrowser : public IOleWindow
 {
     virtual HRESULT STDMETHODCALLTYPE InsertMenusSB(
-        HMENU hmenuShared,
-        LPOLEMENUGROUPWIDTHS lpMenuWidths) = 0;
+                     HMENU hmenuShared,
+                     LPOLEMENUGROUPWIDTHS lpMenuWidths) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMenuSB(
-        HMENU hmenuShared,
-        HOLEMENU holemenuRes,
-        HWND hwndActiveObject) = 0;
+                     HMENU hmenuShared,
+                     HOLEMENU holemenuRes,
+                     HWND hwndActiveObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveMenusSB(
-        HMENU hmenuShared) = 0;
+                     HMENU hmenuShared) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStatusTextSB(
-        LPCWSTR pszStatusText) = 0;
+                     LPCWSTR pszStatusText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableModelessSB(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAcceleratorSB(
-        MSG *pmsg,
-        WORD wID) = 0;
+                     MSG *pmsg,
+                     WORD wID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BrowseObject(
-        PCUIDLIST_RELATIVE pidl,
-        UINT wFlags) = 0;
+                     PCUIDLIST_RELATIVE pidl,
+                     UINT wFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewStateStream(
-        DWORD grfMode,
-        IStream **ppStrm) = 0;
+                     DWORD grfMode,
+                     IStream **ppStrm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetControlWindow(
-        UINT id,
-        HWND *phwnd) = 0;
+                     UINT id,
+                     HWND *phwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendControlMsg(
-        UINT id,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam,
-        LRESULT *pret) = 0;
+                     UINT id,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     LRESULT *pret) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryActiveShellView(
-        IShellView **ppshv) = 0;
+                     IShellView **ppshv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnViewWindowActive(
-        IShellView *pshv) = 0;
+                     IShellView *pshv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetToolbarItems(
-        LPTBBUTTONSB lpButtons,
-        UINT nButtons,
-        UINT uFlags) = 0;
+                     LPTBBUTTONSB lpButtons,
+                     UINT nButtons,
+                     UINT uFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8679,90 +8679,90 @@ typedef struct IShellBrowserVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellBrowser *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellBrowser *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellBrowser *This);
+                     IShellBrowser *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellBrowser *This);
+                     IShellBrowser *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IShellBrowser *This,
-        HWND *phwnd);
+                     IShellBrowser *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IShellBrowser *This,
-        WINBOOL fEnterMode);
+                     IShellBrowser *This,
+                     WINBOOL fEnterMode);
 
     /*** IShellBrowser methods ***/
     HRESULT (STDMETHODCALLTYPE *InsertMenusSB)(
-        IShellBrowser *This,
-        HMENU hmenuShared,
-        LPOLEMENUGROUPWIDTHS lpMenuWidths);
+                     IShellBrowser *This,
+                     HMENU hmenuShared,
+                     LPOLEMENUGROUPWIDTHS lpMenuWidths);
 
     HRESULT (STDMETHODCALLTYPE *SetMenuSB)(
-        IShellBrowser *This,
-        HMENU hmenuShared,
-        HOLEMENU holemenuRes,
-        HWND hwndActiveObject);
+                     IShellBrowser *This,
+                     HMENU hmenuShared,
+                     HOLEMENU holemenuRes,
+                     HWND hwndActiveObject);
 
     HRESULT (STDMETHODCALLTYPE *RemoveMenusSB)(
-        IShellBrowser *This,
-        HMENU hmenuShared);
+                     IShellBrowser *This,
+                     HMENU hmenuShared);
 
     HRESULT (STDMETHODCALLTYPE *SetStatusTextSB)(
-        IShellBrowser *This,
-        LPCWSTR pszStatusText);
+                     IShellBrowser *This,
+                     LPCWSTR pszStatusText);
 
     HRESULT (STDMETHODCALLTYPE *EnableModelessSB)(
-        IShellBrowser *This,
-        WINBOOL fEnable);
+                     IShellBrowser *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAcceleratorSB)(
-        IShellBrowser *This,
-        MSG *pmsg,
-        WORD wID);
+                     IShellBrowser *This,
+                     MSG *pmsg,
+                     WORD wID);
 
     HRESULT (STDMETHODCALLTYPE *BrowseObject)(
-        IShellBrowser *This,
-        PCUIDLIST_RELATIVE pidl,
-        UINT wFlags);
+                     IShellBrowser *This,
+                     PCUIDLIST_RELATIVE pidl,
+                     UINT wFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetViewStateStream)(
-        IShellBrowser *This,
-        DWORD grfMode,
-        IStream **ppStrm);
+                     IShellBrowser *This,
+                     DWORD grfMode,
+                     IStream **ppStrm);
 
     HRESULT (STDMETHODCALLTYPE *GetControlWindow)(
-        IShellBrowser *This,
-        UINT id,
-        HWND *phwnd);
+                     IShellBrowser *This,
+                     UINT id,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *SendControlMsg)(
-        IShellBrowser *This,
-        UINT id,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam,
-        LRESULT *pret);
+                     IShellBrowser *This,
+                     UINT id,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     LRESULT *pret);
 
     HRESULT (STDMETHODCALLTYPE *QueryActiveShellView)(
-        IShellBrowser *This,
-        IShellView **ppshv);
+                     IShellBrowser *This,
+                     IShellView **ppshv);
 
     HRESULT (STDMETHODCALLTYPE *OnViewWindowActive)(
-        IShellBrowser *This,
-        IShellView *pshv);
+                     IShellBrowser *This,
+                     IShellView *pshv);
 
     HRESULT (STDMETHODCALLTYPE *SetToolbarItems)(
-        IShellBrowser *This,
-        LPTBBUTTONSB lpButtons,
-        UINT nButtons,
-        UINT uFlags);
+                     IShellBrowser *This,
+                     LPTBBUTTONSB lpButtons,
+                     UINT nButtons,
+                     UINT uFlags);
 
     END_INTERFACE
 } IShellBrowserVtbl;
@@ -8875,12 +8875,12 @@ MIDL_INTERFACE("cb728b20-f786-11ce-92ad-00aa00a74cd0")
 IProfferService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ProfferService(
-        REFGUID guidService,
-        IServiceProvider *psp,
-        DWORD *pdwCookie) = 0;
+                     REFGUID guidService,
+                     IServiceProvider *psp,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RevokeService(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8892,26 +8892,26 @@ typedef struct IProfferServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProfferService *This,
-        REFIID riid,
-        void **ppvObject);
+                     IProfferService *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProfferService *This);
+                     IProfferService *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProfferService *This);
+                     IProfferService *This);
 
     /*** IProfferService methods ***/
     HRESULT (STDMETHODCALLTYPE *ProfferService)(
-        IProfferService *This,
-        REFGUID guidService,
-        IServiceProvider *psp,
-        DWORD *pdwCookie);
+                     IProfferService *This,
+                     REFGUID guidService,
+                     IServiceProvider *psp,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *RevokeService)(
-        IProfferService *This,
-        DWORD dwCookie);
+                     IProfferService *This,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } IProfferServiceVtbl;
@@ -8994,26 +8994,26 @@ MIDL_INTERFACE("43826d1e-e718-42ee-bc55-a1e261c37bfe")
 IShellItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BindToHandler(
-        IBindCtx *pbc,
-        REFGUID bhid,
-        REFIID riid,
-        void **ppv) = 0;
+                     IBindCtx *pbc,
+                     REFGUID bhid,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParent(
-        IShellItem **ppsi) = 0;
+                     IShellItem **ppsi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayName(
-        SIGDN sigdnName,
-        LPWSTR *ppszName) = 0;
+                     SIGDN sigdnName,
+                     LPWSTR *ppszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAttributes(
-        SFGAOF sfgaoMask,
-        SFGAOF *psfgaoAttribs) = 0;
+                     SFGAOF sfgaoMask,
+                     SFGAOF *psfgaoAttribs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Compare(
-        IShellItem *psi,
-        SICHINTF hint,
-        int *piOrder) = 0;
+                     IShellItem *psi,
+                     SICHINTF hint,
+                     int *piOrder) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9025,43 +9025,43 @@ typedef struct IShellItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellItem *This);
+                     IShellItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellItem *This);
+                     IShellItem *This);
 
     /*** IShellItem methods ***/
     HRESULT (STDMETHODCALLTYPE *BindToHandler)(
-        IShellItem *This,
-        IBindCtx *pbc,
-        REFGUID bhid,
-        REFIID riid,
-        void **ppv);
+                     IShellItem *This,
+                     IBindCtx *pbc,
+                     REFGUID bhid,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetParent)(
-        IShellItem *This,
-        IShellItem **ppsi);
+                     IShellItem *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IShellItem *This,
-        SIGDN sigdnName,
-        LPWSTR *ppszName);
+                     IShellItem *This,
+                     SIGDN sigdnName,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetAttributes)(
-        IShellItem *This,
-        SFGAOF sfgaoMask,
-        SFGAOF *psfgaoAttribs);
+                     IShellItem *This,
+                     SFGAOF sfgaoMask,
+                     SFGAOF *psfgaoAttribs);
 
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        IShellItem *This,
-        IShellItem *psi,
-        SICHINTF hint,
-        int *piOrder);
+                     IShellItem *This,
+                     IShellItem *psi,
+                     SICHINTF hint,
+                     int *piOrder);
 
     END_INTERFACE
 } IShellItemVtbl;
@@ -9167,62 +9167,62 @@ MIDL_INTERFACE("7e9fb0d3-919f-4307-ab2e-9b1860310c93")
 IShellItem2 : public IShellItem
 {
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStore(
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv) = 0;
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStoreWithCreateObject(
-        GETPROPERTYSTOREFLAGS flags,
-        IUnknown *punkCreateObject,
-        REFIID riid,
-        void **ppv) = 0;
+                     GETPROPERTYSTOREFLAGS flags,
+                     IUnknown *punkCreateObject,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStoreForKeys(
-        const PROPERTYKEY *rgKeys,
-        UINT cKeys,
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv) = 0;
+                     const PROPERTYKEY *rgKeys,
+                     UINT cKeys,
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyDescriptionList(
-        REFPROPERTYKEY keyType,
-        REFIID riid,
-        void **ppv) = 0;
+                     REFPROPERTYKEY keyType,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Update(
-        IBindCtx *pbc) = 0;
+                     IBindCtx *pbc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        REFPROPERTYKEY key,
-        PROPVARIANT *ppropvar) = 0;
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *ppropvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCLSID(
-        REFPROPERTYKEY key,
-        CLSID *pclsid) = 0;
+                     REFPROPERTYKEY key,
+                     CLSID *pclsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileTime(
-        REFPROPERTYKEY key,
-        FILETIME *pft) = 0;
+                     REFPROPERTYKEY key,
+                     FILETIME *pft) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInt32(
-        REFPROPERTYKEY key,
-        int *pi) = 0;
+                     REFPROPERTYKEY key,
+                     int *pi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetString(
-        REFPROPERTYKEY key,
-        LPWSTR *ppsz) = 0;
+                     REFPROPERTYKEY key,
+                     LPWSTR *ppsz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUInt32(
-        REFPROPERTYKEY key,
-        ULONG *pui) = 0;
+                     REFPROPERTYKEY key,
+                     ULONG *pui) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUInt64(
-        REFPROPERTYKEY key,
-        ULONGLONG *pull) = 0;
+                     REFPROPERTYKEY key,
+                     ULONGLONG *pull) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBool(
-        REFPROPERTYKEY key,
-        WINBOOL *pf) = 0;
+                     REFPROPERTYKEY key,
+                     WINBOOL *pf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9234,115 +9234,115 @@ typedef struct IShellItem2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellItem2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellItem2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellItem2 *This);
+                     IShellItem2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellItem2 *This);
+                     IShellItem2 *This);
 
     /*** IShellItem methods ***/
     HRESULT (STDMETHODCALLTYPE *BindToHandler)(
-        IShellItem2 *This,
-        IBindCtx *pbc,
-        REFGUID bhid,
-        REFIID riid,
-        void **ppv);
+                     IShellItem2 *This,
+                     IBindCtx *pbc,
+                     REFGUID bhid,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetParent)(
-        IShellItem2 *This,
-        IShellItem **ppsi);
+                     IShellItem2 *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IShellItem2 *This,
-        SIGDN sigdnName,
-        LPWSTR *ppszName);
+                     IShellItem2 *This,
+                     SIGDN sigdnName,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetAttributes)(
-        IShellItem2 *This,
-        SFGAOF sfgaoMask,
-        SFGAOF *psfgaoAttribs);
+                     IShellItem2 *This,
+                     SFGAOF sfgaoMask,
+                     SFGAOF *psfgaoAttribs);
 
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        IShellItem2 *This,
-        IShellItem *psi,
-        SICHINTF hint,
-        int *piOrder);
+                     IShellItem2 *This,
+                     IShellItem *psi,
+                     SICHINTF hint,
+                     int *piOrder);
 
     /*** IShellItem2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyStore)(
-        IShellItem2 *This,
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv);
+                     IShellItem2 *This,
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyStoreWithCreateObject)(
-        IShellItem2 *This,
-        GETPROPERTYSTOREFLAGS flags,
-        IUnknown *punkCreateObject,
-        REFIID riid,
-        void **ppv);
+                     IShellItem2 *This,
+                     GETPROPERTYSTOREFLAGS flags,
+                     IUnknown *punkCreateObject,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyStoreForKeys)(
-        IShellItem2 *This,
-        const PROPERTYKEY *rgKeys,
-        UINT cKeys,
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv);
+                     IShellItem2 *This,
+                     const PROPERTYKEY *rgKeys,
+                     UINT cKeys,
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyDescriptionList)(
-        IShellItem2 *This,
-        REFPROPERTYKEY keyType,
-        REFIID riid,
-        void **ppv);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY keyType,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *Update)(
-        IShellItem2 *This,
-        IBindCtx *pbc);
+                     IShellItem2 *This,
+                     IBindCtx *pbc);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IShellItem2 *This,
-        REFPROPERTYKEY key,
-        PROPVARIANT *ppropvar);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *GetCLSID)(
-        IShellItem2 *This,
-        REFPROPERTYKEY key,
-        CLSID *pclsid);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY key,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetFileTime)(
-        IShellItem2 *This,
-        REFPROPERTYKEY key,
-        FILETIME *pft);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY key,
+                     FILETIME *pft);
 
     HRESULT (STDMETHODCALLTYPE *GetInt32)(
-        IShellItem2 *This,
-        REFPROPERTYKEY key,
-        int *pi);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY key,
+                     int *pi);
 
     HRESULT (STDMETHODCALLTYPE *GetString)(
-        IShellItem2 *This,
-        REFPROPERTYKEY key,
-        LPWSTR *ppsz);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY key,
+                     LPWSTR *ppsz);
 
     HRESULT (STDMETHODCALLTYPE *GetUInt32)(
-        IShellItem2 *This,
-        REFPROPERTYKEY key,
-        ULONG *pui);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY key,
+                     ULONG *pui);
 
     HRESULT (STDMETHODCALLTYPE *GetUInt64)(
-        IShellItem2 *This,
-        REFPROPERTYKEY key,
-        ULONGLONG *pull);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY key,
+                     ULONGLONG *pull);
 
     HRESULT (STDMETHODCALLTYPE *GetBool)(
-        IShellItem2 *This,
-        REFPROPERTYKEY key,
-        WINBOOL *pf);
+                     IShellItem2 *This,
+                     REFPROPERTYKEY key,
+                     WINBOOL *pf);
 
     END_INTERFACE
 } IShellItem2Vtbl;
@@ -9480,9 +9480,9 @@ MIDL_INTERFACE("bcc18b79-ba16-442f-80c4-8a59c30c463b")
 IShellItemImageFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetImage(
-        SIZE size,
-        SIIGBF flags,
-        HBITMAP *phbm) = 0;
+                     SIZE size,
+                     SIIGBF flags,
+                     HBITMAP *phbm) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9494,22 +9494,22 @@ typedef struct IShellItemImageFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellItemImageFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellItemImageFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellItemImageFactory *This);
+                     IShellItemImageFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellItemImageFactory *This);
+                     IShellItemImageFactory *This);
 
     /*** IShellItemImageFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *GetImage)(
-        IShellItemImageFactory *This,
-        SIZE size,
-        SIIGBF flags,
-        HBITMAP *phbm);
+                     IShellItemImageFactory *This,
+                     SIZE size,
+                     SIIGBF flags,
+                     HBITMAP *phbm);
 
     END_INTERFACE
 } IShellItemImageFactoryVtbl;
@@ -9562,7 +9562,7 @@ MIDL_INTERFACE("a561e69a-b4b8-4113-91a5-64c6bcca3430")
 IUserAccountChangeCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnPictureChange(
-        LPCWSTR pszUserName) = 0;
+                     LPCWSTR pszUserName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9574,20 +9574,20 @@ typedef struct IUserAccountChangeCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUserAccountChangeCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUserAccountChangeCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUserAccountChangeCallback *This);
+                     IUserAccountChangeCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUserAccountChangeCallback *This);
+                     IUserAccountChangeCallback *This);
 
     /*** IUserAccountChangeCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *OnPictureChange)(
-        IUserAccountChangeCallback *This,
-        LPCWSTR pszUserName);
+                     IUserAccountChangeCallback *This,
+                     LPCWSTR pszUserName);
 
     END_INTERFACE
 } IUserAccountChangeCallbackVtbl;
@@ -9640,18 +9640,18 @@ MIDL_INTERFACE("70629033-e363-4a28-a567-0db78006e6d7")
 IEnumShellItems : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        IShellItem **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IShellItem **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumShellItems **ppenum) = 0;
+                     IEnumShellItems **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9663,33 +9663,33 @@ typedef struct IEnumShellItemsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumShellItems *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumShellItems *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumShellItems *This);
+                     IEnumShellItems *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumShellItems *This);
+                     IEnumShellItems *This);
 
     /*** IEnumShellItems methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumShellItems *This,
-        ULONG celt,
-        IShellItem **rgelt,
-        ULONG *pceltFetched);
+                     IEnumShellItems *This,
+                     ULONG celt,
+                     IShellItem **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumShellItems *This,
-        ULONG celt);
+                     IEnumShellItems *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumShellItems *This);
+                     IEnumShellItems *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumShellItems *This,
-        IEnumShellItems **ppenum);
+                     IEnumShellItems *This,
+                     IEnumShellItems **ppenum);
 
     END_INTERFACE
 } IEnumShellItemsVtbl;
@@ -9816,40 +9816,40 @@ MIDL_INTERFACE("d594d0d8-8da7-457b-b3b4-ce5dbaac0b88")
 ITransferAdviseSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE UpdateProgress(
-        ULONGLONG ullSizeCurrent,
-        ULONGLONG ullSizeTotal,
-        int nFilesCurrent,
-        int nFilesTotal,
-        int nFoldersCurrent,
-        int nFoldersTotal) = 0;
+                     ULONGLONG ullSizeCurrent,
+                     ULONGLONG ullSizeTotal,
+                     int nFilesCurrent,
+                     int nFilesTotal,
+                     int nFoldersCurrent,
+                     int nFoldersTotal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateTransferState(
-        TRANSFER_ADVISE_STATE ts) = 0;
+                     TRANSFER_ADVISE_STATE ts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConfirmOverwrite(
-        IShellItem *psiSource,
-        IShellItem *psiDestParent,
-        LPCWSTR pszName) = 0;
+                     IShellItem *psiSource,
+                     IShellItem *psiDestParent,
+                     LPCWSTR pszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConfirmEncryptionLoss(
-        IShellItem *psiSource) = 0;
+                     IShellItem *psiSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FileFailure(
-        IShellItem *psi,
-        LPCWSTR pszItem,
-        HRESULT hrError,
-        LPWSTR pszRename,
-        ULONG cchRename) = 0;
+                     IShellItem *psi,
+                     LPCWSTR pszItem,
+                     HRESULT hrError,
+                     LPWSTR pszRename,
+                     ULONG cchRename) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubStreamFailure(
-        IShellItem *psi,
-        LPCWSTR pszStreamName,
-        HRESULT hrError) = 0;
+                     IShellItem *psi,
+                     LPCWSTR pszStreamName,
+                     HRESULT hrError) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PropertyFailure(
-        IShellItem *psi,
-        const PROPERTYKEY *pkey,
-        HRESULT hrError) = 0;
+                     IShellItem *psi,
+                     const PROPERTYKEY *pkey,
+                     HRESULT hrError) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9861,59 +9861,59 @@ typedef struct ITransferAdviseSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITransferAdviseSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITransferAdviseSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITransferAdviseSink *This);
+                     ITransferAdviseSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITransferAdviseSink *This);
+                     ITransferAdviseSink *This);
 
     /*** ITransferAdviseSink methods ***/
     HRESULT (STDMETHODCALLTYPE *UpdateProgress)(
-        ITransferAdviseSink *This,
-        ULONGLONG ullSizeCurrent,
-        ULONGLONG ullSizeTotal,
-        int nFilesCurrent,
-        int nFilesTotal,
-        int nFoldersCurrent,
-        int nFoldersTotal);
+                     ITransferAdviseSink *This,
+                     ULONGLONG ullSizeCurrent,
+                     ULONGLONG ullSizeTotal,
+                     int nFilesCurrent,
+                     int nFilesTotal,
+                     int nFoldersCurrent,
+                     int nFoldersTotal);
 
     HRESULT (STDMETHODCALLTYPE *UpdateTransferState)(
-        ITransferAdviseSink *This,
-        TRANSFER_ADVISE_STATE ts);
+                     ITransferAdviseSink *This,
+                     TRANSFER_ADVISE_STATE ts);
 
     HRESULT (STDMETHODCALLTYPE *ConfirmOverwrite)(
-        ITransferAdviseSink *This,
-        IShellItem *psiSource,
-        IShellItem *psiDestParent,
-        LPCWSTR pszName);
+                     ITransferAdviseSink *This,
+                     IShellItem *psiSource,
+                     IShellItem *psiDestParent,
+                     LPCWSTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *ConfirmEncryptionLoss)(
-        ITransferAdviseSink *This,
-        IShellItem *psiSource);
+                     ITransferAdviseSink *This,
+                     IShellItem *psiSource);
 
     HRESULT (STDMETHODCALLTYPE *FileFailure)(
-        ITransferAdviseSink *This,
-        IShellItem *psi,
-        LPCWSTR pszItem,
-        HRESULT hrError,
-        LPWSTR pszRename,
-        ULONG cchRename);
+                     ITransferAdviseSink *This,
+                     IShellItem *psi,
+                     LPCWSTR pszItem,
+                     HRESULT hrError,
+                     LPWSTR pszRename,
+                     ULONG cchRename);
 
     HRESULT (STDMETHODCALLTYPE *SubStreamFailure)(
-        ITransferAdviseSink *This,
-        IShellItem *psi,
-        LPCWSTR pszStreamName,
-        HRESULT hrError);
+                     ITransferAdviseSink *This,
+                     IShellItem *psi,
+                     LPCWSTR pszStreamName,
+                     HRESULT hrError);
 
     HRESULT (STDMETHODCALLTYPE *PropertyFailure)(
-        ITransferAdviseSink *This,
-        IShellItem *psi,
-        const PROPERTYKEY *pkey,
-        HRESULT hrError);
+                     ITransferAdviseSink *This,
+                     IShellItem *psi,
+                     const PROPERTYKEY *pkey,
+                     HRESULT hrError);
 
     END_INTERFACE
 } ITransferAdviseSinkVtbl;
@@ -9992,65 +9992,65 @@ MIDL_INTERFACE("00adb003-bde9-45c6-8e29-d09f9353e108")
 ITransferSource : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        ITransferAdviseSink *psink,
-        DWORD *pdwCookie) = 0;
+                     ITransferAdviseSink *psink,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProperties(
-        IPropertyChangeArray *pproparray) = 0;
+                     IPropertyChangeArray *pproparray) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenItem(
-        IShellItem *psi,
-        TRANSFER_SOURCE_FLAGS flags,
-        REFIID riid,
-        void **ppv) = 0;
+                     IShellItem *psi,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveItem(
-        IShellItem *psi,
-        IShellItem *psiParentDst,
-        LPCWSTR pszNameDst,
-        TRANSFER_SOURCE_FLAGS flags,
-        IShellItem **ppsiNew) = 0;
+                     IShellItem *psi,
+                     IShellItem *psiParentDst,
+                     LPCWSTR pszNameDst,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     IShellItem **ppsiNew) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RecycleItem(
-        IShellItem *psiSource,
-        IShellItem *psiParentDest,
-        TRANSFER_SOURCE_FLAGS flags,
-        IShellItem **ppsiNewDest) = 0;
+                     IShellItem *psiSource,
+                     IShellItem *psiParentDest,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     IShellItem **ppsiNewDest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveItem(
-        IShellItem *psiSource,
-        TRANSFER_SOURCE_FLAGS flags) = 0;
+                     IShellItem *psiSource,
+                     TRANSFER_SOURCE_FLAGS flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenameItem(
-        IShellItem *psiSource,
-        LPCWSTR pszNewName,
-        TRANSFER_SOURCE_FLAGS flags,
-        IShellItem **ppsiNewDest) = 0;
+                     IShellItem *psiSource,
+                     LPCWSTR pszNewName,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     IShellItem **ppsiNewDest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LinkItem(
-        IShellItem *psiSource,
-        IShellItem *psiParentDest,
-        LPCWSTR pszNewName,
-        TRANSFER_SOURCE_FLAGS flags,
-        IShellItem **ppsiNewDest) = 0;
+                     IShellItem *psiSource,
+                     IShellItem *psiParentDest,
+                     LPCWSTR pszNewName,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     IShellItem **ppsiNewDest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyPropertiesToItem(
-        IShellItem *psiSource,
-        IShellItem **ppsiNew) = 0;
+                     IShellItem *psiSource,
+                     IShellItem **ppsiNew) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultDestinationName(
-        IShellItem *psiSource,
-        IShellItem *psiParentDest,
-        LPWSTR *ppszDestinationName) = 0;
+                     IShellItem *psiSource,
+                     IShellItem *psiParentDest,
+                     LPWSTR *ppszDestinationName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnterFolder(
-        IShellItem *psiChildFolderDest) = 0;
+                     IShellItem *psiChildFolderDest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LeaveFolder(
-        IShellItem *psiChildFolderDest) = 0;
+                     IShellItem *psiChildFolderDest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10062,90 +10062,90 @@ typedef struct ITransferSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITransferSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITransferSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITransferSource *This);
+                     ITransferSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITransferSource *This);
+                     ITransferSource *This);
 
     /*** ITransferSource methods ***/
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        ITransferSource *This,
-        ITransferAdviseSink *psink,
-        DWORD *pdwCookie);
+                     ITransferSource *This,
+                     ITransferAdviseSink *psink,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        ITransferSource *This,
-        DWORD dwCookie);
+                     ITransferSource *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *SetProperties)(
-        ITransferSource *This,
-        IPropertyChangeArray *pproparray);
+                     ITransferSource *This,
+                     IPropertyChangeArray *pproparray);
 
     HRESULT (STDMETHODCALLTYPE *OpenItem)(
-        ITransferSource *This,
-        IShellItem *psi,
-        TRANSFER_SOURCE_FLAGS flags,
-        REFIID riid,
-        void **ppv);
+                     ITransferSource *This,
+                     IShellItem *psi,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *MoveItem)(
-        ITransferSource *This,
-        IShellItem *psi,
-        IShellItem *psiParentDst,
-        LPCWSTR pszNameDst,
-        TRANSFER_SOURCE_FLAGS flags,
-        IShellItem **ppsiNew);
+                     ITransferSource *This,
+                     IShellItem *psi,
+                     IShellItem *psiParentDst,
+                     LPCWSTR pszNameDst,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     IShellItem **ppsiNew);
 
     HRESULT (STDMETHODCALLTYPE *RecycleItem)(
-        ITransferSource *This,
-        IShellItem *psiSource,
-        IShellItem *psiParentDest,
-        TRANSFER_SOURCE_FLAGS flags,
-        IShellItem **ppsiNewDest);
+                     ITransferSource *This,
+                     IShellItem *psiSource,
+                     IShellItem *psiParentDest,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     IShellItem **ppsiNewDest);
 
     HRESULT (STDMETHODCALLTYPE *RemoveItem)(
-        ITransferSource *This,
-        IShellItem *psiSource,
-        TRANSFER_SOURCE_FLAGS flags);
+                     ITransferSource *This,
+                     IShellItem *psiSource,
+                     TRANSFER_SOURCE_FLAGS flags);
 
     HRESULT (STDMETHODCALLTYPE *RenameItem)(
-        ITransferSource *This,
-        IShellItem *psiSource,
-        LPCWSTR pszNewName,
-        TRANSFER_SOURCE_FLAGS flags,
-        IShellItem **ppsiNewDest);
+                     ITransferSource *This,
+                     IShellItem *psiSource,
+                     LPCWSTR pszNewName,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     IShellItem **ppsiNewDest);
 
     HRESULT (STDMETHODCALLTYPE *LinkItem)(
-        ITransferSource *This,
-        IShellItem *psiSource,
-        IShellItem *psiParentDest,
-        LPCWSTR pszNewName,
-        TRANSFER_SOURCE_FLAGS flags,
-        IShellItem **ppsiNewDest);
+                     ITransferSource *This,
+                     IShellItem *psiSource,
+                     IShellItem *psiParentDest,
+                     LPCWSTR pszNewName,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     IShellItem **ppsiNewDest);
 
     HRESULT (STDMETHODCALLTYPE *ApplyPropertiesToItem)(
-        ITransferSource *This,
-        IShellItem *psiSource,
-        IShellItem **ppsiNew);
+                     ITransferSource *This,
+                     IShellItem *psiSource,
+                     IShellItem **ppsiNew);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultDestinationName)(
-        ITransferSource *This,
-        IShellItem *psiSource,
-        IShellItem *psiParentDest,
-        LPWSTR *ppszDestinationName);
+                     ITransferSource *This,
+                     IShellItem *psiSource,
+                     IShellItem *psiParentDest,
+                     LPWSTR *ppszDestinationName);
 
     HRESULT (STDMETHODCALLTYPE *EnterFolder)(
-        ITransferSource *This,
-        IShellItem *psiChildFolderDest);
+                     ITransferSource *This,
+                     IShellItem *psiChildFolderDest);
 
     HRESULT (STDMETHODCALLTYPE *LeaveFolder)(
-        ITransferSource *This,
-        IShellItem *psiChildFolderDest);
+                     ITransferSource *This,
+                     IShellItem *psiChildFolderDest);
 
     END_INTERFACE
 } ITransferSourceVtbl;
@@ -10252,18 +10252,18 @@ MIDL_INTERFACE("2dd81fe3-a83c-4da9-a330-47249d345ba1")
 IEnumResources : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        SHELL_ITEM_RESOURCE *psir,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     SHELL_ITEM_RESOURCE *psir,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumResources **ppenumr) = 0;
+                     IEnumResources **ppenumr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10275,33 +10275,33 @@ typedef struct IEnumResourcesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumResources *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumResources *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumResources *This);
+                     IEnumResources *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumResources *This);
+                     IEnumResources *This);
 
     /*** IEnumResources methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumResources *This,
-        ULONG celt,
-        SHELL_ITEM_RESOURCE *psir,
-        ULONG *pceltFetched);
+                     IEnumResources *This,
+                     ULONG celt,
+                     SHELL_ITEM_RESOURCE *psir,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumResources *This,
-        ULONG celt);
+                     IEnumResources *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumResources *This);
+                     IEnumResources *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumResources *This,
-        IEnumResources **ppenumr);
+                     IEnumResources *This,
+                     IEnumResources **ppenumr);
 
     END_INTERFACE
 } IEnumResourcesVtbl;
@@ -10366,43 +10366,43 @@ MIDL_INTERFACE("ff5693be-2ce0-4d48-b5c5-40817d1acdb9")
 IShellItemResources : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAttributes(
-        DWORD *pdwAttributes) = 0;
+                     DWORD *pdwAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSize(
-        ULONGLONG *pullSize) = 0;
+                     ULONGLONG *pullSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimes(
-        FILETIME *pftCreation,
-        FILETIME *pftWrite,
-        FILETIME *pftAccess) = 0;
+                     FILETIME *pftCreation,
+                     FILETIME *pftWrite,
+                     FILETIME *pftAccess) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimes(
-        const FILETIME *pftCreation,
-        const FILETIME *pftWrite,
-        const FILETIME *pftAccess) = 0;
+                     const FILETIME *pftCreation,
+                     const FILETIME *pftWrite,
+                     const FILETIME *pftAccess) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResourceDescription(
-        const SHELL_ITEM_RESOURCE *pcsir,
-        LPWSTR *ppszDescription) = 0;
+                     const SHELL_ITEM_RESOURCE *pcsir,
+                     LPWSTR *ppszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumResources(
-        IEnumResources **ppenumr) = 0;
+                     IEnumResources **ppenumr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SupportsResource(
-        const SHELL_ITEM_RESOURCE *pcsir) = 0;
+                     const SHELL_ITEM_RESOURCE *pcsir) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenResource(
-        const SHELL_ITEM_RESOURCE *pcsir,
-        REFIID riid,
-        void **ppv) = 0;
+                     const SHELL_ITEM_RESOURCE *pcsir,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateResource(
-        const SHELL_ITEM_RESOURCE *pcsir,
-        REFIID riid,
-        void **ppv) = 0;
+                     const SHELL_ITEM_RESOURCE *pcsir,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MarkForDelete(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10414,64 +10414,64 @@ typedef struct IShellItemResourcesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellItemResources *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellItemResources *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellItemResources *This);
+                     IShellItemResources *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellItemResources *This);
+                     IShellItemResources *This);
 
     /*** IShellItemResources methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAttributes)(
-        IShellItemResources *This,
-        DWORD *pdwAttributes);
+                     IShellItemResources *This,
+                     DWORD *pdwAttributes);
 
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IShellItemResources *This,
-        ULONGLONG *pullSize);
+                     IShellItemResources *This,
+                     ULONGLONG *pullSize);
 
     HRESULT (STDMETHODCALLTYPE *GetTimes)(
-        IShellItemResources *This,
-        FILETIME *pftCreation,
-        FILETIME *pftWrite,
-        FILETIME *pftAccess);
+                     IShellItemResources *This,
+                     FILETIME *pftCreation,
+                     FILETIME *pftWrite,
+                     FILETIME *pftAccess);
 
     HRESULT (STDMETHODCALLTYPE *SetTimes)(
-        IShellItemResources *This,
-        const FILETIME *pftCreation,
-        const FILETIME *pftWrite,
-        const FILETIME *pftAccess);
+                     IShellItemResources *This,
+                     const FILETIME *pftCreation,
+                     const FILETIME *pftWrite,
+                     const FILETIME *pftAccess);
 
     HRESULT (STDMETHODCALLTYPE *GetResourceDescription)(
-        IShellItemResources *This,
-        const SHELL_ITEM_RESOURCE *pcsir,
-        LPWSTR *ppszDescription);
+                     IShellItemResources *This,
+                     const SHELL_ITEM_RESOURCE *pcsir,
+                     LPWSTR *ppszDescription);
 
     HRESULT (STDMETHODCALLTYPE *EnumResources)(
-        IShellItemResources *This,
-        IEnumResources **ppenumr);
+                     IShellItemResources *This,
+                     IEnumResources **ppenumr);
 
     HRESULT (STDMETHODCALLTYPE *SupportsResource)(
-        IShellItemResources *This,
-        const SHELL_ITEM_RESOURCE *pcsir);
+                     IShellItemResources *This,
+                     const SHELL_ITEM_RESOURCE *pcsir);
 
     HRESULT (STDMETHODCALLTYPE *OpenResource)(
-        IShellItemResources *This,
-        const SHELL_ITEM_RESOURCE *pcsir,
-        REFIID riid,
-        void **ppv);
+                     IShellItemResources *This,
+                     const SHELL_ITEM_RESOURCE *pcsir,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CreateResource)(
-        IShellItemResources *This,
-        const SHELL_ITEM_RESOURCE *pcsir,
-        REFIID riid,
-        void **ppv);
+                     IShellItemResources *This,
+                     const SHELL_ITEM_RESOURCE *pcsir,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *MarkForDelete)(
-        IShellItemResources *This);
+                     IShellItemResources *This);
 
     END_INTERFACE
 } IShellItemResourcesVtbl;
@@ -10560,21 +10560,21 @@ MIDL_INTERFACE("48addd32-3ca5-4124-abe3-b5a72531b207")
 ITransferDestination : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        ITransferAdviseSink *psink,
-        DWORD *pdwCookie) = 0;
+                     ITransferAdviseSink *psink,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateItem(
-        LPCWSTR pszName,
-        DWORD dwAttributes,
-        ULONGLONG ullSize,
-        TRANSFER_SOURCE_FLAGS flags,
-        REFIID riidItem,
-        void **ppvItem,
-        REFIID riidResources,
-        void **ppvResources) = 0;
+                     LPCWSTR pszName,
+                     DWORD dwAttributes,
+                     ULONGLONG ullSize,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     REFIID riidItem,
+                     void **ppvItem,
+                     REFIID riidResources,
+                     void **ppvResources) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10586,36 +10586,36 @@ typedef struct ITransferDestinationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITransferDestination *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITransferDestination *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITransferDestination *This);
+                     ITransferDestination *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITransferDestination *This);
+                     ITransferDestination *This);
 
     /*** ITransferDestination methods ***/
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        ITransferDestination *This,
-        ITransferAdviseSink *psink,
-        DWORD *pdwCookie);
+                     ITransferDestination *This,
+                     ITransferAdviseSink *psink,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        ITransferDestination *This,
-        DWORD dwCookie);
+                     ITransferDestination *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *CreateItem)(
-        ITransferDestination *This,
-        LPCWSTR pszName,
-        DWORD dwAttributes,
-        ULONGLONG ullSize,
-        TRANSFER_SOURCE_FLAGS flags,
-        REFIID riidItem,
-        void **ppvItem,
-        REFIID riidResources,
-        void **ppvResources);
+                     ITransferDestination *This,
+                     LPCWSTR pszName,
+                     DWORD dwAttributes,
+                     ULONGLONG ullSize,
+                     TRANSFER_SOURCE_FLAGS flags,
+                     REFIID riidItem,
+                     void **ppvItem,
+                     REFIID riidResources,
+                     void **ppvResources);
 
     END_INTERFACE
 } ITransferDestinationVtbl;
@@ -10668,11 +10668,11 @@ typedef struct _OVERLAPPED {
     ULONG_PTR Internal;
     ULONG_PTR InternalHigh;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            DWORD Offset;
-            DWORD OffsetHigh;
-        } __C89_NAMELESSSTRUCTNAME;
-        PVOID Pointer;
+                     __C89_NAMELESS struct {
+                                      DWORD Offset;
+                                      DWORD OffsetHigh;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     PVOID Pointer;
     } __C89_NAMELESSUNIONNAME;
     HANDLE hEvent;
 } OVERLAPPED;
@@ -10691,24 +10691,24 @@ MIDL_INTERFACE("fe0b6665-e0ca-49b9-a178-2b5cb48d92a5")
 IStreamAsync : public IStream
 {
     virtual HRESULT STDMETHODCALLTYPE ReadAsync(
-        void *pv,
-        DWORD cb,
-        LPDWORD pcbRead,
-        LPOVERLAPPED lpOverlapped) = 0;
+                     void *pv,
+                     DWORD cb,
+                     LPDWORD pcbRead,
+                     LPOVERLAPPED lpOverlapped) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteAsync(
-        const void *lpBuffer,
-        DWORD cb,
-        LPDWORD pcbWritten,
-        LPOVERLAPPED lpOverlapped) = 0;
+                     const void *lpBuffer,
+                     DWORD cb,
+                     LPDWORD pcbWritten,
+                     LPOVERLAPPED lpOverlapped) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OverlappedResult(
-        LPOVERLAPPED lpOverlapped,
-        LPDWORD lpNumberOfBytesTransferred,
-        WINBOOL bWait) = 0;
+                     LPOVERLAPPED lpOverlapped,
+                     LPDWORD lpNumberOfBytesTransferred,
+                     WINBOOL bWait) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CancelIo(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10720,98 +10720,98 @@ typedef struct IStreamAsyncVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStreamAsync *This,
-        REFIID riid,
-        void **ppvObject);
+                     IStreamAsync *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStreamAsync *This);
+                     IStreamAsync *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStreamAsync *This);
+                     IStreamAsync *This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IStreamAsync *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     IStreamAsync *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IStreamAsync *This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     IStreamAsync *This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        IStreamAsync *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     IStreamAsync *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        IStreamAsync *This,
-        ULARGE_INTEGER libNewSize);
+                     IStreamAsync *This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        IStreamAsync *This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     IStreamAsync *This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IStreamAsync *This,
-        DWORD grfCommitFlags);
+                     IStreamAsync *This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        IStreamAsync *This);
+                     IStreamAsync *This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        IStreamAsync *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     IStreamAsync *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        IStreamAsync *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     IStreamAsync *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        IStreamAsync *This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     IStreamAsync *This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IStreamAsync *This,
-        IStream **ppstm);
+                     IStreamAsync *This,
+                     IStream **ppstm);
 
     /*** IStreamAsync methods ***/
     HRESULT (STDMETHODCALLTYPE *ReadAsync)(
-        IStreamAsync *This,
-        void *pv,
-        DWORD cb,
-        LPDWORD pcbRead,
-        LPOVERLAPPED lpOverlapped);
+                     IStreamAsync *This,
+                     void *pv,
+                     DWORD cb,
+                     LPDWORD pcbRead,
+                     LPOVERLAPPED lpOverlapped);
 
     HRESULT (STDMETHODCALLTYPE *WriteAsync)(
-        IStreamAsync *This,
-        const void *lpBuffer,
-        DWORD cb,
-        LPDWORD pcbWritten,
-        LPOVERLAPPED lpOverlapped);
+                     IStreamAsync *This,
+                     const void *lpBuffer,
+                     DWORD cb,
+                     LPDWORD pcbWritten,
+                     LPOVERLAPPED lpOverlapped);
 
     HRESULT (STDMETHODCALLTYPE *OverlappedResult)(
-        IStreamAsync *This,
-        LPOVERLAPPED lpOverlapped,
-        LPDWORD lpNumberOfBytesTransferred,
-        WINBOOL bWait);
+                     IStreamAsync *This,
+                     LPOVERLAPPED lpOverlapped,
+                     LPDWORD lpNumberOfBytesTransferred,
+                     WINBOOL bWait);
 
     HRESULT (STDMETHODCALLTYPE *CancelIo)(
-        IStreamAsync *This);
+                     IStreamAsync *This);
 
     END_INTERFACE
 } IStreamAsyncVtbl;
@@ -10924,7 +10924,7 @@ MIDL_INTERFACE("8a68fdda-1fdc-4c20-8ceb-416643b5a625")
 IStreamUnbufferedInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSectorSize(
-        ULONG *pcbSectorSize) = 0;
+                     ULONG *pcbSectorSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10936,20 +10936,20 @@ typedef struct IStreamUnbufferedInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStreamUnbufferedInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IStreamUnbufferedInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStreamUnbufferedInfo *This);
+                     IStreamUnbufferedInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStreamUnbufferedInfo *This);
+                     IStreamUnbufferedInfo *This);
 
     /*** IStreamUnbufferedInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSectorSize)(
-        IStreamUnbufferedInfo *This,
-        ULONG *pcbSectorSize);
+                     IStreamUnbufferedInfo *This,
+                     ULONG *pcbSectorSize);
 
     END_INTERFACE
 } IStreamUnbufferedInfoVtbl;
@@ -11003,87 +11003,87 @@ MIDL_INTERFACE("04b0f1a7-9490-44bc-96e1-4296a31252e2")
 IFileOperationProgressSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartOperations(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FinishOperations(
-        HRESULT hrResult) = 0;
+                     HRESULT hrResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PreRenameItem(
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        LPCWSTR pszNewName) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     LPCWSTR pszNewName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostRenameItem(
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        LPCWSTR pszNewName,
-        HRESULT hrRename,
-        IShellItem *psiNewlyCreated) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     LPCWSTR pszNewName,
+                     HRESULT hrRename,
+                     IShellItem *psiNewlyCreated) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PreMoveItem(
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostMoveItem(
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName,
-        HRESULT hrMove,
-        IShellItem *psiNewlyCreated) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName,
+                     HRESULT hrMove,
+                     IShellItem *psiNewlyCreated) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PreCopyItem(
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostCopyItem(
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName,
-        HRESULT hrCopy,
-        IShellItem *psiNewlyCreated) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName,
+                     HRESULT hrCopy,
+                     IShellItem *psiNewlyCreated) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PreDeleteItem(
-        DWORD dwFlags,
-        IShellItem *psiItem) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostDeleteItem(
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        HRESULT hrDelete,
-        IShellItem *psiNewlyCreated) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     HRESULT hrDelete,
+                     IShellItem *psiNewlyCreated) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PreNewItem(
-        DWORD dwFlags,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostNewItem(
-        DWORD dwFlags,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName,
-        LPCWSTR pszTemplateName,
-        DWORD dwFileAttributes,
-        HRESULT hrNew,
-        IShellItem *psiNewItem) = 0;
+                     DWORD dwFlags,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName,
+                     LPCWSTR pszTemplateName,
+                     DWORD dwFileAttributes,
+                     HRESULT hrNew,
+                     IShellItem *psiNewItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateProgress(
-        UINT iWorkTotal,
-        UINT iWorkSoFar) = 0;
+                     UINT iWorkTotal,
+                     UINT iWorkSoFar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetTimer(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PauseTimer(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResumeTimer(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11095,111 +11095,111 @@ typedef struct IFileOperationProgressSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileOperationProgressSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileOperationProgressSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileOperationProgressSink *This);
+                     IFileOperationProgressSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileOperationProgressSink *This);
+                     IFileOperationProgressSink *This);
 
     /*** IFileOperationProgressSink methods ***/
     HRESULT (STDMETHODCALLTYPE *StartOperations)(
-        IFileOperationProgressSink *This);
+                     IFileOperationProgressSink *This);
 
     HRESULT (STDMETHODCALLTYPE *FinishOperations)(
-        IFileOperationProgressSink *This,
-        HRESULT hrResult);
+                     IFileOperationProgressSink *This,
+                     HRESULT hrResult);
 
     HRESULT (STDMETHODCALLTYPE *PreRenameItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        LPCWSTR pszNewName);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     LPCWSTR pszNewName);
 
     HRESULT (STDMETHODCALLTYPE *PostRenameItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        LPCWSTR pszNewName,
-        HRESULT hrRename,
-        IShellItem *psiNewlyCreated);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     LPCWSTR pszNewName,
+                     HRESULT hrRename,
+                     IShellItem *psiNewlyCreated);
 
     HRESULT (STDMETHODCALLTYPE *PreMoveItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName);
 
     HRESULT (STDMETHODCALLTYPE *PostMoveItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName,
-        HRESULT hrMove,
-        IShellItem *psiNewlyCreated);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName,
+                     HRESULT hrMove,
+                     IShellItem *psiNewlyCreated);
 
     HRESULT (STDMETHODCALLTYPE *PreCopyItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName);
 
     HRESULT (STDMETHODCALLTYPE *PostCopyItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName,
-        HRESULT hrCopy,
-        IShellItem *psiNewlyCreated);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName,
+                     HRESULT hrCopy,
+                     IShellItem *psiNewlyCreated);
 
     HRESULT (STDMETHODCALLTYPE *PreDeleteItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiItem);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiItem);
 
     HRESULT (STDMETHODCALLTYPE *PostDeleteItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiItem,
-        HRESULT hrDelete,
-        IShellItem *psiNewlyCreated);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiItem,
+                     HRESULT hrDelete,
+                     IShellItem *psiNewlyCreated);
 
     HRESULT (STDMETHODCALLTYPE *PreNewItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName);
 
     HRESULT (STDMETHODCALLTYPE *PostNewItem)(
-        IFileOperationProgressSink *This,
-        DWORD dwFlags,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName,
-        LPCWSTR pszTemplateName,
-        DWORD dwFileAttributes,
-        HRESULT hrNew,
-        IShellItem *psiNewItem);
+                     IFileOperationProgressSink *This,
+                     DWORD dwFlags,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName,
+                     LPCWSTR pszTemplateName,
+                     DWORD dwFileAttributes,
+                     HRESULT hrNew,
+                     IShellItem *psiNewItem);
 
     HRESULT (STDMETHODCALLTYPE *UpdateProgress)(
-        IFileOperationProgressSink *This,
-        UINT iWorkTotal,
-        UINT iWorkSoFar);
+                     IFileOperationProgressSink *This,
+                     UINT iWorkTotal,
+                     UINT iWorkSoFar);
 
     HRESULT (STDMETHODCALLTYPE *ResetTimer)(
-        IFileOperationProgressSink *This);
+                     IFileOperationProgressSink *This);
 
     HRESULT (STDMETHODCALLTYPE *PauseTimer)(
-        IFileOperationProgressSink *This);
+                     IFileOperationProgressSink *This);
 
     HRESULT (STDMETHODCALLTYPE *ResumeTimer)(
-        IFileOperationProgressSink *This);
+                     IFileOperationProgressSink *This);
 
     END_INTERFACE
 } IFileOperationProgressSinkVtbl;
@@ -11323,35 +11323,35 @@ MIDL_INTERFACE("b63ea76d-1f85-456f-a19c-48159efa858b")
 IShellItemArray : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BindToHandler(
-        IBindCtx *pbc,
-        REFGUID bhid,
-        REFIID riid,
-        void **ppvOut) = 0;
+                     IBindCtx *pbc,
+                     REFGUID bhid,
+                     REFIID riid,
+                     void **ppvOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStore(
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv) = 0;
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyDescriptionList(
-        REFPROPERTYKEY keyType,
-        REFIID riid,
-        void **ppv) = 0;
+                     REFPROPERTYKEY keyType,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAttributes(
-        SIATTRIBFLAGS AttribFlags,
-        SFGAOF sfgaoMask,
-        SFGAOF *psfgaoAttribs) = 0;
+                     SIATTRIBFLAGS AttribFlags,
+                     SFGAOF sfgaoMask,
+                     SFGAOF *psfgaoAttribs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        DWORD *pdwNumItems) = 0;
+                     DWORD *pdwNumItems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemAt(
-        DWORD dwIndex,
-        IShellItem **ppsi) = 0;
+                     DWORD dwIndex,
+                     IShellItem **ppsi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumItems(
-        IEnumShellItems **ppenumShellItems) = 0;
+                     IEnumShellItems **ppenumShellItems) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11363,54 +11363,54 @@ typedef struct IShellItemArrayVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellItemArray *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellItemArray *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellItemArray *This);
+                     IShellItemArray *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellItemArray *This);
+                     IShellItemArray *This);
 
     /*** IShellItemArray methods ***/
     HRESULT (STDMETHODCALLTYPE *BindToHandler)(
-        IShellItemArray *This,
-        IBindCtx *pbc,
-        REFGUID bhid,
-        REFIID riid,
-        void **ppvOut);
+                     IShellItemArray *This,
+                     IBindCtx *pbc,
+                     REFGUID bhid,
+                     REFIID riid,
+                     void **ppvOut);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyStore)(
-        IShellItemArray *This,
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv);
+                     IShellItemArray *This,
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyDescriptionList)(
-        IShellItemArray *This,
-        REFPROPERTYKEY keyType,
-        REFIID riid,
-        void **ppv);
+                     IShellItemArray *This,
+                     REFPROPERTYKEY keyType,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetAttributes)(
-        IShellItemArray *This,
-        SIATTRIBFLAGS AttribFlags,
-        SFGAOF sfgaoMask,
-        SFGAOF *psfgaoAttribs);
+                     IShellItemArray *This,
+                     SIATTRIBFLAGS AttribFlags,
+                     SFGAOF sfgaoMask,
+                     SFGAOF *psfgaoAttribs);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IShellItemArray *This,
-        DWORD *pdwNumItems);
+                     IShellItemArray *This,
+                     DWORD *pdwNumItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemAt)(
-        IShellItemArray *This,
-        DWORD dwIndex,
-        IShellItem **ppsi);
+                     IShellItemArray *This,
+                     DWORD dwIndex,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *EnumItems)(
-        IShellItemArray *This,
-        IEnumShellItems **ppenumShellItems);
+                     IShellItemArray *This,
+                     IEnumShellItems **ppenumShellItems);
 
     END_INTERFACE
 } IShellItemArrayVtbl;
@@ -11494,8 +11494,8 @@ MIDL_INTERFACE("7f73be3f-fb79-493c-a6c7-7ee14e245841")
 IInitializeWithItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IShellItem *psi,
-        DWORD grfMode) = 0;
+                     IShellItem *psi,
+                     DWORD grfMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11507,21 +11507,21 @@ typedef struct IInitializeWithItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeWithItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeWithItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeWithItem *This);
+                     IInitializeWithItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeWithItem *This);
+                     IInitializeWithItem *This);
 
     /*** IInitializeWithItem methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IInitializeWithItem *This,
-        IShellItem *psi,
-        DWORD grfMode);
+                     IInitializeWithItem *This,
+                     IShellItem *psi,
+                     DWORD grfMode);
 
     END_INTERFACE
 } IInitializeWithItemVtbl;
@@ -11574,11 +11574,11 @@ MIDL_INTERFACE("1c9cd5bb-98e9-4491-a60f-31aacc72b83c")
 IObjectWithSelection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetSelection(
-        IShellItemArray *psia) = 0;
+                     IShellItemArray *psia) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelection(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11590,25 +11590,25 @@ typedef struct IObjectWithSelectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectWithSelection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectWithSelection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectWithSelection *This);
+                     IObjectWithSelection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectWithSelection *This);
+                     IObjectWithSelection *This);
 
     /*** IObjectWithSelection methods ***/
     HRESULT (STDMETHODCALLTYPE *SetSelection)(
-        IObjectWithSelection *This,
-        IShellItemArray *psia);
+                     IObjectWithSelection *This,
+                     IShellItemArray *psia);
 
     HRESULT (STDMETHODCALLTYPE *GetSelection)(
-        IObjectWithSelection *This,
-        REFIID riid,
-        void **ppv);
+                     IObjectWithSelection *This,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IObjectWithSelectionVtbl;
@@ -11665,7 +11665,7 @@ MIDL_INTERFACE("321a6a6a-d61f-4bf3-97ae-14be2986bb36")
 IObjectWithBackReferences : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RemoveBackReferences(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11677,19 +11677,19 @@ typedef struct IObjectWithBackReferencesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectWithBackReferences *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectWithBackReferences *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectWithBackReferences *This);
+                     IObjectWithBackReferences *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectWithBackReferences *This);
+                     IObjectWithBackReferences *This);
 
     /*** IObjectWithBackReferences methods ***/
     HRESULT (STDMETHODCALLTYPE *RemoveBackReferences)(
-        IObjectWithBackReferences *This);
+                     IObjectWithBackReferences *This);
 
     END_INTERFACE
 } IObjectWithBackReferencesVtbl;
@@ -11767,54 +11767,54 @@ MIDL_INTERFACE("757a7d9f-919a-4118-99d7-dbb208c8cc66")
 IPropertyUI : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParsePropertyName(
-        LPCWSTR pszName,
-        FMTID *pfmtid,
-        PROPID *ppid,
-        ULONG *pchEaten) = 0;
+                     LPCWSTR pszName,
+                     FMTID *pfmtid,
+                     PROPID *ppid,
+                     ULONG *pchEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCannonicalName(
-        REFFMTID fmtid,
-        PROPID pid,
-        LPWSTR pwszText,
-        DWORD cchText) = 0;
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     LPWSTR pwszText,
+                     DWORD cchText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayName(
-        REFFMTID fmtid,
-        PROPID pid,
-        PROPERTYUI_NAME_FLAGS flags,
-        LPWSTR pwszText,
-        DWORD cchText) = 0;
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     PROPERTYUI_NAME_FLAGS flags,
+                     LPWSTR pwszText,
+                     DWORD cchText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyDescription(
-        REFFMTID fmtid,
-        PROPID pid,
-        LPWSTR pwszText,
-        DWORD cchText) = 0;
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     LPWSTR pwszText,
+                     DWORD cchText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultWidth(
-        REFFMTID fmtid,
-        PROPID pid,
-        ULONG *pcxChars) = 0;
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     ULONG *pcxChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlags(
-        REFFMTID fmtid,
-        PROPID pid,
-        PROPERTYUI_FLAGS *pflags) = 0;
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     PROPERTYUI_FLAGS *pflags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FormatForDisplay(
-        REFFMTID fmtid,
-        PROPID pid,
-        const PROPVARIANT *ppropvar,
-        PROPERTYUI_FORMAT_FLAGS puiff,
-        LPWSTR pwszText,
-        DWORD cchText) = 0;
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     const PROPVARIANT *ppropvar,
+                     PROPERTYUI_FORMAT_FLAGS puiff,
+                     LPWSTR pwszText,
+                     DWORD cchText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHelpInfo(
-        REFFMTID fmtid,
-        PROPID pid,
-        LPWSTR pwszHelpFile,
-        DWORD cch,
-        UINT *puHelpID) = 0;
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     LPWSTR pwszHelpFile,
+                     DWORD cch,
+                     UINT *puHelpID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11826,74 +11826,74 @@ typedef struct IPropertyUIVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyUI *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyUI *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyUI *This);
+                     IPropertyUI *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyUI *This);
+                     IPropertyUI *This);
 
     /*** IPropertyUI methods ***/
     HRESULT (STDMETHODCALLTYPE *ParsePropertyName)(
-        IPropertyUI *This,
-        LPCWSTR pszName,
-        FMTID *pfmtid,
-        PROPID *ppid,
-        ULONG *pchEaten);
+                     IPropertyUI *This,
+                     LPCWSTR pszName,
+                     FMTID *pfmtid,
+                     PROPID *ppid,
+                     ULONG *pchEaten);
 
     HRESULT (STDMETHODCALLTYPE *GetCannonicalName)(
-        IPropertyUI *This,
-        REFFMTID fmtid,
-        PROPID pid,
-        LPWSTR pwszText,
-        DWORD cchText);
+                     IPropertyUI *This,
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     LPWSTR pwszText,
+                     DWORD cchText);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IPropertyUI *This,
-        REFFMTID fmtid,
-        PROPID pid,
-        PROPERTYUI_NAME_FLAGS flags,
-        LPWSTR pwszText,
-        DWORD cchText);
+                     IPropertyUI *This,
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     PROPERTYUI_NAME_FLAGS flags,
+                     LPWSTR pwszText,
+                     DWORD cchText);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyDescription)(
-        IPropertyUI *This,
-        REFFMTID fmtid,
-        PROPID pid,
-        LPWSTR pwszText,
-        DWORD cchText);
+                     IPropertyUI *This,
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     LPWSTR pwszText,
+                     DWORD cchText);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultWidth)(
-        IPropertyUI *This,
-        REFFMTID fmtid,
-        PROPID pid,
-        ULONG *pcxChars);
+                     IPropertyUI *This,
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     ULONG *pcxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        IPropertyUI *This,
-        REFFMTID fmtid,
-        PROPID pid,
-        PROPERTYUI_FLAGS *pflags);
+                     IPropertyUI *This,
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     PROPERTYUI_FLAGS *pflags);
 
     HRESULT (STDMETHODCALLTYPE *FormatForDisplay)(
-        IPropertyUI *This,
-        REFFMTID fmtid,
-        PROPID pid,
-        const PROPVARIANT *ppropvar,
-        PROPERTYUI_FORMAT_FLAGS puiff,
-        LPWSTR pwszText,
-        DWORD cchText);
+                     IPropertyUI *This,
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     const PROPVARIANT *ppropvar,
+                     PROPERTYUI_FORMAT_FLAGS puiff,
+                     LPWSTR pwszText,
+                     DWORD cchText);
 
     HRESULT (STDMETHODCALLTYPE *GetHelpInfo)(
-        IPropertyUI *This,
-        REFFMTID fmtid,
-        PROPID pid,
-        LPWSTR pwszHelpFile,
-        DWORD cch,
-        UINT *puHelpID);
+                     IPropertyUI *This,
+                     REFFMTID fmtid,
+                     PROPID pid,
+                     LPWSTR pwszHelpFile,
+                     DWORD cch,
+                     UINT *puHelpID);
 
     END_INTERFACE
 } IPropertyUIVtbl;
@@ -11981,28 +11981,28 @@ MIDL_INTERFACE("9af64809-5864-4c26-a720-c1f78c086ee3")
 ICategoryProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CanCategorizeOnSCID(
-        const SHCOLUMNID *pscid) = 0;
+                     const SHCOLUMNID *pscid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultCategory(
-        GUID *pguid,
-        SHCOLUMNID *pscid) = 0;
+                     GUID *pguid,
+                     SHCOLUMNID *pscid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategoryForSCID(
-        const SHCOLUMNID *pscid,
-        GUID *pguid) = 0;
+                     const SHCOLUMNID *pscid,
+                     GUID *pguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCategories(
-        IEnumGUID **penum) = 0;
+                     IEnumGUID **penum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategoryName(
-        const GUID *pguid,
-        LPWSTR pszName,
-        UINT cch) = 0;
+                     const GUID *pguid,
+                     LPWSTR pszName,
+                     UINT cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCategory(
-        const GUID *pguid,
-        REFIID riid,
-        void **ppv) = 0;
+                     const GUID *pguid,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12014,46 +12014,46 @@ typedef struct ICategoryProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICategoryProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICategoryProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICategoryProvider *This);
+                     ICategoryProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICategoryProvider *This);
+                     ICategoryProvider *This);
 
     /*** ICategoryProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *CanCategorizeOnSCID)(
-        ICategoryProvider *This,
-        const SHCOLUMNID *pscid);
+                     ICategoryProvider *This,
+                     const SHCOLUMNID *pscid);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultCategory)(
-        ICategoryProvider *This,
-        GUID *pguid,
-        SHCOLUMNID *pscid);
+                     ICategoryProvider *This,
+                     GUID *pguid,
+                     SHCOLUMNID *pscid);
 
     HRESULT (STDMETHODCALLTYPE *GetCategoryForSCID)(
-        ICategoryProvider *This,
-        const SHCOLUMNID *pscid,
-        GUID *pguid);
+                     ICategoryProvider *This,
+                     const SHCOLUMNID *pscid,
+                     GUID *pguid);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategories)(
-        ICategoryProvider *This,
-        IEnumGUID **penum);
+                     ICategoryProvider *This,
+                     IEnumGUID **penum);
 
     HRESULT (STDMETHODCALLTYPE *GetCategoryName)(
-        ICategoryProvider *This,
-        const GUID *pguid,
-        LPWSTR pszName,
-        UINT cch);
+                     ICategoryProvider *This,
+                     const GUID *pguid,
+                     LPWSTR pszName,
+                     UINT cch);
 
     HRESULT (STDMETHODCALLTYPE *CreateCategory)(
-        ICategoryProvider *This,
-        const GUID *pguid,
-        REFIID riid,
-        void **ppv);
+                     ICategoryProvider *This,
+                     const GUID *pguid,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } ICategoryProviderVtbl;
@@ -12151,22 +12151,22 @@ MIDL_INTERFACE("a3b14589-9174-49a8-89a3-06a1ae2b9ba7")
 ICategorizer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        LPWSTR pszDesc,
-        UINT cch) = 0;
+                     LPWSTR pszDesc,
+                     UINT cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategory(
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        DWORD *rgCategoryIds) = 0;
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     DWORD *rgCategoryIds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategoryInfo(
-        DWORD dwCategoryId,
-        CATEGORY_INFO *pci) = 0;
+                     DWORD dwCategoryId,
+                     CATEGORY_INFO *pci) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompareCategory(
-        CATSORT_FLAGS csfFlags,
-        DWORD dwCategoryId1,
-        DWORD dwCategoryId2) = 0;
+                     CATSORT_FLAGS csfFlags,
+                     DWORD dwCategoryId1,
+                     DWORD dwCategoryId2) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12178,38 +12178,38 @@ typedef struct ICategorizerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICategorizer *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICategorizer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICategorizer *This);
+                     ICategorizer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICategorizer *This);
+                     ICategorizer *This);
 
     /*** ICategorizer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        ICategorizer *This,
-        LPWSTR pszDesc,
-        UINT cch);
+                     ICategorizer *This,
+                     LPWSTR pszDesc,
+                     UINT cch);
 
     HRESULT (STDMETHODCALLTYPE *GetCategory)(
-        ICategorizer *This,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        DWORD *rgCategoryIds);
+                     ICategorizer *This,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     DWORD *rgCategoryIds);
 
     HRESULT (STDMETHODCALLTYPE *GetCategoryInfo)(
-        ICategorizer *This,
-        DWORD dwCategoryId,
-        CATEGORY_INFO *pci);
+                     ICategorizer *This,
+                     DWORD dwCategoryId,
+                     CATEGORY_INFO *pci);
 
     HRESULT (STDMETHODCALLTYPE *CompareCategory)(
-        ICategorizer *This,
-        CATSORT_FLAGS csfFlags,
-        DWORD dwCategoryId1,
-        DWORD dwCategoryId2);
+                     ICategorizer *This,
+                     CATSORT_FLAGS csfFlags,
+                     DWORD dwCategoryId1,
+                     DWORD dwCategoryId2);
 
     END_INTERFACE
 } ICategorizerVtbl;
@@ -12286,25 +12286,25 @@ MIDL_INTERFACE("4657278b-411b-11d2-839a-00c04fd918d0")
 IDropTargetHelper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DragEnter(
-        HWND hwndTarget,
-        IDataObject *pDataObject,
-        POINT *ppt,
-        DWORD dwEffect) = 0;
+                     HWND hwndTarget,
+                     IDataObject *pDataObject,
+                     POINT *ppt,
+                     DWORD dwEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DragLeave(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DragOver(
-        POINT *ppt,
-        DWORD dwEffect) = 0;
+                     POINT *ppt,
+                     DWORD dwEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Drop(
-        IDataObject *pDataObject,
-        POINT *ppt,
-        DWORD dwEffect) = 0;
+                     IDataObject *pDataObject,
+                     POINT *ppt,
+                     DWORD dwEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Show(
-        WINBOOL fShow) = 0;
+                     WINBOOL fShow) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12316,41 +12316,41 @@ typedef struct IDropTargetHelperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDropTargetHelper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDropTargetHelper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDropTargetHelper *This);
+                     IDropTargetHelper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDropTargetHelper *This);
+                     IDropTargetHelper *This);
 
     /*** IDropTargetHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *DragEnter)(
-        IDropTargetHelper *This,
-        HWND hwndTarget,
-        IDataObject *pDataObject,
-        POINT *ppt,
-        DWORD dwEffect);
+                     IDropTargetHelper *This,
+                     HWND hwndTarget,
+                     IDataObject *pDataObject,
+                     POINT *ppt,
+                     DWORD dwEffect);
 
     HRESULT (STDMETHODCALLTYPE *DragLeave)(
-        IDropTargetHelper *This);
+                     IDropTargetHelper *This);
 
     HRESULT (STDMETHODCALLTYPE *DragOver)(
-        IDropTargetHelper *This,
-        POINT *ppt,
-        DWORD dwEffect);
+                     IDropTargetHelper *This,
+                     POINT *ppt,
+                     DWORD dwEffect);
 
     HRESULT (STDMETHODCALLTYPE *Drop)(
-        IDropTargetHelper *This,
-        IDataObject *pDataObject,
-        POINT *ppt,
-        DWORD dwEffect);
+                     IDropTargetHelper *This,
+                     IDataObject *pDataObject,
+                     POINT *ppt,
+                     DWORD dwEffect);
 
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IDropTargetHelper *This,
-        WINBOOL fShow);
+                     IDropTargetHelper *This,
+                     WINBOOL fShow);
 
     END_INTERFACE
 } IDropTargetHelperVtbl;
@@ -12419,13 +12419,13 @@ MIDL_INTERFACE("de5bf786-477a-11d2-839d-00c04fd918d0")
 IDragSourceHelper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitializeFromBitmap(
-        LPSHDRAGIMAGE pshdi,
-        IDataObject *pDataObject) = 0;
+                     LPSHDRAGIMAGE pshdi,
+                     IDataObject *pDataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeFromWindow(
-        HWND hwnd,
-        POINT *ppt,
-        IDataObject *pDataObject) = 0;
+                     HWND hwnd,
+                     POINT *ppt,
+                     IDataObject *pDataObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12437,27 +12437,27 @@ typedef struct IDragSourceHelperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDragSourceHelper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDragSourceHelper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDragSourceHelper *This);
+                     IDragSourceHelper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDragSourceHelper *This);
+                     IDragSourceHelper *This);
 
     /*** IDragSourceHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializeFromBitmap)(
-        IDragSourceHelper *This,
-        LPSHDRAGIMAGE pshdi,
-        IDataObject *pDataObject);
+                     IDragSourceHelper *This,
+                     LPSHDRAGIMAGE pshdi,
+                     IDataObject *pDataObject);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromWindow)(
-        IDragSourceHelper *This,
-        HWND hwnd,
-        POINT *ppt,
-        IDataObject *pDataObject);
+                     IDragSourceHelper *This,
+                     HWND hwnd,
+                     POINT *ppt,
+                     IDataObject *pDataObject);
 
     END_INTERFACE
 } IDragSourceHelperVtbl;
@@ -12521,7 +12521,7 @@ MIDL_INTERFACE("83e07d0d-0c5f-4163-bf1a-60b274051e40")
 IDragSourceHelper2 : public IDragSourceHelper
 {
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12533,32 +12533,32 @@ typedef struct IDragSourceHelper2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDragSourceHelper2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDragSourceHelper2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDragSourceHelper2 *This);
+                     IDragSourceHelper2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDragSourceHelper2 *This);
+                     IDragSourceHelper2 *This);
 
     /*** IDragSourceHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializeFromBitmap)(
-        IDragSourceHelper2 *This,
-        LPSHDRAGIMAGE pshdi,
-        IDataObject *pDataObject);
+                     IDragSourceHelper2 *This,
+                     LPSHDRAGIMAGE pshdi,
+                     IDataObject *pDataObject);
 
     HRESULT (STDMETHODCALLTYPE *InitializeFromWindow)(
-        IDragSourceHelper2 *This,
-        HWND hwnd,
-        POINT *ppt,
-        IDataObject *pDataObject);
+                     IDragSourceHelper2 *This,
+                     HWND hwnd,
+                     POINT *ppt,
+                     IDataObject *pDataObject);
 
     /*** IDragSourceHelper2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IDragSourceHelper2 *This,
-        DWORD dwFlags);
+                     IDragSourceHelper2 *This,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } IDragSourceHelper2Vtbl;
@@ -12651,69 +12651,69 @@ MIDL_INTERFACE("000214ee-0000-0000-c000-000000000046")
 IShellLinkA : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPath(
-        LPSTR pszFile,
-        int cch,
-        WIN32_FIND_DATAA *pfd,
-        DWORD fFlags) = 0;
+                     LPSTR pszFile,
+                     int cch,
+                     WIN32_FIND_DATAA *pfd,
+                     DWORD fFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIDList(
-        PIDLIST_ABSOLUTE *ppidl) = 0;
+                     PIDLIST_ABSOLUTE *ppidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIDList(
-        PCIDLIST_ABSOLUTE pidl) = 0;
+                     PCIDLIST_ABSOLUTE pidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        LPSTR pszName,
-        int cch) = 0;
+                     LPSTR pszName,
+                     int cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDescription(
-        LPCSTR pszName) = 0;
+                     LPCSTR pszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWorkingDirectory(
-        LPSTR pszDir,
-        int cch) = 0;
+                     LPSTR pszDir,
+                     int cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetWorkingDirectory(
-        LPCSTR pszDir) = 0;
+                     LPCSTR pszDir) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetArguments(
-        LPSTR pszArgs,
-        int cch) = 0;
+                     LPSTR pszArgs,
+                     int cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetArguments(
-        LPCSTR pszArgs) = 0;
+                     LPCSTR pszArgs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHotkey(
-        WORD *pwHotkey) = 0;
+                     WORD *pwHotkey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetHotkey(
-        WORD wHotkey) = 0;
+                     WORD wHotkey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetShowCmd(
-        int *piShowCmd) = 0;
+                     int *piShowCmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetShowCmd(
-        int iShowCmd) = 0;
+                     int iShowCmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIconLocation(
-        LPSTR pszIconPath,
-        int cch,
-        int *piIcon) = 0;
+                     LPSTR pszIconPath,
+                     int cch,
+                     int *piIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIconLocation(
-        LPCSTR pszIconPath,
-        int iIcon) = 0;
+                     LPCSTR pszIconPath,
+                     int iIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRelativePath(
-        LPCSTR pszPathRel,
-        DWORD dwReserved) = 0;
+                     LPCSTR pszPathRel,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resolve(
-        HWND hwnd,
-        DWORD fFlags) = 0;
+                     HWND hwnd,
+                     DWORD fFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPath(
-        LPCSTR pszFile) = 0;
+                     LPCSTR pszFile) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12725,99 +12725,99 @@ typedef struct IShellLinkAVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellLinkA *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellLinkA *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellLinkA *This);
+                     IShellLinkA *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellLinkA *This);
+                     IShellLinkA *This);
 
     /*** IShellLinkA methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IShellLinkA *This,
-        LPSTR pszFile,
-        int cch,
-        WIN32_FIND_DATAA *pfd,
-        DWORD fFlags);
+                     IShellLinkA *This,
+                     LPSTR pszFile,
+                     int cch,
+                     WIN32_FIND_DATAA *pfd,
+                     DWORD fFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetIDList)(
-        IShellLinkA *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IShellLinkA *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *SetIDList)(
-        IShellLinkA *This,
-        PCIDLIST_ABSOLUTE pidl);
+                     IShellLinkA *This,
+                     PCIDLIST_ABSOLUTE pidl);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IShellLinkA *This,
-        LPSTR pszName,
-        int cch);
+                     IShellLinkA *This,
+                     LPSTR pszName,
+                     int cch);
 
     HRESULT (STDMETHODCALLTYPE *SetDescription)(
-        IShellLinkA *This,
-        LPCSTR pszName);
+                     IShellLinkA *This,
+                     LPCSTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *GetWorkingDirectory)(
-        IShellLinkA *This,
-        LPSTR pszDir,
-        int cch);
+                     IShellLinkA *This,
+                     LPSTR pszDir,
+                     int cch);
 
     HRESULT (STDMETHODCALLTYPE *SetWorkingDirectory)(
-        IShellLinkA *This,
-        LPCSTR pszDir);
+                     IShellLinkA *This,
+                     LPCSTR pszDir);
 
     HRESULT (STDMETHODCALLTYPE *GetArguments)(
-        IShellLinkA *This,
-        LPSTR pszArgs,
-        int cch);
+                     IShellLinkA *This,
+                     LPSTR pszArgs,
+                     int cch);
 
     HRESULT (STDMETHODCALLTYPE *SetArguments)(
-        IShellLinkA *This,
-        LPCSTR pszArgs);
+                     IShellLinkA *This,
+                     LPCSTR pszArgs);
 
     HRESULT (STDMETHODCALLTYPE *GetHotkey)(
-        IShellLinkA *This,
-        WORD *pwHotkey);
+                     IShellLinkA *This,
+                     WORD *pwHotkey);
 
     HRESULT (STDMETHODCALLTYPE *SetHotkey)(
-        IShellLinkA *This,
-        WORD wHotkey);
+                     IShellLinkA *This,
+                     WORD wHotkey);
 
     HRESULT (STDMETHODCALLTYPE *GetShowCmd)(
-        IShellLinkA *This,
-        int *piShowCmd);
+                     IShellLinkA *This,
+                     int *piShowCmd);
 
     HRESULT (STDMETHODCALLTYPE *SetShowCmd)(
-        IShellLinkA *This,
-        int iShowCmd);
+                     IShellLinkA *This,
+                     int iShowCmd);
 
     HRESULT (STDMETHODCALLTYPE *GetIconLocation)(
-        IShellLinkA *This,
-        LPSTR pszIconPath,
-        int cch,
-        int *piIcon);
+                     IShellLinkA *This,
+                     LPSTR pszIconPath,
+                     int cch,
+                     int *piIcon);
 
     HRESULT (STDMETHODCALLTYPE *SetIconLocation)(
-        IShellLinkA *This,
-        LPCSTR pszIconPath,
-        int iIcon);
+                     IShellLinkA *This,
+                     LPCSTR pszIconPath,
+                     int iIcon);
 
     HRESULT (STDMETHODCALLTYPE *SetRelativePath)(
-        IShellLinkA *This,
-        LPCSTR pszPathRel,
-        DWORD dwReserved);
+                     IShellLinkA *This,
+                     LPCSTR pszPathRel,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *Resolve)(
-        IShellLinkA *This,
-        HWND hwnd,
-        DWORD fFlags);
+                     IShellLinkA *This,
+                     HWND hwnd,
+                     DWORD fFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetPath)(
-        IShellLinkA *This,
-        LPCSTR pszFile);
+                     IShellLinkA *This,
+                     LPCSTR pszFile);
 
     END_INTERFACE
 } IShellLinkAVtbl;
@@ -12938,69 +12938,69 @@ MIDL_INTERFACE("000214f9-0000-0000-c000-000000000046")
 IShellLinkW : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPath(
-        LPWSTR pszFile,
-        int cch,
-        WIN32_FIND_DATAW *pfd,
-        DWORD fFlags) = 0;
+                     LPWSTR pszFile,
+                     int cch,
+                     WIN32_FIND_DATAW *pfd,
+                     DWORD fFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIDList(
-        PIDLIST_ABSOLUTE *ppidl) = 0;
+                     PIDLIST_ABSOLUTE *ppidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIDList(
-        PCIDLIST_ABSOLUTE pidl) = 0;
+                     PCIDLIST_ABSOLUTE pidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        LPWSTR pszName,
-        int cch) = 0;
+                     LPWSTR pszName,
+                     int cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDescription(
-        LPCWSTR pszName) = 0;
+                     LPCWSTR pszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWorkingDirectory(
-        LPWSTR pszDir,
-        int cch) = 0;
+                     LPWSTR pszDir,
+                     int cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetWorkingDirectory(
-        LPCWSTR pszDir) = 0;
+                     LPCWSTR pszDir) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetArguments(
-        LPWSTR pszArgs,
-        int cch) = 0;
+                     LPWSTR pszArgs,
+                     int cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetArguments(
-        LPCWSTR pszArgs) = 0;
+                     LPCWSTR pszArgs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHotkey(
-        WORD *pwHotkey) = 0;
+                     WORD *pwHotkey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetHotkey(
-        WORD wHotkey) = 0;
+                     WORD wHotkey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetShowCmd(
-        int *piShowCmd) = 0;
+                     int *piShowCmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetShowCmd(
-        int iShowCmd) = 0;
+                     int iShowCmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIconLocation(
-        LPWSTR pszIconPath,
-        int cch,
-        int *piIcon) = 0;
+                     LPWSTR pszIconPath,
+                     int cch,
+                     int *piIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIconLocation(
-        LPCWSTR pszIconPath,
-        int iIcon) = 0;
+                     LPCWSTR pszIconPath,
+                     int iIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRelativePath(
-        LPCWSTR pszPathRel,
-        DWORD dwReserved) = 0;
+                     LPCWSTR pszPathRel,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resolve(
-        HWND hwnd,
-        DWORD fFlags) = 0;
+                     HWND hwnd,
+                     DWORD fFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPath(
-        LPCWSTR pszFile) = 0;
+                     LPCWSTR pszFile) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13012,99 +13012,99 @@ typedef struct IShellLinkWVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellLinkW *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellLinkW *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellLinkW *This);
+                     IShellLinkW *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellLinkW *This);
+                     IShellLinkW *This);
 
     /*** IShellLinkW methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IShellLinkW *This,
-        LPWSTR pszFile,
-        int cch,
-        WIN32_FIND_DATAW *pfd,
-        DWORD fFlags);
+                     IShellLinkW *This,
+                     LPWSTR pszFile,
+                     int cch,
+                     WIN32_FIND_DATAW *pfd,
+                     DWORD fFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetIDList)(
-        IShellLinkW *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IShellLinkW *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *SetIDList)(
-        IShellLinkW *This,
-        PCIDLIST_ABSOLUTE pidl);
+                     IShellLinkW *This,
+                     PCIDLIST_ABSOLUTE pidl);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IShellLinkW *This,
-        LPWSTR pszName,
-        int cch);
+                     IShellLinkW *This,
+                     LPWSTR pszName,
+                     int cch);
 
     HRESULT (STDMETHODCALLTYPE *SetDescription)(
-        IShellLinkW *This,
-        LPCWSTR pszName);
+                     IShellLinkW *This,
+                     LPCWSTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *GetWorkingDirectory)(
-        IShellLinkW *This,
-        LPWSTR pszDir,
-        int cch);
+                     IShellLinkW *This,
+                     LPWSTR pszDir,
+                     int cch);
 
     HRESULT (STDMETHODCALLTYPE *SetWorkingDirectory)(
-        IShellLinkW *This,
-        LPCWSTR pszDir);
+                     IShellLinkW *This,
+                     LPCWSTR pszDir);
 
     HRESULT (STDMETHODCALLTYPE *GetArguments)(
-        IShellLinkW *This,
-        LPWSTR pszArgs,
-        int cch);
+                     IShellLinkW *This,
+                     LPWSTR pszArgs,
+                     int cch);
 
     HRESULT (STDMETHODCALLTYPE *SetArguments)(
-        IShellLinkW *This,
-        LPCWSTR pszArgs);
+                     IShellLinkW *This,
+                     LPCWSTR pszArgs);
 
     HRESULT (STDMETHODCALLTYPE *GetHotkey)(
-        IShellLinkW *This,
-        WORD *pwHotkey);
+                     IShellLinkW *This,
+                     WORD *pwHotkey);
 
     HRESULT (STDMETHODCALLTYPE *SetHotkey)(
-        IShellLinkW *This,
-        WORD wHotkey);
+                     IShellLinkW *This,
+                     WORD wHotkey);
 
     HRESULT (STDMETHODCALLTYPE *GetShowCmd)(
-        IShellLinkW *This,
-        int *piShowCmd);
+                     IShellLinkW *This,
+                     int *piShowCmd);
 
     HRESULT (STDMETHODCALLTYPE *SetShowCmd)(
-        IShellLinkW *This,
-        int iShowCmd);
+                     IShellLinkW *This,
+                     int iShowCmd);
 
     HRESULT (STDMETHODCALLTYPE *GetIconLocation)(
-        IShellLinkW *This,
-        LPWSTR pszIconPath,
-        int cch,
-        int *piIcon);
+                     IShellLinkW *This,
+                     LPWSTR pszIconPath,
+                     int cch,
+                     int *piIcon);
 
     HRESULT (STDMETHODCALLTYPE *SetIconLocation)(
-        IShellLinkW *This,
-        LPCWSTR pszIconPath,
-        int iIcon);
+                     IShellLinkW *This,
+                     LPCWSTR pszIconPath,
+                     int iIcon);
 
     HRESULT (STDMETHODCALLTYPE *SetRelativePath)(
-        IShellLinkW *This,
-        LPCWSTR pszPathRel,
-        DWORD dwReserved);
+                     IShellLinkW *This,
+                     LPCWSTR pszPathRel,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *Resolve)(
-        IShellLinkW *This,
-        HWND hwnd,
-        DWORD fFlags);
+                     IShellLinkW *This,
+                     HWND hwnd,
+                     DWORD fFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetPath)(
-        IShellLinkW *This,
-        LPCWSTR pszFile);
+                     IShellLinkW *This,
+                     LPCWSTR pszFile);
 
     END_INTERFACE
 } IShellLinkWVtbl;
@@ -13225,20 +13225,20 @@ MIDL_INTERFACE("45e2b4ae-b1c3-11d0-b92f-00a0c90312e1")
 IShellLinkDataList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddDataBlock(
-        void *pDataBlock) = 0;
+                     void *pDataBlock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyDataBlock(
-        DWORD dwSig,
-        void **ppDataBlock) = 0;
+                     DWORD dwSig,
+                     void **ppDataBlock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveDataBlock(
-        DWORD dwSig) = 0;
+                     DWORD dwSig) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlags(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13250,37 +13250,37 @@ typedef struct IShellLinkDataListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellLinkDataList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellLinkDataList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellLinkDataList *This);
+                     IShellLinkDataList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellLinkDataList *This);
+                     IShellLinkDataList *This);
 
     /*** IShellLinkDataList methods ***/
     HRESULT (STDMETHODCALLTYPE *AddDataBlock)(
-        IShellLinkDataList *This,
-        void *pDataBlock);
+                     IShellLinkDataList *This,
+                     void *pDataBlock);
 
     HRESULT (STDMETHODCALLTYPE *CopyDataBlock)(
-        IShellLinkDataList *This,
-        DWORD dwSig,
-        void **ppDataBlock);
+                     IShellLinkDataList *This,
+                     DWORD dwSig,
+                     void **ppDataBlock);
 
     HRESULT (STDMETHODCALLTYPE *RemoveDataBlock)(
-        IShellLinkDataList *This,
-        DWORD dwSig);
+                     IShellLinkDataList *This,
+                     DWORD dwSig);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        IShellLinkDataList *This,
-        DWORD *pdwFlags);
+                     IShellLinkDataList *This,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IShellLinkDataList *This,
-        DWORD dwFlags);
+                     IShellLinkDataList *This,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } IShellLinkDataListVtbl;
@@ -13349,9 +13349,9 @@ MIDL_INTERFACE("5cd52983-9449-11d2-963a-00c04f79adf0")
 IResolveShellLink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ResolveShellLink(
-        IUnknown *punkLink,
-        HWND hwnd,
-        DWORD fFlags) = 0;
+                     IUnknown *punkLink,
+                     HWND hwnd,
+                     DWORD fFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13363,22 +13363,22 @@ typedef struct IResolveShellLinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IResolveShellLink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IResolveShellLink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IResolveShellLink *This);
+                     IResolveShellLink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IResolveShellLink *This);
+                     IResolveShellLink *This);
 
     /*** IResolveShellLink methods ***/
     HRESULT (STDMETHODCALLTYPE *ResolveShellLink)(
-        IResolveShellLink *This,
-        IUnknown *punkLink,
-        HWND hwnd,
-        DWORD fFlags);
+                     IResolveShellLink *This,
+                     IUnknown *punkLink,
+                     HWND hwnd,
+                     DWORD fFlags);
 
     END_INTERFACE
 } IResolveShellLinkVtbl;
@@ -13439,12 +13439,12 @@ MIDL_INTERFACE("49ff1172-eadc-446d-9285-156453a6431c")
 IActionProgressDialog : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        SPINITF flags,
-        LPCWSTR pszTitle,
-        LPCWSTR pszCancel) = 0;
+                     SPINITF flags,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszCancel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13456,25 +13456,25 @@ typedef struct IActionProgressDialogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActionProgressDialog *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActionProgressDialog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActionProgressDialog *This);
+                     IActionProgressDialog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActionProgressDialog *This);
+                     IActionProgressDialog *This);
 
     /*** IActionProgressDialog methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IActionProgressDialog *This,
-        SPINITF flags,
-        LPCWSTR pszTitle,
-        LPCWSTR pszCancel);
+                     IActionProgressDialog *This,
+                     SPINITF flags,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszCancel);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IActionProgressDialog *This);
+                     IActionProgressDialog *This);
 
     END_INTERFACE
 } IActionProgressDialogVtbl;
@@ -13531,19 +13531,19 @@ MIDL_INTERFACE("c1fb73d0-ec3a-4ba2-b512-8cdb9187b6d1")
 IHWEventHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        LPCWSTR pszParams) = 0;
+                     LPCWSTR pszParams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HandleEvent(
-        LPCWSTR pszDeviceID,
-        LPCWSTR pszAltDeviceID,
-        LPCWSTR pszEventType) = 0;
+                     LPCWSTR pszDeviceID,
+                     LPCWSTR pszAltDeviceID,
+                     LPCWSTR pszEventType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HandleEventWithContent(
-        LPCWSTR pszDeviceID,
-        LPCWSTR pszAltDeviceID,
-        LPCWSTR pszEventType,
-        LPCWSTR pszContentTypeHandler,
-        IDataObject *pdataobject) = 0;
+                     LPCWSTR pszDeviceID,
+                     LPCWSTR pszAltDeviceID,
+                     LPCWSTR pszEventType,
+                     LPCWSTR pszContentTypeHandler,
+                     IDataObject *pdataobject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13555,34 +13555,34 @@ typedef struct IHWEventHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHWEventHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHWEventHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHWEventHandler *This);
+                     IHWEventHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHWEventHandler *This);
+                     IHWEventHandler *This);
 
     /*** IHWEventHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IHWEventHandler *This,
-        LPCWSTR pszParams);
+                     IHWEventHandler *This,
+                     LPCWSTR pszParams);
 
     HRESULT (STDMETHODCALLTYPE *HandleEvent)(
-        IHWEventHandler *This,
-        LPCWSTR pszDeviceID,
-        LPCWSTR pszAltDeviceID,
-        LPCWSTR pszEventType);
+                     IHWEventHandler *This,
+                     LPCWSTR pszDeviceID,
+                     LPCWSTR pszAltDeviceID,
+                     LPCWSTR pszEventType);
 
     HRESULT (STDMETHODCALLTYPE *HandleEventWithContent)(
-        IHWEventHandler *This,
-        LPCWSTR pszDeviceID,
-        LPCWSTR pszAltDeviceID,
-        LPCWSTR pszEventType,
-        LPCWSTR pszContentTypeHandler,
-        IDataObject *pdataobject);
+                     IHWEventHandler *This,
+                     LPCWSTR pszDeviceID,
+                     LPCWSTR pszAltDeviceID,
+                     LPCWSTR pszEventType,
+                     LPCWSTR pszContentTypeHandler,
+                     IDataObject *pdataobject);
 
     END_INTERFACE
 } IHWEventHandlerVtbl;
@@ -13643,10 +13643,10 @@ MIDL_INTERFACE("cfcc809f-295d-42e8-9ffc-424b33c487e6")
 IHWEventHandler2 : public IHWEventHandler
 {
     virtual HRESULT STDMETHODCALLTYPE HandleEventWithHWND(
-        LPCWSTR pszDeviceID,
-        LPCWSTR pszAltDeviceID,
-        LPCWSTR pszEventType,
-        HWND hwndOwner) = 0;
+                     LPCWSTR pszDeviceID,
+                     LPCWSTR pszAltDeviceID,
+                     LPCWSTR pszEventType,
+                     HWND hwndOwner) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13658,42 +13658,42 @@ typedef struct IHWEventHandler2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHWEventHandler2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHWEventHandler2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHWEventHandler2 *This);
+                     IHWEventHandler2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHWEventHandler2 *This);
+                     IHWEventHandler2 *This);
 
     /*** IHWEventHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IHWEventHandler2 *This,
-        LPCWSTR pszParams);
+                     IHWEventHandler2 *This,
+                     LPCWSTR pszParams);
 
     HRESULT (STDMETHODCALLTYPE *HandleEvent)(
-        IHWEventHandler2 *This,
-        LPCWSTR pszDeviceID,
-        LPCWSTR pszAltDeviceID,
-        LPCWSTR pszEventType);
+                     IHWEventHandler2 *This,
+                     LPCWSTR pszDeviceID,
+                     LPCWSTR pszAltDeviceID,
+                     LPCWSTR pszEventType);
 
     HRESULT (STDMETHODCALLTYPE *HandleEventWithContent)(
-        IHWEventHandler2 *This,
-        LPCWSTR pszDeviceID,
-        LPCWSTR pszAltDeviceID,
-        LPCWSTR pszEventType,
-        LPCWSTR pszContentTypeHandler,
-        IDataObject *pdataobject);
+                     IHWEventHandler2 *This,
+                     LPCWSTR pszDeviceID,
+                     LPCWSTR pszAltDeviceID,
+                     LPCWSTR pszEventType,
+                     LPCWSTR pszContentTypeHandler,
+                     IDataObject *pdataobject);
 
     /*** IHWEventHandler2 methods ***/
     HRESULT (STDMETHODCALLTYPE *HandleEventWithHWND)(
-        IHWEventHandler2 *This,
-        LPCWSTR pszDeviceID,
-        LPCWSTR pszAltDeviceID,
-        LPCWSTR pszEventType,
-        HWND hwndOwner);
+                     IHWEventHandler2 *This,
+                     LPCWSTR pszDeviceID,
+                     LPCWSTR pszAltDeviceID,
+                     LPCWSTR pszEventType,
+                     HWND hwndOwner);
 
     END_INTERFACE
 } IHWEventHandler2Vtbl;
@@ -13788,10 +13788,10 @@ MIDL_INTERFACE("ddefe873-6997-4e68-be26-39b633adbe12")
 IQueryCancelAutoPlay : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AllowAutoPlay(
-        LPCWSTR pszPath,
-        DWORD dwContentType,
-        LPCWSTR pszLabel,
-        DWORD dwSerialNumber) = 0;
+                     LPCWSTR pszPath,
+                     DWORD dwContentType,
+                     LPCWSTR pszLabel,
+                     DWORD dwSerialNumber) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13803,23 +13803,23 @@ typedef struct IQueryCancelAutoPlayVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IQueryCancelAutoPlay *This,
-        REFIID riid,
-        void **ppvObject);
+                     IQueryCancelAutoPlay *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IQueryCancelAutoPlay *This);
+                     IQueryCancelAutoPlay *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IQueryCancelAutoPlay *This);
+                     IQueryCancelAutoPlay *This);
 
     /*** IQueryCancelAutoPlay methods ***/
     HRESULT (STDMETHODCALLTYPE *AllowAutoPlay)(
-        IQueryCancelAutoPlay *This,
-        LPCWSTR pszPath,
-        DWORD dwContentType,
-        LPCWSTR pszLabel,
-        DWORD dwSerialNumber);
+                     IQueryCancelAutoPlay *This,
+                     LPCWSTR pszPath,
+                     DWORD dwContentType,
+                     LPCWSTR pszLabel,
+                     DWORD dwSerialNumber);
 
     END_INTERFACE
 } IQueryCancelAutoPlayVtbl;
@@ -13873,9 +13873,9 @@ MIDL_INTERFACE("dc2601d7-059e-42fc-a09d-2afd21b6d5f7")
 IDynamicHWHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDynamicInfo(
-        LPCWSTR pszDeviceID,
-        DWORD dwContentType,
-        LPWSTR *ppszAction) = 0;
+                     LPCWSTR pszDeviceID,
+                     DWORD dwContentType,
+                     LPWSTR *ppszAction) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13887,22 +13887,22 @@ typedef struct IDynamicHWHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDynamicHWHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDynamicHWHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDynamicHWHandler *This);
+                     IDynamicHWHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDynamicHWHandler *This);
+                     IDynamicHWHandler *This);
 
     /*** IDynamicHWHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDynamicInfo)(
-        IDynamicHWHandler *This,
-        LPCWSTR pszDeviceID,
-        DWORD dwContentType,
-        LPWSTR *ppszAction);
+                     IDynamicHWHandler *This,
+                     LPCWSTR pszDeviceID,
+                     DWORD dwContentType,
+                     LPWSTR *ppszAction);
 
     END_INTERFACE
 } IDynamicHWHandlerVtbl;
@@ -13988,26 +13988,26 @@ MIDL_INTERFACE("49ff1173-eadc-446d-9285-156453a6431c")
 IActionProgress : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Begin(
-        SPACTION action,
-        SPBEGINF flags) = 0;
+                     SPACTION action,
+                     SPBEGINF flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateProgress(
-        ULONGLONG ulCompleted,
-        ULONGLONG ulTotal) = 0;
+                     ULONGLONG ulCompleted,
+                     ULONGLONG ulTotal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateText(
-        SPTEXT sptext,
-        LPCWSTR pszText,
-        WINBOOL fMayCompact) = 0;
+                     SPTEXT sptext,
+                     LPCWSTR pszText,
+                     WINBOOL fMayCompact) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryCancel(
-        WINBOOL *pfCancelled) = 0;
+                     WINBOOL *pfCancelled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetCancel(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE End(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14019,42 +14019,42 @@ typedef struct IActionProgressVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActionProgress *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActionProgress *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActionProgress *This);
+                     IActionProgress *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActionProgress *This);
+                     IActionProgress *This);
 
     /*** IActionProgress methods ***/
     HRESULT (STDMETHODCALLTYPE *Begin)(
-        IActionProgress *This,
-        SPACTION action,
-        SPBEGINF flags);
+                     IActionProgress *This,
+                     SPACTION action,
+                     SPBEGINF flags);
 
     HRESULT (STDMETHODCALLTYPE *UpdateProgress)(
-        IActionProgress *This,
-        ULONGLONG ulCompleted,
-        ULONGLONG ulTotal);
+                     IActionProgress *This,
+                     ULONGLONG ulCompleted,
+                     ULONGLONG ulTotal);
 
     HRESULT (STDMETHODCALLTYPE *UpdateText)(
-        IActionProgress *This,
-        SPTEXT sptext,
-        LPCWSTR pszText,
-        WINBOOL fMayCompact);
+                     IActionProgress *This,
+                     SPTEXT sptext,
+                     LPCWSTR pszText,
+                     WINBOOL fMayCompact);
 
     HRESULT (STDMETHODCALLTYPE *QueryCancel)(
-        IActionProgress *This,
-        WINBOOL *pfCancelled);
+                     IActionProgress *This,
+                     WINBOOL *pfCancelled);
 
     HRESULT (STDMETHODCALLTYPE *ResetCancel)(
-        IActionProgress *This);
+                     IActionProgress *This);
 
     HRESULT (STDMETHODCALLTYPE *End)(
-        IActionProgress *This);
+                     IActionProgress *This);
 
     END_INTERFACE
 } IActionProgressVtbl;
@@ -14127,9 +14127,9 @@ MIDL_INTERFACE("000214e8-0000-0000-c000-000000000046")
 IShellExtInit : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        PCIDLIST_ABSOLUTE pidlFolder,
-        IDataObject *pdtobj,
-        HKEY hkeyProgID) = 0;
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     IDataObject *pdtobj,
+                     HKEY hkeyProgID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14141,22 +14141,22 @@ typedef struct IShellExtInitVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellExtInit *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellExtInit *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellExtInit *This);
+                     IShellExtInit *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellExtInit *This);
+                     IShellExtInit *This);
 
     /*** IShellExtInit methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IShellExtInit *This,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        IDataObject *pdtobj,
-        HKEY hkeyProgID);
+                     IShellExtInit *This,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     IDataObject *pdtobj,
+                     HKEY hkeyProgID);
 
     END_INTERFACE
 } IShellExtInitVtbl;
@@ -14216,13 +14216,13 @@ MIDL_INTERFACE("000214e9-0000-0000-c000-000000000046")
 IShellPropSheetExt : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddPages(
-        LPFNSVADDPROPSHEETPAGE pfnAddPage,
-        LPARAM lParam) = 0;
+                     LPFNSVADDPROPSHEETPAGE pfnAddPage,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReplacePage(
-        EXPPS uPageID,
-        LPFNSVADDPROPSHEETPAGE pfnReplaceWith,
-        LPARAM lParam) = 0;
+                     EXPPS uPageID,
+                     LPFNSVADDPROPSHEETPAGE pfnReplaceWith,
+                     LPARAM lParam) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14234,27 +14234,27 @@ typedef struct IShellPropSheetExtVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellPropSheetExt *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellPropSheetExt *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellPropSheetExt *This);
+                     IShellPropSheetExt *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellPropSheetExt *This);
+                     IShellPropSheetExt *This);
 
     /*** IShellPropSheetExt methods ***/
     HRESULT (STDMETHODCALLTYPE *AddPages)(
-        IShellPropSheetExt *This,
-        LPFNSVADDPROPSHEETPAGE pfnAddPage,
-        LPARAM lParam);
+                     IShellPropSheetExt *This,
+                     LPFNSVADDPROPSHEETPAGE pfnAddPage,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *ReplacePage)(
-        IShellPropSheetExt *This,
-        EXPPS uPageID,
-        LPFNSVADDPROPSHEETPAGE pfnReplaceWith,
-        LPARAM lParam);
+                     IShellPropSheetExt *This,
+                     EXPPS uPageID,
+                     LPFNSVADDPROPSHEETPAGE pfnReplaceWith,
+                     LPARAM lParam);
 
     END_INTERFACE
 } IShellPropSheetExtVtbl;
@@ -14312,8 +14312,8 @@ MIDL_INTERFACE("000214fe-0000-0000-c000-000000000046")
 IRemoteComputer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        LPCWSTR pszMachine,
-        WINBOOL bEnumerating) = 0;
+                     LPCWSTR pszMachine,
+                     WINBOOL bEnumerating) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14325,21 +14325,21 @@ typedef struct IRemoteComputerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRemoteComputer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRemoteComputer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRemoteComputer *This);
+                     IRemoteComputer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRemoteComputer *This);
+                     IRemoteComputer *This);
 
     /*** IRemoteComputer methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IRemoteComputer *This,
-        LPCWSTR pszMachine,
-        WINBOOL bEnumerating);
+                     IRemoteComputer *This,
+                     LPCWSTR pszMachine,
+                     WINBOOL bEnumerating);
 
     END_INTERFACE
 } IRemoteComputerVtbl;
@@ -14392,7 +14392,7 @@ MIDL_INTERFACE("7307055c-b24a-486b-9f25-163e597a28a9")
 IQueryContinue : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryContinue(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14404,19 +14404,19 @@ typedef struct IQueryContinueVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IQueryContinue *This,
-        REFIID riid,
-        void **ppvObject);
+                     IQueryContinue *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IQueryContinue *This);
+                     IQueryContinue *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IQueryContinue *This);
+                     IQueryContinue *This);
 
     /*** IQueryContinue methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryContinue)(
-        IQueryContinue *This);
+                     IQueryContinue *This);
 
     END_INTERFACE
 } IQueryContinueVtbl;
@@ -14469,7 +14469,7 @@ MIDL_INTERFACE("f279b885-0ae9-4b85-ac06-ddecf9408941")
 IObjectWithCancelEvent : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCancelEvent(
-        HANDLE *phEvent) = 0;
+                     HANDLE *phEvent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14481,20 +14481,20 @@ typedef struct IObjectWithCancelEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectWithCancelEvent *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectWithCancelEvent *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectWithCancelEvent *This);
+                     IObjectWithCancelEvent *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectWithCancelEvent *This);
+                     IObjectWithCancelEvent *This);
 
     /*** IObjectWithCancelEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCancelEvent)(
-        IObjectWithCancelEvent *This,
-        HANDLE *phEvent);
+                     IObjectWithCancelEvent *This,
+                     HANDLE *phEvent);
 
     END_INTERFACE
 } IObjectWithCancelEventVtbl;
@@ -14547,25 +14547,25 @@ MIDL_INTERFACE("ba9711ba-5893-4787-a7e1-41277151550b")
 IUserNotification : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetBalloonInfo(
-        LPCWSTR pszTitle,
-        LPCWSTR pszText,
-        DWORD dwInfoFlags) = 0;
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszText,
+                     DWORD dwInfoFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBalloonRetry(
-        DWORD dwShowTime,
-        DWORD dwInterval,
-        UINT cRetryCount) = 0;
+                     DWORD dwShowTime,
+                     DWORD dwInterval,
+                     UINT cRetryCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIconInfo(
-        HICON hIcon,
-        LPCWSTR pszToolTip) = 0;
+                     HICON hIcon,
+                     LPCWSTR pszToolTip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Show(
-        IQueryContinue *pqc,
-        DWORD dwContinuePollInterval) = 0;
+                     IQueryContinue *pqc,
+                     DWORD dwContinuePollInterval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlaySound(
-        LPCWSTR pszSoundName) = 0;
+                     LPCWSTR pszSoundName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14577,42 +14577,42 @@ typedef struct IUserNotificationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUserNotification *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUserNotification *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUserNotification *This);
+                     IUserNotification *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUserNotification *This);
+                     IUserNotification *This);
 
     /*** IUserNotification methods ***/
     HRESULT (STDMETHODCALLTYPE *SetBalloonInfo)(
-        IUserNotification *This,
-        LPCWSTR pszTitle,
-        LPCWSTR pszText,
-        DWORD dwInfoFlags);
+                     IUserNotification *This,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszText,
+                     DWORD dwInfoFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetBalloonRetry)(
-        IUserNotification *This,
-        DWORD dwShowTime,
-        DWORD dwInterval,
-        UINT cRetryCount);
+                     IUserNotification *This,
+                     DWORD dwShowTime,
+                     DWORD dwInterval,
+                     UINT cRetryCount);
 
     HRESULT (STDMETHODCALLTYPE *SetIconInfo)(
-        IUserNotification *This,
-        HICON hIcon,
-        LPCWSTR pszToolTip);
+                     IUserNotification *This,
+                     HICON hIcon,
+                     LPCWSTR pszToolTip);
 
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IUserNotification *This,
-        IQueryContinue *pqc,
-        DWORD dwContinuePollInterval);
+                     IUserNotification *This,
+                     IQueryContinue *pqc,
+                     DWORD dwContinuePollInterval);
 
     HRESULT (STDMETHODCALLTYPE *PlaySound)(
-        IUserNotification *This,
-        LPCWSTR pszSoundName);
+                     IUserNotification *This,
+                     LPCWSTR pszSoundName);
 
     END_INTERFACE
 } IUserNotificationVtbl;
@@ -14681,13 +14681,13 @@ MIDL_INTERFACE("19108294-0441-4aff-8013-fa0a730b0bea")
 IUserNotificationCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnBalloonUserClick(
-        POINT *pt) = 0;
+                     POINT *pt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnLeftClick(
-        POINT *pt) = 0;
+                     POINT *pt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnContextMenu(
-        POINT *pt) = 0;
+                     POINT *pt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14699,28 +14699,28 @@ typedef struct IUserNotificationCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUserNotificationCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUserNotificationCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUserNotificationCallback *This);
+                     IUserNotificationCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUserNotificationCallback *This);
+                     IUserNotificationCallback *This);
 
     /*** IUserNotificationCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *OnBalloonUserClick)(
-        IUserNotificationCallback *This,
-        POINT *pt);
+                     IUserNotificationCallback *This,
+                     POINT *pt);
 
     HRESULT (STDMETHODCALLTYPE *OnLeftClick)(
-        IUserNotificationCallback *This,
-        POINT *pt);
+                     IUserNotificationCallback *This,
+                     POINT *pt);
 
     HRESULT (STDMETHODCALLTYPE *OnContextMenu)(
-        IUserNotificationCallback *This,
-        POINT *pt);
+                     IUserNotificationCallback *This,
+                     POINT *pt);
 
     END_INTERFACE
 } IUserNotificationCallbackVtbl;
@@ -14781,26 +14781,26 @@ MIDL_INTERFACE("215913cc-57eb-4fab-ab5a-e5fa7bea2a6c")
 IUserNotification2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetBalloonInfo(
-        LPCWSTR pszTitle,
-        LPCWSTR pszText,
-        DWORD dwInfoFlags) = 0;
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszText,
+                     DWORD dwInfoFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBalloonRetry(
-        DWORD dwShowTime,
-        DWORD dwInterval,
-        UINT cRetryCount) = 0;
+                     DWORD dwShowTime,
+                     DWORD dwInterval,
+                     UINT cRetryCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIconInfo(
-        HICON hIcon,
-        LPCWSTR pszToolTip) = 0;
+                     HICON hIcon,
+                     LPCWSTR pszToolTip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Show(
-        IQueryContinue *pqc,
-        DWORD dwContinuePollInterval,
-        IUserNotificationCallback *pSink) = 0;
+                     IQueryContinue *pqc,
+                     DWORD dwContinuePollInterval,
+                     IUserNotificationCallback *pSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlaySound(
-        LPCWSTR pszSoundName) = 0;
+                     LPCWSTR pszSoundName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14812,43 +14812,43 @@ typedef struct IUserNotification2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUserNotification2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUserNotification2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUserNotification2 *This);
+                     IUserNotification2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUserNotification2 *This);
+                     IUserNotification2 *This);
 
     /*** IUserNotification2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetBalloonInfo)(
-        IUserNotification2 *This,
-        LPCWSTR pszTitle,
-        LPCWSTR pszText,
-        DWORD dwInfoFlags);
+                     IUserNotification2 *This,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszText,
+                     DWORD dwInfoFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetBalloonRetry)(
-        IUserNotification2 *This,
-        DWORD dwShowTime,
-        DWORD dwInterval,
-        UINT cRetryCount);
+                     IUserNotification2 *This,
+                     DWORD dwShowTime,
+                     DWORD dwInterval,
+                     UINT cRetryCount);
 
     HRESULT (STDMETHODCALLTYPE *SetIconInfo)(
-        IUserNotification2 *This,
-        HICON hIcon,
-        LPCWSTR pszToolTip);
+                     IUserNotification2 *This,
+                     HICON hIcon,
+                     LPCWSTR pszToolTip);
 
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IUserNotification2 *This,
-        IQueryContinue *pqc,
-        DWORD dwContinuePollInterval,
-        IUserNotificationCallback *pSink);
+                     IUserNotification2 *This,
+                     IQueryContinue *pqc,
+                     DWORD dwContinuePollInterval,
+                     IUserNotificationCallback *pSink);
 
     HRESULT (STDMETHODCALLTYPE *PlaySound)(
-        IUserNotification2 *This,
-        LPCWSTR pszSoundName);
+                     IUserNotification2 *This,
+                     LPCWSTR pszSoundName);
 
     END_INTERFACE
 } IUserNotification2Vtbl;
@@ -14917,12 +14917,12 @@ MIDL_INTERFACE("1df0d7f1-b267-4d28-8b10-12e23202a5c4")
 IItemNameLimits : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetValidCharacters(
-        LPWSTR *ppwszValidChars,
-        LPWSTR *ppwszInvalidChars) = 0;
+                     LPWSTR *ppwszValidChars,
+                     LPWSTR *ppwszInvalidChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxLength(
-        LPCWSTR pszName,
-        int *piMaxNameLen) = 0;
+                     LPCWSTR pszName,
+                     int *piMaxNameLen) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14934,26 +14934,26 @@ typedef struct IItemNameLimitsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IItemNameLimits *This,
-        REFIID riid,
-        void **ppvObject);
+                     IItemNameLimits *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IItemNameLimits *This);
+                     IItemNameLimits *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IItemNameLimits *This);
+                     IItemNameLimits *This);
 
     /*** IItemNameLimits methods ***/
     HRESULT (STDMETHODCALLTYPE *GetValidCharacters)(
-        IItemNameLimits *This,
-        LPWSTR *ppwszValidChars,
-        LPWSTR *ppwszInvalidChars);
+                     IItemNameLimits *This,
+                     LPWSTR *ppwszValidChars,
+                     LPWSTR *ppwszInvalidChars);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxLength)(
-        IItemNameLimits *This,
-        LPCWSTR pszName,
-        int *piMaxNameLen);
+                     IItemNameLimits *This,
+                     LPCWSTR pszName,
+                     int *piMaxNameLen);
 
     END_INTERFACE
 } IItemNameLimitsVtbl;
@@ -15020,44 +15020,44 @@ MIDL_INTERFACE("a0ffbc28-5482-4366-be27-3e81e78e06c2")
 ISearchFolderItemFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetDisplayName(
-        LPCWSTR pszDisplayName) = 0;
+                     LPCWSTR pszDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFolderTypeID(
-        FOLDERTYPEID ftid) = 0;
+                     FOLDERTYPEID ftid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFolderLogicalViewMode(
-        FOLDERLOGICALVIEWMODE flvm) = 0;
+                     FOLDERLOGICALVIEWMODE flvm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIconSize(
-        int iIconSize) = 0;
+                     int iIconSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVisibleColumns(
-        UINT cVisibleColumns,
-        PROPERTYKEY *rgKey) = 0;
+                     UINT cVisibleColumns,
+                     PROPERTYKEY *rgKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSortColumns(
-        UINT cSortColumns,
-        SORTCOLUMN *rgSortColumns) = 0;
+                     UINT cSortColumns,
+                     SORTCOLUMN *rgSortColumns) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGroupColumn(
-        REFPROPERTYKEY keyGroup) = 0;
+                     REFPROPERTYKEY keyGroup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStacks(
-        UINT cStackKeys,
-        PROPERTYKEY *rgStackKeys) = 0;
+                     UINT cStackKeys,
+                     PROPERTYKEY *rgStackKeys) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetScope(
-        IShellItemArray *psiaScope) = 0;
+                     IShellItemArray *psiaScope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCondition(
-        ICondition *pCondition) = 0;
+                     ICondition *pCondition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetShellItem(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIDList(
-        PIDLIST_ABSOLUTE *ppidl) = 0;
+                     PIDLIST_ABSOLUTE *ppidl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15069,68 +15069,68 @@ typedef struct ISearchFolderItemFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISearchFolderItemFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISearchFolderItemFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISearchFolderItemFactory *This);
+                     ISearchFolderItemFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISearchFolderItemFactory *This);
+                     ISearchFolderItemFactory *This);
 
     /*** ISearchFolderItemFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *SetDisplayName)(
-        ISearchFolderItemFactory *This,
-        LPCWSTR pszDisplayName);
+                     ISearchFolderItemFactory *This,
+                     LPCWSTR pszDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *SetFolderTypeID)(
-        ISearchFolderItemFactory *This,
-        FOLDERTYPEID ftid);
+                     ISearchFolderItemFactory *This,
+                     FOLDERTYPEID ftid);
 
     HRESULT (STDMETHODCALLTYPE *SetFolderLogicalViewMode)(
-        ISearchFolderItemFactory *This,
-        FOLDERLOGICALVIEWMODE flvm);
+                     ISearchFolderItemFactory *This,
+                     FOLDERLOGICALVIEWMODE flvm);
 
     HRESULT (STDMETHODCALLTYPE *SetIconSize)(
-        ISearchFolderItemFactory *This,
-        int iIconSize);
+                     ISearchFolderItemFactory *This,
+                     int iIconSize);
 
     HRESULT (STDMETHODCALLTYPE *SetVisibleColumns)(
-        ISearchFolderItemFactory *This,
-        UINT cVisibleColumns,
-        PROPERTYKEY *rgKey);
+                     ISearchFolderItemFactory *This,
+                     UINT cVisibleColumns,
+                     PROPERTYKEY *rgKey);
 
     HRESULT (STDMETHODCALLTYPE *SetSortColumns)(
-        ISearchFolderItemFactory *This,
-        UINT cSortColumns,
-        SORTCOLUMN *rgSortColumns);
+                     ISearchFolderItemFactory *This,
+                     UINT cSortColumns,
+                     SORTCOLUMN *rgSortColumns);
 
     HRESULT (STDMETHODCALLTYPE *SetGroupColumn)(
-        ISearchFolderItemFactory *This,
-        REFPROPERTYKEY keyGroup);
+                     ISearchFolderItemFactory *This,
+                     REFPROPERTYKEY keyGroup);
 
     HRESULT (STDMETHODCALLTYPE *SetStacks)(
-        ISearchFolderItemFactory *This,
-        UINT cStackKeys,
-        PROPERTYKEY *rgStackKeys);
+                     ISearchFolderItemFactory *This,
+                     UINT cStackKeys,
+                     PROPERTYKEY *rgStackKeys);
 
     HRESULT (STDMETHODCALLTYPE *SetScope)(
-        ISearchFolderItemFactory *This,
-        IShellItemArray *psiaScope);
+                     ISearchFolderItemFactory *This,
+                     IShellItemArray *psiaScope);
 
     HRESULT (STDMETHODCALLTYPE *SetCondition)(
-        ISearchFolderItemFactory *This,
-        ICondition *pCondition);
+                     ISearchFolderItemFactory *This,
+                     ICondition *pCondition);
 
     HRESULT (STDMETHODCALLTYPE *GetShellItem)(
-        ISearchFolderItemFactory *This,
-        REFIID riid,
-        void **ppv);
+                     ISearchFolderItemFactory *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetIDList)(
-        ISearchFolderItemFactory *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     ISearchFolderItemFactory *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     END_INTERFACE
 } ISearchFolderItemFactoryVtbl;
@@ -15244,15 +15244,15 @@ MIDL_INTERFACE("bb2e617c-0920-11d1-9a0b-00c04fc2d6c1")
 IExtractImage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetLocation(
-        LPWSTR pszPathBuffer,
-        DWORD cch,
-        DWORD *pdwPriority,
-        const SIZE *prgSize,
-        DWORD dwRecClrDepth,
-        DWORD *pdwFlags) = 0;
+                     LPWSTR pszPathBuffer,
+                     DWORD cch,
+                     DWORD *pdwPriority,
+                     const SIZE *prgSize,
+                     DWORD dwRecClrDepth,
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Extract(
-        HBITMAP *phBmpThumbnail) = 0;
+                     HBITMAP *phBmpThumbnail) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15264,29 +15264,29 @@ typedef struct IExtractImageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExtractImage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExtractImage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExtractImage *This);
+                     IExtractImage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExtractImage *This);
+                     IExtractImage *This);
 
     /*** IExtractImage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLocation)(
-        IExtractImage *This,
-        LPWSTR pszPathBuffer,
-        DWORD cch,
-        DWORD *pdwPriority,
-        const SIZE *prgSize,
-        DWORD dwRecClrDepth,
-        DWORD *pdwFlags);
+                     IExtractImage *This,
+                     LPWSTR pszPathBuffer,
+                     DWORD cch,
+                     DWORD *pdwPriority,
+                     const SIZE *prgSize,
+                     DWORD dwRecClrDepth,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *Extract)(
-        IExtractImage *This,
-        HBITMAP *phBmpThumbnail);
+                     IExtractImage *This,
+                     HBITMAP *phBmpThumbnail);
 
     END_INTERFACE
 } IExtractImageVtbl;
@@ -15344,7 +15344,7 @@ MIDL_INTERFACE("953bb1ee-93b4-11d1-98a3-00c04fb687da")
 IExtractImage2 : public IExtractImage
 {
     virtual HRESULT STDMETHODCALLTYPE GetDateStamp(
-        FILETIME *pDateStamp) = 0;
+                     FILETIME *pDateStamp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15356,34 +15356,34 @@ typedef struct IExtractImage2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExtractImage2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExtractImage2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExtractImage2 *This);
+                     IExtractImage2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExtractImage2 *This);
+                     IExtractImage2 *This);
 
     /*** IExtractImage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLocation)(
-        IExtractImage2 *This,
-        LPWSTR pszPathBuffer,
-        DWORD cch,
-        DWORD *pdwPriority,
-        const SIZE *prgSize,
-        DWORD dwRecClrDepth,
-        DWORD *pdwFlags);
+                     IExtractImage2 *This,
+                     LPWSTR pszPathBuffer,
+                     DWORD cch,
+                     DWORD *pdwPriority,
+                     const SIZE *prgSize,
+                     DWORD dwRecClrDepth,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *Extract)(
-        IExtractImage2 *This,
-        HBITMAP *phBmpThumbnail);
+                     IExtractImage2 *This,
+                     HBITMAP *phBmpThumbnail);
 
     /*** IExtractImage2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDateStamp)(
-        IExtractImage2 *This,
-        FILETIME *pDateStamp);
+                     IExtractImage2 *This,
+                     FILETIME *pDateStamp);
 
     END_INTERFACE
 } IExtractImage2Vtbl;
@@ -15447,10 +15447,10 @@ MIDL_INTERFACE("e35b4b2e-00da-4bc1-9f13-38bc11f5d417")
 IThumbnailHandlerFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetThumbnailHandler(
-        PCUITEMID_CHILD pidlChild,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppv) = 0;
+                     PCUITEMID_CHILD pidlChild,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15462,23 +15462,23 @@ typedef struct IThumbnailHandlerFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThumbnailHandlerFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IThumbnailHandlerFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThumbnailHandlerFactory *This);
+                     IThumbnailHandlerFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThumbnailHandlerFactory *This);
+                     IThumbnailHandlerFactory *This);
 
     /*** IThumbnailHandlerFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *GetThumbnailHandler)(
-        IThumbnailHandlerFactory *This,
-        PCUITEMID_CHILD pidlChild,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppv);
+                     IThumbnailHandlerFactory *This,
+                     PCUITEMID_CHILD pidlChild,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IThumbnailHandlerFactoryVtbl;
@@ -15531,14 +15531,14 @@ MIDL_INTERFACE("b3a4b685-b685-4805-99d9-5dead2873236")
 IParentAndItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetParentAndItem(
-        PCIDLIST_ABSOLUTE pidlParent,
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidlChild) = 0;
+                     PCIDLIST_ABSOLUTE pidlParent,
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidlChild) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParentAndItem(
-        PIDLIST_ABSOLUTE *ppidlParent,
-        IShellFolder **ppsf,
-        PITEMID_CHILD *ppidlChild) = 0;
+                     PIDLIST_ABSOLUTE *ppidlParent,
+                     IShellFolder **ppsf,
+                     PITEMID_CHILD *ppidlChild) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15550,28 +15550,28 @@ typedef struct IParentAndItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IParentAndItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IParentAndItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IParentAndItem *This);
+                     IParentAndItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IParentAndItem *This);
+                     IParentAndItem *This);
 
     /*** IParentAndItem methods ***/
     HRESULT (STDMETHODCALLTYPE *SetParentAndItem)(
-        IParentAndItem *This,
-        PCIDLIST_ABSOLUTE pidlParent,
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidlChild);
+                     IParentAndItem *This,
+                     PCIDLIST_ABSOLUTE pidlParent,
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidlChild);
 
     HRESULT (STDMETHODCALLTYPE *GetParentAndItem)(
-        IParentAndItem *This,
-        PIDLIST_ABSOLUTE *ppidlParent,
-        IShellFolder **ppsf,
-        PITEMID_CHILD *ppidlChild);
+                     IParentAndItem *This,
+                     PIDLIST_ABSOLUTE *ppidlParent,
+                     IShellFolder **ppsf,
+                     PITEMID_CHILD *ppidlChild);
 
     END_INTERFACE
 } IParentAndItemVtbl;
@@ -15648,15 +15648,15 @@ MIDL_INTERFACE("012dd920-7b26-11d0-8ca9-00a0c92dbfe8")
 IDockingWindow : public IOleWindow
 {
     virtual HRESULT STDMETHODCALLTYPE ShowDW(
-        WINBOOL fShow) = 0;
+                     WINBOOL fShow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CloseDW(
-        DWORD dwReserved) = 0;
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResizeBorderDW(
-        LPCRECT prcBorder,
-        IUnknown *punkToolbarSite,
-        WINBOOL fReserved) = 0;
+                     LPCRECT prcBorder,
+                     IUnknown *punkToolbarSite,
+                     WINBOOL fReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15668,39 +15668,39 @@ typedef struct IDockingWindowVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDockingWindow *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDockingWindow *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDockingWindow *This);
+                     IDockingWindow *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDockingWindow *This);
+                     IDockingWindow *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IDockingWindow *This,
-        HWND *phwnd);
+                     IDockingWindow *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IDockingWindow *This,
-        WINBOOL fEnterMode);
+                     IDockingWindow *This,
+                     WINBOOL fEnterMode);
 
     /*** IDockingWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *ShowDW)(
-        IDockingWindow *This,
-        WINBOOL fShow);
+                     IDockingWindow *This,
+                     WINBOOL fShow);
 
     HRESULT (STDMETHODCALLTYPE *CloseDW)(
-        IDockingWindow *This,
-        DWORD dwReserved);
+                     IDockingWindow *This,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ResizeBorderDW)(
-        IDockingWindow *This,
-        LPCRECT prcBorder,
-        IUnknown *punkToolbarSite,
-        WINBOOL fReserved);
+                     IDockingWindow *This,
+                     LPCRECT prcBorder,
+                     IUnknown *punkToolbarSite,
+                     WINBOOL fReserved);
 
     END_INTERFACE
 } IDockingWindowVtbl;
@@ -15830,9 +15830,9 @@ MIDL_INTERFACE("eb0fe172-1a3a-11d0-89b3-00a0c90a90ac")
 IDeskBand : public IDockingWindow
 {
     virtual HRESULT STDMETHODCALLTYPE GetBandInfo(
-        DWORD dwBandID,
-        DWORD dwViewMode,
-        DESKBANDINFO *pdbi) = 0;
+                     DWORD dwBandID,
+                     DWORD dwViewMode,
+                     DESKBANDINFO *pdbi) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15844,46 +15844,46 @@ typedef struct IDeskBandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDeskBand *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDeskBand *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDeskBand *This);
+                     IDeskBand *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDeskBand *This);
+                     IDeskBand *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IDeskBand *This,
-        HWND *phwnd);
+                     IDeskBand *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IDeskBand *This,
-        WINBOOL fEnterMode);
+                     IDeskBand *This,
+                     WINBOOL fEnterMode);
 
     /*** IDockingWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *ShowDW)(
-        IDeskBand *This,
-        WINBOOL fShow);
+                     IDeskBand *This,
+                     WINBOOL fShow);
 
     HRESULT (STDMETHODCALLTYPE *CloseDW)(
-        IDeskBand *This,
-        DWORD dwReserved);
+                     IDeskBand *This,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ResizeBorderDW)(
-        IDeskBand *This,
-        LPCRECT prcBorder,
-        IUnknown *punkToolbarSite,
-        WINBOOL fReserved);
+                     IDeskBand *This,
+                     LPCRECT prcBorder,
+                     IUnknown *punkToolbarSite,
+                     WINBOOL fReserved);
 
     /*** IDeskBand methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBandInfo)(
-        IDeskBand *This,
-        DWORD dwBandID,
-        DWORD dwViewMode,
-        DESKBANDINFO *pdbi);
+                     IDeskBand *This,
+                     DWORD dwBandID,
+                     DWORD dwViewMode,
+                     DESKBANDINFO *pdbi);
 
     END_INTERFACE
 } IDeskBandVtbl;
@@ -15961,9 +15961,9 @@ MIDL_INTERFACE("77e425fc-cbf9-4307-ba6a-bb5727745661")
 IDeskBandInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDefaultBandWidth(
-        DWORD dwBandID,
-        DWORD dwViewMode,
-        int *pnWidth) = 0;
+                     DWORD dwBandID,
+                     DWORD dwViewMode,
+                     int *pnWidth) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15975,22 +15975,22 @@ typedef struct IDeskBandInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDeskBandInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDeskBandInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDeskBandInfo *This);
+                     IDeskBandInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDeskBandInfo *This);
+                     IDeskBandInfo *This);
 
     /*** IDeskBandInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDefaultBandWidth)(
-        IDeskBandInfo *This,
-        DWORD dwBandID,
-        DWORD dwViewMode,
-        int *pnWidth);
+                     IDeskBandInfo *This,
+                     DWORD dwBandID,
+                     DWORD dwViewMode,
+                     int *pnWidth);
 
     END_INTERFACE
 } IDeskBandInfoVtbl;
@@ -16043,13 +16043,13 @@ MIDL_INTERFACE("79d16de4-abee-4021-8d9d-9169b261d657")
 IDeskBand2 : public IDeskBand
 {
     virtual HRESULT STDMETHODCALLTYPE CanRenderComposited(
-        WINBOOL *pfCanRenderComposited) = 0;
+                     WINBOOL *pfCanRenderComposited) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCompositionState(
-        WINBOOL fCompositionEnabled) = 0;
+                     WINBOOL fCompositionEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCompositionState(
-        WINBOOL *pfCompositionEnabled) = 0;
+                     WINBOOL *pfCompositionEnabled) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16061,59 +16061,59 @@ typedef struct IDeskBand2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDeskBand2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDeskBand2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDeskBand2 *This);
+                     IDeskBand2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDeskBand2 *This);
+                     IDeskBand2 *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IDeskBand2 *This,
-        HWND *phwnd);
+                     IDeskBand2 *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IDeskBand2 *This,
-        WINBOOL fEnterMode);
+                     IDeskBand2 *This,
+                     WINBOOL fEnterMode);
 
     /*** IDockingWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *ShowDW)(
-        IDeskBand2 *This,
-        WINBOOL fShow);
+                     IDeskBand2 *This,
+                     WINBOOL fShow);
 
     HRESULT (STDMETHODCALLTYPE *CloseDW)(
-        IDeskBand2 *This,
-        DWORD dwReserved);
+                     IDeskBand2 *This,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ResizeBorderDW)(
-        IDeskBand2 *This,
-        LPCRECT prcBorder,
-        IUnknown *punkToolbarSite,
-        WINBOOL fReserved);
+                     IDeskBand2 *This,
+                     LPCRECT prcBorder,
+                     IUnknown *punkToolbarSite,
+                     WINBOOL fReserved);
 
     /*** IDeskBand methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBandInfo)(
-        IDeskBand2 *This,
-        DWORD dwBandID,
-        DWORD dwViewMode,
-        DESKBANDINFO *pdbi);
+                     IDeskBand2 *This,
+                     DWORD dwBandID,
+                     DWORD dwViewMode,
+                     DESKBANDINFO *pdbi);
 
     /*** IDeskBand2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CanRenderComposited)(
-        IDeskBand2 *This,
-        WINBOOL *pfCanRenderComposited);
+                     IDeskBand2 *This,
+                     WINBOOL *pfCanRenderComposited);
 
     HRESULT (STDMETHODCALLTYPE *SetCompositionState)(
-        IDeskBand2 *This,
-        WINBOOL fCompositionEnabled);
+                     IDeskBand2 *This,
+                     WINBOOL fCompositionEnabled);
 
     HRESULT (STDMETHODCALLTYPE *GetCompositionState)(
-        IDeskBand2 *This,
-        WINBOOL *pfCompositionEnabled);
+                     IDeskBand2 *This,
+                     WINBOOL *pfCompositionEnabled);
 
     END_INTERFACE
 } IDeskBand2Vtbl;
@@ -16205,19 +16205,19 @@ MIDL_INTERFACE("56fdf342-fd6d-11d0-958a-006097c9a090")
 ITaskbarList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE HrInit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddTab(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteTab(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActivateTab(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetActiveAlt(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16229,35 +16229,35 @@ typedef struct ITaskbarListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskbarList *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskbarList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskbarList *This);
+                     ITaskbarList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskbarList *This);
+                     ITaskbarList *This);
 
     /*** ITaskbarList methods ***/
     HRESULT (STDMETHODCALLTYPE *HrInit)(
-        ITaskbarList *This);
+                     ITaskbarList *This);
 
     HRESULT (STDMETHODCALLTYPE *AddTab)(
-        ITaskbarList *This,
-        HWND hwnd);
+                     ITaskbarList *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *DeleteTab)(
-        ITaskbarList *This,
-        HWND hwnd);
+                     ITaskbarList *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *ActivateTab)(
-        ITaskbarList *This,
-        HWND hwnd);
+                     ITaskbarList *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *SetActiveAlt)(
-        ITaskbarList *This,
-        HWND hwnd);
+                     ITaskbarList *This,
+                     HWND hwnd);
 
     END_INTERFACE
 } ITaskbarListVtbl;
@@ -16326,8 +16326,8 @@ MIDL_INTERFACE("602d4995-b13a-429b-a66e-1935e44f4317")
 ITaskbarList2 : public ITaskbarList
 {
     virtual HRESULT STDMETHODCALLTYPE MarkFullscreenWindow(
-        HWND hwnd,
-        WINBOOL fFullscreen) = 0;
+                     HWND hwnd,
+                     WINBOOL fFullscreen) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16339,41 +16339,41 @@ typedef struct ITaskbarList2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskbarList2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskbarList2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskbarList2 *This);
+                     ITaskbarList2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskbarList2 *This);
+                     ITaskbarList2 *This);
 
     /*** ITaskbarList methods ***/
     HRESULT (STDMETHODCALLTYPE *HrInit)(
-        ITaskbarList2 *This);
+                     ITaskbarList2 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddTab)(
-        ITaskbarList2 *This,
-        HWND hwnd);
+                     ITaskbarList2 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *DeleteTab)(
-        ITaskbarList2 *This,
-        HWND hwnd);
+                     ITaskbarList2 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *ActivateTab)(
-        ITaskbarList2 *This,
-        HWND hwnd);
+                     ITaskbarList2 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *SetActiveAlt)(
-        ITaskbarList2 *This,
-        HWND hwnd);
+                     ITaskbarList2 *This,
+                     HWND hwnd);
 
     /*** ITaskbarList2 methods ***/
     HRESULT (STDMETHODCALLTYPE *MarkFullscreenWindow)(
-        ITaskbarList2 *This,
-        HWND hwnd,
-        WINBOOL fFullscreen);
+                     ITaskbarList2 *This,
+                     HWND hwnd,
+                     WINBOOL fFullscreen);
 
     END_INTERFACE
 } ITaskbarList2Vtbl;
@@ -16497,56 +16497,56 @@ MIDL_INTERFACE("ea1afb91-9e28-4b86-90e9-9e9f8a5eefaf")
 ITaskbarList3 : public ITaskbarList2
 {
     virtual HRESULT STDMETHODCALLTYPE SetProgressValue(
-        HWND hwnd,
-        ULONGLONG ullCompleted,
-        ULONGLONG ullTotal) = 0;
+                     HWND hwnd,
+                     ULONGLONG ullCompleted,
+                     ULONGLONG ullTotal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProgressState(
-        HWND hwnd,
-        TBPFLAG tbpFlags) = 0;
+                     HWND hwnd,
+                     TBPFLAG tbpFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterTab(
-        HWND hwndTab,
-        HWND hwndMDI) = 0;
+                     HWND hwndTab,
+                     HWND hwndMDI) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterTab(
-        HWND hwndTab) = 0;
+                     HWND hwndTab) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTabOrder(
-        HWND hwndTab,
-        HWND hwndInsertBefore) = 0;
+                     HWND hwndTab,
+                     HWND hwndInsertBefore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTabActive(
-        HWND hwndTab,
-        HWND hwndMDI,
-        DWORD dwReserved) = 0;
+                     HWND hwndTab,
+                     HWND hwndMDI,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ThumbBarAddButtons(
-        HWND hwnd,
-        UINT cButtons,
-        LPTHUMBBUTTON pButton) = 0;
+                     HWND hwnd,
+                     UINT cButtons,
+                     LPTHUMBBUTTON pButton) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ThumbBarUpdateButtons(
-        HWND hwnd,
-        UINT cButtons,
-        LPTHUMBBUTTON pButton) = 0;
+                     HWND hwnd,
+                     UINT cButtons,
+                     LPTHUMBBUTTON pButton) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ThumbBarSetImageList(
-        HWND hwnd,
-        HIMAGELIST himl) = 0;
+                     HWND hwnd,
+                     HIMAGELIST himl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOverlayIcon(
-        HWND hwnd,
-        HICON hIcon,
-        LPCWSTR pszDescription) = 0;
+                     HWND hwnd,
+                     HICON hIcon,
+                     LPCWSTR pszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetThumbnailTooltip(
-        HWND hwnd,
-        LPCWSTR pszTip) = 0;
+                     HWND hwnd,
+                     LPCWSTR pszTip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetThumbnailClip(
-        HWND hwnd,
-        RECT *prcClip) = 0;
+                     HWND hwnd,
+                     RECT *prcClip) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16558,106 +16558,106 @@ typedef struct ITaskbarList3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskbarList3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskbarList3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskbarList3 *This);
+                     ITaskbarList3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskbarList3 *This);
+                     ITaskbarList3 *This);
 
     /*** ITaskbarList methods ***/
     HRESULT (STDMETHODCALLTYPE *HrInit)(
-        ITaskbarList3 *This);
+                     ITaskbarList3 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddTab)(
-        ITaskbarList3 *This,
-        HWND hwnd);
+                     ITaskbarList3 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *DeleteTab)(
-        ITaskbarList3 *This,
-        HWND hwnd);
+                     ITaskbarList3 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *ActivateTab)(
-        ITaskbarList3 *This,
-        HWND hwnd);
+                     ITaskbarList3 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *SetActiveAlt)(
-        ITaskbarList3 *This,
-        HWND hwnd);
+                     ITaskbarList3 *This,
+                     HWND hwnd);
 
     /*** ITaskbarList2 methods ***/
     HRESULT (STDMETHODCALLTYPE *MarkFullscreenWindow)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        WINBOOL fFullscreen);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     WINBOOL fFullscreen);
 
     /*** ITaskbarList3 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetProgressValue)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        ULONGLONG ullCompleted,
-        ULONGLONG ullTotal);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     ULONGLONG ullCompleted,
+                     ULONGLONG ullTotal);
 
     HRESULT (STDMETHODCALLTYPE *SetProgressState)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        TBPFLAG tbpFlags);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     TBPFLAG tbpFlags);
 
     HRESULT (STDMETHODCALLTYPE *RegisterTab)(
-        ITaskbarList3 *This,
-        HWND hwndTab,
-        HWND hwndMDI);
+                     ITaskbarList3 *This,
+                     HWND hwndTab,
+                     HWND hwndMDI);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterTab)(
-        ITaskbarList3 *This,
-        HWND hwndTab);
+                     ITaskbarList3 *This,
+                     HWND hwndTab);
 
     HRESULT (STDMETHODCALLTYPE *SetTabOrder)(
-        ITaskbarList3 *This,
-        HWND hwndTab,
-        HWND hwndInsertBefore);
+                     ITaskbarList3 *This,
+                     HWND hwndTab,
+                     HWND hwndInsertBefore);
 
     HRESULT (STDMETHODCALLTYPE *SetTabActive)(
-        ITaskbarList3 *This,
-        HWND hwndTab,
-        HWND hwndMDI,
-        DWORD dwReserved);
+                     ITaskbarList3 *This,
+                     HWND hwndTab,
+                     HWND hwndMDI,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ThumbBarAddButtons)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        UINT cButtons,
-        LPTHUMBBUTTON pButton);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     UINT cButtons,
+                     LPTHUMBBUTTON pButton);
 
     HRESULT (STDMETHODCALLTYPE *ThumbBarUpdateButtons)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        UINT cButtons,
-        LPTHUMBBUTTON pButton);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     UINT cButtons,
+                     LPTHUMBBUTTON pButton);
 
     HRESULT (STDMETHODCALLTYPE *ThumbBarSetImageList)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        HIMAGELIST himl);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     HIMAGELIST himl);
 
     HRESULT (STDMETHODCALLTYPE *SetOverlayIcon)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        HICON hIcon,
-        LPCWSTR pszDescription);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     HICON hIcon,
+                     LPCWSTR pszDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnailTooltip)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        LPCWSTR pszTip);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     LPCWSTR pszTip);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnailClip)(
-        ITaskbarList3 *This,
-        HWND hwnd,
-        RECT *prcClip);
+                     ITaskbarList3 *This,
+                     HWND hwnd,
+                     RECT *prcClip);
 
     END_INTERFACE
 } ITaskbarList3Vtbl;
@@ -16792,8 +16792,8 @@ MIDL_INTERFACE("c43dc798-95d1-4bea-9030-bb99e2983a1a")
 ITaskbarList4 : public ITaskbarList3
 {
     virtual HRESULT STDMETHODCALLTYPE SetTabProperties(
-        HWND hwndTab,
-        STPFLAG stpFlags) = 0;
+                     HWND hwndTab,
+                     STPFLAG stpFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16805,112 +16805,112 @@ typedef struct ITaskbarList4Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskbarList4 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskbarList4 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskbarList4 *This);
+                     ITaskbarList4 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskbarList4 *This);
+                     ITaskbarList4 *This);
 
     /*** ITaskbarList methods ***/
     HRESULT (STDMETHODCALLTYPE *HrInit)(
-        ITaskbarList4 *This);
+                     ITaskbarList4 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddTab)(
-        ITaskbarList4 *This,
-        HWND hwnd);
+                     ITaskbarList4 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *DeleteTab)(
-        ITaskbarList4 *This,
-        HWND hwnd);
+                     ITaskbarList4 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *ActivateTab)(
-        ITaskbarList4 *This,
-        HWND hwnd);
+                     ITaskbarList4 *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *SetActiveAlt)(
-        ITaskbarList4 *This,
-        HWND hwnd);
+                     ITaskbarList4 *This,
+                     HWND hwnd);
 
     /*** ITaskbarList2 methods ***/
     HRESULT (STDMETHODCALLTYPE *MarkFullscreenWindow)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        WINBOOL fFullscreen);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     WINBOOL fFullscreen);
 
     /*** ITaskbarList3 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetProgressValue)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        ULONGLONG ullCompleted,
-        ULONGLONG ullTotal);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     ULONGLONG ullCompleted,
+                     ULONGLONG ullTotal);
 
     HRESULT (STDMETHODCALLTYPE *SetProgressState)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        TBPFLAG tbpFlags);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     TBPFLAG tbpFlags);
 
     HRESULT (STDMETHODCALLTYPE *RegisterTab)(
-        ITaskbarList4 *This,
-        HWND hwndTab,
-        HWND hwndMDI);
+                     ITaskbarList4 *This,
+                     HWND hwndTab,
+                     HWND hwndMDI);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterTab)(
-        ITaskbarList4 *This,
-        HWND hwndTab);
+                     ITaskbarList4 *This,
+                     HWND hwndTab);
 
     HRESULT (STDMETHODCALLTYPE *SetTabOrder)(
-        ITaskbarList4 *This,
-        HWND hwndTab,
-        HWND hwndInsertBefore);
+                     ITaskbarList4 *This,
+                     HWND hwndTab,
+                     HWND hwndInsertBefore);
 
     HRESULT (STDMETHODCALLTYPE *SetTabActive)(
-        ITaskbarList4 *This,
-        HWND hwndTab,
-        HWND hwndMDI,
-        DWORD dwReserved);
+                     ITaskbarList4 *This,
+                     HWND hwndTab,
+                     HWND hwndMDI,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *ThumbBarAddButtons)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        UINT cButtons,
-        LPTHUMBBUTTON pButton);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     UINT cButtons,
+                     LPTHUMBBUTTON pButton);
 
     HRESULT (STDMETHODCALLTYPE *ThumbBarUpdateButtons)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        UINT cButtons,
-        LPTHUMBBUTTON pButton);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     UINT cButtons,
+                     LPTHUMBBUTTON pButton);
 
     HRESULT (STDMETHODCALLTYPE *ThumbBarSetImageList)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        HIMAGELIST himl);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     HIMAGELIST himl);
 
     HRESULT (STDMETHODCALLTYPE *SetOverlayIcon)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        HICON hIcon,
-        LPCWSTR pszDescription);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     HICON hIcon,
+                     LPCWSTR pszDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnailTooltip)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        LPCWSTR pszTip);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     LPCWSTR pszTip);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnailClip)(
-        ITaskbarList4 *This,
-        HWND hwnd,
-        RECT *prcClip);
+                     ITaskbarList4 *This,
+                     HWND hwnd,
+                     RECT *prcClip);
 
     /*** ITaskbarList4 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetTabProperties)(
-        ITaskbarList4 *This,
-        HWND hwndTab,
-        STPFLAG stpFlags);
+                     ITaskbarList4 *This,
+                     HWND hwndTab,
+                     STPFLAG stpFlags);
 
     END_INTERFACE
 } ITaskbarList4Vtbl;
@@ -17041,7 +17041,7 @@ MIDL_INTERFACE("4cd19ada-25a5-4a32-b3b7-347bee5be36b")
 IStartMenuPinnedList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RemoveFromList(
-        IShellItem *pitem) = 0;
+                     IShellItem *pitem) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17053,20 +17053,20 @@ typedef struct IStartMenuPinnedListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStartMenuPinnedList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IStartMenuPinnedList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStartMenuPinnedList *This);
+                     IStartMenuPinnedList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStartMenuPinnedList *This);
+                     IStartMenuPinnedList *This);
 
     /*** IStartMenuPinnedList methods ***/
     HRESULT (STDMETHODCALLTYPE *RemoveFromList)(
-        IStartMenuPinnedList *This,
-        IShellItem *pitem);
+                     IStartMenuPinnedList *This,
+                     IShellItem *pitem);
 
     END_INTERFACE
 } IStartMenuPinnedListVtbl;
@@ -17119,14 +17119,14 @@ MIDL_INTERFACE("3d73a659-e5d0-4d42-afc0-5121ba425c8d")
 ICDBurn : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRecorderDriveLetter(
-        LPWSTR pszDrive,
-        UINT cch) = 0;
+                     LPWSTR pszDrive,
+                     UINT cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Burn(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasRecordableDrive(
-        WINBOOL *pfHasRecorder) = 0;
+                     WINBOOL *pfHasRecorder) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17138,29 +17138,29 @@ typedef struct ICDBurnVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICDBurn *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICDBurn *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICDBurn *This);
+                     ICDBurn *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICDBurn *This);
+                     ICDBurn *This);
 
     /*** ICDBurn methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRecorderDriveLetter)(
-        ICDBurn *This,
-        LPWSTR pszDrive,
-        UINT cch);
+                     ICDBurn *This,
+                     LPWSTR pszDrive,
+                     UINT cch);
 
     HRESULT (STDMETHODCALLTYPE *Burn)(
-        ICDBurn *This,
-        HWND hwnd);
+                     ICDBurn *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *HasRecordableDrive)(
-        ICDBurn *This,
-        WINBOOL *pfHasRecorder);
+                     ICDBurn *This,
+                     WINBOOL *pfHasRecorder);
 
     END_INTERFACE
 } ICDBurnVtbl;
@@ -17224,13 +17224,13 @@ MIDL_INTERFACE("88960f5b-422f-4e7b-8013-73415381c3c3")
 IWizardSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPreviousPage(
-        HPROPSHEETPAGE *phpage) = 0;
+                     HPROPSHEETPAGE *phpage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNextPage(
-        HPROPSHEETPAGE *phpage) = 0;
+                     HPROPSHEETPAGE *phpage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCancelledPage(
-        HPROPSHEETPAGE *phpage) = 0;
+                     HPROPSHEETPAGE *phpage) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17242,28 +17242,28 @@ typedef struct IWizardSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWizardSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWizardSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWizardSite *This);
+                     IWizardSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWizardSite *This);
+                     IWizardSite *This);
 
     /*** IWizardSite methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPreviousPage)(
-        IWizardSite *This,
-        HPROPSHEETPAGE *phpage);
+                     IWizardSite *This,
+                     HPROPSHEETPAGE *phpage);
 
     HRESULT (STDMETHODCALLTYPE *GetNextPage)(
-        IWizardSite *This,
-        HPROPSHEETPAGE *phpage);
+                     IWizardSite *This,
+                     HPROPSHEETPAGE *phpage);
 
     HRESULT (STDMETHODCALLTYPE *GetCancelledPage)(
-        IWizardSite *This,
-        HPROPSHEETPAGE *phpage);
+                     IWizardSite *This,
+                     HPROPSHEETPAGE *phpage);
 
     END_INTERFACE
 } IWizardSiteVtbl;
@@ -17326,15 +17326,15 @@ MIDL_INTERFACE("c02ea696-86cc-491e-9b23-74394a0444a8")
 IWizardExtension : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddPages(
-        HPROPSHEETPAGE *aPages,
-        UINT cPages,
-        UINT *pnPagesAdded) = 0;
+                     HPROPSHEETPAGE *aPages,
+                     UINT cPages,
+                     UINT *pnPagesAdded) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFirstPage(
-        HPROPSHEETPAGE *phpage) = 0;
+                     HPROPSHEETPAGE *phpage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastPage(
-        HPROPSHEETPAGE *phpage) = 0;
+                     HPROPSHEETPAGE *phpage) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17346,30 +17346,30 @@ typedef struct IWizardExtensionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWizardExtension *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWizardExtension *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWizardExtension *This);
+                     IWizardExtension *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWizardExtension *This);
+                     IWizardExtension *This);
 
     /*** IWizardExtension methods ***/
     HRESULT (STDMETHODCALLTYPE *AddPages)(
-        IWizardExtension *This,
-        HPROPSHEETPAGE *aPages,
-        UINT cPages,
-        UINT *pnPagesAdded);
+                     IWizardExtension *This,
+                     HPROPSHEETPAGE *aPages,
+                     UINT cPages,
+                     UINT *pnPagesAdded);
 
     HRESULT (STDMETHODCALLTYPE *GetFirstPage)(
-        IWizardExtension *This,
-        HPROPSHEETPAGE *phpage);
+                     IWizardExtension *This,
+                     HPROPSHEETPAGE *phpage);
 
     HRESULT (STDMETHODCALLTYPE *GetLastPage)(
-        IWizardExtension *This,
-        HPROPSHEETPAGE *phpage);
+                     IWizardExtension *This,
+                     HPROPSHEETPAGE *phpage);
 
     END_INTERFACE
 } IWizardExtensionVtbl;
@@ -17430,10 +17430,10 @@ MIDL_INTERFACE("0e6b3f66-98d1-48c0-a222-fbde74e2fbc5")
 IWebWizardExtension : public IWizardExtension
 {
     virtual HRESULT STDMETHODCALLTYPE SetInitialURL(
-        LPCWSTR pszURL) = 0;
+                     LPCWSTR pszURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetErrorURL(
-        LPCWSTR pszErrorURL) = 0;
+                     LPCWSTR pszErrorURL) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17445,39 +17445,39 @@ typedef struct IWebWizardExtensionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWebWizardExtension *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWebWizardExtension *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWebWizardExtension *This);
+                     IWebWizardExtension *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWebWizardExtension *This);
+                     IWebWizardExtension *This);
 
     /*** IWizardExtension methods ***/
     HRESULT (STDMETHODCALLTYPE *AddPages)(
-        IWebWizardExtension *This,
-        HPROPSHEETPAGE *aPages,
-        UINT cPages,
-        UINT *pnPagesAdded);
+                     IWebWizardExtension *This,
+                     HPROPSHEETPAGE *aPages,
+                     UINT cPages,
+                     UINT *pnPagesAdded);
 
     HRESULT (STDMETHODCALLTYPE *GetFirstPage)(
-        IWebWizardExtension *This,
-        HPROPSHEETPAGE *phpage);
+                     IWebWizardExtension *This,
+                     HPROPSHEETPAGE *phpage);
 
     HRESULT (STDMETHODCALLTYPE *GetLastPage)(
-        IWebWizardExtension *This,
-        HPROPSHEETPAGE *phpage);
+                     IWebWizardExtension *This,
+                     HPROPSHEETPAGE *phpage);
 
     /*** IWebWizardExtension methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInitialURL)(
-        IWebWizardExtension *This,
-        LPCWSTR pszURL);
+                     IWebWizardExtension *This,
+                     LPCWSTR pszURL);
 
     HRESULT (STDMETHODCALLTYPE *SetErrorURL)(
-        IWebWizardExtension *This,
-        LPCWSTR pszErrorURL);
+                     IWebWizardExtension *This,
+                     LPCWSTR pszErrorURL);
 
     END_INTERFACE
 } IWebWizardExtensionVtbl;
@@ -17568,13 +17568,13 @@ MIDL_INTERFACE("aa9198bb-ccec-472d-beed-19a4f6733f7a")
 IPublishingWizard : public IWizardExtension
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IDataObject *pdo,
-        DWORD dwOptions,
-        LPCWSTR pszServiceScope) = 0;
+                     IDataObject *pdo,
+                     DWORD dwOptions,
+                     LPCWSTR pszServiceScope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransferManifest(
-        HRESULT *phrFromTransfer,
-        IXMLDOMDocument **pdocManifest) = 0;
+                     HRESULT *phrFromTransfer,
+                     IXMLDOMDocument **pdocManifest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17586,42 +17586,42 @@ typedef struct IPublishingWizardVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPublishingWizard *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPublishingWizard *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPublishingWizard *This);
+                     IPublishingWizard *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPublishingWizard *This);
+                     IPublishingWizard *This);
 
     /*** IWizardExtension methods ***/
     HRESULT (STDMETHODCALLTYPE *AddPages)(
-        IPublishingWizard *This,
-        HPROPSHEETPAGE *aPages,
-        UINT cPages,
-        UINT *pnPagesAdded);
+                     IPublishingWizard *This,
+                     HPROPSHEETPAGE *aPages,
+                     UINT cPages,
+                     UINT *pnPagesAdded);
 
     HRESULT (STDMETHODCALLTYPE *GetFirstPage)(
-        IPublishingWizard *This,
-        HPROPSHEETPAGE *phpage);
+                     IPublishingWizard *This,
+                     HPROPSHEETPAGE *phpage);
 
     HRESULT (STDMETHODCALLTYPE *GetLastPage)(
-        IPublishingWizard *This,
-        HPROPSHEETPAGE *phpage);
+                     IPublishingWizard *This,
+                     HPROPSHEETPAGE *phpage);
 
     /*** IPublishingWizard methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IPublishingWizard *This,
-        IDataObject *pdo,
-        DWORD dwOptions,
-        LPCWSTR pszServiceScope);
+                     IPublishingWizard *This,
+                     IDataObject *pdo,
+                     DWORD dwOptions,
+                     LPCWSTR pszServiceScope);
 
     HRESULT (STDMETHODCALLTYPE *GetTransferManifest)(
-        IPublishingWizard *This,
-        HRESULT *phrFromTransfer,
-        IXMLDOMDocument **pdocManifest);
+                     IPublishingWizard *This,
+                     HRESULT *phrFromTransfer,
+                     IXMLDOMDocument **pdocManifest);
 
     END_INTERFACE
 } IPublishingWizardVtbl;
@@ -17692,9 +17692,9 @@ MIDL_INTERFACE("1ea58f02-d55a-411d-b09e-9e65ac21605b")
 IFolderViewHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        HWND hwndParent,
-        IDataObject *pdo,
-        RECT *prc) = 0;
+                     HWND hwndParent,
+                     IDataObject *pdo,
+                     RECT *prc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17706,22 +17706,22 @@ typedef struct IFolderViewHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFolderViewHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFolderViewHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFolderViewHost *This);
+                     IFolderViewHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFolderViewHost *This);
+                     IFolderViewHost *This);
 
     /*** IFolderViewHost methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IFolderViewHost *This,
-        HWND hwndParent,
-        IDataObject *pdo,
-        RECT *prc);
+                     IFolderViewHost *This,
+                     HWND hwndParent,
+                     IDataObject *pdo,
+                     RECT *prc);
 
     END_INTERFACE
 } IFolderViewHostVtbl;
@@ -17775,16 +17775,16 @@ MIDL_INTERFACE("361bbdc7-e6ee-4e13-be58-58e2240c810f")
 IExplorerBrowserEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnNavigationPending(
-        PCIDLIST_ABSOLUTE pidlFolder) = 0;
+                     PCIDLIST_ABSOLUTE pidlFolder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnViewCreated(
-        IShellView *psv) = 0;
+                     IShellView *psv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnNavigationComplete(
-        PCIDLIST_ABSOLUTE pidlFolder) = 0;
+                     PCIDLIST_ABSOLUTE pidlFolder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnNavigationFailed(
-        PCIDLIST_ABSOLUTE pidlFolder) = 0;
+                     PCIDLIST_ABSOLUTE pidlFolder) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17796,32 +17796,32 @@ typedef struct IExplorerBrowserEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExplorerBrowserEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExplorerBrowserEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExplorerBrowserEvents *This);
+                     IExplorerBrowserEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExplorerBrowserEvents *This);
+                     IExplorerBrowserEvents *This);
 
     /*** IExplorerBrowserEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnNavigationPending)(
-        IExplorerBrowserEvents *This,
-        PCIDLIST_ABSOLUTE pidlFolder);
+                     IExplorerBrowserEvents *This,
+                     PCIDLIST_ABSOLUTE pidlFolder);
 
     HRESULT (STDMETHODCALLTYPE *OnViewCreated)(
-        IExplorerBrowserEvents *This,
-        IShellView *psv);
+                     IExplorerBrowserEvents *This,
+                     IShellView *psv);
 
     HRESULT (STDMETHODCALLTYPE *OnNavigationComplete)(
-        IExplorerBrowserEvents *This,
-        PCIDLIST_ABSOLUTE pidlFolder);
+                     IExplorerBrowserEvents *This,
+                     PCIDLIST_ABSOLUTE pidlFolder);
 
     HRESULT (STDMETHODCALLTYPE *OnNavigationFailed)(
-        IExplorerBrowserEvents *This,
-        PCIDLIST_ABSOLUTE pidlFolder);
+                     IExplorerBrowserEvents *This,
+                     PCIDLIST_ABSOLUTE pidlFolder);
 
     END_INTERFACE
 } IExplorerBrowserEventsVtbl;
@@ -17908,57 +17908,57 @@ MIDL_INTERFACE("dfd3b6b5-c10c-4be9-85f6-a66969f402f6")
 IExplorerBrowser : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        HWND hwndParent,
-        const RECT *prc,
-        const FOLDERSETTINGS *pfs) = 0;
+                     HWND hwndParent,
+                     const RECT *prc,
+                     const FOLDERSETTINGS *pfs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Destroy(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRect(
-        HDWP *phdwp,
-        RECT rcBrowser) = 0;
+                     HDWP *phdwp,
+                     RECT rcBrowser) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPropertyBag(
-        LPCWSTR pszPropertyBag) = 0;
+                     LPCWSTR pszPropertyBag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEmptyText(
-        LPCWSTR pszEmptyText) = 0;
+                     LPCWSTR pszEmptyText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFolderSettings(
-        const FOLDERSETTINGS *pfs) = 0;
+                     const FOLDERSETTINGS *pfs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IExplorerBrowserEvents *psbe,
-        DWORD *pdwCookie) = 0;
+                     IExplorerBrowserEvents *psbe,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOptions(
-        EXPLORER_BROWSER_OPTIONS dwFlag) = 0;
+                     EXPLORER_BROWSER_OPTIONS dwFlag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOptions(
-        EXPLORER_BROWSER_OPTIONS *pdwFlag) = 0;
+                     EXPLORER_BROWSER_OPTIONS *pdwFlag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BrowseToIDList(
-        PCUIDLIST_RELATIVE pidl,
-        UINT uFlags) = 0;
+                     PCUIDLIST_RELATIVE pidl,
+                     UINT uFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BrowseToObject(
-        IUnknown *punk,
-        UINT uFlags) = 0;
+                     IUnknown *punk,
+                     UINT uFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FillFromObject(
-        IUnknown *punk,
-        EXPLORER_BROWSER_FILL_FLAGS dwFlags) = 0;
+                     IUnknown *punk,
+                     EXPLORER_BROWSER_FILL_FLAGS dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAll(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentView(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17970,82 +17970,82 @@ typedef struct IExplorerBrowserVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExplorerBrowser *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExplorerBrowser *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExplorerBrowser *This);
+                     IExplorerBrowser *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExplorerBrowser *This);
+                     IExplorerBrowser *This);
 
     /*** IExplorerBrowser methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IExplorerBrowser *This,
-        HWND hwndParent,
-        const RECT *prc,
-        const FOLDERSETTINGS *pfs);
+                     IExplorerBrowser *This,
+                     HWND hwndParent,
+                     const RECT *prc,
+                     const FOLDERSETTINGS *pfs);
 
     HRESULT (STDMETHODCALLTYPE *Destroy)(
-        IExplorerBrowser *This);
+                     IExplorerBrowser *This);
 
     HRESULT (STDMETHODCALLTYPE *SetRect)(
-        IExplorerBrowser *This,
-        HDWP *phdwp,
-        RECT rcBrowser);
+                     IExplorerBrowser *This,
+                     HDWP *phdwp,
+                     RECT rcBrowser);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertyBag)(
-        IExplorerBrowser *This,
-        LPCWSTR pszPropertyBag);
+                     IExplorerBrowser *This,
+                     LPCWSTR pszPropertyBag);
 
     HRESULT (STDMETHODCALLTYPE *SetEmptyText)(
-        IExplorerBrowser *This,
-        LPCWSTR pszEmptyText);
+                     IExplorerBrowser *This,
+                     LPCWSTR pszEmptyText);
 
     HRESULT (STDMETHODCALLTYPE *SetFolderSettings)(
-        IExplorerBrowser *This,
-        const FOLDERSETTINGS *pfs);
+                     IExplorerBrowser *This,
+                     const FOLDERSETTINGS *pfs);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IExplorerBrowser *This,
-        IExplorerBrowserEvents *psbe,
-        DWORD *pdwCookie);
+                     IExplorerBrowser *This,
+                     IExplorerBrowserEvents *psbe,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IExplorerBrowser *This,
-        DWORD dwCookie);
+                     IExplorerBrowser *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *SetOptions)(
-        IExplorerBrowser *This,
-        EXPLORER_BROWSER_OPTIONS dwFlag);
+                     IExplorerBrowser *This,
+                     EXPLORER_BROWSER_OPTIONS dwFlag);
 
     HRESULT (STDMETHODCALLTYPE *GetOptions)(
-        IExplorerBrowser *This,
-        EXPLORER_BROWSER_OPTIONS *pdwFlag);
+                     IExplorerBrowser *This,
+                     EXPLORER_BROWSER_OPTIONS *pdwFlag);
 
     HRESULT (STDMETHODCALLTYPE *BrowseToIDList)(
-        IExplorerBrowser *This,
-        PCUIDLIST_RELATIVE pidl,
-        UINT uFlags);
+                     IExplorerBrowser *This,
+                     PCUIDLIST_RELATIVE pidl,
+                     UINT uFlags);
 
     HRESULT (STDMETHODCALLTYPE *BrowseToObject)(
-        IExplorerBrowser *This,
-        IUnknown *punk,
-        UINT uFlags);
+                     IExplorerBrowser *This,
+                     IUnknown *punk,
+                     UINT uFlags);
 
     HRESULT (STDMETHODCALLTYPE *FillFromObject)(
-        IExplorerBrowser *This,
-        IUnknown *punk,
-        EXPLORER_BROWSER_FILL_FLAGS dwFlags);
+                     IExplorerBrowser *This,
+                     IUnknown *punk,
+                     EXPLORER_BROWSER_FILL_FLAGS dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAll)(
-        IExplorerBrowser *This);
+                     IExplorerBrowser *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentView)(
-        IExplorerBrowser *This,
-        REFIID riid,
-        void **ppv);
+                     IExplorerBrowser *This,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IExplorerBrowserVtbl;
@@ -18154,7 +18154,7 @@ MIDL_INTERFACE("95a391c5-9ed4-4c28-8401-ab9e06719e11")
 IAccessibleObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAccessibleName(
-        LPCWSTR pszName) = 0;
+                     LPCWSTR pszName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18166,20 +18166,20 @@ typedef struct IAccessibleObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAccessibleObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAccessibleObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAccessibleObject *This);
+                     IAccessibleObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAccessibleObject *This);
+                     IAccessibleObject *This);
 
     /*** IAccessibleObject methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAccessibleName)(
-        IAccessibleObject *This,
-        LPCWSTR pszName);
+                     IAccessibleObject *This,
+                     LPCWSTR pszName);
 
     END_INTERFACE
 } IAccessibleObjectVtbl;
@@ -18233,20 +18233,20 @@ MIDL_INTERFACE("96e5ae6d-6ae1-4b1c-900c-c6480eaa8828")
 IResultsFolder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddItem(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddIDList(
-        PCIDLIST_ABSOLUTE pidl,
-        PITEMID_CHILD *ppidlAdded) = 0;
+                     PCIDLIST_ABSOLUTE pidl,
+                     PITEMID_CHILD *ppidlAdded) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveItem(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveIDList(
-        PCIDLIST_ABSOLUTE pidl) = 0;
+                     PCIDLIST_ABSOLUTE pidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAll(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18258,36 +18258,36 @@ typedef struct IResultsFolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IResultsFolder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IResultsFolder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IResultsFolder *This);
+                     IResultsFolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IResultsFolder *This);
+                     IResultsFolder *This);
 
     /*** IResultsFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *AddItem)(
-        IResultsFolder *This,
-        IShellItem *psi);
+                     IResultsFolder *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *AddIDList)(
-        IResultsFolder *This,
-        PCIDLIST_ABSOLUTE pidl,
-        PITEMID_CHILD *ppidlAdded);
+                     IResultsFolder *This,
+                     PCIDLIST_ABSOLUTE pidl,
+                     PITEMID_CHILD *ppidlAdded);
 
     HRESULT (STDMETHODCALLTYPE *RemoveItem)(
-        IResultsFolder *This,
-        IShellItem *psi);
+                     IResultsFolder *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *RemoveIDList)(
-        IResultsFolder *This,
-        PCIDLIST_ABSOLUTE pidl);
+                     IResultsFolder *This,
+                     PCIDLIST_ABSOLUTE pidl);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAll)(
-        IResultsFolder *This);
+                     IResultsFolder *This);
 
     END_INTERFACE
 } IResultsFolderVtbl;
@@ -18373,19 +18373,19 @@ MIDL_INTERFACE("2c1c7e2e-2d0e-4059-831e-1e6f82335c2e")
 IEnumObjects : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        REFIID riid,
-        void **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     REFIID riid,
+                     void **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumObjects **ppenum) = 0;
+                     IEnumObjects **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18397,34 +18397,34 @@ typedef struct IEnumObjectsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumObjects *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumObjects *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumObjects *This);
+                     IEnumObjects *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumObjects *This);
+                     IEnumObjects *This);
 
     /*** IEnumObjects methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumObjects *This,
-        ULONG celt,
-        REFIID riid,
-        void **rgelt,
-        ULONG *pceltFetched);
+                     IEnumObjects *This,
+                     ULONG celt,
+                     REFIID riid,
+                     void **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumObjects *This,
-        ULONG celt);
+                     IEnumObjects *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumObjects *This);
+                     IEnumObjects *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumObjects *This,
-        IEnumObjects **ppenum);
+                     IEnumObjects *This,
+                     IEnumObjects **ppenum);
 
     END_INTERFACE
 } IEnumObjectsVtbl;
@@ -18543,46 +18543,46 @@ MIDL_INTERFACE("0c9fb851-e5c9-43eb-a370-f0677b13874c")
 IOperationsProgressDialog : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartProgressDialog(
-        HWND hwndOwner,
-        OPPROGDLGF flags) = 0;
+                     HWND hwndOwner,
+                     OPPROGDLGF flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopProgressDialog(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOperation(
-        SPACTION action) = 0;
+                     SPACTION action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMode(
-        PDMODE mode) = 0;
+                     PDMODE mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateProgress(
-        ULONGLONG ullPointsCurrent,
-        ULONGLONG ullPointsTotal,
-        ULONGLONG ullSizeCurrent,
-        ULONGLONG ullSizeTotal,
-        ULONGLONG ullItemsCurrent,
-        ULONGLONG ullItemsTotal) = 0;
+                     ULONGLONG ullPointsCurrent,
+                     ULONGLONG ullPointsTotal,
+                     ULONGLONG ullSizeCurrent,
+                     ULONGLONG ullSizeTotal,
+                     ULONGLONG ullItemsCurrent,
+                     ULONGLONG ullItemsTotal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateLocations(
-        IShellItem *psiSource,
-        IShellItem *psiTarget,
-        IShellItem *psiItem) = 0;
+                     IShellItem *psiSource,
+                     IShellItem *psiTarget,
+                     IShellItem *psiItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetTimer(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PauseTimer(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResumeTimer(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMilliseconds(
-        ULONGLONG *pullElapsed,
-        ULONGLONG *pullRemaining) = 0;
+                     ULONGLONG *pullElapsed,
+                     ULONGLONG *pullRemaining) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOperationStatus(
-        PDOPSTATUS *popstatus) = 0;
+                     PDOPSTATUS *popstatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18594,65 +18594,65 @@ typedef struct IOperationsProgressDialogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOperationsProgressDialog *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOperationsProgressDialog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOperationsProgressDialog *This);
+                     IOperationsProgressDialog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOperationsProgressDialog *This);
+                     IOperationsProgressDialog *This);
 
     /*** IOperationsProgressDialog methods ***/
     HRESULT (STDMETHODCALLTYPE *StartProgressDialog)(
-        IOperationsProgressDialog *This,
-        HWND hwndOwner,
-        OPPROGDLGF flags);
+                     IOperationsProgressDialog *This,
+                     HWND hwndOwner,
+                     OPPROGDLGF flags);
 
     HRESULT (STDMETHODCALLTYPE *StopProgressDialog)(
-        IOperationsProgressDialog *This);
+                     IOperationsProgressDialog *This);
 
     HRESULT (STDMETHODCALLTYPE *SetOperation)(
-        IOperationsProgressDialog *This,
-        SPACTION action);
+                     IOperationsProgressDialog *This,
+                     SPACTION action);
 
     HRESULT (STDMETHODCALLTYPE *SetMode)(
-        IOperationsProgressDialog *This,
-        PDMODE mode);
+                     IOperationsProgressDialog *This,
+                     PDMODE mode);
 
     HRESULT (STDMETHODCALLTYPE *UpdateProgress)(
-        IOperationsProgressDialog *This,
-        ULONGLONG ullPointsCurrent,
-        ULONGLONG ullPointsTotal,
-        ULONGLONG ullSizeCurrent,
-        ULONGLONG ullSizeTotal,
-        ULONGLONG ullItemsCurrent,
-        ULONGLONG ullItemsTotal);
+                     IOperationsProgressDialog *This,
+                     ULONGLONG ullPointsCurrent,
+                     ULONGLONG ullPointsTotal,
+                     ULONGLONG ullSizeCurrent,
+                     ULONGLONG ullSizeTotal,
+                     ULONGLONG ullItemsCurrent,
+                     ULONGLONG ullItemsTotal);
 
     HRESULT (STDMETHODCALLTYPE *UpdateLocations)(
-        IOperationsProgressDialog *This,
-        IShellItem *psiSource,
-        IShellItem *psiTarget,
-        IShellItem *psiItem);
+                     IOperationsProgressDialog *This,
+                     IShellItem *psiSource,
+                     IShellItem *psiTarget,
+                     IShellItem *psiItem);
 
     HRESULT (STDMETHODCALLTYPE *ResetTimer)(
-        IOperationsProgressDialog *This);
+                     IOperationsProgressDialog *This);
 
     HRESULT (STDMETHODCALLTYPE *PauseTimer)(
-        IOperationsProgressDialog *This);
+                     IOperationsProgressDialog *This);
 
     HRESULT (STDMETHODCALLTYPE *ResumeTimer)(
-        IOperationsProgressDialog *This);
+                     IOperationsProgressDialog *This);
 
     HRESULT (STDMETHODCALLTYPE *GetMilliseconds)(
-        IOperationsProgressDialog *This,
-        ULONGLONG *pullElapsed,
-        ULONGLONG *pullRemaining);
+                     IOperationsProgressDialog *This,
+                     ULONGLONG *pullElapsed,
+                     ULONGLONG *pullRemaining);
 
     HRESULT (STDMETHODCALLTYPE *GetOperationStatus)(
-        IOperationsProgressDialog *This,
-        PDOPSTATUS *popstatus);
+                     IOperationsProgressDialog *This,
+                     PDOPSTATUS *popstatus);
 
     END_INTERFACE
 } IOperationsProgressDialogVtbl;
@@ -18745,12 +18745,12 @@ MIDL_INTERFACE("f5b0bf81-8cb5-4b1b-9449-1a159e0c733c")
 IIOCancelInformation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetCancelInformation(
-        DWORD dwThreadID,
-        UINT uMsgCancel) = 0;
+                     DWORD dwThreadID,
+                     UINT uMsgCancel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCancelInformation(
-        DWORD *pdwThreadID,
-        UINT *puMsgCancel) = 0;
+                     DWORD *pdwThreadID,
+                     UINT *puMsgCancel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18762,26 +18762,26 @@ typedef struct IIOCancelInformationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IIOCancelInformation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IIOCancelInformation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IIOCancelInformation *This);
+                     IIOCancelInformation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IIOCancelInformation *This);
+                     IIOCancelInformation *This);
 
     /*** IIOCancelInformation methods ***/
     HRESULT (STDMETHODCALLTYPE *SetCancelInformation)(
-        IIOCancelInformation *This,
-        DWORD dwThreadID,
-        UINT uMsgCancel);
+                     IIOCancelInformation *This,
+                     DWORD dwThreadID,
+                     UINT uMsgCancel);
 
     HRESULT (STDMETHODCALLTYPE *GetCancelInformation)(
-        IIOCancelInformation *This,
-        DWORD *pdwThreadID,
-        UINT *puMsgCancel);
+                     IIOCancelInformation *This,
+                     DWORD *pdwThreadID,
+                     UINT *puMsgCancel);
 
     END_INTERFACE
 } IIOCancelInformationVtbl;
@@ -18855,81 +18855,81 @@ MIDL_INTERFACE("947aab5f-0a5c-4c13-b4d6-4bf7836fc9f8")
 IFileOperation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IFileOperationProgressSink *pfops,
-        DWORD *pdwCookie) = 0;
+                     IFileOperationProgressSink *pfops,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOperationFlags(
-        DWORD dwOperationFlags) = 0;
+                     DWORD dwOperationFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProgressMessage(
-        LPCWSTR pszMessage) = 0;
+                     LPCWSTR pszMessage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProgressDialog(
-        IOperationsProgressDialog *popd) = 0;
+                     IOperationsProgressDialog *popd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProperties(
-        IPropertyChangeArray *pproparray) = 0;
+                     IPropertyChangeArray *pproparray) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOwnerWindow(
-        HWND hwndOwner) = 0;
+                     HWND hwndOwner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyPropertiesToItem(
-        IShellItem *psiItem) = 0;
+                     IShellItem *psiItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyPropertiesToItems(
-        IUnknown *punkItems) = 0;
+                     IUnknown *punkItems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenameItem(
-        IShellItem *psiItem,
-        LPCWSTR pszNewName,
-        IFileOperationProgressSink *pfopsItem) = 0;
+                     IShellItem *psiItem,
+                     LPCWSTR pszNewName,
+                     IFileOperationProgressSink *pfopsItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenameItems(
-        IUnknown *pUnkItems,
-        LPCWSTR pszNewName) = 0;
+                     IUnknown *pUnkItems,
+                     LPCWSTR pszNewName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveItem(
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName,
-        IFileOperationProgressSink *pfopsItem) = 0;
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName,
+                     IFileOperationProgressSink *pfopsItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveItems(
-        IUnknown *punkItems,
-        IShellItem *psiDestinationFolder) = 0;
+                     IUnknown *punkItems,
+                     IShellItem *psiDestinationFolder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyItem(
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszCopyName,
-        IFileOperationProgressSink *pfopsItem) = 0;
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszCopyName,
+                     IFileOperationProgressSink *pfopsItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyItems(
-        IUnknown *punkItems,
-        IShellItem *psiDestinationFolder) = 0;
+                     IUnknown *punkItems,
+                     IShellItem *psiDestinationFolder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteItem(
-        IShellItem *psiItem,
-        IFileOperationProgressSink *pfopsItem) = 0;
+                     IShellItem *psiItem,
+                     IFileOperationProgressSink *pfopsItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteItems(
-        IUnknown *punkItems) = 0;
+                     IUnknown *punkItems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NewItem(
-        IShellItem *psiDestinationFolder,
-        DWORD dwFileAttributes,
-        LPCWSTR pszName,
-        LPCWSTR pszTemplateName,
-        IFileOperationProgressSink *pfopsItem) = 0;
+                     IShellItem *psiDestinationFolder,
+                     DWORD dwFileAttributes,
+                     LPCWSTR pszName,
+                     LPCWSTR pszTemplateName,
+                     IFileOperationProgressSink *pfopsItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PerformOperations(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAnyOperationsAborted(
-        WINBOOL *pfAnyOperationsAborted) = 0;
+                     WINBOOL *pfAnyOperationsAborted) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18941,112 +18941,112 @@ typedef struct IFileOperationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileOperation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileOperation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileOperation *This);
+                     IFileOperation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileOperation *This);
+                     IFileOperation *This);
 
     /*** IFileOperation methods ***/
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IFileOperation *This,
-        IFileOperationProgressSink *pfops,
-        DWORD *pdwCookie);
+                     IFileOperation *This,
+                     IFileOperationProgressSink *pfops,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IFileOperation *This,
-        DWORD dwCookie);
+                     IFileOperation *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *SetOperationFlags)(
-        IFileOperation *This,
-        DWORD dwOperationFlags);
+                     IFileOperation *This,
+                     DWORD dwOperationFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetProgressMessage)(
-        IFileOperation *This,
-        LPCWSTR pszMessage);
+                     IFileOperation *This,
+                     LPCWSTR pszMessage);
 
     HRESULT (STDMETHODCALLTYPE *SetProgressDialog)(
-        IFileOperation *This,
-        IOperationsProgressDialog *popd);
+                     IFileOperation *This,
+                     IOperationsProgressDialog *popd);
 
     HRESULT (STDMETHODCALLTYPE *SetProperties)(
-        IFileOperation *This,
-        IPropertyChangeArray *pproparray);
+                     IFileOperation *This,
+                     IPropertyChangeArray *pproparray);
 
     HRESULT (STDMETHODCALLTYPE *SetOwnerWindow)(
-        IFileOperation *This,
-        HWND hwndOwner);
+                     IFileOperation *This,
+                     HWND hwndOwner);
 
     HRESULT (STDMETHODCALLTYPE *ApplyPropertiesToItem)(
-        IFileOperation *This,
-        IShellItem *psiItem);
+                     IFileOperation *This,
+                     IShellItem *psiItem);
 
     HRESULT (STDMETHODCALLTYPE *ApplyPropertiesToItems)(
-        IFileOperation *This,
-        IUnknown *punkItems);
+                     IFileOperation *This,
+                     IUnknown *punkItems);
 
     HRESULT (STDMETHODCALLTYPE *RenameItem)(
-        IFileOperation *This,
-        IShellItem *psiItem,
-        LPCWSTR pszNewName,
-        IFileOperationProgressSink *pfopsItem);
+                     IFileOperation *This,
+                     IShellItem *psiItem,
+                     LPCWSTR pszNewName,
+                     IFileOperationProgressSink *pfopsItem);
 
     HRESULT (STDMETHODCALLTYPE *RenameItems)(
-        IFileOperation *This,
-        IUnknown *pUnkItems,
-        LPCWSTR pszNewName);
+                     IFileOperation *This,
+                     IUnknown *pUnkItems,
+                     LPCWSTR pszNewName);
 
     HRESULT (STDMETHODCALLTYPE *MoveItem)(
-        IFileOperation *This,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszNewName,
-        IFileOperationProgressSink *pfopsItem);
+                     IFileOperation *This,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszNewName,
+                     IFileOperationProgressSink *pfopsItem);
 
     HRESULT (STDMETHODCALLTYPE *MoveItems)(
-        IFileOperation *This,
-        IUnknown *punkItems,
-        IShellItem *psiDestinationFolder);
+                     IFileOperation *This,
+                     IUnknown *punkItems,
+                     IShellItem *psiDestinationFolder);
 
     HRESULT (STDMETHODCALLTYPE *CopyItem)(
-        IFileOperation *This,
-        IShellItem *psiItem,
-        IShellItem *psiDestinationFolder,
-        LPCWSTR pszCopyName,
-        IFileOperationProgressSink *pfopsItem);
+                     IFileOperation *This,
+                     IShellItem *psiItem,
+                     IShellItem *psiDestinationFolder,
+                     LPCWSTR pszCopyName,
+                     IFileOperationProgressSink *pfopsItem);
 
     HRESULT (STDMETHODCALLTYPE *CopyItems)(
-        IFileOperation *This,
-        IUnknown *punkItems,
-        IShellItem *psiDestinationFolder);
+                     IFileOperation *This,
+                     IUnknown *punkItems,
+                     IShellItem *psiDestinationFolder);
 
     HRESULT (STDMETHODCALLTYPE *DeleteItem)(
-        IFileOperation *This,
-        IShellItem *psiItem,
-        IFileOperationProgressSink *pfopsItem);
+                     IFileOperation *This,
+                     IShellItem *psiItem,
+                     IFileOperationProgressSink *pfopsItem);
 
     HRESULT (STDMETHODCALLTYPE *DeleteItems)(
-        IFileOperation *This,
-        IUnknown *punkItems);
+                     IFileOperation *This,
+                     IUnknown *punkItems);
 
     HRESULT (STDMETHODCALLTYPE *NewItem)(
-        IFileOperation *This,
-        IShellItem *psiDestinationFolder,
-        DWORD dwFileAttributes,
-        LPCWSTR pszName,
-        LPCWSTR pszTemplateName,
-        IFileOperationProgressSink *pfopsItem);
+                     IFileOperation *This,
+                     IShellItem *psiDestinationFolder,
+                     DWORD dwFileAttributes,
+                     LPCWSTR pszName,
+                     LPCWSTR pszTemplateName,
+                     IFileOperationProgressSink *pfopsItem);
 
     HRESULT (STDMETHODCALLTYPE *PerformOperations)(
-        IFileOperation *This);
+                     IFileOperation *This);
 
     HRESULT (STDMETHODCALLTYPE *GetAnyOperationsAborted)(
-        IFileOperation *This,
-        WINBOOL *pfAnyOperationsAborted);
+                     IFileOperation *This,
+                     WINBOOL *pfAnyOperationsAborted);
 
     END_INTERFACE
 } IFileOperationVtbl;
@@ -19175,9 +19175,9 @@ MIDL_INTERFACE("a6087428-3be3-4d73-b308-7c04a540bf1a")
 IObjectProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryObject(
-        REFGUID guidObject,
-        REFIID riid,
-        void **ppvOut) = 0;
+                     REFGUID guidObject,
+                     REFIID riid,
+                     void **ppvOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19189,22 +19189,22 @@ typedef struct IObjectProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectProvider *This);
+                     IObjectProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectProvider *This);
+                     IObjectProvider *This);
 
     /*** IObjectProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryObject)(
-        IObjectProvider *This,
-        REFGUID guidObject,
-        REFIID riid,
-        void **ppvOut);
+                     IObjectProvider *This,
+                     REFGUID guidObject,
+                     REFIID riid,
+                     void **ppvOut);
 
     END_INTERFACE
 } IObjectProviderVtbl;
@@ -19258,20 +19258,20 @@ MIDL_INTERFACE("d92995f8-cf5e-4a76-bf59-ead39ea2b97e")
 INamespaceWalkCB : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FoundItem(
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl) = 0;
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnterFolder(
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl) = 0;
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LeaveFolder(
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl) = 0;
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeProgressDialog(
-        LPWSTR *ppszTitle,
-        LPWSTR *ppszCancel) = 0;
+                     LPWSTR *ppszTitle,
+                     LPWSTR *ppszCancel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19283,36 +19283,36 @@ typedef struct INamespaceWalkCBVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INamespaceWalkCB *This,
-        REFIID riid,
-        void **ppvObject);
+                     INamespaceWalkCB *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INamespaceWalkCB *This);
+                     INamespaceWalkCB *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INamespaceWalkCB *This);
+                     INamespaceWalkCB *This);
 
     /*** INamespaceWalkCB methods ***/
     HRESULT (STDMETHODCALLTYPE *FoundItem)(
-        INamespaceWalkCB *This,
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl);
+                     INamespaceWalkCB *This,
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl);
 
     HRESULT (STDMETHODCALLTYPE *EnterFolder)(
-        INamespaceWalkCB *This,
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl);
+                     INamespaceWalkCB *This,
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl);
 
     HRESULT (STDMETHODCALLTYPE *LeaveFolder)(
-        INamespaceWalkCB *This,
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl);
+                     INamespaceWalkCB *This,
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl);
 
     HRESULT (STDMETHODCALLTYPE *InitializeProgressDialog)(
-        INamespaceWalkCB *This,
-        LPWSTR *ppszTitle,
-        LPWSTR *ppszCancel);
+                     INamespaceWalkCB *This,
+                     LPWSTR *ppszTitle,
+                     LPWSTR *ppszCancel);
 
     END_INTERFACE
 } INamespaceWalkCBVtbl;
@@ -19378,7 +19378,7 @@ MIDL_INTERFACE("7ac7492b-c38e-438a-87db-68737844ff70")
 INamespaceWalkCB2 : public INamespaceWalkCB
 {
     virtual HRESULT STDMETHODCALLTYPE WalkComplete(
-        HRESULT hr) = 0;
+                     HRESULT hr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19390,41 +19390,41 @@ typedef struct INamespaceWalkCB2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INamespaceWalkCB2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INamespaceWalkCB2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INamespaceWalkCB2 *This);
+                     INamespaceWalkCB2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INamespaceWalkCB2 *This);
+                     INamespaceWalkCB2 *This);
 
     /*** INamespaceWalkCB methods ***/
     HRESULT (STDMETHODCALLTYPE *FoundItem)(
-        INamespaceWalkCB2 *This,
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl);
+                     INamespaceWalkCB2 *This,
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl);
 
     HRESULT (STDMETHODCALLTYPE *EnterFolder)(
-        INamespaceWalkCB2 *This,
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl);
+                     INamespaceWalkCB2 *This,
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl);
 
     HRESULT (STDMETHODCALLTYPE *LeaveFolder)(
-        INamespaceWalkCB2 *This,
-        IShellFolder *psf,
-        PCUITEMID_CHILD pidl);
+                     INamespaceWalkCB2 *This,
+                     IShellFolder *psf,
+                     PCUITEMID_CHILD pidl);
 
     HRESULT (STDMETHODCALLTYPE *InitializeProgressDialog)(
-        INamespaceWalkCB2 *This,
-        LPWSTR *ppszTitle,
-        LPWSTR *ppszCancel);
+                     INamespaceWalkCB2 *This,
+                     LPWSTR *ppszTitle,
+                     LPWSTR *ppszCancel);
 
     /*** INamespaceWalkCB2 methods ***/
     HRESULT (STDMETHODCALLTYPE *WalkComplete)(
-        INamespaceWalkCB2 *This,
-        HRESULT hr);
+                     INamespaceWalkCB2 *This,
+                     HRESULT hr);
 
     END_INTERFACE
 } INamespaceWalkCB2Vtbl;
@@ -19521,14 +19521,14 @@ MIDL_INTERFACE("57ced8a7-3f4a-432c-9350-30f24483f74f")
 INamespaceWalk : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Walk(
-        IUnknown *punkToWalk,
-        DWORD dwFlags,
-        int cDepth,
-        INamespaceWalkCB *pnswcb) = 0;
+                     IUnknown *punkToWalk,
+                     DWORD dwFlags,
+                     int cDepth,
+                     INamespaceWalkCB *pnswcb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIDArrayResult(
-        UINT *pcItems,
-        PIDLIST_ABSOLUTE **prgpidl) = 0;
+                     UINT *pcItems,
+                     PIDLIST_ABSOLUTE **prgpidl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19540,28 +19540,28 @@ typedef struct INamespaceWalkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INamespaceWalk *This,
-        REFIID riid,
-        void **ppvObject);
+                     INamespaceWalk *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INamespaceWalk *This);
+                     INamespaceWalk *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INamespaceWalk *This);
+                     INamespaceWalk *This);
 
     /*** INamespaceWalk methods ***/
     HRESULT (STDMETHODCALLTYPE *Walk)(
-        INamespaceWalk *This,
-        IUnknown *punkToWalk,
-        DWORD dwFlags,
-        int cDepth,
-        INamespaceWalkCB *pnswcb);
+                     INamespaceWalk *This,
+                     IUnknown *punkToWalk,
+                     DWORD dwFlags,
+                     int cDepth,
+                     INamespaceWalkCB *pnswcb);
 
     HRESULT (STDMETHODCALLTYPE *GetIDArrayResult)(
-        INamespaceWalk *This,
-        UINT *pcItems,
-        PIDLIST_ABSOLUTE **prgpidl);
+                     INamespaceWalk *This,
+                     UINT *pcItems,
+                     PIDLIST_ABSOLUTE **prgpidl);
 
     END_INTERFACE
 } INamespaceWalkVtbl;
@@ -19609,7 +19609,7 @@ static FORCEINLINE HRESULT INamespaceWalk_GetIDArrayResult(INamespaceWalk* This,
   __forceinline void FreeIDListArray(PIDLIST_RELATIVE *ppidls, UINT cItems) {
     UINT i;
     for (i = 0; i < cItems; i++) {
-      CoTaskMemFree(ppidls[i]);
+                   CoTaskMemFree(ppidls[i]);
     }
     CoTaskMemFree(ppidls);
   }
@@ -19617,13 +19617,13 @@ static FORCEINLINE HRESULT INamespaceWalk_GetIDArrayResult(INamespaceWalk* This,
   __forceinline void FreeIDListArrayFull(PIDLIST_ABSOLUTE *ppidls, UINT cItems) {
     UINT i;
     for (i = 0; i < cItems; i++)
-      CoTaskMemFree(ppidls[i]);
+                   CoTaskMemFree(ppidls[i]);
     CoTaskMemFree(ppidls);
   }
   __forceinline void FreeIDListArrayChild(PITEMID_CHILD *ppidls, UINT cItems) {
     UINT i;
     for (i = 0; i < cItems; i++)
-      CoTaskMemFree(ppidls[i]);
+                   CoTaskMemFree(ppidls[i]);
     CoTaskMemFree(ppidls);
   }
 #else
@@ -19645,11 +19645,11 @@ MIDL_INTERFACE("3cd141f4-3c6a-11d2-bcaa-00c04fd929db")
 IAutoCompleteDropDown : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDropDownStatus(
-        DWORD *pdwFlags,
-        LPWSTR *ppwszString) = 0;
+                     DWORD *pdwFlags,
+                     LPWSTR *ppwszString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetEnumerator(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19661,24 +19661,24 @@ typedef struct IAutoCompleteDropDownVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAutoCompleteDropDown *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAutoCompleteDropDown *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAutoCompleteDropDown *This);
+                     IAutoCompleteDropDown *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAutoCompleteDropDown *This);
+                     IAutoCompleteDropDown *This);
 
     /*** IAutoCompleteDropDown methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDropDownStatus)(
-        IAutoCompleteDropDown *This,
-        DWORD *pdwFlags,
-        LPWSTR *ppwszString);
+                     IAutoCompleteDropDown *This,
+                     DWORD *pdwFlags,
+                     LPWSTR *ppwszString);
 
     HRESULT (STDMETHODCALLTYPE *ResetEnumerator)(
-        IAutoCompleteDropDown *This);
+                     IAutoCompleteDropDown *This);
 
     END_INTERFACE
 } IAutoCompleteDropDownVtbl;
@@ -19772,37 +19772,37 @@ MIDL_INTERFACE("4cf504b0-de96-11d0-8b3f-00a0c911e8e5")
 IBandSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddBand(
-        IUnknown *punk) = 0;
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumBands(
-        UINT uBand,
-        DWORD *pdwBandID) = 0;
+                     UINT uBand,
+                     DWORD *pdwBandID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryBand(
-        DWORD dwBandID,
-        IDeskBand **ppstb,
-        DWORD *pdwState,
-        LPWSTR pszName,
-        int cchName) = 0;
+                     DWORD dwBandID,
+                     IDeskBand **ppstb,
+                     DWORD *pdwState,
+                     LPWSTR pszName,
+                     int cchName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBandState(
-        DWORD dwBandID,
-        DWORD dwMask,
-        DWORD dwState) = 0;
+                     DWORD dwBandID,
+                     DWORD dwMask,
+                     DWORD dwState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveBand(
-        DWORD dwBandID) = 0;
+                     DWORD dwBandID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBandObject(
-        DWORD dwBandID,
-        REFIID riid,
-        void **ppv) = 0;
+                     DWORD dwBandID,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBandSiteInfo(
-        const BANDSITEINFO *pbsinfo) = 0;
+                     const BANDSITEINFO *pbsinfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBandSiteInfo(
-        BANDSITEINFO *pbsinfo) = 0;
+                     BANDSITEINFO *pbsinfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19814,57 +19814,57 @@ typedef struct IBandSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBandSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBandSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBandSite *This);
+                     IBandSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBandSite *This);
+                     IBandSite *This);
 
     /*** IBandSite methods ***/
     HRESULT (STDMETHODCALLTYPE *AddBand)(
-        IBandSite *This,
-        IUnknown *punk);
+                     IBandSite *This,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *EnumBands)(
-        IBandSite *This,
-        UINT uBand,
-        DWORD *pdwBandID);
+                     IBandSite *This,
+                     UINT uBand,
+                     DWORD *pdwBandID);
 
     HRESULT (STDMETHODCALLTYPE *QueryBand)(
-        IBandSite *This,
-        DWORD dwBandID,
-        IDeskBand **ppstb,
-        DWORD *pdwState,
-        LPWSTR pszName,
-        int cchName);
+                     IBandSite *This,
+                     DWORD dwBandID,
+                     IDeskBand **ppstb,
+                     DWORD *pdwState,
+                     LPWSTR pszName,
+                     int cchName);
 
     HRESULT (STDMETHODCALLTYPE *SetBandState)(
-        IBandSite *This,
-        DWORD dwBandID,
-        DWORD dwMask,
-        DWORD dwState);
+                     IBandSite *This,
+                     DWORD dwBandID,
+                     DWORD dwMask,
+                     DWORD dwState);
 
     HRESULT (STDMETHODCALLTYPE *RemoveBand)(
-        IBandSite *This,
-        DWORD dwBandID);
+                     IBandSite *This,
+                     DWORD dwBandID);
 
     HRESULT (STDMETHODCALLTYPE *GetBandObject)(
-        IBandSite *This,
-        DWORD dwBandID,
-        REFIID riid,
-        void **ppv);
+                     IBandSite *This,
+                     DWORD dwBandID,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetBandSiteInfo)(
-        IBandSite *This,
-        const BANDSITEINFO *pbsinfo);
+                     IBandSite *This,
+                     const BANDSITEINFO *pbsinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetBandSiteInfo)(
-        IBandSite *This,
-        BANDSITEINFO *pbsinfo);
+                     IBandSite *This,
+                     BANDSITEINFO *pbsinfo);
 
     END_INTERFACE
 } IBandSiteVtbl;
@@ -19971,7 +19971,7 @@ MIDL_INTERFACE("b4db1657-70d7-485e-8e3e-6fcb5a5c1802")
 IModalWindow : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Show(
-        HWND hwndOwner) = 0;
+                     HWND hwndOwner) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19983,20 +19983,20 @@ typedef struct IModalWindowVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IModalWindow *This,
-        REFIID riid,
-        void **ppvObject);
+                     IModalWindow *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IModalWindow *This);
+                     IModalWindow *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IModalWindow *This);
+                     IModalWindow *This);
 
     /*** IModalWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IModalWindow *This,
-        HWND hwndOwner);
+                     IModalWindow *This,
+                     HWND hwndOwner);
 
     END_INTERFACE
 } IModalWindowVtbl;
@@ -20081,7 +20081,7 @@ MIDL_INTERFACE("2271dcca-74fc-4414-8fb7-c56b05ace2d7")
 ICDBurnExt : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSupportedActionTypes(
-        CDBE_ACTIONS *pdwActions) = 0;
+                     CDBE_ACTIONS *pdwActions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20093,20 +20093,20 @@ typedef struct ICDBurnExtVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICDBurnExt *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICDBurnExt *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICDBurnExt *This);
+                     ICDBurnExt *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICDBurnExt *This);
+                     ICDBurnExt *This);
 
     /*** ICDBurnExt methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSupportedActionTypes)(
-        ICDBurnExt *This,
-        CDBE_ACTIONS *pdwActions);
+                     ICDBurnExt *This,
+                     CDBE_ACTIONS *pdwActions);
 
     END_INTERFACE
 } ICDBurnExtVtbl;
@@ -20159,9 +20159,9 @@ MIDL_INTERFACE("0811aebe-0b87-4c54-9e72-548cf649016b")
 IContextMenuSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DoContextMenuPopup(
-        IUnknown *punkContextMenu,
-        UINT fFlags,
-        POINT pt) = 0;
+                     IUnknown *punkContextMenu,
+                     UINT fFlags,
+                     POINT pt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20173,22 +20173,22 @@ typedef struct IContextMenuSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IContextMenuSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IContextMenuSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IContextMenuSite *This);
+                     IContextMenuSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IContextMenuSite *This);
+                     IContextMenuSite *This);
 
     /*** IContextMenuSite methods ***/
     HRESULT (STDMETHODCALLTYPE *DoContextMenuPopup)(
-        IContextMenuSite *This,
-        IUnknown *punkContextMenu,
-        UINT fFlags,
-        POINT pt);
+                     IContextMenuSite *This,
+                     IUnknown *punkContextMenu,
+                     UINT fFlags,
+                     POINT pt);
 
     END_INTERFACE
 } IContextMenuSiteVtbl;
@@ -20241,7 +20241,7 @@ MIDL_INTERFACE("61e00d45-8fff-4e60-924e-6537b61612dd")
 IEnumReadyCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnumReady(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20253,19 +20253,19 @@ typedef struct IEnumReadyCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumReadyCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumReadyCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumReadyCallback *This);
+                     IEnumReadyCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumReadyCallback *This);
+                     IEnumReadyCallback *This);
 
     /*** IEnumReadyCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumReady)(
-        IEnumReadyCallback *This);
+                     IEnumReadyCallback *This);
 
     END_INTERFACE
 } IEnumReadyCallbackVtbl;
@@ -20318,12 +20318,12 @@ MIDL_INTERFACE("8c8bf236-1aec-495f-9894-91d57c3c686f")
 IEnumerableView : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetEnumReadyCallback(
-        IEnumReadyCallback *percb) = 0;
+                     IEnumReadyCallback *percb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateEnumIDListFromContents(
-        PCIDLIST_ABSOLUTE pidlFolder,
-        DWORD dwEnumFlags,
-        IEnumIDList **ppEnumIDList) = 0;
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     DWORD dwEnumFlags,
+                     IEnumIDList **ppEnumIDList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20335,26 +20335,26 @@ typedef struct IEnumerableViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumerableView *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumerableView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumerableView *This);
+                     IEnumerableView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumerableView *This);
+                     IEnumerableView *This);
 
     /*** IEnumerableView methods ***/
     HRESULT (STDMETHODCALLTYPE *SetEnumReadyCallback)(
-        IEnumerableView *This,
-        IEnumReadyCallback *percb);
+                     IEnumerableView *This,
+                     IEnumReadyCallback *percb);
 
     HRESULT (STDMETHODCALLTYPE *CreateEnumIDListFromContents)(
-        IEnumerableView *This,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        DWORD dwEnumFlags,
-        IEnumIDList **ppEnumIDList);
+                     IEnumerableView *This,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     DWORD dwEnumFlags,
+                     IEnumIDList **ppEnumIDList);
 
     END_INTERFACE
 } IEnumerableViewVtbl;
@@ -20413,7 +20413,7 @@ MIDL_INTERFACE("d2b57227-3d23-4b95-93c0-492bd454c356")
 IInsertItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InsertItem(
-        PCUIDLIST_RELATIVE pidl) = 0;
+                     PCUIDLIST_RELATIVE pidl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20425,20 +20425,20 @@ typedef struct IInsertItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInsertItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInsertItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInsertItem *This);
+                     IInsertItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInsertItem *This);
+                     IInsertItem *This);
 
     /*** IInsertItem methods ***/
     HRESULT (STDMETHODCALLTYPE *InsertItem)(
-        IInsertItem *This,
-        PCUIDLIST_RELATIVE pidl);
+                     IInsertItem *This,
+                     PCUIDLIST_RELATIVE pidl);
 
     END_INTERFACE
 } IInsertItemVtbl;
@@ -20495,11 +20495,11 @@ MIDL_INTERFACE("568804cd-cbd7-11d0-9816-00c04fd91972")
 IMenuBand : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsMenuMessage(
-        MSG *pmsg) = 0;
+                     MSG *pmsg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateMenuMessage(
-        MSG *pmsg,
-        LRESULT *plRet) = 0;
+                     MSG *pmsg,
+                     LRESULT *plRet) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20511,25 +20511,25 @@ typedef struct IMenuBandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMenuBand *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMenuBand *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMenuBand *This);
+                     IMenuBand *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMenuBand *This);
+                     IMenuBand *This);
 
     /*** IMenuBand methods ***/
     HRESULT (STDMETHODCALLTYPE *IsMenuMessage)(
-        IMenuBand *This,
-        MSG *pmsg);
+                     IMenuBand *This,
+                     MSG *pmsg);
 
     HRESULT (STDMETHODCALLTYPE *TranslateMenuMessage)(
-        IMenuBand *This,
-        MSG *pmsg,
-        LRESULT *plRet);
+                     IMenuBand *This,
+                     MSG *pmsg,
+                     LRESULT *plRet);
 
     END_INTERFACE
 } IMenuBandVtbl;
@@ -20586,16 +20586,16 @@ MIDL_INTERFACE("47c01f95-e185-412c-b5c5-4f27df965aea")
 IFolderBandPriv : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetCascade(
-        WINBOOL fCascade) = 0;
+                     WINBOOL fCascade) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAccelerators(
-        WINBOOL fAccelerators) = 0;
+                     WINBOOL fAccelerators) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNoIcons(
-        WINBOOL fNoIcons) = 0;
+                     WINBOOL fNoIcons) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNoText(
-        WINBOOL fNoText) = 0;
+                     WINBOOL fNoText) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20607,32 +20607,32 @@ typedef struct IFolderBandPrivVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFolderBandPriv *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFolderBandPriv *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFolderBandPriv *This);
+                     IFolderBandPriv *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFolderBandPriv *This);
+                     IFolderBandPriv *This);
 
     /*** IFolderBandPriv methods ***/
     HRESULT (STDMETHODCALLTYPE *SetCascade)(
-        IFolderBandPriv *This,
-        WINBOOL fCascade);
+                     IFolderBandPriv *This,
+                     WINBOOL fCascade);
 
     HRESULT (STDMETHODCALLTYPE *SetAccelerators)(
-        IFolderBandPriv *This,
-        WINBOOL fAccelerators);
+                     IFolderBandPriv *This,
+                     WINBOOL fAccelerators);
 
     HRESULT (STDMETHODCALLTYPE *SetNoIcons)(
-        IFolderBandPriv *This,
-        WINBOOL fNoIcons);
+                     IFolderBandPriv *This,
+                     WINBOOL fNoIcons);
 
     HRESULT (STDMETHODCALLTYPE *SetNoText)(
-        IFolderBandPriv *This,
-        WINBOOL fNoText);
+                     IFolderBandPriv *This,
+                     WINBOOL fNoText);
 
     END_INTERFACE
 } IFolderBandPrivVtbl;
@@ -20697,10 +20697,10 @@ MIDL_INTERFACE("a9521922-0812-4d44-9ec3-7fd38c726f3d")
 IRegTreeItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCheckState(
-        WINBOOL *pbCheck) = 0;
+                     WINBOOL *pbCheck) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCheckState(
-        WINBOOL bCheck) = 0;
+                     WINBOOL bCheck) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20712,24 +20712,24 @@ typedef struct IRegTreeItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRegTreeItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRegTreeItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRegTreeItem *This);
+                     IRegTreeItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRegTreeItem *This);
+                     IRegTreeItem *This);
 
     /*** IRegTreeItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCheckState)(
-        IRegTreeItem *This,
-        WINBOOL *pbCheck);
+                     IRegTreeItem *This,
+                     WINBOOL *pbCheck);
 
     HRESULT (STDMETHODCALLTYPE *SetCheckState)(
-        IRegTreeItem *This,
-        WINBOOL bCheck);
+                     IRegTreeItem *This,
+                     WINBOOL bCheck);
 
     END_INTERFACE
 } IRegTreeItemVtbl;
@@ -20786,12 +20786,12 @@ MIDL_INTERFACE("505f1513-6b3e-4892-a272-59f8889a4d3e")
 IImageRecompress : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RecompressImage(
-        IShellItem *psi,
-        int cx,
-        int cy,
-        int iQuality,
-        IStorage *pstg,
-        IStream **ppstrmOut) = 0;
+                     IShellItem *psi,
+                     int cx,
+                     int cy,
+                     int iQuality,
+                     IStorage *pstg,
+                     IStream **ppstrmOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20803,25 +20803,25 @@ typedef struct IImageRecompressVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IImageRecompress *This,
-        REFIID riid,
-        void **ppvObject);
+                     IImageRecompress *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IImageRecompress *This);
+                     IImageRecompress *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IImageRecompress *This);
+                     IImageRecompress *This);
 
     /*** IImageRecompress methods ***/
     HRESULT (STDMETHODCALLTYPE *RecompressImage)(
-        IImageRecompress *This,
-        IShellItem *psi,
-        int cx,
-        int cy,
-        int iQuality,
-        IStorage *pstg,
-        IStream **ppstrmOut);
+                     IImageRecompress *This,
+                     IShellItem *psi,
+                     int cx,
+                     int cy,
+                     int iQuality,
+                     IStorage *pstg,
+                     IStream **ppstrmOut);
 
     END_INTERFACE
 } IImageRecompressVtbl;
@@ -20875,13 +20875,13 @@ MIDL_INTERFACE("eb0fe173-1a3a-11d0-89b3-00a0c90a90ac")
 IDeskBar : public IOleWindow
 {
     virtual HRESULT STDMETHODCALLTYPE SetClient(
-        IUnknown *punkClient) = 0;
+                     IUnknown *punkClient) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClient(
-        IUnknown **ppunkClient) = 0;
+                     IUnknown **ppunkClient) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPosRectChangeDB(
-        RECT *prc) = 0;
+                     RECT *prc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20893,37 +20893,37 @@ typedef struct IDeskBarVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDeskBar *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDeskBar *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDeskBar *This);
+                     IDeskBar *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDeskBar *This);
+                     IDeskBar *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IDeskBar *This,
-        HWND *phwnd);
+                     IDeskBar *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IDeskBar *This,
-        WINBOOL fEnterMode);
+                     IDeskBar *This,
+                     WINBOOL fEnterMode);
 
     /*** IDeskBar methods ***/
     HRESULT (STDMETHODCALLTYPE *SetClient)(
-        IDeskBar *This,
-        IUnknown *punkClient);
+                     IDeskBar *This,
+                     IUnknown *punkClient);
 
     HRESULT (STDMETHODCALLTYPE *GetClient)(
-        IDeskBar *This,
-        IUnknown **ppunkClient);
+                     IDeskBar *This,
+                     IUnknown **ppunkClient);
 
     HRESULT (STDMETHODCALLTYPE *OnPosRectChangeDB)(
-        IDeskBar *This,
-        RECT *prc);
+                     IDeskBar *This,
+                     RECT *prc);
 
     END_INTERFACE
 } IDeskBarVtbl;
@@ -21022,16 +21022,16 @@ MIDL_INTERFACE("d1e7afeb-6a2e-11d0-8c78-00c04fd918b4")
 IMenuPopup : public IDeskBar
 {
     virtual HRESULT STDMETHODCALLTYPE Popup(
-        POINTL *ppt,
-        RECTL *prcExclude,
-        MP_POPUPFLAGS dwFlags) = 0;
+                     POINTL *ppt,
+                     RECTL *prcExclude,
+                     MP_POPUPFLAGS dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnSelect(
-        DWORD dwSelectType) = 0;
+                     DWORD dwSelectType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSubMenu(
-        IMenuPopup *pmp,
-        WINBOOL fSet) = 0;
+                     IMenuPopup *pmp,
+                     WINBOOL fSet) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21043,53 +21043,53 @@ typedef struct IMenuPopupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMenuPopup *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMenuPopup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMenuPopup *This);
+                     IMenuPopup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMenuPopup *This);
+                     IMenuPopup *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IMenuPopup *This,
-        HWND *phwnd);
+                     IMenuPopup *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IMenuPopup *This,
-        WINBOOL fEnterMode);
+                     IMenuPopup *This,
+                     WINBOOL fEnterMode);
 
     /*** IDeskBar methods ***/
     HRESULT (STDMETHODCALLTYPE *SetClient)(
-        IMenuPopup *This,
-        IUnknown *punkClient);
+                     IMenuPopup *This,
+                     IUnknown *punkClient);
 
     HRESULT (STDMETHODCALLTYPE *GetClient)(
-        IMenuPopup *This,
-        IUnknown **ppunkClient);
+                     IMenuPopup *This,
+                     IUnknown **ppunkClient);
 
     HRESULT (STDMETHODCALLTYPE *OnPosRectChangeDB)(
-        IMenuPopup *This,
-        RECT *prc);
+                     IMenuPopup *This,
+                     RECT *prc);
 
     /*** IMenuPopup methods ***/
     HRESULT (STDMETHODCALLTYPE *Popup)(
-        IMenuPopup *This,
-        POINTL *ppt,
-        RECTL *prcExclude,
-        MP_POPUPFLAGS dwFlags);
+                     IMenuPopup *This,
+                     POINTL *ppt,
+                     RECTL *prcExclude,
+                     MP_POPUPFLAGS dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *OnSelect)(
-        IMenuPopup *This,
-        DWORD dwSelectType);
+                     IMenuPopup *This,
+                     DWORD dwSelectType);
 
     HRESULT (STDMETHODCALLTYPE *SetSubMenu)(
-        IMenuPopup *This,
-        IMenuPopup *pmp,
-        WINBOOL fSet);
+                     IMenuPopup *This,
+                     IMenuPopup *pmp,
+                     WINBOOL fSet);
 
     END_INTERFACE
 } IMenuPopupVtbl;
@@ -21185,19 +21185,19 @@ MIDL_INTERFACE("64a1cbf0-3a1a-4461-9158-376969693950")
 IFileIsInUse : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAppName(
-        LPWSTR *ppszName) = 0;
+                     LPWSTR *ppszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUsage(
-        FILE_USAGE_TYPE *pfut) = 0;
+                     FILE_USAGE_TYPE *pfut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCapabilities(
-        DWORD *pdwCapFlags) = 0;
+                     DWORD *pdwCapFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSwitchToHWND(
-        HWND *phwnd) = 0;
+                     HWND *phwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CloseFile(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21209,35 +21209,35 @@ typedef struct IFileIsInUseVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileIsInUse *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileIsInUse *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileIsInUse *This);
+                     IFileIsInUse *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileIsInUse *This);
+                     IFileIsInUse *This);
 
     /*** IFileIsInUse methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAppName)(
-        IFileIsInUse *This,
-        LPWSTR *ppszName);
+                     IFileIsInUse *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetUsage)(
-        IFileIsInUse *This,
-        FILE_USAGE_TYPE *pfut);
+                     IFileIsInUse *This,
+                     FILE_USAGE_TYPE *pfut);
 
     HRESULT (STDMETHODCALLTYPE *GetCapabilities)(
-        IFileIsInUse *This,
-        DWORD *pdwCapFlags);
+                     IFileIsInUse *This,
+                     DWORD *pdwCapFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSwitchToHWND)(
-        IFileIsInUse *This,
-        HWND *phwnd);
+                     IFileIsInUse *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *CloseFile)(
-        IFileIsInUse *This);
+                     IFileIsInUse *This);
 
     END_INTERFACE
 } IFileIsInUseVtbl;
@@ -21332,30 +21332,30 @@ MIDL_INTERFACE("973510db-7d7f-452b-8975-74a85828d354")
 IFileDialogEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnFileOk(
-        IFileDialog *pfd) = 0;
+                     IFileDialog *pfd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFolderChanging(
-        IFileDialog *pfd,
-        IShellItem *psiFolder) = 0;
+                     IFileDialog *pfd,
+                     IShellItem *psiFolder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFolderChange(
-        IFileDialog *pfd) = 0;
+                     IFileDialog *pfd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnSelectionChange(
-        IFileDialog *pfd) = 0;
+                     IFileDialog *pfd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnShareViolation(
-        IFileDialog *pfd,
-        IShellItem *psi,
-        FDE_SHAREVIOLATION_RESPONSE *pResponse) = 0;
+                     IFileDialog *pfd,
+                     IShellItem *psi,
+                     FDE_SHAREVIOLATION_RESPONSE *pResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnTypeChange(
-        IFileDialog *pfd) = 0;
+                     IFileDialog *pfd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnOverwrite(
-        IFileDialog *pfd,
-        IShellItem *psi,
-        FDE_OVERWRITE_RESPONSE *pResponse) = 0;
+                     IFileDialog *pfd,
+                     IShellItem *psi,
+                     FDE_OVERWRITE_RESPONSE *pResponse) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21367,49 +21367,49 @@ typedef struct IFileDialogEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileDialogEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileDialogEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileDialogEvents *This);
+                     IFileDialogEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileDialogEvents *This);
+                     IFileDialogEvents *This);
 
     /*** IFileDialogEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnFileOk)(
-        IFileDialogEvents *This,
-        IFileDialog *pfd);
+                     IFileDialogEvents *This,
+                     IFileDialog *pfd);
 
     HRESULT (STDMETHODCALLTYPE *OnFolderChanging)(
-        IFileDialogEvents *This,
-        IFileDialog *pfd,
-        IShellItem *psiFolder);
+                     IFileDialogEvents *This,
+                     IFileDialog *pfd,
+                     IShellItem *psiFolder);
 
     HRESULT (STDMETHODCALLTYPE *OnFolderChange)(
-        IFileDialogEvents *This,
-        IFileDialog *pfd);
+                     IFileDialogEvents *This,
+                     IFileDialog *pfd);
 
     HRESULT (STDMETHODCALLTYPE *OnSelectionChange)(
-        IFileDialogEvents *This,
-        IFileDialog *pfd);
+                     IFileDialogEvents *This,
+                     IFileDialog *pfd);
 
     HRESULT (STDMETHODCALLTYPE *OnShareViolation)(
-        IFileDialogEvents *This,
-        IFileDialog *pfd,
-        IShellItem *psi,
-        FDE_SHAREVIOLATION_RESPONSE *pResponse);
+                     IFileDialogEvents *This,
+                     IFileDialog *pfd,
+                     IShellItem *psi,
+                     FDE_SHAREVIOLATION_RESPONSE *pResponse);
 
     HRESULT (STDMETHODCALLTYPE *OnTypeChange)(
-        IFileDialogEvents *This,
-        IFileDialog *pfd);
+                     IFileDialogEvents *This,
+                     IFileDialog *pfd);
 
     HRESULT (STDMETHODCALLTYPE *OnOverwrite)(
-        IFileDialogEvents *This,
-        IFileDialog *pfd,
-        IShellItem *psi,
-        FDE_OVERWRITE_RESPONSE *pResponse);
+                     IFileDialogEvents *This,
+                     IFileDialog *pfd,
+                     IShellItem *psi,
+                     FDE_OVERWRITE_RESPONSE *pResponse);
 
     END_INTERFACE
 } IFileDialogEventsVtbl;
@@ -21522,76 +21522,76 @@ MIDL_INTERFACE("42f85136-db7e-439c-85f1-e4075d135fc8")
 IFileDialog : public IModalWindow
 {
     virtual HRESULT STDMETHODCALLTYPE SetFileTypes(
-        UINT cFileTypes,
-        const COMDLG_FILTERSPEC *rgFilterSpec) = 0;
+                     UINT cFileTypes,
+                     const COMDLG_FILTERSPEC *rgFilterSpec) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFileTypeIndex(
-        UINT iFileType) = 0;
+                     UINT iFileType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileTypeIndex(
-        UINT *piFileType) = 0;
+                     UINT *piFileType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IFileDialogEvents *pfde,
-        DWORD *pdwCookie) = 0;
+                     IFileDialogEvents *pfde,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOptions(
-        FILEOPENDIALOGOPTIONS fos) = 0;
+                     FILEOPENDIALOGOPTIONS fos) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOptions(
-        FILEOPENDIALOGOPTIONS *pfos) = 0;
+                     FILEOPENDIALOGOPTIONS *pfos) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultFolder(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFolder(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolder(
-        IShellItem **ppsi) = 0;
+                     IShellItem **ppsi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentSelection(
-        IShellItem **ppsi) = 0;
+                     IShellItem **ppsi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFileName(
-        LPCWSTR pszName) = 0;
+                     LPCWSTR pszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileName(
-        LPWSTR *pszName) = 0;
+                     LPWSTR *pszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTitle(
-        LPCWSTR pszTitle) = 0;
+                     LPCWSTR pszTitle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOkButtonLabel(
-        LPCWSTR pszText) = 0;
+                     LPCWSTR pszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFileNameLabel(
-        LPCWSTR pszLabel) = 0;
+                     LPCWSTR pszLabel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResult(
-        IShellItem **ppsi) = 0;
+                     IShellItem **ppsi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPlace(
-        IShellItem *psi,
-        FDAP fdap) = 0;
+                     IShellItem *psi,
+                     FDAP fdap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultExtension(
-        LPCWSTR pszDefaultExtension) = 0;
+                     LPCWSTR pszDefaultExtension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        HRESULT hr) = 0;
+                     HRESULT hr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetClientGuid(
-        REFGUID guid) = 0;
+                     REFGUID guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearClientData(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFilter(
-        IShellItemFilter *pFilter) = 0;
+                     IShellItemFilter *pFilter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21603,115 +21603,115 @@ typedef struct IFileDialogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileDialog *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileDialog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileDialog *This);
+                     IFileDialog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileDialog *This);
+                     IFileDialog *This);
 
     /*** IModalWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IFileDialog *This,
-        HWND hwndOwner);
+                     IFileDialog *This,
+                     HWND hwndOwner);
 
     /*** IFileDialog methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFileTypes)(
-        IFileDialog *This,
-        UINT cFileTypes,
-        const COMDLG_FILTERSPEC *rgFilterSpec);
+                     IFileDialog *This,
+                     UINT cFileTypes,
+                     const COMDLG_FILTERSPEC *rgFilterSpec);
 
     HRESULT (STDMETHODCALLTYPE *SetFileTypeIndex)(
-        IFileDialog *This,
-        UINT iFileType);
+                     IFileDialog *This,
+                     UINT iFileType);
 
     HRESULT (STDMETHODCALLTYPE *GetFileTypeIndex)(
-        IFileDialog *This,
-        UINT *piFileType);
+                     IFileDialog *This,
+                     UINT *piFileType);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IFileDialog *This,
-        IFileDialogEvents *pfde,
-        DWORD *pdwCookie);
+                     IFileDialog *This,
+                     IFileDialogEvents *pfde,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IFileDialog *This,
-        DWORD dwCookie);
+                     IFileDialog *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *SetOptions)(
-        IFileDialog *This,
-        FILEOPENDIALOGOPTIONS fos);
+                     IFileDialog *This,
+                     FILEOPENDIALOGOPTIONS fos);
 
     HRESULT (STDMETHODCALLTYPE *GetOptions)(
-        IFileDialog *This,
-        FILEOPENDIALOGOPTIONS *pfos);
+                     IFileDialog *This,
+                     FILEOPENDIALOGOPTIONS *pfos);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultFolder)(
-        IFileDialog *This,
-        IShellItem *psi);
+                     IFileDialog *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *SetFolder)(
-        IFileDialog *This,
-        IShellItem *psi);
+                     IFileDialog *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        IFileDialog *This,
-        IShellItem **ppsi);
+                     IFileDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSelection)(
-        IFileDialog *This,
-        IShellItem **ppsi);
+                     IFileDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *SetFileName)(
-        IFileDialog *This,
-        LPCWSTR pszName);
+                     IFileDialog *This,
+                     LPCWSTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *GetFileName)(
-        IFileDialog *This,
-        LPWSTR *pszName);
+                     IFileDialog *This,
+                     LPWSTR *pszName);
 
     HRESULT (STDMETHODCALLTYPE *SetTitle)(
-        IFileDialog *This,
-        LPCWSTR pszTitle);
+                     IFileDialog *This,
+                     LPCWSTR pszTitle);
 
     HRESULT (STDMETHODCALLTYPE *SetOkButtonLabel)(
-        IFileDialog *This,
-        LPCWSTR pszText);
+                     IFileDialog *This,
+                     LPCWSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *SetFileNameLabel)(
-        IFileDialog *This,
-        LPCWSTR pszLabel);
+                     IFileDialog *This,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *GetResult)(
-        IFileDialog *This,
-        IShellItem **ppsi);
+                     IFileDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *AddPlace)(
-        IFileDialog *This,
-        IShellItem *psi,
-        FDAP fdap);
+                     IFileDialog *This,
+                     IShellItem *psi,
+                     FDAP fdap);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultExtension)(
-        IFileDialog *This,
-        LPCWSTR pszDefaultExtension);
+                     IFileDialog *This,
+                     LPCWSTR pszDefaultExtension);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IFileDialog *This,
-        HRESULT hr);
+                     IFileDialog *This,
+                     HRESULT hr);
 
     HRESULT (STDMETHODCALLTYPE *SetClientGuid)(
-        IFileDialog *This,
-        REFGUID guid);
+                     IFileDialog *This,
+                     REFGUID guid);
 
     HRESULT (STDMETHODCALLTYPE *ClearClientData)(
-        IFileDialog *This);
+                     IFileDialog *This);
 
     HRESULT (STDMETHODCALLTYPE *SetFilter)(
-        IFileDialog *This,
-        IShellItemFilter *pFilter);
+                     IFileDialog *This,
+                     IShellItemFilter *pFilter);
 
     END_INTERFACE
 } IFileDialogVtbl;
@@ -21858,23 +21858,23 @@ MIDL_INTERFACE("84bccd23-5fde-4cdb-aea4-af64b83d78ab")
 IFileSaveDialog : public IFileDialog
 {
     virtual HRESULT STDMETHODCALLTYPE SetSaveAsItem(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProperties(
-        IPropertyStore *pStore) = 0;
+                     IPropertyStore *pStore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCollectedProperties(
-        IPropertyDescriptionList *pList,
-        WINBOOL fAppendDefault) = 0;
+                     IPropertyDescriptionList *pList,
+                     WINBOOL fAppendDefault) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperties(
-        IPropertyStore **ppStore) = 0;
+                     IPropertyStore **ppStore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyProperties(
-        IShellItem *psi,
-        IPropertyStore *pStore,
-        HWND hwnd,
-        IFileOperationProgressSink *pSink) = 0;
+                     IShellItem *psi,
+                     IPropertyStore *pStore,
+                     HWND hwnd,
+                     IFileOperationProgressSink *pSink) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21886,140 +21886,140 @@ typedef struct IFileSaveDialogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileSaveDialog *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileSaveDialog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileSaveDialog *This);
+                     IFileSaveDialog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileSaveDialog *This);
+                     IFileSaveDialog *This);
 
     /*** IModalWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IFileSaveDialog *This,
-        HWND hwndOwner);
+                     IFileSaveDialog *This,
+                     HWND hwndOwner);
 
     /*** IFileDialog methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFileTypes)(
-        IFileSaveDialog *This,
-        UINT cFileTypes,
-        const COMDLG_FILTERSPEC *rgFilterSpec);
+                     IFileSaveDialog *This,
+                     UINT cFileTypes,
+                     const COMDLG_FILTERSPEC *rgFilterSpec);
 
     HRESULT (STDMETHODCALLTYPE *SetFileTypeIndex)(
-        IFileSaveDialog *This,
-        UINT iFileType);
+                     IFileSaveDialog *This,
+                     UINT iFileType);
 
     HRESULT (STDMETHODCALLTYPE *GetFileTypeIndex)(
-        IFileSaveDialog *This,
-        UINT *piFileType);
+                     IFileSaveDialog *This,
+                     UINT *piFileType);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IFileSaveDialog *This,
-        IFileDialogEvents *pfde,
-        DWORD *pdwCookie);
+                     IFileSaveDialog *This,
+                     IFileDialogEvents *pfde,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IFileSaveDialog *This,
-        DWORD dwCookie);
+                     IFileSaveDialog *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *SetOptions)(
-        IFileSaveDialog *This,
-        FILEOPENDIALOGOPTIONS fos);
+                     IFileSaveDialog *This,
+                     FILEOPENDIALOGOPTIONS fos);
 
     HRESULT (STDMETHODCALLTYPE *GetOptions)(
-        IFileSaveDialog *This,
-        FILEOPENDIALOGOPTIONS *pfos);
+                     IFileSaveDialog *This,
+                     FILEOPENDIALOGOPTIONS *pfos);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultFolder)(
-        IFileSaveDialog *This,
-        IShellItem *psi);
+                     IFileSaveDialog *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *SetFolder)(
-        IFileSaveDialog *This,
-        IShellItem *psi);
+                     IFileSaveDialog *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        IFileSaveDialog *This,
-        IShellItem **ppsi);
+                     IFileSaveDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSelection)(
-        IFileSaveDialog *This,
-        IShellItem **ppsi);
+                     IFileSaveDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *SetFileName)(
-        IFileSaveDialog *This,
-        LPCWSTR pszName);
+                     IFileSaveDialog *This,
+                     LPCWSTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *GetFileName)(
-        IFileSaveDialog *This,
-        LPWSTR *pszName);
+                     IFileSaveDialog *This,
+                     LPWSTR *pszName);
 
     HRESULT (STDMETHODCALLTYPE *SetTitle)(
-        IFileSaveDialog *This,
-        LPCWSTR pszTitle);
+                     IFileSaveDialog *This,
+                     LPCWSTR pszTitle);
 
     HRESULT (STDMETHODCALLTYPE *SetOkButtonLabel)(
-        IFileSaveDialog *This,
-        LPCWSTR pszText);
+                     IFileSaveDialog *This,
+                     LPCWSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *SetFileNameLabel)(
-        IFileSaveDialog *This,
-        LPCWSTR pszLabel);
+                     IFileSaveDialog *This,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *GetResult)(
-        IFileSaveDialog *This,
-        IShellItem **ppsi);
+                     IFileSaveDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *AddPlace)(
-        IFileSaveDialog *This,
-        IShellItem *psi,
-        FDAP fdap);
+                     IFileSaveDialog *This,
+                     IShellItem *psi,
+                     FDAP fdap);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultExtension)(
-        IFileSaveDialog *This,
-        LPCWSTR pszDefaultExtension);
+                     IFileSaveDialog *This,
+                     LPCWSTR pszDefaultExtension);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IFileSaveDialog *This,
-        HRESULT hr);
+                     IFileSaveDialog *This,
+                     HRESULT hr);
 
     HRESULT (STDMETHODCALLTYPE *SetClientGuid)(
-        IFileSaveDialog *This,
-        REFGUID guid);
+                     IFileSaveDialog *This,
+                     REFGUID guid);
 
     HRESULT (STDMETHODCALLTYPE *ClearClientData)(
-        IFileSaveDialog *This);
+                     IFileSaveDialog *This);
 
     HRESULT (STDMETHODCALLTYPE *SetFilter)(
-        IFileSaveDialog *This,
-        IShellItemFilter *pFilter);
+                     IFileSaveDialog *This,
+                     IShellItemFilter *pFilter);
 
     /*** IFileSaveDialog methods ***/
     HRESULT (STDMETHODCALLTYPE *SetSaveAsItem)(
-        IFileSaveDialog *This,
-        IShellItem *psi);
+                     IFileSaveDialog *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *SetProperties)(
-        IFileSaveDialog *This,
-        IPropertyStore *pStore);
+                     IFileSaveDialog *This,
+                     IPropertyStore *pStore);
 
     HRESULT (STDMETHODCALLTYPE *SetCollectedProperties)(
-        IFileSaveDialog *This,
-        IPropertyDescriptionList *pList,
-        WINBOOL fAppendDefault);
+                     IFileSaveDialog *This,
+                     IPropertyDescriptionList *pList,
+                     WINBOOL fAppendDefault);
 
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        IFileSaveDialog *This,
-        IPropertyStore **ppStore);
+                     IFileSaveDialog *This,
+                     IPropertyStore **ppStore);
 
     HRESULT (STDMETHODCALLTYPE *ApplyProperties)(
-        IFileSaveDialog *This,
-        IShellItem *psi,
-        IPropertyStore *pStore,
-        HWND hwnd,
-        IFileOperationProgressSink *pSink);
+                     IFileSaveDialog *This,
+                     IShellItem *psi,
+                     IPropertyStore *pStore,
+                     HWND hwnd,
+                     IFileOperationProgressSink *pSink);
 
     END_INTERFACE
 } IFileSaveDialogVtbl;
@@ -22188,10 +22188,10 @@ MIDL_INTERFACE("d57c7288-d4ad-4768-be02-9d969532d960")
 IFileOpenDialog : public IFileDialog
 {
     virtual HRESULT STDMETHODCALLTYPE GetResults(
-        IShellItemArray **ppenum) = 0;
+                     IShellItemArray **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelectedItems(
-        IShellItemArray **ppsai) = 0;
+                     IShellItemArray **ppsai) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -22203,124 +22203,124 @@ typedef struct IFileOpenDialogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileOpenDialog *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileOpenDialog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileOpenDialog *This);
+                     IFileOpenDialog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileOpenDialog *This);
+                     IFileOpenDialog *This);
 
     /*** IModalWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IFileOpenDialog *This,
-        HWND hwndOwner);
+                     IFileOpenDialog *This,
+                     HWND hwndOwner);
 
     /*** IFileDialog methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFileTypes)(
-        IFileOpenDialog *This,
-        UINT cFileTypes,
-        const COMDLG_FILTERSPEC *rgFilterSpec);
+                     IFileOpenDialog *This,
+                     UINT cFileTypes,
+                     const COMDLG_FILTERSPEC *rgFilterSpec);
 
     HRESULT (STDMETHODCALLTYPE *SetFileTypeIndex)(
-        IFileOpenDialog *This,
-        UINT iFileType);
+                     IFileOpenDialog *This,
+                     UINT iFileType);
 
     HRESULT (STDMETHODCALLTYPE *GetFileTypeIndex)(
-        IFileOpenDialog *This,
-        UINT *piFileType);
+                     IFileOpenDialog *This,
+                     UINT *piFileType);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IFileOpenDialog *This,
-        IFileDialogEvents *pfde,
-        DWORD *pdwCookie);
+                     IFileOpenDialog *This,
+                     IFileDialogEvents *pfde,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IFileOpenDialog *This,
-        DWORD dwCookie);
+                     IFileOpenDialog *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *SetOptions)(
-        IFileOpenDialog *This,
-        FILEOPENDIALOGOPTIONS fos);
+                     IFileOpenDialog *This,
+                     FILEOPENDIALOGOPTIONS fos);
 
     HRESULT (STDMETHODCALLTYPE *GetOptions)(
-        IFileOpenDialog *This,
-        FILEOPENDIALOGOPTIONS *pfos);
+                     IFileOpenDialog *This,
+                     FILEOPENDIALOGOPTIONS *pfos);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultFolder)(
-        IFileOpenDialog *This,
-        IShellItem *psi);
+                     IFileOpenDialog *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *SetFolder)(
-        IFileOpenDialog *This,
-        IShellItem *psi);
+                     IFileOpenDialog *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        IFileOpenDialog *This,
-        IShellItem **ppsi);
+                     IFileOpenDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSelection)(
-        IFileOpenDialog *This,
-        IShellItem **ppsi);
+                     IFileOpenDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *SetFileName)(
-        IFileOpenDialog *This,
-        LPCWSTR pszName);
+                     IFileOpenDialog *This,
+                     LPCWSTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *GetFileName)(
-        IFileOpenDialog *This,
-        LPWSTR *pszName);
+                     IFileOpenDialog *This,
+                     LPWSTR *pszName);
 
     HRESULT (STDMETHODCALLTYPE *SetTitle)(
-        IFileOpenDialog *This,
-        LPCWSTR pszTitle);
+                     IFileOpenDialog *This,
+                     LPCWSTR pszTitle);
 
     HRESULT (STDMETHODCALLTYPE *SetOkButtonLabel)(
-        IFileOpenDialog *This,
-        LPCWSTR pszText);
+                     IFileOpenDialog *This,
+                     LPCWSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *SetFileNameLabel)(
-        IFileOpenDialog *This,
-        LPCWSTR pszLabel);
+                     IFileOpenDialog *This,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *GetResult)(
-        IFileOpenDialog *This,
-        IShellItem **ppsi);
+                     IFileOpenDialog *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *AddPlace)(
-        IFileOpenDialog *This,
-        IShellItem *psi,
-        FDAP fdap);
+                     IFileOpenDialog *This,
+                     IShellItem *psi,
+                     FDAP fdap);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultExtension)(
-        IFileOpenDialog *This,
-        LPCWSTR pszDefaultExtension);
+                     IFileOpenDialog *This,
+                     LPCWSTR pszDefaultExtension);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IFileOpenDialog *This,
-        HRESULT hr);
+                     IFileOpenDialog *This,
+                     HRESULT hr);
 
     HRESULT (STDMETHODCALLTYPE *SetClientGuid)(
-        IFileOpenDialog *This,
-        REFGUID guid);
+                     IFileOpenDialog *This,
+                     REFGUID guid);
 
     HRESULT (STDMETHODCALLTYPE *ClearClientData)(
-        IFileOpenDialog *This);
+                     IFileOpenDialog *This);
 
     HRESULT (STDMETHODCALLTYPE *SetFilter)(
-        IFileOpenDialog *This,
-        IShellItemFilter *pFilter);
+                     IFileOpenDialog *This,
+                     IShellItemFilter *pFilter);
 
     /*** IFileOpenDialog methods ***/
     HRESULT (STDMETHODCALLTYPE *GetResults)(
-        IFileOpenDialog *This,
-        IShellItemArray **ppenum);
+                     IFileOpenDialog *This,
+                     IShellItemArray **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectedItems)(
-        IFileOpenDialog *This,
-        IShellItemArray **ppsai);
+                     IFileOpenDialog *This,
+                     IShellItemArray **ppsai);
 
     END_INTERFACE
 } IFileOpenDialogVtbl;
@@ -22486,110 +22486,110 @@ MIDL_INTERFACE("e6fdd21a-163f-4975-9c8c-a69f1ba37034")
 IFileDialogCustomize : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnableOpenDropDown(
-        DWORD dwIDCtl) = 0;
+                     DWORD dwIDCtl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddMenu(
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel) = 0;
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPushButton(
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel) = 0;
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddComboBox(
-        DWORD dwIDCtl) = 0;
+                     DWORD dwIDCtl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddRadioButtonList(
-        DWORD dwIDCtl) = 0;
+                     DWORD dwIDCtl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddCheckButton(
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel,
-        WINBOOL bChecked) = 0;
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel,
+                     WINBOOL bChecked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddEditBox(
-        DWORD dwIDCtl,
-        LPCWSTR pszText) = 0;
+                     DWORD dwIDCtl,
+                     LPCWSTR pszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSeparator(
-        DWORD dwIDCtl) = 0;
+                     DWORD dwIDCtl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddText(
-        DWORD dwIDCtl,
-        LPCWSTR pszText) = 0;
+                     DWORD dwIDCtl,
+                     LPCWSTR pszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetControlLabel(
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel) = 0;
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetControlState(
-        DWORD dwIDCtl,
-        CDCONTROLSTATEF *pdwState) = 0;
+                     DWORD dwIDCtl,
+                     CDCONTROLSTATEF *pdwState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetControlState(
-        DWORD dwIDCtl,
-        CDCONTROLSTATEF dwState) = 0;
+                     DWORD dwIDCtl,
+                     CDCONTROLSTATEF dwState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEditBoxText(
-        DWORD dwIDCtl,
-        WCHAR **ppszText) = 0;
+                     DWORD dwIDCtl,
+                     WCHAR **ppszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEditBoxText(
-        DWORD dwIDCtl,
-        LPCWSTR pszText) = 0;
+                     DWORD dwIDCtl,
+                     LPCWSTR pszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCheckButtonState(
-        DWORD dwIDCtl,
-        WINBOOL *pbChecked) = 0;
+                     DWORD dwIDCtl,
+                     WINBOOL *pbChecked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCheckButtonState(
-        DWORD dwIDCtl,
-        WINBOOL bChecked) = 0;
+                     DWORD dwIDCtl,
+                     WINBOOL bChecked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddControlItem(
-        DWORD dwIDCtl,
-        DWORD dwIDItem,
-        LPCWSTR pszLabel) = 0;
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem,
+                     LPCWSTR pszLabel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveControlItem(
-        DWORD dwIDCtl,
-        DWORD dwIDItem) = 0;
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAllControlItems(
-        DWORD dwIDCtl) = 0;
+                     DWORD dwIDCtl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetControlItemState(
-        DWORD dwIDCtl,
-        DWORD dwIDItem,
-        CDCONTROLSTATEF *pdwState) = 0;
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem,
+                     CDCONTROLSTATEF *pdwState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetControlItemState(
-        DWORD dwIDCtl,
-        DWORD dwIDItem,
-        CDCONTROLSTATEF dwState) = 0;
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem,
+                     CDCONTROLSTATEF dwState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelectedControlItem(
-        DWORD dwIDCtl,
-        DWORD *pdwIDItem) = 0;
+                     DWORD dwIDCtl,
+                     DWORD *pdwIDItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSelectedControlItem(
-        DWORD dwIDCtl,
-        DWORD dwIDItem) = 0;
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartVisualGroup(
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel) = 0;
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndVisualGroup(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MakeProminent(
-        DWORD dwIDCtl) = 0;
+                     DWORD dwIDCtl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetControlItemText(
-        DWORD dwIDCtl,
-        DWORD dwIDItem,
-        LPCWSTR pszLabel) = 0;
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem,
+                     LPCWSTR pszLabel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -22601,148 +22601,148 @@ typedef struct IFileDialogCustomizeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileDialogCustomize *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileDialogCustomize *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileDialogCustomize *This);
+                     IFileDialogCustomize *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileDialogCustomize *This);
+                     IFileDialogCustomize *This);
 
     /*** IFileDialogCustomize methods ***/
     HRESULT (STDMETHODCALLTYPE *EnableOpenDropDown)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl);
 
     HRESULT (STDMETHODCALLTYPE *AddMenu)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *AddPushButton)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *AddComboBox)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl);
 
     HRESULT (STDMETHODCALLTYPE *AddRadioButtonList)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl);
 
     HRESULT (STDMETHODCALLTYPE *AddCheckButton)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel,
-        WINBOOL bChecked);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel,
+                     WINBOOL bChecked);
 
     HRESULT (STDMETHODCALLTYPE *AddEditBox)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        LPCWSTR pszText);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     LPCWSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *AddSeparator)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl);
 
     HRESULT (STDMETHODCALLTYPE *AddText)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        LPCWSTR pszText);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     LPCWSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *SetControlLabel)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *GetControlState)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        CDCONTROLSTATEF *pdwState);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     CDCONTROLSTATEF *pdwState);
 
     HRESULT (STDMETHODCALLTYPE *SetControlState)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        CDCONTROLSTATEF dwState);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     CDCONTROLSTATEF dwState);
 
     HRESULT (STDMETHODCALLTYPE *GetEditBoxText)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        WCHAR **ppszText);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     WCHAR **ppszText);
 
     HRESULT (STDMETHODCALLTYPE *SetEditBoxText)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        LPCWSTR pszText);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     LPCWSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *GetCheckButtonState)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        WINBOOL *pbChecked);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     WINBOOL *pbChecked);
 
     HRESULT (STDMETHODCALLTYPE *SetCheckButtonState)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        WINBOOL bChecked);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     WINBOOL bChecked);
 
     HRESULT (STDMETHODCALLTYPE *AddControlItem)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        DWORD dwIDItem,
-        LPCWSTR pszLabel);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *RemoveControlItem)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        DWORD dwIDItem);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAllControlItems)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl);
 
     HRESULT (STDMETHODCALLTYPE *GetControlItemState)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        DWORD dwIDItem,
-        CDCONTROLSTATEF *pdwState);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem,
+                     CDCONTROLSTATEF *pdwState);
 
     HRESULT (STDMETHODCALLTYPE *SetControlItemState)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        DWORD dwIDItem,
-        CDCONTROLSTATEF dwState);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem,
+                     CDCONTROLSTATEF dwState);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectedControlItem)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        DWORD *pdwIDItem);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     DWORD *pdwIDItem);
 
     HRESULT (STDMETHODCALLTYPE *SetSelectedControlItem)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        DWORD dwIDItem);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem);
 
     HRESULT (STDMETHODCALLTYPE *StartVisualGroup)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        LPCWSTR pszLabel);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *EndVisualGroup)(
-        IFileDialogCustomize *This);
+                     IFileDialogCustomize *This);
 
     HRESULT (STDMETHODCALLTYPE *MakeProminent)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl);
 
     HRESULT (STDMETHODCALLTYPE *SetControlItemText)(
-        IFileDialogCustomize *This,
-        DWORD dwIDCtl,
-        DWORD dwIDItem,
-        LPCWSTR pszLabel);
+                     IFileDialogCustomize *This,
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem,
+                     LPCWSTR pszLabel);
 
     END_INTERFACE
 } IFileDialogCustomizeVtbl;
@@ -22899,22 +22899,22 @@ MIDL_INTERFACE("36116642-d713-4b97-9b83-7484a9d00433")
 IFileDialogControlEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnItemSelected(
-        IFileDialogCustomize *pfdc,
-        DWORD dwIDCtl,
-        DWORD dwIDItem) = 0;
+                     IFileDialogCustomize *pfdc,
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnButtonClicked(
-        IFileDialogCustomize *pfdc,
-        DWORD dwIDCtl) = 0;
+                     IFileDialogCustomize *pfdc,
+                     DWORD dwIDCtl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnCheckButtonToggled(
-        IFileDialogCustomize *pfdc,
-        DWORD dwIDCtl,
-        WINBOOL bChecked) = 0;
+                     IFileDialogCustomize *pfdc,
+                     DWORD dwIDCtl,
+                     WINBOOL bChecked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnControlActivating(
-        IFileDialogCustomize *pfdc,
-        DWORD dwIDCtl) = 0;
+                     IFileDialogCustomize *pfdc,
+                     DWORD dwIDCtl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -22926,38 +22926,38 @@ typedef struct IFileDialogControlEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileDialogControlEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileDialogControlEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileDialogControlEvents *This);
+                     IFileDialogControlEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileDialogControlEvents *This);
+                     IFileDialogControlEvents *This);
 
     /*** IFileDialogControlEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnItemSelected)(
-        IFileDialogControlEvents *This,
-        IFileDialogCustomize *pfdc,
-        DWORD dwIDCtl,
-        DWORD dwIDItem);
+                     IFileDialogControlEvents *This,
+                     IFileDialogCustomize *pfdc,
+                     DWORD dwIDCtl,
+                     DWORD dwIDItem);
 
     HRESULT (STDMETHODCALLTYPE *OnButtonClicked)(
-        IFileDialogControlEvents *This,
-        IFileDialogCustomize *pfdc,
-        DWORD dwIDCtl);
+                     IFileDialogControlEvents *This,
+                     IFileDialogCustomize *pfdc,
+                     DWORD dwIDCtl);
 
     HRESULT (STDMETHODCALLTYPE *OnCheckButtonToggled)(
-        IFileDialogControlEvents *This,
-        IFileDialogCustomize *pfdc,
-        DWORD dwIDCtl,
-        WINBOOL bChecked);
+                     IFileDialogControlEvents *This,
+                     IFileDialogCustomize *pfdc,
+                     DWORD dwIDCtl,
+                     WINBOOL bChecked);
 
     HRESULT (STDMETHODCALLTYPE *OnControlActivating)(
-        IFileDialogControlEvents *This,
-        IFileDialogCustomize *pfdc,
-        DWORD dwIDCtl);
+                     IFileDialogControlEvents *This,
+                     IFileDialogCustomize *pfdc,
+                     DWORD dwIDCtl);
 
     END_INTERFACE
 } IFileDialogControlEventsVtbl;
@@ -23022,10 +23022,10 @@ MIDL_INTERFACE("61744fc7-85b5-4791-a9b0-272276309b13")
 IFileDialog2 : public IFileDialog
 {
     virtual HRESULT STDMETHODCALLTYPE SetCancelButtonLabel(
-        LPCWSTR pszLabel) = 0;
+                     LPCWSTR pszLabel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNavigationRoot(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -23037,124 +23037,124 @@ typedef struct IFileDialog2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileDialog2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileDialog2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileDialog2 *This);
+                     IFileDialog2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileDialog2 *This);
+                     IFileDialog2 *This);
 
     /*** IModalWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IFileDialog2 *This,
-        HWND hwndOwner);
+                     IFileDialog2 *This,
+                     HWND hwndOwner);
 
     /*** IFileDialog methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFileTypes)(
-        IFileDialog2 *This,
-        UINT cFileTypes,
-        const COMDLG_FILTERSPEC *rgFilterSpec);
+                     IFileDialog2 *This,
+                     UINT cFileTypes,
+                     const COMDLG_FILTERSPEC *rgFilterSpec);
 
     HRESULT (STDMETHODCALLTYPE *SetFileTypeIndex)(
-        IFileDialog2 *This,
-        UINT iFileType);
+                     IFileDialog2 *This,
+                     UINT iFileType);
 
     HRESULT (STDMETHODCALLTYPE *GetFileTypeIndex)(
-        IFileDialog2 *This,
-        UINT *piFileType);
+                     IFileDialog2 *This,
+                     UINT *piFileType);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IFileDialog2 *This,
-        IFileDialogEvents *pfde,
-        DWORD *pdwCookie);
+                     IFileDialog2 *This,
+                     IFileDialogEvents *pfde,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IFileDialog2 *This,
-        DWORD dwCookie);
+                     IFileDialog2 *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *SetOptions)(
-        IFileDialog2 *This,
-        FILEOPENDIALOGOPTIONS fos);
+                     IFileDialog2 *This,
+                     FILEOPENDIALOGOPTIONS fos);
 
     HRESULT (STDMETHODCALLTYPE *GetOptions)(
-        IFileDialog2 *This,
-        FILEOPENDIALOGOPTIONS *pfos);
+                     IFileDialog2 *This,
+                     FILEOPENDIALOGOPTIONS *pfos);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultFolder)(
-        IFileDialog2 *This,
-        IShellItem *psi);
+                     IFileDialog2 *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *SetFolder)(
-        IFileDialog2 *This,
-        IShellItem *psi);
+                     IFileDialog2 *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        IFileDialog2 *This,
-        IShellItem **ppsi);
+                     IFileDialog2 *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSelection)(
-        IFileDialog2 *This,
-        IShellItem **ppsi);
+                     IFileDialog2 *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *SetFileName)(
-        IFileDialog2 *This,
-        LPCWSTR pszName);
+                     IFileDialog2 *This,
+                     LPCWSTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *GetFileName)(
-        IFileDialog2 *This,
-        LPWSTR *pszName);
+                     IFileDialog2 *This,
+                     LPWSTR *pszName);
 
     HRESULT (STDMETHODCALLTYPE *SetTitle)(
-        IFileDialog2 *This,
-        LPCWSTR pszTitle);
+                     IFileDialog2 *This,
+                     LPCWSTR pszTitle);
 
     HRESULT (STDMETHODCALLTYPE *SetOkButtonLabel)(
-        IFileDialog2 *This,
-        LPCWSTR pszText);
+                     IFileDialog2 *This,
+                     LPCWSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *SetFileNameLabel)(
-        IFileDialog2 *This,
-        LPCWSTR pszLabel);
+                     IFileDialog2 *This,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *GetResult)(
-        IFileDialog2 *This,
-        IShellItem **ppsi);
+                     IFileDialog2 *This,
+                     IShellItem **ppsi);
 
     HRESULT (STDMETHODCALLTYPE *AddPlace)(
-        IFileDialog2 *This,
-        IShellItem *psi,
-        FDAP fdap);
+                     IFileDialog2 *This,
+                     IShellItem *psi,
+                     FDAP fdap);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultExtension)(
-        IFileDialog2 *This,
-        LPCWSTR pszDefaultExtension);
+                     IFileDialog2 *This,
+                     LPCWSTR pszDefaultExtension);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IFileDialog2 *This,
-        HRESULT hr);
+                     IFileDialog2 *This,
+                     HRESULT hr);
 
     HRESULT (STDMETHODCALLTYPE *SetClientGuid)(
-        IFileDialog2 *This,
-        REFGUID guid);
+                     IFileDialog2 *This,
+                     REFGUID guid);
 
     HRESULT (STDMETHODCALLTYPE *ClearClientData)(
-        IFileDialog2 *This);
+                     IFileDialog2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetFilter)(
-        IFileDialog2 *This,
-        IShellItemFilter *pFilter);
+                     IFileDialog2 *This,
+                     IShellItemFilter *pFilter);
 
     /*** IFileDialog2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetCancelButtonLabel)(
-        IFileDialog2 *This,
-        LPCWSTR pszLabel);
+                     IFileDialog2 *This,
+                     LPCWSTR pszLabel);
 
     HRESULT (STDMETHODCALLTYPE *SetNavigationRoot)(
-        IFileDialog2 *This,
-        IShellItem *psi);
+                     IFileDialog2 *This,
+                     IShellItem *psi);
 
     END_INTERFACE
 } IFileDialog2Vtbl;
@@ -23324,33 +23324,33 @@ MIDL_INTERFACE("4e530b0a-e611-4c77-a3ac-9031d022281b")
 IApplicationAssociationRegistration : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryCurrentDefault(
-        LPCWSTR pszQuery,
-        ASSOCIATIONTYPE atQueryType,
-        ASSOCIATIONLEVEL alQueryLevel,
-        LPWSTR *ppszAssociation) = 0;
+                     LPCWSTR pszQuery,
+                     ASSOCIATIONTYPE atQueryType,
+                     ASSOCIATIONLEVEL alQueryLevel,
+                     LPWSTR *ppszAssociation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryAppIsDefault(
-        LPCWSTR pszQuery,
-        ASSOCIATIONTYPE atQueryType,
-        ASSOCIATIONLEVEL alQueryLevel,
-        LPCWSTR pszAppRegistryName,
-        WINBOOL *pfDefault) = 0;
+                     LPCWSTR pszQuery,
+                     ASSOCIATIONTYPE atQueryType,
+                     ASSOCIATIONLEVEL alQueryLevel,
+                     LPCWSTR pszAppRegistryName,
+                     WINBOOL *pfDefault) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryAppIsDefaultAll(
-        ASSOCIATIONLEVEL alQueryLevel,
-        LPCWSTR pszAppRegistryName,
-        WINBOOL *pfDefault) = 0;
+                     ASSOCIATIONLEVEL alQueryLevel,
+                     LPCWSTR pszAppRegistryName,
+                     WINBOOL *pfDefault) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAppAsDefault(
-        LPCWSTR pszAppRegistryName,
-        LPCWSTR pszSet,
-        ASSOCIATIONTYPE atSetType) = 0;
+                     LPCWSTR pszAppRegistryName,
+                     LPCWSTR pszSet,
+                     ASSOCIATIONTYPE atSetType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAppAsDefaultAll(
-        LPCWSTR pszAppRegistryName) = 0;
+                     LPCWSTR pszAppRegistryName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearUserAssociations(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -23362,50 +23362,50 @@ typedef struct IApplicationAssociationRegistrationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationAssociationRegistration *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationAssociationRegistration *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationAssociationRegistration *This);
+                     IApplicationAssociationRegistration *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationAssociationRegistration *This);
+                     IApplicationAssociationRegistration *This);
 
     /*** IApplicationAssociationRegistration methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryCurrentDefault)(
-        IApplicationAssociationRegistration *This,
-        LPCWSTR pszQuery,
-        ASSOCIATIONTYPE atQueryType,
-        ASSOCIATIONLEVEL alQueryLevel,
-        LPWSTR *ppszAssociation);
+                     IApplicationAssociationRegistration *This,
+                     LPCWSTR pszQuery,
+                     ASSOCIATIONTYPE atQueryType,
+                     ASSOCIATIONLEVEL alQueryLevel,
+                     LPWSTR *ppszAssociation);
 
     HRESULT (STDMETHODCALLTYPE *QueryAppIsDefault)(
-        IApplicationAssociationRegistration *This,
-        LPCWSTR pszQuery,
-        ASSOCIATIONTYPE atQueryType,
-        ASSOCIATIONLEVEL alQueryLevel,
-        LPCWSTR pszAppRegistryName,
-        WINBOOL *pfDefault);
+                     IApplicationAssociationRegistration *This,
+                     LPCWSTR pszQuery,
+                     ASSOCIATIONTYPE atQueryType,
+                     ASSOCIATIONLEVEL alQueryLevel,
+                     LPCWSTR pszAppRegistryName,
+                     WINBOOL *pfDefault);
 
     HRESULT (STDMETHODCALLTYPE *QueryAppIsDefaultAll)(
-        IApplicationAssociationRegistration *This,
-        ASSOCIATIONLEVEL alQueryLevel,
-        LPCWSTR pszAppRegistryName,
-        WINBOOL *pfDefault);
+                     IApplicationAssociationRegistration *This,
+                     ASSOCIATIONLEVEL alQueryLevel,
+                     LPCWSTR pszAppRegistryName,
+                     WINBOOL *pfDefault);
 
     HRESULT (STDMETHODCALLTYPE *SetAppAsDefault)(
-        IApplicationAssociationRegistration *This,
-        LPCWSTR pszAppRegistryName,
-        LPCWSTR pszSet,
-        ASSOCIATIONTYPE atSetType);
+                     IApplicationAssociationRegistration *This,
+                     LPCWSTR pszAppRegistryName,
+                     LPCWSTR pszSet,
+                     ASSOCIATIONTYPE atSetType);
 
     HRESULT (STDMETHODCALLTYPE *SetAppAsDefaultAll)(
-        IApplicationAssociationRegistration *This,
-        LPCWSTR pszAppRegistryName);
+                     IApplicationAssociationRegistration *This,
+                     LPCWSTR pszAppRegistryName);
 
     HRESULT (STDMETHODCALLTYPE *ClearUserAssociations)(
-        IApplicationAssociationRegistration *This);
+                     IApplicationAssociationRegistration *This);
 
     END_INTERFACE
 } IApplicationAssociationRegistrationVtbl;
@@ -23480,7 +23480,7 @@ MIDL_INTERFACE("1f76a169-f994-40ac-8fc8-0959e8874710")
 IApplicationAssociationRegistrationUI : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE LaunchAdvancedAssociationUI(
-        LPCWSTR pszAppRegistryName) = 0;
+                     LPCWSTR pszAppRegistryName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -23492,20 +23492,20 @@ typedef struct IApplicationAssociationRegistrationUIVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationAssociationRegistrationUI *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationAssociationRegistrationUI *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationAssociationRegistrationUI *This);
+                     IApplicationAssociationRegistrationUI *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationAssociationRegistrationUI *This);
+                     IApplicationAssociationRegistrationUI *This);
 
     /*** IApplicationAssociationRegistrationUI methods ***/
     HRESULT (STDMETHODCALLTYPE *LaunchAdvancedAssociationUI)(
-        IApplicationAssociationRegistrationUI *This,
-        LPCWSTR pszAppRegistryName);
+                     IApplicationAssociationRegistrationUI *This,
+                     LPCWSTR pszAppRegistryName);
 
     END_INTERFACE
 } IApplicationAssociationRegistrationUIVtbl;
@@ -23571,7 +23571,7 @@ MIDL_INTERFACE("add8ba80-002b-11d0-8f0f-00c04fd7d062")
 IDelegateFolder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetItemAlloc(
-        IMalloc *pmalloc) = 0;
+                     IMalloc *pmalloc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -23583,20 +23583,20 @@ typedef struct IDelegateFolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDelegateFolder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDelegateFolder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDelegateFolder *This);
+                     IDelegateFolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDelegateFolder *This);
+                     IDelegateFolder *This);
 
     /*** IDelegateFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *SetItemAlloc)(
-        IDelegateFolder *This,
-        IMalloc *pmalloc);
+                     IDelegateFolder *This,
+                     IMalloc *pmalloc);
 
     END_INTERFACE
 } IDelegateFolderVtbl;
@@ -23677,8 +23677,8 @@ MIDL_INTERFACE("10df43c8-1dbe-11d3-8b34-006097df5bd4")
 IBrowserFrameOptions : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetFrameOptions(
-        BROWSERFRAMEOPTIONS dwMask,
-        BROWSERFRAMEOPTIONS *pdwOptions) = 0;
+                     BROWSERFRAMEOPTIONS dwMask,
+                     BROWSERFRAMEOPTIONS *pdwOptions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -23690,21 +23690,21 @@ typedef struct IBrowserFrameOptionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBrowserFrameOptions *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBrowserFrameOptions *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBrowserFrameOptions *This);
+                     IBrowserFrameOptions *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBrowserFrameOptions *This);
+                     IBrowserFrameOptions *This);
 
     /*** IBrowserFrameOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFrameOptions)(
-        IBrowserFrameOptions *This,
-        BROWSERFRAMEOPTIONS dwMask,
-        BROWSERFRAMEOPTIONS *pdwOptions);
+                     IBrowserFrameOptions *This,
+                     BROWSERFRAMEOPTIONS dwMask,
+                     BROWSERFRAMEOPTIONS *pdwOptions);
 
     END_INTERFACE
 } IBrowserFrameOptionsVtbl;
@@ -23780,13 +23780,13 @@ MIDL_INTERFACE("d2bc4c84-3f72-4a52-a604-7bcbf3982cbb")
 INewWindowManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EvaluateNewWindow(
-        LPCWSTR pszUrl,
-        LPCWSTR pszName,
-        LPCWSTR pszUrlContext,
-        LPCWSTR pszFeatures,
-        WINBOOL fReplace,
-        DWORD dwFlags,
-        DWORD dwUserActionTime) = 0;
+                     LPCWSTR pszUrl,
+                     LPCWSTR pszName,
+                     LPCWSTR pszUrlContext,
+                     LPCWSTR pszFeatures,
+                     WINBOOL fReplace,
+                     DWORD dwFlags,
+                     DWORD dwUserActionTime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -23798,26 +23798,26 @@ typedef struct INewWindowManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INewWindowManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     INewWindowManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INewWindowManager *This);
+                     INewWindowManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INewWindowManager *This);
+                     INewWindowManager *This);
 
     /*** INewWindowManager methods ***/
     HRESULT (STDMETHODCALLTYPE *EvaluateNewWindow)(
-        INewWindowManager *This,
-        LPCWSTR pszUrl,
-        LPCWSTR pszName,
-        LPCWSTR pszUrlContext,
-        LPCWSTR pszFeatures,
-        WINBOOL fReplace,
-        DWORD dwFlags,
-        DWORD dwUserActionTime);
+                     INewWindowManager *This,
+                     LPCWSTR pszUrl,
+                     LPCWSTR pszName,
+                     LPCWSTR pszUrlContext,
+                     LPCWSTR pszFeatures,
+                     WINBOOL fReplace,
+                     DWORD dwFlags,
+                     DWORD dwUserActionTime);
 
     END_INTERFACE
 } INewWindowManagerVtbl;
@@ -23883,44 +23883,44 @@ MIDL_INTERFACE("73db1241-1e85-4581-8e4f-a81e1d0f8c57")
 IAttachmentExecute : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetClientTitle(
-        LPCWSTR pszTitle) = 0;
+                     LPCWSTR pszTitle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetClientGuid(
-        REFGUID guid) = 0;
+                     REFGUID guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLocalPath(
-        LPCWSTR pszLocalPath) = 0;
+                     LPCWSTR pszLocalPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFileName(
-        LPCWSTR pszFileName) = 0;
+                     LPCWSTR pszFileName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSource(
-        LPCWSTR pszSource) = 0;
+                     LPCWSTR pszSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetReferrer(
-        LPCWSTR pszReferrer) = 0;
+                     LPCWSTR pszReferrer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckPolicy(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Prompt(
-        HWND hwnd,
-        ATTACHMENT_PROMPT prompt,
-        ATTACHMENT_ACTION *paction) = 0;
+                     HWND hwnd,
+                     ATTACHMENT_PROMPT prompt,
+                     ATTACHMENT_ACTION *paction) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Execute(
-        HWND hwnd,
-        LPCWSTR pszVerb,
-        HANDLE *phProcess) = 0;
+                     HWND hwnd,
+                     LPCWSTR pszVerb,
+                     HANDLE *phProcess) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveWithUI(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearClientState(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -23932,65 +23932,65 @@ typedef struct IAttachmentExecuteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAttachmentExecute *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAttachmentExecute *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAttachmentExecute *This);
+                     IAttachmentExecute *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAttachmentExecute *This);
+                     IAttachmentExecute *This);
 
     /*** IAttachmentExecute methods ***/
     HRESULT (STDMETHODCALLTYPE *SetClientTitle)(
-        IAttachmentExecute *This,
-        LPCWSTR pszTitle);
+                     IAttachmentExecute *This,
+                     LPCWSTR pszTitle);
 
     HRESULT (STDMETHODCALLTYPE *SetClientGuid)(
-        IAttachmentExecute *This,
-        REFGUID guid);
+                     IAttachmentExecute *This,
+                     REFGUID guid);
 
     HRESULT (STDMETHODCALLTYPE *SetLocalPath)(
-        IAttachmentExecute *This,
-        LPCWSTR pszLocalPath);
+                     IAttachmentExecute *This,
+                     LPCWSTR pszLocalPath);
 
     HRESULT (STDMETHODCALLTYPE *SetFileName)(
-        IAttachmentExecute *This,
-        LPCWSTR pszFileName);
+                     IAttachmentExecute *This,
+                     LPCWSTR pszFileName);
 
     HRESULT (STDMETHODCALLTYPE *SetSource)(
-        IAttachmentExecute *This,
-        LPCWSTR pszSource);
+                     IAttachmentExecute *This,
+                     LPCWSTR pszSource);
 
     HRESULT (STDMETHODCALLTYPE *SetReferrer)(
-        IAttachmentExecute *This,
-        LPCWSTR pszReferrer);
+                     IAttachmentExecute *This,
+                     LPCWSTR pszReferrer);
 
     HRESULT (STDMETHODCALLTYPE *CheckPolicy)(
-        IAttachmentExecute *This);
+                     IAttachmentExecute *This);
 
     HRESULT (STDMETHODCALLTYPE *Prompt)(
-        IAttachmentExecute *This,
-        HWND hwnd,
-        ATTACHMENT_PROMPT prompt,
-        ATTACHMENT_ACTION *paction);
+                     IAttachmentExecute *This,
+                     HWND hwnd,
+                     ATTACHMENT_PROMPT prompt,
+                     ATTACHMENT_ACTION *paction);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IAttachmentExecute *This);
+                     IAttachmentExecute *This);
 
     HRESULT (STDMETHODCALLTYPE *Execute)(
-        IAttachmentExecute *This,
-        HWND hwnd,
-        LPCWSTR pszVerb,
-        HANDLE *phProcess);
+                     IAttachmentExecute *This,
+                     HWND hwnd,
+                     LPCWSTR pszVerb,
+                     HANDLE *phProcess);
 
     HRESULT (STDMETHODCALLTYPE *SaveWithUI)(
-        IAttachmentExecute *This,
-        HWND hwnd);
+                     IAttachmentExecute *This,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *ClearClientState)(
-        IAttachmentExecute *This);
+                     IAttachmentExecute *This);
 
     END_INTERFACE
 } IAttachmentExecuteVtbl;
@@ -24190,10 +24190,10 @@ MIDL_INTERFACE("4ca300a1-9b8d-11d1-8b22-00c04fd918d0")
 IShellMenuCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CallbackSM(
-        LPSMDATA psmd,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     LPSMDATA psmd,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -24205,23 +24205,23 @@ typedef struct IShellMenuCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellMenuCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellMenuCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellMenuCallback *This);
+                     IShellMenuCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellMenuCallback *This);
+                     IShellMenuCallback *This);
 
     /*** IShellMenuCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *CallbackSM)(
-        IShellMenuCallback *This,
-        LPSMDATA psmd,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     IShellMenuCallback *This,
+                     LPSMDATA psmd,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     END_INTERFACE
 } IShellMenuCallbackVtbl;
@@ -24296,49 +24296,49 @@ MIDL_INTERFACE("ee1f7637-e138-11d1-8379-00c04fd918d0")
 IShellMenu : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IShellMenuCallback *psmc,
-        UINT uId,
-        UINT uIdAncestor,
-        DWORD dwFlags) = 0;
+                     IShellMenuCallback *psmc,
+                     UINT uId,
+                     UINT uIdAncestor,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMenuInfo(
-        IShellMenuCallback **ppsmc,
-        UINT *puId,
-        UINT *puIdAncestor,
-        DWORD *pdwFlags) = 0;
+                     IShellMenuCallback **ppsmc,
+                     UINT *puId,
+                     UINT *puIdAncestor,
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetShellFolder(
-        IShellFolder *psf,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        HKEY hKey,
-        DWORD dwFlags) = 0;
+                     IShellFolder *psf,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     HKEY hKey,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetShellFolder(
-        DWORD *pdwFlags,
-        PIDLIST_ABSOLUTE *ppidl,
-        REFIID riid,
-        void **ppv) = 0;
+                     DWORD *pdwFlags,
+                     PIDLIST_ABSOLUTE *ppidl,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMenu(
-        HMENU hmenu,
-        HWND hwnd,
-        DWORD dwFlags) = 0;
+                     HMENU hmenu,
+                     HWND hwnd,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMenu(
-        HMENU *phmenu,
-        HWND *phwnd,
-        DWORD *pdwFlags) = 0;
+                     HMENU *phmenu,
+                     HWND *phwnd,
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvalidateItem(
-        LPSMDATA psmd,
-        DWORD dwFlags) = 0;
+                     LPSMDATA psmd,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        LPSMDATA psmd) = 0;
+                     LPSMDATA psmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMenuToolbar(
-        IUnknown *punk,
-        DWORD dwFlags) = 0;
+                     IUnknown *punk,
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -24350,70 +24350,70 @@ typedef struct IShellMenuVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellMenu *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellMenu *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellMenu *This);
+                     IShellMenu *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellMenu *This);
+                     IShellMenu *This);
 
     /*** IShellMenu methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IShellMenu *This,
-        IShellMenuCallback *psmc,
-        UINT uId,
-        UINT uIdAncestor,
-        DWORD dwFlags);
+                     IShellMenu *This,
+                     IShellMenuCallback *psmc,
+                     UINT uId,
+                     UINT uIdAncestor,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetMenuInfo)(
-        IShellMenu *This,
-        IShellMenuCallback **ppsmc,
-        UINT *puId,
-        UINT *puIdAncestor,
-        DWORD *pdwFlags);
+                     IShellMenu *This,
+                     IShellMenuCallback **ppsmc,
+                     UINT *puId,
+                     UINT *puIdAncestor,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetShellFolder)(
-        IShellMenu *This,
-        IShellFolder *psf,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        HKEY hKey,
-        DWORD dwFlags);
+                     IShellMenu *This,
+                     IShellFolder *psf,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     HKEY hKey,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetShellFolder)(
-        IShellMenu *This,
-        DWORD *pdwFlags,
-        PIDLIST_ABSOLUTE *ppidl,
-        REFIID riid,
-        void **ppv);
+                     IShellMenu *This,
+                     DWORD *pdwFlags,
+                     PIDLIST_ABSOLUTE *ppidl,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetMenu)(
-        IShellMenu *This,
-        HMENU hmenu,
-        HWND hwnd,
-        DWORD dwFlags);
+                     IShellMenu *This,
+                     HMENU hmenu,
+                     HWND hwnd,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetMenu)(
-        IShellMenu *This,
-        HMENU *phmenu,
-        HWND *phwnd,
-        DWORD *pdwFlags);
+                     IShellMenu *This,
+                     HMENU *phmenu,
+                     HWND *phwnd,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *InvalidateItem)(
-        IShellMenu *This,
-        LPSMDATA psmd,
-        DWORD dwFlags);
+                     IShellMenu *This,
+                     LPSMDATA psmd,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IShellMenu *This,
-        LPSMDATA psmd);
+                     IShellMenu *This,
+                     LPSMDATA psmd);
 
     HRESULT (STDMETHODCALLTYPE *SetMenuToolbar)(
-        IShellMenu *This,
-        IUnknown *punk,
-        DWORD dwFlags);
+                     IShellMenu *This,
+                     IUnknown *punk,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } IShellMenuVtbl;
@@ -24499,7 +24499,7 @@ MIDL_INTERFACE("fce4bde0-4b68-4b80-8e9c-7426315a7388")
 IShellRunDll : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Run(
-        LPCWSTR pszArgs) = 0;
+                     LPCWSTR pszArgs) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -24511,20 +24511,20 @@ typedef struct IShellRunDllVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellRunDll *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellRunDll *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellRunDll *This);
+                     IShellRunDll *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellRunDll *This);
+                     IShellRunDll *This);
 
     /*** IShellRunDll methods ***/
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IShellRunDll *This,
-        LPCWSTR pszArgs);
+                     IShellRunDll *This,
+                     LPCWSTR pszArgs);
 
     END_INTERFACE
 } IShellRunDllVtbl;
@@ -24638,36 +24638,36 @@ MIDL_INTERFACE("3aa7af7e-9b36-420c-a8e3-f77d4674a488")
 IKnownFolder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetId(
-        KNOWNFOLDERID *pkfid) = 0;
+                     KNOWNFOLDERID *pkfid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategory(
-        KF_CATEGORY *pCategory) = 0;
+                     KF_CATEGORY *pCategory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetShellItem(
-        DWORD dwFlags,
-        REFIID riid,
-        void **ppv) = 0;
+                     DWORD dwFlags,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPath(
-        DWORD dwFlags,
-        LPWSTR *ppszPath) = 0;
+                     DWORD dwFlags,
+                     LPWSTR *ppszPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPath(
-        DWORD dwFlags,
-        LPCWSTR pszPath) = 0;
+                     DWORD dwFlags,
+                     LPCWSTR pszPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIDList(
-        DWORD dwFlags,
-        PIDLIST_ABSOLUTE *ppidl) = 0;
+                     DWORD dwFlags,
+                     PIDLIST_ABSOLUTE *ppidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderType(
-        FOLDERTYPEID *pftid) = 0;
+                     FOLDERTYPEID *pftid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRedirectionCapabilities(
-        KF_REDIRECTION_CAPABILITIES *pCapabilities) = 0;
+                     KF_REDIRECTION_CAPABILITIES *pCapabilities) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderDefinition(
-        KNOWNFOLDER_DEFINITION *pKFD) = 0;
+                     KNOWNFOLDER_DEFINITION *pKFD) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -24679,57 +24679,57 @@ typedef struct IKnownFolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKnownFolder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IKnownFolder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKnownFolder *This);
+                     IKnownFolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKnownFolder *This);
+                     IKnownFolder *This);
 
     /*** IKnownFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        IKnownFolder *This,
-        KNOWNFOLDERID *pkfid);
+                     IKnownFolder *This,
+                     KNOWNFOLDERID *pkfid);
 
     HRESULT (STDMETHODCALLTYPE *GetCategory)(
-        IKnownFolder *This,
-        KF_CATEGORY *pCategory);
+                     IKnownFolder *This,
+                     KF_CATEGORY *pCategory);
 
     HRESULT (STDMETHODCALLTYPE *GetShellItem)(
-        IKnownFolder *This,
-        DWORD dwFlags,
-        REFIID riid,
-        void **ppv);
+                     IKnownFolder *This,
+                     DWORD dwFlags,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IKnownFolder *This,
-        DWORD dwFlags,
-        LPWSTR *ppszPath);
+                     IKnownFolder *This,
+                     DWORD dwFlags,
+                     LPWSTR *ppszPath);
 
     HRESULT (STDMETHODCALLTYPE *SetPath)(
-        IKnownFolder *This,
-        DWORD dwFlags,
-        LPCWSTR pszPath);
+                     IKnownFolder *This,
+                     DWORD dwFlags,
+                     LPCWSTR pszPath);
 
     HRESULT (STDMETHODCALLTYPE *GetIDList)(
-        IKnownFolder *This,
-        DWORD dwFlags,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IKnownFolder *This,
+                     DWORD dwFlags,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderType)(
-        IKnownFolder *This,
-        FOLDERTYPEID *pftid);
+                     IKnownFolder *This,
+                     FOLDERTYPEID *pftid);
 
     HRESULT (STDMETHODCALLTYPE *GetRedirectionCapabilities)(
-        IKnownFolder *This,
-        KF_REDIRECTION_CAPABILITIES *pCapabilities);
+                     IKnownFolder *This,
+                     KF_REDIRECTION_CAPABILITIES *pCapabilities);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderDefinition)(
-        IKnownFolder *This,
-        KNOWNFOLDER_DEFINITION *pKFD);
+                     IKnownFolder *This,
+                     KNOWNFOLDER_DEFINITION *pKFD);
 
     END_INTERFACE
 } IKnownFolderVtbl;
@@ -24819,49 +24819,49 @@ MIDL_INTERFACE("8be2d872-86aa-4d47-b776-32cca40c7018")
 IKnownFolderManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FolderIdFromCsidl(
-        int nCsidl,
-        KNOWNFOLDERID *pfid) = 0;
+                     int nCsidl,
+                     KNOWNFOLDERID *pfid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FolderIdToCsidl(
-        REFKNOWNFOLDERID rfid,
-        int *pnCsidl) = 0;
+                     REFKNOWNFOLDERID rfid,
+                     int *pnCsidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderIds(
-        KNOWNFOLDERID **ppKFId,
-        UINT *pCount) = 0;
+                     KNOWNFOLDERID **ppKFId,
+                     UINT *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolder(
-        REFKNOWNFOLDERID rfid,
-        IKnownFolder **ppkf) = 0;
+                     REFKNOWNFOLDERID rfid,
+                     IKnownFolder **ppkf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderByName(
-        LPCWSTR pszCanonicalName,
-        IKnownFolder **ppkf) = 0;
+                     LPCWSTR pszCanonicalName,
+                     IKnownFolder **ppkf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterFolder(
-        REFKNOWNFOLDERID rfid,
-        const KNOWNFOLDER_DEFINITION *pKFD) = 0;
+                     REFKNOWNFOLDERID rfid,
+                     const KNOWNFOLDER_DEFINITION *pKFD) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterFolder(
-        REFKNOWNFOLDERID rfid) = 0;
+                     REFKNOWNFOLDERID rfid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindFolderFromPath(
-        LPCWSTR pszPath,
-        FFFP_MODE mode,
-        IKnownFolder **ppkf) = 0;
+                     LPCWSTR pszPath,
+                     FFFP_MODE mode,
+                     IKnownFolder **ppkf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindFolderFromIDList(
-        PCIDLIST_ABSOLUTE pidl,
-        IKnownFolder **ppkf) = 0;
+                     PCIDLIST_ABSOLUTE pidl,
+                     IKnownFolder **ppkf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Redirect(
-        REFKNOWNFOLDERID rfid,
-        HWND hwnd,
-        KF_REDIRECT_FLAGS flags,
-        LPCWSTR pszTargetPath,
-        UINT cFolders,
-        const KNOWNFOLDERID *pExclusion,
-        LPWSTR *ppszError) = 0;
+                     REFKNOWNFOLDERID rfid,
+                     HWND hwnd,
+                     KF_REDIRECT_FLAGS flags,
+                     LPCWSTR pszTargetPath,
+                     UINT cFolders,
+                     const KNOWNFOLDERID *pExclusion,
+                     LPWSTR *ppszError) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -24873,71 +24873,71 @@ typedef struct IKnownFolderManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKnownFolderManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IKnownFolderManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKnownFolderManager *This);
+                     IKnownFolderManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKnownFolderManager *This);
+                     IKnownFolderManager *This);
 
     /*** IKnownFolderManager methods ***/
     HRESULT (STDMETHODCALLTYPE *FolderIdFromCsidl)(
-        IKnownFolderManager *This,
-        int nCsidl,
-        KNOWNFOLDERID *pfid);
+                     IKnownFolderManager *This,
+                     int nCsidl,
+                     KNOWNFOLDERID *pfid);
 
     HRESULT (STDMETHODCALLTYPE *FolderIdToCsidl)(
-        IKnownFolderManager *This,
-        REFKNOWNFOLDERID rfid,
-        int *pnCsidl);
+                     IKnownFolderManager *This,
+                     REFKNOWNFOLDERID rfid,
+                     int *pnCsidl);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderIds)(
-        IKnownFolderManager *This,
-        KNOWNFOLDERID **ppKFId,
-        UINT *pCount);
+                     IKnownFolderManager *This,
+                     KNOWNFOLDERID **ppKFId,
+                     UINT *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        IKnownFolderManager *This,
-        REFKNOWNFOLDERID rfid,
-        IKnownFolder **ppkf);
+                     IKnownFolderManager *This,
+                     REFKNOWNFOLDERID rfid,
+                     IKnownFolder **ppkf);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderByName)(
-        IKnownFolderManager *This,
-        LPCWSTR pszCanonicalName,
-        IKnownFolder **ppkf);
+                     IKnownFolderManager *This,
+                     LPCWSTR pszCanonicalName,
+                     IKnownFolder **ppkf);
 
     HRESULT (STDMETHODCALLTYPE *RegisterFolder)(
-        IKnownFolderManager *This,
-        REFKNOWNFOLDERID rfid,
-        const KNOWNFOLDER_DEFINITION *pKFD);
+                     IKnownFolderManager *This,
+                     REFKNOWNFOLDERID rfid,
+                     const KNOWNFOLDER_DEFINITION *pKFD);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterFolder)(
-        IKnownFolderManager *This,
-        REFKNOWNFOLDERID rfid);
+                     IKnownFolderManager *This,
+                     REFKNOWNFOLDERID rfid);
 
     HRESULT (STDMETHODCALLTYPE *FindFolderFromPath)(
-        IKnownFolderManager *This,
-        LPCWSTR pszPath,
-        FFFP_MODE mode,
-        IKnownFolder **ppkf);
+                     IKnownFolderManager *This,
+                     LPCWSTR pszPath,
+                     FFFP_MODE mode,
+                     IKnownFolder **ppkf);
 
     HRESULT (STDMETHODCALLTYPE *FindFolderFromIDList)(
-        IKnownFolderManager *This,
-        PCIDLIST_ABSOLUTE pidl,
-        IKnownFolder **ppkf);
+                     IKnownFolderManager *This,
+                     PCIDLIST_ABSOLUTE pidl,
+                     IKnownFolder **ppkf);
 
     HRESULT (STDMETHODCALLTYPE *Redirect)(
-        IKnownFolderManager *This,
-        REFKNOWNFOLDERID rfid,
-        HWND hwnd,
-        KF_REDIRECT_FLAGS flags,
-        LPCWSTR pszTargetPath,
-        UINT cFolders,
-        const KNOWNFOLDERID *pExclusion,
-        LPWSTR *ppszError);
+                     IKnownFolderManager *This,
+                     REFKNOWNFOLDERID rfid,
+                     HWND hwnd,
+                     KF_REDIRECT_FLAGS flags,
+                     LPCWSTR pszTargetPath,
+                     UINT cFolders,
+                     const KNOWNFOLDERID *pExclusion,
+                     LPWSTR *ppszError);
 
     END_INTERFACE
 } IKnownFolderManagerVtbl;
@@ -25084,27 +25084,27 @@ MIDL_INTERFACE("b4cd448a-9c86-4466-9201-2e62105b87ae")
 ISharingConfigurationManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateShare(
-        DEF_SHARE_ID dsid,
-        SHARE_ROLE role) = 0;
+                     DEF_SHARE_ID dsid,
+                     SHARE_ROLE role) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteShare(
-        DEF_SHARE_ID dsid) = 0;
+                     DEF_SHARE_ID dsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShareExists(
-        DEF_SHARE_ID dsid) = 0;
+                     DEF_SHARE_ID dsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSharePermissions(
-        DEF_SHARE_ID dsid,
-        SHARE_ROLE *pRole) = 0;
+                     DEF_SHARE_ID dsid,
+                     SHARE_ROLE *pRole) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SharePrinters(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopSharingPrinters(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ArePrintersShared(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -25116,43 +25116,43 @@ typedef struct ISharingConfigurationManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISharingConfigurationManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISharingConfigurationManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISharingConfigurationManager *This);
+                     ISharingConfigurationManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISharingConfigurationManager *This);
+                     ISharingConfigurationManager *This);
 
     /*** ISharingConfigurationManager methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateShare)(
-        ISharingConfigurationManager *This,
-        DEF_SHARE_ID dsid,
-        SHARE_ROLE role);
+                     ISharingConfigurationManager *This,
+                     DEF_SHARE_ID dsid,
+                     SHARE_ROLE role);
 
     HRESULT (STDMETHODCALLTYPE *DeleteShare)(
-        ISharingConfigurationManager *This,
-        DEF_SHARE_ID dsid);
+                     ISharingConfigurationManager *This,
+                     DEF_SHARE_ID dsid);
 
     HRESULT (STDMETHODCALLTYPE *ShareExists)(
-        ISharingConfigurationManager *This,
-        DEF_SHARE_ID dsid);
+                     ISharingConfigurationManager *This,
+                     DEF_SHARE_ID dsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSharePermissions)(
-        ISharingConfigurationManager *This,
-        DEF_SHARE_ID dsid,
-        SHARE_ROLE *pRole);
+                     ISharingConfigurationManager *This,
+                     DEF_SHARE_ID dsid,
+                     SHARE_ROLE *pRole);
 
     HRESULT (STDMETHODCALLTYPE *SharePrinters)(
-        ISharingConfigurationManager *This);
+                     ISharingConfigurationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *StopSharingPrinters)(
-        ISharingConfigurationManager *This);
+                     ISharingConfigurationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *ArePrintersShared)(
-        ISharingConfigurationManager *This);
+                     ISharingConfigurationManager *This);
 
     END_INTERFACE
 } ISharingConfigurationManagerVtbl;
@@ -25230,9 +25230,9 @@ MIDL_INTERFACE("76e54780-ad74-48e3-a695-3ba9a0aff10d")
 IPreviousVersionsInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AreSnapshotsAvailable(
-        LPCWSTR pszPath,
-        WINBOOL fOkToBeSlow,
-        WINBOOL *pfAvailable) = 0;
+                     LPCWSTR pszPath,
+                     WINBOOL fOkToBeSlow,
+                     WINBOOL *pfAvailable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -25244,22 +25244,22 @@ typedef struct IPreviousVersionsInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPreviousVersionsInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPreviousVersionsInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPreviousVersionsInfo *This);
+                     IPreviousVersionsInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPreviousVersionsInfo *This);
+                     IPreviousVersionsInfo *This);
 
     /*** IPreviousVersionsInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *AreSnapshotsAvailable)(
-        IPreviousVersionsInfo *This,
-        LPCWSTR pszPath,
-        WINBOOL fOkToBeSlow,
-        WINBOOL *pfAvailable);
+                     IPreviousVersionsInfo *This,
+                     LPCWSTR pszPath,
+                     WINBOOL fOkToBeSlow,
+                     WINBOOL *pfAvailable);
 
     END_INTERFACE
 } IPreviousVersionsInfoVtbl;
@@ -25313,10 +25313,10 @@ MIDL_INTERFACE("a73ce67a-8ab1-44f1-8d43-d2fcbf6b1cd0")
 IRelatedItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetItemIDList(
-        PIDLIST_ABSOLUTE *ppidl) = 0;
+                     PIDLIST_ABSOLUTE *ppidl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItem(
-        IShellItem **ppsi) = 0;
+                     IShellItem **ppsi) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -25328,24 +25328,24 @@ typedef struct IRelatedItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRelatedItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRelatedItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRelatedItem *This);
+                     IRelatedItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRelatedItem *This);
+                     IRelatedItem *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        IRelatedItem *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IRelatedItem *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IRelatedItem *This,
-        IShellItem **ppsi);
+                     IRelatedItem *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } IRelatedItemVtbl;
@@ -25411,24 +25411,24 @@ typedef struct IIdentityNameVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IIdentityName *This,
-        REFIID riid,
-        void **ppvObject);
+                     IIdentityName *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IIdentityName *This);
+                     IIdentityName *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IIdentityName *This);
+                     IIdentityName *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        IIdentityName *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IIdentityName *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IIdentityName *This,
-        IShellItem **ppsi);
+                     IIdentityName *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } IIdentityNameVtbl;
@@ -25494,24 +25494,24 @@ typedef struct IDelegateItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDelegateItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDelegateItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDelegateItem *This);
+                     IDelegateItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDelegateItem *This);
+                     IDelegateItem *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        IDelegateItem *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IDelegateItem *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IDelegateItem *This,
-        IShellItem **ppsi);
+                     IDelegateItem *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } IDelegateItemVtbl;
@@ -25577,24 +25577,24 @@ typedef struct ICurrentItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICurrentItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICurrentItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICurrentItem *This);
+                     ICurrentItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICurrentItem *This);
+                     ICurrentItem *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        ICurrentItem *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     ICurrentItem *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        ICurrentItem *This,
-        IShellItem **ppsi);
+                     ICurrentItem *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } ICurrentItemVtbl;
@@ -25660,24 +25660,24 @@ typedef struct ITransferMediumItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITransferMediumItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITransferMediumItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITransferMediumItem *This);
+                     ITransferMediumItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITransferMediumItem *This);
+                     ITransferMediumItem *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        ITransferMediumItem *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     ITransferMediumItem *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        ITransferMediumItem *This,
-        IShellItem **ppsi);
+                     ITransferMediumItem *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } ITransferMediumItemVtbl;
@@ -25743,24 +25743,24 @@ typedef struct IUseToBrowseItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUseToBrowseItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUseToBrowseItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUseToBrowseItem *This);
+                     IUseToBrowseItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUseToBrowseItem *This);
+                     IUseToBrowseItem *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        IUseToBrowseItem *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IUseToBrowseItem *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IUseToBrowseItem *This,
-        IShellItem **ppsi);
+                     IUseToBrowseItem *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } IUseToBrowseItemVtbl;
@@ -25826,24 +25826,24 @@ typedef struct IDisplayItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDisplayItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDisplayItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDisplayItem *This);
+                     IDisplayItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDisplayItem *This);
+                     IDisplayItem *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        IDisplayItem *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IDisplayItem *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IDisplayItem *This,
-        IShellItem **ppsi);
+                     IDisplayItem *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } IDisplayItemVtbl;
@@ -25909,24 +25909,24 @@ typedef struct IViewStateIdentityItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IViewStateIdentityItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IViewStateIdentityItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IViewStateIdentityItem *This);
+                     IViewStateIdentityItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IViewStateIdentityItem *This);
+                     IViewStateIdentityItem *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        IViewStateIdentityItem *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IViewStateIdentityItem *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IViewStateIdentityItem *This,
-        IShellItem **ppsi);
+                     IViewStateIdentityItem *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } IViewStateIdentityItemVtbl;
@@ -25992,24 +25992,24 @@ typedef struct IPreviewItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPreviewItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPreviewItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPreviewItem *This);
+                     IPreviewItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPreviewItem *This);
+                     IPreviewItem *This);
 
     /*** IRelatedItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItemIDList)(
-        IPreviewItem *This,
-        PIDLIST_ABSOLUTE *ppidl);
+                     IPreviewItem *This,
+                     PIDLIST_ABSOLUTE *ppidl);
 
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IPreviewItem *This,
-        IShellItem **ppsi);
+                     IPreviewItem *This,
+                     IShellItem **ppsi);
 
     END_INTERFACE
 } IPreviewItemVtbl;
@@ -26067,7 +26067,7 @@ MIDL_INTERFACE("8a87781b-39a7-4a1f-aab3-a39b9c34a7d9")
 IDestinationStreamFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDestinationStream(
-        IStream **ppstm) = 0;
+                     IStream **ppstm) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -26079,20 +26079,20 @@ typedef struct IDestinationStreamFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDestinationStreamFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDestinationStreamFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDestinationStreamFactory *This);
+                     IDestinationStreamFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDestinationStreamFactory *This);
+                     IDestinationStreamFactory *This);
 
     /*** IDestinationStreamFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDestinationStream)(
-        IDestinationStreamFactory *This,
-        IStream **ppstm);
+                     IDestinationStreamFactory *This,
+                     IStream **ppstm);
 
     END_INTERFACE
 } IDestinationStreamFactoryVtbl;
@@ -26160,11 +26160,11 @@ MIDL_INTERFACE("dcb07fdc-3bb5-451c-90be-966644fed7b0")
 INewMenuClient : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IncludeItems(
-        NMCII_FLAGS *pflags) = 0;
+                     NMCII_FLAGS *pflags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectAndEditItem(
-        PCIDLIST_ABSOLUTE pidlItem,
-        NMCSAEI_FLAGS flags) = 0;
+                     PCIDLIST_ABSOLUTE pidlItem,
+                     NMCSAEI_FLAGS flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -26176,25 +26176,25 @@ typedef struct INewMenuClientVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INewMenuClient *This,
-        REFIID riid,
-        void **ppvObject);
+                     INewMenuClient *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INewMenuClient *This);
+                     INewMenuClient *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INewMenuClient *This);
+                     INewMenuClient *This);
 
     /*** INewMenuClient methods ***/
     HRESULT (STDMETHODCALLTYPE *IncludeItems)(
-        INewMenuClient *This,
-        NMCII_FLAGS *pflags);
+                     INewMenuClient *This,
+                     NMCII_FLAGS *pflags);
 
     HRESULT (STDMETHODCALLTYPE *SelectAndEditItem)(
-        INewMenuClient *This,
-        PCIDLIST_ABSOLUTE pidlItem,
-        NMCSAEI_FLAGS flags);
+                     INewMenuClient *This,
+                     PCIDLIST_ABSOLUTE pidlItem,
+                     NMCSAEI_FLAGS flags);
 
     END_INTERFACE
 } INewMenuClientVtbl;
@@ -26256,7 +26256,7 @@ MIDL_INTERFACE("71c0d2bc-726d-45cc-a6c0-2e31c1db2159")
 IInitializeWithBindCtx : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IBindCtx *pbc) = 0;
+                     IBindCtx *pbc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -26268,20 +26268,20 @@ typedef struct IInitializeWithBindCtxVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeWithBindCtx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeWithBindCtx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeWithBindCtx *This);
+                     IInitializeWithBindCtx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeWithBindCtx *This);
+                     IInitializeWithBindCtx *This);
 
     /*** IInitializeWithBindCtx methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IInitializeWithBindCtx *This,
-        IBindCtx *pbc);
+                     IInitializeWithBindCtx *This,
+                     IBindCtx *pbc);
 
     END_INTERFACE
 } IInitializeWithBindCtxVtbl;
@@ -26334,11 +26334,11 @@ MIDL_INTERFACE("2659b475-eeb8-48b7-8f07-b378810f48cf")
 IShellItemFilter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IncludeItem(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumFlagsForItem(
-        IShellItem *psi,
-        SHCONTF *pgrfFlags) = 0;
+                     IShellItem *psi,
+                     SHCONTF *pgrfFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -26350,25 +26350,25 @@ typedef struct IShellItemFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellItemFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellItemFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellItemFilter *This);
+                     IShellItemFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellItemFilter *This);
+                     IShellItemFilter *This);
 
     /*** IShellItemFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *IncludeItem)(
-        IShellItemFilter *This,
-        IShellItem *psi);
+                     IShellItemFilter *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumFlagsForItem)(
-        IShellItemFilter *This,
-        IShellItem *psi,
-        SHCONTF *pgrfFlags);
+                     IShellItemFilter *This,
+                     IShellItem *psi,
+                     SHCONTF *pgrfFlags);
 
     END_INTERFACE
 } IShellItemFilterVtbl;
@@ -26491,81 +26491,81 @@ MIDL_INTERFACE("028212a3-b627-47e9-8856-c14265554e4f")
 INameSpaceTreeControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        HWND hwndParent,
-        RECT *prc,
-        NSTCSTYLE nsctsFlags) = 0;
+                     HWND hwndParent,
+                     RECT *prc,
+                     NSTCSTYLE nsctsFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TreeAdvise(
-        IUnknown *punk,
-        DWORD *pdwCookie) = 0;
+                     IUnknown *punk,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TreeUnadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AppendRoot(
-        IShellItem *psiRoot,
-        SHCONTF grfEnumFlags,
-        NSTCROOTSTYLE grfRootStyle,
-        IShellItemFilter *pif) = 0;
+                     IShellItem *psiRoot,
+                     SHCONTF grfEnumFlags,
+                     NSTCROOTSTYLE grfRootStyle,
+                     IShellItemFilter *pif) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertRoot(
-        int iIndex,
-        IShellItem *psiRoot,
-        SHCONTF grfEnumFlags,
-        NSTCROOTSTYLE grfRootStyle,
-        IShellItemFilter *pif) = 0;
+                     int iIndex,
+                     IShellItem *psiRoot,
+                     SHCONTF grfEnumFlags,
+                     NSTCROOTSTYLE grfRootStyle,
+                     IShellItemFilter *pif) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveRoot(
-        IShellItem *psiRoot) = 0;
+                     IShellItem *psiRoot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAllRoots(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRootItems(
-        IShellItemArray **ppsiaRootItems) = 0;
+                     IShellItemArray **ppsiaRootItems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetItemState(
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE nstcisFlags) = 0;
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE nstcisFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemState(
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE *pnstcisFlags) = 0;
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE *pnstcisFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelectedItems(
-        IShellItemArray **psiaItems) = 0;
+                     IShellItemArray **psiaItems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemCustomState(
-        IShellItem *psi,
-        int *piStateNumber) = 0;
+                     IShellItem *psi,
+                     int *piStateNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetItemCustomState(
-        IShellItem *psi,
-        int iStateNumber) = 0;
+                     IShellItem *psi,
+                     int iStateNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnsureItemVisible(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTheme(
-        LPCWSTR pszTheme) = 0;
+                     LPCWSTR pszTheme) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNextItem(
-        IShellItem *psi,
-        NSTCGNI nstcgi,
-        IShellItem **ppsiNext) = 0;
+                     IShellItem *psi,
+                     NSTCGNI nstcgi,
+                     IShellItem **ppsiNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HitTest(
-        POINT *ppt,
-        IShellItem **ppsiOut) = 0;
+                     POINT *ppt,
+                     IShellItem **ppsiOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemRect(
-        IShellItem *psi,
-        RECT *prect) = 0;
+                     IShellItem *psi,
+                     RECT *prect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CollapseAll(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -26577,110 +26577,110 @@ typedef struct INameSpaceTreeControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INameSpaceTreeControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     INameSpaceTreeControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INameSpaceTreeControl *This);
+                     INameSpaceTreeControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INameSpaceTreeControl *This);
+                     INameSpaceTreeControl *This);
 
     /*** INameSpaceTreeControl methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INameSpaceTreeControl *This,
-        HWND hwndParent,
-        RECT *prc,
-        NSTCSTYLE nsctsFlags);
+                     INameSpaceTreeControl *This,
+                     HWND hwndParent,
+                     RECT *prc,
+                     NSTCSTYLE nsctsFlags);
 
     HRESULT (STDMETHODCALLTYPE *TreeAdvise)(
-        INameSpaceTreeControl *This,
-        IUnknown *punk,
-        DWORD *pdwCookie);
+                     INameSpaceTreeControl *This,
+                     IUnknown *punk,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *TreeUnadvise)(
-        INameSpaceTreeControl *This,
-        DWORD dwCookie);
+                     INameSpaceTreeControl *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *AppendRoot)(
-        INameSpaceTreeControl *This,
-        IShellItem *psiRoot,
-        SHCONTF grfEnumFlags,
-        NSTCROOTSTYLE grfRootStyle,
-        IShellItemFilter *pif);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psiRoot,
+                     SHCONTF grfEnumFlags,
+                     NSTCROOTSTYLE grfRootStyle,
+                     IShellItemFilter *pif);
 
     HRESULT (STDMETHODCALLTYPE *InsertRoot)(
-        INameSpaceTreeControl *This,
-        int iIndex,
-        IShellItem *psiRoot,
-        SHCONTF grfEnumFlags,
-        NSTCROOTSTYLE grfRootStyle,
-        IShellItemFilter *pif);
+                     INameSpaceTreeControl *This,
+                     int iIndex,
+                     IShellItem *psiRoot,
+                     SHCONTF grfEnumFlags,
+                     NSTCROOTSTYLE grfRootStyle,
+                     IShellItemFilter *pif);
 
     HRESULT (STDMETHODCALLTYPE *RemoveRoot)(
-        INameSpaceTreeControl *This,
-        IShellItem *psiRoot);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psiRoot);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAllRoots)(
-        INameSpaceTreeControl *This);
+                     INameSpaceTreeControl *This);
 
     HRESULT (STDMETHODCALLTYPE *GetRootItems)(
-        INameSpaceTreeControl *This,
-        IShellItemArray **ppsiaRootItems);
+                     INameSpaceTreeControl *This,
+                     IShellItemArray **ppsiaRootItems);
 
     HRESULT (STDMETHODCALLTYPE *SetItemState)(
-        INameSpaceTreeControl *This,
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE nstcisFlags);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE nstcisFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetItemState)(
-        INameSpaceTreeControl *This,
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE *pnstcisFlags);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE *pnstcisFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectedItems)(
-        INameSpaceTreeControl *This,
-        IShellItemArray **psiaItems);
+                     INameSpaceTreeControl *This,
+                     IShellItemArray **psiaItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemCustomState)(
-        INameSpaceTreeControl *This,
-        IShellItem *psi,
-        int *piStateNumber);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psi,
+                     int *piStateNumber);
 
     HRESULT (STDMETHODCALLTYPE *SetItemCustomState)(
-        INameSpaceTreeControl *This,
-        IShellItem *psi,
-        int iStateNumber);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psi,
+                     int iStateNumber);
 
     HRESULT (STDMETHODCALLTYPE *EnsureItemVisible)(
-        INameSpaceTreeControl *This,
-        IShellItem *psi);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *SetTheme)(
-        INameSpaceTreeControl *This,
-        LPCWSTR pszTheme);
+                     INameSpaceTreeControl *This,
+                     LPCWSTR pszTheme);
 
     HRESULT (STDMETHODCALLTYPE *GetNextItem)(
-        INameSpaceTreeControl *This,
-        IShellItem *psi,
-        NSTCGNI nstcgi,
-        IShellItem **ppsiNext);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psi,
+                     NSTCGNI nstcgi,
+                     IShellItem **ppsiNext);
 
     HRESULT (STDMETHODCALLTYPE *HitTest)(
-        INameSpaceTreeControl *This,
-        POINT *ppt,
-        IShellItem **ppsiOut);
+                     INameSpaceTreeControl *This,
+                     POINT *ppt,
+                     IShellItem **ppsiOut);
 
     HRESULT (STDMETHODCALLTYPE *GetItemRect)(
-        INameSpaceTreeControl *This,
-        IShellItem *psi,
-        RECT *prect);
+                     INameSpaceTreeControl *This,
+                     IShellItem *psi,
+                     RECT *prect);
 
     HRESULT (STDMETHODCALLTYPE *CollapseAll)(
-        INameSpaceTreeControl *This);
+                     INameSpaceTreeControl *This);
 
     END_INTERFACE
 } INameSpaceTreeControlVtbl;
@@ -26817,20 +26817,20 @@ MIDL_INTERFACE("7cc7aed8-290e-49bc-8945-c1401cc9306c")
 INameSpaceTreeControl2 : public INameSpaceTreeControl
 {
     virtual HRESULT STDMETHODCALLTYPE SetControlStyle(
-        NSTCSTYLE nstcsMask,
-        NSTCSTYLE nstcsStyle) = 0;
+                     NSTCSTYLE nstcsMask,
+                     NSTCSTYLE nstcsStyle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetControlStyle(
-        NSTCSTYLE nstcsMask,
-        NSTCSTYLE *pnstcsStyle) = 0;
+                     NSTCSTYLE nstcsMask,
+                     NSTCSTYLE *pnstcsStyle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetControlStyle2(
-        NSTCSTYLE2 nstcsMask,
-        NSTCSTYLE2 nstcsStyle) = 0;
+                     NSTCSTYLE2 nstcsMask,
+                     NSTCSTYLE2 nstcsStyle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetControlStyle2(
-        NSTCSTYLE2 nstcsMask,
-        NSTCSTYLE2 *pnstcsStyle) = 0;
+                     NSTCSTYLE2 nstcsMask,
+                     NSTCSTYLE2 *pnstcsStyle) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -26842,131 +26842,131 @@ typedef struct INameSpaceTreeControl2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INameSpaceTreeControl2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INameSpaceTreeControl2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INameSpaceTreeControl2 *This);
+                     INameSpaceTreeControl2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INameSpaceTreeControl2 *This);
+                     INameSpaceTreeControl2 *This);
 
     /*** INameSpaceTreeControl methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INameSpaceTreeControl2 *This,
-        HWND hwndParent,
-        RECT *prc,
-        NSTCSTYLE nsctsFlags);
+                     INameSpaceTreeControl2 *This,
+                     HWND hwndParent,
+                     RECT *prc,
+                     NSTCSTYLE nsctsFlags);
 
     HRESULT (STDMETHODCALLTYPE *TreeAdvise)(
-        INameSpaceTreeControl2 *This,
-        IUnknown *punk,
-        DWORD *pdwCookie);
+                     INameSpaceTreeControl2 *This,
+                     IUnknown *punk,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *TreeUnadvise)(
-        INameSpaceTreeControl2 *This,
-        DWORD dwCookie);
+                     INameSpaceTreeControl2 *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *AppendRoot)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psiRoot,
-        SHCONTF grfEnumFlags,
-        NSTCROOTSTYLE grfRootStyle,
-        IShellItemFilter *pif);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psiRoot,
+                     SHCONTF grfEnumFlags,
+                     NSTCROOTSTYLE grfRootStyle,
+                     IShellItemFilter *pif);
 
     HRESULT (STDMETHODCALLTYPE *InsertRoot)(
-        INameSpaceTreeControl2 *This,
-        int iIndex,
-        IShellItem *psiRoot,
-        SHCONTF grfEnumFlags,
-        NSTCROOTSTYLE grfRootStyle,
-        IShellItemFilter *pif);
+                     INameSpaceTreeControl2 *This,
+                     int iIndex,
+                     IShellItem *psiRoot,
+                     SHCONTF grfEnumFlags,
+                     NSTCROOTSTYLE grfRootStyle,
+                     IShellItemFilter *pif);
 
     HRESULT (STDMETHODCALLTYPE *RemoveRoot)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psiRoot);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psiRoot);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAllRoots)(
-        INameSpaceTreeControl2 *This);
+                     INameSpaceTreeControl2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetRootItems)(
-        INameSpaceTreeControl2 *This,
-        IShellItemArray **ppsiaRootItems);
+                     INameSpaceTreeControl2 *This,
+                     IShellItemArray **ppsiaRootItems);
 
     HRESULT (STDMETHODCALLTYPE *SetItemState)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE nstcisFlags);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE nstcisFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetItemState)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE *pnstcisFlags);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE *pnstcisFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectedItems)(
-        INameSpaceTreeControl2 *This,
-        IShellItemArray **psiaItems);
+                     INameSpaceTreeControl2 *This,
+                     IShellItemArray **psiaItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemCustomState)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psi,
-        int *piStateNumber);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psi,
+                     int *piStateNumber);
 
     HRESULT (STDMETHODCALLTYPE *SetItemCustomState)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psi,
-        int iStateNumber);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psi,
+                     int iStateNumber);
 
     HRESULT (STDMETHODCALLTYPE *EnsureItemVisible)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psi);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *SetTheme)(
-        INameSpaceTreeControl2 *This,
-        LPCWSTR pszTheme);
+                     INameSpaceTreeControl2 *This,
+                     LPCWSTR pszTheme);
 
     HRESULT (STDMETHODCALLTYPE *GetNextItem)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psi,
-        NSTCGNI nstcgi,
-        IShellItem **ppsiNext);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psi,
+                     NSTCGNI nstcgi,
+                     IShellItem **ppsiNext);
 
     HRESULT (STDMETHODCALLTYPE *HitTest)(
-        INameSpaceTreeControl2 *This,
-        POINT *ppt,
-        IShellItem **ppsiOut);
+                     INameSpaceTreeControl2 *This,
+                     POINT *ppt,
+                     IShellItem **ppsiOut);
 
     HRESULT (STDMETHODCALLTYPE *GetItemRect)(
-        INameSpaceTreeControl2 *This,
-        IShellItem *psi,
-        RECT *prect);
+                     INameSpaceTreeControl2 *This,
+                     IShellItem *psi,
+                     RECT *prect);
 
     HRESULT (STDMETHODCALLTYPE *CollapseAll)(
-        INameSpaceTreeControl2 *This);
+                     INameSpaceTreeControl2 *This);
 
     /*** INameSpaceTreeControl2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetControlStyle)(
-        INameSpaceTreeControl2 *This,
-        NSTCSTYLE nstcsMask,
-        NSTCSTYLE nstcsStyle);
+                     INameSpaceTreeControl2 *This,
+                     NSTCSTYLE nstcsMask,
+                     NSTCSTYLE nstcsStyle);
 
     HRESULT (STDMETHODCALLTYPE *GetControlStyle)(
-        INameSpaceTreeControl2 *This,
-        NSTCSTYLE nstcsMask,
-        NSTCSTYLE *pnstcsStyle);
+                     INameSpaceTreeControl2 *This,
+                     NSTCSTYLE nstcsMask,
+                     NSTCSTYLE *pnstcsStyle);
 
     HRESULT (STDMETHODCALLTYPE *SetControlStyle2)(
-        INameSpaceTreeControl2 *This,
-        NSTCSTYLE2 nstcsMask,
-        NSTCSTYLE2 nstcsStyle);
+                     INameSpaceTreeControl2 *This,
+                     NSTCSTYLE2 nstcsMask,
+                     NSTCSTYLE2 nstcsStyle);
 
     HRESULT (STDMETHODCALLTYPE *GetControlStyle2)(
-        INameSpaceTreeControl2 *This,
-        NSTCSTYLE2 nstcsMask,
-        NSTCSTYLE2 *pnstcsStyle);
+                     INameSpaceTreeControl2 *This,
+                     NSTCSTYLE2 nstcsMask,
+                     NSTCSTYLE2 *pnstcsStyle);
 
     END_INTERFACE
 } INameSpaceTreeControl2Vtbl;
@@ -27141,77 +27141,77 @@ MIDL_INTERFACE("93d77985-b3d8-4484-8318-672cdda002ce")
 INameSpaceTreeControlEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnItemClick(
-        IShellItem *psi,
-        NSTCEHITTEST nstceHitTest,
-        NSTCECLICKTYPE nstceClickType) = 0;
+                     IShellItem *psi,
+                     NSTCEHITTEST nstceHitTest,
+                     NSTCECLICKTYPE nstceClickType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPropertyItemCommit(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnItemStateChanging(
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE nstcisState) = 0;
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE nstcisState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnItemStateChanged(
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE nstcisState) = 0;
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE nstcisState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnSelectionChanged(
-        IShellItemArray *psiaSelection) = 0;
+                     IShellItemArray *psiaSelection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnKeyboardInput(
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnBeforeExpand(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnAfterExpand(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnBeginLabelEdit(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnEndLabelEdit(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnGetToolTip(
-        IShellItem *psi,
-        LPWSTR pszTip,
-        int cchTip) = 0;
+                     IShellItem *psi,
+                     LPWSTR pszTip,
+                     int cchTip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnBeforeItemDelete(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnItemAdded(
-        IShellItem *psi,
-        WINBOOL fIsRoot) = 0;
+                     IShellItem *psi,
+                     WINBOOL fIsRoot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnItemDeleted(
-        IShellItem *psi,
-        WINBOOL fIsRoot) = 0;
+                     IShellItem *psi,
+                     WINBOOL fIsRoot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnBeforeContextMenu(
-        IShellItem *psi,
-        REFIID riid,
-        void **ppv) = 0;
+                     IShellItem *psi,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnAfterContextMenu(
-        IShellItem *psi,
-        IContextMenu *pcmIn,
-        REFIID riid,
-        void **ppv) = 0;
+                     IShellItem *psi,
+                     IContextMenu *pcmIn,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnBeforeStateImageChange(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnGetDefaultIconIndex(
-        IShellItem *psi,
-        int *piDefaultIcon,
-        int *piOpenIcon) = 0;
+                     IShellItem *psi,
+                     int *piDefaultIcon,
+                     int *piOpenIcon) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -27223,107 +27223,107 @@ typedef struct INameSpaceTreeControlEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INameSpaceTreeControlEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     INameSpaceTreeControlEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INameSpaceTreeControlEvents *This);
+                     INameSpaceTreeControlEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INameSpaceTreeControlEvents *This);
+                     INameSpaceTreeControlEvents *This);
 
     /*** INameSpaceTreeControlEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnItemClick)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        NSTCEHITTEST nstceHitTest,
-        NSTCECLICKTYPE nstceClickType);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     NSTCEHITTEST nstceHitTest,
+                     NSTCECLICKTYPE nstceClickType);
 
     HRESULT (STDMETHODCALLTYPE *OnPropertyItemCommit)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *OnItemStateChanging)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE nstcisState);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE nstcisState);
 
     HRESULT (STDMETHODCALLTYPE *OnItemStateChanged)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        NSTCITEMSTATE nstcisMask,
-        NSTCITEMSTATE nstcisState);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     NSTCITEMSTATE nstcisMask,
+                     NSTCITEMSTATE nstcisState);
 
     HRESULT (STDMETHODCALLTYPE *OnSelectionChanged)(
-        INameSpaceTreeControlEvents *This,
-        IShellItemArray *psiaSelection);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItemArray *psiaSelection);
 
     HRESULT (STDMETHODCALLTYPE *OnKeyboardInput)(
-        INameSpaceTreeControlEvents *This,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     INameSpaceTreeControlEvents *This,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *OnBeforeExpand)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *OnAfterExpand)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *OnBeginLabelEdit)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *OnEndLabelEdit)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *OnGetToolTip)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        LPWSTR pszTip,
-        int cchTip);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     LPWSTR pszTip,
+                     int cchTip);
 
     HRESULT (STDMETHODCALLTYPE *OnBeforeItemDelete)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *OnItemAdded)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        WINBOOL fIsRoot);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     WINBOOL fIsRoot);
 
     HRESULT (STDMETHODCALLTYPE *OnItemDeleted)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        WINBOOL fIsRoot);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     WINBOOL fIsRoot);
 
     HRESULT (STDMETHODCALLTYPE *OnBeforeContextMenu)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        REFIID riid,
-        void **ppv);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *OnAfterContextMenu)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        IContextMenu *pcmIn,
-        REFIID riid,
-        void **ppv);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     IContextMenu *pcmIn,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *OnBeforeStateImageChange)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *OnGetDefaultIconIndex)(
-        INameSpaceTreeControlEvents *This,
-        IShellItem *psi,
-        int *piDefaultIcon,
-        int *piOpenIcon);
+                     INameSpaceTreeControlEvents *This,
+                     IShellItem *psi,
+                     int *piDefaultIcon,
+                     int *piOpenIcon);
 
     END_INTERFACE
 } INameSpaceTreeControlEventsVtbl;
@@ -27446,39 +27446,39 @@ MIDL_INTERFACE("f9c665d6-c2f2-4c19-bf33-8322d7352f51")
 INameSpaceTreeControlDropHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnDragEnter(
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        WINBOOL fOutsideSource,
-        DWORD grfKeyState,
-        DWORD *pdwEffect) = 0;
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     WINBOOL fOutsideSource,
+                     DWORD grfKeyState,
+                     DWORD *pdwEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDragOver(
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        DWORD grfKeyState,
-        DWORD *pdwEffect) = 0;
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     DWORD grfKeyState,
+                     DWORD *pdwEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDragPosition(
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        int iNewPosition,
-        int iOldPosition) = 0;
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     int iNewPosition,
+                     int iOldPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDrop(
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        int iPosition,
-        DWORD grfKeyState,
-        DWORD *pdwEffect) = 0;
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     int iPosition,
+                     DWORD grfKeyState,
+                     DWORD *pdwEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDropPosition(
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        int iNewPosition,
-        int iOldPosition) = 0;
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     int iNewPosition,
+                     int iOldPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDragLeave(
-        IShellItem *psiOver) = 0;
+                     IShellItem *psiOver) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -27490,57 +27490,57 @@ typedef struct INameSpaceTreeControlDropHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INameSpaceTreeControlDropHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     INameSpaceTreeControlDropHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INameSpaceTreeControlDropHandler *This);
+                     INameSpaceTreeControlDropHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INameSpaceTreeControlDropHandler *This);
+                     INameSpaceTreeControlDropHandler *This);
 
     /*** INameSpaceTreeControlDropHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *OnDragEnter)(
-        INameSpaceTreeControlDropHandler *This,
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        WINBOOL fOutsideSource,
-        DWORD grfKeyState,
-        DWORD *pdwEffect);
+                     INameSpaceTreeControlDropHandler *This,
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     WINBOOL fOutsideSource,
+                     DWORD grfKeyState,
+                     DWORD *pdwEffect);
 
     HRESULT (STDMETHODCALLTYPE *OnDragOver)(
-        INameSpaceTreeControlDropHandler *This,
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        DWORD grfKeyState,
-        DWORD *pdwEffect);
+                     INameSpaceTreeControlDropHandler *This,
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     DWORD grfKeyState,
+                     DWORD *pdwEffect);
 
     HRESULT (STDMETHODCALLTYPE *OnDragPosition)(
-        INameSpaceTreeControlDropHandler *This,
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        int iNewPosition,
-        int iOldPosition);
+                     INameSpaceTreeControlDropHandler *This,
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     int iNewPosition,
+                     int iOldPosition);
 
     HRESULT (STDMETHODCALLTYPE *OnDrop)(
-        INameSpaceTreeControlDropHandler *This,
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        int iPosition,
-        DWORD grfKeyState,
-        DWORD *pdwEffect);
+                     INameSpaceTreeControlDropHandler *This,
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     int iPosition,
+                     DWORD grfKeyState,
+                     DWORD *pdwEffect);
 
     HRESULT (STDMETHODCALLTYPE *OnDropPosition)(
-        INameSpaceTreeControlDropHandler *This,
-        IShellItem *psiOver,
-        IShellItemArray *psiaData,
-        int iNewPosition,
-        int iOldPosition);
+                     INameSpaceTreeControlDropHandler *This,
+                     IShellItem *psiOver,
+                     IShellItemArray *psiaData,
+                     int iNewPosition,
+                     int iOldPosition);
 
     HRESULT (STDMETHODCALLTYPE *OnDragLeave)(
-        INameSpaceTreeControlDropHandler *This,
-        IShellItem *psiOver);
+                     INameSpaceTreeControlDropHandler *This,
+                     IShellItem *psiOver);
 
     END_INTERFACE
 } INameSpaceTreeControlDropHandlerVtbl;
@@ -27613,15 +27613,15 @@ MIDL_INTERFACE("71f312de-43ed-4190-8477-e9536b82350b")
 INameSpaceTreeAccessible : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnGetDefaultAccessibilityAction(
-        IShellItem *psi,
-        BSTR *pbstrDefaultAction) = 0;
+                     IShellItem *psi,
+                     BSTR *pbstrDefaultAction) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDoDefaultAccessibilityAction(
-        IShellItem *psi) = 0;
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnGetAccessibilityRole(
-        IShellItem *psi,
-        VARIANT *pvarRole) = 0;
+                     IShellItem *psi,
+                     VARIANT *pvarRole) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -27633,30 +27633,30 @@ typedef struct INameSpaceTreeAccessibleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INameSpaceTreeAccessible *This,
-        REFIID riid,
-        void **ppvObject);
+                     INameSpaceTreeAccessible *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INameSpaceTreeAccessible *This);
+                     INameSpaceTreeAccessible *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INameSpaceTreeAccessible *This);
+                     INameSpaceTreeAccessible *This);
 
     /*** INameSpaceTreeAccessible methods ***/
     HRESULT (STDMETHODCALLTYPE *OnGetDefaultAccessibilityAction)(
-        INameSpaceTreeAccessible *This,
-        IShellItem *psi,
-        BSTR *pbstrDefaultAction);
+                     INameSpaceTreeAccessible *This,
+                     IShellItem *psi,
+                     BSTR *pbstrDefaultAction);
 
     HRESULT (STDMETHODCALLTYPE *OnDoDefaultAccessibilityAction)(
-        INameSpaceTreeAccessible *This,
-        IShellItem *psi);
+                     INameSpaceTreeAccessible *This,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *OnGetAccessibilityRole)(
-        INameSpaceTreeAccessible *This,
-        IShellItem *psi,
-        VARIANT *pvarRole);
+                     INameSpaceTreeAccessible *This,
+                     IShellItem *psi,
+                     VARIANT *pvarRole);
 
     END_INTERFACE
 } INameSpaceTreeAccessibleVtbl;
@@ -27728,26 +27728,26 @@ MIDL_INTERFACE("2d3ba758-33ee-42d5-bb7b-5f3431d86c78")
 INameSpaceTreeControlCustomDraw : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PrePaint(
-        HDC hdc,
-        RECT *prc,
-        LRESULT *plres) = 0;
+                     HDC hdc,
+                     RECT *prc,
+                     LRESULT *plres) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostPaint(
-        HDC hdc,
-        RECT *prc) = 0;
+                     HDC hdc,
+                     RECT *prc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ItemPrePaint(
-        HDC hdc,
-        RECT *prc,
-        NSTCCUSTOMDRAW *pnstccdItem,
-        COLORREF *pclrText,
-        COLORREF *pclrTextBk,
-        LRESULT *plres) = 0;
+                     HDC hdc,
+                     RECT *prc,
+                     NSTCCUSTOMDRAW *pnstccdItem,
+                     COLORREF *pclrText,
+                     COLORREF *pclrTextBk,
+                     LRESULT *plres) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ItemPostPaint(
-        HDC hdc,
-        RECT *prc,
-        NSTCCUSTOMDRAW *pnstccdItem) = 0;
+                     HDC hdc,
+                     RECT *prc,
+                     NSTCCUSTOMDRAW *pnstccdItem) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -27759,42 +27759,42 @@ typedef struct INameSpaceTreeControlCustomDrawVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INameSpaceTreeControlCustomDraw *This,
-        REFIID riid,
-        void **ppvObject);
+                     INameSpaceTreeControlCustomDraw *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INameSpaceTreeControlCustomDraw *This);
+                     INameSpaceTreeControlCustomDraw *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INameSpaceTreeControlCustomDraw *This);
+                     INameSpaceTreeControlCustomDraw *This);
 
     /*** INameSpaceTreeControlCustomDraw methods ***/
     HRESULT (STDMETHODCALLTYPE *PrePaint)(
-        INameSpaceTreeControlCustomDraw *This,
-        HDC hdc,
-        RECT *prc,
-        LRESULT *plres);
+                     INameSpaceTreeControlCustomDraw *This,
+                     HDC hdc,
+                     RECT *prc,
+                     LRESULT *plres);
 
     HRESULT (STDMETHODCALLTYPE *PostPaint)(
-        INameSpaceTreeControlCustomDraw *This,
-        HDC hdc,
-        RECT *prc);
+                     INameSpaceTreeControlCustomDraw *This,
+                     HDC hdc,
+                     RECT *prc);
 
     HRESULT (STDMETHODCALLTYPE *ItemPrePaint)(
-        INameSpaceTreeControlCustomDraw *This,
-        HDC hdc,
-        RECT *prc,
-        NSTCCUSTOMDRAW *pnstccdItem,
-        COLORREF *pclrText,
-        COLORREF *pclrTextBk,
-        LRESULT *plres);
+                     INameSpaceTreeControlCustomDraw *This,
+                     HDC hdc,
+                     RECT *prc,
+                     NSTCCUSTOMDRAW *pnstccdItem,
+                     COLORREF *pclrText,
+                     COLORREF *pclrTextBk,
+                     LRESULT *plres);
 
     HRESULT (STDMETHODCALLTYPE *ItemPostPaint)(
-        INameSpaceTreeControlCustomDraw *This,
-        HDC hdc,
-        RECT *prc,
-        NSTCCUSTOMDRAW *pnstccdItem);
+                     INameSpaceTreeControlCustomDraw *This,
+                     HDC hdc,
+                     RECT *prc,
+                     NSTCCUSTOMDRAW *pnstccdItem);
 
     END_INTERFACE
 } INameSpaceTreeControlCustomDrawVtbl;
@@ -27868,8 +27868,8 @@ MIDL_INTERFACE("e9701183-e6b3-4ff2-8568-813615fec7be")
 INameSpaceTreeControlFolderCapabilities : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetFolderCapabilities(
-        NSTCFOLDERCAPABILITIES nfcMask,
-        NSTCFOLDERCAPABILITIES *pnfcValue) = 0;
+                     NSTCFOLDERCAPABILITIES nfcMask,
+                     NSTCFOLDERCAPABILITIES *pnfcValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -27881,21 +27881,21 @@ typedef struct INameSpaceTreeControlFolderCapabilitiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INameSpaceTreeControlFolderCapabilities *This,
-        REFIID riid,
-        void **ppvObject);
+                     INameSpaceTreeControlFolderCapabilities *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INameSpaceTreeControlFolderCapabilities *This);
+                     INameSpaceTreeControlFolderCapabilities *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INameSpaceTreeControlFolderCapabilities *This);
+                     INameSpaceTreeControlFolderCapabilities *This);
 
     /*** INameSpaceTreeControlFolderCapabilities methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFolderCapabilities)(
-        INameSpaceTreeControlFolderCapabilities *This,
-        NSTCFOLDERCAPABILITIES nfcMask,
-        NSTCFOLDERCAPABILITIES *pnfcValue);
+                     INameSpaceTreeControlFolderCapabilities *This,
+                     NSTCFOLDERCAPABILITIES nfcMask,
+                     NSTCFOLDERCAPABILITIES *pnfcValue);
 
     END_INTERFACE
 } INameSpaceTreeControlFolderCapabilitiesVtbl;
@@ -27954,26 +27954,26 @@ MIDL_INTERFACE("8895b1c6-b41f-4c1c-a562-0d564250836f")
 IPreviewHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetWindow(
-        HWND hwnd,
-        const RECT *prc) = 0;
+                     HWND hwnd,
+                     const RECT *prc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRect(
-        const RECT *prc) = 0;
+                     const RECT *prc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoPreview(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unload(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFocus(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryFocus(
-        HWND *phwnd) = 0;
+                     HWND *phwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        MSG *pmsg) = 0;
+                     MSG *pmsg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -27985,42 +27985,42 @@ typedef struct IPreviewHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPreviewHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPreviewHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPreviewHandler *This);
+                     IPreviewHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPreviewHandler *This);
+                     IPreviewHandler *This);
 
     /*** IPreviewHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *SetWindow)(
-        IPreviewHandler *This,
-        HWND hwnd,
-        const RECT *prc);
+                     IPreviewHandler *This,
+                     HWND hwnd,
+                     const RECT *prc);
 
     HRESULT (STDMETHODCALLTYPE *SetRect)(
-        IPreviewHandler *This,
-        const RECT *prc);
+                     IPreviewHandler *This,
+                     const RECT *prc);
 
     HRESULT (STDMETHODCALLTYPE *DoPreview)(
-        IPreviewHandler *This);
+                     IPreviewHandler *This);
 
     HRESULT (STDMETHODCALLTYPE *Unload)(
-        IPreviewHandler *This);
+                     IPreviewHandler *This);
 
     HRESULT (STDMETHODCALLTYPE *SetFocus)(
-        IPreviewHandler *This);
+                     IPreviewHandler *This);
 
     HRESULT (STDMETHODCALLTYPE *QueryFocus)(
-        IPreviewHandler *This,
-        HWND *phwnd);
+                     IPreviewHandler *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IPreviewHandler *This,
-        MSG *pmsg);
+                     IPreviewHandler *This,
+                     MSG *pmsg);
 
     END_INTERFACE
 } IPreviewHandlerVtbl;
@@ -28102,10 +28102,10 @@ MIDL_INTERFACE("fec87aaf-35f9-447a-adb7-20234491401a")
 IPreviewHandlerFrame : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetWindowContext(
-        PREVIEWHANDLERFRAMEINFO *pinfo) = 0;
+                     PREVIEWHANDLERFRAMEINFO *pinfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        MSG *pmsg) = 0;
+                     MSG *pmsg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -28117,24 +28117,24 @@ typedef struct IPreviewHandlerFrameVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPreviewHandlerFrame *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPreviewHandlerFrame *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPreviewHandlerFrame *This);
+                     IPreviewHandlerFrame *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPreviewHandlerFrame *This);
+                     IPreviewHandlerFrame *This);
 
     /*** IPreviewHandlerFrame methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindowContext)(
-        IPreviewHandlerFrame *This,
-        PREVIEWHANDLERFRAMEINFO *pinfo);
+                     IPreviewHandlerFrame *This,
+                     PREVIEWHANDLERFRAMEINFO *pinfo);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IPreviewHandlerFrame *This,
-        MSG *pmsg);
+                     IPreviewHandlerFrame *This,
+                     MSG *pmsg);
 
     END_INTERFACE
 } IPreviewHandlerFrameVtbl;
@@ -28192,16 +28192,16 @@ MIDL_INTERFACE("6d67e846-5b9c-4db8-9cbc-dde12f4254f1")
 ITrayDeskBand : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ShowDeskBand(
-        REFCLSID clsid) = 0;
+                     REFCLSID clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HideDeskBand(
-        REFCLSID clsid) = 0;
+                     REFCLSID clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDeskBandShown(
-        REFCLSID clsid) = 0;
+                     REFCLSID clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeskBandRegistrationChanged(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -28213,31 +28213,31 @@ typedef struct ITrayDeskBandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITrayDeskBand *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITrayDeskBand *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITrayDeskBand *This);
+                     ITrayDeskBand *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITrayDeskBand *This);
+                     ITrayDeskBand *This);
 
     /*** ITrayDeskBand methods ***/
     HRESULT (STDMETHODCALLTYPE *ShowDeskBand)(
-        ITrayDeskBand *This,
-        REFCLSID clsid);
+                     ITrayDeskBand *This,
+                     REFCLSID clsid);
 
     HRESULT (STDMETHODCALLTYPE *HideDeskBand)(
-        ITrayDeskBand *This,
-        REFCLSID clsid);
+                     ITrayDeskBand *This,
+                     REFCLSID clsid);
 
     HRESULT (STDMETHODCALLTYPE *IsDeskBandShown)(
-        ITrayDeskBand *This,
-        REFCLSID clsid);
+                     ITrayDeskBand *This,
+                     REFCLSID clsid);
 
     HRESULT (STDMETHODCALLTYPE *DeskBandRegistrationChanged)(
-        ITrayDeskBand *This);
+                     ITrayDeskBand *This);
 
     END_INTERFACE
 } ITrayDeskBandVtbl;
@@ -28302,18 +28302,18 @@ MIDL_INTERFACE("b9075c7c-d48e-403f-ab99-d6c77a1084ac")
 IBandHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateBand(
-        REFCLSID rclsidBand,
-        WINBOOL fAvailable,
-        WINBOOL fVisible,
-        REFIID riid,
-        void **ppv) = 0;
+                     REFCLSID rclsidBand,
+                     WINBOOL fAvailable,
+                     WINBOOL fVisible,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBandAvailability(
-        REFCLSID rclsidBand,
-        WINBOOL fAvailable) = 0;
+                     REFCLSID rclsidBand,
+                     WINBOOL fAvailable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DestroyBand(
-        REFCLSID rclsidBand) = 0;
+                     REFCLSID rclsidBand) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -28325,33 +28325,33 @@ typedef struct IBandHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBandHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBandHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBandHost *This);
+                     IBandHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBandHost *This);
+                     IBandHost *This);
 
     /*** IBandHost methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateBand)(
-        IBandHost *This,
-        REFCLSID rclsidBand,
-        WINBOOL fAvailable,
-        WINBOOL fVisible,
-        REFIID riid,
-        void **ppv);
+                     IBandHost *This,
+                     REFCLSID rclsidBand,
+                     WINBOOL fAvailable,
+                     WINBOOL fVisible,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetBandAvailability)(
-        IBandHost *This,
-        REFCLSID rclsidBand,
-        WINBOOL fAvailable);
+                     IBandHost *This,
+                     REFCLSID rclsidBand,
+                     WINBOOL fAvailable);
 
     HRESULT (STDMETHODCALLTYPE *DestroyBand)(
-        IBandHost *This,
-        REFCLSID rclsidBand);
+                     IBandHost *This,
+                     REFCLSID rclsidBand);
 
     END_INTERFACE
 } IBandHostVtbl;
@@ -28437,8 +28437,8 @@ MIDL_INTERFACE("e07010ec-bc17-44c0-97b0-46c7c95b9edc")
 IExplorerPaneVisibility : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPaneState(
-        REFEXPLORERPANE ep,
-        EXPLORERPANESTATE *peps) = 0;
+                     REFEXPLORERPANE ep,
+                     EXPLORERPANESTATE *peps) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -28450,21 +28450,21 @@ typedef struct IExplorerPaneVisibilityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExplorerPaneVisibility *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExplorerPaneVisibility *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExplorerPaneVisibility *This);
+                     IExplorerPaneVisibility *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExplorerPaneVisibility *This);
+                     IExplorerPaneVisibility *This);
 
     /*** IExplorerPaneVisibility methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPaneState)(
-        IExplorerPaneVisibility *This,
-        REFEXPLORERPANE ep,
-        EXPLORERPANESTATE *peps);
+                     IExplorerPaneVisibility *This,
+                     REFEXPLORERPANE ep,
+                     EXPLORERPANESTATE *peps);
 
     END_INTERFACE
 } IExplorerPaneVisibilityVtbl;
@@ -28519,12 +28519,12 @@ MIDL_INTERFACE("3409e930-5a39-11d1-83fa-00a0c90dc849")
 IContextMenuCB : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CallBack(
-        IShellFolder *psf,
-        HWND hwndOwner,
-        IDataObject *pdtobj,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     IShellFolder *psf,
+                     HWND hwndOwner,
+                     IDataObject *pdtobj,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -28536,25 +28536,25 @@ typedef struct IContextMenuCBVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IContextMenuCB *This,
-        REFIID riid,
-        void **ppvObject);
+                     IContextMenuCB *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IContextMenuCB *This);
+                     IContextMenuCB *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IContextMenuCB *This);
+                     IContextMenuCB *This);
 
     /*** IContextMenuCB methods ***/
     HRESULT (STDMETHODCALLTYPE *CallBack)(
-        IContextMenuCB *This,
-        IShellFolder *psf,
-        HWND hwndOwner,
-        IDataObject *pdtobj,
-        UINT uMsg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     IContextMenuCB *This,
+                     IShellFolder *psf,
+                     HWND hwndOwner,
+                     IDataObject *pdtobj,
+                     UINT uMsg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     END_INTERFACE
 } IContextMenuCBVtbl;
@@ -28608,26 +28608,26 @@ MIDL_INTERFACE("41ded17d-d6b3-4261-997d-88c60e4b1d58")
 IDefaultExtractIconInit : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        UINT uFlags) = 0;
+                     UINT uFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetKey(
-        HKEY hkey) = 0;
+                     HKEY hkey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNormalIcon(
-        LPCWSTR pszFile,
-        int iIcon) = 0;
+                     LPCWSTR pszFile,
+                     int iIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOpenIcon(
-        LPCWSTR pszFile,
-        int iIcon) = 0;
+                     LPCWSTR pszFile,
+                     int iIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetShortcutIcon(
-        LPCWSTR pszFile,
-        int iIcon) = 0;
+                     LPCWSTR pszFile,
+                     int iIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultIcon(
-        LPCWSTR pszFile,
-        int iIcon) = 0;
+                     LPCWSTR pszFile,
+                     int iIcon) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -28639,44 +28639,44 @@ typedef struct IDefaultExtractIconInitVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDefaultExtractIconInit *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDefaultExtractIconInit *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDefaultExtractIconInit *This);
+                     IDefaultExtractIconInit *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDefaultExtractIconInit *This);
+                     IDefaultExtractIconInit *This);
 
     /*** IDefaultExtractIconInit methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IDefaultExtractIconInit *This,
-        UINT uFlags);
+                     IDefaultExtractIconInit *This,
+                     UINT uFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetKey)(
-        IDefaultExtractIconInit *This,
-        HKEY hkey);
+                     IDefaultExtractIconInit *This,
+                     HKEY hkey);
 
     HRESULT (STDMETHODCALLTYPE *SetNormalIcon)(
-        IDefaultExtractIconInit *This,
-        LPCWSTR pszFile,
-        int iIcon);
+                     IDefaultExtractIconInit *This,
+                     LPCWSTR pszFile,
+                     int iIcon);
 
     HRESULT (STDMETHODCALLTYPE *SetOpenIcon)(
-        IDefaultExtractIconInit *This,
-        LPCWSTR pszFile,
-        int iIcon);
+                     IDefaultExtractIconInit *This,
+                     LPCWSTR pszFile,
+                     int iIcon);
 
     HRESULT (STDMETHODCALLTYPE *SetShortcutIcon)(
-        IDefaultExtractIconInit *This,
-        LPCWSTR pszFile,
-        int iIcon);
+                     IDefaultExtractIconInit *This,
+                     LPCWSTR pszFile,
+                     int iIcon);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultIcon)(
-        IDefaultExtractIconInit *This,
-        LPCWSTR pszFile,
-        int iIcon);
+                     IDefaultExtractIconInit *This,
+                     LPCWSTR pszFile,
+                     int iIcon);
 
     END_INTERFACE
 } IDefaultExtractIconInitVtbl;
@@ -28787,34 +28787,34 @@ MIDL_INTERFACE("a08ce4d0-fa25-44ab-b57c-c7b1c323e0b9")
 IExplorerCommand : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetTitle(
-        IShellItemArray *psiItemArray,
-        LPWSTR *ppszName) = 0;
+                     IShellItemArray *psiItemArray,
+                     LPWSTR *ppszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIcon(
-        IShellItemArray *psiItemArray,
-        LPWSTR *ppszIcon) = 0;
+                     IShellItemArray *psiItemArray,
+                     LPWSTR *ppszIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetToolTip(
-        IShellItemArray *psiItemArray,
-        LPWSTR *ppszInfotip) = 0;
+                     IShellItemArray *psiItemArray,
+                     LPWSTR *ppszInfotip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCanonicalName(
-        GUID *pguidCommandName) = 0;
+                     GUID *pguidCommandName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        IShellItemArray *psiItemArray,
-        WINBOOL fOkToBeSlow,
-        EXPCMDSTATE *pCmdState) = 0;
+                     IShellItemArray *psiItemArray,
+                     WINBOOL fOkToBeSlow,
+                     EXPCMDSTATE *pCmdState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        IShellItemArray *psiItemArray,
-        IBindCtx *pbc) = 0;
+                     IShellItemArray *psiItemArray,
+                     IBindCtx *pbc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlags(
-        EXPCMDFLAGS *pFlags) = 0;
+                     EXPCMDFLAGS *pFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumSubCommands(
-        IEnumExplorerCommand **ppEnum) = 0;
+                     IEnumExplorerCommand **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -28826,54 +28826,54 @@ typedef struct IExplorerCommandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExplorerCommand *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExplorerCommand *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExplorerCommand *This);
+                     IExplorerCommand *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExplorerCommand *This);
+                     IExplorerCommand *This);
 
     /*** IExplorerCommand methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTitle)(
-        IExplorerCommand *This,
-        IShellItemArray *psiItemArray,
-        LPWSTR *ppszName);
+                     IExplorerCommand *This,
+                     IShellItemArray *psiItemArray,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetIcon)(
-        IExplorerCommand *This,
-        IShellItemArray *psiItemArray,
-        LPWSTR *ppszIcon);
+                     IExplorerCommand *This,
+                     IShellItemArray *psiItemArray,
+                     LPWSTR *ppszIcon);
 
     HRESULT (STDMETHODCALLTYPE *GetToolTip)(
-        IExplorerCommand *This,
-        IShellItemArray *psiItemArray,
-        LPWSTR *ppszInfotip);
+                     IExplorerCommand *This,
+                     IShellItemArray *psiItemArray,
+                     LPWSTR *ppszInfotip);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalName)(
-        IExplorerCommand *This,
-        GUID *pguidCommandName);
+                     IExplorerCommand *This,
+                     GUID *pguidCommandName);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IExplorerCommand *This,
-        IShellItemArray *psiItemArray,
-        WINBOOL fOkToBeSlow,
-        EXPCMDSTATE *pCmdState);
+                     IExplorerCommand *This,
+                     IShellItemArray *psiItemArray,
+                     WINBOOL fOkToBeSlow,
+                     EXPCMDSTATE *pCmdState);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IExplorerCommand *This,
-        IShellItemArray *psiItemArray,
-        IBindCtx *pbc);
+                     IExplorerCommand *This,
+                     IShellItemArray *psiItemArray,
+                     IBindCtx *pbc);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        IExplorerCommand *This,
-        EXPCMDFLAGS *pFlags);
+                     IExplorerCommand *This,
+                     EXPCMDFLAGS *pFlags);
 
     HRESULT (STDMETHODCALLTYPE *EnumSubCommands)(
-        IExplorerCommand *This,
-        IEnumExplorerCommand **ppEnum);
+                     IExplorerCommand *This,
+                     IEnumExplorerCommand **ppEnum);
 
     END_INTERFACE
 } IExplorerCommandVtbl;
@@ -28954,9 +28954,9 @@ MIDL_INTERFACE("bddacb60-7657-47ae-8445-d23e1acf82ae")
 IExplorerCommandState : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        IShellItemArray *psiItemArray,
-        WINBOOL fOkToBeSlow,
-        EXPCMDSTATE *pCmdState) = 0;
+                     IShellItemArray *psiItemArray,
+                     WINBOOL fOkToBeSlow,
+                     EXPCMDSTATE *pCmdState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -28968,22 +28968,22 @@ typedef struct IExplorerCommandStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExplorerCommandState *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExplorerCommandState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExplorerCommandState *This);
+                     IExplorerCommandState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExplorerCommandState *This);
+                     IExplorerCommandState *This);
 
     /*** IExplorerCommandState methods ***/
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IExplorerCommandState *This,
-        IShellItemArray *psiItemArray,
-        WINBOOL fOkToBeSlow,
-        EXPCMDSTATE *pCmdState);
+                     IExplorerCommandState *This,
+                     IShellItemArray *psiItemArray,
+                     WINBOOL fOkToBeSlow,
+                     EXPCMDSTATE *pCmdState);
 
     END_INTERFACE
 } IExplorerCommandStateVtbl;
@@ -29036,8 +29036,8 @@ MIDL_INTERFACE("85075acf-231f-40ea-9610-d26b7b58f638")
 IInitializeCommand : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        LPCWSTR pszCommandName,
-        IPropertyBag *ppb) = 0;
+                     LPCWSTR pszCommandName,
+                     IPropertyBag *ppb) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29049,21 +29049,21 @@ typedef struct IInitializeCommandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeCommand *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeCommand *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeCommand *This);
+                     IInitializeCommand *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeCommand *This);
+                     IInitializeCommand *This);
 
     /*** IInitializeCommand methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IInitializeCommand *This,
-        LPCWSTR pszCommandName,
-        IPropertyBag *ppb);
+                     IInitializeCommand *This,
+                     LPCWSTR pszCommandName,
+                     IPropertyBag *ppb);
 
     END_INTERFACE
 } IInitializeCommandVtbl;
@@ -29116,18 +29116,18 @@ MIDL_INTERFACE("a88826f8-186f-4987-aade-ea0cef8fbfe8")
 IEnumExplorerCommand : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        IExplorerCommand **pUICommand,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IExplorerCommand **pUICommand,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumExplorerCommand **ppenum) = 0;
+                     IEnumExplorerCommand **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29139,33 +29139,33 @@ typedef struct IEnumExplorerCommandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumExplorerCommand *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumExplorerCommand *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumExplorerCommand *This);
+                     IEnumExplorerCommand *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumExplorerCommand *This);
+                     IEnumExplorerCommand *This);
 
     /*** IEnumExplorerCommand methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumExplorerCommand *This,
-        ULONG celt,
-        IExplorerCommand **pUICommand,
-        ULONG *pceltFetched);
+                     IEnumExplorerCommand *This,
+                     ULONG celt,
+                     IExplorerCommand **pUICommand,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumExplorerCommand *This,
-        ULONG celt);
+                     IEnumExplorerCommand *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumExplorerCommand *This);
+                     IEnumExplorerCommand *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumExplorerCommand *This,
-        IEnumExplorerCommand **ppenum);
+                     IEnumExplorerCommand *This,
+                     IEnumExplorerCommand **ppenum);
 
     END_INTERFACE
 } IEnumExplorerCommandVtbl;
@@ -29250,14 +29250,14 @@ MIDL_INTERFACE("64961751-0835-43c0-8ffe-d57686530e64")
 IExplorerCommandProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCommands(
-        IUnknown *punkSite,
-        REFIID riid,
-        void **ppv) = 0;
+                     IUnknown *punkSite,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCommand(
-        REFGUID rguidCommandId,
-        REFIID riid,
-        void **ppv) = 0;
+                     REFGUID rguidCommandId,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29269,28 +29269,28 @@ typedef struct IExplorerCommandProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExplorerCommandProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExplorerCommandProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExplorerCommandProvider *This);
+                     IExplorerCommandProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExplorerCommandProvider *This);
+                     IExplorerCommandProvider *This);
 
     /*** IExplorerCommandProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCommands)(
-        IExplorerCommandProvider *This,
-        IUnknown *punkSite,
-        REFIID riid,
-        void **ppv);
+                     IExplorerCommandProvider *This,
+                     IUnknown *punkSite,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetCommand)(
-        IExplorerCommandProvider *This,
-        REFGUID rguidCommandId,
-        REFIID riid,
-        void **ppv);
+                     IExplorerCommandProvider *This,
+                     REFGUID rguidCommandId,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IExplorerCommandProviderVtbl;
@@ -29349,11 +29349,11 @@ MIDL_INTERFACE("6e0f9881-42a8-4f2a-97f8-8af4e026d92d")
 IInitializeNetworkFolder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        PCIDLIST_ABSOLUTE pidl,
-        PCIDLIST_ABSOLUTE pidlTarget,
-        UINT uDisplayType,
-        LPCWSTR pszResName,
-        LPCWSTR pszProvider) = 0;
+                     PCIDLIST_ABSOLUTE pidl,
+                     PCIDLIST_ABSOLUTE pidlTarget,
+                     UINT uDisplayType,
+                     LPCWSTR pszResName,
+                     LPCWSTR pszProvider) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29365,24 +29365,24 @@ typedef struct IInitializeNetworkFolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeNetworkFolder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeNetworkFolder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeNetworkFolder *This);
+                     IInitializeNetworkFolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeNetworkFolder *This);
+                     IInitializeNetworkFolder *This);
 
     /*** IInitializeNetworkFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IInitializeNetworkFolder *This,
-        PCIDLIST_ABSOLUTE pidl,
-        PCIDLIST_ABSOLUTE pidlTarget,
-        UINT uDisplayType,
-        LPCWSTR pszResName,
-        LPCWSTR pszProvider);
+                     IInitializeNetworkFolder *This,
+                     PCIDLIST_ABSOLUTE pidl,
+                     PCIDLIST_ABSOLUTE pidlTarget,
+                     UINT uDisplayType,
+                     LPCWSTR pszResName,
+                     LPCWSTR pszProvider);
 
     END_INTERFACE
 } IInitializeNetworkFolderVtbl;
@@ -29442,17 +29442,17 @@ MIDL_INTERFACE("d11ad862-66de-4df4-bf6c-1f5621996af1")
 IOpenControlPanel : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Open(
-        LPCWSTR pszName,
-        LPCWSTR pszPage,
-        IUnknown *punkSite) = 0;
+                     LPCWSTR pszName,
+                     LPCWSTR pszPage,
+                     IUnknown *punkSite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPath(
-        LPCWSTR pszName,
-        LPWSTR pszPath,
-        UINT cchPath) = 0;
+                     LPCWSTR pszName,
+                     LPWSTR pszPath,
+                     UINT cchPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentView(
-        CPVIEW *pView) = 0;
+                     CPVIEW *pView) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29464,32 +29464,32 @@ typedef struct IOpenControlPanelVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpenControlPanel *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpenControlPanel *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpenControlPanel *This);
+                     IOpenControlPanel *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpenControlPanel *This);
+                     IOpenControlPanel *This);
 
     /*** IOpenControlPanel methods ***/
     HRESULT (STDMETHODCALLTYPE *Open)(
-        IOpenControlPanel *This,
-        LPCWSTR pszName,
-        LPCWSTR pszPage,
-        IUnknown *punkSite);
+                     IOpenControlPanel *This,
+                     LPCWSTR pszName,
+                     LPCWSTR pszPage,
+                     IUnknown *punkSite);
 
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IOpenControlPanel *This,
-        LPCWSTR pszName,
-        LPWSTR pszPath,
-        UINT cchPath);
+                     IOpenControlPanel *This,
+                     LPCWSTR pszName,
+                     LPWSTR pszPath,
+                     UINT cchPath);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentView)(
-        IOpenControlPanel *This,
-        CPVIEW *pView);
+                     IOpenControlPanel *This,
+                     CPVIEW *pView);
 
     END_INTERFACE
 } IOpenControlPanelVtbl;
@@ -29550,7 +29550,7 @@ MIDL_INTERFACE("0df60d92-6818-46d6-b358-d66170dde466")
 IComputerInfoChangeNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ComputerInfoChanged(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29562,19 +29562,19 @@ typedef struct IComputerInfoChangeNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IComputerInfoChangeNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IComputerInfoChangeNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IComputerInfoChangeNotify *This);
+                     IComputerInfoChangeNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IComputerInfoChangeNotify *This);
+                     IComputerInfoChangeNotify *This);
 
     /*** IComputerInfoChangeNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *ComputerInfoChanged)(
-        IComputerInfoChangeNotify *This);
+                     IComputerInfoChangeNotify *This);
 
     END_INTERFACE
 } IComputerInfoChangeNotifyVtbl;
@@ -29629,10 +29629,10 @@ MIDL_INTERFACE("01e18d10-4d8b-11d2-855d-006008059367")
 IFileSystemBindData : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFindData(
-        const WIN32_FIND_DATAW *pfd) = 0;
+                     const WIN32_FIND_DATAW *pfd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFindData(
-        WIN32_FIND_DATAW *pfd) = 0;
+                     WIN32_FIND_DATAW *pfd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29644,24 +29644,24 @@ typedef struct IFileSystemBindDataVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileSystemBindData *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileSystemBindData *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileSystemBindData *This);
+                     IFileSystemBindData *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileSystemBindData *This);
+                     IFileSystemBindData *This);
 
     /*** IFileSystemBindData methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFindData)(
-        IFileSystemBindData *This,
-        const WIN32_FIND_DATAW *pfd);
+                     IFileSystemBindData *This,
+                     const WIN32_FIND_DATAW *pfd);
 
     HRESULT (STDMETHODCALLTYPE *GetFindData)(
-        IFileSystemBindData *This,
-        WIN32_FIND_DATAW *pfd);
+                     IFileSystemBindData *This,
+                     WIN32_FIND_DATAW *pfd);
 
     END_INTERFACE
 } IFileSystemBindDataVtbl;
@@ -29718,16 +29718,16 @@ MIDL_INTERFACE("3acf075f-71db-4afa-81f0-3fc4fdf2a5b8")
 IFileSystemBindData2 : public IFileSystemBindData
 {
     virtual HRESULT STDMETHODCALLTYPE SetFileID(
-        LARGE_INTEGER liFileID) = 0;
+                     LARGE_INTEGER liFileID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileID(
-        LARGE_INTEGER *pliFileID) = 0;
+                     LARGE_INTEGER *pliFileID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetJunctionCLSID(
-        REFCLSID clsid) = 0;
+                     REFCLSID clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetJunctionCLSID(
-        CLSID *pclsid) = 0;
+                     CLSID *pclsid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29739,41 +29739,41 @@ typedef struct IFileSystemBindData2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileSystemBindData2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileSystemBindData2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileSystemBindData2 *This);
+                     IFileSystemBindData2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileSystemBindData2 *This);
+                     IFileSystemBindData2 *This);
 
     /*** IFileSystemBindData methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFindData)(
-        IFileSystemBindData2 *This,
-        const WIN32_FIND_DATAW *pfd);
+                     IFileSystemBindData2 *This,
+                     const WIN32_FIND_DATAW *pfd);
 
     HRESULT (STDMETHODCALLTYPE *GetFindData)(
-        IFileSystemBindData2 *This,
-        WIN32_FIND_DATAW *pfd);
+                     IFileSystemBindData2 *This,
+                     WIN32_FIND_DATAW *pfd);
 
     /*** IFileSystemBindData2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFileID)(
-        IFileSystemBindData2 *This,
-        LARGE_INTEGER liFileID);
+                     IFileSystemBindData2 *This,
+                     LARGE_INTEGER liFileID);
 
     HRESULT (STDMETHODCALLTYPE *GetFileID)(
-        IFileSystemBindData2 *This,
-        LARGE_INTEGER *pliFileID);
+                     IFileSystemBindData2 *This,
+                     LARGE_INTEGER *pliFileID);
 
     HRESULT (STDMETHODCALLTYPE *SetJunctionCLSID)(
-        IFileSystemBindData2 *This,
-        REFCLSID clsid);
+                     IFileSystemBindData2 *This,
+                     REFCLSID clsid);
 
     HRESULT (STDMETHODCALLTYPE *GetJunctionCLSID)(
-        IFileSystemBindData2 *This,
-        CLSID *pclsid);
+                     IFileSystemBindData2 *This,
+                     CLSID *pclsid);
 
     END_INTERFACE
 } IFileSystemBindData2Vtbl;
@@ -29854,35 +29854,35 @@ MIDL_INTERFACE("6332debf-87b5-4670-90c0-5e57b408a49e")
 ICustomDestinationList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAppID(
-        LPCWSTR pszAppID) = 0;
+                     LPCWSTR pszAppID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginList(
-        UINT *pcMinSlots,
-        REFIID riid,
-        void **ppv) = 0;
+                     UINT *pcMinSlots,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AppendCategory(
-        LPCWSTR pszCategory,
-        IObjectArray *poa) = 0;
+                     LPCWSTR pszCategory,
+                     IObjectArray *poa) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AppendKnownCategory(
-        KNOWNDESTCATEGORY category) = 0;
+                     KNOWNDESTCATEGORY category) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddUserTasks(
-        IObjectArray *poa) = 0;
+                     IObjectArray *poa) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitList(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRemovedDestinations(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteList(
-        LPCWSTR pszAppID) = 0;
+                     LPCWSTR pszAppID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AbortList(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -29894,54 +29894,54 @@ typedef struct ICustomDestinationListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICustomDestinationList *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICustomDestinationList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICustomDestinationList *This);
+                     ICustomDestinationList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICustomDestinationList *This);
+                     ICustomDestinationList *This);
 
     /*** ICustomDestinationList methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAppID)(
-        ICustomDestinationList *This,
-        LPCWSTR pszAppID);
+                     ICustomDestinationList *This,
+                     LPCWSTR pszAppID);
 
     HRESULT (STDMETHODCALLTYPE *BeginList)(
-        ICustomDestinationList *This,
-        UINT *pcMinSlots,
-        REFIID riid,
-        void **ppv);
+                     ICustomDestinationList *This,
+                     UINT *pcMinSlots,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *AppendCategory)(
-        ICustomDestinationList *This,
-        LPCWSTR pszCategory,
-        IObjectArray *poa);
+                     ICustomDestinationList *This,
+                     LPCWSTR pszCategory,
+                     IObjectArray *poa);
 
     HRESULT (STDMETHODCALLTYPE *AppendKnownCategory)(
-        ICustomDestinationList *This,
-        KNOWNDESTCATEGORY category);
+                     ICustomDestinationList *This,
+                     KNOWNDESTCATEGORY category);
 
     HRESULT (STDMETHODCALLTYPE *AddUserTasks)(
-        ICustomDestinationList *This,
-        IObjectArray *poa);
+                     ICustomDestinationList *This,
+                     IObjectArray *poa);
 
     HRESULT (STDMETHODCALLTYPE *CommitList)(
-        ICustomDestinationList *This);
+                     ICustomDestinationList *This);
 
     HRESULT (STDMETHODCALLTYPE *GetRemovedDestinations)(
-        ICustomDestinationList *This,
-        REFIID riid,
-        void **ppv);
+                     ICustomDestinationList *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *DeleteList)(
-        ICustomDestinationList *This,
-        LPCWSTR pszAppID);
+                     ICustomDestinationList *This,
+                     LPCWSTR pszAppID);
 
     HRESULT (STDMETHODCALLTYPE *AbortList)(
-        ICustomDestinationList *This);
+                     ICustomDestinationList *This);
 
     END_INTERFACE
 } ICustomDestinationListVtbl;
@@ -30026,13 +30026,13 @@ MIDL_INTERFACE("12337d35-94c6-48a0-bce7-6a9c69d4d600")
 IApplicationDestinations : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAppID(
-        LPCWSTR pszAppID) = 0;
+                     LPCWSTR pszAppID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveDestination(
-        IUnknown *punk) = 0;
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAllDestinations(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30044,27 +30044,27 @@ typedef struct IApplicationDestinationsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationDestinations *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationDestinations *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationDestinations *This);
+                     IApplicationDestinations *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationDestinations *This);
+                     IApplicationDestinations *This);
 
     /*** IApplicationDestinations methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAppID)(
-        IApplicationDestinations *This,
-        LPCWSTR pszAppID);
+                     IApplicationDestinations *This,
+                     LPCWSTR pszAppID);
 
     HRESULT (STDMETHODCALLTYPE *RemoveDestination)(
-        IApplicationDestinations *This,
-        IUnknown *punk);
+                     IApplicationDestinations *This,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAllDestinations)(
-        IApplicationDestinations *This);
+                     IApplicationDestinations *This);
 
     END_INTERFACE
 } IApplicationDestinationsVtbl;
@@ -30130,13 +30130,13 @@ MIDL_INTERFACE("3c594f9f-9f30-47a1-979a-c9e83d3d0a06")
 IApplicationDocumentLists : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAppID(
-        LPCWSTR pszAppID) = 0;
+                     LPCWSTR pszAppID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetList(
-        APPDOCLISTTYPE listtype,
-        UINT cItemsDesired,
-        REFIID riid,
-        void **ppv) = 0;
+                     APPDOCLISTTYPE listtype,
+                     UINT cItemsDesired,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30148,27 +30148,27 @@ typedef struct IApplicationDocumentListsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationDocumentLists *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationDocumentLists *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationDocumentLists *This);
+                     IApplicationDocumentLists *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationDocumentLists *This);
+                     IApplicationDocumentLists *This);
 
     /*** IApplicationDocumentLists methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAppID)(
-        IApplicationDocumentLists *This,
-        LPCWSTR pszAppID);
+                     IApplicationDocumentLists *This,
+                     LPCWSTR pszAppID);
 
     HRESULT (STDMETHODCALLTYPE *GetList)(
-        IApplicationDocumentLists *This,
-        APPDOCLISTTYPE listtype,
-        UINT cItemsDesired,
-        REFIID riid,
-        void **ppv);
+                     IApplicationDocumentLists *This,
+                     APPDOCLISTTYPE listtype,
+                     UINT cItemsDesired,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IApplicationDocumentListsVtbl;
@@ -30225,10 +30225,10 @@ MIDL_INTERFACE("36db0196-9665-46d1-9ba7-d3709eecf9ed")
 IObjectWithAppUserModelID : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAppID(
-        LPCWSTR pszAppID) = 0;
+                     LPCWSTR pszAppID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAppID(
-        LPWSTR *ppszAppID) = 0;
+                     LPWSTR *ppszAppID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30240,24 +30240,24 @@ typedef struct IObjectWithAppUserModelIDVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectWithAppUserModelID *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectWithAppUserModelID *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectWithAppUserModelID *This);
+                     IObjectWithAppUserModelID *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectWithAppUserModelID *This);
+                     IObjectWithAppUserModelID *This);
 
     /*** IObjectWithAppUserModelID methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAppID)(
-        IObjectWithAppUserModelID *This,
-        LPCWSTR pszAppID);
+                     IObjectWithAppUserModelID *This,
+                     LPCWSTR pszAppID);
 
     HRESULT (STDMETHODCALLTYPE *GetAppID)(
-        IObjectWithAppUserModelID *This,
-        LPWSTR *ppszAppID);
+                     IObjectWithAppUserModelID *This,
+                     LPWSTR *ppszAppID);
 
     END_INTERFACE
 } IObjectWithAppUserModelIDVtbl;
@@ -30314,10 +30314,10 @@ MIDL_INTERFACE("71e806fb-8dee-46fc-bf8c-7748a8a1ae13")
 IObjectWithProgID : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetProgID(
-        LPCWSTR pszProgID) = 0;
+                     LPCWSTR pszProgID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProgID(
-        LPWSTR *ppszProgID) = 0;
+                     LPWSTR *ppszProgID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30329,24 +30329,24 @@ typedef struct IObjectWithProgIDVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectWithProgID *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectWithProgID *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectWithProgID *This);
+                     IObjectWithProgID *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectWithProgID *This);
+                     IObjectWithProgID *This);
 
     /*** IObjectWithProgID methods ***/
     HRESULT (STDMETHODCALLTYPE *SetProgID)(
-        IObjectWithProgID *This,
-        LPCWSTR pszProgID);
+                     IObjectWithProgID *This,
+                     LPCWSTR pszProgID);
 
     HRESULT (STDMETHODCALLTYPE *GetProgID)(
-        IObjectWithProgID *This,
-        LPWSTR *ppszProgID);
+                     IObjectWithProgID *This,
+                     LPWSTR *ppszProgID);
 
     END_INTERFACE
 } IObjectWithProgIDVtbl;
@@ -30403,9 +30403,9 @@ MIDL_INTERFACE("6589b6d2-5f8d-4b9e-b7e0-23cdd9717d8c")
 IUpdateIDList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Update(
-        IBindCtx *pbc,
-        PCUITEMID_CHILD pidlIn,
-        PITEMID_CHILD *ppidlOut) = 0;
+                     IBindCtx *pbc,
+                     PCUITEMID_CHILD pidlIn,
+                     PITEMID_CHILD *ppidlOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30417,22 +30417,22 @@ typedef struct IUpdateIDListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUpdateIDList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUpdateIDList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUpdateIDList *This);
+                     IUpdateIDList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUpdateIDList *This);
+                     IUpdateIDList *This);
 
     /*** IUpdateIDList methods ***/
     HRESULT (STDMETHODCALLTYPE *Update)(
-        IUpdateIDList *This,
-        IBindCtx *pbc,
-        PCUITEMID_CHILD pidlIn,
-        PITEMID_CHILD *ppidlOut);
+                     IUpdateIDList *This,
+                     IBindCtx *pbc,
+                     PCUITEMID_CHILD pidlIn,
+                     PITEMID_CHILD *ppidlOut);
 
     END_INTERFACE
 } IUpdateIDListVtbl;
@@ -30489,7 +30489,7 @@ MIDL_INTERFACE("c1646bc4-f298-4f91-a204-eb2dd1709d1a")
 IDesktopGadget : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RunGadget(
-        LPCWSTR gadgetPath) = 0;
+                     LPCWSTR gadgetPath) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30501,20 +30501,20 @@ typedef struct IDesktopGadgetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDesktopGadget *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDesktopGadget *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDesktopGadget *This);
+                     IDesktopGadget *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDesktopGadget *This);
+                     IDesktopGadget *This);
 
     /*** IDesktopGadget methods ***/
     HRESULT (STDMETHODCALLTYPE *RunGadget)(
-        IDesktopGadget *This,
-        LPCWSTR gadgetPath);
+                     IDesktopGadget *This,
+                     LPCWSTR gadgetPath);
 
     END_INTERFACE
 } IDesktopGadgetVtbl;
@@ -30596,59 +30596,59 @@ MIDL_INTERFACE("b92b56a9-8b55-4e14-9a89-0199bbb6f93b")
 IDesktopWallpaper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetWallpaper(
-        LPCWSTR monitorID,
-        LPCWSTR wallpaper) = 0;
+                     LPCWSTR monitorID,
+                     LPCWSTR wallpaper) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWallpaper(
-        LPCWSTR monitorID,
-        LPWSTR *wallpaper) = 0;
+                     LPCWSTR monitorID,
+                     LPWSTR *wallpaper) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMonitorDevicePathAt(
-        UINT monitorIndex,
-        LPWSTR *monitorID) = 0;
+                     UINT monitorIndex,
+                     LPWSTR *monitorID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMonitorDevicePathCount(
-        UINT *count) = 0;
+                     UINT *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMonitorRECT(
-        LPCWSTR monitorID,
-        RECT *displayRect) = 0;
+                     LPCWSTR monitorID,
+                     RECT *displayRect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBackgroundColor(
-        COLORREF color) = 0;
+                     COLORREF color) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBackgroundColor(
-        COLORREF *color) = 0;
+                     COLORREF *color) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPosition(
-        DESKTOP_WALLPAPER_POSITION position) = 0;
+                     DESKTOP_WALLPAPER_POSITION position) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPosition(
-        DESKTOP_WALLPAPER_POSITION *position) = 0;
+                     DESKTOP_WALLPAPER_POSITION *position) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSlideshow(
-        IShellItemArray *items) = 0;
+                     IShellItemArray *items) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSlideshow(
-        IShellItemArray **items) = 0;
+                     IShellItemArray **items) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSlideshowOptions(
-        DESKTOP_SLIDESHOW_OPTIONS options,
-        UINT slideshowTick) = 0;
+                     DESKTOP_SLIDESHOW_OPTIONS options,
+                     UINT slideshowTick) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSlideshowOptions(
-        DESKTOP_SLIDESHOW_OPTIONS *options,
-        UINT *slideshowTick) = 0;
+                     DESKTOP_SLIDESHOW_OPTIONS *options,
+                     UINT *slideshowTick) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdvanceSlideshow(
-        LPCWSTR monitorID,
-        DESKTOP_SLIDESHOW_DIRECTION direction) = 0;
+                     LPCWSTR monitorID,
+                     DESKTOP_SLIDESHOW_DIRECTION direction) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        DESKTOP_SLIDESHOW_STATE *state) = 0;
+                     DESKTOP_SLIDESHOW_STATE *state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Enable(
-        WINBOOL enable) = 0;
+                     WINBOOL enable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30660,87 +30660,87 @@ typedef struct IDesktopWallpaperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDesktopWallpaper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDesktopWallpaper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDesktopWallpaper *This);
+                     IDesktopWallpaper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDesktopWallpaper *This);
+                     IDesktopWallpaper *This);
 
     /*** IDesktopWallpaper methods ***/
     HRESULT (STDMETHODCALLTYPE *SetWallpaper)(
-        IDesktopWallpaper *This,
-        LPCWSTR monitorID,
-        LPCWSTR wallpaper);
+                     IDesktopWallpaper *This,
+                     LPCWSTR monitorID,
+                     LPCWSTR wallpaper);
 
     HRESULT (STDMETHODCALLTYPE *GetWallpaper)(
-        IDesktopWallpaper *This,
-        LPCWSTR monitorID,
-        LPWSTR *wallpaper);
+                     IDesktopWallpaper *This,
+                     LPCWSTR monitorID,
+                     LPWSTR *wallpaper);
 
     HRESULT (STDMETHODCALLTYPE *GetMonitorDevicePathAt)(
-        IDesktopWallpaper *This,
-        UINT monitorIndex,
-        LPWSTR *monitorID);
+                     IDesktopWallpaper *This,
+                     UINT monitorIndex,
+                     LPWSTR *monitorID);
 
     HRESULT (STDMETHODCALLTYPE *GetMonitorDevicePathCount)(
-        IDesktopWallpaper *This,
-        UINT *count);
+                     IDesktopWallpaper *This,
+                     UINT *count);
 
     HRESULT (STDMETHODCALLTYPE *GetMonitorRECT)(
-        IDesktopWallpaper *This,
-        LPCWSTR monitorID,
-        RECT *displayRect);
+                     IDesktopWallpaper *This,
+                     LPCWSTR monitorID,
+                     RECT *displayRect);
 
     HRESULT (STDMETHODCALLTYPE *SetBackgroundColor)(
-        IDesktopWallpaper *This,
-        COLORREF color);
+                     IDesktopWallpaper *This,
+                     COLORREF color);
 
     HRESULT (STDMETHODCALLTYPE *GetBackgroundColor)(
-        IDesktopWallpaper *This,
-        COLORREF *color);
+                     IDesktopWallpaper *This,
+                     COLORREF *color);
 
     HRESULT (STDMETHODCALLTYPE *SetPosition)(
-        IDesktopWallpaper *This,
-        DESKTOP_WALLPAPER_POSITION position);
+                     IDesktopWallpaper *This,
+                     DESKTOP_WALLPAPER_POSITION position);
 
     HRESULT (STDMETHODCALLTYPE *GetPosition)(
-        IDesktopWallpaper *This,
-        DESKTOP_WALLPAPER_POSITION *position);
+                     IDesktopWallpaper *This,
+                     DESKTOP_WALLPAPER_POSITION *position);
 
     HRESULT (STDMETHODCALLTYPE *SetSlideshow)(
-        IDesktopWallpaper *This,
-        IShellItemArray *items);
+                     IDesktopWallpaper *This,
+                     IShellItemArray *items);
 
     HRESULT (STDMETHODCALLTYPE *GetSlideshow)(
-        IDesktopWallpaper *This,
-        IShellItemArray **items);
+                     IDesktopWallpaper *This,
+                     IShellItemArray **items);
 
     HRESULT (STDMETHODCALLTYPE *SetSlideshowOptions)(
-        IDesktopWallpaper *This,
-        DESKTOP_SLIDESHOW_OPTIONS options,
-        UINT slideshowTick);
+                     IDesktopWallpaper *This,
+                     DESKTOP_SLIDESHOW_OPTIONS options,
+                     UINT slideshowTick);
 
     HRESULT (STDMETHODCALLTYPE *GetSlideshowOptions)(
-        IDesktopWallpaper *This,
-        DESKTOP_SLIDESHOW_OPTIONS *options,
-        UINT *slideshowTick);
+                     IDesktopWallpaper *This,
+                     DESKTOP_SLIDESHOW_OPTIONS *options,
+                     UINT *slideshowTick);
 
     HRESULT (STDMETHODCALLTYPE *AdvanceSlideshow)(
-        IDesktopWallpaper *This,
-        LPCWSTR monitorID,
-        DESKTOP_SLIDESHOW_DIRECTION direction);
+                     IDesktopWallpaper *This,
+                     LPCWSTR monitorID,
+                     DESKTOP_SLIDESHOW_DIRECTION direction);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IDesktopWallpaper *This,
-        DESKTOP_SLIDESHOW_STATE *state);
+                     IDesktopWallpaper *This,
+                     DESKTOP_SLIDESHOW_STATE *state);
 
     HRESULT (STDMETHODCALLTYPE *Enable)(
-        IDesktopWallpaper *This,
-        WINBOOL enable);
+                     IDesktopWallpaper *This,
+                     WINBOOL enable);
 
     END_INTERFACE
 } IDesktopWallpaperVtbl;
@@ -30868,11 +30868,11 @@ MIDL_INTERFACE("7a3bd1d9-35a9-4fb3-a467-f48cac35e2d0")
 IHomeGroup : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsMember(
-        WINBOOL *member) = 0;
+                     WINBOOL *member) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowSharingWizard(
-        HWND owner,
-        HOMEGROUPSHARINGCHOICES *sharingchoices) = 0;
+                     HWND owner,
+                     HOMEGROUPSHARINGCHOICES *sharingchoices) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30884,25 +30884,25 @@ typedef struct IHomeGroupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHomeGroup *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHomeGroup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHomeGroup *This);
+                     IHomeGroup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHomeGroup *This);
+                     IHomeGroup *This);
 
     /*** IHomeGroup methods ***/
     HRESULT (STDMETHODCALLTYPE *IsMember)(
-        IHomeGroup *This,
-        WINBOOL *member);
+                     IHomeGroup *This,
+                     WINBOOL *member);
 
     HRESULT (STDMETHODCALLTYPE *ShowSharingWizard)(
-        IHomeGroup *This,
-        HWND owner,
-        HOMEGROUPSHARINGCHOICES *sharingchoices);
+                     IHomeGroup *This,
+                     HWND owner,
+                     HOMEGROUPSHARINGCHOICES *sharingchoices);
 
     END_INTERFACE
 } IHomeGroupVtbl;
@@ -30959,7 +30959,7 @@ MIDL_INTERFACE("c3e12eb5-7d8d-44f8-b6dd-0e77b34d6de4")
 IInitializeWithPropertyStore : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IPropertyStore *pps) = 0;
+                     IPropertyStore *pps) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -30971,20 +30971,20 @@ typedef struct IInitializeWithPropertyStoreVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeWithPropertyStore *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeWithPropertyStore *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeWithPropertyStore *This);
+                     IInitializeWithPropertyStore *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeWithPropertyStore *This);
+                     IInitializeWithPropertyStore *This);
 
     /*** IInitializeWithPropertyStore methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IInitializeWithPropertyStore *This,
-        IPropertyStore *pps);
+                     IInitializeWithPropertyStore *This,
+                     IPropertyStore *pps);
 
     END_INTERFACE
 } IInitializeWithPropertyStoreVtbl;
@@ -31037,12 +31037,12 @@ MIDL_INTERFACE("f0ee7333-e6fc-479b-9f25-a860c234a38e")
 IOpenSearchSource : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetResults(
-        HWND hwnd,
-        LPCWSTR pszQuery,
-        DWORD dwStartIndex,
-        DWORD dwCount,
-        REFIID riid,
-        void **ppv) = 0;
+                     HWND hwnd,
+                     LPCWSTR pszQuery,
+                     DWORD dwStartIndex,
+                     DWORD dwCount,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -31054,25 +31054,25 @@ typedef struct IOpenSearchSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpenSearchSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpenSearchSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpenSearchSource *This);
+                     IOpenSearchSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpenSearchSource *This);
+                     IOpenSearchSource *This);
 
     /*** IOpenSearchSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetResults)(
-        IOpenSearchSource *This,
-        HWND hwnd,
-        LPCWSTR pszQuery,
-        DWORD dwStartIndex,
-        DWORD dwCount,
-        REFIID riid,
-        void **ppv);
+                     IOpenSearchSource *This,
+                     HWND hwnd,
+                     LPCWSTR pszQuery,
+                     DWORD dwStartIndex,
+                     DWORD dwCount,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IOpenSearchSourceVtbl;
@@ -31153,72 +31153,72 @@ MIDL_INTERFACE("11a66efa-382e-451a-9234-1e0e12ef3085")
 IShellLibrary : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE LoadLibraryFromItem(
-        IShellItem *psiLibrary,
-        DWORD grfMode) = 0;
+                     IShellItem *psiLibrary,
+                     DWORD grfMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadLibraryFromKnownFolder(
-        REFKNOWNFOLDERID kfidLibrary,
-        DWORD grfMode) = 0;
+                     REFKNOWNFOLDERID kfidLibrary,
+                     DWORD grfMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddFolder(
-        IShellItem *psiLocation) = 0;
+                     IShellItem *psiLocation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveFolder(
-        IShellItem *psiLocation) = 0;
+                     IShellItem *psiLocation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolders(
-        LIBRARYFOLDERFILTER lff,
-        REFIID riid,
-        void **ppv) = 0;
+                     LIBRARYFOLDERFILTER lff,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResolveFolder(
-        IShellItem *psiFolderToResolve,
-        DWORD dwTimeout,
-        REFIID riid,
-        void **ppv) = 0;
+                     IShellItem *psiFolderToResolve,
+                     DWORD dwTimeout,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultSaveFolder(
-        DEFAULTSAVEFOLDERTYPE dsft,
-        REFIID riid,
-        void **ppv) = 0;
+                     DEFAULTSAVEFOLDERTYPE dsft,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultSaveFolder(
-        DEFAULTSAVEFOLDERTYPE dsft,
-        IShellItem *psi) = 0;
+                     DEFAULTSAVEFOLDERTYPE dsft,
+                     IShellItem *psi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOptions(
-        LIBRARYOPTIONFLAGS *plofOptions) = 0;
+                     LIBRARYOPTIONFLAGS *plofOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOptions(
-        LIBRARYOPTIONFLAGS lofMask,
-        LIBRARYOPTIONFLAGS lofOptions) = 0;
+                     LIBRARYOPTIONFLAGS lofMask,
+                     LIBRARYOPTIONFLAGS lofOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolderType(
-        FOLDERTYPEID *pftid) = 0;
+                     FOLDERTYPEID *pftid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFolderType(
-        REFFOLDERTYPEID ftid) = 0;
+                     REFFOLDERTYPEID ftid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIcon(
-        LPWSTR *ppszIcon) = 0;
+                     LPWSTR *ppszIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIcon(
-        LPCWSTR pszIcon) = 0;
+                     LPCWSTR pszIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        IShellItem *psiFolderToSaveIn,
-        LPCWSTR pszLibraryName,
-        LIBRARYSAVEFLAGS lsf,
-        IShellItem **ppsiSavedTo) = 0;
+                     IShellItem *psiFolderToSaveIn,
+                     LPCWSTR pszLibraryName,
+                     LIBRARYSAVEFLAGS lsf,
+                     IShellItem **ppsiSavedTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveInKnownFolder(
-        REFKNOWNFOLDERID kfidToSaveIn,
-        LPCWSTR pszLibraryName,
-        LIBRARYSAVEFLAGS lsf,
-        IShellItem **ppsiSavedTo) = 0;
+                     REFKNOWNFOLDERID kfidToSaveIn,
+                     LPCWSTR pszLibraryName,
+                     LIBRARYSAVEFLAGS lsf,
+                     IShellItem **ppsiSavedTo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -31230,100 +31230,100 @@ typedef struct IShellLibraryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellLibrary *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellLibrary *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellLibrary *This);
+                     IShellLibrary *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellLibrary *This);
+                     IShellLibrary *This);
 
     /*** IShellLibrary methods ***/
     HRESULT (STDMETHODCALLTYPE *LoadLibraryFromItem)(
-        IShellLibrary *This,
-        IShellItem *psiLibrary,
-        DWORD grfMode);
+                     IShellLibrary *This,
+                     IShellItem *psiLibrary,
+                     DWORD grfMode);
 
     HRESULT (STDMETHODCALLTYPE *LoadLibraryFromKnownFolder)(
-        IShellLibrary *This,
-        REFKNOWNFOLDERID kfidLibrary,
-        DWORD grfMode);
+                     IShellLibrary *This,
+                     REFKNOWNFOLDERID kfidLibrary,
+                     DWORD grfMode);
 
     HRESULT (STDMETHODCALLTYPE *AddFolder)(
-        IShellLibrary *This,
-        IShellItem *psiLocation);
+                     IShellLibrary *This,
+                     IShellItem *psiLocation);
 
     HRESULT (STDMETHODCALLTYPE *RemoveFolder)(
-        IShellLibrary *This,
-        IShellItem *psiLocation);
+                     IShellLibrary *This,
+                     IShellItem *psiLocation);
 
     HRESULT (STDMETHODCALLTYPE *GetFolders)(
-        IShellLibrary *This,
-        LIBRARYFOLDERFILTER lff,
-        REFIID riid,
-        void **ppv);
+                     IShellLibrary *This,
+                     LIBRARYFOLDERFILTER lff,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *ResolveFolder)(
-        IShellLibrary *This,
-        IShellItem *psiFolderToResolve,
-        DWORD dwTimeout,
-        REFIID riid,
-        void **ppv);
+                     IShellLibrary *This,
+                     IShellItem *psiFolderToResolve,
+                     DWORD dwTimeout,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultSaveFolder)(
-        IShellLibrary *This,
-        DEFAULTSAVEFOLDERTYPE dsft,
-        REFIID riid,
-        void **ppv);
+                     IShellLibrary *This,
+                     DEFAULTSAVEFOLDERTYPE dsft,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultSaveFolder)(
-        IShellLibrary *This,
-        DEFAULTSAVEFOLDERTYPE dsft,
-        IShellItem *psi);
+                     IShellLibrary *This,
+                     DEFAULTSAVEFOLDERTYPE dsft,
+                     IShellItem *psi);
 
     HRESULT (STDMETHODCALLTYPE *GetOptions)(
-        IShellLibrary *This,
-        LIBRARYOPTIONFLAGS *plofOptions);
+                     IShellLibrary *This,
+                     LIBRARYOPTIONFLAGS *plofOptions);
 
     HRESULT (STDMETHODCALLTYPE *SetOptions)(
-        IShellLibrary *This,
-        LIBRARYOPTIONFLAGS lofMask,
-        LIBRARYOPTIONFLAGS lofOptions);
+                     IShellLibrary *This,
+                     LIBRARYOPTIONFLAGS lofMask,
+                     LIBRARYOPTIONFLAGS lofOptions);
 
     HRESULT (STDMETHODCALLTYPE *GetFolderType)(
-        IShellLibrary *This,
-        FOLDERTYPEID *pftid);
+                     IShellLibrary *This,
+                     FOLDERTYPEID *pftid);
 
     HRESULT (STDMETHODCALLTYPE *SetFolderType)(
-        IShellLibrary *This,
-        REFFOLDERTYPEID ftid);
+                     IShellLibrary *This,
+                     REFFOLDERTYPEID ftid);
 
     HRESULT (STDMETHODCALLTYPE *GetIcon)(
-        IShellLibrary *This,
-        LPWSTR *ppszIcon);
+                     IShellLibrary *This,
+                     LPWSTR *ppszIcon);
 
     HRESULT (STDMETHODCALLTYPE *SetIcon)(
-        IShellLibrary *This,
-        LPCWSTR pszIcon);
+                     IShellLibrary *This,
+                     LPCWSTR pszIcon);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IShellLibrary *This);
+                     IShellLibrary *This);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IShellLibrary *This,
-        IShellItem *psiFolderToSaveIn,
-        LPCWSTR pszLibraryName,
-        LIBRARYSAVEFLAGS lsf,
-        IShellItem **ppsiSavedTo);
+                     IShellLibrary *This,
+                     IShellItem *psiFolderToSaveIn,
+                     LPCWSTR pszLibraryName,
+                     LIBRARYSAVEFLAGS lsf,
+                     IShellItem **ppsiSavedTo);
 
     HRESULT (STDMETHODCALLTYPE *SaveInKnownFolder)(
-        IShellLibrary *This,
-        REFKNOWNFOLDERID kfidToSaveIn,
-        LPCWSTR pszLibraryName,
-        LIBRARYSAVEFLAGS lsf,
-        IShellItem **ppsiSavedTo);
+                     IShellLibrary *This,
+                     REFKNOWNFOLDERID kfidToSaveIn,
+                     LPCWSTR pszLibraryName,
+                     LIBRARYSAVEFLAGS lsf,
+                     IShellItem **ppsiSavedTo);
 
     END_INTERFACE
 } IShellLibraryVtbl;
@@ -31445,8 +31445,8 @@ MIDL_INTERFACE("385cfb7d-4e0c-4106-912e-8cfb4c191f45")
 IPlaybackManagerEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnPlaybackManagerEvent(
-        DWORD dwSessionId,
-        PBM_EVENT mediaEvent) = 0;
+                     DWORD dwSessionId,
+                     PBM_EVENT mediaEvent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -31458,21 +31458,21 @@ typedef struct IPlaybackManagerEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPlaybackManagerEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPlaybackManagerEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPlaybackManagerEvents *This);
+                     IPlaybackManagerEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPlaybackManagerEvents *This);
+                     IPlaybackManagerEvents *This);
 
     /*** IPlaybackManagerEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnPlaybackManagerEvent)(
-        IPlaybackManagerEvents *This,
-        DWORD dwSessionId,
-        PBM_EVENT mediaEvent);
+                     IPlaybackManagerEvents *This,
+                     DWORD dwSessionId,
+                     PBM_EVENT mediaEvent);
 
     END_INTERFACE
 } IPlaybackManagerEventsVtbl;
@@ -31541,17 +31541,17 @@ MIDL_INTERFACE("0f3c1b01-8199-4173-ba78-985882266f7a")
 IPlaybackManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        PBM_SESSION_TYPE type,
-        IPlaybackManagerEvents *pEvents,
-        DWORD *pdwSessionId) = 0;
+                     PBM_SESSION_TYPE type,
+                     IPlaybackManagerEvents *pEvents,
+                     DWORD *pdwSessionId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwSessionId) = 0;
+                     DWORD dwSessionId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ChangeSessionState(
-        DWORD dwSessionId,
-        PBM_PLAY_STATE state,
-        PBM_MUTE_STATE mute) = 0;
+                     DWORD dwSessionId,
+                     PBM_PLAY_STATE state,
+                     PBM_MUTE_STATE mute) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -31563,32 +31563,32 @@ typedef struct IPlaybackManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPlaybackManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPlaybackManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPlaybackManager *This);
+                     IPlaybackManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPlaybackManager *This);
+                     IPlaybackManager *This);
 
     /*** IPlaybackManager methods ***/
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IPlaybackManager *This,
-        PBM_SESSION_TYPE type,
-        IPlaybackManagerEvents *pEvents,
-        DWORD *pdwSessionId);
+                     IPlaybackManager *This,
+                     PBM_SESSION_TYPE type,
+                     IPlaybackManagerEvents *pEvents,
+                     DWORD *pdwSessionId);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IPlaybackManager *This,
-        DWORD dwSessionId);
+                     IPlaybackManager *This,
+                     DWORD dwSessionId);
 
     HRESULT (STDMETHODCALLTYPE *ChangeSessionState)(
-        IPlaybackManager *This,
-        DWORD dwSessionId,
-        PBM_PLAY_STATE state,
-        PBM_MUTE_STATE mute);
+                     IPlaybackManager *This,
+                     DWORD dwSessionId,
+                     PBM_PLAY_STATE state,
+                     PBM_MUTE_STATE mute);
 
     END_INTERFACE
 } IPlaybackManagerVtbl;
@@ -31663,25 +31663,25 @@ MIDL_INTERFACE("7690aa79-f8fc-4615-a327-36f7d18f5d91")
 IDefaultFolderMenuInitialize : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        HWND hwnd,
-        IContextMenuCB *pcmcb,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        IShellFolder *psf,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        IUnknown *punkAssociation,
-        UINT cKeys,
-        const HKEY *aKeys) = 0;
+                     HWND hwnd,
+                     IContextMenuCB *pcmcb,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     IShellFolder *psf,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     IUnknown *punkAssociation,
+                     UINT cKeys,
+                     const HKEY *aKeys) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMenuRestrictions(
-        DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues) = 0;
+                     DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMenuRestrictions(
-        DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask,
-        DEFAULT_FOLDER_MENU_RESTRICTIONS *pdfmrValues) = 0;
+                     DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask,
+                     DEFAULT_FOLDER_MENU_RESTRICTIONS *pdfmrValues) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetHandlerClsid(
-        REFCLSID rclsid) = 0;
+                     REFCLSID rclsid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -31693,41 +31693,41 @@ typedef struct IDefaultFolderMenuInitializeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDefaultFolderMenuInitialize *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDefaultFolderMenuInitialize *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDefaultFolderMenuInitialize *This);
+                     IDefaultFolderMenuInitialize *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDefaultFolderMenuInitialize *This);
+                     IDefaultFolderMenuInitialize *This);
 
     /*** IDefaultFolderMenuInitialize methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IDefaultFolderMenuInitialize *This,
-        HWND hwnd,
-        IContextMenuCB *pcmcb,
-        PCIDLIST_ABSOLUTE pidlFolder,
-        IShellFolder *psf,
-        UINT cidl,
-        PCUITEMID_CHILD_ARRAY apidl,
-        IUnknown *punkAssociation,
-        UINT cKeys,
-        const HKEY *aKeys);
+                     IDefaultFolderMenuInitialize *This,
+                     HWND hwnd,
+                     IContextMenuCB *pcmcb,
+                     PCIDLIST_ABSOLUTE pidlFolder,
+                     IShellFolder *psf,
+                     UINT cidl,
+                     PCUITEMID_CHILD_ARRAY apidl,
+                     IUnknown *punkAssociation,
+                     UINT cKeys,
+                     const HKEY *aKeys);
 
     HRESULT (STDMETHODCALLTYPE *SetMenuRestrictions)(
-        IDefaultFolderMenuInitialize *This,
-        DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues);
+                     IDefaultFolderMenuInitialize *This,
+                     DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues);
 
     HRESULT (STDMETHODCALLTYPE *GetMenuRestrictions)(
-        IDefaultFolderMenuInitialize *This,
-        DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask,
-        DEFAULT_FOLDER_MENU_RESTRICTIONS *pdfmrValues);
+                     IDefaultFolderMenuInitialize *This,
+                     DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask,
+                     DEFAULT_FOLDER_MENU_RESTRICTIONS *pdfmrValues);
 
     HRESULT (STDMETHODCALLTYPE *SetHandlerClsid)(
-        IDefaultFolderMenuInitialize *This,
-        REFCLSID rclsid);
+                     IDefaultFolderMenuInitialize *This,
+                     REFCLSID rclsid);
 
     END_INTERFACE
 } IDefaultFolderMenuInitializeVtbl;
@@ -31802,21 +31802,21 @@ MIDL_INTERFACE("2e941141-7f97-4756-ba1d-9decde894a3d")
 IApplicationActivationManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ActivateApplication(
-        LPCWSTR appUserModelId,
-        LPCWSTR arguments,
-        ACTIVATEOPTIONS options,
-        DWORD *processId) = 0;
+                     LPCWSTR appUserModelId,
+                     LPCWSTR arguments,
+                     ACTIVATEOPTIONS options,
+                     DWORD *processId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActivateForFile(
-        LPCWSTR appUserModelId,
-        IShellItemArray *itemArray,
-        LPCWSTR verb,
-        DWORD *processId) = 0;
+                     LPCWSTR appUserModelId,
+                     IShellItemArray *itemArray,
+                     LPCWSTR verb,
+                     DWORD *processId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActivateForProtocol(
-        LPCWSTR appUserModelId,
-        IShellItemArray *itemArray,
-        DWORD *processId) = 0;
+                     LPCWSTR appUserModelId,
+                     IShellItemArray *itemArray,
+                     DWORD *processId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -31828,36 +31828,36 @@ typedef struct IApplicationActivationManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationActivationManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationActivationManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationActivationManager *This);
+                     IApplicationActivationManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationActivationManager *This);
+                     IApplicationActivationManager *This);
 
     /*** IApplicationActivationManager methods ***/
     HRESULT (STDMETHODCALLTYPE *ActivateApplication)(
-        IApplicationActivationManager *This,
-        LPCWSTR appUserModelId,
-        LPCWSTR arguments,
-        ACTIVATEOPTIONS options,
-        DWORD *processId);
+                     IApplicationActivationManager *This,
+                     LPCWSTR appUserModelId,
+                     LPCWSTR arguments,
+                     ACTIVATEOPTIONS options,
+                     DWORD *processId);
 
     HRESULT (STDMETHODCALLTYPE *ActivateForFile)(
-        IApplicationActivationManager *This,
-        LPCWSTR appUserModelId,
-        IShellItemArray *itemArray,
-        LPCWSTR verb,
-        DWORD *processId);
+                     IApplicationActivationManager *This,
+                     LPCWSTR appUserModelId,
+                     IShellItemArray *itemArray,
+                     LPCWSTR verb,
+                     DWORD *processId);
 
     HRESULT (STDMETHODCALLTYPE *ActivateForProtocol)(
-        IApplicationActivationManager *This,
-        LPCWSTR appUserModelId,
-        IShellItemArray *itemArray,
-        DWORD *processId);
+                     IApplicationActivationManager *This,
+                     LPCWSTR appUserModelId,
+                     IShellItemArray *itemArray,
+                     DWORD *processId);
 
     END_INTERFACE
 } IApplicationActivationManagerVtbl;
@@ -32824,10 +32824,10 @@ DEFINE_ENUM_FLAG_OPERATORS(LIBRARYMANAGEDIALOGOPTIONS)
     *ppv = NULL;
     hr = CoCreateInstance(CLSID_ShellLibrary, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&plib));
     if (SUCCEEDED(hr)) {
-      hr = plib->LoadLibraryFromItem(psiLibrary, grfMode);
-      if (SUCCEEDED(hr))
-        hr = plib->QueryInterface(riid, ppv);
-      plib->Release();
+                   hr = plib->LoadLibraryFromItem(psiLibrary, grfMode);
+                   if (SUCCEEDED(hr))
+                     hr = plib->QueryInterface(riid, ppv);
+                   plib->Release();
     }
     return hr;
   }
@@ -32839,10 +32839,10 @@ DEFINE_ENUM_FLAG_OPERATORS(LIBRARYMANAGEDIALOGOPTIONS)
     *ppv = NULL;
     hr = CoCreateInstance(CLSID_ShellLibrary, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&plib));
     if (SUCCEEDED(hr)) {
-      hr = plib->LoadLibraryFromKnownFolder(kfidLibrary, grfMode);
-      if (SUCCEEDED(hr))
-        hr = plib->QueryInterface(riid, ppv);
-      plib->Release();
+                   hr = plib->LoadLibraryFromKnownFolder(kfidLibrary, grfMode);
+                   if (SUCCEEDED(hr))
+                     hr = plib->QueryInterface(riid, ppv);
+                   plib->Release();
     }
     return hr;
   }
@@ -32854,8 +32854,8 @@ DEFINE_ENUM_FLAG_OPERATORS(LIBRARYMANAGEDIALOGOPTIONS)
     *ppv = NULL;
     hr = SHCreateItemFromParsingName(pszParsingName, NULL, IID_PPV_ARGS(&psiLibrary));
     if (SUCCEEDED(hr)) {
-      hr = SHLoadLibraryFromItem(psiLibrary, grfMode, riid, ppv);
-      psiLibrary->Release();
+                   hr = SHLoadLibraryFromItem(psiLibrary, grfMode, riid, ppv);
+                   psiLibrary->Release();
     }
     return hr;
   }
@@ -32865,8 +32865,8 @@ DEFINE_ENUM_FLAG_OPERATORS(LIBRARYMANAGEDIALOGOPTIONS)
     HRESULT hr = SHCreateItemFromParsingName(pszFolderPath, NULL, IID_PPV_ARGS(&psiFolder));
 
     if (SUCCEEDED(hr)) {
-      hr = plib->AddFolder(psiFolder);
-      psiFolder->Release();
+                   hr = plib->AddFolder(psiFolder);
+                   psiFolder->Release();
     }
     return hr;
   }
@@ -32876,14 +32876,14 @@ DEFINE_ENUM_FLAG_OPERATORS(LIBRARYMANAGEDIALOGOPTIONS)
     HRESULT hr = pidlFolder ? S_OK : E_INVALIDARG;
 
     if (SUCCEEDED(hr)) {
-      IShellItem *psiFolder;
+                   IShellItem *psiFolder;
 
-      hr = SHCreateItemFromIDList(pidlFolder, IID_PPV_ARGS(&psiFolder));
-      if (SUCCEEDED(hr)) {
-        hr = plib->RemoveFolder(psiFolder);
-        psiFolder->Release();
-      }
-      CoTaskMemFree(pidlFolder);
+                   hr = SHCreateItemFromIDList(pidlFolder, IID_PPV_ARGS(&psiFolder));
+                   if (SUCCEEDED(hr)) {
+                     hr = plib->RemoveFolder(psiFolder);
+                     psiFolder->Release();
+                   }
+                   CoTaskMemFree(pidlFolder);
     }
     return hr;
   }
@@ -32893,20 +32893,20 @@ DEFINE_ENUM_FLAG_OPERATORS(LIBRARYMANAGEDIALOGOPTIONS)
     PIDLIST_ABSOLUTE pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
     HRESULT hr = pidlFolder ? S_OK : E_INVALIDARG;
     if (SUCCEEDED(hr)) {
-      IShellItem *psiFolder;
+                   IShellItem *psiFolder;
 
-      hr = SHCreateItemFromIDList(pidlFolder, IID_PPV_ARGS(&psiFolder));
-      if (SUCCEEDED(hr)) {
-        IShellItem *psiResolved;
+                   hr = SHCreateItemFromIDList(pidlFolder, IID_PPV_ARGS(&psiFolder));
+                   if (SUCCEEDED(hr)) {
+                     IShellItem *psiResolved;
 
-        hr = plib->ResolveFolder(psiFolder, dwTimeout, IID_PPV_ARGS(&psiResolved));
-        if (SUCCEEDED(hr)) {
-          hr = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);
-          psiResolved->Release();
-        }
-        psiFolder->Release();
-      }
-      CoTaskMemFree(pidlFolder);
+                     hr = plib->ResolveFolder(psiFolder, dwTimeout, IID_PPV_ARGS(&psiResolved));
+                     if (SUCCEEDED(hr)) {
+                       hr = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);
+                       psiResolved->Release();
+                     }
+                     psiFolder->Release();
+                   }
+                   CoTaskMemFree(pidlFolder);
     }
     return hr;
   }
@@ -32916,18 +32916,18 @@ DEFINE_ENUM_FLAG_OPERATORS(LIBRARYMANAGEDIALOGOPTIONS)
     HRESULT hr;
 
     if (ppszSavedToPath)
-      *ppszSavedToPath = NULL;
+                   *ppszSavedToPath = NULL;
     hr = SHCreateItemFromParsingName(pszFolderPath, NULL, IID_PPV_ARGS(&psiFolder));
     if (SUCCEEDED(hr)) {
-      IShellItem *psiSavedTo;
+                   IShellItem *psiSavedTo;
 
-      hr = plib->Save(psiFolder, pszLibraryName, lsf, &psiSavedTo);
-      if (SUCCEEDED(hr)) {
-        if (ppszSavedToPath)
-          hr = psiSavedTo->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszSavedToPath);
-        psiSavedTo->Release();
-      }
-      psiFolder->Release();
+                   hr = plib->Save(psiFolder, pszLibraryName, lsf, &psiSavedTo);
+                   if (SUCCEEDED(hr)) {
+                     if (ppszSavedToPath)
+                       hr = psiSavedTo->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszSavedToPath);
+                     psiSavedTo->Release();
+                   }
+                   psiFolder->Release();
     }
     return hr;
   }
@@ -32948,10 +32948,10 @@ MIDL_INTERFACE("92218cab-ecaa-4335-8133-807fd234c2ee")
 IAssocHandlerInvoker : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SupportsSelection(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -32963,22 +32963,22 @@ typedef struct IAssocHandlerInvokerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAssocHandlerInvoker *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAssocHandlerInvoker *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAssocHandlerInvoker *This);
+                     IAssocHandlerInvoker *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAssocHandlerInvoker *This);
+                     IAssocHandlerInvoker *This);
 
     /*** IAssocHandlerInvoker methods ***/
     HRESULT (STDMETHODCALLTYPE *SupportsSelection)(
-        IAssocHandlerInvoker *This);
+                     IAssocHandlerInvoker *This);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAssocHandlerInvoker *This);
+                     IAssocHandlerInvoker *This);
 
     END_INTERFACE
 } IAssocHandlerInvokerVtbl;
@@ -33035,27 +33035,27 @@ MIDL_INTERFACE("f04061ac-1659-4a3f-a954-775aa57fc083")
 IAssocHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        LPWSTR *ppsz) = 0;
+                     LPWSTR *ppsz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUIName(
-        LPWSTR *ppsz) = 0;
+                     LPWSTR *ppsz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIconLocation(
-        LPWSTR *ppszPath,
-        int *pIndex) = 0;
+                     LPWSTR *ppszPath,
+                     int *pIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRecommended(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MakeDefault(
-        LPCWSTR pszDescription) = 0;
+                     LPCWSTR pszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        IDataObject *pdo) = 0;
+                     IDataObject *pdo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInvoker(
-        IDataObject *pdo,
-        IAssocHandlerInvoker **ppInvoker) = 0;
+                     IDataObject *pdo,
+                     IAssocHandlerInvoker **ppInvoker) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33067,45 +33067,45 @@ typedef struct IAssocHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAssocHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAssocHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAssocHandler *This);
+                     IAssocHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAssocHandler *This);
+                     IAssocHandler *This);
 
     /*** IAssocHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IAssocHandler *This,
-        LPWSTR *ppsz);
+                     IAssocHandler *This,
+                     LPWSTR *ppsz);
 
     HRESULT (STDMETHODCALLTYPE *GetUIName)(
-        IAssocHandler *This,
-        LPWSTR *ppsz);
+                     IAssocHandler *This,
+                     LPWSTR *ppsz);
 
     HRESULT (STDMETHODCALLTYPE *GetIconLocation)(
-        IAssocHandler *This,
-        LPWSTR *ppszPath,
-        int *pIndex);
+                     IAssocHandler *This,
+                     LPWSTR *ppszPath,
+                     int *pIndex);
 
     HRESULT (STDMETHODCALLTYPE *IsRecommended)(
-        IAssocHandler *This);
+                     IAssocHandler *This);
 
     HRESULT (STDMETHODCALLTYPE *MakeDefault)(
-        IAssocHandler *This,
-        LPCWSTR pszDescription);
+                     IAssocHandler *This,
+                     LPCWSTR pszDescription);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAssocHandler *This,
-        IDataObject *pdo);
+                     IAssocHandler *This,
+                     IDataObject *pdo);
 
     HRESULT (STDMETHODCALLTYPE *CreateInvoker)(
-        IAssocHandler *This,
-        IDataObject *pdo,
-        IAssocHandlerInvoker **ppInvoker);
+                     IAssocHandler *This,
+                     IDataObject *pdo,
+                     IAssocHandlerInvoker **ppInvoker);
 
     END_INTERFACE
 } IAssocHandlerVtbl;
@@ -33182,9 +33182,9 @@ MIDL_INTERFACE("973810ae-9599-4b88-9e4d-6ee98c9552da")
 IEnumAssocHandlers : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        IAssocHandler **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IAssocHandler **rgelt,
+                     ULONG *pceltFetched) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33196,22 +33196,22 @@ typedef struct IEnumAssocHandlersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumAssocHandlers *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumAssocHandlers *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumAssocHandlers *This);
+                     IEnumAssocHandlers *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumAssocHandlers *This);
+                     IEnumAssocHandlers *This);
 
     /*** IEnumAssocHandlers methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumAssocHandlers *This,
-        ULONG celt,
-        IAssocHandler **rgelt,
-        ULONG *pceltFetched);
+                     IEnumAssocHandlers *This,
+                     ULONG celt,
+                     IAssocHandler **rgelt,
+                     ULONG *pceltFetched);
 
     END_INTERFACE
 } IEnumAssocHandlersVtbl;
@@ -33279,10 +33279,10 @@ MIDL_INTERFACE("3d25f6d6-4b2a-433c-9184-7c33ad35d001")
 IDataObjectProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDataObject(
-        IDataObject **dataObject) = 0;
+                     IDataObject **dataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDataObject(
-        IDataObject *dataObject) = 0;
+                     IDataObject *dataObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33294,24 +33294,24 @@ typedef struct IDataObjectProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDataObjectProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDataObjectProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDataObjectProvider *This);
+                     IDataObjectProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDataObjectProvider *This);
+                     IDataObjectProvider *This);
 
     /*** IDataObjectProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDataObject)(
-        IDataObjectProvider *This,
-        IDataObject **dataObject);
+                     IDataObjectProvider *This,
+                     IDataObject **dataObject);
 
     HRESULT (STDMETHODCALLTYPE *SetDataObject)(
-        IDataObjectProvider *This,
-        IDataObject *dataObject);
+                     IDataObjectProvider *This,
+                     IDataObject *dataObject);
 
     END_INTERFACE
 } IDataObjectProviderVtbl;
@@ -33368,12 +33368,12 @@ MIDL_INTERFACE("3a3dcd6c-3eab-43dc-bcde-45671ce800c8")
 IDataTransferManagerInterop : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetForWindow(
-        HWND appWindow,
-        REFIID riid,
-        void **dataTransferManager) = 0;
+                     HWND appWindow,
+                     REFIID riid,
+                     void **dataTransferManager) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowShareUIForWindow(
-        HWND appWindow) = 0;
+                     HWND appWindow) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33385,26 +33385,26 @@ typedef struct IDataTransferManagerInteropVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDataTransferManagerInterop *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDataTransferManagerInterop *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDataTransferManagerInterop *This);
+                     IDataTransferManagerInterop *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDataTransferManagerInterop *This);
+                     IDataTransferManagerInterop *This);
 
     /*** IDataTransferManagerInterop methods ***/
     HRESULT (STDMETHODCALLTYPE *GetForWindow)(
-        IDataTransferManagerInterop *This,
-        HWND appWindow,
-        REFIID riid,
-        void **dataTransferManager);
+                     IDataTransferManagerInterop *This,
+                     HWND appWindow,
+                     REFIID riid,
+                     void **dataTransferManager);
 
     HRESULT (STDMETHODCALLTYPE *ShowShareUIForWindow)(
-        IDataTransferManagerInterop *This,
-        HWND appWindow);
+                     IDataTransferManagerInterop *This,
+                     HWND appWindow);
 
     END_INTERFACE
 } IDataTransferManagerInteropVtbl;
@@ -33461,11 +33461,11 @@ MIDL_INTERFACE("226c537b-1e76-4d9e-a760-33db29922f18")
 IFrameworkInputPaneHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Showing(
-        RECT *prcInputPaneScreenLocation,
-        WINBOOL fEnsureFocusedElementInView) = 0;
+                     RECT *prcInputPaneScreenLocation,
+                     WINBOOL fEnsureFocusedElementInView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Hiding(
-        WINBOOL fEnsureFocusedElementInView) = 0;
+                     WINBOOL fEnsureFocusedElementInView) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33477,25 +33477,25 @@ typedef struct IFrameworkInputPaneHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFrameworkInputPaneHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFrameworkInputPaneHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFrameworkInputPaneHandler *This);
+                     IFrameworkInputPaneHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFrameworkInputPaneHandler *This);
+                     IFrameworkInputPaneHandler *This);
 
     /*** IFrameworkInputPaneHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Showing)(
-        IFrameworkInputPaneHandler *This,
-        RECT *prcInputPaneScreenLocation,
-        WINBOOL fEnsureFocusedElementInView);
+                     IFrameworkInputPaneHandler *This,
+                     RECT *prcInputPaneScreenLocation,
+                     WINBOOL fEnsureFocusedElementInView);
 
     HRESULT (STDMETHODCALLTYPE *Hiding)(
-        IFrameworkInputPaneHandler *This,
-        WINBOOL fEnsureFocusedElementInView);
+                     IFrameworkInputPaneHandler *This,
+                     WINBOOL fEnsureFocusedElementInView);
 
     END_INTERFACE
 } IFrameworkInputPaneHandlerVtbl;
@@ -33552,20 +33552,20 @@ MIDL_INTERFACE("5752238b-24f0-495a-82f1-2fd593056796")
 IFrameworkInputPane : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IUnknown *pWindow,
-        IFrameworkInputPaneHandler *pHandler,
-        DWORD *pdwCookie) = 0;
+                     IUnknown *pWindow,
+                     IFrameworkInputPaneHandler *pHandler,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdviseWithHWND(
-        HWND hwnd,
-        IFrameworkInputPaneHandler *pHandler,
-        DWORD *pdwCookie) = 0;
+                     HWND hwnd,
+                     IFrameworkInputPaneHandler *pHandler,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Location(
-        RECT *prcInputPaneScreenLocation) = 0;
+                     RECT *prcInputPaneScreenLocation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33577,36 +33577,36 @@ typedef struct IFrameworkInputPaneVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFrameworkInputPane *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFrameworkInputPane *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFrameworkInputPane *This);
+                     IFrameworkInputPane *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFrameworkInputPane *This);
+                     IFrameworkInputPane *This);
 
     /*** IFrameworkInputPane methods ***/
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IFrameworkInputPane *This,
-        IUnknown *pWindow,
-        IFrameworkInputPaneHandler *pHandler,
-        DWORD *pdwCookie);
+                     IFrameworkInputPane *This,
+                     IUnknown *pWindow,
+                     IFrameworkInputPaneHandler *pHandler,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *AdviseWithHWND)(
-        IFrameworkInputPane *This,
-        HWND hwnd,
-        IFrameworkInputPaneHandler *pHandler,
-        DWORD *pdwCookie);
+                     IFrameworkInputPane *This,
+                     HWND hwnd,
+                     IFrameworkInputPaneHandler *pHandler,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IFrameworkInputPane *This,
-        DWORD dwCookie);
+                     IFrameworkInputPane *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Location)(
-        IFrameworkInputPane *This,
-        RECT *prcInputPaneScreenLocation);
+                     IFrameworkInputPane *This,
+                     RECT *prcInputPaneScreenLocation);
 
     END_INTERFACE
 } IFrameworkInputPaneVtbl;
@@ -33666,9 +33666,9 @@ static FORCEINLINE HRESULT IFrameworkInputPane_Location(IFrameworkInputPane* Thi
 
   __forceinline void SetContractDelegateWindow(HWND hwndSource, HWND hwndDelegate) {
     if (hwndDelegate != NULL)
-      SetPropW (hwndSource, PROP_CONTRACT_DELEGATE, (HANDLE)hwndDelegate);
+                   SetPropW (hwndSource, PROP_CONTRACT_DELEGATE, (HANDLE)hwndDelegate);
     else
-      RemovePropW(hwndSource, PROP_CONTRACT_DELEGATE);
+                   RemovePropW(hwndSource, PROP_CONTRACT_DELEGATE);
   }
 
 #ifndef PROP_CONTRACT_DELEGATE
@@ -33692,7 +33692,7 @@ MIDL_INTERFACE("08922f8d-243a-49e3-a495-bd4f9cf8ab9e")
 ISearchableApplication : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSearchWindow(
-        HWND *hwnd) = 0;
+                     HWND *hwnd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33704,20 +33704,20 @@ typedef struct ISearchableApplicationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISearchableApplication *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISearchableApplication *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISearchableApplication *This);
+                     ISearchableApplication *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISearchableApplication *This);
+                     ISearchableApplication *This);
 
     /*** ISearchableApplication methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSearchWindow)(
-        ISearchableApplication *This,
-        HWND *hwnd);
+                     ISearchableApplication *This,
+                     HWND *hwnd);
 
     END_INTERFACE
 } ISearchableApplicationVtbl;
@@ -33775,7 +33775,7 @@ MIDL_INTERFACE("157733fd-a592-42e5-b594-248468c5a81b")
 IAccessibilityDockingServiceCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Undocked(
-        UNDOCK_REASON undockReason) = 0;
+                     UNDOCK_REASON undockReason) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33787,20 +33787,20 @@ typedef struct IAccessibilityDockingServiceCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAccessibilityDockingServiceCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAccessibilityDockingServiceCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAccessibilityDockingServiceCallback *This);
+                     IAccessibilityDockingServiceCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAccessibilityDockingServiceCallback *This);
+                     IAccessibilityDockingServiceCallback *This);
 
     /*** IAccessibilityDockingServiceCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *Undocked)(
-        IAccessibilityDockingServiceCallback *This,
-        UNDOCK_REASON undockReason);
+                     IAccessibilityDockingServiceCallback *This,
+                     UNDOCK_REASON undockReason);
 
     END_INTERFACE
 } IAccessibilityDockingServiceCallbackVtbl;
@@ -33853,18 +33853,18 @@ MIDL_INTERFACE("8849dc22-cedf-4c95-998d-051419dd3f76")
 IAccessibilityDockingService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAvailableSize(
-        HMONITOR hMonitor,
-        UINT *pcxFixed,
-        UINT *pcyMax) = 0;
+                     HMONITOR hMonitor,
+                     UINT *pcxFixed,
+                     UINT *pcyMax) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DockWindow(
-        HWND hwnd,
-        HMONITOR hMonitor,
-        UINT cyRequested,
-        IAccessibilityDockingServiceCallback *pCallback) = 0;
+                     HWND hwnd,
+                     HMONITOR hMonitor,
+                     UINT cyRequested,
+                     IAccessibilityDockingServiceCallback *pCallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UndockWindow(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33876,33 +33876,33 @@ typedef struct IAccessibilityDockingServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAccessibilityDockingService *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAccessibilityDockingService *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAccessibilityDockingService *This);
+                     IAccessibilityDockingService *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAccessibilityDockingService *This);
+                     IAccessibilityDockingService *This);
 
     /*** IAccessibilityDockingService methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAvailableSize)(
-        IAccessibilityDockingService *This,
-        HMONITOR hMonitor,
-        UINT *pcxFixed,
-        UINT *pcyMax);
+                     IAccessibilityDockingService *This,
+                     HMONITOR hMonitor,
+                     UINT *pcxFixed,
+                     UINT *pcyMax);
 
     HRESULT (STDMETHODCALLTYPE *DockWindow)(
-        IAccessibilityDockingService *This,
-        HWND hwnd,
-        HMONITOR hMonitor,
-        UINT cyRequested,
-        IAccessibilityDockingServiceCallback *pCallback);
+                     IAccessibilityDockingService *This,
+                     HWND hwnd,
+                     HMONITOR hMonitor,
+                     UINT cyRequested,
+                     IAccessibilityDockingServiceCallback *pCallback);
 
     HRESULT (STDMETHODCALLTYPE *UndockWindow)(
-        IAccessibilityDockingService *This,
-        HWND hwnd);
+                     IAccessibilityDockingService *This,
+                     HWND hwnd);
 
     END_INTERFACE
 } IAccessibilityDockingServiceVtbl;
@@ -33969,12 +33969,12 @@ MIDL_INTERFACE("6584ce6b-7d82-49c2-89c9-c6bc02ba8c38")
 IAppVisibilityEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AppVisibilityOnMonitorChanged(
-        HMONITOR hMonitor,
-        MONITOR_APP_VISIBILITY previousMode,
-        MONITOR_APP_VISIBILITY currentMode) = 0;
+                     HMONITOR hMonitor,
+                     MONITOR_APP_VISIBILITY previousMode,
+                     MONITOR_APP_VISIBILITY currentMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LauncherVisibilityChange(
-        WINBOOL currentVisibleState) = 0;
+                     WINBOOL currentVisibleState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -33986,26 +33986,26 @@ typedef struct IAppVisibilityEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAppVisibilityEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAppVisibilityEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAppVisibilityEvents *This);
+                     IAppVisibilityEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAppVisibilityEvents *This);
+                     IAppVisibilityEvents *This);
 
     /*** IAppVisibilityEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *AppVisibilityOnMonitorChanged)(
-        IAppVisibilityEvents *This,
-        HMONITOR hMonitor,
-        MONITOR_APP_VISIBILITY previousMode,
-        MONITOR_APP_VISIBILITY currentMode);
+                     IAppVisibilityEvents *This,
+                     HMONITOR hMonitor,
+                     MONITOR_APP_VISIBILITY previousMode,
+                     MONITOR_APP_VISIBILITY currentMode);
 
     HRESULT (STDMETHODCALLTYPE *LauncherVisibilityChange)(
-        IAppVisibilityEvents *This,
-        WINBOOL currentVisibleState);
+                     IAppVisibilityEvents *This,
+                     WINBOOL currentVisibleState);
 
     END_INTERFACE
 } IAppVisibilityEventsVtbl;
@@ -34062,18 +34062,18 @@ MIDL_INTERFACE("2246ea2d-caea-4444-a3c4-6de827e44313")
 IAppVisibility : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAppVisibilityOnMonitor(
-        HMONITOR hMonitor,
-        MONITOR_APP_VISIBILITY *pMode) = 0;
+                     HMONITOR hMonitor,
+                     MONITOR_APP_VISIBILITY *pMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsLauncherVisible(
-        WINBOOL *pfVisible) = 0;
+                     WINBOOL *pfVisible) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IAppVisibilityEvents *pCallback,
-        DWORD *pdwCookie) = 0;
+                     IAppVisibilityEvents *pCallback,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -34085,34 +34085,34 @@ typedef struct IAppVisibilityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAppVisibility *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAppVisibility *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAppVisibility *This);
+                     IAppVisibility *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAppVisibility *This);
+                     IAppVisibility *This);
 
     /*** IAppVisibility methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAppVisibilityOnMonitor)(
-        IAppVisibility *This,
-        HMONITOR hMonitor,
-        MONITOR_APP_VISIBILITY *pMode);
+                     IAppVisibility *This,
+                     HMONITOR hMonitor,
+                     MONITOR_APP_VISIBILITY *pMode);
 
     HRESULT (STDMETHODCALLTYPE *IsLauncherVisible)(
-        IAppVisibility *This,
-        WINBOOL *pfVisible);
+                     IAppVisibility *This,
+                     WINBOOL *pfVisible);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IAppVisibility *This,
-        IAppVisibilityEvents *pCallback,
-        DWORD *pdwCookie);
+                     IAppVisibility *This,
+                     IAppVisibilityEvents *pCallback,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IAppVisibility *This,
-        DWORD dwCookie);
+                     IAppVisibility *This,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } IAppVisibilityVtbl;
@@ -34189,8 +34189,8 @@ MIDL_INTERFACE("1bb12a62-2ad8-432b-8ccf-0c2c52afcd5b")
 IPackageExecutionStateChangeNotification : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnStateChanged(
-        LPCWSTR pszPackageFullName,
-        PACKAGE_EXECUTION_STATE pesNewState) = 0;
+                     LPCWSTR pszPackageFullName,
+                     PACKAGE_EXECUTION_STATE pesNewState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -34202,21 +34202,21 @@ typedef struct IPackageExecutionStateChangeNotificationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPackageExecutionStateChangeNotification *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPackageExecutionStateChangeNotification *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPackageExecutionStateChangeNotification *This);
+                     IPackageExecutionStateChangeNotification *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPackageExecutionStateChangeNotification *This);
+                     IPackageExecutionStateChangeNotification *This);
 
     /*** IPackageExecutionStateChangeNotification methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStateChanged)(
-        IPackageExecutionStateChangeNotification *This,
-        LPCWSTR pszPackageFullName,
-        PACKAGE_EXECUTION_STATE pesNewState);
+                     IPackageExecutionStateChangeNotification *This,
+                     LPCWSTR pszPackageFullName,
+                     PACKAGE_EXECUTION_STATE pesNewState);
 
     END_INTERFACE
 } IPackageExecutionStateChangeNotificationVtbl;
@@ -34269,58 +34269,58 @@ MIDL_INTERFACE("f27c3930-8029-4ad1-94e3-3dba417810c1")
 IPackageDebugSettings : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnableDebugging(
-        LPCWSTR packageFullName,
-        LPCWSTR debuggerCommandLine,
-        PZZWSTR environment) = 0;
+                     LPCWSTR packageFullName,
+                     LPCWSTR debuggerCommandLine,
+                     PZZWSTR environment) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisableDebugging(
-        LPCWSTR packageFullName) = 0;
+                     LPCWSTR packageFullName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Suspend(
-        LPCWSTR packageFullName) = 0;
+                     LPCWSTR packageFullName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        LPCWSTR packageFullName) = 0;
+                     LPCWSTR packageFullName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TerminateAllProcesses(
-        LPCWSTR packageFullName) = 0;
+                     LPCWSTR packageFullName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTargetSessionId(
-        ULONG sessionId) = 0;
+                     ULONG sessionId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerateBackgroundTasks(
-        LPCWSTR packageFullName,
-        ULONG *taskCount,
-        LPCGUID *taskIds,
-        LPCWSTR **taskNames) = 0;
+                     LPCWSTR packageFullName,
+                     ULONG *taskCount,
+                     LPCGUID *taskIds,
+                     LPCWSTR **taskNames) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActivateBackgroundTask(
-        LPCGUID taskId) = 0;
+                     LPCGUID taskId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartServicing(
-        LPCWSTR packageFullName) = 0;
+                     LPCWSTR packageFullName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopServicing(
-        LPCWSTR packageFullName) = 0;
+                     LPCWSTR packageFullName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartSessionRedirection(
-        LPCWSTR packageFullName,
-        ULONG sessionId) = 0;
+                     LPCWSTR packageFullName,
+                     ULONG sessionId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopSessionRedirection(
-        LPCWSTR packageFullName) = 0;
+                     LPCWSTR packageFullName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPackageExecutionState(
-        LPCWSTR packageFullName,
-        PACKAGE_EXECUTION_STATE *packageExecutionState) = 0;
+                     LPCWSTR packageFullName,
+                     PACKAGE_EXECUTION_STATE *packageExecutionState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterForPackageStateChanges(
-        LPCWSTR packageFullName,
-        IPackageExecutionStateChangeNotification *pPackageExecutionStateChangeNotification,
-        DWORD *pdwCookie) = 0;
+                     LPCWSTR packageFullName,
+                     IPackageExecutionStateChangeNotification *pPackageExecutionStateChangeNotification,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterForPackageStateChanges(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -34332,85 +34332,85 @@ typedef struct IPackageDebugSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPackageDebugSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPackageDebugSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPackageDebugSettings *This);
+                     IPackageDebugSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPackageDebugSettings *This);
+                     IPackageDebugSettings *This);
 
     /*** IPackageDebugSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *EnableDebugging)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName,
-        LPCWSTR debuggerCommandLine,
-        PZZWSTR environment);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName,
+                     LPCWSTR debuggerCommandLine,
+                     PZZWSTR environment);
 
     HRESULT (STDMETHODCALLTYPE *DisableDebugging)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName);
 
     HRESULT (STDMETHODCALLTYPE *TerminateAllProcesses)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName);
 
     HRESULT (STDMETHODCALLTYPE *SetTargetSessionId)(
-        IPackageDebugSettings *This,
-        ULONG sessionId);
+                     IPackageDebugSettings *This,
+                     ULONG sessionId);
 
     HRESULT (STDMETHODCALLTYPE *EnumerateBackgroundTasks)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName,
-        ULONG *taskCount,
-        LPCGUID *taskIds,
-        LPCWSTR **taskNames);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName,
+                     ULONG *taskCount,
+                     LPCGUID *taskIds,
+                     LPCWSTR **taskNames);
 
     HRESULT (STDMETHODCALLTYPE *ActivateBackgroundTask)(
-        IPackageDebugSettings *This,
-        LPCGUID taskId);
+                     IPackageDebugSettings *This,
+                     LPCGUID taskId);
 
     HRESULT (STDMETHODCALLTYPE *StartServicing)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName);
 
     HRESULT (STDMETHODCALLTYPE *StopServicing)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName);
 
     HRESULT (STDMETHODCALLTYPE *StartSessionRedirection)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName,
-        ULONG sessionId);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName,
+                     ULONG sessionId);
 
     HRESULT (STDMETHODCALLTYPE *StopSessionRedirection)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName);
 
     HRESULT (STDMETHODCALLTYPE *GetPackageExecutionState)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName,
-        PACKAGE_EXECUTION_STATE *packageExecutionState);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName,
+                     PACKAGE_EXECUTION_STATE *packageExecutionState);
 
     HRESULT (STDMETHODCALLTYPE *RegisterForPackageStateChanges)(
-        IPackageDebugSettings *This,
-        LPCWSTR packageFullName,
-        IPackageExecutionStateChangeNotification *pPackageExecutionStateChangeNotification,
-        DWORD *pdwCookie);
+                     IPackageDebugSettings *This,
+                     LPCWSTR packageFullName,
+                     IPackageExecutionStateChangeNotification *pPackageExecutionStateChangeNotification,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterForPackageStateChanges)(
-        IPackageDebugSettings *This,
-        DWORD dwCookie);
+                     IPackageDebugSettings *This,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } IPackageDebugSettingsVtbl;
@@ -34524,7 +34524,7 @@ MIDL_INTERFACE("18b21aa9-e184-4ff0-9f5e-f882d03771b3")
 IExecuteCommandApplicationHostEnvironment : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        AHE_TYPE *pahe) = 0;
+                     AHE_TYPE *pahe) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -34536,20 +34536,20 @@ typedef struct IExecuteCommandApplicationHostEnvironmentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExecuteCommandApplicationHostEnvironment *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExecuteCommandApplicationHostEnvironment *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExecuteCommandApplicationHostEnvironment *This);
+                     IExecuteCommandApplicationHostEnvironment *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExecuteCommandApplicationHostEnvironment *This);
+                     IExecuteCommandApplicationHostEnvironment *This);
 
     /*** IExecuteCommandApplicationHostEnvironment methods ***/
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IExecuteCommandApplicationHostEnvironment *This,
-        AHE_TYPE *pahe);
+                     IExecuteCommandApplicationHostEnvironment *This,
+                     AHE_TYPE *pahe);
 
     END_INTERFACE
 } IExecuteCommandApplicationHostEnvironmentVtbl;
@@ -34608,7 +34608,7 @@ MIDL_INTERFACE("4b6832a2-5f04-4c9d-b89d-727a15d103e7")
 IExecuteCommandHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetUIMode(
-        EC_HOST_UI_MODE *pUIMode) = 0;
+                     EC_HOST_UI_MODE *pUIMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -34620,20 +34620,20 @@ typedef struct IExecuteCommandHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExecuteCommandHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExecuteCommandHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExecuteCommandHost *This);
+                     IExecuteCommandHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExecuteCommandHost *This);
+                     IExecuteCommandHost *This);
 
     /*** IExecuteCommandHost methods ***/
     HRESULT (STDMETHODCALLTYPE *GetUIMode)(
-        IExecuteCommandHost *This,
-        EC_HOST_UI_MODE *pUIMode);
+                     IExecuteCommandHost *This,
+                     EC_HOST_UI_MODE *pUIMode);
 
     END_INTERFACE
 } IExecuteCommandHostVtbl;
@@ -34701,25 +34701,25 @@ MIDL_INTERFACE("2a3dee9a-e31d-46d6-8508-bcc597db3557")
 IApplicationDesignModeSettings : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetNativeDisplaySize(
-        SIZE sizeNativeDisplay) = 0;
+                     SIZE sizeNativeDisplay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetScaleFactor(
-        DEVICE_SCALE_FACTOR scaleFactor) = 0;
+                     DEVICE_SCALE_FACTOR scaleFactor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetApplicationViewState(
-        APPLICATION_VIEW_STATE viewState) = 0;
+                     APPLICATION_VIEW_STATE viewState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ComputeApplicationSize(
-        SIZE *psizeApplication) = 0;
+                     SIZE *psizeApplication) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsApplicationViewStateSupported(
-        APPLICATION_VIEW_STATE viewState,
-        SIZE sizeNativeDisplay,
-        DEVICE_SCALE_FACTOR scaleFactor,
-        WINBOOL *pfSupported) = 0;
+                     APPLICATION_VIEW_STATE viewState,
+                     SIZE sizeNativeDisplay,
+                     DEVICE_SCALE_FACTOR scaleFactor,
+                     WINBOOL *pfSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TriggerEdgeGesture(
-        EDGE_GESTURE_KIND edgeGestureKind) = 0;
+                     EDGE_GESTURE_KIND edgeGestureKind) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -34731,43 +34731,43 @@ typedef struct IApplicationDesignModeSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationDesignModeSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationDesignModeSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationDesignModeSettings *This);
+                     IApplicationDesignModeSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationDesignModeSettings *This);
+                     IApplicationDesignModeSettings *This);
 
     /*** IApplicationDesignModeSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNativeDisplaySize)(
-        IApplicationDesignModeSettings *This,
-        SIZE sizeNativeDisplay);
+                     IApplicationDesignModeSettings *This,
+                     SIZE sizeNativeDisplay);
 
     HRESULT (STDMETHODCALLTYPE *SetScaleFactor)(
-        IApplicationDesignModeSettings *This,
-        DEVICE_SCALE_FACTOR scaleFactor);
+                     IApplicationDesignModeSettings *This,
+                     DEVICE_SCALE_FACTOR scaleFactor);
 
     HRESULT (STDMETHODCALLTYPE *SetApplicationViewState)(
-        IApplicationDesignModeSettings *This,
-        APPLICATION_VIEW_STATE viewState);
+                     IApplicationDesignModeSettings *This,
+                     APPLICATION_VIEW_STATE viewState);
 
     HRESULT (STDMETHODCALLTYPE *ComputeApplicationSize)(
-        IApplicationDesignModeSettings *This,
-        SIZE *psizeApplication);
+                     IApplicationDesignModeSettings *This,
+                     SIZE *psizeApplication);
 
     HRESULT (STDMETHODCALLTYPE *IsApplicationViewStateSupported)(
-        IApplicationDesignModeSettings *This,
-        APPLICATION_VIEW_STATE viewState,
-        SIZE sizeNativeDisplay,
-        DEVICE_SCALE_FACTOR scaleFactor,
-        WINBOOL *pfSupported);
+                     IApplicationDesignModeSettings *This,
+                     APPLICATION_VIEW_STATE viewState,
+                     SIZE sizeNativeDisplay,
+                     DEVICE_SCALE_FACTOR scaleFactor,
+                     WINBOOL *pfSupported);
 
     HRESULT (STDMETHODCALLTYPE *TriggerEdgeGesture)(
-        IApplicationDesignModeSettings *This,
-        EDGE_GESTURE_KIND edgeGestureKind);
+                     IApplicationDesignModeSettings *This,
+                     EDGE_GESTURE_KIND edgeGestureKind);
 
     END_INTERFACE
 } IApplicationDesignModeSettingsVtbl;
@@ -34840,7 +34840,7 @@ MIDL_INTERFACE("3e68d4bd-7135-4d10-8018-9fb6d9f33fa1")
 IInitializeWithWindow : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        HWND hwnd) = 0;
+                     HWND hwnd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -34852,20 +34852,20 @@ typedef struct IInitializeWithWindowVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeWithWindow *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeWithWindow *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeWithWindow *This);
+                     IInitializeWithWindow *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeWithWindow *This);
+                     IInitializeWithWindow *This);
 
     /*** IInitializeWithWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IInitializeWithWindow *This,
-        HWND hwnd);
+                     IInitializeWithWindow *This,
+                     HWND hwnd);
 
     END_INTERFACE
 } IInitializeWithWindowVtbl;
@@ -34918,13 +34918,13 @@ MIDL_INTERFACE("997706ef-f880-453b-8118-39e1a2d2655a")
 IHandlerInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetApplicationDisplayName(
-        LPWSTR *value) = 0;
+                     LPWSTR *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetApplicationPublisher(
-        LPWSTR *value) = 0;
+                     LPWSTR *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetApplicationIconReference(
-        LPWSTR *value) = 0;
+                     LPWSTR *value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -34936,28 +34936,28 @@ typedef struct IHandlerInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHandlerInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHandlerInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHandlerInfo *This);
+                     IHandlerInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHandlerInfo *This);
+                     IHandlerInfo *This);
 
     /*** IHandlerInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetApplicationDisplayName)(
-        IHandlerInfo *This,
-        LPWSTR *value);
+                     IHandlerInfo *This,
+                     LPWSTR *value);
 
     HRESULT (STDMETHODCALLTYPE *GetApplicationPublisher)(
-        IHandlerInfo *This,
-        LPWSTR *value);
+                     IHandlerInfo *This,
+                     LPWSTR *value);
 
     HRESULT (STDMETHODCALLTYPE *GetApplicationIconReference)(
-        IHandlerInfo *This,
-        LPWSTR *value);
+                     IHandlerInfo *This,
+                     LPWSTR *value);
 
     END_INTERFACE
 } IHandlerInfoVtbl;
@@ -35018,14 +35018,14 @@ MIDL_INTERFACE("35094a87-8bb1-4237-96c6-c417eebdb078")
 IHandlerActivationHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BeforeCoCreateInstance(
-        REFCLSID clsidHandler,
-        IShellItemArray *itemsBeingActivated,
-        IHandlerInfo *handlerInfo) = 0;
+                     REFCLSID clsidHandler,
+                     IShellItemArray *itemsBeingActivated,
+                     IHandlerInfo *handlerInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeforeCreateProcess(
-        LPCWSTR applicationPath,
-        LPCWSTR commandLine,
-        IHandlerInfo *handlerInfo) = 0;
+                     LPCWSTR applicationPath,
+                     LPCWSTR commandLine,
+                     IHandlerInfo *handlerInfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -35037,28 +35037,28 @@ typedef struct IHandlerActivationHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHandlerActivationHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHandlerActivationHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHandlerActivationHost *This);
+                     IHandlerActivationHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHandlerActivationHost *This);
+                     IHandlerActivationHost *This);
 
     /*** IHandlerActivationHost methods ***/
     HRESULT (STDMETHODCALLTYPE *BeforeCoCreateInstance)(
-        IHandlerActivationHost *This,
-        REFCLSID clsidHandler,
-        IShellItemArray *itemsBeingActivated,
-        IHandlerInfo *handlerInfo);
+                     IHandlerActivationHost *This,
+                     REFCLSID clsidHandler,
+                     IShellItemArray *itemsBeingActivated,
+                     IHandlerInfo *handlerInfo);
 
     HRESULT (STDMETHODCALLTYPE *BeforeCreateProcess)(
-        IHandlerActivationHost *This,
-        LPCWSTR applicationPath,
-        LPCWSTR commandLine,
-        IHandlerInfo *handlerInfo);
+                     IHandlerActivationHost *This,
+                     LPCWSTR applicationPath,
+                     LPCWSTR commandLine,
+                     IHandlerInfo *handlerInfo);
 
     END_INTERFACE
 } IHandlerActivationHostVtbl;
@@ -35111,70 +35111,70 @@ DEFINE_GUID(SID_ShellExecuteNamedPropertyStore, 0xeb84ada2, 0x00ff, 0x4992, 0x83
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER PCIDLIST_ABSOLUTE_UserSize     (ULONG *, ULONG, PCIDLIST_ABSOLUTE *);
+ULONG                        __RPC_USER PCIDLIST_ABSOLUTE_UserSize     (ULONG *, ULONG, PCIDLIST_ABSOLUTE *);
 unsigned char * __RPC_USER PCIDLIST_ABSOLUTE_UserMarshal  (ULONG *, unsigned char *, PCIDLIST_ABSOLUTE *);
 unsigned char * __RPC_USER PCIDLIST_ABSOLUTE_UserUnmarshal(ULONG *, unsigned char *, PCIDLIST_ABSOLUTE *);
-void            __RPC_USER PCIDLIST_ABSOLUTE_UserFree     (ULONG *, PCIDLIST_ABSOLUTE *);
-ULONG           __RPC_USER PIDLIST_ABSOLUTE_UserSize     (ULONG *, ULONG, PIDLIST_ABSOLUTE *);
+void                                      __RPC_USER PCIDLIST_ABSOLUTE_UserFree     (ULONG *, PCIDLIST_ABSOLUTE *);
+ULONG                        __RPC_USER PIDLIST_ABSOLUTE_UserSize     (ULONG *, ULONG, PIDLIST_ABSOLUTE *);
 unsigned char * __RPC_USER PIDLIST_ABSOLUTE_UserMarshal  (ULONG *, unsigned char *, PIDLIST_ABSOLUTE *);
 unsigned char * __RPC_USER PIDLIST_ABSOLUTE_UserUnmarshal(ULONG *, unsigned char *, PIDLIST_ABSOLUTE *);
-void            __RPC_USER PIDLIST_ABSOLUTE_UserFree     (ULONG *, PIDLIST_ABSOLUTE *);
-ULONG           __RPC_USER PITEMID_CHILD_UserSize     (ULONG *, ULONG, PITEMID_CHILD *);
+void                                      __RPC_USER PIDLIST_ABSOLUTE_UserFree     (ULONG *, PIDLIST_ABSOLUTE *);
+ULONG                        __RPC_USER PITEMID_CHILD_UserSize     (ULONG *, ULONG, PITEMID_CHILD *);
 unsigned char * __RPC_USER PITEMID_CHILD_UserMarshal  (ULONG *, unsigned char *, PITEMID_CHILD *);
 unsigned char * __RPC_USER PITEMID_CHILD_UserUnmarshal(ULONG *, unsigned char *, PITEMID_CHILD *);
-void            __RPC_USER PITEMID_CHILD_UserFree     (ULONG *, PITEMID_CHILD *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER PITEMID_CHILD_UserFree     (ULONG *, PITEMID_CHILD *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
-ULONG           __RPC_USER PIDLIST_RELATIVE_UserSize     (ULONG *, ULONG, PIDLIST_RELATIVE *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+ULONG                        __RPC_USER PIDLIST_RELATIVE_UserSize     (ULONG *, ULONG, PIDLIST_RELATIVE *);
 unsigned char * __RPC_USER PIDLIST_RELATIVE_UserMarshal  (ULONG *, unsigned char *, PIDLIST_RELATIVE *);
 unsigned char * __RPC_USER PIDLIST_RELATIVE_UserUnmarshal(ULONG *, unsigned char *, PIDLIST_RELATIVE *);
-void            __RPC_USER PIDLIST_RELATIVE_UserFree     (ULONG *, PIDLIST_RELATIVE *);
-ULONG           __RPC_USER PCUIDLIST_RELATIVE_UserSize     (ULONG *, ULONG, PCUIDLIST_RELATIVE *);
+void                                      __RPC_USER PIDLIST_RELATIVE_UserFree     (ULONG *, PIDLIST_RELATIVE *);
+ULONG                        __RPC_USER PCUIDLIST_RELATIVE_UserSize     (ULONG *, ULONG, PCUIDLIST_RELATIVE *);
 unsigned char * __RPC_USER PCUIDLIST_RELATIVE_UserMarshal  (ULONG *, unsigned char *, PCUIDLIST_RELATIVE *);
 unsigned char * __RPC_USER PCUIDLIST_RELATIVE_UserUnmarshal(ULONG *, unsigned char *, PCUIDLIST_RELATIVE *);
-void            __RPC_USER PCUIDLIST_RELATIVE_UserFree     (ULONG *, PCUIDLIST_RELATIVE *);
-ULONG           __RPC_USER PCUITEMID_CHILD_UserSize     (ULONG *, ULONG, PCUITEMID_CHILD *);
+void                                      __RPC_USER PCUIDLIST_RELATIVE_UserFree     (ULONG *, PCUIDLIST_RELATIVE *);
+ULONG                        __RPC_USER PCUITEMID_CHILD_UserSize     (ULONG *, ULONG, PCUITEMID_CHILD *);
 unsigned char * __RPC_USER PCUITEMID_CHILD_UserMarshal  (ULONG *, unsigned char *, PCUITEMID_CHILD *);
 unsigned char * __RPC_USER PCUITEMID_CHILD_UserUnmarshal(ULONG *, unsigned char *, PCUITEMID_CHILD *);
-void            __RPC_USER PCUITEMID_CHILD_UserFree     (ULONG *, PCUITEMID_CHILD *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER PCUITEMID_CHILD_UserFree     (ULONG *, PCUITEMID_CHILD *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
-ULONG           __RPC_USER HBITMAP_UserSize     (ULONG *, ULONG, HBITMAP *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+ULONG                        __RPC_USER HBITMAP_UserSize     (ULONG *, ULONG, HBITMAP *);
 unsigned char * __RPC_USER HBITMAP_UserMarshal  (ULONG *, unsigned char *, HBITMAP *);
 unsigned char * __RPC_USER HBITMAP_UserUnmarshal(ULONG *, unsigned char *, HBITMAP *);
-void            __RPC_USER HBITMAP_UserFree     (ULONG *, HBITMAP *);
-ULONG           __RPC_USER HMENU_UserSize     (ULONG *, ULONG, HMENU *);
+void                                      __RPC_USER HBITMAP_UserFree     (ULONG *, HBITMAP *);
+ULONG                        __RPC_USER HMENU_UserSize     (ULONG *, ULONG, HMENU *);
 unsigned char * __RPC_USER HMENU_UserMarshal  (ULONG *, unsigned char *, HMENU *);
 unsigned char * __RPC_USER HMENU_UserUnmarshal(ULONG *, unsigned char *, HMENU *);
-void            __RPC_USER HMENU_UserFree     (ULONG *, HMENU *);
-ULONG           __RPC_USER HGLOBAL_UserSize     (ULONG *, ULONG, HGLOBAL *);
+void                                      __RPC_USER HMENU_UserFree     (ULONG *, HMENU *);
+ULONG                        __RPC_USER HGLOBAL_UserSize     (ULONG *, ULONG, HGLOBAL *);
 unsigned char * __RPC_USER HGLOBAL_UserMarshal  (ULONG *, unsigned char *, HGLOBAL *);
 unsigned char * __RPC_USER HGLOBAL_UserUnmarshal(ULONG *, unsigned char *, HGLOBAL *);
-void            __RPC_USER HGLOBAL_UserFree     (ULONG *, HGLOBAL *);
-ULONG           __RPC_USER HICON_UserSize     (ULONG *, ULONG, HICON *);
+void                                      __RPC_USER HGLOBAL_UserFree     (ULONG *, HGLOBAL *);
+ULONG                        __RPC_USER HICON_UserSize     (ULONG *, ULONG, HICON *);
 unsigned char * __RPC_USER HICON_UserMarshal  (ULONG *, unsigned char *, HICON *);
 unsigned char * __RPC_USER HICON_UserUnmarshal(ULONG *, unsigned char *, HICON *);
-void            __RPC_USER HICON_UserFree     (ULONG *, HICON *);
-ULONG           __RPC_USER HACCEL_UserSize     (ULONG *, ULONG, HACCEL *);
+void                                      __RPC_USER HICON_UserFree     (ULONG *, HICON *);
+ULONG                        __RPC_USER HACCEL_UserSize     (ULONG *, ULONG, HACCEL *);
 unsigned char * __RPC_USER HACCEL_UserMarshal  (ULONG *, unsigned char *, HACCEL *);
 unsigned char * __RPC_USER HACCEL_UserUnmarshal(ULONG *, unsigned char *, HACCEL *);
-void            __RPC_USER HACCEL_UserFree     (ULONG *, HACCEL *);
-ULONG           __RPC_USER HMONITOR_UserSize     (ULONG *, ULONG, HMONITOR *);
+void                                      __RPC_USER HACCEL_UserFree     (ULONG *, HACCEL *);
+ULONG                        __RPC_USER HMONITOR_UserSize     (ULONG *, ULONG, HMONITOR *);
 unsigned char * __RPC_USER HMONITOR_UserMarshal  (ULONG *, unsigned char *, HMONITOR *);
 unsigned char * __RPC_USER HMONITOR_UserUnmarshal(ULONG *, unsigned char *, HMONITOR *);
-void            __RPC_USER HMONITOR_UserFree     (ULONG *, HMONITOR *);
+void                                      __RPC_USER HMONITOR_UserFree     (ULONG *, HMONITOR *);
 
 /* End additional prototypes */
 

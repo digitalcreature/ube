@@ -7,12 +7,12 @@
  *===-----------------------------------------------------------------------===
  */
 
-#if !defined(__STDDEF_H) || defined(__need_ptrdiff_t) ||                       \
-    defined(__need_size_t) || defined(__need_wchar_t) ||                       \
+#if !defined(__STDDEF_H) || defined(__need_ptrdiff_t) ||                                                              \
+    defined(__need_size_t) || defined(__need_wchar_t) ||                                                              \
     defined(__need_NULL) || defined(__need_wint_t)
 
-#if !defined(__need_ptrdiff_t) && !defined(__need_size_t) &&                   \
-    !defined(__need_wchar_t) && !defined(__need_NULL) &&                       \
+#if !defined(__need_ptrdiff_t) && !defined(__need_size_t) &&                                                          \
+    !defined(__need_wchar_t) && !defined(__need_NULL) &&                                                              \
     !defined(__need_wint_t)
 /* Always define miscellaneous pieces when modules are available. */
 #if !__has_feature(modules)

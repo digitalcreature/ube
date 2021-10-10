@@ -23,10 +23,10 @@ const maxInt = std.math.maxInt;
 pub fn trunc(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => trunc32(x),
-        f64 => trunc64(x),
-        f128 => trunc128(x),
-        else => @compileError("trunc not implemented for " ++ @typeName(T)),
+                     f32 => trunc32(x),
+                     f64 => trunc64(x),
+                     f128 => trunc128(x),
+                     else => @compileError("trunc not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -36,18 +36,18 @@ fn trunc32(x: f32) f32 {
     var m: u32 = undefined;
 
     if (e >= 23 + 9) {
-        return x;
+                     return x;
     }
     if (e < 9) {
-        e = 1;
+                     e = 1;
     }
 
     m = @as(u32, maxInt(u32)) >> @intCast(u5, e);
     if (u & m == 0) {
-        return x;
+                     return x;
     } else {
-        math.doNotOptimizeAway(x + 0x1p120);
-        return @bitCast(f32, u & ~m);
+                     math.doNotOptimizeAway(x + 0x1p120);
+                     return @bitCast(f32, u & ~m);
     }
 }
 
@@ -57,18 +57,18 @@ fn trunc64(x: f64) f64 {
     var m: u64 = undefined;
 
     if (e >= 52 + 12) {
-        return x;
+                     return x;
     }
     if (e < 12) {
-        e = 1;
+                     e = 1;
     }
 
     m = @as(u64, maxInt(u64)) >> @intCast(u6, e);
     if (u & m == 0) {
-        return x;
+                     return x;
     } else {
-        math.doNotOptimizeAway(x + 0x1p120);
-        return @bitCast(f64, u & ~m);
+                     math.doNotOptimizeAway(x + 0x1p120);
+                     return @bitCast(f64, u & ~m);
     }
 }
 
@@ -78,18 +78,18 @@ fn trunc128(x: f128) f128 {
     var m: u128 = undefined;
 
     if (e >= 112 + 16) {
-        return x;
+                     return x;
     }
     if (e < 16) {
-        e = 1;
+                     e = 1;
     }
 
     m = @as(u128, maxInt(u128)) >> @intCast(u7, e);
     if (u & m == 0) {
-        return x;
+                     return x;
     } else {
-        math.doNotOptimizeAway(x + 0x1p120);
-        return @bitCast(f128, u & ~m);
+                     math.doNotOptimizeAway(x + 0x1p120);
+                     return @bitCast(f128, u & ~m);
     }
 }
 

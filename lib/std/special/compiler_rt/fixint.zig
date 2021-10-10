@@ -16,16 +16,16 @@ pub fn fixint(comptime fp_t: type, comptime fixint_t: type, a: fp_t) fixint_t {
     @setRuntimeSafety(is_test);
 
     const rep_t = switch (fp_t) {
-        f32 => u32,
-        f64 => u64,
-        f128 => u128,
-        else => unreachable,
+                     f32 => u32,
+                     f64 => u64,
+                     f128 => u128,
+                     else => unreachable,
     };
     const significandBits = switch (fp_t) {
-        f32 => 23,
-        f64 => 52,
-        f128 => 112,
-        else => unreachable,
+                     f32 => 23,
+                     f64 => 52,
+                     f128 => 112,
+                     else => unreachable,
     };
 
     const typeWidth = @typeInfo(rep_t).Int.bits;
@@ -57,21 +57,21 @@ pub fn fixint(comptime fp_t: type, comptime fixint_t: type, a: fp_t) fixint_t {
 
     // If the value is too large for the integer type, saturate.
     if (@intCast(usize, exponent) >= fixint_bits) {
-        return if (negative) @as(fixint_t, minInt(fixint_t)) else @as(fixint_t, maxInt(fixint_t));
+                     return if (negative) @as(fixint_t, minInt(fixint_t)) else @as(fixint_t, maxInt(fixint_t));
     }
 
     // If 0 <= exponent < significandBits, right shift else left shift
     if (exponent < significandBits) {
-        uint_result = @intCast(UintResultType, significand) >> @intCast(Log2Int(UintResultType), significandBits - exponent);
+                     uint_result = @intCast(UintResultType, significand) >> @intCast(Log2Int(UintResultType), significandBits - exponent);
     } else {
-        uint_result = @intCast(UintResultType, significand) << @intCast(Log2Int(UintResultType), exponent - significandBits);
+                     uint_result = @intCast(UintResultType, significand) << @intCast(Log2Int(UintResultType), exponent - significandBits);
     }
 
     // Cast to final signed result
     if (negative) {
-        return if (uint_result >= -math.minInt(fixint_t)) math.minInt(fixint_t) else -@intCast(fixint_t, uint_result);
+                     return if (uint_result >= -math.minInt(fixint_t)) math.minInt(fixint_t) else -@intCast(fixint_t, uint_result);
     } else {
-        return if (uint_result >= math.maxInt(fixint_t)) math.maxInt(fixint_t) else @intCast(fixint_t, uint_result);
+                     return if (uint_result >= math.maxInt(fixint_t)) math.maxInt(fixint_t) else @intCast(fixint_t, uint_result);
     }
 }
 

@@ -33,13 +33,13 @@
 __BEGIN_DECLS
 
 /******************************************************************************
- * Floating point data types                                                  *
+ * Floating point data types                                                                                                                                                          *
  ******************************************************************************/
 
 /*  Define float_t and double_t per C standard, ISO/IEC 9899:2011 7.12 2,
     taking advantage of GCC's __FLT_EVAL_METHOD__ (which a compiler may
     define anytime and GCC does) that shadows FLT_EVAL_METHOD (which a
-    compiler must define only in float.h).                                    */
+    compiler must define only in float.h).                                                                                                                  */
 #if __FLT_EVAL_METHOD__ == 0
     typedef float float_t;
     typedef double double_t;
@@ -57,24 +57,24 @@ __BEGIN_DECLS
 #   define    HUGE_VAL     __builtin_huge_val()
 #   define    HUGE_VALF    __builtin_huge_valf()
 #   define    HUGE_VALL    __builtin_huge_vall()
-#   define    NAN          __builtin_nanf("0x7fc00000")
+#   define    NAN                       __builtin_nanf("0x7fc00000")
 #else
 #   define    HUGE_VAL     1e500
 #   define    HUGE_VALF    1e50f
 #   define    HUGE_VALL    1e5000L
-#   define    NAN          __nan()
+#   define    NAN                       __nan()
 #endif
 
 #define INFINITY    HUGE_VALF
 
 /******************************************************************************
- *      Taxonomy of floating point data types                                 *
+ *                   Taxonomy of floating point data types                                                                                                  *
  ******************************************************************************/
 
-#define FP_NAN          1
+#define FP_NAN                       1
 #define FP_INFINITE     2
-#define FP_ZERO         3
-#define FP_NORMAL       4
+#define FP_ZERO                      3
+#define FP_NORMAL                    4
 #define FP_SUBNORMAL    5
 #define FP_SUPERNORMAL  6 /* legacy PowerPC support; this is otherwise unused */
 
@@ -87,46 +87,46 @@ __BEGIN_DECLS
 #elif (defined __i386__ || defined __x86_64__) && (defined __FMA__ || defined __AVX512F__)
 /*  When targeting the FMA ISA extension, fma() and fmaf( ) are generally
     about as fast as (or faster than) separate multiply and add of the same
-    operands, but fmal( ) may be more costly.                                 */
+    operands, but fmal( ) may be more costly.                                                                                                  */
 #   define FP_FAST_FMA     1
 #   define FP_FAST_FMAF    1
 #   undef  FP_FAST_FMAL
 #else
 /*  On these architectures, fma( ), fmaf( ), and fmal( ) function calls are
-    significantly more costly than separate multiply and add operations.      */
+    significantly more costly than separate multiply and add operations.                   */
 #   undef  FP_FAST_FMA
 #   undef  FP_FAST_FMAF
 #   undef  FP_FAST_FMAL
 #endif
 
 /* The values returned by `ilogb' for 0 and NaN respectively. */
-#define FP_ILOGB0      (-2147483647 - 1)
+#define FP_ILOGB0                   (-2147483647 - 1)
 #define FP_ILOGBNAN    (-2147483647 - 1)
 
 /* Bitmasks for the math_errhandling macro.  */
-#define MATH_ERRNO        1    /* errno set by math functions.  */
+#define MATH_ERRNO                     1    /* errno set by math functions.  */
 #define MATH_ERREXCEPT    2    /* Exceptions raised by math functions.  */
 
 #define math_errhandling (__math_errhandling())
 extern int __math_errhandling(void);
 
 /******************************************************************************
- *                                                                            *
- *                              Inquiry macros                                *
- *                                                                            *
- *  fpclassify      Returns one of the FP_* values.                           *
- *  isnormal        Non-zero if and only if the argument x is normalized.     *
- *  isfinite        Non-zero if and only if the argument x is finite.         *
- *  isnan           Non-zero if and only if the argument x is a NaN.          *
- *  signbit         Non-zero if and only if the sign of the argument x is     *
- *                  negative.  This includes, NaNs, infinities and zeros.     *
- *                                                                            *
+ *                                                                                                                                                                                                                                        *
+ *                                                                                               Inquiry macros                                                                                                 *
+ *                                                                                                                                                                                                                                        *
+ *  fpclassify                   Returns one of the FP_* values.                                                                               *
+ *  isnormal                     Non-zero if and only if the argument x is normalized.     *
+ *  isfinite                     Non-zero if and only if the argument x is finite.                      *
+ *  isnan                        Non-zero if and only if the argument x is a NaN.                       *
+ *  signbit                      Non-zero if and only if the sign of the argument x is     *
+ *                                                         negative.  This includes, NaNs, infinities and zeros.     *
+ *                                                                                                                                                                                                                                        *
  ******************************************************************************/
 
-#define fpclassify(x)                                                    \
-    ( sizeof(x) == sizeof(float)  ? __fpclassifyf((float)(x))            \
-    : sizeof(x) == sizeof(double) ? __fpclassifyd((double)(x))           \
-                                  : __fpclassifyl((long double)(x)))
+#define fpclassify(x)                                                                                                                                                            \
+    ( sizeof(x) == sizeof(float)  ? __fpclassifyf((float)(x))                                      \
+    : sizeof(x) == sizeof(double) ? __fpclassifyd((double)(x))                        \
+                                                                                                   : __fpclassifyl((long double)(x)))
 
 extern int __fpclassifyf(float);
 extern int __fpclassifyd(double);
@@ -141,35 +141,35 @@ extern int __fpclassifyl(long double);
     the standard in order to work properly; -ffast-math, among other
     things, implies that NaNs don't happen, which allows the compiler to
     optimize away checks like x != x, which might lead to things like
-    isnan(NaN) returning false.                                               
+    isnan(NaN) returning false.                                                                                                                                          
  
     Thus, if you compile with -ffast-math, actual function calls are
-    generated for these utilities.                                            */
+    generated for these utilities.                                                                                                                                       */
     
-#define isnormal(x)                                                      \
-    ( sizeof(x) == sizeof(float)  ? __inline_isnormalf((float)(x))       \
-    : sizeof(x) == sizeof(double) ? __inline_isnormald((double)(x))      \
-                                  : __inline_isnormall((long double)(x)))
+#define isnormal(x)                                                                                                                                                                           \
+    ( sizeof(x) == sizeof(float)  ? __inline_isnormalf((float)(x))                    \
+    : sizeof(x) == sizeof(double) ? __inline_isnormald((double)(x))                   \
+                                                                                                   : __inline_isnormall((long double)(x)))
 
-#define isfinite(x)                                                      \
-    ( sizeof(x) == sizeof(float)  ? __inline_isfinitef((float)(x))       \
-    : sizeof(x) == sizeof(double) ? __inline_isfinited((double)(x))      \
-                                  : __inline_isfinitel((long double)(x)))
+#define isfinite(x)                                                                                                                                                                           \
+    ( sizeof(x) == sizeof(float)  ? __inline_isfinitef((float)(x))                    \
+    : sizeof(x) == sizeof(double) ? __inline_isfinited((double)(x))                   \
+                                                                                                   : __inline_isfinitel((long double)(x)))
 
-#define isinf(x)                                                         \
-    ( sizeof(x) == sizeof(float)  ? __inline_isinff((float)(x))          \
-    : sizeof(x) == sizeof(double) ? __inline_isinfd((double)(x))         \
-                                  : __inline_isinfl((long double)(x)))
+#define isinf(x)                                                                                                                                                                              \
+    ( sizeof(x) == sizeof(float)  ? __inline_isinff((float)(x))                       \
+    : sizeof(x) == sizeof(double) ? __inline_isinfd((double)(x))                      \
+                                                                                                   : __inline_isinfl((long double)(x)))
 
-#define isnan(x)                                                         \
-    ( sizeof(x) == sizeof(float)  ? __inline_isnanf((float)(x))          \
-    : sizeof(x) == sizeof(double) ? __inline_isnand((double)(x))         \
-                                  : __inline_isnanl((long double)(x)))
+#define isnan(x)                                                                                                                                                                              \
+    ( sizeof(x) == sizeof(float)  ? __inline_isnanf((float)(x))                       \
+    : sizeof(x) == sizeof(double) ? __inline_isnand((double)(x))                      \
+                                                                                                   : __inline_isnanl((long double)(x)))
 
-#define signbit(x)                                                       \
-    ( sizeof(x) == sizeof(float)  ? __inline_signbitf((float)(x))        \
-    : sizeof(x) == sizeof(double) ? __inline_signbitd((double)(x))       \
-                                  : __inline_signbitl((long double)(x)))
+#define signbit(x)                                                                                                                                                                            \
+    ( sizeof(x) == sizeof(float)  ? __inline_signbitf((float)(x))                     \
+    : sizeof(x) == sizeof(double) ? __inline_signbitd((double)(x))                    \
+                                                                                                   : __inline_signbitl((long double)(x)))
 
 __header_always_inline int __inline_isfinitef(float);
 __header_always_inline int __inline_isfinited(double);
@@ -227,8 +227,8 @@ __header_always_inline int __inline_signbitd(double __x) {
 #if defined __i386__ || defined __x86_64__
 __header_always_inline int __inline_signbitl(long double __x) {
     union {
-        long double __ld;
-        struct{ unsigned long long __m; unsigned short __sexp; } __p;
+                     long double __ld;
+                     struct{ unsigned long long __m; unsigned short __sexp; } __p;
     } __u;
     __u.__ld = __x;
     return (int)(__u.__p.__sexp >> 15);
@@ -254,32 +254,32 @@ __header_always_inline int __inline_isnormall(long double __x) {
 
 /*  Implementations making function calls to fall back on when -ffast-math
     or similar is specified.  These are not available in iOS versions prior
-    to 6.0.  If you need them, you must target that version or later.         */
+    to 6.0.  If you need them, you must target that version or later.                      */
     
-#define isnormal(x)                                               \
-    ( sizeof(x) == sizeof(float)  ? __isnormalf((float)(x))       \
-    : sizeof(x) == sizeof(double) ? __isnormald((double)(x))      \
-                                  : __isnormall((long double)(x)))
+#define isnormal(x)                                                                                                                                          \
+    ( sizeof(x) == sizeof(float)  ? __isnormalf((float)(x))                    \
+    : sizeof(x) == sizeof(double) ? __isnormald((double)(x))                   \
+                                                                                                   : __isnormall((long double)(x)))
     
-#define isfinite(x)                                               \
-    ( sizeof(x) == sizeof(float)  ? __isfinitef((float)(x))       \
-    : sizeof(x) == sizeof(double) ? __isfinited((double)(x))      \
-                                  : __isfinitel((long double)(x)))
+#define isfinite(x)                                                                                                                                          \
+    ( sizeof(x) == sizeof(float)  ? __isfinitef((float)(x))                    \
+    : sizeof(x) == sizeof(double) ? __isfinited((double)(x))                   \
+                                                                                                   : __isfinitel((long double)(x)))
     
-#define isinf(x)                                                  \
-    ( sizeof(x) == sizeof(float)  ? __isinff((float)(x))          \
-    : sizeof(x) == sizeof(double) ? __isinfd((double)(x))         \
-                                  : __isinfl((long double)(x)))
+#define isinf(x)                                                                                                                                                          \
+    ( sizeof(x) == sizeof(float)  ? __isinff((float)(x))                       \
+    : sizeof(x) == sizeof(double) ? __isinfd((double)(x))                      \
+                                                                                                   : __isinfl((long double)(x)))
     
-#define isnan(x)                                                  \
-    ( sizeof(x) == sizeof(float)  ? __isnanf((float)(x))          \
-    : sizeof(x) == sizeof(double) ? __isnand((double)(x))         \
-                                  : __isnanl((long double)(x)))
+#define isnan(x)                                                                                                                                                          \
+    ( sizeof(x) == sizeof(float)  ? __isnanf((float)(x))                       \
+    : sizeof(x) == sizeof(double) ? __isnand((double)(x))                      \
+                                                                                                   : __isnanl((long double)(x)))
     
-#define signbit(x)                                                \
-    ( sizeof(x) == sizeof(float)  ? __signbitf((float)(x))        \
-    : sizeof(x) == sizeof(double) ? __signbitd((double)(x))       \
-                                  : __signbitl((long double)(x)))
+#define signbit(x)                                                                                                                                                        \
+    ( sizeof(x) == sizeof(float)  ? __signbitf((float)(x))                     \
+    : sizeof(x) == sizeof(double) ? __signbitd((double)(x))                    \
+                                                                                                   : __signbitl((long double)(x)))
     
 extern int __isnormalf(float);
 extern int __isnormald(double);
@@ -300,9 +300,9 @@ extern int __signbitl(long double);
 #endif /* defined(__GNUC__) && 0 == __FINITE_MATH_ONLY__ */
 
 /******************************************************************************
- *                                                                            *
- *                              Math Functions                                *
- *                                                                            *
+ *                                                                                                                                                                                                                                        *
+ *                                                                                               Math Functions                                                                                                 *
+ *                                                                                                                                                                                                                                        *
  ******************************************************************************/
     
 extern float acosf(float);
@@ -443,7 +443,7 @@ extern long double erfcl(long double);
 
 /*	lgammaf, lgamma, and lgammal are not thread-safe. The thread-safe
     variants lgammaf_r, lgamma_r, and lgammal_r are made available if
-    you define the _REENTRANT symbol before including <math.h>                */
+    you define the _REENTRANT symbol before including <math.h>                                          */
 extern float lgammaf(float);
 extern double lgamma(double);
 extern long double lgammal(long double);
@@ -547,7 +547,7 @@ extern long double fmal(long double, long double, long double);
 #define islessgreater(x, y) __builtin_islessgreater((x),(y))
 #define isunordered(x, y) __builtin_isunordered((x),(y))
 
-/* Deprecated functions; use the INFINITY and NAN macros instead.             */
+/* Deprecated functions; use the INFINITY and NAN macros instead.                                       */
 extern float __inff(void)
 __API_DEPRECATED("use `(float)INFINITY` instead", macos(10.0, 10.9)) __API_UNAVAILABLE(ios, watchos, tvos);
 extern double __inf(void)
@@ -558,18 +558,18 @@ extern float __nan(void)
 __API_DEPRECATED("use `NAN` instead", macos(10.0, 10.14)) __API_UNAVAILABLE(ios, watchos, tvos);
 
 /******************************************************************************
- *  Reentrant variants of lgamma[fl]                                          *
+ *  Reentrant variants of lgamma[fl]                                                                                                                                     *
  ******************************************************************************/
 
 #ifdef _REENTRANT
-/*  Reentrant variants of the lgamma[fl] functions.                           */
+/*  Reentrant variants of the lgamma[fl] functions.                                                                               */
 extern float lgammaf_r(float, int *) __API_AVAILABLE(macos(10.6), ios(3.1));
 extern double lgamma_r(double, int *) __API_AVAILABLE(macos(10.6), ios(3.1));
 extern long double lgammal_r(long double, int *) __API_AVAILABLE(macos(10.6), ios(3.1));
 #endif /* _REENTRANT */
 
 /******************************************************************************
- *  Apple extensions to the C standard                                        *
+ *  Apple extensions to the C standard                                                                                                                      *
  ******************************************************************************/
 
 /*  Because these functions are not specified by any relevant standard, they
@@ -577,10 +577,10 @@ extern long double lgammal_r(long double, int *) __API_AVAILABLE(macos(10.6), io
     they should not conflict with any developer or third-party code.  If they
     are added to a relevant standard in the future, un-prefixed names may be
     added to the library and they may be moved out of this section of the
-    header.                                                                   
+    header.                                                                                                                                                                                                                  
  
     Because these functions are non-standard, they may not be available on non-
-    Apple platforms.                                                          */
+    Apple platforms.                                                                                                                                                                               */
 
 /*  __exp10(x) returns 10**x.  Edge cases match those of exp( ) and exp2( ).  */
 extern float __exp10f(float) __API_AVAILABLE(macos(10.9), ios(7.0));
@@ -589,7 +589,7 @@ extern double __exp10(double) __API_AVAILABLE(macos(10.9), ios(7.0));
 /*  __sincos(x,sinp,cosp) computes the sine and cosine of x with a single
     function call, storing the sine in the memory pointed to by sinp, and
     the cosine in the memory pointed to by cosp. Edge cases match those of
-    separate calls to sin( ) and cos( ).                                      */
+    separate calls to sin( ) and cos( ).                                                                                                                    */
 __header_always_inline void __sincosf(float __x, float *__sinp, float *__cosp);
 __header_always_inline void __sincos(double __x, double *__sinp, double *__cosp);
 
@@ -599,7 +599,7 @@ __header_always_inline void __sincos(double __x, double *__sinp, double *__cosp)
     avoid any loss of precision that results from rounding the result of the
     multiplication M_PI * x.  They may also be significantly more efficient in
     some cases because the argument reduction for these functions is easier
-    to compute.  Consult the man pages for edge case details.                 */
+    to compute.  Consult the man pages for edge case details.                                           */
 extern float __cospif(float) __API_AVAILABLE(macos(10.9), ios(7.0));
 extern double __cospi(double) __API_AVAILABLE(macos(10.9), ios(7.0));
 extern float __sinpif(float) __API_AVAILABLE(macos(10.9), ios(7.0));
@@ -611,7 +611,7 @@ extern double __tanpi(double) __API_AVAILABLE(macos(10.9), ios(7.0));
     (defined __IPHONE_OS_VERSION_MIN_REQUIRED && __IPHONE_OS_VERSION_MIN_REQUIRED < 70000)
 /*  __sincos and __sincosf were introduced in OSX 10.9 and iOS 7.0.  When
     targeting an older system, we simply split them up into discrete calls
-    to sin( ) and cos( ).                                                     */
+    to sin( ) and cos( ).                                                                                                                                                             */
 __header_always_inline void __sincosf(float __x, float *__sinp, float *__cosp) {
   *__sinp = sinf(__x);
   *__cosp = cosf(__x);
@@ -630,7 +630,7 @@ __header_always_inline void __sincos(double __x, double *__sinp, double *__cosp)
  
     These functions were introduced in OSX 10.9 and iOS 7.0.  Because they are
     implemented as header inlines, weak-linking does not function as normal,
-    and they are simply hidden when targeting earlier OS versions.            */
+    and they are simply hidden when targeting earlier OS versions.                                      */
 __header_always_inline void __sincospif(float __x, float *__sinp, float *__cosp);
 __header_always_inline void __sincospi(double __x, double *__sinp, double *__cosp);
 
@@ -669,7 +669,7 @@ __header_always_inline void __sincospi(double __x, double *__sinp, double *__cos
 #endif
 
 /******************************************************************************
- *  POSIX/UNIX extensions to the C standard                                   *
+ *  POSIX/UNIX extensions to the C standard                                                                                                    *
  ******************************************************************************/
 
 #if __DARWIN_C_LEVEL >= 199506L
@@ -683,34 +683,34 @@ extern double scalb(double, double);
 extern int signgam;
 
 /*  Even though these might be more useful as long doubles, POSIX requires
-    that they be double-precision literals.                                   */
-#define M_E         2.71828182845904523536028747135266250   /* e              */
-#define M_LOG2E     1.44269504088896340735992468100189214   /* log2(e)        */
-#define M_LOG10E    0.434294481903251827651128918916605082  /* log10(e)       */
-#define M_LN2       0.693147180559945309417232121458176568  /* loge(2)        */
-#define M_LN10      2.30258509299404568401799145468436421   /* loge(10)       */
-#define M_PI        3.14159265358979323846264338327950288   /* pi             */
-#define M_PI_2      1.57079632679489661923132169163975144   /* pi/2           */
-#define M_PI_4      0.785398163397448309615660845819875721  /* pi/4           */
-#define M_1_PI      0.318309886183790671537767526745028724  /* 1/pi           */
-#define M_2_PI      0.636619772367581343075535053490057448  /* 2/pi           */
+    that they be double-precision literals.                                                                                                    */
+#define M_E                      2.71828182845904523536028747135266250   /* e                                        */
+#define M_LOG2E     1.44269504088896340735992468100189214   /* log2(e)                     */
+#define M_LOG10E    0.434294481903251827651128918916605082  /* log10(e)                    */
+#define M_LN2                    0.693147180559945309417232121458176568  /* loge(2)                     */
+#define M_LN10                   2.30258509299404568401799145468436421   /* loge(10)                    */
+#define M_PI                     3.14159265358979323846264338327950288   /* pi                                       */
+#define M_PI_2                   1.57079632679489661923132169163975144   /* pi/2                        */
+#define M_PI_4                   0.785398163397448309615660845819875721  /* pi/4                        */
+#define M_1_PI                   0.318309886183790671537767526745028724  /* 1/pi                        */
+#define M_2_PI                   0.636619772367581343075535053490057448  /* 2/pi                        */
 #define M_2_SQRTPI  1.12837916709551257389615890312154517   /* 2/sqrt(pi)     */
-#define M_SQRT2     1.41421356237309504880168872420969808   /* sqrt(2)        */
-#define M_SQRT1_2   0.707106781186547524400844362104849039  /* 1/sqrt(2)      */
+#define M_SQRT2     1.41421356237309504880168872420969808   /* sqrt(2)                     */
+#define M_SQRT1_2   0.707106781186547524400844362104849039  /* 1/sqrt(2)                   */
 
 #define MAXFLOAT    0x1.fffffep+127f
 #endif /* __DARWIN_C_LEVEL >= 199506L */
 
 /*  Long-double versions of M_E, etc for convenience on Intel where long-
     double is not the same as double.  Define __MATH_LONG_DOUBLE_CONSTANTS
-    to make these constants available.                                        */
+    to make these constants available.                                                                                                                      */
 #if defined __MATH_LONG_DOUBLE_CONSTANTS
-#define M_El        0xa.df85458a2bb4a9bp-2L
+#define M_El                     0xa.df85458a2bb4a9bp-2L
 #define M_LOG2El    0xb.8aa3b295c17f0bcp-3L
 #define M_LOG10El   0xd.e5bd8a937287195p-5L
-#define M_LN2l      0xb.17217f7d1cf79acp-4L
+#define M_LN2l                   0xb.17217f7d1cf79acp-4L
 #define M_LN10l     0x9.35d8dddaaa8ac17p-2L
-#define M_PIl       0xc.90fdaa22168c235p-2L
+#define M_PIl                    0xc.90fdaa22168c235p-2L
 #define M_PI_2l     0xc.90fdaa22168c235p-3L
 #define M_PI_4l     0xc.90fdaa22168c235p-4L
 #define M_1_PIl     0xa.2f9836e4e44152ap-5L
@@ -721,7 +721,7 @@ extern int signgam;
 #endif /* defined __MATH_LONG_DOUBLE_CONSTANTS */
 
 /******************************************************************************
- *  Legacy BSD extensions to the C standard                                   *
+ *  Legacy BSD extensions to the C standard                                                                                                    *
  ******************************************************************************/
 
 #if __DARWIN_C_LEVEL >= __DARWIN_C_FULL
@@ -736,22 +736,22 @@ extern int signgam;
 #define	TLOSS		5
 #define	PLOSS		6
 
-/* Legacy BSD API; use the C99 `lrint( )` function instead.                   */
+/* Legacy BSD API; use the C99 `lrint( )` function instead.                                                          */
 extern long int rinttol(double)
 __API_DEPRECATED_WITH_REPLACEMENT("lrint", macos(10.0, 10.9)) __API_UNAVAILABLE(ios, watchos, tvos);
-/* Legacy BSD API; use the C99 `lround( )` function instead.                  */
+/* Legacy BSD API; use the C99 `lround( )` function instead.                                                         */
 extern long int roundtol(double)
 __API_DEPRECATED_WITH_REPLACEMENT("lround", macos(10.0, 10.9)) __API_UNAVAILABLE(ios, watchos, tvos);
-/* Legacy BSD API; use the C99 `remainder( )` function instead.               */
+/* Legacy BSD API; use the C99 `remainder( )` function instead.                                         */
 extern double drem(double, double)
 __API_DEPRECATED_WITH_REPLACEMENT("remainder", macos(10.0, 10.9)) __API_UNAVAILABLE(ios, watchos, tvos);
-/* Legacy BSD API; use the C99 `isfinite( )` macro instead.                   */
+/* Legacy BSD API; use the C99 `isfinite( )` macro instead.                                                          */
 extern int finite(double)
 __API_DEPRECATED("Use `isfinite((double)x)` instead.", macos(10.0, 10.9)) __API_UNAVAILABLE(ios, watchos, tvos);
-/* Legacy BSD API; use the C99 `tgamma( )` function instead.                  */
+/* Legacy BSD API; use the C99 `tgamma( )` function instead.                                                         */
 extern double gamma(double)
 __API_DEPRECATED_WITH_REPLACEMENT("tgamma", macos(10.0, 10.9)) __API_UNAVAILABLE(ios, watchos, tvos);
-/* Legacy BSD API; use `2*frexp( )` or `scalbn(x, -ilogb(x))` instead.        */
+/* Legacy BSD API; use `2*frexp( )` or `scalbn(x, -ilogb(x))` instead.                     */
 extern double significand(double)
 __API_DEPRECATED("Use `2*frexp( )` or `scalbn(x, -ilogb(x))` instead.", macos(10.0, 10.9)) __API_UNAVAILABLE(ios, watchos, tvos);
 

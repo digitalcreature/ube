@@ -144,15 +144,15 @@ pub const libc_stat = extern struct {
     __spare: [10]u64,
 
     pub fn atime(self: @This()) timespec {
-        return self.atim;
+                     return self.atim;
     }
 
     pub fn mtime(self: @This()) timespec {
-        return self.mtim;
+                     return self.mtim;
     }
 
     pub fn ctime(self: @This()) timespec {
-        return self.ctim;
+                     return self.ctim;
     }
 };
 
@@ -172,7 +172,7 @@ pub const dirent = extern struct {
     d_name: [256]u8,
 
     pub fn reclen(self: dirent) u16 {
-        return self.d_reclen;
+                     return self.d_reclen;
     }
 };
 
@@ -744,8 +744,8 @@ pub const SIG_IGN = @intToPtr(fn (i32) callconv(.C) void, 1);
 pub const Sigaction = extern struct {
     /// signal handler
     __sigaction_u: extern union {
-        __sa_handler: fn (i32) callconv(.C) void,
-        __sa_sigaction: fn (i32, *__siginfo, usize) callconv(.C) void,
+                     __sa_handler: fn (i32) callconv(.C) void,
+                     __sa_sigaction: fn (i32, *__siginfo, usize) callconv(.C) void,
     },
 
     /// see signal options

@@ -14,7 +14,7 @@
  *		Fred N. van Kempen, <waltje@uWalt.NL.Mugnet.ORG>
  *
  * Changes:
- *              Mike McLagan    :       Routing by source
+ *                                        Mike McLagan    :                    Routing by source
  *
  *		This program is free software; you can redistribute it and/or
  *		modify it under the terms of the GNU General Public License
@@ -40,7 +40,7 @@ struct rtentry {
 	short		rt_metric;	/* +1 for binary compatibility!	*/
 	char *rt_dev;	/* forcing the device at add	*/
 	unsigned long	rt_mtu;		/* per route MTU/Window 	*/
-#define rt_mss	rt_mtu			/* Compatibility :-(            */
+#define rt_mss	rt_mtu			/* Compatibility :-(                                      */
 	unsigned long	rt_window;	/* Window clamping 		*/
 	unsigned short	rt_irtt;	/* Initial RTT			*/
 };

@@ -26,14 +26,14 @@
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 #ifndef _STRUCT_TIMEVAL
-#define _STRUCT_TIMEVAL         struct timeval
+#define _STRUCT_TIMEVAL                      struct timeval
 
 #include <machine/types.h> /* __darwin_time_t */
 #include <sys/_types.h> /* __darwin_suseconds_t */
 
 _STRUCT_TIMEVAL
 {
-	__darwin_time_t         tv_sec;         /* seconds */
-	__darwin_suseconds_t    tv_usec;        /* and microseconds */
+	__darwin_time_t                      tv_sec;                      /* seconds */
+	__darwin_suseconds_t    tv_usec;                     /* and microseconds */
 };
 #endif /* _STRUCT_TIMEVAL */

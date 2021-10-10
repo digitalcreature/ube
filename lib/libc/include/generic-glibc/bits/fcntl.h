@@ -73,7 +73,7 @@ struct flock
     __off_t l_len;	/* Size of the locked area; zero means until EOF.  */
 #if _MIPS_SIM != _ABI64
     /* The 64-bit flock structure, used by the n64 ABI, and for 64-bit
-       fcntls in o32 and n32, never has this field.  */
+                    fcntls in o32 and n32, never has this field.  */
     long int l_sysid;
 #endif
 #else
@@ -83,7 +83,7 @@ struct flock
     __pid_t l_pid;	/* Process holding the lock.  */
 #if ! defined __USE_FILE_OFFSET64 && _MIPS_SIM != _ABI64
     /* The 64-bit flock structure, used by the n64 ABI, and for 64-bit
-       flock in o32 and n32, never has this field.  */
+                    flock in o32 and n32, never has this field.  */
     long int __glibc_reserved0[4];
 #endif
   };

@@ -58,7 +58,7 @@ struct vifctl {
 	unsigned int vifc_rate_limit;	/* Rate limiter values (NI) */
 	union {
 		struct in_addr vifc_lcl_addr;     /* Local interface address */
-		int            vifc_lcl_ifindex;  /* Local interface index   */
+		int                                      vifc_lcl_ifindex;  /* Local interface index   */
 	};
 	struct in_addr vifc_rmt_addr;	/* IPIP tunnel addr */
 };

@@ -5,8 +5,8 @@
  * MontaVista IPMI interface
  *
  * Author: MontaVista Software, Inc.
- *         Corey Minyard <minyard@mvista.com>
- *         source@mvista.com
+ *                      Corey Minyard <minyard@mvista.com>
+ *                      source@mvista.com
  *
  * Copyright 2002 MontaVista Software Inc.
  *
@@ -63,8 +63,8 @@ struct ipmi_addr {
  */
 #define IPMI_SYSTEM_INTERFACE_ADDR_TYPE	0x0c
 struct ipmi_system_interface_addr {
-	int           addr_type;
-	short         channel;
+	int                        addr_type;
+	short                      channel;
 	unsigned char lun;
 };
 
@@ -74,8 +74,8 @@ struct ipmi_system_interface_addr {
    IPMI 1.5 manual. */
 #define IPMI_IPMB_BROADCAST_ADDR_TYPE	0x41
 struct ipmi_ipmb_addr {
-	int           addr_type;
-	short         channel;
+	int                        addr_type;
+	short                      channel;
 	unsigned char slave_addr;
 	unsigned char lun;
 };
@@ -99,8 +99,8 @@ struct ipmi_ipmb_addr {
  */
 #define IPMI_LAN_ADDR_TYPE		0x04
 struct ipmi_lan_addr {
-	int           addr_type;
-	short         channel;
+	int                        addr_type;
+	short                      channel;
 	unsigned char privilege;
 	unsigned char session_handle;
 	unsigned char remote_SWID;
@@ -166,11 +166,11 @@ struct kernel_ipmi_msg {
 #define IPMI_ASYNC_EVENT_RECV_TYPE	2 /* Something from the event queue */
 #define IPMI_CMD_RECV_TYPE		3 /* A command from somewhere else */
 #define IPMI_RESPONSE_RESPONSE_TYPE	4 /* The response for
-					      a sent response, giving any
-					      error status for sending the
-					      response.  When you send a
-					      response message, this will
-					      be returned. */
+					                   a sent response, giving any
+					                   error status for sending the
+					                   response.  When you send a
+					                   response message, this will
+					                   be returned. */
 #define IPMI_OEM_RECV_TYPE		5 /* The response for OEM Channels */
 
 /* Note that async events and received commands do not have a completion
@@ -246,7 +246,7 @@ struct ipmi_req {
  * Send a message to the interfaces.  error values are:
  *   - EFAULT - an address supplied was invalid.
  *   - EINVAL - The address supplied was not valid, or the command
- *              was not allowed.
+ *                                        was not allowed.
  *   - EMSGSIZE - The message to was too large.
  *   - ENOMEM - Buffers could not be allocated for the command.
  */
@@ -260,7 +260,7 @@ struct ipmi_req_settime {
 
 	/* See ipmi_request_settime() above for details on these
 	   values. */
-	int          retries;
+	int                       retries;
 	unsigned int retry_time_ms;
 };
 /*
@@ -268,7 +268,7 @@ struct ipmi_req_settime {
  * are:
  *   - EFAULT - an address supplied was invalid.
  *   - EINVAL - The address supplied was not valid, or the command
- *              was not allowed.
+ *                                        was not allowed.
  *   - EMSGSIZE - The message to was too large.
  *   - ENOMEM - Buffers could not be allocated for the command.
  */
@@ -278,7 +278,7 @@ struct ipmi_req_settime {
 /* Messages received from the interface are this format. */
 struct ipmi_recv {
 	int     recv_type; /* Is this a command, response or an
-			      asyncronous event. */
+			                   asyncronous event. */
 
 	unsigned char *addr;    /* Address the message was from is put
 				   here.  The caller must supply the
@@ -309,9 +309,9 @@ struct ipmi_recv {
  *  - EFAULT - an address supplied was invalid.
  *  - EINVAL - The address supplied was not valid.
  *  - EMSGSIZE - The message to was too large to fit into the message buffer,
- *               the message will be left in the buffer. */
+ *                                         the message will be left in the buffer. */
 #define IPMICTL_RECEIVE_MSG		_IOWR(IPMI_IOC_MAGIC, 12,	\
-					      struct ipmi_recv)
+					                   struct ipmi_recv)
 
 /*
  * Like RECEIVE_MSG, but if the message won't fit in the buffer, it
@@ -319,7 +319,7 @@ struct ipmi_recv {
  * buffer.
  */
 #define IPMICTL_RECEIVE_MSG_TRUNC	_IOWR(IPMI_IOC_MAGIC, 11,	\
-					      struct ipmi_recv)
+					                   struct ipmi_recv)
 
 /* Register to get commands from other entities on this interface. */
 struct ipmi_cmdspec {
@@ -411,7 +411,7 @@ struct ipmi_channel_lun_address_set {
  * generally mess with these.
  */
 struct ipmi_timing_parms {
-	int          retries;
+	int                       retries;
 	unsigned int retry_time_ms;
 };
 #define IPMICTL_SET_TIMING_PARMS_CMD	_IOR(IPMI_IOC_MAGIC, 22, \

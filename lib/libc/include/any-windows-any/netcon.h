@@ -174,13 +174,13 @@ extern "C" {
 #else
   typedef struct IEnumNetConnectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumNetConnection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumNetConnection *This);
-      ULONG (WINAPI *Release)(IEnumNetConnection *This);
-      HRESULT (WINAPI *Next)(IEnumNetConnection *This,ULONG celt,INetConnection **rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumNetConnection *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumNetConnection *This);
-      HRESULT (WINAPI *Clone)(IEnumNetConnection *This,IEnumNetConnection **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumNetConnection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumNetConnection *This);
+                   ULONG (WINAPI *Release)(IEnumNetConnection *This);
+                   HRESULT (WINAPI *Next)(IEnumNetConnection *This,ULONG celt,INetConnection **rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumNetConnection *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumNetConnection *This);
+                   HRESULT (WINAPI *Clone)(IEnumNetConnection *This,IEnumNetConnection **ppenum);
     END_INTERFACE
   } IEnumNetConnectionVtbl;
   struct IEnumNetConnection {
@@ -259,16 +259,16 @@ extern "C" {
 #else
   typedef struct INetConnectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetConnection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetConnection *This);
-      ULONG (WINAPI *Release)(INetConnection *This);
-      HRESULT (WINAPI *Connect)(INetConnection *This);
-      HRESULT (WINAPI *Disconnect)(INetConnection *This);
-      HRESULT (WINAPI *Delete)(INetConnection *This);
-      HRESULT (WINAPI *Duplicate)(INetConnection *This,LPCWSTR pszwDuplicateName,INetConnection **ppCon);
-      HRESULT (WINAPI *GetProperties)(INetConnection *This,NETCON_PROPERTIES **ppProps);
-      HRESULT (WINAPI *GetUiObjectClassId)(INetConnection *This,CLSID *pclsid);
-      HRESULT (WINAPI *Rename)(INetConnection *This,LPCWSTR pszwNewName);
+                   HRESULT (WINAPI *QueryInterface)(INetConnection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetConnection *This);
+                   ULONG (WINAPI *Release)(INetConnection *This);
+                   HRESULT (WINAPI *Connect)(INetConnection *This);
+                   HRESULT (WINAPI *Disconnect)(INetConnection *This);
+                   HRESULT (WINAPI *Delete)(INetConnection *This);
+                   HRESULT (WINAPI *Duplicate)(INetConnection *This,LPCWSTR pszwDuplicateName,INetConnection **ppCon);
+                   HRESULT (WINAPI *GetProperties)(INetConnection *This,NETCON_PROPERTIES **ppProps);
+                   HRESULT (WINAPI *GetUiObjectClassId)(INetConnection *This,CLSID *pclsid);
+                   HRESULT (WINAPI *Rename)(INetConnection *This,LPCWSTR pszwNewName);
     END_INTERFACE
   } INetConnectionVtbl;
   struct INetConnection {
@@ -324,10 +324,10 @@ extern "C" {
 #else
   typedef struct INetConnectionManagerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetConnectionManager *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetConnectionManager *This);
-      ULONG (WINAPI *Release)(INetConnectionManager *This);
-      HRESULT (WINAPI *EnumConnections)(INetConnectionManager *This,NETCONMGR_ENUM_FLAGS Flags,IEnumNetConnection **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(INetConnectionManager *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetConnectionManager *This);
+                   ULONG (WINAPI *Release)(INetConnectionManager *This);
+                   HRESULT (WINAPI *EnumConnections)(INetConnectionManager *This,NETCONMGR_ENUM_FLAGS Flags,IEnumNetConnection **ppEnum);
     END_INTERFACE
   } INetConnectionManagerVtbl;
   struct INetConnectionManager {
@@ -357,12 +357,12 @@ extern "C" {
 #else
   typedef struct INetConnectionManagerEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetConnectionManagerEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetConnectionManagerEvents *This);
-      ULONG (WINAPI *Release)(INetConnectionManagerEvents *This);
-      HRESULT (WINAPI *RefreshConnections)(INetConnectionManagerEvents *This);
-      HRESULT (WINAPI *Enable)(INetConnectionManagerEvents *This);
-      HRESULT (WINAPI *Disable)(INetConnectionManagerEvents *This,ULONG ulDisableTimeout);
+                   HRESULT (WINAPI *QueryInterface)(INetConnectionManagerEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetConnectionManagerEvents *This);
+                   ULONG (WINAPI *Release)(INetConnectionManagerEvents *This);
+                   HRESULT (WINAPI *RefreshConnections)(INetConnectionManagerEvents *This);
+                   HRESULT (WINAPI *Enable)(INetConnectionManagerEvents *This);
+                   HRESULT (WINAPI *Disable)(INetConnectionManagerEvents *This,ULONG ulDisableTimeout);
     END_INTERFACE
   } INetConnectionManagerEventsVtbl;
   struct INetConnectionManagerEvents {
@@ -402,12 +402,12 @@ extern "C" {
 #else
   typedef struct INetConnectionConnectUiVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetConnectionConnectUi *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetConnectionConnectUi *This);
-      ULONG (WINAPI *Release)(INetConnectionConnectUi *This);
-      HRESULT (WINAPI *SetConnection)(INetConnectionConnectUi *This,INetConnection *pCon);
-      HRESULT (WINAPI *Connect)(INetConnectionConnectUi *This,HWND hwndParent,DWORD dwFlags);
-      HRESULT (WINAPI *Disconnect)(INetConnectionConnectUi *This,HWND hwndParent,DWORD dwFlags);
+                   HRESULT (WINAPI *QueryInterface)(INetConnectionConnectUi *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetConnectionConnectUi *This);
+                   ULONG (WINAPI *Release)(INetConnectionConnectUi *This);
+                   HRESULT (WINAPI *SetConnection)(INetConnectionConnectUi *This,INetConnection *pCon);
+                   HRESULT (WINAPI *Connect)(INetConnectionConnectUi *This,HWND hwndParent,DWORD dwFlags);
+                   HRESULT (WINAPI *Disconnect)(INetConnectionConnectUi *This,HWND hwndParent,DWORD dwFlags);
     END_INTERFACE
   } INetConnectionConnectUiVtbl;
   struct INetConnectionConnectUi {
@@ -442,11 +442,11 @@ extern "C" {
 #else
   typedef struct INetConnectionPropertyUiVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetConnectionPropertyUi *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetConnectionPropertyUi *This);
-      ULONG (WINAPI *Release)(INetConnectionPropertyUi *This);
-      HRESULT (WINAPI *SetConnection)(INetConnectionPropertyUi *This,INetConnection *pCon);
-      HRESULT (WINAPI *AddPages)(INetConnectionPropertyUi *This,HWND hwndParent,LPFNADDPROPSHEETPAGE pfnAddPage,LPARAM lParam);
+                   HRESULT (WINAPI *QueryInterface)(INetConnectionPropertyUi *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetConnectionPropertyUi *This);
+                   ULONG (WINAPI *Release)(INetConnectionPropertyUi *This);
+                   HRESULT (WINAPI *SetConnection)(INetConnectionPropertyUi *This,INetConnection *pCon);
+                   HRESULT (WINAPI *AddPages)(INetConnectionPropertyUi *This,HWND hwndParent,LPFNADDPROPSHEETPAGE pfnAddPage,LPARAM lParam);
     END_INTERFACE
   } INetConnectionPropertyUiVtbl;
   struct INetConnectionPropertyUi {
@@ -477,12 +477,12 @@ extern "C" {
 #else
   typedef struct INetConnectionPropertyUi2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetConnectionPropertyUi2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetConnectionPropertyUi2 *This);
-      ULONG (WINAPI *Release)(INetConnectionPropertyUi2 *This);
-      HRESULT (WINAPI *SetConnection)(INetConnectionPropertyUi2 *This,INetConnection *pCon);
-      HRESULT (WINAPI *AddPages)(INetConnectionPropertyUi2 *This,HWND hwndParent,LPFNADDPROPSHEETPAGE pfnAddPage,LPARAM lParam);
-      HRESULT (WINAPI *GetIcon)(INetConnectionPropertyUi2 *This,DWORD dwSize,HICON *phIcon);
+                   HRESULT (WINAPI *QueryInterface)(INetConnectionPropertyUi2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetConnectionPropertyUi2 *This);
+                   ULONG (WINAPI *Release)(INetConnectionPropertyUi2 *This);
+                   HRESULT (WINAPI *SetConnection)(INetConnectionPropertyUi2 *This,INetConnection *pCon);
+                   HRESULT (WINAPI *AddPages)(INetConnectionPropertyUi2 *This,HWND hwndParent,LPFNADDPROPSHEETPAGE pfnAddPage,LPARAM lParam);
+                   HRESULT (WINAPI *GetIcon)(INetConnectionPropertyUi2 *This,DWORD dwSize,HICON *phIcon);
     END_INTERFACE
   } INetConnectionPropertyUi2Vtbl;
   struct INetConnectionPropertyUi2 {
@@ -531,12 +531,12 @@ extern "C" {
 #else
   typedef struct INetConnectionCommonUiVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetConnectionCommonUi *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetConnectionCommonUi *This);
-      ULONG (WINAPI *Release)(INetConnectionCommonUi *This);
-      HRESULT (WINAPI *ChooseConnection)(INetConnectionCommonUi *This,NETCON_CHOOSECONN *pChooseConn,INetConnection **ppCon);
-      HRESULT (WINAPI *ShowConnectionProperties)(INetConnectionCommonUi *This,HWND hwndParent,INetConnection *pCon);
-      HRESULT (WINAPI *StartNewConnectionWizard)(INetConnectionCommonUi *This,HWND hwndParent,INetConnection **ppCon);
+                   HRESULT (WINAPI *QueryInterface)(INetConnectionCommonUi *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetConnectionCommonUi *This);
+                   ULONG (WINAPI *Release)(INetConnectionCommonUi *This);
+                   HRESULT (WINAPI *ChooseConnection)(INetConnectionCommonUi *This,NETCON_CHOOSECONN *pChooseConn,INetConnection **ppCon);
+                   HRESULT (WINAPI *ShowConnectionProperties)(INetConnectionCommonUi *This,HWND hwndParent,INetConnection *pCon);
+                   HRESULT (WINAPI *StartNewConnectionWizard)(INetConnectionCommonUi *This,HWND hwndParent,INetConnection **ppCon);
     END_INTERFACE
   } INetConnectionCommonUiVtbl;
   struct INetConnectionCommonUi {
@@ -573,13 +573,13 @@ extern "C" {
 #else
   typedef struct IEnumNetSharingPortMappingVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumNetSharingPortMapping *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumNetSharingPortMapping *This);
-      ULONG (WINAPI *Release)(IEnumNetSharingPortMapping *This);
-      HRESULT (WINAPI *Next)(IEnumNetSharingPortMapping *This,ULONG celt,VARIANT *rgVar,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumNetSharingPortMapping *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumNetSharingPortMapping *This);
-      HRESULT (WINAPI *Clone)(IEnumNetSharingPortMapping *This,IEnumNetSharingPortMapping **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumNetSharingPortMapping *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumNetSharingPortMapping *This);
+                   ULONG (WINAPI *Release)(IEnumNetSharingPortMapping *This);
+                   HRESULT (WINAPI *Next)(IEnumNetSharingPortMapping *This,ULONG celt,VARIANT *rgVar,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumNetSharingPortMapping *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumNetSharingPortMapping *This);
+                   HRESULT (WINAPI *Clone)(IEnumNetSharingPortMapping *This,IEnumNetSharingPortMapping **ppenum);
     END_INTERFACE
   } IEnumNetSharingPortMappingVtbl;
   struct IEnumNetSharingPortMapping {
@@ -623,21 +623,21 @@ extern "C" {
 #else
   typedef struct INetSharingPortMappingPropsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetSharingPortMappingProps *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetSharingPortMappingProps *This);
-      ULONG (WINAPI *Release)(INetSharingPortMappingProps *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPortMappingProps *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetSharingPortMappingProps *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetSharingPortMappingProps *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetSharingPortMappingProps *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(INetSharingPortMappingProps *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_IPProtocol)(INetSharingPortMappingProps *This,UCHAR *pucIPProt);
-      HRESULT (WINAPI *get_ExternalPort)(INetSharingPortMappingProps *This,__LONG32 *pusPort);
-      HRESULT (WINAPI *get_InternalPort)(INetSharingPortMappingProps *This,__LONG32 *pusPort);
-      HRESULT (WINAPI *get_Options)(INetSharingPortMappingProps *This,__LONG32 *pdwOptions);
-      HRESULT (WINAPI *get_TargetName)(INetSharingPortMappingProps *This,BSTR *pbstrTargetName);
-      HRESULT (WINAPI *get_TargetIPAddress)(INetSharingPortMappingProps *This,BSTR *pbstrTargetIPAddress);
-      HRESULT (WINAPI *get_Enabled)(INetSharingPortMappingProps *This,VARIANT_BOOL *pbool);
+                   HRESULT (WINAPI *QueryInterface)(INetSharingPortMappingProps *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetSharingPortMappingProps *This);
+                   ULONG (WINAPI *Release)(INetSharingPortMappingProps *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPortMappingProps *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetSharingPortMappingProps *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetSharingPortMappingProps *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetSharingPortMappingProps *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(INetSharingPortMappingProps *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_IPProtocol)(INetSharingPortMappingProps *This,UCHAR *pucIPProt);
+                   HRESULT (WINAPI *get_ExternalPort)(INetSharingPortMappingProps *This,__LONG32 *pusPort);
+                   HRESULT (WINAPI *get_InternalPort)(INetSharingPortMappingProps *This,__LONG32 *pusPort);
+                   HRESULT (WINAPI *get_Options)(INetSharingPortMappingProps *This,__LONG32 *pdwOptions);
+                   HRESULT (WINAPI *get_TargetName)(INetSharingPortMappingProps *This,BSTR *pbstrTargetName);
+                   HRESULT (WINAPI *get_TargetIPAddress)(INetSharingPortMappingProps *This,BSTR *pbstrTargetIPAddress);
+                   HRESULT (WINAPI *get_Enabled)(INetSharingPortMappingProps *This,VARIANT_BOOL *pbool);
     END_INTERFACE
   } INetSharingPortMappingPropsVtbl;
   struct INetSharingPortMappingProps {
@@ -693,17 +693,17 @@ extern "C" {
 #else
   typedef struct INetSharingPortMappingVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetSharingPortMapping *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetSharingPortMapping *This);
-      ULONG (WINAPI *Release)(INetSharingPortMapping *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPortMapping *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetSharingPortMapping *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetSharingPortMapping *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetSharingPortMapping *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Disable)(INetSharingPortMapping *This);
-      HRESULT (WINAPI *Enable)(INetSharingPortMapping *This);
-      HRESULT (WINAPI *get_Properties)(INetSharingPortMapping *This,INetSharingPortMappingProps **ppNSPMP);
-      HRESULT (WINAPI *Delete)(INetSharingPortMapping *This);
+                   HRESULT (WINAPI *QueryInterface)(INetSharingPortMapping *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetSharingPortMapping *This);
+                   ULONG (WINAPI *Release)(INetSharingPortMapping *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPortMapping *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetSharingPortMapping *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetSharingPortMapping *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetSharingPortMapping *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Disable)(INetSharingPortMapping *This);
+                   HRESULT (WINAPI *Enable)(INetSharingPortMapping *This);
+                   HRESULT (WINAPI *get_Properties)(INetSharingPortMapping *This,INetSharingPortMappingProps **ppNSPMP);
+                   HRESULT (WINAPI *Delete)(INetSharingPortMapping *This);
     END_INTERFACE
   } INetSharingPortMappingVtbl;
   struct INetSharingPortMapping {
@@ -747,13 +747,13 @@ extern "C" {
 #else
   typedef struct IEnumNetSharingEveryConnectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumNetSharingEveryConnection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumNetSharingEveryConnection *This);
-      ULONG (WINAPI *Release)(IEnumNetSharingEveryConnection *This);
-      HRESULT (WINAPI *Next)(IEnumNetSharingEveryConnection *This,ULONG celt,VARIANT *rgVar,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumNetSharingEveryConnection *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumNetSharingEveryConnection *This);
-      HRESULT (WINAPI *Clone)(IEnumNetSharingEveryConnection *This,IEnumNetSharingEveryConnection **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumNetSharingEveryConnection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumNetSharingEveryConnection *This);
+                   ULONG (WINAPI *Release)(IEnumNetSharingEveryConnection *This);
+                   HRESULT (WINAPI *Next)(IEnumNetSharingEveryConnection *This,ULONG celt,VARIANT *rgVar,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumNetSharingEveryConnection *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumNetSharingEveryConnection *This);
+                   HRESULT (WINAPI *Clone)(IEnumNetSharingEveryConnection *This,IEnumNetSharingEveryConnection **ppenum);
     END_INTERFACE
   } IEnumNetSharingEveryConnectionVtbl;
   struct IEnumNetSharingEveryConnection {
@@ -793,13 +793,13 @@ extern "C" {
 #else
   typedef struct IEnumNetSharingPublicConnectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumNetSharingPublicConnection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumNetSharingPublicConnection *This);
-      ULONG (WINAPI *Release)(IEnumNetSharingPublicConnection *This);
-      HRESULT (WINAPI *Next)(IEnumNetSharingPublicConnection *This,ULONG celt,VARIANT *rgVar,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumNetSharingPublicConnection *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumNetSharingPublicConnection *This);
-      HRESULT (WINAPI *Clone)(IEnumNetSharingPublicConnection *This,IEnumNetSharingPublicConnection **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumNetSharingPublicConnection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumNetSharingPublicConnection *This);
+                   ULONG (WINAPI *Release)(IEnumNetSharingPublicConnection *This);
+                   HRESULT (WINAPI *Next)(IEnumNetSharingPublicConnection *This,ULONG celt,VARIANT *rgVar,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumNetSharingPublicConnection *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumNetSharingPublicConnection *This);
+                   HRESULT (WINAPI *Clone)(IEnumNetSharingPublicConnection *This,IEnumNetSharingPublicConnection **ppenum);
     END_INTERFACE
   } IEnumNetSharingPublicConnectionVtbl;
   struct IEnumNetSharingPublicConnection {
@@ -839,13 +839,13 @@ extern "C" {
 #else
   typedef struct IEnumNetSharingPrivateConnectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumNetSharingPrivateConnection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumNetSharingPrivateConnection *This);
-      ULONG (WINAPI *Release)(IEnumNetSharingPrivateConnection *This);
-      HRESULT (WINAPI *Next)(IEnumNetSharingPrivateConnection *This,ULONG celt,VARIANT *rgVar,ULONG *pCeltFetched);
-      HRESULT (WINAPI *Skip)(IEnumNetSharingPrivateConnection *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumNetSharingPrivateConnection *This);
-      HRESULT (WINAPI *Clone)(IEnumNetSharingPrivateConnection *This,IEnumNetSharingPrivateConnection **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumNetSharingPrivateConnection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumNetSharingPrivateConnection *This);
+                   ULONG (WINAPI *Release)(IEnumNetSharingPrivateConnection *This);
+                   HRESULT (WINAPI *Next)(IEnumNetSharingPrivateConnection *This,ULONG celt,VARIANT *rgVar,ULONG *pCeltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumNetSharingPrivateConnection *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumNetSharingPrivateConnection *This);
+                   HRESULT (WINAPI *Clone)(IEnumNetSharingPrivateConnection *This,IEnumNetSharingPrivateConnection **ppenum);
     END_INTERFACE
   } IEnumNetSharingPrivateConnectionVtbl;
   struct IEnumNetSharingPrivateConnection {
@@ -883,15 +883,15 @@ extern "C" {
 #else
   typedef struct INetSharingPortMappingCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetSharingPortMappingCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetSharingPortMappingCollection *This);
-      ULONG (WINAPI *Release)(INetSharingPortMappingCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPortMappingCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetSharingPortMappingCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetSharingPortMappingCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetSharingPortMappingCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(INetSharingPortMappingCollection *This,IUnknown **pVal);
-      HRESULT (WINAPI *get_Count)(INetSharingPortMappingCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *QueryInterface)(INetSharingPortMappingCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetSharingPortMappingCollection *This);
+                   ULONG (WINAPI *Release)(INetSharingPortMappingCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPortMappingCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetSharingPortMappingCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetSharingPortMappingCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetSharingPortMappingCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(INetSharingPortMappingCollection *This,IUnknown **pVal);
+                   HRESULT (WINAPI *get_Count)(INetSharingPortMappingCollection *This,__LONG32 *pVal);
     END_INTERFACE
   } INetSharingPortMappingCollectionVtbl;
   struct INetSharingPortMappingCollection {
@@ -934,19 +934,19 @@ extern "C" {
 #else
   typedef struct INetConnectionPropsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetConnectionProps *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetConnectionProps *This);
-      ULONG (WINAPI *Release)(INetConnectionProps *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetConnectionProps *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetConnectionProps *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetConnectionProps *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetConnectionProps *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Guid)(INetConnectionProps *This,BSTR *pbstrGuid);
-      HRESULT (WINAPI *get_Name)(INetConnectionProps *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_DeviceName)(INetConnectionProps *This,BSTR *pbstrDeviceName);
-      HRESULT (WINAPI *get_Status)(INetConnectionProps *This,NETCON_STATUS *pStatus);
-      HRESULT (WINAPI *get_MediaType)(INetConnectionProps *This,NETCON_MEDIATYPE *pMediaType);
-      HRESULT (WINAPI *get_Characteristics)(INetConnectionProps *This,DWORD *pdwFlags);
+                   HRESULT (WINAPI *QueryInterface)(INetConnectionProps *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetConnectionProps *This);
+                   ULONG (WINAPI *Release)(INetConnectionProps *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetConnectionProps *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetConnectionProps *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetConnectionProps *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetConnectionProps *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Guid)(INetConnectionProps *This,BSTR *pbstrGuid);
+                   HRESULT (WINAPI *get_Name)(INetConnectionProps *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_DeviceName)(INetConnectionProps *This,BSTR *pbstrDeviceName);
+                   HRESULT (WINAPI *get_Status)(INetConnectionProps *This,NETCON_STATUS *pStatus);
+                   HRESULT (WINAPI *get_MediaType)(INetConnectionProps *This,NETCON_MEDIATYPE *pMediaType);
+                   HRESULT (WINAPI *get_Characteristics)(INetConnectionProps *This,DWORD *pdwFlags);
     END_INTERFACE
   } INetConnectionPropsVtbl;
   struct INetConnectionProps {
@@ -1015,23 +1015,23 @@ extern "C" {
 #else
   typedef struct INetSharingConfigurationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetSharingConfiguration *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetSharingConfiguration *This);
-      ULONG (WINAPI *Release)(INetSharingConfiguration *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetSharingConfiguration *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetSharingConfiguration *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetSharingConfiguration *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetSharingConfiguration *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_SharingEnabled)(INetSharingConfiguration *This,VARIANT_BOOL *pbEnabled);
-      HRESULT (WINAPI *get_SharingConnectionType)(INetSharingConfiguration *This,SHARINGCONNECTIONTYPE *pType);
-      HRESULT (WINAPI *DisableSharing)(INetSharingConfiguration *This);
-      HRESULT (WINAPI *EnableSharing)(INetSharingConfiguration *This,SHARINGCONNECTIONTYPE Type);
-      HRESULT (WINAPI *get_InternetFirewallEnabled)(INetSharingConfiguration *This,VARIANT_BOOL *pbEnabled);
-      HRESULT (WINAPI *DisableInternetFirewall)(INetSharingConfiguration *This);
-      HRESULT (WINAPI *EnableInternetFirewall)(INetSharingConfiguration *This);
-      HRESULT (WINAPI *get_EnumPortMappings)(INetSharingConfiguration *This,SHARINGCONNECTION_ENUM_FLAGS Flags,INetSharingPortMappingCollection **ppColl);
-      HRESULT (WINAPI *AddPortMapping)(INetSharingConfiguration *This,BSTR bstrName,UCHAR ucIPProtocol,USHORT usExternalPort,USHORT usInternalPort,DWORD dwOptions,BSTR bstrTargetNameOrIPAddress,ICS_TARGETTYPE eTargetType,INetSharingPortMapping **ppMapping);
-      HRESULT (WINAPI *RemovePortMapping)(INetSharingConfiguration *This,INetSharingPortMapping *pMapping);
+                   HRESULT (WINAPI *QueryInterface)(INetSharingConfiguration *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetSharingConfiguration *This);
+                   ULONG (WINAPI *Release)(INetSharingConfiguration *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetSharingConfiguration *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetSharingConfiguration *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetSharingConfiguration *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetSharingConfiguration *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_SharingEnabled)(INetSharingConfiguration *This,VARIANT_BOOL *pbEnabled);
+                   HRESULT (WINAPI *get_SharingConnectionType)(INetSharingConfiguration *This,SHARINGCONNECTIONTYPE *pType);
+                   HRESULT (WINAPI *DisableSharing)(INetSharingConfiguration *This);
+                   HRESULT (WINAPI *EnableSharing)(INetSharingConfiguration *This,SHARINGCONNECTIONTYPE Type);
+                   HRESULT (WINAPI *get_InternetFirewallEnabled)(INetSharingConfiguration *This,VARIANT_BOOL *pbEnabled);
+                   HRESULT (WINAPI *DisableInternetFirewall)(INetSharingConfiguration *This);
+                   HRESULT (WINAPI *EnableInternetFirewall)(INetSharingConfiguration *This);
+                   HRESULT (WINAPI *get_EnumPortMappings)(INetSharingConfiguration *This,SHARINGCONNECTION_ENUM_FLAGS Flags,INetSharingPortMappingCollection **ppColl);
+                   HRESULT (WINAPI *AddPortMapping)(INetSharingConfiguration *This,BSTR bstrName,UCHAR ucIPProtocol,USHORT usExternalPort,USHORT usInternalPort,DWORD dwOptions,BSTR bstrTargetNameOrIPAddress,ICS_TARGETTYPE eTargetType,INetSharingPortMapping **ppMapping);
+                   HRESULT (WINAPI *RemovePortMapping)(INetSharingConfiguration *This,INetSharingPortMapping *pMapping);
     END_INTERFACE
   } INetSharingConfigurationVtbl;
   struct INetSharingConfiguration {
@@ -1091,15 +1091,15 @@ extern "C" {
 #else
   typedef struct INetSharingEveryConnectionCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetSharingEveryConnectionCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetSharingEveryConnectionCollection *This);
-      ULONG (WINAPI *Release)(INetSharingEveryConnectionCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetSharingEveryConnectionCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetSharingEveryConnectionCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetSharingEveryConnectionCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetSharingEveryConnectionCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(INetSharingEveryConnectionCollection *This,IUnknown **pVal);
-      HRESULT (WINAPI *get_Count)(INetSharingEveryConnectionCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *QueryInterface)(INetSharingEveryConnectionCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetSharingEveryConnectionCollection *This);
+                   ULONG (WINAPI *Release)(INetSharingEveryConnectionCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetSharingEveryConnectionCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetSharingEveryConnectionCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetSharingEveryConnectionCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetSharingEveryConnectionCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(INetSharingEveryConnectionCollection *This,IUnknown **pVal);
+                   HRESULT (WINAPI *get_Count)(INetSharingEveryConnectionCollection *This,__LONG32 *pVal);
     END_INTERFACE
   } INetSharingEveryConnectionCollectionVtbl;
   struct INetSharingEveryConnectionCollection {
@@ -1135,15 +1135,15 @@ extern "C" {
 #else
   typedef struct INetSharingPublicConnectionCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetSharingPublicConnectionCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetSharingPublicConnectionCollection *This);
-      ULONG (WINAPI *Release)(INetSharingPublicConnectionCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPublicConnectionCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetSharingPublicConnectionCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetSharingPublicConnectionCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetSharingPublicConnectionCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(INetSharingPublicConnectionCollection *This,IUnknown **pVal);
-      HRESULT (WINAPI *get_Count)(INetSharingPublicConnectionCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *QueryInterface)(INetSharingPublicConnectionCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetSharingPublicConnectionCollection *This);
+                   ULONG (WINAPI *Release)(INetSharingPublicConnectionCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPublicConnectionCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetSharingPublicConnectionCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetSharingPublicConnectionCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetSharingPublicConnectionCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(INetSharingPublicConnectionCollection *This,IUnknown **pVal);
+                   HRESULT (WINAPI *get_Count)(INetSharingPublicConnectionCollection *This,__LONG32 *pVal);
     END_INTERFACE
   } INetSharingPublicConnectionCollectionVtbl;
   struct INetSharingPublicConnectionCollection {
@@ -1179,15 +1179,15 @@ extern "C" {
 #else
   typedef struct INetSharingPrivateConnectionCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetSharingPrivateConnectionCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetSharingPrivateConnectionCollection *This);
-      ULONG (WINAPI *Release)(INetSharingPrivateConnectionCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPrivateConnectionCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetSharingPrivateConnectionCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetSharingPrivateConnectionCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetSharingPrivateConnectionCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(INetSharingPrivateConnectionCollection *This,IUnknown **pVal);
-      HRESULT (WINAPI *get_Count)(INetSharingPrivateConnectionCollection *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *QueryInterface)(INetSharingPrivateConnectionCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetSharingPrivateConnectionCollection *This);
+                   ULONG (WINAPI *Release)(INetSharingPrivateConnectionCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetSharingPrivateConnectionCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetSharingPrivateConnectionCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetSharingPrivateConnectionCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetSharingPrivateConnectionCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(INetSharingPrivateConnectionCollection *This,IUnknown **pVal);
+                   HRESULT (WINAPI *get_Count)(INetSharingPrivateConnectionCollection *This,__LONG32 *pVal);
     END_INTERFACE
   } INetSharingPrivateConnectionCollectionVtbl;
   struct INetSharingPrivateConnectionCollection {
@@ -1227,19 +1227,19 @@ extern "C" {
 #else
   typedef struct INetSharingManagerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INetSharingManager *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INetSharingManager *This);
-      ULONG (WINAPI *Release)(INetSharingManager *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(INetSharingManager *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(INetSharingManager *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(INetSharingManager *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(INetSharingManager *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_SharingInstalled)(INetSharingManager *This,VARIANT_BOOL *pbInstalled);
-      HRESULT (WINAPI *get_EnumPublicConnections)(INetSharingManager *This,SHARINGCONNECTION_ENUM_FLAGS Flags,INetSharingPublicConnectionCollection **ppColl);
-      HRESULT (WINAPI *get_EnumPrivateConnections)(INetSharingManager *This,SHARINGCONNECTION_ENUM_FLAGS Flags,INetSharingPrivateConnectionCollection **ppColl);
-      HRESULT (WINAPI *get_INetSharingConfigurationForINetConnection)(INetSharingManager *This,INetConnection *pNetConnection,INetSharingConfiguration **ppNetSharingConfiguration);
-      HRESULT (WINAPI *get_EnumEveryConnection)(INetSharingManager *This,INetSharingEveryConnectionCollection **ppColl);
-      HRESULT (WINAPI *get_NetConnectionProps)(INetSharingManager *This,INetConnection *pNetConnection,INetConnectionProps **ppProps);
+                   HRESULT (WINAPI *QueryInterface)(INetSharingManager *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INetSharingManager *This);
+                   ULONG (WINAPI *Release)(INetSharingManager *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(INetSharingManager *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(INetSharingManager *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(INetSharingManager *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(INetSharingManager *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_SharingInstalled)(INetSharingManager *This,VARIANT_BOOL *pbInstalled);
+                   HRESULT (WINAPI *get_EnumPublicConnections)(INetSharingManager *This,SHARINGCONNECTION_ENUM_FLAGS Flags,INetSharingPublicConnectionCollection **ppColl);
+                   HRESULT (WINAPI *get_EnumPrivateConnections)(INetSharingManager *This,SHARINGCONNECTION_ENUM_FLAGS Flags,INetSharingPrivateConnectionCollection **ppColl);
+                   HRESULT (WINAPI *get_INetSharingConfigurationForINetConnection)(INetSharingManager *This,INetConnection *pNetConnection,INetSharingConfiguration **ppNetSharingConfiguration);
+                   HRESULT (WINAPI *get_EnumEveryConnection)(INetSharingManager *This,INetSharingEveryConnectionCollection **ppColl);
+                   HRESULT (WINAPI *get_NetConnectionProps)(INetSharingManager *This,INetConnection *pNetConnection,INetConnectionProps **ppProps);
     END_INTERFACE
   } INetSharingManagerVtbl;
   struct INetSharingManager {

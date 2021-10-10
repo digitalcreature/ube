@@ -2756,9 +2756,9 @@ DIALOG_DPI_CHANGE_BEHAVIORS WINAPI GetDialogDpiChangeBehavior(HWND hDlg);
   typedef struct tagINPUT {
     DWORD type;
     __C89_NAMELESS union {
-      MOUSEINPUT mi;
-      KEYBDINPUT ki;
-      HARDWAREINPUT hi;
+                   MOUSEINPUT mi;
+                   KEYBDINPUT ki;
+                   HARDWAREINPUT hi;
     } DUMMYUNIONNAME;
   } INPUT,*PINPUT,*LPINPUT;
 
@@ -2897,8 +2897,8 @@ DIALOG_DPI_CHANGE_BEHAVIORS WINAPI GetDialogDpiChangeBehavior(HWND hDlg);
   typedef struct tagPOINTER_TYPE_INFO {
     POINTER_INPUT_TYPE  type;
     __C89_NAMELESS union {
-        POINTER_TOUCH_INFO touchInfo;
-        POINTER_PEN_INFO penInfo;
+                     POINTER_TOUCH_INFO touchInfo;
+                     POINTER_PEN_INFO penInfo;
     };
   } POINTER_TYPE_INFO, *PPOINTER_TYPE_INFO;
 
@@ -5818,20 +5818,20 @@ WINUSERAPI WINBOOL WINAPI SystemParametersInfoForDpi(UINT uiAction, UINT uiParam
 #else
   typedef struct tagMONITORINFOEXA {
     __C89_NAMELESS struct {
-      DWORD cbSize;
-      RECT rcMonitor;
-      RECT rcWork;
-      DWORD dwFlags;
+                   DWORD cbSize;
+                   RECT rcMonitor;
+                   RECT rcWork;
+                   DWORD dwFlags;
     };
     CHAR szDevice[CCHDEVICENAME];
   } MONITORINFOEXA,*LPMONITORINFOEXA;
 
   typedef struct tagMONITORINFOEXW {
     __C89_NAMELESS struct {
-      DWORD cbSize;
-      RECT rcMonitor;
-      RECT rcWork;
-      DWORD dwFlags;
+                   DWORD cbSize;
+                   RECT rcMonitor;
+                   RECT rcWork;
+                   DWORD dwFlags;
     };
     WCHAR szDevice[CCHDEVICENAME];
   } MONITORINFOEXW,*LPMONITORINFOEXW;
@@ -6310,11 +6310,11 @@ WINUSERAPI DPI_AWARENESS_CONTEXT WINAPI GetDpiAwarenessContextForProcess(HANDLE 
   typedef struct tagRAWMOUSE {
     USHORT usFlags;
     __C89_NAMELESS union {
-      ULONG ulButtons;
-      __C89_NAMELESS struct {
+                   ULONG ulButtons;
+                   __C89_NAMELESS struct {
 	USHORT usButtonFlags;
 	USHORT usButtonData;
-      };
+                   };
     };
     ULONG ulRawButtons;
     LONG lLastX;
@@ -6383,9 +6383,9 @@ WINUSERAPI DPI_AWARENESS_CONTEXT WINAPI GetDpiAwarenessContextForProcess(HANDLE 
   typedef struct tagRAWINPUT {
     RAWINPUTHEADER header;
     union {
-      RAWMOUSE mouse;
-      RAWKEYBOARD keyboard;
-      RAWHID hid;
+                   RAWMOUSE mouse;
+                   RAWKEYBOARD keyboard;
+                   RAWHID hid;
     } data;
   } RAWINPUT,*PRAWINPUT,*LPRAWINPUT;
 #endif
@@ -6438,9 +6438,9 @@ WINUSERAPI DPI_AWARENESS_CONTEXT WINAPI GetDpiAwarenessContextForProcess(HANDLE 
     DWORD cbSize;
     DWORD dwType;
     __C89_NAMELESS union {
-      RID_DEVICE_INFO_MOUSE mouse;
-      RID_DEVICE_INFO_KEYBOARD keyboard;
-      RID_DEVICE_INFO_HID hid;
+                   RID_DEVICE_INFO_MOUSE mouse;
+                   RID_DEVICE_INFO_KEYBOARD keyboard;
+                   RID_DEVICE_INFO_HID hid;
     } DUMMYUNIONNAME;
   } RID_DEVICE_INFO,*PRID_DEVICE_INFO,*LPRID_DEVICE_INFO;
 
@@ -6766,22 +6766,22 @@ WINUSERAPI DPI_AWARENESS_CONTEXT WINAPI GetDpiAwarenessContextForProcess(HANDLE 
 typedef struct tagINPUT_TRANSFORM {
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      float _11;
-      float _12;
-      float _13;
-      float _14;
-      float _21;
-      float _22;
-      float _23;
-      float _24;
-      float _31;
-      float _32;
-      float _33;
-      float _34;
-      float _41;
-      float _42;
-      float _43;
-      float _44;
+                   float _11;
+                   float _12;
+                   float _13;
+                   float _14;
+                   float _21;
+                   float _22;
+                   float _23;
+                   float _24;
+                   float _31;
+                   float _32;
+                   float _33;
+                   float _34;
+                   float _41;
+                   float _42;
+                   float _43;
+                   float _44;
     };
     float  m[4][4];
   };

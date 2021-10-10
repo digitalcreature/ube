@@ -506,15 +506,15 @@ pub const libc_stat = extern struct {
     __unused: [2]isize,
 
     pub fn atime(self: libc_stat) timespec {
-        return self.atim;
+                     return self.atim;
     }
 
     pub fn mtime(self: libc_stat) timespec {
-        return self.mtim;
+                     return self.mtim;
     }
 
     pub fn ctime(self: libc_stat) timespec {
-        return self.ctim;
+                     return self.ctim;
     }
 };
 
@@ -540,15 +540,15 @@ pub const kernel_stat = extern struct {
     __unused: [3]u64,
 
     pub fn atime(self: @This()) timespec {
-        return self.atim;
+                     return self.atim;
     }
 
     pub fn mtime(self: @This()) timespec {
-        return self.mtim;
+                     return self.mtim;
     }
 
     pub fn ctime(self: @This()) timespec {
-        return self.ctim;
+                     return self.ctim;
     }
 };
 
@@ -586,16 +586,16 @@ pub const __fpq = extern struct {
 
 pub const __fq = extern struct {
     FQu: extern union {
-        whole: f64,
-        fpq: __fpq,
+                     whole: f64,
+                     fpq: __fpq,
     },
 };
 
 pub const fpregset_t = extern struct {
     fpu_fr: extern union {
-        fpu_regs: [32]u32,
-        fpu_dregs: [32]f64,
-        fpu_qregs: [16]c_longdouble,
+                     fpu_regs: [32]u32,
+                     fpu_dregs: [32]f64,
+                     fpu_qregs: [16]c_longdouble,
     },
     fpu_q: *__fq,
     fpu_fsr: u64,
@@ -614,18 +614,18 @@ pub const siginfo_fpu_t = extern struct {
 pub const sigcontext = extern struct {
     info: [128]i8,
     regs: extern struct {
-        u_regs: [16]u64,
-        tstate: u64,
-        tpc: u64,
-        tnpc: u64,
-        y: u64,
-        fprs: u64,
+                     u_regs: [16]u64,
+                     tstate: u64,
+                     tpc: u64,
+                     tnpc: u64,
+                     y: u64,
+                     fprs: u64,
     },
     fpu_save: *siginfo_fpu_t,
     stack: extern struct {
-        sp: usize,
-        flags: i32,
-        size: u64,
+                     sp: usize,
+                     flags: i32,
+                     size: u64,
     },
     mask: u64,
 };
@@ -640,9 +640,9 @@ pub const fq = extern struct {
 
 pub const fpu_t = extern struct {
     fregs: extern union {
-        sregs: [32]u32,
-        dregs: [32]u64,
-        qregs: [16]c_longdouble,
+                     sregs: [32]u32,
+                     dregs: [32]u64,
+                     qregs: [16]c_longdouble,
     },
     fsr: u64,
     fprs: u64,

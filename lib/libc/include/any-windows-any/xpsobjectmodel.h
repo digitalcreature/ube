@@ -1051,22 +1051,22 @@ typedef enum __WIDL_xpsobjectmodel_generated_name_0000002F {
 typedef struct __WIDL_xpsobjectmodel_generated_name_00000030 {
     XPS_COLOR_TYPE colorType;
     union {
-        struct {
-            UINT8 alpha;
-            UINT8 red;
-            UINT8 green;
-            UINT8 blue;
-        } sRGB;
-        struct {
-            FLOAT alpha;
-            FLOAT red;
-            FLOAT green;
-            FLOAT blue;
-        } scRGB;
-        struct {
-            UINT8 channelCount;
-            FLOAT channels[9];
-        } context;
+                     struct {
+                                      UINT8 alpha;
+                                      UINT8 red;
+                                      UINT8 green;
+                                      UINT8 blue;
+                     } sRGB;
+                     struct {
+                                      FLOAT alpha;
+                                      FLOAT red;
+                                      FLOAT green;
+                                      FLOAT blue;
+                     } scRGB;
+                     struct {
+                                      UINT8 channelCount;
+                                      FLOAT channels[9];
+                     } context;
     } value;
 } XPS_COLOR;
 typedef struct __WIDL_xpsobjectmodel_generated_name_00000031 {
@@ -1119,10 +1119,10 @@ MIDL_INTERFACE("7137398f-2fc1-454d-8c6a-2c3115a16ece")
 IXpsOMShareable : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IUnknown **owner) = 0;
+                     IUnknown **owner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        XPS_OBJECT_TYPE *type) = 0;
+                     XPS_OBJECT_TYPE *type) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1134,24 +1134,24 @@ typedef struct IXpsOMShareableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMShareable *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMShareable *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMShareable *This);
+                     IXpsOMShareable *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMShareable *This);
+                     IXpsOMShareable *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMShareable *This,
-        IUnknown **owner);
+                     IXpsOMShareable *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMShareable *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMShareable *This,
+                     XPS_OBJECT_TYPE *type);
 
     END_INTERFACE
 } IXpsOMShareableVtbl;
@@ -1207,10 +1207,10 @@ MIDL_INTERFACE("74eb2f0b-a91e-4486-afac-0fabeca3dfc6")
 IXpsOMPart : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPartName(
-        IOpcPartUri **partUri) = 0;
+                     IOpcPartUri **partUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPartName(
-        IOpcPartUri *partUri) = 0;
+                     IOpcPartUri *partUri) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1222,24 +1222,24 @@ typedef struct IXpsOMPartVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPart *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPart *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPart *This);
+                     IXpsOMPart *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPart *This);
+                     IXpsOMPart *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMPart *This,
-        IOpcPartUri **partUri);
+                     IXpsOMPart *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMPart *This,
-        IOpcPartUri *partUri);
+                     IXpsOMPart *This,
+                     IOpcPartUri *partUri);
 
     END_INTERFACE
 } IXpsOMPartVtbl;
@@ -1295,64 +1295,64 @@ MIDL_INTERFACE("a5ab8616-5b16-4b9f-9629-89b323ed7909")
 IXpsOMGlyphsEditor : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ApplyEdits(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUnicodeString(
-        LPWSTR *unicodeString) = 0;
+                     LPWSTR *unicodeString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUnicodeString(
-        LPCWSTR unicodeString) = 0;
+                     LPCWSTR unicodeString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphIndexCount(
-        UINT32 *indexCount) = 0;
+                     UINT32 *indexCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphIndices(
-        UINT32 *indexCount,
-        XPS_GLYPH_INDEX *glyphIndices) = 0;
+                     UINT32 *indexCount,
+                     XPS_GLYPH_INDEX *glyphIndices) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGlyphIndices(
-        UINT32 indexCount,
-        const XPS_GLYPH_INDEX *glyphIndices) = 0;
+                     UINT32 indexCount,
+                     const XPS_GLYPH_INDEX *glyphIndices) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphMappingCount(
-        UINT32 *glyphMappingCount) = 0;
+                     UINT32 *glyphMappingCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphMappings(
-        UINT32 *glyphMappingCount,
-        XPS_GLYPH_MAPPING *glyphMappings) = 0;
+                     UINT32 *glyphMappingCount,
+                     XPS_GLYPH_MAPPING *glyphMappings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGlyphMappings(
-        UINT32 glyphMappingCount,
-        const XPS_GLYPH_MAPPING *glyphMappings) = 0;
+                     UINT32 glyphMappingCount,
+                     const XPS_GLYPH_MAPPING *glyphMappings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProhibitedCaretStopCount(
-        UINT32 *prohibitedCaretStopCount) = 0;
+                     UINT32 *prohibitedCaretStopCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProhibitedCaretStops(
-        UINT32 *count,
-        UINT32 *prohibitedCaretStops) = 0;
+                     UINT32 *count,
+                     UINT32 *prohibitedCaretStops) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProhibitedCaretStops(
-        UINT32 count,
-        const UINT32 *prohibitedCaretStops) = 0;
+                     UINT32 count,
+                     const UINT32 *prohibitedCaretStops) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBidiLevel(
-        UINT32 *bidiLevel) = 0;
+                     UINT32 *bidiLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBidiLevel(
-        UINT32 bidiLevel) = 0;
+                     UINT32 bidiLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIsSideways(
-        WINBOOL *isSideways) = 0;
+                     WINBOOL *isSideways) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIsSideways(
-        WINBOOL isSideways) = 0;
+                     WINBOOL isSideways) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceFontName(
-        LPWSTR *deviceFontName) = 0;
+                     LPWSTR *deviceFontName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDeviceFontName(
-        LPCWSTR deviceFontName) = 0;
+                     LPCWSTR deviceFontName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1364,93 +1364,93 @@ typedef struct IXpsOMGlyphsEditorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMGlyphsEditor *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMGlyphsEditor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMGlyphsEditor *This);
+                     IXpsOMGlyphsEditor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMGlyphsEditor *This);
+                     IXpsOMGlyphsEditor *This);
 
     /*** IXpsOMGlyphsEditor methods ***/
     HRESULT (STDMETHODCALLTYPE *ApplyEdits)(
-        IXpsOMGlyphsEditor *This);
+                     IXpsOMGlyphsEditor *This);
 
     HRESULT (STDMETHODCALLTYPE *GetUnicodeString)(
-        IXpsOMGlyphsEditor *This,
-        LPWSTR *unicodeString);
+                     IXpsOMGlyphsEditor *This,
+                     LPWSTR *unicodeString);
 
     HRESULT (STDMETHODCALLTYPE *SetUnicodeString)(
-        IXpsOMGlyphsEditor *This,
-        LPCWSTR unicodeString);
+                     IXpsOMGlyphsEditor *This,
+                     LPCWSTR unicodeString);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphIndexCount)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 *indexCount);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 *indexCount);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphIndices)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 *indexCount,
-        XPS_GLYPH_INDEX *glyphIndices);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 *indexCount,
+                     XPS_GLYPH_INDEX *glyphIndices);
 
     HRESULT (STDMETHODCALLTYPE *SetGlyphIndices)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 indexCount,
-        const XPS_GLYPH_INDEX *glyphIndices);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 indexCount,
+                     const XPS_GLYPH_INDEX *glyphIndices);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphMappingCount)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 *glyphMappingCount);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 *glyphMappingCount);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphMappings)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 *glyphMappingCount,
-        XPS_GLYPH_MAPPING *glyphMappings);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 *glyphMappingCount,
+                     XPS_GLYPH_MAPPING *glyphMappings);
 
     HRESULT (STDMETHODCALLTYPE *SetGlyphMappings)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 glyphMappingCount,
-        const XPS_GLYPH_MAPPING *glyphMappings);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 glyphMappingCount,
+                     const XPS_GLYPH_MAPPING *glyphMappings);
 
     HRESULT (STDMETHODCALLTYPE *GetProhibitedCaretStopCount)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 *prohibitedCaretStopCount);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 *prohibitedCaretStopCount);
 
     HRESULT (STDMETHODCALLTYPE *GetProhibitedCaretStops)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 *count,
-        UINT32 *prohibitedCaretStops);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 *count,
+                     UINT32 *prohibitedCaretStops);
 
     HRESULT (STDMETHODCALLTYPE *SetProhibitedCaretStops)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 count,
-        const UINT32 *prohibitedCaretStops);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 count,
+                     const UINT32 *prohibitedCaretStops);
 
     HRESULT (STDMETHODCALLTYPE *GetBidiLevel)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 *bidiLevel);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 *bidiLevel);
 
     HRESULT (STDMETHODCALLTYPE *SetBidiLevel)(
-        IXpsOMGlyphsEditor *This,
-        UINT32 bidiLevel);
+                     IXpsOMGlyphsEditor *This,
+                     UINT32 bidiLevel);
 
     HRESULT (STDMETHODCALLTYPE *GetIsSideways)(
-        IXpsOMGlyphsEditor *This,
-        WINBOOL *isSideways);
+                     IXpsOMGlyphsEditor *This,
+                     WINBOOL *isSideways);
 
     HRESULT (STDMETHODCALLTYPE *SetIsSideways)(
-        IXpsOMGlyphsEditor *This,
-        WINBOOL isSideways);
+                     IXpsOMGlyphsEditor *This,
+                     WINBOOL isSideways);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceFontName)(
-        IXpsOMGlyphsEditor *This,
-        LPWSTR *deviceFontName);
+                     IXpsOMGlyphsEditor *This,
+                     LPWSTR *deviceFontName);
 
     HRESULT (STDMETHODCALLTYPE *SetDeviceFontName)(
-        IXpsOMGlyphsEditor *This,
-        LPCWSTR deviceFontName);
+                     IXpsOMGlyphsEditor *This,
+                     LPCWSTR deviceFontName);
 
     END_INTERFACE
 } IXpsOMGlyphsEditorVtbl;
@@ -1570,25 +1570,25 @@ MIDL_INTERFACE("081613f4-74eb-48f2-83b3-37a9ce2d7dc6")
 IXpsOMDashCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        XPS_DASH *dash) = 0;
+                     UINT32 index,
+                     XPS_DASH *dash) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        const XPS_DASH *dash) = 0;
+                     UINT32 index,
+                     const XPS_DASH *dash) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        const XPS_DASH *dash) = 0;
+                     UINT32 index,
+                     const XPS_DASH *dash) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        const XPS_DASH *dash) = 0;
+                     const XPS_DASH *dash) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1600,43 +1600,43 @@ typedef struct IXpsOMDashCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMDashCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMDashCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMDashCollection *This);
+                     IXpsOMDashCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMDashCollection *This);
+                     IXpsOMDashCollection *This);
 
     /*** IXpsOMDashCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMDashCollection *This,
-        UINT32 *count);
+                     IXpsOMDashCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMDashCollection *This,
-        UINT32 index,
-        XPS_DASH *dash);
+                     IXpsOMDashCollection *This,
+                     UINT32 index,
+                     XPS_DASH *dash);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMDashCollection *This,
-        UINT32 index,
-        const XPS_DASH *dash);
+                     IXpsOMDashCollection *This,
+                     UINT32 index,
+                     const XPS_DASH *dash);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMDashCollection *This,
-        UINT32 index);
+                     IXpsOMDashCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMDashCollection *This,
-        UINT32 index,
-        const XPS_DASH *dash);
+                     IXpsOMDashCollection *This,
+                     UINT32 index,
+                     const XPS_DASH *dash);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMDashCollection *This,
-        const XPS_DASH *dash);
+                     IXpsOMDashCollection *This,
+                     const XPS_DASH *dash);
 
     END_INTERFACE
 } IXpsOMDashCollectionVtbl;
@@ -1708,56 +1708,56 @@ MIDL_INTERFACE("d410dc83-908c-443e-8947-b1795d3c165a")
 IXpsOMGeometryFigure : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMGeometry **owner) = 0;
+                     IXpsOMGeometry **owner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSegmentData(
-        UINT32 *dataCount,
-        FLOAT *segmentData) = 0;
+                     UINT32 *dataCount,
+                     FLOAT *segmentData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSegmentTypes(
-        UINT32 *segmentCount,
-        XPS_SEGMENT_TYPE *segmentTypes) = 0;
+                     UINT32 *segmentCount,
+                     XPS_SEGMENT_TYPE *segmentTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSegmentStrokes(
-        UINT32 *segmentCount,
-        WINBOOL *segmentStrokes) = 0;
+                     UINT32 *segmentCount,
+                     WINBOOL *segmentStrokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSegments(
-        UINT32 segmentCount,
-        UINT32 segmentDataCount,
-        const XPS_SEGMENT_TYPE *segmentTypes,
-        const FLOAT *segmentData,
-        const WINBOOL *segmentStrokes) = 0;
+                     UINT32 segmentCount,
+                     UINT32 segmentDataCount,
+                     const XPS_SEGMENT_TYPE *segmentTypes,
+                     const FLOAT *segmentData,
+                     const WINBOOL *segmentStrokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStartPoint(
-        XPS_POINT *startPoint) = 0;
+                     XPS_POINT *startPoint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStartPoint(
-        const XPS_POINT *startPoint) = 0;
+                     const XPS_POINT *startPoint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIsClosed(
-        WINBOOL *isClosed) = 0;
+                     WINBOOL *isClosed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIsClosed(
-        WINBOOL isClosed) = 0;
+                     WINBOOL isClosed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIsFilled(
-        WINBOOL *isFilled) = 0;
+                     WINBOOL *isFilled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIsFilled(
-        WINBOOL isFilled) = 0;
+                     WINBOOL isFilled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSegmentCount(
-        UINT32 *segmentCount) = 0;
+                     UINT32 *segmentCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSegmentDataCount(
-        UINT32 *segmentDataCount) = 0;
+                     UINT32 *segmentDataCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSegmentStrokePattern(
-        XPS_SEGMENT_STROKE_PATTERN *segmentStrokePattern) = 0;
+                     XPS_SEGMENT_STROKE_PATTERN *segmentStrokePattern) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMGeometryFigure **geometryFigure) = 0;
+                     IXpsOMGeometryFigure **geometryFigure) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1769,83 +1769,83 @@ typedef struct IXpsOMGeometryFigureVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMGeometryFigure *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMGeometryFigure *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMGeometryFigure *This);
+                     IXpsOMGeometryFigure *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMGeometryFigure *This);
+                     IXpsOMGeometryFigure *This);
 
     /*** IXpsOMGeometryFigure methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMGeometryFigure *This,
-        IXpsOMGeometry **owner);
+                     IXpsOMGeometryFigure *This,
+                     IXpsOMGeometry **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetSegmentData)(
-        IXpsOMGeometryFigure *This,
-        UINT32 *dataCount,
-        FLOAT *segmentData);
+                     IXpsOMGeometryFigure *This,
+                     UINT32 *dataCount,
+                     FLOAT *segmentData);
 
     HRESULT (STDMETHODCALLTYPE *GetSegmentTypes)(
-        IXpsOMGeometryFigure *This,
-        UINT32 *segmentCount,
-        XPS_SEGMENT_TYPE *segmentTypes);
+                     IXpsOMGeometryFigure *This,
+                     UINT32 *segmentCount,
+                     XPS_SEGMENT_TYPE *segmentTypes);
 
     HRESULT (STDMETHODCALLTYPE *GetSegmentStrokes)(
-        IXpsOMGeometryFigure *This,
-        UINT32 *segmentCount,
-        WINBOOL *segmentStrokes);
+                     IXpsOMGeometryFigure *This,
+                     UINT32 *segmentCount,
+                     WINBOOL *segmentStrokes);
 
     HRESULT (STDMETHODCALLTYPE *SetSegments)(
-        IXpsOMGeometryFigure *This,
-        UINT32 segmentCount,
-        UINT32 segmentDataCount,
-        const XPS_SEGMENT_TYPE *segmentTypes,
-        const FLOAT *segmentData,
-        const WINBOOL *segmentStrokes);
+                     IXpsOMGeometryFigure *This,
+                     UINT32 segmentCount,
+                     UINT32 segmentDataCount,
+                     const XPS_SEGMENT_TYPE *segmentTypes,
+                     const FLOAT *segmentData,
+                     const WINBOOL *segmentStrokes);
 
     HRESULT (STDMETHODCALLTYPE *GetStartPoint)(
-        IXpsOMGeometryFigure *This,
-        XPS_POINT *startPoint);
+                     IXpsOMGeometryFigure *This,
+                     XPS_POINT *startPoint);
 
     HRESULT (STDMETHODCALLTYPE *SetStartPoint)(
-        IXpsOMGeometryFigure *This,
-        const XPS_POINT *startPoint);
+                     IXpsOMGeometryFigure *This,
+                     const XPS_POINT *startPoint);
 
     HRESULT (STDMETHODCALLTYPE *GetIsClosed)(
-        IXpsOMGeometryFigure *This,
-        WINBOOL *isClosed);
+                     IXpsOMGeometryFigure *This,
+                     WINBOOL *isClosed);
 
     HRESULT (STDMETHODCALLTYPE *SetIsClosed)(
-        IXpsOMGeometryFigure *This,
-        WINBOOL isClosed);
+                     IXpsOMGeometryFigure *This,
+                     WINBOOL isClosed);
 
     HRESULT (STDMETHODCALLTYPE *GetIsFilled)(
-        IXpsOMGeometryFigure *This,
-        WINBOOL *isFilled);
+                     IXpsOMGeometryFigure *This,
+                     WINBOOL *isFilled);
 
     HRESULT (STDMETHODCALLTYPE *SetIsFilled)(
-        IXpsOMGeometryFigure *This,
-        WINBOOL isFilled);
+                     IXpsOMGeometryFigure *This,
+                     WINBOOL isFilled);
 
     HRESULT (STDMETHODCALLTYPE *GetSegmentCount)(
-        IXpsOMGeometryFigure *This,
-        UINT32 *segmentCount);
+                     IXpsOMGeometryFigure *This,
+                     UINT32 *segmentCount);
 
     HRESULT (STDMETHODCALLTYPE *GetSegmentDataCount)(
-        IXpsOMGeometryFigure *This,
-        UINT32 *segmentDataCount);
+                     IXpsOMGeometryFigure *This,
+                     UINT32 *segmentDataCount);
 
     HRESULT (STDMETHODCALLTYPE *GetSegmentStrokePattern)(
-        IXpsOMGeometryFigure *This,
-        XPS_SEGMENT_STROKE_PATTERN *segmentStrokePattern);
+                     IXpsOMGeometryFigure *This,
+                     XPS_SEGMENT_STROKE_PATTERN *segmentStrokePattern);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMGeometryFigure *This,
-        IXpsOMGeometryFigure **geometryFigure);
+                     IXpsOMGeometryFigure *This,
+                     IXpsOMGeometryFigure **geometryFigure);
 
     END_INTERFACE
 } IXpsOMGeometryFigureVtbl;
@@ -1953,25 +1953,25 @@ MIDL_INTERFACE("fd48c3f3-a58e-4b5a-8826-1de54abe72b2")
 IXpsOMGeometryFigureCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMGeometryFigure **geometryFigure) = 0;
+                     UINT32 index,
+                     IXpsOMGeometryFigure **geometryFigure) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMGeometryFigure *geometryFigure) = 0;
+                     UINT32 index,
+                     IXpsOMGeometryFigure *geometryFigure) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMGeometryFigure *geometryFigure) = 0;
+                     UINT32 index,
+                     IXpsOMGeometryFigure *geometryFigure) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMGeometryFigure *geometryFigure) = 0;
+                     IXpsOMGeometryFigure *geometryFigure) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1983,43 +1983,43 @@ typedef struct IXpsOMGeometryFigureCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMGeometryFigureCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMGeometryFigureCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMGeometryFigureCollection *This);
+                     IXpsOMGeometryFigureCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMGeometryFigureCollection *This);
+                     IXpsOMGeometryFigureCollection *This);
 
     /*** IXpsOMGeometryFigureCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMGeometryFigureCollection *This,
-        UINT32 *count);
+                     IXpsOMGeometryFigureCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMGeometryFigureCollection *This,
-        UINT32 index,
-        IXpsOMGeometryFigure **geometryFigure);
+                     IXpsOMGeometryFigureCollection *This,
+                     UINT32 index,
+                     IXpsOMGeometryFigure **geometryFigure);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMGeometryFigureCollection *This,
-        UINT32 index,
-        IXpsOMGeometryFigure *geometryFigure);
+                     IXpsOMGeometryFigureCollection *This,
+                     UINT32 index,
+                     IXpsOMGeometryFigure *geometryFigure);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMGeometryFigureCollection *This,
-        UINT32 index);
+                     IXpsOMGeometryFigureCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMGeometryFigureCollection *This,
-        UINT32 index,
-        IXpsOMGeometryFigure *geometryFigure);
+                     IXpsOMGeometryFigureCollection *This,
+                     UINT32 index,
+                     IXpsOMGeometryFigure *geometryFigure);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMGeometryFigureCollection *This,
-        IXpsOMGeometryFigure *geometryFigure);
+                     IXpsOMGeometryFigureCollection *This,
+                     IXpsOMGeometryFigure *geometryFigure);
 
     END_INTERFACE
 } IXpsOMGeometryFigureCollectionVtbl;
@@ -2091,25 +2091,25 @@ MIDL_INTERFACE("c9174c3a-3cd3-4319-bda4-11a39392ceef")
 IXpsOMGradientStopCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMGradientStop **stop) = 0;
+                     UINT32 index,
+                     IXpsOMGradientStop **stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMGradientStop *stop) = 0;
+                     UINT32 index,
+                     IXpsOMGradientStop *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMGradientStop *stop) = 0;
+                     UINT32 index,
+                     IXpsOMGradientStop *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMGradientStop *stop) = 0;
+                     IXpsOMGradientStop *stop) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2121,43 +2121,43 @@ typedef struct IXpsOMGradientStopCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMGradientStopCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMGradientStopCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMGradientStopCollection *This);
+                     IXpsOMGradientStopCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMGradientStopCollection *This);
+                     IXpsOMGradientStopCollection *This);
 
     /*** IXpsOMGradientStopCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMGradientStopCollection *This,
-        UINT32 *count);
+                     IXpsOMGradientStopCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMGradientStopCollection *This,
-        UINT32 index,
-        IXpsOMGradientStop **stop);
+                     IXpsOMGradientStopCollection *This,
+                     UINT32 index,
+                     IXpsOMGradientStop **stop);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMGradientStopCollection *This,
-        UINT32 index,
-        IXpsOMGradientStop *stop);
+                     IXpsOMGradientStopCollection *This,
+                     UINT32 index,
+                     IXpsOMGradientStop *stop);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMGradientStopCollection *This,
-        UINT32 index);
+                     IXpsOMGradientStopCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMGradientStopCollection *This,
-        UINT32 index,
-        IXpsOMGradientStop *stop);
+                     IXpsOMGradientStopCollection *This,
+                     UINT32 index,
+                     IXpsOMGradientStop *stop);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMGradientStopCollection *This,
-        IXpsOMGradientStop *stop);
+                     IXpsOMGradientStopCollection *This,
+                     IXpsOMGradientStop *stop);
 
     END_INTERFACE
 } IXpsOMGradientStopCollectionVtbl;
@@ -2229,24 +2229,24 @@ MIDL_INTERFACE("5cf4f5cc-3969-49b5-a70a-5550b618fe49")
 IXpsOMGradientStop : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMGradientBrush **owner) = 0;
+                     IXpsOMGradientBrush **owner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOffset(
-        FLOAT *offset) = 0;
+                     FLOAT *offset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOffset(
-        FLOAT offset) = 0;
+                     FLOAT offset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColor(
-        XPS_COLOR *color,
-        IXpsOMColorProfileResource **colorProfile) = 0;
+                     XPS_COLOR *color,
+                     IXpsOMColorProfileResource **colorProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColor(
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile) = 0;
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMGradientStop **gradientStop) = 0;
+                     IXpsOMGradientStop **gradientStop) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2258,42 +2258,42 @@ typedef struct IXpsOMGradientStopVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMGradientStop *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMGradientStop *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMGradientStop *This);
+                     IXpsOMGradientStop *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMGradientStop *This);
+                     IXpsOMGradientStop *This);
 
     /*** IXpsOMGradientStop methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMGradientStop *This,
-        IXpsOMGradientBrush **owner);
+                     IXpsOMGradientStop *This,
+                     IXpsOMGradientBrush **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetOffset)(
-        IXpsOMGradientStop *This,
-        FLOAT *offset);
+                     IXpsOMGradientStop *This,
+                     FLOAT *offset);
 
     HRESULT (STDMETHODCALLTYPE *SetOffset)(
-        IXpsOMGradientStop *This,
-        FLOAT offset);
+                     IXpsOMGradientStop *This,
+                     FLOAT offset);
 
     HRESULT (STDMETHODCALLTYPE *GetColor)(
-        IXpsOMGradientStop *This,
-        XPS_COLOR *color,
-        IXpsOMColorProfileResource **colorProfile);
+                     IXpsOMGradientStop *This,
+                     XPS_COLOR *color,
+                     IXpsOMColorProfileResource **colorProfile);
 
     HRESULT (STDMETHODCALLTYPE *SetColor)(
-        IXpsOMGradientStop *This,
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile);
+                     IXpsOMGradientStop *This,
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMGradientStop *This,
-        IXpsOMGradientStop **gradientStop);
+                     IXpsOMGradientStop *This,
+                     IXpsOMGradientStop **gradientStop);
 
     END_INTERFACE
 } IXpsOMGradientStopVtbl;
@@ -2365,16 +2365,16 @@ MIDL_INTERFACE("f4cf7729-4864-4275-99b3-a8717163ecaf")
 IXpsOMPartResources : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetFontResources(
-        IXpsOMFontResourceCollection **fontResources) = 0;
+                     IXpsOMFontResourceCollection **fontResources) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetImageResources(
-        IXpsOMImageResourceCollection **imageResources) = 0;
+                     IXpsOMImageResourceCollection **imageResources) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorProfileResources(
-        IXpsOMColorProfileResourceCollection **colorProfileResources) = 0;
+                     IXpsOMColorProfileResourceCollection **colorProfileResources) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRemoteDictionaryResources(
-        IXpsOMRemoteDictionaryResourceCollection **dictionaryResources) = 0;
+                     IXpsOMRemoteDictionaryResourceCollection **dictionaryResources) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2386,32 +2386,32 @@ typedef struct IXpsOMPartResourcesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPartResources *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPartResources *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPartResources *This);
+                     IXpsOMPartResources *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPartResources *This);
+                     IXpsOMPartResources *This);
 
     /*** IXpsOMPartResources methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFontResources)(
-        IXpsOMPartResources *This,
-        IXpsOMFontResourceCollection **fontResources);
+                     IXpsOMPartResources *This,
+                     IXpsOMFontResourceCollection **fontResources);
 
     HRESULT (STDMETHODCALLTYPE *GetImageResources)(
-        IXpsOMPartResources *This,
-        IXpsOMImageResourceCollection **imageResources);
+                     IXpsOMPartResources *This,
+                     IXpsOMImageResourceCollection **imageResources);
 
     HRESULT (STDMETHODCALLTYPE *GetColorProfileResources)(
-        IXpsOMPartResources *This,
-        IXpsOMColorProfileResourceCollection **colorProfileResources);
+                     IXpsOMPartResources *This,
+                     IXpsOMColorProfileResourceCollection **colorProfileResources);
 
     HRESULT (STDMETHODCALLTYPE *GetRemoteDictionaryResources)(
-        IXpsOMPartResources *This,
-        IXpsOMRemoteDictionaryResourceCollection **dictionaryResources);
+                     IXpsOMPartResources *This,
+                     IXpsOMRemoteDictionaryResourceCollection **dictionaryResources);
 
     END_INTERFACE
 } IXpsOMPartResourcesVtbl;
@@ -2475,29 +2475,29 @@ MIDL_INTERFACE("70b4a6bb-88d4-4fa8-aaf9-6d9c596fdbad")
 IXpsOMFontResourceCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMFontResource **value) = 0;
+                     UINT32 index,
+                     IXpsOMFontResource **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMFontResource *value) = 0;
+                     UINT32 index,
+                     IXpsOMFontResource *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMFontResource *value) = 0;
+                     UINT32 index,
+                     IXpsOMFontResource *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMFontResource *value) = 0;
+                     IXpsOMFontResource *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetByPartName(
-        IOpcPartUri *partName,
-        IXpsOMFontResource **part) = 0;
+                     IOpcPartUri *partName,
+                     IXpsOMFontResource **part) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2509,48 +2509,48 @@ typedef struct IXpsOMFontResourceCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMFontResourceCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMFontResourceCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMFontResourceCollection *This);
+                     IXpsOMFontResourceCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMFontResourceCollection *This);
+                     IXpsOMFontResourceCollection *This);
 
     /*** IXpsOMFontResourceCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMFontResourceCollection *This,
-        UINT32 *count);
+                     IXpsOMFontResourceCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMFontResourceCollection *This,
-        UINT32 index,
-        IXpsOMFontResource **value);
+                     IXpsOMFontResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMFontResource **value);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMFontResourceCollection *This,
-        UINT32 index,
-        IXpsOMFontResource *value);
+                     IXpsOMFontResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMFontResource *value);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMFontResourceCollection *This,
-        UINT32 index,
-        IXpsOMFontResource *value);
+                     IXpsOMFontResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMFontResource *value);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMFontResourceCollection *This,
-        IXpsOMFontResource *value);
+                     IXpsOMFontResourceCollection *This,
+                     IXpsOMFontResource *value);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMFontResourceCollection *This,
-        UINT32 index);
+                     IXpsOMFontResourceCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *GetByPartName)(
-        IXpsOMFontResourceCollection *This,
-        IOpcPartUri *partName,
-        IXpsOMFontResource **part);
+                     IXpsOMFontResourceCollection *This,
+                     IOpcPartUri *partName,
+                     IXpsOMFontResource **part);
 
     END_INTERFACE
 } IXpsOMFontResourceCollectionVtbl;
@@ -2626,29 +2626,29 @@ MIDL_INTERFACE("7a4a1a71-9cde-4b71-b33f-62de843eabfe")
 IXpsOMImageResourceCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMImageResource **object) = 0;
+                     UINT32 index,
+                     IXpsOMImageResource **object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMImageResource *object) = 0;
+                     UINT32 index,
+                     IXpsOMImageResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMImageResource *object) = 0;
+                     UINT32 index,
+                     IXpsOMImageResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMImageResource *object) = 0;
+                     IXpsOMImageResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetByPartName(
-        IOpcPartUri *partName,
-        IXpsOMImageResource **part) = 0;
+                     IOpcPartUri *partName,
+                     IXpsOMImageResource **part) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2660,48 +2660,48 @@ typedef struct IXpsOMImageResourceCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMImageResourceCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMImageResourceCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMImageResourceCollection *This);
+                     IXpsOMImageResourceCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMImageResourceCollection *This);
+                     IXpsOMImageResourceCollection *This);
 
     /*** IXpsOMImageResourceCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMImageResourceCollection *This,
-        UINT32 *count);
+                     IXpsOMImageResourceCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMImageResourceCollection *This,
-        UINT32 index,
-        IXpsOMImageResource **object);
+                     IXpsOMImageResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMImageResource **object);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMImageResourceCollection *This,
-        UINT32 index,
-        IXpsOMImageResource *object);
+                     IXpsOMImageResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMImageResource *object);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMImageResourceCollection *This,
-        UINT32 index);
+                     IXpsOMImageResourceCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMImageResourceCollection *This,
-        UINT32 index,
-        IXpsOMImageResource *object);
+                     IXpsOMImageResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMImageResource *object);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMImageResourceCollection *This,
-        IXpsOMImageResource *object);
+                     IXpsOMImageResourceCollection *This,
+                     IXpsOMImageResource *object);
 
     HRESULT (STDMETHODCALLTYPE *GetByPartName)(
-        IXpsOMImageResourceCollection *This,
-        IOpcPartUri *partName,
-        IXpsOMImageResource **part);
+                     IXpsOMImageResourceCollection *This,
+                     IOpcPartUri *partName,
+                     IXpsOMImageResource **part);
 
     END_INTERFACE
 } IXpsOMImageResourceCollectionVtbl;
@@ -2777,29 +2777,29 @@ MIDL_INTERFACE("12759630-5fba-4283-8f7d-cca849809edb")
 IXpsOMColorProfileResourceCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMColorProfileResource **object) = 0;
+                     UINT32 index,
+                     IXpsOMColorProfileResource **object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMColorProfileResource *object) = 0;
+                     UINT32 index,
+                     IXpsOMColorProfileResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMColorProfileResource *object) = 0;
+                     UINT32 index,
+                     IXpsOMColorProfileResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMColorProfileResource *object) = 0;
+                     IXpsOMColorProfileResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetByPartName(
-        IOpcPartUri *partName,
-        IXpsOMColorProfileResource **part) = 0;
+                     IOpcPartUri *partName,
+                     IXpsOMColorProfileResource **part) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2811,48 +2811,48 @@ typedef struct IXpsOMColorProfileResourceCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMColorProfileResourceCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMColorProfileResourceCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMColorProfileResourceCollection *This);
+                     IXpsOMColorProfileResourceCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMColorProfileResourceCollection *This);
+                     IXpsOMColorProfileResourceCollection *This);
 
     /*** IXpsOMColorProfileResourceCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMColorProfileResourceCollection *This,
-        UINT32 *count);
+                     IXpsOMColorProfileResourceCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMColorProfileResourceCollection *This,
-        UINT32 index,
-        IXpsOMColorProfileResource **object);
+                     IXpsOMColorProfileResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMColorProfileResource **object);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMColorProfileResourceCollection *This,
-        UINT32 index,
-        IXpsOMColorProfileResource *object);
+                     IXpsOMColorProfileResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMColorProfileResource *object);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMColorProfileResourceCollection *This,
-        UINT32 index);
+                     IXpsOMColorProfileResourceCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMColorProfileResourceCollection *This,
-        UINT32 index,
-        IXpsOMColorProfileResource *object);
+                     IXpsOMColorProfileResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMColorProfileResource *object);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMColorProfileResourceCollection *This,
-        IXpsOMColorProfileResource *object);
+                     IXpsOMColorProfileResourceCollection *This,
+                     IXpsOMColorProfileResource *object);
 
     HRESULT (STDMETHODCALLTYPE *GetByPartName)(
-        IXpsOMColorProfileResourceCollection *This,
-        IOpcPartUri *partName,
-        IXpsOMColorProfileResource **part);
+                     IXpsOMColorProfileResourceCollection *This,
+                     IOpcPartUri *partName,
+                     IXpsOMColorProfileResource **part);
 
     END_INTERFACE
 } IXpsOMColorProfileResourceCollectionVtbl;
@@ -2928,29 +2928,29 @@ MIDL_INTERFACE("5c38db61-7fec-464a-87bd-41e3bef018be")
 IXpsOMRemoteDictionaryResourceCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMRemoteDictionaryResource **object) = 0;
+                     UINT32 index,
+                     IXpsOMRemoteDictionaryResource **object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMRemoteDictionaryResource *object) = 0;
+                     UINT32 index,
+                     IXpsOMRemoteDictionaryResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMRemoteDictionaryResource *object) = 0;
+                     UINT32 index,
+                     IXpsOMRemoteDictionaryResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMRemoteDictionaryResource *object) = 0;
+                     IXpsOMRemoteDictionaryResource *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetByPartName(
-        IOpcPartUri *partName,
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource) = 0;
+                     IOpcPartUri *partName,
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2962,48 +2962,48 @@ typedef struct IXpsOMRemoteDictionaryResourceCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMRemoteDictionaryResourceCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMRemoteDictionaryResourceCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMRemoteDictionaryResourceCollection *This);
+                     IXpsOMRemoteDictionaryResourceCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMRemoteDictionaryResourceCollection *This);
+                     IXpsOMRemoteDictionaryResourceCollection *This);
 
     /*** IXpsOMRemoteDictionaryResourceCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMRemoteDictionaryResourceCollection *This,
-        UINT32 *count);
+                     IXpsOMRemoteDictionaryResourceCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMRemoteDictionaryResourceCollection *This,
-        UINT32 index,
-        IXpsOMRemoteDictionaryResource **object);
+                     IXpsOMRemoteDictionaryResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMRemoteDictionaryResource **object);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMRemoteDictionaryResourceCollection *This,
-        UINT32 index,
-        IXpsOMRemoteDictionaryResource *object);
+                     IXpsOMRemoteDictionaryResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMRemoteDictionaryResource *object);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMRemoteDictionaryResourceCollection *This,
-        UINT32 index);
+                     IXpsOMRemoteDictionaryResourceCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMRemoteDictionaryResourceCollection *This,
-        UINT32 index,
-        IXpsOMRemoteDictionaryResource *object);
+                     IXpsOMRemoteDictionaryResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMRemoteDictionaryResource *object);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMRemoteDictionaryResourceCollection *This,
-        IXpsOMRemoteDictionaryResource *object);
+                     IXpsOMRemoteDictionaryResourceCollection *This,
+                     IXpsOMRemoteDictionaryResource *object);
 
     HRESULT (STDMETHODCALLTYPE *GetByPartName)(
-        IXpsOMRemoteDictionaryResourceCollection *This,
-        IOpcPartUri *partName,
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
+                     IXpsOMRemoteDictionaryResourceCollection *This,
+                     IOpcPartUri *partName,
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
 
     END_INTERFACE
 } IXpsOMRemoteDictionaryResourceCollectionVtbl;
@@ -3079,29 +3079,29 @@ MIDL_INTERFACE("ab8f5d8e-351b-4d33-aaed-fa56f0022931")
 IXpsOMSignatureBlockResourceCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMSignatureBlockResource **signatureBlockResource) = 0;
+                     UINT32 index,
+                     IXpsOMSignatureBlockResource **signatureBlockResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMSignatureBlockResource *signatureBlockResource) = 0;
+                     UINT32 index,
+                     IXpsOMSignatureBlockResource *signatureBlockResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMSignatureBlockResource *signatureBlockResource) = 0;
+                     UINT32 index,
+                     IXpsOMSignatureBlockResource *signatureBlockResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMSignatureBlockResource *signatureBlockResource) = 0;
+                     IXpsOMSignatureBlockResource *signatureBlockResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetByPartName(
-        IOpcPartUri *partName,
-        IXpsOMSignatureBlockResource **signatureBlockResource) = 0;
+                     IOpcPartUri *partName,
+                     IXpsOMSignatureBlockResource **signatureBlockResource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3113,48 +3113,48 @@ typedef struct IXpsOMSignatureBlockResourceCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMSignatureBlockResourceCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMSignatureBlockResourceCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMSignatureBlockResourceCollection *This);
+                     IXpsOMSignatureBlockResourceCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMSignatureBlockResourceCollection *This);
+                     IXpsOMSignatureBlockResourceCollection *This);
 
     /*** IXpsOMSignatureBlockResourceCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMSignatureBlockResourceCollection *This,
-        UINT32 *count);
+                     IXpsOMSignatureBlockResourceCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMSignatureBlockResourceCollection *This,
-        UINT32 index,
-        IXpsOMSignatureBlockResource **signatureBlockResource);
+                     IXpsOMSignatureBlockResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMSignatureBlockResource **signatureBlockResource);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMSignatureBlockResourceCollection *This,
-        UINT32 index,
-        IXpsOMSignatureBlockResource *signatureBlockResource);
+                     IXpsOMSignatureBlockResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMSignatureBlockResource *signatureBlockResource);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMSignatureBlockResourceCollection *This,
-        UINT32 index);
+                     IXpsOMSignatureBlockResourceCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMSignatureBlockResourceCollection *This,
-        UINT32 index,
-        IXpsOMSignatureBlockResource *signatureBlockResource);
+                     IXpsOMSignatureBlockResourceCollection *This,
+                     UINT32 index,
+                     IXpsOMSignatureBlockResource *signatureBlockResource);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMSignatureBlockResourceCollection *This,
-        IXpsOMSignatureBlockResource *signatureBlockResource);
+                     IXpsOMSignatureBlockResourceCollection *This,
+                     IXpsOMSignatureBlockResource *signatureBlockResource);
 
     HRESULT (STDMETHODCALLTYPE *GetByPartName)(
-        IXpsOMSignatureBlockResourceCollection *This,
-        IOpcPartUri *partName,
-        IXpsOMSignatureBlockResource **signatureBlockResource);
+                     IXpsOMSignatureBlockResourceCollection *This,
+                     IOpcPartUri *partName,
+                     IXpsOMSignatureBlockResource **signatureBlockResource);
 
     END_INTERFACE
 } IXpsOMSignatureBlockResourceCollectionVtbl;
@@ -3230,25 +3230,25 @@ MIDL_INTERFACE("94d8abde-ab91-46a8-82b7-f5b05ef01a96")
 IXpsOMVisualCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMVisual **object) = 0;
+                     UINT32 index,
+                     IXpsOMVisual **object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMVisual *object) = 0;
+                     UINT32 index,
+                     IXpsOMVisual *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMVisual *object) = 0;
+                     UINT32 index,
+                     IXpsOMVisual *object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMVisual *object) = 0;
+                     IXpsOMVisual *object) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3260,43 +3260,43 @@ typedef struct IXpsOMVisualCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMVisualCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMVisualCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMVisualCollection *This);
+                     IXpsOMVisualCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMVisualCollection *This);
+                     IXpsOMVisualCollection *This);
 
     /*** IXpsOMVisualCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMVisualCollection *This,
-        UINT32 *count);
+                     IXpsOMVisualCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMVisualCollection *This,
-        UINT32 index,
-        IXpsOMVisual **object);
+                     IXpsOMVisualCollection *This,
+                     UINT32 index,
+                     IXpsOMVisual **object);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMVisualCollection *This,
-        UINT32 index,
-        IXpsOMVisual *object);
+                     IXpsOMVisualCollection *This,
+                     UINT32 index,
+                     IXpsOMVisual *object);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMVisualCollection *This,
-        UINT32 index);
+                     IXpsOMVisualCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMVisualCollection *This,
-        UINT32 index,
-        IXpsOMVisual *object);
+                     IXpsOMVisualCollection *This,
+                     UINT32 index,
+                     IXpsOMVisual *object);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMVisualCollection *This,
-        IXpsOMVisual *object);
+                     IXpsOMVisualCollection *This,
+                     IXpsOMVisual *object);
 
     END_INTERFACE
 } IXpsOMVisualCollectionVtbl;
@@ -3368,44 +3368,44 @@ MIDL_INTERFACE("897c86b8-8eaf-4ae3-bdde-56419fcf4236")
 IXpsOMDictionary : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IUnknown **owner) = 0;
+                     IUnknown **owner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        LPWSTR *key,
-        IXpsOMShareable **entry) = 0;
+                     UINT32 index,
+                     LPWSTR *key,
+                     IXpsOMShareable **entry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetByKey(
-        LPCWSTR key,
-        IXpsOMShareable *beforeEntry,
-        IXpsOMShareable **entry) = 0;
+                     LPCWSTR key,
+                     IXpsOMShareable *beforeEntry,
+                     IXpsOMShareable **entry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIndex(
-        IXpsOMShareable *entry,
-        UINT32 *index) = 0;
+                     IXpsOMShareable *entry,
+                     UINT32 *index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        LPCWSTR key,
-        IXpsOMShareable *entry) = 0;
+                     LPCWSTR key,
+                     IXpsOMShareable *entry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        LPCWSTR key,
-        IXpsOMShareable *entry) = 0;
+                     UINT32 index,
+                     LPCWSTR key,
+                     IXpsOMShareable *entry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        LPCWSTR key,
-        IXpsOMShareable *entry) = 0;
+                     UINT32 index,
+                     LPCWSTR key,
+                     IXpsOMShareable *entry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMDictionary **dictionary) = 0;
+                     IXpsOMDictionary **dictionary) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3417,66 +3417,66 @@ typedef struct IXpsOMDictionaryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMDictionary *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMDictionary *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMDictionary *This);
+                     IXpsOMDictionary *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMDictionary *This);
+                     IXpsOMDictionary *This);
 
     /*** IXpsOMDictionary methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMDictionary *This,
-        IUnknown **owner);
+                     IXpsOMDictionary *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMDictionary *This,
-        UINT32 *count);
+                     IXpsOMDictionary *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMDictionary *This,
-        UINT32 index,
-        LPWSTR *key,
-        IXpsOMShareable **entry);
+                     IXpsOMDictionary *This,
+                     UINT32 index,
+                     LPWSTR *key,
+                     IXpsOMShareable **entry);
 
     HRESULT (STDMETHODCALLTYPE *GetByKey)(
-        IXpsOMDictionary *This,
-        LPCWSTR key,
-        IXpsOMShareable *beforeEntry,
-        IXpsOMShareable **entry);
+                     IXpsOMDictionary *This,
+                     LPCWSTR key,
+                     IXpsOMShareable *beforeEntry,
+                     IXpsOMShareable **entry);
 
     HRESULT (STDMETHODCALLTYPE *GetIndex)(
-        IXpsOMDictionary *This,
-        IXpsOMShareable *entry,
-        UINT32 *index);
+                     IXpsOMDictionary *This,
+                     IXpsOMShareable *entry,
+                     UINT32 *index);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMDictionary *This,
-        LPCWSTR key,
-        IXpsOMShareable *entry);
+                     IXpsOMDictionary *This,
+                     LPCWSTR key,
+                     IXpsOMShareable *entry);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMDictionary *This,
-        UINT32 index,
-        LPCWSTR key,
-        IXpsOMShareable *entry);
+                     IXpsOMDictionary *This,
+                     UINT32 index,
+                     LPCWSTR key,
+                     IXpsOMShareable *entry);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMDictionary *This,
-        UINT32 index);
+                     IXpsOMDictionary *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMDictionary *This,
-        UINT32 index,
-        LPCWSTR key,
-        IXpsOMShareable *entry);
+                     IXpsOMDictionary *This,
+                     UINT32 index,
+                     LPCWSTR key,
+                     IXpsOMShareable *entry);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMDictionary *This,
-        IXpsOMDictionary **dictionary);
+                     IXpsOMDictionary *This,
+                     IXpsOMDictionary **dictionary);
 
     END_INTERFACE
 } IXpsOMDictionaryVtbl;
@@ -3564,55 +3564,55 @@ MIDL_INTERFACE("ed360180-6f92-4998-890d-2f208531a0a0")
 IXpsOMPageReference : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMDocument **document) = 0;
+                     IXpsOMDocument **document) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPage(
-        IXpsOMPage **page) = 0;
+                     IXpsOMPage **page) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPage(
-        IXpsOMPage *page) = 0;
+                     IXpsOMPage *page) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DiscardPage(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPageLoaded(
-        WINBOOL *isPageLoaded) = 0;
+                     WINBOOL *isPageLoaded) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAdvisoryPageDimensions(
-        XPS_SIZE *pageDimensions) = 0;
+                     XPS_SIZE *pageDimensions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAdvisoryPageDimensions(
-        const XPS_SIZE *pageDimensions) = 0;
+                     const XPS_SIZE *pageDimensions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStoryFragmentsResource(
-        IXpsOMStoryFragmentsResource **storyFragmentsResource) = 0;
+                     IXpsOMStoryFragmentsResource **storyFragmentsResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStoryFragmentsResource(
-        IXpsOMStoryFragmentsResource *storyFragmentsResource) = 0;
+                     IXpsOMStoryFragmentsResource *storyFragmentsResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrintTicketResource(
-        IXpsOMPrintTicketResource **printTicketResource) = 0;
+                     IXpsOMPrintTicketResource **printTicketResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrintTicketResource(
-        IXpsOMPrintTicketResource *printTicketResource) = 0;
+                     IXpsOMPrintTicketResource *printTicketResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThumbnailResource(
-        IXpsOMImageResource **imageResource) = 0;
+                     IXpsOMImageResource **imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetThumbnailResource(
-        IXpsOMImageResource *imageResource) = 0;
+                     IXpsOMImageResource *imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CollectLinkTargets(
-        IXpsOMNameCollection **linkTargets) = 0;
+                     IXpsOMNameCollection **linkTargets) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CollectPartResources(
-        IXpsOMPartResources **partResources) = 0;
+                     IXpsOMPartResources **partResources) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasRestrictedFonts(
-        WINBOOL *restrictedFonts) = 0;
+                     WINBOOL *restrictedFonts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMPageReference **pageReference) = 0;
+                     IXpsOMPageReference **pageReference) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3624,83 +3624,83 @@ typedef struct IXpsOMPageReferenceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPageReference *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPageReference *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPageReference *This);
+                     IXpsOMPageReference *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPageReference *This);
+                     IXpsOMPageReference *This);
 
     /*** IXpsOMPageReference methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMPageReference *This,
-        IXpsOMDocument **document);
+                     IXpsOMPageReference *This,
+                     IXpsOMDocument **document);
 
     HRESULT (STDMETHODCALLTYPE *GetPage)(
-        IXpsOMPageReference *This,
-        IXpsOMPage **page);
+                     IXpsOMPageReference *This,
+                     IXpsOMPage **page);
 
     HRESULT (STDMETHODCALLTYPE *SetPage)(
-        IXpsOMPageReference *This,
-        IXpsOMPage *page);
+                     IXpsOMPageReference *This,
+                     IXpsOMPage *page);
 
     HRESULT (STDMETHODCALLTYPE *DiscardPage)(
-        IXpsOMPageReference *This);
+                     IXpsOMPageReference *This);
 
     HRESULT (STDMETHODCALLTYPE *IsPageLoaded)(
-        IXpsOMPageReference *This,
-        WINBOOL *isPageLoaded);
+                     IXpsOMPageReference *This,
+                     WINBOOL *isPageLoaded);
 
     HRESULT (STDMETHODCALLTYPE *GetAdvisoryPageDimensions)(
-        IXpsOMPageReference *This,
-        XPS_SIZE *pageDimensions);
+                     IXpsOMPageReference *This,
+                     XPS_SIZE *pageDimensions);
 
     HRESULT (STDMETHODCALLTYPE *SetAdvisoryPageDimensions)(
-        IXpsOMPageReference *This,
-        const XPS_SIZE *pageDimensions);
+                     IXpsOMPageReference *This,
+                     const XPS_SIZE *pageDimensions);
 
     HRESULT (STDMETHODCALLTYPE *GetStoryFragmentsResource)(
-        IXpsOMPageReference *This,
-        IXpsOMStoryFragmentsResource **storyFragmentsResource);
+                     IXpsOMPageReference *This,
+                     IXpsOMStoryFragmentsResource **storyFragmentsResource);
 
     HRESULT (STDMETHODCALLTYPE *SetStoryFragmentsResource)(
-        IXpsOMPageReference *This,
-        IXpsOMStoryFragmentsResource *storyFragmentsResource);
+                     IXpsOMPageReference *This,
+                     IXpsOMStoryFragmentsResource *storyFragmentsResource);
 
     HRESULT (STDMETHODCALLTYPE *GetPrintTicketResource)(
-        IXpsOMPageReference *This,
-        IXpsOMPrintTicketResource **printTicketResource);
+                     IXpsOMPageReference *This,
+                     IXpsOMPrintTicketResource **printTicketResource);
 
     HRESULT (STDMETHODCALLTYPE *SetPrintTicketResource)(
-        IXpsOMPageReference *This,
-        IXpsOMPrintTicketResource *printTicketResource);
+                     IXpsOMPageReference *This,
+                     IXpsOMPrintTicketResource *printTicketResource);
 
     HRESULT (STDMETHODCALLTYPE *GetThumbnailResource)(
-        IXpsOMPageReference *This,
-        IXpsOMImageResource **imageResource);
+                     IXpsOMPageReference *This,
+                     IXpsOMImageResource **imageResource);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnailResource)(
-        IXpsOMPageReference *This,
-        IXpsOMImageResource *imageResource);
+                     IXpsOMPageReference *This,
+                     IXpsOMImageResource *imageResource);
 
     HRESULT (STDMETHODCALLTYPE *CollectLinkTargets)(
-        IXpsOMPageReference *This,
-        IXpsOMNameCollection **linkTargets);
+                     IXpsOMPageReference *This,
+                     IXpsOMNameCollection **linkTargets);
 
     HRESULT (STDMETHODCALLTYPE *CollectPartResources)(
-        IXpsOMPageReference *This,
-        IXpsOMPartResources **partResources);
+                     IXpsOMPageReference *This,
+                     IXpsOMPartResources **partResources);
 
     HRESULT (STDMETHODCALLTYPE *HasRestrictedFonts)(
-        IXpsOMPageReference *This,
-        WINBOOL *restrictedFonts);
+                     IXpsOMPageReference *This,
+                     WINBOOL *restrictedFonts);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMPageReference *This,
-        IXpsOMPageReference **pageReference);
+                     IXpsOMPageReference *This,
+                     IXpsOMPageReference **pageReference);
 
     END_INTERFACE
 } IXpsOMPageReferenceVtbl;
@@ -3816,25 +3816,25 @@ MIDL_INTERFACE("ca16ba4d-e7b9-45c5-958b-f98022473745")
 IXpsOMPageReferenceCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMPageReference **pageReference) = 0;
+                     UINT32 index,
+                     IXpsOMPageReference **pageReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMPageReference *pageReference) = 0;
+                     UINT32 index,
+                     IXpsOMPageReference *pageReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMPageReference *pageReference) = 0;
+                     UINT32 index,
+                     IXpsOMPageReference *pageReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMPageReference *pageReference) = 0;
+                     IXpsOMPageReference *pageReference) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3846,43 +3846,43 @@ typedef struct IXpsOMPageReferenceCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPageReferenceCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPageReferenceCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPageReferenceCollection *This);
+                     IXpsOMPageReferenceCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPageReferenceCollection *This);
+                     IXpsOMPageReferenceCollection *This);
 
     /*** IXpsOMPageReferenceCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMPageReferenceCollection *This,
-        UINT32 *count);
+                     IXpsOMPageReferenceCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMPageReferenceCollection *This,
-        UINT32 index,
-        IXpsOMPageReference **pageReference);
+                     IXpsOMPageReferenceCollection *This,
+                     UINT32 index,
+                     IXpsOMPageReference **pageReference);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMPageReferenceCollection *This,
-        UINT32 index,
-        IXpsOMPageReference *pageReference);
+                     IXpsOMPageReferenceCollection *This,
+                     UINT32 index,
+                     IXpsOMPageReference *pageReference);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMPageReferenceCollection *This,
-        UINT32 index);
+                     IXpsOMPageReferenceCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMPageReferenceCollection *This,
-        UINT32 index,
-        IXpsOMPageReference *pageReference);
+                     IXpsOMPageReferenceCollection *This,
+                     UINT32 index,
+                     IXpsOMPageReference *pageReference);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMPageReferenceCollection *This,
-        IXpsOMPageReference *pageReference);
+                     IXpsOMPageReferenceCollection *This,
+                     IXpsOMPageReference *pageReference);
 
     END_INTERFACE
 } IXpsOMPageReferenceCollectionVtbl;
@@ -3954,25 +3954,25 @@ MIDL_INTERFACE("d1c87f0d-e947-4754-8a25-971478f7e83e")
 IXpsOMDocumentCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsOMDocument **document) = 0;
+                     UINT32 index,
+                     IXpsOMDocument **document) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IXpsOMDocument *document) = 0;
+                     UINT32 index,
+                     IXpsOMDocument *document) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IXpsOMDocument *document) = 0;
+                     UINT32 index,
+                     IXpsOMDocument *document) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IXpsOMDocument *document) = 0;
+                     IXpsOMDocument *document) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3984,43 +3984,43 @@ typedef struct IXpsOMDocumentCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMDocumentCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMDocumentCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMDocumentCollection *This);
+                     IXpsOMDocumentCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMDocumentCollection *This);
+                     IXpsOMDocumentCollection *This);
 
     /*** IXpsOMDocumentCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMDocumentCollection *This,
-        UINT32 *count);
+                     IXpsOMDocumentCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMDocumentCollection *This,
-        UINT32 index,
-        IXpsOMDocument **document);
+                     IXpsOMDocumentCollection *This,
+                     UINT32 index,
+                     IXpsOMDocument **document);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMDocumentCollection *This,
-        UINT32 index,
-        IXpsOMDocument *document);
+                     IXpsOMDocumentCollection *This,
+                     UINT32 index,
+                     IXpsOMDocument *document);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMDocumentCollection *This,
-        UINT32 index);
+                     IXpsOMDocumentCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMDocumentCollection *This,
-        UINT32 index,
-        IXpsOMDocument *document);
+                     IXpsOMDocumentCollection *This,
+                     UINT32 index,
+                     IXpsOMDocument *document);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMDocumentCollection *This,
-        IXpsOMDocument *document);
+                     IXpsOMDocumentCollection *This,
+                     IXpsOMDocument *document);
 
     END_INTERFACE
 } IXpsOMDocumentCollectionVtbl;
@@ -4092,38 +4092,38 @@ MIDL_INTERFACE("18c3df65-81e1-4674-91dc-fc452f5a416f")
 IXpsOMPackage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentSequence(
-        IXpsOMDocumentSequence **documentSequence) = 0;
+                     IXpsOMDocumentSequence **documentSequence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDocumentSequence(
-        IXpsOMDocumentSequence *documentSequence) = 0;
+                     IXpsOMDocumentSequence *documentSequence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCoreProperties(
-        IXpsOMCoreProperties **coreProperties) = 0;
+                     IXpsOMCoreProperties **coreProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCoreProperties(
-        IXpsOMCoreProperties *coreProperties) = 0;
+                     IXpsOMCoreProperties *coreProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDiscardControlPartName(
-        IOpcPartUri **discardControlPartUri) = 0;
+                     IOpcPartUri **discardControlPartUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDiscardControlPartName(
-        IOpcPartUri *discardControlPartUri) = 0;
+                     IOpcPartUri *discardControlPartUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThumbnailResource(
-        IXpsOMImageResource **imageResource) = 0;
+                     IXpsOMImageResource **imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetThumbnailResource(
-        IXpsOMImageResource *imageResource) = 0;
+                     IXpsOMImageResource *imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteToFile(
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize) = 0;
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteToStream(
-        ISequentialStream *stream,
-        WINBOOL optimizeMarkupSize) = 0;
+                     ISequentialStream *stream,
+                     WINBOOL optimizeMarkupSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4135,60 +4135,60 @@ typedef struct IXpsOMPackageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPackage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPackage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPackage *This);
+                     IXpsOMPackage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPackage *This);
+                     IXpsOMPackage *This);
 
     /*** IXpsOMPackage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentSequence)(
-        IXpsOMPackage *This,
-        IXpsOMDocumentSequence **documentSequence);
+                     IXpsOMPackage *This,
+                     IXpsOMDocumentSequence **documentSequence);
 
     HRESULT (STDMETHODCALLTYPE *SetDocumentSequence)(
-        IXpsOMPackage *This,
-        IXpsOMDocumentSequence *documentSequence);
+                     IXpsOMPackage *This,
+                     IXpsOMDocumentSequence *documentSequence);
 
     HRESULT (STDMETHODCALLTYPE *GetCoreProperties)(
-        IXpsOMPackage *This,
-        IXpsOMCoreProperties **coreProperties);
+                     IXpsOMPackage *This,
+                     IXpsOMCoreProperties **coreProperties);
 
     HRESULT (STDMETHODCALLTYPE *SetCoreProperties)(
-        IXpsOMPackage *This,
-        IXpsOMCoreProperties *coreProperties);
+                     IXpsOMPackage *This,
+                     IXpsOMCoreProperties *coreProperties);
 
     HRESULT (STDMETHODCALLTYPE *GetDiscardControlPartName)(
-        IXpsOMPackage *This,
-        IOpcPartUri **discardControlPartUri);
+                     IXpsOMPackage *This,
+                     IOpcPartUri **discardControlPartUri);
 
     HRESULT (STDMETHODCALLTYPE *SetDiscardControlPartName)(
-        IXpsOMPackage *This,
-        IOpcPartUri *discardControlPartUri);
+                     IXpsOMPackage *This,
+                     IOpcPartUri *discardControlPartUri);
 
     HRESULT (STDMETHODCALLTYPE *GetThumbnailResource)(
-        IXpsOMPackage *This,
-        IXpsOMImageResource **imageResource);
+                     IXpsOMPackage *This,
+                     IXpsOMImageResource **imageResource);
 
     HRESULT (STDMETHODCALLTYPE *SetThumbnailResource)(
-        IXpsOMPackage *This,
-        IXpsOMImageResource *imageResource);
+                     IXpsOMPackage *This,
+                     IXpsOMImageResource *imageResource);
 
     HRESULT (STDMETHODCALLTYPE *WriteToFile)(
-        IXpsOMPackage *This,
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize);
+                     IXpsOMPackage *This,
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize);
 
     HRESULT (STDMETHODCALLTYPE *WriteToStream)(
-        IXpsOMPackage *This,
-        ISequentialStream *stream,
-        WINBOOL optimizeMarkupSize);
+                     IXpsOMPackage *This,
+                     ISequentialStream *stream,
+                     WINBOOL optimizeMarkupSize);
 
     END_INTERFACE
 } IXpsOMPackageVtbl;
@@ -4276,194 +4276,194 @@ MIDL_INTERFACE("f9b2a685-a50d-4fc2-b764-b56e093ea0ca")
 IXpsOMObjectFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreatePackage(
-        IXpsOMPackage **package) = 0;
+                     IXpsOMPackage **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackageFromFile(
-        LPCWSTR filename,
-        WINBOOL reuseObjects,
-        IXpsOMPackage **package) = 0;
+                     LPCWSTR filename,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackageFromStream(
-        IStream *stream,
-        WINBOOL reuseObjects,
-        IXpsOMPackage **package) = 0;
+                     IStream *stream,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStoryFragmentsResource(
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMStoryFragmentsResource **storyFragmentsResource) = 0;
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMStoryFragmentsResource **storyFragmentsResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDocumentStructureResource(
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMDocumentStructureResource **documentStructureResource) = 0;
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMDocumentStructureResource **documentStructureResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSignatureBlockResource(
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMSignatureBlockResource **signatureBlockResource) = 0;
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMSignatureBlockResource **signatureBlockResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRemoteDictionaryResource(
-        IXpsOMDictionary *dictionary,
-        IOpcPartUri *partUri,
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource) = 0;
+                     IXpsOMDictionary *dictionary,
+                     IOpcPartUri *partUri,
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRemoteDictionaryResourceFromStream(
-        IStream *dictionaryMarkupStream,
-        IOpcPartUri *dictionaryPartUri,
-        IXpsOMPartResources *resources,
-        IXpsOMRemoteDictionaryResource **dictionaryResource) = 0;
+                     IStream *dictionaryMarkupStream,
+                     IOpcPartUri *dictionaryPartUri,
+                     IXpsOMPartResources *resources,
+                     IXpsOMRemoteDictionaryResource **dictionaryResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePartResources(
-        IXpsOMPartResources **partResources) = 0;
+                     IXpsOMPartResources **partResources) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDocumentSequence(
-        IOpcPartUri *partUri,
-        IXpsOMDocumentSequence **documentSequence) = 0;
+                     IOpcPartUri *partUri,
+                     IXpsOMDocumentSequence **documentSequence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDocument(
-        IOpcPartUri *partUri,
-        IXpsOMDocument **document) = 0;
+                     IOpcPartUri *partUri,
+                     IXpsOMDocument **document) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePageReference(
-        const XPS_SIZE *advisoryPageDimensions,
-        IXpsOMPageReference **pageReference) = 0;
+                     const XPS_SIZE *advisoryPageDimensions,
+                     IXpsOMPageReference **pageReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePage(
-        const XPS_SIZE *pageDimensions,
-        LPCWSTR language,
-        IOpcPartUri *partUri,
-        IXpsOMPage **page) = 0;
+                     const XPS_SIZE *pageDimensions,
+                     LPCWSTR language,
+                     IOpcPartUri *partUri,
+                     IXpsOMPage **page) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePageFromStream(
-        IStream *pageMarkupStream,
-        IOpcPartUri *partUri,
-        IXpsOMPartResources *resources,
-        WINBOOL reuseObjects,
-        IXpsOMPage **page) = 0;
+                     IStream *pageMarkupStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPartResources *resources,
+                     WINBOOL reuseObjects,
+                     IXpsOMPage **page) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCanvas(
-        IXpsOMCanvas **canvas) = 0;
+                     IXpsOMCanvas **canvas) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGlyphs(
-        IXpsOMFontResource *fontResource,
-        IXpsOMGlyphs **glyphs) = 0;
+                     IXpsOMFontResource *fontResource,
+                     IXpsOMGlyphs **glyphs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePath(
-        IXpsOMPath **path) = 0;
+                     IXpsOMPath **path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGeometry(
-        IXpsOMGeometry **geometry) = 0;
+                     IXpsOMGeometry **geometry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGeometryFigure(
-        const XPS_POINT *startPoint,
-        IXpsOMGeometryFigure **figure) = 0;
+                     const XPS_POINT *startPoint,
+                     IXpsOMGeometryFigure **figure) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMatrixTransform(
-        const XPS_MATRIX *matrix,
-        IXpsOMMatrixTransform **transform) = 0;
+                     const XPS_MATRIX *matrix,
+                     IXpsOMMatrixTransform **transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSolidColorBrush(
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile,
-        IXpsOMSolidColorBrush **solidColorBrush) = 0;
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile,
+                     IXpsOMSolidColorBrush **solidColorBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateColorProfileResource(
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMColorProfileResource **colorProfileResource) = 0;
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMColorProfileResource **colorProfileResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateImageBrush(
-        IXpsOMImageResource *image,
-        const XPS_RECT *viewBox,
-        const XPS_RECT *viewPort,
-        IXpsOMImageBrush **imageBrush) = 0;
+                     IXpsOMImageResource *image,
+                     const XPS_RECT *viewBox,
+                     const XPS_RECT *viewPort,
+                     IXpsOMImageBrush **imageBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateVisualBrush(
-        const XPS_RECT *viewBox,
-        const XPS_RECT *viewPort,
-        IXpsOMVisualBrush **visualBrush) = 0;
+                     const XPS_RECT *viewBox,
+                     const XPS_RECT *viewPort,
+                     IXpsOMVisualBrush **visualBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateImageResource(
-        IStream *acquiredStream,
-        XPS_IMAGE_TYPE contentType,
-        IOpcPartUri *partUri,
-        IXpsOMImageResource **imageResource) = 0;
+                     IStream *acquiredStream,
+                     XPS_IMAGE_TYPE contentType,
+                     IOpcPartUri *partUri,
+                     IXpsOMImageResource **imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePrintTicketResource(
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMPrintTicketResource **printTicketResource) = 0;
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPrintTicketResource **printTicketResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFontResource(
-        IStream *acquiredStream,
-        XPS_FONT_EMBEDDING fontEmbedding,
-        IOpcPartUri *partUri,
-        WINBOOL isObfSourceStream,
-        IXpsOMFontResource **fontResource) = 0;
+                     IStream *acquiredStream,
+                     XPS_FONT_EMBEDDING fontEmbedding,
+                     IOpcPartUri *partUri,
+                     WINBOOL isObfSourceStream,
+                     IXpsOMFontResource **fontResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGradientStop(
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile,
-        FLOAT offset,
-        IXpsOMGradientStop **gradientStop) = 0;
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile,
+                     FLOAT offset,
+                     IXpsOMGradientStop **gradientStop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateLinearGradientBrush(
-        IXpsOMGradientStop *gradStop1,
-        IXpsOMGradientStop *gradStop2,
-        const XPS_POINT *startPoint,
-        const XPS_POINT *endPoint,
-        IXpsOMLinearGradientBrush **linearGradientBrush) = 0;
+                     IXpsOMGradientStop *gradStop1,
+                     IXpsOMGradientStop *gradStop2,
+                     const XPS_POINT *startPoint,
+                     const XPS_POINT *endPoint,
+                     IXpsOMLinearGradientBrush **linearGradientBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRadialGradientBrush(
-        IXpsOMGradientStop *gradStop1,
-        IXpsOMGradientStop *gradStop2,
-        const XPS_POINT *centerPoint,
-        const XPS_POINT *gradientOrigin,
-        const XPS_SIZE *radiiSizes,
-        IXpsOMRadialGradientBrush **radialGradientBrush) = 0;
+                     IXpsOMGradientStop *gradStop1,
+                     IXpsOMGradientStop *gradStop2,
+                     const XPS_POINT *centerPoint,
+                     const XPS_POINT *gradientOrigin,
+                     const XPS_SIZE *radiiSizes,
+                     IXpsOMRadialGradientBrush **radialGradientBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCoreProperties(
-        IOpcPartUri *partUri,
-        IXpsOMCoreProperties **coreProperties) = 0;
+                     IOpcPartUri *partUri,
+                     IXpsOMCoreProperties **coreProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDictionary(
-        IXpsOMDictionary **dictionary) = 0;
+                     IXpsOMDictionary **dictionary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePartUriCollection(
-        IXpsOMPartUriCollection **partUriCollection) = 0;
+                     IXpsOMPartUriCollection **partUriCollection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackageWriterOnFile(
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter) = 0;
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackageWriterOnStream(
-        ISequentialStream *outputStream,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter) = 0;
+                     ISequentialStream *outputStream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePartUri(
-        LPCWSTR uri,
-        IOpcPartUri **partUri) = 0;
+                     LPCWSTR uri,
+                     IOpcPartUri **partUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateReadOnlyStreamOnFile(
-        LPCWSTR filename,
-        IStream **stream) = 0;
+                     LPCWSTR filename,
+                     IStream **stream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4475,243 +4475,243 @@ typedef struct IXpsOMObjectFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMObjectFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMObjectFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMObjectFactory *This);
+                     IXpsOMObjectFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMObjectFactory *This);
+                     IXpsOMObjectFactory *This);
 
     /*** IXpsOMObjectFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreatePackage)(
-        IXpsOMObjectFactory *This,
-        IXpsOMPackage **package);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageFromFile)(
-        IXpsOMObjectFactory *This,
-        LPCWSTR filename,
-        WINBOOL reuseObjects,
-        IXpsOMPackage **package);
+                     IXpsOMObjectFactory *This,
+                     LPCWSTR filename,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageFromStream)(
-        IXpsOMObjectFactory *This,
-        IStream *stream,
-        WINBOOL reuseObjects,
-        IXpsOMPackage **package);
+                     IXpsOMObjectFactory *This,
+                     IStream *stream,
+                     WINBOOL reuseObjects,
+                     IXpsOMPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *CreateStoryFragmentsResource)(
-        IXpsOMObjectFactory *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMStoryFragmentsResource **storyFragmentsResource);
+                     IXpsOMObjectFactory *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMStoryFragmentsResource **storyFragmentsResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateDocumentStructureResource)(
-        IXpsOMObjectFactory *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMDocumentStructureResource **documentStructureResource);
+                     IXpsOMObjectFactory *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMDocumentStructureResource **documentStructureResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateSignatureBlockResource)(
-        IXpsOMObjectFactory *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMSignatureBlockResource **signatureBlockResource);
+                     IXpsOMObjectFactory *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMSignatureBlockResource **signatureBlockResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateRemoteDictionaryResource)(
-        IXpsOMObjectFactory *This,
-        IXpsOMDictionary *dictionary,
-        IOpcPartUri *partUri,
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMDictionary *dictionary,
+                     IOpcPartUri *partUri,
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateRemoteDictionaryResourceFromStream)(
-        IXpsOMObjectFactory *This,
-        IStream *dictionaryMarkupStream,
-        IOpcPartUri *dictionaryPartUri,
-        IXpsOMPartResources *resources,
-        IXpsOMRemoteDictionaryResource **dictionaryResource);
+                     IXpsOMObjectFactory *This,
+                     IStream *dictionaryMarkupStream,
+                     IOpcPartUri *dictionaryPartUri,
+                     IXpsOMPartResources *resources,
+                     IXpsOMRemoteDictionaryResource **dictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *CreatePartResources)(
-        IXpsOMObjectFactory *This,
-        IXpsOMPartResources **partResources);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMPartResources **partResources);
 
     HRESULT (STDMETHODCALLTYPE *CreateDocumentSequence)(
-        IXpsOMObjectFactory *This,
-        IOpcPartUri *partUri,
-        IXpsOMDocumentSequence **documentSequence);
+                     IXpsOMObjectFactory *This,
+                     IOpcPartUri *partUri,
+                     IXpsOMDocumentSequence **documentSequence);
 
     HRESULT (STDMETHODCALLTYPE *CreateDocument)(
-        IXpsOMObjectFactory *This,
-        IOpcPartUri *partUri,
-        IXpsOMDocument **document);
+                     IXpsOMObjectFactory *This,
+                     IOpcPartUri *partUri,
+                     IXpsOMDocument **document);
 
     HRESULT (STDMETHODCALLTYPE *CreatePageReference)(
-        IXpsOMObjectFactory *This,
-        const XPS_SIZE *advisoryPageDimensions,
-        IXpsOMPageReference **pageReference);
+                     IXpsOMObjectFactory *This,
+                     const XPS_SIZE *advisoryPageDimensions,
+                     IXpsOMPageReference **pageReference);
 
     HRESULT (STDMETHODCALLTYPE *CreatePage)(
-        IXpsOMObjectFactory *This,
-        const XPS_SIZE *pageDimensions,
-        LPCWSTR language,
-        IOpcPartUri *partUri,
-        IXpsOMPage **page);
+                     IXpsOMObjectFactory *This,
+                     const XPS_SIZE *pageDimensions,
+                     LPCWSTR language,
+                     IOpcPartUri *partUri,
+                     IXpsOMPage **page);
 
     HRESULT (STDMETHODCALLTYPE *CreatePageFromStream)(
-        IXpsOMObjectFactory *This,
-        IStream *pageMarkupStream,
-        IOpcPartUri *partUri,
-        IXpsOMPartResources *resources,
-        WINBOOL reuseObjects,
-        IXpsOMPage **page);
+                     IXpsOMObjectFactory *This,
+                     IStream *pageMarkupStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPartResources *resources,
+                     WINBOOL reuseObjects,
+                     IXpsOMPage **page);
 
     HRESULT (STDMETHODCALLTYPE *CreateCanvas)(
-        IXpsOMObjectFactory *This,
-        IXpsOMCanvas **canvas);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMCanvas **canvas);
 
     HRESULT (STDMETHODCALLTYPE *CreateGlyphs)(
-        IXpsOMObjectFactory *This,
-        IXpsOMFontResource *fontResource,
-        IXpsOMGlyphs **glyphs);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMFontResource *fontResource,
+                     IXpsOMGlyphs **glyphs);
 
     HRESULT (STDMETHODCALLTYPE *CreatePath)(
-        IXpsOMObjectFactory *This,
-        IXpsOMPath **path);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMPath **path);
 
     HRESULT (STDMETHODCALLTYPE *CreateGeometry)(
-        IXpsOMObjectFactory *This,
-        IXpsOMGeometry **geometry);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMGeometry **geometry);
 
     HRESULT (STDMETHODCALLTYPE *CreateGeometryFigure)(
-        IXpsOMObjectFactory *This,
-        const XPS_POINT *startPoint,
-        IXpsOMGeometryFigure **figure);
+                     IXpsOMObjectFactory *This,
+                     const XPS_POINT *startPoint,
+                     IXpsOMGeometryFigure **figure);
 
     HRESULT (STDMETHODCALLTYPE *CreateMatrixTransform)(
-        IXpsOMObjectFactory *This,
-        const XPS_MATRIX *matrix,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMObjectFactory *This,
+                     const XPS_MATRIX *matrix,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *CreateSolidColorBrush)(
-        IXpsOMObjectFactory *This,
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile,
-        IXpsOMSolidColorBrush **solidColorBrush);
+                     IXpsOMObjectFactory *This,
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile,
+                     IXpsOMSolidColorBrush **solidColorBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateColorProfileResource)(
-        IXpsOMObjectFactory *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMColorProfileResource **colorProfileResource);
+                     IXpsOMObjectFactory *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMColorProfileResource **colorProfileResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateImageBrush)(
-        IXpsOMObjectFactory *This,
-        IXpsOMImageResource *image,
-        const XPS_RECT *viewBox,
-        const XPS_RECT *viewPort,
-        IXpsOMImageBrush **imageBrush);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMImageResource *image,
+                     const XPS_RECT *viewBox,
+                     const XPS_RECT *viewPort,
+                     IXpsOMImageBrush **imageBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateVisualBrush)(
-        IXpsOMObjectFactory *This,
-        const XPS_RECT *viewBox,
-        const XPS_RECT *viewPort,
-        IXpsOMVisualBrush **visualBrush);
+                     IXpsOMObjectFactory *This,
+                     const XPS_RECT *viewBox,
+                     const XPS_RECT *viewPort,
+                     IXpsOMVisualBrush **visualBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateImageResource)(
-        IXpsOMObjectFactory *This,
-        IStream *acquiredStream,
-        XPS_IMAGE_TYPE contentType,
-        IOpcPartUri *partUri,
-        IXpsOMImageResource **imageResource);
+                     IXpsOMObjectFactory *This,
+                     IStream *acquiredStream,
+                     XPS_IMAGE_TYPE contentType,
+                     IOpcPartUri *partUri,
+                     IXpsOMImageResource **imageResource);
 
     HRESULT (STDMETHODCALLTYPE *CreatePrintTicketResource)(
-        IXpsOMObjectFactory *This,
-        IStream *acquiredStream,
-        IOpcPartUri *partUri,
-        IXpsOMPrintTicketResource **printTicketResource);
+                     IXpsOMObjectFactory *This,
+                     IStream *acquiredStream,
+                     IOpcPartUri *partUri,
+                     IXpsOMPrintTicketResource **printTicketResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateFontResource)(
-        IXpsOMObjectFactory *This,
-        IStream *acquiredStream,
-        XPS_FONT_EMBEDDING fontEmbedding,
-        IOpcPartUri *partUri,
-        WINBOOL isObfSourceStream,
-        IXpsOMFontResource **fontResource);
+                     IXpsOMObjectFactory *This,
+                     IStream *acquiredStream,
+                     XPS_FONT_EMBEDDING fontEmbedding,
+                     IOpcPartUri *partUri,
+                     WINBOOL isObfSourceStream,
+                     IXpsOMFontResource **fontResource);
 
     HRESULT (STDMETHODCALLTYPE *CreateGradientStop)(
-        IXpsOMObjectFactory *This,
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile,
-        FLOAT offset,
-        IXpsOMGradientStop **gradientStop);
+                     IXpsOMObjectFactory *This,
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile,
+                     FLOAT offset,
+                     IXpsOMGradientStop **gradientStop);
 
     HRESULT (STDMETHODCALLTYPE *CreateLinearGradientBrush)(
-        IXpsOMObjectFactory *This,
-        IXpsOMGradientStop *gradStop1,
-        IXpsOMGradientStop *gradStop2,
-        const XPS_POINT *startPoint,
-        const XPS_POINT *endPoint,
-        IXpsOMLinearGradientBrush **linearGradientBrush);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMGradientStop *gradStop1,
+                     IXpsOMGradientStop *gradStop2,
+                     const XPS_POINT *startPoint,
+                     const XPS_POINT *endPoint,
+                     IXpsOMLinearGradientBrush **linearGradientBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateRadialGradientBrush)(
-        IXpsOMObjectFactory *This,
-        IXpsOMGradientStop *gradStop1,
-        IXpsOMGradientStop *gradStop2,
-        const XPS_POINT *centerPoint,
-        const XPS_POINT *gradientOrigin,
-        const XPS_SIZE *radiiSizes,
-        IXpsOMRadialGradientBrush **radialGradientBrush);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMGradientStop *gradStop1,
+                     IXpsOMGradientStop *gradStop2,
+                     const XPS_POINT *centerPoint,
+                     const XPS_POINT *gradientOrigin,
+                     const XPS_SIZE *radiiSizes,
+                     IXpsOMRadialGradientBrush **radialGradientBrush);
 
     HRESULT (STDMETHODCALLTYPE *CreateCoreProperties)(
-        IXpsOMObjectFactory *This,
-        IOpcPartUri *partUri,
-        IXpsOMCoreProperties **coreProperties);
+                     IXpsOMObjectFactory *This,
+                     IOpcPartUri *partUri,
+                     IXpsOMCoreProperties **coreProperties);
 
     HRESULT (STDMETHODCALLTYPE *CreateDictionary)(
-        IXpsOMObjectFactory *This,
-        IXpsOMDictionary **dictionary);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMDictionary **dictionary);
 
     HRESULT (STDMETHODCALLTYPE *CreatePartUriCollection)(
-        IXpsOMObjectFactory *This,
-        IXpsOMPartUriCollection **partUriCollection);
+                     IXpsOMObjectFactory *This,
+                     IXpsOMPartUriCollection **partUriCollection);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageWriterOnFile)(
-        IXpsOMObjectFactory *This,
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter);
+                     IXpsOMObjectFactory *This,
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackageWriterOnStream)(
-        IXpsOMObjectFactory *This,
-        ISequentialStream *outputStream,
-        WINBOOL optimizeMarkupSize,
-        XPS_INTERLEAVING interleaving,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMCoreProperties *coreProperties,
-        IXpsOMImageResource *packageThumbnail,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter);
+                     IXpsOMObjectFactory *This,
+                     ISequentialStream *outputStream,
+                     WINBOOL optimizeMarkupSize,
+                     XPS_INTERLEAVING interleaving,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMCoreProperties *coreProperties,
+                     IXpsOMImageResource *packageThumbnail,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter);
 
     HRESULT (STDMETHODCALLTYPE *CreatePartUri)(
-        IXpsOMObjectFactory *This,
-        LPCWSTR uri,
-        IOpcPartUri **partUri);
+                     IXpsOMObjectFactory *This,
+                     LPCWSTR uri,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *CreateReadOnlyStreamOnFile)(
-        IXpsOMObjectFactory *This,
-        LPCWSTR filename,
-        IStream **stream);
+                     IXpsOMObjectFactory *This,
+                     LPCWSTR filename,
+                     IStream **stream);
 
     END_INTERFACE
 } IXpsOMObjectFactoryVtbl;
@@ -4907,11 +4907,11 @@ MIDL_INTERFACE("4bddf8ec-c915-421b-a166-d173d25653d2")
 IXpsOMNameCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        LPWSTR *name) = 0;
+                     UINT32 index,
+                     LPWSTR *name) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4923,25 +4923,25 @@ typedef struct IXpsOMNameCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMNameCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMNameCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMNameCollection *This);
+                     IXpsOMNameCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMNameCollection *This);
+                     IXpsOMNameCollection *This);
 
     /*** IXpsOMNameCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMNameCollection *This,
-        UINT32 *count);
+                     IXpsOMNameCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMNameCollection *This,
-        UINT32 index,
-        LPWSTR *name);
+                     IXpsOMNameCollection *This,
+                     UINT32 index,
+                     LPWSTR *name);
 
     END_INTERFACE
 } IXpsOMNameCollectionVtbl;
@@ -4997,25 +4997,25 @@ MIDL_INTERFACE("57c650d4-067c-4893-8c33-f62a0633730f")
 IXpsOMPartUriCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IOpcPartUri **partUri) = 0;
+                     UINT32 index,
+                     IOpcPartUri **partUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT32 index,
-        IOpcPartUri *partUri) = 0;
+                     UINT32 index,
+                     IOpcPartUri *partUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAt(
-        UINT32 index,
-        IOpcPartUri *partUri) = 0;
+                     UINT32 index,
+                     IOpcPartUri *partUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IOpcPartUri *partUri) = 0;
+                     IOpcPartUri *partUri) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5027,43 +5027,43 @@ typedef struct IXpsOMPartUriCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPartUriCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPartUriCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPartUriCollection *This);
+                     IXpsOMPartUriCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPartUriCollection *This);
+                     IXpsOMPartUriCollection *This);
 
     /*** IXpsOMPartUriCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsOMPartUriCollection *This,
-        UINT32 *count);
+                     IXpsOMPartUriCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsOMPartUriCollection *This,
-        UINT32 index,
-        IOpcPartUri **partUri);
+                     IXpsOMPartUriCollection *This,
+                     UINT32 index,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IXpsOMPartUriCollection *This,
-        UINT32 index,
-        IOpcPartUri *partUri);
+                     IXpsOMPartUriCollection *This,
+                     UINT32 index,
+                     IOpcPartUri *partUri);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsOMPartUriCollection *This,
-        UINT32 index);
+                     IXpsOMPartUriCollection *This,
+                     UINT32 index);
 
     HRESULT (STDMETHODCALLTYPE *SetAt)(
-        IXpsOMPartUriCollection *This,
-        UINT32 index,
-        IOpcPartUri *partUri);
+                     IXpsOMPartUriCollection *This,
+                     UINT32 index,
+                     IOpcPartUri *partUri);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IXpsOMPartUriCollection *This,
-        IOpcPartUri *partUri);
+                     IXpsOMPartUriCollection *This,
+                     IOpcPartUri *partUri);
 
     END_INTERFACE
 } IXpsOMPartUriCollectionVtbl;
@@ -5135,28 +5135,28 @@ MIDL_INTERFACE("4e2aa182-a443-42c6-b41b-4f8e9de73ff9")
 IXpsOMPackageWriter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartNewDocument(
-        IOpcPartUri *documentPartName,
-        IXpsOMPrintTicketResource *documentPrintTicket,
-        IXpsOMDocumentStructureResource *documentStructure,
-        IXpsOMSignatureBlockResourceCollection *signatureBlockResources,
-        IXpsOMPartUriCollection *restrictedFonts) = 0;
+                     IOpcPartUri *documentPartName,
+                     IXpsOMPrintTicketResource *documentPrintTicket,
+                     IXpsOMDocumentStructureResource *documentStructure,
+                     IXpsOMSignatureBlockResourceCollection *signatureBlockResources,
+                     IXpsOMPartUriCollection *restrictedFonts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPage(
-        IXpsOMPage *page,
-        const XPS_SIZE *advisoryPageDimensions,
-        IXpsOMPartUriCollection *discardableResourceParts,
-        IXpsOMStoryFragmentsResource *storyFragments,
-        IXpsOMPrintTicketResource *pagePrintTicket,
-        IXpsOMImageResource *pageThumbnail) = 0;
+                     IXpsOMPage *page,
+                     const XPS_SIZE *advisoryPageDimensions,
+                     IXpsOMPartUriCollection *discardableResourceParts,
+                     IXpsOMStoryFragmentsResource *storyFragments,
+                     IXpsOMPrintTicketResource *pagePrintTicket,
+                     IXpsOMImageResource *pageThumbnail) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddResource(
-        IXpsOMResource *resource) = 0;
+                     IXpsOMResource *resource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsClosed(
-        WINBOOL *isClosed) = 0;
+                     WINBOOL *isClosed) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5168,44 +5168,44 @@ typedef struct IXpsOMPackageWriterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPackageWriter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPackageWriter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPackageWriter *This);
+                     IXpsOMPackageWriter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPackageWriter *This);
+                     IXpsOMPackageWriter *This);
 
     /*** IXpsOMPackageWriter methods ***/
     HRESULT (STDMETHODCALLTYPE *StartNewDocument)(
-        IXpsOMPackageWriter *This,
-        IOpcPartUri *documentPartName,
-        IXpsOMPrintTicketResource *documentPrintTicket,
-        IXpsOMDocumentStructureResource *documentStructure,
-        IXpsOMSignatureBlockResourceCollection *signatureBlockResources,
-        IXpsOMPartUriCollection *restrictedFonts);
+                     IXpsOMPackageWriter *This,
+                     IOpcPartUri *documentPartName,
+                     IXpsOMPrintTicketResource *documentPrintTicket,
+                     IXpsOMDocumentStructureResource *documentStructure,
+                     IXpsOMSignatureBlockResourceCollection *signatureBlockResources,
+                     IXpsOMPartUriCollection *restrictedFonts);
 
     HRESULT (STDMETHODCALLTYPE *AddPage)(
-        IXpsOMPackageWriter *This,
-        IXpsOMPage *page,
-        const XPS_SIZE *advisoryPageDimensions,
-        IXpsOMPartUriCollection *discardableResourceParts,
-        IXpsOMStoryFragmentsResource *storyFragments,
-        IXpsOMPrintTicketResource *pagePrintTicket,
-        IXpsOMImageResource *pageThumbnail);
+                     IXpsOMPackageWriter *This,
+                     IXpsOMPage *page,
+                     const XPS_SIZE *advisoryPageDimensions,
+                     IXpsOMPartUriCollection *discardableResourceParts,
+                     IXpsOMStoryFragmentsResource *storyFragments,
+                     IXpsOMPrintTicketResource *pagePrintTicket,
+                     IXpsOMImageResource *pageThumbnail);
 
     HRESULT (STDMETHODCALLTYPE *AddResource)(
-        IXpsOMPackageWriter *This,
-        IXpsOMResource *resource);
+                     IXpsOMPackageWriter *This,
+                     IXpsOMResource *resource);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IXpsOMPackageWriter *This);
+                     IXpsOMPackageWriter *This);
 
     HRESULT (STDMETHODCALLTYPE *IsClosed)(
-        IXpsOMPackageWriter *This,
-        WINBOOL *isClosed);
+                     IXpsOMPackageWriter *This,
+                     WINBOOL *isClosed);
 
     END_INTERFACE
 } IXpsOMPackageWriterVtbl;
@@ -5273,10 +5273,10 @@ MIDL_INTERFACE("219a9db0-4959-47d0-8034-b1ce84f41a4d")
 IXpsOMPackageTarget : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateXpsOMPackageWriter(
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter) = 0;
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5288,23 +5288,23 @@ typedef struct IXpsOMPackageTargetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPackageTarget *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPackageTarget *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPackageTarget *This);
+                     IXpsOMPackageTarget *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPackageTarget *This);
+                     IXpsOMPackageTarget *This);
 
     /*** IXpsOMPackageTarget methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateXpsOMPackageWriter)(
-        IXpsOMPackageTarget *This,
-        IOpcPartUri *documentSequencePartName,
-        IXpsOMPrintTicketResource *documentSequencePrintTicket,
-        IOpcPartUri *discardControlPartName,
-        IXpsOMPackageWriter **packageWriter);
+                     IXpsOMPackageTarget *This,
+                     IOpcPartUri *documentSequencePartName,
+                     IXpsOMPrintTicketResource *documentSequencePrintTicket,
+                     IOpcPartUri *discardControlPartName,
+                     IXpsOMPackageWriter **packageWriter);
 
     END_INTERFACE
 } IXpsOMPackageTargetVtbl;
@@ -5356,79 +5356,79 @@ MIDL_INTERFACE("bc3e7333-fb0b-4af3-a819-0b4eaad0d2fd")
 IXpsOMVisual : public IXpsOMShareable
 {
     virtual HRESULT STDMETHODCALLTYPE GetTransform(
-        IXpsOMMatrixTransform **matrixTransform) = 0;
+                     IXpsOMMatrixTransform **matrixTransform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformLocal(
-        IXpsOMMatrixTransform **matrixTransform) = 0;
+                     IXpsOMMatrixTransform **matrixTransform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransformLocal(
-        IXpsOMMatrixTransform *matrixTransform) = 0;
+                     IXpsOMMatrixTransform *matrixTransform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformLookup(
-        LPWSTR *key) = 0;
+                     LPWSTR *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransformLookup(
-        LPCWSTR key) = 0;
+                     LPCWSTR key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClipGeometry(
-        IXpsOMGeometry **clipGeometry) = 0;
+                     IXpsOMGeometry **clipGeometry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClipGeometryLocal(
-        IXpsOMGeometry **clipGeometry) = 0;
+                     IXpsOMGeometry **clipGeometry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetClipGeometryLocal(
-        IXpsOMGeometry *clipGeometry) = 0;
+                     IXpsOMGeometry *clipGeometry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClipGeometryLookup(
-        LPWSTR *key) = 0;
+                     LPWSTR *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetClipGeometryLookup(
-        LPCWSTR key) = 0;
+                     LPCWSTR key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOpacity(
-        FLOAT *opacity) = 0;
+                     FLOAT *opacity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOpacity(
-        FLOAT opacity) = 0;
+                     FLOAT opacity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOpacityMaskBrush(
-        IXpsOMBrush **opacityMaskBrush) = 0;
+                     IXpsOMBrush **opacityMaskBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOpacityMaskBrushLocal(
-        IXpsOMBrush **opacityMaskBrush) = 0;
+                     IXpsOMBrush **opacityMaskBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOpacityMaskBrushLocal(
-        IXpsOMBrush *opacityMaskBrush) = 0;
+                     IXpsOMBrush *opacityMaskBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOpacityMaskBrushLookup(
-        LPWSTR *key) = 0;
+                     LPWSTR *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOpacityMaskBrushLookup(
-        LPCWSTR key) = 0;
+                     LPCWSTR key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        LPWSTR *name) = 0;
+                     LPWSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetName(
-        LPCWSTR name) = 0;
+                     LPCWSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIsHyperlinkTarget(
-        WINBOOL *isHyperlink) = 0;
+                     WINBOOL *isHyperlink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIsHyperlinkTarget(
-        WINBOOL isHyperlink) = 0;
+                     WINBOOL isHyperlink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHyperlinkNavigateUri(
-        IUri **hyperlinkUri) = 0;
+                     IUri **hyperlinkUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetHyperlinkNavigateUri(
-        IUri *hyperlinkUri) = 0;
+                     IUri *hyperlinkUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguage(
-        LPWSTR *language) = 0;
+                     LPWSTR *language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLanguage(
-        LPCWSTR language) = 0;
+                     LPCWSTR language) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5440,125 +5440,125 @@ typedef struct IXpsOMVisualVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMVisual *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMVisual *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMVisual *This);
+                     IXpsOMVisual *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMVisual *This);
+                     IXpsOMVisual *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMVisual *This,
-        IUnknown **owner);
+                     IXpsOMVisual *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMVisual *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMVisual *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMVisual methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMVisual *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMVisual *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMVisual *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMVisual *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMVisual *This,
-        IXpsOMMatrixTransform *matrixTransform);
+                     IXpsOMVisual *This,
+                     IXpsOMMatrixTransform *matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMVisual *This,
-        LPWSTR *key);
+                     IXpsOMVisual *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMVisual *This,
-        LPCWSTR key);
+                     IXpsOMVisual *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometry)(
-        IXpsOMVisual *This,
-        IXpsOMGeometry **clipGeometry);
+                     IXpsOMVisual *This,
+                     IXpsOMGeometry **clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometryLocal)(
-        IXpsOMVisual *This,
-        IXpsOMGeometry **clipGeometry);
+                     IXpsOMVisual *This,
+                     IXpsOMGeometry **clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *SetClipGeometryLocal)(
-        IXpsOMVisual *This,
-        IXpsOMGeometry *clipGeometry);
+                     IXpsOMVisual *This,
+                     IXpsOMGeometry *clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometryLookup)(
-        IXpsOMVisual *This,
-        LPWSTR *key);
+                     IXpsOMVisual *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetClipGeometryLookup)(
-        IXpsOMVisual *This,
-        LPCWSTR key);
+                     IXpsOMVisual *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMVisual *This,
-        FLOAT *opacity);
+                     IXpsOMVisual *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMVisual *This,
-        FLOAT opacity);
+                     IXpsOMVisual *This,
+                     FLOAT opacity);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrush)(
-        IXpsOMVisual *This,
-        IXpsOMBrush **opacityMaskBrush);
+                     IXpsOMVisual *This,
+                     IXpsOMBrush **opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrushLocal)(
-        IXpsOMVisual *This,
-        IXpsOMBrush **opacityMaskBrush);
+                     IXpsOMVisual *This,
+                     IXpsOMBrush **opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacityMaskBrushLocal)(
-        IXpsOMVisual *This,
-        IXpsOMBrush *opacityMaskBrush);
+                     IXpsOMVisual *This,
+                     IXpsOMBrush *opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrushLookup)(
-        IXpsOMVisual *This,
-        LPWSTR *key);
+                     IXpsOMVisual *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacityMaskBrushLookup)(
-        IXpsOMVisual *This,
-        LPCWSTR key);
+                     IXpsOMVisual *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IXpsOMVisual *This,
-        LPWSTR *name);
+                     IXpsOMVisual *This,
+                     LPWSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IXpsOMVisual *This,
-        LPCWSTR name);
+                     IXpsOMVisual *This,
+                     LPCWSTR name);
 
     HRESULT (STDMETHODCALLTYPE *GetIsHyperlinkTarget)(
-        IXpsOMVisual *This,
-        WINBOOL *isHyperlink);
+                     IXpsOMVisual *This,
+                     WINBOOL *isHyperlink);
 
     HRESULT (STDMETHODCALLTYPE *SetIsHyperlinkTarget)(
-        IXpsOMVisual *This,
-        WINBOOL isHyperlink);
+                     IXpsOMVisual *This,
+                     WINBOOL isHyperlink);
 
     HRESULT (STDMETHODCALLTYPE *GetHyperlinkNavigateUri)(
-        IXpsOMVisual *This,
-        IUri **hyperlinkUri);
+                     IXpsOMVisual *This,
+                     IUri **hyperlinkUri);
 
     HRESULT (STDMETHODCALLTYPE *SetHyperlinkNavigateUri)(
-        IXpsOMVisual *This,
-        IUri *hyperlinkUri);
+                     IXpsOMVisual *This,
+                     IUri *hyperlinkUri);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IXpsOMVisual *This,
-        LPWSTR *language);
+                     IXpsOMVisual *This,
+                     LPWSTR *language);
 
     HRESULT (STDMETHODCALLTYPE *SetLanguage)(
-        IXpsOMVisual *This,
-        LPCWSTR language);
+                     IXpsOMVisual *This,
+                     LPCWSTR language);
 
     END_INTERFACE
 } IXpsOMVisualVtbl;
@@ -5716,10 +5716,10 @@ MIDL_INTERFACE("56a3f80c-ea4c-4187-a57b-a2a473b2b42b")
 IXpsOMBrush : public IXpsOMShareable
 {
     virtual HRESULT STDMETHODCALLTYPE GetOpacity(
-        FLOAT *opacity) = 0;
+                     FLOAT *opacity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOpacity(
-        FLOAT opacity) = 0;
+                     FLOAT opacity) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5731,33 +5731,33 @@ typedef struct IXpsOMBrushVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMBrush *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMBrush *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMBrush *This);
+                     IXpsOMBrush *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMBrush *This);
+                     IXpsOMBrush *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMBrush *This,
-        IUnknown **owner);
+                     IXpsOMBrush *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMBrush *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMBrush *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMBrush *This,
-        FLOAT *opacity);
+                     IXpsOMBrush *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMBrush *This,
-        FLOAT opacity);
+                     IXpsOMBrush *This,
+                     FLOAT opacity);
 
     END_INTERFACE
 } IXpsOMBrushVtbl;
@@ -5823,13 +5823,13 @@ MIDL_INTERFACE("b77330ff-bb37-4501-a93e-f1b1e50bfc46")
 IXpsOMMatrixTransform : public IXpsOMShareable
 {
     virtual HRESULT STDMETHODCALLTYPE GetMatrix(
-        XPS_MATRIX *matrix) = 0;
+                     XPS_MATRIX *matrix) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMatrix(
-        const XPS_MATRIX *matrix) = 0;
+                     const XPS_MATRIX *matrix) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMMatrixTransform **matrixTransform) = 0;
+                     IXpsOMMatrixTransform **matrixTransform) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5841,37 +5841,37 @@ typedef struct IXpsOMMatrixTransformVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMMatrixTransform *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMMatrixTransform *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMMatrixTransform *This);
+                     IXpsOMMatrixTransform *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMMatrixTransform *This);
+                     IXpsOMMatrixTransform *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMMatrixTransform *This,
-        IUnknown **owner);
+                     IXpsOMMatrixTransform *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMMatrixTransform *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMMatrixTransform *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMMatrixTransform methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMatrix)(
-        IXpsOMMatrixTransform *This,
-        XPS_MATRIX *matrix);
+                     IXpsOMMatrixTransform *This,
+                     XPS_MATRIX *matrix);
 
     HRESULT (STDMETHODCALLTYPE *SetMatrix)(
-        IXpsOMMatrixTransform *This,
-        const XPS_MATRIX *matrix);
+                     IXpsOMMatrixTransform *This,
+                     const XPS_MATRIX *matrix);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMMatrixTransform *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMMatrixTransform *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     END_INTERFACE
 } IXpsOMMatrixTransformVtbl;
@@ -5941,31 +5941,31 @@ MIDL_INTERFACE("64fcf3d7-4d58-44ba-ad73-a13af6492072")
 IXpsOMGeometry : public IXpsOMShareable
 {
     virtual HRESULT STDMETHODCALLTYPE GetFigures(
-        IXpsOMGeometryFigureCollection **figures) = 0;
+                     IXpsOMGeometryFigureCollection **figures) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFillRule(
-        XPS_FILL_RULE *fillRule) = 0;
+                     XPS_FILL_RULE *fillRule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFillRule(
-        XPS_FILL_RULE fillRule) = 0;
+                     XPS_FILL_RULE fillRule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransform(
-        IXpsOMMatrixTransform **transform) = 0;
+                     IXpsOMMatrixTransform **transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformLocal(
-        IXpsOMMatrixTransform **transform) = 0;
+                     IXpsOMMatrixTransform **transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransformLocal(
-        IXpsOMMatrixTransform *transform) = 0;
+                     IXpsOMMatrixTransform *transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformLookup(
-        LPWSTR *lookup) = 0;
+                     LPWSTR *lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransformLookup(
-        LPCWSTR lookup) = 0;
+                     LPCWSTR lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMGeometry **geometry) = 0;
+                     IXpsOMGeometry **geometry) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5977,61 +5977,61 @@ typedef struct IXpsOMGeometryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMGeometry *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMGeometry *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMGeometry *This);
+                     IXpsOMGeometry *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMGeometry *This);
+                     IXpsOMGeometry *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMGeometry *This,
-        IUnknown **owner);
+                     IXpsOMGeometry *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMGeometry *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMGeometry *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMGeometry methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFigures)(
-        IXpsOMGeometry *This,
-        IXpsOMGeometryFigureCollection **figures);
+                     IXpsOMGeometry *This,
+                     IXpsOMGeometryFigureCollection **figures);
 
     HRESULT (STDMETHODCALLTYPE *GetFillRule)(
-        IXpsOMGeometry *This,
-        XPS_FILL_RULE *fillRule);
+                     IXpsOMGeometry *This,
+                     XPS_FILL_RULE *fillRule);
 
     HRESULT (STDMETHODCALLTYPE *SetFillRule)(
-        IXpsOMGeometry *This,
-        XPS_FILL_RULE fillRule);
+                     IXpsOMGeometry *This,
+                     XPS_FILL_RULE fillRule);
 
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMGeometry *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMGeometry *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMGeometry *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMGeometry *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMGeometry *This,
-        IXpsOMMatrixTransform *transform);
+                     IXpsOMGeometry *This,
+                     IXpsOMMatrixTransform *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMGeometry *This,
-        LPWSTR *lookup);
+                     IXpsOMGeometry *This,
+                     LPWSTR *lookup);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMGeometry *This,
-        LPCWSTR lookup);
+                     IXpsOMGeometry *This,
+                     LPCWSTR lookup);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMGeometry *This,
-        IXpsOMGeometry **geometry);
+                     IXpsOMGeometry *This,
+                     IXpsOMGeometry **geometry);
 
     END_INTERFACE
 } IXpsOMGeometryVtbl;
@@ -6125,88 +6125,88 @@ MIDL_INTERFACE("819b3199-0a5a-4b64-bec7-a9e17e780de2")
 IXpsOMGlyphs : public IXpsOMVisual
 {
     virtual HRESULT STDMETHODCALLTYPE GetUnicodeString(
-        LPWSTR *unicodeString) = 0;
+                     LPWSTR *unicodeString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphIndexCount(
-        UINT32 *indexCount) = 0;
+                     UINT32 *indexCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphIndices(
-        UINT32 *indexCount,
-        XPS_GLYPH_INDEX *glyphIndices) = 0;
+                     UINT32 *indexCount,
+                     XPS_GLYPH_INDEX *glyphIndices) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphMappingCount(
-        UINT32 *glyphMappingCount) = 0;
+                     UINT32 *glyphMappingCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphMappings(
-        UINT32 *glyphMappingCount,
-        XPS_GLYPH_MAPPING *glyphMappings) = 0;
+                     UINT32 *glyphMappingCount,
+                     XPS_GLYPH_MAPPING *glyphMappings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProhibitedCaretStopCount(
-        UINT32 *prohibitedCaretStopCount) = 0;
+                     UINT32 *prohibitedCaretStopCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProhibitedCaretStops(
-        UINT32 *prohibitedCaretStopCount,
-        UINT32 *prohibitedCaretStops) = 0;
+                     UINT32 *prohibitedCaretStopCount,
+                     UINT32 *prohibitedCaretStops) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBidiLevel(
-        UINT32 *bidiLevel) = 0;
+                     UINT32 *bidiLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIsSideways(
-        WINBOOL *isSideways) = 0;
+                     WINBOOL *isSideways) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceFontName(
-        LPWSTR *deviceFontName) = 0;
+                     LPWSTR *deviceFontName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStyleSimulations(
-        XPS_STYLE_SIMULATION *styleSimulations) = 0;
+                     XPS_STYLE_SIMULATION *styleSimulations) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStyleSimulations(
-        XPS_STYLE_SIMULATION styleSimulations) = 0;
+                     XPS_STYLE_SIMULATION styleSimulations) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOrigin(
-        XPS_POINT *origin) = 0;
+                     XPS_POINT *origin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOrigin(
-        const XPS_POINT *origin) = 0;
+                     const XPS_POINT *origin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontRenderingEmSize(
-        FLOAT *fontRenderingEmSize) = 0;
+                     FLOAT *fontRenderingEmSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontRenderingEmSize(
-        FLOAT fontRenderingEmSize) = 0;
+                     FLOAT fontRenderingEmSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontResource(
-        IXpsOMFontResource **fontResource) = 0;
+                     IXpsOMFontResource **fontResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontResource(
-        IXpsOMFontResource *fontResource) = 0;
+                     IXpsOMFontResource *fontResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontFaceIndex(
-        SHORT *fontFaceIndex) = 0;
+                     SHORT *fontFaceIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontFaceIndex(
-        SHORT fontFaceIndex) = 0;
+                     SHORT fontFaceIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFillBrush(
-        IXpsOMBrush **fillBrush) = 0;
+                     IXpsOMBrush **fillBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFillBrushLocal(
-        IXpsOMBrush **fillBrush) = 0;
+                     IXpsOMBrush **fillBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFillBrushLocal(
-        IXpsOMBrush *fillBrush) = 0;
+                     IXpsOMBrush *fillBrush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFillBrushLookup(
-        LPWSTR *key) = 0;
+                     LPWSTR *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFillBrushLookup(
-        LPCWSTR key) = 0;
+                     LPCWSTR key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphsEditor(
-        IXpsOMGlyphsEditor **editor) = 0;
+                     IXpsOMGlyphsEditor **editor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMGlyphs **glyphs) = 0;
+                     IXpsOMGlyphs **glyphs) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6218,237 +6218,237 @@ typedef struct IXpsOMGlyphsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMGlyphs *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMGlyphs *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMGlyphs *This);
+                     IXpsOMGlyphs *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMGlyphs *This);
+                     IXpsOMGlyphs *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMGlyphs *This,
-        IUnknown **owner);
+                     IXpsOMGlyphs *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMGlyphs *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMGlyphs *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMVisual methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMGlyphs *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMGlyphs *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMGlyphs *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMGlyphs *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMGlyphs *This,
-        IXpsOMMatrixTransform *matrixTransform);
+                     IXpsOMGlyphs *This,
+                     IXpsOMMatrixTransform *matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMGlyphs *This,
-        LPWSTR *key);
+                     IXpsOMGlyphs *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMGlyphs *This,
-        LPCWSTR key);
+                     IXpsOMGlyphs *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometry)(
-        IXpsOMGlyphs *This,
-        IXpsOMGeometry **clipGeometry);
+                     IXpsOMGlyphs *This,
+                     IXpsOMGeometry **clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometryLocal)(
-        IXpsOMGlyphs *This,
-        IXpsOMGeometry **clipGeometry);
+                     IXpsOMGlyphs *This,
+                     IXpsOMGeometry **clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *SetClipGeometryLocal)(
-        IXpsOMGlyphs *This,
-        IXpsOMGeometry *clipGeometry);
+                     IXpsOMGlyphs *This,
+                     IXpsOMGeometry *clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometryLookup)(
-        IXpsOMGlyphs *This,
-        LPWSTR *key);
+                     IXpsOMGlyphs *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetClipGeometryLookup)(
-        IXpsOMGlyphs *This,
-        LPCWSTR key);
+                     IXpsOMGlyphs *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMGlyphs *This,
-        FLOAT *opacity);
+                     IXpsOMGlyphs *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMGlyphs *This,
-        FLOAT opacity);
+                     IXpsOMGlyphs *This,
+                     FLOAT opacity);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrush)(
-        IXpsOMGlyphs *This,
-        IXpsOMBrush **opacityMaskBrush);
+                     IXpsOMGlyphs *This,
+                     IXpsOMBrush **opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrushLocal)(
-        IXpsOMGlyphs *This,
-        IXpsOMBrush **opacityMaskBrush);
+                     IXpsOMGlyphs *This,
+                     IXpsOMBrush **opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacityMaskBrushLocal)(
-        IXpsOMGlyphs *This,
-        IXpsOMBrush *opacityMaskBrush);
+                     IXpsOMGlyphs *This,
+                     IXpsOMBrush *opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrushLookup)(
-        IXpsOMGlyphs *This,
-        LPWSTR *key);
+                     IXpsOMGlyphs *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacityMaskBrushLookup)(
-        IXpsOMGlyphs *This,
-        LPCWSTR key);
+                     IXpsOMGlyphs *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IXpsOMGlyphs *This,
-        LPWSTR *name);
+                     IXpsOMGlyphs *This,
+                     LPWSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IXpsOMGlyphs *This,
-        LPCWSTR name);
+                     IXpsOMGlyphs *This,
+                     LPCWSTR name);
 
     HRESULT (STDMETHODCALLTYPE *GetIsHyperlinkTarget)(
-        IXpsOMGlyphs *This,
-        WINBOOL *isHyperlink);
+                     IXpsOMGlyphs *This,
+                     WINBOOL *isHyperlink);
 
     HRESULT (STDMETHODCALLTYPE *SetIsHyperlinkTarget)(
-        IXpsOMGlyphs *This,
-        WINBOOL isHyperlink);
+                     IXpsOMGlyphs *This,
+                     WINBOOL isHyperlink);
 
     HRESULT (STDMETHODCALLTYPE *GetHyperlinkNavigateUri)(
-        IXpsOMGlyphs *This,
-        IUri **hyperlinkUri);
+                     IXpsOMGlyphs *This,
+                     IUri **hyperlinkUri);
 
     HRESULT (STDMETHODCALLTYPE *SetHyperlinkNavigateUri)(
-        IXpsOMGlyphs *This,
-        IUri *hyperlinkUri);
+                     IXpsOMGlyphs *This,
+                     IUri *hyperlinkUri);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IXpsOMGlyphs *This,
-        LPWSTR *language);
+                     IXpsOMGlyphs *This,
+                     LPWSTR *language);
 
     HRESULT (STDMETHODCALLTYPE *SetLanguage)(
-        IXpsOMGlyphs *This,
-        LPCWSTR language);
+                     IXpsOMGlyphs *This,
+                     LPCWSTR language);
 
     /*** IXpsOMGlyphs methods ***/
     HRESULT (STDMETHODCALLTYPE *GetUnicodeString)(
-        IXpsOMGlyphs *This,
-        LPWSTR *unicodeString);
+                     IXpsOMGlyphs *This,
+                     LPWSTR *unicodeString);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphIndexCount)(
-        IXpsOMGlyphs *This,
-        UINT32 *indexCount);
+                     IXpsOMGlyphs *This,
+                     UINT32 *indexCount);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphIndices)(
-        IXpsOMGlyphs *This,
-        UINT32 *indexCount,
-        XPS_GLYPH_INDEX *glyphIndices);
+                     IXpsOMGlyphs *This,
+                     UINT32 *indexCount,
+                     XPS_GLYPH_INDEX *glyphIndices);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphMappingCount)(
-        IXpsOMGlyphs *This,
-        UINT32 *glyphMappingCount);
+                     IXpsOMGlyphs *This,
+                     UINT32 *glyphMappingCount);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphMappings)(
-        IXpsOMGlyphs *This,
-        UINT32 *glyphMappingCount,
-        XPS_GLYPH_MAPPING *glyphMappings);
+                     IXpsOMGlyphs *This,
+                     UINT32 *glyphMappingCount,
+                     XPS_GLYPH_MAPPING *glyphMappings);
 
     HRESULT (STDMETHODCALLTYPE *GetProhibitedCaretStopCount)(
-        IXpsOMGlyphs *This,
-        UINT32 *prohibitedCaretStopCount);
+                     IXpsOMGlyphs *This,
+                     UINT32 *prohibitedCaretStopCount);
 
     HRESULT (STDMETHODCALLTYPE *GetProhibitedCaretStops)(
-        IXpsOMGlyphs *This,
-        UINT32 *prohibitedCaretStopCount,
-        UINT32 *prohibitedCaretStops);
+                     IXpsOMGlyphs *This,
+                     UINT32 *prohibitedCaretStopCount,
+                     UINT32 *prohibitedCaretStops);
 
     HRESULT (STDMETHODCALLTYPE *GetBidiLevel)(
-        IXpsOMGlyphs *This,
-        UINT32 *bidiLevel);
+                     IXpsOMGlyphs *This,
+                     UINT32 *bidiLevel);
 
     HRESULT (STDMETHODCALLTYPE *GetIsSideways)(
-        IXpsOMGlyphs *This,
-        WINBOOL *isSideways);
+                     IXpsOMGlyphs *This,
+                     WINBOOL *isSideways);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceFontName)(
-        IXpsOMGlyphs *This,
-        LPWSTR *deviceFontName);
+                     IXpsOMGlyphs *This,
+                     LPWSTR *deviceFontName);
 
     HRESULT (STDMETHODCALLTYPE *GetStyleSimulations)(
-        IXpsOMGlyphs *This,
-        XPS_STYLE_SIMULATION *styleSimulations);
+                     IXpsOMGlyphs *This,
+                     XPS_STYLE_SIMULATION *styleSimulations);
 
     HRESULT (STDMETHODCALLTYPE *SetStyleSimulations)(
-        IXpsOMGlyphs *This,
-        XPS_STYLE_SIMULATION styleSimulations);
+                     IXpsOMGlyphs *This,
+                     XPS_STYLE_SIMULATION styleSimulations);
 
     HRESULT (STDMETHODCALLTYPE *GetOrigin)(
-        IXpsOMGlyphs *This,
-        XPS_POINT *origin);
+                     IXpsOMGlyphs *This,
+                     XPS_POINT *origin);
 
     HRESULT (STDMETHODCALLTYPE *SetOrigin)(
-        IXpsOMGlyphs *This,
-        const XPS_POINT *origin);
+                     IXpsOMGlyphs *This,
+                     const XPS_POINT *origin);
 
     HRESULT (STDMETHODCALLTYPE *GetFontRenderingEmSize)(
-        IXpsOMGlyphs *This,
-        FLOAT *fontRenderingEmSize);
+                     IXpsOMGlyphs *This,
+                     FLOAT *fontRenderingEmSize);
 
     HRESULT (STDMETHODCALLTYPE *SetFontRenderingEmSize)(
-        IXpsOMGlyphs *This,
-        FLOAT fontRenderingEmSize);
+                     IXpsOMGlyphs *This,
+                     FLOAT fontRenderingEmSize);
 
     HRESULT (STDMETHODCALLTYPE *GetFontResource)(
-        IXpsOMGlyphs *This,
-        IXpsOMFontResource **fontResource);
+                     IXpsOMGlyphs *This,
+                     IXpsOMFontResource **fontResource);
 
     HRESULT (STDMETHODCALLTYPE *SetFontResource)(
-        IXpsOMGlyphs *This,
-        IXpsOMFontResource *fontResource);
+                     IXpsOMGlyphs *This,
+                     IXpsOMFontResource *fontResource);
 
     HRESULT (STDMETHODCALLTYPE *GetFontFaceIndex)(
-        IXpsOMGlyphs *This,
-        SHORT *fontFaceIndex);
+                     IXpsOMGlyphs *This,
+                     SHORT *fontFaceIndex);
 
     HRESULT (STDMETHODCALLTYPE *SetFontFaceIndex)(
-        IXpsOMGlyphs *This,
-        SHORT fontFaceIndex);
+                     IXpsOMGlyphs *This,
+                     SHORT fontFaceIndex);
 
     HRESULT (STDMETHODCALLTYPE *GetFillBrush)(
-        IXpsOMGlyphs *This,
-        IXpsOMBrush **fillBrush);
+                     IXpsOMGlyphs *This,
+                     IXpsOMBrush **fillBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetFillBrushLocal)(
-        IXpsOMGlyphs *This,
-        IXpsOMBrush **fillBrush);
+                     IXpsOMGlyphs *This,
+                     IXpsOMBrush **fillBrush);
 
     HRESULT (STDMETHODCALLTYPE *SetFillBrushLocal)(
-        IXpsOMGlyphs *This,
-        IXpsOMBrush *fillBrush);
+                     IXpsOMGlyphs *This,
+                     IXpsOMBrush *fillBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetFillBrushLookup)(
-        IXpsOMGlyphs *This,
-        LPWSTR *key);
+                     IXpsOMGlyphs *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetFillBrushLookup)(
-        IXpsOMGlyphs *This,
-        LPCWSTR key);
+                     IXpsOMGlyphs *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphsEditor)(
-        IXpsOMGlyphs *This,
-        IXpsOMGlyphsEditor **editor);
+                     IXpsOMGlyphs *This,
+                     IXpsOMGlyphsEditor **editor);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMGlyphs *This,
-        IXpsOMGlyphs **glyphs);
+                     IXpsOMGlyphs *This,
+                     IXpsOMGlyphs **glyphs);
 
     END_INTERFACE
 } IXpsOMGlyphsVtbl;
@@ -6716,115 +6716,115 @@ MIDL_INTERFACE("37d38bb6-3ee9-4110-9312-14b194163337")
 IXpsOMPath : public IXpsOMVisual
 {
     virtual HRESULT STDMETHODCALLTYPE GetGeometry(
-        IXpsOMGeometry **geometry) = 0;
+                     IXpsOMGeometry **geometry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGeometryLocal(
-        IXpsOMGeometry **geometry) = 0;
+                     IXpsOMGeometry **geometry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGeometryLocal(
-        IXpsOMGeometry *geometry) = 0;
+                     IXpsOMGeometry *geometry) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGeometryLookup(
-        LPWSTR *lookup) = 0;
+                     LPWSTR *lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGeometryLookup(
-        LPCWSTR lookup) = 0;
+                     LPCWSTR lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAccessibilityShortDescription(
-        LPWSTR *shortDescription) = 0;
+                     LPWSTR *shortDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAccessibilityShortDescription(
-        LPCWSTR shortDescription) = 0;
+                     LPCWSTR shortDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAccessibilityLongDescription(
-        LPWSTR *longDescription) = 0;
+                     LPWSTR *longDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAccessibilityLongDescription(
-        LPCWSTR longDescription) = 0;
+                     LPCWSTR longDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSnapsToPixels(
-        WINBOOL *snapsToPixels) = 0;
+                     WINBOOL *snapsToPixels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSnapsToPixels(
-        WINBOOL snapsToPixels) = 0;
+                     WINBOOL snapsToPixels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeBrush(
-        IXpsOMBrush **brush) = 0;
+                     IXpsOMBrush **brush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeBrushLocal(
-        IXpsOMBrush **brush) = 0;
+                     IXpsOMBrush **brush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeBrushLocal(
-        IXpsOMBrush *brush) = 0;
+                     IXpsOMBrush *brush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeBrushLookup(
-        LPWSTR *lookup) = 0;
+                     LPWSTR *lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeBrushLookup(
-        LPCWSTR lookup) = 0;
+                     LPCWSTR lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeDashes(
-        IXpsOMDashCollection **strokeDashes) = 0;
+                     IXpsOMDashCollection **strokeDashes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeDashCap(
-        XPS_DASH_CAP *strokeDashCap) = 0;
+                     XPS_DASH_CAP *strokeDashCap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeDashCap(
-        XPS_DASH_CAP strokeDashCap) = 0;
+                     XPS_DASH_CAP strokeDashCap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeDashOffset(
-        FLOAT *strokeDashOffset) = 0;
+                     FLOAT *strokeDashOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeDashOffset(
-        FLOAT strokeDashOffset) = 0;
+                     FLOAT strokeDashOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeStartLineCap(
-        XPS_LINE_CAP *strokeStartLineCap) = 0;
+                     XPS_LINE_CAP *strokeStartLineCap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeStartLineCap(
-        XPS_LINE_CAP strokeStartLineCap) = 0;
+                     XPS_LINE_CAP strokeStartLineCap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeEndLineCap(
-        XPS_LINE_CAP *strokeEndLineCap) = 0;
+                     XPS_LINE_CAP *strokeEndLineCap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeEndLineCap(
-        XPS_LINE_CAP strokeEndLineCap) = 0;
+                     XPS_LINE_CAP strokeEndLineCap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeLineJoin(
-        XPS_LINE_JOIN *strokeLineJoin) = 0;
+                     XPS_LINE_JOIN *strokeLineJoin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeLineJoin(
-        XPS_LINE_JOIN strokeLineJoin) = 0;
+                     XPS_LINE_JOIN strokeLineJoin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeMiterLimit(
-        FLOAT *strokeMiterLimit) = 0;
+                     FLOAT *strokeMiterLimit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeMiterLimit(
-        FLOAT strokeMiterLimit) = 0;
+                     FLOAT strokeMiterLimit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokeThickness(
-        FLOAT *strokeThickness) = 0;
+                     FLOAT *strokeThickness) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrokeThickness(
-        FLOAT strokeThickness) = 0;
+                     FLOAT strokeThickness) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFillBrush(
-        IXpsOMBrush **brush) = 0;
+                     IXpsOMBrush **brush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFillBrushLocal(
-        IXpsOMBrush **brush) = 0;
+                     IXpsOMBrush **brush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFillBrushLocal(
-        IXpsOMBrush *brush) = 0;
+                     IXpsOMBrush *brush) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFillBrushLookup(
-        LPWSTR *lookup) = 0;
+                     LPWSTR *lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFillBrushLookup(
-        LPCWSTR lookup) = 0;
+                     LPCWSTR lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMPath **path) = 0;
+                     IXpsOMPath **path) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6836,274 +6836,274 @@ typedef struct IXpsOMPathVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPath *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPath *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPath *This);
+                     IXpsOMPath *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPath *This);
+                     IXpsOMPath *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMPath *This,
-        IUnknown **owner);
+                     IXpsOMPath *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMPath *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMPath *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMVisual methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMPath *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMPath *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMPath *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMPath *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMPath *This,
-        IXpsOMMatrixTransform *matrixTransform);
+                     IXpsOMPath *This,
+                     IXpsOMMatrixTransform *matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMPath *This,
-        LPWSTR *key);
+                     IXpsOMPath *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMPath *This,
-        LPCWSTR key);
+                     IXpsOMPath *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometry)(
-        IXpsOMPath *This,
-        IXpsOMGeometry **clipGeometry);
+                     IXpsOMPath *This,
+                     IXpsOMGeometry **clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometryLocal)(
-        IXpsOMPath *This,
-        IXpsOMGeometry **clipGeometry);
+                     IXpsOMPath *This,
+                     IXpsOMGeometry **clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *SetClipGeometryLocal)(
-        IXpsOMPath *This,
-        IXpsOMGeometry *clipGeometry);
+                     IXpsOMPath *This,
+                     IXpsOMGeometry *clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometryLookup)(
-        IXpsOMPath *This,
-        LPWSTR *key);
+                     IXpsOMPath *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetClipGeometryLookup)(
-        IXpsOMPath *This,
-        LPCWSTR key);
+                     IXpsOMPath *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMPath *This,
-        FLOAT *opacity);
+                     IXpsOMPath *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMPath *This,
-        FLOAT opacity);
+                     IXpsOMPath *This,
+                     FLOAT opacity);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrush)(
-        IXpsOMPath *This,
-        IXpsOMBrush **opacityMaskBrush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush **opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrushLocal)(
-        IXpsOMPath *This,
-        IXpsOMBrush **opacityMaskBrush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush **opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacityMaskBrushLocal)(
-        IXpsOMPath *This,
-        IXpsOMBrush *opacityMaskBrush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush *opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrushLookup)(
-        IXpsOMPath *This,
-        LPWSTR *key);
+                     IXpsOMPath *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacityMaskBrushLookup)(
-        IXpsOMPath *This,
-        LPCWSTR key);
+                     IXpsOMPath *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IXpsOMPath *This,
-        LPWSTR *name);
+                     IXpsOMPath *This,
+                     LPWSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IXpsOMPath *This,
-        LPCWSTR name);
+                     IXpsOMPath *This,
+                     LPCWSTR name);
 
     HRESULT (STDMETHODCALLTYPE *GetIsHyperlinkTarget)(
-        IXpsOMPath *This,
-        WINBOOL *isHyperlink);
+                     IXpsOMPath *This,
+                     WINBOOL *isHyperlink);
 
     HRESULT (STDMETHODCALLTYPE *SetIsHyperlinkTarget)(
-        IXpsOMPath *This,
-        WINBOOL isHyperlink);
+                     IXpsOMPath *This,
+                     WINBOOL isHyperlink);
 
     HRESULT (STDMETHODCALLTYPE *GetHyperlinkNavigateUri)(
-        IXpsOMPath *This,
-        IUri **hyperlinkUri);
+                     IXpsOMPath *This,
+                     IUri **hyperlinkUri);
 
     HRESULT (STDMETHODCALLTYPE *SetHyperlinkNavigateUri)(
-        IXpsOMPath *This,
-        IUri *hyperlinkUri);
+                     IXpsOMPath *This,
+                     IUri *hyperlinkUri);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IXpsOMPath *This,
-        LPWSTR *language);
+                     IXpsOMPath *This,
+                     LPWSTR *language);
 
     HRESULT (STDMETHODCALLTYPE *SetLanguage)(
-        IXpsOMPath *This,
-        LPCWSTR language);
+                     IXpsOMPath *This,
+                     LPCWSTR language);
 
     /*** IXpsOMPath methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGeometry)(
-        IXpsOMPath *This,
-        IXpsOMGeometry **geometry);
+                     IXpsOMPath *This,
+                     IXpsOMGeometry **geometry);
 
     HRESULT (STDMETHODCALLTYPE *GetGeometryLocal)(
-        IXpsOMPath *This,
-        IXpsOMGeometry **geometry);
+                     IXpsOMPath *This,
+                     IXpsOMGeometry **geometry);
 
     HRESULT (STDMETHODCALLTYPE *SetGeometryLocal)(
-        IXpsOMPath *This,
-        IXpsOMGeometry *geometry);
+                     IXpsOMPath *This,
+                     IXpsOMGeometry *geometry);
 
     HRESULT (STDMETHODCALLTYPE *GetGeometryLookup)(
-        IXpsOMPath *This,
-        LPWSTR *lookup);
+                     IXpsOMPath *This,
+                     LPWSTR *lookup);
 
     HRESULT (STDMETHODCALLTYPE *SetGeometryLookup)(
-        IXpsOMPath *This,
-        LPCWSTR lookup);
+                     IXpsOMPath *This,
+                     LPCWSTR lookup);
 
     HRESULT (STDMETHODCALLTYPE *GetAccessibilityShortDescription)(
-        IXpsOMPath *This,
-        LPWSTR *shortDescription);
+                     IXpsOMPath *This,
+                     LPWSTR *shortDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetAccessibilityShortDescription)(
-        IXpsOMPath *This,
-        LPCWSTR shortDescription);
+                     IXpsOMPath *This,
+                     LPCWSTR shortDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetAccessibilityLongDescription)(
-        IXpsOMPath *This,
-        LPWSTR *longDescription);
+                     IXpsOMPath *This,
+                     LPWSTR *longDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetAccessibilityLongDescription)(
-        IXpsOMPath *This,
-        LPCWSTR longDescription);
+                     IXpsOMPath *This,
+                     LPCWSTR longDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetSnapsToPixels)(
-        IXpsOMPath *This,
-        WINBOOL *snapsToPixels);
+                     IXpsOMPath *This,
+                     WINBOOL *snapsToPixels);
 
     HRESULT (STDMETHODCALLTYPE *SetSnapsToPixels)(
-        IXpsOMPath *This,
-        WINBOOL snapsToPixels);
+                     IXpsOMPath *This,
+                     WINBOOL snapsToPixels);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeBrush)(
-        IXpsOMPath *This,
-        IXpsOMBrush **brush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush **brush);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeBrushLocal)(
-        IXpsOMPath *This,
-        IXpsOMBrush **brush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush **brush);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeBrushLocal)(
-        IXpsOMPath *This,
-        IXpsOMBrush *brush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush *brush);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeBrushLookup)(
-        IXpsOMPath *This,
-        LPWSTR *lookup);
+                     IXpsOMPath *This,
+                     LPWSTR *lookup);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeBrushLookup)(
-        IXpsOMPath *This,
-        LPCWSTR lookup);
+                     IXpsOMPath *This,
+                     LPCWSTR lookup);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeDashes)(
-        IXpsOMPath *This,
-        IXpsOMDashCollection **strokeDashes);
+                     IXpsOMPath *This,
+                     IXpsOMDashCollection **strokeDashes);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeDashCap)(
-        IXpsOMPath *This,
-        XPS_DASH_CAP *strokeDashCap);
+                     IXpsOMPath *This,
+                     XPS_DASH_CAP *strokeDashCap);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeDashCap)(
-        IXpsOMPath *This,
-        XPS_DASH_CAP strokeDashCap);
+                     IXpsOMPath *This,
+                     XPS_DASH_CAP strokeDashCap);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeDashOffset)(
-        IXpsOMPath *This,
-        FLOAT *strokeDashOffset);
+                     IXpsOMPath *This,
+                     FLOAT *strokeDashOffset);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeDashOffset)(
-        IXpsOMPath *This,
-        FLOAT strokeDashOffset);
+                     IXpsOMPath *This,
+                     FLOAT strokeDashOffset);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeStartLineCap)(
-        IXpsOMPath *This,
-        XPS_LINE_CAP *strokeStartLineCap);
+                     IXpsOMPath *This,
+                     XPS_LINE_CAP *strokeStartLineCap);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeStartLineCap)(
-        IXpsOMPath *This,
-        XPS_LINE_CAP strokeStartLineCap);
+                     IXpsOMPath *This,
+                     XPS_LINE_CAP strokeStartLineCap);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeEndLineCap)(
-        IXpsOMPath *This,
-        XPS_LINE_CAP *strokeEndLineCap);
+                     IXpsOMPath *This,
+                     XPS_LINE_CAP *strokeEndLineCap);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeEndLineCap)(
-        IXpsOMPath *This,
-        XPS_LINE_CAP strokeEndLineCap);
+                     IXpsOMPath *This,
+                     XPS_LINE_CAP strokeEndLineCap);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeLineJoin)(
-        IXpsOMPath *This,
-        XPS_LINE_JOIN *strokeLineJoin);
+                     IXpsOMPath *This,
+                     XPS_LINE_JOIN *strokeLineJoin);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeLineJoin)(
-        IXpsOMPath *This,
-        XPS_LINE_JOIN strokeLineJoin);
+                     IXpsOMPath *This,
+                     XPS_LINE_JOIN strokeLineJoin);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeMiterLimit)(
-        IXpsOMPath *This,
-        FLOAT *strokeMiterLimit);
+                     IXpsOMPath *This,
+                     FLOAT *strokeMiterLimit);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeMiterLimit)(
-        IXpsOMPath *This,
-        FLOAT strokeMiterLimit);
+                     IXpsOMPath *This,
+                     FLOAT strokeMiterLimit);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokeThickness)(
-        IXpsOMPath *This,
-        FLOAT *strokeThickness);
+                     IXpsOMPath *This,
+                     FLOAT *strokeThickness);
 
     HRESULT (STDMETHODCALLTYPE *SetStrokeThickness)(
-        IXpsOMPath *This,
-        FLOAT strokeThickness);
+                     IXpsOMPath *This,
+                     FLOAT strokeThickness);
 
     HRESULT (STDMETHODCALLTYPE *GetFillBrush)(
-        IXpsOMPath *This,
-        IXpsOMBrush **brush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush **brush);
 
     HRESULT (STDMETHODCALLTYPE *GetFillBrushLocal)(
-        IXpsOMPath *This,
-        IXpsOMBrush **brush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush **brush);
 
     HRESULT (STDMETHODCALLTYPE *SetFillBrushLocal)(
-        IXpsOMPath *This,
-        IXpsOMBrush *brush);
+                     IXpsOMPath *This,
+                     IXpsOMBrush *brush);
 
     HRESULT (STDMETHODCALLTYPE *GetFillBrushLookup)(
-        IXpsOMPath *This,
-        LPWSTR *lookup);
+                     IXpsOMPath *This,
+                     LPWSTR *lookup);
 
     HRESULT (STDMETHODCALLTYPE *SetFillBrushLookup)(
-        IXpsOMPath *This,
-        LPCWSTR lookup);
+                     IXpsOMPath *This,
+                     LPCWSTR lookup);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMPath *This,
-        IXpsOMPath **path);
+                     IXpsOMPath *This,
+                     IXpsOMPath **path);
 
     END_INTERFACE
 } IXpsOMPathVtbl;
@@ -7411,15 +7411,15 @@ MIDL_INTERFACE("a06f9f05-3be9-4763-98a8-094fc672e488")
 IXpsOMSolidColorBrush : public IXpsOMBrush
 {
     virtual HRESULT STDMETHODCALLTYPE GetColor(
-        XPS_COLOR *color,
-        IXpsOMColorProfileResource **colorProfile) = 0;
+                     XPS_COLOR *color,
+                     IXpsOMColorProfileResource **colorProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColor(
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile) = 0;
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMSolidColorBrush **solidColorBrush) = 0;
+                     IXpsOMSolidColorBrush **solidColorBrush) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7431,48 +7431,48 @@ typedef struct IXpsOMSolidColorBrushVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMSolidColorBrush *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMSolidColorBrush *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMSolidColorBrush *This);
+                     IXpsOMSolidColorBrush *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMSolidColorBrush *This);
+                     IXpsOMSolidColorBrush *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMSolidColorBrush *This,
-        IUnknown **owner);
+                     IXpsOMSolidColorBrush *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMSolidColorBrush *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMSolidColorBrush *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMSolidColorBrush *This,
-        FLOAT *opacity);
+                     IXpsOMSolidColorBrush *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMSolidColorBrush *This,
-        FLOAT opacity);
+                     IXpsOMSolidColorBrush *This,
+                     FLOAT opacity);
 
     /*** IXpsOMSolidColorBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetColor)(
-        IXpsOMSolidColorBrush *This,
-        XPS_COLOR *color,
-        IXpsOMColorProfileResource **colorProfile);
+                     IXpsOMSolidColorBrush *This,
+                     XPS_COLOR *color,
+                     IXpsOMColorProfileResource **colorProfile);
 
     HRESULT (STDMETHODCALLTYPE *SetColor)(
-        IXpsOMSolidColorBrush *This,
-        const XPS_COLOR *color,
-        IXpsOMColorProfileResource *colorProfile);
+                     IXpsOMSolidColorBrush *This,
+                     const XPS_COLOR *color,
+                     IXpsOMColorProfileResource *colorProfile);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMSolidColorBrush *This,
-        IXpsOMSolidColorBrush **solidColorBrush);
+                     IXpsOMSolidColorBrush *This,
+                     IXpsOMSolidColorBrush **solidColorBrush);
 
     END_INTERFACE
 } IXpsOMSolidColorBrushVtbl;
@@ -7552,37 +7552,37 @@ MIDL_INTERFACE("0fc2328d-d722-4a54-b2ec-be90218a789e")
 IXpsOMTileBrush : public IXpsOMBrush
 {
     virtual HRESULT STDMETHODCALLTYPE GetTransform(
-        IXpsOMMatrixTransform **transform) = 0;
+                     IXpsOMMatrixTransform **transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformLocal(
-        IXpsOMMatrixTransform **transform) = 0;
+                     IXpsOMMatrixTransform **transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransformLocal(
-        IXpsOMMatrixTransform *transform) = 0;
+                     IXpsOMMatrixTransform *transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformLookup(
-        LPWSTR *key) = 0;
+                     LPWSTR *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransformLookup(
-        LPCWSTR key) = 0;
+                     LPCWSTR key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewbox(
-        XPS_RECT *viewbox) = 0;
+                     XPS_RECT *viewbox) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetViewbox(
-        const XPS_RECT *viewbox) = 0;
+                     const XPS_RECT *viewbox) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewport(
-        XPS_RECT *viewport) = 0;
+                     XPS_RECT *viewport) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetViewport(
-        const XPS_RECT *viewport) = 0;
+                     const XPS_RECT *viewport) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTileMode(
-        XPS_TILE_MODE *tileMode) = 0;
+                     XPS_TILE_MODE *tileMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTileMode(
-        XPS_TILE_MODE tileMode) = 0;
+                     XPS_TILE_MODE tileMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7594,78 +7594,78 @@ typedef struct IXpsOMTileBrushVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMTileBrush *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMTileBrush *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMTileBrush *This);
+                     IXpsOMTileBrush *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMTileBrush *This);
+                     IXpsOMTileBrush *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMTileBrush *This,
-        IUnknown **owner);
+                     IXpsOMTileBrush *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMTileBrush *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMTileBrush *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMTileBrush *This,
-        FLOAT *opacity);
+                     IXpsOMTileBrush *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMTileBrush *This,
-        FLOAT opacity);
+                     IXpsOMTileBrush *This,
+                     FLOAT opacity);
 
     /*** IXpsOMTileBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMTileBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMTileBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMTileBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMTileBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMTileBrush *This,
-        IXpsOMMatrixTransform *transform);
+                     IXpsOMTileBrush *This,
+                     IXpsOMMatrixTransform *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMTileBrush *This,
-        LPWSTR *key);
+                     IXpsOMTileBrush *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMTileBrush *This,
-        LPCWSTR key);
+                     IXpsOMTileBrush *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetViewbox)(
-        IXpsOMTileBrush *This,
-        XPS_RECT *viewbox);
+                     IXpsOMTileBrush *This,
+                     XPS_RECT *viewbox);
 
     HRESULT (STDMETHODCALLTYPE *SetViewbox)(
-        IXpsOMTileBrush *This,
-        const XPS_RECT *viewbox);
+                     IXpsOMTileBrush *This,
+                     const XPS_RECT *viewbox);
 
     HRESULT (STDMETHODCALLTYPE *GetViewport)(
-        IXpsOMTileBrush *This,
-        XPS_RECT *viewport);
+                     IXpsOMTileBrush *This,
+                     XPS_RECT *viewport);
 
     HRESULT (STDMETHODCALLTYPE *SetViewport)(
-        IXpsOMTileBrush *This,
-        const XPS_RECT *viewport);
+                     IXpsOMTileBrush *This,
+                     const XPS_RECT *viewport);
 
     HRESULT (STDMETHODCALLTYPE *GetTileMode)(
-        IXpsOMTileBrush *This,
-        XPS_TILE_MODE *tileMode);
+                     IXpsOMTileBrush *This,
+                     XPS_TILE_MODE *tileMode);
 
     HRESULT (STDMETHODCALLTYPE *SetTileMode)(
-        IXpsOMTileBrush *This,
-        XPS_TILE_MODE tileMode);
+                     IXpsOMTileBrush *This,
+                     XPS_TILE_MODE tileMode);
 
     END_INTERFACE
 } IXpsOMTileBrushVtbl;
@@ -7777,34 +7777,34 @@ MIDL_INTERFACE("edb59622-61a2-42c3-bace-acf2286c06bf")
 IXpsOMGradientBrush : public IXpsOMBrush
 {
     virtual HRESULT STDMETHODCALLTYPE GetGradientStops(
-        IXpsOMGradientStopCollection **gradientStops) = 0;
+                     IXpsOMGradientStopCollection **gradientStops) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransform(
-        IXpsOMMatrixTransform **transform) = 0;
+                     IXpsOMMatrixTransform **transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformLocal(
-        IXpsOMMatrixTransform **transform) = 0;
+                     IXpsOMMatrixTransform **transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransformLocal(
-        IXpsOMMatrixTransform *transform) = 0;
+                     IXpsOMMatrixTransform *transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformLookup(
-        LPWSTR *key) = 0;
+                     LPWSTR *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransformLookup(
-        LPCWSTR key) = 0;
+                     LPCWSTR key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSpreadMethod(
-        XPS_SPREAD_METHOD *spreadMethod) = 0;
+                     XPS_SPREAD_METHOD *spreadMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSpreadMethod(
-        XPS_SPREAD_METHOD spreadMethod) = 0;
+                     XPS_SPREAD_METHOD spreadMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorInterpolationMode(
-        XPS_COLOR_INTERPOLATION *colorInterpolationMode) = 0;
+                     XPS_COLOR_INTERPOLATION *colorInterpolationMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColorInterpolationMode(
-        XPS_COLOR_INTERPOLATION colorInterpolationMode) = 0;
+                     XPS_COLOR_INTERPOLATION colorInterpolationMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7816,74 +7816,74 @@ typedef struct IXpsOMGradientBrushVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMGradientBrush *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMGradientBrush *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMGradientBrush *This);
+                     IXpsOMGradientBrush *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMGradientBrush *This);
+                     IXpsOMGradientBrush *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMGradientBrush *This,
-        IUnknown **owner);
+                     IXpsOMGradientBrush *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMGradientBrush *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMGradientBrush *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMGradientBrush *This,
-        FLOAT *opacity);
+                     IXpsOMGradientBrush *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMGradientBrush *This,
-        FLOAT opacity);
+                     IXpsOMGradientBrush *This,
+                     FLOAT opacity);
 
     /*** IXpsOMGradientBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGradientStops)(
-        IXpsOMGradientBrush *This,
-        IXpsOMGradientStopCollection **gradientStops);
+                     IXpsOMGradientBrush *This,
+                     IXpsOMGradientStopCollection **gradientStops);
 
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMGradientBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMGradientBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMGradientBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMGradientBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMGradientBrush *This,
-        IXpsOMMatrixTransform *transform);
+                     IXpsOMGradientBrush *This,
+                     IXpsOMMatrixTransform *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMGradientBrush *This,
-        LPWSTR *key);
+                     IXpsOMGradientBrush *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMGradientBrush *This,
-        LPCWSTR key);
+                     IXpsOMGradientBrush *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetSpreadMethod)(
-        IXpsOMGradientBrush *This,
-        XPS_SPREAD_METHOD *spreadMethod);
+                     IXpsOMGradientBrush *This,
+                     XPS_SPREAD_METHOD *spreadMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetSpreadMethod)(
-        IXpsOMGradientBrush *This,
-        XPS_SPREAD_METHOD spreadMethod);
+                     IXpsOMGradientBrush *This,
+                     XPS_SPREAD_METHOD spreadMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetColorInterpolationMode)(
-        IXpsOMGradientBrush *This,
-        XPS_COLOR_INTERPOLATION *colorInterpolationMode);
+                     IXpsOMGradientBrush *This,
+                     XPS_COLOR_INTERPOLATION *colorInterpolationMode);
 
     HRESULT (STDMETHODCALLTYPE *SetColorInterpolationMode)(
-        IXpsOMGradientBrush *This,
-        XPS_COLOR_INTERPOLATION colorInterpolationMode);
+                     IXpsOMGradientBrush *This,
+                     XPS_COLOR_INTERPOLATION colorInterpolationMode);
 
     END_INTERFACE
 } IXpsOMGradientBrushVtbl;
@@ -7991,22 +7991,22 @@ MIDL_INTERFACE("97e294af-5b37-46b4-8057-874d2f64119b")
 IXpsOMVisualBrush : public IXpsOMTileBrush
 {
     virtual HRESULT STDMETHODCALLTYPE GetVisual(
-        IXpsOMVisual **visual) = 0;
+                     IXpsOMVisual **visual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVisualLocal(
-        IXpsOMVisual **visual) = 0;
+                     IXpsOMVisual **visual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVisualLocal(
-        IXpsOMVisual *visual) = 0;
+                     IXpsOMVisual *visual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVisualLookup(
-        LPWSTR *lookup) = 0;
+                     LPWSTR *lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVisualLookup(
-        LPCWSTR lookup) = 0;
+                     LPCWSTR lookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMVisualBrush **visualBrush) = 0;
+                     IXpsOMVisualBrush **visualBrush) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8018,103 +8018,103 @@ typedef struct IXpsOMVisualBrushVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMVisualBrush *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMVisualBrush *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMVisualBrush *This);
+                     IXpsOMVisualBrush *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMVisualBrush *This);
+                     IXpsOMVisualBrush *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMVisualBrush *This,
-        IUnknown **owner);
+                     IXpsOMVisualBrush *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMVisualBrush *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMVisualBrush *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMVisualBrush *This,
-        FLOAT *opacity);
+                     IXpsOMVisualBrush *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMVisualBrush *This,
-        FLOAT opacity);
+                     IXpsOMVisualBrush *This,
+                     FLOAT opacity);
 
     /*** IXpsOMTileBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMVisualBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMVisualBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMVisualBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMVisualBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMVisualBrush *This,
-        IXpsOMMatrixTransform *transform);
+                     IXpsOMVisualBrush *This,
+                     IXpsOMMatrixTransform *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMVisualBrush *This,
-        LPWSTR *key);
+                     IXpsOMVisualBrush *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMVisualBrush *This,
-        LPCWSTR key);
+                     IXpsOMVisualBrush *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetViewbox)(
-        IXpsOMVisualBrush *This,
-        XPS_RECT *viewbox);
+                     IXpsOMVisualBrush *This,
+                     XPS_RECT *viewbox);
 
     HRESULT (STDMETHODCALLTYPE *SetViewbox)(
-        IXpsOMVisualBrush *This,
-        const XPS_RECT *viewbox);
+                     IXpsOMVisualBrush *This,
+                     const XPS_RECT *viewbox);
 
     HRESULT (STDMETHODCALLTYPE *GetViewport)(
-        IXpsOMVisualBrush *This,
-        XPS_RECT *viewport);
+                     IXpsOMVisualBrush *This,
+                     XPS_RECT *viewport);
 
     HRESULT (STDMETHODCALLTYPE *SetViewport)(
-        IXpsOMVisualBrush *This,
-        const XPS_RECT *viewport);
+                     IXpsOMVisualBrush *This,
+                     const XPS_RECT *viewport);
 
     HRESULT (STDMETHODCALLTYPE *GetTileMode)(
-        IXpsOMVisualBrush *This,
-        XPS_TILE_MODE *tileMode);
+                     IXpsOMVisualBrush *This,
+                     XPS_TILE_MODE *tileMode);
 
     HRESULT (STDMETHODCALLTYPE *SetTileMode)(
-        IXpsOMVisualBrush *This,
-        XPS_TILE_MODE tileMode);
+                     IXpsOMVisualBrush *This,
+                     XPS_TILE_MODE tileMode);
 
     /*** IXpsOMVisualBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetVisual)(
-        IXpsOMVisualBrush *This,
-        IXpsOMVisual **visual);
+                     IXpsOMVisualBrush *This,
+                     IXpsOMVisual **visual);
 
     HRESULT (STDMETHODCALLTYPE *GetVisualLocal)(
-        IXpsOMVisualBrush *This,
-        IXpsOMVisual **visual);
+                     IXpsOMVisualBrush *This,
+                     IXpsOMVisual **visual);
 
     HRESULT (STDMETHODCALLTYPE *SetVisualLocal)(
-        IXpsOMVisualBrush *This,
-        IXpsOMVisual *visual);
+                     IXpsOMVisualBrush *This,
+                     IXpsOMVisual *visual);
 
     HRESULT (STDMETHODCALLTYPE *GetVisualLookup)(
-        IXpsOMVisualBrush *This,
-        LPWSTR *lookup);
+                     IXpsOMVisualBrush *This,
+                     LPWSTR *lookup);
 
     HRESULT (STDMETHODCALLTYPE *SetVisualLookup)(
-        IXpsOMVisualBrush *This,
-        LPCWSTR lookup);
+                     IXpsOMVisualBrush *This,
+                     LPCWSTR lookup);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMVisualBrush *This,
-        IXpsOMVisualBrush **visualBrush);
+                     IXpsOMVisualBrush *This,
+                     IXpsOMVisualBrush **visualBrush);
 
     END_INTERFACE
 } IXpsOMVisualBrushVtbl;
@@ -8252,19 +8252,19 @@ MIDL_INTERFACE("3df0b466-d382-49ef-8550-dd94c80242e4")
 IXpsOMImageBrush : public IXpsOMTileBrush
 {
     virtual HRESULT STDMETHODCALLTYPE GetImageResource(
-        IXpsOMImageResource **imageResource) = 0;
+                     IXpsOMImageResource **imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetImageResource(
-        IXpsOMImageResource *imageResource) = 0;
+                     IXpsOMImageResource *imageResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorProfileResource(
-        IXpsOMColorProfileResource **colorProfileResource) = 0;
+                     IXpsOMColorProfileResource **colorProfileResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColorProfileResource(
-        IXpsOMColorProfileResource *colorProfileResource) = 0;
+                     IXpsOMColorProfileResource *colorProfileResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMImageBrush **imageBrush) = 0;
+                     IXpsOMImageBrush **imageBrush) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8276,99 +8276,99 @@ typedef struct IXpsOMImageBrushVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMImageBrush *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMImageBrush *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMImageBrush *This);
+                     IXpsOMImageBrush *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMImageBrush *This);
+                     IXpsOMImageBrush *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMImageBrush *This,
-        IUnknown **owner);
+                     IXpsOMImageBrush *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMImageBrush *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMImageBrush *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMImageBrush *This,
-        FLOAT *opacity);
+                     IXpsOMImageBrush *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMImageBrush *This,
-        FLOAT opacity);
+                     IXpsOMImageBrush *This,
+                     FLOAT opacity);
 
     /*** IXpsOMTileBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMImageBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMImageBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMImageBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMImageBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMImageBrush *This,
-        IXpsOMMatrixTransform *transform);
+                     IXpsOMImageBrush *This,
+                     IXpsOMMatrixTransform *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMImageBrush *This,
-        LPWSTR *key);
+                     IXpsOMImageBrush *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMImageBrush *This,
-        LPCWSTR key);
+                     IXpsOMImageBrush *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetViewbox)(
-        IXpsOMImageBrush *This,
-        XPS_RECT *viewbox);
+                     IXpsOMImageBrush *This,
+                     XPS_RECT *viewbox);
 
     HRESULT (STDMETHODCALLTYPE *SetViewbox)(
-        IXpsOMImageBrush *This,
-        const XPS_RECT *viewbox);
+                     IXpsOMImageBrush *This,
+                     const XPS_RECT *viewbox);
 
     HRESULT (STDMETHODCALLTYPE *GetViewport)(
-        IXpsOMImageBrush *This,
-        XPS_RECT *viewport);
+                     IXpsOMImageBrush *This,
+                     XPS_RECT *viewport);
 
     HRESULT (STDMETHODCALLTYPE *SetViewport)(
-        IXpsOMImageBrush *This,
-        const XPS_RECT *viewport);
+                     IXpsOMImageBrush *This,
+                     const XPS_RECT *viewport);
 
     HRESULT (STDMETHODCALLTYPE *GetTileMode)(
-        IXpsOMImageBrush *This,
-        XPS_TILE_MODE *tileMode);
+                     IXpsOMImageBrush *This,
+                     XPS_TILE_MODE *tileMode);
 
     HRESULT (STDMETHODCALLTYPE *SetTileMode)(
-        IXpsOMImageBrush *This,
-        XPS_TILE_MODE tileMode);
+                     IXpsOMImageBrush *This,
+                     XPS_TILE_MODE tileMode);
 
     /*** IXpsOMImageBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetImageResource)(
-        IXpsOMImageBrush *This,
-        IXpsOMImageResource **imageResource);
+                     IXpsOMImageBrush *This,
+                     IXpsOMImageResource **imageResource);
 
     HRESULT (STDMETHODCALLTYPE *SetImageResource)(
-        IXpsOMImageBrush *This,
-        IXpsOMImageResource *imageResource);
+                     IXpsOMImageBrush *This,
+                     IXpsOMImageResource *imageResource);
 
     HRESULT (STDMETHODCALLTYPE *GetColorProfileResource)(
-        IXpsOMImageBrush *This,
-        IXpsOMColorProfileResource **colorProfileResource);
+                     IXpsOMImageBrush *This,
+                     IXpsOMColorProfileResource **colorProfileResource);
 
     HRESULT (STDMETHODCALLTYPE *SetColorProfileResource)(
-        IXpsOMImageBrush *This,
-        IXpsOMColorProfileResource *colorProfileResource);
+                     IXpsOMImageBrush *This,
+                     IXpsOMColorProfileResource *colorProfileResource);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMImageBrush *This,
-        IXpsOMImageBrush **imageBrush);
+                     IXpsOMImageBrush *This,
+                     IXpsOMImageBrush **imageBrush);
 
     END_INTERFACE
 } IXpsOMImageBrushVtbl;
@@ -8502,19 +8502,19 @@ MIDL_INTERFACE("005e279f-c30d-40ff-93ec-1950d3c528db")
 IXpsOMLinearGradientBrush : public IXpsOMGradientBrush
 {
     virtual HRESULT STDMETHODCALLTYPE GetStartPoint(
-        XPS_POINT *startPoint) = 0;
+                     XPS_POINT *startPoint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStartPoint(
-        const XPS_POINT *startPoint) = 0;
+                     const XPS_POINT *startPoint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEndPoint(
-        XPS_POINT *endPoint) = 0;
+                     XPS_POINT *endPoint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEndPoint(
-        const XPS_POINT *endPoint) = 0;
+                     const XPS_POINT *endPoint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMLinearGradientBrush **linearGradientBrush) = 0;
+                     IXpsOMLinearGradientBrush **linearGradientBrush) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8526,95 +8526,95 @@ typedef struct IXpsOMLinearGradientBrushVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMLinearGradientBrush *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMLinearGradientBrush *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMLinearGradientBrush *This);
+                     IXpsOMLinearGradientBrush *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMLinearGradientBrush *This);
+                     IXpsOMLinearGradientBrush *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMLinearGradientBrush *This,
-        IUnknown **owner);
+                     IXpsOMLinearGradientBrush *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMLinearGradientBrush *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMLinearGradientBrush *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMLinearGradientBrush *This,
-        FLOAT *opacity);
+                     IXpsOMLinearGradientBrush *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMLinearGradientBrush *This,
-        FLOAT opacity);
+                     IXpsOMLinearGradientBrush *This,
+                     FLOAT opacity);
 
     /*** IXpsOMGradientBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGradientStops)(
-        IXpsOMLinearGradientBrush *This,
-        IXpsOMGradientStopCollection **gradientStops);
+                     IXpsOMLinearGradientBrush *This,
+                     IXpsOMGradientStopCollection **gradientStops);
 
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMLinearGradientBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMLinearGradientBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMLinearGradientBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMLinearGradientBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMLinearGradientBrush *This,
-        IXpsOMMatrixTransform *transform);
+                     IXpsOMLinearGradientBrush *This,
+                     IXpsOMMatrixTransform *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMLinearGradientBrush *This,
-        LPWSTR *key);
+                     IXpsOMLinearGradientBrush *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMLinearGradientBrush *This,
-        LPCWSTR key);
+                     IXpsOMLinearGradientBrush *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetSpreadMethod)(
-        IXpsOMLinearGradientBrush *This,
-        XPS_SPREAD_METHOD *spreadMethod);
+                     IXpsOMLinearGradientBrush *This,
+                     XPS_SPREAD_METHOD *spreadMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetSpreadMethod)(
-        IXpsOMLinearGradientBrush *This,
-        XPS_SPREAD_METHOD spreadMethod);
+                     IXpsOMLinearGradientBrush *This,
+                     XPS_SPREAD_METHOD spreadMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetColorInterpolationMode)(
-        IXpsOMLinearGradientBrush *This,
-        XPS_COLOR_INTERPOLATION *colorInterpolationMode);
+                     IXpsOMLinearGradientBrush *This,
+                     XPS_COLOR_INTERPOLATION *colorInterpolationMode);
 
     HRESULT (STDMETHODCALLTYPE *SetColorInterpolationMode)(
-        IXpsOMLinearGradientBrush *This,
-        XPS_COLOR_INTERPOLATION colorInterpolationMode);
+                     IXpsOMLinearGradientBrush *This,
+                     XPS_COLOR_INTERPOLATION colorInterpolationMode);
 
     /*** IXpsOMLinearGradientBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStartPoint)(
-        IXpsOMLinearGradientBrush *This,
-        XPS_POINT *startPoint);
+                     IXpsOMLinearGradientBrush *This,
+                     XPS_POINT *startPoint);
 
     HRESULT (STDMETHODCALLTYPE *SetStartPoint)(
-        IXpsOMLinearGradientBrush *This,
-        const XPS_POINT *startPoint);
+                     IXpsOMLinearGradientBrush *This,
+                     const XPS_POINT *startPoint);
 
     HRESULT (STDMETHODCALLTYPE *GetEndPoint)(
-        IXpsOMLinearGradientBrush *This,
-        XPS_POINT *endPoint);
+                     IXpsOMLinearGradientBrush *This,
+                     XPS_POINT *endPoint);
 
     HRESULT (STDMETHODCALLTYPE *SetEndPoint)(
-        IXpsOMLinearGradientBrush *This,
-        const XPS_POINT *endPoint);
+                     IXpsOMLinearGradientBrush *This,
+                     const XPS_POINT *endPoint);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMLinearGradientBrush *This,
-        IXpsOMLinearGradientBrush **linearGradientBrush);
+                     IXpsOMLinearGradientBrush *This,
+                     IXpsOMLinearGradientBrush **linearGradientBrush);
 
     END_INTERFACE
 } IXpsOMLinearGradientBrushVtbl;
@@ -8744,25 +8744,25 @@ MIDL_INTERFACE("75f207e5-08bf-413c-96b1-b82b4064176b")
 IXpsOMRadialGradientBrush : public IXpsOMGradientBrush
 {
     virtual HRESULT STDMETHODCALLTYPE GetCenter(
-        XPS_POINT *center) = 0;
+                     XPS_POINT *center) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCenter(
-        const XPS_POINT *center) = 0;
+                     const XPS_POINT *center) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRadiiSizes(
-        XPS_SIZE *radiiSizes) = 0;
+                     XPS_SIZE *radiiSizes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRadiiSizes(
-        const XPS_SIZE *radiiSizes) = 0;
+                     const XPS_SIZE *radiiSizes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGradientOrigin(
-        XPS_POINT *origin) = 0;
+                     XPS_POINT *origin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGradientOrigin(
-        const XPS_POINT *origin) = 0;
+                     const XPS_POINT *origin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMRadialGradientBrush **radialGradientBrush) = 0;
+                     IXpsOMRadialGradientBrush **radialGradientBrush) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8774,103 +8774,103 @@ typedef struct IXpsOMRadialGradientBrushVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMRadialGradientBrush *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMRadialGradientBrush *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMRadialGradientBrush *This);
+                     IXpsOMRadialGradientBrush *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMRadialGradientBrush *This);
+                     IXpsOMRadialGradientBrush *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMRadialGradientBrush *This,
-        IUnknown **owner);
+                     IXpsOMRadialGradientBrush *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMRadialGradientBrush *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMRadialGradientBrush *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMRadialGradientBrush *This,
-        FLOAT *opacity);
+                     IXpsOMRadialGradientBrush *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMRadialGradientBrush *This,
-        FLOAT opacity);
+                     IXpsOMRadialGradientBrush *This,
+                     FLOAT opacity);
 
     /*** IXpsOMGradientBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGradientStops)(
-        IXpsOMRadialGradientBrush *This,
-        IXpsOMGradientStopCollection **gradientStops);
+                     IXpsOMRadialGradientBrush *This,
+                     IXpsOMGradientStopCollection **gradientStops);
 
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMRadialGradientBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMRadialGradientBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMRadialGradientBrush *This,
-        IXpsOMMatrixTransform **transform);
+                     IXpsOMRadialGradientBrush *This,
+                     IXpsOMMatrixTransform **transform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMRadialGradientBrush *This,
-        IXpsOMMatrixTransform *transform);
+                     IXpsOMRadialGradientBrush *This,
+                     IXpsOMMatrixTransform *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMRadialGradientBrush *This,
-        LPWSTR *key);
+                     IXpsOMRadialGradientBrush *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMRadialGradientBrush *This,
-        LPCWSTR key);
+                     IXpsOMRadialGradientBrush *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetSpreadMethod)(
-        IXpsOMRadialGradientBrush *This,
-        XPS_SPREAD_METHOD *spreadMethod);
+                     IXpsOMRadialGradientBrush *This,
+                     XPS_SPREAD_METHOD *spreadMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetSpreadMethod)(
-        IXpsOMRadialGradientBrush *This,
-        XPS_SPREAD_METHOD spreadMethod);
+                     IXpsOMRadialGradientBrush *This,
+                     XPS_SPREAD_METHOD spreadMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetColorInterpolationMode)(
-        IXpsOMRadialGradientBrush *This,
-        XPS_COLOR_INTERPOLATION *colorInterpolationMode);
+                     IXpsOMRadialGradientBrush *This,
+                     XPS_COLOR_INTERPOLATION *colorInterpolationMode);
 
     HRESULT (STDMETHODCALLTYPE *SetColorInterpolationMode)(
-        IXpsOMRadialGradientBrush *This,
-        XPS_COLOR_INTERPOLATION colorInterpolationMode);
+                     IXpsOMRadialGradientBrush *This,
+                     XPS_COLOR_INTERPOLATION colorInterpolationMode);
 
     /*** IXpsOMRadialGradientBrush methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCenter)(
-        IXpsOMRadialGradientBrush *This,
-        XPS_POINT *center);
+                     IXpsOMRadialGradientBrush *This,
+                     XPS_POINT *center);
 
     HRESULT (STDMETHODCALLTYPE *SetCenter)(
-        IXpsOMRadialGradientBrush *This,
-        const XPS_POINT *center);
+                     IXpsOMRadialGradientBrush *This,
+                     const XPS_POINT *center);
 
     HRESULT (STDMETHODCALLTYPE *GetRadiiSizes)(
-        IXpsOMRadialGradientBrush *This,
-        XPS_SIZE *radiiSizes);
+                     IXpsOMRadialGradientBrush *This,
+                     XPS_SIZE *radiiSizes);
 
     HRESULT (STDMETHODCALLTYPE *SetRadiiSizes)(
-        IXpsOMRadialGradientBrush *This,
-        const XPS_SIZE *radiiSizes);
+                     IXpsOMRadialGradientBrush *This,
+                     const XPS_SIZE *radiiSizes);
 
     HRESULT (STDMETHODCALLTYPE *GetGradientOrigin)(
-        IXpsOMRadialGradientBrush *This,
-        XPS_POINT *origin);
+                     IXpsOMRadialGradientBrush *This,
+                     XPS_POINT *origin);
 
     HRESULT (STDMETHODCALLTYPE *SetGradientOrigin)(
-        IXpsOMRadialGradientBrush *This,
-        const XPS_POINT *origin);
+                     IXpsOMRadialGradientBrush *This,
+                     const XPS_POINT *origin);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMRadialGradientBrush *This,
-        IXpsOMRadialGradientBrush **radialGradientBrush);
+                     IXpsOMRadialGradientBrush *This,
+                     IXpsOMRadialGradientBrush **radialGradientBrush);
 
     END_INTERFACE
 } IXpsOMRadialGradientBrushVtbl;
@@ -9017,24 +9017,24 @@ typedef struct IXpsOMResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMResource *This);
+                     IXpsOMResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMResource *This);
+                     IXpsOMResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMResource *This,
+                     IOpcPartUri *partUri);
 
     END_INTERFACE
 } IXpsOMResourceVtbl;
@@ -9090,15 +9090,15 @@ MIDL_INTERFACE("a8c45708-47d9-4af4-8d20-33b48c9b8485")
 IXpsOMFontResource : public IXpsOMResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        IStream **readerStream) = 0;
+                     IStream **readerStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContent(
-        IStream *sourceStream,
-        XPS_FONT_EMBEDDING embeddingOption,
-        IOpcPartUri *partName) = 0;
+                     IStream *sourceStream,
+                     XPS_FONT_EMBEDDING embeddingOption,
+                     IOpcPartUri *partName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEmbeddingOption(
-        XPS_FONT_EMBEDDING *embeddingOption) = 0;
+                     XPS_FONT_EMBEDDING *embeddingOption) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9110,39 +9110,39 @@ typedef struct IXpsOMFontResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMFontResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMFontResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMFontResource *This);
+                     IXpsOMFontResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMFontResource *This);
+                     IXpsOMFontResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMFontResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMFontResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMFontResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMFontResource *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMFontResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IXpsOMFontResource *This,
-        IStream **readerStream);
+                     IXpsOMFontResource *This,
+                     IStream **readerStream);
 
     HRESULT (STDMETHODCALLTYPE *SetContent)(
-        IXpsOMFontResource *This,
-        IStream *sourceStream,
-        XPS_FONT_EMBEDDING embeddingOption,
-        IOpcPartUri *partName);
+                     IXpsOMFontResource *This,
+                     IStream *sourceStream,
+                     XPS_FONT_EMBEDDING embeddingOption,
+                     IOpcPartUri *partName);
 
     HRESULT (STDMETHODCALLTYPE *GetEmbeddingOption)(
-        IXpsOMFontResource *This,
-        XPS_FONT_EMBEDDING *embeddingOption);
+                     IXpsOMFontResource *This,
+                     XPS_FONT_EMBEDDING *embeddingOption);
 
     END_INTERFACE
 } IXpsOMFontResourceVtbl;
@@ -9212,15 +9212,15 @@ MIDL_INTERFACE("3db8417d-ae50-485e-9a44-d7758f78a23f")
 IXpsOMImageResource : public IXpsOMResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        IStream **readerStream) = 0;
+                     IStream **readerStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContent(
-        IStream *sourceStream,
-        XPS_IMAGE_TYPE imageType,
-        IOpcPartUri *partName) = 0;
+                     IStream *sourceStream,
+                     XPS_IMAGE_TYPE imageType,
+                     IOpcPartUri *partName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetImageType(
-        XPS_IMAGE_TYPE *imageType) = 0;
+                     XPS_IMAGE_TYPE *imageType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9232,39 +9232,39 @@ typedef struct IXpsOMImageResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMImageResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMImageResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMImageResource *This);
+                     IXpsOMImageResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMImageResource *This);
+                     IXpsOMImageResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMImageResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMImageResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMImageResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMImageResource *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMImageResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IXpsOMImageResource *This,
-        IStream **readerStream);
+                     IXpsOMImageResource *This,
+                     IStream **readerStream);
 
     HRESULT (STDMETHODCALLTYPE *SetContent)(
-        IXpsOMImageResource *This,
-        IStream *sourceStream,
-        XPS_IMAGE_TYPE imageType,
-        IOpcPartUri *partName);
+                     IXpsOMImageResource *This,
+                     IStream *sourceStream,
+                     XPS_IMAGE_TYPE imageType,
+                     IOpcPartUri *partName);
 
     HRESULT (STDMETHODCALLTYPE *GetImageType)(
-        IXpsOMImageResource *This,
-        XPS_IMAGE_TYPE *imageType);
+                     IXpsOMImageResource *This,
+                     XPS_IMAGE_TYPE *imageType);
 
     END_INTERFACE
 } IXpsOMImageResourceVtbl;
@@ -9334,11 +9334,11 @@ MIDL_INTERFACE("67bd7d69-1eef-4bb1-b5e7-6f4f87be8abe")
 IXpsOMColorProfileResource : public IXpsOMResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        IStream **stream) = 0;
+                     IStream **stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContent(
-        IStream *sourceStream,
-        IOpcPartUri *partName) = 0;
+                     IStream *sourceStream,
+                     IOpcPartUri *partName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9350,34 +9350,34 @@ typedef struct IXpsOMColorProfileResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMColorProfileResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMColorProfileResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMColorProfileResource *This);
+                     IXpsOMColorProfileResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMColorProfileResource *This);
+                     IXpsOMColorProfileResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMColorProfileResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMColorProfileResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMColorProfileResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMColorProfileResource *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMColorProfileResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IXpsOMColorProfileResource *This,
-        IStream **stream);
+                     IXpsOMColorProfileResource *This,
+                     IStream **stream);
 
     HRESULT (STDMETHODCALLTYPE *SetContent)(
-        IXpsOMColorProfileResource *This,
-        IStream *sourceStream,
-        IOpcPartUri *partName);
+                     IXpsOMColorProfileResource *This,
+                     IStream *sourceStream,
+                     IOpcPartUri *partName);
 
     END_INTERFACE
 } IXpsOMColorProfileResourceVtbl;
@@ -9443,11 +9443,11 @@ MIDL_INTERFACE("e7ff32d2-34aa-499b-bbe9-9cd4ee6c59f7")
 IXpsOMPrintTicketResource : public IXpsOMResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        IStream **stream) = 0;
+                     IStream **stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContent(
-        IStream *sourceStream,
-        IOpcPartUri *partName) = 0;
+                     IStream *sourceStream,
+                     IOpcPartUri *partName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9459,34 +9459,34 @@ typedef struct IXpsOMPrintTicketResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPrintTicketResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPrintTicketResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPrintTicketResource *This);
+                     IXpsOMPrintTicketResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPrintTicketResource *This);
+                     IXpsOMPrintTicketResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMPrintTicketResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMPrintTicketResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMPrintTicketResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMPrintTicketResource *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMPrintTicketResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IXpsOMPrintTicketResource *This,
-        IStream **stream);
+                     IXpsOMPrintTicketResource *This,
+                     IStream **stream);
 
     HRESULT (STDMETHODCALLTYPE *SetContent)(
-        IXpsOMPrintTicketResource *This,
-        IStream *sourceStream,
-        IOpcPartUri *partName);
+                     IXpsOMPrintTicketResource *This,
+                     IStream *sourceStream,
+                     IOpcPartUri *partName);
 
     END_INTERFACE
 } IXpsOMPrintTicketResourceVtbl;
@@ -9552,10 +9552,10 @@ MIDL_INTERFACE("c9bd7cd4-e16a-4bf8-8c84-c950af7a3061")
 IXpsOMRemoteDictionaryResource : public IXpsOMResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetDictionary(
-        IXpsOMDictionary **dictionary) = 0;
+                     IXpsOMDictionary **dictionary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDictionary(
-        IXpsOMDictionary *dictionary) = 0;
+                     IXpsOMDictionary *dictionary) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9567,33 +9567,33 @@ typedef struct IXpsOMRemoteDictionaryResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMRemoteDictionaryResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMRemoteDictionaryResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMRemoteDictionaryResource *This);
+                     IXpsOMRemoteDictionaryResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMRemoteDictionaryResource *This);
+                     IXpsOMRemoteDictionaryResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMRemoteDictionaryResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMRemoteDictionaryResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMRemoteDictionaryResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMRemoteDictionaryResource *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMRemoteDictionaryResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDictionary)(
-        IXpsOMRemoteDictionaryResource *This,
-        IXpsOMDictionary **dictionary);
+                     IXpsOMRemoteDictionaryResource *This,
+                     IXpsOMDictionary **dictionary);
 
     HRESULT (STDMETHODCALLTYPE *SetDictionary)(
-        IXpsOMRemoteDictionaryResource *This,
-        IXpsOMDictionary *dictionary);
+                     IXpsOMRemoteDictionaryResource *This,
+                     IXpsOMDictionary *dictionary);
 
     END_INTERFACE
 } IXpsOMRemoteDictionaryResourceVtbl;
@@ -9659,14 +9659,14 @@ MIDL_INTERFACE("85febc8a-6b63-48a9-af07-7064e4ecff30")
 IXpsOMDocumentStructureResource : public IXpsOMResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMDocument **owner) = 0;
+                     IXpsOMDocument **owner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        IStream **stream) = 0;
+                     IStream **stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContent(
-        IStream *sourceStream,
-        IOpcPartUri *partName) = 0;
+                     IStream *sourceStream,
+                     IOpcPartUri *partName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9678,38 +9678,38 @@ typedef struct IXpsOMDocumentStructureResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMDocumentStructureResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMDocumentStructureResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMDocumentStructureResource *This);
+                     IXpsOMDocumentStructureResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMDocumentStructureResource *This);
+                     IXpsOMDocumentStructureResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMDocumentStructureResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMDocumentStructureResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMDocumentStructureResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMDocumentStructureResource *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMDocumentStructureResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMDocumentStructureResource *This,
-        IXpsOMDocument **owner);
+                     IXpsOMDocumentStructureResource *This,
+                     IXpsOMDocument **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IXpsOMDocumentStructureResource *This,
-        IStream **stream);
+                     IXpsOMDocumentStructureResource *This,
+                     IStream **stream);
 
     HRESULT (STDMETHODCALLTYPE *SetContent)(
-        IXpsOMDocumentStructureResource *This,
-        IStream *sourceStream,
-        IOpcPartUri *partName);
+                     IXpsOMDocumentStructureResource *This,
+                     IStream *sourceStream,
+                     IOpcPartUri *partName);
 
     END_INTERFACE
 } IXpsOMDocumentStructureResourceVtbl;
@@ -9779,14 +9779,14 @@ MIDL_INTERFACE("c2b3ca09-0473-4282-87ae-1780863223f0")
 IXpsOMStoryFragmentsResource : public IXpsOMResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMPageReference **owner) = 0;
+                     IXpsOMPageReference **owner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        IStream **stream) = 0;
+                     IStream **stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContent(
-        IStream *sourceStream,
-        IOpcPartUri *partName) = 0;
+                     IStream *sourceStream,
+                     IOpcPartUri *partName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9798,38 +9798,38 @@ typedef struct IXpsOMStoryFragmentsResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMStoryFragmentsResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMStoryFragmentsResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMStoryFragmentsResource *This);
+                     IXpsOMStoryFragmentsResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMStoryFragmentsResource *This);
+                     IXpsOMStoryFragmentsResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMStoryFragmentsResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMStoryFragmentsResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMStoryFragmentsResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMStoryFragmentsResource *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMStoryFragmentsResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMStoryFragmentsResource *This,
-        IXpsOMPageReference **owner);
+                     IXpsOMStoryFragmentsResource *This,
+                     IXpsOMPageReference **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IXpsOMStoryFragmentsResource *This,
-        IStream **stream);
+                     IXpsOMStoryFragmentsResource *This,
+                     IStream **stream);
 
     HRESULT (STDMETHODCALLTYPE *SetContent)(
-        IXpsOMStoryFragmentsResource *This,
-        IStream *sourceStream,
-        IOpcPartUri *partName);
+                     IXpsOMStoryFragmentsResource *This,
+                     IStream *sourceStream,
+                     IOpcPartUri *partName);
 
     END_INTERFACE
 } IXpsOMStoryFragmentsResourceVtbl;
@@ -9899,14 +9899,14 @@ MIDL_INTERFACE("4776ad35-2e04-4357-8743-ebf6c171a905")
 IXpsOMSignatureBlockResource : public IXpsOMResource
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMDocument **owner) = 0;
+                     IXpsOMDocument **owner) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        IStream **stream) = 0;
+                     IStream **stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContent(
-        IStream *sourceStream,
-        IOpcPartUri *partName) = 0;
+                     IStream *sourceStream,
+                     IOpcPartUri *partName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9918,38 +9918,38 @@ typedef struct IXpsOMSignatureBlockResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMSignatureBlockResource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMSignatureBlockResource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMSignatureBlockResource *This);
+                     IXpsOMSignatureBlockResource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMSignatureBlockResource *This);
+                     IXpsOMSignatureBlockResource *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMSignatureBlockResource *This,
-        IOpcPartUri **partUri);
+                     IXpsOMSignatureBlockResource *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMSignatureBlockResource *This,
-        IOpcPartUri *partUri);
+                     IXpsOMSignatureBlockResource *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMSignatureBlockResource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMSignatureBlockResource *This,
-        IXpsOMDocument **owner);
+                     IXpsOMSignatureBlockResource *This,
+                     IXpsOMDocument **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IXpsOMSignatureBlockResource *This,
-        IStream **stream);
+                     IXpsOMSignatureBlockResource *This,
+                     IStream **stream);
 
     HRESULT (STDMETHODCALLTYPE *SetContent)(
-        IXpsOMSignatureBlockResource *This,
-        IStream *sourceStream,
-        IOpcPartUri *partName);
+                     IXpsOMSignatureBlockResource *This,
+                     IStream *sourceStream,
+                     IOpcPartUri *partName);
 
     END_INTERFACE
 } IXpsOMSignatureBlockResourceVtbl;
@@ -10019,43 +10019,43 @@ MIDL_INTERFACE("221d1452-331e-47c6-87e9-6ccefb9b5ba3")
 IXpsOMCanvas : public IXpsOMVisual
 {
     virtual HRESULT STDMETHODCALLTYPE GetVisuals(
-        IXpsOMVisualCollection **visuals) = 0;
+                     IXpsOMVisualCollection **visuals) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUseAliasedEdgeMode(
-        WINBOOL *useAliasedEdgeMode) = 0;
+                     WINBOOL *useAliasedEdgeMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUseAliasedEdgeMode(
-        WINBOOL useAliasedEdgeMode) = 0;
+                     WINBOOL useAliasedEdgeMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAccessibilityShortDescription(
-        LPWSTR *shortDescription) = 0;
+                     LPWSTR *shortDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAccessibilityShortDescription(
-        LPCWSTR shortDescription) = 0;
+                     LPCWSTR shortDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAccessibilityLongDescription(
-        LPWSTR *longDescription) = 0;
+                     LPWSTR *longDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAccessibilityLongDescription(
-        LPCWSTR longDescription) = 0;
+                     LPCWSTR longDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDictionary(
-        IXpsOMDictionary **resourceDictionary) = 0;
+                     IXpsOMDictionary **resourceDictionary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDictionaryLocal(
-        IXpsOMDictionary **resourceDictionary) = 0;
+                     IXpsOMDictionary **resourceDictionary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDictionaryLocal(
-        IXpsOMDictionary *resourceDictionary) = 0;
+                     IXpsOMDictionary *resourceDictionary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDictionaryResource(
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource) = 0;
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDictionaryResource(
-        IXpsOMRemoteDictionaryResource *remoteDictionaryResource) = 0;
+                     IXpsOMRemoteDictionaryResource *remoteDictionaryResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMCanvas **canvas) = 0;
+                     IXpsOMCanvas **canvas) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10067,178 +10067,178 @@ typedef struct IXpsOMCanvasVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMCanvas *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMCanvas *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMCanvas *This);
+                     IXpsOMCanvas *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMCanvas *This);
+                     IXpsOMCanvas *This);
 
     /*** IXpsOMShareable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMCanvas *This,
-        IUnknown **owner);
+                     IXpsOMCanvas *This,
+                     IUnknown **owner);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IXpsOMCanvas *This,
-        XPS_OBJECT_TYPE *type);
+                     IXpsOMCanvas *This,
+                     XPS_OBJECT_TYPE *type);
 
     /*** IXpsOMVisual methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IXpsOMCanvas *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMCanvas *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLocal)(
-        IXpsOMCanvas *This,
-        IXpsOMMatrixTransform **matrixTransform);
+                     IXpsOMCanvas *This,
+                     IXpsOMMatrixTransform **matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLocal)(
-        IXpsOMCanvas *This,
-        IXpsOMMatrixTransform *matrixTransform);
+                     IXpsOMCanvas *This,
+                     IXpsOMMatrixTransform *matrixTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformLookup)(
-        IXpsOMCanvas *This,
-        LPWSTR *key);
+                     IXpsOMCanvas *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetTransformLookup)(
-        IXpsOMCanvas *This,
-        LPCWSTR key);
+                     IXpsOMCanvas *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometry)(
-        IXpsOMCanvas *This,
-        IXpsOMGeometry **clipGeometry);
+                     IXpsOMCanvas *This,
+                     IXpsOMGeometry **clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometryLocal)(
-        IXpsOMCanvas *This,
-        IXpsOMGeometry **clipGeometry);
+                     IXpsOMCanvas *This,
+                     IXpsOMGeometry **clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *SetClipGeometryLocal)(
-        IXpsOMCanvas *This,
-        IXpsOMGeometry *clipGeometry);
+                     IXpsOMCanvas *This,
+                     IXpsOMGeometry *clipGeometry);
 
     HRESULT (STDMETHODCALLTYPE *GetClipGeometryLookup)(
-        IXpsOMCanvas *This,
-        LPWSTR *key);
+                     IXpsOMCanvas *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetClipGeometryLookup)(
-        IXpsOMCanvas *This,
-        LPCWSTR key);
+                     IXpsOMCanvas *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacity)(
-        IXpsOMCanvas *This,
-        FLOAT *opacity);
+                     IXpsOMCanvas *This,
+                     FLOAT *opacity);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacity)(
-        IXpsOMCanvas *This,
-        FLOAT opacity);
+                     IXpsOMCanvas *This,
+                     FLOAT opacity);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrush)(
-        IXpsOMCanvas *This,
-        IXpsOMBrush **opacityMaskBrush);
+                     IXpsOMCanvas *This,
+                     IXpsOMBrush **opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrushLocal)(
-        IXpsOMCanvas *This,
-        IXpsOMBrush **opacityMaskBrush);
+                     IXpsOMCanvas *This,
+                     IXpsOMBrush **opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacityMaskBrushLocal)(
-        IXpsOMCanvas *This,
-        IXpsOMBrush *opacityMaskBrush);
+                     IXpsOMCanvas *This,
+                     IXpsOMBrush *opacityMaskBrush);
 
     HRESULT (STDMETHODCALLTYPE *GetOpacityMaskBrushLookup)(
-        IXpsOMCanvas *This,
-        LPWSTR *key);
+                     IXpsOMCanvas *This,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *SetOpacityMaskBrushLookup)(
-        IXpsOMCanvas *This,
-        LPCWSTR key);
+                     IXpsOMCanvas *This,
+                     LPCWSTR key);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IXpsOMCanvas *This,
-        LPWSTR *name);
+                     IXpsOMCanvas *This,
+                     LPWSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IXpsOMCanvas *This,
-        LPCWSTR name);
+                     IXpsOMCanvas *This,
+                     LPCWSTR name);
 
     HRESULT (STDMETHODCALLTYPE *GetIsHyperlinkTarget)(
-        IXpsOMCanvas *This,
-        WINBOOL *isHyperlink);
+                     IXpsOMCanvas *This,
+                     WINBOOL *isHyperlink);
 
     HRESULT (STDMETHODCALLTYPE *SetIsHyperlinkTarget)(
-        IXpsOMCanvas *This,
-        WINBOOL isHyperlink);
+                     IXpsOMCanvas *This,
+                     WINBOOL isHyperlink);
 
     HRESULT (STDMETHODCALLTYPE *GetHyperlinkNavigateUri)(
-        IXpsOMCanvas *This,
-        IUri **hyperlinkUri);
+                     IXpsOMCanvas *This,
+                     IUri **hyperlinkUri);
 
     HRESULT (STDMETHODCALLTYPE *SetHyperlinkNavigateUri)(
-        IXpsOMCanvas *This,
-        IUri *hyperlinkUri);
+                     IXpsOMCanvas *This,
+                     IUri *hyperlinkUri);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IXpsOMCanvas *This,
-        LPWSTR *language);
+                     IXpsOMCanvas *This,
+                     LPWSTR *language);
 
     HRESULT (STDMETHODCALLTYPE *SetLanguage)(
-        IXpsOMCanvas *This,
-        LPCWSTR language);
+                     IXpsOMCanvas *This,
+                     LPCWSTR language);
 
     /*** IXpsOMCanvas methods ***/
     HRESULT (STDMETHODCALLTYPE *GetVisuals)(
-        IXpsOMCanvas *This,
-        IXpsOMVisualCollection **visuals);
+                     IXpsOMCanvas *This,
+                     IXpsOMVisualCollection **visuals);
 
     HRESULT (STDMETHODCALLTYPE *GetUseAliasedEdgeMode)(
-        IXpsOMCanvas *This,
-        WINBOOL *useAliasedEdgeMode);
+                     IXpsOMCanvas *This,
+                     WINBOOL *useAliasedEdgeMode);
 
     HRESULT (STDMETHODCALLTYPE *SetUseAliasedEdgeMode)(
-        IXpsOMCanvas *This,
-        WINBOOL useAliasedEdgeMode);
+                     IXpsOMCanvas *This,
+                     WINBOOL useAliasedEdgeMode);
 
     HRESULT (STDMETHODCALLTYPE *GetAccessibilityShortDescription)(
-        IXpsOMCanvas *This,
-        LPWSTR *shortDescription);
+                     IXpsOMCanvas *This,
+                     LPWSTR *shortDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetAccessibilityShortDescription)(
-        IXpsOMCanvas *This,
-        LPCWSTR shortDescription);
+                     IXpsOMCanvas *This,
+                     LPCWSTR shortDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetAccessibilityLongDescription)(
-        IXpsOMCanvas *This,
-        LPWSTR *longDescription);
+                     IXpsOMCanvas *This,
+                     LPWSTR *longDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetAccessibilityLongDescription)(
-        IXpsOMCanvas *This,
-        LPCWSTR longDescription);
+                     IXpsOMCanvas *This,
+                     LPCWSTR longDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionary)(
-        IXpsOMCanvas *This,
-        IXpsOMDictionary **resourceDictionary);
+                     IXpsOMCanvas *This,
+                     IXpsOMDictionary **resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionaryLocal)(
-        IXpsOMCanvas *This,
-        IXpsOMDictionary **resourceDictionary);
+                     IXpsOMCanvas *This,
+                     IXpsOMDictionary **resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *SetDictionaryLocal)(
-        IXpsOMCanvas *This,
-        IXpsOMDictionary *resourceDictionary);
+                     IXpsOMCanvas *This,
+                     IXpsOMDictionary *resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionaryResource)(
-        IXpsOMCanvas *This,
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
+                     IXpsOMCanvas *This,
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *SetDictionaryResource)(
-        IXpsOMCanvas *This,
-        IXpsOMRemoteDictionaryResource *remoteDictionaryResource);
+                     IXpsOMCanvas *This,
+                     IXpsOMRemoteDictionaryResource *remoteDictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMCanvas *This,
-        IXpsOMCanvas **canvas);
+                     IXpsOMCanvas *This,
+                     IXpsOMCanvas **canvas);
 
     END_INTERFACE
 } IXpsOMCanvasVtbl;
@@ -10450,72 +10450,72 @@ MIDL_INTERFACE("d3e18888-f120-4fee-8c68-35296eae91d4")
 IXpsOMPage : public IXpsOMPart
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMPageReference **pageReference) = 0;
+                     IXpsOMPageReference **pageReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVisuals(
-        IXpsOMVisualCollection **visuals) = 0;
+                     IXpsOMVisualCollection **visuals) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPageDimensions(
-        XPS_SIZE *pageDimensions) = 0;
+                     XPS_SIZE *pageDimensions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPageDimensions(
-        const XPS_SIZE *pageDimensions) = 0;
+                     const XPS_SIZE *pageDimensions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContentBox(
-        XPS_RECT *contentBox) = 0;
+                     XPS_RECT *contentBox) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContentBox(
-        const XPS_RECT *contentBox) = 0;
+                     const XPS_RECT *contentBox) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBleedBox(
-        XPS_RECT *bleedBox) = 0;
+                     XPS_RECT *bleedBox) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBleedBox(
-        const XPS_RECT *bleedBox) = 0;
+                     const XPS_RECT *bleedBox) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguage(
-        LPWSTR *language) = 0;
+                     LPWSTR *language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLanguage(
-        LPCWSTR language) = 0;
+                     LPCWSTR language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        LPWSTR *name) = 0;
+                     LPWSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetName(
-        LPCWSTR name) = 0;
+                     LPCWSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIsHyperlinkTarget(
-        WINBOOL *isHyperlinkTarget) = 0;
+                     WINBOOL *isHyperlinkTarget) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIsHyperlinkTarget(
-        WINBOOL isHyperlinkTarget) = 0;
+                     WINBOOL isHyperlinkTarget) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDictionary(
-        IXpsOMDictionary **resourceDictionary) = 0;
+                     IXpsOMDictionary **resourceDictionary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDictionaryLocal(
-        IXpsOMDictionary **resourceDictionary) = 0;
+                     IXpsOMDictionary **resourceDictionary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDictionaryLocal(
-        IXpsOMDictionary *resourceDictionary) = 0;
+                     IXpsOMDictionary *resourceDictionary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDictionaryResource(
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource) = 0;
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDictionaryResource(
-        IXpsOMRemoteDictionaryResource *remoteDictionaryResource) = 0;
+                     IXpsOMRemoteDictionaryResource *remoteDictionaryResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Write(
-        ISequentialStream *stream,
-        WINBOOL optimizeMarkupSize) = 0;
+                     ISequentialStream *stream,
+                     WINBOOL optimizeMarkupSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GenerateUnusedLookupKey(
-        XPS_OBJECT_TYPE type,
-        LPWSTR *key) = 0;
+                     XPS_OBJECT_TYPE type,
+                     LPWSTR *key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMPage **page) = 0;
+                     IXpsOMPage **page) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10527,115 +10527,115 @@ typedef struct IXpsOMPageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMPage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMPage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMPage *This);
+                     IXpsOMPage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMPage *This);
+                     IXpsOMPage *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMPage *This,
-        IOpcPartUri **partUri);
+                     IXpsOMPage *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMPage *This,
-        IOpcPartUri *partUri);
+                     IXpsOMPage *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMPage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMPage *This,
-        IXpsOMPageReference **pageReference);
+                     IXpsOMPage *This,
+                     IXpsOMPageReference **pageReference);
 
     HRESULT (STDMETHODCALLTYPE *GetVisuals)(
-        IXpsOMPage *This,
-        IXpsOMVisualCollection **visuals);
+                     IXpsOMPage *This,
+                     IXpsOMVisualCollection **visuals);
 
     HRESULT (STDMETHODCALLTYPE *GetPageDimensions)(
-        IXpsOMPage *This,
-        XPS_SIZE *pageDimensions);
+                     IXpsOMPage *This,
+                     XPS_SIZE *pageDimensions);
 
     HRESULT (STDMETHODCALLTYPE *SetPageDimensions)(
-        IXpsOMPage *This,
-        const XPS_SIZE *pageDimensions);
+                     IXpsOMPage *This,
+                     const XPS_SIZE *pageDimensions);
 
     HRESULT (STDMETHODCALLTYPE *GetContentBox)(
-        IXpsOMPage *This,
-        XPS_RECT *contentBox);
+                     IXpsOMPage *This,
+                     XPS_RECT *contentBox);
 
     HRESULT (STDMETHODCALLTYPE *SetContentBox)(
-        IXpsOMPage *This,
-        const XPS_RECT *contentBox);
+                     IXpsOMPage *This,
+                     const XPS_RECT *contentBox);
 
     HRESULT (STDMETHODCALLTYPE *GetBleedBox)(
-        IXpsOMPage *This,
-        XPS_RECT *bleedBox);
+                     IXpsOMPage *This,
+                     XPS_RECT *bleedBox);
 
     HRESULT (STDMETHODCALLTYPE *SetBleedBox)(
-        IXpsOMPage *This,
-        const XPS_RECT *bleedBox);
+                     IXpsOMPage *This,
+                     const XPS_RECT *bleedBox);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IXpsOMPage *This,
-        LPWSTR *language);
+                     IXpsOMPage *This,
+                     LPWSTR *language);
 
     HRESULT (STDMETHODCALLTYPE *SetLanguage)(
-        IXpsOMPage *This,
-        LPCWSTR language);
+                     IXpsOMPage *This,
+                     LPCWSTR language);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IXpsOMPage *This,
-        LPWSTR *name);
+                     IXpsOMPage *This,
+                     LPWSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IXpsOMPage *This,
-        LPCWSTR name);
+                     IXpsOMPage *This,
+                     LPCWSTR name);
 
     HRESULT (STDMETHODCALLTYPE *GetIsHyperlinkTarget)(
-        IXpsOMPage *This,
-        WINBOOL *isHyperlinkTarget);
+                     IXpsOMPage *This,
+                     WINBOOL *isHyperlinkTarget);
 
     HRESULT (STDMETHODCALLTYPE *SetIsHyperlinkTarget)(
-        IXpsOMPage *This,
-        WINBOOL isHyperlinkTarget);
+                     IXpsOMPage *This,
+                     WINBOOL isHyperlinkTarget);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionary)(
-        IXpsOMPage *This,
-        IXpsOMDictionary **resourceDictionary);
+                     IXpsOMPage *This,
+                     IXpsOMDictionary **resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionaryLocal)(
-        IXpsOMPage *This,
-        IXpsOMDictionary **resourceDictionary);
+                     IXpsOMPage *This,
+                     IXpsOMDictionary **resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *SetDictionaryLocal)(
-        IXpsOMPage *This,
-        IXpsOMDictionary *resourceDictionary);
+                     IXpsOMPage *This,
+                     IXpsOMDictionary *resourceDictionary);
 
     HRESULT (STDMETHODCALLTYPE *GetDictionaryResource)(
-        IXpsOMPage *This,
-        IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
+                     IXpsOMPage *This,
+                     IXpsOMRemoteDictionaryResource **remoteDictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *SetDictionaryResource)(
-        IXpsOMPage *This,
-        IXpsOMRemoteDictionaryResource *remoteDictionaryResource);
+                     IXpsOMPage *This,
+                     IXpsOMRemoteDictionaryResource *remoteDictionaryResource);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IXpsOMPage *This,
-        ISequentialStream *stream,
-        WINBOOL optimizeMarkupSize);
+                     IXpsOMPage *This,
+                     ISequentialStream *stream,
+                     WINBOOL optimizeMarkupSize);
 
     HRESULT (STDMETHODCALLTYPE *GenerateUnusedLookupKey)(
-        IXpsOMPage *This,
-        XPS_OBJECT_TYPE type,
-        LPWSTR *key);
+                     IXpsOMPage *This,
+                     XPS_OBJECT_TYPE type,
+                     LPWSTR *key);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMPage *This,
-        IXpsOMPage **page);
+                     IXpsOMPage *This,
+                     IXpsOMPage **page);
 
     END_INTERFACE
 } IXpsOMPageVtbl;
@@ -10781,28 +10781,28 @@ MIDL_INTERFACE("2c2c94cb-ac5f-4254-8ee9-23948309d9f0")
 IXpsOMDocument : public IXpsOMPart
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMDocumentSequence **documentSequence) = 0;
+                     IXpsOMDocumentSequence **documentSequence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPageReferences(
-        IXpsOMPageReferenceCollection **pageReferences) = 0;
+                     IXpsOMPageReferenceCollection **pageReferences) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrintTicketResource(
-        IXpsOMPrintTicketResource **printTicketResource) = 0;
+                     IXpsOMPrintTicketResource **printTicketResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrintTicketResource(
-        IXpsOMPrintTicketResource *printTicketResource) = 0;
+                     IXpsOMPrintTicketResource *printTicketResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDocumentStructureResource(
-        IXpsOMDocumentStructureResource **documentStructureResource) = 0;
+                     IXpsOMDocumentStructureResource **documentStructureResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDocumentStructureResource(
-        IXpsOMDocumentStructureResource *documentStructureResource) = 0;
+                     IXpsOMDocumentStructureResource *documentStructureResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureBlockResources(
-        IXpsOMSignatureBlockResourceCollection **signatureBlockResources) = 0;
+                     IXpsOMSignatureBlockResourceCollection **signatureBlockResources) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMDocument **document) = 0;
+                     IXpsOMDocument **document) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10814,57 +10814,57 @@ typedef struct IXpsOMDocumentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMDocument *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMDocument *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMDocument *This);
+                     IXpsOMDocument *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMDocument *This);
+                     IXpsOMDocument *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMDocument *This,
-        IOpcPartUri **partUri);
+                     IXpsOMDocument *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMDocument *This,
-        IOpcPartUri *partUri);
+                     IXpsOMDocument *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMDocument methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMDocument *This,
-        IXpsOMDocumentSequence **documentSequence);
+                     IXpsOMDocument *This,
+                     IXpsOMDocumentSequence **documentSequence);
 
     HRESULT (STDMETHODCALLTYPE *GetPageReferences)(
-        IXpsOMDocument *This,
-        IXpsOMPageReferenceCollection **pageReferences);
+                     IXpsOMDocument *This,
+                     IXpsOMPageReferenceCollection **pageReferences);
 
     HRESULT (STDMETHODCALLTYPE *GetPrintTicketResource)(
-        IXpsOMDocument *This,
-        IXpsOMPrintTicketResource **printTicketResource);
+                     IXpsOMDocument *This,
+                     IXpsOMPrintTicketResource **printTicketResource);
 
     HRESULT (STDMETHODCALLTYPE *SetPrintTicketResource)(
-        IXpsOMDocument *This,
-        IXpsOMPrintTicketResource *printTicketResource);
+                     IXpsOMDocument *This,
+                     IXpsOMPrintTicketResource *printTicketResource);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentStructureResource)(
-        IXpsOMDocument *This,
-        IXpsOMDocumentStructureResource **documentStructureResource);
+                     IXpsOMDocument *This,
+                     IXpsOMDocumentStructureResource **documentStructureResource);
 
     HRESULT (STDMETHODCALLTYPE *SetDocumentStructureResource)(
-        IXpsOMDocument *This,
-        IXpsOMDocumentStructureResource *documentStructureResource);
+                     IXpsOMDocument *This,
+                     IXpsOMDocumentStructureResource *documentStructureResource);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureBlockResources)(
-        IXpsOMDocument *This,
-        IXpsOMSignatureBlockResourceCollection **signatureBlockResources);
+                     IXpsOMDocument *This,
+                     IXpsOMSignatureBlockResourceCollection **signatureBlockResources);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMDocument *This,
-        IXpsOMDocument **document);
+                     IXpsOMDocument *This,
+                     IXpsOMDocument **document);
 
     END_INTERFACE
 } IXpsOMDocumentVtbl;
@@ -10954,16 +10954,16 @@ MIDL_INTERFACE("56492eb4-d8d5-425e-8256-4c2b64ad0264")
 IXpsOMDocumentSequence : public IXpsOMPart
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMPackage **package) = 0;
+                     IXpsOMPackage **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDocuments(
-        IXpsOMDocumentCollection **documents) = 0;
+                     IXpsOMDocumentCollection **documents) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrintTicketResource(
-        IXpsOMPrintTicketResource **printTicketResource) = 0;
+                     IXpsOMPrintTicketResource **printTicketResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrintTicketResource(
-        IXpsOMPrintTicketResource *printTicketResource) = 0;
+                     IXpsOMPrintTicketResource *printTicketResource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10975,41 +10975,41 @@ typedef struct IXpsOMDocumentSequenceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMDocumentSequence *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMDocumentSequence *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMDocumentSequence *This);
+                     IXpsOMDocumentSequence *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMDocumentSequence *This);
+                     IXpsOMDocumentSequence *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMDocumentSequence *This,
-        IOpcPartUri **partUri);
+                     IXpsOMDocumentSequence *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMDocumentSequence *This,
-        IOpcPartUri *partUri);
+                     IXpsOMDocumentSequence *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMDocumentSequence methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMDocumentSequence *This,
-        IXpsOMPackage **package);
+                     IXpsOMDocumentSequence *This,
+                     IXpsOMPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *GetDocuments)(
-        IXpsOMDocumentSequence *This,
-        IXpsOMDocumentCollection **documents);
+                     IXpsOMDocumentSequence *This,
+                     IXpsOMDocumentCollection **documents);
 
     HRESULT (STDMETHODCALLTYPE *GetPrintTicketResource)(
-        IXpsOMDocumentSequence *This,
-        IXpsOMPrintTicketResource **printTicketResource);
+                     IXpsOMDocumentSequence *This,
+                     IXpsOMPrintTicketResource **printTicketResource);
 
     HRESULT (STDMETHODCALLTYPE *SetPrintTicketResource)(
-        IXpsOMDocumentSequence *This,
-        IXpsOMPrintTicketResource *printTicketResource);
+                     IXpsOMDocumentSequence *This,
+                     IXpsOMPrintTicketResource *printTicketResource);
 
     END_INTERFACE
 } IXpsOMDocumentSequenceVtbl;
@@ -11083,106 +11083,106 @@ MIDL_INTERFACE("3340fe8f-4027-4aa1-8f5f-d35ae45fe597")
 IXpsOMCoreProperties : public IXpsOMPart
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwner(
-        IXpsOMPackage **package) = 0;
+                     IXpsOMPackage **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategory(
-        LPWSTR *category) = 0;
+                     LPWSTR *category) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCategory(
-        LPCWSTR category) = 0;
+                     LPCWSTR category) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContentStatus(
-        LPWSTR *contentStatus) = 0;
+                     LPWSTR *contentStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContentStatus(
-        LPCWSTR contentStatus) = 0;
+                     LPCWSTR contentStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContentType(
-        LPWSTR *contentType) = 0;
+                     LPWSTR *contentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContentType(
-        LPCWSTR contentType) = 0;
+                     LPCWSTR contentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCreated(
-        SYSTEMTIME *created) = 0;
+                     SYSTEMTIME *created) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCreated(
-        const SYSTEMTIME *created) = 0;
+                     const SYSTEMTIME *created) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCreator(
-        LPWSTR *creator) = 0;
+                     LPWSTR *creator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCreator(
-        LPCWSTR creator) = 0;
+                     LPCWSTR creator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        LPWSTR *description) = 0;
+                     LPWSTR *description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDescription(
-        LPCWSTR description) = 0;
+                     LPCWSTR description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIdentifier(
-        LPWSTR *identifier) = 0;
+                     LPWSTR *identifier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIdentifier(
-        LPCWSTR identifier) = 0;
+                     LPCWSTR identifier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetKeywords(
-        LPWSTR *keywords) = 0;
+                     LPWSTR *keywords) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetKeywords(
-        LPCWSTR keywords) = 0;
+                     LPCWSTR keywords) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguage(
-        LPWSTR *language) = 0;
+                     LPWSTR *language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLanguage(
-        LPCWSTR language) = 0;
+                     LPCWSTR language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastModifiedBy(
-        LPWSTR *lastModifiedBy) = 0;
+                     LPWSTR *lastModifiedBy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLastModifiedBy(
-        LPCWSTR lastModifiedBy) = 0;
+                     LPCWSTR lastModifiedBy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastPrinted(
-        SYSTEMTIME *lastPrinted) = 0;
+                     SYSTEMTIME *lastPrinted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLastPrinted(
-        const SYSTEMTIME *lastPrinted) = 0;
+                     const SYSTEMTIME *lastPrinted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetModified(
-        SYSTEMTIME *modified) = 0;
+                     SYSTEMTIME *modified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetModified(
-        const SYSTEMTIME *modified) = 0;
+                     const SYSTEMTIME *modified) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRevision(
-        LPWSTR *revision) = 0;
+                     LPWSTR *revision) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRevision(
-        LPCWSTR revision) = 0;
+                     LPCWSTR revision) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubject(
-        LPWSTR *subject) = 0;
+                     LPWSTR *subject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSubject(
-        LPCWSTR subject) = 0;
+                     LPCWSTR subject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTitle(
-        LPWSTR *title) = 0;
+                     LPWSTR *title) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTitle(
-        LPCWSTR title) = 0;
+                     LPCWSTR title) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVersion(
-        LPWSTR *version) = 0;
+                     LPWSTR *version) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVersion(
-        LPCWSTR version) = 0;
+                     LPCWSTR version) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IXpsOMCoreProperties **coreProperties) = 0;
+                     IXpsOMCoreProperties **coreProperties) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11194,161 +11194,161 @@ typedef struct IXpsOMCorePropertiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMCoreProperties *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMCoreProperties *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMCoreProperties *This);
+                     IXpsOMCoreProperties *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMCoreProperties *This);
+                     IXpsOMCoreProperties *This);
 
     /*** IXpsOMPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsOMCoreProperties *This,
-        IOpcPartUri **partUri);
+                     IXpsOMCoreProperties *This,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *SetPartName)(
-        IXpsOMCoreProperties *This,
-        IOpcPartUri *partUri);
+                     IXpsOMCoreProperties *This,
+                     IOpcPartUri *partUri);
 
     /*** IXpsOMCoreProperties methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwner)(
-        IXpsOMCoreProperties *This,
-        IXpsOMPackage **package);
+                     IXpsOMCoreProperties *This,
+                     IXpsOMPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *GetCategory)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *category);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *category);
 
     HRESULT (STDMETHODCALLTYPE *SetCategory)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR category);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR category);
 
     HRESULT (STDMETHODCALLTYPE *GetContentStatus)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *contentStatus);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *contentStatus);
 
     HRESULT (STDMETHODCALLTYPE *SetContentStatus)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR contentStatus);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR contentStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetContentType)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *contentType);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *contentType);
 
     HRESULT (STDMETHODCALLTYPE *SetContentType)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR contentType);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR contentType);
 
     HRESULT (STDMETHODCALLTYPE *GetCreated)(
-        IXpsOMCoreProperties *This,
-        SYSTEMTIME *created);
+                     IXpsOMCoreProperties *This,
+                     SYSTEMTIME *created);
 
     HRESULT (STDMETHODCALLTYPE *SetCreated)(
-        IXpsOMCoreProperties *This,
-        const SYSTEMTIME *created);
+                     IXpsOMCoreProperties *This,
+                     const SYSTEMTIME *created);
 
     HRESULT (STDMETHODCALLTYPE *GetCreator)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *creator);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *creator);
 
     HRESULT (STDMETHODCALLTYPE *SetCreator)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR creator);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR creator);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *description);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *SetDescription)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR description);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR description);
 
     HRESULT (STDMETHODCALLTYPE *GetIdentifier)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *identifier);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *identifier);
 
     HRESULT (STDMETHODCALLTYPE *SetIdentifier)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR identifier);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR identifier);
 
     HRESULT (STDMETHODCALLTYPE *GetKeywords)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *keywords);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *keywords);
 
     HRESULT (STDMETHODCALLTYPE *SetKeywords)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR keywords);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR keywords);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *language);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *language);
 
     HRESULT (STDMETHODCALLTYPE *SetLanguage)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR language);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR language);
 
     HRESULT (STDMETHODCALLTYPE *GetLastModifiedBy)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *lastModifiedBy);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *lastModifiedBy);
 
     HRESULT (STDMETHODCALLTYPE *SetLastModifiedBy)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR lastModifiedBy);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR lastModifiedBy);
 
     HRESULT (STDMETHODCALLTYPE *GetLastPrinted)(
-        IXpsOMCoreProperties *This,
-        SYSTEMTIME *lastPrinted);
+                     IXpsOMCoreProperties *This,
+                     SYSTEMTIME *lastPrinted);
 
     HRESULT (STDMETHODCALLTYPE *SetLastPrinted)(
-        IXpsOMCoreProperties *This,
-        const SYSTEMTIME *lastPrinted);
+                     IXpsOMCoreProperties *This,
+                     const SYSTEMTIME *lastPrinted);
 
     HRESULT (STDMETHODCALLTYPE *GetModified)(
-        IXpsOMCoreProperties *This,
-        SYSTEMTIME *modified);
+                     IXpsOMCoreProperties *This,
+                     SYSTEMTIME *modified);
 
     HRESULT (STDMETHODCALLTYPE *SetModified)(
-        IXpsOMCoreProperties *This,
-        const SYSTEMTIME *modified);
+                     IXpsOMCoreProperties *This,
+                     const SYSTEMTIME *modified);
 
     HRESULT (STDMETHODCALLTYPE *GetRevision)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *revision);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *revision);
 
     HRESULT (STDMETHODCALLTYPE *SetRevision)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR revision);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR revision);
 
     HRESULT (STDMETHODCALLTYPE *GetSubject)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *subject);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *subject);
 
     HRESULT (STDMETHODCALLTYPE *SetSubject)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR subject);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR subject);
 
     HRESULT (STDMETHODCALLTYPE *GetTitle)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *title);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *title);
 
     HRESULT (STDMETHODCALLTYPE *SetTitle)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR title);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR title);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IXpsOMCoreProperties *This,
-        LPWSTR *version);
+                     IXpsOMCoreProperties *This,
+                     LPWSTR *version);
 
     HRESULT (STDMETHODCALLTYPE *SetVersion)(
-        IXpsOMCoreProperties *This,
-        LPCWSTR version);
+                     IXpsOMCoreProperties *This,
+                     LPCWSTR version);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IXpsOMCoreProperties *This,
-        IXpsOMCoreProperties **coreProperties);
+                     IXpsOMCoreProperties *This,
+                     IXpsOMCoreProperties **coreProperties);
 
     END_INTERFACE
 } IXpsOMCorePropertiesVtbl;
@@ -11544,11 +11544,11 @@ MIDL_INTERFACE("15b873d5-1971-41e8-83a3-6578403064c7")
 IXpsOMThumbnailGenerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GenerateThumbnail(
-        IXpsOMPage *page,
-        XPS_IMAGE_TYPE thumbnailType,
-        XPS_THUMBNAIL_SIZE thumbnailSize,
-        IOpcPartUri *imageResourcePartName,
-        IXpsOMImageResource **imageResource) = 0;
+                     IXpsOMPage *page,
+                     XPS_IMAGE_TYPE thumbnailType,
+                     XPS_THUMBNAIL_SIZE thumbnailSize,
+                     IOpcPartUri *imageResourcePartName,
+                     IXpsOMImageResource **imageResource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11560,24 +11560,24 @@ typedef struct IXpsOMThumbnailGeneratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsOMThumbnailGenerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsOMThumbnailGenerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsOMThumbnailGenerator *This);
+                     IXpsOMThumbnailGenerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsOMThumbnailGenerator *This);
+                     IXpsOMThumbnailGenerator *This);
 
     /*** IXpsOMThumbnailGenerator methods ***/
     HRESULT (STDMETHODCALLTYPE *GenerateThumbnail)(
-        IXpsOMThumbnailGenerator *This,
-        IXpsOMPage *page,
-        XPS_IMAGE_TYPE thumbnailType,
-        XPS_THUMBNAIL_SIZE thumbnailSize,
-        IOpcPartUri *imageResourcePartName,
-        IXpsOMImageResource **imageResource);
+                     IXpsOMThumbnailGenerator *This,
+                     IXpsOMPage *page,
+                     XPS_IMAGE_TYPE thumbnailType,
+                     XPS_THUMBNAIL_SIZE thumbnailSize,
+                     IOpcPartUri *imageResourcePartName,
+                     IXpsOMImageResource **imageResource);
 
     END_INTERFACE
 } IXpsOMThumbnailGeneratorVtbl;

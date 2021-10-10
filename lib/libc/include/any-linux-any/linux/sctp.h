@@ -18,7 +18,7 @@
  *
  * This SCTP implementation is distributed in the hope that it
  * will be useful, but WITHOUT ANY WARRANTY; without even the implied
- *                 ************************
+ *                                           ************************
  * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
  *
@@ -35,17 +35,17 @@
  *
  * Written or modified by:
  *    La Monte H.P. Yarroll    <piggy@acm.org>
- *    R. Stewart               <randall@sctp.chicago.il.us>
- *    K. Morneau               <kmorneau@cisco.com>
- *    Q. Xie                   <qxie1@email.mot.com>
- *    Karl Knutson             <karl@athena.chicago.il.us>
- *    Jon Grimm                <jgrimm@us.ibm.com>
- *    Daisy Chang              <daisyc@us.ibm.com>
- *    Ryan Layer               <rmlayer@us.ibm.com>
- *    Ardelle Fan              <ardelle.fan@intel.com>
- *    Sridhar Samudrala        <sri@us.ibm.com>
+ *    R. Stewart                                         <randall@sctp.chicago.il.us>
+ *    K. Morneau                                         <kmorneau@cisco.com>
+ *    Q. Xie                                                          <qxie1@email.mot.com>
+ *    Karl Knutson                                       <karl@athena.chicago.il.us>
+ *    Jon Grimm                                          <jgrimm@us.ibm.com>
+ *    Daisy Chang                                        <daisyc@us.ibm.com>
+ *    Ryan Layer                                         <rmlayer@us.ibm.com>
+ *    Ardelle Fan                                        <ardelle.fan@intel.com>
+ *    Sridhar Samudrala                     <sri@us.ibm.com>
  *    Inaky Perez-Gonzalez     <inaky.gonzalez@intel.com>
- *    Vlad Yasevich            <vladislav.yasevich@hp.com>
+ *    Vlad Yasevich                                      <vladislav.yasevich@hp.com>
  *
  * Any bugs reported given to us we will try to fix... any fixes shared will
  * be incorporated into the next SCTP release.
@@ -94,7 +94,7 @@ typedef __s32 sctp_assoc_t;
 #define SCTP_LOCAL_AUTH_CHUNKS	27	/* Read only */
 #define SCTP_GET_ASSOC_NUMBER	28	/* Read only */
 #define SCTP_GET_ASSOC_ID_LIST	29	/* Read only */
-#define SCTP_AUTO_ASCONF       30
+#define SCTP_AUTO_ASCONF                    30
 #define SCTP_PEER_ADDR_THLDS	31
 #define SCTP_RECVRCVINFO	32
 #define SCTP_RECVNXTINFO	33
@@ -175,9 +175,9 @@ enum sctp_msg_flags {
  *   uses this same data structure.  This structure is not used for
  *   recvmsg().
  *
- *   cmsg_level    cmsg_type      cmsg_data[]
+ *   cmsg_level    cmsg_type                   cmsg_data[]
  *   ------------  ------------   ----------------------
- *   IPPROTO_SCTP  SCTP_INIT      struct sctp_initmsg
+ *   IPPROTO_SCTP  SCTP_INIT                   struct sctp_initmsg
  */
 struct sctp_initmsg {
 	__u16 sinit_num_ostreams;
@@ -192,7 +192,7 @@ struct sctp_initmsg {
  *   describes SCTP header information about a received message through
  *   recvmsg().
  *
- *   cmsg_level    cmsg_type      cmsg_data[]
+ *   cmsg_level    cmsg_type                   cmsg_data[]
  *   ------------  ------------   ----------------------
  *   IPPROTO_SCTP  SCTP_SNDRCV    struct sctp_sndrcvinfo
  */
@@ -212,7 +212,7 @@ struct sctp_sndrcvinfo {
  *
  *   This cmsghdr structure specifies SCTP options for sendmsg().
  *
- *   cmsg_level    cmsg_type      cmsg_data[]
+ *   cmsg_level    cmsg_type                   cmsg_data[]
  *   ------------  ------------   -------------------
  *   IPPROTO_SCTP  SCTP_SNDINFO   struct sctp_sndinfo
  */
@@ -229,7 +229,7 @@ struct sctp_sndinfo {
  *   This cmsghdr structure describes SCTP receive information
  *   about a received message through recvmsg().
  *
- *   cmsg_level    cmsg_type      cmsg_data[]
+ *   cmsg_level    cmsg_type                   cmsg_data[]
  *   ------------  ------------   -------------------
  *   IPPROTO_SCTP  SCTP_RCVINFO   struct sctp_rcvinfo
  */
@@ -251,7 +251,7 @@ struct sctp_rcvinfo {
  *   if this information is already available when delivering
  *   the current message.
  *
- *   cmsg_level    cmsg_type      cmsg_data[]
+ *   cmsg_level    cmsg_type                   cmsg_data[]
  *   ------------  ------------   -------------------
  *   IPPROTO_SCTP  SCTP_NXTINFO   struct sctp_nxtinfo
  */
@@ -267,7 +267,7 @@ struct sctp_nxtinfo {
  *
  *   This cmsghdr structure specifies SCTP options for sendmsg().
  *
- *   cmsg_level    cmsg_type      cmsg_data[]
+ *   cmsg_level    cmsg_type                   cmsg_data[]
  *   ------------  ------------   -------------------
  *   IPPROTO_SCTP  SCTP_PRINFO    struct sctp_prinfo
  */
@@ -280,7 +280,7 @@ struct sctp_prinfo {
  *
  *   This cmsghdr structure specifies SCTP options for sendmsg().
  *
- *   cmsg_level    cmsg_type      cmsg_data[]
+ *   cmsg_level    cmsg_type                   cmsg_data[]
  *   ------------  ------------   -------------------
  *   IPPROTO_SCTP  SCTP_AUTHINFO  struct sctp_authinfo
  */
@@ -447,11 +447,11 @@ struct sctp_send_failed {
  *   The flag value will take one of the following values
  *
  *   SCTP_DATA_UNSENT  - Indicates that the data was never put on
- *                       the wire.
+ *                                                              the wire.
  *
  *   SCTP_DATA_SENT    - Indicates that the data was put on the wire.
- *                       Note that this does not necessarily mean that the
- *                       data was (or was not) successfully delivered.
+ *                                                              Note that this does not necessarily mean that the
+ *                                                              data was (or was not) successfully delivered.
  */
 enum sctp_ssf_flags {
 	SCTP_DATA_UNSENT,
@@ -608,7 +608,7 @@ struct sctp_event_subscribe {
  */
 union sctp_notification {
 	struct {
-		__u16 sn_type;             /* Notification type. */
+		__u16 sn_type;                                       /* Notification type. */
 		__u16 sn_flags;
 		__u32 sn_length;
 	} sn_header;
@@ -714,7 +714,7 @@ struct sctp_assocparams {
  *   set primary request:
  */
 struct sctp_setpeerprim {
-	sctp_assoc_t            sspp_assoc_id;
+	sctp_assoc_t                                      sspp_assoc_id;
 	struct sockaddr_storage sspp_addr;
 } __attribute__((packed, aligned(4)));
 
@@ -727,7 +727,7 @@ struct sctp_setpeerprim {
  *  make a set peer primary request:
  */
 struct sctp_prim {
-	sctp_assoc_t            ssp_assoc_id;
+	sctp_assoc_t                                      ssp_assoc_id;
 	struct sockaddr_storage ssp_addr;
 } __attribute__((packed, aligned(4)));
 
@@ -864,8 +864,8 @@ struct sctp_sack_info {
 };
 
 struct sctp_assoc_value {
-    sctp_assoc_t            assoc_id;
-    uint32_t                assoc_value;
+    sctp_assoc_t                                      assoc_id;
+    uint32_t                                          assoc_value;
 };
 
 struct sctp_stream_value {
@@ -897,7 +897,7 @@ struct sctp_paddrinfo {
 /* UNKNOWN: Peer address passed by the upper layer in sendmsg or connect[x]
  * calls.
  * UNCONFIRMED: Peer address received in INIT/INIT-ACK address parameters.
- *              Not yet confirmed by a heartbeat and not available for data
+ *                                        Not yet confirmed by a heartbeat and not available for data
  *		transfers.
  * ACTIVE : Peer address confirmed, active and available for data transfers.
  * INACTIVE: Peer address inactive and not available for data transfers.
@@ -933,7 +933,7 @@ struct sctp_status {
 
 /*
  * 7.2.3.  Get the list of chunks the peer requires to be authenticated
- *         (SCTP_PEER_AUTH_CHUNKS)
+ *                      (SCTP_PEER_AUTH_CHUNKS)
  *
  * This option gets a list of chunks for a specified association that
  * the peer requires to be received authenticated only.
@@ -951,20 +951,20 @@ struct sctp_authchunks {
 
 /* Association states.  */
 enum sctp_sstat_state {
-	SCTP_EMPTY                = 0,
-	SCTP_CLOSED               = 1,
-	SCTP_COOKIE_WAIT          = 2,
-	SCTP_COOKIE_ECHOED        = 3,
-	SCTP_ESTABLISHED          = 4,
+	SCTP_EMPTY                                          = 0,
+	SCTP_CLOSED                                         = 1,
+	SCTP_COOKIE_WAIT                       = 2,
+	SCTP_COOKIE_ECHOED                     = 3,
+	SCTP_ESTABLISHED                       = 4,
 	SCTP_SHUTDOWN_PENDING     = 5,
-	SCTP_SHUTDOWN_SENT        = 6,
+	SCTP_SHUTDOWN_SENT                     = 6,
 	SCTP_SHUTDOWN_RECEIVED    = 7,
 	SCTP_SHUTDOWN_ACK_SENT    = 8,
 };
 
 /*
  * 8.2.6. Get the Current Identifiers of Associations
- *        (SCTP_GET_ASSOC_ID_LIST)
+ *                     (SCTP_GET_ASSOC_ID_LIST)
  *
  * This option gets the current list of SCTP association identifiers of
  * the SCTP associations handled by a one-to-many style socket.
@@ -981,7 +981,7 @@ struct sctp_assoc_ids {
  * sctp_getpaddrs() and sctp_getladdrs() API.
  */
 struct sctp_getaddrs_old {
-	sctp_assoc_t            assoc_id;
+	sctp_assoc_t                                      assoc_id;
 	int			addr_num;
 	struct sockaddr		*addrs;
 };
@@ -1001,7 +1001,7 @@ struct sctp_assoc_stats {
 	sctp_assoc_t	sas_assoc_id;    /* Input */
 					 /* Transport of observed max RTO */
 	struct sockaddr_storage sas_obs_rto_ipaddr;
-	__u64		sas_maxrto;      /* Maximum Observed RTO for period */
+	__u64		sas_maxrto;                   /* Maximum Observed RTO for period */
 	__u64		sas_isacks;	 /* SACKs received */
 	__u64		sas_osacks;	 /* SACKs sent */
 	__u64		sas_opackets;	 /* Packets sent */
@@ -1009,7 +1009,7 @@ struct sctp_assoc_stats {
 	__u64		sas_rtxchunks;   /* Retransmitted Chunks */
 	__u64		sas_outofseqtsns;/* TSN received > next expected */
 	__u64		sas_idupchunks;  /* Dups received (ordered+unordered) */
-	__u64		sas_gapcnt;      /* Gap Acknowledgements Received */
+	__u64		sas_gapcnt;                   /* Gap Acknowledgements Received */
 	__u64		sas_ouodchunks;  /* Unordered data chunks sent */
 	__u64		sas_iuodchunks;  /* Unordered data chunks received */
 	__u64		sas_oodchunks;	 /* Ordered data chunks sent */

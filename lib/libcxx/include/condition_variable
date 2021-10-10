@@ -32,29 +32,29 @@ public:
 
     void wait(unique_lock<mutex>& lock);
     template <class Predicate>
-        void wait(unique_lock<mutex>& lock, Predicate pred);
+                     void wait(unique_lock<mutex>& lock, Predicate pred);
 
     template <class Clock, class Duration>
-        cv_status
-        wait_until(unique_lock<mutex>& lock,
-                   const chrono::time_point<Clock, Duration>& abs_time);
+                     cv_status
+                     wait_until(unique_lock<mutex>& lock,
+                                                          const chrono::time_point<Clock, Duration>& abs_time);
 
     template <class Clock, class Duration, class Predicate>
-        bool
-        wait_until(unique_lock<mutex>& lock,
-                   const chrono::time_point<Clock, Duration>& abs_time,
-                   Predicate pred);
+                     bool
+                     wait_until(unique_lock<mutex>& lock,
+                                                          const chrono::time_point<Clock, Duration>& abs_time,
+                                                          Predicate pred);
 
     template <class Rep, class Period>
-        cv_status
-        wait_for(unique_lock<mutex>& lock,
-                 const chrono::duration<Rep, Period>& rel_time);
+                     cv_status
+                     wait_for(unique_lock<mutex>& lock,
+                                           const chrono::duration<Rep, Period>& rel_time);
 
     template <class Rep, class Period, class Predicate>
-        bool
-        wait_for(unique_lock<mutex>& lock,
-                 const chrono::duration<Rep, Period>& rel_time,
-                 Predicate pred);
+                     bool
+                     wait_for(unique_lock<mutex>& lock,
+                                           const chrono::duration<Rep, Period>& rel_time,
+                                           Predicate pred);
 
     typedef pthread_cond_t* native_handle_type;
     native_handle_type native_handle();
@@ -75,31 +75,31 @@ public:
     void notify_all() noexcept;
 
     template <class Lock>
-        void wait(Lock& lock);
+                     void wait(Lock& lock);
     template <class Lock, class Predicate>
-        void wait(Lock& lock, Predicate pred);
+                     void wait(Lock& lock, Predicate pred);
 
     template <class Lock, class Clock, class Duration>
-        cv_status
-        wait_until(Lock& lock,
-                   const chrono::time_point<Clock, Duration>& abs_time);
+                     cv_status
+                     wait_until(Lock& lock,
+                                                          const chrono::time_point<Clock, Duration>& abs_time);
 
     template <class Lock, class Clock, class Duration, class Predicate>
-        bool
-        wait_until(Lock& lock,
-                   const chrono::time_point<Clock, Duration>& abs_time,
-                   Predicate pred);
+                     bool
+                     wait_until(Lock& lock,
+                                                          const chrono::time_point<Clock, Duration>& abs_time,
+                                                          Predicate pred);
 
     template <class Lock, class Rep, class Period>
-        cv_status
-        wait_for(Lock& lock,
-                 const chrono::duration<Rep, Period>& rel_time);
+                     cv_status
+                     wait_for(Lock& lock,
+                                           const chrono::duration<Rep, Period>& rel_time);
 
     template <class Lock, class Rep, class Period, class Predicate>
-        bool
-        wait_for(Lock& lock,
-                 const chrono::duration<Rep, Period>& rel_time,
-                 Predicate pred);
+                     bool
+                     wait_for(Lock& lock,
+                                           const chrono::duration<Rep, Period>& rel_time,
+                                           Predicate pred);
 };
 
 }  // std
@@ -132,37 +132,37 @@ public:
     void notify_all() _NOEXCEPT;
 
     template <class _Lock>
-        _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
-        void wait(_Lock& __lock);
+                     _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
+                     void wait(_Lock& __lock);
     template <class _Lock, class _Predicate>
-        _LIBCPP_INLINE_VISIBILITY
-        void wait(_Lock& __lock, _Predicate __pred);
+                     _LIBCPP_INLINE_VISIBILITY
+                     void wait(_Lock& __lock, _Predicate __pred);
 
     template <class _Lock, class _Clock, class _Duration>
-        _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
-        cv_status
-        wait_until(_Lock& __lock,
-                   const chrono::time_point<_Clock, _Duration>& __t);
+                     _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
+                     cv_status
+                     wait_until(_Lock& __lock,
+                                                          const chrono::time_point<_Clock, _Duration>& __t);
 
     template <class _Lock, class _Clock, class _Duration, class _Predicate>
-        bool
-        _LIBCPP_INLINE_VISIBILITY
-        wait_until(_Lock& __lock,
-                   const chrono::time_point<_Clock, _Duration>& __t,
-                   _Predicate __pred);
+                     bool
+                     _LIBCPP_INLINE_VISIBILITY
+                     wait_until(_Lock& __lock,
+                                                          const chrono::time_point<_Clock, _Duration>& __t,
+                                                          _Predicate __pred);
 
     template <class _Lock, class _Rep, class _Period>
-        cv_status
-        _LIBCPP_INLINE_VISIBILITY
-        wait_for(_Lock& __lock,
-                 const chrono::duration<_Rep, _Period>& __d);
+                     cv_status
+                     _LIBCPP_INLINE_VISIBILITY
+                     wait_for(_Lock& __lock,
+                                           const chrono::duration<_Rep, _Period>& __d);
 
     template <class _Lock, class _Rep, class _Period, class _Predicate>
-        bool
-        _LIBCPP_INLINE_VISIBILITY
-        wait_for(_Lock& __lock,
-                 const chrono::duration<_Rep, _Period>& __d,
-                 _Predicate __pred);
+                     bool
+                     _LIBCPP_INLINE_VISIBILITY
+                     wait_for(_Lock& __lock,
+                                           const chrono::duration<_Rep, _Period>& __d,
+                                           _Predicate __pred);
 };
 
 inline
@@ -209,13 +209,13 @@ void
 condition_variable_any::wait(_Lock& __lock, _Predicate __pred)
 {
     while (!__pred())
-        wait(__lock);
+                     wait(__lock);
 }
 
 template <class _Lock, class _Clock, class _Duration>
 cv_status
 condition_variable_any::wait_until(_Lock& __lock,
-                                   const chrono::time_point<_Clock, _Duration>& __t)
+                                                                                                    const chrono::time_point<_Clock, _Duration>& __t)
 {
     shared_ptr<mutex> __mut = __mut_;
     unique_lock<mutex> __lk(*__mut);
@@ -229,12 +229,12 @@ template <class _Lock, class _Clock, class _Duration, class _Predicate>
 inline
 bool
 condition_variable_any::wait_until(_Lock& __lock,
-                                   const chrono::time_point<_Clock, _Duration>& __t,
-                                   _Predicate __pred)
+                                                                                                    const chrono::time_point<_Clock, _Duration>& __t,
+                                                                                                    _Predicate __pred)
 {
     while (!__pred())
-        if (wait_until(__lock, __t) == cv_status::timeout)
-            return __pred();
+                     if (wait_until(__lock, __t) == cv_status::timeout)
+                                      return __pred();
     return true;
 }
 
@@ -242,7 +242,7 @@ template <class _Lock, class _Rep, class _Period>
 inline
 cv_status
 condition_variable_any::wait_for(_Lock& __lock,
-                                 const chrono::duration<_Rep, _Period>& __d)
+                                                                                                  const chrono::duration<_Rep, _Period>& __d)
 {
     return wait_until(__lock, chrono::steady_clock::now() + __d);
 }
@@ -251,11 +251,11 @@ template <class _Lock, class _Rep, class _Period, class _Predicate>
 inline
 bool
 condition_variable_any::wait_for(_Lock& __lock,
-                                 const chrono::duration<_Rep, _Period>& __d,
-                                 _Predicate __pred)
+                                                                                                  const chrono::duration<_Rep, _Period>& __d,
+                                                                                                  _Predicate __pred)
 {
     return wait_until(__lock, chrono::steady_clock::now() + __d,
-                      _VSTD::move(__pred));
+                                                             _VSTD::move(__pred));
 }
 
 _LIBCPP_FUNC_VIS

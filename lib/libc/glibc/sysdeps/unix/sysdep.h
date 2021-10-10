@@ -25,7 +25,7 @@
 #define	SYSCALL(name, args)	PSEUDO (name, name, args)
 
 #define __SYSCALL_CONCAT_X(a,b)     a##b
-#define __SYSCALL_CONCAT(a,b)       __SYSCALL_CONCAT_X (a, b)
+#define __SYSCALL_CONCAT(a,b)                    __SYSCALL_CONCAT_X (a, b)
 
 
 #define __INTERNAL_SYSCALL0(name, err) \
@@ -92,13 +92,13 @@
   ({									     \
     long int sc_ret;							     \
     if (SINGLE_THREAD_P) 						     \
-      sc_ret = INLINE_SYSCALL_CALL (__VA_ARGS__); 			     \
+                   sc_ret = INLINE_SYSCALL_CALL (__VA_ARGS__); 			     \
     else								     \
-      {									     \
+                   {									     \
 	int sc_cancel_oldtype = LIBC_CANCEL_ASYNC ();			     \
 	sc_ret = INLINE_SYSCALL_CALL (__VA_ARGS__);			     \
-        LIBC_CANCEL_RESET (sc_cancel_oldtype);				     \
-      }									     \
+                     LIBC_CANCEL_RESET (sc_cancel_oldtype);				     \
+                   }									     \
     sc_ret;								     \
   })
 
@@ -108,13 +108,13 @@
   ({									     \
     long int sc_ret;							     \
     if (SINGLE_THREAD_P) 						     \
-      sc_ret = INTERNAL_SYSCALL_CALL (__VA_ARGS__); 			     \
+                   sc_ret = INTERNAL_SYSCALL_CALL (__VA_ARGS__); 			     \
     else								     \
-      {									     \
+                   {									     \
 	int sc_cancel_oldtype = LIBC_CANCEL_ASYNC ();			     \
 	sc_ret = INTERNAL_SYSCALL_CALL (__VA_ARGS__);			     \
-        LIBC_CANCEL_RESET (sc_cancel_oldtype);				     \
-      }									     \
+                     LIBC_CANCEL_RESET (sc_cancel_oldtype);				     \
+                   }									     \
     sc_ret;								     \
   })
 

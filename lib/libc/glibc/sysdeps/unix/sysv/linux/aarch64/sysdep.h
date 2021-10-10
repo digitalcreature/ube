@@ -54,26 +54,26 @@
    test with -4095.  */
 
 # undef	PSEUDO
-# define PSEUDO(name, syscall_name, args)				      \
-  .text;								      \
-  ENTRY (name);								      \
-    DO_CALL (syscall_name, args);					      \
-    cmn x0, #4095;							      \
+# define PSEUDO(name, syscall_name, args)				                   \
+  .text;								                   \
+  ENTRY (name);								                   \
+    DO_CALL (syscall_name, args);					                   \
+    cmn x0, #4095;							                   \
     b.cs .Lsyscall_error;
 
 # undef	PSEUDO_END
-# define PSEUDO_END(name)						      \
-  SYSCALL_ERROR_HANDLER							      \
+# define PSEUDO_END(name)						                   \
+  SYSCALL_ERROR_HANDLER							                   \
   END (name)
 
 # undef	PSEUDO_NOERRNO
-# define PSEUDO_NOERRNO(name, syscall_name, args)			      \
-  .text;								      \
-  ENTRY (name);								      \
+# define PSEUDO_NOERRNO(name, syscall_name, args)			                   \
+  .text;								                   \
+  ENTRY (name);								                   \
     DO_CALL (syscall_name, args);
 
 # undef	PSEUDO_END_NOERRNO
-# define PSEUDO_END_NOERRNO(name)					      \
+# define PSEUDO_END_NOERRNO(name)					                   \
   END (name)
 
 # define ret_NOERRNO ret
@@ -81,9 +81,9 @@
 /* The function has to return the error code.  */
 # undef	PSEUDO_ERRVAL
 # define PSEUDO_ERRVAL(name, syscall_name, args) \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
     neg x0, x0
 
 # undef	PSEUDO_END_ERRVAL
@@ -116,8 +116,8 @@
 #  endif
 # else
 #  define SYSCALL_ERROR __syscall_error
-#  define SYSCALL_ERROR_HANDLER                                 \
-.Lsyscall_error:                                                \
+#  define SYSCALL_ERROR_HANDLER                                                                                                  \
+.Lsyscall_error:                                                                                                                                                        \
 	b	__syscall_error;
 # endif
 
@@ -176,10 +176,10 @@
 # define INLINE_SYSCALL(name, nr, args...)				\
   ({ unsigned long _sys_result = INTERNAL_SYSCALL (name, , nr, args);	\
      if (__builtin_expect (INTERNAL_SYSCALL_ERROR_P (_sys_result, ), 0))\
-       {								\
+                    {								\
 	 __set_errno (INTERNAL_SYSCALL_ERRNO (_sys_result, ));		\
 	 _sys_result = (unsigned long) -1;				\
-       }								\
+                    }								\
      (long) _sys_result; })
 
 # undef INTERNAL_SYSCALL_DECL
@@ -189,11 +189,11 @@
 # define INTERNAL_SYSCALL_RAW(name, err, nr, args...)		\
   ({ long _sys_result;						\
      {								\
-       LOAD_ARGS_##nr (args)					\
-       register long _x8 asm ("x8") = (name);			\
-       asm volatile ("svc	0	// syscall " # name     \
+                    LOAD_ARGS_##nr (args)					\
+                    register long _x8 asm ("x8") = (name);			\
+                    asm volatile ("svc	0	// syscall " # name     \
 		     : "=r" (_x0) : "r"(_x8) ASM_ARGS_##nr : "memory");	\
-       _sys_result = _x0;					\
+                    _sys_result = _x0;					\
      }								\
      _sys_result; })
 
@@ -265,7 +265,7 @@
 # ifdef __ASSEMBLER__
 /* Note, dst, src, guard, and tmp are all register numbers rather than
    register names so they will work with both ILP32 and LP64. */
-#  define PTR_MANGLE(dst, src, guard, tmp)                                \
+#  define PTR_MANGLE(dst, src, guard, tmp)                                                                                                 \
   LDST_PCREL (ldr, guard, tmp, C_SYMBOL_NAME(__pointer_chk_guard_local)); \
   PTR_MANGLE2 (dst, src, guard)
 /* Use PTR_MANGLE2 for efficiency if guard is already loaded.  */
@@ -285,7 +285,7 @@ extern uintptr_t __pointer_chk_guard_local attribute_relro attribute_hidden;
 # ifdef __ASSEMBLER__
 /* Note, dst, src, guard, and tmp are all register numbers rather than
    register names so they will work with both ILP32 and LP64. */
-#  define PTR_MANGLE(dst, src, guard, tmp)                             \
+#  define PTR_MANGLE(dst, src, guard, tmp)                                                                                 \
   LDST_GLOBAL (ldr, guard, tmp, C_SYMBOL_NAME(__pointer_chk_guard));   \
   PTR_MANGLE2 (dst, src, guard)
 /* Use PTR_MANGLE2 for efficiency if guard is already loaded.  */

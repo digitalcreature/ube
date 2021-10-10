@@ -4,7 +4,7 @@
  * Copyright(c) 2018 Intel Corporation.
  *
  * Author(s): Björn Töpel <bjorn.topel@intel.com>
- *	      Magnus Karlsson <magnus.karlsson@intel.com>
+ *	                   Magnus Karlsson <magnus.karlsson@intel.com>
  */
 
 #ifndef _LINUX_IF_XDP_H

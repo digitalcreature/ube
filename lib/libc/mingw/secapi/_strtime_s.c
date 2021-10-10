@@ -40,16 +40,16 @@ _int_strtime_s (char *d, size_t dn)
 
   if (!d || !dn)
     {
-      errno = EINVAL;
-      return EINVAL;
+                   errno = EINVAL;
+                   return EINVAL;
     }
 
   d[0] = 0;
 
   if (dn < 9)
     {
-      errno = ERANGE;
-      return ERANGE;
+                   errno = ERANGE;
+                   return ERANGE;
     }
 
   GetLocalTime (&dt);

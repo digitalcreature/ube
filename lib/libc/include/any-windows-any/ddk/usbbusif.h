@@ -66,10 +66,10 @@ typedef BOOLEAN
 (USB_BUSIFFN *PUSB_BUSIFFN_IS_DEVICE_HIGH_SPEED) (
   IN PVOID OPTIONAL);
 
-#define USB_BUSIF_USBDI_VERSION_0         0x0000
-#define USB_BUSIF_USBDI_VERSION_1         0x0001
-#define USB_BUSIF_USBDI_VERSION_2         0x0002
-#define USB_BUSIF_USBDI_VERSION_3         0x0003
+#define USB_BUSIF_USBDI_VERSION_0                      0x0000
+#define USB_BUSIF_USBDI_VERSION_1                      0x0001
+#define USB_BUSIF_USBDI_VERSION_2                      0x0002
+#define USB_BUSIF_USBDI_VERSION_3                      0x0003
 
 DEFINE_GUID(USB_BUS_INTERFACE_USBDI_GUID, 
 0xb1a96a13, 0x3de0, 0x4574, 0x9b, 0x1, 0xc0, 0x8f, 0xea, 0xb3, 0x18, 0xd6);
@@ -185,7 +185,7 @@ BOOLEAN
   IN UCHAR  FunctionSubClass,
   IN UCHAR  FunctionProtocol);
 
-#define USBC_DEVICE_CONFIGURATION_INTERFACE_VERSION_1         0x0001
+#define USBC_DEVICE_CONFIGURATION_INTERFACE_VERSION_1                      0x0001
 
 typedef struct _USBC_DEVICE_CONFIGURATION_INTERFACE_V1 {
   USHORT Size;

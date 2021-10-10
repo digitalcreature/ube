@@ -25,40 +25,40 @@ const maxInt = std.math.maxInt;
 pub fn sinh(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => sinh32(x),
-        f64 => sinh64(x),
-        else => @compileError("sinh not implemented for " ++ @typeName(T)),
+                     f32 => sinh32(x),
+                     f64 => sinh64(x),
+                     else => @compileError("sinh not implemented for " ++ @typeName(T)),
     };
 }
 
 // sinh(x) = (exp(x) - 1 / exp(x)) / 2
-//         = (exp(x) - 1 + (exp(x) - 1) / exp(x)) / 2
-//         = x + x^3 / 6 + o(x^5)
+//                      = (exp(x) - 1 + (exp(x) - 1) / exp(x)) / 2
+//                      = x + x^3 / 6 + o(x^5)
 fn sinh32(x: f32) f32 {
     const u = @bitCast(u32, x);
     const ux = u & 0x7FFFFFFF;
     const ax = @bitCast(f32, ux);
 
     if (x == 0.0 or math.isNan(x)) {
-        return x;
+                     return x;
     }
 
     var h: f32 = 0.5;
     if (u >> 31 != 0) {
-        h = -h;
+                     h = -h;
     }
 
     // |x| < log(FLT_MAX)
     if (ux < 0x42B17217) {
-        const t = math.expm1(ax);
-        if (ux < 0x3F800000) {
-            if (ux < 0x3F800000 - (12 << 23)) {
-                return x;
-            } else {
-                return h * (2 * t - t * t / (t + 1));
-            }
-        }
-        return h * (t + t / (t + 1));
+                     const t = math.expm1(ax);
+                     if (ux < 0x3F800000) {
+                                      if (ux < 0x3F800000 - (12 << 23)) {
+                                          return x;
+                                      } else {
+                                          return h * (2 * t - t * t / (t + 1));
+                                      }
+                     }
+                     return h * (t + t / (t + 1));
     }
 
     // |x| > log(FLT_MAX) or nan
@@ -71,26 +71,26 @@ fn sinh64(x: f64) f64 {
     const ax = @bitCast(f64, u & (maxInt(u64) >> 1));
 
     if (x == 0.0 or math.isNan(x)) {
-        return x;
+                     return x;
     }
 
     var h: f32 = 0.5;
     if (u >> 63 != 0) {
-        h = -h;
+                     h = -h;
     }
 
     // |x| < log(FLT_MAX)
     if (w < 0x40862E42) {
-        const t = math.expm1(ax);
-        if (w < 0x3FF00000) {
-            if (w < 0x3FF00000 - (26 << 20)) {
-                return x;
-            } else {
-                return h * (2 * t - t * t / (t + 1));
-            }
-        }
-        // NOTE: |x| > log(0x1p26) + eps could be h * exp(x)
-        return h * (t + t / (t + 1));
+                     const t = math.expm1(ax);
+                     if (w < 0x3FF00000) {
+                                      if (w < 0x3FF00000 - (26 << 20)) {
+                                          return x;
+                                      } else {
+                                          return h * (2 * t - t * t / (t + 1));
+                                      }
+                     }
+                     // NOTE: |x| > log(0x1p26) + eps could be h * exp(x)
+                     return h * (t + t / (t + 1));
     }
 
     // |x| > log(DBL_MAX) or nan

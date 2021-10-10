@@ -109,16 +109,16 @@ typedef unsigned long io_port;	/* type definition for an 'io port address' */
 /* SCC statistical information */
 
 struct scc_stat {
-        long rxints;            /* Receiver interrupts */
-        long txints;            /* Transmitter interrupts */
-        long exints;            /* External/status interrupts */
-        long spints;            /* Special receiver interrupts */
+                     long rxints;                                      /* Receiver interrupts */
+                     long txints;                                      /* Transmitter interrupts */
+                     long exints;                                      /* External/status interrupts */
+                     long spints;                                      /* Special receiver interrupts */
 
-        long txframes;          /* Packets sent */
-        long rxframes;          /* Number of Frames Actually Received */
-        long rxerrs;            /* CRC Errors */
-        long txerrs;		/* KISS errors */
-        
+                     long txframes;                       /* Packets sent */
+                     long rxframes;                       /* Number of Frames Actually Received */
+                     long rxerrs;                                      /* CRC Errors */
+                     long txerrs;		/* KISS errors */
+                     
 	unsigned int nospace;	/* "Out of buffers" */
 	unsigned int rx_over;	/* Receiver Overruns */
 	unsigned int tx_under;	/* Transmitter Underruns */

@@ -105,36 +105,36 @@ typedef struct DXGI_MODE_DESC1
 interface IDXGIOutputDuplication : IDXGIObject
 {
     void GetDesc(
-        [out] DXGI_OUTDUPL_DESC *desc
+                     [out] DXGI_OUTDUPL_DESC *desc
     );
 
     HRESULT AcquireNextFrame(
-        [in] UINT timeout_in_milliseconds,
-        [out] DXGI_OUTDUPL_FRAME_INFO *frame_info,
-        [out] IDXGIResource **desktop_resource
+                     [in] UINT timeout_in_milliseconds,
+                     [out] DXGI_OUTDUPL_FRAME_INFO *frame_info,
+                     [out] IDXGIResource **desktop_resource
     );
 
     HRESULT GetFrameDirtyRects(
-        [in] UINT dirty_rects_buffer_size,
-        [out] RECT *dirty_rects_buffer,
-        [out] UINT *dirty_rects_buffer_size_required
+                     [in] UINT dirty_rects_buffer_size,
+                     [out] RECT *dirty_rects_buffer,
+                     [out] UINT *dirty_rects_buffer_size_required
     );
 
     HRESULT GetFrameMoveRects(
-        [in] UINT move_rects_buffer_size,
-        [out] DXGI_OUTDUPL_MOVE_RECT *move_rect_buffer,
-        [out] UINT *move_rects_buffer_size_required
+                     [in] UINT move_rects_buffer_size,
+                     [out] DXGI_OUTDUPL_MOVE_RECT *move_rect_buffer,
+                     [out] UINT *move_rects_buffer_size_required
     );
 
     HRESULT GetFramePointerShape(
-        [in] UINT pointer_shape_buffer_size,
-        [out] void *pointer_shape_buffer,
-        [out] UINT *pointer_shape_buffer_size_required,
-        [out] DXGI_OUTDUPL_POINTER_SHAPE_INFO *pointer_shape_info
+                     [in] UINT pointer_shape_buffer_size,
+                     [out] void *pointer_shape_buffer,
+                     [out] UINT *pointer_shape_buffer_size_required,
+                     [out] DXGI_OUTDUPL_POINTER_SHAPE_INFO *pointer_shape_info
     );
 
     HRESULT MapDesktopSurface(
-        [out] DXGI_MAPPED_RECT *locked_rect
+                     [out] DXGI_MAPPED_RECT *locked_rect
     );
 
     HRESULT UnMapDesktopSurface();
@@ -151,9 +151,9 @@ interface IDXGIOutputDuplication : IDXGIObject
 interface IDXGISurface2 : IDXGISurface1
 {
     HRESULT GetResource(
-        [in] REFIID iid,
-        [out] void **parent_resource,
-        [out] UINT *subresource_idx
+                     [in] REFIID iid,
+                     [out] void **parent_resource,
+                     [out] UINT *subresource_idx
     );
 }
 
@@ -166,14 +166,14 @@ interface IDXGISurface2 : IDXGISurface1
 interface IDXGIResource1 : IDXGIResource
 {
     HRESULT CreateSubresourceSurface(
-        UINT index,
-        [out] IDXGISurface2 **surface
+                     UINT index,
+                     [out] IDXGISurface2 **surface
     );
     HRESULT CreateSharedHandle(
-        [in] const SECURITY_ATTRIBUTES *attributes,
-        [in] DWORD access,
-        [in] const WCHAR *name,
-        [out] HANDLE *handle
+                     [in] const SECURITY_ATTRIBUTES *attributes,
+                     [in] DWORD access,
+                     [in] const WCHAR *name,
+                     [out] HANDLE *handle
     );
 }
 
@@ -198,17 +198,17 @@ interface IDXGIDisplayControl : IUnknown
 interface IDXGIDevice2 : IDXGIDevice1
 {
     HRESULT OfferResources(
-            [in] UINT NumResources,
-            [in, size_is(NumResources)] IDXGIResource *const *ppResources,
-            [in] DXGI_OFFER_RESOURCE_PRIORITY Priority);
+                                      [in] UINT NumResources,
+                                      [in, size_is(NumResources)] IDXGIResource *const *ppResources,
+                                      [in] DXGI_OFFER_RESOURCE_PRIORITY Priority);
 
     HRESULT ReclaimResources(
-            [in] UINT NumResources,
-            [in, size_is(NumResources)] IDXGIResource *const *ppResources,
-            [out, size_is(NumResources)] BOOL *pDiscarded);
+                                      [in] UINT NumResources,
+                                      [in, size_is(NumResources)] IDXGIResource *const *ppResources,
+                                      [out, size_is(NumResources)] BOOL *pDiscarded);
 
     HRESULT EnqueueSetEvent(
-            [in] HANDLE hEvent);
+                                      [in] HANDLE hEvent);
 }
 
 typedef enum DXGI_SCALING {
@@ -254,39 +254,39 @@ typedef struct DXGI_PRESENT_PARAMETERS {
 interface IDXGISwapChain1 : IDXGISwapChain
 {
     HRESULT GetDesc1(
-            [out] DXGI_SWAP_CHAIN_DESC1 *pDesc);
+                                      [out] DXGI_SWAP_CHAIN_DESC1 *pDesc);
 
     HRESULT GetFullscreenDesc(
-            [out] DXGI_SWAP_CHAIN_FULLSCREEN_DESC *pDesc);
+                                      [out] DXGI_SWAP_CHAIN_FULLSCREEN_DESC *pDesc);
 
     HRESULT GetHwnd(
-            [out] HWND *pHwnd);
+                                      [out] HWND *pHwnd);
 
     HRESULT GetCoreWindow(
-            [in] REFIID refiid,
-            [out] void **ppUnk);
+                                      [in] REFIID refiid,
+                                      [out] void **ppUnk);
 
     HRESULT Present1(
-            [in] UINT SyncInterval,
-            [in] UINT PresentFlags,
-            [in] const DXGI_PRESENT_PARAMETERS *pPresentParameters);
+                                      [in] UINT SyncInterval,
+                                      [in] UINT PresentFlags,
+                                      [in] const DXGI_PRESENT_PARAMETERS *pPresentParameters);
 
     BOOL IsTemporaryMonoSupported();
 
     HRESULT GetRestrictToOutput(
-            [out] IDXGIOutput **ppRestrictToOutput);
+                                      [out] IDXGIOutput **ppRestrictToOutput);
 
     HRESULT SetBackgroundColor(
-            [in] const DXGI_RGBA *pColor);
+                                      [in] const DXGI_RGBA *pColor);
 
     HRESULT GetBackgroundColor(
-            [out] DXGI_RGBA *pColor);
+                                      [out] DXGI_RGBA *pColor);
 
     HRESULT SetRotation(
-            [in] DXGI_MODE_ROTATION Rotation);
+                                      [in] DXGI_MODE_ROTATION Rotation);
 
     HRESULT GetRotation(
-            [out] DXGI_MODE_ROTATION *pRotation);
+                                      [out] DXGI_MODE_ROTATION *pRotation);
 }
 
 [
@@ -300,53 +300,53 @@ interface IDXGIFactory2 : IDXGIFactory1
     BOOL IsWindowedStereoEnabled();
 
     HRESULT CreateSwapChainForHwnd(
-            [in]  IUnknown *pDevice,
-            [in]  HWND hWnd,
-            [in]  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
-            [in]  const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *pFullscreenDesc,
-            [in]  IDXGIOutput *pRestrictToOutput,
-            [out] IDXGISwapChain1 **ppSwapChain);
+                                      [in]  IUnknown *pDevice,
+                                      [in]  HWND hWnd,
+                                      [in]  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
+                                      [in]  const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *pFullscreenDesc,
+                                      [in]  IDXGIOutput *pRestrictToOutput,
+                                      [out] IDXGISwapChain1 **ppSwapChain);
 
     HRESULT CreateSwapChainForCoreWindow(
-            [in]  IUnknown *pDevice,
-            [in]  IUnknown *pWindow,
-            [in]  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
-            [in]  IDXGIOutput *pRestrictToOutput,
-            [out] IDXGISwapChain1 **ppSwapChain);
+                                      [in]  IUnknown *pDevice,
+                                      [in]  IUnknown *pWindow,
+                                      [in]  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
+                                      [in]  IDXGIOutput *pRestrictToOutput,
+                                      [out] IDXGISwapChain1 **ppSwapChain);
 
     HRESULT GetSharedResourceAdapterLuid(
-            [in]  HANDLE hResource,
-            [out] LUID *pLuid);
+                                      [in]  HANDLE hResource,
+                                      [out] LUID *pLuid);
 
     HRESULT RegisterStereoStatusWindow(
-            [in]  HWND WindowHandle,
-            [in]  UINT wMsg,
-            [out] DWORD *pdwCookie);
+                                      [in]  HWND WindowHandle,
+                                      [in]  UINT wMsg,
+                                      [out] DWORD *pdwCookie);
 
     HRESULT RegisterStereoStatusEvent(
-            [in]  HANDLE hEvent,
-            [out] DWORD *pdwCookie);
+                                      [in]  HANDLE hEvent,
+                                      [out] DWORD *pdwCookie);
 
     void UnregisterStereoStatus(
-            [in]  DWORD dwCookie);
+                                      [in]  DWORD dwCookie);
 
     HRESULT RegisterOcclusionStatusWindow(
-            [in]  HWND WindowHandle,
-            [in]  UINT wMsg,
-            [out] DWORD *pdwCookie);
+                                      [in]  HWND WindowHandle,
+                                      [in]  UINT wMsg,
+                                      [out] DWORD *pdwCookie);
 
     HRESULT RegisterOcclusionStatusEvent(
-            [in]  HANDLE hEvent,
-            [out] DWORD *pdwCookie);
+                                      [in]  HANDLE hEvent,
+                                      [out] DWORD *pdwCookie);
 
     void UnregisterOcclusionStatus(
-            [in]  DWORD dwCookie);
+                                      [in]  DWORD dwCookie);
 
     HRESULT CreateSwapChainForComposition(
-            [in]  IUnknown *pDevice,
-            [in]  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
-            [in]  IDXGIOutput *pRestrictToOutput,
-            [out] IDXGISwapChain1 **ppSwapChain);
+                                      [in]  IUnknown *pDevice,
+                                      [in]  const DXGI_SWAP_CHAIN_DESC1 *pDesc,
+                                      [in]  IDXGIOutput *pRestrictToOutput,
+                                      [out] IDXGISwapChain1 **ppSwapChain);
 }
 
 typedef enum DXGI_GRAPHICS_PREEMPTION_GRANULARITY {
@@ -400,24 +400,24 @@ interface IDXGIAdapter2 : IDXGIAdapter1
 interface IDXGIOutput1 : IDXGIOutput
 {
     HRESULT GetDisplayModeList1(
-        [in] DXGI_FORMAT enum_format,
-        [in] UINT flags,
-        [in, out] UINT *num_modes,
-        [out] DXGI_MODE_DESC1 *desc
+                     [in] DXGI_FORMAT enum_format,
+                     [in] UINT flags,
+                     [in, out] UINT *num_modes,
+                     [out] DXGI_MODE_DESC1 *desc
     );
 
     HRESULT FindClosestMatchingMode1(
-        [in] const DXGI_MODE_DESC1 *mode_to_match,
-        [out] DXGI_MODE_DESC1 *closest_match,
-        [in] IUnknown *concerned_device
+                     [in] const DXGI_MODE_DESC1 *mode_to_match,
+                     [out] DXGI_MODE_DESC1 *closest_match,
+                     [in] IUnknown *concerned_device
     );
 
     HRESULT GetDisplaySurfaceData1(
-        [in] IDXGIResource *destination
+                     [in] IDXGIResource *destination
     );
 
     HRESULT DuplicateOutput(
-        [in] IUnknown *device,
-        [out] IDXGIOutputDuplication **output_duplication
+                     [in] IUnknown *device,
+                     [out] IDXGIOutputDuplication **output_duplication
     );
 }

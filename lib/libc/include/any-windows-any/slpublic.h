@@ -14,23 +14,23 @@ extern "C" {
 typedef GUID SLID;
 
 typedef enum _SL_GENUINE_STATE {
-  SL_GEN_STATE_IS_GENUINE        = 0,
+  SL_GEN_STATE_IS_GENUINE                     = 0,
   SL_GEN_STATE_INVALID_LICENSE   = 1,
-  SL_GEN_STATE_TAMPERED          = 2,
-  SL_GEN_STATE_LAST              = 3 
+  SL_GEN_STATE_TAMPERED                       = 2,
+  SL_GEN_STATE_LAST                                        = 3 
 } SL_GENUINE_STATE;
 
 typedef enum _tagSLDATATYPE {
-  SL_DATA_NONE       = REG_NONE,
-  SL_DATA_SZ         = REG_SZ,
-  SL_DATA_DWORD      = REG_DWORD,
+  SL_DATA_NONE                    = REG_NONE,
+  SL_DATA_SZ                      = REG_SZ,
+  SL_DATA_DWORD                   = REG_DWORD,
   SL_DATA_BINARY     = REG_BINARY,
   SL_DATA_MULTI_SZ   = REG_MULTI_SZ,
-  SL_DATA_SUM        = 100 
+  SL_DATA_SUM                     = 100 
 } SLDATATYPE;
 
 typedef struct _tagSL_NONGENUINE_UI_OPTIONS {
-  DWORD      cbSize;
+  DWORD                   cbSize;
   const SLID *pComponentId;
   HRESULT    hResultUI;
 } SL_NONGENUINE_UI_OPTIONS;

@@ -64,19 +64,19 @@ int fesetenv (const fenv_t * envp)
 
   else
     {
-      fenv_t env = *envp;
-      int has_sse = __mingw_has_sse ();
-      int _mxcsr;
-      /*_mxcsr = ((int)envp->__unused0 << 16) | (int)envp->__unused1; *//* mxcsr low and high */
-      if (has_sse)
-        __asm__ ("stmxcsr %0" : "=m" (*&_mxcsr));
-      env.__unused0 = 0xffff;
-      env.__unused1 = 0xffff;
-      __asm__ volatile ("fldenv %0" : : "m" (env)
+                   fenv_t env = *envp;
+                   int has_sse = __mingw_has_sse ();
+                   int _mxcsr;
+                   /*_mxcsr = ((int)envp->__unused0 << 16) | (int)envp->__unused1; *//* mxcsr low and high */
+                   if (has_sse)
+                     __asm__ ("stmxcsr %0" : "=m" (*&_mxcsr));
+                   env.__unused0 = 0xffff;
+                   env.__unused1 = 0xffff;
+                   __asm__ volatile ("fldenv %0" : : "m" (env)
 			: "st", "st(1)", "st(2)", "st(3)", "st(4)",
 			"st(5)", "st(6)", "st(7)");
-      if (has_sse)
-        __asm__ volatile ("ldmxcsr %0" : : "m" (*&_mxcsr));
+                   if (has_sse)
+                     __asm__ volatile ("ldmxcsr %0" : : "m" (*&_mxcsr));
     }
 
 #endif /* defined(_ARM_) || defined(__arm__) || defined(_ARM64_) || defined(__aarch64__) */

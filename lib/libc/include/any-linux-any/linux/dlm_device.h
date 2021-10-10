@@ -93,12 +93,12 @@ struct dlm_lock_result {
 };
 
 /* Commands passed to the device */
-#define DLM_USER_LOCK         1
-#define DLM_USER_UNLOCK       2
-#define DLM_USER_QUERY        3
+#define DLM_USER_LOCK                      1
+#define DLM_USER_UNLOCK                    2
+#define DLM_USER_QUERY                     3
 #define DLM_USER_CREATE_LOCKSPACE  4
 #define DLM_USER_REMOVE_LOCKSPACE  5
-#define DLM_USER_PURGE        6
+#define DLM_USER_PURGE                     6
 #define DLM_USER_DEADLOCK     7
 
 /* Lockspace flags */

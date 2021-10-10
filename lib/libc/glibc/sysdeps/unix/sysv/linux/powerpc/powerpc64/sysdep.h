@@ -60,18 +60,18 @@
     register long int r6  __asm__ ("r6");				\
     register long int r7  __asm__ ("r7");				\
     register long int r8  __asm__ ("r8");				\
-    register type rval  __asm__ ("r3");				        \
+    register type rval  __asm__ ("r3");				                     \
     LOADARGS_##nr (funcptr, args);					\
     __asm__ __volatile__						\
-      ("mtctr %0\n\t"							\
-       "bctrl\n\t"							\
-       "mfcr  %0\n\t"							\
-       "0:"								\
-       : "+r" (r0), "+r" (r3), "+r" (r4), "+r" (r5),  "+r" (r6),        \
-         "+r" (r7), "+r" (r8)						\
-       : : "r9", "r10", "r11", "r12", "cr0", "ctr", "lr", "memory");	\
+                   ("mtctr %0\n\t"							\
+                    "bctrl\n\t"							\
+                    "mfcr  %0\n\t"							\
+                    "0:"								\
+                    : "+r" (r0), "+r" (r3), "+r" (r4), "+r" (r5),  "+r" (r6),                     \
+                      "+r" (r7), "+r" (r8)						\
+                    : : "r9", "r10", "r11", "r12", "cr0", "ctr", "lr", "memory");	\
     err = (long int) r0;						\
-    __asm__ __volatile__ ("" : "=r" (rval) : "r" (r3));		        \
+    __asm__ __volatile__ ("" : "=r" (rval) : "r" (r3));		                     \
     rval;								\
   })
 
@@ -86,10 +86,10 @@
     INTERNAL_SYSCALL_DECL (sc_err);					\
     long int sc_ret = INTERNAL_SYSCALL (name, sc_err, nr, args);	\
     if (INTERNAL_SYSCALL_ERROR_P (sc_ret, sc_err))			\
-      {									\
-        __set_errno (INTERNAL_SYSCALL_ERRNO (sc_ret, sc_err));		\
-        sc_ret = -1L;							\
-      }									\
+                   {									\
+                     __set_errno (INTERNAL_SYSCALL_ERRNO (sc_ret, sc_err));		\
+                     sc_ret = -1L;							\
+                   }									\
     sc_ret;								\
   })
 
@@ -111,15 +111,15 @@
     register long int r8  __asm__ ("r8");				\
     LOADARGS_##nr (name, ##args);					\
     __asm__ __volatile__						\
-      ("sc\n\t"								\
-       "mfcr  %0\n\t"							\
-       "0:"								\
-       : "=&r" (r0),							\
-         "=&r" (r3), "=&r" (r4), "=&r" (r5),				\
-         "=&r" (r6), "=&r" (r7), "=&r" (r8)				\
-       : ASM_INPUT_##nr							\
-       : "r9", "r10", "r11", "r12",					\
-         "cr0", "ctr", "memory");					\
+                   ("sc\n\t"								\
+                    "mfcr  %0\n\t"							\
+                    "0:"								\
+                    : "=&r" (r0),							\
+                      "=&r" (r3), "=&r" (r4), "=&r" (r5),				\
+                      "=&r" (r6), "=&r" (r7), "=&r" (r8)				\
+                    : ASM_INPUT_##nr							\
+                    : "r9", "r10", "r11", "r12",					\
+                      "cr0", "ctr", "memory");					\
 	  err = r0;  \
     r3;  \
   })
@@ -219,7 +219,7 @@
 #define FCNTL_ADJUST_CMD(__cmd)				\
   ({ int cmd_ = (__cmd);				\
      if (cmd_ >= F_GETLK64 && cmd_ <= F_SETLKW64)	\
-       cmd_ -= F_GETLK64 - F_GETLK;			\
+                    cmd_ -= F_GETLK64 - F_GETLK;			\
      cmd_; })
 
 

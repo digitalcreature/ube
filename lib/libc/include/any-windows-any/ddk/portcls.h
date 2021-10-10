@@ -69,19 +69,19 @@
     IDmaChannel
     IDmaChannelSlave
     IDmaOperations
-    IDrmPort                        (XP)
-    IDrmPort2                       (XP)
+    IDrmPort                                                                            (XP)
+    IDrmPort2                                                              (XP)
     IInterruptSync
     IMasterClock
-    IPortClsVersion                 (XP)
+    IPortClsVersion                                           (XP)
     IPortEvents
-    IPreFetchOffset                 (XP)
+    IPreFetchOffset                                           (XP)
     IRegistryKey
     IResourceList
     IServiceGroup
     IServiceSink
     IUnregisterPhysicalConnection   (Vista)
-    IUnregisterSubdevice            (Vista)
+    IUnregisterSubdevice                                      (Vista)
 
     == AUDIO PORT OBJECT INTERFACES ==
     IPort
@@ -100,12 +100,12 @@
     IMiniportWavePci
 
     == AUDIO MINIPORT AUXILIARY INTERFACES ==
-    IMusicTechnology                (XP)
-    IPinCount                       (XP)
+    IMusicTechnology                                          (XP)
+    IPinCount                                                              (XP)
 
     == AUDIO STREAM OBJECT INTERFACES ==
     IAllocatorMXF
-    IDrmAudioStream                 (XP)
+    IDrmAudioStream                                           (XP)
     IMiniportMidiStream
     IMiniportWaveCyclicStream
     IMiniportWavePciStream
@@ -176,16 +176,16 @@ DEFINE_GUID(CLSID_MiniportDriverFmSynthWithVol, 0xe5a3c139L, 0xf0f2, 0x11d1, 0x8
 /* ===============================================================
     Event Item Flags - TODO
 */
-#define PCEVENT_ITEM_FLAG_ENABLE            KSEVENT_TYPE_ENABLE
-#define PCEVENT_ITEM_FLAG_ONESHOT           KSEVENT_TYPE_ONESHOT
-#define PCEVENT_ITEM_FLAG_BASICSUPPORT      KSEVENT_TYPE_BASICSUPPORT
+#define PCEVENT_ITEM_FLAG_ENABLE                                      KSEVENT_TYPE_ENABLE
+#define PCEVENT_ITEM_FLAG_ONESHOT                        KSEVENT_TYPE_ONESHOT
+#define PCEVENT_ITEM_FLAG_BASICSUPPORT                   KSEVENT_TYPE_BASICSUPPORT
 
 
 /* ===============================================================
     Event Verbs - TODO
 */
-#define PCEVENT_VERB_NONE       0
-#define PCEVENT_VERB_ADD        1
+#define PCEVENT_VERB_NONE                    0
+#define PCEVENT_VERB_ADD                     1
 #define PCEVENT_VERB_REMOVE     2
 #define PCEVENT_VERB_SUPPORT    4
 
@@ -193,11 +193,11 @@ DEFINE_GUID(CLSID_MiniportDriverFmSynthWithVol, 0xe5a3c139L, 0xf0f2, 0x11d1, 0x8
 /* ===============================================================
     Method Item Flags - TODO
 */
-#define PCMETHOD_ITEM_FLAG_NONE             KSMETHOD_TYPE_NONE
-#define PCMETHOD_ITEM_FLAG_READ             KSMETHOD_TYPE_READ
-#define PCMETHOD_ITEM_FLAG_WRITE            KSMETHOD_TYPE_WRITE
-#define PCMETHOD_ITEM_FLAG_MODIFY           KSMETHOD_TYPE_MODIFY
-#define PCMETHOD_ITEM_FLAG_SOURCE           KSMETHOD_TYPE_SOURCE
+#define PCMETHOD_ITEM_FLAG_NONE                                       KSMETHOD_TYPE_NONE
+#define PCMETHOD_ITEM_FLAG_READ                                       KSMETHOD_TYPE_READ
+#define PCMETHOD_ITEM_FLAG_WRITE                                      KSMETHOD_TYPE_WRITE
+#define PCMETHOD_ITEM_FLAG_MODIFY                        KSMETHOD_TYPE_MODIFY
+#define PCMETHOD_ITEM_FLAG_SOURCE                        KSMETHOD_TYPE_SOURCE
 
 
 /* ===============================================================
@@ -228,7 +228,7 @@ enum
     kVersionWinXP,
     kVersionWinXPSP1,
     kVersionWinServer2003,
-    kVersionWin2K_UAAQFE,           /* These support IUnregister* interface */
+    kVersionWin2K_UAAQFE,                        /* These support IUnregister* interface */
     kVersionWinXP_UAAQFE,
     kVersionWinServer2003_UAAQFE
 };
@@ -246,21 +246,21 @@ typedef NTSTATUS (NTAPI *PCPFNPROPERTY_HANDLER)(
 
 typedef struct
 {
-    const GUID *            Set;
-    ULONG                   Id;
-    ULONG                   Flags;
-#define PCPROPERTY_ITEM_FLAG_GET            KSPROPERTY_TYPE_GET
-#define PCPROPERTY_ITEM_FLAG_SET            KSPROPERTY_TYPE_SET
+    const GUID *                                      Set;
+    ULONG                                                          Id;
+    ULONG                                                          Flags;
+#define PCPROPERTY_ITEM_FLAG_GET                                      KSPROPERTY_TYPE_GET
+#define PCPROPERTY_ITEM_FLAG_SET                                      KSPROPERTY_TYPE_SET
 #define PCPROPERTY_ITEM_FLAG_BASICSUPPORT   KSPROPERTY_TYPE_BASICSUPPORT
-//not supported #define PCPROPERTY_ITEM_FLAG_RELATIONS      KSPROPERTY_TYPE_RELATIONS
+//not supported #define PCPROPERTY_ITEM_FLAG_RELATIONS                   KSPROPERTY_TYPE_RELATIONS
 #define PCPROPERTY_ITEM_FLAG_SERIALIZERAW   KSPROPERTY_TYPE_SERIALIZERAW
 #define PCPROPERTY_ITEM_FLAG_UNSERIALIZERAW KSPROPERTY_TYPE_UNSERIALIZERAW
 #define PCPROPERTY_ITEM_FLAG_SERIALIZESIZE  KSPROPERTY_TYPE_SERIALIZESIZE
 #define PCPROPERTY_ITEM_FLAG_SERIALIZE\
-        (PCPROPERTY_ITEM_FLAG_SERIALIZERAW\
-        |PCPROPERTY_ITEM_FLAG_UNSERIALIZERAW\
-        |PCPROPERTY_ITEM_FLAG_SERIALIZESIZE\
-        )
+                     (PCPROPERTY_ITEM_FLAG_SERIALIZERAW\
+                     |PCPROPERTY_ITEM_FLAG_UNSERIALIZERAW\
+                     |PCPROPERTY_ITEM_FLAG_SERIALIZESIZE\
+                     )
 #define PCPROPERTY_ITEM_FLAG_DEFAULTVALUES  KSPROPERTY_TYPE_DEFAULTVALUES
     PCPFNPROPERTY_HANDLER   Handler;
 }
@@ -269,16 +269,16 @@ PCPROPERTY_ITEM, *PPCPROPERTY_ITEM;
 
 struct _PCPROPERTY_REQUEST
 {
-    PUNKNOWN                MajorTarget;
-    PUNKNOWN                MinorTarget;
-    ULONG                   Node;
+    PUNKNOWN                                          MajorTarget;
+    PUNKNOWN                                          MinorTarget;
+    ULONG                                                          Node;
     const PCPROPERTY_ITEM * PropertyItem;
-    ULONG                   Verb;
-    ULONG                   InstanceSize;
-    PVOID                   Instance;
-    ULONG                   ValueSize;
-    PVOID                   Value;
-    PIRP                    Irp;
+    ULONG                                                          Verb;
+    ULONG                                                          InstanceSize;
+    PVOID                                                          Instance;
+    ULONG                                                          ValueSize;
+    PVOID                                                          Value;
+    PIRP                                                           Irp;
 };
 
 struct _PCEVENT_REQUEST;
@@ -416,24 +416,24 @@ DECLARE_INTERFACE_(IResourceList, IUnknown)
     STDMETHOD_(ULONG, NumberOfEntries)( THIS ) PURE;
 
     STDMETHOD_(ULONG, NumberOfEntriesOfType)( THIS_
-        IN  CM_RESOURCE_TYPE Type) PURE;
+                     IN  CM_RESOURCE_TYPE Type) PURE;
 
     STDMETHOD_(PCM_PARTIAL_RESOURCE_DESCRIPTOR, FindTranslatedEntry)( THIS_
-        IN  CM_RESOURCE_TYPE Type,
-        IN  ULONG Index) PURE;
+                     IN  CM_RESOURCE_TYPE Type,
+                     IN  ULONG Index) PURE;
 
     STDMETHOD_(PCM_PARTIAL_RESOURCE_DESCRIPTOR, FindUntranslatedEntry)( THIS_
-        IN  CM_RESOURCE_TYPE Type,
-        IN  ULONG Index) PURE;
+                     IN  CM_RESOURCE_TYPE Type,
+                     IN  ULONG Index) PURE;
 
     STDMETHOD_(NTSTATUS, AddEntry)( THIS_
-        IN  PCM_PARTIAL_RESOURCE_DESCRIPTOR Translated,
-        IN  PCM_PARTIAL_RESOURCE_DESCRIPTOR Untranslated) PURE;
+                     IN  PCM_PARTIAL_RESOURCE_DESCRIPTOR Translated,
+                     IN  PCM_PARTIAL_RESOURCE_DESCRIPTOR Untranslated) PURE;
 
     STDMETHOD_(NTSTATUS, AddEntryFromParent)( THIS_
-        IN  IResourceList* Parent,
-        IN  CM_RESOURCE_TYPE Type,
-        IN  ULONG Index) PURE;
+                     IN  IResourceList* Parent,
+                     IN  CM_RESOURCE_TYPE Type,
+                     IN  ULONG Index) PURE;
 
     STDMETHOD_(PCM_RESOURCE_LIST, TranslatedList)( THIS ) PURE;
     STDMETHOD_(PCM_RESOURCE_LIST, UntranslatedList)( THIS ) PURE;
@@ -443,24 +443,24 @@ DECLARE_INTERFACE_(IResourceList, IUnknown)
     STDMETHODIMP_(ULONG) NumberOfEntries(void); \
 \
     STDMETHODIMP_(ULONG) NumberOfEntriesOfType( \
-        IN  CM_RESOURCE_TYPE Type); \
+                     IN  CM_RESOURCE_TYPE Type); \
 \
     STDMETHODIMP_(PCM_PARTIAL_RESOURCE_DESCRIPTOR) FindTranslatedEntry( \
-        IN  CM_RESOURCE_TYPE Type, \
-        IN  ULONG Index); \
+                     IN  CM_RESOURCE_TYPE Type, \
+                     IN  ULONG Index); \
 \
     STDMETHODIMP_(PCM_PARTIAL_RESOURCE_DESCRIPTOR) FindUntranslatedEntry( \
-        IN  CM_RESOURCE_TYPE Type, \
-        IN  ULONG Index); \
+                     IN  CM_RESOURCE_TYPE Type, \
+                     IN  ULONG Index); \
 \
     STDMETHODIMP_(NTSTATUS) AddEntry( \
-        IN  PCM_PARTIAL_RESOURCE_DESCRIPTOR Translated, \
-        IN  PCM_PARTIAL_RESOURCE_DESCRIPTOR Untranslated); \
+                     IN  PCM_PARTIAL_RESOURCE_DESCRIPTOR Translated, \
+                     IN  PCM_PARTIAL_RESOURCE_DESCRIPTOR Untranslated); \
 \
     STDMETHODIMP_(NTSTATUS) AddEntryFromParent( \
-        IN  IResourceList* Parent, \
-        IN  CM_RESOURCE_TYPE Type, \
-        IN  ULONG Index); \
+                     IN  IResourceList* Parent, \
+                     IN  CM_RESOURCE_TYPE Type, \
+                     IN  ULONG Index); \
 \
     STDMETHODIMP_(PCM_RESOURCE_LIST) TranslatedList(void); \
     STDMETHODIMP_(PCM_RESOURCE_LIST) UntranslatedList(void);
@@ -612,15 +612,15 @@ DECLARE_INTERFACE_(IServiceGroup, IServiceSink)
     STDMETHOD_(void, RequestService)( THIS ) PURE;  /* IServiceSink */
 
     STDMETHOD_(NTSTATUS, AddMember)( THIS_
-        IN  PSERVICESINK pServiceSink) PURE;
+                     IN  PSERVICESINK pServiceSink) PURE;
 
     STDMETHOD_(void, RemoveMember)( THIS_
-        IN  PSERVICESINK pServiceSink) PURE;
+                     IN  PSERVICESINK pServiceSink) PURE;
 
     STDMETHOD_(void, SupportDelayedService)( THIS ) PURE;
 
     STDMETHOD_(void, RequestDelayedService)( THIS_
-        IN  ULONGLONG ullDelay) PURE;
+                     IN  ULONGLONG ullDelay) PURE;
 
     STDMETHOD_(void, CancelDelayedService)( THIS ) PURE;
 };
@@ -629,15 +629,15 @@ DECLARE_INTERFACE_(IServiceGroup, IServiceSink)
     IMP_IServiceSink; \
 \
     STDMETHODIMP_(NTSTATUS) AddMember( \
-        IN  PSERVICESINK pServiceSink); \
+                     IN  PSERVICESINK pServiceSink); \
 \
     STDMETHODIMP_(void) RemoveMember( \
-        IN  PSERVICESINK pServiceSink); \
+                     IN  PSERVICESINK pServiceSink); \
 \
     STDMETHODIMP_(void) SupportDelayedService(void); \
 \
     STDMETHODIMP_(void) RequestDelayedService( \
-        IN  ULONGLONG ullDelay); \
+                     IN  ULONGLONG ullDelay); \
 \
     STDMETHODIMP_(void) CancelDelayedService(void);
 
@@ -659,16 +659,16 @@ DECLARE_INTERFACE_(IUnregisterSubdevice,IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS,UnregisterSubdevice)(THIS_
-        IN  PDEVICE_OBJECT  DeviceObject,
-        IN  PUNKNOWN        Unknown)PURE;
+                     IN  PDEVICE_OBJECT  DeviceObject,
+                     IN  PUNKNOWN                     Unknown)PURE;
 };
 
 typedef IUnregisterSubdevice *PUNREGISTERSUBDEVICE;
 
-#define IMP_IUnregisterSubdevice                        \
+#define IMP_IUnregisterSubdevice                                                                            \
     STDMETHODIMP_(NTSTATUS) UnregisterSubdevice(THIS_   \
-        IN  PDEVICE_OBJECT  DeviceObject,               \
-        IN  PUNKNOWN        Unknown)
+                     IN  PDEVICE_OBJECT  DeviceObject,                                         \
+                     IN  PUNKNOWN                     Unknown)
 
 /* ===============================================================
     IUnregisterPhysicalConnection Interface
@@ -684,51 +684,51 @@ DECLARE_INTERFACE_(IUnregisterPhysicalConnection,IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS,UnregisterPhysicalConnection)(THIS_
-        IN  PDEVICE_OBJECT  DeviceObject,
-        IN  PUNKNOWN        FromUnknown,
-        IN  ULONG           FromPin,
-        IN  PUNKNOWN        ToUnknown,
-        IN  ULONG           ToPin)PURE;
+                     IN  PDEVICE_OBJECT  DeviceObject,
+                     IN  PUNKNOWN                     FromUnknown,
+                     IN  ULONG                        FromPin,
+                     IN  PUNKNOWN                     ToUnknown,
+                     IN  ULONG                        ToPin)PURE;
 
     STDMETHOD_(NTSTATUS,UnregisterPhysicalConnectionToExternal)(THIS_
-        IN  PDEVICE_OBJECT  DeviceObject,
-        IN  PUNKNOWN        FromUnknown,
-        IN  ULONG           FromPin,
-        IN  PUNICODE_STRING ToString,
-        IN  ULONG           ToPin)PURE;
+                     IN  PDEVICE_OBJECT  DeviceObject,
+                     IN  PUNKNOWN                     FromUnknown,
+                     IN  ULONG                        FromPin,
+                     IN  PUNICODE_STRING ToString,
+                     IN  ULONG                        ToPin)PURE;
 
     STDMETHOD_(NTSTATUS,UnregisterPhysicalConnectionFromExternal)(THIS_
-        IN  PDEVICE_OBJECT  DeviceObject,
-        IN  PUNICODE_STRING FromString,
-        IN  ULONG           FromPin,
-        IN  PUNKNOWN        ToUnknown,
-        IN  ULONG           ToPin)PURE;
+                     IN  PDEVICE_OBJECT  DeviceObject,
+                     IN  PUNICODE_STRING FromString,
+                     IN  ULONG                        FromPin,
+                     IN  PUNKNOWN                     ToUnknown,
+                     IN  ULONG                        ToPin)PURE;
 };
 
 typedef IUnregisterPhysicalConnection *PUNREGISTERPHYSICALCONNECTION;
 #endif
 
-#define IMP_IUnregisterPhysicalConnection                                    \
-    STDMETHODIMP_(NTSTATUS) UnregisterPhysicalConnection(                    \
-        IN  PDEVICE_OBJECT  DeviceObject,                                    \
-        IN  PUNKNOWN        FromUnknown,                                     \
-        IN  ULONG           FromPin,                                         \
-        IN  PUNKNOWN        ToUnknown,                                       \
-        IN  ULONG           ToPin);                                          \
-                                                                             \
-    STDMETHODIMP_(NTSTATUS) UnregisterPhysicalConnectionToExternal(          \
-        IN  PDEVICE_OBJECT  DeviceObject,                                    \
-        IN  PUNKNOWN        FromUnknown,                                     \
-        IN  ULONG           FromPin,                                         \
-        IN  PUNICODE_STRING ToString,                                        \
-        IN  ULONG           ToPin);                                          \
-                                                                             \
-    STDMETHODIMP_(NTSTATUS) UnregisterPhysicalConnectionFromExternal(        \
-        IN  PDEVICE_OBJECT  DeviceObject,                                    \
-        IN  PUNICODE_STRING FromString,                                      \
-        IN  ULONG           FromPin,                                         \
-        IN  PUNKNOWN        ToUnknown,                                       \
-        IN  ULONG           ToPin)
+#define IMP_IUnregisterPhysicalConnection                                                                                                                  \
+    STDMETHODIMP_(NTSTATUS) UnregisterPhysicalConnection(                                                           \
+                     IN  PDEVICE_OBJECT  DeviceObject,                                                                                                                  \
+                     IN  PUNKNOWN                     FromUnknown,                                                                                                                   \
+                     IN  ULONG                        FromPin,                                                                                                                       \
+                     IN  PUNKNOWN                     ToUnknown,                                                                                                                     \
+                     IN  ULONG                        ToPin);                                                                                                                                     \
+                                                                                                                                                                                                                                         \
+    STDMETHODIMP_(NTSTATUS) UnregisterPhysicalConnectionToExternal(                       \
+                     IN  PDEVICE_OBJECT  DeviceObject,                                                                                                                  \
+                     IN  PUNKNOWN                     FromUnknown,                                                                                                                   \
+                     IN  ULONG                        FromPin,                                                                                                                       \
+                     IN  PUNICODE_STRING ToString,                                                                                                                      \
+                     IN  ULONG                        ToPin);                                                                                                                                     \
+                                                                                                                                                                                                                                         \
+    STDMETHODIMP_(NTSTATUS) UnregisterPhysicalConnectionFromExternal(                     \
+                     IN  PDEVICE_OBJECT  DeviceObject,                                                                                                                  \
+                     IN  PUNICODE_STRING FromString,                                                                                                                    \
+                     IN  ULONG                        FromPin,                                                                                                                       \
+                     IN  PUNKNOWN                     ToUnknown,                                                                                                                     \
+                     IN  ULONG                        ToPin)
 
 
 /* ===============================================================
@@ -737,8 +737,8 @@ typedef IUnregisterPhysicalConnection *PUNREGISTERPHYSICALCONNECTION;
 
 #define DEFINE_ABSTRACT_DMACHANNEL() \
     STDMETHOD_(NTSTATUS, AllocateBuffer)( THIS_ \
-        IN  ULONG BufferSize, \
-        IN  PPHYSICAL_ADDRESS PhysicalAddressConstraint OPTIONAL) PURE; \
+                     IN  ULONG BufferSize, \
+                     IN  PPHYSICAL_ADDRESS PhysicalAddressConstraint OPTIONAL) PURE; \
 \
     STDMETHOD_(void, FreeBuffer)( THIS ) PURE; \
     STDMETHOD_(ULONG, TransferCount)( THIS ) PURE; \
@@ -747,49 +747,49 @@ typedef IUnregisterPhysicalConnection *PUNREGISTERPHYSICALCONNECTION;
     STDMETHOD_(ULONG, BufferSize)( THIS ) PURE; \
 \
     STDMETHOD_(void, SetBufferSize)( THIS_ \
-        IN  ULONG BufferSize) PURE; \
+                     IN  ULONG BufferSize) PURE; \
 \
     STDMETHOD_(PVOID, SystemAddress)( THIS ) PURE; \
     STDMETHOD_(PHYSICAL_ADDRESS, PhysicalAddress)( THIS ) PURE; \
     STDMETHOD_(PADAPTER_OBJECT, GetAdapterObject)( THIS ) PURE; \
 \
     STDMETHOD_(void, CopyTo)( THIS_ \
-        IN  PVOID Destination, \
-        IN  PVOID Source, \
-        IN  ULONG ByteCount) PURE; \
+                     IN  PVOID Destination, \
+                     IN  PVOID Source, \
+                     IN  ULONG ByteCount) PURE; \
 \
     STDMETHOD_(void, CopyFrom)( THIS_ \
-        IN  PVOID Destination, \
-        IN  PVOID Source, \
-        IN  ULONG ByteCount) PURE;
+                     IN  PVOID Destination, \
+                     IN  PVOID Source, \
+                     IN  ULONG ByteCount) PURE;
 
-#define IMP_IDmaChannel                                                   \
-    STDMETHODIMP_(NTSTATUS) AllocateBuffer(                               \
-        IN  ULONG BufferSize,                                             \
-        IN  PPHYSICAL_ADDRESS PhysicalAddressConstraint OPTIONAL);        \
-                                                                          \
-    STDMETHODIMP_(void) FreeBuffer(void);                                 \
-    STDMETHODIMP_(ULONG) TransferCount(void);                             \
-    STDMETHODIMP_(ULONG) MaximumBufferSize(void);                         \
-    STDMETHODIMP_(ULONG) AllocatedBufferSize(void);                       \
-    STDMETHODIMP_(ULONG) BufferSize(void);                                \
-                                                                          \
-    STDMETHODIMP_(void) SetBufferSize(                                    \
-        IN  ULONG BufferSize);                                            \
-                                                                          \
-    STDMETHODIMP_(PVOID) SystemAddress(void);                             \
-    STDMETHODIMP_(PHYSICAL_ADDRESS) PhysicalAddress(void);                \
-    STDMETHODIMP_(PADAPTER_OBJECT) GetAdapterObject(void);                \
-                                                                          \
-    STDMETHODIMP_(void) CopyTo(                                           \
-        IN  PVOID Destination,                                            \
-        IN  PVOID Source,                                                 \
-        IN  ULONG ByteCount);                                             \
-                                                                          \
-    STDMETHODIMP_(void) CopyFrom(                                         \
-        IN  PVOID Destination,                                            \
-        IN  PVOID Source,                                                 \
-        IN  ULONG ByteCount)
+#define IMP_IDmaChannel                                                                                                                                                           \
+    STDMETHODIMP_(NTSTATUS) AllocateBuffer(                                                                                                \
+                     IN  ULONG BufferSize,                                                                                                                                        \
+                     IN  PPHYSICAL_ADDRESS PhysicalAddressConstraint OPTIONAL);                     \
+                                                                                                                                                                                                                                      \
+    STDMETHODIMP_(void) FreeBuffer(void);                                                                                                  \
+    STDMETHODIMP_(ULONG) TransferCount(void);                                                                                 \
+    STDMETHODIMP_(ULONG) MaximumBufferSize(void);                                                                             \
+    STDMETHODIMP_(ULONG) AllocatedBufferSize(void);                                                              \
+    STDMETHODIMP_(ULONG) BufferSize(void);                                                                                                 \
+                                                                                                                                                                                                                                      \
+    STDMETHODIMP_(void) SetBufferSize(                                                                                                                  \
+                     IN  ULONG BufferSize);                                                                                                                                       \
+                                                                                                                                                                                                                                      \
+    STDMETHODIMP_(PVOID) SystemAddress(void);                                                                                 \
+    STDMETHODIMP_(PHYSICAL_ADDRESS) PhysicalAddress(void);                                          \
+    STDMETHODIMP_(PADAPTER_OBJECT) GetAdapterObject(void);                                          \
+                                                                                                                                                                                                                                      \
+    STDMETHODIMP_(void) CopyTo(                                                                                                                                      \
+                     IN  PVOID Destination,                                                                                                                                       \
+                     IN  PVOID Source,                                                                                                                                                         \
+                     IN  ULONG ByteCount);                                                                                                                                        \
+                                                                                                                                                                                                                                      \
+    STDMETHODIMP_(void) CopyFrom(                                                                                                                       \
+                     IN  PVOID Destination,                                                                                                                                       \
+                     IN  PVOID Source,                                                                                                                                                         \
+                     IN  ULONG ByteCount)
 
 #undef INTERFACE
 #define INTERFACE IDmaChannel
@@ -811,26 +811,26 @@ typedef IDmaChannel *PDMACHANNEL;
 
 #define DEFINE_ABSTRACT_DMACHANNELSLAVE() \
     STDMETHOD_(NTSTATUS, Start)( THIS_ \
-        IN  ULONG MapSize, \
-        IN  BOOLEAN WriteToDevice) PURE; \
+                     IN  ULONG MapSize, \
+                     IN  BOOLEAN WriteToDevice) PURE; \
 \
     STDMETHOD_(NTSTATUS, Stop)( THIS ) PURE; \
     STDMETHOD_(ULONG, ReadCounter)( THIS ) PURE; \
 \
     STDMETHOD_(NTSTATUS, WaitForTC)( THIS_ \
-        ULONG Timeout) PURE;
+                     ULONG Timeout) PURE;
 
-#define IMP_IDmaChannelSlave                   \
-    IMP_IDmaChannel;                           \
-    STDMETHODIMP_(NTSTATUS) Start(             \
-        IN  ULONG MapSize,                     \
-        IN  BOOLEAN WriteToDevice);            \
-                                               \
-    STDMETHODIMP_(NTSTATUS) Stop(void);        \
+#define IMP_IDmaChannelSlave                                                          \
+    IMP_IDmaChannel;                                                                               \
+    STDMETHODIMP_(NTSTATUS) Start(                                       \
+                     IN  ULONG MapSize,                                                            \
+                     IN  BOOLEAN WriteToDevice);                                      \
+                                                                                                                                          \
+    STDMETHODIMP_(NTSTATUS) Stop(void);                     \
     STDMETHODIMP_(ULONG) ReadCounter(void);    \
-                                               \
-    STDMETHODIMP_(NTSTATUS) WaitForTC(         \
-        ULONG Timeout)
+                                                                                                                                          \
+    STDMETHODIMP_(NTSTATUS) WaitForTC(                      \
+                     ULONG Timeout)
 
 #undef INTERFACE
 #define INTERFACE IDmaChannelSlave
@@ -877,34 +877,34 @@ DECLARE_INTERFACE_(IInterruptSync, IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS, CallSynchronizedRoutine)( THIS_
-        IN  PINTERRUPTSYNCROUTINE Routine,
-        IN  PVOID DynamicContext) PURE;
+                     IN  PINTERRUPTSYNCROUTINE Routine,
+                     IN  PVOID DynamicContext) PURE;
 
     STDMETHOD_(PKINTERRUPT, GetKInterrupt)( THIS ) PURE;
     STDMETHOD_(NTSTATUS, Connect)( THIS ) PURE;
     STDMETHOD_(void, Disconnect)( THIS ) PURE;
 
     STDMETHOD_(NTSTATUS, RegisterServiceRoutine)( THIS_
-        IN  PINTERRUPTSYNCROUTINE Routine,
-        IN  PVOID DynamicContext,
-        IN  BOOLEAN First) PURE;
+                     IN  PINTERRUPTSYNCROUTINE Routine,
+                     IN  PVOID DynamicContext,
+                     IN  BOOLEAN First) PURE;
 };
 
 DEFINE_GUID(IID_IInterruptSync, 0x22C6AC63L, 0x851B, 0x11D0, 0x9A, 0x7F, 0x00, 0xAA, 0x00, 0x38, 0xAC, 0xFE);
 
-#define IMP_IInterruptSync                           \
+#define IMP_IInterruptSync                                                                               \
     STDMETHODIMP_(NTSTATUS) CallSynchronizedRoutine( \
-        IN  PINTERRUPTSYNCROUTINE Routine,           \
-        IN  PVOID DynamicContext);                   \
-                                                     \
+                     IN  PINTERRUPTSYNCROUTINE Routine,                        \
+                     IN  PVOID DynamicContext);                                                          \
+                                                                                                                                                             \
     STDMETHODIMP_(PKINTERRUPT) GetKInterrupt(void);  \
-    STDMETHODIMP_(NTSTATUS) Connect(void);           \
-    STDMETHODIMP_(void) Disconnect(void);            \
-                                                     \
+    STDMETHODIMP_(NTSTATUS) Connect(void);                        \
+    STDMETHODIMP_(void) Disconnect(void);                                      \
+                                                                                                                                                             \
     STDMETHODIMP_(NTSTATUS) RegisterServiceRoutine(  \
-        IN  PINTERRUPTSYNCROUTINE Routine,           \
-        IN  PVOID DynamicContext,                    \
-        IN  BOOLEAN First)
+                     IN  PINTERRUPTSYNCROUTINE Routine,                        \
+                     IN  PVOID DynamicContext,                                                           \
+                     IN  BOOLEAN First)
 
 typedef IInterruptSync *PINTERRUPTSYNC;
 
@@ -932,98 +932,98 @@ DECLARE_INTERFACE_(IRegistryKey, IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS, QueryKey)( THIS_
-        IN  KEY_INFORMATION_CLASS KeyInformationClass,
-        OUT PVOID KeyInformation,
-        IN  ULONG Length,
-        OUT PULONG ResultLength) PURE;
+                     IN  KEY_INFORMATION_CLASS KeyInformationClass,
+                     OUT PVOID KeyInformation,
+                     IN  ULONG Length,
+                     OUT PULONG ResultLength) PURE;
 
     STDMETHOD_(NTSTATUS, EnumerateKey)( THIS_
-        IN  ULONG Index,
-        IN  KEY_INFORMATION_CLASS KeyInformationClass,
-        OUT PVOID KeyInformation,
-        IN  ULONG Length,
-        OUT PULONG ResultLength) PURE;
+                     IN  ULONG Index,
+                     IN  KEY_INFORMATION_CLASS KeyInformationClass,
+                     OUT PVOID KeyInformation,
+                     IN  ULONG Length,
+                     OUT PULONG ResultLength) PURE;
 
     STDMETHOD_(NTSTATUS, QueryValueKey)( THIS_
-        IN  PUNICODE_STRING ValueName,
-        IN  KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
-        OUT PVOID KeyValueInformation,
-        IN  ULONG Length,
-        OUT PULONG ResultLength) PURE;
+                     IN  PUNICODE_STRING ValueName,
+                     IN  KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
+                     OUT PVOID KeyValueInformation,
+                     IN  ULONG Length,
+                     OUT PULONG ResultLength) PURE;
 
     STDMETHOD_(NTSTATUS, EnumerateValueKey)( THIS_
-        IN  ULONG Index,
-        IN  KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
-        OUT PVOID KeyValueInformation,
-        IN  ULONG Length,
-        OUT PULONG ResultLength) PURE;
+                     IN  ULONG Index,
+                     IN  KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
+                     OUT PVOID KeyValueInformation,
+                     IN  ULONG Length,
+                     OUT PULONG ResultLength) PURE;
 
     STDMETHOD_(NTSTATUS, SetValueKey)( THIS_
-        IN  PUNICODE_STRING ValueName OPTIONAL,
-        IN  ULONG Type,
-        IN  PVOID Data,
-        IN  ULONG DataSize) PURE;
+                     IN  PUNICODE_STRING ValueName OPTIONAL,
+                     IN  ULONG Type,
+                     IN  PVOID Data,
+                     IN  ULONG DataSize) PURE;
 
     STDMETHOD_(NTSTATUS, QueryRegistryValues)( THIS_
-        IN  PRTL_QUERY_REGISTRY_TABLE QueryTable,
-        IN  PVOID Context OPTIONAL) PURE;
+                     IN  PRTL_QUERY_REGISTRY_TABLE QueryTable,
+                     IN  PVOID Context OPTIONAL) PURE;
 
     STDMETHOD_(NTSTATUS, NewSubKey)( THIS_
-        OUT IRegistryKey** RegistrySubKey,
-        IN  PUNKNOWN OuterUnknown,
-        IN  ACCESS_MASK DesiredAccess,
-        IN  PUNICODE_STRING SubKeyName,
-        IN  ULONG CreateOptions,
-        OUT PULONG Disposition OPTIONAL) PURE;
+                     OUT IRegistryKey** RegistrySubKey,
+                     IN  PUNKNOWN OuterUnknown,
+                     IN  ACCESS_MASK DesiredAccess,
+                     IN  PUNICODE_STRING SubKeyName,
+                     IN  ULONG CreateOptions,
+                     OUT PULONG Disposition OPTIONAL) PURE;
 
     STDMETHOD_(NTSTATUS, DeleteKey)( THIS ) PURE;
 };
 
 #define IMP_IRegistryKey \
     STDMETHODIMP_(NTSTATUS) QueryKey( \
-        IN  KEY_INFORMATION_CLASS KeyInformationClass, \
-        OUT PVOID KeyInformation, \
-        IN  ULONG Length, \
-        OUT PULONG ResultLength); \
+                     IN  KEY_INFORMATION_CLASS KeyInformationClass, \
+                     OUT PVOID KeyInformation, \
+                     IN  ULONG Length, \
+                     OUT PULONG ResultLength); \
 \
     STDMETHODIMP_(NTSTATUS) EnumerateKey( \
-        IN  ULONG Index, \
-        IN  KEY_INFORMATION_CLASS KeyInformationClass, \
-        OUT PVOID KeyInformation, \
-        IN  ULONG Length, \
-        OUT PULONG ResultLength); \
+                     IN  ULONG Index, \
+                     IN  KEY_INFORMATION_CLASS KeyInformationClass, \
+                     OUT PVOID KeyInformation, \
+                     IN  ULONG Length, \
+                     OUT PULONG ResultLength); \
 \
     STDMETHODIMP_(NTSTATUS) QueryValueKey( \
-        IN  PUNICODE_STRING ValueName, \
-        IN  KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass, \
-        OUT PVOID KeyValueInformation, \
-        IN  ULONG Length, \
-        OUT PULONG ResultLength); \
+                     IN  PUNICODE_STRING ValueName, \
+                     IN  KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass, \
+                     OUT PVOID KeyValueInformation, \
+                     IN  ULONG Length, \
+                     OUT PULONG ResultLength); \
 \
     STDMETHODIMP_(NTSTATUS) EnumerateValueKey( \
-        IN  ULONG Index, \
-        IN  KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass, \
-        OUT PVOID KeyValueInformation, \
-        IN  ULONG Length, \
-        OUT PULONG ResultLength); \
+                     IN  ULONG Index, \
+                     IN  KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass, \
+                     OUT PVOID KeyValueInformation, \
+                     IN  ULONG Length, \
+                     OUT PULONG ResultLength); \
 \
     STDMETHODIMP_(NTSTATUS) SetValueKey( \
-        IN  PUNICODE_STRING ValueName OPTIONAL, \
-        IN  ULONG Type, \
-        IN  PVOID Data, \
-        IN  ULONG DataSize); \
+                     IN  PUNICODE_STRING ValueName OPTIONAL, \
+                     IN  ULONG Type, \
+                     IN  PVOID Data, \
+                     IN  ULONG DataSize); \
 \
     STDMETHODIMP_(NTSTATUS) QueryRegistryValues( \
-        IN  PRTL_QUERY_REGISTRY_TABLE QueryTable, \
-        IN  PVOID Context OPTIONAL); \
+                     IN  PRTL_QUERY_REGISTRY_TABLE QueryTable, \
+                     IN  PVOID Context OPTIONAL); \
 \
     STDMETHODIMP_(NTSTATUS) NewSubKey( \
-        OUT IRegistryKey** RegistrySubKey, \
-        IN  PUNKNOWN OuterUnknown, \
-        IN  ACCESS_MASK DesiredAccess, \
-        IN  PUNICODE_STRING SubKeyName, \
-        IN  ULONG CreateOptions, \
-        OUT PULONG Disposition OPTIONAL); \
+                     OUT IRegistryKey** RegistrySubKey, \
+                     IN  PUNKNOWN OuterUnknown, \
+                     IN  ACCESS_MASK DesiredAccess, \
+                     IN  PUNICODE_STRING SubKeyName, \
+                     IN  ULONG CreateOptions, \
+                     OUT PULONG Disposition OPTIONAL); \
 \
     STDMETHODIMP_(NTSTATUS) DeleteKey(void);
 
@@ -1039,12 +1039,12 @@ DECLARE_INTERFACE_(IMusicTechnology, IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS, SetTechnology)( THIS_
-        IN  const GUID* Technology) PURE;
+                     IN  const GUID* Technology) PURE;
 };
 
 #define IMP_IMusicTechnology \
     STDMETHODIMP_(NTSTATUS) SetTechnology( \
-        IN  const GUID* Technology);
+                     IN  const GUID* Technology);
 
 typedef IMusicTechnology *PMUSICTECHNOLOGY;
 
@@ -1067,50 +1067,50 @@ DEFINE_GUID(IID_IPort,
 
 #define DEFINE_ABSTRACT_PORT() \
     STDMETHOD_(NTSTATUS, Init)( THIS_ \
-        IN  PDEVICE_OBJECT DeviceObject, \
-        IN  PIRP Irp, \
-        IN  PUNKNOWN UnknownMiniport, \
-        IN  PUNKNOWN UnknownAdapter OPTIONAL, \
-        IN  PRESOURCELIST ResourceList) PURE; \
+                     IN  PDEVICE_OBJECT DeviceObject, \
+                     IN  PIRP Irp, \
+                     IN  PUNKNOWN UnknownMiniport, \
+                     IN  PUNKNOWN UnknownAdapter OPTIONAL, \
+                     IN  PRESOURCELIST ResourceList) PURE; \
 \
     STDMETHOD_(NTSTATUS, GetDeviceProperty)( THIS_ \
-        IN  DEVICE_REGISTRY_PROPERTY DeviceProperty, \
-        IN  ULONG BufferLength, \
-        OUT PVOID PropertyBuffer, \
-        OUT PULONG ResultLength) PURE; \
+                     IN  DEVICE_REGISTRY_PROPERTY DeviceProperty, \
+                     IN  ULONG BufferLength, \
+                     OUT PVOID PropertyBuffer, \
+                     OUT PULONG ResultLength) PURE; \
 \
     STDMETHOD_(NTSTATUS, NewRegistryKey)( THIS_ \
-        OUT PREGISTRYKEY* OutRegistryKey, \
-        IN  PUNKNOWN OuterUnknown OPTIONAL, \
-        IN  ULONG RegistryKeyType, \
-        IN  ACCESS_MASK DesiredAccess, \
-        IN  POBJECT_ATTRIBUTES ObjectAttributes OPTIONAL, \
-        IN  ULONG CreateOptiona OPTIONAL, \
-        OUT PULONG Disposition OPTIONAL) PURE;
+                     OUT PREGISTRYKEY* OutRegistryKey, \
+                     IN  PUNKNOWN OuterUnknown OPTIONAL, \
+                     IN  ULONG RegistryKeyType, \
+                     IN  ACCESS_MASK DesiredAccess, \
+                     IN  POBJECT_ATTRIBUTES ObjectAttributes OPTIONAL, \
+                     IN  ULONG CreateOptiona OPTIONAL, \
+                     OUT PULONG Disposition OPTIONAL) PURE;
 
 #ifdef PC_IMPLEMENTATION
 #define IMP_IPort\
     STDMETHODIMP_(NTSTATUS) Init\
-    (   IN      PDEVICE_OBJECT  DeviceObject,\
-        IN      PIRP            Irp,\
-        IN      PUNKNOWN        UnknownMiniport,\
-        IN      PUNKNOWN        UnknownAdapter      OPTIONAL,\
-        IN      PRESOURCELIST   ResourceList\
+    (   IN                   PDEVICE_OBJECT  DeviceObject,\
+                     IN                   PIRP                                      Irp,\
+                     IN                   PUNKNOWN                     UnknownMiniport,\
+                     IN                   PUNKNOWN                     UnknownAdapter                   OPTIONAL,\
+                     IN                   PRESOURCELIST   ResourceList\
     );\
     STDMETHODIMP_(NTSTATUS) GetDeviceProperty\
-    (   IN      DEVICE_REGISTRY_PROPERTY    DeviceProperty,\
-        IN      ULONG                       BufferLength,\
-        OUT     PVOID                       PropertyBuffer,\
-        OUT     PULONG                      ResultLength\
+    (   IN                   DEVICE_REGISTRY_PROPERTY    DeviceProperty,\
+                     IN                   ULONG                                                              BufferLength,\
+                     OUT     PVOID                                                              PropertyBuffer,\
+                     OUT     PULONG                                                             ResultLength\
     );\
     STDMETHODIMP_(NTSTATUS) NewRegistryKey\
-    (   OUT     PREGISTRYKEY *      OutRegistryKey,\
-        IN      PUNKNOWN            OuterUnknown        OPTIONAL,\
-        IN      ULONG               RegistryKeyType,\
-        IN      ACCESS_MASK         DesiredAccess,\
-        IN      POBJECT_ATTRIBUTES  ObjectAttributes    OPTIONAL,\
-        IN      ULONG               CreateOptions       OPTIONAL,\
-        OUT     PULONG              Disposition         OPTIONAL\
+    (   OUT     PREGISTRYKEY *                   OutRegistryKey,\
+                     IN                   PUNKNOWN                                      OuterUnknown                     OPTIONAL,\
+                     IN                   ULONG                                         RegistryKeyType,\
+                     IN                   ACCESS_MASK                      DesiredAccess,\
+                     IN                   POBJECT_ATTRIBUTES  ObjectAttributes    OPTIONAL,\
+                     IN                   ULONG                                         CreateOptions                    OPTIONAL,\
+                     OUT     PULONG                                        Disposition                      OPTIONAL\
     )
 #endif
 
@@ -1144,20 +1144,20 @@ DECLARE_INTERFACE_(IPortMidi, IPort)
     DEFINE_ABSTRACT_PORT()
 
     STDMETHOD_(VOID, Notify)(THIS_
-        IN  PSERVICEGROUP ServiceGroup OPTIONAL) PURE;
+                     IN  PSERVICEGROUP ServiceGroup OPTIONAL) PURE;
 
     STDMETHOD_(NTSTATUS, RegisterServiceGroup)(THIS_
-        IN  PSERVICEGROUP ServiceGroup) PURE;
+                     IN  PSERVICEGROUP ServiceGroup) PURE;
 };
 
 typedef IPortMidi *PPORTMIDI;
 
 #define IMP_IPortMidi() \
     STDMETHODIMP_(VOID) Notify( \
-        IN  PSERVICEGROUP ServiceGroup OPTIONAL); \
+                     IN  PSERVICEGROUP ServiceGroup OPTIONAL); \
 \
     STDMETHODIMP_(NTSTATUS) RegisterServiceGroup( \
-        IN  PSERVICEGROUP ServiceGroup);
+                     IN  PSERVICEGROUP ServiceGroup);
 
 #undef INTERFACE
 
@@ -1179,55 +1179,55 @@ DECLARE_INTERFACE_(IPortWaveCyclic, IPort)
     DEFINE_ABSTRACT_PORT()
 
     STDMETHOD_(VOID, Notify)(THIS_
-        IN  PSERVICEGROUP ServiceGroup) PURE;
+                     IN  PSERVICEGROUP ServiceGroup) PURE;
 
     STDMETHOD_(NTSTATUS, NewSlaveDmaChannel)(THIS_
-        OUT PDMACHANNELSLAVE* DmaChannel,
-        IN  PUNKNOWN OuterUnknown,
-        IN  PRESOURCELIST ResourceList OPTIONAL,
-        IN  ULONG DmaIndex,
-        IN  ULONG MaximumLength,
-        IN  BOOLEAN DemandMode,
-        IN  DMA_SPEED DmaSpeed) PURE;
+                     OUT PDMACHANNELSLAVE* DmaChannel,
+                     IN  PUNKNOWN OuterUnknown,
+                     IN  PRESOURCELIST ResourceList OPTIONAL,
+                     IN  ULONG DmaIndex,
+                     IN  ULONG MaximumLength,
+                     IN  BOOLEAN DemandMode,
+                     IN  DMA_SPEED DmaSpeed) PURE;
 
     STDMETHOD_(NTSTATUS, NewMasterDmaChannel)(THIS_
-        OUT PDMACHANNEL* DmaChannel,
-        IN  PUNKNOWN OuterUnknown,
-        IN  PRESOURCELIST ResourceList OPTIONAL,
-        IN  ULONG MaximumLength,
-        IN  BOOLEAN Dma32BitAddresses,
-        IN  BOOLEAN Dma64BitAddresses,
-        IN  DMA_WIDTH DmaWidth,
-        IN  DMA_SPEED DmaSpeed) PURE;
+                     OUT PDMACHANNEL* DmaChannel,
+                     IN  PUNKNOWN OuterUnknown,
+                     IN  PRESOURCELIST ResourceList OPTIONAL,
+                     IN  ULONG MaximumLength,
+                     IN  BOOLEAN Dma32BitAddresses,
+                     IN  BOOLEAN Dma64BitAddresses,
+                     IN  DMA_WIDTH DmaWidth,
+                     IN  DMA_SPEED DmaSpeed) PURE;
 
 };
 
 typedef IPortWaveCyclic *PPORTWAVECYCLIC;
 
 #ifdef PC_IMPLEMENTATION
-#define IMP_IPortWaveCyclic                           \
-    IMP_IPort;                                        \
-    STDMETHODIMP_(VOID) Notify(                       \
-        IN  PSERVICEGROUP ServiceGroup);              \
-                                                      \
-    STDMETHODIMP_(NTSTATUS) NewSlaveDmaChannel(       \
-        OUT PDMACHANNELSLAVE* DmaChannel,             \
-        IN  PUNKNOWN OuterUnknown,                    \
-        IN  PRESOURCELIST ResourceList OPTIONAL,      \
-        IN  ULONG DmaIndex,                           \
-        IN  ULONG MaximumLength,                      \
-        IN  BOOLEAN DemandMode,                       \
-        IN  DMA_SPEED DmaSpeed);                      \
-                                                      \
-    STDMETHODIMP_(NTSTATUS) NewMasterDmaChannel(      \
-        OUT PDMACHANNEL* DmaChannel,                  \
-        IN  PUNKNOWN OuterUnknown,                    \
-        IN  PRESOURCELIST ResourceList OPTIONAL,      \
-        IN  ULONG MaximumLength,                      \
-        IN  BOOLEAN Dma32BitAddresses,                \
-        IN  BOOLEAN Dma64BitAddresses,                \
-        IN  DMA_WIDTH DmaWidth,                       \
-        IN  DMA_SPEED DmaSpeed)
+#define IMP_IPortWaveCyclic                                                                               \
+    IMP_IPort;                                                                                                                      \
+    STDMETHODIMP_(VOID) Notify(                                                              \
+                     IN  PSERVICEGROUP ServiceGroup);                                        \
+                                                                                                                                                                           \
+    STDMETHODIMP_(NTSTATUS) NewSlaveDmaChannel(                    \
+                     OUT PDMACHANNELSLAVE* DmaChannel,                                       \
+                     IN  PUNKNOWN OuterUnknown,                                                           \
+                     IN  PRESOURCELIST ResourceList OPTIONAL,                   \
+                     IN  ULONG DmaIndex,                                                                               \
+                     IN  ULONG MaximumLength,                                                             \
+                     IN  BOOLEAN DemandMode,                                                              \
+                     IN  DMA_SPEED DmaSpeed);                                                             \
+                                                                                                                                                                           \
+    STDMETHODIMP_(NTSTATUS) NewMasterDmaChannel(                   \
+                     OUT PDMACHANNEL* DmaChannel,                                                         \
+                     IN  PUNKNOWN OuterUnknown,                                                           \
+                     IN  PRESOURCELIST ResourceList OPTIONAL,                   \
+                     IN  ULONG MaximumLength,                                                             \
+                     IN  BOOLEAN Dma32BitAddresses,                                          \
+                     IN  BOOLEAN Dma64BitAddresses,                                          \
+                     IN  DMA_WIDTH DmaWidth,                                                              \
+                     IN  DMA_SPEED DmaSpeed)
 #endif
 
 
@@ -1249,45 +1249,45 @@ DECLARE_INTERFACE_(IPortWavePci, IPort)
     DEFINE_ABSTRACT_PORT()
 
     STDMETHOD_(VOID, Notify)(THIS_
-        IN  PSERVICEGROUP ServiceGroup) PURE;
+                     IN  PSERVICEGROUP ServiceGroup) PURE;
 
     STDMETHOD_(NTSTATUS, NewMasterDmaChannel)(THIS_
-        OUT PDMACHANNEL* DmaChannel,
-        IN  PUNKNOWN OuterUnknown,
-        IN  POOL_TYPE PoolType,
-        IN  PRESOURCELIST ResourceList OPTIONAL,
-        IN  BOOLEAN ScatterGather,
-        IN  BOOLEAN Dma32BitAddresses,
-        IN  BOOLEAN Dma64BitAddresses,
-        IN  BOOLEAN IgnoreCount,
-        IN  DMA_WIDTH DmaWidth,
-        IN  DMA_SPEED DmaSpeed,
-        IN  ULONG MaximumLength,
-        IN  ULONG DmaPort) PURE;
+                     OUT PDMACHANNEL* DmaChannel,
+                     IN  PUNKNOWN OuterUnknown,
+                     IN  POOL_TYPE PoolType,
+                     IN  PRESOURCELIST ResourceList OPTIONAL,
+                     IN  BOOLEAN ScatterGather,
+                     IN  BOOLEAN Dma32BitAddresses,
+                     IN  BOOLEAN Dma64BitAddresses,
+                     IN  BOOLEAN IgnoreCount,
+                     IN  DMA_WIDTH DmaWidth,
+                     IN  DMA_SPEED DmaSpeed,
+                     IN  ULONG MaximumLength,
+                     IN  ULONG DmaPort) PURE;
 };
 
 typedef IPortWavePci *PPORTWAVEPCI;
 #undef INTERFACE
 
 #ifdef PC_IMPLEMENTATION
-#define IMP_IPortWavePci                                     \
-    IMP_IPort;                                               \
-    STDMETHODIMP_(VOID) Notify(                              \
-        IN  PSERVICEGROUP ServiceGroup);                     \
-                                                             \
-    STDMETHODIMP_(NTSTATUS) NewMasterDmaChannel(             \
-        OUT PDMACHANNEL* DmaChannel,                         \
-        IN  PUNKNOWN OuterUnknown,                           \
-        IN  POOL_TYPE PoolType,                              \
-        IN  PRESOURCELIST ResourceList OPTIONAL,             \
-        IN  BOOLEAN ScatterGather,                           \
-        IN  BOOLEAN Dma32BitAddresses,                       \
-        IN  BOOLEAN Dma64BitAddresses,                       \
-        IN  BOOLEAN IgnoreCount,                             \
-        IN  DMA_WIDTH DmaWidth,                              \
-        IN  DMA_SPEED DmaSpeed,                              \
-        IN  ULONG MaximumLength,                             \
-        IN  ULONG DmaPort);
+#define IMP_IPortWavePci                                                                                                                   \
+    IMP_IPort;                                                                                                                                          \
+    STDMETHODIMP_(VOID) Notify(                                                                                               \
+                     IN  PSERVICEGROUP ServiceGroup);                                                            \
+                                                                                                                                                                                               \
+    STDMETHODIMP_(NTSTATUS) NewMasterDmaChannel(                                       \
+                     OUT PDMACHANNEL* DmaChannel,                                                                             \
+                     IN  PUNKNOWN OuterUnknown,                                                                               \
+                     IN  POOL_TYPE PoolType,                                                                                               \
+                     IN  PRESOURCELIST ResourceList OPTIONAL,                                       \
+                     IN  BOOLEAN ScatterGather,                                                                               \
+                     IN  BOOLEAN Dma32BitAddresses,                                                              \
+                     IN  BOOLEAN Dma64BitAddresses,                                                              \
+                     IN  BOOLEAN IgnoreCount,                                                                                 \
+                     IN  DMA_WIDTH DmaWidth,                                                                                               \
+                     IN  DMA_SPEED DmaSpeed,                                                                                               \
+                     IN  ULONG MaximumLength,                                                                                 \
+                     IN  ULONG DmaPort);
 #endif
 
 /* ===============================================================
@@ -1299,27 +1299,27 @@ DEFINE_GUID(IID_IMiniPort,
 
 #define DEFINE_ABSTRACT_MINIPORT() \
     STDMETHOD_(NTSTATUS, GetDescription)( THIS_ \
-        OUT  PPCFILTER_DESCRIPTOR* Description) PURE; \
+                     OUT  PPCFILTER_DESCRIPTOR* Description) PURE; \
 \
     STDMETHOD_(NTSTATUS, DataRangeIntersection)( THIS_ \
-        IN  ULONG PinId, \
-        IN  PKSDATARANGE DataRange, \
-        IN  PKSDATARANGE MatchingDataRange, \
-        IN  ULONG OutputBufferLength, \
-        OUT PVOID ResultantFormat OPTIONAL, \
-        OUT PULONG ResultantFormatLength) PURE;
+                     IN  ULONG PinId, \
+                     IN  PKSDATARANGE DataRange, \
+                     IN  PKSDATARANGE MatchingDataRange, \
+                     IN  ULONG OutputBufferLength, \
+                     OUT PVOID ResultantFormat OPTIONAL, \
+                     OUT PULONG ResultantFormatLength) PURE;
 
-#define IMP_IMiniport                                        \
-    STDMETHODIMP_(NTSTATUS) GetDescription(                  \
-        OUT  PPCFILTER_DESCRIPTOR* Description);             \
-                                                             \
-    STDMETHODIMP_(NTSTATUS) DataRangeIntersection(           \
-        IN  ULONG PinId,                                     \
-        IN  PKSDATARANGE DataRange,                          \
-        IN  PKSDATARANGE MatchingDataRange,                  \
-        IN  ULONG OutputBufferLength,                        \
-        OUT PVOID ResultantFormat OPTIONAL,                  \
-        OUT PULONG ResultantFormatLength)
+#define IMP_IMiniport                                                                                                                      \
+    STDMETHODIMP_(NTSTATUS) GetDescription(                                                         \
+                     OUT  PPCFILTER_DESCRIPTOR* Description);                                       \
+                                                                                                                                                                                               \
+    STDMETHODIMP_(NTSTATUS) DataRangeIntersection(                        \
+                     IN  ULONG PinId,                                                                                                                   \
+                     IN  PKSDATARANGE DataRange,                                                                              \
+                     IN  PKSDATARANGE MatchingDataRange,                                                         \
+                     IN  ULONG OutputBufferLength,                                                                            \
+                     OUT PVOID ResultantFormat OPTIONAL,                                                         \
+                     OUT PULONG ResultantFormatLength)
 
 DECLARE_INTERFACE_(IMiniport, IUnknown)
 {
@@ -1344,20 +1344,20 @@ DECLARE_INTERFACE_(IMiniportMidiStream, IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS,SetFormat)(THIS_
-        IN PKSDATAFORMAT DataFormat)PURE;
+                     IN PKSDATAFORMAT DataFormat)PURE;
 
     STDMETHOD_(NTSTATUS,SetState)(THIS_
-        IN KSSTATE State)PURE;
+                     IN KSSTATE State)PURE;
 
     STDMETHOD_(NTSTATUS,Read)(THIS_
-        IN PVOID BufferAddress,
-        IN ULONG BufferLength,
-        OUT PULONG BytesRead)PURE;
+                     IN PVOID BufferAddress,
+                     IN ULONG BufferLength,
+                     OUT PULONG BytesRead)PURE;
 
     STDMETHOD_(NTSTATUS,Write)(THIS_
-        IN PVOID BufferAddress,
-        IN ULONG BytesToWrite,
-        OUT PULONG BytesWritten)PURE;
+                     IN PVOID BufferAddress,
+                     IN ULONG BytesToWrite,
+                     OUT PULONG BytesWritten)PURE;
 };
 
 typedef IMiniportMidiStream* PMINIPORTMIDISTREAM;
@@ -1386,13 +1386,13 @@ DECLARE_INTERFACE_(IMiniportMidi, IMiniport)
     STDMETHOD_(void, Service)(THIS) PURE;
 
     STDMETHOD_(NTSTATUS, NewStream)(THIS_
-        OUT PMINIPORTMIDISTREAM *Stream,
-        IN  PUNKNOWN OuterUnknown OPTIONAL,
-        IN  POOL_TYPE PoolType,
-        IN  ULONG Pin,
-        IN  BOOLEAN Capture,
-        IN  PKSDATAFORMAT DataFormat,
-        OUT PSERVICEGROUP* ServiceGroup) PURE;
+                     OUT PMINIPORTMIDISTREAM *Stream,
+                     IN  PUNKNOWN OuterUnknown OPTIONAL,
+                     IN  POOL_TYPE PoolType,
+                     IN  ULONG Pin,
+                     IN  BOOLEAN Capture,
+                     IN  PKSDATAFORMAT DataFormat,
+                     OUT PSERVICEGROUP* ServiceGroup) PURE;
 
 };
 
@@ -1456,9 +1456,9 @@ DECLARE_INTERFACE_(IMiniportTopology,IMiniport)
     DEFINE_ABSTRACT_MINIPORT()
 
     STDMETHOD_(NTSTATUS,Init)(THIS_
-        IN PUNKNOWN UnknownAdapter,
-        IN PRESOURCELIST ResourceList,
-        IN PPORTTOPOLOGY Port)PURE;
+                     IN PUNKNOWN UnknownAdapter,
+                     IN PRESOURCELIST ResourceList,
+                     IN PPORTTOPOLOGY Port)PURE;
 };
 
 typedef IMiniportTopology *PMINIPORTTOPOLOGY;
@@ -1478,48 +1478,48 @@ DECLARE_INTERFACE_(IMiniportWaveCyclicStream,IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS,SetFormat)(THIS_
-        IN PKSDATAFORMAT DataFormat)PURE;
+                     IN PKSDATAFORMAT DataFormat)PURE;
 
     STDMETHOD_(ULONG,SetNotificationFreq)(THIS_
-        IN ULONG Interval,
-        OUT PULONG FrameSize) PURE;
+                     IN ULONG Interval,
+                     OUT PULONG FrameSize) PURE;
 
     STDMETHOD_(NTSTATUS,SetState)(THIS_
-        IN KSSTATE State) PURE;
+                     IN KSSTATE State) PURE;
 
     STDMETHOD_(NTSTATUS,GetPosition)( THIS_
-        OUT PULONG Position) PURE;
+                     OUT PULONG Position) PURE;
 
     STDMETHOD_(NTSTATUS,NormalizePhysicalPosition)(THIS_
-        IN OUT PLONGLONG PhysicalPosition) PURE;
+                     IN OUT PLONGLONG PhysicalPosition) PURE;
 
     STDMETHOD_(void, Silence)( THIS_
-        IN PVOID Buffer,
-        IN ULONG ByteCount) PURE;
+                     IN PVOID Buffer,
+                     IN ULONG ByteCount) PURE;
 };
 
 typedef IMiniportWaveCyclicStream *PMINIPORTWAVECYCLICSTREAM;
 
 #define IMP_IMiniportWaveCyclicStream\
     STDMETHODIMP_(NTSTATUS) SetFormat\
-    (   IN      PKSDATAFORMAT   DataFormat\
+    (   IN                   PKSDATAFORMAT   DataFormat\
     );\
     STDMETHODIMP_(ULONG) SetNotificationFreq\
-    (   IN      ULONG           Interval,\
-        OUT     PULONG          FrameSize\
+    (   IN                   ULONG                        Interval,\
+                     OUT     PULONG                       FrameSize\
     );\
     STDMETHODIMP_(NTSTATUS) SetState\
-    (   IN      KSSTATE         State\
+    (   IN                   KSSTATE                      State\
     );\
     STDMETHODIMP_(NTSTATUS) GetPosition\
-    (   OUT     PULONG          Position\
+    (   OUT     PULONG                       Position\
     );\
     STDMETHODIMP_(NTSTATUS) NormalizePhysicalPosition\
-    (   IN OUT PLONGLONG        PhysicalPosition\
+    (   IN OUT PLONGLONG                     PhysicalPosition\
     );\
     STDMETHODIMP_(void) Silence\
-    (   IN      PVOID           Buffer,\
-        IN      ULONG           ByteCount\
+    (   IN                   PVOID                        Buffer,\
+                     IN                   ULONG                        ByteCount\
     )
 
 
@@ -1539,19 +1539,19 @@ DECLARE_INTERFACE_(IMiniportWaveCyclic, IMiniport)
     DEFINE_ABSTRACT_MINIPORT()
 
     STDMETHOD_(NTSTATUS, Init)(THIS_
-        IN PUNKNOWN  UnknownAdapter,
-        IN PRESOURCELIST  ResourceList,
-        IN PPORTWAVECYCLIC  Port) PURE;
+                     IN PUNKNOWN  UnknownAdapter,
+                     IN PRESOURCELIST  ResourceList,
+                     IN PPORTWAVECYCLIC  Port) PURE;
 
     STDMETHOD_(NTSTATUS, NewStream)(THIS_
-        OUT PMINIPORTWAVECYCLICSTREAM  *Stream,
-        IN PUNKNOWN  OuterUnknown  OPTIONAL,
-        IN POOL_TYPE  PoolType,
-        IN ULONG  Pin,
-        IN BOOLEAN  Capture,
-        IN PKSDATAFORMAT  DataFormat,
-        OUT PDMACHANNEL  *DmaChannel,
-        OUT PSERVICEGROUP  *ServiceGroup) PURE;
+                     OUT PMINIPORTWAVECYCLICSTREAM  *Stream,
+                     IN PUNKNOWN  OuterUnknown  OPTIONAL,
+                     IN POOL_TYPE  PoolType,
+                     IN ULONG  Pin,
+                     IN BOOLEAN  Capture,
+                     IN PKSDATAFORMAT  DataFormat,
+                     OUT PDMACHANNEL  *DmaChannel,
+                     OUT PSERVICEGROUP  *ServiceGroup) PURE;
 };
 
 typedef IMiniportWaveCyclic *PMINIPORTWAVECYCLIC;
@@ -1560,19 +1560,19 @@ typedef IMiniportWaveCyclic *PMINIPORTWAVECYCLIC;
 #define IMP_IMiniportWaveCyclic\
     IMP_IMiniport;\
     STDMETHODIMP_(NTSTATUS) Init\
-    (   IN      PUNKNOWN        UnknownAdapter,\
-        IN      PRESOURCELIST   ResourceList,\
-        IN      PPORTWAVECYCLIC Port\
+    (   IN                   PUNKNOWN                     UnknownAdapter,\
+                     IN                   PRESOURCELIST   ResourceList,\
+                     IN                   PPORTWAVECYCLIC Port\
     );\
     STDMETHODIMP_(NTSTATUS) NewStream\
     (   OUT     PMINIPORTWAVECYCLICSTREAM * Stream,\
-        IN      PUNKNOWN                    OuterUnknown    OPTIONAL,\
-        IN      POOL_TYPE                   PoolType,\
-        IN      ULONG                       Pin,\
-        IN      BOOLEAN                     Capture,\
-        IN      PKSDATAFORMAT               DataFormat,\
-        OUT     PDMACHANNEL *               DmaChannel,\
-        OUT     PSERVICEGROUP *             ServiceGroup\
+                     IN                   PUNKNOWN                                                           OuterUnknown    OPTIONAL,\
+                     IN                   POOL_TYPE                                                          PoolType,\
+                     IN                   ULONG                                                              Pin,\
+                     IN                   BOOLEAN                                                            Capture,\
+                     IN                   PKSDATAFORMAT                                         DataFormat,\
+                     OUT     PDMACHANNEL *                                         DmaChannel,\
+                     OUT     PSERVICEGROUP *                                       ServiceGroup\
     )
 
 
@@ -1589,31 +1589,31 @@ DECLARE_INTERFACE_(IPortWavePciStream,IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()   //  For IUnknown
 
     STDMETHOD_(NTSTATUS,GetMapping)(THIS_
-        IN PVOID Tag,
-        OUT PPHYSICAL_ADDRESS PhysicalAddress,
-        OUT PVOID * VirtualAddress,
-        OUT PULONG ByteCount,
-        OUT PULONG Flags)PURE;
+                     IN PVOID Tag,
+                     OUT PPHYSICAL_ADDRESS PhysicalAddress,
+                     OUT PVOID * VirtualAddress,
+                     OUT PULONG ByteCount,
+                     OUT PULONG Flags)PURE;
 
     STDMETHOD_(NTSTATUS,ReleaseMapping)(THIS_
-        IN PVOID Tag)PURE;
+                     IN PVOID Tag)PURE;
 
     STDMETHOD_(NTSTATUS,TerminatePacket)(THIS)PURE;
 };
 
 typedef IPortWavePciStream *PPORTWAVEPCISTREAM;
 
-#define IMP_IPortWavePciStream                             \
-    STDMETHODIMP_(NTSTATUS) GetMapping(                    \
-        IN PVOID Tag,                                      \
-        OUT PPHYSICAL_ADDRESS PhysicalAddress,             \
-        OUT PVOID * VirtualAddress,                        \
-        OUT PULONG ByteCount,                              \
-        OUT PULONG Flags);                                 \
-                                                           \
-    STDMETHODIMP_(NTSTATUS) ReleaseMapping(                \
-        IN PVOID Tag);                                     \
-                                                           \
+#define IMP_IPortWavePciStream                                                                                 \
+    STDMETHODIMP_(NTSTATUS) GetMapping(                                                           \
+                     IN PVOID Tag,                                                                                                                    \
+                     OUT PPHYSICAL_ADDRESS PhysicalAddress,                                       \
+                     OUT PVOID * VirtualAddress,                                                                            \
+                     OUT PULONG ByteCount,                                                                                               \
+                     OUT PULONG Flags);                                                                                                  \
+                                                                                                                                                                                \
+    STDMETHODIMP_(NTSTATUS) ReleaseMapping(                                          \
+                     IN PVOID Tag);                                                                                                                   \
+                                                                                                                                                                                \
     STDMETHODIMP_(NTSTATUS) TerminatePacket(THIS)
 
 
@@ -1630,24 +1630,24 @@ DECLARE_INTERFACE_(IMiniportWavePciStream,IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(NTSTATUS,SetFormat)(THIS_
-        IN PKSDATAFORMAT DataFormat)PURE;
+                     IN PKSDATAFORMAT DataFormat)PURE;
 
     STDMETHOD_(NTSTATUS,SetState)(THIS_
-        IN KSSTATE State)PURE;
+                     IN KSSTATE State)PURE;
 
     STDMETHOD_(NTSTATUS,GetPosition)(THIS_
-        OUT PULONGLONG Position)PURE;
+                     OUT PULONGLONG Position)PURE;
 
     STDMETHOD_(NTSTATUS,NormalizePhysicalPosition)(THIS_
-        IN OUT PLONGLONG PhysicalPosition)PURE;
+                     IN OUT PLONGLONG PhysicalPosition)PURE;
 
     STDMETHOD_(NTSTATUS,GetAllocatorFraming)(THIS_
-        OUT PKSALLOCATOR_FRAMING AllocatorFraming) PURE;
+                     OUT PKSALLOCATOR_FRAMING AllocatorFraming) PURE;
 
     STDMETHOD_(NTSTATUS,RevokeMappings)(THIS_
-        IN PVOID FirstTag,
-        IN PVOID LastTag,
-        OUT PULONG MappingsRevoked)PURE;
+                     IN PVOID FirstTag,
+                     IN PVOID LastTag,
+                     OUT PULONG MappingsRevoked)PURE;
 
     STDMETHOD_(void,MappingAvailable)(THIS)PURE;
 
@@ -1671,21 +1671,21 @@ DECLARE_INTERFACE_(IMiniportWavePci,IMiniport)
     DEFINE_ABSTRACT_MINIPORT()
 
     STDMETHOD_(NTSTATUS,Init)(THIS_
-        IN PUNKNOWN UnknownAdapter,
-        IN PRESOURCELIST ResourceList,
-        IN PPORTWAVEPCI Port,
-        OUT PSERVICEGROUP * ServiceGroup)PURE;
+                     IN PUNKNOWN UnknownAdapter,
+                     IN PRESOURCELIST ResourceList,
+                     IN PPORTWAVEPCI Port,
+                     OUT PSERVICEGROUP * ServiceGroup)PURE;
 
     STDMETHOD_(NTSTATUS,NewStream)(THIS_
-        OUT PMINIPORTWAVEPCISTREAM *    Stream,
-        IN PUNKNOWN OuterUnknown    OPTIONAL,
-        IN POOL_TYPE PoolType,
-        IN PPORTWAVEPCISTREAM PortStream,
-        IN ULONG Pin,
-        IN BOOLEAN Capture,
-        IN PKSDATAFORMAT DataFormat,
-        OUT PDMACHANNEL * DmaChannel,
-        OUT PSERVICEGROUP * ServiceGroup)PURE;
+                     OUT PMINIPORTWAVEPCISTREAM *    Stream,
+                     IN PUNKNOWN OuterUnknown    OPTIONAL,
+                     IN POOL_TYPE PoolType,
+                     IN PPORTWAVEPCISTREAM PortStream,
+                     IN ULONG Pin,
+                     IN BOOLEAN Capture,
+                     IN PKSDATAFORMAT DataFormat,
+                     OUT PDMACHANNEL * DmaChannel,
+                     OUT PSERVICEGROUP * ServiceGroup)PURE;
 
     STDMETHOD_(void,Service)(THIS)PURE;
 };
@@ -1695,43 +1695,43 @@ typedef IMiniportWavePci *PMINIPORTWAVEPCI;
 
 #if !defined(DEFINE_ABSTRACT_MINIPORTWAVERTSTREAM)
 
-#define DEFINE_ABSTRACT_MINIPORTWAVERTSTREAM()                 \
-    STDMETHOD_(NTSTATUS,SetFormat)                             \
-    (   THIS_                                                  \
-        IN      PKSDATAFORMAT   DataFormat                   \
-    )   PURE;                                                  \
-    STDMETHOD_(NTSTATUS,SetState)                              \
-    (   THIS_                                                  \
-        IN      KSSTATE         State                        \
-    )   PURE;                                                  \
-    STDMETHOD_(NTSTATUS,GetPosition)                           \
-    (   THIS_                                                  \
-        OUT     PKSAUDIO_POSITION   Position                 \
-    )   PURE;                                                  \
-    STDMETHOD_(NTSTATUS,AllocateAudioBuffer)                   \
-    (   THIS_                                                  \
-        IN  ULONG                   RequestedSize,           \
-        OUT PMDL                    *AudioBufferMdl,         \
-        OUT ULONG                   *ActualSize,             \
-        OUT ULONG                   *OffsetFromFirstPage,    \
-        OUT MEMORY_CACHING_TYPE     *CacheType               \
-    ) PURE;                                                    \
-    STDMETHOD_(VOID,FreeAudioBuffer)                           \
-    (   THIS_                                                  \
-        IN     PMDL                    AudioBufferMdl,          \
-        IN     ULONG                   BufferSize               \
-    ) PURE;                                                    \
-    STDMETHOD_(VOID,GetHWLatency)                              \
-    (   THIS_                                                  \
-        OUT KSRTAUDIO_HWLATENCY     *hwLatency               \
-    ) PURE;                                                    \
-    STDMETHOD_(NTSTATUS,GetPositionRegister)                   \
-    (   THIS_                                                  \
-        OUT KSRTAUDIO_HWREGISTER    *Register                \
-    ) PURE;                                                    \
-    STDMETHOD_(NTSTATUS,GetClockRegister)                      \
-    (   THIS_                                                  \
-        OUT KSRTAUDIO_HWREGISTER    *Register                \
+#define DEFINE_ABSTRACT_MINIPORTWAVERTSTREAM()                                           \
+    STDMETHOD_(NTSTATUS,SetFormat)                                                                                 \
+    (   THIS_                                                                                                                                                          \
+                     IN                   PKSDATAFORMAT   DataFormat                                                          \
+    )   PURE;                                                                                                                                                          \
+    STDMETHOD_(NTSTATUS,SetState)                                                                                               \
+    (   THIS_                                                                                                                                                          \
+                     IN                   KSSTATE                      State                                                                            \
+    )   PURE;                                                                                                                                                          \
+    STDMETHOD_(NTSTATUS,GetPosition)                                                                               \
+    (   THIS_                                                                                                                                                          \
+                     OUT     PKSAUDIO_POSITION   Position                                           \
+    )   PURE;                                                                                                                                                          \
+    STDMETHOD_(NTSTATUS,AllocateAudioBuffer)                                                          \
+    (   THIS_                                                                                                                                                          \
+                     IN  ULONG                                                          RequestedSize,                        \
+                     OUT PMDL                                                           *AudioBufferMdl,                      \
+                     OUT ULONG                                                          *ActualSize,                                       \
+                     OUT ULONG                                                          *OffsetFromFirstPage,    \
+                     OUT MEMORY_CACHING_TYPE     *CacheType                                         \
+    ) PURE;                                                                                                                                                            \
+    STDMETHOD_(VOID,FreeAudioBuffer)                                                                               \
+    (   THIS_                                                                                                                                                          \
+                     IN     PMDL                                                           AudioBufferMdl,                       \
+                     IN     ULONG                                                          BufferSize                                         \
+    ) PURE;                                                                                                                                                            \
+    STDMETHOD_(VOID,GetHWLatency)                                                                                               \
+    (   THIS_                                                                                                                                                          \
+                     OUT KSRTAUDIO_HWLATENCY     *hwLatency                                         \
+    ) PURE;                                                                                                                                                            \
+    STDMETHOD_(NTSTATUS,GetPositionRegister)                                                          \
+    (   THIS_                                                                                                                                                          \
+                     OUT KSRTAUDIO_HWREGISTER    *Register                                          \
+    ) PURE;                                                                                                                                                            \
+    STDMETHOD_(NTSTATUS,GetClockRegister)                                                             \
+    (   THIS_                                                                                                                                                          \
+                     OUT KSRTAUDIO_HWREGISTER    *Register                                          \
     ) PURE;
 
 #endif
@@ -1756,7 +1756,7 @@ DECLARE_INTERFACE_(IPortWaveRT,IPort)
 {
     DEFINE_ABSTRACT_UNKNOWN()   //  For IUnknown
 
-    DEFINE_ABSTRACT_PORT()      //  For IPort
+    DEFINE_ABSTRACT_PORT()                   //  For IPort
 };
 
 typedef IPortWaveRT *PPORTWAVERT;
@@ -1781,43 +1781,43 @@ DECLARE_INTERFACE_(IPortWaveRTStream, IUnknown)
 
     STDMETHOD_(PMDL, AllocatePagesForMdl)
     (   THIS_
-        IN      PHYSICAL_ADDRESS    HighAddress,
-        IN      SIZE_T              TotalBytes
+                     IN                   PHYSICAL_ADDRESS    HighAddress,
+                     IN                   SIZE_T                                        TotalBytes
     )   PURE;
 
     STDMETHOD_(PMDL, AllocateContiguousPagesForMdl)
     (   THIS_
-        IN      PHYSICAL_ADDRESS    LowAddress,
-        IN      PHYSICAL_ADDRESS    HighAddress,
-        IN      SIZE_T              TotalBytes
+                     IN                   PHYSICAL_ADDRESS    LowAddress,
+                     IN                   PHYSICAL_ADDRESS    HighAddress,
+                     IN                   SIZE_T                                        TotalBytes
     )   PURE;
 
     STDMETHOD_(PVOID, MapAllocatedPages)
     (   THIS_
-        IN      PMDL                    MemoryDescriptorList,
-        IN      MEMORY_CACHING_TYPE     CacheType
+                     IN                   PMDL                                                           MemoryDescriptorList,
+                     IN                   MEMORY_CACHING_TYPE     CacheType
     )   PURE;
 
     STDMETHOD_(VOID, UnmapAllocatedPages)
     (   THIS_
-        IN      PVOID   BaseAddress,
-        IN      PMDL    MemoryDescriptorList
+                     IN                   PVOID   BaseAddress,
+                     IN                   PMDL    MemoryDescriptorList
     )   PURE;
 
     STDMETHOD_(VOID, FreePagesFromMdl)
     (   THIS_
-        IN      PMDL    MemoryDescriptorList
+                     IN                   PMDL    MemoryDescriptorList
     )   PURE;
 
     STDMETHOD_(ULONG, GetPhysicalPagesCount)
     (   THIS_
-        IN      PMDL    MemoryDescriptorList
+                     IN                   PMDL    MemoryDescriptorList
     )   PURE;
 
     STDMETHOD_(PHYSICAL_ADDRESS, GetPhysicalPageAddress)
     (   THIS_
-        IN      PMDL    MemoryDescriptorList,
-        IN      ULONG   Index
+                     IN                   PMDL    MemoryDescriptorList,
+                     IN                   ULONG   Index
     )   PURE;
 };
 
@@ -1843,38 +1843,38 @@ typedef IMiniportWaveRTStream *PMINIPORTWAVERTSTREAM;
 
 #define IMP_IMiniportWaveRTStream\
     STDMETHODIMP_(NTSTATUS) SetFormat\
-    (   IN      PKSDATAFORMAT   DataFormat\
+    (   IN                   PKSDATAFORMAT   DataFormat\
     );\
     STDMETHODIMP_(NTSTATUS) SetState\
-    (   IN      KSSTATE         State\
+    (   IN                   KSSTATE                      State\
     );\
     STDMETHODIMP_(NTSTATUS) GetPosition\
     (   OUT     PKSAUDIO_POSITION   Position\
     );\
     STDMETHODIMP_(NTSTATUS) AllocateAudioBuffer\
     (\
-        IN      ULONG                   RequestedSize,\
-        OUT     PMDL                    *AudioBufferMdl,\
-        OUT     ULONG                   *ActualSize,\
-        OUT     ULONG                   *OffsetFromFirstPage,\
-        OUT     MEMORY_CACHING_TYPE     *CacheType\
+                     IN                   ULONG                                                          RequestedSize,\
+                     OUT     PMDL                                                           *AudioBufferMdl,\
+                     OUT     ULONG                                                          *ActualSize,\
+                     OUT     ULONG                                                          *OffsetFromFirstPage,\
+                     OUT     MEMORY_CACHING_TYPE     *CacheType\
     );\
     STDMETHODIMP_(VOID) FreeAudioBuffer\
     (\
-        IN  PMDL                    AudioBufferMdl,\
-        IN  ULONG                   BufferSize\
+                     IN  PMDL                                                           AudioBufferMdl,\
+                     IN  ULONG                                                          BufferSize\
     );\
     STDMETHODIMP_(VOID) GetHWLatency\
     (\
-        OUT KSRTAUDIO_HWLATENCY     *hwLatency\
+                     OUT KSRTAUDIO_HWLATENCY     *hwLatency\
     );\
     STDMETHODIMP_(NTSTATUS) GetPositionRegister\
     (\
-        OUT KSRTAUDIO_HWREGISTER    *Register\
+                     OUT KSRTAUDIO_HWREGISTER    *Register\
     );\
     STDMETHODIMP_(NTSTATUS) GetClockRegister\
     (\
-        OUT KSRTAUDIO_HWREGISTER    *Register\
+                     OUT KSRTAUDIO_HWREGISTER    *Register\
     )
 
 
@@ -1895,28 +1895,28 @@ DECLARE_INTERFACE_(IMiniportWaveRTStreamNotification, IMiniportWaveRTStream)
 
     STDMETHOD_(NTSTATUS,AllocateBufferWithNotification)
     (   THIS_
-        IN      ULONG                   NotificationCount,
-        IN      ULONG                   RequestedSize,
-        OUT     PMDL                    *AudioBufferMdl,
-        OUT     ULONG                   *ActualSize,
-        OUT     ULONG                   *OffsetFromFirstPage,
-        OUT     MEMORY_CACHING_TYPE     *CacheType
+                     IN                   ULONG                                                          NotificationCount,
+                     IN                   ULONG                                                          RequestedSize,
+                     OUT     PMDL                                                           *AudioBufferMdl,
+                     OUT     ULONG                                                          *ActualSize,
+                     OUT     ULONG                                                          *OffsetFromFirstPage,
+                     OUT     MEMORY_CACHING_TYPE     *CacheType
     )   PURE;
 
     STDMETHOD_(VOID,FreeBufferWithNotification)
     (   THIS_
-        IN      PMDL            AudioBufferMdl,
-        IN      ULONG           BufferSize
+                     IN                   PMDL                                      AudioBufferMdl,
+                     IN                   ULONG                        BufferSize
     )   PURE;
 
     STDMETHOD_(NTSTATUS,RegisterNotificationEvent)
     (   THIS_
-        IN      PKEVENT         NotificationEvent
+                     IN                   PKEVENT                      NotificationEvent
     )   PURE;
 
     STDMETHOD_(NTSTATUS,UnregisterNotificationEvent)
     (   THIS_
-        IN      PKEVENT         NotificationEvent
+                     IN                   PKEVENT                      NotificationEvent
     )   PURE;
 };
 
@@ -1937,23 +1937,23 @@ DECLARE_INTERFACE_(IMiniportWaveRT, IMiniport)
 
     STDMETHOD_(NTSTATUS,Init)
     (   THIS_
-        IN      PUNKNOWN            UnknownAdapter,
-        IN      PRESOURCELIST       ResourceList,
-        IN      PPORTWAVERT             Port
+                     IN                   PUNKNOWN                                      UnknownAdapter,
+                     IN                   PRESOURCELIST                    ResourceList,
+                     IN                   PPORTWAVERT                                       Port
     )   PURE;
 
     STDMETHOD_(NTSTATUS,NewStream)
     (   THIS_
-        OUT     PMINIPORTWAVERTSTREAM *         Stream,
-        IN      PPORTWAVERTSTREAM               PortStream,
-        IN      ULONG                       Pin,
-        IN      BOOLEAN                     Capture,
-        IN      PKSDATAFORMAT               DataFormat
+                     OUT     PMINIPORTWAVERTSTREAM *                      Stream,
+                     IN                   PPORTWAVERTSTREAM                                         PortStream,
+                     IN                   ULONG                                                              Pin,
+                     IN                   BOOLEAN                                                            Capture,
+                     IN                   PKSDATAFORMAT                                         DataFormat
     )   PURE;
 
     STDMETHOD_(NTSTATUS,GetDeviceDescription)
     (   THIS_
-        OUT     PDEVICE_DESCRIPTION     DeviceDescription
+                     OUT     PDEVICE_DESCRIPTION     DeviceDescription
     )   PURE;
 };
 
@@ -1962,16 +1962,16 @@ typedef IMiniportWaveRT *PMINIPORTWAVERT;
 #define IMP_IMiniportWaveRT\
     IMP_IMiniport;\
     STDMETHODIMP_(NTSTATUS) Init\
-    (   IN      PUNKNOWN            UnknownAdapter,\
-        IN      PRESOURCELIST       ResourceList,\
-        IN      PPORTWAVERT             Port\
+    (   IN                   PUNKNOWN                                      UnknownAdapter,\
+                     IN                   PRESOURCELIST                    ResourceList,\
+                     IN                   PPORTWAVERT                                       Port\
     );\
     STDMETHODIMP_(NTSTATUS) NewStream\
-    (   OUT     PMINIPORTWAVERTSTREAM *         Stream,\
-        IN      PPORTWAVERTSTREAM               PortStream,\
-        IN      ULONG                       Pin,\
-        IN      BOOLEAN                     Capture,\
-        IN      PKSDATAFORMAT               DataFormat\
+    (   OUT     PMINIPORTWAVERTSTREAM *                      Stream,\
+                     IN                   PPORTWAVERTSTREAM                                         PortStream,\
+                     IN                   ULONG                                                              Pin,\
+                     IN                   BOOLEAN                                                            Capture,\
+                     IN                   PKSDATAFORMAT                                         DataFormat\
     );\
     STDMETHODIMP_(NTSTATUS) GetDeviceDescription\
     (   OUT     PDEVICE_DESCRIPTION     DeviceDescription\
@@ -1993,24 +1993,24 @@ DECLARE_INTERFACE_(IAdapterPowerManagement, IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(void,PowerChangeState)(THIS_
-        IN POWER_STATE NewState) PURE;
+                     IN POWER_STATE NewState) PURE;
 
     STDMETHOD_(NTSTATUS,QueryPowerChangeState)(THIS_
-        IN POWER_STATE NewStateQuery) PURE;
+                     IN POWER_STATE NewStateQuery) PURE;
 
     STDMETHOD_(NTSTATUS,QueryDeviceCapabilities)(THIS_
-        IN PDEVICE_CAPABILITIES PowerDeviceCaps) PURE;
+                     IN PDEVICE_CAPABILITIES PowerDeviceCaps) PURE;
 };
 
-#define IMP_IAdapterPowerManagement                       \
-    STDMETHODIMP_(void) PowerChangeState                  \
-    (   IN      POWER_STATE     NewState                  \
-    );                                                    \
-    STDMETHODIMP_(NTSTATUS) QueryPowerChangeState         \
-    (   IN      POWER_STATE     NewStateQuery             \
-    );                                                    \
-    STDMETHODIMP_(NTSTATUS) QueryDeviceCapabilities       \
-    (   IN      PDEVICE_CAPABILITIES    PowerDeviceCaps   \
+#define IMP_IAdapterPowerManagement                                                              \
+    STDMETHODIMP_(void) PowerChangeState                                                         \
+    (   IN                   POWER_STATE     NewState                                                         \
+    );                                                                                                                                                            \
+    STDMETHODIMP_(NTSTATUS) QueryPowerChangeState                      \
+    (   IN                   POWER_STATE     NewStateQuery                                       \
+    );                                                                                                                                                            \
+    STDMETHODIMP_(NTSTATUS) QueryDeviceCapabilities                    \
+    (   IN                   PDEVICE_CAPABILITIES    PowerDeviceCaps   \
     )
 
 typedef IAdapterPowerManagement *PADAPTERPOWERMANAGEMENT;
@@ -2030,7 +2030,7 @@ DECLARE_INTERFACE_(IPowerNotify, IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(void, PowerChangeNotify)(THIS_
-        IN POWER_STATE PowerState)PURE;
+                     IN POWER_STATE PowerState)PURE;
 };
 
 typedef IPowerNotify *PPOWERNOTIFY;
@@ -2052,12 +2052,12 @@ DECLARE_INTERFACE_(IPinCount, IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(void,PinCount)(THIS_
-        IN ULONG PinId,
-        IN OUT PULONG FilterNecessary,
-        IN OUT PULONG FilterCurrent,
-        IN OUT PULONG FilterPossible,
-        IN OUT PULONG GlobalCurrent,
-        IN OUT PULONG GlobalPossible) PURE;
+                     IN ULONG PinId,
+                     IN OUT PULONG FilterNecessary,
+                     IN OUT PULONG FilterCurrent,
+                     IN OUT PULONG FilterPossible,
+                     IN OUT PULONG GlobalCurrent,
+                     IN OUT PULONG GlobalPossible) PURE;
 };
 typedef IPinCount *PPINCOUNT;
 
@@ -2078,31 +2078,31 @@ DECLARE_INTERFACE_(IPortEvents, IUnknown)
     DEFINE_ABSTRACT_UNKNOWN()
 
     STDMETHOD_(void,AddEventToEventList)(THIS_
-        IN  PKSEVENT_ENTRY EventEntry)PURE;
+                     IN  PKSEVENT_ENTRY EventEntry)PURE;
 
     STDMETHOD_(void,GenerateEventList)(THIS_
-        IN  GUID* Set OPTIONAL,
-        IN  ULONG EventId,
-        IN  BOOL  PinEvent,
-        IN  ULONG PinId,
-        IN  BOOL  NodeEvent,
-        IN  ULONG NodeId)PURE;
+                     IN  GUID* Set OPTIONAL,
+                     IN  ULONG EventId,
+                     IN  BOOL  PinEvent,
+                     IN  ULONG PinId,
+                     IN  BOOL  NodeEvent,
+                     IN  ULONG NodeId)PURE;
 };
 
 typedef IPortEvents *PPORTEVENTS;
 
 
-#define IMP_IPortEvents                        \
+#define IMP_IPortEvents                                                                            \
     STDMETHODIMP_(void) AddEventToEventList(   \
-        IN  PKSEVENT_ENTRY EventEntry);        \
-                                               \
+                     IN  PKSEVENT_ENTRY EventEntry);                     \
+                                                                                                                                          \
     STDMETHODIMP_(void) GenerateEventList(     \
-        IN  GUID* Set OPTIONAL,                \
-        IN  ULONG EventId,                     \
-        IN  BOOL  PinEvent,                    \
-        IN  ULONG PinId,                       \
-        IN  BOOL  NodeEvent,                   \
-        IN  ULONG NodeId)
+                     IN  GUID* Set OPTIONAL,                                          \
+                     IN  ULONG EventId,                                                            \
+                     IN  BOOL  PinEvent,                                                           \
+                     IN  ULONG PinId,                                                              \
+                     IN  BOOL  NodeEvent,                                                          \
+                     IN  ULONG NodeId)
 
 /* ===============================================================
     IDrmPort / IDrmPort2 Interfaces
@@ -2116,27 +2116,27 @@ typedef IPortEvents *PPORTEVENTS;
 DEFINE_GUID(IID_IDrmPort, 0x286D3DF8L, 0xCA22, 0x4E2E, 0xB9, 0xBC, 0x20, 0xB4, 0xF0, 0xE2, 0x01, 0xCE);
 #endif
 
-#define DEFINE_ABSTRACT_DRMPORT()                          \
-    STDMETHOD_(NTSTATUS,CreateContentMixed)(THIS_          \
-        IN  PULONG paContentId,                            \
-        IN  ULONG cContentId,                              \
-        OUT PULONG pMixedContentId)PURE;                   \
-                                                           \
-    STDMETHOD_(NTSTATUS,DestroyContent)(THIS_              \
-        IN ULONG ContentId)PURE;                           \
-                                                           \
+#define DEFINE_ABSTRACT_DRMPORT()                                                                              \
+    STDMETHOD_(NTSTATUS,CreateContentMixed)(THIS_                       \
+                     IN  PULONG paContentId,                                                                                \
+                     IN  ULONG cContentId,                                                                                               \
+                     OUT PULONG pMixedContentId)PURE;                                                          \
+                                                                                                                                                                                \
+    STDMETHOD_(NTSTATUS,DestroyContent)(THIS_                                        \
+                     IN ULONG ContentId)PURE;                                                                               \
+                                                                                                                                                                                \
     STDMETHOD_(NTSTATUS,ForwardContentToFileObject)(THIS_  \
-        IN ULONG        ContentId,                         \
-        IN PFILE_OBJECT FileObject)PURE;                   \
-                                                           \
+                     IN ULONG                     ContentId,                                                                             \
+                     IN PFILE_OBJECT FileObject)PURE;                                                          \
+                                                                                                                                                                                \
     STDMETHOD_(NTSTATUS,ForwardContentToInterface)(THIS_   \
-        IN ULONG ContentId,                                \
-        IN PUNKNOWN pUnknown,                              \
-        IN ULONG NumMethods)PURE;                          \
-                                                           \
-    STDMETHOD_(NTSTATUS,GetContentRights)(THIS_            \
-        IN  ULONG ContentId,                               \
-        OUT PDRMRIGHTS  DrmRights)PURE;
+                     IN ULONG ContentId,                                                                                                 \
+                     IN PUNKNOWN pUnknown,                                                                                               \
+                     IN ULONG NumMethods)PURE;                                                                              \
+                                                                                                                                                                                \
+    STDMETHOD_(NTSTATUS,GetContentRights)(THIS_                                      \
+                     IN  ULONG ContentId,                                                                                                \
+                     OUT PDRMRIGHTS  DrmRights)PURE;
 
 DECLARE_INTERFACE_(IDrmPort, IUnknown)
 {
@@ -2146,27 +2146,27 @@ DECLARE_INTERFACE_(IDrmPort, IUnknown)
 
 typedef IDrmPort *PDRMPORT;
 
-#define IMP_IDrmPort                                       \
-    STDMETHODIMP_(NTSTATUS) CreateContentMixed(            \
-        IN  PULONG paContentId,                            \
-        IN  ULONG cContentId,                              \
-        OUT PULONG pMixedContentId);                       \
-                                                           \
-    STDMETHODIMP_(NTSTATUS) DestroyContent(                \
-        IN ULONG ContentId);                               \
-                                                           \
+#define IMP_IDrmPort                                                                                                                     \
+    STDMETHODIMP_(NTSTATUS) CreateContentMixed(                                      \
+                     IN  PULONG paContentId,                                                                                \
+                     IN  ULONG cContentId,                                                                                               \
+                     OUT PULONG pMixedContentId);                                                              \
+                                                                                                                                                                                \
+    STDMETHODIMP_(NTSTATUS) DestroyContent(                                          \
+                     IN ULONG ContentId);                                                                                                \
+                                                                                                                                                                                \
     STDMETHODIMP_(NTSTATUS) ForwardContentToFileObject(    \
-        IN ULONG        ContentId,                         \
-        IN PFILE_OBJECT FileObject);                       \
-                                                           \
+                     IN ULONG                     ContentId,                                                                             \
+                     IN PFILE_OBJECT FileObject);                                                              \
+                                                                                                                                                                                \
     STDMETHODIMP_(NTSTATUS) ForwardContentToInterface(     \
-        IN ULONG ContentId,                                \
-        IN PUNKNOWN pUnknown,                              \
-        IN ULONG NumMethods);                              \
-                                                           \
-    STDMETHODIMP_(NTSTATUS) GetContentRights(              \
-        IN  ULONG ContentId,                               \
-        OUT PDRMRIGHTS  DrmRights)
+                     IN ULONG ContentId,                                                                                                 \
+                     IN PUNKNOWN pUnknown,                                                                                               \
+                     IN ULONG NumMethods);                                                                                               \
+                                                                                                                                                                                \
+    STDMETHODIMP_(NTSTATUS) GetContentRights(                                        \
+                     IN  ULONG ContentId,                                                                                                \
+                     OUT PDRMRIGHTS  DrmRights)
 
 
 /* ===============================================================
@@ -2186,29 +2186,29 @@ DECLARE_INTERFACE_(IDrmPort2, IDrmPort)
     DEFINE_ABSTRACT_DRMPORT()
 
     STDMETHOD_(NTSTATUS,AddContentHandlers)(THIS_
-        IN ULONG ContentId,
-        IN PVOID * paHandlers,
-        IN ULONG NumHandlers)PURE;
+                     IN ULONG ContentId,
+                     IN PVOID * paHandlers,
+                     IN ULONG NumHandlers)PURE;
 
     STDMETHOD_(NTSTATUS,ForwardContentToDeviceObject)(THIS_
-        IN ULONG ContentId,
-        IN PVOID Reserved,
-        IN PCDRMFORWARD DrmForward)PURE;
+                     IN ULONG ContentId,
+                     IN PVOID Reserved,
+                     IN PCDRMFORWARD DrmForward)PURE;
 };
 
 typedef IDrmPort2 *PDRMPORT2;
 
-#define IMP_IDrmPort2                                                \
-    IMP_IDrmPort;                                                    \
-    STDMETHODIMP_(NTSTATUS) AddContentHandlers(                      \
-        IN ULONG ContentId,                                          \
-        IN PVOID * paHandlers,                                       \
-        IN ULONG NumHandlers);                                       \
-                                                                     \
-    STDMETHODIMP_(NTSTATUS) ForwardContentToDeviceObject(            \
-        IN ULONG ContentId,                                          \
-        IN PVOID Reserved,                                           \
-        IN PCDRMFORWARD DrmForward)
+#define IMP_IDrmPort2                                                                                                                                                        \
+    IMP_IDrmPort;                                                                                                                                                            \
+    STDMETHODIMP_(NTSTATUS) AddContentHandlers(                                                             \
+                     IN ULONG ContentId,                                                                                                                                     \
+                     IN PVOID * paHandlers,                                                                                                                     \
+                     IN ULONG NumHandlers);                                                                                                                     \
+                                                                                                                                                                                                                    \
+    STDMETHODIMP_(NTSTATUS) ForwardContentToDeviceObject(                                      \
+                     IN ULONG ContentId,                                                                                                                                     \
+                     IN PVOID Reserved,                                                                                                                                      \
+                     IN PCDRMFORWARD DrmForward)
 
 
 /* ===============================================================

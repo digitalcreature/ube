@@ -155,15 +155,15 @@ enum rt_op {
  * rs field of cop opcodes.
  */
 enum cop_op {
-	mfc_op	      = 0x00, dmfc_op	    = 0x01,
-	cfc_op	      = 0x02, mfhc0_op	    = 0x02,
-	mfhc_op       = 0x03, mtc_op	    = 0x04,
-	dmtc_op	      = 0x05, ctc_op	    = 0x06,
-	mthc0_op      = 0x06, mthc_op	    = 0x07,
-	bc_op	      = 0x08, bc1eqz_op     = 0x09,
-	mfmc0_op      = 0x0b, bc1nez_op     = 0x0d,
+	mfc_op	                   = 0x00, dmfc_op	    = 0x01,
+	cfc_op	                   = 0x02, mfhc0_op	    = 0x02,
+	mfhc_op                    = 0x03, mtc_op	    = 0x04,
+	dmtc_op	                   = 0x05, ctc_op	    = 0x06,
+	mthc0_op                   = 0x06, mthc_op	    = 0x07,
+	bc_op	                   = 0x08, bc1eqz_op     = 0x09,
+	mfmc0_op                   = 0x0b, bc1nez_op     = 0x0d,
 	wrpgpr_op     = 0x0e, cop_op	    = 0x10,
-	copm_op	      = 0x18
+	copm_op	                   = 0x18
 };
 
 /*
@@ -177,19 +177,19 @@ enum bcop_op {
  * func field of cop0 coi opcodes.
  */
 enum cop0_coi_func {
-	tlbr_op	      = 0x01, tlbwi_op	    = 0x02,
-	tlbwr_op      = 0x06, tlbp_op	    = 0x08,
-	rfe_op	      = 0x10, eret_op	    = 0x18,
-	wait_op       = 0x20, hypcall_op    = 0x28
+	tlbr_op	                   = 0x01, tlbwi_op	    = 0x02,
+	tlbwr_op                   = 0x06, tlbp_op	    = 0x08,
+	rfe_op	                   = 0x10, eret_op	    = 0x18,
+	wait_op                    = 0x20, hypcall_op    = 0x28
 };
 
 /*
  * func field of cop0 com opcodes.
  */
 enum cop0_com_func {
-	tlbr1_op      = 0x01, tlbw_op	    = 0x02,
-	tlbp1_op      = 0x08, dctr_op	    = 0x09,
-	dctw_op	      = 0x0a
+	tlbr1_op                   = 0x01, tlbw_op	    = 0x02,
+	tlbp1_op                   = 0x08, dctr_op	    = 0x09,
+	dctw_op	                   = 0x0a
 };
 
 /*
@@ -212,14 +212,14 @@ enum cop1_sdw_func {
 	fceill_op    =	0x0a, ffloorl_op   =  0x0b,
 	fround_op    =	0x0c, ftrunc_op	   =  0x0d,
 	fceil_op     =	0x0e, ffloor_op	   =  0x0f,
-	fsel_op      =  0x10,
+	fsel_op                   =  0x10,
 	fmovc_op     =	0x11, fmovz_op	   =  0x12,
 	fmovn_op     =	0x13, fseleqz_op   =  0x14,
 	frecip_op    =  0x15, frsqrt_op    =  0x16,
 	fselnez_op   =  0x17, fmaddf_op    =  0x18,
 	fmsubf_op    =  0x19, frint_op     =  0x1a,
-	fclass_op    =  0x1b, fmin_op      =  0x1c,
-	fmina_op     =  0x1d, fmax_op      =  0x1e,
+	fclass_op    =  0x1b, fmin_op                   =  0x1c,
+	fmina_op     =  0x1d, fmax_op                   =  0x1e,
 	fmaxa_op     =  0x1f, fcvts_op     =  0x20,
 	fcvtd_op     =	0x21, fcvte_op	   =  0x22,
 	fcvtw_op     =	0x24, fcvtl_op	   =  0x25,

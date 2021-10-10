@@ -44,43 +44,43 @@ typedef enum D3D11_LOGIC_OP
 
 typedef enum D3D11_COPY_FLAGS
 {
-    D3D11_COPY_NO_OVERWRITE                                                         = 0x00000001,
-    D3D11_COPY_DISCARD                                                              = 0x00000002,
+    D3D11_COPY_NO_OVERWRITE                                                                                                                                                                              = 0x00000001,
+    D3D11_COPY_DISCARD                                                                                                                                                                                                = 0x00000002,
 } D3D11_COPY_FLAGS;
 
 typedef enum D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG
 {
-    D3D11_1_CREATE_DEVICE_CONTEXT_STATE_SINGLETHREADED                              = 0x1,
+    D3D11_1_CREATE_DEVICE_CONTEXT_STATE_SINGLETHREADED                                                                                               = 0x1,
 } D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG;
 
 typedef enum D3D11_VIDEO_DECODER_CAPS
 {
-    D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE                                             = 0x01,
-    D3D11_VIDEO_DECODER_CAPS_NON_REAL_TIME                                          = 0x02,
-    D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE_DYNAMIC                                     = 0x04,
-    D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE_REQUIRED                                    = 0x08,
-    D3D11_VIDEO_DECODER_CAPS_UNSUPPORTED                                            = 0x10,
+    D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE                                                                                                                                        = 0x01,
+    D3D11_VIDEO_DECODER_CAPS_NON_REAL_TIME                                                                                                                                     = 0x02,
+    D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE_DYNAMIC                                                                                                                   = 0x04,
+    D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE_REQUIRED                                                                                                                  = 0x08,
+    D3D11_VIDEO_DECODER_CAPS_UNSUPPORTED                                                                                                                                       = 0x10,
 } D3D11_VIDEO_DECODER_CAPS;
 
 typedef enum D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINTS
 {
-    D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINT_MULTIPLANE_OVERLAY_ROTATION                 = 0x01,
-    D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINT_MULTIPLANE_OVERLAY_RESIZE                   = 0x02,
+    D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINT_MULTIPLANE_OVERLAY_ROTATION                                           = 0x01,
+    D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINT_MULTIPLANE_OVERLAY_RESIZE                                                          = 0x02,
     D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINT_MULTIPLANE_OVERLAY_COLOR_SPACE_CONVERSION   = 0x04,
-    D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINT_TRIPLE_BUFFER_OUTPUT                        = 0x08,
+    D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINT_TRIPLE_BUFFER_OUTPUT                                                                            = 0x08,
 } D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINTS;
 
 typedef enum D3D11_CRYPTO_SESSION_STATUS
 {
-    D3D11_CRYPTO_SESSION_STATUS_OK                                                  = 0x0,
-    D3D11_CRYPTO_SESSION_STATUS_KEY_LOST                                            = 0x1,
-    D3D11_CRYPTO_SESSION_STATUS_KEY_AND_CONTENT_LOST                                = 0x2,
+    D3D11_CRYPTO_SESSION_STATUS_OK                                                                                                                                                          = 0x0,
+    D3D11_CRYPTO_SESSION_STATUS_KEY_LOST                                                                                                                                       = 0x1,
+    D3D11_CRYPTO_SESSION_STATUS_KEY_AND_CONTENT_LOST                                                                                                 = 0x2,
 } D3D11_CRYPTO_SESSION_STATUS;
 
 typedef struct D3D11_RENDER_TARGET_BLEND_DESC1
 {
-    BOOL           BlendEnable;
-    BOOL           LogicOpEnable;
+    BOOL                        BlendEnable;
+    BOOL                        LogicOpEnable;
     D3D11_BLEND    SrcBlend;
     D3D11_BLEND    DestBlend;
     D3D11_BLEND_OP BlendOp;
@@ -88,13 +88,13 @@ typedef struct D3D11_RENDER_TARGET_BLEND_DESC1
     D3D11_BLEND    DestBlendAlpha;
     D3D11_BLEND_OP BlendOpAlpha;
     D3D11_LOGIC_OP LogicOp;
-    UINT8          RenderTargetWriteMask;
+    UINT8                       RenderTargetWriteMask;
 } D3D11_RENDER_TARGET_BLEND_DESC1;
 
 typedef struct D3D11_BLEND_DESC1
 {
-    BOOL                            AlphaToCoverageEnable;
-    BOOL                            IndependentBlendEnable;
+    BOOL                                                                                AlphaToCoverageEnable;
+    BOOL                                                                                IndependentBlendEnable;
     D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget[D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT];
 } D3D11_BLEND_DESC1;
 
@@ -102,15 +102,15 @@ typedef struct D3D11_RASTERIZER_DESC1
 {
     D3D11_FILL_MODE FillMode;
     D3D11_CULL_MODE CullMode;
-    BOOL            FrontCounterClockwise;
-    INT             DepthBias;
-    FLOAT           DepthBiasClamp;
-    FLOAT           SlopeScaledDepthBias;
-    BOOL            DepthClipEnable;
-    BOOL            ScissorEnable;
-    BOOL            MultisampleEnable;
-    BOOL            AntialiasedLineEnable;
-    UINT            ForcedSampleCount;
+    BOOL                                      FrontCounterClockwise;
+    INT                                       DepthBias;
+    FLOAT                        DepthBiasClamp;
+    FLOAT                        SlopeScaledDepthBias;
+    BOOL                                      DepthClipEnable;
+    BOOL                                      ScissorEnable;
+    BOOL                                      MultisampleEnable;
+    BOOL                                      AntialiasedLineEnable;
+    UINT                                      ForcedSampleCount;
 } D3D11_RASTERIZER_DESC1;
 
 typedef struct D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK
@@ -211,127 +211,127 @@ interface ID3DDeviceContextState : ID3D11DeviceChild
 interface ID3D11DeviceContext1 : ID3D11DeviceContext
 {
     void CopySubresourceRegion1(
-            ID3D11Resource *pDstResource,
-            UINT DstSubresource,
-            UINT DstX,
-            UINT DstY,
-            UINT DstZ,
-            ID3D11Resource *pSrcResource,
-            UINT SrcSubresource,
-            const D3D11_BOX *pSrcBox,
-            UINT CopyFlags);
+                                      ID3D11Resource *pDstResource,
+                                      UINT DstSubresource,
+                                      UINT DstX,
+                                      UINT DstY,
+                                      UINT DstZ,
+                                      ID3D11Resource *pSrcResource,
+                                      UINT SrcSubresource,
+                                      const D3D11_BOX *pSrcBox,
+                                      UINT CopyFlags);
 
     void UpdateSubresource1(
-            ID3D11Resource *pDstResource,
-            UINT DstSubresource,
-            const D3D11_BOX *pDstBox,
-            const void *pSrcData,
-            UINT SrcRowPitch,
-            UINT SrcDepthPitch,
-            UINT CopyFlags);
+                                      ID3D11Resource *pDstResource,
+                                      UINT DstSubresource,
+                                      const D3D11_BOX *pDstBox,
+                                      const void *pSrcData,
+                                      UINT SrcRowPitch,
+                                      UINT SrcDepthPitch,
+                                      UINT CopyFlags);
 
     void DiscardResource(ID3D11Resource *pResource);
 
     void DiscardView(ID3D11View *pResourceView);
 
     void VSSetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer *const *ppConstantBuffers,
-            const UINT *pFirstConstant,
-            const UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer *const *ppConstantBuffers,
+                                      const UINT *pFirstConstant,
+                                      const UINT *pNumConstants);
 
     void HSSetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer *const *ppConstantBuffers,
-            const UINT *pFirstConstant,
-            const UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer *const *ppConstantBuffers,
+                                      const UINT *pFirstConstant,
+                                      const UINT *pNumConstants);
 
     void DSSetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer *const *ppConstantBuffers,
-            const UINT *pFirstConstant,
-            const UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer *const *ppConstantBuffers,
+                                      const UINT *pFirstConstant,
+                                      const UINT *pNumConstants);
 
     void GSSetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer *const *ppConstantBuffers,
-            const UINT *pFirstConstant,
-            const UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer *const *ppConstantBuffers,
+                                      const UINT *pFirstConstant,
+                                      const UINT *pNumConstants);
 
     void PSSetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer *const *ppConstantBuffers,
-            const UINT *pFirstConstant,
-            const UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer *const *ppConstantBuffers,
+                                      const UINT *pFirstConstant,
+                                      const UINT *pNumConstants);
 
     void CSSetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer *const *ppConstantBuffers,
-            const UINT *pFirstConstant,
-            const UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer *const *ppConstantBuffers,
+                                      const UINT *pFirstConstant,
+                                      const UINT *pNumConstants);
 
     void VSGetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer **ppConstantBuffers,
-            UINT *pFirstConstant,
-            UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer **ppConstantBuffers,
+                                      UINT *pFirstConstant,
+                                      UINT *pNumConstants);
 
     void HSGetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer **ppConstantBuffers,
-            UINT *pFirstConstant,
-            UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer **ppConstantBuffers,
+                                      UINT *pFirstConstant,
+                                      UINT *pNumConstants);
 
     void DSGetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer **ppConstantBuffers,
-            UINT *pFirstConstant,
-            UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer **ppConstantBuffers,
+                                      UINT *pFirstConstant,
+                                      UINT *pNumConstants);
 
     void GSGetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer **ppConstantBuffers,
-            UINT *pFirstConstant,
-            UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer **ppConstantBuffers,
+                                      UINT *pFirstConstant,
+                                      UINT *pNumConstants);
 
     void PSGetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer **ppConstantBuffers,
-            UINT *pFirstConstant,
-            UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer **ppConstantBuffers,
+                                      UINT *pFirstConstant,
+                                      UINT *pNumConstants);
 
     void CSGetConstantBuffers1(
-            UINT StartSlot,
-            UINT NumBuffers,
-            ID3D11Buffer **ppConstantBuffers,
-            UINT *pFirstConstant,
-            UINT *pNumConstants);
+                                      UINT StartSlot,
+                                      UINT NumBuffers,
+                                      ID3D11Buffer **ppConstantBuffers,
+                                      UINT *pFirstConstant,
+                                      UINT *pNumConstants);
 
     void SwapDeviceContextState(
-            ID3DDeviceContextState *pState,
-            ID3DDeviceContextState **ppPreviousState);
+                                      ID3DDeviceContextState *pState,
+                                      ID3DDeviceContextState **ppPreviousState);
 
     void ClearView(
-            ID3D11View *pView,
-            const FLOAT Color[4],
-            const D3D11_RECT *pRect,
-            UINT NumRects);
+                                      ID3D11View *pView,
+                                      const FLOAT Color[4],
+                                      const D3D11_RECT *pRect,
+                                      UINT NumRects);
 
     void DiscardView1(
-            ID3D11View *pResourceView,
-            const D3D11_RECT *pRects,
-            UINT NumRects);
+                                      ID3D11View *pResourceView,
+                                      const D3D11_RECT *pRects,
+                                      UINT NumRects);
 }
 
 [
@@ -343,78 +343,78 @@ interface ID3D11DeviceContext1 : ID3D11DeviceContext
 interface ID3D11VideoContext1 : ID3D11VideoContext
 {
     HRESULT SubmitDecoderBuffers1(
-        ID3D11VideoDecoder *decoder,
-        UINT buffer_count,
-        const D3D11_VIDEO_DECODER_BUFFER_DESC1 *buffer_desc
+                     ID3D11VideoDecoder *decoder,
+                     UINT buffer_count,
+                     const D3D11_VIDEO_DECODER_BUFFER_DESC1 *buffer_desc
     );
     HRESULT GetDataForNewHardwareKey(
-        ID3D11CryptoSession *session,
-        UINT input_size,
-        const void *input_data,
-        UINT64 *output_data
+                     ID3D11CryptoSession *session,
+                     UINT input_size,
+                     const void *input_data,
+                     UINT64 *output_data
     );
     HRESULT CheckCryptoSessionStatus(
-        ID3D11CryptoSession *session,
-        D3D11_CRYPTO_SESSION_STATUS *status
+                     ID3D11CryptoSession *session,
+                     D3D11_CRYPTO_SESSION_STATUS *status
     );
     HRESULT DecoderEnableDownsampling(
-        ID3D11VideoDecoder *decoder,
-        DXGI_COLOR_SPACE_TYPE colour_space,
-        const D3D11_VIDEO_SAMPLE_DESC *output_desc,
-        UINT reference_frame_count
+                     ID3D11VideoDecoder *decoder,
+                     DXGI_COLOR_SPACE_TYPE colour_space,
+                     const D3D11_VIDEO_SAMPLE_DESC *output_desc,
+                     UINT reference_frame_count
     );
     HRESULT DecoderUpdateDownsampling(
-        ID3D11VideoDecoder *decoder,
-        const D3D11_VIDEO_SAMPLE_DESC *output_desc
+                     ID3D11VideoDecoder *decoder,
+                     const D3D11_VIDEO_SAMPLE_DESC *output_desc
     );
     void VideoProcessorSetOutputColorSpace1(
-        ID3D11VideoProcessor *processor,
-        DXGI_COLOR_SPACE_TYPE colour_space
+                     ID3D11VideoProcessor *processor,
+                     DXGI_COLOR_SPACE_TYPE colour_space
     );
     void VideoProcessorSetOutputShaderUsage(
-        ID3D11VideoProcessor *processor,
-        BOOL shader_usage
+                     ID3D11VideoProcessor *processor,
+                     BOOL shader_usage
     );
     void VideoProcessorGetOutputColorSpace1(
-        ID3D11VideoProcessor *processor,
-        DXGI_COLOR_SPACE_TYPE *colour_space
+                     ID3D11VideoProcessor *processor,
+                     DXGI_COLOR_SPACE_TYPE *colour_space
     );
     void VideoProcessorGetOutputShaderUsage(
-        ID3D11VideoProcessor *processor,
-        BOOL *shader_usage
+                     ID3D11VideoProcessor *processor,
+                     BOOL *shader_usage
     );
     void VideoProcessorSetStreamColorSpace1(
-        ID3D11VideoProcessor *processor,
-        UINT stream_index,
-        DXGI_COLOR_SPACE_TYPE colour_space
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_index,
+                     DXGI_COLOR_SPACE_TYPE colour_space
     );
     void VideoProcessorSetStreamMirror(
-        ID3D11VideoProcessor *processor,
-        UINT stream_index,
-        BOOL enable,
-        BOOL flip_horizontal,
-        BOOL flip_vertical
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_index,
+                     BOOL enable,
+                     BOOL flip_horizontal,
+                     BOOL flip_vertical
     );
     void VideoProcessorGetStreamColorSpace1(
-        ID3D11VideoProcessor *processor,
-        UINT stream_index,
-        DXGI_COLOR_SPACE_TYPE *colour_space
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_index,
+                     DXGI_COLOR_SPACE_TYPE *colour_space
     );
     void VideoProcessorGetStreamMirror(
-        ID3D11VideoProcessor *processor,
-        UINT stream_index,
-        BOOL *enable,
-        BOOL *flip_horizontal,
-        BOOL *flip_vertical
+                     ID3D11VideoProcessor *processor,
+                     UINT stream_index,
+                     BOOL *enable,
+                     BOOL *flip_horizontal,
+                     BOOL *flip_vertical
     );
     HRESULT VideoProcessorGetBehaviorHints(
-        ID3D11VideoProcessor *processor,
-        UINT output_width,
-        UINT output_height,
-        DXGI_FORMAT output_format,
-        UINT stream_count,
-        const D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT *streams,
-        UINT *behaviour_hints
+                     ID3D11VideoProcessor *processor,
+                     UINT output_width,
+                     UINT output_height,
+                     DXGI_FORMAT output_format,
+                     UINT stream_count,
+                     const D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT *streams,
+                     UINT *behaviour_hints
     );
 }
 
@@ -427,36 +427,36 @@ interface ID3D11VideoContext1 : ID3D11VideoContext
 interface ID3D11VideoDevice1 : ID3D11VideoDevice
 {
     HRESULT GetCryptoSessionPrivateDataSize(
-        const GUID *crypto_type,
-        const GUID *decoder_profile,
-        const GUID *key_exchange_type,
-        UINT *input_size,
-        UINT *output_size
+                     const GUID *crypto_type,
+                     const GUID *decoder_profile,
+                     const GUID *key_exchange_type,
+                     UINT *input_size,
+                     UINT *output_size
     );
     HRESULT GetVideoDecoderCaps(
-        const GUID *decoder_profile,
-        UINT sample_width,
-        UINT sample_height,
-        const DXGI_RATIONAL *framerate,
-        UINT bitrate,
-        const GUID *crypto_type,
-        UINT *decoder_caps
+                     const GUID *decoder_profile,
+                     UINT sample_width,
+                     UINT sample_height,
+                     const DXGI_RATIONAL *framerate,
+                     UINT bitrate,
+                     const GUID *crypto_type,
+                     UINT *decoder_caps
     );
     HRESULT CheckVideoDecoderDownsampling(
-        const D3D11_VIDEO_DECODER_DESC *input_desc,
-        DXGI_COLOR_SPACE_TYPE input_colour_space,
-        const D3D11_VIDEO_DECODER_CONFIG *input_config,
-        const DXGI_RATIONAL *framerate,
-        const D3D11_VIDEO_SAMPLE_DESC *output_desc,
-        BOOL *supported,
-        BOOL *real_time_hint
+                     const D3D11_VIDEO_DECODER_DESC *input_desc,
+                     DXGI_COLOR_SPACE_TYPE input_colour_space,
+                     const D3D11_VIDEO_DECODER_CONFIG *input_config,
+                     const DXGI_RATIONAL *framerate,
+                     const D3D11_VIDEO_SAMPLE_DESC *output_desc,
+                     BOOL *supported,
+                     BOOL *real_time_hint
     );
     HRESULT RecommendVideoDecoderDownsampleParameters(
-        const D3D11_VIDEO_DECODER_DESC *input_desc,
-        DXGI_COLOR_SPACE_TYPE input_colour_space,
-        const D3D11_VIDEO_DECODER_CONFIG *input_config,
-        const DXGI_RATIONAL *framerate,
-        D3D11_VIDEO_SAMPLE_DESC *recommended_output_desc
+                     const D3D11_VIDEO_DECODER_DESC *input_desc,
+                     DXGI_COLOR_SPACE_TYPE input_colour_space,
+                     const D3D11_VIDEO_DECODER_CONFIG *input_config,
+                     const DXGI_RATIONAL *framerate,
+                     D3D11_VIDEO_SAMPLE_DESC *recommended_output_desc
     );
 }
 
@@ -469,11 +469,11 @@ interface ID3D11VideoDevice1 : ID3D11VideoDevice
 interface ID3D11VideoProcessorEnumerator1 : ID3D11VideoProcessorEnumerator
 {
     HRESULT CheckVideoProcessorFormatConversion(
-        DXGI_FORMAT input_format,
-        DXGI_COLOR_SPACE_TYPE input_colour_space,
-        DXGI_FORMAT output_format,
-        DXGI_COLOR_SPACE_TYPE output_colour_space,
-        BOOL *supported
+                     DXGI_FORMAT input_format,
+                     DXGI_COLOR_SPACE_TYPE input_colour_space,
+                     DXGI_FORMAT output_format,
+                     DXGI_COLOR_SPACE_TYPE output_colour_space,
+                     BOOL *supported
     );
 }
 
@@ -511,37 +511,37 @@ interface ID3D11RasterizerState1 : ID3D11RasterizerState
 interface ID3D11Device1 : ID3D11Device
 {
     void GetImmediateContext1(
-            ID3D11DeviceContext1 **ppImmediateContext);
+                                      ID3D11DeviceContext1 **ppImmediateContext);
 
     HRESULT CreateDeferredContext1(
-            UINT ContextFlags,
-            ID3D11DeviceContext1 **ppDeferredContext);
+                                      UINT ContextFlags,
+                                      ID3D11DeviceContext1 **ppDeferredContext);
 
     HRESULT CreateBlendState1(
-            const D3D11_BLEND_DESC1 *pBlendStateDesc,
-            ID3D11BlendState1 **ppBlendState);
+                                      const D3D11_BLEND_DESC1 *pBlendStateDesc,
+                                      ID3D11BlendState1 **ppBlendState);
 
     HRESULT CreateRasterizerState1(
-            const D3D11_RASTERIZER_DESC1 *pRasterizerDesc,
-            ID3D11RasterizerState1 **ppRasterizerState);
+                                      const D3D11_RASTERIZER_DESC1 *pRasterizerDesc,
+                                      ID3D11RasterizerState1 **ppRasterizerState);
 
     HRESULT CreateDeviceContextState(
-            UINT Flags,
-            const D3D_FEATURE_LEVEL *pFeatureLevels,
-            UINT FeatureLevels,
-            UINT SDKVersion,
-            REFIID EmulatedInterface,
-            D3D_FEATURE_LEVEL *pChosenFeatureLevel,
-            ID3DDeviceContextState **ppContextState);
+                                      UINT Flags,
+                                      const D3D_FEATURE_LEVEL *pFeatureLevels,
+                                      UINT FeatureLevels,
+                                      UINT SDKVersion,
+                                      REFIID EmulatedInterface,
+                                      D3D_FEATURE_LEVEL *pChosenFeatureLevel,
+                                      ID3DDeviceContextState **ppContextState);
 
     HRESULT OpenSharedResource1(
-            HANDLE hResource,
-            REFIID returnedInterface,
-            void **ppResource);
+                                      HANDLE hResource,
+                                      REFIID returnedInterface,
+                                      void **ppResource);
 
      HRESULT OpenSharedResourceByName(
-            LPCWSTR lpName,
-            DWORD dwDesiredAccess,
-            REFIID returnedInterface,
-            void **ppResource);
+                                      LPCWSTR lpName,
+                                      DWORD dwDesiredAccess,
+                                      REFIID returnedInterface,
+                                      void **ppResource);
 }

@@ -21,7 +21,7 @@ namespace pmr {
   template <class BidirectionalIterator>
   using match_results =
     std::match_results<BidirectionalIterator,
-                       polymorphic_allocator<sub_match<BidirectionalIterator>>>;
+                                                              polymorphic_allocator<sub_match<BidirectionalIterator>>>;
 
   typedef match_results<const char*> cmatch;
   typedef match_results<const wchar_t*> wcmatch;
@@ -49,7 +49,7 @@ _LIBCPP_BEGIN_NAMESPACE_LFTS_PMR
 template <class _BiDirIter>
 using match_results =
     _VSTD::match_results<_BiDirIter,
-        polymorphic_allocator<_VSTD::sub_match<_BiDirIter>>>;
+                     polymorphic_allocator<_VSTD::sub_match<_BiDirIter>>>;
 
 typedef match_results<const char*> cmatch;
 typedef match_results<const wchar_t*> wcmatch;

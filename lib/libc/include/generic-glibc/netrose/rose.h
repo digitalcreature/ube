@@ -25,7 +25,7 @@
 #include <netax25/ax25.h>
 
 /* Socket level values.  */
-#define SOL_ROSE        260
+#define SOL_ROSE                     260
 
 
 /* These are the public elements of the Linux kernel Rose

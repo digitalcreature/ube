@@ -39,7 +39,7 @@
 #define TUNGETFEATURES _IOR('T', 207, unsigned int)
 #define TUNSETOFFLOAD  _IOW('T', 208, unsigned int)
 #define TUNSETTXFILTER _IOW('T', 209, unsigned int)
-#define TUNGETIFF      _IOR('T', 210, unsigned int)
+#define TUNGETIFF                   _IOR('T', 210, unsigned int)
 #define TUNGETSNDBUF   _IOR('T', 211, int)
 #define TUNSETSNDBUF   _IOW('T', 212, int)
 #define TUNATTACHFILTER _IOW('T', 213, struct sock_fprog)

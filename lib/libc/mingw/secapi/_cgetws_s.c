@@ -41,8 +41,8 @@ _int_cgetws_s (wchar_t *s, size_t l, size_t *r_len)
     s[0] = 0;
   if (!s || !l || !r_len)
     {
-      _cgetws (NULL);
-      return EINVAL;
+                   _cgetws (NULL);
+                   return EINVAL;
     }
   p = (wchar_t *) alloca ((l + 2) * sizeof (wchar_t));
   p[0] = l;

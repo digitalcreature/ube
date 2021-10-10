@@ -29,10 +29,10 @@
 extern "C" {
 #endif
 
-#define DD_DISK_DEVICE_NAME               "\\Device\\UNKNOWN"
-#define DD_DISK_DEVICE_NAME_U             L"\\Device\\UNKNOWN"
+#define DD_DISK_DEVICE_NAME                                         "\\Device\\UNKNOWN"
+#define DD_DISK_DEVICE_NAME_U                                       L"\\Device\\UNKNOWN"
 
-#define IOCTL_DISK_BASE                   FILE_DEVICE_DISK
+#define IOCTL_DISK_BASE                                                          FILE_DEVICE_DISK
 
 #define IOCTL_DISK_CHECK_VERIFY \
   CTL_CODE(IOCTL_DISK_BASE, 0x0200, METHOD_BUFFERED, FILE_READ_ACCESS)
@@ -172,24 +172,24 @@ extern "C" {
 #define IOCTL_DISK_UPDATE_PROPERTIES \
   CTL_CODE(IOCTL_DISK_BASE, 0x50, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
-#define PARTITION_ENTRY_UNUSED            0x00
-#define PARTITION_FAT_12                  0x01
-#define PARTITION_XENIX_1                 0x02
-#define PARTITION_XENIX_2                 0x03
-#define PARTITION_FAT_16                  0x04
-#define PARTITION_EXTENDED                0x05
-#define PARTITION_HUGE                    0x06
-#define PARTITION_IFS                     0x07
-#define PARTITION_OS2BOOTMGR              0x0A
-#define PARTITION_FAT32                   0x0B
-#define PARTITION_FAT32_XINT13            0x0C
-#define PARTITION_XINT13                  0x0E
-#define PARTITION_XINT13_EXTENDED         0x0F
-#define PARTITION_PREP                    0x41
-#define PARTITION_LDM                     0x42
-#define PARTITION_UNIX                    0x63
-#define VALID_NTFT                        0xC0
-#define PARTITION_NTFT                    0x80
+#define PARTITION_ENTRY_UNUSED                                      0x00
+#define PARTITION_FAT_12                                                         0x01
+#define PARTITION_XENIX_1                                           0x02
+#define PARTITION_XENIX_2                                           0x03
+#define PARTITION_FAT_16                                                         0x04
+#define PARTITION_EXTENDED                                          0x05
+#define PARTITION_HUGE                                                           0x06
+#define PARTITION_IFS                                                            0x07
+#define PARTITION_OS2BOOTMGR                                        0x0A
+#define PARTITION_FAT32                                                          0x0B
+#define PARTITION_FAT32_XINT13                                      0x0C
+#define PARTITION_XINT13                                                         0x0E
+#define PARTITION_XINT13_EXTENDED                      0x0F
+#define PARTITION_PREP                                                           0x41
+#define PARTITION_LDM                                                            0x42
+#define PARTITION_UNIX                                                           0x63
+#define VALID_NTFT                                                                            0xC0
+#define PARTITION_NTFT                                                           0x80
 
 #define IsFTPartition( PartitionType ) \
   (((PartitionType) & PARTITION_NTFT) && \
@@ -281,8 +281,8 @@ typedef struct _DISK_DETECTION_INFO {
   DETECTION_TYPE  DetectionType;
   _ANONYMOUS_UNION union {
     _ANONYMOUS_STRUCT struct {
-      DISK_INT13_INFO  Int13;
-      DISK_EX_INT13_INFO  ExInt13;
+                   DISK_INT13_INFO  Int13;
+                   DISK_EX_INT13_INFO  ExInt13;
     } DUMMYSTRUCTNAME;
   } DUMMYUNIONNAME;
 } DISK_DETECTION_INFO, *PDISK_DETECTION_INFO;
@@ -337,11 +337,11 @@ typedef struct _DISK_PARTITION_INFO {
   PARTITION_STYLE  PartitionStyle;
   _ANONYMOUS_UNION union {
     struct {
-      ULONG  Signature;
-      ULONG  CheckSum;
+                   ULONG  Signature;
+                   ULONG  CheckSum;
     } Mbr;
     struct {
-      GUID  DiskId;
+                   GUID  DiskId;
     } Gpt;
   } DUMMYUNIONNAME;
 } DISK_PARTITION_INFO, *PDISK_PARTITION_INFO;
@@ -489,9 +489,9 @@ typedef struct _DISK_GROW_PARTITION {
 } DISK_GROW_PARTITION, *PDISK_GROW_PARTITION;
 
 /* GETVERSIONINPARAMS.fCapabilities constants */
-#define CAP_ATA_ID_CMD                    1
-#define CAP_ATAPI_ID_CMD                  2
-#define CAP_SMART_CMD                     4
+#define CAP_ATA_ID_CMD                                                           1
+#define CAP_ATAPI_ID_CMD                                                         2
+#define CAP_SMART_CMD                                                            4
 
 typedef struct _GETVERSIONINPARAMS {
 	UCHAR  bVersion;
@@ -503,12 +503,12 @@ typedef struct _GETVERSIONINPARAMS {
 } GETVERSIONINPARAMS, *PGETVERSIONINPARAMS, *LPGETVERSIONINPARAMS;
 
 /* IDEREGS.bCommandReg constants */
-#define ATAPI_ID_CMD                      0xA1
-#define ID_CMD                            0xEC
-#define SMART_CMD                         0xB0
+#define ATAPI_ID_CMD                                                             0xA1
+#define ID_CMD                                                                                0xEC
+#define SMART_CMD                                                                             0xB0
 
-#define SMART_CYL_LOW                     0x4F
-#define SMART_CYL_HI                      0xC2
+#define SMART_CYL_LOW                                                            0x4F
+#define SMART_CYL_HI                                                             0xC2
 
 typedef struct _IDEREGS {
 	UCHAR  bFeaturesReg;
@@ -533,23 +533,23 @@ typedef struct _SENDCMDINPARAMS {
 #include <poppack.h>
 
 /* DRIVERSTATUS.bDriverError constants */
-#define SMART_NO_ERROR                    0
-#define SMART_IDE_ERROR                   1
-#define SMART_INVALID_FLAG                2
-#define SMART_INVALID_COMMAND             3
-#define SMART_INVALID_BUFFER              4
-#define SMART_INVALID_DRIVE               5
-#define SMART_INVALID_IOCTL               6
-#define SMART_ERROR_NO_MEM                7
-#define SMART_INVALID_REGISTER            8
-#define SMART_NOT_SUPPORTED               9
-#define SMART_NO_IDE_DEVICE               10
+#define SMART_NO_ERROR                                                           0
+#define SMART_IDE_ERROR                                                          1
+#define SMART_INVALID_FLAG                                          2
+#define SMART_INVALID_COMMAND                                       3
+#define SMART_INVALID_BUFFER                                        4
+#define SMART_INVALID_DRIVE                                         5
+#define SMART_INVALID_IOCTL                                         6
+#define SMART_ERROR_NO_MEM                                          7
+#define SMART_INVALID_REGISTER                                      8
+#define SMART_NOT_SUPPORTED                                         9
+#define SMART_NO_IDE_DEVICE                                         10
 
 #define SMART_OFFLINE_ROUTINE_OFFLINE     0
-#define SMART_SHORT_SELFTEST_OFFLINE      1
+#define SMART_SHORT_SELFTEST_OFFLINE                   1
 #define SMART_EXTENDED_SELFTEST_OFFLINE   2
-#define SMART_ABORT_OFFLINE_SELFTEST      127
-#define SMART_SHORT_SELFTEST_CAPTIVE      129
+#define SMART_ABORT_OFFLINE_SELFTEST                   127
+#define SMART_SHORT_SELFTEST_CAPTIVE                   129
 #define SMART_EXTENDED_SELFTEST_CAPTIVE   130
 
 typedef struct _DRIVERSTATUS {
@@ -559,10 +559,10 @@ typedef struct _DRIVERSTATUS {
 	ULONG  dwReserved[2];
 } DRIVERSTATUS, *PDRIVERSTATUS, *LPDRIVERSTATUS;
 
-#define READ_ATTRIBUTE_BUFFER_SIZE        512
-#define IDENTIFY_BUFFER_SIZE              512
-#define READ_THRESHOLD_BUFFER_SIZE        512
-#define SMART_LOG_SECTOR_SIZE             512
+#define READ_ATTRIBUTE_BUFFER_SIZE                     512
+#define IDENTIFY_BUFFER_SIZE                                        512
+#define READ_THRESHOLD_BUFFER_SIZE                     512
+#define SMART_LOG_SECTOR_SIZE                                       512
 
 #include <pshpack1.h>
 typedef struct _SENDCMDOUTPARAMS {
@@ -572,17 +572,17 @@ typedef struct _SENDCMDOUTPARAMS {
 } SENDCMDOUTPARAMS, *PSENDCMDOUTPARAMS, *LPSENDCMDOUTPARAMS;
 #include <poppack.h>
 
-#define READ_ATTRIBUTES                   0xD0
-#define READ_THRESHOLDS                   0xD1
-#define ENABLE_DISABLE_AUTOSAVE           0xD2
-#define SAVE_ATTRIBUTE_VALUES             0xD3
-#define EXECUTE_OFFLINE_DIAGS             0xD4
-#define SMART_READ_LOG                    0xD5
-#define SMART_WRITE_LOG                   0xd6
-#define ENABLE_SMART                      0xD8
-#define DISABLE_SMART                     0xD9
-#define RETURN_SMART_STATUS               0xDA
-#define ENABLE_DISABLE_AUTO_OFFLINE       0xDB
+#define READ_ATTRIBUTES                                                          0xD0
+#define READ_THRESHOLDS                                                          0xD1
+#define ENABLE_DISABLE_AUTOSAVE                        0xD2
+#define SAVE_ATTRIBUTE_VALUES                                       0xD3
+#define EXECUTE_OFFLINE_DIAGS                                       0xD4
+#define SMART_READ_LOG                                                           0xD5
+#define SMART_WRITE_LOG                                                          0xd6
+#define ENABLE_SMART                                                             0xD8
+#define DISABLE_SMART                                                            0xD9
+#define RETURN_SMART_STATUS                                         0xDA
+#define ENABLE_DISABLE_AUTO_OFFLINE                    0xDB
 
 typedef struct _MAPPED_ADDRESS {
   struct _MAPPED_ADDRESS *NextMappedAddress;

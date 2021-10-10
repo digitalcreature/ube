@@ -312,10 +312,10 @@ typedef struct hd_drive_hob_hdr {
 #define SECURITY_DISABLE_PASSWORD	0xBF
 
 struct hd_geometry {
-      unsigned char heads;
-      unsigned char sectors;
-      unsigned short cylinders;
-      unsigned long start;
+                   unsigned char heads;
+                   unsigned char sectors;
+                   unsigned short cylinders;
+                   unsigned long start;
 };
 
 /* hd/ide ctl's that pass (arg) ptrs to user space are numbered 0x030n/0x031n */
@@ -435,7 +435,7 @@ struct hd_driveid {
 	unsigned short  eide_pio_modes; /* bits 0:mode3 1:mode4 */
 	unsigned short  eide_dma_min;	/* min mword dma cycle time (ns) */
 	unsigned short  eide_dma_time;	/* recommended mword dma cycle time (ns) */
-	unsigned short  eide_pio;       /* min cycle time (ns), no IORDY  */
+	unsigned short  eide_pio;                    /* min cycle time (ns), no IORDY  */
 	unsigned short  eide_pio_iordy; /* min cycle time (ns), with IORDY */
 	unsigned short	words69_70[2];	/* reserved words 69-70
 					 * future command overlap and queuing

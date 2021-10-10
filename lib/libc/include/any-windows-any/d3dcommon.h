@@ -68,10 +68,10 @@ MIDL_INTERFACE("8ba5fb08-5195-40e2-ac58-0d989c3a0102")
 ID3D10Blob : public IUnknown
 {
     virtual void * STDMETHODCALLTYPE GetBufferPointer(
-        ) = 0;
+                     ) = 0;
 
     virtual SIZE_T STDMETHODCALLTYPE GetBufferSize(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -83,22 +83,22 @@ typedef struct ID3D10BlobVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D10Blob *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D10Blob *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D10Blob *This);
+                     ID3D10Blob *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D10Blob *This);
+                     ID3D10Blob *This);
 
     /*** ID3D10Blob methods ***/
     void * (STDMETHODCALLTYPE *GetBufferPointer)(
-        ID3D10Blob *This);
+                     ID3D10Blob *This);
 
     SIZE_T (STDMETHODCALLTYPE *GetBufferSize)(
-        ID3D10Blob *This);
+                     ID3D10Blob *This);
 
     END_INTERFACE
 } ID3D10BlobVtbl;
@@ -159,12 +159,12 @@ MIDL_INTERFACE("a06eb39a-50da-425b-8c31-4eecd6c270f3")
 ID3DDestructionNotifier : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterDestructionCallback(
-        PFN_DESTRUCTION_CALLBACK callback_func,
-        void *data,
-        UINT *callback_id) = 0;
+                     PFN_DESTRUCTION_CALLBACK callback_func,
+                     void *data,
+                     UINT *callback_id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterDestructionCallback(
-        UINT callback_id) = 0;
+                     UINT callback_id) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -176,26 +176,26 @@ typedef struct ID3DDestructionNotifierVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3DDestructionNotifier *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3DDestructionNotifier *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3DDestructionNotifier *This);
+                     ID3DDestructionNotifier *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3DDestructionNotifier *This);
+                     ID3DDestructionNotifier *This);
 
     /*** ID3DDestructionNotifier methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterDestructionCallback)(
-        ID3DDestructionNotifier *This,
-        PFN_DESTRUCTION_CALLBACK callback_func,
-        void *data,
-        UINT *callback_id);
+                     ID3DDestructionNotifier *This,
+                     PFN_DESTRUCTION_CALLBACK callback_func,
+                     void *data,
+                     UINT *callback_id);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterDestructionCallback)(
-        ID3DDestructionNotifier *This,
-        UINT callback_id);
+                     ID3DDestructionNotifier *This,
+                     UINT callback_id);
 
     END_INTERFACE
 } ID3DDestructionNotifierVtbl;
@@ -259,14 +259,14 @@ interface ID3DInclude
     BEGIN_INTERFACE
 
     virtual HRESULT STDMETHODCALLTYPE Open(
-        D3D_INCLUDE_TYPE include_type,
-        const char *filename,
-        const void *parent_data,
-        const void **data,
-        UINT *bytes) = 0;
+                     D3D_INCLUDE_TYPE include_type,
+                     const char *filename,
+                     const void *parent_data,
+                     const void **data,
+                     UINT *bytes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        const void *data) = 0;
+                     const void *data) = 0;
 
     END_INTERFACE
 
@@ -277,16 +277,16 @@ typedef struct ID3DIncludeVtbl {
 
     /*** ID3DInclude methods ***/
     HRESULT (STDMETHODCALLTYPE *Open)(
-        ID3DInclude *This,
-        D3D_INCLUDE_TYPE include_type,
-        const char *filename,
-        const void *parent_data,
-        const void **data,
-        UINT *bytes);
+                     ID3DInclude *This,
+                     D3D_INCLUDE_TYPE include_type,
+                     const char *filename,
+                     const void *parent_data,
+                     const void **data,
+                     UINT *bytes);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        ID3DInclude *This,
-        const void *data);
+                     ID3DInclude *This,
+                     const void *data);
 
     END_INTERFACE
 } ID3DIncludeVtbl;
@@ -336,21 +336,21 @@ typedef enum D3D_FEATURE_LEVEL {
     D3D_FEATURE_LEVEL_12_0 = 0xc000,
     D3D_FEATURE_LEVEL_12_1 = 0xc100
 } D3D_FEATURE_LEVEL;
-#define D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION          2048
-#define D3D_FL9_3_REQ_TEXTURE1D_U_DIMENSION          4096
+#define D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION                       2048
+#define D3D_FL9_3_REQ_TEXTURE1D_U_DIMENSION                       4096
 #define D3D_FL9_1_REQ_TEXTURE2D_U_OR_V_DIMENSION     2048
 #define D3D_FL9_3_REQ_TEXTURE2D_U_OR_V_DIMENSION     4096
-#define D3D_FL9_1_REQ_TEXTURECUBE_DIMENSION          512
-#define D3D_FL9_3_REQ_TEXTURECUBE_DIMENSION          4096
+#define D3D_FL9_1_REQ_TEXTURECUBE_DIMENSION                       512
+#define D3D_FL9_3_REQ_TEXTURECUBE_DIMENSION                       4096
 #define D3D_FL9_1_REQ_TEXTURE3D_U_V_OR_W_DIMENSION   256
-#define D3D_FL9_1_DEFAULT_MAX_ANISOTROPY             2
-#define D3D_FL9_1_IA_PRIMITIVE_MAX_COUNT             65535
-#define D3D_FL9_2_IA_PRIMITIVE_MAX_COUNT             1048575
+#define D3D_FL9_1_DEFAULT_MAX_ANISOTROPY                                       2
+#define D3D_FL9_1_IA_PRIMITIVE_MAX_COUNT                                       65535
+#define D3D_FL9_2_IA_PRIMITIVE_MAX_COUNT                                       1048575
 #define D3D_FL9_1_SIMULTANEOUS_RENDER_TARGET_COUNT   1
 #define D3D_FL9_3_SIMULTANEOUS_RENDER_TARGET_COUNT   4
-#define D3D_FL9_1_MAX_TEXTURE_REPEAT                 128
-#define D3D_FL9_2_MAX_TEXTURE_REPEAT                 2048
-#define D3D_FL9_3_MAX_TEXTURE_REPEAT                 8192
+#define D3D_FL9_1_MAX_TEXTURE_REPEAT                                           128
+#define D3D_FL9_2_MAX_TEXTURE_REPEAT                                           2048
+#define D3D_FL9_3_MAX_TEXTURE_REPEAT                                           8192
 typedef enum _D3D_SHADER_VARIABLE_CLASS {
     D3D_SVC_SCALAR = 0,
     D3D_SVC_VECTOR = 1,

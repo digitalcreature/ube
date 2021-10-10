@@ -170,8 +170,8 @@ typedef struct _DHCP_OPTION_VALUE {
 
 typedef struct _DHCP_OPTION {
   DHCP_OPTION_ID   OptionID;
-  LPWSTR           OptionName;
-  LPWSTR           OptionComment;
+  LPWSTR                        OptionName;
+  LPWSTR                        OptionComment;
   DHCP_OPTION_DATA DefaultValue;
   DHCP_OPTION_TYPE OptionType;
 } DHCP_OPTION, *LPDHCP_OPTION;
@@ -262,7 +262,7 @@ VOID WINAPI DhcpRpcFreeMemory(PVOID BufferPointer);
 #define ERROR_DDS_RANGE_DOES_NOT_EXIST 20088
 
 typedef struct _DHCP_OPTION_ARRAY {
-  DWORD         NumElements;
+  DWORD                      NumElements;
   LPDHCP_OPTION Options;
 } DHCP_OPTION_ARRAY, *LPDHCP_OPTION_ARRAY;
 
@@ -281,13 +281,13 @@ typedef enum _DHCP_OPTION_SCOPE_TYPE6 {
 } DHCP_OPTION_SCOPE_TYPE6;
 
 typedef struct _DHCP_ALL_OPTIONS {
-  DWORD               Flags;
+  DWORD                                         Flags;
   LPDHCP_OPTION_ARRAY NonVendorOptions;
-  DWORD               NumVendorOptions;
+  DWORD                                         NumVendorOptions;
   struct {
     DHCP_OPTION Option;
-    LPWSTR      VendorName;
-    LPWSTR      ClassName;
+    LPWSTR                   VendorName;
+    LPWSTR                   ClassName;
   } *VendorOptions;
 } DHCP_ALL_OPTIONS, *LPDHCP_ALL_OPTIONS;
 
@@ -300,9 +300,9 @@ typedef struct _DHCP_ALL_OPTION_VALUES {
   DWORD Flags;
   DWORD NumElements;
   struct {
-    LPWSTR                    ClassName;
-    LPWSTR                    VendorName;
-    WINBOOL                   IsVendor;
+    LPWSTR                                                           ClassName;
+    LPWSTR                                                           VendorName;
+    WINBOOL                                                          IsVendor;
     LPDHCP_OPTION_VALUE_ARRAY OptionsArray;
   } *Options;
 } DHCP_ALL_OPTION_VALUES, *LPDHCP_ALL_OPTION_VALUES;
@@ -310,14 +310,14 @@ typedef struct _DHCP_ALL_OPTION_VALUES {
 typedef struct _DHCP_OPTION_SCOPE_INFO6 {
   DHCP_OPTION_SCOPE_TYPE6 ScopeType;
   union {
-    PVOID                DefaultScopeInfo;
+    PVOID                                          DefaultScopeInfo;
     DHCP_IPV6_ADDRESS    SubnetScopeInfo;
     DHCP_RESERVED_SCOPE6 ReservedScopeInfo;
   } ScopeInfo;
 } DHCP_OPTION_SCOPE_INFO6, *PDHCP_OPTION_SCOPE_INFO6, *LPDHCP_OPTION_SCOPE_INFO6;
 
 typedef struct _DHCP_OPTION_VALUE_ARRAY {
-  DWORD               NumElements;
+  DWORD                                         NumElements;
   LPDHCP_OPTION_VALUE Values;
 } DHCP_OPTION_VALUE_ARRAY, *LPDHCP_OPTION_VALUE_ARRAY;
 
@@ -341,9 +341,9 @@ typedef struct _DHCP_IP_RESERVATION_V6 {
 typedef struct DHCP_SUBNET_ELEMENT_DATA_V6 {
   DHCP_SUBNET_ELEMENT_TYPE_V6 ElementType;
     union _DHCP_SUBNET_ELEMENT_UNION_V6 {
-      DHCP_IP_RANGE_V6* IpRange;
-      DHCP_IP_RESERVATION_V6* ReservedIp;
-      DHCP_IP_RANGE_V6* ExcludeIpRange;
+                   DHCP_IP_RANGE_V6* IpRange;
+                   DHCP_IP_RESERVATION_V6* ReservedIp;
+                   DHCP_IP_RANGE_V6* ExcludeIpRange;
   } Element;
 } DHCP_SUBNET_ELEMENT_DATA_V6, *LDHCP_SUBNET_ELEMENT_DATA_V6, *LPDHCP_SUBNET_ELEMENT_DATA_V6;
 
@@ -354,12 +354,12 @@ typedef struct _DHCP_SUBNET_ELEMENT_INFO_ARRAY_V6 {
 
 typedef struct _DHCP_SUBNET_INFO_V6 {
   DHCP_IPV6_ADDRESS SubnetAddress;
-  ULONG             Prefix;
-  USHORT            Preference;
-  LPWSTR            SubnetName;
-  LPWSTR            SubnetComment;
-  DWORD             State;
-  DWORD             ScopeId;
+  ULONG                                       Prefix;
+  USHORT                                      Preference;
+  LPWSTR                                      SubnetName;
+  LPWSTR                                      SubnetComment;
+  DWORD                                       State;
+  DWORD                                       ScopeId;
 } DHCP_SUBNET_INFO_V6, *PDHCP_SUBNET_INFO_V6, *LPDHCP_SUBNET_INFO_V6;
 
 DWORD DHCP_API_FUNCTION DhcpAddSubnetElementV6(

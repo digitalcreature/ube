@@ -26,18 +26,18 @@ int getntptimeofday (struct timespec *tp, struct timezone *z)
 
   if (z != NULL)
     {
-      if ((tzi = GetTimeZoneInformation(&TimeZoneInformation)) != TIME_ZONE_ID_INVALID) {
+                   if ((tzi = GetTimeZoneInformation(&TimeZoneInformation)) != TIME_ZONE_ID_INVALID) {
 	z->tz_minuteswest = TimeZoneInformation.Bias;
 	if (tzi == TIME_ZONE_ID_DAYLIGHT)
 	  z->tz_dsttime = 1;
 	else
 	  z->tz_dsttime = 0;
-      }
+                   }
     else
-      {
+                   {
 	z->tz_minuteswest = 0;
 	z->tz_dsttime = 0;
-      }
+                   }
     }
 
   if (tp != NULL) {

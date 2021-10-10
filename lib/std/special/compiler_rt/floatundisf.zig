@@ -22,42 +22,42 @@ pub fn __floatundisf(arg: u64) callconv(.C) f32 {
     var e = @intCast(u32, sd) - 1;
 
     if (sd > FLT_MANT_DIG) {
-        //  start:  0000000000000000000001xxxxxxxxxxxxxxxxxxxxxxPQxxxxxxxxxxxxxxxxxx
-        //  finish: 000000000000000000000000000000000000001xxxxxxxxxxxxxxxxxxxxxxPQR
-        //                                                12345678901234567890123456
-        //  1 = msb 1 bit
-        //  P = bit FLT_MANT_DIG-1 bits to the right of 1
-        //  Q = bit FLT_MANT_DIG bits to the right of 1
-        //  R = "or" of all bits to the right of Q
-        switch (sd) {
-            FLT_MANT_DIG + 1 => a <<= 1,
-            FLT_MANT_DIG + 2 => {},
-            else => {
-                const shift_amt = @intCast(u6, ((N + FLT_MANT_DIG + 2) - sd));
-                const all_ones: u64 = maxInt(u64);
-                a = (a >> @intCast(u6, sd - (FLT_MANT_DIG + 2))) |
-                    @boolToInt(a & (all_ones >> shift_amt) != 0);
-            },
-        }
-        // Or P into R
-        a |= @boolToInt((a & 4) != 0);
-        // round - this step may add a significant bit
-        a += 1;
-        // dump Q and R
-        a >>= 2;
-        // a is now rounded to FLT_MANT_DIG or FLT_MANT_DIG+1 bits
-        if ((a & (@as(u64, 1) << FLT_MANT_DIG)) != 0) {
-            a >>= 1;
-            e += 1;
-        }
-        // a is now rounded to FLT_MANT_DIG bits
+                     //  start:  0000000000000000000001xxxxxxxxxxxxxxxxxxxxxxPQxxxxxxxxxxxxxxxxxx
+                     //  finish: 000000000000000000000000000000000000001xxxxxxxxxxxxxxxxxxxxxxPQR
+                     //                                                                                                                                                        12345678901234567890123456
+                     //  1 = msb 1 bit
+                     //  P = bit FLT_MANT_DIG-1 bits to the right of 1
+                     //  Q = bit FLT_MANT_DIG bits to the right of 1
+                     //  R = "or" of all bits to the right of Q
+                     switch (sd) {
+                                      FLT_MANT_DIG + 1 => a <<= 1,
+                                      FLT_MANT_DIG + 2 => {},
+                                      else => {
+                                          const shift_amt = @intCast(u6, ((N + FLT_MANT_DIG + 2) - sd));
+                                          const all_ones: u64 = maxInt(u64);
+                                          a = (a >> @intCast(u6, sd - (FLT_MANT_DIG + 2))) |
+                                                           @boolToInt(a & (all_ones >> shift_amt) != 0);
+                                      },
+                     }
+                     // Or P into R
+                     a |= @boolToInt((a & 4) != 0);
+                     // round - this step may add a significant bit
+                     a += 1;
+                     // dump Q and R
+                     a >>= 2;
+                     // a is now rounded to FLT_MANT_DIG or FLT_MANT_DIG+1 bits
+                     if ((a & (@as(u64, 1) << FLT_MANT_DIG)) != 0) {
+                                      a >>= 1;
+                                      e += 1;
+                     }
+                     // a is now rounded to FLT_MANT_DIG bits
     } else {
-        a <<= @intCast(u6, FLT_MANT_DIG - sd);
-        // a is now rounded to FLT_MANT_DIG bits
+                     a <<= @intCast(u6, FLT_MANT_DIG - sd);
+                     // a is now rounded to FLT_MANT_DIG bits
     }
 
     const result: u32 = ((e + 127) << 23) | // exponent
-        @truncate(u32, a & 0x007FFFFF); // mantissa
+                     @truncate(u32, a & 0x007FFFFF); // mantissa
     return @bitCast(f32, result);
 }
 

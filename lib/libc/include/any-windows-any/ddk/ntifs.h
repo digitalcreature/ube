@@ -41,7 +41,7 @@ extern "C" {
 
 
 #ifndef FlagOn
-#define FlagOn(_F,_SF)        ((_F) & (_SF))
+#define FlagOn(_F,_SF)                     ((_F) & (_SF))
 #endif
 
 #ifndef BooleanFlagOn
@@ -49,7 +49,7 @@ extern "C" {
 #endif
 
 #ifndef SetFlag
-#define SetFlag(_F,_SF)       ((_F) |= (_SF))
+#define SetFlag(_F,_SF)                    ((_F) |= (_SF))
 #endif
 
 #ifndef ClearFlag
@@ -61,7 +61,7 @@ typedef STRING LSA_STRING, *PLSA_STRING;
 typedef OBJECT_ATTRIBUTES LSA_OBJECT_ATTRIBUTES, *PLSA_OBJECT_ATTRIBUTES;
 
 /******************************************************************************
- *                            Security Manager Types                          *
+ *                                                                                Security Manager Types                                                                              *
  ******************************************************************************/
 #ifndef SID_IDENTIFIER_AUTHORITY_DEFINED
 #define SID_IDENTIFIER_AUTHORITY_DEFINED
@@ -80,8 +80,8 @@ typedef struct _SID {
 } SID, *PISID;
 #endif
 
-#define SID_REVISION                    1
-#define SID_MAX_SUB_AUTHORITIES         15
+#define SID_REVISION                                                           1
+#define SID_MAX_SUB_AUTHORITIES                      15
 #define SID_RECOMMENDED_SUB_AUTHORITIES 1
 
 typedef enum _SID_NAME_USE {
@@ -116,50 +116,50 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 
 /* Universal well-known SIDs */
 
-#define SECURITY_NULL_SID_AUTHORITY         {0,0,0,0,0,0}
-#define SECURITY_WORLD_SID_AUTHORITY        {0,0,0,0,0,1}
-#define SECURITY_LOCAL_SID_AUTHORITY        {0,0,0,0,0,2}
-#define SECURITY_CREATOR_SID_AUTHORITY      {0,0,0,0,0,3}
-#define SECURITY_NON_UNIQUE_AUTHORITY       {0,0,0,0,0,4}
+#define SECURITY_NULL_SID_AUTHORITY                      {0,0,0,0,0,0}
+#define SECURITY_WORLD_SID_AUTHORITY                     {0,0,0,0,0,1}
+#define SECURITY_LOCAL_SID_AUTHORITY                     {0,0,0,0,0,2}
+#define SECURITY_CREATOR_SID_AUTHORITY                   {0,0,0,0,0,3}
+#define SECURITY_NON_UNIQUE_AUTHORITY                    {0,0,0,0,0,4}
 #define SECURITY_RESOURCE_MANAGER_AUTHORITY {0,0,0,0,0,9}
 
-#define SECURITY_NULL_RID                 (0x00000000L)
-#define SECURITY_WORLD_RID                (0x00000000L)
-#define SECURITY_LOCAL_RID                (0x00000000L)
-#define SECURITY_LOCAL_LOGON_RID          (0x00000001L)
+#define SECURITY_NULL_RID                                           (0x00000000L)
+#define SECURITY_WORLD_RID                                          (0x00000000L)
+#define SECURITY_LOCAL_RID                                          (0x00000000L)
+#define SECURITY_LOCAL_LOGON_RID                       (0x00000001L)
 
-#define SECURITY_CREATOR_OWNER_RID        (0x00000000L)
-#define SECURITY_CREATOR_GROUP_RID        (0x00000001L)
+#define SECURITY_CREATOR_OWNER_RID                     (0x00000000L)
+#define SECURITY_CREATOR_GROUP_RID                     (0x00000001L)
 #define SECURITY_CREATOR_OWNER_SERVER_RID (0x00000002L)
 #define SECURITY_CREATOR_GROUP_SERVER_RID (0x00000003L)
 #define SECURITY_CREATOR_OWNER_RIGHTS_RID (0x00000004L)
 
 /* NT well-known SIDs */
 
-#define SECURITY_NT_AUTHORITY           {0,0,0,0,0,5}
+#define SECURITY_NT_AUTHORITY                        {0,0,0,0,0,5}
 
-#define SECURITY_DIALUP_RID             (0x00000001L)
-#define SECURITY_NETWORK_RID            (0x00000002L)
-#define SECURITY_BATCH_RID              (0x00000003L)
-#define SECURITY_INTERACTIVE_RID        (0x00000004L)
-#define SECURITY_LOGON_IDS_RID          (0x00000005L)
+#define SECURITY_DIALUP_RID                                       (0x00000001L)
+#define SECURITY_NETWORK_RID                                      (0x00000002L)
+#define SECURITY_BATCH_RID                                        (0x00000003L)
+#define SECURITY_INTERACTIVE_RID                     (0x00000004L)
+#define SECURITY_LOGON_IDS_RID                       (0x00000005L)
 #define SECURITY_LOGON_IDS_RID_COUNT    (3L)
-#define SECURITY_SERVICE_RID            (0x00000006L)
+#define SECURITY_SERVICE_RID                                      (0x00000006L)
 #define SECURITY_ANONYMOUS_LOGON_RID    (0x00000007L)
-#define SECURITY_PROXY_RID              (0x00000008L)
+#define SECURITY_PROXY_RID                                        (0x00000008L)
 #define SECURITY_ENTERPRISE_CONTROLLERS_RID (0x00000009L)
-#define SECURITY_SERVER_LOGON_RID       SECURITY_ENTERPRISE_CONTROLLERS_RID
+#define SECURITY_SERVER_LOGON_RID                    SECURITY_ENTERPRISE_CONTROLLERS_RID
 #define SECURITY_PRINCIPAL_SELF_RID     (0x0000000AL)
 #define SECURITY_AUTHENTICATED_USER_RID (0x0000000BL)
 #define SECURITY_RESTRICTED_CODE_RID    (0x0000000CL)
 #define SECURITY_TERMINAL_SERVER_RID    (0x0000000DL)
-#define SECURITY_REMOTE_LOGON_RID       (0x0000000EL)
+#define SECURITY_REMOTE_LOGON_RID                    (0x0000000EL)
 #define SECURITY_THIS_ORGANIZATION_RID  (0x0000000FL)
-#define SECURITY_IUSER_RID              (0x00000011L)
-#define SECURITY_LOCAL_SYSTEM_RID       (0x00000012L)
-#define SECURITY_LOCAL_SERVICE_RID      (0x00000013L)
+#define SECURITY_IUSER_RID                                        (0x00000011L)
+#define SECURITY_LOCAL_SYSTEM_RID                    (0x00000012L)
+#define SECURITY_LOCAL_SERVICE_RID                   (0x00000013L)
 #define SECURITY_NETWORK_SERVICE_RID    (0x00000014L)
-#define SECURITY_NT_NON_UNIQUE          (0x00000015L)
+#define SECURITY_NT_NON_UNIQUE                       (0x00000015L)
 #define SECURITY_NT_NON_UNIQUE_SUB_AUTH_COUNT  (3L)
 #define SECURITY_ENTERPRISE_READONLY_CONTROLLERS_RID (0x00000016L)
 
@@ -167,14 +167,14 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define SECURITY_WRITE_RESTRICTED_CODE_RID (0x00000021L)
 
 
-#define SECURITY_PACKAGE_BASE_RID       (0x00000040L)
-#define SECURITY_PACKAGE_RID_COUNT      (2L)
-#define SECURITY_PACKAGE_NTLM_RID       (0x0000000AL)
+#define SECURITY_PACKAGE_BASE_RID                    (0x00000040L)
+#define SECURITY_PACKAGE_RID_COUNT                   (2L)
+#define SECURITY_PACKAGE_NTLM_RID                    (0x0000000AL)
 #define SECURITY_PACKAGE_SCHANNEL_RID   (0x0000000EL)
 #define SECURITY_PACKAGE_DIGEST_RID     (0x00000015L)
 
-#define SECURITY_CRED_TYPE_BASE_RID             (0x00000041L)
-#define SECURITY_CRED_TYPE_RID_COUNT            (2L)
+#define SECURITY_CRED_TYPE_BASE_RID                                       (0x00000041L)
+#define SECURITY_CRED_TYPE_RID_COUNT                                      (2L)
 #define SECURITY_CRED_TYPE_THIS_ORG_CERT_RID    (0x00000001L)
 
 #define SECURITY_MIN_BASE_RID		(0x00000050L)
@@ -191,9 +191,9 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define SECURITY_CLOUD_INFRASTRUCTURE_SERVICES_ID_RID_COUNT (6L)
 #define SECURITY_WMIHOST_ID_BASE_RID  (0x00000056L)
 #define SECURITY_WMIHOST_ID_RID_COUNT (6L)
-#define SECURITY_TASK_ID_BASE_RID                 (0x00000057L)
-#define SECURITY_NFS_ID_BASE_RID        (0x00000058L)
-#define SECURITY_COM_ID_BASE_RID        (0x00000059L)
+#define SECURITY_TASK_ID_BASE_RID                                           (0x00000057L)
+#define SECURITY_NFS_ID_BASE_RID                     (0x00000058L)
+#define SECURITY_COM_ID_BASE_RID                     (0x00000059L)
 #define SECURITY_VIRTUALACCOUNT_ID_RID_COUNT   (6L)
 
 #define SECURITY_MAX_BASE_RID		(0x0000006FL)
@@ -209,66 +209,66 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 
 #define DOMAIN_GROUP_RID_ENTERPRISE_READONLY_DOMAIN_CONTROLLERS (0x000001F2L)
 
-#define FOREST_USER_RID_MAX            (0x000001F3L)
+#define FOREST_USER_RID_MAX                                      (0x000001F3L)
 
 /* Well-known users */
 
-#define DOMAIN_USER_RID_ADMIN          (0x000001F4L)
-#define DOMAIN_USER_RID_GUEST          (0x000001F5L)
-#define DOMAIN_USER_RID_KRBTGT         (0x000001F6L)
+#define DOMAIN_USER_RID_ADMIN                       (0x000001F4L)
+#define DOMAIN_USER_RID_GUEST                       (0x000001F5L)
+#define DOMAIN_USER_RID_KRBTGT                      (0x000001F6L)
 
-#define DOMAIN_USER_RID_MAX            (0x000003E7L)
+#define DOMAIN_USER_RID_MAX                                      (0x000003E7L)
 
 /* Well-known groups */
 
-#define DOMAIN_GROUP_RID_ADMINS               (0x00000200L)
-#define DOMAIN_GROUP_RID_USERS                (0x00000201L)
-#define DOMAIN_GROUP_RID_GUESTS               (0x00000202L)
-#define DOMAIN_GROUP_RID_COMPUTERS            (0x00000203L)
-#define DOMAIN_GROUP_RID_CONTROLLERS          (0x00000204L)
-#define DOMAIN_GROUP_RID_CERT_ADMINS          (0x00000205L)
-#define DOMAIN_GROUP_RID_SCHEMA_ADMINS        (0x00000206L)
+#define DOMAIN_GROUP_RID_ADMINS                                         (0x00000200L)
+#define DOMAIN_GROUP_RID_USERS                                          (0x00000201L)
+#define DOMAIN_GROUP_RID_GUESTS                                         (0x00000202L)
+#define DOMAIN_GROUP_RID_COMPUTERS                                      (0x00000203L)
+#define DOMAIN_GROUP_RID_CONTROLLERS                       (0x00000204L)
+#define DOMAIN_GROUP_RID_CERT_ADMINS                       (0x00000205L)
+#define DOMAIN_GROUP_RID_SCHEMA_ADMINS                     (0x00000206L)
 #define DOMAIN_GROUP_RID_ENTERPRISE_ADMINS    (0x00000207L)
-#define DOMAIN_GROUP_RID_POLICY_ADMINS        (0x00000208L)
+#define DOMAIN_GROUP_RID_POLICY_ADMINS                     (0x00000208L)
 #define DOMAIN_GROUP_RID_READONLY_CONTROLLERS (0x00000209L)
 
 /* Well-known aliases */
 
-#define DOMAIN_ALIAS_RID_ADMINS                         (0x00000220L)
-#define DOMAIN_ALIAS_RID_USERS                          (0x00000221L)
-#define DOMAIN_ALIAS_RID_GUESTS                         (0x00000222L)
-#define DOMAIN_ALIAS_RID_POWER_USERS                    (0x00000223L)
+#define DOMAIN_ALIAS_RID_ADMINS                                                                             (0x00000220L)
+#define DOMAIN_ALIAS_RID_USERS                                                                              (0x00000221L)
+#define DOMAIN_ALIAS_RID_GUESTS                                                                             (0x00000222L)
+#define DOMAIN_ALIAS_RID_POWER_USERS                                                           (0x00000223L)
 
-#define DOMAIN_ALIAS_RID_ACCOUNT_OPS                    (0x00000224L)
-#define DOMAIN_ALIAS_RID_SYSTEM_OPS                     (0x00000225L)
-#define DOMAIN_ALIAS_RID_PRINT_OPS                      (0x00000226L)
-#define DOMAIN_ALIAS_RID_BACKUP_OPS                     (0x00000227L)
+#define DOMAIN_ALIAS_RID_ACCOUNT_OPS                                                           (0x00000224L)
+#define DOMAIN_ALIAS_RID_SYSTEM_OPS                                                            (0x00000225L)
+#define DOMAIN_ALIAS_RID_PRINT_OPS                                                             (0x00000226L)
+#define DOMAIN_ALIAS_RID_BACKUP_OPS                                                            (0x00000227L)
 
-#define DOMAIN_ALIAS_RID_REPLICATOR                     (0x00000228L)
-#define DOMAIN_ALIAS_RID_RAS_SERVERS                    (0x00000229L)
-#define DOMAIN_ALIAS_RID_PREW2KCOMPACCESS               (0x0000022AL)
-#define DOMAIN_ALIAS_RID_REMOTE_DESKTOP_USERS           (0x0000022BL)
-#define DOMAIN_ALIAS_RID_NETWORK_CONFIGURATION_OPS      (0x0000022CL)
+#define DOMAIN_ALIAS_RID_REPLICATOR                                                            (0x00000228L)
+#define DOMAIN_ALIAS_RID_RAS_SERVERS                                                           (0x00000229L)
+#define DOMAIN_ALIAS_RID_PREW2KCOMPACCESS                                         (0x0000022AL)
+#define DOMAIN_ALIAS_RID_REMOTE_DESKTOP_USERS                        (0x0000022BL)
+#define DOMAIN_ALIAS_RID_NETWORK_CONFIGURATION_OPS                   (0x0000022CL)
 #define DOMAIN_ALIAS_RID_INCOMING_FOREST_TRUST_BUILDERS (0x0000022DL)
 
-#define DOMAIN_ALIAS_RID_MONITORING_USERS               (0x0000022EL)
-#define DOMAIN_ALIAS_RID_LOGGING_USERS                  (0x0000022FL)
-#define DOMAIN_ALIAS_RID_AUTHORIZATIONACCESS            (0x00000230L)
-#define DOMAIN_ALIAS_RID_TS_LICENSE_SERVERS             (0x00000231L)
-#define DOMAIN_ALIAS_RID_DCOM_USERS                     (0x00000232L)
-#define DOMAIN_ALIAS_RID_IUSERS                         (0x00000238L)
-#define DOMAIN_ALIAS_RID_CRYPTO_OPERATORS               (0x00000239L)
+#define DOMAIN_ALIAS_RID_MONITORING_USERS                                         (0x0000022EL)
+#define DOMAIN_ALIAS_RID_LOGGING_USERS                                                         (0x0000022FL)
+#define DOMAIN_ALIAS_RID_AUTHORIZATIONACCESS                                      (0x00000230L)
+#define DOMAIN_ALIAS_RID_TS_LICENSE_SERVERS                                       (0x00000231L)
+#define DOMAIN_ALIAS_RID_DCOM_USERS                                                            (0x00000232L)
+#define DOMAIN_ALIAS_RID_IUSERS                                                                             (0x00000238L)
+#define DOMAIN_ALIAS_RID_CRYPTO_OPERATORS                                         (0x00000239L)
 #define DOMAIN_ALIAS_RID_CACHEABLE_PRINCIPALS_GROUP     (0x0000023BL)
 #define DOMAIN_ALIAS_RID_NON_CACHEABLE_PRINCIPALS_GROUP (0x0000023CL)
-#define DOMAIN_ALIAS_RID_EVENT_LOG_READERS_GROUP        (0x0000023DL)
-#define DOMAIN_ALIAS_RID_CERTSVC_DCOM_ACCESS_GROUP      (0x0000023EL)
+#define DOMAIN_ALIAS_RID_EVENT_LOG_READERS_GROUP                     (0x0000023DL)
+#define DOMAIN_ALIAS_RID_CERTSVC_DCOM_ACCESS_GROUP                   (0x0000023EL)
 
-#define SECURITY_MANDATORY_LABEL_AUTHORITY          {0,0,0,0,0,16}
-#define SECURITY_MANDATORY_UNTRUSTED_RID            (0x00000000L)
-#define SECURITY_MANDATORY_LOW_RID                  (0x00001000L)
-#define SECURITY_MANDATORY_MEDIUM_RID               (0x00002000L)
-#define SECURITY_MANDATORY_HIGH_RID                 (0x00003000L)
-#define SECURITY_MANDATORY_SYSTEM_RID               (0x00004000L)
+#define SECURITY_MANDATORY_LABEL_AUTHORITY                       {0,0,0,0,0,16}
+#define SECURITY_MANDATORY_UNTRUSTED_RID                                      (0x00000000L)
+#define SECURITY_MANDATORY_LOW_RID                                                         (0x00001000L)
+#define SECURITY_MANDATORY_MEDIUM_RID                                         (0x00002000L)
+#define SECURITY_MANDATORY_HIGH_RID                                           (0x00003000L)
+#define SECURITY_MANDATORY_SYSTEM_RID                                         (0x00004000L)
 #define SECURITY_MANDATORY_PROTECTED_PROCESS_RID    (0x00005000L)
 
 /* SECURITY_MANDATORY_MAXIMUM_USER_RID is the highest RID that
@@ -281,11 +281,11 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 /* Allocate the System Luid.  The first 1000 LUIDs are reserved.
    Use #999 here (0x3e7 = 999) */
 
-#define SYSTEM_LUID                     {0x3e7, 0x0}
-#define ANONYMOUS_LOGON_LUID            {0x3e6, 0x0}
-#define LOCALSERVICE_LUID               {0x3e5, 0x0}
-#define NETWORKSERVICE_LUID             {0x3e4, 0x0}
-#define IUSER_LUID                      {0x3e3, 0x0}
+#define SYSTEM_LUID                                                            {0x3e7, 0x0}
+#define ANONYMOUS_LOGON_LUID                                      {0x3e6, 0x0}
+#define LOCALSERVICE_LUID                                         {0x3e5, 0x0}
+#define NETWORKSERVICE_LUID                                       {0x3e4, 0x0}
+#define IUSER_LUID                                                             {0x3e3, 0x0}
 
 typedef struct _ACE_HEADER {
   UCHAR AceType;
@@ -294,45 +294,45 @@ typedef struct _ACE_HEADER {
 } ACE_HEADER, *PACE_HEADER;
 
 /* also in winnt.h */
-#define ACCESS_MIN_MS_ACE_TYPE                  (0x0)
-#define ACCESS_ALLOWED_ACE_TYPE                 (0x0)
-#define ACCESS_DENIED_ACE_TYPE                  (0x1)
-#define SYSTEM_AUDIT_ACE_TYPE                   (0x2)
-#define SYSTEM_ALARM_ACE_TYPE                   (0x3)
-#define ACCESS_MAX_MS_V2_ACE_TYPE               (0x3)
-#define ACCESS_ALLOWED_COMPOUND_ACE_TYPE        (0x4)
-#define ACCESS_MAX_MS_V3_ACE_TYPE               (0x4)
-#define ACCESS_MIN_MS_OBJECT_ACE_TYPE           (0x5)
-#define ACCESS_ALLOWED_OBJECT_ACE_TYPE          (0x5)
-#define ACCESS_DENIED_OBJECT_ACE_TYPE           (0x6)
-#define SYSTEM_AUDIT_OBJECT_ACE_TYPE            (0x7)
-#define SYSTEM_ALARM_OBJECT_ACE_TYPE            (0x8)
-#define ACCESS_MAX_MS_OBJECT_ACE_TYPE           (0x8)
-#define ACCESS_MAX_MS_V4_ACE_TYPE               (0x8)
-#define ACCESS_MAX_MS_ACE_TYPE                  (0x8)
-#define ACCESS_ALLOWED_CALLBACK_ACE_TYPE        (0x9)
-#define ACCESS_DENIED_CALLBACK_ACE_TYPE         (0xA)
+#define ACCESS_MIN_MS_ACE_TYPE                                                         (0x0)
+#define ACCESS_ALLOWED_ACE_TYPE                                           (0x0)
+#define ACCESS_DENIED_ACE_TYPE                                                         (0x1)
+#define SYSTEM_AUDIT_ACE_TYPE                                                          (0x2)
+#define SYSTEM_ALARM_ACE_TYPE                                                          (0x3)
+#define ACCESS_MAX_MS_V2_ACE_TYPE                                         (0x3)
+#define ACCESS_ALLOWED_COMPOUND_ACE_TYPE                     (0x4)
+#define ACCESS_MAX_MS_V3_ACE_TYPE                                         (0x4)
+#define ACCESS_MIN_MS_OBJECT_ACE_TYPE                        (0x5)
+#define ACCESS_ALLOWED_OBJECT_ACE_TYPE                       (0x5)
+#define ACCESS_DENIED_OBJECT_ACE_TYPE                        (0x6)
+#define SYSTEM_AUDIT_OBJECT_ACE_TYPE                                      (0x7)
+#define SYSTEM_ALARM_OBJECT_ACE_TYPE                                      (0x8)
+#define ACCESS_MAX_MS_OBJECT_ACE_TYPE                        (0x8)
+#define ACCESS_MAX_MS_V4_ACE_TYPE                                         (0x8)
+#define ACCESS_MAX_MS_ACE_TYPE                                                         (0x8)
+#define ACCESS_ALLOWED_CALLBACK_ACE_TYPE                     (0x9)
+#define ACCESS_DENIED_CALLBACK_ACE_TYPE                      (0xA)
 #define ACCESS_ALLOWED_CALLBACK_OBJECT_ACE_TYPE (0xB)
 #define ACCESS_DENIED_CALLBACK_OBJECT_ACE_TYPE  (0xC)
-#define SYSTEM_AUDIT_CALLBACK_ACE_TYPE          (0xD)
-#define SYSTEM_ALARM_CALLBACK_ACE_TYPE          (0xE)
+#define SYSTEM_AUDIT_CALLBACK_ACE_TYPE                       (0xD)
+#define SYSTEM_ALARM_CALLBACK_ACE_TYPE                       (0xE)
 #define SYSTEM_AUDIT_CALLBACK_OBJECT_ACE_TYPE   (0xF)
 #define SYSTEM_ALARM_CALLBACK_OBJECT_ACE_TYPE   (0x10)
-#define ACCESS_MAX_MS_V5_ACE_TYPE               (0x11)
-#define SYSTEM_MANDATORY_LABEL_ACE_TYPE         (0x11)
+#define ACCESS_MAX_MS_V5_ACE_TYPE                                         (0x11)
+#define SYSTEM_MANDATORY_LABEL_ACE_TYPE                      (0x11)
 
 /* The following are the inherit flags that go into the AceFlags field
    of an Ace header. */
 
-#define OBJECT_INHERIT_ACE                (0x1)
-#define CONTAINER_INHERIT_ACE             (0x2)
-#define NO_PROPAGATE_INHERIT_ACE          (0x4)
-#define INHERIT_ONLY_ACE                  (0x8)
-#define INHERITED_ACE                     (0x10)
-#define VALID_INHERIT_FLAGS               (0x1F)
+#define OBJECT_INHERIT_ACE                                          (0x1)
+#define CONTAINER_INHERIT_ACE                                       (0x2)
+#define NO_PROPAGATE_INHERIT_ACE                       (0x4)
+#define INHERIT_ONLY_ACE                                                         (0x8)
+#define INHERITED_ACE                                                            (0x10)
+#define VALID_INHERIT_FLAGS                                         (0x1F)
 
-#define SUCCESSFUL_ACCESS_ACE_FLAG        (0x40)
-#define FAILED_ACCESS_ACE_FLAG            (0x80)
+#define SUCCESSFUL_ACCESS_ACE_FLAG                     (0x40)
+#define FAILED_ACCESS_ACE_FLAG                                      (0x80)
 
 typedef struct _ACCESS_ALLOWED_ACE {
   ACE_HEADER Header;
@@ -364,33 +364,33 @@ typedef struct _SYSTEM_MANDATORY_LABEL_ACE {
   ULONG SidStart;
 } SYSTEM_MANDATORY_LABEL_ACE, *PSYSTEM_MANDATORY_LABEL_ACE;
 
-#define SYSTEM_MANDATORY_LABEL_NO_WRITE_UP         0x1
-#define SYSTEM_MANDATORY_LABEL_NO_READ_UP          0x2
-#define SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP       0x4
+#define SYSTEM_MANDATORY_LABEL_NO_WRITE_UP                      0x1
+#define SYSTEM_MANDATORY_LABEL_NO_READ_UP                       0x2
+#define SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP                    0x4
 #define SYSTEM_MANDATORY_LABEL_VALID_MASK (SYSTEM_MANDATORY_LABEL_NO_WRITE_UP   | \
-                                           SYSTEM_MANDATORY_LABEL_NO_READ_UP    | \
-                                           SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP)
+                                                                                                                                      SYSTEM_MANDATORY_LABEL_NO_READ_UP    | \
+                                                                                                                                      SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP)
 
 #define SECURITY_DESCRIPTOR_MIN_LENGTH   (sizeof(SECURITY_DESCRIPTOR))
 
 typedef USHORT SECURITY_DESCRIPTOR_CONTROL,*PSECURITY_DESCRIPTOR_CONTROL;
 
-#define SE_OWNER_DEFAULTED              0x0001
-#define SE_GROUP_DEFAULTED              0x0002
-#define SE_DACL_PRESENT                 0x0004
-#define SE_DACL_DEFAULTED               0x0008
-#define SE_SACL_PRESENT                 0x0010
-#define SE_SACL_DEFAULTED               0x0020
-#define SE_DACL_UNTRUSTED               0x0040
-#define SE_SERVER_SECURITY              0x0080
-#define SE_DACL_AUTO_INHERIT_REQ        0x0100
-#define SE_SACL_AUTO_INHERIT_REQ        0x0200
-#define SE_DACL_AUTO_INHERITED          0x0400
-#define SE_SACL_AUTO_INHERITED          0x0800
-#define SE_DACL_PROTECTED               0x1000
-#define SE_SACL_PROTECTED               0x2000
-#define SE_RM_CONTROL_VALID             0x4000
-#define SE_SELF_RELATIVE                0x8000
+#define SE_OWNER_DEFAULTED                                        0x0001
+#define SE_GROUP_DEFAULTED                                        0x0002
+#define SE_DACL_PRESENT                                           0x0004
+#define SE_DACL_DEFAULTED                                         0x0008
+#define SE_SACL_PRESENT                                           0x0010
+#define SE_SACL_DEFAULTED                                         0x0020
+#define SE_DACL_UNTRUSTED                                         0x0040
+#define SE_SERVER_SECURITY                                        0x0080
+#define SE_DACL_AUTO_INHERIT_REQ                     0x0100
+#define SE_SACL_AUTO_INHERIT_REQ                     0x0200
+#define SE_DACL_AUTO_INHERITED                       0x0400
+#define SE_SACL_AUTO_INHERITED                       0x0800
+#define SE_DACL_PROTECTED                                         0x1000
+#define SE_SACL_PROTECTED                                         0x2000
+#define SE_RM_CONTROL_VALID                                       0x4000
+#define SE_SELF_RELATIVE                                          0x8000
 
 typedef struct _SECURITY_DESCRIPTOR_RELATIVE {
   UCHAR Revision;
@@ -418,10 +418,10 @@ typedef struct _OBJECT_TYPE_LIST {
   GUID *ObjectType;
 } OBJECT_TYPE_LIST, *POBJECT_TYPE_LIST;
 
-#define ACCESS_OBJECT_GUID       0
+#define ACCESS_OBJECT_GUID                    0
 #define ACCESS_PROPERTY_SET_GUID 1
 #define ACCESS_PROPERTY_GUID     2
-#define ACCESS_MAX_LEVEL         4
+#define ACCESS_MAX_LEVEL                      4
 
 typedef enum _AUDIT_EVENT_TYPE {
   AuditEventObjectAccess,
@@ -462,7 +462,7 @@ typedef struct _ACCESS_REASONS {
 
 #define SE_SECURITY_DESCRIPTOR_FLAG_NO_OWNER_ACE    0x00000001
 #define SE_SECURITY_DESCRIPTOR_FLAG_NO_LABEL_ACE    0x00000002
-#define SE_SECURITY_DESCRIPTOR_VALID_FLAGS          0x00000003
+#define SE_SECURITY_DESCRIPTOR_VALID_FLAGS                       0x00000003
 
 typedef struct _SE_SECURITY_DESCRIPTOR {
   ULONG Size;
@@ -521,40 +521,40 @@ typedef struct _SE_AUDIT_INFO {
   BOOLEAN GenerateOnClose;
 } SE_AUDIT_INFO, *PSE_AUDIT_INFO;
 
-#define TOKEN_ASSIGN_PRIMARY            (0x0001)
-#define TOKEN_DUPLICATE                 (0x0002)
-#define TOKEN_IMPERSONATE               (0x0004)
-#define TOKEN_QUERY                     (0x0008)
-#define TOKEN_QUERY_SOURCE              (0x0010)
-#define TOKEN_ADJUST_PRIVILEGES         (0x0020)
-#define TOKEN_ADJUST_GROUPS             (0x0040)
-#define TOKEN_ADJUST_DEFAULT            (0x0080)
-#define TOKEN_ADJUST_SESSIONID          (0x0100)
+#define TOKEN_ASSIGN_PRIMARY                                      (0x0001)
+#define TOKEN_DUPLICATE                                           (0x0002)
+#define TOKEN_IMPERSONATE                                         (0x0004)
+#define TOKEN_QUERY                                                            (0x0008)
+#define TOKEN_QUERY_SOURCE                                        (0x0010)
+#define TOKEN_ADJUST_PRIVILEGES                      (0x0020)
+#define TOKEN_ADJUST_GROUPS                                       (0x0040)
+#define TOKEN_ADJUST_DEFAULT                                      (0x0080)
+#define TOKEN_ADJUST_SESSIONID                       (0x0100)
 
 #define TOKEN_ALL_ACCESS_P (STANDARD_RIGHTS_REQUIRED  |\
-                            TOKEN_ASSIGN_PRIMARY      |\
-                            TOKEN_DUPLICATE           |\
-                            TOKEN_IMPERSONATE         |\
-                            TOKEN_QUERY               |\
-                            TOKEN_QUERY_SOURCE        |\
-                            TOKEN_ADJUST_PRIVILEGES   |\
-                            TOKEN_ADJUST_GROUPS       |\
-                            TOKEN_ADJUST_DEFAULT )
+                                                                                TOKEN_ASSIGN_PRIMARY                   |\
+                                                                                TOKEN_DUPLICATE                        |\
+                                                                                TOKEN_IMPERSONATE                      |\
+                                                                                TOKEN_QUERY                                         |\
+                                                                                TOKEN_QUERY_SOURCE                     |\
+                                                                                TOKEN_ADJUST_PRIVILEGES   |\
+                                                                                TOKEN_ADJUST_GROUPS                    |\
+                                                                                TOKEN_ADJUST_DEFAULT )
 
 #if ((defined(_WIN32_WINNT) && (_WIN32_WINNT > 0x0400)) || (!defined(_WIN32_WINNT)))
 #define TOKEN_ALL_ACCESS  (TOKEN_ALL_ACCESS_P |\
-                           TOKEN_ADJUST_SESSIONID )
+                                                                               TOKEN_ADJUST_SESSIONID )
 #else
 #define TOKEN_ALL_ACCESS  (TOKEN_ALL_ACCESS_P)
 #endif
 
-#define TOKEN_READ       (STANDARD_RIGHTS_READ     |\
-                          TOKEN_QUERY)
+#define TOKEN_READ                    (STANDARD_RIGHTS_READ     |\
+                                                                              TOKEN_QUERY)
 
-#define TOKEN_WRITE      (STANDARD_RIGHTS_WRITE    |\
-                          TOKEN_ADJUST_PRIVILEGES  |\
-                          TOKEN_ADJUST_GROUPS      |\
-                          TOKEN_ADJUST_DEFAULT)
+#define TOKEN_WRITE                   (STANDARD_RIGHTS_WRITE    |\
+                                                                              TOKEN_ADJUST_PRIVILEGES  |\
+                                                                              TOKEN_ADJUST_GROUPS                   |\
+                                                                              TOKEN_ADJUST_DEFAULT)
 
 #define TOKEN_EXECUTE    (STANDARD_RIGHTS_EXECUTE)
 
@@ -646,12 +646,12 @@ typedef struct _TOKEN_MANDATORY_LABEL {
   SID_AND_ATTRIBUTES Label;
 } TOKEN_MANDATORY_LABEL, *PTOKEN_MANDATORY_LABEL;
 
-#define TOKEN_MANDATORY_POLICY_OFF             0x0
+#define TOKEN_MANDATORY_POLICY_OFF                                       0x0
 #define TOKEN_MANDATORY_POLICY_NO_WRITE_UP     0x1
 #define TOKEN_MANDATORY_POLICY_NEW_PROCESS_MIN 0x2
 
 #define TOKEN_MANDATORY_POLICY_VALID_MASK    (TOKEN_MANDATORY_POLICY_NO_WRITE_UP | \
-                                              TOKEN_MANDATORY_POLICY_NEW_PROCESS_MIN)
+                                                                                                                                         TOKEN_MANDATORY_POLICY_NEW_PROCESS_MIN)
 
 typedef struct _TOKEN_MANDATORY_POLICY {
   ULONG Policy;
@@ -716,19 +716,19 @@ typedef enum _MANDATORY_LEVEL {
 } MANDATORY_LEVEL, *PMANDATORY_LEVEL;
 
 #define TOKEN_HAS_TRAVERSE_PRIVILEGE    0x0001
-#define TOKEN_HAS_BACKUP_PRIVILEGE      0x0002
+#define TOKEN_HAS_BACKUP_PRIVILEGE                   0x0002
 #define TOKEN_HAS_RESTORE_PRIVILEGE     0x0004
-#define TOKEN_WRITE_RESTRICTED          0x0008
-#define TOKEN_IS_RESTRICTED             0x0010
+#define TOKEN_WRITE_RESTRICTED                       0x0008
+#define TOKEN_IS_RESTRICTED                                       0x0010
 #define TOKEN_SESSION_NOT_REFERENCED    0x0020
-#define TOKEN_SANDBOX_INERT             0x0040
+#define TOKEN_SANDBOX_INERT                                       0x0040
 #define TOKEN_HAS_IMPERSONATE_PRIVILEGE 0x0080
 #define SE_BACKUP_PRIVILEGES_CHECKED    0x0100
-#define TOKEN_VIRTUALIZE_ALLOWED        0x0200
-#define TOKEN_VIRTUALIZE_ENABLED        0x0400
-#define TOKEN_IS_FILTERED               0x0800
-#define TOKEN_UIACCESS                  0x1000
-#define TOKEN_NOT_LOW                   0x2000
+#define TOKEN_VIRTUALIZE_ALLOWED                     0x0200
+#define TOKEN_VIRTUALIZE_ENABLED                     0x0400
+#define TOKEN_IS_FILTERED                                         0x0800
+#define TOKEN_UIACCESS                                                         0x1000
+#define TOKEN_NOT_LOW                                                          0x2000
 
 typedef struct _SE_EXPORTS {
   LUID SeCreateTokenPrivilege;
@@ -802,7 +802,7 @@ typedef NTSTATUS
 (NTAPI *PSE_LOGON_SESSION_TERMINATED_ROUTINE)(
   IN PLUID LogonId);
 /******************************************************************************
- *                           Runtime Library Types                            *
+ *                                                                               Runtime Library Types                                                                                *
  ******************************************************************************/
 
 
@@ -907,7 +907,7 @@ typedef struct _COMPRESSED_DATA_INFO {
 #endif
 
 /******************************************************************************
- *                         Runtime Library Functions                          *
+ *                                                                             Runtime Library Functions                                                                              *
  ******************************************************************************/
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
@@ -1645,11 +1645,11 @@ RtlFillMemoryUlong (
   PULONG Address = (PULONG)Destination;
   if ((Length /= 4) != 0) {
     if (((ULONG64)Address & 4) != 0) {
-      *Address = Pattern;
-      if ((Length -= 1) == 0) {
-        return;
-      }
-      Address += 1;
+                   *Address = Pattern;
+                   if ((Length -= 1) == 0) {
+                     return;
+                   }
+                   Address += 1;
     }
     __stosq((PULONG64)(Address), Pattern | ((ULONG64)Pattern << 32), Length / 2);
     if ((Length & 1) != 0) Address[Length - 1] = Pattern;
@@ -1657,7 +1657,7 @@ RtlFillMemoryUlong (
   return;
 }
 
-#define RtlFillMemoryUlonglong(Destination, Length, Pattern)                \
+#define RtlFillMemoryUlonglong(Destination, Length, Pattern)                                          \
     __stosq((PULONG64)(Destination), Pattern, (Length) / 8)
 
 #else
@@ -1865,18 +1865,18 @@ RtlCreateVirtualAccountSid(
 #define RTL_DUPLICATE_UNICODE_STRING_NULL_TERMINATE 1
 #define RTL_DUPLICATE_UNICODE_STRING_ALLOCATE_NULL_STRING 2
 
-#define RtlUnicodeStringToOemSize(STRING) (NLS_MB_OEM_CODE_PAGE_TAG ?                                \
-                                           RtlxUnicodeStringToOemSize(STRING) :                      \
-                                           ((STRING)->Length + sizeof(UNICODE_NULL)) / sizeof(WCHAR) \
+#define RtlUnicodeStringToOemSize(STRING) (NLS_MB_OEM_CODE_PAGE_TAG ?                                                                                                 \
+                                                                                                                                      RtlxUnicodeStringToOemSize(STRING) :                                                             \
+                                                                                                                                      ((STRING)->Length + sizeof(UNICODE_NULL)) / sizeof(WCHAR) \
 )
 
-#define RtlOemStringToUnicodeSize(STRING) (                 \
-    NLS_MB_OEM_CODE_PAGE_TAG ?                              \
-    RtlxOemStringToUnicodeSize(STRING) :                    \
+#define RtlOemStringToUnicodeSize(STRING) (                                           \
+    NLS_MB_OEM_CODE_PAGE_TAG ?                                                                                               \
+    RtlxOemStringToUnicodeSize(STRING) :                                                           \
     ((STRING)->Length + sizeof(ANSI_NULL)) * sizeof(WCHAR)  \
 )
 
-#define RtlOemStringToCountedUnicodeSize(STRING) (                    \
+#define RtlOemStringToCountedUnicodeSize(STRING) (                                                           \
     (ULONG)(RtlOemStringToUnicodeSize(STRING) - sizeof(UNICODE_NULL)) \
 )
 
@@ -2419,18 +2419,18 @@ NtCreateSection(
 
 #endif /* (NTDDI_VERSION >= NTDDI_WINXP) */
 
-#define COMPRESSION_FORMAT_NONE         (0x0000)
-#define COMPRESSION_FORMAT_DEFAULT      (0x0001)
-#define COMPRESSION_FORMAT_LZNT1        (0x0002)
+#define COMPRESSION_FORMAT_NONE                      (0x0000)
+#define COMPRESSION_FORMAT_DEFAULT                   (0x0001)
+#define COMPRESSION_FORMAT_LZNT1                     (0x0002)
 #define COMPRESSION_ENGINE_STANDARD     (0x0000)
-#define COMPRESSION_ENGINE_MAXIMUM      (0x0100)
-#define COMPRESSION_ENGINE_HIBER        (0x0200)
+#define COMPRESSION_ENGINE_MAXIMUM                   (0x0100)
+#define COMPRESSION_ENGINE_HIBER                     (0x0200)
 
 #define MAX_UNICODE_STACK_BUFFER_LENGTH 256
 
 #define METHOD_FROM_CTL_CODE(ctrlCode)  ((ULONG)(ctrlCode & 3))
 
-#define METHOD_DIRECT_TO_HARDWARE       METHOD_IN_DIRECT
+#define METHOD_DIRECT_TO_HARDWARE                    METHOD_IN_DIRECT
 #define METHOD_DIRECT_FROM_HARDWARE     METHOD_OUT_DIRECT
 
 typedef ULONG LSA_OPERATIONAL_MODE, *PLSA_OPERATIONAL_MODE;
@@ -2505,71 +2505,71 @@ LsaFreeReturnBuffer(
 #define MSV1_0_SUBAUTHENTICATION_KEY "SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0"
 #define MSV1_0_SUBAUTHENTICATION_VALUE "Auth"
 
-#define MSV1_0_CHALLENGE_LENGTH                8
-#define MSV1_0_USER_SESSION_KEY_LENGTH         16
-#define MSV1_0_LANMAN_SESSION_KEY_LENGTH       8
+#define MSV1_0_CHALLENGE_LENGTH                                          8
+#define MSV1_0_USER_SESSION_KEY_LENGTH                      16
+#define MSV1_0_LANMAN_SESSION_KEY_LENGTH                    8
 
-#define MSV1_0_CLEARTEXT_PASSWORD_ALLOWED      0x02
-#define MSV1_0_UPDATE_LOGON_STATISTICS         0x04
-#define MSV1_0_RETURN_USER_PARAMETERS          0x08
-#define MSV1_0_DONT_TRY_GUEST_ACCOUNT          0x10
-#define MSV1_0_ALLOW_SERVER_TRUST_ACCOUNT      0x20
-#define MSV1_0_RETURN_PASSWORD_EXPIRY          0x40
-#define MSV1_0_USE_CLIENT_CHALLENGE            0x80
-#define MSV1_0_TRY_GUEST_ACCOUNT_ONLY          0x100
-#define MSV1_0_RETURN_PROFILE_PATH             0x200
-#define MSV1_0_TRY_SPECIFIED_DOMAIN_ONLY       0x400
+#define MSV1_0_CLEARTEXT_PASSWORD_ALLOWED                   0x02
+#define MSV1_0_UPDATE_LOGON_STATISTICS                      0x04
+#define MSV1_0_RETURN_USER_PARAMETERS                       0x08
+#define MSV1_0_DONT_TRY_GUEST_ACCOUNT                       0x10
+#define MSV1_0_ALLOW_SERVER_TRUST_ACCOUNT                   0x20
+#define MSV1_0_RETURN_PASSWORD_EXPIRY                       0x40
+#define MSV1_0_USE_CLIENT_CHALLENGE                                      0x80
+#define MSV1_0_TRY_GUEST_ACCOUNT_ONLY                       0x100
+#define MSV1_0_RETURN_PROFILE_PATH                                       0x200
+#define MSV1_0_TRY_SPECIFIED_DOMAIN_ONLY                    0x400
 #define MSV1_0_ALLOW_WORKSTATION_TRUST_ACCOUNT 0x800
 
 #define MSV1_0_DISABLE_PERSONAL_FALLBACK     0x00001000
-#define MSV1_0_ALLOW_FORCE_GUEST             0x00002000
+#define MSV1_0_ALLOW_FORCE_GUEST                                       0x00002000
 
 #if (_WIN32_WINNT >= 0x0502)
 #define MSV1_0_CLEARTEXT_PASSWORD_SUPPLIED   0x00004000
 #define MSV1_0_USE_DOMAIN_FOR_ROUTING_ONLY   0x00008000
 #endif
 
-#define MSV1_0_SUBAUTHENTICATION_DLL_EX      0x00100000
-#define MSV1_0_ALLOW_MSVCHAPV2               0x00010000
+#define MSV1_0_SUBAUTHENTICATION_DLL_EX                   0x00100000
+#define MSV1_0_ALLOW_MSVCHAPV2                                         0x00010000
 
 #if (_WIN32_WINNT >= 0x0600)
-#define MSV1_0_S4U2SELF                      0x00020000
-#define MSV1_0_CHECK_LOGONHOURS_FOR_S4U      0x00040000
+#define MSV1_0_S4U2SELF                                                             0x00020000
+#define MSV1_0_CHECK_LOGONHOURS_FOR_S4U                   0x00040000
 #endif
 
-#define MSV1_0_SUBAUTHENTICATION_DLL         0xFF000000
+#define MSV1_0_SUBAUTHENTICATION_DLL                      0xFF000000
 #define MSV1_0_SUBAUTHENTICATION_DLL_SHIFT   24
-#define MSV1_0_MNS_LOGON                     0x01000000
+#define MSV1_0_MNS_LOGON                                                            0x01000000
 
 #define MSV1_0_SUBAUTHENTICATION_DLL_RAS     2
 #define MSV1_0_SUBAUTHENTICATION_DLL_IIS     132
 
-#define LOGON_GUEST                 0x01
-#define LOGON_NOENCRYPTION          0x02
-#define LOGON_CACHED_ACCOUNT        0x04
-#define LOGON_USED_LM_PASSWORD      0x08
-#define LOGON_EXTRA_SIDS            0x20
+#define LOGON_GUEST                                           0x01
+#define LOGON_NOENCRYPTION                       0x02
+#define LOGON_CACHED_ACCOUNT                     0x04
+#define LOGON_USED_LM_PASSWORD                   0x08
+#define LOGON_EXTRA_SIDS                                      0x20
 #define LOGON_SUBAUTH_SESSION_KEY   0x40
 #define LOGON_SERVER_TRUST_ACCOUNT  0x80
-#define LOGON_NTLMV2_ENABLED        0x100
-#define LOGON_RESOURCE_GROUPS       0x200
+#define LOGON_NTLMV2_ENABLED                     0x100
+#define LOGON_RESOURCE_GROUPS                    0x200
 #define LOGON_PROFILE_PATH_RETURNED 0x400
-#define LOGON_NT_V2                 0x800
-#define LOGON_LM_V2                 0x1000
-#define LOGON_NTLM_V2               0x2000
+#define LOGON_NT_V2                                           0x800
+#define LOGON_LM_V2                                           0x1000
+#define LOGON_NTLM_V2                                         0x2000
 
 #if (_WIN32_WINNT >= 0x0600)
 
-#define LOGON_OPTIMIZED             0x4000
-#define LOGON_WINLOGON              0x8000
-#define LOGON_PKINIT               0x10000
-#define LOGON_NO_OPTIMIZED         0x20000
+#define LOGON_OPTIMIZED                                       0x4000
+#define LOGON_WINLOGON                                        0x8000
+#define LOGON_PKINIT                                         0x10000
+#define LOGON_NO_OPTIMIZED                      0x20000
 
 #endif
 
 #define MSV1_0_SUBAUTHENTICATION_FLAGS 0xFF000000
 
-#define LOGON_GRACE_LOGON              0x01000000
+#define LOGON_GRACE_LOGON                                        0x01000000
 
 #define MSV1_0_OWF_PASSWORD_LENGTH 16
 #define MSV1_0_CRED_LM_PRESENT 0x1
@@ -2588,10 +2588,10 @@ LsaFreeReturnBuffer(
 
 #if (_WIN32_WINNT >= 0x0501)
 
-#define MSV1_0_AV_FLAG_FORCE_GUEST                  0x00000001
+#define MSV1_0_AV_FLAG_FORCE_GUEST                                                         0x00000001
 
 #if (_WIN32_WINNT >= 0x0600)
-#define MSV1_0_AV_FLAG_MIC_HANDSHAKE_MESSAGES       0x00000002
+#define MSV1_0_AV_FLAG_MIC_HANDSHAKE_MESSAGES                    0x00000002
 #endif
 
 #endif
@@ -2602,20 +2602,20 @@ LsaFreeReturnBuffer(
 #define MSV1_0_NTLM3_MIN_NT_RESPONSE_LENGTH RTL_SIZEOF_THROUGH_FIELD(MSV1_0_NTLM3_RESPONSE, AvPairsOff)
 #endif
 
-#define USE_PRIMARY_PASSWORD            0x01
-#define RETURN_PRIMARY_USERNAME         0x02
+#define USE_PRIMARY_PASSWORD                                      0x01
+#define RETURN_PRIMARY_USERNAME                      0x02
 #define RETURN_PRIMARY_LOGON_DOMAINNAME 0x04
 #define RETURN_NON_NT_USER_SESSION_KEY  0x08
-#define GENERATE_CLIENT_CHALLENGE       0x10
-#define GCR_NTLM3_PARMS                 0x20
-#define GCR_TARGET_INFO                 0x40
-#define RETURN_RESERVED_PARAMETER       0x80
-#define GCR_ALLOW_NTLM                 0x100
-#define GCR_USE_OEM_SET                0x200
-#define GCR_MACHINE_CREDENTIAL         0x400
-#define GCR_USE_OWF_PASSWORD           0x800
-#define GCR_ALLOW_LM                  0x1000
-#define GCR_ALLOW_NO_TARGET           0x2000
+#define GENERATE_CLIENT_CHALLENGE                    0x10
+#define GCR_NTLM3_PARMS                                           0x20
+#define GCR_TARGET_INFO                                           0x40
+#define RETURN_RESERVED_PARAMETER                    0x80
+#define GCR_ALLOW_NTLM                                           0x100
+#define GCR_USE_OEM_SET                                          0x200
+#define GCR_MACHINE_CREDENTIAL                      0x400
+#define GCR_USE_OWF_PASSWORD                        0x800
+#define GCR_ALLOW_LM                                                         0x1000
+#define GCR_ALLOW_NO_TARGET                        0x2000
 
 typedef enum _MSV1_0_LOGON_SUBMIT_TYPE {
   MsV1_0InteractiveLogon = 2,
@@ -2837,97 +2837,97 @@ typedef struct _MSV1_0_GETUSERINFO_RESPONSE {
 
 
 #define FILE_OPLOCK_BROKEN_TO_LEVEL_2   0x00000007
-#define FILE_OPLOCK_BROKEN_TO_NONE      0x00000008
+#define FILE_OPLOCK_BROKEN_TO_NONE                   0x00000008
 #define FILE_OPBATCH_BREAK_UNDERWAY     0x00000009
 
 /* also in winnt.h */
 #define FILE_NOTIFY_CHANGE_FILE_NAME    0x00000001
 #define FILE_NOTIFY_CHANGE_DIR_NAME     0x00000002
-#define FILE_NOTIFY_CHANGE_NAME         0x00000003
+#define FILE_NOTIFY_CHANGE_NAME                      0x00000003
 #define FILE_NOTIFY_CHANGE_ATTRIBUTES   0x00000004
-#define FILE_NOTIFY_CHANGE_SIZE         0x00000008
+#define FILE_NOTIFY_CHANGE_SIZE                      0x00000008
 #define FILE_NOTIFY_CHANGE_LAST_WRITE   0x00000010
 #define FILE_NOTIFY_CHANGE_LAST_ACCESS  0x00000020
 #define FILE_NOTIFY_CHANGE_CREATION     0x00000040
-#define FILE_NOTIFY_CHANGE_EA           0x00000080
+#define FILE_NOTIFY_CHANGE_EA                        0x00000080
 #define FILE_NOTIFY_CHANGE_SECURITY     0x00000100
 #define FILE_NOTIFY_CHANGE_STREAM_NAME  0x00000200
 #define FILE_NOTIFY_CHANGE_STREAM_SIZE  0x00000400
 #define FILE_NOTIFY_CHANGE_STREAM_WRITE 0x00000800
-#define FILE_NOTIFY_VALID_MASK          0x00000fff
+#define FILE_NOTIFY_VALID_MASK                       0x00000fff
 
-#define FILE_ACTION_ADDED                   0x00000001
-#define FILE_ACTION_REMOVED                 0x00000002
-#define FILE_ACTION_MODIFIED                0x00000003
-#define FILE_ACTION_RENAMED_OLD_NAME        0x00000004
-#define FILE_ACTION_RENAMED_NEW_NAME        0x00000005
-#define FILE_ACTION_ADDED_STREAM            0x00000006
-#define FILE_ACTION_REMOVED_STREAM          0x00000007
-#define FILE_ACTION_MODIFIED_STREAM         0x00000008
-#define FILE_ACTION_REMOVED_BY_DELETE       0x00000009
-#define FILE_ACTION_ID_NOT_TUNNELLED        0x0000000A
+#define FILE_ACTION_ADDED                                                          0x00000001
+#define FILE_ACTION_REMOVED                                           0x00000002
+#define FILE_ACTION_MODIFIED                                          0x00000003
+#define FILE_ACTION_RENAMED_OLD_NAME                     0x00000004
+#define FILE_ACTION_RENAMED_NEW_NAME                     0x00000005
+#define FILE_ACTION_ADDED_STREAM                                      0x00000006
+#define FILE_ACTION_REMOVED_STREAM                       0x00000007
+#define FILE_ACTION_MODIFIED_STREAM                      0x00000008
+#define FILE_ACTION_REMOVED_BY_DELETE                    0x00000009
+#define FILE_ACTION_ID_NOT_TUNNELLED                     0x0000000A
 #define FILE_ACTION_TUNNELLED_ID_COLLISION  0x0000000B
 /* end  winnt.h */
 
-#define FILE_PIPE_BYTE_STREAM_TYPE          0x00000000
-#define FILE_PIPE_MESSAGE_TYPE              0x00000001
+#define FILE_PIPE_BYTE_STREAM_TYPE                       0x00000000
+#define FILE_PIPE_MESSAGE_TYPE                                        0x00000001
 
 #define FILE_PIPE_ACCEPT_REMOTE_CLIENTS     0x00000000
 #define FILE_PIPE_REJECT_REMOTE_CLIENTS     0x00000002
 
-#define FILE_PIPE_TYPE_VALID_MASK           0x00000003
+#define FILE_PIPE_TYPE_VALID_MASK                        0x00000003
 
-#define FILE_PIPE_BYTE_STREAM_MODE          0x00000000
-#define FILE_PIPE_MESSAGE_MODE              0x00000001
+#define FILE_PIPE_BYTE_STREAM_MODE                       0x00000000
+#define FILE_PIPE_MESSAGE_MODE                                        0x00000001
 
-#define FILE_PIPE_QUEUE_OPERATION           0x00000000
-#define FILE_PIPE_COMPLETE_OPERATION        0x00000001
+#define FILE_PIPE_QUEUE_OPERATION                        0x00000000
+#define FILE_PIPE_COMPLETE_OPERATION                     0x00000001
 
-#define FILE_PIPE_INBOUND                   0x00000000
-#define FILE_PIPE_OUTBOUND                  0x00000001
-#define FILE_PIPE_FULL_DUPLEX               0x00000002
+#define FILE_PIPE_INBOUND                                                          0x00000000
+#define FILE_PIPE_OUTBOUND                                                         0x00000001
+#define FILE_PIPE_FULL_DUPLEX                                         0x00000002
 
-#define FILE_PIPE_DISCONNECTED_STATE        0x00000001
-#define FILE_PIPE_LISTENING_STATE           0x00000002
-#define FILE_PIPE_CONNECTED_STATE           0x00000003
-#define FILE_PIPE_CLOSING_STATE             0x00000004
+#define FILE_PIPE_DISCONNECTED_STATE                     0x00000001
+#define FILE_PIPE_LISTENING_STATE                        0x00000002
+#define FILE_PIPE_CONNECTED_STATE                        0x00000003
+#define FILE_PIPE_CLOSING_STATE                                       0x00000004
 
-#define FILE_PIPE_CLIENT_END                0x00000000
-#define FILE_PIPE_SERVER_END                0x00000001
+#define FILE_PIPE_CLIENT_END                                          0x00000000
+#define FILE_PIPE_SERVER_END                                          0x00000001
 
-#define FILE_CASE_SENSITIVE_SEARCH          0x00000001
-#define FILE_CASE_PRESERVED_NAMES           0x00000002
-#define FILE_UNICODE_ON_DISK                0x00000004
-#define FILE_PERSISTENT_ACLS                0x00000008
-#define FILE_FILE_COMPRESSION               0x00000010
-#define FILE_VOLUME_QUOTAS                  0x00000020
-#define FILE_SUPPORTS_SPARSE_FILES          0x00000040
-#define FILE_SUPPORTS_REPARSE_POINTS        0x00000080
-#define FILE_SUPPORTS_REMOTE_STORAGE        0x00000100
-#define FILE_VOLUME_IS_COMPRESSED           0x00008000
-#define FILE_SUPPORTS_OBJECT_IDS            0x00010000
-#define FILE_SUPPORTS_ENCRYPTION            0x00020000
-#define FILE_NAMED_STREAMS                  0x00040000
-#define FILE_READ_ONLY_VOLUME               0x00080000
-#define FILE_SEQUENTIAL_WRITE_ONCE          0x00100000
-#define FILE_SUPPORTS_TRANSACTIONS          0x00200000
-#define FILE_SUPPORTS_HARD_LINKS            0x00400000
+#define FILE_CASE_SENSITIVE_SEARCH                       0x00000001
+#define FILE_CASE_PRESERVED_NAMES                        0x00000002
+#define FILE_UNICODE_ON_DISK                                          0x00000004
+#define FILE_PERSISTENT_ACLS                                          0x00000008
+#define FILE_FILE_COMPRESSION                                         0x00000010
+#define FILE_VOLUME_QUOTAS                                                         0x00000020
+#define FILE_SUPPORTS_SPARSE_FILES                       0x00000040
+#define FILE_SUPPORTS_REPARSE_POINTS                     0x00000080
+#define FILE_SUPPORTS_REMOTE_STORAGE                     0x00000100
+#define FILE_VOLUME_IS_COMPRESSED                        0x00008000
+#define FILE_SUPPORTS_OBJECT_IDS                                      0x00010000
+#define FILE_SUPPORTS_ENCRYPTION                                      0x00020000
+#define FILE_NAMED_STREAMS                                                         0x00040000
+#define FILE_READ_ONLY_VOLUME                                         0x00080000
+#define FILE_SEQUENTIAL_WRITE_ONCE                       0x00100000
+#define FILE_SUPPORTS_TRANSACTIONS                       0x00200000
+#define FILE_SUPPORTS_HARD_LINKS                                      0x00400000
 #define FILE_SUPPORTS_EXTENDED_ATTRIBUTES   0x00800000
-#define FILE_SUPPORTS_OPEN_BY_FILE_ID       0x01000000
-#define FILE_SUPPORTS_USN_JOURNAL           0x02000000
+#define FILE_SUPPORTS_OPEN_BY_FILE_ID                    0x01000000
+#define FILE_SUPPORTS_USN_JOURNAL                        0x02000000
 
-#define FILE_NEED_EA                    0x00000080
+#define FILE_NEED_EA                                                           0x00000080
 
-#define FILE_EA_TYPE_BINARY             0xfffe
-#define FILE_EA_TYPE_ASCII              0xfffd
-#define FILE_EA_TYPE_BITMAP             0xfffb
-#define FILE_EA_TYPE_METAFILE           0xfffa
-#define FILE_EA_TYPE_ICON               0xfff9
-#define FILE_EA_TYPE_EA                 0xffee
-#define FILE_EA_TYPE_MVMT               0xffdf
-#define FILE_EA_TYPE_MVST               0xffde
-#define FILE_EA_TYPE_ASN1               0xffdd
-#define FILE_EA_TYPE_FAMILY_IDS         0xff01
+#define FILE_EA_TYPE_BINARY                                       0xfffe
+#define FILE_EA_TYPE_ASCII                                        0xfffd
+#define FILE_EA_TYPE_BITMAP                                       0xfffb
+#define FILE_EA_TYPE_METAFILE                        0xfffa
+#define FILE_EA_TYPE_ICON                                         0xfff9
+#define FILE_EA_TYPE_EA                                           0xffee
+#define FILE_EA_TYPE_MVMT                                         0xffdf
+#define FILE_EA_TYPE_MVST                                         0xffde
+#define FILE_EA_TYPE_ASN1                                         0xffdd
+#define FILE_EA_TYPE_FAMILY_IDS                      0xff01
 
 typedef struct _FILE_NOTIFY_INFORMATION {
   ULONG NextEntryOffset;
@@ -3040,8 +3040,8 @@ typedef struct _FILE_ID_GLOBAL_TX_DIR_INFORMATION {
   WCHAR FileName[1];
 } FILE_ID_GLOBAL_TX_DIR_INFORMATION, *PFILE_ID_GLOBAL_TX_DIR_INFORMATION;
 
-#define FILE_ID_GLOBAL_TX_DIR_INFO_FLAG_WRITELOCKED         0x00000001
-#define FILE_ID_GLOBAL_TX_DIR_INFO_FLAG_VISIBLE_TO_TX       0x00000002
+#define FILE_ID_GLOBAL_TX_DIR_INFO_FLAG_WRITELOCKED                      0x00000001
+#define FILE_ID_GLOBAL_TX_DIR_INFO_FLAG_VISIBLE_TO_TX                    0x00000002
 #define FILE_ID_GLOBAL_TX_DIR_INFO_FLAG_VISIBLE_OUTSIDE_TX  0x00000004
 
 typedef struct _FILE_OBJECTID_INFORMATION {
@@ -3049,21 +3049,21 @@ typedef struct _FILE_OBJECTID_INFORMATION {
   UCHAR ObjectId[16];
   _ANONYMOUS_UNION union {
     _ANONYMOUS_STRUCT struct {
-      UCHAR BirthVolumeId[16];
-      UCHAR BirthObjectId[16];
-      UCHAR DomainId[16];
+                   UCHAR BirthVolumeId[16];
+                   UCHAR BirthObjectId[16];
+                   UCHAR DomainId[16];
     } DUMMYSTRUCTNAME;
     UCHAR ExtendedInfo[48];
   } DUMMYUNIONNAME;
 } FILE_OBJECTID_INFORMATION, *PFILE_OBJECTID_INFORMATION;
 
-#define ANSI_DOS_STAR                   ('<')
-#define ANSI_DOS_QM                     ('>')
-#define ANSI_DOS_DOT                    ('"')
+#define ANSI_DOS_STAR                                                          ('<')
+#define ANSI_DOS_QM                                                            ('>')
+#define ANSI_DOS_DOT                                                           ('"')
 
-#define DOS_STAR                        (L'<')
-#define DOS_QM                          (L'>')
-#define DOS_DOT                         (L'"')
+#define DOS_STAR                                                                            (L'<')
+#define DOS_QM                                                                              (L'>')
+#define DOS_DOT                                                                             (L'"')
 
 typedef struct _FILE_INTERNAL_INFORMATION {
   LARGE_INTEGER IndexNumber;
@@ -3217,8 +3217,8 @@ typedef struct _FILE_GET_EA_INFORMATION {
   CHAR  EaName[1];
 } FILE_GET_EA_INFORMATION, *PFILE_GET_EA_INFORMATION;
 
-#define REMOTE_PROTOCOL_FLAG_LOOPBACK       0x00000001
-#define REMOTE_PROTOCOL_FLAG_OFFLINE        0x00000002
+#define REMOTE_PROTOCOL_FLAG_LOOPBACK                    0x00000001
+#define REMOTE_PROTOCOL_FLAG_OFFLINE                     0x00000002
 
 typedef struct _FILE_REMOTE_PROTOCOL_INFORMATION {
   USHORT StructureVersion;
@@ -3270,18 +3270,18 @@ typedef struct _FILE_FS_VOLUME_FLAGS_INFORMATION {
   ULONG Flags;
 } FILE_FS_VOLUME_FLAGS_INFORMATION, *PFILE_FS_VOLUME_FLAGS_INFORMATION;
 
-#define FILE_VC_QUOTA_NONE              0x00000000
-#define FILE_VC_QUOTA_TRACK             0x00000001
-#define FILE_VC_QUOTA_ENFORCE           0x00000002
-#define FILE_VC_QUOTA_MASK              0x00000003
+#define FILE_VC_QUOTA_NONE                                        0x00000000
+#define FILE_VC_QUOTA_TRACK                                       0x00000001
+#define FILE_VC_QUOTA_ENFORCE                        0x00000002
+#define FILE_VC_QUOTA_MASK                                        0x00000003
 #define FILE_VC_CONTENT_INDEX_DISABLED  0x00000008
 #define FILE_VC_LOG_QUOTA_THRESHOLD     0x00000010
-#define FILE_VC_LOG_QUOTA_LIMIT         0x00000020
+#define FILE_VC_LOG_QUOTA_LIMIT                      0x00000020
 #define FILE_VC_LOG_VOLUME_THRESHOLD    0x00000040
-#define FILE_VC_LOG_VOLUME_LIMIT        0x00000080
-#define FILE_VC_QUOTAS_INCOMPLETE       0x00000100
-#define FILE_VC_QUOTAS_REBUILDING       0x00000200
-#define FILE_VC_VALID_MASK              0x000003ff
+#define FILE_VC_LOG_VOLUME_LIMIT                     0x00000080
+#define FILE_VC_QUOTAS_INCOMPLETE                    0x00000100
+#define FILE_VC_QUOTAS_REBUILDING                    0x00000200
+#define FILE_VC_VALID_MASK                                        0x000003ff
 
 typedef struct _FILE_FS_CONTROL_INFORMATION {
   LARGE_INTEGER FreeSpaceStartFiltering;
@@ -3297,110 +3297,110 @@ typedef struct _FILE_FS_CONTROL_INFORMATION {
 
 #define FSCTL_REQUEST_OPLOCK_LEVEL_1    CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  0, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_REQUEST_OPLOCK_LEVEL_2    CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  1, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_REQUEST_BATCH_OPLOCK      CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  2, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_REQUEST_BATCH_OPLOCK                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  2, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_OPLOCK_BREAK_ACKNOWLEDGE  CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  3, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_OPBATCH_ACK_CLOSE_PENDING CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  4, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_OPLOCK_BREAK_NOTIFY       CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  5, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_LOCK_VOLUME               CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  6, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_UNLOCK_VOLUME             CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  7, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_DISMOUNT_VOLUME           CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  8, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_IS_VOLUME_MOUNTED         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 10, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_IS_PATHNAME_VALID         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 11, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_MARK_VOLUME_DIRTY         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 12, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_OPLOCK_BREAK_NOTIFY                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  5, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_LOCK_VOLUME                                         CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  6, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_UNLOCK_VOLUME                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  7, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_DISMOUNT_VOLUME                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  8, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_IS_VOLUME_MOUNTED                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 10, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_IS_PATHNAME_VALID                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 11, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_MARK_VOLUME_DIRTY                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 12, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_QUERY_RETRIEVAL_POINTERS  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 14, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_GET_COMPRESSION           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 15, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_SET_COMPRESSION           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 16, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
+#define FSCTL_GET_COMPRESSION                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 15, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_SET_COMPRESSION                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 16, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
 #define FSCTL_SET_BOOTLOADER_ACCESSED   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 19, METHOD_NEITHER,  FILE_ANY_ACCESS)
 
 #define FSCTL_OPLOCK_BREAK_ACK_NO_2     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 20, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_INVALIDATE_VOLUMES        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 21, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_QUERY_FAT_BPB             CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 22, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_INVALIDATE_VOLUMES                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 21, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_QUERY_FAT_BPB                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 22, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_REQUEST_FILTER_OPLOCK     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 23, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_FILESYSTEM_GET_STATISTICS CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 24, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 #if (_WIN32_WINNT >= 0x0400)
 
-#define FSCTL_GET_NTFS_VOLUME_DATA      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 25, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_GET_NTFS_FILE_RECORD      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 26, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_GET_VOLUME_BITMAP         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 27, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_GET_NTFS_VOLUME_DATA                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 25, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_GET_NTFS_FILE_RECORD                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 26, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_GET_VOLUME_BITMAP                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 27, METHOD_NEITHER,  FILE_ANY_ACCESS)
 #define FSCTL_GET_RETRIEVAL_POINTERS    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 28, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_MOVE_FILE                 CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 29, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_IS_VOLUME_DIRTY           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 30, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_MOVE_FILE                                           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 29, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_IS_VOLUME_DIRTY                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 30, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_ALLOW_EXTENDED_DASD_IO    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 32, METHOD_NEITHER,  FILE_ANY_ACCESS)
 
 #endif
 
 #if (_WIN32_WINNT >= 0x0500)
 
-#define FSCTL_FIND_FILES_BY_SID         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 35, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_SET_OBJECT_ID             CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 38, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_GET_OBJECT_ID             CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 39, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_DELETE_OBJECT_ID          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 40, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_SET_REPARSE_POINT         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 41, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_GET_REPARSE_POINT         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 42, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_DELETE_REPARSE_POINT      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 43, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_ENUM_USN_DATA             CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 44, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_SECURITY_ID_CHECK         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 45, METHOD_NEITHER,  FILE_READ_DATA)
-#define FSCTL_READ_USN_JOURNAL          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 46, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_FIND_FILES_BY_SID                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 35, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_SET_OBJECT_ID                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 38, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_GET_OBJECT_ID                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 39, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_DELETE_OBJECT_ID                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 40, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_SET_REPARSE_POINT                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 41, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_GET_REPARSE_POINT                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 42, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_DELETE_REPARSE_POINT                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 43, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_ENUM_USN_DATA                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 44, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_SECURITY_ID_CHECK                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 45, METHOD_NEITHER,  FILE_READ_DATA)
+#define FSCTL_READ_USN_JOURNAL                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 46, METHOD_NEITHER,  FILE_ANY_ACCESS)
 #define FSCTL_SET_OBJECT_ID_EXTENDED    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 47, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
 #define FSCTL_CREATE_OR_GET_OBJECT_ID   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 48, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_SET_SPARSE                CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 49, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_SET_ZERO_DATA             CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 50, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_SET_SPARSE                                          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 49, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_SET_ZERO_DATA                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 50, METHOD_BUFFERED, FILE_WRITE_DATA)
 #define FSCTL_QUERY_ALLOCATED_RANGES    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 51, METHOD_NEITHER,  FILE_READ_DATA)
-#define FSCTL_ENABLE_UPGRADE            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 52, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_SET_ENCRYPTION            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 53, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_ENCRYPTION_FSCTL_IO       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 54, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_WRITE_RAW_ENCRYPTED       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 55, METHOD_NEITHER,  FILE_SPECIAL_ACCESS)
-#define FSCTL_READ_RAW_ENCRYPTED        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 56, METHOD_NEITHER,  FILE_SPECIAL_ACCESS)
-#define FSCTL_CREATE_USN_JOURNAL        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 57, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_READ_FILE_USN_DATA        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 58, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_ENABLE_UPGRADE                                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 52, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_SET_ENCRYPTION                                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 53, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_ENCRYPTION_FSCTL_IO                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 54, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_WRITE_RAW_ENCRYPTED                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 55, METHOD_NEITHER,  FILE_SPECIAL_ACCESS)
+#define FSCTL_READ_RAW_ENCRYPTED                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 56, METHOD_NEITHER,  FILE_SPECIAL_ACCESS)
+#define FSCTL_CREATE_USN_JOURNAL                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 57, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_READ_FILE_USN_DATA                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 58, METHOD_NEITHER,  FILE_ANY_ACCESS)
 #define FSCTL_WRITE_USN_CLOSE_RECORD    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 59, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_EXTEND_VOLUME             CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 60, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_QUERY_USN_JOURNAL         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 61, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_DELETE_USN_JOURNAL        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 62, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_MARK_HANDLE               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 63, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_SIS_COPYFILE              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 64, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_SIS_LINK_FILES            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 65, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
-#define FSCTL_RECALL_FILE               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 69, METHOD_NEITHER, FILE_ANY_ACCESS)
-#define FSCTL_READ_FROM_PLEX            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 71, METHOD_OUT_DIRECT, FILE_READ_DATA)
-#define FSCTL_FILE_PREFETCH             CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 72, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_EXTEND_VOLUME                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 60, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_QUERY_USN_JOURNAL                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 61, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_DELETE_USN_JOURNAL                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 62, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_MARK_HANDLE                                         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 63, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_SIS_COPYFILE                                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 64, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_SIS_LINK_FILES                                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 65, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
+#define FSCTL_RECALL_FILE                                         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 69, METHOD_NEITHER, FILE_ANY_ACCESS)
+#define FSCTL_READ_FROM_PLEX                                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 71, METHOD_OUT_DIRECT, FILE_READ_DATA)
+#define FSCTL_FILE_PREFETCH                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 72, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
 
 #endif
 
 #if (_WIN32_WINNT >= 0x0600)
 
-#define FSCTL_MAKE_MEDIA_COMPATIBLE         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 76, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_SET_DEFECT_MANAGEMENT         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 77, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_QUERY_SPARING_INFO            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 78, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_MAKE_MEDIA_COMPATIBLE                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 76, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_SET_DEFECT_MANAGEMENT                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 77, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_QUERY_SPARING_INFO                                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 78, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_QUERY_ON_DISK_VOLUME_INFO     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 79, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_SET_VOLUME_COMPRESSION_STATE  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 80, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_TXFS_MODIFY_RM                CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 81, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_TXFS_MODIFY_RM                                          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 81, METHOD_BUFFERED, FILE_WRITE_DATA)
 #define FSCTL_TXFS_QUERY_RM_INFORMATION     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 82, METHOD_BUFFERED, FILE_READ_DATA)
-#define FSCTL_TXFS_ROLLFORWARD_REDO         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 84, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_TXFS_ROLLFORWARD_UNDO         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 85, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_TXFS_START_RM                 CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 86, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_TXFS_SHUTDOWN_RM              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 87, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_TXFS_ROLLFORWARD_REDO                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 84, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_TXFS_ROLLFORWARD_UNDO                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 85, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_TXFS_START_RM                                           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 86, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_TXFS_SHUTDOWN_RM                                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 87, METHOD_BUFFERED, FILE_WRITE_DATA)
 #define FSCTL_TXFS_READ_BACKUP_INFORMATION  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 88, METHOD_BUFFERED, FILE_READ_DATA)
 #define FSCTL_TXFS_WRITE_BACKUP_INFORMATION CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 89, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_TXFS_CREATE_SECONDARY_RM      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 90, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_TXFS_GET_METADATA_INFO        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 91, METHOD_BUFFERED, FILE_READ_DATA)
+#define FSCTL_TXFS_CREATE_SECONDARY_RM                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 90, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_TXFS_GET_METADATA_INFO                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 91, METHOD_BUFFERED, FILE_READ_DATA)
 #define FSCTL_TXFS_GET_TRANSACTED_VERSION   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 92, METHOD_BUFFERED, FILE_READ_DATA)
 #define FSCTL_TXFS_SAVEPOINT_INFORMATION    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 94, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_TXFS_CREATE_MINIVERSION       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 95, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_TXFS_TRANSACTION_ACTIVE       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 99, METHOD_BUFFERED, FILE_READ_DATA)
-#define FSCTL_SET_ZERO_ON_DEALLOCATION      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 101, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_SET_REPAIR                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 102, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_GET_REPAIR                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 103, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_WAIT_FOR_REPAIR               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 104, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_INITIATE_REPAIR               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 106, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_CSC_INTERNAL                  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 107, METHOD_NEITHER,  FILE_ANY_ACCESS)
-#define FSCTL_SHRINK_VOLUME                 CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 108, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define FSCTL_SET_SHORT_NAME_BEHAVIOR       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 109, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_TXFS_CREATE_MINIVERSION                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 95, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_TXFS_TRANSACTION_ACTIVE                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 99, METHOD_BUFFERED, FILE_READ_DATA)
+#define FSCTL_SET_ZERO_ON_DEALLOCATION                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 101, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_SET_REPAIR                                                           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 102, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_GET_REPAIR                                                           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 103, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_WAIT_FOR_REPAIR                                         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 104, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_INITIATE_REPAIR                                         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 106, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_CSC_INTERNAL                                                         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 107, METHOD_NEITHER,  FILE_ANY_ACCESS)
+#define FSCTL_SHRINK_VOLUME                                           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 108, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
+#define FSCTL_SET_SHORT_NAME_BEHAVIOR                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 109, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_DFSR_SET_GHOST_HANDLE_STATE   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 110, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 #define FSCTL_TXFS_LIST_TRANSACTION_LOCKED_FILES \
-                                            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 120, METHOD_BUFFERED, FILE_READ_DATA)
-#define FSCTL_TXFS_LIST_TRANSACTIONS        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 121, METHOD_BUFFERED, FILE_READ_DATA)
+                                                                                                                                       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 120, METHOD_BUFFERED, FILE_READ_DATA)
+#define FSCTL_TXFS_LIST_TRANSACTIONS                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 121, METHOD_BUFFERED, FILE_READ_DATA)
 #define FSCTL_QUERY_PAGEFILE_ENCRYPTION     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 122, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_RESET_VOLUME_ALLOCATION_HINTS CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 123, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_TXFS_READ_BACKUP_INFORMATION2 CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 126, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -3409,26 +3409,26 @@ typedef struct _FILE_FS_CONTROL_INFORMATION {
 
 #if (_WIN32_WINNT >= 0x0601)
 
-#define FSCTL_QUERY_DEPENDENT_VOLUME        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 124, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_SD_GLOBAL_CHANGE              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 125, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_QUERY_DEPENDENT_VOLUME                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 124, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_SD_GLOBAL_CHANGE                                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 125, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_LOOKUP_STREAM_FROM_CLUSTER    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 127, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_TXFS_WRITE_BACKUP_INFORMATION2 CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 128, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_FILE_TYPE_NOTIFICATION        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 129, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_GET_BOOT_AREA_INFO            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 140, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_FILE_TYPE_NOTIFICATION                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 129, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_GET_BOOT_AREA_INFO                                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 140, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_GET_RETRIEVAL_POINTER_BASE    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 141, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_SET_PERSISTENT_VOLUME_STATE   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 142, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_QUERY_PERSISTENT_VOLUME_STATE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 143, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
-#define FSCTL_REQUEST_OPLOCK                CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 144, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_REQUEST_OPLOCK                                          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 144, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
-#define FSCTL_CSV_TUNNEL_REQUEST            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 145, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_IS_CSV_FILE                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 146, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_CSV_TUNNEL_REQUEST                                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 145, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_IS_CSV_FILE                                                          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 146, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 #define FSCTL_QUERY_FILE_SYSTEM_RECOGNITION CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 147, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_CSV_GET_VOLUME_PATH_NAME      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 148, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_CSV_GET_VOLUME_PATH_NAME                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 148, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_CSV_GET_VOLUME_NAME_FOR_VOLUME_MOUNT_POINT CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 149, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_CSV_GET_VOLUME_PATH_NAMES_FOR_VOLUME_NAME CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 150,  METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_IS_FILE_ON_CSV_VOLUME         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 151,  METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_IS_FILE_ON_CSV_VOLUME                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 151,  METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 typedef struct _CSV_NAMESPACE_INFO {
   ULONG Version;
@@ -3442,7 +3442,7 @@ typedef struct _CSV_NAMESPACE_INFO {
 
 #endif
 
-#define FSCTL_MARK_AS_SYSTEM_HIVE           FSCTL_SET_BOOTLOADER_ACCESSED
+#define FSCTL_MARK_AS_SYSTEM_HIVE                        FSCTL_SET_BOOTLOADER_ACCESSED
 
 typedef struct _PATHNAME_BUFFER {
   ULONG PathNameLength;
@@ -3586,30 +3586,30 @@ typedef struct _USN_RECORD {
   WCHAR FileName[1];
 } USN_RECORD, *PUSN_RECORD;
 
-#define USN_PAGE_SIZE                    (0x1000)
+#define USN_PAGE_SIZE                                                           (0x1000)
 
-#define USN_REASON_DATA_OVERWRITE        (0x00000001)
-#define USN_REASON_DATA_EXTEND           (0x00000002)
-#define USN_REASON_DATA_TRUNCATION       (0x00000004)
+#define USN_REASON_DATA_OVERWRITE                     (0x00000001)
+#define USN_REASON_DATA_EXTEND                        (0x00000002)
+#define USN_REASON_DATA_TRUNCATION                    (0x00000004)
 #define USN_REASON_NAMED_DATA_OVERWRITE  (0x00000010)
 #define USN_REASON_NAMED_DATA_EXTEND     (0x00000020)
 #define USN_REASON_NAMED_DATA_TRUNCATION (0x00000040)
-#define USN_REASON_FILE_CREATE           (0x00000100)
-#define USN_REASON_FILE_DELETE           (0x00000200)
-#define USN_REASON_EA_CHANGE             (0x00000400)
-#define USN_REASON_SECURITY_CHANGE       (0x00000800)
-#define USN_REASON_RENAME_OLD_NAME       (0x00001000)
-#define USN_REASON_RENAME_NEW_NAME       (0x00002000)
-#define USN_REASON_INDEXABLE_CHANGE      (0x00004000)
+#define USN_REASON_FILE_CREATE                        (0x00000100)
+#define USN_REASON_FILE_DELETE                        (0x00000200)
+#define USN_REASON_EA_CHANGE                                       (0x00000400)
+#define USN_REASON_SECURITY_CHANGE                    (0x00000800)
+#define USN_REASON_RENAME_OLD_NAME                    (0x00001000)
+#define USN_REASON_RENAME_NEW_NAME                    (0x00002000)
+#define USN_REASON_INDEXABLE_CHANGE                   (0x00004000)
 #define USN_REASON_BASIC_INFO_CHANGE     (0x00008000)
-#define USN_REASON_HARD_LINK_CHANGE      (0x00010000)
+#define USN_REASON_HARD_LINK_CHANGE                   (0x00010000)
 #define USN_REASON_COMPRESSION_CHANGE    (0x00020000)
 #define USN_REASON_ENCRYPTION_CHANGE     (0x00040000)
-#define USN_REASON_OBJECT_ID_CHANGE      (0x00080000)
+#define USN_REASON_OBJECT_ID_CHANGE                   (0x00080000)
 #define USN_REASON_REPARSE_POINT_CHANGE  (0x00100000)
-#define USN_REASON_STREAM_CHANGE         (0x00200000)
+#define USN_REASON_STREAM_CHANGE                      (0x00200000)
 #define USN_REASON_TRANSACTED_CHANGE     (0x00400000)
-#define USN_REASON_CLOSE                 (0x80000000)
+#define USN_REASON_CLOSE                                           (0x80000000)
 
 typedef struct _USN_JOURNAL_DATA {
   ULONGLONG UsnJournalID;
@@ -3626,9 +3626,9 @@ typedef struct _DELETE_USN_JOURNAL_DATA {
   ULONG DeleteFlags;
 } DELETE_USN_JOURNAL_DATA, *PDELETE_USN_JOURNAL_DATA;
 
-#define USN_DELETE_FLAG_DELETE              (0x00000001)
-#define USN_DELETE_FLAG_NOTIFY              (0x00000002)
-#define USN_DELETE_VALID_FLAGS              (0x00000003)
+#define USN_DELETE_FLAG_DELETE                                        (0x00000001)
+#define USN_DELETE_FLAG_NOTIFY                                        (0x00000002)
+#define USN_DELETE_VALID_FLAGS                                        (0x00000003)
 
 typedef struct _MARK_HANDLE_INFO {
   ULONG UsnSourceInfo;
@@ -3644,22 +3644,22 @@ typedef struct _MARK_HANDLE_INFO32 {
 } MARK_HANDLE_INFO32, *PMARK_HANDLE_INFO32;
 #endif
 
-#define USN_SOURCE_DATA_MANAGEMENT          (0x00000001)
-#define USN_SOURCE_AUXILIARY_DATA           (0x00000002)
+#define USN_SOURCE_DATA_MANAGEMENT                       (0x00000001)
+#define USN_SOURCE_AUXILIARY_DATA                        (0x00000002)
 #define USN_SOURCE_REPLICATION_MANAGEMENT   (0x00000004)
 
-#define MARK_HANDLE_PROTECT_CLUSTERS        (0x00000001)
-#define MARK_HANDLE_TXF_SYSTEM_LOG          (0x00000004)
-#define MARK_HANDLE_NOT_TXF_SYSTEM_LOG      (0x00000008)
+#define MARK_HANDLE_PROTECT_CLUSTERS                     (0x00000001)
+#define MARK_HANDLE_TXF_SYSTEM_LOG                       (0x00000004)
+#define MARK_HANDLE_NOT_TXF_SYSTEM_LOG                   (0x00000008)
 
 typedef struct _BULK_SECURITY_TEST_DATA {
   ACCESS_MASK DesiredAccess;
   ULONG SecurityIds[1];
 } BULK_SECURITY_TEST_DATA, *PBULK_SECURITY_TEST_DATA;
 
-#define VOLUME_IS_DIRTY                  (0x00000001)
-#define VOLUME_UPGRADE_SCHEDULED         (0x00000002)
-#define VOLUME_SESSION_OPEN              (0x00000004)
+#define VOLUME_IS_DIRTY                                                         (0x00000001)
+#define VOLUME_UPGRADE_SCHEDULED                      (0x00000002)
+#define VOLUME_SESSION_OPEN                                        (0x00000004)
 
 typedef struct _FILE_PREFETCH {
   ULONG Type;
@@ -3674,20 +3674,20 @@ typedef struct _FILE_PREFETCH_EX {
   ULONGLONG Prefetch[1];
 } FILE_PREFETCH_EX, *PFILE_PREFETCH_EX;
 
-#define FILE_PREFETCH_TYPE_FOR_CREATE       0x1
-#define FILE_PREFETCH_TYPE_FOR_DIRENUM      0x2
+#define FILE_PREFETCH_TYPE_FOR_CREATE                    0x1
+#define FILE_PREFETCH_TYPE_FOR_DIRENUM                   0x2
 #define FILE_PREFETCH_TYPE_FOR_CREATE_EX    0x3
 #define FILE_PREFETCH_TYPE_FOR_DIRENUM_EX   0x4
 
-#define FILE_PREFETCH_TYPE_MAX              0x4
+#define FILE_PREFETCH_TYPE_MAX                                        0x4
 
 typedef struct _FILE_OBJECTID_BUFFER {
   UCHAR ObjectId[16];
   _ANONYMOUS_UNION union {
     _ANONYMOUS_STRUCT struct {
-      UCHAR BirthVolumeId[16];
-      UCHAR BirthObjectId[16];
-      UCHAR DomainId[16];
+                   UCHAR BirthVolumeId[16];
+                   UCHAR BirthObjectId[16];
+                   UCHAR DomainId[16];
     } DUMMYSTRUCTNAME;
     UCHAR ExtendedInfo[48];
   } DUMMYUNIONNAME;
@@ -3712,9 +3712,9 @@ typedef struct _ENCRYPTION_BUFFER {
   UCHAR Private[1];
 } ENCRYPTION_BUFFER, *PENCRYPTION_BUFFER;
 
-#define FILE_SET_ENCRYPTION         0x00000001
-#define FILE_CLEAR_ENCRYPTION       0x00000002
-#define STREAM_SET_ENCRYPTION       0x00000003
+#define FILE_SET_ENCRYPTION                      0x00000001
+#define FILE_CLEAR_ENCRYPTION                    0x00000002
+#define STREAM_SET_ENCRYPTION                    0x00000003
 #define STREAM_CLEAR_ENCRYPTION     0x00000004
 
 #define MAXIMUM_ENCRYPTION_VALUE    0x00000004
@@ -3723,9 +3723,9 @@ typedef struct _DECRYPTION_STATUS_BUFFER {
   BOOLEAN NoEncryptedStreams;
 } DECRYPTION_STATUS_BUFFER, *PDECRYPTION_STATUS_BUFFER;
 
-#define ENCRYPTION_FORMAT_DEFAULT        (0x01)
+#define ENCRYPTION_FORMAT_DEFAULT                     (0x01)
 
-#define COMPRESSION_FORMAT_SPARSE        (0x4000)
+#define COMPRESSION_FORMAT_SPARSE                     (0x4000)
 
 typedef struct _REQUEST_RAW_ENCRYPTED_DATA {
   LONGLONG FileOffset;
@@ -3759,9 +3759,9 @@ typedef struct _SI_COPYFILE {
   WCHAR FileNameBuffer[1];
 } SI_COPYFILE, *PSI_COPYFILE;
 
-#define COPYFILE_SIS_LINK       0x0001
+#define COPYFILE_SIS_LINK                    0x0001
 #define COPYFILE_SIS_REPLACE    0x0002
-#define COPYFILE_SIS_FLAGS      0x0003
+#define COPYFILE_SIS_FLAGS                   0x0003
 
 #endif /* (_WIN32_WINNT >= 0x0500) */
 
@@ -3796,12 +3796,12 @@ typedef struct _FILE_QUERY_ON_DISK_VOL_INFO_BUFFER {
   WCHAR LastModifyingImplementationInfo[34];
 } FILE_QUERY_ON_DISK_VOL_INFO_BUFFER, *PFILE_QUERY_ON_DISK_VOL_INFO_BUFFER;
 
-#define SET_REPAIR_ENABLED                                      (0x00000001)
-#define SET_REPAIR_VOLUME_BITMAP_SCAN                           (0x00000002)
-#define SET_REPAIR_DELETE_CROSSLINK                             (0x00000004)
-#define SET_REPAIR_WARN_ABOUT_DATA_LOSS                         (0x00000008)
-#define SET_REPAIR_DISABLED_AND_BUGCHECK_ON_CORRUPT             (0x00000010)
-#define SET_REPAIR_VALID_MASK                                   (0x0000001F)
+#define SET_REPAIR_ENABLED                                                                                                                    (0x00000001)
+#define SET_REPAIR_VOLUME_BITMAP_SCAN                                                                               (0x00000002)
+#define SET_REPAIR_DELETE_CROSSLINK                                                                                 (0x00000004)
+#define SET_REPAIR_WARN_ABOUT_DATA_LOSS                                                                             (0x00000008)
+#define SET_REPAIR_DISABLED_AND_BUGCHECK_ON_CORRUPT                                       (0x00000010)
+#define SET_REPAIR_VALID_MASK                                                                                                    (0x0000001F)
 
 typedef enum _SHRINK_VOLUME_REQUEST_TYPES {
   ShrinkPrepare = 1,
@@ -3815,49 +3815,49 @@ typedef struct _SHRINK_VOLUME_INFORMATION {
   LONGLONG NewNumberOfSectors;
 } SHRINK_VOLUME_INFORMATION, *PSHRINK_VOLUME_INFORMATION;
 
-#define TXFS_RM_FLAG_LOGGING_MODE                           0x00000001
-#define TXFS_RM_FLAG_RENAME_RM                              0x00000002
-#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX                0x00000004
-#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN                0x00000008
+#define TXFS_RM_FLAG_LOGGING_MODE                                                                               0x00000001
+#define TXFS_RM_FLAG_RENAME_RM                                                                                               0x00000002
+#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX                                          0x00000004
+#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN                                          0x00000008
 #define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS    0x00000010
-#define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT           0x00000020
-#define TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE             0x00000040
-#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX             0x00000080
-#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN             0x00000100
-#define TXFS_RM_FLAG_GROW_LOG                               0x00000400
-#define TXFS_RM_FLAG_SHRINK_LOG                             0x00000800
-#define TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE                   0x00001000
-#define TXFS_RM_FLAG_PRESERVE_CHANGES                       0x00002000
-#define TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                 0x00004000
-#define TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START          0x00008000
-#define TXFS_RM_FLAG_PREFER_CONSISTENCY                     0x00010000
-#define TXFS_RM_FLAG_PREFER_AVAILABILITY                    0x00020000
+#define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT                        0x00000020
+#define TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE                                       0x00000040
+#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX                                       0x00000080
+#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN                                       0x00000100
+#define TXFS_RM_FLAG_GROW_LOG                                                                                                0x00000400
+#define TXFS_RM_FLAG_SHRINK_LOG                                                                                 0x00000800
+#define TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE                                                          0x00001000
+#define TXFS_RM_FLAG_PRESERVE_CHANGES                                                              0x00002000
+#define TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                                           0x00004000
+#define TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START                       0x00008000
+#define TXFS_RM_FLAG_PREFER_CONSISTENCY                                                            0x00010000
+#define TXFS_RM_FLAG_PREFER_AVAILABILITY                                                           0x00020000
 
-#define TXFS_LOGGING_MODE_SIMPLE        (0x0001)
-#define TXFS_LOGGING_MODE_FULL          (0x0002)
+#define TXFS_LOGGING_MODE_SIMPLE                     (0x0001)
+#define TXFS_LOGGING_MODE_FULL                       (0x0002)
 
-#define TXFS_TRANSACTION_STATE_NONE         0x00
-#define TXFS_TRANSACTION_STATE_ACTIVE       0x01
+#define TXFS_TRANSACTION_STATE_NONE                      0x00
+#define TXFS_TRANSACTION_STATE_ACTIVE                    0x01
 #define TXFS_TRANSACTION_STATE_PREPARED     0x02
 #define TXFS_TRANSACTION_STATE_NOTACTIVE    0x03
 
-#define TXFS_MODIFY_RM_VALID_FLAGS (TXFS_RM_FLAG_LOGGING_MODE                        | \
-                                    TXFS_RM_FLAG_RENAME_RM                           | \
-                                    TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX             | \
-                                    TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN             | \
-                                    TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS | \
-                                    TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT        | \
-                                    TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE          | \
-                                    TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX          | \
-                                    TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN          | \
-                                    TXFS_RM_FLAG_SHRINK_LOG                          | \
-                                    TXFS_RM_FLAG_GROW_LOG                            | \
-                                    TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE                | \
-                                    TXFS_RM_FLAG_PRESERVE_CHANGES                    | \
-                                    TXFS_RM_FLAG_RESET_RM_AT_NEXT_START              | \
-                                    TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START       | \
-                                    TXFS_RM_FLAG_PREFER_CONSISTENCY                  | \
-                                    TXFS_RM_FLAG_PREFER_AVAILABILITY)
+#define TXFS_MODIFY_RM_VALID_FLAGS (TXFS_RM_FLAG_LOGGING_MODE                                                                            | \
+                                                                                                                  TXFS_RM_FLAG_RENAME_RM                                                                               | \
+                                                                                                                  TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX                                       | \
+                                                                                                                  TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN                                       | \
+                                                                                                                  TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS | \
+                                                                                                                  TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT                     | \
+                                                                                                                  TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE                       | \
+                                                                                                                  TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX                       | \
+                                                                                                                  TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN                       | \
+                                                                                                                  TXFS_RM_FLAG_SHRINK_LOG                                                                              | \
+                                                                                                                  TXFS_RM_FLAG_GROW_LOG                                                                                | \
+                                                                                                                  TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE                                          | \
+                                                                                                                  TXFS_RM_FLAG_PRESERVE_CHANGES                                                           | \
+                                                                                                                  TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                                        | \
+                                                                                                                  TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START                    | \
+                                                                                                                  TXFS_RM_FLAG_PREFER_CONSISTENCY                                                         | \
+                                                                                                                  TXFS_RM_FLAG_PREFER_AVAILABILITY)
 
 typedef struct _TXFS_MODIFY_RM {
   ULONG Flags;
@@ -3870,20 +3870,20 @@ typedef struct _TXFS_MODIFY_RM {
   USHORT LoggingMode;
 } TXFS_MODIFY_RM, *PTXFS_MODIFY_RM;
 
-#define TXFS_RM_STATE_NOT_STARTED       0
-#define TXFS_RM_STATE_STARTING          1
-#define TXFS_RM_STATE_ACTIVE            2
+#define TXFS_RM_STATE_NOT_STARTED                    0
+#define TXFS_RM_STATE_STARTING                       1
+#define TXFS_RM_STATE_ACTIVE                                      2
 #define TXFS_RM_STATE_SHUTTING_DOWN     3
 
-#define TXFS_QUERY_RM_INFORMATION_VALID_FLAGS                           \
-                (TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS   |   \
-                 TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT          |   \
-                 TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX            |   \
-                 TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN            |   \
-                 TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                |   \
-                 TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START         |   \
-                 TXFS_RM_FLAG_PREFER_CONSISTENCY                    |   \
-                 TXFS_RM_FLAG_PREFER_AVAILABILITY)
+#define TXFS_QUERY_RM_INFORMATION_VALID_FLAGS                                                                               \
+                                          (TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS   |   \
+                                           TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT                       |   \
+                                           TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX                                      |   \
+                                           TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN                                      |   \
+                                           TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                                          |   \
+                                           TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START                      |   \
+                                           TXFS_RM_FLAG_PREFER_CONSISTENCY                                                           |   \
+                                           TXFS_RM_FLAG_PREFER_AVAILABILITY)
 
 typedef struct _TXFS_QUERY_RM_INFORMATION {
   ULONG BytesRequired;
@@ -3914,12 +3914,12 @@ typedef struct _TXFS_QUERY_RM_INFORMATION {
   ULONG TmLogPathOffset;
 } TXFS_QUERY_RM_INFORMATION, *PTXFS_QUERY_RM_INFORMATION;
 
-#define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN        0x01
+#define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN                     0x01
 #define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK   0x02
 
-#define TXFS_ROLLFORWARD_REDO_VALID_FLAGS                               \
-                (TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN |         \
-                 TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK)
+#define TXFS_ROLLFORWARD_REDO_VALID_FLAGS                                                                                                \
+                                          (TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN |                      \
+                                           TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK)
 
 typedef struct _TXFS_ROLLFORWARD_REDO_INFORMATION {
   LARGE_INTEGER LastVirtualClock;
@@ -3928,35 +3928,35 @@ typedef struct _TXFS_ROLLFORWARD_REDO_INFORMATION {
   ULONG Flags;
 } TXFS_ROLLFORWARD_REDO_INFORMATION, *PTXFS_ROLLFORWARD_REDO_INFORMATION;
 
-#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX              0x00000001
-#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN              0x00000002
-#define TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE                   0x00000004
+#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX                                        0x00000001
+#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN                                        0x00000002
+#define TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE                                                          0x00000004
 #define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS  0x00000008
-#define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT         0x00000010
-#define TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE           0x00000020
-#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX           0x00000040
-#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN           0x00000080
+#define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT                      0x00000010
+#define TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE                        0x00000020
+#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX                        0x00000040
+#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN                        0x00000080
 
-#define TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT                  0x00000200
-#define TXFS_START_RM_FLAG_LOGGING_MODE                         0x00000400
-#define TXFS_START_RM_FLAG_PRESERVE_CHANGES                     0x00000800
+#define TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT                                                         0x00000200
+#define TXFS_START_RM_FLAG_LOGGING_MODE                                                                             0x00000400
+#define TXFS_START_RM_FLAG_PRESERVE_CHANGES                                                            0x00000800
 
-#define TXFS_START_RM_FLAG_PREFER_CONSISTENCY                   0x00001000
-#define TXFS_START_RM_FLAG_PREFER_AVAILABILITY                  0x00002000
+#define TXFS_START_RM_FLAG_PREFER_CONSISTENCY                                                          0x00001000
+#define TXFS_START_RM_FLAG_PREFER_AVAILABILITY                                                         0x00002000
 
-#define TXFS_START_RM_VALID_FLAGS                                           \
-                (TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX             |   \
-                 TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN             |   \
-                 TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE                  |   \
-                 TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS |   \
-                 TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT        |   \
-                 TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE          |   \
-                 TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT                 |   \
-                 TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX          |   \
-                 TXFS_START_RM_FLAG_LOGGING_MODE                        |   \
-                 TXFS_START_RM_FLAG_PRESERVE_CHANGES                    |   \
-                 TXFS_START_RM_FLAG_PREFER_CONSISTENCY                  |   \
-                 TXFS_START_RM_FLAG_PREFER_AVAILABILITY)
+#define TXFS_START_RM_VALID_FLAGS                                                                                                                                      \
+                                          (TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX                                       |   \
+                                           TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN                                       |   \
+                                           TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE                                                         |   \
+                                           TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS |   \
+                                           TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT                     |   \
+                                           TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE                       |   \
+                                           TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT                                           |   \
+                                           TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX                       |   \
+                                           TXFS_START_RM_FLAG_LOGGING_MODE                                                                            |   \
+                                           TXFS_START_RM_FLAG_PRESERVE_CHANGES                                                           |   \
+                                           TXFS_START_RM_FLAG_PREFER_CONSISTENCY                                                         |   \
+                                           TXFS_START_RM_FLAG_PREFER_AVAILABILITY)
 
 typedef struct _TXFS_START_RM_INFORMATION {
   ULONG Flags;
@@ -4038,10 +4038,10 @@ typedef struct _TXFS_GET_TRANSACTED_VERSION {
   USHORT LatestMiniVersion;
 } TXFS_GET_TRANSACTED_VERSION, *PTXFS_GET_TRANSACTED_VERSION;
 
-#define TXFS_SAVEPOINT_SET                      0x00000001
-#define TXFS_SAVEPOINT_ROLLBACK                 0x00000002
-#define TXFS_SAVEPOINT_CLEAR                    0x00000004
-#define TXFS_SAVEPOINT_CLEAR_ALL                0x00000010
+#define TXFS_SAVEPOINT_SET                                                             0x00000001
+#define TXFS_SAVEPOINT_ROLLBACK                                           0x00000002
+#define TXFS_SAVEPOINT_CLEAR                                                           0x00000004
+#define TXFS_SAVEPOINT_CLEAR_ALL                                          0x00000010
 
 typedef struct _TXFS_SAVEPOINT_INFORMATION {
   HANDLE KtmTransaction;
@@ -4064,13 +4064,13 @@ typedef struct _TXFS_TRANSACTION_ACTIVE_INFO {
 
 #if (_WIN32_WINNT >= 0x0601)
 
-#define MARK_HANDLE_REALTIME                (0x00000020)
-#define MARK_HANDLE_NOT_REALTIME            (0x00000040)
+#define MARK_HANDLE_REALTIME                                          (0x00000020)
+#define MARK_HANDLE_NOT_REALTIME                                      (0x00000040)
 
-#define NO_8DOT3_NAME_PRESENT               (0x00000001)
-#define REMOVED_8DOT3_NAME                  (0x00000002)
+#define NO_8DOT3_NAME_PRESENT                                         (0x00000001)
+#define REMOVED_8DOT3_NAME                                                         (0x00000002)
 
-#define PERSISTENT_VOLUME_STATE_SHORT_NAME_CREATION_DISABLED        (0x00000001)
+#define PERSISTENT_VOLUME_STATE_SHORT_NAME_CREATION_DISABLED                     (0x00000001)
 
 typedef struct _BOOT_AREA_INFO {
   ULONG BootSectorCount;
@@ -4094,15 +4094,15 @@ typedef struct _FILE_SYSTEM_RECOGNITION_INFORMATION {
   CHAR FileSystem[9];
 } FILE_SYSTEM_RECOGNITION_INFORMATION, *PFILE_SYSTEM_RECOGNITION_INFORMATION;
 
-#define OPLOCK_LEVEL_CACHE_READ         (0x00000001)
-#define OPLOCK_LEVEL_CACHE_HANDLE       (0x00000002)
-#define OPLOCK_LEVEL_CACHE_WRITE        (0x00000004)
+#define OPLOCK_LEVEL_CACHE_READ                      (0x00000001)
+#define OPLOCK_LEVEL_CACHE_HANDLE                    (0x00000002)
+#define OPLOCK_LEVEL_CACHE_WRITE                     (0x00000004)
 
-#define REQUEST_OPLOCK_INPUT_FLAG_REQUEST               (0x00000001)
-#define REQUEST_OPLOCK_INPUT_FLAG_ACK                   (0x00000002)
+#define REQUEST_OPLOCK_INPUT_FLAG_REQUEST                                         (0x00000001)
+#define REQUEST_OPLOCK_INPUT_FLAG_ACK                                                          (0x00000002)
 #define REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE (0x00000004)
 
-#define REQUEST_OPLOCK_CURRENT_VERSION          1
+#define REQUEST_OPLOCK_CURRENT_VERSION                       1
 
 typedef struct _REQUEST_OPLOCK_INPUT_BUFFER {
   USHORT StructureVersion;
@@ -4180,15 +4180,15 @@ typedef struct _LOOKUP_STREAM_FROM_CLUSTER_OUTPUT {
   ULONG BufferSizeRequired;
 } LOOKUP_STREAM_FROM_CLUSTER_OUTPUT, *PLOOKUP_STREAM_FROM_CLUSTER_OUTPUT;
 
-#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE          0x00000001
+#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE                       0x00000001
 #define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET    0x00000002
 #define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE     0x00000004
 #define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE    0x00000008
 
-#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK          0xff000000
-#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA          0x01000000
-#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX         0x02000000
-#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM        0x03000000
+#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK                       0xff000000
+#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA                       0x01000000
+#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX                      0x02000000
+#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM                     0x03000000
 
 typedef struct _LOOKUP_STREAM_FROM_CLUSTER_ENTRY {
   ULONG OffsetToNext;
@@ -4205,9 +4205,9 @@ typedef struct _FILE_TYPE_NOTIFICATION_INPUT {
 } FILE_TYPE_NOTIFICATION_INPUT, *PFILE_TYPE_NOTIFICATION_INPUT;
 
 #define FILE_TYPE_NOTIFICATION_FLAG_USAGE_BEGIN     0x00000001
-#define FILE_TYPE_NOTIFICATION_FLAG_USAGE_END       0x00000002
+#define FILE_TYPE_NOTIFICATION_FLAG_USAGE_END                    0x00000002
 
-DEFINE_GUID(FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE,         0x0d0a64a1, 0x38fc, 0x4db8, 0x9f, 0xe7, 0x3f, 0x43, 0x52, 0xcd, 0x7c, 0x5c);
+DEFINE_GUID(FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE,                      0x0d0a64a1, 0x38fc, 0x4db8, 0x9f, 0xe7, 0x3f, 0x43, 0x52, 0xcd, 0x7c, 0x5c);
 DEFINE_GUID(FILE_TYPE_NOTIFICATION_GUID_HIBERNATION_FILE,  0xb7624d64, 0xb9a3, 0x4cf8, 0x80, 0x11, 0x5b, 0x86, 0xc9, 0x40, 0xe7, 0xb7);
 DEFINE_GUID(FILE_TYPE_NOTIFICATION_GUID_CRASHDUMP_FILE,    0x9d453eb7, 0xd2a6, 0x4dbd, 0xa2, 0xe3, 0xfb, 0xd0, 0xed, 0x91, 0x09, 0xa9);
 
@@ -4280,7 +4280,7 @@ typedef struct _FILESYSTEM_STATISTICS {
 } FILESYSTEM_STATISTICS, *PFILESYSTEM_STATISTICS;
 
 #define FILESYSTEM_STATISTICS_TYPE_NTFS     1
-#define FILESYSTEM_STATISTICS_TYPE_FAT      2
+#define FILESYSTEM_STATISTICS_TYPE_FAT                   2
 #define FILESYSTEM_STATISTICS_TYPE_EXFAT    3
 
 typedef struct _FAT_STATISTICS {
@@ -4395,22 +4395,22 @@ typedef struct _REPARSE_DATA_BUFFER {
   USHORT Reserved;
   _ANONYMOUS_UNION union {
     struct {
-      USHORT SubstituteNameOffset;
-      USHORT SubstituteNameLength;
-      USHORT PrintNameOffset;
-      USHORT PrintNameLength;
-      ULONG Flags;
-      WCHAR PathBuffer[1];
+                   USHORT SubstituteNameOffset;
+                   USHORT SubstituteNameLength;
+                   USHORT PrintNameOffset;
+                   USHORT PrintNameLength;
+                   ULONG Flags;
+                   WCHAR PathBuffer[1];
     } SymbolicLinkReparseBuffer;
     struct {
-      USHORT SubstituteNameOffset;
-      USHORT SubstituteNameLength;
-      USHORT PrintNameOffset;
-      USHORT PrintNameLength;
-      WCHAR PathBuffer[1];
+                   USHORT SubstituteNameOffset;
+                   USHORT SubstituteNameLength;
+                   USHORT PrintNameOffset;
+                   USHORT PrintNameLength;
+                   WCHAR PathBuffer[1];
     } MountPointReparseBuffer;
     struct {
-      UCHAR DataBuffer[1];
+                   UCHAR DataBuffer[1];
     } GenericReparseBuffer;
   } DUMMYUNIONNAME;
 } REPARSE_DATA_BUFFER, *PREPARSE_DATA_BUFFER;
@@ -4429,36 +4429,36 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 
 #define REPARSE_GUID_DATA_BUFFER_HEADER_SIZE   FIELD_OFFSET(REPARSE_GUID_DATA_BUFFER, GenericReparseBuffer)
 
-#define MAXIMUM_REPARSE_DATA_BUFFER_SIZE      ( 16 * 1024 )
+#define MAXIMUM_REPARSE_DATA_BUFFER_SIZE                   ( 16 * 1024 )
 
 /* Reserved reparse tags */
-#define IO_REPARSE_TAG_RESERVED_ZERO            (0)
-#define IO_REPARSE_TAG_RESERVED_ONE             (1)
-#define IO_REPARSE_TAG_RESERVED_RANGE           IO_REPARSE_TAG_RESERVED_ONE
+#define IO_REPARSE_TAG_RESERVED_ZERO                                      (0)
+#define IO_REPARSE_TAG_RESERVED_ONE                                       (1)
+#define IO_REPARSE_TAG_RESERVED_RANGE                        IO_REPARSE_TAG_RESERVED_ONE
 
-#define IsReparseTagMicrosoft(_tag)             (((_tag) & 0x80000000))
-#define IsReparseTagNameSurrogate(_tag)         (((_tag) & 0x20000000))
+#define IsReparseTagMicrosoft(_tag)                                       (((_tag) & 0x80000000))
+#define IsReparseTagNameSurrogate(_tag)                      (((_tag) & 0x20000000))
 
-#define IO_REPARSE_TAG_VALID_VALUES             (0xF000FFFF)
+#define IO_REPARSE_TAG_VALID_VALUES                                       (0xF000FFFF)
 
-#define IsReparseTagValid(tag) (                               \
-                  !((tag) & ~IO_REPARSE_TAG_VALID_VALUES) &&   \
-                  ((tag) > IO_REPARSE_TAG_RESERVED_RANGE)      \
-                )
+#define IsReparseTagValid(tag) (                                                                                                \
+                                                         !((tag) & ~IO_REPARSE_TAG_VALID_VALUES) &&   \
+                                                         ((tag) > IO_REPARSE_TAG_RESERVED_RANGE)                   \
+                                          )
 
 /* MicroSoft reparse point tags */
-#define IO_REPARSE_TAG_MOUNT_POINT              (0xA0000003L)
-#define IO_REPARSE_TAG_HSM                      (0xC0000004L)
-#define IO_REPARSE_TAG_DRIVE_EXTENDER           (0x80000005L)
-#define IO_REPARSE_TAG_HSM2                     (0x80000006L)
-#define IO_REPARSE_TAG_SIS                      (0x80000007L)
-#define IO_REPARSE_TAG_WIM                      (0x80000008L)
-#define IO_REPARSE_TAG_CSV                      (0x80000009L)
-#define IO_REPARSE_TAG_DFS                      (0x8000000AL)
-#define IO_REPARSE_TAG_FILTER_MANAGER           (0x8000000BL)
-#define IO_REPARSE_TAG_SYMLINK                  (0xA000000CL)
-#define IO_REPARSE_TAG_IIS_CACHE                (0xA0000010L)
-#define IO_REPARSE_TAG_DFSR                     (0x80000012L)
+#define IO_REPARSE_TAG_MOUNT_POINT                                        (0xA0000003L)
+#define IO_REPARSE_TAG_HSM                                                             (0xC0000004L)
+#define IO_REPARSE_TAG_DRIVE_EXTENDER                        (0x80000005L)
+#define IO_REPARSE_TAG_HSM2                                                            (0x80000006L)
+#define IO_REPARSE_TAG_SIS                                                             (0x80000007L)
+#define IO_REPARSE_TAG_WIM                                                             (0x80000008L)
+#define IO_REPARSE_TAG_CSV                                                             (0x80000009L)
+#define IO_REPARSE_TAG_DFS                                                             (0x8000000AL)
+#define IO_REPARSE_TAG_FILTER_MANAGER                        (0x8000000BL)
+#define IO_REPARSE_TAG_SYMLINK                                                         (0xA000000CL)
+#define IO_REPARSE_TAG_IIS_CACHE                                          (0xA0000010L)
+#define IO_REPARSE_TAG_DFSR                                                            (0x80000012L)
 
 #pragma pack(4)
 typedef struct _REPARSE_INDEX_KEY {
@@ -4471,31 +4471,31 @@ typedef struct _REPARSE_INDEX_KEY {
 #define FSCTL_LMR_SET_LINK_TRACKING_INFORMATION   CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM,59,METHOD_BUFFERED,FILE_ANY_ACCESS)
 #define IOCTL_LMR_ARE_FILE_OBJECTS_ON_SAME_SERVER CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM,60,METHOD_BUFFERED,FILE_ANY_ACCESS)
 
-#define FSCTL_PIPE_ASSIGN_EVENT             CTL_CODE(FILE_DEVICE_NAMED_PIPE, 0, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_DISCONNECT               CTL_CODE(FILE_DEVICE_NAMED_PIPE, 1, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_LISTEN                   CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_PEEK                     CTL_CODE(FILE_DEVICE_NAMED_PIPE, 3, METHOD_BUFFERED, FILE_READ_DATA)
-#define FSCTL_PIPE_QUERY_EVENT              CTL_CODE(FILE_DEVICE_NAMED_PIPE, 4, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_TRANSCEIVE               CTL_CODE(FILE_DEVICE_NAMED_PIPE, 5, METHOD_NEITHER,  FILE_READ_DATA | FILE_WRITE_DATA)
-#define FSCTL_PIPE_WAIT                     CTL_CODE(FILE_DEVICE_NAMED_PIPE, 6, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_IMPERSONATE              CTL_CODE(FILE_DEVICE_NAMED_PIPE, 7, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_SET_CLIENT_PROCESS       CTL_CODE(FILE_DEVICE_NAMED_PIPE, 8, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_ASSIGN_EVENT                                       CTL_CODE(FILE_DEVICE_NAMED_PIPE, 0, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_DISCONNECT                                         CTL_CODE(FILE_DEVICE_NAMED_PIPE, 1, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_LISTEN                                                          CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_PEEK                                                            CTL_CODE(FILE_DEVICE_NAMED_PIPE, 3, METHOD_BUFFERED, FILE_READ_DATA)
+#define FSCTL_PIPE_QUERY_EVENT                                        CTL_CODE(FILE_DEVICE_NAMED_PIPE, 4, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_TRANSCEIVE                                         CTL_CODE(FILE_DEVICE_NAMED_PIPE, 5, METHOD_NEITHER,  FILE_READ_DATA | FILE_WRITE_DATA)
+#define FSCTL_PIPE_WAIT                                                            CTL_CODE(FILE_DEVICE_NAMED_PIPE, 6, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_IMPERSONATE                                        CTL_CODE(FILE_DEVICE_NAMED_PIPE, 7, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_SET_CLIENT_PROCESS                    CTL_CODE(FILE_DEVICE_NAMED_PIPE, 8, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_PIPE_QUERY_CLIENT_PROCESS     CTL_CODE(FILE_DEVICE_NAMED_PIPE, 9, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_GET_PIPE_ATTRIBUTE       CTL_CODE(FILE_DEVICE_NAMED_PIPE, 10, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_SET_PIPE_ATTRIBUTE       CTL_CODE(FILE_DEVICE_NAMED_PIPE, 11, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_GET_PIPE_ATTRIBUTE                    CTL_CODE(FILE_DEVICE_NAMED_PIPE, 10, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_PIPE_SET_PIPE_ATTRIBUTE                    CTL_CODE(FILE_DEVICE_NAMED_PIPE, 11, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_PIPE_GET_CONNECTION_ATTRIBUTE CTL_CODE(FILE_DEVICE_NAMED_PIPE, 12, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_PIPE_SET_CONNECTION_ATTRIBUTE CTL_CODE(FILE_DEVICE_NAMED_PIPE, 13, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_PIPE_GET_HANDLE_ATTRIBUTE     CTL_CODE(FILE_DEVICE_NAMED_PIPE, 14, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_PIPE_SET_HANDLE_ATTRIBUTE     CTL_CODE(FILE_DEVICE_NAMED_PIPE, 15, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_PIPE_FLUSH                    CTL_CODE(FILE_DEVICE_NAMED_PIPE, 16, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_PIPE_FLUSH                                                           CTL_CODE(FILE_DEVICE_NAMED_PIPE, 16, METHOD_BUFFERED, FILE_WRITE_DATA)
 
-#define FSCTL_PIPE_INTERNAL_READ            CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2045, METHOD_BUFFERED, FILE_READ_DATA)
-#define FSCTL_PIPE_INTERNAL_WRITE           CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2046, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_PIPE_INTERNAL_TRANSCEIVE      CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2047, METHOD_NEITHER, FILE_READ_DATA | FILE_WRITE_DATA)
+#define FSCTL_PIPE_INTERNAL_READ                                      CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2045, METHOD_BUFFERED, FILE_READ_DATA)
+#define FSCTL_PIPE_INTERNAL_WRITE                        CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2046, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_PIPE_INTERNAL_TRANSCEIVE                   CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2047, METHOD_NEITHER, FILE_READ_DATA | FILE_WRITE_DATA)
 #define FSCTL_PIPE_INTERNAL_READ_OVFLOW     CTL_CODE(FILE_DEVICE_NAMED_PIPE, 2048, METHOD_BUFFERED, FILE_READ_DATA)
 
-#define FILE_PIPE_READ_DATA                 0x00000000
-#define FILE_PIPE_WRITE_SPACE               0x00000001
+#define FILE_PIPE_READ_DATA                                           0x00000000
+#define FILE_PIPE_WRITE_SPACE                                         0x00000001
 
 typedef struct _FILE_PIPE_ASSIGN_EVENT_BUFFER {
   HANDLE EventHandle;
@@ -4549,7 +4549,7 @@ typedef struct _FILE_PIPE_CLIENT_PROCESS_BUFFER_EX {
   WCHAR ClientComputerBuffer[FILE_PIPE_COMPUTER_NAME_LENGTH+1];
 } FILE_PIPE_CLIENT_PROCESS_BUFFER_EX, *PFILE_PIPE_CLIENT_PROCESS_BUFFER_EX;
 
-#define FSCTL_MAILSLOT_PEEK             CTL_CODE(FILE_DEVICE_MAILSLOT, 0, METHOD_NEITHER, FILE_READ_DATA)
+#define FSCTL_MAILSLOT_PEEK                                       CTL_CODE(FILE_DEVICE_MAILSLOT, 0, METHOD_NEITHER, FILE_READ_DATA)
 
 typedef enum _LINK_TRACKING_INFORMATION_TYPE {
   NtfsLinkTrackingInformation,
@@ -4567,10 +4567,10 @@ typedef struct _REMOTE_LINK_TRACKING_INFORMATION {
   UCHAR TargetLinkTrackingInformationBuffer[1];
 } REMOTE_LINK_TRACKING_INFORMATION, *PREMOTE_LINK_TRACKING_INFORMATION;
 
-#define IO_OPEN_PAGING_FILE                 0x0002
-#define IO_OPEN_TARGET_DIRECTORY            0x0004
-#define IO_STOP_ON_SYMLINK                  0x0008
-#define IO_MM_PAGING_FILE                   0x0010
+#define IO_OPEN_PAGING_FILE                                           0x0002
+#define IO_OPEN_TARGET_DIRECTORY                                      0x0004
+#define IO_STOP_ON_SYMLINK                                                         0x0008
+#define IO_MM_PAGING_FILE                                                          0x0010
 
 typedef VOID
 (NTAPI *PDRIVER_FS_NOTIFICATION) (
@@ -4612,12 +4612,12 @@ typedef union _FS_FILTER_PARAMETERS {
   } Others;
 } FS_FILTER_PARAMETERS, *PFS_FILTER_PARAMETERS;
 
-#define FS_FILTER_ACQUIRE_FOR_SECTION_SYNCHRONIZATION      (UCHAR)-1
-#define FS_FILTER_RELEASE_FOR_SECTION_SYNCHRONIZATION      (UCHAR)-2
-#define FS_FILTER_ACQUIRE_FOR_MOD_WRITE                    (UCHAR)-3
-#define FS_FILTER_RELEASE_FOR_MOD_WRITE                    (UCHAR)-4
-#define FS_FILTER_ACQUIRE_FOR_CC_FLUSH                     (UCHAR)-5
-#define FS_FILTER_RELEASE_FOR_CC_FLUSH                     (UCHAR)-6
+#define FS_FILTER_ACQUIRE_FOR_SECTION_SYNCHRONIZATION                   (UCHAR)-1
+#define FS_FILTER_RELEASE_FOR_SECTION_SYNCHRONIZATION                   (UCHAR)-2
+#define FS_FILTER_ACQUIRE_FOR_MOD_WRITE                                                           (UCHAR)-3
+#define FS_FILTER_RELEASE_FOR_MOD_WRITE                                                           (UCHAR)-4
+#define FS_FILTER_ACQUIRE_FOR_CC_FLUSH                                                            (UCHAR)-5
+#define FS_FILTER_RELEASE_FOR_CC_FLUSH                                                            (UCHAR)-6
 
 typedef struct _FS_FILTER_CALLBACK_DATA {
   ULONG SizeOfFsFilterCallbackData;
@@ -4676,38 +4676,38 @@ FsRtlNotifyStreamFileObject(
   IN BOOLEAN SafeToRecurse);
 #endif /* (NTDDI_VERSION >= NTDDI_VISTA) */
 
-#define DO_VERIFY_VOLUME                    0x00000002
-#define DO_BUFFERED_IO                      0x00000004
-#define DO_EXCLUSIVE                        0x00000008
-#define DO_DIRECT_IO                        0x00000010
-#define DO_MAP_IO_BUFFER                    0x00000020
-#define DO_DEVICE_HAS_NAME                  0x00000040
-#define DO_DEVICE_INITIALIZING              0x00000080
-#define DO_SYSTEM_BOOT_PARTITION            0x00000100
-#define DO_LONG_TERM_REQUESTS               0x00000200
-#define DO_NEVER_LAST_DEVICE                0x00000400
-#define DO_SHUTDOWN_REGISTERED              0x00000800
-#define DO_BUS_ENUMERATED_DEVICE            0x00001000
-#define DO_POWER_PAGABLE                    0x00002000
-#define DO_POWER_INRUSH                     0x00004000
-#define DO_LOW_PRIORITY_FILESYSTEM          0x00010000
-#define DO_SUPPORTS_TRANSACTIONS            0x00040000
-#define DO_FORCE_NEITHER_IO                 0x00080000
-#define DO_VOLUME_DEVICE_OBJECT             0x00100000
-#define DO_SYSTEM_SYSTEM_PARTITION          0x00200000
-#define DO_SYSTEM_CRITICAL_PARTITION        0x00400000
-#define DO_DISALLOW_EXECUTE                 0x00800000
+#define DO_VERIFY_VOLUME                                                           0x00000002
+#define DO_BUFFERED_IO                                                             0x00000004
+#define DO_EXCLUSIVE                                                                            0x00000008
+#define DO_DIRECT_IO                                                                            0x00000010
+#define DO_MAP_IO_BUFFER                                                           0x00000020
+#define DO_DEVICE_HAS_NAME                                                         0x00000040
+#define DO_DEVICE_INITIALIZING                                        0x00000080
+#define DO_SYSTEM_BOOT_PARTITION                                      0x00000100
+#define DO_LONG_TERM_REQUESTS                                         0x00000200
+#define DO_NEVER_LAST_DEVICE                                          0x00000400
+#define DO_SHUTDOWN_REGISTERED                                        0x00000800
+#define DO_BUS_ENUMERATED_DEVICE                                      0x00001000
+#define DO_POWER_PAGABLE                                                           0x00002000
+#define DO_POWER_INRUSH                                                            0x00004000
+#define DO_LOW_PRIORITY_FILESYSTEM                       0x00010000
+#define DO_SUPPORTS_TRANSACTIONS                                      0x00040000
+#define DO_FORCE_NEITHER_IO                                           0x00080000
+#define DO_VOLUME_DEVICE_OBJECT                                       0x00100000
+#define DO_SYSTEM_SYSTEM_PARTITION                       0x00200000
+#define DO_SYSTEM_CRITICAL_PARTITION                     0x00400000
+#define DO_DISALLOW_EXECUTE                                           0x00800000
 
-extern KSPIN_LOCK                   IoStatisticsLock;
-extern ULONG                        IoReadOperationCount;
-extern ULONG                        IoWriteOperationCount;
-extern ULONG                        IoOtherOperationCount;
-extern LARGE_INTEGER                IoReadTransferCount;
-extern LARGE_INTEGER                IoWriteTransferCount;
-extern LARGE_INTEGER                IoOtherTransferCount;
+extern KSPIN_LOCK                                                          IoStatisticsLock;
+extern ULONG                                                                            IoReadOperationCount;
+extern ULONG                                                                            IoWriteOperationCount;
+extern ULONG                                                                            IoOtherOperationCount;
+extern LARGE_INTEGER                                          IoReadTransferCount;
+extern LARGE_INTEGER                                          IoWriteTransferCount;
+extern LARGE_INTEGER                                          IoOtherTransferCount;
 
 #define IO_FILE_OBJECT_NON_PAGED_POOL_CHARGE    64
-#define IO_FILE_OBJECT_PAGED_POOL_CHARGE        1024
+#define IO_FILE_OBJECT_PAGED_POOL_CHARGE                     1024
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 typedef struct _IO_PRIORITY_INFO {
@@ -4740,7 +4740,7 @@ typedef struct _SECURITY_CLIENT_CONTEXT {
   TOKEN_CONTROL ClientTokenControl;
 } SECURITY_CLIENT_CONTEXT, *PSECURITY_CLIENT_CONTEXT;
 
-#define SYSTEM_PAGE_PRIORITY_BITS       3
+#define SYSTEM_PAGE_PRIORITY_BITS                    3
 #define SYSTEM_PAGE_PRIORITY_LEVELS     (1 << SYSTEM_PAGE_PRIORITY_BITS)
 
 typedef struct _KAPC_STATE {
@@ -4764,7 +4764,7 @@ typedef struct _KQUEUE {
 } KQUEUE, *PKQUEUE, *RESTRICTED_POINTER PRKQUEUE;
 
 /******************************************************************************
- *                              Kernel Functions                              *
+ *                                                                                               Kernel Functions                                                                                               *
  ******************************************************************************/
 
 NTSTATUS
@@ -4953,7 +4953,7 @@ KeRemoveQueueEx (
 #define PEX_PUSH_LOCK PULONG_PTR
 
 /******************************************************************************
- *                          Executive Functions                               *
+ *                                                                              Executive Functions                                                                                                *
  ******************************************************************************/
 
 #define ExDisableResourceBoost ExDisableResourceBoostLite
@@ -4994,7 +4994,7 @@ InterlockedPushListSList(
 #endif /* (NTDDI_VERSION >= NTDDI_WINXP) */
 
 /******************************************************************************
- *                            Security Manager Functions                      *
+ *                                                                                Security Manager Functions                                                             *
  ******************************************************************************/
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
@@ -5412,26 +5412,26 @@ SeLocateProcessImageName(
 #define SeLengthSid( Sid ) \
     (8 + (4 * ((SID *)Sid)->SubAuthorityCount))
 
-#define SeDeleteClientSecurity(C)  {                                           \
-            if (SeTokenType((C)->ClientToken) == TokenPrimary) {               \
-                PsDereferencePrimaryToken( (C)->ClientToken );                 \
-            } else {                                                           \
-                PsDereferenceImpersonationToken( (C)->ClientToken );           \
-            }                                                                  \
+#define SeDeleteClientSecurity(C)  {                                                                                                                                      \
+                                      if (SeTokenType((C)->ClientToken) == TokenPrimary) {                                         \
+                                          PsDereferencePrimaryToken( (C)->ClientToken );                                           \
+                                      } else {                                                                                                                                                                                \
+                                          PsDereferenceImpersonationToken( (C)->ClientToken );                        \
+                                      }                                                                                                                                                                                                                 \
 }
 
 #define SeStopImpersonatingClient() PsRevertToSelf()
 
-#define SeQuerySubjectContextToken( SubjectContext )                \
-    ( ARGUMENT_PRESENT(                                             \
-        ((PSECURITY_SUBJECT_CONTEXT) SubjectContext)->ClientToken   \
-        ) ?                                                         \
+#define SeQuerySubjectContextToken( SubjectContext )                                          \
+    ( ARGUMENT_PRESENT(                                                                                                                                        \
+                     ((PSECURITY_SUBJECT_CONTEXT) SubjectContext)->ClientToken   \
+                     ) ?                                                                                                                                                                              \
     ((PSECURITY_SUBJECT_CONTEXT) SubjectContext)->ClientToken :     \
     ((PSECURITY_SUBJECT_CONTEXT) SubjectContext)->PrimaryToken )
 
 extern NTKERNELAPI PSE_EXPORTS SeExports;
 /******************************************************************************
- *                          Process Manager Functions                         *
+ *                                                                              Process Manager Functions                                                                             *
  ******************************************************************************/
 
 NTKERNELAPI
@@ -5560,15 +5560,15 @@ PsIsSystemThread(
 #endif /* (NTDDI_VERSION >= NTDDI_WINXP) */
 
 /******************************************************************************
- *                         I/O Manager Functions                              *
+ *                                                                             I/O Manager Functions                                                                                               *
  ******************************************************************************/
 
 #define IoIsFileOpenedExclusively(FileObject) ( \
-    (BOOLEAN) !(                                \
-    (FileObject)->SharedRead ||                 \
-    (FileObject)->SharedWrite ||                \
-    (FileObject)->SharedDelete                  \
-    )                                           \
+    (BOOLEAN) !(                                                                                                 \
+    (FileObject)->SharedRead ||                                           \
+    (FileObject)->SharedWrite ||                                          \
+    (FileObject)->SharedDelete                                                         \
+    )                                                                                                                                      \
 )
 
 #if (NTDDI_VERSION == NTDDI_WIN2K)
@@ -5925,11 +5925,11 @@ IoReplaceFileObjectName(
 #endif /* (NTDDI_VERSION >= NTDDI_WIN7) */
 
 
-#define PO_CB_SYSTEM_POWER_POLICY       0
-#define PO_CB_AC_STATUS                 1
-#define PO_CB_BUTTON_COLLISION          2
-#define PO_CB_SYSTEM_STATE_LOCK         3
-#define PO_CB_LID_SWITCH_STATE          4
+#define PO_CB_SYSTEM_POWER_POLICY                    0
+#define PO_CB_AC_STATUS                                           1
+#define PO_CB_BUTTON_COLLISION                       2
+#define PO_CB_SYSTEM_STATE_LOCK                      3
+#define PO_CB_LID_SWITCH_STATE                       4
 #define PO_CB_PROCESSOR_POWER_POLICY    5
 
 
@@ -5942,7 +5942,7 @@ PoQueueShutdownWorkItem(
 #endif
 
 /******************************************************************************
- *                         Memory manager Types                               *
+ *                                                                             Memory manager Types                                                                                                *
  ******************************************************************************/
 
 typedef enum _MMFLUSH_TYPE {
@@ -5971,57 +5971,57 @@ typedef union _MM_PREFETCH_FLAGS {
 
 #endif /* (NTDDI_VERSION >= NTDDI_WINXP) */
 
-#define HEAP_NO_SERIALIZE               0x00000001
-#define HEAP_GROWABLE                   0x00000002
-#define HEAP_GENERATE_EXCEPTIONS        0x00000004
-#define HEAP_ZERO_MEMORY                0x00000008
-#define HEAP_REALLOC_IN_PLACE_ONLY      0x00000010
-#define HEAP_TAIL_CHECKING_ENABLED      0x00000020
-#define HEAP_FREE_CHECKING_ENABLED      0x00000040
+#define HEAP_NO_SERIALIZE                                         0x00000001
+#define HEAP_GROWABLE                                                          0x00000002
+#define HEAP_GENERATE_EXCEPTIONS                     0x00000004
+#define HEAP_ZERO_MEMORY                                          0x00000008
+#define HEAP_REALLOC_IN_PLACE_ONLY                   0x00000010
+#define HEAP_TAIL_CHECKING_ENABLED                   0x00000020
+#define HEAP_FREE_CHECKING_ENABLED                   0x00000040
 #define HEAP_DISABLE_COALESCE_ON_FREE   0x00000080
 
-#define HEAP_CREATE_ALIGN_16            0x00010000
-#define HEAP_CREATE_ENABLE_TRACING      0x00020000
-#define HEAP_CREATE_ENABLE_EXECUTE      0x00040000
+#define HEAP_CREATE_ALIGN_16                                      0x00010000
+#define HEAP_CREATE_ENABLE_TRACING                   0x00020000
+#define HEAP_CREATE_ENABLE_EXECUTE                   0x00040000
 
-#define HEAP_SETTABLE_USER_VALUE        0x00000100
-#define HEAP_SETTABLE_USER_FLAG1        0x00000200
-#define HEAP_SETTABLE_USER_FLAG2        0x00000400
-#define HEAP_SETTABLE_USER_FLAG3        0x00000800
-#define HEAP_SETTABLE_USER_FLAGS        0x00000E00
+#define HEAP_SETTABLE_USER_VALUE                     0x00000100
+#define HEAP_SETTABLE_USER_FLAG1                     0x00000200
+#define HEAP_SETTABLE_USER_FLAG2                     0x00000400
+#define HEAP_SETTABLE_USER_FLAG3                     0x00000800
+#define HEAP_SETTABLE_USER_FLAGS                     0x00000E00
 
-#define HEAP_CLASS_0                    0x00000000
-#define HEAP_CLASS_1                    0x00001000
-#define HEAP_CLASS_2                    0x00002000
-#define HEAP_CLASS_3                    0x00003000
-#define HEAP_CLASS_4                    0x00004000
-#define HEAP_CLASS_5                    0x00005000
-#define HEAP_CLASS_6                    0x00006000
-#define HEAP_CLASS_7                    0x00007000
-#define HEAP_CLASS_8                    0x00008000
-#define HEAP_CLASS_MASK                 0x0000F000
+#define HEAP_CLASS_0                                                           0x00000000
+#define HEAP_CLASS_1                                                           0x00001000
+#define HEAP_CLASS_2                                                           0x00002000
+#define HEAP_CLASS_3                                                           0x00003000
+#define HEAP_CLASS_4                                                           0x00004000
+#define HEAP_CLASS_5                                                           0x00005000
+#define HEAP_CLASS_6                                                           0x00006000
+#define HEAP_CLASS_7                                                           0x00007000
+#define HEAP_CLASS_8                                                           0x00008000
+#define HEAP_CLASS_MASK                                           0x0000F000
 
-#define HEAP_MAXIMUM_TAG                0x0FFF
-#define HEAP_GLOBAL_TAG                 0x0800
-#define HEAP_PSEUDO_TAG_FLAG            0x8000
-#define HEAP_TAG_SHIFT                  18
-#define HEAP_TAG_MASK                  (HEAP_MAXIMUM_TAG << HEAP_TAG_SHIFT)
+#define HEAP_MAXIMUM_TAG                                          0x0FFF
+#define HEAP_GLOBAL_TAG                                           0x0800
+#define HEAP_PSEUDO_TAG_FLAG                                      0x8000
+#define HEAP_TAG_SHIFT                                                         18
+#define HEAP_TAG_MASK                                                         (HEAP_MAXIMUM_TAG << HEAP_TAG_SHIFT)
 
-#define HEAP_CREATE_VALID_MASK         (HEAP_NO_SERIALIZE             |   \
-                                        HEAP_GROWABLE                 |   \
-                                        HEAP_GENERATE_EXCEPTIONS      |   \
-                                        HEAP_ZERO_MEMORY              |   \
-                                        HEAP_REALLOC_IN_PLACE_ONLY    |   \
-                                        HEAP_TAIL_CHECKING_ENABLED    |   \
-                                        HEAP_FREE_CHECKING_ENABLED    |   \
-                                        HEAP_DISABLE_COALESCE_ON_FREE |   \
-                                        HEAP_CLASS_MASK               |   \
-                                        HEAP_CREATE_ALIGN_16          |   \
-                                        HEAP_CREATE_ENABLE_TRACING    |   \
-                                        HEAP_CREATE_ENABLE_EXECUTE)
+#define HEAP_CREATE_VALID_MASK                      (HEAP_NO_SERIALIZE                                       |   \
+                                                                                                                      HEAP_GROWABLE                                           |   \
+                                                                                                                      HEAP_GENERATE_EXCEPTIONS                   |   \
+                                                                                                                      HEAP_ZERO_MEMORY                                        |   \
+                                                                                                                      HEAP_REALLOC_IN_PLACE_ONLY    |   \
+                                                                                                                      HEAP_TAIL_CHECKING_ENABLED    |   \
+                                                                                                                      HEAP_FREE_CHECKING_ENABLED    |   \
+                                                                                                                      HEAP_DISABLE_COALESCE_ON_FREE |   \
+                                                                                                                      HEAP_CLASS_MASK                                         |   \
+                                                                                                                      HEAP_CREATE_ALIGN_16                       |   \
+                                                                                                                      HEAP_CREATE_ENABLE_TRACING    |   \
+                                                                                                                      HEAP_CREATE_ENABLE_EXECUTE)
 
 /******************************************************************************
- *                       Memory manager Functions                             *
+ *                                                              Memory manager Functions                                                                                 *
  ******************************************************************************/
 
 FORCEINLINE
@@ -6208,25 +6208,25 @@ typedef struct _FSRTL_ADVANCED_FCB_HEADER {
 #endif
 } FSRTL_ADVANCED_FCB_HEADER, *PFSRTL_ADVANCED_FCB_HEADER;
 
-#define FSRTL_FCB_HEADER_V0             (0x00)
-#define FSRTL_FCB_HEADER_V1             (0x01)
+#define FSRTL_FCB_HEADER_V0                                       (0x00)
+#define FSRTL_FCB_HEADER_V1                                       (0x01)
 
-#define FSRTL_FLAG_FILE_MODIFIED        (0x01)
+#define FSRTL_FLAG_FILE_MODIFIED                     (0x01)
 #define FSRTL_FLAG_FILE_LENGTH_CHANGED  (0x02)
 #define FSRTL_FLAG_LIMIT_MODIFIED_PAGES (0x04)
 #define FSRTL_FLAG_ACQUIRE_MAIN_RSRC_EX (0x08)
 #define FSRTL_FLAG_ACQUIRE_MAIN_RSRC_SH (0x10)
 #define FSRTL_FLAG_USER_MAPPED_FILE     (0x20)
-#define FSRTL_FLAG_ADVANCED_HEADER      (0x40)
+#define FSRTL_FLAG_ADVANCED_HEADER                   (0x40)
 #define FSRTL_FLAG_EOF_ADVANCE_ACTIVE   (0x80)
 
-#define FSRTL_FLAG2_DO_MODIFIED_WRITE        (0x01)
+#define FSRTL_FLAG2_DO_MODIFIED_WRITE                     (0x01)
 #define FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS (0x02)
-#define FSRTL_FLAG2_PURGE_WHEN_MAPPED        (0x04)
-#define FSRTL_FLAG2_IS_PAGING_FILE           (0x08)
+#define FSRTL_FLAG2_PURGE_WHEN_MAPPED                     (0x04)
+#define FSRTL_FLAG2_IS_PAGING_FILE                        (0x08)
 
-#define FSRTL_FSP_TOP_LEVEL_IRP         (0x01)
-#define FSRTL_CACHE_TOP_LEVEL_IRP       (0x02)
+#define FSRTL_FSP_TOP_LEVEL_IRP                      (0x01)
+#define FSRTL_CACHE_TOP_LEVEL_IRP                    (0x02)
 #define FSRTL_MOD_WRITE_TOP_LEVEL_IRP   (0x03)
 #define FSRTL_FAST_IO_TOP_LEVEL_IRP     (0x04)
 #define FSRTL_NETWORK1_TOP_LEVEL_IRP    ((LONG_PTR)0x05)
@@ -6248,26 +6248,26 @@ typedef enum _FSRTL_COMPARISON_RESULT {
   GreaterThan = 1
 } FSRTL_COMPARISON_RESULT;
 
-#define FSRTL_FAT_LEGAL                 0x01
-#define FSRTL_HPFS_LEGAL                0x02
-#define FSRTL_NTFS_LEGAL                0x04
-#define FSRTL_WILD_CHARACTER            0x08
-#define FSRTL_OLE_LEGAL                 0x10
-#define FSRTL_NTFS_STREAM_LEGAL         (FSRTL_NTFS_LEGAL | FSRTL_OLE_LEGAL)
+#define FSRTL_FAT_LEGAL                                           0x01
+#define FSRTL_HPFS_LEGAL                                          0x02
+#define FSRTL_NTFS_LEGAL                                          0x04
+#define FSRTL_WILD_CHARACTER                                      0x08
+#define FSRTL_OLE_LEGAL                                           0x10
+#define FSRTL_NTFS_STREAM_LEGAL                      (FSRTL_NTFS_LEGAL | FSRTL_OLE_LEGAL)
 
-#define FSRTL_VOLUME_DISMOUNT           1
+#define FSRTL_VOLUME_DISMOUNT                        1
 #define FSRTL_VOLUME_DISMOUNT_FAILED    2
-#define FSRTL_VOLUME_LOCK               3
-#define FSRTL_VOLUME_LOCK_FAILED        4
-#define FSRTL_VOLUME_UNLOCK             5
-#define FSRTL_VOLUME_MOUNT              6
-#define FSRTL_VOLUME_NEEDS_CHKDSK       7
+#define FSRTL_VOLUME_LOCK                                         3
+#define FSRTL_VOLUME_LOCK_FAILED                     4
+#define FSRTL_VOLUME_UNLOCK                                       5
+#define FSRTL_VOLUME_MOUNT                                        6
+#define FSRTL_VOLUME_NEEDS_CHKDSK                    7
 #define FSRTL_VOLUME_WORM_NEAR_FULL     8
-#define FSRTL_VOLUME_WEARING_OUT        9
-#define FSRTL_VOLUME_FORCED_CLOSED      10
+#define FSRTL_VOLUME_WEARING_OUT                     9
+#define FSRTL_VOLUME_FORCED_CLOSED                   10
 #define FSRTL_VOLUME_INFO_MAKE_COMPAT   11
 #define FSRTL_VOLUME_PREPARING_EJECT    12
-#define FSRTL_VOLUME_CHANGE_SIZE        13
+#define FSRTL_VOLUME_CHANGE_SIZE                     13
 #define FSRTL_VOLUME_BACKGROUND_FORMAT  14
 
 typedef VOID
@@ -6278,15 +6278,15 @@ typedef VOID
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 
 #define FSRTL_UNC_PROVIDER_FLAGS_MAILSLOTS_SUPPORTED    0x00000001
-#define FSRTL_UNC_PROVIDER_FLAGS_CSC_ENABLED            0x00000002
-#define FSRTL_UNC_PROVIDER_FLAGS_DOMAIN_SVC_AWARE       0x00000004
+#define FSRTL_UNC_PROVIDER_FLAGS_CSC_ENABLED                                      0x00000002
+#define FSRTL_UNC_PROVIDER_FLAGS_DOMAIN_SVC_AWARE                    0x00000004
 
-#define FSRTL_ALLOCATE_ECPLIST_FLAG_CHARGE_QUOTA           0x00000001
+#define FSRTL_ALLOCATE_ECPLIST_FLAG_CHARGE_QUOTA                        0x00000001
 
-#define FSRTL_ALLOCATE_ECP_FLAG_CHARGE_QUOTA               0x00000001
-#define FSRTL_ALLOCATE_ECP_FLAG_NONPAGED_POOL              0x00000002
+#define FSRTL_ALLOCATE_ECP_FLAG_CHARGE_QUOTA                                         0x00000001
+#define FSRTL_ALLOCATE_ECP_FLAG_NONPAGED_POOL                                        0x00000002
 
-#define FSRTL_ECP_LOOKASIDE_FLAG_NONPAGED_POOL             0x00000002
+#define FSRTL_ECP_LOOKASIDE_FLAG_NONPAGED_POOL                                       0x00000002
 
 #define FSRTL_VIRTDISK_FULLY_ALLOCATED  0x00000001
 #define FSRTL_VIRTDISK_NO_DRIVE_LETTER  0x00000002
@@ -6435,7 +6435,7 @@ typedef VOID
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 #define OPLOCK_FLAG_OPLOCK_KEY_CHECK_ONLY   0x00000002
 #define OPLOCK_FLAG_BACK_OUT_ATOMIC_OPLOCK  0x00000004
-#define OPLOCK_FLAG_IGNORE_OPLOCK_KEYS      0x00000008
+#define OPLOCK_FLAG_IGNORE_OPLOCK_KEYS                   0x00000008
 #define OPLOCK_FSCTRL_FLAG_ALL_KEYS_MATCH   0x00000001
 #endif
 
@@ -6603,12 +6603,12 @@ FsRtlUninitializeFileLock(
 
   Internals:
     -switch ( Irp->CurrentStackLocation->MinorFunction )
-        lock: return FsRtlPrivateLock;
-        unlocksingle: return FsRtlFastUnlockSingle;
-        unlockall: return FsRtlFastUnlockAll;
-        unlockallbykey: return FsRtlFastUnlockAllByKey;
-        default: IofCompleteRequest with STATUS_INVALID_DEVICE_REQUEST;
-                 return STATUS_INVALID_DEVICE_REQUEST;
+                     lock: return FsRtlPrivateLock;
+                     unlocksingle: return FsRtlFastUnlockSingle;
+                     unlockall: return FsRtlFastUnlockAll;
+                     unlockallbykey: return FsRtlFastUnlockAllByKey;
+                     default: IofCompleteRequest with STATUS_INVALID_DEVICE_REQUEST;
+                                           return STATUS_INVALID_DEVICE_REQUEST;
 
     -'AllwaysZero' is passed thru as 'AllwaysZero' to lock / unlock routines.
     -'Irp' is passet thru as 'Irp' to FsRtlPrivateLock.
@@ -7814,97 +7814,97 @@ FsRtlRemovePerFileObjectContext(
   IN PVOID OwnerId OPTIONAL,
   IN PVOID InstanceId OPTIONAL);
 
-#define FsRtlFastLock(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11) (       \
+#define FsRtlFastLock(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11) (                    \
      FsRtlPrivateLock(A1, A2, A3, A4, A5, A6, A7, A8, A9, NULL, A10, A11)   \
 )
 
 #define FsRtlAreThereCurrentFileLocks(FL) ( \
-    ((FL)->FastIoIsQuestionable)            \
+    ((FL)->FastIoIsQuestionable)                                      \
 )
 
-#define FsRtlIncrementLockRequestsInProgress(FL) {                           \
-    ASSERT( (FL)->LockRequestsInProgress >= 0 );                             \
-    (void)                                                                   \
+#define FsRtlIncrementLockRequestsInProgress(FL) {                                                                               \
+    ASSERT( (FL)->LockRequestsInProgress >= 0 );                                                                                 \
+    (void)                                                                                                                                                                                                                  \
     (InterlockedIncrement((LONG volatile *)&((FL)->LockRequestsInProgress)));\
 }
 
-#define FsRtlDecrementLockRequestsInProgress(FL) {                           \
-    ASSERT( (FL)->LockRequestsInProgress > 0 );                              \
-    (void)                                                                   \
+#define FsRtlDecrementLockRequestsInProgress(FL) {                                                                               \
+    ASSERT( (FL)->LockRequestsInProgress > 0 );                                                                                               \
+    (void)                                                                                                                                                                                                                  \
     (InterlockedDecrement((LONG volatile *)&((FL)->LockRequestsInProgress)));\
 }
 
 /* GCC compatible definition, MS one is retarded */
 extern NTKERNELAPI const UCHAR * const FsRtlLegalAnsiCharacterArray;
-#define LEGAL_ANSI_CHARACTER_ARRAY        FsRtlLegalAnsiCharacterArray
+#define LEGAL_ANSI_CHARACTER_ARRAY                     FsRtlLegalAnsiCharacterArray
 
-#define FsRtlIsAnsiCharacterWild(C) (                                       \
+#define FsRtlIsAnsiCharacterWild(C) (                                                                                                                     \
     FlagOn(FsRtlLegalAnsiCharacterArray[(UCHAR)(C)], FSRTL_WILD_CHARACTER ) \
 )
 
-#define FsRtlIsAnsiCharacterLegalFat(C, WILD) (                                \
-    FlagOn(FsRtlLegalAnsiCharacterArray[(UCHAR)(C)], (FSRTL_FAT_LEGAL) |       \
-                                        ((WILD) ? FSRTL_WILD_CHARACTER : 0 ))  \
+#define FsRtlIsAnsiCharacterLegalFat(C, WILD) (                                                                                                 \
+    FlagOn(FsRtlLegalAnsiCharacterArray[(UCHAR)(C)], (FSRTL_FAT_LEGAL) |                    \
+                                                                                                                      ((WILD) ? FSRTL_WILD_CHARACTER : 0 ))  \
 )
 
-#define FsRtlIsAnsiCharacterLegalHpfs(C, WILD) (                               \
-    FlagOn(FsRtlLegalAnsiCharacterArray[(UCHAR)(C)], (FSRTL_HPFS_LEGAL) |      \
-                                        ((WILD) ? FSRTL_WILD_CHARACTER : 0 ))  \
+#define FsRtlIsAnsiCharacterLegalHpfs(C, WILD) (                                                                                                \
+    FlagOn(FsRtlLegalAnsiCharacterArray[(UCHAR)(C)], (FSRTL_HPFS_LEGAL) |                   \
+                                                                                                                      ((WILD) ? FSRTL_WILD_CHARACTER : 0 ))  \
 )
 
-#define FsRtlIsAnsiCharacterLegalNtfs(C, WILD) (                               \
-    FlagOn(FsRtlLegalAnsiCharacterArray[(UCHAR)(C)], (FSRTL_NTFS_LEGAL) |      \
-                                        ((WILD) ? FSRTL_WILD_CHARACTER : 0 ))  \
+#define FsRtlIsAnsiCharacterLegalNtfs(C, WILD) (                                                                                                \
+    FlagOn(FsRtlLegalAnsiCharacterArray[(UCHAR)(C)], (FSRTL_NTFS_LEGAL) |                   \
+                                                                                                                      ((WILD) ? FSRTL_WILD_CHARACTER : 0 ))  \
 )
 
-#define FsRtlIsAnsiCharacterLegalNtfsStream(C,WILD_OK) (                    \
+#define FsRtlIsAnsiCharacterLegalNtfsStream(C,WILD_OK) (                                                           \
     FsRtlTestAnsiCharacter((C), TRUE, (WILD_OK), FSRTL_NTFS_STREAM_LEGAL)   \
 )
 
-#define FsRtlIsAnsiCharacterLegal(C,FLAGS) (          \
+#define FsRtlIsAnsiCharacterLegal(C,FLAGS) (                       \
     FsRtlTestAnsiCharacter((C), TRUE, FALSE, (FLAGS)) \
 )
 
-#define FsRtlTestAnsiCharacter(C, DEFAULT_RET, WILD_OK, FLAGS) (            \
-        ((SCHAR)(C) < 0) ? DEFAULT_RET :                                    \
-                           FlagOn( LEGAL_ANSI_CHARACTER_ARRAY[(C)],         \
-                                   (FLAGS) |                                \
-                                   ((WILD_OK) ? FSRTL_WILD_CHARACTER : 0) ) \
+#define FsRtlTestAnsiCharacter(C, DEFAULT_RET, WILD_OK, FLAGS) (                                      \
+                     ((SCHAR)(C) < 0) ? DEFAULT_RET :                                                                                                                  \
+                                                                               FlagOn( LEGAL_ANSI_CHARACTER_ARRAY[(C)],                      \
+                                                                                                    (FLAGS) |                                                                                                 \
+                                                                                                    ((WILD_OK) ? FSRTL_WILD_CHARACTER : 0) ) \
 )
 
-#define FsRtlIsLeadDbcsCharacter(DBCS_CHAR) (                               \
-    (BOOLEAN)((UCHAR)(DBCS_CHAR) < 0x80 ? FALSE :                           \
-              (NLS_MB_CODE_PAGE_TAG &&                                      \
-               (NLS_OEM_LEAD_BYTE_INFO[(UCHAR)(DBCS_CHAR)] != 0)))          \
+#define FsRtlIsLeadDbcsCharacter(DBCS_CHAR) (                                                                                                \
+    (BOOLEAN)((UCHAR)(DBCS_CHAR) < 0x80 ? FALSE :                                                                               \
+                                        (NLS_MB_CODE_PAGE_TAG &&                                                                                                                    \
+                                         (NLS_OEM_LEAD_BYTE_INFO[(UCHAR)(DBCS_CHAR)] != 0)))                       \
 )
 
-#define FsRtlIsUnicodeCharacterWild(C) (                                    \
-    (((C) >= 0x40) ?                                                        \
-    FALSE :                                                                 \
-    FlagOn(FsRtlLegalAnsiCharacterArray[(C)], FSRTL_WILD_CHARACTER ))       \
+#define FsRtlIsUnicodeCharacterWild(C) (                                                                                                                  \
+    (((C) >= 0x40) ?                                                                                                                                                                             \
+    FALSE :                                                                                                                                                                                                   \
+    FlagOn(FsRtlLegalAnsiCharacterArray[(C)], FSRTL_WILD_CHARACTER ))                    \
 )
 
 #define FsRtlInitPerFileContext( _fc, _owner, _inst, _cb)   \
-    ((_fc)->OwnerId = (_owner),                               \
-     (_fc)->InstanceId = (_inst),                             \
+    ((_fc)->OwnerId = (_owner),                                                                                                \
+     (_fc)->InstanceId = (_inst),                                                                                 \
      (_fc)->FreeCallback = (_cb))
 
 #define FsRtlGetPerFileContextPointer(_fo) \
     (FsRtlSupportsPerFileContexts(_fo) ? \
-        FsRtlGetPerStreamContextPointer(_fo)->FileContextSupportPointer : \
-        NULL)
+                     FsRtlGetPerStreamContextPointer(_fo)->FileContextSupportPointer : \
+                     NULL)
 
-#define FsRtlSupportsPerFileContexts(_fo)                     \
-    ((FsRtlGetPerStreamContextPointer(_fo) != NULL) &&        \
+#define FsRtlSupportsPerFileContexts(_fo)                                                            \
+    ((FsRtlGetPerStreamContextPointer(_fo) != NULL) &&                     \
      (FsRtlGetPerStreamContextPointer(_fo)->Version >= FSRTL_FCB_HEADER_V1) &&  \
      (FsRtlGetPerStreamContextPointer(_fo)->FileContextSupportPointer != NULL))
 
-#define FsRtlSetupAdvancedHeaderEx( _advhdr, _fmutx, _fctxptr )                     \
-{                                                                                   \
-    FsRtlSetupAdvancedHeader( _advhdr, _fmutx );                                    \
-    if ((_fctxptr) != NULL) {                                                       \
-        (_advhdr)->FileContextSupportPointer = (_fctxptr);                          \
-    }                                                                               \
+#define FsRtlSetupAdvancedHeaderEx( _advhdr, _fmutx, _fctxptr )                                                            \
+{                                                                                                                                                                                                                                                            \
+    FsRtlSetupAdvancedHeader( _advhdr, _fmutx );                                                                                                                  \
+    if ((_fctxptr) != NULL) {                                                                                                                                                                            \
+                     (_advhdr)->FileContextSupportPointer = (_fctxptr);                                                                              \
+    }                                                                                                                                                                                                                                                        \
 }
 
 #define FsRtlGetPerStreamContextPointer(FO) (   \
@@ -7912,23 +7912,23 @@ extern NTKERNELAPI const UCHAR * const FsRtlLegalAnsiCharacterArray;
 )
 
 #define FsRtlInitPerStreamContext(PSC, O, I, FC) ( \
-    (PSC)->OwnerId = (O),                          \
-    (PSC)->InstanceId = (I),                       \
-    (PSC)->FreeCallback = (FC)                     \
+    (PSC)->OwnerId = (O),                                                                              \
+    (PSC)->InstanceId = (I),                                                              \
+    (PSC)->FreeCallback = (FC)                                                            \
 )
 
-#define FsRtlSupportsPerStreamContexts(FO) (                       \
+#define FsRtlSupportsPerStreamContexts(FO) (                                                              \
     (BOOLEAN)((NULL != FsRtlGetPerStreamContextPointer(FO) &&     \
-              FlagOn(FsRtlGetPerStreamContextPointer(FO)->Flags2, \
-              FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS))               \
+                                        FlagOn(FsRtlGetPerStreamContextPointer(FO)->Flags2, \
+                                        FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS))                                         \
 )
 
-#define FsRtlLookupPerStreamContext(_sc, _oid, _iid)                          \
- (((NULL != (_sc)) &&                                                         \
-   FlagOn((_sc)->Flags2,FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS) &&              \
-   !IsListEmpty(&(_sc)->FilterContexts)) ?                                    \
-        FsRtlLookupPerStreamContextInternal((_sc), (_oid), (_iid)) :          \
-        NULL)
+#define FsRtlLookupPerStreamContext(_sc, _oid, _iid)                                                                              \
+ (((NULL != (_sc)) &&                                                                                                                                                                              \
+   FlagOn((_sc)->Flags2,FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS) &&                                        \
+   !IsListEmpty(&(_sc)->FilterContexts)) ?                                                                                                                  \
+                     FsRtlLookupPerStreamContextInternal((_sc), (_oid), (_iid)) :                       \
+                     NULL)
 
 FORCEINLINE
 VOID
@@ -7956,17 +7956,17 @@ FsRtlSetupAdvancedHeader(
 #endif
 }
 
-#define FsRtlInitPerFileObjectContext(_fc, _owner, _inst)         \
-           ((_fc)->OwnerId = (_owner), (_fc)->InstanceId = (_inst))
+#define FsRtlInitPerFileObjectContext(_fc, _owner, _inst)                      \
+                        ((_fc)->OwnerId = (_owner), (_fc)->InstanceId = (_inst))
 
-#define FsRtlCompleteRequest(IRP,STATUS) {         \
-    (IRP)->IoStatus.Status = (STATUS);             \
+#define FsRtlCompleteRequest(IRP,STATUS) {                      \
+    (IRP)->IoStatus.Status = (STATUS);                                       \
     IoCompleteRequest( (IRP), IO_DISK_INCREMENT ); \
 }
 /* Common Cache Types */
 
-#define VACB_MAPPING_GRANULARITY        (0x40000)
-#define VACB_OFFSET_SHIFT               (18)
+#define VACB_MAPPING_GRANULARITY                     (0x40000)
+#define VACB_OFFSET_SHIFT                                         (18)
 
 typedef struct _PUBLIC_BCB {
   CSHORT NodeTypeCode;
@@ -8031,15 +8031,15 @@ typedef VOID
   IN PVOID Context1,
   IN PVOID Context2);
 
-#define UNINITIALIZE_CACHE_MAPS          (1)
-#define DO_NOT_RETRY_PURGE               (2)
-#define DO_NOT_PURGE_DIRTY_PAGES         (0x4)
+#define UNINITIALIZE_CACHE_MAPS                       (1)
+#define DO_NOT_RETRY_PURGE                                         (2)
+#define DO_NOT_PURGE_DIRTY_PAGES                      (0x4)
 
 #define CC_FLUSH_AND_PURGE_NO_PURGE     (0x1)
 /* Common Cache Functions */
 
-#define CcIsFileCached(FO) (                                                         \
-    ((FO)->SectionObjectPointer != NULL) &&                                          \
+#define CcIsFileCached(FO) (                                                                                                                                                                              \
+    ((FO)->SectionObjectPointer != NULL) &&                                                                                                                                     \
     (((PSECTION_OBJECT_POINTERS)(FO)->SectionObjectPointer)->SharedCacheMap != NULL) \
 )
 
@@ -8423,7 +8423,7 @@ CcCoherencyFlushAndPurgeCache(
   IN ULONG Flags OPTIONAL);
 #endif
 
-#define CcGetFileSizePointer(FO) (                                     \
+#define CcGetFileSizePointer(FO) (                                                                                                                   \
     ((PLARGE_INTEGER)((FO)->SectionObjectPointer->SharedCacheMap) + 1) \
 )
 
@@ -8459,15 +8459,15 @@ CcCopyWriteWontFlush(
 #define CcCopyWriteWontFlush(FO, FOFF, LEN) ((LEN) <= 0x10000)
 #endif
 
-#define CcReadAhead(FO, FOFF, LEN) (                \
-    if ((LEN) >= 256) {                             \
-        CcScheduleReadAhead((FO), (FOFF), (LEN));   \
-    }                                               \
+#define CcReadAhead(FO, FOFF, LEN) (                                          \
+    if ((LEN) >= 256) {                                                                                 \
+                     CcScheduleReadAhead((FO), (FOFF), (LEN));   \
+    }                                                                                                                                          \
 )
 
 
 /******************************************************************************
- *                            ZwXxx Functions                                 *
+ *                                                                                ZwXxx Functions                                                                                                  *
  ******************************************************************************/
 
 NTSYSAPI
@@ -8807,12 +8807,12 @@ HalGetDmaAlignmentRequirement(
 #endif
 
 extern NTKERNELAPI PUSHORT NlsOemLeadByteInfo;
-#define NLS_OEM_LEAD_BYTE_INFO            NlsOemLeadByteInfo
+#define NLS_OEM_LEAD_BYTE_INFO                                      NlsOemLeadByteInfo
 
 #ifdef NLS_MB_CODE_PAGE_TAG
 #undef NLS_MB_CODE_PAGE_TAG
 #endif
-#define NLS_MB_CODE_PAGE_TAG              NlsMbOemCodePageTag
+#define NLS_MB_CODE_PAGE_TAG                                        NlsMbOemCodePageTag
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 
@@ -8841,14 +8841,14 @@ typedef struct _NETWORK_OPEN_ECP_CONTEXT {
   USHORT Reserved;
   _ANONYMOUS_STRUCT struct {
     struct {
-      NETWORK_OPEN_LOCATION_QUALIFIER Location;
-      NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
-      ULONG Flags;
+                   NETWORK_OPEN_LOCATION_QUALIFIER Location;
+                   NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
+                   ULONG Flags;
     } in;
     struct {
-      NETWORK_OPEN_LOCATION_QUALIFIER Location;
-      NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
-      ULONG Flags;
+                   NETWORK_OPEN_LOCATION_QUALIFIER Location;
+                   NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
+                   ULONG Flags;
     } out;
   } DUMMYSTRUCTNAME;
 } NETWORK_OPEN_ECP_CONTEXT, *PNETWORK_OPEN_ECP_CONTEXT;
@@ -8862,8 +8862,8 @@ typedef struct _NETWORK_OPEN_ECP_CONTEXT_V0 {
     NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
     } in;
     struct {
-      NETWORK_OPEN_LOCATION_QUALIFIER Location;
-      NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
+                   NETWORK_OPEN_LOCATION_QUALIFIER Location;
+                   NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
     } out;
   } DUMMYSTRUCTNAME;
 } NETWORK_OPEN_ECP_CONTEXT_V0, *PNETWORK_OPEN_ECP_CONTEXT_V0;
@@ -8874,12 +8874,12 @@ typedef struct _NETWORK_OPEN_ECP_CONTEXT {
   USHORT Reserved;
   _ANONYMOUS_STRUCT struct {
     struct {
-      NETWORK_OPEN_LOCATION_QUALIFIER Location;
-      NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
+                   NETWORK_OPEN_LOCATION_QUALIFIER Location;
+                   NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
     } in;
     struct {
-      NETWORK_OPEN_LOCATION_QUALIFIER Location;
-      NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
+                   NETWORK_OPEN_LOCATION_QUALIFIER Location;
+                   NETWORK_OPEN_INTEGRITY_QUALIFIER Integrity;
     } out;
   } DUMMYSTRUCTNAME;
 } NETWORK_OPEN_ECP_CONTEXT, *PNETWORK_OPEN_ECP_CONTEXT;
@@ -8922,19 +8922,19 @@ typedef struct _SRV_OPEN_ECP_CONTEXT {
 
 #endif /* (NTDDI_VERSION >= NTDDI_WIN7) */
 
-#define PIN_WAIT                        (1)
-#define PIN_EXCLUSIVE                   (2)
-#define PIN_NO_READ                     (4)
-#define PIN_IF_BCB                      (8)
+#define PIN_WAIT                                                                            (1)
+#define PIN_EXCLUSIVE                                                          (2)
+#define PIN_NO_READ                                                            (4)
+#define PIN_IF_BCB                                                             (8)
 #define PIN_CALLER_TRACKS_DIRTY_DATA    (32)
-#define PIN_HIGH_PRIORITY               (64)
+#define PIN_HIGH_PRIORITY                                         (64)
 
-#define MAP_WAIT                        1
-#define MAP_NO_READ                     (16)
-#define MAP_HIGH_PRIORITY               (64)
+#define MAP_WAIT                                                                            1
+#define MAP_NO_READ                                                            (16)
+#define MAP_HIGH_PRIORITY                                         (64)
 
-#define IOCTL_REDIR_QUERY_PATH          CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 99, METHOD_NEITHER, FILE_ANY_ACCESS)
-#define IOCTL_REDIR_QUERY_PATH_EX       CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 100, METHOD_NEITHER, FILE_ANY_ACCESS)
+#define IOCTL_REDIR_QUERY_PATH                       CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 99, METHOD_NEITHER, FILE_ANY_ACCESS)
+#define IOCTL_REDIR_QUERY_PATH_EX                    CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 100, METHOD_NEITHER, FILE_ANY_ACCESS)
 
 typedef struct _QUERY_PATH_REQUEST {
   ULONG PathNameLength;
@@ -8955,8 +8955,8 @@ typedef struct _QUERY_PATH_RESPONSE {
   ULONG LengthAccepted;
 } QUERY_PATH_RESPONSE, *PQUERY_PATH_RESPONSE;
 
-#define VOLSNAPCONTROLTYPE                              0x00000053
-#define IOCTL_VOLSNAP_FLUSH_AND_HOLD_WRITES             CTL_CODE(VOLSNAPCONTROLTYPE, 0, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define VOLSNAPCONTROLTYPE                                                                                               0x00000053
+#define IOCTL_VOLSNAP_FLUSH_AND_HOLD_WRITES                                       CTL_CODE(VOLSNAPCONTROLTYPE, 0, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
 /* FIXME : These definitions below don't belong here (or anywhere in ddk really) */
 #pragma pack(push,4)
@@ -8967,105 +8967,105 @@ typedef struct _QUERY_PATH_RESPONSE {
 
 #include "csq.h"
 
-extern PACL                         SePublicDefaultDacl;
-extern PACL                         SeSystemDefaultDacl;
+extern PACL                                                                             SePublicDefaultDacl;
+extern PACL                                                                             SeSystemDefaultDacl;
 
-#define FS_LFN_APIS                             0x00004000
+#define FS_LFN_APIS                                                                                 0x00004000
 
-#define FILE_STORAGE_TYPE_SPECIFIED             0x00000041  /* FILE_DIRECTORY_FILE | FILE_NON_DIRECTORY_FILE */
-#define FILE_STORAGE_TYPE_DEFAULT               (StorageTypeDefault << FILE_STORAGE_TYPE_SHIFT)
-#define FILE_STORAGE_TYPE_DIRECTORY             (StorageTypeDirectory << FILE_STORAGE_TYPE_SHIFT)
-#define FILE_STORAGE_TYPE_FILE                  (StorageTypeFile << FILE_STORAGE_TYPE_SHIFT)
-#define FILE_STORAGE_TYPE_DOCFILE               (StorageTypeDocfile << FILE_STORAGE_TYPE_SHIFT)
-#define FILE_STORAGE_TYPE_JUNCTION_POINT        (StorageTypeJunctionPoint << FILE_STORAGE_TYPE_SHIFT)
-#define FILE_STORAGE_TYPE_CATALOG               (StorageTypeCatalog << FILE_STORAGE_TYPE_SHIFT)
+#define FILE_STORAGE_TYPE_SPECIFIED                                       0x00000041  /* FILE_DIRECTORY_FILE | FILE_NON_DIRECTORY_FILE */
+#define FILE_STORAGE_TYPE_DEFAULT                                         (StorageTypeDefault << FILE_STORAGE_TYPE_SHIFT)
+#define FILE_STORAGE_TYPE_DIRECTORY                                       (StorageTypeDirectory << FILE_STORAGE_TYPE_SHIFT)
+#define FILE_STORAGE_TYPE_FILE                                                         (StorageTypeFile << FILE_STORAGE_TYPE_SHIFT)
+#define FILE_STORAGE_TYPE_DOCFILE                                         (StorageTypeDocfile << FILE_STORAGE_TYPE_SHIFT)
+#define FILE_STORAGE_TYPE_JUNCTION_POINT                     (StorageTypeJunctionPoint << FILE_STORAGE_TYPE_SHIFT)
+#define FILE_STORAGE_TYPE_CATALOG                                         (StorageTypeCatalog << FILE_STORAGE_TYPE_SHIFT)
 #define FILE_STORAGE_TYPE_STRUCTURED_STORAGE    (StorageTypeStructuredStorage << FILE_STORAGE_TYPE_SHIFT)
-#define FILE_STORAGE_TYPE_EMBEDDING             (StorageTypeEmbedding << FILE_STORAGE_TYPE_SHIFT)
-#define FILE_STORAGE_TYPE_STREAM                (StorageTypeStream << FILE_STORAGE_TYPE_SHIFT)
-#define FILE_MINIMUM_STORAGE_TYPE               FILE_STORAGE_TYPE_DEFAULT
-#define FILE_MAXIMUM_STORAGE_TYPE               FILE_STORAGE_TYPE_STREAM
-#define FILE_STORAGE_TYPE_MASK                  0x000f0000
-#define FILE_STORAGE_TYPE_SHIFT                 16
+#define FILE_STORAGE_TYPE_EMBEDDING                                       (StorageTypeEmbedding << FILE_STORAGE_TYPE_SHIFT)
+#define FILE_STORAGE_TYPE_STREAM                                          (StorageTypeStream << FILE_STORAGE_TYPE_SHIFT)
+#define FILE_MINIMUM_STORAGE_TYPE                                         FILE_STORAGE_TYPE_DEFAULT
+#define FILE_MAXIMUM_STORAGE_TYPE                                         FILE_STORAGE_TYPE_STREAM
+#define FILE_STORAGE_TYPE_MASK                                                         0x000f0000
+#define FILE_STORAGE_TYPE_SHIFT                                           16
 
-#define FILE_VC_QUOTAS_LOG_VIOLATIONS           0x00000004
+#define FILE_VC_QUOTAS_LOG_VIOLATIONS                        0x00000004
 
 #ifdef _X86_
 #define HARDWARE_PTE    HARDWARE_PTE_X86
 #define PHARDWARE_PTE   PHARDWARE_PTE_X86
 #endif
 
-#define IO_ATTACH_DEVICE_API            0x80000000
+#define IO_ATTACH_DEVICE_API                                      0x80000000
 
-#define IO_TYPE_APC                     18
-#define IO_TYPE_DPC                     19
-#define IO_TYPE_DEVICE_QUEUE            20
-#define IO_TYPE_EVENT_PAIR              21
-#define IO_TYPE_INTERRUPT               22
-#define IO_TYPE_PROFILE                 23
+#define IO_TYPE_APC                                                            18
+#define IO_TYPE_DPC                                                            19
+#define IO_TYPE_DEVICE_QUEUE                                      20
+#define IO_TYPE_EVENT_PAIR                                        21
+#define IO_TYPE_INTERRUPT                                         22
+#define IO_TYPE_PROFILE                                           23
 
-#define IRP_BEING_VERIFIED              0x10
+#define IRP_BEING_VERIFIED                                        0x10
 
-#define MAILSLOT_CLASS_FIRSTCLASS       1
-#define MAILSLOT_CLASS_SECONDCLASS      2
+#define MAILSLOT_CLASS_FIRSTCLASS                    1
+#define MAILSLOT_CLASS_SECONDCLASS                   2
 
-#define MAILSLOT_SIZE_AUTO              0
+#define MAILSLOT_SIZE_AUTO                                        0
 
-#define MEM_DOS_LIM                     0x40000000
+#define MEM_DOS_LIM                                                            0x40000000
 
-#define OB_TYPE_TYPE                    1
-#define OB_TYPE_DIRECTORY               2
-#define OB_TYPE_SYMBOLIC_LINK           3
-#define OB_TYPE_TOKEN                   4
-#define OB_TYPE_PROCESS                 5
-#define OB_TYPE_THREAD                  6
-#define OB_TYPE_EVENT                   7
-#define OB_TYPE_EVENT_PAIR              8
-#define OB_TYPE_MUTANT                  9
-#define OB_TYPE_SEMAPHORE               10
-#define OB_TYPE_TIMER                   11
-#define OB_TYPE_PROFILE                 12
-#define OB_TYPE_WINDOW_STATION          13
-#define OB_TYPE_DESKTOP                 14
-#define OB_TYPE_SECTION                 15
-#define OB_TYPE_KEY                     16
-#define OB_TYPE_PORT                    17
-#define OB_TYPE_ADAPTER                 18
-#define OB_TYPE_CONTROLLER              19
-#define OB_TYPE_DEVICE                  20
-#define OB_TYPE_DRIVER                  21
-#define OB_TYPE_IO_COMPLETION           22
-#define OB_TYPE_FILE                    23
+#define OB_TYPE_TYPE                                                           1
+#define OB_TYPE_DIRECTORY                                         2
+#define OB_TYPE_SYMBOLIC_LINK                        3
+#define OB_TYPE_TOKEN                                                          4
+#define OB_TYPE_PROCESS                                           5
+#define OB_TYPE_THREAD                                                         6
+#define OB_TYPE_EVENT                                                          7
+#define OB_TYPE_EVENT_PAIR                                        8
+#define OB_TYPE_MUTANT                                                         9
+#define OB_TYPE_SEMAPHORE                                         10
+#define OB_TYPE_TIMER                                                          11
+#define OB_TYPE_PROFILE                                           12
+#define OB_TYPE_WINDOW_STATION                       13
+#define OB_TYPE_DESKTOP                                           14
+#define OB_TYPE_SECTION                                           15
+#define OB_TYPE_KEY                                                            16
+#define OB_TYPE_PORT                                                           17
+#define OB_TYPE_ADAPTER                                           18
+#define OB_TYPE_CONTROLLER                                        19
+#define OB_TYPE_DEVICE                                                         20
+#define OB_TYPE_DRIVER                                                         21
+#define OB_TYPE_IO_COMPLETION                        22
+#define OB_TYPE_FILE                                                           23
 
 #define SEC_BASED 0x00200000
 
 /* end winnt.h */
 
-#define TOKEN_HAS_ADMIN_GROUP           0x08
+#define TOKEN_HAS_ADMIN_GROUP                        0x08
 
 #if (VER_PRODUCTBUILD >= 1381)
-#define FSCTL_GET_HFS_INFORMATION       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 31, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_GET_HFS_INFORMATION                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 31, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif /* (VER_PRODUCTBUILD >= 1381) */
 
 #if (VER_PRODUCTBUILD >= 2195)
 
-#define FSCTL_READ_PROPERTY_DATA        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 33, METHOD_NEITHER, FILE_ANY_ACCESS)
-#define FSCTL_WRITE_PROPERTY_DATA       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 34, METHOD_NEITHER, FILE_ANY_ACCESS)
+#define FSCTL_READ_PROPERTY_DATA                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 33, METHOD_NEITHER, FILE_ANY_ACCESS)
+#define FSCTL_WRITE_PROPERTY_DATA                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 34, METHOD_NEITHER, FILE_ANY_ACCESS)
 
-#define FSCTL_DUMP_PROPERTY_DATA        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 37,  METHOD_NEITHER, FILE_ANY_ACCESS)
+#define FSCTL_DUMP_PROPERTY_DATA                     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 37,  METHOD_NEITHER, FILE_ANY_ACCESS)
 
-#define FSCTL_HSM_MSG                   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 66, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
-#define FSCTL_NSS_CONTROL               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 67, METHOD_BUFFERED, FILE_WRITE_DATA)
-#define FSCTL_HSM_DATA                  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 68, METHOD_NEITHER, FILE_READ_DATA | FILE_WRITE_DATA)
-#define FSCTL_NSS_RCONTROL              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 70, METHOD_BUFFERED, FILE_READ_DATA)
+#define FSCTL_HSM_MSG                                                          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 66, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
+#define FSCTL_NSS_CONTROL                                         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 67, METHOD_BUFFERED, FILE_WRITE_DATA)
+#define FSCTL_HSM_DATA                                                         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 68, METHOD_NEITHER, FILE_READ_DATA | FILE_WRITE_DATA)
+#define FSCTL_NSS_RCONTROL                                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 70, METHOD_BUFFERED, FILE_READ_DATA)
 #endif /* (VER_PRODUCTBUILD >= 2195) */
 
 #define FSCTL_NETWORK_SET_CONFIGURATION_INFO    CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 102, METHOD_IN_DIRECT, FILE_ANY_ACCESS)
 #define FSCTL_NETWORK_GET_CONFIGURATION_INFO    CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 103, METHOD_OUT_DIRECT, FILE_ANY_ACCESS)
-#define FSCTL_NETWORK_GET_CONNECTION_INFO       CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 104, METHOD_NEITHER, FILE_ANY_ACCESS)
+#define FSCTL_NETWORK_GET_CONNECTION_INFO                    CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 104, METHOD_NEITHER, FILE_ANY_ACCESS)
 #define FSCTL_NETWORK_ENUMERATE_CONNECTIONS     CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 105, METHOD_NEITHER, FILE_ANY_ACCESS)
-#define FSCTL_NETWORK_DELETE_CONNECTION         CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 107, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_NETWORK_GET_STATISTICS            CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 116, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_NETWORK_SET_DOMAIN_NAME           CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 120, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_NETWORK_DELETE_CONNECTION                      CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 107, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_NETWORK_GET_STATISTICS                                      CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 116, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_NETWORK_SET_DOMAIN_NAME                        CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 120, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_NETWORK_REMOTE_BOOT_INIT_SCRT     CTL_CODE(FILE_DEVICE_NETWORK_FILE_SYSTEM, 250, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 typedef enum _FILE_STORAGE_TYPE {
@@ -9095,12 +9095,12 @@ typedef struct _OBJECT_BASIC_INFORMATION
 } OBJECT_BASIC_INFORMATION, *POBJECT_BASIC_INFORMATION;
 
 typedef struct _BITMAP_RANGE {
-    LIST_ENTRY      Links;
-    LONGLONG        BasePage;
-    ULONG           FirstDirtyPage;
-    ULONG           LastDirtyPage;
-    ULONG           DirtyPages;
-    PULONG          Bitmap;
+    LIST_ENTRY                   Links;
+    LONGLONG                     BasePage;
+    ULONG                        FirstDirtyPage;
+    ULONG                        LastDirtyPage;
+    ULONG                        DirtyPages;
+    PULONG                       Bitmap;
 } BITMAP_RANGE, *PBITMAP_RANGE;
 
 typedef struct _FILE_COPY_ON_WRITE_INFORMATION {
@@ -9111,32 +9111,32 @@ typedef struct _FILE_COPY_ON_WRITE_INFORMATION {
 } FILE_COPY_ON_WRITE_INFORMATION, *PFILE_COPY_ON_WRITE_INFORMATION;
 
 typedef struct _FILE_FULL_DIRECTORY_INFORMATION {
-    ULONG           NextEntryOffset;
-    ULONG           FileIndex;
+    ULONG                        NextEntryOffset;
+    ULONG                        FileIndex;
     LARGE_INTEGER   CreationTime;
     LARGE_INTEGER   LastAccessTime;
     LARGE_INTEGER   LastWriteTime;
     LARGE_INTEGER   ChangeTime;
     LARGE_INTEGER   EndOfFile;
     LARGE_INTEGER   AllocationSize;
-    ULONG           FileAttributes;
-    ULONG           FileNameLength;
-    ULONG           EaSize;
-    WCHAR           FileName[ANYSIZE_ARRAY];
+    ULONG                        FileAttributes;
+    ULONG                        FileNameLength;
+    ULONG                        EaSize;
+    WCHAR                        FileName[ANYSIZE_ARRAY];
 } FILE_FULL_DIRECTORY_INFORMATION, *PFILE_FULL_DIRECTORY_INFORMATION;
 
 /* raw internal file lock struct returned from FsRtlGetNextFileLock */
 typedef struct _FILE_SHARED_LOCK_ENTRY {
-    PVOID           Unknown1;
-    PVOID           Unknown2;
+    PVOID                        Unknown1;
+    PVOID                        Unknown2;
     FILE_LOCK_INFO  FileLock;
 } FILE_SHARED_LOCK_ENTRY, *PFILE_SHARED_LOCK_ENTRY;
 
 /* raw internal file lock struct returned from FsRtlGetNextFileLock */
 typedef struct _FILE_EXCLUSIVE_LOCK_ENTRY {
-    LIST_ENTRY      ListEntry;
-    PVOID           Unknown1;
-    PVOID           Unknown2;
+    LIST_ENTRY                   ListEntry;
+    PVOID                        Unknown1;
+    PVOID                        Unknown2;
     FILE_LOCK_INFO  FileLock;
 } FILE_EXCLUSIVE_LOCK_ENTRY, *PFILE_EXCLUSIVE_LOCK_ENTRY;
 
@@ -9151,57 +9151,57 @@ typedef struct _FILE_OLE_CLASSID_INFORMATION {
 } FILE_OLE_CLASSID_INFORMATION, *PFILE_OLE_CLASSID_INFORMATION;
 
 typedef struct _FILE_OLE_ALL_INFORMATION {
-    FILE_BASIC_INFORMATION          BasicInformation;
-    FILE_STANDARD_INFORMATION       StandardInformation;
-    FILE_INTERNAL_INFORMATION       InternalInformation;
-    FILE_EA_INFORMATION             EaInformation;
-    FILE_ACCESS_INFORMATION         AccessInformation;
-    FILE_POSITION_INFORMATION       PositionInformation;
-    FILE_MODE_INFORMATION           ModeInformation;
-    FILE_ALIGNMENT_INFORMATION      AlignmentInformation;
-    USN                             LastChangeUsn;
-    USN                             ReplicationUsn;
-    LARGE_INTEGER                   SecurityChangeTime;
+    FILE_BASIC_INFORMATION                       BasicInformation;
+    FILE_STANDARD_INFORMATION                    StandardInformation;
+    FILE_INTERNAL_INFORMATION                    InternalInformation;
+    FILE_EA_INFORMATION                                       EaInformation;
+    FILE_ACCESS_INFORMATION                      AccessInformation;
+    FILE_POSITION_INFORMATION                    PositionInformation;
+    FILE_MODE_INFORMATION                        ModeInformation;
+    FILE_ALIGNMENT_INFORMATION                   AlignmentInformation;
+    USN                                                                                 LastChangeUsn;
+    USN                                                                                 ReplicationUsn;
+    LARGE_INTEGER                                                          SecurityChangeTime;
     FILE_OLE_CLASSID_INFORMATION    OleClassIdInformation;
-    FILE_OBJECTID_INFORMATION       ObjectIdInformation;
-    FILE_STORAGE_TYPE               StorageType;
-    ULONG                           OleStateBits;
-    ULONG                           OleId;
-    ULONG                           NumberOfStreamReferences;
-    ULONG                           StreamIndex;
-    ULONG                           SecurityId;
-    BOOLEAN                         ContentIndexDisable;
-    BOOLEAN                         InheritContentIndexDisable;
-    FILE_NAME_INFORMATION           NameInformation;
+    FILE_OBJECTID_INFORMATION                    ObjectIdInformation;
+    FILE_STORAGE_TYPE                                         StorageType;
+    ULONG                                                                               OleStateBits;
+    ULONG                                                                               OleId;
+    ULONG                                                                               NumberOfStreamReferences;
+    ULONG                                                                               StreamIndex;
+    ULONG                                                                               SecurityId;
+    BOOLEAN                                                                             ContentIndexDisable;
+    BOOLEAN                                                                             InheritContentIndexDisable;
+    FILE_NAME_INFORMATION                        NameInformation;
 } FILE_OLE_ALL_INFORMATION, *PFILE_OLE_ALL_INFORMATION;
 
 typedef struct _FILE_OLE_DIR_INFORMATION {
-    ULONG               NextEntryOffset;
-    ULONG               FileIndex;
-    LARGE_INTEGER       CreationTime;
-    LARGE_INTEGER       LastAccessTime;
-    LARGE_INTEGER       LastWriteTime;
-    LARGE_INTEGER       ChangeTime;
-    LARGE_INTEGER       EndOfFile;
-    LARGE_INTEGER       AllocationSize;
-    ULONG               FileAttributes;
-    ULONG               FileNameLength;
+    ULONG                                         NextEntryOffset;
+    ULONG                                         FileIndex;
+    LARGE_INTEGER                    CreationTime;
+    LARGE_INTEGER                    LastAccessTime;
+    LARGE_INTEGER                    LastWriteTime;
+    LARGE_INTEGER                    ChangeTime;
+    LARGE_INTEGER                    EndOfFile;
+    LARGE_INTEGER                    AllocationSize;
+    ULONG                                         FileAttributes;
+    ULONG                                         FileNameLength;
     FILE_STORAGE_TYPE   StorageType;
-    GUID                OleClassId;
-    ULONG               OleStateBits;
-    BOOLEAN             ContentIndexDisable;
-    BOOLEAN             InheritContentIndexDisable;
-    WCHAR               FileName[1];
+    GUID                                          OleClassId;
+    ULONG                                         OleStateBits;
+    BOOLEAN                                       ContentIndexDisable;
+    BOOLEAN                                       InheritContentIndexDisable;
+    WCHAR                                         FileName[1];
 } FILE_OLE_DIR_INFORMATION, *PFILE_OLE_DIR_INFORMATION;
 
 typedef struct _FILE_OLE_INFORMATION {
-    LARGE_INTEGER                   SecurityChangeTime;
+    LARGE_INTEGER                                                          SecurityChangeTime;
     FILE_OLE_CLASSID_INFORMATION    OleClassIdInformation;
-    FILE_OBJECTID_INFORMATION       ObjectIdInformation;
-    FILE_STORAGE_TYPE               StorageType;
-    ULONG                           OleStateBits;
-    BOOLEAN                         ContentIndexDisable;
-    BOOLEAN                         InheritContentIndexDisable;
+    FILE_OBJECTID_INFORMATION                    ObjectIdInformation;
+    FILE_STORAGE_TYPE                                         StorageType;
+    ULONG                                                                               OleStateBits;
+    BOOLEAN                                                                             ContentIndexDisable;
+    BOOLEAN                                                                             InheritContentIndexDisable;
 } FILE_OLE_INFORMATION, *PFILE_OLE_INFORMATION;
 
 typedef struct _FILE_OLE_STATE_BITS_INFORMATION {
@@ -9215,44 +9215,44 @@ typedef struct _MAPPING_PAIR {
 } MAPPING_PAIR, *PMAPPING_PAIR;
 
 typedef struct _GET_RETRIEVAL_DESCRIPTOR {
-    ULONG           NumberOfPairs;
-    ULONGLONG       StartVcn;
+    ULONG                        NumberOfPairs;
+    ULONGLONG                    StartVcn;
     MAPPING_PAIR    Pair[1];
 } GET_RETRIEVAL_DESCRIPTOR, *PGET_RETRIEVAL_DESCRIPTOR;
 
 typedef struct _MBCB {
-    CSHORT          NodeTypeCode;
-    CSHORT          NodeIsInZone;
-    ULONG           PagesToWrite;
-    ULONG           DirtyPages;
-    ULONG           Reserved;
-    LIST_ENTRY      BitmapRanges;
-    LONGLONG        ResumeWritePage;
+    CSHORT                       NodeTypeCode;
+    CSHORT                       NodeIsInZone;
+    ULONG                        PagesToWrite;
+    ULONG                        DirtyPages;
+    ULONG                        Reserved;
+    LIST_ENTRY                   BitmapRanges;
+    LONGLONG                     ResumeWritePage;
     BITMAP_RANGE    BitmapRange1;
     BITMAP_RANGE    BitmapRange2;
     BITMAP_RANGE    BitmapRange3;
 } MBCB, *PMBCB;
 
 typedef struct _MOVEFILE_DESCRIPTOR {
-     HANDLE         FileHandle;
-     ULONG          Reserved;
+     HANDLE                      FileHandle;
+     ULONG                       Reserved;
      LARGE_INTEGER  StartVcn;
      LARGE_INTEGER  TargetLcn;
-     ULONG          NumVcns;
-     ULONG          Reserved1;
+     ULONG                       NumVcns;
+     ULONG                       Reserved1;
 } MOVEFILE_DESCRIPTOR, *PMOVEFILE_DESCRIPTOR;
 
 typedef struct _OBJECT_BASIC_INFO {
-    ULONG           Attributes;
+    ULONG                        Attributes;
     ACCESS_MASK     GrantedAccess;
-    ULONG           HandleCount;
-    ULONG           ReferenceCount;
-    ULONG           PagedPoolUsage;
-    ULONG           NonPagedPoolUsage;
-    ULONG           Reserved[3];
-    ULONG           NameInformationLength;
-    ULONG           TypeInformationLength;
-    ULONG           SecurityDescriptorLength;
+    ULONG                        HandleCount;
+    ULONG                        ReferenceCount;
+    ULONG                        PagedPoolUsage;
+    ULONG                        NonPagedPoolUsage;
+    ULONG                        Reserved[3];
+    ULONG                        NameInformationLength;
+    ULONG                        TypeInformationLength;
+    ULONG                        SecurityDescriptorLength;
     LARGE_INTEGER   CreateTime;
 } OBJECT_BASIC_INFO, *POBJECT_BASIC_INFO;
 
@@ -9263,7 +9263,7 @@ typedef struct _OBJECT_HANDLE_ATTRIBUTE_INFO {
 
 typedef struct _OBJECT_NAME_INFO {
     UNICODE_STRING  ObjectName;
-    WCHAR           ObjectNameBuffer[1];
+    WCHAR                        ObjectNameBuffer[1];
 } OBJECT_NAME_INFO, *POBJECT_NAME_INFO;
 
 typedef struct _OBJECT_PROTECTION_INFO {
@@ -9273,12 +9273,12 @@ typedef struct _OBJECT_PROTECTION_INFO {
 
 typedef struct _OBJECT_TYPE_INFO {
     UNICODE_STRING  ObjectTypeName;
-    UCHAR           Unknown[0x58];
-    WCHAR           ObjectTypeNameBuffer[1];
+    UCHAR                        Unknown[0x58];
+    WCHAR                        ObjectTypeNameBuffer[1];
 } OBJECT_TYPE_INFO, *POBJECT_TYPE_INFO;
 
 typedef struct _OBJECT_ALL_TYPES_INFO {
-    ULONG               NumberOfObjectTypes;
+    ULONG                                         NumberOfObjectTypes;
     OBJECT_TYPE_INFO    ObjectsTypeInfo[1];
 } OBJECT_ALL_TYPES_INFO, *POBJECT_ALL_TYPES_INFO;
 
@@ -9298,36 +9298,36 @@ typedef struct _PORT_MESSAGE
 {
     union
     {
-        struct
-        {
-            CSHORT DataLength;
-            CSHORT TotalLength;
-        } s1;
-        ULONG Length;
+                     struct
+                     {
+                                      CSHORT DataLength;
+                                      CSHORT TotalLength;
+                     } s1;
+                     ULONG Length;
     } u1;
     union
     {
-        struct
-        {
-            CSHORT Type;
-            CSHORT DataInfoOffset;
-        } s2;
-        ULONG ZeroInit;
+                     struct
+                     {
+                                      CSHORT Type;
+                                      CSHORT DataInfoOffset;
+                     } s2;
+                     ULONG ZeroInit;
     } u2;
     __GNU_EXTENSION union
     {
-        LPC_CLIENT_ID ClientId;
-        double DoNotUseThisField;
+                     LPC_CLIENT_ID ClientId;
+                     double DoNotUseThisField;
     };
     ULONG MessageId;
     __GNU_EXTENSION union
     {
-        LPC_SIZE_T ClientViewSize;
-        ULONG CallbackId;
+                     LPC_SIZE_T ClientViewSize;
+                     ULONG CallbackId;
     };
 } PORT_MESSAGE, *PPORT_MESSAGE;
 
-#define LPC_KERNELMODE_MESSAGE      (CSHORT)((USHORT)0x8000)
+#define LPC_KERNELMODE_MESSAGE                   (CSHORT)((USHORT)0x8000)
 
 typedef struct _PORT_VIEW
 {
@@ -9347,16 +9347,16 @@ typedef struct _REMOTE_PORT_VIEW
 } REMOTE_PORT_VIEW, *PREMOTE_PORT_VIEW;
 
 typedef struct _VAD_HEADER {
-    PVOID       StartVPN;
-    PVOID       EndVPN;
+    PVOID                    StartVPN;
+    PVOID                    EndVPN;
     struct _VAD_HEADER* ParentLink;
     struct _VAD_HEADER* LeftLink;
     struct _VAD_HEADER* RightLink;
-    ULONG       Flags;          /* LSB = CommitCharge */
-    PVOID       ControlArea;
-    PVOID       FirstProtoPte;
-    PVOID       LastPTE;
-    ULONG       Unknown;
+    ULONG                    Flags;                       /* LSB = CommitCharge */
+    PVOID                    ControlArea;
+    PVOID                    FirstProtoPte;
+    PVOID                    LastPTE;
+    ULONG                    Unknown;
     LIST_ENTRY  Secured;
 } VAD_HEADER, *PVAD_HEADER;
 
@@ -9373,7 +9373,7 @@ PVOID
 NTAPI
 FsRtlAllocatePool (
     IN POOL_TYPE    PoolType,
-    IN ULONG        NumberOfBytes
+    IN ULONG                     NumberOfBytes
 );
 
 NTKERNELAPI
@@ -9381,7 +9381,7 @@ PVOID
 NTAPI
 FsRtlAllocatePoolWithQuota (
     IN POOL_TYPE    PoolType,
-    IN ULONG        NumberOfBytes
+    IN ULONG                     NumberOfBytes
 );
 
 NTKERNELAPI
@@ -9389,8 +9389,8 @@ PVOID
 NTAPI
 FsRtlAllocatePoolWithQuotaTag (
     IN POOL_TYPE    PoolType,
-    IN ULONG        NumberOfBytes,
-    IN ULONG        Tag
+    IN ULONG                     NumberOfBytes,
+    IN ULONG                     Tag
 );
 
 NTKERNELAPI
@@ -9398,8 +9398,8 @@ PVOID
 NTAPI
 FsRtlAllocatePoolWithTag (
     IN POOL_TYPE    PoolType,
-    IN ULONG        NumberOfBytes,
-    IN ULONG        Tag
+    IN ULONG                     NumberOfBytes,
+    IN ULONG                     Tag
 );
 
 NTKERNELAPI
@@ -9407,9 +9407,9 @@ BOOLEAN
 NTAPI
 FsRtlIsFatDbcsLegal (
     IN ANSI_STRING  DbcsName,
-    IN BOOLEAN      WildCardsPermissible,
-    IN BOOLEAN      PathNamePermissible,
-    IN BOOLEAN      LeadingBackslashPermissible
+    IN BOOLEAN                   WildCardsPermissible,
+    IN BOOLEAN                   PathNamePermissible,
+    IN BOOLEAN                   LeadingBackslashPermissible
 );
 
 NTKERNELAPI
@@ -9417,7 +9417,7 @@ BOOLEAN
 NTAPI
 FsRtlMdlReadComplete (
     IN PFILE_OBJECT     FileObject,
-    IN PMDL             MdlChain
+    IN PMDL                                       MdlChain
 );
 
 NTKERNELAPI
@@ -9426,7 +9426,7 @@ NTAPI
 FsRtlMdlWriteComplete (
     IN PFILE_OBJECT     FileObject,
     IN PLARGE_INTEGER   FileOffset,
-    IN PMDL             MdlChain
+    IN PMDL                                       MdlChain
 );
 
 NTKERNELAPI
@@ -9434,27 +9434,27 @@ VOID
 NTAPI
 FsRtlNotifyChangeDirectory (
     IN PNOTIFY_SYNC NotifySync,
-    IN PVOID        FsContext,
-    IN PSTRING      FullDirectoryName,
+    IN PVOID                     FsContext,
+    IN PSTRING                   FullDirectoryName,
     IN PLIST_ENTRY  NotifyList,
-    IN BOOLEAN      WatchTree,
-    IN ULONG        CompletionFilter,
-    IN PIRP         NotifyIrp
+    IN BOOLEAN                   WatchTree,
+    IN ULONG                     CompletionFilter,
+    IN PIRP                      NotifyIrp
 );
 
 NTKERNELAPI
 NTSTATUS
 NTAPI
 ObCreateObject (
-    IN KPROCESSOR_MODE      ObjectAttributesAccessMode OPTIONAL,
-    IN POBJECT_TYPE         ObjectType,
+    IN KPROCESSOR_MODE                   ObjectAttributesAccessMode OPTIONAL,
+    IN POBJECT_TYPE                      ObjectType,
     IN POBJECT_ATTRIBUTES   ObjectAttributes OPTIONAL,
-    IN KPROCESSOR_MODE      AccessMode,
-    IN OUT PVOID            ParseContext OPTIONAL,
-    IN ULONG                ObjectSize,
-    IN ULONG                PagedPoolCharge OPTIONAL,
-    IN ULONG                NonPagedPoolCharge OPTIONAL,
-    OUT PVOID               *Object
+    IN KPROCESSOR_MODE                   AccessMode,
+    IN OUT PVOID                                      ParseContext OPTIONAL,
+    IN ULONG                                          ObjectSize,
+    IN ULONG                                          PagedPoolCharge OPTIONAL,
+    IN ULONG                                          NonPagedPoolCharge OPTIONAL,
+    OUT PVOID                                         *Object
 );
 
 NTKERNELAPI
@@ -9469,21 +9469,21 @@ NTSTATUS
 NTAPI
 ObReferenceObjectByName (
     IN PUNICODE_STRING  ObjectName,
-    IN ULONG            Attributes,
+    IN ULONG                                      Attributes,
     IN PACCESS_STATE    PassedAccessState OPTIONAL,
-    IN ACCESS_MASK      DesiredAccess OPTIONAL,
+    IN ACCESS_MASK                   DesiredAccess OPTIONAL,
     IN POBJECT_TYPE     ObjectType,
     IN KPROCESSOR_MODE  AccessMode,
-    IN OUT PVOID        ParseContext OPTIONAL,
-    OUT PVOID           *Object
+    IN OUT PVOID                     ParseContext OPTIONAL,
+    OUT PVOID                        *Object
 );
 
 #define PsDereferenceImpersonationToken(T)  \
-            {if (ARGUMENT_PRESENT(T)) {     \
-                (ObDereferenceObject((T))); \
-            } else {                        \
-                ;                           \
-            }                               \
+                                      {if (ARGUMENT_PRESENT(T)) {     \
+                                          (ObDereferenceObject((T))); \
+                                      } else {                                                                            \
+                                          ;                                                                               \
+                                      }                                                                                                \
 }
 
 NTKERNELAPI
@@ -9500,9 +9500,9 @@ NTSTATUS
 NTAPI
 RtlSetSaclSecurityDescriptor (
     IN OUT PSECURITY_DESCRIPTOR SecurityDescriptor,
-    IN BOOLEAN                  SaclPresent,
-    IN PACL                     Sacl,
-    IN BOOLEAN                  SaclDefaulted
+    IN BOOLEAN                                                         SaclPresent,
+    IN PACL                                                            Sacl,
+    IN BOOLEAN                                                         SaclDefaulted
 );
 
 #define SeEnableAccessToExports() SeExports = *(PSE_EXPORTS *)SeExports;
@@ -9513,12 +9513,12 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwAdjustPrivilegesToken (
-    IN HANDLE               TokenHandle,
-    IN BOOLEAN              DisableAllPrivileges,
+    IN HANDLE                                         TokenHandle,
+    IN BOOLEAN                                        DisableAllPrivileges,
     IN PTOKEN_PRIVILEGES    NewState,
-    IN ULONG                BufferLength,
+    IN ULONG                                          BufferLength,
     OUT PTOKEN_PRIVILEGES   PreviousState OPTIONAL,
-    OUT PULONG              ReturnLength
+    OUT PULONG                                        ReturnLength
 );
 
 #endif /* (VER_PRODUCTBUILD >= 2195) */
@@ -9534,17 +9534,17 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwAccessCheckAndAuditAlarm (
-    IN PUNICODE_STRING      SubsystemName,
-    IN PVOID                HandleId,
-    IN PUNICODE_STRING      ObjectTypeName,
-    IN PUNICODE_STRING      ObjectName,
+    IN PUNICODE_STRING                   SubsystemName,
+    IN PVOID                                          HandleId,
+    IN PUNICODE_STRING                   ObjectTypeName,
+    IN PUNICODE_STRING                   ObjectName,
     IN PSECURITY_DESCRIPTOR SecurityDescriptor,
-    IN ACCESS_MASK          DesiredAccess,
+    IN ACCESS_MASK                       DesiredAccess,
     IN PGENERIC_MAPPING     GenericMapping,
-    IN BOOLEAN              ObjectCreation,
-    OUT PACCESS_MASK        GrantedAccess,
-    OUT PBOOLEAN            AccessStatus,
-    OUT PBOOLEAN            GenerateOnClose
+    IN BOOLEAN                                        ObjectCreation,
+    OUT PACCESS_MASK                     GrantedAccess,
+    OUT PBOOLEAN                                      AccessStatus,
+    OUT PBOOLEAN                                      GenerateOnClose
 );
 
 #if (VER_PRODUCTBUILD >= 2195)
@@ -9553,7 +9553,7 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwCancelIoFile (
-    IN HANDLE               FileHandle,
+    IN HANDLE                                         FileHandle,
     OUT PIO_STATUS_BLOCK    IoStatusBlock
 );
 
@@ -9571,18 +9571,18 @@ NTSTATUS
 NTAPI
 ZwCloseObjectAuditAlarm (
     IN PUNICODE_STRING  SubsystemName,
-    IN PVOID            HandleId,
-    IN BOOLEAN          GenerateOnClose
+    IN PVOID                                      HandleId,
+    IN BOOLEAN                       GenerateOnClose
 );
 
 NTSYSAPI
 NTSTATUS
 NTAPI
 ZwCreateSymbolicLinkObject (
-    OUT PHANDLE             SymbolicLinkHandle,
-    IN ACCESS_MASK          DesiredAccess,
+    OUT PHANDLE                                       SymbolicLinkHandle,
+    IN ACCESS_MASK                       DesiredAccess,
     IN POBJECT_ATTRIBUTES   ObjectAttributes,
-    IN PUNICODE_STRING      TargetName
+    IN PUNICODE_STRING                   TargetName
 );
 
 NTSYSAPI
@@ -9608,10 +9608,10 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwInitiatePowerAction (
-    IN POWER_ACTION         SystemAction,
+    IN POWER_ACTION                      SystemAction,
     IN SYSTEM_POWER_STATE   MinSystemState,
-    IN ULONG                Flags,
-    IN BOOLEAN              Asynchronous
+    IN ULONG                                          Flags,
+    IN BOOLEAN                                        Asynchronous
 );
 
 #endif /* (VER_PRODUCTBUILD >= 2195) */
@@ -9628,7 +9628,7 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwOpenProcessToken (
-    IN HANDLE       ProcessHandle,
+    IN HANDLE                    ProcessHandle,
     IN ACCESS_MASK  DesiredAccess,
     OUT PHANDLE     TokenHandle
 );
@@ -9637,19 +9637,19 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwOpenThread (
-    OUT PHANDLE             ThreadHandle,
-    IN ACCESS_MASK          DesiredAccess,
+    OUT PHANDLE                                       ThreadHandle,
+    IN ACCESS_MASK                       DesiredAccess,
     IN POBJECT_ATTRIBUTES   ObjectAttributes,
-    IN PCLIENT_ID           ClientId
+    IN PCLIENT_ID                        ClientId
 );
 
 NTSYSAPI
 NTSTATUS
 NTAPI
 ZwOpenThreadToken (
-    IN HANDLE       ThreadHandle,
+    IN HANDLE                    ThreadHandle,
     IN ACCESS_MASK  DesiredAccess,
-    IN BOOLEAN      OpenAsSelf,
+    IN BOOLEAN                   OpenAsSelf,
     OUT PHANDLE     TokenHandle
 );
 
@@ -9675,13 +9675,13 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwQueryDirectoryObject (
-    IN HANDLE       DirectoryHandle,
-    OUT PVOID       Buffer,
-    IN ULONG        Length,
-    IN BOOLEAN      ReturnSingleEntry,
-    IN BOOLEAN      RestartScan,
+    IN HANDLE                    DirectoryHandle,
+    OUT PVOID                    Buffer,
+    IN ULONG                     Length,
+    IN BOOLEAN                   ReturnSingleEntry,
+    IN BOOLEAN                   RestartScan,
     IN OUT PULONG   Context,
-    OUT PULONG      ReturnLength OPTIONAL
+    OUT PULONG                   ReturnLength OPTIONAL
 );
 
 #endif /* (VER_PRODUCTBUILD >= 2195) */
@@ -9690,11 +9690,11 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwQueryInformationProcess (
-    IN HANDLE           ProcessHandle,
+    IN HANDLE                        ProcessHandle,
     IN PROCESSINFOCLASS ProcessInformationClass,
-    OUT PVOID           ProcessInformation,
-    IN ULONG            ProcessInformationLength,
-    OUT PULONG          ReturnLength OPTIONAL
+    OUT PVOID                        ProcessInformation,
+    IN ULONG                                      ProcessInformationLength,
+    OUT PULONG                       ReturnLength OPTIONAL
 );
 
 NTSYSAPI
@@ -9702,7 +9702,7 @@ NTSTATUS
 NTAPI
 ZwReplaceKey (
     IN POBJECT_ATTRIBUTES   NewFileObjectAttributes,
-    IN HANDLE               KeyHandle,
+    IN HANDLE                                         KeyHandle,
     IN POBJECT_ATTRIBUTES   OldFileObjectAttributes
 );
 
@@ -9758,10 +9758,10 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwSetInformationProcess (
-    IN HANDLE           ProcessHandle,
+    IN HANDLE                        ProcessHandle,
     IN PROCESSINFOCLASS ProcessInformationClass,
-    IN PVOID            ProcessInformation,
-    IN ULONG            ProcessInformationLength
+    IN PVOID                                      ProcessInformation,
+    IN ULONG                                      ProcessInformationLength
 );
 
 NTSYSAPI
@@ -9783,10 +9783,10 @@ NTSYSAPI
 NTSTATUS
 NTAPI
 ZwWaitForMultipleObjects (
-    IN ULONG            HandleCount,
-    IN PHANDLE          Handles,
-    IN WAIT_TYPE        WaitType,
-    IN BOOLEAN          Alertable,
+    IN ULONG                                      HandleCount,
+    IN PHANDLE                       Handles,
+    IN WAIT_TYPE                     WaitType,
+    IN BOOLEAN                       Alertable,
     IN PLARGE_INTEGER   Timeout OPTIONAL
 );
 

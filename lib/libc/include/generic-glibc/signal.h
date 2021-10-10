@@ -91,8 +91,8 @@ extern __sighandler_t signal (int __sig, __sighandler_t __handler)
 /* Make sure the used `signal' implementation is the SVID version. */
 # ifdef __REDIRECT_NTH
 extern __sighandler_t __REDIRECT_NTH (signal,
-				      (int __sig, __sighandler_t __handler),
-				      __sysv_signal);
+				                   (int __sig, __sighandler_t __handler),
+				                   __sysv_signal);
 # else
 #  define signal __sysv_signal
 # endif
@@ -217,7 +217,7 @@ extern int sigisemptyset (const sigset_t *__set) __THROW __nonnull ((1));
 
 /* Build new signal set by combining the two inputs set using logical AND.  */
 extern int sigandset (sigset_t *__set, const sigset_t *__left,
-		      const sigset_t *__right) __THROW __nonnull ((1, 2, 3));
+		                   const sigset_t *__right) __THROW __nonnull ((1, 2, 3));
 
 /* Build new signal set by combining the two inputs set using logical OR.  */
 extern int sigorset (sigset_t *__set, const sigset_t *__left,
@@ -241,7 +241,7 @@ extern int sigsuspend (const sigset_t *__set) __nonnull ((1));
 
 /* Get and/or set the action for signal SIG.  */
 extern int sigaction (int __sig, const struct sigaction *__restrict __act,
-		      struct sigaction *__restrict __oact) __THROW;
+		                   struct sigaction *__restrict __oact) __THROW;
 
 /* Put in SET all signals that are blocked and waiting to be delivered.  */
 extern int sigpending (sigset_t *__set) __THROW __nonnull ((1));
@@ -370,8 +370,8 @@ extern int __libc_current_sigrtmin (void) __THROW;
 /* Return number of available real-time signal with lowest priority.  */
 extern int __libc_current_sigrtmax (void) __THROW;
 
-#define SIGRTMIN        (__libc_current_sigrtmin ())
-#define SIGRTMAX        (__libc_current_sigrtmax ())
+#define SIGRTMIN                     (__libc_current_sigrtmin ())
+#define SIGRTMAX                     (__libc_current_sigrtmax ())
 
 /* System-specific extensions.  */
 #include <bits/signal_ext.h>

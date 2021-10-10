@@ -83,7 +83,7 @@ int prlimit(pid_t, int, const struct rlimit *, struct rlimit *);
 #define RLIMIT_NPROC   6
 #define RLIMIT_NOFILE  7
 #define RLIMIT_MEMLOCK 8
-#define RLIMIT_AS      9
+#define RLIMIT_AS                   9
 #endif
 #define RLIMIT_LOCKS   10
 #define RLIMIT_SIGPENDING 11

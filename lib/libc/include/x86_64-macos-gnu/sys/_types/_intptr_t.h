@@ -29,5 +29,5 @@
 #define _INTPTR_T
 #include <machine/types.h> /* __darwin_intptr_t */
 
-typedef __darwin_intptr_t       intptr_t;
+typedef __darwin_intptr_t                    intptr_t;
 #endif /* _INTPTR_T */

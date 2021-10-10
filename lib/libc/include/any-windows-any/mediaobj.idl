@@ -46,20 +46,20 @@ interface IEnumDMO : IUnknown
 {
     [local]
     HRESULT Next(
-        [in] DWORD cItemsToFetch,
-        [out] CLSID *pCLSID,
-        [out] WCHAR **Names,
-        [out] DWORD *pcItemsFetched
+                     [in] DWORD cItemsToFetch,
+                     [out] CLSID *pCLSID,
+                     [out] WCHAR **Names,
+                     [out] DWORD *pcItemsFetched
     );
 
     HRESULT Skip(
-        [in] DWORD cItemsToSkip
+                     [in] DWORD cItemsToSkip
     );
 
     HRESULT Reset();
 
     HRESULT Clone(
-        [out] IEnumDMO **ppEnum
+                     [out] IEnumDMO **ppEnum
     );
 }
 
@@ -74,16 +74,16 @@ interface IEnumDMO : IUnknown
 interface IMediaBuffer : IUnknown
 {
     HRESULT SetLength(
-       DWORD cbLength
+                    DWORD cbLength
     );
 
     HRESULT GetMaxLength(
-       [out] DWORD *pcbMaxLength
+                    [out] DWORD *pcbMaxLength
     );
 
     HRESULT GetBufferAndLength(
-       [out] BYTE **ppBuffer,
-       [out] DWORD *pcbLength
+                    [out] BYTE **ppBuffer,
+                    [out] DWORD *pcbLength
     );
 }
 
@@ -95,7 +95,7 @@ enum _DMO_INPUT_STATUS_FLAGS
 enum _DMO_INPUT_DATA_BUFFER_FLAGS
 {
     DMO_INPUT_DATA_BUFFERF_SYNCPOINT    = 0x00000001,
-    DMO_INPUT_DATA_BUFFERF_TIME         = 0x00000002,
+    DMO_INPUT_DATA_BUFFERF_TIME                      = 0x00000002,
     DMO_INPUT_DATA_BUFFERF_TIMELENGTH   = 0x00000004,
 };
 
@@ -123,7 +123,7 @@ enum _DMO_SET_TYPE_FLAGS {
 
 enum _DMO_OUTPUT_DATA_BUFFERF_FLAGS {
     DMO_OUTPUT_DATA_BUFFERF_SYNCPOINT   = 0x00000001,
-    DMO_OUTPUT_DATA_BUFFERF_TIME        = 0x00000002,
+    DMO_OUTPUT_DATA_BUFFERF_TIME                     = 0x00000002,
     DMO_OUTPUT_DATA_BUFFERF_TIMELENGTH  = 0x00000004,
     DMO_OUTPUT_DATA_BUFFERF_INCOMPLETE  = 0x01000000,
 };
@@ -139,75 +139,75 @@ enum _DMO_OUTPUT_DATA_BUFFERF_FLAGS {
 interface IMediaObject : IUnknown
 {
     HRESULT GetStreamCount(
-        [out] DWORD *pcInputStreams,
-        [out] DWORD *pcOutputStreams
+                     [out] DWORD *pcInputStreams,
+                     [out] DWORD *pcOutputStreams
     );
 
     HRESULT GetInputStreamInfo(
-        DWORD dwInputStreamIndex,
-        [out] DWORD *pdwFlags
+                     DWORD dwInputStreamIndex,
+                     [out] DWORD *pdwFlags
     );
 
     HRESULT GetOutputStreamInfo(
-        DWORD dwOutputStreamIndex,
-        [out] DWORD *pdwFlags
+                     DWORD dwOutputStreamIndex,
+                     [out] DWORD *pdwFlags
     );
 
     HRESULT GetInputType(
-        DWORD dwInputStreamIndex,
-        DWORD dwTypeIndex,
-        [out] DMO_MEDIA_TYPE *pmt
+                     DWORD dwInputStreamIndex,
+                     DWORD dwTypeIndex,
+                     [out] DMO_MEDIA_TYPE *pmt
     );
 
     HRESULT GetOutputType(
-        DWORD dwOutputStreamIndex,
-        DWORD dwTypeIndex,
-        [out] DMO_MEDIA_TYPE *pmt
+                     DWORD dwOutputStreamIndex,
+                     DWORD dwTypeIndex,
+                     [out] DMO_MEDIA_TYPE *pmt
     );
 
     HRESULT SetInputType(
-        DWORD dwInputStreamIndex,
-        [in] const DMO_MEDIA_TYPE *pmt,
-        DWORD dwFlags
+                     DWORD dwInputStreamIndex,
+                     [in] const DMO_MEDIA_TYPE *pmt,
+                     DWORD dwFlags
     );
 
     HRESULT SetOutputType(
-        DWORD dwOutputStreamIndex,
-        [in] const DMO_MEDIA_TYPE *pmt,
-        DWORD dwFlags
+                     DWORD dwOutputStreamIndex,
+                     [in] const DMO_MEDIA_TYPE *pmt,
+                     DWORD dwFlags
     );
 
     HRESULT GetInputCurrentType(
-        DWORD dwInputStreamIndex,
-        [out] DMO_MEDIA_TYPE *pmt
+                     DWORD dwInputStreamIndex,
+                     [out] DMO_MEDIA_TYPE *pmt
     );
 
     HRESULT GetOutputCurrentType(
-        DWORD dwOutputStreamIndex,
-        [out] DMO_MEDIA_TYPE *pmt
+                     DWORD dwOutputStreamIndex,
+                     [out] DMO_MEDIA_TYPE *pmt
     );
 
     HRESULT GetInputSizeInfo(
-        DWORD dwInputStreamIndex,
-        [out] DWORD *pcbSize,
-        [out] DWORD *pcbMaxLookahead,
-        [out] DWORD *pcbAlignment
+                     DWORD dwInputStreamIndex,
+                     [out] DWORD *pcbSize,
+                     [out] DWORD *pcbMaxLookahead,
+                     [out] DWORD *pcbAlignment
     );
 
     HRESULT GetOutputSizeInfo(
-        DWORD dwOutputStreamIndex,
-        [out] DWORD *pcbSize,
-        [out] DWORD *pcbAlignment
+                     DWORD dwOutputStreamIndex,
+                     [out] DWORD *pcbSize,
+                     [out] DWORD *pcbAlignment
     );
 
     HRESULT GetInputMaxLatency(
-        DWORD dwInputStreamIndex,
-        [out] REFERENCE_TIME *prtMaxLatency
+                     DWORD dwInputStreamIndex,
+                     [out] REFERENCE_TIME *prtMaxLatency
     );
 
     HRESULT SetInputMaxLatency(
-        DWORD dwInputStreamIndex,
-        REFERENCE_TIME rtMaxLatency
+                     DWORD dwInputStreamIndex,
+                     REFERENCE_TIME rtMaxLatency
     );
 
     HRESULT Flush();
@@ -219,23 +219,23 @@ interface IMediaObject : IUnknown
     HRESULT FreeStreamingResources();
 
     HRESULT GetInputStatus(
-        DWORD dwInputStreamIndex,
-        [out] DWORD *dwFlags
+                     DWORD dwInputStreamIndex,
+                     [out] DWORD *dwFlags
     );
 
     HRESULT ProcessInput(
-        DWORD dwInputStreamIndex,
-        IMediaBuffer *pBuffer,
-        DWORD dwFlags,
-        REFERENCE_TIME rtTimestamp,
-        REFERENCE_TIME rtTimelength
+                     DWORD dwInputStreamIndex,
+                     IMediaBuffer *pBuffer,
+                     DWORD dwFlags,
+                     REFERENCE_TIME rtTimestamp,
+                     REFERENCE_TIME rtTimelength
     );
 
     HRESULT ProcessOutput(
-        DWORD dwFlags,
-        DWORD cOutputBufferCount,
-        [in,out] DMO_OUTPUT_DATA_BUFFER *pOutputBuffers,
-        [out] DWORD *pdwStatus
+                     DWORD dwFlags,
+                     DWORD cOutputBufferCount,
+                     [in,out] DMO_OUTPUT_DATA_BUFFER *pOutputBuffers,
+                     [out] DWORD *pdwStatus
     );
 
     HRESULT Lock(LONG bLock);
@@ -252,18 +252,18 @@ interface IMediaObject : IUnknown
 ]
 interface IMediaObjectInPlace : IUnknown {
     HRESULT Process(
-        [in] ULONG ulSize,
-        [in,out] BYTE* pData,
-        [in] REFERENCE_TIME refTimeStart,
-        [in] DWORD dwFlags
+                     [in] ULONG ulSize,
+                     [in,out] BYTE* pData,
+                     [in] REFERENCE_TIME refTimeStart,
+                     [in] DWORD dwFlags
     );
 
     HRESULT Clone(
-        [out] IMediaObjectInPlace **ppMediaObject
+                     [out] IMediaObjectInPlace **ppMediaObject
     );
 
     HRESULT GetLatency(
-        [out] REFERENCE_TIME *pLatencyTime
+                     [out] REFERENCE_TIME *pLatencyTime
     );
 }
 

@@ -77,50 +77,50 @@ typedef union _SOCKADDR_INET {
 } SOCKADDR_INET, *PSOCKADDR_INET;
 
 typedef struct group_filter {
-  ULONG               gf_interface;
+  ULONG                                         gf_interface;
   SOCKADDR_STORAGE    gf_group;
   MULTICAST_MODE_TYPE gf_fmode;
-  ULONG               gf_numsrc;
+  ULONG                                         gf_numsrc;
   SOCKADDR_STORAGE    gf_slist[1];
 } GROUP_FILTER, *PGROUP_FILTER;
 
 typedef struct group_req {
-  ULONG            gr_interface;
+  ULONG                                      gr_interface;
   SOCKADDR_STORAGE gr_group;
 } GROUP_REQ, *PGROUP_REQ;
 
 typedef struct group_source_req {
-  ULONG            gsr_interface;
+  ULONG                                      gsr_interface;
   SOCKADDR_STORAGE gsr_group;
   SOCKADDR_STORAGE gsr_source;
 } GROUP_SOURCE_REQ, *PGROUP_SOURCE_REQ;
 
-#define IPV6_HOPOPTS           1
-#define IPV6_HDRINCL           2
-#define IPV6_UNICAST_HOPS      4
-#define IPV6_MULTICAST_IF      9
+#define IPV6_HOPOPTS                        1
+#define IPV6_HDRINCL                        2
+#define IPV6_UNICAST_HOPS                   4
+#define IPV6_MULTICAST_IF                   9
 #define IPV6_MULTICAST_HOPS    10
 #define IPV6_MULTICAST_LOOP    11
 #define IPV6_ADD_MEMBERSHIP    12
-#define IPV6_JOIN_GROUP        IPV6_ADD_MEMBERSHIP
+#define IPV6_JOIN_GROUP                     IPV6_ADD_MEMBERSHIP
 #define IPV6_DROP_MEMBERSHIP   13
-#define IPV6_LEAVE_GROUP       IPV6_DROP_MEMBERSHIP
-#define IPV6_DONTFRAG          14
-#define IPV6_PKTINFO           19
-#define IPV6_HOPLIMIT          21
+#define IPV6_LEAVE_GROUP                    IPV6_DROP_MEMBERSHIP
+#define IPV6_DONTFRAG                       14
+#define IPV6_PKTINFO                        19
+#define IPV6_HOPLIMIT                       21
 #define IPV6_PROTECTION_LEVEL  23
-#define IPV6_RECVIF            24
-#define IPV6_RECVDSTADDR       25
-#define IPV6_CHECKSUM          26
-#define IPV6_V6ONLY            27
-#define IPV6_IFLIST            28
-#define IPV6_ADD_IFLIST        29
-#define IPV6_DEL_IFLIST        30
-#define IPV6_UNICAST_IF        31
-#define IPV6_RTHDR             32
-#define IPV6_RECVRTHDR         38
-#define IPV6_TCLASS            39
-#define IPV6_RECVTCLASS        40
+#define IPV6_RECVIF                                      24
+#define IPV6_RECVDSTADDR                    25
+#define IPV6_CHECKSUM                       26
+#define IPV6_V6ONLY                                      27
+#define IPV6_IFLIST                                      28
+#define IPV6_ADD_IFLIST                     29
+#define IPV6_DEL_IFLIST                     30
+#define IPV6_UNICAST_IF                     31
+#define IPV6_RTHDR                                       32
+#define IPV6_RECVRTHDR                      38
+#define IPV6_TCLASS                                      39
+#define IPV6_RECVTCLASS                     40
 
 #define WS2TCPIP_INLINE __CRT_INLINE
 

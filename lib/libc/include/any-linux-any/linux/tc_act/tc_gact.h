@@ -12,13 +12,13 @@ struct tc_gact {
 };
 
 struct tc_gact_p {
-#define PGACT_NONE              0
-#define PGACT_NETRAND           1
-#define PGACT_DETERM            2
-#define MAX_RAND                (PGACT_DETERM + 1 )
-	__u16                 ptype;
-	__u16                 pval;
-	int                   paction;
+#define PGACT_NONE                                        0
+#define PGACT_NETRAND                        1
+#define PGACT_DETERM                                      2
+#define MAX_RAND                                          (PGACT_DETERM + 1 )
+	__u16                                           ptype;
+	__u16                                           pval;
+	int                                                          paction;
 };
  
 enum {

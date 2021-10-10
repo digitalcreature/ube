@@ -88,29 +88,29 @@ extern "C"{
 #else
   typedef struct IClusCfgCreateClusterWizardVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgCreateClusterWizard *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgCreateClusterWizard *This);
-      ULONG (WINAPI *Release)(IClusCfgCreateClusterWizard *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IClusCfgCreateClusterWizard *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IClusCfgCreateClusterWizard *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IClusCfgCreateClusterWizard *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IClusCfgCreateClusterWizard *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_ClusterName)(IClusCfgCreateClusterWizard *This,BSTR bstrClusterNameIn);
-      HRESULT (WINAPI *get_ClusterName)(IClusCfgCreateClusterWizard *This,BSTR *pbstrClusterNameOut);
-      HRESULT (WINAPI *put_ServiceAccountName)(IClusCfgCreateClusterWizard *This,BSTR bstrServiceAccountNameIn);
-      HRESULT (WINAPI *get_ServiceAccountName)(IClusCfgCreateClusterWizard *This,BSTR *pbstrServiceAccountNameOut);
-      HRESULT (WINAPI *put_ServiceAccountDomain)(IClusCfgCreateClusterWizard *This,BSTR bstrServiceAccountDomainIn);
-      HRESULT (WINAPI *get_ServiceAccountDomain)(IClusCfgCreateClusterWizard *This,BSTR *pbstrServiceAccountDomainOut);
-      HRESULT (WINAPI *put_ServiceAccountPassword)(IClusCfgCreateClusterWizard *This,BSTR bstrPasswordIn);
-      HRESULT (WINAPI *put_ClusterIPAddress)(IClusCfgCreateClusterWizard *This,BSTR bstrClusterIPAddressIn);
-      HRESULT (WINAPI *get_ClusterIPAddress)(IClusCfgCreateClusterWizard *This,BSTR *pbstrClusterIPAddressOut);
-      HRESULT (WINAPI *get_ClusterIPSubnet)(IClusCfgCreateClusterWizard *This,BSTR *pbstrClusterIPSubnetOut);
-      HRESULT (WINAPI *get_ClusterIPAddressNetwork)(IClusCfgCreateClusterWizard *This,BSTR *pbstrClusterNetworkNameOut);
-      HRESULT (WINAPI *put_FirstNodeInCluster)(IClusCfgCreateClusterWizard *This,BSTR bstrFirstNodeInClusterIn);
-      HRESULT (WINAPI *get_FirstNodeInCluster)(IClusCfgCreateClusterWizard *This,BSTR *pbstrFirstNodeInClusterOut);
-      HRESULT (WINAPI *put_MinimumConfiguration)(IClusCfgCreateClusterWizard *This,VARIANT_BOOL fMinConfigIn);
-      HRESULT (WINAPI *get_MinimumConfiguration)(IClusCfgCreateClusterWizard *This,VARIANT_BOOL *pfMinConfigOut);
-      HRESULT (WINAPI *ShowWizard)(IClusCfgCreateClusterWizard *This,__LONG32 lParentWindowHandleIn,VARIANT_BOOL *pfCompletedOut);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgCreateClusterWizard *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgCreateClusterWizard *This);
+                   ULONG (WINAPI *Release)(IClusCfgCreateClusterWizard *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IClusCfgCreateClusterWizard *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IClusCfgCreateClusterWizard *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IClusCfgCreateClusterWizard *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IClusCfgCreateClusterWizard *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_ClusterName)(IClusCfgCreateClusterWizard *This,BSTR bstrClusterNameIn);
+                   HRESULT (WINAPI *get_ClusterName)(IClusCfgCreateClusterWizard *This,BSTR *pbstrClusterNameOut);
+                   HRESULT (WINAPI *put_ServiceAccountName)(IClusCfgCreateClusterWizard *This,BSTR bstrServiceAccountNameIn);
+                   HRESULT (WINAPI *get_ServiceAccountName)(IClusCfgCreateClusterWizard *This,BSTR *pbstrServiceAccountNameOut);
+                   HRESULT (WINAPI *put_ServiceAccountDomain)(IClusCfgCreateClusterWizard *This,BSTR bstrServiceAccountDomainIn);
+                   HRESULT (WINAPI *get_ServiceAccountDomain)(IClusCfgCreateClusterWizard *This,BSTR *pbstrServiceAccountDomainOut);
+                   HRESULT (WINAPI *put_ServiceAccountPassword)(IClusCfgCreateClusterWizard *This,BSTR bstrPasswordIn);
+                   HRESULT (WINAPI *put_ClusterIPAddress)(IClusCfgCreateClusterWizard *This,BSTR bstrClusterIPAddressIn);
+                   HRESULT (WINAPI *get_ClusterIPAddress)(IClusCfgCreateClusterWizard *This,BSTR *pbstrClusterIPAddressOut);
+                   HRESULT (WINAPI *get_ClusterIPSubnet)(IClusCfgCreateClusterWizard *This,BSTR *pbstrClusterIPSubnetOut);
+                   HRESULT (WINAPI *get_ClusterIPAddressNetwork)(IClusCfgCreateClusterWizard *This,BSTR *pbstrClusterNetworkNameOut);
+                   HRESULT (WINAPI *put_FirstNodeInCluster)(IClusCfgCreateClusterWizard *This,BSTR bstrFirstNodeInClusterIn);
+                   HRESULT (WINAPI *get_FirstNodeInCluster)(IClusCfgCreateClusterWizard *This,BSTR *pbstrFirstNodeInClusterOut);
+                   HRESULT (WINAPI *put_MinimumConfiguration)(IClusCfgCreateClusterWizard *This,VARIANT_BOOL fMinConfigIn);
+                   HRESULT (WINAPI *get_MinimumConfiguration)(IClusCfgCreateClusterWizard *This,VARIANT_BOOL *pfMinConfigOut);
+                   HRESULT (WINAPI *ShowWizard)(IClusCfgCreateClusterWizard *This,__LONG32 lParentWindowHandleIn,VARIANT_BOOL *pfCompletedOut);
     END_INTERFACE
   } IClusCfgCreateClusterWizardVtbl;
   struct IClusCfgCreateClusterWizard {
@@ -195,22 +195,22 @@ extern "C"{
 #else
   typedef struct IClusCfgAddNodesWizardVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgAddNodesWizard *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgAddNodesWizard *This);
-      ULONG (WINAPI *Release)(IClusCfgAddNodesWizard *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IClusCfgAddNodesWizard *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IClusCfgAddNodesWizard *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IClusCfgAddNodesWizard *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IClusCfgAddNodesWizard *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_ClusterName)(IClusCfgAddNodesWizard *This,BSTR bstrClusterNameIn);
-      HRESULT (WINAPI *get_ClusterName)(IClusCfgAddNodesWizard *This,BSTR *pbstrClusterNameOut);
-      HRESULT (WINAPI *put_ServiceAccountPassword)(IClusCfgAddNodesWizard *This,BSTR bstrPasswordIn);
-      HRESULT (WINAPI *put_MinimumConfiguration)(IClusCfgAddNodesWizard *This,VARIANT_BOOL fMinConfigIn);
-      HRESULT (WINAPI *get_MinimumConfiguration)(IClusCfgAddNodesWizard *This,VARIANT_BOOL *pfMinConfigOut);
-      HRESULT (WINAPI *AddNodeToList)(IClusCfgAddNodesWizard *This,BSTR bstrNodeNameIn);
-      HRESULT (WINAPI *RemoveNodeFromList)(IClusCfgAddNodesWizard *This,BSTR bstrNodeNameIn);
-      HRESULT (WINAPI *ClearNodeList)(IClusCfgAddNodesWizard *This);
-      HRESULT (WINAPI *ShowWizard)(IClusCfgAddNodesWizard *This,__LONG32 lParentWindowHandleIn,VARIANT_BOOL *pfCompletedOut);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgAddNodesWizard *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgAddNodesWizard *This);
+                   ULONG (WINAPI *Release)(IClusCfgAddNodesWizard *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IClusCfgAddNodesWizard *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IClusCfgAddNodesWizard *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IClusCfgAddNodesWizard *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IClusCfgAddNodesWizard *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_ClusterName)(IClusCfgAddNodesWizard *This,BSTR bstrClusterNameIn);
+                   HRESULT (WINAPI *get_ClusterName)(IClusCfgAddNodesWizard *This,BSTR *pbstrClusterNameOut);
+                   HRESULT (WINAPI *put_ServiceAccountPassword)(IClusCfgAddNodesWizard *This,BSTR bstrPasswordIn);
+                   HRESULT (WINAPI *put_MinimumConfiguration)(IClusCfgAddNodesWizard *This,VARIANT_BOOL fMinConfigIn);
+                   HRESULT (WINAPI *get_MinimumConfiguration)(IClusCfgAddNodesWizard *This,VARIANT_BOOL *pfMinConfigOut);
+                   HRESULT (WINAPI *AddNodeToList)(IClusCfgAddNodesWizard *This,BSTR bstrNodeNameIn);
+                   HRESULT (WINAPI *RemoveNodeFromList)(IClusCfgAddNodesWizard *This,BSTR bstrNodeNameIn);
+                   HRESULT (WINAPI *ClearNodeList)(IClusCfgAddNodesWizard *This);
+                   HRESULT (WINAPI *ShowWizard)(IClusCfgAddNodesWizard *This,__LONG32 lParentWindowHandleIn,VARIANT_BOOL *pfCompletedOut);
     END_INTERFACE
   } IClusCfgAddNodesWizardVtbl;
   struct IClusCfgAddNodesWizard {

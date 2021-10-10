@@ -31,9 +31,9 @@ fn peekIsAlign(comptime fmt: []const u8) bool {
     comptime assert(fmt[0] == ':');
 
     inline for (([_]u8{ 1, 2 })[0..]) |i| {
-        if (fmt.len > i and (fmt[i] == '<' or fmt[i] == '^' or fmt[i] == '>')) {
-            return true;
-        }
+                     if (fmt.len > i and (fmt[i] == '<' or fmt[i] == '^' or fmt[i] == '>')) {
+                                      return true;
+                     }
     }
     return false;
 }
@@ -95,20 +95,20 @@ pub fn format(
 ) !void {
     const ArgSetType = u32;
     if (@typeInfo(@TypeOf(args)) != .Struct) {
-        @compileError("Expected tuple or struct argument, found " ++ @typeName(@TypeOf(args)));
+                     @compileError("Expected tuple or struct argument, found " ++ @typeName(@TypeOf(args)));
     }
     if (args.len > @typeInfo(ArgSetType).Int.bits) {
-        @compileError("32 arguments max are supported per format call");
+                     @compileError("32 arguments max are supported per format call");
     }
 
     const State = enum {
-        Start,
-        Positional,
-        CloseBrace,
-        Specifier,
-        FormatFillAndAlign,
-        FormatWidth,
-        FormatPrecision,
+                     Start,
+                     Positional,
+                     CloseBrace,
+                     Specifier,
+                     FormatFillAndAlign,
+                     FormatWidth,
+                     FormatPrecision,
     };
 
     comptime var start_index = 0;
@@ -118,208 +118,208 @@ pub fn format(
     comptime var specifier_end = 0;
     comptime var options = FormatOptions{};
     comptime var arg_state: struct {
-        next_arg: usize = 0,
-        used_args: ArgSetType = 0,
-        args_len: usize = args.len,
+                     next_arg: usize = 0,
+                     used_args: ArgSetType = 0,
+                     args_len: usize = args.len,
 
-        fn hasUnusedArgs(comptime self: *@This()) bool {
-            return (@popCount(ArgSetType, self.used_args) != self.args_len);
-        }
+                     fn hasUnusedArgs(comptime self: *@This()) bool {
+                                      return (@popCount(ArgSetType, self.used_args) != self.args_len);
+                     }
 
-        fn nextArg(comptime self: *@This(), comptime pos_arg: ?comptime_int) comptime_int {
-            const next_idx = pos_arg orelse blk: {
-                const arg = self.next_arg;
-                self.next_arg += 1;
-                break :blk arg;
-            };
+                     fn nextArg(comptime self: *@This(), comptime pos_arg: ?comptime_int) comptime_int {
+                                      const next_idx = pos_arg orelse blk: {
+                                          const arg = self.next_arg;
+                                          self.next_arg += 1;
+                                          break :blk arg;
+                                      };
 
-            if (next_idx >= self.args_len) {
-                @compileError("Too few arguments");
-            }
+                                      if (next_idx >= self.args_len) {
+                                          @compileError("Too few arguments");
+                                      }
 
-            // Mark this argument as used
-            self.used_args |= 1 << next_idx;
+                                      // Mark this argument as used
+                                      self.used_args |= 1 << next_idx;
 
-            return next_idx;
-        }
+                                      return next_idx;
+                     }
     } = .{};
 
     inline for (fmt) |c, i| {
-        switch (state) {
-            .Start => switch (c) {
-                '{' => {
-                    if (start_index < i) {
-                        try writer.writeAll(fmt[start_index..i]);
-                    }
+                     switch (state) {
+                                      .Start => switch (c) {
+                                          '{' => {
+                                                           if (start_index < i) {
+                                                                            try writer.writeAll(fmt[start_index..i]);
+                                                           }
 
-                    start_index = i;
-                    specifier_start = i + 1;
-                    specifier_end = i + 1;
-                    maybe_pos_arg = null;
-                    state = .Positional;
-                    options = FormatOptions{};
-                },
-                '}' => {
-                    if (start_index < i) {
-                        try writer.writeAll(fmt[start_index..i]);
-                    }
-                    state = .CloseBrace;
-                },
-                else => {},
-            },
-            .Positional => switch (c) {
-                '{' => {
-                    state = .Start;
-                    start_index = i;
-                },
-                ':' => {
-                    state = if (comptime peekIsAlign(fmt[i..])) State.FormatFillAndAlign else State.FormatWidth;
-                    specifier_end = i;
-                },
-                '0'...'9' => {
-                    if (maybe_pos_arg == null) {
-                        maybe_pos_arg = 0;
-                    }
+                                                           start_index = i;
+                                                           specifier_start = i + 1;
+                                                           specifier_end = i + 1;
+                                                           maybe_pos_arg = null;
+                                                           state = .Positional;
+                                                           options = FormatOptions{};
+                                          },
+                                          '}' => {
+                                                           if (start_index < i) {
+                                                                            try writer.writeAll(fmt[start_index..i]);
+                                                           }
+                                                           state = .CloseBrace;
+                                          },
+                                          else => {},
+                                      },
+                                      .Positional => switch (c) {
+                                          '{' => {
+                                                           state = .Start;
+                                                           start_index = i;
+                                          },
+                                          ':' => {
+                                                           state = if (comptime peekIsAlign(fmt[i..])) State.FormatFillAndAlign else State.FormatWidth;
+                                                           specifier_end = i;
+                                          },
+                                          '0'...'9' => {
+                                                           if (maybe_pos_arg == null) {
+                                                                            maybe_pos_arg = 0;
+                                                           }
 
-                    maybe_pos_arg.? *= 10;
-                    maybe_pos_arg.? += c - '0';
-                    specifier_start = i + 1;
+                                                           maybe_pos_arg.? *= 10;
+                                                           maybe_pos_arg.? += c - '0';
+                                                           specifier_start = i + 1;
 
-                    if (maybe_pos_arg.? >= args.len) {
-                        @compileError("Positional value refers to non-existent argument");
-                    }
-                },
-                '}' => {
-                    const arg_to_print = comptime arg_state.nextArg(maybe_pos_arg);
+                                                           if (maybe_pos_arg.? >= args.len) {
+                                                                            @compileError("Positional value refers to non-existent argument");
+                                                           }
+                                          },
+                                          '}' => {
+                                                           const arg_to_print = comptime arg_state.nextArg(maybe_pos_arg);
 
-                    try formatType(
-                        args[arg_to_print],
-                        fmt[0..0],
-                        options,
-                        writer,
-                        default_max_depth,
-                    );
+                                                           try formatType(
+                                                                            args[arg_to_print],
+                                                                            fmt[0..0],
+                                                                            options,
+                                                                            writer,
+                                                                            default_max_depth,
+                                                           );
 
-                    state = .Start;
-                    start_index = i + 1;
-                },
-                else => {
-                    state = .Specifier;
-                    specifier_start = i;
-                },
-            },
-            .CloseBrace => switch (c) {
-                '}' => {
-                    state = .Start;
-                    start_index = i;
-                },
-                else => @compileError("Single '}' encountered in format string"),
-            },
-            .Specifier => switch (c) {
-                ':' => {
-                    specifier_end = i;
-                    state = if (comptime peekIsAlign(fmt[i..])) State.FormatFillAndAlign else State.FormatWidth;
-                },
-                '}' => {
-                    const arg_to_print = comptime arg_state.nextArg(maybe_pos_arg);
+                                                           state = .Start;
+                                                           start_index = i + 1;
+                                          },
+                                          else => {
+                                                           state = .Specifier;
+                                                           specifier_start = i;
+                                          },
+                                      },
+                                      .CloseBrace => switch (c) {
+                                          '}' => {
+                                                           state = .Start;
+                                                           start_index = i;
+                                          },
+                                          else => @compileError("Single '}' encountered in format string"),
+                                      },
+                                      .Specifier => switch (c) {
+                                          ':' => {
+                                                           specifier_end = i;
+                                                           state = if (comptime peekIsAlign(fmt[i..])) State.FormatFillAndAlign else State.FormatWidth;
+                                          },
+                                          '}' => {
+                                                           const arg_to_print = comptime arg_state.nextArg(maybe_pos_arg);
 
-                    try formatType(
-                        args[arg_to_print],
-                        fmt[specifier_start..i],
-                        options,
-                        writer,
-                        default_max_depth,
-                    );
-                    state = .Start;
-                    start_index = i + 1;
-                },
-                else => {},
-            },
-            // Only entered if the format string contains a fill/align segment.
-            .FormatFillAndAlign => switch (c) {
-                '<' => {
-                    options.alignment = Alignment.Left;
-                    state = .FormatWidth;
-                },
-                '^' => {
-                    options.alignment = Alignment.Center;
-                    state = .FormatWidth;
-                },
-                '>' => {
-                    options.alignment = Alignment.Right;
-                    state = .FormatWidth;
-                },
-                else => {
-                    options.fill = c;
-                },
-            },
-            .FormatWidth => switch (c) {
-                '0'...'9' => {
-                    if (options.width == null) {
-                        options.width = 0;
-                    }
+                                                           try formatType(
+                                                                            args[arg_to_print],
+                                                                            fmt[specifier_start..i],
+                                                                            options,
+                                                                            writer,
+                                                                            default_max_depth,
+                                                           );
+                                                           state = .Start;
+                                                           start_index = i + 1;
+                                          },
+                                          else => {},
+                                      },
+                                      // Only entered if the format string contains a fill/align segment.
+                                      .FormatFillAndAlign => switch (c) {
+                                          '<' => {
+                                                           options.alignment = Alignment.Left;
+                                                           state = .FormatWidth;
+                                          },
+                                          '^' => {
+                                                           options.alignment = Alignment.Center;
+                                                           state = .FormatWidth;
+                                          },
+                                          '>' => {
+                                                           options.alignment = Alignment.Right;
+                                                           state = .FormatWidth;
+                                          },
+                                          else => {
+                                                           options.fill = c;
+                                          },
+                                      },
+                                      .FormatWidth => switch (c) {
+                                          '0'...'9' => {
+                                                           if (options.width == null) {
+                                                                            options.width = 0;
+                                                           }
 
-                    options.width.? *= 10;
-                    options.width.? += c - '0';
-                },
-                '.' => {
-                    state = .FormatPrecision;
-                },
-                '}' => {
-                    const arg_to_print = comptime arg_state.nextArg(maybe_pos_arg);
+                                                           options.width.? *= 10;
+                                                           options.width.? += c - '0';
+                                          },
+                                          '.' => {
+                                                           state = .FormatPrecision;
+                                          },
+                                          '}' => {
+                                                           const arg_to_print = comptime arg_state.nextArg(maybe_pos_arg);
 
-                    try formatType(
-                        args[arg_to_print],
-                        fmt[specifier_start..specifier_end],
-                        options,
-                        writer,
-                        default_max_depth,
-                    );
-                    state = .Start;
-                    start_index = i + 1;
-                },
-                else => {
-                    @compileError("Unexpected character in width value: " ++ [_]u8{c});
-                },
-            },
-            .FormatPrecision => switch (c) {
-                '0'...'9' => {
-                    if (options.precision == null) {
-                        options.precision = 0;
-                    }
+                                                           try formatType(
+                                                                            args[arg_to_print],
+                                                                            fmt[specifier_start..specifier_end],
+                                                                            options,
+                                                                            writer,
+                                                                            default_max_depth,
+                                                           );
+                                                           state = .Start;
+                                                           start_index = i + 1;
+                                          },
+                                          else => {
+                                                           @compileError("Unexpected character in width value: " ++ [_]u8{c});
+                                          },
+                                      },
+                                      .FormatPrecision => switch (c) {
+                                          '0'...'9' => {
+                                                           if (options.precision == null) {
+                                                                            options.precision = 0;
+                                                           }
 
-                    options.precision.? *= 10;
-                    options.precision.? += c - '0';
-                },
-                '}' => {
-                    const arg_to_print = comptime arg_state.nextArg(maybe_pos_arg);
+                                                           options.precision.? *= 10;
+                                                           options.precision.? += c - '0';
+                                          },
+                                          '}' => {
+                                                           const arg_to_print = comptime arg_state.nextArg(maybe_pos_arg);
 
-                    try formatType(
-                        args[arg_to_print],
-                        fmt[specifier_start..specifier_end],
-                        options,
-                        writer,
-                        default_max_depth,
-                    );
-                    state = .Start;
-                    start_index = i + 1;
-                },
-                else => {
-                    @compileError("Unexpected character in precision value: " ++ [_]u8{c});
-                },
-            },
-        }
+                                                           try formatType(
+                                                                            args[arg_to_print],
+                                                                            fmt[specifier_start..specifier_end],
+                                                                            options,
+                                                                            writer,
+                                                                            default_max_depth,
+                                                           );
+                                                           state = .Start;
+                                                           start_index = i + 1;
+                                          },
+                                          else => {
+                                                           @compileError("Unexpected character in precision value: " ++ [_]u8{c});
+                                          },
+                                      },
+                     }
     }
     comptime {
-        if (comptime arg_state.hasUnusedArgs()) {
-            @compileError("Unused arguments");
-        }
-        if (state != State.Start) {
-            @compileError("Incomplete format string: " ++ fmt);
-        }
+                     if (comptime arg_state.hasUnusedArgs()) {
+                                      @compileError("Unused arguments");
+                     }
+                     if (state != State.Start) {
+                                      @compileError("Incomplete format string: " ++ fmt);
+                     }
     }
     if (start_index < fmt.len) {
-        try writer.writeAll(fmt[start_index..]);
+                     try writer.writeAll(fmt[start_index..]);
     }
 }
 
@@ -331,175 +331,175 @@ pub fn formatType(
     max_depth: usize,
 ) @TypeOf(writer).Error!void {
     if (comptime std.mem.eql(u8, fmt, "*")) {
-        try writer.writeAll(@typeName(std.meta.Child(@TypeOf(value))));
-        try writer.writeAll("@");
-        try formatInt(@ptrToInt(value), 16, false, FormatOptions{}, writer);
-        return;
+                     try writer.writeAll(@typeName(std.meta.Child(@TypeOf(value))));
+                     try writer.writeAll("@");
+                     try formatInt(@ptrToInt(value), 16, false, FormatOptions{}, writer);
+                     return;
     }
 
     const T = @TypeOf(value);
     if (comptime std.meta.trait.hasFn("format")(T)) {
-        return try value.format(fmt, options, writer);
+                     return try value.format(fmt, options, writer);
     }
 
     switch (@typeInfo(T)) {
-        .ComptimeInt, .Int, .ComptimeFloat, .Float => {
-            return formatValue(value, fmt, options, writer);
-        },
-        .Void => {
-            return formatBuf("void", options, writer);
-        },
-        .Bool => {
-            return formatBuf(if (value) "true" else "false", options, writer);
-        },
-        .Optional => {
-            if (value) |payload| {
-                return formatType(payload, fmt, options, writer, max_depth);
-            } else {
-                return formatBuf("null", options, writer);
-            }
-        },
-        .ErrorUnion => {
-            if (value) |payload| {
-                return formatType(payload, fmt, options, writer, max_depth);
-            } else |err| {
-                return formatType(err, fmt, options, writer, max_depth);
-            }
-        },
-        .ErrorSet => {
-            try writer.writeAll("error.");
-            return writer.writeAll(@errorName(value));
-        },
-        .Enum => |enumInfo| {
-            try writer.writeAll(@typeName(T));
-            if (enumInfo.is_exhaustive) {
-                try writer.writeAll(".");
-                try writer.writeAll(@tagName(value));
-                return;
-            }
+                     .ComptimeInt, .Int, .ComptimeFloat, .Float => {
+                                      return formatValue(value, fmt, options, writer);
+                     },
+                     .Void => {
+                                      return formatBuf("void", options, writer);
+                     },
+                     .Bool => {
+                                      return formatBuf(if (value) "true" else "false", options, writer);
+                     },
+                     .Optional => {
+                                      if (value) |payload| {
+                                          return formatType(payload, fmt, options, writer, max_depth);
+                                      } else {
+                                          return formatBuf("null", options, writer);
+                                      }
+                     },
+                     .ErrorUnion => {
+                                      if (value) |payload| {
+                                          return formatType(payload, fmt, options, writer, max_depth);
+                                      } else |err| {
+                                          return formatType(err, fmt, options, writer, max_depth);
+                                      }
+                     },
+                     .ErrorSet => {
+                                      try writer.writeAll("error.");
+                                      return writer.writeAll(@errorName(value));
+                     },
+                     .Enum => |enumInfo| {
+                                      try writer.writeAll(@typeName(T));
+                                      if (enumInfo.is_exhaustive) {
+                                          try writer.writeAll(".");
+                                          try writer.writeAll(@tagName(value));
+                                          return;
+                                      }
 
-            // Use @tagName only if value is one of known fields
-            @setEvalBranchQuota(3 * enumInfo.fields.len);
-            inline for (enumInfo.fields) |enumField| {
-                if (@enumToInt(value) == enumField.value) {
-                    try writer.writeAll(".");
-                    try writer.writeAll(@tagName(value));
-                    return;
-                }
-            }
+                                      // Use @tagName only if value is one of known fields
+                                      @setEvalBranchQuota(3 * enumInfo.fields.len);
+                                      inline for (enumInfo.fields) |enumField| {
+                                          if (@enumToInt(value) == enumField.value) {
+                                                           try writer.writeAll(".");
+                                                           try writer.writeAll(@tagName(value));
+                                                           return;
+                                          }
+                                      }
 
-            try writer.writeAll("(");
-            try formatType(@enumToInt(value), fmt, options, writer, max_depth);
-            try writer.writeAll(")");
-        },
-        .Union => {
-            try writer.writeAll(@typeName(T));
-            if (max_depth == 0) {
-                return writer.writeAll("{ ... }");
-            }
-            const info = @typeInfo(T).Union;
-            if (info.tag_type) |UnionTagType| {
-                try writer.writeAll("{ .");
-                try writer.writeAll(@tagName(@as(UnionTagType, value)));
-                try writer.writeAll(" = ");
-                inline for (info.fields) |u_field| {
-                    if (value == @field(UnionTagType, u_field.name)) {
-                        try formatType(@field(value, u_field.name), fmt, options, writer, max_depth - 1);
-                    }
-                }
-                try writer.writeAll(" }");
-            } else {
-                try format(writer, "@{x}", .{@ptrToInt(&value)});
-            }
-        },
-        .Struct => |StructT| {
-            try writer.writeAll(@typeName(T));
-            if (max_depth == 0) {
-                return writer.writeAll("{ ... }");
-            }
-            try writer.writeAll("{");
-            inline for (StructT.fields) |f, i| {
-                if (i == 0) {
-                    try writer.writeAll(" .");
-                } else {
-                    try writer.writeAll(", .");
-                }
-                try writer.writeAll(f.name);
-                try writer.writeAll(" = ");
-                try formatType(@field(value, f.name), fmt, options, writer, max_depth - 1);
-            }
-            try writer.writeAll(" }");
-        },
-        .Pointer => |ptr_info| switch (ptr_info.size) {
-            .One => switch (@typeInfo(ptr_info.child)) {
-                .Array => |info| {
-                    if (info.child == u8) {
-                        return formatText(value, fmt, options, writer);
-                    }
-                    return format(writer, "{}@{x}", .{ @typeName(@typeInfo(T).Pointer.child), @ptrToInt(value) });
-                },
-                .Enum, .Union, .Struct => {
-                    return formatType(value.*, fmt, options, writer, max_depth);
-                },
-                else => return format(writer, "{}@{x}", .{ @typeName(@typeInfo(T).Pointer.child), @ptrToInt(value) }),
-            },
-            .Many, .C => {
-                if (ptr_info.sentinel) |sentinel| {
-                    return formatType(mem.span(value), fmt, options, writer, max_depth);
-                }
-                if (ptr_info.child == u8) {
-                    if (fmt.len > 0 and fmt[0] == 's') {
-                        return formatText(mem.span(value), fmt, options, writer);
-                    }
-                }
-                return format(writer, "{}@{x}", .{ @typeName(@typeInfo(T).Pointer.child), @ptrToInt(value) });
-            },
-            .Slice => {
-                if (fmt.len > 0 and ((fmt[0] == 'x') or (fmt[0] == 'X'))) {
-                    return formatText(value, fmt, options, writer);
-                }
-                if (ptr_info.child == u8) {
-                    return formatText(value, fmt, options, writer);
-                }
-                return format(writer, "{}@{x}", .{ @typeName(ptr_info.child), @ptrToInt(value.ptr) });
-            },
-        },
-        .Array => |info| {
-            const Slice = @Type(builtin.TypeInfo{
-                .Pointer = .{
-                    .size = .Slice,
-                    .is_const = true,
-                    .is_volatile = false,
-                    .is_allowzero = false,
-                    .alignment = @alignOf(info.child),
-                    .child = info.child,
-                    .sentinel = null,
-                },
-            });
-            return formatType(@as(Slice, &value), fmt, options, writer, max_depth);
-        },
-        .Vector => {
-            const len = @typeInfo(T).Vector.len;
-            try writer.writeAll("{ ");
-            var i: usize = 0;
-            while (i < len) : (i += 1) {
-                try formatValue(value[i], fmt, options, writer);
-                if (i < len - 1) {
-                    try writer.writeAll(", ");
-                }
-            }
-            try writer.writeAll(" }");
-        },
-        .Fn => {
-            return format(writer, "{}@{x}", .{ @typeName(T), @ptrToInt(value) });
-        },
-        .Type => return writer.writeAll(@typeName(T)),
-        .EnumLiteral => {
-            const buffer = [_]u8{'.'} ++ @tagName(value);
-            return formatType(buffer, fmt, options, writer, max_depth);
-        },
-        .Null => return formatBuf("null", options, writer),
-        else => @compileError("Unable to format type '" ++ @typeName(T) ++ "'"),
+                                      try writer.writeAll("(");
+                                      try formatType(@enumToInt(value), fmt, options, writer, max_depth);
+                                      try writer.writeAll(")");
+                     },
+                     .Union => {
+                                      try writer.writeAll(@typeName(T));
+                                      if (max_depth == 0) {
+                                          return writer.writeAll("{ ... }");
+                                      }
+                                      const info = @typeInfo(T).Union;
+                                      if (info.tag_type) |UnionTagType| {
+                                          try writer.writeAll("{ .");
+                                          try writer.writeAll(@tagName(@as(UnionTagType, value)));
+                                          try writer.writeAll(" = ");
+                                          inline for (info.fields) |u_field| {
+                                                           if (value == @field(UnionTagType, u_field.name)) {
+                                                                            try formatType(@field(value, u_field.name), fmt, options, writer, max_depth - 1);
+                                                           }
+                                          }
+                                          try writer.writeAll(" }");
+                                      } else {
+                                          try format(writer, "@{x}", .{@ptrToInt(&value)});
+                                      }
+                     },
+                     .Struct => |StructT| {
+                                      try writer.writeAll(@typeName(T));
+                                      if (max_depth == 0) {
+                                          return writer.writeAll("{ ... }");
+                                      }
+                                      try writer.writeAll("{");
+                                      inline for (StructT.fields) |f, i| {
+                                          if (i == 0) {
+                                                           try writer.writeAll(" .");
+                                          } else {
+                                                           try writer.writeAll(", .");
+                                          }
+                                          try writer.writeAll(f.name);
+                                          try writer.writeAll(" = ");
+                                          try formatType(@field(value, f.name), fmt, options, writer, max_depth - 1);
+                                      }
+                                      try writer.writeAll(" }");
+                     },
+                     .Pointer => |ptr_info| switch (ptr_info.size) {
+                                      .One => switch (@typeInfo(ptr_info.child)) {
+                                          .Array => |info| {
+                                                           if (info.child == u8) {
+                                                                            return formatText(value, fmt, options, writer);
+                                                           }
+                                                           return format(writer, "{}@{x}", .{ @typeName(@typeInfo(T).Pointer.child), @ptrToInt(value) });
+                                          },
+                                          .Enum, .Union, .Struct => {
+                                                           return formatType(value.*, fmt, options, writer, max_depth);
+                                          },
+                                          else => return format(writer, "{}@{x}", .{ @typeName(@typeInfo(T).Pointer.child), @ptrToInt(value) }),
+                                      },
+                                      .Many, .C => {
+                                          if (ptr_info.sentinel) |sentinel| {
+                                                           return formatType(mem.span(value), fmt, options, writer, max_depth);
+                                          }
+                                          if (ptr_info.child == u8) {
+                                                           if (fmt.len > 0 and fmt[0] == 's') {
+                                                                            return formatText(mem.span(value), fmt, options, writer);
+                                                           }
+                                          }
+                                          return format(writer, "{}@{x}", .{ @typeName(@typeInfo(T).Pointer.child), @ptrToInt(value) });
+                                      },
+                                      .Slice => {
+                                          if (fmt.len > 0 and ((fmt[0] == 'x') or (fmt[0] == 'X'))) {
+                                                           return formatText(value, fmt, options, writer);
+                                          }
+                                          if (ptr_info.child == u8) {
+                                                           return formatText(value, fmt, options, writer);
+                                          }
+                                          return format(writer, "{}@{x}", .{ @typeName(ptr_info.child), @ptrToInt(value.ptr) });
+                                      },
+                     },
+                     .Array => |info| {
+                                      const Slice = @Type(builtin.TypeInfo{
+                                          .Pointer = .{
+                                                           .size = .Slice,
+                                                           .is_const = true,
+                                                           .is_volatile = false,
+                                                           .is_allowzero = false,
+                                                           .alignment = @alignOf(info.child),
+                                                           .child = info.child,
+                                                           .sentinel = null,
+                                          },
+                                      });
+                                      return formatType(@as(Slice, &value), fmt, options, writer, max_depth);
+                     },
+                     .Vector => {
+                                      const len = @typeInfo(T).Vector.len;
+                                      try writer.writeAll("{ ");
+                                      var i: usize = 0;
+                                      while (i < len) : (i += 1) {
+                                          try formatValue(value[i], fmt, options, writer);
+                                          if (i < len - 1) {
+                                                           try writer.writeAll(", ");
+                                          }
+                                      }
+                                      try writer.writeAll(" }");
+                     },
+                     .Fn => {
+                                      return format(writer, "{}@{x}", .{ @typeName(T), @ptrToInt(value) });
+                     },
+                     .Type => return writer.writeAll(@typeName(T)),
+                     .EnumLiteral => {
+                                      const buffer = [_]u8{'.'} ++ @tagName(value);
+                                      return formatType(buffer, fmt, options, writer, max_depth);
+                     },
+                     .Null => return formatBuf("null", options, writer),
+                     else => @compileError("Unable to format type '" ++ @typeName(T) ++ "'"),
     }
 }
 
@@ -510,17 +510,17 @@ fn formatValue(
     writer: anytype,
 ) !void {
     if (comptime std.mem.eql(u8, fmt, "B")) {
-        return formatBytes(value, options, 1000, writer);
+                     return formatBytes(value, options, 1000, writer);
     } else if (comptime std.mem.eql(u8, fmt, "Bi")) {
-        return formatBytes(value, options, 1024, writer);
+                     return formatBytes(value, options, 1024, writer);
     }
 
     const T = @TypeOf(value);
     switch (@typeInfo(T)) {
-        .Float, .ComptimeFloat => return formatFloatValue(value, fmt, options, writer),
-        .Int, .ComptimeInt => return formatIntValue(value, fmt, options, writer),
-        .Bool => return formatBuf(if (value) "true" else "false", options, writer),
-        else => comptime unreachable,
+                     .Float, .ComptimeFloat => return formatFloatValue(value, fmt, options, writer),
+                     .Int, .ComptimeInt => return formatIntValue(value, fmt, options, writer),
+                     .Bool => return formatBuf(if (value) "true" else "false", options, writer),
+                     else => comptime unreachable,
     }
 }
 
@@ -534,41 +534,41 @@ pub fn formatIntValue(
     comptime var uppercase = false;
 
     const int_value = if (@TypeOf(value) == comptime_int) blk: {
-        const Int = math.IntFittingRange(value, value);
-        break :blk @as(Int, value);
+                     const Int = math.IntFittingRange(value, value);
+                     break :blk @as(Int, value);
     } else
-        value;
+                     value;
 
     if (fmt.len == 0 or comptime std.mem.eql(u8, fmt, "d")) {
-        radix = 10;
-        uppercase = false;
+                     radix = 10;
+                     uppercase = false;
     } else if (comptime std.mem.eql(u8, fmt, "c")) {
-        if (@typeInfo(@TypeOf(int_value)).Int.bits <= 8) {
-            return formatAsciiChar(@as(u8, int_value), options, writer);
-        } else {
-            @compileError("Cannot print integer that is larger than 8 bits as a ascii");
-        }
+                     if (@typeInfo(@TypeOf(int_value)).Int.bits <= 8) {
+                                      return formatAsciiChar(@as(u8, int_value), options, writer);
+                     } else {
+                                      @compileError("Cannot print integer that is larger than 8 bits as a ascii");
+                     }
     } else if (comptime std.mem.eql(u8, fmt, "Z")) {
-        if (@typeInfo(@TypeOf(int_value)).Int.bits <= 8) {
-            const c: u8 = int_value;
-            return formatZigEscapes(@as(*const [1]u8, &c), options, writer);
-        } else {
-            @compileError("Cannot escape character with more than 8 bits");
-        }
+                     if (@typeInfo(@TypeOf(int_value)).Int.bits <= 8) {
+                                      const c: u8 = int_value;
+                                      return formatZigEscapes(@as(*const [1]u8, &c), options, writer);
+                     } else {
+                                      @compileError("Cannot escape character with more than 8 bits");
+                     }
     } else if (comptime std.mem.eql(u8, fmt, "b")) {
-        radix = 2;
-        uppercase = false;
+                     radix = 2;
+                     uppercase = false;
     } else if (comptime std.mem.eql(u8, fmt, "x")) {
-        radix = 16;
-        uppercase = false;
+                     radix = 16;
+                     uppercase = false;
     } else if (comptime std.mem.eql(u8, fmt, "X")) {
-        radix = 16;
-        uppercase = true;
+                     radix = 16;
+                     uppercase = true;
     } else if (comptime std.mem.eql(u8, fmt, "o")) {
-        radix = 8;
-        uppercase = false;
+                     radix = 8;
+                     uppercase = false;
     } else {
-        @compileError("Unknown format string: '" ++ fmt ++ "'");
+                     @compileError("Unknown format string: '" ++ fmt ++ "'");
     }
 
     return formatInt(int_value, radix, uppercase, options, writer);
@@ -585,17 +585,17 @@ fn formatFloatValue(
     var buf_stream = std.io.fixedBufferStream(&buf);
 
     if (fmt.len == 0 or comptime std.mem.eql(u8, fmt, "e")) {
-        formatFloatScientific(value, options, buf_stream.writer()) catch |err| switch (err) {
-            error.NoSpaceLeft => unreachable,
-            else => |e| return e,
-        };
+                     formatFloatScientific(value, options, buf_stream.writer()) catch |err| switch (err) {
+                                      error.NoSpaceLeft => unreachable,
+                                      else => |e| return e,
+                     };
     } else if (comptime std.mem.eql(u8, fmt, "d")) {
-        formatFloatDecimal(value, options, buf_stream.writer()) catch |err| switch (err) {
-            error.NoSpaceLeft => unreachable,
-            else => |e| return e,
-        };
+                     formatFloatDecimal(value, options, buf_stream.writer()) catch |err| switch (err) {
+                                      error.NoSpaceLeft => unreachable,
+                                      else => |e| return e,
+                     };
     } else {
-        @compileError("Unknown format string: '" ++ fmt ++ "'");
+                     @compileError("Unknown format string: '" ++ fmt ++ "'");
     }
 
     return formatBuf(buf_stream.getWritten(), options, writer);
@@ -608,28 +608,28 @@ pub fn formatText(
     writer: anytype,
 ) !void {
     if (comptime std.mem.eql(u8, fmt, "s") or (fmt.len == 0)) {
-        return formatBuf(bytes, options, writer);
+                     return formatBuf(bytes, options, writer);
     } else if (comptime (std.mem.eql(u8, fmt, "x") or std.mem.eql(u8, fmt, "X"))) {
-        for (bytes) |c| {
-            try formatInt(c, 16, fmt[0] == 'X', FormatOptions{ .width = 2, .fill = '0' }, writer);
-        }
-        return;
+                     for (bytes) |c| {
+                                      try formatInt(c, 16, fmt[0] == 'X', FormatOptions{ .width = 2, .fill = '0' }, writer);
+                     }
+                     return;
     } else if (comptime (std.mem.eql(u8, fmt, "e") or std.mem.eql(u8, fmt, "E"))) {
-        for (bytes) |c| {
-            if (std.ascii.isPrint(c)) {
-                try writer.writeByte(c);
-            } else {
-                try writer.writeAll("\\x");
-                try formatInt(c, 16, fmt[0] == 'E', FormatOptions{ .width = 2, .fill = '0' }, writer);
-            }
-        }
-        return;
+                     for (bytes) |c| {
+                                      if (std.ascii.isPrint(c)) {
+                                          try writer.writeByte(c);
+                                      } else {
+                                          try writer.writeAll("\\x");
+                                          try formatInt(c, 16, fmt[0] == 'E', FormatOptions{ .width = 2, .fill = '0' }, writer);
+                                      }
+                     }
+                     return;
     } else if (comptime std.mem.eql(u8, fmt, "z")) {
-        return formatZigIdentifier(bytes, options, writer);
+                     return formatZigIdentifier(bytes, options, writer);
     } else if (comptime std.mem.eql(u8, fmt, "Z")) {
-        return formatZigEscapes(bytes, options, writer);
+                     return formatZigEscapes(bytes, options, writer);
     } else {
-        @compileError("Unknown format string: '" ++ fmt ++ "'");
+                     @compileError("Unknown format string: '" ++ fmt ++ "'");
     }
 }
 
@@ -650,21 +650,21 @@ pub fn formatBuf(
     const padding = if (width > buf.len) (width - buf.len) else 0;
 
     switch (options.alignment) {
-        .Left => {
-            try writer.writeAll(buf);
-            try writer.writeByteNTimes(options.fill, padding);
-        },
-        .Center => {
-            const left_padding = padding / 2;
-            const right_padding = (padding + 1) / 2;
-            try writer.writeByteNTimes(options.fill, left_padding);
-            try writer.writeAll(buf);
-            try writer.writeByteNTimes(options.fill, right_padding);
-        },
-        .Right => {
-            try writer.writeByteNTimes(options.fill, padding);
-            try writer.writeAll(buf);
-        },
+                     .Left => {
+                                      try writer.writeAll(buf);
+                                      try writer.writeByteNTimes(options.fill, padding);
+                     },
+                     .Center => {
+                                      const left_padding = padding / 2;
+                                      const right_padding = (padding + 1) / 2;
+                                      try writer.writeByteNTimes(options.fill, left_padding);
+                                      try writer.writeAll(buf);
+                                      try writer.writeByteNTimes(options.fill, right_padding);
+                     },
+                     .Right => {
+                                      try writer.writeByteNTimes(options.fill, padding);
+                                      try writer.writeAll(buf);
+                     },
     }
 }
 
@@ -675,7 +675,7 @@ pub fn formatZigIdentifier(
     writer: anytype,
 ) !void {
     if (isValidZigIdentifier(bytes)) {
-        return writer.writeAll(bytes);
+                     return writer.writeAll(bytes);
     }
     try writer.writeAll("@\"");
     try formatZigEscapes(bytes, options, writer);
@@ -684,11 +684,11 @@ pub fn formatZigIdentifier(
 
 fn isValidZigIdentifier(bytes: []const u8) bool {
     for (bytes) |c, i| {
-        switch (c) {
-            '_', 'a'...'z', 'A'...'Z' => {},
-            '0'...'9' => if (i == 0) return false,
-            else => return false,
-        }
+                     switch (c) {
+                                      '_', 'a'...'z', 'A'...'Z' => {},
+                                      '0'...'9' => if (i == 0) return false,
+                                      else => return false,
+                     }
     }
     return std.zig.Token.getKeyword(bytes) == null;
 }
@@ -699,18 +699,18 @@ pub fn formatZigEscapes(
     writer: anytype,
 ) !void {
     for (bytes) |byte| switch (byte) {
-        '\n' => try writer.writeAll("\\n"),
-        '\r' => try writer.writeAll("\\r"),
-        '\t' => try writer.writeAll("\\t"),
-        '\\' => try writer.writeAll("\\\\"),
-        '"' => try writer.writeAll("\\\""),
-        '\'' => try writer.writeAll("\\'"),
-        ' ', '!', '#'...'&', '('...'[', ']'...'~' => try writer.writeByte(byte),
-        // Use hex escapes for rest any unprintable characters.
-        else => {
-            try writer.writeAll("\\x");
-            try formatInt(byte, 16, false, .{ .width = 2, .fill = '0' }, writer);
-        },
+                     '\n' => try writer.writeAll("\\n"),
+                     '\r' => try writer.writeAll("\\r"),
+                     '\t' => try writer.writeAll("\\t"),
+                     '\\' => try writer.writeAll("\\\\"),
+                     '"' => try writer.writeAll("\\\""),
+                     '\'' => try writer.writeAll("\\'"),
+                     ' ', '!', '#'...'&', '('...'[', ']'...'~' => try writer.writeByte(byte),
+                     // Use hex escapes for rest any unprintable characters.
+                     else => {
+                                      try writer.writeAll("\\x");
+                                      try formatInt(byte, 16, false, .{ .width = 2, .fill = '0' }, writer);
+                     },
     };
 }
 
@@ -726,85 +726,85 @@ pub fn formatFloatScientific(
 
     // Errol doesn't handle these special cases.
     if (math.signbit(x)) {
-        try writer.writeAll("-");
-        x = -x;
+                     try writer.writeAll("-");
+                     x = -x;
     }
 
     if (math.isNan(x)) {
-        return writer.writeAll("nan");
+                     return writer.writeAll("nan");
     }
     if (math.isPositiveInf(x)) {
-        return writer.writeAll("inf");
+                     return writer.writeAll("inf");
     }
     if (x == 0.0) {
-        try writer.writeAll("0");
+                     try writer.writeAll("0");
 
-        if (options.precision) |precision| {
-            if (precision != 0) {
-                try writer.writeAll(".");
-                var i: usize = 0;
-                while (i < precision) : (i += 1) {
-                    try writer.writeAll("0");
-                }
-            }
-        } else {
-            try writer.writeAll(".0");
-        }
+                     if (options.precision) |precision| {
+                                      if (precision != 0) {
+                                          try writer.writeAll(".");
+                                          var i: usize = 0;
+                                          while (i < precision) : (i += 1) {
+                                                           try writer.writeAll("0");
+                                          }
+                                      }
+                     } else {
+                                      try writer.writeAll(".0");
+                     }
 
-        try writer.writeAll("e+00");
-        return;
+                     try writer.writeAll("e+00");
+                     return;
     }
 
     var buffer: [32]u8 = undefined;
     var float_decimal = errol.errol3(x, buffer[0..]);
 
     if (options.precision) |precision| {
-        errol.roundToPrecision(&float_decimal, precision, errol.RoundMode.Scientific);
+                     errol.roundToPrecision(&float_decimal, precision, errol.RoundMode.Scientific);
 
-        try writer.writeAll(float_decimal.digits[0..1]);
+                     try writer.writeAll(float_decimal.digits[0..1]);
 
-        // {e0} case prints no `.`
-        if (precision != 0) {
-            try writer.writeAll(".");
+                     // {e0} case prints no `.`
+                     if (precision != 0) {
+                                      try writer.writeAll(".");
 
-            var printed: usize = 0;
-            if (float_decimal.digits.len > 1) {
-                const num_digits = math.min(float_decimal.digits.len, precision + 1);
-                try writer.writeAll(float_decimal.digits[1..num_digits]);
-                printed += num_digits - 1;
-            }
+                                      var printed: usize = 0;
+                                      if (float_decimal.digits.len > 1) {
+                                          const num_digits = math.min(float_decimal.digits.len, precision + 1);
+                                          try writer.writeAll(float_decimal.digits[1..num_digits]);
+                                          printed += num_digits - 1;
+                                      }
 
-            while (printed < precision) : (printed += 1) {
-                try writer.writeAll("0");
-            }
-        }
+                                      while (printed < precision) : (printed += 1) {
+                                          try writer.writeAll("0");
+                                      }
+                     }
     } else {
-        try writer.writeAll(float_decimal.digits[0..1]);
-        try writer.writeAll(".");
-        if (float_decimal.digits.len > 1) {
-            const num_digits = if (@TypeOf(value) == f32) math.min(@as(usize, 9), float_decimal.digits.len) else float_decimal.digits.len;
+                     try writer.writeAll(float_decimal.digits[0..1]);
+                     try writer.writeAll(".");
+                     if (float_decimal.digits.len > 1) {
+                                      const num_digits = if (@TypeOf(value) == f32) math.min(@as(usize, 9), float_decimal.digits.len) else float_decimal.digits.len;
 
-            try writer.writeAll(float_decimal.digits[1..num_digits]);
-        } else {
-            try writer.writeAll("0");
-        }
+                                      try writer.writeAll(float_decimal.digits[1..num_digits]);
+                     } else {
+                                      try writer.writeAll("0");
+                     }
     }
 
     try writer.writeAll("e");
     const exp = float_decimal.exp - 1;
 
     if (exp >= 0) {
-        try writer.writeAll("+");
-        if (exp > -10 and exp < 10) {
-            try writer.writeAll("0");
-        }
-        try formatInt(exp, 10, false, FormatOptions{ .width = 0 }, writer);
+                     try writer.writeAll("+");
+                     if (exp > -10 and exp < 10) {
+                                      try writer.writeAll("0");
+                     }
+                     try formatInt(exp, 10, false, FormatOptions{ .width = 0 }, writer);
     } else {
-        try writer.writeAll("-");
-        if (exp > -10 and exp < 10) {
-            try writer.writeAll("0");
-        }
-        try formatInt(-exp, 10, false, FormatOptions{ .width = 0 }, writer);
+                     try writer.writeAll("-");
+                     if (exp > -10 and exp < 10) {
+                                      try writer.writeAll("0");
+                     }
+                     try formatInt(-exp, 10, false, FormatOptions{ .width = 0 }, writer);
     }
 }
 
@@ -819,32 +819,32 @@ pub fn formatFloatDecimal(
 
     // Errol doesn't handle these special cases.
     if (math.signbit(x)) {
-        try writer.writeAll("-");
-        x = -x;
+                     try writer.writeAll("-");
+                     x = -x;
     }
 
     if (math.isNan(x)) {
-        return writer.writeAll("nan");
+                     return writer.writeAll("nan");
     }
     if (math.isPositiveInf(x)) {
-        return writer.writeAll("inf");
+                     return writer.writeAll("inf");
     }
     if (x == 0.0) {
-        try writer.writeAll("0");
+                     try writer.writeAll("0");
 
-        if (options.precision) |precision| {
-            if (precision != 0) {
-                try writer.writeAll(".");
-                var i: usize = 0;
-                while (i < precision) : (i += 1) {
-                    try writer.writeAll("0");
-                }
-            } else {
-                try writer.writeAll(".0");
-            }
-        }
+                     if (options.precision) |precision| {
+                                      if (precision != 0) {
+                                          try writer.writeAll(".");
+                                          var i: usize = 0;
+                                          while (i < precision) : (i += 1) {
+                                                           try writer.writeAll("0");
+                                          }
+                                      } else {
+                                          try writer.writeAll(".0");
+                                      }
+                     }
 
-        return;
+                     return;
     }
 
     // non-special case, use errol3
@@ -852,102 +852,102 @@ pub fn formatFloatDecimal(
     var float_decimal = errol.errol3(x, buffer[0..]);
 
     if (options.precision) |precision| {
-        errol.roundToPrecision(&float_decimal, precision, errol.RoundMode.Decimal);
+                     errol.roundToPrecision(&float_decimal, precision, errol.RoundMode.Decimal);
 
-        // exp < 0 means the leading is always 0 as errol result is normalized.
-        var num_digits_whole = if (float_decimal.exp > 0) @intCast(usize, float_decimal.exp) else 0;
+                     // exp < 0 means the leading is always 0 as errol result is normalized.
+                     var num_digits_whole = if (float_decimal.exp > 0) @intCast(usize, float_decimal.exp) else 0;
 
-        // the actual slice into the buffer, we may need to zero-pad between num_digits_whole and this.
-        var num_digits_whole_no_pad = math.min(num_digits_whole, float_decimal.digits.len);
+                     // the actual slice into the buffer, we may need to zero-pad between num_digits_whole and this.
+                     var num_digits_whole_no_pad = math.min(num_digits_whole, float_decimal.digits.len);
 
-        if (num_digits_whole > 0) {
-            // We may have to zero pad, for instance 1e4 requires zero padding.
-            try writer.writeAll(float_decimal.digits[0..num_digits_whole_no_pad]);
+                     if (num_digits_whole > 0) {
+                                      // We may have to zero pad, for instance 1e4 requires zero padding.
+                                      try writer.writeAll(float_decimal.digits[0..num_digits_whole_no_pad]);
 
-            var i = num_digits_whole_no_pad;
-            while (i < num_digits_whole) : (i += 1) {
-                try writer.writeAll("0");
-            }
-        } else {
-            try writer.writeAll("0");
-        }
+                                      var i = num_digits_whole_no_pad;
+                                      while (i < num_digits_whole) : (i += 1) {
+                                          try writer.writeAll("0");
+                                      }
+                     } else {
+                                      try writer.writeAll("0");
+                     }
 
-        // {.0} special case doesn't want a trailing '.'
-        if (precision == 0) {
-            return;
-        }
+                     // {.0} special case doesn't want a trailing '.'
+                     if (precision == 0) {
+                                      return;
+                     }
 
-        try writer.writeAll(".");
+                     try writer.writeAll(".");
 
-        // Keep track of fractional count printed for case where we pre-pad then post-pad with 0's.
-        var printed: usize = 0;
+                     // Keep track of fractional count printed for case where we pre-pad then post-pad with 0's.
+                     var printed: usize = 0;
 
-        // Zero-fill until we reach significant digits or run out of precision.
-        if (float_decimal.exp <= 0) {
-            const zero_digit_count = @intCast(usize, -float_decimal.exp);
-            const zeros_to_print = math.min(zero_digit_count, precision);
+                     // Zero-fill until we reach significant digits or run out of precision.
+                     if (float_decimal.exp <= 0) {
+                                      const zero_digit_count = @intCast(usize, -float_decimal.exp);
+                                      const zeros_to_print = math.min(zero_digit_count, precision);
 
-            var i: usize = 0;
-            while (i < zeros_to_print) : (i += 1) {
-                try writer.writeAll("0");
-                printed += 1;
-            }
+                                      var i: usize = 0;
+                                      while (i < zeros_to_print) : (i += 1) {
+                                          try writer.writeAll("0");
+                                          printed += 1;
+                                      }
 
-            if (printed >= precision) {
-                return;
-            }
-        }
+                                      if (printed >= precision) {
+                                          return;
+                                      }
+                     }
 
-        // Remaining fractional portion, zero-padding if insufficient.
-        assert(precision >= printed);
-        if (num_digits_whole_no_pad + precision - printed < float_decimal.digits.len) {
-            try writer.writeAll(float_decimal.digits[num_digits_whole_no_pad .. num_digits_whole_no_pad + precision - printed]);
-            return;
-        } else {
-            try writer.writeAll(float_decimal.digits[num_digits_whole_no_pad..]);
-            printed += float_decimal.digits.len - num_digits_whole_no_pad;
+                     // Remaining fractional portion, zero-padding if insufficient.
+                     assert(precision >= printed);
+                     if (num_digits_whole_no_pad + precision - printed < float_decimal.digits.len) {
+                                      try writer.writeAll(float_decimal.digits[num_digits_whole_no_pad .. num_digits_whole_no_pad + precision - printed]);
+                                      return;
+                     } else {
+                                      try writer.writeAll(float_decimal.digits[num_digits_whole_no_pad..]);
+                                      printed += float_decimal.digits.len - num_digits_whole_no_pad;
 
-            while (printed < precision) : (printed += 1) {
-                try writer.writeAll("0");
-            }
-        }
+                                      while (printed < precision) : (printed += 1) {
+                                          try writer.writeAll("0");
+                                      }
+                     }
     } else {
-        // exp < 0 means the leading is always 0 as errol result is normalized.
-        var num_digits_whole = if (float_decimal.exp > 0) @intCast(usize, float_decimal.exp) else 0;
+                     // exp < 0 means the leading is always 0 as errol result is normalized.
+                     var num_digits_whole = if (float_decimal.exp > 0) @intCast(usize, float_decimal.exp) else 0;
 
-        // the actual slice into the buffer, we may need to zero-pad between num_digits_whole and this.
-        var num_digits_whole_no_pad = math.min(num_digits_whole, float_decimal.digits.len);
+                     // the actual slice into the buffer, we may need to zero-pad between num_digits_whole and this.
+                     var num_digits_whole_no_pad = math.min(num_digits_whole, float_decimal.digits.len);
 
-        if (num_digits_whole > 0) {
-            // We may have to zero pad, for instance 1e4 requires zero padding.
-            try writer.writeAll(float_decimal.digits[0..num_digits_whole_no_pad]);
+                     if (num_digits_whole > 0) {
+                                      // We may have to zero pad, for instance 1e4 requires zero padding.
+                                      try writer.writeAll(float_decimal.digits[0..num_digits_whole_no_pad]);
 
-            var i = num_digits_whole_no_pad;
-            while (i < num_digits_whole) : (i += 1) {
-                try writer.writeAll("0");
-            }
-        } else {
-            try writer.writeAll("0");
-        }
+                                      var i = num_digits_whole_no_pad;
+                                      while (i < num_digits_whole) : (i += 1) {
+                                          try writer.writeAll("0");
+                                      }
+                     } else {
+                                      try writer.writeAll("0");
+                     }
 
-        // Omit `.` if no fractional portion
-        if (float_decimal.exp >= 0 and num_digits_whole_no_pad == float_decimal.digits.len) {
-            return;
-        }
+                     // Omit `.` if no fractional portion
+                     if (float_decimal.exp >= 0 and num_digits_whole_no_pad == float_decimal.digits.len) {
+                                      return;
+                     }
 
-        try writer.writeAll(".");
+                     try writer.writeAll(".");
 
-        // Zero-fill until we reach significant digits or run out of precision.
-        if (float_decimal.exp < 0) {
-            const zero_digit_count = @intCast(usize, -float_decimal.exp);
+                     // Zero-fill until we reach significant digits or run out of precision.
+                     if (float_decimal.exp < 0) {
+                                      const zero_digit_count = @intCast(usize, -float_decimal.exp);
 
-            var i: usize = 0;
-            while (i < zero_digit_count) : (i += 1) {
-                try writer.writeAll("0");
-            }
-        }
+                                      var i: usize = 0;
+                                      while (i < zero_digit_count) : (i += 1) {
+                                          try writer.writeAll("0");
+                                      }
+                     }
 
-        try writer.writeAll(float_decimal.digits[num_digits_whole_no_pad..]);
+                     try writer.writeAll(float_decimal.digits[num_digits_whole_no_pad..]);
     }
 }
 
@@ -958,7 +958,7 @@ pub fn formatBytes(
     writer: anytype,
 ) !void {
     if (value == 0) {
-        return writer.writeAll("0B");
+                     return writer.writeAll("0B");
     }
 
     const is_float = comptime std.meta.trait.is(.Float)(@TypeOf(value));
@@ -967,27 +967,27 @@ pub fn formatBytes(
 
     const log2 = if (is_float) @floatToInt(usize, math.log2(value)) else math.log2(value);
     const magnitude = switch (radix) {
-        1000 => math.min(log2 / comptime math.log2(1000), mags_si.len - 1),
-        1024 => math.min(log2 / 10, mags_iec.len - 1),
-        else => unreachable,
+                     1000 => math.min(log2 / comptime math.log2(1000), mags_si.len - 1),
+                     1024 => math.min(log2 / 10, mags_iec.len - 1),
+                     else => unreachable,
     };
     const new_value = lossyCast(f64, value) / math.pow(f64, lossyCast(f64, radix), lossyCast(f64, magnitude));
     const suffix = switch (radix) {
-        1000 => mags_si[magnitude],
-        1024 => mags_iec[magnitude],
-        else => unreachable,
+                     1000 => mags_si[magnitude],
+                     1024 => mags_iec[magnitude],
+                     else => unreachable,
     };
 
     try formatFloatDecimal(new_value, options, writer);
 
     if (suffix == ' ') {
-        return writer.writeAll("B");
+                     return writer.writeAll("B");
     }
 
     const buf = switch (radix) {
-        1000 => &[_]u8{ suffix, 'B' },
-        1024 => &[_]u8{ suffix, 'i', 'B' },
-        else => unreachable,
+                     1000 => &[_]u8{ suffix, 'B' },
+                     1024 => &[_]u8{ suffix, 'i', 'B' },
+                     else => unreachable,
     };
     return writer.writeAll(buf);
 }
@@ -1002,10 +1002,10 @@ pub fn formatInt(
     assert(base >= 2);
 
     const int_value = if (@TypeOf(value) == comptime_int) blk: {
-        const Int = math.IntFittingRange(value, value);
-        break :blk @as(Int, value);
+                     const Int = math.IntFittingRange(value, value);
+                     break :blk @as(Int, value);
     } else
-        value;
+                     value;
 
     const value_info = @typeInfo(@TypeOf(int_value)).Int;
 
@@ -1021,25 +1021,25 @@ pub fn formatInt(
     var a: MinInt = abs_value;
     var index: usize = buf.len;
     while (true) {
-        const digit = a % base;
-        index -= 1;
-        buf[index] = digitToChar(@intCast(u8, digit), uppercase);
-        a /= base;
-        if (a == 0) break;
+                     const digit = a % base;
+                     index -= 1;
+                     buf[index] = digitToChar(@intCast(u8, digit), uppercase);
+                     a /= base;
+                     if (a == 0) break;
     }
 
     if (value_info.is_signed) {
-        if (value < 0) {
-            // Negative integer
-            index -= 1;
-            buf[index] = '-';
-        } else if (options.width == null or options.width.? == 0) {
-            // Positive integer, omit the plus sign
-        } else {
-            // Positive integer
-            index -= 1;
-            buf[index] = '+';
-        }
+                     if (value < 0) {
+                                      // Negative integer
+                                      index -= 1;
+                                      buf[index] = '-';
+                     } else if (options.width == null or options.width.? == 0) {
+                                      // Positive integer, omit the plus sign
+                     } else {
+                                      // Positive integer
+                                      index -= 1;
+                                      buf[index] = '+';
+                     }
     }
 
     return formatBuf(buf[index..], options, writer);
@@ -1128,40 +1128,40 @@ fn parseWithSign(
     var buf_radix = radix;
     var buf_start = buf;
     if (radix == 0) {
-        // Treat is as a decimal number by default.
-        buf_radix = 10;
-        // Detect the radix by looking at buf prefix.
-        if (buf.len > 2 and buf[0] == '0') {
-            switch (buf[1]) {
-                'b' => {
-                    buf_radix = 2;
-                    buf_start = buf[2..];
-                },
-                'o' => {
-                    buf_radix = 8;
-                    buf_start = buf[2..];
-                },
-                'x' => {
-                    buf_radix = 16;
-                    buf_start = buf[2..];
-                },
-                else => {},
-            }
-        }
+                     // Treat is as a decimal number by default.
+                     buf_radix = 10;
+                     // Detect the radix by looking at buf prefix.
+                     if (buf.len > 2 and buf[0] == '0') {
+                                      switch (buf[1]) {
+                                          'b' => {
+                                                           buf_radix = 2;
+                                                           buf_start = buf[2..];
+                                          },
+                                          'o' => {
+                                                           buf_radix = 8;
+                                                           buf_start = buf[2..];
+                                          },
+                                          'x' => {
+                                                           buf_radix = 16;
+                                                           buf_start = buf[2..];
+                                          },
+                                          else => {},
+                                      }
+                     }
     }
 
     const add = switch (sign) {
-        .Pos => math.add,
-        .Neg => math.sub,
+                     .Pos => math.add,
+                     .Neg => math.sub,
     };
 
     var x: T = 0;
 
     for (buf_start) |c| {
-        const digit = try charToDigit(c, buf_radix);
+                     const digit = try charToDigit(c, buf_radix);
 
-        if (x != 0) x = try math.mul(T, x, try math.cast(T, buf_radix));
-        x = try add(T, x, try math.cast(T, digit));
+                     if (x != 0) x = try math.mul(T, x, try math.cast(T, buf_radix));
+                     x = try add(T, x, try math.cast(T, digit));
     }
 
     return x;
@@ -1223,10 +1223,10 @@ test "parseFloat" {
 
 pub fn charToDigit(c: u8, radix: u8) (error{InvalidCharacter}!u8) {
     const value = switch (c) {
-        '0'...'9' => c - '0',
-        'A'...'Z' => c - 'A' + 10,
-        'a'...'z' => c - 'a' + 10,
-        else => return error.InvalidCharacter,
+                     '0'...'9' => c - '0',
+                     'A'...'Z' => c - 'A' + 10,
+                     'a'...'z' => c - 'a' + 10,
+                     else => return error.InvalidCharacter,
     };
 
     if (value >= radix) return error.InvalidCharacter;
@@ -1236,9 +1236,9 @@ pub fn charToDigit(c: u8, radix: u8) (error{InvalidCharacter}!u8) {
 
 pub fn digitToChar(digit: u8, uppercase: bool) u8 {
     return switch (digit) {
-        0...9 => digit + '0',
-        10...35 => digit + ((if (uppercase) @as(u8, 'A') else @as(u8, 'a')) - 10),
-        else => unreachable,
+                     0...9 => digit + '0',
+                     10...35 => digit + ((if (uppercase) @as(u8, 'A') else @as(u8, 'a')) - 10),
+                     else => unreachable,
     };
 }
 
@@ -1268,12 +1268,12 @@ pub const AllocPrintError = error{OutOfMemory};
 
 pub fn allocPrint(allocator: *mem.Allocator, comptime fmt: []const u8, args: anytype) AllocPrintError![]u8 {
     const size = math.cast(usize, count(fmt, args)) catch |err| switch (err) {
-        // Output too long. Can't possibly allocate enough memory to display it.
-        error.Overflow => return error.OutOfMemory,
+                     // Output too long. Can't possibly allocate enough memory to display it.
+                     error.Overflow => return error.OutOfMemory,
     };
     const buf = try allocator.alloc(u8, size);
     return bufPrint(buf, fmt, args) catch |err| switch (err) {
-        error.NoSpaceLeft => unreachable, // we just counted the size above
+                     error.NoSpaceLeft => unreachable, // we just counted the size above
     };
 }
 
@@ -1312,10 +1312,10 @@ pub fn bufPrintIntToSlice(buf: []u8, value: anytype, base: u8, uppercase: bool, 
 
 pub fn comptimePrint(comptime fmt: []const u8, args: anytype) *const [count(fmt, args):0]u8 {
     comptime {
-        var buf: [count(fmt, args):0]u8 = undefined;
-        _ = bufPrint(&buf, fmt, args) catch unreachable;
-        buf[buf.len] = 0;
-        return &buf;
+                     var buf: [count(fmt, args):0]u8 = undefined;
+                     _ = bufPrint(&buf, fmt, args) catch unreachable;
+                     buf[buf.len] = 0;
+                     return &buf;
     }
 }
 
@@ -1327,63 +1327,63 @@ test "comptimePrint" {
 
 test "parse u64 digit too big" {
     _ = parseUnsigned(u64, "123a", 10) catch |err| {
-        if (err == error.InvalidCharacter) return;
-        unreachable;
+                     if (err == error.InvalidCharacter) return;
+                     unreachable;
     };
     unreachable;
 }
 
 test "parse unsigned comptime" {
     comptime {
-        std.testing.expect((try parseUnsigned(usize, "2", 10)) == 2);
+                     std.testing.expect((try parseUnsigned(usize, "2", 10)) == 2);
     }
 }
 
 test "optional" {
     {
-        const value: ?i32 = 1234;
-        try testFmt("optional: 1234\n", "optional: {}\n", .{value});
+                     const value: ?i32 = 1234;
+                     try testFmt("optional: 1234\n", "optional: {}\n", .{value});
     }
     {
-        const value: ?i32 = null;
-        try testFmt("optional: null\n", "optional: {}\n", .{value});
+                     const value: ?i32 = null;
+                     try testFmt("optional: null\n", "optional: {}\n", .{value});
     }
     {
-        const value = @intToPtr(?*i32, 0xf000d000);
-        try testFmt("optional: *i32@f000d000\n", "optional: {*}\n", .{value});
+                     const value = @intToPtr(?*i32, 0xf000d000);
+                     try testFmt("optional: *i32@f000d000\n", "optional: {*}\n", .{value});
     }
 }
 
 test "error" {
     {
-        const value: anyerror!i32 = 1234;
-        try testFmt("error union: 1234\n", "error union: {}\n", .{value});
+                     const value: anyerror!i32 = 1234;
+                     try testFmt("error union: 1234\n", "error union: {}\n", .{value});
     }
     {
-        const value: anyerror!i32 = error.InvalidChar;
-        try testFmt("error union: error.InvalidChar\n", "error union: {}\n", .{value});
+                     const value: anyerror!i32 = error.InvalidChar;
+                     try testFmt("error union: error.InvalidChar\n", "error union: {}\n", .{value});
     }
 }
 
 test "int.small" {
     {
-        const value: u3 = 0b101;
-        try testFmt("u3: 5\n", "u3: {}\n", .{value});
+                     const value: u3 = 0b101;
+                     try testFmt("u3: 5\n", "u3: {}\n", .{value});
     }
 }
 
 test "int.specifier" {
     {
-        const value: u8 = 'a';
-        try testFmt("u8: a\n", "u8: {c}\n", .{value});
+                     const value: u8 = 'a';
+                     try testFmt("u8: a\n", "u8: {c}\n", .{value});
     }
     {
-        const value: u8 = 0b1100;
-        try testFmt("u8: 0b1100\n", "u8: 0b{b}\n", .{value});
+                     const value: u8 = 0b1100;
+                     try testFmt("u8: 0b1100\n", "u8: 0b{b}\n", .{value});
     }
     {
-        const value: u16 = 0o1234;
-        try testFmt("u16: 0o1234\n", "u16: 0o{o}\n", .{value});
+                     const value: u16 = 0o1234;
+                     try testFmt("u16: 0o1234\n", "u16: 0o{o}\n", .{value});
     }
 }
 
@@ -1404,49 +1404,49 @@ test "int.padded" {
 
 test "buffer" {
     {
-        var buf1: [32]u8 = undefined;
-        var fbs = std.io.fixedBufferStream(&buf1);
-        try formatType(1234, "", FormatOptions{}, fbs.writer(), default_max_depth);
-        std.testing.expect(mem.eql(u8, fbs.getWritten(), "1234"));
+                     var buf1: [32]u8 = undefined;
+                     var fbs = std.io.fixedBufferStream(&buf1);
+                     try formatType(1234, "", FormatOptions{}, fbs.writer(), default_max_depth);
+                     std.testing.expect(mem.eql(u8, fbs.getWritten(), "1234"));
 
-        fbs.reset();
-        try formatType('a', "c", FormatOptions{}, fbs.writer(), default_max_depth);
-        std.testing.expect(mem.eql(u8, fbs.getWritten(), "a"));
+                     fbs.reset();
+                     try formatType('a', "c", FormatOptions{}, fbs.writer(), default_max_depth);
+                     std.testing.expect(mem.eql(u8, fbs.getWritten(), "a"));
 
-        fbs.reset();
-        try formatType(0b1100, "b", FormatOptions{}, fbs.writer(), default_max_depth);
-        std.testing.expect(mem.eql(u8, fbs.getWritten(), "1100"));
+                     fbs.reset();
+                     try formatType(0b1100, "b", FormatOptions{}, fbs.writer(), default_max_depth);
+                     std.testing.expect(mem.eql(u8, fbs.getWritten(), "1100"));
     }
 }
 
 test "array" {
     {
-        const value: [3]u8 = "abc".*;
-        try testFmt("array: abc\n", "array: {}\n", .{value});
-        try testFmt("array: abc\n", "array: {}\n", .{&value});
+                     const value: [3]u8 = "abc".*;
+                     try testFmt("array: abc\n", "array: {}\n", .{value});
+                     try testFmt("array: abc\n", "array: {}\n", .{&value});
 
-        var buf: [100]u8 = undefined;
-        try testFmt(
-            try bufPrint(buf[0..], "array: [3]u8@{x}\n", .{@ptrToInt(&value)}),
-            "array: {*}\n",
-            .{&value},
-        );
+                     var buf: [100]u8 = undefined;
+                     try testFmt(
+                                      try bufPrint(buf[0..], "array: [3]u8@{x}\n", .{@ptrToInt(&value)}),
+                                      "array: {*}\n",
+                                      .{&value},
+                     );
     }
 }
 
 test "slice" {
     {
-        const value: []const u8 = "abc";
-        try testFmt("slice: abc\n", "slice: {}\n", .{value});
+                     const value: []const u8 = "abc";
+                     try testFmt("slice: abc\n", "slice: {}\n", .{value});
     }
     {
-        var runtime_zero: usize = 0;
-        const value = @intToPtr([*]align(1) const []const u8, 0xdeadbeef)[runtime_zero..runtime_zero];
-        try testFmt("slice: []const u8@deadbeef\n", "slice: {}\n", .{value});
+                     var runtime_zero: usize = 0;
+                     const value = @intToPtr([*]align(1) const []const u8, 0xdeadbeef)[runtime_zero..runtime_zero];
+                     try testFmt("slice: []const u8@deadbeef\n", "slice: {}\n", .{value});
     }
     {
-        const null_term_slice: [:0]const u8 = "\x00hello\x00";
-        try testFmt("buf: \x00hello\x00\n", "buf: {s}\n", .{null_term_slice});
+                     const null_term_slice: [:0]const u8 = "\x00hello\x00";
+                     try testFmt("buf: \x00hello\x00\n", "buf: {s}\n", .{null_term_slice});
     }
 
     try testFmt("buf:  Test\n", "buf: {s:5}\n", .{"Test"});
@@ -1466,36 +1466,36 @@ test "escape invalid identifiers" {
     try testFmt("@\"11\\x0f23\"", "{z}", .{"11\x0F23"});
     try testFmt("\\x0f", "{Z}", .{0x0f});
     try testFmt(
-        \\" \\ hi \x07 \x11 \" derp \'"
+                     \\" \\ hi \x07 \x11 \" derp \'"
     , "\"{Z}\"", .{" \\ hi \x07 \x11 \" derp '"});
 }
 
 test "pointer" {
     {
-        const value = @intToPtr(*align(1) i32, 0xdeadbeef);
-        try testFmt("pointer: i32@deadbeef\n", "pointer: {}\n", .{value});
-        try testFmt("pointer: i32@deadbeef\n", "pointer: {*}\n", .{value});
+                     const value = @intToPtr(*align(1) i32, 0xdeadbeef);
+                     try testFmt("pointer: i32@deadbeef\n", "pointer: {}\n", .{value});
+                     try testFmt("pointer: i32@deadbeef\n", "pointer: {*}\n", .{value});
     }
     {
-        const value = @intToPtr(fn () void, 0xdeadbeef);
-        try testFmt("pointer: fn() void@deadbeef\n", "pointer: {}\n", .{value});
+                     const value = @intToPtr(fn () void, 0xdeadbeef);
+                     try testFmt("pointer: fn() void@deadbeef\n", "pointer: {}\n", .{value});
     }
     {
-        const value = @intToPtr(fn () void, 0xdeadbeef);
-        try testFmt("pointer: fn() void@deadbeef\n", "pointer: {}\n", .{value});
+                     const value = @intToPtr(fn () void, 0xdeadbeef);
+                     try testFmt("pointer: fn() void@deadbeef\n", "pointer: {}\n", .{value});
     }
 }
 
 test "cstr" {
     try testFmt(
-        "cstr: Test C\n",
-        "cstr: {s}\n",
-        .{@ptrCast([*c]const u8, "Test C")},
+                     "cstr: Test C\n",
+                     "cstr: {s}\n",
+                     .{@ptrCast([*c]const u8, "Test C")},
     );
     try testFmt(
-        "cstr:     Test C\n",
-        "cstr: {s:10}\n",
-        .{@ptrCast([*c]const u8, "Test C")},
+                     "cstr:     Test C\n",
+                     "cstr: {s:10}\n",
+                     .{@ptrCast([*c]const u8, "Test C")},
     );
 }
 
@@ -1506,27 +1506,27 @@ test "filesize" {
 
 test "struct" {
     {
-        const Struct = struct {
-            field: u8,
-        };
-        const value = Struct{ .field = 42 };
-        try testFmt("struct: Struct{ .field = 42 }\n", "struct: {}\n", .{value});
-        try testFmt("struct: Struct{ .field = 42 }\n", "struct: {}\n", .{&value});
+                     const Struct = struct {
+                                      field: u8,
+                     };
+                     const value = Struct{ .field = 42 };
+                     try testFmt("struct: Struct{ .field = 42 }\n", "struct: {}\n", .{value});
+                     try testFmt("struct: Struct{ .field = 42 }\n", "struct: {}\n", .{&value});
     }
     {
-        const Struct = struct {
-            a: u0,
-            b: u1,
-        };
-        const value = Struct{ .a = 0, .b = 1 };
-        try testFmt("struct: Struct{ .a = 0, .b = 1 }\n", "struct: {}\n", .{value});
+                     const Struct = struct {
+                                      a: u0,
+                                      b: u1,
+                     };
+                     const value = Struct{ .a = 0, .b = 1 };
+                     try testFmt("struct: Struct{ .a = 0, .b = 1 }\n", "struct: {}\n", .{value});
     }
 }
 
 test "enum" {
     const Enum = enum {
-        One,
-        Two,
+                     One,
+                     Two,
     };
     const value = Enum.Two;
     try testFmt("enum: Enum.Two\n", "enum: {}\n", .{value});
@@ -1540,9 +1540,9 @@ test "enum" {
 
 test "non-exhaustive enum" {
     const Enum = enum(u16) {
-        One = 0x000f,
-        Two = 0xbeef,
-        _,
+                     One = 0x000f,
+                     Two = 0xbeef,
+                     _,
     };
     try testFmt("enum: Enum.One\n", "enum: {}\n", .{Enum.One});
     try testFmt("enum: Enum.Two\n", "enum: {}\n", .{Enum.Two});
@@ -1574,7 +1574,7 @@ test "float.special" {
     // negative nan is not defined by IEE 754,
     // and ARM thus normalizes it to positive nan
     if (builtin.arch != builtin.Arch.arm) {
-        try testFmt("f64: -nan", "f64: {}", .{-math.nan_f64});
+                     try testFmt("f64: -nan", "f64: {}", .{-math.nan_f64});
     }
     try testFmt("f64: inf", "f64: {}", .{math.inf_f64});
     try testFmt("f64: -inf", "f64: {}", .{-math.inf_f64});
@@ -1620,30 +1620,30 @@ test "float.libc.sanity" {
 
 test "custom" {
     const Vec2 = struct {
-        const SelfType = @This();
-        x: f32,
-        y: f32,
+                     const SelfType = @This();
+                     x: f32,
+                     y: f32,
 
-        pub fn format(
-            self: SelfType,
-            comptime fmt: []const u8,
-            options: FormatOptions,
-            writer: anytype,
-        ) !void {
-            if (fmt.len == 0 or comptime std.mem.eql(u8, fmt, "p")) {
-                return std.fmt.format(writer, "({d:.3},{d:.3})", .{ self.x, self.y });
-            } else if (comptime std.mem.eql(u8, fmt, "d")) {
-                return std.fmt.format(writer, "{d:.3}x{d:.3}", .{ self.x, self.y });
-            } else {
-                @compileError("Unknown format character: '" ++ fmt ++ "'");
-            }
-        }
+                     pub fn format(
+                                      self: SelfType,
+                                      comptime fmt: []const u8,
+                                      options: FormatOptions,
+                                      writer: anytype,
+                     ) !void {
+                                      if (fmt.len == 0 or comptime std.mem.eql(u8, fmt, "p")) {
+                                          return std.fmt.format(writer, "({d:.3},{d:.3})", .{ self.x, self.y });
+                                      } else if (comptime std.mem.eql(u8, fmt, "d")) {
+                                          return std.fmt.format(writer, "{d:.3}x{d:.3}", .{ self.x, self.y });
+                                      } else {
+                                          @compileError("Unknown format character: '" ++ fmt ++ "'");
+                                      }
+                     }
     };
 
     var buf1: [32]u8 = undefined;
     var value = Vec2{
-        .x = 10.2,
-        .y = 2.22,
+                     .x = 10.2,
+                     .y = 2.22,
     };
     try testFmt("point: (10.200,2.220)\n", "point: {}\n", .{&value});
     try testFmt("dim: 10.200x2.220\n", "dim: {d}\n", .{&value});
@@ -1655,13 +1655,13 @@ test "custom" {
 
 test "struct" {
     const S = struct {
-        a: u32,
-        b: anyerror,
+                     a: u32,
+                     b: anyerror,
     };
 
     const inst = S{
-        .a = 456,
-        .b = error.Unused,
+                     .a = 456,
+                     .b = error.Unused,
     };
 
     try testFmt("S{ .a = 456, .b = error.Unused }", "{}", .{inst});
@@ -1669,18 +1669,18 @@ test "struct" {
 
 test "union" {
     const TU = union(enum) {
-        float: f32,
-        int: u32,
+                     float: f32,
+                     int: u32,
     };
 
     const UU = union {
-        float: f32,
-        int: u32,
+                     float: f32,
+                     int: u32,
     };
 
     const EU = extern union {
-        float: f32,
-        int: u32,
+                     float: f32,
+                     int: u32,
     };
 
     const tu_inst = TU{ .int = 123 };
@@ -1699,9 +1699,9 @@ test "union" {
 
 test "enum" {
     const E = enum {
-        One,
-        Two,
-        Three,
+                     One,
+                     Two,
+                     Three,
     };
 
     const inst = E.Two;
@@ -1711,12 +1711,12 @@ test "enum" {
 
 test "struct.self-referential" {
     const S = struct {
-        const SelfType = @This();
-        a: ?*SelfType,
+                     const SelfType = @This();
+                     a: ?*SelfType,
     };
 
     var inst = S{
-        .a = null,
+                     .a = null,
     };
     inst.a = &inst;
 
@@ -1725,11 +1725,11 @@ test "struct.self-referential" {
 
 test "struct.zero-size" {
     const A = struct {
-        fn foo() void {}
+                     fn foo() void {}
     };
     const B = struct {
-        a: A,
-        c: i32,
+                     a: A,
+                     c: i32,
     };
 
     const a = A{};
@@ -1767,13 +1767,13 @@ pub const isWhiteSpace = @compileError("deprecated; use std.ascii.isSpace instea
 
 pub fn hexToBytes(out: []u8, input: []const u8) !void {
     if (out.len * 2 < input.len)
-        return error.InvalidLength;
+                     return error.InvalidLength;
 
     var in_i: usize = 0;
     while (in_i != input.len) : (in_i += 2) {
-        const hi = try charToDigit(input[in_i], 16);
-        const lo = try charToDigit(input[in_i + 1], 16);
-        out[in_i / 2] = (hi << 4) | lo;
+                     const hi = try charToDigit(input[in_i], 16);
+                     const lo = try charToDigit(input[in_i + 1], 16);
+                     out[in_i / 2] = (hi << 4) | lo;
     }
 }
 
@@ -1807,47 +1807,47 @@ test "formatFloatValue with comptime_float" {
 
 test "formatType max_depth" {
     const Vec2 = struct {
-        const SelfType = @This();
-        x: f32,
-        y: f32,
+                     const SelfType = @This();
+                     x: f32,
+                     y: f32,
 
-        pub fn format(
-            self: SelfType,
-            comptime fmt: []const u8,
-            options: FormatOptions,
-            writer: anytype,
-        ) !void {
-            if (fmt.len == 0) {
-                return std.fmt.format(writer, "({d:.3},{d:.3})", .{ self.x, self.y });
-            } else {
-                @compileError("Unknown format string: '" ++ fmt ++ "'");
-            }
-        }
+                     pub fn format(
+                                      self: SelfType,
+                                      comptime fmt: []const u8,
+                                      options: FormatOptions,
+                                      writer: anytype,
+                     ) !void {
+                                      if (fmt.len == 0) {
+                                          return std.fmt.format(writer, "({d:.3},{d:.3})", .{ self.x, self.y });
+                                      } else {
+                                          @compileError("Unknown format string: '" ++ fmt ++ "'");
+                                      }
+                     }
     };
     const E = enum {
-        One,
-        Two,
-        Three,
+                     One,
+                     Two,
+                     Three,
     };
     const TU = union(enum) {
-        const SelfType = @This();
-        float: f32,
-        int: u32,
-        ptr: ?*SelfType,
+                     const SelfType = @This();
+                     float: f32,
+                     int: u32,
+                     ptr: ?*SelfType,
     };
     const S = struct {
-        const SelfType = @This();
-        a: ?*SelfType,
-        tu: TU,
-        e: E,
-        vec: Vec2,
+                     const SelfType = @This();
+                     a: ?*SelfType,
+                     tu: TU,
+                     e: E,
+                     vec: Vec2,
     };
 
     var inst = S{
-        .a = null,
-        .tu = TU{ .ptr = null },
-        .e = E.Two,
-        .vec = Vec2{ .x = 10.2, .y = 2.22 },
+                     .a = null,
+                     .tu = TU{ .ptr = null },
+                     .e = E.Two,
+                     .vec = Vec2{ .x = 10.2, .y = 2.22 },
     };
     inst.a = &inst;
     inst.tu.ptr = &inst.tu;
@@ -1888,16 +1888,16 @@ test "positional/alignment/width/precision" {
 
 test "vector" {
     if (builtin.arch == .mipsel or builtin.arch == .mips) {
-        // https://github.com/ziglang/zig/issues/3317
-        return error.SkipZigTest;
+                     // https://github.com/ziglang/zig/issues/3317
+                     return error.SkipZigTest;
     }
     if (builtin.arch == .riscv64) {
-        // https://github.com/ziglang/zig/issues/4486
-        return error.SkipZigTest;
+                     // https://github.com/ziglang/zig/issues/4486
+                     return error.SkipZigTest;
     }
     if (builtin.arch == .wasm32) {
-        // https://github.com/ziglang/zig/issues/5339
-        return error.SkipZigTest;
+                     // https://github.com/ziglang/zig/issues/5339
+                     return error.SkipZigTest;
     }
 
     const vbool: std.meta.Vector(4, bool) = [_]bool{ true, false, true, false };
@@ -1919,15 +1919,15 @@ test "enum-literal" {
 
 test "padding" {
     try testFmt("Simple", "{}", .{"Simple"});
-    try testFmt("      true", "{:10}", .{true});
-    try testFmt("      true", "{:>10}", .{true});
+    try testFmt("                   true", "{:10}", .{true});
+    try testFmt("                   true", "{:>10}", .{true});
     try testFmt("======true", "{:=>10}", .{true});
     try testFmt("true======", "{:=<10}", .{true});
     try testFmt("   true   ", "{:^10}", .{true});
     try testFmt("===true===", "{:=^10}", .{true});
-    try testFmt("           Minimum width", "{:18} width", .{"Minimum"});
+    try testFmt("                        Minimum width", "{:18} width", .{"Minimum"});
     try testFmt("==================Filled", "{:=>24}", .{"Filled"});
-    try testFmt("        Centered        ", "{:^24}", .{"Centered"});
+    try testFmt("                     Centered                     ", "{:^24}", .{"Centered"});
     try testFmt("-", "{:-^1}", .{""});
 }
 

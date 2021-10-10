@@ -66,7 +66,7 @@ typedef float __m128 __attribute__ ((__vector_size__ (16), __may_alias__));
 
 /* Unaligned version of the same type.  */
 typedef float __m128_u __attribute__ ((__vector_size__ (16), __may_alias__,
-				       __aligned__ (1)));
+				                    __aligned__ (1)));
 
 /* Internal data types for implementing the intrinsics.  */
 typedef float __v4sf __attribute__ ((__vector_size__ (16)));
@@ -887,15 +887,15 @@ _mm_cvtss_si32 (__m128 __A)
   double dtmp;
   __asm__(
 #ifdef __LITTLE_ENDIAN__
-      "xxsldwi %x0,%x0,%x0,3;\n"
+                   "xxsldwi %x0,%x0,%x0,3;\n"
 #endif
-      "xscvspdp %x2,%x0;\n"
-      "fctiw  %2,%2;\n"
-      "mfvsrd  %1,%x2;\n"
-      : "+wa" (__A),
-        "=r" (res),
-        "=f" (dtmp)
-      : );
+                   "xscvspdp %x2,%x0;\n"
+                   "fctiw  %2,%2;\n"
+                   "mfvsrd  %1,%x2;\n"
+                   : "+wa" (__A),
+                     "=r" (res),
+                     "=f" (dtmp)
+                   : );
 #else
   res = __builtin_rint(__A[0]);
 #endif
@@ -920,15 +920,15 @@ _mm_cvtss_si64 (__m128 __A)
   double dtmp;
   __asm__(
 #ifdef __LITTLE_ENDIAN__
-      "xxsldwi %x0,%x0,%x0,3;\n"
+                   "xxsldwi %x0,%x0,%x0,3;\n"
 #endif
-      "xscvspdp %x2,%x0;\n"
-      "fctid  %2,%2;\n"
-      "mfvsrd  %1,%x2;\n"
-      : "+wa" (__A),
-        "=r" (res),
-        "=f" (dtmp)
-      : );
+                   "xscvspdp %x2,%x0;\n"
+                   "fctid  %2,%2;\n"
+                   "mfvsrd  %1,%x2;\n"
+                   : "+wa" (__A),
+                     "=r" (res),
+                     "=f" (dtmp)
+                   : );
 #else
   res = __builtin_llrint(__A[0]);
 #endif
@@ -1080,7 +1080,7 @@ _mm_cvtsi64x_ss (__m128 __A, long long __B)
 /* Convert the two 32-bit values in B to SPFP form and insert them
    as the two lower elements in A.  */
 extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
-_mm_cvtpi32_ps (__m128        __A, __m64        __B)
+_mm_cvtpi32_ps (__m128                     __A, __m64                     __B)
 {
   __vector signed int vm1;
   __vector float vf1;
@@ -1127,9 +1127,9 @@ _mm_cvtpu16_ps (__m64 __A)
   vs8 = (__vector unsigned short) (__vector unsigned long long) { __A, __A };
   vi4 = (__vector unsigned int) vec_mergel
 #ifdef __LITTLE_ENDIAN__
-                                           (vs8, zero);
+                                                                                                                                      (vs8, zero);
 #else
-                                           (zero, vs8);
+                                                                                                                                      (zero, vs8);
 #endif
   vf1 = (__vector float) vec_ctf (vi4, 0);
 
@@ -1173,7 +1173,7 @@ _mm_cvtpu8_ps (__m64  __A)
 #else
   vs8 = (__vector unsigned short) vec_mergel (zero, vc16);
   vi4 = (__vector unsigned int) vec_mergeh ((__vector unsigned short) zero,
-                                            vs8);
+                                                                                                                                       vs8);
 #endif
   vf1 = (__vector float) vec_ctf (vi4, 0);
 
@@ -1236,9 +1236,9 @@ _mm_shuffle_ps (__m128  __A, __m128  __B, int const __mask)
   static const unsigned int permute_selectors[4] =
     {
 #ifdef __LITTLE_ENDIAN__
-      0x03020100, 0x07060504, 0x0B0A0908, 0x0F0E0D0C
+                   0x03020100, 0x07060504, 0x0B0A0908, 0x0F0E0D0C
 #else
-      0x00010203, 0x04050607, 0x08090A0B, 0x0C0D0E0F
+                   0x00010203, 0x04050607, 0x08090A0B, 0x0C0D0E0F
 #endif
     };
   __vector unsigned int t;
@@ -1290,7 +1290,7 @@ extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artif
 _mm_movehl_ps (__m128 __A, __m128 __B)
 {
   return (__m128) vec_mergel ((__vector unsigned long long)__B,
-			      (__vector unsigned long long)__A);
+			                   (__vector unsigned long long)__A);
 }
 
 /* Moves the lower two values of B into the upper two values of A.  */
@@ -1298,7 +1298,7 @@ extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artif
 _mm_movelh_ps (__m128 __A, __m128 __B)
 {
   return (__m128) vec_mergeh ((__vector unsigned long long)__A,
-			      (__vector unsigned long long)__B);
+			                   (__vector unsigned long long)__B);
 }
 
 /* Sets the lower two SPFP values with 64-bits of data loaded from P;
@@ -1335,7 +1335,7 @@ _mm_movemask_ps (__m128  __A)
 #ifdef __LITTLE_ENDIAN__
 	0x00204060, 0x80808080, 0x80808080, 0x80808080
 #else
-      0x80808080, 0x80808080, 0x80808080, 0x00204060
+                   0x80808080, 0x80808080, 0x80808080, 0x00204060
 #endif
     };
 
@@ -1422,13 +1422,13 @@ _mm_max_pi16 (__m64 __A, __m64 __B)
   m2.as_m64 = __B;
 
   res.as_short[0] =
-      (m1.as_short[0] > m2.as_short[0]) ? m1.as_short[0] : m2.as_short[0];
+                   (m1.as_short[0] > m2.as_short[0]) ? m1.as_short[0] : m2.as_short[0];
   res.as_short[1] =
-      (m1.as_short[1] > m2.as_short[1]) ? m1.as_short[1] : m2.as_short[1];
+                   (m1.as_short[1] > m2.as_short[1]) ? m1.as_short[1] : m2.as_short[1];
   res.as_short[2] =
-      (m1.as_short[2] > m2.as_short[2]) ? m1.as_short[2] : m2.as_short[2];
+                   (m1.as_short[2] > m2.as_short[2]) ? m1.as_short[2] : m2.as_short[2];
   res.as_short[3] =
-      (m1.as_short[3] > m2.as_short[3]) ? m1.as_short[3] : m2.as_short[3];
+                   (m1.as_short[3] > m2.as_short[3]) ? m1.as_short[3] : m2.as_short[3];
 
   return (__m64) res.as_m64;
 #endif
@@ -1463,7 +1463,7 @@ _mm_max_pu8 (__m64 __A, __m64 __B)
 
   for (i = 0; i < 8; i++)
   res.as_char[i] =
-      ((unsigned char) m1.as_char[i] > (unsigned char) m2.as_char[i]) ?
+                   ((unsigned char) m1.as_char[i] > (unsigned char) m2.as_char[i]) ?
 	  m1.as_char[i] : m2.as_char[i];
 
   return (__m64) res.as_m64;
@@ -1496,13 +1496,13 @@ _mm_min_pi16 (__m64 __A, __m64 __B)
   m2.as_m64 = __B;
 
   res.as_short[0] =
-      (m1.as_short[0] < m2.as_short[0]) ? m1.as_short[0] : m2.as_short[0];
+                   (m1.as_short[0] < m2.as_short[0]) ? m1.as_short[0] : m2.as_short[0];
   res.as_short[1] =
-      (m1.as_short[1] < m2.as_short[1]) ? m1.as_short[1] : m2.as_short[1];
+                   (m1.as_short[1] < m2.as_short[1]) ? m1.as_short[1] : m2.as_short[1];
   res.as_short[2] =
-      (m1.as_short[2] < m2.as_short[2]) ? m1.as_short[2] : m2.as_short[2];
+                   (m1.as_short[2] < m2.as_short[2]) ? m1.as_short[2] : m2.as_short[2];
   res.as_short[3] =
-      (m1.as_short[3] < m2.as_short[3]) ? m1.as_short[3] : m2.as_short[3];
+                   (m1.as_short[3] < m2.as_short[3]) ? m1.as_short[3] : m2.as_short[3];
 
   return (__m64) res.as_m64;
 #endif
@@ -1537,7 +1537,7 @@ _mm_min_pu8 (__m64 __A, __m64 __B)
 
   for (i = 0; i < 8; i++)
   res.as_char[i] =
-      ((unsigned char) m1.as_char[i] < (unsigned char) m2.as_char[i]) ?
+                   ((unsigned char) m1.as_char[i] < (unsigned char) m2.as_char[i]) ?
 	  m1.as_char[i] : m2.as_char[i];
 
   return (__m64) res.as_m64;
@@ -1556,9 +1556,9 @@ _mm_movemask_pi8 (__m64 __A)
 {
   unsigned long long p =
 #ifdef __LITTLE_ENDIAN__
-                         0x0008101820283038UL; // permute control for sign bits
+                                                                             0x0008101820283038UL; // permute control for sign bits
 #else
-                         0x3830282018100800UL; // permute control for sign bits
+                                                                             0x3830282018100800UL; // permute control for sign bits
 #endif
   return __builtin_bpermd (p, __A);
 }
@@ -1579,11 +1579,11 @@ _mm_mulhi_pu16 (__m64 __A, __m64 __B)
   __vector unsigned int w0, w1;
   __vector unsigned char xform1 = {
 #ifdef __LITTLE_ENDIAN__
-      0x02, 0x03, 0x12, 0x13,  0x06, 0x07, 0x16, 0x17,
-      0x0A, 0x0B, 0x1A, 0x1B,  0x0E, 0x0F, 0x1E, 0x1F
+                   0x02, 0x03, 0x12, 0x13,  0x06, 0x07, 0x16, 0x17,
+                   0x0A, 0x0B, 0x1A, 0x1B,  0x0E, 0x0F, 0x1E, 0x1F
 #else
-      0x00, 0x01, 0x10, 0x11,  0x04, 0x05, 0x14, 0x15,
-      0x00, 0x01, 0x10, 0x11,  0x04, 0x05, 0x14, 0x15
+                   0x00, 0x01, 0x10, 0x11,  0x04, 0x05, 0x14, 0x15,
+                   0x00, 0x01, 0x10, 0x11,  0x04, 0x05, 0x14, 0x15
 #endif
     };
 
@@ -1615,9 +1615,9 @@ _mm_shuffle_pi16 (__m64 __A, int const __N)
   static const unsigned short permute_selectors[4] =
     {
 #ifdef __LITTLE_ENDIAN__
-	      0x0908, 0x0B0A, 0x0D0C, 0x0F0E
+	                   0x0908, 0x0B0A, 0x0D0C, 0x0F0E
 #else
-	      0x0607, 0x0405, 0x0203, 0x0001
+	                   0x0607, 0x0405, 0x0203, 0x0001
 #endif
     };
   __m64_union t;
@@ -1825,13 +1825,13 @@ do {									\
   __v4sf __t2 = vec_vmrglw (__r0, __r1);			\
   __v4sf __t3 = vec_vmrglw (__r2, __r3);			\
   (row0) = (__v4sf)vec_mergeh ((__vector long long)__t0, 	\
-			       (__vector long long)__t1);	\
+			                    (__vector long long)__t1);	\
   (row1) = (__v4sf)vec_mergel ((__vector long long)__t0,	\
-			       (__vector long long)__t1);	\
+			                    (__vector long long)__t1);	\
   (row2) = (__v4sf)vec_mergeh ((__vector long long)__t2,	\
-			       (__vector long long)__t3);	\
+			                    (__vector long long)__t3);	\
   (row3) = (__v4sf)vec_mergel ((__vector long long)__t2,	\
-			       (__vector long long)__t3);	\
+			                    (__vector long long)__t3);	\
 } while (0)
 
 /* For backward source compatibility.  */

@@ -62,44 +62,44 @@ fn mulXf3(comptime T: type, a: T, b: T) T {
 
     // Detect if a or b is zero, denormal, infinity, or NaN.
     if (aExponent -% 1 >= maxExponent -% 1 or bExponent -% 1 >= maxExponent -% 1) {
-        const aAbs: Z = @bitCast(Z, a) & absMask;
-        const bAbs: Z = @bitCast(Z, b) & absMask;
+                     const aAbs: Z = @bitCast(Z, a) & absMask;
+                     const bAbs: Z = @bitCast(Z, b) & absMask;
 
-        // NaN * anything = qNaN
-        if (aAbs > infRep) return @bitCast(T, @bitCast(Z, a) | quietBit);
-        // anything * NaN = qNaN
-        if (bAbs > infRep) return @bitCast(T, @bitCast(Z, b) | quietBit);
+                     // NaN * anything = qNaN
+                     if (aAbs > infRep) return @bitCast(T, @bitCast(Z, a) | quietBit);
+                     // anything * NaN = qNaN
+                     if (bAbs > infRep) return @bitCast(T, @bitCast(Z, b) | quietBit);
 
-        if (aAbs == infRep) {
-            // infinity * non-zero = +/- infinity
-            if (bAbs != 0) {
-                return @bitCast(T, aAbs | productSign);
-            } else {
-                // infinity * zero = NaN
-                return @bitCast(T, qnanRep);
-            }
-        }
+                     if (aAbs == infRep) {
+                                      // infinity * non-zero = +/- infinity
+                                      if (bAbs != 0) {
+                                          return @bitCast(T, aAbs | productSign);
+                                      } else {
+                                          // infinity * zero = NaN
+                                          return @bitCast(T, qnanRep);
+                                      }
+                     }
 
-        if (bAbs == infRep) {
-            //? non-zero * infinity = +/- infinity
-            if (aAbs != 0) {
-                return @bitCast(T, bAbs | productSign);
-            } else {
-                // zero * infinity = NaN
-                return @bitCast(T, qnanRep);
-            }
-        }
+                     if (bAbs == infRep) {
+                                      //? non-zero * infinity = +/- infinity
+                                      if (aAbs != 0) {
+                                          return @bitCast(T, bAbs | productSign);
+                                      } else {
+                                          // zero * infinity = NaN
+                                          return @bitCast(T, qnanRep);
+                                      }
+                     }
 
-        // zero * anything = +/- zero
-        if (aAbs == 0) return @bitCast(T, productSign);
-        // anything * zero = +/- zero
-        if (bAbs == 0) return @bitCast(T, productSign);
+                     // zero * anything = +/- zero
+                     if (aAbs == 0) return @bitCast(T, productSign);
+                     // anything * zero = +/- zero
+                     if (bAbs == 0) return @bitCast(T, productSign);
 
-        // one or both of a or b is denormal, the other (if applicable) is a
-        // normal number.  Renormalize one or both of a and b, and set scale to
-        // include the necessary exponent adjustment.
-        if (aAbs < implicitBit) scale +%= normalize(T, &aSignificand);
-        if (bAbs < implicitBit) scale +%= normalize(T, &bSignificand);
+                     // one or both of a or b is denormal, the other (if applicable) is a
+                     // normal number.  Renormalize one or both of a and b, and set scale to
+                     // include the necessary exponent adjustment.
+                     if (aAbs < implicitBit) scale +%= normalize(T, &aSignificand);
+                     if (bAbs < implicitBit) scale +%= normalize(T, &bSignificand);
     }
 
     // Or in the implicit significand bit.  (If we fell through from the
@@ -121,32 +121,32 @@ fn mulXf3(comptime T: type, a: T, b: T) T {
 
     // Normalize the significand, adjust exponent if needed.
     if ((productHi & implicitBit) != 0) {
-        productExponent +%= 1;
+                     productExponent +%= 1;
     } else {
-        productHi = (productHi << 1) | (productLo >> (typeWidth - 1));
-        productLo = productLo << 1;
+                     productHi = (productHi << 1) | (productLo >> (typeWidth - 1));
+                     productLo = productLo << 1;
     }
 
     // If we have overflowed the type, return +/- infinity.
     if (productExponent >= maxExponent) return @bitCast(T, infRep | productSign);
 
     if (productExponent <= 0) {
-        // Result is denormal before rounding
-        //
-        // If the result is so small that it just underflows to zero, return
-        // a zero of the appropriate sign.  Mathematically there is no need to
-        // handle this case separately, but we make it a special case to
-        // simplify the shift logic.
-        const shift: u32 = @truncate(u32, @as(Z, 1) -% @bitCast(u32, productExponent));
-        if (shift >= typeWidth) return @bitCast(T, productSign);
+                     // Result is denormal before rounding
+                     //
+                     // If the result is so small that it just underflows to zero, return
+                     // a zero of the appropriate sign.  Mathematically there is no need to
+                     // handle this case separately, but we make it a special case to
+                     // simplify the shift logic.
+                     const shift: u32 = @truncate(u32, @as(Z, 1) -% @bitCast(u32, productExponent));
+                     if (shift >= typeWidth) return @bitCast(T, productSign);
 
-        // Otherwise, shift the significand of the result so that the round
-        // bit is the high bit of productLo.
-        wideRightShiftWithSticky(Z, &productHi, &productLo, shift);
+                     // Otherwise, shift the significand of the result so that the round
+                     // bit is the high bit of productLo.
+                     wideRightShiftWithSticky(Z, &productHi, &productLo, shift);
     } else {
-        // Result is normal before rounding; insert the exponent.
-        productHi &= significandMask;
-        productHi |= @as(Z, @bitCast(u32, productExponent)) << significandBits;
+                     // Result is normal before rounding; insert the exponent.
+                     productHi &= significandMask;
+                     productHi |= @as(Z, @bitCast(u32, productExponent)) << significandBits;
     }
 
     // Insert the sign of the result:
@@ -163,109 +163,109 @@ fn mulXf3(comptime T: type, a: T, b: T) T {
 fn wideMultiply(comptime Z: type, a: Z, b: Z, hi: *Z, lo: *Z) void {
     @setRuntimeSafety(builtin.is_test);
     switch (Z) {
-        u32 => {
-            // 32x32 --> 64 bit multiply
-            const product = @as(u64, a) * @as(u64, b);
-            hi.* = @truncate(u32, product >> 32);
-            lo.* = @truncate(u32, product);
-        },
-        u64 => {
-            const S = struct {
-                fn loWord(x: u64) u64 {
-                    return @truncate(u32, x);
-                }
-                fn hiWord(x: u64) u64 {
-                    return @truncate(u32, x >> 32);
-                }
-            };
-            // 64x64 -> 128 wide multiply for platforms that don't have such an operation;
-            // many 64-bit platforms have this operation, but they tend to have hardware
-            // floating-point, so we don't bother with a special case for them here.
-            // Each of the component 32x32 -> 64 products
-            const plolo: u64 = S.loWord(a) * S.loWord(b);
-            const plohi: u64 = S.loWord(a) * S.hiWord(b);
-            const philo: u64 = S.hiWord(a) * S.loWord(b);
-            const phihi: u64 = S.hiWord(a) * S.hiWord(b);
-            // Sum terms that contribute to lo in a way that allows us to get the carry
-            const r0: u64 = S.loWord(plolo);
-            const r1: u64 = S.hiWord(plolo) +% S.loWord(plohi) +% S.loWord(philo);
-            lo.* = r0 +% (r1 << 32);
-            // Sum terms contributing to hi with the carry from lo
-            hi.* = S.hiWord(plohi) +% S.hiWord(philo) +% S.hiWord(r1) +% phihi;
-        },
-        u128 => {
-            const Word_LoMask = @as(u64, 0x00000000ffffffff);
-            const Word_HiMask = @as(u64, 0xffffffff00000000);
-            const Word_FullMask = @as(u64, 0xffffffffffffffff);
-            const S = struct {
-                fn Word_1(x: u128) u64 {
-                    return @truncate(u32, x >> 96);
-                }
-                fn Word_2(x: u128) u64 {
-                    return @truncate(u32, x >> 64);
-                }
-                fn Word_3(x: u128) u64 {
-                    return @truncate(u32, x >> 32);
-                }
-                fn Word_4(x: u128) u64 {
-                    return @truncate(u32, x);
-                }
-            };
-            // 128x128 -> 256 wide multiply for platforms that don't have such an operation;
-            // many 64-bit platforms have this operation, but they tend to have hardware
-            // floating-point, so we don't bother with a special case for them here.
+                     u32 => {
+                                      // 32x32 --> 64 bit multiply
+                                      const product = @as(u64, a) * @as(u64, b);
+                                      hi.* = @truncate(u32, product >> 32);
+                                      lo.* = @truncate(u32, product);
+                     },
+                     u64 => {
+                                      const S = struct {
+                                          fn loWord(x: u64) u64 {
+                                                           return @truncate(u32, x);
+                                          }
+                                          fn hiWord(x: u64) u64 {
+                                                           return @truncate(u32, x >> 32);
+                                          }
+                                      };
+                                      // 64x64 -> 128 wide multiply for platforms that don't have such an operation;
+                                      // many 64-bit platforms have this operation, but they tend to have hardware
+                                      // floating-point, so we don't bother with a special case for them here.
+                                      // Each of the component 32x32 -> 64 products
+                                      const plolo: u64 = S.loWord(a) * S.loWord(b);
+                                      const plohi: u64 = S.loWord(a) * S.hiWord(b);
+                                      const philo: u64 = S.hiWord(a) * S.loWord(b);
+                                      const phihi: u64 = S.hiWord(a) * S.hiWord(b);
+                                      // Sum terms that contribute to lo in a way that allows us to get the carry
+                                      const r0: u64 = S.loWord(plolo);
+                                      const r1: u64 = S.hiWord(plolo) +% S.loWord(plohi) +% S.loWord(philo);
+                                      lo.* = r0 +% (r1 << 32);
+                                      // Sum terms contributing to hi with the carry from lo
+                                      hi.* = S.hiWord(plohi) +% S.hiWord(philo) +% S.hiWord(r1) +% phihi;
+                     },
+                     u128 => {
+                                      const Word_LoMask = @as(u64, 0x00000000ffffffff);
+                                      const Word_HiMask = @as(u64, 0xffffffff00000000);
+                                      const Word_FullMask = @as(u64, 0xffffffffffffffff);
+                                      const S = struct {
+                                          fn Word_1(x: u128) u64 {
+                                                           return @truncate(u32, x >> 96);
+                                          }
+                                          fn Word_2(x: u128) u64 {
+                                                           return @truncate(u32, x >> 64);
+                                          }
+                                          fn Word_3(x: u128) u64 {
+                                                           return @truncate(u32, x >> 32);
+                                          }
+                                          fn Word_4(x: u128) u64 {
+                                                           return @truncate(u32, x);
+                                          }
+                                      };
+                                      // 128x128 -> 256 wide multiply for platforms that don't have such an operation;
+                                      // many 64-bit platforms have this operation, but they tend to have hardware
+                                      // floating-point, so we don't bother with a special case for them here.
 
-            const product11: u64 = S.Word_1(a) * S.Word_1(b);
-            const product12: u64 = S.Word_1(a) * S.Word_2(b);
-            const product13: u64 = S.Word_1(a) * S.Word_3(b);
-            const product14: u64 = S.Word_1(a) * S.Word_4(b);
-            const product21: u64 = S.Word_2(a) * S.Word_1(b);
-            const product22: u64 = S.Word_2(a) * S.Word_2(b);
-            const product23: u64 = S.Word_2(a) * S.Word_3(b);
-            const product24: u64 = S.Word_2(a) * S.Word_4(b);
-            const product31: u64 = S.Word_3(a) * S.Word_1(b);
-            const product32: u64 = S.Word_3(a) * S.Word_2(b);
-            const product33: u64 = S.Word_3(a) * S.Word_3(b);
-            const product34: u64 = S.Word_3(a) * S.Word_4(b);
-            const product41: u64 = S.Word_4(a) * S.Word_1(b);
-            const product42: u64 = S.Word_4(a) * S.Word_2(b);
-            const product43: u64 = S.Word_4(a) * S.Word_3(b);
-            const product44: u64 = S.Word_4(a) * S.Word_4(b);
+                                      const product11: u64 = S.Word_1(a) * S.Word_1(b);
+                                      const product12: u64 = S.Word_1(a) * S.Word_2(b);
+                                      const product13: u64 = S.Word_1(a) * S.Word_3(b);
+                                      const product14: u64 = S.Word_1(a) * S.Word_4(b);
+                                      const product21: u64 = S.Word_2(a) * S.Word_1(b);
+                                      const product22: u64 = S.Word_2(a) * S.Word_2(b);
+                                      const product23: u64 = S.Word_2(a) * S.Word_3(b);
+                                      const product24: u64 = S.Word_2(a) * S.Word_4(b);
+                                      const product31: u64 = S.Word_3(a) * S.Word_1(b);
+                                      const product32: u64 = S.Word_3(a) * S.Word_2(b);
+                                      const product33: u64 = S.Word_3(a) * S.Word_3(b);
+                                      const product34: u64 = S.Word_3(a) * S.Word_4(b);
+                                      const product41: u64 = S.Word_4(a) * S.Word_1(b);
+                                      const product42: u64 = S.Word_4(a) * S.Word_2(b);
+                                      const product43: u64 = S.Word_4(a) * S.Word_3(b);
+                                      const product44: u64 = S.Word_4(a) * S.Word_4(b);
 
-            const sum0: u128 = @as(u128, product44);
-            const sum1: u128 = @as(u128, product34) +%
-                @as(u128, product43);
-            const sum2: u128 = @as(u128, product24) +%
-                @as(u128, product33) +%
-                @as(u128, product42);
-            const sum3: u128 = @as(u128, product14) +%
-                @as(u128, product23) +%
-                @as(u128, product32) +%
-                @as(u128, product41);
-            const sum4: u128 = @as(u128, product13) +%
-                @as(u128, product22) +%
-                @as(u128, product31);
-            const sum5: u128 = @as(u128, product12) +%
-                @as(u128, product21);
-            const sum6: u128 = @as(u128, product11);
+                                      const sum0: u128 = @as(u128, product44);
+                                      const sum1: u128 = @as(u128, product34) +%
+                                          @as(u128, product43);
+                                      const sum2: u128 = @as(u128, product24) +%
+                                          @as(u128, product33) +%
+                                          @as(u128, product42);
+                                      const sum3: u128 = @as(u128, product14) +%
+                                          @as(u128, product23) +%
+                                          @as(u128, product32) +%
+                                          @as(u128, product41);
+                                      const sum4: u128 = @as(u128, product13) +%
+                                          @as(u128, product22) +%
+                                          @as(u128, product31);
+                                      const sum5: u128 = @as(u128, product12) +%
+                                          @as(u128, product21);
+                                      const sum6: u128 = @as(u128, product11);
 
-            const r0: u128 = (sum0 & Word_FullMask) +%
-                ((sum1 & Word_LoMask) << 32);
-            const r1: u128 = (sum0 >> 64) +%
-                ((sum1 >> 32) & Word_FullMask) +%
-                (sum2 & Word_FullMask) +%
-                ((sum3 << 32) & Word_HiMask);
+                                      const r0: u128 = (sum0 & Word_FullMask) +%
+                                          ((sum1 & Word_LoMask) << 32);
+                                      const r1: u128 = (sum0 >> 64) +%
+                                          ((sum1 >> 32) & Word_FullMask) +%
+                                          (sum2 & Word_FullMask) +%
+                                          ((sum3 << 32) & Word_HiMask);
 
-            lo.* = r0 +% (r1 << 64);
-            hi.* = (r1 >> 64) +%
-                (sum1 >> 96) +%
-                (sum2 >> 64) +%
-                (sum3 >> 32) +%
-                sum4 +%
-                (sum5 << 32) +%
-                (sum6 << 64);
-        },
-        else => @compileError("unsupported"),
+                                      lo.* = r0 +% (r1 << 64);
+                                      hi.* = (r1 >> 64) +%
+                                          (sum1 >> 96) +%
+                                          (sum2 >> 64) +%
+                                          (sum3 >> 32) +%
+                                          sum4 +%
+                                          (sum5 << 32) +%
+                                          (sum6 << 64);
+                     },
+                     else => @compileError("unsupported"),
     }
 }
 
@@ -285,17 +285,17 @@ fn wideRightShiftWithSticky(comptime Z: type, hi: *Z, lo: *Z, count: u32) void {
     const typeWidth = @typeInfo(Z).Int.bits;
     const S = std.math.Log2Int(Z);
     if (count < typeWidth) {
-        const sticky = @truncate(u8, lo.* << @intCast(S, typeWidth -% count));
-        lo.* = (hi.* << @intCast(S, typeWidth -% count)) | (lo.* >> @intCast(S, count)) | sticky;
-        hi.* = hi.* >> @intCast(S, count);
+                     const sticky = @truncate(u8, lo.* << @intCast(S, typeWidth -% count));
+                     lo.* = (hi.* << @intCast(S, typeWidth -% count)) | (lo.* >> @intCast(S, count)) | sticky;
+                     hi.* = hi.* >> @intCast(S, count);
     } else if (count < 2 * typeWidth) {
-        const sticky = @truncate(u8, hi.* << @intCast(S, 2 * typeWidth -% count) | lo.*);
-        lo.* = hi.* >> @intCast(S, count -% typeWidth) | sticky;
-        hi.* = 0;
+                     const sticky = @truncate(u8, hi.* << @intCast(S, 2 * typeWidth -% count) | lo.*);
+                     lo.* = hi.* >> @intCast(S, count -% typeWidth) | sticky;
+                     hi.* = 0;
     } else {
-        const sticky = @truncate(u8, hi.* | lo.*);
-        lo.* = sticky;
-        hi.* = 0;
+                     const sticky = @truncate(u8, hi.* | lo.*);
+                     lo.* = sticky;
+                     hi.* = 0;
     }
 }
 

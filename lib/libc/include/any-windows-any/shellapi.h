@@ -313,8 +313,8 @@ extern "C" {
     HKEY hkeyClass;
     DWORD dwHotKey;
     __C89_NAMELESS union {
-      HANDLE hIcon;
-      HANDLE hMonitor;
+                   HANDLE hIcon;
+                   HANDLE hMonitor;
     } DUMMYUNIONNAME;
     HANDLE hProcess;
   } SHELLEXECUTEINFOA,*LPSHELLEXECUTEINFOA;
@@ -334,8 +334,8 @@ extern "C" {
     HKEY hkeyClass;
     DWORD dwHotKey;
     __C89_NAMELESS union {
-      HANDLE hIcon;
-      HANDLE hMonitor;
+                   HANDLE hIcon;
+                   HANDLE hMonitor;
     } DUMMYUNIONNAME;
     HANDLE hProcess;
   } SHELLEXECUTEINFOW,*LPSHELLEXECUTEINFOW;
@@ -451,8 +451,8 @@ extern "C" {
     DWORD dwStateMask;
     CHAR szInfo[256];
     __C89_NAMELESS union {
-      UINT uTimeout;
-      UINT uVersion;
+                   UINT uTimeout;
+                   UINT uVersion;
     } DUMMYUNIONNAME;
     CHAR szInfoTitle[64];
     DWORD dwInfoFlags;
@@ -474,8 +474,8 @@ extern "C" {
     DWORD dwStateMask;
     WCHAR szInfo[256];
     __C89_NAMELESS union {
-      UINT uTimeout;
-      UINT uVersion;
+                   UINT uTimeout;
+                   UINT uVersion;
     } DUMMYUNIONNAME;
     WCHAR szInfoTitle[64];
     DWORD dwInfoFlags;

@@ -5,13 +5,13 @@
 
 
 #ifndef SIG_BLOCK
-#define SIG_BLOCK          0	/* for blocking signals */
+#define SIG_BLOCK                       0	/* for blocking signals */
 #endif
 #ifndef SIG_UNBLOCK
-#define SIG_UNBLOCK        1	/* for unblocking signals */
+#define SIG_UNBLOCK                     1	/* for unblocking signals */
 #endif
 #ifndef SIG_SETMASK
-#define SIG_SETMASK        2	/* for setting the signal mask */
+#define SIG_SETMASK                     2	/* for setting the signal mask */
 #endif
 
 #ifndef __ASSEMBLY__

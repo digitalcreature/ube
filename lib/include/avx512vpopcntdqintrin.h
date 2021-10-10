@@ -8,7 +8,7 @@
  *===-----------------------------------------------------------------------===
  */
 #ifndef __IMMINTRIN_H
-#error                                                                         \
+#error                                                                                                                                                                                                                                     \
     "Never use <avx512vpopcntdqintrin.h> directly; include <immintrin.h> instead."
 #endif
 
@@ -16,7 +16,7 @@
 #define __AVX512VPOPCNTDQINTRIN_H
 
 /* Define the default attributes for the functions in this file. */
-#define __DEFAULT_FN_ATTRS                                                     \
+#define __DEFAULT_FN_ATTRS                                                                                                                                                             \
   __attribute__((__always_inline__, __nodebug__, __target__("avx512vpopcntdq"), __min_vector_width__(512)))
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS _mm512_popcnt_epi64(__m512i __A) {
@@ -26,7 +26,7 @@ static __inline__ __m512i __DEFAULT_FN_ATTRS _mm512_popcnt_epi64(__m512i __A) {
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_mask_popcnt_epi64(__m512i __W, __mmask8 __U, __m512i __A) {
   return (__m512i)__builtin_ia32_selectq_512(
-      (__mmask8)__U, (__v8di)_mm512_popcnt_epi64(__A), (__v8di)__W);
+                   (__mmask8)__U, (__v8di)_mm512_popcnt_epi64(__A), (__v8di)__W);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS
@@ -41,7 +41,7 @@ static __inline__ __m512i __DEFAULT_FN_ATTRS _mm512_popcnt_epi32(__m512i __A) {
 static __inline__ __m512i __DEFAULT_FN_ATTRS
 _mm512_mask_popcnt_epi32(__m512i __W, __mmask16 __U, __m512i __A) {
   return (__m512i)__builtin_ia32_selectd_512(
-      (__mmask16)__U, (__v16si)_mm512_popcnt_epi32(__A), (__v16si)__W);
+                   (__mmask16)__U, (__v16si)_mm512_popcnt_epi32(__A), (__v16si)__W);
 }
 
 static __inline__ __m512i __DEFAULT_FN_ATTRS

@@ -34,10 +34,10 @@ enum
 struct exit_function
   {
     /* `flavour' should be of type of the `enum' above but since we need
-       this element in an atomic operation we have to use `long int'.  */
+                    this element in an atomic operation we have to use `long int'.  */
     long int flavor;
     union
-      {
+                   {
 	void (*at) (void);
 	struct
 	  {
@@ -50,7 +50,7 @@ struct exit_function
 	    void *arg;
 	    void *dso_handle;
 	  } cxa;
-      } func;
+                   } func;
   };
 struct exit_function_list
   {
@@ -86,7 +86,7 @@ extern void __run_exit_handlers (int status,
   attribute_hidden __attribute__ ((__noreturn__));
 
 extern int __internal_atexit (void (*func) (void *), void *arg, void *d,
-			      struct exit_function_list **listp)
+			                   struct exit_function_list **listp)
   attribute_hidden;
 extern int __cxa_at_quick_exit (void (*func) (void *), void *d);
 

@@ -781,69 +781,69 @@ MIDL_INTERFACE("9169896c-ac8d-4e7d-94e5-67fa4dc2f2e8")
 IUIAnimationManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateAnimationVariable(
-        double initialValue,
-        IUIAnimationVariable **variable) = 0;
+                     double initialValue,
+                     IUIAnimationVariable **variable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScheduleTransition(
-        IUIAnimationVariable *variable,
-        IUIAnimationTransition *transition,
-        double timeNow) = 0;
+                     IUIAnimationVariable *variable,
+                     IUIAnimationTransition *transition,
+                     double timeNow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStoryboard(
-        IUIAnimationStoryboard **storyboard) = 0;
+                     IUIAnimationStoryboard **storyboard) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FinishAllStoryboards(
-        double completionDeadline) = 0;
+                     double completionDeadline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AbandonAllStoryboards(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Update(
-        double timeNow,
-        UI_ANIMATION_UPDATE_RESULT *updateResult = 0) = 0;
+                     double timeNow,
+                     UI_ANIMATION_UPDATE_RESULT *updateResult = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVariableFromTag(
-        IUnknown *object,
-        UINT32 id,
-        IUIAnimationVariable **variable) = 0;
+                     IUnknown *object,
+                     UINT32 id,
+                     IUIAnimationVariable **variable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStoryboardFromTag(
-        IUnknown *object,
-        UINT32 id,
-        IUIAnimationStoryboard **storyboard) = 0;
+                     IUnknown *object,
+                     UINT32 id,
+                     IUIAnimationStoryboard **storyboard) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        UI_ANIMATION_MANAGER_STATUS *status) = 0;
+                     UI_ANIMATION_MANAGER_STATUS *status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAnimationMode(
-        UI_ANIMATION_MODE mode) = 0;
+                     UI_ANIMATION_MODE mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetManagerEventHandler(
-        IUIAnimationManagerEventHandler *handler) = 0;
+                     IUIAnimationManagerEventHandler *handler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCancelPriorityComparison(
-        IUIAnimationPriorityComparison *comparison) = 0;
+                     IUIAnimationPriorityComparison *comparison) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTrimPriorityComparison(
-        IUIAnimationPriorityComparison *comparison) = 0;
+                     IUIAnimationPriorityComparison *comparison) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCompressPriorityComparison(
-        IUIAnimationPriorityComparison *comparison) = 0;
+                     IUIAnimationPriorityComparison *comparison) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetConcludePriorityComparison(
-        IUIAnimationPriorityComparison *comparison) = 0;
+                     IUIAnimationPriorityComparison *comparison) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultLongestAcceptableDelay(
-        double delay) = 0;
+                     double delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shutdown(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -855,96 +855,96 @@ typedef struct IUIAnimationManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationManager *This);
+                     IUIAnimationManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationManager *This);
+                     IUIAnimationManager *This);
 
     /*** IUIAnimationManager methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateAnimationVariable)(
-        IUIAnimationManager *This,
-        double initialValue,
-        IUIAnimationVariable **variable);
+                     IUIAnimationManager *This,
+                     double initialValue,
+                     IUIAnimationVariable **variable);
 
     HRESULT (STDMETHODCALLTYPE *ScheduleTransition)(
-        IUIAnimationManager *This,
-        IUIAnimationVariable *variable,
-        IUIAnimationTransition *transition,
-        double timeNow);
+                     IUIAnimationManager *This,
+                     IUIAnimationVariable *variable,
+                     IUIAnimationTransition *transition,
+                     double timeNow);
 
     HRESULT (STDMETHODCALLTYPE *CreateStoryboard)(
-        IUIAnimationManager *This,
-        IUIAnimationStoryboard **storyboard);
+                     IUIAnimationManager *This,
+                     IUIAnimationStoryboard **storyboard);
 
     HRESULT (STDMETHODCALLTYPE *FinishAllStoryboards)(
-        IUIAnimationManager *This,
-        double completionDeadline);
+                     IUIAnimationManager *This,
+                     double completionDeadline);
 
     HRESULT (STDMETHODCALLTYPE *AbandonAllStoryboards)(
-        IUIAnimationManager *This);
+                     IUIAnimationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *Update)(
-        IUIAnimationManager *This,
-        double timeNow,
-        UI_ANIMATION_UPDATE_RESULT *updateResult);
+                     IUIAnimationManager *This,
+                     double timeNow,
+                     UI_ANIMATION_UPDATE_RESULT *updateResult);
 
     HRESULT (STDMETHODCALLTYPE *GetVariableFromTag)(
-        IUIAnimationManager *This,
-        IUnknown *object,
-        UINT32 id,
-        IUIAnimationVariable **variable);
+                     IUIAnimationManager *This,
+                     IUnknown *object,
+                     UINT32 id,
+                     IUIAnimationVariable **variable);
 
     HRESULT (STDMETHODCALLTYPE *GetStoryboardFromTag)(
-        IUIAnimationManager *This,
-        IUnknown *object,
-        UINT32 id,
-        IUIAnimationStoryboard **storyboard);
+                     IUIAnimationManager *This,
+                     IUnknown *object,
+                     UINT32 id,
+                     IUIAnimationStoryboard **storyboard);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IUIAnimationManager *This,
-        UI_ANIMATION_MANAGER_STATUS *status);
+                     IUIAnimationManager *This,
+                     UI_ANIMATION_MANAGER_STATUS *status);
 
     HRESULT (STDMETHODCALLTYPE *SetAnimationMode)(
-        IUIAnimationManager *This,
-        UI_ANIMATION_MODE mode);
+                     IUIAnimationManager *This,
+                     UI_ANIMATION_MODE mode);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IUIAnimationManager *This);
+                     IUIAnimationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IUIAnimationManager *This);
+                     IUIAnimationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *SetManagerEventHandler)(
-        IUIAnimationManager *This,
-        IUIAnimationManagerEventHandler *handler);
+                     IUIAnimationManager *This,
+                     IUIAnimationManagerEventHandler *handler);
 
     HRESULT (STDMETHODCALLTYPE *SetCancelPriorityComparison)(
-        IUIAnimationManager *This,
-        IUIAnimationPriorityComparison *comparison);
+                     IUIAnimationManager *This,
+                     IUIAnimationPriorityComparison *comparison);
 
     HRESULT (STDMETHODCALLTYPE *SetTrimPriorityComparison)(
-        IUIAnimationManager *This,
-        IUIAnimationPriorityComparison *comparison);
+                     IUIAnimationManager *This,
+                     IUIAnimationPriorityComparison *comparison);
 
     HRESULT (STDMETHODCALLTYPE *SetCompressPriorityComparison)(
-        IUIAnimationManager *This,
-        IUIAnimationPriorityComparison *comparison);
+                     IUIAnimationManager *This,
+                     IUIAnimationPriorityComparison *comparison);
 
     HRESULT (STDMETHODCALLTYPE *SetConcludePriorityComparison)(
-        IUIAnimationManager *This,
-        IUIAnimationPriorityComparison *comparison);
+                     IUIAnimationManager *This,
+                     IUIAnimationPriorityComparison *comparison);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultLongestAcceptableDelay)(
-        IUIAnimationManager *This,
-        double delay);
+                     IUIAnimationManager *This,
+                     double delay);
 
     HRESULT (STDMETHODCALLTYPE *Shutdown)(
-        IUIAnimationManager *This);
+                     IUIAnimationManager *This);
 
     END_INTERFACE
 } IUIAnimationManagerVtbl;
@@ -1068,48 +1068,48 @@ MIDL_INTERFACE("8ceeb155-2849-4ce5-9448-91ff70e1e4d9")
 IUIAnimationVariable : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        double *value) = 0;
+                     double *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalValue(
-        double *finalValue) = 0;
+                     double *finalValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreviousValue(
-        double *previousValue) = 0;
+                     double *previousValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIntegerValue(
-        int *value) = 0;
+                     int *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalIntegerValue(
-        int *finalValue) = 0;
+                     int *finalValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreviousIntegerValue(
-        int *previousValue) = 0;
+                     int *previousValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentStoryboard(
-        IUIAnimationStoryboard **storyboard) = 0;
+                     IUIAnimationStoryboard **storyboard) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLowerBound(
-        double bound) = 0;
+                     double bound) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUpperBound(
-        double bound) = 0;
+                     double bound) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRoundingMode(
-        UI_ANIMATION_ROUNDING_MODE mode) = 0;
+                     UI_ANIMATION_ROUNDING_MODE mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTag(
-        IUnknown *object,
-        unsigned int id) = 0;
+                     IUnknown *object,
+                     unsigned int id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTag(
-        IUnknown **object,
-        unsigned int *id) = 0;
+                     IUnknown **object,
+                     unsigned int *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVariableChangeHandler(
-        IUIAnimationVariableChangeHandler *handler) = 0;
+                     IUIAnimationVariableChangeHandler *handler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVariableIntegerChangeHandler(
-        IUIAnimationVariableIntegerChangeHandler *handler) = 0;
+                     IUIAnimationVariableIntegerChangeHandler *handler) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1121,74 +1121,74 @@ typedef struct IUIAnimationVariableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationVariable *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationVariable *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationVariable *This);
+                     IUIAnimationVariable *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationVariable *This);
+                     IUIAnimationVariable *This);
 
     /*** IUIAnimationVariable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IUIAnimationVariable *This,
-        double *value);
+                     IUIAnimationVariable *This,
+                     double *value);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalValue)(
-        IUIAnimationVariable *This,
-        double *finalValue);
+                     IUIAnimationVariable *This,
+                     double *finalValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPreviousValue)(
-        IUIAnimationVariable *This,
-        double *previousValue);
+                     IUIAnimationVariable *This,
+                     double *previousValue);
 
     HRESULT (STDMETHODCALLTYPE *GetIntegerValue)(
-        IUIAnimationVariable *This,
-        int *value);
+                     IUIAnimationVariable *This,
+                     int *value);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalIntegerValue)(
-        IUIAnimationVariable *This,
-        int *finalValue);
+                     IUIAnimationVariable *This,
+                     int *finalValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPreviousIntegerValue)(
-        IUIAnimationVariable *This,
-        int *previousValue);
+                     IUIAnimationVariable *This,
+                     int *previousValue);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentStoryboard)(
-        IUIAnimationVariable *This,
-        IUIAnimationStoryboard **storyboard);
+                     IUIAnimationVariable *This,
+                     IUIAnimationStoryboard **storyboard);
 
     HRESULT (STDMETHODCALLTYPE *SetLowerBound)(
-        IUIAnimationVariable *This,
-        double bound);
+                     IUIAnimationVariable *This,
+                     double bound);
 
     HRESULT (STDMETHODCALLTYPE *SetUpperBound)(
-        IUIAnimationVariable *This,
-        double bound);
+                     IUIAnimationVariable *This,
+                     double bound);
 
     HRESULT (STDMETHODCALLTYPE *SetRoundingMode)(
-        IUIAnimationVariable *This,
-        UI_ANIMATION_ROUNDING_MODE mode);
+                     IUIAnimationVariable *This,
+                     UI_ANIMATION_ROUNDING_MODE mode);
 
     HRESULT (STDMETHODCALLTYPE *SetTag)(
-        IUIAnimationVariable *This,
-        IUnknown *object,
-        unsigned int id);
+                     IUIAnimationVariable *This,
+                     IUnknown *object,
+                     unsigned int id);
 
     HRESULT (STDMETHODCALLTYPE *GetTag)(
-        IUIAnimationVariable *This,
-        IUnknown **object,
-        unsigned int *id);
+                     IUIAnimationVariable *This,
+                     IUnknown **object,
+                     unsigned int *id);
 
     HRESULT (STDMETHODCALLTYPE *SetVariableChangeHandler)(
-        IUIAnimationVariable *This,
-        IUIAnimationVariableChangeHandler *handler);
+                     IUIAnimationVariable *This,
+                     IUIAnimationVariableChangeHandler *handler);
 
     HRESULT (STDMETHODCALLTYPE *SetVariableIntegerChangeHandler)(
-        IUIAnimationVariable *This,
-        IUIAnimationVariableIntegerChangeHandler *handler);
+                     IUIAnimationVariable *This,
+                     IUIAnimationVariableIntegerChangeHandler *handler);
 
     END_INTERFACE
 } IUIAnimationVariableVtbl;
@@ -1292,69 +1292,69 @@ MIDL_INTERFACE("a8ff128f-9bf9-4af1-9e67-e5e410defb84")
 IUIAnimationStoryboard : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddTransition(
-        IUIAnimationVariable *variable,
-        IUIAnimationTransition *transition) = 0;
+                     IUIAnimationVariable *variable,
+                     IUIAnimationTransition *transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddKeyframeAtOffset(
-        UI_ANIMATION_KEYFRAME existingKeyframe,
-        double offset,
-        UI_ANIMATION_KEYFRAME *keyframe) = 0;
+                     UI_ANIMATION_KEYFRAME existingKeyframe,
+                     double offset,
+                     UI_ANIMATION_KEYFRAME *keyframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddKeyframeAfterTransition(
-        IUIAnimationTransition *transition,
-        UI_ANIMATION_KEYFRAME *keyframe) = 0;
+                     IUIAnimationTransition *transition,
+                     UI_ANIMATION_KEYFRAME *keyframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddTransitionAtKeyframe(
-        IUIAnimationVariable *variable,
-        IUIAnimationTransition *transition,
-        UI_ANIMATION_KEYFRAME startKeyframe) = 0;
+                     IUIAnimationVariable *variable,
+                     IUIAnimationTransition *transition,
+                     UI_ANIMATION_KEYFRAME startKeyframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddTransitionBetweenKeyframes(
-        IUIAnimationVariable *variable,
-        IUIAnimationTransition *transition,
-        UI_ANIMATION_KEYFRAME startKeyframe,
-        UI_ANIMATION_KEYFRAME endKeyframe) = 0;
+                     IUIAnimationVariable *variable,
+                     IUIAnimationTransition *transition,
+                     UI_ANIMATION_KEYFRAME startKeyframe,
+                     UI_ANIMATION_KEYFRAME endKeyframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RepeatBetweenKeyframes(
-        UI_ANIMATION_KEYFRAME startKeyframe,
-        UI_ANIMATION_KEYFRAME endKeyframe,
-        int repetitionCount) = 0;
+                     UI_ANIMATION_KEYFRAME startKeyframe,
+                     UI_ANIMATION_KEYFRAME endKeyframe,
+                     int repetitionCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HoldVariable(
-        IUIAnimationVariable *variable) = 0;
+                     IUIAnimationVariable *variable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLongestAcceptableDelay(
-        double delay) = 0;
+                     double delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Schedule(
-        double timeNow,
-        UI_ANIMATION_SCHEDULING_RESULT *schedulingResult = 0) = 0;
+                     double timeNow,
+                     UI_ANIMATION_SCHEDULING_RESULT *schedulingResult = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Conclude(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish(
-        double completionDeadline) = 0;
+                     double completionDeadline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Abandon(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTag(
-        IUnknown *object,
-        unsigned int id) = 0;
+                     IUnknown *object,
+                     unsigned int id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTag(
-        IUnknown **object,
-        unsigned int *id) = 0;
+                     IUnknown **object,
+                     unsigned int *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        UI_ANIMATION_STORYBOARD_STATUS *status) = 0;
+                     UI_ANIMATION_STORYBOARD_STATUS *status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetElapsedTime(
-        double *elapsedTime) = 0;
+                     double *elapsedTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStoryboardEventHandler(
-        IUIAnimationStoryboardEventHandler *handler) = 0;
+                     IUIAnimationStoryboardEventHandler *handler) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1366,96 +1366,96 @@ typedef struct IUIAnimationStoryboardVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationStoryboard *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationStoryboard *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationStoryboard *This);
+                     IUIAnimationStoryboard *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationStoryboard *This);
+                     IUIAnimationStoryboard *This);
 
     /*** IUIAnimationStoryboard methods ***/
     HRESULT (STDMETHODCALLTYPE *AddTransition)(
-        IUIAnimationStoryboard *This,
-        IUIAnimationVariable *variable,
-        IUIAnimationTransition *transition);
+                     IUIAnimationStoryboard *This,
+                     IUIAnimationVariable *variable,
+                     IUIAnimationTransition *transition);
 
     HRESULT (STDMETHODCALLTYPE *AddKeyframeAtOffset)(
-        IUIAnimationStoryboard *This,
-        UI_ANIMATION_KEYFRAME existingKeyframe,
-        double offset,
-        UI_ANIMATION_KEYFRAME *keyframe);
+                     IUIAnimationStoryboard *This,
+                     UI_ANIMATION_KEYFRAME existingKeyframe,
+                     double offset,
+                     UI_ANIMATION_KEYFRAME *keyframe);
 
     HRESULT (STDMETHODCALLTYPE *AddKeyframeAfterTransition)(
-        IUIAnimationStoryboard *This,
-        IUIAnimationTransition *transition,
-        UI_ANIMATION_KEYFRAME *keyframe);
+                     IUIAnimationStoryboard *This,
+                     IUIAnimationTransition *transition,
+                     UI_ANIMATION_KEYFRAME *keyframe);
 
     HRESULT (STDMETHODCALLTYPE *AddTransitionAtKeyframe)(
-        IUIAnimationStoryboard *This,
-        IUIAnimationVariable *variable,
-        IUIAnimationTransition *transition,
-        UI_ANIMATION_KEYFRAME startKeyframe);
+                     IUIAnimationStoryboard *This,
+                     IUIAnimationVariable *variable,
+                     IUIAnimationTransition *transition,
+                     UI_ANIMATION_KEYFRAME startKeyframe);
 
     HRESULT (STDMETHODCALLTYPE *AddTransitionBetweenKeyframes)(
-        IUIAnimationStoryboard *This,
-        IUIAnimationVariable *variable,
-        IUIAnimationTransition *transition,
-        UI_ANIMATION_KEYFRAME startKeyframe,
-        UI_ANIMATION_KEYFRAME endKeyframe);
+                     IUIAnimationStoryboard *This,
+                     IUIAnimationVariable *variable,
+                     IUIAnimationTransition *transition,
+                     UI_ANIMATION_KEYFRAME startKeyframe,
+                     UI_ANIMATION_KEYFRAME endKeyframe);
 
     HRESULT (STDMETHODCALLTYPE *RepeatBetweenKeyframes)(
-        IUIAnimationStoryboard *This,
-        UI_ANIMATION_KEYFRAME startKeyframe,
-        UI_ANIMATION_KEYFRAME endKeyframe,
-        int repetitionCount);
+                     IUIAnimationStoryboard *This,
+                     UI_ANIMATION_KEYFRAME startKeyframe,
+                     UI_ANIMATION_KEYFRAME endKeyframe,
+                     int repetitionCount);
 
     HRESULT (STDMETHODCALLTYPE *HoldVariable)(
-        IUIAnimationStoryboard *This,
-        IUIAnimationVariable *variable);
+                     IUIAnimationStoryboard *This,
+                     IUIAnimationVariable *variable);
 
     HRESULT (STDMETHODCALLTYPE *SetLongestAcceptableDelay)(
-        IUIAnimationStoryboard *This,
-        double delay);
+                     IUIAnimationStoryboard *This,
+                     double delay);
 
     HRESULT (STDMETHODCALLTYPE *Schedule)(
-        IUIAnimationStoryboard *This,
-        double timeNow,
-        UI_ANIMATION_SCHEDULING_RESULT *schedulingResult);
+                     IUIAnimationStoryboard *This,
+                     double timeNow,
+                     UI_ANIMATION_SCHEDULING_RESULT *schedulingResult);
 
     HRESULT (STDMETHODCALLTYPE *Conclude)(
-        IUIAnimationStoryboard *This);
+                     IUIAnimationStoryboard *This);
 
     HRESULT (STDMETHODCALLTYPE *Finish)(
-        IUIAnimationStoryboard *This,
-        double completionDeadline);
+                     IUIAnimationStoryboard *This,
+                     double completionDeadline);
 
     HRESULT (STDMETHODCALLTYPE *Abandon)(
-        IUIAnimationStoryboard *This);
+                     IUIAnimationStoryboard *This);
 
     HRESULT (STDMETHODCALLTYPE *SetTag)(
-        IUIAnimationStoryboard *This,
-        IUnknown *object,
-        unsigned int id);
+                     IUIAnimationStoryboard *This,
+                     IUnknown *object,
+                     unsigned int id);
 
     HRESULT (STDMETHODCALLTYPE *GetTag)(
-        IUIAnimationStoryboard *This,
-        IUnknown **object,
-        unsigned int *id);
+                     IUIAnimationStoryboard *This,
+                     IUnknown **object,
+                     unsigned int *id);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IUIAnimationStoryboard *This,
-        UI_ANIMATION_STORYBOARD_STATUS *status);
+                     IUIAnimationStoryboard *This,
+                     UI_ANIMATION_STORYBOARD_STATUS *status);
 
     HRESULT (STDMETHODCALLTYPE *GetElapsedTime)(
-        IUIAnimationStoryboard *This,
-        double *elapsedTime);
+                     IUIAnimationStoryboard *This,
+                     double *elapsedTime);
 
     HRESULT (STDMETHODCALLTYPE *SetStoryboardEventHandler)(
-        IUIAnimationStoryboard *This,
-        IUIAnimationStoryboardEventHandler *handler);
+                     IUIAnimationStoryboard *This,
+                     IUIAnimationStoryboardEventHandler *handler);
 
     END_INTERFACE
 } IUIAnimationStoryboardVtbl;
@@ -1571,16 +1571,16 @@ MIDL_INTERFACE("dc6ce252-f731-41cf-b610-614b6ca049ad")
 IUIAnimationTransition : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetInitialValue(
-        double value) = 0;
+                     double value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInitialVelocity(
-        double velocity) = 0;
+                     double velocity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDurationKnown(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration(
-        double *duration) = 0;
+                     double *duration) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1592,31 +1592,31 @@ typedef struct IUIAnimationTransitionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTransition *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTransition *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTransition *This);
+                     IUIAnimationTransition *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTransition *This);
+                     IUIAnimationTransition *This);
 
     /*** IUIAnimationTransition methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInitialValue)(
-        IUIAnimationTransition *This,
-        double value);
+                     IUIAnimationTransition *This,
+                     double value);
 
     HRESULT (STDMETHODCALLTYPE *SetInitialVelocity)(
-        IUIAnimationTransition *This,
-        double velocity);
+                     IUIAnimationTransition *This,
+                     double velocity);
 
     HRESULT (STDMETHODCALLTYPE *IsDurationKnown)(
-        IUIAnimationTransition *This);
+                     IUIAnimationTransition *This);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration)(
-        IUIAnimationTransition *This,
-        double *duration);
+                     IUIAnimationTransition *This,
+                     double *duration);
 
     END_INTERFACE
 } IUIAnimationTransitionVtbl;
@@ -1680,12 +1680,12 @@ MIDL_INTERFACE("3d5c9008-ec7c-4364-9f8a-9af3c58cbae6")
 IUIAnimationStoryboardEventHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnStoryboardStatusChanged(
-        IUIAnimationStoryboard *storyboard,
-        UI_ANIMATION_STORYBOARD_STATUS newStatus,
-        UI_ANIMATION_STORYBOARD_STATUS previousStatus) = 0;
+                     IUIAnimationStoryboard *storyboard,
+                     UI_ANIMATION_STORYBOARD_STATUS newStatus,
+                     UI_ANIMATION_STORYBOARD_STATUS previousStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStoryboardUpdated(
-        IUIAnimationStoryboard *storyboard) = 0;
+                     IUIAnimationStoryboard *storyboard) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1697,26 +1697,26 @@ typedef struct IUIAnimationStoryboardEventHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationStoryboardEventHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationStoryboardEventHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationStoryboardEventHandler *This);
+                     IUIAnimationStoryboardEventHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationStoryboardEventHandler *This);
+                     IUIAnimationStoryboardEventHandler *This);
 
     /*** IUIAnimationStoryboardEventHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStoryboardStatusChanged)(
-        IUIAnimationStoryboardEventHandler *This,
-        IUIAnimationStoryboard *storyboard,
-        UI_ANIMATION_STORYBOARD_STATUS newStatus,
-        UI_ANIMATION_STORYBOARD_STATUS previousStatus);
+                     IUIAnimationStoryboardEventHandler *This,
+                     IUIAnimationStoryboard *storyboard,
+                     UI_ANIMATION_STORYBOARD_STATUS newStatus,
+                     UI_ANIMATION_STORYBOARD_STATUS previousStatus);
 
     HRESULT (STDMETHODCALLTYPE *OnStoryboardUpdated)(
-        IUIAnimationStoryboardEventHandler *This,
-        IUIAnimationStoryboard *storyboard);
+                     IUIAnimationStoryboardEventHandler *This,
+                     IUIAnimationStoryboard *storyboard);
 
     END_INTERFACE
 } IUIAnimationStoryboardEventHandlerVtbl;
@@ -1772,10 +1772,10 @@ MIDL_INTERFACE("6358b7ba-87d2-42d5-bf71-82e919dd5862")
 IUIAnimationVariableChangeHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnValueChanged(
-        IUIAnimationStoryboard *storyboard,
-        IUIAnimationVariable *variable,
-        double newValue,
-        double previousValue) = 0;
+                     IUIAnimationStoryboard *storyboard,
+                     IUIAnimationVariable *variable,
+                     double newValue,
+                     double previousValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1787,23 +1787,23 @@ typedef struct IUIAnimationVariableChangeHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationVariableChangeHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationVariableChangeHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationVariableChangeHandler *This);
+                     IUIAnimationVariableChangeHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationVariableChangeHandler *This);
+                     IUIAnimationVariableChangeHandler *This);
 
     /*** IUIAnimationVariableChangeHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *OnValueChanged)(
-        IUIAnimationVariableChangeHandler *This,
-        IUIAnimationStoryboard *storyboard,
-        IUIAnimationVariable *variable,
-        double newValue,
-        double previousValue);
+                     IUIAnimationVariableChangeHandler *This,
+                     IUIAnimationStoryboard *storyboard,
+                     IUIAnimationVariable *variable,
+                     double newValue,
+                     double previousValue);
 
     END_INTERFACE
 } IUIAnimationVariableChangeHandlerVtbl;
@@ -1855,10 +1855,10 @@ MIDL_INTERFACE("bb3e1550-356e-44b0-99da-85ac6017865e")
 IUIAnimationVariableIntegerChangeHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnIntegerValueChanged(
-        IUIAnimationStoryboard *storyboard,
-        IUIAnimationVariable *variable,
-        int newValue,
-        int previousValue) = 0;
+                     IUIAnimationStoryboard *storyboard,
+                     IUIAnimationVariable *variable,
+                     int newValue,
+                     int previousValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1870,23 +1870,23 @@ typedef struct IUIAnimationVariableIntegerChangeHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationVariableIntegerChangeHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationVariableIntegerChangeHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationVariableIntegerChangeHandler *This);
+                     IUIAnimationVariableIntegerChangeHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationVariableIntegerChangeHandler *This);
+                     IUIAnimationVariableIntegerChangeHandler *This);
 
     /*** IUIAnimationVariableIntegerChangeHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *OnIntegerValueChanged)(
-        IUIAnimationVariableIntegerChangeHandler *This,
-        IUIAnimationStoryboard *storyboard,
-        IUIAnimationVariable *variable,
-        int newValue,
-        int previousValue);
+                     IUIAnimationVariableIntegerChangeHandler *This,
+                     IUIAnimationStoryboard *storyboard,
+                     IUIAnimationVariable *variable,
+                     int newValue,
+                     int previousValue);
 
     END_INTERFACE
 } IUIAnimationVariableIntegerChangeHandlerVtbl;
@@ -1938,8 +1938,8 @@ MIDL_INTERFACE("783321ed-78a3-4366-b574-6af607a64788")
 IUIAnimationManagerEventHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnManagerStatusChanged(
-        UI_ANIMATION_MANAGER_STATUS newStatus,
-        UI_ANIMATION_MANAGER_STATUS previousStatus) = 0;
+                     UI_ANIMATION_MANAGER_STATUS newStatus,
+                     UI_ANIMATION_MANAGER_STATUS previousStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1951,21 +1951,21 @@ typedef struct IUIAnimationManagerEventHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationManagerEventHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationManagerEventHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationManagerEventHandler *This);
+                     IUIAnimationManagerEventHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationManagerEventHandler *This);
+                     IUIAnimationManagerEventHandler *This);
 
     /*** IUIAnimationManagerEventHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *OnManagerStatusChanged)(
-        IUIAnimationManagerEventHandler *This,
-        UI_ANIMATION_MANAGER_STATUS newStatus,
-        UI_ANIMATION_MANAGER_STATUS previousStatus);
+                     IUIAnimationManagerEventHandler *This,
+                     UI_ANIMATION_MANAGER_STATUS newStatus,
+                     UI_ANIMATION_MANAGER_STATUS previousStatus);
 
     END_INTERFACE
 } IUIAnimationManagerEventHandlerVtbl;
@@ -2017,9 +2017,9 @@ MIDL_INTERFACE("83fa9b74-5f86-4618-bc6a-a2fac19b3f44")
 IUIAnimationPriorityComparison : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE HasPriority(
-        IUIAnimationStoryboard *scheduledStoryboard,
-        IUIAnimationStoryboard *newStoryboard,
-        UI_ANIMATION_PRIORITY_EFFECT priorityEffect) = 0;
+                     IUIAnimationStoryboard *scheduledStoryboard,
+                     IUIAnimationStoryboard *newStoryboard,
+                     UI_ANIMATION_PRIORITY_EFFECT priorityEffect) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2031,22 +2031,22 @@ typedef struct IUIAnimationPriorityComparisonVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationPriorityComparison *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationPriorityComparison *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationPriorityComparison *This);
+                     IUIAnimationPriorityComparison *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationPriorityComparison *This);
+                     IUIAnimationPriorityComparison *This);
 
     /*** IUIAnimationPriorityComparison methods ***/
     HRESULT (STDMETHODCALLTYPE *HasPriority)(
-        IUIAnimationPriorityComparison *This,
-        IUIAnimationStoryboard *scheduledStoryboard,
-        IUIAnimationStoryboard *newStoryboard,
-        UI_ANIMATION_PRIORITY_EFFECT priorityEffect);
+                     IUIAnimationPriorityComparison *This,
+                     IUIAnimationStoryboard *scheduledStoryboard,
+                     IUIAnimationStoryboard *newStoryboard,
+                     UI_ANIMATION_PRIORITY_EFFECT priorityEffect);
 
     END_INTERFACE
 } IUIAnimationPriorityComparisonVtbl;
@@ -2098,78 +2098,78 @@ MIDL_INTERFACE("d8b6f7d4-4109-4d3f-acee-879926968cb1")
 IUIAnimationManager2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateAnimationVectorVariable(
-        double *initialValue,
-        unsigned int cDimension,
-        IUIAnimationVariable2 **variable) = 0;
+                     double *initialValue,
+                     unsigned int cDimension,
+                     IUIAnimationVariable2 **variable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAnimationVariable(
-        double initialValue,
-        IUIAnimationVariable2 **variable) = 0;
+                     double initialValue,
+                     IUIAnimationVariable2 **variable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScheduleTransition(
-        IUIAnimationVariable2 *variable,
-        IUIAnimationTransition2 *transition,
-        double timeNow) = 0;
+                     IUIAnimationVariable2 *variable,
+                     IUIAnimationTransition2 *transition,
+                     double timeNow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStoryboard(
-        IUIAnimationStoryboard2 **storyboard) = 0;
+                     IUIAnimationStoryboard2 **storyboard) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FinishAllStoryboards(
-        double completionDeadline) = 0;
+                     double completionDeadline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AbandonAllStoryboards(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Update(
-        double timeNow,
-        UI_ANIMATION_UPDATE_RESULT *updateResult = 0) = 0;
+                     double timeNow,
+                     UI_ANIMATION_UPDATE_RESULT *updateResult = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVariableFromTag(
-        IUnknown *object,
-        UINT32 id,
-        IUIAnimationVariable2 **variable) = 0;
+                     IUnknown *object,
+                     UINT32 id,
+                     IUIAnimationVariable2 **variable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStoryboardFromTag(
-        IUnknown *object,
-        unsigned int id,
-        IUIAnimationStoryboard2 **storyboard) = 0;
+                     IUnknown *object,
+                     unsigned int id,
+                     IUIAnimationStoryboard2 **storyboard) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EstimateNextEventTime(
-        double *seconds) = 0;
+                     double *seconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        UI_ANIMATION_MANAGER_STATUS *status) = 0;
+                     UI_ANIMATION_MANAGER_STATUS *status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAnimationMode(
-        UI_ANIMATION_MODE mode) = 0;
+                     UI_ANIMATION_MODE mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetManagerEventHandler(
-        IUIAnimationManagerEventHandler2 *handler,
-        LONG fRegisterForNextAnimationEvent = FALSE) = 0;
+                     IUIAnimationManagerEventHandler2 *handler,
+                     LONG fRegisterForNextAnimationEvent = FALSE) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCancelPriorityComparison(
-        IUIAnimationPriorityComparison2 *comparison) = 0;
+                     IUIAnimationPriorityComparison2 *comparison) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTrimPriorityComparison(
-        IUIAnimationPriorityComparison2 *comparison) = 0;
+                     IUIAnimationPriorityComparison2 *comparison) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCompressPriorityComparison(
-        IUIAnimationPriorityComparison2 *comparison) = 0;
+                     IUIAnimationPriorityComparison2 *comparison) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetConcludePriorityComparison(
-        IUIAnimationPriorityComparison2 *comparison) = 0;
+                     IUIAnimationPriorityComparison2 *comparison) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultLongestAcceptableDelay(
-        double delay) = 0;
+                     double delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shutdown(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2181,107 +2181,107 @@ typedef struct IUIAnimationManager2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationManager2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationManager2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationManager2 *This);
+                     IUIAnimationManager2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationManager2 *This);
+                     IUIAnimationManager2 *This);
 
     /*** IUIAnimationManager2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateAnimationVectorVariable)(
-        IUIAnimationManager2 *This,
-        double *initialValue,
-        unsigned int cDimension,
-        IUIAnimationVariable2 **variable);
+                     IUIAnimationManager2 *This,
+                     double *initialValue,
+                     unsigned int cDimension,
+                     IUIAnimationVariable2 **variable);
 
     HRESULT (STDMETHODCALLTYPE *CreateAnimationVariable)(
-        IUIAnimationManager2 *This,
-        double initialValue,
-        IUIAnimationVariable2 **variable);
+                     IUIAnimationManager2 *This,
+                     double initialValue,
+                     IUIAnimationVariable2 **variable);
 
     HRESULT (STDMETHODCALLTYPE *ScheduleTransition)(
-        IUIAnimationManager2 *This,
-        IUIAnimationVariable2 *variable,
-        IUIAnimationTransition2 *transition,
-        double timeNow);
+                     IUIAnimationManager2 *This,
+                     IUIAnimationVariable2 *variable,
+                     IUIAnimationTransition2 *transition,
+                     double timeNow);
 
     HRESULT (STDMETHODCALLTYPE *CreateStoryboard)(
-        IUIAnimationManager2 *This,
-        IUIAnimationStoryboard2 **storyboard);
+                     IUIAnimationManager2 *This,
+                     IUIAnimationStoryboard2 **storyboard);
 
     HRESULT (STDMETHODCALLTYPE *FinishAllStoryboards)(
-        IUIAnimationManager2 *This,
-        double completionDeadline);
+                     IUIAnimationManager2 *This,
+                     double completionDeadline);
 
     HRESULT (STDMETHODCALLTYPE *AbandonAllStoryboards)(
-        IUIAnimationManager2 *This);
+                     IUIAnimationManager2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Update)(
-        IUIAnimationManager2 *This,
-        double timeNow,
-        UI_ANIMATION_UPDATE_RESULT *updateResult);
+                     IUIAnimationManager2 *This,
+                     double timeNow,
+                     UI_ANIMATION_UPDATE_RESULT *updateResult);
 
     HRESULT (STDMETHODCALLTYPE *GetVariableFromTag)(
-        IUIAnimationManager2 *This,
-        IUnknown *object,
-        UINT32 id,
-        IUIAnimationVariable2 **variable);
+                     IUIAnimationManager2 *This,
+                     IUnknown *object,
+                     UINT32 id,
+                     IUIAnimationVariable2 **variable);
 
     HRESULT (STDMETHODCALLTYPE *GetStoryboardFromTag)(
-        IUIAnimationManager2 *This,
-        IUnknown *object,
-        unsigned int id,
-        IUIAnimationStoryboard2 **storyboard);
+                     IUIAnimationManager2 *This,
+                     IUnknown *object,
+                     unsigned int id,
+                     IUIAnimationStoryboard2 **storyboard);
 
     HRESULT (STDMETHODCALLTYPE *EstimateNextEventTime)(
-        IUIAnimationManager2 *This,
-        double *seconds);
+                     IUIAnimationManager2 *This,
+                     double *seconds);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IUIAnimationManager2 *This,
-        UI_ANIMATION_MANAGER_STATUS *status);
+                     IUIAnimationManager2 *This,
+                     UI_ANIMATION_MANAGER_STATUS *status);
 
     HRESULT (STDMETHODCALLTYPE *SetAnimationMode)(
-        IUIAnimationManager2 *This,
-        UI_ANIMATION_MODE mode);
+                     IUIAnimationManager2 *This,
+                     UI_ANIMATION_MODE mode);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IUIAnimationManager2 *This);
+                     IUIAnimationManager2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IUIAnimationManager2 *This);
+                     IUIAnimationManager2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetManagerEventHandler)(
-        IUIAnimationManager2 *This,
-        IUIAnimationManagerEventHandler2 *handler,
-        LONG fRegisterForNextAnimationEvent);
+                     IUIAnimationManager2 *This,
+                     IUIAnimationManagerEventHandler2 *handler,
+                     LONG fRegisterForNextAnimationEvent);
 
     HRESULT (STDMETHODCALLTYPE *SetCancelPriorityComparison)(
-        IUIAnimationManager2 *This,
-        IUIAnimationPriorityComparison2 *comparison);
+                     IUIAnimationManager2 *This,
+                     IUIAnimationPriorityComparison2 *comparison);
 
     HRESULT (STDMETHODCALLTYPE *SetTrimPriorityComparison)(
-        IUIAnimationManager2 *This,
-        IUIAnimationPriorityComparison2 *comparison);
+                     IUIAnimationManager2 *This,
+                     IUIAnimationPriorityComparison2 *comparison);
 
     HRESULT (STDMETHODCALLTYPE *SetCompressPriorityComparison)(
-        IUIAnimationManager2 *This,
-        IUIAnimationPriorityComparison2 *comparison);
+                     IUIAnimationManager2 *This,
+                     IUIAnimationPriorityComparison2 *comparison);
 
     HRESULT (STDMETHODCALLTYPE *SetConcludePriorityComparison)(
-        IUIAnimationManager2 *This,
-        IUIAnimationPriorityComparison2 *comparison);
+                     IUIAnimationManager2 *This,
+                     IUIAnimationPriorityComparison2 *comparison);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultLongestAcceptableDelay)(
-        IUIAnimationManager2 *This,
-        double delay);
+                     IUIAnimationManager2 *This,
+                     double delay);
 
     HRESULT (STDMETHODCALLTYPE *Shutdown)(
-        IUIAnimationManager2 *This);
+                     IUIAnimationManager2 *This);
 
     END_INTERFACE
 } IUIAnimationManager2Vtbl;
@@ -2413,95 +2413,95 @@ MIDL_INTERFACE("4914b304-96ab-44d9-9e77-d5109b7e7466")
 IUIAnimationVariable2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDimension(
-        unsigned int *dimension) = 0;
+                     unsigned int *dimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        double *value) = 0;
+                     double *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVectorValue(
-        double *value,
-        unsigned int cDimension) = 0;
+                     double *value,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurve(
-        IDCompositionAnimation *animation) = 0;
+                     IDCompositionAnimation *animation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVectorCurve(
-        IDCompositionAnimation **animation,
-        unsigned int cDimension) = 0;
+                     IDCompositionAnimation **animation,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalValue(
-        double *finalValue) = 0;
+                     double *finalValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalVectorValue(
-        double *finalValue,
-        unsigned int cDimension) = 0;
+                     double *finalValue,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreviousValue(
-        double *previousValue) = 0;
+                     double *previousValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreviousVectorValue(
-        double *previousValue,
-        unsigned int cDimension) = 0;
+                     double *previousValue,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIntegerValue(
-        int *value) = 0;
+                     int *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIntegerVectorValue(
-        int *value,
-        unsigned int cDimension) = 0;
+                     int *value,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalIntegerValue(
-        int *finalValue) = 0;
+                     int *finalValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalIntegerVectorValue(
-        int *finalValue,
-        unsigned int cDimension) = 0;
+                     int *finalValue,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreviousIntegerValue(
-        int *previousValue) = 0;
+                     int *previousValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreviousIntegerVectorValue(
-        int *previousValue,
-        unsigned int cDimension) = 0;
+                     int *previousValue,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentStoryboard(
-        IUIAnimationStoryboard2 **storyboard) = 0;
+                     IUIAnimationStoryboard2 **storyboard) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLowerBound(
-        double bound) = 0;
+                     double bound) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLowerBoundVector(
-        double *bound,
-        unsigned int cDimension) = 0;
+                     double *bound,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUpperBound(
-        double bound) = 0;
+                     double bound) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUpperBoundVector(
-        double *bound,
-        unsigned int cDimension) = 0;
+                     double *bound,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRoundingMode(
-        UI_ANIMATION_ROUNDING_MODE mode) = 0;
+                     UI_ANIMATION_ROUNDING_MODE mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTag(
-        IUnknown *object,
-        unsigned int id) = 0;
+                     IUnknown *object,
+                     unsigned int id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTag(
-        IUnknown **object,
-        unsigned int *id) = 0;
+                     IUnknown **object,
+                     unsigned int *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVariableChangeHandler(
-        IUIAnimationVariableChangeHandler2 *handler,
-        LONG fRegisterForNextAnimationEvent = FALSE) = 0;
+                     IUIAnimationVariableChangeHandler2 *handler,
+                     LONG fRegisterForNextAnimationEvent = FALSE) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVariableIntegerChangeHandler(
-        IUIAnimationVariableIntegerChangeHandler2 *handler,
-        LONG fRegisterForNextAnimationEvent = FALSE) = 0;
+                     IUIAnimationVariableIntegerChangeHandler2 *handler,
+                     LONG fRegisterForNextAnimationEvent = FALSE) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVariableCurveChangeHandler(
-        IUIAnimationVariableCurveChangeHandler2 *handler) = 0;
+                     IUIAnimationVariableCurveChangeHandler2 *handler) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2513,133 +2513,133 @@ typedef struct IUIAnimationVariable2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationVariable2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationVariable2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationVariable2 *This);
+                     IUIAnimationVariable2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationVariable2 *This);
+                     IUIAnimationVariable2 *This);
 
     /*** IUIAnimationVariable2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDimension)(
-        IUIAnimationVariable2 *This,
-        unsigned int *dimension);
+                     IUIAnimationVariable2 *This,
+                     unsigned int *dimension);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IUIAnimationVariable2 *This,
-        double *value);
+                     IUIAnimationVariable2 *This,
+                     double *value);
 
     HRESULT (STDMETHODCALLTYPE *GetVectorValue)(
-        IUIAnimationVariable2 *This,
-        double *value,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     double *value,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetCurve)(
-        IUIAnimationVariable2 *This,
-        IDCompositionAnimation *animation);
+                     IUIAnimationVariable2 *This,
+                     IDCompositionAnimation *animation);
 
     HRESULT (STDMETHODCALLTYPE *GetVectorCurve)(
-        IUIAnimationVariable2 *This,
-        IDCompositionAnimation **animation,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     IDCompositionAnimation **animation,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalValue)(
-        IUIAnimationVariable2 *This,
-        double *finalValue);
+                     IUIAnimationVariable2 *This,
+                     double *finalValue);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalVectorValue)(
-        IUIAnimationVariable2 *This,
-        double *finalValue,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     double *finalValue,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetPreviousValue)(
-        IUIAnimationVariable2 *This,
-        double *previousValue);
+                     IUIAnimationVariable2 *This,
+                     double *previousValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPreviousVectorValue)(
-        IUIAnimationVariable2 *This,
-        double *previousValue,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     double *previousValue,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetIntegerValue)(
-        IUIAnimationVariable2 *This,
-        int *value);
+                     IUIAnimationVariable2 *This,
+                     int *value);
 
     HRESULT (STDMETHODCALLTYPE *GetIntegerVectorValue)(
-        IUIAnimationVariable2 *This,
-        int *value,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     int *value,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalIntegerValue)(
-        IUIAnimationVariable2 *This,
-        int *finalValue);
+                     IUIAnimationVariable2 *This,
+                     int *finalValue);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalIntegerVectorValue)(
-        IUIAnimationVariable2 *This,
-        int *finalValue,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     int *finalValue,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetPreviousIntegerValue)(
-        IUIAnimationVariable2 *This,
-        int *previousValue);
+                     IUIAnimationVariable2 *This,
+                     int *previousValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPreviousIntegerVectorValue)(
-        IUIAnimationVariable2 *This,
-        int *previousValue,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     int *previousValue,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentStoryboard)(
-        IUIAnimationVariable2 *This,
-        IUIAnimationStoryboard2 **storyboard);
+                     IUIAnimationVariable2 *This,
+                     IUIAnimationStoryboard2 **storyboard);
 
     HRESULT (STDMETHODCALLTYPE *SetLowerBound)(
-        IUIAnimationVariable2 *This,
-        double bound);
+                     IUIAnimationVariable2 *This,
+                     double bound);
 
     HRESULT (STDMETHODCALLTYPE *SetLowerBoundVector)(
-        IUIAnimationVariable2 *This,
-        double *bound,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     double *bound,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *SetUpperBound)(
-        IUIAnimationVariable2 *This,
-        double bound);
+                     IUIAnimationVariable2 *This,
+                     double bound);
 
     HRESULT (STDMETHODCALLTYPE *SetUpperBoundVector)(
-        IUIAnimationVariable2 *This,
-        double *bound,
-        unsigned int cDimension);
+                     IUIAnimationVariable2 *This,
+                     double *bound,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *SetRoundingMode)(
-        IUIAnimationVariable2 *This,
-        UI_ANIMATION_ROUNDING_MODE mode);
+                     IUIAnimationVariable2 *This,
+                     UI_ANIMATION_ROUNDING_MODE mode);
 
     HRESULT (STDMETHODCALLTYPE *SetTag)(
-        IUIAnimationVariable2 *This,
-        IUnknown *object,
-        unsigned int id);
+                     IUIAnimationVariable2 *This,
+                     IUnknown *object,
+                     unsigned int id);
 
     HRESULT (STDMETHODCALLTYPE *GetTag)(
-        IUIAnimationVariable2 *This,
-        IUnknown **object,
-        unsigned int *id);
+                     IUIAnimationVariable2 *This,
+                     IUnknown **object,
+                     unsigned int *id);
 
     HRESULT (STDMETHODCALLTYPE *SetVariableChangeHandler)(
-        IUIAnimationVariable2 *This,
-        IUIAnimationVariableChangeHandler2 *handler,
-        LONG fRegisterForNextAnimationEvent);
+                     IUIAnimationVariable2 *This,
+                     IUIAnimationVariableChangeHandler2 *handler,
+                     LONG fRegisterForNextAnimationEvent);
 
     HRESULT (STDMETHODCALLTYPE *SetVariableIntegerChangeHandler)(
-        IUIAnimationVariable2 *This,
-        IUIAnimationVariableIntegerChangeHandler2 *handler,
-        LONG fRegisterForNextAnimationEvent);
+                     IUIAnimationVariable2 *This,
+                     IUIAnimationVariableIntegerChangeHandler2 *handler,
+                     LONG fRegisterForNextAnimationEvent);
 
     HRESULT (STDMETHODCALLTYPE *SetVariableCurveChangeHandler)(
-        IUIAnimationVariable2 *This,
-        IUIAnimationVariableCurveChangeHandler2 *handler);
+                     IUIAnimationVariable2 *This,
+                     IUIAnimationVariableCurveChangeHandler2 *handler);
 
     END_INTERFACE
 } IUIAnimationVariable2Vtbl;
@@ -2791,32 +2791,32 @@ MIDL_INTERFACE("cbfd91d9-51b2-45e4-b3de-d19ccfb863c5")
 IDCompositionAnimation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAbsoluteBeginTime(
-        LARGE_INTEGER beginTime) = 0;
+                     LARGE_INTEGER beginTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddCubic(
-        double beginOffset,
-        float constantCoefficient,
-        float linearCoefficient,
-        float quadraticCoefficient,
-        float cubicCoefficient) = 0;
+                     double beginOffset,
+                     float constantCoefficient,
+                     float linearCoefficient,
+                     float quadraticCoefficient,
+                     float cubicCoefficient) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSinusoidal(
-        double beginOffset,
-        float bias,
-        float amplitude,
-        float frequency,
-        float phase) = 0;
+                     double beginOffset,
+                     float bias,
+                     float amplitude,
+                     float frequency,
+                     float phase) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddRepeat(
-        double beginOffset,
-        double durationToRepeat) = 0;
+                     double beginOffset,
+                     double durationToRepeat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE End(
-        double endOffset,
-        float endValue) = 0;
+                     double endOffset,
+                     float endValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2828,49 +2828,49 @@ typedef struct IDCompositionAnimationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDCompositionAnimation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDCompositionAnimation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDCompositionAnimation *This);
+                     IDCompositionAnimation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDCompositionAnimation *This);
+                     IDCompositionAnimation *This);
 
     /*** IDCompositionAnimation methods ***/
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IDCompositionAnimation *This);
+                     IDCompositionAnimation *This);
 
     HRESULT (STDMETHODCALLTYPE *SetAbsoluteBeginTime)(
-        IDCompositionAnimation *This,
-        LARGE_INTEGER beginTime);
+                     IDCompositionAnimation *This,
+                     LARGE_INTEGER beginTime);
 
     HRESULT (STDMETHODCALLTYPE *AddCubic)(
-        IDCompositionAnimation *This,
-        double beginOffset,
-        float constantCoefficient,
-        float linearCoefficient,
-        float quadraticCoefficient,
-        float cubicCoefficient);
+                     IDCompositionAnimation *This,
+                     double beginOffset,
+                     float constantCoefficient,
+                     float linearCoefficient,
+                     float quadraticCoefficient,
+                     float cubicCoefficient);
 
     HRESULT (STDMETHODCALLTYPE *AddSinusoidal)(
-        IDCompositionAnimation *This,
-        double beginOffset,
-        float bias,
-        float amplitude,
-        float frequency,
-        float phase);
+                     IDCompositionAnimation *This,
+                     double beginOffset,
+                     float bias,
+                     float amplitude,
+                     float frequency,
+                     float phase);
 
     HRESULT (STDMETHODCALLTYPE *AddRepeat)(
-        IDCompositionAnimation *This,
-        double beginOffset,
-        double durationToRepeat);
+                     IDCompositionAnimation *This,
+                     double beginOffset,
+                     double durationToRepeat);
 
     HRESULT (STDMETHODCALLTYPE *End)(
-        IDCompositionAnimation *This,
-        double endOffset,
-        float endValue);
+                     IDCompositionAnimation *This,
+                     double endOffset,
+                     float endValue);
 
     END_INTERFACE
 } IDCompositionAnimationVtbl;
@@ -2942,78 +2942,78 @@ MIDL_INTERFACE("ae289cd2-12d4-4945-9419-9e41be034df2")
 IUIAnimationStoryboard2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddTransition(
-        IUIAnimationVariable2 *variable,
-        IUIAnimationTransition2 *transition) = 0;
+                     IUIAnimationVariable2 *variable,
+                     IUIAnimationTransition2 *transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddKeyframeAtOffset(
-        UI_ANIMATION_KEYFRAME existingKeyframe,
-        double offset,
-        UI_ANIMATION_KEYFRAME *keyframe) = 0;
+                     UI_ANIMATION_KEYFRAME existingKeyframe,
+                     double offset,
+                     UI_ANIMATION_KEYFRAME *keyframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddKeyframeAfterTransition(
-        IUIAnimationTransition2 *transition,
-        UI_ANIMATION_KEYFRAME *keyframe) = 0;
+                     IUIAnimationTransition2 *transition,
+                     UI_ANIMATION_KEYFRAME *keyframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddTransitionAtKeyframe(
-        IUIAnimationVariable2 *variable,
-        IUIAnimationTransition2 *transition,
-        UI_ANIMATION_KEYFRAME startKeyframe) = 0;
+                     IUIAnimationVariable2 *variable,
+                     IUIAnimationTransition2 *transition,
+                     UI_ANIMATION_KEYFRAME startKeyframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddTransitionBetweenKeyframes(
-        IUIAnimationVariable2 *variable,
-        IUIAnimationTransition2 *transition,
-        UI_ANIMATION_KEYFRAME startKeyframe,
-        UI_ANIMATION_KEYFRAME endKeyframe) = 0;
+                     IUIAnimationVariable2 *variable,
+                     IUIAnimationTransition2 *transition,
+                     UI_ANIMATION_KEYFRAME startKeyframe,
+                     UI_ANIMATION_KEYFRAME endKeyframe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RepeatBetweenKeyframes(
-        UI_ANIMATION_KEYFRAME startKeyframe,
-        UI_ANIMATION_KEYFRAME endKeyframe,
-        double cRepetition,
-        UI_ANIMATION_REPEAT_MODE repeatMode,
-        IUIAnimationLoopIterationChangeHandler2 *pIterationChangeHandler = 0,
-        UINT_PTR id = 0,
-        LONG fRegisterForNextAnimationEvent = FALSE) = 0;
+                     UI_ANIMATION_KEYFRAME startKeyframe,
+                     UI_ANIMATION_KEYFRAME endKeyframe,
+                     double cRepetition,
+                     UI_ANIMATION_REPEAT_MODE repeatMode,
+                     IUIAnimationLoopIterationChangeHandler2 *pIterationChangeHandler = 0,
+                     UINT_PTR id = 0,
+                     LONG fRegisterForNextAnimationEvent = FALSE) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HoldVariable(
-        IUIAnimationVariable2 *variable) = 0;
+                     IUIAnimationVariable2 *variable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLongestAcceptableDelay(
-        double delay) = 0;
+                     double delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSkipDuration(
-        double secondsDuration) = 0;
+                     double secondsDuration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Schedule(
-        double timeNow,
-        UI_ANIMATION_SCHEDULING_RESULT *schedulingResult = 0) = 0;
+                     double timeNow,
+                     UI_ANIMATION_SCHEDULING_RESULT *schedulingResult = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Conclude(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish(
-        double completionDeadline) = 0;
+                     double completionDeadline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Abandon(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTag(
-        IUnknown *object,
-        unsigned int id) = 0;
+                     IUnknown *object,
+                     unsigned int id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTag(
-        IUnknown **object,
-        unsigned int *id) = 0;
+                     IUnknown **object,
+                     unsigned int *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        UI_ANIMATION_STORYBOARD_STATUS *status) = 0;
+                     UI_ANIMATION_STORYBOARD_STATUS *status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetElapsedTime(
-        double *elapsedTime) = 0;
+                     double *elapsedTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStoryboardEventHandler(
-        IUIAnimationStoryboardEventHandler2 *handler,
-        LONG fRegisterStatusChangeForNextAnimationEvent = FALSE,
-        LONG fRegisterUpdateForNextAnimationEvent = FALSE) = 0;
+                     IUIAnimationStoryboardEventHandler2 *handler,
+                     LONG fRegisterStatusChangeForNextAnimationEvent = FALSE,
+                     LONG fRegisterUpdateForNextAnimationEvent = FALSE) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3025,106 +3025,106 @@ typedef struct IUIAnimationStoryboard2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationStoryboard2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationStoryboard2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationStoryboard2 *This);
+                     IUIAnimationStoryboard2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationStoryboard2 *This);
+                     IUIAnimationStoryboard2 *This);
 
     /*** IUIAnimationStoryboard2 methods ***/
     HRESULT (STDMETHODCALLTYPE *AddTransition)(
-        IUIAnimationStoryboard2 *This,
-        IUIAnimationVariable2 *variable,
-        IUIAnimationTransition2 *transition);
+                     IUIAnimationStoryboard2 *This,
+                     IUIAnimationVariable2 *variable,
+                     IUIAnimationTransition2 *transition);
 
     HRESULT (STDMETHODCALLTYPE *AddKeyframeAtOffset)(
-        IUIAnimationStoryboard2 *This,
-        UI_ANIMATION_KEYFRAME existingKeyframe,
-        double offset,
-        UI_ANIMATION_KEYFRAME *keyframe);
+                     IUIAnimationStoryboard2 *This,
+                     UI_ANIMATION_KEYFRAME existingKeyframe,
+                     double offset,
+                     UI_ANIMATION_KEYFRAME *keyframe);
 
     HRESULT (STDMETHODCALLTYPE *AddKeyframeAfterTransition)(
-        IUIAnimationStoryboard2 *This,
-        IUIAnimationTransition2 *transition,
-        UI_ANIMATION_KEYFRAME *keyframe);
+                     IUIAnimationStoryboard2 *This,
+                     IUIAnimationTransition2 *transition,
+                     UI_ANIMATION_KEYFRAME *keyframe);
 
     HRESULT (STDMETHODCALLTYPE *AddTransitionAtKeyframe)(
-        IUIAnimationStoryboard2 *This,
-        IUIAnimationVariable2 *variable,
-        IUIAnimationTransition2 *transition,
-        UI_ANIMATION_KEYFRAME startKeyframe);
+                     IUIAnimationStoryboard2 *This,
+                     IUIAnimationVariable2 *variable,
+                     IUIAnimationTransition2 *transition,
+                     UI_ANIMATION_KEYFRAME startKeyframe);
 
     HRESULT (STDMETHODCALLTYPE *AddTransitionBetweenKeyframes)(
-        IUIAnimationStoryboard2 *This,
-        IUIAnimationVariable2 *variable,
-        IUIAnimationTransition2 *transition,
-        UI_ANIMATION_KEYFRAME startKeyframe,
-        UI_ANIMATION_KEYFRAME endKeyframe);
+                     IUIAnimationStoryboard2 *This,
+                     IUIAnimationVariable2 *variable,
+                     IUIAnimationTransition2 *transition,
+                     UI_ANIMATION_KEYFRAME startKeyframe,
+                     UI_ANIMATION_KEYFRAME endKeyframe);
 
     HRESULT (STDMETHODCALLTYPE *RepeatBetweenKeyframes)(
-        IUIAnimationStoryboard2 *This,
-        UI_ANIMATION_KEYFRAME startKeyframe,
-        UI_ANIMATION_KEYFRAME endKeyframe,
-        double cRepetition,
-        UI_ANIMATION_REPEAT_MODE repeatMode,
-        IUIAnimationLoopIterationChangeHandler2 *pIterationChangeHandler,
-        UINT_PTR id,
-        LONG fRegisterForNextAnimationEvent);
+                     IUIAnimationStoryboard2 *This,
+                     UI_ANIMATION_KEYFRAME startKeyframe,
+                     UI_ANIMATION_KEYFRAME endKeyframe,
+                     double cRepetition,
+                     UI_ANIMATION_REPEAT_MODE repeatMode,
+                     IUIAnimationLoopIterationChangeHandler2 *pIterationChangeHandler,
+                     UINT_PTR id,
+                     LONG fRegisterForNextAnimationEvent);
 
     HRESULT (STDMETHODCALLTYPE *HoldVariable)(
-        IUIAnimationStoryboard2 *This,
-        IUIAnimationVariable2 *variable);
+                     IUIAnimationStoryboard2 *This,
+                     IUIAnimationVariable2 *variable);
 
     HRESULT (STDMETHODCALLTYPE *SetLongestAcceptableDelay)(
-        IUIAnimationStoryboard2 *This,
-        double delay);
+                     IUIAnimationStoryboard2 *This,
+                     double delay);
 
     HRESULT (STDMETHODCALLTYPE *SetSkipDuration)(
-        IUIAnimationStoryboard2 *This,
-        double secondsDuration);
+                     IUIAnimationStoryboard2 *This,
+                     double secondsDuration);
 
     HRESULT (STDMETHODCALLTYPE *Schedule)(
-        IUIAnimationStoryboard2 *This,
-        double timeNow,
-        UI_ANIMATION_SCHEDULING_RESULT *schedulingResult);
+                     IUIAnimationStoryboard2 *This,
+                     double timeNow,
+                     UI_ANIMATION_SCHEDULING_RESULT *schedulingResult);
 
     HRESULT (STDMETHODCALLTYPE *Conclude)(
-        IUIAnimationStoryboard2 *This);
+                     IUIAnimationStoryboard2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Finish)(
-        IUIAnimationStoryboard2 *This,
-        double completionDeadline);
+                     IUIAnimationStoryboard2 *This,
+                     double completionDeadline);
 
     HRESULT (STDMETHODCALLTYPE *Abandon)(
-        IUIAnimationStoryboard2 *This);
+                     IUIAnimationStoryboard2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetTag)(
-        IUIAnimationStoryboard2 *This,
-        IUnknown *object,
-        unsigned int id);
+                     IUIAnimationStoryboard2 *This,
+                     IUnknown *object,
+                     unsigned int id);
 
     HRESULT (STDMETHODCALLTYPE *GetTag)(
-        IUIAnimationStoryboard2 *This,
-        IUnknown **object,
-        unsigned int *id);
+                     IUIAnimationStoryboard2 *This,
+                     IUnknown **object,
+                     unsigned int *id);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IUIAnimationStoryboard2 *This,
-        UI_ANIMATION_STORYBOARD_STATUS *status);
+                     IUIAnimationStoryboard2 *This,
+                     UI_ANIMATION_STORYBOARD_STATUS *status);
 
     HRESULT (STDMETHODCALLTYPE *GetElapsedTime)(
-        IUIAnimationStoryboard2 *This,
-        double *elapsedTime);
+                     IUIAnimationStoryboard2 *This,
+                     double *elapsedTime);
 
     HRESULT (STDMETHODCALLTYPE *SetStoryboardEventHandler)(
-        IUIAnimationStoryboard2 *This,
-        IUIAnimationStoryboardEventHandler2 *handler,
-        LONG fRegisterStatusChangeForNextAnimationEvent,
-        LONG fRegisterUpdateForNextAnimationEvent);
+                     IUIAnimationStoryboard2 *This,
+                     IUIAnimationStoryboardEventHandler2 *handler,
+                     LONG fRegisterStatusChangeForNextAnimationEvent,
+                     LONG fRegisterUpdateForNextAnimationEvent);
 
     END_INTERFACE
 } IUIAnimationStoryboard2Vtbl;
@@ -3244,27 +3244,27 @@ MIDL_INTERFACE("62ff9123-a85a-4e9b-a218-435a93e268fd")
 IUIAnimationTransition2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDimension(
-        unsigned int *dimension) = 0;
+                     unsigned int *dimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInitialValue(
-        double value) = 0;
+                     double value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInitialVectorValue(
-        double *value,
-        unsigned int cDimension) = 0;
+                     double *value,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInitialVelocity(
-        double velocity) = 0;
+                     double velocity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInitialVectorVelocity(
-        double *velocity,
-        unsigned int cDimension) = 0;
+                     double *velocity,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDurationKnown(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration(
-        double *duration) = 0;
+                     double *duration) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3276,45 +3276,45 @@ typedef struct IUIAnimationTransition2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTransition2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTransition2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTransition2 *This);
+                     IUIAnimationTransition2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTransition2 *This);
+                     IUIAnimationTransition2 *This);
 
     /*** IUIAnimationTransition2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDimension)(
-        IUIAnimationTransition2 *This,
-        unsigned int *dimension);
+                     IUIAnimationTransition2 *This,
+                     unsigned int *dimension);
 
     HRESULT (STDMETHODCALLTYPE *SetInitialValue)(
-        IUIAnimationTransition2 *This,
-        double value);
+                     IUIAnimationTransition2 *This,
+                     double value);
 
     HRESULT (STDMETHODCALLTYPE *SetInitialVectorValue)(
-        IUIAnimationTransition2 *This,
-        double *value,
-        unsigned int cDimension);
+                     IUIAnimationTransition2 *This,
+                     double *value,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *SetInitialVelocity)(
-        IUIAnimationTransition2 *This,
-        double velocity);
+                     IUIAnimationTransition2 *This,
+                     double velocity);
 
     HRESULT (STDMETHODCALLTYPE *SetInitialVectorVelocity)(
-        IUIAnimationTransition2 *This,
-        double *velocity,
-        unsigned int cDimension);
+                     IUIAnimationTransition2 *This,
+                     double *velocity,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *IsDurationKnown)(
-        IUIAnimationTransition2 *This);
+                     IUIAnimationTransition2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration)(
-        IUIAnimationTransition2 *This,
-        double *duration);
+                     IUIAnimationTransition2 *This,
+                     double *duration);
 
     END_INTERFACE
 } IUIAnimationTransition2Vtbl;
@@ -3390,10 +3390,10 @@ MIDL_INTERFACE("2d3b15a4-4762-47ab-a030-b23221df3ae0")
 IUIAnimationLoopIterationChangeHandler2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnLoopIterationChanged(
-        IUIAnimationStoryboard2 *storyboard,
-        UINT_PTR id,
-        unsigned int newIterationCount,
-        unsigned int oldIterationCount) = 0;
+                     IUIAnimationStoryboard2 *storyboard,
+                     UINT_PTR id,
+                     unsigned int newIterationCount,
+                     unsigned int oldIterationCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3405,23 +3405,23 @@ typedef struct IUIAnimationLoopIterationChangeHandler2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationLoopIterationChangeHandler2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationLoopIterationChangeHandler2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationLoopIterationChangeHandler2 *This);
+                     IUIAnimationLoopIterationChangeHandler2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationLoopIterationChangeHandler2 *This);
+                     IUIAnimationLoopIterationChangeHandler2 *This);
 
     /*** IUIAnimationLoopIterationChangeHandler2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnLoopIterationChanged)(
-        IUIAnimationLoopIterationChangeHandler2 *This,
-        IUIAnimationStoryboard2 *storyboard,
-        UINT_PTR id,
-        unsigned int newIterationCount,
-        unsigned int oldIterationCount);
+                     IUIAnimationLoopIterationChangeHandler2 *This,
+                     IUIAnimationStoryboard2 *storyboard,
+                     UINT_PTR id,
+                     unsigned int newIterationCount,
+                     unsigned int oldIterationCount);
 
     END_INTERFACE
 } IUIAnimationLoopIterationChangeHandler2Vtbl;
@@ -3473,12 +3473,12 @@ MIDL_INTERFACE("bac5f55a-ba7c-414c-b599-fbf850f553c6")
 IUIAnimationStoryboardEventHandler2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnStoryboardStatusChanged(
-        IUIAnimationStoryboard2 *storyboard,
-        UI_ANIMATION_STORYBOARD_STATUS newStatus,
-        UI_ANIMATION_STORYBOARD_STATUS previousStatus) = 0;
+                     IUIAnimationStoryboard2 *storyboard,
+                     UI_ANIMATION_STORYBOARD_STATUS newStatus,
+                     UI_ANIMATION_STORYBOARD_STATUS previousStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStoryboardUpdated(
-        IUIAnimationStoryboard2 *storyboard) = 0;
+                     IUIAnimationStoryboard2 *storyboard) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3490,26 +3490,26 @@ typedef struct IUIAnimationStoryboardEventHandler2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationStoryboardEventHandler2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationStoryboardEventHandler2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationStoryboardEventHandler2 *This);
+                     IUIAnimationStoryboardEventHandler2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationStoryboardEventHandler2 *This);
+                     IUIAnimationStoryboardEventHandler2 *This);
 
     /*** IUIAnimationStoryboardEventHandler2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStoryboardStatusChanged)(
-        IUIAnimationStoryboardEventHandler2 *This,
-        IUIAnimationStoryboard2 *storyboard,
-        UI_ANIMATION_STORYBOARD_STATUS newStatus,
-        UI_ANIMATION_STORYBOARD_STATUS previousStatus);
+                     IUIAnimationStoryboardEventHandler2 *This,
+                     IUIAnimationStoryboard2 *storyboard,
+                     UI_ANIMATION_STORYBOARD_STATUS newStatus,
+                     UI_ANIMATION_STORYBOARD_STATUS previousStatus);
 
     HRESULT (STDMETHODCALLTYPE *OnStoryboardUpdated)(
-        IUIAnimationStoryboardEventHandler2 *This,
-        IUIAnimationStoryboard2 *storyboard);
+                     IUIAnimationStoryboardEventHandler2 *This,
+                     IUIAnimationStoryboard2 *storyboard);
 
     END_INTERFACE
 } IUIAnimationStoryboardEventHandler2Vtbl;
@@ -3565,11 +3565,11 @@ MIDL_INTERFACE("63acc8d2-6eae-4bb0-b879-586dd8cfbe42")
 IUIAnimationVariableChangeHandler2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnValueChanged(
-        IUIAnimationStoryboard2 *storyboard,
-        IUIAnimationVariable2 *variable,
-        double *newValue,
-        double *previousValue,
-        unsigned int cDimension) = 0;
+                     IUIAnimationStoryboard2 *storyboard,
+                     IUIAnimationVariable2 *variable,
+                     double *newValue,
+                     double *previousValue,
+                     unsigned int cDimension) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3581,24 +3581,24 @@ typedef struct IUIAnimationVariableChangeHandler2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationVariableChangeHandler2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationVariableChangeHandler2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationVariableChangeHandler2 *This);
+                     IUIAnimationVariableChangeHandler2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationVariableChangeHandler2 *This);
+                     IUIAnimationVariableChangeHandler2 *This);
 
     /*** IUIAnimationVariableChangeHandler2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnValueChanged)(
-        IUIAnimationVariableChangeHandler2 *This,
-        IUIAnimationStoryboard2 *storyboard,
-        IUIAnimationVariable2 *variable,
-        double *newValue,
-        double *previousValue,
-        unsigned int cDimension);
+                     IUIAnimationVariableChangeHandler2 *This,
+                     IUIAnimationStoryboard2 *storyboard,
+                     IUIAnimationVariable2 *variable,
+                     double *newValue,
+                     double *previousValue,
+                     unsigned int cDimension);
 
     END_INTERFACE
 } IUIAnimationVariableChangeHandler2Vtbl;
@@ -3650,11 +3650,11 @@ MIDL_INTERFACE("829b6cf1-4f3a-4412-ae09-b243eb4c6b58")
 IUIAnimationVariableIntegerChangeHandler2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnIntegerValueChanged(
-        IUIAnimationStoryboard2 *storyboard,
-        IUIAnimationVariable2 *variable,
-        int *newValue,
-        int *previousValue,
-        unsigned int cDimension) = 0;
+                     IUIAnimationStoryboard2 *storyboard,
+                     IUIAnimationVariable2 *variable,
+                     int *newValue,
+                     int *previousValue,
+                     unsigned int cDimension) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3666,24 +3666,24 @@ typedef struct IUIAnimationVariableIntegerChangeHandler2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationVariableIntegerChangeHandler2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationVariableIntegerChangeHandler2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationVariableIntegerChangeHandler2 *This);
+                     IUIAnimationVariableIntegerChangeHandler2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationVariableIntegerChangeHandler2 *This);
+                     IUIAnimationVariableIntegerChangeHandler2 *This);
 
     /*** IUIAnimationVariableIntegerChangeHandler2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnIntegerValueChanged)(
-        IUIAnimationVariableIntegerChangeHandler2 *This,
-        IUIAnimationStoryboard2 *storyboard,
-        IUIAnimationVariable2 *variable,
-        int *newValue,
-        int *previousValue,
-        unsigned int cDimension);
+                     IUIAnimationVariableIntegerChangeHandler2 *This,
+                     IUIAnimationStoryboard2 *storyboard,
+                     IUIAnimationVariable2 *variable,
+                     int *newValue,
+                     int *previousValue,
+                     unsigned int cDimension);
 
     END_INTERFACE
 } IUIAnimationVariableIntegerChangeHandler2Vtbl;
@@ -3735,7 +3735,7 @@ MIDL_INTERFACE("72895e91-0145-4c21-9192-5aab40eddf80")
 IUIAnimationVariableCurveChangeHandler2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnCurveChanged(
-        IUIAnimationVariable2 *variable) = 0;
+                     IUIAnimationVariable2 *variable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3747,20 +3747,20 @@ typedef struct IUIAnimationVariableCurveChangeHandler2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationVariableCurveChangeHandler2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationVariableCurveChangeHandler2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationVariableCurveChangeHandler2 *This);
+                     IUIAnimationVariableCurveChangeHandler2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationVariableCurveChangeHandler2 *This);
+                     IUIAnimationVariableCurveChangeHandler2 *This);
 
     /*** IUIAnimationVariableCurveChangeHandler2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnCurveChanged)(
-        IUIAnimationVariableCurveChangeHandler2 *This,
-        IUIAnimationVariable2 *variable);
+                     IUIAnimationVariableCurveChangeHandler2 *This,
+                     IUIAnimationVariable2 *variable);
 
     END_INTERFACE
 } IUIAnimationVariableCurveChangeHandler2Vtbl;
@@ -3812,8 +3812,8 @@ MIDL_INTERFACE("f6e022ba-bff3-42ec-9033-e073f33e83c3")
 IUIAnimationManagerEventHandler2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnManagerStatusChanged(
-        UI_ANIMATION_MANAGER_STATUS newStatus,
-        UI_ANIMATION_MANAGER_STATUS previousStatus) = 0;
+                     UI_ANIMATION_MANAGER_STATUS newStatus,
+                     UI_ANIMATION_MANAGER_STATUS previousStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3825,21 +3825,21 @@ typedef struct IUIAnimationManagerEventHandler2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationManagerEventHandler2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationManagerEventHandler2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationManagerEventHandler2 *This);
+                     IUIAnimationManagerEventHandler2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationManagerEventHandler2 *This);
+                     IUIAnimationManagerEventHandler2 *This);
 
     /*** IUIAnimationManagerEventHandler2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnManagerStatusChanged)(
-        IUIAnimationManagerEventHandler2 *This,
-        UI_ANIMATION_MANAGER_STATUS newStatus,
-        UI_ANIMATION_MANAGER_STATUS previousStatus);
+                     IUIAnimationManagerEventHandler2 *This,
+                     UI_ANIMATION_MANAGER_STATUS newStatus,
+                     UI_ANIMATION_MANAGER_STATUS previousStatus);
 
     END_INTERFACE
 } IUIAnimationManagerEventHandler2Vtbl;
@@ -3891,9 +3891,9 @@ MIDL_INTERFACE("5b6d7a37-4621-467c-8b05-70131de62ddb")
 IUIAnimationPriorityComparison2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE HasPriority(
-        IUIAnimationStoryboard2 *scheduledStoryboard,
-        IUIAnimationStoryboard2 *newStoryboard,
-        UI_ANIMATION_PRIORITY_EFFECT priorityEffect) = 0;
+                     IUIAnimationStoryboard2 *scheduledStoryboard,
+                     IUIAnimationStoryboard2 *newStoryboard,
+                     UI_ANIMATION_PRIORITY_EFFECT priorityEffect) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3905,22 +3905,22 @@ typedef struct IUIAnimationPriorityComparison2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationPriorityComparison2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationPriorityComparison2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationPriorityComparison2 *This);
+                     IUIAnimationPriorityComparison2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationPriorityComparison2 *This);
+                     IUIAnimationPriorityComparison2 *This);
 
     /*** IUIAnimationPriorityComparison2 methods ***/
     HRESULT (STDMETHODCALLTYPE *HasPriority)(
-        IUIAnimationPriorityComparison2 *This,
-        IUIAnimationStoryboard2 *scheduledStoryboard,
-        IUIAnimationStoryboard2 *newStoryboard,
-        UI_ANIMATION_PRIORITY_EFFECT priorityEffect);
+                     IUIAnimationPriorityComparison2 *This,
+                     IUIAnimationStoryboard2 *scheduledStoryboard,
+                     IUIAnimationStoryboard2 *newStoryboard,
+                     UI_ANIMATION_PRIORITY_EFFECT priorityEffect);
 
     END_INTERFACE
 } IUIAnimationPriorityComparison2Vtbl;
@@ -3972,69 +3972,69 @@ MIDL_INTERFACE("ca5a14b1-d24f-48b8-8fe4-c78169ba954e")
 IUIAnimationTransitionLibrary : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateInstantaneousTransition(
-        double finalValue,
-        IUIAnimationTransition **transition) = 0;
+                     double finalValue,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateConstantTransition(
-        double duration,
-        IUIAnimationTransition **transition) = 0;
+                     double duration,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDiscreteTransition(
-        double delay,
-        double finalValue,
-        double hold,
-        IUIAnimationTransition **transition) = 0;
+                     double delay,
+                     double finalValue,
+                     double hold,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateLinearTransition(
-        double duration,
-        double finalValue,
-        IUIAnimationTransition **transition) = 0;
+                     double duration,
+                     double finalValue,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateLinearTransitionFromSpeed(
-        double speed,
-        double finalValue,
-        IUIAnimationTransition **transition) = 0;
+                     double speed,
+                     double finalValue,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSinusoidalTransitionFromVelocity(
-        double duration,
-        double period,
-        IUIAnimationTransition **transition) = 0;
+                     double duration,
+                     double period,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSinusoidalTransitionFromRange(
-        double duration,
-        double minimumValue,
-        double maximumValue,
-        double period,
-        UI_ANIMATION_SLOPE slope,
-        IUIAnimationTransition **transition) = 0;
+                     double duration,
+                     double minimumValue,
+                     double maximumValue,
+                     double period,
+                     UI_ANIMATION_SLOPE slope,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAccelerateDecelerateTransition(
-        double duration,
-        double finalValue,
-        double accelerationRatio,
-        double decelerationRatio,
-        IUIAnimationTransition **transition) = 0;
+                     double duration,
+                     double finalValue,
+                     double accelerationRatio,
+                     double decelerationRatio,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateReversalTransition(
-        double duration,
-        IUIAnimationTransition **transition) = 0;
+                     double duration,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCubicTransition(
-        double duration,
-        double finalValue,
-        double finalVelocity,
-        IUIAnimationTransition **transition) = 0;
+                     double duration,
+                     double finalValue,
+                     double finalVelocity,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSmoothStopTransition(
-        double maximumDuration,
-        double finalValue,
-        IUIAnimationTransition **transition) = 0;
+                     double maximumDuration,
+                     double finalValue,
+                     IUIAnimationTransition **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateParabolicTransitionFromAcceleration(
-        double finalValue,
-        double finalVelocity,
-        double acceleration,
-        IUIAnimationTransition **transition) = 0;
+                     double finalValue,
+                     double finalVelocity,
+                     double acceleration,
+                     IUIAnimationTransition **transition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4046,93 +4046,93 @@ typedef struct IUIAnimationTransitionLibraryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTransitionLibrary *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTransitionLibrary *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTransitionLibrary *This);
+                     IUIAnimationTransitionLibrary *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTransitionLibrary *This);
+                     IUIAnimationTransitionLibrary *This);
 
     /*** IUIAnimationTransitionLibrary methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateInstantaneousTransition)(
-        IUIAnimationTransitionLibrary *This,
-        double finalValue,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double finalValue,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateConstantTransition)(
-        IUIAnimationTransitionLibrary *This,
-        double duration,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double duration,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateDiscreteTransition)(
-        IUIAnimationTransitionLibrary *This,
-        double delay,
-        double finalValue,
-        double hold,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double delay,
+                     double finalValue,
+                     double hold,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateLinearTransition)(
-        IUIAnimationTransitionLibrary *This,
-        double duration,
-        double finalValue,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double duration,
+                     double finalValue,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateLinearTransitionFromSpeed)(
-        IUIAnimationTransitionLibrary *This,
-        double speed,
-        double finalValue,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double speed,
+                     double finalValue,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateSinusoidalTransitionFromVelocity)(
-        IUIAnimationTransitionLibrary *This,
-        double duration,
-        double period,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double duration,
+                     double period,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateSinusoidalTransitionFromRange)(
-        IUIAnimationTransitionLibrary *This,
-        double duration,
-        double minimumValue,
-        double maximumValue,
-        double period,
-        UI_ANIMATION_SLOPE slope,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double duration,
+                     double minimumValue,
+                     double maximumValue,
+                     double period,
+                     UI_ANIMATION_SLOPE slope,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateAccelerateDecelerateTransition)(
-        IUIAnimationTransitionLibrary *This,
-        double duration,
-        double finalValue,
-        double accelerationRatio,
-        double decelerationRatio,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double duration,
+                     double finalValue,
+                     double accelerationRatio,
+                     double decelerationRatio,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateReversalTransition)(
-        IUIAnimationTransitionLibrary *This,
-        double duration,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double duration,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateCubicTransition)(
-        IUIAnimationTransitionLibrary *This,
-        double duration,
-        double finalValue,
-        double finalVelocity,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double duration,
+                     double finalValue,
+                     double finalVelocity,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateSmoothStopTransition)(
-        IUIAnimationTransitionLibrary *This,
-        double maximumDuration,
-        double finalValue,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double maximumDuration,
+                     double finalValue,
+                     IUIAnimationTransition **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateParabolicTransitionFromAcceleration)(
-        IUIAnimationTransitionLibrary *This,
-        double finalValue,
-        double finalVelocity,
-        double acceleration,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionLibrary *This,
+                     double finalValue,
+                     double finalVelocity,
+                     double acceleration,
+                     IUIAnimationTransition **transition);
 
     END_INTERFACE
 } IUIAnimationTransitionLibraryVtbl;
@@ -4228,119 +4228,119 @@ MIDL_INTERFACE("03cfae53-9580-4ee3-b363-2ece51b4af6a")
 IUIAnimationTransitionLibrary2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateInstantaneousTransition(
-        double finalValue,
-        IUIAnimationTransition2 **transition) = 0;
+                     double finalValue,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInstantaneousVectorTransition(
-        double *finalValue,
-        unsigned int cDimension,
-        IUIAnimationTransition2 **transition) = 0;
+                     double *finalValue,
+                     unsigned int cDimension,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateConstantTransition(
-        double duration,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDiscreteTransition(
-        double delay,
-        double finalValue,
-        double hold,
-        IUIAnimationTransition2 **transition) = 0;
+                     double delay,
+                     double finalValue,
+                     double hold,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDiscreteVectorTransition(
-        double delay,
-        double *finalValue,
-        unsigned int cDimension,
-        double hold,
-        IUIAnimationTransition2 **transition) = 0;
+                     double delay,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     double hold,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateLinearTransition(
-        double duration,
-        double finalValue,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     double finalValue,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateLinearVectorTransition(
-        double duration,
-        double *finalValue,
-        unsigned int cDimension,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateLinearTransitionFromSpeed(
-        double speed,
-        double finalValue,
-        IUIAnimationTransition2 **transition) = 0;
+                     double speed,
+                     double finalValue,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateLinearVectorTransitionFromSpeed(
-        double speed,
-        double *finalValue,
-        unsigned int cDimension,
-        IUIAnimationTransition2 **transition) = 0;
+                     double speed,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSinusoidalTransitionFromVelocity(
-        double duration,
-        double period,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     double period,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSinusoidalTransitionFromRange(
-        double duration,
-        double minimumValue,
-        double maximumValue,
-        double period,
-        UI_ANIMATION_SLOPE slope,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     double minimumValue,
+                     double maximumValue,
+                     double period,
+                     UI_ANIMATION_SLOPE slope,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAccelerateDecelerateTransition(
-        double duration,
-        double finalValue,
-        double accelerationRatio,
-        double decelerationRatio,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     double finalValue,
+                     double accelerationRatio,
+                     double decelerationRatio,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateReversalTransition(
-        double duration,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCubicTransition(
-        double duration,
-        double finalValue,
-        double finalVelocity,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     double finalValue,
+                     double finalVelocity,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCubicVectorTransition(
-        double duration,
-        double *finalValue,
-        double *finalVelocity,
-        unsigned int cDimension,
-        IUIAnimationTransition2 **transition) = 0;
+                     double duration,
+                     double *finalValue,
+                     double *finalVelocity,
+                     unsigned int cDimension,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSmoothStopTransition(
-        double maximumDuration,
-        double finalValue,
-        IUIAnimationTransition2 **transition) = 0;
+                     double maximumDuration,
+                     double finalValue,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateParabolicTransitionFromAcceleration(
-        double finalValue,
-        double finalVelocity,
-        double acceleration,
-        IUIAnimationTransition2 **transition) = 0;
+                     double finalValue,
+                     double finalVelocity,
+                     double acceleration,
+                     IUIAnimationTransition2 **transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCubicBezierLinearTransition(
-        double duration,
-        double finalValue,
-        double x1,
-        double y1,
-        double x2,
-        double y2,
-        IUIAnimationTransition2 **ppTransition) = 0;
+                     double duration,
+                     double finalValue,
+                     double x1,
+                     double y1,
+                     double x2,
+                     double y2,
+                     IUIAnimationTransition2 **ppTransition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCubicBezierLinearVectorTransition(
-        double duration,
-        double *finalValue,
-        unsigned int cDimension,
-        double x1,
-        double y1,
-        double x2,
-        double y2,
-        IUIAnimationTransition2 **ppTransition) = 0;
+                     double duration,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     double x1,
+                     double y1,
+                     double x2,
+                     double y2,
+                     IUIAnimationTransition2 **ppTransition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4352,150 +4352,150 @@ typedef struct IUIAnimationTransitionLibrary2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTransitionLibrary2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTransitionLibrary2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTransitionLibrary2 *This);
+                     IUIAnimationTransitionLibrary2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTransitionLibrary2 *This);
+                     IUIAnimationTransitionLibrary2 *This);
 
     /*** IUIAnimationTransitionLibrary2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateInstantaneousTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double finalValue,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double finalValue,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstantaneousVectorTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double *finalValue,
-        unsigned int cDimension,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateConstantTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateDiscreteTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double delay,
-        double finalValue,
-        double hold,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double delay,
+                     double finalValue,
+                     double hold,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateDiscreteVectorTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double delay,
-        double *finalValue,
-        unsigned int cDimension,
-        double hold,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double delay,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     double hold,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateLinearTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double finalValue,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double finalValue,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateLinearVectorTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double *finalValue,
-        unsigned int cDimension,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateLinearTransitionFromSpeed)(
-        IUIAnimationTransitionLibrary2 *This,
-        double speed,
-        double finalValue,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double speed,
+                     double finalValue,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateLinearVectorTransitionFromSpeed)(
-        IUIAnimationTransitionLibrary2 *This,
-        double speed,
-        double *finalValue,
-        unsigned int cDimension,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double speed,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateSinusoidalTransitionFromVelocity)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double period,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double period,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateSinusoidalTransitionFromRange)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double minimumValue,
-        double maximumValue,
-        double period,
-        UI_ANIMATION_SLOPE slope,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double minimumValue,
+                     double maximumValue,
+                     double period,
+                     UI_ANIMATION_SLOPE slope,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateAccelerateDecelerateTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double finalValue,
-        double accelerationRatio,
-        double decelerationRatio,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double finalValue,
+                     double accelerationRatio,
+                     double decelerationRatio,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateReversalTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateCubicTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double finalValue,
-        double finalVelocity,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double finalValue,
+                     double finalVelocity,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateCubicVectorTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double *finalValue,
-        double *finalVelocity,
-        unsigned int cDimension,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double *finalValue,
+                     double *finalVelocity,
+                     unsigned int cDimension,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateSmoothStopTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double maximumDuration,
-        double finalValue,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double maximumDuration,
+                     double finalValue,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateParabolicTransitionFromAcceleration)(
-        IUIAnimationTransitionLibrary2 *This,
-        double finalValue,
-        double finalVelocity,
-        double acceleration,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double finalValue,
+                     double finalVelocity,
+                     double acceleration,
+                     IUIAnimationTransition2 **transition);
 
     HRESULT (STDMETHODCALLTYPE *CreateCubicBezierLinearTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double finalValue,
-        double x1,
-        double y1,
-        double x2,
-        double y2,
-        IUIAnimationTransition2 **ppTransition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double finalValue,
+                     double x1,
+                     double y1,
+                     double x2,
+                     double y2,
+                     IUIAnimationTransition2 **ppTransition);
 
     HRESULT (STDMETHODCALLTYPE *CreateCubicBezierLinearVectorTransition)(
-        IUIAnimationTransitionLibrary2 *This,
-        double duration,
-        double *finalValue,
-        unsigned int cDimension,
-        double x1,
-        double y1,
-        double x2,
-        double y2,
-        IUIAnimationTransition2 **ppTransition);
+                     IUIAnimationTransitionLibrary2 *This,
+                     double duration,
+                     double *finalValue,
+                     unsigned int cDimension,
+                     double x1,
+                     double y1,
+                     double x2,
+                     double y2,
+                     IUIAnimationTransition2 **ppTransition);
 
     END_INTERFACE
 } IUIAnimationTransitionLibrary2Vtbl;
@@ -4619,8 +4619,8 @@ MIDL_INTERFACE("fcd91e03-3e3b-45ad-bbb1-6dfc8153743d")
 IUIAnimationTransitionFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateTransition(
-        IUIAnimationInterpolator *interpolator,
-        IUIAnimationTransition **transition) = 0;
+                     IUIAnimationInterpolator *interpolator,
+                     IUIAnimationTransition **transition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4632,21 +4632,21 @@ typedef struct IUIAnimationTransitionFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTransitionFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTransitionFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTransitionFactory *This);
+                     IUIAnimationTransitionFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTransitionFactory *This);
+                     IUIAnimationTransitionFactory *This);
 
     /*** IUIAnimationTransitionFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateTransition)(
-        IUIAnimationTransitionFactory *This,
-        IUIAnimationInterpolator *interpolator,
-        IUIAnimationTransition **transition);
+                     IUIAnimationTransitionFactory *This,
+                     IUIAnimationInterpolator *interpolator,
+                     IUIAnimationTransition **transition);
 
     END_INTERFACE
 } IUIAnimationTransitionFactoryVtbl;
@@ -4698,30 +4698,30 @@ MIDL_INTERFACE("7815cbba-ddf7-478c-a46c-7b6c738b7978")
 IUIAnimationInterpolator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetInitialValueAndVelocity(
-        double initialValue,
-        double initialVelocity) = 0;
+                     double initialValue,
+                     double initialVelocity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDuration(
-        double duration) = 0;
+                     double duration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration(
-        double *duration) = 0;
+                     double *duration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalValue(
-        double *value) = 0;
+                     double *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InterpolateValue(
-        double offset,
-        double *value) = 0;
+                     double offset,
+                     double *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InterpolateVelocity(
-        double offset,
-        double *velocity) = 0;
+                     double offset,
+                     double *velocity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDependencies(
-        UI_ANIMATION_DEPENDENCIES *initialValueDependencies,
-        UI_ANIMATION_DEPENDENCIES *initialVelocityDependencies,
-        UI_ANIMATION_DEPENDENCIES *durationDependencies) = 0;
+                     UI_ANIMATION_DEPENDENCIES *initialValueDependencies,
+                     UI_ANIMATION_DEPENDENCIES *initialVelocityDependencies,
+                     UI_ANIMATION_DEPENDENCIES *durationDependencies) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4733,49 +4733,49 @@ typedef struct IUIAnimationInterpolatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationInterpolator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationInterpolator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationInterpolator *This);
+                     IUIAnimationInterpolator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationInterpolator *This);
+                     IUIAnimationInterpolator *This);
 
     /*** IUIAnimationInterpolator methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInitialValueAndVelocity)(
-        IUIAnimationInterpolator *This,
-        double initialValue,
-        double initialVelocity);
+                     IUIAnimationInterpolator *This,
+                     double initialValue,
+                     double initialVelocity);
 
     HRESULT (STDMETHODCALLTYPE *SetDuration)(
-        IUIAnimationInterpolator *This,
-        double duration);
+                     IUIAnimationInterpolator *This,
+                     double duration);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration)(
-        IUIAnimationInterpolator *This,
-        double *duration);
+                     IUIAnimationInterpolator *This,
+                     double *duration);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalValue)(
-        IUIAnimationInterpolator *This,
-        double *value);
+                     IUIAnimationInterpolator *This,
+                     double *value);
 
     HRESULT (STDMETHODCALLTYPE *InterpolateValue)(
-        IUIAnimationInterpolator *This,
-        double offset,
-        double *value);
+                     IUIAnimationInterpolator *This,
+                     double offset,
+                     double *value);
 
     HRESULT (STDMETHODCALLTYPE *InterpolateVelocity)(
-        IUIAnimationInterpolator *This,
-        double offset,
-        double *velocity);
+                     IUIAnimationInterpolator *This,
+                     double offset,
+                     double *velocity);
 
     HRESULT (STDMETHODCALLTYPE *GetDependencies)(
-        IUIAnimationInterpolator *This,
-        UI_ANIMATION_DEPENDENCIES *initialValueDependencies,
-        UI_ANIMATION_DEPENDENCIES *initialVelocityDependencies,
-        UI_ANIMATION_DEPENDENCIES *durationDependencies);
+                     IUIAnimationInterpolator *This,
+                     UI_ANIMATION_DEPENDENCIES *initialValueDependencies,
+                     UI_ANIMATION_DEPENDENCIES *initialVelocityDependencies,
+                     UI_ANIMATION_DEPENDENCIES *durationDependencies);
 
     END_INTERFACE
 } IUIAnimationInterpolatorVtbl;
@@ -4851,8 +4851,8 @@ MIDL_INTERFACE("937d4916-c1a6-42d5-88d8-30344d6efe31")
 IUIAnimationTransitionFactory2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateTransition(
-        IUIAnimationInterpolator2 *interpolator,
-        IUIAnimationTransition2 **transition) = 0;
+                     IUIAnimationInterpolator2 *interpolator,
+                     IUIAnimationTransition2 **transition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4864,21 +4864,21 @@ typedef struct IUIAnimationTransitionFactory2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTransitionFactory2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTransitionFactory2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTransitionFactory2 *This);
+                     IUIAnimationTransitionFactory2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTransitionFactory2 *This);
+                     IUIAnimationTransitionFactory2 *This);
 
     /*** IUIAnimationTransitionFactory2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateTransition)(
-        IUIAnimationTransitionFactory2 *This,
-        IUIAnimationInterpolator2 *interpolator,
-        IUIAnimationTransition2 **transition);
+                     IUIAnimationTransitionFactory2 *This,
+                     IUIAnimationInterpolator2 *interpolator,
+                     IUIAnimationTransition2 **transition);
 
     END_INTERFACE
 } IUIAnimationTransitionFactory2Vtbl;
@@ -4930,41 +4930,41 @@ MIDL_INTERFACE("ea76aff8-ea22-4a23-a0ef-a6a966703518")
 IUIAnimationInterpolator2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDimension(
-        unsigned int *dimension) = 0;
+                     unsigned int *dimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInitialValueAndVelocity(
-        double *initialValue,
-        double *initialVelocity,
-        unsigned int cDimension) = 0;
+                     double *initialValue,
+                     double *initialVelocity,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDuration(
-        double duration) = 0;
+                     double duration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration(
-        double *duration) = 0;
+                     double *duration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalValue(
-        double *value,
-        unsigned int cDimension) = 0;
+                     double *value,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InterpolateValue(
-        double offset,
-        double *value,
-        unsigned int cDimension) = 0;
+                     double offset,
+                     double *value,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InterpolateVelocity(
-        double offset,
-        double *velocity,
-        unsigned int cDimension) = 0;
+                     double offset,
+                     double *velocity,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPrimitiveInterpolation(
-        IUIAnimationPrimitiveInterpolation *interpolation,
-        unsigned int cDimension) = 0;
+                     IUIAnimationPrimitiveInterpolation *interpolation,
+                     unsigned int cDimension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDependencies(
-        UI_ANIMATION_DEPENDENCIES *initialValueDependencies,
-        UI_ANIMATION_DEPENDENCIES *initialVelocityDependencies,
-        UI_ANIMATION_DEPENDENCIES *durationDependencies) = 0;
+                     UI_ANIMATION_DEPENDENCIES *initialValueDependencies,
+                     UI_ANIMATION_DEPENDENCIES *initialVelocityDependencies,
+                     UI_ANIMATION_DEPENDENCIES *durationDependencies) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4976,62 +4976,62 @@ typedef struct IUIAnimationInterpolator2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationInterpolator2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationInterpolator2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationInterpolator2 *This);
+                     IUIAnimationInterpolator2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationInterpolator2 *This);
+                     IUIAnimationInterpolator2 *This);
 
     /*** IUIAnimationInterpolator2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDimension)(
-        IUIAnimationInterpolator2 *This,
-        unsigned int *dimension);
+                     IUIAnimationInterpolator2 *This,
+                     unsigned int *dimension);
 
     HRESULT (STDMETHODCALLTYPE *SetInitialValueAndVelocity)(
-        IUIAnimationInterpolator2 *This,
-        double *initialValue,
-        double *initialVelocity,
-        unsigned int cDimension);
+                     IUIAnimationInterpolator2 *This,
+                     double *initialValue,
+                     double *initialVelocity,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *SetDuration)(
-        IUIAnimationInterpolator2 *This,
-        double duration);
+                     IUIAnimationInterpolator2 *This,
+                     double duration);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration)(
-        IUIAnimationInterpolator2 *This,
-        double *duration);
+                     IUIAnimationInterpolator2 *This,
+                     double *duration);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalValue)(
-        IUIAnimationInterpolator2 *This,
-        double *value,
-        unsigned int cDimension);
+                     IUIAnimationInterpolator2 *This,
+                     double *value,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *InterpolateValue)(
-        IUIAnimationInterpolator2 *This,
-        double offset,
-        double *value,
-        unsigned int cDimension);
+                     IUIAnimationInterpolator2 *This,
+                     double offset,
+                     double *value,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *InterpolateVelocity)(
-        IUIAnimationInterpolator2 *This,
-        double offset,
-        double *velocity,
-        unsigned int cDimension);
+                     IUIAnimationInterpolator2 *This,
+                     double offset,
+                     double *velocity,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetPrimitiveInterpolation)(
-        IUIAnimationInterpolator2 *This,
-        IUIAnimationPrimitiveInterpolation *interpolation,
-        unsigned int cDimension);
+                     IUIAnimationInterpolator2 *This,
+                     IUIAnimationPrimitiveInterpolation *interpolation,
+                     unsigned int cDimension);
 
     HRESULT (STDMETHODCALLTYPE *GetDependencies)(
-        IUIAnimationInterpolator2 *This,
-        UI_ANIMATION_DEPENDENCIES *initialValueDependencies,
-        UI_ANIMATION_DEPENDENCIES *initialVelocityDependencies,
-        UI_ANIMATION_DEPENDENCIES *durationDependencies);
+                     IUIAnimationInterpolator2 *This,
+                     UI_ANIMATION_DEPENDENCIES *initialValueDependencies,
+                     UI_ANIMATION_DEPENDENCIES *initialVelocityDependencies,
+                     UI_ANIMATION_DEPENDENCIES *durationDependencies);
 
     END_INTERFACE
 } IUIAnimationInterpolator2Vtbl;
@@ -5115,20 +5115,20 @@ MIDL_INTERFACE("bab20d63-4361-45da-a24f-ab8508846b5b")
 IUIAnimationPrimitiveInterpolation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddCubic(
-        unsigned int dimension,
-        double beginOffset,
-        float constantCoefficient,
-        float linearCoefficient,
-        float quadraticCoefficient,
-        float cubicCoefficient) = 0;
+                     unsigned int dimension,
+                     double beginOffset,
+                     float constantCoefficient,
+                     float linearCoefficient,
+                     float quadraticCoefficient,
+                     float cubicCoefficient) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSinusoidal(
-        unsigned int dimension,
-        double beginOffset,
-        float bias,
-        float amplitude,
-        float frequency,
-        float phase) = 0;
+                     unsigned int dimension,
+                     double beginOffset,
+                     float bias,
+                     float amplitude,
+                     float frequency,
+                     float phase) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5140,34 +5140,34 @@ typedef struct IUIAnimationPrimitiveInterpolationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationPrimitiveInterpolation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationPrimitiveInterpolation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationPrimitiveInterpolation *This);
+                     IUIAnimationPrimitiveInterpolation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationPrimitiveInterpolation *This);
+                     IUIAnimationPrimitiveInterpolation *This);
 
     /*** IUIAnimationPrimitiveInterpolation methods ***/
     HRESULT (STDMETHODCALLTYPE *AddCubic)(
-        IUIAnimationPrimitiveInterpolation *This,
-        unsigned int dimension,
-        double beginOffset,
-        float constantCoefficient,
-        float linearCoefficient,
-        float quadraticCoefficient,
-        float cubicCoefficient);
+                     IUIAnimationPrimitiveInterpolation *This,
+                     unsigned int dimension,
+                     double beginOffset,
+                     float constantCoefficient,
+                     float linearCoefficient,
+                     float quadraticCoefficient,
+                     float cubicCoefficient);
 
     HRESULT (STDMETHODCALLTYPE *AddSinusoidal)(
-        IUIAnimationPrimitiveInterpolation *This,
-        unsigned int dimension,
-        double beginOffset,
-        float bias,
-        float amplitude,
-        float frequency,
-        float phase);
+                     IUIAnimationPrimitiveInterpolation *This,
+                     unsigned int dimension,
+                     double beginOffset,
+                     float bias,
+                     float amplitude,
+                     float frequency,
+                     float phase);
 
     END_INTERFACE
 } IUIAnimationPrimitiveInterpolationVtbl;
@@ -5223,26 +5223,26 @@ MIDL_INTERFACE("6b0efad1-a053-41d6-9085-33a689144665")
 IUIAnimationTimer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetTimerUpdateHandler(
-        IUIAnimationTimerUpdateHandler *updateHandler,
-        UI_ANIMATION_IDLE_BEHAVIOR idleBehavior) = 0;
+                     IUIAnimationTimerUpdateHandler *updateHandler,
+                     UI_ANIMATION_IDLE_BEHAVIOR idleBehavior) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimerEventHandler(
-        IUIAnimationTimerEventHandler *handler) = 0;
+                     IUIAnimationTimerEventHandler *handler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Enable(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Disable(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEnabled(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTime(
-        double *seconds) = 0;
+                     double *seconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFrameRateThreshold(
-        unsigned int framesPerSecond) = 0;
+                     unsigned int framesPerSecond) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5254,42 +5254,42 @@ typedef struct IUIAnimationTimerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTimer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTimer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTimer *This);
+                     IUIAnimationTimer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTimer *This);
+                     IUIAnimationTimer *This);
 
     /*** IUIAnimationTimer methods ***/
     HRESULT (STDMETHODCALLTYPE *SetTimerUpdateHandler)(
-        IUIAnimationTimer *This,
-        IUIAnimationTimerUpdateHandler *updateHandler,
-        UI_ANIMATION_IDLE_BEHAVIOR idleBehavior);
+                     IUIAnimationTimer *This,
+                     IUIAnimationTimerUpdateHandler *updateHandler,
+                     UI_ANIMATION_IDLE_BEHAVIOR idleBehavior);
 
     HRESULT (STDMETHODCALLTYPE *SetTimerEventHandler)(
-        IUIAnimationTimer *This,
-        IUIAnimationTimerEventHandler *handler);
+                     IUIAnimationTimer *This,
+                     IUIAnimationTimerEventHandler *handler);
 
     HRESULT (STDMETHODCALLTYPE *Enable)(
-        IUIAnimationTimer *This);
+                     IUIAnimationTimer *This);
 
     HRESULT (STDMETHODCALLTYPE *Disable)(
-        IUIAnimationTimer *This);
+                     IUIAnimationTimer *This);
 
     HRESULT (STDMETHODCALLTYPE *IsEnabled)(
-        IUIAnimationTimer *This);
+                     IUIAnimationTimer *This);
 
     HRESULT (STDMETHODCALLTYPE *GetTime)(
-        IUIAnimationTimer *This,
-        double *seconds);
+                     IUIAnimationTimer *This,
+                     double *seconds);
 
     HRESULT (STDMETHODCALLTYPE *SetFrameRateThreshold)(
-        IUIAnimationTimer *This,
-        unsigned int framesPerSecond);
+                     IUIAnimationTimer *This,
+                     unsigned int framesPerSecond);
 
     END_INTERFACE
 } IUIAnimationTimerVtbl;
@@ -5365,14 +5365,14 @@ MIDL_INTERFACE("195509b7-5d5e-4e3e-b278-ee3759b367ad")
 IUIAnimationTimerUpdateHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnUpdate(
-        double timeNow,
-        UI_ANIMATION_UPDATE_RESULT *result) = 0;
+                     double timeNow,
+                     UI_ANIMATION_UPDATE_RESULT *result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimerClientEventHandler(
-        IUIAnimationTimerClientEventHandler *handler) = 0;
+                     IUIAnimationTimerClientEventHandler *handler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearTimerClientEventHandler(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5384,28 +5384,28 @@ typedef struct IUIAnimationTimerUpdateHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTimerUpdateHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTimerUpdateHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTimerUpdateHandler *This);
+                     IUIAnimationTimerUpdateHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTimerUpdateHandler *This);
+                     IUIAnimationTimerUpdateHandler *This);
 
     /*** IUIAnimationTimerUpdateHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *OnUpdate)(
-        IUIAnimationTimerUpdateHandler *This,
-        double timeNow,
-        UI_ANIMATION_UPDATE_RESULT *result);
+                     IUIAnimationTimerUpdateHandler *This,
+                     double timeNow,
+                     UI_ANIMATION_UPDATE_RESULT *result);
 
     HRESULT (STDMETHODCALLTYPE *SetTimerClientEventHandler)(
-        IUIAnimationTimerUpdateHandler *This,
-        IUIAnimationTimerClientEventHandler *handler);
+                     IUIAnimationTimerUpdateHandler *This,
+                     IUIAnimationTimerClientEventHandler *handler);
 
     HRESULT (STDMETHODCALLTYPE *ClearTimerClientEventHandler)(
-        IUIAnimationTimerUpdateHandler *This);
+                     IUIAnimationTimerUpdateHandler *This);
 
     END_INTERFACE
 } IUIAnimationTimerUpdateHandlerVtbl;
@@ -5465,8 +5465,8 @@ MIDL_INTERFACE("bedb4db6-94fa-4bfb-a47f-ef2d9e408c25")
 IUIAnimationTimerClientEventHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnTimerClientStatusChanged(
-        UI_ANIMATION_TIMER_CLIENT_STATUS newStatus,
-        UI_ANIMATION_TIMER_CLIENT_STATUS previousStatus) = 0;
+                     UI_ANIMATION_TIMER_CLIENT_STATUS newStatus,
+                     UI_ANIMATION_TIMER_CLIENT_STATUS previousStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5478,21 +5478,21 @@ typedef struct IUIAnimationTimerClientEventHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTimerClientEventHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTimerClientEventHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTimerClientEventHandler *This);
+                     IUIAnimationTimerClientEventHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTimerClientEventHandler *This);
+                     IUIAnimationTimerClientEventHandler *This);
 
     /*** IUIAnimationTimerClientEventHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *OnTimerClientStatusChanged)(
-        IUIAnimationTimerClientEventHandler *This,
-        UI_ANIMATION_TIMER_CLIENT_STATUS newStatus,
-        UI_ANIMATION_TIMER_CLIENT_STATUS previousStatus);
+                     IUIAnimationTimerClientEventHandler *This,
+                     UI_ANIMATION_TIMER_CLIENT_STATUS newStatus,
+                     UI_ANIMATION_TIMER_CLIENT_STATUS previousStatus);
 
     END_INTERFACE
 } IUIAnimationTimerClientEventHandlerVtbl;
@@ -5544,13 +5544,13 @@ MIDL_INTERFACE("274a7dea-d771-4095-abbd-8df7abd23ce3")
 IUIAnimationTimerEventHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnPreUpdate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPostUpdate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnRenderingTooSlow(
-        UINT32 framesPerSecond) = 0;
+                     UINT32 framesPerSecond) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5562,26 +5562,26 @@ typedef struct IUIAnimationTimerEventHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIAnimationTimerEventHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIAnimationTimerEventHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIAnimationTimerEventHandler *This);
+                     IUIAnimationTimerEventHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIAnimationTimerEventHandler *This);
+                     IUIAnimationTimerEventHandler *This);
 
     /*** IUIAnimationTimerEventHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *OnPreUpdate)(
-        IUIAnimationTimerEventHandler *This);
+                     IUIAnimationTimerEventHandler *This);
 
     HRESULT (STDMETHODCALLTYPE *OnPostUpdate)(
-        IUIAnimationTimerEventHandler *This);
+                     IUIAnimationTimerEventHandler *This);
 
     HRESULT (STDMETHODCALLTYPE *OnRenderingTooSlow)(
-        IUIAnimationTimerEventHandler *This,
-        UINT32 framesPerSecond);
+                     IUIAnimationTimerEventHandler *This,
+                     UINT32 framesPerSecond);
 
     END_INTERFACE
 } IUIAnimationTimerEventHandlerVtbl;

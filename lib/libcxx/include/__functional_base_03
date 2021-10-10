@@ -32,31 +32,31 @@ struct __enable_invoke_imp<_Ret, _T1, true, false>  {
 template <class _Ret, class _T1>
 struct __enable_invoke_imp<_Ret, _T1, false, true>  {
     typedef typename add_lvalue_reference<
-                typename __apply_cv<_T1, _Ret>::type
-            >::type _Bullet3;
+                                          typename __apply_cv<_T1, _Ret>::type
+                                      >::type _Bullet3;
     typedef _Bullet3 type;
 };
 
 template <class _Ret, class _T1>
 struct __enable_invoke_imp<_Ret, _T1, false, false>  {
     typedef typename add_lvalue_reference<
-                typename __apply_cv<decltype(*_VSTD::declval<_T1>()), _Ret>::type
-            >::type _Bullet4;
+                                          typename __apply_cv<decltype(*_VSTD::declval<_T1>()), _Ret>::type
+                                      >::type _Bullet4;
     typedef _Bullet4 type;
 };
 
 template <class _Ret, class _T1>
 struct __enable_invoke_imp<_Ret, _T1*, false, false>  {
     typedef typename add_lvalue_reference<
-                typename __apply_cv<_T1, _Ret>::type
-            >::type _Bullet4;
+                                          typename __apply_cv<_T1, _Ret>::type
+                                      >::type _Bullet4;
     typedef _Bullet4  type;
 };
 
 template <class _Fn, class _T1,
-          class _Traits = __member_pointer_traits<_Fn>,
-          class _Ret = typename _Traits::_ReturnType,
-          class _Class = typename _Traits::_ClassType>
+                       class _Traits = __member_pointer_traits<_Fn>,
+                       class _Ret = typename _Traits::_ReturnType,
+                       class _Class = typename _Traits::_ClassType>
 struct __enable_invoke : __enable_invoke_imp<
     _Ret, _T1,
     is_member_function_pointer<_Fn>::value,
@@ -200,7 +200,7 @@ template <class _Tp, class _A0, class _A1>
 struct __invoke_return1
 {
     typedef decltype(__invoke(_VSTD::declval<_Tp&>(), _VSTD::declval<_A0&>(),
-                                                      _VSTD::declval<_A1&>())) type;
+                                                                                                                                                                           _VSTD::declval<_A1&>())) type;
 };
 
 template <class _Rp, class _Class, class _A0, class _A1>
@@ -212,8 +212,8 @@ template <class _Tp, class _A0, class _A1, class _A2>
 struct __invoke_return2
 {
     typedef decltype(__invoke(_VSTD::declval<_Tp&>(), _VSTD::declval<_A0&>(),
-                                                      _VSTD::declval<_A1&>(),
-                                                      _VSTD::declval<_A2&>())) type;
+                                                                                                                                                                           _VSTD::declval<_A1&>(),
+                                                                                                                                                                           _VSTD::declval<_A2&>())) type;
 };
 
 template <class _Ret, class _Class, class _A0, class _A1, class _A2>

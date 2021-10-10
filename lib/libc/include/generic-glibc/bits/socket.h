@@ -144,8 +144,8 @@ typedef __socklen_t socklen_t;
    XXX These definitions also should go into the appropriate headers as
    far as they are available.  */
 #define SOL_RAW		255
-#define SOL_DECNET      261
-#define SOL_X25         262
+#define SOL_DECNET                   261
+#define SOL_X25                      262
 #define SOL_PACKET	263
 #define SOL_ATM		264	/* ATM layer (cell level).  */
 #define SOL_AAL		265	/* ATM Adaption Layer (packet level).  */
@@ -294,7 +294,7 @@ struct cmsghdr
 #endif
 #define CMSG_NXTHDR(mhdr, cmsg) __cmsg_nxthdr (mhdr, cmsg)
 #define CMSG_FIRSTHDR(mhdr) \
-  ((size_t) (mhdr)->msg_controllen >= sizeof (struct cmsghdr)		      \
+  ((size_t) (mhdr)->msg_controllen >= sizeof (struct cmsghdr)		                   \
    ? (struct cmsghdr *) (mhdr)->msg_control : (struct cmsghdr *) 0)
 #define CMSG_ALIGN(len) (((len) + sizeof (size_t) - 1) \
 			 & (size_t) ~(sizeof (size_t) - 1))
@@ -303,7 +303,7 @@ struct cmsghdr
 #define CMSG_LEN(len)   (CMSG_ALIGN (sizeof (struct cmsghdr)) + (len))
 
 extern struct cmsghdr *__cmsg_nxthdr (struct msghdr *__mhdr,
-				      struct cmsghdr *__cmsg) __THROW;
+				                   struct cmsghdr *__cmsg) __THROW;
 #ifdef __USE_EXTERN_INLINES
 # ifndef _EXTERN_INLINE
 #  define _EXTERN_INLINE __extern_inline
@@ -316,10 +316,10 @@ __NTH (__cmsg_nxthdr (struct msghdr *__mhdr, struct cmsghdr *__cmsg))
     return (struct cmsghdr *) 0;
 
   __cmsg = (struct cmsghdr *) ((unsigned char *) __cmsg
-			       + CMSG_ALIGN (__cmsg->cmsg_len));
+			                    + CMSG_ALIGN (__cmsg->cmsg_len));
   if ((unsigned char *) (__cmsg + 1) > ((unsigned char *) __mhdr->msg_control
 					+ __mhdr->msg_controllen)
-      || ((unsigned char *) __cmsg + CMSG_ALIGN (__cmsg->cmsg_len)
+                   || ((unsigned char *) __cmsg + CMSG_ALIGN (__cmsg->cmsg_len)
 	  > ((unsigned char *) __mhdr->msg_control + __mhdr->msg_controllen)))
     /* No more entries.  */
     return (struct cmsghdr *) 0;

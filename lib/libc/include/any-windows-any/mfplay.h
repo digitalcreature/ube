@@ -153,126 +153,126 @@ MIDL_INTERFACE("a714590a-58af-430a-85bf-44f5ec838d85")
 IMFPMediaPlayer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Play(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FrameStep(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPosition(
-        REFGUID guidPositionType,
-        const PROPVARIANT *pvPositionValue) = 0;
+                     REFGUID guidPositionType,
+                     const PROPVARIANT *pvPositionValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPosition(
-        REFGUID guidPositionType,
-        PROPVARIANT *pvPositionValue) = 0;
+                     REFGUID guidPositionType,
+                     PROPVARIANT *pvPositionValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration(
-        REFGUID guidPositionType,
-        PROPVARIANT *pvDurationValue) = 0;
+                     REFGUID guidPositionType,
+                     PROPVARIANT *pvDurationValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRate(
-        float flRate) = 0;
+                     float flRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRate(
-        float *pflRate) = 0;
+                     float *pflRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSupportedRates(
-        WINBOOL fForwardDirection,
-        float *pflSlowestRate,
-        float *pflFastestRate) = 0;
+                     WINBOOL fForwardDirection,
+                     float *pflSlowestRate,
+                     float *pflFastestRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        MFP_MEDIAPLAYER_STATE *peState) = 0;
+                     MFP_MEDIAPLAYER_STATE *peState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMediaItemFromURL(
-        LPCWSTR pwszURL,
-        WINBOOL fSync,
-        DWORD_PTR dwUserData,
-        IMFPMediaItem **ppMediaItem) = 0;
+                     LPCWSTR pwszURL,
+                     WINBOOL fSync,
+                     DWORD_PTR dwUserData,
+                     IMFPMediaItem **ppMediaItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMediaItemFromObject(
-        IUnknown *pIUnknownObj,
-        WINBOOL fSync,
-        DWORD_PTR dwUserData,
-        IMFPMediaItem **ppMediaItem) = 0;
+                     IUnknown *pIUnknownObj,
+                     WINBOOL fSync,
+                     DWORD_PTR dwUserData,
+                     IMFPMediaItem **ppMediaItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaItem(
-        IMFPMediaItem *pIMFPMediaItem) = 0;
+                     IMFPMediaItem *pIMFPMediaItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearMediaItem(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaItem(
-        IMFPMediaItem **ppIMFPMediaItem) = 0;
+                     IMFPMediaItem **ppIMFPMediaItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVolume(
-        float *pflVolume) = 0;
+                     float *pflVolume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVolume(
-        float flVolume) = 0;
+                     float flVolume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBalance(
-        float *pflBalance) = 0;
+                     float *pflBalance) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBalance(
-        float flBalance) = 0;
+                     float flBalance) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMute(
-        WINBOOL *pfMute) = 0;
+                     WINBOOL *pfMute) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMute(
-        WINBOOL fMute) = 0;
+                     WINBOOL fMute) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNativeVideoSize(
-        SIZE *pszVideo,
-        SIZE *pszARVideo) = 0;
+                     SIZE *pszVideo,
+                     SIZE *pszARVideo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIdealVideoSize(
-        SIZE *pszMin,
-        SIZE *pszMax) = 0;
+                     SIZE *pszMin,
+                     SIZE *pszMax) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVideoSourceRect(
-        const MFVideoNormalizedRect *pnrcSource) = 0;
+                     const MFVideoNormalizedRect *pnrcSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoSourceRect(
-        MFVideoNormalizedRect *pnrcSource) = 0;
+                     MFVideoNormalizedRect *pnrcSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAspectRatioMode(
-        DWORD dwAspectRatioMode) = 0;
+                     DWORD dwAspectRatioMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAspectRatioMode(
-        DWORD *pdwAspectRatioMode) = 0;
+                     DWORD *pdwAspectRatioMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoWindow(
-        HWND *phwndVideo) = 0;
+                     HWND *phwndVideo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateVideo(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBorderColor(
-        COLORREF Clr) = 0;
+                     COLORREF Clr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBorderColor(
-        COLORREF *pClr) = 0;
+                     COLORREF *pClr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertEffect(
-        IUnknown *pEffect,
-        WINBOOL fOptional) = 0;
+                     IUnknown *pEffect,
+                     WINBOOL fOptional) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveEffect(
-        IUnknown *pEffect) = 0;
+                     IUnknown *pEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAllEffects(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shutdown(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -284,166 +284,166 @@ typedef struct IMFPMediaPlayerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFPMediaPlayer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFPMediaPlayer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     /*** IMFPMediaPlayer methods ***/
     HRESULT (STDMETHODCALLTYPE *Play)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     HRESULT (STDMETHODCALLTYPE *FrameStep)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     HRESULT (STDMETHODCALLTYPE *SetPosition)(
-        IMFPMediaPlayer *This,
-        REFGUID guidPositionType,
-        const PROPVARIANT *pvPositionValue);
+                     IMFPMediaPlayer *This,
+                     REFGUID guidPositionType,
+                     const PROPVARIANT *pvPositionValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPosition)(
-        IMFPMediaPlayer *This,
-        REFGUID guidPositionType,
-        PROPVARIANT *pvPositionValue);
+                     IMFPMediaPlayer *This,
+                     REFGUID guidPositionType,
+                     PROPVARIANT *pvPositionValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration)(
-        IMFPMediaPlayer *This,
-        REFGUID guidPositionType,
-        PROPVARIANT *pvDurationValue);
+                     IMFPMediaPlayer *This,
+                     REFGUID guidPositionType,
+                     PROPVARIANT *pvDurationValue);
 
     HRESULT (STDMETHODCALLTYPE *SetRate)(
-        IMFPMediaPlayer *This,
-        float flRate);
+                     IMFPMediaPlayer *This,
+                     float flRate);
 
     HRESULT (STDMETHODCALLTYPE *GetRate)(
-        IMFPMediaPlayer *This,
-        float *pflRate);
+                     IMFPMediaPlayer *This,
+                     float *pflRate);
 
     HRESULT (STDMETHODCALLTYPE *GetSupportedRates)(
-        IMFPMediaPlayer *This,
-        WINBOOL fForwardDirection,
-        float *pflSlowestRate,
-        float *pflFastestRate);
+                     IMFPMediaPlayer *This,
+                     WINBOOL fForwardDirection,
+                     float *pflSlowestRate,
+                     float *pflFastestRate);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IMFPMediaPlayer *This,
-        MFP_MEDIAPLAYER_STATE *peState);
+                     IMFPMediaPlayer *This,
+                     MFP_MEDIAPLAYER_STATE *peState);
 
     HRESULT (STDMETHODCALLTYPE *CreateMediaItemFromURL)(
-        IMFPMediaPlayer *This,
-        LPCWSTR pwszURL,
-        WINBOOL fSync,
-        DWORD_PTR dwUserData,
-        IMFPMediaItem **ppMediaItem);
+                     IMFPMediaPlayer *This,
+                     LPCWSTR pwszURL,
+                     WINBOOL fSync,
+                     DWORD_PTR dwUserData,
+                     IMFPMediaItem **ppMediaItem);
 
     HRESULT (STDMETHODCALLTYPE *CreateMediaItemFromObject)(
-        IMFPMediaPlayer *This,
-        IUnknown *pIUnknownObj,
-        WINBOOL fSync,
-        DWORD_PTR dwUserData,
-        IMFPMediaItem **ppMediaItem);
+                     IMFPMediaPlayer *This,
+                     IUnknown *pIUnknownObj,
+                     WINBOOL fSync,
+                     DWORD_PTR dwUserData,
+                     IMFPMediaItem **ppMediaItem);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaItem)(
-        IMFPMediaPlayer *This,
-        IMFPMediaItem *pIMFPMediaItem);
+                     IMFPMediaPlayer *This,
+                     IMFPMediaItem *pIMFPMediaItem);
 
     HRESULT (STDMETHODCALLTYPE *ClearMediaItem)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaItem)(
-        IMFPMediaPlayer *This,
-        IMFPMediaItem **ppIMFPMediaItem);
+                     IMFPMediaPlayer *This,
+                     IMFPMediaItem **ppIMFPMediaItem);
 
     HRESULT (STDMETHODCALLTYPE *GetVolume)(
-        IMFPMediaPlayer *This,
-        float *pflVolume);
+                     IMFPMediaPlayer *This,
+                     float *pflVolume);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        IMFPMediaPlayer *This,
-        float flVolume);
+                     IMFPMediaPlayer *This,
+                     float flVolume);
 
     HRESULT (STDMETHODCALLTYPE *GetBalance)(
-        IMFPMediaPlayer *This,
-        float *pflBalance);
+                     IMFPMediaPlayer *This,
+                     float *pflBalance);
 
     HRESULT (STDMETHODCALLTYPE *SetBalance)(
-        IMFPMediaPlayer *This,
-        float flBalance);
+                     IMFPMediaPlayer *This,
+                     float flBalance);
 
     HRESULT (STDMETHODCALLTYPE *GetMute)(
-        IMFPMediaPlayer *This,
-        WINBOOL *pfMute);
+                     IMFPMediaPlayer *This,
+                     WINBOOL *pfMute);
 
     HRESULT (STDMETHODCALLTYPE *SetMute)(
-        IMFPMediaPlayer *This,
-        WINBOOL fMute);
+                     IMFPMediaPlayer *This,
+                     WINBOOL fMute);
 
     HRESULT (STDMETHODCALLTYPE *GetNativeVideoSize)(
-        IMFPMediaPlayer *This,
-        SIZE *pszVideo,
-        SIZE *pszARVideo);
+                     IMFPMediaPlayer *This,
+                     SIZE *pszVideo,
+                     SIZE *pszARVideo);
 
     HRESULT (STDMETHODCALLTYPE *GetIdealVideoSize)(
-        IMFPMediaPlayer *This,
-        SIZE *pszMin,
-        SIZE *pszMax);
+                     IMFPMediaPlayer *This,
+                     SIZE *pszMin,
+                     SIZE *pszMax);
 
     HRESULT (STDMETHODCALLTYPE *SetVideoSourceRect)(
-        IMFPMediaPlayer *This,
-        const MFVideoNormalizedRect *pnrcSource);
+                     IMFPMediaPlayer *This,
+                     const MFVideoNormalizedRect *pnrcSource);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoSourceRect)(
-        IMFPMediaPlayer *This,
-        MFVideoNormalizedRect *pnrcSource);
+                     IMFPMediaPlayer *This,
+                     MFVideoNormalizedRect *pnrcSource);
 
     HRESULT (STDMETHODCALLTYPE *SetAspectRatioMode)(
-        IMFPMediaPlayer *This,
-        DWORD dwAspectRatioMode);
+                     IMFPMediaPlayer *This,
+                     DWORD dwAspectRatioMode);
 
     HRESULT (STDMETHODCALLTYPE *GetAspectRatioMode)(
-        IMFPMediaPlayer *This,
-        DWORD *pdwAspectRatioMode);
+                     IMFPMediaPlayer *This,
+                     DWORD *pdwAspectRatioMode);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoWindow)(
-        IMFPMediaPlayer *This,
-        HWND *phwndVideo);
+                     IMFPMediaPlayer *This,
+                     HWND *phwndVideo);
 
     HRESULT (STDMETHODCALLTYPE *UpdateVideo)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     HRESULT (STDMETHODCALLTYPE *SetBorderColor)(
-        IMFPMediaPlayer *This,
-        COLORREF Clr);
+                     IMFPMediaPlayer *This,
+                     COLORREF Clr);
 
     HRESULT (STDMETHODCALLTYPE *GetBorderColor)(
-        IMFPMediaPlayer *This,
-        COLORREF *pClr);
+                     IMFPMediaPlayer *This,
+                     COLORREF *pClr);
 
     HRESULT (STDMETHODCALLTYPE *InsertEffect)(
-        IMFPMediaPlayer *This,
-        IUnknown *pEffect,
-        WINBOOL fOptional);
+                     IMFPMediaPlayer *This,
+                     IUnknown *pEffect,
+                     WINBOOL fOptional);
 
     HRESULT (STDMETHODCALLTYPE *RemoveEffect)(
-        IMFPMediaPlayer *This,
-        IUnknown *pEffect);
+                     IMFPMediaPlayer *This,
+                     IUnknown *pEffect);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAllEffects)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     HRESULT (STDMETHODCALLTYPE *Shutdown)(
-        IMFPMediaPlayer *This);
+                     IMFPMediaPlayer *This);
 
     END_INTERFACE
 } IMFPMediaPlayerVtbl;
@@ -637,76 +637,76 @@ MIDL_INTERFACE("90eb3e6b-ecbf-45cc-b1da-c6fe3ea70d57")
 IMFPMediaItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetMediaPlayer(
-        IMFPMediaPlayer **ppMediaPlayer) = 0;
+                     IMFPMediaPlayer **ppMediaPlayer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetURL(
-        LPWSTR *ppwszURL) = 0;
+                     LPWSTR *ppwszURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObject(
-        IUnknown **ppIUnknown) = 0;
+                     IUnknown **ppIUnknown) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserData(
-        DWORD_PTR *pdwUserData) = 0;
+                     DWORD_PTR *pdwUserData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUserData(
-        DWORD_PTR dwUserData) = 0;
+                     DWORD_PTR dwUserData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStartStopPosition(
-        GUID *pguidStartPositionType,
-        PROPVARIANT *pvStartValue,
-        GUID *pguidStopPositionType,
-        PROPVARIANT *pvStopValue) = 0;
+                     GUID *pguidStartPositionType,
+                     PROPVARIANT *pvStartValue,
+                     GUID *pguidStopPositionType,
+                     PROPVARIANT *pvStopValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStartStopPosition(
-        const GUID *pguidStartPositionType,
-        const PROPVARIANT *pvStartValue,
-        const GUID *pguidStopPositionType,
-        const PROPVARIANT *pvStopValue) = 0;
+                     const GUID *pguidStartPositionType,
+                     const PROPVARIANT *pvStartValue,
+                     const GUID *pguidStopPositionType,
+                     const PROPVARIANT *pvStopValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasVideo(
-        WINBOOL *pfHasVideo,
-        WINBOOL *pfSelected) = 0;
+                     WINBOOL *pfHasVideo,
+                     WINBOOL *pfSelected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasAudio(
-        WINBOOL *pfHasAudio,
-        WINBOOL *pfSelected) = 0;
+                     WINBOOL *pfHasAudio,
+                     WINBOOL *pfSelected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsProtected(
-        WINBOOL *pfProtected) = 0;
+                     WINBOOL *pfProtected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration(
-        REFGUID guidPositionType,
-        PROPVARIANT *pvDurationValue) = 0;
+                     REFGUID guidPositionType,
+                     PROPVARIANT *pvDurationValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfStreams(
-        DWORD *pdwStreamCount) = 0;
+                     DWORD *pdwStreamCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamSelection(
-        DWORD dwStreamIndex,
-        WINBOOL *pfEnabled) = 0;
+                     DWORD dwStreamIndex,
+                     WINBOOL *pfEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStreamSelection(
-        DWORD dwStreamIndex,
-        WINBOOL fEnabled) = 0;
+                     DWORD dwStreamIndex,
+                     WINBOOL fEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamAttribute(
-        DWORD dwStreamIndex,
-        REFGUID guidMFAttribute,
-        PROPVARIANT *pvValue) = 0;
+                     DWORD dwStreamIndex,
+                     REFGUID guidMFAttribute,
+                     PROPVARIANT *pvValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPresentationAttribute(
-        REFGUID guidMFAttribute,
-        PROPVARIANT *pvValue) = 0;
+                     REFGUID guidMFAttribute,
+                     PROPVARIANT *pvValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCharacteristics(
-        MFP_MEDIAITEM_CHARACTERISTICS *pCharacteristics) = 0;
+                     MFP_MEDIAITEM_CHARACTERISTICS *pCharacteristics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStreamSink(
-        DWORD dwStreamIndex,
-        IUnknown *pMediaSink) = 0;
+                     DWORD dwStreamIndex,
+                     IUnknown *pMediaSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetadata(
-        IPropertyStore **ppMetadataStore) = 0;
+                     IPropertyStore **ppMetadataStore) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -718,107 +718,107 @@ typedef struct IMFPMediaItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFPMediaItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFPMediaItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFPMediaItem *This);
+                     IMFPMediaItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFPMediaItem *This);
+                     IMFPMediaItem *This);
 
     /*** IMFPMediaItem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMediaPlayer)(
-        IMFPMediaItem *This,
-        IMFPMediaPlayer **ppMediaPlayer);
+                     IMFPMediaItem *This,
+                     IMFPMediaPlayer **ppMediaPlayer);
 
     HRESULT (STDMETHODCALLTYPE *GetURL)(
-        IMFPMediaItem *This,
-        LPWSTR *ppwszURL);
+                     IMFPMediaItem *This,
+                     LPWSTR *ppwszURL);
 
     HRESULT (STDMETHODCALLTYPE *GetObject)(
-        IMFPMediaItem *This,
-        IUnknown **ppIUnknown);
+                     IMFPMediaItem *This,
+                     IUnknown **ppIUnknown);
 
     HRESULT (STDMETHODCALLTYPE *GetUserData)(
-        IMFPMediaItem *This,
-        DWORD_PTR *pdwUserData);
+                     IMFPMediaItem *This,
+                     DWORD_PTR *pdwUserData);
 
     HRESULT (STDMETHODCALLTYPE *SetUserData)(
-        IMFPMediaItem *This,
-        DWORD_PTR dwUserData);
+                     IMFPMediaItem *This,
+                     DWORD_PTR dwUserData);
 
     HRESULT (STDMETHODCALLTYPE *GetStartStopPosition)(
-        IMFPMediaItem *This,
-        GUID *pguidStartPositionType,
-        PROPVARIANT *pvStartValue,
-        GUID *pguidStopPositionType,
-        PROPVARIANT *pvStopValue);
+                     IMFPMediaItem *This,
+                     GUID *pguidStartPositionType,
+                     PROPVARIANT *pvStartValue,
+                     GUID *pguidStopPositionType,
+                     PROPVARIANT *pvStopValue);
 
     HRESULT (STDMETHODCALLTYPE *SetStartStopPosition)(
-        IMFPMediaItem *This,
-        const GUID *pguidStartPositionType,
-        const PROPVARIANT *pvStartValue,
-        const GUID *pguidStopPositionType,
-        const PROPVARIANT *pvStopValue);
+                     IMFPMediaItem *This,
+                     const GUID *pguidStartPositionType,
+                     const PROPVARIANT *pvStartValue,
+                     const GUID *pguidStopPositionType,
+                     const PROPVARIANT *pvStopValue);
 
     HRESULT (STDMETHODCALLTYPE *HasVideo)(
-        IMFPMediaItem *This,
-        WINBOOL *pfHasVideo,
-        WINBOOL *pfSelected);
+                     IMFPMediaItem *This,
+                     WINBOOL *pfHasVideo,
+                     WINBOOL *pfSelected);
 
     HRESULT (STDMETHODCALLTYPE *HasAudio)(
-        IMFPMediaItem *This,
-        WINBOOL *pfHasAudio,
-        WINBOOL *pfSelected);
+                     IMFPMediaItem *This,
+                     WINBOOL *pfHasAudio,
+                     WINBOOL *pfSelected);
 
     HRESULT (STDMETHODCALLTYPE *IsProtected)(
-        IMFPMediaItem *This,
-        WINBOOL *pfProtected);
+                     IMFPMediaItem *This,
+                     WINBOOL *pfProtected);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration)(
-        IMFPMediaItem *This,
-        REFGUID guidPositionType,
-        PROPVARIANT *pvDurationValue);
+                     IMFPMediaItem *This,
+                     REFGUID guidPositionType,
+                     PROPVARIANT *pvDurationValue);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfStreams)(
-        IMFPMediaItem *This,
-        DWORD *pdwStreamCount);
+                     IMFPMediaItem *This,
+                     DWORD *pdwStreamCount);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamSelection)(
-        IMFPMediaItem *This,
-        DWORD dwStreamIndex,
-        WINBOOL *pfEnabled);
+                     IMFPMediaItem *This,
+                     DWORD dwStreamIndex,
+                     WINBOOL *pfEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamSelection)(
-        IMFPMediaItem *This,
-        DWORD dwStreamIndex,
-        WINBOOL fEnabled);
+                     IMFPMediaItem *This,
+                     DWORD dwStreamIndex,
+                     WINBOOL fEnabled);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamAttribute)(
-        IMFPMediaItem *This,
-        DWORD dwStreamIndex,
-        REFGUID guidMFAttribute,
-        PROPVARIANT *pvValue);
+                     IMFPMediaItem *This,
+                     DWORD dwStreamIndex,
+                     REFGUID guidMFAttribute,
+                     PROPVARIANT *pvValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPresentationAttribute)(
-        IMFPMediaItem *This,
-        REFGUID guidMFAttribute,
-        PROPVARIANT *pvValue);
+                     IMFPMediaItem *This,
+                     REFGUID guidMFAttribute,
+                     PROPVARIANT *pvValue);
 
     HRESULT (STDMETHODCALLTYPE *GetCharacteristics)(
-        IMFPMediaItem *This,
-        MFP_MEDIAITEM_CHARACTERISTICS *pCharacteristics);
+                     IMFPMediaItem *This,
+                     MFP_MEDIAITEM_CHARACTERISTICS *pCharacteristics);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamSink)(
-        IMFPMediaItem *This,
-        DWORD dwStreamIndex,
-        IUnknown *pMediaSink);
+                     IMFPMediaItem *This,
+                     DWORD dwStreamIndex,
+                     IUnknown *pMediaSink);
 
     HRESULT (STDMETHODCALLTYPE *GetMetadata)(
-        IMFPMediaItem *This,
-        IPropertyStore **ppMetadataStore);
+                     IMFPMediaItem *This,
+                     IPropertyStore **ppMetadataStore);
 
     END_INTERFACE
 } IMFPMediaItemVtbl;
@@ -1034,18 +1034,18 @@ typedef struct MFP_ACQUIRE_USER_CREDENTIAL_EVENT {
 EXTERN_C const DECLSPEC_SELECTANY PROPERTYKEY MFP_PKEY_StreamIndex = { { 0xa7cf9740, 0xe8d9, 0x4a87, { 0xbd, 0x8e, 0x29, 0x67, 0x0, 0x1f, 0xd3, 0xad } }, 0x00 };
 EXTERN_C const DECLSPEC_SELECTANY PROPERTYKEY MFP_PKEY_StreamRenderingResults = { { 0xa7cf9740, 0xe8d9, 0x4a87, { 0xbd, 0x8e, 0x29, 0x67, 0x0, 0x1f, 0xd3, 0xad } }, 0x01 };
 #define __MFP_CAST_EVENT( pHdr, Tag ) (((pHdr)->eEventType == MFP_EVENT_TYPE_##Tag ) ? (MFP_##Tag##_EVENT*)(pHdr) : NULL)
-#define MFP_GET_PLAY_EVENT( pHdr )                     __MFP_CAST_EVENT( pHdr, PLAY )
-#define MFP_GET_PAUSE_EVENT( pHdr )                    __MFP_CAST_EVENT( pHdr, PAUSE )
-#define MFP_GET_STOP_EVENT( pHdr )                     __MFP_CAST_EVENT( pHdr, STOP )
-#define MFP_GET_POSITION_SET_EVENT( pHdr )             __MFP_CAST_EVENT( pHdr, POSITION_SET )
-#define MFP_GET_RATE_SET_EVENT( pHdr )                 __MFP_CAST_EVENT( pHdr, RATE_SET )
-#define MFP_GET_MEDIAITEM_CREATED_EVENT( pHdr )        __MFP_CAST_EVENT( pHdr, MEDIAITEM_CREATED )
-#define MFP_GET_MEDIAITEM_SET_EVENT( pHdr )            __MFP_CAST_EVENT( pHdr, MEDIAITEM_SET )
-#define MFP_GET_FRAME_STEP_EVENT( pHdr )               __MFP_CAST_EVENT( pHdr, FRAME_STEP )
-#define MFP_GET_MEDIAITEM_CLEARED_EVENT( pHdr )        __MFP_CAST_EVENT( pHdr, MEDIAITEM_CLEARED )
-#define MFP_GET_MF_EVENT( pHdr )                       __MFP_CAST_EVENT( pHdr, MF )
-#define MFP_GET_ERROR_EVENT( pHdr )                    __MFP_CAST_EVENT( pHdr, ERROR )
-#define MFP_GET_PLAYBACK_ENDED_EVENT( pHdr )           __MFP_CAST_EVENT( pHdr, PLAYBACK_ENDED )
+#define MFP_GET_PLAY_EVENT( pHdr )                                                            __MFP_CAST_EVENT( pHdr, PLAY )
+#define MFP_GET_PAUSE_EVENT( pHdr )                                                           __MFP_CAST_EVENT( pHdr, PAUSE )
+#define MFP_GET_STOP_EVENT( pHdr )                                                            __MFP_CAST_EVENT( pHdr, STOP )
+#define MFP_GET_POSITION_SET_EVENT( pHdr )                                       __MFP_CAST_EVENT( pHdr, POSITION_SET )
+#define MFP_GET_RATE_SET_EVENT( pHdr )                                           __MFP_CAST_EVENT( pHdr, RATE_SET )
+#define MFP_GET_MEDIAITEM_CREATED_EVENT( pHdr )                     __MFP_CAST_EVENT( pHdr, MEDIAITEM_CREATED )
+#define MFP_GET_MEDIAITEM_SET_EVENT( pHdr )                                      __MFP_CAST_EVENT( pHdr, MEDIAITEM_SET )
+#define MFP_GET_FRAME_STEP_EVENT( pHdr )                                         __MFP_CAST_EVENT( pHdr, FRAME_STEP )
+#define MFP_GET_MEDIAITEM_CLEARED_EVENT( pHdr )                     __MFP_CAST_EVENT( pHdr, MEDIAITEM_CLEARED )
+#define MFP_GET_MF_EVENT( pHdr )                                                              __MFP_CAST_EVENT( pHdr, MF )
+#define MFP_GET_ERROR_EVENT( pHdr )                                                           __MFP_CAST_EVENT( pHdr, ERROR )
+#define MFP_GET_PLAYBACK_ENDED_EVENT( pHdr )                        __MFP_CAST_EVENT( pHdr, PLAYBACK_ENDED )
 #define MFP_GET_ACQUIRE_USER_CREDENTIAL_EVENT( pHdr )  __MFP_CAST_EVENT( pHdr, ACQUIRE_USER_CREDENTIAL )
 
 /*****************************************************************************
@@ -1060,7 +1060,7 @@ MIDL_INTERFACE("766c8ffb-5fdb-4fea-a28d-b912996f51bd")
 IMFPMediaPlayerCallback : public IUnknown
 {
     virtual void STDMETHODCALLTYPE OnMediaPlayerEvent(
-        MFP_EVENT_HEADER *pEventHeader) = 0;
+                     MFP_EVENT_HEADER *pEventHeader) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1072,20 +1072,20 @@ typedef struct IMFPMediaPlayerCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFPMediaPlayerCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFPMediaPlayerCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFPMediaPlayerCallback *This);
+                     IMFPMediaPlayerCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFPMediaPlayerCallback *This);
+                     IMFPMediaPlayerCallback *This);
 
     /*** IMFPMediaPlayerCallback methods ***/
     void (STDMETHODCALLTYPE *OnMediaPlayerEvent)(
-        IMFPMediaPlayerCallback *This,
-        MFP_EVENT_HEADER *pEventHeader);
+                     IMFPMediaPlayerCallback *This,
+                     MFP_EVENT_HEADER *pEventHeader);
 
     END_INTERFACE
 } IMFPMediaPlayerCallbackVtbl;

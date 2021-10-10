@@ -12,21 +12,21 @@
  modification, are permitted provided that the following conditions are met:
 
    1. Redistributions in source code must retain the accompanying copyright
-      notice, this list of conditions, and the following disclaimer.
+                   notice, this list of conditions, and the following disclaimer.
    2. Redistributions in binary form must reproduce the accompanying
-      copyright notice, this list of conditions, and the following disclaimer
-      in the documentation and/or other materials provided with the
-      distribution.
+                   copyright notice, this list of conditions, and the following disclaimer
+                   in the documentation and/or other materials provided with the
+                   distribution.
    3. Names of the copyright holders must not be used to endorse or promote
-      products derived from this software without prior written permission
-      from the copyright holders.
+                   products derived from this software without prior written permission
+                   from the copyright holders.
    4. The right to distribute this software or to use it for any purpose does
-      not give you the right to use Servicemarks (sm) or Trademarks (tm) of
-      the copyright holders.  Use of them is covered by separate agreement
-      with the copyright holders.
+                   not give you the right to use Servicemarks (sm) or Trademarks (tm) of
+                   the copyright holders.  Use of them is covered by separate agreement
+                   with the copyright holders.
    5. If any files are modified, you must cause the modified files to carry
-      prominent notices stating that you changed the files and the date of
-      any change.
+                   prominent notices stating that you changed the files and the date of
+                   any change.
 
  Disclaimer
 
@@ -129,10 +129,10 @@ back_ch (int c, _IFP *s, size_t *rin, int not_eof)
     return;
   if (s->is_string == 0)
     {
-      FILE *fp = s->fp;
-      ungetwc (c, fp);
-      rin[0] -= 1;
-      return;
+                   FILE *fp = s->fp;
+                   ungetwc (c, fp);
+                   rin[0] -= 1;
+                   return;
     }
   rin[0] -= 1;
   s->bch[s->back_top] = c;
@@ -160,9 +160,9 @@ in_ch (_IFP *s, size_t *rin)
     ps++;
     if (r != 0)
     {
-      rin[0] += 1;
-      s->str = ps;
-      return r;
+                   rin[0] += 1;
+                   s->str = ps;
+                   return r;
     }
     s->seen_eof = 1;
     return WEOF;
@@ -172,7 +172,7 @@ in_ch (_IFP *s, size_t *rin)
     FILE *fp = (FILE *) s->fp;
     r = getwc (fp);
     if (r != WEOF)
-      rin[0] += 1;
+                   rin[0] += 1;
     else s->seen_eof = 1;
   }
   return r;
@@ -193,14 +193,14 @@ match_string (_IFP *s, size_t *rin, wint_t *c, const wchar_t *str)
   {
     if ((ch = in_ch (s, rin)) == WEOF)
     {
-      c[0] = ch;
-      return 0;
+                   c[0] = ch;
+                   return 0;
     }
 
     if (*str != (wchar_t) towlower (ch))
     {
-      c[0] = ch;
-      return 0;
+                   c[0] = ch;
+                   return 0;
     }
     ++str;
   }
@@ -223,21 +223,21 @@ release_ptrs (struct gcollect **pt, wchar_t **wbuf)
 
   if (wbuf)
     {
-      free (*wbuf);
-      *wbuf = NULL;
+                   free (*wbuf);
+                   *wbuf = NULL;
     }
   if (!pt || (pf = *pt) == NULL)
     return;
   while (pf != NULL)
     {
-      struct gcollect *pf_sv = pf;
-      for (cnt = 0; cnt < pf->count; ++cnt)
+                   struct gcollect *pf_sv = pf;
+                   for (cnt = 0; cnt < pf->count; ++cnt)
 	{
 	  free (*pf->ptrs[cnt]);
 	  *pf->ptrs[cnt] = NULL;
 	}
-      pf = pf->next;
-      free (pf_sv);
+                   pf = pf->next;
+                   free (pf_sv);
     }
   *pt = NULL;
 }
@@ -246,26 +246,26 @@ static int
 cleanup_return (int rval, struct gcollect **pfree, char **strp, wchar_t **wbuf)
 {
   if (rval == EOF)
-      release_ptrs (pfree, wbuf);
+                   release_ptrs (pfree, wbuf);
   else
     {
-      if (pfree)
-        {
-          struct gcollect *pf = *pfree, *pf_sv;
-          while (pf != NULL)
-            {
-              pf_sv = pf;
-              pf = pf->next;
-              free (pf_sv);
-            }
-          *pfree = NULL;
-        }
-      if (strp != NULL)
+                   if (pfree)
+                     {
+                       struct gcollect *pf = *pfree, *pf_sv;
+                       while (pf != NULL)
+                                      {
+                                        pf_sv = pf;
+                                        pf = pf->next;
+                                        free (pf_sv);
+                                      }
+                       *pfree = NULL;
+                     }
+                   if (strp != NULL)
 	{
 	  free (*strp);
 	  *strp = NULL;
 	}
-      if (wbuf)
+                   if (wbuf)
 	{
 	  free (*wbuf);
 	  *wbuf = NULL;
@@ -301,7 +301,7 @@ resize_wbuf (size_t wpsz, size_t *wbuf_max_sz, wchar_t *old)
   if (!wbuf)
   {
     if (old)
-      free (old);
+                   free (old);
   }
   else
     *wbuf_max_sz = nsz;
@@ -338,8 +338,8 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
   if (!s || s->fp == NULL || !format)
     {
-      errno = EINVAL;
-      return EOF;
+                   errno = EINVAL;
+                   return EOF;
     }
 
   memset (&state, 0, sizeof(state));
@@ -351,31 +351,31 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
   while (*f != 0)
     {
-      fc = *f++;
-      if (fc != '%')
-        {
-          if (iswspace (fc))
+                   fc = *f++;
+                   if (fc != '%')
+                     {
+                       if (iswspace (fc))
 	    ignore_ws = 1;
 	  else
 	    {
-	      if ((c = in_ch (s, &read_in)) == WEOF)
+	                   if ((c = in_ch (s, &read_in)) == WEOF)
 		return cleanup_return ((!rval ? EOF : rval), &gcollect, pstr, &wbuf);
 
-	      if (ignore_ws)
+	                   if (ignore_ws)
 		{
 		  ignore_ws = 0;
 		  if (iswspace (c))
 		    {
-		      do
+		                   do
 			{
 			  if ((c = in_ch (s, &read_in)) == WEOF)
 			    return cleanup_return ((!rval ? EOF : rval), &gcollect, pstr, &wbuf);
 			}
-		      while (iswspace (c));
+		                   while (iswspace (c));
 		    }
 		}
 
-	      if (c != fc)
+	                   if (c != fc)
 		{
 		  back_ch (c, s, &read_in, 0);
 		  return cleanup_return (rval, &gcollect, pstr, &wbuf);
@@ -385,11 +385,11 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	  continue;
 	}
 
-      width = flags = 0;
-      npos = 0;
-      wbuf_cur_sz = 0;
+                   width = flags = 0;
+                   npos = 0;
+                   wbuf_cur_sz = 0;
 
-      if (iswdigit ((unsigned int) *f))
+                   if (iswdigit ((unsigned int) *f))
 	{
 	  const wchar_t *svf = f;
 	  npos = (unsigned int) *f++ - '0';
@@ -397,39 +397,39 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	    npos = npos * 10 + ((unsigned int) *f++ - '0');
 	  if (*f != '$')
 	    {
-	      npos = 0;
-	      f = svf;
+	                   npos = 0;
+	                   f = svf;
 	    }
 	  else
 	    f++;
 	}
 
-      do
+                   do
 	{
 	  if (*f == '*')
 	    flags |= IS_SUPPRESSED;
 	  else if (*f == '\'')
 	    {
-	      if (lc_thousands_sep)
+	                   if (lc_thousands_sep)
 		flags |= USE_GROUP;
 	    }
 	  else if (*f == 'I')
 	    {
-	      /* we don't support locale's digits (i18N), but ignore it for now silently.  */
-	      ;
+	                   /* we don't support locale's digits (i18N), but ignore it for now silently.  */
+	                   ;
 #ifdef _WIN32
-              if (f[1] == '6' && f[2] == '4')
-                {
+                                        if (f[1] == '6' && f[2] == '4')
+                                          {
 		  flags |= IS_LL | IS_L;
 		  f += 2;
 		}
-	      else if (f[1] == '3' && f[2] == '2')
+	                   else if (f[1] == '3' && f[2] == '2')
 		{
 		  flags |= IS_L;
 		  f += 2;
 		}
-	      else
-	        {
+	                   else
+	                     {
 #ifdef _WIN64
 		  flags |= IS_LL | IS_L;
 #else
@@ -441,16 +441,16 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	  else
 	    break;
 	  ++f;
-        }
-      while (1);
+                     }
+                   while (1);
 
-      while (iswdigit ((unsigned char) *f))
+                   while (iswdigit ((unsigned char) *f))
 	width = width * 10 + ((unsigned char) *f++ - '0');
 
-      if (!width)
+                   if (!width)
 	width = -1;
 
-      switch (*f)
+                   switch (*f)
 	{
 	case 'h':
 	  ++f;
@@ -479,8 +479,8 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	  ++f;
 	  if (*f == 'l')
 	    {
-	      flags |= IS_L;
-	      ++f;
+	                   flags |= IS_L;
+	                   ++f;
 	    }
 	  break;
 	case 'z':
@@ -512,17 +512,17 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	  break;
 	}
 
-      if (*f == 0)
+                   if (*f == 0)
 	return cleanup_return (rval, &gcollect, pstr, &wbuf);
 
-      fc = *f++;
-      if (ignore_ws || (fc != '[' && fc != 'c' && fc != 'C' && fc != 'n'))
+                   fc = *f++;
+                   if (ignore_ws || (fc != '[' && fc != 'c' && fc != 'C' && fc != 'n'))
 	{
 	  errno_sv = errno;
 	  errno = 0;
 	  do
 	    {
-	      if ((c == WEOF || (c = in_ch (s, &read_in)) == WEOF) && errno == EINTR)
+	                   if ((c == WEOF || (c = in_ch (s, &read_in)) == WEOF) && errno == EINTR)
 		return cleanup_return ((!rval ? EOF : rval), &gcollect, pstr, &wbuf);
 	    }
 	  while (iswspace (c));
@@ -532,42 +532,42 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	  back_ch (c, s, &read_in, 0);
 	}
 
-      switch (fc)
-        {
-        case 'c':
-          if ((flags & IS_L) != 0)
-            fc = 'C';
-          break;
-        case 's':
-          if ((flags & IS_L) != 0)
-            fc = 'S';
-          break;
-        }
+                   switch (fc)
+                     {
+                     case 'c':
+                       if ((flags & IS_L) != 0)
+                                      fc = 'C';
+                       break;
+                     case 's':
+                       if ((flags & IS_L) != 0)
+                                      fc = 'S';
+                       break;
+                     }
 
-      switch (fc)
+                   switch (fc)
 	{
 	case '%':
 	  if ((c = in_ch (s, &read_in)) == WEOF)
 	    return cleanup_return ((!rval ? EOF : rval), &gcollect, pstr, &wbuf);
 	  if (c != fc)
 	    {
-	      back_ch (c, s, &read_in, 1);
-	      return cleanup_return (rval, &gcollect, pstr, &wbuf);
+	                   back_ch (c, s, &read_in, 1);
+	                   return cleanup_return (rval, &gcollect, pstr, &wbuf);
 	    }
 	  break;
 
 	case 'n':
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      if ((flags & IS_LL) != 0)
+	                   if ((flags & IS_LL) != 0)
 		*(npos != 0 ? (long long *) get_va_nth (argp, npos) : va_arg (arg, long long *)) = read_in;
-	      else if ((flags & IS_L) != 0)
+	                   else if ((flags & IS_L) != 0)
 		*(npos != 0 ? (long *) get_va_nth (argp, npos) : va_arg (arg, long *)) = read_in;
-	      else if ((flags & IS_S) != 0)
+	                   else if ((flags & IS_S) != 0)
 		*(npos != 0 ? (short *) get_va_nth (argp, npos) : va_arg (arg, short *)) = read_in;
-	      else if ((flags & IS_C) != 0)
-	        *(npos != 0 ? (char *) get_va_nth (argp, npos) : va_arg (arg, char *)) = read_in;
-	      else
+	                   else if ((flags & IS_C) != 0)
+	                     *(npos != 0 ? (char *) get_va_nth (argp, npos) : va_arg (arg, char *)) = read_in;
+	                   else
 		*(npos != 0 ? (int *) get_va_nth (argp, npos) : va_arg (arg, int *)) = read_in;
 	    }
 	  break;
@@ -578,7 +578,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      if ((flags & IS_ALLOC_USED) != 0)
+	                   if ((flags & IS_ALLOC_USED) != 0)
 		{
 		   if (npos != 0)
 		     pstr = (char **) get_va_nth (argp, npos);
@@ -593,7 +593,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		  gcollect = resize_gcollect (gcollect);
 		  gcollect->ptrs[gcollect->count++] = pstr;
 		}
-	      else
+	                   else
 		{
 		  if (npos != 0)
 		     str = (char *) get_va_nth (argp, npos);
@@ -610,7 +610,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  do
 	    {
-	      if ((flags & IS_SUPPRESSED) == 0 && (flags & USE_POSIX_ALLOC) != 0
+	                   if ((flags & IS_SUPPRESSED) == 0 && (flags & USE_POSIX_ALLOC) != 0
 		  && (str + MB_CUR_MAX) >= (*pstr + str_sz))
 		{
 		  new_sz = str_sz * 2;
@@ -620,26 +620,26 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		    new_sz = str_len + MB_CUR_MAX;
 		  if (!nstr)
 		    {
-		      release_ptrs (&gcollect, &wbuf);
-		      return EOF;
+		                   release_ptrs (&gcollect, &wbuf);
+		                   return EOF;
 		    }
 		  *pstr = nstr;
 		  str = nstr + str_len;
 		  str_sz = new_sz;
 		}
 
-	      n = wcrtomb ((flags & IS_SUPPRESSED) == 0 ? str : NULL, c, &state);
-	      if (n == (size_t) -1LL)
+	                   n = wcrtomb ((flags & IS_SUPPRESSED) == 0 ? str : NULL, c, &state);
+	                   if (n == (size_t) -1LL)
 		return cleanup_return ((!rval ? EOF : rval), &gcollect, pstr, &wbuf);
-	      str += n;
+	                   str += n;
 	    }
 	  while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
 
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      optimize_alloc (pstr, str, str_sz);
-	      pstr = NULL;
-	      ++rval;
+	                   optimize_alloc (pstr, str, str_sz);
+	                   pstr = NULL;
+	                   ++rval;
 	    }
 
 	  break;
@@ -650,7 +650,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      if ((flags & IS_ALLOC_USED) != 0)
+	                   if ((flags & IS_ALLOC_USED) != 0)
 		{
 		 if (npos != 0)
 		   pstr = (char **) get_va_nth (argp, npos);
@@ -666,11 +666,11 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 		  if ((wstr = (wchar_t *) *pstr) != NULL)
 		    {
-		      gcollect = resize_gcollect (gcollect);
-		      gcollect->ptrs[gcollect->count++] = pstr;
+		                   gcollect = resize_gcollect (gcollect);
+		                   gcollect->ptrs[gcollect->count++] = pstr;
 		    }
 		}
-	      else
+	                   else
 		{
 		  if (npos != 0)
 		    wstr = (wchar_t *) get_va_nth (argp, npos);
@@ -686,46 +686,46 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      do
+	                   do
 		{
 		  if ((flags & IS_ALLOC_USED) != 0
-		      && wstr == ((wchar_t *) *pstr + str_sz))
+		                   && wstr == ((wchar_t *) *pstr + str_sz))
 		    {
-		      new_sz = str_sz + (str_sz > width ? width - 1 : str_sz);
-		      while ((wstr = (wchar_t *) realloc (*pstr,
+		                   new_sz = str_sz + (str_sz > width ? width - 1 : str_sz);
+		                   while ((wstr = (wchar_t *) realloc (*pstr,
 						  new_sz * sizeof (wchar_t))) == NULL
 			     && new_sz > (size_t) (str_sz + 1))
 			new_sz = str_sz + 1;
-		      if (!wstr)
+		                   if (!wstr)
 			{
 			  release_ptrs (&gcollect, &wbuf);
 			  return EOF;
 			}
-		      *pstr = (char *) wstr;
-		      wstr += str_sz;
-		      str_sz = new_sz;
+		                   *pstr = (char *) wstr;
+		                   wstr += str_sz;
+		                   str_sz = new_sz;
 		    }
 		  *wstr++ = c;
 		}
-	      while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
+	                   while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
 	    }
 	  else
 	    {
-	      while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
+	                   while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
 	    }
 
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      optimize_alloc (pstr, (char *) wstr, str_sz * sizeof (wchar_t));
-	      pstr = NULL;
-	      ++rval;
+	                   optimize_alloc (pstr, (char *) wstr, str_sz * sizeof (wchar_t));
+	                   pstr = NULL;
+	                   ++rval;
 	    }
 	  break;
 
 	case 's':
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      if ((flags & IS_ALLOC_USED) != 0)
+	                   if ((flags & IS_ALLOC_USED) != 0)
 		{
 		 if (npos != 0)
 		   pstr = (char **) get_va_nth (argp, npos);
@@ -740,7 +740,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		  gcollect = resize_gcollect (gcollect);
 		  gcollect->ptrs[gcollect->count++] = pstr;
 		}
-	      else
+	                   else
 		{
 		  if (npos != 0)
 		    str = (char *) get_va_nth (argp, npos);
@@ -758,13 +758,13 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  do
 	    {
-	      if (iswspace (c))
+	                   if (iswspace (c))
 		{
 		  back_ch (c, s, &read_in, 1);
 		  break;
 		}
 
-	      {
+	                   {
 		if ((flags & IS_SUPPRESSED) == 0 && (flags & IS_ALLOC_USED) != 0
 		    && (str + MB_CUR_MAX) >= (*pstr + str_sz))
 		  {
@@ -773,9 +773,9 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 		    while ((nstr = (char *) realloc (*pstr, new_sz)) == NULL
 			   && new_sz > (str_len + MB_CUR_MAX))
-		      new_sz = str_len + MB_CUR_MAX;
+		                   new_sz = str_len + MB_CUR_MAX;
 		    if (!nstr)
-		      {
+		                   {
 			if ((flags & USE_POSIX_ALLOC) == 0)
 			  {
 			    (*pstr)[str_len] = 0;
@@ -783,14 +783,14 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 			    ++rval;
 			  }
 			return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
-		      }
+		                   }
 		    *pstr = nstr;
 		    str = nstr + str_len;
 		    str_sz = new_sz;
 		  }
 
 		n = wcrtomb ((flags & IS_SUPPRESSED) == 0 ? str : NULL, c,
-			       &state);
+			                    &state);
 		if (n == (size_t) -1LL)
 		{
 		  errno = EILSEQ;
@@ -798,50 +798,50 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		}
 
 		str += n;
-	      }
+	                   }
 	    }
 	  while ((width <= 0 || --width > 0) && (c = in_ch (s, &read_in)) != WEOF);
 
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      n = wcrtomb (buf, 0, &state);
-	      if (n > 0 && (flags & IS_ALLOC_USED) != 0
+	                   n = wcrtomb (buf, 0, &state);
+	                   if (n > 0 && (flags & IS_ALLOC_USED) != 0
 		  && (str + n) >= (*pstr + str_sz))
 		{
 		  str_len = (str - *pstr);
 
 		  if ((nstr = (char *) realloc (*pstr, str_len + n + 1)) == NULL)
 		    {
-		      if ((flags & USE_POSIX_ALLOC) == 0)
+		                   if ((flags & USE_POSIX_ALLOC) == 0)
 			{
 			  (*pstr)[str_len] = 0;
 			  pstr = NULL;
 			  ++rval;
 			}
-		      return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
+		                   return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
 		    }
 		  *pstr = nstr;
 		  str = nstr + str_len;
 		  str_sz = str_len + n + 1;
 		}
 
-	      if (n)
-	      {
+	                   if (n)
+	                   {
 		memcpy (str, buf, n);
 		str += n;
-	      }
-	      *str++ = 0;
+	                   }
+	                   *str++ = 0;
 
-	      optimize_alloc (pstr, str, str_sz);
-	      pstr = NULL;
-	      ++rval;
+	                   optimize_alloc (pstr, str, str_sz);
+	                   pstr = NULL;
+	                   ++rval;
 	    }
 	  break;
 
 	case 'S':
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      if ((flags & IS_ALLOC_USED) != 0)
+	                   if ((flags & IS_ALLOC_USED) != 0)
 		{
 		 if (npos != 0)
 		   pstr = (char **) get_va_nth (argp, npos);
@@ -857,7 +857,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		  gcollect = resize_gcollect (gcollect);
 		  gcollect->ptrs[gcollect->count++] = pstr;
 		}
-	      else
+	                   else
 		{
 		  if (npos != 0)
 		    wstr = (wchar_t *) get_va_nth (argp, npos);
@@ -872,36 +872,36 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  do
 	    {
-	      if (iswspace (c))
+	                   if (iswspace (c))
 		{
 		  back_ch (c, s, &read_in, 1);
 		  break;
 		}
 
-	      if ((flags & IS_SUPPRESSED) == 0)
+	                   if ((flags & IS_SUPPRESSED) == 0)
 		{
 		  *wstr++ = c;
 		  if ((flags & IS_ALLOC_USED) != 0 && wstr == ((wchar_t *) *pstr + str_sz))
 		    {
-		      new_sz = str_sz * 2;
+		                   new_sz = str_sz * 2;
 
-		      while ((wstr = (wchar_t *) realloc (*pstr,
+		                   while ((wstr = (wchar_t *) realloc (*pstr,
 						  new_sz * sizeof (wchar_t))) == NULL
-			      && new_sz > (size_t) (str_sz + 1))
+			                   && new_sz > (size_t) (str_sz + 1))
 			new_sz = str_sz + 1;
-		      if (!wstr)
+		                   if (!wstr)
 			{
 			  if ((flags & USE_POSIX_ALLOC) == 0)
 			    {
-			      ((wchar_t *) (*pstr))[str_sz - 1] = 0;
-			      pstr = NULL;
-			      ++rval;
+			                   ((wchar_t *) (*pstr))[str_sz - 1] = 0;
+			                   pstr = NULL;
+			                   ++rval;
 			    }
 			  return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
 			}
-		      *pstr = (char *) wstr;
-		      wstr += str_sz;
-		      str_sz = new_sz;
+		                   *pstr = (char *) wstr;
+		                   wstr += str_sz;
+		                   str_sz = new_sz;
 		    }
 		}
 	    }
@@ -909,11 +909,11 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      *wstr++ = 0;
+	                   *wstr++ = 0;
 
-	      optimize_alloc (pstr, (char *) wstr, str_sz * sizeof (wchar_t));
-	      pstr = NULL;
-	      ++rval;
+	                   optimize_alloc (pstr, (char *) wstr, str_sz * sizeof (wchar_t));
+	                   pstr = NULL;
+	                   ++rval;
 	    }
 	  break;
 
@@ -924,30 +924,30 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	  switch (fc)
 	    {
 	    case 'd':
-	      flags |= IS_SIGNED_NUM;
-	      base = 10;
-	      break;
+	                   flags |= IS_SIGNED_NUM;
+	                   base = 10;
+	                   break;
 	    case 'i':
-	      flags |= IS_SIGNED_NUM;
-	      base = 0;
-	      break;
+	                   flags |= IS_SIGNED_NUM;
+	                   base = 0;
+	                   break;
 	    case 'o':
-	      base = 8;
-	      break;
+	                   base = 8;
+	                   break;
 	    case 'p':
-	      base = 16;
-	      flags &= ~(IS_S | IS_LL | IS_L);
+	                   base = 16;
+	                   flags &= ~(IS_S | IS_LL | IS_L);
     #ifdef _WIN64
-	      flags |= IS_LL;
+	                   flags |= IS_LL;
     #endif
-	      flags |= IS_L | IS_POINTER;
-	      break;
+	                   flags |= IS_L | IS_POINTER;
+	                   break;
 	    case 'u':
-	      base = 10;
-	      break;
+	                   base = 10;
+	                   break;
 	    case 'x': case 'X':
-	      base = 16;
-	      break;
+	                   base = 16;
+	                   break;
 	    }
 
 	  if ((c = in_ch (s, &read_in)) == WEOF)
@@ -955,36 +955,36 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if (c == '+' || c == '-')
 	    {
-	      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-	      wbuf[wbuf_cur_sz++] = c;
+	                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+	                   wbuf[wbuf_cur_sz++] = c;
 
-	      if (width > 0)
+	                   if (width > 0)
 		--width;
-	      c = in_ch (s, &read_in);
+	                   c = in_ch (s, &read_in);
 	    }
 
 	  if (width != 0 && c == '0')
 	    {
-	      if (width > 0)
+	                   if (width > 0)
 		--width;
 
-	      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-	      wbuf[wbuf_cur_sz++] = c;
+	                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+	                   wbuf[wbuf_cur_sz++] = c;
 
-	      c = in_ch (s, &read_in);
+	                   c = in_ch (s, &read_in);
 
-	      if (width != 0 && towlower (c) == 'x')
+	                   if (width != 0 && towlower (c) == 'x')
 		{
 		  if (!base)
 		    base = 16;
 		  if (base == 16)
 		    {
-		      if (width > 0)
+		                   if (width > 0)
 			--width;
-		      c = in_ch (s, &read_in);
+		                   c = in_ch (s, &read_in);
 		    }
 		}
-	      else if (!base)
+	                   else if (!base)
 		base = 8;
 	    }
 
@@ -993,37 +993,37 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  while (c != WEOF && width != 0)
 	    {
-	      if (base == 16)
+	                   if (base == 16)
 		{
 		  if (!iswxdigit (c))
 		    break;
 		}
-	      else if (!iswdigit (c) || (int) (c - '0') >= base)
+	                   else if (!iswdigit (c) || (int) (c - '0') >= base)
 		{
 		  if (base != 10 || (flags & USE_GROUP) == 0 || c != lc_thousands_sep)
 		    break;
 		}
-	      if (c != lc_thousands_sep)
-	        {
-	          wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-	          wbuf[wbuf_cur_sz++] = c;
+	                   if (c != lc_thousands_sep)
+	                     {
+	                       wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+	                       wbuf[wbuf_cur_sz++] = c;
 		}
 
-	      if (width > 0)
+	                   if (width > 0)
 		--width;
 
-	      c = in_ch (s, &read_in);
+	                   c = in_ch (s, &read_in);
 	    }
 
 	  if (!wbuf_cur_sz || (wbuf_cur_sz == 1 && (wbuf[0] == '+' || wbuf[0] == '-')))
 	    {
-	      if (!wbuf_cur_sz && (flags & IS_POINTER) != 0
+	                   if (!wbuf_cur_sz && (flags & IS_POINTER) != 0
 		  && match_string (s, &read_in, &c, L"(nil)"))
 		{
 		  wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
 		  wbuf[wbuf_cur_sz++] = '0';
 		}
-	      else
+	                   else
 		{
 		  back_ch (c, s, &read_in, 0);
 		  return cleanup_return (rval, &gcollect, pstr, &wbuf);
@@ -1037,16 +1037,16 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if ((flags & IS_LL) != 0)
 	    {
-	      if ((flags & IS_SIGNED_NUM) != 0)
+	                   if ((flags & IS_SIGNED_NUM) != 0)
 		cv_val.ll = wcstoll (wbuf, &tmp_wbuf_ptr, base/*, flags & USE_GROUP*/);
-	      else
+	                   else
 		cv_val.ull = wcstoull (wbuf, &tmp_wbuf_ptr, base/*, flags & USE_GROUP*/);
 	    }
 	  else
 	    {
-	      if ((flags & IS_SIGNED_NUM) != 0)
+	                   if ((flags & IS_SIGNED_NUM) != 0)
 		cv_val.l = wcstol (wbuf, &tmp_wbuf_ptr, base/*, flags & USE_GROUP*/);
-	      else
+	                   else
 		cv_val.ul = wcstoul (wbuf, &tmp_wbuf_ptr, base/*, flags & USE_GROUP*/);
 	    }
 	  if (wbuf == tmp_wbuf_ptr)
@@ -1054,7 +1054,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      if ((flags & IS_SIGNED_NUM) != 0)
+	                   if ((flags & IS_SIGNED_NUM) != 0)
 		{
 		  if ((flags & IS_LL) != 0)
 		    *(npos != 0 ? (long long *) get_va_nth (argp, npos) : va_arg (arg, long long *)) = cv_val.ll;
@@ -1067,7 +1067,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		  else
 		    *(npos != 0 ? (int *) get_va_nth (argp, npos) : va_arg (arg, int *)) = (int) cv_val.l;
 		}
-	      else
+	                   else
 		{
 		  if ((flags & IS_LL) != 0)
 		    *(npos != 0 ? (unsigned long long *) get_va_nth (argp, npos) : va_arg (arg, unsigned long long *)) = cv_val.ull;
@@ -1075,13 +1075,13 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		    *(npos != 0 ? (unsigned long *) get_va_nth (argp, npos) : va_arg (arg, unsigned long *)) = cv_val.ul;
 		  else if ((flags & IS_S) != 0)
 		    *(npos != 0 ? (unsigned short *) get_va_nth (argp, npos) : va_arg (arg, unsigned short *))
-		      = (unsigned short) cv_val.ul;
+		                   = (unsigned short) cv_val.ul;
 		  else if ((flags & IS_C) != 0)
 		    *(npos != 0 ? (unsigned char *) get_va_nth (argp, npos) : va_arg (arg, unsigned char *)) = (unsigned char) cv_val.ul;
 		  else
 		    *(npos != 0 ? (unsigned int *) get_va_nth (argp, npos) : va_arg (arg, unsigned int *)) = (unsigned int) cv_val.ul;
 		}
-	      ++rval;
+	                   ++rval;
 	    }
 	  break;
 
@@ -1099,24 +1099,24 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if (c == '-' || c == '+')
 	    {
-	      if (width == 0 || (c = in_ch (s, &read_in)) == WEOF)
+	                   if (width == 0 || (c = in_ch (s, &read_in)) == WEOF)
 		return cleanup_return (rval, &gcollect, pstr, &wbuf);
-	      if (width > 0)
+	                   if (width > 0)
 		--width;
 	    }
 
 	  if (towlower (c) == 'n')
 	    {
-	      const wchar_t *match_txt = L"nan";
+	                   const wchar_t *match_txt = L"nan";
 
-	      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-	      wbuf[wbuf_cur_sz++] = c;
-	      
-	      ++match_txt;
-	      do
+	                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+	                   wbuf[wbuf_cur_sz++] = c;
+	                   
+	                   ++match_txt;
+	                   do
 		{
 		  if (width == 0 || (c = in_ch (s, &read_in)) == WEOF
-		      || towlower (c) != match_txt[0])
+		                   || towlower (c) != match_txt[0])
 		    return cleanup_return (rval, &gcollect, pstr, &wbuf);
 		  if (width > 0)
 		    --width;
@@ -1125,20 +1125,20 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		  wbuf[wbuf_cur_sz++] = c;
 		  ++match_txt;
 		}
-	      while (*match_txt != 0);
+	                   while (*match_txt != 0);
 	    }
 	  else if (towlower (c) == 'i')
 	    {
-	      const wchar_t *match_txt = L"inf";
+	                   const wchar_t *match_txt = L"inf";
 
-	      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-	      wbuf[wbuf_cur_sz++] = c;
+	                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+	                   wbuf[wbuf_cur_sz++] = c;
 
-	      ++match_txt;
-	      do
+	                   ++match_txt;
+	                   do
 		{
 		  if (width == 0 || (c = in_ch (s, &read_in)) == WEOF
-		      || towlower (c) != match_txt[0])
+		                   || towlower (c) != match_txt[0])
 		    return cleanup_return (rval, &gcollect, pstr, &wbuf);
 		  if (width > 0)
 		    --width;
@@ -1147,9 +1147,9 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		  wbuf[wbuf_cur_sz++] = c;
 		  ++match_txt;
 		}
-	      while (*match_txt != 0);
+	                   while (*match_txt != 0);
 
-	      if (width != 0 && (c = in_ch (s, &read_in)) != WEOF && towlower (c) == 'i')
+	                   if (width != 0 && (c = in_ch (s, &read_in)) != WEOF && towlower (c) == 'i')
 		{
 		  match_txt = L"inity";
 		  if (width > 0)
@@ -1161,24 +1161,24 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		  ++match_txt;
 		  do
 		    {
-		      if (width == 0 || (c = in_ch (s, &read_in)) == WEOF
+		                   if (width == 0 || (c = in_ch (s, &read_in)) == WEOF
 			  || towlower (c) != match_txt[0])
 			return cleanup_return (rval, &gcollect, pstr, &wbuf);
-		      if (width > 0)
+		                   if (width > 0)
 			--width;
-		      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-		      wbuf[wbuf_cur_sz++] = c;
-		      ++match_txt;
+		                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+		                   wbuf[wbuf_cur_sz++] = c;
+		                   ++match_txt;
 		    }
 		  while (*match_txt != 0);
 		}
-	      else if (width != 0 && c != WEOF)
-	        back_ch (c, s, &read_in, 0);
+	                   else if (width != 0 && c != WEOF)
+	                     back_ch (c, s, &read_in, 0);
 	    }
 	  else
 	    {
-	      not_in = 'e';
-	      if (width != 0 && c == '0')
+	                   not_in = 'e';
+	                   if (width != 0 && c == '0')
 		{
 		  wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
 		  wbuf[wbuf_cur_sz++] = c;
@@ -1188,59 +1188,59 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		    --width;
 		  if (width != 0 && towlower (c) == 'x')
 		    {
-		      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-		      wbuf[wbuf_cur_sz++] = c;
-		      flags |= IS_HEX_FLOAT;
-		      not_in = 'p';
+		                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+		                   wbuf[wbuf_cur_sz++] = c;
+		                   flags |= IS_HEX_FLOAT;
+		                   not_in = 'p';
 
-		      flags &= ~USE_GROUP;
-		      c = in_ch (s, &read_in);
-		      if (width > 0)
+		                   flags &= ~USE_GROUP;
+		                   c = in_ch (s, &read_in);
+		                   if (width > 0)
 			--width;
 		    }
 		}
 
-	      while (1)
+	                   while (1)
 		{
 		  if (iswdigit (c))
 		    {
-		      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-		      wbuf[wbuf_cur_sz++] = c;
+		                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+		                   wbuf[wbuf_cur_sz++] = c;
 		    }
 		  else if (!seen_exp && (flags & IS_HEX_FLOAT) != 0 && iswxdigit (c))
 		    {
-		      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-		      wbuf[wbuf_cur_sz++] = c;
+		                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+		                   wbuf[wbuf_cur_sz++] = c;
 		    }
 		  else if (seen_exp && wbuf[wbuf_cur_sz - 1] == not_in
 			   && (c == '-' || c == '+'))
 		    {
-		      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-		      wbuf[wbuf_cur_sz++] = c;
+		                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+		                   wbuf[wbuf_cur_sz++] = c;
 		    }
 		  else if (wbuf_cur_sz > 0 && !seen_exp
 			   && (wchar_t) towlower (c) == not_in)
 		    {
-		      wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
-		      wbuf[wbuf_cur_sz++] = not_in;
+		                   wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
+		                   wbuf[wbuf_cur_sz++] = not_in;
 
-		      seen_exp = seen_dot = 1;
+		                   seen_exp = seen_dot = 1;
 		    }
 		  else
 		    {
-		      if (!seen_dot && c == lc_decimal_point)
+		                   if (!seen_dot && c == lc_decimal_point)
 			{
 			  wbuf = resize_wbuf (wbuf_cur_sz, &wbuf_max_sz, wbuf);
 			  wbuf[wbuf_cur_sz++] = c;
 
 			  seen_dot = 1;
 			}
-		      else if ((flags & USE_GROUP) != 0 && !seen_dot && c == lc_thousands_sep)
+		                   else if ((flags & USE_GROUP) != 0 && !seen_dot && c == lc_thousands_sep)
 			{
 			  /* As our conversion routines aren't supporting thousands
 			     separators, we are filtering them here.  */
 			}
-		      else
+		                   else
 			{
 			  back_ch (c, s, &read_in, 0);
 			  break;
@@ -1254,7 +1254,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		    --width;
 		}
 
-	      if (wbuf_cur_sz == 0 || ((flags & IS_HEX_FLOAT) != 0 && wbuf_cur_sz == 2))
+	                   if (wbuf_cur_sz == 0 || ((flags & IS_HEX_FLOAT) != 0 && wbuf_cur_sz == 2))
 		return cleanup_return (rval, &gcollect, pstr, &wbuf);
 	    }
 
@@ -1263,20 +1263,20 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if ((flags & IS_LL) != 0)
 	    {
-	      long double d = __mingw_wcstold (wbuf, &tmp_wbuf_ptr/*, flags & USE_GROUP*/);
-	      if ((flags & IS_SUPPRESSED) == 0 && tmp_wbuf_ptr != wbuf)
+	                   long double d = __mingw_wcstold (wbuf, &tmp_wbuf_ptr/*, flags & USE_GROUP*/);
+	                   if ((flags & IS_SUPPRESSED) == 0 && tmp_wbuf_ptr != wbuf)
 		*(npos != 0 ? (long double *) get_va_nth (argp, npos) : va_arg (arg, long double *)) = is_neg ? -d : d;
 	    }
 	  else if ((flags & IS_L) != 0)
 	    {
-	      double d = __mingw_wcstod (wbuf, &tmp_wbuf_ptr/*, flags & USE_GROUP*/);
-	      if ((flags & IS_SUPPRESSED) == 0 && tmp_wbuf_ptr != wbuf)
+	                   double d = __mingw_wcstod (wbuf, &tmp_wbuf_ptr/*, flags & USE_GROUP*/);
+	                   if ((flags & IS_SUPPRESSED) == 0 && tmp_wbuf_ptr != wbuf)
 		*(npos != 0 ? (double *) get_va_nth (argp, npos) : va_arg (arg, double *)) = is_neg ? -d : d;
 	    }
 	  else
 	    {
-	      float d = __mingw_wcstof (wbuf, &tmp_wbuf_ptr/*, flags & USE_GROUP*/);
-	      if ((flags & IS_SUPPRESSED) == 0 && tmp_wbuf_ptr != wbuf)
+	                   float d = __mingw_wcstof (wbuf, &tmp_wbuf_ptr/*, flags & USE_GROUP*/);
+	                   if ((flags & IS_SUPPRESSED) == 0 && tmp_wbuf_ptr != wbuf)
 		*(npos != 0 ? (float *) get_va_nth (argp, npos) : va_arg (arg, float *)) = is_neg ? -d : d;
 	    }
 
@@ -1290,32 +1290,32 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	case '[':
 	  if ((flags & IS_L) != 0)
 	    {
-	      if ((flags & IS_SUPPRESSED) == 0)
+	                   if ((flags & IS_SUPPRESSED) == 0)
 		{
 		  if ((flags & IS_ALLOC_USED) != 0)
 		    {
 		     if (npos != 0)
-		       pstr = (char **) get_va_nth (argp, npos);
+		                    pstr = (char **) get_va_nth (argp, npos);
 		     else
-		       pstr = va_arg (arg, char **);
+		                    pstr = va_arg (arg, char **);
 
-		      if (!pstr)
+		                   if (!pstr)
 			return cleanup_return (rval, &gcollect, pstr, &wbuf);
-		      str_sz = 100;
-		      *pstr = (char *) malloc (100 * sizeof (wchar_t));
-		      if ((wstr = (wchar_t *) *pstr) == NULL)
+		                   str_sz = 100;
+		                   *pstr = (char *) malloc (100 * sizeof (wchar_t));
+		                   if ((wstr = (wchar_t *) *pstr) == NULL)
 			return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
 
-		      gcollect = resize_gcollect (gcollect);
-		      gcollect->ptrs[gcollect->count++] = pstr;
+		                   gcollect = resize_gcollect (gcollect);
+		                   gcollect->ptrs[gcollect->count++] = pstr;
 		    }
 		  else
 		    {
-		      if (npos != 0)
+		                   if (npos != 0)
 			wstr = (wchar_t *) get_va_nth (argp, npos);
-		      else
+		                   else
 			wstr = va_arg (arg, wchar_t *);
-		      if (!wstr)
+		                   if (!wstr)
 			return cleanup_return (rval, &gcollect, pstr, &wbuf);
 		    }
 		}
@@ -1323,7 +1323,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	    }
 	  else if ((flags & IS_SUPPRESSED) == 0)
 	    {
-	      if ((flags & IS_ALLOC_USED) != 0)
+	                   if ((flags & IS_ALLOC_USED) != 0)
 		{
 		 if (npos != 0)
 		   pstr = (char **) get_va_nth (argp, npos);
@@ -1338,7 +1338,7 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		  gcollect = resize_gcollect (gcollect);
 		  gcollect->ptrs[gcollect->count++] = pstr;
 		}
-	      else
+	                   else
 		{
 		  if (npos != 0)
 		    str = (char *) get_va_nth (argp, npos);
@@ -1369,17 +1369,17 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 	  if ((flags & IS_L) != 0)
 	    {
-	      read_in_sv = read_in;
+	                   read_in_sv = read_in;
 
-	      if ((c = in_ch (s, &read_in)) == WEOF)
+	                   if ((c = in_ch (s, &read_in)) == WEOF)
 		return cleanup_return ((!rval ? EOF : rval), &gcollect, pstr, &wbuf);
 
-	      do
+	                   do
 		{
 		  int ended = 0;
 		  for (wbuf_iter = tmp_wbuf_ptr; wbuf_iter < temp_wbuf_end;)
 		    {
-		      if (wbuf_iter[0] == '-' && wbuf_iter[1] != 0
+		                   if (wbuf_iter[0] == '-' && wbuf_iter[1] != 0
 			  && (wbuf_iter + 1) != temp_wbuf_end
 			  && wbuf_iter != tmp_wbuf_ptr
 			  && (unsigned int) wbuf_iter[-1] <= (unsigned int) wbuf_iter[1])
@@ -1390,22 +1390,22 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 			    break;
 			  if (wc <= wbuf_iter[1] && not_in)
 			    {
-			      back_ch (c, s, &read_in, 0);
-			      ended = 1;
-			      break;
+			                   back_ch (c, s, &read_in, 0);
+			                   ended = 1;
+			                   break;
 			    }
 
 			  wbuf_iter += 2;
 			}
-		      else
+		                   else
 			{
 			  if ((wint_t) *wbuf_iter == c && !not_in)
 			    break;
 			  if ((wint_t) *wbuf_iter == c && not_in)
 			    {
-			      back_ch (c, s, &read_in, 0);
-			      ended = 1;
-			      break;
+			                   back_ch (c, s, &read_in, 0);
+			                   ended = 1;
+			                   break;
 			    }
 
 			  ++wbuf_iter;
@@ -1416,31 +1416,31 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 		  if (wbuf_iter == temp_wbuf_end && !not_in)
 		    {
-		      back_ch (c, s, &read_in, 0);
-		      break;
+		                   back_ch (c, s, &read_in, 0);
+		                   break;
 		    }
 
 		  if ((flags & IS_SUPPRESSED) == 0)
 		    {
-		      *wstr++ = c;
+		                   *wstr++ = c;
 
-		      if ((flags & IS_ALLOC_USED) != 0
+		                   if ((flags & IS_ALLOC_USED) != 0
 			  && wstr == ((wchar_t *) *pstr + str_sz))
 			{
 			  new_sz = str_sz * 2;
 			  while ((wstr = (wchar_t *) realloc (*pstr,
-						      new_sz * sizeof (wchar_t))) == NULL
+						                   new_sz * sizeof (wchar_t))) == NULL
 				 && new_sz > (size_t) (str_sz + 1))
 			    new_sz = str_sz + 1;
 			  if (!wstr)
 			    {
-			      if ((flags & USE_POSIX_ALLOC) == 0)
+			                   if ((flags & USE_POSIX_ALLOC) == 0)
 				{
 				  ((wchar_t *) (*pstr))[str_sz - 1] = 0;
 				  pstr = NULL;
 				  ++rval;
 				}
-			      return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
+			                   return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
 			    }
 			  *pstr = (char *) wstr;
 			  wstr += str_sz;
@@ -1448,12 +1448,12 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 			}
 		    }
 		}
-	      while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
+	                   while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
 
-	      if (read_in_sv == read_in)
+	                   if (read_in_sv == read_in)
 		return cleanup_return (rval, &gcollect, pstr, &wbuf);
 
-	      if ((flags & IS_SUPPRESSED) == 0)
+	                   if ((flags & IS_SUPPRESSED) == 0)
 		{
 		  *wstr++ = 0;
 
@@ -1464,20 +1464,20 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 	    }
 	  else
 	    {
-	      read_in_sv = read_in;
+	                   read_in_sv = read_in;
 
-	      if ((c = in_ch (s, &read_in)) == WEOF)
+	                   if ((c = in_ch (s, &read_in)) == WEOF)
 		return cleanup_return ((!rval ? EOF : rval), &gcollect, pstr, &wbuf);
 
-	      memset (&state, 0, sizeof (state));
+	                   memset (&state, 0, sizeof (state));
 
-	      do
+	                   do
 		{
 		  int ended = 0;
 		  wbuf_iter = tmp_wbuf_ptr;
 		  while (wbuf_iter < temp_wbuf_end)
 		    {
-		      if (wbuf_iter[0] == '-' && wbuf_iter[1] != 0
+		                   if (wbuf_iter[0] == '-' && wbuf_iter[1] != 0
 			  && (wbuf_iter + 1) != temp_wbuf_end
 			  && wbuf_iter != tmp_wbuf_ptr
 			  && (unsigned int) wbuf_iter[-1] <= (unsigned int) wbuf_iter[1])
@@ -1488,22 +1488,22 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 			    break;
 			  if (wc <= wbuf_iter[1] && not_in)
 			    {
-			      back_ch (c, s, &read_in, 0);
-			      ended = 1;
-			      break;
+			                   back_ch (c, s, &read_in, 0);
+			                   ended = 1;
+			                   break;
 			    }
 
 			  wbuf_iter += 2;
 			}
-		      else
+		                   else
 			{
 			  if ((wint_t) *wbuf_iter == c && !not_in)
 			    break;
 			  if ((wint_t) *wbuf_iter == c && not_in)
 			    {
-			      back_ch (c, s, &read_in, 0);
-			      ended = 1;
-			      break;
+			                   back_ch (c, s, &read_in, 0);
+			                   ended = 1;
+			                   break;
 			    }
 
 			  ++wbuf_iter;
@@ -1514,13 +1514,13 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 		    break;
 		  if (wbuf_iter == temp_wbuf_end && !not_in)
 		    {
-		      back_ch (c, s, &read_in, 0);
-		      break;
+		                   back_ch (c, s, &read_in, 0);
+		                   break;
 		    }
 
 		  if ((flags & IS_SUPPRESSED) == 0)
 		    {
-		      if ((flags & IS_ALLOC_USED) != 0
+		                   if ((flags & IS_ALLOC_USED) != 0
 			  && (str + MB_CUR_MAX) >= (*pstr + str_sz))
 			{
 			  new_sz = str_sz * 2;
@@ -1531,13 +1531,13 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 			    new_sz = str_len + MB_CUR_MAX;
 			  if (!nstr)
 			    {
-			      if ((flags & USE_POSIX_ALLOC) == 0)
+			                   if ((flags & USE_POSIX_ALLOC) == 0)
 				{
 				  ((*pstr))[str_len] = 0;
 				  pstr = NULL;
 				  ++rval;
 				}
-			      return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
+			                   return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
 			    }
 			  *pstr = nstr;
 			  str = nstr + str_len;
@@ -1554,32 +1554,32 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
 		  str += n;
 		}
-	      while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
+	                   while (--width > 0 && (c = in_ch (s, &read_in)) != WEOF);
 
-	      if (read_in_sv == read_in)
+	                   if (read_in_sv == read_in)
 		return cleanup_return (rval, &gcollect, pstr, &wbuf);
 
-	      if ((flags & IS_SUPPRESSED) == 0)
+	                   if ((flags & IS_SUPPRESSED) == 0)
 		{
 		  n = wcrtomb (buf, 0, &state);
 		  if (n > 0 && (flags & IS_ALLOC_USED) != 0
-		      && (str + n) >= (*pstr + str_sz))
+		                   && (str + n) >= (*pstr + str_sz))
 		    {
-		      str_len = (str - *pstr);
+		                   str_len = (str - *pstr);
 
-		      if ((nstr = (char *) realloc (*pstr, str_len + n + 1)) == NULL)
+		                   if ((nstr = (char *) realloc (*pstr, str_len + n + 1)) == NULL)
 			{
 			  if ((flags & USE_POSIX_ALLOC) == 0)
 			    {
-			      (*pstr)[str_len] = 0;
-			      pstr = NULL;
-			      ++rval;
+			                   (*pstr)[str_len] = 0;
+			                   pstr = NULL;
+			                   ++rval;
 			    }
 			  return cleanup_return (((flags & USE_POSIX_ALLOC) != 0 ? EOF : rval), &gcollect, pstr, &wbuf);
 			}
-		      *pstr = nstr;
-		      str = nstr + str_len;
-		      str_sz = str_len + n + 1;
+		                   *pstr = nstr;
+		                   str = nstr + str_len;
+		                   str_sz = str_len + n + 1;
 		    }
 
 		  if (n)
@@ -1603,8 +1603,8 @@ __mingw_swformat (_IFP *s, const wchar_t *format, va_list argp)
 
   if (ignore_ws)
     {
-      while (iswspace ((c = in_ch (s, &read_in))));
-      back_ch (c, s, &read_in, 0);
+                   while (iswspace ((c = in_ch (s, &read_in))));
+                   back_ch (c, s, &read_in, 0);
     }
 
   return cleanup_return (rval, &gcollect, pstr, &wbuf);

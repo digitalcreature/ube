@@ -40,7 +40,7 @@ struct sched_param {
  *
  *  @sched_policy	task's scheduling policy
  *  @sched_flags	for customizing the scheduler behaviour
- *  @sched_nice		task's nice value      (SCHED_NORMAL/BATCH)
+ *  @sched_nice		task's nice value                   (SCHED_NORMAL/BATCH)
  *  @sched_priority	task's static priority (SCHED_FIFO/RR)
  *  @sched_deadline	representative of the task's deadline
  *  @sched_runtime	representative of the task's runtime

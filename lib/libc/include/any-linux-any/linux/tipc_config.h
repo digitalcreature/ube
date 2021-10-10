@@ -70,15 +70,15 @@
  * Accepted by own node, or by remote node only if remote management enabled.
  */
 
-#define  TIPC_CMD_NOOP              0x0000    /* tx none, rx none */
-#define  TIPC_CMD_GET_NODES         0x0001    /* tx net_addr, rx node_info(s) */
+#define  TIPC_CMD_NOOP                                        0x0000    /* tx none, rx none */
+#define  TIPC_CMD_GET_NODES                      0x0001    /* tx net_addr, rx node_info(s) */
 #define  TIPC_CMD_GET_MEDIA_NAMES   0x0002    /* tx none, rx media_name(s) */
 #define  TIPC_CMD_GET_BEARER_NAMES  0x0003    /* tx none, rx bearer_name(s) */
-#define  TIPC_CMD_GET_LINKS         0x0004    /* tx net_addr, rx link_info(s) */
+#define  TIPC_CMD_GET_LINKS                      0x0004    /* tx net_addr, rx link_info(s) */
 #define  TIPC_CMD_SHOW_NAME_TABLE   0x0005    /* tx name_tbl_query, rx ultra_string */
-#define  TIPC_CMD_SHOW_PORTS        0x0006    /* tx none, rx ultra_string */
+#define  TIPC_CMD_SHOW_PORTS                     0x0006    /* tx none, rx ultra_string */
 #define  TIPC_CMD_SHOW_LINK_STATS   0x000B    /* tx link_name, rx ultra_string */
-#define  TIPC_CMD_SHOW_STATS        0x000F    /* tx unsigned, rx ultra_string */
+#define  TIPC_CMD_SHOW_STATS                     0x000F    /* tx unsigned, rx ultra_string */
 
 /*
  * Protected commands:
@@ -89,21 +89,21 @@
 
 #define  TIPC_CMD_GET_REMOTE_MNG    0x4003    /* tx none, rx unsigned */
 #define  TIPC_CMD_GET_MAX_PORTS     0x4004    /* tx none, rx unsigned */
-#define  TIPC_CMD_GET_MAX_PUBL      0x4005    /* obsoleted */
+#define  TIPC_CMD_GET_MAX_PUBL                   0x4005    /* obsoleted */
 #define  TIPC_CMD_GET_MAX_SUBSCR    0x4006    /* obsoleted */
 #define  TIPC_CMD_GET_MAX_ZONES     0x4007    /* obsoleted */
 #define  TIPC_CMD_GET_MAX_CLUSTERS  0x4008    /* obsoleted */
 #define  TIPC_CMD_GET_MAX_NODES     0x4009    /* obsoleted */
 #define  TIPC_CMD_GET_MAX_SLAVES    0x400A    /* obsoleted */
-#define  TIPC_CMD_GET_NETID         0x400B    /* tx none, rx unsigned */
+#define  TIPC_CMD_GET_NETID                      0x400B    /* tx none, rx unsigned */
 
 #define  TIPC_CMD_ENABLE_BEARER     0x4101    /* tx bearer_config, rx none */
 #define  TIPC_CMD_DISABLE_BEARER    0x4102    /* tx bearer_name, rx none */
-#define  TIPC_CMD_SET_LINK_TOL      0x4107    /* tx link_config, rx none */
-#define  TIPC_CMD_SET_LINK_PRI      0x4108    /* tx link_config, rx none */
+#define  TIPC_CMD_SET_LINK_TOL                   0x4107    /* tx link_config, rx none */
+#define  TIPC_CMD_SET_LINK_PRI                   0x4108    /* tx link_config, rx none */
 #define  TIPC_CMD_SET_LINK_WINDOW   0x4109    /* tx link_config, rx none */
-#define  TIPC_CMD_SET_LOG_SIZE      0x410A    /* obsoleted */
-#define  TIPC_CMD_DUMP_LOG          0x410B    /* obsoleted */
+#define  TIPC_CMD_SET_LOG_SIZE                   0x410A    /* obsoleted */
+#define  TIPC_CMD_DUMP_LOG                       0x410B    /* obsoleted */
 #define  TIPC_CMD_RESET_LINK_STATS  0x410C    /* tx link_name, rx none */
 
 /*
@@ -115,13 +115,13 @@
 #define  TIPC_CMD_SET_NODE_ADDR     0x8001    /* tx net_addr, rx none */
 #define  TIPC_CMD_SET_REMOTE_MNG    0x8003    /* tx unsigned, rx none */
 #define  TIPC_CMD_SET_MAX_PORTS     0x8004    /* tx unsigned, rx none */
-#define  TIPC_CMD_SET_MAX_PUBL      0x8005    /* obsoleted */
+#define  TIPC_CMD_SET_MAX_PUBL                   0x8005    /* obsoleted */
 #define  TIPC_CMD_SET_MAX_SUBSCR    0x8006    /* obsoleted */
 #define  TIPC_CMD_SET_MAX_ZONES     0x8007    /* obsoleted */
 #define  TIPC_CMD_SET_MAX_CLUSTERS  0x8008    /* obsoleted */
 #define  TIPC_CMD_SET_MAX_NODES     0x8009    /* obsoleted */
 #define  TIPC_CMD_SET_MAX_SLAVES    0x800A    /* obsoleted */
-#define  TIPC_CMD_SET_NETID         0x800B    /* tx unsigned, rx none */
+#define  TIPC_CMD_SET_NETID                      0x800B    /* tx unsigned, rx none */
 
 /*
  * Reserved commands:
@@ -227,7 +227,7 @@ struct tipc_name_table_query {
  * (lying by the range 0x80 to 0xFF) which represents a pre-defined reason.
  */
 
-#define TIPC_CFG_TLV_ERROR      "\x80"  /* request contains incorrect TLV(s) */
+#define TIPC_CFG_TLV_ERROR                   "\x80"  /* request contains incorrect TLV(s) */
 #define TIPC_CFG_NOT_NET_ADMIN  "\x81"	/* must be network administrator */
 #define TIPC_CFG_NOT_ZONE_MSTR	"\x82"	/* must be zone master */
 #define TIPC_CFG_NO_REMOTE	"\x83"	/* remote management not enabled */

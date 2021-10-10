@@ -7,24 +7,24 @@
 /// Authenticated Encryption with Associated Data
 pub const aead = struct {
     pub const aegis = struct {
-        pub const Aegis128L = @import("crypto/aegis.zig").Aegis128L;
-        pub const Aegis256 = @import("crypto/aegis.zig").Aegis256;
+                     pub const Aegis128L = @import("crypto/aegis.zig").Aegis128L;
+                     pub const Aegis256 = @import("crypto/aegis.zig").Aegis256;
     };
 
     pub const aes_gcm = struct {
-        pub const Aes128Gcm = @import("crypto/aes_gcm.zig").Aes128Gcm;
-        pub const Aes256Gcm = @import("crypto/aes_gcm.zig").Aes256Gcm;
+                     pub const Aes128Gcm = @import("crypto/aes_gcm.zig").Aes128Gcm;
+                     pub const Aes256Gcm = @import("crypto/aes_gcm.zig").Aes256Gcm;
     };
 
     pub const Gimli = @import("crypto/gimli.zig").Aead;
 
     pub const chacha_poly = struct {
-        pub const ChaCha20Poly1305 = @import("crypto/chacha20.zig").Chacha20Poly1305;
-        pub const XChaCha20Poly1305 = @import("crypto/chacha20.zig").XChacha20Poly1305;
+                     pub const ChaCha20Poly1305 = @import("crypto/chacha20.zig").Chacha20Poly1305;
+                     pub const XChaCha20Poly1305 = @import("crypto/chacha20.zig").XChacha20Poly1305;
     };
 
     pub const salsa_poly = struct {
-        pub const XSalsa20Poly1305 = @import("crypto/salsa20.zig").XSalsa20Poly1305;
+                     pub const XSalsa20Poly1305 = @import("crypto/salsa20.zig").XSalsa20Poly1305;
     };
 };
 
@@ -111,14 +111,14 @@ pub const sign = struct {
 /// Most applications should be using AEAD constructions instead of stream ciphers directly.
 pub const stream = struct {
     pub const chacha = struct {
-        pub const ChaCha20IETF = @import("crypto/chacha20.zig").ChaCha20IETF;
-        pub const ChaCha20With64BitNonce = @import("crypto/chacha20.zig").ChaCha20With64BitNonce;
-        pub const XChaCha20IETF = @import("crypto/chacha20.zig").XChaCha20IETF;
+                     pub const ChaCha20IETF = @import("crypto/chacha20.zig").ChaCha20IETF;
+                     pub const ChaCha20With64BitNonce = @import("crypto/chacha20.zig").ChaCha20With64BitNonce;
+                     pub const XChaCha20IETF = @import("crypto/chacha20.zig").XChaCha20IETF;
     };
 
     pub const salsa = struct {
-        pub const Salsa20 = @import("crypto/salsa20.zig").Salsa20;
-        pub const XSalsa20 = @import("crypto/salsa20.zig").XSalsa20;
+                     pub const Salsa20 = @import("crypto/salsa20.zig").Salsa20;
+                     pub const XSalsa20 = @import("crypto/salsa20.zig").XSalsa20;
     };
 };
 
@@ -135,17 +135,17 @@ pub const randomBytes = std.os.getrandom;
 
 test "crypto" {
     inline for (std.meta.declarations(@This())) |decl| {
-        switch (decl.data) {
-            .Type => |t| {
-                std.testing.refAllDecls(t);
-            },
-            .Var => |v| {
-                _ = v;
-            },
-            .Fn => |f| {
-                _ = f;
-            },
-        }
+                     switch (decl.data) {
+                                      .Type => |t| {
+                                          std.testing.refAllDecls(t);
+                                      },
+                                      .Var => |v| {
+                                          _ = v;
+                                      },
+                                      .Fn => |f| {
+                                          _ = f;
+                                      },
+                     }
     }
 
     _ = @import("crypto/aes.zig");
@@ -175,39 +175,39 @@ test "crypto" {
 
 test "issue #4532: no index out of bounds" {
     const types = [_]type{
-        hash.Md5,
-        hash.Sha1,
-        hash.sha2.Sha224,
-        hash.sha2.Sha256,
-        hash.sha2.Sha384,
-        hash.sha2.Sha512,
-        hash.sha3.Sha3_224,
-        hash.sha3.Sha3_256,
-        hash.sha3.Sha3_384,
-        hash.sha3.Sha3_512,
-        hash.blake2.Blake2s128,
-        hash.blake2.Blake2s224,
-        hash.blake2.Blake2s256,
-        hash.blake2.Blake2b128,
-        hash.blake2.Blake2b256,
-        hash.blake2.Blake2b384,
-        hash.blake2.Blake2b512,
-        hash.Gimli,
+                     hash.Md5,
+                     hash.Sha1,
+                     hash.sha2.Sha224,
+                     hash.sha2.Sha256,
+                     hash.sha2.Sha384,
+                     hash.sha2.Sha512,
+                     hash.sha3.Sha3_224,
+                     hash.sha3.Sha3_256,
+                     hash.sha3.Sha3_384,
+                     hash.sha3.Sha3_512,
+                     hash.blake2.Blake2s128,
+                     hash.blake2.Blake2s224,
+                     hash.blake2.Blake2s256,
+                     hash.blake2.Blake2b128,
+                     hash.blake2.Blake2b256,
+                     hash.blake2.Blake2b384,
+                     hash.blake2.Blake2b512,
+                     hash.Gimli,
     };
 
     inline for (types) |Hasher| {
-        var block = [_]u8{'#'} ** Hasher.block_length;
-        var out1: [Hasher.digest_length]u8 = undefined;
-        var out2: [Hasher.digest_length]u8 = undefined;
-        const h0 = Hasher.init(.{});
-        var h = h0;
-        h.update(block[0..]);
-        h.final(&out1);
-        h = h0;
-        h.update(block[0..1]);
-        h.update(block[1..]);
-        h.final(&out2);
+                     var block = [_]u8{'#'} ** Hasher.block_length;
+                     var out1: [Hasher.digest_length]u8 = undefined;
+                     var out2: [Hasher.digest_length]u8 = undefined;
+                     const h0 = Hasher.init(.{});
+                     var h = h0;
+                     h.update(block[0..]);
+                     h.final(&out1);
+                     h = h0;
+                     h.update(block[0..1]);
+                     h.update(block[1..]);
+                     h.final(&out2);
 
-        std.testing.expectEqual(out1, out2);
+                     std.testing.expectEqual(out1, out2);
     }
 }

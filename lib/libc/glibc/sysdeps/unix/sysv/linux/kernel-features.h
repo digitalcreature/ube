@@ -125,20 +125,20 @@
    architectures with current 4 different variants:
 
    1. long int clone (unsigned long flags, unsigned long newsp,
-		      int *parent_tidptr, unsigned long tls,
-		      int *child_tidptr)
+		                   int *parent_tidptr, unsigned long tls,
+		                   int *child_tidptr)
 
    2. long int clone (unsigned long newsp, unsigned long clone_flags,
-		      int *parent_tidptr, int * child_tidptr,
-		      unsigned long tls)
+		                   int *parent_tidptr, int * child_tidptr,
+		                   unsigned long tls)
 
    3. long int clone (unsigned long flags, unsigned long newsp,
-		      int stack_size, int *parent_tidptr,
-		      int *child_tidptr, unsigned long tls)
+		                   int stack_size, int *parent_tidptr,
+		                   int *child_tidptr, unsigned long tls)
 
    4. long int clone (unsigned long flags, unsigned long newsp,
-		      int *parent_tidptr, int *child_tidptr,
-		      unsigned long tls)
+		                   int *parent_tidptr, int *child_tidptr,
+		                   unsigned long tls)
 
    The fourth variant is intended to be used as the default for newer ports,
    Also IA64 uses the third variant but with __NR_clone2 instead of
@@ -202,8 +202,8 @@
    and __TIMESIZE equal to 64 does not mean __ASSUME_TIME64_SYSCALLS
    is set.  All four cases are possible.  */
 
-#if __LINUX_KERNEL_VERSION >= 0x050100                          \
-  || __WORDSIZE == 64                                           \
+#if __LINUX_KERNEL_VERSION >= 0x050100                                                                              \
+  || __WORDSIZE == 64                                                                                                                                      \
   || (defined __SYSCALL_WORDSIZE && __SYSCALL_WORDSIZE == 64)
 # define __ASSUME_TIME64_SYSCALLS 1
 #endif

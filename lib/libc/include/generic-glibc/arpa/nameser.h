@@ -199,9 +199,9 @@ typedef enum __ns_update_operation {
  * This structure is used for TSIG authenticated messages
  */
 struct ns_tsig_key {
-        char name[NS_MAXDNAME], alg[NS_MAXDNAME];
-        unsigned char *data;
-        int len;
+                     char name[NS_MAXDNAME], alg[NS_MAXDNAME];
+                     unsigned char *data;
+                     int len;
 };
 typedef struct ns_tsig_key ns_tsig_key;
 
@@ -347,7 +347,7 @@ typedef enum __ns_cert_types {
 /*%
  * EDNS0 extended flags and option codes, host order.
  */
-#define NS_OPT_DNSSEC_OK        0x8000U
+#define NS_OPT_DNSSEC_OK                     0x8000U
 #define NS_OPT_NSID		3
 
 /*%
@@ -403,9 +403,9 @@ int		ns_sprintrr (const ns_msg *, const ns_rr *,
 			     const char *, const char *, char *, size_t)
      __THROW;
 int		ns_sprintrrf (const unsigned char *, size_t, const char *,
-			      ns_class, ns_type, unsigned long,
-			      const unsigned char *, size_t, const char *,
-			      const char *, char *, size_t) __THROW;
+			                   ns_class, ns_type, unsigned long,
+			                   const unsigned char *, size_t, const char *,
+			                   const char *, char *, size_t) __THROW;
 int		ns_format_ttl (unsigned long, char *, size_t) __THROW;
 int		ns_parse_ttl (const char *, unsigned long *) __THROW;
 uint32_t	ns_datetosecs (const char *, int *) __THROW;
@@ -417,7 +417,7 @@ int		ns_name_unpack (const unsigned char *, const unsigned char *,
 				const unsigned char *, unsigned char *, size_t)
      __THROW;
 int		ns_name_pack (const unsigned char *, unsigned char *, int,
-			      const unsigned char **, const unsigned char **)
+			                   const unsigned char **, const unsigned char **)
      __THROW;
 int		ns_name_uncompress (const unsigned char *,
 				    const unsigned char *,

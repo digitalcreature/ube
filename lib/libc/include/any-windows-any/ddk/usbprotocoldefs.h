@@ -423,8 +423,8 @@ typedef struct _USBPHYSICALDESCITEM {
   union Flags {
     BYTE bFlags;
     struct Bits {
-        BYTE bEffort:5;
-        BYTE bQualifier:3;
+                     BYTE bEffort:5;
+                     BYTE bQualifier:3;
     } Bits;
   } Flags;
 } USBPHYSICALDESCITEM;

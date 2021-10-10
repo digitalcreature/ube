@@ -54,8 +54,8 @@
  * Note: The FIFO trigger levels are chip specific:
  *	RX:76 = 00  01  10  11	TX:54 = 00  01  10  11
  * PC16550D:	 1   4   8  14		xx  xx  xx  xx
- * TI16C550A:	 1   4   8  14          xx  xx  xx  xx
- * TI16C550C:	 1   4   8  14          xx  xx  xx  xx
+ * TI16C550A:	 1   4   8  14                       xx  xx  xx  xx
+ * TI16C550C:	 1   4   8  14                       xx  xx  xx  xx
  * ST16C550:	 1   4   8  14		xx  xx  xx  xx
  * ST16C650:	 8  16  24  28		16   8  24  30	PORT_16650V2
  * NS16C552:	 1   4   8  14		xx  xx  xx  xx

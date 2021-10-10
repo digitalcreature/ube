@@ -22,9 +22,9 @@ const expect = std.testing.expect;
 pub fn sin(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => sin_(T, x),
-        f64 => sin_(T, x),
-        else => @compileError("sin not implemented for " ++ @typeName(T)),
+                     f32 => sin_(T, x),
+                     f64 => sin_(T, x),
+                     else => @compileError("sin not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -54,10 +54,10 @@ fn sin_(comptime T: type, x_: T) T {
 
     var x = x_;
     if (x == 0 or math.isNan(x)) {
-        return x;
+                     return x;
     }
     if (math.isInf(x)) {
-        return math.nan(T);
+                     return math.nan(T);
     }
 
     var sign = x < 0;
@@ -67,23 +67,23 @@ fn sin_(comptime T: type, x_: T) T {
     var j = @floatToInt(I, y);
 
     if (j & 1 == 1) {
-        j += 1;
-        y += 1;
+                     j += 1;
+                     y += 1;
     }
 
     j &= 7;
     if (j > 3) {
-        j -= 4;
-        sign = !sign;
+                     j -= 4;
+                     sign = !sign;
     }
 
     const z = ((x - y * pi4a) - y * pi4b) - y * pi4c;
     const w = z * z;
 
     const r = if (j == 1 or j == 2)
-        1.0 - 0.5 * w + w * w * (C5 + w * (C4 + w * (C3 + w * (C2 + w * (C1 + w * C0)))))
+                     1.0 - 0.5 * w + w * w * (C5 + w * (C4 + w * (C3 + w * (C2 + w * (C1 + w * C0)))))
     else
-        z + z * w * (S5 + w * (S4 + w * (S3 + w * (S2 + w * (S1 + w * S0)))));
+                     z + z * w * (S5 + w * (S4 + w * (S3 + w * (S2 + w * (S1 + w * S0)))));
 
     return if (sign) -r else r;
 }

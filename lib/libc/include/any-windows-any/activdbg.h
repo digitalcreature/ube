@@ -1151,24 +1151,24 @@ MIDL_INTERFACE("51973c10-cb0c-11d0-b5c9-00a0244a0e7a")
 IActiveScriptDebug32 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetScriptTextAttributes(
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr) = 0;
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptletTextAttributes(
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr) = 0;
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCodeContextsOfPosition(
-        DWORD dwSourceContext,
-        ULONG uCharacterOffset,
-        ULONG uNumChars,
-        IEnumDebugCodeContexts **ppescc) = 0;
+                     DWORD dwSourceContext,
+                     ULONG uCharacterOffset,
+                     ULONG uNumChars,
+                     IEnumDebugCodeContexts **ppescc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1180,39 +1180,39 @@ typedef struct IActiveScriptDebug32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptDebug32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptDebug32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptDebug32 *This);
+                     IActiveScriptDebug32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptDebug32 *This);
+                     IActiveScriptDebug32 *This);
 
     /*** IActiveScriptDebug32 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetScriptTextAttributes)(
-        IActiveScriptDebug32 *This,
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr);
+                     IActiveScriptDebug32 *This,
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptletTextAttributes)(
-        IActiveScriptDebug32 *This,
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr);
+                     IActiveScriptDebug32 *This,
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr);
 
     HRESULT (STDMETHODCALLTYPE *EnumCodeContextsOfPosition)(
-        IActiveScriptDebug32 *This,
-        DWORD dwSourceContext,
-        ULONG uCharacterOffset,
-        ULONG uNumChars,
-        IEnumDebugCodeContexts **ppescc);
+                     IActiveScriptDebug32 *This,
+                     DWORD dwSourceContext,
+                     ULONG uCharacterOffset,
+                     ULONG uNumChars,
+                     IEnumDebugCodeContexts **ppescc);
 
     END_INTERFACE
 } IActiveScriptDebug32Vtbl;
@@ -1272,24 +1272,24 @@ MIDL_INTERFACE("bc437e23-f5b8-47f4-bb79-7d1ce5483b86")
 IActiveScriptDebug64 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetScriptTextAttributes(
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr) = 0;
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptletTextAttributes(
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr) = 0;
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCodeContextsOfPosition(
-        DWORDLONG dwSourceContext,
-        ULONG uCharacterOffset,
-        ULONG uNumChars,
-        IEnumDebugCodeContexts **ppescc) = 0;
+                     DWORDLONG dwSourceContext,
+                     ULONG uCharacterOffset,
+                     ULONG uNumChars,
+                     IEnumDebugCodeContexts **ppescc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1301,39 +1301,39 @@ typedef struct IActiveScriptDebug64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptDebug64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptDebug64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptDebug64 *This);
+                     IActiveScriptDebug64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptDebug64 *This);
+                     IActiveScriptDebug64 *This);
 
     /*** IActiveScriptDebug64 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetScriptTextAttributes)(
-        IActiveScriptDebug64 *This,
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr);
+                     IActiveScriptDebug64 *This,
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptletTextAttributes)(
-        IActiveScriptDebug64 *This,
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr);
+                     IActiveScriptDebug64 *This,
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr);
 
     HRESULT (STDMETHODCALLTYPE *EnumCodeContextsOfPosition)(
-        IActiveScriptDebug64 *This,
-        DWORDLONG dwSourceContext,
-        ULONG uCharacterOffset,
-        ULONG uNumChars,
-        IEnumDebugCodeContexts **ppescc);
+                     IActiveScriptDebug64 *This,
+                     DWORDLONG dwSourceContext,
+                     ULONG uCharacterOffset,
+                     ULONG uNumChars,
+                     IEnumDebugCodeContexts **ppescc);
 
     END_INTERFACE
 } IActiveScriptDebug64Vtbl;
@@ -1393,21 +1393,21 @@ MIDL_INTERFACE("51973c11-cb0c-11d0-b5c9-00a0244a0e7a")
 IActiveScriptSiteDebug32 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentContextFromPosition(
-        DWORD dwSourceContext,
-        ULONG uCharacterOffset,
-        ULONG uNumChars,
-        IDebugDocumentContext **ppsc) = 0;
+                     DWORD dwSourceContext,
+                     ULONG uCharacterOffset,
+                     ULONG uNumChars,
+                     IDebugDocumentContext **ppsc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetApplication(
-        IDebugApplication32 **ppda) = 0;
+                     IDebugApplication32 **ppda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRootApplicationNode(
-        IDebugApplicationNode **ppdanRoot) = 0;
+                     IDebugApplicationNode **ppdanRoot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnScriptErrorDebug(
-        IActiveScriptErrorDebug *pErrorDebug,
-        WINBOOL *pfEnterDebugger,
-        WINBOOL *pfCallOnScriptErrorWhenContinuing) = 0;
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     WINBOOL *pfEnterDebugger,
+                     WINBOOL *pfCallOnScriptErrorWhenContinuing) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1419,37 +1419,37 @@ typedef struct IActiveScriptSiteDebug32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSiteDebug32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSiteDebug32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSiteDebug32 *This);
+                     IActiveScriptSiteDebug32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSiteDebug32 *This);
+                     IActiveScriptSiteDebug32 *This);
 
     /*** IActiveScriptSiteDebug32 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentContextFromPosition)(
-        IActiveScriptSiteDebug32 *This,
-        DWORD dwSourceContext,
-        ULONG uCharacterOffset,
-        ULONG uNumChars,
-        IDebugDocumentContext **ppsc);
+                     IActiveScriptSiteDebug32 *This,
+                     DWORD dwSourceContext,
+                     ULONG uCharacterOffset,
+                     ULONG uNumChars,
+                     IDebugDocumentContext **ppsc);
 
     HRESULT (STDMETHODCALLTYPE *GetApplication)(
-        IActiveScriptSiteDebug32 *This,
-        IDebugApplication32 **ppda);
+                     IActiveScriptSiteDebug32 *This,
+                     IDebugApplication32 **ppda);
 
     HRESULT (STDMETHODCALLTYPE *GetRootApplicationNode)(
-        IActiveScriptSiteDebug32 *This,
-        IDebugApplicationNode **ppdanRoot);
+                     IActiveScriptSiteDebug32 *This,
+                     IDebugApplicationNode **ppdanRoot);
 
     HRESULT (STDMETHODCALLTYPE *OnScriptErrorDebug)(
-        IActiveScriptSiteDebug32 *This,
-        IActiveScriptErrorDebug *pErrorDebug,
-        WINBOOL *pfEnterDebugger,
-        WINBOOL *pfCallOnScriptErrorWhenContinuing);
+                     IActiveScriptSiteDebug32 *This,
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     WINBOOL *pfEnterDebugger,
+                     WINBOOL *pfCallOnScriptErrorWhenContinuing);
 
     END_INTERFACE
 } IActiveScriptSiteDebug32Vtbl;
@@ -1513,21 +1513,21 @@ MIDL_INTERFACE("d6b96b0a-7463-402c-92ac-89984226942f")
 IActiveScriptSiteDebug64 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentContextFromPosition(
-        DWORDLONG dwSourceContext,
-        ULONG uCharacterOffset,
-        ULONG uNumChars,
-        IDebugDocumentContext **ppsc) = 0;
+                     DWORDLONG dwSourceContext,
+                     ULONG uCharacterOffset,
+                     ULONG uNumChars,
+                     IDebugDocumentContext **ppsc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetApplication(
-        IDebugApplication64 **ppda) = 0;
+                     IDebugApplication64 **ppda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRootApplicationNode(
-        IDebugApplicationNode **ppdanRoot) = 0;
+                     IDebugApplicationNode **ppdanRoot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnScriptErrorDebug(
-        IActiveScriptErrorDebug *pErrorDebug,
-        WINBOOL *pfEnterDebugger,
-        WINBOOL *pfCallOnScriptErrorWhenContinuing) = 0;
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     WINBOOL *pfEnterDebugger,
+                     WINBOOL *pfCallOnScriptErrorWhenContinuing) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1539,37 +1539,37 @@ typedef struct IActiveScriptSiteDebug64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSiteDebug64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSiteDebug64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSiteDebug64 *This);
+                     IActiveScriptSiteDebug64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSiteDebug64 *This);
+                     IActiveScriptSiteDebug64 *This);
 
     /*** IActiveScriptSiteDebug64 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentContextFromPosition)(
-        IActiveScriptSiteDebug64 *This,
-        DWORDLONG dwSourceContext,
-        ULONG uCharacterOffset,
-        ULONG uNumChars,
-        IDebugDocumentContext **ppsc);
+                     IActiveScriptSiteDebug64 *This,
+                     DWORDLONG dwSourceContext,
+                     ULONG uCharacterOffset,
+                     ULONG uNumChars,
+                     IDebugDocumentContext **ppsc);
 
     HRESULT (STDMETHODCALLTYPE *GetApplication)(
-        IActiveScriptSiteDebug64 *This,
-        IDebugApplication64 **ppda);
+                     IActiveScriptSiteDebug64 *This,
+                     IDebugApplication64 **ppda);
 
     HRESULT (STDMETHODCALLTYPE *GetRootApplicationNode)(
-        IActiveScriptSiteDebug64 *This,
-        IDebugApplicationNode **ppdanRoot);
+                     IActiveScriptSiteDebug64 *This,
+                     IDebugApplicationNode **ppdanRoot);
 
     HRESULT (STDMETHODCALLTYPE *OnScriptErrorDebug)(
-        IActiveScriptSiteDebug64 *This,
-        IActiveScriptErrorDebug *pErrorDebug,
-        WINBOOL *pfEnterDebugger,
-        WINBOOL *pfCallOnScriptErrorWhenContinuing);
+                     IActiveScriptSiteDebug64 *This,
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     WINBOOL *pfEnterDebugger,
+                     WINBOOL *pfCallOnScriptErrorWhenContinuing);
 
     END_INTERFACE
 } IActiveScriptSiteDebug64Vtbl;
@@ -1633,8 +1633,8 @@ MIDL_INTERFACE("bb722ccb-6ad2-41c6-b780-af9c03ee69f5")
 IActiveScriptSiteDebugEx : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnCanNotJITScriptErrorDebug(
-        IActiveScriptErrorDebug *pErrorDebug,
-        WINBOOL *pfCallOnScriptErrorWhenContinuing) = 0;
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     WINBOOL *pfCallOnScriptErrorWhenContinuing) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1646,21 +1646,21 @@ typedef struct IActiveScriptSiteDebugExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptSiteDebugEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptSiteDebugEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptSiteDebugEx *This);
+                     IActiveScriptSiteDebugEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptSiteDebugEx *This);
+                     IActiveScriptSiteDebugEx *This);
 
     /*** IActiveScriptSiteDebugEx methods ***/
     HRESULT (STDMETHODCALLTYPE *OnCanNotJITScriptErrorDebug)(
-        IActiveScriptSiteDebugEx *This,
-        IActiveScriptErrorDebug *pErrorDebug,
-        WINBOOL *pfCallOnScriptErrorWhenContinuing);
+                     IActiveScriptSiteDebugEx *This,
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     WINBOOL *pfCallOnScriptErrorWhenContinuing);
 
     END_INTERFACE
 } IActiveScriptSiteDebugExVtbl;
@@ -1712,10 +1712,10 @@ MIDL_INTERFACE("51973c12-cb0c-11d0-b5c9-00a0244a0e7a")
 IActiveScriptErrorDebug : public IActiveScriptError
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentContext(
-        IDebugDocumentContext **ppssc) = 0;
+                     IDebugDocumentContext **ppssc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStackFrame(
-        IDebugStackFrame **ppdsf) = 0;
+                     IDebugStackFrame **ppdsf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1727,39 +1727,39 @@ typedef struct IActiveScriptErrorDebugVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptErrorDebug *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptErrorDebug *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptErrorDebug *This);
+                     IActiveScriptErrorDebug *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptErrorDebug *This);
+                     IActiveScriptErrorDebug *This);
 
     /*** IActiveScriptError methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExceptionInfo)(
-        IActiveScriptErrorDebug *This,
-        EXCEPINFO *pexcepinfo);
+                     IActiveScriptErrorDebug *This,
+                     EXCEPINFO *pexcepinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetSourcePosition)(
-        IActiveScriptErrorDebug *This,
-        DWORD *pdwSourceContext,
-        ULONG *pulLineNumber,
-        LONG *plCharacterPosition);
+                     IActiveScriptErrorDebug *This,
+                     DWORD *pdwSourceContext,
+                     ULONG *pulLineNumber,
+                     LONG *plCharacterPosition);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceLineText)(
-        IActiveScriptErrorDebug *This,
-        BSTR *pbstrSourceLine);
+                     IActiveScriptErrorDebug *This,
+                     BSTR *pbstrSourceLine);
 
     /*** IActiveScriptErrorDebug methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentContext)(
-        IActiveScriptErrorDebug *This,
-        IDebugDocumentContext **ppssc);
+                     IActiveScriptErrorDebug *This,
+                     IDebugDocumentContext **ppssc);
 
     HRESULT (STDMETHODCALLTYPE *GetStackFrame)(
-        IActiveScriptErrorDebug *This,
-        IDebugStackFrame **ppdsf);
+                     IActiveScriptErrorDebug *This,
+                     IDebugStackFrame **ppdsf);
 
     END_INTERFACE
 } IActiveScriptErrorDebugVtbl;
@@ -1829,10 +1829,10 @@ MIDL_INTERFACE("51973c13-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugCodeContext : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentContext(
-        IDebugDocumentContext **ppsc) = 0;
+                     IDebugDocumentContext **ppsc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBreakPoint(
-        BREAKPOINT_STATE bps) = 0;
+                     BREAKPOINT_STATE bps) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1844,24 +1844,24 @@ typedef struct IDebugCodeContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugCodeContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugCodeContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugCodeContext *This);
+                     IDebugCodeContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugCodeContext *This);
+                     IDebugCodeContext *This);
 
     /*** IDebugCodeContext methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentContext)(
-        IDebugCodeContext *This,
-        IDebugDocumentContext **ppsc);
+                     IDebugCodeContext *This,
+                     IDebugDocumentContext **ppsc);
 
     HRESULT (STDMETHODCALLTYPE *SetBreakPoint)(
-        IDebugCodeContext *This,
-        BREAKPOINT_STATE bps);
+                     IDebugCodeContext *This,
+                     BREAKPOINT_STATE bps);
 
     END_INTERFACE
 } IDebugCodeContextVtbl;
@@ -1917,21 +1917,21 @@ MIDL_INTERFACE("51973c14-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugExpression : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        IDebugExpressionCallBack *pdecb) = 0;
+                     IDebugExpressionCallBack *pdecb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Abort(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryIsComplete(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResultAsString(
-        HRESULT *phrResult,
-        BSTR *pbstrResult) = 0;
+                     HRESULT *phrResult,
+                     BSTR *pbstrResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResultAsDebugProperty(
-        HRESULT *phrResult,
-        IDebugProperty **ppdp) = 0;
+                     HRESULT *phrResult,
+                     IDebugProperty **ppdp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1943,36 +1943,36 @@ typedef struct IDebugExpressionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugExpression *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugExpression *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugExpression *This);
+                     IDebugExpression *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugExpression *This);
+                     IDebugExpression *This);
 
     /*** IDebugExpression methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IDebugExpression *This,
-        IDebugExpressionCallBack *pdecb);
+                     IDebugExpression *This,
+                     IDebugExpressionCallBack *pdecb);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IDebugExpression *This);
+                     IDebugExpression *This);
 
     HRESULT (STDMETHODCALLTYPE *QueryIsComplete)(
-        IDebugExpression *This);
+                     IDebugExpression *This);
 
     HRESULT (STDMETHODCALLTYPE *GetResultAsString)(
-        IDebugExpression *This,
-        HRESULT *phrResult,
-        BSTR *pbstrResult);
+                     IDebugExpression *This,
+                     HRESULT *phrResult,
+                     BSTR *pbstrResult);
 
     HRESULT (STDMETHODCALLTYPE *GetResultAsDebugProperty)(
-        IDebugExpression *This,
-        HRESULT *phrResult,
-        IDebugProperty **ppdp);
+                     IDebugExpression *This,
+                     HRESULT *phrResult,
+                     IDebugProperty **ppdp);
 
     END_INTERFACE
 } IDebugExpressionVtbl;
@@ -2040,15 +2040,15 @@ MIDL_INTERFACE("51973c15-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugExpressionContext : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseLanguageText(
-        LPCOLESTR pstrCode,
-        UINT nRadix,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        IDebugExpression **ppe) = 0;
+                     LPCOLESTR pstrCode,
+                     UINT nRadix,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     IDebugExpression **ppe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguageInfo(
-        BSTR *pbstrLanguageName,
-        GUID *pLanguageID) = 0;
+                     BSTR *pbstrLanguageName,
+                     GUID *pLanguageID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2060,29 +2060,29 @@ typedef struct IDebugExpressionContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugExpressionContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugExpressionContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugExpressionContext *This);
+                     IDebugExpressionContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugExpressionContext *This);
+                     IDebugExpressionContext *This);
 
     /*** IDebugExpressionContext methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseLanguageText)(
-        IDebugExpressionContext *This,
-        LPCOLESTR pstrCode,
-        UINT nRadix,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        IDebugExpression **ppe);
+                     IDebugExpressionContext *This,
+                     LPCOLESTR pstrCode,
+                     UINT nRadix,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     IDebugExpression **ppe);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguageInfo)(
-        IDebugExpressionContext *This,
-        BSTR *pbstrLanguageName,
-        GUID *pLanguageID);
+                     IDebugExpressionContext *This,
+                     BSTR *pbstrLanguageName,
+                     GUID *pLanguageID);
 
     END_INTERFACE
 } IDebugExpressionContextVtbl;
@@ -2138,7 +2138,7 @@ MIDL_INTERFACE("51973c16-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugExpressionCallBack : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE onComplete(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2150,19 +2150,19 @@ typedef struct IDebugExpressionCallBackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugExpressionCallBack *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugExpressionCallBack *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugExpressionCallBack *This);
+                     IDebugExpressionCallBack *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugExpressionCallBack *This);
+                     IDebugExpressionCallBack *This);
 
     /*** IDebugExpressionCallBack methods ***/
     HRESULT (STDMETHODCALLTYPE *onComplete)(
-        IDebugExpressionCallBack *This);
+                     IDebugExpressionCallBack *This);
 
     END_INTERFACE
 } IDebugExpressionCallBackVtbl;
@@ -2214,21 +2214,21 @@ MIDL_INTERFACE("51973c17-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugStackFrame : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCodeContext(
-        IDebugCodeContext **ppcc) = 0;
+                     IDebugCodeContext **ppcc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescriptionString(
-        WINBOOL fLong,
-        BSTR *pbstrDescription) = 0;
+                     WINBOOL fLong,
+                     BSTR *pbstrDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguageString(
-        WINBOOL fLong,
-        BSTR *pbstrLanguage) = 0;
+                     WINBOOL fLong,
+                     BSTR *pbstrLanguage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThread(
-        IDebugApplicationThread **ppat) = 0;
+                     IDebugApplicationThread **ppat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDebugProperty(
-        IDebugProperty **ppDebugProp) = 0;
+                     IDebugProperty **ppDebugProp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2240,38 +2240,38 @@ typedef struct IDebugStackFrameVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugStackFrame *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugStackFrame *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugStackFrame *This);
+                     IDebugStackFrame *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugStackFrame *This);
+                     IDebugStackFrame *This);
 
     /*** IDebugStackFrame methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCodeContext)(
-        IDebugStackFrame *This,
-        IDebugCodeContext **ppcc);
+                     IDebugStackFrame *This,
+                     IDebugCodeContext **ppcc);
 
     HRESULT (STDMETHODCALLTYPE *GetDescriptionString)(
-        IDebugStackFrame *This,
-        WINBOOL fLong,
-        BSTR *pbstrDescription);
+                     IDebugStackFrame *This,
+                     WINBOOL fLong,
+                     BSTR *pbstrDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguageString)(
-        IDebugStackFrame *This,
-        WINBOOL fLong,
-        BSTR *pbstrLanguage);
+                     IDebugStackFrame *This,
+                     WINBOOL fLong,
+                     BSTR *pbstrLanguage);
 
     HRESULT (STDMETHODCALLTYPE *GetThread)(
-        IDebugStackFrame *This,
-        IDebugApplicationThread **ppat);
+                     IDebugStackFrame *This,
+                     IDebugApplicationThread **ppat);
 
     HRESULT (STDMETHODCALLTYPE *GetDebugProperty)(
-        IDebugStackFrame *This,
-        IDebugProperty **ppDebugProp);
+                     IDebugStackFrame *This,
+                     IDebugProperty **ppDebugProp);
 
     END_INTERFACE
 } IDebugStackFrameVtbl;
@@ -2339,7 +2339,7 @@ MIDL_INTERFACE("51973c18-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugStackFrameSniffer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnumStackFrames(
-        IEnumDebugStackFrames **ppedsf) = 0;
+                     IEnumDebugStackFrames **ppedsf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2351,20 +2351,20 @@ typedef struct IDebugStackFrameSnifferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugStackFrameSniffer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugStackFrameSniffer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugStackFrameSniffer *This);
+                     IDebugStackFrameSniffer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugStackFrameSniffer *This);
+                     IDebugStackFrameSniffer *This);
 
     /*** IDebugStackFrameSniffer methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumStackFrames)(
-        IDebugStackFrameSniffer *This,
-        IEnumDebugStackFrames **ppedsf);
+                     IDebugStackFrameSniffer *This,
+                     IEnumDebugStackFrames **ppedsf);
 
     END_INTERFACE
 } IDebugStackFrameSnifferVtbl;
@@ -2416,8 +2416,8 @@ MIDL_INTERFACE("51973c19-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugStackFrameSnifferEx32 : public IDebugStackFrameSniffer
 {
     virtual HRESULT STDMETHODCALLTYPE EnumStackFramesEx32(
-        DWORD dwSpMin,
-        IEnumDebugStackFrames **ppedsf) = 0;
+                     DWORD dwSpMin,
+                     IEnumDebugStackFrames **ppedsf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2429,26 +2429,26 @@ typedef struct IDebugStackFrameSnifferEx32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugStackFrameSnifferEx32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugStackFrameSnifferEx32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugStackFrameSnifferEx32 *This);
+                     IDebugStackFrameSnifferEx32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugStackFrameSnifferEx32 *This);
+                     IDebugStackFrameSnifferEx32 *This);
 
     /*** IDebugStackFrameSniffer methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumStackFrames)(
-        IDebugStackFrameSnifferEx32 *This,
-        IEnumDebugStackFrames **ppedsf);
+                     IDebugStackFrameSnifferEx32 *This,
+                     IEnumDebugStackFrames **ppedsf);
 
     /*** IDebugStackFrameSnifferEx32 methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumStackFramesEx32)(
-        IDebugStackFrameSnifferEx32 *This,
-        DWORD dwSpMin,
-        IEnumDebugStackFrames **ppedsf);
+                     IDebugStackFrameSnifferEx32 *This,
+                     DWORD dwSpMin,
+                     IEnumDebugStackFrames **ppedsf);
 
     END_INTERFACE
 } IDebugStackFrameSnifferEx32Vtbl;
@@ -2506,8 +2506,8 @@ MIDL_INTERFACE("8cd12af4-49c1-4d52-8d8a-c146f47581aa")
 IDebugStackFrameSnifferEx64 : public IDebugStackFrameSniffer
 {
     virtual HRESULT STDMETHODCALLTYPE EnumStackFramesEx64(
-        DWORDLONG dwSpMin,
-        IEnumDebugStackFrames64 **ppedsf) = 0;
+                     DWORDLONG dwSpMin,
+                     IEnumDebugStackFrames64 **ppedsf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2519,26 +2519,26 @@ typedef struct IDebugStackFrameSnifferEx64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugStackFrameSnifferEx64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugStackFrameSnifferEx64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugStackFrameSnifferEx64 *This);
+                     IDebugStackFrameSnifferEx64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugStackFrameSnifferEx64 *This);
+                     IDebugStackFrameSnifferEx64 *This);
 
     /*** IDebugStackFrameSniffer methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumStackFrames)(
-        IDebugStackFrameSnifferEx64 *This,
-        IEnumDebugStackFrames **ppedsf);
+                     IDebugStackFrameSnifferEx64 *This,
+                     IEnumDebugStackFrames **ppedsf);
 
     /*** IDebugStackFrameSnifferEx64 methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumStackFramesEx64)(
-        IDebugStackFrameSnifferEx64 *This,
-        DWORDLONG dwSpMin,
-        IEnumDebugStackFrames64 **ppedsf);
+                     IDebugStackFrameSnifferEx64 *This,
+                     DWORDLONG dwSpMin,
+                     IEnumDebugStackFrames64 **ppedsf);
 
     END_INTERFACE
 } IDebugStackFrameSnifferEx64Vtbl;
@@ -2596,13 +2596,13 @@ MIDL_INTERFACE("51973c1a-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugSyncOperation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetTargetThread(
-        IDebugApplicationThread **ppatTarget) = 0;
+                     IDebugApplicationThread **ppatTarget) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Execute(
-        IUnknown **ppunkResult) = 0;
+                     IUnknown **ppunkResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InProgressAbort(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2614,27 +2614,27 @@ typedef struct IDebugSyncOperationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugSyncOperation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugSyncOperation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugSyncOperation *This);
+                     IDebugSyncOperation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugSyncOperation *This);
+                     IDebugSyncOperation *This);
 
     /*** IDebugSyncOperation methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTargetThread)(
-        IDebugSyncOperation *This,
-        IDebugApplicationThread **ppatTarget);
+                     IDebugSyncOperation *This,
+                     IDebugApplicationThread **ppatTarget);
 
     HRESULT (STDMETHODCALLTYPE *Execute)(
-        IDebugSyncOperation *This,
-        IUnknown **ppunkResult);
+                     IDebugSyncOperation *This,
+                     IUnknown **ppunkResult);
 
     HRESULT (STDMETHODCALLTYPE *InProgressAbort)(
-        IDebugSyncOperation *This);
+                     IDebugSyncOperation *This);
 
     END_INTERFACE
 } IDebugSyncOperationVtbl;
@@ -2694,20 +2694,20 @@ MIDL_INTERFACE("51973c1b-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugAsyncOperation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSyncDebugOperation(
-        IDebugSyncOperation **ppsdo) = 0;
+                     IDebugSyncOperation **ppsdo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Start(
-        IDebugAsyncOperationCallBack *padocb) = 0;
+                     IDebugAsyncOperationCallBack *padocb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Abort(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryIsComplete(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResult(
-        HRESULT *phrResult,
-        IUnknown **ppunkResult) = 0;
+                     HRESULT *phrResult,
+                     IUnknown **ppunkResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2719,35 +2719,35 @@ typedef struct IDebugAsyncOperationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugAsyncOperation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugAsyncOperation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugAsyncOperation *This);
+                     IDebugAsyncOperation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugAsyncOperation *This);
+                     IDebugAsyncOperation *This);
 
     /*** IDebugAsyncOperation methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSyncDebugOperation)(
-        IDebugAsyncOperation *This,
-        IDebugSyncOperation **ppsdo);
+                     IDebugAsyncOperation *This,
+                     IDebugSyncOperation **ppsdo);
 
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IDebugAsyncOperation *This,
-        IDebugAsyncOperationCallBack *padocb);
+                     IDebugAsyncOperation *This,
+                     IDebugAsyncOperationCallBack *padocb);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IDebugAsyncOperation *This);
+                     IDebugAsyncOperation *This);
 
     HRESULT (STDMETHODCALLTYPE *QueryIsComplete)(
-        IDebugAsyncOperation *This);
+                     IDebugAsyncOperation *This);
 
     HRESULT (STDMETHODCALLTYPE *GetResult)(
-        IDebugAsyncOperation *This,
-        HRESULT *phrResult,
-        IUnknown **ppunkResult);
+                     IDebugAsyncOperation *This,
+                     HRESULT *phrResult,
+                     IUnknown **ppunkResult);
 
     END_INTERFACE
 } IDebugAsyncOperationVtbl;
@@ -2815,7 +2815,7 @@ MIDL_INTERFACE("51973c1c-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugAsyncOperationCallBack : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE onComplete(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2827,19 +2827,19 @@ typedef struct IDebugAsyncOperationCallBackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugAsyncOperationCallBack *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugAsyncOperationCallBack *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugAsyncOperationCallBack *This);
+                     IDebugAsyncOperationCallBack *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugAsyncOperationCallBack *This);
+                     IDebugAsyncOperationCallBack *This);
 
     /*** IDebugAsyncOperationCallBack methods ***/
     HRESULT (STDMETHODCALLTYPE *onComplete)(
-        IDebugAsyncOperationCallBack *This);
+                     IDebugAsyncOperationCallBack *This);
 
     END_INTERFACE
 } IDebugAsyncOperationCallBackVtbl;
@@ -2891,18 +2891,18 @@ MIDL_INTERFACE("51973c1d-cb0c-11d0-b5c9-00a0244a0e7a")
 IEnumDebugCodeContexts : public IUnknown
 {
     virtual HRESULT __stdcall Next(
-        ULONG celt,
-        IDebugCodeContext **pscc,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IDebugCodeContext **pscc,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDebugCodeContexts **ppescc) = 0;
+                     IEnumDebugCodeContexts **ppescc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2914,33 +2914,33 @@ typedef struct IEnumDebugCodeContextsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDebugCodeContexts *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDebugCodeContexts *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDebugCodeContexts *This);
+                     IEnumDebugCodeContexts *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDebugCodeContexts *This);
+                     IEnumDebugCodeContexts *This);
 
     /*** IEnumDebugCodeContexts methods ***/
     HRESULT (__stdcall *Next)(
-        IEnumDebugCodeContexts *This,
-        ULONG celt,
-        IDebugCodeContext **pscc,
-        ULONG *pceltFetched);
+                     IEnumDebugCodeContexts *This,
+                     ULONG celt,
+                     IDebugCodeContext **pscc,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDebugCodeContexts *This,
-        ULONG celt);
+                     IEnumDebugCodeContexts *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDebugCodeContexts *This);
+                     IEnumDebugCodeContexts *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDebugCodeContexts *This,
-        IEnumDebugCodeContexts **ppescc);
+                     IEnumDebugCodeContexts *This,
+                     IEnumDebugCodeContexts **ppescc);
 
     END_INTERFACE
 } IEnumDebugCodeContextsVtbl;
@@ -3024,18 +3024,18 @@ MIDL_INTERFACE("51973c1e-cb0c-11d0-b5c9-00a0244a0e7a")
 IEnumDebugStackFrames : public IUnknown
 {
     virtual HRESULT __stdcall Next(
-        ULONG celt,
-        DebugStackFrameDescriptor *prgdsfd,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     DebugStackFrameDescriptor *prgdsfd,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDebugStackFrames **ppedsf) = 0;
+                     IEnumDebugStackFrames **ppedsf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3047,33 +3047,33 @@ typedef struct IEnumDebugStackFramesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDebugStackFrames *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDebugStackFrames *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDebugStackFrames *This);
+                     IEnumDebugStackFrames *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDebugStackFrames *This);
+                     IEnumDebugStackFrames *This);
 
     /*** IEnumDebugStackFrames methods ***/
     HRESULT (__stdcall *Next)(
-        IEnumDebugStackFrames *This,
-        ULONG celt,
-        DebugStackFrameDescriptor *prgdsfd,
-        ULONG *pceltFetched);
+                     IEnumDebugStackFrames *This,
+                     ULONG celt,
+                     DebugStackFrameDescriptor *prgdsfd,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDebugStackFrames *This,
-        ULONG celt);
+                     IEnumDebugStackFrames *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDebugStackFrames *This);
+                     IEnumDebugStackFrames *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDebugStackFrames *This,
-        IEnumDebugStackFrames **ppedsf);
+                     IEnumDebugStackFrames *This,
+                     IEnumDebugStackFrames **ppedsf);
 
     END_INTERFACE
 } IEnumDebugStackFramesVtbl;
@@ -3157,9 +3157,9 @@ MIDL_INTERFACE("0dc38853-c1b0-4176-a984-b298361027af")
 IEnumDebugStackFrames64 : public IEnumDebugStackFrames
 {
     virtual HRESULT __stdcall Next64(
-        ULONG celt,
-        DebugStackFrameDescriptor64 *prgdsfd,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     DebugStackFrameDescriptor64 *prgdsfd,
+                     ULONG *pceltFetched) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3171,40 +3171,40 @@ typedef struct IEnumDebugStackFrames64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDebugStackFrames64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDebugStackFrames64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDebugStackFrames64 *This);
+                     IEnumDebugStackFrames64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDebugStackFrames64 *This);
+                     IEnumDebugStackFrames64 *This);
 
     /*** IEnumDebugStackFrames methods ***/
     HRESULT (__stdcall *Next)(
-        IEnumDebugStackFrames64 *This,
-        ULONG celt,
-        DebugStackFrameDescriptor *prgdsfd,
-        ULONG *pceltFetched);
+                     IEnumDebugStackFrames64 *This,
+                     ULONG celt,
+                     DebugStackFrameDescriptor *prgdsfd,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDebugStackFrames64 *This,
-        ULONG celt);
+                     IEnumDebugStackFrames64 *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDebugStackFrames64 *This);
+                     IEnumDebugStackFrames64 *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDebugStackFrames64 *This,
-        IEnumDebugStackFrames **ppedsf);
+                     IEnumDebugStackFrames64 *This,
+                     IEnumDebugStackFrames **ppedsf);
 
     /*** IEnumDebugStackFrames64 methods ***/
     HRESULT (__stdcall *Next64)(
-        IEnumDebugStackFrames64 *This,
-        ULONG celt,
-        DebugStackFrameDescriptor64 *prgdsfd,
-        ULONG *pceltFetched);
+                     IEnumDebugStackFrames64 *This,
+                     ULONG celt,
+                     DebugStackFrameDescriptor64 *prgdsfd,
+                     ULONG *pceltFetched);
 
     END_INTERFACE
 } IEnumDebugStackFrames64Vtbl;
@@ -3294,11 +3294,11 @@ MIDL_INTERFACE("51973c1f-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        DOCUMENTNAMETYPE dnt,
-        BSTR *pbstrName) = 0;
+                     DOCUMENTNAMETYPE dnt,
+                     BSTR *pbstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDocumentClassId(
-        CLSID *pclsidDocument) = 0;
+                     CLSID *pclsidDocument) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3310,25 +3310,25 @@ typedef struct IDebugDocumentInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentInfo *This);
+                     IDebugDocumentInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentInfo *This);
+                     IDebugDocumentInfo *This);
 
     /*** IDebugDocumentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugDocumentInfo *This,
-        DOCUMENTNAMETYPE dnt,
-        BSTR *pbstrName);
+                     IDebugDocumentInfo *This,
+                     DOCUMENTNAMETYPE dnt,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentClassId)(
-        IDebugDocumentInfo *This,
-        CLSID *pclsidDocument);
+                     IDebugDocumentInfo *This,
+                     CLSID *pclsidDocument);
 
     END_INTERFACE
 } IDebugDocumentInfoVtbl;
@@ -3384,7 +3384,7 @@ MIDL_INTERFACE("51973c20-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentProvider : public IDebugDocumentInfo
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocument(
-        IDebugDocument **ppssd) = 0;
+                     IDebugDocument **ppssd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3396,30 +3396,30 @@ typedef struct IDebugDocumentProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentProvider *This);
+                     IDebugDocumentProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentProvider *This);
+                     IDebugDocumentProvider *This);
 
     /*** IDebugDocumentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugDocumentProvider *This,
-        DOCUMENTNAMETYPE dnt,
-        BSTR *pbstrName);
+                     IDebugDocumentProvider *This,
+                     DOCUMENTNAMETYPE dnt,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentClassId)(
-        IDebugDocumentProvider *This,
-        CLSID *pclsidDocument);
+                     IDebugDocumentProvider *This,
+                     CLSID *pclsidDocument);
 
     /*** IDebugDocumentProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocument)(
-        IDebugDocumentProvider *This,
-        IDebugDocument **ppssd);
+                     IDebugDocumentProvider *This,
+                     IDebugDocument **ppssd);
 
     END_INTERFACE
 } IDebugDocumentProviderVtbl;
@@ -3490,25 +3490,25 @@ typedef struct IDebugDocumentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocument *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocument *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocument *This);
+                     IDebugDocument *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocument *This);
+                     IDebugDocument *This);
 
     /*** IDebugDocumentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugDocument *This,
-        DOCUMENTNAMETYPE dnt,
-        BSTR *pbstrName);
+                     IDebugDocument *This,
+                     DOCUMENTNAMETYPE dnt,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentClassId)(
-        IDebugDocument *This,
-        CLSID *pclsidDocument);
+                     IDebugDocument *This,
+                     CLSID *pclsidDocument);
 
     END_INTERFACE
 } IDebugDocumentVtbl;
@@ -3564,37 +3564,37 @@ MIDL_INTERFACE("51973c22-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentText : public IDebugDocument
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocumentAttributes(
-        TEXT_DOC_ATTR *ptextdocattr) = 0;
+                     TEXT_DOC_ATTR *ptextdocattr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSize(
-        ULONG *pcNumLines,
-        ULONG *pcNumChars) = 0;
+                     ULONG *pcNumLines,
+                     ULONG *pcNumChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPositionOfLine(
-        ULONG cLineNumber,
-        ULONG *pcCharacterPosition) = 0;
+                     ULONG cLineNumber,
+                     ULONG *pcCharacterPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLineOfPosition(
-        ULONG cCharacterPosition,
-        ULONG *pcLineNumber,
-        ULONG *pcCharacterOffsetInLine) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG *pcLineNumber,
+                     ULONG *pcCharacterOffsetInLine) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetText(
-        ULONG cCharacterPosition,
-        WCHAR *pcharText,
-        SOURCE_TEXT_ATTR *pstaTextAttr,
-        ULONG *pcNumChars,
-        ULONG cMaxChars) = 0;
+                     ULONG cCharacterPosition,
+                     WCHAR *pcharText,
+                     SOURCE_TEXT_ATTR *pstaTextAttr,
+                     ULONG *pcNumChars,
+                     ULONG cMaxChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPositionOfContext(
-        IDebugDocumentContext *psc,
-        ULONG *pcCharacterPosition,
-        ULONG *cNumChars) = 0;
+                     IDebugDocumentContext *psc,
+                     ULONG *pcCharacterPosition,
+                     ULONG *cNumChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContextOfPosition(
-        ULONG cCharacterPosition,
-        ULONG cNumChars,
-        IDebugDocumentContext **ppsc) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG cNumChars,
+                     IDebugDocumentContext **ppsc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3606,66 +3606,66 @@ typedef struct IDebugDocumentTextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentText *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentText *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentText *This);
+                     IDebugDocumentText *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentText *This);
+                     IDebugDocumentText *This);
 
     /*** IDebugDocumentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugDocumentText *This,
-        DOCUMENTNAMETYPE dnt,
-        BSTR *pbstrName);
+                     IDebugDocumentText *This,
+                     DOCUMENTNAMETYPE dnt,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentClassId)(
-        IDebugDocumentText *This,
-        CLSID *pclsidDocument);
+                     IDebugDocumentText *This,
+                     CLSID *pclsidDocument);
 
     /*** IDebugDocumentText methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentAttributes)(
-        IDebugDocumentText *This,
-        TEXT_DOC_ATTR *ptextdocattr);
+                     IDebugDocumentText *This,
+                     TEXT_DOC_ATTR *ptextdocattr);
 
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IDebugDocumentText *This,
-        ULONG *pcNumLines,
-        ULONG *pcNumChars);
+                     IDebugDocumentText *This,
+                     ULONG *pcNumLines,
+                     ULONG *pcNumChars);
 
     HRESULT (STDMETHODCALLTYPE *GetPositionOfLine)(
-        IDebugDocumentText *This,
-        ULONG cLineNumber,
-        ULONG *pcCharacterPosition);
+                     IDebugDocumentText *This,
+                     ULONG cLineNumber,
+                     ULONG *pcCharacterPosition);
 
     HRESULT (STDMETHODCALLTYPE *GetLineOfPosition)(
-        IDebugDocumentText *This,
-        ULONG cCharacterPosition,
-        ULONG *pcLineNumber,
-        ULONG *pcCharacterOffsetInLine);
+                     IDebugDocumentText *This,
+                     ULONG cCharacterPosition,
+                     ULONG *pcLineNumber,
+                     ULONG *pcCharacterOffsetInLine);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        IDebugDocumentText *This,
-        ULONG cCharacterPosition,
-        WCHAR *pcharText,
-        SOURCE_TEXT_ATTR *pstaTextAttr,
-        ULONG *pcNumChars,
-        ULONG cMaxChars);
+                     IDebugDocumentText *This,
+                     ULONG cCharacterPosition,
+                     WCHAR *pcharText,
+                     SOURCE_TEXT_ATTR *pstaTextAttr,
+                     ULONG *pcNumChars,
+                     ULONG cMaxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetPositionOfContext)(
-        IDebugDocumentText *This,
-        IDebugDocumentContext *psc,
-        ULONG *pcCharacterPosition,
-        ULONG *cNumChars);
+                     IDebugDocumentText *This,
+                     IDebugDocumentContext *psc,
+                     ULONG *pcCharacterPosition,
+                     ULONG *cNumChars);
 
     HRESULT (STDMETHODCALLTYPE *GetContextOfPosition)(
-        IDebugDocumentText *This,
-        ULONG cCharacterPosition,
-        ULONG cNumChars,
-        IDebugDocumentContext **ppsc);
+                     IDebugDocumentText *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumChars,
+                     IDebugDocumentContext **ppsc);
 
     END_INTERFACE
 } IDebugDocumentTextVtbl;
@@ -3751,26 +3751,26 @@ MIDL_INTERFACE("51973c23-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentTextEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE onDestroy(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onInsertText(
-        ULONG cCharacterPosition,
-        ULONG cNumToInsert) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG cNumToInsert) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onRemoveText(
-        ULONG cCharacterPosition,
-        ULONG cNumToRemove) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG cNumToRemove) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onReplaceText(
-        ULONG cCharacterPosition,
-        ULONG cNumToReplace) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG cNumToReplace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onUpdateTextAttributes(
-        ULONG cCharacterPosition,
-        ULONG cNumToUpdate) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG cNumToUpdate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onUpdateDocumentAttributes(
-        TEXT_DOC_ATTR textdocattr) = 0;
+                     TEXT_DOC_ATTR textdocattr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3782,43 +3782,43 @@ typedef struct IDebugDocumentTextEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentTextEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentTextEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentTextEvents *This);
+                     IDebugDocumentTextEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentTextEvents *This);
+                     IDebugDocumentTextEvents *This);
 
     /*** IDebugDocumentTextEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *onDestroy)(
-        IDebugDocumentTextEvents *This);
+                     IDebugDocumentTextEvents *This);
 
     HRESULT (STDMETHODCALLTYPE *onInsertText)(
-        IDebugDocumentTextEvents *This,
-        ULONG cCharacterPosition,
-        ULONG cNumToInsert);
+                     IDebugDocumentTextEvents *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumToInsert);
 
     HRESULT (STDMETHODCALLTYPE *onRemoveText)(
-        IDebugDocumentTextEvents *This,
-        ULONG cCharacterPosition,
-        ULONG cNumToRemove);
+                     IDebugDocumentTextEvents *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumToRemove);
 
     HRESULT (STDMETHODCALLTYPE *onReplaceText)(
-        IDebugDocumentTextEvents *This,
-        ULONG cCharacterPosition,
-        ULONG cNumToReplace);
+                     IDebugDocumentTextEvents *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumToReplace);
 
     HRESULT (STDMETHODCALLTYPE *onUpdateTextAttributes)(
-        IDebugDocumentTextEvents *This,
-        ULONG cCharacterPosition,
-        ULONG cNumToUpdate);
+                     IDebugDocumentTextEvents *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumToUpdate);
 
     HRESULT (STDMETHODCALLTYPE *onUpdateDocumentAttributes)(
-        IDebugDocumentTextEvents *This,
-        TEXT_DOC_ATTR textdocattr);
+                     IDebugDocumentTextEvents *This,
+                     TEXT_DOC_ATTR textdocattr);
 
     END_INTERFACE
 } IDebugDocumentTextEventsVtbl;
@@ -3890,18 +3890,18 @@ MIDL_INTERFACE("51973c24-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentTextAuthor : public IDebugDocumentText
 {
     virtual HRESULT STDMETHODCALLTYPE InsertText(
-        ULONG cCharacterPosition,
-        ULONG cNumToInsert,
-        OLECHAR pcharText[]) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG cNumToInsert,
+                     OLECHAR pcharText[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveText(
-        ULONG cCharacterPosition,
-        ULONG cNumToRemove) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG cNumToRemove) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReplaceText(
-        ULONG cCharacterPosition,
-        ULONG cNumToReplace,
-        OLECHAR pcharText[]) = 0;
+                     ULONG cCharacterPosition,
+                     ULONG cNumToReplace,
+                     OLECHAR pcharText[]) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3913,84 +3913,84 @@ typedef struct IDebugDocumentTextAuthorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentTextAuthor *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentTextAuthor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentTextAuthor *This);
+                     IDebugDocumentTextAuthor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentTextAuthor *This);
+                     IDebugDocumentTextAuthor *This);
 
     /*** IDebugDocumentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugDocumentTextAuthor *This,
-        DOCUMENTNAMETYPE dnt,
-        BSTR *pbstrName);
+                     IDebugDocumentTextAuthor *This,
+                     DOCUMENTNAMETYPE dnt,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentClassId)(
-        IDebugDocumentTextAuthor *This,
-        CLSID *pclsidDocument);
+                     IDebugDocumentTextAuthor *This,
+                     CLSID *pclsidDocument);
 
     /*** IDebugDocumentText methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocumentAttributes)(
-        IDebugDocumentTextAuthor *This,
-        TEXT_DOC_ATTR *ptextdocattr);
+                     IDebugDocumentTextAuthor *This,
+                     TEXT_DOC_ATTR *ptextdocattr);
 
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IDebugDocumentTextAuthor *This,
-        ULONG *pcNumLines,
-        ULONG *pcNumChars);
+                     IDebugDocumentTextAuthor *This,
+                     ULONG *pcNumLines,
+                     ULONG *pcNumChars);
 
     HRESULT (STDMETHODCALLTYPE *GetPositionOfLine)(
-        IDebugDocumentTextAuthor *This,
-        ULONG cLineNumber,
-        ULONG *pcCharacterPosition);
+                     IDebugDocumentTextAuthor *This,
+                     ULONG cLineNumber,
+                     ULONG *pcCharacterPosition);
 
     HRESULT (STDMETHODCALLTYPE *GetLineOfPosition)(
-        IDebugDocumentTextAuthor *This,
-        ULONG cCharacterPosition,
-        ULONG *pcLineNumber,
-        ULONG *pcCharacterOffsetInLine);
+                     IDebugDocumentTextAuthor *This,
+                     ULONG cCharacterPosition,
+                     ULONG *pcLineNumber,
+                     ULONG *pcCharacterOffsetInLine);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        IDebugDocumentTextAuthor *This,
-        ULONG cCharacterPosition,
-        WCHAR *pcharText,
-        SOURCE_TEXT_ATTR *pstaTextAttr,
-        ULONG *pcNumChars,
-        ULONG cMaxChars);
+                     IDebugDocumentTextAuthor *This,
+                     ULONG cCharacterPosition,
+                     WCHAR *pcharText,
+                     SOURCE_TEXT_ATTR *pstaTextAttr,
+                     ULONG *pcNumChars,
+                     ULONG cMaxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetPositionOfContext)(
-        IDebugDocumentTextAuthor *This,
-        IDebugDocumentContext *psc,
-        ULONG *pcCharacterPosition,
-        ULONG *cNumChars);
+                     IDebugDocumentTextAuthor *This,
+                     IDebugDocumentContext *psc,
+                     ULONG *pcCharacterPosition,
+                     ULONG *cNumChars);
 
     HRESULT (STDMETHODCALLTYPE *GetContextOfPosition)(
-        IDebugDocumentTextAuthor *This,
-        ULONG cCharacterPosition,
-        ULONG cNumChars,
-        IDebugDocumentContext **ppsc);
+                     IDebugDocumentTextAuthor *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumChars,
+                     IDebugDocumentContext **ppsc);
 
     /*** IDebugDocumentTextAuthor methods ***/
     HRESULT (STDMETHODCALLTYPE *InsertText)(
-        IDebugDocumentTextAuthor *This,
-        ULONG cCharacterPosition,
-        ULONG cNumToInsert,
-        OLECHAR pcharText[]);
+                     IDebugDocumentTextAuthor *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumToInsert,
+                     OLECHAR pcharText[]);
 
     HRESULT (STDMETHODCALLTYPE *RemoveText)(
-        IDebugDocumentTextAuthor *This,
-        ULONG cCharacterPosition,
-        ULONG cNumToRemove);
+                     IDebugDocumentTextAuthor *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumToRemove);
 
     HRESULT (STDMETHODCALLTYPE *ReplaceText)(
-        IDebugDocumentTextAuthor *This,
-        ULONG cCharacterPosition,
-        ULONG cNumToReplace,
-        OLECHAR pcharText[]);
+                     IDebugDocumentTextAuthor *This,
+                     ULONG cCharacterPosition,
+                     ULONG cNumToReplace,
+                     OLECHAR pcharText[]);
 
     END_INTERFACE
 } IDebugDocumentTextAuthorVtbl;
@@ -4090,14 +4090,14 @@ MIDL_INTERFACE("51973c25-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentTextExternalAuthor : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPathName(
-        BSTR *pbstrLongName,
-        WINBOOL *pfIsOriginalFile) = 0;
+                     BSTR *pbstrLongName,
+                     WINBOOL *pfIsOriginalFile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileName(
-        BSTR *pbstrShortName) = 0;
+                     BSTR *pbstrShortName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyChanged(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4109,28 +4109,28 @@ typedef struct IDebugDocumentTextExternalAuthorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentTextExternalAuthor *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentTextExternalAuthor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentTextExternalAuthor *This);
+                     IDebugDocumentTextExternalAuthor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentTextExternalAuthor *This);
+                     IDebugDocumentTextExternalAuthor *This);
 
     /*** IDebugDocumentTextExternalAuthor methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPathName)(
-        IDebugDocumentTextExternalAuthor *This,
-        BSTR *pbstrLongName,
-        WINBOOL *pfIsOriginalFile);
+                     IDebugDocumentTextExternalAuthor *This,
+                     BSTR *pbstrLongName,
+                     WINBOOL *pfIsOriginalFile);
 
     HRESULT (STDMETHODCALLTYPE *GetFileName)(
-        IDebugDocumentTextExternalAuthor *This,
-        BSTR *pbstrShortName);
+                     IDebugDocumentTextExternalAuthor *This,
+                     BSTR *pbstrShortName);
 
     HRESULT (STDMETHODCALLTYPE *NotifyChanged)(
-        IDebugDocumentTextExternalAuthor *This);
+                     IDebugDocumentTextExternalAuthor *This);
 
     END_INTERFACE
 } IDebugDocumentTextExternalAuthorVtbl;
@@ -4190,73 +4190,73 @@ MIDL_INTERFACE("51973c26-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentHelper32 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Init(
-        IDebugApplication32 *pda,
-        LPCOLESTR pszShortName,
-        LPCOLESTR pszLongName,
-        TEXT_DOC_ATTR docAttr) = 0;
+                     IDebugApplication32 *pda,
+                     LPCOLESTR pszShortName,
+                     LPCOLESTR pszLongName,
+                     TEXT_DOC_ATTR docAttr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Attach(
-        IDebugDocumentHelper32 *pddhParent) = 0;
+                     IDebugDocumentHelper32 *pddhParent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Detach(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddUnicodeText(
-        LPCOLESTR pszText) = 0;
+                     LPCOLESTR pszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddDBCSText(
-        LPCSTR pszText) = 0;
+                     LPCSTR pszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDebugDocumentHost(
-        IDebugDocumentHost *pddh) = 0;
+                     IDebugDocumentHost *pddh) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddDeferredText(
-        ULONG cChars,
-        DWORD dwTextStartCookie) = 0;
+                     ULONG cChars,
+                     DWORD dwTextStartCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DefineScriptBlock(
-        ULONG ulCharOffset,
-        ULONG cChars,
-        IActiveScript *pas,
-        WINBOOL fScriptlet,
-        DWORD *pdwSourceContext) = 0;
+                     ULONG ulCharOffset,
+                     ULONG cChars,
+                     IActiveScript *pas,
+                     WINBOOL fScriptlet,
+                     DWORD *pdwSourceContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultTextAttr(
-        SOURCE_TEXT_ATTR staTextAttr) = 0;
+                     SOURCE_TEXT_ATTR staTextAttr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTextAttributes(
-        ULONG ulCharOffset,
-        ULONG cChars,
-        SOURCE_TEXT_ATTR *pstaTextAttr) = 0;
+                     ULONG ulCharOffset,
+                     ULONG cChars,
+                     SOURCE_TEXT_ATTR *pstaTextAttr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLongName(
-        LPCOLESTR pszLongName) = 0;
+                     LPCOLESTR pszLongName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetShortName(
-        LPCOLESTR pszShortName) = 0;
+                     LPCOLESTR pszShortName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDocumentAttr(
-        TEXT_DOC_ATTR pszAttributes) = 0;
+                     TEXT_DOC_ATTR pszAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDebugApplicationNode(
-        IDebugApplicationNode **ppdan) = 0;
+                     IDebugApplicationNode **ppdan) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptBlockInfo(
-        DWORD dwSourceContext,
-        IActiveScript **ppasd,
-        ULONG *piCharPos,
-        ULONG *pcChars) = 0;
+                     DWORD dwSourceContext,
+                     IActiveScript **ppasd,
+                     ULONG *piCharPos,
+                     ULONG *pcChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDebugDocumentContext(
-        ULONG iCharPos,
-        ULONG cChars,
-        IDebugDocumentContext **ppddc) = 0;
+                     ULONG iCharPos,
+                     ULONG cChars,
+                     IDebugDocumentContext **ppddc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BringDocumentToTop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BringDocumentContextToTop(
-        IDebugDocumentContext *pddc) = 0;
+                     IDebugDocumentContext *pddc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4268,101 +4268,101 @@ typedef struct IDebugDocumentHelper32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentHelper32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentHelper32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentHelper32 *This);
+                     IDebugDocumentHelper32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentHelper32 *This);
+                     IDebugDocumentHelper32 *This);
 
     /*** IDebugDocumentHelper32 methods ***/
     HRESULT (STDMETHODCALLTYPE *Init)(
-        IDebugDocumentHelper32 *This,
-        IDebugApplication32 *pda,
-        LPCOLESTR pszShortName,
-        LPCOLESTR pszLongName,
-        TEXT_DOC_ATTR docAttr);
+                     IDebugDocumentHelper32 *This,
+                     IDebugApplication32 *pda,
+                     LPCOLESTR pszShortName,
+                     LPCOLESTR pszLongName,
+                     TEXT_DOC_ATTR docAttr);
 
     HRESULT (STDMETHODCALLTYPE *Attach)(
-        IDebugDocumentHelper32 *This,
-        IDebugDocumentHelper32 *pddhParent);
+                     IDebugDocumentHelper32 *This,
+                     IDebugDocumentHelper32 *pddhParent);
 
     HRESULT (STDMETHODCALLTYPE *Detach)(
-        IDebugDocumentHelper32 *This);
+                     IDebugDocumentHelper32 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddUnicodeText)(
-        IDebugDocumentHelper32 *This,
-        LPCOLESTR pszText);
+                     IDebugDocumentHelper32 *This,
+                     LPCOLESTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *AddDBCSText)(
-        IDebugDocumentHelper32 *This,
-        LPCSTR pszText);
+                     IDebugDocumentHelper32 *This,
+                     LPCSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *SetDebugDocumentHost)(
-        IDebugDocumentHelper32 *This,
-        IDebugDocumentHost *pddh);
+                     IDebugDocumentHelper32 *This,
+                     IDebugDocumentHost *pddh);
 
     HRESULT (STDMETHODCALLTYPE *AddDeferredText)(
-        IDebugDocumentHelper32 *This,
-        ULONG cChars,
-        DWORD dwTextStartCookie);
+                     IDebugDocumentHelper32 *This,
+                     ULONG cChars,
+                     DWORD dwTextStartCookie);
 
     HRESULT (STDMETHODCALLTYPE *DefineScriptBlock)(
-        IDebugDocumentHelper32 *This,
-        ULONG ulCharOffset,
-        ULONG cChars,
-        IActiveScript *pas,
-        WINBOOL fScriptlet,
-        DWORD *pdwSourceContext);
+                     IDebugDocumentHelper32 *This,
+                     ULONG ulCharOffset,
+                     ULONG cChars,
+                     IActiveScript *pas,
+                     WINBOOL fScriptlet,
+                     DWORD *pdwSourceContext);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultTextAttr)(
-        IDebugDocumentHelper32 *This,
-        SOURCE_TEXT_ATTR staTextAttr);
+                     IDebugDocumentHelper32 *This,
+                     SOURCE_TEXT_ATTR staTextAttr);
 
     HRESULT (STDMETHODCALLTYPE *SetTextAttributes)(
-        IDebugDocumentHelper32 *This,
-        ULONG ulCharOffset,
-        ULONG cChars,
-        SOURCE_TEXT_ATTR *pstaTextAttr);
+                     IDebugDocumentHelper32 *This,
+                     ULONG ulCharOffset,
+                     ULONG cChars,
+                     SOURCE_TEXT_ATTR *pstaTextAttr);
 
     HRESULT (STDMETHODCALLTYPE *SetLongName)(
-        IDebugDocumentHelper32 *This,
-        LPCOLESTR pszLongName);
+                     IDebugDocumentHelper32 *This,
+                     LPCOLESTR pszLongName);
 
     HRESULT (STDMETHODCALLTYPE *SetShortName)(
-        IDebugDocumentHelper32 *This,
-        LPCOLESTR pszShortName);
+                     IDebugDocumentHelper32 *This,
+                     LPCOLESTR pszShortName);
 
     HRESULT (STDMETHODCALLTYPE *SetDocumentAttr)(
-        IDebugDocumentHelper32 *This,
-        TEXT_DOC_ATTR pszAttributes);
+                     IDebugDocumentHelper32 *This,
+                     TEXT_DOC_ATTR pszAttributes);
 
     HRESULT (STDMETHODCALLTYPE *GetDebugApplicationNode)(
-        IDebugDocumentHelper32 *This,
-        IDebugApplicationNode **ppdan);
+                     IDebugDocumentHelper32 *This,
+                     IDebugApplicationNode **ppdan);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptBlockInfo)(
-        IDebugDocumentHelper32 *This,
-        DWORD dwSourceContext,
-        IActiveScript **ppasd,
-        ULONG *piCharPos,
-        ULONG *pcChars);
+                     IDebugDocumentHelper32 *This,
+                     DWORD dwSourceContext,
+                     IActiveScript **ppasd,
+                     ULONG *piCharPos,
+                     ULONG *pcChars);
 
     HRESULT (STDMETHODCALLTYPE *CreateDebugDocumentContext)(
-        IDebugDocumentHelper32 *This,
-        ULONG iCharPos,
-        ULONG cChars,
-        IDebugDocumentContext **ppddc);
+                     IDebugDocumentHelper32 *This,
+                     ULONG iCharPos,
+                     ULONG cChars,
+                     IDebugDocumentContext **ppddc);
 
     HRESULT (STDMETHODCALLTYPE *BringDocumentToTop)(
-        IDebugDocumentHelper32 *This);
+                     IDebugDocumentHelper32 *This);
 
     HRESULT (STDMETHODCALLTYPE *BringDocumentContextToTop)(
-        IDebugDocumentHelper32 *This,
-        IDebugDocumentContext *pddc);
+                     IDebugDocumentHelper32 *This,
+                     IDebugDocumentContext *pddc);
 
     END_INTERFACE
 } IDebugDocumentHelper32Vtbl;
@@ -4482,73 +4482,73 @@ MIDL_INTERFACE("c4c7363c-20fd-47f9-bd82-4855e0150871")
 IDebugDocumentHelper64 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Init(
-        IDebugApplication64 *pda,
-        LPCOLESTR pszShortName,
-        LPCOLESTR pszLongName,
-        TEXT_DOC_ATTR docAttr) = 0;
+                     IDebugApplication64 *pda,
+                     LPCOLESTR pszShortName,
+                     LPCOLESTR pszLongName,
+                     TEXT_DOC_ATTR docAttr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Attach(
-        IDebugDocumentHelper64 *pddhParent) = 0;
+                     IDebugDocumentHelper64 *pddhParent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Detach(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddUnicodeText(
-        LPCOLESTR pszText) = 0;
+                     LPCOLESTR pszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddDBCSText(
-        LPCSTR pszText) = 0;
+                     LPCSTR pszText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDebugDocumentHost(
-        IDebugDocumentHost *pddh) = 0;
+                     IDebugDocumentHost *pddh) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddDeferredText(
-        ULONG cChars,
-        DWORD dwTextStartCookie) = 0;
+                     ULONG cChars,
+                     DWORD dwTextStartCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DefineScriptBlock(
-        ULONG ulCharOffset,
-        ULONG cChars,
-        IActiveScript *pas,
-        WINBOOL fScriptlet,
-        DWORDLONG *pdwSourceContext) = 0;
+                     ULONG ulCharOffset,
+                     ULONG cChars,
+                     IActiveScript *pas,
+                     WINBOOL fScriptlet,
+                     DWORDLONG *pdwSourceContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultTextAttr(
-        SOURCE_TEXT_ATTR staTextAttr) = 0;
+                     SOURCE_TEXT_ATTR staTextAttr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTextAttributes(
-        ULONG ulCharOffset,
-        ULONG cChars,
-        SOURCE_TEXT_ATTR *pstaTextAttr) = 0;
+                     ULONG ulCharOffset,
+                     ULONG cChars,
+                     SOURCE_TEXT_ATTR *pstaTextAttr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLongName(
-        LPCOLESTR pszLongName) = 0;
+                     LPCOLESTR pszLongName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetShortName(
-        LPCOLESTR pszShortName) = 0;
+                     LPCOLESTR pszShortName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDocumentAttr(
-        TEXT_DOC_ATTR pszAttributes) = 0;
+                     TEXT_DOC_ATTR pszAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDebugApplicationNode(
-        IDebugApplicationNode **ppdan) = 0;
+                     IDebugApplicationNode **ppdan) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptBlockInfo(
-        DWORDLONG dwSourceContext,
-        IActiveScript **ppasd,
-        ULONG *piCharPos,
-        ULONG *pcChars) = 0;
+                     DWORDLONG dwSourceContext,
+                     IActiveScript **ppasd,
+                     ULONG *piCharPos,
+                     ULONG *pcChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDebugDocumentContext(
-        ULONG iCharPos,
-        ULONG cChars,
-        IDebugDocumentContext **ppddc) = 0;
+                     ULONG iCharPos,
+                     ULONG cChars,
+                     IDebugDocumentContext **ppddc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BringDocumentToTop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BringDocumentContextToTop(
-        IDebugDocumentContext *pddc) = 0;
+                     IDebugDocumentContext *pddc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4560,101 +4560,101 @@ typedef struct IDebugDocumentHelper64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentHelper64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentHelper64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentHelper64 *This);
+                     IDebugDocumentHelper64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentHelper64 *This);
+                     IDebugDocumentHelper64 *This);
 
     /*** IDebugDocumentHelper64 methods ***/
     HRESULT (STDMETHODCALLTYPE *Init)(
-        IDebugDocumentHelper64 *This,
-        IDebugApplication64 *pda,
-        LPCOLESTR pszShortName,
-        LPCOLESTR pszLongName,
-        TEXT_DOC_ATTR docAttr);
+                     IDebugDocumentHelper64 *This,
+                     IDebugApplication64 *pda,
+                     LPCOLESTR pszShortName,
+                     LPCOLESTR pszLongName,
+                     TEXT_DOC_ATTR docAttr);
 
     HRESULT (STDMETHODCALLTYPE *Attach)(
-        IDebugDocumentHelper64 *This,
-        IDebugDocumentHelper64 *pddhParent);
+                     IDebugDocumentHelper64 *This,
+                     IDebugDocumentHelper64 *pddhParent);
 
     HRESULT (STDMETHODCALLTYPE *Detach)(
-        IDebugDocumentHelper64 *This);
+                     IDebugDocumentHelper64 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddUnicodeText)(
-        IDebugDocumentHelper64 *This,
-        LPCOLESTR pszText);
+                     IDebugDocumentHelper64 *This,
+                     LPCOLESTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *AddDBCSText)(
-        IDebugDocumentHelper64 *This,
-        LPCSTR pszText);
+                     IDebugDocumentHelper64 *This,
+                     LPCSTR pszText);
 
     HRESULT (STDMETHODCALLTYPE *SetDebugDocumentHost)(
-        IDebugDocumentHelper64 *This,
-        IDebugDocumentHost *pddh);
+                     IDebugDocumentHelper64 *This,
+                     IDebugDocumentHost *pddh);
 
     HRESULT (STDMETHODCALLTYPE *AddDeferredText)(
-        IDebugDocumentHelper64 *This,
-        ULONG cChars,
-        DWORD dwTextStartCookie);
+                     IDebugDocumentHelper64 *This,
+                     ULONG cChars,
+                     DWORD dwTextStartCookie);
 
     HRESULT (STDMETHODCALLTYPE *DefineScriptBlock)(
-        IDebugDocumentHelper64 *This,
-        ULONG ulCharOffset,
-        ULONG cChars,
-        IActiveScript *pas,
-        WINBOOL fScriptlet,
-        DWORDLONG *pdwSourceContext);
+                     IDebugDocumentHelper64 *This,
+                     ULONG ulCharOffset,
+                     ULONG cChars,
+                     IActiveScript *pas,
+                     WINBOOL fScriptlet,
+                     DWORDLONG *pdwSourceContext);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultTextAttr)(
-        IDebugDocumentHelper64 *This,
-        SOURCE_TEXT_ATTR staTextAttr);
+                     IDebugDocumentHelper64 *This,
+                     SOURCE_TEXT_ATTR staTextAttr);
 
     HRESULT (STDMETHODCALLTYPE *SetTextAttributes)(
-        IDebugDocumentHelper64 *This,
-        ULONG ulCharOffset,
-        ULONG cChars,
-        SOURCE_TEXT_ATTR *pstaTextAttr);
+                     IDebugDocumentHelper64 *This,
+                     ULONG ulCharOffset,
+                     ULONG cChars,
+                     SOURCE_TEXT_ATTR *pstaTextAttr);
 
     HRESULT (STDMETHODCALLTYPE *SetLongName)(
-        IDebugDocumentHelper64 *This,
-        LPCOLESTR pszLongName);
+                     IDebugDocumentHelper64 *This,
+                     LPCOLESTR pszLongName);
 
     HRESULT (STDMETHODCALLTYPE *SetShortName)(
-        IDebugDocumentHelper64 *This,
-        LPCOLESTR pszShortName);
+                     IDebugDocumentHelper64 *This,
+                     LPCOLESTR pszShortName);
 
     HRESULT (STDMETHODCALLTYPE *SetDocumentAttr)(
-        IDebugDocumentHelper64 *This,
-        TEXT_DOC_ATTR pszAttributes);
+                     IDebugDocumentHelper64 *This,
+                     TEXT_DOC_ATTR pszAttributes);
 
     HRESULT (STDMETHODCALLTYPE *GetDebugApplicationNode)(
-        IDebugDocumentHelper64 *This,
-        IDebugApplicationNode **ppdan);
+                     IDebugDocumentHelper64 *This,
+                     IDebugApplicationNode **ppdan);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptBlockInfo)(
-        IDebugDocumentHelper64 *This,
-        DWORDLONG dwSourceContext,
-        IActiveScript **ppasd,
-        ULONG *piCharPos,
-        ULONG *pcChars);
+                     IDebugDocumentHelper64 *This,
+                     DWORDLONG dwSourceContext,
+                     IActiveScript **ppasd,
+                     ULONG *piCharPos,
+                     ULONG *pcChars);
 
     HRESULT (STDMETHODCALLTYPE *CreateDebugDocumentContext)(
-        IDebugDocumentHelper64 *This,
-        ULONG iCharPos,
-        ULONG cChars,
-        IDebugDocumentContext **ppddc);
+                     IDebugDocumentHelper64 *This,
+                     ULONG iCharPos,
+                     ULONG cChars,
+                     IDebugDocumentContext **ppddc);
 
     HRESULT (STDMETHODCALLTYPE *BringDocumentToTop)(
-        IDebugDocumentHelper64 *This);
+                     IDebugDocumentHelper64 *This);
 
     HRESULT (STDMETHODCALLTYPE *BringDocumentContextToTop)(
-        IDebugDocumentHelper64 *This,
-        IDebugDocumentContext *pddc);
+                     IDebugDocumentHelper64 *This,
+                     IDebugDocumentContext *pddc);
 
     END_INTERFACE
 } IDebugDocumentHelper64Vtbl;
@@ -4774,31 +4774,31 @@ MIDL_INTERFACE("51973c27-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeferredText(
-        DWORD dwTextStartCookie,
-        WCHAR *pcharText,
-        SOURCE_TEXT_ATTR *pstaTextAttr,
-        ULONG *pcNumChars,
-        ULONG cMaxChars) = 0;
+                     DWORD dwTextStartCookie,
+                     WCHAR *pcharText,
+                     SOURCE_TEXT_ATTR *pstaTextAttr,
+                     ULONG *pcNumChars,
+                     ULONG cMaxChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptTextAttributes(
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr) = 0;
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnCreateDocumentContext(
-        IUnknown **ppunkOuter) = 0;
+                     IUnknown **ppunkOuter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPathName(
-        BSTR *pbstrLongName,
-        WINBOOL *pfIsOriginalFile) = 0;
+                     BSTR *pbstrLongName,
+                     WINBOOL *pfIsOriginalFile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileName(
-        BSTR *pbstrShortName) = 0;
+                     BSTR *pbstrShortName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyChanged(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4810,48 +4810,48 @@ typedef struct IDebugDocumentHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentHost *This);
+                     IDebugDocumentHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentHost *This);
+                     IDebugDocumentHost *This);
 
     /*** IDebugDocumentHost methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeferredText)(
-        IDebugDocumentHost *This,
-        DWORD dwTextStartCookie,
-        WCHAR *pcharText,
-        SOURCE_TEXT_ATTR *pstaTextAttr,
-        ULONG *pcNumChars,
-        ULONG cMaxChars);
+                     IDebugDocumentHost *This,
+                     DWORD dwTextStartCookie,
+                     WCHAR *pcharText,
+                     SOURCE_TEXT_ATTR *pstaTextAttr,
+                     ULONG *pcNumChars,
+                     ULONG cMaxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptTextAttributes)(
-        IDebugDocumentHost *This,
-        LPCOLESTR pstrCode,
-        ULONG uNumCodeChars,
-        LPCOLESTR pstrDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr);
+                     IDebugDocumentHost *This,
+                     LPCOLESTR pstrCode,
+                     ULONG uNumCodeChars,
+                     LPCOLESTR pstrDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr);
 
     HRESULT (STDMETHODCALLTYPE *OnCreateDocumentContext)(
-        IDebugDocumentHost *This,
-        IUnknown **ppunkOuter);
+                     IDebugDocumentHost *This,
+                     IUnknown **ppunkOuter);
 
     HRESULT (STDMETHODCALLTYPE *GetPathName)(
-        IDebugDocumentHost *This,
-        BSTR *pbstrLongName,
-        WINBOOL *pfIsOriginalFile);
+                     IDebugDocumentHost *This,
+                     BSTR *pbstrLongName,
+                     WINBOOL *pfIsOriginalFile);
 
     HRESULT (STDMETHODCALLTYPE *GetFileName)(
-        IDebugDocumentHost *This,
-        BSTR *pbstrShortName);
+                     IDebugDocumentHost *This,
+                     BSTR *pbstrShortName);
 
     HRESULT (STDMETHODCALLTYPE *NotifyChanged)(
-        IDebugDocumentHost *This);
+                     IDebugDocumentHost *This);
 
     END_INTERFACE
 } IDebugDocumentHostVtbl;
@@ -4923,10 +4923,10 @@ MIDL_INTERFACE("51973c28-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugDocumentContext : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDocument(
-        IDebugDocument **ppsd) = 0;
+                     IDebugDocument **ppsd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCodeContexts(
-        IEnumDebugCodeContexts **ppescc) = 0;
+                     IEnumDebugCodeContexts **ppescc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4938,24 +4938,24 @@ typedef struct IDebugDocumentContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugDocumentContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugDocumentContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugDocumentContext *This);
+                     IDebugDocumentContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugDocumentContext *This);
+                     IDebugDocumentContext *This);
 
     /*** IDebugDocumentContext methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocument)(
-        IDebugDocumentContext *This,
-        IDebugDocument **ppsd);
+                     IDebugDocumentContext *This,
+                     IDebugDocument **ppsd);
 
     HRESULT (STDMETHODCALLTYPE *EnumCodeContexts)(
-        IDebugDocumentContext *This,
-        IEnumDebugCodeContexts **ppescc);
+                     IDebugDocumentContext *This,
+                     IEnumDebugCodeContexts **ppescc);
 
     END_INTERFACE
 } IDebugDocumentContextVtbl;
@@ -5011,7 +5011,7 @@ MIDL_INTERFACE("51973c29-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugSessionProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartDebugSession(
-        IRemoteDebugApplication *pda) = 0;
+                     IRemoteDebugApplication *pda) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5023,20 +5023,20 @@ typedef struct IDebugSessionProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugSessionProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugSessionProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugSessionProvider *This);
+                     IDebugSessionProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugSessionProvider *This);
+                     IDebugSessionProvider *This);
 
     /*** IDebugSessionProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *StartDebugSession)(
-        IDebugSessionProvider *This,
-        IRemoteDebugApplication *pda);
+                     IDebugSessionProvider *This,
+                     IRemoteDebugApplication *pda);
 
     END_INTERFACE
 } IDebugSessionProviderVtbl;
@@ -5088,29 +5088,29 @@ MIDL_INTERFACE("51973c2a-cb0c-11d0-b5c9-00a0244a0e7a")
 IApplicationDebugger : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryAlive(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInstanceAtDebugger(
-        REFCLSID rclsid,
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        IUnknown **ppvObject) = 0;
+                     REFCLSID rclsid,
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     IUnknown **ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onDebugOutput(
-        LPCOLESTR pstr) = 0;
+                     LPCOLESTR pstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onHandleBreakPoint(
-        IRemoteDebugApplicationThread *prpt,
-        BREAKREASON br,
-        IActiveScriptErrorDebug *pError) = 0;
+                     IRemoteDebugApplicationThread *prpt,
+                     BREAKREASON br,
+                     IActiveScriptErrorDebug *pError) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onClose(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onDebuggerEvent(
-        REFIID riid,
-        IUnknown *punk) = 0;
+                     REFIID riid,
+                     IUnknown *punk) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5122,45 +5122,45 @@ typedef struct IApplicationDebuggerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationDebugger *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationDebugger *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationDebugger *This);
+                     IApplicationDebugger *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationDebugger *This);
+                     IApplicationDebugger *This);
 
     /*** IApplicationDebugger methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryAlive)(
-        IApplicationDebugger *This);
+                     IApplicationDebugger *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstanceAtDebugger)(
-        IApplicationDebugger *This,
-        REFCLSID rclsid,
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        IUnknown **ppvObject);
+                     IApplicationDebugger *This,
+                     REFCLSID rclsid,
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     IUnknown **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *onDebugOutput)(
-        IApplicationDebugger *This,
-        LPCOLESTR pstr);
+                     IApplicationDebugger *This,
+                     LPCOLESTR pstr);
 
     HRESULT (STDMETHODCALLTYPE *onHandleBreakPoint)(
-        IApplicationDebugger *This,
-        IRemoteDebugApplicationThread *prpt,
-        BREAKREASON br,
-        IActiveScriptErrorDebug *pError);
+                     IApplicationDebugger *This,
+                     IRemoteDebugApplicationThread *prpt,
+                     BREAKREASON br,
+                     IActiveScriptErrorDebug *pError);
 
     HRESULT (STDMETHODCALLTYPE *onClose)(
-        IApplicationDebugger *This);
+                     IApplicationDebugger *This);
 
     HRESULT (STDMETHODCALLTYPE *onDebuggerEvent)(
-        IApplicationDebugger *This,
-        REFIID riid,
-        IUnknown *punk);
+                     IApplicationDebugger *This,
+                     REFIID riid,
+                     IUnknown *punk);
 
     END_INTERFACE
 } IApplicationDebuggerVtbl;
@@ -5232,10 +5232,10 @@ MIDL_INTERFACE("51973c2b-cb0c-11d0-b5c9-00a0244a0e7a")
 IApplicationDebuggerUI : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BringDocumentToTop(
-        IDebugDocumentText *pddt) = 0;
+                     IDebugDocumentText *pddt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BringDocumentContextToTop(
-        IDebugDocumentContext *pddc) = 0;
+                     IDebugDocumentContext *pddc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5247,24 +5247,24 @@ typedef struct IApplicationDebuggerUIVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IApplicationDebuggerUI *This,
-        REFIID riid,
-        void **ppvObject);
+                     IApplicationDebuggerUI *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IApplicationDebuggerUI *This);
+                     IApplicationDebuggerUI *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IApplicationDebuggerUI *This);
+                     IApplicationDebuggerUI *This);
 
     /*** IApplicationDebuggerUI methods ***/
     HRESULT (STDMETHODCALLTYPE *BringDocumentToTop)(
-        IApplicationDebuggerUI *This,
-        IDebugDocumentText *pddt);
+                     IApplicationDebuggerUI *This,
+                     IDebugDocumentText *pddt);
 
     HRESULT (STDMETHODCALLTYPE *BringDocumentContextToTop)(
-        IApplicationDebuggerUI *This,
-        IDebugDocumentContext *pddc);
+                     IApplicationDebuggerUI *This,
+                     IDebugDocumentContext *pddc);
 
     END_INTERFACE
 } IApplicationDebuggerUIVtbl;
@@ -5320,14 +5320,14 @@ MIDL_INTERFACE("51973c2c-cb0c-11d0-b5c9-00a0244a0e7a")
 IMachineDebugManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddApplication(
-        IRemoteDebugApplication *pda,
-        DWORD *pdwAppCookie) = 0;
+                     IRemoteDebugApplication *pda,
+                     DWORD *pdwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveApplication(
-        DWORD dwAppCookie) = 0;
+                     DWORD dwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumApplications(
-        IEnumRemoteDebugApplications **ppeda) = 0;
+                     IEnumRemoteDebugApplications **ppeda) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5339,29 +5339,29 @@ typedef struct IMachineDebugManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMachineDebugManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMachineDebugManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMachineDebugManager *This);
+                     IMachineDebugManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMachineDebugManager *This);
+                     IMachineDebugManager *This);
 
     /*** IMachineDebugManager methods ***/
     HRESULT (STDMETHODCALLTYPE *AddApplication)(
-        IMachineDebugManager *This,
-        IRemoteDebugApplication *pda,
-        DWORD *pdwAppCookie);
+                     IMachineDebugManager *This,
+                     IRemoteDebugApplication *pda,
+                     DWORD *pdwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *RemoveApplication)(
-        IMachineDebugManager *This,
-        DWORD dwAppCookie);
+                     IMachineDebugManager *This,
+                     DWORD dwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *EnumApplications)(
-        IMachineDebugManager *This,
-        IEnumRemoteDebugApplications **ppeda);
+                     IMachineDebugManager *This,
+                     IEnumRemoteDebugApplications **ppeda);
 
     END_INTERFACE
 } IMachineDebugManagerVtbl;
@@ -5421,16 +5421,16 @@ MIDL_INTERFACE("51973c2d-cb0c-11d0-b5c9-00a0244a0e7a")
 IMachineDebugManagerCookie : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddApplication(
-        IRemoteDebugApplication *pda,
-        DWORD dwDebugAppCookie,
-        DWORD *pdwAppCookie) = 0;
+                     IRemoteDebugApplication *pda,
+                     DWORD dwDebugAppCookie,
+                     DWORD *pdwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveApplication(
-        DWORD dwDebugAppCookie,
-        DWORD dwAppCookie) = 0;
+                     DWORD dwDebugAppCookie,
+                     DWORD dwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumApplications(
-        IEnumRemoteDebugApplications **ppeda) = 0;
+                     IEnumRemoteDebugApplications **ppeda) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5442,31 +5442,31 @@ typedef struct IMachineDebugManagerCookieVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMachineDebugManagerCookie *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMachineDebugManagerCookie *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMachineDebugManagerCookie *This);
+                     IMachineDebugManagerCookie *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMachineDebugManagerCookie *This);
+                     IMachineDebugManagerCookie *This);
 
     /*** IMachineDebugManagerCookie methods ***/
     HRESULT (STDMETHODCALLTYPE *AddApplication)(
-        IMachineDebugManagerCookie *This,
-        IRemoteDebugApplication *pda,
-        DWORD dwDebugAppCookie,
-        DWORD *pdwAppCookie);
+                     IMachineDebugManagerCookie *This,
+                     IRemoteDebugApplication *pda,
+                     DWORD dwDebugAppCookie,
+                     DWORD *pdwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *RemoveApplication)(
-        IMachineDebugManagerCookie *This,
-        DWORD dwDebugAppCookie,
-        DWORD dwAppCookie);
+                     IMachineDebugManagerCookie *This,
+                     DWORD dwDebugAppCookie,
+                     DWORD dwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *EnumApplications)(
-        IMachineDebugManagerCookie *This,
-        IEnumRemoteDebugApplications **ppeda);
+                     IMachineDebugManagerCookie *This,
+                     IEnumRemoteDebugApplications **ppeda);
 
     END_INTERFACE
 } IMachineDebugManagerCookieVtbl;
@@ -5526,12 +5526,12 @@ MIDL_INTERFACE("51973c2e-cb0c-11d0-b5c9-00a0244a0e7a")
 IMachineDebugManagerEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE onAddApplication(
-        IRemoteDebugApplication *pda,
-        DWORD dwAppCookie) = 0;
+                     IRemoteDebugApplication *pda,
+                     DWORD dwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onRemoveApplication(
-        IRemoteDebugApplication *pda,
-        DWORD dwAppCookie) = 0;
+                     IRemoteDebugApplication *pda,
+                     DWORD dwAppCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5543,26 +5543,26 @@ typedef struct IMachineDebugManagerEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMachineDebugManagerEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMachineDebugManagerEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMachineDebugManagerEvents *This);
+                     IMachineDebugManagerEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMachineDebugManagerEvents *This);
+                     IMachineDebugManagerEvents *This);
 
     /*** IMachineDebugManagerEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *onAddApplication)(
-        IMachineDebugManagerEvents *This,
-        IRemoteDebugApplication *pda,
-        DWORD dwAppCookie);
+                     IMachineDebugManagerEvents *This,
+                     IRemoteDebugApplication *pda,
+                     DWORD dwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *onRemoveApplication)(
-        IMachineDebugManagerEvents *This,
-        IRemoteDebugApplication *pda,
-        DWORD dwAppCookie);
+                     IMachineDebugManagerEvents *This,
+                     IRemoteDebugApplication *pda,
+                     DWORD dwAppCookie);
 
     END_INTERFACE
 } IMachineDebugManagerEventsVtbl;
@@ -5618,21 +5618,21 @@ MIDL_INTERFACE("51973c2f-cb0c-11d0-b5c9-00a0244a0e7a")
 IProcessDebugManager32 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateApplication(
-        IDebugApplication32 **ppda) = 0;
+                     IDebugApplication32 **ppda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultApplication(
-        IDebugApplication32 **ppda) = 0;
+                     IDebugApplication32 **ppda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddApplication(
-        IDebugApplication32 *pda,
-        DWORD *pdwAppCookie) = 0;
+                     IDebugApplication32 *pda,
+                     DWORD *pdwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveApplication(
-        DWORD dwAppCookie) = 0;
+                     DWORD dwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDebugDocumentHelper(
-        IUnknown *punkOuter,
-        IDebugDocumentHelper32 **pddh) = 0;
+                     IUnknown *punkOuter,
+                     IDebugDocumentHelper32 **pddh) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5644,38 +5644,38 @@ typedef struct IProcessDebugManager32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProcessDebugManager32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IProcessDebugManager32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProcessDebugManager32 *This);
+                     IProcessDebugManager32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProcessDebugManager32 *This);
+                     IProcessDebugManager32 *This);
 
     /*** IProcessDebugManager32 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateApplication)(
-        IProcessDebugManager32 *This,
-        IDebugApplication32 **ppda);
+                     IProcessDebugManager32 *This,
+                     IDebugApplication32 **ppda);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultApplication)(
-        IProcessDebugManager32 *This,
-        IDebugApplication32 **ppda);
+                     IProcessDebugManager32 *This,
+                     IDebugApplication32 **ppda);
 
     HRESULT (STDMETHODCALLTYPE *AddApplication)(
-        IProcessDebugManager32 *This,
-        IDebugApplication32 *pda,
-        DWORD *pdwAppCookie);
+                     IProcessDebugManager32 *This,
+                     IDebugApplication32 *pda,
+                     DWORD *pdwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *RemoveApplication)(
-        IProcessDebugManager32 *This,
-        DWORD dwAppCookie);
+                     IProcessDebugManager32 *This,
+                     DWORD dwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *CreateDebugDocumentHelper)(
-        IProcessDebugManager32 *This,
-        IUnknown *punkOuter,
-        IDebugDocumentHelper32 **pddh);
+                     IProcessDebugManager32 *This,
+                     IUnknown *punkOuter,
+                     IDebugDocumentHelper32 **pddh);
 
     END_INTERFACE
 } IProcessDebugManager32Vtbl;
@@ -5743,21 +5743,21 @@ MIDL_INTERFACE("56b9fc1c-63a9-4cc1-ac21-087d69a17fab")
 IProcessDebugManager64 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateApplication(
-        IDebugApplication64 **ppda) = 0;
+                     IDebugApplication64 **ppda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultApplication(
-        IDebugApplication64 **ppda) = 0;
+                     IDebugApplication64 **ppda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddApplication(
-        IDebugApplication64 *pda,
-        DWORD *pdwAppCookie) = 0;
+                     IDebugApplication64 *pda,
+                     DWORD *pdwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveApplication(
-        DWORD dwAppCookie) = 0;
+                     DWORD dwAppCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDebugDocumentHelper(
-        IUnknown *punkOuter,
-        IDebugDocumentHelper64 **pddh) = 0;
+                     IUnknown *punkOuter,
+                     IDebugDocumentHelper64 **pddh) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5769,38 +5769,38 @@ typedef struct IProcessDebugManager64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProcessDebugManager64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IProcessDebugManager64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProcessDebugManager64 *This);
+                     IProcessDebugManager64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProcessDebugManager64 *This);
+                     IProcessDebugManager64 *This);
 
     /*** IProcessDebugManager64 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateApplication)(
-        IProcessDebugManager64 *This,
-        IDebugApplication64 **ppda);
+                     IProcessDebugManager64 *This,
+                     IDebugApplication64 **ppda);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultApplication)(
-        IProcessDebugManager64 *This,
-        IDebugApplication64 **ppda);
+                     IProcessDebugManager64 *This,
+                     IDebugApplication64 **ppda);
 
     HRESULT (STDMETHODCALLTYPE *AddApplication)(
-        IProcessDebugManager64 *This,
-        IDebugApplication64 *pda,
-        DWORD *pdwAppCookie);
+                     IProcessDebugManager64 *This,
+                     IDebugApplication64 *pda,
+                     DWORD *pdwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *RemoveApplication)(
-        IProcessDebugManager64 *This,
-        DWORD dwAppCookie);
+                     IProcessDebugManager64 *This,
+                     DWORD dwAppCookie);
 
     HRESULT (STDMETHODCALLTYPE *CreateDebugDocumentHelper)(
-        IProcessDebugManager64 *This,
-        IUnknown *punkOuter,
-        IDebugDocumentHelper64 **pddh);
+                     IProcessDebugManager64 *This,
+                     IUnknown *punkOuter,
+                     IDebugDocumentHelper64 **pddh);
 
     END_INTERFACE
 } IProcessDebugManager64Vtbl;
@@ -5868,43 +5868,43 @@ MIDL_INTERFACE("51973c30-cb0c-11d0-b5c9-00a0244a0e7a")
 IRemoteDebugApplication : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ResumeFromBreakPoint(
-        IRemoteDebugApplicationThread *prptFocus,
-        BREAKRESUMEACTION bra,
-        ERRORRESUMEACTION era) = 0;
+                     IRemoteDebugApplicationThread *prptFocus,
+                     BREAKRESUMEACTION bra,
+                     ERRORRESUMEACTION era) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CauseBreak(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConnectDebugger(
-        IApplicationDebugger *pad) = 0;
+                     IApplicationDebugger *pad) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisconnectDebugger(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDebugger(
-        IApplicationDebugger **pad) = 0;
+                     IApplicationDebugger **pad) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInstanceAtApplication(
-        REFCLSID rclsid,
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        IUnknown **ppvObject) = 0;
+                     REFCLSID rclsid,
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     IUnknown **ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryAlive(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumThreads(
-        IEnumRemoteDebugApplicationThreads **pperdat) = 0;
+                     IEnumRemoteDebugApplicationThreads **pperdat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        BSTR *pbstrName) = 0;
+                     BSTR *pbstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRootNode(
-        IDebugApplicationNode **ppdanRoot) = 0;
+                     IDebugApplicationNode **ppdanRoot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumGlobalExpressionContexts(
-        IEnumDebugExpressionContexts **ppedec) = 0;
+                     IEnumDebugExpressionContexts **ppedec) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5916,63 +5916,63 @@ typedef struct IRemoteDebugApplicationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRemoteDebugApplication *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRemoteDebugApplication *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRemoteDebugApplication *This);
+                     IRemoteDebugApplication *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRemoteDebugApplication *This);
+                     IRemoteDebugApplication *This);
 
     /*** IRemoteDebugApplication methods ***/
     HRESULT (STDMETHODCALLTYPE *ResumeFromBreakPoint)(
-        IRemoteDebugApplication *This,
-        IRemoteDebugApplicationThread *prptFocus,
-        BREAKRESUMEACTION bra,
-        ERRORRESUMEACTION era);
+                     IRemoteDebugApplication *This,
+                     IRemoteDebugApplicationThread *prptFocus,
+                     BREAKRESUMEACTION bra,
+                     ERRORRESUMEACTION era);
 
     HRESULT (STDMETHODCALLTYPE *CauseBreak)(
-        IRemoteDebugApplication *This);
+                     IRemoteDebugApplication *This);
 
     HRESULT (STDMETHODCALLTYPE *ConnectDebugger)(
-        IRemoteDebugApplication *This,
-        IApplicationDebugger *pad);
+                     IRemoteDebugApplication *This,
+                     IApplicationDebugger *pad);
 
     HRESULT (STDMETHODCALLTYPE *DisconnectDebugger)(
-        IRemoteDebugApplication *This);
+                     IRemoteDebugApplication *This);
 
     HRESULT (STDMETHODCALLTYPE *GetDebugger)(
-        IRemoteDebugApplication *This,
-        IApplicationDebugger **pad);
+                     IRemoteDebugApplication *This,
+                     IApplicationDebugger **pad);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstanceAtApplication)(
-        IRemoteDebugApplication *This,
-        REFCLSID rclsid,
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        IUnknown **ppvObject);
+                     IRemoteDebugApplication *This,
+                     REFCLSID rclsid,
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     IUnknown **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *QueryAlive)(
-        IRemoteDebugApplication *This);
+                     IRemoteDebugApplication *This);
 
     HRESULT (STDMETHODCALLTYPE *EnumThreads)(
-        IRemoteDebugApplication *This,
-        IEnumRemoteDebugApplicationThreads **pperdat);
+                     IRemoteDebugApplication *This,
+                     IEnumRemoteDebugApplicationThreads **pperdat);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IRemoteDebugApplication *This,
-        BSTR *pbstrName);
+                     IRemoteDebugApplication *This,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetRootNode)(
-        IRemoteDebugApplication *This,
-        IDebugApplicationNode **ppdanRoot);
+                     IRemoteDebugApplication *This,
+                     IDebugApplicationNode **ppdanRoot);
 
     HRESULT (STDMETHODCALLTYPE *EnumGlobalExpressionContexts)(
-        IRemoteDebugApplication *This,
-        IEnumDebugExpressionContexts **ppedec);
+                     IRemoteDebugApplication *This,
+                     IEnumDebugExpressionContexts **ppedec);
 
     END_INTERFACE
 } IRemoteDebugApplicationVtbl;
@@ -6064,77 +6064,77 @@ MIDL_INTERFACE("51973c32-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugApplication32 : public IRemoteDebugApplication
 {
     virtual HRESULT STDMETHODCALLTYPE SetName(
-        LPCOLESTR pstrName) = 0;
+                     LPCOLESTR pstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StepOutComplete(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DebugOutput(
-        LPCOLESTR pstr) = 0;
+                     LPCOLESTR pstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartDebugSession(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HandleBreakPoint(
-        BREAKREASON br,
-        BREAKRESUMEACTION *pbra) = 0;
+                     BREAKREASON br,
+                     BREAKRESUMEACTION *pbra) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBreakFlags(
-        APPBREAKFLAGS *pabf,
-        IRemoteDebugApplicationThread **pprdatSteppingThread) = 0;
+                     APPBREAKFLAGS *pabf,
+                     IRemoteDebugApplicationThread **pprdatSteppingThread) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentThread(
-        IDebugApplicationThread **pat) = 0;
+                     IDebugApplicationThread **pat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAsyncDebugOperation(
-        IDebugSyncOperation *psdo,
-        IDebugAsyncOperation **ppado) = 0;
+                     IDebugSyncOperation *psdo,
+                     IDebugAsyncOperation **ppado) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddStackFrameSniffer(
-        IDebugStackFrameSniffer *pdsfs,
-        DWORD *pdwCookie) = 0;
+                     IDebugStackFrameSniffer *pdsfs,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStackFrameSniffer(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryCurrentThreadIsDebuggerThread(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SynchronousCallInDebuggerThread(
-        IDebugThreadCall32 *pptc,
-        DWORD dwParam1,
-        DWORD dwParam2,
-        DWORD dwParam3) = 0;
+                     IDebugThreadCall32 *pptc,
+                     DWORD dwParam1,
+                     DWORD dwParam2,
+                     DWORD dwParam3) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateApplicationNode(
-        IDebugApplicationNode **ppdanNew) = 0;
+                     IDebugApplicationNode **ppdanNew) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FireDebuggerEvent(
-        REFGUID riid,
-        IUnknown *punk) = 0;
+                     REFGUID riid,
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HandleRuntimeError(
-        IActiveScriptErrorDebug *pErrorDebug,
-        IActiveScriptSite *pScriptSite,
-        BREAKRESUMEACTION *pbra,
-        ERRORRESUMEACTION *perra,
-        WINBOOL *pfCallOnScriptError) = 0;
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     IActiveScriptSite *pScriptSite,
+                     BREAKRESUMEACTION *pbra,
+                     ERRORRESUMEACTION *perra,
+                     WINBOOL *pfCallOnScriptError) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE FCanJitDebug(
-        ) = 0;
+                     ) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE FIsAutoJitDebugEnabled(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddGlobalExpressionContextProvider(
-        IProvideExpressionContexts *pdsfs,
-        DWORD *pdwCookie) = 0;
+                     IProvideExpressionContexts *pdsfs,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveGlobalExpressionContextProvider(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6146,151 +6146,151 @@ typedef struct IDebugApplication32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplication32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplication32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     /*** IRemoteDebugApplication methods ***/
     HRESULT (STDMETHODCALLTYPE *ResumeFromBreakPoint)(
-        IDebugApplication32 *This,
-        IRemoteDebugApplicationThread *prptFocus,
-        BREAKRESUMEACTION bra,
-        ERRORRESUMEACTION era);
+                     IDebugApplication32 *This,
+                     IRemoteDebugApplicationThread *prptFocus,
+                     BREAKRESUMEACTION bra,
+                     ERRORRESUMEACTION era);
 
     HRESULT (STDMETHODCALLTYPE *CauseBreak)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     HRESULT (STDMETHODCALLTYPE *ConnectDebugger)(
-        IDebugApplication32 *This,
-        IApplicationDebugger *pad);
+                     IDebugApplication32 *This,
+                     IApplicationDebugger *pad);
 
     HRESULT (STDMETHODCALLTYPE *DisconnectDebugger)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetDebugger)(
-        IDebugApplication32 *This,
-        IApplicationDebugger **pad);
+                     IDebugApplication32 *This,
+                     IApplicationDebugger **pad);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstanceAtApplication)(
-        IDebugApplication32 *This,
-        REFCLSID rclsid,
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        IUnknown **ppvObject);
+                     IDebugApplication32 *This,
+                     REFCLSID rclsid,
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     IUnknown **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *QueryAlive)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     HRESULT (STDMETHODCALLTYPE *EnumThreads)(
-        IDebugApplication32 *This,
-        IEnumRemoteDebugApplicationThreads **pperdat);
+                     IDebugApplication32 *This,
+                     IEnumRemoteDebugApplicationThreads **pperdat);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugApplication32 *This,
-        BSTR *pbstrName);
+                     IDebugApplication32 *This,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetRootNode)(
-        IDebugApplication32 *This,
-        IDebugApplicationNode **ppdanRoot);
+                     IDebugApplication32 *This,
+                     IDebugApplicationNode **ppdanRoot);
 
     HRESULT (STDMETHODCALLTYPE *EnumGlobalExpressionContexts)(
-        IDebugApplication32 *This,
-        IEnumDebugExpressionContexts **ppedec);
+                     IDebugApplication32 *This,
+                     IEnumDebugExpressionContexts **ppedec);
 
     /*** IDebugApplication32 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IDebugApplication32 *This,
-        LPCOLESTR pstrName);
+                     IDebugApplication32 *This,
+                     LPCOLESTR pstrName);
 
     HRESULT (STDMETHODCALLTYPE *StepOutComplete)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     HRESULT (STDMETHODCALLTYPE *DebugOutput)(
-        IDebugApplication32 *This,
-        LPCOLESTR pstr);
+                     IDebugApplication32 *This,
+                     LPCOLESTR pstr);
 
     HRESULT (STDMETHODCALLTYPE *StartDebugSession)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     HRESULT (STDMETHODCALLTYPE *HandleBreakPoint)(
-        IDebugApplication32 *This,
-        BREAKREASON br,
-        BREAKRESUMEACTION *pbra);
+                     IDebugApplication32 *This,
+                     BREAKREASON br,
+                     BREAKRESUMEACTION *pbra);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetBreakFlags)(
-        IDebugApplication32 *This,
-        APPBREAKFLAGS *pabf,
-        IRemoteDebugApplicationThread **pprdatSteppingThread);
+                     IDebugApplication32 *This,
+                     APPBREAKFLAGS *pabf,
+                     IRemoteDebugApplicationThread **pprdatSteppingThread);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentThread)(
-        IDebugApplication32 *This,
-        IDebugApplicationThread **pat);
+                     IDebugApplication32 *This,
+                     IDebugApplicationThread **pat);
 
     HRESULT (STDMETHODCALLTYPE *CreateAsyncDebugOperation)(
-        IDebugApplication32 *This,
-        IDebugSyncOperation *psdo,
-        IDebugAsyncOperation **ppado);
+                     IDebugApplication32 *This,
+                     IDebugSyncOperation *psdo,
+                     IDebugAsyncOperation **ppado);
 
     HRESULT (STDMETHODCALLTYPE *AddStackFrameSniffer)(
-        IDebugApplication32 *This,
-        IDebugStackFrameSniffer *pdsfs,
-        DWORD *pdwCookie);
+                     IDebugApplication32 *This,
+                     IDebugStackFrameSniffer *pdsfs,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStackFrameSniffer)(
-        IDebugApplication32 *This,
-        DWORD dwCookie);
+                     IDebugApplication32 *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *QueryCurrentThreadIsDebuggerThread)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     HRESULT (STDMETHODCALLTYPE *SynchronousCallInDebuggerThread)(
-        IDebugApplication32 *This,
-        IDebugThreadCall32 *pptc,
-        DWORD dwParam1,
-        DWORD dwParam2,
-        DWORD dwParam3);
+                     IDebugApplication32 *This,
+                     IDebugThreadCall32 *pptc,
+                     DWORD dwParam1,
+                     DWORD dwParam2,
+                     DWORD dwParam3);
 
     HRESULT (STDMETHODCALLTYPE *CreateApplicationNode)(
-        IDebugApplication32 *This,
-        IDebugApplicationNode **ppdanNew);
+                     IDebugApplication32 *This,
+                     IDebugApplicationNode **ppdanNew);
 
     HRESULT (STDMETHODCALLTYPE *FireDebuggerEvent)(
-        IDebugApplication32 *This,
-        REFGUID riid,
-        IUnknown *punk);
+                     IDebugApplication32 *This,
+                     REFGUID riid,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *HandleRuntimeError)(
-        IDebugApplication32 *This,
-        IActiveScriptErrorDebug *pErrorDebug,
-        IActiveScriptSite *pScriptSite,
-        BREAKRESUMEACTION *pbra,
-        ERRORRESUMEACTION *perra,
-        WINBOOL *pfCallOnScriptError);
+                     IDebugApplication32 *This,
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     IActiveScriptSite *pScriptSite,
+                     BREAKRESUMEACTION *pbra,
+                     ERRORRESUMEACTION *perra,
+                     WINBOOL *pfCallOnScriptError);
 
     WINBOOL (STDMETHODCALLTYPE *FCanJitDebug)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     WINBOOL (STDMETHODCALLTYPE *FIsAutoJitDebugEnabled)(
-        IDebugApplication32 *This);
+                     IDebugApplication32 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddGlobalExpressionContextProvider)(
-        IDebugApplication32 *This,
-        IProvideExpressionContexts *pdsfs,
-        DWORD *pdwCookie);
+                     IDebugApplication32 *This,
+                     IProvideExpressionContexts *pdsfs,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *RemoveGlobalExpressionContextProvider)(
-        IDebugApplication32 *This,
-        DWORD dwCookie);
+                     IDebugApplication32 *This,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } IDebugApplication32Vtbl;
@@ -6464,77 +6464,77 @@ MIDL_INTERFACE("4dedc754-04c7-4f10-9e60-16a390fe6e62")
 IDebugApplication64 : public IRemoteDebugApplication
 {
     virtual HRESULT STDMETHODCALLTYPE SetName(
-        LPCOLESTR pstrName) = 0;
+                     LPCOLESTR pstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StepOutComplete(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DebugOutput(
-        LPCOLESTR pstr) = 0;
+                     LPCOLESTR pstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartDebugSession(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HandleBreakPoint(
-        BREAKREASON br,
-        BREAKRESUMEACTION *pbra) = 0;
+                     BREAKREASON br,
+                     BREAKRESUMEACTION *pbra) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBreakFlags(
-        APPBREAKFLAGS *pabf,
-        IRemoteDebugApplicationThread **pprdatSteppingThread) = 0;
+                     APPBREAKFLAGS *pabf,
+                     IRemoteDebugApplicationThread **pprdatSteppingThread) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentThread(
-        IDebugApplicationThread **pat) = 0;
+                     IDebugApplicationThread **pat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAsyncDebugOperation(
-        IDebugSyncOperation *psdo,
-        IDebugAsyncOperation **ppado) = 0;
+                     IDebugSyncOperation *psdo,
+                     IDebugAsyncOperation **ppado) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddStackFrameSniffer(
-        IDebugStackFrameSniffer *pdsfs,
-        DWORD *pdwCookie) = 0;
+                     IDebugStackFrameSniffer *pdsfs,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStackFrameSniffer(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryCurrentThreadIsDebuggerThread(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SynchronousCallInDebuggerThread(
-        IDebugThreadCall64 *pptc,
-        DWORDLONG dwParam1,
-        DWORDLONG dwParam2,
-        DWORDLONG dwParam3) = 0;
+                     IDebugThreadCall64 *pptc,
+                     DWORDLONG dwParam1,
+                     DWORDLONG dwParam2,
+                     DWORDLONG dwParam3) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateApplicationNode(
-        IDebugApplicationNode **ppdanNew) = 0;
+                     IDebugApplicationNode **ppdanNew) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FireDebuggerEvent(
-        REFGUID riid,
-        IUnknown *punk) = 0;
+                     REFGUID riid,
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HandleRuntimeError(
-        IActiveScriptErrorDebug *pErrorDebug,
-        IActiveScriptSite *pScriptSite,
-        BREAKRESUMEACTION *pbra,
-        ERRORRESUMEACTION *perra,
-        WINBOOL *pfCallOnScriptError) = 0;
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     IActiveScriptSite *pScriptSite,
+                     BREAKRESUMEACTION *pbra,
+                     ERRORRESUMEACTION *perra,
+                     WINBOOL *pfCallOnScriptError) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE FCanJitDebug(
-        ) = 0;
+                     ) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE FIsAutoJitDebugEnabled(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddGlobalExpressionContextProvider(
-        IProvideExpressionContexts *pdsfs,
-        DWORDLONG *pdwCookie) = 0;
+                     IProvideExpressionContexts *pdsfs,
+                     DWORDLONG *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveGlobalExpressionContextProvider(
-        DWORDLONG dwCookie) = 0;
+                     DWORDLONG dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6546,151 +6546,151 @@ typedef struct IDebugApplication64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplication64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplication64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     /*** IRemoteDebugApplication methods ***/
     HRESULT (STDMETHODCALLTYPE *ResumeFromBreakPoint)(
-        IDebugApplication64 *This,
-        IRemoteDebugApplicationThread *prptFocus,
-        BREAKRESUMEACTION bra,
-        ERRORRESUMEACTION era);
+                     IDebugApplication64 *This,
+                     IRemoteDebugApplicationThread *prptFocus,
+                     BREAKRESUMEACTION bra,
+                     ERRORRESUMEACTION era);
 
     HRESULT (STDMETHODCALLTYPE *CauseBreak)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     HRESULT (STDMETHODCALLTYPE *ConnectDebugger)(
-        IDebugApplication64 *This,
-        IApplicationDebugger *pad);
+                     IDebugApplication64 *This,
+                     IApplicationDebugger *pad);
 
     HRESULT (STDMETHODCALLTYPE *DisconnectDebugger)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetDebugger)(
-        IDebugApplication64 *This,
-        IApplicationDebugger **pad);
+                     IDebugApplication64 *This,
+                     IApplicationDebugger **pad);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstanceAtApplication)(
-        IDebugApplication64 *This,
-        REFCLSID rclsid,
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        IUnknown **ppvObject);
+                     IDebugApplication64 *This,
+                     REFCLSID rclsid,
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     IUnknown **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *QueryAlive)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     HRESULT (STDMETHODCALLTYPE *EnumThreads)(
-        IDebugApplication64 *This,
-        IEnumRemoteDebugApplicationThreads **pperdat);
+                     IDebugApplication64 *This,
+                     IEnumRemoteDebugApplicationThreads **pperdat);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugApplication64 *This,
-        BSTR *pbstrName);
+                     IDebugApplication64 *This,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetRootNode)(
-        IDebugApplication64 *This,
-        IDebugApplicationNode **ppdanRoot);
+                     IDebugApplication64 *This,
+                     IDebugApplicationNode **ppdanRoot);
 
     HRESULT (STDMETHODCALLTYPE *EnumGlobalExpressionContexts)(
-        IDebugApplication64 *This,
-        IEnumDebugExpressionContexts **ppedec);
+                     IDebugApplication64 *This,
+                     IEnumDebugExpressionContexts **ppedec);
 
     /*** IDebugApplication64 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IDebugApplication64 *This,
-        LPCOLESTR pstrName);
+                     IDebugApplication64 *This,
+                     LPCOLESTR pstrName);
 
     HRESULT (STDMETHODCALLTYPE *StepOutComplete)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     HRESULT (STDMETHODCALLTYPE *DebugOutput)(
-        IDebugApplication64 *This,
-        LPCOLESTR pstr);
+                     IDebugApplication64 *This,
+                     LPCOLESTR pstr);
 
     HRESULT (STDMETHODCALLTYPE *StartDebugSession)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     HRESULT (STDMETHODCALLTYPE *HandleBreakPoint)(
-        IDebugApplication64 *This,
-        BREAKREASON br,
-        BREAKRESUMEACTION *pbra);
+                     IDebugApplication64 *This,
+                     BREAKREASON br,
+                     BREAKRESUMEACTION *pbra);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetBreakFlags)(
-        IDebugApplication64 *This,
-        APPBREAKFLAGS *pabf,
-        IRemoteDebugApplicationThread **pprdatSteppingThread);
+                     IDebugApplication64 *This,
+                     APPBREAKFLAGS *pabf,
+                     IRemoteDebugApplicationThread **pprdatSteppingThread);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentThread)(
-        IDebugApplication64 *This,
-        IDebugApplicationThread **pat);
+                     IDebugApplication64 *This,
+                     IDebugApplicationThread **pat);
 
     HRESULT (STDMETHODCALLTYPE *CreateAsyncDebugOperation)(
-        IDebugApplication64 *This,
-        IDebugSyncOperation *psdo,
-        IDebugAsyncOperation **ppado);
+                     IDebugApplication64 *This,
+                     IDebugSyncOperation *psdo,
+                     IDebugAsyncOperation **ppado);
 
     HRESULT (STDMETHODCALLTYPE *AddStackFrameSniffer)(
-        IDebugApplication64 *This,
-        IDebugStackFrameSniffer *pdsfs,
-        DWORD *pdwCookie);
+                     IDebugApplication64 *This,
+                     IDebugStackFrameSniffer *pdsfs,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStackFrameSniffer)(
-        IDebugApplication64 *This,
-        DWORD dwCookie);
+                     IDebugApplication64 *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *QueryCurrentThreadIsDebuggerThread)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     HRESULT (STDMETHODCALLTYPE *SynchronousCallInDebuggerThread)(
-        IDebugApplication64 *This,
-        IDebugThreadCall64 *pptc,
-        DWORDLONG dwParam1,
-        DWORDLONG dwParam2,
-        DWORDLONG dwParam3);
+                     IDebugApplication64 *This,
+                     IDebugThreadCall64 *pptc,
+                     DWORDLONG dwParam1,
+                     DWORDLONG dwParam2,
+                     DWORDLONG dwParam3);
 
     HRESULT (STDMETHODCALLTYPE *CreateApplicationNode)(
-        IDebugApplication64 *This,
-        IDebugApplicationNode **ppdanNew);
+                     IDebugApplication64 *This,
+                     IDebugApplicationNode **ppdanNew);
 
     HRESULT (STDMETHODCALLTYPE *FireDebuggerEvent)(
-        IDebugApplication64 *This,
-        REFGUID riid,
-        IUnknown *punk);
+                     IDebugApplication64 *This,
+                     REFGUID riid,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *HandleRuntimeError)(
-        IDebugApplication64 *This,
-        IActiveScriptErrorDebug *pErrorDebug,
-        IActiveScriptSite *pScriptSite,
-        BREAKRESUMEACTION *pbra,
-        ERRORRESUMEACTION *perra,
-        WINBOOL *pfCallOnScriptError);
+                     IDebugApplication64 *This,
+                     IActiveScriptErrorDebug *pErrorDebug,
+                     IActiveScriptSite *pScriptSite,
+                     BREAKRESUMEACTION *pbra,
+                     ERRORRESUMEACTION *perra,
+                     WINBOOL *pfCallOnScriptError);
 
     WINBOOL (STDMETHODCALLTYPE *FCanJitDebug)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     WINBOOL (STDMETHODCALLTYPE *FIsAutoJitDebugEnabled)(
-        IDebugApplication64 *This);
+                     IDebugApplication64 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddGlobalExpressionContextProvider)(
-        IDebugApplication64 *This,
-        IProvideExpressionContexts *pdsfs,
-        DWORDLONG *pdwCookie);
+                     IDebugApplication64 *This,
+                     IProvideExpressionContexts *pdsfs,
+                     DWORDLONG *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *RemoveGlobalExpressionContextProvider)(
-        IDebugApplication64 *This,
-        DWORDLONG dwCookie);
+                     IDebugApplication64 *This,
+                     DWORDLONG dwCookie);
 
     END_INTERFACE
 } IDebugApplication64Vtbl;
@@ -6864,35 +6864,35 @@ MIDL_INTERFACE("51973c33-cb0c-11d0-b5c9-00a0244a0e7a")
 IRemoteDebugApplicationEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnConnectDebugger(
-        IApplicationDebugger *pad) = 0;
+                     IApplicationDebugger *pad) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDisconnectDebugger(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnSetName(
-        LPCOLESTR pstrName) = 0;
+                     LPCOLESTR pstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDebugOutput(
-        LPCOLESTR pstr) = 0;
+                     LPCOLESTR pstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnClose(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnEnterBreakPoint(
-        IRemoteDebugApplicationThread *prdat) = 0;
+                     IRemoteDebugApplicationThread *prdat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnLeaveBreakPoint(
-        IRemoteDebugApplicationThread *prdat) = 0;
+                     IRemoteDebugApplicationThread *prdat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnCreateThread(
-        IRemoteDebugApplicationThread *prdat) = 0;
+                     IRemoteDebugApplicationThread *prdat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDestroyThread(
-        IRemoteDebugApplicationThread *prdat) = 0;
+                     IRemoteDebugApplicationThread *prdat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnBreakFlagChange(
-        APPBREAKFLAGS abf,
-        IRemoteDebugApplicationThread *prdatSteppingThread) = 0;
+                     APPBREAKFLAGS abf,
+                     IRemoteDebugApplicationThread *prdatSteppingThread) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6904,55 +6904,55 @@ typedef struct IRemoteDebugApplicationEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRemoteDebugApplicationEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRemoteDebugApplicationEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRemoteDebugApplicationEvents *This);
+                     IRemoteDebugApplicationEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRemoteDebugApplicationEvents *This);
+                     IRemoteDebugApplicationEvents *This);
 
     /*** IRemoteDebugApplicationEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnConnectDebugger)(
-        IRemoteDebugApplicationEvents *This,
-        IApplicationDebugger *pad);
+                     IRemoteDebugApplicationEvents *This,
+                     IApplicationDebugger *pad);
 
     HRESULT (STDMETHODCALLTYPE *OnDisconnectDebugger)(
-        IRemoteDebugApplicationEvents *This);
+                     IRemoteDebugApplicationEvents *This);
 
     HRESULT (STDMETHODCALLTYPE *OnSetName)(
-        IRemoteDebugApplicationEvents *This,
-        LPCOLESTR pstrName);
+                     IRemoteDebugApplicationEvents *This,
+                     LPCOLESTR pstrName);
 
     HRESULT (STDMETHODCALLTYPE *OnDebugOutput)(
-        IRemoteDebugApplicationEvents *This,
-        LPCOLESTR pstr);
+                     IRemoteDebugApplicationEvents *This,
+                     LPCOLESTR pstr);
 
     HRESULT (STDMETHODCALLTYPE *OnClose)(
-        IRemoteDebugApplicationEvents *This);
+                     IRemoteDebugApplicationEvents *This);
 
     HRESULT (STDMETHODCALLTYPE *OnEnterBreakPoint)(
-        IRemoteDebugApplicationEvents *This,
-        IRemoteDebugApplicationThread *prdat);
+                     IRemoteDebugApplicationEvents *This,
+                     IRemoteDebugApplicationThread *prdat);
 
     HRESULT (STDMETHODCALLTYPE *OnLeaveBreakPoint)(
-        IRemoteDebugApplicationEvents *This,
-        IRemoteDebugApplicationThread *prdat);
+                     IRemoteDebugApplicationEvents *This,
+                     IRemoteDebugApplicationThread *prdat);
 
     HRESULT (STDMETHODCALLTYPE *OnCreateThread)(
-        IRemoteDebugApplicationEvents *This,
-        IRemoteDebugApplicationThread *prdat);
+                     IRemoteDebugApplicationEvents *This,
+                     IRemoteDebugApplicationThread *prdat);
 
     HRESULT (STDMETHODCALLTYPE *OnDestroyThread)(
-        IRemoteDebugApplicationEvents *This,
-        IRemoteDebugApplicationThread *prdat);
+                     IRemoteDebugApplicationEvents *This,
+                     IRemoteDebugApplicationThread *prdat);
 
     HRESULT (STDMETHODCALLTYPE *OnBreakFlagChange)(
-        IRemoteDebugApplicationEvents *This,
-        APPBREAKFLAGS abf,
-        IRemoteDebugApplicationThread *prdatSteppingThread);
+                     IRemoteDebugApplicationEvents *This,
+                     APPBREAKFLAGS abf,
+                     IRemoteDebugApplicationThread *prdatSteppingThread);
 
     END_INTERFACE
 } IRemoteDebugApplicationEventsVtbl;
@@ -7040,22 +7040,22 @@ MIDL_INTERFACE("51973c34-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugApplicationNode : public IDebugDocumentProvider
 {
     virtual HRESULT STDMETHODCALLTYPE EnumChildren(
-        IEnumDebugApplicationNodes **pperddp) = 0;
+                     IEnumDebugApplicationNodes **pperddp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParent(
-        IDebugApplicationNode **pprddp) = 0;
+                     IDebugApplicationNode **pprddp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDocumentProvider(
-        IDebugDocumentProvider *pddp) = 0;
+                     IDebugDocumentProvider *pddp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Attach(
-        IDebugApplicationNode *pdanParent) = 0;
+                     IDebugApplicationNode *pdanParent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Detach(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7067,53 +7067,53 @@ typedef struct IDebugApplicationNodeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplicationNode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplicationNode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplicationNode *This);
+                     IDebugApplicationNode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplicationNode *This);
+                     IDebugApplicationNode *This);
 
     /*** IDebugDocumentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugApplicationNode *This,
-        DOCUMENTNAMETYPE dnt,
-        BSTR *pbstrName);
+                     IDebugApplicationNode *This,
+                     DOCUMENTNAMETYPE dnt,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentClassId)(
-        IDebugApplicationNode *This,
-        CLSID *pclsidDocument);
+                     IDebugApplicationNode *This,
+                     CLSID *pclsidDocument);
 
     /*** IDebugDocumentProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDocument)(
-        IDebugApplicationNode *This,
-        IDebugDocument **ppssd);
+                     IDebugApplicationNode *This,
+                     IDebugDocument **ppssd);
 
     /*** IDebugApplicationNode methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumChildren)(
-        IDebugApplicationNode *This,
-        IEnumDebugApplicationNodes **pperddp);
+                     IDebugApplicationNode *This,
+                     IEnumDebugApplicationNodes **pperddp);
 
     HRESULT (STDMETHODCALLTYPE *GetParent)(
-        IDebugApplicationNode *This,
-        IDebugApplicationNode **pprddp);
+                     IDebugApplicationNode *This,
+                     IDebugApplicationNode **pprddp);
 
     HRESULT (STDMETHODCALLTYPE *SetDocumentProvider)(
-        IDebugApplicationNode *This,
-        IDebugDocumentProvider *pddp);
+                     IDebugApplicationNode *This,
+                     IDebugDocumentProvider *pddp);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IDebugApplicationNode *This);
+                     IDebugApplicationNode *This);
 
     HRESULT (STDMETHODCALLTYPE *Attach)(
-        IDebugApplicationNode *This,
-        IDebugApplicationNode *pdanParent);
+                     IDebugApplicationNode *This,
+                     IDebugApplicationNode *pdanParent);
 
     HRESULT (STDMETHODCALLTYPE *Detach)(
-        IDebugApplicationNode *This);
+                     IDebugApplicationNode *This);
 
     END_INTERFACE
 } IDebugApplicationNodeVtbl;
@@ -7201,16 +7201,16 @@ MIDL_INTERFACE("51973c35-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugApplicationNodeEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE onAddChild(
-        IDebugApplicationNode *prddpChild) = 0;
+                     IDebugApplicationNode *prddpChild) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onRemoveChild(
-        IDebugApplicationNode *prddpChild) = 0;
+                     IDebugApplicationNode *prddpChild) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onDetach(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE onAttach(
-        IDebugApplicationNode *prddpParent) = 0;
+                     IDebugApplicationNode *prddpParent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7222,31 +7222,31 @@ typedef struct IDebugApplicationNodeEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplicationNodeEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplicationNodeEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplicationNodeEvents *This);
+                     IDebugApplicationNodeEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplicationNodeEvents *This);
+                     IDebugApplicationNodeEvents *This);
 
     /*** IDebugApplicationNodeEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *onAddChild)(
-        IDebugApplicationNodeEvents *This,
-        IDebugApplicationNode *prddpChild);
+                     IDebugApplicationNodeEvents *This,
+                     IDebugApplicationNode *prddpChild);
 
     HRESULT (STDMETHODCALLTYPE *onRemoveChild)(
-        IDebugApplicationNodeEvents *This,
-        IDebugApplicationNode *prddpChild);
+                     IDebugApplicationNodeEvents *This,
+                     IDebugApplicationNode *prddpChild);
 
     HRESULT (STDMETHODCALLTYPE *onDetach)(
-        IDebugApplicationNodeEvents *This);
+                     IDebugApplicationNodeEvents *This);
 
     HRESULT (STDMETHODCALLTYPE *onAttach)(
-        IDebugApplicationNodeEvents *This,
-        IDebugApplicationNode *prddpParent);
+                     IDebugApplicationNodeEvents *This,
+                     IDebugApplicationNode *prddpParent);
 
     END_INTERFACE
 } IDebugApplicationNodeEventsVtbl;
@@ -7310,28 +7310,28 @@ MIDL_INTERFACE("a2e3aa3b-aa8d-4ebf-84cd-648b737b8c13")
 AsyncIDebugApplicationNodeEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Begin_onAddChild(
-        IDebugApplicationNode *prddpChild) = 0;
+                     IDebugApplicationNode *prddpChild) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_onAddChild(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_onRemoveChild(
-        IDebugApplicationNode *prddpChild) = 0;
+                     IDebugApplicationNode *prddpChild) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_onRemoveChild(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_onDetach(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_onDetach(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_onAttach(
-        IDebugApplicationNode *prddpParent) = 0;
+                     IDebugApplicationNode *prddpParent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_onAttach(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7343,43 +7343,43 @@ typedef struct AsyncIDebugApplicationNodeEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncIDebugApplicationNodeEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     AsyncIDebugApplicationNodeEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncIDebugApplicationNodeEvents *This);
+                     AsyncIDebugApplicationNodeEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncIDebugApplicationNodeEvents *This);
+                     AsyncIDebugApplicationNodeEvents *This);
 
     /*** AsyncIDebugApplicationNodeEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *Begin_onAddChild)(
-        AsyncIDebugApplicationNodeEvents *This,
-        IDebugApplicationNode *prddpChild);
+                     AsyncIDebugApplicationNodeEvents *This,
+                     IDebugApplicationNode *prddpChild);
 
     HRESULT (STDMETHODCALLTYPE *Finish_onAddChild)(
-        AsyncIDebugApplicationNodeEvents *This);
+                     AsyncIDebugApplicationNodeEvents *This);
 
     HRESULT (STDMETHODCALLTYPE *Begin_onRemoveChild)(
-        AsyncIDebugApplicationNodeEvents *This,
-        IDebugApplicationNode *prddpChild);
+                     AsyncIDebugApplicationNodeEvents *This,
+                     IDebugApplicationNode *prddpChild);
 
     HRESULT (STDMETHODCALLTYPE *Finish_onRemoveChild)(
-        AsyncIDebugApplicationNodeEvents *This);
+                     AsyncIDebugApplicationNodeEvents *This);
 
     HRESULT (STDMETHODCALLTYPE *Begin_onDetach)(
-        AsyncIDebugApplicationNodeEvents *This);
+                     AsyncIDebugApplicationNodeEvents *This);
 
     HRESULT (STDMETHODCALLTYPE *Finish_onDetach)(
-        AsyncIDebugApplicationNodeEvents *This);
+                     AsyncIDebugApplicationNodeEvents *This);
 
     HRESULT (STDMETHODCALLTYPE *Begin_onAttach)(
-        AsyncIDebugApplicationNodeEvents *This,
-        IDebugApplicationNode *prddpParent);
+                     AsyncIDebugApplicationNodeEvents *This,
+                     IDebugApplicationNode *prddpParent);
 
     HRESULT (STDMETHODCALLTYPE *Finish_onAttach)(
-        AsyncIDebugApplicationNodeEvents *This);
+                     AsyncIDebugApplicationNodeEvents *This);
 
     END_INTERFACE
 } AsyncIDebugApplicationNodeEventsVtbl;
@@ -7459,9 +7459,9 @@ MIDL_INTERFACE("51973c36-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugThreadCall32 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ThreadCallHandler(
-        DWORD dwParam1,
-        DWORD dwParam2,
-        DWORD dwParam3) = 0;
+                     DWORD dwParam1,
+                     DWORD dwParam2,
+                     DWORD dwParam3) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7473,22 +7473,22 @@ typedef struct IDebugThreadCall32Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugThreadCall32 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugThreadCall32 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugThreadCall32 *This);
+                     IDebugThreadCall32 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugThreadCall32 *This);
+                     IDebugThreadCall32 *This);
 
     /*** IDebugThreadCall32 methods ***/
     HRESULT (STDMETHODCALLTYPE *ThreadCallHandler)(
-        IDebugThreadCall32 *This,
-        DWORD dwParam1,
-        DWORD dwParam2,
-        DWORD dwParam3);
+                     IDebugThreadCall32 *This,
+                     DWORD dwParam1,
+                     DWORD dwParam2,
+                     DWORD dwParam3);
 
     END_INTERFACE
 } IDebugThreadCall32Vtbl;
@@ -7540,9 +7540,9 @@ MIDL_INTERFACE("cb3fa335-e979-42fd-9fcf-a7546a0f3905")
 IDebugThreadCall64 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ThreadCallHandler(
-        DWORDLONG dwParam1,
-        DWORDLONG dwParam2,
-        DWORDLONG dwParam3) = 0;
+                     DWORDLONG dwParam1,
+                     DWORDLONG dwParam2,
+                     DWORDLONG dwParam3) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7554,22 +7554,22 @@ typedef struct IDebugThreadCall64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugThreadCall64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugThreadCall64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugThreadCall64 *This);
+                     IDebugThreadCall64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugThreadCall64 *This);
+                     IDebugThreadCall64 *This);
 
     /*** IDebugThreadCall64 methods ***/
     HRESULT (STDMETHODCALLTYPE *ThreadCallHandler)(
-        IDebugThreadCall64 *This,
-        DWORDLONG dwParam1,
-        DWORDLONG dwParam2,
-        DWORDLONG dwParam3);
+                     IDebugThreadCall64 *This,
+                     DWORDLONG dwParam1,
+                     DWORDLONG dwParam2,
+                     DWORDLONG dwParam3);
 
     END_INTERFACE
 } IDebugThreadCall64Vtbl;
@@ -7630,33 +7630,33 @@ MIDL_INTERFACE("51973c37-cb0c-11d0-b5c9-00a0244a0e7a")
 IRemoteDebugApplicationThread : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSystemThreadId(
-        DWORD *dwThreadId) = 0;
+                     DWORD *dwThreadId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetApplication(
-        IRemoteDebugApplication **pprda) = 0;
+                     IRemoteDebugApplication **pprda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumStackFrames(
-        IEnumDebugStackFrames **ppedsf) = 0;
+                     IEnumDebugStackFrames **ppedsf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        BSTR *pbstrDescription,
-        BSTR *pbstrState) = 0;
+                     BSTR *pbstrDescription,
+                     BSTR *pbstrState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNextStatement(
-        IDebugStackFrame *pStackFrame,
-        IDebugCodeContext *pCodeContext) = 0;
+                     IDebugStackFrame *pStackFrame,
+                     IDebugCodeContext *pCodeContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        DWORD *pState) = 0;
+                     DWORD *pState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Suspend(
-        DWORD *pdwCount) = 0;
+                     DWORD *pdwCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        DWORD *pdwCount) = 0;
+                     DWORD *pdwCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSuspendCount(
-        DWORD *pdwCount) = 0;
+                     DWORD *pdwCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7668,54 +7668,54 @@ typedef struct IRemoteDebugApplicationThreadVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRemoteDebugApplicationThread *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRemoteDebugApplicationThread *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRemoteDebugApplicationThread *This);
+                     IRemoteDebugApplicationThread *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRemoteDebugApplicationThread *This);
+                     IRemoteDebugApplicationThread *This);
 
     /*** IRemoteDebugApplicationThread methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSystemThreadId)(
-        IRemoteDebugApplicationThread *This,
-        DWORD *dwThreadId);
+                     IRemoteDebugApplicationThread *This,
+                     DWORD *dwThreadId);
 
     HRESULT (STDMETHODCALLTYPE *GetApplication)(
-        IRemoteDebugApplicationThread *This,
-        IRemoteDebugApplication **pprda);
+                     IRemoteDebugApplicationThread *This,
+                     IRemoteDebugApplication **pprda);
 
     HRESULT (STDMETHODCALLTYPE *EnumStackFrames)(
-        IRemoteDebugApplicationThread *This,
-        IEnumDebugStackFrames **ppedsf);
+                     IRemoteDebugApplicationThread *This,
+                     IEnumDebugStackFrames **ppedsf);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IRemoteDebugApplicationThread *This,
-        BSTR *pbstrDescription,
-        BSTR *pbstrState);
+                     IRemoteDebugApplicationThread *This,
+                     BSTR *pbstrDescription,
+                     BSTR *pbstrState);
 
     HRESULT (STDMETHODCALLTYPE *SetNextStatement)(
-        IRemoteDebugApplicationThread *This,
-        IDebugStackFrame *pStackFrame,
-        IDebugCodeContext *pCodeContext);
+                     IRemoteDebugApplicationThread *This,
+                     IDebugStackFrame *pStackFrame,
+                     IDebugCodeContext *pCodeContext);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IRemoteDebugApplicationThread *This,
-        DWORD *pState);
+                     IRemoteDebugApplicationThread *This,
+                     DWORD *pState);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IRemoteDebugApplicationThread *This,
-        DWORD *pdwCount);
+                     IRemoteDebugApplicationThread *This,
+                     DWORD *pdwCount);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IRemoteDebugApplicationThread *This,
-        DWORD *pdwCount);
+                     IRemoteDebugApplicationThread *This,
+                     DWORD *pdwCount);
 
     HRESULT (STDMETHODCALLTYPE *GetSuspendCount)(
-        IRemoteDebugApplicationThread *This,
-        DWORD *pdwCount);
+                     IRemoteDebugApplicationThread *This,
+                     DWORD *pdwCount);
 
     END_INTERFACE
 } IRemoteDebugApplicationThreadVtbl;
@@ -7799,22 +7799,22 @@ MIDL_INTERFACE("51973c38-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugApplicationThread : public IRemoteDebugApplicationThread
 {
     virtual HRESULT STDMETHODCALLTYPE SynchronousCallIntoThread32(
-        IDebugThreadCall32 *pstcb,
-        DWORD dwParam1,
-        DWORD dwParam2,
-        DWORD dwParam3) = 0;
+                     IDebugThreadCall32 *pstcb,
+                     DWORD dwParam1,
+                     DWORD dwParam2,
+                     DWORD dwParam3) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryIsCurrentThread(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryIsDebuggerThread(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDescription(
-        LPCOLESTR pstrDescription) = 0;
+                     LPCOLESTR pstrDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStateString(
-        LPCOLESTR pstrState) = 0;
+                     LPCOLESTR pstrState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7826,76 +7826,76 @@ typedef struct IDebugApplicationThreadVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplicationThread *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplicationThread *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplicationThread *This);
+                     IDebugApplicationThread *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplicationThread *This);
+                     IDebugApplicationThread *This);
 
     /*** IRemoteDebugApplicationThread methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSystemThreadId)(
-        IDebugApplicationThread *This,
-        DWORD *dwThreadId);
+                     IDebugApplicationThread *This,
+                     DWORD *dwThreadId);
 
     HRESULT (STDMETHODCALLTYPE *GetApplication)(
-        IDebugApplicationThread *This,
-        IRemoteDebugApplication **pprda);
+                     IDebugApplicationThread *This,
+                     IRemoteDebugApplication **pprda);
 
     HRESULT (STDMETHODCALLTYPE *EnumStackFrames)(
-        IDebugApplicationThread *This,
-        IEnumDebugStackFrames **ppedsf);
+                     IDebugApplicationThread *This,
+                     IEnumDebugStackFrames **ppedsf);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IDebugApplicationThread *This,
-        BSTR *pbstrDescription,
-        BSTR *pbstrState);
+                     IDebugApplicationThread *This,
+                     BSTR *pbstrDescription,
+                     BSTR *pbstrState);
 
     HRESULT (STDMETHODCALLTYPE *SetNextStatement)(
-        IDebugApplicationThread *This,
-        IDebugStackFrame *pStackFrame,
-        IDebugCodeContext *pCodeContext);
+                     IDebugApplicationThread *This,
+                     IDebugStackFrame *pStackFrame,
+                     IDebugCodeContext *pCodeContext);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IDebugApplicationThread *This,
-        DWORD *pState);
+                     IDebugApplicationThread *This,
+                     DWORD *pState);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IDebugApplicationThread *This,
-        DWORD *pdwCount);
+                     IDebugApplicationThread *This,
+                     DWORD *pdwCount);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IDebugApplicationThread *This,
-        DWORD *pdwCount);
+                     IDebugApplicationThread *This,
+                     DWORD *pdwCount);
 
     HRESULT (STDMETHODCALLTYPE *GetSuspendCount)(
-        IDebugApplicationThread *This,
-        DWORD *pdwCount);
+                     IDebugApplicationThread *This,
+                     DWORD *pdwCount);
 
     /*** IDebugApplicationThread methods ***/
     HRESULT (STDMETHODCALLTYPE *SynchronousCallIntoThread32)(
-        IDebugApplicationThread *This,
-        IDebugThreadCall32 *pstcb,
-        DWORD dwParam1,
-        DWORD dwParam2,
-        DWORD dwParam3);
+                     IDebugApplicationThread *This,
+                     IDebugThreadCall32 *pstcb,
+                     DWORD dwParam1,
+                     DWORD dwParam2,
+                     DWORD dwParam3);
 
     HRESULT (STDMETHODCALLTYPE *QueryIsCurrentThread)(
-        IDebugApplicationThread *This);
+                     IDebugApplicationThread *This);
 
     HRESULT (STDMETHODCALLTYPE *QueryIsDebuggerThread)(
-        IDebugApplicationThread *This);
+                     IDebugApplicationThread *This);
 
     HRESULT (STDMETHODCALLTYPE *SetDescription)(
-        IDebugApplicationThread *This,
-        LPCOLESTR pstrDescription);
+                     IDebugApplicationThread *This,
+                     LPCOLESTR pstrDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetStateString)(
-        IDebugApplicationThread *This,
-        LPCOLESTR pstrState);
+                     IDebugApplicationThread *This,
+                     LPCOLESTR pstrState);
 
     END_INTERFACE
 } IDebugApplicationThreadVtbl;
@@ -8001,10 +8001,10 @@ MIDL_INTERFACE("9dac5886-dbad-456d-9dee-5dec39ab3dda")
 IDebugApplicationThread64 : public IDebugApplicationThread
 {
     virtual HRESULT STDMETHODCALLTYPE SynchronousCallIntoThread64(
-        IDebugThreadCall64 *pstcb,
-        DWORDLONG dwParam1,
-        DWORDLONG dwParam2,
-        DWORDLONG dwParam3) = 0;
+                     IDebugThreadCall64 *pstcb,
+                     DWORDLONG dwParam1,
+                     DWORDLONG dwParam2,
+                     DWORDLONG dwParam3) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8016,84 +8016,84 @@ typedef struct IDebugApplicationThread64Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugApplicationThread64 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugApplicationThread64 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugApplicationThread64 *This);
+                     IDebugApplicationThread64 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugApplicationThread64 *This);
+                     IDebugApplicationThread64 *This);
 
     /*** IRemoteDebugApplicationThread methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSystemThreadId)(
-        IDebugApplicationThread64 *This,
-        DWORD *dwThreadId);
+                     IDebugApplicationThread64 *This,
+                     DWORD *dwThreadId);
 
     HRESULT (STDMETHODCALLTYPE *GetApplication)(
-        IDebugApplicationThread64 *This,
-        IRemoteDebugApplication **pprda);
+                     IDebugApplicationThread64 *This,
+                     IRemoteDebugApplication **pprda);
 
     HRESULT (STDMETHODCALLTYPE *EnumStackFrames)(
-        IDebugApplicationThread64 *This,
-        IEnumDebugStackFrames **ppedsf);
+                     IDebugApplicationThread64 *This,
+                     IEnumDebugStackFrames **ppedsf);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IDebugApplicationThread64 *This,
-        BSTR *pbstrDescription,
-        BSTR *pbstrState);
+                     IDebugApplicationThread64 *This,
+                     BSTR *pbstrDescription,
+                     BSTR *pbstrState);
 
     HRESULT (STDMETHODCALLTYPE *SetNextStatement)(
-        IDebugApplicationThread64 *This,
-        IDebugStackFrame *pStackFrame,
-        IDebugCodeContext *pCodeContext);
+                     IDebugApplicationThread64 *This,
+                     IDebugStackFrame *pStackFrame,
+                     IDebugCodeContext *pCodeContext);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IDebugApplicationThread64 *This,
-        DWORD *pState);
+                     IDebugApplicationThread64 *This,
+                     DWORD *pState);
 
     HRESULT (STDMETHODCALLTYPE *Suspend)(
-        IDebugApplicationThread64 *This,
-        DWORD *pdwCount);
+                     IDebugApplicationThread64 *This,
+                     DWORD *pdwCount);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IDebugApplicationThread64 *This,
-        DWORD *pdwCount);
+                     IDebugApplicationThread64 *This,
+                     DWORD *pdwCount);
 
     HRESULT (STDMETHODCALLTYPE *GetSuspendCount)(
-        IDebugApplicationThread64 *This,
-        DWORD *pdwCount);
+                     IDebugApplicationThread64 *This,
+                     DWORD *pdwCount);
 
     /*** IDebugApplicationThread methods ***/
     HRESULT (STDMETHODCALLTYPE *SynchronousCallIntoThread32)(
-        IDebugApplicationThread64 *This,
-        IDebugThreadCall32 *pstcb,
-        DWORD dwParam1,
-        DWORD dwParam2,
-        DWORD dwParam3);
+                     IDebugApplicationThread64 *This,
+                     IDebugThreadCall32 *pstcb,
+                     DWORD dwParam1,
+                     DWORD dwParam2,
+                     DWORD dwParam3);
 
     HRESULT (STDMETHODCALLTYPE *QueryIsCurrentThread)(
-        IDebugApplicationThread64 *This);
+                     IDebugApplicationThread64 *This);
 
     HRESULT (STDMETHODCALLTYPE *QueryIsDebuggerThread)(
-        IDebugApplicationThread64 *This);
+                     IDebugApplicationThread64 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetDescription)(
-        IDebugApplicationThread64 *This,
-        LPCOLESTR pstrDescription);
+                     IDebugApplicationThread64 *This,
+                     LPCOLESTR pstrDescription);
 
     HRESULT (STDMETHODCALLTYPE *SetStateString)(
-        IDebugApplicationThread64 *This,
-        LPCOLESTR pstrState);
+                     IDebugApplicationThread64 *This,
+                     LPCOLESTR pstrState);
 
     /*** IDebugApplicationThread64 methods ***/
     HRESULT (STDMETHODCALLTYPE *SynchronousCallIntoThread64)(
-        IDebugApplicationThread64 *This,
-        IDebugThreadCall64 *pstcb,
-        DWORDLONG dwParam1,
-        DWORDLONG dwParam2,
-        DWORDLONG dwParam3);
+                     IDebugApplicationThread64 *This,
+                     IDebugThreadCall64 *pstcb,
+                     DWORDLONG dwParam1,
+                     DWORDLONG dwParam2,
+                     DWORDLONG dwParam3);
 
     END_INTERFACE
 } IDebugApplicationThread64Vtbl;
@@ -8205,7 +8205,7 @@ MIDL_INTERFACE("51973c39-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugCookie : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetDebugCookie(
-        DWORD dwDebugAppCookie) = 0;
+                     DWORD dwDebugAppCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8217,20 +8217,20 @@ typedef struct IDebugCookieVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugCookie *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugCookie *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugCookie *This);
+                     IDebugCookie *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugCookie *This);
+                     IDebugCookie *This);
 
     /*** IDebugCookie methods ***/
     HRESULT (STDMETHODCALLTYPE *SetDebugCookie)(
-        IDebugCookie *This,
-        DWORD dwDebugAppCookie);
+                     IDebugCookie *This,
+                     DWORD dwDebugAppCookie);
 
     END_INTERFACE
 } IDebugCookieVtbl;
@@ -8282,18 +8282,18 @@ MIDL_INTERFACE("51973c3a-cb0c-11d0-b5c9-00a0244a0e7a")
 IEnumDebugApplicationNodes : public IUnknown
 {
     virtual HRESULT __stdcall Next(
-        ULONG celt,
-        IDebugApplicationNode **pprddp,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IDebugApplicationNode **pprddp,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDebugApplicationNodes **pperddp) = 0;
+                     IEnumDebugApplicationNodes **pperddp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8305,33 +8305,33 @@ typedef struct IEnumDebugApplicationNodesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDebugApplicationNodes *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDebugApplicationNodes *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDebugApplicationNodes *This);
+                     IEnumDebugApplicationNodes *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDebugApplicationNodes *This);
+                     IEnumDebugApplicationNodes *This);
 
     /*** IEnumDebugApplicationNodes methods ***/
     HRESULT (__stdcall *Next)(
-        IEnumDebugApplicationNodes *This,
-        ULONG celt,
-        IDebugApplicationNode **pprddp,
-        ULONG *pceltFetched);
+                     IEnumDebugApplicationNodes *This,
+                     ULONG celt,
+                     IDebugApplicationNode **pprddp,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDebugApplicationNodes *This,
-        ULONG celt);
+                     IEnumDebugApplicationNodes *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDebugApplicationNodes *This);
+                     IEnumDebugApplicationNodes *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDebugApplicationNodes *This,
-        IEnumDebugApplicationNodes **pperddp);
+                     IEnumDebugApplicationNodes *This,
+                     IEnumDebugApplicationNodes **pperddp);
 
     END_INTERFACE
 } IEnumDebugApplicationNodesVtbl;
@@ -8415,18 +8415,18 @@ MIDL_INTERFACE("51973c3b-cb0c-11d0-b5c9-00a0244a0e7a")
 IEnumRemoteDebugApplications : public IUnknown
 {
     virtual HRESULT __stdcall Next(
-        ULONG celt,
-        IRemoteDebugApplication **ppda,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IRemoteDebugApplication **ppda,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumRemoteDebugApplications **ppessd) = 0;
+                     IEnumRemoteDebugApplications **ppessd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8438,33 +8438,33 @@ typedef struct IEnumRemoteDebugApplicationsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumRemoteDebugApplications *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumRemoteDebugApplications *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumRemoteDebugApplications *This);
+                     IEnumRemoteDebugApplications *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumRemoteDebugApplications *This);
+                     IEnumRemoteDebugApplications *This);
 
     /*** IEnumRemoteDebugApplications methods ***/
     HRESULT (__stdcall *Next)(
-        IEnumRemoteDebugApplications *This,
-        ULONG celt,
-        IRemoteDebugApplication **ppda,
-        ULONG *pceltFetched);
+                     IEnumRemoteDebugApplications *This,
+                     ULONG celt,
+                     IRemoteDebugApplication **ppda,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumRemoteDebugApplications *This,
-        ULONG celt);
+                     IEnumRemoteDebugApplications *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumRemoteDebugApplications *This);
+                     IEnumRemoteDebugApplications *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumRemoteDebugApplications *This,
-        IEnumRemoteDebugApplications **ppessd);
+                     IEnumRemoteDebugApplications *This,
+                     IEnumRemoteDebugApplications **ppessd);
 
     END_INTERFACE
 } IEnumRemoteDebugApplicationsVtbl;
@@ -8548,18 +8548,18 @@ MIDL_INTERFACE("51973c3c-cb0c-11d0-b5c9-00a0244a0e7a")
 IEnumRemoteDebugApplicationThreads : public IUnknown
 {
     virtual HRESULT __stdcall Next(
-        ULONG celt,
-        IRemoteDebugApplicationThread **pprdat,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IRemoteDebugApplicationThread **pprdat,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumRemoteDebugApplicationThreads **pperdat) = 0;
+                     IEnumRemoteDebugApplicationThreads **pperdat) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8571,33 +8571,33 @@ typedef struct IEnumRemoteDebugApplicationThreadsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumRemoteDebugApplicationThreads *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumRemoteDebugApplicationThreads *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumRemoteDebugApplicationThreads *This);
+                     IEnumRemoteDebugApplicationThreads *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumRemoteDebugApplicationThreads *This);
+                     IEnumRemoteDebugApplicationThreads *This);
 
     /*** IEnumRemoteDebugApplicationThreads methods ***/
     HRESULT (__stdcall *Next)(
-        IEnumRemoteDebugApplicationThreads *This,
-        ULONG celt,
-        IRemoteDebugApplicationThread **pprdat,
-        ULONG *pceltFetched);
+                     IEnumRemoteDebugApplicationThreads *This,
+                     ULONG celt,
+                     IRemoteDebugApplicationThread **pprdat,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumRemoteDebugApplicationThreads *This,
-        ULONG celt);
+                     IEnumRemoteDebugApplicationThreads *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumRemoteDebugApplicationThreads *This);
+                     IEnumRemoteDebugApplicationThreads *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumRemoteDebugApplicationThreads *This,
-        IEnumRemoteDebugApplicationThreads **pperdat);
+                     IEnumRemoteDebugApplicationThreads *This,
+                     IEnumRemoteDebugApplicationThreads **pperdat);
 
     END_INTERFACE
 } IEnumRemoteDebugApplicationThreadsVtbl;
@@ -8681,18 +8681,18 @@ MIDL_INTERFACE("51973c05-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugFormatter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStringForVariant(
-        VARIANT *pvar,
-        ULONG nRadix,
-        BSTR *pbstrValue) = 0;
+                     VARIANT *pvar,
+                     ULONG nRadix,
+                     BSTR *pbstrValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVariantForString(
-        LPCOLESTR pwstrValue,
-        VARIANT *pvar) = 0;
+                     LPCOLESTR pwstrValue,
+                     VARIANT *pvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringForVarType(
-        VARTYPE vt,
-        TYPEDESC *ptdescArrayType,
-        BSTR *pbstr) = 0;
+                     VARTYPE vt,
+                     TYPEDESC *ptdescArrayType,
+                     BSTR *pbstr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8704,33 +8704,33 @@ typedef struct IDebugFormatterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugFormatter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugFormatter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugFormatter *This);
+                     IDebugFormatter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugFormatter *This);
+                     IDebugFormatter *This);
 
     /*** IDebugFormatter methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStringForVariant)(
-        IDebugFormatter *This,
-        VARIANT *pvar,
-        ULONG nRadix,
-        BSTR *pbstrValue);
+                     IDebugFormatter *This,
+                     VARIANT *pvar,
+                     ULONG nRadix,
+                     BSTR *pbstrValue);
 
     HRESULT (STDMETHODCALLTYPE *GetVariantForString)(
-        IDebugFormatter *This,
-        LPCOLESTR pwstrValue,
-        VARIANT *pvar);
+                     IDebugFormatter *This,
+                     LPCOLESTR pwstrValue,
+                     VARIANT *pvar);
 
     HRESULT (STDMETHODCALLTYPE *GetStringForVarType)(
-        IDebugFormatter *This,
-        VARTYPE vt,
-        TYPEDESC *ptdescArrayType,
-        BSTR *pbstr);
+                     IDebugFormatter *This,
+                     VARTYPE vt,
+                     TYPEDESC *ptdescArrayType,
+                     BSTR *pbstr);
 
     END_INTERFACE
 } IDebugFormatterVtbl;
@@ -8790,21 +8790,21 @@ MIDL_INTERFACE("51973c3e-cb0c-11d0-b5c9-00a0244a0e7a")
 ISimpleConnectionPoint : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetEventCount(
-        ULONG *pulCount) = 0;
+                     ULONG *pulCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DescribeEvents(
-        ULONG iEvent,
-        ULONG cEvents,
-        DISPID *prgid,
-        BSTR *prgbstr,
-        ULONG *pcEventsFetched) = 0;
+                     ULONG iEvent,
+                     ULONG cEvents,
+                     DISPID *prgid,
+                     BSTR *prgbstr,
+                     ULONG *pcEventsFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IDispatch *pdisp,
-        DWORD *pdwCookie) = 0;
+                     IDispatch *pdisp,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8816,37 +8816,37 @@ typedef struct ISimpleConnectionPointVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISimpleConnectionPoint *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISimpleConnectionPoint *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISimpleConnectionPoint *This);
+                     ISimpleConnectionPoint *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISimpleConnectionPoint *This);
+                     ISimpleConnectionPoint *This);
 
     /*** ISimpleConnectionPoint methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventCount)(
-        ISimpleConnectionPoint *This,
-        ULONG *pulCount);
+                     ISimpleConnectionPoint *This,
+                     ULONG *pulCount);
 
     HRESULT (STDMETHODCALLTYPE *DescribeEvents)(
-        ISimpleConnectionPoint *This,
-        ULONG iEvent,
-        ULONG cEvents,
-        DISPID *prgid,
-        BSTR *prgbstr,
-        ULONG *pcEventsFetched);
+                     ISimpleConnectionPoint *This,
+                     ULONG iEvent,
+                     ULONG cEvents,
+                     DISPID *prgid,
+                     BSTR *prgbstr,
+                     ULONG *pcEventsFetched);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        ISimpleConnectionPoint *This,
-        IDispatch *pdisp,
-        DWORD *pdwCookie);
+                     ISimpleConnectionPoint *This,
+                     IDispatch *pdisp,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        ISimpleConnectionPoint *This,
-        DWORD dwCookie);
+                     ISimpleConnectionPoint *This,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } ISimpleConnectionPointVtbl;
@@ -8910,21 +8910,21 @@ MIDL_INTERFACE("51973c3f-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugHelper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreatePropertyBrowser(
-        VARIANT *pvar,
-        LPCOLESTR bstrName,
-        IDebugApplicationThread *pdat,
-        IDebugProperty **ppdob) = 0;
+                     VARIANT *pvar,
+                     LPCOLESTR bstrName,
+                     IDebugApplicationThread *pdat,
+                     IDebugProperty **ppdob) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePropertyBrowserEx(
-        VARIANT *pvar,
-        LPCOLESTR bstrName,
-        IDebugApplicationThread *pdat,
-        IDebugFormatter *pdf,
-        IDebugProperty **ppdob) = 0;
+                     VARIANT *pvar,
+                     LPCOLESTR bstrName,
+                     IDebugApplicationThread *pdat,
+                     IDebugFormatter *pdf,
+                     IDebugProperty **ppdob) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSimpleConnectionPoint(
-        IDispatch *pdisp,
-        ISimpleConnectionPoint **ppscp) = 0;
+                     IDispatch *pdisp,
+                     ISimpleConnectionPoint **ppscp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8936,36 +8936,36 @@ typedef struct IDebugHelperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugHelper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugHelper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugHelper *This);
+                     IDebugHelper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugHelper *This);
+                     IDebugHelper *This);
 
     /*** IDebugHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *CreatePropertyBrowser)(
-        IDebugHelper *This,
-        VARIANT *pvar,
-        LPCOLESTR bstrName,
-        IDebugApplicationThread *pdat,
-        IDebugProperty **ppdob);
+                     IDebugHelper *This,
+                     VARIANT *pvar,
+                     LPCOLESTR bstrName,
+                     IDebugApplicationThread *pdat,
+                     IDebugProperty **ppdob);
 
     HRESULT (STDMETHODCALLTYPE *CreatePropertyBrowserEx)(
-        IDebugHelper *This,
-        VARIANT *pvar,
-        LPCOLESTR bstrName,
-        IDebugApplicationThread *pdat,
-        IDebugFormatter *pdf,
-        IDebugProperty **ppdob);
+                     IDebugHelper *This,
+                     VARIANT *pvar,
+                     LPCOLESTR bstrName,
+                     IDebugApplicationThread *pdat,
+                     IDebugFormatter *pdf,
+                     IDebugProperty **ppdob);
 
     HRESULT (STDMETHODCALLTYPE *CreateSimpleConnectionPoint)(
-        IDebugHelper *This,
-        IDispatch *pdisp,
-        ISimpleConnectionPoint **ppscp);
+                     IDebugHelper *This,
+                     IDispatch *pdisp,
+                     ISimpleConnectionPoint **ppscp);
 
     END_INTERFACE
 } IDebugHelperVtbl;
@@ -9025,18 +9025,18 @@ MIDL_INTERFACE("51973c40-cb0c-11d0-b5c9-00a0244a0e7a")
 IEnumDebugExpressionContexts : public IUnknown
 {
     virtual HRESULT __stdcall Next(
-        ULONG celt,
-        IDebugExpressionContext **ppdec,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IDebugExpressionContext **ppdec,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDebugExpressionContexts **ppedec) = 0;
+                     IEnumDebugExpressionContexts **ppedec) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9048,33 +9048,33 @@ typedef struct IEnumDebugExpressionContextsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDebugExpressionContexts *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDebugExpressionContexts *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDebugExpressionContexts *This);
+                     IEnumDebugExpressionContexts *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDebugExpressionContexts *This);
+                     IEnumDebugExpressionContexts *This);
 
     /*** IEnumDebugExpressionContexts methods ***/
     HRESULT (__stdcall *Next)(
-        IEnumDebugExpressionContexts *This,
-        ULONG celt,
-        IDebugExpressionContext **ppdec,
-        ULONG *pceltFetched);
+                     IEnumDebugExpressionContexts *This,
+                     ULONG celt,
+                     IDebugExpressionContext **ppdec,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDebugExpressionContexts *This,
-        ULONG celt);
+                     IEnumDebugExpressionContexts *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDebugExpressionContexts *This);
+                     IEnumDebugExpressionContexts *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDebugExpressionContexts *This,
-        IEnumDebugExpressionContexts **ppedec);
+                     IEnumDebugExpressionContexts *This,
+                     IEnumDebugExpressionContexts **ppedec);
 
     END_INTERFACE
 } IEnumDebugExpressionContextsVtbl;
@@ -9158,7 +9158,7 @@ MIDL_INTERFACE("51973c41-cb0c-11d0-b5c9-00a0244a0e7a")
 IProvideExpressionContexts : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnumExpressionContexts(
-        IEnumDebugExpressionContexts **ppedec) = 0;
+                     IEnumDebugExpressionContexts **ppedec) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9170,20 +9170,20 @@ typedef struct IProvideExpressionContextsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProvideExpressionContexts *This,
-        REFIID riid,
-        void **ppvObject);
+                     IProvideExpressionContexts *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProvideExpressionContexts *This);
+                     IProvideExpressionContexts *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProvideExpressionContexts *This);
+                     IProvideExpressionContexts *This);
 
     /*** IProvideExpressionContexts methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumExpressionContexts)(
-        IProvideExpressionContexts *This,
-        IEnumDebugExpressionContexts **ppedec);
+                     IProvideExpressionContexts *This,
+                     IEnumDebugExpressionContexts **ppedec);
 
     END_INTERFACE
 } IProvideExpressionContextsVtbl;
@@ -9780,10 +9780,10 @@ __CRT_UUID_DECL(DefaultDebugSessionProvider, 0x834128a2, 0x51f4, 0x11d0, 0x8f,0x
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

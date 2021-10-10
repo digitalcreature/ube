@@ -713,7 +713,7 @@ public:
 
 constexpr size_t __floor_pow_of_2(size_t __val) {
   return ((__val - 1) & __val) == 0 ? __val
-                                    : __floor_pow_of_2((__val - 1) & __val);
+                                                                                                                  : __floor_pow_of_2((__val - 1) & __val);
 }
 
 constexpr size_t __ceil_pow_of_2(size_t __val) {
@@ -728,45 +728,45 @@ struct __vec_ext_traits {
 };
 
 #if defined(_LIBCPP_COMPILER_CLANG)
-#define _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, _NUM_ELEMENT)                        \
-  template <>                                                                  \
-  struct __vec_ext_traits<_TYPE, sizeof(_TYPE) * _NUM_ELEMENT> {               \
-    using type =                                                               \
-        _TYPE __attribute__((vector_size(sizeof(_TYPE) * _NUM_ELEMENT)));      \
+#define _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, _NUM_ELEMENT)                                                                            \
+  template <>                                                                                                                                                                                                                 \
+  struct __vec_ext_traits<_TYPE, sizeof(_TYPE) * _NUM_ELEMENT> {                                         \
+    using type =                                                                                                                                                                                                 \
+                     _TYPE __attribute__((vector_size(sizeof(_TYPE) * _NUM_ELEMENT)));                   \
   }
 
-#define _LIBCPP_SPECIALIZE_VEC_EXT_32(_TYPE)                                   \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 1);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 2);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 3);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 4);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 5);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 6);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 7);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 8);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 9);                                        \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 10);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 11);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 12);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 13);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 14);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 15);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 16);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 17);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 18);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 19);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 20);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 21);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 22);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 23);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 24);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 25);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 26);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 27);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 28);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 29);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 30);                                       \
-  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 31);                                       \
+#define _LIBCPP_SPECIALIZE_VEC_EXT_32(_TYPE)                                                                                                    \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 1);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 2);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 3);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 4);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 5);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 6);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 7);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 8);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 9);                                                                                                                      \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 10);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 11);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 12);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 13);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 14);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 15);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 16);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 17);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 18);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 19);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 20);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 21);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 22);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 23);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 24);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 25);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 26);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 27);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 28);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 29);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 30);                                                                                                                     \
+  _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 31);                                                                                                                     \
   _LIBCPP_SPECIALIZE_VEC_EXT(_TYPE, 32);
 
 _LIBCPP_SPECIALIZE_VEC_EXT_32(char);
@@ -794,7 +794,7 @@ _LIBCPP_SPECIALIZE_VEC_EXT_32(long double);
 template <class _Tp, int __num_element>
 class __simd_storage<_Tp, __simd_abi<_StorageKind::_VecExt, __num_element>> {
   using _StorageType =
-      typename __vec_ext_traits<_Tp, sizeof(_Tp) * __num_element>::type;
+                   typename __vec_ext_traits<_Tp, sizeof(_Tp) * __num_element>::type;
 
   _StorageType __storage_;
 
@@ -827,7 +827,7 @@ class __simd_reference {
   size_t __index_;
 
   __simd_reference(__simd_storage<_Tp, _Abi>* __ptr, size_t __index)
-      : __ptr_(__ptr), __index_(__index) {}
+                   : __ptr_(__ptr), __index_(__index) {}
 
   __simd_reference(const __simd_reference&) = default;
 
@@ -916,16 +916,16 @@ constexpr bool __is_non_narrowing_convertible_impl(...) {
 
 template <class _From, class _To>
 constexpr typename std::enable_if<std::is_arithmetic<_To>::value &&
-                                      std::is_arithmetic<_From>::value,
-                                  bool>::type
+                                                                                                                    std::is_arithmetic<_From>::value,
+                                                                                                   bool>::type
 __is_non_narrowing_arithmetic_convertible() {
   return __is_non_narrowing_convertible_impl<_To>(_From{});
 }
 
 template <class _From, class _To>
 constexpr typename std::enable_if<!(std::is_arithmetic<_To>::value &&
-                                    std::is_arithmetic<_From>::value),
-                                  bool>::type
+                                                                                                                  std::is_arithmetic<_From>::value),
+                                                                                                   bool>::type
 __is_non_narrowing_arithmetic_convertible() {
   return false;
 }
@@ -948,7 +948,7 @@ struct __nodeduce {
 template <class _Tp>
 constexpr bool __vectorizable() {
   return std::is_arithmetic<_Tp>::value && !std::is_const<_Tp>::value &&
-         !std::is_volatile<_Tp>::value && !std::is_same<_Tp, bool>::value;
+                      !std::is_volatile<_Tp>::value && !std::is_same<_Tp, bool>::value;
 }
 
 _LIBCPP_END_NAMESPACE_EXPERIMENTAL_SIMD
@@ -968,7 +968,7 @@ using compatible = fixed_size<16 / sizeof(_Tp)>;
 #ifndef _LIBCPP_HAS_NO_VECTOR_EXTENSION
 template <class _Tp>
 using native = __simd_abi<_StorageKind::_VecExt,
-                          _LIBCPP_NATIVE_SIMD_WIDTH_IN_BYTES / sizeof(_Tp)>;
+                                                                              _LIBCPP_NATIVE_SIMD_WIDTH_IN_BYTES / sizeof(_Tp)>;
 #else
 template <class _Tp>
 using native =
@@ -1051,9 +1051,9 @@ template <class _Tp, _StorageKind __kind, int _Np>
 struct simd_size<_Tp, __simd_abi<__kind, _Np>>
     : std::integral_constant<size_t, _Np> {
   static_assert(
-      std::is_arithmetic<_Tp>::value &&
-          !std::is_same<typename std::remove_const<_Tp>::type, bool>::value,
-      "Element type should be vectorizable");
+                   std::is_arithmetic<_Tp>::value &&
+                       !std::is_same<typename std::remove_const<_Tp>::type, bool>::value,
+                   "Element type should be vectorizable");
 };
 
 // TODO: implement it.
@@ -1091,8 +1091,8 @@ template <class _Tp, class _NewAbi>
 struct __static_simd_cast_traits<simd<_Tp, _NewAbi>> {
   template <class _Up, class _Abi>
   static typename std::enable_if<simd<_Up, _Abi>::size() ==
-                                     simd<_Tp, _NewAbi>::size(),
-                                 simd<_Tp, _NewAbi>>::type
+                                                                                                                   simd<_Tp, _NewAbi>::size(),
+                                                                                                  simd<_Tp, _NewAbi>>::type
   __apply(const simd<_Up, _Abi>& __v);
 };
 
@@ -1100,8 +1100,8 @@ template <class _Tp>
 struct __simd_cast_traits {
   template <class _Up, class _Abi>
   static typename std::enable_if<
-      __is_non_narrowing_arithmetic_convertible<_Up, _Tp>(),
-      simd<_Tp, _Abi>>::type
+                   __is_non_narrowing_arithmetic_convertible<_Up, _Tp>(),
+                   simd<_Tp, _Abi>>::type
   __apply(const simd<_Up, _Abi>& __v);
 };
 
@@ -1109,9 +1109,9 @@ template <class _Tp, class _NewAbi>
 struct __simd_cast_traits<simd<_Tp, _NewAbi>> {
   template <class _Up, class _Abi>
   static typename std::enable_if<
-      __is_non_narrowing_arithmetic_convertible<_Up, _Tp>() &&
-          simd<_Up, _Abi>::size() == simd<_Tp, _NewAbi>::size(),
-      simd<_Tp, _NewAbi>>::type
+                   __is_non_narrowing_arithmetic_convertible<_Up, _Tp>() &&
+                       simd<_Up, _Abi>::size() == simd<_Tp, _NewAbi>::size(),
+                   simd<_Tp, _NewAbi>>::type
   __apply(const simd<_Up, _Abi>& __v);
 };
 
@@ -1156,12 +1156,12 @@ split(const simd_mask<_Tp, _Abi>&);
 
 template <class _SimdType, class _Abi>
 array<_SimdType, simd_size<typename _SimdType::value_type, _Abi>::value /
-                     _SimdType::size()>
+                                                            _SimdType::size()>
 split(const simd<typename _SimdType::value_type, _Abi>&);
 
 template <class _SimdType, class _Abi>
 array<_SimdType, simd_size<typename _SimdType::value_type, _Abi>::value /
-                     _SimdType::size()>
+                                                            _SimdType::size()>
 split(const simd_mask<typename _SimdType::value_type, _Abi>&);
 
 template <class _Tp, class... _Abis>
@@ -1170,7 +1170,7 @@ concat(const simd<_Tp, _Abis>&...);
 
 template <class _Tp, class... _Abis>
 simd_mask<_Tp,
-          abi_for_size_t<_Tp, __variadic_sum(simd_size<_Tp, _Abis>::value...)>>
+                       abi_for_size_t<_Tp, __variadic_sum(simd_size<_Tp, _Abis>::value...)>>
 concat(const simd_mask<_Tp, _Abis>&...);
 
 // reductions [simd.mask.reductions]
@@ -1210,17 +1210,17 @@ where(const typename simd<_Tp, _Abi>::mask_type&, simd<_Tp, _Abi>&) noexcept;
 template <class _Tp, class _Abi>
 const_where_expression<simd_mask<_Tp, _Abi>, const simd<_Tp, _Abi>>
 where(const typename simd<_Tp, _Abi>::mask_type&,
-      const simd<_Tp, _Abi>&) noexcept;
+                   const simd<_Tp, _Abi>&) noexcept;
 
 template <class _Tp, class _Abi>
 where_expression<simd_mask<_Tp, _Abi>, simd_mask<_Tp, _Abi>>
 where(const typename __nodeduce<simd_mask<_Tp, _Abi>>::type&,
-      simd_mask<_Tp, _Abi>&) noexcept;
+                   simd_mask<_Tp, _Abi>&) noexcept;
 
 template <class _Tp, class _Abi>
 const_where_expression<simd_mask<_Tp, _Abi>, const simd_mask<_Tp, _Abi>>
 where(const typename __nodeduce<simd_mask<_Tp, _Abi>>::type&,
-      const simd_mask<_Tp, _Abi>&) noexcept;
+                   const simd_mask<_Tp, _Abi>&) noexcept;
 
 template <class _Tp>
 where_expression<bool, _Tp> where(bool, _Tp&) noexcept;
@@ -1235,32 +1235,32 @@ _Tp reduce(const simd<_Tp, _Abi>&, _BinaryOp = _BinaryOp());
 template <class _MaskType, class _SimdType, class _BinaryOp>
 typename _SimdType::value_type
 reduce(const const_where_expression<_MaskType, _SimdType>&,
-       typename _SimdType::value_type neutral_element, _BinaryOp binary_op);
+                    typename _SimdType::value_type neutral_element, _BinaryOp binary_op);
 
 template <class _MaskType, class _SimdType>
 typename _SimdType::value_type
 reduce(const const_where_expression<_MaskType, _SimdType>&,
-       plus<typename _SimdType::value_type> binary_op = {});
+                    plus<typename _SimdType::value_type> binary_op = {});
 
 template <class _MaskType, class _SimdType>
 typename _SimdType::value_type
 reduce(const const_where_expression<_MaskType, _SimdType>&,
-       multiplies<typename _SimdType::value_type> binary_op);
+                    multiplies<typename _SimdType::value_type> binary_op);
 
 template <class _MaskType, class _SimdType>
 typename _SimdType::value_type
 reduce(const const_where_expression<_MaskType, _SimdType>&,
-       bit_and<typename _SimdType::value_type> binary_op);
+                    bit_and<typename _SimdType::value_type> binary_op);
 
 template <class _MaskType, class _SimdType>
 typename _SimdType::value_type
 reduce(const const_where_expression<_MaskType, _SimdType>&,
-       bit_or<typename _SimdType::value_type> binary_op);
+                    bit_or<typename _SimdType::value_type> binary_op);
 
 template <class _MaskType, class _SimdType>
 typename _SimdType::value_type
 reduce(const const_where_expression<_MaskType, _SimdType>&,
-       bit_xor<typename _SimdType::value_type> binary_op);
+                    bit_xor<typename _SimdType::value_type> binary_op);
 
 template <class _Tp, class _Abi>
 _Tp hmin(const simd<_Tp, _Abi>&);
@@ -1286,7 +1286,7 @@ minmax(const simd<_Tp, _Abi>&, const simd<_Tp, _Abi>&) noexcept;
 
 template <class _Tp, class _Abi>
 simd<_Tp, _Abi> clamp(const simd<_Tp, _Abi>&, const simd<_Tp, _Abi>&,
-                      const simd<_Tp, _Abi>&);
+                                                             const simd<_Tp, _Abi>&);
 
 // [simd.whereexpr]
 // TODO implement where expressions.
@@ -1359,24 +1359,24 @@ private:
   template <class _Up>
   static constexpr bool __can_broadcast() {
     return (std::is_arithmetic<_Up>::value &&
-            __is_non_narrowing_arithmetic_convertible<_Up, _Tp>()) ||
-           (!std::is_arithmetic<_Up>::value &&
-            std::is_convertible<_Up, _Tp>::value) ||
-           std::is_same<typename std::remove_const<_Up>::type, int>::value ||
-           (std::is_same<typename std::remove_const<_Up>::type,
-                         unsigned int>::value &&
-            std::is_unsigned<_Tp>::value);
+                                      __is_non_narrowing_arithmetic_convertible<_Up, _Tp>()) ||
+                        (!std::is_arithmetic<_Up>::value &&
+                                      std::is_convertible<_Up, _Tp>::value) ||
+                        std::is_same<typename std::remove_const<_Up>::type, int>::value ||
+                        (std::is_same<typename std::remove_const<_Up>::type,
+                                                                             unsigned int>::value &&
+                                      std::is_unsigned<_Tp>::value);
   }
 
   template <class _Generator, size_t... __indicies>
   static constexpr decltype(
-      std::forward_as_tuple(std::declval<_Generator>()(
-          std::integral_constant<size_t, __indicies>())...),
-      bool())
+                   std::forward_as_tuple(std::declval<_Generator>()(
+                       std::integral_constant<size_t, __indicies>())...),
+                   bool())
   __can_generate(std::index_sequence<__indicies...>) {
     return !__variadic_sum<bool>(
-        !__can_broadcast<decltype(std::declval<_Generator>()(
-            std::integral_constant<size_t, __indicies>()))>()...);
+                     !__can_broadcast<decltype(std::declval<_Generator>()(
+                                      std::integral_constant<size_t, __indicies>()))>()...);
   }
 
   template <class _Generator>
@@ -1387,59 +1387,59 @@ private:
   template <class _Generator, size_t... __indicies>
   void __generator_init(_Generator&& __g, std::index_sequence<__indicies...>) {
     int __not_used[]{((*this)[__indicies] =
-                          __g(std::integral_constant<size_t, __indicies>()),
-                      0)...};
+                                                                              __g(std::integral_constant<size_t, __indicies>()),
+                                                             0)...};
     (void)__not_used;
   }
 
 public:
   // implicit type conversion constructor
   template <class _Up,
-            class = typename std::enable_if<
-                std::is_same<_Abi, simd_abi::fixed_size<size()>>::value &&
-                __is_non_narrowing_arithmetic_convertible<_Up, _Tp>()>::type>
+                                      class = typename std::enable_if<
+                                          std::is_same<_Abi, simd_abi::fixed_size<size()>>::value &&
+                                          __is_non_narrowing_arithmetic_convertible<_Up, _Tp>()>::type>
   simd(const simd<_Up, simd_abi::fixed_size<size()>>& __v) {
     for (size_t __i = 0; __i < size(); __i++) {
-      (*this)[__i] = static_cast<_Tp>(__v[__i]);
+                   (*this)[__i] = static_cast<_Tp>(__v[__i]);
     }
   }
 
   // implicit broadcast constructor
   template <class _Up,
-            class = typename std::enable_if<__can_broadcast<_Up>()>::type>
+                                      class = typename std::enable_if<__can_broadcast<_Up>()>::type>
   simd(_Up&& __rv) {
     auto __v = static_cast<_Tp>(__rv);
     for (size_t __i = 0; __i < size(); __i++) {
-      (*this)[__i] = __v;
+                   (*this)[__i] = __v;
     }
   }
 
   // generator constructor
   template <class _Generator,
-            int = typename std::enable_if<
-                __can_generate<_Generator>(std::make_index_sequence<size()>()),
-                int>::type()>
+                                      int = typename std::enable_if<
+                                          __can_generate<_Generator>(std::make_index_sequence<size()>()),
+                                          int>::type()>
   explicit simd(_Generator&& __g) {
     __generator_init(std::forward<_Generator>(__g),
-                     std::make_index_sequence<size()>());
+                                                            std::make_index_sequence<size()>());
   }
 
   // load constructor
   template <
-      class _Up, class _Flags,
-      class = typename std::enable_if<__vectorizable<_Up>()>::type,
-      class = typename std::enable_if<is_simd_flag_type<_Flags>::value>::type>
+                   class _Up, class _Flags,
+                   class = typename std::enable_if<__vectorizable<_Up>()>::type,
+                   class = typename std::enable_if<is_simd_flag_type<_Flags>::value>::type>
   simd(const _Up* __buffer, _Flags) {
     // TODO: optimize for overaligned flags
     for (size_t __i = 0; __i < size(); __i++) {
-      (*this)[__i] = static_cast<_Tp>(__buffer[__i]);
+                   (*this)[__i] = static_cast<_Tp>(__buffer[__i]);
     }
   }
 
   // loads [simd.load]
   template <class _Up, class _Flags>
   typename std::enable_if<__vectorizable<_Up>() &&
-                          is_simd_flag_type<_Flags>::value>::type
+                                                                              is_simd_flag_type<_Flags>::value>::type
   copy_from(const _Up* __buffer, _Flags) {
     *this = simd(__buffer, _Flags());
   }
@@ -1447,11 +1447,11 @@ public:
   // stores [simd.store]
   template <class _Up, class _Flags>
   typename std::enable_if<__vectorizable<_Up>() &&
-                          is_simd_flag_type<_Flags>::value>::type
+                                                                              is_simd_flag_type<_Flags>::value>::type
   copy_to(_Up* __buffer, _Flags) const {
     // TODO: optimize for overaligned flags
     for (size_t __i = 0; __i < size(); __i++) {
-      __buffer[__i] = static_cast<_Up>((*this)[__i]);
+                   __buffer[__i] = static_cast<_Up>((*this)[__i]);
     }
   }
 

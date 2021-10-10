@@ -40,7 +40,7 @@
 #define ARPHRD_ATM	19		/* ATM 				*/
 #define ARPHRD_METRICOM	23		/* Metricom STRIP (new IANA id)	*/
 #define	ARPHRD_IEEE1394	24		/* IEEE 1394 IPv4 - RFC 2734	*/
-#define ARPHRD_EUI64	27		/* EUI-64                       */
+#define ARPHRD_EUI64	27		/* EUI-64                                                              */
 #define ARPHRD_INFINIBAND 32		/* InfiniBand			*/
 
 /* Dummy types for non ARP hardware */
@@ -53,23 +53,23 @@
 #define ARPHRD_ROSE	270
 #define ARPHRD_X25	271		/* CCITT X.25			*/
 #define ARPHRD_HWX25	272		/* Boards with X.25 in firmware	*/
-#define ARPHRD_CAN	280		/* Controller Area Network      */
+#define ARPHRD_CAN	280		/* Controller Area Network                   */
 #define ARPHRD_PPP	512
 #define ARPHRD_CISCO	513		/* Cisco HDLC	 		*/
 #define ARPHRD_HDLC	ARPHRD_CISCO
 #define ARPHRD_LAPB	516		/* LAPB				*/
 #define ARPHRD_DDCMP    517		/* Digital's DDCMP protocol     */
 #define ARPHRD_RAWHDLC	518		/* Raw HDLC			*/
-#define ARPHRD_RAWIP    519		/* Raw IP                       */
+#define ARPHRD_RAWIP    519		/* Raw IP                                                              */
 
 #define ARPHRD_TUNNEL	768		/* IPIP tunnel			*/
-#define ARPHRD_TUNNEL6	769		/* IP6IP6 tunnel       		*/
-#define ARPHRD_FRAD	770             /* Frame Relay Access Device    */
+#define ARPHRD_TUNNEL6	769		/* IP6IP6 tunnel                    		*/
+#define ARPHRD_FRAD	770                                       /* Frame Relay Access Device    */
 #define ARPHRD_SKIP	771		/* SKIP vif			*/
 #define ARPHRD_LOOPBACK	772		/* Loopback device		*/
 #define ARPHRD_LOCALTLK 773		/* Localtalk device		*/
 #define ARPHRD_FDDI	774		/* Fiber Distributed Data Interface */
-#define ARPHRD_BIF      775             /* AP1000 BIF                   */
+#define ARPHRD_BIF                   775                                       /* AP1000 BIF                                                          */
 #define ARPHRD_SIT	776		/* sit0 device - IPv6-in-IPv4	*/
 #define ARPHRD_IPDDP	777		/* IP over DDP tunneller	*/
 #define ARPHRD_IPGRE	778		/* GRE over IP			*/
@@ -96,7 +96,7 @@
 #define ARPHRD_CAIF	822		/* CAIF media type		*/
 #define ARPHRD_IP6GRE	823		/* GRE over IPv6		*/
 #define ARPHRD_NETLINK	824		/* Netlink header		*/
-#define ARPHRD_6LOWPAN	825		/* IPv6 over LoWPAN             */
+#define ARPHRD_6LOWPAN	825		/* IPv6 over LoWPAN                                       */
 #define ARPHRD_VSOCKMON	826		/* Vsock monitor header		*/
 
 #define ARPHRD_VOID	  0xFFFF	/* Void type, nothing is known */
@@ -117,7 +117,7 @@ struct arpreq {
   struct sockaddr	arp_pa;		/* protocol address		*/
   struct sockaddr	arp_ha;		/* hardware address		*/
   int			arp_flags;	/* flags			*/
-  struct sockaddr       arp_netmask;    /* netmask (only for proxy arps) */
+  struct sockaddr                    arp_netmask;    /* netmask (only for proxy arps) */
   char			arp_dev[16];
 };
 
@@ -125,7 +125,7 @@ struct arpreq_old {
   struct sockaddr	arp_pa;		/* protocol address		*/
   struct sockaddr	arp_ha;		/* hardware address		*/
   int			arp_flags;	/* flags			*/
-  struct sockaddr       arp_netmask;    /* netmask (only for proxy arps) */
+  struct sockaddr                    arp_netmask;    /* netmask (only for proxy arps) */
 };
 
 /* ARP Flag values. */
@@ -133,7 +133,7 @@ struct arpreq_old {
 #define	ATF_PERM	0x04		/* permanent entry		*/
 #define	ATF_PUBL	0x08		/* publish entry		*/
 #define	ATF_USETRAILERS	0x10		/* has requested trailers	*/
-#define ATF_NETMASK     0x20            /* want to use a netmask (only
+#define ATF_NETMASK     0x20                                      /* want to use a netmask (only
 					   for proxy entries) */
 #define ATF_DONTPUB	0x40		/* don't answer this addresses	*/
 

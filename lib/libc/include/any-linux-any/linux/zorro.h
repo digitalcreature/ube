@@ -18,13 +18,13 @@
     /*
      *  Each Zorro board has a 32-bit ID of the form
      *
-     *      mmmmmmmmmmmmmmmmppppppppeeeeeeee
+     *                   mmmmmmmmmmmmmmmmppppppppeeeeeeee
      *
      *  with
      *
-     *      mmmmmmmmmmmmmmmm	16-bit Manufacturer ID (assigned by CBM (sigh))
-     *      pppppppp		8-bit Product ID (assigned by manufacturer)
-     *      eeeeeeee		8-bit Extended Product ID (currently only used
+     *                   mmmmmmmmmmmmmmmm	16-bit Manufacturer ID (assigned by CBM (sigh))
+     *                   pppppppp		8-bit Product ID (assigned by manufacturer)
+     *                   eeeeeeee		8-bit Extended Product ID (currently only used
      *				for some GVP boards)
      */
 

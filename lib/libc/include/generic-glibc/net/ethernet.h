@@ -40,11 +40,11 @@ struct ether_header
 {
   uint8_t  ether_dhost[ETH_ALEN];	/* destination eth addr	*/
   uint8_t  ether_shost[ETH_ALEN];	/* source ether addr	*/
-  uint16_t ether_type;		        /* packet type ID field	*/
+  uint16_t ether_type;		                     /* packet type ID field	*/
 } __attribute__ ((__packed__));
 
 /* Ethernet protocol ID's */
-#define	ETHERTYPE_PUP		0x0200          /* Xerox PUP */
+#define	ETHERTYPE_PUP		0x0200                       /* Xerox PUP */
 #define ETHERTYPE_SPRITE	0x0500		/* Sprite */
 #define	ETHERTYPE_IP		0x0800		/* IP */
 #define	ETHERTYPE_ARP		0x0806		/* Address resolution */
@@ -57,10 +57,10 @@ struct ether_header
 #define ETHERTYPE_LOOPBACK	0x9000		/* used to test interfaces */
 
 
-#define	ETHER_ADDR_LEN	ETH_ALEN                 /* size of ethernet addr */
-#define	ETHER_TYPE_LEN	2                        /* bytes in type field */
-#define	ETHER_CRC_LEN	4                        /* bytes in CRC field */
-#define	ETHER_HDR_LEN	ETH_HLEN                 /* total octets in header */
+#define	ETHER_ADDR_LEN	ETH_ALEN                                           /* size of ethernet addr */
+#define	ETHER_TYPE_LEN	2                                                                            /* bytes in type field */
+#define	ETHER_CRC_LEN	4                                                                            /* bytes in CRC field */
+#define	ETHER_HDR_LEN	ETH_HLEN                                           /* total octets in header */
 #define	ETHER_MIN_LEN	(ETH_ZLEN + ETHER_CRC_LEN) /* min packet length */
 #define	ETHER_MAX_LEN	(ETH_FRAME_LEN + ETHER_CRC_LEN) /* max packet length */
 

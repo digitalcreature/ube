@@ -183,8 +183,8 @@ typedef struct ucontext_t
      */
     int __glibc_reserved1[7];
     union __ctx(uc_regs_ptr) {
-      struct __ctx(pt_regs) *__ctx(regs);
-      mcontext_t *__ctx(uc_regs);
+                   struct __ctx(pt_regs) *__ctx(regs);
+                   mcontext_t *__ctx(uc_regs);
     } uc_mcontext;
     sigset_t    uc_sigmask;
     /* last for extensibility */

@@ -125,12 +125,12 @@ struct atm_dev_stats {
  */
 
 /* Point of loopback				CPU-->SAR-->PHY-->line--> ... */
-#define __ATM_LM_NONE	0	/* no loop back     ^     ^     ^      ^      */
-#define __ATM_LM_AAL	1	/* loop back PDUs --'     |     |      |      */
-#define __ATM_LM_ATM	2	/* loop back ATM cells ---'     |      |      */
-/* RESERVED		4	loop back on PHY side  ---'		      */
-#define __ATM_LM_PHY	8	/* loop back bits (digital) ----'      |      */
-#define __ATM_LM_ANALOG 16	/* loop back the analog signal --------'      */
+#define __ATM_LM_NONE	0	/* no loop back     ^     ^     ^                   ^                   */
+#define __ATM_LM_AAL	1	/* loop back PDUs --'     |     |                   |                   */
+#define __ATM_LM_ATM	2	/* loop back ATM cells ---'     |                   |                   */
+/* RESERVED		4	loop back on PHY side  ---'		                   */
+#define __ATM_LM_PHY	8	/* loop back bits (digital) ----'                   |                   */
+#define __ATM_LM_ANALOG 16	/* loop back the analog signal --------'                   */
 
 /* Direction of loopback */
 #define __ATM_LM_MKLOC(n)	((n))	    /* Local (i.e. loop TX to RX) */
@@ -164,7 +164,7 @@ struct atm_iobuf {
 
 /* for ATM_GETCIRANGE / ATM_SETCIRANGE */
 
-#define ATM_CI_MAX      -1              /* use maximum range of VPI/VCI */
+#define ATM_CI_MAX                   -1                                        /* use maximum range of VPI/VCI */
  
 struct atm_cirange {
 	signed char	vpi_bits;	/* 1..8, ATM_CI_MAX (-1) for maximum */

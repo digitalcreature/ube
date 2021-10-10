@@ -19,7 +19,7 @@ extern "C" {
 #define LC_COLLATE  3
 #define LC_MONETARY 4
 #define LC_MESSAGES 5
-#define LC_ALL      6
+#define LC_ALL                   6
 
 struct lconv {
 	char *decimal_point;
@@ -69,7 +69,7 @@ struct lconv *localeconv(void);
 #define LC_COLLATE_MASK  (1<<LC_COLLATE)
 #define LC_MONETARY_MASK (1<<LC_MONETARY)
 #define LC_MESSAGES_MASK (1<<LC_MESSAGES)
-#define LC_ALL_MASK      0x7fffffff
+#define LC_ALL_MASK                   0x7fffffff
 
 locale_t duplocale(locale_t);
 void freelocale(locale_t);

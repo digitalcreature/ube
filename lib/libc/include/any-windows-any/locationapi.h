@@ -105,14 +105,14 @@ MIDL_INTERFACE("c8b7f7ee-75d0-4db9-b62d-7a0f369ca456")
 ILocationReport : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSensorID(
-        SENSOR_ID *pSensorID) = 0;
+                     SENSOR_ID *pSensorID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimestamp(
-        SYSTEMTIME *pCreationTime) = 0;
+                     SYSTEMTIME *pCreationTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        REFPROPERTYKEY pKey,
-        PROPVARIANT *pValue) = 0;
+                     REFPROPERTYKEY pKey,
+                     PROPVARIANT *pValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -124,29 +124,29 @@ typedef struct ILocationReportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILocationReport *This,
-        REFIID riid,
-        void **ppvObject);
+                     ILocationReport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILocationReport *This);
+                     ILocationReport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILocationReport *This);
+                     ILocationReport *This);
 
     /*** ILocationReport methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSensorID)(
-        ILocationReport *This,
-        SENSOR_ID *pSensorID);
+                     ILocationReport *This,
+                     SENSOR_ID *pSensorID);
 
     HRESULT (STDMETHODCALLTYPE *GetTimestamp)(
-        ILocationReport *This,
-        SYSTEMTIME *pCreationTime);
+                     ILocationReport *This,
+                     SYSTEMTIME *pCreationTime);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        ILocationReport *This,
-        REFPROPERTYKEY pKey,
-        PROPVARIANT *pValue);
+                     ILocationReport *This,
+                     REFPROPERTYKEY pKey,
+                     PROPVARIANT *pValue);
 
     END_INTERFACE
 } ILocationReportVtbl;
@@ -206,25 +206,25 @@ MIDL_INTERFACE("c0b19f70-4adf-445d-87f2-cad8fd711792")
 ICivicAddressReport : public ILocationReport
 {
     virtual HRESULT STDMETHODCALLTYPE GetAddressLine1(
-        BSTR *pbstrAddress1) = 0;
+                     BSTR *pbstrAddress1) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAddressLine2(
-        BSTR *pbstrAddress2) = 0;
+                     BSTR *pbstrAddress2) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCity(
-        BSTR *pbstrCity) = 0;
+                     BSTR *pbstrCity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStateProvince(
-        BSTR *pbstrStateProvince) = 0;
+                     BSTR *pbstrStateProvince) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPostalCode(
-        BSTR *pbstrPostalCode) = 0;
+                     BSTR *pbstrPostalCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCountryRegion(
-        BSTR *pbstrCountryRegion) = 0;
+                     BSTR *pbstrCountryRegion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDetailLevel(
-        DWORD *pDetailLevel) = 0;
+                     DWORD *pDetailLevel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -236,58 +236,58 @@ typedef struct ICivicAddressReportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICivicAddressReport *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICivicAddressReport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICivicAddressReport *This);
+                     ICivicAddressReport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICivicAddressReport *This);
+                     ICivicAddressReport *This);
 
     /*** ILocationReport methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSensorID)(
-        ICivicAddressReport *This,
-        SENSOR_ID *pSensorID);
+                     ICivicAddressReport *This,
+                     SENSOR_ID *pSensorID);
 
     HRESULT (STDMETHODCALLTYPE *GetTimestamp)(
-        ICivicAddressReport *This,
-        SYSTEMTIME *pCreationTime);
+                     ICivicAddressReport *This,
+                     SYSTEMTIME *pCreationTime);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        ICivicAddressReport *This,
-        REFPROPERTYKEY pKey,
-        PROPVARIANT *pValue);
+                     ICivicAddressReport *This,
+                     REFPROPERTYKEY pKey,
+                     PROPVARIANT *pValue);
 
     /*** ICivicAddressReport methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAddressLine1)(
-        ICivicAddressReport *This,
-        BSTR *pbstrAddress1);
+                     ICivicAddressReport *This,
+                     BSTR *pbstrAddress1);
 
     HRESULT (STDMETHODCALLTYPE *GetAddressLine2)(
-        ICivicAddressReport *This,
-        BSTR *pbstrAddress2);
+                     ICivicAddressReport *This,
+                     BSTR *pbstrAddress2);
 
     HRESULT (STDMETHODCALLTYPE *GetCity)(
-        ICivicAddressReport *This,
-        BSTR *pbstrCity);
+                     ICivicAddressReport *This,
+                     BSTR *pbstrCity);
 
     HRESULT (STDMETHODCALLTYPE *GetStateProvince)(
-        ICivicAddressReport *This,
-        BSTR *pbstrStateProvince);
+                     ICivicAddressReport *This,
+                     BSTR *pbstrStateProvince);
 
     HRESULT (STDMETHODCALLTYPE *GetPostalCode)(
-        ICivicAddressReport *This,
-        BSTR *pbstrPostalCode);
+                     ICivicAddressReport *This,
+                     BSTR *pbstrPostalCode);
 
     HRESULT (STDMETHODCALLTYPE *GetCountryRegion)(
-        ICivicAddressReport *This,
-        BSTR *pbstrCountryRegion);
+                     ICivicAddressReport *This,
+                     BSTR *pbstrCountryRegion);
 
     HRESULT (STDMETHODCALLTYPE *GetDetailLevel)(
-        ICivicAddressReport *This,
-        DWORD *pDetailLevel);
+                     ICivicAddressReport *This,
+                     DWORD *pDetailLevel);
 
     END_INTERFACE
 } ICivicAddressReportVtbl;
@@ -377,19 +377,19 @@ MIDL_INTERFACE("7fed806d-0ef8-4f07-80ac-36a0beae3134")
 ILatLongReport : public ILocationReport
 {
     virtual HRESULT STDMETHODCALLTYPE GetLatitude(
-        DOUBLE *pLatitude) = 0;
+                     DOUBLE *pLatitude) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLongitude(
-        DOUBLE *pLongitude) = 0;
+                     DOUBLE *pLongitude) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetErrorRadius(
-        DOUBLE *pErrorRadius) = 0;
+                     DOUBLE *pErrorRadius) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAltitude(
-        DOUBLE *pAltitude) = 0;
+                     DOUBLE *pAltitude) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAltitudeError(
-        DOUBLE *pAltitudeError) = 0;
+                     DOUBLE *pAltitudeError) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -401,50 +401,50 @@ typedef struct ILatLongReportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILatLongReport *This,
-        REFIID riid,
-        void **ppvObject);
+                     ILatLongReport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILatLongReport *This);
+                     ILatLongReport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILatLongReport *This);
+                     ILatLongReport *This);
 
     /*** ILocationReport methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSensorID)(
-        ILatLongReport *This,
-        SENSOR_ID *pSensorID);
+                     ILatLongReport *This,
+                     SENSOR_ID *pSensorID);
 
     HRESULT (STDMETHODCALLTYPE *GetTimestamp)(
-        ILatLongReport *This,
-        SYSTEMTIME *pCreationTime);
+                     ILatLongReport *This,
+                     SYSTEMTIME *pCreationTime);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        ILatLongReport *This,
-        REFPROPERTYKEY pKey,
-        PROPVARIANT *pValue);
+                     ILatLongReport *This,
+                     REFPROPERTYKEY pKey,
+                     PROPVARIANT *pValue);
 
     /*** ILatLongReport methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLatitude)(
-        ILatLongReport *This,
-        DOUBLE *pLatitude);
+                     ILatLongReport *This,
+                     DOUBLE *pLatitude);
 
     HRESULT (STDMETHODCALLTYPE *GetLongitude)(
-        ILatLongReport *This,
-        DOUBLE *pLongitude);
+                     ILatLongReport *This,
+                     DOUBLE *pLongitude);
 
     HRESULT (STDMETHODCALLTYPE *GetErrorRadius)(
-        ILatLongReport *This,
-        DOUBLE *pErrorRadius);
+                     ILatLongReport *This,
+                     DOUBLE *pErrorRadius);
 
     HRESULT (STDMETHODCALLTYPE *GetAltitude)(
-        ILatLongReport *This,
-        DOUBLE *pAltitude);
+                     ILatLongReport *This,
+                     DOUBLE *pAltitude);
 
     HRESULT (STDMETHODCALLTYPE *GetAltitudeError)(
-        ILatLongReport *This,
-        DOUBLE *pAltitudeError);
+                     ILatLongReport *This,
+                     DOUBLE *pAltitudeError);
 
     END_INTERFACE
 } ILatLongReportVtbl;
@@ -526,12 +526,12 @@ MIDL_INTERFACE("a65af77e-969a-4a2e-8aca-33bb7cbb1235")
 IDefaultLocation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetReport(
-        REFIID reportType,
-        ILocationReport *pLocationReport) = 0;
+                     REFIID reportType,
+                     ILocationReport *pLocationReport) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetReport(
-        REFIID reportType,
-        ILocationReport **ppLocationReport) = 0;
+                     REFIID reportType,
+                     ILocationReport **ppLocationReport) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -543,26 +543,26 @@ typedef struct IDefaultLocationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDefaultLocation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDefaultLocation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDefaultLocation *This);
+                     IDefaultLocation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDefaultLocation *This);
+                     IDefaultLocation *This);
 
     /*** IDefaultLocation methods ***/
     HRESULT (STDMETHODCALLTYPE *SetReport)(
-        IDefaultLocation *This,
-        REFIID reportType,
-        ILocationReport *pLocationReport);
+                     IDefaultLocation *This,
+                     REFIID reportType,
+                     ILocationReport *pLocationReport);
 
     HRESULT (STDMETHODCALLTYPE *GetReport)(
-        IDefaultLocation *This,
-        REFIID reportType,
-        ILocationReport **ppLocationReport);
+                     IDefaultLocation *This,
+                     REFIID reportType,
+                     ILocationReport **ppLocationReport);
 
     END_INTERFACE
 } IDefaultLocationVtbl;
@@ -618,12 +618,12 @@ MIDL_INTERFACE("cae02bbf-798b-4508-a207-35a7906dc73d")
 ILocationEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnLocationChanged(
-        REFIID reportType,
-        ILocationReport *pLocationReport) = 0;
+                     REFIID reportType,
+                     ILocationReport *pLocationReport) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStatusChanged(
-        REFIID reportType,
-        LOCATION_REPORT_STATUS newStatus) = 0;
+                     REFIID reportType,
+                     LOCATION_REPORT_STATUS newStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -635,26 +635,26 @@ typedef struct ILocationEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILocationEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     ILocationEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILocationEvents *This);
+                     ILocationEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILocationEvents *This);
+                     ILocationEvents *This);
 
     /*** ILocationEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnLocationChanged)(
-        ILocationEvents *This,
-        REFIID reportType,
-        ILocationReport *pLocationReport);
+                     ILocationEvents *This,
+                     REFIID reportType,
+                     ILocationReport *pLocationReport);
 
     HRESULT (STDMETHODCALLTYPE *OnStatusChanged)(
-        ILocationEvents *This,
-        REFIID reportType,
-        LOCATION_REPORT_STATUS newStatus);
+                     ILocationEvents *This,
+                     REFIID reportType,
+                     LOCATION_REPORT_STATUS newStatus);
 
     END_INTERFACE
 } ILocationEventsVtbl;
@@ -710,42 +710,42 @@ MIDL_INTERFACE("ab2ece69-56d9-4f28-b525-de1b0ee44237")
 ILocation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterForReport(
-        ILocationEvents *pEvents,
-        REFIID reportType,
-        DWORD dwRequestedReportInterval) = 0;
+                     ILocationEvents *pEvents,
+                     REFIID reportType,
+                     DWORD dwRequestedReportInterval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterForReport(
-        REFIID reportType) = 0;
+                     REFIID reportType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetReport(
-        REFIID reportType,
-        ILocationReport **ppLocationReport) = 0;
+                     REFIID reportType,
+                     ILocationReport **ppLocationReport) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetReportStatus(
-        REFIID reportType,
-        LOCATION_REPORT_STATUS *pStatus) = 0;
+                     REFIID reportType,
+                     LOCATION_REPORT_STATUS *pStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetReportInterval(
-        REFIID reportType,
-        DWORD *pMilliseconds) = 0;
+                     REFIID reportType,
+                     DWORD *pMilliseconds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetReportInterval(
-        REFIID reportType,
-        DWORD millisecondsRequested) = 0;
+                     REFIID reportType,
+                     DWORD millisecondsRequested) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDesiredAccuracy(
-        REFIID reportType,
-        LOCATION_DESIRED_ACCURACY *pDesiredAccuracy) = 0;
+                     REFIID reportType,
+                     LOCATION_DESIRED_ACCURACY *pDesiredAccuracy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDesiredAccuracy(
-        REFIID reportType,
-        LOCATION_DESIRED_ACCURACY desiredAccuracy) = 0;
+                     REFIID reportType,
+                     LOCATION_DESIRED_ACCURACY desiredAccuracy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestPermissions(
-        HWND hParent,
-        IID pReportTypes[],
-        ULONG count,
-        WINBOOL fModal) = 0;
+                     HWND hParent,
+                     IID pReportTypes[],
+                     ULONG count,
+                     WINBOOL fModal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -757,63 +757,63 @@ typedef struct ILocationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILocation *This,
-        REFIID riid,
-        void **ppvObject);
+                     ILocation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILocation *This);
+                     ILocation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILocation *This);
+                     ILocation *This);
 
     /*** ILocation methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterForReport)(
-        ILocation *This,
-        ILocationEvents *pEvents,
-        REFIID reportType,
-        DWORD dwRequestedReportInterval);
+                     ILocation *This,
+                     ILocationEvents *pEvents,
+                     REFIID reportType,
+                     DWORD dwRequestedReportInterval);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterForReport)(
-        ILocation *This,
-        REFIID reportType);
+                     ILocation *This,
+                     REFIID reportType);
 
     HRESULT (STDMETHODCALLTYPE *GetReport)(
-        ILocation *This,
-        REFIID reportType,
-        ILocationReport **ppLocationReport);
+                     ILocation *This,
+                     REFIID reportType,
+                     ILocationReport **ppLocationReport);
 
     HRESULT (STDMETHODCALLTYPE *GetReportStatus)(
-        ILocation *This,
-        REFIID reportType,
-        LOCATION_REPORT_STATUS *pStatus);
+                     ILocation *This,
+                     REFIID reportType,
+                     LOCATION_REPORT_STATUS *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetReportInterval)(
-        ILocation *This,
-        REFIID reportType,
-        DWORD *pMilliseconds);
+                     ILocation *This,
+                     REFIID reportType,
+                     DWORD *pMilliseconds);
 
     HRESULT (STDMETHODCALLTYPE *SetReportInterval)(
-        ILocation *This,
-        REFIID reportType,
-        DWORD millisecondsRequested);
+                     ILocation *This,
+                     REFIID reportType,
+                     DWORD millisecondsRequested);
 
     HRESULT (STDMETHODCALLTYPE *GetDesiredAccuracy)(
-        ILocation *This,
-        REFIID reportType,
-        LOCATION_DESIRED_ACCURACY *pDesiredAccuracy);
+                     ILocation *This,
+                     REFIID reportType,
+                     LOCATION_DESIRED_ACCURACY *pDesiredAccuracy);
 
     HRESULT (STDMETHODCALLTYPE *SetDesiredAccuracy)(
-        ILocation *This,
-        REFIID reportType,
-        LOCATION_DESIRED_ACCURACY desiredAccuracy);
+                     ILocation *This,
+                     REFIID reportType,
+                     LOCATION_DESIRED_ACCURACY desiredAccuracy);
 
     HRESULT (STDMETHODCALLTYPE *RequestPermissions)(
-        ILocation *This,
-        HWND hParent,
-        IID pReportTypes[],
-        ULONG count,
-        WINBOOL fModal);
+                     ILocation *This,
+                     HWND hParent,
+                     IID pReportTypes[],
+                     ULONG count,
+                     WINBOOL fModal);
 
     END_INTERFACE
 } ILocationVtbl;
@@ -900,18 +900,18 @@ __CRT_UUID_DECL(Location, 0xe5b8e079, 0xee6d, 0x4e33, 0xa4,0x38, 0xc8,0x7f,0x2e,
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
 
 /* End additional prototypes */
 

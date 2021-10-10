@@ -1059,17 +1059,17 @@ MIDL_INTERFACE("901284e4-33fe-4b69-8d63-634a596f3756")
 ITuningSpaces : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IEnumVARIANT **NewEnum) = 0;
+                     IEnumVARIANT **NewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        VARIANT varIndex,
-        ITuningSpace **TuningSpace) = 0;
+                     VARIANT varIndex,
+                     ITuningSpace **TuningSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EnumTuningSpaces(
-        IEnumTuningSpaces **NewEnum) = 0;
+                     IEnumTuningSpaces **NewEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1081,63 +1081,63 @@ typedef struct ITuningSpacesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITuningSpaces* This,
-        REFIID riid,
-        void **ppvObject);
+                     ITuningSpaces* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITuningSpaces* This);
+                     ITuningSpaces* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITuningSpaces* This);
+                     ITuningSpaces* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITuningSpaces* This,
-        UINT *pctinfo);
+                     ITuningSpaces* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITuningSpaces* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITuningSpaces* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITuningSpaces* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITuningSpaces* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITuningSpaces* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITuningSpaces* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpaces methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ITuningSpaces* This,
-        LONG *Count);
+                     ITuningSpaces* This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ITuningSpaces* This,
-        IEnumVARIANT **NewEnum);
+                     ITuningSpaces* This,
+                     IEnumVARIANT **NewEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        ITuningSpaces* This,
-        VARIANT varIndex,
-        ITuningSpace **TuningSpace);
+                     ITuningSpaces* This,
+                     VARIANT varIndex,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_EnumTuningSpaces)(
-        ITuningSpaces* This,
-        IEnumTuningSpaces **NewEnum);
+                     ITuningSpaces* This,
+                     IEnumTuningSpaces **NewEnum);
 
     END_INTERFACE
 } ITuningSpacesVtbl;
@@ -1251,50 +1251,50 @@ MIDL_INTERFACE("5b692e84-e2f1-11d2-9493-00c04f72d980")
 ITuningSpaceContainer : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IEnumVARIANT **NewEnum) = 0;
+                     IEnumVARIANT **NewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        VARIANT varIndex,
-        ITuningSpace **TuningSpace) = 0;
+                     VARIANT varIndex,
+                     ITuningSpace **TuningSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Item(
-        VARIANT varIndex,
-        ITuningSpace *TuningSpace) = 0;
+                     VARIANT varIndex,
+                     ITuningSpace *TuningSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TuningSpacesForCLSID(
-        BSTR SpaceCLSID,
-        ITuningSpaces **NewColl) = 0;
+                     BSTR SpaceCLSID,
+                     ITuningSpaces **NewColl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE _TuningSpacesForCLSID(
-        REFCLSID SpaceCLSID,
-        ITuningSpaces **NewColl) = 0;
+                     REFCLSID SpaceCLSID,
+                     ITuningSpaces **NewColl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TuningSpacesForName(
-        BSTR Name,
-        ITuningSpaces **NewColl) = 0;
+                     BSTR Name,
+                     ITuningSpaces **NewColl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindID(
-        ITuningSpace *TuningSpace,
-        LONG *ID) = 0;
+                     ITuningSpace *TuningSpace,
+                     LONG *ID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        ITuningSpace *TuningSpace,
-        VARIANT *NewIndex) = 0;
+                     ITuningSpace *TuningSpace,
+                     VARIANT *NewIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EnumTuningSpaces(
-        IEnumTuningSpaces **ppEnum) = 0;
+                     IEnumTuningSpaces **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        VARIANT Index) = 0;
+                     VARIANT Index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MaxCount(
-        LONG *MaxCount) = 0;
+                     LONG *MaxCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MaxCount(
-        LONG MaxCount) = 0;
+                     LONG MaxCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1306,105 +1306,105 @@ typedef struct ITuningSpaceContainerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITuningSpaceContainer* This,
-        REFIID riid,
-        void **ppvObject);
+                     ITuningSpaceContainer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITuningSpaceContainer* This);
+                     ITuningSpaceContainer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITuningSpaceContainer* This);
+                     ITuningSpaceContainer* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITuningSpaceContainer* This,
-        UINT *pctinfo);
+                     ITuningSpaceContainer* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITuningSpaceContainer* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITuningSpaceContainer* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITuningSpaceContainer* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITuningSpaceContainer* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITuningSpaceContainer* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITuningSpaceContainer* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpaceContainer methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ITuningSpaceContainer* This,
-        LONG *Count);
+                     ITuningSpaceContainer* This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ITuningSpaceContainer* This,
-        IEnumVARIANT **NewEnum);
+                     ITuningSpaceContainer* This,
+                     IEnumVARIANT **NewEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        ITuningSpaceContainer* This,
-        VARIANT varIndex,
-        ITuningSpace **TuningSpace);
+                     ITuningSpaceContainer* This,
+                     VARIANT varIndex,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *put_Item)(
-        ITuningSpaceContainer* This,
-        VARIANT varIndex,
-        ITuningSpace *TuningSpace);
+                     ITuningSpaceContainer* This,
+                     VARIANT varIndex,
+                     ITuningSpace *TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *TuningSpacesForCLSID)(
-        ITuningSpaceContainer* This,
-        BSTR SpaceCLSID,
-        ITuningSpaces **NewColl);
+                     ITuningSpaceContainer* This,
+                     BSTR SpaceCLSID,
+                     ITuningSpaces **NewColl);
 
     HRESULT (STDMETHODCALLTYPE *_TuningSpacesForCLSID)(
-        ITuningSpaceContainer* This,
-        REFCLSID SpaceCLSID,
-        ITuningSpaces **NewColl);
+                     ITuningSpaceContainer* This,
+                     REFCLSID SpaceCLSID,
+                     ITuningSpaces **NewColl);
 
     HRESULT (STDMETHODCALLTYPE *TuningSpacesForName)(
-        ITuningSpaceContainer* This,
-        BSTR Name,
-        ITuningSpaces **NewColl);
+                     ITuningSpaceContainer* This,
+                     BSTR Name,
+                     ITuningSpaces **NewColl);
 
     HRESULT (STDMETHODCALLTYPE *FindID)(
-        ITuningSpaceContainer* This,
-        ITuningSpace *TuningSpace,
-        LONG *ID);
+                     ITuningSpaceContainer* This,
+                     ITuningSpace *TuningSpace,
+                     LONG *ID);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ITuningSpaceContainer* This,
-        ITuningSpace *TuningSpace,
-        VARIANT *NewIndex);
+                     ITuningSpaceContainer* This,
+                     ITuningSpace *TuningSpace,
+                     VARIANT *NewIndex);
 
     HRESULT (STDMETHODCALLTYPE *get_EnumTuningSpaces)(
-        ITuningSpaceContainer* This,
-        IEnumTuningSpaces **ppEnum);
+                     ITuningSpaceContainer* This,
+                     IEnumTuningSpaces **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ITuningSpaceContainer* This,
-        VARIANT Index);
+                     ITuningSpaceContainer* This,
+                     VARIANT Index);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxCount)(
-        ITuningSpaceContainer* This,
-        LONG *MaxCount);
+                     ITuningSpaceContainer* This,
+                     LONG *MaxCount);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxCount)(
-        ITuningSpaceContainer* This,
-        LONG MaxCount);
+                     ITuningSpaceContainer* This,
+                     LONG MaxCount);
 
     END_INTERFACE
 } ITuningSpaceContainerVtbl;
@@ -1632,61 +1632,61 @@ MIDL_INTERFACE("061c6e30-e622-11d2-9493-00c04f72d980")
 ITuningSpace : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_UniqueName(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UniqueName(
-        BSTR Name) = 0;
+                     BSTR Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FriendlyName(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FriendlyName(
-        BSTR Name) = 0;
+                     BSTR Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CLSID(
-        BSTR *SpaceCLSID) = 0;
+                     BSTR *SpaceCLSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NetworkType(
-        BSTR *NetworkTypeGuid) = 0;
+                     BSTR *NetworkTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NetworkType(
-        BSTR NetworkTypeGuid) = 0;
+                     BSTR NetworkTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NetworkType(
-        GUID *NetworkTypeGuid) = 0;
+                     GUID *NetworkTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put__NetworkType(
-        REFCLSID NetworkTypeGuid) = 0;
+                     REFCLSID NetworkTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTuneRequest(
-        ITuneRequest **TuneRequest) = 0;
+                     ITuneRequest **TuneRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCategoryGUIDs(
-        IEnumGUID **ppEnum) = 0;
+                     IEnumGUID **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumDeviceMonikers(
-        IEnumMoniker **ppEnum) = 0;
+                     IEnumMoniker **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DefaultPreferredComponentTypes(
-        IComponentTypes **ComponentTypes) = 0;
+                     IComponentTypes **ComponentTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DefaultPreferredComponentTypes(
-        IComponentTypes *NewComponentTypes) = 0;
+                     IComponentTypes *NewComponentTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FrequencyMapping(
-        BSTR *pMapping) = 0;
+                     BSTR *pMapping) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FrequencyMapping(
-        BSTR Mapping) = 0;
+                     BSTR Mapping) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DefaultLocator(
-        ILocator **LocatorVal) = 0;
+                     ILocator **LocatorVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DefaultLocator(
-        ILocator *LocatorVal) = 0;
+                     ILocator *LocatorVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        ITuningSpace **NewTS) = 0;
+                     ITuningSpace **NewTS) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1698,122 +1698,122 @@ typedef struct ITuningSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITuningSpace* This,
-        REFIID riid,
-        void **ppvObject);
+                     ITuningSpace* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITuningSpace* This);
+                     ITuningSpace* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITuningSpace* This);
+                     ITuningSpace* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITuningSpace* This,
-        UINT *pctinfo);
+                     ITuningSpace* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITuningSpace* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITuningSpace* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITuningSpace* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITuningSpace* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITuningSpace* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITuningSpace* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        ITuningSpace* This,
-        BSTR *Name);
+                     ITuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        ITuningSpace* This,
-        BSTR Name);
+                     ITuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        ITuningSpace* This,
-        BSTR *Name);
+                     ITuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        ITuningSpace* This,
-        BSTR Name);
+                     ITuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        ITuningSpace* This,
-        BSTR *SpaceCLSID);
+                     ITuningSpace* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        ITuningSpace* This,
-        BSTR *NetworkTypeGuid);
+                     ITuningSpace* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        ITuningSpace* This,
-        BSTR NetworkTypeGuid);
+                     ITuningSpace* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        ITuningSpace* This,
-        GUID *NetworkTypeGuid);
+                     ITuningSpace* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        ITuningSpace* This,
-        REFCLSID NetworkTypeGuid);
+                     ITuningSpace* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        ITuningSpace* This,
-        ITuneRequest **TuneRequest);
+                     ITuningSpace* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        ITuningSpace* This,
-        IEnumGUID **ppEnum);
+                     ITuningSpace* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        ITuningSpace* This,
-        IEnumMoniker **ppEnum);
+                     ITuningSpace* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        ITuningSpace* This,
-        IComponentTypes **ComponentTypes);
+                     ITuningSpace* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        ITuningSpace* This,
-        IComponentTypes *NewComponentTypes);
+                     ITuningSpace* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        ITuningSpace* This,
-        BSTR *pMapping);
+                     ITuningSpace* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        ITuningSpace* This,
-        BSTR Mapping);
+                     ITuningSpace* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        ITuningSpace* This,
-        ILocator **LocatorVal);
+                     ITuningSpace* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        ITuningSpace* This,
-        ILocator *LocatorVal);
+                     ITuningSpace* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ITuningSpace* This,
-        ITuningSpace **NewTS);
+                     ITuningSpace* This,
+                     ITuningSpace **NewTS);
 
     END_INTERFACE
 } ITuningSpaceVtbl;
@@ -2106,18 +2106,18 @@ MIDL_INTERFACE("8b8eb248-fc2b-11d2-9d8c-00c04f72d980")
 IEnumTuningSpaces : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        ITuningSpace **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     ITuningSpace **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTuningSpaces **ppEnum) = 0;
+                     IEnumTuningSpaces **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2129,33 +2129,33 @@ typedef struct IEnumTuningSpacesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTuningSpaces* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTuningSpaces* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTuningSpaces* This);
+                     IEnumTuningSpaces* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTuningSpaces* This);
+                     IEnumTuningSpaces* This);
 
     /*** IEnumTuningSpaces methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTuningSpaces* This,
-        ULONG celt,
-        ITuningSpace **rgelt,
-        ULONG *pceltFetched);
+                     IEnumTuningSpaces* This,
+                     ULONG celt,
+                     ITuningSpace **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTuningSpaces* This,
-        ULONG celt);
+                     IEnumTuningSpaces* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTuningSpaces* This);
+                     IEnumTuningSpaces* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTuningSpaces* This,
-        IEnumTuningSpaces **ppEnum);
+                     IEnumTuningSpaces* This,
+                     IEnumTuningSpaces **ppEnum);
 
     END_INTERFACE
 } IEnumTuningSpacesVtbl;
@@ -2251,10 +2251,10 @@ MIDL_INTERFACE("ada0b268-3b19-4e5b-acc4-49f852be13ba")
 IDVBTuningSpace : public ITuningSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_SystemType(
-        DVBSystemType *SysType) = 0;
+                     DVBSystemType *SysType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SystemType(
-        DVBSystemType SysType) = 0;
+                     DVBSystemType SysType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2266,131 +2266,131 @@ typedef struct IDVBTuningSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBTuningSpace* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBTuningSpace* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBTuningSpace* This);
+                     IDVBTuningSpace* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBTuningSpace* This);
+                     IDVBTuningSpace* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBTuningSpace* This,
-        UINT *pctinfo);
+                     IDVBTuningSpace* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBTuningSpace* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBTuningSpace* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBTuningSpace* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBTuningSpace* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBTuningSpace* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBTuningSpace* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IDVBTuningSpace* This,
-        BSTR *Name);
+                     IDVBTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IDVBTuningSpace* This,
-        BSTR Name);
+                     IDVBTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IDVBTuningSpace* This,
-        BSTR *Name);
+                     IDVBTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IDVBTuningSpace* This,
-        BSTR Name);
+                     IDVBTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IDVBTuningSpace* This,
-        BSTR *SpaceCLSID);
+                     IDVBTuningSpace* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IDVBTuningSpace* This,
-        BSTR *NetworkTypeGuid);
+                     IDVBTuningSpace* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IDVBTuningSpace* This,
-        BSTR NetworkTypeGuid);
+                     IDVBTuningSpace* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IDVBTuningSpace* This,
-        GUID *NetworkTypeGuid);
+                     IDVBTuningSpace* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IDVBTuningSpace* This,
-        REFCLSID NetworkTypeGuid);
+                     IDVBTuningSpace* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IDVBTuningSpace* This,
-        ITuneRequest **TuneRequest);
+                     IDVBTuningSpace* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IDVBTuningSpace* This,
-        IEnumGUID **ppEnum);
+                     IDVBTuningSpace* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IDVBTuningSpace* This,
-        IEnumMoniker **ppEnum);
+                     IDVBTuningSpace* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IDVBTuningSpace* This,
-        IComponentTypes **ComponentTypes);
+                     IDVBTuningSpace* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IDVBTuningSpace* This,
-        IComponentTypes *NewComponentTypes);
+                     IDVBTuningSpace* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IDVBTuningSpace* This,
-        BSTR *pMapping);
+                     IDVBTuningSpace* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IDVBTuningSpace* This,
-        BSTR Mapping);
+                     IDVBTuningSpace* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IDVBTuningSpace* This,
-        ILocator **LocatorVal);
+                     IDVBTuningSpace* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IDVBTuningSpace* This,
-        ILocator *LocatorVal);
+                     IDVBTuningSpace* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBTuningSpace* This,
-        ITuningSpace **NewTS);
+                     IDVBTuningSpace* This,
+                     ITuningSpace **NewTS);
 
     /*** IDVBTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SystemType)(
-        IDVBTuningSpace* This,
-        DVBSystemType *SysType);
+                     IDVBTuningSpace* This,
+                     DVBSystemType *SysType);
 
     HRESULT (STDMETHODCALLTYPE *put_SystemType)(
-        IDVBTuningSpace* This,
-        DVBSystemType SysType);
+                     IDVBTuningSpace* This,
+                     DVBSystemType SysType);
 
     END_INTERFACE
 } IDVBTuningSpaceVtbl;
@@ -2557,10 +2557,10 @@ MIDL_INTERFACE("843188b4-ce62-43db-966b-8145a094e040")
 IDVBTuningSpace2 : public IDVBTuningSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_NetworkID(
-        LONG *NetworkID) = 0;
+                     LONG *NetworkID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NetworkID(
-        LONG NetworkID) = 0;
+                     LONG NetworkID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2572,140 +2572,140 @@ typedef struct IDVBTuningSpace2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBTuningSpace2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBTuningSpace2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBTuningSpace2* This);
+                     IDVBTuningSpace2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBTuningSpace2* This);
+                     IDVBTuningSpace2* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBTuningSpace2* This,
-        UINT *pctinfo);
+                     IDVBTuningSpace2* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBTuningSpace2* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBTuningSpace2* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBTuningSpace2* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBTuningSpace2* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBTuningSpace2* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBTuningSpace2* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IDVBTuningSpace2* This,
-        BSTR *Name);
+                     IDVBTuningSpace2* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IDVBTuningSpace2* This,
-        BSTR Name);
+                     IDVBTuningSpace2* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IDVBTuningSpace2* This,
-        BSTR *Name);
+                     IDVBTuningSpace2* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IDVBTuningSpace2* This,
-        BSTR Name);
+                     IDVBTuningSpace2* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IDVBTuningSpace2* This,
-        BSTR *SpaceCLSID);
+                     IDVBTuningSpace2* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IDVBTuningSpace2* This,
-        BSTR *NetworkTypeGuid);
+                     IDVBTuningSpace2* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IDVBTuningSpace2* This,
-        BSTR NetworkTypeGuid);
+                     IDVBTuningSpace2* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IDVBTuningSpace2* This,
-        GUID *NetworkTypeGuid);
+                     IDVBTuningSpace2* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IDVBTuningSpace2* This,
-        REFCLSID NetworkTypeGuid);
+                     IDVBTuningSpace2* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IDVBTuningSpace2* This,
-        ITuneRequest **TuneRequest);
+                     IDVBTuningSpace2* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IDVBTuningSpace2* This,
-        IEnumGUID **ppEnum);
+                     IDVBTuningSpace2* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IDVBTuningSpace2* This,
-        IEnumMoniker **ppEnum);
+                     IDVBTuningSpace2* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IDVBTuningSpace2* This,
-        IComponentTypes **ComponentTypes);
+                     IDVBTuningSpace2* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IDVBTuningSpace2* This,
-        IComponentTypes *NewComponentTypes);
+                     IDVBTuningSpace2* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IDVBTuningSpace2* This,
-        BSTR *pMapping);
+                     IDVBTuningSpace2* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IDVBTuningSpace2* This,
-        BSTR Mapping);
+                     IDVBTuningSpace2* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IDVBTuningSpace2* This,
-        ILocator **LocatorVal);
+                     IDVBTuningSpace2* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IDVBTuningSpace2* This,
-        ILocator *LocatorVal);
+                     IDVBTuningSpace2* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBTuningSpace2* This,
-        ITuningSpace **NewTS);
+                     IDVBTuningSpace2* This,
+                     ITuningSpace **NewTS);
 
     /*** IDVBTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SystemType)(
-        IDVBTuningSpace2* This,
-        DVBSystemType *SysType);
+                     IDVBTuningSpace2* This,
+                     DVBSystemType *SysType);
 
     HRESULT (STDMETHODCALLTYPE *put_SystemType)(
-        IDVBTuningSpace2* This,
-        DVBSystemType SysType);
+                     IDVBTuningSpace2* This,
+                     DVBSystemType SysType);
 
     /*** IDVBTuningSpace2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_NetworkID)(
-        IDVBTuningSpace2* This,
-        LONG *NetworkID);
+                     IDVBTuningSpace2* This,
+                     LONG *NetworkID);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkID)(
-        IDVBTuningSpace2* This,
-        LONG NetworkID);
+                     IDVBTuningSpace2* This,
+                     LONG NetworkID);
 
     END_INTERFACE
 } IDVBTuningSpace2Vtbl;
@@ -2882,34 +2882,34 @@ MIDL_INTERFACE("cdf7be60-d954-42fd-a972-78971958e470")
 IDVBSTuningSpace : public IDVBTuningSpace2
 {
     virtual HRESULT STDMETHODCALLTYPE get_LowOscillator(
-        LONG *LowOscillator) = 0;
+                     LONG *LowOscillator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LowOscillator(
-        LONG LowOscillator) = 0;
+                     LONG LowOscillator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HighOscillator(
-        LONG *HighOscillator) = 0;
+                     LONG *HighOscillator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_HighOscillator(
-        LONG HighOscillator) = 0;
+                     LONG HighOscillator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LNBSwitch(
-        LONG *LNBSwitch) = 0;
+                     LONG *LNBSwitch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LNBSwitch(
-        LONG LNBSwitch) = 0;
+                     LONG LNBSwitch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InputRange(
-        BSTR *InputRange) = 0;
+                     BSTR *InputRange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_InputRange(
-        BSTR InputRange) = 0;
+                     BSTR InputRange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SpectralInversion(
-        SpectralInversion *SpectralInversionVal) = 0;
+                     SpectralInversion *SpectralInversionVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SpectralInversion(
-        SpectralInversion SpectralInversionVal) = 0;
+                     SpectralInversion SpectralInversionVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2921,181 +2921,181 @@ typedef struct IDVBSTuningSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBSTuningSpace* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBSTuningSpace* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBSTuningSpace* This);
+                     IDVBSTuningSpace* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBSTuningSpace* This);
+                     IDVBSTuningSpace* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBSTuningSpace* This,
-        UINT *pctinfo);
+                     IDVBSTuningSpace* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBSTuningSpace* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBSTuningSpace* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBSTuningSpace* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBSTuningSpace* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBSTuningSpace* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBSTuningSpace* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IDVBSTuningSpace* This,
-        BSTR *Name);
+                     IDVBSTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IDVBSTuningSpace* This,
-        BSTR Name);
+                     IDVBSTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IDVBSTuningSpace* This,
-        BSTR *Name);
+                     IDVBSTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IDVBSTuningSpace* This,
-        BSTR Name);
+                     IDVBSTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IDVBSTuningSpace* This,
-        BSTR *SpaceCLSID);
+                     IDVBSTuningSpace* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IDVBSTuningSpace* This,
-        BSTR *NetworkTypeGuid);
+                     IDVBSTuningSpace* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IDVBSTuningSpace* This,
-        BSTR NetworkTypeGuid);
+                     IDVBSTuningSpace* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IDVBSTuningSpace* This,
-        GUID *NetworkTypeGuid);
+                     IDVBSTuningSpace* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IDVBSTuningSpace* This,
-        REFCLSID NetworkTypeGuid);
+                     IDVBSTuningSpace* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IDVBSTuningSpace* This,
-        ITuneRequest **TuneRequest);
+                     IDVBSTuningSpace* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IDVBSTuningSpace* This,
-        IEnumGUID **ppEnum);
+                     IDVBSTuningSpace* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IDVBSTuningSpace* This,
-        IEnumMoniker **ppEnum);
+                     IDVBSTuningSpace* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IDVBSTuningSpace* This,
-        IComponentTypes **ComponentTypes);
+                     IDVBSTuningSpace* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IDVBSTuningSpace* This,
-        IComponentTypes *NewComponentTypes);
+                     IDVBSTuningSpace* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IDVBSTuningSpace* This,
-        BSTR *pMapping);
+                     IDVBSTuningSpace* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IDVBSTuningSpace* This,
-        BSTR Mapping);
+                     IDVBSTuningSpace* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IDVBSTuningSpace* This,
-        ILocator **LocatorVal);
+                     IDVBSTuningSpace* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IDVBSTuningSpace* This,
-        ILocator *LocatorVal);
+                     IDVBSTuningSpace* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBSTuningSpace* This,
-        ITuningSpace **NewTS);
+                     IDVBSTuningSpace* This,
+                     ITuningSpace **NewTS);
 
     /*** IDVBTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SystemType)(
-        IDVBSTuningSpace* This,
-        DVBSystemType *SysType);
+                     IDVBSTuningSpace* This,
+                     DVBSystemType *SysType);
 
     HRESULT (STDMETHODCALLTYPE *put_SystemType)(
-        IDVBSTuningSpace* This,
-        DVBSystemType SysType);
+                     IDVBSTuningSpace* This,
+                     DVBSystemType SysType);
 
     /*** IDVBTuningSpace2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_NetworkID)(
-        IDVBSTuningSpace* This,
-        LONG *NetworkID);
+                     IDVBSTuningSpace* This,
+                     LONG *NetworkID);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkID)(
-        IDVBSTuningSpace* This,
-        LONG NetworkID);
+                     IDVBSTuningSpace* This,
+                     LONG NetworkID);
 
     /*** IDVBSTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LowOscillator)(
-        IDVBSTuningSpace* This,
-        LONG *LowOscillator);
+                     IDVBSTuningSpace* This,
+                     LONG *LowOscillator);
 
     HRESULT (STDMETHODCALLTYPE *put_LowOscillator)(
-        IDVBSTuningSpace* This,
-        LONG LowOscillator);
+                     IDVBSTuningSpace* This,
+                     LONG LowOscillator);
 
     HRESULT (STDMETHODCALLTYPE *get_HighOscillator)(
-        IDVBSTuningSpace* This,
-        LONG *HighOscillator);
+                     IDVBSTuningSpace* This,
+                     LONG *HighOscillator);
 
     HRESULT (STDMETHODCALLTYPE *put_HighOscillator)(
-        IDVBSTuningSpace* This,
-        LONG HighOscillator);
+                     IDVBSTuningSpace* This,
+                     LONG HighOscillator);
 
     HRESULT (STDMETHODCALLTYPE *get_LNBSwitch)(
-        IDVBSTuningSpace* This,
-        LONG *LNBSwitch);
+                     IDVBSTuningSpace* This,
+                     LONG *LNBSwitch);
 
     HRESULT (STDMETHODCALLTYPE *put_LNBSwitch)(
-        IDVBSTuningSpace* This,
-        LONG LNBSwitch);
+                     IDVBSTuningSpace* This,
+                     LONG LNBSwitch);
 
     HRESULT (STDMETHODCALLTYPE *get_InputRange)(
-        IDVBSTuningSpace* This,
-        BSTR *InputRange);
+                     IDVBSTuningSpace* This,
+                     BSTR *InputRange);
 
     HRESULT (STDMETHODCALLTYPE *put_InputRange)(
-        IDVBSTuningSpace* This,
-        BSTR InputRange);
+                     IDVBSTuningSpace* This,
+                     BSTR InputRange);
 
     HRESULT (STDMETHODCALLTYPE *get_SpectralInversion)(
-        IDVBSTuningSpace* This,
-        SpectralInversion *SpectralInversionVal);
+                     IDVBSTuningSpace* This,
+                     SpectralInversion *SpectralInversionVal);
 
     HRESULT (STDMETHODCALLTYPE *put_SpectralInversion)(
-        IDVBSTuningSpace* This,
-        SpectralInversion SpectralInversionVal);
+                     IDVBSTuningSpace* This,
+                     SpectralInversion SpectralInversionVal);
 
     END_INTERFACE
 } IDVBSTuningSpaceVtbl;
@@ -3387,122 +3387,122 @@ typedef struct IAuxInTuningSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAuxInTuningSpace* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAuxInTuningSpace* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAuxInTuningSpace* This);
+                     IAuxInTuningSpace* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAuxInTuningSpace* This);
+                     IAuxInTuningSpace* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAuxInTuningSpace* This,
-        UINT *pctinfo);
+                     IAuxInTuningSpace* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAuxInTuningSpace* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAuxInTuningSpace* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAuxInTuningSpace* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAuxInTuningSpace* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAuxInTuningSpace* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAuxInTuningSpace* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IAuxInTuningSpace* This,
-        BSTR *Name);
+                     IAuxInTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IAuxInTuningSpace* This,
-        BSTR Name);
+                     IAuxInTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IAuxInTuningSpace* This,
-        BSTR *Name);
+                     IAuxInTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IAuxInTuningSpace* This,
-        BSTR Name);
+                     IAuxInTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IAuxInTuningSpace* This,
-        BSTR *SpaceCLSID);
+                     IAuxInTuningSpace* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IAuxInTuningSpace* This,
-        BSTR *NetworkTypeGuid);
+                     IAuxInTuningSpace* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IAuxInTuningSpace* This,
-        BSTR NetworkTypeGuid);
+                     IAuxInTuningSpace* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IAuxInTuningSpace* This,
-        GUID *NetworkTypeGuid);
+                     IAuxInTuningSpace* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IAuxInTuningSpace* This,
-        REFCLSID NetworkTypeGuid);
+                     IAuxInTuningSpace* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IAuxInTuningSpace* This,
-        ITuneRequest **TuneRequest);
+                     IAuxInTuningSpace* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IAuxInTuningSpace* This,
-        IEnumGUID **ppEnum);
+                     IAuxInTuningSpace* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IAuxInTuningSpace* This,
-        IEnumMoniker **ppEnum);
+                     IAuxInTuningSpace* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IAuxInTuningSpace* This,
-        IComponentTypes **ComponentTypes);
+                     IAuxInTuningSpace* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IAuxInTuningSpace* This,
-        IComponentTypes *NewComponentTypes);
+                     IAuxInTuningSpace* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IAuxInTuningSpace* This,
-        BSTR *pMapping);
+                     IAuxInTuningSpace* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IAuxInTuningSpace* This,
-        BSTR Mapping);
+                     IAuxInTuningSpace* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IAuxInTuningSpace* This,
-        ILocator **LocatorVal);
+                     IAuxInTuningSpace* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IAuxInTuningSpace* This,
-        ILocator *LocatorVal);
+                     IAuxInTuningSpace* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAuxInTuningSpace* This,
-        ITuningSpace **NewTS);
+                     IAuxInTuningSpace* This,
+                     ITuningSpace **NewTS);
 
     END_INTERFACE
 } IAuxInTuningSpaceVtbl;
@@ -3643,10 +3643,10 @@ MIDL_INTERFACE("b10931ed-8bfe-4ab0-9dce-e469c29a9729")
 IAuxInTuningSpace2 : public IAuxInTuningSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_CountryCode(
-        LONG *CountryCodeVal) = 0;
+                     LONG *CountryCodeVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CountryCode(
-        LONG NewCountryCodeVal) = 0;
+                     LONG NewCountryCodeVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3658,131 +3658,131 @@ typedef struct IAuxInTuningSpace2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAuxInTuningSpace2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAuxInTuningSpace2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAuxInTuningSpace2* This);
+                     IAuxInTuningSpace2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAuxInTuningSpace2* This);
+                     IAuxInTuningSpace2* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAuxInTuningSpace2* This,
-        UINT *pctinfo);
+                     IAuxInTuningSpace2* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAuxInTuningSpace2* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAuxInTuningSpace2* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAuxInTuningSpace2* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAuxInTuningSpace2* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAuxInTuningSpace2* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAuxInTuningSpace2* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IAuxInTuningSpace2* This,
-        BSTR *Name);
+                     IAuxInTuningSpace2* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IAuxInTuningSpace2* This,
-        BSTR Name);
+                     IAuxInTuningSpace2* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IAuxInTuningSpace2* This,
-        BSTR *Name);
+                     IAuxInTuningSpace2* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IAuxInTuningSpace2* This,
-        BSTR Name);
+                     IAuxInTuningSpace2* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IAuxInTuningSpace2* This,
-        BSTR *SpaceCLSID);
+                     IAuxInTuningSpace2* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IAuxInTuningSpace2* This,
-        BSTR *NetworkTypeGuid);
+                     IAuxInTuningSpace2* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IAuxInTuningSpace2* This,
-        BSTR NetworkTypeGuid);
+                     IAuxInTuningSpace2* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IAuxInTuningSpace2* This,
-        GUID *NetworkTypeGuid);
+                     IAuxInTuningSpace2* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IAuxInTuningSpace2* This,
-        REFCLSID NetworkTypeGuid);
+                     IAuxInTuningSpace2* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IAuxInTuningSpace2* This,
-        ITuneRequest **TuneRequest);
+                     IAuxInTuningSpace2* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IAuxInTuningSpace2* This,
-        IEnumGUID **ppEnum);
+                     IAuxInTuningSpace2* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IAuxInTuningSpace2* This,
-        IEnumMoniker **ppEnum);
+                     IAuxInTuningSpace2* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IAuxInTuningSpace2* This,
-        IComponentTypes **ComponentTypes);
+                     IAuxInTuningSpace2* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IAuxInTuningSpace2* This,
-        IComponentTypes *NewComponentTypes);
+                     IAuxInTuningSpace2* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IAuxInTuningSpace2* This,
-        BSTR *pMapping);
+                     IAuxInTuningSpace2* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IAuxInTuningSpace2* This,
-        BSTR Mapping);
+                     IAuxInTuningSpace2* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IAuxInTuningSpace2* This,
-        ILocator **LocatorVal);
+                     IAuxInTuningSpace2* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IAuxInTuningSpace2* This,
-        ILocator *LocatorVal);
+                     IAuxInTuningSpace2* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAuxInTuningSpace2* This,
-        ITuningSpace **NewTS);
+                     IAuxInTuningSpace2* This,
+                     ITuningSpace **NewTS);
 
     /*** IAuxInTuningSpace2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CountryCode)(
-        IAuxInTuningSpace2* This,
-        LONG *CountryCodeVal);
+                     IAuxInTuningSpace2* This,
+                     LONG *CountryCodeVal);
 
     HRESULT (STDMETHODCALLTYPE *put_CountryCode)(
-        IAuxInTuningSpace2* This,
-        LONG NewCountryCodeVal);
+                     IAuxInTuningSpace2* This,
+                     LONG NewCountryCodeVal);
 
     END_INTERFACE
 } IAuxInTuningSpace2Vtbl;
@@ -3949,28 +3949,28 @@ MIDL_INTERFACE("2a6e293c-2595-11d3-b64c-00c04f79498e")
 IAnalogTVTuningSpace : public ITuningSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_MinChannel(
-        LONG *MinChannelVal) = 0;
+                     LONG *MinChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinChannel(
-        LONG NewMinChannelVal) = 0;
+                     LONG NewMinChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MaxChannel(
-        LONG *MaxChannelVal) = 0;
+                     LONG *MaxChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MaxChannel(
-        LONG NewMaxChannelVal) = 0;
+                     LONG NewMaxChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InputType(
-        TunerInputType *InputTypeVal) = 0;
+                     TunerInputType *InputTypeVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_InputType(
-        TunerInputType NewInputTypeVal) = 0;
+                     TunerInputType NewInputTypeVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CountryCode(
-        LONG *CountryCodeVal) = 0;
+                     LONG *CountryCodeVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CountryCode(
-        LONG NewCountryCodeVal) = 0;
+                     LONG NewCountryCodeVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3982,155 +3982,155 @@ typedef struct IAnalogTVTuningSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAnalogTVTuningSpace* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAnalogTVTuningSpace* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAnalogTVTuningSpace* This);
+                     IAnalogTVTuningSpace* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAnalogTVTuningSpace* This);
+                     IAnalogTVTuningSpace* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAnalogTVTuningSpace* This,
-        UINT *pctinfo);
+                     IAnalogTVTuningSpace* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAnalogTVTuningSpace* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAnalogTVTuningSpace* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAnalogTVTuningSpace* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAnalogTVTuningSpace* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAnalogTVTuningSpace* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAnalogTVTuningSpace* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IAnalogTVTuningSpace* This,
-        BSTR *Name);
+                     IAnalogTVTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IAnalogTVTuningSpace* This,
-        BSTR Name);
+                     IAnalogTVTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IAnalogTVTuningSpace* This,
-        BSTR *Name);
+                     IAnalogTVTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IAnalogTVTuningSpace* This,
-        BSTR Name);
+                     IAnalogTVTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IAnalogTVTuningSpace* This,
-        BSTR *SpaceCLSID);
+                     IAnalogTVTuningSpace* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IAnalogTVTuningSpace* This,
-        BSTR *NetworkTypeGuid);
+                     IAnalogTVTuningSpace* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IAnalogTVTuningSpace* This,
-        BSTR NetworkTypeGuid);
+                     IAnalogTVTuningSpace* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IAnalogTVTuningSpace* This,
-        GUID *NetworkTypeGuid);
+                     IAnalogTVTuningSpace* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IAnalogTVTuningSpace* This,
-        REFCLSID NetworkTypeGuid);
+                     IAnalogTVTuningSpace* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IAnalogTVTuningSpace* This,
-        ITuneRequest **TuneRequest);
+                     IAnalogTVTuningSpace* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IAnalogTVTuningSpace* This,
-        IEnumGUID **ppEnum);
+                     IAnalogTVTuningSpace* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IAnalogTVTuningSpace* This,
-        IEnumMoniker **ppEnum);
+                     IAnalogTVTuningSpace* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IAnalogTVTuningSpace* This,
-        IComponentTypes **ComponentTypes);
+                     IAnalogTVTuningSpace* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IAnalogTVTuningSpace* This,
-        IComponentTypes *NewComponentTypes);
+                     IAnalogTVTuningSpace* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IAnalogTVTuningSpace* This,
-        BSTR *pMapping);
+                     IAnalogTVTuningSpace* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IAnalogTVTuningSpace* This,
-        BSTR Mapping);
+                     IAnalogTVTuningSpace* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IAnalogTVTuningSpace* This,
-        ILocator **LocatorVal);
+                     IAnalogTVTuningSpace* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IAnalogTVTuningSpace* This,
-        ILocator *LocatorVal);
+                     IAnalogTVTuningSpace* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAnalogTVTuningSpace* This,
-        ITuningSpace **NewTS);
+                     IAnalogTVTuningSpace* This,
+                     ITuningSpace **NewTS);
 
     /*** IAnalogTVTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinChannel)(
-        IAnalogTVTuningSpace* This,
-        LONG *MinChannelVal);
+                     IAnalogTVTuningSpace* This,
+                     LONG *MinChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinChannel)(
-        IAnalogTVTuningSpace* This,
-        LONG NewMinChannelVal);
+                     IAnalogTVTuningSpace* This,
+                     LONG NewMinChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxChannel)(
-        IAnalogTVTuningSpace* This,
-        LONG *MaxChannelVal);
+                     IAnalogTVTuningSpace* This,
+                     LONG *MaxChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxChannel)(
-        IAnalogTVTuningSpace* This,
-        LONG NewMaxChannelVal);
+                     IAnalogTVTuningSpace* This,
+                     LONG NewMaxChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_InputType)(
-        IAnalogTVTuningSpace* This,
-        TunerInputType *InputTypeVal);
+                     IAnalogTVTuningSpace* This,
+                     TunerInputType *InputTypeVal);
 
     HRESULT (STDMETHODCALLTYPE *put_InputType)(
-        IAnalogTVTuningSpace* This,
-        TunerInputType NewInputTypeVal);
+                     IAnalogTVTuningSpace* This,
+                     TunerInputType NewInputTypeVal);
 
     HRESULT (STDMETHODCALLTYPE *get_CountryCode)(
-        IAnalogTVTuningSpace* This,
-        LONG *CountryCodeVal);
+                     IAnalogTVTuningSpace* This,
+                     LONG *CountryCodeVal);
 
     HRESULT (STDMETHODCALLTYPE *put_CountryCode)(
-        IAnalogTVTuningSpace* This,
-        LONG NewCountryCodeVal);
+                     IAnalogTVTuningSpace* This,
+                     LONG NewCountryCodeVal);
 
     END_INTERFACE
 } IAnalogTVTuningSpaceVtbl;
@@ -4369,28 +4369,28 @@ MIDL_INTERFACE("0369b4e2-45b6-11d3-b650-00c04f79498e")
 IATSCTuningSpace : public IAnalogTVTuningSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_MinMinorChannel(
-        LONG *MinMinorChannelVal) = 0;
+                     LONG *MinMinorChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinMinorChannel(
-        LONG NewMinMinorChannelVal) = 0;
+                     LONG NewMinMinorChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MaxMinorChannel(
-        LONG *MaxMinorChannelVal) = 0;
+                     LONG *MaxMinorChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MaxMinorChannel(
-        LONG NewMaxMinorChannelVal) = 0;
+                     LONG NewMaxMinorChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MinPhysicalChannel(
-        LONG *MinPhysicalChannelVal) = 0;
+                     LONG *MinPhysicalChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinPhysicalChannel(
-        LONG NewMinPhysicalChannelVal) = 0;
+                     LONG NewMinPhysicalChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MaxPhysicalChannel(
-        LONG *MaxPhysicalChannelVal) = 0;
+                     LONG *MaxPhysicalChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MaxPhysicalChannel(
-        LONG NewMaxPhysicalChannelVal) = 0;
+                     LONG NewMaxPhysicalChannelVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4402,188 +4402,188 @@ typedef struct IATSCTuningSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IATSCTuningSpace* This,
-        REFIID riid,
-        void **ppvObject);
+                     IATSCTuningSpace* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IATSCTuningSpace* This);
+                     IATSCTuningSpace* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IATSCTuningSpace* This);
+                     IATSCTuningSpace* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IATSCTuningSpace* This,
-        UINT *pctinfo);
+                     IATSCTuningSpace* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IATSCTuningSpace* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IATSCTuningSpace* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IATSCTuningSpace* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IATSCTuningSpace* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IATSCTuningSpace* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IATSCTuningSpace* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IATSCTuningSpace* This,
-        BSTR *Name);
+                     IATSCTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IATSCTuningSpace* This,
-        BSTR Name);
+                     IATSCTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IATSCTuningSpace* This,
-        BSTR *Name);
+                     IATSCTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IATSCTuningSpace* This,
-        BSTR Name);
+                     IATSCTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IATSCTuningSpace* This,
-        BSTR *SpaceCLSID);
+                     IATSCTuningSpace* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IATSCTuningSpace* This,
-        BSTR *NetworkTypeGuid);
+                     IATSCTuningSpace* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IATSCTuningSpace* This,
-        BSTR NetworkTypeGuid);
+                     IATSCTuningSpace* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IATSCTuningSpace* This,
-        GUID *NetworkTypeGuid);
+                     IATSCTuningSpace* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IATSCTuningSpace* This,
-        REFCLSID NetworkTypeGuid);
+                     IATSCTuningSpace* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IATSCTuningSpace* This,
-        ITuneRequest **TuneRequest);
+                     IATSCTuningSpace* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IATSCTuningSpace* This,
-        IEnumGUID **ppEnum);
+                     IATSCTuningSpace* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IATSCTuningSpace* This,
-        IEnumMoniker **ppEnum);
+                     IATSCTuningSpace* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IATSCTuningSpace* This,
-        IComponentTypes **ComponentTypes);
+                     IATSCTuningSpace* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IATSCTuningSpace* This,
-        IComponentTypes *NewComponentTypes);
+                     IATSCTuningSpace* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IATSCTuningSpace* This,
-        BSTR *pMapping);
+                     IATSCTuningSpace* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IATSCTuningSpace* This,
-        BSTR Mapping);
+                     IATSCTuningSpace* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IATSCTuningSpace* This,
-        ILocator **LocatorVal);
+                     IATSCTuningSpace* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IATSCTuningSpace* This,
-        ILocator *LocatorVal);
+                     IATSCTuningSpace* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IATSCTuningSpace* This,
-        ITuningSpace **NewTS);
+                     IATSCTuningSpace* This,
+                     ITuningSpace **NewTS);
 
     /*** IAnalogTVTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinChannel)(
-        IATSCTuningSpace* This,
-        LONG *MinChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG *MinChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinChannel)(
-        IATSCTuningSpace* This,
-        LONG NewMinChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG NewMinChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxChannel)(
-        IATSCTuningSpace* This,
-        LONG *MaxChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG *MaxChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxChannel)(
-        IATSCTuningSpace* This,
-        LONG NewMaxChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG NewMaxChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_InputType)(
-        IATSCTuningSpace* This,
-        TunerInputType *InputTypeVal);
+                     IATSCTuningSpace* This,
+                     TunerInputType *InputTypeVal);
 
     HRESULT (STDMETHODCALLTYPE *put_InputType)(
-        IATSCTuningSpace* This,
-        TunerInputType NewInputTypeVal);
+                     IATSCTuningSpace* This,
+                     TunerInputType NewInputTypeVal);
 
     HRESULT (STDMETHODCALLTYPE *get_CountryCode)(
-        IATSCTuningSpace* This,
-        LONG *CountryCodeVal);
+                     IATSCTuningSpace* This,
+                     LONG *CountryCodeVal);
 
     HRESULT (STDMETHODCALLTYPE *put_CountryCode)(
-        IATSCTuningSpace* This,
-        LONG NewCountryCodeVal);
+                     IATSCTuningSpace* This,
+                     LONG NewCountryCodeVal);
 
     /*** IATSCTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinMinorChannel)(
-        IATSCTuningSpace* This,
-        LONG *MinMinorChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG *MinMinorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinMinorChannel)(
-        IATSCTuningSpace* This,
-        LONG NewMinMinorChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG NewMinMinorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxMinorChannel)(
-        IATSCTuningSpace* This,
-        LONG *MaxMinorChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG *MaxMinorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxMinorChannel)(
-        IATSCTuningSpace* This,
-        LONG NewMaxMinorChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG NewMaxMinorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MinPhysicalChannel)(
-        IATSCTuningSpace* This,
-        LONG *MinPhysicalChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG *MinPhysicalChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinPhysicalChannel)(
-        IATSCTuningSpace* This,
-        LONG NewMinPhysicalChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG NewMinPhysicalChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxPhysicalChannel)(
-        IATSCTuningSpace* This,
-        LONG *MaxPhysicalChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG *MaxPhysicalChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxPhysicalChannel)(
-        IATSCTuningSpace* This,
-        LONG NewMaxPhysicalChannelVal);
+                     IATSCTuningSpace* This,
+                     LONG NewMaxPhysicalChannelVal);
 
     END_INTERFACE
 } IATSCTuningSpaceVtbl;
@@ -4856,28 +4856,28 @@ MIDL_INTERFACE("013f9f9c-b449-4ec7-a6d2-9d4f2fc70ae5")
 IDigitalCableTuningSpace : public IATSCTuningSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_MinMajorChannel(
-        LONG *MinMajorChannelVal) = 0;
+                     LONG *MinMajorChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinMajorChannel(
-        LONG NewMinMajorChannelVal) = 0;
+                     LONG NewMinMajorChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MaxMajorChannel(
-        LONG *MaxMajorChannelVal) = 0;
+                     LONG *MaxMajorChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MaxMajorChannel(
-        LONG NewMaxMajorChannelVal) = 0;
+                     LONG NewMaxMajorChannelVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MinSourceID(
-        LONG *MinSourceIDVal) = 0;
+                     LONG *MinSourceIDVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinSourceID(
-        LONG NewMinSourceIDVal) = 0;
+                     LONG NewMinSourceIDVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MaxSourceID(
-        LONG *MaxSourceIDVal) = 0;
+                     LONG *MaxSourceIDVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MaxSourceID(
-        LONG NewMaxSourceIDVal) = 0;
+                     LONG NewMaxSourceIDVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4889,221 +4889,221 @@ typedef struct IDigitalCableTuningSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDigitalCableTuningSpace* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDigitalCableTuningSpace* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDigitalCableTuningSpace* This);
+                     IDigitalCableTuningSpace* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDigitalCableTuningSpace* This);
+                     IDigitalCableTuningSpace* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDigitalCableTuningSpace* This,
-        UINT *pctinfo);
+                     IDigitalCableTuningSpace* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDigitalCableTuningSpace* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDigitalCableTuningSpace* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDigitalCableTuningSpace* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDigitalCableTuningSpace* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDigitalCableTuningSpace* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDigitalCableTuningSpace* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IDigitalCableTuningSpace* This,
-        BSTR *Name);
+                     IDigitalCableTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IDigitalCableTuningSpace* This,
-        BSTR Name);
+                     IDigitalCableTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IDigitalCableTuningSpace* This,
-        BSTR *Name);
+                     IDigitalCableTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IDigitalCableTuningSpace* This,
-        BSTR Name);
+                     IDigitalCableTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IDigitalCableTuningSpace* This,
-        BSTR *SpaceCLSID);
+                     IDigitalCableTuningSpace* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IDigitalCableTuningSpace* This,
-        BSTR *NetworkTypeGuid);
+                     IDigitalCableTuningSpace* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IDigitalCableTuningSpace* This,
-        BSTR NetworkTypeGuid);
+                     IDigitalCableTuningSpace* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IDigitalCableTuningSpace* This,
-        GUID *NetworkTypeGuid);
+                     IDigitalCableTuningSpace* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IDigitalCableTuningSpace* This,
-        REFCLSID NetworkTypeGuid);
+                     IDigitalCableTuningSpace* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IDigitalCableTuningSpace* This,
-        ITuneRequest **TuneRequest);
+                     IDigitalCableTuningSpace* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IDigitalCableTuningSpace* This,
-        IEnumGUID **ppEnum);
+                     IDigitalCableTuningSpace* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IDigitalCableTuningSpace* This,
-        IEnumMoniker **ppEnum);
+                     IDigitalCableTuningSpace* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IDigitalCableTuningSpace* This,
-        IComponentTypes **ComponentTypes);
+                     IDigitalCableTuningSpace* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IDigitalCableTuningSpace* This,
-        IComponentTypes *NewComponentTypes);
+                     IDigitalCableTuningSpace* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IDigitalCableTuningSpace* This,
-        BSTR *pMapping);
+                     IDigitalCableTuningSpace* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IDigitalCableTuningSpace* This,
-        BSTR Mapping);
+                     IDigitalCableTuningSpace* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IDigitalCableTuningSpace* This,
-        ILocator **LocatorVal);
+                     IDigitalCableTuningSpace* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IDigitalCableTuningSpace* This,
-        ILocator *LocatorVal);
+                     IDigitalCableTuningSpace* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDigitalCableTuningSpace* This,
-        ITuningSpace **NewTS);
+                     IDigitalCableTuningSpace* This,
+                     ITuningSpace **NewTS);
 
     /*** IAnalogTVTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG *MinChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MinChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMinChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMinChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG *MaxChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MaxChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMaxChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMaxChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_InputType)(
-        IDigitalCableTuningSpace* This,
-        TunerInputType *InputTypeVal);
+                     IDigitalCableTuningSpace* This,
+                     TunerInputType *InputTypeVal);
 
     HRESULT (STDMETHODCALLTYPE *put_InputType)(
-        IDigitalCableTuningSpace* This,
-        TunerInputType NewInputTypeVal);
+                     IDigitalCableTuningSpace* This,
+                     TunerInputType NewInputTypeVal);
 
     HRESULT (STDMETHODCALLTYPE *get_CountryCode)(
-        IDigitalCableTuningSpace* This,
-        LONG *CountryCodeVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *CountryCodeVal);
 
     HRESULT (STDMETHODCALLTYPE *put_CountryCode)(
-        IDigitalCableTuningSpace* This,
-        LONG NewCountryCodeVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewCountryCodeVal);
 
     /*** IATSCTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinMinorChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG *MinMinorChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MinMinorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinMinorChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMinMinorChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMinMinorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxMinorChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG *MaxMinorChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MaxMinorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxMinorChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMaxMinorChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMaxMinorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MinPhysicalChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG *MinPhysicalChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MinPhysicalChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinPhysicalChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMinPhysicalChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMinPhysicalChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxPhysicalChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG *MaxPhysicalChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MaxPhysicalChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxPhysicalChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMaxPhysicalChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMaxPhysicalChannelVal);
 
     /*** IDigitalCableTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinMajorChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG *MinMajorChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MinMajorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinMajorChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMinMajorChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMinMajorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxMajorChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG *MaxMajorChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MaxMajorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxMajorChannel)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMaxMajorChannelVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMaxMajorChannelVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MinSourceID)(
-        IDigitalCableTuningSpace* This,
-        LONG *MinSourceIDVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MinSourceIDVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinSourceID)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMinSourceIDVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMinSourceIDVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxSourceID)(
-        IDigitalCableTuningSpace* This,
-        LONG *MaxSourceIDVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG *MaxSourceIDVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxSourceID)(
-        IDigitalCableTuningSpace* This,
-        LONG NewMaxSourceIDVal);
+                     IDigitalCableTuningSpace* This,
+                     LONG NewMaxSourceIDVal);
 
     END_INTERFACE
 } IDigitalCableTuningSpaceVtbl;
@@ -5410,22 +5410,22 @@ MIDL_INTERFACE("2a6e293b-2595-11d3-b64c-00c04f79498e")
 IAnalogRadioTuningSpace : public ITuningSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_MinFrequency(
-        LONG *MinFrequencyVal) = 0;
+                     LONG *MinFrequencyVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinFrequency(
-        LONG NewMinFrequencyVal) = 0;
+                     LONG NewMinFrequencyVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MaxFrequency(
-        LONG *MaxFrequencyVal) = 0;
+                     LONG *MaxFrequencyVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MaxFrequency(
-        LONG NewMaxFrequencyVal) = 0;
+                     LONG NewMaxFrequencyVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Step(
-        LONG *StepVal) = 0;
+                     LONG *StepVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Step(
-        LONG NewStepVal) = 0;
+                     LONG NewStepVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5437,147 +5437,147 @@ typedef struct IAnalogRadioTuningSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAnalogRadioTuningSpace* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAnalogRadioTuningSpace* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAnalogRadioTuningSpace* This);
+                     IAnalogRadioTuningSpace* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAnalogRadioTuningSpace* This);
+                     IAnalogRadioTuningSpace* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAnalogRadioTuningSpace* This,
-        UINT *pctinfo);
+                     IAnalogRadioTuningSpace* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAnalogRadioTuningSpace* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAnalogRadioTuningSpace* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAnalogRadioTuningSpace* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAnalogRadioTuningSpace* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAnalogRadioTuningSpace* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAnalogRadioTuningSpace* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IAnalogRadioTuningSpace* This,
-        BSTR *Name);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IAnalogRadioTuningSpace* This,
-        BSTR Name);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IAnalogRadioTuningSpace* This,
-        BSTR *Name);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IAnalogRadioTuningSpace* This,
-        BSTR Name);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IAnalogRadioTuningSpace* This,
-        BSTR *SpaceCLSID);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IAnalogRadioTuningSpace* This,
-        BSTR *NetworkTypeGuid);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IAnalogRadioTuningSpace* This,
-        BSTR NetworkTypeGuid);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IAnalogRadioTuningSpace* This,
-        GUID *NetworkTypeGuid);
+                     IAnalogRadioTuningSpace* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IAnalogRadioTuningSpace* This,
-        REFCLSID NetworkTypeGuid);
+                     IAnalogRadioTuningSpace* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IAnalogRadioTuningSpace* This,
-        ITuneRequest **TuneRequest);
+                     IAnalogRadioTuningSpace* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IAnalogRadioTuningSpace* This,
-        IEnumGUID **ppEnum);
+                     IAnalogRadioTuningSpace* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IAnalogRadioTuningSpace* This,
-        IEnumMoniker **ppEnum);
+                     IAnalogRadioTuningSpace* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IAnalogRadioTuningSpace* This,
-        IComponentTypes **ComponentTypes);
+                     IAnalogRadioTuningSpace* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IAnalogRadioTuningSpace* This,
-        IComponentTypes *NewComponentTypes);
+                     IAnalogRadioTuningSpace* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IAnalogRadioTuningSpace* This,
-        BSTR *pMapping);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IAnalogRadioTuningSpace* This,
-        BSTR Mapping);
+                     IAnalogRadioTuningSpace* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IAnalogRadioTuningSpace* This,
-        ILocator **LocatorVal);
+                     IAnalogRadioTuningSpace* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IAnalogRadioTuningSpace* This,
-        ILocator *LocatorVal);
+                     IAnalogRadioTuningSpace* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAnalogRadioTuningSpace* This,
-        ITuningSpace **NewTS);
+                     IAnalogRadioTuningSpace* This,
+                     ITuningSpace **NewTS);
 
     /*** IAnalogRadioTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinFrequency)(
-        IAnalogRadioTuningSpace* This,
-        LONG *MinFrequencyVal);
+                     IAnalogRadioTuningSpace* This,
+                     LONG *MinFrequencyVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinFrequency)(
-        IAnalogRadioTuningSpace* This,
-        LONG NewMinFrequencyVal);
+                     IAnalogRadioTuningSpace* This,
+                     LONG NewMinFrequencyVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxFrequency)(
-        IAnalogRadioTuningSpace* This,
-        LONG *MaxFrequencyVal);
+                     IAnalogRadioTuningSpace* This,
+                     LONG *MaxFrequencyVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxFrequency)(
-        IAnalogRadioTuningSpace* This,
-        LONG NewMaxFrequencyVal);
+                     IAnalogRadioTuningSpace* This,
+                     LONG NewMaxFrequencyVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Step)(
-        IAnalogRadioTuningSpace* This,
-        LONG *StepVal);
+                     IAnalogRadioTuningSpace* This,
+                     LONG *StepVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Step)(
-        IAnalogRadioTuningSpace* This,
-        LONG NewStepVal);
+                     IAnalogRadioTuningSpace* This,
+                     LONG NewStepVal);
 
     END_INTERFACE
 } IAnalogRadioTuningSpaceVtbl;
@@ -5792,10 +5792,10 @@ MIDL_INTERFACE("39dd45da-2da8-46ba-8a8a-87e2b73d983a")
 IAnalogRadioTuningSpace2 : public IAnalogRadioTuningSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_CountryCode(
-        LONG *CountryCodeVal) = 0;
+                     LONG *CountryCodeVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CountryCode(
-        LONG NewCountryCodeVal) = 0;
+                     LONG NewCountryCodeVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5807,156 +5807,156 @@ typedef struct IAnalogRadioTuningSpace2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAnalogRadioTuningSpace2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAnalogRadioTuningSpace2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAnalogRadioTuningSpace2* This);
+                     IAnalogRadioTuningSpace2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAnalogRadioTuningSpace2* This);
+                     IAnalogRadioTuningSpace2* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAnalogRadioTuningSpace2* This,
-        UINT *pctinfo);
+                     IAnalogRadioTuningSpace2* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAnalogRadioTuningSpace2* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAnalogRadioTuningSpace2* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAnalogRadioTuningSpace2* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAnalogRadioTuningSpace2* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAnalogRadioTuningSpace2* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAnalogRadioTuningSpace2* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UniqueName)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR *Name);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_UniqueName)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR Name);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR *Name);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR Name);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *get_CLSID)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR *SpaceCLSID);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR *SpaceCLSID);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkType)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR *NetworkTypeGuid);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkType)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR NetworkTypeGuid);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get__NetworkType)(
-        IAnalogRadioTuningSpace2* This,
-        GUID *NetworkTypeGuid);
+                     IAnalogRadioTuningSpace2* This,
+                     GUID *NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__NetworkType)(
-        IAnalogRadioTuningSpace2* This,
-        REFCLSID NetworkTypeGuid);
+                     IAnalogRadioTuningSpace2* This,
+                     REFCLSID NetworkTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IAnalogRadioTuningSpace2* This,
-        ITuneRequest **TuneRequest);
+                     IAnalogRadioTuningSpace2* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoryGUIDs)(
-        IAnalogRadioTuningSpace2* This,
-        IEnumGUID **ppEnum);
+                     IAnalogRadioTuningSpace2* This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumDeviceMonikers)(
-        IAnalogRadioTuningSpace2* This,
-        IEnumMoniker **ppEnum);
+                     IAnalogRadioTuningSpace2* This,
+                     IEnumMoniker **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultPreferredComponentTypes)(
-        IAnalogRadioTuningSpace2* This,
-        IComponentTypes **ComponentTypes);
+                     IAnalogRadioTuningSpace2* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultPreferredComponentTypes)(
-        IAnalogRadioTuningSpace2* This,
-        IComponentTypes *NewComponentTypes);
+                     IAnalogRadioTuningSpace2* This,
+                     IComponentTypes *NewComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR *pMapping);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR *pMapping);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IAnalogRadioTuningSpace2* This,
-        BSTR Mapping);
+                     IAnalogRadioTuningSpace2* This,
+                     BSTR Mapping);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultLocator)(
-        IAnalogRadioTuningSpace2* This,
-        ILocator **LocatorVal);
+                     IAnalogRadioTuningSpace2* This,
+                     ILocator **LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DefaultLocator)(
-        IAnalogRadioTuningSpace2* This,
-        ILocator *LocatorVal);
+                     IAnalogRadioTuningSpace2* This,
+                     ILocator *LocatorVal);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAnalogRadioTuningSpace2* This,
-        ITuningSpace **NewTS);
+                     IAnalogRadioTuningSpace2* This,
+                     ITuningSpace **NewTS);
 
     /*** IAnalogRadioTuningSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinFrequency)(
-        IAnalogRadioTuningSpace2* This,
-        LONG *MinFrequencyVal);
+                     IAnalogRadioTuningSpace2* This,
+                     LONG *MinFrequencyVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MinFrequency)(
-        IAnalogRadioTuningSpace2* This,
-        LONG NewMinFrequencyVal);
+                     IAnalogRadioTuningSpace2* This,
+                     LONG NewMinFrequencyVal);
 
     HRESULT (STDMETHODCALLTYPE *get_MaxFrequency)(
-        IAnalogRadioTuningSpace2* This,
-        LONG *MaxFrequencyVal);
+                     IAnalogRadioTuningSpace2* This,
+                     LONG *MaxFrequencyVal);
 
     HRESULT (STDMETHODCALLTYPE *put_MaxFrequency)(
-        IAnalogRadioTuningSpace2* This,
-        LONG NewMaxFrequencyVal);
+                     IAnalogRadioTuningSpace2* This,
+                     LONG NewMaxFrequencyVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Step)(
-        IAnalogRadioTuningSpace2* This,
-        LONG *StepVal);
+                     IAnalogRadioTuningSpace2* This,
+                     LONG *StepVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Step)(
-        IAnalogRadioTuningSpace2* This,
-        LONG NewStepVal);
+                     IAnalogRadioTuningSpace2* This,
+                     LONG NewStepVal);
 
     /*** IAnalogRadioTuningSpace2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CountryCode)(
-        IAnalogRadioTuningSpace2* This,
-        LONG *CountryCodeVal);
+                     IAnalogRadioTuningSpace2* This,
+                     LONG *CountryCodeVal);
 
     HRESULT (STDMETHODCALLTYPE *put_CountryCode)(
-        IAnalogRadioTuningSpace2* This,
-        LONG NewCountryCodeVal);
+                     IAnalogRadioTuningSpace2* This,
+                     LONG NewCountryCodeVal);
 
     END_INTERFACE
 } IAnalogRadioTuningSpace2Vtbl;
@@ -6149,19 +6149,19 @@ MIDL_INTERFACE("07ddc146-fc3d-11d2-9d8c-00c04f72d980")
 ITuneRequest : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_TuningSpace(
-        ITuningSpace **TuningSpace) = 0;
+                     ITuningSpace **TuningSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Components(
-        IComponents **Components) = 0;
+                     IComponents **Components) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        ITuneRequest **NewTuneRequest) = 0;
+                     ITuneRequest **NewTuneRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Locator(
-        ILocator **Locator) = 0;
+                     ILocator **Locator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Locator(
-        ILocator *Locator) = 0;
+                     ILocator *Locator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6173,66 +6173,66 @@ typedef struct ITuneRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITuneRequest* This,
-        REFIID riid,
-        void **ppvObject);
+                     ITuneRequest* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITuneRequest* This);
+                     ITuneRequest* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITuneRequest* This);
+                     ITuneRequest* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITuneRequest* This,
-        UINT *pctinfo);
+                     ITuneRequest* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITuneRequest* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITuneRequest* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITuneRequest* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITuneRequest* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITuneRequest* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITuneRequest* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        ITuneRequest* This,
-        ITuningSpace **TuningSpace);
+                     ITuneRequest* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_Components)(
-        ITuneRequest* This,
-        IComponents **Components);
+                     ITuneRequest* This,
+                     IComponents **Components);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ITuneRequest* This,
-        ITuneRequest **NewTuneRequest);
+                     ITuneRequest* This,
+                     ITuneRequest **NewTuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_Locator)(
-        ITuneRequest* This,
-        ILocator **Locator);
+                     ITuneRequest* This,
+                     ILocator **Locator);
 
     HRESULT (STDMETHODCALLTYPE *put_Locator)(
-        ITuneRequest* This,
-        ILocator *Locator);
+                     ITuneRequest* This,
+                     ILocator *Locator);
 
     END_INTERFACE
 } ITuneRequestVtbl;
@@ -6357,10 +6357,10 @@ MIDL_INTERFACE("156eff60-86f4-4e28-89fc-109799fd57ee")
 IChannelIDTuneRequest : public ITuneRequest
 {
     virtual HRESULT STDMETHODCALLTYPE get_ChannelID(
-        BSTR *ChannelID) = 0;
+                     BSTR *ChannelID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ChannelID(
-        BSTR ChannelID) = 0;
+                     BSTR ChannelID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6372,75 +6372,75 @@ typedef struct IChannelIDTuneRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IChannelIDTuneRequest* This,
-        REFIID riid,
-        void **ppvObject);
+                     IChannelIDTuneRequest* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IChannelIDTuneRequest* This);
+                     IChannelIDTuneRequest* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IChannelIDTuneRequest* This);
+                     IChannelIDTuneRequest* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IChannelIDTuneRequest* This,
-        UINT *pctinfo);
+                     IChannelIDTuneRequest* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IChannelIDTuneRequest* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IChannelIDTuneRequest* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IChannelIDTuneRequest* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IChannelIDTuneRequest* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IChannelIDTuneRequest* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IChannelIDTuneRequest* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        IChannelIDTuneRequest* This,
-        ITuningSpace **TuningSpace);
+                     IChannelIDTuneRequest* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_Components)(
-        IChannelIDTuneRequest* This,
-        IComponents **Components);
+                     IChannelIDTuneRequest* This,
+                     IComponents **Components);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IChannelIDTuneRequest* This,
-        ITuneRequest **NewTuneRequest);
+                     IChannelIDTuneRequest* This,
+                     ITuneRequest **NewTuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_Locator)(
-        IChannelIDTuneRequest* This,
-        ILocator **Locator);
+                     IChannelIDTuneRequest* This,
+                     ILocator **Locator);
 
     HRESULT (STDMETHODCALLTYPE *put_Locator)(
-        IChannelIDTuneRequest* This,
-        ILocator *Locator);
+                     IChannelIDTuneRequest* This,
+                     ILocator *Locator);
 
     /*** IChannelIDTuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ChannelID)(
-        IChannelIDTuneRequest* This,
-        BSTR *ChannelID);
+                     IChannelIDTuneRequest* This,
+                     BSTR *ChannelID);
 
     HRESULT (STDMETHODCALLTYPE *put_ChannelID)(
-        IChannelIDTuneRequest* This,
-        BSTR ChannelID);
+                     IChannelIDTuneRequest* This,
+                     BSTR ChannelID);
 
     END_INTERFACE
 } IChannelIDTuneRequestVtbl;
@@ -6551,10 +6551,10 @@ MIDL_INTERFACE("0369b4e0-45b6-11d3-b650-00c04f79498e")
 IChannelTuneRequest : public ITuneRequest
 {
     virtual HRESULT STDMETHODCALLTYPE get_Channel(
-        LONG *Channel) = 0;
+                     LONG *Channel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Channel(
-        LONG Channel) = 0;
+                     LONG Channel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6566,75 +6566,75 @@ typedef struct IChannelTuneRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IChannelTuneRequest* This,
-        REFIID riid,
-        void **ppvObject);
+                     IChannelTuneRequest* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IChannelTuneRequest* This);
+                     IChannelTuneRequest* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IChannelTuneRequest* This);
+                     IChannelTuneRequest* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IChannelTuneRequest* This,
-        UINT *pctinfo);
+                     IChannelTuneRequest* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IChannelTuneRequest* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IChannelTuneRequest* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IChannelTuneRequest* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IChannelTuneRequest* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IChannelTuneRequest* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IChannelTuneRequest* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        IChannelTuneRequest* This,
-        ITuningSpace **TuningSpace);
+                     IChannelTuneRequest* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_Components)(
-        IChannelTuneRequest* This,
-        IComponents **Components);
+                     IChannelTuneRequest* This,
+                     IComponents **Components);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IChannelTuneRequest* This,
-        ITuneRequest **NewTuneRequest);
+                     IChannelTuneRequest* This,
+                     ITuneRequest **NewTuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_Locator)(
-        IChannelTuneRequest* This,
-        ILocator **Locator);
+                     IChannelTuneRequest* This,
+                     ILocator **Locator);
 
     HRESULT (STDMETHODCALLTYPE *put_Locator)(
-        IChannelTuneRequest* This,
-        ILocator *Locator);
+                     IChannelTuneRequest* This,
+                     ILocator *Locator);
 
     /*** IChannelTuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Channel)(
-        IChannelTuneRequest* This,
-        LONG *Channel);
+                     IChannelTuneRequest* This,
+                     LONG *Channel);
 
     HRESULT (STDMETHODCALLTYPE *put_Channel)(
-        IChannelTuneRequest* This,
-        LONG Channel);
+                     IChannelTuneRequest* This,
+                     LONG Channel);
 
     END_INTERFACE
 } IChannelTuneRequestVtbl;
@@ -6745,10 +6745,10 @@ MIDL_INTERFACE("0369b4e1-45b6-11d3-b650-00c04f79498e")
 IATSCChannelTuneRequest : public IChannelTuneRequest
 {
     virtual HRESULT STDMETHODCALLTYPE get_MinorChannel(
-        LONG *MinorChannel) = 0;
+                     LONG *MinorChannel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinorChannel(
-        LONG MinorChannel) = 0;
+                     LONG MinorChannel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6760,84 +6760,84 @@ typedef struct IATSCChannelTuneRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IATSCChannelTuneRequest* This,
-        REFIID riid,
-        void **ppvObject);
+                     IATSCChannelTuneRequest* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IATSCChannelTuneRequest* This);
+                     IATSCChannelTuneRequest* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IATSCChannelTuneRequest* This);
+                     IATSCChannelTuneRequest* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IATSCChannelTuneRequest* This,
-        UINT *pctinfo);
+                     IATSCChannelTuneRequest* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IATSCChannelTuneRequest* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IATSCChannelTuneRequest* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IATSCChannelTuneRequest* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IATSCChannelTuneRequest* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IATSCChannelTuneRequest* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IATSCChannelTuneRequest* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        IATSCChannelTuneRequest* This,
-        ITuningSpace **TuningSpace);
+                     IATSCChannelTuneRequest* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_Components)(
-        IATSCChannelTuneRequest* This,
-        IComponents **Components);
+                     IATSCChannelTuneRequest* This,
+                     IComponents **Components);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IATSCChannelTuneRequest* This,
-        ITuneRequest **NewTuneRequest);
+                     IATSCChannelTuneRequest* This,
+                     ITuneRequest **NewTuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_Locator)(
-        IATSCChannelTuneRequest* This,
-        ILocator **Locator);
+                     IATSCChannelTuneRequest* This,
+                     ILocator **Locator);
 
     HRESULT (STDMETHODCALLTYPE *put_Locator)(
-        IATSCChannelTuneRequest* This,
-        ILocator *Locator);
+                     IATSCChannelTuneRequest* This,
+                     ILocator *Locator);
 
     /*** IChannelTuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Channel)(
-        IATSCChannelTuneRequest* This,
-        LONG *Channel);
+                     IATSCChannelTuneRequest* This,
+                     LONG *Channel);
 
     HRESULT (STDMETHODCALLTYPE *put_Channel)(
-        IATSCChannelTuneRequest* This,
-        LONG Channel);
+                     IATSCChannelTuneRequest* This,
+                     LONG Channel);
 
     /*** IATSCChannelTuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinorChannel)(
-        IATSCChannelTuneRequest* This,
-        LONG *MinorChannel);
+                     IATSCChannelTuneRequest* This,
+                     LONG *MinorChannel);
 
     HRESULT (STDMETHODCALLTYPE *put_MinorChannel)(
-        IATSCChannelTuneRequest* This,
-        LONG MinorChannel);
+                     IATSCChannelTuneRequest* This,
+                     LONG MinorChannel);
 
     END_INTERFACE
 } IATSCChannelTuneRequestVtbl;
@@ -6958,16 +6958,16 @@ MIDL_INTERFACE("bad7753b-6b37-4810-ae57-3ce0c4a9e6cb")
 IDigitalCableTuneRequest : public IATSCChannelTuneRequest
 {
     virtual HRESULT STDMETHODCALLTYPE get_MajorChannel(
-        LONG *pMajorChannel) = 0;
+                     LONG *pMajorChannel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MajorChannel(
-        LONG MajorChannel) = 0;
+                     LONG MajorChannel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SourceID(
-        LONG *pSourceID) = 0;
+                     LONG *pSourceID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SourceID(
-        LONG SourceID) = 0;
+                     LONG SourceID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6979,101 +6979,101 @@ typedef struct IDigitalCableTuneRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDigitalCableTuneRequest* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDigitalCableTuneRequest* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDigitalCableTuneRequest* This);
+                     IDigitalCableTuneRequest* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDigitalCableTuneRequest* This);
+                     IDigitalCableTuneRequest* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDigitalCableTuneRequest* This,
-        UINT *pctinfo);
+                     IDigitalCableTuneRequest* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDigitalCableTuneRequest* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDigitalCableTuneRequest* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDigitalCableTuneRequest* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDigitalCableTuneRequest* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDigitalCableTuneRequest* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDigitalCableTuneRequest* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        IDigitalCableTuneRequest* This,
-        ITuningSpace **TuningSpace);
+                     IDigitalCableTuneRequest* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_Components)(
-        IDigitalCableTuneRequest* This,
-        IComponents **Components);
+                     IDigitalCableTuneRequest* This,
+                     IComponents **Components);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDigitalCableTuneRequest* This,
-        ITuneRequest **NewTuneRequest);
+                     IDigitalCableTuneRequest* This,
+                     ITuneRequest **NewTuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_Locator)(
-        IDigitalCableTuneRequest* This,
-        ILocator **Locator);
+                     IDigitalCableTuneRequest* This,
+                     ILocator **Locator);
 
     HRESULT (STDMETHODCALLTYPE *put_Locator)(
-        IDigitalCableTuneRequest* This,
-        ILocator *Locator);
+                     IDigitalCableTuneRequest* This,
+                     ILocator *Locator);
 
     /*** IChannelTuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Channel)(
-        IDigitalCableTuneRequest* This,
-        LONG *Channel);
+                     IDigitalCableTuneRequest* This,
+                     LONG *Channel);
 
     HRESULT (STDMETHODCALLTYPE *put_Channel)(
-        IDigitalCableTuneRequest* This,
-        LONG Channel);
+                     IDigitalCableTuneRequest* This,
+                     LONG Channel);
 
     /*** IATSCChannelTuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinorChannel)(
-        IDigitalCableTuneRequest* This,
-        LONG *MinorChannel);
+                     IDigitalCableTuneRequest* This,
+                     LONG *MinorChannel);
 
     HRESULT (STDMETHODCALLTYPE *put_MinorChannel)(
-        IDigitalCableTuneRequest* This,
-        LONG MinorChannel);
+                     IDigitalCableTuneRequest* This,
+                     LONG MinorChannel);
 
     /*** IDigitalCableTuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MajorChannel)(
-        IDigitalCableTuneRequest* This,
-        LONG *pMajorChannel);
+                     IDigitalCableTuneRequest* This,
+                     LONG *pMajorChannel);
 
     HRESULT (STDMETHODCALLTYPE *put_MajorChannel)(
-        IDigitalCableTuneRequest* This,
-        LONG MajorChannel);
+                     IDigitalCableTuneRequest* This,
+                     LONG MajorChannel);
 
     HRESULT (STDMETHODCALLTYPE *get_SourceID)(
-        IDigitalCableTuneRequest* This,
-        LONG *pSourceID);
+                     IDigitalCableTuneRequest* This,
+                     LONG *pSourceID);
 
     HRESULT (STDMETHODCALLTYPE *put_SourceID)(
-        IDigitalCableTuneRequest* This,
-        LONG SourceID);
+                     IDigitalCableTuneRequest* This,
+                     LONG SourceID);
 
     END_INTERFACE
 } IDigitalCableTuneRequestVtbl;
@@ -7228,22 +7228,22 @@ MIDL_INTERFACE("0d6f567e-a636-42bb-83ba-ce4c1704afa2")
 IDVBTuneRequest : public ITuneRequest
 {
     virtual HRESULT STDMETHODCALLTYPE get_ONID(
-        LONG *ONID) = 0;
+                     LONG *ONID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ONID(
-        LONG ONID) = 0;
+                     LONG ONID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TSID(
-        LONG *TSID) = 0;
+                     LONG *TSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TSID(
-        LONG TSID) = 0;
+                     LONG TSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SID(
-        LONG *SID) = 0;
+                     LONG *SID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SID(
-        LONG SID) = 0;
+                     LONG SID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7255,91 +7255,91 @@ typedef struct IDVBTuneRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBTuneRequest* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBTuneRequest* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBTuneRequest* This);
+                     IDVBTuneRequest* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBTuneRequest* This);
+                     IDVBTuneRequest* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBTuneRequest* This,
-        UINT *pctinfo);
+                     IDVBTuneRequest* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBTuneRequest* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBTuneRequest* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBTuneRequest* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBTuneRequest* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBTuneRequest* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBTuneRequest* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        IDVBTuneRequest* This,
-        ITuningSpace **TuningSpace);
+                     IDVBTuneRequest* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_Components)(
-        IDVBTuneRequest* This,
-        IComponents **Components);
+                     IDVBTuneRequest* This,
+                     IComponents **Components);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBTuneRequest* This,
-        ITuneRequest **NewTuneRequest);
+                     IDVBTuneRequest* This,
+                     ITuneRequest **NewTuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_Locator)(
-        IDVBTuneRequest* This,
-        ILocator **Locator);
+                     IDVBTuneRequest* This,
+                     ILocator **Locator);
 
     HRESULT (STDMETHODCALLTYPE *put_Locator)(
-        IDVBTuneRequest* This,
-        ILocator *Locator);
+                     IDVBTuneRequest* This,
+                     ILocator *Locator);
 
     /*** IDVBTuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ONID)(
-        IDVBTuneRequest* This,
-        LONG *ONID);
+                     IDVBTuneRequest* This,
+                     LONG *ONID);
 
     HRESULT (STDMETHODCALLTYPE *put_ONID)(
-        IDVBTuneRequest* This,
-        LONG ONID);
+                     IDVBTuneRequest* This,
+                     LONG ONID);
 
     HRESULT (STDMETHODCALLTYPE *get_TSID)(
-        IDVBTuneRequest* This,
-        LONG *TSID);
+                     IDVBTuneRequest* This,
+                     LONG *TSID);
 
     HRESULT (STDMETHODCALLTYPE *put_TSID)(
-        IDVBTuneRequest* This,
-        LONG TSID);
+                     IDVBTuneRequest* This,
+                     LONG TSID);
 
     HRESULT (STDMETHODCALLTYPE *get_SID)(
-        IDVBTuneRequest* This,
-        LONG *SID);
+                     IDVBTuneRequest* This,
+                     LONG *SID);
 
     HRESULT (STDMETHODCALLTYPE *put_SID)(
-        IDVBTuneRequest* This,
-        LONG SID);
+                     IDVBTuneRequest* This,
+                     LONG SID);
 
     END_INTERFACE
 } IDVBTuneRequestVtbl;
@@ -7498,16 +7498,16 @@ MIDL_INTERFACE("eb7d987f-8a01-42ad-b8ae-574deee44d1a")
 IMPEG2TuneRequest : public ITuneRequest
 {
     virtual HRESULT STDMETHODCALLTYPE get_TSID(
-        LONG *TSID) = 0;
+                     LONG *TSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TSID(
-        LONG TSID) = 0;
+                     LONG TSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ProgNo(
-        LONG *ProgNo) = 0;
+                     LONG *ProgNo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ProgNo(
-        LONG ProgNo) = 0;
+                     LONG ProgNo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7519,83 +7519,83 @@ typedef struct IMPEG2TuneRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMPEG2TuneRequest* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMPEG2TuneRequest* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMPEG2TuneRequest* This);
+                     IMPEG2TuneRequest* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMPEG2TuneRequest* This);
+                     IMPEG2TuneRequest* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IMPEG2TuneRequest* This,
-        UINT *pctinfo);
+                     IMPEG2TuneRequest* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IMPEG2TuneRequest* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IMPEG2TuneRequest* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IMPEG2TuneRequest* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IMPEG2TuneRequest* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IMPEG2TuneRequest* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IMPEG2TuneRequest* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        IMPEG2TuneRequest* This,
-        ITuningSpace **TuningSpace);
+                     IMPEG2TuneRequest* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_Components)(
-        IMPEG2TuneRequest* This,
-        IComponents **Components);
+                     IMPEG2TuneRequest* This,
+                     IComponents **Components);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMPEG2TuneRequest* This,
-        ITuneRequest **NewTuneRequest);
+                     IMPEG2TuneRequest* This,
+                     ITuneRequest **NewTuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_Locator)(
-        IMPEG2TuneRequest* This,
-        ILocator **Locator);
+                     IMPEG2TuneRequest* This,
+                     ILocator **Locator);
 
     HRESULT (STDMETHODCALLTYPE *put_Locator)(
-        IMPEG2TuneRequest* This,
-        ILocator *Locator);
+                     IMPEG2TuneRequest* This,
+                     ILocator *Locator);
 
     /*** IMPEG2TuneRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TSID)(
-        IMPEG2TuneRequest* This,
-        LONG *TSID);
+                     IMPEG2TuneRequest* This,
+                     LONG *TSID);
 
     HRESULT (STDMETHODCALLTYPE *put_TSID)(
-        IMPEG2TuneRequest* This,
-        LONG TSID);
+                     IMPEG2TuneRequest* This,
+                     LONG TSID);
 
     HRESULT (STDMETHODCALLTYPE *get_ProgNo)(
-        IMPEG2TuneRequest* This,
-        LONG *ProgNo);
+                     IMPEG2TuneRequest* This,
+                     LONG *ProgNo);
 
     HRESULT (STDMETHODCALLTYPE *put_ProgNo)(
-        IMPEG2TuneRequest* This,
-        LONG ProgNo);
+                     IMPEG2TuneRequest* This,
+                     LONG ProgNo);
 
     END_INTERFACE
 } IMPEG2TuneRequestVtbl;
@@ -7730,8 +7730,8 @@ MIDL_INTERFACE("14e11abd-ee37-4893-9ea1-6964de933e39")
 IMPEG2TuneRequestFactory : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE CreateTuneRequest(
-        ITuningSpace *TuningSpace,
-        IMPEG2TuneRequest **TuneRequest) = 0;
+                     ITuningSpace *TuningSpace,
+                     IMPEG2TuneRequest **TuneRequest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7743,51 +7743,51 @@ typedef struct IMPEG2TuneRequestFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMPEG2TuneRequestFactory* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMPEG2TuneRequestFactory* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMPEG2TuneRequestFactory* This);
+                     IMPEG2TuneRequestFactory* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMPEG2TuneRequestFactory* This);
+                     IMPEG2TuneRequestFactory* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IMPEG2TuneRequestFactory* This,
-        UINT *pctinfo);
+                     IMPEG2TuneRequestFactory* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IMPEG2TuneRequestFactory* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IMPEG2TuneRequestFactory* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IMPEG2TuneRequestFactory* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IMPEG2TuneRequestFactory* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IMPEG2TuneRequestFactory* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IMPEG2TuneRequestFactory* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IMPEG2TuneRequestFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequest)(
-        IMPEG2TuneRequestFactory* This,
-        ITuningSpace *TuningSpace,
-        IMPEG2TuneRequest **TuneRequest);
+                     IMPEG2TuneRequestFactory* This,
+                     ITuningSpace *TuningSpace,
+                     IMPEG2TuneRequest **TuneRequest);
 
     END_INTERFACE
 } IMPEG2TuneRequestFactoryVtbl;
@@ -7874,15 +7874,15 @@ typedef struct IMPEG2TuneRequestSupportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMPEG2TuneRequestSupport* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMPEG2TuneRequestSupport* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMPEG2TuneRequestSupport* This);
+                     IMPEG2TuneRequestSupport* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMPEG2TuneRequestSupport* This);
+                     IMPEG2TuneRequestSupport* This);
 
     END_INTERFACE
 } IMPEG2TuneRequestSupportVtbl;
@@ -7927,17 +7927,17 @@ MIDL_INTERFACE("e60dfa45-8d56-4e65-a8ab-d6be9412c249")
 ITunerCap : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_SupportedNetworkTypes(
-        ULONG ulcNetworkTypesMax,
-        ULONG *pulcNetworkTypes,
-        GUID *pguidNetworkTypes) = 0;
+                     ULONG ulcNetworkTypesMax,
+                     ULONG *pulcNetworkTypes,
+                     GUID *pguidNetworkTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SupportedVideoFormats(
-        ULONG *pulAMTunerModeType,
-        ULONG *pulAnalogVideoStandard) = 0;
+                     ULONG *pulAMTunerModeType,
+                     ULONG *pulAnalogVideoStandard) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AuxInputCount(
-        ULONG *pulCompositeCount,
-        ULONG *pulSvideoCount) = 0;
+                     ULONG *pulCompositeCount,
+                     ULONG *pulSvideoCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7949,32 +7949,32 @@ typedef struct ITunerCapVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITunerCap* This,
-        REFIID riid,
-        void **ppvObject);
+                     ITunerCap* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITunerCap* This);
+                     ITunerCap* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITunerCap* This);
+                     ITunerCap* This);
 
     /*** ITunerCap methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SupportedNetworkTypes)(
-        ITunerCap* This,
-        ULONG ulcNetworkTypesMax,
-        ULONG *pulcNetworkTypes,
-        GUID *pguidNetworkTypes);
+                     ITunerCap* This,
+                     ULONG ulcNetworkTypesMax,
+                     ULONG *pulcNetworkTypes,
+                     GUID *pguidNetworkTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_SupportedVideoFormats)(
-        ITunerCap* This,
-        ULONG *pulAMTunerModeType,
-        ULONG *pulAnalogVideoStandard);
+                     ITunerCap* This,
+                     ULONG *pulAMTunerModeType,
+                     ULONG *pulAnalogVideoStandard);
 
     HRESULT (STDMETHODCALLTYPE *get_AuxInputCount)(
-        ITunerCap* This,
-        ULONG *pulCompositeCount,
-        ULONG *pulSvideoCount);
+                     ITunerCap* This,
+                     ULONG *pulCompositeCount,
+                     ULONG *pulSvideoCount);
 
     END_INTERFACE
 } ITunerCapVtbl;
@@ -8061,7 +8061,7 @@ MIDL_INTERFACE("ed3e0c66-18c8-4ea6-9300-f6841fdd35dc")
 ITunerCapEx : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_Has608_708Caption(
-        VARIANT_BOOL *pbHasCaption) = 0;
+                     VARIANT_BOOL *pbHasCaption) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8073,20 +8073,20 @@ typedef struct ITunerCapExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITunerCapEx* This,
-        REFIID riid,
-        void **ppvObject);
+                     ITunerCapEx* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITunerCapEx* This);
+                     ITunerCapEx* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITunerCapEx* This);
+                     ITunerCapEx* This);
 
     /*** ITunerCapEx methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Has608_708Caption)(
-        ITunerCapEx* This,
-        VARIANT_BOOL *pbHasCaption);
+                     ITunerCapEx* This,
+                     VARIANT_BOOL *pbHasCaption);
 
     END_INTERFACE
 } ITunerCapExVtbl;
@@ -8145,34 +8145,34 @@ MIDL_INTERFACE("28c52640-018a-11d3-9d8e-00c04f72d980")
 ITuner : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_TuningSpace(
-        ITuningSpace **TuningSpace) = 0;
+                     ITuningSpace **TuningSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TuningSpace(
-        ITuningSpace *TuningSpace) = 0;
+                     ITuningSpace *TuningSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumTuningSpaces(
-        IEnumTuningSpaces **ppEnum) = 0;
+                     IEnumTuningSpaces **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TuneRequest(
-        ITuneRequest **TuneRequest) = 0;
+                     ITuneRequest **TuneRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TuneRequest(
-        ITuneRequest *TuneRequest) = 0;
+                     ITuneRequest *TuneRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Validate(
-        ITuneRequest *TuneRequest) = 0;
+                     ITuneRequest *TuneRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PreferredComponentTypes(
-        IComponentTypes **ComponentTypes) = 0;
+                     IComponentTypes **ComponentTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PreferredComponentTypes(
-        IComponentTypes *ComponentTypes) = 0;
+                     IComponentTypes *ComponentTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SignalStrength(
-        LONG *Strength) = 0;
+                     LONG *Strength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TriggerSignalEvents(
-        LONG Interval) = 0;
+                     LONG Interval) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8184,56 +8184,56 @@ typedef struct ITunerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITuner* This,
-        REFIID riid,
-        void **ppvObject);
+                     ITuner* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITuner* This);
+                     ITuner* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITuner* This);
+                     ITuner* This);
 
     /*** ITuner methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        ITuner* This,
-        ITuningSpace **TuningSpace);
+                     ITuner* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *put_TuningSpace)(
-        ITuner* This,
-        ITuningSpace *TuningSpace);
+                     ITuner* This,
+                     ITuningSpace *TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *EnumTuningSpaces)(
-        ITuner* This,
-        IEnumTuningSpaces **ppEnum);
+                     ITuner* This,
+                     IEnumTuningSpaces **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_TuneRequest)(
-        ITuner* This,
-        ITuneRequest **TuneRequest);
+                     ITuner* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *put_TuneRequest)(
-        ITuner* This,
-        ITuneRequest *TuneRequest);
+                     ITuner* This,
+                     ITuneRequest *TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *Validate)(
-        ITuner* This,
-        ITuneRequest *TuneRequest);
+                     ITuner* This,
+                     ITuneRequest *TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_PreferredComponentTypes)(
-        ITuner* This,
-        IComponentTypes **ComponentTypes);
+                     ITuner* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_PreferredComponentTypes)(
-        ITuner* This,
-        IComponentTypes *ComponentTypes);
+                     ITuner* This,
+                     IComponentTypes *ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalStrength)(
-        ITuner* This,
-        LONG *Strength);
+                     ITuner* This,
+                     LONG *Strength);
 
     HRESULT (STDMETHODCALLTYPE *TriggerSignalEvents)(
-        ITuner* This,
-        LONG Interval);
+                     ITuner* This,
+                     LONG Interval);
 
     END_INTERFACE
 } ITunerVtbl;
@@ -8400,19 +8400,19 @@ MIDL_INTERFACE("1dfd0a5c-0284-11d3-9d8e-00c04f72d980")
 IScanningTuner : public ITuner
 {
     virtual HRESULT STDMETHODCALLTYPE SeekUp(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SeekDown(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScanUp(
-        LONG MillisecondsPause) = 0;
+                     LONG MillisecondsPause) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScanDown(
-        LONG MillisecondsPause) = 0;
+                     LONG MillisecondsPause) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AutoProgram(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8424,74 +8424,74 @@ typedef struct IScanningTunerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IScanningTuner* This,
-        REFIID riid,
-        void **ppvObject);
+                     IScanningTuner* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IScanningTuner* This);
+                     IScanningTuner* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IScanningTuner* This);
+                     IScanningTuner* This);
 
     /*** ITuner methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        IScanningTuner* This,
-        ITuningSpace **TuningSpace);
+                     IScanningTuner* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *put_TuningSpace)(
-        IScanningTuner* This,
-        ITuningSpace *TuningSpace);
+                     IScanningTuner* This,
+                     ITuningSpace *TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *EnumTuningSpaces)(
-        IScanningTuner* This,
-        IEnumTuningSpaces **ppEnum);
+                     IScanningTuner* This,
+                     IEnumTuningSpaces **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_TuneRequest)(
-        IScanningTuner* This,
-        ITuneRequest **TuneRequest);
+                     IScanningTuner* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *put_TuneRequest)(
-        IScanningTuner* This,
-        ITuneRequest *TuneRequest);
+                     IScanningTuner* This,
+                     ITuneRequest *TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *Validate)(
-        IScanningTuner* This,
-        ITuneRequest *TuneRequest);
+                     IScanningTuner* This,
+                     ITuneRequest *TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_PreferredComponentTypes)(
-        IScanningTuner* This,
-        IComponentTypes **ComponentTypes);
+                     IScanningTuner* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_PreferredComponentTypes)(
-        IScanningTuner* This,
-        IComponentTypes *ComponentTypes);
+                     IScanningTuner* This,
+                     IComponentTypes *ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalStrength)(
-        IScanningTuner* This,
-        LONG *Strength);
+                     IScanningTuner* This,
+                     LONG *Strength);
 
     HRESULT (STDMETHODCALLTYPE *TriggerSignalEvents)(
-        IScanningTuner* This,
-        LONG Interval);
+                     IScanningTuner* This,
+                     LONG Interval);
 
     /*** IScanningTuner methods ***/
     HRESULT (STDMETHODCALLTYPE *SeekUp)(
-        IScanningTuner* This);
+                     IScanningTuner* This);
 
     HRESULT (STDMETHODCALLTYPE *SeekDown)(
-        IScanningTuner* This);
+                     IScanningTuner* This);
 
     HRESULT (STDMETHODCALLTYPE *ScanUp)(
-        IScanningTuner* This,
-        LONG MillisecondsPause);
+                     IScanningTuner* This,
+                     LONG MillisecondsPause);
 
     HRESULT (STDMETHODCALLTYPE *ScanDown)(
-        IScanningTuner* This,
-        LONG MillisecondsPause);
+                     IScanningTuner* This,
+                     LONG MillisecondsPause);
 
     HRESULT (STDMETHODCALLTYPE *AutoProgram)(
-        IScanningTuner* This);
+                     IScanningTuner* This);
 
     END_INTERFACE
 } IScanningTunerVtbl;
@@ -8637,39 +8637,39 @@ MIDL_INTERFACE("04bbd195-0e2d-4593-9bd5-4f908bc33cf5")
 IScanningTunerEx : public IScanningTuner
 {
     virtual HRESULT STDMETHODCALLTYPE GetCurrentLocator(
-        ILocator **pILocator) = 0;
+                     ILocator **pILocator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PerformExhaustiveScan(
-        LONG dwLowerFreq,
-        LONG dwHigherFreq,
-        VARIANT_BOOL bFineTune,
-        HEVENT hEvent) = 0;
+                     LONG dwLowerFreq,
+                     LONG dwHigherFreq,
+                     VARIANT_BOOL bFineTune,
+                     HEVENT hEvent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TerminateCurrentScan(
-        LONG *pcurrentFreq) = 0;
+                     LONG *pcurrentFreq) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResumeCurrentScan(
-        HEVENT hEvent) = 0;
+                     HEVENT hEvent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTunerScanningCapability(
-        LONG *HardwareAssistedScanning,
-        LONG *NumStandardsSupported,
-        GUID *BroadcastStandards) = 0;
+                     LONG *HardwareAssistedScanning,
+                     LONG *NumStandardsSupported,
+                     GUID *BroadcastStandards) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTunerStatus(
-        LONG *SecondsLeft,
-        LONG *CurrentLockType,
-        LONG *AutoDetect,
-        LONG *CurrentFreq) = 0;
+                     LONG *SecondsLeft,
+                     LONG *CurrentLockType,
+                     LONG *AutoDetect,
+                     LONG *CurrentFreq) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentTunerStandardCapability(
-        GUID CurrentBroadcastStandard,
-        LONG *SettlingTime,
-        LONG *TvStandardsSupported) = 0;
+                     GUID CurrentBroadcastStandard,
+                     LONG *SettlingTime,
+                     LONG *TvStandardsSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetScanSignalTypeFilter(
-        LONG ScanModulationTypes,
-        LONG AnalogVideoStandard) = 0;
+                     LONG ScanModulationTypes,
+                     LONG AnalogVideoStandard) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8681,118 +8681,118 @@ typedef struct IScanningTunerExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IScanningTunerEx* This,
-        REFIID riid,
-        void **ppvObject);
+                     IScanningTunerEx* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IScanningTunerEx* This);
+                     IScanningTunerEx* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IScanningTunerEx* This);
+                     IScanningTunerEx* This);
 
     /*** ITuner methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TuningSpace)(
-        IScanningTunerEx* This,
-        ITuningSpace **TuningSpace);
+                     IScanningTunerEx* This,
+                     ITuningSpace **TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *put_TuningSpace)(
-        IScanningTunerEx* This,
-        ITuningSpace *TuningSpace);
+                     IScanningTunerEx* This,
+                     ITuningSpace *TuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *EnumTuningSpaces)(
-        IScanningTunerEx* This,
-        IEnumTuningSpaces **ppEnum);
+                     IScanningTunerEx* This,
+                     IEnumTuningSpaces **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_TuneRequest)(
-        IScanningTunerEx* This,
-        ITuneRequest **TuneRequest);
+                     IScanningTunerEx* This,
+                     ITuneRequest **TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *put_TuneRequest)(
-        IScanningTunerEx* This,
-        ITuneRequest *TuneRequest);
+                     IScanningTunerEx* This,
+                     ITuneRequest *TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *Validate)(
-        IScanningTunerEx* This,
-        ITuneRequest *TuneRequest);
+                     IScanningTunerEx* This,
+                     ITuneRequest *TuneRequest);
 
     HRESULT (STDMETHODCALLTYPE *get_PreferredComponentTypes)(
-        IScanningTunerEx* This,
-        IComponentTypes **ComponentTypes);
+                     IScanningTunerEx* This,
+                     IComponentTypes **ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_PreferredComponentTypes)(
-        IScanningTunerEx* This,
-        IComponentTypes *ComponentTypes);
+                     IScanningTunerEx* This,
+                     IComponentTypes *ComponentTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalStrength)(
-        IScanningTunerEx* This,
-        LONG *Strength);
+                     IScanningTunerEx* This,
+                     LONG *Strength);
 
     HRESULT (STDMETHODCALLTYPE *TriggerSignalEvents)(
-        IScanningTunerEx* This,
-        LONG Interval);
+                     IScanningTunerEx* This,
+                     LONG Interval);
 
     /*** IScanningTuner methods ***/
     HRESULT (STDMETHODCALLTYPE *SeekUp)(
-        IScanningTunerEx* This);
+                     IScanningTunerEx* This);
 
     HRESULT (STDMETHODCALLTYPE *SeekDown)(
-        IScanningTunerEx* This);
+                     IScanningTunerEx* This);
 
     HRESULT (STDMETHODCALLTYPE *ScanUp)(
-        IScanningTunerEx* This,
-        LONG MillisecondsPause);
+                     IScanningTunerEx* This,
+                     LONG MillisecondsPause);
 
     HRESULT (STDMETHODCALLTYPE *ScanDown)(
-        IScanningTunerEx* This,
-        LONG MillisecondsPause);
+                     IScanningTunerEx* This,
+                     LONG MillisecondsPause);
 
     HRESULT (STDMETHODCALLTYPE *AutoProgram)(
-        IScanningTunerEx* This);
+                     IScanningTunerEx* This);
 
     /*** IScanningTunerEx methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurrentLocator)(
-        IScanningTunerEx* This,
-        ILocator **pILocator);
+                     IScanningTunerEx* This,
+                     ILocator **pILocator);
 
     HRESULT (STDMETHODCALLTYPE *PerformExhaustiveScan)(
-        IScanningTunerEx* This,
-        LONG dwLowerFreq,
-        LONG dwHigherFreq,
-        VARIANT_BOOL bFineTune,
-        HEVENT hEvent);
+                     IScanningTunerEx* This,
+                     LONG dwLowerFreq,
+                     LONG dwHigherFreq,
+                     VARIANT_BOOL bFineTune,
+                     HEVENT hEvent);
 
     HRESULT (STDMETHODCALLTYPE *TerminateCurrentScan)(
-        IScanningTunerEx* This,
-        LONG *pcurrentFreq);
+                     IScanningTunerEx* This,
+                     LONG *pcurrentFreq);
 
     HRESULT (STDMETHODCALLTYPE *ResumeCurrentScan)(
-        IScanningTunerEx* This,
-        HEVENT hEvent);
+                     IScanningTunerEx* This,
+                     HEVENT hEvent);
 
     HRESULT (STDMETHODCALLTYPE *GetTunerScanningCapability)(
-        IScanningTunerEx* This,
-        LONG *HardwareAssistedScanning,
-        LONG *NumStandardsSupported,
-        GUID *BroadcastStandards);
+                     IScanningTunerEx* This,
+                     LONG *HardwareAssistedScanning,
+                     LONG *NumStandardsSupported,
+                     GUID *BroadcastStandards);
 
     HRESULT (STDMETHODCALLTYPE *GetTunerStatus)(
-        IScanningTunerEx* This,
-        LONG *SecondsLeft,
-        LONG *CurrentLockType,
-        LONG *AutoDetect,
-        LONG *CurrentFreq);
+                     IScanningTunerEx* This,
+                     LONG *SecondsLeft,
+                     LONG *CurrentLockType,
+                     LONG *AutoDetect,
+                     LONG *CurrentFreq);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentTunerStandardCapability)(
-        IScanningTunerEx* This,
-        GUID CurrentBroadcastStandard,
-        LONG *SettlingTime,
-        LONG *TvStandardsSupported);
+                     IScanningTunerEx* This,
+                     GUID CurrentBroadcastStandard,
+                     LONG *SettlingTime,
+                     LONG *TvStandardsSupported);
 
     HRESULT (STDMETHODCALLTYPE *SetScanSignalTypeFilter)(
-        IScanningTunerEx* This,
-        LONG ScanModulationTypes,
-        LONG AnalogVideoStandard);
+                     IScanningTunerEx* This,
+                     LONG ScanModulationTypes,
+                     LONG AnalogVideoStandard);
 
     END_INTERFACE
 } IScanningTunerExVtbl;
@@ -9010,55 +9010,55 @@ MIDL_INTERFACE("6a340dc0-0311-11d3-9d8e-00c04f72d980")
 IComponentType : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Category(
-        ComponentCategory *Category) = 0;
+                     ComponentCategory *Category) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Category(
-        ComponentCategory Category) = 0;
+                     ComponentCategory Category) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MediaMajorType(
-        BSTR *MediaMajorType) = 0;
+                     BSTR *MediaMajorType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MediaMajorType(
-        BSTR MediaMajorType) = 0;
+                     BSTR MediaMajorType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__MediaMajorType(
-        GUID *MediaMajorTypeGuid) = 0;
+                     GUID *MediaMajorTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put__MediaMajorType(
-        REFCLSID MediaMajorTypeGuid) = 0;
+                     REFCLSID MediaMajorTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MediaSubType(
-        BSTR *MediaSubType) = 0;
+                     BSTR *MediaSubType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MediaSubType(
-        BSTR MediaSubType) = 0;
+                     BSTR MediaSubType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__MediaSubType(
-        GUID *MediaSubTypeGuid) = 0;
+                     GUID *MediaSubTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put__MediaSubType(
-        REFCLSID MediaSubTypeGuid) = 0;
+                     REFCLSID MediaSubTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MediaFormatType(
-        BSTR *MediaFormatType) = 0;
+                     BSTR *MediaFormatType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MediaFormatType(
-        BSTR MediaFormatType) = 0;
+                     BSTR MediaFormatType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__MediaFormatType(
-        GUID *MediaFormatTypeGuid) = 0;
+                     GUID *MediaFormatTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put__MediaFormatType(
-        REFCLSID MediaFormatTypeGuid) = 0;
+                     REFCLSID MediaFormatTypeGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MediaType(
-        AM_MEDIA_TYPE *MediaType) = 0;
+                     AM_MEDIA_TYPE *MediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MediaType(
-        AM_MEDIA_TYPE *MediaType) = 0;
+                     AM_MEDIA_TYPE *MediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IComponentType **NewCT) = 0;
+                     IComponentType **NewCT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9070,114 +9070,114 @@ typedef struct IComponentTypeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IComponentType* This,
-        REFIID riid,
-        void **ppvObject);
+                     IComponentType* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IComponentType* This);
+                     IComponentType* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IComponentType* This);
+                     IComponentType* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IComponentType* This,
-        UINT *pctinfo);
+                     IComponentType* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IComponentType* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IComponentType* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IComponentType* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IComponentType* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IComponentType* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IComponentType* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Category)(
-        IComponentType* This,
-        ComponentCategory *Category);
+                     IComponentType* This,
+                     ComponentCategory *Category);
 
     HRESULT (STDMETHODCALLTYPE *put_Category)(
-        IComponentType* This,
-        ComponentCategory Category);
+                     IComponentType* This,
+                     ComponentCategory Category);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaMajorType)(
-        IComponentType* This,
-        BSTR *MediaMajorType);
+                     IComponentType* This,
+                     BSTR *MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaMajorType)(
-        IComponentType* This,
-        BSTR MediaMajorType);
+                     IComponentType* This,
+                     BSTR MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaMajorType)(
-        IComponentType* This,
-        GUID *MediaMajorTypeGuid);
+                     IComponentType* This,
+                     GUID *MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaMajorType)(
-        IComponentType* This,
-        REFCLSID MediaMajorTypeGuid);
+                     IComponentType* This,
+                     REFCLSID MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaSubType)(
-        IComponentType* This,
-        BSTR *MediaSubType);
+                     IComponentType* This,
+                     BSTR *MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaSubType)(
-        IComponentType* This,
-        BSTR MediaSubType);
+                     IComponentType* This,
+                     BSTR MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaSubType)(
-        IComponentType* This,
-        GUID *MediaSubTypeGuid);
+                     IComponentType* This,
+                     GUID *MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaSubType)(
-        IComponentType* This,
-        REFCLSID MediaSubTypeGuid);
+                     IComponentType* This,
+                     REFCLSID MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaFormatType)(
-        IComponentType* This,
-        BSTR *MediaFormatType);
+                     IComponentType* This,
+                     BSTR *MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaFormatType)(
-        IComponentType* This,
-        BSTR MediaFormatType);
+                     IComponentType* This,
+                     BSTR MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaFormatType)(
-        IComponentType* This,
-        GUID *MediaFormatTypeGuid);
+                     IComponentType* This,
+                     GUID *MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaFormatType)(
-        IComponentType* This,
-        REFCLSID MediaFormatTypeGuid);
+                     IComponentType* This,
+                     REFCLSID MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaType)(
-        IComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     IComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaType)(
-        IComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     IComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IComponentType* This,
-        IComponentType **NewCT);
+                     IComponentType* This,
+                     IComponentType **NewCT);
 
     END_INTERFACE
 } IComponentTypeVtbl;
@@ -9446,10 +9446,10 @@ MIDL_INTERFACE("b874c8ba-0fa2-11d3-9d8e-00c04f72d980")
 ILanguageComponentType : public IComponentType
 {
     virtual HRESULT STDMETHODCALLTYPE get_LangID(
-        LONG *LangID) = 0;
+                     LONG *LangID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LangID(
-        LONG LangID) = 0;
+                     LONG LangID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9461,123 +9461,123 @@ typedef struct ILanguageComponentTypeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILanguageComponentType* This,
-        REFIID riid,
-        void **ppvObject);
+                     ILanguageComponentType* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILanguageComponentType* This);
+                     ILanguageComponentType* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILanguageComponentType* This);
+                     ILanguageComponentType* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ILanguageComponentType* This,
-        UINT *pctinfo);
+                     ILanguageComponentType* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ILanguageComponentType* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ILanguageComponentType* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ILanguageComponentType* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ILanguageComponentType* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ILanguageComponentType* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ILanguageComponentType* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Category)(
-        ILanguageComponentType* This,
-        ComponentCategory *Category);
+                     ILanguageComponentType* This,
+                     ComponentCategory *Category);
 
     HRESULT (STDMETHODCALLTYPE *put_Category)(
-        ILanguageComponentType* This,
-        ComponentCategory Category);
+                     ILanguageComponentType* This,
+                     ComponentCategory Category);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaMajorType)(
-        ILanguageComponentType* This,
-        BSTR *MediaMajorType);
+                     ILanguageComponentType* This,
+                     BSTR *MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaMajorType)(
-        ILanguageComponentType* This,
-        BSTR MediaMajorType);
+                     ILanguageComponentType* This,
+                     BSTR MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaMajorType)(
-        ILanguageComponentType* This,
-        GUID *MediaMajorTypeGuid);
+                     ILanguageComponentType* This,
+                     GUID *MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaMajorType)(
-        ILanguageComponentType* This,
-        REFCLSID MediaMajorTypeGuid);
+                     ILanguageComponentType* This,
+                     REFCLSID MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaSubType)(
-        ILanguageComponentType* This,
-        BSTR *MediaSubType);
+                     ILanguageComponentType* This,
+                     BSTR *MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaSubType)(
-        ILanguageComponentType* This,
-        BSTR MediaSubType);
+                     ILanguageComponentType* This,
+                     BSTR MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaSubType)(
-        ILanguageComponentType* This,
-        GUID *MediaSubTypeGuid);
+                     ILanguageComponentType* This,
+                     GUID *MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaSubType)(
-        ILanguageComponentType* This,
-        REFCLSID MediaSubTypeGuid);
+                     ILanguageComponentType* This,
+                     REFCLSID MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaFormatType)(
-        ILanguageComponentType* This,
-        BSTR *MediaFormatType);
+                     ILanguageComponentType* This,
+                     BSTR *MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaFormatType)(
-        ILanguageComponentType* This,
-        BSTR MediaFormatType);
+                     ILanguageComponentType* This,
+                     BSTR MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaFormatType)(
-        ILanguageComponentType* This,
-        GUID *MediaFormatTypeGuid);
+                     ILanguageComponentType* This,
+                     GUID *MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaFormatType)(
-        ILanguageComponentType* This,
-        REFCLSID MediaFormatTypeGuid);
+                     ILanguageComponentType* This,
+                     REFCLSID MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaType)(
-        ILanguageComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     ILanguageComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaType)(
-        ILanguageComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     ILanguageComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ILanguageComponentType* This,
-        IComponentType **NewCT);
+                     ILanguageComponentType* This,
+                     IComponentType **NewCT);
 
     /*** ILanguageComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LangID)(
-        ILanguageComponentType* This,
-        LONG *LangID);
+                     ILanguageComponentType* This,
+                     LONG *LangID);
 
     HRESULT (STDMETHODCALLTYPE *put_LangID)(
-        ILanguageComponentType* This,
-        LONG LangID);
+                     ILanguageComponentType* This,
+                     LONG LangID);
 
     END_INTERFACE
 } ILanguageComponentTypeVtbl;
@@ -9736,10 +9736,10 @@ MIDL_INTERFACE("2c073d84-b51c-48c9-aa9f-68971e1f6e38")
 IMPEG2ComponentType : public ILanguageComponentType
 {
     virtual HRESULT STDMETHODCALLTYPE get_StreamType(
-        MPEG2StreamType *MP2StreamType) = 0;
+                     MPEG2StreamType *MP2StreamType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StreamType(
-        MPEG2StreamType MP2StreamType) = 0;
+                     MPEG2StreamType MP2StreamType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9751,132 +9751,132 @@ typedef struct IMPEG2ComponentTypeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMPEG2ComponentType* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMPEG2ComponentType* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMPEG2ComponentType* This);
+                     IMPEG2ComponentType* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMPEG2ComponentType* This);
+                     IMPEG2ComponentType* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IMPEG2ComponentType* This,
-        UINT *pctinfo);
+                     IMPEG2ComponentType* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IMPEG2ComponentType* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IMPEG2ComponentType* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IMPEG2ComponentType* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IMPEG2ComponentType* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IMPEG2ComponentType* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IMPEG2ComponentType* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Category)(
-        IMPEG2ComponentType* This,
-        ComponentCategory *Category);
+                     IMPEG2ComponentType* This,
+                     ComponentCategory *Category);
 
     HRESULT (STDMETHODCALLTYPE *put_Category)(
-        IMPEG2ComponentType* This,
-        ComponentCategory Category);
+                     IMPEG2ComponentType* This,
+                     ComponentCategory Category);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaMajorType)(
-        IMPEG2ComponentType* This,
-        BSTR *MediaMajorType);
+                     IMPEG2ComponentType* This,
+                     BSTR *MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaMajorType)(
-        IMPEG2ComponentType* This,
-        BSTR MediaMajorType);
+                     IMPEG2ComponentType* This,
+                     BSTR MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaMajorType)(
-        IMPEG2ComponentType* This,
-        GUID *MediaMajorTypeGuid);
+                     IMPEG2ComponentType* This,
+                     GUID *MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaMajorType)(
-        IMPEG2ComponentType* This,
-        REFCLSID MediaMajorTypeGuid);
+                     IMPEG2ComponentType* This,
+                     REFCLSID MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaSubType)(
-        IMPEG2ComponentType* This,
-        BSTR *MediaSubType);
+                     IMPEG2ComponentType* This,
+                     BSTR *MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaSubType)(
-        IMPEG2ComponentType* This,
-        BSTR MediaSubType);
+                     IMPEG2ComponentType* This,
+                     BSTR MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaSubType)(
-        IMPEG2ComponentType* This,
-        GUID *MediaSubTypeGuid);
+                     IMPEG2ComponentType* This,
+                     GUID *MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaSubType)(
-        IMPEG2ComponentType* This,
-        REFCLSID MediaSubTypeGuid);
+                     IMPEG2ComponentType* This,
+                     REFCLSID MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaFormatType)(
-        IMPEG2ComponentType* This,
-        BSTR *MediaFormatType);
+                     IMPEG2ComponentType* This,
+                     BSTR *MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaFormatType)(
-        IMPEG2ComponentType* This,
-        BSTR MediaFormatType);
+                     IMPEG2ComponentType* This,
+                     BSTR MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaFormatType)(
-        IMPEG2ComponentType* This,
-        GUID *MediaFormatTypeGuid);
+                     IMPEG2ComponentType* This,
+                     GUID *MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaFormatType)(
-        IMPEG2ComponentType* This,
-        REFCLSID MediaFormatTypeGuid);
+                     IMPEG2ComponentType* This,
+                     REFCLSID MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaType)(
-        IMPEG2ComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     IMPEG2ComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaType)(
-        IMPEG2ComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     IMPEG2ComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMPEG2ComponentType* This,
-        IComponentType **NewCT);
+                     IMPEG2ComponentType* This,
+                     IComponentType **NewCT);
 
     /*** ILanguageComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LangID)(
-        IMPEG2ComponentType* This,
-        LONG *LangID);
+                     IMPEG2ComponentType* This,
+                     LONG *LangID);
 
     HRESULT (STDMETHODCALLTYPE *put_LangID)(
-        IMPEG2ComponentType* This,
-        LONG LangID);
+                     IMPEG2ComponentType* This,
+                     LONG LangID);
 
     /*** IMPEG2ComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_StreamType)(
-        IMPEG2ComponentType* This,
-        MPEG2StreamType *MP2StreamType);
+                     IMPEG2ComponentType* This,
+                     MPEG2StreamType *MP2StreamType);
 
     HRESULT (STDMETHODCALLTYPE *put_StreamType)(
-        IMPEG2ComponentType* This,
-        MPEG2StreamType MP2StreamType);
+                     IMPEG2ComponentType* This,
+                     MPEG2StreamType MP2StreamType);
 
     END_INTERFACE
 } IMPEG2ComponentTypeVtbl;
@@ -10045,10 +10045,10 @@ MIDL_INTERFACE("fc189e4d-7bd4-4125-b3b3-3a76a332cc96")
 IATSCComponentType : public IMPEG2ComponentType
 {
     virtual HRESULT STDMETHODCALLTYPE get_Flags(
-        LONG *Flags) = 0;
+                     LONG *Flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Flags(
-        LONG flags) = 0;
+                     LONG flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10060,141 +10060,141 @@ typedef struct IATSCComponentTypeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IATSCComponentType* This,
-        REFIID riid,
-        void **ppvObject);
+                     IATSCComponentType* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IATSCComponentType* This);
+                     IATSCComponentType* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IATSCComponentType* This);
+                     IATSCComponentType* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IATSCComponentType* This,
-        UINT *pctinfo);
+                     IATSCComponentType* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IATSCComponentType* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IATSCComponentType* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IATSCComponentType* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IATSCComponentType* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IATSCComponentType* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IATSCComponentType* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Category)(
-        IATSCComponentType* This,
-        ComponentCategory *Category);
+                     IATSCComponentType* This,
+                     ComponentCategory *Category);
 
     HRESULT (STDMETHODCALLTYPE *put_Category)(
-        IATSCComponentType* This,
-        ComponentCategory Category);
+                     IATSCComponentType* This,
+                     ComponentCategory Category);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaMajorType)(
-        IATSCComponentType* This,
-        BSTR *MediaMajorType);
+                     IATSCComponentType* This,
+                     BSTR *MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaMajorType)(
-        IATSCComponentType* This,
-        BSTR MediaMajorType);
+                     IATSCComponentType* This,
+                     BSTR MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaMajorType)(
-        IATSCComponentType* This,
-        GUID *MediaMajorTypeGuid);
+                     IATSCComponentType* This,
+                     GUID *MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaMajorType)(
-        IATSCComponentType* This,
-        REFCLSID MediaMajorTypeGuid);
+                     IATSCComponentType* This,
+                     REFCLSID MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaSubType)(
-        IATSCComponentType* This,
-        BSTR *MediaSubType);
+                     IATSCComponentType* This,
+                     BSTR *MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaSubType)(
-        IATSCComponentType* This,
-        BSTR MediaSubType);
+                     IATSCComponentType* This,
+                     BSTR MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaSubType)(
-        IATSCComponentType* This,
-        GUID *MediaSubTypeGuid);
+                     IATSCComponentType* This,
+                     GUID *MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaSubType)(
-        IATSCComponentType* This,
-        REFCLSID MediaSubTypeGuid);
+                     IATSCComponentType* This,
+                     REFCLSID MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaFormatType)(
-        IATSCComponentType* This,
-        BSTR *MediaFormatType);
+                     IATSCComponentType* This,
+                     BSTR *MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaFormatType)(
-        IATSCComponentType* This,
-        BSTR MediaFormatType);
+                     IATSCComponentType* This,
+                     BSTR MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaFormatType)(
-        IATSCComponentType* This,
-        GUID *MediaFormatTypeGuid);
+                     IATSCComponentType* This,
+                     GUID *MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaFormatType)(
-        IATSCComponentType* This,
-        REFCLSID MediaFormatTypeGuid);
+                     IATSCComponentType* This,
+                     REFCLSID MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaType)(
-        IATSCComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     IATSCComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaType)(
-        IATSCComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     IATSCComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IATSCComponentType* This,
-        IComponentType **NewCT);
+                     IATSCComponentType* This,
+                     IComponentType **NewCT);
 
     /*** ILanguageComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LangID)(
-        IATSCComponentType* This,
-        LONG *LangID);
+                     IATSCComponentType* This,
+                     LONG *LangID);
 
     HRESULT (STDMETHODCALLTYPE *put_LangID)(
-        IATSCComponentType* This,
-        LONG LangID);
+                     IATSCComponentType* This,
+                     LONG LangID);
 
     /*** IMPEG2ComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_StreamType)(
-        IATSCComponentType* This,
-        MPEG2StreamType *MP2StreamType);
+                     IATSCComponentType* This,
+                     MPEG2StreamType *MP2StreamType);
 
     HRESULT (STDMETHODCALLTYPE *put_StreamType)(
-        IATSCComponentType* This,
-        MPEG2StreamType MP2StreamType);
+                     IATSCComponentType* This,
+                     MPEG2StreamType MP2StreamType);
 
     /*** IATSCComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Flags)(
-        IATSCComponentType* This,
-        LONG *Flags);
+                     IATSCComponentType* This,
+                     LONG *Flags);
 
     HRESULT (STDMETHODCALLTYPE *put_Flags)(
-        IATSCComponentType* This,
-        LONG flags);
+                     IATSCComponentType* This,
+                     LONG flags);
 
     END_INTERFACE
 } IATSCComponentTypeVtbl;
@@ -10373,18 +10373,18 @@ MIDL_INTERFACE("8a674b4a-1f63-11d3-b64c-00c04f79498e")
 IEnumComponentTypes : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        IComponentType **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IComponentType **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumComponentTypes **ppEnum) = 0;
+                     IEnumComponentTypes **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10396,33 +10396,33 @@ typedef struct IEnumComponentTypesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumComponentTypes* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumComponentTypes* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumComponentTypes* This);
+                     IEnumComponentTypes* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumComponentTypes* This);
+                     IEnumComponentTypes* This);
 
     /*** IEnumComponentTypes methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumComponentTypes* This,
-        ULONG celt,
-        IComponentType **rgelt,
-        ULONG *pceltFetched);
+                     IEnumComponentTypes* This,
+                     ULONG celt,
+                     IComponentType **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumComponentTypes* This,
-        ULONG celt);
+                     IEnumComponentTypes* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumComponentTypes* This);
+                     IEnumComponentTypes* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumComponentTypes* This,
-        IEnumComponentTypes **ppEnum);
+                     IEnumComponentTypes* This,
+                     IEnumComponentTypes **ppEnum);
 
     END_INTERFACE
 } IEnumComponentTypesVtbl;
@@ -10518,31 +10518,31 @@ MIDL_INTERFACE("0dc13d4a-0313-11d3-9d8e-00c04f72d980")
 IComponentTypes : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IEnumVARIANT **ppNewEnum) = 0;
+                     IEnumVARIANT **ppNewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumComponentTypes(
-        IEnumComponentTypes **ppNewEnum) = 0;
+                     IEnumComponentTypes **ppNewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        VARIANT Index,
-        IComponentType **ComponentType) = 0;
+                     VARIANT Index,
+                     IComponentType **ComponentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Item(
-        VARIANT Index,
-        IComponentType *ComponentType) = 0;
+                     VARIANT Index,
+                     IComponentType *ComponentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IComponentType *ComponentType,
-        VARIANT *NewIndex) = 0;
+                     IComponentType *ComponentType,
+                     VARIANT *NewIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        VARIANT Index) = 0;
+                     VARIANT Index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IComponentTypes **NewList) = 0;
+                     IComponentTypes **NewList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10554,81 +10554,81 @@ typedef struct IComponentTypesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IComponentTypes* This,
-        REFIID riid,
-        void **ppvObject);
+                     IComponentTypes* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IComponentTypes* This);
+                     IComponentTypes* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IComponentTypes* This);
+                     IComponentTypes* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IComponentTypes* This,
-        UINT *pctinfo);
+                     IComponentTypes* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IComponentTypes* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IComponentTypes* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IComponentTypes* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IComponentTypes* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IComponentTypes* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IComponentTypes* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponentTypes methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IComponentTypes* This,
-        LONG *Count);
+                     IComponentTypes* This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IComponentTypes* This,
-        IEnumVARIANT **ppNewEnum);
+                     IComponentTypes* This,
+                     IEnumVARIANT **ppNewEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumComponentTypes)(
-        IComponentTypes* This,
-        IEnumComponentTypes **ppNewEnum);
+                     IComponentTypes* This,
+                     IEnumComponentTypes **ppNewEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IComponentTypes* This,
-        VARIANT Index,
-        IComponentType **ComponentType);
+                     IComponentTypes* This,
+                     VARIANT Index,
+                     IComponentType **ComponentType);
 
     HRESULT (STDMETHODCALLTYPE *put_Item)(
-        IComponentTypes* This,
-        VARIANT Index,
-        IComponentType *ComponentType);
+                     IComponentTypes* This,
+                     VARIANT Index,
+                     IComponentType *ComponentType);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IComponentTypes* This,
-        IComponentType *ComponentType,
-        VARIANT *NewIndex);
+                     IComponentTypes* This,
+                     IComponentType *ComponentType,
+                     VARIANT *NewIndex);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IComponentTypes* This,
-        VARIANT Index);
+                     IComponentTypes* This,
+                     VARIANT Index);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IComponentTypes* This,
-        IComponentTypes **NewList);
+                     IComponentTypes* This,
+                     IComponentTypes **NewList);
 
     END_INTERFACE
 } IComponentTypesVtbl;
@@ -10792,31 +10792,31 @@ MIDL_INTERFACE("1a5576fc-0e19-11d3-9d8e-00c04f72d980")
 IComponent : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        IComponentType **CT) = 0;
+                     IComponentType **CT) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Type(
-        IComponentType *CT) = 0;
+                     IComponentType *CT) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DescLangID(
-        LONG *LangID) = 0;
+                     LONG *LangID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DescLangID(
-        LONG LangID) = 0;
+                     LONG LangID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Status(
-        ComponentStatus *Status) = 0;
+                     ComponentStatus *Status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Status(
-        ComponentStatus Status) = 0;
+                     ComponentStatus Status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Description(
-        BSTR *Description) = 0;
+                     BSTR *Description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Description(
-        BSTR Description) = 0;
+                     BSTR Description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IComponent **NewComponent) = 0;
+                     IComponent **NewComponent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10828,82 +10828,82 @@ typedef struct IComponentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IComponent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IComponent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IComponent* This);
+                     IComponent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IComponent* This);
+                     IComponent* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IComponent* This,
-        UINT *pctinfo);
+                     IComponent* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IComponent* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IComponent* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IComponent* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IComponent* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IComponent* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IComponent* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponent methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IComponent* This,
-        IComponentType **CT);
+                     IComponent* This,
+                     IComponentType **CT);
 
     HRESULT (STDMETHODCALLTYPE *put_Type)(
-        IComponent* This,
-        IComponentType *CT);
+                     IComponent* This,
+                     IComponentType *CT);
 
     HRESULT (STDMETHODCALLTYPE *get_DescLangID)(
-        IComponent* This,
-        LONG *LangID);
+                     IComponent* This,
+                     LONG *LangID);
 
     HRESULT (STDMETHODCALLTYPE *put_DescLangID)(
-        IComponent* This,
-        LONG LangID);
+                     IComponent* This,
+                     LONG LangID);
 
     HRESULT (STDMETHODCALLTYPE *get_Status)(
-        IComponent* This,
-        ComponentStatus *Status);
+                     IComponent* This,
+                     ComponentStatus *Status);
 
     HRESULT (STDMETHODCALLTYPE *put_Status)(
-        IComponent* This,
-        ComponentStatus Status);
+                     IComponent* This,
+                     ComponentStatus Status);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IComponent* This,
-        BSTR *Description);
+                     IComponent* This,
+                     BSTR *Description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IComponent* This,
-        BSTR Description);
+                     IComponent* This,
+                     BSTR Description);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IComponent* This,
-        IComponent **NewComponent);
+                     IComponent* This,
+                     IComponent **NewComponent);
 
     END_INTERFACE
 } IComponentVtbl;
@@ -11076,10 +11076,10 @@ MIDL_INTERFACE("2cfeb2a8-1787-4a24-a941-c6eaec39c842")
 IAnalogAudioComponentType : public IComponentType
 {
     virtual HRESULT STDMETHODCALLTYPE get_AnalogAudioMode(
-        TVAudioMode *Mode) = 0;
+                     TVAudioMode *Mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AnalogAudioMode(
-        TVAudioMode Mode) = 0;
+                     TVAudioMode Mode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11091,123 +11091,123 @@ typedef struct IAnalogAudioComponentTypeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAnalogAudioComponentType* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAnalogAudioComponentType* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAnalogAudioComponentType* This);
+                     IAnalogAudioComponentType* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAnalogAudioComponentType* This);
+                     IAnalogAudioComponentType* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAnalogAudioComponentType* This,
-        UINT *pctinfo);
+                     IAnalogAudioComponentType* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAnalogAudioComponentType* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAnalogAudioComponentType* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAnalogAudioComponentType* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAnalogAudioComponentType* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAnalogAudioComponentType* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAnalogAudioComponentType* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Category)(
-        IAnalogAudioComponentType* This,
-        ComponentCategory *Category);
+                     IAnalogAudioComponentType* This,
+                     ComponentCategory *Category);
 
     HRESULT (STDMETHODCALLTYPE *put_Category)(
-        IAnalogAudioComponentType* This,
-        ComponentCategory Category);
+                     IAnalogAudioComponentType* This,
+                     ComponentCategory Category);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaMajorType)(
-        IAnalogAudioComponentType* This,
-        BSTR *MediaMajorType);
+                     IAnalogAudioComponentType* This,
+                     BSTR *MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaMajorType)(
-        IAnalogAudioComponentType* This,
-        BSTR MediaMajorType);
+                     IAnalogAudioComponentType* This,
+                     BSTR MediaMajorType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaMajorType)(
-        IAnalogAudioComponentType* This,
-        GUID *MediaMajorTypeGuid);
+                     IAnalogAudioComponentType* This,
+                     GUID *MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaMajorType)(
-        IAnalogAudioComponentType* This,
-        REFCLSID MediaMajorTypeGuid);
+                     IAnalogAudioComponentType* This,
+                     REFCLSID MediaMajorTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaSubType)(
-        IAnalogAudioComponentType* This,
-        BSTR *MediaSubType);
+                     IAnalogAudioComponentType* This,
+                     BSTR *MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaSubType)(
-        IAnalogAudioComponentType* This,
-        BSTR MediaSubType);
+                     IAnalogAudioComponentType* This,
+                     BSTR MediaSubType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaSubType)(
-        IAnalogAudioComponentType* This,
-        GUID *MediaSubTypeGuid);
+                     IAnalogAudioComponentType* This,
+                     GUID *MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaSubType)(
-        IAnalogAudioComponentType* This,
-        REFCLSID MediaSubTypeGuid);
+                     IAnalogAudioComponentType* This,
+                     REFCLSID MediaSubTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaFormatType)(
-        IAnalogAudioComponentType* This,
-        BSTR *MediaFormatType);
+                     IAnalogAudioComponentType* This,
+                     BSTR *MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaFormatType)(
-        IAnalogAudioComponentType* This,
-        BSTR MediaFormatType);
+                     IAnalogAudioComponentType* This,
+                     BSTR MediaFormatType);
 
     HRESULT (STDMETHODCALLTYPE *get__MediaFormatType)(
-        IAnalogAudioComponentType* This,
-        GUID *MediaFormatTypeGuid);
+                     IAnalogAudioComponentType* This,
+                     GUID *MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *put__MediaFormatType)(
-        IAnalogAudioComponentType* This,
-        REFCLSID MediaFormatTypeGuid);
+                     IAnalogAudioComponentType* This,
+                     REFCLSID MediaFormatTypeGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_MediaType)(
-        IAnalogAudioComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     IAnalogAudioComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *put_MediaType)(
-        IAnalogAudioComponentType* This,
-        AM_MEDIA_TYPE *MediaType);
+                     IAnalogAudioComponentType* This,
+                     AM_MEDIA_TYPE *MediaType);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAnalogAudioComponentType* This,
-        IComponentType **NewCT);
+                     IAnalogAudioComponentType* This,
+                     IComponentType **NewCT);
 
     /*** IAnalogAudioComponentType methods ***/
     HRESULT (STDMETHODCALLTYPE *get_AnalogAudioMode)(
-        IAnalogAudioComponentType* This,
-        TVAudioMode *Mode);
+                     IAnalogAudioComponentType* This,
+                     TVAudioMode *Mode);
 
     HRESULT (STDMETHODCALLTYPE *put_AnalogAudioMode)(
-        IAnalogAudioComponentType* This,
-        TVAudioMode Mode);
+                     IAnalogAudioComponentType* This,
+                     TVAudioMode Mode);
 
     END_INTERFACE
 } IAnalogAudioComponentTypeVtbl;
@@ -11366,22 +11366,22 @@ MIDL_INTERFACE("1493e353-1eb6-473c-802d-8e6b8ec9d2a9")
 IMPEG2Component : public IComponent
 {
     virtual HRESULT STDMETHODCALLTYPE get_PID(
-        LONG *PID) = 0;
+                     LONG *PID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PID(
-        LONG PID) = 0;
+                     LONG PID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PCRPID(
-        LONG *PCRPID) = 0;
+                     LONG *PCRPID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PCRPID(
-        LONG PCRPID) = 0;
+                     LONG PCRPID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ProgramNumber(
-        LONG *ProgramNumber) = 0;
+                     LONG *ProgramNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ProgramNumber(
-        LONG ProgramNumber) = 0;
+                     LONG ProgramNumber) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11393,107 +11393,107 @@ typedef struct IMPEG2ComponentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMPEG2Component* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMPEG2Component* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMPEG2Component* This);
+                     IMPEG2Component* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMPEG2Component* This);
+                     IMPEG2Component* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IMPEG2Component* This,
-        UINT *pctinfo);
+                     IMPEG2Component* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IMPEG2Component* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IMPEG2Component* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IMPEG2Component* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IMPEG2Component* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IMPEG2Component* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IMPEG2Component* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponent methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IMPEG2Component* This,
-        IComponentType **CT);
+                     IMPEG2Component* This,
+                     IComponentType **CT);
 
     HRESULT (STDMETHODCALLTYPE *put_Type)(
-        IMPEG2Component* This,
-        IComponentType *CT);
+                     IMPEG2Component* This,
+                     IComponentType *CT);
 
     HRESULT (STDMETHODCALLTYPE *get_DescLangID)(
-        IMPEG2Component* This,
-        LONG *LangID);
+                     IMPEG2Component* This,
+                     LONG *LangID);
 
     HRESULT (STDMETHODCALLTYPE *put_DescLangID)(
-        IMPEG2Component* This,
-        LONG LangID);
+                     IMPEG2Component* This,
+                     LONG LangID);
 
     HRESULT (STDMETHODCALLTYPE *get_Status)(
-        IMPEG2Component* This,
-        ComponentStatus *Status);
+                     IMPEG2Component* This,
+                     ComponentStatus *Status);
 
     HRESULT (STDMETHODCALLTYPE *put_Status)(
-        IMPEG2Component* This,
-        ComponentStatus Status);
+                     IMPEG2Component* This,
+                     ComponentStatus Status);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IMPEG2Component* This,
-        BSTR *Description);
+                     IMPEG2Component* This,
+                     BSTR *Description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IMPEG2Component* This,
-        BSTR Description);
+                     IMPEG2Component* This,
+                     BSTR Description);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMPEG2Component* This,
-        IComponent **NewComponent);
+                     IMPEG2Component* This,
+                     IComponent **NewComponent);
 
     /*** IMPEG2Component methods ***/
     HRESULT (STDMETHODCALLTYPE *get_PID)(
-        IMPEG2Component* This,
-        LONG *PID);
+                     IMPEG2Component* This,
+                     LONG *PID);
 
     HRESULT (STDMETHODCALLTYPE *put_PID)(
-        IMPEG2Component* This,
-        LONG PID);
+                     IMPEG2Component* This,
+                     LONG PID);
 
     HRESULT (STDMETHODCALLTYPE *get_PCRPID)(
-        IMPEG2Component* This,
-        LONG *PCRPID);
+                     IMPEG2Component* This,
+                     LONG *PCRPID);
 
     HRESULT (STDMETHODCALLTYPE *put_PCRPID)(
-        IMPEG2Component* This,
-        LONG PCRPID);
+                     IMPEG2Component* This,
+                     LONG PCRPID);
 
     HRESULT (STDMETHODCALLTYPE *get_ProgramNumber)(
-        IMPEG2Component* This,
-        LONG *ProgramNumber);
+                     IMPEG2Component* This,
+                     LONG *ProgramNumber);
 
     HRESULT (STDMETHODCALLTYPE *put_ProgramNumber)(
-        IMPEG2Component* This,
-        LONG ProgramNumber);
+                     IMPEG2Component* This,
+                     LONG ProgramNumber);
 
     END_INTERFACE
 } IMPEG2ComponentVtbl;
@@ -11668,18 +11668,18 @@ MIDL_INTERFACE("2a6e2939-2595-11d3-b64c-00c04f79498e")
 IEnumComponents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        IComponent **rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     IComponent **rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumComponents **ppEnum) = 0;
+                     IEnumComponents **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11691,33 +11691,33 @@ typedef struct IEnumComponentsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumComponents* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumComponents* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumComponents* This);
+                     IEnumComponents* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumComponents* This);
+                     IEnumComponents* This);
 
     /*** IEnumComponents methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumComponents* This,
-        ULONG celt,
-        IComponent **rgelt,
-        ULONG *pceltFetched);
+                     IEnumComponents* This,
+                     ULONG celt,
+                     IComponent **rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumComponents* This,
-        ULONG celt);
+                     IEnumComponents* This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumComponents* This);
+                     IEnumComponents* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumComponents* This,
-        IEnumComponents **ppEnum);
+                     IEnumComponents* This,
+                     IEnumComponents **ppEnum);
 
     END_INTERFACE
 } IEnumComponentsVtbl;
@@ -11813,31 +11813,31 @@ MIDL_INTERFACE("39a48091-fffe-4182-a161-3ff802640e26")
 IComponents : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IEnumVARIANT **ppNewEnum) = 0;
+                     IEnumVARIANT **ppNewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumComponents(
-        IEnumComponents **ppNewEnum) = 0;
+                     IEnumComponents **ppNewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        VARIANT Index,
-        IComponent **ppComponent) = 0;
+                     VARIANT Index,
+                     IComponent **ppComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IComponent *Component,
-        VARIANT *NewIndex) = 0;
+                     IComponent *Component,
+                     VARIANT *NewIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        VARIANT Index) = 0;
+                     VARIANT Index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IComponents **NewList) = 0;
+                     IComponents **NewList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Item(
-        VARIANT Index,
-        IComponent *ppComponent) = 0;
+                     VARIANT Index,
+                     IComponent *ppComponent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11849,81 +11849,81 @@ typedef struct IComponentsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IComponents* This,
-        REFIID riid,
-        void **ppvObject);
+                     IComponents* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IComponents* This);
+                     IComponents* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IComponents* This);
+                     IComponents* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IComponents* This,
-        UINT *pctinfo);
+                     IComponents* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IComponents* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IComponents* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IComponents* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IComponents* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IComponents* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IComponents* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponents methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IComponents* This,
-        LONG *Count);
+                     IComponents* This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IComponents* This,
-        IEnumVARIANT **ppNewEnum);
+                     IComponents* This,
+                     IEnumVARIANT **ppNewEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumComponents)(
-        IComponents* This,
-        IEnumComponents **ppNewEnum);
+                     IComponents* This,
+                     IEnumComponents **ppNewEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IComponents* This,
-        VARIANT Index,
-        IComponent **ppComponent);
+                     IComponents* This,
+                     VARIANT Index,
+                     IComponent **ppComponent);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IComponents* This,
-        IComponent *Component,
-        VARIANT *NewIndex);
+                     IComponents* This,
+                     IComponent *Component,
+                     VARIANT *NewIndex);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IComponents* This,
-        VARIANT Index);
+                     IComponents* This,
+                     VARIANT Index);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IComponents* This,
-        IComponents **NewList);
+                     IComponents* This,
+                     IComponents **NewList);
 
     HRESULT (STDMETHODCALLTYPE *put_Item)(
-        IComponents* This,
-        VARIANT Index,
-        IComponent *ppComponent);
+                     IComponents* This,
+                     VARIANT Index,
+                     IComponent *ppComponent);
 
     END_INTERFACE
 } IComponentsVtbl;
@@ -12087,27 +12087,27 @@ MIDL_INTERFACE("fcd01846-0e19-11d3-9d8e-00c04f72d980")
 IComponentsOld : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IEnumVARIANT **ppNewEnum) = 0;
+                     IEnumVARIANT **ppNewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumComponents(
-        IEnumComponents **ppNewEnum) = 0;
+                     IEnumComponents **ppNewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        VARIANT Index,
-        IComponent **ppComponent) = 0;
+                     VARIANT Index,
+                     IComponent **ppComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IComponent *Component,
-        VARIANT *NewIndex) = 0;
+                     IComponent *Component,
+                     VARIANT *NewIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        VARIANT Index) = 0;
+                     VARIANT Index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IComponents **NewList) = 0;
+                     IComponents **NewList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12119,76 +12119,76 @@ typedef struct IComponentsOldVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IComponentsOld* This,
-        REFIID riid,
-        void **ppvObject);
+                     IComponentsOld* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IComponentsOld* This);
+                     IComponentsOld* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IComponentsOld* This);
+                     IComponentsOld* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IComponentsOld* This,
-        UINT *pctinfo);
+                     IComponentsOld* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IComponentsOld* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IComponentsOld* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IComponentsOld* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IComponentsOld* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IComponentsOld* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IComponentsOld* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IComponentsOld methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IComponentsOld* This,
-        LONG *Count);
+                     IComponentsOld* This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IComponentsOld* This,
-        IEnumVARIANT **ppNewEnum);
+                     IComponentsOld* This,
+                     IEnumVARIANT **ppNewEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumComponents)(
-        IComponentsOld* This,
-        IEnumComponents **ppNewEnum);
+                     IComponentsOld* This,
+                     IEnumComponents **ppNewEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IComponentsOld* This,
-        VARIANT Index,
-        IComponent **ppComponent);
+                     IComponentsOld* This,
+                     VARIANT Index,
+                     IComponent **ppComponent);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IComponentsOld* This,
-        IComponent *Component,
-        VARIANT *NewIndex);
+                     IComponentsOld* This,
+                     IComponent *Component,
+                     VARIANT *NewIndex);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IComponentsOld* This,
-        VARIANT Index);
+                     IComponentsOld* This,
+                     VARIANT Index);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IComponentsOld* This,
-        IComponents **NewList);
+                     IComponentsOld* This,
+                     IComponents **NewList);
 
     END_INTERFACE
 } IComponentsOldVtbl;
@@ -12339,49 +12339,49 @@ MIDL_INTERFACE("286d7f89-760c-4f89-80c4-66841d2507aa")
 ILocator : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_CarrierFrequency(
-        LONG *Frequency) = 0;
+                     LONG *Frequency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CarrierFrequency(
-        LONG Frequency) = 0;
+                     LONG Frequency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InnerFEC(
-        FECMethod *FEC) = 0;
+                     FECMethod *FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_InnerFEC(
-        FECMethod FEC) = 0;
+                     FECMethod FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InnerFECRate(
-        BinaryConvolutionCodeRate *FEC) = 0;
+                     BinaryConvolutionCodeRate *FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_InnerFECRate(
-        BinaryConvolutionCodeRate FEC) = 0;
+                     BinaryConvolutionCodeRate FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OuterFEC(
-        FECMethod *FEC) = 0;
+                     FECMethod *FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OuterFEC(
-        FECMethod FEC) = 0;
+                     FECMethod FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OuterFECRate(
-        BinaryConvolutionCodeRate *FEC) = 0;
+                     BinaryConvolutionCodeRate *FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OuterFECRate(
-        BinaryConvolutionCodeRate FEC) = 0;
+                     BinaryConvolutionCodeRate FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Modulation(
-        ModulationType *Modulation) = 0;
+                     ModulationType *Modulation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Modulation(
-        ModulationType Modulation) = 0;
+                     ModulationType Modulation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SymbolRate(
-        LONG *Rate) = 0;
+                     LONG *Rate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SymbolRate(
-        LONG Rate) = 0;
+                     LONG Rate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        ILocator **NewLocator) = 0;
+                     ILocator **NewLocator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12393,106 +12393,106 @@ typedef struct ILocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ILocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     ILocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ILocator* This);
+                     ILocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ILocator* This);
+                     ILocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ILocator* This,
-        UINT *pctinfo);
+                     ILocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ILocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ILocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ILocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ILocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ILocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ILocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        ILocator* This,
-        LONG *Frequency);
+                     ILocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        ILocator* This,
-        LONG Frequency);
+                     ILocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        ILocator* This,
-        FECMethod *FEC);
+                     ILocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        ILocator* This,
-        FECMethod FEC);
+                     ILocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        ILocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     ILocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        ILocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     ILocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        ILocator* This,
-        FECMethod *FEC);
+                     ILocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        ILocator* This,
-        FECMethod FEC);
+                     ILocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        ILocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     ILocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        ILocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     ILocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        ILocator* This,
-        ModulationType *Modulation);
+                     ILocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        ILocator* This,
-        ModulationType Modulation);
+                     ILocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        ILocator* This,
-        LONG *Rate);
+                     ILocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        ILocator* This,
-        LONG Rate);
+                     ILocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ILocator* This,
-        ILocator **NewLocator);
+                     ILocator* This,
+                     ILocator **NewLocator);
 
     END_INTERFACE
 } ILocatorVtbl;
@@ -12737,10 +12737,10 @@ MIDL_INTERFACE("34d1f26b-e339-430d-abce-738cb48984dc")
 IAnalogLocator : public ILocator
 {
     virtual HRESULT STDMETHODCALLTYPE get_VideoStandard(
-        AnalogVideoStandard *AVS) = 0;
+                     AnalogVideoStandard *AVS) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_VideoStandard(
-        AnalogVideoStandard AVS) = 0;
+                     AnalogVideoStandard AVS) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12752,115 +12752,115 @@ typedef struct IAnalogLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAnalogLocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAnalogLocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAnalogLocator* This);
+                     IAnalogLocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAnalogLocator* This);
+                     IAnalogLocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAnalogLocator* This,
-        UINT *pctinfo);
+                     IAnalogLocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAnalogLocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAnalogLocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAnalogLocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAnalogLocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAnalogLocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAnalogLocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IAnalogLocator* This,
-        LONG *Frequency);
+                     IAnalogLocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IAnalogLocator* This,
-        LONG Frequency);
+                     IAnalogLocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IAnalogLocator* This,
-        FECMethod *FEC);
+                     IAnalogLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IAnalogLocator* This,
-        FECMethod FEC);
+                     IAnalogLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IAnalogLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IAnalogLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IAnalogLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IAnalogLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IAnalogLocator* This,
-        FECMethod *FEC);
+                     IAnalogLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IAnalogLocator* This,
-        FECMethod FEC);
+                     IAnalogLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IAnalogLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IAnalogLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IAnalogLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IAnalogLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IAnalogLocator* This,
-        ModulationType *Modulation);
+                     IAnalogLocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IAnalogLocator* This,
-        ModulationType Modulation);
+                     IAnalogLocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IAnalogLocator* This,
-        LONG *Rate);
+                     IAnalogLocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IAnalogLocator* This,
-        LONG Rate);
+                     IAnalogLocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAnalogLocator* This,
-        ILocator **NewLocator);
+                     IAnalogLocator* This,
+                     ILocator **NewLocator);
 
     /*** IAnalogLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_VideoStandard)(
-        IAnalogLocator* This,
-        AnalogVideoStandard *AVS);
+                     IAnalogLocator* This,
+                     AnalogVideoStandard *AVS);
 
     HRESULT (STDMETHODCALLTYPE *put_VideoStandard)(
-        IAnalogLocator* This,
-        AnalogVideoStandard AVS);
+                     IAnalogLocator* This,
+                     AnalogVideoStandard AVS);
 
     END_INTERFACE
 } IAnalogLocatorVtbl;
@@ -13020,106 +13020,106 @@ typedef struct IDigitalLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDigitalLocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDigitalLocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDigitalLocator* This);
+                     IDigitalLocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDigitalLocator* This);
+                     IDigitalLocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDigitalLocator* This,
-        UINT *pctinfo);
+                     IDigitalLocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDigitalLocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDigitalLocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDigitalLocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDigitalLocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDigitalLocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDigitalLocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IDigitalLocator* This,
-        LONG *Frequency);
+                     IDigitalLocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IDigitalLocator* This,
-        LONG Frequency);
+                     IDigitalLocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IDigitalLocator* This,
-        FECMethod *FEC);
+                     IDigitalLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IDigitalLocator* This,
-        FECMethod FEC);
+                     IDigitalLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IDigitalLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDigitalLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IDigitalLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDigitalLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IDigitalLocator* This,
-        FECMethod *FEC);
+                     IDigitalLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IDigitalLocator* This,
-        FECMethod FEC);
+                     IDigitalLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IDigitalLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDigitalLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IDigitalLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDigitalLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IDigitalLocator* This,
-        ModulationType *Modulation);
+                     IDigitalLocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IDigitalLocator* This,
-        ModulationType Modulation);
+                     IDigitalLocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IDigitalLocator* This,
-        LONG *Rate);
+                     IDigitalLocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IDigitalLocator* This,
-        LONG Rate);
+                     IDigitalLocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDigitalLocator* This,
-        ILocator **NewLocator);
+                     IDigitalLocator* This,
+                     ILocator **NewLocator);
 
     END_INTERFACE
 } IDigitalLocatorVtbl;
@@ -13244,16 +13244,16 @@ MIDL_INTERFACE("bf8d986f-8c2b-4131-94d7-4d3d9fcc21ef")
 IATSCLocator : public IDigitalLocator
 {
     virtual HRESULT STDMETHODCALLTYPE get_PhysicalChannel(
-        LONG *PhysicalChannel) = 0;
+                     LONG *PhysicalChannel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PhysicalChannel(
-        LONG PhysicalChannel) = 0;
+                     LONG PhysicalChannel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TSID(
-        LONG *TSID) = 0;
+                     LONG *TSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TSID(
-        LONG TSID) = 0;
+                     LONG TSID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13265,123 +13265,123 @@ typedef struct IATSCLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IATSCLocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IATSCLocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IATSCLocator* This);
+                     IATSCLocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IATSCLocator* This);
+                     IATSCLocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IATSCLocator* This,
-        UINT *pctinfo);
+                     IATSCLocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IATSCLocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IATSCLocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IATSCLocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IATSCLocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IATSCLocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IATSCLocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IATSCLocator* This,
-        LONG *Frequency);
+                     IATSCLocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IATSCLocator* This,
-        LONG Frequency);
+                     IATSCLocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IATSCLocator* This,
-        FECMethod *FEC);
+                     IATSCLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IATSCLocator* This,
-        FECMethod FEC);
+                     IATSCLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IATSCLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IATSCLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IATSCLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IATSCLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IATSCLocator* This,
-        FECMethod *FEC);
+                     IATSCLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IATSCLocator* This,
-        FECMethod FEC);
+                     IATSCLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IATSCLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IATSCLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IATSCLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IATSCLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IATSCLocator* This,
-        ModulationType *Modulation);
+                     IATSCLocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IATSCLocator* This,
-        ModulationType Modulation);
+                     IATSCLocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IATSCLocator* This,
-        LONG *Rate);
+                     IATSCLocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IATSCLocator* This,
-        LONG Rate);
+                     IATSCLocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IATSCLocator* This,
-        ILocator **NewLocator);
+                     IATSCLocator* This,
+                     ILocator **NewLocator);
 
     /*** IATSCLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_PhysicalChannel)(
-        IATSCLocator* This,
-        LONG *PhysicalChannel);
+                     IATSCLocator* This,
+                     LONG *PhysicalChannel);
 
     HRESULT (STDMETHODCALLTYPE *put_PhysicalChannel)(
-        IATSCLocator* This,
-        LONG PhysicalChannel);
+                     IATSCLocator* This,
+                     LONG PhysicalChannel);
 
     HRESULT (STDMETHODCALLTYPE *get_TSID)(
-        IATSCLocator* This,
-        LONG *TSID);
+                     IATSCLocator* This,
+                     LONG *TSID);
 
     HRESULT (STDMETHODCALLTYPE *put_TSID)(
-        IATSCLocator* This,
-        LONG TSID);
+                     IATSCLocator* This,
+                     LONG TSID);
 
     END_INTERFACE
 } IATSCLocatorVtbl;
@@ -13556,10 +13556,10 @@ MIDL_INTERFACE("612aa885-66cf-4090-ba0a-566f5312e4ca")
 IATSCLocator2 : public IATSCLocator
 {
     virtual HRESULT STDMETHODCALLTYPE get_ProgramNumber(
-        LONG *ProgramNumber) = 0;
+                     LONG *ProgramNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ProgramNumber(
-        LONG ProgramNumber) = 0;
+                     LONG ProgramNumber) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13571,132 +13571,132 @@ typedef struct IATSCLocator2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IATSCLocator2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IATSCLocator2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IATSCLocator2* This);
+                     IATSCLocator2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IATSCLocator2* This);
+                     IATSCLocator2* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IATSCLocator2* This,
-        UINT *pctinfo);
+                     IATSCLocator2* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IATSCLocator2* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IATSCLocator2* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IATSCLocator2* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IATSCLocator2* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IATSCLocator2* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IATSCLocator2* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IATSCLocator2* This,
-        LONG *Frequency);
+                     IATSCLocator2* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IATSCLocator2* This,
-        LONG Frequency);
+                     IATSCLocator2* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IATSCLocator2* This,
-        FECMethod *FEC);
+                     IATSCLocator2* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IATSCLocator2* This,
-        FECMethod FEC);
+                     IATSCLocator2* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IATSCLocator2* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IATSCLocator2* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IATSCLocator2* This,
-        BinaryConvolutionCodeRate FEC);
+                     IATSCLocator2* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IATSCLocator2* This,
-        FECMethod *FEC);
+                     IATSCLocator2* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IATSCLocator2* This,
-        FECMethod FEC);
+                     IATSCLocator2* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IATSCLocator2* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IATSCLocator2* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IATSCLocator2* This,
-        BinaryConvolutionCodeRate FEC);
+                     IATSCLocator2* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IATSCLocator2* This,
-        ModulationType *Modulation);
+                     IATSCLocator2* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IATSCLocator2* This,
-        ModulationType Modulation);
+                     IATSCLocator2* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IATSCLocator2* This,
-        LONG *Rate);
+                     IATSCLocator2* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IATSCLocator2* This,
-        LONG Rate);
+                     IATSCLocator2* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IATSCLocator2* This,
-        ILocator **NewLocator);
+                     IATSCLocator2* This,
+                     ILocator **NewLocator);
 
     /*** IATSCLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_PhysicalChannel)(
-        IATSCLocator2* This,
-        LONG *PhysicalChannel);
+                     IATSCLocator2* This,
+                     LONG *PhysicalChannel);
 
     HRESULT (STDMETHODCALLTYPE *put_PhysicalChannel)(
-        IATSCLocator2* This,
-        LONG PhysicalChannel);
+                     IATSCLocator2* This,
+                     LONG PhysicalChannel);
 
     HRESULT (STDMETHODCALLTYPE *get_TSID)(
-        IATSCLocator2* This,
-        LONG *TSID);
+                     IATSCLocator2* This,
+                     LONG *TSID);
 
     HRESULT (STDMETHODCALLTYPE *put_TSID)(
-        IATSCLocator2* This,
-        LONG TSID);
+                     IATSCLocator2* This,
+                     LONG TSID);
 
     /*** IATSCLocator2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ProgramNumber)(
-        IATSCLocator2* This,
-        LONG *ProgramNumber);
+                     IATSCLocator2* This,
+                     LONG *ProgramNumber);
 
     HRESULT (STDMETHODCALLTYPE *put_ProgramNumber)(
-        IATSCLocator2* This,
-        LONG ProgramNumber);
+                     IATSCLocator2* This,
+                     LONG ProgramNumber);
 
     END_INTERFACE
 } IATSCLocator2Vtbl;
@@ -13874,132 +13874,132 @@ typedef struct IDigitalCableLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDigitalCableLocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDigitalCableLocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDigitalCableLocator* This);
+                     IDigitalCableLocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDigitalCableLocator* This);
+                     IDigitalCableLocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDigitalCableLocator* This,
-        UINT *pctinfo);
+                     IDigitalCableLocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDigitalCableLocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDigitalCableLocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDigitalCableLocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDigitalCableLocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDigitalCableLocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDigitalCableLocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IDigitalCableLocator* This,
-        LONG *Frequency);
+                     IDigitalCableLocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IDigitalCableLocator* This,
-        LONG Frequency);
+                     IDigitalCableLocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IDigitalCableLocator* This,
-        FECMethod *FEC);
+                     IDigitalCableLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IDigitalCableLocator* This,
-        FECMethod FEC);
+                     IDigitalCableLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IDigitalCableLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDigitalCableLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IDigitalCableLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDigitalCableLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IDigitalCableLocator* This,
-        FECMethod *FEC);
+                     IDigitalCableLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IDigitalCableLocator* This,
-        FECMethod FEC);
+                     IDigitalCableLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IDigitalCableLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDigitalCableLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IDigitalCableLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDigitalCableLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IDigitalCableLocator* This,
-        ModulationType *Modulation);
+                     IDigitalCableLocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IDigitalCableLocator* This,
-        ModulationType Modulation);
+                     IDigitalCableLocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IDigitalCableLocator* This,
-        LONG *Rate);
+                     IDigitalCableLocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IDigitalCableLocator* This,
-        LONG Rate);
+                     IDigitalCableLocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDigitalCableLocator* This,
-        ILocator **NewLocator);
+                     IDigitalCableLocator* This,
+                     ILocator **NewLocator);
 
     /*** IATSCLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_PhysicalChannel)(
-        IDigitalCableLocator* This,
-        LONG *PhysicalChannel);
+                     IDigitalCableLocator* This,
+                     LONG *PhysicalChannel);
 
     HRESULT (STDMETHODCALLTYPE *put_PhysicalChannel)(
-        IDigitalCableLocator* This,
-        LONG PhysicalChannel);
+                     IDigitalCableLocator* This,
+                     LONG PhysicalChannel);
 
     HRESULT (STDMETHODCALLTYPE *get_TSID)(
-        IDigitalCableLocator* This,
-        LONG *TSID);
+                     IDigitalCableLocator* This,
+                     LONG *TSID);
 
     HRESULT (STDMETHODCALLTYPE *put_TSID)(
-        IDigitalCableLocator* This,
-        LONG TSID);
+                     IDigitalCableLocator* This,
+                     LONG TSID);
 
     /*** IATSCLocator2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ProgramNumber)(
-        IDigitalCableLocator* This,
-        LONG *ProgramNumber);
+                     IDigitalCableLocator* This,
+                     LONG *ProgramNumber);
 
     HRESULT (STDMETHODCALLTYPE *put_ProgramNumber)(
-        IDigitalCableLocator* This,
-        LONG ProgramNumber);
+                     IDigitalCableLocator* This,
+                     LONG ProgramNumber);
 
     END_INTERFACE
 } IDigitalCableLocatorVtbl;
@@ -14152,46 +14152,46 @@ MIDL_INTERFACE("8664da16-dda2-42ac-926a-c18f9127c302")
 IDVBTLocator : public IDigitalLocator
 {
     virtual HRESULT STDMETHODCALLTYPE get_Bandwidth(
-        LONG *BandWidthVal) = 0;
+                     LONG *BandWidthVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Bandwidth(
-        LONG BandwidthVal) = 0;
+                     LONG BandwidthVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LPInnerFEC(
-        FECMethod *FEC) = 0;
+                     FECMethod *FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LPInnerFEC(
-        FECMethod FEC) = 0;
+                     FECMethod FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LPInnerFECRate(
-        BinaryConvolutionCodeRate *FEC) = 0;
+                     BinaryConvolutionCodeRate *FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LPInnerFECRate(
-        BinaryConvolutionCodeRate FEC) = 0;
+                     BinaryConvolutionCodeRate FEC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HAlpha(
-        HierarchyAlpha *Alpha) = 0;
+                     HierarchyAlpha *Alpha) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_HAlpha(
-        HierarchyAlpha Alpha) = 0;
+                     HierarchyAlpha Alpha) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Guard(
-        GuardInterval *GI) = 0;
+                     GuardInterval *GI) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Guard(
-        GuardInterval GI) = 0;
+                     GuardInterval GI) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Mode(
-        TransmissionMode *mode) = 0;
+                     TransmissionMode *mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Mode(
-        TransmissionMode mode) = 0;
+                     TransmissionMode mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OtherFrequencyInUse(
-        VARIANT_BOOL *OtherFrequencyInUseVal) = 0;
+                     VARIANT_BOOL *OtherFrequencyInUseVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OtherFrequencyInUse(
-        VARIANT_BOOL OtherFrequencyInUseVal) = 0;
+                     VARIANT_BOOL OtherFrequencyInUseVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14203,163 +14203,163 @@ typedef struct IDVBTLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBTLocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBTLocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBTLocator* This);
+                     IDVBTLocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBTLocator* This);
+                     IDVBTLocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBTLocator* This,
-        UINT *pctinfo);
+                     IDVBTLocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBTLocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBTLocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBTLocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBTLocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBTLocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBTLocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IDVBTLocator* This,
-        LONG *Frequency);
+                     IDVBTLocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IDVBTLocator* This,
-        LONG Frequency);
+                     IDVBTLocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IDVBTLocator* This,
-        FECMethod *FEC);
+                     IDVBTLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IDVBTLocator* This,
-        FECMethod FEC);
+                     IDVBTLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IDVBTLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBTLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IDVBTLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBTLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IDVBTLocator* This,
-        FECMethod *FEC);
+                     IDVBTLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IDVBTLocator* This,
-        FECMethod FEC);
+                     IDVBTLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IDVBTLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBTLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IDVBTLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBTLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IDVBTLocator* This,
-        ModulationType *Modulation);
+                     IDVBTLocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IDVBTLocator* This,
-        ModulationType Modulation);
+                     IDVBTLocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IDVBTLocator* This,
-        LONG *Rate);
+                     IDVBTLocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IDVBTLocator* This,
-        LONG Rate);
+                     IDVBTLocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBTLocator* This,
-        ILocator **NewLocator);
+                     IDVBTLocator* This,
+                     ILocator **NewLocator);
 
     /*** IDVBTLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Bandwidth)(
-        IDVBTLocator* This,
-        LONG *BandWidthVal);
+                     IDVBTLocator* This,
+                     LONG *BandWidthVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Bandwidth)(
-        IDVBTLocator* This,
-        LONG BandwidthVal);
+                     IDVBTLocator* This,
+                     LONG BandwidthVal);
 
     HRESULT (STDMETHODCALLTYPE *get_LPInnerFEC)(
-        IDVBTLocator* This,
-        FECMethod *FEC);
+                     IDVBTLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_LPInnerFEC)(
-        IDVBTLocator* This,
-        FECMethod FEC);
+                     IDVBTLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_LPInnerFECRate)(
-        IDVBTLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBTLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_LPInnerFECRate)(
-        IDVBTLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBTLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_HAlpha)(
-        IDVBTLocator* This,
-        HierarchyAlpha *Alpha);
+                     IDVBTLocator* This,
+                     HierarchyAlpha *Alpha);
 
     HRESULT (STDMETHODCALLTYPE *put_HAlpha)(
-        IDVBTLocator* This,
-        HierarchyAlpha Alpha);
+                     IDVBTLocator* This,
+                     HierarchyAlpha Alpha);
 
     HRESULT (STDMETHODCALLTYPE *get_Guard)(
-        IDVBTLocator* This,
-        GuardInterval *GI);
+                     IDVBTLocator* This,
+                     GuardInterval *GI);
 
     HRESULT (STDMETHODCALLTYPE *put_Guard)(
-        IDVBTLocator* This,
-        GuardInterval GI);
+                     IDVBTLocator* This,
+                     GuardInterval GI);
 
     HRESULT (STDMETHODCALLTYPE *get_Mode)(
-        IDVBTLocator* This,
-        TransmissionMode *mode);
+                     IDVBTLocator* This,
+                     TransmissionMode *mode);
 
     HRESULT (STDMETHODCALLTYPE *put_Mode)(
-        IDVBTLocator* This,
-        TransmissionMode mode);
+                     IDVBTLocator* This,
+                     TransmissionMode mode);
 
     HRESULT (STDMETHODCALLTYPE *get_OtherFrequencyInUse)(
-        IDVBTLocator* This,
-        VARIANT_BOOL *OtherFrequencyInUseVal);
+                     IDVBTLocator* This,
+                     VARIANT_BOOL *OtherFrequencyInUseVal);
 
     HRESULT (STDMETHODCALLTYPE *put_OtherFrequencyInUse)(
-        IDVBTLocator* This,
-        VARIANT_BOOL OtherFrequencyInUseVal);
+                     IDVBTLocator* This,
+                     VARIANT_BOOL OtherFrequencyInUseVal);
 
     END_INTERFACE
 } IDVBTLocatorVtbl;
@@ -14654,10 +14654,10 @@ MIDL_INTERFACE("448a2edf-ae95-4b43-a3cc-747843c453d4")
 IDVBTLocator2 : public IDVBTLocator
 {
     virtual HRESULT STDMETHODCALLTYPE get_PhysicalLayerPipeId(
-        LONG *PhysicalLayerPipeIdVal) = 0;
+                     LONG *PhysicalLayerPipeIdVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PhysicalLayerPipeId(
-        LONG PhysicalLayerPipeIdVal) = 0;
+                     LONG PhysicalLayerPipeIdVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14669,172 +14669,172 @@ typedef struct IDVBTLocator2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBTLocator2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBTLocator2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBTLocator2* This);
+                     IDVBTLocator2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBTLocator2* This);
+                     IDVBTLocator2* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBTLocator2* This,
-        UINT *pctinfo);
+                     IDVBTLocator2* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBTLocator2* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBTLocator2* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBTLocator2* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBTLocator2* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBTLocator2* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBTLocator2* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IDVBTLocator2* This,
-        LONG *Frequency);
+                     IDVBTLocator2* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IDVBTLocator2* This,
-        LONG Frequency);
+                     IDVBTLocator2* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IDVBTLocator2* This,
-        FECMethod *FEC);
+                     IDVBTLocator2* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IDVBTLocator2* This,
-        FECMethod FEC);
+                     IDVBTLocator2* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IDVBTLocator2* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBTLocator2* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IDVBTLocator2* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBTLocator2* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IDVBTLocator2* This,
-        FECMethod *FEC);
+                     IDVBTLocator2* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IDVBTLocator2* This,
-        FECMethod FEC);
+                     IDVBTLocator2* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IDVBTLocator2* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBTLocator2* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IDVBTLocator2* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBTLocator2* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IDVBTLocator2* This,
-        ModulationType *Modulation);
+                     IDVBTLocator2* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IDVBTLocator2* This,
-        ModulationType Modulation);
+                     IDVBTLocator2* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IDVBTLocator2* This,
-        LONG *Rate);
+                     IDVBTLocator2* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IDVBTLocator2* This,
-        LONG Rate);
+                     IDVBTLocator2* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBTLocator2* This,
-        ILocator **NewLocator);
+                     IDVBTLocator2* This,
+                     ILocator **NewLocator);
 
     /*** IDVBTLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Bandwidth)(
-        IDVBTLocator2* This,
-        LONG *BandWidthVal);
+                     IDVBTLocator2* This,
+                     LONG *BandWidthVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Bandwidth)(
-        IDVBTLocator2* This,
-        LONG BandwidthVal);
+                     IDVBTLocator2* This,
+                     LONG BandwidthVal);
 
     HRESULT (STDMETHODCALLTYPE *get_LPInnerFEC)(
-        IDVBTLocator2* This,
-        FECMethod *FEC);
+                     IDVBTLocator2* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_LPInnerFEC)(
-        IDVBTLocator2* This,
-        FECMethod FEC);
+                     IDVBTLocator2* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_LPInnerFECRate)(
-        IDVBTLocator2* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBTLocator2* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_LPInnerFECRate)(
-        IDVBTLocator2* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBTLocator2* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_HAlpha)(
-        IDVBTLocator2* This,
-        HierarchyAlpha *Alpha);
+                     IDVBTLocator2* This,
+                     HierarchyAlpha *Alpha);
 
     HRESULT (STDMETHODCALLTYPE *put_HAlpha)(
-        IDVBTLocator2* This,
-        HierarchyAlpha Alpha);
+                     IDVBTLocator2* This,
+                     HierarchyAlpha Alpha);
 
     HRESULT (STDMETHODCALLTYPE *get_Guard)(
-        IDVBTLocator2* This,
-        GuardInterval *GI);
+                     IDVBTLocator2* This,
+                     GuardInterval *GI);
 
     HRESULT (STDMETHODCALLTYPE *put_Guard)(
-        IDVBTLocator2* This,
-        GuardInterval GI);
+                     IDVBTLocator2* This,
+                     GuardInterval GI);
 
     HRESULT (STDMETHODCALLTYPE *get_Mode)(
-        IDVBTLocator2* This,
-        TransmissionMode *mode);
+                     IDVBTLocator2* This,
+                     TransmissionMode *mode);
 
     HRESULT (STDMETHODCALLTYPE *put_Mode)(
-        IDVBTLocator2* This,
-        TransmissionMode mode);
+                     IDVBTLocator2* This,
+                     TransmissionMode mode);
 
     HRESULT (STDMETHODCALLTYPE *get_OtherFrequencyInUse)(
-        IDVBTLocator2* This,
-        VARIANT_BOOL *OtherFrequencyInUseVal);
+                     IDVBTLocator2* This,
+                     VARIANT_BOOL *OtherFrequencyInUseVal);
 
     HRESULT (STDMETHODCALLTYPE *put_OtherFrequencyInUse)(
-        IDVBTLocator2* This,
-        VARIANT_BOOL OtherFrequencyInUseVal);
+                     IDVBTLocator2* This,
+                     VARIANT_BOOL OtherFrequencyInUseVal);
 
     /*** IDVBTLocator2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_PhysicalLayerPipeId)(
-        IDVBTLocator2* This,
-        LONG *PhysicalLayerPipeIdVal);
+                     IDVBTLocator2* This,
+                     LONG *PhysicalLayerPipeIdVal);
 
     HRESULT (STDMETHODCALLTYPE *put_PhysicalLayerPipeId)(
-        IDVBTLocator2* This,
-        LONG PhysicalLayerPipeIdVal);
+                     IDVBTLocator2* This,
+                     LONG PhysicalLayerPipeIdVal);
 
     END_INTERFACE
 } IDVBTLocator2Vtbl;
@@ -15043,34 +15043,34 @@ MIDL_INTERFACE("3d7c353c-0d04-45f1-a742-f97cc1188dc8")
 IDVBSLocator : public IDigitalLocator
 {
     virtual HRESULT STDMETHODCALLTYPE get_SignalPolarisation(
-        Polarisation *PolarisationVal) = 0;
+                     Polarisation *PolarisationVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SignalPolarisation(
-        Polarisation PolarisationVal) = 0;
+                     Polarisation PolarisationVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_WestPosition(
-        VARIANT_BOOL *WestLongitude) = 0;
+                     VARIANT_BOOL *WestLongitude) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_WestPosition(
-        VARIANT_BOOL WestLongitude) = 0;
+                     VARIANT_BOOL WestLongitude) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OrbitalPosition(
-        LONG *longitude) = 0;
+                     LONG *longitude) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OrbitalPosition(
-        LONG longitude) = 0;
+                     LONG longitude) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Azimuth(
-        LONG *Azimuth) = 0;
+                     LONG *Azimuth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Azimuth(
-        LONG Azimuth) = 0;
+                     LONG Azimuth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Elevation(
-        LONG *Elevation) = 0;
+                     LONG *Elevation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Elevation(
-        LONG Elevation) = 0;
+                     LONG Elevation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15082,147 +15082,147 @@ typedef struct IDVBSLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBSLocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBSLocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBSLocator* This);
+                     IDVBSLocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBSLocator* This);
+                     IDVBSLocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBSLocator* This,
-        UINT *pctinfo);
+                     IDVBSLocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBSLocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBSLocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBSLocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBSLocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBSLocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBSLocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IDVBSLocator* This,
-        LONG *Frequency);
+                     IDVBSLocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IDVBSLocator* This,
-        LONG Frequency);
+                     IDVBSLocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IDVBSLocator* This,
-        FECMethod *FEC);
+                     IDVBSLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IDVBSLocator* This,
-        FECMethod FEC);
+                     IDVBSLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IDVBSLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBSLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IDVBSLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBSLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IDVBSLocator* This,
-        FECMethod *FEC);
+                     IDVBSLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IDVBSLocator* This,
-        FECMethod FEC);
+                     IDVBSLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IDVBSLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBSLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IDVBSLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBSLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IDVBSLocator* This,
-        ModulationType *Modulation);
+                     IDVBSLocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IDVBSLocator* This,
-        ModulationType Modulation);
+                     IDVBSLocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IDVBSLocator* This,
-        LONG *Rate);
+                     IDVBSLocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IDVBSLocator* This,
-        LONG Rate);
+                     IDVBSLocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBSLocator* This,
-        ILocator **NewLocator);
+                     IDVBSLocator* This,
+                     ILocator **NewLocator);
 
     /*** IDVBSLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SignalPolarisation)(
-        IDVBSLocator* This,
-        Polarisation *PolarisationVal);
+                     IDVBSLocator* This,
+                     Polarisation *PolarisationVal);
 
     HRESULT (STDMETHODCALLTYPE *put_SignalPolarisation)(
-        IDVBSLocator* This,
-        Polarisation PolarisationVal);
+                     IDVBSLocator* This,
+                     Polarisation PolarisationVal);
 
     HRESULT (STDMETHODCALLTYPE *get_WestPosition)(
-        IDVBSLocator* This,
-        VARIANT_BOOL *WestLongitude);
+                     IDVBSLocator* This,
+                     VARIANT_BOOL *WestLongitude);
 
     HRESULT (STDMETHODCALLTYPE *put_WestPosition)(
-        IDVBSLocator* This,
-        VARIANT_BOOL WestLongitude);
+                     IDVBSLocator* This,
+                     VARIANT_BOOL WestLongitude);
 
     HRESULT (STDMETHODCALLTYPE *get_OrbitalPosition)(
-        IDVBSLocator* This,
-        LONG *longitude);
+                     IDVBSLocator* This,
+                     LONG *longitude);
 
     HRESULT (STDMETHODCALLTYPE *put_OrbitalPosition)(
-        IDVBSLocator* This,
-        LONG longitude);
+                     IDVBSLocator* This,
+                     LONG longitude);
 
     HRESULT (STDMETHODCALLTYPE *get_Azimuth)(
-        IDVBSLocator* This,
-        LONG *Azimuth);
+                     IDVBSLocator* This,
+                     LONG *Azimuth);
 
     HRESULT (STDMETHODCALLTYPE *put_Azimuth)(
-        IDVBSLocator* This,
-        LONG Azimuth);
+                     IDVBSLocator* This,
+                     LONG Azimuth);
 
     HRESULT (STDMETHODCALLTYPE *get_Elevation)(
-        IDVBSLocator* This,
-        LONG *Elevation);
+                     IDVBSLocator* This,
+                     LONG *Elevation);
 
     HRESULT (STDMETHODCALLTYPE *put_Elevation)(
-        IDVBSLocator* This,
-        LONG Elevation);
+                     IDVBSLocator* This,
+                     LONG Elevation);
 
     END_INTERFACE
 } IDVBSLocatorVtbl;
@@ -15469,46 +15469,46 @@ MIDL_INTERFACE("6044634a-1733-4f99-b982-5fb12afce4f0")
 IDVBSLocator2 : public IDVBSLocator
 {
     virtual HRESULT STDMETHODCALLTYPE get_DiseqLNBSource(
-        LNB_Source *DiseqLNBSourceVal) = 0;
+                     LNB_Source *DiseqLNBSourceVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DiseqLNBSource(
-        LNB_Source DiseqLNBSourceVal) = 0;
+                     LNB_Source DiseqLNBSourceVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalOscillatorOverrideLow(
-        LONG *LocalOscillatorOverrideLowVal) = 0;
+                     LONG *LocalOscillatorOverrideLowVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalOscillatorOverrideLow(
-        LONG LocalOscillatorOverrideLowVal) = 0;
+                     LONG LocalOscillatorOverrideLowVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalOscillatorOverrideHigh(
-        LONG *LocalOscillatorOverrideHighVal) = 0;
+                     LONG *LocalOscillatorOverrideHighVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalOscillatorOverrideHigh(
-        LONG LocalOscillatorOverrideHighVal) = 0;
+                     LONG LocalOscillatorOverrideHighVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalLNBSwitchOverride(
-        LONG *LocalLNBSwitchOverrideVal) = 0;
+                     LONG *LocalLNBSwitchOverrideVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalLNBSwitchOverride(
-        LONG LocalLNBSwitchOverrideVal) = 0;
+                     LONG LocalLNBSwitchOverrideVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalSpectralInversionOverride(
-        SpectralInversion *LocalSpectralInversionOverrideVal) = 0;
+                     SpectralInversion *LocalSpectralInversionOverrideVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalSpectralInversionOverride(
-        SpectralInversion LocalSpectralInversionOverrideVal) = 0;
+                     SpectralInversion LocalSpectralInversionOverrideVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SignalRollOff(
-        RollOff *RollOffVal) = 0;
+                     RollOff *RollOffVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SignalRollOff(
-        RollOff RollOffVal) = 0;
+                     RollOff RollOffVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SignalPilot(
-        Pilot *PilotVal) = 0;
+                     Pilot *PilotVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SignalPilot(
-        Pilot PilotVal) = 0;
+                     Pilot PilotVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15520,204 +15520,204 @@ typedef struct IDVBSLocator2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBSLocator2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBSLocator2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBSLocator2* This);
+                     IDVBSLocator2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBSLocator2* This);
+                     IDVBSLocator2* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBSLocator2* This,
-        UINT *pctinfo);
+                     IDVBSLocator2* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBSLocator2* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBSLocator2* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBSLocator2* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBSLocator2* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBSLocator2* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBSLocator2* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IDVBSLocator2* This,
-        LONG *Frequency);
+                     IDVBSLocator2* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IDVBSLocator2* This,
-        LONG Frequency);
+                     IDVBSLocator2* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IDVBSLocator2* This,
-        FECMethod *FEC);
+                     IDVBSLocator2* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IDVBSLocator2* This,
-        FECMethod FEC);
+                     IDVBSLocator2* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IDVBSLocator2* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBSLocator2* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IDVBSLocator2* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBSLocator2* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IDVBSLocator2* This,
-        FECMethod *FEC);
+                     IDVBSLocator2* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IDVBSLocator2* This,
-        FECMethod FEC);
+                     IDVBSLocator2* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IDVBSLocator2* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBSLocator2* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IDVBSLocator2* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBSLocator2* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IDVBSLocator2* This,
-        ModulationType *Modulation);
+                     IDVBSLocator2* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IDVBSLocator2* This,
-        ModulationType Modulation);
+                     IDVBSLocator2* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IDVBSLocator2* This,
-        LONG *Rate);
+                     IDVBSLocator2* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IDVBSLocator2* This,
-        LONG Rate);
+                     IDVBSLocator2* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBSLocator2* This,
-        ILocator **NewLocator);
+                     IDVBSLocator2* This,
+                     ILocator **NewLocator);
 
     /*** IDVBSLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SignalPolarisation)(
-        IDVBSLocator2* This,
-        Polarisation *PolarisationVal);
+                     IDVBSLocator2* This,
+                     Polarisation *PolarisationVal);
 
     HRESULT (STDMETHODCALLTYPE *put_SignalPolarisation)(
-        IDVBSLocator2* This,
-        Polarisation PolarisationVal);
+                     IDVBSLocator2* This,
+                     Polarisation PolarisationVal);
 
     HRESULT (STDMETHODCALLTYPE *get_WestPosition)(
-        IDVBSLocator2* This,
-        VARIANT_BOOL *WestLongitude);
+                     IDVBSLocator2* This,
+                     VARIANT_BOOL *WestLongitude);
 
     HRESULT (STDMETHODCALLTYPE *put_WestPosition)(
-        IDVBSLocator2* This,
-        VARIANT_BOOL WestLongitude);
+                     IDVBSLocator2* This,
+                     VARIANT_BOOL WestLongitude);
 
     HRESULT (STDMETHODCALLTYPE *get_OrbitalPosition)(
-        IDVBSLocator2* This,
-        LONG *longitude);
+                     IDVBSLocator2* This,
+                     LONG *longitude);
 
     HRESULT (STDMETHODCALLTYPE *put_OrbitalPosition)(
-        IDVBSLocator2* This,
-        LONG longitude);
+                     IDVBSLocator2* This,
+                     LONG longitude);
 
     HRESULT (STDMETHODCALLTYPE *get_Azimuth)(
-        IDVBSLocator2* This,
-        LONG *Azimuth);
+                     IDVBSLocator2* This,
+                     LONG *Azimuth);
 
     HRESULT (STDMETHODCALLTYPE *put_Azimuth)(
-        IDVBSLocator2* This,
-        LONG Azimuth);
+                     IDVBSLocator2* This,
+                     LONG Azimuth);
 
     HRESULT (STDMETHODCALLTYPE *get_Elevation)(
-        IDVBSLocator2* This,
-        LONG *Elevation);
+                     IDVBSLocator2* This,
+                     LONG *Elevation);
 
     HRESULT (STDMETHODCALLTYPE *put_Elevation)(
-        IDVBSLocator2* This,
-        LONG Elevation);
+                     IDVBSLocator2* This,
+                     LONG Elevation);
 
     /*** IDVBSLocator2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_DiseqLNBSource)(
-        IDVBSLocator2* This,
-        LNB_Source *DiseqLNBSourceVal);
+                     IDVBSLocator2* This,
+                     LNB_Source *DiseqLNBSourceVal);
 
     HRESULT (STDMETHODCALLTYPE *put_DiseqLNBSource)(
-        IDVBSLocator2* This,
-        LNB_Source DiseqLNBSourceVal);
+                     IDVBSLocator2* This,
+                     LNB_Source DiseqLNBSourceVal);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalOscillatorOverrideLow)(
-        IDVBSLocator2* This,
-        LONG *LocalOscillatorOverrideLowVal);
+                     IDVBSLocator2* This,
+                     LONG *LocalOscillatorOverrideLowVal);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalOscillatorOverrideLow)(
-        IDVBSLocator2* This,
-        LONG LocalOscillatorOverrideLowVal);
+                     IDVBSLocator2* This,
+                     LONG LocalOscillatorOverrideLowVal);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalOscillatorOverrideHigh)(
-        IDVBSLocator2* This,
-        LONG *LocalOscillatorOverrideHighVal);
+                     IDVBSLocator2* This,
+                     LONG *LocalOscillatorOverrideHighVal);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalOscillatorOverrideHigh)(
-        IDVBSLocator2* This,
-        LONG LocalOscillatorOverrideHighVal);
+                     IDVBSLocator2* This,
+                     LONG LocalOscillatorOverrideHighVal);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalLNBSwitchOverride)(
-        IDVBSLocator2* This,
-        LONG *LocalLNBSwitchOverrideVal);
+                     IDVBSLocator2* This,
+                     LONG *LocalLNBSwitchOverrideVal);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalLNBSwitchOverride)(
-        IDVBSLocator2* This,
-        LONG LocalLNBSwitchOverrideVal);
+                     IDVBSLocator2* This,
+                     LONG LocalLNBSwitchOverrideVal);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalSpectralInversionOverride)(
-        IDVBSLocator2* This,
-        SpectralInversion *LocalSpectralInversionOverrideVal);
+                     IDVBSLocator2* This,
+                     SpectralInversion *LocalSpectralInversionOverrideVal);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalSpectralInversionOverride)(
-        IDVBSLocator2* This,
-        SpectralInversion LocalSpectralInversionOverrideVal);
+                     IDVBSLocator2* This,
+                     SpectralInversion LocalSpectralInversionOverrideVal);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalRollOff)(
-        IDVBSLocator2* This,
-        RollOff *RollOffVal);
+                     IDVBSLocator2* This,
+                     RollOff *RollOffVal);
 
     HRESULT (STDMETHODCALLTYPE *put_SignalRollOff)(
-        IDVBSLocator2* This,
-        RollOff RollOffVal);
+                     IDVBSLocator2* This,
+                     RollOff RollOffVal);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalPilot)(
-        IDVBSLocator2* This,
-        Pilot *PilotVal);
+                     IDVBSLocator2* This,
+                     Pilot *PilotVal);
 
     HRESULT (STDMETHODCALLTYPE *put_SignalPilot)(
-        IDVBSLocator2* This,
-        Pilot PilotVal);
+                     IDVBSLocator2* This,
+                     Pilot PilotVal);
 
     END_INTERFACE
 } IDVBSLocator2Vtbl;
@@ -16063,106 +16063,106 @@ typedef struct IDVBCLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDVBCLocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IDVBCLocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDVBCLocator* This);
+                     IDVBCLocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDVBCLocator* This);
+                     IDVBCLocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDVBCLocator* This,
-        UINT *pctinfo);
+                     IDVBCLocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDVBCLocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDVBCLocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDVBCLocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDVBCLocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDVBCLocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDVBCLocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IDVBCLocator* This,
-        LONG *Frequency);
+                     IDVBCLocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IDVBCLocator* This,
-        LONG Frequency);
+                     IDVBCLocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IDVBCLocator* This,
-        FECMethod *FEC);
+                     IDVBCLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IDVBCLocator* This,
-        FECMethod FEC);
+                     IDVBCLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IDVBCLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBCLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IDVBCLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBCLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IDVBCLocator* This,
-        FECMethod *FEC);
+                     IDVBCLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IDVBCLocator* This,
-        FECMethod FEC);
+                     IDVBCLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IDVBCLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IDVBCLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IDVBCLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IDVBCLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IDVBCLocator* This,
-        ModulationType *Modulation);
+                     IDVBCLocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IDVBCLocator* This,
-        ModulationType Modulation);
+                     IDVBCLocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IDVBCLocator* This,
-        LONG *Rate);
+                     IDVBCLocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IDVBCLocator* This,
-        LONG Rate);
+                     IDVBCLocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IDVBCLocator* This,
-        ILocator **NewLocator);
+                     IDVBCLocator* This,
+                     ILocator **NewLocator);
 
     END_INTERFACE
 } IDVBCLocatorVtbl;
@@ -16296,147 +16296,147 @@ typedef struct IISDBSLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IISDBSLocator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IISDBSLocator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IISDBSLocator* This);
+                     IISDBSLocator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IISDBSLocator* This);
+                     IISDBSLocator* This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IISDBSLocator* This,
-        UINT *pctinfo);
+                     IISDBSLocator* This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IISDBSLocator* This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IISDBSLocator* This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IISDBSLocator* This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IISDBSLocator* This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IISDBSLocator* This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IISDBSLocator* This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ILocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CarrierFrequency)(
-        IISDBSLocator* This,
-        LONG *Frequency);
+                     IISDBSLocator* This,
+                     LONG *Frequency);
 
     HRESULT (STDMETHODCALLTYPE *put_CarrierFrequency)(
-        IISDBSLocator* This,
-        LONG Frequency);
+                     IISDBSLocator* This,
+                     LONG Frequency);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFEC)(
-        IISDBSLocator* This,
-        FECMethod *FEC);
+                     IISDBSLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFEC)(
-        IISDBSLocator* This,
-        FECMethod FEC);
+                     IISDBSLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IISDBSLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IISDBSLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IISDBSLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IISDBSLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFEC)(
-        IISDBSLocator* This,
-        FECMethod *FEC);
+                     IISDBSLocator* This,
+                     FECMethod *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFEC)(
-        IISDBSLocator* This,
-        FECMethod FEC);
+                     IISDBSLocator* This,
+                     FECMethod FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IISDBSLocator* This,
-        BinaryConvolutionCodeRate *FEC);
+                     IISDBSLocator* This,
+                     BinaryConvolutionCodeRate *FEC);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IISDBSLocator* This,
-        BinaryConvolutionCodeRate FEC);
+                     IISDBSLocator* This,
+                     BinaryConvolutionCodeRate FEC);
 
     HRESULT (STDMETHODCALLTYPE *get_Modulation)(
-        IISDBSLocator* This,
-        ModulationType *Modulation);
+                     IISDBSLocator* This,
+                     ModulationType *Modulation);
 
     HRESULT (STDMETHODCALLTYPE *put_Modulation)(
-        IISDBSLocator* This,
-        ModulationType Modulation);
+                     IISDBSLocator* This,
+                     ModulationType Modulation);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IISDBSLocator* This,
-        LONG *Rate);
+                     IISDBSLocator* This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IISDBSLocator* This,
-        LONG Rate);
+                     IISDBSLocator* This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IISDBSLocator* This,
-        ILocator **NewLocator);
+                     IISDBSLocator* This,
+                     ILocator **NewLocator);
 
     /*** IDVBSLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SignalPolarisation)(
-        IISDBSLocator* This,
-        Polarisation *PolarisationVal);
+                     IISDBSLocator* This,
+                     Polarisation *PolarisationVal);
 
     HRESULT (STDMETHODCALLTYPE *put_SignalPolarisation)(
-        IISDBSLocator* This,
-        Polarisation PolarisationVal);
+                     IISDBSLocator* This,
+                     Polarisation PolarisationVal);
 
     HRESULT (STDMETHODCALLTYPE *get_WestPosition)(
-        IISDBSLocator* This,
-        VARIANT_BOOL *WestLongitude);
+                     IISDBSLocator* This,
+                     VARIANT_BOOL *WestLongitude);
 
     HRESULT (STDMETHODCALLTYPE *put_WestPosition)(
-        IISDBSLocator* This,
-        VARIANT_BOOL WestLongitude);
+                     IISDBSLocator* This,
+                     VARIANT_BOOL WestLongitude);
 
     HRESULT (STDMETHODCALLTYPE *get_OrbitalPosition)(
-        IISDBSLocator* This,
-        LONG *longitude);
+                     IISDBSLocator* This,
+                     LONG *longitude);
 
     HRESULT (STDMETHODCALLTYPE *put_OrbitalPosition)(
-        IISDBSLocator* This,
-        LONG longitude);
+                     IISDBSLocator* This,
+                     LONG longitude);
 
     HRESULT (STDMETHODCALLTYPE *get_Azimuth)(
-        IISDBSLocator* This,
-        LONG *Azimuth);
+                     IISDBSLocator* This,
+                     LONG *Azimuth);
 
     HRESULT (STDMETHODCALLTYPE *put_Azimuth)(
-        IISDBSLocator* This,
-        LONG Azimuth);
+                     IISDBSLocator* This,
+                     LONG Azimuth);
 
     HRESULT (STDMETHODCALLTYPE *get_Elevation)(
-        IISDBSLocator* This,
-        LONG *Elevation);
+                     IISDBSLocator* This,
+                     LONG *Elevation);
 
     HRESULT (STDMETHODCALLTYPE *put_Elevation)(
-        IISDBSLocator* This,
-        LONG Elevation);
+                     IISDBSLocator* This,
+                     LONG Elevation);
 
     END_INTERFACE
 } IISDBSLocatorVtbl;
@@ -16603,19 +16603,19 @@ MIDL_INTERFACE("1f0e5357-af43-44e6-8547-654c645145d2")
 IESEvent : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetEventId(
-        DWORD *pdwEventId) = 0;
+                     DWORD *pdwEventId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEventType(
-        GUID *pguidEventType) = 0;
+                     GUID *pguidEventType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCompletionStatus(
-        DWORD dwResult) = 0;
+                     DWORD dwResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetData(
-        SAFEARRAY **pbData) = 0;
+                     SAFEARRAY **pbData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringData(
-        BSTR *pbstrData) = 0;
+                     BSTR *pbstrData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16627,36 +16627,36 @@ typedef struct IESEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESEvent* This);
+                     IESEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESEvent* This);
+                     IESEvent* This);
 
     /*** IESEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventId)(
-        IESEvent* This,
-        DWORD *pdwEventId);
+                     IESEvent* This,
+                     DWORD *pdwEventId);
 
     HRESULT (STDMETHODCALLTYPE *GetEventType)(
-        IESEvent* This,
-        GUID *pguidEventType);
+                     IESEvent* This,
+                     GUID *pguidEventType);
 
     HRESULT (STDMETHODCALLTYPE *SetCompletionStatus)(
-        IESEvent* This,
-        DWORD dwResult);
+                     IESEvent* This,
+                     DWORD dwResult);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IESEvent* This,
-        SAFEARRAY **pbData);
+                     IESEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetStringData)(
-        IESEvent* This,
-        BSTR *pbstrData);
+                     IESEvent* This,
+                     BSTR *pbstrData);
 
     END_INTERFACE
 } IESEventVtbl;
@@ -16763,18 +16763,18 @@ MIDL_INTERFACE("ba4b6526-1a35-4635-8b56-3ec612746a8c")
 IESOpenMmiEvent : public IESEvent
 {
     virtual HRESULT STDMETHODCALLTYPE GetDialogNumber(
-        DWORD *pDialogRequest,
-        DWORD *pDialogNumber) = 0;
+                     DWORD *pDialogRequest,
+                     DWORD *pDialogNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDialogType(
-        GUID *guidDialogType) = 0;
+                     GUID *guidDialogType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDialogData(
-        SAFEARRAY **pbData) = 0;
+                     SAFEARRAY **pbData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDialogStringData(
-        BSTR *pbstrBaseUrl,
-        BSTR *pbstrData) = 0;
+                     BSTR *pbstrBaseUrl,
+                     BSTR *pbstrData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16786,55 +16786,55 @@ typedef struct IESOpenMmiEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESOpenMmiEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESOpenMmiEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESOpenMmiEvent* This);
+                     IESOpenMmiEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESOpenMmiEvent* This);
+                     IESOpenMmiEvent* This);
 
     /*** IESEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventId)(
-        IESOpenMmiEvent* This,
-        DWORD *pdwEventId);
+                     IESOpenMmiEvent* This,
+                     DWORD *pdwEventId);
 
     HRESULT (STDMETHODCALLTYPE *GetEventType)(
-        IESOpenMmiEvent* This,
-        GUID *pguidEventType);
+                     IESOpenMmiEvent* This,
+                     GUID *pguidEventType);
 
     HRESULT (STDMETHODCALLTYPE *SetCompletionStatus)(
-        IESOpenMmiEvent* This,
-        DWORD dwResult);
+                     IESOpenMmiEvent* This,
+                     DWORD dwResult);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IESOpenMmiEvent* This,
-        SAFEARRAY **pbData);
+                     IESOpenMmiEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetStringData)(
-        IESOpenMmiEvent* This,
-        BSTR *pbstrData);
+                     IESOpenMmiEvent* This,
+                     BSTR *pbstrData);
 
     /*** IESOpenMmiEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDialogNumber)(
-        IESOpenMmiEvent* This,
-        DWORD *pDialogRequest,
-        DWORD *pDialogNumber);
+                     IESOpenMmiEvent* This,
+                     DWORD *pDialogRequest,
+                     DWORD *pDialogNumber);
 
     HRESULT (STDMETHODCALLTYPE *GetDialogType)(
-        IESOpenMmiEvent* This,
-        GUID *guidDialogType);
+                     IESOpenMmiEvent* This,
+                     GUID *guidDialogType);
 
     HRESULT (STDMETHODCALLTYPE *GetDialogData)(
-        IESOpenMmiEvent* This,
-        SAFEARRAY **pbData);
+                     IESOpenMmiEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetDialogStringData)(
-        IESOpenMmiEvent* This,
-        BSTR *pbstrBaseUrl,
-        BSTR *pbstrData);
+                     IESOpenMmiEvent* This,
+                     BSTR *pbstrBaseUrl,
+                     BSTR *pbstrData);
 
     END_INTERFACE
 } IESOpenMmiEventVtbl;
@@ -16953,7 +16953,7 @@ MIDL_INTERFACE("6b80e96f-55e2-45aa-b754-0c23c8e7d5c1")
 IESCloseMmiEvent : public IESEvent
 {
     virtual HRESULT STDMETHODCALLTYPE GetDialogNumber(
-        DWORD *pDialogNumber) = 0;
+                     DWORD *pDialogNumber) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16965,41 +16965,41 @@ typedef struct IESCloseMmiEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESCloseMmiEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESCloseMmiEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESCloseMmiEvent* This);
+                     IESCloseMmiEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESCloseMmiEvent* This);
+                     IESCloseMmiEvent* This);
 
     /*** IESEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventId)(
-        IESCloseMmiEvent* This,
-        DWORD *pdwEventId);
+                     IESCloseMmiEvent* This,
+                     DWORD *pdwEventId);
 
     HRESULT (STDMETHODCALLTYPE *GetEventType)(
-        IESCloseMmiEvent* This,
-        GUID *pguidEventType);
+                     IESCloseMmiEvent* This,
+                     GUID *pguidEventType);
 
     HRESULT (STDMETHODCALLTYPE *SetCompletionStatus)(
-        IESCloseMmiEvent* This,
-        DWORD dwResult);
+                     IESCloseMmiEvent* This,
+                     DWORD dwResult);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IESCloseMmiEvent* This,
-        SAFEARRAY **pbData);
+                     IESCloseMmiEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetStringData)(
-        IESCloseMmiEvent* This,
-        BSTR *pbstrData);
+                     IESCloseMmiEvent* This,
+                     BSTR *pbstrData);
 
     /*** IESCloseMmiEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDialogNumber)(
-        IESCloseMmiEvent* This,
-        DWORD *pDialogNumber);
+                     IESCloseMmiEvent* This,
+                     DWORD *pDialogNumber);
 
     END_INTERFACE
 } IESCloseMmiEventVtbl;
@@ -17080,7 +17080,7 @@ MIDL_INTERFACE("8a24c46e-bb63-4664-8602-5d9c718c146d")
 IESValueUpdatedEvent : public IESEvent
 {
     virtual HRESULT STDMETHODCALLTYPE GetValueNames(
-        SAFEARRAY **pbstrNames) = 0;
+                     SAFEARRAY **pbstrNames) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17092,41 +17092,41 @@ typedef struct IESValueUpdatedEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESValueUpdatedEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESValueUpdatedEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESValueUpdatedEvent* This);
+                     IESValueUpdatedEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESValueUpdatedEvent* This);
+                     IESValueUpdatedEvent* This);
 
     /*** IESEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventId)(
-        IESValueUpdatedEvent* This,
-        DWORD *pdwEventId);
+                     IESValueUpdatedEvent* This,
+                     DWORD *pdwEventId);
 
     HRESULT (STDMETHODCALLTYPE *GetEventType)(
-        IESValueUpdatedEvent* This,
-        GUID *pguidEventType);
+                     IESValueUpdatedEvent* This,
+                     GUID *pguidEventType);
 
     HRESULT (STDMETHODCALLTYPE *SetCompletionStatus)(
-        IESValueUpdatedEvent* This,
-        DWORD dwResult);
+                     IESValueUpdatedEvent* This,
+                     DWORD dwResult);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IESValueUpdatedEvent* This,
-        SAFEARRAY **pbData);
+                     IESValueUpdatedEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetStringData)(
-        IESValueUpdatedEvent* This,
-        BSTR *pbstrData);
+                     IESValueUpdatedEvent* This,
+                     BSTR *pbstrData);
 
     /*** IESValueUpdatedEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetValueNames)(
-        IESValueUpdatedEvent* This,
-        SAFEARRAY **pbstrNames);
+                     IESValueUpdatedEvent* This,
+                     SAFEARRAY **pbstrNames);
 
     END_INTERFACE
 } IESValueUpdatedEventVtbl;
@@ -17207,16 +17207,16 @@ MIDL_INTERFACE("54c7a5e8-c3bb-4f51-af14-e0e2c0e34c6d")
 IESRequestTunerEvent : public IESEvent
 {
     virtual HRESULT STDMETHODCALLTYPE GetPriority(
-        BYTE *pbyPriority) = 0;
+                     BYTE *pbyPriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetReason(
-        BYTE *pbyReason) = 0;
+                     BYTE *pbyReason) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConsequences(
-        BYTE *pbyConsequences) = 0;
+                     BYTE *pbyConsequences) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEstimatedTime(
-        DWORD *pdwEstimatedTime) = 0;
+                     DWORD *pdwEstimatedTime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17228,53 +17228,53 @@ typedef struct IESRequestTunerEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESRequestTunerEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESRequestTunerEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESRequestTunerEvent* This);
+                     IESRequestTunerEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESRequestTunerEvent* This);
+                     IESRequestTunerEvent* This);
 
     /*** IESEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventId)(
-        IESRequestTunerEvent* This,
-        DWORD *pdwEventId);
+                     IESRequestTunerEvent* This,
+                     DWORD *pdwEventId);
 
     HRESULT (STDMETHODCALLTYPE *GetEventType)(
-        IESRequestTunerEvent* This,
-        GUID *pguidEventType);
+                     IESRequestTunerEvent* This,
+                     GUID *pguidEventType);
 
     HRESULT (STDMETHODCALLTYPE *SetCompletionStatus)(
-        IESRequestTunerEvent* This,
-        DWORD dwResult);
+                     IESRequestTunerEvent* This,
+                     DWORD dwResult);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IESRequestTunerEvent* This,
-        SAFEARRAY **pbData);
+                     IESRequestTunerEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetStringData)(
-        IESRequestTunerEvent* This,
-        BSTR *pbstrData);
+                     IESRequestTunerEvent* This,
+                     BSTR *pbstrData);
 
     /*** IESRequestTunerEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPriority)(
-        IESRequestTunerEvent* This,
-        BYTE *pbyPriority);
+                     IESRequestTunerEvent* This,
+                     BYTE *pbyPriority);
 
     HRESULT (STDMETHODCALLTYPE *GetReason)(
-        IESRequestTunerEvent* This,
-        BYTE *pbyReason);
+                     IESRequestTunerEvent* This,
+                     BYTE *pbyReason);
 
     HRESULT (STDMETHODCALLTYPE *GetConsequences)(
-        IESRequestTunerEvent* This,
-        BYTE *pbyConsequences);
+                     IESRequestTunerEvent* This,
+                     BYTE *pbyConsequences);
 
     HRESULT (STDMETHODCALLTYPE *GetEstimatedTime)(
-        IESRequestTunerEvent* This,
-        DWORD *pdwEstimatedTime);
+                     IESRequestTunerEvent* This,
+                     DWORD *pdwEstimatedTime);
 
     END_INTERFACE
 } IESRequestTunerEventVtbl;
@@ -17391,16 +17391,16 @@ MIDL_INTERFACE("2017cb03-dc0f-4c24-83ca-36307b2cd19f")
 IESIsdbCasResponseEvent : public IESEvent
 {
     virtual HRESULT STDMETHODCALLTYPE GetRequestId(
-        DWORD *pRequestId) = 0;
+                     DWORD *pRequestId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        DWORD *pStatus) = 0;
+                     DWORD *pStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataLength(
-        DWORD *pRequestLength) = 0;
+                     DWORD *pRequestLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResponseData(
-        SAFEARRAY **pbData) = 0;
+                     SAFEARRAY **pbData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17412,53 +17412,53 @@ typedef struct IESIsdbCasResponseEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESIsdbCasResponseEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESIsdbCasResponseEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESIsdbCasResponseEvent* This);
+                     IESIsdbCasResponseEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESIsdbCasResponseEvent* This);
+                     IESIsdbCasResponseEvent* This);
 
     /*** IESEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventId)(
-        IESIsdbCasResponseEvent* This,
-        DWORD *pdwEventId);
+                     IESIsdbCasResponseEvent* This,
+                     DWORD *pdwEventId);
 
     HRESULT (STDMETHODCALLTYPE *GetEventType)(
-        IESIsdbCasResponseEvent* This,
-        GUID *pguidEventType);
+                     IESIsdbCasResponseEvent* This,
+                     GUID *pguidEventType);
 
     HRESULT (STDMETHODCALLTYPE *SetCompletionStatus)(
-        IESIsdbCasResponseEvent* This,
-        DWORD dwResult);
+                     IESIsdbCasResponseEvent* This,
+                     DWORD dwResult);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IESIsdbCasResponseEvent* This,
-        SAFEARRAY **pbData);
+                     IESIsdbCasResponseEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetStringData)(
-        IESIsdbCasResponseEvent* This,
-        BSTR *pbstrData);
+                     IESIsdbCasResponseEvent* This,
+                     BSTR *pbstrData);
 
     /*** IESIsdbCasResponseEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRequestId)(
-        IESIsdbCasResponseEvent* This,
-        DWORD *pRequestId);
+                     IESIsdbCasResponseEvent* This,
+                     DWORD *pRequestId);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IESIsdbCasResponseEvent* This,
-        DWORD *pStatus);
+                     IESIsdbCasResponseEvent* This,
+                     DWORD *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetDataLength)(
-        IESIsdbCasResponseEvent* This,
-        DWORD *pRequestLength);
+                     IESIsdbCasResponseEvent* This,
+                     DWORD *pRequestLength);
 
     HRESULT (STDMETHODCALLTYPE *GetResponseData)(
-        IESIsdbCasResponseEvent* This,
-        SAFEARRAY **pbData);
+                     IESIsdbCasResponseEvent* This,
+                     SAFEARRAY **pbData);
 
     END_INTERFACE
 } IESIsdbCasResponseEventVtbl;
@@ -17575,7 +17575,7 @@ MIDL_INTERFACE("907e0b5c-e42d-4f04-91f0-26f401f36907")
 IGpnvsCommonBase : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetValueUpdateName(
-        BSTR *pbstrName) = 0;
+                     BSTR *pbstrName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17587,20 +17587,20 @@ typedef struct IGpnvsCommonBaseVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IGpnvsCommonBase* This,
-        REFIID riid,
-        void **ppvObject);
+                     IGpnvsCommonBase* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IGpnvsCommonBase* This);
+                     IGpnvsCommonBase* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IGpnvsCommonBase* This);
+                     IGpnvsCommonBase* This);
 
     /*** IGpnvsCommonBase methods ***/
     HRESULT (STDMETHODCALLTYPE *GetValueUpdateName)(
-        IGpnvsCommonBase* This,
-        BSTR *pbstrName);
+                     IGpnvsCommonBase* This,
+                     BSTR *pbstrName);
 
     END_INTERFACE
 } IGpnvsCommonBaseVtbl;
@@ -17659,14 +17659,14 @@ MIDL_INTERFACE("506a09b8-7f86-4e04-ac05-3303bfe8fc49")
 IESEventFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateESEvent(
-        IUnknown *pServiceProvider,
-        DWORD dwEventId,
-        GUID guidEventType,
-        DWORD dwEventDataLength,
-        BYTE *pEventData,
-        BSTR bstrBaseUrl,
-        IUnknown *pInitContext,
-        IESEvent **ppESEvent) = 0;
+                     IUnknown *pServiceProvider,
+                     DWORD dwEventId,
+                     GUID guidEventType,
+                     DWORD dwEventDataLength,
+                     BYTE *pEventData,
+                     BSTR bstrBaseUrl,
+                     IUnknown *pInitContext,
+                     IESEvent **ppESEvent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17678,27 +17678,27 @@ typedef struct IESEventFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESEventFactory* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESEventFactory* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESEventFactory* This);
+                     IESEventFactory* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESEventFactory* This);
+                     IESEventFactory* This);
 
     /*** IESEventFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateESEvent)(
-        IESEventFactory* This,
-        IUnknown *pServiceProvider,
-        DWORD dwEventId,
-        GUID guidEventType,
-        DWORD dwEventDataLength,
-        BYTE *pEventData,
-        BSTR bstrBaseUrl,
-        IUnknown *pInitContext,
-        IESEvent **ppESEvent);
+                     IESEventFactory* This,
+                     IUnknown *pServiceProvider,
+                     DWORD dwEventId,
+                     GUID guidEventType,
+                     DWORD dwEventDataLength,
+                     BYTE *pEventData,
+                     BSTR bstrBaseUrl,
+                     IUnknown *pInitContext,
+                     IESEvent **ppESEvent);
 
     END_INTERFACE
 } IESEventFactoryVtbl;
@@ -17764,37 +17764,37 @@ MIDL_INTERFACE("d5a48ef5-a81b-4df0-acaa-5e35e7ea45d4")
 IESLicenseRenewalResultEvent : public IESEvent
 {
     virtual HRESULT STDMETHODCALLTYPE GetCallersId(
-        DWORD *pdwCallersId) = 0;
+                     DWORD *pdwCallersId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileName(
-        BSTR *pbstrFilename) = 0;
+                     BSTR *pbstrFilename) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRenewalSuccessful(
-        WINBOOL *pfRenewalSuccessful) = 0;
+                     WINBOOL *pfRenewalSuccessful) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsCheckEntitlementCallRequired(
-        WINBOOL *pfCheckEntTokenCallNeeded) = 0;
+                     WINBOOL *pfCheckEntTokenCallNeeded) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescrambledStatus(
-        DWORD *pDescrambledStatus) = 0;
+                     DWORD *pDescrambledStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRenewalResultCode(
-        DWORD *pdwRenewalResultCode) = 0;
+                     DWORD *pdwRenewalResultCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCASFailureCode(
-        DWORD *pdwCASFailureCode) = 0;
+                     DWORD *pdwCASFailureCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRenewalHResult(
-        HRESULT *phr) = 0;
+                     HRESULT *phr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEntitlementTokenLength(
-        DWORD *pdwLength) = 0;
+                     DWORD *pdwLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEntitlementToken(
-        SAFEARRAY **pbData) = 0;
+                     SAFEARRAY **pbData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExpiryDate(
-        DWORD64 *pqwExpiryDate) = 0;
+                     DWORD64 *pqwExpiryDate) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17806,81 +17806,81 @@ typedef struct IESLicenseRenewalResultEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESLicenseRenewalResultEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESLicenseRenewalResultEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESLicenseRenewalResultEvent* This);
+                     IESLicenseRenewalResultEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESLicenseRenewalResultEvent* This);
+                     IESLicenseRenewalResultEvent* This);
 
     /*** IESEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventId)(
-        IESLicenseRenewalResultEvent* This,
-        DWORD *pdwEventId);
+                     IESLicenseRenewalResultEvent* This,
+                     DWORD *pdwEventId);
 
     HRESULT (STDMETHODCALLTYPE *GetEventType)(
-        IESLicenseRenewalResultEvent* This,
-        GUID *pguidEventType);
+                     IESLicenseRenewalResultEvent* This,
+                     GUID *pguidEventType);
 
     HRESULT (STDMETHODCALLTYPE *SetCompletionStatus)(
-        IESLicenseRenewalResultEvent* This,
-        DWORD dwResult);
+                     IESLicenseRenewalResultEvent* This,
+                     DWORD dwResult);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IESLicenseRenewalResultEvent* This,
-        SAFEARRAY **pbData);
+                     IESLicenseRenewalResultEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetStringData)(
-        IESLicenseRenewalResultEvent* This,
-        BSTR *pbstrData);
+                     IESLicenseRenewalResultEvent* This,
+                     BSTR *pbstrData);
 
     /*** IESLicenseRenewalResultEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCallersId)(
-        IESLicenseRenewalResultEvent* This,
-        DWORD *pdwCallersId);
+                     IESLicenseRenewalResultEvent* This,
+                     DWORD *pdwCallersId);
 
     HRESULT (STDMETHODCALLTYPE *GetFileName)(
-        IESLicenseRenewalResultEvent* This,
-        BSTR *pbstrFilename);
+                     IESLicenseRenewalResultEvent* This,
+                     BSTR *pbstrFilename);
 
     HRESULT (STDMETHODCALLTYPE *IsRenewalSuccessful)(
-        IESLicenseRenewalResultEvent* This,
-        WINBOOL *pfRenewalSuccessful);
+                     IESLicenseRenewalResultEvent* This,
+                     WINBOOL *pfRenewalSuccessful);
 
     HRESULT (STDMETHODCALLTYPE *IsCheckEntitlementCallRequired)(
-        IESLicenseRenewalResultEvent* This,
-        WINBOOL *pfCheckEntTokenCallNeeded);
+                     IESLicenseRenewalResultEvent* This,
+                     WINBOOL *pfCheckEntTokenCallNeeded);
 
     HRESULT (STDMETHODCALLTYPE *GetDescrambledStatus)(
-        IESLicenseRenewalResultEvent* This,
-        DWORD *pDescrambledStatus);
+                     IESLicenseRenewalResultEvent* This,
+                     DWORD *pDescrambledStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetRenewalResultCode)(
-        IESLicenseRenewalResultEvent* This,
-        DWORD *pdwRenewalResultCode);
+                     IESLicenseRenewalResultEvent* This,
+                     DWORD *pdwRenewalResultCode);
 
     HRESULT (STDMETHODCALLTYPE *GetCASFailureCode)(
-        IESLicenseRenewalResultEvent* This,
-        DWORD *pdwCASFailureCode);
+                     IESLicenseRenewalResultEvent* This,
+                     DWORD *pdwCASFailureCode);
 
     HRESULT (STDMETHODCALLTYPE *GetRenewalHResult)(
-        IESLicenseRenewalResultEvent* This,
-        HRESULT *phr);
+                     IESLicenseRenewalResultEvent* This,
+                     HRESULT *phr);
 
     HRESULT (STDMETHODCALLTYPE *GetEntitlementTokenLength)(
-        IESLicenseRenewalResultEvent* This,
-        DWORD *pdwLength);
+                     IESLicenseRenewalResultEvent* This,
+                     DWORD *pdwLength);
 
     HRESULT (STDMETHODCALLTYPE *GetEntitlementToken)(
-        IESLicenseRenewalResultEvent* This,
-        SAFEARRAY **pbData);
+                     IESLicenseRenewalResultEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetExpiryDate)(
-        IESLicenseRenewalResultEvent* This,
-        DWORD64 *pqwExpiryDate);
+                     IESLicenseRenewalResultEvent* This,
+                     DWORD64 *pqwExpiryDate);
 
     END_INTERFACE
 } IESLicenseRenewalResultEventVtbl;
@@ -18081,22 +18081,22 @@ MIDL_INTERFACE("ba9edcb6-4d36-4cfe-8c56-87a6b0ca48e1")
 IESFileExpiryDateEvent : public IESEvent
 {
     virtual HRESULT STDMETHODCALLTYPE GetTunerId(
-        GUID *pguidTunerId) = 0;
+                     GUID *pguidTunerId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExpiryDate(
-        DWORD64 *pqwExpiryDate) = 0;
+                     DWORD64 *pqwExpiryDate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFinalExpiryDate(
-        DWORD64 *pqwExpiryDate) = 0;
+                     DWORD64 *pqwExpiryDate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxRenewalCount(
-        DWORD *dwMaxRenewalCount) = 0;
+                     DWORD *dwMaxRenewalCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEntitlementTokenPresent(
-        WINBOOL *pfEntTokenPresent) = 0;
+                     WINBOOL *pfEntTokenPresent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoesExpireAfterFirstUse(
-        WINBOOL *pfExpireAfterFirstUse) = 0;
+                     WINBOOL *pfExpireAfterFirstUse) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18108,61 +18108,61 @@ typedef struct IESFileExpiryDateEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESFileExpiryDateEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESFileExpiryDateEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESFileExpiryDateEvent* This);
+                     IESFileExpiryDateEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESFileExpiryDateEvent* This);
+                     IESFileExpiryDateEvent* This);
 
     /*** IESEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventId)(
-        IESFileExpiryDateEvent* This,
-        DWORD *pdwEventId);
+                     IESFileExpiryDateEvent* This,
+                     DWORD *pdwEventId);
 
     HRESULT (STDMETHODCALLTYPE *GetEventType)(
-        IESFileExpiryDateEvent* This,
-        GUID *pguidEventType);
+                     IESFileExpiryDateEvent* This,
+                     GUID *pguidEventType);
 
     HRESULT (STDMETHODCALLTYPE *SetCompletionStatus)(
-        IESFileExpiryDateEvent* This,
-        DWORD dwResult);
+                     IESFileExpiryDateEvent* This,
+                     DWORD dwResult);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IESFileExpiryDateEvent* This,
-        SAFEARRAY **pbData);
+                     IESFileExpiryDateEvent* This,
+                     SAFEARRAY **pbData);
 
     HRESULT (STDMETHODCALLTYPE *GetStringData)(
-        IESFileExpiryDateEvent* This,
-        BSTR *pbstrData);
+                     IESFileExpiryDateEvent* This,
+                     BSTR *pbstrData);
 
     /*** IESFileExpiryDateEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTunerId)(
-        IESFileExpiryDateEvent* This,
-        GUID *pguidTunerId);
+                     IESFileExpiryDateEvent* This,
+                     GUID *pguidTunerId);
 
     HRESULT (STDMETHODCALLTYPE *GetExpiryDate)(
-        IESFileExpiryDateEvent* This,
-        DWORD64 *pqwExpiryDate);
+                     IESFileExpiryDateEvent* This,
+                     DWORD64 *pqwExpiryDate);
 
     HRESULT (STDMETHODCALLTYPE *GetFinalExpiryDate)(
-        IESFileExpiryDateEvent* This,
-        DWORD64 *pqwExpiryDate);
+                     IESFileExpiryDateEvent* This,
+                     DWORD64 *pqwExpiryDate);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxRenewalCount)(
-        IESFileExpiryDateEvent* This,
-        DWORD *dwMaxRenewalCount);
+                     IESFileExpiryDateEvent* This,
+                     DWORD *dwMaxRenewalCount);
 
     HRESULT (STDMETHODCALLTYPE *IsEntitlementTokenPresent)(
-        IESFileExpiryDateEvent* This,
-        WINBOOL *pfEntTokenPresent);
+                     IESFileExpiryDateEvent* This,
+                     WINBOOL *pfEntTokenPresent);
 
     HRESULT (STDMETHODCALLTYPE *DoesExpireAfterFirstUse)(
-        IESFileExpiryDateEvent* This,
-        WINBOOL *pfExpireAfterFirstUse);
+                     IESFileExpiryDateEvent* This,
+                     WINBOOL *pfExpireAfterFirstUse);
 
     END_INTERFACE
 } IESFileExpiryDateEventVtbl;
@@ -18303,8 +18303,8 @@ MIDL_INTERFACE("abd414bf-cfe5-4e5e-af5b-4b4e49c5bfeb")
 IESEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnESEventReceived(
-        GUID guidEventType,
-        IESEvent *pESEvent) = 0;
+                     GUID guidEventType,
+                     IESEvent *pESEvent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18316,21 +18316,21 @@ typedef struct IESEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESEvents* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESEvents* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESEvents* This);
+                     IESEvents* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESEvents* This);
+                     IESEvents* This);
 
     /*** IESEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnESEventReceived)(
-        IESEvents* This,
-        GUID guidEventType,
-        IESEvent *pESEvent);
+                     IESEvents* This,
+                     GUID guidEventType,
+                     IESEvent *pESEvent);
 
     END_INTERFACE
 } IESEventsVtbl;
@@ -18390,7 +18390,7 @@ MIDL_INTERFACE("ed89a619-4c06-4b2f-99eb-c7669b13047c")
 IESEventService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FireESEvent(
-        IESEvent *pESEvent) = 0;
+                     IESEvent *pESEvent) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18402,20 +18402,20 @@ typedef struct IESEventServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESEventService* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESEventService* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESEventService* This);
+                     IESEventService* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESEventService* This);
+                     IESEventService* This);
 
     /*** IESEventService methods ***/
     HRESULT (STDMETHODCALLTYPE *FireESEvent)(
-        IESEventService* This,
-        IESEvent *pESEvent);
+                     IESEventService* This,
+                     IESEvent *pESEvent);
 
     END_INTERFACE
 } IESEventServiceVtbl;
@@ -18474,22 +18474,22 @@ MIDL_INTERFACE("33b9daae-9309-491d-a051-bcad2a70cd66")
 IESEventServiceConfiguration : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetParent(
-        IESEventService *pEventService) = 0;
+                     IESEventService *pEventService) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveParent(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOwner(
-        IESEvents *pESEvents) = 0;
+                     IESEvents *pESEvents) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveOwner(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGraph(
-        IFilterGraph *pGraph) = 0;
+                     IFilterGraph *pGraph) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveGraph(
-        IFilterGraph *pGraph) = 0;
+                     IFilterGraph *pGraph) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18501,38 +18501,38 @@ typedef struct IESEventServiceConfigurationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IESEventServiceConfiguration* This,
-        REFIID riid,
-        void **ppvObject);
+                     IESEventServiceConfiguration* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IESEventServiceConfiguration* This);
+                     IESEventServiceConfiguration* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IESEventServiceConfiguration* This);
+                     IESEventServiceConfiguration* This);
 
     /*** IESEventServiceConfiguration methods ***/
     HRESULT (STDMETHODCALLTYPE *SetParent)(
-        IESEventServiceConfiguration* This,
-        IESEventService *pEventService);
+                     IESEventServiceConfiguration* This,
+                     IESEventService *pEventService);
 
     HRESULT (STDMETHODCALLTYPE *RemoveParent)(
-        IESEventServiceConfiguration* This);
+                     IESEventServiceConfiguration* This);
 
     HRESULT (STDMETHODCALLTYPE *SetOwner)(
-        IESEventServiceConfiguration* This,
-        IESEvents *pESEvents);
+                     IESEventServiceConfiguration* This,
+                     IESEvents *pESEvents);
 
     HRESULT (STDMETHODCALLTYPE *RemoveOwner)(
-        IESEventServiceConfiguration* This);
+                     IESEventServiceConfiguration* This);
 
     HRESULT (STDMETHODCALLTYPE *SetGraph)(
-        IESEventServiceConfiguration* This,
-        IFilterGraph *pGraph);
+                     IESEventServiceConfiguration* This,
+                     IFilterGraph *pGraph);
 
     HRESULT (STDMETHODCALLTYPE *RemoveGraph)(
-        IESEventServiceConfiguration* This,
-        IFilterGraph *pGraph);
+                     IESEventServiceConfiguration* This,
+                     IFilterGraph *pGraph);
 
     END_INTERFACE
 } IESEventServiceConfigurationVtbl;
@@ -18649,7 +18649,7 @@ MIDL_INTERFACE("3b21263f-26e8-489d-aac4-924f7efd9511")
 IBroadcastEvent : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Fire(
-        GUID EventID) = 0;
+                     GUID EventID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18661,20 +18661,20 @@ typedef struct IBroadcastEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBroadcastEvent* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBroadcastEvent* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBroadcastEvent* This);
+                     IBroadcastEvent* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBroadcastEvent* This);
+                     IBroadcastEvent* This);
 
     /*** IBroadcastEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *Fire)(
-        IBroadcastEvent* This,
-        GUID EventID);
+                     IBroadcastEvent* This,
+                     GUID EventID);
 
     END_INTERFACE
 } IBroadcastEventVtbl;
@@ -18733,11 +18733,11 @@ MIDL_INTERFACE("3d9e3887-1929-423f-8021-43682de95448")
 IBroadcastEventEx : public IBroadcastEvent
 {
     virtual HRESULT STDMETHODCALLTYPE FireEx(
-        GUID EventID,
-        ULONG Param1,
-        ULONG Param2,
-        ULONG Param3,
-        ULONG Param4) = 0;
+                     GUID EventID,
+                     ULONG Param1,
+                     ULONG Param2,
+                     ULONG Param3,
+                     ULONG Param4) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18749,29 +18749,29 @@ typedef struct IBroadcastEventExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBroadcastEventEx* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBroadcastEventEx* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBroadcastEventEx* This);
+                     IBroadcastEventEx* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBroadcastEventEx* This);
+                     IBroadcastEventEx* This);
 
     /*** IBroadcastEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *Fire)(
-        IBroadcastEventEx* This,
-        GUID EventID);
+                     IBroadcastEventEx* This,
+                     GUID EventID);
 
     /*** IBroadcastEventEx methods ***/
     HRESULT (STDMETHODCALLTYPE *FireEx)(
-        IBroadcastEventEx* This,
-        GUID EventID,
-        ULONG Param1,
-        ULONG Param2,
-        ULONG Param3,
-        ULONG Param4);
+                     IBroadcastEventEx* This,
+                     GUID EventID,
+                     ULONG Param1,
+                     ULONG Param2,
+                     ULONG Param3,
+                     ULONG Param4);
 
     END_INTERFACE
 } IBroadcastEventExVtbl;
@@ -18840,11 +18840,11 @@ MIDL_INTERFACE("359b3901-572c-4854-bb49-cdef66606a25")
 IRegisterTuner : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Register(
-        ITuner *pTuner,
-        IGraphBuilder *pGraph) = 0;
+                     ITuner *pTuner,
+                     IGraphBuilder *pGraph) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unregister(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18856,24 +18856,24 @@ typedef struct IRegisterTunerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRegisterTuner* This,
-        REFIID riid,
-        void **ppvObject);
+                     IRegisterTuner* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRegisterTuner* This);
+                     IRegisterTuner* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRegisterTuner* This);
+                     IRegisterTuner* This);
 
     /*** IRegisterTuner methods ***/
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IRegisterTuner* This,
-        ITuner *pTuner,
-        IGraphBuilder *pGraph);
+                     IRegisterTuner* This,
+                     ITuner *pTuner,
+                     IGraphBuilder *pGraph);
 
     HRESULT (STDMETHODCALLTYPE *Unregister)(
-        IRegisterTuner* This);
+                     IRegisterTuner* This);
 
     END_INTERFACE
 } IRegisterTunerVtbl;
@@ -18944,29 +18944,29 @@ MIDL_INTERFACE("b34505e0-2f0e-497b-80bc-d43f3b24ed7f")
 IBDAComparable : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CompareExact(
-        IDispatch *CompareTo,
-        LONG *Result) = 0;
+                     IDispatch *CompareTo,
+                     LONG *Result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompareEquivalent(
-        IDispatch *CompareTo,
-        DWORD dwFlags,
-        LONG *Result) = 0;
+                     IDispatch *CompareTo,
+                     DWORD dwFlags,
+                     LONG *Result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HashExact(
-        INT64 *Result) = 0;
+                     INT64 *Result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HashExactIncremental(
-        INT64 PartialResult,
-        INT64 *Result) = 0;
+                     INT64 PartialResult,
+                     INT64 *Result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HashEquivalent(
-        DWORD dwFlags,
-        INT64 *Result) = 0;
+                     DWORD dwFlags,
+                     INT64 *Result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HashEquivalentIncremental(
-        INT64 PartialResult,
-        DWORD dwFlags,
-        INT64 *Result) = 0;
+                     INT64 PartialResult,
+                     DWORD dwFlags,
+                     INT64 *Result) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18978,47 +18978,47 @@ typedef struct IBDAComparableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDAComparable* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDAComparable* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDAComparable* This);
+                     IBDAComparable* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDAComparable* This);
+                     IBDAComparable* This);
 
     /*** IBDAComparable methods ***/
     HRESULT (STDMETHODCALLTYPE *CompareExact)(
-        IBDAComparable* This,
-        IDispatch *CompareTo,
-        LONG *Result);
+                     IBDAComparable* This,
+                     IDispatch *CompareTo,
+                     LONG *Result);
 
     HRESULT (STDMETHODCALLTYPE *CompareEquivalent)(
-        IBDAComparable* This,
-        IDispatch *CompareTo,
-        DWORD dwFlags,
-        LONG *Result);
+                     IBDAComparable* This,
+                     IDispatch *CompareTo,
+                     DWORD dwFlags,
+                     LONG *Result);
 
     HRESULT (STDMETHODCALLTYPE *HashExact)(
-        IBDAComparable* This,
-        INT64 *Result);
+                     IBDAComparable* This,
+                     INT64 *Result);
 
     HRESULT (STDMETHODCALLTYPE *HashExactIncremental)(
-        IBDAComparable* This,
-        INT64 PartialResult,
-        INT64 *Result);
+                     IBDAComparable* This,
+                     INT64 PartialResult,
+                     INT64 *Result);
 
     HRESULT (STDMETHODCALLTYPE *HashEquivalent)(
-        IBDAComparable* This,
-        DWORD dwFlags,
-        INT64 *Result);
+                     IBDAComparable* This,
+                     DWORD dwFlags,
+                     INT64 *Result);
 
     HRESULT (STDMETHODCALLTYPE *HashEquivalentIncremental)(
-        IBDAComparable* This,
-        INT64 PartialResult,
-        DWORD dwFlags,
-        INT64 *Result);
+                     IBDAComparable* This,
+                     INT64 PartialResult,
+                     DWORD dwFlags,
+                     INT64 *Result);
 
     END_INTERFACE
 } IBDAComparableVtbl;
@@ -19144,13 +19144,13 @@ MIDL_INTERFACE("0754cd31-8d15-47a9-8215-d20064157244")
 IPersistTuneXml : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        VARIANT varValue) = 0;
+                     VARIANT varValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        VARIANT *pvarFragment) = 0;
+                     VARIANT *pvarFragment) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19162,32 +19162,32 @@ typedef struct IPersistTuneXmlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistTuneXml* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistTuneXml* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistTuneXml* This);
+                     IPersistTuneXml* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistTuneXml* This);
+                     IPersistTuneXml* This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistTuneXml* This,
-        CLSID *pClassID);
+                     IPersistTuneXml* This,
+                     CLSID *pClassID);
 
     /*** IPersistTuneXml methods ***/
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IPersistTuneXml* This);
+                     IPersistTuneXml* This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistTuneXml* This,
-        VARIANT varValue);
+                     IPersistTuneXml* This,
+                     VARIANT varValue);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistTuneXml* This,
-        VARIANT *pvarFragment);
+                     IPersistTuneXml* This,
+                     VARIANT *pvarFragment);
 
     END_INTERFACE
 } IPersistTuneXmlVtbl;
@@ -19275,8 +19275,8 @@ MIDL_INTERFACE("990237ae-ac11-4614-be8f-dd217a4cb4cb")
 IPersistTuneXmlUtility : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Deserialize(
-        VARIANT varValue,
-        IUnknown **ppObject) = 0;
+                     VARIANT varValue,
+                     IUnknown **ppObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19288,21 +19288,21 @@ typedef struct IPersistTuneXmlUtilityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistTuneXmlUtility* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistTuneXmlUtility* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistTuneXmlUtility* This);
+                     IPersistTuneXmlUtility* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistTuneXmlUtility* This);
+                     IPersistTuneXmlUtility* This);
 
     /*** IPersistTuneXmlUtility methods ***/
     HRESULT (STDMETHODCALLTYPE *Deserialize)(
-        IPersistTuneXmlUtility* This,
-        VARIANT varValue,
-        IUnknown **ppObject);
+                     IPersistTuneXmlUtility* This,
+                     VARIANT varValue,
+                     IUnknown **ppObject);
 
     END_INTERFACE
 } IPersistTuneXmlUtilityVtbl;
@@ -19362,8 +19362,8 @@ MIDL_INTERFACE("992e165f-ea24-4b2f-9a1d-009d92120451")
 IPersistTuneXmlUtility2 : public IPersistTuneXmlUtility
 {
     virtual HRESULT STDMETHODCALLTYPE Serialize(
-        ITuneRequest *piTuneRequest,
-        BSTR *pString) = 0;
+                     ITuneRequest *piTuneRequest,
+                     BSTR *pString) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19375,27 +19375,27 @@ typedef struct IPersistTuneXmlUtility2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistTuneXmlUtility2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistTuneXmlUtility2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistTuneXmlUtility2* This);
+                     IPersistTuneXmlUtility2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistTuneXmlUtility2* This);
+                     IPersistTuneXmlUtility2* This);
 
     /*** IPersistTuneXmlUtility methods ***/
     HRESULT (STDMETHODCALLTYPE *Deserialize)(
-        IPersistTuneXmlUtility2* This,
-        VARIANT varValue,
-        IUnknown **ppObject);
+                     IPersistTuneXmlUtility2* This,
+                     VARIANT varValue,
+                     IUnknown **ppObject);
 
     /*** IPersistTuneXmlUtility2 methods ***/
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        IPersistTuneXmlUtility2* This,
-        ITuneRequest *piTuneRequest,
-        BSTR *pString);
+                     IPersistTuneXmlUtility2* This,
+                     ITuneRequest *piTuneRequest,
+                     BSTR *pString);
 
     END_INTERFACE
 } IPersistTuneXmlUtility2Vtbl;
@@ -19461,8 +19461,8 @@ MIDL_INTERFACE("c0a4a1d4-2b3c-491a-ba22-499fbadd4d12")
 IBDACreateTuneRequestEx : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateTuneRequestEx(
-        REFCLSID TuneRequestIID,
-        ITuneRequest **TuneRequest) = 0;
+                     REFCLSID TuneRequestIID,
+                     ITuneRequest **TuneRequest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19474,21 +19474,21 @@ typedef struct IBDACreateTuneRequestExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDACreateTuneRequestEx* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDACreateTuneRequestEx* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDACreateTuneRequestEx* This);
+                     IBDACreateTuneRequestEx* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDACreateTuneRequestEx* This);
+                     IBDACreateTuneRequestEx* This);
 
     /*** IBDACreateTuneRequestEx methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateTuneRequestEx)(
-        IBDACreateTuneRequestEx* This,
-        REFCLSID TuneRequestIID,
-        ITuneRequest **TuneRequest);
+                     IBDACreateTuneRequestEx* This,
+                     REFCLSID TuneRequestIID,
+                     ITuneRequest **TuneRequest);
 
     END_INTERFACE
 } IBDACreateTuneRequestExVtbl;
@@ -20101,14 +20101,14 @@ __CRT_UUID_DECL(ESEventFactory, 0x8e8a07da, 0x71f8, 0x40c1, 0xa9,0x29, 0x5e,0x3a
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

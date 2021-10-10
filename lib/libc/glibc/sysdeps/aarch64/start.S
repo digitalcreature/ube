@@ -62,13 +62,13 @@ _start:
 
 #ifdef PIC
 # ifdef SHARED
-        adrp    x0, :got:main
+                     adrp    x0, :got:main
 	ldr     PTR_REG (0), [x0, #:got_lo12:main]
 
-        adrp    x3, :got:__libc_csu_init
+                     adrp    x3, :got:__libc_csu_init
 	ldr     PTR_REG (3), [x3, #:got_lo12:__libc_csu_init]
 
-        adrp    x4, :got:__libc_csu_fini
+                     adrp    x4, :got:__libc_csu_fini
 	ldr     PTR_REG (4), [x4, #:got_lo12:__libc_csu_fini]
 # else
 	adrp	x0, __wrap_main
@@ -86,7 +86,7 @@ _start:
 #endif
 
 	/* __libc_start_main (main, argc, argv, init, fini, rtld_fini,
-			      stack_end) */
+			                   stack_end) */
 
 	/* Let the libc call main and exit with its return code.  */
 	bl	__libc_start_main

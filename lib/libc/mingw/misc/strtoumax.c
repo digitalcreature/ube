@@ -64,9 +64,9 @@ strtoumax(nptr, endptr, base)
 		++nptr;
 
 	if ( base == 0 )
-        {
+                     {
 		if ( *nptr == '0' )
-            {
+                                      {
 			if ( nptr[1] == 'X' || nptr[1] == 'x' )
 				base = 16;
 			else

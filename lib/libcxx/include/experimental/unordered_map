@@ -19,18 +19,18 @@ inline namespace fundamentals_v1 {
 namespace pmr {
 
   template <class Key, class T,
-            class Hash = hash<Key>,
-            class Pred = equal_to<Key>>
+                                      class Hash = hash<Key>,
+                                      class Pred = equal_to<Key>>
   using unordered_map =
     std::unordered_map<Key, T, Hash, Pred,
-                       polymorphic_allocator<pair<const Key,T>>>;
+                                                              polymorphic_allocator<pair<const Key,T>>>;
 
   template <class Key, class T,
-            class Hash = hash<Key>,
-            class Pred = equal_to<Key>>
+                                      class Hash = hash<Key>,
+                                      class Pred = equal_to<Key>>
   using unordered_multimap =
     std::unordered_multimap<Key, T, Hash, Pred,
-                            polymorphic_allocator<pair<const Key,T>>>;
+                                                                                polymorphic_allocator<pair<const Key,T>>>;
 
 } // namespace pmr
 } // namespace fundamentals_v1
@@ -50,14 +50,14 @@ namespace pmr {
 _LIBCPP_BEGIN_NAMESPACE_LFTS_PMR
 
 template <class _Key, class _Value,
-          class _Hash = hash<_Key>, class _Pred = equal_to<_Key>>
+                       class _Hash = hash<_Key>, class _Pred = equal_to<_Key>>
 using unordered_map = _VSTD::unordered_map<_Key, _Value, _Hash, _Pred,
-                        polymorphic_allocator<pair<const _Key, _Value>>>;
+                                                                            polymorphic_allocator<pair<const _Key, _Value>>>;
 
 template <class _Key, class _Value,
-          class _Hash = hash<_Key>, class _Pred = equal_to<_Key>>
+                       class _Hash = hash<_Key>, class _Pred = equal_to<_Key>>
 using unordered_multimap = _VSTD::unordered_multimap<_Key, _Value, _Hash, _Pred,
-                        polymorphic_allocator<pair<const _Key, _Value>>>;
+                                                                            polymorphic_allocator<pair<const _Key, _Value>>>;
 
 _LIBCPP_END_NAMESPACE_LFTS_PMR
 

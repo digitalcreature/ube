@@ -52,7 +52,7 @@ typedef enum {
 
 #ifdef _SEARCH_PRIVATE
 typedef struct node {
-	char         *key;
+	char                      *key;
 	struct node  *llink, *rlink;
 } node_t;
 #endif

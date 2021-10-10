@@ -25,7 +25,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<const char*>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(const char *__c) const _NOEXCEPT
     {
-        return std::__do_string_hash(__c, __c + strlen(__c));
+                     return std::__do_string_hash(__c, __c + strlen(__c));
     }
 };
 
@@ -35,7 +35,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<char *>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(char *__c) const _NOEXCEPT
     {
-        return std::__do_string_hash<const char *>(__c, __c + strlen(__c));
+                     return std::__do_string_hash<const char *>(__c, __c + strlen(__c));
     }
 };
 
@@ -45,7 +45,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<char>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(char __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 
@@ -55,7 +55,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<signed char>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(signed char __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 
@@ -65,7 +65,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<unsigned char>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(unsigned char __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 
@@ -75,7 +75,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<short>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(short __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 
@@ -85,7 +85,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<unsigned short>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(unsigned short __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 
@@ -95,7 +95,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<int>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(int __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 
@@ -105,7 +105,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<unsigned int>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(unsigned int __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 
@@ -115,7 +115,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<long>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(long __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 
@@ -125,7 +125,7 @@ template <> struct _LIBCPP_TEMPLATE_VIS hash<unsigned long>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(unsigned long __c) const _NOEXCEPT
     {
-        return __c;
+                     return __c;
     }
 };
 }

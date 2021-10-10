@@ -23,10 +23,10 @@ const math = std.math;
 pub fn round(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => round32(x),
-        f64 => round64(x),
-        f128 => round128(x),
-        else => @compileError("round not implemented for " ++ @typeName(T)),
+                     f32 => round32(x),
+                     f64 => round64(x),
+                     f128 => round128(x),
+                     else => @compileError("round not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -37,29 +37,29 @@ fn round32(x_: f32) f32 {
     var y: f32 = undefined;
 
     if (e >= 0x7F + 23) {
-        return x;
+                     return x;
     }
     if (u >> 31 != 0) {
-        x = -x;
+                     x = -x;
     }
     if (e < 0x7F - 1) {
-        math.doNotOptimizeAway(x + math.f32_toint);
-        return 0 * @bitCast(f32, u);
+                     math.doNotOptimizeAway(x + math.f32_toint);
+                     return 0 * @bitCast(f32, u);
     }
 
     y = x + math.f32_toint - math.f32_toint - x;
     if (y > 0.5) {
-        y = y + x - 1;
+                     y = y + x - 1;
     } else if (y <= -0.5) {
-        y = y + x + 1;
+                     y = y + x + 1;
     } else {
-        y = y + x;
+                     y = y + x;
     }
 
     if (u >> 31 != 0) {
-        return -y;
+                     return -y;
     } else {
-        return y;
+                     return y;
     }
 }
 
@@ -70,29 +70,29 @@ fn round64(x_: f64) f64 {
     var y: f64 = undefined;
 
     if (e >= 0x3FF + 52) {
-        return x;
+                     return x;
     }
     if (u >> 63 != 0) {
-        x = -x;
+                     x = -x;
     }
     if (e < 0x3ff - 1) {
-        math.doNotOptimizeAway(x + math.f64_toint);
-        return 0 * @bitCast(f64, u);
+                     math.doNotOptimizeAway(x + math.f64_toint);
+                     return 0 * @bitCast(f64, u);
     }
 
     y = x + math.f64_toint - math.f64_toint - x;
     if (y > 0.5) {
-        y = y + x - 1;
+                     y = y + x - 1;
     } else if (y <= -0.5) {
-        y = y + x + 1;
+                     y = y + x + 1;
     } else {
-        y = y + x;
+                     y = y + x;
     }
 
     if (u >> 63 != 0) {
-        return -y;
+                     return -y;
     } else {
-        return y;
+                     return y;
     }
 }
 
@@ -103,29 +103,29 @@ fn round128(x_: f128) f128 {
     var y: f128 = undefined;
 
     if (e >= 0x3FFF + 112) {
-        return x;
+                     return x;
     }
     if (u >> 127 != 0) {
-        x = -x;
+                     x = -x;
     }
     if (e < 0x3FFF - 1) {
-        math.doNotOptimizeAway(x + math.f64_toint);
-        return 0 * @bitCast(f128, u);
+                     math.doNotOptimizeAway(x + math.f64_toint);
+                     return 0 * @bitCast(f128, u);
     }
 
     y = x + math.f128_toint - math.f128_toint - x;
     if (y > 0.5) {
-        y = y + x - 1;
+                     y = y + x - 1;
     } else if (y <= -0.5) {
-        y = y + x + 1;
+                     y = y + x + 1;
     } else {
-        y = y + x;
+                     y = y + x;
     }
 
     if (u >> 127 != 0) {
-        return -y;
+                     return -y;
     } else {
-        return y;
+                     return y;
     }
 }
 

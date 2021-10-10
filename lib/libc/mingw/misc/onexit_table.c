@@ -26,25 +26,25 @@ int __cdecl _register_onexit_function(_onexit_table_t *table, _onexit_t func)
     _lock(_EXIT_LOCK1);
 
     if (!table->_first) {
-        table->_first = calloc(32, sizeof(void*));
-        if (!table->_first) {
-            _unlock(_EXIT_LOCK1);
-            return -1;
-        }
-        table->_last = table->_first;
-        table->_end = table->_first + 32;
+                     table->_first = calloc(32, sizeof(void*));
+                     if (!table->_first) {
+                                      _unlock(_EXIT_LOCK1);
+                                      return -1;
+                     }
+                     table->_last = table->_first;
+                     table->_end = table->_first + 32;
     }
 
     if (table->_last == table->_end) {
-        size_t len = table->_end - table->_first;
-        _PVFV *new_buf = realloc(table->_first, len * sizeof(void*) * 2);
-        if (!new_buf) {
-            _unlock(_EXIT_LOCK1);
-            return -1;
-        }
-        table->_first = new_buf;
-        table->_last = new_buf + len;
-        table->_end = new_buf + len * 2;
+                     size_t len = table->_end - table->_first;
+                     _PVFV *new_buf = realloc(table->_first, len * sizeof(void*) * 2);
+                     if (!new_buf) {
+                                      _unlock(_EXIT_LOCK1);
+                                      return -1;
+                     }
+                     table->_first = new_buf;
+                     table->_last = new_buf + len;
+                     table->_end = new_buf + len * 2;
     }
 
     *table->_last++ = (_PVFV)func;
@@ -65,8 +65,8 @@ int __cdecl _execute_onexit_table(_onexit_table_t *table)
     if (!first) return 0;
 
     while (--last >= first)
-        if (*last)
-            (**last)();
+                     if (*last)
+                                      (**last)();
 
     free(first);
     return 0;

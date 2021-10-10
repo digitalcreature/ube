@@ -11,17 +11,17 @@ extern "C" {
 #endif
 
 typedef enum _QOS_SHAPING {
-  QOSShapeOnly                  = 0,
-  QOSShapeAndMark               = 1,
+  QOSShapeOnly                                                         = 0,
+  QOSShapeAndMark                                         = 1,
   QOSUseNonConformantMarkings   = 2 
 } QOS_SHAPING, *PQOS_SHAPING;
 
 typedef enum _QOS_FLOWRATE_REASON {
-  QOSFlowRateNotApplicable           = 0,
-  QOSFlowRateContentChange           = 1,
-  QOSFlowRateCongestion              = 2,
+  QOSFlowRateNotApplicable                        = 0,
+  QOSFlowRateContentChange                        = 1,
+  QOSFlowRateCongestion                                        = 2,
   QOSFlowRateHigherContentEncoding   = 3,
-  QOSFlowRateUserCaused              = 4 
+  QOSFlowRateUserCaused                                        = 4 
 } QOS_FLOWRATE_REASON, PQOS_FLOWRATE_REASON;
 
 typedef enum _QOS_NOTIFY_FLOW {
@@ -33,12 +33,12 @@ typedef enum _QOS_NOTIFY_FLOW {
 typedef enum _QOS_QUERY_FLOW {
   QOSQueryFlowFundamentals   = 0,
   QOSQueryPacketPriority     = 1,
-  QOSQueryOutgoingRate       = 2 
+  QOSQueryOutgoingRate                    = 2 
 } QOS_QUERY_FLOW;
 
 typedef enum _QOS_SET_FLOW {
-  QOSSetTrafficType         = 0,
-  QOSSetOutgoingRate        = 1,
+  QOSSetTrafficType                      = 0,
+  QOSSetOutgoingRate                     = 1,
   QOSSetOutgoingDSCPValue   = 2 
 } QOS_SET_FLOW, *PQOS_SET_FLOW;
 
@@ -61,8 +61,8 @@ typedef struct _QOS_FLOW_FUNDAMENTALS {
 } QOS_FLOW_FUNDAMENTALS, *PQOS_FLOW_FUNDAMENTALS;
 
 typedef struct _QOS_FLOWRATE_OUTGOING {
-  UINT64              Bandwidth;
-  QOS_SHAPING         ShapingBehavior;
+  UINT64                                        Bandwidth;
+  QOS_SHAPING                      ShapingBehavior;
   QOS_FLOWRATE_REASON Reason;
 } QOS_FLOWRATE_OUTGOING, *PQOS_FLOWRATE_OUTGOING;
 

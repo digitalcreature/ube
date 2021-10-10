@@ -368,22 +368,22 @@ extern "C" {
 #else
   typedef struct ISdoMachineVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISdoMachine *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISdoMachine *This);
-      ULONG (WINAPI *Release)(ISdoMachine *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISdoMachine *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISdoMachine *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISdoMachine *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISdoMachine *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Attach)(ISdoMachine *This,BSTR bstrComputerName);
-      HRESULT (WINAPI *GetDictionarySDO)(ISdoMachine *This,IUnknown **ppDictionarySDO);
-      HRESULT (WINAPI *GetServiceSDO)(ISdoMachine *This,IASDATASTORE eDataStore,BSTR bstrServiceName,IUnknown **ppServiceSDO);
-      HRESULT (WINAPI *GetUserSDO)(ISdoMachine *This,IASDATASTORE eDataStore,BSTR bstrUserName,IUnknown **ppUserSDO);
-      HRESULT (WINAPI *GetOSType)(ISdoMachine *This,IASOSTYPE *eOSType);
-      HRESULT (WINAPI *GetDomainType)(ISdoMachine *This,IASDOMAINTYPE *eDomainType);
-      HRESULT (WINAPI *IsDirectoryAvailable)(ISdoMachine *This,VARIANT_BOOL *boolDirectoryAvailable);
-      HRESULT (WINAPI *GetAttachedComputer)(ISdoMachine *This,BSTR *bstrComputerName);
-      HRESULT (WINAPI *GetSDOSchema)(ISdoMachine *This,IUnknown **ppSDOSchema);
+                   HRESULT (WINAPI *QueryInterface)(ISdoMachine *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISdoMachine *This);
+                   ULONG (WINAPI *Release)(ISdoMachine *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISdoMachine *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISdoMachine *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISdoMachine *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISdoMachine *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Attach)(ISdoMachine *This,BSTR bstrComputerName);
+                   HRESULT (WINAPI *GetDictionarySDO)(ISdoMachine *This,IUnknown **ppDictionarySDO);
+                   HRESULT (WINAPI *GetServiceSDO)(ISdoMachine *This,IASDATASTORE eDataStore,BSTR bstrServiceName,IUnknown **ppServiceSDO);
+                   HRESULT (WINAPI *GetUserSDO)(ISdoMachine *This,IASDATASTORE eDataStore,BSTR bstrUserName,IUnknown **ppUserSDO);
+                   HRESULT (WINAPI *GetOSType)(ISdoMachine *This,IASOSTYPE *eOSType);
+                   HRESULT (WINAPI *GetDomainType)(ISdoMachine *This,IASDOMAINTYPE *eDomainType);
+                   HRESULT (WINAPI *IsDirectoryAvailable)(ISdoMachine *This,VARIANT_BOOL *boolDirectoryAvailable);
+                   HRESULT (WINAPI *GetAttachedComputer)(ISdoMachine *This,BSTR *bstrComputerName);
+                   HRESULT (WINAPI *GetSDOSchema)(ISdoMachine *This,IUnknown **ppSDOSchema);
     END_INTERFACE
   } ISdoMachineVtbl;
   struct ISdoMachine {
@@ -442,17 +442,17 @@ extern "C" {
 #else
   typedef struct ISdoServiceControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISdoServiceControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISdoServiceControl *This);
-      ULONG (WINAPI *Release)(ISdoServiceControl *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISdoServiceControl *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISdoServiceControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISdoServiceControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISdoServiceControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *StartService)(ISdoServiceControl *This);
-      HRESULT (WINAPI *StopService)(ISdoServiceControl *This);
-      HRESULT (WINAPI *GetServiceStatus)(ISdoServiceControl *This,LONG *status);
-      HRESULT (WINAPI *ResetService)(ISdoServiceControl *This);
+                   HRESULT (WINAPI *QueryInterface)(ISdoServiceControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISdoServiceControl *This);
+                   ULONG (WINAPI *Release)(ISdoServiceControl *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISdoServiceControl *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISdoServiceControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISdoServiceControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISdoServiceControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *StartService)(ISdoServiceControl *This);
+                   HRESULT (WINAPI *StopService)(ISdoServiceControl *This);
+                   HRESULT (WINAPI *GetServiceStatus)(ISdoServiceControl *This,LONG *status);
+                   HRESULT (WINAPI *ResetService)(ISdoServiceControl *This);
     END_INTERFACE
   } ISdoServiceControlVtbl;
   struct ISdoServiceControl {
@@ -499,20 +499,20 @@ extern "C" {
 #else
   typedef struct ISdoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISdo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISdo *This);
-      ULONG (WINAPI *Release)(ISdo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISdo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISdo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISdo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISdo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetPropertyInfo)(ISdo *This,LONG Id,IUnknown **ppPropertyInfo);
-      HRESULT (WINAPI *GetProperty)(ISdo *This,LONG Id,VARIANT *pValue);
-      HRESULT (WINAPI *PutProperty)(ISdo *This,LONG Id,VARIANT *pValue);
-      HRESULT (WINAPI *ResetProperty)(ISdo *This,LONG Id);
-      HRESULT (WINAPI *Apply)(ISdo *This);
-      HRESULT (WINAPI *Restore)(ISdo *This);
-      HRESULT (WINAPI *get__NewEnum)(ISdo *This,IUnknown **ppEnumVARIANT);
+                   HRESULT (WINAPI *QueryInterface)(ISdo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISdo *This);
+                   ULONG (WINAPI *Release)(ISdo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISdo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISdo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISdo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISdo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetPropertyInfo)(ISdo *This,LONG Id,IUnknown **ppPropertyInfo);
+                   HRESULT (WINAPI *GetProperty)(ISdo *This,LONG Id,VARIANT *pValue);
+                   HRESULT (WINAPI *PutProperty)(ISdo *This,LONG Id,VARIANT *pValue);
+                   HRESULT (WINAPI *ResetProperty)(ISdo *This,LONG Id);
+                   HRESULT (WINAPI *Apply)(ISdo *This);
+                   HRESULT (WINAPI *Restore)(ISdo *This);
+                   HRESULT (WINAPI *get__NewEnum)(ISdo *This,IUnknown **ppEnumVARIANT);
     END_INTERFACE
   } ISdoVtbl;
   struct ISdo {
@@ -569,21 +569,21 @@ extern "C" {
 #else
   typedef struct ISdoCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISdoCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISdoCollection *This);
-      ULONG (WINAPI *Release)(ISdoCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISdoCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISdoCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISdoCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISdoCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISdoCollection *This,__LONG32 *pCount);
-      HRESULT (WINAPI *Add)(ISdoCollection *This,BSTR bstrName,IDispatch **ppItem);
-      HRESULT (WINAPI *Remove)(ISdoCollection *This,IDispatch *pItem);
-      HRESULT (WINAPI *RemoveAll)(ISdoCollection *This);
-      HRESULT (WINAPI *Reload)(ISdoCollection *This);
-      HRESULT (WINAPI *IsNameUnique)(ISdoCollection *This,BSTR bstrName,VARIANT_BOOL *pBool);
-      HRESULT (WINAPI *Item)(ISdoCollection *This,VARIANT *Name,IDispatch **pItem);
-      HRESULT (WINAPI *get__NewEnum)(ISdoCollection *This,IUnknown **ppEnumVARIANT);
+                   HRESULT (WINAPI *QueryInterface)(ISdoCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISdoCollection *This);
+                   ULONG (WINAPI *Release)(ISdoCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISdoCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISdoCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISdoCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISdoCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISdoCollection *This,__LONG32 *pCount);
+                   HRESULT (WINAPI *Add)(ISdoCollection *This,BSTR bstrName,IDispatch **ppItem);
+                   HRESULT (WINAPI *Remove)(ISdoCollection *This,IDispatch *pItem);
+                   HRESULT (WINAPI *RemoveAll)(ISdoCollection *This);
+                   HRESULT (WINAPI *Reload)(ISdoCollection *This);
+                   HRESULT (WINAPI *IsNameUnique)(ISdoCollection *This,BSTR bstrName,VARIANT_BOOL *pBool);
+                   HRESULT (WINAPI *Item)(ISdoCollection *This,VARIANT *Name,IDispatch **pItem);
+                   HRESULT (WINAPI *get__NewEnum)(ISdoCollection *This,IUnknown **ppEnumVARIANT);
     END_INTERFACE
   } ISdoCollectionVtbl;
   struct ISdoCollection {
@@ -641,18 +641,18 @@ extern "C" {
 #else
   typedef struct ISdoDictionaryOldVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISdoDictionaryOld *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISdoDictionaryOld *This);
-      ULONG (WINAPI *Release)(ISdoDictionaryOld *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISdoDictionaryOld *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISdoDictionaryOld *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISdoDictionaryOld *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISdoDictionaryOld *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *EnumAttributes)(ISdoDictionaryOld *This,VARIANT *Id,VARIANT *pValues);
-      HRESULT (WINAPI *GetAttributeInfo)(ISdoDictionaryOld *This,ATTRIBUTEID Id,VARIANT *pInfoIDs,VARIANT *pInfoValues);
-      HRESULT (WINAPI *EnumAttributeValues)(ISdoDictionaryOld *This,ATTRIBUTEID Id,VARIANT *pValueIds,VARIANT *pValuesDesc);
-      HRESULT (WINAPI *CreateAttribute)(ISdoDictionaryOld *This,ATTRIBUTEID Id,IDispatch **ppAttributeObject);
-      HRESULT (WINAPI *GetAttributeID)(ISdoDictionaryOld *This,BSTR bstrAttributeName,ATTRIBUTEID *pId);
+                   HRESULT (WINAPI *QueryInterface)(ISdoDictionaryOld *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISdoDictionaryOld *This);
+                   ULONG (WINAPI *Release)(ISdoDictionaryOld *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISdoDictionaryOld *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISdoDictionaryOld *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISdoDictionaryOld *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISdoDictionaryOld *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *EnumAttributes)(ISdoDictionaryOld *This,VARIANT *Id,VARIANT *pValues);
+                   HRESULT (WINAPI *GetAttributeInfo)(ISdoDictionaryOld *This,ATTRIBUTEID Id,VARIANT *pInfoIDs,VARIANT *pInfoValues);
+                   HRESULT (WINAPI *EnumAttributeValues)(ISdoDictionaryOld *This,ATTRIBUTEID Id,VARIANT *pValueIds,VARIANT *pValuesDesc);
+                   HRESULT (WINAPI *CreateAttribute)(ISdoDictionaryOld *This,ATTRIBUTEID Id,IDispatch **ppAttributeObject);
+                   HRESULT (WINAPI *GetAttributeID)(ISdoDictionaryOld *This,BSTR bstrAttributeName,ATTRIBUTEID *pId);
     END_INTERFACE
   } ISdoDictionaryOldVtbl;
   struct ISdoDictionaryOld {
@@ -707,7 +707,7 @@ typedef enum REMEDIATIONSERVERGROUPPROPERTIES {
 } REMEDIATIONSERVERGROUPPROPERTIES;
 
 typedef enum _REMEDIATIONSERVERPROPERTIES {
-  PROPERTY_REMEDIATIONSERVER_ADDRESS         = PROPERTY_SDO_START,
+  PROPERTY_REMEDIATIONSERVER_ADDRESS                      = PROPERTY_SDO_START,
   PROPERTY_REMEDIATIONSERVER_FRIENDLY_NAME 
 } REMEDIATIONSERVERPROPERTIES;
 
@@ -716,7 +716,7 @@ typedef enum _REMEDIATIONSERVERPROPERTIES {
 } REMEDIATIONSERVERPROPERTIES;
 
 typedef enum _SHV_COMBINATION_TYPE {
-  SHV_COMBINATION_TYPE_ALL_PASS                   = 0,
+  SHV_COMBINATION_TYPE_ALL_PASS                                                          = 0,
   SHV_COMBINATION_TYPE_ALL_FAIL,
   SHV_COMBINATION_TYPE_ONE_OR_MORE_PASS,
   SHV_COMBINATION_TYPE_ONE_OR_MORE_FAIL,

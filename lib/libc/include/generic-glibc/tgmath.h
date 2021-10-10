@@ -50,7 +50,7 @@
 #  error "Unsupported _Float128x type for <tgmath.h>."
 # endif
 # if ((__HAVE_FLOAT64X && !__HAVE_FLOAT128)		\
-      || (__HAVE_FLOAT128 && !__HAVE_FLOAT64X))
+                   || (__HAVE_FLOAT128 && !__HAVE_FLOAT64X))
 #  error "Unsupported combination of types for <tgmath.h>."
 # endif
 # define __TGMATH_2_NARROW_D(F, X, Y)		\
@@ -186,12 +186,12 @@
    unspecified whether the return type is real or complex (but it has
    the correct corresponding real type).  */
 #  define __tgmath_real_type_sub(T, E) \
-  __typeof__ (*(0 ? (__typeof__ (0 ? (double *) 0 : (void *) (E))) 0	      \
+  __typeof__ (*(0 ? (__typeof__ (0 ? (double *) 0 : (void *) (E))) 0	                   \
 		  : (__typeof__ (0 ? (T *) 0 : (void *) (!(E)))) 0))
 
 /* The tgmath real type of EXPR.  */
 #  define __tgmath_real_type(expr) \
-  __tgmath_real_type_sub (__typeof__ ((__typeof__ (+(expr))) 0),	      \
+  __tgmath_real_type_sub (__typeof__ ((__typeof__ (+(expr))) 0),	                   \
 			  __floating_type (__typeof__ (+(expr))))
 
 /* The tgmath complex type for T, where E1 is 1 if T has a floating
@@ -201,12 +201,12 @@
   __typeof__ (*(0							\
 		? (__typeof__ (0 ? (T *) 0 : (void *) (!(E1)))) 0	\
 		: (__typeof__ (0					\
-			       ? (__typeof__ (0				\
-					      ? (double *) 0		\
-					      : (void *) (!(E2)))) 0	\
-			       : (__typeof__ (0				\
-					      ? (_Complex double *) 0	\
-					      : (void *) (!(E3)))) 0)) 0))
+			                    ? (__typeof__ (0				\
+					                   ? (double *) 0		\
+					                   : (void *) (!(E2)))) 0	\
+			                    : (__typeof__ (0				\
+					                   ? (_Complex double *) 0	\
+					                   : (void *) (!(E3)))) 0)) 0))
 
 /* The tgmath complex type of EXPR.  */
 #  define __tgmath_complex_type(expr)					\
@@ -216,11 +216,11 @@
 			     __complex_integer_type (__typeof__ (+(expr))))
 
 #  if (__HAVE_DISTINCT_FLOAT16			\
-      || __HAVE_DISTINCT_FLOAT32		\
-      || __HAVE_DISTINCT_FLOAT64		\
-      || __HAVE_DISTINCT_FLOAT32X		\
-      || __HAVE_DISTINCT_FLOAT64X		\
-      || __HAVE_DISTINCT_FLOAT128X)
+                   || __HAVE_DISTINCT_FLOAT32		\
+                   || __HAVE_DISTINCT_FLOAT64		\
+                   || __HAVE_DISTINCT_FLOAT32X		\
+                   || __HAVE_DISTINCT_FLOAT64X		\
+                   || __HAVE_DISTINCT_FLOAT128X)
 #   error "Unsupported _FloatN or _FloatNx types for <tgmath.h>."
 #  endif
 
@@ -229,8 +229,8 @@
    or FCT and CFCT for complex functions, with arguments ARG_CALL.  */
 #  if __HAVE_DISTINCT_FLOAT128 && __GLIBC_USE (IEC_60559_TYPES_EXT)
 #   if (!__HAVE_FLOAT64X			\
-       || __HAVE_FLOAT64X_LONG_DOUBLE		\
-       || !__HAVE_FLOATN_NOT_TYPEDEF)
+                    || __HAVE_FLOAT64X_LONG_DOUBLE		\
+                    || !__HAVE_FLOATN_NOT_TYPEDEF)
 #    define __TGMATH_F128(arg_comb, fct, arg_call)			\
   __builtin_types_compatible_p (__typeof (+(arg_comb)), _Float128)	\
   ? fct ## f128 arg_call :
@@ -295,135 +295,135 @@
 # else /* !__HAVE_BUILTIN_TGMATH.  */
 
 #  define __TGMATH_UNARY_REAL_ONLY(Val, Fct)				\
-  (__extension__ ((sizeof (+(Val)) == sizeof (double)			      \
-		      || __builtin_classify_type (Val) != 8)		      \
-		     ? (__tgmath_real_type (Val)) Fct (Val)		      \
-		     : (sizeof (+(Val)) == sizeof (float))		      \
-		     ? (__tgmath_real_type (Val)) Fct##f (Val)		      \
+  (__extension__ ((sizeof (+(Val)) == sizeof (double)			                   \
+		                   || __builtin_classify_type (Val) != 8)		                   \
+		     ? (__tgmath_real_type (Val)) Fct (Val)		                   \
+		     : (sizeof (+(Val)) == sizeof (float))		                   \
+		     ? (__tgmath_real_type (Val)) Fct##f (Val)		                   \
 		     : __TGMATH_F128 ((Val), (__tgmath_real_type (Val)) Fct,  \
-				      (Val))				      \
+				                   (Val))				                   \
 		     (__tgmath_real_type (Val)) __tgml(Fct) (Val)))
 
 #  define __TGMATH_UNARY_REAL_RET_ONLY(Val, Fct) \
-     (__extension__ ((sizeof (+(Val)) == sizeof (double)		      \
-		      || __builtin_classify_type (Val) != 8)		      \
-		     ? Fct (Val)					      \
-		     : (sizeof (+(Val)) == sizeof (float))		      \
-		     ? Fct##f (Val)					      \
-		     : __TGMATH_F128 ((Val), Fct, (Val))		      \
+     (__extension__ ((sizeof (+(Val)) == sizeof (double)		                   \
+		                   || __builtin_classify_type (Val) != 8)		                   \
+		     ? Fct (Val)					                   \
+		     : (sizeof (+(Val)) == sizeof (float))		                   \
+		     ? Fct##f (Val)					                   \
+		     : __TGMATH_F128 ((Val), Fct, (Val))		                   \
 		     __tgml(Fct) (Val)))
 
 #  define __TGMATH_BINARY_FIRST_REAL_ONLY(Val1, Val2, Fct) \
-     (__extension__ ((sizeof (+(Val1)) == sizeof (double)		      \
-		      || __builtin_classify_type (Val1) != 8)		      \
-		     ? (__tgmath_real_type (Val1)) Fct (Val1, Val2)	      \
-		     : (sizeof (+(Val1)) == sizeof (float))		      \
-		     ? (__tgmath_real_type (Val1)) Fct##f (Val1, Val2)	      \
+     (__extension__ ((sizeof (+(Val1)) == sizeof (double)		                   \
+		                   || __builtin_classify_type (Val1) != 8)		                   \
+		     ? (__tgmath_real_type (Val1)) Fct (Val1, Val2)	                   \
+		     : (sizeof (+(Val1)) == sizeof (float))		                   \
+		     ? (__tgmath_real_type (Val1)) Fct##f (Val1, Val2)	                   \
 		     : __TGMATH_F128 ((Val1), (__tgmath_real_type (Val1)) Fct, \
-				    (Val1, Val2))			      \
+				    (Val1, Val2))			                   \
 		     (__tgmath_real_type (Val1)) __tgml(Fct) (Val1, Val2)))
 
 #  define __TGMATH_BINARY_FIRST_REAL_STD_ONLY(Val1, Val2, Fct) \
-     (__extension__ ((sizeof (+(Val1)) == sizeof (double)		      \
-		      || __builtin_classify_type (Val1) != 8)		      \
-		     ? (__tgmath_real_type (Val1)) Fct (Val1, Val2)	      \
-		     : (sizeof (+(Val1)) == sizeof (float))		      \
-		     ? (__tgmath_real_type (Val1)) Fct##f (Val1, Val2)	      \
+     (__extension__ ((sizeof (+(Val1)) == sizeof (double)		                   \
+		                   || __builtin_classify_type (Val1) != 8)		                   \
+		     ? (__tgmath_real_type (Val1)) Fct (Val1, Val2)	                   \
+		     : (sizeof (+(Val1)) == sizeof (float))		                   \
+		     ? (__tgmath_real_type (Val1)) Fct##f (Val1, Val2)	                   \
 		     : (__tgmath_real_type (Val1)) __tgml(Fct) (Val1, Val2)))
 
 #  define __TGMATH_BINARY_REAL_ONLY(Val1, Val2, Fct) \
-     (__extension__ ((sizeof ((Val1) + (Val2)) > sizeof (double)	      \
-		      && __builtin_classify_type ((Val1) + (Val2)) == 8)      \
-		     ? __TGMATH_F128 ((Val1) + (Val2),			      \
-				      (__typeof				      \
-				       ((__tgmath_real_type (Val1)) 0	      \
+     (__extension__ ((sizeof ((Val1) + (Val2)) > sizeof (double)	                   \
+		                   && __builtin_classify_type ((Val1) + (Val2)) == 8)                   \
+		     ? __TGMATH_F128 ((Val1) + (Val2),			                   \
+				                   (__typeof				                   \
+				                    ((__tgmath_real_type (Val1)) 0	                   \
 					+ (__tgmath_real_type (Val2)) 0)) Fct, \
-				      (Val1, Val2))			      \
-		     (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				+ (__tgmath_real_type (Val2)) 0))	      \
-		     __tgml(Fct) (Val1, Val2)				      \
-		     : (sizeof (+(Val1)) == sizeof (double)		      \
-			|| sizeof (+(Val2)) == sizeof (double)		      \
-			|| __builtin_classify_type (Val1) != 8		      \
-			|| __builtin_classify_type (Val2) != 8)		      \
-		     ? (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				   + (__tgmath_real_type (Val2)) 0))	      \
-		       Fct (Val1, Val2)					      \
-		     : (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				   + (__tgmath_real_type (Val2)) 0))	      \
-		       Fct##f (Val1, Val2)))
+				                   (Val1, Val2))			                   \
+		     (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				+ (__tgmath_real_type (Val2)) 0))	                   \
+		     __tgml(Fct) (Val1, Val2)				                   \
+		     : (sizeof (+(Val1)) == sizeof (double)		                   \
+			|| sizeof (+(Val2)) == sizeof (double)		                   \
+			|| __builtin_classify_type (Val1) != 8		                   \
+			|| __builtin_classify_type (Val2) != 8)		                   \
+		     ? (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				   + (__tgmath_real_type (Val2)) 0))	                   \
+		                    Fct (Val1, Val2)					                   \
+		     : (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				   + (__tgmath_real_type (Val2)) 0))	                   \
+		                    Fct##f (Val1, Val2)))
 
 #  define __TGMATH_BINARY_REAL_STD_ONLY(Val1, Val2, Fct) \
-     (__extension__ ((sizeof ((Val1) + (Val2)) > sizeof (double)	      \
-		      && __builtin_classify_type ((Val1) + (Val2)) == 8)      \
-		     ? (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				  + (__tgmath_real_type (Val2)) 0))	      \
-		       __tgml(Fct) (Val1, Val2)				      \
-		     : (sizeof (+(Val1)) == sizeof (double)		      \
-			|| sizeof (+(Val2)) == sizeof (double)		      \
-			|| __builtin_classify_type (Val1) != 8		      \
-			|| __builtin_classify_type (Val2) != 8)		      \
-		     ? (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				   + (__tgmath_real_type (Val2)) 0))	      \
-		       Fct (Val1, Val2)					      \
-		     : (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				   + (__tgmath_real_type (Val2)) 0))	      \
-		       Fct##f (Val1, Val2)))
+     (__extension__ ((sizeof ((Val1) + (Val2)) > sizeof (double)	                   \
+		                   && __builtin_classify_type ((Val1) + (Val2)) == 8)                   \
+		     ? (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				  + (__tgmath_real_type (Val2)) 0))	                   \
+		                    __tgml(Fct) (Val1, Val2)				                   \
+		     : (sizeof (+(Val1)) == sizeof (double)		                   \
+			|| sizeof (+(Val2)) == sizeof (double)		                   \
+			|| __builtin_classify_type (Val1) != 8		                   \
+			|| __builtin_classify_type (Val2) != 8)		                   \
+		     ? (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				   + (__tgmath_real_type (Val2)) 0))	                   \
+		                    Fct (Val1, Val2)					                   \
+		     : (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				   + (__tgmath_real_type (Val2)) 0))	                   \
+		                    Fct##f (Val1, Val2)))
 
 #  define __TGMATH_TERNARY_FIRST_SECOND_REAL_ONLY(Val1, Val2, Val3, Fct) \
-     (__extension__ ((sizeof ((Val1) + (Val2)) > sizeof (double)	      \
-		      && __builtin_classify_type ((Val1) + (Val2)) == 8)      \
-		     ? __TGMATH_F128 ((Val1) + (Val2),			      \
-				      (__typeof				      \
-				       ((__tgmath_real_type (Val1)) 0	      \
+     (__extension__ ((sizeof ((Val1) + (Val2)) > sizeof (double)	                   \
+		                   && __builtin_classify_type ((Val1) + (Val2)) == 8)                   \
+		     ? __TGMATH_F128 ((Val1) + (Val2),			                   \
+				                   (__typeof				                   \
+				                    ((__tgmath_real_type (Val1)) 0	                   \
 					+ (__tgmath_real_type (Val2)) 0)) Fct, \
-				      (Val1, Val2, Val3))		      \
-		     (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				+ (__tgmath_real_type (Val2)) 0))	      \
-		     __tgml(Fct) (Val1, Val2, Val3)			      \
-		     : (sizeof (+(Val1)) == sizeof (double)		      \
-			|| sizeof (+(Val2)) == sizeof (double)		      \
-			|| __builtin_classify_type (Val1) != 8		      \
-			|| __builtin_classify_type (Val2) != 8)		      \
-		     ? (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				   + (__tgmath_real_type (Val2)) 0))	      \
-		       Fct (Val1, Val2, Val3)				      \
-		     : (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				   + (__tgmath_real_type (Val2)) 0))	      \
-		       Fct##f (Val1, Val2, Val3)))
+				                   (Val1, Val2, Val3))		                   \
+		     (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				+ (__tgmath_real_type (Val2)) 0))	                   \
+		     __tgml(Fct) (Val1, Val2, Val3)			                   \
+		     : (sizeof (+(Val1)) == sizeof (double)		                   \
+			|| sizeof (+(Val2)) == sizeof (double)		                   \
+			|| __builtin_classify_type (Val1) != 8		                   \
+			|| __builtin_classify_type (Val2) != 8)		                   \
+		     ? (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				   + (__tgmath_real_type (Val2)) 0))	                   \
+		                    Fct (Val1, Val2, Val3)				                   \
+		     : (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				   + (__tgmath_real_type (Val2)) 0))	                   \
+		                    Fct##f (Val1, Val2, Val3)))
 
 #  define __TGMATH_TERNARY_REAL_ONLY(Val1, Val2, Val3, Fct) \
      (__extension__ ((sizeof ((Val1) + (Val2) + (Val3)) > sizeof (double)     \
-		      && __builtin_classify_type ((Val1) + (Val2) + (Val3))   \
-			 == 8)						      \
-		     ? __TGMATH_F128 ((Val1) + (Val2) + (Val3),		      \
-				      (__typeof				      \
-				       ((__tgmath_real_type (Val1)) 0	      \
-					+ (__tgmath_real_type (Val2)) 0	      \
+		                   && __builtin_classify_type ((Val1) + (Val2) + (Val3))   \
+			 == 8)						                   \
+		     ? __TGMATH_F128 ((Val1) + (Val2) + (Val3),		                   \
+				                   (__typeof				                   \
+				                    ((__tgmath_real_type (Val1)) 0	                   \
+					+ (__tgmath_real_type (Val2)) 0	                   \
 					+ (__tgmath_real_type (Val3)) 0)) Fct, \
-				      (Val1, Val2, Val3))		      \
-		     (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				+ (__tgmath_real_type (Val2)) 0		      \
-				+ (__tgmath_real_type (Val3)) 0))	      \
-		       __tgml(Fct) (Val1, Val2, Val3)			      \
-		     : (sizeof (+(Val1)) == sizeof (double)		      \
-			|| sizeof (+(Val2)) == sizeof (double)		      \
-			|| sizeof (+(Val3)) == sizeof (double)		      \
-			|| __builtin_classify_type (Val1) != 8		      \
-			|| __builtin_classify_type (Val2) != 8		      \
-			|| __builtin_classify_type (Val3) != 8)		      \
-		     ? (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				   + (__tgmath_real_type (Val2)) 0	      \
-				   + (__tgmath_real_type (Val3)) 0))	      \
-		       Fct (Val1, Val2, Val3)				      \
-		     : (__typeof ((__tgmath_real_type (Val1)) 0		      \
-				   + (__tgmath_real_type (Val2)) 0	      \
-				   + (__tgmath_real_type (Val3)) 0))	      \
-		       Fct##f (Val1, Val2, Val3)))
+				                   (Val1, Val2, Val3))		                   \
+		     (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				+ (__tgmath_real_type (Val2)) 0		                   \
+				+ (__tgmath_real_type (Val3)) 0))	                   \
+		                    __tgml(Fct) (Val1, Val2, Val3)			                   \
+		     : (sizeof (+(Val1)) == sizeof (double)		                   \
+			|| sizeof (+(Val2)) == sizeof (double)		                   \
+			|| sizeof (+(Val3)) == sizeof (double)		                   \
+			|| __builtin_classify_type (Val1) != 8		                   \
+			|| __builtin_classify_type (Val2) != 8		                   \
+			|| __builtin_classify_type (Val3) != 8)		                   \
+		     ? (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				   + (__tgmath_real_type (Val2)) 0	                   \
+				   + (__tgmath_real_type (Val3)) 0))	                   \
+		                    Fct (Val1, Val2, Val3)				                   \
+		     : (__typeof ((__tgmath_real_type (Val1)) 0		                   \
+				   + (__tgmath_real_type (Val2)) 0	                   \
+				   + (__tgmath_real_type (Val3)) 0))	                   \
+		                    Fct##f (Val1, Val2, Val3)))
 
 #  define __TGMATH_TERNARY_FIRST_REAL_RET_ONLY(Val1, Val2, Val3, Fct) \
      (__extension__ ((sizeof (+(Val1)) == sizeof (double)		\
-		      || __builtin_classify_type (Val1) != 8)		\
+		                   || __builtin_classify_type (Val1) != 8)		\
 		     ? Fct (Val1, Val2, Val3)				\
 		     : (sizeof (+(Val1)) == sizeof (float))		\
 		     ? Fct##f (Val1, Val2, Val3)			\
@@ -433,111 +433,111 @@
 /* XXX This definition has to be changed as soon as the compiler understands
    the imaginary keyword.  */
 #  define __TGMATH_UNARY_REAL_IMAG(Val, Fct, Cfct) \
-     (__extension__ ((sizeof (+__real__ (Val)) == sizeof (double)	      \
-		      || __builtin_classify_type (__real__ (Val)) != 8)	      \
-		     ? (__expr_is_real (Val)				      \
-			? (__tgmath_complex_type (Val)) Fct (Val)	      \
-			: (__tgmath_complex_type (Val)) Cfct (Val))	      \
-		     : (sizeof (+__real__ (Val)) == sizeof (float))	      \
-		     ? (__expr_is_real (Val)				      \
-			? (__tgmath_complex_type (Val)) Fct##f (Val)	      \
-			: (__tgmath_complex_type (Val)) Cfct##f (Val))	      \
-		     : __TGMATH_CF128 ((Val),				      \
-				       (__tgmath_complex_type (Val)) Fct,     \
-				       (__tgmath_complex_type (Val)) Cfct,    \
-				       (Val))				      \
-		     (__expr_is_real (Val)				      \
-		      ? (__tgmath_complex_type (Val)) __tgml(Fct) (Val)	      \
-		      : (__tgmath_complex_type (Val)) __tgml(Cfct) (Val))))
+     (__extension__ ((sizeof (+__real__ (Val)) == sizeof (double)	                   \
+		                   || __builtin_classify_type (__real__ (Val)) != 8)	                   \
+		     ? (__expr_is_real (Val)				                   \
+			? (__tgmath_complex_type (Val)) Fct (Val)	                   \
+			: (__tgmath_complex_type (Val)) Cfct (Val))	                   \
+		     : (sizeof (+__real__ (Val)) == sizeof (float))	                   \
+		     ? (__expr_is_real (Val)				                   \
+			? (__tgmath_complex_type (Val)) Fct##f (Val)	                   \
+			: (__tgmath_complex_type (Val)) Cfct##f (Val))	                   \
+		     : __TGMATH_CF128 ((Val),				                   \
+				                    (__tgmath_complex_type (Val)) Fct,     \
+				                    (__tgmath_complex_type (Val)) Cfct,    \
+				                    (Val))				                   \
+		     (__expr_is_real (Val)				                   \
+		                   ? (__tgmath_complex_type (Val)) __tgml(Fct) (Val)	                   \
+		                   : (__tgmath_complex_type (Val)) __tgml(Cfct) (Val))))
 
 #  define __TGMATH_UNARY_IMAG(Val, Cfct) \
-     (__extension__ ((sizeof (+__real__ (Val)) == sizeof (double)	      \
-		      || __builtin_classify_type (__real__ (Val)) != 8)	      \
-		     ? (__typeof__ ((__tgmath_real_type (Val)) 0	      \
-				    + _Complex_I)) Cfct (Val)		      \
-		     : (sizeof (+__real__ (Val)) == sizeof (float))	      \
-		     ? (__typeof__ ((__tgmath_real_type (Val)) 0	      \
-				    + _Complex_I)) Cfct##f (Val)	      \
-		     : __TGMATH_F128 (__real__ (Val),			      \
-				      (__typeof__			      \
-				       ((__tgmath_real_type (Val)) 0	      \
-					+ _Complex_I)) Cfct, (Val))	      \
-		     (__typeof__ ((__tgmath_real_type (Val)) 0		      \
+     (__extension__ ((sizeof (+__real__ (Val)) == sizeof (double)	                   \
+		                   || __builtin_classify_type (__real__ (Val)) != 8)	                   \
+		     ? (__typeof__ ((__tgmath_real_type (Val)) 0	                   \
+				    + _Complex_I)) Cfct (Val)		                   \
+		     : (sizeof (+__real__ (Val)) == sizeof (float))	                   \
+		     ? (__typeof__ ((__tgmath_real_type (Val)) 0	                   \
+				    + _Complex_I)) Cfct##f (Val)	                   \
+		     : __TGMATH_F128 (__real__ (Val),			                   \
+				                   (__typeof__			                   \
+				                    ((__tgmath_real_type (Val)) 0	                   \
+					+ _Complex_I)) Cfct, (Val))	                   \
+		     (__typeof__ ((__tgmath_real_type (Val)) 0		                   \
 				  + _Complex_I)) __tgml(Cfct) (Val)))
 
 /* XXX This definition has to be changed as soon as the compiler understands
    the imaginary keyword.  */
 #  define __TGMATH_UNARY_REAL_IMAG_RET_REAL(Val, Fct, Cfct) \
-     (__extension__ ((sizeof (+__real__ (Val)) == sizeof (double)	      \
-		      || __builtin_classify_type (__real__ (Val)) != 8)	      \
-		     ? (__expr_is_real (Val)				      \
+     (__extension__ ((sizeof (+__real__ (Val)) == sizeof (double)	                   \
+		                   || __builtin_classify_type (__real__ (Val)) != 8)	                   \
+		     ? (__expr_is_real (Val)				                   \
 			? (__typeof__ (__real__ (__tgmath_real_type (Val)) 0))\
-			  Fct (Val)					      \
+			  Fct (Val)					                   \
 			: (__typeof__ (__real__ (__tgmath_real_type (Val)) 0))\
-			  Cfct (Val))					      \
-		     : (sizeof (+__real__ (Val)) == sizeof (float))	      \
-		     ? (__expr_is_real (Val)				      \
+			  Cfct (Val))					                   \
+		     : (sizeof (+__real__ (Val)) == sizeof (float))	                   \
+		     ? (__expr_is_real (Val)				                   \
 			? (__typeof__ (__real__ (__tgmath_real_type (Val)) 0))\
-			  Fct##f (Val)					      \
+			  Fct##f (Val)					                   \
 			: (__typeof__ (__real__ (__tgmath_real_type (Val)) 0))\
-			  Cfct##f (Val))				      \
+			  Cfct##f (Val))				                   \
 		     : __TGMATH_CF128 ((Val), \
-				       (__typeof__			      \
-					(__real__			      \
+				                    (__typeof__			                   \
+					(__real__			                   \
 					 (__tgmath_real_type (Val)) 0)) Fct,  \
-				       (__typeof__			      \
-					(__real__			      \
+				                    (__typeof__			                   \
+					(__real__			                   \
 					 (__tgmath_real_type (Val)) 0)) Cfct, \
-				       (Val))				      \
-		     (__expr_is_real (Val)				      \
-		      ? (__typeof__ (__real__ (__tgmath_real_type (Val)) 0))  \
-		      __tgml(Fct) (Val)					      \
-		      : (__typeof__ (__real__ (__tgmath_real_type (Val)) 0))  \
-		      __tgml(Cfct) (Val))))
+				                    (Val))				                   \
+		     (__expr_is_real (Val)				                   \
+		                   ? (__typeof__ (__real__ (__tgmath_real_type (Val)) 0))  \
+		                   __tgml(Fct) (Val)					                   \
+		                   : (__typeof__ (__real__ (__tgmath_real_type (Val)) 0))  \
+		                   __tgml(Cfct) (Val))))
 #  define __TGMATH_UNARY_REAL_IMAG_RET_REAL_SAME(Val, Cfct)	\
   __TGMATH_UNARY_REAL_IMAG_RET_REAL ((Val), Cfct, Cfct)
 
 /* XXX This definition has to be changed as soon as the compiler understands
    the imaginary keyword.  */
 #  define __TGMATH_BINARY_REAL_IMAG(Val1, Val2, Fct, Cfct) \
-     (__extension__ ((sizeof (__real__ (Val1)				      \
-			      + __real__ (Val2)) > sizeof (double)	      \
-		      && __builtin_classify_type (__real__ (Val1)	      \
+     (__extension__ ((sizeof (__real__ (Val1)				                   \
+			                   + __real__ (Val2)) > sizeof (double)	                   \
+		                   && __builtin_classify_type (__real__ (Val1)	                   \
 						  + __real__ (Val2)) == 8)    \
-		     ? __TGMATH_CF128 ((Val1) + (Val2),			      \
-				       (__typeof			      \
+		     ? __TGMATH_CF128 ((Val1) + (Val2),			                   \
+				                    (__typeof			                   \
 					((__tgmath_complex_type (Val1)) 0     \
 					 + (__tgmath_complex_type (Val2)) 0)) \
-				       Fct,				      \
-				       (__typeof			      \
+				                    Fct,				                   \
+				                    (__typeof			                   \
 					((__tgmath_complex_type (Val1)) 0     \
 					 + (__tgmath_complex_type (Val2)) 0)) \
-				       Cfct,				      \
-				       (Val1, Val2))			      \
-		     (__expr_is_real ((Val1) + (Val2))			      \
-		      ? (__typeof ((__tgmath_complex_type (Val1)) 0	      \
-				   + (__tgmath_complex_type (Val2)) 0))	      \
-		      __tgml(Fct) (Val1, Val2)				      \
-		      : (__typeof ((__tgmath_complex_type (Val1)) 0	      \
-				   + (__tgmath_complex_type (Val2)) 0))	      \
-		      __tgml(Cfct) (Val1, Val2))			      \
-		     : (sizeof (+__real__ (Val1)) == sizeof (double)	      \
-			|| sizeof (+__real__ (Val2)) == sizeof (double)	      \
+				                    Cfct,				                   \
+				                    (Val1, Val2))			                   \
+		     (__expr_is_real ((Val1) + (Val2))			                   \
+		                   ? (__typeof ((__tgmath_complex_type (Val1)) 0	                   \
+				   + (__tgmath_complex_type (Val2)) 0))	                   \
+		                   __tgml(Fct) (Val1, Val2)				                   \
+		                   : (__typeof ((__tgmath_complex_type (Val1)) 0	                   \
+				   + (__tgmath_complex_type (Val2)) 0))	                   \
+		                   __tgml(Cfct) (Val1, Val2))			                   \
+		     : (sizeof (+__real__ (Val1)) == sizeof (double)	                   \
+			|| sizeof (+__real__ (Val2)) == sizeof (double)	                   \
 			|| __builtin_classify_type (__real__ (Val1)) != 8     \
 			|| __builtin_classify_type (__real__ (Val2)) != 8)    \
-		     ? (__expr_is_real ((Val1) + (Val2))		      \
-			? (__typeof ((__tgmath_complex_type (Val1)) 0	      \
-				   + (__tgmath_complex_type (Val2)) 0))	      \
-			  Fct (Val1, Val2)				      \
-			: (__typeof ((__tgmath_complex_type (Val1)) 0	      \
-				   + (__tgmath_complex_type (Val2)) 0))	      \
-			  Cfct (Val1, Val2))				      \
-		     : (__expr_is_real ((Val1) + (Val2))		      \
-			? (__typeof ((__tgmath_complex_type (Val1)) 0	      \
-				   + (__tgmath_complex_type (Val2)) 0))	      \
-			  Fct##f (Val1, Val2)				      \
-			: (__typeof ((__tgmath_complex_type (Val1)) 0	      \
-				   + (__tgmath_complex_type (Val2)) 0))	      \
+		     ? (__expr_is_real ((Val1) + (Val2))		                   \
+			? (__typeof ((__tgmath_complex_type (Val1)) 0	                   \
+				   + (__tgmath_complex_type (Val2)) 0))	                   \
+			  Fct (Val1, Val2)				                   \
+			: (__typeof ((__tgmath_complex_type (Val1)) 0	                   \
+				   + (__tgmath_complex_type (Val2)) 0))	                   \
+			  Cfct (Val1, Val2))				                   \
+		     : (__expr_is_real ((Val1) + (Val2))		                   \
+			? (__typeof ((__tgmath_complex_type (Val1)) 0	                   \
+				   + (__tgmath_complex_type (Val2)) 0))	                   \
+			  Fct##f (Val1, Val2)				                   \
+			: (__typeof ((__tgmath_complex_type (Val1)) 0	                   \
+				   + (__tgmath_complex_type (Val2)) 0))	                   \
 			  Cfct##f (Val1, Val2))))
 
 #  define __TGMATH_2_NARROW_F(F, X, Y)					\

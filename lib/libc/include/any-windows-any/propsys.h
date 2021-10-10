@@ -284,8 +284,8 @@ MIDL_INTERFACE("b7d14566-0509-4cce-a71f-0a554233bd9b")
 IInitializeWithFile : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        LPCWSTR pszFilePath,
-        DWORD grfMode) = 0;
+                     LPCWSTR pszFilePath,
+                     DWORD grfMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -297,21 +297,21 @@ typedef struct IInitializeWithFileVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeWithFile *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeWithFile *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeWithFile *This);
+                     IInitializeWithFile *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeWithFile *This);
+                     IInitializeWithFile *This);
 
     /*** IInitializeWithFile methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IInitializeWithFile *This,
-        LPCWSTR pszFilePath,
-        DWORD grfMode);
+                     IInitializeWithFile *This,
+                     LPCWSTR pszFilePath,
+                     DWORD grfMode);
 
     END_INTERFACE
 } IInitializeWithFileVtbl;
@@ -364,8 +364,8 @@ MIDL_INTERFACE("b824b49d-22ac-4161-ac8a-9916e8fa3f7f")
 IInitializeWithStream : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IStream *pstream,
-        DWORD grfMode) = 0;
+                     IStream *pstream,
+                     DWORD grfMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -377,21 +377,21 @@ typedef struct IInitializeWithStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInitializeWithStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInitializeWithStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInitializeWithStream *This);
+                     IInitializeWithStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInitializeWithStream *This);
+                     IInitializeWithStream *This);
 
     /*** IInitializeWithStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IInitializeWithStream *This,
-        IStream *pstream,
-        DWORD grfMode);
+                     IInitializeWithStream *This,
+                     IStream *pstream,
+                     DWORD grfMode);
 
     END_INTERFACE
 } IInitializeWithStreamVtbl;
@@ -463,22 +463,22 @@ MIDL_INTERFACE("886d8eeb-8cf2-4446-8d02-cdba1dbdcf99")
 IPropertyStore : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        DWORD *cProps) = 0;
+                     DWORD *cProps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        DWORD iProp,
-        PROPERTYKEY *pkey) = 0;
+                     DWORD iProp,
+                     PROPERTYKEY *pkey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        REFPROPERTYKEY key,
-        PROPVARIANT *pv) = 0;
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *pv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValue(
-        REFPROPERTYKEY key,
-        REFPROPVARIANT propvar) = 0;
+                     REFPROPERTYKEY key,
+                     REFPROPVARIANT propvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -490,38 +490,38 @@ typedef struct IPropertyStoreVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyStore *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyStore *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyStore *This);
+                     IPropertyStore *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyStore *This);
+                     IPropertyStore *This);
 
     /*** IPropertyStore methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPropertyStore *This,
-        DWORD *cProps);
+                     IPropertyStore *This,
+                     DWORD *cProps);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPropertyStore *This,
-        DWORD iProp,
-        PROPERTYKEY *pkey);
+                     IPropertyStore *This,
+                     DWORD iProp,
+                     PROPERTYKEY *pkey);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IPropertyStore *This,
-        REFPROPERTYKEY key,
-        PROPVARIANT *pv);
+                     IPropertyStore *This,
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *pv);
 
     HRESULT (STDMETHODCALLTYPE *SetValue)(
-        IPropertyStore *This,
-        REFPROPERTYKEY key,
-        REFPROPVARIANT propvar);
+                     IPropertyStore *This,
+                     REFPROPERTYKEY key,
+                     REFPROPVARIANT propvar);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IPropertyStore *This);
+                     IPropertyStore *This);
 
     END_INTERFACE
 } IPropertyStoreVtbl;
@@ -594,19 +594,19 @@ MIDL_INTERFACE("71604b0f-97b0-4764-8577-2f13e98a1422")
 INamedPropertyStore : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNamedValue(
-        LPCWSTR pszName,
-        PROPVARIANT *ppropvar) = 0;
+                     LPCWSTR pszName,
+                     PROPVARIANT *ppropvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNamedValue(
-        LPCWSTR pszName,
-        REFPROPVARIANT propvar) = 0;
+                     LPCWSTR pszName,
+                     REFPROPVARIANT propvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNameCount(
-        DWORD *pdwCount) = 0;
+                     DWORD *pdwCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNameAt(
-        DWORD iProp,
-        BSTR *pbstrName) = 0;
+                     DWORD iProp,
+                     BSTR *pbstrName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -618,35 +618,35 @@ typedef struct INamedPropertyStoreVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INamedPropertyStore *This,
-        REFIID riid,
-        void **ppvObject);
+                     INamedPropertyStore *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INamedPropertyStore *This);
+                     INamedPropertyStore *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INamedPropertyStore *This);
+                     INamedPropertyStore *This);
 
     /*** INamedPropertyStore methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNamedValue)(
-        INamedPropertyStore *This,
-        LPCWSTR pszName,
-        PROPVARIANT *ppropvar);
+                     INamedPropertyStore *This,
+                     LPCWSTR pszName,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *SetNamedValue)(
-        INamedPropertyStore *This,
-        LPCWSTR pszName,
-        REFPROPVARIANT propvar);
+                     INamedPropertyStore *This,
+                     LPCWSTR pszName,
+                     REFPROPVARIANT propvar);
 
     HRESULT (STDMETHODCALLTYPE *GetNameCount)(
-        INamedPropertyStore *This,
-        DWORD *pdwCount);
+                     INamedPropertyStore *This,
+                     DWORD *pdwCount);
 
     HRESULT (STDMETHODCALLTYPE *GetNameAt)(
-        INamedPropertyStore *This,
-        DWORD iProp,
-        BSTR *pbstrName);
+                     INamedPropertyStore *This,
+                     DWORD iProp,
+                     BSTR *pbstrName);
 
     END_INTERFACE
 } INamedPropertyStoreVtbl;
@@ -727,10 +727,10 @@ MIDL_INTERFACE("fc0ca0a7-c316-4fd2-9031-3e628e6d4f23")
 IObjectWithPropertyKey : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetPropertyKey(
-        REFPROPERTYKEY key) = 0;
+                     REFPROPERTYKEY key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyKey(
-        PROPERTYKEY *pkey) = 0;
+                     PROPERTYKEY *pkey) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -742,24 +742,24 @@ typedef struct IObjectWithPropertyKeyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectWithPropertyKey *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectWithPropertyKey *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectWithPropertyKey *This);
+                     IObjectWithPropertyKey *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectWithPropertyKey *This);
+                     IObjectWithPropertyKey *This);
 
     /*** IObjectWithPropertyKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetPropertyKey)(
-        IObjectWithPropertyKey *This,
-        REFPROPERTYKEY key);
+                     IObjectWithPropertyKey *This,
+                     REFPROPERTYKEY key);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyKey)(
-        IObjectWithPropertyKey *This,
-        PROPERTYKEY *pkey);
+                     IObjectWithPropertyKey *This,
+                     PROPERTYKEY *pkey);
 
     END_INTERFACE
 } IObjectWithPropertyKeyVtbl;
@@ -822,8 +822,8 @@ MIDL_INTERFACE("f917bc8a-1bba-4478-a245-1bde03eb9431")
 IPropertyChange : public IObjectWithPropertyKey
 {
     virtual HRESULT STDMETHODCALLTYPE ApplyToPropVariant(
-        REFPROPVARIANT propvarIn,
-        PROPVARIANT *ppropvarOut) = 0;
+                     REFPROPVARIANT propvarIn,
+                     PROPVARIANT *ppropvarOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -835,30 +835,30 @@ typedef struct IPropertyChangeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyChange *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyChange *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyChange *This);
+                     IPropertyChange *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyChange *This);
+                     IPropertyChange *This);
 
     /*** IObjectWithPropertyKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetPropertyKey)(
-        IPropertyChange *This,
-        REFPROPERTYKEY key);
+                     IPropertyChange *This,
+                     REFPROPERTYKEY key);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyKey)(
-        IPropertyChange *This,
-        PROPERTYKEY *pkey);
+                     IPropertyChange *This,
+                     PROPERTYKEY *pkey);
 
     /*** IPropertyChange methods ***/
     HRESULT (STDMETHODCALLTYPE *ApplyToPropVariant)(
-        IPropertyChange *This,
-        REFPROPVARIANT propvarIn,
-        PROPVARIANT *ppropvarOut);
+                     IPropertyChange *This,
+                     REFPROPVARIANT propvarIn,
+                     PROPVARIANT *ppropvarOut);
 
     END_INTERFACE
 } IPropertyChangeVtbl;
@@ -921,28 +921,28 @@ MIDL_INTERFACE("380f5cad-1b5e-42f2-805d-637fd392d31e")
 IPropertyChangeArray : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT *pcOperations) = 0;
+                     UINT *pcOperations) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT iIndex,
-        REFIID riid,
-        void **ppv) = 0;
+                     UINT iIndex,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertAt(
-        UINT iIndex,
-        IPropertyChange *ppropChange) = 0;
+                     UINT iIndex,
+                     IPropertyChange *ppropChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Append(
-        IPropertyChange *ppropChange) = 0;
+                     IPropertyChange *ppropChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AppendOrReplace(
-        IPropertyChange *ppropChange) = 0;
+                     IPropertyChange *ppropChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT iIndex) = 0;
+                     UINT iIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsKeyInArray(
-        REFPROPERTYKEY key) = 0;
+                     REFPROPERTYKEY key) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -954,47 +954,47 @@ typedef struct IPropertyChangeArrayVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyChangeArray *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyChangeArray *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyChangeArray *This);
+                     IPropertyChangeArray *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyChangeArray *This);
+                     IPropertyChangeArray *This);
 
     /*** IPropertyChangeArray methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPropertyChangeArray *This,
-        UINT *pcOperations);
+                     IPropertyChangeArray *This,
+                     UINT *pcOperations);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPropertyChangeArray *This,
-        UINT iIndex,
-        REFIID riid,
-        void **ppv);
+                     IPropertyChangeArray *This,
+                     UINT iIndex,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *InsertAt)(
-        IPropertyChangeArray *This,
-        UINT iIndex,
-        IPropertyChange *ppropChange);
+                     IPropertyChangeArray *This,
+                     UINT iIndex,
+                     IPropertyChange *ppropChange);
 
     HRESULT (STDMETHODCALLTYPE *Append)(
-        IPropertyChangeArray *This,
-        IPropertyChange *ppropChange);
+                     IPropertyChangeArray *This,
+                     IPropertyChange *ppropChange);
 
     HRESULT (STDMETHODCALLTYPE *AppendOrReplace)(
-        IPropertyChangeArray *This,
-        IPropertyChange *ppropChange);
+                     IPropertyChangeArray *This,
+                     IPropertyChange *ppropChange);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IPropertyChangeArray *This,
-        UINT iIndex);
+                     IPropertyChangeArray *This,
+                     UINT iIndex);
 
     HRESULT (STDMETHODCALLTYPE *IsKeyInArray)(
-        IPropertyChangeArray *This,
-        REFPROPERTYKEY key);
+                     IPropertyChangeArray *This,
+                     REFPROPERTYKEY key);
 
     END_INTERFACE
 } IPropertyChangeArrayVtbl;
@@ -1071,7 +1071,7 @@ MIDL_INTERFACE("c8e2d566-186e-4d49-bf41-6909ead56acc")
 IPropertyStoreCapabilities : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsPropertyWritable(
-        REFPROPERTYKEY key) = 0;
+                     REFPROPERTYKEY key) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1083,20 +1083,20 @@ typedef struct IPropertyStoreCapabilitiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyStoreCapabilities *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyStoreCapabilities *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyStoreCapabilities *This);
+                     IPropertyStoreCapabilities *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyStoreCapabilities *This);
+                     IPropertyStoreCapabilities *This);
 
     /*** IPropertyStoreCapabilities methods ***/
     HRESULT (STDMETHODCALLTYPE *IsPropertyWritable)(
-        IPropertyStoreCapabilities *This,
-        REFPROPERTYKEY key);
+                     IPropertyStoreCapabilities *This,
+                     REFPROPERTYKEY key);
 
     END_INTERFACE
 } IPropertyStoreCapabilitiesVtbl;
@@ -1156,22 +1156,22 @@ MIDL_INTERFACE("3017056d-9a91-4e90-937d-746c72abbf4f")
 IPropertyStoreCache : public IPropertyStore
 {
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        REFPROPERTYKEY key,
-        PSC_STATE *pstate) = 0;
+                     REFPROPERTYKEY key,
+                     PSC_STATE *pstate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValueAndState(
-        REFPROPERTYKEY key,
-        PROPVARIANT *ppropvar,
-        PSC_STATE *pstate) = 0;
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *ppropvar,
+                     PSC_STATE *pstate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetState(
-        REFPROPERTYKEY key,
-        PSC_STATE state) = 0;
+                     REFPROPERTYKEY key,
+                     PSC_STATE state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValueAndState(
-        REFPROPERTYKEY key,
-        const PROPVARIANT *ppropvar,
-        PSC_STATE state) = 0;
+                     REFPROPERTYKEY key,
+                     const PROPVARIANT *ppropvar,
+                     PSC_STATE state) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1183,61 +1183,61 @@ typedef struct IPropertyStoreCacheVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyStoreCache *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyStoreCache *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyStoreCache *This);
+                     IPropertyStoreCache *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyStoreCache *This);
+                     IPropertyStoreCache *This);
 
     /*** IPropertyStore methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPropertyStoreCache *This,
-        DWORD *cProps);
+                     IPropertyStoreCache *This,
+                     DWORD *cProps);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPropertyStoreCache *This,
-        DWORD iProp,
-        PROPERTYKEY *pkey);
+                     IPropertyStoreCache *This,
+                     DWORD iProp,
+                     PROPERTYKEY *pkey);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IPropertyStoreCache *This,
-        REFPROPERTYKEY key,
-        PROPVARIANT *pv);
+                     IPropertyStoreCache *This,
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *pv);
 
     HRESULT (STDMETHODCALLTYPE *SetValue)(
-        IPropertyStoreCache *This,
-        REFPROPERTYKEY key,
-        REFPROPVARIANT propvar);
+                     IPropertyStoreCache *This,
+                     REFPROPERTYKEY key,
+                     REFPROPVARIANT propvar);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IPropertyStoreCache *This);
+                     IPropertyStoreCache *This);
 
     /*** IPropertyStoreCache methods ***/
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IPropertyStoreCache *This,
-        REFPROPERTYKEY key,
-        PSC_STATE *pstate);
+                     IPropertyStoreCache *This,
+                     REFPROPERTYKEY key,
+                     PSC_STATE *pstate);
 
     HRESULT (STDMETHODCALLTYPE *GetValueAndState)(
-        IPropertyStoreCache *This,
-        REFPROPERTYKEY key,
-        PROPVARIANT *ppropvar,
-        PSC_STATE *pstate);
+                     IPropertyStoreCache *This,
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *ppropvar,
+                     PSC_STATE *pstate);
 
     HRESULT (STDMETHODCALLTYPE *SetState)(
-        IPropertyStoreCache *This,
-        REFPROPERTYKEY key,
-        PSC_STATE state);
+                     IPropertyStoreCache *This,
+                     REFPROPERTYKEY key,
+                     PSC_STATE state);
 
     HRESULT (STDMETHODCALLTYPE *SetValueAndState)(
-        IPropertyStoreCache *This,
-        REFPROPERTYKEY key,
-        const PROPVARIANT *ppropvar,
-        PSC_STATE state);
+                     IPropertyStoreCache *This,
+                     REFPROPERTYKEY key,
+                     const PROPVARIANT *ppropvar,
+                     PSC_STATE state);
 
     END_INTERFACE
 } IPropertyStoreCacheVtbl;
@@ -1331,19 +1331,19 @@ MIDL_INTERFACE("11e1fbf9-2d56-4a6b-8db3-7cd193a471f2")
 IPropertyEnumType : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetEnumType(
-        PROPENUMTYPE *penumtype) = 0;
+                     PROPENUMTYPE *penumtype) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        PROPVARIANT *ppropvar) = 0;
+                     PROPVARIANT *ppropvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRangeMinValue(
-        PROPVARIANT *ppropvarMin) = 0;
+                     PROPVARIANT *ppropvarMin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRangeSetValue(
-        PROPVARIANT *ppropvarSet) = 0;
+                     PROPVARIANT *ppropvarSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayText(
-        LPWSTR *ppszDisplay) = 0;
+                     LPWSTR *ppszDisplay) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1355,36 +1355,36 @@ typedef struct IPropertyEnumTypeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyEnumType *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyEnumType *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyEnumType *This);
+                     IPropertyEnumType *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyEnumType *This);
+                     IPropertyEnumType *This);
 
     /*** IPropertyEnumType methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEnumType)(
-        IPropertyEnumType *This,
-        PROPENUMTYPE *penumtype);
+                     IPropertyEnumType *This,
+                     PROPENUMTYPE *penumtype);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IPropertyEnumType *This,
-        PROPVARIANT *ppropvar);
+                     IPropertyEnumType *This,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *GetRangeMinValue)(
-        IPropertyEnumType *This,
-        PROPVARIANT *ppropvarMin);
+                     IPropertyEnumType *This,
+                     PROPVARIANT *ppropvarMin);
 
     HRESULT (STDMETHODCALLTYPE *GetRangeSetValue)(
-        IPropertyEnumType *This,
-        PROPVARIANT *ppropvarSet);
+                     IPropertyEnumType *This,
+                     PROPVARIANT *ppropvarSet);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayText)(
-        IPropertyEnumType *This,
-        LPWSTR *ppszDisplay);
+                     IPropertyEnumType *This,
+                     LPWSTR *ppszDisplay);
 
     END_INTERFACE
 } IPropertyEnumTypeVtbl;
@@ -1453,7 +1453,7 @@ MIDL_INTERFACE("9b6e051c-5ddd-4321-9070-fe2acb55e794")
 IPropertyEnumType2 : public IPropertyEnumType
 {
     virtual HRESULT STDMETHODCALLTYPE GetImageReference(
-        LPWSTR *ppszImageRes) = 0;
+                     LPWSTR *ppszImageRes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1465,41 +1465,41 @@ typedef struct IPropertyEnumType2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyEnumType2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyEnumType2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyEnumType2 *This);
+                     IPropertyEnumType2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyEnumType2 *This);
+                     IPropertyEnumType2 *This);
 
     /*** IPropertyEnumType methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEnumType)(
-        IPropertyEnumType2 *This,
-        PROPENUMTYPE *penumtype);
+                     IPropertyEnumType2 *This,
+                     PROPENUMTYPE *penumtype);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IPropertyEnumType2 *This,
-        PROPVARIANT *ppropvar);
+                     IPropertyEnumType2 *This,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *GetRangeMinValue)(
-        IPropertyEnumType2 *This,
-        PROPVARIANT *ppropvarMin);
+                     IPropertyEnumType2 *This,
+                     PROPVARIANT *ppropvarMin);
 
     HRESULT (STDMETHODCALLTYPE *GetRangeSetValue)(
-        IPropertyEnumType2 *This,
-        PROPVARIANT *ppropvarSet);
+                     IPropertyEnumType2 *This,
+                     PROPVARIANT *ppropvarSet);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayText)(
-        IPropertyEnumType2 *This,
-        LPWSTR *ppszDisplay);
+                     IPropertyEnumType2 *This,
+                     LPWSTR *ppszDisplay);
 
     /*** IPropertyEnumType2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetImageReference)(
-        IPropertyEnumType2 *This,
-        LPWSTR *ppszImageRes);
+                     IPropertyEnumType2 *This,
+                     LPWSTR *ppszImageRes);
 
     END_INTERFACE
 } IPropertyEnumType2Vtbl;
@@ -1574,21 +1574,21 @@ MIDL_INTERFACE("a99400f4-3d84-4557-94ba-1242fb2cc9a6")
 IPropertyEnumTypeList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT *pctypes) = 0;
+                     UINT *pctypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT itype,
-        REFIID riid,
-        void **ppv) = 0;
+                     UINT itype,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConditionAt(
-        UINT nIndex,
-        REFIID riid,
-        void **ppv) = 0;
+                     UINT nIndex,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindMatchingIndex(
-        REFPROPVARIANT propvarCmp,
-        UINT *pnIndex) = 0;
+                     REFPROPVARIANT propvarCmp,
+                     UINT *pnIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1600,37 +1600,37 @@ typedef struct IPropertyEnumTypeListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyEnumTypeList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyEnumTypeList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyEnumTypeList *This);
+                     IPropertyEnumTypeList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyEnumTypeList *This);
+                     IPropertyEnumTypeList *This);
 
     /*** IPropertyEnumTypeList methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPropertyEnumTypeList *This,
-        UINT *pctypes);
+                     IPropertyEnumTypeList *This,
+                     UINT *pctypes);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPropertyEnumTypeList *This,
-        UINT itype,
-        REFIID riid,
-        void **ppv);
+                     IPropertyEnumTypeList *This,
+                     UINT itype,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetConditionAt)(
-        IPropertyEnumTypeList *This,
-        UINT nIndex,
-        REFIID riid,
-        void **ppv);
+                     IPropertyEnumTypeList *This,
+                     UINT nIndex,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *FindMatchingIndex)(
-        IPropertyEnumTypeList *This,
-        REFPROPVARIANT propvarCmp,
-        UINT *pnIndex);
+                     IPropertyEnumTypeList *This,
+                     REFPROPVARIANT propvarCmp,
+                     UINT *pnIndex);
 
     END_INTERFACE
 } IPropertyEnumTypeListVtbl;
@@ -1813,76 +1813,76 @@ MIDL_INTERFACE("6f79d558-3e96-4549-a1d1-7d75d2288814")
 IPropertyDescription : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPropertyKey(
-        PROPERTYKEY *pkey) = 0;
+                     PROPERTYKEY *pkey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCanonicalName(
-        LPWSTR *ppszName) = 0;
+                     LPWSTR *ppszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyType(
-        VARTYPE *pvartype) = 0;
+                     VARTYPE *pvartype) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayName(
-        LPWSTR *ppszName) = 0;
+                     LPWSTR *ppszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEditInvitation(
-        LPWSTR *ppszInvite) = 0;
+                     LPWSTR *ppszInvite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTypeFlags(
-        PROPDESC_TYPE_FLAGS mask,
-        PROPDESC_TYPE_FLAGS *ppdtFlags) = 0;
+                     PROPDESC_TYPE_FLAGS mask,
+                     PROPDESC_TYPE_FLAGS *ppdtFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewFlags(
-        PROPDESC_VIEW_FLAGS *ppdvFlags) = 0;
+                     PROPDESC_VIEW_FLAGS *ppdvFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultColumnWidth(
-        UINT *pcxChars) = 0;
+                     UINT *pcxChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayType(
-        PROPDESC_DISPLAYTYPE *pdisplaytype) = 0;
+                     PROPDESC_DISPLAYTYPE *pdisplaytype) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColumnState(
-        SHCOLSTATEF *pcsFlags) = 0;
+                     SHCOLSTATEF *pcsFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupingRange(
-        PROPDESC_GROUPING_RANGE *pgr) = 0;
+                     PROPDESC_GROUPING_RANGE *pgr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelativeDescriptionType(
-        PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt) = 0;
+                     PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelativeDescription(
-        REFPROPVARIANT propvar1,
-        REFPROPVARIANT propvar2,
-        LPWSTR *ppszDesc1,
-        LPWSTR *ppszDesc2) = 0;
+                     REFPROPVARIANT propvar1,
+                     REFPROPVARIANT propvar2,
+                     LPWSTR *ppszDesc1,
+                     LPWSTR *ppszDesc2) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSortDescription(
-        PROPDESC_SORTDESCRIPTION *psd) = 0;
+                     PROPDESC_SORTDESCRIPTION *psd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSortDescriptionLabel(
-        WINBOOL fDescending,
-        LPWSTR *ppszDescription) = 0;
+                     WINBOOL fDescending,
+                     LPWSTR *ppszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAggregationType(
-        PROPDESC_AGGREGATION_TYPE *paggtype) = 0;
+                     PROPDESC_AGGREGATION_TYPE *paggtype) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConditionType(
-        PROPDESC_CONDITION_TYPE *pcontype,
-        CONDITION_OPERATION *popDefault) = 0;
+                     PROPDESC_CONDITION_TYPE *pcontype,
+                     CONDITION_OPERATION *popDefault) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumTypeList(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CoerceToCanonicalValue(
-        PROPVARIANT *ppropvar) = 0;
+                     PROPVARIANT *ppropvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FormatForDisplay(
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdfFlags,
-        LPWSTR *ppszDisplay) = 0;
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdfFlags,
+                     LPWSTR *ppszDisplay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsValueCanonical(
-        REFPROPVARIANT propvar) = 0;
+                     REFPROPVARIANT propvar) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1894,109 +1894,109 @@ typedef struct IPropertyDescriptionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyDescription *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyDescription *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyDescription *This);
+                     IPropertyDescription *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyDescription *This);
+                     IPropertyDescription *This);
 
     /*** IPropertyDescription methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyKey)(
-        IPropertyDescription *This,
-        PROPERTYKEY *pkey);
+                     IPropertyDescription *This,
+                     PROPERTYKEY *pkey);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalName)(
-        IPropertyDescription *This,
-        LPWSTR *ppszName);
+                     IPropertyDescription *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyType)(
-        IPropertyDescription *This,
-        VARTYPE *pvartype);
+                     IPropertyDescription *This,
+                     VARTYPE *pvartype);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IPropertyDescription *This,
-        LPWSTR *ppszName);
+                     IPropertyDescription *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetEditInvitation)(
-        IPropertyDescription *This,
-        LPWSTR *ppszInvite);
+                     IPropertyDescription *This,
+                     LPWSTR *ppszInvite);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeFlags)(
-        IPropertyDescription *This,
-        PROPDESC_TYPE_FLAGS mask,
-        PROPDESC_TYPE_FLAGS *ppdtFlags);
+                     IPropertyDescription *This,
+                     PROPDESC_TYPE_FLAGS mask,
+                     PROPDESC_TYPE_FLAGS *ppdtFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetViewFlags)(
-        IPropertyDescription *This,
-        PROPDESC_VIEW_FLAGS *ppdvFlags);
+                     IPropertyDescription *This,
+                     PROPDESC_VIEW_FLAGS *ppdvFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultColumnWidth)(
-        IPropertyDescription *This,
-        UINT *pcxChars);
+                     IPropertyDescription *This,
+                     UINT *pcxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayType)(
-        IPropertyDescription *This,
-        PROPDESC_DISPLAYTYPE *pdisplaytype);
+                     IPropertyDescription *This,
+                     PROPDESC_DISPLAYTYPE *pdisplaytype);
 
     HRESULT (STDMETHODCALLTYPE *GetColumnState)(
-        IPropertyDescription *This,
-        SHCOLSTATEF *pcsFlags);
+                     IPropertyDescription *This,
+                     SHCOLSTATEF *pcsFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupingRange)(
-        IPropertyDescription *This,
-        PROPDESC_GROUPING_RANGE *pgr);
+                     IPropertyDescription *This,
+                     PROPDESC_GROUPING_RANGE *pgr);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescriptionType)(
-        IPropertyDescription *This,
-        PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
+                     IPropertyDescription *This,
+                     PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescription)(
-        IPropertyDescription *This,
-        REFPROPVARIANT propvar1,
-        REFPROPVARIANT propvar2,
-        LPWSTR *ppszDesc1,
-        LPWSTR *ppszDesc2);
+                     IPropertyDescription *This,
+                     REFPROPVARIANT propvar1,
+                     REFPROPVARIANT propvar2,
+                     LPWSTR *ppszDesc1,
+                     LPWSTR *ppszDesc2);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescription)(
-        IPropertyDescription *This,
-        PROPDESC_SORTDESCRIPTION *psd);
+                     IPropertyDescription *This,
+                     PROPDESC_SORTDESCRIPTION *psd);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescriptionLabel)(
-        IPropertyDescription *This,
-        WINBOOL fDescending,
-        LPWSTR *ppszDescription);
+                     IPropertyDescription *This,
+                     WINBOOL fDescending,
+                     LPWSTR *ppszDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetAggregationType)(
-        IPropertyDescription *This,
-        PROPDESC_AGGREGATION_TYPE *paggtype);
+                     IPropertyDescription *This,
+                     PROPDESC_AGGREGATION_TYPE *paggtype);
 
     HRESULT (STDMETHODCALLTYPE *GetConditionType)(
-        IPropertyDescription *This,
-        PROPDESC_CONDITION_TYPE *pcontype,
-        CONDITION_OPERATION *popDefault);
+                     IPropertyDescription *This,
+                     PROPDESC_CONDITION_TYPE *pcontype,
+                     CONDITION_OPERATION *popDefault);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumTypeList)(
-        IPropertyDescription *This,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescription *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CoerceToCanonicalValue)(
-        IPropertyDescription *This,
-        PROPVARIANT *ppropvar);
+                     IPropertyDescription *This,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *FormatForDisplay)(
-        IPropertyDescription *This,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdfFlags,
-        LPWSTR *ppszDisplay);
+                     IPropertyDescription *This,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdfFlags,
+                     LPWSTR *ppszDisplay);
 
     HRESULT (STDMETHODCALLTYPE *IsValueCanonical)(
-        IPropertyDescription *This,
-        REFPROPVARIANT propvar);
+                     IPropertyDescription *This,
+                     REFPROPVARIANT propvar);
 
     END_INTERFACE
 } IPropertyDescriptionVtbl;
@@ -2145,8 +2145,8 @@ MIDL_INTERFACE("57d2eded-5062-400e-b107-5dae79fe57a6")
 IPropertyDescription2 : public IPropertyDescription
 {
     virtual HRESULT STDMETHODCALLTYPE GetImageReferenceForValue(
-        REFPROPVARIANT propvar,
-        LPWSTR *ppszImageRes) = 0;
+                     REFPROPVARIANT propvar,
+                     LPWSTR *ppszImageRes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2158,115 +2158,115 @@ typedef struct IPropertyDescription2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyDescription2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyDescription2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyDescription2 *This);
+                     IPropertyDescription2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyDescription2 *This);
+                     IPropertyDescription2 *This);
 
     /*** IPropertyDescription methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyKey)(
-        IPropertyDescription2 *This,
-        PROPERTYKEY *pkey);
+                     IPropertyDescription2 *This,
+                     PROPERTYKEY *pkey);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalName)(
-        IPropertyDescription2 *This,
-        LPWSTR *ppszName);
+                     IPropertyDescription2 *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyType)(
-        IPropertyDescription2 *This,
-        VARTYPE *pvartype);
+                     IPropertyDescription2 *This,
+                     VARTYPE *pvartype);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IPropertyDescription2 *This,
-        LPWSTR *ppszName);
+                     IPropertyDescription2 *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetEditInvitation)(
-        IPropertyDescription2 *This,
-        LPWSTR *ppszInvite);
+                     IPropertyDescription2 *This,
+                     LPWSTR *ppszInvite);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeFlags)(
-        IPropertyDescription2 *This,
-        PROPDESC_TYPE_FLAGS mask,
-        PROPDESC_TYPE_FLAGS *ppdtFlags);
+                     IPropertyDescription2 *This,
+                     PROPDESC_TYPE_FLAGS mask,
+                     PROPDESC_TYPE_FLAGS *ppdtFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetViewFlags)(
-        IPropertyDescription2 *This,
-        PROPDESC_VIEW_FLAGS *ppdvFlags);
+                     IPropertyDescription2 *This,
+                     PROPDESC_VIEW_FLAGS *ppdvFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultColumnWidth)(
-        IPropertyDescription2 *This,
-        UINT *pcxChars);
+                     IPropertyDescription2 *This,
+                     UINT *pcxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayType)(
-        IPropertyDescription2 *This,
-        PROPDESC_DISPLAYTYPE *pdisplaytype);
+                     IPropertyDescription2 *This,
+                     PROPDESC_DISPLAYTYPE *pdisplaytype);
 
     HRESULT (STDMETHODCALLTYPE *GetColumnState)(
-        IPropertyDescription2 *This,
-        SHCOLSTATEF *pcsFlags);
+                     IPropertyDescription2 *This,
+                     SHCOLSTATEF *pcsFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupingRange)(
-        IPropertyDescription2 *This,
-        PROPDESC_GROUPING_RANGE *pgr);
+                     IPropertyDescription2 *This,
+                     PROPDESC_GROUPING_RANGE *pgr);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescriptionType)(
-        IPropertyDescription2 *This,
-        PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
+                     IPropertyDescription2 *This,
+                     PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescription)(
-        IPropertyDescription2 *This,
-        REFPROPVARIANT propvar1,
-        REFPROPVARIANT propvar2,
-        LPWSTR *ppszDesc1,
-        LPWSTR *ppszDesc2);
+                     IPropertyDescription2 *This,
+                     REFPROPVARIANT propvar1,
+                     REFPROPVARIANT propvar2,
+                     LPWSTR *ppszDesc1,
+                     LPWSTR *ppszDesc2);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescription)(
-        IPropertyDescription2 *This,
-        PROPDESC_SORTDESCRIPTION *psd);
+                     IPropertyDescription2 *This,
+                     PROPDESC_SORTDESCRIPTION *psd);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescriptionLabel)(
-        IPropertyDescription2 *This,
-        WINBOOL fDescending,
-        LPWSTR *ppszDescription);
+                     IPropertyDescription2 *This,
+                     WINBOOL fDescending,
+                     LPWSTR *ppszDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetAggregationType)(
-        IPropertyDescription2 *This,
-        PROPDESC_AGGREGATION_TYPE *paggtype);
+                     IPropertyDescription2 *This,
+                     PROPDESC_AGGREGATION_TYPE *paggtype);
 
     HRESULT (STDMETHODCALLTYPE *GetConditionType)(
-        IPropertyDescription2 *This,
-        PROPDESC_CONDITION_TYPE *pcontype,
-        CONDITION_OPERATION *popDefault);
+                     IPropertyDescription2 *This,
+                     PROPDESC_CONDITION_TYPE *pcontype,
+                     CONDITION_OPERATION *popDefault);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumTypeList)(
-        IPropertyDescription2 *This,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescription2 *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CoerceToCanonicalValue)(
-        IPropertyDescription2 *This,
-        PROPVARIANT *ppropvar);
+                     IPropertyDescription2 *This,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *FormatForDisplay)(
-        IPropertyDescription2 *This,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdfFlags,
-        LPWSTR *ppszDisplay);
+                     IPropertyDescription2 *This,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdfFlags,
+                     LPWSTR *ppszDisplay);
 
     HRESULT (STDMETHODCALLTYPE *IsValueCanonical)(
-        IPropertyDescription2 *This,
-        REFPROPVARIANT propvar);
+                     IPropertyDescription2 *This,
+                     REFPROPVARIANT propvar);
 
     /*** IPropertyDescription2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetImageReferenceForValue)(
-        IPropertyDescription2 *This,
-        REFPROPVARIANT propvar,
-        LPWSTR *ppszImageRes);
+                     IPropertyDescription2 *This,
+                     REFPROPVARIANT propvar,
+                     LPWSTR *ppszImageRes);
 
     END_INTERFACE
 } IPropertyDescription2Vtbl;
@@ -2405,12 +2405,12 @@ MIDL_INTERFACE("f67104fc-2af9-46fd-b32d-243c1404f3d1")
 IPropertyDescriptionAliasInfo : public IPropertyDescription
 {
     virtual HRESULT STDMETHODCALLTYPE GetSortByAlias(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAdditionalSortByAliases(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2422,120 +2422,120 @@ typedef struct IPropertyDescriptionAliasInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyDescriptionAliasInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyDescriptionAliasInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyDescriptionAliasInfo *This);
+                     IPropertyDescriptionAliasInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyDescriptionAliasInfo *This);
+                     IPropertyDescriptionAliasInfo *This);
 
     /*** IPropertyDescription methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyKey)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPERTYKEY *pkey);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPERTYKEY *pkey);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalName)(
-        IPropertyDescriptionAliasInfo *This,
-        LPWSTR *ppszName);
+                     IPropertyDescriptionAliasInfo *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyType)(
-        IPropertyDescriptionAliasInfo *This,
-        VARTYPE *pvartype);
+                     IPropertyDescriptionAliasInfo *This,
+                     VARTYPE *pvartype);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IPropertyDescriptionAliasInfo *This,
-        LPWSTR *ppszName);
+                     IPropertyDescriptionAliasInfo *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetEditInvitation)(
-        IPropertyDescriptionAliasInfo *This,
-        LPWSTR *ppszInvite);
+                     IPropertyDescriptionAliasInfo *This,
+                     LPWSTR *ppszInvite);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeFlags)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPDESC_TYPE_FLAGS mask,
-        PROPDESC_TYPE_FLAGS *ppdtFlags);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPDESC_TYPE_FLAGS mask,
+                     PROPDESC_TYPE_FLAGS *ppdtFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetViewFlags)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPDESC_VIEW_FLAGS *ppdvFlags);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPDESC_VIEW_FLAGS *ppdvFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultColumnWidth)(
-        IPropertyDescriptionAliasInfo *This,
-        UINT *pcxChars);
+                     IPropertyDescriptionAliasInfo *This,
+                     UINT *pcxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayType)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPDESC_DISPLAYTYPE *pdisplaytype);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPDESC_DISPLAYTYPE *pdisplaytype);
 
     HRESULT (STDMETHODCALLTYPE *GetColumnState)(
-        IPropertyDescriptionAliasInfo *This,
-        SHCOLSTATEF *pcsFlags);
+                     IPropertyDescriptionAliasInfo *This,
+                     SHCOLSTATEF *pcsFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupingRange)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPDESC_GROUPING_RANGE *pgr);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPDESC_GROUPING_RANGE *pgr);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescriptionType)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescription)(
-        IPropertyDescriptionAliasInfo *This,
-        REFPROPVARIANT propvar1,
-        REFPROPVARIANT propvar2,
-        LPWSTR *ppszDesc1,
-        LPWSTR *ppszDesc2);
+                     IPropertyDescriptionAliasInfo *This,
+                     REFPROPVARIANT propvar1,
+                     REFPROPVARIANT propvar2,
+                     LPWSTR *ppszDesc1,
+                     LPWSTR *ppszDesc2);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescription)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPDESC_SORTDESCRIPTION *psd);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPDESC_SORTDESCRIPTION *psd);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescriptionLabel)(
-        IPropertyDescriptionAliasInfo *This,
-        WINBOOL fDescending,
-        LPWSTR *ppszDescription);
+                     IPropertyDescriptionAliasInfo *This,
+                     WINBOOL fDescending,
+                     LPWSTR *ppszDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetAggregationType)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPDESC_AGGREGATION_TYPE *paggtype);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPDESC_AGGREGATION_TYPE *paggtype);
 
     HRESULT (STDMETHODCALLTYPE *GetConditionType)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPDESC_CONDITION_TYPE *pcontype,
-        CONDITION_OPERATION *popDefault);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPDESC_CONDITION_TYPE *pcontype,
+                     CONDITION_OPERATION *popDefault);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumTypeList)(
-        IPropertyDescriptionAliasInfo *This,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescriptionAliasInfo *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CoerceToCanonicalValue)(
-        IPropertyDescriptionAliasInfo *This,
-        PROPVARIANT *ppropvar);
+                     IPropertyDescriptionAliasInfo *This,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *FormatForDisplay)(
-        IPropertyDescriptionAliasInfo *This,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdfFlags,
-        LPWSTR *ppszDisplay);
+                     IPropertyDescriptionAliasInfo *This,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdfFlags,
+                     LPWSTR *ppszDisplay);
 
     HRESULT (STDMETHODCALLTYPE *IsValueCanonical)(
-        IPropertyDescriptionAliasInfo *This,
-        REFPROPVARIANT propvar);
+                     IPropertyDescriptionAliasInfo *This,
+                     REFPROPVARIANT propvar);
 
     /*** IPropertyDescriptionAliasInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSortByAlias)(
-        IPropertyDescriptionAliasInfo *This,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescriptionAliasInfo *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetAdditionalSortByAliases)(
-        IPropertyDescriptionAliasInfo *This,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescriptionAliasInfo *This,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IPropertyDescriptionAliasInfoVtbl;
@@ -2698,16 +2698,16 @@ MIDL_INTERFACE("078f91bd-29a2-440f-924e-46a291524520")
 IPropertyDescriptionSearchInfo : public IPropertyDescription
 {
     virtual HRESULT STDMETHODCALLTYPE GetSearchInfoFlags(
-        PROPDESC_SEARCHINFO_FLAGS *ppdsiFlags) = 0;
+                     PROPDESC_SEARCHINFO_FLAGS *ppdsiFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColumnIndexType(
-        PROPDESC_COLUMNINDEX_TYPE *ppdciType) = 0;
+                     PROPDESC_COLUMNINDEX_TYPE *ppdciType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProjectionString(
-        LPWSTR *ppszProjection) = 0;
+                     LPWSTR *ppszProjection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxSize(
-        UINT *pcbMaxSize) = 0;
+                     UINT *pcbMaxSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2719,126 +2719,126 @@ typedef struct IPropertyDescriptionSearchInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyDescriptionSearchInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyDescriptionSearchInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyDescriptionSearchInfo *This);
+                     IPropertyDescriptionSearchInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyDescriptionSearchInfo *This);
+                     IPropertyDescriptionSearchInfo *This);
 
     /*** IPropertyDescription methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyKey)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPERTYKEY *pkey);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPERTYKEY *pkey);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalName)(
-        IPropertyDescriptionSearchInfo *This,
-        LPWSTR *ppszName);
+                     IPropertyDescriptionSearchInfo *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyType)(
-        IPropertyDescriptionSearchInfo *This,
-        VARTYPE *pvartype);
+                     IPropertyDescriptionSearchInfo *This,
+                     VARTYPE *pvartype);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IPropertyDescriptionSearchInfo *This,
-        LPWSTR *ppszName);
+                     IPropertyDescriptionSearchInfo *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetEditInvitation)(
-        IPropertyDescriptionSearchInfo *This,
-        LPWSTR *ppszInvite);
+                     IPropertyDescriptionSearchInfo *This,
+                     LPWSTR *ppszInvite);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeFlags)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_TYPE_FLAGS mask,
-        PROPDESC_TYPE_FLAGS *ppdtFlags);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_TYPE_FLAGS mask,
+                     PROPDESC_TYPE_FLAGS *ppdtFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetViewFlags)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_VIEW_FLAGS *ppdvFlags);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_VIEW_FLAGS *ppdvFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultColumnWidth)(
-        IPropertyDescriptionSearchInfo *This,
-        UINT *pcxChars);
+                     IPropertyDescriptionSearchInfo *This,
+                     UINT *pcxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayType)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_DISPLAYTYPE *pdisplaytype);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_DISPLAYTYPE *pdisplaytype);
 
     HRESULT (STDMETHODCALLTYPE *GetColumnState)(
-        IPropertyDescriptionSearchInfo *This,
-        SHCOLSTATEF *pcsFlags);
+                     IPropertyDescriptionSearchInfo *This,
+                     SHCOLSTATEF *pcsFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupingRange)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_GROUPING_RANGE *pgr);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_GROUPING_RANGE *pgr);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescriptionType)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescription)(
-        IPropertyDescriptionSearchInfo *This,
-        REFPROPVARIANT propvar1,
-        REFPROPVARIANT propvar2,
-        LPWSTR *ppszDesc1,
-        LPWSTR *ppszDesc2);
+                     IPropertyDescriptionSearchInfo *This,
+                     REFPROPVARIANT propvar1,
+                     REFPROPVARIANT propvar2,
+                     LPWSTR *ppszDesc1,
+                     LPWSTR *ppszDesc2);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescription)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_SORTDESCRIPTION *psd);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_SORTDESCRIPTION *psd);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescriptionLabel)(
-        IPropertyDescriptionSearchInfo *This,
-        WINBOOL fDescending,
-        LPWSTR *ppszDescription);
+                     IPropertyDescriptionSearchInfo *This,
+                     WINBOOL fDescending,
+                     LPWSTR *ppszDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetAggregationType)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_AGGREGATION_TYPE *paggtype);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_AGGREGATION_TYPE *paggtype);
 
     HRESULT (STDMETHODCALLTYPE *GetConditionType)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_CONDITION_TYPE *pcontype,
-        CONDITION_OPERATION *popDefault);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_CONDITION_TYPE *pcontype,
+                     CONDITION_OPERATION *popDefault);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumTypeList)(
-        IPropertyDescriptionSearchInfo *This,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescriptionSearchInfo *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CoerceToCanonicalValue)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPVARIANT *ppropvar);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *FormatForDisplay)(
-        IPropertyDescriptionSearchInfo *This,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdfFlags,
-        LPWSTR *ppszDisplay);
+                     IPropertyDescriptionSearchInfo *This,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdfFlags,
+                     LPWSTR *ppszDisplay);
 
     HRESULT (STDMETHODCALLTYPE *IsValueCanonical)(
-        IPropertyDescriptionSearchInfo *This,
-        REFPROPVARIANT propvar);
+                     IPropertyDescriptionSearchInfo *This,
+                     REFPROPVARIANT propvar);
 
     /*** IPropertyDescriptionSearchInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSearchInfoFlags)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_SEARCHINFO_FLAGS *ppdsiFlags);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_SEARCHINFO_FLAGS *ppdsiFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetColumnIndexType)(
-        IPropertyDescriptionSearchInfo *This,
-        PROPDESC_COLUMNINDEX_TYPE *ppdciType);
+                     IPropertyDescriptionSearchInfo *This,
+                     PROPDESC_COLUMNINDEX_TYPE *ppdciType);
 
     HRESULT (STDMETHODCALLTYPE *GetProjectionString)(
-        IPropertyDescriptionSearchInfo *This,
-        LPWSTR *ppszProjection);
+                     IPropertyDescriptionSearchInfo *This,
+                     LPWSTR *ppszProjection);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxSize)(
-        IPropertyDescriptionSearchInfo *This,
-        UINT *pcbMaxSize);
+                     IPropertyDescriptionSearchInfo *This,
+                     UINT *pcbMaxSize);
 
     END_INTERFACE
 } IPropertyDescriptionSearchInfoVtbl;
@@ -2989,9 +2989,9 @@ MIDL_INTERFACE("507393f4-2a3d-4a60-b59e-d9c75716c2dd")
 IPropertyDescriptionRelatedPropertyInfo : public IPropertyDescription
 {
     virtual HRESULT STDMETHODCALLTYPE GetRelatedProperty(
-        LPCWSTR pszRelationshipName,
-        REFIID riid,
-        void **ppv) = 0;
+                     LPCWSTR pszRelationshipName,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3003,116 +3003,116 @@ typedef struct IPropertyDescriptionRelatedPropertyInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyDescriptionRelatedPropertyInfo *This);
+                     IPropertyDescriptionRelatedPropertyInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyDescriptionRelatedPropertyInfo *This);
+                     IPropertyDescriptionRelatedPropertyInfo *This);
 
     /*** IPropertyDescription methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyKey)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPERTYKEY *pkey);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPERTYKEY *pkey);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalName)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        LPWSTR *ppszName);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyType)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        VARTYPE *pvartype);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     VARTYPE *pvartype);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        LPWSTR *ppszName);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *GetEditInvitation)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        LPWSTR *ppszInvite);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     LPWSTR *ppszInvite);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeFlags)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPDESC_TYPE_FLAGS mask,
-        PROPDESC_TYPE_FLAGS *ppdtFlags);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPDESC_TYPE_FLAGS mask,
+                     PROPDESC_TYPE_FLAGS *ppdtFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetViewFlags)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPDESC_VIEW_FLAGS *ppdvFlags);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPDESC_VIEW_FLAGS *ppdvFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultColumnWidth)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        UINT *pcxChars);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     UINT *pcxChars);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayType)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPDESC_DISPLAYTYPE *pdisplaytype);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPDESC_DISPLAYTYPE *pdisplaytype);
 
     HRESULT (STDMETHODCALLTYPE *GetColumnState)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        SHCOLSTATEF *pcsFlags);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     SHCOLSTATEF *pcsFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupingRange)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPDESC_GROUPING_RANGE *pgr);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPDESC_GROUPING_RANGE *pgr);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescriptionType)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPDESC_RELATIVEDESCRIPTION_TYPE *prdt);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeDescription)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        REFPROPVARIANT propvar1,
-        REFPROPVARIANT propvar2,
-        LPWSTR *ppszDesc1,
-        LPWSTR *ppszDesc2);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     REFPROPVARIANT propvar1,
+                     REFPROPVARIANT propvar2,
+                     LPWSTR *ppszDesc1,
+                     LPWSTR *ppszDesc2);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescription)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPDESC_SORTDESCRIPTION *psd);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPDESC_SORTDESCRIPTION *psd);
 
     HRESULT (STDMETHODCALLTYPE *GetSortDescriptionLabel)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        WINBOOL fDescending,
-        LPWSTR *ppszDescription);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     WINBOOL fDescending,
+                     LPWSTR *ppszDescription);
 
     HRESULT (STDMETHODCALLTYPE *GetAggregationType)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPDESC_AGGREGATION_TYPE *paggtype);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPDESC_AGGREGATION_TYPE *paggtype);
 
     HRESULT (STDMETHODCALLTYPE *GetConditionType)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPDESC_CONDITION_TYPE *pcontype,
-        CONDITION_OPERATION *popDefault);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPDESC_CONDITION_TYPE *pcontype,
+                     CONDITION_OPERATION *popDefault);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumTypeList)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *CoerceToCanonicalValue)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        PROPVARIANT *ppropvar);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *FormatForDisplay)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdfFlags,
-        LPWSTR *ppszDisplay);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdfFlags,
+                     LPWSTR *ppszDisplay);
 
     HRESULT (STDMETHODCALLTYPE *IsValueCanonical)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        REFPROPVARIANT propvar);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     REFPROPVARIANT propvar);
 
     /*** IPropertyDescriptionRelatedPropertyInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRelatedProperty)(
-        IPropertyDescriptionRelatedPropertyInfo *This,
-        LPCWSTR pszRelationshipName,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescriptionRelatedPropertyInfo *This,
+                     LPCWSTR pszRelationshipName,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IPropertyDescriptionRelatedPropertyInfoVtbl;
@@ -3261,46 +3261,46 @@ MIDL_INTERFACE("ca724e8a-c3e6-442b-88a4-6fb0db8035a3")
 IPropertySystem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPropertyDescription(
-        REFPROPERTYKEY propkey,
-        REFIID riid,
-        void **ppv) = 0;
+                     REFPROPERTYKEY propkey,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyDescriptionByName(
-        LPCWSTR pszCanonicalName,
-        REFIID riid,
-        void **ppv) = 0;
+                     LPCWSTR pszCanonicalName,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyDescriptionListFromString(
-        LPCWSTR pszPropList,
-        REFIID riid,
-        void **ppv) = 0;
+                     LPCWSTR pszPropList,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumeratePropertyDescriptions(
-        PROPDESC_ENUMFILTER filterOn,
-        REFIID riid,
-        void **ppv) = 0;
+                     PROPDESC_ENUMFILTER filterOn,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FormatForDisplay(
-        REFPROPERTYKEY key,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdff,
-        LPWSTR pszText,
-        DWORD cchText) = 0;
+                     REFPROPERTYKEY key,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdff,
+                     LPWSTR pszText,
+                     DWORD cchText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FormatForDisplayAlloc(
-        REFPROPERTYKEY key,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdff,
-        LPWSTR *ppszDisplay) = 0;
+                     REFPROPERTYKEY key,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdff,
+                     LPWSTR *ppszDisplay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterPropertySchema(
-        LPCWSTR pszPath) = 0;
+                     LPCWSTR pszPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterPropertySchema(
-        LPCWSTR pszPath) = 0;
+                     LPCWSTR pszPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RefreshPropertySchema(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3312,66 +3312,66 @@ typedef struct IPropertySystemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertySystem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertySystem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertySystem *This);
+                     IPropertySystem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertySystem *This);
+                     IPropertySystem *This);
 
     /*** IPropertySystem methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyDescription)(
-        IPropertySystem *This,
-        REFPROPERTYKEY propkey,
-        REFIID riid,
-        void **ppv);
+                     IPropertySystem *This,
+                     REFPROPERTYKEY propkey,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyDescriptionByName)(
-        IPropertySystem *This,
-        LPCWSTR pszCanonicalName,
-        REFIID riid,
-        void **ppv);
+                     IPropertySystem *This,
+                     LPCWSTR pszCanonicalName,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyDescriptionListFromString)(
-        IPropertySystem *This,
-        LPCWSTR pszPropList,
-        REFIID riid,
-        void **ppv);
+                     IPropertySystem *This,
+                     LPCWSTR pszPropList,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *EnumeratePropertyDescriptions)(
-        IPropertySystem *This,
-        PROPDESC_ENUMFILTER filterOn,
-        REFIID riid,
-        void **ppv);
+                     IPropertySystem *This,
+                     PROPDESC_ENUMFILTER filterOn,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *FormatForDisplay)(
-        IPropertySystem *This,
-        REFPROPERTYKEY key,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdff,
-        LPWSTR pszText,
-        DWORD cchText);
+                     IPropertySystem *This,
+                     REFPROPERTYKEY key,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdff,
+                     LPWSTR pszText,
+                     DWORD cchText);
 
     HRESULT (STDMETHODCALLTYPE *FormatForDisplayAlloc)(
-        IPropertySystem *This,
-        REFPROPERTYKEY key,
-        REFPROPVARIANT propvar,
-        PROPDESC_FORMAT_FLAGS pdff,
-        LPWSTR *ppszDisplay);
+                     IPropertySystem *This,
+                     REFPROPERTYKEY key,
+                     REFPROPVARIANT propvar,
+                     PROPDESC_FORMAT_FLAGS pdff,
+                     LPWSTR *ppszDisplay);
 
     HRESULT (STDMETHODCALLTYPE *RegisterPropertySchema)(
-        IPropertySystem *This,
-        LPCWSTR pszPath);
+                     IPropertySystem *This,
+                     LPCWSTR pszPath);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterPropertySchema)(
-        IPropertySystem *This,
-        LPCWSTR pszPath);
+                     IPropertySystem *This,
+                     LPCWSTR pszPath);
 
     HRESULT (STDMETHODCALLTYPE *RefreshPropertySchema)(
-        IPropertySystem *This);
+                     IPropertySystem *This);
 
     END_INTERFACE
 } IPropertySystemVtbl;
@@ -3456,12 +3456,12 @@ MIDL_INTERFACE("1f9fc1d0-c39b-4b26-817f-011967d3440e")
 IPropertyDescriptionList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT *pcElem) = 0;
+                     UINT *pcElem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT iElem,
-        REFIID riid,
-        void **ppv) = 0;
+                     UINT iElem,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3473,26 +3473,26 @@ typedef struct IPropertyDescriptionListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyDescriptionList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyDescriptionList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyDescriptionList *This);
+                     IPropertyDescriptionList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyDescriptionList *This);
+                     IPropertyDescriptionList *This);
 
     /*** IPropertyDescriptionList methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPropertyDescriptionList *This,
-        UINT *pcElem);
+                     IPropertyDescriptionList *This,
+                     UINT *pcElem);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPropertyDescriptionList *This,
-        UINT iElem,
-        REFIID riid,
-        void **ppv);
+                     IPropertyDescriptionList *This,
+                     UINT iElem,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IPropertyDescriptionListVtbl;
@@ -3549,17 +3549,17 @@ MIDL_INTERFACE("bc110b6d-57e8-4148-a9c6-91015ab2f3a5")
 IPropertyStoreFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStore(
-        GETPROPERTYSTOREFLAGS flags,
-        IUnknown *pUnkFactory,
-        REFIID riid,
-        void **ppv) = 0;
+                     GETPROPERTYSTOREFLAGS flags,
+                     IUnknown *pUnkFactory,
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStoreForKeys(
-        const PROPERTYKEY *rgKeys,
-        UINT cKeys,
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv) = 0;
+                     const PROPERTYKEY *rgKeys,
+                     UINT cKeys,
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3571,31 +3571,31 @@ typedef struct IPropertyStoreFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyStoreFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyStoreFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyStoreFactory *This);
+                     IPropertyStoreFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyStoreFactory *This);
+                     IPropertyStoreFactory *This);
 
     /*** IPropertyStoreFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyStore)(
-        IPropertyStoreFactory *This,
-        GETPROPERTYSTOREFLAGS flags,
-        IUnknown *pUnkFactory,
-        REFIID riid,
-        void **ppv);
+                     IPropertyStoreFactory *This,
+                     GETPROPERTYSTOREFLAGS flags,
+                     IUnknown *pUnkFactory,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyStoreForKeys)(
-        IPropertyStoreFactory *This,
-        const PROPERTYKEY *rgKeys,
-        UINT cKeys,
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv);
+                     IPropertyStoreFactory *This,
+                     const PROPERTYKEY *rgKeys,
+                     UINT cKeys,
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IPropertyStoreFactoryVtbl;
@@ -3652,10 +3652,10 @@ MIDL_INTERFACE("40d4577f-e237-4bdb-bd69-58f089431b6a")
 IDelayedPropertyStoreFactory : public IPropertyStoreFactory
 {
     virtual HRESULT STDMETHODCALLTYPE GetDelayedPropertyStore(
-        GETPROPERTYSTOREFLAGS flags,
-        DWORD dwStoreId,
-        REFIID riid,
-        void **ppv) = 0;
+                     GETPROPERTYSTOREFLAGS flags,
+                     DWORD dwStoreId,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3667,39 +3667,39 @@ typedef struct IDelayedPropertyStoreFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDelayedPropertyStoreFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDelayedPropertyStoreFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDelayedPropertyStoreFactory *This);
+                     IDelayedPropertyStoreFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDelayedPropertyStoreFactory *This);
+                     IDelayedPropertyStoreFactory *This);
 
     /*** IPropertyStoreFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyStore)(
-        IDelayedPropertyStoreFactory *This,
-        GETPROPERTYSTOREFLAGS flags,
-        IUnknown *pUnkFactory,
-        REFIID riid,
-        void **ppv);
+                     IDelayedPropertyStoreFactory *This,
+                     GETPROPERTYSTOREFLAGS flags,
+                     IUnknown *pUnkFactory,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyStoreForKeys)(
-        IDelayedPropertyStoreFactory *This,
-        const PROPERTYKEY *rgKeys,
-        UINT cKeys,
-        GETPROPERTYSTOREFLAGS flags,
-        REFIID riid,
-        void **ppv);
+                     IDelayedPropertyStoreFactory *This,
+                     const PROPERTYKEY *rgKeys,
+                     UINT cKeys,
+                     GETPROPERTYSTOREFLAGS flags,
+                     REFIID riid,
+                     void **ppv);
 
     /*** IDelayedPropertyStoreFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDelayedPropertyStore)(
-        IDelayedPropertyStoreFactory *This,
-        GETPROPERTYSTOREFLAGS flags,
-        DWORD dwStoreId,
-        REFIID riid,
-        void **ppv);
+                     IDelayedPropertyStoreFactory *This,
+                     GETPROPERTYSTOREFLAGS flags,
+                     DWORD dwStoreId,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IDelayedPropertyStoreFactoryVtbl;
@@ -3773,15 +3773,15 @@ MIDL_INTERFACE("e318ad57-0aa0-450f-aca5-6fab7103d917")
 IPersistSerializedPropStorage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        PERSIST_SPROPSTORE_FLAGS flags) = 0;
+                     PERSIST_SPROPSTORE_FLAGS flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPropertyStorage(
-        PCUSERIALIZEDPROPSTORAGE psps,
-        DWORD cb) = 0;
+                     PCUSERIALIZEDPROPSTORAGE psps,
+                     DWORD cb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStorage(
-        SERIALIZEDPROPSTORAGE **ppsps,
-        DWORD *pcb) = 0;
+                     SERIALIZEDPROPSTORAGE **ppsps,
+                     DWORD *pcb) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3793,30 +3793,30 @@ typedef struct IPersistSerializedPropStorageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistSerializedPropStorage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistSerializedPropStorage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistSerializedPropStorage *This);
+                     IPersistSerializedPropStorage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistSerializedPropStorage *This);
+                     IPersistSerializedPropStorage *This);
 
     /*** IPersistSerializedPropStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IPersistSerializedPropStorage *This,
-        PERSIST_SPROPSTORE_FLAGS flags);
+                     IPersistSerializedPropStorage *This,
+                     PERSIST_SPROPSTORE_FLAGS flags);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertyStorage)(
-        IPersistSerializedPropStorage *This,
-        PCUSERIALIZEDPROPSTORAGE psps,
-        DWORD cb);
+                     IPersistSerializedPropStorage *This,
+                     PCUSERIALIZEDPROPSTORAGE psps,
+                     DWORD cb);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyStorage)(
-        IPersistSerializedPropStorage *This,
-        SERIALIZEDPROPSTORAGE **ppsps,
-        DWORD *pcb);
+                     IPersistSerializedPropStorage *This,
+                     SERIALIZEDPROPSTORAGE **ppsps,
+                     DWORD *pcb);
 
     END_INTERFACE
 } IPersistSerializedPropStorageVtbl;
@@ -3877,12 +3877,12 @@ MIDL_INTERFACE("77effa68-4f98-4366-ba72-573b3d880571")
 IPersistSerializedPropStorage2 : public IPersistSerializedPropStorage
 {
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStorageSize(
-        DWORD *pcb) = 0;
+                     DWORD *pcb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyStorageBuffer(
-        SERIALIZEDPROPSTORAGE *psps,
-        DWORD cb,
-        DWORD *pcbWritten) = 0;
+                     SERIALIZEDPROPSTORAGE *psps,
+                     DWORD cb,
+                     DWORD *pcbWritten) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3894,41 +3894,41 @@ typedef struct IPersistSerializedPropStorage2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistSerializedPropStorage2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistSerializedPropStorage2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistSerializedPropStorage2 *This);
+                     IPersistSerializedPropStorage2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistSerializedPropStorage2 *This);
+                     IPersistSerializedPropStorage2 *This);
 
     /*** IPersistSerializedPropStorage methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IPersistSerializedPropStorage2 *This,
-        PERSIST_SPROPSTORE_FLAGS flags);
+                     IPersistSerializedPropStorage2 *This,
+                     PERSIST_SPROPSTORE_FLAGS flags);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertyStorage)(
-        IPersistSerializedPropStorage2 *This,
-        PCUSERIALIZEDPROPSTORAGE psps,
-        DWORD cb);
+                     IPersistSerializedPropStorage2 *This,
+                     PCUSERIALIZEDPROPSTORAGE psps,
+                     DWORD cb);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyStorage)(
-        IPersistSerializedPropStorage2 *This,
-        SERIALIZEDPROPSTORAGE **ppsps,
-        DWORD *pcb);
+                     IPersistSerializedPropStorage2 *This,
+                     SERIALIZEDPROPSTORAGE **ppsps,
+                     DWORD *pcb);
 
     /*** IPersistSerializedPropStorage2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyStorageSize)(
-        IPersistSerializedPropStorage2 *This,
-        DWORD *pcb);
+                     IPersistSerializedPropStorage2 *This,
+                     DWORD *pcb);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyStorageBuffer)(
-        IPersistSerializedPropStorage2 *This,
-        SERIALIZEDPROPSTORAGE *psps,
-        DWORD cb,
-        DWORD *pcbWritten);
+                     IPersistSerializedPropStorage2 *This,
+                     SERIALIZEDPROPSTORAGE *psps,
+                     DWORD cb,
+                     DWORD *pcbWritten);
 
     END_INTERFACE
 } IPersistSerializedPropStorage2Vtbl;
@@ -3999,7 +3999,7 @@ MIDL_INTERFACE("fa955fd9-38be-4879-a6ce-824cf52d609f")
 IPropertySystemChangeNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SchemaRefreshed(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4011,19 +4011,19 @@ typedef struct IPropertySystemChangeNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertySystemChangeNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertySystemChangeNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertySystemChangeNotify *This);
+                     IPropertySystemChangeNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertySystemChangeNotify *This);
+                     IPropertySystemChangeNotify *This);
 
     /*** IPropertySystemChangeNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *SchemaRefreshed)(
-        IPropertySystemChangeNotify *This);
+                     IPropertySystemChangeNotify *This);
 
     END_INTERFACE
 } IPropertySystemChangeNotifyVtbl;
@@ -4076,10 +4076,10 @@ MIDL_INTERFACE("75121952-e0d0-43e5-9380-1d80483acf72")
 ICreateObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateObject(
-        REFCLSID clsid,
-        IUnknown *pUnkOuter,
-        REFIID riid,
-        void **ppv) = 0;
+                     REFCLSID clsid,
+                     IUnknown *pUnkOuter,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4091,23 +4091,23 @@ typedef struct ICreateObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICreateObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICreateObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICreateObject *This);
+                     ICreateObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICreateObject *This);
+                     ICreateObject *This);
 
     /*** ICreateObject methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateObject)(
-        ICreateObject *This,
-        REFCLSID clsid,
-        IUnknown *pUnkOuter,
-        REFIID riid,
-        void **ppv);
+                     ICreateObject *This,
+                     REFCLSID clsid,
+                     IUnknown *pUnkOuter,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } ICreateObjectVtbl;
@@ -4250,14 +4250,14 @@ __CRT_UUID_DECL(PropertySystem, 0xb8967f85, 0x58ae, 0x4f46, 0x9f,0xb2, 0x5d,0x79
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
 
 /* End additional prototypes */
 

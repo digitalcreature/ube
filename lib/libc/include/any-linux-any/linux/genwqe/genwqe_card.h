@@ -374,11 +374,11 @@ struct genwqe_debug_data {
  * translation at the defined offset.
  *
  * 63 LSB
- *         6666.5555.5555.5544.4444.4443.3333.3333 ... 11
- *         3210.9876.5432.1098.7654.3210.9876.5432 ... 1098.7654.3210
+ *                      6666.5555.5555.5544.4444.4443.3333.3333 ... 11
+ *                      3210.9876.5432.1098.7654.3210.9876.5432 ... 1098.7654.3210
  *
  * offset: 0x00 0x08 0x10 0x18 0x20 0x28 0x30 0x38 ... 0x68 0x70 0x78
- *         res  res  res  res  ASIV ...
+ *                      res  res  res  res  ASIV ...
  * The first 4 entries in the ATS word are reserved. The following nibbles
  * each describe at an 8 byte offset the format of the required data.
  */
@@ -453,9 +453,9 @@ struct genwqe_ddcb_cmd {
 
 /**
  * struct genwqe_mem - Memory pinning/unpinning information
- * @addr:          virtual user space address
- * @size:          size of the area pin/dma-map/unmap
- * direction:      0: read/1: read and write
+ * @addr:                       virtual user space address
+ * @size:                       size of the area pin/dma-map/unmap
+ * direction:                   0: read/1: read and write
  *
  * Avoid pinning and unpinning of memory pages dynamically. Instead
  * the idea is to pin the whole buffer space required for DDCB
@@ -476,18 +476,18 @@ struct genwqe_mem {
 	__u64 flags;
 };
 
-#define GENWQE_PIN_MEM	      _IOWR(GENWQE_IOC_CODE, 40, struct genwqe_mem)
-#define GENWQE_UNPIN_MEM      _IOWR(GENWQE_IOC_CODE, 41, struct genwqe_mem)
+#define GENWQE_PIN_MEM	                   _IOWR(GENWQE_IOC_CODE, 40, struct genwqe_mem)
+#define GENWQE_UNPIN_MEM                   _IOWR(GENWQE_IOC_CODE, 41, struct genwqe_mem)
 
 /*
  * Generic synchronous DDCB execution interface.
  * Synchronously execute a DDCB.
  *
  * Return: 0 on success or negative error code.
- *         -EINVAL: Invalid parameters (ASIV_LEN, ASV_LEN, illegal fixups
- *                  no mappings found/could not create mappings
- *         -EFAULT: illegal addresses in fixups, purging failed
- *         -EBADMSG: enqueing failed, retc != DDCB_RETC_COMPLETE
+ *                      -EINVAL: Invalid parameters (ASIV_LEN, ASV_LEN, illegal fixups
+ *                                                         no mappings found/could not create mappings
+ *                      -EFAULT: illegal addresses in fixups, purging failed
+ *                      -EBADMSG: enqueing failed, retc != DDCB_RETC_COMPLETE
  */
 #define GENWQE_EXECUTE_DDCB					\
 	_IOWR(GENWQE_IOC_CODE, 50, struct genwqe_ddcb_cmd)

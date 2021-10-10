@@ -135,7 +135,7 @@ struct dm_ioctl {
 	 * variable with the uevents they issue.
 	 * For output, the ioctls return the event number, not the cookie.
 	 */
-	__u32 event_nr;      	/* in/out */
+	__u32 event_nr;                   	/* in/out */
 	__u32 padding;
 
 	__u64 dev;		/* in/out */
@@ -199,10 +199,10 @@ struct dm_name_list {
  * Used to retrieve the target versions
  */
 struct dm_target_versions {
-        __u32 next;
-        __u32 version[3];
+                     __u32 next;
+                     __u32 version[3];
 
-        char name[0];
+                     char name[0];
 };
 
 /*
@@ -247,7 +247,7 @@ enum {
 
 #define DM_IOCTL 0xfd
 
-#define DM_VERSION       _IOWR(DM_IOCTL, DM_VERSION_CMD, struct dm_ioctl)
+#define DM_VERSION                    _IOWR(DM_IOCTL, DM_VERSION_CMD, struct dm_ioctl)
 #define DM_REMOVE_ALL    _IOWR(DM_IOCTL, DM_REMOVE_ALL_CMD, struct dm_ioctl)
 #define DM_LIST_DEVICES  _IOWR(DM_IOCTL, DM_LIST_DEVICES_CMD, struct dm_ioctl)
 
@@ -256,7 +256,7 @@ enum {
 #define DM_DEV_RENAME    _IOWR(DM_IOCTL, DM_DEV_RENAME_CMD, struct dm_ioctl)
 #define DM_DEV_SUSPEND   _IOWR(DM_IOCTL, DM_DEV_SUSPEND_CMD, struct dm_ioctl)
 #define DM_DEV_STATUS    _IOWR(DM_IOCTL, DM_DEV_STATUS_CMD, struct dm_ioctl)
-#define DM_DEV_WAIT      _IOWR(DM_IOCTL, DM_DEV_WAIT_CMD, struct dm_ioctl)
+#define DM_DEV_WAIT                   _IOWR(DM_IOCTL, DM_DEV_WAIT_CMD, struct dm_ioctl)
 #define DM_DEV_ARM_POLL  _IOWR(DM_IOCTL, DM_DEV_ARM_POLL_CMD, struct dm_ioctl)
 
 #define DM_TABLE_LOAD    _IOWR(DM_IOCTL, DM_TABLE_LOAD_CMD, struct dm_ioctl)

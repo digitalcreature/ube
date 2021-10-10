@@ -11,7 +11,7 @@ pub fn __floatunsitf(a: u64) callconv(.C) f128 {
     @setRuntimeSafety(is_test);
 
     if (a == 0) {
-        return 0;
+                     return 0;
     }
 
     const mantissa_bits = std.math.floatMantissaBits(f128);

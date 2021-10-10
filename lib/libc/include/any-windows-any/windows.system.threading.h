@@ -121,7 +121,7 @@ MIDL_INTERFACE("faaea667-fbeb-49cb-adb2-71184c556e43")
 TimerElapsedHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        IThreadPoolTimer *timer) = 0;
+                     IThreadPoolTimer *timer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -133,20 +133,20 @@ typedef struct TimerElapsedHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        TimerElapsedHandler* This,
-        REFIID riid,
-        void **ppvObject);
+                     TimerElapsedHandler* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        TimerElapsedHandler* This);
+                     TimerElapsedHandler* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        TimerElapsedHandler* This);
+                     TimerElapsedHandler* This);
 
     /*** TimerElapsedHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        TimerElapsedHandler* This,
-        IThreadPoolTimer *timer);
+                     TimerElapsedHandler* This,
+                     IThreadPoolTimer *timer);
 
     END_INTERFACE
 } TimerElapsedHandlerVtbl;
@@ -205,7 +205,7 @@ MIDL_INTERFACE("34ed19fa-8384-4eb9-8209-fb5094eeec35")
 TimerDestroyedHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        IThreadPoolTimer *timer) = 0;
+                     IThreadPoolTimer *timer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -217,20 +217,20 @@ typedef struct TimerDestroyedHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        TimerDestroyedHandler* This,
-        REFIID riid,
-        void **ppvObject);
+                     TimerDestroyedHandler* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        TimerDestroyedHandler* This);
+                     TimerDestroyedHandler* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        TimerDestroyedHandler* This);
+                     TimerDestroyedHandler* This);
 
     /*** TimerDestroyedHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        TimerDestroyedHandler* This,
-        IThreadPoolTimer *timer);
+                     TimerDestroyedHandler* This,
+                     IThreadPoolTimer *timer);
 
     END_INTERFACE
 } TimerDestroyedHandlerVtbl;
@@ -289,7 +289,7 @@ MIDL_INTERFACE("1d1a8b8b-fa66-414f-9cbd-b65fc99d17fa")
 WorkItemHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        IAsyncAction *operation) = 0;
+                     IAsyncAction *operation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -301,20 +301,20 @@ typedef struct WorkItemHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        WorkItemHandler* This,
-        REFIID riid,
-        void **ppvObject);
+                     WorkItemHandler* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        WorkItemHandler* This);
+                     WorkItemHandler* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        WorkItemHandler* This);
+                     WorkItemHandler* This);
 
     /*** WorkItemHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        WorkItemHandler* This,
-        IAsyncAction *operation);
+                     WorkItemHandler* This,
+                     IAsyncAction *operation);
 
     END_INTERFACE
 } WorkItemHandlerVtbl;
@@ -373,19 +373,19 @@ MIDL_INTERFACE("b6bf67dd-84bd-44f8-ac1c-93ebcb9dba91")
 IThreadPoolStatics : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE RunAsync(
-        WorkItemHandler *handler,
-        IAsyncAction **operation) = 0;
+                     WorkItemHandler *handler,
+                     IAsyncAction **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAsync(
-        WorkItemHandler *handler,
-        WorkItemPriority priority,
-        IAsyncAction **operation) = 0;
+                     WorkItemHandler *handler,
+                     WorkItemPriority priority,
+                     IAsyncAction **operation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RunWithPriorityAndOptionsAsync(
-        WorkItemHandler *handler,
-        WorkItemPriority priority,
-        WorkItemOptions options,
-        IAsyncAction **operation) = 0;
+                     WorkItemHandler *handler,
+                     WorkItemPriority priority,
+                     WorkItemOptions options,
+                     IAsyncAction **operation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -397,48 +397,48 @@ typedef struct IThreadPoolStaticsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThreadPoolStatics* This,
-        REFIID riid,
-        void **ppvObject);
+                     IThreadPoolStatics* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThreadPoolStatics* This);
+                     IThreadPoolStatics* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThreadPoolStatics* This);
+                     IThreadPoolStatics* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IThreadPoolStatics* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IThreadPoolStatics* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IThreadPoolStatics* This,
-        HSTRING *className);
+                     IThreadPoolStatics* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IThreadPoolStatics* This,
-        TrustLevel *trustLevel);
+                     IThreadPoolStatics* This,
+                     TrustLevel *trustLevel);
 
     /*** IThreadPoolStatics methods ***/
     HRESULT (STDMETHODCALLTYPE *RunAsync)(
-        IThreadPoolStatics* This,
-        WorkItemHandler *handler,
-        IAsyncAction **operation);
+                     IThreadPoolStatics* This,
+                     WorkItemHandler *handler,
+                     IAsyncAction **operation);
 
     HRESULT (STDMETHODCALLTYPE *RunWithPriorityAsync)(
-        IThreadPoolStatics* This,
-        WorkItemHandler *handler,
-        WorkItemPriority priority,
-        IAsyncAction **operation);
+                     IThreadPoolStatics* This,
+                     WorkItemHandler *handler,
+                     WorkItemPriority priority,
+                     IAsyncAction **operation);
 
     HRESULT (STDMETHODCALLTYPE *RunWithPriorityAndOptionsAsync)(
-        IThreadPoolStatics* This,
-        WorkItemHandler *handler,
-        WorkItemPriority priority,
-        WorkItemOptions options,
-        IAsyncAction **operation);
+                     IThreadPoolStatics* This,
+                     WorkItemHandler *handler,
+                     WorkItemPriority priority,
+                     WorkItemOptions options,
+                     IAsyncAction **operation);
 
     END_INTERFACE
 } IThreadPoolStaticsVtbl;
@@ -541,13 +541,13 @@ MIDL_INTERFACE("594ebe78-55ea-4a88-a50d-3402ae1f9cf2")
 IThreadPoolTimer : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_Period(
-        TimeSpan *value) = 0;
+                     TimeSpan *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Delay(
-        TimeSpan *value) = 0;
+                     TimeSpan *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -559,41 +559,41 @@ typedef struct IThreadPoolTimerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThreadPoolTimer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IThreadPoolTimer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThreadPoolTimer* This);
+                     IThreadPoolTimer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThreadPoolTimer* This);
+                     IThreadPoolTimer* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IThreadPoolTimer* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IThreadPoolTimer* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IThreadPoolTimer* This,
-        HSTRING *className);
+                     IThreadPoolTimer* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IThreadPoolTimer* This,
-        TrustLevel *trustLevel);
+                     IThreadPoolTimer* This,
+                     TrustLevel *trustLevel);
 
     /*** IThreadPoolTimer methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Period)(
-        IThreadPoolTimer* This,
-        TimeSpan *value);
+                     IThreadPoolTimer* This,
+                     TimeSpan *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Delay)(
-        IThreadPoolTimer* This,
-        TimeSpan *value);
+                     IThreadPoolTimer* This,
+                     TimeSpan *value);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IThreadPoolTimer* This);
+                     IThreadPoolTimer* This);
 
     END_INTERFACE
 } IThreadPoolTimerVtbl;
@@ -689,26 +689,26 @@ MIDL_INTERFACE("1a8a9d02-e482-461b-b8c7-8efad1cce590")
 IThreadPoolTimerStatics : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimer(
-        TimerElapsedHandler *handler,
-        TimeSpan period,
-        IThreadPoolTimer **timer) = 0;
+                     TimerElapsedHandler *handler,
+                     TimeSpan period,
+                     IThreadPoolTimer **timer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTimer(
-        TimerElapsedHandler *handler,
-        TimeSpan delay,
-        IThreadPoolTimer **timer) = 0;
+                     TimerElapsedHandler *handler,
+                     TimeSpan delay,
+                     IThreadPoolTimer **timer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePeriodicTimerWithCompletion(
-        TimerElapsedHandler *handler,
-        TimeSpan period,
-        TimerDestroyedHandler *destroyed,
-        IThreadPoolTimer **timer) = 0;
+                     TimerElapsedHandler *handler,
+                     TimeSpan period,
+                     TimerDestroyedHandler *destroyed,
+                     IThreadPoolTimer **timer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTimerWithCompletion(
-        TimerElapsedHandler *handler,
-        TimeSpan delay,
-        TimerDestroyedHandler *destroyed,
-        IThreadPoolTimer **timer) = 0;
+                     TimerElapsedHandler *handler,
+                     TimeSpan delay,
+                     TimerDestroyedHandler *destroyed,
+                     IThreadPoolTimer **timer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -720,56 +720,56 @@ typedef struct IThreadPoolTimerStaticsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThreadPoolTimerStatics* This,
-        REFIID riid,
-        void **ppvObject);
+                     IThreadPoolTimerStatics* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThreadPoolTimerStatics* This);
+                     IThreadPoolTimerStatics* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThreadPoolTimerStatics* This);
+                     IThreadPoolTimerStatics* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IThreadPoolTimerStatics* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IThreadPoolTimerStatics* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IThreadPoolTimerStatics* This,
-        HSTRING *className);
+                     IThreadPoolTimerStatics* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IThreadPoolTimerStatics* This,
-        TrustLevel *trustLevel);
+                     IThreadPoolTimerStatics* This,
+                     TrustLevel *trustLevel);
 
     /*** IThreadPoolTimerStatics methods ***/
     HRESULT (STDMETHODCALLTYPE *CreatePeriodicTimer)(
-        IThreadPoolTimerStatics* This,
-        TimerElapsedHandler *handler,
-        TimeSpan period,
-        IThreadPoolTimer **timer);
+                     IThreadPoolTimerStatics* This,
+                     TimerElapsedHandler *handler,
+                     TimeSpan period,
+                     IThreadPoolTimer **timer);
 
     HRESULT (STDMETHODCALLTYPE *CreateTimer)(
-        IThreadPoolTimerStatics* This,
-        TimerElapsedHandler *handler,
-        TimeSpan delay,
-        IThreadPoolTimer **timer);
+                     IThreadPoolTimerStatics* This,
+                     TimerElapsedHandler *handler,
+                     TimeSpan delay,
+                     IThreadPoolTimer **timer);
 
     HRESULT (STDMETHODCALLTYPE *CreatePeriodicTimerWithCompletion)(
-        IThreadPoolTimerStatics* This,
-        TimerElapsedHandler *handler,
-        TimeSpan period,
-        TimerDestroyedHandler *destroyed,
-        IThreadPoolTimer **timer);
+                     IThreadPoolTimerStatics* This,
+                     TimerElapsedHandler *handler,
+                     TimeSpan period,
+                     TimerDestroyedHandler *destroyed,
+                     IThreadPoolTimer **timer);
 
     HRESULT (STDMETHODCALLTYPE *CreateTimerWithCompletion)(
-        IThreadPoolTimerStatics* This,
-        TimerElapsedHandler *handler,
-        TimeSpan delay,
-        TimerDestroyedHandler *destroyed,
-        IThreadPoolTimer **timer);
+                     IThreadPoolTimerStatics* This,
+                     TimerElapsedHandler *handler,
+                     TimeSpan delay,
+                     TimerDestroyedHandler *destroyed,
+                     IThreadPoolTimer **timer);
 
     END_INTERFACE
 } IThreadPoolTimerStaticsVtbl;

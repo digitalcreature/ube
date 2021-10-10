@@ -23,10 +23,10 @@ const expect = std.testing.expect;
 pub fn ceil(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => ceil32(x),
-        f64 => ceil64(x),
-        f128 => ceil128(x),
-        else => @compileError("ceil not implemented for " ++ @typeName(T)),
+                     f32 => ceil32(x),
+                     f64 => ceil64(x),
+                     f128 => ceil128(x),
+                     else => @compileError("ceil not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -37,29 +37,29 @@ fn ceil32(x: f32) f32 {
 
     // TODO: Shouldn't need this explicit check.
     if (x == 0.0) {
-        return x;
+                     return x;
     }
 
     if (e >= 23) {
-        return x;
+                     return x;
     } else if (e >= 0) {
-        m = @as(u32, 0x007FFFFF) >> @intCast(u5, e);
-        if (u & m == 0) {
-            return x;
-        }
-        math.doNotOptimizeAway(x + 0x1.0p120);
-        if (u >> 31 == 0) {
-            u += m;
-        }
-        u &= ~m;
-        return @bitCast(f32, u);
+                     m = @as(u32, 0x007FFFFF) >> @intCast(u5, e);
+                     if (u & m == 0) {
+                                      return x;
+                     }
+                     math.doNotOptimizeAway(x + 0x1.0p120);
+                     if (u >> 31 == 0) {
+                                      u += m;
+                     }
+                     u &= ~m;
+                     return @bitCast(f32, u);
     } else {
-        math.doNotOptimizeAway(x + 0x1.0p120);
-        if (u >> 31 != 0) {
-            return -0.0;
-        } else {
-            return 1.0;
-        }
+                     math.doNotOptimizeAway(x + 0x1.0p120);
+                     if (u >> 31 != 0) {
+                                      return -0.0;
+                     } else {
+                                      return 1.0;
+                     }
     }
 }
 
@@ -69,26 +69,26 @@ fn ceil64(x: f64) f64 {
     var y: f64 = undefined;
 
     if (e >= 0x3FF + 52 or x == 0) {
-        return x;
+                     return x;
     }
 
     if (u >> 63 != 0) {
-        y = x - math.f64_toint + math.f64_toint - x;
+                     y = x - math.f64_toint + math.f64_toint - x;
     } else {
-        y = x + math.f64_toint - math.f64_toint - x;
+                     y = x + math.f64_toint - math.f64_toint - x;
     }
 
     if (e <= 0x3FF - 1) {
-        math.doNotOptimizeAway(y);
-        if (u >> 63 != 0) {
-            return -0.0;
-        } else {
-            return 1.0;
-        }
+                     math.doNotOptimizeAway(y);
+                     if (u >> 63 != 0) {
+                                      return -0.0;
+                     } else {
+                                      return 1.0;
+                     }
     } else if (y < 0) {
-        return x + y + 1;
+                     return x + y + 1;
     } else {
-        return x + y;
+                     return x + y;
     }
 }
 
@@ -100,22 +100,22 @@ fn ceil128(x: f128) f128 {
     if (e >= 0x3FFF + 112 or x == 0) return x;
 
     if (u >> 127 != 0) {
-        y = x - math.f128_toint + math.f128_toint - x;
+                     y = x - math.f128_toint + math.f128_toint - x;
     } else {
-        y = x + math.f128_toint - math.f128_toint - x;
+                     y = x + math.f128_toint - math.f128_toint - x;
     }
 
     if (e <= 0x3FFF - 1) {
-        math.doNotOptimizeAway(y);
-        if (u >> 127 != 0) {
-            return -0.0;
-        } else {
-            return 1.0;
-        }
+                     math.doNotOptimizeAway(y);
+                     if (u >> 127 != 0) {
+                                      return -0.0;
+                     } else {
+                                      return 1.0;
+                     }
     } else if (y < 0) {
-        return x + y + 1;
+                     return x + y + 1;
     } else {
-        return x + y;
+                     return x + y;
     }
 }
 

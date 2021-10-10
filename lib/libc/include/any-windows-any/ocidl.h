@@ -783,18 +783,18 @@ MIDL_INTERFACE("b196b287-bab4-101a-b69c-00aa00341d07")
 IEnumConnections : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cConnections,
-        LPCONNECTDATA rgcd,
-        ULONG *pcFetched) = 0;
+                     ULONG cConnections,
+                     LPCONNECTDATA rgcd,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cConnections) = 0;
+                     ULONG cConnections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumConnections **ppEnum) = 0;
+                     IEnumConnections **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -806,33 +806,33 @@ typedef struct IEnumConnectionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumConnections *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumConnections *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumConnections *This);
+                     IEnumConnections *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumConnections *This);
+                     IEnumConnections *This);
 
     /*** IEnumConnections methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumConnections *This,
-        ULONG cConnections,
-        LPCONNECTDATA rgcd,
-        ULONG *pcFetched);
+                     IEnumConnections *This,
+                     ULONG cConnections,
+                     LPCONNECTDATA rgcd,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumConnections *This,
-        ULONG cConnections);
+                     IEnumConnections *This,
+                     ULONG cConnections);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumConnections *This);
+                     IEnumConnections *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumConnections *This,
-        IEnumConnections **ppEnum);
+                     IEnumConnections *This,
+                     IEnumConnections **ppEnum);
 
     END_INTERFACE
 } IEnumConnectionsVtbl;
@@ -920,20 +920,20 @@ MIDL_INTERFACE("b196b286-bab4-101a-b69c-00aa00341d07")
 IConnectionPoint : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetConnectionInterface(
-        IID *pIID) = 0;
+                     IID *pIID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectionPointContainer(
-        IConnectionPointContainer **ppCPC) = 0;
+                     IConnectionPointContainer **ppCPC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IUnknown *pUnkSink,
-        DWORD *pdwCookie) = 0;
+                     IUnknown *pUnkSink,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumConnections(
-        IEnumConnections **ppEnum) = 0;
+                     IEnumConnections **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -945,37 +945,37 @@ typedef struct IConnectionPointVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IConnectionPoint *This,
-        REFIID riid,
-        void **ppvObject);
+                     IConnectionPoint *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IConnectionPoint *This);
+                     IConnectionPoint *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IConnectionPoint *This);
+                     IConnectionPoint *This);
 
     /*** IConnectionPoint methods ***/
     HRESULT (STDMETHODCALLTYPE *GetConnectionInterface)(
-        IConnectionPoint *This,
-        IID *pIID);
+                     IConnectionPoint *This,
+                     IID *pIID);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectionPointContainer)(
-        IConnectionPoint *This,
-        IConnectionPointContainer **ppCPC);
+                     IConnectionPoint *This,
+                     IConnectionPointContainer **ppCPC);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IConnectionPoint *This,
-        IUnknown *pUnkSink,
-        DWORD *pdwCookie);
+                     IConnectionPoint *This,
+                     IUnknown *pUnkSink,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IConnectionPoint *This,
-        DWORD dwCookie);
+                     IConnectionPoint *This,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *EnumConnections)(
-        IConnectionPoint *This,
-        IEnumConnections **ppEnum);
+                     IConnectionPoint *This,
+                     IEnumConnections **ppEnum);
 
     END_INTERFACE
 } IConnectionPointVtbl;
@@ -1047,18 +1047,18 @@ MIDL_INTERFACE("b196b285-bab4-101a-b69c-00aa00341d07")
 IEnumConnectionPoints : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cConnections,
-        LPCONNECTIONPOINT *ppCP,
-        ULONG *pcFetched) = 0;
+                     ULONG cConnections,
+                     LPCONNECTIONPOINT *ppCP,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cConnections) = 0;
+                     ULONG cConnections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumConnectionPoints **ppEnum) = 0;
+                     IEnumConnectionPoints **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1070,33 +1070,33 @@ typedef struct IEnumConnectionPointsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumConnectionPoints *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumConnectionPoints *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumConnectionPoints *This);
+                     IEnumConnectionPoints *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumConnectionPoints *This);
+                     IEnumConnectionPoints *This);
 
     /*** IEnumConnectionPoints methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumConnectionPoints *This,
-        ULONG cConnections,
-        LPCONNECTIONPOINT *ppCP,
-        ULONG *pcFetched);
+                     IEnumConnectionPoints *This,
+                     ULONG cConnections,
+                     LPCONNECTIONPOINT *ppCP,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumConnectionPoints *This,
-        ULONG cConnections);
+                     IEnumConnectionPoints *This,
+                     ULONG cConnections);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumConnectionPoints *This);
+                     IEnumConnectionPoints *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumConnectionPoints *This,
-        IEnumConnectionPoints **ppEnum);
+                     IEnumConnectionPoints *This,
+                     IEnumConnectionPoints **ppEnum);
 
     END_INTERFACE
 } IEnumConnectionPointsVtbl;
@@ -1184,11 +1184,11 @@ MIDL_INTERFACE("b196b284-bab4-101a-b69c-00aa00341d07")
 IConnectionPointContainer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnumConnectionPoints(
-        IEnumConnectionPoints **ppEnum) = 0;
+                     IEnumConnectionPoints **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindConnectionPoint(
-        REFIID riid,
-        IConnectionPoint **ppCP) = 0;
+                     REFIID riid,
+                     IConnectionPoint **ppCP) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1200,25 +1200,25 @@ typedef struct IConnectionPointContainerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IConnectionPointContainer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IConnectionPointContainer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IConnectionPointContainer *This);
+                     IConnectionPointContainer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IConnectionPointContainer *This);
+                     IConnectionPointContainer *This);
 
     /*** IConnectionPointContainer methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumConnectionPoints)(
-        IConnectionPointContainer *This,
-        IEnumConnectionPoints **ppEnum);
+                     IConnectionPointContainer *This,
+                     IEnumConnectionPoints **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *FindConnectionPoint)(
-        IConnectionPointContainer *This,
-        REFIID riid,
-        IConnectionPoint **ppCP);
+                     IConnectionPointContainer *This,
+                     REFIID riid,
+                     IConnectionPoint **ppCP);
 
     END_INTERFACE
 } IConnectionPointContainerVtbl;
@@ -1287,18 +1287,18 @@ MIDL_INTERFACE("b196b28f-bab4-101a-b69c-00aa00341d07")
 IClassFactory2 : public IClassFactory
 {
     virtual HRESULT STDMETHODCALLTYPE GetLicInfo(
-        LICINFO *pLicInfo) = 0;
+                     LICINFO *pLicInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestLicKey(
-        DWORD dwReserved,
-        BSTR *pBstrKey) = 0;
+                     DWORD dwReserved,
+                     BSTR *pBstrKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInstanceLic(
-        IUnknown *pUnkOuter,
-        IUnknown *pUnkReserved,
-        REFIID riid,
-        BSTR bstrKey,
-        PVOID *ppvObj) = 0;
+                     IUnknown *pUnkOuter,
+                     IUnknown *pUnkReserved,
+                     REFIID riid,
+                     BSTR bstrKey,
+                     PVOID *ppvObj) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1310,44 +1310,44 @@ typedef struct IClassFactory2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IClassFactory2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IClassFactory2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IClassFactory2 *This);
+                     IClassFactory2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IClassFactory2 *This);
+                     IClassFactory2 *This);
 
     /*** IClassFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        IClassFactory2 *This,
-        IUnknown *pUnkOuter,
-        REFIID riid,
-        void **ppvObject);
+                     IClassFactory2 *This,
+                     IUnknown *pUnkOuter,
+                     REFIID riid,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *LockServer)(
-        IClassFactory2 *This,
-        WINBOOL fLock);
+                     IClassFactory2 *This,
+                     WINBOOL fLock);
 
     /*** IClassFactory2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLicInfo)(
-        IClassFactory2 *This,
-        LICINFO *pLicInfo);
+                     IClassFactory2 *This,
+                     LICINFO *pLicInfo);
 
     HRESULT (STDMETHODCALLTYPE *RequestLicKey)(
-        IClassFactory2 *This,
-        DWORD dwReserved,
-        BSTR *pBstrKey);
+                     IClassFactory2 *This,
+                     DWORD dwReserved,
+                     BSTR *pBstrKey);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstanceLic)(
-        IClassFactory2 *This,
-        IUnknown *pUnkOuter,
-        IUnknown *pUnkReserved,
-        REFIID riid,
-        BSTR bstrKey,
-        PVOID *ppvObj);
+                     IClassFactory2 *This,
+                     IUnknown *pUnkOuter,
+                     IUnknown *pUnkReserved,
+                     REFIID riid,
+                     BSTR bstrKey,
+                     PVOID *ppvObj);
 
     END_INTERFACE
 } IClassFactory2Vtbl;
@@ -1442,7 +1442,7 @@ MIDL_INTERFACE("b196b283-bab4-101a-b69c-00aa00341d07")
 IProvideClassInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClassInfo(
-        ITypeInfo **ppTI) = 0;
+                     ITypeInfo **ppTI) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1454,20 +1454,20 @@ typedef struct IProvideClassInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProvideClassInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IProvideClassInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProvideClassInfo *This);
+                     IProvideClassInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProvideClassInfo *This);
+                     IProvideClassInfo *This);
 
     /*** IProvideClassInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassInfo)(
-        IProvideClassInfo *This,
-        ITypeInfo **ppTI);
+                     IProvideClassInfo *This,
+                     ITypeInfo **ppTI);
 
     END_INTERFACE
 } IProvideClassInfoVtbl;
@@ -1526,8 +1526,8 @@ MIDL_INTERFACE("a6bc3ac0-dbaa-11ce-9de3-00aa004bb851")
 IProvideClassInfo2 : public IProvideClassInfo
 {
     virtual HRESULT STDMETHODCALLTYPE GetGUID(
-        DWORD dwGuidKind,
-        GUID *pGUID) = 0;
+                     DWORD dwGuidKind,
+                     GUID *pGUID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1539,26 +1539,26 @@ typedef struct IProvideClassInfo2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProvideClassInfo2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IProvideClassInfo2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProvideClassInfo2 *This);
+                     IProvideClassInfo2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProvideClassInfo2 *This);
+                     IProvideClassInfo2 *This);
 
     /*** IProvideClassInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassInfo)(
-        IProvideClassInfo2 *This,
-        ITypeInfo **ppTI);
+                     IProvideClassInfo2 *This,
+                     ITypeInfo **ppTI);
 
     /*** IProvideClassInfo2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        IProvideClassInfo2 *This,
-        DWORD dwGuidKind,
-        GUID *pGUID);
+                     IProvideClassInfo2 *This,
+                     DWORD dwGuidKind,
+                     GUID *pGUID);
 
     END_INTERFACE
 } IProvideClassInfo2Vtbl;
@@ -1626,16 +1626,16 @@ MIDL_INTERFACE("a7aba9c1-8983-11cf-8f20-00805f2cd064")
 IProvideMultipleClassInfo : public IProvideClassInfo2
 {
     virtual HRESULT STDMETHODCALLTYPE GetMultiTypeInfoCount(
-        ULONG *pcti) = 0;
+                     ULONG *pcti) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInfoOfIndex(
-        ULONG iti,
-        DWORD dwFlags,
-        ITypeInfo **pptiCoClass,
-        DWORD *pdwTIFlags,
-        ULONG *pcdispidReserved,
-        IID *piidPrimary,
-        IID *piidSource) = 0;
+                     ULONG iti,
+                     DWORD dwFlags,
+                     ITypeInfo **pptiCoClass,
+                     DWORD *pdwTIFlags,
+                     ULONG *pcdispidReserved,
+                     IID *piidPrimary,
+                     IID *piidSource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1647,41 +1647,41 @@ typedef struct IProvideMultipleClassInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProvideMultipleClassInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IProvideMultipleClassInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProvideMultipleClassInfo *This);
+                     IProvideMultipleClassInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProvideMultipleClassInfo *This);
+                     IProvideMultipleClassInfo *This);
 
     /*** IProvideClassInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassInfo)(
-        IProvideMultipleClassInfo *This,
-        ITypeInfo **ppTI);
+                     IProvideMultipleClassInfo *This,
+                     ITypeInfo **ppTI);
 
     /*** IProvideClassInfo2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        IProvideMultipleClassInfo *This,
-        DWORD dwGuidKind,
-        GUID *pGUID);
+                     IProvideMultipleClassInfo *This,
+                     DWORD dwGuidKind,
+                     GUID *pGUID);
 
     /*** IProvideMultipleClassInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMultiTypeInfoCount)(
-        IProvideMultipleClassInfo *This,
-        ULONG *pcti);
+                     IProvideMultipleClassInfo *This,
+                     ULONG *pcti);
 
     HRESULT (STDMETHODCALLTYPE *GetInfoOfIndex)(
-        IProvideMultipleClassInfo *This,
-        ULONG iti,
-        DWORD dwFlags,
-        ITypeInfo **pptiCoClass,
-        DWORD *pdwTIFlags,
-        ULONG *pcdispidReserved,
-        IID *piidPrimary,
-        IID *piidSource);
+                     IProvideMultipleClassInfo *This,
+                     ULONG iti,
+                     DWORD dwFlags,
+                     ITypeInfo **pptiCoClass,
+                     DWORD *pdwTIFlags,
+                     ULONG *pcdispidReserved,
+                     IID *piidPrimary,
+                     IID *piidSource);
 
     END_INTERFACE
 } IProvideMultipleClassInfoVtbl;
@@ -1766,16 +1766,16 @@ MIDL_INTERFACE("b196b288-bab4-101a-b69c-00aa00341d07")
 IOleControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetControlInfo(
-        CONTROLINFO *pCI) = 0;
+                     CONTROLINFO *pCI) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnMnemonic(
-        MSG *pMsg) = 0;
+                     MSG *pMsg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnAmbientPropertyChange(
-        DISPID dispID) = 0;
+                     DISPID dispID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FreezeEvents(
-        WINBOOL bFreeze) = 0;
+                     WINBOOL bFreeze) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1787,32 +1787,32 @@ typedef struct IOleControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleControl *This);
+                     IOleControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleControl *This);
+                     IOleControl *This);
 
     /*** IOleControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetControlInfo)(
-        IOleControl *This,
-        CONTROLINFO *pCI);
+                     IOleControl *This,
+                     CONTROLINFO *pCI);
 
     HRESULT (STDMETHODCALLTYPE *OnMnemonic)(
-        IOleControl *This,
-        MSG *pMsg);
+                     IOleControl *This,
+                     MSG *pMsg);
 
     HRESULT (STDMETHODCALLTYPE *OnAmbientPropertyChange)(
-        IOleControl *This,
-        DISPID dispID);
+                     IOleControl *This,
+                     DISPID dispID);
 
     HRESULT (STDMETHODCALLTYPE *FreezeEvents)(
-        IOleControl *This,
-        WINBOOL bFreeze);
+                     IOleControl *This,
+                     WINBOOL bFreeze);
 
     END_INTERFACE
 } IOleControlVtbl;
@@ -1894,28 +1894,28 @@ MIDL_INTERFACE("b196b289-bab4-101a-b69c-00aa00341d07")
 IOleControlSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnControlInfoChanged(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockInPlaceActive(
-        WINBOOL fLock) = 0;
+                     WINBOOL fLock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExtendedControl(
-        IDispatch **ppDisp) = 0;
+                     IDispatch **ppDisp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TransformCoords(
-        POINTL *pPtlHimetric,
-        POINTF *pPtfContainer,
-        DWORD dwFlags) = 0;
+                     POINTL *pPtlHimetric,
+                     POINTF *pPtfContainer,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        MSG *pMsg,
-        DWORD grfModifiers) = 0;
+                     MSG *pMsg,
+                     DWORD grfModifiers) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFocus(
-        WINBOOL fGotFocus) = 0;
+                     WINBOOL fGotFocus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowPropertyFrame(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1927,45 +1927,45 @@ typedef struct IOleControlSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleControlSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleControlSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleControlSite *This);
+                     IOleControlSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleControlSite *This);
+                     IOleControlSite *This);
 
     /*** IOleControlSite methods ***/
     HRESULT (STDMETHODCALLTYPE *OnControlInfoChanged)(
-        IOleControlSite *This);
+                     IOleControlSite *This);
 
     HRESULT (STDMETHODCALLTYPE *LockInPlaceActive)(
-        IOleControlSite *This,
-        WINBOOL fLock);
+                     IOleControlSite *This,
+                     WINBOOL fLock);
 
     HRESULT (STDMETHODCALLTYPE *GetExtendedControl)(
-        IOleControlSite *This,
-        IDispatch **ppDisp);
+                     IOleControlSite *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *TransformCoords)(
-        IOleControlSite *This,
-        POINTL *pPtlHimetric,
-        POINTF *pPtfContainer,
-        DWORD dwFlags);
+                     IOleControlSite *This,
+                     POINTL *pPtlHimetric,
+                     POINTF *pPtfContainer,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IOleControlSite *This,
-        MSG *pMsg,
-        DWORD grfModifiers);
+                     IOleControlSite *This,
+                     MSG *pMsg,
+                     DWORD grfModifiers);
 
     HRESULT (STDMETHODCALLTYPE *OnFocus)(
-        IOleControlSite *This,
-        WINBOOL fGotFocus);
+                     IOleControlSite *This,
+                     WINBOOL fGotFocus);
 
     HRESULT (STDMETHODCALLTYPE *ShowPropertyFrame)(
-        IOleControlSite *This);
+                     IOleControlSite *This);
 
     END_INTERFACE
 } IOleControlSiteVtbl;
@@ -2055,40 +2055,40 @@ MIDL_INTERFACE("b196b28d-bab4-101a-b69c-00aa00341d07")
 IPropertyPage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetPageSite(
-        IPropertyPageSite *pPageSite) = 0;
+                     IPropertyPageSite *pPageSite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Activate(
-        HWND hWndParent,
-        LPCRECT pRect,
-        WINBOOL bModal) = 0;
+                     HWND hWndParent,
+                     LPCRECT pRect,
+                     WINBOOL bModal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Deactivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPageInfo(
-        PROPPAGEINFO *pPageInfo) = 0;
+                     PROPPAGEINFO *pPageInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetObjects(
-        ULONG cObjects,
-        IUnknown **ppUnk) = 0;
+                     ULONG cObjects,
+                     IUnknown **ppUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Show(
-        UINT nCmdShow) = 0;
+                     UINT nCmdShow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Move(
-        LPCRECT pRect) = 0;
+                     LPCRECT pRect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPageDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Apply(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Help(
-        LPCOLESTR pszHelpDir) = 0;
+                     LPCOLESTR pszHelpDir) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        MSG *pMsg) = 0;
+                     MSG *pMsg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2100,60 +2100,60 @@ typedef struct IPropertyPageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyPage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyPage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyPage *This);
+                     IPropertyPage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyPage *This);
+                     IPropertyPage *This);
 
     /*** IPropertyPage methods ***/
     HRESULT (STDMETHODCALLTYPE *SetPageSite)(
-        IPropertyPage *This,
-        IPropertyPageSite *pPageSite);
+                     IPropertyPage *This,
+                     IPropertyPageSite *pPageSite);
 
     HRESULT (STDMETHODCALLTYPE *Activate)(
-        IPropertyPage *This,
-        HWND hWndParent,
-        LPCRECT pRect,
-        WINBOOL bModal);
+                     IPropertyPage *This,
+                     HWND hWndParent,
+                     LPCRECT pRect,
+                     WINBOOL bModal);
 
     HRESULT (STDMETHODCALLTYPE *Deactivate)(
-        IPropertyPage *This);
+                     IPropertyPage *This);
 
     HRESULT (STDMETHODCALLTYPE *GetPageInfo)(
-        IPropertyPage *This,
-        PROPPAGEINFO *pPageInfo);
+                     IPropertyPage *This,
+                     PROPPAGEINFO *pPageInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetObjects)(
-        IPropertyPage *This,
-        ULONG cObjects,
-        IUnknown **ppUnk);
+                     IPropertyPage *This,
+                     ULONG cObjects,
+                     IUnknown **ppUnk);
 
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IPropertyPage *This,
-        UINT nCmdShow);
+                     IPropertyPage *This,
+                     UINT nCmdShow);
 
     HRESULT (STDMETHODCALLTYPE *Move)(
-        IPropertyPage *This,
-        LPCRECT pRect);
+                     IPropertyPage *This,
+                     LPCRECT pRect);
 
     HRESULT (STDMETHODCALLTYPE *IsPageDirty)(
-        IPropertyPage *This);
+                     IPropertyPage *This);
 
     HRESULT (STDMETHODCALLTYPE *Apply)(
-        IPropertyPage *This);
+                     IPropertyPage *This);
 
     HRESULT (STDMETHODCALLTYPE *Help)(
-        IPropertyPage *This,
-        LPCOLESTR pszHelpDir);
+                     IPropertyPage *This,
+                     LPCOLESTR pszHelpDir);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IPropertyPage *This,
-        MSG *pMsg);
+                     IPropertyPage *This,
+                     MSG *pMsg);
 
     END_INTERFACE
 } IPropertyPageVtbl;
@@ -2248,7 +2248,7 @@ MIDL_INTERFACE("01e44665-24ac-101b-84ed-08002b2ec713")
 IPropertyPage2 : public IPropertyPage
 {
     virtual HRESULT STDMETHODCALLTYPE EditProperty(
-        DISPID dispID) = 0;
+                     DISPID dispID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2260,65 +2260,65 @@ typedef struct IPropertyPage2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyPage2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyPage2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyPage2 *This);
+                     IPropertyPage2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyPage2 *This);
+                     IPropertyPage2 *This);
 
     /*** IPropertyPage methods ***/
     HRESULT (STDMETHODCALLTYPE *SetPageSite)(
-        IPropertyPage2 *This,
-        IPropertyPageSite *pPageSite);
+                     IPropertyPage2 *This,
+                     IPropertyPageSite *pPageSite);
 
     HRESULT (STDMETHODCALLTYPE *Activate)(
-        IPropertyPage2 *This,
-        HWND hWndParent,
-        LPCRECT pRect,
-        WINBOOL bModal);
+                     IPropertyPage2 *This,
+                     HWND hWndParent,
+                     LPCRECT pRect,
+                     WINBOOL bModal);
 
     HRESULT (STDMETHODCALLTYPE *Deactivate)(
-        IPropertyPage2 *This);
+                     IPropertyPage2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetPageInfo)(
-        IPropertyPage2 *This,
-        PROPPAGEINFO *pPageInfo);
+                     IPropertyPage2 *This,
+                     PROPPAGEINFO *pPageInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetObjects)(
-        IPropertyPage2 *This,
-        ULONG cObjects,
-        IUnknown **ppUnk);
+                     IPropertyPage2 *This,
+                     ULONG cObjects,
+                     IUnknown **ppUnk);
 
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IPropertyPage2 *This,
-        UINT nCmdShow);
+                     IPropertyPage2 *This,
+                     UINT nCmdShow);
 
     HRESULT (STDMETHODCALLTYPE *Move)(
-        IPropertyPage2 *This,
-        LPCRECT pRect);
+                     IPropertyPage2 *This,
+                     LPCRECT pRect);
 
     HRESULT (STDMETHODCALLTYPE *IsPageDirty)(
-        IPropertyPage2 *This);
+                     IPropertyPage2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Apply)(
-        IPropertyPage2 *This);
+                     IPropertyPage2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Help)(
-        IPropertyPage2 *This,
-        LPCOLESTR pszHelpDir);
+                     IPropertyPage2 *This,
+                     LPCOLESTR pszHelpDir);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IPropertyPage2 *This,
-        MSG *pMsg);
+                     IPropertyPage2 *This,
+                     MSG *pMsg);
 
     /*** IPropertyPage2 methods ***/
     HRESULT (STDMETHODCALLTYPE *EditProperty)(
-        IPropertyPage2 *This,
-        DISPID dispID);
+                     IPropertyPage2 *This,
+                     DISPID dispID);
 
     END_INTERFACE
 } IPropertyPage2Vtbl;
@@ -2425,16 +2425,16 @@ MIDL_INTERFACE("b196b28c-bab4-101a-b69c-00aa00341d07")
 IPropertyPageSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnStatusChange(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocaleID(
-        LCID *pLocaleID) = 0;
+                     LCID *pLocaleID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPageContainer(
-        IUnknown **ppUnk) = 0;
+                     IUnknown **ppUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        MSG *pMsg) = 0;
+                     MSG *pMsg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2446,32 +2446,32 @@ typedef struct IPropertyPageSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyPageSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyPageSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyPageSite *This);
+                     IPropertyPageSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyPageSite *This);
+                     IPropertyPageSite *This);
 
     /*** IPropertyPageSite methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStatusChange)(
-        IPropertyPageSite *This,
-        DWORD dwFlags);
+                     IPropertyPageSite *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetLocaleID)(
-        IPropertyPageSite *This,
-        LCID *pLocaleID);
+                     IPropertyPageSite *This,
+                     LCID *pLocaleID);
 
     HRESULT (STDMETHODCALLTYPE *GetPageContainer)(
-        IPropertyPageSite *This,
-        IUnknown **ppUnk);
+                     IPropertyPageSite *This,
+                     IUnknown **ppUnk);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IPropertyPageSite *This,
-        MSG *pMsg);
+                     IPropertyPageSite *This,
+                     MSG *pMsg);
 
     END_INTERFACE
 } IPropertyPageSiteVtbl;
@@ -2538,10 +2538,10 @@ MIDL_INTERFACE("9bfbbc02-eff1-101a-84ed-00aa00341d07")
 IPropertyNotifySink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnChanged(
-        DISPID dispID) = 0;
+                     DISPID dispID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnRequestEdit(
-        DISPID dispID) = 0;
+                     DISPID dispID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2553,24 +2553,24 @@ typedef struct IPropertyNotifySinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyNotifySink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyNotifySink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyNotifySink *This);
+                     IPropertyNotifySink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyNotifySink *This);
+                     IPropertyNotifySink *This);
 
     /*** IPropertyNotifySink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnChanged)(
-        IPropertyNotifySink *This,
-        DISPID dispID);
+                     IPropertyNotifySink *This,
+                     DISPID dispID);
 
     HRESULT (STDMETHODCALLTYPE *OnRequestEdit)(
-        IPropertyNotifySink *This,
-        DISPID dispID);
+                     IPropertyNotifySink *This,
+                     DISPID dispID);
 
     END_INTERFACE
 } IPropertyNotifySinkVtbl;
@@ -2636,7 +2636,7 @@ MIDL_INTERFACE("b196b28b-bab4-101a-b69c-00aa00341d07")
 ISpecifyPropertyPages : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPages(
-        CAUUID *pPages) = 0;
+                     CAUUID *pPages) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2648,20 +2648,20 @@ typedef struct ISpecifyPropertyPagesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpecifyPropertyPages *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpecifyPropertyPages *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpecifyPropertyPages *This);
+                     ISpecifyPropertyPages *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpecifyPropertyPages *This);
+                     ISpecifyPropertyPages *This);
 
     /*** ISpecifyPropertyPages methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPages)(
-        ISpecifyPropertyPages *This,
-        CAUUID *pPages);
+                     ISpecifyPropertyPages *This,
+                     CAUUID *pPages);
 
     END_INTERFACE
 } ISpecifyPropertyPagesVtbl;
@@ -2716,22 +2716,22 @@ MIDL_INTERFACE("bd1ae5e0-a6ae-11ce-bd37-504200c10000")
 IPersistMemory : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE IsDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        LPVOID pMem,
-        ULONG cbSize) = 0;
+                     LPVOID pMem,
+                     ULONG cbSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        LPVOID pMem,
-        WINBOOL fClearDirty,
-        ULONG cbSize) = 0;
+                     LPVOID pMem,
+                     WINBOOL fClearDirty,
+                     ULONG cbSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSizeMax(
-        ULONG *pCbSize) = 0;
+                     ULONG *pCbSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2743,42 +2743,42 @@ typedef struct IPersistMemoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistMemory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistMemory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistMemory *This);
+                     IPersistMemory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistMemory *This);
+                     IPersistMemory *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistMemory *This,
-        CLSID *pClassID);
+                     IPersistMemory *This,
+                     CLSID *pClassID);
 
     /*** IPersistMemory methods ***/
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IPersistMemory *This);
+                     IPersistMemory *This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistMemory *This,
-        LPVOID pMem,
-        ULONG cbSize);
+                     IPersistMemory *This,
+                     LPVOID pMem,
+                     ULONG cbSize);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistMemory *This,
-        LPVOID pMem,
-        WINBOOL fClearDirty,
-        ULONG cbSize);
+                     IPersistMemory *This,
+                     LPVOID pMem,
+                     WINBOOL fClearDirty,
+                     ULONG cbSize);
 
     HRESULT (STDMETHODCALLTYPE *GetSizeMax)(
-        IPersistMemory *This,
-        ULONG *pCbSize);
+                     IPersistMemory *This,
+                     ULONG *pCbSize);
 
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IPersistMemory *This);
+                     IPersistMemory *This);
 
     END_INTERFACE
 } IPersistMemoryVtbl;
@@ -2892,20 +2892,20 @@ MIDL_INTERFACE("7fd52380-4e07-101b-ae2d-08002b2ec713")
 IPersistStreamInit : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE IsDirty(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        LPSTREAM pStm) = 0;
+                     LPSTREAM pStm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        LPSTREAM pStm,
-        WINBOOL fClearDirty) = 0;
+                     LPSTREAM pStm,
+                     WINBOOL fClearDirty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSizeMax(
-        ULARGE_INTEGER *pCbSize) = 0;
+                     ULARGE_INTEGER *pCbSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2917,40 +2917,40 @@ typedef struct IPersistStreamInitVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistStreamInit *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistStreamInit *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistStreamInit *This);
+                     IPersistStreamInit *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistStreamInit *This);
+                     IPersistStreamInit *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistStreamInit *This,
-        CLSID *pClassID);
+                     IPersistStreamInit *This,
+                     CLSID *pClassID);
 
     /*** IPersistStreamInit methods ***/
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IPersistStreamInit *This);
+                     IPersistStreamInit *This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistStreamInit *This,
-        LPSTREAM pStm);
+                     IPersistStreamInit *This,
+                     LPSTREAM pStm);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistStreamInit *This,
-        LPSTREAM pStm,
-        WINBOOL fClearDirty);
+                     IPersistStreamInit *This,
+                     LPSTREAM pStm,
+                     WINBOOL fClearDirty);
 
     HRESULT (STDMETHODCALLTYPE *GetSizeMax)(
-        IPersistStreamInit *This,
-        ULARGE_INTEGER *pCbSize);
+                     IPersistStreamInit *This,
+                     ULARGE_INTEGER *pCbSize);
 
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IPersistStreamInit *This);
+                     IPersistStreamInit *This);
 
     END_INTERFACE
 } IPersistStreamInitVtbl;
@@ -3027,16 +3027,16 @@ MIDL_INTERFACE("37d84f60-42cb-11ce-8135-00aa004bb851")
 IPersistPropertyBag : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        IPropertyBag *pPropBag,
-        IErrorLog *pErrorLog) = 0;
+                     IPropertyBag *pPropBag,
+                     IErrorLog *pErrorLog) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        IPropertyBag *pPropBag,
-        WINBOOL fClearDirty,
-        WINBOOL fSaveAllProperties) = 0;
+                     IPropertyBag *pPropBag,
+                     WINBOOL fClearDirty,
+                     WINBOOL fSaveAllProperties) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3048,35 +3048,35 @@ typedef struct IPersistPropertyBagVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistPropertyBag *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistPropertyBag *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistPropertyBag *This);
+                     IPersistPropertyBag *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistPropertyBag *This);
+                     IPersistPropertyBag *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistPropertyBag *This,
-        CLSID *pClassID);
+                     IPersistPropertyBag *This,
+                     CLSID *pClassID);
 
     /*** IPersistPropertyBag methods ***/
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IPersistPropertyBag *This);
+                     IPersistPropertyBag *This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistPropertyBag *This,
-        IPropertyBag *pPropBag,
-        IErrorLog *pErrorLog);
+                     IPersistPropertyBag *This,
+                     IPropertyBag *pPropBag,
+                     IErrorLog *pErrorLog);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistPropertyBag *This,
-        IPropertyBag *pPropBag,
-        WINBOOL fClearDirty,
-        WINBOOL fSaveAllProperties);
+                     IPersistPropertyBag *This,
+                     IPropertyBag *pPropBag,
+                     WINBOOL fClearDirty,
+                     WINBOOL fSaveAllProperties);
 
     END_INTERFACE
 } IPersistPropertyBagVtbl;
@@ -3145,20 +3145,20 @@ MIDL_INTERFACE("742b0e01-14e6-101b-914e-00aa00300cab")
 ISimpleFrameSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PreMessageFilter(
-        HWND hWnd,
-        UINT msg,
-        WPARAM wp,
-        LPARAM lp,
-        LRESULT *plResult,
-        DWORD *pdwCookie) = 0;
+                     HWND hWnd,
+                     UINT msg,
+                     WPARAM wp,
+                     LPARAM lp,
+                     LRESULT *plResult,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PostMessageFilter(
-        HWND hWnd,
-        UINT msg,
-        WPARAM wp,
-        LPARAM lp,
-        LRESULT *plResult,
-        DWORD dwCookie) = 0;
+                     HWND hWnd,
+                     UINT msg,
+                     WPARAM wp,
+                     LPARAM lp,
+                     LRESULT *plResult,
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3170,34 +3170,34 @@ typedef struct ISimpleFrameSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISimpleFrameSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISimpleFrameSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISimpleFrameSite *This);
+                     ISimpleFrameSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISimpleFrameSite *This);
+                     ISimpleFrameSite *This);
 
     /*** ISimpleFrameSite methods ***/
     HRESULT (STDMETHODCALLTYPE *PreMessageFilter)(
-        ISimpleFrameSite *This,
-        HWND hWnd,
-        UINT msg,
-        WPARAM wp,
-        LPARAM lp,
-        LRESULT *plResult,
-        DWORD *pdwCookie);
+                     ISimpleFrameSite *This,
+                     HWND hWnd,
+                     UINT msg,
+                     WPARAM wp,
+                     LPARAM lp,
+                     LRESULT *plResult,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *PostMessageFilter)(
-        ISimpleFrameSite *This,
-        HWND hWnd,
-        UINT msg,
-        WPARAM wp,
-        LPARAM lp,
-        LRESULT *plResult,
-        DWORD dwCookie);
+                     ISimpleFrameSite *This,
+                     HWND hWnd,
+                     UINT msg,
+                     WPARAM wp,
+                     LPARAM lp,
+                     LRESULT *plResult,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } ISimpleFrameSiteVtbl;
@@ -3264,77 +3264,77 @@ MIDL_INTERFACE("bef6e002-a874-101a-8bba-00aa00300cab")
 IFont : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *pName) = 0;
+                     BSTR *pName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Size(
-        CY *pSize) = 0;
+                     CY *pSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Size(
-        CY size) = 0;
+                     CY size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Bold(
-        WINBOOL *pBold) = 0;
+                     WINBOOL *pBold) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Bold(
-        WINBOOL bold) = 0;
+                     WINBOOL bold) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Italic(
-        WINBOOL *pItalic) = 0;
+                     WINBOOL *pItalic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Italic(
-        WINBOOL italic) = 0;
+                     WINBOOL italic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Underline(
-        WINBOOL *pUnderline) = 0;
+                     WINBOOL *pUnderline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Underline(
-        WINBOOL underline) = 0;
+                     WINBOOL underline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Strikethrough(
-        WINBOOL *pStrikethrough) = 0;
+                     WINBOOL *pStrikethrough) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Strikethrough(
-        WINBOOL strikethrough) = 0;
+                     WINBOOL strikethrough) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Weight(
-        SHORT *pWeight) = 0;
+                     SHORT *pWeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Weight(
-        SHORT weight) = 0;
+                     SHORT weight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Charset(
-        SHORT *pCharset) = 0;
+                     SHORT *pCharset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Charset(
-        SHORT charset) = 0;
+                     SHORT charset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_hFont(
-        HFONT *phFont) = 0;
+                     HFONT *phFont) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IFont **ppFont) = 0;
+                     IFont **ppFont) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEqual(
-        IFont *pFontOther) = 0;
+                     IFont *pFontOther) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRatio(
-        LONG cyLogical,
-        LONG cyHimetric) = 0;
+                     LONG cyLogical,
+                     LONG cyHimetric) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryTextMetrics(
-        TEXTMETRICOLE *pTM) = 0;
+                     TEXTMETRICOLE *pTM) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddRefHfont(
-        HFONT hFont) = 0;
+                     HFONT hFont) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseHfont(
-        HFONT hFont) = 0;
+                     HFONT hFont) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetHdc(
-        HDC hDC) = 0;
+                     HDC hDC) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3346,113 +3346,113 @@ typedef struct IFontVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFont *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFont *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFont *This);
+                     IFont *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFont *This);
+                     IFont *This);
 
     /*** IFont methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFont *This,
-        BSTR *pName);
+                     IFont *This,
+                     BSTR *pName);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFont *This,
-        BSTR name);
+                     IFont *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Size)(
-        IFont *This,
-        CY *pSize);
+                     IFont *This,
+                     CY *pSize);
 
     HRESULT (STDMETHODCALLTYPE *put_Size)(
-        IFont *This,
-        CY size);
+                     IFont *This,
+                     CY size);
 
     HRESULT (STDMETHODCALLTYPE *get_Bold)(
-        IFont *This,
-        WINBOOL *pBold);
+                     IFont *This,
+                     WINBOOL *pBold);
 
     HRESULT (STDMETHODCALLTYPE *put_Bold)(
-        IFont *This,
-        WINBOOL bold);
+                     IFont *This,
+                     WINBOOL bold);
 
     HRESULT (STDMETHODCALLTYPE *get_Italic)(
-        IFont *This,
-        WINBOOL *pItalic);
+                     IFont *This,
+                     WINBOOL *pItalic);
 
     HRESULT (STDMETHODCALLTYPE *put_Italic)(
-        IFont *This,
-        WINBOOL italic);
+                     IFont *This,
+                     WINBOOL italic);
 
     HRESULT (STDMETHODCALLTYPE *get_Underline)(
-        IFont *This,
-        WINBOOL *pUnderline);
+                     IFont *This,
+                     WINBOOL *pUnderline);
 
     HRESULT (STDMETHODCALLTYPE *put_Underline)(
-        IFont *This,
-        WINBOOL underline);
+                     IFont *This,
+                     WINBOOL underline);
 
     HRESULT (STDMETHODCALLTYPE *get_Strikethrough)(
-        IFont *This,
-        WINBOOL *pStrikethrough);
+                     IFont *This,
+                     WINBOOL *pStrikethrough);
 
     HRESULT (STDMETHODCALLTYPE *put_Strikethrough)(
-        IFont *This,
-        WINBOOL strikethrough);
+                     IFont *This,
+                     WINBOOL strikethrough);
 
     HRESULT (STDMETHODCALLTYPE *get_Weight)(
-        IFont *This,
-        SHORT *pWeight);
+                     IFont *This,
+                     SHORT *pWeight);
 
     HRESULT (STDMETHODCALLTYPE *put_Weight)(
-        IFont *This,
-        SHORT weight);
+                     IFont *This,
+                     SHORT weight);
 
     HRESULT (STDMETHODCALLTYPE *get_Charset)(
-        IFont *This,
-        SHORT *pCharset);
+                     IFont *This,
+                     SHORT *pCharset);
 
     HRESULT (STDMETHODCALLTYPE *put_Charset)(
-        IFont *This,
-        SHORT charset);
+                     IFont *This,
+                     SHORT charset);
 
     HRESULT (STDMETHODCALLTYPE *get_hFont)(
-        IFont *This,
-        HFONT *phFont);
+                     IFont *This,
+                     HFONT *phFont);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IFont *This,
-        IFont **ppFont);
+                     IFont *This,
+                     IFont **ppFont);
 
     HRESULT (STDMETHODCALLTYPE *IsEqual)(
-        IFont *This,
-        IFont *pFontOther);
+                     IFont *This,
+                     IFont *pFontOther);
 
     HRESULT (STDMETHODCALLTYPE *SetRatio)(
-        IFont *This,
-        LONG cyLogical,
-        LONG cyHimetric);
+                     IFont *This,
+                     LONG cyLogical,
+                     LONG cyHimetric);
 
     HRESULT (STDMETHODCALLTYPE *QueryTextMetrics)(
-        IFont *This,
-        TEXTMETRICOLE *pTM);
+                     IFont *This,
+                     TEXTMETRICOLE *pTM);
 
     HRESULT (STDMETHODCALLTYPE *AddRefHfont)(
-        IFont *This,
-        HFONT hFont);
+                     IFont *This,
+                     HFONT hFont);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseHfont)(
-        IFont *This,
-        HFONT hFont);
+                     IFont *This,
+                     HFONT hFont);
 
     HRESULT (STDMETHODCALLTYPE *SetHdc)(
-        IFont *This,
-        HDC hDC);
+                     IFont *This,
+                     HDC hDC);
 
     END_INTERFACE
 } IFontVtbl;
@@ -3610,59 +3610,59 @@ MIDL_INTERFACE("7bf80980-bf32-101a-8bbb-00aa00300cab")
 IPicture : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_Handle(
-        OLE_HANDLE *pHandle) = 0;
+                     OLE_HANDLE *pHandle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_hPal(
-        OLE_HANDLE *phPal) = 0;
+                     OLE_HANDLE *phPal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        SHORT *pType) = 0;
+                     SHORT *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Width(
-        OLE_XSIZE_HIMETRIC *pWidth) = 0;
+                     OLE_XSIZE_HIMETRIC *pWidth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Height(
-        OLE_YSIZE_HIMETRIC *pHeight) = 0;
+                     OLE_YSIZE_HIMETRIC *pHeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Render(
-        HDC hDC,
-        LONG x,
-        LONG y,
-        LONG cx,
-        LONG cy,
-        OLE_XPOS_HIMETRIC xSrc,
-        OLE_YPOS_HIMETRIC ySrc,
-        OLE_XSIZE_HIMETRIC cxSrc,
-        OLE_YSIZE_HIMETRIC cySrc,
-        LPCRECT pRcWBounds) = 0;
+                     HDC hDC,
+                     LONG x,
+                     LONG y,
+                     LONG cx,
+                     LONG cy,
+                     OLE_XPOS_HIMETRIC xSrc,
+                     OLE_YPOS_HIMETRIC ySrc,
+                     OLE_XSIZE_HIMETRIC cxSrc,
+                     OLE_YSIZE_HIMETRIC cySrc,
+                     LPCRECT pRcWBounds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE set_hPal(
-        OLE_HANDLE hPal) = 0;
+                     OLE_HANDLE hPal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurDC(
-        HDC *phDC) = 0;
+                     HDC *phDC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectPicture(
-        HDC hDCIn,
-        HDC *phDCOut,
-        OLE_HANDLE *phBmpOut) = 0;
+                     HDC hDCIn,
+                     HDC *phDCOut,
+                     OLE_HANDLE *phBmpOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_KeepOriginalFormat(
-        WINBOOL *pKeep) = 0;
+                     WINBOOL *pKeep) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_KeepOriginalFormat(
-        WINBOOL keep) = 0;
+                     WINBOOL keep) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PictureChanged(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveAsFile(
-        LPSTREAM pStream,
-        WINBOOL fSaveMemCopy,
-        LONG *pCbSize) = 0;
+                     LPSTREAM pStream,
+                     WINBOOL fSaveMemCopy,
+                     LONG *pCbSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Attributes(
-        DWORD *pDwAttr) = 0;
+                     DWORD *pDwAttr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3674,84 +3674,84 @@ typedef struct IPictureVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPicture *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPicture *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPicture *This);
+                     IPicture *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPicture *This);
+                     IPicture *This);
 
     /*** IPicture methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Handle)(
-        IPicture *This,
-        OLE_HANDLE *pHandle);
+                     IPicture *This,
+                     OLE_HANDLE *pHandle);
 
     HRESULT (STDMETHODCALLTYPE *get_hPal)(
-        IPicture *This,
-        OLE_HANDLE *phPal);
+                     IPicture *This,
+                     OLE_HANDLE *phPal);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IPicture *This,
-        SHORT *pType);
+                     IPicture *This,
+                     SHORT *pType);
 
     HRESULT (STDMETHODCALLTYPE *get_Width)(
-        IPicture *This,
-        OLE_XSIZE_HIMETRIC *pWidth);
+                     IPicture *This,
+                     OLE_XSIZE_HIMETRIC *pWidth);
 
     HRESULT (STDMETHODCALLTYPE *get_Height)(
-        IPicture *This,
-        OLE_YSIZE_HIMETRIC *pHeight);
+                     IPicture *This,
+                     OLE_YSIZE_HIMETRIC *pHeight);
 
     HRESULT (STDMETHODCALLTYPE *Render)(
-        IPicture *This,
-        HDC hDC,
-        LONG x,
-        LONG y,
-        LONG cx,
-        LONG cy,
-        OLE_XPOS_HIMETRIC xSrc,
-        OLE_YPOS_HIMETRIC ySrc,
-        OLE_XSIZE_HIMETRIC cxSrc,
-        OLE_YSIZE_HIMETRIC cySrc,
-        LPCRECT pRcWBounds);
+                     IPicture *This,
+                     HDC hDC,
+                     LONG x,
+                     LONG y,
+                     LONG cx,
+                     LONG cy,
+                     OLE_XPOS_HIMETRIC xSrc,
+                     OLE_YPOS_HIMETRIC ySrc,
+                     OLE_XSIZE_HIMETRIC cxSrc,
+                     OLE_YSIZE_HIMETRIC cySrc,
+                     LPCRECT pRcWBounds);
 
     HRESULT (STDMETHODCALLTYPE *set_hPal)(
-        IPicture *This,
-        OLE_HANDLE hPal);
+                     IPicture *This,
+                     OLE_HANDLE hPal);
 
     HRESULT (STDMETHODCALLTYPE *get_CurDC)(
-        IPicture *This,
-        HDC *phDC);
+                     IPicture *This,
+                     HDC *phDC);
 
     HRESULT (STDMETHODCALLTYPE *SelectPicture)(
-        IPicture *This,
-        HDC hDCIn,
-        HDC *phDCOut,
-        OLE_HANDLE *phBmpOut);
+                     IPicture *This,
+                     HDC hDCIn,
+                     HDC *phDCOut,
+                     OLE_HANDLE *phBmpOut);
 
     HRESULT (STDMETHODCALLTYPE *get_KeepOriginalFormat)(
-        IPicture *This,
-        WINBOOL *pKeep);
+                     IPicture *This,
+                     WINBOOL *pKeep);
 
     HRESULT (STDMETHODCALLTYPE *put_KeepOriginalFormat)(
-        IPicture *This,
-        WINBOOL keep);
+                     IPicture *This,
+                     WINBOOL keep);
 
     HRESULT (STDMETHODCALLTYPE *PictureChanged)(
-        IPicture *This);
+                     IPicture *This);
 
     HRESULT (STDMETHODCALLTYPE *SaveAsFile)(
-        IPicture *This,
-        LPSTREAM pStream,
-        WINBOOL fSaveMemCopy,
-        LONG *pCbSize);
+                     IPicture *This,
+                     LPSTREAM pStream,
+                     WINBOOL fSaveMemCopy,
+                     LONG *pCbSize);
 
     HRESULT (STDMETHODCALLTYPE *get_Attributes)(
-        IPicture *This,
-        DWORD *pDwAttr);
+                     IPicture *This,
+                     DWORD *pDwAttr);
 
     END_INTERFACE
 } IPictureVtbl;
@@ -3859,59 +3859,59 @@ MIDL_INTERFACE("f5185dd8-2012-4b0b-aad9-f052c6bd482b")
 IPicture2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_Handle(
-        HHANDLE *pHandle) = 0;
+                     HHANDLE *pHandle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_hPal(
-        HHANDLE *phPal) = 0;
+                     HHANDLE *phPal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        SHORT *pType) = 0;
+                     SHORT *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Width(
-        OLE_XSIZE_HIMETRIC *pWidth) = 0;
+                     OLE_XSIZE_HIMETRIC *pWidth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Height(
-        OLE_YSIZE_HIMETRIC *pHeight) = 0;
+                     OLE_YSIZE_HIMETRIC *pHeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Render(
-        HDC hDC,
-        LONG x,
-        LONG y,
-        LONG cx,
-        LONG cy,
-        OLE_XPOS_HIMETRIC xSrc,
-        OLE_YPOS_HIMETRIC ySrc,
-        OLE_XSIZE_HIMETRIC cxSrc,
-        OLE_YSIZE_HIMETRIC cySrc,
-        LPCRECT pRcWBounds) = 0;
+                     HDC hDC,
+                     LONG x,
+                     LONG y,
+                     LONG cx,
+                     LONG cy,
+                     OLE_XPOS_HIMETRIC xSrc,
+                     OLE_YPOS_HIMETRIC ySrc,
+                     OLE_XSIZE_HIMETRIC cxSrc,
+                     OLE_YSIZE_HIMETRIC cySrc,
+                     LPCRECT pRcWBounds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE set_hPal(
-        HHANDLE hPal) = 0;
+                     HHANDLE hPal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurDC(
-        HDC *phDC) = 0;
+                     HDC *phDC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectPicture(
-        HDC hDCIn,
-        HDC *phDCOut,
-        HHANDLE *phBmpOut) = 0;
+                     HDC hDCIn,
+                     HDC *phDCOut,
+                     HHANDLE *phBmpOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_KeepOriginalFormat(
-        WINBOOL *pKeep) = 0;
+                     WINBOOL *pKeep) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_KeepOriginalFormat(
-        WINBOOL keep) = 0;
+                     WINBOOL keep) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PictureChanged(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveAsFile(
-        LPSTREAM pStream,
-        WINBOOL fSaveMemCopy,
-        LONG *pCbSize) = 0;
+                     LPSTREAM pStream,
+                     WINBOOL fSaveMemCopy,
+                     LONG *pCbSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Attributes(
-        DWORD *pDwAttr) = 0;
+                     DWORD *pDwAttr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3923,84 +3923,84 @@ typedef struct IPicture2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPicture2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPicture2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPicture2 *This);
+                     IPicture2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPicture2 *This);
+                     IPicture2 *This);
 
     /*** IPicture2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Handle)(
-        IPicture2 *This,
-        HHANDLE *pHandle);
+                     IPicture2 *This,
+                     HHANDLE *pHandle);
 
     HRESULT (STDMETHODCALLTYPE *get_hPal)(
-        IPicture2 *This,
-        HHANDLE *phPal);
+                     IPicture2 *This,
+                     HHANDLE *phPal);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IPicture2 *This,
-        SHORT *pType);
+                     IPicture2 *This,
+                     SHORT *pType);
 
     HRESULT (STDMETHODCALLTYPE *get_Width)(
-        IPicture2 *This,
-        OLE_XSIZE_HIMETRIC *pWidth);
+                     IPicture2 *This,
+                     OLE_XSIZE_HIMETRIC *pWidth);
 
     HRESULT (STDMETHODCALLTYPE *get_Height)(
-        IPicture2 *This,
-        OLE_YSIZE_HIMETRIC *pHeight);
+                     IPicture2 *This,
+                     OLE_YSIZE_HIMETRIC *pHeight);
 
     HRESULT (STDMETHODCALLTYPE *Render)(
-        IPicture2 *This,
-        HDC hDC,
-        LONG x,
-        LONG y,
-        LONG cx,
-        LONG cy,
-        OLE_XPOS_HIMETRIC xSrc,
-        OLE_YPOS_HIMETRIC ySrc,
-        OLE_XSIZE_HIMETRIC cxSrc,
-        OLE_YSIZE_HIMETRIC cySrc,
-        LPCRECT pRcWBounds);
+                     IPicture2 *This,
+                     HDC hDC,
+                     LONG x,
+                     LONG y,
+                     LONG cx,
+                     LONG cy,
+                     OLE_XPOS_HIMETRIC xSrc,
+                     OLE_YPOS_HIMETRIC ySrc,
+                     OLE_XSIZE_HIMETRIC cxSrc,
+                     OLE_YSIZE_HIMETRIC cySrc,
+                     LPCRECT pRcWBounds);
 
     HRESULT (STDMETHODCALLTYPE *set_hPal)(
-        IPicture2 *This,
-        HHANDLE hPal);
+                     IPicture2 *This,
+                     HHANDLE hPal);
 
     HRESULT (STDMETHODCALLTYPE *get_CurDC)(
-        IPicture2 *This,
-        HDC *phDC);
+                     IPicture2 *This,
+                     HDC *phDC);
 
     HRESULT (STDMETHODCALLTYPE *SelectPicture)(
-        IPicture2 *This,
-        HDC hDCIn,
-        HDC *phDCOut,
-        HHANDLE *phBmpOut);
+                     IPicture2 *This,
+                     HDC hDCIn,
+                     HDC *phDCOut,
+                     HHANDLE *phBmpOut);
 
     HRESULT (STDMETHODCALLTYPE *get_KeepOriginalFormat)(
-        IPicture2 *This,
-        WINBOOL *pKeep);
+                     IPicture2 *This,
+                     WINBOOL *pKeep);
 
     HRESULT (STDMETHODCALLTYPE *put_KeepOriginalFormat)(
-        IPicture2 *This,
-        WINBOOL keep);
+                     IPicture2 *This,
+                     WINBOOL keep);
 
     HRESULT (STDMETHODCALLTYPE *PictureChanged)(
-        IPicture2 *This);
+                     IPicture2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SaveAsFile)(
-        IPicture2 *This,
-        LPSTREAM pStream,
-        WINBOOL fSaveMemCopy,
-        LONG *pCbSize);
+                     IPicture2 *This,
+                     LPSTREAM pStream,
+                     WINBOOL fSaveMemCopy,
+                     LONG *pCbSize);
 
     HRESULT (STDMETHODCALLTYPE *get_Attributes)(
-        IPicture2 *This,
-        DWORD *pDwAttr);
+                     IPicture2 *This,
+                     DWORD *pDwAttr);
 
     END_INTERFACE
 } IPicture2Vtbl;
@@ -4115,45 +4115,45 @@ typedef struct IFontEventsDispVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFontEventsDisp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFontEventsDisp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFontEventsDisp *This);
+                     IFontEventsDisp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFontEventsDisp *This);
+                     IFontEventsDisp *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFontEventsDisp *This,
-        UINT *pctinfo);
+                     IFontEventsDisp *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFontEventsDisp *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFontEventsDisp *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFontEventsDisp *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFontEventsDisp *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFontEventsDisp *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFontEventsDisp *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } IFontEventsDispVtbl;
@@ -4228,45 +4228,45 @@ typedef struct IFontDispVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFontDisp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFontDisp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFontDisp *This);
+                     IFontDisp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFontDisp *This);
+                     IFontDisp *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFontDisp *This,
-        UINT *pctinfo);
+                     IFontDisp *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFontDisp *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFontDisp *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFontDisp *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFontDisp *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFontDisp *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFontDisp *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } IFontDispVtbl;
@@ -4341,45 +4341,45 @@ typedef struct IPictureDispVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPictureDisp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPictureDisp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPictureDisp *This);
+                     IPictureDisp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPictureDisp *This);
+                     IPictureDisp *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IPictureDisp *This,
-        UINT *pctinfo);
+                     IPictureDisp *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IPictureDisp *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IPictureDisp *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IPictureDisp *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IPictureDisp *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IPictureDisp *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IPictureDisp *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } IPictureDispVtbl;
@@ -4446,13 +4446,13 @@ MIDL_INTERFACE("1c2056cc-5ef4-101b-8bc8-00aa003e3b29")
 IOleInPlaceObjectWindowless : public IOleInPlaceObject
 {
     virtual HRESULT STDMETHODCALLTYPE OnWindowMessage(
-        UINT msg,
-        WPARAM wParam,
-        LPARAM lParam,
-        LRESULT *plResult) = 0;
+                     UINT msg,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     LRESULT *plResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDropTarget(
-        IDropTarget **ppDropTarget) = 0;
+                     IDropTarget **ppDropTarget) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4464,51 +4464,51 @@ typedef struct IOleInPlaceObjectWindowlessVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleInPlaceObjectWindowless *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleInPlaceObjectWindowless *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleInPlaceObjectWindowless *This);
+                     IOleInPlaceObjectWindowless *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleInPlaceObjectWindowless *This);
+                     IOleInPlaceObjectWindowless *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleInPlaceObjectWindowless *This,
-        HWND *phwnd);
+                     IOleInPlaceObjectWindowless *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleInPlaceObjectWindowless *This,
-        WINBOOL fEnterMode);
+                     IOleInPlaceObjectWindowless *This,
+                     WINBOOL fEnterMode);
 
     /*** IOleInPlaceObject methods ***/
     HRESULT (STDMETHODCALLTYPE *InPlaceDeactivate)(
-        IOleInPlaceObjectWindowless *This);
+                     IOleInPlaceObjectWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *UIDeactivate)(
-        IOleInPlaceObjectWindowless *This);
+                     IOleInPlaceObjectWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *SetObjectRects)(
-        IOleInPlaceObjectWindowless *This,
-        LPCRECT lprcPosRect,
-        LPCRECT lprcClipRect);
+                     IOleInPlaceObjectWindowless *This,
+                     LPCRECT lprcPosRect,
+                     LPCRECT lprcClipRect);
 
     HRESULT (STDMETHODCALLTYPE *ReactivateAndUndo)(
-        IOleInPlaceObjectWindowless *This);
+                     IOleInPlaceObjectWindowless *This);
 
     /*** IOleInPlaceObjectWindowless methods ***/
     HRESULT (STDMETHODCALLTYPE *OnWindowMessage)(
-        IOleInPlaceObjectWindowless *This,
-        UINT msg,
-        WPARAM wParam,
-        LPARAM lParam,
-        LRESULT *plResult);
+                     IOleInPlaceObjectWindowless *This,
+                     UINT msg,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     LRESULT *plResult);
 
     HRESULT (STDMETHODCALLTYPE *GetDropTarget)(
-        IOleInPlaceObjectWindowless *This,
-        IDropTarget **ppDropTarget);
+                     IOleInPlaceObjectWindowless *This,
+                     IDropTarget **ppDropTarget);
 
     END_INTERFACE
 } IOleInPlaceObjectWindowlessVtbl;
@@ -4599,14 +4599,14 @@ MIDL_INTERFACE("9c2cad80-3424-11cf-b670-00aa004cd6d8")
 IOleInPlaceSiteEx : public IOleInPlaceSite
 {
     virtual HRESULT STDMETHODCALLTYPE OnInPlaceActivateEx(
-        WINBOOL *pfNoRedraw,
-        DWORD dwFlags) = 0;
+                     WINBOOL *pfNoRedraw,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnInPlaceDeactivateEx(
-        WINBOOL fNoRedraw) = 0;
+                     WINBOOL fNoRedraw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestUIActivate(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4618,76 +4618,76 @@ typedef struct IOleInPlaceSiteExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleInPlaceSiteEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleInPlaceSiteEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleInPlaceSiteEx *This,
-        HWND *phwnd);
+                     IOleInPlaceSiteEx *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleInPlaceSiteEx *This,
-        WINBOOL fEnterMode);
+                     IOleInPlaceSiteEx *This,
+                     WINBOOL fEnterMode);
 
     /*** IOleInPlaceSite methods ***/
     HRESULT (STDMETHODCALLTYPE *CanInPlaceActivate)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     HRESULT (STDMETHODCALLTYPE *OnInPlaceActivate)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     HRESULT (STDMETHODCALLTYPE *OnUIActivate)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     HRESULT (STDMETHODCALLTYPE *GetWindowContext)(
-        IOleInPlaceSiteEx *This,
-        IOleInPlaceFrame **ppFrame,
-        IOleInPlaceUIWindow **ppDoc,
-        LPRECT lprcPosRect,
-        LPRECT lprcClipRect,
-        LPOLEINPLACEFRAMEINFO lpFrameInfo);
+                     IOleInPlaceSiteEx *This,
+                     IOleInPlaceFrame **ppFrame,
+                     IOleInPlaceUIWindow **ppDoc,
+                     LPRECT lprcPosRect,
+                     LPRECT lprcClipRect,
+                     LPOLEINPLACEFRAMEINFO lpFrameInfo);
 
     HRESULT (STDMETHODCALLTYPE *Scroll)(
-        IOleInPlaceSiteEx *This,
-        SIZE scrollExtant);
+                     IOleInPlaceSiteEx *This,
+                     SIZE scrollExtant);
 
     HRESULT (STDMETHODCALLTYPE *OnUIDeactivate)(
-        IOleInPlaceSiteEx *This,
-        WINBOOL fUndoable);
+                     IOleInPlaceSiteEx *This,
+                     WINBOOL fUndoable);
 
     HRESULT (STDMETHODCALLTYPE *OnInPlaceDeactivate)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     HRESULT (STDMETHODCALLTYPE *DiscardUndoState)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     HRESULT (STDMETHODCALLTYPE *DeactivateAndUndo)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     HRESULT (STDMETHODCALLTYPE *OnPosRectChange)(
-        IOleInPlaceSiteEx *This,
-        LPCRECT lprcPosRect);
+                     IOleInPlaceSiteEx *This,
+                     LPCRECT lprcPosRect);
 
     /*** IOleInPlaceSiteEx methods ***/
     HRESULT (STDMETHODCALLTYPE *OnInPlaceActivateEx)(
-        IOleInPlaceSiteEx *This,
-        WINBOOL *pfNoRedraw,
-        DWORD dwFlags);
+                     IOleInPlaceSiteEx *This,
+                     WINBOOL *pfNoRedraw,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *OnInPlaceDeactivateEx)(
-        IOleInPlaceSiteEx *This,
-        WINBOOL fNoRedraw);
+                     IOleInPlaceSiteEx *This,
+                     WINBOOL fNoRedraw);
 
     HRESULT (STDMETHODCALLTYPE *RequestUIActivate)(
-        IOleInPlaceSiteEx *This);
+                     IOleInPlaceSiteEx *This);
 
     END_INTERFACE
 } IOleInPlaceSiteExVtbl;
@@ -4808,50 +4808,50 @@ MIDL_INTERFACE("922eada0-3424-11cf-b670-00aa004cd6d8")
 IOleInPlaceSiteWindowless : public IOleInPlaceSiteEx
 {
     virtual HRESULT STDMETHODCALLTYPE CanWindowlessActivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCapture(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCapture(
-        WINBOOL fCapture) = 0;
+                     WINBOOL fCapture) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFocus(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFocus(
-        WINBOOL fFocus) = 0;
+                     WINBOOL fFocus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDC(
-        LPCRECT pRect,
-        DWORD grfFlags,
-        HDC *phDC) = 0;
+                     LPCRECT pRect,
+                     DWORD grfFlags,
+                     HDC *phDC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseDC(
-        HDC hDC) = 0;
+                     HDC hDC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvalidateRect(
-        LPCRECT pRect,
-        WINBOOL fErase) = 0;
+                     LPCRECT pRect,
+                     WINBOOL fErase) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvalidateRgn(
-        HRGN hRGN,
-        WINBOOL fErase) = 0;
+                     HRGN hRGN,
+                     WINBOOL fErase) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScrollRect(
-        INT dx,
-        INT dy,
-        LPCRECT pRectScroll,
-        LPCRECT pRectClip) = 0;
+                     INT dx,
+                     INT dy,
+                     LPCRECT pRectScroll,
+                     LPCRECT pRectClip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdjustRect(
-        LPRECT prc) = 0;
+                     LPRECT prc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDefWindowMessage(
-        UINT msg,
-        WPARAM wParam,
-        LPARAM lParam,
-        LRESULT *plResult) = 0;
+                     UINT msg,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     LRESULT *plResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4863,132 +4863,132 @@ typedef struct IOleInPlaceSiteWindowlessVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleInPlaceSiteWindowless *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleInPlaceSiteWindowless *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleInPlaceSiteWindowless *This,
-        HWND *phwnd);
+                     IOleInPlaceSiteWindowless *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleInPlaceSiteWindowless *This,
-        WINBOOL fEnterMode);
+                     IOleInPlaceSiteWindowless *This,
+                     WINBOOL fEnterMode);
 
     /*** IOleInPlaceSite methods ***/
     HRESULT (STDMETHODCALLTYPE *CanInPlaceActivate)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *OnInPlaceActivate)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *OnUIActivate)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *GetWindowContext)(
-        IOleInPlaceSiteWindowless *This,
-        IOleInPlaceFrame **ppFrame,
-        IOleInPlaceUIWindow **ppDoc,
-        LPRECT lprcPosRect,
-        LPRECT lprcClipRect,
-        LPOLEINPLACEFRAMEINFO lpFrameInfo);
+                     IOleInPlaceSiteWindowless *This,
+                     IOleInPlaceFrame **ppFrame,
+                     IOleInPlaceUIWindow **ppDoc,
+                     LPRECT lprcPosRect,
+                     LPRECT lprcClipRect,
+                     LPOLEINPLACEFRAMEINFO lpFrameInfo);
 
     HRESULT (STDMETHODCALLTYPE *Scroll)(
-        IOleInPlaceSiteWindowless *This,
-        SIZE scrollExtant);
+                     IOleInPlaceSiteWindowless *This,
+                     SIZE scrollExtant);
 
     HRESULT (STDMETHODCALLTYPE *OnUIDeactivate)(
-        IOleInPlaceSiteWindowless *This,
-        WINBOOL fUndoable);
+                     IOleInPlaceSiteWindowless *This,
+                     WINBOOL fUndoable);
 
     HRESULT (STDMETHODCALLTYPE *OnInPlaceDeactivate)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *DiscardUndoState)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *DeactivateAndUndo)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *OnPosRectChange)(
-        IOleInPlaceSiteWindowless *This,
-        LPCRECT lprcPosRect);
+                     IOleInPlaceSiteWindowless *This,
+                     LPCRECT lprcPosRect);
 
     /*** IOleInPlaceSiteEx methods ***/
     HRESULT (STDMETHODCALLTYPE *OnInPlaceActivateEx)(
-        IOleInPlaceSiteWindowless *This,
-        WINBOOL *pfNoRedraw,
-        DWORD dwFlags);
+                     IOleInPlaceSiteWindowless *This,
+                     WINBOOL *pfNoRedraw,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *OnInPlaceDeactivateEx)(
-        IOleInPlaceSiteWindowless *This,
-        WINBOOL fNoRedraw);
+                     IOleInPlaceSiteWindowless *This,
+                     WINBOOL fNoRedraw);
 
     HRESULT (STDMETHODCALLTYPE *RequestUIActivate)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     /*** IOleInPlaceSiteWindowless methods ***/
     HRESULT (STDMETHODCALLTYPE *CanWindowlessActivate)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCapture)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *SetCapture)(
-        IOleInPlaceSiteWindowless *This,
-        WINBOOL fCapture);
+                     IOleInPlaceSiteWindowless *This,
+                     WINBOOL fCapture);
 
     HRESULT (STDMETHODCALLTYPE *GetFocus)(
-        IOleInPlaceSiteWindowless *This);
+                     IOleInPlaceSiteWindowless *This);
 
     HRESULT (STDMETHODCALLTYPE *SetFocus)(
-        IOleInPlaceSiteWindowless *This,
-        WINBOOL fFocus);
+                     IOleInPlaceSiteWindowless *This,
+                     WINBOOL fFocus);
 
     HRESULT (STDMETHODCALLTYPE *GetDC)(
-        IOleInPlaceSiteWindowless *This,
-        LPCRECT pRect,
-        DWORD grfFlags,
-        HDC *phDC);
+                     IOleInPlaceSiteWindowless *This,
+                     LPCRECT pRect,
+                     DWORD grfFlags,
+                     HDC *phDC);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseDC)(
-        IOleInPlaceSiteWindowless *This,
-        HDC hDC);
+                     IOleInPlaceSiteWindowless *This,
+                     HDC hDC);
 
     HRESULT (STDMETHODCALLTYPE *InvalidateRect)(
-        IOleInPlaceSiteWindowless *This,
-        LPCRECT pRect,
-        WINBOOL fErase);
+                     IOleInPlaceSiteWindowless *This,
+                     LPCRECT pRect,
+                     WINBOOL fErase);
 
     HRESULT (STDMETHODCALLTYPE *InvalidateRgn)(
-        IOleInPlaceSiteWindowless *This,
-        HRGN hRGN,
-        WINBOOL fErase);
+                     IOleInPlaceSiteWindowless *This,
+                     HRGN hRGN,
+                     WINBOOL fErase);
 
     HRESULT (STDMETHODCALLTYPE *ScrollRect)(
-        IOleInPlaceSiteWindowless *This,
-        INT dx,
-        INT dy,
-        LPCRECT pRectScroll,
-        LPCRECT pRectClip);
+                     IOleInPlaceSiteWindowless *This,
+                     INT dx,
+                     INT dy,
+                     LPCRECT pRectScroll,
+                     LPCRECT pRectClip);
 
     HRESULT (STDMETHODCALLTYPE *AdjustRect)(
-        IOleInPlaceSiteWindowless *This,
-        LPRECT prc);
+                     IOleInPlaceSiteWindowless *This,
+                     LPRECT prc);
 
     HRESULT (STDMETHODCALLTYPE *OnDefWindowMessage)(
-        IOleInPlaceSiteWindowless *This,
-        UINT msg,
-        WPARAM wParam,
-        LPARAM lParam,
-        LRESULT *plResult);
+                     IOleInPlaceSiteWindowless *This,
+                     UINT msg,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     LRESULT *plResult);
 
     END_INTERFACE
 } IOleInPlaceSiteWindowlessVtbl;
@@ -5194,33 +5194,33 @@ MIDL_INTERFACE("3af24292-0c96-11ce-a0cf-00aa00600ab8")
 IViewObjectEx : public IViewObject2
 {
     virtual HRESULT STDMETHODCALLTYPE GetRect(
-        DWORD dwAspect,
-        LPRECTL pRect) = 0;
+                     DWORD dwAspect,
+                     LPRECTL pRect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetViewStatus(
-        DWORD *pdwStatus) = 0;
+                     DWORD *pdwStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryHitPoint(
-        DWORD dwAspect,
-        LPCRECT pRectBounds,
-        POINT ptlLoc,
-        LONG lCloseHint,
-        DWORD *pHitResult) = 0;
+                     DWORD dwAspect,
+                     LPCRECT pRectBounds,
+                     POINT ptlLoc,
+                     LONG lCloseHint,
+                     DWORD *pHitResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryHitRect(
-        DWORD dwAspect,
-        LPCRECT pRectBounds,
-        LPCRECT pRectLoc,
-        LONG lCloseHint,
-        DWORD *pHitResult) = 0;
+                     DWORD dwAspect,
+                     LPCRECT pRectBounds,
+                     LPCRECT pRectLoc,
+                     LONG lCloseHint,
+                     DWORD *pHitResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNaturalExtent(
-        DWORD dwAspect,
-        LONG lindex,
-        DVTARGETDEVICE *ptd,
-        HDC hicTargetDev,
-        DVEXTENTINFO *pExtentInfo,
-        LPSIZEL pSizel) = 0;
+                     DWORD dwAspect,
+                     LONG lindex,
+                     DVTARGETDEVICE *ptd,
+                     HDC hicTargetDev,
+                     DVEXTENTINFO *pExtentInfo,
+                     LPSIZEL pSizel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5232,104 +5232,104 @@ typedef struct IViewObjectExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IViewObjectEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IViewObjectEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IViewObjectEx *This);
+                     IViewObjectEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IViewObjectEx *This);
+                     IViewObjectEx *This);
 
     /*** IViewObject methods ***/
     HRESULT (STDMETHODCALLTYPE *Draw)(
-        IViewObjectEx *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DVTARGETDEVICE *ptd,
-        HDC hdcTargetDev,
-        HDC hdcDraw,
-        LPCRECTL lprcBounds,
-        LPCRECTL lprcWBounds,
-        WINBOOL (STDMETHODCALLTYPE *pfnContinue)(ULONG_PTR dwContinue),
-        ULONG_PTR dwContinue);
+                     IViewObjectEx *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DVTARGETDEVICE *ptd,
+                     HDC hdcTargetDev,
+                     HDC hdcDraw,
+                     LPCRECTL lprcBounds,
+                     LPCRECTL lprcWBounds,
+                     WINBOOL (STDMETHODCALLTYPE *pfnContinue)(ULONG_PTR dwContinue),
+                     ULONG_PTR dwContinue);
 
     HRESULT (STDMETHODCALLTYPE *GetColorSet)(
-        IViewObjectEx *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DVTARGETDEVICE *ptd,
-        HDC hicTargetDev,
-        LOGPALETTE **ppColorSet);
+                     IViewObjectEx *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DVTARGETDEVICE *ptd,
+                     HDC hicTargetDev,
+                     LOGPALETTE **ppColorSet);
 
     HRESULT (STDMETHODCALLTYPE *Freeze)(
-        IViewObjectEx *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DWORD *pdwFreeze);
+                     IViewObjectEx *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DWORD *pdwFreeze);
 
     HRESULT (STDMETHODCALLTYPE *Unfreeze)(
-        IViewObjectEx *This,
-        DWORD dwFreeze);
+                     IViewObjectEx *This,
+                     DWORD dwFreeze);
 
     HRESULT (STDMETHODCALLTYPE *SetAdvise)(
-        IViewObjectEx *This,
-        DWORD aspects,
-        DWORD advf,
-        IAdviseSink *pAdvSink);
+                     IViewObjectEx *This,
+                     DWORD aspects,
+                     DWORD advf,
+                     IAdviseSink *pAdvSink);
 
     HRESULT (STDMETHODCALLTYPE *GetAdvise)(
-        IViewObjectEx *This,
-        DWORD *pAspects,
-        DWORD *pAdvf,
-        IAdviseSink **ppAdvSink);
+                     IViewObjectEx *This,
+                     DWORD *pAspects,
+                     DWORD *pAdvf,
+                     IAdviseSink **ppAdvSink);
 
     /*** IViewObject2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExtent)(
-        IViewObjectEx *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        DVTARGETDEVICE *ptd,
-        LPSIZEL lpsizel);
+                     IViewObjectEx *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     DVTARGETDEVICE *ptd,
+                     LPSIZEL lpsizel);
 
     /*** IViewObjectEx methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRect)(
-        IViewObjectEx *This,
-        DWORD dwAspect,
-        LPRECTL pRect);
+                     IViewObjectEx *This,
+                     DWORD dwAspect,
+                     LPRECTL pRect);
 
     HRESULT (STDMETHODCALLTYPE *GetViewStatus)(
-        IViewObjectEx *This,
-        DWORD *pdwStatus);
+                     IViewObjectEx *This,
+                     DWORD *pdwStatus);
 
     HRESULT (STDMETHODCALLTYPE *QueryHitPoint)(
-        IViewObjectEx *This,
-        DWORD dwAspect,
-        LPCRECT pRectBounds,
-        POINT ptlLoc,
-        LONG lCloseHint,
-        DWORD *pHitResult);
+                     IViewObjectEx *This,
+                     DWORD dwAspect,
+                     LPCRECT pRectBounds,
+                     POINT ptlLoc,
+                     LONG lCloseHint,
+                     DWORD *pHitResult);
 
     HRESULT (STDMETHODCALLTYPE *QueryHitRect)(
-        IViewObjectEx *This,
-        DWORD dwAspect,
-        LPCRECT pRectBounds,
-        LPCRECT pRectLoc,
-        LONG lCloseHint,
-        DWORD *pHitResult);
+                     IViewObjectEx *This,
+                     DWORD dwAspect,
+                     LPCRECT pRectBounds,
+                     LPCRECT pRectLoc,
+                     LONG lCloseHint,
+                     DWORD *pHitResult);
 
     HRESULT (STDMETHODCALLTYPE *GetNaturalExtent)(
-        IViewObjectEx *This,
-        DWORD dwAspect,
-        LONG lindex,
-        DVTARGETDEVICE *ptd,
-        HDC hicTargetDev,
-        DVEXTENTINFO *pExtentInfo,
-        LPSIZEL pSizel);
+                     IViewObjectEx *This,
+                     DWORD dwAspect,
+                     LONG lindex,
+                     DVTARGETDEVICE *ptd,
+                     HDC hicTargetDev,
+                     DVEXTENTINFO *pExtentInfo,
+                     LPSIZEL pSizel);
 
     END_INTERFACE
 } IViewObjectExVtbl;
@@ -5432,17 +5432,17 @@ MIDL_INTERFACE("894ad3b0-ef97-11ce-9bc9-00aa00608e01")
 IOleUndoUnit : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Do(
-        IOleUndoManager *pUndoManager) = 0;
+                     IOleUndoManager *pUndoManager) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        BSTR *pBstr) = 0;
+                     BSTR *pBstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUnitType(
-        CLSID *pClsid,
-        LONG *plID) = 0;
+                     CLSID *pClsid,
+                     LONG *plID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnNextAdd(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5454,32 +5454,32 @@ typedef struct IOleUndoUnitVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleUndoUnit *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleUndoUnit *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleUndoUnit *This);
+                     IOleUndoUnit *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleUndoUnit *This);
+                     IOleUndoUnit *This);
 
     /*** IOleUndoUnit methods ***/
     HRESULT (STDMETHODCALLTYPE *Do)(
-        IOleUndoUnit *This,
-        IOleUndoManager *pUndoManager);
+                     IOleUndoUnit *This,
+                     IOleUndoManager *pUndoManager);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IOleUndoUnit *This,
-        BSTR *pBstr);
+                     IOleUndoUnit *This,
+                     BSTR *pBstr);
 
     HRESULT (STDMETHODCALLTYPE *GetUnitType)(
-        IOleUndoUnit *This,
-        CLSID *pClsid,
-        LONG *plID);
+                     IOleUndoUnit *This,
+                     CLSID *pClsid,
+                     LONG *plID);
 
     HRESULT (STDMETHODCALLTYPE *OnNextAdd)(
-        IOleUndoUnit *This);
+                     IOleUndoUnit *This);
 
     END_INTERFACE
 } IOleUndoUnitVtbl;
@@ -5546,20 +5546,20 @@ MIDL_INTERFACE("a1faf330-ef97-11ce-9bc9-00aa00608e01")
 IOleParentUndoUnit : public IOleUndoUnit
 {
     virtual HRESULT STDMETHODCALLTYPE Open(
-        IOleParentUndoUnit *pPUU) = 0;
+                     IOleParentUndoUnit *pPUU) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        IOleParentUndoUnit *pPUU,
-        WINBOOL fCommit) = 0;
+                     IOleParentUndoUnit *pPUU,
+                     WINBOOL fCommit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IOleUndoUnit *pUU) = 0;
+                     IOleUndoUnit *pUU) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindUnit(
-        IOleUndoUnit *pUU) = 0;
+                     IOleUndoUnit *pUU) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParentState(
-        DWORD *pdwState) = 0;
+                     DWORD *pdwState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5571,54 +5571,54 @@ typedef struct IOleParentUndoUnitVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleParentUndoUnit *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleParentUndoUnit *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleParentUndoUnit *This);
+                     IOleParentUndoUnit *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleParentUndoUnit *This);
+                     IOleParentUndoUnit *This);
 
     /*** IOleUndoUnit methods ***/
     HRESULT (STDMETHODCALLTYPE *Do)(
-        IOleParentUndoUnit *This,
-        IOleUndoManager *pUndoManager);
+                     IOleParentUndoUnit *This,
+                     IOleUndoManager *pUndoManager);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IOleParentUndoUnit *This,
-        BSTR *pBstr);
+                     IOleParentUndoUnit *This,
+                     BSTR *pBstr);
 
     HRESULT (STDMETHODCALLTYPE *GetUnitType)(
-        IOleParentUndoUnit *This,
-        CLSID *pClsid,
-        LONG *plID);
+                     IOleParentUndoUnit *This,
+                     CLSID *pClsid,
+                     LONG *plID);
 
     HRESULT (STDMETHODCALLTYPE *OnNextAdd)(
-        IOleParentUndoUnit *This);
+                     IOleParentUndoUnit *This);
 
     /*** IOleParentUndoUnit methods ***/
     HRESULT (STDMETHODCALLTYPE *Open)(
-        IOleParentUndoUnit *This,
-        IOleParentUndoUnit *pPUU);
+                     IOleParentUndoUnit *This,
+                     IOleParentUndoUnit *pPUU);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IOleParentUndoUnit *This,
-        IOleParentUndoUnit *pPUU,
-        WINBOOL fCommit);
+                     IOleParentUndoUnit *This,
+                     IOleParentUndoUnit *pPUU,
+                     WINBOOL fCommit);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IOleParentUndoUnit *This,
-        IOleUndoUnit *pUU);
+                     IOleParentUndoUnit *This,
+                     IOleUndoUnit *pUU);
 
     HRESULT (STDMETHODCALLTYPE *FindUnit)(
-        IOleParentUndoUnit *This,
-        IOleUndoUnit *pUU);
+                     IOleParentUndoUnit *This,
+                     IOleUndoUnit *pUU);
 
     HRESULT (STDMETHODCALLTYPE *GetParentState)(
-        IOleParentUndoUnit *This,
-        DWORD *pdwState);
+                     IOleParentUndoUnit *This,
+                     DWORD *pdwState);
 
     END_INTERFACE
 } IOleParentUndoUnitVtbl;
@@ -5707,18 +5707,18 @@ MIDL_INTERFACE("b3e7c340-ef97-11ce-9bc9-00aa00608e01")
 IEnumOleUndoUnits : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cElt,
-        IOleUndoUnit **rgElt,
-        ULONG *pcEltFetched) = 0;
+                     ULONG cElt,
+                     IOleUndoUnit **rgElt,
+                     ULONG *pcEltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cElt) = 0;
+                     ULONG cElt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumOleUndoUnits **ppEnum) = 0;
+                     IEnumOleUndoUnits **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5730,33 +5730,33 @@ typedef struct IEnumOleUndoUnitsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumOleUndoUnits *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumOleUndoUnits *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumOleUndoUnits *This);
+                     IEnumOleUndoUnits *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumOleUndoUnits *This);
+                     IEnumOleUndoUnits *This);
 
     /*** IEnumOleUndoUnits methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumOleUndoUnits *This,
-        ULONG cElt,
-        IOleUndoUnit **rgElt,
-        ULONG *pcEltFetched);
+                     IEnumOleUndoUnits *This,
+                     ULONG cElt,
+                     IOleUndoUnit **rgElt,
+                     ULONG *pcEltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumOleUndoUnits *This,
-        ULONG cElt);
+                     IEnumOleUndoUnits *This,
+                     ULONG cElt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumOleUndoUnits *This);
+                     IEnumOleUndoUnits *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumOleUndoUnits *This,
-        IEnumOleUndoUnits **ppEnum);
+                     IEnumOleUndoUnits *This,
+                     IEnumOleUndoUnits **ppEnum);
 
     END_INTERFACE
 } IEnumOleUndoUnitsVtbl;
@@ -5845,41 +5845,41 @@ MIDL_INTERFACE("d001f200-ef97-11ce-9bc9-00aa00608e01")
 IOleUndoManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Open(
-        IOleParentUndoUnit *pPUU) = 0;
+                     IOleParentUndoUnit *pPUU) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        IOleParentUndoUnit *pPUU,
-        WINBOOL fCommit) = 0;
+                     IOleParentUndoUnit *pPUU,
+                     WINBOOL fCommit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IOleUndoUnit *pUU) = 0;
+                     IOleUndoUnit *pUU) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOpenParentState(
-        DWORD *pdwState) = 0;
+                     DWORD *pdwState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DiscardFrom(
-        IOleUndoUnit *pUU) = 0;
+                     IOleUndoUnit *pUU) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UndoTo(
-        IOleUndoUnit *pUU) = 0;
+                     IOleUndoUnit *pUU) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RedoTo(
-        IOleUndoUnit *pUU) = 0;
+                     IOleUndoUnit *pUU) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumUndoable(
-        IEnumOleUndoUnits **ppEnum) = 0;
+                     IEnumOleUndoUnits **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumRedoable(
-        IEnumOleUndoUnits **ppEnum) = 0;
+                     IEnumOleUndoUnits **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastUndoDescription(
-        BSTR *pBstr) = 0;
+                     BSTR *pBstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastRedoDescription(
-        BSTR *pBstr) = 0;
+                     BSTR *pBstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Enable(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5891,65 +5891,65 @@ typedef struct IOleUndoManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleUndoManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleUndoManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleUndoManager *This);
+                     IOleUndoManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleUndoManager *This);
+                     IOleUndoManager *This);
 
     /*** IOleUndoManager methods ***/
     HRESULT (STDMETHODCALLTYPE *Open)(
-        IOleUndoManager *This,
-        IOleParentUndoUnit *pPUU);
+                     IOleUndoManager *This,
+                     IOleParentUndoUnit *pPUU);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IOleUndoManager *This,
-        IOleParentUndoUnit *pPUU,
-        WINBOOL fCommit);
+                     IOleUndoManager *This,
+                     IOleParentUndoUnit *pPUU,
+                     WINBOOL fCommit);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IOleUndoManager *This,
-        IOleUndoUnit *pUU);
+                     IOleUndoManager *This,
+                     IOleUndoUnit *pUU);
 
     HRESULT (STDMETHODCALLTYPE *GetOpenParentState)(
-        IOleUndoManager *This,
-        DWORD *pdwState);
+                     IOleUndoManager *This,
+                     DWORD *pdwState);
 
     HRESULT (STDMETHODCALLTYPE *DiscardFrom)(
-        IOleUndoManager *This,
-        IOleUndoUnit *pUU);
+                     IOleUndoManager *This,
+                     IOleUndoUnit *pUU);
 
     HRESULT (STDMETHODCALLTYPE *UndoTo)(
-        IOleUndoManager *This,
-        IOleUndoUnit *pUU);
+                     IOleUndoManager *This,
+                     IOleUndoUnit *pUU);
 
     HRESULT (STDMETHODCALLTYPE *RedoTo)(
-        IOleUndoManager *This,
-        IOleUndoUnit *pUU);
+                     IOleUndoManager *This,
+                     IOleUndoUnit *pUU);
 
     HRESULT (STDMETHODCALLTYPE *EnumUndoable)(
-        IOleUndoManager *This,
-        IEnumOleUndoUnits **ppEnum);
+                     IOleUndoManager *This,
+                     IEnumOleUndoUnits **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumRedoable)(
-        IOleUndoManager *This,
-        IEnumOleUndoUnits **ppEnum);
+                     IOleUndoManager *This,
+                     IEnumOleUndoUnits **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetLastUndoDescription)(
-        IOleUndoManager *This,
-        BSTR *pBstr);
+                     IOleUndoManager *This,
+                     BSTR *pBstr);
 
     HRESULT (STDMETHODCALLTYPE *GetLastRedoDescription)(
-        IOleUndoManager *This,
-        BSTR *pBstr);
+                     IOleUndoManager *This,
+                     BSTR *pBstr);
 
     HRESULT (STDMETHODCALLTYPE *Enable)(
-        IOleUndoManager *This,
-        WINBOOL fEnable);
+                     IOleUndoManager *This,
+                     WINBOOL fEnable);
 
     END_INTERFACE
 } IOleUndoManagerVtbl;
@@ -6054,20 +6054,20 @@ MIDL_INTERFACE("55980ba0-35aa-11cf-b671-00aa004cd6d8")
 IPointerInactive : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetActivationPolicy(
-        DWORD *pdwPolicy) = 0;
+                     DWORD *pdwPolicy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnInactiveMouseMove(
-        LPCRECT pRectBounds,
-        LONG x,
-        LONG y,
-        DWORD grfKeyState) = 0;
+                     LPCRECT pRectBounds,
+                     LONG x,
+                     LONG y,
+                     DWORD grfKeyState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnInactiveSetCursor(
-        LPCRECT pRectBounds,
-        LONG x,
-        LONG y,
-        DWORD dwMouseMsg,
-        WINBOOL fSetAlways) = 0;
+                     LPCRECT pRectBounds,
+                     LONG x,
+                     LONG y,
+                     DWORD dwMouseMsg,
+                     WINBOOL fSetAlways) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6079,35 +6079,35 @@ typedef struct IPointerInactiveVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPointerInactive *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPointerInactive *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPointerInactive *This);
+                     IPointerInactive *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPointerInactive *This);
+                     IPointerInactive *This);
 
     /*** IPointerInactive methods ***/
     HRESULT (STDMETHODCALLTYPE *GetActivationPolicy)(
-        IPointerInactive *This,
-        DWORD *pdwPolicy);
+                     IPointerInactive *This,
+                     DWORD *pdwPolicy);
 
     HRESULT (STDMETHODCALLTYPE *OnInactiveMouseMove)(
-        IPointerInactive *This,
-        LPCRECT pRectBounds,
-        LONG x,
-        LONG y,
-        DWORD grfKeyState);
+                     IPointerInactive *This,
+                     LPCRECT pRectBounds,
+                     LONG x,
+                     LONG y,
+                     DWORD grfKeyState);
 
     HRESULT (STDMETHODCALLTYPE *OnInactiveSetCursor)(
-        IPointerInactive *This,
-        LPCRECT pRectBounds,
-        LONG x,
-        LONG y,
-        DWORD dwMouseMsg,
-        WINBOOL fSetAlways);
+                     IPointerInactive *This,
+                     LPCRECT pRectBounds,
+                     LONG x,
+                     LONG y,
+                     DWORD dwMouseMsg,
+                     WINBOOL fSetAlways);
 
     END_INTERFACE
 } IPointerInactiveVtbl;
@@ -6170,11 +6170,11 @@ MIDL_INTERFACE("fc4801a3-2ba9-11cf-a229-00aa003d7352")
 IObjectWithSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetSite(
-        IUnknown *pUnkSite) = 0;
+                     IUnknown *pUnkSite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSite(
-        REFIID riid,
-        void **ppvSite) = 0;
+                     REFIID riid,
+                     void **ppvSite) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6186,25 +6186,25 @@ typedef struct IObjectWithSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectWithSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectWithSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectWithSite *This);
+                     IObjectWithSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectWithSite *This);
+                     IObjectWithSite *This);
 
     /*** IObjectWithSite methods ***/
     HRESULT (STDMETHODCALLTYPE *SetSite)(
-        IObjectWithSite *This,
-        IUnknown *pUnkSite);
+                     IObjectWithSite *This,
+                     IUnknown *pUnkSite);
 
     HRESULT (STDMETHODCALLTYPE *GetSite)(
-        IObjectWithSite *This,
-        REFIID riid,
-        void **ppvSite);
+                     IObjectWithSite *This,
+                     REFIID riid,
+                     void **ppvSite);
 
     END_INTERFACE
 } IObjectWithSiteVtbl;
@@ -6279,22 +6279,22 @@ MIDL_INTERFACE("376bd3aa-3845-101b-84ed-08002b2ec713")
 IPerPropertyBrowsing : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDisplayString(
-        DISPID dispID,
-        BSTR *pBstr) = 0;
+                     DISPID dispID,
+                     BSTR *pBstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MapPropertyToPage(
-        DISPID dispID,
-        CLSID *pClsid) = 0;
+                     DISPID dispID,
+                     CLSID *pClsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPredefinedStrings(
-        DISPID dispID,
-        CALPOLESTR *pCaStringsOut,
-        CADWORD *pCaCookiesOut) = 0;
+                     DISPID dispID,
+                     CALPOLESTR *pCaStringsOut,
+                     CADWORD *pCaCookiesOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPredefinedValue(
-        DISPID dispID,
-        DWORD dwCookie,
-        VARIANT *pVarOut) = 0;
+                     DISPID dispID,
+                     DWORD dwCookie,
+                     VARIANT *pVarOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6306,38 +6306,38 @@ typedef struct IPerPropertyBrowsingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPerPropertyBrowsing *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPerPropertyBrowsing *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPerPropertyBrowsing *This);
+                     IPerPropertyBrowsing *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPerPropertyBrowsing *This);
+                     IPerPropertyBrowsing *This);
 
     /*** IPerPropertyBrowsing methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDisplayString)(
-        IPerPropertyBrowsing *This,
-        DISPID dispID,
-        BSTR *pBstr);
+                     IPerPropertyBrowsing *This,
+                     DISPID dispID,
+                     BSTR *pBstr);
 
     HRESULT (STDMETHODCALLTYPE *MapPropertyToPage)(
-        IPerPropertyBrowsing *This,
-        DISPID dispID,
-        CLSID *pClsid);
+                     IPerPropertyBrowsing *This,
+                     DISPID dispID,
+                     CLSID *pClsid);
 
     HRESULT (STDMETHODCALLTYPE *GetPredefinedStrings)(
-        IPerPropertyBrowsing *This,
-        DISPID dispID,
-        CALPOLESTR *pCaStringsOut,
-        CADWORD *pCaCookiesOut);
+                     IPerPropertyBrowsing *This,
+                     DISPID dispID,
+                     CALPOLESTR *pCaStringsOut,
+                     CADWORD *pCaCookiesOut);
 
     HRESULT (STDMETHODCALLTYPE *GetPredefinedValue)(
-        IPerPropertyBrowsing *This,
-        DISPID dispID,
-        DWORD dwCookie,
-        VARIANT *pVarOut);
+                     IPerPropertyBrowsing *This,
+                     DISPID dispID,
+                     DWORD dwCookie,
+                     VARIANT *pVarOut);
 
     END_INTERFACE
 } IPerPropertyBrowsingVtbl;
@@ -6425,31 +6425,31 @@ MIDL_INTERFACE("22f55882-280b-11d0-a8a9-00a0c90c2004")
 IPropertyBag2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Read(
-        ULONG cProperties,
-        PROPBAG2 *pPropBag,
-        IErrorLog *pErrLog,
-        VARIANT *pvarValue,
-        HRESULT *phrError) = 0;
+                     ULONG cProperties,
+                     PROPBAG2 *pPropBag,
+                     IErrorLog *pErrLog,
+                     VARIANT *pvarValue,
+                     HRESULT *phrError) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Write(
-        ULONG cProperties,
-        PROPBAG2 *pPropBag,
-        VARIANT *pvarValue) = 0;
+                     ULONG cProperties,
+                     PROPBAG2 *pPropBag,
+                     VARIANT *pvarValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CountProperties(
-        ULONG *pcProperties) = 0;
+                     ULONG *pcProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyInfo(
-        ULONG iProperty,
-        ULONG cProperties,
-        PROPBAG2 *pPropBag,
-        ULONG *pcProperties) = 0;
+                     ULONG iProperty,
+                     ULONG cProperties,
+                     PROPBAG2 *pPropBag,
+                     ULONG *pcProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadObject(
-        LPCOLESTR pstrName,
-        DWORD dwHint,
-        IUnknown *pUnkObject,
-        IErrorLog *pErrLog) = 0;
+                     LPCOLESTR pstrName,
+                     DWORD dwHint,
+                     IUnknown *pUnkObject,
+                     IErrorLog *pErrLog) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6461,48 +6461,48 @@ typedef struct IPropertyBag2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPropertyBag2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPropertyBag2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPropertyBag2 *This);
+                     IPropertyBag2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPropertyBag2 *This);
+                     IPropertyBag2 *This);
 
     /*** IPropertyBag2 methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IPropertyBag2 *This,
-        ULONG cProperties,
-        PROPBAG2 *pPropBag,
-        IErrorLog *pErrLog,
-        VARIANT *pvarValue,
-        HRESULT *phrError);
+                     IPropertyBag2 *This,
+                     ULONG cProperties,
+                     PROPBAG2 *pPropBag,
+                     IErrorLog *pErrLog,
+                     VARIANT *pvarValue,
+                     HRESULT *phrError);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IPropertyBag2 *This,
-        ULONG cProperties,
-        PROPBAG2 *pPropBag,
-        VARIANT *pvarValue);
+                     IPropertyBag2 *This,
+                     ULONG cProperties,
+                     PROPBAG2 *pPropBag,
+                     VARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *CountProperties)(
-        IPropertyBag2 *This,
-        ULONG *pcProperties);
+                     IPropertyBag2 *This,
+                     ULONG *pcProperties);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyInfo)(
-        IPropertyBag2 *This,
-        ULONG iProperty,
-        ULONG cProperties,
-        PROPBAG2 *pPropBag,
-        ULONG *pcProperties);
+                     IPropertyBag2 *This,
+                     ULONG iProperty,
+                     ULONG cProperties,
+                     PROPBAG2 *pPropBag,
+                     ULONG *pcProperties);
 
     HRESULT (STDMETHODCALLTYPE *LoadObject)(
-        IPropertyBag2 *This,
-        LPCOLESTR pstrName,
-        DWORD dwHint,
-        IUnknown *pUnkObject,
-        IErrorLog *pErrLog);
+                     IPropertyBag2 *This,
+                     LPCOLESTR pstrName,
+                     DWORD dwHint,
+                     IUnknown *pUnkObject,
+                     IErrorLog *pErrLog);
 
     END_INTERFACE
 } IPropertyBag2Vtbl;
@@ -6575,19 +6575,19 @@ MIDL_INTERFACE("22f55881-280b-11d0-a8a9-00a0c90c2004")
 IPersistPropertyBag2 : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        IPropertyBag2 *pPropBag,
-        IErrorLog *pErrLog) = 0;
+                     IPropertyBag2 *pPropBag,
+                     IErrorLog *pErrLog) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        IPropertyBag2 *pPropBag,
-        WINBOOL fClearDirty,
-        WINBOOL fSaveAllProperties) = 0;
+                     IPropertyBag2 *pPropBag,
+                     WINBOOL fClearDirty,
+                     WINBOOL fSaveAllProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDirty(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6599,38 +6599,38 @@ typedef struct IPersistPropertyBag2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistPropertyBag2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistPropertyBag2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistPropertyBag2 *This);
+                     IPersistPropertyBag2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistPropertyBag2 *This);
+                     IPersistPropertyBag2 *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistPropertyBag2 *This,
-        CLSID *pClassID);
+                     IPersistPropertyBag2 *This,
+                     CLSID *pClassID);
 
     /*** IPersistPropertyBag2 methods ***/
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IPersistPropertyBag2 *This);
+                     IPersistPropertyBag2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistPropertyBag2 *This,
-        IPropertyBag2 *pPropBag,
-        IErrorLog *pErrLog);
+                     IPersistPropertyBag2 *This,
+                     IPropertyBag2 *pPropBag,
+                     IErrorLog *pErrLog);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistPropertyBag2 *This,
-        IPropertyBag2 *pPropBag,
-        WINBOOL fClearDirty,
-        WINBOOL fSaveAllProperties);
+                     IPersistPropertyBag2 *This,
+                     IPropertyBag2 *pPropBag,
+                     WINBOOL fClearDirty,
+                     WINBOOL fSaveAllProperties);
 
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        IPersistPropertyBag2 *This);
+                     IPersistPropertyBag2 *This);
 
     END_INTERFACE
 } IPersistPropertyBag2Vtbl;
@@ -6705,7 +6705,7 @@ MIDL_INTERFACE("3af24290-0c96-11ce-a0cf-00aa00600ab8")
 IAdviseSinkEx : public IAdviseSink
 {
     virtual void STDMETHODCALLTYPE OnViewStatusChange(
-        DWORD dwViewStatus) = 0;
+                     DWORD dwViewStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6717,41 +6717,41 @@ typedef struct IAdviseSinkExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAdviseSinkEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAdviseSinkEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAdviseSinkEx *This);
+                     IAdviseSinkEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAdviseSinkEx *This);
+                     IAdviseSinkEx *This);
 
     /*** IAdviseSink methods ***/
     void (STDMETHODCALLTYPE *OnDataChange)(
-        IAdviseSinkEx *This,
-        FORMATETC *pFormatetc,
-        STGMEDIUM *pStgmed);
+                     IAdviseSinkEx *This,
+                     FORMATETC *pFormatetc,
+                     STGMEDIUM *pStgmed);
 
     void (STDMETHODCALLTYPE *OnViewChange)(
-        IAdviseSinkEx *This,
-        DWORD dwAspect,
-        LONG lindex);
+                     IAdviseSinkEx *This,
+                     DWORD dwAspect,
+                     LONG lindex);
 
     void (STDMETHODCALLTYPE *OnRename)(
-        IAdviseSinkEx *This,
-        IMoniker *pmk);
+                     IAdviseSinkEx *This,
+                     IMoniker *pmk);
 
     void (STDMETHODCALLTYPE *OnSave)(
-        IAdviseSinkEx *This);
+                     IAdviseSinkEx *This);
 
     void (STDMETHODCALLTYPE *OnClose)(
-        IAdviseSinkEx *This);
+                     IAdviseSinkEx *This);
 
     /*** IAdviseSinkEx methods ***/
     void (STDMETHODCALLTYPE *OnViewStatusChange)(
-        IAdviseSinkEx *This,
-        DWORD dwViewStatus);
+                     IAdviseSinkEx *This,
+                     DWORD dwViewStatus);
 
     END_INTERFACE
 } IAdviseSinkExVtbl;
@@ -6885,14 +6885,14 @@ MIDL_INTERFACE("cf51ed10-62fe-11cf-bf86-00a0c9034836")
 IQuickActivate : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QuickActivate(
-        QACONTAINER *pQaContainer,
-        QACONTROL *pQaControl) = 0;
+                     QACONTAINER *pQaContainer,
+                     QACONTROL *pQaControl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContentExtent(
-        LPSIZEL pSizel) = 0;
+                     LPSIZEL pSizel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContentExtent(
-        LPSIZEL pSizel) = 0;
+                     LPSIZEL pSizel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6904,29 +6904,29 @@ typedef struct IQuickActivateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IQuickActivate *This,
-        REFIID riid,
-        void **ppvObject);
+                     IQuickActivate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IQuickActivate *This);
+                     IQuickActivate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IQuickActivate *This);
+                     IQuickActivate *This);
 
     /*** IQuickActivate methods ***/
     HRESULT (STDMETHODCALLTYPE *QuickActivate)(
-        IQuickActivate *This,
-        QACONTAINER *pQaContainer,
-        QACONTROL *pQaControl);
+                     IQuickActivate *This,
+                     QACONTAINER *pQaContainer,
+                     QACONTROL *pQaControl);
 
     HRESULT (STDMETHODCALLTYPE *SetContentExtent)(
-        IQuickActivate *This,
-        LPSIZEL pSizel);
+                     IQuickActivate *This,
+                     LPSIZEL pSizel);
 
     HRESULT (STDMETHODCALLTYPE *GetContentExtent)(
-        IQuickActivate *This,
-        LPSIZEL pSizel);
+                     IQuickActivate *This,
+                     LPSIZEL pSizel);
 
     END_INTERFACE
 } IQuickActivateVtbl;
@@ -6994,42 +6994,42 @@ HRESULT __RPC_STUB IQuickActivate_QuickActivate_Stub(
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER HACCEL_UserSize     (ULONG *, ULONG, HACCEL *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER HACCEL_UserSize     (ULONG *, ULONG, HACCEL *);
 unsigned char * __RPC_USER HACCEL_UserMarshal  (ULONG *, unsigned char *, HACCEL *);
 unsigned char * __RPC_USER HACCEL_UserUnmarshal(ULONG *, unsigned char *, HACCEL *);
-void            __RPC_USER HACCEL_UserFree     (ULONG *, HACCEL *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER HACCEL_UserFree     (ULONG *, HACCEL *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
-ULONG           __RPC_USER HFONT_UserSize     (ULONG *, ULONG, HFONT *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+ULONG                        __RPC_USER HFONT_UserSize     (ULONG *, ULONG, HFONT *);
 unsigned char * __RPC_USER HFONT_UserMarshal  (ULONG *, unsigned char *, HFONT *);
 unsigned char * __RPC_USER HFONT_UserUnmarshal(ULONG *, unsigned char *, HFONT *);
-void            __RPC_USER HFONT_UserFree     (ULONG *, HFONT *);
-ULONG           __RPC_USER HDC_UserSize     (ULONG *, ULONG, HDC *);
+void                                      __RPC_USER HFONT_UserFree     (ULONG *, HFONT *);
+ULONG                        __RPC_USER HDC_UserSize     (ULONG *, ULONG, HDC *);
 unsigned char * __RPC_USER HDC_UserMarshal  (ULONG *, unsigned char *, HDC *);
 unsigned char * __RPC_USER HDC_UserUnmarshal(ULONG *, unsigned char *, HDC *);
-void            __RPC_USER HDC_UserFree     (ULONG *, HDC *);
-ULONG           __RPC_USER HRGN_UserSize     (ULONG *, ULONG, HRGN *);
+void                                      __RPC_USER HDC_UserFree     (ULONG *, HDC *);
+ULONG                        __RPC_USER HRGN_UserSize     (ULONG *, ULONG, HRGN *);
 unsigned char * __RPC_USER HRGN_UserMarshal  (ULONG *, unsigned char *, HRGN *);
 unsigned char * __RPC_USER HRGN_UserUnmarshal(ULONG *, unsigned char *, HRGN *);
-void            __RPC_USER HRGN_UserFree     (ULONG *, HRGN *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER HRGN_UserFree     (ULONG *, HRGN *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
-ULONG           __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+ULONG                        __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserMarshal  (ULONG *, unsigned char *, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserUnmarshal(ULONG *, unsigned char *, CLIPFORMAT *);
-void            __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
-ULONG           __RPC_USER HPALETTE_UserSize     (ULONG *, ULONG, HPALETTE *);
+void                                      __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
+ULONG                        __RPC_USER HPALETTE_UserSize     (ULONG *, ULONG, HPALETTE *);
 unsigned char * __RPC_USER HPALETTE_UserMarshal  (ULONG *, unsigned char *, HPALETTE *);
 unsigned char * __RPC_USER HPALETTE_UserUnmarshal(ULONG *, unsigned char *, HPALETTE *);
-void            __RPC_USER HPALETTE_UserFree     (ULONG *, HPALETTE *);
+void                                      __RPC_USER HPALETTE_UserFree     (ULONG *, HPALETTE *);
 
 /* End additional prototypes */
 

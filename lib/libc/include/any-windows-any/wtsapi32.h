@@ -84,31 +84,31 @@ extern "C" {
 #define WTS_PROTOCOL_TYPE_RDP 2
 
   typedef enum _WTS_INFO_CLASS {
-    WTSInitialProgram       = 0,
-    WTSApplicationName      = 1,
+    WTSInitialProgram                    = 0,
+    WTSApplicationName                   = 1,
     WTSWorkingDirectory     = 2,
-    WTSOEMId                = 3,
-    WTSSessionId            = 4,
-    WTSUserName             = 5,
-    WTSWinStationName       = 6,
-    WTSDomainName           = 7,
-    WTSConnectState         = 8,
+    WTSOEMId                                          = 3,
+    WTSSessionId                                      = 4,
+    WTSUserName                                       = 5,
+    WTSWinStationName                    = 6,
+    WTSDomainName                        = 7,
+    WTSConnectState                      = 8,
     WTSClientBuildNumber    = 9,
-    WTSClientName           = 10,
-    WTSClientDirectory      = 11,
-    WTSClientProductId      = 12,
+    WTSClientName                        = 10,
+    WTSClientDirectory                   = 11,
+    WTSClientProductId                   = 12,
     WTSClientHardwareId     = 13,
-    WTSClientAddress        = 14,
-    WTSClientDisplay        = 15,
+    WTSClientAddress                     = 14,
+    WTSClientDisplay                     = 15,
     WTSClientProtocolType   = 16,
-    WTSIdleTime             = 17,
-    WTSLogonTime            = 18,
-    WTSIncomingBytes        = 19,
-    WTSOutgoingBytes        = 20,
-    WTSIncomingFrames       = 21,
-    WTSOutgoingFrames       = 22,
-    WTSClientInfo           = 23,
-    WTSSessionInfo          = 24
+    WTSIdleTime                                       = 17,
+    WTSLogonTime                                      = 18,
+    WTSIncomingBytes                     = 19,
+    WTSOutgoingBytes                     = 20,
+    WTSIncomingFrames                    = 21,
+    WTSOutgoingFrames                    = 22,
+    WTSClientInfo                        = 23,
+    WTSSessionInfo                       = 24
   } WTS_INFO_CLASS;
 
   typedef struct _WTS_CLIENT_ADDRESS {
@@ -196,11 +196,11 @@ extern "C" {
   WINBOOL WINAPI WTSQueryUserToken(ULONG SessionId,PHANDLE phToken);
 
 
-#define USERNAME_LENGTH         20
-#define CLIENTNAME_LENGTH       20
+#define USERNAME_LENGTH                      20
+#define CLIENTNAME_LENGTH                    20
 #define CLIENTADDRESS_LENGTH    30
 #define WINSTATIONNAME_LENGTH   32
-#define DOMAIN_LENGTH           17
+#define DOMAIN_LENGTH                        17
 
 #if (_WIN32_WINNT >= 0x0600)
 typedef struct _WTSCLIENTW {
@@ -252,40 +252,40 @@ __MINGW_TYPEDEF_AW(PWTSCLIENT)
 
 typedef struct _WTSINFOW {
   WTS_CONNECTSTATE_CLASS State;
-  DWORD                  SessionId;
-  DWORD                  IncomingBytes;
-  DWORD                  OutgoingBytes;
-  DWORD                  IncomingFrames;
-  DWORD                  OutgoingFrames;
-  DWORD                  IncomingCompressedBytes;
-  DWORD                  OutgoingCompressedBytes;
-  WCHAR                  WinStationName[WINSTATIONNAME_LENGTH];
-  WCHAR                  Domain[DOMAIN_LENGTH];
-  WCHAR                  UserName[USERNAME_LENGTH+1];
-  LARGE_INTEGER          ConnectTime;
-  LARGE_INTEGER          DisconnectTime;
-  LARGE_INTEGER          LastInputTime;
-  LARGE_INTEGER          LogonTime;
-  LARGE_INTEGER          CurrentTime;
+  DWORD                                                         SessionId;
+  DWORD                                                         IncomingBytes;
+  DWORD                                                         OutgoingBytes;
+  DWORD                                                         IncomingFrames;
+  DWORD                                                         OutgoingFrames;
+  DWORD                                                         IncomingCompressedBytes;
+  DWORD                                                         OutgoingCompressedBytes;
+  WCHAR                                                         WinStationName[WINSTATIONNAME_LENGTH];
+  WCHAR                                                         Domain[DOMAIN_LENGTH];
+  WCHAR                                                         UserName[USERNAME_LENGTH+1];
+  LARGE_INTEGER                       ConnectTime;
+  LARGE_INTEGER                       DisconnectTime;
+  LARGE_INTEGER                       LastInputTime;
+  LARGE_INTEGER                       LogonTime;
+  LARGE_INTEGER                       CurrentTime;
 } WTSINFOW, *PWTSINFOW;
 
 typedef struct _WTSINFOA {
   WTS_CONNECTSTATE_CLASS State;
-  DWORD                  SessionId;
-  DWORD                  IncomingBytes;
-  DWORD                  OutgoingBytes;
-  DWORD                  IncomingFrames;
-  DWORD                  OutgoingFrames;
-  DWORD                  IncomingCompressedBytes;
-  DWORD                  OutgoingCompressedBytes;
-  CHAR                   WinStationName[WINSTATIONNAME_LENGTH];
-  CHAR                   Domain[DOMAIN_LENGTH];
-  CHAR                   UserName[USERNAME_LENGTH+1];
-  LARGE_INTEGER          ConnectTime;
-  LARGE_INTEGER          DisconnectTime;
-  LARGE_INTEGER          LastInputTime;
-  LARGE_INTEGER          LogonTime;
-  LARGE_INTEGER          CurrentTime;
+  DWORD                                                         SessionId;
+  DWORD                                                         IncomingBytes;
+  DWORD                                                         OutgoingBytes;
+  DWORD                                                         IncomingFrames;
+  DWORD                                                         OutgoingFrames;
+  DWORD                                                         IncomingCompressedBytes;
+  DWORD                                                         OutgoingCompressedBytes;
+  CHAR                                                          WinStationName[WINSTATIONNAME_LENGTH];
+  CHAR                                                          Domain[DOMAIN_LENGTH];
+  CHAR                                                          UserName[USERNAME_LENGTH+1];
+  LARGE_INTEGER                       ConnectTime;
+  LARGE_INTEGER                       DisconnectTime;
+  LARGE_INTEGER                       LastInputTime;
+  LARGE_INTEGER                       LogonTime;
+  LARGE_INTEGER                       CurrentTime;
 } WTSINFOA, *PWTSINFOA;
 
 __MINGW_TYPEDEF_AW(WTSINFO)

@@ -227,12 +227,12 @@ pub const SOCK_RDM = ws2_32.SOCK_RDM;
 pub const SOCK_SEQPACKET = ws2_32.SOCK_SEQPACKET;
 
 /// WARNING: this flag is not supported by windows socket functions directly,
-///          it is only supported by std.os.socket. Be sure that this value does
-///          not share any bits with any of the SOCK_* values.
+///                       it is only supported by std.os.socket. Be sure that this value does
+///                       not share any bits with any of the SOCK_* values.
 pub const SOCK_CLOEXEC = 0x10000;
 /// WARNING: this flag is not supported by windows socket functions directly,
-///          it is only supported by std.os.socket. Be sure that this value does
-///          not share any bits with any of the SOCK_* values.
+///                       it is only supported by std.os.socket. Be sure that this value does
+///                       not share any bits with any of the SOCK_* values.
 pub const SOCK_NONBLOCK = 0x20000;
 
 pub const IPPROTO_ICMP = ws2_32.IPPROTO_ICMP;

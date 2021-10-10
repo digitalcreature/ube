@@ -388,7 +388,7 @@ extern "C" {
     unsigned __LONG32 ImpersonationType;
     unsigned __LONG32 AdditionalSecurityInfoType;
     union {
-      RPC_HTTP_TRANSPORT_CREDENTIALS_W *HttpCredentials;
+                   RPC_HTTP_TRANSPORT_CREDENTIALS_W *HttpCredentials;
     } u;
   } RPC_SECURITY_QOS_V2_W,*PRPC_SECURITY_QOS_V2_W;
 
@@ -399,7 +399,7 @@ extern "C" {
     unsigned __LONG32 ImpersonationType;
     unsigned __LONG32 AdditionalSecurityInfoType;
     union {
-      RPC_HTTP_TRANSPORT_CREDENTIALS_A *HttpCredentials;
+                   RPC_HTTP_TRANSPORT_CREDENTIALS_A *HttpCredentials;
     } u;
   } RPC_SECURITY_QOS_V2_A,*PRPC_SECURITY_QOS_V2_A;
 
@@ -412,7 +412,7 @@ extern "C" {
     unsigned __LONG32 ImpersonationType;
     unsigned __LONG32 AdditionalSecurityInfoType;
     union {
-      RPC_HTTP_TRANSPORT_CREDENTIALS_W *HttpCredentials;
+                   RPC_HTTP_TRANSPORT_CREDENTIALS_W *HttpCredentials;
     } u;
     void *Sid;
   } RPC_SECURITY_QOS_V3_W,*PRPC_SECURITY_QOS_V3_W;
@@ -424,7 +424,7 @@ extern "C" {
     unsigned __LONG32 ImpersonationType;
     unsigned __LONG32 AdditionalSecurityInfoType;
     union {
-      RPC_HTTP_TRANSPORT_CREDENTIALS_A *HttpCredentials;
+                   RPC_HTTP_TRANSPORT_CREDENTIALS_A *HttpCredentials;
     } u;
     void *Sid;
   } RPC_SECURITY_QOS_V3_A,*PRPC_SECURITY_QOS_V3_A;
@@ -575,12 +575,12 @@ typedef struct _RPC_BINDING_HANDLE_OPTIONS_V1 {
 } RPC_BINDING_HANDLE_OPTIONS_V1, RPC_BINDING_HANDLE_OPTIONS;
 
 typedef struct {
-  unsigned __LONG32       Version;
-  unsigned short          *ServerPrincName;
-  unsigned __LONG32       AuthnLevel;
-  unsigned __LONG32       AuthnSvc;
+  unsigned __LONG32                    Version;
+  unsigned short                       *ServerPrincName;
+  unsigned __LONG32                    AuthnLevel;
+  unsigned __LONG32                    AuthnSvc;
   SEC_WINNT_AUTH_IDENTITY *AuthIdentity;
-  RPC_SECURITY_QOS        *SecurityQos;
+  RPC_SECURITY_QOS                     *SecurityQos;
 } RPC_BINDING_HANDLE_SECURITY_V1, RPC_BINDING_HANDLE_SECURITY;
 
 typedef struct _RPC_BINDING_HANDLE_TEMPLATE {
@@ -592,7 +592,7 @@ typedef struct _RPC_BINDING_HANDLE_TEMPLATE {
   union {
     unsigned short *Reserved;
   } u1;
-  UUID           ObjectUuid;
+  UUID                        ObjectUuid;
 } RPC_BINDING_HANDLE_TEMPLATE_V1, RPC_BINDING_HANDLE_TEMPLATE;
 
 #define RPC_CALL_STATUS_IN_PROGRESS 0x01

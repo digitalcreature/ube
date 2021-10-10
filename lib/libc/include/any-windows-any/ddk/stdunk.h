@@ -5,7 +5,7 @@
     This file is in the public domain.
 
     AUTHORS
-        Andrew Greenwood
+                     Andrew Greenwood
 */
 
 #ifndef STDUNK_H
@@ -20,8 +20,8 @@
 DECLARE_INTERFACE(INonDelegatingUnknown)
 {
     STDMETHOD_(NTSTATUS, NonDelegatingQueryInterface)( THIS_
-        IN  REFIID,
-        OUT PVOID*) PURE;
+                     IN  REFIID,
+                     OUT PVOID*) PURE;
 
     STDMETHOD_(ULONG, NonDelegatingAddRef)( THIS ) PURE;
     STDMETHOD_(ULONG, NonDelegatingRelease)( THIS ) PURE;
@@ -42,46 +42,46 @@ typedef INonDelegatingUnknown *PNONDELEGATINGUNKNOWN;
 class CUnknown : public INonDelegatingUnknown
 {
     private :
-        LONG m_ref_count;
-        PUNKNOWN m_outer_unknown;
+                     LONG m_ref_count;
+                     PUNKNOWN m_outer_unknown;
 
     public :
-        /* CUnknown */
-        CUnknown(PUNKNOWN pUnknownOuter);
-        virtual ~CUnknown();
+                     /* CUnknown */
+                     CUnknown(PUNKNOWN pUnknownOuter);
+                     virtual ~CUnknown();
 
-        PUNKNOWN GetOuterUnknown()
-        { return m_outer_unknown; }
+                     PUNKNOWN GetOuterUnknown()
+                     { return m_outer_unknown; }
 
-        /* INonDelegatingUnknown */
-        STDMETHODIMP_(ULONG) NonDelegatingAddRef();
-        STDMETHODIMP_(ULONG) NonDelegatingRelease();
+                     /* INonDelegatingUnknown */
+                     STDMETHODIMP_(ULONG) NonDelegatingAddRef();
+                     STDMETHODIMP_(ULONG) NonDelegatingRelease();
 
-        STDMETHODIMP_(NTSTATUS) NonDelegatingQueryInterface(
-            REFIID  rIID,
-            PVOID* ppVoid);
+                     STDMETHODIMP_(NTSTATUS) NonDelegatingQueryInterface(
+                                      REFIID  rIID,
+                                      PVOID* ppVoid);
 };
 
 #define DECLARE_STD_UNKNOWN() \
     STDMETHODIMP_(NTSTATUS) NonDelegatingQueryInterface( \
-        REFIID iid, \
-        PVOID* ppvObject); \
+                     REFIID iid, \
+                     PVOID* ppvObject); \
 \
     STDMETHODIMP_(NTSTATUS) QueryInterface( \
-        REFIID riid, \
-        void** ppv) \
+                     REFIID riid, \
+                     void** ppv) \
     { \
-        return GetOuterUnknown()->QueryInterface(riid, ppv); \
+                     return GetOuterUnknown()->QueryInterface(riid, ppv); \
     } \
 \
     STDMETHODIMP_(ULONG) AddRef() \
     { \
-        return GetOuterUnknown()->AddRef(); \
+                     return GetOuterUnknown()->AddRef(); \
     } \
 \
     STDMETHODIMP_(ULONG) Release() \
     { \
-        return GetOuterUnknown()->Release(); \
+                     return GetOuterUnknown()->Release(); \
     }
 
 #define DEFINE_STD_CONSTRUCTOR(classname) \
@@ -112,8 +112,8 @@ typedef struct CUnknown
 {
     __GNU_EXTENSION union
     {
-        IUnknown IUnknown;
-        INonDelegatingUnknown INonDelegatingUnknown;
+                     IUnknown IUnknown;
+                     INonDelegatingUnknown INonDelegatingUnknown;
     };
 
     LONG m_ref_count;
@@ -141,7 +141,7 @@ typedef struct CUnknown
     classname *new_ptr = new(pool_type, tag) classname(outer_unknown); \
 \
     if ( ! new_ptr ) \
-        return STATUS_INSUFFICIENT_RESOURCES; \
+                     return STATUS_INSUFFICIENT_RESOURCES; \
 \
     *unknown = PUNKNOWN((base)(new_ptr)); \
     (*unknown)->AddRef(); \
@@ -175,7 +175,7 @@ KCOM_New(
     result = ExAllocatePoolWithTag(pool_type, size, tag);
 
     if ( result )
-        RtlZeroMemory(result, size);
+                     RtlZeroMemory(result, size);
 
     return result;
 }

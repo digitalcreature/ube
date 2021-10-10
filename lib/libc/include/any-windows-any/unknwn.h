@@ -75,7 +75,7 @@ extern "C++" {
 
     template<class Q>
     HRESULT STDMETHODCALLTYPE QueryInterface(Q **pp) {
-      return QueryInterface(__uuidof(Q), (void **)pp);
+                   return QueryInterface(__uuidof(Q), (void **)pp);
     }
     END_INTERFACE
   };
@@ -96,14 +96,14 @@ IUnknown
     BEGIN_INTERFACE
 
     virtual HRESULT STDMETHODCALLTYPE QueryInterface(
-        REFIID riid,
-        void **ppvObject) = 0;
+                     REFIID riid,
+                     void **ppvObject) = 0;
 
     virtual ULONG STDMETHODCALLTYPE AddRef(
-        ) = 0;
+                     ) = 0;
 
     virtual ULONG STDMETHODCALLTYPE Release(
-        ) = 0;
+                     ) = 0;
 
     END_INTERFACE
 };
@@ -116,15 +116,15 @@ typedef struct IUnknownVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUnknown* This,
-        REFIID riid,
-        void **ppvObject);
+                     IUnknown* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUnknown* This);
+                     IUnknown* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUnknown* This);
+                     IUnknown* This);
 
     END_INTERFACE
 } IUnknownVtbl;
@@ -196,22 +196,22 @@ MIDL_INTERFACE("000e0000-0000-0000-c000-000000000046")
 AsyncIUnknown : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Begin_QueryInterface(
-        REFIID riid) = 0;
+                     REFIID riid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_QueryInterface(
-        void **ppvObject) = 0;
+                     void **ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_AddRef(
-        ) = 0;
+                     ) = 0;
 
     virtual ULONG STDMETHODCALLTYPE Finish_AddRef(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_Release(
-        ) = 0;
+                     ) = 0;
 
     virtual ULONG STDMETHODCALLTYPE Finish_Release(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -223,36 +223,36 @@ typedef struct AsyncIUnknownVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncIUnknown* This,
-        REFIID riid,
-        void **ppvObject);
+                     AsyncIUnknown* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncIUnknown* This);
+                     AsyncIUnknown* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncIUnknown* This);
+                     AsyncIUnknown* This);
 
     /*** AsyncIUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *Begin_QueryInterface)(
-        AsyncIUnknown* This,
-        REFIID riid);
+                     AsyncIUnknown* This,
+                     REFIID riid);
 
     HRESULT (STDMETHODCALLTYPE *Finish_QueryInterface)(
-        AsyncIUnknown* This,
-        void **ppvObject);
+                     AsyncIUnknown* This,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *Begin_AddRef)(
-        AsyncIUnknown* This);
+                     AsyncIUnknown* This);
 
     ULONG (STDMETHODCALLTYPE *Finish_AddRef)(
-        AsyncIUnknown* This);
+                     AsyncIUnknown* This);
 
     HRESULT (STDMETHODCALLTYPE *Begin_Release)(
-        AsyncIUnknown* This);
+                     AsyncIUnknown* This);
 
     ULONG (STDMETHODCALLTYPE *Finish_Release)(
-        AsyncIUnknown* This);
+                     AsyncIUnknown* This);
 
     END_INTERFACE
 } AsyncIUnknownVtbl;
@@ -372,12 +372,12 @@ MIDL_INTERFACE("00000001-0000-0000-c000-000000000046")
 IClassFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-        IUnknown *pUnkOuter,
-        REFIID riid,
-        void **ppvObject) = 0;
+                     IUnknown *pUnkOuter,
+                     REFIID riid,
+                     void **ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockServer(
-        WINBOOL fLock) = 0;
+                     WINBOOL fLock) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -389,26 +389,26 @@ typedef struct IClassFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IClassFactory* This,
-        REFIID riid,
-        void **ppvObject);
+                     IClassFactory* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IClassFactory* This);
+                     IClassFactory* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IClassFactory* This);
+                     IClassFactory* This);
 
     /*** IClassFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        IClassFactory* This,
-        IUnknown *pUnkOuter,
-        REFIID riid,
-        void **ppvObject);
+                     IClassFactory* This,
+                     IUnknown *pUnkOuter,
+                     REFIID riid,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *LockServer)(
-        IClassFactory* This,
-        WINBOOL fLock);
+                     IClassFactory* This,
+                     WINBOOL fLock);
 
     END_INTERFACE
 } IClassFactoryVtbl;

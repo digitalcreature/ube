@@ -31,12 +31,12 @@ private:
     CMSPStream *pMSPStream;
     MSPEVENTITEM *pEventItem;
     AsyncEventStruct() : pMSPStream(NULL),pEventItem(NULL) {
-      LOG((MSP_TRACE,"AsyncEventStruct::AsyncEventStruct[%p]",this));
+                   LOG((MSP_TRACE,"AsyncEventStruct::AsyncEventStruct[%p]",this));
     }
     ~AsyncEventStruct() {
-      pMSPStream = NULL;
-      pEventItem = NULL;
-      LOG((MSP_TRACE,"AsyncEventStruct::~AsyncEventStruct[%p]",this));
+                   pMSPStream = NULL;
+                   pEventItem = NULL;
+                   LOG((MSP_TRACE,"AsyncEventStruct::~AsyncEventStruct[%p]",this));
     }
   };
   static DWORD WINAPI FireEventCallBack(LPVOID pEventStructure);

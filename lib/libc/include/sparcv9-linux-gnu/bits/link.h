@@ -26,8 +26,8 @@ typedef struct La_sparc32_regs
 {
   uint32_t lr_lreg[8];  /* %l0 through %l7 */
   uint32_t lr_reg[6];   /* %o0 through %o5 */
-  uint32_t lr_sp;       /* %o6 */
-  uint32_t lr_ra;       /* %o7 */
+  uint32_t lr_sp;                    /* %o6 */
+  uint32_t lr_ra;                    /* %o7 */
   uint32_t lr_struct;   /* Pass-by-reference struct pointer */
 } La_sparc32_regs;
 

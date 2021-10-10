@@ -30,7 +30,7 @@ enum vtpm_proxy_flags {
 
 /**
  * struct vtpm_proxy_new_dev - parameter structure for the
- *                             %VTPM_PROXY_IOC_NEW_DEV ioctl
+ *                                                                                 %VTPM_PROXY_IOC_NEW_DEV ioctl
  * @flags:	flags for the proxy TPM
  * @tpm_num:	index of the TPM device
  * @fd:		the file descriptor used by the proxy TPM
@@ -38,11 +38,11 @@ enum vtpm_proxy_flags {
  * @minor:	the minor number of the TPM device
  */
 struct vtpm_proxy_new_dev {
-	__u32 flags;         /* input */
-	__u32 tpm_num;       /* output */
-	__u32 fd;            /* output */
-	__u32 major;         /* output */
-	__u32 minor;         /* output */
+	__u32 flags;                      /* input */
+	__u32 tpm_num;                    /* output */
+	__u32 fd;                                      /* output */
+	__u32 major;                      /* output */
+	__u32 minor;                      /* output */
 };
 
 #define VTPM_PROXY_IOC_NEW_DEV	_IOWR(0xa1, 0x00, struct vtpm_proxy_new_dev)

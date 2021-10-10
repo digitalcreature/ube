@@ -42,9 +42,9 @@ typedef struct __user_cap_header_struct {
 } *cap_user_header_t;
 
 typedef struct __user_cap_data_struct {
-        __u32 effective;
-        __u32 permitted;
-        __u32 inheritable;
+                     __u32 effective;
+                     __u32 permitted;
+                     __u32 inheritable;
 } *cap_user_data_t;
 
 
@@ -54,23 +54,23 @@ typedef struct __user_cap_data_struct {
 #define VFS_CAP_FLAGS_EFFECTIVE	0x000001
 
 #define VFS_CAP_REVISION_1	0x01000000
-#define VFS_CAP_U32_1           1
-#define XATTR_CAPS_SZ_1         (sizeof(__le32)*(1 + 2*VFS_CAP_U32_1))
+#define VFS_CAP_U32_1                        1
+#define XATTR_CAPS_SZ_1                      (sizeof(__le32)*(1 + 2*VFS_CAP_U32_1))
 
 #define VFS_CAP_REVISION_2	0x02000000
-#define VFS_CAP_U32_2           2
-#define XATTR_CAPS_SZ_2         (sizeof(__le32)*(1 + 2*VFS_CAP_U32_2))
+#define VFS_CAP_U32_2                        2
+#define XATTR_CAPS_SZ_2                      (sizeof(__le32)*(1 + 2*VFS_CAP_U32_2))
 
 #define VFS_CAP_REVISION_3	0x03000000
-#define VFS_CAP_U32_3           2
-#define XATTR_CAPS_SZ_3         (sizeof(__le32)*(2 + 2*VFS_CAP_U32_3))
+#define VFS_CAP_U32_3                        2
+#define XATTR_CAPS_SZ_3                      (sizeof(__le32)*(2 + 2*VFS_CAP_U32_3))
 
-#define XATTR_CAPS_SZ           XATTR_CAPS_SZ_3
-#define VFS_CAP_U32             VFS_CAP_U32_3
+#define XATTR_CAPS_SZ                        XATTR_CAPS_SZ_3
+#define VFS_CAP_U32                                       VFS_CAP_U32_3
 #define VFS_CAP_REVISION	VFS_CAP_REVISION_3
 
 struct vfs_cap_data {
-	__le32 magic_etc;            /* Little endian */
+	__le32 magic_etc;                                      /* Little endian */
 	struct {
 		__le32 permitted;    /* Little endian */
 		__le32 inheritable;  /* Little endian */
@@ -108,7 +108,7 @@ struct vfs_ns_cap_data {
    overrides the restriction of changing file ownership and group
    ownership. */
 
-#define CAP_CHOWN            0
+#define CAP_CHOWN                                      0
 
 /* Override all DAC access, including ACL execute access if
    [_POSIX_ACL] is defined. Excluding DAC access covered by
@@ -126,7 +126,7 @@ struct vfs_ns_cap_data {
    file owner ID must be equal to the user ID, except where CAP_FSETID
    is applicable. It doesn't override MAC and DAC restrictions. */
 
-#define CAP_FOWNER           3
+#define CAP_FOWNER                        3
 
 /* Overrides the following restrictions that the effective user ID
    shall match the file owner ID when setting the S_ISUID and S_ISGID
@@ -135,24 +135,24 @@ struct vfs_ns_cap_data {
    the S_ISGID bit on that file; that the S_ISUID and S_ISGID bits are
    cleared on successful return from chown(2) (not implemented). */
 
-#define CAP_FSETID           4
+#define CAP_FSETID                        4
 
 /* Overrides the restriction that the real or effective user ID of a
    process sending a signal must match the real or effective user ID
    of the process receiving the signal. */
 
-#define CAP_KILL             5
+#define CAP_KILL                                       5
 
 /* Allows setgid(2) manipulation */
 /* Allows setgroups(2) */
 /* Allows forged gids on socket credentials passing. */
 
-#define CAP_SETGID           6
+#define CAP_SETGID                        6
 
 /* Allows set*uid(2) manipulation (including fsuid). */
 /* Allows forged pids on socket credentials passing. */
 
-#define CAP_SETUID           7
+#define CAP_SETUID                        7
 
 
 /**
@@ -164,12 +164,12 @@ struct vfs_ns_cap_data {
  *   remove any capability in your permitted set from any pid
  * With VFS support for capabilities (neither of above, but)
  *   Add any capability from current's capability bounding set
- *       to the current process' inheritable set
+ *                    to the current process' inheritable set
  *   Allow taking bits out of capability bounding set
  *   Allow modification of the securebits for a process
  */
 
-#define CAP_SETPCAP          8
+#define CAP_SETPCAP                       8
 
 /* Allow modification of S_IMMUTABLE and S_APPEND file attributes */
 
@@ -198,43 +198,43 @@ struct vfs_ns_cap_data {
 /* Allow read/write of device-specific registers */
 /* Allow activation of ATM control sockets */
 
-#define CAP_NET_ADMIN        12
+#define CAP_NET_ADMIN                     12
 
 /* Allow use of RAW sockets */
 /* Allow use of PACKET sockets */
 /* Allow binding to any address for transparent proxying (also via NET_ADMIN) */
 
-#define CAP_NET_RAW          13
+#define CAP_NET_RAW                       13
 
 /* Allow locking of shared memory segments */
 /* Allow mlock and mlockall (which doesn't really have anything to do
    with IPC) */
 
-#define CAP_IPC_LOCK         14
+#define CAP_IPC_LOCK                      14
 
 /* Override IPC ownership checks */
 
-#define CAP_IPC_OWNER        15
+#define CAP_IPC_OWNER                     15
 
 /* Insert and remove kernel modules - modify kernel without limit */
-#define CAP_SYS_MODULE       16
+#define CAP_SYS_MODULE                    16
 
 /* Allow ioperm/iopl access */
 /* Allow sending USB messages to any device via /dev/bus/usb */
 
-#define CAP_SYS_RAWIO        17
+#define CAP_SYS_RAWIO                     17
 
 /* Allow use of chroot() */
 
-#define CAP_SYS_CHROOT       18
+#define CAP_SYS_CHROOT                    18
 
 /* Allow ptrace() of any process */
 
-#define CAP_SYS_PTRACE       19
+#define CAP_SYS_PTRACE                    19
 
 /* Allow configuration of process accounting */
 
-#define CAP_SYS_PACCT        20
+#define CAP_SYS_PACCT                     20
 
 /* Allow configuration of the secure attention key */
 /* Allow administration of the random device */
@@ -273,11 +273,11 @@ struct vfs_ns_cap_data {
 /* Allow setting encryption key on loopback filesystem */
 /* Allow setting zone reclaim policy */
 
-#define CAP_SYS_ADMIN        21
+#define CAP_SYS_ADMIN                     21
 
 /* Allow use of reboot() */
 
-#define CAP_SYS_BOOT         22
+#define CAP_SYS_BOOT                      22
 
 /* Allow raising priority and setting priority on other (different
    UID) processes */
@@ -286,7 +286,7 @@ struct vfs_ns_cap_data {
    process. */
 /* Allow setting cpu affinity on other processes */
 
-#define CAP_SYS_NICE         23
+#define CAP_SYS_NICE                      23
 
 /* Override resource limits. Set resource limits. */
 /* Override quota limits. */
@@ -306,7 +306,7 @@ struct vfs_ns_cap_data {
 /* Allow irix_stime on mips */
 /* Allow setting the real-time clock */
 
-#define CAP_SYS_TIME         25
+#define CAP_SYS_TIME                      25
 
 /* Allow configuration of tty devices */
 /* Allow vhangup() of tty */
@@ -315,15 +315,15 @@ struct vfs_ns_cap_data {
 
 /* Allow the privileged aspects of mknod() */
 
-#define CAP_MKNOD            27
+#define CAP_MKNOD                                      27
 
 /* Allow taking of leases on files */
 
-#define CAP_LEASE            28
+#define CAP_LEASE                                      28
 
 /* Allow writing the audit log via unicast netlink socket */
 
-#define CAP_AUDIT_WRITE      29
+#define CAP_AUDIT_WRITE                   29
 
 /* Allow configuration of audit via unicast netlink socket */
 
@@ -346,15 +346,15 @@ struct vfs_ns_cap_data {
    policy or the data required to maintain it, this is the
    capability it should use to do so. */
 
-#define CAP_MAC_ADMIN        33
+#define CAP_MAC_ADMIN                     33
 
 /* Allow configuring the kernel's syslog (printk behaviour) */
 
-#define CAP_SYSLOG           34
+#define CAP_SYSLOG                        34
 
 /* Allow triggering something that will wake the system */
 
-#define CAP_WAKE_ALARM            35
+#define CAP_WAKE_ALARM                                      35
 
 /* Allow preventing system suspends */
 
@@ -365,7 +365,7 @@ struct vfs_ns_cap_data {
 #define CAP_AUDIT_READ		37
 
 
-#define CAP_LAST_CAP         CAP_AUDIT_READ
+#define CAP_LAST_CAP                      CAP_AUDIT_READ
 
 #define cap_valid(x) ((x) >= 0 && (x) <= CAP_LAST_CAP)
 
@@ -373,8 +373,8 @@ struct vfs_ns_cap_data {
  * Bit location of each capability (used by user-space library and kernel)
  */
 
-#define CAP_TO_INDEX(x)     ((x) >> 5)        /* 1 << 5 == bits in __u32 */
-#define CAP_TO_MASK(x)      (1 << ((x) & 31)) /* mask for indexed __u32 */
+#define CAP_TO_INDEX(x)     ((x) >> 5)                     /* 1 << 5 == bits in __u32 */
+#define CAP_TO_MASK(x)                   (1 << ((x) & 31)) /* mask for indexed __u32 */
 
 
 #endif /* _LINUX_CAPABILITY_H */

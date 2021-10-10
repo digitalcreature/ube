@@ -109,11 +109,11 @@ enum dcbnl_cndd_states {
  *		    value is given as percentage (1-100)
  *@rpg_min_rate: The minimum value, in bits per second, for rate to limit
  *@cndd_state_machine: The state of the congestion notification domain
- *		       defense state machine, as defined by IEEE 802.3Qau
- *		       section 32.1.1. In the interior ready state,
- *		       the QCN capable hardware may add CN-TAG TLV to the
- *		       outgoing traffic, to specifically identify outgoing
- *		       flows.
+ *		                    defense state machine, as defined by IEEE 802.3Qau
+ *		                    section 32.1.1. In the interior ready state,
+ *		                    the QCN capable hardware may add CN-TAG TLV to the
+ *		                    outgoing traffic, to specifically identify outgoing
+ *		                    flows.
  */
 
 struct ieee_qcn {
@@ -216,7 +216,7 @@ struct cee_pfc {
 #define IEEE_8021QAZ_APP_SEL_STREAM	2
 #define IEEE_8021QAZ_APP_SEL_DGRAM	3
 #define IEEE_8021QAZ_APP_SEL_ANY	4
-#define IEEE_8021QAZ_APP_SEL_DSCP       5
+#define IEEE_8021QAZ_APP_SEL_DSCP                    5
 
 /* This structure contains the IEEE 802.1Qaz APP managed object. This
  * object is also used for the CEE std as well.
@@ -224,7 +224,7 @@ struct cee_pfc {
  * @selector: protocol identifier type
  * @protocol: protocol of type indicated
  * @priority: 3-bit unsigned integer indicating priority for IEEE
- *            8-bit 802.1p user priority bitmap for CEE
+ *                                      8-bit 802.1p user priority bitmap for CEE
  *
  * ----
  *  Selector field values for IEEE 802.1Qaz
@@ -262,9 +262,9 @@ struct dcb_peer_app_info {
 };
 
 struct dcbmsg {
-	__u8               dcb_family;
-	__u8               cmd;
-	__u16              dcb_pad;
+	__u8                                         dcb_family;
+	__u8                                         cmd;
+	__u16                                        dcb_pad;
 };
 
 /**
@@ -281,7 +281,7 @@ struct dcbmsg {
  * @DCB_CMD_PFC_SCFG: set the priority flow control configuration
  * @DCB_CMD_SET_ALL: apply all changes to the underlying device
  * @DCB_CMD_GPERM_HWADDR: get the permanent MAC address of the underlying
- *                        device.  Only useful when using bonding.
+ *                                                                            device.  Only useful when using bonding.
  * @DCB_CMD_GCAP: request the DCB capabilities of the device
  * @DCB_CMD_GNUMTCS: get the number of traffic classes currently supported
  * @DCB_CMD_SNUMTCS: set the number of traffic classes
@@ -566,18 +566,18 @@ enum dcbnl_pg_attrs {
  *
  * @DCB_TC_ATTR_PARAM_UNDEFINED: unspecified attribute to catch errors
  * @DCB_TC_ATTR_PARAM_PGID: (NLA_U8) Priority group the traffic class belongs to
- *                          Valid values are:  0-7
+ *                                                                              Valid values are:  0-7
  * @DCB_TC_ATTR_PARAM_UP_MAPPING: (NLA_U8) Traffic class to user priority map
- *                                Some devices may not support changing the
- *                                user priority map of a TC.
+ *                                                                                                 Some devices may not support changing the
+ *                                                                                                 user priority map of a TC.
  * @DCB_TC_ATTR_PARAM_STRICT_PRIO: (NLA_U8) Strict priority setting
- *                                 0 - none
- *                                 1 - group strict
- *                                 2 - link strict
+ *                                                                                                  0 - none
+ *                                                                                                  1 - group strict
+ *                                                                                                  2 - link strict
  * @DCB_TC_ATTR_PARAM_BW_PCT: optional - (NLA_U8) If supported by the device and
- *                            not configured to use link strict priority,
- *                            this is the percentage of bandwidth of the
- *                            priority group this traffic class belongs to
+ *                                                                                not configured to use link strict priority,
+ *                                                                                this is the percentage of bandwidth of the
+ *                                                                                priority group this traffic class belongs to
  * @DCB_TC_ATTR_PARAM_ALL: (NLA_FLAG) all traffic class parameters
  *
  */
@@ -602,16 +602,16 @@ enum dcbnl_tc_attrs {
  * @DCB_CAP_ATTR_PG: (NLA_U8) device supports Priority Groups
  * @DCB_CAP_ATTR_PFC: (NLA_U8) device supports Priority Flow Control
  * @DCB_CAP_ATTR_UP2TC: (NLA_U8) device supports user priority to
- *                               traffic class mapping
+ *                                                                                                traffic class mapping
  * @DCB_CAP_ATTR_PG_TCS: (NLA_U8) bitmap where each bit represents a
- *                                number of traffic classes the device
- *                                can be configured to use for Priority Groups
+ *                                                                                                 number of traffic classes the device
+ *                                                                                                 can be configured to use for Priority Groups
  * @DCB_CAP_ATTR_PFC_TCS: (NLA_U8) bitmap where each bit represents a
- *                                 number of traffic classes the device can be
- *                                 configured to use for Priority Flow Control
+ *                                                                                                  number of traffic classes the device can be
+ *                                                                                                  configured to use for Priority Flow Control
  * @DCB_CAP_ATTR_GSP: (NLA_U8) device supports group strict priority
  * @DCB_CAP_ATTR_BCN: (NLA_U8) device supports Backwards Congestion
- *                             Notification
+ *                                                                                 Notification
  * @DCB_CAP_ATTR_DCBX: (NLA_U8) device supports DCBX engine
  *
  */
@@ -635,26 +635,26 @@ enum dcbnl_cap_attrs {
  * DCBX capability flags
  *
  * @DCB_CAP_DCBX_HOST: DCBX negotiation is performed by the host LLDP agent.
- *                     'set' routines are used to configure the device with
- *                     the negotiated parameters
+ *                                                            'set' routines are used to configure the device with
+ *                                                            the negotiated parameters
  *
  * @DCB_CAP_DCBX_LLD_MANAGED: DCBX negotiation is not performed in the host but
- *                            by another entity
- *                            'get' routines are used to retrieve the
- *                            negotiated parameters
- *                            'set' routines can be used to set the initial
- *                            negotiation configuration
+ *                                                                                by another entity
+ *                                                                                'get' routines are used to retrieve the
+ *                                                                                negotiated parameters
+ *                                                                                'set' routines can be used to set the initial
+ *                                                                                negotiation configuration
  *
  * @DCB_CAP_DCBX_VER_CEE: for a non-host DCBX engine, indicates the engine
- *                        supports the CEE protocol flavor
+ *                                                                            supports the CEE protocol flavor
  *
  * @DCB_CAP_DCBX_VER_IEEE: for a non-host DCBX engine, indicates the engine
- *                         supports the IEEE protocol flavor
+ *                                                                             supports the IEEE protocol flavor
  *
  * @DCB_CAP_DCBX_STATIC: for a non-host DCBX engine, indicates the engine
- *                       supports static configuration (i.e no actual
- *                       negotiation is performed negotiated parameters equal
- *                       the initial configuration)
+ *                                                              supports static configuration (i.e no actual
+ *                                                              negotiation is performed negotiated parameters equal
+ *                                                              the initial configuration)
  *
  */
 #define DCB_CAP_DCBX_HOST		0x01
@@ -669,9 +669,9 @@ enum dcbnl_cap_attrs {
  * @DCB_NUMTCS_ATTR_UNDEFINED: unspecified attribute to catch errors
  * @DCB_NUMTCS_ATTR_ALL: (NLA_FLAG) all traffic class attributes
  * @DCB_NUMTCS_ATTR_PG: (NLA_U8) number of traffic classes used for
- *                               priority groups
+ *                                                                                                priority groups
  * @DCB_NUMTCS_ATTR_PFC: (NLA_U8) number of traffic classes which can
- *                                support priority flow control
+ *                                                                                                 support priority flow control
  */
 enum dcbnl_numtcs_attrs {
 	DCB_NUMTCS_ATTR_UNDEFINED,
@@ -747,7 +747,7 @@ enum dcbnl_app_attrs {
  * @DCB_FEATCFG_ATTR_ALL: (NLA_FLAG) all features configuration attributes
  * @DCB_FEATCFG_ATTR_PG: (NLA_U8) configuration flags for priority groups
  * @DCB_FEATCFG_ATTR_PFC: (NLA_U8) configuration flags for priority
- *                                 flow control
+ *                                                                                                  flow control
  * @DCB_FEATCFG_ATTR_APP: (NLA_U8) configuration flags for application TLV
  *
  */

@@ -98,10 +98,10 @@ MIDL_INTERFACE("4fdef69c-dbc9-454e-9910-b34f3c64b510")
 IRichChunk : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetData(
-        ULONG *pFirstPos,
-        ULONG *pLength,
-        LPWSTR *ppsz,
-        PROPVARIANT *pValue) = 0;
+                     ULONG *pFirstPos,
+                     ULONG *pLength,
+                     LPWSTR *ppsz,
+                     PROPVARIANT *pValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -113,23 +113,23 @@ typedef struct IRichChunkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRichChunk *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRichChunk *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRichChunk *This);
+                     IRichChunk *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRichChunk *This);
+                     IRichChunk *This);
 
     /*** IRichChunk methods ***/
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        IRichChunk *This,
-        ULONG *pFirstPos,
-        ULONG *pLength,
-        LPWSTR *ppsz,
-        PROPVARIANT *pValue);
+                     IRichChunk *This,
+                     ULONG *pFirstPos,
+                     ULONG *pLength,
+                     LPWSTR *ppsz,
+                     PROPVARIANT *pValue);
 
     END_INTERFACE
 } IRichChunkVtbl;
@@ -205,30 +205,30 @@ MIDL_INTERFACE("0fc988d4-c935-4b97-a973-46282ea175c8")
 ICondition : public IPersistStream
 {
     virtual HRESULT STDMETHODCALLTYPE GetConditionType(
-        CONDITION_TYPE *pNodeType) = 0;
+                     CONDITION_TYPE *pNodeType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubConditions(
-        REFIID riid,
-        void **ppv) = 0;
+                     REFIID riid,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetComparisonInfo(
-        LPWSTR *ppszPropertyName,
-        CONDITION_OPERATION *pcop,
-        PROPVARIANT *ppropvar) = 0;
+                     LPWSTR *ppszPropertyName,
+                     CONDITION_OPERATION *pcop,
+                     PROPVARIANT *ppropvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValueType(
-        LPWSTR *ppszValueTypeName) = 0;
+                     LPWSTR *ppszValueTypeName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValueNormalization(
-        LPWSTR *ppszNormalization) = 0;
+                     LPWSTR *ppszNormalization) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputTerms(
-        IRichChunk **ppPropertyTerm,
-        IRichChunk **ppOperationTerm,
-        IRichChunk **ppValueTerm) = 0;
+                     IRichChunk **ppPropertyTerm,
+                     IRichChunk **ppOperationTerm,
+                     IRichChunk **ppValueTerm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        ICondition **ppc) = 0;
+                     ICondition **ppc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -240,71 +240,71 @@ typedef struct IConditionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICondition *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICondition *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICondition *This);
+                     ICondition *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICondition *This);
+                     ICondition *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        ICondition *This,
-        CLSID *pClassID);
+                     ICondition *This,
+                     CLSID *pClassID);
 
     /*** IPersistStream methods ***/
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        ICondition *This);
+                     ICondition *This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        ICondition *This,
-        IStream *pStm);
+                     ICondition *This,
+                     IStream *pStm);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        ICondition *This,
-        IStream *pStm,
-        WINBOOL fClearDirty);
+                     ICondition *This,
+                     IStream *pStm,
+                     WINBOOL fClearDirty);
 
     HRESULT (STDMETHODCALLTYPE *GetSizeMax)(
-        ICondition *This,
-        ULARGE_INTEGER *pcbSize);
+                     ICondition *This,
+                     ULARGE_INTEGER *pcbSize);
 
     /*** ICondition methods ***/
     HRESULT (STDMETHODCALLTYPE *GetConditionType)(
-        ICondition *This,
-        CONDITION_TYPE *pNodeType);
+                     ICondition *This,
+                     CONDITION_TYPE *pNodeType);
 
     HRESULT (STDMETHODCALLTYPE *GetSubConditions)(
-        ICondition *This,
-        REFIID riid,
-        void **ppv);
+                     ICondition *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetComparisonInfo)(
-        ICondition *This,
-        LPWSTR *ppszPropertyName,
-        CONDITION_OPERATION *pcop,
-        PROPVARIANT *ppropvar);
+                     ICondition *This,
+                     LPWSTR *ppszPropertyName,
+                     CONDITION_OPERATION *pcop,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *GetValueType)(
-        ICondition *This,
-        LPWSTR *ppszValueTypeName);
+                     ICondition *This,
+                     LPWSTR *ppszValueTypeName);
 
     HRESULT (STDMETHODCALLTYPE *GetValueNormalization)(
-        ICondition *This,
-        LPWSTR *ppszNormalization);
+                     ICondition *This,
+                     LPWSTR *ppszNormalization);
 
     HRESULT (STDMETHODCALLTYPE *GetInputTerms)(
-        ICondition *This,
-        IRichChunk **ppPropertyTerm,
-        IRichChunk **ppOperationTerm,
-        IRichChunk **ppValueTerm);
+                     ICondition *This,
+                     IRichChunk **ppPropertyTerm,
+                     IRichChunk **ppOperationTerm,
+                     IRichChunk **ppValueTerm);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ICondition *This,
-        ICondition **ppc);
+                     ICondition *This,
+                     ICondition **ppc);
 
     END_INTERFACE
 } IConditionVtbl;
@@ -445,12 +445,12 @@ MIDL_INTERFACE("0db8851d-2e5b-47eb-9208-d28c325a01d7")
 ICondition2 : public ICondition
 {
     virtual HRESULT STDMETHODCALLTYPE GetLocale(
-        LPWSTR *ppszLocaleName) = 0;
+                     LPWSTR *ppszLocaleName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLeafConditionInfo(
-        PROPERTYKEY *ppropkey,
-        CONDITION_OPERATION *pcop,
-        PROPVARIANT *ppropvar) = 0;
+                     PROPERTYKEY *ppropkey,
+                     CONDITION_OPERATION *pcop,
+                     PROPVARIANT *ppropvar) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -462,82 +462,82 @@ typedef struct ICondition2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICondition2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICondition2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICondition2 *This);
+                     ICondition2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICondition2 *This);
+                     ICondition2 *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        ICondition2 *This,
-        CLSID *pClassID);
+                     ICondition2 *This,
+                     CLSID *pClassID);
 
     /*** IPersistStream methods ***/
     HRESULT (STDMETHODCALLTYPE *IsDirty)(
-        ICondition2 *This);
+                     ICondition2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        ICondition2 *This,
-        IStream *pStm);
+                     ICondition2 *This,
+                     IStream *pStm);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        ICondition2 *This,
-        IStream *pStm,
-        WINBOOL fClearDirty);
+                     ICondition2 *This,
+                     IStream *pStm,
+                     WINBOOL fClearDirty);
 
     HRESULT (STDMETHODCALLTYPE *GetSizeMax)(
-        ICondition2 *This,
-        ULARGE_INTEGER *pcbSize);
+                     ICondition2 *This,
+                     ULARGE_INTEGER *pcbSize);
 
     /*** ICondition methods ***/
     HRESULT (STDMETHODCALLTYPE *GetConditionType)(
-        ICondition2 *This,
-        CONDITION_TYPE *pNodeType);
+                     ICondition2 *This,
+                     CONDITION_TYPE *pNodeType);
 
     HRESULT (STDMETHODCALLTYPE *GetSubConditions)(
-        ICondition2 *This,
-        REFIID riid,
-        void **ppv);
+                     ICondition2 *This,
+                     REFIID riid,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *GetComparisonInfo)(
-        ICondition2 *This,
-        LPWSTR *ppszPropertyName,
-        CONDITION_OPERATION *pcop,
-        PROPVARIANT *ppropvar);
+                     ICondition2 *This,
+                     LPWSTR *ppszPropertyName,
+                     CONDITION_OPERATION *pcop,
+                     PROPVARIANT *ppropvar);
 
     HRESULT (STDMETHODCALLTYPE *GetValueType)(
-        ICondition2 *This,
-        LPWSTR *ppszValueTypeName);
+                     ICondition2 *This,
+                     LPWSTR *ppszValueTypeName);
 
     HRESULT (STDMETHODCALLTYPE *GetValueNormalization)(
-        ICondition2 *This,
-        LPWSTR *ppszNormalization);
+                     ICondition2 *This,
+                     LPWSTR *ppszNormalization);
 
     HRESULT (STDMETHODCALLTYPE *GetInputTerms)(
-        ICondition2 *This,
-        IRichChunk **ppPropertyTerm,
-        IRichChunk **ppOperationTerm,
-        IRichChunk **ppValueTerm);
+                     ICondition2 *This,
+                     IRichChunk **ppPropertyTerm,
+                     IRichChunk **ppOperationTerm,
+                     IRichChunk **ppValueTerm);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ICondition2 *This,
-        ICondition **ppc);
+                     ICondition2 *This,
+                     ICondition **ppc);
 
     /*** ICondition2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLocale)(
-        ICondition2 *This,
-        LPWSTR *ppszLocaleName);
+                     ICondition2 *This,
+                     LPWSTR *ppszLocaleName);
 
     HRESULT (STDMETHODCALLTYPE *GetLeafConditionInfo)(
-        ICondition2 *This,
-        PROPERTYKEY *ppropkey,
-        CONDITION_OPERATION *pcop,
-        PROPVARIANT *ppropvar);
+                     ICondition2 *This,
+                     PROPERTYKEY *ppropkey,
+                     CONDITION_OPERATION *pcop,
+                     PROPVARIANT *ppropvar);
 
     END_INTERFACE
 } ICondition2Vtbl;
@@ -658,14 +658,14 @@ HRESULT __RPC_STUB ICondition2_GetLeafConditionInfo_Stub(
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
 
 /* End additional prototypes */
 

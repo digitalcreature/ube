@@ -59,7 +59,7 @@ extern char *__dcgettext (const char *__domainname,
 /* Similar to `gettext' but select the plural form corresponding to the
    number N.  */
 extern char *ngettext (const char *__msgid1, const char *__msgid2,
-		       unsigned long int __n)
+		                    unsigned long int __n)
      __THROW __attribute_format_arg__ (1) __attribute_format_arg__ (2);
 
 /* Similar to `dgettext' but select the plural form corresponding to the
@@ -89,7 +89,7 @@ extern char *bindtextdomain (const char *__domainname,
 /* Specify the character encoding in which the messages from the
    DOMAINNAME message catalog will be returned.  */
 extern char *bind_textdomain_codeset (const char *__domainname,
-				      const char *__codeset) __THROW;
+				                   const char *__codeset) __THROW;
 
 
 /* Optimized version of the function above.  */

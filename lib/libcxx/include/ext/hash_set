@@ -18,52 +18,52 @@ namespace __gnu_cxx
 {
 
 template <class Value, class Hash = hash<Value>, class Pred = equal_to<Value>,
-          class Alloc = allocator<Value>>
+                       class Alloc = allocator<Value>>
 class hash_set
 {
 public:
     // types
-    typedef Value                                                      key_type;
-    typedef key_type                                                   value_type;
-    typedef Hash                                                       hasher;
-    typedef Pred                                                       key_equal;
-    typedef Alloc                                                      allocator_type;
-    typedef value_type&                                                reference;
-    typedef const value_type&                                          const_reference;
-    typedef typename allocator_traits<allocator_type>::pointer         pointer;
+    typedef Value                                                                                                                                                                           key_type;
+    typedef key_type                                                                                                                                                           value_type;
+    typedef Hash                                                                                                                                                                            hasher;
+    typedef Pred                                                                                                                                                                            key_equal;
+    typedef Alloc                                                                                                                                                                           allocator_type;
+    typedef value_type&                                                                                                                                                        reference;
+    typedef const value_type&                                                                                                                                     const_reference;
+    typedef typename allocator_traits<allocator_type>::pointer                      pointer;
     typedef typename allocator_traits<allocator_type>::const_pointer   const_pointer;
-    typedef typename allocator_traits<allocator_type>::size_type       size_type;
+    typedef typename allocator_traits<allocator_type>::size_type                    size_type;
     typedef typename allocator_traits<allocator_type>::difference_type difference_type;
 
     typedef /unspecified/ iterator;
     typedef /unspecified/ const_iterator;
 
     explicit hash_set(size_type n = 193, const hasher& hf = hasher(),
-                           const key_equal& eql = key_equal(),
-                           const allocator_type& a = allocator_type());
+                                                                               const key_equal& eql = key_equal(),
+                                                                               const allocator_type& a = allocator_type());
     template <class InputIterator>
-        hash_set(InputIterator f, InputIterator l,
-                      size_type n = 193, const hasher& hf = hasher(),
-                      const key_equal& eql = key_equal(),
-                      const allocator_type& a = allocator_type());
+                     hash_set(InputIterator f, InputIterator l,
+                                                             size_type n = 193, const hasher& hf = hasher(),
+                                                             const key_equal& eql = key_equal(),
+                                                             const allocator_type& a = allocator_type());
     hash_set(const hash_set&);
     ~hash_set();
     hash_set& operator=(const hash_set&);
 
     allocator_type get_allocator() const;
 
-    bool      empty() const;
+    bool                   empty() const;
     size_type size() const;
     size_type max_size() const;
 
-    iterator       begin();
-    iterator       end();
+    iterator                    begin();
+    iterator                    end();
     const_iterator begin()  const;
     const_iterator end()    const;
 
     pair<iterator, bool> insert(const value_type& obj);
     template <class InputIterator>
-        void insert(InputIterator first, InputIterator last);
+                     void insert(InputIterator first, InputIterator last);
 
     void erase(const_iterator position);
     size_type erase(const key_type& k);
@@ -75,10 +75,10 @@ public:
     hasher hash_funct() const;
     key_equal key_eq() const;
 
-    iterator       find(const key_type& k);
+    iterator                    find(const key_type& k);
     const_iterator find(const key_type& k) const;
     size_type count(const key_type& k) const;
-    pair<iterator, iterator>             equal_range(const key_type& k);
+    pair<iterator, iterator>                                       equal_range(const key_type& k);
     pair<const_iterator, const_iterator> equal_range(const key_type& k) const;
 
     size_type bucket_count() const;
@@ -91,65 +91,65 @@ public:
 
 template <class Value, class Hash, class Pred, class Alloc>
     void swap(hash_set<Value, Hash, Pred, Alloc>& x,
-              hash_set<Value, Hash, Pred, Alloc>& y);
+                                        hash_set<Value, Hash, Pred, Alloc>& y);
 
 template <class Value, class Hash, class Pred, class Alloc>
     bool
     operator==(const hash_set<Value, Hash, Pred, Alloc>& x,
-               const hash_set<Value, Hash, Pred, Alloc>& y);
+                                         const hash_set<Value, Hash, Pred, Alloc>& y);
 
 template <class Value, class Hash, class Pred, class Alloc>
     bool
     operator!=(const hash_set<Value, Hash, Pred, Alloc>& x,
-               const hash_set<Value, Hash, Pred, Alloc>& y);
+                                         const hash_set<Value, Hash, Pred, Alloc>& y);
 
 template <class Value, class Hash = hash<Value>, class Pred = equal_to<Value>,
-          class Alloc = allocator<Value>>
+                       class Alloc = allocator<Value>>
 class hash_multiset
 {
 public:
     // types
-    typedef Value                                                      key_type;
-    typedef key_type                                                   value_type;
-    typedef Hash                                                       hasher;
-    typedef Pred                                                       key_equal;
-    typedef Alloc                                                      allocator_type;
-    typedef value_type&                                                reference;
-    typedef const value_type&                                          const_reference;
-    typedef typename allocator_traits<allocator_type>::pointer         pointer;
+    typedef Value                                                                                                                                                                           key_type;
+    typedef key_type                                                                                                                                                           value_type;
+    typedef Hash                                                                                                                                                                            hasher;
+    typedef Pred                                                                                                                                                                            key_equal;
+    typedef Alloc                                                                                                                                                                           allocator_type;
+    typedef value_type&                                                                                                                                                        reference;
+    typedef const value_type&                                                                                                                                     const_reference;
+    typedef typename allocator_traits<allocator_type>::pointer                      pointer;
     typedef typename allocator_traits<allocator_type>::const_pointer   const_pointer;
-    typedef typename allocator_traits<allocator_type>::size_type       size_type;
+    typedef typename allocator_traits<allocator_type>::size_type                    size_type;
     typedef typename allocator_traits<allocator_type>::difference_type difference_type;
 
     typedef /unspecified/ iterator;
     typedef /unspecified/ const_iterator;
 
     explicit hash_multiset(size_type n = 193, const hasher& hf = hasher(),
-                           const key_equal& eql = key_equal(),
-                           const allocator_type& a = allocator_type());
+                                                                               const key_equal& eql = key_equal(),
+                                                                               const allocator_type& a = allocator_type());
     template <class InputIterator>
-        hash_multiset(InputIterator f, InputIterator l,
-                      size_type n = 193, const hasher& hf = hasher(),
-                      const key_equal& eql = key_equal(),
-                      const allocator_type& a = allocator_type());
+                     hash_multiset(InputIterator f, InputIterator l,
+                                                             size_type n = 193, const hasher& hf = hasher(),
+                                                             const key_equal& eql = key_equal(),
+                                                             const allocator_type& a = allocator_type());
     hash_multiset(const hash_multiset&);
     ~hash_multiset();
     hash_multiset& operator=(const hash_multiset&);
 
     allocator_type get_allocator() const;
 
-    bool      empty() const;
+    bool                   empty() const;
     size_type size() const;
     size_type max_size() const;
 
-    iterator       begin();
-    iterator       end();
+    iterator                    begin();
+    iterator                    end();
     const_iterator begin()  const;
     const_iterator end()    const;
 
     iterator insert(const value_type& obj);
     template <class InputIterator>
-        void insert(InputIterator first, InputIterator last);
+                     void insert(InputIterator first, InputIterator last);
 
     void erase(const_iterator position);
     size_type erase(const key_type& k);
@@ -161,10 +161,10 @@ public:
     hasher hash_funct() const;
     key_equal key_eq() const;
 
-    iterator       find(const key_type& k);
+    iterator                    find(const key_type& k);
     const_iterator find(const key_type& k) const;
     size_type count(const key_type& k) const;
-    pair<iterator, iterator>             equal_range(const key_type& k);
+    pair<iterator, iterator>                                       equal_range(const key_type& k);
     pair<const_iterator, const_iterator> equal_range(const key_type& k) const;
 
     size_type bucket_count() const;
@@ -177,17 +177,17 @@ public:
 
 template <class Value, class Hash, class Pred, class Alloc>
     void swap(hash_multiset<Value, Hash, Pred, Alloc>& x,
-              hash_multiset<Value, Hash, Pred, Alloc>& y);
+                                        hash_multiset<Value, Hash, Pred, Alloc>& y);
 
 template <class Value, class Hash, class Pred, class Alloc>
     bool
     operator==(const hash_multiset<Value, Hash, Pred, Alloc>& x,
-               const hash_multiset<Value, Hash, Pred, Alloc>& y);
+                                         const hash_multiset<Value, Hash, Pred, Alloc>& y);
 
 template <class Value, class Hash, class Pred, class Alloc>
     bool
     operator!=(const hash_multiset<Value, Hash, Pred, Alloc>& x,
-               const hash_multiset<Value, Hash, Pred, Alloc>& y);
+                                         const hash_multiset<Value, Hash, Pred, Alloc>& y);
 }  // __gnu_cxx
 
 */
@@ -209,18 +209,18 @@ namespace __gnu_cxx {
 
 
 template <class _Value, class _Hash = hash<_Value>, class _Pred = std::equal_to<_Value>,
-          class _Alloc = std::allocator<_Value> >
+                       class _Alloc = std::allocator<_Value> >
 class _LIBCPP_TEMPLATE_VIS hash_set
 {
 public:
     // types
-    typedef _Value                                                     key_type;
-    typedef key_type                                                   value_type;
-    typedef _Hash                                                      hasher;
-    typedef _Pred                                                      key_equal;
-    typedef _Alloc                                                     allocator_type;
-    typedef value_type&                                                reference;
-    typedef const value_type&                                          const_reference;
+    typedef _Value                                                                                                                                                             key_type;
+    typedef key_type                                                                                                                                                           value_type;
+    typedef _Hash                                                                                                                                                                           hasher;
+    typedef _Pred                                                                                                                                                                           key_equal;
+    typedef _Alloc                                                                                                                                                             allocator_type;
+    typedef value_type&                                                                                                                                                        reference;
+    typedef const value_type&                                                                                                                                     const_reference;
 
 private:
     typedef std::__hash_table<value_type, hasher, key_equal, allocator_type> __table;
@@ -228,47 +228,47 @@ private:
     __table __table_;
 
 public:
-    typedef typename __table::pointer         pointer;
+    typedef typename __table::pointer                      pointer;
     typedef typename __table::const_pointer   const_pointer;
-    typedef typename __table::size_type       size_type;
+    typedef typename __table::size_type                    size_type;
     typedef typename __table::difference_type difference_type;
 
-    typedef typename __table::const_iterator       iterator;
-    typedef typename __table::const_iterator       const_iterator;
+    typedef typename __table::const_iterator                    iterator;
+    typedef typename __table::const_iterator                    const_iterator;
 
     _LIBCPP_INLINE_VISIBILITY
     hash_set() { }
     explicit hash_set(size_type __n, const hasher& __hf = hasher(),
-                           const key_equal& __eql = key_equal());
+                                                                               const key_equal& __eql = key_equal());
     hash_set(size_type __n, const hasher& __hf, const key_equal& __eql,
-                  const allocator_type& __a);
+                                                         const allocator_type& __a);
     template <class _InputIterator>
-        hash_set(_InputIterator __first, _InputIterator __last);
+                     hash_set(_InputIterator __first, _InputIterator __last);
     template <class _InputIterator>
-        hash_set(_InputIterator __first, _InputIterator __last,
-                      size_type __n, const hasher& __hf = hasher(),
-                      const key_equal& __eql = key_equal());
+                     hash_set(_InputIterator __first, _InputIterator __last,
+                                                             size_type __n, const hasher& __hf = hasher(),
+                                                             const key_equal& __eql = key_equal());
     template <class _InputIterator>
-        hash_set(_InputIterator __first, _InputIterator __last,
-                      size_type __n, const hasher& __hf, const key_equal& __eql,
-                      const allocator_type& __a);
+                     hash_set(_InputIterator __first, _InputIterator __last,
+                                                             size_type __n, const hasher& __hf, const key_equal& __eql,
+                                                             const allocator_type& __a);
     hash_set(const hash_set& __u);
 
     _LIBCPP_INLINE_VISIBILITY
     allocator_type get_allocator() const
-        {return allocator_type(__table_.__node_alloc());}
+                     {return allocator_type(__table_.__node_alloc());}
 
     _LIBCPP_INLINE_VISIBILITY
-    bool      empty() const {return __table_.size() == 0;}
+    bool                   empty() const {return __table_.size() == 0;}
     _LIBCPP_INLINE_VISIBILITY
     size_type size() const  {return __table_.size();}
     _LIBCPP_INLINE_VISIBILITY
     size_type max_size() const {return __table_.max_size();}
 
     _LIBCPP_INLINE_VISIBILITY
-    iterator       begin()        {return __table_.begin();}
+    iterator                    begin()                     {return __table_.begin();}
     _LIBCPP_INLINE_VISIBILITY
-    iterator       end()          {return __table_.end();}
+    iterator                    end()                       {return __table_.end();}
     _LIBCPP_INLINE_VISIBILITY
     const_iterator begin()  const {return __table_.begin();}
     _LIBCPP_INLINE_VISIBILITY
@@ -276,12 +276,12 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     std::pair<iterator, bool> insert(const value_type& __x)
-        {return __table_.__insert_unique(__x);}
+                     {return __table_.__insert_unique(__x);}
     _LIBCPP_INLINE_VISIBILITY
     iterator insert(const_iterator, const value_type& __x) {return insert(__x).first;}
     template <class _InputIterator>
-        _LIBCPP_INLINE_VISIBILITY
-        void insert(_InputIterator __first, _InputIterator __last);
+                     _LIBCPP_INLINE_VISIBILITY
+                     void insert(_InputIterator __first, _InputIterator __last);
 
     _LIBCPP_INLINE_VISIBILITY
     void erase(const_iterator __p) {__table_.erase(__p);}
@@ -289,7 +289,7 @@ public:
     size_type erase(const key_type& __k) {return __table_.__erase_unique(__k);}
     _LIBCPP_INLINE_VISIBILITY
     void erase(const_iterator __first, const_iterator __last)
-        {__table_.erase(__first, __last);}
+                     {__table_.erase(__first, __last);}
     _LIBCPP_INLINE_VISIBILITY
     void clear() {__table_.clear();}
 
@@ -302,17 +302,17 @@ public:
     key_equal key_eq() const {return __table_.key_eq();}
 
     _LIBCPP_INLINE_VISIBILITY
-    iterator       find(const key_type& __k)       {return __table_.find(__k);}
+    iterator                    find(const key_type& __k)                    {return __table_.find(__k);}
     _LIBCPP_INLINE_VISIBILITY
     const_iterator find(const key_type& __k) const {return __table_.find(__k);}
     _LIBCPP_INLINE_VISIBILITY
     size_type count(const key_type& __k) const {return __table_.__count_unique(__k);}
     _LIBCPP_INLINE_VISIBILITY
-    std::pair<iterator, iterator>             equal_range(const key_type& __k)
-        {return __table_.__equal_range_unique(__k);}
+    std::pair<iterator, iterator>                                       equal_range(const key_type& __k)
+                     {return __table_.__equal_range_unique(__k);}
     _LIBCPP_INLINE_VISIBILITY
     std::pair<const_iterator, const_iterator> equal_range(const key_type& __k) const
-        {return __table_.__equal_range_unique(__k);}
+                     {return __table_.__equal_range_unique(__k);}
 
     _LIBCPP_INLINE_VISIBILITY
     size_type bucket_count() const {return __table_.bucket_count();}
@@ -328,7 +328,7 @@ public:
 
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(size_type __n,
-        const hasher& __hf, const key_equal& __eql)
+                     const hasher& __hf, const key_equal& __eql)
     : __table_(__hf, __eql)
 {
     __table_.rehash(__n);
@@ -336,7 +336,7 @@ hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(size_type __n,
 
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(size_type __n,
-        const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
+                     const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
     : __table_(__hf, __eql, __a)
 {
     __table_.rehash(__n);
@@ -345,7 +345,7 @@ hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(size_type __n,
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(
-        _InputIterator __first, _InputIterator __last)
+                     _InputIterator __first, _InputIterator __last)
 {
     insert(__first, __last);
 }
@@ -353,8 +353,8 @@ hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(
-        _InputIterator __first, _InputIterator __last, size_type __n,
-        const hasher& __hf, const key_equal& __eql)
+                     _InputIterator __first, _InputIterator __last, size_type __n,
+                     const hasher& __hf, const key_equal& __eql)
     : __table_(__hf, __eql)
 {
     __table_.rehash(__n);
@@ -364,8 +364,8 @@ hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(
-        _InputIterator __first, _InputIterator __last, size_type __n,
-        const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
+                     _InputIterator __first, _InputIterator __last, size_type __n,
+                     const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
     : __table_(__hf, __eql, __a)
 {
     __table_.rehash(__n);
@@ -374,7 +374,7 @@ hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(
 
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 hash_set<_Value, _Hash, _Pred, _Alloc>::hash_set(
-        const hash_set& __u)
+                     const hash_set& __u)
     : __table_(__u.__table_)
 {
     __table_.rehash(__u.bucket_count());
@@ -386,10 +386,10 @@ template <class _InputIterator>
 inline
 void
 hash_set<_Value, _Hash, _Pred, _Alloc>::insert(_InputIterator __first,
-                                                    _InputIterator __last)
+                                                                                                                                                            _InputIterator __last)
 {
     for (; __first != __last; ++__first)
-        __table_.__insert_unique(*__first);
+                     __table_.__insert_unique(*__first);
 }
 
 template <class _Value, class _Hash, class _Pred, class _Alloc>
@@ -404,18 +404,18 @@ swap(hash_set<_Value, _Hash, _Pred, _Alloc>& __x,
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 bool
 operator==(const hash_set<_Value, _Hash, _Pred, _Alloc>& __x,
-           const hash_set<_Value, _Hash, _Pred, _Alloc>& __y)
+                        const hash_set<_Value, _Hash, _Pred, _Alloc>& __y)
 {
     if (__x.size() != __y.size())
-        return false;
+                     return false;
     typedef typename hash_set<_Value, _Hash, _Pred, _Alloc>::const_iterator
-                                                                 const_iterator;
+                                                                                                                                                                                                   const_iterator;
     for (const_iterator __i = __x.begin(), __ex = __x.end(), __ey = __y.end();
-            __i != __ex; ++__i)
+                                      __i != __ex; ++__i)
     {
-        const_iterator __j = __y.find(*__i);
-        if (__j == __ey || !(*__i == *__j))
-            return false;
+                     const_iterator __j = __y.find(*__i);
+                     if (__j == __ey || !(*__i == *__j))
+                                      return false;
     }
     return true;
 }
@@ -424,24 +424,24 @@ template <class _Value, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const hash_set<_Value, _Hash, _Pred, _Alloc>& __x,
-           const hash_set<_Value, _Hash, _Pred, _Alloc>& __y)
+                        const hash_set<_Value, _Hash, _Pred, _Alloc>& __y)
 {
     return !(__x == __y);
 }
 
 template <class _Value, class _Hash = hash<_Value>, class _Pred = std::equal_to<_Value>,
-          class _Alloc = std::allocator<_Value> >
+                       class _Alloc = std::allocator<_Value> >
 class _LIBCPP_TEMPLATE_VIS hash_multiset
 {
 public:
     // types
-    typedef _Value                                                     key_type;
-    typedef key_type                                                   value_type;
-    typedef _Hash                                                      hasher;
-    typedef _Pred                                                      key_equal;
-    typedef _Alloc                                                     allocator_type;
-    typedef value_type&                                                reference;
-    typedef const value_type&                                          const_reference;
+    typedef _Value                                                                                                                                                             key_type;
+    typedef key_type                                                                                                                                                           value_type;
+    typedef _Hash                                                                                                                                                                           hasher;
+    typedef _Pred                                                                                                                                                                           key_equal;
+    typedef _Alloc                                                                                                                                                             allocator_type;
+    typedef value_type&                                                                                                                                                        reference;
+    typedef const value_type&                                                                                                                                     const_reference;
 
 private:
     typedef std::__hash_table<value_type, hasher, key_equal, allocator_type> __table;
@@ -449,47 +449,47 @@ private:
     __table __table_;
 
 public:
-    typedef typename __table::pointer         pointer;
+    typedef typename __table::pointer                      pointer;
     typedef typename __table::const_pointer   const_pointer;
-    typedef typename __table::size_type       size_type;
+    typedef typename __table::size_type                    size_type;
     typedef typename __table::difference_type difference_type;
 
-    typedef typename __table::const_iterator       iterator;
-    typedef typename __table::const_iterator       const_iterator;
+    typedef typename __table::const_iterator                    iterator;
+    typedef typename __table::const_iterator                    const_iterator;
 
     _LIBCPP_INLINE_VISIBILITY
     hash_multiset() { }
     explicit hash_multiset(size_type __n, const hasher& __hf = hasher(),
-                                const key_equal& __eql = key_equal());
+                                                                                                 const key_equal& __eql = key_equal());
     hash_multiset(size_type __n, const hasher& __hf,
-                       const key_equal& __eql, const allocator_type& __a);
+                                                              const key_equal& __eql, const allocator_type& __a);
     template <class _InputIterator>
-        hash_multiset(_InputIterator __first, _InputIterator __last);
+                     hash_multiset(_InputIterator __first, _InputIterator __last);
     template <class _InputIterator>
-        hash_multiset(_InputIterator __first, _InputIterator __last,
-                      size_type __n, const hasher& __hf = hasher(),
-                      const key_equal& __eql = key_equal());
+                     hash_multiset(_InputIterator __first, _InputIterator __last,
+                                                             size_type __n, const hasher& __hf = hasher(),
+                                                             const key_equal& __eql = key_equal());
     template <class _InputIterator>
-        hash_multiset(_InputIterator __first, _InputIterator __last,
-                      size_type __n , const hasher& __hf,
-                      const key_equal& __eql, const allocator_type& __a);
+                     hash_multiset(_InputIterator __first, _InputIterator __last,
+                                                             size_type __n , const hasher& __hf,
+                                                             const key_equal& __eql, const allocator_type& __a);
     hash_multiset(const hash_multiset& __u);
 
     _LIBCPP_INLINE_VISIBILITY
     allocator_type get_allocator() const
-        {return allocator_type(__table_.__node_alloc());}
+                     {return allocator_type(__table_.__node_alloc());}
 
     _LIBCPP_INLINE_VISIBILITY
-    bool      empty() const {return __table_.size() == 0;}
+    bool                   empty() const {return __table_.size() == 0;}
     _LIBCPP_INLINE_VISIBILITY
     size_type size() const  {return __table_.size();}
     _LIBCPP_INLINE_VISIBILITY
     size_type max_size() const {return __table_.max_size();}
 
     _LIBCPP_INLINE_VISIBILITY
-    iterator       begin()        {return __table_.begin();}
+    iterator                    begin()                     {return __table_.begin();}
     _LIBCPP_INLINE_VISIBILITY
-    iterator       end()          {return __table_.end();}
+    iterator                    end()                       {return __table_.end();}
     _LIBCPP_INLINE_VISIBILITY
     const_iterator begin()  const {return __table_.begin();}
     _LIBCPP_INLINE_VISIBILITY
@@ -500,8 +500,8 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     iterator insert(const_iterator, const value_type& __x) {return insert(__x);}
     template <class _InputIterator>
-        _LIBCPP_INLINE_VISIBILITY
-        void insert(_InputIterator __first, _InputIterator __last);
+                     _LIBCPP_INLINE_VISIBILITY
+                     void insert(_InputIterator __first, _InputIterator __last);
 
     _LIBCPP_INLINE_VISIBILITY
     void erase(const_iterator __p) {__table_.erase(__p);}
@@ -509,7 +509,7 @@ public:
     size_type erase(const key_type& __k) {return __table_.__erase_multi(__k);}
     _LIBCPP_INLINE_VISIBILITY
     void erase(const_iterator __first, const_iterator __last)
-        {__table_.erase(__first, __last);}
+                     {__table_.erase(__first, __last);}
     _LIBCPP_INLINE_VISIBILITY
     void clear() {__table_.clear();}
 
@@ -522,17 +522,17 @@ public:
     key_equal key_eq() const {return __table_.key_eq();}
 
     _LIBCPP_INLINE_VISIBILITY
-    iterator       find(const key_type& __k)       {return __table_.find(__k);}
+    iterator                    find(const key_type& __k)                    {return __table_.find(__k);}
     _LIBCPP_INLINE_VISIBILITY
     const_iterator find(const key_type& __k) const {return __table_.find(__k);}
     _LIBCPP_INLINE_VISIBILITY
     size_type count(const key_type& __k) const {return __table_.__count_multi(__k);}
     _LIBCPP_INLINE_VISIBILITY
-    std::pair<iterator, iterator>             equal_range(const key_type& __k)
-        {return __table_.__equal_range_multi(__k);}
+    std::pair<iterator, iterator>                                       equal_range(const key_type& __k)
+                     {return __table_.__equal_range_multi(__k);}
     _LIBCPP_INLINE_VISIBILITY
     std::pair<const_iterator, const_iterator> equal_range(const key_type& __k) const
-        {return __table_.__equal_range_multi(__k);}
+                     {return __table_.__equal_range_multi(__k);}
 
     _LIBCPP_INLINE_VISIBILITY
     size_type bucket_count() const {return __table_.bucket_count();}
@@ -548,7 +548,7 @@ public:
 
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
-        size_type __n, const hasher& __hf, const key_equal& __eql)
+                     size_type __n, const hasher& __hf, const key_equal& __eql)
     : __table_(__hf, __eql)
 {
     __table_.rehash(__n);
@@ -556,8 +556,8 @@ hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
 
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
-        size_type __n, const hasher& __hf, const key_equal& __eql,
-        const allocator_type& __a)
+                     size_type __n, const hasher& __hf, const key_equal& __eql,
+                     const allocator_type& __a)
     : __table_(__hf, __eql, __a)
 {
     __table_.rehash(__n);
@@ -566,7 +566,7 @@ hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
-        _InputIterator __first, _InputIterator __last)
+                     _InputIterator __first, _InputIterator __last)
 {
     insert(__first, __last);
 }
@@ -574,8 +574,8 @@ hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
-        _InputIterator __first, _InputIterator __last, size_type __n,
-        const hasher& __hf, const key_equal& __eql)
+                     _InputIterator __first, _InputIterator __last, size_type __n,
+                     const hasher& __hf, const key_equal& __eql)
     : __table_(__hf, __eql)
 {
     __table_.rehash(__n);
@@ -585,8 +585,8 @@ hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
-        _InputIterator __first, _InputIterator __last, size_type __n,
-        const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
+                     _InputIterator __first, _InputIterator __last, size_type __n,
+                     const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
     : __table_(__hf, __eql, __a)
 {
     __table_.rehash(__n);
@@ -595,7 +595,7 @@ hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
 
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 hash_multiset<_Value, _Hash, _Pred, _Alloc>::hash_multiset(
-        const hash_multiset& __u)
+                     const hash_multiset& __u)
     : __table_(__u.__table_)
 {
     __table_.rehash(__u.bucket_count());
@@ -607,10 +607,10 @@ template <class _InputIterator>
 inline
 void
 hash_multiset<_Value, _Hash, _Pred, _Alloc>::insert(_InputIterator __first,
-                                                    _InputIterator __last)
+                                                                                                                                                            _InputIterator __last)
 {
     for (; __first != __last; ++__first)
-        __table_.__insert_multi(*__first);
+                     __table_.__insert_multi(*__first);
 }
 
 template <class _Value, class _Hash, class _Pred, class _Alloc>
@@ -625,22 +625,22 @@ swap(hash_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
 template <class _Value, class _Hash, class _Pred, class _Alloc>
 bool
 operator==(const hash_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
-           const hash_multiset<_Value, _Hash, _Pred, _Alloc>& __y)
+                        const hash_multiset<_Value, _Hash, _Pred, _Alloc>& __y)
 {
     if (__x.size() != __y.size())
-        return false;
+                     return false;
     typedef typename hash_multiset<_Value, _Hash, _Pred, _Alloc>::const_iterator
-                                                                 const_iterator;
+                                                                                                                                                                                                   const_iterator;
     typedef std::pair<const_iterator, const_iterator> _EqRng;
     for (const_iterator __i = __x.begin(), __ex = __x.end(); __i != __ex;)
     {
-        _EqRng __xeq = __x.equal_range(*__i);
-        _EqRng __yeq = __y.equal_range(*__i);
-        if (_VSTD::distance(__xeq.first, __xeq.second) !=
-            _VSTD::distance(__yeq.first, __yeq.second) ||
-                  !_VSTD::is_permutation(__xeq.first, __xeq.second, __yeq.first))
-            return false;
-        __i = __xeq.second;
+                     _EqRng __xeq = __x.equal_range(*__i);
+                     _EqRng __yeq = __y.equal_range(*__i);
+                     if (_VSTD::distance(__xeq.first, __xeq.second) !=
+                                      _VSTD::distance(__yeq.first, __yeq.second) ||
+                                                         !_VSTD::is_permutation(__xeq.first, __xeq.second, __yeq.first))
+                                      return false;
+                     __i = __xeq.second;
     }
     return true;
 }
@@ -649,7 +649,7 @@ template <class _Value, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const hash_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
-           const hash_multiset<_Value, _Hash, _Pred, _Alloc>& __y)
+                        const hash_multiset<_Value, _Hash, _Pred, _Alloc>& __y)
 {
     return !(__x == __y);
 }

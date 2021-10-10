@@ -17,10 +17,10 @@
  * types, so 'linux/types.h' and 'stdint.h' can be safely included from the same
  * source file (provided that -ffreestanding is used).
  *
- *                    int32_t         uint32_t               uintptr_t
- * bare metal GCC     long            unsigned long          unsigned int
- * glibc GCC          int             unsigned int           unsigned int
- * kernel             int             unsigned int           unsigned long
+ *                                                           int32_t                      uint32_t                                         uintptr_t
+ * bare metal GCC     long                                      unsigned long                       unsigned int
+ * glibc GCC                       int                                       unsigned int                        unsigned int
+ * kernel                                       int                                       unsigned int                        unsigned long
  */
 
 #ifdef __INT32_TYPE__

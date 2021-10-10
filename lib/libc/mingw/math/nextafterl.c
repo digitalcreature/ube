@@ -17,13 +17,13 @@ long double
 nextafterl (long double x, long double y)
 {
   union {
-      long double ld;
-      struct {
-        /* packed attribute is unnecessary on x86/x64 for these three variables */
-        unsigned long long mantissa;
-        unsigned short expn;
-        unsigned short pad;
-      } parts; 
+                   long double ld;
+                   struct {
+                     /* packed attribute is unnecessary on x86/x64 for these three variables */
+                     unsigned long long mantissa;
+                     unsigned short expn;
+                     unsigned short pad;
+                   } parts; 
   } u;
 
   /* The normal bit is explicit for long doubles, unlike
@@ -40,21 +40,21 @@ nextafterl (long double x, long double y)
   u.ld = x;
   if (x == 0.0L)
     {
-      u.parts.mantissa = 1ull;
-      return y > 0.0L ? u.ld : -u.ld;
+                   u.parts.mantissa = 1ull;
+                   return y > 0.0L ? u.ld : -u.ld;
     }
 
   if (((x > 0.0L) ^ (y > x)) == 0)
     {
-      u.parts.mantissa++;
-      if ((u.parts.mantissa & ~normal_bit) == 0ull)
+                   u.parts.mantissa++;
+                   if ((u.parts.mantissa & ~normal_bit) == 0ull)
 	u.parts.expn++;
     }
   else
     {
-      if ((u.parts.mantissa & ~normal_bit) == 0ull)
+                   if ((u.parts.mantissa & ~normal_bit) == 0ull)
 	u.parts.expn--;
-      u.parts.mantissa--;
+                   u.parts.mantissa--;
     }
 
   /* If we have updated the expn of a normal number,

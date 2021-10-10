@@ -108,8 +108,8 @@ struct link_map;
 
 #define TD_EVENTSIZE	2
 #define BT_UISHIFT	5 /* log base 2 of BT_NBIPUI, to extract word index */
-#define BT_NBIPUI	(1 << BT_UISHIFT)       /* n bits per unsigned int */
-#define BT_UIMASK	(BT_NBIPUI - 1)         /* to extract bit index */
+#define BT_NBIPUI	(1 << BT_UISHIFT)                    /* n bits per unsigned int */
+#define BT_UIMASK	(BT_NBIPUI - 1)                      /* to extract bit index */
 
 /* Bitmask of enabled events. */
 typedef struct td_thr_events
@@ -124,17 +124,17 @@ typedef struct td_thr_events
   ((UINT32_C ((n) - 1)) >> BT_UISHIFT)
 
 #define td_event_emptyset(setp) \
-  do {									      \
-    int __i;								      \
-    for (__i = TD_EVENTSIZE; __i > 0; --__i)				      \
-      (setp)->event_bits[__i - 1] = 0;					      \
+  do {									                   \
+    int __i;								                   \
+    for (__i = TD_EVENTSIZE; __i > 0; --__i)				                   \
+                   (setp)->event_bits[__i - 1] = 0;					                   \
   } while (0)
 
 #define td_event_fillset(setp) \
-  do {									      \
-    int __i;								      \
-    for (__i = TD_EVENTSIZE; __i > 0; --__i)				      \
-      (setp)->event_bits[__i - 1] = UINT32_C (0xffffffff);		      \
+  do {									                   \
+    int __i;								                   \
+    for (__i = TD_EVENTSIZE; __i > 0; --__i)				                   \
+                   (setp)->event_bits[__i - 1] = UINT32_C (0xffffffff);		                   \
   } while (0)
 
 #define td_event_addset(setp, n) \
@@ -220,7 +220,7 @@ typedef struct
 /* Gathered statistics about the process.  */
 typedef struct td_ta_stats
 {
-  int nthreads;       		/* Total number of threads in use.  */
+  int nthreads;                    		/* Total number of threads in use.  */
   int r_concurrency;		/* Concurrency level requested by user.  */
   int nrunnable_num;		/* Average runnable threads, numerator.  */
   int nrunnable_den;		/* Average runnable threads, denominator.  */
@@ -312,7 +312,7 @@ extern td_err_e td_ta_get_nthreads (const td_thragent_t *__ta, int *__np);
 /* Return process handle passed in `td_ta_new' for process associated with
    TA.  */
 extern td_err_e td_ta_get_ph (const td_thragent_t *__ta,
-			      struct ps_prochandle **__ph);
+			                   struct ps_prochandle **__ph);
 
 /* Map thread library handle PT to thread debug library handle for process
    associated with TA and store result in *TH.  */
@@ -437,7 +437,7 @@ extern td_err_e td_thr_setprio (const td_thrhandle_t *__th, int __prio);
 
 /* Set pending signals for thread TH.  */
 extern td_err_e td_thr_setsigpending (const td_thrhandle_t *__th,
-				      unsigned char __n, const sigset_t *__ss);
+				                   unsigned char __n, const sigset_t *__ss);
 
 /* Set signal mask for thread TH.  */
 extern td_err_e td_thr_sigsetmask (const td_thrhandle_t *__th,

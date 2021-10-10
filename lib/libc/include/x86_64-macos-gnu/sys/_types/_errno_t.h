@@ -27,5 +27,5 @@
  */
 #ifndef _ERRNO_T
 #define _ERRNO_T
-typedef int                    errno_t;
+typedef int                                                           errno_t;
 #endif  /* _ERRNO_T */

@@ -23,12 +23,12 @@ extern "C" {
     WINBOOL fRc;
     fRc = GetDiskFreeSpace(ptszRoot,&dwSecPerClus,&dwBytesPerSec,&dwFreeClus,&dwTotalClus);
     if(fRc) {
-      DWORD dwBytesPerClus = dwSecPerClus *dwBytesPerSec;
-      *(__int64 *)pliQuota = Int32x32To64(dwBytesPerClus,dwFreeClus);
-      if(pliFree) {
+                   DWORD dwBytesPerClus = dwSecPerClus *dwBytesPerSec;
+                   *(__int64 *)pliQuota = Int32x32To64(dwBytesPerClus,dwFreeClus);
+                   if(pliFree) {
 	*pliFree = *pliQuota;
-      }
-      *(__int64 *)pliTotal = Int32x32To64(dwBytesPerClus,dwTotalClus);
+                   }
+                   *(__int64 *)pliTotal = Int32x32To64(dwBytesPerClus,dwTotalClus);
     }
     return fRc;
   }
@@ -41,17 +41,17 @@ extern "C" {
     hinst = GetModuleHandle(TEXT("KERNEL32"));
     fp = GetProcAddress(hinst,"GetDiskFreeSpaceEx" __MINGW_PROCNAMEEXT_AW);
     if(fp) {
-      *(FARPROC *)&RealGetDiskFreeSpaceEx = fp;
-      fRc = RealGetDiskFreeSpaceEx(ptszRoot,pliQuota,pliTotal,pliFree);
-      if(fRc || GetLastError()!=ERROR_CALL_NOT_IMPLEMENTED) {
+                   *(FARPROC *)&RealGetDiskFreeSpaceEx = fp;
+                   fRc = RealGetDiskFreeSpaceEx(ptszRoot,pliQuota,pliTotal,pliFree);
+                   if(fRc || GetLastError()!=ERROR_CALL_NOT_IMPLEMENTED) {
 	GetDiskFreeSpaceEx = RealGetDiskFreeSpaceEx;
-      } else {
+                   } else {
 	GetDiskFreeSpaceEx = Emulate_GetDiskFreeSpaceEx;
 	fRc = GetDiskFreeSpaceEx(ptszRoot,pliQuota,pliTotal,pliFree);
-      }
+                   }
     } else {
-      GetDiskFreeSpaceEx = Emulate_GetDiskFreeSpaceEx;
-      fRc = GetDiskFreeSpaceEx(ptszRoot,pliQuota,pliTotal,pliFree);
+                   GetDiskFreeSpaceEx = Emulate_GetDiskFreeSpaceEx;
+                   fRc = GetDiskFreeSpaceEx(ptszRoot,pliQuota,pliTotal,pliFree);
     }
     return fRc;
   }
@@ -80,11 +80,11 @@ extern "C" {
     dwRc = GetFullPathName(ptszShort,MAX_PATH,tsz,NULL);
     if(dwRc==0) {
     } else if(dwRc >= MAX_PATH) {
-      SetLastError(ERROR_BUFFER_OVERFLOW);
-      dwRc = 0;
+                   SetLastError(ERROR_BUFFER_OVERFLOW);
+                   dwRc = 0;
     } else {
-      hr = SHGetDesktopFolder(&psfDesk);
-      if(SUCCEEDED(hr)) {
+                   hr = SHGetDesktopFolder(&psfDesk);
+                   if(SUCCEEDED(hr)) {
 	ULONG cwchEaten;
 #if defined(UNICODE)
 #ifdef __cplusplus
@@ -110,31 +110,31 @@ extern "C" {
 #endif
 	  if(FAILED(hr)) {
 	    if(HRESULT_FACILITY(hr)==FACILITY_WIN32) {
-	      SetLastError(HRESULT_CODE(hr));
+	                   SetLastError(HRESULT_CODE(hr));
 	    } else {
-	      SetLastError(ERROR_INVALID_DATA);
+	                   SetLastError(ERROR_INVALID_DATA);
 	    }
 	    dwRc = 0;
 	  } else {
 	    dwRc = SHGetPathFromIDList(pidl,tsz);
 	    if(dwRc==0 && tsz[0]) {
-	      SetLastError(ERROR_INVALID_DATA);
+	                   SetLastError(ERROR_INVALID_DATA);
 	    } else {
-	      dwRc = lstrlen(tsz);
-	      if(dwRc + 1 > ctchBuf) {
+	                   dwRc = lstrlen(tsz);
+	                   if(dwRc + 1 > ctchBuf) {
 		SetLastError(ERROR_INSUFFICIENT_BUFFER);
 		dwRc = dwRc + 1;
-	      } else {
+	                   } else {
 		lstrcpyn(ptszLong,tsz,ctchBuf);
-	      }
+	                   }
 	    }
 	    if(SUCCEEDED(SHGetMalloc(&pMalloc))) {
 #ifdef __cplusplus
-	      pMalloc->Free(pidl);
-	      pMalloc->Release();
+	                   pMalloc->Free(pidl);
+	                   pMalloc->Release();
 #else
-	      pMalloc->lpVtbl->Free(pMalloc,pidl);
-	      pMalloc->lpVtbl->Release(pMalloc);
+	                   pMalloc->lpVtbl->Free(pMalloc,pidl);
+	                   pMalloc->lpVtbl->Release(pMalloc);
 #endif
 	    }
 	  }
@@ -146,7 +146,7 @@ extern "C" {
 #else
 	psfDesk->lpVtbl->Release(psfDesk);
 #endif
-      }
+                   }
     }
     return dwRc;
   }
@@ -160,17 +160,17 @@ extern "C" {
 
     fp = GetProcAddress(hinst,"GetLongPathName" __MINGW_PROCNAMEEXT_AW);
     if(fp) {
-      *(FARPROC *)&RealGetLongPathName = fp;
-      dwRc = RealGetLongPathName(ptszShort,ptszLong,ctchBuf);
-      if(dwRc || GetLastError()!=ERROR_CALL_NOT_IMPLEMENTED) {
+                   *(FARPROC *)&RealGetLongPathName = fp;
+                   dwRc = RealGetLongPathName(ptszShort,ptszLong,ctchBuf);
+                   if(dwRc || GetLastError()!=ERROR_CALL_NOT_IMPLEMENTED) {
 	GetLongPathName = RealGetLongPathName;
-      } else {
+                   } else {
 	GetLongPathName = Emulate_GetLongPathName;
 	dwRc = GetLongPathName(ptszShort,ptszLong,ctchBuf);
-      }
+                   }
     } else {
-      GetLongPathName = Emulate_GetLongPathName;
-      dwRc = GetLongPathName(ptszShort,ptszLong,ctchBuf);
+                   GetLongPathName = Emulate_GetLongPathName;
+                   dwRc = GetLongPathName(ptszShort,ptszLong,ctchBuf);
     }
     return dwRc;
 
@@ -193,7 +193,7 @@ extern "C" {
   static WINBOOL WINAPI Emulate_GetFileAttributesEx(LPCTSTR ptszFile,GET_FILEEX_INFO_LEVELS level,LPVOID pv) {
     WINBOOL fRc;
     if(level==GetFileExInfoStandard) {
-      if(GetFileAttributes(ptszFile)!=0xFFFFFFFF) {
+                   if(GetFileAttributes(ptszFile)!=0xFFFFFFFF) {
 	HANDLE hfind;
 	WIN32_FIND_DATA wfd;
 	hfind = FindFirstFile(ptszFile,&wfd);
@@ -211,12 +211,12 @@ extern "C" {
 	} else {
 	  fRc = FALSE;
 	}
-      } else {
+                   } else {
 	fRc = FALSE;
-      }
+                   }
     } else {
-      SetLastError(ERROR_INVALID_PARAMETER);
-      fRc = FALSE;
+                   SetLastError(ERROR_INVALID_PARAMETER);
+                   fRc = FALSE;
     }
     return fRc;
   }
@@ -229,17 +229,17 @@ extern "C" {
     hinst = GetModuleHandle(TEXT("KERNEL32"));
     fp = GetProcAddress(hinst,"GetFileAttributesEx" __MINGW_PROCNAMEEXT_AW);
     if(fp) {
-      *(FARPROC *)&RealGetFileAttributesEx = fp;
-      fRc = RealGetFileAttributesEx(ptszFile,level,pv);
-      if(fRc || GetLastError()!=ERROR_CALL_NOT_IMPLEMENTED) {
+                   *(FARPROC *)&RealGetFileAttributesEx = fp;
+                   fRc = RealGetFileAttributesEx(ptszFile,level,pv);
+                   if(fRc || GetLastError()!=ERROR_CALL_NOT_IMPLEMENTED) {
 	GetFileAttributesEx = RealGetFileAttributesEx;
-      } else {
+                   } else {
 	GetFileAttributesEx = Emulate_GetFileAttributesEx;
 	fRc = GetFileAttributesEx(ptszFile,level,pv);
-      }
+                   }
     } else {
-      GetFileAttributesEx = Emulate_GetFileAttributesEx;
-      fRc = GetFileAttributesEx(ptszFile,level,pv);
+                   GetFileAttributesEx = Emulate_GetFileAttributesEx;
+                   fRc = GetFileAttributesEx(ptszFile,level,pv);
     }
     return fRc;
   }
@@ -262,9 +262,9 @@ extern "C" {
     hinst = GetModuleHandle(TEXT("KERNEL32"));
     fp = GetProcAddress(hinst,"IsDebuggerPresent");
     if(fp) {
-      *(FARPROC *)&IsDebuggerPresent = fp;
+                   *(FARPROC *)&IsDebuggerPresent = fp;
     } else {
-      IsDebuggerPresent = Emulate_IsDebuggerPresent;
+                   IsDebuggerPresent = Emulate_IsDebuggerPresent;
     }
     return IsDebuggerPresent();
   }

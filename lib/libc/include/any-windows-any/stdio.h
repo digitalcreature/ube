@@ -161,7 +161,7 @@ extern
 extern
   __attribute__((__format__ (gnu_printf, 3, 0))) __MINGW_ATTRIB_NONNULL(3)
   int __cdecl __mingw_vsnprintf(char * __restrict__ _DstBuf,size_t _MaxCount,const char * __restrict__ _Format,
-                               va_list _ArgList);
+                                                                                                va_list _ArgList);
 extern
   __attribute__((__format__ (gnu_printf, 3, 4))) __MINGW_ATTRIB_NONNULL(3)
   int __cdecl __mingw_snprintf(char * __restrict__ s, size_t n, const char * __restrict__  format, ...);
@@ -369,7 +369,7 @@ int sprintf (char *__stream, const char *__format, ...)
   if (__mingw_bos_known(__stream)) {
     int __retval = __mingw_snprintf( __stream, __mingw_bos(__stream, 1), __format, __builtin_va_arg_pack() );
     if (__retval >= 0)
-      __mingw_bos_ptr_chk(__stream, (size_t)__retval + 1, 1);
+                   __mingw_bos_ptr_chk(__stream, (size_t)__retval + 1, 1);
     return __retval;
   }
   return __mingw_sprintf( __stream, __format, __builtin_va_arg_pack() );
@@ -412,7 +412,7 @@ int vsprintf (char *__stream, const char *__format, __builtin_va_list __local_ar
   if (__mingw_bos_known(__stream)) {
     int __retval = __mingw_vsnprintf( __stream, __mingw_bos(__stream, 1), __format, __local_argv );
     if (__retval >= 0)
-      __mingw_bos_ptr_chk(__stream, (size_t)__retval + 1, 1);
+                   __mingw_bos_ptr_chk(__stream, (size_t)__retval + 1, 1);
     return __retval;
   }
 #endif
@@ -914,7 +914,7 @@ int sprintf (char * __restrict__ __stream, const char * __restrict__ __format, .
   if (__mingw_bos_known(__stream)) {
     int __retval = __ms_snprintf( __stream, __mingw_bos(__stream, 1), __format, __builtin_va_arg_pack() );
     if (__retval >= 0)
-      __mingw_bos_ptr_chk(__stream, (size_t)__retval + 1, 1);
+                   __mingw_bos_ptr_chk(__stream, (size_t)__retval + 1, 1);
     return __retval;
   }
   return __mingw_call_ms_sprintf( __stream, __format, __builtin_va_arg_pack() );
@@ -933,7 +933,7 @@ int vsprintf (char * __restrict__ __stream, const char * __restrict__ __format, 
   if (__mingw_bos_known(__stream)) {
     int __retval = __ms_vsnprintf( __stream, __mingw_bos(__stream, 1), __format, __local_argv );
     if (__retval >= 0)
-      __mingw_bos_ptr_chk(__stream, (size_t)__retval + 1, 1);
+                   __mingw_bos_ptr_chk(__stream, (size_t)__retval + 1, 1);
     return __retval;
   }
   return __mingw_call_ms_vsprintf( __stream, __format, __local_argv );
@@ -1358,8 +1358,8 @@ int vsnwprintf (wchar_t *__stream, size_t __n, const wchar_t *__format, __builti
   __mingw_ovr
   int __cdecl _vscwprintf(const wchar_t * __restrict__ _Format, va_list _ArgList)
   {
-      int _Result = __stdio_common_vswprintf(_CRT_INTERNAL_PRINTF_STANDARD_SNPRINTF_BEHAVIOR, NULL, 0, _Format, NULL, _ArgList);
-      return _Result < 0 ? -1 : _Result;
+                   int _Result = __stdio_common_vswprintf(_CRT_INTERNAL_PRINTF_STANDARD_SNPRINTF_BEHAVIOR, NULL, 0, _Format, NULL, _ArgList);
+                   return _Result < 0 ? -1 : _Result;
   }
 #else
   _CRTIMP int __cdecl _scwprintf(const wchar_t * __restrict__ _Format,...);

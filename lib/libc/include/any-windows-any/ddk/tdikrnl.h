@@ -44,27 +44,27 @@ typedef struct _TDI_REQUEST_KERNEL {
 } TDI_REQUEST_KERNEL, *PTDI_REQUEST_KERNEL;
 
 /* Request codes */
-#define TDI_ASSOCIATE_ADDRESS             0x01
-#define TDI_DISASSOCIATE_ADDRESS          0x02
-#define TDI_CONNECT                       0x03
-#define TDI_LISTEN                        0x04
-#define TDI_ACCEPT                        0x05
-#define TDI_DISCONNECT                    0x06
-#define TDI_SEND                          0x07
-#define TDI_RECEIVE                       0x08
-#define TDI_SEND_DATAGRAM                 0x09
-#define TDI_RECEIVE_DATAGRAM              0x0A
-#define TDI_SET_EVENT_HANDLER             0x0B
-#define TDI_QUERY_INFORMATION             0x0C
-#define TDI_SET_INFORMATION               0x0D
-#define TDI_ACTION                        0x0E
+#define TDI_ASSOCIATE_ADDRESS                                       0x01
+#define TDI_DISASSOCIATE_ADDRESS                       0x02
+#define TDI_CONNECT                                                              0x03
+#define TDI_LISTEN                                                                            0x04
+#define TDI_ACCEPT                                                                            0x05
+#define TDI_DISCONNECT                                                           0x06
+#define TDI_SEND                                                                              0x07
+#define TDI_RECEIVE                                                              0x08
+#define TDI_SEND_DATAGRAM                                           0x09
+#define TDI_RECEIVE_DATAGRAM                                        0x0A
+#define TDI_SET_EVENT_HANDLER                                       0x0B
+#define TDI_QUERY_INFORMATION                                       0x0C
+#define TDI_SET_INFORMATION                                         0x0D
+#define TDI_ACTION                                                                            0x0E
 
-#define TDI_DIRECT_SEND                   0x27
-#define TDI_DIRECT_SEND_DATAGRAM          0x29
+#define TDI_DIRECT_SEND                                                          0x27
+#define TDI_DIRECT_SEND_DATAGRAM                       0x29
 
-#define TDI_TRANSPORT_ADDRESS_FILE        1
-#define TDI_CONNECTION_FILE               2
-#define TDI_CONTROL_CHANNEL_FILE          3
+#define TDI_TRANSPORT_ADDRESS_FILE                     1
+#define TDI_CONNECTION_FILE                                         2
+#define TDI_CONTROL_CHANNEL_FILE                       3
 
 /* Internal TDI IOCTLS */
 #define IOCTL_TDI_QUERY_DIRECT_SEND_HANDLER   _TDI_CONTROL_CODE(0x80, METHOD_NEITHER)
@@ -144,17 +144,17 @@ typedef struct _TDI_REQUEST_KERNEL_SET_INFO {
 
 
 /* Event types */
-#define TDI_EVENT_CONNECT                   0
-#define TDI_EVENT_DISCONNECT                1
-#define TDI_EVENT_ERROR                     2
-#define TDI_EVENT_RECEIVE                   3
-#define TDI_EVENT_RECEIVE_DATAGRAM          4
-#define TDI_EVENT_RECEIVE_EXPEDITED         5
-#define TDI_EVENT_SEND_POSSIBLE             6
-#define TDI_EVENT_CHAINED_RECEIVE           7
+#define TDI_EVENT_CONNECT                                                          0
+#define TDI_EVENT_DISCONNECT                                          1
+#define TDI_EVENT_ERROR                                                            2
+#define TDI_EVENT_RECEIVE                                                          3
+#define TDI_EVENT_RECEIVE_DATAGRAM                       4
+#define TDI_EVENT_RECEIVE_EXPEDITED                      5
+#define TDI_EVENT_SEND_POSSIBLE                                       6
+#define TDI_EVENT_CHAINED_RECEIVE                        7
 #define TDI_EVENT_CHAINED_RECEIVE_DATAGRAM  8
 #define TDI_EVENT_CHAINED_RECEIVE_EXPEDITED 9
-#define TDI_EVENT_ERROR_EX                  10
+#define TDI_EVENT_ERROR_EX                                                         10
 
 typedef NTSTATUS
 (NTAPI *PTDI_IND_CONNECT)(
@@ -389,19 +389,19 @@ TdiDefaultSendPossibleHandler(
 
 /* Macros and functions to build IRPs */
 
-#define TdiBuildBaseIrp(                                                  \
-  bIrp, bDevObj, bFileObj, bCompRoutine, bContxt, bIrpSp, bMinor)         \
-{                                                                         \
-  bIrpSp->MajorFunction = IRP_MJ_INTERNAL_DEVICE_CONTROL;                 \
-  bIrpSp->MinorFunction = (bMinor);                                       \
-  bIrpSp->DeviceObject  = (bDevObj);                                      \
-  bIrpSp->FileObject    = (bFileObj);                                     \
-  if (bCompRoutine)                                                       \
-  {                                                                       \
+#define TdiBuildBaseIrp(                                                                                                                                                          \
+  bIrp, bDevObj, bFileObj, bCompRoutine, bContxt, bIrpSp, bMinor)                      \
+{                                                                                                                                                                                                                                     \
+  bIrpSp->MajorFunction = IRP_MJ_INTERNAL_DEVICE_CONTROL;                                           \
+  bIrpSp->MinorFunction = (bMinor);                                                                                                                     \
+  bIrpSp->DeviceObject  = (bDevObj);                                                                                                                    \
+  bIrpSp->FileObject    = (bFileObj);                                                                                                                   \
+  if (bCompRoutine)                                                                                                                                                                            \
+  {                                                                                                                                                                                                                      \
     IoSetCompletionRoutine(bIrp, bCompRoutine, bContxt, TRUE, TRUE, TRUE);\
-  }                                                                       \
-  else                                                                    \
-    IoSetCompletionRoutine(bIrp, NULL, NULL, FALSE, FALSE, FALSE);        \
+  }                                                                                                                                                                                                                      \
+  else                                                                                                                                                                                                                   \
+    IoSetCompletionRoutine(bIrp, NULL, NULL, FALSE, FALSE, FALSE);                     \
 }
 
 /*
@@ -415,19 +415,19 @@ TdiDefaultSendPossibleHandler(
  *   IN PTDI_CONNECTION_INFORMATION  RequestConnectionInfo,
  *   OUT PTDI_CONNECTION_INFORMATION  ReturnConnectionInfo);
  */
-#define TdiBuildAccept(                                             \
-  Irp, DevObj, FileObj, CompRoutine, Contxt,                        \
-  RequestConnectionInfo, ReturnConnectionInfo)                      \
-{                                                                   \
-  PTDI_REQUEST_KERNEL_ACCEPT _Request;                              \
-  PIO_STACK_LOCATION _IrpSp;                                        \
-                                                                    \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                          \
-                                                                    \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                \
-                  Contxt, _IrpSp, TDI_ACCEPT);                      \
-                                                                    \
-  _Request = (PTDI_REQUEST_KERNEL_ACCEPT)&_IrpSp->Parameters;       \
+#define TdiBuildAccept(                                                                                                                                        \
+  Irp, DevObj, FileObj, CompRoutine, Contxt,                                                                            \
+  RequestConnectionInfo, ReturnConnectionInfo)                                                             \
+{                                                                                                                                                                                                                  \
+  PTDI_REQUEST_KERNEL_ACCEPT _Request;                                                                                               \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                      \
+                                                                                                                                                                                                                   \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                                              \
+                                                                                                                                                                                                                   \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                          \
+                                                         Contxt, _IrpSp, TDI_ACCEPT);                                                             \
+                                                                                                                                                                                                                   \
+  _Request = (PTDI_REQUEST_KERNEL_ACCEPT)&_IrpSp->Parameters;                    \
   _Request->RequestConnectionInformation = (RequestConnectionInfo); \
   _Request->ReturnConnectionInformation  = (ReturnConnectionInfo);  \
 }
@@ -442,17 +442,17 @@ TdiDefaultSendPossibleHandler(
  *   IN PVOID  Contxt,
  *   IN PMDL  MdlAddr);
  */
-#define TdiBuildAction(                               \
+#define TdiBuildAction(                                                                                                \
   Irp, DevObj, FileObj, CompRoutine, Contxt, MdlAddr) \
-{                                                     \
-  PIO_STACK_LOCATION _IrpSp;                          \
-                                                      \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);            \
-                                                      \
+{                                                                                                                                                             \
+  PIO_STACK_LOCATION _IrpSp;                                                                              \
+                                                                                                                                                                           \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                      \
+                                                                                                                                                                           \
   TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,  \
-                  Contxt, _IrpSp, TDI_ACTION);        \
-                                                      \
-  (Irp)->MdlAddress = (MdlAddr);                      \
+                                                         Contxt, _IrpSp, TDI_ACTION);                     \
+                                                                                                                                                                           \
+  (Irp)->MdlAddress = (MdlAddr);                                                             \
 }
 
 /*
@@ -465,19 +465,19 @@ TdiDefaultSendPossibleHandler(
  *   IN PVOID  Contxt,
  *   IN HANDLE  AddrHandle);
  */
-#define TdiBuildAssociateAddress(                                \
-  Irp, DevObj, FileObj, CompRoutine, Contxt, AddrHandle)         \
-{                                                                \
-  PTDI_REQUEST_KERNEL_ASSOCIATE _Request;                        \
-  PIO_STACK_LOCATION _IrpSp;                                     \
-                                                                 \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                       \
-                                                                 \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,             \
-                  Contxt, _IrpSp, TDI_ASSOCIATE_ADDRESS);        \
-                                                                 \
+#define TdiBuildAssociateAddress(                                                                                                 \
+  Irp, DevObj, FileObj, CompRoutine, Contxt, AddrHandle)                      \
+{                                                                                                                                                                                                  \
+  PTDI_REQUEST_KERNEL_ASSOCIATE _Request;                                                                            \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                   \
+                                                                                                                                                                                                   \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                              \
+                                                                                                                                                                                                   \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                       \
+                                                         Contxt, _IrpSp, TDI_ASSOCIATE_ADDRESS);                     \
+                                                                                                                                                                                                   \
   _Request = (PTDI_REQUEST_KERNEL_ASSOCIATE)&_IrpSp->Parameters; \
-  _Request->AddressHandle = (HANDLE)(AddrHandle);                \
+  _Request->AddressHandle = (HANDLE)(AddrHandle);                                          \
 }
 
 /*
@@ -492,22 +492,22 @@ TdiDefaultSendPossibleHandler(
  *   IN PTDI_CONNECTION_INFORMATION  RequestConnectionInfo,
  *   OUT PTDI_CONNECTION_INFORMATION  ReturnConnectionInfo);
  */
-#define TdiBuildConnect(                                            \
-  Irp, DevObj, FileObj, CompRoutine, Contxt,                        \
-  Time, RequestConnectionInfo, ReturnConnectionInfo)                \
-{                                                                   \
-  PTDI_REQUEST_KERNEL _Request;                                     \
-  PIO_STACK_LOCATION _IrpSp;                                        \
-                                                                    \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                          \
-                                                                    \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                \
-                  Contxt, _IrpSp, TDI_CONNECT);                     \
-                                                                    \
-  _Request = (PTDI_REQUEST_KERNEL)&_IrpSp->Parameters;              \
+#define TdiBuildConnect(                                                                                                                                       \
+  Irp, DevObj, FileObj, CompRoutine, Contxt,                                                                            \
+  Time, RequestConnectionInfo, ReturnConnectionInfo)                                          \
+{                                                                                                                                                                                                                  \
+  PTDI_REQUEST_KERNEL _Request;                                                                                                                   \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                      \
+                                                                                                                                                                                                                   \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                                              \
+                                                                                                                                                                                                                   \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                          \
+                                                         Contxt, _IrpSp, TDI_CONNECT);                                                            \
+                                                                                                                                                                                                                   \
+  _Request = (PTDI_REQUEST_KERNEL)&_IrpSp->Parameters;                                        \
   _Request->RequestConnectionInformation = (RequestConnectionInfo); \
   _Request->ReturnConnectionInformation  = (ReturnConnectionInfo);  \
-  _Request->RequestSpecific              = (PVOID)(Time);           \
+  _Request->RequestSpecific                                        = (PVOID)(Time);                        \
 }
 
 /*
@@ -519,15 +519,15 @@ TdiDefaultSendPossibleHandler(
  *   IN PVOID  CompRoutine,
  *   IN PVOID  Contxt);
  */
-#define TdiBuildDisassociateAddress(                                \
-  Irp, DevObj, FileObj, CompRoutine, Contxt)                        \
-{                                                                   \
-  PIO_STACK_LOCATION _IrpSp;                                        \
-                                                                    \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                          \
-                                                                    \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                \
-                  Contxt, _IrpSp, TDI_DISASSOCIATE_ADDRESS);        \
+#define TdiBuildDisassociateAddress(                                                                                                 \
+  Irp, DevObj, FileObj, CompRoutine, Contxt)                                                                            \
+{                                                                                                                                                                                                                  \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                      \
+                                                                                                                                                                                                                   \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                                              \
+                                                                                                                                                                                                                   \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                          \
+                                                         Contxt, _IrpSp, TDI_DISASSOCIATE_ADDRESS);                     \
 }
 
 /*
@@ -543,23 +543,23 @@ TdiDefaultSendPossibleHandler(
  *   IN PTDI_CONNECTION_INFORMATION  RequestConnectionInfo,
  *   OUT PTDI_CONNECTION_INFORMATION  ReturnConnectionInfo);
  */
-#define TdiBuildDisconnect(                                         \
-  Irp, DevObj, FileObj, CompRoutine, Contxt, Time,                  \
-  Flags, RequestConnectionInfo, ReturnConnectionInfo)               \
-{                                                                   \
-  PTDI_REQUEST_KERNEL _Request;                                     \
-  PIO_STACK_LOCATION _IrpSp;                                        \
-                                                                    \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                          \
-                                                                    \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                \
-                  Contxt, _IrpSp, TDI_DISCONNECT);                  \
-                                                                    \
-  _Request = (PTDI_REQUEST_KERNEL)&_IrpSp->Parameters;              \
+#define TdiBuildDisconnect(                                                                                                                       \
+  Irp, DevObj, FileObj, CompRoutine, Contxt, Time,                                                         \
+  Flags, RequestConnectionInfo, ReturnConnectionInfo)                                         \
+{                                                                                                                                                                                                                  \
+  PTDI_REQUEST_KERNEL _Request;                                                                                                                   \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                      \
+                                                                                                                                                                                                                   \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                                              \
+                                                                                                                                                                                                                   \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                          \
+                                                         Contxt, _IrpSp, TDI_DISCONNECT);                                                         \
+                                                                                                                                                                                                                   \
+  _Request = (PTDI_REQUEST_KERNEL)&_IrpSp->Parameters;                                        \
   _Request->RequestConnectionInformation = (RequestConnectionInfo); \
   _Request->ReturnConnectionInformation  = (ReturnConnectionInfo);  \
-  _Request->RequestSpecific = (PVOID)(Time);                        \
-  _Request->RequestFlags    = (Flags);                              \
+  _Request->RequestSpecific = (PVOID)(Time);                                                                            \
+  _Request->RequestFlags    = (Flags);                                                                                               \
 }
 
 /*
@@ -572,11 +572,11 @@ TdiDefaultSendPossibleHandler(
  *   IN PIO_STATUS_BLOCK IoStatusBlock);
  */
 #define TdiBuildInternalDeviceControlIrp( \
-  IrpSubFunction, DeviceObject,           \
-  FileObject, Event, IoStatusBlock)       \
-  IoBuildDeviceIoControlRequest(          \
-		IrpSubFunction, DeviceObject,             \
-		NULL, 0, NULL, 0,                     \
+  IrpSubFunction, DeviceObject,                        \
+  FileObject, Event, IoStatusBlock)                    \
+  IoBuildDeviceIoControlRequest(                       \
+		IrpSubFunction, DeviceObject,                                       \
+		NULL, 0, NULL, 0,                                                            \
 		TRUE, Event, IoStatusBlock)
 
 /*
@@ -591,22 +591,22 @@ TdiDefaultSendPossibleHandler(
  *   IN PTDI_CONNECTION_INFORMATION  RequestConnectionInfo,
  *   OUT PTDI_CONNECTION_INFORMATION  ReturnConnectionInfo);
  */
-#define TdiBuildListen(                                             \
-  Irp, DevObj, FileObj, CompRoutine, Contxt,                        \
-  Flags, RequestConnectionInfo, ReturnConnectionInfo)               \
-{                                                                   \
-  PTDI_REQUEST_KERNEL _Request;                                     \
-  PIO_STACK_LOCATION _IrpSp;                                        \
-                                                                    \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                          \
-                                                                    \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                \
-                  Contxt, _IrpSp, TDI_LISTEN);                      \
-                                                                    \
-  _Request = (PTDI_REQUEST_KERNEL)&_IrpSp->Parameters;              \
+#define TdiBuildListen(                                                                                                                                        \
+  Irp, DevObj, FileObj, CompRoutine, Contxt,                                                                            \
+  Flags, RequestConnectionInfo, ReturnConnectionInfo)                                         \
+{                                                                                                                                                                                                                  \
+  PTDI_REQUEST_KERNEL _Request;                                                                                                                   \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                      \
+                                                                                                                                                                                                                   \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                                              \
+                                                                                                                                                                                                                   \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                          \
+                                                         Contxt, _IrpSp, TDI_LISTEN);                                                             \
+                                                                                                                                                                                                                   \
+  _Request = (PTDI_REQUEST_KERNEL)&_IrpSp->Parameters;                                        \
   _Request->RequestConnectionInformation = (RequestConnectionInfo); \
   _Request->ReturnConnectionInformation  = (ReturnConnectionInfo);  \
-  _Request->RequestFlags = (Flags);                                 \
+  _Request->RequestFlags = (Flags);                                                                                                  \
 }
 
 TDIKRNLAPI
@@ -636,21 +636,21 @@ TdiBuildNetbiosAddressEa(
  *   IN UINT  QType,
  *   IN PMDL  MdlAddr);
  */
-#define TdiBuildQueryInformation(                                        \
-  Irp, DevObj, FileObj, CompRoutine, Contxt, QType, MdlAddr)             \
-{                                                                        \
-  PTDI_REQUEST_KERNEL_QUERY_INFORMATION _Request;                        \
-  PIO_STACK_LOCATION _IrpSp;                                             \
-                                                                         \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                               \
-                                                                         \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                     \
-                  Contxt, _IrpSp, TDI_QUERY_INFORMATION);                \
-                                                                         \
+#define TdiBuildQueryInformation(                                                                                                                      \
+  Irp, DevObj, FileObj, CompRoutine, Contxt, QType, MdlAddr)                                       \
+{                                                                                                                                                                                                                                    \
+  PTDI_REQUEST_KERNEL_QUERY_INFORMATION _Request;                                                                            \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                                        \
+                                                                                                                                                                                                                                     \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                                                                \
+                                                                                                                                                                                                                                     \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                                            \
+                                                         Contxt, _IrpSp, TDI_QUERY_INFORMATION);                                          \
+                                                                                                                                                                                                                                     \
   _Request = (PTDI_REQUEST_KERNEL_QUERY_INFORMATION)&_IrpSp->Parameters; \
-  _Request->RequestConnectionInformation = NULL;                         \
-  _Request->QueryType = (ULONG)(QType);                                  \
-  (Irp)->MdlAddress   = (MdlAddr);                                       \
+  _Request->RequestConnectionInformation = NULL;                                                                             \
+  _Request->QueryType = (ULONG)(QType);                                                                                                   \
+  (Irp)->MdlAddress   = (MdlAddr);                                                                                                                     \
 }
 
 /*
@@ -665,22 +665,22 @@ TdiBuildNetbiosAddressEa(
  *   IN ULONG  InFlags,
  *   IN ULONG  ReceiveLen);
  */
-#define TdiBuildReceive(                                       \
-  Irp, DevObj, FileObj, CompRoutine, Contxt,                   \
-  MdlAddr, InFlags, ReceiveLen)                                \
-{                                                              \
-  PTDI_REQUEST_KERNEL_RECEIVE _Request;                        \
-  PIO_STACK_LOCATION _IrpSp;                                   \
-                                                               \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                     \
-                                                               \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,           \
-                  Contxt, _IrpSp, TDI_RECEIVE);                \
-                                                               \
+#define TdiBuildReceive(                                                                                                                     \
+  Irp, DevObj, FileObj, CompRoutine, Contxt,                                                          \
+  MdlAddr, InFlags, ReceiveLen)                                                                                                 \
+{                                                                                                                                                                                                \
+  PTDI_REQUEST_KERNEL_RECEIVE _Request;                                                                            \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                    \
+                                                                                                                                                                                                 \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                            \
+                                                                                                                                                                                                 \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                        \
+                                                         Contxt, _IrpSp, TDI_RECEIVE);                                          \
+                                                                                                                                                                                                 \
   _Request = (PTDI_REQUEST_KERNEL_RECEIVE)&_IrpSp->Parameters; \
-  _Request->ReceiveFlags  = (InFlags);                         \
-  _Request->ReceiveLength = (ReceiveLen);                      \
-  (Irp)->MdlAddress       = (MdlAddr);                         \
+  _Request->ReceiveFlags  = (InFlags);                                                                             \
+  _Request->ReceiveLength = (ReceiveLen);                                                             \
+  (Irp)->MdlAddress                    = (MdlAddr);                                                                             \
 }
 
 /*
@@ -697,24 +697,24 @@ TdiBuildNetbiosAddressEa(
  *   OUT PTDI_CONNECTION_INFORMATION  ReturnInfo,
  *   ULONG InFlags);
  */
-#define TdiBuildReceiveDatagram(                                 \
-  Irp, DevObj, FileObj, CompRoutine, Contxt, MdlAddr,            \
-  ReceiveLen, ReceiveDatagramInfo, ReturnInfo, InFlags)          \
-{                                                                \
-  PTDI_REQUEST_KERNEL_RECEIVEDG _Request;                        \
-  PIO_STACK_LOCATION _IrpSp;                                     \
-                                                                 \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                       \
-                                                                 \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,             \
-                  Contxt, _IrpSp, TDI_RECEIVE_DATAGRAM);         \
-                                                                 \
+#define TdiBuildReceiveDatagram(                                                                                                  \
+  Irp, DevObj, FileObj, CompRoutine, Contxt, MdlAddr,                                      \
+  ReceiveLen, ReceiveDatagramInfo, ReturnInfo, InFlags)                       \
+{                                                                                                                                                                                                  \
+  PTDI_REQUEST_KERNEL_RECEIVEDG _Request;                                                                            \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                   \
+                                                                                                                                                                                                   \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                              \
+                                                                                                                                                                                                   \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                       \
+                                                         Contxt, _IrpSp, TDI_RECEIVE_DATAGRAM);                      \
+                                                                                                                                                                                                   \
   _Request = (PTDI_REQUEST_KERNEL_RECEIVEDG)&_IrpSp->Parameters; \
   _Request->ReceiveDatagramInformation = (ReceiveDatagramInfo);  \
-  _Request->ReturnDatagramInformation  = (ReturnInfo);           \
-  _Request->ReceiveLength = (ReceiveLen);                        \
-  _Request->ReceiveFlags  = (InFlags);                           \
-  (Irp)->MdlAddress       = (MdlAddr);                           \
+  _Request->ReturnDatagramInformation  = (ReturnInfo);                        \
+  _Request->ReceiveLength = (ReceiveLen);                                                                            \
+  _Request->ReceiveFlags  = (InFlags);                                                                               \
+  (Irp)->MdlAddress                    = (MdlAddr);                                                                               \
 }
 
 /*
@@ -729,22 +729,22 @@ TdiBuildNetbiosAddressEa(
  *   IN ULONG  InFlags,
  *   IN ULONG  SendLen);
  */
-#define TdiBuildSend(                                       \
-  Irp, DevObj, FileObj, CompRoutine, Contxt,                \
-  MdlAddr, InFlags, SendLen)                                \
-{                                                           \
-  PTDI_REQUEST_KERNEL_SEND _Request;                        \
-  PIO_STACK_LOCATION _IrpSp;                                \
-                                                            \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                  \
-                                                            \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,        \
-                  Contxt, _IrpSp, TDI_SEND);                \
-                                                            \
+#define TdiBuildSend(                                                                                                                     \
+  Irp, DevObj, FileObj, CompRoutine, Contxt,                                          \
+  MdlAddr, InFlags, SendLen)                                                                                                 \
+{                                                                                                                                                                                \
+  PTDI_REQUEST_KERNEL_SEND _Request;                                                                            \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                 \
+                                                                                                                                                                                              \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                         \
+                                                                                                                                                                                              \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                     \
+                                                         Contxt, _IrpSp, TDI_SEND);                                          \
+                                                                                                                                                                                              \
   _Request = (PTDI_REQUEST_KERNEL_SEND)&_IrpSp->Parameters; \
-  _Request->SendFlags  = (InFlags);                         \
-  _Request->SendLength = (SendLen);                         \
-  (Irp)->MdlAddress    = (MdlAddr);                         \
+  _Request->SendFlags  = (InFlags);                                                                             \
+  _Request->SendLength = (SendLen);                                                                             \
+  (Irp)->MdlAddress    = (MdlAddr);                                                                             \
 }
 
 /*
@@ -759,22 +759,22 @@ TdiBuildNetbiosAddressEa(
  *   IN ULONG  SendLen,
  *   IN PTDI_CONNECTION_INFORMATION  SendDatagramInfo);
  */
-#define TdiBuildSendDatagram(                                 \
-  Irp, DevObj, FileObj, CompRoutine, Contxt,                  \
-  MdlAddr, SendLen, SendDatagramInfo)                         \
-{                                                             \
-  PTDI_REQUEST_KERNEL_SENDDG _Request;                        \
-  PIO_STACK_LOCATION _IrpSp;                                  \
-                                                              \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                    \
-                                                              \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,          \
-                  Contxt, _IrpSp, TDI_SEND_DATAGRAM);         \
-                                                              \
+#define TdiBuildSendDatagram(                                                                                                  \
+  Irp, DevObj, FileObj, CompRoutine, Contxt,                                                         \
+  MdlAddr, SendLen, SendDatagramInfo)                                                                             \
+{                                                                                                                                                                                               \
+  PTDI_REQUEST_KERNEL_SENDDG _Request;                                                                            \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                   \
+                                                                                                                                                                                                \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                           \
+                                                                                                                                                                                                \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                       \
+                                                         Contxt, _IrpSp, TDI_SEND_DATAGRAM);                      \
+                                                                                                                                                                                                \
   _Request = (PTDI_REQUEST_KERNEL_SENDDG)&_IrpSp->Parameters; \
   _Request->SendDatagramInformation = (SendDatagramInfo);     \
-  _Request->SendLength = (SendLen);                           \
-  (Irp)->MdlAddress    = (MdlAddr);                           \
+  _Request->SendLength = (SendLen);                                                                               \
+  (Irp)->MdlAddress    = (MdlAddr);                                                                               \
 }
 
 /*
@@ -789,22 +789,22 @@ TdiBuildNetbiosAddressEa(
  *   IN PVOID  InEventHandler,
  *   IN PVOID  InEventContext);
  */
-#define TdiBuildSetEventHandler(                                 \
-  Irp, DevObj, FileObj, CompRoutine, Contxt,                     \
-  InEventType, InEventHandler, InEventContext)                   \
-{                                                                \
-  PTDI_REQUEST_KERNEL_SET_EVENT _Request;                        \
-  PIO_STACK_LOCATION _IrpSp;                                     \
-                                                                 \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                       \
-                                                                 \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,             \
-                  Contxt, _IrpSp, TDI_SET_EVENT_HANDLER);        \
-                                                                 \
+#define TdiBuildSetEventHandler(                                                                                                  \
+  Irp, DevObj, FileObj, CompRoutine, Contxt,                                                            \
+  InEventType, InEventHandler, InEventContext)                                                          \
+{                                                                                                                                                                                                  \
+  PTDI_REQUEST_KERNEL_SET_EVENT _Request;                                                                            \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                   \
+                                                                                                                                                                                                   \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                              \
+                                                                                                                                                                                                   \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                       \
+                                                         Contxt, _IrpSp, TDI_SET_EVENT_HANDLER);                     \
+                                                                                                                                                                                                   \
   _Request = (PTDI_REQUEST_KERNEL_SET_EVENT)&_IrpSp->Parameters; \
-  _Request->EventType    = (InEventType);                        \
-  _Request->EventHandler = (PVOID)(InEventHandler);              \
-  _Request->EventContext = (PVOID)(InEventContext);              \
+  _Request->EventType    = (InEventType);                                                                            \
+  _Request->EventHandler = (PVOID)(InEventHandler);                                        \
+  _Request->EventContext = (PVOID)(InEventContext);                                        \
 }
 
 /*
@@ -818,31 +818,31 @@ TdiBuildNetbiosAddressEa(
  *   IN UINT  SType,
  *   IN PMDL  MdlAddr);
  */
-#define TdiBuildSetInformation(                                        \
-  Irp, DevObj, FileObj, CompRoutine, Contxt, SType, MdlAddr)           \
-{                                                                      \
-  PTDI_REQUEST_KERNEL_SET_INFORMATION _Request;                        \
-  PIO_STACK_LOCATION _IrpSp;                                           \
-                                                                       \
-  _IrpSp = IoGetNextIrpStackLocation(Irp);                             \
-                                                                       \
-  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                   \
-                  Contxt, _IrpSp, TDI_SET_INFORMATION);                \
-                                                                       \
+#define TdiBuildSetInformation(                                                                                                                      \
+  Irp, DevObj, FileObj, CompRoutine, Contxt, SType, MdlAddr)                        \
+{                                                                                                                                                                                                                     \
+  PTDI_REQUEST_KERNEL_SET_INFORMATION _Request;                                                                            \
+  PIO_STACK_LOCATION _IrpSp;                                                                                                                                      \
+                                                                                                                                                                                                                      \
+  _IrpSp = IoGetNextIrpStackLocation(Irp);                                                                                 \
+                                                                                                                                                                                                                      \
+  TdiBuildBaseIrp(Irp, DevObj, FileObj, CompRoutine,                                                          \
+                                                         Contxt, _IrpSp, TDI_SET_INFORMATION);                                          \
+                                                                                                                                                                                                                      \
   _Request = (PTDI_REQUEST_KERNEL_SET_INFORMATION)&_IrpSp->Parameters; \
-  _Request->RequestConnectionInformation = NULL;                       \
-  _Request->SetType = (ULONG)(SType);                                  \
-  (Irp)->MdlAddress = (MdlAddr);                                       \
+  _Request->RequestConnectionInformation = NULL;                                                              \
+  _Request->SetType = (ULONG)(SType);                                                                                                   \
+  (Irp)->MdlAddress = (MdlAddr);                                                                                                                     \
 }
 
 /* TDI20_CLIENT_INTERFACE_INFO.TdiVersion constants */
-#define TDI_CURRENT_MAJOR_VERSION         2
-#define TDI_CURRENT_MINOR_VERSION         0
+#define TDI_CURRENT_MAJOR_VERSION                      2
+#define TDI_CURRENT_MINOR_VERSION                      0
 
 #define TDI_CURRENT_VERSION ((TDI_CURRENT_MINOR_VERSION) << 8 \
   | (TDI_CURRENT_MAJOR_VERSION))
 
-#define TDI_VERSION_ONE                   0x0001
+#define TDI_VERSION_ONE                                                          0x0001
 
 typedef enum _TDI_PNP_OPCODE {
   TDI_PNP_OP_MIN,
@@ -857,9 +857,9 @@ typedef enum _TDI_PNP_OPCODE {
 } TDI_PNP_OPCODE;
 
 /* TDI_PNP_CONTEXT.ContextType */
-#define TDI_PNP_CONTEXT_TYPE_IF_NAME            0x1
-#define TDI_PNP_CONTEXT_TYPE_IF_ADDR            0x2
-#define TDI_PNP_CONTEXT_TYPE_PDO                0x3
+#define TDI_PNP_CONTEXT_TYPE_IF_NAME                                      0x1
+#define TDI_PNP_CONTEXT_TYPE_IF_ADDR                                      0x2
+#define TDI_PNP_CONTEXT_TYPE_PDO                                          0x3
 #define TDI_PNP_CONTEXT_TYPE_FIRST_OR_LAST_IF   0x4
 
 typedef struct _TDI_PNP_CONTEXT {
@@ -917,8 +917,8 @@ typedef VOID
 typedef struct _TDI20_CLIENT_INTERFACE_INFO {
   _ANONYMOUS_UNION union {
     _ANONYMOUS_STRUCT struct {
-      UCHAR  MajorTdiVersion;
-      UCHAR  MinorTdiVersion;
+                   UCHAR  MajorTdiVersion;
+                   UCHAR  MinorTdiVersion;
     } DUMMYSTRUCTNAME;
     USHORT TdiVersion;
   } DUMMYUNIONNAME;
@@ -928,18 +928,18 @@ typedef struct _TDI20_CLIENT_INTERFACE_INFO {
   _ANONYMOUS_UNION union {
     TDI_BINDING_HANDLER  BindingHandler;
     _ANONYMOUS_STRUCT struct {
-      TDI_BIND_HANDLER  BindHandler;
-      TDI_UNBIND_HANDLER  UnBindHandler;
+                   TDI_BIND_HANDLER  BindHandler;
+                   TDI_UNBIND_HANDLER  UnBindHandler;
     } DUMMYSTRUCTNAME;
   }DUMMYUNIONNAME2;
   _ANONYMOUS_UNION union {
     _ANONYMOUS_STRUCT struct {
-      TDI_ADD_ADDRESS_HANDLER_V2  AddAddressHandlerV2;
-      TDI_DEL_ADDRESS_HANDLER_V2  DelAddressHandlerV2;
+                   TDI_ADD_ADDRESS_HANDLER_V2  AddAddressHandlerV2;
+                   TDI_DEL_ADDRESS_HANDLER_V2  DelAddressHandlerV2;
     } DUMMYSTRUCTNAME;
     _ANONYMOUS_STRUCT struct {
-      TDI_ADD_ADDRESS_HANDLER  AddAddressHandler;
-      TDI_DEL_ADDRESS_HANDLER  DelAddressHandler;
+                   TDI_ADD_ADDRESS_HANDLER  AddAddressHandler;
+                   TDI_DEL_ADDRESS_HANDLER  DelAddressHandler;
     } DUMMYSTRUCTNAME2;
   } DUMMYUNIONNAME3;
 } TDI20_CLIENT_INTERFACE_INFO, *PTDI20_CLIENT_INTERFACE_INFO;
@@ -956,9 +956,9 @@ typedef TDI_CLIENT_INTERFACE_INFO *PTDI_CLIENT_INTERFACE_INFO;
  *   IN PIRP Irp,
  *   IN NTSTATUS Status);
  */
-#define TdiCompleteRequest(Irp, Status)           \
-{                                                 \
-  (Irp)->IoStatus.Status = (Status);              \
+#define TdiCompleteRequest(Irp, Status)                        \
+{                                                                                                                                                         \
+  (Irp)->IoStatus.Status = (Status);                                        \
   IoCompleteRequest((Irp), IO_NETWORK_INCREMENT); \
 }
 

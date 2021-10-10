@@ -130,8 +130,8 @@ struct ifpppcstatsreq {
   struct ppp_comp_stats stats;
 };
 
-#define ifr__name       b.ifr_ifrn.ifrn_name
-#define stats_ptr       b.ifr_ifru.ifru_data
+#define ifr__name                    b.ifr_ifrn.ifrn_name
+#define stats_ptr                    b.ifr_ifru.ifru_data
 #endif
 
 /*

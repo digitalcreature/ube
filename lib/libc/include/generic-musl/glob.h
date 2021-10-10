@@ -22,7 +22,7 @@ typedef struct {
 int  glob(const char *__restrict, int, int (*)(const char *, int), glob_t *__restrict);
 void globfree(glob_t *);
 
-#define GLOB_ERR      0x01
+#define GLOB_ERR                   0x01
 #define GLOB_MARK     0x02
 #define GLOB_NOSORT   0x04
 #define GLOB_DOOFFS   0x08
@@ -31,7 +31,7 @@ void globfree(glob_t *);
 #define GLOB_NOESCAPE 0x40
 #define	GLOB_PERIOD   0x80
 
-#define GLOB_TILDE       0x1000
+#define GLOB_TILDE                    0x1000
 #define GLOB_TILDE_CHECK 0x4000
 
 #define GLOB_NOSPACE 1

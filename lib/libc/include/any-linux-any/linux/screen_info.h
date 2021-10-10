@@ -57,12 +57,12 @@ struct screen_info {
 
 #define VIDEO_TYPE_PICA_S3	0x30	/* ACER PICA-61 local S3 video	*/
 #define VIDEO_TYPE_MIPS_G364	0x31    /* MIPS Magnum 4000 G364 video  */
-#define VIDEO_TYPE_SGI          0x33    /* Various SGI graphics hardware */
+#define VIDEO_TYPE_SGI                       0x33    /* Various SGI graphics hardware */
 
 #define VIDEO_TYPE_TGAC		0x40	/* DEC TGA */
 
-#define VIDEO_TYPE_SUN          0x50    /* Sun frame buffer. */
-#define VIDEO_TYPE_SUNPCI       0x51    /* Sun PCI based frame buffer. */
+#define VIDEO_TYPE_SUN                       0x50    /* Sun frame buffer. */
+#define VIDEO_TYPE_SUNPCI                    0x51    /* Sun PCI based frame buffer. */
 
 #define VIDEO_TYPE_PMAC		0x60	/* PowerMacintosh frame buffer. */
 

@@ -14,14 +14,14 @@
 extern "C" {
 #endif
 
-#define WLAN_NOTIFICATION_SOURCE_NONE      L2_NOTIFICATION_SOURCE_NONE
-#define WLAN_NOTIFICATION_SOURCE_ALL       L2_NOTIFICATION_SOURCE_ALL
-#define WLAN_NOTIFICATION_SOURCE_ACM       L2_NOTIFICATION_SOURCE_WLAN_ACM
-#define WLAN_NOTIFICATION_SOURCE_MSM       L2_NOTIFICATION_SOURCE_WLAN_MSM
+#define WLAN_NOTIFICATION_SOURCE_NONE                   L2_NOTIFICATION_SOURCE_NONE
+#define WLAN_NOTIFICATION_SOURCE_ALL                    L2_NOTIFICATION_SOURCE_ALL
+#define WLAN_NOTIFICATION_SOURCE_ACM                    L2_NOTIFICATION_SOURCE_WLAN_ACM
+#define WLAN_NOTIFICATION_SOURCE_MSM                    L2_NOTIFICATION_SOURCE_WLAN_MSM
 #define WLAN_NOTIFICATION_SOURCE_SECURITY  L2_NOTIFICATION_SOURCE_WLAN_SECURITY
-#define WLAN_NOTIFICATION_SOURCE_IHV       L2_NOTIFICATION_SOURCE_WLAN_IHV
-#define WLAN_NOTIFICATION_SOURCE_HNWK      L2_NOTIFICATION_SOURCE_WLAN_HNWK
-#define WLAN_NOTIFICATION_SOURCE_ONEX      L2_NOTIFICATION_SOURCE_ONEX
+#define WLAN_NOTIFICATION_SOURCE_IHV                    L2_NOTIFICATION_SOURCE_WLAN_IHV
+#define WLAN_NOTIFICATION_SOURCE_HNWK                   L2_NOTIFICATION_SOURCE_WLAN_HNWK
+#define WLAN_NOTIFICATION_SOURCE_ONEX                   L2_NOTIFICATION_SOURCE_ONEX
 
 typedef DWORD WLAN_REASON_CODE, *PWLAN_REASON_CODE;
 typedef ULONG WLAN_SIGNAL_QUALITY, *PWLAN_SIGNAL_QUALITY;
@@ -65,14 +65,14 @@ typedef enum _WLAN_NOTIFICATION_ACM {
 } WLAN_NOTIFICATION_ACM, *PWLAN_NOTIFICATION_ACM;
 
 typedef enum _WLAN_INTERFACE_STATE {
-  wlan_interface_state_not_ready               = 0,
-  wlan_interface_state_connected               = 1,
+  wlan_interface_state_not_ready                                         = 0,
+  wlan_interface_state_connected                                         = 1,
   wlan_interface_state_ad_hoc_network_formed   = 2,
-  wlan_interface_state_disconnecting           = 3,
-  wlan_interface_state_disconnected            = 4,
-  wlan_interface_state_associating             = 5,
-  wlan_interface_state_discovering             = 6,
-  wlan_interface_state_authenticating          = 7 
+  wlan_interface_state_disconnecting                        = 3,
+  wlan_interface_state_disconnected                                      = 4,
+  wlan_interface_state_associating                                       = 5,
+  wlan_interface_state_discovering                                       = 6,
+  wlan_interface_state_authenticating                       = 7 
 } WLAN_INTERFACE_STATE, *PWLAN_INTERFACE_STATE;
 
 typedef enum _WLAN_CONNECTION_MODE {
@@ -91,7 +91,7 @@ typedef enum _WLAN_INTERFACE_TYPE {
 } WLAN_INTERFACE_TYPE, *PWLAN_INTERFACE_TYPE;
 
 typedef enum _WLAN_INTF_OPCODE {
-  wlan_intf_opcode_autoconf_start                               = 0x000000000,
+  wlan_intf_opcode_autoconf_start                                                                                                = 0x000000000,
   wlan_intf_opcode_autoconf_enabled,
   wlan_intf_opcode_background_scan_enabled,
   wlan_intf_opcode_media_streaming_mode,
@@ -107,22 +107,22 @@ typedef enum _WLAN_INTF_OPCODE {
   wlan_intf_opcode_supported_safe_mode,
   wlan_intf_opcode_certified_safe_mode,
   wlan_intf_opcode_hosted_network_capable,
-  wlan_intf_opcode_autoconf_end                                 = 0x0fffffff,
-  wlan_intf_opcode_msm_start                                    = 0x10000100,
+  wlan_intf_opcode_autoconf_end                                                                                                  = 0x0fffffff,
+  wlan_intf_opcode_msm_start                                                                                                                  = 0x10000100,
   wlan_intf_opcode_statistics,
   wlan_intf_opcode_rssi,
-  wlan_intf_opcode_msm_end                                      = 0x1fffffff,
-  wlan_intf_opcode_security_start                               = 0x20010000,
-  wlan_intf_opcode_security_end                                 = 0x2fffffff,
-  wlan_intf_opcode_ihv_start                                    = 0x30000000,
-  wlan_intf_opcode_ihv_end                                      = 0x3fffffff 
+  wlan_intf_opcode_msm_end                                                                                                                    = 0x1fffffff,
+  wlan_intf_opcode_security_start                                                                                                = 0x20010000,
+  wlan_intf_opcode_security_end                                                                                                  = 0x2fffffff,
+  wlan_intf_opcode_ihv_start                                                                                                                  = 0x30000000,
+  wlan_intf_opcode_ihv_end                                                                                                                    = 0x3fffffff 
 } WLAN_INTF_OPCODE, *PWLAN_INTF_OPCODE;
 
 typedef enum _WLAN_OPCODE_VALUE_TYPE {
-  wlan_opcode_value_type_query_only            = 0,
+  wlan_opcode_value_type_query_only                                      = 0,
   wlan_opcode_value_type_set_by_group_policy   = 1,
-  wlan_opcode_value_type_set_by_user           = 2,
-  wlan_opcode_value_type_invalid               = 3 
+  wlan_opcode_value_type_set_by_user                        = 2,
+  wlan_opcode_value_type_invalid                                         = 3 
 } WLAN_OPCODE_VALUE_TYPE, *PWLAN_OPCODE_VALUE_TYPE;
 
 typedef enum _WLAN_POWER_SETTING {
@@ -134,18 +134,18 @@ typedef enum _WLAN_POWER_SETTING {
 } WLAN_POWER_SETTING, *PWLAN_POWER_SETTING;
 
 typedef struct _WLAN_ASSOCIATION_ATTRIBUTES {
-  DOT11_SSID          dot11Ssid;
-  DOT11_BSS_TYPE      dot11BssType;
+  DOT11_SSID                       dot11Ssid;
+  DOT11_BSS_TYPE                   dot11BssType;
   DOT11_MAC_ADDRESS   dot11Bssid;
-  DOT11_PHY_TYPE      dot11PhyType;
-  ULONG               uDot11PhyIndex;
+  DOT11_PHY_TYPE                   dot11PhyType;
+  ULONG                                         uDot11PhyIndex;
   WLAN_SIGNAL_QUALITY wlanSignalQuality;
-  ULONG               ulRxRate;
-  ULONG               ulTxRate;
+  ULONG                                         ulRxRate;
+  ULONG                                         ulTxRate;
 } WLAN_ASSOCIATION_ATTRIBUTES, *PWLAN_ASSOCIATION_ATTRIBUTES;
 
 typedef struct _WLAN_AUTH_CIPHER_PAIR_LIST {
-  DWORD                  dwNumberOfItems;
+  DWORD                                                         dwNumberOfItems;
   DOT11_AUTH_CIPHER_PAIR pAuthCipherPairList;
 } WLAN_AUTH_CIPHER_PAIR_LIST, *PWLAN_AUTH_CIPHER_PAIR_LIST;
 
@@ -160,40 +160,40 @@ typedef struct _WLAN_NOTIFICATION_DATA {
 #define WLAN_MAX_PHY_TYPE_NUMBER 8
 
 typedef struct _WLAN_AVAILABLE_NETWORK {
-  WCHAR                  strProfileName[256];
-  DOT11_SSID             dot11Ssid;
-  DOT11_BSS_TYPE         dot11BssType;
-  ULONG                  uNumberOfBssids;
-  WINBOOL                bNetworkConnectable;
-  WLAN_REASON_CODE       wlanNotConnectableReason;
-  ULONG                  uNumberOfPhyTypes;
-  DOT11_PHY_TYPE         dot11PhyTypes[WLAN_MAX_PHY_TYPE_NUMBER];
-  WINBOOL                bMorePhyTypes;
+  WCHAR                                                         strProfileName[256];
+  DOT11_SSID                                       dot11Ssid;
+  DOT11_BSS_TYPE                      dot11BssType;
+  ULONG                                                         uNumberOfBssids;
+  WINBOOL                                          bNetworkConnectable;
+  WLAN_REASON_CODE                    wlanNotConnectableReason;
+  ULONG                                                         uNumberOfPhyTypes;
+  DOT11_PHY_TYPE                      dot11PhyTypes[WLAN_MAX_PHY_TYPE_NUMBER];
+  WINBOOL                                          bMorePhyTypes;
   WLAN_SIGNAL_QUALITY    wlanSignalQuality;
-  WINBOOL                bSecurityEnabled;
+  WINBOOL                                          bSecurityEnabled;
   DOT11_AUTH_ALGORITHM   dot11DefaultAuthAlgorithm;
   DOT11_CIPHER_ALGORITHM dot11DefaultCipherAlgorithm;
-  DWORD                  dwFlags;
-  DWORD                  dwReserved;
+  DWORD                                                         dwFlags;
+  DWORD                                                         dwReserved;
 } WLAN_AVAILABLE_NETWORK, *PWLAN_AVAILABLE_NETWORK;
 
 typedef struct _WLAN_AVAILABLE_NETWORK_LIST {
-  DWORD                  dwNumberOfItems;
-  DWORD                  dwIndex;
+  DWORD                                                         dwNumberOfItems;
+  DWORD                                                         dwIndex;
   WLAN_AVAILABLE_NETWORK Network[1];
 } WLAN_AVAILABLE_NETWORK_LIST, *PWLAN_AVAILABLE_NETWORK_LIST;
 
 typedef struct _WLAN_SECURITY_ATTRIBUTES {
-  WINBOOL                bSecurityEnabled;
-  WINBOOL                bOneXEnabled;
+  WINBOOL                                          bSecurityEnabled;
+  WINBOOL                                          bOneXEnabled;
   DOT11_AUTH_ALGORITHM   dot11AuthAlgorithm;
   DOT11_CIPHER_ALGORITHM dot11CipherAlgorithm;
 } WLAN_SECURITY_ATTRIBUTES, *PWLAN_SECURITY_ATTRIBUTES;
 
 typedef struct _WLAN_CONNECTION_ATTRIBUTES {
-  WLAN_INTERFACE_STATE        isState;
-  WLAN_CONNECTION_MODE        wlanConnectionMode;
-  WCHAR                       strProfileName[256];
+  WLAN_INTERFACE_STATE                     isState;
+  WLAN_CONNECTION_MODE                     wlanConnectionMode;
+  WCHAR                                                              strProfileName[256];
   WLAN_ASSOCIATION_ATTRIBUTES wlanAssociationAttributes;
   WLAN_SECURITY_ATTRIBUTES    wlanSecurityAttributes;
 } WLAN_CONNECTION_ATTRIBUTES, *PWLAN_CONNECTION_ATTRIBUTES;
@@ -208,13 +208,13 @@ typedef VOID (CALLBACK *WLAN_NOTIFICATION_CALLBACK)(
 
 typedef struct _WLAN_CONNECTION_NOTIFICATION_DATA {
   WLAN_CONNECTION_MODE wlanConnectionMode;
-  WCHAR                strProfileName[WLAN_MAX_NAME_LENGTH];
-  DOT11_SSID           dot11Ssid;
-  DOT11_BSS_TYPE       dot11BssType;
-  BOOL                 bSecurityEnabled;
+  WCHAR                                          strProfileName[WLAN_MAX_NAME_LENGTH];
+  DOT11_SSID                        dot11Ssid;
+  DOT11_BSS_TYPE                    dot11BssType;
+  BOOL                                           bSecurityEnabled;
   WLAN_REASON_CODE     wlanReasonCode;
-  DWORD                dwFlags;
-  WCHAR                strProfileXml[1];
+  DWORD                                          dwFlags;
+  WCHAR                                          strProfileXml[1];
 } WLAN_CONNECTION_NOTIFICATION_DATA, *PWLAN_CONNECTION_NOTIFICATION_DATA;
 
 #define WLAN_CONNECTION_HIDDEN_NETWORK 0x00000001
@@ -224,22 +224,22 @@ typedef struct _WLAN_CONNECTION_NOTIFICATION_DATA {
 
 typedef struct _WLAN_CONNECTION_PARAMETERS {
   WLAN_CONNECTION_MODE wlanConnectionMode;
-  LPCWSTR              strProfile;
-  PDOT11_SSID          pDot11Ssid;
+  LPCWSTR                                        strProfile;
+  PDOT11_SSID                       pDot11Ssid;
   PDOT11_BSSID_LIST    pDesiredBssidList;
-  DOT11_BSS_TYPE       dot11BssType;
-  DWORD                dwFlags;
+  DOT11_BSS_TYPE                    dot11BssType;
+  DWORD                                          dwFlags;
 } WLAN_CONNECTION_PARAMETERS, *PWLAN_CONNECTION_PARAMETERS;
 
 typedef struct _WLAN_INTERFACE_INFO {
-  GUID                 InterfaceGuid;
-  WCHAR                strInterfaceDescription[256];
+  GUID                                           InterfaceGuid;
+  WCHAR                                          strInterfaceDescription[256];
   WLAN_INTERFACE_STATE isState;
 } WLAN_INTERFACE_INFO, *PWLAN_INTERFACE_INFO;
 
 typedef struct _WLAN_INTERFACE_INFO_LIST {
-  DWORD               dwNumberOfItems;
-  DWORD               dwIndex;
+  DWORD                                         dwNumberOfItems;
+  DWORD                                         dwIndex;
   WLAN_INTERFACE_INFO InterfaceInfo[];
 } WLAN_INTERFACE_INFO_LIST, *PWLAN_INTERFACE_INFO_LIST;
 
@@ -249,8 +249,8 @@ typedef struct _WLAN_PROFILE_INFO {
 } WLAN_PROFILE_INFO, *PWLAN_PROFILE_INFO;
 
 typedef struct _WLAN_PROFILE_INFO_LIST {
-  DWORD             dwNumberOfItems;
-  DWORD             dwIndex;
+  DWORD                                       dwNumberOfItems;
+  DWORD                                       dwIndex;
   WLAN_PROFILE_INFO ProfileInfo[1];
 } WLAN_PROFILE_INFO_LIST, *PWLAN_PROFILE_INFO_LIST;
 
@@ -398,14 +398,14 @@ DWORD WINAPI WlanSetProfilePosition(
 );
 
 typedef enum _WLAN_AUTOCONF_OPCODE {
-  wlan_autoconf_opcode_start                                       = 0,
-  wlan_autoconf_opcode_show_denied_networks                        = 1,
-  wlan_autoconf_opcode_power_setting                               = 2,
+  wlan_autoconf_opcode_start                                                                                                                     = 0,
+  wlan_autoconf_opcode_show_denied_networks                                                                            = 1,
+  wlan_autoconf_opcode_power_setting                                                                                                = 2,
   wlan_autoconf_opcode_only_use_gp_profiles_for_allowed_networks   = 3,
-  wlan_autoconf_opcode_allow_explicit_creds                        = 4,
-  wlan_autoconf_opcode_block_period                                = 5,
-  wlan_autoconf_opcode_allow_virtual_station_extensibility         = 6,
-  wlan_autoconf_opcode_end                                         = 7 
+  wlan_autoconf_opcode_allow_explicit_creds                                                                            = 4,
+  wlan_autoconf_opcode_block_period                                                                                                 = 5,
+  wlan_autoconf_opcode_allow_virtual_station_extensibility                      = 6,
+  wlan_autoconf_opcode_end                                                                                                                       = 7 
 } WLAN_AUTOCONF_OPCODE, *PWLAN_AUTOCONF_OPCODE;
 
 typedef enum _WL_DISPLAY_PAGES {
@@ -414,7 +414,7 @@ typedef enum _WL_DISPLAY_PAGES {
 } WL_DISPLAY_PAGES, *PWL_DISPLAY_PAGES;
 
 typedef enum _WLAN_ADHOC_NETWORK_STATE {
-  wlan_adhoc_network_state_formed      = 0,
+  wlan_adhoc_network_state_formed                   = 0,
   wlan_adhoc_network_state_connected   = 1 
 } WLAN_ADHOC_NETWORK_STATE;
 
@@ -431,26 +431,26 @@ typedef enum _WLAN_FILTER_LIST_TYPE {
 } WLAN_FILTER_LIST_TYPE, *PWLAN_FILTER_LIST_TYPE;
 
 typedef enum _WLAN_SECURABLE_OBJECT {
-  wlan_secure_permit_list                      = 0,
-  wlan_secure_deny_list                        = 1,
-  wlan_secure_ac_enabled                       = 2,
-  wlan_secure_bc_scan_enabled                  = 3,
-  wlan_secure_bss_type                         = 4,
-  wlan_secure_show_denied                      = 5,
-  wlan_secure_interface_properties             = 6,
-  wlan_secure_ihv_control                      = 7,
-  wlan_secure_all_user_profiles_order          = 8,
-  wlan_secure_add_new_all_user_profiles        = 9,
-  wlan_secure_add_new_per_user_profiles        = 10,
+  wlan_secure_permit_list                                                             = 0,
+  wlan_secure_deny_list                                                                            = 1,
+  wlan_secure_ac_enabled                                                              = 2,
+  wlan_secure_bc_scan_enabled                                                         = 3,
+  wlan_secure_bss_type                                                                             = 4,
+  wlan_secure_show_denied                                                             = 5,
+  wlan_secure_interface_properties                                       = 6,
+  wlan_secure_ihv_control                                                             = 7,
+  wlan_secure_all_user_profiles_order                       = 8,
+  wlan_secure_add_new_all_user_profiles                     = 9,
+  wlan_secure_add_new_per_user_profiles                     = 10,
   wlan_secure_media_streaming_mode_enabled     = 11,
-  wlan_secure_current_operation_mode           = 12,
-  wlan_secure_get_plaintext_key                = 13,
+  wlan_secure_current_operation_mode                        = 12,
+  wlan_secure_get_plaintext_key                                          = 13,
   wlan_secure_hosted_network_elevated_access   = 14 
 } WLAN_SECURABLE_OBJECT, *PWLAN_SECURABLE_OBJECT;
 
 typedef struct _DOT11_NETWORK_LIST {
-  DWORD         dwNumberOfItems;
-  DWORD         dwIndex;
+  DWORD                      dwNumberOfItems;
+  DWORD                      dwIndex;
   DOT11_NETWORK Network[1];
 } DOT11_NETWORK_LIST, *PDOT11_NETWORK_LIST;
 
@@ -462,32 +462,32 @@ typedef struct _WLAN_RATE_SET {
 } WLAN_RATE_SET, *PWLAN_RATE_SET;
 
 typedef struct _WLAN_BSS_ENTRY {
-  DOT11_SSID        dot11Ssid;
-  ULONG             uPhyId;
+  DOT11_SSID                     dot11Ssid;
+  ULONG                                       uPhyId;
   DOT11_MAC_ADDRESS dot11Bssid;
   DOT11_BSS_TYPE    dot11BssType;
   DOT11_PHY_TYPE    dot11BssPhyType;
-  LONG              lRssi;
-  ULONG             uLinkQuality;
-  BOOLEAN           bInRegDomain;
-  USHORT            usBeaconPeriod;
-  ULONGLONG         ullTimestamp;
-  ULONGLONG         ullHostTimestamp;
-  USHORT            usCapabilityInformation;
-  ULONG             ulChCenterFrequency;
+  LONG                                        lRssi;
+  ULONG                                       uLinkQuality;
+  BOOLEAN                        bInRegDomain;
+  USHORT                                      usBeaconPeriod;
+  ULONGLONG                      ullTimestamp;
+  ULONGLONG                      ullHostTimestamp;
+  USHORT                                      usCapabilityInformation;
+  ULONG                                       ulChCenterFrequency;
   WLAN_RATE_SET     wlanRateSet;
-  ULONG             ulIeOffset;
-  ULONG             ulIeSize;
+  ULONG                                       ulIeOffset;
+  ULONG                                       ulIeSize;
 } WLAN_BSS_ENTRY, *PWLAN_BSS_ENTRY;
 
 typedef struct _WLAN_BSS_LIST {
-  DWORD          dwTotalSize;
-  DWORD          dwNumberOfItems;
+  DWORD                       dwTotalSize;
+  DWORD                       dwNumberOfItems;
   WLAN_BSS_ENTRY wlanBssEntries[1];
 } WLAN_BSS_LIST, *PWLAN_BSS_LIST;
 
 typedef struct _WLAN_COUNTRY_OR_REGION_STRING_LIST {
-  DWORD                          dwNumberOfItems;
+  DWORD                                                                              dwNumberOfItems;
   DOT11_COUNTRY_OR_REGION_STRING pCountryOrRegionStringList[1];
 } WLAN_COUNTRY_OR_REGION_STRING_LIST, *PWLAN_COUNTRY_OR_REGION_STRING_LIST;
 
@@ -495,11 +495,11 @@ typedef struct _WLAN_COUNTRY_OR_REGION_STRING_LIST {
 
 typedef struct _WLAN_INTERFACE_CAPABILITY {
   WLAN_INTERFACE_TYPE interfaceType;
-  WINBOOL             bDot11DSupported;
-  DWORD               dwMaxDesiredSsidListSize;
-  DWORD               dwMaxDesiredBssidListSize;
-  DWORD               dwNumberOfSupportedPhys;
-  DOT11_PHY_TYPE      dot11PhyTypes[WLAN_MAX_PHY_INDEX];
+  WINBOOL                                       bDot11DSupported;
+  DWORD                                         dwMaxDesiredSsidListSize;
+  DWORD                                         dwMaxDesiredBssidListSize;
+  DWORD                                         dwNumberOfSupportedPhys;
+  DOT11_PHY_TYPE                   dot11PhyTypes[WLAN_MAX_PHY_INDEX];
 } WLAN_INTERFACE_CAPABILITY, *PWLAN_INTERFACE_CAPABILITY;
 
 typedef struct _WLAN_MAC_FRAME_STATISTICS {
@@ -519,13 +519,13 @@ typedef struct _WLAN_MAC_FRAME_STATISTICS {
 
 typedef struct _WLAN_MSM_NOTIFICATION_DATA {
   WLAN_CONNECTION_MODE wlanConnectionMode;
-  WCHAR                strProfileName[WLAN_MAX_NAME_LENGTH];
-  DOT11_SSID           dot11Ssid;
-  DOT11_BSS_TYPE       dot11BssType;
+  WCHAR                                          strProfileName[WLAN_MAX_NAME_LENGTH];
+  DOT11_SSID                        dot11Ssid;
+  DOT11_BSS_TYPE                    dot11BssType;
   DOT11_MAC_ADDRESS    dot11MacAddr;
-  BOOL                 bSecurityEnabled;
-  BOOL                 bFirstPeer;
-  BOOL                 bLastPeer;
+  BOOL                                           bSecurityEnabled;
+  BOOL                                           bFirstPeer;
+  BOOL                                           bLastPeer;
   WLAN_REASON_CODE     wlanReasonCode;
 } WLAN_MSM_NOTIFICATION_DATA, *PWLAN_MSM_NOTIFICATION_DATA;
 
@@ -551,13 +551,13 @@ typedef struct _WLAN_PHY_FRAME_STATISTICS {
 } WLAN_PHY_FRAME_STATISTICS, *PWLAN_PHY_FRAME_STATISTICS;
 
 typedef struct _WLAN_PHY_RADIO_STATE {
-  DWORD             dwPhyIndex;
+  DWORD                                       dwPhyIndex;
   DOT11_RADIO_STATE dot11SoftwareRadioState;
   DOT11_RADIO_STATE dot11HardwareRadioState;
 } WLAN_PHY_RADIO_STATE, *PWLAN_PHY_RADIO_STATE;
 
 typedef struct _WLAN_RADIO_STATE {
-  DWORD                dwNumberOfPhys;
+  DWORD                                          dwNumberOfPhys;
   WLAN_PHY_RADIO_STATE PhyRadioState[64];
 } WLAN_RADIO_STATE, *PWLAN_RADIO_STATE;
 
@@ -579,12 +579,12 @@ typedef struct _WLAN_RAW_DATA_LIST {
 } WLAN_RAW_DATA_LIST, *PWLAN_RAW_DATA_LIST;
 
 typedef struct _WLAN_STATISTICS {
-  ULONGLONG                 ullFourWayHandshakeFailures;
-  ULONGLONG                 ullTKIPCounterMeasuresInvoked;
-  ULONGLONG                 ullReserved;
+  ULONGLONG                                           ullFourWayHandshakeFailures;
+  ULONGLONG                                           ullTKIPCounterMeasuresInvoked;
+  ULONGLONG                                           ullReserved;
   WLAN_MAC_FRAME_STATISTICS MacUcastCounters;
   WLAN_MAC_FRAME_STATISTICS MacMcastCounters;
-  DWORD                     dwNumberOfPhys;
+  DWORD                                                            dwNumberOfPhys;
   WLAN_PHY_FRAME_STATISTICS PhyCounters[1];
 } WLAN_STATISTICS, *PWLAN_STATISTICS;
 

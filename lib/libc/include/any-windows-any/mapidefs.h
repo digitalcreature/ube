@@ -231,8 +231,8 @@ extern "C" {
 #define _CY_DEFINED
   typedef union tagCY {
     struct {
-      unsigned __LONG32 Lo;
-      __LONG32 Hi;
+                   unsigned __LONG32 Lo;
+                   __LONG32 Hi;
     };
     LONGLONG int64;
   } CY;
@@ -557,12 +557,12 @@ extern "C" {
     ULONG ulEventType;
     ULONG ulAlignPad;
     union {
-      ERROR_NOTIFICATION err;
-      NEWMAIL_NOTIFICATION newmail;
-      OBJECT_NOTIFICATION obj;
-      TABLE_NOTIFICATION tab;
-      EXTENDED_NOTIFICATION ext;
-      STATUS_OBJECT_NOTIFICATION statobj;
+                   ERROR_NOTIFICATION err;
+                   NEWMAIL_NOTIFICATION newmail;
+                   OBJECT_NOTIFICATION obj;
+                   TABLE_NOTIFICATION tab;
+                   EXTENDED_NOTIFICATION ext;
+                   STATUS_OBJECT_NOTIFICATION statobj;
     } info;
   } NOTIFICATION,*LPNOTIFICATION;
 
@@ -571,8 +571,8 @@ extern "C" {
 #define INTERFACE IMAPIAdviseSink
   DECLARE_MAPI_INTERFACE_(IMAPIAdviseSink,IUnknown) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIADVISESINK_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIADVISESINK_METHODS(PURE)
   };
 
   typedef __LONG32 (WINAPI NOTIFCALLBACK) (LPVOID lpvContext,ULONG cNotification,LPNOTIFICATION lpNotifications);
@@ -585,8 +585,8 @@ extern "C" {
 #define INTERFACE IMAPIProgress
   DECLARE_MAPI_INTERFACE_(IMAPIProgress,IUnknown) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROGRESS_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROGRESS_METHODS(PURE)
   };
 
 #define MAPI_ERROR_VERSION __MSABI_LONG(0x00000000)
@@ -619,8 +619,8 @@ extern "C" {
     LPGUID lpguid;
     ULONG ulKind;
     union {
-      LONG lID;
-      LPWSTR lpwstrName;
+                   LONG lID;
+                   LPWSTR lpwstrName;
     } Kind;
   } MAPINAMEID,*LPMAPINAMEID;
 
@@ -629,8 +629,8 @@ extern "C" {
 #define INTERFACE IMAPIProp
   DECLARE_MAPI_INTERFACE_(IMAPIProp,IUnknown) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
   };
 
 #define TBLSTAT_COMPLETE ((ULONG) 0)
@@ -770,17 +770,17 @@ extern "C" {
   typedef struct _SRestriction {
     ULONG rt;
     union {
-      SComparePropsRestriction resCompareProps;
-      SAndRestriction resAnd;
-      SOrRestriction resOr;
-      SNotRestriction resNot;
-      SContentRestriction resContent;
-      SPropertyRestriction resProperty;
-      SBitMaskRestriction resBitMask;
-      SSizeRestriction resSize;
-      SExistRestriction resExist;
-      SSubRestriction resSub;
-      SCommentRestriction resComment;
+                   SComparePropsRestriction resCompareProps;
+                   SAndRestriction resAnd;
+                   SOrRestriction resOr;
+                   SNotRestriction resNot;
+                   SContentRestriction resContent;
+                   SPropertyRestriction resProperty;
+                   SBitMaskRestriction resBitMask;
+                   SSizeRestriction resSize;
+                   SExistRestriction resExist;
+                   SSubRestriction resSub;
+                   SCommentRestriction resComment;
     } res;
   } SRestriction;
 
@@ -805,8 +805,8 @@ extern "C" {
 #define INTERFACE IMAPITable
   DECLARE_MAPI_INTERFACE_(IMAPITable,IUnknown) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPITABLE_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPITABLE_METHODS(PURE)
   };
 
 #define PS_PROFILE_PROPERTIES_INIT { 0x98,0x15,0xAC,0x08,0xAA,0xB0,0x10,0x1A,0x8C,0x93,0x08,0x00,0x2B,0x2A,0x56,0xC2 }
@@ -817,9 +817,9 @@ extern "C" {
 #define INTERFACE IProfSect
   DECLARE_MAPI_INTERFACE_(IProfSect,IMAPIProp) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IPROFSECT_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IPROFSECT_METHODS(PURE)
   };
 
 #define MAPI_STORE_PROVIDER ((ULONG) 33)
@@ -884,9 +884,9 @@ extern "C" {
 #define INTERFACE IMAPIStatus
   DECLARE_MAPI_INTERFACE_(IMAPIStatus,IMAPIProp) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IMAPISTATUS_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IMAPISTATUS_METHODS(PURE)
   };
 
 #define MAPI_BEST_ACCESS ((ULONG) 0x00000010)
@@ -910,9 +910,9 @@ extern "C" {
 #define INTERFACE IMAPIContainer
   DECLARE_MAPI_INTERFACE_(IMAPIContainer,IMAPIProp) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IMAPICONTAINER_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IMAPICONTAINER_METHODS(PURE)
   };
 
   typedef struct _flaglist {
@@ -940,10 +940,10 @@ extern "C" {
 #define INTERFACE IABContainer
   DECLARE_MAPI_INTERFACE_(IABContainer,IMAPIContainer) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IMAPICONTAINER_METHODS(PURE)
-      MAPI_IABCONTAINER_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IMAPICONTAINER_METHODS(PURE)
+                   MAPI_IABCONTAINER_METHODS(PURE)
   };
 
 #define MAPI_SEND_NO_RICH_INFO ((ULONG) 0x00010000)
@@ -1014,9 +1014,9 @@ extern "C" {
 #define INTERFACE IMailUser
   DECLARE_MAPI_INTERFACE_(IMailUser,IMAPIProp) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IMAILUSER_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IMAILUSER_METHODS(PURE)
   };
 
 #define MAPI_IDISTLIST_METHODS(IPURE) MAPIMETHOD(CreateEntry) (THIS_ ULONG cbEntryID,LPENTRYID lpEntryID,ULONG ulCreateFlags,LPMAPIPROP *lppMAPIPropEntry) IPURE; MAPIMETHOD(CopyEntries) (THIS_ LPENTRYLIST lpEntries,ULONG ulUIParam,LPMAPIPROGRESS lpProgress,ULONG ulFlags) IPURE; MAPIMETHOD(DeleteEntries) (THIS_ LPENTRYLIST lpEntries,ULONG ulFlags) IPURE; MAPIMETHOD(ResolveNames) (THIS_ LPSPropTagArray lpPropTagArray,ULONG ulFlags,LPADRLIST lpAdrList,LPFlagList lpFlagList) IPURE;
@@ -1024,10 +1024,10 @@ extern "C" {
 #define INTERFACE IDistList
   DECLARE_MAPI_INTERFACE_(IDistList,IMAPIContainer) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IMAPICONTAINER_METHODS(PURE)
-      MAPI_IDISTLIST_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IMAPICONTAINER_METHODS(PURE)
+                   MAPI_IDISTLIST_METHODS(PURE)
   };
 
 #define FOLDER_ROOT ((ULONG) 0x00000000)
@@ -1069,10 +1069,10 @@ extern "C" {
 #define INTERFACE IMAPIFolder
   DECLARE_MAPI_INTERFACE_(IMAPIFolder,IMAPIContainer) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IMAPICONTAINER_METHODS(PURE)
-      MAPI_IMAPIFOLDER_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IMAPICONTAINER_METHODS(PURE)
+                   MAPI_IMAPIFOLDER_METHODS(PURE)
   };
 
 #define STORE_ENTRYID_UNIQUE ((ULONG) 0x00000001)
@@ -1122,9 +1122,9 @@ extern "C" {
 #define INTERFACE IMsgStore
   DECLARE_MAPI_INTERFACE_(IMsgStore,IMAPIProp) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IMSGSTORE_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IMSGSTORE_METHODS(PURE)
   };
 
 #define FORCE_SUBMIT ((ULONG) 0x00000001)
@@ -1177,9 +1177,9 @@ extern "C" {
 #define INTERFACE IMessage
   DECLARE_MAPI_INTERFACE_(IMessage,IMAPIProp) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IMESSAGE_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IMESSAGE_METHODS(PURE)
   };
 
 #define NO_ATTACHMENT ((ULONG) 0x00000000)
@@ -1196,9 +1196,9 @@ extern "C" {
 #define INTERFACE IAttach
   DECLARE_MAPI_INTERFACE_(IAttach,IMAPIProp) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IATTACH_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IATTACH_METHODS(PURE)
   };
 
 #define GET_ADRPARM_VERSION(ulFlags) (((ULONG)ulFlags) & 0xF0000000)
@@ -1278,8 +1278,8 @@ extern "C" {
 #define INTERFACE IMAPIControl
   DECLARE_MAPI_INTERFACE_(IMAPIControl,IUnknown) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPICONTROL_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPICONTROL_METHODS(PURE)
   };
 
   DECLARE_MAPI_INTERFACE_PTR(IMAPIControl,LPMAPICONTROL);
@@ -1402,8 +1402,8 @@ extern "C" {
 #define INTERFACE IProviderAdmin
   DECLARE_MAPI_INTERFACE_(IProviderAdmin,IUnknown) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IPROVIDERADMIN_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IPROVIDERADMIN_METHODS(PURE)
   };
 
 #ifdef __cplusplus

@@ -22,8 +22,8 @@ import "dxgitype.idl";
 
 const UINT _FACDXGI = 0x87a;
 
-cpp_quote("#define MAKE_DXGI_STATUS(x)                         MAKE_HRESULT(0, _FACDXGI, x)")
-cpp_quote("#define MAKE_DXGI_HRESULT(x)                        MAKE_HRESULT(1, _FACDXGI, x)")
+cpp_quote("#define MAKE_DXGI_STATUS(x)                                                                             MAKE_HRESULT(0, _FACDXGI, x)")
+cpp_quote("#define MAKE_DXGI_HRESULT(x)                                                                            MAKE_HRESULT(1, _FACDXGI, x)")
 
 cpp_quote("#if 0")
 typedef HANDLE HMONITOR;
@@ -33,33 +33,33 @@ typedef struct _LUID {
 } LUID, *PLUID;
 cpp_quote("#endif")
 
-const UINT DXGI_CPU_ACCESS_NONE                     = 0;
-const UINT DXGI_CPU_ACCESS_DYNAMIC                  = 1;
-const UINT DXGI_CPU_ACCESS_READ_WRITE               = 2;
-const UINT DXGI_CPU_ACCESS_SCRATCH                  = 3;
-const UINT DXGI_CPU_ACCESS_FIELD                    = 15;
+const UINT DXGI_CPU_ACCESS_NONE                                                            = 0;
+const UINT DXGI_CPU_ACCESS_DYNAMIC                                                         = 1;
+const UINT DXGI_CPU_ACCESS_READ_WRITE                                         = 2;
+const UINT DXGI_CPU_ACCESS_SCRATCH                                                         = 3;
+const UINT DXGI_CPU_ACCESS_FIELD                                                           = 15;
 
 typedef UINT DXGI_USAGE;
-const DXGI_USAGE DXGI_USAGE_SHADER_INPUT            = 0x10L;
+const DXGI_USAGE DXGI_USAGE_SHADER_INPUT                                      = 0x10L;
 const DXGI_USAGE DXGI_USAGE_RENDER_TARGET_OUTPUT    = 0x20L;
-const DXGI_USAGE DXGI_USAGE_BACK_BUFFER             = 0x40L;
-const DXGI_USAGE DXGI_USAGE_SHARED                  = 0x80L;
-const DXGI_USAGE DXGI_USAGE_READ_ONLY               = 0x100L;
-const DXGI_USAGE DXGI_USAGE_DISCARD_ON_PRESENT      = 0x200L;
-const DXGI_USAGE DXGI_USAGE_UNORDERED_ACCESS        = 0x400L;
+const DXGI_USAGE DXGI_USAGE_BACK_BUFFER                                       = 0x40L;
+const DXGI_USAGE DXGI_USAGE_SHARED                                                         = 0x80L;
+const DXGI_USAGE DXGI_USAGE_READ_ONLY                                         = 0x100L;
+const DXGI_USAGE DXGI_USAGE_DISCARD_ON_PRESENT                   = 0x200L;
+const DXGI_USAGE DXGI_USAGE_UNORDERED_ACCESS                     = 0x400L;
 
-const UINT DXGI_ENUM_MODES_INTERLACED               = 1;
-const UINT DXGI_ENUM_MODES_SCALING                  = 2;
+const UINT DXGI_ENUM_MODES_INTERLACED                                         = 1;
+const UINT DXGI_ENUM_MODES_SCALING                                                         = 2;
 
-const UINT DXGI_RESOURCE_PRIORITY_MINIMUM           = 0x28000000;
-const UINT DXGI_RESOURCE_PRIORITY_LOW               = 0x50000000;
-const UINT DXGI_RESOURCE_PRIORITY_NORMAL            = 0x78000000;
-const UINT DXGI_RESOURCE_PRIORITY_HIGH              = 0xa0000000;
-const UINT DXGI_RESOURCE_PRIORITY_MAXIMUM           = 0xc8000000;
+const UINT DXGI_RESOURCE_PRIORITY_MINIMUM                        = 0x28000000;
+const UINT DXGI_RESOURCE_PRIORITY_LOW                                         = 0x50000000;
+const UINT DXGI_RESOURCE_PRIORITY_NORMAL                                      = 0x78000000;
+const UINT DXGI_RESOURCE_PRIORITY_HIGH                                        = 0xa0000000;
+const UINT DXGI_RESOURCE_PRIORITY_MAXIMUM                        = 0xc8000000;
 
-const UINT DXGI_MAP_READ                            = 0x1;
-const UINT DXGI_MAP_WRITE                           = 0x2;
-const UINT DXGI_MAP_DISCARD                         = 0x4;
+const UINT DXGI_MAP_READ                                                                                = 0x1;
+const UINT DXGI_MAP_WRITE                                                                               = 0x2;
+const UINT DXGI_MAP_DISCARD                                                                             = 0x4;
 
 typedef enum DXGI_SWAP_EFFECT {
     DXGI_SWAP_EFFECT_DISCARD    = 0,
@@ -69,9 +69,9 @@ typedef enum DXGI_SWAP_EFFECT {
 } DXGI_SWAP_EFFECT;
 
 typedef enum DXGI_RESIDENCY {
-    DXGI_RESIDENCY_FULLY_RESIDENT               = 1,
+    DXGI_RESIDENCY_FULLY_RESIDENT                                         = 1,
     DXGI_RESIDENCY_RESIDENT_IN_SHARED_MEMORY    = 2,
-    DXGI_RESIDENCY_EVICTED_TO_DISK              = 3,
+    DXGI_RESIDENCY_EVICTED_TO_DISK                                        = 3,
 } DXGI_RESIDENCY;
 
 typedef struct DXGI_SURFACE_DESC {
@@ -116,18 +116,18 @@ typedef struct DXGI_ADAPTER_DESC {
 
 typedef enum DXGI_SWAP_CHAIN_FLAG
 {
-    DXGI_SWAP_CHAIN_FLAG_NONPREROTATED                          = 0x0001,
-    DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH                      = 0x0002,
-    DXGI_SWAP_CHAIN_FLAG_GDI_COMPATIBLE                         = 0x0004,
-    DXGI_SWAP_CHAIN_FLAG_RESTRICTED_CONTENT                     = 0x0008,
-    DXGI_SWAP_CHAIN_FLAG_RESTRICT_SHARED_RESOURCE_DRIVER        = 0x0010,
-    DXGI_SWAP_CHAIN_FLAG_DISPLAY_ONLY                           = 0x0020,
-    DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT          = 0x0040,
-    DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER                       = 0x0080,
-    DXGI_SWAP_CHAIN_FLAG_FULLSCREEN_VIDEO                       = 0x0100,
-    DXGI_SWAP_CHAIN_FLAG_YUV_VIDEO                              = 0x0200,
-    DXGI_SWAP_CHAIN_FLAG_HW_PROTECTED                           = 0x0400,
-    DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING                          = 0x0800,
+    DXGI_SWAP_CHAIN_FLAG_NONPREROTATED                                                                              = 0x0001,
+    DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH                                                             = 0x0002,
+    DXGI_SWAP_CHAIN_FLAG_GDI_COMPATIBLE                                                                             = 0x0004,
+    DXGI_SWAP_CHAIN_FLAG_RESTRICTED_CONTENT                                                            = 0x0008,
+    DXGI_SWAP_CHAIN_FLAG_RESTRICT_SHARED_RESOURCE_DRIVER                     = 0x0010,
+    DXGI_SWAP_CHAIN_FLAG_DISPLAY_ONLY                                                                               = 0x0020,
+    DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT                       = 0x0040,
+    DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER                                                              = 0x0080,
+    DXGI_SWAP_CHAIN_FLAG_FULLSCREEN_VIDEO                                                              = 0x0100,
+    DXGI_SWAP_CHAIN_FLAG_YUV_VIDEO                                                                                               = 0x0200,
+    DXGI_SWAP_CHAIN_FLAG_HW_PROTECTED                                                                               = 0x0400,
+    DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING                                                                              = 0x0800,
     DXGI_SWAP_CHAIN_FLAG_RESTRICTED_TO_ALL_HOLOGRAPHIC_DISPLAYS = 0x1000,
 } DXGI_SWAP_CHAIN_FLAG;
 
@@ -154,22 +154,22 @@ typedef struct DXGI_SHARED_RESOURCE {
 interface IDXGIObject : IUnknown
 {
     HRESULT SetPrivateData(
-        [in] REFGUID guid,
-        [in] UINT data_size,
-        [in] const void *data
+                     [in] REFGUID guid,
+                     [in] UINT data_size,
+                     [in] const void *data
     );
     HRESULT SetPrivateDataInterface(
-        [in] REFGUID guid,
-        [in] const IUnknown *object
+                     [in] REFGUID guid,
+                     [in] const IUnknown *object
     );
     HRESULT GetPrivateData(
-        [in] REFGUID guid,
-        [in, out] UINT *data_size,
-        [out] void *data
+                     [in] REFGUID guid,
+                     [in, out] UINT *data_size,
+                     [out] void *data
     );
     HRESULT GetParent(
-        [in] REFIID riid,
-        [out] void **parent
+                     [in] REFIID riid,
+                     [out] void **parent
     );
 }
 
@@ -181,8 +181,8 @@ interface IDXGIObject : IUnknown
 interface IDXGIDeviceSubObject : IDXGIObject
 {
     HRESULT GetDevice(
-        [in] REFIID riid,
-        [out] void **device
+                     [in] REFIID riid,
+                     [out] void **device
     );
 }
 
@@ -220,11 +220,11 @@ interface IDXGIKeyedMutex : IDXGIDeviceSubObject
 interface IDXGISurface : IDXGIDeviceSubObject
 {
     HRESULT GetDesc(
-        [out] DXGI_SURFACE_DESC *desc
+                     [out] DXGI_SURFACE_DESC *desc
     );
     HRESULT Map(
-        [out] DXGI_MAPPED_RECT *mapped_rect,
-        [in] UINT flags
+                     [out] DXGI_MAPPED_RECT *mapped_rect,
+                     [in] UINT flags
     );
     HRESULT Unmap(
     );
@@ -238,11 +238,11 @@ interface IDXGISurface : IDXGIDeviceSubObject
 interface IDXGISurface1 : IDXGISurface
 {
     HRESULT GetDC(
-        [in] BOOL discard,
-        [out] HDC *hdc
+                     [in] BOOL discard,
+                     [out] HDC *hdc
     );
     HRESULT ReleaseDC(
-        [in] RECT *dirty_rect
+                     [in] RECT *dirty_rect
     );
 }
 
@@ -254,44 +254,44 @@ interface IDXGISurface1 : IDXGISurface
 interface IDXGIOutput : IDXGIObject
 {
     HRESULT GetDesc(
-        [out] DXGI_OUTPUT_DESC *desc
+                     [out] DXGI_OUTPUT_DESC *desc
     );
     HRESULT GetDisplayModeList(
-        [in] DXGI_FORMAT format,
-        [in] UINT flags,
-        [in, out] UINT *mode_count,
-        [out] DXGI_MODE_DESC *desc
+                     [in] DXGI_FORMAT format,
+                     [in] UINT flags,
+                     [in, out] UINT *mode_count,
+                     [out] DXGI_MODE_DESC *desc
     );
     HRESULT FindClosestMatchingMode(
-        [in] const DXGI_MODE_DESC *mode,
-        [out] DXGI_MODE_DESC *closest_match,
-        [in] IUnknown *device
+                     [in] const DXGI_MODE_DESC *mode,
+                     [out] DXGI_MODE_DESC *closest_match,
+                     [in] IUnknown *device
     );
     HRESULT WaitForVBlank(
     );
     HRESULT TakeOwnership(
-        [in] IUnknown *device,
-        [in] BOOL exclusive
+                     [in] IUnknown *device,
+                     [in] BOOL exclusive
     );
     void ReleaseOwnership(
     );
     HRESULT GetGammaControlCapabilities(
-        [out] DXGI_GAMMA_CONTROL_CAPABILITIES *gamma_caps
+                     [out] DXGI_GAMMA_CONTROL_CAPABILITIES *gamma_caps
     );
     HRESULT SetGammaControl(
-        [in] const DXGI_GAMMA_CONTROL *gamma_control
+                     [in] const DXGI_GAMMA_CONTROL *gamma_control
     );
     HRESULT GetGammaControl(
-        [out] DXGI_GAMMA_CONTROL *gamma_control
+                     [out] DXGI_GAMMA_CONTROL *gamma_control
     );
     HRESULT SetDisplaySurface(
-        [in] IDXGISurface *surface
+                     [in] IDXGISurface *surface
     );
     HRESULT GetDisplaySurfaceData(
-        [in] IDXGISurface *surface
+                     [in] IDXGISurface *surface
     );
     HRESULT GetFrameStatistics(
-        [out] DXGI_FRAME_STATISTICS *stats
+                     [out] DXGI_FRAME_STATISTICS *stats
     );
 }
 
@@ -303,29 +303,29 @@ interface IDXGIOutput : IDXGIObject
 interface IDXGIAdapter : IDXGIObject
 {
     HRESULT EnumOutputs(
-        [in] UINT output_idx,
-        [in, out] IDXGIOutput **output
+                     [in] UINT output_idx,
+                     [in, out] IDXGIOutput **output
     );
     HRESULT GetDesc(
-        [out] DXGI_ADAPTER_DESC *desc
+                     [out] DXGI_ADAPTER_DESC *desc
     );
     HRESULT CheckInterfaceSupport(
-        [in] REFGUID guid,
-        [out] LARGE_INTEGER *umd_version
+                     [in] REFGUID guid,
+                     [out] LARGE_INTEGER *umd_version
     );
 }
 
 cpp_quote("#define DXGI_MAX_SWAP_CHAIN_BUFFERS  (16)")
 
-cpp_quote("#define DXGI_PRESENT_TEST                   __MSABI_LONG(0x00000001U)")
-cpp_quote("#define DXGI_PRESENT_DO_NOT_SEQUENCE        __MSABI_LONG(0x00000002U)")
-cpp_quote("#define DXGI_PRESENT_RESTART                __MSABI_LONG(0x00000004U)")
-cpp_quote("#define DXGI_PRESENT_DO_NOT_WAIT            __MSABI_LONG(0x00000008U)")
+cpp_quote("#define DXGI_PRESENT_TEST                                                          __MSABI_LONG(0x00000001U)")
+cpp_quote("#define DXGI_PRESENT_DO_NOT_SEQUENCE                     __MSABI_LONG(0x00000002U)")
+cpp_quote("#define DXGI_PRESENT_RESTART                                          __MSABI_LONG(0x00000004U)")
+cpp_quote("#define DXGI_PRESENT_DO_NOT_WAIT                                      __MSABI_LONG(0x00000008U)")
 cpp_quote("#define DXGI_PRESENT_STEREO_PREFER_RIGHT    __MSABI_LONG(0x00000010U)")
 cpp_quote("#define DXGI_PRESENT_STEREO_TEMPORARY_MONO  __MSABI_LONG(0x00000020U)")
 cpp_quote("#define DXGI_PRESENT_RESTRICT_TO_OUTPUT     __MSABI_LONG(0x00000040U)")
-cpp_quote("#define DXGI_PRESENT_USE_DURATION           __MSABI_LONG(0x00000100U)")
-cpp_quote("#define DXGI_PRESENT_ALLOW_TEARING          __MSABI_LONG(0x00000200U)")
+cpp_quote("#define DXGI_PRESENT_USE_DURATION                        __MSABI_LONG(0x00000100U)")
+cpp_quote("#define DXGI_PRESENT_ALLOW_TEARING                       __MSABI_LONG(0x00000200U)")
 
 [
     object,
@@ -335,50 +335,50 @@ cpp_quote("#define DXGI_PRESENT_ALLOW_TEARING          __MSABI_LONG(0x00000200U)
 interface IDXGISwapChain : IDXGIDeviceSubObject
 {
     HRESULT Present(
-        [in] UINT sync_interval,
-        [in] UINT flags
+                     [in] UINT sync_interval,
+                     [in] UINT flags
     );
     HRESULT GetBuffer(
-        [in] UINT buffer_idx,
-        [in] REFIID riid,
-        [in, out] void **surface
+                     [in] UINT buffer_idx,
+                     [in] REFIID riid,
+                     [in, out] void **surface
     );
     HRESULT SetFullscreenState(
-        [in] BOOL fullscreen,
-        [in] IDXGIOutput *target
+                     [in] BOOL fullscreen,
+                     [in] IDXGIOutput *target
     );
     HRESULT GetFullscreenState(
-        [out] BOOL *fullscreen,
-        [out] IDXGIOutput **target
+                     [out] BOOL *fullscreen,
+                     [out] IDXGIOutput **target
     );
     HRESULT GetDesc(
-        [out] DXGI_SWAP_CHAIN_DESC *desc
+                     [out] DXGI_SWAP_CHAIN_DESC *desc
     );
     HRESULT ResizeBuffers(
-        [in] UINT buffer_count,
-        [in] UINT width,
-        [in] UINT height,
-        [in] DXGI_FORMAT format,
-        [in] UINT flags
+                     [in] UINT buffer_count,
+                     [in] UINT width,
+                     [in] UINT height,
+                     [in] DXGI_FORMAT format,
+                     [in] UINT flags
     );
     HRESULT ResizeTarget(
-        [in] const DXGI_MODE_DESC *target_mode_desc
+                     [in] const DXGI_MODE_DESC *target_mode_desc
     );
     HRESULT GetContainingOutput(
-        [out] IDXGIOutput **output
+                     [out] IDXGIOutput **output
     );
     HRESULT GetFrameStatistics(
-        [out] DXGI_FRAME_STATISTICS *stats
+                     [out] DXGI_FRAME_STATISTICS *stats
     );
     HRESULT GetLastPresentCount(
-        [out] UINT *last_present_count
+                     [out] UINT *last_present_count
     );
 }
 
 cpp_quote("#define DXGI_MWA_NO_WINDOW_CHANGES  0x1")
-cpp_quote("#define DXGI_MWA_NO_ALT_ENTER       0x2")
+cpp_quote("#define DXGI_MWA_NO_ALT_ENTER                    0x2")
 cpp_quote("#define DXGI_MWA_NO_PRINT_SCREEN    0x4")
-cpp_quote("#define DXGI_MWA_VALID              0x7")
+cpp_quote("#define DXGI_MWA_VALID                                        0x7")
 
 [
     object,
@@ -388,24 +388,24 @@ cpp_quote("#define DXGI_MWA_VALID              0x7")
 interface IDXGIFactory : IDXGIObject
 {
     HRESULT EnumAdapters(
-        [in] UINT adapter_idx,
-        [out] IDXGIAdapter **adapter
+                     [in] UINT adapter_idx,
+                     [out] IDXGIAdapter **adapter
     );
     HRESULT MakeWindowAssociation(
-        [in] HWND window,
-        [in] UINT flags
+                     [in] HWND window,
+                     [in] UINT flags
     );
     HRESULT GetWindowAssociation(
-        [in] HWND *window
+                     [in] HWND *window
     );
     HRESULT CreateSwapChain(
-        [in] IUnknown *device,
-        [in] DXGI_SWAP_CHAIN_DESC *desc,
-        [out] IDXGISwapChain **swapchain
+                     [in] IUnknown *device,
+                     [in] DXGI_SWAP_CHAIN_DESC *desc,
+                     [out] IDXGISwapChain **swapchain
     );
     HRESULT CreateSoftwareAdapter(
-        [in] HMODULE swrast,
-        [out] IDXGIAdapter **adapter
+                     [in] HMODULE swrast,
+                     [out] IDXGIAdapter **adapter
     );
 }
 
@@ -420,31 +420,31 @@ interface IDXGIFactory : IDXGIObject
 interface IDXGIDevice : IDXGIObject
 {
     HRESULT GetAdapter(
-        [out] IDXGIAdapter **adapter
+                     [out] IDXGIAdapter **adapter
     );
     HRESULT CreateSurface(
-        [in] const DXGI_SURFACE_DESC *desc,
-        [in] UINT surface_count,
-        [in] DXGI_USAGE usage,
-        [in] const DXGI_SHARED_RESOURCE *shared_resource,
-        [out] IDXGISurface **surface
+                     [in] const DXGI_SURFACE_DESC *desc,
+                     [in] UINT surface_count,
+                     [in] DXGI_USAGE usage,
+                     [in] const DXGI_SHARED_RESOURCE *shared_resource,
+                     [out] IDXGISurface **surface
     );
     HRESULT QueryResourceResidency(
-        [in] IUnknown *const *resources,
-        [out] DXGI_RESIDENCY *residency,
-        [in] UINT resource_count
+                     [in] IUnknown *const *resources,
+                     [out] DXGI_RESIDENCY *residency,
+                     [in] UINT resource_count
     );
     HRESULT SetGPUThreadPriority(
-        [in] INT priority
+                     [in] INT priority
     );
     HRESULT GetGPUThreadPriority(
-        [out] INT *priority
+                     [out] INT *priority
     );
 }
 
 typedef enum DXGI_ADAPTER_FLAG {
-    DXGI_ADAPTER_FLAG_NONE         = 0,
-    DXGI_ADAPTER_FLAG_REMOTE       = 1,
+    DXGI_ADAPTER_FLAG_NONE                      = 0,
+    DXGI_ADAPTER_FLAG_REMOTE                    = 1,
     DXGI_ADAPTER_FLAG_SOFTWARE     = 2,
     DXGI_ADAPTER_FLAG_FORCE_DWORD  = 0xFFFFFFFF
 } DXGI_ADAPTER_FLAG;

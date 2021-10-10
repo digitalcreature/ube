@@ -54,9 +54,9 @@
  * @NFC_EVENT_DEVICE_REMOVED: event emitted when a device is removed
  *	(it sends %NFC_ATTR_DEVICE_INDEX)
  * @NFC_EVENT_TM_ACTIVATED: event emitted when the adapter is activated in
- *      target mode.
+ *                   target mode.
  * @NFC_EVENT_DEVICE_DEACTIVATED: event emitted when the adapter is deactivated
- *      from target mode.
+ *                   from target mode.
  * @NFC_CMD_LLC_GET_PARAMS: request LTO, RW, and MIUX parameters for a device
  * @NFC_CMD_LLC_SET_PARAMS: set one or more of LTO, RW, and MIUX parameters for
  *	a device. LTO must be set before the link is up otherwise -EINPROGRESS
@@ -244,10 +244,10 @@ enum nfc_sdp_attr {
 /* NFC RF modes */
 #define NFC_RF_INITIATOR 0
 #define NFC_RF_TARGET    1
-#define NFC_RF_NONE      2
+#define NFC_RF_NONE                   2
 
 /* NFC protocols masks used in bitsets */
-#define NFC_PROTO_JEWEL_MASK      (1 << NFC_PROTO_JEWEL)
+#define NFC_PROTO_JEWEL_MASK                   (1 << NFC_PROTO_JEWEL)
 #define NFC_PROTO_MIFARE_MASK     (1 << NFC_PROTO_MIFARE)
 #define NFC_PROTO_FELICA_MASK	  (1 << NFC_PROTO_FELICA)
 #define NFC_PROTO_ISO14443_MASK	  (1 << NFC_PROTO_ISO14443)
@@ -294,7 +294,7 @@ struct sockaddr_nfc_llcp {
  * Second byte contains flags
  *  - 0x01 - Direction (0=RX, 1=TX)
  *  - 0x02-0x04 - Payload type (000=LLCP, 001=NCI, 010=HCI, 011=Digital,
- *                              100=Proprietary)
+ *                                                                                               100=Proprietary)
  *  - 0x05-0x80 - Reserved
  **/
 #define NFC_RAW_HEADER_SIZE	2

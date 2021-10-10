@@ -94,10 +94,10 @@
 
 /* Macro to prepare for calling via a function pointer.  */
 	.macro PPC64_LOAD_FUNCPTR PTR
-	ld      r12,0(\PTR)
-	ld      r2,8(\PTR)
+	ld                   r12,0(\PTR)
+	ld                   r2,8(\PTR)
 	mtctr   r12
-	ld      r11,16(\PTR)
+	ld                   r11,16(\PTR)
 	.endm
 
 #ifdef USE_PPC64_OVERLAPPING_OPD
@@ -140,8 +140,8 @@
 #define END_2(name)				\
 	.size name,.-name
 #define LOCALENTRY(name)			\
-1:      addis	r2,r12,.TOC.-1b@ha;		\
-        addi	r2,r2,.TOC.-1b@l;		\
+1:                   addis	r2,r12,.TOC.-1b@ha;		\
+                     addi	r2,r2,.TOC.-1b@l;		\
 	.localentry name,.-name
 
 #endif /* _CALL_ELF */

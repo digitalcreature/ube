@@ -73,11 +73,11 @@ extern "C" {
 #else
   typedef struct IRouterProtocolConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRouterProtocolConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRouterProtocolConfig *This);
-      ULONG (WINAPI *Release)(IRouterProtocolConfig *This);
-      HRESULT (WINAPI *AddProtocol)(IRouterProtocolConfig *This,LPCOLESTR pszMachineName,DWORD dwTransportId,DWORD dwProtocolId,HWND hWnd,DWORD dwFlags,IUnknown *pRouter,ULONG_PTR uReserved1);
-      HRESULT (WINAPI *RemoveProtocol)(IRouterProtocolConfig *This,LPCOLESTR pszMachineName,DWORD dwTransportId,DWORD dwProtocolId,HWND hWnd,DWORD dwFlags,IUnknown *pRouter,ULONG_PTR uReserved1);
+                   HRESULT (WINAPI *QueryInterface)(IRouterProtocolConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRouterProtocolConfig *This);
+                   ULONG (WINAPI *Release)(IRouterProtocolConfig *This);
+                   HRESULT (WINAPI *AddProtocol)(IRouterProtocolConfig *This,LPCOLESTR pszMachineName,DWORD dwTransportId,DWORD dwProtocolId,HWND hWnd,DWORD dwFlags,IUnknown *pRouter,ULONG_PTR uReserved1);
+                   HRESULT (WINAPI *RemoveProtocol)(IRouterProtocolConfig *This,LPCOLESTR pszMachineName,DWORD dwTransportId,DWORD dwProtocolId,HWND hWnd,DWORD dwFlags,IUnknown *pRouter,ULONG_PTR uReserved1);
     END_INTERFACE
   } IRouterProtocolConfigVtbl;
   struct IRouterProtocolConfig {
@@ -117,14 +117,14 @@ extern "C" {
 #else
   typedef struct IAuthenticationProviderConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAuthenticationProviderConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAuthenticationProviderConfig *This);
-      ULONG (WINAPI *Release)(IAuthenticationProviderConfig *This);
-      HRESULT (WINAPI *Initialize)(IAuthenticationProviderConfig *This,LPCOLESTR pszMachineName,ULONG_PTR *puConnectionParam);
-      HRESULT (WINAPI *Uninitialize)(IAuthenticationProviderConfig *This,ULONG_PTR uConnectionParam);
-      HRESULT (WINAPI *Configure)(IAuthenticationProviderConfig *This,ULONG_PTR uConnectionParam,HWND hWnd,DWORD dwFlags,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
-      HRESULT (WINAPI *Activate)(IAuthenticationProviderConfig *This,ULONG_PTR uConnectionParam,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
-      HRESULT (WINAPI *Deactivate)(IAuthenticationProviderConfig *This,ULONG_PTR uConnectionParam,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
+                   HRESULT (WINAPI *QueryInterface)(IAuthenticationProviderConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAuthenticationProviderConfig *This);
+                   ULONG (WINAPI *Release)(IAuthenticationProviderConfig *This);
+                   HRESULT (WINAPI *Initialize)(IAuthenticationProviderConfig *This,LPCOLESTR pszMachineName,ULONG_PTR *puConnectionParam);
+                   HRESULT (WINAPI *Uninitialize)(IAuthenticationProviderConfig *This,ULONG_PTR uConnectionParam);
+                   HRESULT (WINAPI *Configure)(IAuthenticationProviderConfig *This,ULONG_PTR uConnectionParam,HWND hWnd,DWORD dwFlags,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
+                   HRESULT (WINAPI *Activate)(IAuthenticationProviderConfig *This,ULONG_PTR uConnectionParam,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
+                   HRESULT (WINAPI *Deactivate)(IAuthenticationProviderConfig *This,ULONG_PTR uConnectionParam,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
     END_INTERFACE
   } IAuthenticationProviderConfigVtbl;
   struct IAuthenticationProviderConfig {
@@ -172,14 +172,14 @@ extern "C" {
 #else
   typedef struct IAccountingProviderConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAccountingProviderConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAccountingProviderConfig *This);
-      ULONG (WINAPI *Release)(IAccountingProviderConfig *This);
-      HRESULT (WINAPI *Initialize)(IAccountingProviderConfig *This,LPCOLESTR pszMachineName,ULONG_PTR *puConnectionParam);
-      HRESULT (WINAPI *Uninitialize)(IAccountingProviderConfig *This,ULONG_PTR uConnectionParam);
-      HRESULT (WINAPI *Configure)(IAccountingProviderConfig *This,ULONG_PTR uConnectionParam,HWND hWnd,DWORD dwFlags,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
-      HRESULT (WINAPI *Activate)(IAccountingProviderConfig *This,ULONG_PTR uConnectionParam,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
-      HRESULT (WINAPI *Deactivate)(IAccountingProviderConfig *This,ULONG_PTR uConnectionParam,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
+                   HRESULT (WINAPI *QueryInterface)(IAccountingProviderConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAccountingProviderConfig *This);
+                   ULONG (WINAPI *Release)(IAccountingProviderConfig *This);
+                   HRESULT (WINAPI *Initialize)(IAccountingProviderConfig *This,LPCOLESTR pszMachineName,ULONG_PTR *puConnectionParam);
+                   HRESULT (WINAPI *Uninitialize)(IAccountingProviderConfig *This,ULONG_PTR uConnectionParam);
+                   HRESULT (WINAPI *Configure)(IAccountingProviderConfig *This,ULONG_PTR uConnectionParam,HWND hWnd,DWORD dwFlags,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
+                   HRESULT (WINAPI *Activate)(IAccountingProviderConfig *This,ULONG_PTR uConnectionParam,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
+                   HRESULT (WINAPI *Deactivate)(IAccountingProviderConfig *This,ULONG_PTR uConnectionParam,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
     END_INTERFACE
   } IAccountingProviderConfigVtbl;
   struct IAccountingProviderConfig {
@@ -227,14 +227,14 @@ extern "C" {
 #else
   typedef struct IEAPProviderConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEAPProviderConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEAPProviderConfig *This);
-      ULONG (WINAPI *Release)(IEAPProviderConfig *This);
-      HRESULT (WINAPI *Initialize)(IEAPProviderConfig *This,LPCOLESTR pszMachineName,DWORD dwEapTypeId,ULONG_PTR *puConnectionParam);
-      HRESULT (WINAPI *Uninitialize)(IEAPProviderConfig *This,DWORD dwEapTypeId,ULONG_PTR uConnectionParam);
-      HRESULT (WINAPI *ServerInvokeConfigUI)(IEAPProviderConfig *This,DWORD dwEapTypeId,ULONG_PTR uConnectionParam,HWND hWnd,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
-      HRESULT (WINAPI *RouterInvokeConfigUI)(IEAPProviderConfig *This,DWORD dwEapTypeId,ULONG_PTR uConnectionParam,HWND hwndParent,DWORD dwFlags,BYTE *pConnectionDataIn,DWORD dwSizeOfConnectionDataIn,BYTE **ppConnectionDataOut,DWORD *pdwSizeOfConnectionDataOut);
-      HRESULT (WINAPI *RouterInvokeCredentialsUI)(IEAPProviderConfig *This,DWORD dwEapTypeId,ULONG_PTR uConnectionParam,HWND hwndParent,DWORD dwFlags,BYTE *pConnectionDataIn,DWORD dwSizeOfConnectionDataIn,BYTE *pUserDataIn,DWORD dwSizeOfUserDataIn,BYTE **ppUserDataOut,DWORD *pdwSizeOfUserDataOut);
+                   HRESULT (WINAPI *QueryInterface)(IEAPProviderConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEAPProviderConfig *This);
+                   ULONG (WINAPI *Release)(IEAPProviderConfig *This);
+                   HRESULT (WINAPI *Initialize)(IEAPProviderConfig *This,LPCOLESTR pszMachineName,DWORD dwEapTypeId,ULONG_PTR *puConnectionParam);
+                   HRESULT (WINAPI *Uninitialize)(IEAPProviderConfig *This,DWORD dwEapTypeId,ULONG_PTR uConnectionParam);
+                   HRESULT (WINAPI *ServerInvokeConfigUI)(IEAPProviderConfig *This,DWORD dwEapTypeId,ULONG_PTR uConnectionParam,HWND hWnd,ULONG_PTR uReserved1,ULONG_PTR uReserved2);
+                   HRESULT (WINAPI *RouterInvokeConfigUI)(IEAPProviderConfig *This,DWORD dwEapTypeId,ULONG_PTR uConnectionParam,HWND hwndParent,DWORD dwFlags,BYTE *pConnectionDataIn,DWORD dwSizeOfConnectionDataIn,BYTE **ppConnectionDataOut,DWORD *pdwSizeOfConnectionDataOut);
+                   HRESULT (WINAPI *RouterInvokeCredentialsUI)(IEAPProviderConfig *This,DWORD dwEapTypeId,ULONG_PTR uConnectionParam,HWND hwndParent,DWORD dwFlags,BYTE *pConnectionDataIn,DWORD dwSizeOfConnectionDataIn,BYTE *pUserDataIn,DWORD dwSizeOfUserDataIn,BYTE **ppUserDataOut,DWORD *pdwSizeOfUserDataOut);
     END_INTERFACE
   } IEAPProviderConfigVtbl;
   struct IEAPProviderConfig {

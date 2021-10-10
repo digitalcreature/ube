@@ -310,9 +310,9 @@ typedef struct {
 
 typedef struct {
 #ifdef __s390x__
-	unsigned		       : 32;
+	unsigned		                    : 32;
 #endif /* __s390x__ */
-	unsigned em_branching	       : 1;
+	unsigned em_branching	                    : 1;
 	unsigned em_instruction_fetch  : 1;
 	/*
 	 * Switching on storage alteration automatically fixes
@@ -321,11 +321,11 @@ typedef struct {
 	unsigned em_storage_alteration : 1;
 	unsigned em_gpr_alt_unused     : 1;
 	unsigned em_store_real_address : 1;
-	unsigned		       : 3;
-	unsigned branch_addr_ctl       : 1;
-	unsigned		       : 1;
+	unsigned		                    : 3;
+	unsigned branch_addr_ctl                    : 1;
+	unsigned		                    : 1;
 	unsigned storage_alt_space_ctl : 1;
-	unsigned		       : 21;
+	unsigned		                    : 21;
 	unsigned long starting_addr;
 	unsigned long ending_addr;
 } per_cr_bits;
@@ -390,18 +390,18 @@ typedef struct {
  * S/390 specific non posix ptrace requests. I chose unusual values so
  * they are unlikely to clash with future ptrace definitions.
  */
-#define PTRACE_PEEKUSR_AREA	      0x5000
-#define PTRACE_POKEUSR_AREA	      0x5001
-#define PTRACE_PEEKTEXT_AREA	      0x5002
-#define PTRACE_PEEKDATA_AREA	      0x5003
-#define PTRACE_POKETEXT_AREA	      0x5004
-#define PTRACE_POKEDATA_AREA	      0x5005
-#define PTRACE_GET_LAST_BREAK	      0x5006
-#define PTRACE_PEEK_SYSTEM_CALL       0x5007
-#define PTRACE_POKE_SYSTEM_CALL	      0x5008
-#define PTRACE_ENABLE_TE	      0x5009
-#define PTRACE_DISABLE_TE	      0x5010
-#define PTRACE_TE_ABORT_RAND	      0x5011
+#define PTRACE_PEEKUSR_AREA	                   0x5000
+#define PTRACE_POKEUSR_AREA	                   0x5001
+#define PTRACE_PEEKTEXT_AREA	                   0x5002
+#define PTRACE_PEEKDATA_AREA	                   0x5003
+#define PTRACE_POKETEXT_AREA	                   0x5004
+#define PTRACE_POKEDATA_AREA	                   0x5005
+#define PTRACE_GET_LAST_BREAK	                   0x5006
+#define PTRACE_PEEK_SYSTEM_CALL                    0x5007
+#define PTRACE_POKE_SYSTEM_CALL	                   0x5008
+#define PTRACE_ENABLE_TE	                   0x5009
+#define PTRACE_DISABLE_TE	                   0x5010
+#define PTRACE_TE_ABORT_RAND	                   0x5011
 
 /*
  * The numbers chosen here are somewhat arbitrary but absolutely MUST

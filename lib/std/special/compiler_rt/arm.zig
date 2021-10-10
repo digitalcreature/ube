@@ -46,8 +46,8 @@ pub fn __aeabi_unwind_cpp_pr2() callconv(.C) void {}
 pub fn __aeabi_read_tp() callconv(.Naked) void {
     @setRuntimeSafety(false);
     asm volatile (
-        \\ mrc p15, 0, r0, c13, c0, 3
-        \\ bx lr
+                     \\ mrc p15, 0, r0, c13, c0, 3
+                     \\ bx lr
     );
     unreachable;
 }
@@ -59,16 +59,16 @@ pub fn __aeabi_uidivmod() callconv(.Naked) void {
     @setRuntimeSafety(false);
     // Divide r0 by r1; the quotient goes in r0, the remainder in r1
     asm volatile (
-        \\ push {lr}
-        \\ sub sp, #4
-        \\ mov r2, sp
-        \\ bl  __udivmodsi4
-        \\ ldr r1, [sp]
-        \\ add sp, #4
-        \\ pop {pc}
-        :
-        :
-        : "memory"
+                     \\ push {lr}
+                     \\ sub sp, #4
+                     \\ mov r2, sp
+                     \\ bl  __udivmodsi4
+                     \\ ldr r1, [sp]
+                     \\ add sp, #4
+                     \\ pop {pc}
+                     :
+                     :
+                     : "memory"
     );
     unreachable;
 }
@@ -77,18 +77,18 @@ pub fn __aeabi_uldivmod() callconv(.Naked) void {
     @setRuntimeSafety(false);
     // Divide r1:r0 by r3:r2; the quotient goes in r1:r0, the remainder in r3:r2
     asm volatile (
-        \\ push {r4, lr}
-        \\ sub sp, #16
-        \\ add r4, sp, #8
-        \\ str r4, [sp]
-        \\ bl  __udivmoddi4
-        \\ ldr r2, [sp, #8]
-        \\ ldr r3, [sp, #12]
-        \\ add sp, #16
-        \\ pop {r4, pc}
-        :
-        :
-        : "memory"
+                     \\ push {r4, lr}
+                     \\ sub sp, #16
+                     \\ add r4, sp, #8
+                     \\ str r4, [sp]
+                     \\ bl  __udivmoddi4
+                     \\ ldr r2, [sp, #8]
+                     \\ ldr r3, [sp, #12]
+                     \\ add sp, #16
+                     \\ pop {r4, pc}
+                     :
+                     :
+                     : "memory"
     );
     unreachable;
 }
@@ -97,16 +97,16 @@ pub fn __aeabi_idivmod() callconv(.Naked) void {
     @setRuntimeSafety(false);
     // Divide r0 by r1; the quotient goes in r0, the remainder in r1
     asm volatile (
-        \\ push {lr}
-        \\ sub sp, #4
-        \\ mov r2, sp
-        \\ bl  __divmodsi4
-        \\ ldr r1, [sp]
-        \\ add sp, #4
-        \\ pop {pc}
-        :
-        :
-        : "memory"
+                     \\ push {lr}
+                     \\ sub sp, #4
+                     \\ mov r2, sp
+                     \\ bl  __divmodsi4
+                     \\ ldr r1, [sp]
+                     \\ add sp, #4
+                     \\ pop {pc}
+                     :
+                     :
+                     : "memory"
     );
     unreachable;
 }
@@ -115,18 +115,18 @@ pub fn __aeabi_ldivmod() callconv(.Naked) void {
     @setRuntimeSafety(false);
     // Divide r1:r0 by r3:r2; the quotient goes in r1:r0, the remainder in r3:r2
     asm volatile (
-        \\ push {r4, lr}
-        \\ sub sp, #16
-        \\ add r4, sp, #8
-        \\ str r4, [sp]
-        \\ bl  __divmoddi4
-        \\ ldr r2, [sp, #8]
-        \\ ldr r3, [sp, #12]
-        \\ add sp, #16
-        \\ pop {r4, pc}
-        :
-        :
-        : "memory"
+                     \\ push {r4, lr}
+                     \\ sub sp, #16
+                     \\ add r4, sp, #8
+                     \\ str r4, [sp]
+                     \\ bl  __divmoddi4
+                     \\ ldr r2, [sp, #8]
+                     \\ ldr r3, [sp, #12]
+                     \\ add sp, #16
+                     \\ pop {r4, pc}
+                     :
+                     :
+                     : "memory"
     );
     unreachable;
 }

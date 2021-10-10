@@ -48,15 +48,15 @@ struct nfattr {
 	NFA_PUT(skb, (NFNL_NFA_NEST | type), 0, NULL); \
 	__start;  })
 #define NFA_NEST_END(skb, start) \
-({      (start)->nfa_len = skb_tail_pointer(skb) - (unsigned char *)(start); \
-        (skb)->len; })
+({                   (start)->nfa_len = skb_tail_pointer(skb) - (unsigned char *)(start); \
+                     (skb)->len; })
 #define NFA_NEST_CANCEL(skb, start) \
-({      if (start) \
-                skb_trim(skb, (unsigned char *) (start) - (skb)->data); \
-        -1; })
+({                   if (start) \
+                                          skb_trim(skb, (unsigned char *) (start) - (skb)->data); \
+                     -1; })
 
-#define NFM_NFA(n)      ((struct nfattr *)(((char *)(n)) \
-        + NLMSG_ALIGN(sizeof(struct nfgenmsg))))
+#define NFM_NFA(n)                   ((struct nfattr *)(((char *)(n)) \
+                     + NLMSG_ALIGN(sizeof(struct nfgenmsg))))
 #define NFM_PAYLOAD(n)  NLMSG_PAYLOAD(n, sizeof(struct nfgenmsg))
 
 #endif /* _NFNETLINK_COMPAT_H */

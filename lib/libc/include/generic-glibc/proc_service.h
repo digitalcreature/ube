@@ -59,9 +59,9 @@ extern ps_err_e ps_lgetregs (struct ps_prochandle *,
 extern ps_err_e ps_lsetregs (struct ps_prochandle *,
 			     lwpid_t, const prgregset_t);
 extern ps_err_e ps_lgetfpregs (struct ps_prochandle *,
-			       lwpid_t, prfpregset_t *);
+			                    lwpid_t, prfpregset_t *);
 extern ps_err_e ps_lsetfpregs (struct ps_prochandle *,
-			       lwpid_t, const prfpregset_t *);
+			                    lwpid_t, const prfpregset_t *);
 
 /* Return the PID of the process.  */
 extern pid_t ps_getpid (struct ps_prochandle *);

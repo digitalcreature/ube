@@ -14,7 +14,7 @@
 #error "This file is for OpenMP compilation only."
 #endif
 
-#pragma omp begin declare variant match(                                       \
+#pragma omp begin declare variant match(                                                                                                                     \
     device = {arch(nvptx, nvptx64)}, implementation = {extension(match_any)})
 
 #ifdef __cplusplus

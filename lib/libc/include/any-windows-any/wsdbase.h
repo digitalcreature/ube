@@ -247,12 +247,12 @@ MIDL_INTERFACE("b9574c6c-12a6-4f74-93a1-3318ff605759")
 IWSDAddress : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Serialize(
-        LPWSTR pszBuffer,
-        DWORD cchLength,
-        WINBOOL fSafe) = 0;
+                     LPWSTR pszBuffer,
+                     DWORD cchLength,
+                     WINBOOL fSafe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Deserialize(
-        LPCWSTR pszBuffer) = 0;
+                     LPCWSTR pszBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -264,26 +264,26 @@ typedef struct IWSDAddressVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDAddress *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDAddress *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDAddress *This);
+                     IWSDAddress *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDAddress *This);
+                     IWSDAddress *This);
 
     /*** IWSDAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        IWSDAddress *This,
-        LPWSTR pszBuffer,
-        DWORD cchLength,
-        WINBOOL fSafe);
+                     IWSDAddress *This,
+                     LPWSTR pszBuffer,
+                     DWORD cchLength,
+                     WINBOOL fSafe);
 
     HRESULT (STDMETHODCALLTYPE *Deserialize)(
-        IWSDAddress *This,
-        LPCWSTR pszBuffer);
+                     IWSDAddress *This,
+                     LPCWSTR pszBuffer);
 
     END_INTERFACE
 } IWSDAddressVtbl;
@@ -339,20 +339,20 @@ MIDL_INTERFACE("70d23498-4ee6-4340-a3df-d845d2235467")
 IWSDTransportAddress : public IWSDAddress
 {
     virtual HRESULT STDMETHODCALLTYPE GetPort(
-        WORD *pwPort) = 0;
+                     WORD *pwPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPort(
-        WORD wPort) = 0;
+                     WORD wPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransportAddress(
-        LPCWSTR *ppszAddress) = 0;
+                     LPCWSTR *ppszAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransportAddressEx(
-        WINBOOL fSafe,
-        LPCWSTR *ppszAddress) = 0;
+                     WINBOOL fSafe,
+                     LPCWSTR *ppszAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransportAddress(
-        LPCWSTR pszAddress) = 0;
+                     LPCWSTR pszAddress) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -364,48 +364,48 @@ typedef struct IWSDTransportAddressVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDTransportAddress *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDTransportAddress *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDTransportAddress *This);
+                     IWSDTransportAddress *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDTransportAddress *This);
+                     IWSDTransportAddress *This);
 
     /*** IWSDAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        IWSDTransportAddress *This,
-        LPWSTR pszBuffer,
-        DWORD cchLength,
-        WINBOOL fSafe);
+                     IWSDTransportAddress *This,
+                     LPWSTR pszBuffer,
+                     DWORD cchLength,
+                     WINBOOL fSafe);
 
     HRESULT (STDMETHODCALLTYPE *Deserialize)(
-        IWSDTransportAddress *This,
-        LPCWSTR pszBuffer);
+                     IWSDTransportAddress *This,
+                     LPCWSTR pszBuffer);
 
     /*** IWSDTransportAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPort)(
-        IWSDTransportAddress *This,
-        WORD *pwPort);
+                     IWSDTransportAddress *This,
+                     WORD *pwPort);
 
     HRESULT (STDMETHODCALLTYPE *SetPort)(
-        IWSDTransportAddress *This,
-        WORD wPort);
+                     IWSDTransportAddress *This,
+                     WORD wPort);
 
     HRESULT (STDMETHODCALLTYPE *GetTransportAddress)(
-        IWSDTransportAddress *This,
-        LPCWSTR *ppszAddress);
+                     IWSDTransportAddress *This,
+                     LPCWSTR *ppszAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetTransportAddressEx)(
-        IWSDTransportAddress *This,
-        WINBOOL fSafe,
-        LPCWSTR *ppszAddress);
+                     IWSDTransportAddress *This,
+                     WINBOOL fSafe,
+                     LPCWSTR *ppszAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetTransportAddress)(
-        IWSDTransportAddress *This,
-        LPCWSTR pszAddress);
+                     IWSDTransportAddress *This,
+                     LPCWSTR pszAddress);
 
     END_INTERFACE
 } IWSDTransportAddressVtbl;
@@ -483,19 +483,19 @@ MIDL_INTERFACE("1fafe8a2-e6fc-4b80-b6cf-b7d45c416d7c")
 IWSDMessageParameters : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetLocalAddress(
-        IWSDAddress **ppAddress) = 0;
+                     IWSDAddress **ppAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLocalAddress(
-        IWSDAddress *pAddress) = 0;
+                     IWSDAddress *pAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRemoteAddress(
-        IWSDAddress **ppAddress) = 0;
+                     IWSDAddress **ppAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRemoteAddress(
-        IWSDAddress *pAddress) = 0;
+                     IWSDAddress *pAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLowerParameters(
-        IWSDMessageParameters **ppTxParams) = 0;
+                     IWSDMessageParameters **ppTxParams) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -507,36 +507,36 @@ typedef struct IWSDMessageParametersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDMessageParameters *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDMessageParameters *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDMessageParameters *This);
+                     IWSDMessageParameters *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDMessageParameters *This);
+                     IWSDMessageParameters *This);
 
     /*** IWSDMessageParameters methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLocalAddress)(
-        IWSDMessageParameters *This,
-        IWSDAddress **ppAddress);
+                     IWSDMessageParameters *This,
+                     IWSDAddress **ppAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetLocalAddress)(
-        IWSDMessageParameters *This,
-        IWSDAddress *pAddress);
+                     IWSDMessageParameters *This,
+                     IWSDAddress *pAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetRemoteAddress)(
-        IWSDMessageParameters *This,
-        IWSDAddress **ppAddress);
+                     IWSDMessageParameters *This,
+                     IWSDAddress **ppAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetRemoteAddress)(
-        IWSDMessageParameters *This,
-        IWSDAddress *pAddress);
+                     IWSDMessageParameters *This,
+                     IWSDAddress *pAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetLowerParameters)(
-        IWSDMessageParameters *This,
-        IWSDMessageParameters **ppTxParams);
+                     IWSDMessageParameters *This,
+                     IWSDMessageParameters **ppTxParams);
 
     END_INTERFACE
 } IWSDMessageParametersVtbl;
@@ -614,10 +614,10 @@ MIDL_INTERFACE("9934149f-8f0c-447b-aa0b-73124b0ca7f0")
 IWSDUdpMessageParameters : public IWSDMessageParameters
 {
     virtual HRESULT STDMETHODCALLTYPE SetRetransmitParams(
-        const WSDUdpRetransmitParams *pParams) = 0;
+                     const WSDUdpRetransmitParams *pParams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRetransmitParams(
-        WSDUdpRetransmitParams *pParams) = 0;
+                     WSDUdpRetransmitParams *pParams) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -629,45 +629,45 @@ typedef struct IWSDUdpMessageParametersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDUdpMessageParameters *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDUdpMessageParameters *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDUdpMessageParameters *This);
+                     IWSDUdpMessageParameters *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDUdpMessageParameters *This);
+                     IWSDUdpMessageParameters *This);
 
     /*** IWSDMessageParameters methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLocalAddress)(
-        IWSDUdpMessageParameters *This,
-        IWSDAddress **ppAddress);
+                     IWSDUdpMessageParameters *This,
+                     IWSDAddress **ppAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetLocalAddress)(
-        IWSDUdpMessageParameters *This,
-        IWSDAddress *pAddress);
+                     IWSDUdpMessageParameters *This,
+                     IWSDAddress *pAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetRemoteAddress)(
-        IWSDUdpMessageParameters *This,
-        IWSDAddress **ppAddress);
+                     IWSDUdpMessageParameters *This,
+                     IWSDAddress **ppAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetRemoteAddress)(
-        IWSDUdpMessageParameters *This,
-        IWSDAddress *pAddress);
+                     IWSDUdpMessageParameters *This,
+                     IWSDAddress *pAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetLowerParameters)(
-        IWSDUdpMessageParameters *This,
-        IWSDMessageParameters **ppTxParams);
+                     IWSDUdpMessageParameters *This,
+                     IWSDMessageParameters **ppTxParams);
 
     /*** IWSDUdpMessageParameters methods ***/
     HRESULT (STDMETHODCALLTYPE *SetRetransmitParams)(
-        IWSDUdpMessageParameters *This,
-        const WSDUdpRetransmitParams *pParams);
+                     IWSDUdpMessageParameters *This,
+                     const WSDUdpRetransmitParams *pParams);
 
     HRESULT (STDMETHODCALLTYPE *GetRetransmitParams)(
-        IWSDUdpMessageParameters *This,
-        WSDUdpRetransmitParams *pParams);
+                     IWSDUdpMessageParameters *This,
+                     WSDUdpRetransmitParams *pParams);
 
     END_INTERFACE
 } IWSDUdpMessageParametersVtbl;
@@ -760,34 +760,34 @@ MIDL_INTERFACE("74d6124a-a441-4f78-a1eb-97a8d1996893")
 IWSDUdpAddress : public IWSDTransportAddress
 {
     virtual HRESULT STDMETHODCALLTYPE SetSockaddr(
-        const SOCKADDR_STORAGE *pSockAddr) = 0;
+                     const SOCKADDR_STORAGE *pSockAddr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSockaddr(
-        SOCKADDR_STORAGE *pSockAddr) = 0;
+                     SOCKADDR_STORAGE *pSockAddr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetExclusive(
-        WINBOOL fExclusive) = 0;
+                     WINBOOL fExclusive) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExclusive(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMessageType(
-        WSDUdpMessageType messageType) = 0;
+                     WSDUdpMessageType messageType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMessageType(
-        WSDUdpMessageType *pMessageType) = 0;
+                     WSDUdpMessageType *pMessageType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTTL(
-        DWORD dwTTL) = 0;
+                     DWORD dwTTL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTTL(
-        DWORD *pdwTTL) = 0;
+                     DWORD *pdwTTL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAlias(
-        const GUID *pAlias) = 0;
+                     const GUID *pAlias) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAlias(
-        GUID *pAlias) = 0;
+                     GUID *pAlias) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -799,88 +799,88 @@ typedef struct IWSDUdpAddressVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDUdpAddress *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDUdpAddress *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDUdpAddress *This);
+                     IWSDUdpAddress *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDUdpAddress *This);
+                     IWSDUdpAddress *This);
 
     /*** IWSDAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        IWSDUdpAddress *This,
-        LPWSTR pszBuffer,
-        DWORD cchLength,
-        WINBOOL fSafe);
+                     IWSDUdpAddress *This,
+                     LPWSTR pszBuffer,
+                     DWORD cchLength,
+                     WINBOOL fSafe);
 
     HRESULT (STDMETHODCALLTYPE *Deserialize)(
-        IWSDUdpAddress *This,
-        LPCWSTR pszBuffer);
+                     IWSDUdpAddress *This,
+                     LPCWSTR pszBuffer);
 
     /*** IWSDTransportAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPort)(
-        IWSDUdpAddress *This,
-        WORD *pwPort);
+                     IWSDUdpAddress *This,
+                     WORD *pwPort);
 
     HRESULT (STDMETHODCALLTYPE *SetPort)(
-        IWSDUdpAddress *This,
-        WORD wPort);
+                     IWSDUdpAddress *This,
+                     WORD wPort);
 
     HRESULT (STDMETHODCALLTYPE *GetTransportAddress)(
-        IWSDUdpAddress *This,
-        LPCWSTR *ppszAddress);
+                     IWSDUdpAddress *This,
+                     LPCWSTR *ppszAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetTransportAddressEx)(
-        IWSDUdpAddress *This,
-        WINBOOL fSafe,
-        LPCWSTR *ppszAddress);
+                     IWSDUdpAddress *This,
+                     WINBOOL fSafe,
+                     LPCWSTR *ppszAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetTransportAddress)(
-        IWSDUdpAddress *This,
-        LPCWSTR pszAddress);
+                     IWSDUdpAddress *This,
+                     LPCWSTR pszAddress);
 
     /*** IWSDUdpAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *SetSockaddr)(
-        IWSDUdpAddress *This,
-        const SOCKADDR_STORAGE *pSockAddr);
+                     IWSDUdpAddress *This,
+                     const SOCKADDR_STORAGE *pSockAddr);
 
     HRESULT (STDMETHODCALLTYPE *GetSockaddr)(
-        IWSDUdpAddress *This,
-        SOCKADDR_STORAGE *pSockAddr);
+                     IWSDUdpAddress *This,
+                     SOCKADDR_STORAGE *pSockAddr);
 
     HRESULT (STDMETHODCALLTYPE *SetExclusive)(
-        IWSDUdpAddress *This,
-        WINBOOL fExclusive);
+                     IWSDUdpAddress *This,
+                     WINBOOL fExclusive);
 
     HRESULT (STDMETHODCALLTYPE *GetExclusive)(
-        IWSDUdpAddress *This);
+                     IWSDUdpAddress *This);
 
     HRESULT (STDMETHODCALLTYPE *SetMessageType)(
-        IWSDUdpAddress *This,
-        WSDUdpMessageType messageType);
+                     IWSDUdpAddress *This,
+                     WSDUdpMessageType messageType);
 
     HRESULT (STDMETHODCALLTYPE *GetMessageType)(
-        IWSDUdpAddress *This,
-        WSDUdpMessageType *pMessageType);
+                     IWSDUdpAddress *This,
+                     WSDUdpMessageType *pMessageType);
 
     HRESULT (STDMETHODCALLTYPE *SetTTL)(
-        IWSDUdpAddress *This,
-        DWORD dwTTL);
+                     IWSDUdpAddress *This,
+                     DWORD dwTTL);
 
     HRESULT (STDMETHODCALLTYPE *GetTTL)(
-        IWSDUdpAddress *This,
-        DWORD *pdwTTL);
+                     IWSDUdpAddress *This,
+                     DWORD *pdwTTL);
 
     HRESULT (STDMETHODCALLTYPE *SetAlias)(
-        IWSDUdpAddress *This,
-        const GUID *pAlias);
+                     IWSDUdpAddress *This,
+                     const GUID *pAlias);
 
     HRESULT (STDMETHODCALLTYPE *GetAlias)(
-        IWSDUdpAddress *This,
-        GUID *pAlias);
+                     IWSDUdpAddress *This,
+                     GUID *pAlias);
 
     END_INTERFACE
 } IWSDUdpAddressVtbl;
@@ -1000,31 +1000,31 @@ MIDL_INTERFACE("540bd122-5c83-4dec-b396-ea62a2697fdf")
 IWSDHttpMessageParameters : public IWSDMessageParameters
 {
     virtual HRESULT STDMETHODCALLTYPE SetInboundHttpHeaders(
-        LPCWSTR pszHeaders) = 0;
+                     LPCWSTR pszHeaders) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInboundHttpHeaders(
-        LPCWSTR *ppszHeaders) = 0;
+                     LPCWSTR *ppszHeaders) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutboundHttpHeaders(
-        LPCWSTR pszHeaders) = 0;
+                     LPCWSTR pszHeaders) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutboundHttpHeaders(
-        LPCWSTR *ppszHeaders) = 0;
+                     LPCWSTR *ppszHeaders) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetID(
-        LPCWSTR pszId) = 0;
+                     LPCWSTR pszId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetID(
-        LPCWSTR *ppszId) = 0;
+                     LPCWSTR *ppszId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContext(
-        IUnknown *pContext) = 0;
+                     IUnknown *pContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContext(
-        IUnknown **ppContext) = 0;
+                     IUnknown **ppContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1036,72 +1036,72 @@ typedef struct IWSDHttpMessageParametersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDHttpMessageParameters *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDHttpMessageParameters *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDHttpMessageParameters *This);
+                     IWSDHttpMessageParameters *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDHttpMessageParameters *This);
+                     IWSDHttpMessageParameters *This);
 
     /*** IWSDMessageParameters methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLocalAddress)(
-        IWSDHttpMessageParameters *This,
-        IWSDAddress **ppAddress);
+                     IWSDHttpMessageParameters *This,
+                     IWSDAddress **ppAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetLocalAddress)(
-        IWSDHttpMessageParameters *This,
-        IWSDAddress *pAddress);
+                     IWSDHttpMessageParameters *This,
+                     IWSDAddress *pAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetRemoteAddress)(
-        IWSDHttpMessageParameters *This,
-        IWSDAddress **ppAddress);
+                     IWSDHttpMessageParameters *This,
+                     IWSDAddress **ppAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetRemoteAddress)(
-        IWSDHttpMessageParameters *This,
-        IWSDAddress *pAddress);
+                     IWSDHttpMessageParameters *This,
+                     IWSDAddress *pAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetLowerParameters)(
-        IWSDHttpMessageParameters *This,
-        IWSDMessageParameters **ppTxParams);
+                     IWSDHttpMessageParameters *This,
+                     IWSDMessageParameters **ppTxParams);
 
     /*** IWSDHttpMessageParameters methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInboundHttpHeaders)(
-        IWSDHttpMessageParameters *This,
-        LPCWSTR pszHeaders);
+                     IWSDHttpMessageParameters *This,
+                     LPCWSTR pszHeaders);
 
     HRESULT (STDMETHODCALLTYPE *GetInboundHttpHeaders)(
-        IWSDHttpMessageParameters *This,
-        LPCWSTR *ppszHeaders);
+                     IWSDHttpMessageParameters *This,
+                     LPCWSTR *ppszHeaders);
 
     HRESULT (STDMETHODCALLTYPE *SetOutboundHttpHeaders)(
-        IWSDHttpMessageParameters *This,
-        LPCWSTR pszHeaders);
+                     IWSDHttpMessageParameters *This,
+                     LPCWSTR pszHeaders);
 
     HRESULT (STDMETHODCALLTYPE *GetOutboundHttpHeaders)(
-        IWSDHttpMessageParameters *This,
-        LPCWSTR *ppszHeaders);
+                     IWSDHttpMessageParameters *This,
+                     LPCWSTR *ppszHeaders);
 
     HRESULT (STDMETHODCALLTYPE *SetID)(
-        IWSDHttpMessageParameters *This,
-        LPCWSTR pszId);
+                     IWSDHttpMessageParameters *This,
+                     LPCWSTR pszId);
 
     HRESULT (STDMETHODCALLTYPE *GetID)(
-        IWSDHttpMessageParameters *This,
-        LPCWSTR *ppszId);
+                     IWSDHttpMessageParameters *This,
+                     LPCWSTR *ppszId);
 
     HRESULT (STDMETHODCALLTYPE *SetContext)(
-        IWSDHttpMessageParameters *This,
-        IUnknown *pContext);
+                     IWSDHttpMessageParameters *This,
+                     IUnknown *pContext);
 
     HRESULT (STDMETHODCALLTYPE *GetContext)(
-        IWSDHttpMessageParameters *This,
-        IUnknown **ppContext);
+                     IWSDHttpMessageParameters *This,
+                     IUnknown **ppContext);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IWSDHttpMessageParameters *This);
+                     IWSDHttpMessageParameters *This);
 
     END_INTERFACE
 } IWSDHttpMessageParametersVtbl;
@@ -1207,16 +1207,16 @@ MIDL_INTERFACE("d09ac7bd-2a3e-4b85-8605-2737ff3e4ea0")
 IWSDHttpAddress : public IWSDTransportAddress
 {
     virtual HRESULT STDMETHODCALLTYPE GetSecure(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSecure(
-        WINBOOL fSecure) = 0;
+                     WINBOOL fSecure) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPath(
-        LPCWSTR *ppszPath) = 0;
+                     LPCWSTR *ppszPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPath(
-        LPCWSTR pszPath) = 0;
+                     LPCWSTR pszPath) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1228,64 +1228,64 @@ typedef struct IWSDHttpAddressVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDHttpAddress *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDHttpAddress *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDHttpAddress *This);
+                     IWSDHttpAddress *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDHttpAddress *This);
+                     IWSDHttpAddress *This);
 
     /*** IWSDAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        IWSDHttpAddress *This,
-        LPWSTR pszBuffer,
-        DWORD cchLength,
-        WINBOOL fSafe);
+                     IWSDHttpAddress *This,
+                     LPWSTR pszBuffer,
+                     DWORD cchLength,
+                     WINBOOL fSafe);
 
     HRESULT (STDMETHODCALLTYPE *Deserialize)(
-        IWSDHttpAddress *This,
-        LPCWSTR pszBuffer);
+                     IWSDHttpAddress *This,
+                     LPCWSTR pszBuffer);
 
     /*** IWSDTransportAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPort)(
-        IWSDHttpAddress *This,
-        WORD *pwPort);
+                     IWSDHttpAddress *This,
+                     WORD *pwPort);
 
     HRESULT (STDMETHODCALLTYPE *SetPort)(
-        IWSDHttpAddress *This,
-        WORD wPort);
+                     IWSDHttpAddress *This,
+                     WORD wPort);
 
     HRESULT (STDMETHODCALLTYPE *GetTransportAddress)(
-        IWSDHttpAddress *This,
-        LPCWSTR *ppszAddress);
+                     IWSDHttpAddress *This,
+                     LPCWSTR *ppszAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetTransportAddressEx)(
-        IWSDHttpAddress *This,
-        WINBOOL fSafe,
-        LPCWSTR *ppszAddress);
+                     IWSDHttpAddress *This,
+                     WINBOOL fSafe,
+                     LPCWSTR *ppszAddress);
 
     HRESULT (STDMETHODCALLTYPE *SetTransportAddress)(
-        IWSDHttpAddress *This,
-        LPCWSTR pszAddress);
+                     IWSDHttpAddress *This,
+                     LPCWSTR pszAddress);
 
     /*** IWSDHttpAddress methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSecure)(
-        IWSDHttpAddress *This);
+                     IWSDHttpAddress *This);
 
     HRESULT (STDMETHODCALLTYPE *SetSecure)(
-        IWSDHttpAddress *This,
-        WINBOOL fSecure);
+                     IWSDHttpAddress *This,
+                     WINBOOL fSecure);
 
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IWSDHttpAddress *This,
-        LPCWSTR *ppszPath);
+                     IWSDHttpAddress *This,
+                     LPCWSTR *ppszPath);
 
     HRESULT (STDMETHODCALLTYPE *SetPath)(
-        IWSDHttpAddress *This,
-        LPCWSTR pszPath);
+                     IWSDHttpAddress *This,
+                     LPCWSTR pszPath);
 
     END_INTERFACE
 } IWSDHttpAddressVtbl;
@@ -1382,10 +1382,10 @@ MIDL_INTERFACE("de105e87-a0da-418e-98ad-27b9eed87bdc")
 IWSDSSLClientCertificate : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClientCertificate(
-        PCCERT_CONTEXT *ppCertContext) = 0;
+                     PCCERT_CONTEXT *ppCertContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMappedAccessToken(
-        HANDLE *phToken) = 0;
+                     HANDLE *phToken) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1397,24 +1397,24 @@ typedef struct IWSDSSLClientCertificateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDSSLClientCertificate *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDSSLClientCertificate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDSSLClientCertificate *This);
+                     IWSDSSLClientCertificate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDSSLClientCertificate *This);
+                     IWSDSSLClientCertificate *This);
 
     /*** IWSDSSLClientCertificate methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClientCertificate)(
-        IWSDSSLClientCertificate *This,
-        PCCERT_CONTEXT *ppCertContext);
+                     IWSDSSLClientCertificate *This,
+                     PCCERT_CONTEXT *ppCertContext);
 
     HRESULT (STDMETHODCALLTYPE *GetMappedAccessToken)(
-        IWSDSSLClientCertificate *This,
-        HANDLE *phToken);
+                     IWSDSSLClientCertificate *This,
+                     HANDLE *phToken);
 
     END_INTERFACE
 } IWSDSSLClientCertificateVtbl;
@@ -1470,10 +1470,10 @@ MIDL_INTERFACE("0b476df0-8dac-480d-b05c-99781a5884aa")
 IWSDHttpAuthParameters : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClientAccessToken(
-        HANDLE *phToken) = 0;
+                     HANDLE *phToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAuthType(
-        PWSD_SECURITY_HTTP_AUTH_SCHEMES pAuthType) = 0;
+                     PWSD_SECURITY_HTTP_AUTH_SCHEMES pAuthType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1485,24 +1485,24 @@ typedef struct IWSDHttpAuthParametersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDHttpAuthParameters *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDHttpAuthParameters *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDHttpAuthParameters *This);
+                     IWSDHttpAuthParameters *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDHttpAuthParameters *This);
+                     IWSDHttpAuthParameters *This);
 
     /*** IWSDHttpAuthParameters methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClientAccessToken)(
-        IWSDHttpAuthParameters *This,
-        HANDLE *phToken);
+                     IWSDHttpAuthParameters *This,
+                     HANDLE *phToken);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthType)(
-        IWSDHttpAuthParameters *This,
-        PWSD_SECURITY_HTTP_AUTH_SCHEMES pAuthType);
+                     IWSDHttpAuthParameters *This,
+                     PWSD_SECURITY_HTTP_AUTH_SCHEMES pAuthType);
 
     END_INTERFACE
 } IWSDHttpAuthParametersVtbl;
@@ -1558,22 +1558,22 @@ MIDL_INTERFACE("03ce20aa-71c4-45e2-b32e-3766c61c790f")
 IWSDSignatureProperty : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsMessageSigned(
-        WINBOOL *pbSigned) = 0;
+                     WINBOOL *pbSigned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsMessageSignatureTrusted(
-        WINBOOL *pbSignatureTrusted) = 0;
+                     WINBOOL *pbSignatureTrusted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetKeyInfo(
-        BYTE *pbKeyInfo,
-        DWORD *pdwKeyInfoSize) = 0;
+                     BYTE *pbKeyInfo,
+                     DWORD *pdwKeyInfoSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignature(
-        BYTE *pbSignature,
-        DWORD *pdwSignatureSize) = 0;
+                     BYTE *pbSignature,
+                     DWORD *pdwSignatureSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignedInfoHash(
-        BYTE *pbSignedInfoHash,
-        DWORD *pdwHashSize) = 0;
+                     BYTE *pbSignedInfoHash,
+                     DWORD *pdwHashSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1585,39 +1585,39 @@ typedef struct IWSDSignaturePropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDSignatureProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDSignatureProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDSignatureProperty *This);
+                     IWSDSignatureProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDSignatureProperty *This);
+                     IWSDSignatureProperty *This);
 
     /*** IWSDSignatureProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *IsMessageSigned)(
-        IWSDSignatureProperty *This,
-        WINBOOL *pbSigned);
+                     IWSDSignatureProperty *This,
+                     WINBOOL *pbSigned);
 
     HRESULT (STDMETHODCALLTYPE *IsMessageSignatureTrusted)(
-        IWSDSignatureProperty *This,
-        WINBOOL *pbSignatureTrusted);
+                     IWSDSignatureProperty *This,
+                     WINBOOL *pbSignatureTrusted);
 
     HRESULT (STDMETHODCALLTYPE *GetKeyInfo)(
-        IWSDSignatureProperty *This,
-        BYTE *pbKeyInfo,
-        DWORD *pdwKeyInfoSize);
+                     IWSDSignatureProperty *This,
+                     BYTE *pbKeyInfo,
+                     DWORD *pdwKeyInfoSize);
 
     HRESULT (STDMETHODCALLTYPE *GetSignature)(
-        IWSDSignatureProperty *This,
-        BYTE *pbSignature,
-        DWORD *pdwSignatureSize);
+                     IWSDSignatureProperty *This,
+                     BYTE *pbSignature,
+                     DWORD *pdwSignatureSize);
 
     HRESULT (STDMETHODCALLTYPE *GetSignedInfoHash)(
-        IWSDSignatureProperty *This,
-        BYTE *pbSignedInfoHash,
-        DWORD *pdwHashSize);
+                     IWSDSignatureProperty *This,
+                     BYTE *pbSignedInfoHash,
+                     DWORD *pdwHashSize);
 
     END_INTERFACE
 } IWSDSignaturePropertyVtbl;

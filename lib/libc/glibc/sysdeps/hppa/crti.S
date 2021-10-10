@@ -150,7 +150,7 @@ _init:
 	stw	%r19,-32(%sp)
 
 /* _fini prologue.  */
-        .section .fini,"ax",%progbits
+                     .section .fini,"ax",%progbits
 	.align 4
 	.globl _fini
 	.hidden	_fini

@@ -32,9 +32,9 @@ struct sockaddr_l2tpip {
 
 	/* Pad to size of `struct sockaddr'. */
 	unsigned char	__pad[__SOCK_SIZE__ -
-			      sizeof(__kernel_sa_family_t) -
-			      sizeof(__be16) - sizeof(struct in_addr) -
-			      sizeof(__u32)];
+			                   sizeof(__kernel_sa_family_t) -
+			                   sizeof(__be16) - sizeof(struct in_addr) -
+			                   sizeof(__u32)];
 };
 
 /**
@@ -196,6 +196,6 @@ enum l2tp_debug_flags {
  */
 #define L2TP_GENL_NAME		"l2tp"
 #define L2TP_GENL_VERSION	0x1
-#define L2TP_GENL_MCGROUP       "l2tp"
+#define L2TP_GENL_MCGROUP                    "l2tp"
 
 #endif /* _LINUX_L2TP_H_ */

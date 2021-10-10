@@ -20,11 +20,11 @@ extern "C" {
 #define PATCHAPI WINAPI
 #endif
 
-#define PATCH_OPTION_USE_BEST               0x0
-#define PATCH_OPTION_USE_LZX_A              0x1
-#define PATCH_OPTION_USE_LZX_B              0x2
-#define PATCH_OPTION_USE_LZX_BEST           0x3
-#define PATCH_OPTION_USE_LZX_LARGE          0x4
+#define PATCH_OPTION_USE_BEST                                         0x0
+#define PATCH_OPTION_USE_LZX_A                                        0x1
+#define PATCH_OPTION_USE_LZX_B                                        0x2
+#define PATCH_OPTION_USE_LZX_BEST                        0x3
+#define PATCH_OPTION_USE_LZX_LARGE                       0x4
 
 #define PATCH_OPTION_NO_BINDFIX 0x00010000
 #define PATCH_OPTION_NO_LOCKFIX 0x00020000
@@ -113,9 +113,9 @@ extern "C" {
   typedef struct _PATCH_OLD_FILE_INFO {
     ULONG SizeOfThisStruct;
     __C89_NAMELESS union {
-      LPCSTR OldFileNameA;
-      LPCWSTR OldFileNameW;
-      HANDLE OldFileHandle;
+                   LPCSTR OldFileNameA;
+                   LPCWSTR OldFileNameW;
+                   HANDLE OldFileHandle;
     };
     ULONG IgnoreRangeCount;
     PPATCH_IGNORE_RANGE IgnoreRangeArray;
@@ -126,9 +126,9 @@ extern "C" {
   typedef struct _PATCH_INTERLEAVE_MAP {
     ULONG CountRanges;
     struct {
-      ULONG OldOffset;
-      ULONG OldLength;
-      ULONG NewLength;
+                   ULONG OldOffset;
+                   ULONG OldLength;
+                   ULONG NewLength;
     } Range[1];
   } PATCH_INTERLEAVE_MAP, *PPATCH_INTERLEAVE_MAP;
 

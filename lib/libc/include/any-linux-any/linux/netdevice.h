@@ -14,7 +14,7 @@
  *		Donald J. Becker, <becker@cesdis.gsfc.nasa.gov>
  *		Alan Cox, <alan@lxorguk.ukuu.org.uk>
  *		Bjorn Ekwall. <bj0rn@blox.se>
- *              Pekka Riikonen <priikone@poseidon.pspt.fi>
+ *                                        Pekka Riikonen <priikone@poseidon.pspt.fi>
  *
  *		This program is free software; you can redistribute it and/or
  *		modify it under the terms of the GNU General Public License
@@ -47,13 +47,13 @@
 
 /* Media selection options. */
 enum {
-        IF_PORT_UNKNOWN = 0,
-        IF_PORT_10BASE2,
-        IF_PORT_10BASET,
-        IF_PORT_AUI,
-        IF_PORT_100BASET,
-        IF_PORT_100BASETX,
-        IF_PORT_100BASEFX
+                     IF_PORT_UNKNOWN = 0,
+                     IF_PORT_10BASE2,
+                     IF_PORT_10BASET,
+                     IF_PORT_AUI,
+                     IF_PORT_100BASET,
+                     IF_PORT_100BASETX,
+                     IF_PORT_100BASEFX
 };
 
 /* hardware address assignment types */

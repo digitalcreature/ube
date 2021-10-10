@@ -30,35 +30,35 @@ float wcstof (const wchar_t * __restrict__ wcs, wchar_t ** __restrict__ wcse)
 
   if (cp == 0) /* C locale */
     {
-      for (i = 0; (wcs[i] != 0) && wcs[i] <= 255; i++)
+                   for (i = 0; (wcs[i] != 0) && wcs[i] <= 255; i++)
 	cs[i] = (char) wcs[i];
-      cs[i]  = '\0';
+                   cs[i]  = '\0';
     }
   else
     {
-      int nbytes = -1;
-      int mb_len = 0;
-      /* loop through till we hit null or invalid character */
-      for (i = 0; (wcs[i] != 0) && (nbytes != 0); i++)
+                   int nbytes = -1;
+                   int mb_len = 0;
+                   /* loop through till we hit null or invalid character */
+                   for (i = 0; (wcs[i] != 0) && (nbytes != 0); i++)
 	{
 	  nbytes = WideCharToMultiByte(cp, WC_COMPOSITECHECK | WC_SEPCHARS,
-				       wcs + i, 1, cs + mb_len, MB_CUR_MAX,
-				       NULL, NULL);
+				                    wcs + i, 1, cs + mb_len, MB_CUR_MAX,
+				                    NULL, NULL);
 	  mb_len += nbytes;
 	}
-      cs[mb_len] = '\0';
+                   cs[mb_len] = '\0';
     }
 
   ret =  strtof (cs, &cse);
 
   if (wcse)
     {
-      /* Make sure temp mbstring cs has 0 at cse.  */ 
-      *cse = '\0';
-      i = MultiByteToWideChar (cp, MB_ERR_INVALID_CHARS, cs, -1, NULL, 0);
-      if (i > 0)
-        i -= 1; /* Remove zero terminator from length.  */
-      *wcse = (wchar_t *) wcs + i;
+                   /* Make sure temp mbstring cs has 0 at cse.  */ 
+                   *cse = '\0';
+                   i = MultiByteToWideChar (cp, MB_ERR_INVALID_CHARS, cs, -1, NULL, 0);
+                   if (i > 0)
+                     i -= 1; /* Remove zero terminator from length.  */
+                   *wcse = (wchar_t *) wcs + i;
     }
   free (cs);
 

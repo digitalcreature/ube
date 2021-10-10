@@ -78,66 +78,66 @@ WINBOOL WINAPI _CRT_INIT (HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
 {
   if (dwReason == DLL_PROCESS_DETACH)
     {
-      if (__proc_attached > 0)
+                   if (__proc_attached > 0)
 	__proc_attached--;
-      else
+                   else
 	return FALSE;
     }
   if (dwReason == DLL_PROCESS_ATTACH)
     {
-      void *lock_free = NULL;
-      void *fiberid = ((PNT_TIB)NtCurrentTeb ())->StackBase;
-      int nested = FALSE;
-      
-      while ((lock_free = InterlockedCompareExchangePointer ((volatile PVOID *) &__native_startup_lock,
+                   void *lock_free = NULL;
+                   void *fiberid = ((PNT_TIB)NtCurrentTeb ())->StackBase;
+                   int nested = FALSE;
+                   
+                   while ((lock_free = InterlockedCompareExchangePointer ((volatile PVOID *) &__native_startup_lock,
 							     fiberid, 0)) != 0)
 	{
 	  if (lock_free == fiberid)
 	    {
-	      nested = TRUE;
-	      break;
+	                   nested = TRUE;
+	                   break;
 	    }
 	  Sleep(1000);
 	}
-      if (__native_startup_state == __initializing)
+                   if (__native_startup_state == __initializing)
 	{
 	  _amsg_exit (31);
 	}
-      else if (__native_startup_state == __uninitialized)
+                   else if (__native_startup_state == __uninitialized)
 	{
 	  __native_startup_state = __initializing;
 	  
 	  _initterm ((_PVFV *) (void *) __xi_a, (_PVFV *) (void *) __xi_z);
 	}
-      if (__native_startup_state == __initializing)
+                   if (__native_startup_state == __initializing)
 	{
 	  _initterm (__xc_a, __xc_z);
 	  __native_startup_state = __initialized;
 	}
-      if (! nested)
+                   if (! nested)
 	{
 	  (void) InterlockedExchangePointer ((volatile PVOID *) &__native_startup_lock, 0);
 	}
-      if (__dyn_tls_init_callback != NULL)
+                   if (__dyn_tls_init_callback != NULL)
 	{
 	  __dyn_tls_init_callback (hDllHandle, DLL_THREAD_ATTACH, lpreserved);
 	}
-      __proc_attached++;
+                   __proc_attached++;
     }
   else if (dwReason == DLL_PROCESS_DETACH)
     {
-      void *lock_free = NULL;
-      while ((lock_free = InterlockedCompareExchangePointer ((volatile PVOID *) &__native_startup_lock,(PVOID) 1, 0)) != 0)
+                   void *lock_free = NULL;
+                   while ((lock_free = InterlockedCompareExchangePointer ((volatile PVOID *) &__native_startup_lock,(PVOID) 1, 0)) != 0)
 	{
 	  Sleep(1000);
 	}
-      if (__native_startup_state != __initialized)
+                   if (__native_startup_state != __initialized)
 	{
 	  _amsg_exit (31);
 	}
-      else
+                   else
 	{
-          _execute_onexit_table(&atexit_table);
+                       _execute_onexit_table(&atexit_table);
 	  __native_startup_state = __uninitialized;
 	  (void) InterlockedExchangePointer ((volatile PVOID *) &__native_startup_lock, 0);
 	}
@@ -159,7 +159,7 @@ DllMainCRTStartup (HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
   if (dwReason == DLL_PROCESS_ATTACH)
     {
 #if defined(__x86_64__) && !defined(__SEH__)
-      __mingw_init_ehandler ();
+                   __mingw_init_ehandler ();
 #endif
     }
   return __DllMainCRTStartup (hDllHandle, dwReason, lpreserved);
@@ -179,14 +179,14 @@ __DllMainCRTStartup (HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
   _pei386_runtime_relocator ();
   if (dwReason == DLL_PROCESS_ATTACH || dwReason == DLL_THREAD_ATTACH)
     {
-        retcode = _CRT_INIT (hDllHandle, dwReason, lpreserved);
-        if (!retcode)
-          goto i__leave;
-        retcode = DllEntryPoint (hDllHandle, dwReason, lpreserved);
+                     retcode = _CRT_INIT (hDllHandle, dwReason, lpreserved);
+                     if (!retcode)
+                       goto i__leave;
+                     retcode = DllEntryPoint (hDllHandle, dwReason, lpreserved);
 	if (! retcode)
 	  {
 	    if (dwReason == DLL_PROCESS_ATTACH)
-	      _CRT_INIT (hDllHandle, DLL_PROCESS_DETACH, lpreserved);
+	                   _CRT_INIT (hDllHandle, DLL_PROCESS_DETACH, lpreserved);
 	    goto i__leave;
 	  }
     }
@@ -201,7 +201,7 @@ __DllMainCRTStartup (HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
     }
   if (dwReason == DLL_PROCESS_DETACH || dwReason == DLL_THREAD_DETACH)
     {
-        retcode = DllEntryPoint (hDllHandle, dwReason, lpreserved);
+                     retcode = DllEntryPoint (hDllHandle, dwReason, lpreserved);
 	if (_CRT_INIT (hDllHandle, dwReason, lpreserved) == FALSE)
 	  retcode = FALSE;
     }

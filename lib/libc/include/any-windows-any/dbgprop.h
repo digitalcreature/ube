@@ -302,27 +302,27 @@ MIDL_INTERFACE("51973c50-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugProperty : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPropertyInfo(
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        DebugPropertyInfo *pPropertyInfo) = 0;
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     DebugPropertyInfo *pPropertyInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExtendedInfo(
-        ULONG cInfos,
-        GUID *rgguidExtendedInfo,
-        VARIANT *rgvar) = 0;
+                     ULONG cInfos,
+                     GUID *rgguidExtendedInfo,
+                     VARIANT *rgvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValueAsString(
-        LPCOLESTR pszValue,
-        UINT nRadix) = 0;
+                     LPCOLESTR pszValue,
+                     UINT nRadix) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumMembers(
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        REFIID refiid,
-        IEnumDebugPropertyInfo **ppepi) = 0;
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     REFIID refiid,
+                     IEnumDebugPropertyInfo **ppepi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParent(
-        IDebugProperty **ppDebugProp) = 0;
+                     IDebugProperty **ppDebugProp) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -334,44 +334,44 @@ typedef struct IDebugPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugProperty *This);
+                     IDebugProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugProperty *This);
+                     IDebugProperty *This);
 
     /*** IDebugProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyInfo)(
-        IDebugProperty *This,
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        DebugPropertyInfo *pPropertyInfo);
+                     IDebugProperty *This,
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     DebugPropertyInfo *pPropertyInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetExtendedInfo)(
-        IDebugProperty *This,
-        ULONG cInfos,
-        GUID *rgguidExtendedInfo,
-        VARIANT *rgvar);
+                     IDebugProperty *This,
+                     ULONG cInfos,
+                     GUID *rgguidExtendedInfo,
+                     VARIANT *rgvar);
 
     HRESULT (STDMETHODCALLTYPE *SetValueAsString)(
-        IDebugProperty *This,
-        LPCOLESTR pszValue,
-        UINT nRadix);
+                     IDebugProperty *This,
+                     LPCOLESTR pszValue,
+                     UINT nRadix);
 
     HRESULT (STDMETHODCALLTYPE *EnumMembers)(
-        IDebugProperty *This,
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        REFIID refiid,
-        IEnumDebugPropertyInfo **ppepi);
+                     IDebugProperty *This,
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     REFIID refiid,
+                     IEnumDebugPropertyInfo **ppepi);
 
     HRESULT (STDMETHODCALLTYPE *GetParent)(
-        IDebugProperty *This,
-        IDebugProperty **ppDebugProp);
+                     IDebugProperty *This,
+                     IDebugProperty **ppDebugProp);
 
     END_INTERFACE
 } IDebugPropertyVtbl;
@@ -472,21 +472,21 @@ MIDL_INTERFACE("51973c51-cb0c-11d0-b5c9-00a0244a0e7a")
 IEnumDebugPropertyInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        DebugPropertyInfo *pi,
-        ULONG *pcEltsfetched) = 0;
+                     ULONG celt,
+                     DebugPropertyInfo *pi,
+                     ULONG *pcEltsfetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDebugPropertyInfo **ppepi) = 0;
+                     IEnumDebugPropertyInfo **ppepi) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        ULONG *pcelt) = 0;
+                     ULONG *pcelt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -498,37 +498,37 @@ typedef struct IEnumDebugPropertyInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDebugPropertyInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDebugPropertyInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDebugPropertyInfo *This);
+                     IEnumDebugPropertyInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDebugPropertyInfo *This);
+                     IEnumDebugPropertyInfo *This);
 
     /*** IEnumDebugPropertyInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumDebugPropertyInfo *This,
-        ULONG celt,
-        DebugPropertyInfo *pi,
-        ULONG *pcEltsfetched);
+                     IEnumDebugPropertyInfo *This,
+                     ULONG celt,
+                     DebugPropertyInfo *pi,
+                     ULONG *pcEltsfetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDebugPropertyInfo *This,
-        ULONG celt);
+                     IEnumDebugPropertyInfo *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDebugPropertyInfo *This);
+                     IEnumDebugPropertyInfo *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDebugPropertyInfo *This,
-        IEnumDebugPropertyInfo **ppepi);
+                     IEnumDebugPropertyInfo *This,
+                     IEnumDebugPropertyInfo **ppepi);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IEnumDebugPropertyInfo *This,
-        ULONG *pcelt);
+                     IEnumDebugPropertyInfo *This,
+                     ULONG *pcelt);
 
     END_INTERFACE
 } IEnumDebugPropertyInfoVtbl;
@@ -617,14 +617,14 @@ MIDL_INTERFACE("51973c52-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugExtendedProperty : public IDebugProperty
 {
     virtual HRESULT STDMETHODCALLTYPE GetExtendedPropertyInfo(
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        ExtendedDebugPropertyInfo *pExtendedPropertyInfo) = 0;
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     ExtendedDebugPropertyInfo *pExtendedPropertyInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumExtendedMembers(
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        IEnumDebugExtendedPropertyInfo **ppeepi) = 0;
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     IEnumDebugExtendedPropertyInfo **ppeepi) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -636,57 +636,57 @@ typedef struct IDebugExtendedPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugExtendedProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugExtendedProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugExtendedProperty *This);
+                     IDebugExtendedProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugExtendedProperty *This);
+                     IDebugExtendedProperty *This);
 
     /*** IDebugProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyInfo)(
-        IDebugExtendedProperty *This,
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        DebugPropertyInfo *pPropertyInfo);
+                     IDebugExtendedProperty *This,
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     DebugPropertyInfo *pPropertyInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetExtendedInfo)(
-        IDebugExtendedProperty *This,
-        ULONG cInfos,
-        GUID *rgguidExtendedInfo,
-        VARIANT *rgvar);
+                     IDebugExtendedProperty *This,
+                     ULONG cInfos,
+                     GUID *rgguidExtendedInfo,
+                     VARIANT *rgvar);
 
     HRESULT (STDMETHODCALLTYPE *SetValueAsString)(
-        IDebugExtendedProperty *This,
-        LPCOLESTR pszValue,
-        UINT nRadix);
+                     IDebugExtendedProperty *This,
+                     LPCOLESTR pszValue,
+                     UINT nRadix);
 
     HRESULT (STDMETHODCALLTYPE *EnumMembers)(
-        IDebugExtendedProperty *This,
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        REFIID refiid,
-        IEnumDebugPropertyInfo **ppepi);
+                     IDebugExtendedProperty *This,
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     REFIID refiid,
+                     IEnumDebugPropertyInfo **ppepi);
 
     HRESULT (STDMETHODCALLTYPE *GetParent)(
-        IDebugExtendedProperty *This,
-        IDebugProperty **ppDebugProp);
+                     IDebugExtendedProperty *This,
+                     IDebugProperty **ppDebugProp);
 
     /*** IDebugExtendedProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExtendedPropertyInfo)(
-        IDebugExtendedProperty *This,
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        ExtendedDebugPropertyInfo *pExtendedPropertyInfo);
+                     IDebugExtendedProperty *This,
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     ExtendedDebugPropertyInfo *pExtendedPropertyInfo);
 
     HRESULT (STDMETHODCALLTYPE *EnumExtendedMembers)(
-        IDebugExtendedProperty *This,
-        DWORD dwFieldSpec,
-        UINT nRadix,
-        IEnumDebugExtendedPropertyInfo **ppeepi);
+                     IDebugExtendedProperty *This,
+                     DWORD dwFieldSpec,
+                     UINT nRadix,
+                     IEnumDebugExtendedPropertyInfo **ppeepi);
 
     END_INTERFACE
 } IDebugExtendedPropertyVtbl;
@@ -765,21 +765,21 @@ MIDL_INTERFACE("51973c53-cb0c-11d0-b5c9-00a0244a0e7a")
 IEnumDebugExtendedPropertyInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        ExtendedDebugPropertyInfo *rgExtendedPropertyInfo,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     ExtendedDebugPropertyInfo *rgExtendedPropertyInfo,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDebugExtendedPropertyInfo **pedpe) = 0;
+                     IEnumDebugExtendedPropertyInfo **pedpe) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        ULONG *pcelt) = 0;
+                     ULONG *pcelt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -791,37 +791,37 @@ typedef struct IEnumDebugExtendedPropertyInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDebugExtendedPropertyInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDebugExtendedPropertyInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDebugExtendedPropertyInfo *This);
+                     IEnumDebugExtendedPropertyInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDebugExtendedPropertyInfo *This);
+                     IEnumDebugExtendedPropertyInfo *This);
 
     /*** IEnumDebugExtendedPropertyInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumDebugExtendedPropertyInfo *This,
-        ULONG celt,
-        ExtendedDebugPropertyInfo *rgExtendedPropertyInfo,
-        ULONG *pceltFetched);
+                     IEnumDebugExtendedPropertyInfo *This,
+                     ULONG celt,
+                     ExtendedDebugPropertyInfo *rgExtendedPropertyInfo,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDebugExtendedPropertyInfo *This,
-        ULONG celt);
+                     IEnumDebugExtendedPropertyInfo *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDebugExtendedPropertyInfo *This);
+                     IEnumDebugExtendedPropertyInfo *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDebugExtendedPropertyInfo *This,
-        IEnumDebugExtendedPropertyInfo **pedpe);
+                     IEnumDebugExtendedPropertyInfo *This,
+                     IEnumDebugExtendedPropertyInfo **pedpe);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IEnumDebugExtendedPropertyInfo *This,
-        ULONG *pcelt);
+                     IEnumDebugExtendedPropertyInfo *This,
+                     ULONG *pcelt);
 
     END_INTERFACE
 } IEnumDebugExtendedPropertyInfoVtbl;
@@ -890,21 +890,21 @@ MIDL_INTERFACE("51973c54-cb0c-11d0-b5c9-00a0244a0e7a")
 IPerPropertyBrowsing2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDisplayString(
-        DISPID dispid,
-        BSTR *pBstr) = 0;
+                     DISPID dispid,
+                     BSTR *pBstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MapPropertyToPage(
-        DISPID dispid,
-        CLSID *pClsidPropPage) = 0;
+                     DISPID dispid,
+                     CLSID *pClsidPropPage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPredefinedStrings(
-        DISPID dispid,
-        CALPOLESTR *pCaStrings,
-        CADWORD *pCaCookies) = 0;
+                     DISPID dispid,
+                     CALPOLESTR *pCaStrings,
+                     CADWORD *pCaCookies) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPredefinedValue(
-        DISPID dispid,
-        DWORD dwCookie) = 0;
+                     DISPID dispid,
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -916,37 +916,37 @@ typedef struct IPerPropertyBrowsing2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPerPropertyBrowsing2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPerPropertyBrowsing2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPerPropertyBrowsing2 *This);
+                     IPerPropertyBrowsing2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPerPropertyBrowsing2 *This);
+                     IPerPropertyBrowsing2 *This);
 
     /*** IPerPropertyBrowsing2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDisplayString)(
-        IPerPropertyBrowsing2 *This,
-        DISPID dispid,
-        BSTR *pBstr);
+                     IPerPropertyBrowsing2 *This,
+                     DISPID dispid,
+                     BSTR *pBstr);
 
     HRESULT (STDMETHODCALLTYPE *MapPropertyToPage)(
-        IPerPropertyBrowsing2 *This,
-        DISPID dispid,
-        CLSID *pClsidPropPage);
+                     IPerPropertyBrowsing2 *This,
+                     DISPID dispid,
+                     CLSID *pClsidPropPage);
 
     HRESULT (STDMETHODCALLTYPE *GetPredefinedStrings)(
-        IPerPropertyBrowsing2 *This,
-        DISPID dispid,
-        CALPOLESTR *pCaStrings,
-        CADWORD *pCaCookies);
+                     IPerPropertyBrowsing2 *This,
+                     DISPID dispid,
+                     CALPOLESTR *pCaStrings,
+                     CADWORD *pCaCookies);
 
     HRESULT (STDMETHODCALLTYPE *SetPredefinedValue)(
-        IPerPropertyBrowsing2 *This,
-        DISPID dispid,
-        DWORD dwCookie);
+                     IPerPropertyBrowsing2 *This,
+                     DISPID dispid,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } IPerPropertyBrowsing2Vtbl;
@@ -1011,7 +1011,7 @@ MIDL_INTERFACE("51973c55-cb0c-11d0-b5c9-00a0244a0e7a")
 IDebugPropertyEnumType_All : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        BSTR *a) = 0;
+                     BSTR *a) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1023,20 +1023,20 @@ typedef struct IDebugPropertyEnumType_AllVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugPropertyEnumType_All *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugPropertyEnumType_All *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugPropertyEnumType_All *This);
+                     IDebugPropertyEnumType_All *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugPropertyEnumType_All *This);
+                     IDebugPropertyEnumType_All *This);
 
     /*** IDebugPropertyEnumType_All methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugPropertyEnumType_All *This,
-        BSTR *a);
+                     IDebugPropertyEnumType_All *This,
+                     BSTR *a);
 
     END_INTERFACE
 } IDebugPropertyEnumType_AllVtbl;
@@ -1098,20 +1098,20 @@ typedef struct IDebugPropertyEnumType_LocalsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugPropertyEnumType_Locals *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugPropertyEnumType_Locals *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugPropertyEnumType_Locals *This);
+                     IDebugPropertyEnumType_Locals *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugPropertyEnumType_Locals *This);
+                     IDebugPropertyEnumType_Locals *This);
 
     /*** IDebugPropertyEnumType_All methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugPropertyEnumType_Locals *This,
-        BSTR *a);
+                     IDebugPropertyEnumType_Locals *This,
+                     BSTR *a);
 
     END_INTERFACE
 } IDebugPropertyEnumType_LocalsVtbl;
@@ -1173,20 +1173,20 @@ typedef struct IDebugPropertyEnumType_ArgumentsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugPropertyEnumType_Arguments *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugPropertyEnumType_Arguments *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugPropertyEnumType_Arguments *This);
+                     IDebugPropertyEnumType_Arguments *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugPropertyEnumType_Arguments *This);
+                     IDebugPropertyEnumType_Arguments *This);
 
     /*** IDebugPropertyEnumType_All methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugPropertyEnumType_Arguments *This,
-        BSTR *a);
+                     IDebugPropertyEnumType_Arguments *This,
+                     BSTR *a);
 
     END_INTERFACE
 } IDebugPropertyEnumType_ArgumentsVtbl;
@@ -1248,20 +1248,20 @@ typedef struct IDebugPropertyEnumType_LocalsPlusArgsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugPropertyEnumType_LocalsPlusArgs *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugPropertyEnumType_LocalsPlusArgs *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugPropertyEnumType_LocalsPlusArgs *This);
+                     IDebugPropertyEnumType_LocalsPlusArgs *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugPropertyEnumType_LocalsPlusArgs *This);
+                     IDebugPropertyEnumType_LocalsPlusArgs *This);
 
     /*** IDebugPropertyEnumType_All methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugPropertyEnumType_LocalsPlusArgs *This,
-        BSTR *a);
+                     IDebugPropertyEnumType_LocalsPlusArgs *This,
+                     BSTR *a);
 
     END_INTERFACE
 } IDebugPropertyEnumType_LocalsPlusArgsVtbl;
@@ -1323,20 +1323,20 @@ typedef struct IDebugPropertyEnumType_RegistersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDebugPropertyEnumType_Registers *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDebugPropertyEnumType_Registers *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDebugPropertyEnumType_Registers *This);
+                     IDebugPropertyEnumType_Registers *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDebugPropertyEnumType_Registers *This);
+                     IDebugPropertyEnumType_Registers *This);
 
     /*** IDebugPropertyEnumType_All methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IDebugPropertyEnumType_Registers *This,
-        BSTR *a);
+                     IDebugPropertyEnumType_Registers *This,
+                     BSTR *a);
 
     END_INTERFACE
 } IDebugPropertyEnumType_RegistersVtbl;
@@ -1379,14 +1379,14 @@ static FORCEINLINE HRESULT IDebugPropertyEnumType_Registers_GetName(IDebugProper
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

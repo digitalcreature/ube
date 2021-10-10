@@ -143,17 +143,17 @@ extern "C"{
 #else
   typedef struct ICatalogVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICatalog *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICatalog *This);
-      ULONG (WINAPI *Release)(ICatalog *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICatalog *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICatalog *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICatalog *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICatalog *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetCollection)(ICatalog *This,BSTR bstrCollName,IDispatch **ppCatalogCollection);
-      HRESULT (WINAPI *Connect)(ICatalog *This,BSTR bstrConnectString,IDispatch **ppCatalogCollection);
-      HRESULT (WINAPI *get_MajorVersion)(ICatalog *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_MinorVersion)(ICatalog *This,__LONG32 *retval);
+                   HRESULT (WINAPI *QueryInterface)(ICatalog *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICatalog *This);
+                   ULONG (WINAPI *Release)(ICatalog *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICatalog *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICatalog *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICatalog *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICatalog *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetCollection)(ICatalog *This,BSTR bstrCollName,IDispatch **ppCatalogCollection);
+                   HRESULT (WINAPI *Connect)(ICatalog *This,BSTR bstrConnectString,IDispatch **ppCatalogCollection);
+                   HRESULT (WINAPI *get_MajorVersion)(ICatalog *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_MinorVersion)(ICatalog *This,__LONG32 *retval);
     END_INTERFACE
   } ICatalogVtbl;
   struct ICatalog {
@@ -200,20 +200,20 @@ extern "C"{
 #else
   typedef struct ICatalogObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICatalogObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICatalogObject *This);
-      ULONG (WINAPI *Release)(ICatalogObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICatalogObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICatalogObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICatalogObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICatalogObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Value)(ICatalogObject *This,BSTR bstrPropName,VARIANT *retval);
-      HRESULT (WINAPI *put_Value)(ICatalogObject *This,BSTR bstrPropName,VARIANT val);
-      HRESULT (WINAPI *get_Key)(ICatalogObject *This,VARIANT *retval);
-      HRESULT (WINAPI *get_Name)(ICatalogObject *This,VARIANT *retval);
-      HRESULT (WINAPI *IsPropertyReadOnly)(ICatalogObject *This,BSTR bstrPropName,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *get_Valid)(ICatalogObject *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *IsPropertyWriteOnly)(ICatalogObject *This,BSTR bstrPropName,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *QueryInterface)(ICatalogObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICatalogObject *This);
+                   ULONG (WINAPI *Release)(ICatalogObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICatalogObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICatalogObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICatalogObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICatalogObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Value)(ICatalogObject *This,BSTR bstrPropName,VARIANT *retval);
+                   HRESULT (WINAPI *put_Value)(ICatalogObject *This,BSTR bstrPropName,VARIANT val);
+                   HRESULT (WINAPI *get_Key)(ICatalogObject *This,VARIANT *retval);
+                   HRESULT (WINAPI *get_Name)(ICatalogObject *This,VARIANT *retval);
+                   HRESULT (WINAPI *IsPropertyReadOnly)(ICatalogObject *This,BSTR bstrPropName,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *get_Valid)(ICatalogObject *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *IsPropertyWriteOnly)(ICatalogObject *This,BSTR bstrPropName,VARIANT_BOOL *retval);
     END_INTERFACE
   } ICatalogObjectVtbl;
   struct ICatalogObject {
@@ -278,29 +278,29 @@ extern "C"{
 #else
   typedef struct ICatalogCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICatalogCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICatalogCollection *This);
-      ULONG (WINAPI *Release)(ICatalogCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICatalogCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICatalogCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICatalogCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICatalogCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(ICatalogCollection *This,IUnknown **ppEnumVariant);
-      HRESULT (WINAPI *get_Item)(ICatalogCollection *This,__LONG32 lIndex,IDispatch **ppCatalogObject);
-      HRESULT (WINAPI *get_Count)(ICatalogCollection *This,__LONG32 *retval);
-      HRESULT (WINAPI *Remove)(ICatalogCollection *This,__LONG32 lIndex);
-      HRESULT (WINAPI *Add)(ICatalogCollection *This,IDispatch **ppCatalogObject);
-      HRESULT (WINAPI *Populate)(ICatalogCollection *This);
-      HRESULT (WINAPI *SaveChanges)(ICatalogCollection *This,__LONG32 *retval);
-      HRESULT (WINAPI *GetCollection)(ICatalogCollection *This,BSTR bstrCollName,VARIANT varObjectKey,IDispatch **ppCatalogCollection);
-      HRESULT (WINAPI *get_Name)(ICatalogCollection *This,VARIANT *retval);
-      HRESULT (WINAPI *get_AddEnabled)(ICatalogCollection *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *get_RemoveEnabled)(ICatalogCollection *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *GetUtilInterface)(ICatalogCollection *This,IDispatch **ppUtil);
-      HRESULT (WINAPI *get_DataStoreMajorVersion)(ICatalogCollection *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_DataStoreMinorVersion)(ICatalogCollection *This,__LONG32 *retval);
-      HRESULT (WINAPI *PopulateByKey)(ICatalogCollection *This,SAFEARRAY *aKeys);
-      HRESULT (WINAPI *PopulateByQuery)(ICatalogCollection *This,BSTR bstrQueryString,__LONG32 lQueryType);
+                   HRESULT (WINAPI *QueryInterface)(ICatalogCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICatalogCollection *This);
+                   ULONG (WINAPI *Release)(ICatalogCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICatalogCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICatalogCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICatalogCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICatalogCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(ICatalogCollection *This,IUnknown **ppEnumVariant);
+                   HRESULT (WINAPI *get_Item)(ICatalogCollection *This,__LONG32 lIndex,IDispatch **ppCatalogObject);
+                   HRESULT (WINAPI *get_Count)(ICatalogCollection *This,__LONG32 *retval);
+                   HRESULT (WINAPI *Remove)(ICatalogCollection *This,__LONG32 lIndex);
+                   HRESULT (WINAPI *Add)(ICatalogCollection *This,IDispatch **ppCatalogObject);
+                   HRESULT (WINAPI *Populate)(ICatalogCollection *This);
+                   HRESULT (WINAPI *SaveChanges)(ICatalogCollection *This,__LONG32 *retval);
+                   HRESULT (WINAPI *GetCollection)(ICatalogCollection *This,BSTR bstrCollName,VARIANT varObjectKey,IDispatch **ppCatalogCollection);
+                   HRESULT (WINAPI *get_Name)(ICatalogCollection *This,VARIANT *retval);
+                   HRESULT (WINAPI *get_AddEnabled)(ICatalogCollection *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *get_RemoveEnabled)(ICatalogCollection *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *GetUtilInterface)(ICatalogCollection *This,IDispatch **ppUtil);
+                   HRESULT (WINAPI *get_DataStoreMajorVersion)(ICatalogCollection *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_DataStoreMinorVersion)(ICatalogCollection *This,__LONG32 *retval);
+                   HRESULT (WINAPI *PopulateByKey)(ICatalogCollection *This,SAFEARRAY *aKeys);
+                   HRESULT (WINAPI *PopulateByQuery)(ICatalogCollection *This,BSTR bstrQueryString,__LONG32 lQueryType);
     END_INTERFACE
   } ICatalogCollectionVtbl;
   struct ICatalogCollection {
@@ -380,17 +380,17 @@ extern "C"{
 #else
   typedef struct IComponentUtilVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IComponentUtil *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IComponentUtil *This);
-      ULONG (WINAPI *Release)(IComponentUtil *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IComponentUtil *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IComponentUtil *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IComponentUtil *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IComponentUtil *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *InstallComponent)(IComponentUtil *This,BSTR bstrDLLFile,BSTR bstrTypelibFile,BSTR bstrProxyStubDLLFile);
-      HRESULT (WINAPI *ImportComponent)(IComponentUtil *This,BSTR bstrCLSID);
-      HRESULT (WINAPI *ImportComponentByName)(IComponentUtil *This,BSTR bstrProgID);
-      HRESULT (WINAPI *GetCLSIDs)(IComponentUtil *This,BSTR bstrDLLFile,BSTR bstrTypelibFile,SAFEARRAY **aCLSIDs);
+                   HRESULT (WINAPI *QueryInterface)(IComponentUtil *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IComponentUtil *This);
+                   ULONG (WINAPI *Release)(IComponentUtil *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IComponentUtil *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IComponentUtil *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IComponentUtil *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IComponentUtil *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *InstallComponent)(IComponentUtil *This,BSTR bstrDLLFile,BSTR bstrTypelibFile,BSTR bstrProxyStubDLLFile);
+                   HRESULT (WINAPI *ImportComponent)(IComponentUtil *This,BSTR bstrCLSID);
+                   HRESULT (WINAPI *ImportComponentByName)(IComponentUtil *This,BSTR bstrProgID);
+                   HRESULT (WINAPI *GetCLSIDs)(IComponentUtil *This,BSTR bstrDLLFile,BSTR bstrTypelibFile,SAFEARRAY **aCLSIDs);
     END_INTERFACE
   } IComponentUtilVtbl;
   struct IComponentUtil {
@@ -433,16 +433,16 @@ extern "C"{
 #else
   typedef struct IPackageUtilVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPackageUtil *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPackageUtil *This);
-      ULONG (WINAPI *Release)(IPackageUtil *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IPackageUtil *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IPackageUtil *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IPackageUtil *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IPackageUtil *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *InstallPackage)(IPackageUtil *This,BSTR bstrPackageFile,BSTR bstrInstallPath,__LONG32 lOptions);
-      HRESULT (WINAPI *ExportPackage)(IPackageUtil *This,BSTR bstrPackageID,BSTR bstrPackageFile,__LONG32 lOptions);
-      HRESULT (WINAPI *ShutdownPackage)(IPackageUtil *This,BSTR bstrPackageID);
+                   HRESULT (WINAPI *QueryInterface)(IPackageUtil *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPackageUtil *This);
+                   ULONG (WINAPI *Release)(IPackageUtil *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IPackageUtil *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IPackageUtil *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IPackageUtil *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IPackageUtil *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *InstallPackage)(IPackageUtil *This,BSTR bstrPackageFile,BSTR bstrInstallPath,__LONG32 lOptions);
+                   HRESULT (WINAPI *ExportPackage)(IPackageUtil *This,BSTR bstrPackageID,BSTR bstrPackageFile,__LONG32 lOptions);
+                   HRESULT (WINAPI *ShutdownPackage)(IPackageUtil *This,BSTR bstrPackageID);
     END_INTERFACE
   } IPackageUtilVtbl;
   struct IPackageUtil {
@@ -481,15 +481,15 @@ extern "C"{
 #else
   typedef struct IRemoteComponentUtilVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRemoteComponentUtil *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRemoteComponentUtil *This);
-      ULONG (WINAPI *Release)(IRemoteComponentUtil *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRemoteComponentUtil *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRemoteComponentUtil *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRemoteComponentUtil *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRemoteComponentUtil *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *InstallRemoteComponent)(IRemoteComponentUtil *This,BSTR bstrServer,BSTR bstrPackageID,BSTR bstrCLSID);
-      HRESULT (WINAPI *InstallRemoteComponentByName)(IRemoteComponentUtil *This,BSTR bstrServer,BSTR bstrPackageName,BSTR bstrProgID);
+                   HRESULT (WINAPI *QueryInterface)(IRemoteComponentUtil *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRemoteComponentUtil *This);
+                   ULONG (WINAPI *Release)(IRemoteComponentUtil *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRemoteComponentUtil *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRemoteComponentUtil *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRemoteComponentUtil *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRemoteComponentUtil *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *InstallRemoteComponent)(IRemoteComponentUtil *This,BSTR bstrServer,BSTR bstrPackageID,BSTR bstrCLSID);
+                   HRESULT (WINAPI *InstallRemoteComponentByName)(IRemoteComponentUtil *This,BSTR bstrServer,BSTR bstrPackageName,BSTR bstrProgID);
     END_INTERFACE
   } IRemoteComponentUtilVtbl;
   struct IRemoteComponentUtil {
@@ -525,15 +525,15 @@ extern "C"{
 #else
   typedef struct IRoleAssociationUtilVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRoleAssociationUtil *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRoleAssociationUtil *This);
-      ULONG (WINAPI *Release)(IRoleAssociationUtil *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRoleAssociationUtil *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRoleAssociationUtil *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRoleAssociationUtil *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRoleAssociationUtil *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *AssociateRole)(IRoleAssociationUtil *This,BSTR bstrRoleID);
-      HRESULT (WINAPI *AssociateRoleByName)(IRoleAssociationUtil *This,BSTR bstrRoleName);
+                   HRESULT (WINAPI *QueryInterface)(IRoleAssociationUtil *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRoleAssociationUtil *This);
+                   ULONG (WINAPI *Release)(IRoleAssociationUtil *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRoleAssociationUtil *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRoleAssociationUtil *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRoleAssociationUtil *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRoleAssociationUtil *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *AssociateRole)(IRoleAssociationUtil *This,BSTR bstrRoleID);
+                   HRESULT (WINAPI *AssociateRoleByName)(IRoleAssociationUtil *This,BSTR bstrRoleName);
     END_INTERFACE
   } IRoleAssociationUtilVtbl;
   struct IRoleAssociationUtil {

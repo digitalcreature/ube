@@ -134,104 +134,104 @@ MIDL_INTERFACE("bf94c121-5b05-4e6f-8000-ba598961414d")
 IMFTransform : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamLimits(
-        DWORD *pdwInputMinimum,
-        DWORD *pdwInputMaximum,
-        DWORD *pdwOutputMinimum,
-        DWORD *pdwOutputMaximum) = 0;
+                     DWORD *pdwInputMinimum,
+                     DWORD *pdwInputMaximum,
+                     DWORD *pdwOutputMinimum,
+                     DWORD *pdwOutputMaximum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamCount(
-        DWORD *pcInputStreams,
-        DWORD *pcOutputStreams) = 0;
+                     DWORD *pcInputStreams,
+                     DWORD *pcOutputStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamIDs(
-        DWORD dwInputIDArraySize,
-        DWORD *pdwInputIDs,
-        DWORD dwOutputIDArraySize,
-        DWORD *pdwOutputIDs) = 0;
+                     DWORD dwInputIDArraySize,
+                     DWORD *pdwInputIDs,
+                     DWORD dwOutputIDArraySize,
+                     DWORD *pdwOutputIDs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputStreamInfo(
-        DWORD dwInputStreamID,
-        MFT_INPUT_STREAM_INFO *pStreamInfo) = 0;
+                     DWORD dwInputStreamID,
+                     MFT_INPUT_STREAM_INFO *pStreamInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputStreamInfo(
-        DWORD dwOutputStreamID,
-        MFT_OUTPUT_STREAM_INFO *pStreamInfo) = 0;
+                     DWORD dwOutputStreamID,
+                     MFT_OUTPUT_STREAM_INFO *pStreamInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAttributes(
-        IMFAttributes **pAttributes) = 0;
+                     IMFAttributes **pAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputStreamAttributes(
-        DWORD dwInputStreamID,
-        IMFAttributes **pAttributes) = 0;
+                     DWORD dwInputStreamID,
+                     IMFAttributes **pAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputStreamAttributes(
-        DWORD dwOutputStreamID,
-        IMFAttributes **pAttributes) = 0;
+                     DWORD dwOutputStreamID,
+                     IMFAttributes **pAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteInputStream(
-        DWORD dwStreamID) = 0;
+                     DWORD dwStreamID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddInputStreams(
-        DWORD cStreams,
-        DWORD *adwStreamIDs) = 0;
+                     DWORD cStreams,
+                     DWORD *adwStreamIDs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputAvailableType(
-        DWORD dwInputStreamID,
-        DWORD dwTypeIndex,
-        IMFMediaType **ppType) = 0;
+                     DWORD dwInputStreamID,
+                     DWORD dwTypeIndex,
+                     IMFMediaType **ppType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputAvailableType(
-        DWORD dwOutputStreamID,
-        DWORD dwTypeIndex,
-        IMFMediaType **ppType) = 0;
+                     DWORD dwOutputStreamID,
+                     DWORD dwTypeIndex,
+                     IMFMediaType **ppType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInputType(
-        DWORD dwInputStreamID,
-        IMFMediaType *pType,
-        DWORD dwFlags) = 0;
+                     DWORD dwInputStreamID,
+                     IMFMediaType *pType,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputType(
-        DWORD dwOutputStreamID,
-        IMFMediaType *pType,
-        DWORD dwFlags) = 0;
+                     DWORD dwOutputStreamID,
+                     IMFMediaType *pType,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputCurrentType(
-        DWORD dwInputStreamID,
-        IMFMediaType **ppType) = 0;
+                     DWORD dwInputStreamID,
+                     IMFMediaType **ppType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputCurrentType(
-        DWORD dwOutputStreamID,
-        IMFMediaType **ppType) = 0;
+                     DWORD dwOutputStreamID,
+                     IMFMediaType **ppType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputStatus(
-        DWORD dwInputStreamID,
-        DWORD *pdwFlags) = 0;
+                     DWORD dwInputStreamID,
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputStatus(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputBounds(
-        LONGLONG hnsLowerBound,
-        LONGLONG hnsUpperBound) = 0;
+                     LONGLONG hnsLowerBound,
+                     LONGLONG hnsUpperBound) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessEvent(
-        DWORD dwInputStreamID,
-        IMFMediaEvent *pEvent) = 0;
+                     DWORD dwInputStreamID,
+                     IMFMediaEvent *pEvent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessMessage(
-        MFT_MESSAGE_TYPE eMessage,
-        ULONG_PTR ulParam) = 0;
+                     MFT_MESSAGE_TYPE eMessage,
+                     ULONG_PTR ulParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessInput(
-        DWORD dwInputStreamID,
-        IMFSample *pSample,
-        DWORD dwFlags) = 0;
+                     DWORD dwInputStreamID,
+                     IMFSample *pSample,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessOutput(
-        DWORD dwFlags,
-        DWORD cOutputBufferCount,
-        MFT_OUTPUT_DATA_BUFFER *pOutputSamples,
-        DWORD *pdwStatus) = 0;
+                     DWORD dwFlags,
+                     DWORD cOutputBufferCount,
+                     MFT_OUTPUT_DATA_BUFFER *pOutputSamples,
+                     DWORD *pdwStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -243,139 +243,139 @@ typedef struct IMFTransformVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFTransform *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFTransform *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFTransform *This);
+                     IMFTransform *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFTransform *This);
+                     IMFTransform *This);
 
     /*** IMFTransform methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamLimits)(
-        IMFTransform *This,
-        DWORD *pdwInputMinimum,
-        DWORD *pdwInputMaximum,
-        DWORD *pdwOutputMinimum,
-        DWORD *pdwOutputMaximum);
+                     IMFTransform *This,
+                     DWORD *pdwInputMinimum,
+                     DWORD *pdwInputMaximum,
+                     DWORD *pdwOutputMinimum,
+                     DWORD *pdwOutputMaximum);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamCount)(
-        IMFTransform *This,
-        DWORD *pcInputStreams,
-        DWORD *pcOutputStreams);
+                     IMFTransform *This,
+                     DWORD *pcInputStreams,
+                     DWORD *pcOutputStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamIDs)(
-        IMFTransform *This,
-        DWORD dwInputIDArraySize,
-        DWORD *pdwInputIDs,
-        DWORD dwOutputIDArraySize,
-        DWORD *pdwOutputIDs);
+                     IMFTransform *This,
+                     DWORD dwInputIDArraySize,
+                     DWORD *pdwInputIDs,
+                     DWORD dwOutputIDArraySize,
+                     DWORD *pdwOutputIDs);
 
     HRESULT (STDMETHODCALLTYPE *GetInputStreamInfo)(
-        IMFTransform *This,
-        DWORD dwInputStreamID,
-        MFT_INPUT_STREAM_INFO *pStreamInfo);
+                     IMFTransform *This,
+                     DWORD dwInputStreamID,
+                     MFT_INPUT_STREAM_INFO *pStreamInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputStreamInfo)(
-        IMFTransform *This,
-        DWORD dwOutputStreamID,
-        MFT_OUTPUT_STREAM_INFO *pStreamInfo);
+                     IMFTransform *This,
+                     DWORD dwOutputStreamID,
+                     MFT_OUTPUT_STREAM_INFO *pStreamInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetAttributes)(
-        IMFTransform *This,
-        IMFAttributes **pAttributes);
+                     IMFTransform *This,
+                     IMFAttributes **pAttributes);
 
     HRESULT (STDMETHODCALLTYPE *GetInputStreamAttributes)(
-        IMFTransform *This,
-        DWORD dwInputStreamID,
-        IMFAttributes **pAttributes);
+                     IMFTransform *This,
+                     DWORD dwInputStreamID,
+                     IMFAttributes **pAttributes);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputStreamAttributes)(
-        IMFTransform *This,
-        DWORD dwOutputStreamID,
-        IMFAttributes **pAttributes);
+                     IMFTransform *This,
+                     DWORD dwOutputStreamID,
+                     IMFAttributes **pAttributes);
 
     HRESULT (STDMETHODCALLTYPE *DeleteInputStream)(
-        IMFTransform *This,
-        DWORD dwStreamID);
+                     IMFTransform *This,
+                     DWORD dwStreamID);
 
     HRESULT (STDMETHODCALLTYPE *AddInputStreams)(
-        IMFTransform *This,
-        DWORD cStreams,
-        DWORD *adwStreamIDs);
+                     IMFTransform *This,
+                     DWORD cStreams,
+                     DWORD *adwStreamIDs);
 
     HRESULT (STDMETHODCALLTYPE *GetInputAvailableType)(
-        IMFTransform *This,
-        DWORD dwInputStreamID,
-        DWORD dwTypeIndex,
-        IMFMediaType **ppType);
+                     IMFTransform *This,
+                     DWORD dwInputStreamID,
+                     DWORD dwTypeIndex,
+                     IMFMediaType **ppType);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputAvailableType)(
-        IMFTransform *This,
-        DWORD dwOutputStreamID,
-        DWORD dwTypeIndex,
-        IMFMediaType **ppType);
+                     IMFTransform *This,
+                     DWORD dwOutputStreamID,
+                     DWORD dwTypeIndex,
+                     IMFMediaType **ppType);
 
     HRESULT (STDMETHODCALLTYPE *SetInputType)(
-        IMFTransform *This,
-        DWORD dwInputStreamID,
-        IMFMediaType *pType,
-        DWORD dwFlags);
+                     IMFTransform *This,
+                     DWORD dwInputStreamID,
+                     IMFMediaType *pType,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputType)(
-        IMFTransform *This,
-        DWORD dwOutputStreamID,
-        IMFMediaType *pType,
-        DWORD dwFlags);
+                     IMFTransform *This,
+                     DWORD dwOutputStreamID,
+                     IMFMediaType *pType,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetInputCurrentType)(
-        IMFTransform *This,
-        DWORD dwInputStreamID,
-        IMFMediaType **ppType);
+                     IMFTransform *This,
+                     DWORD dwInputStreamID,
+                     IMFMediaType **ppType);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputCurrentType)(
-        IMFTransform *This,
-        DWORD dwOutputStreamID,
-        IMFMediaType **ppType);
+                     IMFTransform *This,
+                     DWORD dwOutputStreamID,
+                     IMFMediaType **ppType);
 
     HRESULT (STDMETHODCALLTYPE *GetInputStatus)(
-        IMFTransform *This,
-        DWORD dwInputStreamID,
-        DWORD *pdwFlags);
+                     IMFTransform *This,
+                     DWORD dwInputStreamID,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputStatus)(
-        IMFTransform *This,
-        DWORD *pdwFlags);
+                     IMFTransform *This,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputBounds)(
-        IMFTransform *This,
-        LONGLONG hnsLowerBound,
-        LONGLONG hnsUpperBound);
+                     IMFTransform *This,
+                     LONGLONG hnsLowerBound,
+                     LONGLONG hnsUpperBound);
 
     HRESULT (STDMETHODCALLTYPE *ProcessEvent)(
-        IMFTransform *This,
-        DWORD dwInputStreamID,
-        IMFMediaEvent *pEvent);
+                     IMFTransform *This,
+                     DWORD dwInputStreamID,
+                     IMFMediaEvent *pEvent);
 
     HRESULT (STDMETHODCALLTYPE *ProcessMessage)(
-        IMFTransform *This,
-        MFT_MESSAGE_TYPE eMessage,
-        ULONG_PTR ulParam);
+                     IMFTransform *This,
+                     MFT_MESSAGE_TYPE eMessage,
+                     ULONG_PTR ulParam);
 
     HRESULT (STDMETHODCALLTYPE *ProcessInput)(
-        IMFTransform *This,
-        DWORD dwInputStreamID,
-        IMFSample *pSample,
-        DWORD dwFlags);
+                     IMFTransform *This,
+                     DWORD dwInputStreamID,
+                     IMFSample *pSample,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *ProcessOutput)(
-        IMFTransform *This,
-        DWORD dwFlags,
-        DWORD cOutputBufferCount,
-        MFT_OUTPUT_DATA_BUFFER *pOutputSamples,
-        DWORD *pdwStatus);
+                     IMFTransform *This,
+                     DWORD dwFlags,
+                     DWORD cOutputBufferCount,
+                     MFT_OUTPUT_DATA_BUFFER *pOutputSamples,
+                     DWORD *pdwStatus);
 
     END_INTERFACE
 } IMFTransformVtbl;
@@ -503,40 +503,40 @@ static FORCEINLINE HRESULT IMFTransform_ProcessOutput(IMFTransform* This,DWORD d
 
 #endif  /* __IMFTransform_INTERFACE_DEFINED__ */
 
-DEFINE_PROPERTYKEY(MFPKEY_CLSID,                     0xc57a84c0,0x1a80,0x40a3,0x97,0xb5,0x92,0x72,0xa4,0x3,0xc8,0xae,  1);
-DEFINE_PROPERTYKEY(MFPKEY_CATEGORY,                  0xc57a84c0,0x1a80,0x40a3,0x97,0xb5,0x92,0x72,0xa4,0x3,0xc8,0xae,  2);
+DEFINE_PROPERTYKEY(MFPKEY_CLSID,                                                            0xc57a84c0,0x1a80,0x40a3,0x97,0xb5,0x92,0x72,0xa4,0x3,0xc8,0xae,  1);
+DEFINE_PROPERTYKEY(MFPKEY_CATEGORY,                                                         0xc57a84c0,0x1a80,0x40a3,0x97,0xb5,0x92,0x72,0xa4,0x3,0xc8,0xae,  2);
 DEFINE_PROPERTYKEY(MFPKEY_EXATTRIBUTE_SUPPORTED,     0x456fe843,0x3c87,0x40c0,0x94,0x9d,0x14,0x9,0xc9,0x7d,0xab,0x2c,  1);
 DEFINE_PROPERTYKEY(MFPKEY_MULTICHANNEL_CHANNEL_MASK, 0x58bdaf8c,0x3224,0x4692,0x86,0xd0,0x44,0xd6,0x5c,0x5b,0xf8,0x2b, 1);
-EXTERN_GUID(MF_SA_D3D_AWARE,                         0xeaa35c29,0x775e,0x488e,0x9b,0x61,0xb3,0x28,0x3e,0x49,0x58,0x3b);
-EXTERN_GUID(MF_SA_REQUIRED_SAMPLE_COUNT,             0x18802c61,0x324b,0x4952,0xab,0xd0,0x17,0x6f,0xf5,0xc6,0x96,0xff);
-EXTERN_GUID(MF_TRANSFORM_ASYNC,                      0xf81a699a,0x649a,0x497d,0x8c,0x73,0x29,0xf8,0xfe,0xd6,0xad,0x7a);
-EXTERN_GUID(MF_TRANSFORM_ASYNC_UNLOCK,               0xe5666d6b,0x3422,0x4eb6,0xa4,0x21,0xda,0x7d,0xb1,0xf8,0xe2,0x7);
-EXTERN_GUID(MF_TRANSFORM_FLAGS_Attribute,            0x9359bb7e,0x6275,0x46c4,0xa0,0x25,0x1c,0x1,0xe4,0x5f,0x1a,0x86);
-EXTERN_GUID(MF_TRANSFORM_CATEGORY_Attribute,         0xceabba49,0x506d,0x4757,0xa6,0xff,0x66,0xc1,0x84,0x98,0x7e,0x4e);
-EXTERN_GUID(MFT_TRANSFORM_CLSID_Attribute,           0x6821c42b,0x65a4,0x4e82,0x99,0xbc,0x9a,0x88,0x20,0x5e,0xcd,0xc);
-EXTERN_GUID(MFT_INPUT_TYPES_Attributes,              0x4276c9b1,0x759d,0x4bf3,0x9c,0xd0,0xd,0x72,0x3d,0x13,0x8f,0x96);
-EXTERN_GUID(MFT_OUTPUT_TYPES_Attributes,             0x8eae8cf3,0xa44f,0x4306,0xba,0x5c,0xbf,0x5d,0xda,0x24,0x28,0x18);
-EXTERN_GUID(MFT_ENUM_HARDWARE_URL_Attribute,         0x2fb866ac,0xb078,0x4942,0xab,0x6c,0x0,0x3d,0x5,0xcd,0xa6,0x74);
-EXTERN_GUID(MFT_FRIENDLY_NAME_Attribute,             0x314ffbae,0x5b41,0x4c95,0x9c,0x19,0x4e,0x7d,0x58,0x6f,0xac,0xe3);
-EXTERN_GUID(MFT_CONNECTED_STREAM_ATTRIBUTE,          0x71eeb820,0xa59f,0x4de2,0xbc,0xec,0x38,0xdb,0x1d,0xd6,0x11,0xa4);
-EXTERN_GUID(MFT_CONNECTED_TO_HW_STREAM,              0x34e6e728,0x6d6,0x4491,0xa5,0x53,0x47,0x95,0x65,0xd,0xb9,0x12);
-EXTERN_GUID(MFT_PREFERRED_OUTPUTTYPE_Attribute,      0x7e700499,0x396a,0x49ee,0xb1,0xb4,0xf6,0x28,0x2,0x1e,0x8c,0x9d);
-EXTERN_GUID(MFT_PROCESS_LOCAL_Attribute,             0x543186e4,0x4649,0x4e65,0xb5,0x88,0x4a,0xa3,0x52,0xaf,0xf3,0x79);
-EXTERN_GUID(MFT_PREFERRED_ENCODER_PROFILE,           0x53004909,0x1ef5,0x46d7,0xa1,0x8e,0x5a,0x75,0xf8,0xb5,0x90,0x5f);
+EXTERN_GUID(MF_SA_D3D_AWARE,                                                                             0xeaa35c29,0x775e,0x488e,0x9b,0x61,0xb3,0x28,0x3e,0x49,0x58,0x3b);
+EXTERN_GUID(MF_SA_REQUIRED_SAMPLE_COUNT,                                       0x18802c61,0x324b,0x4952,0xab,0xd0,0x17,0x6f,0xf5,0xc6,0x96,0xff);
+EXTERN_GUID(MF_TRANSFORM_ASYNC,                                                             0xf81a699a,0x649a,0x497d,0x8c,0x73,0x29,0xf8,0xfe,0xd6,0xad,0x7a);
+EXTERN_GUID(MF_TRANSFORM_ASYNC_UNLOCK,                                         0xe5666d6b,0x3422,0x4eb6,0xa4,0x21,0xda,0x7d,0xb1,0xf8,0xe2,0x7);
+EXTERN_GUID(MF_TRANSFORM_FLAGS_Attribute,                                      0x9359bb7e,0x6275,0x46c4,0xa0,0x25,0x1c,0x1,0xe4,0x5f,0x1a,0x86);
+EXTERN_GUID(MF_TRANSFORM_CATEGORY_Attribute,                      0xceabba49,0x506d,0x4757,0xa6,0xff,0x66,0xc1,0x84,0x98,0x7e,0x4e);
+EXTERN_GUID(MFT_TRANSFORM_CLSID_Attribute,                        0x6821c42b,0x65a4,0x4e82,0x99,0xbc,0x9a,0x88,0x20,0x5e,0xcd,0xc);
+EXTERN_GUID(MFT_INPUT_TYPES_Attributes,                                        0x4276c9b1,0x759d,0x4bf3,0x9c,0xd0,0xd,0x72,0x3d,0x13,0x8f,0x96);
+EXTERN_GUID(MFT_OUTPUT_TYPES_Attributes,                                       0x8eae8cf3,0xa44f,0x4306,0xba,0x5c,0xbf,0x5d,0xda,0x24,0x28,0x18);
+EXTERN_GUID(MFT_ENUM_HARDWARE_URL_Attribute,                      0x2fb866ac,0xb078,0x4942,0xab,0x6c,0x0,0x3d,0x5,0xcd,0xa6,0x74);
+EXTERN_GUID(MFT_FRIENDLY_NAME_Attribute,                                       0x314ffbae,0x5b41,0x4c95,0x9c,0x19,0x4e,0x7d,0x58,0x6f,0xac,0xe3);
+EXTERN_GUID(MFT_CONNECTED_STREAM_ATTRIBUTE,                       0x71eeb820,0xa59f,0x4de2,0xbc,0xec,0x38,0xdb,0x1d,0xd6,0x11,0xa4);
+EXTERN_GUID(MFT_CONNECTED_TO_HW_STREAM,                                        0x34e6e728,0x6d6,0x4491,0xa5,0x53,0x47,0x95,0x65,0xd,0xb9,0x12);
+EXTERN_GUID(MFT_PREFERRED_OUTPUTTYPE_Attribute,                   0x7e700499,0x396a,0x49ee,0xb1,0xb4,0xf6,0x28,0x2,0x1e,0x8c,0x9d);
+EXTERN_GUID(MFT_PROCESS_LOCAL_Attribute,                                       0x543186e4,0x4649,0x4e65,0xb5,0x88,0x4a,0xa3,0x52,0xaf,0xf3,0x79);
+EXTERN_GUID(MFT_PREFERRED_ENCODER_PROFILE,                        0x53004909,0x1ef5,0x46d7,0xa1,0x8e,0x5a,0x75,0xf8,0xb5,0x90,0x5f);
 EXTERN_GUID(MFT_HW_TIMESTAMP_WITH_QPC_Attribute,     0x8d030fb8,0xcc43,0x4258,0xa2,0x2e,0x92,0x10,0xbe,0xf8,0x9b,0xe4);
-EXTERN_GUID(MFT_FIELDOFUSE_UNLOCK_Attribute,         0x8ec2e9fd,0x9148,0x410d,0x83,0x1e,0x70,0x24,0x39,0x46,0x1a,0x8e);
-EXTERN_GUID(MFT_CODEC_MERIT_Attribute,               0x88a7cb15,0x7b07,0x4a34,0x91,0x28,0xe6,0x4c,0x67,0x3,0xc4,0xd3);
-EXTERN_GUID(MFT_ENUM_TRANSCODE_ONLY_ATTRIBUTE,       0x111ea8cd,0xb62a,0x4bdb,0x89,0xf6,0x67,0xff,0xcd,0xc2,0x45,0x8b);
-EXTERN_GUID(MF_SA_REQUIRED_SAMPLE_COUNT_PROGRESSIVE,        0xb172d58e,0xfa77,0x4e48,0x8d,0x2a,0x1d,0xf2,0xd8,0x50,0xea,0xc2);
-EXTERN_GUID(MF_SA_MINIMUM_OUTPUT_SAMPLE_COUNT,              0x851745d5,0xc3d6,0x476d,0x95,0x27,0x49,0x8e,0xf2,0xd1,0xd,0x18);
+EXTERN_GUID(MFT_FIELDOFUSE_UNLOCK_Attribute,                      0x8ec2e9fd,0x9148,0x410d,0x83,0x1e,0x70,0x24,0x39,0x46,0x1a,0x8e);
+EXTERN_GUID(MFT_CODEC_MERIT_Attribute,                                         0x88a7cb15,0x7b07,0x4a34,0x91,0x28,0xe6,0x4c,0x67,0x3,0xc4,0xd3);
+EXTERN_GUID(MFT_ENUM_TRANSCODE_ONLY_ATTRIBUTE,                    0x111ea8cd,0xb62a,0x4bdb,0x89,0xf6,0x67,0xff,0xcd,0xc2,0x45,0x8b);
+EXTERN_GUID(MF_SA_REQUIRED_SAMPLE_COUNT_PROGRESSIVE,                     0xb172d58e,0xfa77,0x4e48,0x8d,0x2a,0x1d,0xf2,0xd8,0x50,0xea,0xc2);
+EXTERN_GUID(MF_SA_MINIMUM_OUTPUT_SAMPLE_COUNT,                                        0x851745d5,0xc3d6,0x476d,0x95,0x27,0x49,0x8e,0xf2,0xd1,0xd,0x18);
 EXTERN_GUID(MF_SA_MINIMUM_OUTPUT_SAMPLE_COUNT_PROGRESSIVE,  0xf5523a5,0x1cb2,0x47c5,0xa5,0x50,0x2e,0xeb,0x84,0xb4,0xd1,0x4a);
-EXTERN_GUID(MF_SA_D3D11_BINDFLAGS,                          0xeacf97ad,0x065c,0x4408,0xbe,0xe3,0xfd,0xcb,0xfd,0x12,0x8b,0xe2);
-EXTERN_GUID(MF_SA_D3D11_USAGE,                              0xe85fe442,0x2ca3,0x486e,0xa9,0xc7,0x10,0x9d,0xda,0x60,0x98,0x80);
-EXTERN_GUID(MF_SA_D3D11_AWARE,                              0x206b4fc8,0xfcf9,0x4c51,0xaf,0xe3,0x97,0x64,0x36,0x9e,0x33,0xa0);
-EXTERN_GUID(MF_SA_D3D11_SHARED,                             0x7b8f32c3,0x6d96,0x4b89,0x92,0x3,0xdd,0x38,0xb6,0x14,0x14,0xf3 );
-EXTERN_GUID(MF_SA_D3D11_SHARED_WITHOUT_MUTEX,               0x39dbd44d,0x2e44,0x4931,0xa4,0xc8,0x35,0x2d,0x3d,0xc4,0x21,0x15);
-EXTERN_GUID(MF_SA_D3D11_ALLOW_DYNAMIC_YUV_TEXTURE,          0xce06d49f,0x613,0x4b9d,0x86,0xa6,0xd8,0xc4,0xf9,0xc1,0x0,0x75);
-EXTERN_GUID(MF_SA_D3D11_HW_PROTECTED,                       0x3a8ba9d9,0x92ca,0x4307,0xa3,0x91,0x69,0x99,0xdb,0xf3,0xb6,0xce);
+EXTERN_GUID(MF_SA_D3D11_BINDFLAGS,                                                                              0xeacf97ad,0x065c,0x4408,0xbe,0xe3,0xfd,0xcb,0xfd,0x12,0x8b,0xe2);
+EXTERN_GUID(MF_SA_D3D11_USAGE,                                                                                               0xe85fe442,0x2ca3,0x486e,0xa9,0xc7,0x10,0x9d,0xda,0x60,0x98,0x80);
+EXTERN_GUID(MF_SA_D3D11_AWARE,                                                                                               0x206b4fc8,0xfcf9,0x4c51,0xaf,0xe3,0x97,0x64,0x36,0x9e,0x33,0xa0);
+EXTERN_GUID(MF_SA_D3D11_SHARED,                                                                                 0x7b8f32c3,0x6d96,0x4b89,0x92,0x3,0xdd,0x38,0xb6,0x14,0x14,0xf3 );
+EXTERN_GUID(MF_SA_D3D11_SHARED_WITHOUT_MUTEX,                                         0x39dbd44d,0x2e44,0x4931,0xa4,0xc8,0x35,0x2d,0x3d,0xc4,0x21,0x15);
+EXTERN_GUID(MF_SA_D3D11_ALLOW_DYNAMIC_YUV_TEXTURE,                       0xce06d49f,0x613,0x4b9d,0x86,0xa6,0xd8,0xc4,0xf9,0xc1,0x0,0x75);
+EXTERN_GUID(MF_SA_D3D11_HW_PROTECTED,                                                              0x3a8ba9d9,0x92ca,0x4307,0xa3,0x91,0x69,0x99,0xdb,0xf3,0xb6,0xce);
 #if (WINVER >= 0x0601)
 HRESULT WINAPI MFCreateTransformActivate(IMFActivate **ppActivate);
 #endif /*(WINVER >= 0x0601)*/

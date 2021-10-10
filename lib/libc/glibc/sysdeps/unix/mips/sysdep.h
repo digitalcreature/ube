@@ -28,16 +28,16 @@
 #include <regdef.h>
 
 #define ENTRY(name) \
-  .globl name;								      \
-  .align 2;								      \
-  .ent name,0;								      \
-  name##:								      \
+  .globl name;								                   \
+  .align 2;								                   \
+  .ent name,0;								                   \
+  name##:								                   \
   cfi_startproc;
 
 #undef END
-#define	END(function)                                   \
+#define	END(function)                                                                                                    \
 		cfi_endproc;				\
-		.end	function;		        \
+		.end	function;		                     \
 		.size	function,.-function
 
 #define ret	j ra ; nop

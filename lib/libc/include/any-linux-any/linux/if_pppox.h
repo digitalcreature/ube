@@ -41,9 +41,9 @@
  */ 
 typedef __be16 sid_t;
 struct pppoe_addr {
-	sid_t         sid;                    /* Session identifier */
-	unsigned char remote[ETH_ALEN];       /* Remote address */
-	char          dev[IFNAMSIZ];          /* Local device to use */
+	sid_t                      sid;                                                           /* Session identifier */
+	unsigned char remote[ETH_ALEN];                    /* Remote address */
+	char                       dev[IFNAMSIZ];                       /* Local device to use */
 }; 
  
 /************************************************************************ 
@@ -63,8 +63,8 @@ struct pptp_addr {
 #define PX_MAX_PROTO   3
 
 struct sockaddr_pppox {
-	__kernel_sa_family_t sa_family;       /* address family, AF_PPPOX */
-	unsigned int    sa_protocol;          /* protocol identifier */
+	__kernel_sa_family_t sa_family;                    /* address family, AF_PPPOX */
+	unsigned int    sa_protocol;                       /* protocol identifier */
 	union {
 		struct pppoe_addr  pppoe;
 		struct pptp_addr   pptp;

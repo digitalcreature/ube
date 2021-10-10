@@ -524,9 +524,9 @@ MIDL_INTERFACE("29840822-5b84-11d0-bd3b-00a0c911ce86")
 ICreateDevEnum : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateClassEnumerator(
-        REFCLSID clsidDeviceClass,
-        IEnumMoniker **ppEnumMoniker,
-        DWORD dwFlags) = 0;
+                     REFCLSID clsidDeviceClass,
+                     IEnumMoniker **ppEnumMoniker,
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -538,22 +538,22 @@ typedef struct ICreateDevEnumVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICreateDevEnum *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICreateDevEnum *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICreateDevEnum *This);
+                     ICreateDevEnum *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICreateDevEnum *This);
+                     ICreateDevEnum *This);
 
     /*** ICreateDevEnum methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateClassEnumerator)(
-        ICreateDevEnum *This,
-        REFCLSID clsidDeviceClass,
-        IEnumMoniker **ppEnumMoniker,
-        DWORD dwFlags);
+                     ICreateDevEnum *This,
+                     REFCLSID clsidDeviceClass,
+                     IEnumMoniker **ppEnumMoniker,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } ICreateDevEnumVtbl;
@@ -780,54 +780,54 @@ MIDL_INTERFACE("56a86891-0ad4-11ce-b03a-0020af0ba770")
 IPin : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Connect(
-        IPin *pReceivePin,
-        const AM_MEDIA_TYPE *pmt) = 0;
+                     IPin *pReceivePin,
+                     const AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReceiveConnection(
-        IPin *pConnector,
-        const AM_MEDIA_TYPE *pmt) = 0;
+                     IPin *pConnector,
+                     const AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Disconnect(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConnectedTo(
-        IPin **pPin) = 0;
+                     IPin **pPin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConnectionMediaType(
-        AM_MEDIA_TYPE *pmt) = 0;
+                     AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryPinInfo(
-        PIN_INFO *pInfo) = 0;
+                     PIN_INFO *pInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryDirection(
-        PIN_DIRECTION *pPinDir) = 0;
+                     PIN_DIRECTION *pPinDir) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryId(
-        LPWSTR *Id) = 0;
+                     LPWSTR *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryAccept(
-        const AM_MEDIA_TYPE *pmt) = 0;
+                     const AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumMediaTypes(
-        IEnumMediaTypes **ppEnum) = 0;
+                     IEnumMediaTypes **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryInternalConnections(
-        IPin **apPin,
-        ULONG *nPin) = 0;
+                     IPin **apPin,
+                     ULONG *nPin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndOfStream(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginFlush(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndFlush(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NewSegment(
-        REFERENCE_TIME tStart,
-        REFERENCE_TIME tStop,
-        double dRate) = 0;
+                     REFERENCE_TIME tStart,
+                     REFERENCE_TIME tStop,
+                     double dRate) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -839,77 +839,77 @@ typedef struct IPinVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPin *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPin *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPin *This);
+                     IPin *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPin *This);
+                     IPin *This);
 
     /*** IPin methods ***/
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        IPin *This,
-        IPin *pReceivePin,
-        const AM_MEDIA_TYPE *pmt);
+                     IPin *This,
+                     IPin *pReceivePin,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *ReceiveConnection)(
-        IPin *This,
-        IPin *pConnector,
-        const AM_MEDIA_TYPE *pmt);
+                     IPin *This,
+                     IPin *pConnector,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *Disconnect)(
-        IPin *This);
+                     IPin *This);
 
     HRESULT (STDMETHODCALLTYPE *ConnectedTo)(
-        IPin *This,
-        IPin **pPin);
+                     IPin *This,
+                     IPin **pPin);
 
     HRESULT (STDMETHODCALLTYPE *ConnectionMediaType)(
-        IPin *This,
-        AM_MEDIA_TYPE *pmt);
+                     IPin *This,
+                     AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *QueryPinInfo)(
-        IPin *This,
-        PIN_INFO *pInfo);
+                     IPin *This,
+                     PIN_INFO *pInfo);
 
     HRESULT (STDMETHODCALLTYPE *QueryDirection)(
-        IPin *This,
-        PIN_DIRECTION *pPinDir);
+                     IPin *This,
+                     PIN_DIRECTION *pPinDir);
 
     HRESULT (STDMETHODCALLTYPE *QueryId)(
-        IPin *This,
-        LPWSTR *Id);
+                     IPin *This,
+                     LPWSTR *Id);
 
     HRESULT (STDMETHODCALLTYPE *QueryAccept)(
-        IPin *This,
-        const AM_MEDIA_TYPE *pmt);
+                     IPin *This,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *EnumMediaTypes)(
-        IPin *This,
-        IEnumMediaTypes **ppEnum);
+                     IPin *This,
+                     IEnumMediaTypes **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *QueryInternalConnections)(
-        IPin *This,
-        IPin **apPin,
-        ULONG *nPin);
+                     IPin *This,
+                     IPin **apPin,
+                     ULONG *nPin);
 
     HRESULT (STDMETHODCALLTYPE *EndOfStream)(
-        IPin *This);
+                     IPin *This);
 
     HRESULT (STDMETHODCALLTYPE *BeginFlush)(
-        IPin *This);
+                     IPin *This);
 
     HRESULT (STDMETHODCALLTYPE *EndFlush)(
-        IPin *This);
+                     IPin *This);
 
     HRESULT (STDMETHODCALLTYPE *NewSegment)(
-        IPin *This,
-        REFERENCE_TIME tStart,
-        REFERENCE_TIME tStop,
-        double dRate);
+                     IPin *This,
+                     REFERENCE_TIME tStart,
+                     REFERENCE_TIME tStop,
+                     double dRate);
 
     END_INTERFACE
 } IPinVtbl;
@@ -1019,18 +1019,18 @@ MIDL_INTERFACE("56a86892-0ad4-11ce-b03a-0020af0ba770")
 IEnumPins : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cPins,
-        IPin **ppPins,
-        ULONG *pcFetched) = 0;
+                     ULONG cPins,
+                     IPin **ppPins,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cPins) = 0;
+                     ULONG cPins) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumPins **ppEnum) = 0;
+                     IEnumPins **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1042,33 +1042,33 @@ typedef struct IEnumPinsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumPins *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumPins *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumPins *This);
+                     IEnumPins *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumPins *This);
+                     IEnumPins *This);
 
     /*** IEnumPins methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumPins *This,
-        ULONG cPins,
-        IPin **ppPins,
-        ULONG *pcFetched);
+                     IEnumPins *This,
+                     ULONG cPins,
+                     IPin **ppPins,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumPins *This,
-        ULONG cPins);
+                     IEnumPins *This,
+                     ULONG cPins);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumPins *This);
+                     IEnumPins *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumPins *This,
-        IEnumPins **ppEnum);
+                     IEnumPins *This,
+                     IEnumPins **ppEnum);
 
     END_INTERFACE
 } IEnumPinsVtbl;
@@ -1134,18 +1134,18 @@ MIDL_INTERFACE("89c31040-846b-11ce-97d3-00aa0055595a")
 IEnumMediaTypes : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cMediaTypes,
-        AM_MEDIA_TYPE **ppMediaTypes,
-        ULONG *pcFetched) = 0;
+                     ULONG cMediaTypes,
+                     AM_MEDIA_TYPE **ppMediaTypes,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cMediaTypes) = 0;
+                     ULONG cMediaTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumMediaTypes **ppEnum) = 0;
+                     IEnumMediaTypes **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1157,33 +1157,33 @@ typedef struct IEnumMediaTypesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumMediaTypes *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumMediaTypes *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumMediaTypes *This);
+                     IEnumMediaTypes *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumMediaTypes *This);
+                     IEnumMediaTypes *This);
 
     /*** IEnumMediaTypes methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumMediaTypes *This,
-        ULONG cMediaTypes,
-        AM_MEDIA_TYPE **ppMediaTypes,
-        ULONG *pcFetched);
+                     IEnumMediaTypes *This,
+                     ULONG cMediaTypes,
+                     AM_MEDIA_TYPE **ppMediaTypes,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumMediaTypes *This,
-        ULONG cMediaTypes);
+                     IEnumMediaTypes *This,
+                     ULONG cMediaTypes);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumMediaTypes *This);
+                     IEnumMediaTypes *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumMediaTypes *This,
-        IEnumMediaTypes **ppEnum);
+                     IEnumMediaTypes *This,
+                     IEnumMediaTypes **ppEnum);
 
     END_INTERFACE
 } IEnumMediaTypesVtbl;
@@ -1249,32 +1249,32 @@ MIDL_INTERFACE("56a8689f-0ad4-11ce-b03a-0020af0ba770")
 IFilterGraph : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddFilter(
-        IBaseFilter *pFilter,
-        LPCWSTR pName) = 0;
+                     IBaseFilter *pFilter,
+                     LPCWSTR pName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveFilter(
-        IBaseFilter *pFilter) = 0;
+                     IBaseFilter *pFilter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumFilters(
-        IEnumFilters **ppEnum) = 0;
+                     IEnumFilters **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindFilterByName(
-        LPCWSTR pName,
-        IBaseFilter **ppFilter) = 0;
+                     LPCWSTR pName,
+                     IBaseFilter **ppFilter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConnectDirect(
-        IPin *ppinOut,
-        IPin *ppinIn,
-        const AM_MEDIA_TYPE *pmt) = 0;
+                     IPin *ppinOut,
+                     IPin *ppinIn,
+                     const AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reconnect(
-        IPin *ppin) = 0;
+                     IPin *ppin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Disconnect(
-        IPin *ppin) = 0;
+                     IPin *ppin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultSyncSource(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1286,51 +1286,51 @@ typedef struct IFilterGraphVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFilterGraph *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFilterGraph *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFilterGraph *This);
+                     IFilterGraph *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFilterGraph *This);
+                     IFilterGraph *This);
 
     /*** IFilterGraph methods ***/
     HRESULT (STDMETHODCALLTYPE *AddFilter)(
-        IFilterGraph *This,
-        IBaseFilter *pFilter,
-        LPCWSTR pName);
+                     IFilterGraph *This,
+                     IBaseFilter *pFilter,
+                     LPCWSTR pName);
 
     HRESULT (STDMETHODCALLTYPE *RemoveFilter)(
-        IFilterGraph *This,
-        IBaseFilter *pFilter);
+                     IFilterGraph *This,
+                     IBaseFilter *pFilter);
 
     HRESULT (STDMETHODCALLTYPE *EnumFilters)(
-        IFilterGraph *This,
-        IEnumFilters **ppEnum);
+                     IFilterGraph *This,
+                     IEnumFilters **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *FindFilterByName)(
-        IFilterGraph *This,
-        LPCWSTR pName,
-        IBaseFilter **ppFilter);
+                     IFilterGraph *This,
+                     LPCWSTR pName,
+                     IBaseFilter **ppFilter);
 
     HRESULT (STDMETHODCALLTYPE *ConnectDirect)(
-        IFilterGraph *This,
-        IPin *ppinOut,
-        IPin *ppinIn,
-        const AM_MEDIA_TYPE *pmt);
+                     IFilterGraph *This,
+                     IPin *ppinOut,
+                     IPin *ppinIn,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *Reconnect)(
-        IFilterGraph *This,
-        IPin *ppin);
+                     IFilterGraph *This,
+                     IPin *ppin);
 
     HRESULT (STDMETHODCALLTYPE *Disconnect)(
-        IFilterGraph *This,
-        IPin *ppin);
+                     IFilterGraph *This,
+                     IPin *ppin);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultSyncSource)(
-        IFilterGraph *This);
+                     IFilterGraph *This);
 
     END_INTERFACE
 } IFilterGraphVtbl;
@@ -1412,18 +1412,18 @@ MIDL_INTERFACE("56a86893-0ad4-11ce-b03a-0020af0ba770")
 IEnumFilters : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cFilters,
-        IBaseFilter **ppFilter,
-        ULONG *pcFetched) = 0;
+                     ULONG cFilters,
+                     IBaseFilter **ppFilter,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cFilters) = 0;
+                     ULONG cFilters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumFilters **ppEnum) = 0;
+                     IEnumFilters **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1435,33 +1435,33 @@ typedef struct IEnumFiltersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumFilters *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumFilters *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumFilters *This);
+                     IEnumFilters *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumFilters *This);
+                     IEnumFilters *This);
 
     /*** IEnumFilters methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumFilters *This,
-        ULONG cFilters,
-        IBaseFilter **ppFilter,
-        ULONG *pcFetched);
+                     IEnumFilters *This,
+                     ULONG cFilters,
+                     IBaseFilter **ppFilter,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumFilters *This,
-        ULONG cFilters);
+                     IEnumFilters *This,
+                     ULONG cFilters);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumFilters *This);
+                     IEnumFilters *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumFilters *This,
-        IEnumFilters **ppEnum);
+                     IEnumFilters *This,
+                     IEnumFilters **ppEnum);
 
     END_INTERFACE
 } IEnumFiltersVtbl;
@@ -1533,23 +1533,23 @@ MIDL_INTERFACE("56a86899-0ad4-11ce-b03a-0020af0ba770")
 IMediaFilter : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Run(
-        REFERENCE_TIME tStart) = 0;
+                     REFERENCE_TIME tStart) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        DWORD dwMilliSecsTimeout,
-        FILTER_STATE *State) = 0;
+                     DWORD dwMilliSecsTimeout,
+                     FILTER_STATE *State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSyncSource(
-        IReferenceClock *pClock) = 0;
+                     IReferenceClock *pClock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSyncSource(
-        IReferenceClock **pClock) = 0;
+                     IReferenceClock **pClock) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1561,44 +1561,44 @@ typedef struct IMediaFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaFilter *This);
+                     IMediaFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaFilter *This);
+                     IMediaFilter *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IMediaFilter *This,
-        CLSID *pClassID);
+                     IMediaFilter *This,
+                     CLSID *pClassID);
 
     /*** IMediaFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IMediaFilter *This);
+                     IMediaFilter *This);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IMediaFilter *This);
+                     IMediaFilter *This);
 
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IMediaFilter *This,
-        REFERENCE_TIME tStart);
+                     IMediaFilter *This,
+                     REFERENCE_TIME tStart);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IMediaFilter *This,
-        DWORD dwMilliSecsTimeout,
-        FILTER_STATE *State);
+                     IMediaFilter *This,
+                     DWORD dwMilliSecsTimeout,
+                     FILTER_STATE *State);
 
     HRESULT (STDMETHODCALLTYPE *SetSyncSource)(
-        IMediaFilter *This,
-        IReferenceClock *pClock);
+                     IMediaFilter *This,
+                     IReferenceClock *pClock);
 
     HRESULT (STDMETHODCALLTYPE *GetSyncSource)(
-        IMediaFilter *This,
-        IReferenceClock **pClock);
+                     IMediaFilter *This,
+                     IReferenceClock **pClock);
 
     END_INTERFACE
 } IMediaFilterVtbl;
@@ -1683,21 +1683,21 @@ MIDL_INTERFACE("56a86895-0ad4-11ce-b03a-0020af0ba770")
 IBaseFilter : public IMediaFilter
 {
     virtual HRESULT STDMETHODCALLTYPE EnumPins(
-        IEnumPins **ppEnum) = 0;
+                     IEnumPins **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindPin(
-        LPCWSTR Id,
-        IPin **ppPin) = 0;
+                     LPCWSTR Id,
+                     IPin **ppPin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryFilterInfo(
-        FILTER_INFO *pInfo) = 0;
+                     FILTER_INFO *pInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE JoinFilterGraph(
-        IFilterGraph *pGraph,
-        LPCWSTR pName) = 0;
+                     IFilterGraph *pGraph,
+                     LPCWSTR pName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryVendorInfo(
-        LPWSTR *pVendorInfo) = 0;
+                     LPWSTR *pVendorInfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1709,67 +1709,67 @@ typedef struct IBaseFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBaseFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IBaseFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBaseFilter *This);
+                     IBaseFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBaseFilter *This);
+                     IBaseFilter *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IBaseFilter *This,
-        CLSID *pClassID);
+                     IBaseFilter *This,
+                     CLSID *pClassID);
 
     /*** IMediaFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IBaseFilter *This);
+                     IBaseFilter *This);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IBaseFilter *This);
+                     IBaseFilter *This);
 
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IBaseFilter *This,
-        REFERENCE_TIME tStart);
+                     IBaseFilter *This,
+                     REFERENCE_TIME tStart);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IBaseFilter *This,
-        DWORD dwMilliSecsTimeout,
-        FILTER_STATE *State);
+                     IBaseFilter *This,
+                     DWORD dwMilliSecsTimeout,
+                     FILTER_STATE *State);
 
     HRESULT (STDMETHODCALLTYPE *SetSyncSource)(
-        IBaseFilter *This,
-        IReferenceClock *pClock);
+                     IBaseFilter *This,
+                     IReferenceClock *pClock);
 
     HRESULT (STDMETHODCALLTYPE *GetSyncSource)(
-        IBaseFilter *This,
-        IReferenceClock **pClock);
+                     IBaseFilter *This,
+                     IReferenceClock **pClock);
 
     /*** IBaseFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumPins)(
-        IBaseFilter *This,
-        IEnumPins **ppEnum);
+                     IBaseFilter *This,
+                     IEnumPins **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *FindPin)(
-        IBaseFilter *This,
-        LPCWSTR Id,
-        IPin **ppPin);
+                     IBaseFilter *This,
+                     LPCWSTR Id,
+                     IPin **ppPin);
 
     HRESULT (STDMETHODCALLTYPE *QueryFilterInfo)(
-        IBaseFilter *This,
-        FILTER_INFO *pInfo);
+                     IBaseFilter *This,
+                     FILTER_INFO *pInfo);
 
     HRESULT (STDMETHODCALLTYPE *JoinFilterGraph)(
-        IBaseFilter *This,
-        IFilterGraph *pGraph,
-        LPCWSTR pName);
+                     IBaseFilter *This,
+                     IFilterGraph *pGraph,
+                     LPCWSTR pName);
 
     HRESULT (STDMETHODCALLTYPE *QueryVendorInfo)(
-        IBaseFilter *This,
-        LPWSTR *pVendorInfo);
+                     IBaseFilter *This,
+                     LPWSTR *pVendorInfo);
 
     END_INTERFACE
 } IBaseFilterVtbl;
@@ -1871,22 +1871,22 @@ MIDL_INTERFACE("56a86897-0ad4-11ce-b03a-0020af0ba770")
 IReferenceClock : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetTime(
-        REFERENCE_TIME *pTime) = 0;
+                     REFERENCE_TIME *pTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdviseTime(
-        REFERENCE_TIME baseTime,
-        REFERENCE_TIME streamTime,
-        HEVENT hEvent,
-        DWORD_PTR *pdwAdviseCookie) = 0;
+                     REFERENCE_TIME baseTime,
+                     REFERENCE_TIME streamTime,
+                     HEVENT hEvent,
+                     DWORD_PTR *pdwAdviseCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdvisePeriodic(
-        REFERENCE_TIME startTime,
-        REFERENCE_TIME periodTime,
-        HSEMAPHORE hSemaphore,
-        DWORD_PTR *pdwAdviseCookie) = 0;
+                     REFERENCE_TIME startTime,
+                     REFERENCE_TIME periodTime,
+                     HSEMAPHORE hSemaphore,
+                     DWORD_PTR *pdwAdviseCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD_PTR dwAdviseCookie) = 0;
+                     DWORD_PTR dwAdviseCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1898,38 +1898,38 @@ typedef struct IReferenceClockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IReferenceClock *This,
-        REFIID riid,
-        void **ppvObject);
+                     IReferenceClock *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IReferenceClock *This);
+                     IReferenceClock *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IReferenceClock *This);
+                     IReferenceClock *This);
 
     /*** IReferenceClock methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTime)(
-        IReferenceClock *This,
-        REFERENCE_TIME *pTime);
+                     IReferenceClock *This,
+                     REFERENCE_TIME *pTime);
 
     HRESULT (STDMETHODCALLTYPE *AdviseTime)(
-        IReferenceClock *This,
-        REFERENCE_TIME baseTime,
-        REFERENCE_TIME streamTime,
-        HEVENT hEvent,
-        DWORD_PTR *pdwAdviseCookie);
+                     IReferenceClock *This,
+                     REFERENCE_TIME baseTime,
+                     REFERENCE_TIME streamTime,
+                     HEVENT hEvent,
+                     DWORD_PTR *pdwAdviseCookie);
 
     HRESULT (STDMETHODCALLTYPE *AdvisePeriodic)(
-        IReferenceClock *This,
-        REFERENCE_TIME startTime,
-        REFERENCE_TIME periodTime,
-        HSEMAPHORE hSemaphore,
-        DWORD_PTR *pdwAdviseCookie);
+                     IReferenceClock *This,
+                     REFERENCE_TIME startTime,
+                     REFERENCE_TIME periodTime,
+                     HSEMAPHORE hSemaphore,
+                     DWORD_PTR *pdwAdviseCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IReferenceClock *This,
-        DWORD_PTR dwAdviseCookie);
+                     IReferenceClock *This,
+                     DWORD_PTR dwAdviseCookie);
 
     END_INTERFACE
 } IReferenceClockVtbl;
@@ -1995,10 +1995,10 @@ MIDL_INTERFACE("ebec459c-2eca-4d42-a8af-30df557614b8")
 IReferenceClockTimerControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetDefaultTimerResolution(
-        REFERENCE_TIME timerResolution) = 0;
+                     REFERENCE_TIME timerResolution) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultTimerResolution(
-        REFERENCE_TIME *pTimerResolution) = 0;
+                     REFERENCE_TIME *pTimerResolution) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2010,24 +2010,24 @@ typedef struct IReferenceClockTimerControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IReferenceClockTimerControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IReferenceClockTimerControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IReferenceClockTimerControl *This);
+                     IReferenceClockTimerControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IReferenceClockTimerControl *This);
+                     IReferenceClockTimerControl *This);
 
     /*** IReferenceClockTimerControl methods ***/
     HRESULT (STDMETHODCALLTYPE *SetDefaultTimerResolution)(
-        IReferenceClockTimerControl *This,
-        REFERENCE_TIME timerResolution);
+                     IReferenceClockTimerControl *This,
+                     REFERENCE_TIME timerResolution);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultTimerResolution)(
-        IReferenceClockTimerControl *This,
-        REFERENCE_TIME *pTimerResolution);
+                     IReferenceClockTimerControl *This,
+                     REFERENCE_TIME *pTimerResolution);
 
     END_INTERFACE
 } IReferenceClockTimerControlVtbl;
@@ -2093,38 +2093,38 @@ typedef struct IReferenceClock2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IReferenceClock2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IReferenceClock2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IReferenceClock2 *This);
+                     IReferenceClock2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IReferenceClock2 *This);
+                     IReferenceClock2 *This);
 
     /*** IReferenceClock methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTime)(
-        IReferenceClock2 *This,
-        REFERENCE_TIME *pTime);
+                     IReferenceClock2 *This,
+                     REFERENCE_TIME *pTime);
 
     HRESULT (STDMETHODCALLTYPE *AdviseTime)(
-        IReferenceClock2 *This,
-        REFERENCE_TIME baseTime,
-        REFERENCE_TIME streamTime,
-        HEVENT hEvent,
-        DWORD_PTR *pdwAdviseCookie);
+                     IReferenceClock2 *This,
+                     REFERENCE_TIME baseTime,
+                     REFERENCE_TIME streamTime,
+                     HEVENT hEvent,
+                     DWORD_PTR *pdwAdviseCookie);
 
     HRESULT (STDMETHODCALLTYPE *AdvisePeriodic)(
-        IReferenceClock2 *This,
-        REFERENCE_TIME startTime,
-        REFERENCE_TIME periodTime,
-        HSEMAPHORE hSemaphore,
-        DWORD_PTR *pdwAdviseCookie);
+                     IReferenceClock2 *This,
+                     REFERENCE_TIME startTime,
+                     REFERENCE_TIME periodTime,
+                     HSEMAPHORE hSemaphore,
+                     DWORD_PTR *pdwAdviseCookie);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IReferenceClock2 *This,
-        DWORD_PTR dwAdviseCookie);
+                     IReferenceClock2 *This,
+                     DWORD_PTR dwAdviseCookie);
 
     END_INTERFACE
 } IReferenceClock2Vtbl;
@@ -2190,56 +2190,56 @@ MIDL_INTERFACE("56a8689a-0ad4-11ce-b03a-0020af0ba770")
 IMediaSample : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPointer(
-        BYTE **ppBuffer) = 0;
+                     BYTE **ppBuffer) = 0;
 
     virtual LONG STDMETHODCALLTYPE GetSize(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTime(
-        REFERENCE_TIME *pTimeStart,
-        REFERENCE_TIME *pTimeEnd) = 0;
+                     REFERENCE_TIME *pTimeStart,
+                     REFERENCE_TIME *pTimeEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTime(
-        REFERENCE_TIME *pTimeStart,
-        REFERENCE_TIME *pTimeEnd) = 0;
+                     REFERENCE_TIME *pTimeStart,
+                     REFERENCE_TIME *pTimeEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSyncPoint(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSyncPoint(
-        WINBOOL bIsSyncPoint) = 0;
+                     WINBOOL bIsSyncPoint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPreroll(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPreroll(
-        WINBOOL bIsPreroll) = 0;
+                     WINBOOL bIsPreroll) = 0;
 
     virtual LONG STDMETHODCALLTYPE GetActualDataLength(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetActualDataLength(
-        LONG a) = 0;
+                     LONG a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaType(
-        AM_MEDIA_TYPE **ppMediaType) = 0;
+                     AM_MEDIA_TYPE **ppMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaType(
-        AM_MEDIA_TYPE *pMediaType) = 0;
+                     AM_MEDIA_TYPE *pMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDiscontinuity(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDiscontinuity(
-        WINBOOL bDiscontinuity) = 0;
+                     WINBOOL bDiscontinuity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaTime(
-        LONGLONG *pTimeStart,
-        LONGLONG *pTimeEnd) = 0;
+                     LONGLONG *pTimeStart,
+                     LONGLONG *pTimeEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaTime(
-        LONGLONG *pTimeStart,
-        LONGLONG *pTimeEnd) = 0;
+                     LONGLONG *pTimeStart,
+                     LONGLONG *pTimeEnd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2251,79 +2251,79 @@ typedef struct IMediaSampleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaSample *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaSample *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaSample *This);
+                     IMediaSample *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaSample *This);
+                     IMediaSample *This);
 
     /*** IMediaSample methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPointer)(
-        IMediaSample *This,
-        BYTE **ppBuffer);
+                     IMediaSample *This,
+                     BYTE **ppBuffer);
 
     LONG (STDMETHODCALLTYPE *GetSize)(
-        IMediaSample *This);
+                     IMediaSample *This);
 
     HRESULT (STDMETHODCALLTYPE *GetTime)(
-        IMediaSample *This,
-        REFERENCE_TIME *pTimeStart,
-        REFERENCE_TIME *pTimeEnd);
+                     IMediaSample *This,
+                     REFERENCE_TIME *pTimeStart,
+                     REFERENCE_TIME *pTimeEnd);
 
     HRESULT (STDMETHODCALLTYPE *SetTime)(
-        IMediaSample *This,
-        REFERENCE_TIME *pTimeStart,
-        REFERENCE_TIME *pTimeEnd);
+                     IMediaSample *This,
+                     REFERENCE_TIME *pTimeStart,
+                     REFERENCE_TIME *pTimeEnd);
 
     HRESULT (STDMETHODCALLTYPE *IsSyncPoint)(
-        IMediaSample *This);
+                     IMediaSample *This);
 
     HRESULT (STDMETHODCALLTYPE *SetSyncPoint)(
-        IMediaSample *This,
-        WINBOOL bIsSyncPoint);
+                     IMediaSample *This,
+                     WINBOOL bIsSyncPoint);
 
     HRESULT (STDMETHODCALLTYPE *IsPreroll)(
-        IMediaSample *This);
+                     IMediaSample *This);
 
     HRESULT (STDMETHODCALLTYPE *SetPreroll)(
-        IMediaSample *This,
-        WINBOOL bIsPreroll);
+                     IMediaSample *This,
+                     WINBOOL bIsPreroll);
 
     LONG (STDMETHODCALLTYPE *GetActualDataLength)(
-        IMediaSample *This);
+                     IMediaSample *This);
 
     HRESULT (STDMETHODCALLTYPE *SetActualDataLength)(
-        IMediaSample *This,
-        LONG a);
+                     IMediaSample *This,
+                     LONG a);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaType)(
-        IMediaSample *This,
-        AM_MEDIA_TYPE **ppMediaType);
+                     IMediaSample *This,
+                     AM_MEDIA_TYPE **ppMediaType);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaType)(
-        IMediaSample *This,
-        AM_MEDIA_TYPE *pMediaType);
+                     IMediaSample *This,
+                     AM_MEDIA_TYPE *pMediaType);
 
     HRESULT (STDMETHODCALLTYPE *IsDiscontinuity)(
-        IMediaSample *This);
+                     IMediaSample *This);
 
     HRESULT (STDMETHODCALLTYPE *SetDiscontinuity)(
-        IMediaSample *This,
-        WINBOOL bDiscontinuity);
+                     IMediaSample *This,
+                     WINBOOL bDiscontinuity);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaTime)(
-        IMediaSample *This,
-        LONGLONG *pTimeStart,
-        LONGLONG *pTimeEnd);
+                     IMediaSample *This,
+                     LONGLONG *pTimeStart,
+                     LONGLONG *pTimeEnd);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaTime)(
-        IMediaSample *This,
-        LONGLONG *pTimeStart,
-        LONGLONG *pTimeEnd);
+                     IMediaSample *This,
+                     LONGLONG *pTimeStart,
+                     LONGLONG *pTimeEnd);
 
     END_INTERFACE
 } IMediaSampleVtbl;
@@ -2464,12 +2464,12 @@ MIDL_INTERFACE("36b73884-c2c8-11cf-8b46-00805f6cef60")
 IMediaSample2 : public IMediaSample
 {
     virtual HRESULT STDMETHODCALLTYPE GetProperties(
-        DWORD cbProperties,
-        BYTE *pbProperties) = 0;
+                     DWORD cbProperties,
+                     BYTE *pbProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProperties(
-        DWORD cbProperties,
-        const BYTE *pbProperties) = 0;
+                     DWORD cbProperties,
+                     const BYTE *pbProperties) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2481,90 +2481,90 @@ typedef struct IMediaSample2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaSample2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaSample2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaSample2 *This);
+                     IMediaSample2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaSample2 *This);
+                     IMediaSample2 *This);
 
     /*** IMediaSample methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPointer)(
-        IMediaSample2 *This,
-        BYTE **ppBuffer);
+                     IMediaSample2 *This,
+                     BYTE **ppBuffer);
 
     LONG (STDMETHODCALLTYPE *GetSize)(
-        IMediaSample2 *This);
+                     IMediaSample2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetTime)(
-        IMediaSample2 *This,
-        REFERENCE_TIME *pTimeStart,
-        REFERENCE_TIME *pTimeEnd);
+                     IMediaSample2 *This,
+                     REFERENCE_TIME *pTimeStart,
+                     REFERENCE_TIME *pTimeEnd);
 
     HRESULT (STDMETHODCALLTYPE *SetTime)(
-        IMediaSample2 *This,
-        REFERENCE_TIME *pTimeStart,
-        REFERENCE_TIME *pTimeEnd);
+                     IMediaSample2 *This,
+                     REFERENCE_TIME *pTimeStart,
+                     REFERENCE_TIME *pTimeEnd);
 
     HRESULT (STDMETHODCALLTYPE *IsSyncPoint)(
-        IMediaSample2 *This);
+                     IMediaSample2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetSyncPoint)(
-        IMediaSample2 *This,
-        WINBOOL bIsSyncPoint);
+                     IMediaSample2 *This,
+                     WINBOOL bIsSyncPoint);
 
     HRESULT (STDMETHODCALLTYPE *IsPreroll)(
-        IMediaSample2 *This);
+                     IMediaSample2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetPreroll)(
-        IMediaSample2 *This,
-        WINBOOL bIsPreroll);
+                     IMediaSample2 *This,
+                     WINBOOL bIsPreroll);
 
     LONG (STDMETHODCALLTYPE *GetActualDataLength)(
-        IMediaSample2 *This);
+                     IMediaSample2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetActualDataLength)(
-        IMediaSample2 *This,
-        LONG a);
+                     IMediaSample2 *This,
+                     LONG a);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaType)(
-        IMediaSample2 *This,
-        AM_MEDIA_TYPE **ppMediaType);
+                     IMediaSample2 *This,
+                     AM_MEDIA_TYPE **ppMediaType);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaType)(
-        IMediaSample2 *This,
-        AM_MEDIA_TYPE *pMediaType);
+                     IMediaSample2 *This,
+                     AM_MEDIA_TYPE *pMediaType);
 
     HRESULT (STDMETHODCALLTYPE *IsDiscontinuity)(
-        IMediaSample2 *This);
+                     IMediaSample2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetDiscontinuity)(
-        IMediaSample2 *This,
-        WINBOOL bDiscontinuity);
+                     IMediaSample2 *This,
+                     WINBOOL bDiscontinuity);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaTime)(
-        IMediaSample2 *This,
-        LONGLONG *pTimeStart,
-        LONGLONG *pTimeEnd);
+                     IMediaSample2 *This,
+                     LONGLONG *pTimeStart,
+                     LONGLONG *pTimeEnd);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaTime)(
-        IMediaSample2 *This,
-        LONGLONG *pTimeStart,
-        LONGLONG *pTimeEnd);
+                     IMediaSample2 *This,
+                     LONGLONG *pTimeStart,
+                     LONGLONG *pTimeEnd);
 
     /*** IMediaSample2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        IMediaSample2 *This,
-        DWORD cbProperties,
-        BYTE *pbProperties);
+                     IMediaSample2 *This,
+                     DWORD cbProperties,
+                     BYTE *pbProperties);
 
     HRESULT (STDMETHODCALLTYPE *SetProperties)(
-        IMediaSample2 *This,
-        DWORD cbProperties,
-        const BYTE *pbProperties);
+                     IMediaSample2 *This,
+                     DWORD cbProperties,
+                     const BYTE *pbProperties);
 
     END_INTERFACE
 } IMediaSample2Vtbl;
@@ -2688,7 +2688,7 @@ MIDL_INTERFACE("68961e68-832b-41ea-bc91-63593f3e70e3")
 IMediaSample2Config : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSurface(
-        IUnknown **ppDirect3DSurface9) = 0;
+                     IUnknown **ppDirect3DSurface9) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2700,20 +2700,20 @@ typedef struct IMediaSample2ConfigVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaSample2Config *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaSample2Config *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaSample2Config *This);
+                     IMediaSample2Config *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaSample2Config *This);
+                     IMediaSample2Config *This);
 
     /*** IMediaSample2Config methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSurface)(
-        IMediaSample2Config *This,
-        IUnknown **ppDirect3DSurface9);
+                     IMediaSample2Config *This,
+                     IUnknown **ppDirect3DSurface9);
 
     END_INTERFACE
 } IMediaSample2ConfigVtbl;
@@ -2771,26 +2771,26 @@ MIDL_INTERFACE("56a8689c-0ad4-11ce-b03a-0020af0ba770")
 IMemAllocator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetProperties(
-        ALLOCATOR_PROPERTIES *pRequest,
-        ALLOCATOR_PROPERTIES *pActual) = 0;
+                     ALLOCATOR_PROPERTIES *pRequest,
+                     ALLOCATOR_PROPERTIES *pActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperties(
-        ALLOCATOR_PROPERTIES *pProps) = 0;
+                     ALLOCATOR_PROPERTIES *pProps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Decommit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBuffer(
-        IMediaSample **ppBuffer,
-        REFERENCE_TIME *pStartTime,
-        REFERENCE_TIME *pEndTime,
-        DWORD dwFlags) = 0;
+                     IMediaSample **ppBuffer,
+                     REFERENCE_TIME *pStartTime,
+                     REFERENCE_TIME *pEndTime,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseBuffer(
-        IMediaSample *pBuffer) = 0;
+                     IMediaSample *pBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2802,42 +2802,42 @@ typedef struct IMemAllocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMemAllocator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMemAllocator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMemAllocator *This);
+                     IMemAllocator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMemAllocator *This);
+                     IMemAllocator *This);
 
     /*** IMemAllocator methods ***/
     HRESULT (STDMETHODCALLTYPE *SetProperties)(
-        IMemAllocator *This,
-        ALLOCATOR_PROPERTIES *pRequest,
-        ALLOCATOR_PROPERTIES *pActual);
+                     IMemAllocator *This,
+                     ALLOCATOR_PROPERTIES *pRequest,
+                     ALLOCATOR_PROPERTIES *pActual);
 
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        IMemAllocator *This,
-        ALLOCATOR_PROPERTIES *pProps);
+                     IMemAllocator *This,
+                     ALLOCATOR_PROPERTIES *pProps);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IMemAllocator *This);
+                     IMemAllocator *This);
 
     HRESULT (STDMETHODCALLTYPE *Decommit)(
-        IMemAllocator *This);
+                     IMemAllocator *This);
 
     HRESULT (STDMETHODCALLTYPE *GetBuffer)(
-        IMemAllocator *This,
-        IMediaSample **ppBuffer,
-        REFERENCE_TIME *pStartTime,
-        REFERENCE_TIME *pEndTime,
-        DWORD dwFlags);
+                     IMemAllocator *This,
+                     IMediaSample **ppBuffer,
+                     REFERENCE_TIME *pStartTime,
+                     REFERENCE_TIME *pEndTime,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseBuffer)(
-        IMemAllocator *This,
-        IMediaSample *pBuffer);
+                     IMemAllocator *This,
+                     IMediaSample *pBuffer);
 
     END_INTERFACE
 } IMemAllocatorVtbl;
@@ -2911,10 +2911,10 @@ MIDL_INTERFACE("379a0cf0-c1de-11d2-abf5-00a0c905f375")
 IMemAllocatorCallbackTemp : public IMemAllocator
 {
     virtual HRESULT STDMETHODCALLTYPE SetNotify(
-        IMemAllocatorNotifyCallbackTemp *pNotify) = 0;
+                     IMemAllocatorNotifyCallbackTemp *pNotify) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFreeCount(
-        LONG *plBuffersFree) = 0;
+                     LONG *plBuffersFree) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2926,51 +2926,51 @@ typedef struct IMemAllocatorCallbackTempVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMemAllocatorCallbackTemp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMemAllocatorCallbackTemp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMemAllocatorCallbackTemp *This);
+                     IMemAllocatorCallbackTemp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMemAllocatorCallbackTemp *This);
+                     IMemAllocatorCallbackTemp *This);
 
     /*** IMemAllocator methods ***/
     HRESULT (STDMETHODCALLTYPE *SetProperties)(
-        IMemAllocatorCallbackTemp *This,
-        ALLOCATOR_PROPERTIES *pRequest,
-        ALLOCATOR_PROPERTIES *pActual);
+                     IMemAllocatorCallbackTemp *This,
+                     ALLOCATOR_PROPERTIES *pRequest,
+                     ALLOCATOR_PROPERTIES *pActual);
 
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        IMemAllocatorCallbackTemp *This,
-        ALLOCATOR_PROPERTIES *pProps);
+                     IMemAllocatorCallbackTemp *This,
+                     ALLOCATOR_PROPERTIES *pProps);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IMemAllocatorCallbackTemp *This);
+                     IMemAllocatorCallbackTemp *This);
 
     HRESULT (STDMETHODCALLTYPE *Decommit)(
-        IMemAllocatorCallbackTemp *This);
+                     IMemAllocatorCallbackTemp *This);
 
     HRESULT (STDMETHODCALLTYPE *GetBuffer)(
-        IMemAllocatorCallbackTemp *This,
-        IMediaSample **ppBuffer,
-        REFERENCE_TIME *pStartTime,
-        REFERENCE_TIME *pEndTime,
-        DWORD dwFlags);
+                     IMemAllocatorCallbackTemp *This,
+                     IMediaSample **ppBuffer,
+                     REFERENCE_TIME *pStartTime,
+                     REFERENCE_TIME *pEndTime,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseBuffer)(
-        IMemAllocatorCallbackTemp *This,
-        IMediaSample *pBuffer);
+                     IMemAllocatorCallbackTemp *This,
+                     IMediaSample *pBuffer);
 
     /*** IMemAllocatorCallbackTemp methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNotify)(
-        IMemAllocatorCallbackTemp *This,
-        IMemAllocatorNotifyCallbackTemp *pNotify);
+                     IMemAllocatorCallbackTemp *This,
+                     IMemAllocatorNotifyCallbackTemp *pNotify);
 
     HRESULT (STDMETHODCALLTYPE *GetFreeCount)(
-        IMemAllocatorCallbackTemp *This,
-        LONG *plBuffersFree);
+                     IMemAllocatorCallbackTemp *This,
+                     LONG *plBuffersFree);
 
     END_INTERFACE
 } IMemAllocatorCallbackTempVtbl;
@@ -3053,7 +3053,7 @@ MIDL_INTERFACE("92980b30-c1de-11d2-abf5-00a0c905f375")
 IMemAllocatorNotifyCallbackTemp : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE NotifyRelease(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3065,19 +3065,19 @@ typedef struct IMemAllocatorNotifyCallbackTempVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMemAllocatorNotifyCallbackTemp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMemAllocatorNotifyCallbackTemp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMemAllocatorNotifyCallbackTemp *This);
+                     IMemAllocatorNotifyCallbackTemp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMemAllocatorNotifyCallbackTemp *This);
+                     IMemAllocatorNotifyCallbackTemp *This);
 
     /*** IMemAllocatorNotifyCallbackTemp methods ***/
     HRESULT (STDMETHODCALLTYPE *NotifyRelease)(
-        IMemAllocatorNotifyCallbackTemp *This);
+                     IMemAllocatorNotifyCallbackTemp *This);
 
     END_INTERFACE
 } IMemAllocatorNotifyCallbackTempVtbl;
@@ -3130,25 +3130,25 @@ MIDL_INTERFACE("56a8689d-0ad4-11ce-b03a-0020af0ba770")
 IMemInputPin : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAllocator(
-        IMemAllocator **ppAllocator) = 0;
+                     IMemAllocator **ppAllocator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyAllocator(
-        IMemAllocator *pAllocator,
-        WINBOOL bReadOnly) = 0;
+                     IMemAllocator *pAllocator,
+                     WINBOOL bReadOnly) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAllocatorRequirements(
-        ALLOCATOR_PROPERTIES *pProps) = 0;
+                     ALLOCATOR_PROPERTIES *pProps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Receive(
-        IMediaSample *pSample) = 0;
+                     IMediaSample *pSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReceiveMultiple(
-        IMediaSample **pSamples,
-        LONG nSamples,
-        LONG *nSamplesProcessed) = 0;
+                     IMediaSample **pSamples,
+                     LONG nSamples,
+                     LONG *nSamplesProcessed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReceiveCanBlock(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3160,42 +3160,42 @@ typedef struct IMemInputPinVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMemInputPin *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMemInputPin *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMemInputPin *This);
+                     IMemInputPin *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMemInputPin *This);
+                     IMemInputPin *This);
 
     /*** IMemInputPin methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAllocator)(
-        IMemInputPin *This,
-        IMemAllocator **ppAllocator);
+                     IMemInputPin *This,
+                     IMemAllocator **ppAllocator);
 
     HRESULT (STDMETHODCALLTYPE *NotifyAllocator)(
-        IMemInputPin *This,
-        IMemAllocator *pAllocator,
-        WINBOOL bReadOnly);
+                     IMemInputPin *This,
+                     IMemAllocator *pAllocator,
+                     WINBOOL bReadOnly);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatorRequirements)(
-        IMemInputPin *This,
-        ALLOCATOR_PROPERTIES *pProps);
+                     IMemInputPin *This,
+                     ALLOCATOR_PROPERTIES *pProps);
 
     HRESULT (STDMETHODCALLTYPE *Receive)(
-        IMemInputPin *This,
-        IMediaSample *pSample);
+                     IMemInputPin *This,
+                     IMediaSample *pSample);
 
     HRESULT (STDMETHODCALLTYPE *ReceiveMultiple)(
-        IMemInputPin *This,
-        IMediaSample **pSamples,
-        LONG nSamples,
-        LONG *nSamplesProcessed);
+                     IMemInputPin *This,
+                     IMediaSample **pSamples,
+                     LONG nSamples,
+                     LONG *nSamplesProcessed);
 
     HRESULT (STDMETHODCALLTYPE *ReceiveCanBlock)(
-        IMemInputPin *This);
+                     IMemInputPin *This);
 
     END_INTERFACE
 } IMemInputPinVtbl;
@@ -3269,10 +3269,10 @@ MIDL_INTERFACE("a3d8cec0-7e5a-11cf-bbc5-00805f6cef20")
 IAMovieSetup : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Register(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unregister(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3284,22 +3284,22 @@ typedef struct IAMovieSetupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMovieSetup *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMovieSetup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMovieSetup *This);
+                     IAMovieSetup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMovieSetup *This);
+                     IAMovieSetup *This);
 
     /*** IAMovieSetup methods ***/
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IAMovieSetup *This);
+                     IAMovieSetup *This);
 
     HRESULT (STDMETHODCALLTYPE *Unregister)(
-        IAMovieSetup *This);
+                     IAMovieSetup *This);
 
     END_INTERFACE
 } IAMovieSetupVtbl;
@@ -3381,63 +3381,63 @@ MIDL_INTERFACE("36b73880-c2c8-11cf-8b46-00805f6cef60")
 IMediaSeeking : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCapabilities(
-        DWORD *pCapabilities) = 0;
+                     DWORD *pCapabilities) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckCapabilities(
-        DWORD *pCapabilities) = 0;
+                     DWORD *pCapabilities) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsFormatSupported(
-        const GUID *pFormat) = 0;
+                     const GUID *pFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryPreferredFormat(
-        GUID *pFormat) = 0;
+                     GUID *pFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimeFormat(
-        GUID *pFormat) = 0;
+                     GUID *pFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUsingTimeFormat(
-        const GUID *pFormat) = 0;
+                     const GUID *pFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimeFormat(
-        const GUID *pFormat) = 0;
+                     const GUID *pFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDuration(
-        LONGLONG *pDuration) = 0;
+                     LONGLONG *pDuration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStopPosition(
-        LONGLONG *pStop) = 0;
+                     LONGLONG *pStop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentPosition(
-        LONGLONG *pCurrent) = 0;
+                     LONGLONG *pCurrent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertTimeFormat(
-        LONGLONG *pTarget,
-        const GUID *pTargetFormat,
-        LONGLONG Source,
-        const GUID *pSourceFormat) = 0;
+                     LONGLONG *pTarget,
+                     const GUID *pTargetFormat,
+                     LONGLONG Source,
+                     const GUID *pSourceFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPositions(
-        LONGLONG *pCurrent,
-        DWORD dwCurrentFlags,
-        LONGLONG *pStop,
-        DWORD dwStopFlags) = 0;
+                     LONGLONG *pCurrent,
+                     DWORD dwCurrentFlags,
+                     LONGLONG *pStop,
+                     DWORD dwStopFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPositions(
-        LONGLONG *pCurrent,
-        LONGLONG *pStop) = 0;
+                     LONGLONG *pCurrent,
+                     LONGLONG *pStop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAvailable(
-        LONGLONG *pEarliest,
-        LONGLONG *pLatest) = 0;
+                     LONGLONG *pEarliest,
+                     LONGLONG *pLatest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRate(
-        double dRate) = 0;
+                     double dRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRate(
-        double *pdRate) = 0;
+                     double *pdRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreroll(
-        LONGLONG *pllPreroll) = 0;
+                     LONGLONG *pllPreroll) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3449,92 +3449,92 @@ typedef struct IMediaSeekingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaSeeking *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaSeeking *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaSeeking *This);
+                     IMediaSeeking *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaSeeking *This);
+                     IMediaSeeking *This);
 
     /*** IMediaSeeking methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCapabilities)(
-        IMediaSeeking *This,
-        DWORD *pCapabilities);
+                     IMediaSeeking *This,
+                     DWORD *pCapabilities);
 
     HRESULT (STDMETHODCALLTYPE *CheckCapabilities)(
-        IMediaSeeking *This,
-        DWORD *pCapabilities);
+                     IMediaSeeking *This,
+                     DWORD *pCapabilities);
 
     HRESULT (STDMETHODCALLTYPE *IsFormatSupported)(
-        IMediaSeeking *This,
-        const GUID *pFormat);
+                     IMediaSeeking *This,
+                     const GUID *pFormat);
 
     HRESULT (STDMETHODCALLTYPE *QueryPreferredFormat)(
-        IMediaSeeking *This,
-        GUID *pFormat);
+                     IMediaSeeking *This,
+                     GUID *pFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetTimeFormat)(
-        IMediaSeeking *This,
-        GUID *pFormat);
+                     IMediaSeeking *This,
+                     GUID *pFormat);
 
     HRESULT (STDMETHODCALLTYPE *IsUsingTimeFormat)(
-        IMediaSeeking *This,
-        const GUID *pFormat);
+                     IMediaSeeking *This,
+                     const GUID *pFormat);
 
     HRESULT (STDMETHODCALLTYPE *SetTimeFormat)(
-        IMediaSeeking *This,
-        const GUID *pFormat);
+                     IMediaSeeking *This,
+                     const GUID *pFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetDuration)(
-        IMediaSeeking *This,
-        LONGLONG *pDuration);
+                     IMediaSeeking *This,
+                     LONGLONG *pDuration);
 
     HRESULT (STDMETHODCALLTYPE *GetStopPosition)(
-        IMediaSeeking *This,
-        LONGLONG *pStop);
+                     IMediaSeeking *This,
+                     LONGLONG *pStop);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentPosition)(
-        IMediaSeeking *This,
-        LONGLONG *pCurrent);
+                     IMediaSeeking *This,
+                     LONGLONG *pCurrent);
 
     HRESULT (STDMETHODCALLTYPE *ConvertTimeFormat)(
-        IMediaSeeking *This,
-        LONGLONG *pTarget,
-        const GUID *pTargetFormat,
-        LONGLONG Source,
-        const GUID *pSourceFormat);
+                     IMediaSeeking *This,
+                     LONGLONG *pTarget,
+                     const GUID *pTargetFormat,
+                     LONGLONG Source,
+                     const GUID *pSourceFormat);
 
     HRESULT (STDMETHODCALLTYPE *SetPositions)(
-        IMediaSeeking *This,
-        LONGLONG *pCurrent,
-        DWORD dwCurrentFlags,
-        LONGLONG *pStop,
-        DWORD dwStopFlags);
+                     IMediaSeeking *This,
+                     LONGLONG *pCurrent,
+                     DWORD dwCurrentFlags,
+                     LONGLONG *pStop,
+                     DWORD dwStopFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetPositions)(
-        IMediaSeeking *This,
-        LONGLONG *pCurrent,
-        LONGLONG *pStop);
+                     IMediaSeeking *This,
+                     LONGLONG *pCurrent,
+                     LONGLONG *pStop);
 
     HRESULT (STDMETHODCALLTYPE *GetAvailable)(
-        IMediaSeeking *This,
-        LONGLONG *pEarliest,
-        LONGLONG *pLatest);
+                     IMediaSeeking *This,
+                     LONGLONG *pEarliest,
+                     LONGLONG *pLatest);
 
     HRESULT (STDMETHODCALLTYPE *SetRate)(
-        IMediaSeeking *This,
-        double dRate);
+                     IMediaSeeking *This,
+                     double dRate);
 
     HRESULT (STDMETHODCALLTYPE *GetRate)(
-        IMediaSeeking *This,
-        double *pdRate);
+                     IMediaSeeking *This,
+                     double *pdRate);
 
     HRESULT (STDMETHODCALLTYPE *GetPreroll)(
-        IMediaSeeking *This,
-        LONGLONG *pllPreroll);
+                     IMediaSeeking *This,
+                     LONGLONG *pllPreroll);
 
     END_INTERFACE
 } IMediaSeekingVtbl;
@@ -4142,18 +4142,18 @@ MIDL_INTERFACE("56a868a4-0ad4-11ce-b03a-0020af0ba770")
 IEnumRegFilters : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cFilters,
-        REGFILTER **apRegFilter,
-        ULONG *pcFetched) = 0;
+                     ULONG cFilters,
+                     REGFILTER **apRegFilter,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cFilters) = 0;
+                     ULONG cFilters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumRegFilters **ppEnum) = 0;
+                     IEnumRegFilters **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4165,33 +4165,33 @@ typedef struct IEnumRegFiltersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumRegFilters *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumRegFilters *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumRegFilters *This);
+                     IEnumRegFilters *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumRegFilters *This);
+                     IEnumRegFilters *This);
 
     /*** IEnumRegFilters methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumRegFilters *This,
-        ULONG cFilters,
-        REGFILTER **apRegFilter,
-        ULONG *pcFetched);
+                     IEnumRegFilters *This,
+                     ULONG cFilters,
+                     REGFILTER **apRegFilter,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumRegFilters *This,
-        ULONG cFilters);
+                     IEnumRegFilters *This,
+                     ULONG cFilters);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumRegFilters *This);
+                     IEnumRegFilters *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumRegFilters *This,
-        IEnumRegFilters **ppEnum);
+                     IEnumRegFilters *This,
+                     IEnumRegFilters **ppEnum);
 
     END_INTERFACE
 } IEnumRegFiltersVtbl;
@@ -4264,51 +4264,51 @@ MIDL_INTERFACE("56a868a3-0ad4-11ce-b03a-0020af0ba770")
 IFilterMapper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterFilter(
-        CLSID clsid,
-        LPCWSTR Name,
-        DWORD dwMerit) = 0;
+                     CLSID clsid,
+                     LPCWSTR Name,
+                     DWORD dwMerit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterFilterInstance(
-        CLSID clsid,
-        LPCWSTR Name,
-        CLSID *MRId) = 0;
+                     CLSID clsid,
+                     LPCWSTR Name,
+                     CLSID *MRId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterPin(
-        CLSID Filter,
-        LPCWSTR Name,
-        WINBOOL bRendered,
-        WINBOOL bOutput,
-        WINBOOL bZero,
-        WINBOOL bMany,
-        CLSID ConnectsToFilter,
-        LPCWSTR ConnectsToPin) = 0;
+                     CLSID Filter,
+                     LPCWSTR Name,
+                     WINBOOL bRendered,
+                     WINBOOL bOutput,
+                     WINBOOL bZero,
+                     WINBOOL bMany,
+                     CLSID ConnectsToFilter,
+                     LPCWSTR ConnectsToPin) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterPinType(
-        CLSID clsFilter,
-        LPCWSTR strName,
-        CLSID clsMajorType,
-        CLSID clsSubType) = 0;
+                     CLSID clsFilter,
+                     LPCWSTR strName,
+                     CLSID clsMajorType,
+                     CLSID clsSubType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterFilter(
-        CLSID Filter) = 0;
+                     CLSID Filter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterFilterInstance(
-        CLSID MRId) = 0;
+                     CLSID MRId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterPin(
-        CLSID Filter,
-        LPCWSTR Name) = 0;
+                     CLSID Filter,
+                     LPCWSTR Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumMatchingFilters(
-        IEnumRegFilters **ppEnum,
-        DWORD dwMerit,
-        WINBOOL bInputNeeded,
-        CLSID clsInMaj,
-        CLSID clsInSub,
-        WINBOOL bRender,
-        WINBOOL bOututNeeded,
-        CLSID clsOutMaj,
-        CLSID clsOutSub) = 0;
+                     IEnumRegFilters **ppEnum,
+                     DWORD dwMerit,
+                     WINBOOL bInputNeeded,
+                     CLSID clsInMaj,
+                     CLSID clsInSub,
+                     WINBOOL bRender,
+                     WINBOOL bOututNeeded,
+                     CLSID clsOutMaj,
+                     CLSID clsOutSub) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4320,71 +4320,71 @@ typedef struct IFilterMapperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFilterMapper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFilterMapper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFilterMapper *This);
+                     IFilterMapper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFilterMapper *This);
+                     IFilterMapper *This);
 
     /*** IFilterMapper methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterFilter)(
-        IFilterMapper *This,
-        CLSID clsid,
-        LPCWSTR Name,
-        DWORD dwMerit);
+                     IFilterMapper *This,
+                     CLSID clsid,
+                     LPCWSTR Name,
+                     DWORD dwMerit);
 
     HRESULT (STDMETHODCALLTYPE *RegisterFilterInstance)(
-        IFilterMapper *This,
-        CLSID clsid,
-        LPCWSTR Name,
-        CLSID *MRId);
+                     IFilterMapper *This,
+                     CLSID clsid,
+                     LPCWSTR Name,
+                     CLSID *MRId);
 
     HRESULT (STDMETHODCALLTYPE *RegisterPin)(
-        IFilterMapper *This,
-        CLSID Filter,
-        LPCWSTR Name,
-        WINBOOL bRendered,
-        WINBOOL bOutput,
-        WINBOOL bZero,
-        WINBOOL bMany,
-        CLSID ConnectsToFilter,
-        LPCWSTR ConnectsToPin);
+                     IFilterMapper *This,
+                     CLSID Filter,
+                     LPCWSTR Name,
+                     WINBOOL bRendered,
+                     WINBOOL bOutput,
+                     WINBOOL bZero,
+                     WINBOOL bMany,
+                     CLSID ConnectsToFilter,
+                     LPCWSTR ConnectsToPin);
 
     HRESULT (STDMETHODCALLTYPE *RegisterPinType)(
-        IFilterMapper *This,
-        CLSID clsFilter,
-        LPCWSTR strName,
-        CLSID clsMajorType,
-        CLSID clsSubType);
+                     IFilterMapper *This,
+                     CLSID clsFilter,
+                     LPCWSTR strName,
+                     CLSID clsMajorType,
+                     CLSID clsSubType);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterFilter)(
-        IFilterMapper *This,
-        CLSID Filter);
+                     IFilterMapper *This,
+                     CLSID Filter);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterFilterInstance)(
-        IFilterMapper *This,
-        CLSID MRId);
+                     IFilterMapper *This,
+                     CLSID MRId);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterPin)(
-        IFilterMapper *This,
-        CLSID Filter,
-        LPCWSTR Name);
+                     IFilterMapper *This,
+                     CLSID Filter,
+                     LPCWSTR Name);
 
     HRESULT (STDMETHODCALLTYPE *EnumMatchingFilters)(
-        IFilterMapper *This,
-        IEnumRegFilters **ppEnum,
-        DWORD dwMerit,
-        WINBOOL bInputNeeded,
-        CLSID clsInMaj,
-        CLSID clsInSub,
-        WINBOOL bRender,
-        WINBOOL bOututNeeded,
-        CLSID clsOutMaj,
-        CLSID clsOutSub);
+                     IFilterMapper *This,
+                     IEnumRegFilters **ppEnum,
+                     DWORD dwMerit,
+                     WINBOOL bInputNeeded,
+                     CLSID clsInMaj,
+                     CLSID clsInSub,
+                     WINBOOL bRender,
+                     WINBOOL bOututNeeded,
+                     CLSID clsOutMaj,
+                     CLSID clsOutSub);
 
     END_INTERFACE
 } IFilterMapperVtbl;
@@ -4491,14 +4491,14 @@ typedef struct __WIDL_strmif_generated_name_00000014 {
     DWORD dwVersion;
     DWORD dwMerit;
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            ULONG cPins;
-            const REGFILTERPINS *rgPins;
-        } __C89_NAMELESSSTRUCTNAME1;
-        __C89_NAMELESS struct {
-            ULONG cPins2;
-            const REGFILTERPINS2 *rgPins2;
-        } __C89_NAMELESSSTRUCTNAME2;
+                     __C89_NAMELESS struct {
+                                      ULONG cPins;
+                                      const REGFILTERPINS *rgPins;
+                     } __C89_NAMELESSSTRUCTNAME1;
+                     __C89_NAMELESS struct {
+                                      ULONG cPins2;
+                                      const REGFILTERPINS2 *rgPins2;
+                     } __C89_NAMELESSSTRUCTNAME2;
     } __C89_NAMELESSUNIONNAME;
 } REGFILTER2;
 /*****************************************************************************
@@ -4513,39 +4513,39 @@ MIDL_INTERFACE("b79bb0b0-33c1-11d1-abe1-00a0c905f375")
 IFilterMapper2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateCategory(
-        REFCLSID clsidCategory,
-        DWORD dwCategoryMerit,
-        LPCWSTR Description) = 0;
+                     REFCLSID clsidCategory,
+                     DWORD dwCategoryMerit,
+                     LPCWSTR Description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterFilter(
-        const CLSID *pclsidCategory,
-        LPCOLESTR szInstance,
-        REFCLSID Filter) = 0;
+                     const CLSID *pclsidCategory,
+                     LPCOLESTR szInstance,
+                     REFCLSID Filter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterFilter(
-        REFCLSID clsidFilter,
-        LPCWSTR Name,
-        IMoniker **ppMoniker,
-        const CLSID *pclsidCategory,
-        LPCOLESTR szInstance,
-        const REGFILTER2 *prf2) = 0;
+                     REFCLSID clsidFilter,
+                     LPCWSTR Name,
+                     IMoniker **ppMoniker,
+                     const CLSID *pclsidCategory,
+                     LPCOLESTR szInstance,
+                     const REGFILTER2 *prf2) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumMatchingFilters(
-        IEnumMoniker **ppEnum,
-        DWORD dwFlags,
-        WINBOOL bExactMatch,
-        DWORD dwMerit,
-        WINBOOL bInputNeeded,
-        DWORD cInputTypes,
-        const GUID *pInputTypes,
-        const REGPINMEDIUM *pMedIn,
-        const CLSID *pPinCategoryIn,
-        WINBOOL bRender,
-        WINBOOL bOutputNeeded,
-        DWORD cOutputTypes,
-        const GUID *pOutputTypes,
-        const REGPINMEDIUM *pMedOut,
-        const CLSID *pPinCategoryOut) = 0;
+                     IEnumMoniker **ppEnum,
+                     DWORD dwFlags,
+                     WINBOOL bExactMatch,
+                     DWORD dwMerit,
+                     WINBOOL bInputNeeded,
+                     DWORD cInputTypes,
+                     const GUID *pInputTypes,
+                     const REGPINMEDIUM *pMedIn,
+                     const CLSID *pPinCategoryIn,
+                     WINBOOL bRender,
+                     WINBOOL bOutputNeeded,
+                     DWORD cOutputTypes,
+                     const GUID *pOutputTypes,
+                     const REGPINMEDIUM *pMedOut,
+                     const CLSID *pPinCategoryOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4557,55 +4557,55 @@ typedef struct IFilterMapper2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFilterMapper2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFilterMapper2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFilterMapper2 *This);
+                     IFilterMapper2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFilterMapper2 *This);
+                     IFilterMapper2 *This);
 
     /*** IFilterMapper2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateCategory)(
-        IFilterMapper2 *This,
-        REFCLSID clsidCategory,
-        DWORD dwCategoryMerit,
-        LPCWSTR Description);
+                     IFilterMapper2 *This,
+                     REFCLSID clsidCategory,
+                     DWORD dwCategoryMerit,
+                     LPCWSTR Description);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterFilter)(
-        IFilterMapper2 *This,
-        const CLSID *pclsidCategory,
-        LPCOLESTR szInstance,
-        REFCLSID Filter);
+                     IFilterMapper2 *This,
+                     const CLSID *pclsidCategory,
+                     LPCOLESTR szInstance,
+                     REFCLSID Filter);
 
     HRESULT (STDMETHODCALLTYPE *RegisterFilter)(
-        IFilterMapper2 *This,
-        REFCLSID clsidFilter,
-        LPCWSTR Name,
-        IMoniker **ppMoniker,
-        const CLSID *pclsidCategory,
-        LPCOLESTR szInstance,
-        const REGFILTER2 *prf2);
+                     IFilterMapper2 *This,
+                     REFCLSID clsidFilter,
+                     LPCWSTR Name,
+                     IMoniker **ppMoniker,
+                     const CLSID *pclsidCategory,
+                     LPCOLESTR szInstance,
+                     const REGFILTER2 *prf2);
 
     HRESULT (STDMETHODCALLTYPE *EnumMatchingFilters)(
-        IFilterMapper2 *This,
-        IEnumMoniker **ppEnum,
-        DWORD dwFlags,
-        WINBOOL bExactMatch,
-        DWORD dwMerit,
-        WINBOOL bInputNeeded,
-        DWORD cInputTypes,
-        const GUID *pInputTypes,
-        const REGPINMEDIUM *pMedIn,
-        const CLSID *pPinCategoryIn,
-        WINBOOL bRender,
-        WINBOOL bOutputNeeded,
-        DWORD cOutputTypes,
-        const GUID *pOutputTypes,
-        const REGPINMEDIUM *pMedOut,
-        const CLSID *pPinCategoryOut);
+                     IFilterMapper2 *This,
+                     IEnumMoniker **ppEnum,
+                     DWORD dwFlags,
+                     WINBOOL bExactMatch,
+                     DWORD dwMerit,
+                     WINBOOL bInputNeeded,
+                     DWORD cInputTypes,
+                     const GUID *pInputTypes,
+                     const REGPINMEDIUM *pMedIn,
+                     const CLSID *pPinCategoryIn,
+                     WINBOOL bRender,
+                     WINBOOL bOutputNeeded,
+                     DWORD cOutputTypes,
+                     const GUID *pOutputTypes,
+                     const REGPINMEDIUM *pMedOut,
+                     const CLSID *pPinCategoryOut);
 
     END_INTERFACE
 } IFilterMapper2Vtbl;
@@ -4669,7 +4669,7 @@ MIDL_INTERFACE("b79bb0b1-33c1-11d1-abe1-00a0c905f375")
 IFilterMapper3 : public IFilterMapper2
 {
     virtual HRESULT STDMETHODCALLTYPE GetICreateDevEnum(
-        ICreateDevEnum **ppEnum) = 0;
+                     ICreateDevEnum **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4681,60 +4681,60 @@ typedef struct IFilterMapper3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFilterMapper3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFilterMapper3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFilterMapper3 *This);
+                     IFilterMapper3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFilterMapper3 *This);
+                     IFilterMapper3 *This);
 
     /*** IFilterMapper2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateCategory)(
-        IFilterMapper3 *This,
-        REFCLSID clsidCategory,
-        DWORD dwCategoryMerit,
-        LPCWSTR Description);
+                     IFilterMapper3 *This,
+                     REFCLSID clsidCategory,
+                     DWORD dwCategoryMerit,
+                     LPCWSTR Description);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterFilter)(
-        IFilterMapper3 *This,
-        const CLSID *pclsidCategory,
-        LPCOLESTR szInstance,
-        REFCLSID Filter);
+                     IFilterMapper3 *This,
+                     const CLSID *pclsidCategory,
+                     LPCOLESTR szInstance,
+                     REFCLSID Filter);
 
     HRESULT (STDMETHODCALLTYPE *RegisterFilter)(
-        IFilterMapper3 *This,
-        REFCLSID clsidFilter,
-        LPCWSTR Name,
-        IMoniker **ppMoniker,
-        const CLSID *pclsidCategory,
-        LPCOLESTR szInstance,
-        const REGFILTER2 *prf2);
+                     IFilterMapper3 *This,
+                     REFCLSID clsidFilter,
+                     LPCWSTR Name,
+                     IMoniker **ppMoniker,
+                     const CLSID *pclsidCategory,
+                     LPCOLESTR szInstance,
+                     const REGFILTER2 *prf2);
 
     HRESULT (STDMETHODCALLTYPE *EnumMatchingFilters)(
-        IFilterMapper3 *This,
-        IEnumMoniker **ppEnum,
-        DWORD dwFlags,
-        WINBOOL bExactMatch,
-        DWORD dwMerit,
-        WINBOOL bInputNeeded,
-        DWORD cInputTypes,
-        const GUID *pInputTypes,
-        const REGPINMEDIUM *pMedIn,
-        const CLSID *pPinCategoryIn,
-        WINBOOL bRender,
-        WINBOOL bOutputNeeded,
-        DWORD cOutputTypes,
-        const GUID *pOutputTypes,
-        const REGPINMEDIUM *pMedOut,
-        const CLSID *pPinCategoryOut);
+                     IFilterMapper3 *This,
+                     IEnumMoniker **ppEnum,
+                     DWORD dwFlags,
+                     WINBOOL bExactMatch,
+                     DWORD dwMerit,
+                     WINBOOL bInputNeeded,
+                     DWORD cInputTypes,
+                     const GUID *pInputTypes,
+                     const REGPINMEDIUM *pMedIn,
+                     const CLSID *pPinCategoryIn,
+                     WINBOOL bRender,
+                     WINBOOL bOutputNeeded,
+                     DWORD cOutputTypes,
+                     const GUID *pOutputTypes,
+                     const REGPINMEDIUM *pMedOut,
+                     const CLSID *pPinCategoryOut);
 
     /*** IFilterMapper3 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetICreateDevEnum)(
-        IFilterMapper3 *This,
-        ICreateDevEnum **ppEnum);
+                     IFilterMapper3 *This,
+                     ICreateDevEnum **ppEnum);
 
     END_INTERFACE
 } IFilterMapper3Vtbl;
@@ -4815,11 +4815,11 @@ MIDL_INTERFACE("56a868a5-0ad4-11ce-b03a-0020af0ba770")
 IQualityControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Notify(
-        IBaseFilter *pSelf,
-        Quality q) = 0;
+                     IBaseFilter *pSelf,
+                     Quality q) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSink(
-        IQualityControl *piqc) = 0;
+                     IQualityControl *piqc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4831,25 +4831,25 @@ typedef struct IQualityControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IQualityControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IQualityControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IQualityControl *This);
+                     IQualityControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IQualityControl *This);
+                     IQualityControl *This);
 
     /*** IQualityControl methods ***/
     HRESULT (STDMETHODCALLTYPE *Notify)(
-        IQualityControl *This,
-        IBaseFilter *pSelf,
-        Quality q);
+                     IQualityControl *This,
+                     IBaseFilter *pSelf,
+                     Quality q);
 
     HRESULT (STDMETHODCALLTYPE *SetSink)(
-        IQualityControl *This,
-        IQualityControl *piqc);
+                     IQualityControl *This,
+                     IQualityControl *piqc);
 
     END_INTERFACE
 } IQualityControlVtbl;
@@ -4941,20 +4941,20 @@ MIDL_INTERFACE("56a868a0-0ad4-11ce-b03a-0020af0ba770")
 IOverlayNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnPaletteChange(
-        DWORD dwColors,
-        const PALETTEENTRY *pPalette) = 0;
+                     DWORD dwColors,
+                     const PALETTEENTRY *pPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnClipChange(
-        const RECT *pSourceRect,
-        const RECT *pDestinationRect,
-        const RGNDATA *pRgnData) = 0;
+                     const RECT *pSourceRect,
+                     const RECT *pDestinationRect,
+                     const RGNDATA *pRgnData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnColorKeyChange(
-        const COLORKEY *pColorKey) = 0;
+                     const COLORKEY *pColorKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPositionChange(
-        const RECT *pSourceRect,
-        const RECT *pDestinationRect) = 0;
+                     const RECT *pSourceRect,
+                     const RECT *pDestinationRect) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4966,36 +4966,36 @@ typedef struct IOverlayNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOverlayNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOverlayNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOverlayNotify *This);
+                     IOverlayNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOverlayNotify *This);
+                     IOverlayNotify *This);
 
     /*** IOverlayNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *OnPaletteChange)(
-        IOverlayNotify *This,
-        DWORD dwColors,
-        const PALETTEENTRY *pPalette);
+                     IOverlayNotify *This,
+                     DWORD dwColors,
+                     const PALETTEENTRY *pPalette);
 
     HRESULT (STDMETHODCALLTYPE *OnClipChange)(
-        IOverlayNotify *This,
-        const RECT *pSourceRect,
-        const RECT *pDestinationRect,
-        const RGNDATA *pRgnData);
+                     IOverlayNotify *This,
+                     const RECT *pSourceRect,
+                     const RECT *pDestinationRect,
+                     const RGNDATA *pRgnData);
 
     HRESULT (STDMETHODCALLTYPE *OnColorKeyChange)(
-        IOverlayNotify *This,
-        const COLORKEY *pColorKey);
+                     IOverlayNotify *This,
+                     const COLORKEY *pColorKey);
 
     HRESULT (STDMETHODCALLTYPE *OnPositionChange)(
-        IOverlayNotify *This,
-        const RECT *pSourceRect,
-        const RECT *pDestinationRect);
+                     IOverlayNotify *This,
+                     const RECT *pSourceRect,
+                     const RECT *pDestinationRect);
 
     END_INTERFACE
 } IOverlayNotifyVtbl;
@@ -5063,7 +5063,7 @@ MIDL_INTERFACE("680efa10-d535-11d1-87c8-00a0c9223196")
 IOverlayNotify2 : public IOverlayNotify
 {
     virtual HRESULT STDMETHODCALLTYPE OnDisplayChange(
-        HMONITOR hMonitor) = 0;
+                     HMONITOR hMonitor) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5075,41 +5075,41 @@ typedef struct IOverlayNotify2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOverlayNotify2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOverlayNotify2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOverlayNotify2 *This);
+                     IOverlayNotify2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOverlayNotify2 *This);
+                     IOverlayNotify2 *This);
 
     /*** IOverlayNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *OnPaletteChange)(
-        IOverlayNotify2 *This,
-        DWORD dwColors,
-        const PALETTEENTRY *pPalette);
+                     IOverlayNotify2 *This,
+                     DWORD dwColors,
+                     const PALETTEENTRY *pPalette);
 
     HRESULT (STDMETHODCALLTYPE *OnClipChange)(
-        IOverlayNotify2 *This,
-        const RECT *pSourceRect,
-        const RECT *pDestinationRect,
-        const RGNDATA *pRgnData);
+                     IOverlayNotify2 *This,
+                     const RECT *pSourceRect,
+                     const RECT *pDestinationRect,
+                     const RGNDATA *pRgnData);
 
     HRESULT (STDMETHODCALLTYPE *OnColorKeyChange)(
-        IOverlayNotify2 *This,
-        const COLORKEY *pColorKey);
+                     IOverlayNotify2 *This,
+                     const COLORKEY *pColorKey);
 
     HRESULT (STDMETHODCALLTYPE *OnPositionChange)(
-        IOverlayNotify2 *This,
-        const RECT *pSourceRect,
-        const RECT *pDestinationRect);
+                     IOverlayNotify2 *This,
+                     const RECT *pSourceRect,
+                     const RECT *pDestinationRect);
 
     /*** IOverlayNotify2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnDisplayChange)(
-        IOverlayNotify2 *This,
-        HMONITOR hMonitor);
+                     IOverlayNotify2 *This,
+                     HMONITOR hMonitor);
 
     END_INTERFACE
 } IOverlayNotify2Vtbl;
@@ -5180,40 +5180,40 @@ MIDL_INTERFACE("56a868a1-0ad4-11ce-b03a-0020af0ba770")
 IOverlay : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPalette(
-        DWORD *pdwColors,
-        PALETTEENTRY **ppPalette) = 0;
+                     DWORD *pdwColors,
+                     PALETTEENTRY **ppPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPalette(
-        DWORD dwColors,
-        PALETTEENTRY *pPalette) = 0;
+                     DWORD dwColors,
+                     PALETTEENTRY *pPalette) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultColorKey(
-        COLORKEY *pColorKey) = 0;
+                     COLORKEY *pColorKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorKey(
-        COLORKEY *pColorKey) = 0;
+                     COLORKEY *pColorKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColorKey(
-        COLORKEY *pColorKey) = 0;
+                     COLORKEY *pColorKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWindowHandle(
-        HWND *pHwnd) = 0;
+                     HWND *pHwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClipList(
-        RECT *pSourceRect,
-        RECT *pDestinationRect,
-        RGNDATA **ppRgnData) = 0;
+                     RECT *pSourceRect,
+                     RECT *pDestinationRect,
+                     RGNDATA **ppRgnData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoPosition(
-        RECT *pSourceRect,
-        RECT *pDestinationRect) = 0;
+                     RECT *pSourceRect,
+                     RECT *pDestinationRect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IOverlayNotify *pOverlayNotify,
-        DWORD dwInterests) = 0;
+                     IOverlayNotify *pOverlayNotify,
+                     DWORD dwInterests) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5225,61 +5225,61 @@ typedef struct IOverlayVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOverlay *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOverlay *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOverlay *This);
+                     IOverlay *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOverlay *This);
+                     IOverlay *This);
 
     /*** IOverlay methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPalette)(
-        IOverlay *This,
-        DWORD *pdwColors,
-        PALETTEENTRY **ppPalette);
+                     IOverlay *This,
+                     DWORD *pdwColors,
+                     PALETTEENTRY **ppPalette);
 
     HRESULT (STDMETHODCALLTYPE *SetPalette)(
-        IOverlay *This,
-        DWORD dwColors,
-        PALETTEENTRY *pPalette);
+                     IOverlay *This,
+                     DWORD dwColors,
+                     PALETTEENTRY *pPalette);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultColorKey)(
-        IOverlay *This,
-        COLORKEY *pColorKey);
+                     IOverlay *This,
+                     COLORKEY *pColorKey);
 
     HRESULT (STDMETHODCALLTYPE *GetColorKey)(
-        IOverlay *This,
-        COLORKEY *pColorKey);
+                     IOverlay *This,
+                     COLORKEY *pColorKey);
 
     HRESULT (STDMETHODCALLTYPE *SetColorKey)(
-        IOverlay *This,
-        COLORKEY *pColorKey);
+                     IOverlay *This,
+                     COLORKEY *pColorKey);
 
     HRESULT (STDMETHODCALLTYPE *GetWindowHandle)(
-        IOverlay *This,
-        HWND *pHwnd);
+                     IOverlay *This,
+                     HWND *pHwnd);
 
     HRESULT (STDMETHODCALLTYPE *GetClipList)(
-        IOverlay *This,
-        RECT *pSourceRect,
-        RECT *pDestinationRect,
-        RGNDATA **ppRgnData);
+                     IOverlay *This,
+                     RECT *pSourceRect,
+                     RECT *pDestinationRect,
+                     RGNDATA **ppRgnData);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoPosition)(
-        IOverlay *This,
-        RECT *pSourceRect,
-        RECT *pDestinationRect);
+                     IOverlay *This,
+                     RECT *pSourceRect,
+                     RECT *pDestinationRect);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IOverlay *This,
-        IOverlayNotify *pOverlayNotify,
-        DWORD dwInterests);
+                     IOverlay *This,
+                     IOverlayNotify *pOverlayNotify,
+                     DWORD dwInterests);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IOverlay *This);
+                     IOverlay *This);
 
     END_INTERFACE
 } IOverlayVtbl;
@@ -5368,9 +5368,9 @@ MIDL_INTERFACE("56a868a2-0ad4-11ce-b03a-0020af0ba770")
 IMediaEventSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Notify(
-        LONG EventCode,
-        LONG_PTR EventParam1,
-        LONG_PTR EventParam2) = 0;
+                     LONG EventCode,
+                     LONG_PTR EventParam1,
+                     LONG_PTR EventParam2) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5382,22 +5382,22 @@ typedef struct IMediaEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaEventSink *This);
+                     IMediaEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaEventSink *This);
+                     IMediaEventSink *This);
 
     /*** IMediaEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *Notify)(
-        IMediaEventSink *This,
-        LONG EventCode,
-        LONG_PTR EventParam1,
-        LONG_PTR EventParam2);
+                     IMediaEventSink *This,
+                     LONG EventCode,
+                     LONG_PTR EventParam1,
+                     LONG_PTR EventParam2);
 
     END_INTERFACE
 } IMediaEventSinkVtbl;
@@ -5450,12 +5450,12 @@ MIDL_INTERFACE("56a868a6-0ad4-11ce-b03a-0020af0ba770")
 IFileSourceFilter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Load(
-        LPCOLESTR pszFileName,
-        const AM_MEDIA_TYPE *pmt) = 0;
+                     LPCOLESTR pszFileName,
+                     const AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurFile(
-        LPOLESTR *ppszFileName,
-        AM_MEDIA_TYPE *pmt) = 0;
+                     LPOLESTR *ppszFileName,
+                     AM_MEDIA_TYPE *pmt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5467,26 +5467,26 @@ typedef struct IFileSourceFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileSourceFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileSourceFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileSourceFilter *This);
+                     IFileSourceFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileSourceFilter *This);
+                     IFileSourceFilter *This);
 
     /*** IFileSourceFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IFileSourceFilter *This,
-        LPCOLESTR pszFileName,
-        const AM_MEDIA_TYPE *pmt);
+                     IFileSourceFilter *This,
+                     LPCOLESTR pszFileName,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *GetCurFile)(
-        IFileSourceFilter *This,
-        LPOLESTR *ppszFileName,
-        AM_MEDIA_TYPE *pmt);
+                     IFileSourceFilter *This,
+                     LPOLESTR *ppszFileName,
+                     AM_MEDIA_TYPE *pmt);
 
     END_INTERFACE
 } IFileSourceFilterVtbl;
@@ -5543,12 +5543,12 @@ MIDL_INTERFACE("a2104830-7c70-11cf-8bce-00aa00a3f1a6")
 IFileSinkFilter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFileName(
-        LPCOLESTR pszFileName,
-        const AM_MEDIA_TYPE *pmt) = 0;
+                     LPCOLESTR pszFileName,
+                     const AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurFile(
-        LPOLESTR *ppszFileName,
-        AM_MEDIA_TYPE *pmt) = 0;
+                     LPOLESTR *ppszFileName,
+                     AM_MEDIA_TYPE *pmt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5560,26 +5560,26 @@ typedef struct IFileSinkFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileSinkFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileSinkFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileSinkFilter *This);
+                     IFileSinkFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileSinkFilter *This);
+                     IFileSinkFilter *This);
 
     /*** IFileSinkFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFileName)(
-        IFileSinkFilter *This,
-        LPCOLESTR pszFileName,
-        const AM_MEDIA_TYPE *pmt);
+                     IFileSinkFilter *This,
+                     LPCOLESTR pszFileName,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *GetCurFile)(
-        IFileSinkFilter *This,
-        LPOLESTR *ppszFileName,
-        AM_MEDIA_TYPE *pmt);
+                     IFileSinkFilter *This,
+                     LPOLESTR *ppszFileName,
+                     AM_MEDIA_TYPE *pmt);
 
     END_INTERFACE
 } IFileSinkFilterVtbl;
@@ -5636,10 +5636,10 @@ MIDL_INTERFACE("00855b90-ce1b-11d0-bd4f-00a0c911ce86")
 IFileSinkFilter2 : public IFileSinkFilter
 {
     virtual HRESULT STDMETHODCALLTYPE SetMode(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMode(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5651,35 +5651,35 @@ typedef struct IFileSinkFilter2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFileSinkFilter2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFileSinkFilter2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFileSinkFilter2 *This);
+                     IFileSinkFilter2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFileSinkFilter2 *This);
+                     IFileSinkFilter2 *This);
 
     /*** IFileSinkFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFileName)(
-        IFileSinkFilter2 *This,
-        LPCOLESTR pszFileName,
-        const AM_MEDIA_TYPE *pmt);
+                     IFileSinkFilter2 *This,
+                     LPCOLESTR pszFileName,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *GetCurFile)(
-        IFileSinkFilter2 *This,
-        LPOLESTR *ppszFileName,
-        AM_MEDIA_TYPE *pmt);
+                     IFileSinkFilter2 *This,
+                     LPOLESTR *ppszFileName,
+                     AM_MEDIA_TYPE *pmt);
 
     /*** IFileSinkFilter2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetMode)(
-        IFileSinkFilter2 *This,
-        DWORD dwFlags);
+                     IFileSinkFilter2 *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetMode)(
-        IFileSinkFilter2 *This,
-        DWORD *pdwFlags);
+                     IFileSinkFilter2 *This,
+                     DWORD *pdwFlags);
 
     END_INTERFACE
 } IFileSinkFilter2Vtbl;
@@ -5749,29 +5749,29 @@ MIDL_INTERFACE("56a868a9-0ad4-11ce-b03a-0020af0ba770")
 IGraphBuilder : public IFilterGraph
 {
     virtual HRESULT STDMETHODCALLTYPE Connect(
-        IPin *ppinOut,
-        IPin *ppinIn) = 0;
+                     IPin *ppinOut,
+                     IPin *ppinIn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Render(
-        IPin *ppinOut) = 0;
+                     IPin *ppinOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenderFile(
-        LPCWSTR lpcwstrFile,
-        LPCWSTR lpcwstrPlayList) = 0;
+                     LPCWSTR lpcwstrFile,
+                     LPCWSTR lpcwstrPlayList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSourceFilter(
-        LPCWSTR lpcwstrFileName,
-        LPCWSTR lpcwstrFilterName,
-        IBaseFilter **ppFilter) = 0;
+                     LPCWSTR lpcwstrFileName,
+                     LPCWSTR lpcwstrFilterName,
+                     IBaseFilter **ppFilter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLogFile(
-        DWORD_PTR hFile) = 0;
+                     DWORD_PTR hFile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Abort(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShouldOperationContinue(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5783,82 +5783,82 @@ typedef struct IGraphBuilderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IGraphBuilder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IGraphBuilder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IGraphBuilder *This);
+                     IGraphBuilder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IGraphBuilder *This);
+                     IGraphBuilder *This);
 
     /*** IFilterGraph methods ***/
     HRESULT (STDMETHODCALLTYPE *AddFilter)(
-        IGraphBuilder *This,
-        IBaseFilter *pFilter,
-        LPCWSTR pName);
+                     IGraphBuilder *This,
+                     IBaseFilter *pFilter,
+                     LPCWSTR pName);
 
     HRESULT (STDMETHODCALLTYPE *RemoveFilter)(
-        IGraphBuilder *This,
-        IBaseFilter *pFilter);
+                     IGraphBuilder *This,
+                     IBaseFilter *pFilter);
 
     HRESULT (STDMETHODCALLTYPE *EnumFilters)(
-        IGraphBuilder *This,
-        IEnumFilters **ppEnum);
+                     IGraphBuilder *This,
+                     IEnumFilters **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *FindFilterByName)(
-        IGraphBuilder *This,
-        LPCWSTR pName,
-        IBaseFilter **ppFilter);
+                     IGraphBuilder *This,
+                     LPCWSTR pName,
+                     IBaseFilter **ppFilter);
 
     HRESULT (STDMETHODCALLTYPE *ConnectDirect)(
-        IGraphBuilder *This,
-        IPin *ppinOut,
-        IPin *ppinIn,
-        const AM_MEDIA_TYPE *pmt);
+                     IGraphBuilder *This,
+                     IPin *ppinOut,
+                     IPin *ppinIn,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *Reconnect)(
-        IGraphBuilder *This,
-        IPin *ppin);
+                     IGraphBuilder *This,
+                     IPin *ppin);
 
     HRESULT (STDMETHODCALLTYPE *Disconnect)(
-        IGraphBuilder *This,
-        IPin *ppin);
+                     IGraphBuilder *This,
+                     IPin *ppin);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultSyncSource)(
-        IGraphBuilder *This);
+                     IGraphBuilder *This);
 
     /*** IGraphBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        IGraphBuilder *This,
-        IPin *ppinOut,
-        IPin *ppinIn);
+                     IGraphBuilder *This,
+                     IPin *ppinOut,
+                     IPin *ppinIn);
 
     HRESULT (STDMETHODCALLTYPE *Render)(
-        IGraphBuilder *This,
-        IPin *ppinOut);
+                     IGraphBuilder *This,
+                     IPin *ppinOut);
 
     HRESULT (STDMETHODCALLTYPE *RenderFile)(
-        IGraphBuilder *This,
-        LPCWSTR lpcwstrFile,
-        LPCWSTR lpcwstrPlayList);
+                     IGraphBuilder *This,
+                     LPCWSTR lpcwstrFile,
+                     LPCWSTR lpcwstrPlayList);
 
     HRESULT (STDMETHODCALLTYPE *AddSourceFilter)(
-        IGraphBuilder *This,
-        LPCWSTR lpcwstrFileName,
-        LPCWSTR lpcwstrFilterName,
-        IBaseFilter **ppFilter);
+                     IGraphBuilder *This,
+                     LPCWSTR lpcwstrFileName,
+                     LPCWSTR lpcwstrFilterName,
+                     IBaseFilter **ppFilter);
 
     HRESULT (STDMETHODCALLTYPE *SetLogFile)(
-        IGraphBuilder *This,
-        DWORD_PTR hFile);
+                     IGraphBuilder *This,
+                     DWORD_PTR hFile);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IGraphBuilder *This);
+                     IGraphBuilder *This);
 
     HRESULT (STDMETHODCALLTYPE *ShouldOperationContinue)(
-        IGraphBuilder *This);
+                     IGraphBuilder *This);
 
     END_INTERFACE
 } IGraphBuilderVtbl;
@@ -5968,46 +5968,46 @@ MIDL_INTERFACE("bf87b6e0-8c27-11d0-b3f0-00aa003761c5")
 ICaptureGraphBuilder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFiltergraph(
-        IGraphBuilder *pfg) = 0;
+                     IGraphBuilder *pfg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFiltergraph(
-        IGraphBuilder **ppfg) = 0;
+                     IGraphBuilder **ppfg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputFileName(
-        const GUID *pType,
-        LPCOLESTR lpstrFile,
-        IBaseFilter **ppf,
-        IFileSinkFilter **ppSink) = 0;
+                     const GUID *pType,
+                     LPCOLESTR lpstrFile,
+                     IBaseFilter **ppf,
+                     IFileSinkFilter **ppSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindInterface(
-        const GUID *pCategory,
-        IBaseFilter *pf,
-        REFIID riid,
-        void **ppint) = 0;
+                     const GUID *pCategory,
+                     IBaseFilter *pf,
+                     REFIID riid,
+                     void **ppint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenderStream(
-        const GUID *pCategory,
-        IUnknown *pSource,
-        IBaseFilter *pfCompressor,
-        IBaseFilter *pfRenderer) = 0;
+                     const GUID *pCategory,
+                     IUnknown *pSource,
+                     IBaseFilter *pfCompressor,
+                     IBaseFilter *pfRenderer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ControlStream(
-        const GUID *pCategory,
-        IBaseFilter *pFilter,
-        REFERENCE_TIME *pstart,
-        REFERENCE_TIME *pstop,
-        WORD wStartCookie,
-        WORD wStopCookie) = 0;
+                     const GUID *pCategory,
+                     IBaseFilter *pFilter,
+                     REFERENCE_TIME *pstart,
+                     REFERENCE_TIME *pstop,
+                     WORD wStartCookie,
+                     WORD wStopCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AllocCapFile(
-        LPCOLESTR lpstr,
-        DWORDLONG dwlSize) = 0;
+                     LPCOLESTR lpstr,
+                     DWORDLONG dwlSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyCaptureFile(
-        LPOLESTR lpwstrOld,
-        LPOLESTR lpwstrNew,
-        int fAllowEscAbort,
-        IAMCopyCaptureFileProgress *pCallback) = 0;
+                     LPOLESTR lpwstrOld,
+                     LPOLESTR lpwstrNew,
+                     int fAllowEscAbort,
+                     IAMCopyCaptureFileProgress *pCallback) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6019,66 +6019,66 @@ typedef struct ICaptureGraphBuilderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICaptureGraphBuilder *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICaptureGraphBuilder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICaptureGraphBuilder *This);
+                     ICaptureGraphBuilder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICaptureGraphBuilder *This);
+                     ICaptureGraphBuilder *This);
 
     /*** ICaptureGraphBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFiltergraph)(
-        ICaptureGraphBuilder *This,
-        IGraphBuilder *pfg);
+                     ICaptureGraphBuilder *This,
+                     IGraphBuilder *pfg);
 
     HRESULT (STDMETHODCALLTYPE *GetFiltergraph)(
-        ICaptureGraphBuilder *This,
-        IGraphBuilder **ppfg);
+                     ICaptureGraphBuilder *This,
+                     IGraphBuilder **ppfg);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFileName)(
-        ICaptureGraphBuilder *This,
-        const GUID *pType,
-        LPCOLESTR lpstrFile,
-        IBaseFilter **ppf,
-        IFileSinkFilter **ppSink);
+                     ICaptureGraphBuilder *This,
+                     const GUID *pType,
+                     LPCOLESTR lpstrFile,
+                     IBaseFilter **ppf,
+                     IFileSinkFilter **ppSink);
 
     HRESULT (STDMETHODCALLTYPE *FindInterface)(
-        ICaptureGraphBuilder *This,
-        const GUID *pCategory,
-        IBaseFilter *pf,
-        REFIID riid,
-        void **ppint);
+                     ICaptureGraphBuilder *This,
+                     const GUID *pCategory,
+                     IBaseFilter *pf,
+                     REFIID riid,
+                     void **ppint);
 
     HRESULT (STDMETHODCALLTYPE *RenderStream)(
-        ICaptureGraphBuilder *This,
-        const GUID *pCategory,
-        IUnknown *pSource,
-        IBaseFilter *pfCompressor,
-        IBaseFilter *pfRenderer);
+                     ICaptureGraphBuilder *This,
+                     const GUID *pCategory,
+                     IUnknown *pSource,
+                     IBaseFilter *pfCompressor,
+                     IBaseFilter *pfRenderer);
 
     HRESULT (STDMETHODCALLTYPE *ControlStream)(
-        ICaptureGraphBuilder *This,
-        const GUID *pCategory,
-        IBaseFilter *pFilter,
-        REFERENCE_TIME *pstart,
-        REFERENCE_TIME *pstop,
-        WORD wStartCookie,
-        WORD wStopCookie);
+                     ICaptureGraphBuilder *This,
+                     const GUID *pCategory,
+                     IBaseFilter *pFilter,
+                     REFERENCE_TIME *pstart,
+                     REFERENCE_TIME *pstop,
+                     WORD wStartCookie,
+                     WORD wStopCookie);
 
     HRESULT (STDMETHODCALLTYPE *AllocCapFile)(
-        ICaptureGraphBuilder *This,
-        LPCOLESTR lpstr,
-        DWORDLONG dwlSize);
+                     ICaptureGraphBuilder *This,
+                     LPCOLESTR lpstr,
+                     DWORDLONG dwlSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyCaptureFile)(
-        ICaptureGraphBuilder *This,
-        LPOLESTR lpwstrOld,
-        LPOLESTR lpwstrNew,
-        int fAllowEscAbort,
-        IAMCopyCaptureFileProgress *pCallback);
+                     ICaptureGraphBuilder *This,
+                     LPOLESTR lpwstrOld,
+                     LPOLESTR lpwstrNew,
+                     int fAllowEscAbort,
+                     IAMCopyCaptureFileProgress *pCallback);
 
     END_INTERFACE
 } ICaptureGraphBuilderVtbl;
@@ -6181,7 +6181,7 @@ MIDL_INTERFACE("670d1d20-a068-11d0-b3f0-00aa003761c5")
 IAMCopyCaptureFileProgress : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Progress(
-        int iProgress) = 0;
+                     int iProgress) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6193,20 +6193,20 @@ typedef struct IAMCopyCaptureFileProgressVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMCopyCaptureFileProgress *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMCopyCaptureFileProgress *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMCopyCaptureFileProgress *This);
+                     IAMCopyCaptureFileProgress *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMCopyCaptureFileProgress *This);
+                     IAMCopyCaptureFileProgress *This);
 
     /*** IAMCopyCaptureFileProgress methods ***/
     HRESULT (STDMETHODCALLTYPE *Progress)(
-        IAMCopyCaptureFileProgress *This,
-        int iProgress);
+                     IAMCopyCaptureFileProgress *This,
+                     int iProgress);
 
     END_INTERFACE
 } IAMCopyCaptureFileProgressVtbl;
@@ -6258,58 +6258,58 @@ MIDL_INTERFACE("93e5a4e0-2d50-11d2-abfa-00a0c9c6e38d")
 ICaptureGraphBuilder2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFiltergraph(
-        IGraphBuilder *pfg) = 0;
+                     IGraphBuilder *pfg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFiltergraph(
-        IGraphBuilder **ppfg) = 0;
+                     IGraphBuilder **ppfg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputFileName(
-        const GUID *pType,
-        LPCOLESTR lpstrFile,
-        IBaseFilter **ppf,
-        IFileSinkFilter **ppSink) = 0;
+                     const GUID *pType,
+                     LPCOLESTR lpstrFile,
+                     IBaseFilter **ppf,
+                     IFileSinkFilter **ppSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindInterface(
-        const GUID *pCategory,
-        const GUID *pType,
-        IBaseFilter *pf,
-        REFIID riid,
-        void **ppint) = 0;
+                     const GUID *pCategory,
+                     const GUID *pType,
+                     IBaseFilter *pf,
+                     REFIID riid,
+                     void **ppint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenderStream(
-        const GUID *pCategory,
-        const GUID *pType,
-        IUnknown *pSource,
-        IBaseFilter *pfCompressor,
-        IBaseFilter *pfRenderer) = 0;
+                     const GUID *pCategory,
+                     const GUID *pType,
+                     IUnknown *pSource,
+                     IBaseFilter *pfCompressor,
+                     IBaseFilter *pfRenderer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ControlStream(
-        const GUID *pCategory,
-        const GUID *pType,
-        IBaseFilter *pFilter,
-        REFERENCE_TIME *pstart,
-        REFERENCE_TIME *pstop,
-        WORD wStartCookie,
-        WORD wStopCookie) = 0;
+                     const GUID *pCategory,
+                     const GUID *pType,
+                     IBaseFilter *pFilter,
+                     REFERENCE_TIME *pstart,
+                     REFERENCE_TIME *pstop,
+                     WORD wStartCookie,
+                     WORD wStopCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AllocCapFile(
-        LPCOLESTR lpstr,
-        DWORDLONG dwlSize) = 0;
+                     LPCOLESTR lpstr,
+                     DWORDLONG dwlSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyCaptureFile(
-        LPOLESTR lpwstrOld,
-        LPOLESTR lpwstrNew,
-        int fAllowEscAbort,
-        IAMCopyCaptureFileProgress *pCallback) = 0;
+                     LPOLESTR lpwstrOld,
+                     LPOLESTR lpwstrNew,
+                     int fAllowEscAbort,
+                     IAMCopyCaptureFileProgress *pCallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindPin(
-        IUnknown *pSource,
-        PIN_DIRECTION pindir,
-        const GUID *pCategory,
-        const GUID *pType,
-        WINBOOL fUnconnected,
-        int num,
-        IPin **ppPin) = 0;
+                     IUnknown *pSource,
+                     PIN_DIRECTION pindir,
+                     const GUID *pCategory,
+                     const GUID *pType,
+                     WINBOOL fUnconnected,
+                     int num,
+                     IPin **ppPin) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6321,79 +6321,79 @@ typedef struct ICaptureGraphBuilder2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICaptureGraphBuilder2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICaptureGraphBuilder2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICaptureGraphBuilder2 *This);
+                     ICaptureGraphBuilder2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICaptureGraphBuilder2 *This);
+                     ICaptureGraphBuilder2 *This);
 
     /*** ICaptureGraphBuilder2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFiltergraph)(
-        ICaptureGraphBuilder2 *This,
-        IGraphBuilder *pfg);
+                     ICaptureGraphBuilder2 *This,
+                     IGraphBuilder *pfg);
 
     HRESULT (STDMETHODCALLTYPE *GetFiltergraph)(
-        ICaptureGraphBuilder2 *This,
-        IGraphBuilder **ppfg);
+                     ICaptureGraphBuilder2 *This,
+                     IGraphBuilder **ppfg);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputFileName)(
-        ICaptureGraphBuilder2 *This,
-        const GUID *pType,
-        LPCOLESTR lpstrFile,
-        IBaseFilter **ppf,
-        IFileSinkFilter **ppSink);
+                     ICaptureGraphBuilder2 *This,
+                     const GUID *pType,
+                     LPCOLESTR lpstrFile,
+                     IBaseFilter **ppf,
+                     IFileSinkFilter **ppSink);
 
     HRESULT (STDMETHODCALLTYPE *FindInterface)(
-        ICaptureGraphBuilder2 *This,
-        const GUID *pCategory,
-        const GUID *pType,
-        IBaseFilter *pf,
-        REFIID riid,
-        void **ppint);
+                     ICaptureGraphBuilder2 *This,
+                     const GUID *pCategory,
+                     const GUID *pType,
+                     IBaseFilter *pf,
+                     REFIID riid,
+                     void **ppint);
 
     HRESULT (STDMETHODCALLTYPE *RenderStream)(
-        ICaptureGraphBuilder2 *This,
-        const GUID *pCategory,
-        const GUID *pType,
-        IUnknown *pSource,
-        IBaseFilter *pfCompressor,
-        IBaseFilter *pfRenderer);
+                     ICaptureGraphBuilder2 *This,
+                     const GUID *pCategory,
+                     const GUID *pType,
+                     IUnknown *pSource,
+                     IBaseFilter *pfCompressor,
+                     IBaseFilter *pfRenderer);
 
     HRESULT (STDMETHODCALLTYPE *ControlStream)(
-        ICaptureGraphBuilder2 *This,
-        const GUID *pCategory,
-        const GUID *pType,
-        IBaseFilter *pFilter,
-        REFERENCE_TIME *pstart,
-        REFERENCE_TIME *pstop,
-        WORD wStartCookie,
-        WORD wStopCookie);
+                     ICaptureGraphBuilder2 *This,
+                     const GUID *pCategory,
+                     const GUID *pType,
+                     IBaseFilter *pFilter,
+                     REFERENCE_TIME *pstart,
+                     REFERENCE_TIME *pstop,
+                     WORD wStartCookie,
+                     WORD wStopCookie);
 
     HRESULT (STDMETHODCALLTYPE *AllocCapFile)(
-        ICaptureGraphBuilder2 *This,
-        LPCOLESTR lpstr,
-        DWORDLONG dwlSize);
+                     ICaptureGraphBuilder2 *This,
+                     LPCOLESTR lpstr,
+                     DWORDLONG dwlSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyCaptureFile)(
-        ICaptureGraphBuilder2 *This,
-        LPOLESTR lpwstrOld,
-        LPOLESTR lpwstrNew,
-        int fAllowEscAbort,
-        IAMCopyCaptureFileProgress *pCallback);
+                     ICaptureGraphBuilder2 *This,
+                     LPOLESTR lpwstrOld,
+                     LPOLESTR lpwstrNew,
+                     int fAllowEscAbort,
+                     IAMCopyCaptureFileProgress *pCallback);
 
     HRESULT (STDMETHODCALLTYPE *FindPin)(
-        ICaptureGraphBuilder2 *This,
-        IUnknown *pSource,
-        PIN_DIRECTION pindir,
-        const GUID *pCategory,
-        const GUID *pType,
-        WINBOOL fUnconnected,
-        int num,
-        IPin **ppPin);
+                     ICaptureGraphBuilder2 *This,
+                     IUnknown *pSource,
+                     PIN_DIRECTION pindir,
+                     const GUID *pCategory,
+                     const GUID *pType,
+                     WINBOOL fUnconnected,
+                     int num,
+                     IPin **ppPin);
 
     END_INTERFACE
 } ICaptureGraphBuilder2Vtbl;
@@ -6503,16 +6503,16 @@ MIDL_INTERFACE("5acd6aa0-f482-11ce-8b67-00aa00a3f1a6")
 IConfigAviMux : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetMasterStream(
-        LONG iStream) = 0;
+                     LONG iStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMasterStream(
-        LONG *pStream) = 0;
+                     LONG *pStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputCompatibilityIndex(
-        WINBOOL fOldIndex) = 0;
+                     WINBOOL fOldIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputCompatibilityIndex(
-        WINBOOL *pfOldIndex) = 0;
+                     WINBOOL *pfOldIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6524,32 +6524,32 @@ typedef struct IConfigAviMuxVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IConfigAviMux *This,
-        REFIID riid,
-        void **ppvObject);
+                     IConfigAviMux *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IConfigAviMux *This);
+                     IConfigAviMux *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IConfigAviMux *This);
+                     IConfigAviMux *This);
 
     /*** IConfigAviMux methods ***/
     HRESULT (STDMETHODCALLTYPE *SetMasterStream)(
-        IConfigAviMux *This,
-        LONG iStream);
+                     IConfigAviMux *This,
+                     LONG iStream);
 
     HRESULT (STDMETHODCALLTYPE *GetMasterStream)(
-        IConfigAviMux *This,
-        LONG *pStream);
+                     IConfigAviMux *This,
+                     LONG *pStream);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputCompatibilityIndex)(
-        IConfigAviMux *This,
-        WINBOOL fOldIndex);
+                     IConfigAviMux *This,
+                     WINBOOL fOldIndex);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputCompatibilityIndex)(
-        IConfigAviMux *This,
-        WINBOOL *pfOldIndex);
+                     IConfigAviMux *This,
+                     WINBOOL *pfOldIndex);
 
     END_INTERFACE
 } IConfigAviMuxVtbl;
@@ -6619,18 +6619,18 @@ MIDL_INTERFACE("bee3d220-157b-11d0-bd23-00a0c911ce86")
 IConfigInterleaving : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE put_Mode(
-        InterleavingMode mode) = 0;
+                     InterleavingMode mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Mode(
-        InterleavingMode *pMode) = 0;
+                     InterleavingMode *pMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Interleaving(
-        const REFERENCE_TIME *prtInterleave,
-        const REFERENCE_TIME *prtPreroll) = 0;
+                     const REFERENCE_TIME *prtInterleave,
+                     const REFERENCE_TIME *prtPreroll) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Interleaving(
-        REFERENCE_TIME *prtInterleave,
-        REFERENCE_TIME *prtPreroll) = 0;
+                     REFERENCE_TIME *prtInterleave,
+                     REFERENCE_TIME *prtPreroll) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6642,34 +6642,34 @@ typedef struct IConfigInterleavingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IConfigInterleaving *This,
-        REFIID riid,
-        void **ppvObject);
+                     IConfigInterleaving *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IConfigInterleaving *This);
+                     IConfigInterleaving *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IConfigInterleaving *This);
+                     IConfigInterleaving *This);
 
     /*** IConfigInterleaving methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Mode)(
-        IConfigInterleaving *This,
-        InterleavingMode mode);
+                     IConfigInterleaving *This,
+                     InterleavingMode mode);
 
     HRESULT (STDMETHODCALLTYPE *get_Mode)(
-        IConfigInterleaving *This,
-        InterleavingMode *pMode);
+                     IConfigInterleaving *This,
+                     InterleavingMode *pMode);
 
     HRESULT (STDMETHODCALLTYPE *put_Interleaving)(
-        IConfigInterleaving *This,
-        const REFERENCE_TIME *prtInterleave,
-        const REFERENCE_TIME *prtPreroll);
+                     IConfigInterleaving *This,
+                     const REFERENCE_TIME *prtInterleave,
+                     const REFERENCE_TIME *prtPreroll);
 
     HRESULT (STDMETHODCALLTYPE *get_Interleaving)(
-        IConfigInterleaving *This,
-        REFERENCE_TIME *prtInterleave,
-        REFERENCE_TIME *prtPreroll);
+                     IConfigInterleaving *This,
+                     REFERENCE_TIME *prtInterleave,
+                     REFERENCE_TIME *prtPreroll);
 
     END_INTERFACE
 } IConfigInterleavingVtbl;
@@ -6733,10 +6733,10 @@ MIDL_INTERFACE("9fd52741-176d-4b36-8f51-ca8f933223be")
 IAMClockSlave : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetErrorTolerance(
-        DWORD dwTolerance) = 0;
+                     DWORD dwTolerance) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetErrorTolerance(
-        DWORD *pdwTolerance) = 0;
+                     DWORD *pdwTolerance) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6748,24 +6748,24 @@ typedef struct IAMClockSlaveVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMClockSlave *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMClockSlave *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMClockSlave *This);
+                     IAMClockSlave *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMClockSlave *This);
+                     IAMClockSlave *This);
 
     /*** IAMClockSlave methods ***/
     HRESULT (STDMETHODCALLTYPE *SetErrorTolerance)(
-        IAMClockSlave *This,
-        DWORD dwTolerance);
+                     IAMClockSlave *This,
+                     DWORD dwTolerance);
 
     HRESULT (STDMETHODCALLTYPE *GetErrorTolerance)(
-        IAMClockSlave *This,
-        DWORD *pdwTolerance);
+                     IAMClockSlave *This,
+                     DWORD *pdwTolerance);
 
     END_INTERFACE
 } IAMClockSlaveVtbl;
@@ -6846,19 +6846,19 @@ MIDL_INTERFACE("6feded3e-0ff1-4901-a2f1-43f7012c8515")
 IAMCertifiedOutputProtection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE KeyExchange(
-        GUID *pRandom,
-        BYTE **VarLenCertGH,
-        DWORD *pdwLengthCertGH) = 0;
+                     GUID *pRandom,
+                     BYTE **VarLenCertGH,
+                     DWORD *pdwLengthCertGH) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionSequenceStart(
-        AMCOPPSignature *pSig) = 0;
+                     AMCOPPSignature *pSig) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProtectionCommand(
-        const AMCOPPCommand *cmd) = 0;
+                     const AMCOPPCommand *cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProtectionStatus(
-        const AMCOPPStatusInput *pStatusInput,
-        AMCOPPStatusOutput *pStatusOutput) = 0;
+                     const AMCOPPStatusInput *pStatusInput,
+                     AMCOPPStatusOutput *pStatusOutput) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6870,35 +6870,35 @@ typedef struct IAMCertifiedOutputProtectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMCertifiedOutputProtection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMCertifiedOutputProtection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMCertifiedOutputProtection *This);
+                     IAMCertifiedOutputProtection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMCertifiedOutputProtection *This);
+                     IAMCertifiedOutputProtection *This);
 
     /*** IAMCertifiedOutputProtection methods ***/
     HRESULT (STDMETHODCALLTYPE *KeyExchange)(
-        IAMCertifiedOutputProtection *This,
-        GUID *pRandom,
-        BYTE **VarLenCertGH,
-        DWORD *pdwLengthCertGH);
+                     IAMCertifiedOutputProtection *This,
+                     GUID *pRandom,
+                     BYTE **VarLenCertGH,
+                     DWORD *pdwLengthCertGH);
 
     HRESULT (STDMETHODCALLTYPE *SessionSequenceStart)(
-        IAMCertifiedOutputProtection *This,
-        AMCOPPSignature *pSig);
+                     IAMCertifiedOutputProtection *This,
+                     AMCOPPSignature *pSig);
 
     HRESULT (STDMETHODCALLTYPE *ProtectionCommand)(
-        IAMCertifiedOutputProtection *This,
-        const AMCOPPCommand *cmd);
+                     IAMCertifiedOutputProtection *This,
+                     const AMCOPPCommand *cmd);
 
     HRESULT (STDMETHODCALLTYPE *ProtectionStatus)(
-        IAMCertifiedOutputProtection *This,
-        const AMCOPPStatusInput *pStatusInput,
-        AMCOPPStatusOutput *pStatusOutput);
+                     IAMCertifiedOutputProtection *This,
+                     const AMCOPPStatusInput *pStatusInput,
+                     AMCOPPStatusOutput *pStatusOutput);
 
     END_INTERFACE
 } IAMCertifiedOutputProtectionVtbl;
@@ -6965,19 +6965,19 @@ MIDL_INTERFACE("36b73882-c2c8-11cf-8b46-00805f6cef60")
 IFilterGraph2 : public IGraphBuilder
 {
     virtual HRESULT STDMETHODCALLTYPE AddSourceFilterForMoniker(
-        IMoniker *pMoniker,
-        IBindCtx *pCtx,
-        LPCWSTR lpcwstrFilterName,
-        IBaseFilter **ppFilter) = 0;
+                     IMoniker *pMoniker,
+                     IBindCtx *pCtx,
+                     LPCWSTR lpcwstrFilterName,
+                     IBaseFilter **ppFilter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReconnectEx(
-        IPin *ppin,
-        const AM_MEDIA_TYPE *pmt) = 0;
+                     IPin *ppin,
+                     const AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenderEx(
-        IPin *pPinOut,
-        DWORD dwFlags,
-        DWORD *pvContext) = 0;
+                     IPin *pPinOut,
+                     DWORD dwFlags,
+                     DWORD *pvContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6989,101 +6989,101 @@ typedef struct IFilterGraph2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFilterGraph2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFilterGraph2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFilterGraph2 *This);
+                     IFilterGraph2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFilterGraph2 *This);
+                     IFilterGraph2 *This);
 
     /*** IFilterGraph methods ***/
     HRESULT (STDMETHODCALLTYPE *AddFilter)(
-        IFilterGraph2 *This,
-        IBaseFilter *pFilter,
-        LPCWSTR pName);
+                     IFilterGraph2 *This,
+                     IBaseFilter *pFilter,
+                     LPCWSTR pName);
 
     HRESULT (STDMETHODCALLTYPE *RemoveFilter)(
-        IFilterGraph2 *This,
-        IBaseFilter *pFilter);
+                     IFilterGraph2 *This,
+                     IBaseFilter *pFilter);
 
     HRESULT (STDMETHODCALLTYPE *EnumFilters)(
-        IFilterGraph2 *This,
-        IEnumFilters **ppEnum);
+                     IFilterGraph2 *This,
+                     IEnumFilters **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *FindFilterByName)(
-        IFilterGraph2 *This,
-        LPCWSTR pName,
-        IBaseFilter **ppFilter);
+                     IFilterGraph2 *This,
+                     LPCWSTR pName,
+                     IBaseFilter **ppFilter);
 
     HRESULT (STDMETHODCALLTYPE *ConnectDirect)(
-        IFilterGraph2 *This,
-        IPin *ppinOut,
-        IPin *ppinIn,
-        const AM_MEDIA_TYPE *pmt);
+                     IFilterGraph2 *This,
+                     IPin *ppinOut,
+                     IPin *ppinIn,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *Reconnect)(
-        IFilterGraph2 *This,
-        IPin *ppin);
+                     IFilterGraph2 *This,
+                     IPin *ppin);
 
     HRESULT (STDMETHODCALLTYPE *Disconnect)(
-        IFilterGraph2 *This,
-        IPin *ppin);
+                     IFilterGraph2 *This,
+                     IPin *ppin);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultSyncSource)(
-        IFilterGraph2 *This);
+                     IFilterGraph2 *This);
 
     /*** IGraphBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        IFilterGraph2 *This,
-        IPin *ppinOut,
-        IPin *ppinIn);
+                     IFilterGraph2 *This,
+                     IPin *ppinOut,
+                     IPin *ppinIn);
 
     HRESULT (STDMETHODCALLTYPE *Render)(
-        IFilterGraph2 *This,
-        IPin *ppinOut);
+                     IFilterGraph2 *This,
+                     IPin *ppinOut);
 
     HRESULT (STDMETHODCALLTYPE *RenderFile)(
-        IFilterGraph2 *This,
-        LPCWSTR lpcwstrFile,
-        LPCWSTR lpcwstrPlayList);
+                     IFilterGraph2 *This,
+                     LPCWSTR lpcwstrFile,
+                     LPCWSTR lpcwstrPlayList);
 
     HRESULT (STDMETHODCALLTYPE *AddSourceFilter)(
-        IFilterGraph2 *This,
-        LPCWSTR lpcwstrFileName,
-        LPCWSTR lpcwstrFilterName,
-        IBaseFilter **ppFilter);
+                     IFilterGraph2 *This,
+                     LPCWSTR lpcwstrFileName,
+                     LPCWSTR lpcwstrFilterName,
+                     IBaseFilter **ppFilter);
 
     HRESULT (STDMETHODCALLTYPE *SetLogFile)(
-        IFilterGraph2 *This,
-        DWORD_PTR hFile);
+                     IFilterGraph2 *This,
+                     DWORD_PTR hFile);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IFilterGraph2 *This);
+                     IFilterGraph2 *This);
 
     HRESULT (STDMETHODCALLTYPE *ShouldOperationContinue)(
-        IFilterGraph2 *This);
+                     IFilterGraph2 *This);
 
     /*** IFilterGraph2 methods ***/
     HRESULT (STDMETHODCALLTYPE *AddSourceFilterForMoniker)(
-        IFilterGraph2 *This,
-        IMoniker *pMoniker,
-        IBindCtx *pCtx,
-        LPCWSTR lpcwstrFilterName,
-        IBaseFilter **ppFilter);
+                     IFilterGraph2 *This,
+                     IMoniker *pMoniker,
+                     IBindCtx *pCtx,
+                     LPCWSTR lpcwstrFilterName,
+                     IBaseFilter **ppFilter);
 
     HRESULT (STDMETHODCALLTYPE *ReconnectEx)(
-        IFilterGraph2 *This,
-        IPin *ppin,
-        const AM_MEDIA_TYPE *pmt);
+                     IFilterGraph2 *This,
+                     IPin *ppin,
+                     const AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *RenderEx)(
-        IFilterGraph2 *This,
-        IPin *pPinOut,
-        DWORD dwFlags,
-        DWORD *pvContext);
+                     IFilterGraph2 *This,
+                     IPin *pPinOut,
+                     DWORD dwFlags,
+                     DWORD *pvContext);
 
     END_INTERFACE
 } IFilterGraph2Vtbl;
@@ -7207,12 +7207,12 @@ MIDL_INTERFACE("56a868bf-0ad4-11ce-b03a-0020af0ba770")
 IStreamBuilder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Render(
-        IPin *ppinOut,
-        IGraphBuilder *pGraph) = 0;
+                     IPin *ppinOut,
+                     IGraphBuilder *pGraph) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Backout(
-        IPin *ppinOut,
-        IGraphBuilder *pGraph) = 0;
+                     IPin *ppinOut,
+                     IGraphBuilder *pGraph) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7224,26 +7224,26 @@ typedef struct IStreamBuilderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IStreamBuilder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IStreamBuilder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IStreamBuilder *This);
+                     IStreamBuilder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IStreamBuilder *This);
+                     IStreamBuilder *This);
 
     /*** IStreamBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *Render)(
-        IStreamBuilder *This,
-        IPin *ppinOut,
-        IGraphBuilder *pGraph);
+                     IStreamBuilder *This,
+                     IPin *ppinOut,
+                     IGraphBuilder *pGraph);
 
     HRESULT (STDMETHODCALLTYPE *Backout)(
-        IStreamBuilder *This,
-        IPin *ppinOut,
-        IGraphBuilder *pGraph);
+                     IStreamBuilder *This,
+                     IPin *ppinOut,
+                     IGraphBuilder *pGraph);
 
     END_INTERFACE
 } IStreamBuilderVtbl;
@@ -7334,19 +7334,19 @@ MIDL_INTERFACE("c6e13340-30ac-11d0-a18c-00a0c9118956")
 IAMStreamConfig : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFormat(
-        AM_MEDIA_TYPE *pmt) = 0;
+                     AM_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFormat(
-        AM_MEDIA_TYPE **pmt) = 0;
+                     AM_MEDIA_TYPE **pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfCapabilities(
-        int *piCount,
-        int *piSize) = 0;
+                     int *piCount,
+                     int *piSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamCaps(
-        int iIndex,
-        AM_MEDIA_TYPE **pmt,
-        BYTE *pSCC) = 0;
+                     int iIndex,
+                     AM_MEDIA_TYPE **pmt,
+                     BYTE *pSCC) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7358,35 +7358,35 @@ typedef struct IAMStreamConfigVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMStreamConfig *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMStreamConfig *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMStreamConfig *This);
+                     IAMStreamConfig *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMStreamConfig *This);
+                     IAMStreamConfig *This);
 
     /*** IAMStreamConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFormat)(
-        IAMStreamConfig *This,
-        AM_MEDIA_TYPE *pmt);
+                     IAMStreamConfig *This,
+                     AM_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        IAMStreamConfig *This,
-        AM_MEDIA_TYPE **pmt);
+                     IAMStreamConfig *This,
+                     AM_MEDIA_TYPE **pmt);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfCapabilities)(
-        IAMStreamConfig *This,
-        int *piCount,
-        int *piSize);
+                     IAMStreamConfig *This,
+                     int *piCount,
+                     int *piSize);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamCaps)(
-        IAMStreamConfig *This,
-        int iIndex,
-        AM_MEDIA_TYPE **pmt,
-        BYTE *pSCC);
+                     IAMStreamConfig *This,
+                     int iIndex,
+                     AM_MEDIA_TYPE **pmt,
+                     BYTE *pSCC);
 
     END_INTERFACE
 } IAMStreamConfigVtbl;
@@ -7466,22 +7466,22 @@ MIDL_INTERFACE("c6e13360-30ac-11d0-a18c-00a0c9118956")
 IAMVideoProcAmp : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRange(
-        LONG Property,
-        LONG *pMin,
-        LONG *pMax,
-        LONG *pSteppingDelta,
-        LONG *pDefault,
-        LONG *pCapsFlags) = 0;
+                     LONG Property,
+                     LONG *pMin,
+                     LONG *pMax,
+                     LONG *pSteppingDelta,
+                     LONG *pDefault,
+                     LONG *pCapsFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Set(
-        LONG Property,
-        LONG lValue,
-        LONG Flags) = 0;
+                     LONG Property,
+                     LONG lValue,
+                     LONG Flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Get(
-        LONG Property,
-        LONG *lValue,
-        LONG *Flags) = 0;
+                     LONG Property,
+                     LONG *lValue,
+                     LONG *Flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7493,37 +7493,37 @@ typedef struct IAMVideoProcAmpVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMVideoProcAmp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMVideoProcAmp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMVideoProcAmp *This);
+                     IAMVideoProcAmp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMVideoProcAmp *This);
+                     IAMVideoProcAmp *This);
 
     /*** IAMVideoProcAmp methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRange)(
-        IAMVideoProcAmp *This,
-        LONG Property,
-        LONG *pMin,
-        LONG *pMax,
-        LONG *pSteppingDelta,
-        LONG *pDefault,
-        LONG *pCapsFlags);
+                     IAMVideoProcAmp *This,
+                     LONG Property,
+                     LONG *pMin,
+                     LONG *pMax,
+                     LONG *pSteppingDelta,
+                     LONG *pDefault,
+                     LONG *pCapsFlags);
 
     HRESULT (STDMETHODCALLTYPE *Set)(
-        IAMVideoProcAmp *This,
-        LONG Property,
-        LONG lValue,
-        LONG Flags);
+                     IAMVideoProcAmp *This,
+                     LONG Property,
+                     LONG lValue,
+                     LONG Flags);
 
     HRESULT (STDMETHODCALLTYPE *Get)(
-        IAMVideoProcAmp *This,
-        LONG Property,
-        LONG *lValue,
-        LONG *Flags);
+                     IAMVideoProcAmp *This,
+                     LONG Property,
+                     LONG *lValue,
+                     LONG *Flags);
 
     END_INTERFACE
 } IAMVideoProcAmpVtbl;
@@ -7583,36 +7583,36 @@ MIDL_INTERFACE("56a868aa-0ad4-11ce-b03a-0020af0ba770")
 IAsyncReader : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RequestAllocator(
-        IMemAllocator *pPreferred,
-        ALLOCATOR_PROPERTIES *pProps,
-        IMemAllocator **ppActual) = 0;
+                     IMemAllocator *pPreferred,
+                     ALLOCATOR_PROPERTIES *pProps,
+                     IMemAllocator **ppActual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Request(
-        IMediaSample *pSample,
-        DWORD_PTR dwUser) = 0;
+                     IMediaSample *pSample,
+                     DWORD_PTR dwUser) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitForNext(
-        DWORD dwTimeout,
-        IMediaSample **ppSample,
-        DWORD_PTR *pdwUser) = 0;
+                     DWORD dwTimeout,
+                     IMediaSample **ppSample,
+                     DWORD_PTR *pdwUser) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SyncReadAligned(
-        IMediaSample *pSample) = 0;
+                     IMediaSample *pSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SyncRead(
-        LONGLONG llPosition,
-        LONG lLength,
-        BYTE *pBuffer) = 0;
+                     LONGLONG llPosition,
+                     LONG lLength,
+                     BYTE *pBuffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Length(
-        LONGLONG *pTotal,
-        LONGLONG *pAvailable) = 0;
+                     LONGLONG *pTotal,
+                     LONGLONG *pAvailable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginFlush(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndFlush(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7624,54 +7624,54 @@ typedef struct IAsyncReaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAsyncReader *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAsyncReader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAsyncReader *This);
+                     IAsyncReader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAsyncReader *This);
+                     IAsyncReader *This);
 
     /*** IAsyncReader methods ***/
     HRESULT (STDMETHODCALLTYPE *RequestAllocator)(
-        IAsyncReader *This,
-        IMemAllocator *pPreferred,
-        ALLOCATOR_PROPERTIES *pProps,
-        IMemAllocator **ppActual);
+                     IAsyncReader *This,
+                     IMemAllocator *pPreferred,
+                     ALLOCATOR_PROPERTIES *pProps,
+                     IMemAllocator **ppActual);
 
     HRESULT (STDMETHODCALLTYPE *Request)(
-        IAsyncReader *This,
-        IMediaSample *pSample,
-        DWORD_PTR dwUser);
+                     IAsyncReader *This,
+                     IMediaSample *pSample,
+                     DWORD_PTR dwUser);
 
     HRESULT (STDMETHODCALLTYPE *WaitForNext)(
-        IAsyncReader *This,
-        DWORD dwTimeout,
-        IMediaSample **ppSample,
-        DWORD_PTR *pdwUser);
+                     IAsyncReader *This,
+                     DWORD dwTimeout,
+                     IMediaSample **ppSample,
+                     DWORD_PTR *pdwUser);
 
     HRESULT (STDMETHODCALLTYPE *SyncReadAligned)(
-        IAsyncReader *This,
-        IMediaSample *pSample);
+                     IAsyncReader *This,
+                     IMediaSample *pSample);
 
     HRESULT (STDMETHODCALLTYPE *SyncRead)(
-        IAsyncReader *This,
-        LONGLONG llPosition,
-        LONG lLength,
-        BYTE *pBuffer);
+                     IAsyncReader *This,
+                     LONGLONG llPosition,
+                     LONG lLength,
+                     BYTE *pBuffer);
 
     HRESULT (STDMETHODCALLTYPE *Length)(
-        IAsyncReader *This,
-        LONGLONG *pTotal,
-        LONGLONG *pAvailable);
+                     IAsyncReader *This,
+                     LONGLONG *pTotal,
+                     LONGLONG *pAvailable);
 
     HRESULT (STDMETHODCALLTYPE *BeginFlush)(
-        IAsyncReader *This);
+                     IAsyncReader *This);
 
     HRESULT (STDMETHODCALLTYPE *EndFlush)(
-        IAsyncReader *This);
+                     IAsyncReader *This);
 
     END_INTERFACE
 } IAsyncReaderVtbl;
@@ -7751,7 +7751,7 @@ MIDL_INTERFACE("56a868ab-0ad4-11ce-b03a-0020af0ba770")
 IGraphVersion : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryVersion(
-        LONG *pVersion) = 0;
+                     LONG *pVersion) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7763,20 +7763,20 @@ typedef struct IGraphVersionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IGraphVersion *This,
-        REFIID riid,
-        void **ppvObject);
+                     IGraphVersion *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IGraphVersion *This);
+                     IGraphVersion *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IGraphVersion *This);
+                     IGraphVersion *This);
 
     /*** IGraphVersion methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryVersion)(
-        IGraphVersion *This,
-        LONG *pVersion);
+                     IGraphVersion *This,
+                     LONG *pVersion);
 
     END_INTERFACE
 } IGraphVersionVtbl;
@@ -7828,10 +7828,10 @@ MIDL_INTERFACE("56a868ad-0ad4-11ce-b03a-0020af0ba770")
 IResourceConsumer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AcquireResource(
-        LONG idResource) = 0;
+                     LONG idResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseResource(
-        LONG idResource) = 0;
+                     LONG idResource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7843,24 +7843,24 @@ typedef struct IResourceConsumerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IResourceConsumer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IResourceConsumer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IResourceConsumer *This);
+                     IResourceConsumer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IResourceConsumer *This);
+                     IResourceConsumer *This);
 
     /*** IResourceConsumer methods ***/
     HRESULT (STDMETHODCALLTYPE *AcquireResource)(
-        IResourceConsumer *This,
-        LONG idResource);
+                     IResourceConsumer *This,
+                     LONG idResource);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseResource)(
-        IResourceConsumer *This,
-        LONG idResource);
+                     IResourceConsumer *This,
+                     LONG idResource);
 
     END_INTERFACE
 } IResourceConsumerVtbl;
@@ -7916,40 +7916,40 @@ MIDL_INTERFACE("56a868ac-0ad4-11ce-b03a-0020af0ba770")
 IResourceManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Register(
-        LPCWSTR pName,
-        LONG cResource,
-        LONG *plToken) = 0;
+                     LPCWSTR pName,
+                     LONG cResource,
+                     LONG *plToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterGroup(
-        LPCWSTR pName,
-        LONG cResource,
-        LONG *palTokens,
-        LONG *plToken) = 0;
+                     LPCWSTR pName,
+                     LONG cResource,
+                     LONG *palTokens,
+                     LONG *plToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestResource(
-        LONG idResource,
-        IUnknown *pFocusObject,
-        IResourceConsumer *pConsumer) = 0;
+                     LONG idResource,
+                     IUnknown *pFocusObject,
+                     IResourceConsumer *pConsumer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyAcquire(
-        LONG idResource,
-        IResourceConsumer *pConsumer,
-        HRESULT hr) = 0;
+                     LONG idResource,
+                     IResourceConsumer *pConsumer,
+                     HRESULT hr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyRelease(
-        LONG idResource,
-        IResourceConsumer *pConsumer,
-        WINBOOL bStillWant) = 0;
+                     LONG idResource,
+                     IResourceConsumer *pConsumer,
+                     WINBOOL bStillWant) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CancelRequest(
-        LONG idResource,
-        IResourceConsumer *pConsumer) = 0;
+                     LONG idResource,
+                     IResourceConsumer *pConsumer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFocus(
-        IUnknown *pFocusObject) = 0;
+                     IUnknown *pFocusObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseFocus(
-        IUnknown *pFocusObject) = 0;
+                     IUnknown *pFocusObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7961,60 +7961,60 @@ typedef struct IResourceManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IResourceManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IResourceManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IResourceManager *This);
+                     IResourceManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IResourceManager *This);
+                     IResourceManager *This);
 
     /*** IResourceManager methods ***/
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IResourceManager *This,
-        LPCWSTR pName,
-        LONG cResource,
-        LONG *plToken);
+                     IResourceManager *This,
+                     LPCWSTR pName,
+                     LONG cResource,
+                     LONG *plToken);
 
     HRESULT (STDMETHODCALLTYPE *RegisterGroup)(
-        IResourceManager *This,
-        LPCWSTR pName,
-        LONG cResource,
-        LONG *palTokens,
-        LONG *plToken);
+                     IResourceManager *This,
+                     LPCWSTR pName,
+                     LONG cResource,
+                     LONG *palTokens,
+                     LONG *plToken);
 
     HRESULT (STDMETHODCALLTYPE *RequestResource)(
-        IResourceManager *This,
-        LONG idResource,
-        IUnknown *pFocusObject,
-        IResourceConsumer *pConsumer);
+                     IResourceManager *This,
+                     LONG idResource,
+                     IUnknown *pFocusObject,
+                     IResourceConsumer *pConsumer);
 
     HRESULT (STDMETHODCALLTYPE *NotifyAcquire)(
-        IResourceManager *This,
-        LONG idResource,
-        IResourceConsumer *pConsumer,
-        HRESULT hr);
+                     IResourceManager *This,
+                     LONG idResource,
+                     IResourceConsumer *pConsumer,
+                     HRESULT hr);
 
     HRESULT (STDMETHODCALLTYPE *NotifyRelease)(
-        IResourceManager *This,
-        LONG idResource,
-        IResourceConsumer *pConsumer,
-        WINBOOL bStillWant);
+                     IResourceManager *This,
+                     LONG idResource,
+                     IResourceConsumer *pConsumer,
+                     WINBOOL bStillWant);
 
     HRESULT (STDMETHODCALLTYPE *CancelRequest)(
-        IResourceManager *This,
-        LONG idResource,
-        IResourceConsumer *pConsumer);
+                     IResourceManager *This,
+                     LONG idResource,
+                     IResourceConsumer *pConsumer);
 
     HRESULT (STDMETHODCALLTYPE *SetFocus)(
-        IResourceManager *This,
-        IUnknown *pFocusObject);
+                     IResourceManager *This,
+                     IUnknown *pFocusObject);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseFocus)(
-        IResourceManager *This,
-        IUnknown *pFocusObject);
+                     IResourceManager *This,
+                     IUnknown *pFocusObject);
 
     END_INTERFACE
 } IResourceManagerVtbl;
@@ -8107,16 +8107,16 @@ MIDL_INTERFACE("36b73881-c2c8-11cf-8b46-00805f6cef60")
 IAMStreamControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartAt(
-        const REFERENCE_TIME *ptStart,
-        DWORD dwCookie) = 0;
+                     const REFERENCE_TIME *ptStart,
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopAt(
-        const REFERENCE_TIME *ptStop,
-        WINBOOL bSendExtra,
-        DWORD dwCookie) = 0;
+                     const REFERENCE_TIME *ptStop,
+                     WINBOOL bSendExtra,
+                     DWORD dwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInfo(
-        AM_STREAM_INFO *pInfo) = 0;
+                     AM_STREAM_INFO *pInfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8128,31 +8128,31 @@ typedef struct IAMStreamControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMStreamControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMStreamControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMStreamControl *This);
+                     IAMStreamControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMStreamControl *This);
+                     IAMStreamControl *This);
 
     /*** IAMStreamControl methods ***/
     HRESULT (STDMETHODCALLTYPE *StartAt)(
-        IAMStreamControl *This,
-        const REFERENCE_TIME *ptStart,
-        DWORD dwCookie);
+                     IAMStreamControl *This,
+                     const REFERENCE_TIME *ptStart,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *StopAt)(
-        IAMStreamControl *This,
-        const REFERENCE_TIME *ptStop,
-        WINBOOL bSendExtra,
-        DWORD dwCookie);
+                     IAMStreamControl *This,
+                     const REFERENCE_TIME *ptStop,
+                     WINBOOL bSendExtra,
+                     DWORD dwCookie);
 
     HRESULT (STDMETHODCALLTYPE *GetInfo)(
-        IAMStreamControl *This,
-        AM_STREAM_INFO *pInfo);
+                     IAMStreamControl *This,
+                     AM_STREAM_INFO *pInfo);
 
     END_INTERFACE
 } IAMStreamControlVtbl;
@@ -8216,26 +8216,26 @@ MIDL_INTERFACE("31efac30-515c-11d0-a9aa-00aa0061be93")
 IKsPropertySet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Set(
-        REFGUID guidPropSet,
-        DWORD dwPropID,
-        LPVOID pInstanceData,
-        DWORD cbInstanceData,
-        LPVOID pPropData,
-        DWORD cbPropData) = 0;
+                     REFGUID guidPropSet,
+                     DWORD dwPropID,
+                     LPVOID pInstanceData,
+                     DWORD cbInstanceData,
+                     LPVOID pPropData,
+                     DWORD cbPropData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Get(
-        REFGUID guidPropSet,
-        DWORD dwPropID,
-        LPVOID pInstanceData,
-        DWORD cbInstanceData,
-        LPVOID pPropData,
-        DWORD cbPropData,
-        DWORD *pcbReturned) = 0;
+                     REFGUID guidPropSet,
+                     DWORD dwPropID,
+                     LPVOID pInstanceData,
+                     DWORD cbInstanceData,
+                     LPVOID pPropData,
+                     DWORD cbPropData,
+                     DWORD *pcbReturned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QuerySupported(
-        REFGUID guidPropSet,
-        DWORD dwPropID,
-        DWORD *pTypeSupport) = 0;
+                     REFGUID guidPropSet,
+                     DWORD dwPropID,
+                     DWORD *pTypeSupport) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8247,41 +8247,41 @@ typedef struct IKsPropertySetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKsPropertySet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IKsPropertySet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKsPropertySet *This);
+                     IKsPropertySet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKsPropertySet *This);
+                     IKsPropertySet *This);
 
     /*** IKsPropertySet methods ***/
     HRESULT (STDMETHODCALLTYPE *Set)(
-        IKsPropertySet *This,
-        REFGUID guidPropSet,
-        DWORD dwPropID,
-        LPVOID pInstanceData,
-        DWORD cbInstanceData,
-        LPVOID pPropData,
-        DWORD cbPropData);
+                     IKsPropertySet *This,
+                     REFGUID guidPropSet,
+                     DWORD dwPropID,
+                     LPVOID pInstanceData,
+                     DWORD cbInstanceData,
+                     LPVOID pPropData,
+                     DWORD cbPropData);
 
     HRESULT (STDMETHODCALLTYPE *Get)(
-        IKsPropertySet *This,
-        REFGUID guidPropSet,
-        DWORD dwPropID,
-        LPVOID pInstanceData,
-        DWORD cbInstanceData,
-        LPVOID pPropData,
-        DWORD cbPropData,
-        DWORD *pcbReturned);
+                     IKsPropertySet *This,
+                     REFGUID guidPropSet,
+                     DWORD dwPropID,
+                     LPVOID pInstanceData,
+                     DWORD cbInstanceData,
+                     LPVOID pPropData,
+                     DWORD cbPropData,
+                     DWORD *pcbReturned);
 
     HRESULT (STDMETHODCALLTYPE *QuerySupported)(
-        IKsPropertySet *This,
-        REFGUID guidPropSet,
-        DWORD dwPropID,
-        DWORD *pTypeSupport);
+                     IKsPropertySet *This,
+                     REFGUID guidPropSet,
+                     DWORD dwPropID,
+                     DWORD *pTypeSupport);
 
     END_INTERFACE
 } IKsPropertySetVtbl;
@@ -8343,9 +8343,9 @@ MIDL_INTERFACE("6025a880-c0d5-11d0-bd4e-00a0c911ce86")
 IMediaPropertyBag : public IPropertyBag
 {
     virtual HRESULT STDMETHODCALLTYPE EnumProperty(
-        ULONG iProperty,
-        VARIANT *pvarPropertyName,
-        VARIANT *pvarPropertyValue) = 0;
+                     ULONG iProperty,
+                     VARIANT *pvarPropertyName,
+                     VARIANT *pvarPropertyValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8357,34 +8357,34 @@ typedef struct IMediaPropertyBagVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaPropertyBag *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaPropertyBag *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaPropertyBag *This);
+                     IMediaPropertyBag *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaPropertyBag *This);
+                     IMediaPropertyBag *This);
 
     /*** IPropertyBag methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IMediaPropertyBag *This,
-        LPCOLESTR pszPropName,
-        VARIANT *pVar,
-        IErrorLog *pErrorLog);
+                     IMediaPropertyBag *This,
+                     LPCOLESTR pszPropName,
+                     VARIANT *pVar,
+                     IErrorLog *pErrorLog);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IMediaPropertyBag *This,
-        LPCOLESTR pszPropName,
-        VARIANT *pVar);
+                     IMediaPropertyBag *This,
+                     LPCOLESTR pszPropName,
+                     VARIANT *pVar);
 
     /*** IMediaPropertyBag methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumProperty)(
-        IMediaPropertyBag *This,
-        ULONG iProperty,
-        VARIANT *pvarPropertyName,
-        VARIANT *pvarPropertyValue);
+                     IMediaPropertyBag *This,
+                     ULONG iProperty,
+                     VARIANT *pvarPropertyName,
+                     VARIANT *pvarPropertyValue);
 
     END_INTERFACE
 } IMediaPropertyBagVtbl;
@@ -8447,16 +8447,16 @@ MIDL_INTERFACE("5738e040-b67f-11d0-bd4d-00a0c911ce86")
 IPersistMediaPropertyBag : public IPersist
 {
     virtual HRESULT STDMETHODCALLTYPE InitNew(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        IMediaPropertyBag *pPropBag,
-        IErrorLog *pErrorLog) = 0;
+                     IMediaPropertyBag *pPropBag,
+                     IErrorLog *pErrorLog) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        IMediaPropertyBag *pPropBag,
-        WINBOOL fClearDirty,
-        WINBOOL fSaveAllProperties) = 0;
+                     IMediaPropertyBag *pPropBag,
+                     WINBOOL fClearDirty,
+                     WINBOOL fSaveAllProperties) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8468,35 +8468,35 @@ typedef struct IPersistMediaPropertyBagVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPersistMediaPropertyBag *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPersistMediaPropertyBag *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPersistMediaPropertyBag *This);
+                     IPersistMediaPropertyBag *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPersistMediaPropertyBag *This);
+                     IPersistMediaPropertyBag *This);
 
     /*** IPersist methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClassID)(
-        IPersistMediaPropertyBag *This,
-        CLSID *pClassID);
+                     IPersistMediaPropertyBag *This,
+                     CLSID *pClassID);
 
     /*** IPersistMediaPropertyBag methods ***/
     HRESULT (STDMETHODCALLTYPE *InitNew)(
-        IPersistMediaPropertyBag *This);
+                     IPersistMediaPropertyBag *This);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IPersistMediaPropertyBag *This,
-        IMediaPropertyBag *pPropBag,
-        IErrorLog *pErrorLog);
+                     IPersistMediaPropertyBag *This,
+                     IMediaPropertyBag *pPropBag,
+                     IErrorLog *pErrorLog);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IPersistMediaPropertyBag *This,
-        IMediaPropertyBag *pPropBag,
-        WINBOOL fClearDirty,
-        WINBOOL fSaveAllProperties);
+                     IPersistMediaPropertyBag *This,
+                     IMediaPropertyBag *pPropBag,
+                     WINBOOL fClearDirty,
+                     WINBOOL fSaveAllProperties);
 
     END_INTERFACE
 } IPersistMediaPropertyBagVtbl;
@@ -8562,8 +8562,8 @@ MIDL_INTERFACE("36b73883-c2c8-11cf-8b46-00805f6cef60")
 ISeekingPassThru : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Init(
-        WINBOOL bSupportRendering,
-        IPin *pPin) = 0;
+                     WINBOOL bSupportRendering,
+                     IPin *pPin) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8575,21 +8575,21 @@ typedef struct ISeekingPassThruVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISeekingPassThru *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISeekingPassThru *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISeekingPassThru *This);
+                     ISeekingPassThru *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISeekingPassThru *This);
+                     ISeekingPassThru *This);
 
     /*** ISeekingPassThru methods ***/
     HRESULT (STDMETHODCALLTYPE *Init)(
-        ISeekingPassThru *This,
-        WINBOOL bSupportRendering,
-        IPin *pPin);
+                     ISeekingPassThru *This,
+                     WINBOOL bSupportRendering,
+                     IPin *pPin);
 
     END_INTERFACE
 } ISeekingPassThruVtbl;
@@ -8645,7 +8645,7 @@ MIDL_INTERFACE("2dd74950-a890-11d1-abe8-00a0c905f375")
 IAMFilterMiscFlags : public IUnknown
 {
     virtual ULONG STDMETHODCALLTYPE GetMiscFlags(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8657,19 +8657,19 @@ typedef struct IAMFilterMiscFlagsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMFilterMiscFlags *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMFilterMiscFlags *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMFilterMiscFlags *This);
+                     IAMFilterMiscFlags *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMFilterMiscFlags *This);
+                     IAMFilterMiscFlags *This);
 
     /*** IAMFilterMiscFlags methods ***/
     ULONG (STDMETHODCALLTYPE *GetMiscFlags)(
-        IAMFilterMiscFlags *This);
+                     IAMFilterMiscFlags *This);
 
     END_INTERFACE
 } IAMFilterMiscFlagsVtbl;
@@ -8721,10 +8721,10 @@ MIDL_INTERFACE("4995f511-9ddb-4f12-bd3b-f04611807b79")
 IAMGraphBuilderCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SelectedFilter(
-        IMoniker *pMon) = 0;
+                     IMoniker *pMon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatedFilter(
-        IBaseFilter *pFil) = 0;
+                     IBaseFilter *pFil) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8736,24 +8736,24 @@ typedef struct IAMGraphBuilderCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMGraphBuilderCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMGraphBuilderCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMGraphBuilderCallback *This);
+                     IAMGraphBuilderCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMGraphBuilderCallback *This);
+                     IAMGraphBuilderCallback *This);
 
     /*** IAMGraphBuilderCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *SelectedFilter)(
-        IAMGraphBuilderCallback *This,
-        IMoniker *pMon);
+                     IAMGraphBuilderCallback *This,
+                     IMoniker *pMon);
 
     HRESULT (STDMETHODCALLTYPE *CreatedFilter)(
-        IAMGraphBuilderCallback *This,
-        IBaseFilter *pFil);
+                     IAMGraphBuilderCallback *This,
+                     IBaseFilter *pFil);
 
     END_INTERFACE
 } IAMGraphBuilderCallbackVtbl;
@@ -8809,17 +8809,17 @@ MIDL_INTERFACE("d8d715a0-6e5e-11d0-b3f0-00aa003761c5")
 IAMVfwCaptureDialogs : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE HasDialog(
-        int dialog) = 0;
+                     int dialog) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowDialog(
-        int dialog,
-        HWND hwnd) = 0;
+                     int dialog,
+                     HWND hwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendDriverMessage(
-        int dialog,
-        int msg,
-        LONG data1,
-        LONG data2) = 0;
+                     int dialog,
+                     int msg,
+                     LONG data1,
+                     LONG data2) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8831,32 +8831,32 @@ typedef struct IAMVfwCaptureDialogsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMVfwCaptureDialogs *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMVfwCaptureDialogs *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMVfwCaptureDialogs *This);
+                     IAMVfwCaptureDialogs *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMVfwCaptureDialogs *This);
+                     IAMVfwCaptureDialogs *This);
 
     /*** IAMVfwCaptureDialogs methods ***/
     HRESULT (STDMETHODCALLTYPE *HasDialog)(
-        IAMVfwCaptureDialogs *This,
-        int dialog);
+                     IAMVfwCaptureDialogs *This,
+                     int dialog);
 
     HRESULT (STDMETHODCALLTYPE *ShowDialog)(
-        IAMVfwCaptureDialogs *This,
-        int dialog,
-        HWND hwnd);
+                     IAMVfwCaptureDialogs *This,
+                     int dialog,
+                     HWND hwnd);
 
     HRESULT (STDMETHODCALLTYPE *SendDriverMessage)(
-        IAMVfwCaptureDialogs *This,
-        int dialog,
-        int msg,
-        LONG data1,
-        LONG data2);
+                     IAMVfwCaptureDialogs *This,
+                     int dialog,
+                     int msg,
+                     LONG data1,
+                     LONG data2);
 
     END_INTERFACE
 } IAMVfwCaptureDialogsVtbl;
@@ -8917,10 +8917,10 @@ MIDL_INTERFACE("cf7b26fc-9a00-485b-8147-3e789d5e8f67")
 IAMAsyncReaderTimestampScaling : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetTimestampMode(
-        WINBOOL *pfRaw) = 0;
+                     WINBOOL *pfRaw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimestampMode(
-        WINBOOL fRaw) = 0;
+                     WINBOOL fRaw) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8932,24 +8932,24 @@ typedef struct IAMAsyncReaderTimestampScalingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMAsyncReaderTimestampScaling *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMAsyncReaderTimestampScaling *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMAsyncReaderTimestampScaling *This);
+                     IAMAsyncReaderTimestampScaling *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMAsyncReaderTimestampScaling *This);
+                     IAMAsyncReaderTimestampScaling *This);
 
     /*** IAMAsyncReaderTimestampScaling methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTimestampMode)(
-        IAMAsyncReaderTimestampScaling *This,
-        WINBOOL *pfRaw);
+                     IAMAsyncReaderTimestampScaling *This,
+                     WINBOOL *pfRaw);
 
     HRESULT (STDMETHODCALLTYPE *SetTimestampMode)(
-        IAMAsyncReaderTimestampScaling *This,
-        WINBOOL fRaw);
+                     IAMAsyncReaderTimestampScaling *This,
+                     WINBOOL fRaw);
 
     END_INTERFACE
 } IAMAsyncReaderTimestampScalingVtbl;
@@ -9005,31 +9005,31 @@ MIDL_INTERFACE("0e26a181-f40c-4635-8786-976284b52981")
 IAMPluginControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPreferredClsid(
-        REFGUID subType,
-        CLSID *clsid) = 0;
+                     REFGUID subType,
+                     CLSID *clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreferredClsidByIndex(
-        DWORD index,
-        GUID *subType,
-        CLSID *clsid) = 0;
+                     DWORD index,
+                     GUID *subType,
+                     CLSID *clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPreferredClsid(
-        REFGUID subType,
-        const CLSID *clsid) = 0;
+                     REFGUID subType,
+                     const CLSID *clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDisabled(
-        REFCLSID clsid) = 0;
+                     REFCLSID clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisabledByIndex(
-        DWORD index,
-        CLSID *clsid) = 0;
+                     DWORD index,
+                     CLSID *clsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDisabled(
-        REFCLSID clsid,
-        WINBOOL disabled) = 0;
+                     REFCLSID clsid,
+                     WINBOOL disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsLegacyDisabled(
-        LPCWSTR dllName) = 0;
+                     LPCWSTR dllName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9041,50 +9041,50 @@ typedef struct IAMPluginControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMPluginControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMPluginControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMPluginControl *This);
+                     IAMPluginControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMPluginControl *This);
+                     IAMPluginControl *This);
 
     /*** IAMPluginControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPreferredClsid)(
-        IAMPluginControl *This,
-        REFGUID subType,
-        CLSID *clsid);
+                     IAMPluginControl *This,
+                     REFGUID subType,
+                     CLSID *clsid);
 
     HRESULT (STDMETHODCALLTYPE *GetPreferredClsidByIndex)(
-        IAMPluginControl *This,
-        DWORD index,
-        GUID *subType,
-        CLSID *clsid);
+                     IAMPluginControl *This,
+                     DWORD index,
+                     GUID *subType,
+                     CLSID *clsid);
 
     HRESULT (STDMETHODCALLTYPE *SetPreferredClsid)(
-        IAMPluginControl *This,
-        REFGUID subType,
-        const CLSID *clsid);
+                     IAMPluginControl *This,
+                     REFGUID subType,
+                     const CLSID *clsid);
 
     HRESULT (STDMETHODCALLTYPE *IsDisabled)(
-        IAMPluginControl *This,
-        REFCLSID clsid);
+                     IAMPluginControl *This,
+                     REFCLSID clsid);
 
     HRESULT (STDMETHODCALLTYPE *GetDisabledByIndex)(
-        IAMPluginControl *This,
-        DWORD index,
-        CLSID *clsid);
+                     IAMPluginControl *This,
+                     DWORD index,
+                     CLSID *clsid);
 
     HRESULT (STDMETHODCALLTYPE *SetDisabled)(
-        IAMPluginControl *This,
-        REFCLSID clsid,
-        WINBOOL disabled);
+                     IAMPluginControl *This,
+                     REFCLSID clsid,
+                     WINBOOL disabled);
 
     HRESULT (STDMETHODCALLTYPE *IsLegacyDisabled)(
-        IAMPluginControl *This,
-        LPCWSTR dllName);
+                     IAMPluginControl *This,
+                     LPCWSTR dllName);
 
     END_INTERFACE
 } IAMPluginControlVtbl;
@@ -9586,13 +9586,13 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IReferenceClock2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IReferenceClock2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IReferenceClock2 *This);
-      ULONG (WINAPI *Release)(IReferenceClock2 *This);
-      HRESULT (WINAPI *GetTime)(IReferenceClock2 *This,REFERENCE_TIME *pTime);
-      HRESULT (WINAPI *AdviseTime)(IReferenceClock2 *This,REFERENCE_TIME baseTime,REFERENCE_TIME streamTime,HEVENT hEvent,DWORD_PTR *pdwAdviseCookie);
-      HRESULT (WINAPI *AdvisePeriodic)(IReferenceClock2 *This,REFERENCE_TIME startTime,REFERENCE_TIME periodTime,HSEMAPHORE hSemaphore,DWORD_PTR *pdwAdviseCookie);
-      HRESULT (WINAPI *Unadvise)(IReferenceClock2 *This,DWORD_PTR dwAdviseCookie);
+                   HRESULT (WINAPI *QueryInterface)(IReferenceClock2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IReferenceClock2 *This);
+                   ULONG (WINAPI *Release)(IReferenceClock2 *This);
+                   HRESULT (WINAPI *GetTime)(IReferenceClock2 *This,REFERENCE_TIME *pTime);
+                   HRESULT (WINAPI *AdviseTime)(IReferenceClock2 *This,REFERENCE_TIME baseTime,REFERENCE_TIME streamTime,HEVENT hEvent,DWORD_PTR *pdwAdviseCookie);
+                   HRESULT (WINAPI *AdvisePeriodic)(IReferenceClock2 *This,REFERENCE_TIME startTime,REFERENCE_TIME periodTime,HSEMAPHORE hSemaphore,DWORD_PTR *pdwAdviseCookie);
+                   HRESULT (WINAPI *Unadvise)(IReferenceClock2 *This,DWORD_PTR dwAdviseCookie);
     END_INTERFACE
   } IReferenceClock2Vtbl;
   struct IReferenceClock2 {
@@ -9627,14 +9627,14 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IDistributorNotifyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDistributorNotify *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDistributorNotify *This);
-      ULONG (WINAPI *Release)(IDistributorNotify *This);
-      HRESULT (WINAPI *Stop)(IDistributorNotify *This);
-      HRESULT (WINAPI *Pause)(IDistributorNotify *This);
-      HRESULT (WINAPI *Run)(IDistributorNotify *This,REFERENCE_TIME tStart);
-      HRESULT (WINAPI *SetSyncSource)(IDistributorNotify *This,IReferenceClock *pClock);
-      HRESULT (WINAPI *NotifyGraphChange)(IDistributorNotify *This);
+                   HRESULT (WINAPI *QueryInterface)(IDistributorNotify *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDistributorNotify *This);
+                   ULONG (WINAPI *Release)(IDistributorNotify *This);
+                   HRESULT (WINAPI *Stop)(IDistributorNotify *This);
+                   HRESULT (WINAPI *Pause)(IDistributorNotify *This);
+                   HRESULT (WINAPI *Run)(IDistributorNotify *This,REFERENCE_TIME tStart);
+                   HRESULT (WINAPI *SetSyncSource)(IDistributorNotify *This,IReferenceClock *pClock);
+                   HRESULT (WINAPI *NotifyGraphChange)(IDistributorNotify *This);
     END_INTERFACE
   } IDistributorNotifyVtbl;
   struct IDistributorNotify {
@@ -9691,20 +9691,20 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IAMVideoCompressionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMVideoCompression *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMVideoCompression *This);
-      ULONG (WINAPI *Release)(IAMVideoCompression *This);
-      HRESULT (WINAPI *put_KeyFrameRate)(IAMVideoCompression *This,LONG KeyFrameRate);
-      HRESULT (WINAPI *get_KeyFrameRate)(IAMVideoCompression *This,LONG *pKeyFrameRate);
-      HRESULT (WINAPI *put_PFramesPerKeyFrame)(IAMVideoCompression *This,LONG PFramesPerKeyFrame);
-      HRESULT (WINAPI *get_PFramesPerKeyFrame)(IAMVideoCompression *This,LONG *pPFramesPerKeyFrame);
-      HRESULT (WINAPI *put_Quality)(IAMVideoCompression *This,double Quality);
-      HRESULT (WINAPI *get_Quality)(IAMVideoCompression *This,double *pQuality);
-      HRESULT (WINAPI *put_WindowSize)(IAMVideoCompression *This,DWORDLONG WindowSize);
-      HRESULT (WINAPI *get_WindowSize)(IAMVideoCompression *This,DWORDLONG *pWindowSize);
-      HRESULT (WINAPI *GetInfo)(IAMVideoCompression *This,WCHAR *pszVersion,int *pcbVersion,LPWSTR pszDescription,int *pcbDescription,LONG *pDefaultKeyFrameRate,LONG *pDefaultPFramesPerKey,double *pDefaultQuality,LONG *pCapabilities);
-      HRESULT (WINAPI *OverrideKeyFrame)(IAMVideoCompression *This,LONG FrameNumber);
-      HRESULT (WINAPI *OverrideFrameSize)(IAMVideoCompression *This,LONG FrameNumber,LONG Size);
+                   HRESULT (WINAPI *QueryInterface)(IAMVideoCompression *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMVideoCompression *This);
+                   ULONG (WINAPI *Release)(IAMVideoCompression *This);
+                   HRESULT (WINAPI *put_KeyFrameRate)(IAMVideoCompression *This,LONG KeyFrameRate);
+                   HRESULT (WINAPI *get_KeyFrameRate)(IAMVideoCompression *This,LONG *pKeyFrameRate);
+                   HRESULT (WINAPI *put_PFramesPerKeyFrame)(IAMVideoCompression *This,LONG PFramesPerKeyFrame);
+                   HRESULT (WINAPI *get_PFramesPerKeyFrame)(IAMVideoCompression *This,LONG *pPFramesPerKeyFrame);
+                   HRESULT (WINAPI *put_Quality)(IAMVideoCompression *This,double Quality);
+                   HRESULT (WINAPI *get_Quality)(IAMVideoCompression *This,double *pQuality);
+                   HRESULT (WINAPI *put_WindowSize)(IAMVideoCompression *This,DWORDLONG WindowSize);
+                   HRESULT (WINAPI *get_WindowSize)(IAMVideoCompression *This,DWORDLONG *pWindowSize);
+                   HRESULT (WINAPI *GetInfo)(IAMVideoCompression *This,WCHAR *pszVersion,int *pcbVersion,LPWSTR pszDescription,int *pcbDescription,LONG *pDefaultKeyFrameRate,LONG *pDefaultPFramesPerKey,double *pDefaultQuality,LONG *pCapabilities);
+                   HRESULT (WINAPI *OverrideKeyFrame)(IAMVideoCompression *This,LONG FrameNumber);
+                   HRESULT (WINAPI *OverrideFrameSize)(IAMVideoCompression *This,LONG FrameNumber,LONG Size);
     END_INTERFACE
   } IAMVideoCompressionVtbl;
   struct IAMVideoCompression {
@@ -9773,13 +9773,13 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IAMVfwCompressDialogsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMVfwCompressDialogs *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMVfwCompressDialogs *This);
-      ULONG (WINAPI *Release)(IAMVfwCompressDialogs *This);
-      HRESULT (WINAPI *ShowDialog)(IAMVfwCompressDialogs *This,int iDialog,HWND hwnd);
-      HRESULT (WINAPI *GetState)(IAMVfwCompressDialogs *This,LPVOID pState,int *pcbState);
-      HRESULT (WINAPI *SetState)(IAMVfwCompressDialogs *This,LPVOID pState,int cbState);
-      HRESULT (WINAPI *SendDriverMessage)(IAMVfwCompressDialogs *This,int uMsg,LONG dw1,LONG dw2);
+                   HRESULT (WINAPI *QueryInterface)(IAMVfwCompressDialogs *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMVfwCompressDialogs *This);
+                   ULONG (WINAPI *Release)(IAMVfwCompressDialogs *This);
+                   HRESULT (WINAPI *ShowDialog)(IAMVfwCompressDialogs *This,int iDialog,HWND hwnd);
+                   HRESULT (WINAPI *GetState)(IAMVfwCompressDialogs *This,LPVOID pState,int *pcbState);
+                   HRESULT (WINAPI *SetState)(IAMVfwCompressDialogs *This,LPVOID pState,int cbState);
+                   HRESULT (WINAPI *SendDriverMessage)(IAMVfwCompressDialogs *This,int uMsg,LONG dw1,LONG dw2);
     END_INTERFACE
   } IAMVfwCompressDialogsVtbl;
   struct IAMVfwCompressDialogs {
@@ -9819,13 +9819,13 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IAMDroppedFramesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMDroppedFrames *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMDroppedFrames *This);
-      ULONG (WINAPI *Release)(IAMDroppedFrames *This);
-      HRESULT (WINAPI *GetNumDropped)(IAMDroppedFrames *This,LONG *plDropped);
-      HRESULT (WINAPI *GetNumNotDropped)(IAMDroppedFrames *This,LONG *plNotDropped);
-      HRESULT (WINAPI *GetDroppedInfo)(IAMDroppedFrames *This,LONG lSize,LONG *plArray,LONG *plNumCopied);
-      HRESULT (WINAPI *GetAverageFrameSize)(IAMDroppedFrames *This,LONG *plAverageSize);
+                   HRESULT (WINAPI *QueryInterface)(IAMDroppedFrames *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMDroppedFrames *This);
+                   ULONG (WINAPI *Release)(IAMDroppedFrames *This);
+                   HRESULT (WINAPI *GetNumDropped)(IAMDroppedFrames *This,LONG *plDropped);
+                   HRESULT (WINAPI *GetNumNotDropped)(IAMDroppedFrames *This,LONG *plNotDropped);
+                   HRESULT (WINAPI *GetDroppedInfo)(IAMDroppedFrames *This,LONG lSize,LONG *plArray,LONG *plNumCopied);
+                   HRESULT (WINAPI *GetAverageFrameSize)(IAMDroppedFrames *This,LONG *plAverageSize);
     END_INTERFACE
   } IAMDroppedFramesVtbl;
   struct IAMDroppedFrames {
@@ -9881,25 +9881,25 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IAMAudioInputMixerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMAudioInputMixer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMAudioInputMixer *This);
-      ULONG (WINAPI *Release)(IAMAudioInputMixer *This);
-      HRESULT (WINAPI *put_Enable)(IAMAudioInputMixer *This,WINBOOL fEnable);
-      HRESULT (WINAPI *get_Enable)(IAMAudioInputMixer *This,WINBOOL *pfEnable);
-      HRESULT (WINAPI *put_Mono)(IAMAudioInputMixer *This,WINBOOL fMono);
-      HRESULT (WINAPI *get_Mono)(IAMAudioInputMixer *This,WINBOOL *pfMono);
-      HRESULT (WINAPI *put_MixLevel)(IAMAudioInputMixer *This,double Level);
-      HRESULT (WINAPI *get_MixLevel)(IAMAudioInputMixer *This,double *pLevel);
-      HRESULT (WINAPI *put_Pan)(IAMAudioInputMixer *This,double Pan);
-      HRESULT (WINAPI *get_Pan)(IAMAudioInputMixer *This,double *pPan);
-      HRESULT (WINAPI *put_Loudness)(IAMAudioInputMixer *This,WINBOOL fLoudness);
-      HRESULT (WINAPI *get_Loudness)(IAMAudioInputMixer *This,WINBOOL *pfLoudness);
-      HRESULT (WINAPI *put_Treble)(IAMAudioInputMixer *This,double Treble);
-      HRESULT (WINAPI *get_Treble)(IAMAudioInputMixer *This,double *pTreble);
-      HRESULT (WINAPI *get_TrebleRange)(IAMAudioInputMixer *This,double *pRange);
-      HRESULT (WINAPI *put_Bass)(IAMAudioInputMixer *This,double Bass);
-      HRESULT (WINAPI *get_Bass)(IAMAudioInputMixer *This,double *pBass);
-      HRESULT (WINAPI *get_BassRange)(IAMAudioInputMixer *This,double *pRange);
+                   HRESULT (WINAPI *QueryInterface)(IAMAudioInputMixer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMAudioInputMixer *This);
+                   ULONG (WINAPI *Release)(IAMAudioInputMixer *This);
+                   HRESULT (WINAPI *put_Enable)(IAMAudioInputMixer *This,WINBOOL fEnable);
+                   HRESULT (WINAPI *get_Enable)(IAMAudioInputMixer *This,WINBOOL *pfEnable);
+                   HRESULT (WINAPI *put_Mono)(IAMAudioInputMixer *This,WINBOOL fMono);
+                   HRESULT (WINAPI *get_Mono)(IAMAudioInputMixer *This,WINBOOL *pfMono);
+                   HRESULT (WINAPI *put_MixLevel)(IAMAudioInputMixer *This,double Level);
+                   HRESULT (WINAPI *get_MixLevel)(IAMAudioInputMixer *This,double *pLevel);
+                   HRESULT (WINAPI *put_Pan)(IAMAudioInputMixer *This,double Pan);
+                   HRESULT (WINAPI *get_Pan)(IAMAudioInputMixer *This,double *pPan);
+                   HRESULT (WINAPI *put_Loudness)(IAMAudioInputMixer *This,WINBOOL fLoudness);
+                   HRESULT (WINAPI *get_Loudness)(IAMAudioInputMixer *This,WINBOOL *pfLoudness);
+                   HRESULT (WINAPI *put_Treble)(IAMAudioInputMixer *This,double Treble);
+                   HRESULT (WINAPI *get_Treble)(IAMAudioInputMixer *This,double *pTreble);
+                   HRESULT (WINAPI *get_TrebleRange)(IAMAudioInputMixer *This,double *pRange);
+                   HRESULT (WINAPI *put_Bass)(IAMAudioInputMixer *This,double Bass);
+                   HRESULT (WINAPI *get_Bass)(IAMAudioInputMixer *This,double *pBass);
+                   HRESULT (WINAPI *get_BassRange)(IAMAudioInputMixer *This,double *pRange);
     END_INTERFACE
   } IAMAudioInputMixerVtbl;
   struct IAMAudioInputMixer {
@@ -9973,11 +9973,11 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IAMBufferNegotiationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMBufferNegotiation *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMBufferNegotiation *This);
-      ULONG (WINAPI *Release)(IAMBufferNegotiation *This);
-      HRESULT (WINAPI *SuggestAllocatorProperties)(IAMBufferNegotiation *This,const ALLOCATOR_PROPERTIES *pprop);
-      HRESULT (WINAPI *GetAllocatorProperties)(IAMBufferNegotiation *This,ALLOCATOR_PROPERTIES *pprop);
+                   HRESULT (WINAPI *QueryInterface)(IAMBufferNegotiation *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMBufferNegotiation *This);
+                   ULONG (WINAPI *Release)(IAMBufferNegotiation *This);
+                   HRESULT (WINAPI *SuggestAllocatorProperties)(IAMBufferNegotiation *This,const ALLOCATOR_PROPERTIES *pprop);
+                   HRESULT (WINAPI *GetAllocatorProperties)(IAMBufferNegotiation *This,ALLOCATOR_PROPERTIES *pprop);
     END_INTERFACE
   } IAMBufferNegotiationVtbl;
   struct IAMBufferNegotiation {
@@ -10038,18 +10038,18 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IAMAnalogVideoDecoderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMAnalogVideoDecoder *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMAnalogVideoDecoder *This);
-      ULONG (WINAPI *Release)(IAMAnalogVideoDecoder *This);
-      HRESULT (WINAPI *get_AvailableTVFormats)(IAMAnalogVideoDecoder *This,LONG *lAnalogVideoStandard);
-      HRESULT (WINAPI *put_TVFormat)(IAMAnalogVideoDecoder *This,LONG lAnalogVideoStandard);
-      HRESULT (WINAPI *get_TVFormat)(IAMAnalogVideoDecoder *This,LONG *plAnalogVideoStandard);
-      HRESULT (WINAPI *get_HorizontalLocked)(IAMAnalogVideoDecoder *This,LONG *plLocked);
-      HRESULT (WINAPI *put_VCRHorizontalLocking)(IAMAnalogVideoDecoder *This,LONG lVCRHorizontalLocking);
-      HRESULT (WINAPI *get_VCRHorizontalLocking)(IAMAnalogVideoDecoder *This,LONG *plVCRHorizontalLocking);
-      HRESULT (WINAPI *get_NumberOfLines)(IAMAnalogVideoDecoder *This,LONG *plNumberOfLines);
-      HRESULT (WINAPI *put_OutputEnable)(IAMAnalogVideoDecoder *This,LONG lOutputEnable);
-      HRESULT (WINAPI *get_OutputEnable)(IAMAnalogVideoDecoder *This,LONG *plOutputEnable);
+                   HRESULT (WINAPI *QueryInterface)(IAMAnalogVideoDecoder *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMAnalogVideoDecoder *This);
+                   ULONG (WINAPI *Release)(IAMAnalogVideoDecoder *This);
+                   HRESULT (WINAPI *get_AvailableTVFormats)(IAMAnalogVideoDecoder *This,LONG *lAnalogVideoStandard);
+                   HRESULT (WINAPI *put_TVFormat)(IAMAnalogVideoDecoder *This,LONG lAnalogVideoStandard);
+                   HRESULT (WINAPI *get_TVFormat)(IAMAnalogVideoDecoder *This,LONG *plAnalogVideoStandard);
+                   HRESULT (WINAPI *get_HorizontalLocked)(IAMAnalogVideoDecoder *This,LONG *plLocked);
+                   HRESULT (WINAPI *put_VCRHorizontalLocking)(IAMAnalogVideoDecoder *This,LONG lVCRHorizontalLocking);
+                   HRESULT (WINAPI *get_VCRHorizontalLocking)(IAMAnalogVideoDecoder *This,LONG *plVCRHorizontalLocking);
+                   HRESULT (WINAPI *get_NumberOfLines)(IAMAnalogVideoDecoder *This,LONG *plNumberOfLines);
+                   HRESULT (WINAPI *put_OutputEnable)(IAMAnalogVideoDecoder *This,LONG lOutputEnable);
+                   HRESULT (WINAPI *get_OutputEnable)(IAMAnalogVideoDecoder *This,LONG *plOutputEnable);
     END_INTERFACE
   } IAMAnalogVideoDecoderVtbl;
   struct IAMAnalogVideoDecoder {
@@ -10115,12 +10115,12 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IAMCameraControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMCameraControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMCameraControl *This);
-      ULONG (WINAPI *Release)(IAMCameraControl *This);
-      HRESULT (WINAPI *GetRange)(IAMCameraControl *This,LONG Property,LONG *pMin,LONG *pMax,LONG *pSteppingDelta,LONG *pDefault,LONG *pCapsFlags);
-      HRESULT (WINAPI *Set)(IAMCameraControl *This,LONG Property,LONG lValue,LONG Flags);
-      HRESULT (WINAPI *Get)(IAMCameraControl *This,LONG Property,LONG *lValue,LONG *Flags);
+                   HRESULT (WINAPI *QueryInterface)(IAMCameraControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMCameraControl *This);
+                   ULONG (WINAPI *Release)(IAMCameraControl *This);
+                   HRESULT (WINAPI *GetRange)(IAMCameraControl *This,LONG Property,LONG *pMin,LONG *pMax,LONG *pSteppingDelta,LONG *pDefault,LONG *pCapsFlags);
+                   HRESULT (WINAPI *Set)(IAMCameraControl *This,LONG Property,LONG lValue,LONG Flags);
+                   HRESULT (WINAPI *Get)(IAMCameraControl *This,LONG Property,LONG *lValue,LONG *Flags);
     END_INTERFACE
   } IAMCameraControlVtbl;
   struct IAMCameraControl {
@@ -10165,15 +10165,15 @@ typedef struct IAMPluginControl IAMPluginControl;
 #else
   typedef struct IAMVideoControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMVideoControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMVideoControl *This);
-      ULONG (WINAPI *Release)(IAMVideoControl *This);
-      HRESULT (WINAPI *GetCaps)(IAMVideoControl *This,IPin *pPin,LONG *pCapsFlags);
-      HRESULT (WINAPI *SetMode)(IAMVideoControl *This,IPin *pPin,LONG Mode);
-      HRESULT (WINAPI *GetMode)(IAMVideoControl *This,IPin *pPin,LONG *Mode);
-      HRESULT (WINAPI *GetCurrentActualFrameRate)(IAMVideoControl *This,IPin *pPin,LONGLONG *ActualFrameRate);
-      HRESULT (WINAPI *GetMaxAvailableFrameRate)(IAMVideoControl *This,IPin *pPin,LONG iIndex,SIZE Dimensions,LONGLONG *MaxAvailableFrameRate);
-      HRESULT (WINAPI *GetFrameRateList)(IAMVideoControl *This,IPin *pPin,LONG iIndex,SIZE Dimensions,LONG *ListSize,LONGLONG **FrameRates);
+                   HRESULT (WINAPI *QueryInterface)(IAMVideoControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMVideoControl *This);
+                   ULONG (WINAPI *Release)(IAMVideoControl *This);
+                   HRESULT (WINAPI *GetCaps)(IAMVideoControl *This,IPin *pPin,LONG *pCapsFlags);
+                   HRESULT (WINAPI *SetMode)(IAMVideoControl *This,IPin *pPin,LONG Mode);
+                   HRESULT (WINAPI *GetMode)(IAMVideoControl *This,IPin *pPin,LONG *Mode);
+                   HRESULT (WINAPI *GetCurrentActualFrameRate)(IAMVideoControl *This,IPin *pPin,LONGLONG *ActualFrameRate);
+                   HRESULT (WINAPI *GetMaxAvailableFrameRate)(IAMVideoControl *This,IPin *pPin,LONG iIndex,SIZE Dimensions,LONGLONG *MaxAvailableFrameRate);
+                   HRESULT (WINAPI *GetFrameRateList)(IAMVideoControl *This,IPin *pPin,LONG iIndex,SIZE Dimensions,LONG *ListSize,LONGLONG **FrameRates);
     END_INTERFACE
   } IAMVideoControlVtbl;
   struct IAMVideoControl {
@@ -10224,14 +10224,14 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMCrossbarVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMCrossbar *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMCrossbar *This);
-      ULONG (WINAPI *Release)(IAMCrossbar *This);
-      HRESULT (WINAPI *get_PinCounts)(IAMCrossbar *This,LONG *OutputPinCount,LONG *InputPinCount);
-      HRESULT (WINAPI *CanRoute)(IAMCrossbar *This,LONG OutputPinIndex,LONG InputPinIndex);
-      HRESULT (WINAPI *Route)(IAMCrossbar *This,LONG OutputPinIndex,LONG InputPinIndex);
-      HRESULT (WINAPI *get_IsRoutedTo)(IAMCrossbar *This,LONG OutputPinIndex,LONG *InputPinIndex);
-      HRESULT (WINAPI *get_CrossbarPinInfo)(IAMCrossbar *This,WINBOOL IsInputPin,LONG PinIndex,LONG *PinIndexRelated,LONG *PhysicalType);
+                   HRESULT (WINAPI *QueryInterface)(IAMCrossbar *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMCrossbar *This);
+                   ULONG (WINAPI *Release)(IAMCrossbar *This);
+                   HRESULT (WINAPI *get_PinCounts)(IAMCrossbar *This,LONG *OutputPinCount,LONG *InputPinCount);
+                   HRESULT (WINAPI *CanRoute)(IAMCrossbar *This,LONG OutputPinIndex,LONG InputPinIndex);
+                   HRESULT (WINAPI *Route)(IAMCrossbar *This,LONG OutputPinIndex,LONG InputPinIndex);
+                   HRESULT (WINAPI *get_IsRoutedTo)(IAMCrossbar *This,LONG OutputPinIndex,LONG *InputPinIndex);
+                   HRESULT (WINAPI *get_CrossbarPinInfo)(IAMCrossbar *This,WINBOOL IsInputPin,LONG PinIndex,LONG *PinIndexRelated,LONG *PhysicalType);
     END_INTERFACE
   } IAMCrossbarVtbl;
   struct IAMCrossbar {
@@ -10303,24 +10303,24 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMTunerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMTuner *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMTuner *This);
-      ULONG (WINAPI *Release)(IAMTuner *This);
-      HRESULT (WINAPI *put_Channel)(IAMTuner *This,LONG lChannel,LONG lVideoSubChannel,LONG lAudioSubChannel);
-      HRESULT (WINAPI *get_Channel)(IAMTuner *This,LONG *plChannel,LONG *plVideoSubChannel,LONG *plAudioSubChannel);
-      HRESULT (WINAPI *ChannelMinMax)(IAMTuner *This,LONG *lChannelMin,LONG *lChannelMax);
-      HRESULT (WINAPI *put_CountryCode)(IAMTuner *This,LONG lCountryCode);
-      HRESULT (WINAPI *get_CountryCode)(IAMTuner *This,LONG *plCountryCode);
-      HRESULT (WINAPI *put_TuningSpace)(IAMTuner *This,LONG lTuningSpace);
-      HRESULT (WINAPI *get_TuningSpace)(IAMTuner *This,LONG *plTuningSpace);
-      HRESULT (WINAPI *Logon)(IAMTuner *This,HANDLE hCurrentUser);
-      HRESULT (WINAPI *Logout)(IAMTuner *This);
-      HRESULT (WINAPI *SignalPresent)(IAMTuner *This,LONG *plSignalStrength);
-      HRESULT (WINAPI *put_Mode)(IAMTuner *This,AMTunerModeType lMode);
-      HRESULT (WINAPI *get_Mode)(IAMTuner *This,AMTunerModeType *plMode);
-      HRESULT (WINAPI *GetAvailableModes)(IAMTuner *This,LONG *plModes);
-      HRESULT (WINAPI *RegisterNotificationCallBack)(IAMTuner *This,IAMTunerNotification *pNotify,LONG lEvents);
-      HRESULT (WINAPI *UnRegisterNotificationCallBack)(IAMTuner *This,IAMTunerNotification *pNotify);
+                   HRESULT (WINAPI *QueryInterface)(IAMTuner *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMTuner *This);
+                   ULONG (WINAPI *Release)(IAMTuner *This);
+                   HRESULT (WINAPI *put_Channel)(IAMTuner *This,LONG lChannel,LONG lVideoSubChannel,LONG lAudioSubChannel);
+                   HRESULT (WINAPI *get_Channel)(IAMTuner *This,LONG *plChannel,LONG *plVideoSubChannel,LONG *plAudioSubChannel);
+                   HRESULT (WINAPI *ChannelMinMax)(IAMTuner *This,LONG *lChannelMin,LONG *lChannelMax);
+                   HRESULT (WINAPI *put_CountryCode)(IAMTuner *This,LONG lCountryCode);
+                   HRESULT (WINAPI *get_CountryCode)(IAMTuner *This,LONG *plCountryCode);
+                   HRESULT (WINAPI *put_TuningSpace)(IAMTuner *This,LONG lTuningSpace);
+                   HRESULT (WINAPI *get_TuningSpace)(IAMTuner *This,LONG *plTuningSpace);
+                   HRESULT (WINAPI *Logon)(IAMTuner *This,HANDLE hCurrentUser);
+                   HRESULT (WINAPI *Logout)(IAMTuner *This);
+                   HRESULT (WINAPI *SignalPresent)(IAMTuner *This,LONG *plSignalStrength);
+                   HRESULT (WINAPI *put_Mode)(IAMTuner *This,AMTunerModeType lMode);
+                   HRESULT (WINAPI *get_Mode)(IAMTuner *This,AMTunerModeType *plMode);
+                   HRESULT (WINAPI *GetAvailableModes)(IAMTuner *This,LONG *plModes);
+                   HRESULT (WINAPI *RegisterNotificationCallBack)(IAMTuner *This,IAMTunerNotification *pNotify,LONG lEvents);
+                   HRESULT (WINAPI *UnRegisterNotificationCallBack)(IAMTuner *This,IAMTunerNotification *pNotify);
     END_INTERFACE
   } IAMTunerVtbl;
   struct IAMTuner {
@@ -10390,10 +10390,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMTunerNotificationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMTunerNotification *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMTunerNotification *This);
-      ULONG (WINAPI *Release)(IAMTunerNotification *This);
-      HRESULT (WINAPI *OnEvent)(IAMTunerNotification *This,AMTunerEventType Event);
+                   HRESULT (WINAPI *QueryInterface)(IAMTunerNotification *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMTunerNotification *This);
+                   ULONG (WINAPI *Release)(IAMTunerNotification *This);
+                   HRESULT (WINAPI *OnEvent)(IAMTunerNotification *This,AMTunerEventType Event);
     END_INTERFACE
   } IAMTunerNotificationVtbl;
   struct IAMTunerNotification {
@@ -10431,35 +10431,35 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMTVTunerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMTVTuner *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMTVTuner *This);
-      ULONG (WINAPI *Release)(IAMTVTuner *This);
-      HRESULT (WINAPI *put_Channel)(IAMTVTuner *This,LONG lChannel,LONG lVideoSubChannel,LONG lAudioSubChannel);
-      HRESULT (WINAPI *get_Channel)(IAMTVTuner *This,LONG *plChannel,LONG *plVideoSubChannel,LONG *plAudioSubChannel);
-      HRESULT (WINAPI *ChannelMinMax)(IAMTVTuner *This,LONG *lChannelMin,LONG *lChannelMax);
-      HRESULT (WINAPI *put_CountryCode)(IAMTVTuner *This,LONG lCountryCode);
-      HRESULT (WINAPI *get_CountryCode)(IAMTVTuner *This,LONG *plCountryCode);
-      HRESULT (WINAPI *put_TuningSpace)(IAMTVTuner *This,LONG lTuningSpace);
-      HRESULT (WINAPI *get_TuningSpace)(IAMTVTuner *This,LONG *plTuningSpace);
-      HRESULT (WINAPI *Logon)(IAMTVTuner *This,HANDLE hCurrentUser);
-      HRESULT (WINAPI *Logout)(IAMTVTuner *This);
-      HRESULT (WINAPI *SignalPresent)(IAMTVTuner *This,LONG *plSignalStrength);
-      HRESULT (WINAPI *put_Mode)(IAMTVTuner *This,AMTunerModeType lMode);
-      HRESULT (WINAPI *get_Mode)(IAMTVTuner *This,AMTunerModeType *plMode);
-      HRESULT (WINAPI *GetAvailableModes)(IAMTVTuner *This,LONG *plModes);
-      HRESULT (WINAPI *RegisterNotificationCallBack)(IAMTVTuner *This,IAMTunerNotification *pNotify,LONG lEvents);
-      HRESULT (WINAPI *UnRegisterNotificationCallBack)(IAMTVTuner *This,IAMTunerNotification *pNotify);
-      HRESULT (WINAPI *get_AvailableTVFormats)(IAMTVTuner *This,LONG *lAnalogVideoStandard);
-      HRESULT (WINAPI *get_TVFormat)(IAMTVTuner *This,LONG *plAnalogVideoStandard);
-      HRESULT (WINAPI *AutoTune)(IAMTVTuner *This,LONG lChannel,LONG *plFoundSignal);
-      HRESULT (WINAPI *StoreAutoTune)(IAMTVTuner *This);
-      HRESULT (WINAPI *get_NumInputConnections)(IAMTVTuner *This,LONG *plNumInputConnections);
-      HRESULT (WINAPI *put_InputType)(IAMTVTuner *This,LONG lIndex,TunerInputType InputType);
-      HRESULT (WINAPI *get_InputType)(IAMTVTuner *This,LONG lIndex,TunerInputType *pInputType);
-      HRESULT (WINAPI *put_ConnectInput)(IAMTVTuner *This,LONG lIndex);
-      HRESULT (WINAPI *get_ConnectInput)(IAMTVTuner *This,LONG *plIndex);
-      HRESULT (WINAPI *get_VideoFrequency)(IAMTVTuner *This,LONG *lFreq);
-      HRESULT (WINAPI *get_AudioFrequency)(IAMTVTuner *This,LONG *lFreq);
+                   HRESULT (WINAPI *QueryInterface)(IAMTVTuner *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMTVTuner *This);
+                   ULONG (WINAPI *Release)(IAMTVTuner *This);
+                   HRESULT (WINAPI *put_Channel)(IAMTVTuner *This,LONG lChannel,LONG lVideoSubChannel,LONG lAudioSubChannel);
+                   HRESULT (WINAPI *get_Channel)(IAMTVTuner *This,LONG *plChannel,LONG *plVideoSubChannel,LONG *plAudioSubChannel);
+                   HRESULT (WINAPI *ChannelMinMax)(IAMTVTuner *This,LONG *lChannelMin,LONG *lChannelMax);
+                   HRESULT (WINAPI *put_CountryCode)(IAMTVTuner *This,LONG lCountryCode);
+                   HRESULT (WINAPI *get_CountryCode)(IAMTVTuner *This,LONG *plCountryCode);
+                   HRESULT (WINAPI *put_TuningSpace)(IAMTVTuner *This,LONG lTuningSpace);
+                   HRESULT (WINAPI *get_TuningSpace)(IAMTVTuner *This,LONG *plTuningSpace);
+                   HRESULT (WINAPI *Logon)(IAMTVTuner *This,HANDLE hCurrentUser);
+                   HRESULT (WINAPI *Logout)(IAMTVTuner *This);
+                   HRESULT (WINAPI *SignalPresent)(IAMTVTuner *This,LONG *plSignalStrength);
+                   HRESULT (WINAPI *put_Mode)(IAMTVTuner *This,AMTunerModeType lMode);
+                   HRESULT (WINAPI *get_Mode)(IAMTVTuner *This,AMTunerModeType *plMode);
+                   HRESULT (WINAPI *GetAvailableModes)(IAMTVTuner *This,LONG *plModes);
+                   HRESULT (WINAPI *RegisterNotificationCallBack)(IAMTVTuner *This,IAMTunerNotification *pNotify,LONG lEvents);
+                   HRESULT (WINAPI *UnRegisterNotificationCallBack)(IAMTVTuner *This,IAMTunerNotification *pNotify);
+                   HRESULT (WINAPI *get_AvailableTVFormats)(IAMTVTuner *This,LONG *lAnalogVideoStandard);
+                   HRESULT (WINAPI *get_TVFormat)(IAMTVTuner *This,LONG *plAnalogVideoStandard);
+                   HRESULT (WINAPI *AutoTune)(IAMTVTuner *This,LONG lChannel,LONG *plFoundSignal);
+                   HRESULT (WINAPI *StoreAutoTune)(IAMTVTuner *This);
+                   HRESULT (WINAPI *get_NumInputConnections)(IAMTVTuner *This,LONG *plNumInputConnections);
+                   HRESULT (WINAPI *put_InputType)(IAMTVTuner *This,LONG lIndex,TunerInputType InputType);
+                   HRESULT (WINAPI *get_InputType)(IAMTVTuner *This,LONG lIndex,TunerInputType *pInputType);
+                   HRESULT (WINAPI *put_ConnectInput)(IAMTVTuner *This,LONG lIndex);
+                   HRESULT (WINAPI *get_ConnectInput)(IAMTVTuner *This,LONG *plIndex);
+                   HRESULT (WINAPI *get_VideoFrequency)(IAMTVTuner *This,LONG *lFreq);
+                   HRESULT (WINAPI *get_AudioFrequency)(IAMTVTuner *This,LONG *lFreq);
     END_INTERFACE
   } IAMTVTunerVtbl;
   struct IAMTVTuner {
@@ -10534,27 +10534,27 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IBPCSatelliteTunerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBPCSatelliteTuner *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBPCSatelliteTuner *This);
-      ULONG (WINAPI *Release)(IBPCSatelliteTuner *This);
-      HRESULT (WINAPI *put_Channel)(IBPCSatelliteTuner *This,LONG lChannel,LONG lVideoSubChannel,LONG lAudioSubChannel);
-      HRESULT (WINAPI *get_Channel)(IBPCSatelliteTuner *This,LONG *plChannel,LONG *plVideoSubChannel,LONG *plAudioSubChannel);
-      HRESULT (WINAPI *ChannelMinMax)(IBPCSatelliteTuner *This,LONG *lChannelMin,LONG *lChannelMax);
-      HRESULT (WINAPI *put_CountryCode)(IBPCSatelliteTuner *This,LONG lCountryCode);
-      HRESULT (WINAPI *get_CountryCode)(IBPCSatelliteTuner *This,LONG *plCountryCode);
-      HRESULT (WINAPI *put_TuningSpace)(IBPCSatelliteTuner *This,LONG lTuningSpace);
-      HRESULT (WINAPI *get_TuningSpace)(IBPCSatelliteTuner *This,LONG *plTuningSpace);
-      HRESULT (WINAPI *Logon)(IBPCSatelliteTuner *This,HANDLE hCurrentUser);
-      HRESULT (WINAPI *Logout)(IBPCSatelliteTuner *This);
-      HRESULT (WINAPI *SignalPresent)(IBPCSatelliteTuner *This,LONG *plSignalStrength);
-      HRESULT (WINAPI *put_Mode)(IBPCSatelliteTuner *This,AMTunerModeType lMode);
-      HRESULT (WINAPI *get_Mode)(IBPCSatelliteTuner *This,AMTunerModeType *plMode);
-      HRESULT (WINAPI *GetAvailableModes)(IBPCSatelliteTuner *This,LONG *plModes);
-      HRESULT (WINAPI *RegisterNotificationCallBack)(IBPCSatelliteTuner *This,IAMTunerNotification *pNotify,LONG lEvents);
-      HRESULT (WINAPI *UnRegisterNotificationCallBack)(IBPCSatelliteTuner *This,IAMTunerNotification *pNotify);
-      HRESULT (WINAPI *get_DefaultSubChannelTypes)(IBPCSatelliteTuner *This,LONG *plDefaultVideoType,LONG *plDefaultAudioType);
-      HRESULT (WINAPI *put_DefaultSubChannelTypes)(IBPCSatelliteTuner *This,LONG lDefaultVideoType,LONG lDefaultAudioType);
-      HRESULT (WINAPI *IsTapingPermitted)(IBPCSatelliteTuner *This);
+                   HRESULT (WINAPI *QueryInterface)(IBPCSatelliteTuner *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBPCSatelliteTuner *This);
+                   ULONG (WINAPI *Release)(IBPCSatelliteTuner *This);
+                   HRESULT (WINAPI *put_Channel)(IBPCSatelliteTuner *This,LONG lChannel,LONG lVideoSubChannel,LONG lAudioSubChannel);
+                   HRESULT (WINAPI *get_Channel)(IBPCSatelliteTuner *This,LONG *plChannel,LONG *plVideoSubChannel,LONG *plAudioSubChannel);
+                   HRESULT (WINAPI *ChannelMinMax)(IBPCSatelliteTuner *This,LONG *lChannelMin,LONG *lChannelMax);
+                   HRESULT (WINAPI *put_CountryCode)(IBPCSatelliteTuner *This,LONG lCountryCode);
+                   HRESULT (WINAPI *get_CountryCode)(IBPCSatelliteTuner *This,LONG *plCountryCode);
+                   HRESULT (WINAPI *put_TuningSpace)(IBPCSatelliteTuner *This,LONG lTuningSpace);
+                   HRESULT (WINAPI *get_TuningSpace)(IBPCSatelliteTuner *This,LONG *plTuningSpace);
+                   HRESULT (WINAPI *Logon)(IBPCSatelliteTuner *This,HANDLE hCurrentUser);
+                   HRESULT (WINAPI *Logout)(IBPCSatelliteTuner *This);
+                   HRESULT (WINAPI *SignalPresent)(IBPCSatelliteTuner *This,LONG *plSignalStrength);
+                   HRESULT (WINAPI *put_Mode)(IBPCSatelliteTuner *This,AMTunerModeType lMode);
+                   HRESULT (WINAPI *get_Mode)(IBPCSatelliteTuner *This,AMTunerModeType *plMode);
+                   HRESULT (WINAPI *GetAvailableModes)(IBPCSatelliteTuner *This,LONG *plModes);
+                   HRESULT (WINAPI *RegisterNotificationCallBack)(IBPCSatelliteTuner *This,IAMTunerNotification *pNotify,LONG lEvents);
+                   HRESULT (WINAPI *UnRegisterNotificationCallBack)(IBPCSatelliteTuner *This,IAMTunerNotification *pNotify);
+                   HRESULT (WINAPI *get_DefaultSubChannelTypes)(IBPCSatelliteTuner *This,LONG *plDefaultVideoType,LONG *plDefaultAudioType);
+                   HRESULT (WINAPI *put_DefaultSubChannelTypes)(IBPCSatelliteTuner *This,LONG lDefaultVideoType,LONG lDefaultAudioType);
+                   HRESULT (WINAPI *IsTapingPermitted)(IBPCSatelliteTuner *This);
     END_INTERFACE
   } IBPCSatelliteTunerVtbl;
   struct IBPCSatelliteTuner {
@@ -10614,15 +10614,15 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMTVAudioVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMTVAudio *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMTVAudio *This);
-      ULONG (WINAPI *Release)(IAMTVAudio *This);
-      HRESULT (WINAPI *GetHardwareSupportedTVAudioModes)(IAMTVAudio *This,LONG *plModes);
-      HRESULT (WINAPI *GetAvailableTVAudioModes)(IAMTVAudio *This,LONG *plModes);
-      HRESULT (WINAPI *get_TVAudioMode)(IAMTVAudio *This,LONG *plMode);
-      HRESULT (WINAPI *put_TVAudioMode)(IAMTVAudio *This,LONG lMode);
-      HRESULT (WINAPI *RegisterNotificationCallBack)(IAMTVAudio *This,IAMTunerNotification *pNotify,LONG lEvents);
-      HRESULT (WINAPI *UnRegisterNotificationCallBack)(IAMTVAudio *This,IAMTunerNotification *pNotify);
+                   HRESULT (WINAPI *QueryInterface)(IAMTVAudio *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMTVAudio *This);
+                   ULONG (WINAPI *Release)(IAMTVAudio *This);
+                   HRESULT (WINAPI *GetHardwareSupportedTVAudioModes)(IAMTVAudio *This,LONG *plModes);
+                   HRESULT (WINAPI *GetAvailableTVAudioModes)(IAMTVAudio *This,LONG *plModes);
+                   HRESULT (WINAPI *get_TVAudioMode)(IAMTVAudio *This,LONG *plMode);
+                   HRESULT (WINAPI *put_TVAudioMode)(IAMTVAudio *This,LONG lMode);
+                   HRESULT (WINAPI *RegisterNotificationCallBack)(IAMTVAudio *This,IAMTunerNotification *pNotify,LONG lEvents);
+                   HRESULT (WINAPI *UnRegisterNotificationCallBack)(IAMTVAudio *This,IAMTunerNotification *pNotify);
     END_INTERFACE
   } IAMTVAudioVtbl;
   struct IAMTVAudio {
@@ -10665,10 +10665,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMTVAudioNotificationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMTVAudioNotification *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMTVAudioNotification *This);
-      ULONG (WINAPI *Release)(IAMTVAudioNotification *This);
-      HRESULT (WINAPI *OnEvent)(IAMTVAudioNotification *This,AMTVAudioEventType Event);
+                   HRESULT (WINAPI *QueryInterface)(IAMTVAudioNotification *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMTVAudioNotification *This);
+                   ULONG (WINAPI *Release)(IAMTVAudioNotification *This);
+                   HRESULT (WINAPI *OnEvent)(IAMTVAudioNotification *This,AMTVAudioEventType Event);
     END_INTERFACE
   } IAMTVAudioNotificationVtbl;
   struct IAMTVAudioNotification {
@@ -10702,16 +10702,16 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMAnalogVideoEncoderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMAnalogVideoEncoder *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMAnalogVideoEncoder *This);
-      ULONG (WINAPI *Release)(IAMAnalogVideoEncoder *This);
-      HRESULT (WINAPI *get_AvailableTVFormats)(IAMAnalogVideoEncoder *This,LONG *lAnalogVideoStandard);
-      HRESULT (WINAPI *put_TVFormat)(IAMAnalogVideoEncoder *This,LONG lAnalogVideoStandard);
-      HRESULT (WINAPI *get_TVFormat)(IAMAnalogVideoEncoder *This,LONG *plAnalogVideoStandard);
-      HRESULT (WINAPI *put_CopyProtection)(IAMAnalogVideoEncoder *This,LONG lVideoCopyProtection);
-      HRESULT (WINAPI *get_CopyProtection)(IAMAnalogVideoEncoder *This,LONG *lVideoCopyProtection);
-      HRESULT (WINAPI *put_CCEnable)(IAMAnalogVideoEncoder *This,LONG lCCEnable);
-      HRESULT (WINAPI *get_CCEnable)(IAMAnalogVideoEncoder *This,LONG *lCCEnable);
+                   HRESULT (WINAPI *QueryInterface)(IAMAnalogVideoEncoder *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMAnalogVideoEncoder *This);
+                   ULONG (WINAPI *Release)(IAMAnalogVideoEncoder *This);
+                   HRESULT (WINAPI *get_AvailableTVFormats)(IAMAnalogVideoEncoder *This,LONG *lAnalogVideoStandard);
+                   HRESULT (WINAPI *put_TVFormat)(IAMAnalogVideoEncoder *This,LONG lAnalogVideoStandard);
+                   HRESULT (WINAPI *get_TVFormat)(IAMAnalogVideoEncoder *This,LONG *plAnalogVideoStandard);
+                   HRESULT (WINAPI *put_CopyProtection)(IAMAnalogVideoEncoder *This,LONG lVideoCopyProtection);
+                   HRESULT (WINAPI *get_CopyProtection)(IAMAnalogVideoEncoder *This,LONG *lVideoCopyProtection);
+                   HRESULT (WINAPI *put_CCEnable)(IAMAnalogVideoEncoder *This,LONG lCCEnable);
+                   HRESULT (WINAPI *get_CCEnable)(IAMAnalogVideoEncoder *This,LONG *lCCEnable);
     END_INTERFACE
   } IAMAnalogVideoEncoderVtbl;
   struct IAMAnalogVideoEncoder {
@@ -10761,10 +10761,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMPhysicalPinInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMPhysicalPinInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMPhysicalPinInfo *This);
-      ULONG (WINAPI *Release)(IAMPhysicalPinInfo *This);
-      HRESULT (WINAPI *GetPhysicalType)(IAMPhysicalPinInfo *This,LONG *pType,LPOLESTR *ppszType);
+                   HRESULT (WINAPI *QueryInterface)(IAMPhysicalPinInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMPhysicalPinInfo *This);
+                   ULONG (WINAPI *Release)(IAMPhysicalPinInfo *This);
+                   HRESULT (WINAPI *GetPhysicalType)(IAMPhysicalPinInfo *This,LONG *pType,LPOLESTR *ppszType);
     END_INTERFACE
   } IAMPhysicalPinInfoVtbl;
   struct IAMPhysicalPinInfo {
@@ -10803,17 +10803,17 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMExtDeviceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMExtDevice *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMExtDevice *This);
-      ULONG (WINAPI *Release)(IAMExtDevice *This);
-      HRESULT (WINAPI *GetCapability)(IAMExtDevice *This,LONG Capability,LONG *pValue,double *pdblValue);
-      HRESULT (WINAPI *get_ExternalDeviceID)(IAMExtDevice *This,LPOLESTR *ppszData);
-      HRESULT (WINAPI *get_ExternalDeviceVersion)(IAMExtDevice *This,LPOLESTR *ppszData);
-      HRESULT (WINAPI *put_DevicePower)(IAMExtDevice *This,LONG PowerMode);
-      HRESULT (WINAPI *get_DevicePower)(IAMExtDevice *This,LONG *pPowerMode);
-      HRESULT (WINAPI *Calibrate)(IAMExtDevice *This,HEVENT hEvent,LONG Mode,LONG *pStatus);
-      HRESULT (WINAPI *put_DevicePort)(IAMExtDevice *This,LONG DevicePort);
-      HRESULT (WINAPI *get_DevicePort)(IAMExtDevice *This,LONG *pDevicePort);
+                   HRESULT (WINAPI *QueryInterface)(IAMExtDevice *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMExtDevice *This);
+                   ULONG (WINAPI *Release)(IAMExtDevice *This);
+                   HRESULT (WINAPI *GetCapability)(IAMExtDevice *This,LONG Capability,LONG *pValue,double *pdblValue);
+                   HRESULT (WINAPI *get_ExternalDeviceID)(IAMExtDevice *This,LPOLESTR *ppszData);
+                   HRESULT (WINAPI *get_ExternalDeviceVersion)(IAMExtDevice *This,LPOLESTR *ppszData);
+                   HRESULT (WINAPI *put_DevicePower)(IAMExtDevice *This,LONG PowerMode);
+                   HRESULT (WINAPI *get_DevicePower)(IAMExtDevice *This,LONG *pPowerMode);
+                   HRESULT (WINAPI *Calibrate)(IAMExtDevice *This,HEVENT hEvent,LONG Mode,LONG *pStatus);
+                   HRESULT (WINAPI *put_DevicePort)(IAMExtDevice *This,LONG DevicePort);
+                   HRESULT (WINAPI *get_DevicePort)(IAMExtDevice *This,LONG *pDevicePort);
     END_INTERFACE
   } IAMExtDeviceVtbl;
   struct IAMExtDevice {
@@ -10893,37 +10893,37 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMExtTransportVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMExtTransport *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMExtTransport *This);
-      ULONG (WINAPI *Release)(IAMExtTransport *This);
-      HRESULT (WINAPI *GetCapability)(IAMExtTransport *This,LONG Capability,LONG *pValue,double *pdblValue);
-      HRESULT (WINAPI *put_MediaState)(IAMExtTransport *This,LONG State);
-      HRESULT (WINAPI *get_MediaState)(IAMExtTransport *This,LONG *pState);
-      HRESULT (WINAPI *put_LocalControl)(IAMExtTransport *This,LONG State);
-      HRESULT (WINAPI *get_LocalControl)(IAMExtTransport *This,LONG *pState);
-      HRESULT (WINAPI *GetStatus)(IAMExtTransport *This,LONG StatusItem,LONG *pValue);
-      HRESULT (WINAPI *GetTransportBasicParameters)(IAMExtTransport *This,LONG Param,LONG *pValue,LPOLESTR *ppszData);
-      HRESULT (WINAPI *SetTransportBasicParameters)(IAMExtTransport *This,LONG Param,LONG Value,LPCOLESTR pszData);
-      HRESULT (WINAPI *GetTransportVideoParameters)(IAMExtTransport *This,LONG Param,LONG *pValue);
-      HRESULT (WINAPI *SetTransportVideoParameters)(IAMExtTransport *This,LONG Param,LONG Value);
-      HRESULT (WINAPI *GetTransportAudioParameters)(IAMExtTransport *This,LONG Param,LONG *pValue);
-      HRESULT (WINAPI *SetTransportAudioParameters)(IAMExtTransport *This,LONG Param,LONG Value);
-      HRESULT (WINAPI *put_Mode)(IAMExtTransport *This,LONG Mode);
-      HRESULT (WINAPI *get_Mode)(IAMExtTransport *This,LONG *pMode);
-      HRESULT (WINAPI *put_Rate)(IAMExtTransport *This,double dblRate);
-      HRESULT (WINAPI *get_Rate)(IAMExtTransport *This,double *pdblRate);
-      HRESULT (WINAPI *GetChase)(IAMExtTransport *This,LONG *pEnabled,LONG *pOffset,HEVENT *phEvent);
-      HRESULT (WINAPI *SetChase)(IAMExtTransport *This,LONG Enable,LONG Offset,HEVENT hEvent);
-      HRESULT (WINAPI *GetBump)(IAMExtTransport *This,LONG *pSpeed,LONG *pDuration);
-      HRESULT (WINAPI *SetBump)(IAMExtTransport *This,LONG Speed,LONG Duration);
-      HRESULT (WINAPI *get_AntiClogControl)(IAMExtTransport *This,LONG *pEnabled);
-      HRESULT (WINAPI *put_AntiClogControl)(IAMExtTransport *This,LONG Enable);
-      HRESULT (WINAPI *GetEditPropertySet)(IAMExtTransport *This,LONG EditID,LONG *pState);
-      HRESULT (WINAPI *SetEditPropertySet)(IAMExtTransport *This,LONG *pEditID,LONG State);
-      HRESULT (WINAPI *GetEditProperty)(IAMExtTransport *This,LONG EditID,LONG Param,LONG *pValue);
-      HRESULT (WINAPI *SetEditProperty)(IAMExtTransport *This,LONG EditID,LONG Param,LONG Value);
-      HRESULT (WINAPI *get_EditStart)(IAMExtTransport *This,LONG *pValue);
-      HRESULT (WINAPI *put_EditStart)(IAMExtTransport *This,LONG Value);
+                   HRESULT (WINAPI *QueryInterface)(IAMExtTransport *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMExtTransport *This);
+                   ULONG (WINAPI *Release)(IAMExtTransport *This);
+                   HRESULT (WINAPI *GetCapability)(IAMExtTransport *This,LONG Capability,LONG *pValue,double *pdblValue);
+                   HRESULT (WINAPI *put_MediaState)(IAMExtTransport *This,LONG State);
+                   HRESULT (WINAPI *get_MediaState)(IAMExtTransport *This,LONG *pState);
+                   HRESULT (WINAPI *put_LocalControl)(IAMExtTransport *This,LONG State);
+                   HRESULT (WINAPI *get_LocalControl)(IAMExtTransport *This,LONG *pState);
+                   HRESULT (WINAPI *GetStatus)(IAMExtTransport *This,LONG StatusItem,LONG *pValue);
+                   HRESULT (WINAPI *GetTransportBasicParameters)(IAMExtTransport *This,LONG Param,LONG *pValue,LPOLESTR *ppszData);
+                   HRESULT (WINAPI *SetTransportBasicParameters)(IAMExtTransport *This,LONG Param,LONG Value,LPCOLESTR pszData);
+                   HRESULT (WINAPI *GetTransportVideoParameters)(IAMExtTransport *This,LONG Param,LONG *pValue);
+                   HRESULT (WINAPI *SetTransportVideoParameters)(IAMExtTransport *This,LONG Param,LONG Value);
+                   HRESULT (WINAPI *GetTransportAudioParameters)(IAMExtTransport *This,LONG Param,LONG *pValue);
+                   HRESULT (WINAPI *SetTransportAudioParameters)(IAMExtTransport *This,LONG Param,LONG Value);
+                   HRESULT (WINAPI *put_Mode)(IAMExtTransport *This,LONG Mode);
+                   HRESULT (WINAPI *get_Mode)(IAMExtTransport *This,LONG *pMode);
+                   HRESULT (WINAPI *put_Rate)(IAMExtTransport *This,double dblRate);
+                   HRESULT (WINAPI *get_Rate)(IAMExtTransport *This,double *pdblRate);
+                   HRESULT (WINAPI *GetChase)(IAMExtTransport *This,LONG *pEnabled,LONG *pOffset,HEVENT *phEvent);
+                   HRESULT (WINAPI *SetChase)(IAMExtTransport *This,LONG Enable,LONG Offset,HEVENT hEvent);
+                   HRESULT (WINAPI *GetBump)(IAMExtTransport *This,LONG *pSpeed,LONG *pDuration);
+                   HRESULT (WINAPI *SetBump)(IAMExtTransport *This,LONG Speed,LONG Duration);
+                   HRESULT (WINAPI *get_AntiClogControl)(IAMExtTransport *This,LONG *pEnabled);
+                   HRESULT (WINAPI *put_AntiClogControl)(IAMExtTransport *This,LONG Enable);
+                   HRESULT (WINAPI *GetEditPropertySet)(IAMExtTransport *This,LONG EditID,LONG *pState);
+                   HRESULT (WINAPI *SetEditPropertySet)(IAMExtTransport *This,LONG *pEditID,LONG State);
+                   HRESULT (WINAPI *GetEditProperty)(IAMExtTransport *This,LONG EditID,LONG Param,LONG *pValue);
+                   HRESULT (WINAPI *SetEditProperty)(IAMExtTransport *This,LONG EditID,LONG Param,LONG Value);
+                   HRESULT (WINAPI *get_EditStart)(IAMExtTransport *This,LONG *pValue);
+                   HRESULT (WINAPI *put_EditStart)(IAMExtTransport *This,LONG Value);
     END_INTERFACE
   } IAMExtTransportVtbl;
   struct IAMExtTransport {
@@ -11027,9 +11027,9 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #define TIMECODE_DEFINED
   typedef union _timecode {
     __C89_NAMELESS struct {
-      WORD wFrameRate;
-      WORD wFrameFract;
-      DWORD dwFrames;
+                   WORD wFrameRate;
+                   WORD wFrameFract;
+                   DWORD dwFrames;
     };
     DWORDLONG qw;
   } TIMECODE;
@@ -11063,14 +11063,14 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMTimecodeReaderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMTimecodeReader *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMTimecodeReader *This);
-      ULONG (WINAPI *Release)(IAMTimecodeReader *This);
-      HRESULT (WINAPI *GetTCRMode)(IAMTimecodeReader *This,LONG Param,LONG *pValue);
-      HRESULT (WINAPI *SetTCRMode)(IAMTimecodeReader *This,LONG Param,LONG Value);
-      HRESULT (WINAPI *put_VITCLine)(IAMTimecodeReader *This,LONG Line);
-      HRESULT (WINAPI *get_VITCLine)(IAMTimecodeReader *This,LONG *pLine);
-      HRESULT (WINAPI *GetTimecode)(IAMTimecodeReader *This,PTIMECODE_SAMPLE pTimecodeSample);
+                   HRESULT (WINAPI *QueryInterface)(IAMTimecodeReader *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMTimecodeReader *This);
+                   ULONG (WINAPI *Release)(IAMTimecodeReader *This);
+                   HRESULT (WINAPI *GetTCRMode)(IAMTimecodeReader *This,LONG Param,LONG *pValue);
+                   HRESULT (WINAPI *SetTCRMode)(IAMTimecodeReader *This,LONG Param,LONG Value);
+                   HRESULT (WINAPI *put_VITCLine)(IAMTimecodeReader *This,LONG Line);
+                   HRESULT (WINAPI *get_VITCLine)(IAMTimecodeReader *This,LONG *pLine);
+                   HRESULT (WINAPI *GetTimecode)(IAMTimecodeReader *This,PTIMECODE_SAMPLE pTimecodeSample);
     END_INTERFACE
   } IAMTimecodeReaderVtbl;
   struct IAMTimecodeReader {
@@ -11119,15 +11119,15 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMTimecodeGeneratorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMTimecodeGenerator *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMTimecodeGenerator *This);
-      ULONG (WINAPI *Release)(IAMTimecodeGenerator *This);
-      HRESULT (WINAPI *GetTCGMode)(IAMTimecodeGenerator *This,LONG Param,LONG *pValue);
-      HRESULT (WINAPI *SetTCGMode)(IAMTimecodeGenerator *This,LONG Param,LONG Value);
-      HRESULT (WINAPI *put_VITCLine)(IAMTimecodeGenerator *This,LONG Line);
-      HRESULT (WINAPI *get_VITCLine)(IAMTimecodeGenerator *This,LONG *pLine);
-      HRESULT (WINAPI *SetTimecode)(IAMTimecodeGenerator *This,PTIMECODE_SAMPLE pTimecodeSample);
-      HRESULT (WINAPI *GetTimecode)(IAMTimecodeGenerator *This,PTIMECODE_SAMPLE pTimecodeSample);
+                   HRESULT (WINAPI *QueryInterface)(IAMTimecodeGenerator *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMTimecodeGenerator *This);
+                   ULONG (WINAPI *Release)(IAMTimecodeGenerator *This);
+                   HRESULT (WINAPI *GetTCGMode)(IAMTimecodeGenerator *This,LONG Param,LONG *pValue);
+                   HRESULT (WINAPI *SetTCGMode)(IAMTimecodeGenerator *This,LONG Param,LONG Value);
+                   HRESULT (WINAPI *put_VITCLine)(IAMTimecodeGenerator *This,LONG Line);
+                   HRESULT (WINAPI *get_VITCLine)(IAMTimecodeGenerator *This,LONG *pLine);
+                   HRESULT (WINAPI *SetTimecode)(IAMTimecodeGenerator *This,PTIMECODE_SAMPLE pTimecodeSample);
+                   HRESULT (WINAPI *GetTimecode)(IAMTimecodeGenerator *This,PTIMECODE_SAMPLE pTimecodeSample);
     END_INTERFACE
   } IAMTimecodeGeneratorVtbl;
   struct IAMTimecodeGenerator {
@@ -11177,13 +11177,13 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMTimecodeDisplayVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMTimecodeDisplay *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMTimecodeDisplay *This);
-      ULONG (WINAPI *Release)(IAMTimecodeDisplay *This);
-      HRESULT (WINAPI *GetTCDisplayEnable)(IAMTimecodeDisplay *This,LONG *pState);
-      HRESULT (WINAPI *SetTCDisplayEnable)(IAMTimecodeDisplay *This,LONG State);
-      HRESULT (WINAPI *GetTCDisplay)(IAMTimecodeDisplay *This,LONG Param,LONG *pValue);
-      HRESULT (WINAPI *SetTCDisplay)(IAMTimecodeDisplay *This,LONG Param,LONG Value);
+                   HRESULT (WINAPI *QueryInterface)(IAMTimecodeDisplay *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMTimecodeDisplay *This);
+                   ULONG (WINAPI *Release)(IAMTimecodeDisplay *This);
+                   HRESULT (WINAPI *GetTCDisplayEnable)(IAMTimecodeDisplay *This,LONG *pState);
+                   HRESULT (WINAPI *SetTCDisplayEnable)(IAMTimecodeDisplay *This,LONG State);
+                   HRESULT (WINAPI *GetTCDisplay)(IAMTimecodeDisplay *This,LONG Param,LONG *pValue);
+                   HRESULT (WINAPI *SetTCDisplay)(IAMTimecodeDisplay *This,LONG Param,LONG Value);
     END_INTERFACE
   } IAMTimecodeDisplayVtbl;
   struct IAMTimecodeDisplay {
@@ -11228,14 +11228,14 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMDevMemoryAllocatorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMDevMemoryAllocator *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMDevMemoryAllocator *This);
-      ULONG (WINAPI *Release)(IAMDevMemoryAllocator *This);
-      HRESULT (WINAPI *GetInfo)(IAMDevMemoryAllocator *This,DWORD *pdwcbTotalFree,DWORD *pdwcbLargestFree,DWORD *pdwcbTotalMemory,DWORD *pdwcbMinimumChunk);
-      HRESULT (WINAPI *CheckMemory)(IAMDevMemoryAllocator *This,const BYTE *pBuffer);
-      HRESULT (WINAPI *Alloc)(IAMDevMemoryAllocator *This,BYTE **ppBuffer,DWORD *pdwcbBuffer);
-      HRESULT (WINAPI *Free)(IAMDevMemoryAllocator *This,BYTE *pBuffer);
-      HRESULT (WINAPI *GetDevMemoryObject)(IAMDevMemoryAllocator *This,IUnknown **ppUnkInnner,IUnknown *pUnkOuter);
+                   HRESULT (WINAPI *QueryInterface)(IAMDevMemoryAllocator *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMDevMemoryAllocator *This);
+                   ULONG (WINAPI *Release)(IAMDevMemoryAllocator *This);
+                   HRESULT (WINAPI *GetInfo)(IAMDevMemoryAllocator *This,DWORD *pdwcbTotalFree,DWORD *pdwcbLargestFree,DWORD *pdwcbTotalMemory,DWORD *pdwcbMinimumChunk);
+                   HRESULT (WINAPI *CheckMemory)(IAMDevMemoryAllocator *This,const BYTE *pBuffer);
+                   HRESULT (WINAPI *Alloc)(IAMDevMemoryAllocator *This,BYTE **ppBuffer,DWORD *pdwcbBuffer);
+                   HRESULT (WINAPI *Free)(IAMDevMemoryAllocator *This,BYTE *pBuffer);
+                   HRESULT (WINAPI *GetDevMemoryObject)(IAMDevMemoryAllocator *This,IUnknown **ppUnkInnner,IUnknown *pUnkOuter);
     END_INTERFACE
   } IAMDevMemoryAllocatorVtbl;
   struct IAMDevMemoryAllocator {
@@ -11281,12 +11281,12 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMDevMemoryControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMDevMemoryControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMDevMemoryControl *This);
-      ULONG (WINAPI *Release)(IAMDevMemoryControl *This);
-      HRESULT (WINAPI *QueryWriteSync)(IAMDevMemoryControl *This);
-      HRESULT (WINAPI *WriteSync)(IAMDevMemoryControl *This);
-      HRESULT (WINAPI *GetDevId)(IAMDevMemoryControl *This,DWORD *pdwDevId);
+                   HRESULT (WINAPI *QueryInterface)(IAMDevMemoryControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMDevMemoryControl *This);
+                   ULONG (WINAPI *Release)(IAMDevMemoryControl *This);
+                   HRESULT (WINAPI *QueryWriteSync)(IAMDevMemoryControl *This);
+                   HRESULT (WINAPI *WriteSync)(IAMDevMemoryControl *This);
+                   HRESULT (WINAPI *GetDevId)(IAMDevMemoryControl *This,DWORD *pdwDevId);
     END_INTERFACE
   } IAMDevMemoryControlVtbl;
   struct IAMDevMemoryControl {
@@ -11334,12 +11334,12 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMStreamSelectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMStreamSelect *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMStreamSelect *This);
-      ULONG (WINAPI *Release)(IAMStreamSelect *This);
-      HRESULT (WINAPI *Count)(IAMStreamSelect *This,DWORD *pcStreams);
-      HRESULT (WINAPI *Info)(IAMStreamSelect *This,LONG lIndex,AM_MEDIA_TYPE **ppmt,DWORD *pdwFlags,LCID *plcid,DWORD *pdwGroup,WCHAR **ppszName,IUnknown **ppObject,IUnknown **ppUnk);
-      HRESULT (WINAPI *Enable)(IAMStreamSelect *This,LONG lIndex,DWORD dwFlags);
+                   HRESULT (WINAPI *QueryInterface)(IAMStreamSelect *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMStreamSelect *This);
+                   ULONG (WINAPI *Release)(IAMStreamSelect *This);
+                   HRESULT (WINAPI *Count)(IAMStreamSelect *This,DWORD *pcStreams);
+                   HRESULT (WINAPI *Info)(IAMStreamSelect *This,LONG lIndex,AM_MEDIA_TYPE **ppmt,DWORD *pdwFlags,LCID *plcid,DWORD *pdwGroup,WCHAR **ppszName,IUnknown **ppObject,IUnknown **ppUnk);
+                   HRESULT (WINAPI *Enable)(IAMStreamSelect *This,LONG lIndex,DWORD dwFlags);
     END_INTERFACE
   } IAMStreamSelectVtbl;
   struct IAMStreamSelect {
@@ -11381,10 +11381,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMResourceControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMResourceControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMResourceControl *This);
-      ULONG (WINAPI *Release)(IAMResourceControl *This);
-      HRESULT (WINAPI *Reserve)(IAMResourceControl *This,DWORD dwFlags,PVOID pvReserved);
+                   HRESULT (WINAPI *QueryInterface)(IAMResourceControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMResourceControl *This);
+                   ULONG (WINAPI *Release)(IAMResourceControl *This);
+                   HRESULT (WINAPI *Reserve)(IAMResourceControl *This,DWORD dwFlags,PVOID pvReserved);
     END_INTERFACE
   } IAMResourceControlVtbl;
   struct IAMResourceControl {
@@ -11412,10 +11412,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMClockAdjustVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMClockAdjust *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMClockAdjust *This);
-      ULONG (WINAPI *Release)(IAMClockAdjust *This);
-      HRESULT (WINAPI *SetClockDelta)(IAMClockAdjust *This,REFERENCE_TIME rtDelta);
+                   HRESULT (WINAPI *QueryInterface)(IAMClockAdjust *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMClockAdjust *This);
+                   ULONG (WINAPI *Release)(IAMClockAdjust *This);
+                   HRESULT (WINAPI *SetClockDelta)(IAMClockAdjust *This,REFERENCE_TIME rtDelta);
     END_INTERFACE
   } IAMClockAdjustVtbl;
   struct IAMClockAdjust {
@@ -11445,12 +11445,12 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IDrawVideoImageVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDrawVideoImage *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDrawVideoImage *This);
-      ULONG (WINAPI *Release)(IDrawVideoImage *This);
-      HRESULT (WINAPI *DrawVideoImageBegin)(IDrawVideoImage *This);
-      HRESULT (WINAPI *DrawVideoImageEnd)(IDrawVideoImage *This);
-      HRESULT (WINAPI *DrawVideoImageDraw)(IDrawVideoImage *This,HDC hdc,LPRECT lprcSrc,LPRECT lprcDst);
+                   HRESULT (WINAPI *QueryInterface)(IDrawVideoImage *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDrawVideoImage *This);
+                   ULONG (WINAPI *Release)(IDrawVideoImage *This);
+                   HRESULT (WINAPI *DrawVideoImageBegin)(IDrawVideoImage *This);
+                   HRESULT (WINAPI *DrawVideoImageEnd)(IDrawVideoImage *This);
+                   HRESULT (WINAPI *DrawVideoImageDraw)(IDrawVideoImage *This,HDC hdc,LPRECT lprcSrc,LPRECT lprcDst);
     END_INTERFACE
   } IDrawVideoImageVtbl;
   struct IDrawVideoImage {
@@ -11485,11 +11485,11 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IDecimateVideoImageVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDecimateVideoImage *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDecimateVideoImage *This);
-      ULONG (WINAPI *Release)(IDecimateVideoImage *This);
-      HRESULT (WINAPI *SetDecimationImageSize)(IDecimateVideoImage *This,LONG lWidth,LONG lHeight);
-      HRESULT (WINAPI *ResetDecimationImageSize)(IDecimateVideoImage *This);
+                   HRESULT (WINAPI *QueryInterface)(IDecimateVideoImage *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDecimateVideoImage *This);
+                   ULONG (WINAPI *Release)(IDecimateVideoImage *This);
+                   HRESULT (WINAPI *SetDecimationImageSize)(IDecimateVideoImage *This,LONG lWidth,LONG lHeight);
+                   HRESULT (WINAPI *ResetDecimationImageSize)(IDecimateVideoImage *This);
     END_INTERFACE
   } IDecimateVideoImageVtbl;
   struct IDecimateVideoImage {
@@ -11529,11 +11529,11 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMVideoDecimationPropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMVideoDecimationProperties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMVideoDecimationProperties *This);
-      ULONG (WINAPI *Release)(IAMVideoDecimationProperties *This);
-      HRESULT (WINAPI *QueryDecimationUsage)(IAMVideoDecimationProperties *This,DECIMATION_USAGE *lpUsage);
-      HRESULT (WINAPI *SetDecimationUsage)(IAMVideoDecimationProperties *This,DECIMATION_USAGE Usage);
+                   HRESULT (WINAPI *QueryInterface)(IAMVideoDecimationProperties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMVideoDecimationProperties *This);
+                   ULONG (WINAPI *Release)(IAMVideoDecimationProperties *This);
+                   HRESULT (WINAPI *QueryDecimationUsage)(IAMVideoDecimationProperties *This,DECIMATION_USAGE *lpUsage);
+                   HRESULT (WINAPI *SetDecimationUsage)(IAMVideoDecimationProperties *This,DECIMATION_USAGE Usage);
     END_INTERFACE
   } IAMVideoDecimationPropertiesVtbl;
   struct IAMVideoDecimationProperties {
@@ -11566,12 +11566,12 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IVideoFrameStepVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVideoFrameStep *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVideoFrameStep *This);
-      ULONG (WINAPI *Release)(IVideoFrameStep *This);
-      HRESULT (WINAPI *Step)(IVideoFrameStep *This,DWORD dwFrames,IUnknown *pStepObject);
-      HRESULT (WINAPI *CanStep)(IVideoFrameStep *This,LONG bMultiple,IUnknown *pStepObject);
-      HRESULT (WINAPI *CancelStep)(IVideoFrameStep *This);
+                   HRESULT (WINAPI *QueryInterface)(IVideoFrameStep *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVideoFrameStep *This);
+                   ULONG (WINAPI *Release)(IVideoFrameStep *This);
+                   HRESULT (WINAPI *Step)(IVideoFrameStep *This,DWORD dwFrames,IUnknown *pStepObject);
+                   HRESULT (WINAPI *CanStep)(IVideoFrameStep *This,LONG bMultiple,IUnknown *pStepObject);
+                   HRESULT (WINAPI *CancelStep)(IVideoFrameStep *This);
     END_INTERFACE
   } IVideoFrameStepVtbl;
   struct IVideoFrameStep {
@@ -11612,10 +11612,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMLatencyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMLatency *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMLatency *This);
-      ULONG (WINAPI *Release)(IAMLatency *This);
-      HRESULT (WINAPI *GetLatency)(IAMLatency *This,REFERENCE_TIME *prtLatency);
+                   HRESULT (WINAPI *QueryInterface)(IAMLatency *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMLatency *This);
+                   ULONG (WINAPI *Release)(IAMLatency *This);
+                   HRESULT (WINAPI *GetLatency)(IAMLatency *This,REFERENCE_TIME *prtLatency);
     END_INTERFACE
   } IAMLatencyVtbl;
   struct IAMLatency {
@@ -11648,16 +11648,16 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMPushSourceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMPushSource *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMPushSource *This);
-      ULONG (WINAPI *Release)(IAMPushSource *This);
-      HRESULT (WINAPI *GetLatency)(IAMPushSource *This,REFERENCE_TIME *prtLatency);
-      HRESULT (WINAPI *GetPushSourceFlags)(IAMPushSource *This,ULONG *pFlags);
-      HRESULT (WINAPI *SetPushSourceFlags)(IAMPushSource *This,ULONG Flags);
-      HRESULT (WINAPI *SetStreamOffset)(IAMPushSource *This,REFERENCE_TIME rtOffset);
-      HRESULT (WINAPI *GetStreamOffset)(IAMPushSource *This,REFERENCE_TIME *prtOffset);
-      HRESULT (WINAPI *GetMaxStreamOffset)(IAMPushSource *This,REFERENCE_TIME *prtMaxOffset);
-      HRESULT (WINAPI *SetMaxStreamOffset)(IAMPushSource *This,REFERENCE_TIME rtMaxOffset);
+                   HRESULT (WINAPI *QueryInterface)(IAMPushSource *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMPushSource *This);
+                   ULONG (WINAPI *Release)(IAMPushSource *This);
+                   HRESULT (WINAPI *GetLatency)(IAMPushSource *This,REFERENCE_TIME *prtLatency);
+                   HRESULT (WINAPI *GetPushSourceFlags)(IAMPushSource *This,ULONG *pFlags);
+                   HRESULT (WINAPI *SetPushSourceFlags)(IAMPushSource *This,ULONG Flags);
+                   HRESULT (WINAPI *SetStreamOffset)(IAMPushSource *This,REFERENCE_TIME rtOffset);
+                   HRESULT (WINAPI *GetStreamOffset)(IAMPushSource *This,REFERENCE_TIME *prtOffset);
+                   HRESULT (WINAPI *GetMaxStreamOffset)(IAMPushSource *This,REFERENCE_TIME *prtMaxOffset);
+                   HRESULT (WINAPI *SetMaxStreamOffset)(IAMPushSource *This,REFERENCE_TIME rtMaxOffset);
     END_INTERFACE
   } IAMPushSourceVtbl;
   struct IAMPushSource {
@@ -11703,12 +11703,12 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMDeviceRemovalVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMDeviceRemoval *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMDeviceRemoval *This);
-      ULONG (WINAPI *Release)(IAMDeviceRemoval *This);
-      HRESULT (WINAPI *DeviceInfo)(IAMDeviceRemoval *This,CLSID *pclsidInterfaceClass,WCHAR **pwszSymbolicLink);
-      HRESULT (WINAPI *Reassociate)(IAMDeviceRemoval *This);
-      HRESULT (WINAPI *Disassociate)(IAMDeviceRemoval *This);
+                   HRESULT (WINAPI *QueryInterface)(IAMDeviceRemoval *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMDeviceRemoval *This);
+                   ULONG (WINAPI *Release)(IAMDeviceRemoval *This);
+                   HRESULT (WINAPI *DeviceInfo)(IAMDeviceRemoval *This,CLSID *pclsidInterfaceClass,WCHAR **pwszSymbolicLink);
+                   HRESULT (WINAPI *Reassociate)(IAMDeviceRemoval *This);
+                   HRESULT (WINAPI *Disassociate)(IAMDeviceRemoval *This);
     END_INTERFACE
   } IAMDeviceRemovalVtbl;
   struct IAMDeviceRemoval {
@@ -11769,11 +11769,11 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IDVEncVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDVEnc *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDVEnc *This);
-      ULONG (WINAPI *Release)(IDVEnc *This);
-      HRESULT (WINAPI *get_IFormatResolution)(IDVEnc *This,int *VideoFormat,int *DVFormat,int *Resolution,BYTE fDVInfo,DVINFO *sDVInfo);
-      HRESULT (WINAPI *put_IFormatResolution)(IDVEnc *This,int VideoFormat,int DVFormat,int Resolution,BYTE fDVInfo,DVINFO *sDVInfo);
+                   HRESULT (WINAPI *QueryInterface)(IDVEnc *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDVEnc *This);
+                   ULONG (WINAPI *Release)(IDVEnc *This);
+                   HRESULT (WINAPI *get_IFormatResolution)(IDVEnc *This,int *VideoFormat,int *DVFormat,int *Resolution,BYTE fDVInfo,DVINFO *sDVInfo);
+                   HRESULT (WINAPI *put_IFormatResolution)(IDVEnc *This,int VideoFormat,int DVFormat,int Resolution,BYTE fDVInfo,DVINFO *sDVInfo);
     END_INTERFACE
   } IDVEncVtbl;
   struct IDVEnc {
@@ -11815,11 +11815,11 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IIPDVDecVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIPDVDec *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIPDVDec *This);
-      ULONG (WINAPI *Release)(IIPDVDec *This);
-      HRESULT (WINAPI *get_IPDisplay)(IIPDVDec *This,int *displayPix);
-      HRESULT (WINAPI *put_IPDisplay)(IIPDVDec *This,int displayPix);
+                   HRESULT (WINAPI *QueryInterface)(IIPDVDec *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIPDVDec *This);
+                   ULONG (WINAPI *Release)(IIPDVDec *This);
+                   HRESULT (WINAPI *get_IPDisplay)(IIPDVDec *This,int *displayPix);
+                   HRESULT (WINAPI *put_IPDisplay)(IIPDVDec *This,int displayPix);
     END_INTERFACE
   } IIPDVDecVtbl;
   struct IIPDVDec {
@@ -11850,10 +11850,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IDVRGB219Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDVRGB219 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDVRGB219 *This);
-      ULONG (WINAPI *Release)(IDVRGB219 *This);
-      HRESULT (WINAPI *SetRGB219)(IDVRGB219 *This,WINBOOL bState);
+                   HRESULT (WINAPI *QueryInterface)(IDVRGB219 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDVRGB219 *This);
+                   ULONG (WINAPI *Release)(IDVRGB219 *This);
+                   HRESULT (WINAPI *SetRGB219)(IDVRGB219 *This,WINBOOL bState);
     END_INTERFACE
   } IDVRGB219Vtbl;
   struct IDVRGB219 {
@@ -11881,10 +11881,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IDVSplitterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDVSplitter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDVSplitter *This);
-      ULONG (WINAPI *Release)(IDVSplitter *This);
-      HRESULT (WINAPI *DiscardAlternateVideoFrames)(IDVSplitter *This,int nDiscard);
+                   HRESULT (WINAPI *QueryInterface)(IDVSplitter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDVSplitter *This);
+                   ULONG (WINAPI *Release)(IDVSplitter *This);
+                   HRESULT (WINAPI *DiscardAlternateVideoFrames)(IDVSplitter *This,int nDiscard);
     END_INTERFACE
   } IDVSplitterVtbl;
   struct IDVSplitter {
@@ -11924,10 +11924,10 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMAudioRendererStatsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMAudioRendererStats *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMAudioRendererStats *This);
-      ULONG (WINAPI *Release)(IAMAudioRendererStats *This);
-      HRESULT (WINAPI *GetStatParam)(IAMAudioRendererStats *This,DWORD dwParam,DWORD *pdwParam1,DWORD *pdwParam2);
+                   HRESULT (WINAPI *QueryInterface)(IAMAudioRendererStats *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMAudioRendererStats *This);
+                   ULONG (WINAPI *Release)(IAMAudioRendererStats *This);
+                   HRESULT (WINAPI *GetStatParam)(IAMAudioRendererStats *This,DWORD dwParam,DWORD *pdwParam1,DWORD *pdwParam2);
     END_INTERFACE
   } IAMAudioRendererStatsVtbl;
   struct IAMAudioRendererStats {
@@ -11963,12 +11963,12 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMGraphStreamsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMGraphStreams *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMGraphStreams *This);
-      ULONG (WINAPI *Release)(IAMGraphStreams *This);
-      HRESULT (WINAPI *FindUpstreamInterface)(IAMGraphStreams *This,IPin *pPin,REFIID riid,void **ppvInterface,DWORD dwFlags);
-      HRESULT (WINAPI *SyncUsingStreamOffset)(IAMGraphStreams *This,WINBOOL bUseStreamOffset);
-      HRESULT (WINAPI *SetMaxGraphLatency)(IAMGraphStreams *This,REFERENCE_TIME rtMaxGraphLatency);
+                   HRESULT (WINAPI *QueryInterface)(IAMGraphStreams *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMGraphStreams *This);
+                   ULONG (WINAPI *Release)(IAMGraphStreams *This);
+                   HRESULT (WINAPI *FindUpstreamInterface)(IAMGraphStreams *This,IPin *pPin,REFIID riid,void **ppvInterface,DWORD dwFlags);
+                   HRESULT (WINAPI *SyncUsingStreamOffset)(IAMGraphStreams *This,WINBOOL bUseStreamOffset);
+                   HRESULT (WINAPI *SetMaxGraphLatency)(IAMGraphStreams *This,REFERENCE_TIME rtMaxGraphLatency);
     END_INTERFACE
   } IAMGraphStreamsVtbl;
   struct IAMGraphStreams {
@@ -12010,12 +12010,12 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMOverlayFXVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMOverlayFX *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMOverlayFX *This);
-      ULONG (WINAPI *Release)(IAMOverlayFX *This);
-      HRESULT (WINAPI *QueryOverlayFXCaps)(IAMOverlayFX *This,DWORD *lpdwOverlayFXCaps);
-      HRESULT (WINAPI *SetOverlayFX)(IAMOverlayFX *This,DWORD dwOverlayFX);
-      HRESULT (WINAPI *GetOverlayFX)(IAMOverlayFX *This,DWORD *lpdwOverlayFX);
+                   HRESULT (WINAPI *QueryInterface)(IAMOverlayFX *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMOverlayFX *This);
+                   ULONG (WINAPI *Release)(IAMOverlayFX *This);
+                   HRESULT (WINAPI *QueryOverlayFXCaps)(IAMOverlayFX *This,DWORD *lpdwOverlayFXCaps);
+                   HRESULT (WINAPI *SetOverlayFX)(IAMOverlayFX *This,DWORD dwOverlayFX);
+                   HRESULT (WINAPI *GetOverlayFX)(IAMOverlayFX *This,DWORD *lpdwOverlayFX);
     END_INTERFACE
   } IAMOverlayFXVtbl;
   struct IAMOverlayFX {
@@ -12050,11 +12050,11 @@ __CRT_UUID_DECL(IAMCrossbar,0xc6e13380,0x30ac,0x11d0,0xa1,0x8c,0x00,0xa0,0xc9,0x
 #else
   typedef struct IAMOpenProgressVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMOpenProgress *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMOpenProgress *This);
-      ULONG (WINAPI *Release)(IAMOpenProgress *This);
-      HRESULT (WINAPI *QueryProgress)(IAMOpenProgress *This,LONGLONG *pllTotal,LONGLONG *pllCurrent);
-      HRESULT (WINAPI *AbortOperation)(IAMOpenProgress *This);
+                   HRESULT (WINAPI *QueryInterface)(IAMOpenProgress *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMOpenProgress *This);
+                   ULONG (WINAPI *Release)(IAMOpenProgress *This);
+                   HRESULT (WINAPI *QueryProgress)(IAMOpenProgress *This,LONGLONG *pllTotal,LONGLONG *pllCurrent);
+                   HRESULT (WINAPI *AbortOperation)(IAMOpenProgress *This);
     END_INTERFACE
   } IAMOpenProgressVtbl;
   struct IAMOpenProgress {
@@ -12091,12 +12091,12 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IMpeg2DemultiplexerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMpeg2Demultiplexer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMpeg2Demultiplexer *This);
-      ULONG (WINAPI *Release)(IMpeg2Demultiplexer *This);
-      HRESULT (WINAPI *CreateOutputPin)(IMpeg2Demultiplexer *This,AM_MEDIA_TYPE *pMediaType,LPWSTR pszPinName,IPin **ppIPin);
-      HRESULT (WINAPI *SetOutputPinMediaType)(IMpeg2Demultiplexer *This,LPWSTR pszPinName,AM_MEDIA_TYPE *pMediaType);
-      HRESULT (WINAPI *DeleteOutputPin)(IMpeg2Demultiplexer *This,LPWSTR pszPinName);
+                   HRESULT (WINAPI *QueryInterface)(IMpeg2Demultiplexer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMpeg2Demultiplexer *This);
+                   ULONG (WINAPI *Release)(IMpeg2Demultiplexer *This);
+                   HRESULT (WINAPI *CreateOutputPin)(IMpeg2Demultiplexer *This,AM_MEDIA_TYPE *pMediaType,LPWSTR pszPinName,IPin **ppIPin);
+                   HRESULT (WINAPI *SetOutputPinMediaType)(IMpeg2Demultiplexer *This,LPWSTR pszPinName,AM_MEDIA_TYPE *pMediaType);
+                   HRESULT (WINAPI *DeleteOutputPin)(IMpeg2Demultiplexer *This,LPWSTR pszPinName);
     END_INTERFACE
   } IMpeg2DemultiplexerVtbl;
   struct IMpeg2Demultiplexer {
@@ -12150,13 +12150,13 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IEnumStreamIdMapVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumStreamIdMap *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumStreamIdMap *This);
-      ULONG (WINAPI *Release)(IEnumStreamIdMap *This);
-      HRESULT (WINAPI *Next)(IEnumStreamIdMap *This,ULONG cRequest,STREAM_ID_MAP *pStreamIdMap,ULONG *pcReceived);
-      HRESULT (WINAPI *Skip)(IEnumStreamIdMap *This,ULONG cRecords);
-      HRESULT (WINAPI *Reset)(IEnumStreamIdMap *This);
-      HRESULT (WINAPI *Clone)(IEnumStreamIdMap *This,IEnumStreamIdMap **ppIEnumStreamIdMap);
+                   HRESULT (WINAPI *QueryInterface)(IEnumStreamIdMap *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumStreamIdMap *This);
+                   ULONG (WINAPI *Release)(IEnumStreamIdMap *This);
+                   HRESULT (WINAPI *Next)(IEnumStreamIdMap *This,ULONG cRequest,STREAM_ID_MAP *pStreamIdMap,ULONG *pcReceived);
+                   HRESULT (WINAPI *Skip)(IEnumStreamIdMap *This,ULONG cRecords);
+                   HRESULT (WINAPI *Reset)(IEnumStreamIdMap *This);
+                   HRESULT (WINAPI *Clone)(IEnumStreamIdMap *This,IEnumStreamIdMap **ppIEnumStreamIdMap);
     END_INTERFACE
   } IEnumStreamIdMapVtbl;
   struct IEnumStreamIdMap {
@@ -12195,12 +12195,12 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IMPEG2StreamIdMapVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMPEG2StreamIdMap *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMPEG2StreamIdMap *This);
-      ULONG (WINAPI *Release)(IMPEG2StreamIdMap *This);
-      HRESULT (WINAPI *MapStreamId)(IMPEG2StreamIdMap *This,ULONG ulStreamId,DWORD MediaSampleContent,ULONG ulSubstreamFilterValue,int iDataOffset);
-      HRESULT (WINAPI *UnmapStreamId)(IMPEG2StreamIdMap *This,ULONG culStreamId,ULONG *pulStreamId);
-      HRESULT (WINAPI *EnumStreamIdMap)(IMPEG2StreamIdMap *This,IEnumStreamIdMap **ppIEnumStreamIdMap);
+                   HRESULT (WINAPI *QueryInterface)(IMPEG2StreamIdMap *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMPEG2StreamIdMap *This);
+                   ULONG (WINAPI *Release)(IMPEG2StreamIdMap *This);
+                   HRESULT (WINAPI *MapStreamId)(IMPEG2StreamIdMap *This,ULONG ulStreamId,DWORD MediaSampleContent,ULONG ulSubstreamFilterValue,int iDataOffset);
+                   HRESULT (WINAPI *UnmapStreamId)(IMPEG2StreamIdMap *This,ULONG culStreamId,ULONG *pulStreamId);
+                   HRESULT (WINAPI *EnumStreamIdMap)(IMPEG2StreamIdMap *This,IEnumStreamIdMap **ppIEnumStreamIdMap);
     END_INTERFACE
   } IMPEG2StreamIdMapVtbl;
   struct IMPEG2StreamIdMap {
@@ -12234,10 +12234,10 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IRegisterServiceProviderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRegisterServiceProvider *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRegisterServiceProvider *This);
-      ULONG (WINAPI *Release)(IRegisterServiceProvider *This);
-      HRESULT (WINAPI *RegisterService)(IRegisterServiceProvider *This,REFGUID guidService,IUnknown *pUnkObject);
+                   HRESULT (WINAPI *QueryInterface)(IRegisterServiceProvider *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRegisterServiceProvider *This);
+                   ULONG (WINAPI *Release)(IRegisterServiceProvider *This);
+                   HRESULT (WINAPI *RegisterService)(IRegisterServiceProvider *This,REFGUID guidService,IUnknown *pUnkObject);
     END_INTERFACE
   } IRegisterServiceProviderVtbl;
   struct IRegisterServiceProvider {
@@ -12296,24 +12296,24 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct ICodecAPIVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICodecAPI *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICodecAPI *This);
-      ULONG (WINAPI *Release)(ICodecAPI *This);
-      HRESULT (WINAPI *IsSupported)(ICodecAPI *This,const GUID *Api);
-      HRESULT (WINAPI *IsModifiable)(ICodecAPI *This,const GUID *Api);
-      HRESULT (WINAPI *GetParameterRange)(ICodecAPI *This,const GUID *Api,VARIANT *ValueMin,VARIANT *ValueMax,VARIANT *SteppingDelta);
-      HRESULT (WINAPI *GetParameterValues)(ICodecAPI *This,const GUID *Api,VARIANT **Values,ULONG *ValuesCount);
-      HRESULT (WINAPI *GetDefaultValue)(ICodecAPI *This,const GUID *Api,VARIANT *Value);
-      HRESULT (WINAPI *GetValue)(ICodecAPI *This,const GUID *Api,VARIANT *Value);
-      HRESULT (WINAPI *SetValue)(ICodecAPI *This,const GUID *Api,VARIANT *Value);
-      HRESULT (WINAPI *RegisterForEvent)(ICodecAPI *This,const GUID *Api,LONG_PTR userData);
-      HRESULT (WINAPI *UnregisterForEvent)(ICodecAPI *This,const GUID *Api);
-      HRESULT (WINAPI *SetAllDefaults)(ICodecAPI *This);
-      HRESULT (WINAPI *SetValueWithNotify)(ICodecAPI *This,const GUID *Api,VARIANT *Value,GUID **ChangedParam,ULONG *ChangedParamCount);
-      HRESULT (WINAPI *SetAllDefaultsWithNotify)(ICodecAPI *This,GUID **ChangedParam,ULONG *ChangedParamCount);
-      HRESULT (WINAPI *GetAllSettings)(ICodecAPI *This,IStream *__MIDL_0016);
-      HRESULT (WINAPI *SetAllSettings)(ICodecAPI *This,IStream *__MIDL_0017);
-      HRESULT (WINAPI *SetAllSettingsWithNotify)(ICodecAPI *This,IStream *__MIDL_0018,GUID **ChangedParam,ULONG *ChangedParamCount);
+                   HRESULT (WINAPI *QueryInterface)(ICodecAPI *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICodecAPI *This);
+                   ULONG (WINAPI *Release)(ICodecAPI *This);
+                   HRESULT (WINAPI *IsSupported)(ICodecAPI *This,const GUID *Api);
+                   HRESULT (WINAPI *IsModifiable)(ICodecAPI *This,const GUID *Api);
+                   HRESULT (WINAPI *GetParameterRange)(ICodecAPI *This,const GUID *Api,VARIANT *ValueMin,VARIANT *ValueMax,VARIANT *SteppingDelta);
+                   HRESULT (WINAPI *GetParameterValues)(ICodecAPI *This,const GUID *Api,VARIANT **Values,ULONG *ValuesCount);
+                   HRESULT (WINAPI *GetDefaultValue)(ICodecAPI *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *GetValue)(ICodecAPI *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *SetValue)(ICodecAPI *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *RegisterForEvent)(ICodecAPI *This,const GUID *Api,LONG_PTR userData);
+                   HRESULT (WINAPI *UnregisterForEvent)(ICodecAPI *This,const GUID *Api);
+                   HRESULT (WINAPI *SetAllDefaults)(ICodecAPI *This);
+                   HRESULT (WINAPI *SetValueWithNotify)(ICodecAPI *This,const GUID *Api,VARIANT *Value,GUID **ChangedParam,ULONG *ChangedParamCount);
+                   HRESULT (WINAPI *SetAllDefaultsWithNotify)(ICodecAPI *This,GUID **ChangedParam,ULONG *ChangedParamCount);
+                   HRESULT (WINAPI *GetAllSettings)(ICodecAPI *This,IStream *__MIDL_0016);
+                   HRESULT (WINAPI *SetAllSettings)(ICodecAPI *This,IStream *__MIDL_0017);
+                   HRESULT (WINAPI *SetAllSettingsWithNotify)(ICodecAPI *This,IStream *__MIDL_0018,GUID **ChangedParam,ULONG *ChangedParamCount);
     END_INTERFACE
   } ICodecAPIVtbl;
   struct ICodecAPI {
@@ -12383,10 +12383,10 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IGetCapabilitiesKeyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetCapabilitiesKey *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetCapabilitiesKey *This);
-      ULONG (WINAPI *Release)(IGetCapabilitiesKey *This);
-      HRESULT (WINAPI *GetCapabilitiesKey)(IGetCapabilitiesKey *This,HKEY *pHKey);
+                   HRESULT (WINAPI *QueryInterface)(IGetCapabilitiesKey *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetCapabilitiesKey *This);
+                   ULONG (WINAPI *Release)(IGetCapabilitiesKey *This);
+                   HRESULT (WINAPI *GetCapabilitiesKey)(IGetCapabilitiesKey *This,HKEY *pHKey);
     END_INTERFACE
   } IGetCapabilitiesKeyVtbl;
   struct IGetCapabilitiesKey {
@@ -12420,16 +12420,16 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IEncoderAPIVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEncoderAPI *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEncoderAPI *This);
-      ULONG (WINAPI *Release)(IEncoderAPI *This);
-      HRESULT (WINAPI *IsSupported)(IEncoderAPI *This,const GUID *Api);
-      HRESULT (WINAPI *IsAvailable)(IEncoderAPI *This,const GUID *Api);
-      HRESULT (WINAPI *GetParameterRange)(IEncoderAPI *This,const GUID *Api,VARIANT *ValueMin,VARIANT *ValueMax,VARIANT *SteppingDelta);
-      HRESULT (WINAPI *GetParameterValues)(IEncoderAPI *This,const GUID *Api,VARIANT **Values,ULONG *ValuesCount);
-      HRESULT (WINAPI *GetDefaultValue)(IEncoderAPI *This,const GUID *Api,VARIANT *Value);
-      HRESULT (WINAPI *GetValue)(IEncoderAPI *This,const GUID *Api,VARIANT *Value);
-      HRESULT (WINAPI *SetValue)(IEncoderAPI *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *QueryInterface)(IEncoderAPI *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEncoderAPI *This);
+                   ULONG (WINAPI *Release)(IEncoderAPI *This);
+                   HRESULT (WINAPI *IsSupported)(IEncoderAPI *This,const GUID *Api);
+                   HRESULT (WINAPI *IsAvailable)(IEncoderAPI *This,const GUID *Api);
+                   HRESULT (WINAPI *GetParameterRange)(IEncoderAPI *This,const GUID *Api,VARIANT *ValueMin,VARIANT *ValueMax,VARIANT *SteppingDelta);
+                   HRESULT (WINAPI *GetParameterValues)(IEncoderAPI *This,const GUID *Api,VARIANT **Values,ULONG *ValuesCount);
+                   HRESULT (WINAPI *GetDefaultValue)(IEncoderAPI *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *GetValue)(IEncoderAPI *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *SetValue)(IEncoderAPI *This,const GUID *Api,VARIANT *Value);
     END_INTERFACE
   } IEncoderAPIVtbl;
   struct IEncoderAPI {
@@ -12474,16 +12474,16 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVideoEncoderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVideoEncoder *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVideoEncoder *This);
-      ULONG (WINAPI *Release)(IVideoEncoder *This);
-      HRESULT (WINAPI *IsSupported)(IVideoEncoder *This,const GUID *Api);
-      HRESULT (WINAPI *IsAvailable)(IVideoEncoder *This,const GUID *Api);
-      HRESULT (WINAPI *GetParameterRange)(IVideoEncoder *This,const GUID *Api,VARIANT *ValueMin,VARIANT *ValueMax,VARIANT *SteppingDelta);
-      HRESULT (WINAPI *GetParameterValues)(IVideoEncoder *This,const GUID *Api,VARIANT **Values,ULONG *ValuesCount);
-      HRESULT (WINAPI *GetDefaultValue)(IVideoEncoder *This,const GUID *Api,VARIANT *Value);
-      HRESULT (WINAPI *GetValue)(IVideoEncoder *This,const GUID *Api,VARIANT *Value);
-      HRESULT (WINAPI *SetValue)(IVideoEncoder *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *QueryInterface)(IVideoEncoder *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVideoEncoder *This);
+                   ULONG (WINAPI *Release)(IVideoEncoder *This);
+                   HRESULT (WINAPI *IsSupported)(IVideoEncoder *This,const GUID *Api);
+                   HRESULT (WINAPI *IsAvailable)(IVideoEncoder *This,const GUID *Api);
+                   HRESULT (WINAPI *GetParameterRange)(IVideoEncoder *This,const GUID *Api,VARIANT *ValueMin,VARIANT *ValueMax,VARIANT *SteppingDelta);
+                   HRESULT (WINAPI *GetParameterValues)(IVideoEncoder *This,const GUID *Api,VARIANT **Values,ULONG *ValuesCount);
+                   HRESULT (WINAPI *GetDefaultValue)(IVideoEncoder *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *GetValue)(IVideoEncoder *This,const GUID *Api,VARIANT *Value);
+                   HRESULT (WINAPI *SetValue)(IVideoEncoder *This,const GUID *Api,VARIANT *Value);
     END_INTERFACE
   } IVideoEncoderVtbl;
   struct IVideoEncoder {
@@ -12536,10 +12536,10 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IAMDecoderCapsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMDecoderCaps *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMDecoderCaps *This);
-      ULONG (WINAPI *Release)(IAMDecoderCaps *This);
-      HRESULT (WINAPI *GetDecoderCaps)(IAMDecoderCaps *This,DWORD dwCapIndex,DWORD *lpdwCap);
+                   HRESULT (WINAPI *QueryInterface)(IAMDecoderCaps *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMDecoderCaps *This);
+                   ULONG (WINAPI *Release)(IAMDecoderCaps *This);
+                   HRESULT (WINAPI *GetDecoderCaps)(IAMDecoderCaps *This,DWORD dwCapIndex,DWORD *lpdwCap);
     END_INTERFACE
   } IAMDecoderCapsVtbl;
   struct IAMDecoderCaps {
@@ -12840,44 +12840,44 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDvdControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDvdControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDvdControl *This);
-      ULONG (WINAPI *Release)(IDvdControl *This);
-      HRESULT (WINAPI *TitlePlay)(IDvdControl *This,ULONG ulTitle);
-      HRESULT (WINAPI *ChapterPlay)(IDvdControl *This,ULONG ulTitle,ULONG ulChapter);
-      HRESULT (WINAPI *TimePlay)(IDvdControl *This,ULONG ulTitle,ULONG bcdTime);
-      HRESULT (WINAPI *StopForResume)(IDvdControl *This);
-      HRESULT (WINAPI *GoUp)(IDvdControl *This);
-      HRESULT (WINAPI *TimeSearch)(IDvdControl *This,ULONG bcdTime);
-      HRESULT (WINAPI *ChapterSearch)(IDvdControl *This,ULONG ulChapter);
-      HRESULT (WINAPI *PrevPGSearch)(IDvdControl *This);
-      HRESULT (WINAPI *TopPGSearch)(IDvdControl *This);
-      HRESULT (WINAPI *NextPGSearch)(IDvdControl *This);
-      HRESULT (WINAPI *ForwardScan)(IDvdControl *This,double dwSpeed);
-      HRESULT (WINAPI *BackwardScan)(IDvdControl *This,double dwSpeed);
-      HRESULT (WINAPI *MenuCall)(IDvdControl *This,DVD_MENU_ID MenuID);
-      HRESULT (WINAPI *Resume)(IDvdControl *This);
-      HRESULT (WINAPI *UpperButtonSelect)(IDvdControl *This);
-      HRESULT (WINAPI *LowerButtonSelect)(IDvdControl *This);
-      HRESULT (WINAPI *LeftButtonSelect)(IDvdControl *This);
-      HRESULT (WINAPI *RightButtonSelect)(IDvdControl *This);
-      HRESULT (WINAPI *ButtonActivate)(IDvdControl *This);
-      HRESULT (WINAPI *ButtonSelectAndActivate)(IDvdControl *This,ULONG ulButton);
-      HRESULT (WINAPI *StillOff)(IDvdControl *This);
-      HRESULT (WINAPI *PauseOn)(IDvdControl *This);
-      HRESULT (WINAPI *PauseOff)(IDvdControl *This);
-      HRESULT (WINAPI *MenuLanguageSelect)(IDvdControl *This,LCID Language);
-      HRESULT (WINAPI *AudioStreamChange)(IDvdControl *This,ULONG ulAudio);
-      HRESULT (WINAPI *SubpictureStreamChange)(IDvdControl *This,ULONG ulSubPicture,WINBOOL bDisplay);
-      HRESULT (WINAPI *AngleChange)(IDvdControl *This,ULONG ulAngle);
-      HRESULT (WINAPI *ParentalLevelSelect)(IDvdControl *This,ULONG ulParentalLevel);
-      HRESULT (WINAPI *ParentalCountrySelect)(IDvdControl *This,WORD wCountry);
-      HRESULT (WINAPI *KaraokeAudioPresentationModeChange)(IDvdControl *This,ULONG ulMode);
-      HRESULT (WINAPI *VideoModePreferrence)(IDvdControl *This,ULONG ulPreferredDisplayMode);
-      HRESULT (WINAPI *SetRoot)(IDvdControl *This,LPCWSTR pszPath);
-      HRESULT (WINAPI *MouseActivate)(IDvdControl *This,POINT point);
-      HRESULT (WINAPI *MouseSelect)(IDvdControl *This,POINT point);
-      HRESULT (WINAPI *ChapterPlayAutoStop)(IDvdControl *This,ULONG ulTitle,ULONG ulChapter,ULONG ulChaptersToPlay);
+                   HRESULT (WINAPI *QueryInterface)(IDvdControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDvdControl *This);
+                   ULONG (WINAPI *Release)(IDvdControl *This);
+                   HRESULT (WINAPI *TitlePlay)(IDvdControl *This,ULONG ulTitle);
+                   HRESULT (WINAPI *ChapterPlay)(IDvdControl *This,ULONG ulTitle,ULONG ulChapter);
+                   HRESULT (WINAPI *TimePlay)(IDvdControl *This,ULONG ulTitle,ULONG bcdTime);
+                   HRESULT (WINAPI *StopForResume)(IDvdControl *This);
+                   HRESULT (WINAPI *GoUp)(IDvdControl *This);
+                   HRESULT (WINAPI *TimeSearch)(IDvdControl *This,ULONG bcdTime);
+                   HRESULT (WINAPI *ChapterSearch)(IDvdControl *This,ULONG ulChapter);
+                   HRESULT (WINAPI *PrevPGSearch)(IDvdControl *This);
+                   HRESULT (WINAPI *TopPGSearch)(IDvdControl *This);
+                   HRESULT (WINAPI *NextPGSearch)(IDvdControl *This);
+                   HRESULT (WINAPI *ForwardScan)(IDvdControl *This,double dwSpeed);
+                   HRESULT (WINAPI *BackwardScan)(IDvdControl *This,double dwSpeed);
+                   HRESULT (WINAPI *MenuCall)(IDvdControl *This,DVD_MENU_ID MenuID);
+                   HRESULT (WINAPI *Resume)(IDvdControl *This);
+                   HRESULT (WINAPI *UpperButtonSelect)(IDvdControl *This);
+                   HRESULT (WINAPI *LowerButtonSelect)(IDvdControl *This);
+                   HRESULT (WINAPI *LeftButtonSelect)(IDvdControl *This);
+                   HRESULT (WINAPI *RightButtonSelect)(IDvdControl *This);
+                   HRESULT (WINAPI *ButtonActivate)(IDvdControl *This);
+                   HRESULT (WINAPI *ButtonSelectAndActivate)(IDvdControl *This,ULONG ulButton);
+                   HRESULT (WINAPI *StillOff)(IDvdControl *This);
+                   HRESULT (WINAPI *PauseOn)(IDvdControl *This);
+                   HRESULT (WINAPI *PauseOff)(IDvdControl *This);
+                   HRESULT (WINAPI *MenuLanguageSelect)(IDvdControl *This,LCID Language);
+                   HRESULT (WINAPI *AudioStreamChange)(IDvdControl *This,ULONG ulAudio);
+                   HRESULT (WINAPI *SubpictureStreamChange)(IDvdControl *This,ULONG ulSubPicture,WINBOOL bDisplay);
+                   HRESULT (WINAPI *AngleChange)(IDvdControl *This,ULONG ulAngle);
+                   HRESULT (WINAPI *ParentalLevelSelect)(IDvdControl *This,ULONG ulParentalLevel);
+                   HRESULT (WINAPI *ParentalCountrySelect)(IDvdControl *This,WORD wCountry);
+                   HRESULT (WINAPI *KaraokeAudioPresentationModeChange)(IDvdControl *This,ULONG ulMode);
+                   HRESULT (WINAPI *VideoModePreferrence)(IDvdControl *This,ULONG ulPreferredDisplayMode);
+                   HRESULT (WINAPI *SetRoot)(IDvdControl *This,LPCWSTR pszPath);
+                   HRESULT (WINAPI *MouseActivate)(IDvdControl *This,POINT point);
+                   HRESULT (WINAPI *MouseSelect)(IDvdControl *This,POINT point);
+                   HRESULT (WINAPI *ChapterPlayAutoStop)(IDvdControl *This,ULONG ulTitle,ULONG ulChapter,ULONG ulChaptersToPlay);
     END_INTERFACE
   } IDvdControlVtbl;
   struct IDvdControl {
@@ -13029,32 +13029,32 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDvdInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDvdInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDvdInfo *This);
-      ULONG (WINAPI *Release)(IDvdInfo *This);
-      HRESULT (WINAPI *GetCurrentDomain)(IDvdInfo *This,DVD_DOMAIN *pDomain);
-      HRESULT (WINAPI *GetCurrentLocation)(IDvdInfo *This,DVD_PLAYBACK_LOCATION *pLocation);
-      HRESULT (WINAPI *GetTotalTitleTime)(IDvdInfo *This,ULONG *pulTotalTime);
-      HRESULT (WINAPI *GetCurrentButton)(IDvdInfo *This,ULONG *pulButtonsAvailable,ULONG *pulCurrentButton);
-      HRESULT (WINAPI *GetCurrentAngle)(IDvdInfo *This,ULONG *pulAnglesAvailable,ULONG *pulCurrentAngle);
-      HRESULT (WINAPI *GetCurrentAudio)(IDvdInfo *This,ULONG *pulStreamsAvailable,ULONG *pulCurrentStream);
-      HRESULT (WINAPI *GetCurrentSubpicture)(IDvdInfo *This,ULONG *pulStreamsAvailable,ULONG *pulCurrentStream,WINBOOL *pIsDisabled);
-      HRESULT (WINAPI *GetCurrentUOPS)(IDvdInfo *This,VALID_UOP_SOMTHING_OR_OTHER *pUOP);
-      HRESULT (WINAPI *GetAllSPRMs)(IDvdInfo *This,SPRMARRAY *pRegisterArray);
-      HRESULT (WINAPI *GetAllGPRMs)(IDvdInfo *This,GPRMARRAY *pRegisterArray);
-      HRESULT (WINAPI *GetAudioLanguage)(IDvdInfo *This,ULONG ulStream,LCID *pLanguage);
-      HRESULT (WINAPI *GetSubpictureLanguage)(IDvdInfo *This,ULONG ulStream,LCID *pLanguage);
-      HRESULT (WINAPI *GetTitleAttributes)(IDvdInfo *This,ULONG ulTitle,DVD_ATR *pATR);
-      HRESULT (WINAPI *GetVMGAttributes)(IDvdInfo *This,DVD_ATR *pATR);
-      HRESULT (WINAPI *GetCurrentVideoAttributes)(IDvdInfo *This,DVD_VideoATR *pATR);
-      HRESULT (WINAPI *GetCurrentAudioAttributes)(IDvdInfo *This,DVD_AudioATR *pATR);
-      HRESULT (WINAPI *GetCurrentSubpictureAttributes)(IDvdInfo *This,DVD_SubpictureATR *pATR);
-      HRESULT (WINAPI *GetCurrentVolumeInfo)(IDvdInfo *This,ULONG *pulNumOfVol,ULONG *pulThisVolNum,DVD_DISC_SIDE *pSide,ULONG *pulNumOfTitles);
-      HRESULT (WINAPI *GetDVDTextInfo)(IDvdInfo *This,BYTE *pTextManager,ULONG ulBufSize,ULONG *pulActualSize);
-      HRESULT (WINAPI *GetPlayerParentalLevel)(IDvdInfo *This,ULONG *pulParentalLevel,ULONG *pulCountryCode);
-      HRESULT (WINAPI *GetNumberOfChapters)(IDvdInfo *This,ULONG ulTitle,ULONG *pulNumberOfChapters);
-      HRESULT (WINAPI *GetTitleParentalLevels)(IDvdInfo *This,ULONG ulTitle,ULONG *pulParentalLevels);
-      HRESULT (WINAPI *GetRoot)(IDvdInfo *This,LPSTR pRoot,ULONG ulBufSize,ULONG *pulActualSize);
+                   HRESULT (WINAPI *QueryInterface)(IDvdInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDvdInfo *This);
+                   ULONG (WINAPI *Release)(IDvdInfo *This);
+                   HRESULT (WINAPI *GetCurrentDomain)(IDvdInfo *This,DVD_DOMAIN *pDomain);
+                   HRESULT (WINAPI *GetCurrentLocation)(IDvdInfo *This,DVD_PLAYBACK_LOCATION *pLocation);
+                   HRESULT (WINAPI *GetTotalTitleTime)(IDvdInfo *This,ULONG *pulTotalTime);
+                   HRESULT (WINAPI *GetCurrentButton)(IDvdInfo *This,ULONG *pulButtonsAvailable,ULONG *pulCurrentButton);
+                   HRESULT (WINAPI *GetCurrentAngle)(IDvdInfo *This,ULONG *pulAnglesAvailable,ULONG *pulCurrentAngle);
+                   HRESULT (WINAPI *GetCurrentAudio)(IDvdInfo *This,ULONG *pulStreamsAvailable,ULONG *pulCurrentStream);
+                   HRESULT (WINAPI *GetCurrentSubpicture)(IDvdInfo *This,ULONG *pulStreamsAvailable,ULONG *pulCurrentStream,WINBOOL *pIsDisabled);
+                   HRESULT (WINAPI *GetCurrentUOPS)(IDvdInfo *This,VALID_UOP_SOMTHING_OR_OTHER *pUOP);
+                   HRESULT (WINAPI *GetAllSPRMs)(IDvdInfo *This,SPRMARRAY *pRegisterArray);
+                   HRESULT (WINAPI *GetAllGPRMs)(IDvdInfo *This,GPRMARRAY *pRegisterArray);
+                   HRESULT (WINAPI *GetAudioLanguage)(IDvdInfo *This,ULONG ulStream,LCID *pLanguage);
+                   HRESULT (WINAPI *GetSubpictureLanguage)(IDvdInfo *This,ULONG ulStream,LCID *pLanguage);
+                   HRESULT (WINAPI *GetTitleAttributes)(IDvdInfo *This,ULONG ulTitle,DVD_ATR *pATR);
+                   HRESULT (WINAPI *GetVMGAttributes)(IDvdInfo *This,DVD_ATR *pATR);
+                   HRESULT (WINAPI *GetCurrentVideoAttributes)(IDvdInfo *This,DVD_VideoATR *pATR);
+                   HRESULT (WINAPI *GetCurrentAudioAttributes)(IDvdInfo *This,DVD_AudioATR *pATR);
+                   HRESULT (WINAPI *GetCurrentSubpictureAttributes)(IDvdInfo *This,DVD_SubpictureATR *pATR);
+                   HRESULT (WINAPI *GetCurrentVolumeInfo)(IDvdInfo *This,ULONG *pulNumOfVol,ULONG *pulThisVolNum,DVD_DISC_SIDE *pSide,ULONG *pulNumOfTitles);
+                   HRESULT (WINAPI *GetDVDTextInfo)(IDvdInfo *This,BYTE *pTextManager,ULONG ulBufSize,ULONG *pulActualSize);
+                   HRESULT (WINAPI *GetPlayerParentalLevel)(IDvdInfo *This,ULONG *pulParentalLevel,ULONG *pulCountryCode);
+                   HRESULT (WINAPI *GetNumberOfChapters)(IDvdInfo *This,ULONG ulTitle,ULONG *pulNumberOfChapters);
+                   HRESULT (WINAPI *GetTitleParentalLevels)(IDvdInfo *This,ULONG ulTitle,ULONG *pulParentalLevels);
+                   HRESULT (WINAPI *GetRoot)(IDvdInfo *This,LPSTR pRoot,ULONG ulBufSize,ULONG *pulActualSize);
     END_INTERFACE
   } IDvdInfoVtbl;
   struct IDvdInfo {
@@ -13149,11 +13149,11 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDvdCmdVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDvdCmd *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDvdCmd *This);
-      ULONG (WINAPI *Release)(IDvdCmd *This);
-      HRESULT (WINAPI *WaitForStart)(IDvdCmd *This);
-      HRESULT (WINAPI *WaitForEnd)(IDvdCmd *This);
+                   HRESULT (WINAPI *QueryInterface)(IDvdCmd *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDvdCmd *This);
+                   ULONG (WINAPI *Release)(IDvdCmd *This);
+                   HRESULT (WINAPI *WaitForStart)(IDvdCmd *This);
+                   HRESULT (WINAPI *WaitForEnd)(IDvdCmd *This);
     END_INTERFACE
   } IDvdCmdVtbl;
   struct IDvdCmd {
@@ -13185,11 +13185,11 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDvdStateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDvdState *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDvdState *This);
-      ULONG (WINAPI *Release)(IDvdState *This);
-      HRESULT (WINAPI *GetDiscID)(IDvdState *This,ULONGLONG *pullUniqueID);
-      HRESULT (WINAPI *GetParentalLevel)(IDvdState *This,ULONG *pulParentalLevel);
+                   HRESULT (WINAPI *QueryInterface)(IDvdState *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDvdState *This);
+                   ULONG (WINAPI *Release)(IDvdState *This);
+                   HRESULT (WINAPI *GetDiscID)(IDvdState *This,ULONGLONG *pullUniqueID);
+                   HRESULT (WINAPI *GetParentalLevel)(IDvdState *This,ULONG *pulParentalLevel);
     END_INTERFACE
   } IDvdStateVtbl;
   struct IDvdState {
@@ -13259,49 +13259,49 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDvdControl2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDvdControl2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDvdControl2 *This);
-      ULONG (WINAPI *Release)(IDvdControl2 *This);
-      HRESULT (WINAPI *PlayTitle)(IDvdControl2 *This,ULONG ulTitle,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayChapterInTitle)(IDvdControl2 *This,ULONG ulTitle,ULONG ulChapter,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayAtTimeInTitle)(IDvdControl2 *This,ULONG ulTitle,DVD_HMSF_TIMECODE *pStartTime,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *Stop)(IDvdControl2 *This);
-      HRESULT (WINAPI *ReturnFromSubmenu)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayAtTime)(IDvdControl2 *This,DVD_HMSF_TIMECODE *pTime,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayChapter)(IDvdControl2 *This,ULONG ulChapter,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayPrevChapter)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *ReplayChapter)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayNextChapter)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayForwards)(IDvdControl2 *This,double dSpeed,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayBackwards)(IDvdControl2 *This,double dSpeed,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *ShowMenu)(IDvdControl2 *This,DVD_MENU_ID MenuID,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *Resume)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *SelectRelativeButton)(IDvdControl2 *This,DVD_RELATIVE_BUTTON buttonDir);
-      HRESULT (WINAPI *ActivateButton)(IDvdControl2 *This);
-      HRESULT (WINAPI *SelectButton)(IDvdControl2 *This,ULONG ulButton);
-      HRESULT (WINAPI *SelectAndActivateButton)(IDvdControl2 *This,ULONG ulButton);
-      HRESULT (WINAPI *StillOff)(IDvdControl2 *This);
-      HRESULT (WINAPI *Pause)(IDvdControl2 *This,WINBOOL bState);
-      HRESULT (WINAPI *SelectAudioStream)(IDvdControl2 *This,ULONG ulAudio,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *SelectSubpictureStream)(IDvdControl2 *This,ULONG ulSubPicture,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *SetSubpictureState)(IDvdControl2 *This,WINBOOL bState,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *SelectAngle)(IDvdControl2 *This,ULONG ulAngle,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *SelectParentalLevel)(IDvdControl2 *This,ULONG ulParentalLevel);
-      HRESULT (WINAPI *SelectParentalCountry)(IDvdControl2 *This,BYTE bCountry[2]);
-      HRESULT (WINAPI *SelectKaraokeAudioPresentationMode)(IDvdControl2 *This,ULONG ulMode);
-      HRESULT (WINAPI *SelectVideoModePreference)(IDvdControl2 *This,ULONG ulPreferredDisplayMode);
-      HRESULT (WINAPI *SetDVDDirectory)(IDvdControl2 *This,LPCWSTR pszwPath);
-      HRESULT (WINAPI *ActivateAtPosition)(IDvdControl2 *This,POINT point);
-      HRESULT (WINAPI *SelectAtPosition)(IDvdControl2 *This,POINT point);
-      HRESULT (WINAPI *PlayChaptersAutoStop)(IDvdControl2 *This,ULONG ulTitle,ULONG ulChapter,ULONG ulChaptersToPlay,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *AcceptParentalLevelChange)(IDvdControl2 *This,WINBOOL bAccept);
-      HRESULT (WINAPI *SetOption)(IDvdControl2 *This,DVD_OPTION_FLAG flag,WINBOOL fState);
-      HRESULT (WINAPI *SetState)(IDvdControl2 *This,IDvdState *pState,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *PlayPeriodInTitleAutoStop)(IDvdControl2 *This,ULONG ulTitle,DVD_HMSF_TIMECODE *pStartTime,DVD_HMSF_TIMECODE *pEndTime,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *SetGPRM)(IDvdControl2 *This,ULONG ulIndex,WORD wValue,DWORD dwFlags,IDvdCmd **ppCmd);
-      HRESULT (WINAPI *SelectDefaultMenuLanguage)(IDvdControl2 *This,LCID Language);
-      HRESULT (WINAPI *SelectDefaultAudioLanguage)(IDvdControl2 *This,LCID Language,DVD_AUDIO_LANG_EXT audioExtension);
-      HRESULT (WINAPI *SelectDefaultSubpictureLanguage)(IDvdControl2 *This,LCID Language,DVD_SUBPICTURE_LANG_EXT subpictureExtension);
+                   HRESULT (WINAPI *QueryInterface)(IDvdControl2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDvdControl2 *This);
+                   ULONG (WINAPI *Release)(IDvdControl2 *This);
+                   HRESULT (WINAPI *PlayTitle)(IDvdControl2 *This,ULONG ulTitle,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayChapterInTitle)(IDvdControl2 *This,ULONG ulTitle,ULONG ulChapter,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayAtTimeInTitle)(IDvdControl2 *This,ULONG ulTitle,DVD_HMSF_TIMECODE *pStartTime,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *Stop)(IDvdControl2 *This);
+                   HRESULT (WINAPI *ReturnFromSubmenu)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayAtTime)(IDvdControl2 *This,DVD_HMSF_TIMECODE *pTime,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayChapter)(IDvdControl2 *This,ULONG ulChapter,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayPrevChapter)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *ReplayChapter)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayNextChapter)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayForwards)(IDvdControl2 *This,double dSpeed,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayBackwards)(IDvdControl2 *This,double dSpeed,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *ShowMenu)(IDvdControl2 *This,DVD_MENU_ID MenuID,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *Resume)(IDvdControl2 *This,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *SelectRelativeButton)(IDvdControl2 *This,DVD_RELATIVE_BUTTON buttonDir);
+                   HRESULT (WINAPI *ActivateButton)(IDvdControl2 *This);
+                   HRESULT (WINAPI *SelectButton)(IDvdControl2 *This,ULONG ulButton);
+                   HRESULT (WINAPI *SelectAndActivateButton)(IDvdControl2 *This,ULONG ulButton);
+                   HRESULT (WINAPI *StillOff)(IDvdControl2 *This);
+                   HRESULT (WINAPI *Pause)(IDvdControl2 *This,WINBOOL bState);
+                   HRESULT (WINAPI *SelectAudioStream)(IDvdControl2 *This,ULONG ulAudio,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *SelectSubpictureStream)(IDvdControl2 *This,ULONG ulSubPicture,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *SetSubpictureState)(IDvdControl2 *This,WINBOOL bState,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *SelectAngle)(IDvdControl2 *This,ULONG ulAngle,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *SelectParentalLevel)(IDvdControl2 *This,ULONG ulParentalLevel);
+                   HRESULT (WINAPI *SelectParentalCountry)(IDvdControl2 *This,BYTE bCountry[2]);
+                   HRESULT (WINAPI *SelectKaraokeAudioPresentationMode)(IDvdControl2 *This,ULONG ulMode);
+                   HRESULT (WINAPI *SelectVideoModePreference)(IDvdControl2 *This,ULONG ulPreferredDisplayMode);
+                   HRESULT (WINAPI *SetDVDDirectory)(IDvdControl2 *This,LPCWSTR pszwPath);
+                   HRESULT (WINAPI *ActivateAtPosition)(IDvdControl2 *This,POINT point);
+                   HRESULT (WINAPI *SelectAtPosition)(IDvdControl2 *This,POINT point);
+                   HRESULT (WINAPI *PlayChaptersAutoStop)(IDvdControl2 *This,ULONG ulTitle,ULONG ulChapter,ULONG ulChaptersToPlay,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *AcceptParentalLevelChange)(IDvdControl2 *This,WINBOOL bAccept);
+                   HRESULT (WINAPI *SetOption)(IDvdControl2 *This,DVD_OPTION_FLAG flag,WINBOOL fState);
+                   HRESULT (WINAPI *SetState)(IDvdControl2 *This,IDvdState *pState,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *PlayPeriodInTitleAutoStop)(IDvdControl2 *This,ULONG ulTitle,DVD_HMSF_TIMECODE *pStartTime,DVD_HMSF_TIMECODE *pEndTime,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *SetGPRM)(IDvdControl2 *This,ULONG ulIndex,WORD wValue,DWORD dwFlags,IDvdCmd **ppCmd);
+                   HRESULT (WINAPI *SelectDefaultMenuLanguage)(IDvdControl2 *This,LCID Language);
+                   HRESULT (WINAPI *SelectDefaultAudioLanguage)(IDvdControl2 *This,LCID Language,DVD_AUDIO_LANG_EXT audioExtension);
+                   HRESULT (WINAPI *SelectDefaultSubpictureLanguage)(IDvdControl2 *This,LCID Language,DVD_SUBPICTURE_LANG_EXT subpictureExtension);
     END_INTERFACE
   } IDvdControl2Vtbl;
   struct IDvdControl2 {
@@ -13526,48 +13526,48 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDvdInfo2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDvdInfo2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDvdInfo2 *This);
-      ULONG (WINAPI *Release)(IDvdInfo2 *This);
-      HRESULT (WINAPI *GetCurrentDomain)(IDvdInfo2 *This,DVD_DOMAIN *pDomain);
-      HRESULT (WINAPI *GetCurrentLocation)(IDvdInfo2 *This,DVD_PLAYBACK_LOCATION2 *pLocation);
-      HRESULT (WINAPI *GetTotalTitleTime)(IDvdInfo2 *This,DVD_HMSF_TIMECODE *pTotalTime,ULONG *ulTimeCodeFlags);
-      HRESULT (WINAPI *GetCurrentButton)(IDvdInfo2 *This,ULONG *pulButtonsAvailable,ULONG *pulCurrentButton);
-      HRESULT (WINAPI *GetCurrentAngle)(IDvdInfo2 *This,ULONG *pulAnglesAvailable,ULONG *pulCurrentAngle);
-      HRESULT (WINAPI *GetCurrentAudio)(IDvdInfo2 *This,ULONG *pulStreamsAvailable,ULONG *pulCurrentStream);
-      HRESULT (WINAPI *GetCurrentSubpicture)(IDvdInfo2 *This,ULONG *pulStreamsAvailable,ULONG *pulCurrentStream,WINBOOL *pbIsDisabled);
-      HRESULT (WINAPI *GetCurrentUOPS)(IDvdInfo2 *This,ULONG *pulUOPs);
-      HRESULT (WINAPI *GetAllSPRMs)(IDvdInfo2 *This,SPRMARRAY *pRegisterArray);
-      HRESULT (WINAPI *GetAllGPRMs)(IDvdInfo2 *This,GPRMARRAY *pRegisterArray);
-      HRESULT (WINAPI *GetAudioLanguage)(IDvdInfo2 *This,ULONG ulStream,LCID *pLanguage);
-      HRESULT (WINAPI *GetSubpictureLanguage)(IDvdInfo2 *This,ULONG ulStream,LCID *pLanguage);
-      HRESULT (WINAPI *GetTitleAttributes)(IDvdInfo2 *This,ULONG ulTitle,DVD_MenuAttributes *pMenu,DVD_TitleAttributes *pTitle);
-      HRESULT (WINAPI *GetVMGAttributes)(IDvdInfo2 *This,DVD_MenuAttributes *pATR);
-      HRESULT (WINAPI *GetCurrentVideoAttributes)(IDvdInfo2 *This,DVD_VideoAttributes *pATR);
-      HRESULT (WINAPI *GetAudioAttributes)(IDvdInfo2 *This,ULONG ulStream,DVD_AudioAttributes *pATR);
-      HRESULT (WINAPI *GetKaraokeAttributes)(IDvdInfo2 *This,ULONG ulStream,DVD_KaraokeAttributes *pAttributes);
-      HRESULT (WINAPI *GetSubpictureAttributes)(IDvdInfo2 *This,ULONG ulStream,DVD_SubpictureAttributes *pATR);
-      HRESULT (WINAPI *GetDVDVolumeInfo)(IDvdInfo2 *This,ULONG *pulNumOfVolumes,ULONG *pulVolume,DVD_DISC_SIDE *pSide,ULONG *pulNumOfTitles);
-      HRESULT (WINAPI *GetDVDTextNumberOfLanguages)(IDvdInfo2 *This,ULONG *pulNumOfLangs);
-      HRESULT (WINAPI *GetDVDTextLanguageInfo)(IDvdInfo2 *This,ULONG ulLangIndex,ULONG *pulNumOfStrings,LCID *pLangCode,enum DVD_TextCharSet *pbCharacterSet);
-      HRESULT (WINAPI *GetDVDTextStringAsNative)(IDvdInfo2 *This,ULONG ulLangIndex,ULONG ulStringIndex,BYTE *pbBuffer,ULONG ulMaxBufferSize,ULONG *pulActualSize,enum DVD_TextStringType *pType);
-      HRESULT (WINAPI *GetDVDTextStringAsUnicode)(IDvdInfo2 *This,ULONG ulLangIndex,ULONG ulStringIndex,WCHAR *pchwBuffer,ULONG ulMaxBufferSize,ULONG *pulActualSize,enum DVD_TextStringType *pType);
-      HRESULT (WINAPI *GetPlayerParentalLevel)(IDvdInfo2 *This,ULONG *pulParentalLevel,BYTE pbCountryCode[2]);
-      HRESULT (WINAPI *GetNumberOfChapters)(IDvdInfo2 *This,ULONG ulTitle,ULONG *pulNumOfChapters);
-      HRESULT (WINAPI *GetTitleParentalLevels)(IDvdInfo2 *This,ULONG ulTitle,ULONG *pulParentalLevels);
-      HRESULT (WINAPI *GetDVDDirectory)(IDvdInfo2 *This,LPWSTR pszwPath,ULONG ulMaxSize,ULONG *pulActualSize);
-      HRESULT (WINAPI *IsAudioStreamEnabled)(IDvdInfo2 *This,ULONG ulStreamNum,WINBOOL *pbEnabled);
-      HRESULT (WINAPI *GetDiscID)(IDvdInfo2 *This,LPCWSTR pszwPath,ULONGLONG *pullDiscID);
-      HRESULT (WINAPI *GetState)(IDvdInfo2 *This,IDvdState **pStateData);
-      HRESULT (WINAPI *GetMenuLanguages)(IDvdInfo2 *This,LCID *pLanguages,ULONG ulMaxLanguages,ULONG *pulActualLanguages);
-      HRESULT (WINAPI *GetButtonAtPosition)(IDvdInfo2 *This,POINT point,ULONG *pulButtonIndex);
-      HRESULT (WINAPI *GetCmdFromEvent)(IDvdInfo2 *This,LONG_PTR lParam1,IDvdCmd **pCmdObj);
-      HRESULT (WINAPI *GetDefaultMenuLanguage)(IDvdInfo2 *This,LCID *pLanguage);
-      HRESULT (WINAPI *GetDefaultAudioLanguage)(IDvdInfo2 *This,LCID *pLanguage,DVD_AUDIO_LANG_EXT *pAudioExtension);
-      HRESULT (WINAPI *GetDefaultSubpictureLanguage)(IDvdInfo2 *This,LCID *pLanguage,DVD_SUBPICTURE_LANG_EXT *pSubpictureExtension);
-      HRESULT (WINAPI *GetDecoderCaps)(IDvdInfo2 *This,DVD_DECODER_CAPS *pCaps);
-      HRESULT (WINAPI *GetButtonRect)(IDvdInfo2 *This,ULONG ulButton,RECT *pRect);
-      HRESULT (WINAPI *IsSubpictureStreamEnabled)(IDvdInfo2 *This,ULONG ulStreamNum,WINBOOL *pbEnabled);
+                   HRESULT (WINAPI *QueryInterface)(IDvdInfo2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDvdInfo2 *This);
+                   ULONG (WINAPI *Release)(IDvdInfo2 *This);
+                   HRESULT (WINAPI *GetCurrentDomain)(IDvdInfo2 *This,DVD_DOMAIN *pDomain);
+                   HRESULT (WINAPI *GetCurrentLocation)(IDvdInfo2 *This,DVD_PLAYBACK_LOCATION2 *pLocation);
+                   HRESULT (WINAPI *GetTotalTitleTime)(IDvdInfo2 *This,DVD_HMSF_TIMECODE *pTotalTime,ULONG *ulTimeCodeFlags);
+                   HRESULT (WINAPI *GetCurrentButton)(IDvdInfo2 *This,ULONG *pulButtonsAvailable,ULONG *pulCurrentButton);
+                   HRESULT (WINAPI *GetCurrentAngle)(IDvdInfo2 *This,ULONG *pulAnglesAvailable,ULONG *pulCurrentAngle);
+                   HRESULT (WINAPI *GetCurrentAudio)(IDvdInfo2 *This,ULONG *pulStreamsAvailable,ULONG *pulCurrentStream);
+                   HRESULT (WINAPI *GetCurrentSubpicture)(IDvdInfo2 *This,ULONG *pulStreamsAvailable,ULONG *pulCurrentStream,WINBOOL *pbIsDisabled);
+                   HRESULT (WINAPI *GetCurrentUOPS)(IDvdInfo2 *This,ULONG *pulUOPs);
+                   HRESULT (WINAPI *GetAllSPRMs)(IDvdInfo2 *This,SPRMARRAY *pRegisterArray);
+                   HRESULT (WINAPI *GetAllGPRMs)(IDvdInfo2 *This,GPRMARRAY *pRegisterArray);
+                   HRESULT (WINAPI *GetAudioLanguage)(IDvdInfo2 *This,ULONG ulStream,LCID *pLanguage);
+                   HRESULT (WINAPI *GetSubpictureLanguage)(IDvdInfo2 *This,ULONG ulStream,LCID *pLanguage);
+                   HRESULT (WINAPI *GetTitleAttributes)(IDvdInfo2 *This,ULONG ulTitle,DVD_MenuAttributes *pMenu,DVD_TitleAttributes *pTitle);
+                   HRESULT (WINAPI *GetVMGAttributes)(IDvdInfo2 *This,DVD_MenuAttributes *pATR);
+                   HRESULT (WINAPI *GetCurrentVideoAttributes)(IDvdInfo2 *This,DVD_VideoAttributes *pATR);
+                   HRESULT (WINAPI *GetAudioAttributes)(IDvdInfo2 *This,ULONG ulStream,DVD_AudioAttributes *pATR);
+                   HRESULT (WINAPI *GetKaraokeAttributes)(IDvdInfo2 *This,ULONG ulStream,DVD_KaraokeAttributes *pAttributes);
+                   HRESULT (WINAPI *GetSubpictureAttributes)(IDvdInfo2 *This,ULONG ulStream,DVD_SubpictureAttributes *pATR);
+                   HRESULT (WINAPI *GetDVDVolumeInfo)(IDvdInfo2 *This,ULONG *pulNumOfVolumes,ULONG *pulVolume,DVD_DISC_SIDE *pSide,ULONG *pulNumOfTitles);
+                   HRESULT (WINAPI *GetDVDTextNumberOfLanguages)(IDvdInfo2 *This,ULONG *pulNumOfLangs);
+                   HRESULT (WINAPI *GetDVDTextLanguageInfo)(IDvdInfo2 *This,ULONG ulLangIndex,ULONG *pulNumOfStrings,LCID *pLangCode,enum DVD_TextCharSet *pbCharacterSet);
+                   HRESULT (WINAPI *GetDVDTextStringAsNative)(IDvdInfo2 *This,ULONG ulLangIndex,ULONG ulStringIndex,BYTE *pbBuffer,ULONG ulMaxBufferSize,ULONG *pulActualSize,enum DVD_TextStringType *pType);
+                   HRESULT (WINAPI *GetDVDTextStringAsUnicode)(IDvdInfo2 *This,ULONG ulLangIndex,ULONG ulStringIndex,WCHAR *pchwBuffer,ULONG ulMaxBufferSize,ULONG *pulActualSize,enum DVD_TextStringType *pType);
+                   HRESULT (WINAPI *GetPlayerParentalLevel)(IDvdInfo2 *This,ULONG *pulParentalLevel,BYTE pbCountryCode[2]);
+                   HRESULT (WINAPI *GetNumberOfChapters)(IDvdInfo2 *This,ULONG ulTitle,ULONG *pulNumOfChapters);
+                   HRESULT (WINAPI *GetTitleParentalLevels)(IDvdInfo2 *This,ULONG ulTitle,ULONG *pulParentalLevels);
+                   HRESULT (WINAPI *GetDVDDirectory)(IDvdInfo2 *This,LPWSTR pszwPath,ULONG ulMaxSize,ULONG *pulActualSize);
+                   HRESULT (WINAPI *IsAudioStreamEnabled)(IDvdInfo2 *This,ULONG ulStreamNum,WINBOOL *pbEnabled);
+                   HRESULT (WINAPI *GetDiscID)(IDvdInfo2 *This,LPCWSTR pszwPath,ULONGLONG *pullDiscID);
+                   HRESULT (WINAPI *GetState)(IDvdInfo2 *This,IDvdState **pStateData);
+                   HRESULT (WINAPI *GetMenuLanguages)(IDvdInfo2 *This,LCID *pLanguages,ULONG ulMaxLanguages,ULONG *pulActualLanguages);
+                   HRESULT (WINAPI *GetButtonAtPosition)(IDvdInfo2 *This,POINT point,ULONG *pulButtonIndex);
+                   HRESULT (WINAPI *GetCmdFromEvent)(IDvdInfo2 *This,LONG_PTR lParam1,IDvdCmd **pCmdObj);
+                   HRESULT (WINAPI *GetDefaultMenuLanguage)(IDvdInfo2 *This,LCID *pLanguage);
+                   HRESULT (WINAPI *GetDefaultAudioLanguage)(IDvdInfo2 *This,LCID *pLanguage,DVD_AUDIO_LANG_EXT *pAudioExtension);
+                   HRESULT (WINAPI *GetDefaultSubpictureLanguage)(IDvdInfo2 *This,LCID *pLanguage,DVD_SUBPICTURE_LANG_EXT *pSubpictureExtension);
+                   HRESULT (WINAPI *GetDecoderCaps)(IDvdInfo2 *This,DVD_DECODER_CAPS *pCaps);
+                   HRESULT (WINAPI *GetButtonRect)(IDvdInfo2 *This,ULONG ulButton,RECT *pRect);
+                   HRESULT (WINAPI *IsSubpictureStreamEnabled)(IDvdInfo2 *This,ULONG ulStreamNum,WINBOOL *pbEnabled);
     END_INTERFACE
   } IDvdInfo2Vtbl;
   struct IDvdInfo2 {
@@ -13733,12 +13733,12 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDvdGraphBuilderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDvdGraphBuilder *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDvdGraphBuilder *This);
-      ULONG (WINAPI *Release)(IDvdGraphBuilder *This);
-      HRESULT (WINAPI *GetFiltergraph)(IDvdGraphBuilder *This,IGraphBuilder **ppGB);
-      HRESULT (WINAPI *GetDvdInterface)(IDvdGraphBuilder *This,REFIID riid,void **ppvIF);
-      HRESULT (WINAPI *RenderDvdVideoVolume)(IDvdGraphBuilder *This,LPCWSTR lpcwszPathName,DWORD dwFlags,AM_DVD_RENDERSTATUS *pStatus);
+                   HRESULT (WINAPI *QueryInterface)(IDvdGraphBuilder *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDvdGraphBuilder *This);
+                   ULONG (WINAPI *Release)(IDvdGraphBuilder *This);
+                   HRESULT (WINAPI *GetFiltergraph)(IDvdGraphBuilder *This,IGraphBuilder **ppGB);
+                   HRESULT (WINAPI *GetDvdInterface)(IDvdGraphBuilder *This,REFIID riid,void **ppvIF);
+                   HRESULT (WINAPI *RenderDvdVideoVolume)(IDvdGraphBuilder *This,LPCWSTR lpcwszPathName,DWORD dwFlags,AM_DVD_RENDERSTATUS *pStatus);
     END_INTERFACE
   } IDvdGraphBuilderVtbl;
   struct IDvdGraphBuilder {
@@ -13778,16 +13778,16 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDDrawExclModeVideoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDDrawExclModeVideo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDDrawExclModeVideo *This);
-      ULONG (WINAPI *Release)(IDDrawExclModeVideo *This);
-      HRESULT (WINAPI *SetDDrawObject)(IDDrawExclModeVideo *This,IDirectDraw *pDDrawObject);
-      HRESULT (WINAPI *GetDDrawObject)(IDDrawExclModeVideo *This,IDirectDraw **ppDDrawObject,WINBOOL *pbUsingExternal);
-      HRESULT (WINAPI *SetDDrawSurface)(IDDrawExclModeVideo *This,IDirectDrawSurface *pDDrawSurface);
-      HRESULT (WINAPI *GetDDrawSurface)(IDDrawExclModeVideo *This,IDirectDrawSurface **ppDDrawSurface,WINBOOL *pbUsingExternal);
-      HRESULT (WINAPI *SetDrawParameters)(IDDrawExclModeVideo *This,const RECT *prcSource,const RECT *prcTarget);
-      HRESULT (WINAPI *GetNativeVideoProps)(IDDrawExclModeVideo *This,DWORD *pdwVideoWidth,DWORD *pdwVideoHeight,DWORD *pdwPictAspectRatioX,DWORD *pdwPictAspectRatioY);
-      HRESULT (WINAPI *SetCallbackInterface)(IDDrawExclModeVideo *This,IDDrawExclModeVideoCallback *pCallback,DWORD dwFlags);
+                   HRESULT (WINAPI *QueryInterface)(IDDrawExclModeVideo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDDrawExclModeVideo *This);
+                   ULONG (WINAPI *Release)(IDDrawExclModeVideo *This);
+                   HRESULT (WINAPI *SetDDrawObject)(IDDrawExclModeVideo *This,IDirectDraw *pDDrawObject);
+                   HRESULT (WINAPI *GetDDrawObject)(IDDrawExclModeVideo *This,IDirectDraw **ppDDrawObject,WINBOOL *pbUsingExternal);
+                   HRESULT (WINAPI *SetDDrawSurface)(IDDrawExclModeVideo *This,IDirectDrawSurface *pDDrawSurface);
+                   HRESULT (WINAPI *GetDDrawSurface)(IDDrawExclModeVideo *This,IDirectDrawSurface **ppDDrawSurface,WINBOOL *pbUsingExternal);
+                   HRESULT (WINAPI *SetDrawParameters)(IDDrawExclModeVideo *This,const RECT *prcSource,const RECT *prcTarget);
+                   HRESULT (WINAPI *GetNativeVideoProps)(IDDrawExclModeVideo *This,DWORD *pdwVideoWidth,DWORD *pdwVideoHeight,DWORD *pdwPictAspectRatioX,DWORD *pdwPictAspectRatioY);
+                   HRESULT (WINAPI *SetCallbackInterface)(IDDrawExclModeVideo *This,IDDrawExclModeVideoCallback *pCallback,DWORD dwFlags);
     END_INTERFACE
   } IDDrawExclModeVideoVtbl;
   struct IDDrawExclModeVideo {
@@ -13841,12 +13841,12 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IDDrawExclModeVideoCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDDrawExclModeVideoCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDDrawExclModeVideoCallback *This);
-      ULONG (WINAPI *Release)(IDDrawExclModeVideoCallback *This);
-      HRESULT (WINAPI *OnUpdateOverlay)(IDDrawExclModeVideoCallback *This,WINBOOL bBefore,DWORD dwFlags,WINBOOL bOldVisible,const RECT *prcOldSrc,const RECT *prcOldDest,WINBOOL bNewVisible,const RECT *prcNewSrc,const RECT *prcNewDest);
-      HRESULT (WINAPI *OnUpdateColorKey)(IDDrawExclModeVideoCallback *This,const COLORKEY *pKey,DWORD dwColor);
-      HRESULT (WINAPI *OnUpdateSize)(IDDrawExclModeVideoCallback *This,DWORD dwWidth,DWORD dwHeight,DWORD dwARWidth,DWORD dwARHeight);
+                   HRESULT (WINAPI *QueryInterface)(IDDrawExclModeVideoCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDDrawExclModeVideoCallback *This);
+                   ULONG (WINAPI *Release)(IDDrawExclModeVideoCallback *This);
+                   HRESULT (WINAPI *OnUpdateOverlay)(IDDrawExclModeVideoCallback *This,WINBOOL bBefore,DWORD dwFlags,WINBOOL bOldVisible,const RECT *prcOldSrc,const RECT *prcOldDest,WINBOOL bNewVisible,const RECT *prcNewSrc,const RECT *prcNewDest);
+                   HRESULT (WINAPI *OnUpdateColorKey)(IDDrawExclModeVideoCallback *This,const COLORKEY *pKey,DWORD dwColor);
+                   HRESULT (WINAPI *OnUpdateSize)(IDDrawExclModeVideoCallback *This,DWORD dwWidth,DWORD dwHeight,DWORD dwARWidth,DWORD dwARHeight);
     END_INTERFACE
   } IDDrawExclModeVideoCallbackVtbl;
   struct IDDrawExclModeVideoCallback {
@@ -13885,13 +13885,13 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IPinConnectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPinConnection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPinConnection *This);
-      ULONG (WINAPI *Release)(IPinConnection *This);
-      HRESULT (WINAPI *DynamicQueryAccept)(IPinConnection *This,const AM_MEDIA_TYPE *pmt);
-      HRESULT (WINAPI *NotifyEndOfStream)(IPinConnection *This,HANDLE hNotifyEvent);
-      HRESULT (WINAPI *IsEndPin)(IPinConnection *This);
-      HRESULT (WINAPI *DynamicDisconnect)(IPinConnection *This);
+                   HRESULT (WINAPI *QueryInterface)(IPinConnection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPinConnection *This);
+                   ULONG (WINAPI *Release)(IPinConnection *This);
+                   HRESULT (WINAPI *DynamicQueryAccept)(IPinConnection *This,const AM_MEDIA_TYPE *pmt);
+                   HRESULT (WINAPI *NotifyEndOfStream)(IPinConnection *This,HANDLE hNotifyEvent);
+                   HRESULT (WINAPI *IsEndPin)(IPinConnection *This);
+                   HRESULT (WINAPI *DynamicDisconnect)(IPinConnection *This);
     END_INTERFACE
   } IPinConnectionVtbl;
   struct IPinConnection {
@@ -13928,10 +13928,10 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IPinFlowControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPinFlowControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPinFlowControl *This);
-      ULONG (WINAPI *Release)(IPinFlowControl *This);
-      HRESULT (WINAPI *Block)(IPinFlowControl *This,DWORD dwBlockFlags,HANDLE hEvent);
+                   HRESULT (WINAPI *QueryInterface)(IPinFlowControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPinFlowControl *This);
+                   ULONG (WINAPI *Release)(IPinFlowControl *This);
+                   HRESULT (WINAPI *Block)(IPinFlowControl *This,DWORD dwBlockFlags,HANDLE hEvent);
     END_INTERFACE
   } IPinFlowControlVtbl;
   struct IPinFlowControl {
@@ -13986,19 +13986,19 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IGraphConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGraphConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGraphConfig *This);
-      ULONG (WINAPI *Release)(IGraphConfig *This);
-      HRESULT (WINAPI *Reconnect)(IGraphConfig *This,IPin *pOutputPin,IPin *pInputPin,const AM_MEDIA_TYPE *pmtFirstConnection,IBaseFilter *pUsingFilter,HANDLE hAbortEvent,DWORD dwFlags);
-      HRESULT (WINAPI *Reconfigure)(IGraphConfig *This,IGraphConfigCallback *pCallback,PVOID pvContext,DWORD dwFlags,HANDLE hAbortEvent);
-      HRESULT (WINAPI *AddFilterToCache)(IGraphConfig *This,IBaseFilter *pFilter);
-      HRESULT (WINAPI *EnumCacheFilter)(IGraphConfig *This,IEnumFilters **pEnum);
-      HRESULT (WINAPI *RemoveFilterFromCache)(IGraphConfig *This,IBaseFilter *pFilter);
-      HRESULT (WINAPI *GetStartTime)(IGraphConfig *This,REFERENCE_TIME *prtStart);
-      HRESULT (WINAPI *PushThroughData)(IGraphConfig *This,IPin *pOutputPin,IPinConnection *pConnection,HANDLE hEventAbort);
-      HRESULT (WINAPI *SetFilterFlags)(IGraphConfig *This,IBaseFilter *pFilter,DWORD dwFlags);
-      HRESULT (WINAPI *GetFilterFlags)(IGraphConfig *This,IBaseFilter *pFilter,DWORD *pdwFlags);
-      HRESULT (WINAPI *RemoveFilterEx)(IGraphConfig *This,IBaseFilter *pFilter,DWORD Flags);
+                   HRESULT (WINAPI *QueryInterface)(IGraphConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGraphConfig *This);
+                   ULONG (WINAPI *Release)(IGraphConfig *This);
+                   HRESULT (WINAPI *Reconnect)(IGraphConfig *This,IPin *pOutputPin,IPin *pInputPin,const AM_MEDIA_TYPE *pmtFirstConnection,IBaseFilter *pUsingFilter,HANDLE hAbortEvent,DWORD dwFlags);
+                   HRESULT (WINAPI *Reconfigure)(IGraphConfig *This,IGraphConfigCallback *pCallback,PVOID pvContext,DWORD dwFlags,HANDLE hAbortEvent);
+                   HRESULT (WINAPI *AddFilterToCache)(IGraphConfig *This,IBaseFilter *pFilter);
+                   HRESULT (WINAPI *EnumCacheFilter)(IGraphConfig *This,IEnumFilters **pEnum);
+                   HRESULT (WINAPI *RemoveFilterFromCache)(IGraphConfig *This,IBaseFilter *pFilter);
+                   HRESULT (WINAPI *GetStartTime)(IGraphConfig *This,REFERENCE_TIME *prtStart);
+                   HRESULT (WINAPI *PushThroughData)(IGraphConfig *This,IPin *pOutputPin,IPinConnection *pConnection,HANDLE hEventAbort);
+                   HRESULT (WINAPI *SetFilterFlags)(IGraphConfig *This,IBaseFilter *pFilter,DWORD dwFlags);
+                   HRESULT (WINAPI *GetFilterFlags)(IGraphConfig *This,IBaseFilter *pFilter,DWORD *pdwFlags);
+                   HRESULT (WINAPI *RemoveFilterEx)(IGraphConfig *This,IBaseFilter *pFilter,DWORD Flags);
     END_INTERFACE
   } IGraphConfigVtbl;
   struct IGraphConfig {
@@ -14053,10 +14053,10 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IGraphConfigCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGraphConfigCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGraphConfigCallback *This);
-      ULONG (WINAPI *Release)(IGraphConfigCallback *This);
-      HRESULT (WINAPI *Reconfigure)(IGraphConfigCallback *This,PVOID pvContext,DWORD dwFlags);
+                   HRESULT (WINAPI *QueryInterface)(IGraphConfigCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGraphConfigCallback *This);
+                   ULONG (WINAPI *Release)(IGraphConfigCallback *This);
+                   HRESULT (WINAPI *Reconfigure)(IGraphConfigCallback *This,PVOID pvContext,DWORD dwFlags);
     END_INTERFACE
   } IGraphConfigCallbackVtbl;
   struct IGraphConfigCallback {
@@ -14087,13 +14087,13 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IFilterChainVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IFilterChain *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IFilterChain *This);
-      ULONG (WINAPI *Release)(IFilterChain *This);
-      HRESULT (WINAPI *StartChain)(IFilterChain *This,IBaseFilter *pStartFilter,IBaseFilter *pEndFilter);
-      HRESULT (WINAPI *PauseChain)(IFilterChain *This,IBaseFilter *pStartFilter,IBaseFilter *pEndFilter);
-      HRESULT (WINAPI *StopChain)(IFilterChain *This,IBaseFilter *pStartFilter,IBaseFilter *pEndFilter);
-      HRESULT (WINAPI *RemoveChain)(IFilterChain *This,IBaseFilter *pStartFilter,IBaseFilter *pEndFilter);
+                   HRESULT (WINAPI *QueryInterface)(IFilterChain *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IFilterChain *This);
+                   ULONG (WINAPI *Release)(IFilterChain *This);
+                   HRESULT (WINAPI *StartChain)(IFilterChain *This,IBaseFilter *pStartFilter,IBaseFilter *pEndFilter);
+                   HRESULT (WINAPI *PauseChain)(IFilterChain *This,IBaseFilter *pStartFilter,IBaseFilter *pEndFilter);
+                   HRESULT (WINAPI *StopChain)(IFilterChain *This,IBaseFilter *pStartFilter,IBaseFilter *pEndFilter);
+                   HRESULT (WINAPI *RemoveChain)(IFilterChain *This,IBaseFilter *pStartFilter,IBaseFilter *pEndFilter);
     END_INTERFACE
   } IFilterChainVtbl;
   struct IFilterChain {
@@ -14150,12 +14150,12 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRImagePresenterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRImagePresenter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRImagePresenter *This);
-      ULONG (WINAPI *Release)(IVMRImagePresenter *This);
-      HRESULT (WINAPI *StartPresenting)(IVMRImagePresenter *This,DWORD_PTR dwUserID);
-      HRESULT (WINAPI *StopPresenting)(IVMRImagePresenter *This,DWORD_PTR dwUserID);
-      HRESULT (WINAPI *PresentImage)(IVMRImagePresenter *This,DWORD_PTR dwUserID,VMRPRESENTATIONINFO *lpPresInfo);
+                   HRESULT (WINAPI *QueryInterface)(IVMRImagePresenter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRImagePresenter *This);
+                   ULONG (WINAPI *Release)(IVMRImagePresenter *This);
+                   HRESULT (WINAPI *StartPresenting)(IVMRImagePresenter *This,DWORD_PTR dwUserID);
+                   HRESULT (WINAPI *StopPresenting)(IVMRImagePresenter *This,DWORD_PTR dwUserID);
+                   HRESULT (WINAPI *PresentImage)(IVMRImagePresenter *This,DWORD_PTR dwUserID,VMRPRESENTATIONINFO *lpPresInfo);
     END_INTERFACE
   } IVMRImagePresenterVtbl;
   struct IVMRImagePresenter {
@@ -14209,13 +14209,13 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRSurfaceAllocatorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRSurfaceAllocator *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRSurfaceAllocator *This);
-      ULONG (WINAPI *Release)(IVMRSurfaceAllocator *This);
-      HRESULT (WINAPI *AllocateSurface)(IVMRSurfaceAllocator *This,DWORD_PTR dwUserID,VMRALLOCATIONINFO *lpAllocInfo,DWORD *lpdwActualBuffers,LPDIRECTDRAWSURFACE7 *lplpSurface);
-      HRESULT (WINAPI *FreeSurface)(IVMRSurfaceAllocator *This,DWORD_PTR dwID);
-      HRESULT (WINAPI *PrepareSurface)(IVMRSurfaceAllocator *This,DWORD_PTR dwUserID,LPDIRECTDRAWSURFACE7 lpSurface,DWORD dwSurfaceFlags);
-      HRESULT (WINAPI *AdviseNotify)(IVMRSurfaceAllocator *This,IVMRSurfaceAllocatorNotify *lpIVMRSurfAllocNotify);
+                   HRESULT (WINAPI *QueryInterface)(IVMRSurfaceAllocator *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRSurfaceAllocator *This);
+                   ULONG (WINAPI *Release)(IVMRSurfaceAllocator *This);
+                   HRESULT (WINAPI *AllocateSurface)(IVMRSurfaceAllocator *This,DWORD_PTR dwUserID,VMRALLOCATIONINFO *lpAllocInfo,DWORD *lpdwActualBuffers,LPDIRECTDRAWSURFACE7 *lplpSurface);
+                   HRESULT (WINAPI *FreeSurface)(IVMRSurfaceAllocator *This,DWORD_PTR dwID);
+                   HRESULT (WINAPI *PrepareSurface)(IVMRSurfaceAllocator *This,DWORD_PTR dwUserID,LPDIRECTDRAWSURFACE7 lpSurface,DWORD dwSurfaceFlags);
+                   HRESULT (WINAPI *AdviseNotify)(IVMRSurfaceAllocator *This,IVMRSurfaceAllocatorNotify *lpIVMRSurfAllocNotify);
     END_INTERFACE
   } IVMRSurfaceAllocatorVtbl;
   struct IVMRSurfaceAllocator {
@@ -14257,15 +14257,15 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRSurfaceAllocatorNotifyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRSurfaceAllocatorNotify *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRSurfaceAllocatorNotify *This);
-      ULONG (WINAPI *Release)(IVMRSurfaceAllocatorNotify *This);
-      HRESULT (WINAPI *AdviseSurfaceAllocator)(IVMRSurfaceAllocatorNotify *This,DWORD_PTR dwUserID,IVMRSurfaceAllocator *lpIVRMSurfaceAllocator);
-      HRESULT (WINAPI *SetDDrawDevice)(IVMRSurfaceAllocatorNotify *This,LPDIRECTDRAW7 lpDDrawDevice,HMONITOR hMonitor);
-      HRESULT (WINAPI *ChangeDDrawDevice)(IVMRSurfaceAllocatorNotify *This,LPDIRECTDRAW7 lpDDrawDevice,HMONITOR hMonitor);
-      HRESULT (WINAPI *RestoreDDrawSurfaces)(IVMRSurfaceAllocatorNotify *This);
-      HRESULT (WINAPI *NotifyEvent)(IVMRSurfaceAllocatorNotify *This,LONG EventCode,LONG_PTR Param1,LONG_PTR Param2);
-      HRESULT (WINAPI *SetBorderColor)(IVMRSurfaceAllocatorNotify *This,COLORREF clrBorder);
+                   HRESULT (WINAPI *QueryInterface)(IVMRSurfaceAllocatorNotify *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRSurfaceAllocatorNotify *This);
+                   ULONG (WINAPI *Release)(IVMRSurfaceAllocatorNotify *This);
+                   HRESULT (WINAPI *AdviseSurfaceAllocator)(IVMRSurfaceAllocatorNotify *This,DWORD_PTR dwUserID,IVMRSurfaceAllocator *lpIVRMSurfaceAllocator);
+                   HRESULT (WINAPI *SetDDrawDevice)(IVMRSurfaceAllocatorNotify *This,LPDIRECTDRAW7 lpDDrawDevice,HMONITOR hMonitor);
+                   HRESULT (WINAPI *ChangeDDrawDevice)(IVMRSurfaceAllocatorNotify *This,LPDIRECTDRAW7 lpDDrawDevice,HMONITOR hMonitor);
+                   HRESULT (WINAPI *RestoreDDrawSurfaces)(IVMRSurfaceAllocatorNotify *This);
+                   HRESULT (WINAPI *NotifyEvent)(IVMRSurfaceAllocatorNotify *This,LONG EventCode,LONG_PTR Param1,LONG_PTR Param2);
+                   HRESULT (WINAPI *SetBorderColor)(IVMRSurfaceAllocatorNotify *This,COLORREF clrBorder);
     END_INTERFACE
   } IVMRSurfaceAllocatorNotifyVtbl;
   struct IVMRSurfaceAllocatorNotify {
@@ -14328,24 +14328,24 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRWindowlessControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRWindowlessControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRWindowlessControl *This);
-      ULONG (WINAPI *Release)(IVMRWindowlessControl *This);
-      HRESULT (WINAPI *GetNativeVideoSize)(IVMRWindowlessControl *This,LONG *lpWidth,LONG *lpHeight,LONG *lpARWidth,LONG *lpARHeight);
-      HRESULT (WINAPI *GetMinIdealVideoSize)(IVMRWindowlessControl *This,LONG *lpWidth,LONG *lpHeight);
-      HRESULT (WINAPI *GetMaxIdealVideoSize)(IVMRWindowlessControl *This,LONG *lpWidth,LONG *lpHeight);
-      HRESULT (WINAPI *SetVideoPosition)(IVMRWindowlessControl *This,const LPRECT lpSRCRect,const LPRECT lpDSTRect);
-      HRESULT (WINAPI *GetVideoPosition)(IVMRWindowlessControl *This,LPRECT lpSRCRect,LPRECT lpDSTRect);
-      HRESULT (WINAPI *GetAspectRatioMode)(IVMRWindowlessControl *This,DWORD *lpAspectRatioMode);
-      HRESULT (WINAPI *SetAspectRatioMode)(IVMRWindowlessControl *This,DWORD AspectRatioMode);
-      HRESULT (WINAPI *SetVideoClippingWindow)(IVMRWindowlessControl *This,HWND hwnd);
-      HRESULT (WINAPI *RepaintVideo)(IVMRWindowlessControl *This,HWND hwnd,HDC hdc);
-      HRESULT (WINAPI *DisplayModeChanged)(IVMRWindowlessControl *This);
-      HRESULT (WINAPI *GetCurrentImage)(IVMRWindowlessControl *This,BYTE **lpDib);
-      HRESULT (WINAPI *SetBorderColor)(IVMRWindowlessControl *This,COLORREF Clr);
-      HRESULT (WINAPI *GetBorderColor)(IVMRWindowlessControl *This,COLORREF *lpClr);
-      HRESULT (WINAPI *SetColorKey)(IVMRWindowlessControl *This,COLORREF Clr);
-      HRESULT (WINAPI *GetColorKey)(IVMRWindowlessControl *This,COLORREF *lpClr);
+                   HRESULT (WINAPI *QueryInterface)(IVMRWindowlessControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRWindowlessControl *This);
+                   ULONG (WINAPI *Release)(IVMRWindowlessControl *This);
+                   HRESULT (WINAPI *GetNativeVideoSize)(IVMRWindowlessControl *This,LONG *lpWidth,LONG *lpHeight,LONG *lpARWidth,LONG *lpARHeight);
+                   HRESULT (WINAPI *GetMinIdealVideoSize)(IVMRWindowlessControl *This,LONG *lpWidth,LONG *lpHeight);
+                   HRESULT (WINAPI *GetMaxIdealVideoSize)(IVMRWindowlessControl *This,LONG *lpWidth,LONG *lpHeight);
+                   HRESULT (WINAPI *SetVideoPosition)(IVMRWindowlessControl *This,const LPRECT lpSRCRect,const LPRECT lpDSTRect);
+                   HRESULT (WINAPI *GetVideoPosition)(IVMRWindowlessControl *This,LPRECT lpSRCRect,LPRECT lpDSTRect);
+                   HRESULT (WINAPI *GetAspectRatioMode)(IVMRWindowlessControl *This,DWORD *lpAspectRatioMode);
+                   HRESULT (WINAPI *SetAspectRatioMode)(IVMRWindowlessControl *This,DWORD AspectRatioMode);
+                   HRESULT (WINAPI *SetVideoClippingWindow)(IVMRWindowlessControl *This,HWND hwnd);
+                   HRESULT (WINAPI *RepaintVideo)(IVMRWindowlessControl *This,HWND hwnd,HDC hdc);
+                   HRESULT (WINAPI *DisplayModeChanged)(IVMRWindowlessControl *This);
+                   HRESULT (WINAPI *GetCurrentImage)(IVMRWindowlessControl *This,BYTE **lpDib);
+                   HRESULT (WINAPI *SetBorderColor)(IVMRWindowlessControl *This,COLORREF Clr);
+                   HRESULT (WINAPI *GetBorderColor)(IVMRWindowlessControl *This,COLORREF *lpClr);
+                   HRESULT (WINAPI *SetColorKey)(IVMRWindowlessControl *This,COLORREF Clr);
+                   HRESULT (WINAPI *GetColorKey)(IVMRWindowlessControl *This,COLORREF *lpClr);
     END_INTERFACE
   } IVMRWindowlessControlVtbl;
   struct IVMRWindowlessControl {
@@ -14444,19 +14444,19 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRMixerControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRMixerControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRMixerControl *This);
-      ULONG (WINAPI *Release)(IVMRMixerControl *This);
-      HRESULT (WINAPI *SetAlpha)(IVMRMixerControl *This,DWORD dwStreamID,float Alpha);
-      HRESULT (WINAPI *GetAlpha)(IVMRMixerControl *This,DWORD dwStreamID,float *pAlpha);
-      HRESULT (WINAPI *SetZOrder)(IVMRMixerControl *This,DWORD dwStreamID,DWORD dwZ);
-      HRESULT (WINAPI *GetZOrder)(IVMRMixerControl *This,DWORD dwStreamID,DWORD *pZ);
-      HRESULT (WINAPI *SetOutputRect)(IVMRMixerControl *This,DWORD dwStreamID,const NORMALIZEDRECT *pRect);
-      HRESULT (WINAPI *GetOutputRect)(IVMRMixerControl *This,DWORD dwStreamID,NORMALIZEDRECT *pRect);
-      HRESULT (WINAPI *SetBackgroundClr)(IVMRMixerControl *This,COLORREF ClrBkg);
-      HRESULT (WINAPI *GetBackgroundClr)(IVMRMixerControl *This,COLORREF *lpClrBkg);
-      HRESULT (WINAPI *SetMixingPrefs)(IVMRMixerControl *This,DWORD dwMixerPrefs);
-      HRESULT (WINAPI *GetMixingPrefs)(IVMRMixerControl *This,DWORD *pdwMixerPrefs);
+                   HRESULT (WINAPI *QueryInterface)(IVMRMixerControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRMixerControl *This);
+                   ULONG (WINAPI *Release)(IVMRMixerControl *This);
+                   HRESULT (WINAPI *SetAlpha)(IVMRMixerControl *This,DWORD dwStreamID,float Alpha);
+                   HRESULT (WINAPI *GetAlpha)(IVMRMixerControl *This,DWORD dwStreamID,float *pAlpha);
+                   HRESULT (WINAPI *SetZOrder)(IVMRMixerControl *This,DWORD dwStreamID,DWORD dwZ);
+                   HRESULT (WINAPI *GetZOrder)(IVMRMixerControl *This,DWORD dwStreamID,DWORD *pZ);
+                   HRESULT (WINAPI *SetOutputRect)(IVMRMixerControl *This,DWORD dwStreamID,const NORMALIZEDRECT *pRect);
+                   HRESULT (WINAPI *GetOutputRect)(IVMRMixerControl *This,DWORD dwStreamID,NORMALIZEDRECT *pRect);
+                   HRESULT (WINAPI *SetBackgroundClr)(IVMRMixerControl *This,COLORREF ClrBkg);
+                   HRESULT (WINAPI *GetBackgroundClr)(IVMRMixerControl *This,COLORREF *lpClrBkg);
+                   HRESULT (WINAPI *SetMixingPrefs)(IVMRMixerControl *This,DWORD dwMixerPrefs);
+                   HRESULT (WINAPI *GetMixingPrefs)(IVMRMixerControl *This,DWORD *pdwMixerPrefs);
     END_INTERFACE
   } IVMRMixerControlVtbl;
   struct IVMRMixerControl {
@@ -14544,14 +14544,14 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRMonitorConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRMonitorConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRMonitorConfig *This);
-      ULONG (WINAPI *Release)(IVMRMonitorConfig *This);
-      HRESULT (WINAPI *SetMonitor)(IVMRMonitorConfig *This,const VMRGUID *pGUID);
-      HRESULT (WINAPI *GetMonitor)(IVMRMonitorConfig *This,VMRGUID *pGUID);
-      HRESULT (WINAPI *SetDefaultMonitor)(IVMRMonitorConfig *This,const VMRGUID *pGUID);
-      HRESULT (WINAPI *GetDefaultMonitor)(IVMRMonitorConfig *This,VMRGUID *pGUID);
-      HRESULT (WINAPI *GetAvailableMonitors)(IVMRMonitorConfig *This,VMRMONITORINFO *pInfo,DWORD dwMaxInfoArraySize,DWORD *pdwNumDevices);
+                   HRESULT (WINAPI *QueryInterface)(IVMRMonitorConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRMonitorConfig *This);
+                   ULONG (WINAPI *Release)(IVMRMonitorConfig *This);
+                   HRESULT (WINAPI *SetMonitor)(IVMRMonitorConfig *This,const VMRGUID *pGUID);
+                   HRESULT (WINAPI *GetMonitor)(IVMRMonitorConfig *This,VMRGUID *pGUID);
+                   HRESULT (WINAPI *SetDefaultMonitor)(IVMRMonitorConfig *This,const VMRGUID *pGUID);
+                   HRESULT (WINAPI *GetDefaultMonitor)(IVMRMonitorConfig *This,VMRGUID *pGUID);
+                   HRESULT (WINAPI *GetAvailableMonitors)(IVMRMonitorConfig *This,VMRMONITORINFO *pInfo,DWORD dwMaxInfoArraySize,DWORD *pdwNumDevices);
     END_INTERFACE
   } IVMRMonitorConfigVtbl;
   struct IVMRMonitorConfig {
@@ -14613,16 +14613,16 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRFilterConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRFilterConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRFilterConfig *This);
-      ULONG (WINAPI *Release)(IVMRFilterConfig *This);
-      HRESULT (WINAPI *SetImageCompositor)(IVMRFilterConfig *This,IVMRImageCompositor *lpVMRImgCompositor);
-      HRESULT (WINAPI *SetNumberOfStreams)(IVMRFilterConfig *This,DWORD dwMaxStreams);
-      HRESULT (WINAPI *GetNumberOfStreams)(IVMRFilterConfig *This,DWORD *pdwMaxStreams);
-      HRESULT (WINAPI *SetRenderingPrefs)(IVMRFilterConfig *This,DWORD dwRenderFlags);
-      HRESULT (WINAPI *GetRenderingPrefs)(IVMRFilterConfig *This,DWORD *pdwRenderFlags);
-      HRESULT (WINAPI *SetRenderingMode)(IVMRFilterConfig *This,DWORD Mode);
-      HRESULT (WINAPI *GetRenderingMode)(IVMRFilterConfig *This,DWORD *pMode);
+                   HRESULT (WINAPI *QueryInterface)(IVMRFilterConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRFilterConfig *This);
+                   ULONG (WINAPI *Release)(IVMRFilterConfig *This);
+                   HRESULT (WINAPI *SetImageCompositor)(IVMRFilterConfig *This,IVMRImageCompositor *lpVMRImgCompositor);
+                   HRESULT (WINAPI *SetNumberOfStreams)(IVMRFilterConfig *This,DWORD dwMaxStreams);
+                   HRESULT (WINAPI *GetNumberOfStreams)(IVMRFilterConfig *This,DWORD *pdwMaxStreams);
+                   HRESULT (WINAPI *SetRenderingPrefs)(IVMRFilterConfig *This,DWORD dwRenderFlags);
+                   HRESULT (WINAPI *GetRenderingPrefs)(IVMRFilterConfig *This,DWORD *pdwRenderFlags);
+                   HRESULT (WINAPI *SetRenderingMode)(IVMRFilterConfig *This,DWORD Mode);
+                   HRESULT (WINAPI *GetRenderingMode)(IVMRFilterConfig *This,DWORD *pMode);
     END_INTERFACE
   } IVMRFilterConfigVtbl;
   struct IVMRFilterConfig {
@@ -14669,11 +14669,11 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRAspectRatioControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRAspectRatioControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRAspectRatioControl *This);
-      ULONG (WINAPI *Release)(IVMRAspectRatioControl *This);
-      HRESULT (WINAPI *GetAspectRatioMode)(IVMRAspectRatioControl *This,LPDWORD lpdwARMode);
-      HRESULT (WINAPI *SetAspectRatioMode)(IVMRAspectRatioControl *This,DWORD dwARMode);
+                   HRESULT (WINAPI *QueryInterface)(IVMRAspectRatioControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRAspectRatioControl *This);
+                   ULONG (WINAPI *Release)(IVMRAspectRatioControl *This);
+                   HRESULT (WINAPI *GetAspectRatioMode)(IVMRAspectRatioControl *This,LPDWORD lpdwARMode);
+                   HRESULT (WINAPI *SetAspectRatioMode)(IVMRAspectRatioControl *This,DWORD dwARMode);
     END_INTERFACE
   } IVMRAspectRatioControlVtbl;
   struct IVMRAspectRatioControl {
@@ -14745,16 +14745,16 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRDeinterlaceControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRDeinterlaceControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRDeinterlaceControl *This);
-      ULONG (WINAPI *Release)(IVMRDeinterlaceControl *This);
-      HRESULT (WINAPI *GetNumberOfDeinterlaceModes)(IVMRDeinterlaceControl *This,VMRVideoDesc *lpVideoDescription,LPDWORD lpdwNumDeinterlaceModes,LPGUID lpDeinterlaceModes);
-      HRESULT (WINAPI *GetDeinterlaceModeCaps)(IVMRDeinterlaceControl *This,LPGUID lpDeinterlaceMode,VMRVideoDesc *lpVideoDescription,VMRDeinterlaceCaps *lpDeinterlaceCaps);
-      HRESULT (WINAPI *GetDeinterlaceMode)(IVMRDeinterlaceControl *This,DWORD dwStreamID,LPGUID lpDeinterlaceMode);
-      HRESULT (WINAPI *SetDeinterlaceMode)(IVMRDeinterlaceControl *This,DWORD dwStreamID,LPGUID lpDeinterlaceMode);
-      HRESULT (WINAPI *GetDeinterlacePrefs)(IVMRDeinterlaceControl *This,LPDWORD lpdwDeinterlacePrefs);
-      HRESULT (WINAPI *SetDeinterlacePrefs)(IVMRDeinterlaceControl *This,DWORD dwDeinterlacePrefs);
-      HRESULT (WINAPI *GetActualDeinterlaceMode)(IVMRDeinterlaceControl *This,DWORD dwStreamID,LPGUID lpDeinterlaceMode);
+                   HRESULT (WINAPI *QueryInterface)(IVMRDeinterlaceControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRDeinterlaceControl *This);
+                   ULONG (WINAPI *Release)(IVMRDeinterlaceControl *This);
+                   HRESULT (WINAPI *GetNumberOfDeinterlaceModes)(IVMRDeinterlaceControl *This,VMRVideoDesc *lpVideoDescription,LPDWORD lpdwNumDeinterlaceModes,LPGUID lpDeinterlaceModes);
+                   HRESULT (WINAPI *GetDeinterlaceModeCaps)(IVMRDeinterlaceControl *This,LPGUID lpDeinterlaceMode,VMRVideoDesc *lpVideoDescription,VMRDeinterlaceCaps *lpDeinterlaceCaps);
+                   HRESULT (WINAPI *GetDeinterlaceMode)(IVMRDeinterlaceControl *This,DWORD dwStreamID,LPGUID lpDeinterlaceMode);
+                   HRESULT (WINAPI *SetDeinterlaceMode)(IVMRDeinterlaceControl *This,DWORD dwStreamID,LPGUID lpDeinterlaceMode);
+                   HRESULT (WINAPI *GetDeinterlacePrefs)(IVMRDeinterlaceControl *This,LPDWORD lpdwDeinterlacePrefs);
+                   HRESULT (WINAPI *SetDeinterlacePrefs)(IVMRDeinterlaceControl *This,DWORD dwDeinterlacePrefs);
+                   HRESULT (WINAPI *GetActualDeinterlaceMode)(IVMRDeinterlaceControl *This,DWORD dwStreamID,LPGUID lpDeinterlaceMode);
     END_INTERFACE
   } IVMRDeinterlaceControlVtbl;
   struct IVMRDeinterlaceControl {
@@ -14822,12 +14822,12 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRMixerBitmapVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRMixerBitmap *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRMixerBitmap *This);
-      ULONG (WINAPI *Release)(IVMRMixerBitmap *This);
-      HRESULT (WINAPI *SetAlphaBitmap)(IVMRMixerBitmap *This,const VMRALPHABITMAP *pBmpParms);
-      HRESULT (WINAPI *UpdateAlphaBitmapParameters)(IVMRMixerBitmap *This,PVMRALPHABITMAP pBmpParms);
-      HRESULT (WINAPI *GetAlphaBitmapParameters)(IVMRMixerBitmap *This,PVMRALPHABITMAP pBmpParms);
+                   HRESULT (WINAPI *QueryInterface)(IVMRMixerBitmap *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRMixerBitmap *This);
+                   ULONG (WINAPI *Release)(IVMRMixerBitmap *This);
+                   HRESULT (WINAPI *SetAlphaBitmap)(IVMRMixerBitmap *This,const VMRALPHABITMAP *pBmpParms);
+                   HRESULT (WINAPI *UpdateAlphaBitmapParameters)(IVMRMixerBitmap *This,PVMRALPHABITMAP pBmpParms);
+                   HRESULT (WINAPI *GetAlphaBitmapParameters)(IVMRMixerBitmap *This,PVMRALPHABITMAP pBmpParms);
     END_INTERFACE
   } IVMRMixerBitmapVtbl;
   struct IVMRMixerBitmap {
@@ -14876,13 +14876,13 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRImageCompositorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRImageCompositor *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRImageCompositor *This);
-      ULONG (WINAPI *Release)(IVMRImageCompositor *This);
-      HRESULT (WINAPI *InitCompositionTarget)(IVMRImageCompositor *This,IUnknown *pD3DDevice,LPDIRECTDRAWSURFACE7 pddsRenderTarget);
-      HRESULT (WINAPI *TermCompositionTarget)(IVMRImageCompositor *This,IUnknown *pD3DDevice,LPDIRECTDRAWSURFACE7 pddsRenderTarget);
-      HRESULT (WINAPI *SetStreamMediaType)(IVMRImageCompositor *This,DWORD dwStrmID,AM_MEDIA_TYPE *pmt,WINBOOL fTexture);
-      HRESULT (WINAPI *CompositeImage)(IVMRImageCompositor *This,IUnknown *pD3DDevice,LPDIRECTDRAWSURFACE7 pddsRenderTarget,AM_MEDIA_TYPE *pmtRenderTarget,REFERENCE_TIME rtStart,REFERENCE_TIME rtEnd,DWORD dwClrBkGnd,VMRVIDEOSTREAMINFO *pVideoStreamInfo,UINT cStreams);
+                   HRESULT (WINAPI *QueryInterface)(IVMRImageCompositor *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRImageCompositor *This);
+                   ULONG (WINAPI *Release)(IVMRImageCompositor *This);
+                   HRESULT (WINAPI *InitCompositionTarget)(IVMRImageCompositor *This,IUnknown *pD3DDevice,LPDIRECTDRAWSURFACE7 pddsRenderTarget);
+                   HRESULT (WINAPI *TermCompositionTarget)(IVMRImageCompositor *This,IUnknown *pD3DDevice,LPDIRECTDRAWSURFACE7 pddsRenderTarget);
+                   HRESULT (WINAPI *SetStreamMediaType)(IVMRImageCompositor *This,DWORD dwStrmID,AM_MEDIA_TYPE *pmt,WINBOOL fTexture);
+                   HRESULT (WINAPI *CompositeImage)(IVMRImageCompositor *This,IUnknown *pD3DDevice,LPDIRECTDRAWSURFACE7 pddsRenderTarget,AM_MEDIA_TYPE *pmtRenderTarget,REFERENCE_TIME rtStart,REFERENCE_TIME rtEnd,DWORD dwClrBkGnd,VMRVIDEOSTREAMINFO *pVideoStreamInfo,UINT cStreams);
     END_INTERFACE
   } IVMRImageCompositorVtbl;
   struct IVMRImageCompositor {
@@ -14922,13 +14922,13 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRVideoStreamControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRVideoStreamControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRVideoStreamControl *This);
-      ULONG (WINAPI *Release)(IVMRVideoStreamControl *This);
-      HRESULT (WINAPI *SetColorKey)(IVMRVideoStreamControl *This,LPDDCOLORKEY lpClrKey);
-      HRESULT (WINAPI *GetColorKey)(IVMRVideoStreamControl *This,LPDDCOLORKEY lpClrKey);
-      HRESULT (WINAPI *SetStreamActiveState)(IVMRVideoStreamControl *This,WINBOOL fActive);
-      HRESULT (WINAPI *GetStreamActiveState)(IVMRVideoStreamControl *This,WINBOOL *lpfActive);
+                   HRESULT (WINAPI *QueryInterface)(IVMRVideoStreamControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRVideoStreamControl *This);
+                   ULONG (WINAPI *Release)(IVMRVideoStreamControl *This);
+                   HRESULT (WINAPI *SetColorKey)(IVMRVideoStreamControl *This,LPDDCOLORKEY lpClrKey);
+                   HRESULT (WINAPI *GetColorKey)(IVMRVideoStreamControl *This,LPDDCOLORKEY lpClrKey);
+                   HRESULT (WINAPI *SetStreamActiveState)(IVMRVideoStreamControl *This,WINBOOL fActive);
+                   HRESULT (WINAPI *GetStreamActiveState)(IVMRVideoStreamControl *This,WINBOOL *lpfActive);
     END_INTERFACE
   } IVMRVideoStreamControlVtbl;
   struct IVMRVideoStreamControl {
@@ -14968,13 +14968,13 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRSurfaceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRSurface *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRSurface *This);
-      ULONG (WINAPI *Release)(IVMRSurface *This);
-      HRESULT (WINAPI *IsSurfaceLocked)(IVMRSurface *This);
-      HRESULT (WINAPI *LockSurface)(IVMRSurface *This,BYTE **lpSurface);
-      HRESULT (WINAPI *UnlockSurface)(IVMRSurface *This);
-      HRESULT (WINAPI *GetSurface)(IVMRSurface *This,LPDIRECTDRAWSURFACE7 *lplpSurface);
+                   HRESULT (WINAPI *QueryInterface)(IVMRSurface *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRSurface *This);
+                   ULONG (WINAPI *Release)(IVMRSurface *This);
+                   HRESULT (WINAPI *IsSurfaceLocked)(IVMRSurface *This);
+                   HRESULT (WINAPI *LockSurface)(IVMRSurface *This,BYTE **lpSurface);
+                   HRESULT (WINAPI *UnlockSurface)(IVMRSurface *This);
+                   HRESULT (WINAPI *GetSurface)(IVMRSurface *This,LPDIRECTDRAWSURFACE7 *lplpSurface);
     END_INTERFACE
   } IVMRSurfaceVtbl;
   struct IVMRSurface {
@@ -15013,11 +15013,11 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRImagePresenterConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRImagePresenterConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRImagePresenterConfig *This);
-      ULONG (WINAPI *Release)(IVMRImagePresenterConfig *This);
-      HRESULT (WINAPI *SetRenderingPrefs)(IVMRImagePresenterConfig *This,DWORD dwRenderFlags);
-      HRESULT (WINAPI *GetRenderingPrefs)(IVMRImagePresenterConfig *This,DWORD *dwRenderFlags);
+                   HRESULT (WINAPI *QueryInterface)(IVMRImagePresenterConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRImagePresenterConfig *This);
+                   ULONG (WINAPI *Release)(IVMRImagePresenterConfig *This);
+                   HRESULT (WINAPI *SetRenderingPrefs)(IVMRImagePresenterConfig *This,DWORD dwRenderFlags);
+                   HRESULT (WINAPI *GetRenderingPrefs)(IVMRImagePresenterConfig *This,DWORD *dwRenderFlags);
     END_INTERFACE
   } IVMRImagePresenterConfigVtbl;
   struct IVMRImagePresenterConfig {
@@ -15049,13 +15049,13 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVMRImagePresenterExclModeConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVMRImagePresenterExclModeConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVMRImagePresenterExclModeConfig *This);
-      ULONG (WINAPI *Release)(IVMRImagePresenterExclModeConfig *This);
-      HRESULT (WINAPI *SetRenderingPrefs)(IVMRImagePresenterExclModeConfig *This,DWORD dwRenderFlags);
-      HRESULT (WINAPI *GetRenderingPrefs)(IVMRImagePresenterExclModeConfig *This,DWORD *dwRenderFlags);
-      HRESULT (WINAPI *SetXlcModeDDObjAndPrimarySurface)(IVMRImagePresenterExclModeConfig *This,LPDIRECTDRAW7 lpDDObj,LPDIRECTDRAWSURFACE7 lpPrimarySurf);
-      HRESULT (WINAPI *GetXlcModeDDObjAndPrimarySurface)(IVMRImagePresenterExclModeConfig *This,LPDIRECTDRAW7 *lpDDObj,LPDIRECTDRAWSURFACE7 *lpPrimarySurf);
+                   HRESULT (WINAPI *QueryInterface)(IVMRImagePresenterExclModeConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVMRImagePresenterExclModeConfig *This);
+                   ULONG (WINAPI *Release)(IVMRImagePresenterExclModeConfig *This);
+                   HRESULT (WINAPI *SetRenderingPrefs)(IVMRImagePresenterExclModeConfig *This,DWORD dwRenderFlags);
+                   HRESULT (WINAPI *GetRenderingPrefs)(IVMRImagePresenterExclModeConfig *This,DWORD *dwRenderFlags);
+                   HRESULT (WINAPI *SetXlcModeDDObjAndPrimarySurface)(IVMRImagePresenterExclModeConfig *This,LPDIRECTDRAW7 lpDDObj,LPDIRECTDRAWSURFACE7 lpPrimarySurf);
+                   HRESULT (WINAPI *GetXlcModeDDObjAndPrimarySurface)(IVMRImagePresenterExclModeConfig *This,LPDIRECTDRAW7 *lpDDObj,LPDIRECTDRAWSURFACE7 *lpPrimarySurf);
     END_INTERFACE
   } IVMRImagePresenterExclModeConfigVtbl;
   struct IVMRImagePresenterExclModeConfig {
@@ -15089,11 +15089,11 @@ __CRT_UUID_DECL(IMpeg2Demultiplexer,0x436eee9c,0x264f,0x4242,0x90,0xe1,0x4e,0x33
 #else
   typedef struct IVPManagerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVPManager *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVPManager *This);
-      ULONG (WINAPI *Release)(IVPManager *This);
-      HRESULT (WINAPI *SetVideoPortIndex)(IVPManager *This,DWORD dwVideoPortIndex);
-      HRESULT (WINAPI *GetVideoPortIndex)(IVPManager *This,DWORD *pdwVideoPortIndex);
+                   HRESULT (WINAPI *QueryInterface)(IVPManager *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVPManager *This);
+                   ULONG (WINAPI *Release)(IVPManager *This);
+                   HRESULT (WINAPI *SetVideoPortIndex)(IVPManager *This,DWORD dwVideoPortIndex);
+                   HRESULT (WINAPI *GetVideoPortIndex)(IVPManager *This,DWORD *pdwVideoPortIndex);
     END_INTERFACE
   } IVPManagerVtbl;
   struct IVPManager {

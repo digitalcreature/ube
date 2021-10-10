@@ -15,16 +15,16 @@ pub fn __muloti4(a: i128, b: i128, overflow: *c_int) callconv(.C) i128 {
 
     const r = a *% b;
     if (a == min) {
-        if (b != 0 and b != 1) {
-            overflow.* = 1;
-        }
-        return r;
+                     if (b != 0 and b != 1) {
+                                      overflow.* = 1;
+                     }
+                     return r;
     }
     if (b == min) {
-        if (a != 0 and a != 1) {
-            overflow.* = 1;
-        }
-        return r;
+                     if (a != 0 and a != 1) {
+                                      overflow.* = 1;
+                     }
+                     return r;
     }
 
     const sa = a >> (128 - 1);
@@ -33,17 +33,17 @@ pub fn __muloti4(a: i128, b: i128, overflow: *c_int) callconv(.C) i128 {
     const abs_b = (b ^ sb) -% sb;
 
     if (abs_a < 2 or abs_b < 2) {
-        return r;
+                     return r;
     }
 
     if (sa == sb) {
-        if (abs_a > @divTrunc(max, abs_b)) {
-            overflow.* = 1;
-        }
+                     if (abs_a > @divTrunc(max, abs_b)) {
+                                      overflow.* = 1;
+                     }
     } else {
-        if (abs_a > @divTrunc(min, -abs_b)) {
-            overflow.* = 1;
-        }
+                     if (abs_a > @divTrunc(min, -abs_b)) {
+                                      overflow.* = 1;
+                     }
     }
 
     return r;

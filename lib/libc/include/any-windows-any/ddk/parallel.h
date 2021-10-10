@@ -29,8 +29,8 @@
 extern "C" {
 #endif
 
-#define DD_PARALLEL_PORT_BASE_NAME        "ParallelPort"
-#define DD_PARALLEL_PORT_BASE_NAME_U      L"ParallelPort"
+#define DD_PARALLEL_PORT_BASE_NAME                     "ParallelPort"
+#define DD_PARALLEL_PORT_BASE_NAME_U                   L"ParallelPort"
 
 #define IOCTL_INTERNAL_DESELECT_DEVICE \
   CTL_CODE (FILE_DEVICE_PARALLEL_PORT, 24, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -67,8 +67,8 @@ typedef struct _PARALLEL_1284_COMMAND {
 } PARALLEL_1284_COMMAND, *PPARALLEL_1284_COMMAND;
 
 /* PARALLEL_1284_COMMAND.CommandFlags */
-#define PAR_END_OF_CHAIN_DEVICE           0x00000001
-#define PAR_HAVE_PORT_KEEP_PORT           0x00000002
+#define PAR_END_OF_CHAIN_DEVICE                        0x00000001
+#define PAR_HAVE_PORT_KEEP_PORT                        0x00000002
 
 typedef struct _MORE_PARALLEL_PORT_INFORMATION {
 	INTERFACE_TYPE  InterfaceType;
@@ -105,13 +105,13 @@ typedef NTSTATUS
 	IN PVOID  DeselectCommand);
 
 /* PARALLEL_PNP_INFORMATION.HardwareCapabilities */
-#define PPT_NO_HARDWARE_PRESENT           0x00000000
-#define PPT_ECP_PRESENT                   0x00000001
-#define PPT_EPP_PRESENT                   0x00000002
-#define PPT_EPP_32_PRESENT                0x00000004
-#define PPT_BYTE_PRESENT                  0x00000008
-#define PPT_BIDI_PRESENT                  0x00000008
-#define PPT_1284_3_PRESENT                0x00000010
+#define PPT_NO_HARDWARE_PRESENT                        0x00000000
+#define PPT_ECP_PRESENT                                                          0x00000001
+#define PPT_EPP_PRESENT                                                          0x00000002
+#define PPT_EPP_32_PRESENT                                          0x00000004
+#define PPT_BYTE_PRESENT                                                         0x00000008
+#define PPT_BIDI_PRESENT                                                         0x00000008
+#define PPT_1284_3_PRESENT                                          0x00000010
 
 typedef struct _PARALLEL_PNP_INFORMATION {
   PHYSICAL_ADDRESS  OriginalEcpController;
@@ -156,8 +156,8 @@ typedef struct _PARALLEL_PORT_INFORMATION {
 } PARALLEL_PORT_INFORMATION, *PPARALLEL_PORT_INFORMATION;
 
 /* PARALLEL_CHIP_MODE.ModeFlags */
-#define INITIAL_MODE                      0x00
-#define PARCHIP_ECR_ARBITRATOR            0x01
+#define INITIAL_MODE                                                             0x00
+#define PARCHIP_ECR_ARBITRATOR                                      0x01
 
 typedef struct _PARALLEL_CHIP_MODE {
   UCHAR  ModeFlags;

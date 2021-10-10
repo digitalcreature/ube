@@ -105,162 +105,162 @@ MIDL_INTERFACE("6848f6f2-3155-4f86-b6f5-263eeeab3143")
 IPortableDeviceValues : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        DWORD *pcelt) = 0;
+                     DWORD *pcelt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        const DWORD index,
-        PROPERTYKEY *pKey,
-        PROPVARIANT *pValue) = 0;
+                     const DWORD index,
+                     PROPERTYKEY *pKey,
+                     PROPVARIANT *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValue(
-        REFPROPERTYKEY key,
-        const PROPVARIANT *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     const PROPVARIANT *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        REFPROPERTYKEY key,
-        PROPVARIANT *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStringValue(
-        REFPROPERTYKEY key,
-        LPCWSTR Value) = 0;
+                     REFPROPERTYKEY key,
+                     LPCWSTR Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringValue(
-        REFPROPERTYKEY key,
-        LPWSTR *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     LPWSTR *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUnsignedIntegerValue(
-        REFPROPERTYKEY key,
-        const ULONG Value) = 0;
+                     REFPROPERTYKEY key,
+                     const ULONG Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUnsignedIntegerValue(
-        REFPROPERTYKEY key,
-        ULONG *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     ULONG *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignedIntegerValue(
-        REFPROPERTYKEY key,
-        const LONG Value) = 0;
+                     REFPROPERTYKEY key,
+                     const LONG Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignedIntegerValue(
-        REFPROPERTYKEY key,
-        LONG *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     LONG *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUnsignedLargeIntegerValue(
-        REFPROPERTYKEY key,
-        const ULONGLONG Value) = 0;
+                     REFPROPERTYKEY key,
+                     const ULONGLONG Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUnsignedLargeIntegerValue(
-        REFPROPERTYKEY key,
-        ULONGLONG *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     ULONGLONG *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignedLargeIntegerValue(
-        REFPROPERTYKEY key,
-        const LONGLONG Value) = 0;
+                     REFPROPERTYKEY key,
+                     const LONGLONG Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignedLargeIntegerValue(
-        REFPROPERTYKEY key,
-        LONGLONG *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     LONGLONG *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFloatValue(
-        REFPROPERTYKEY key,
-        const FLOAT Value) = 0;
+                     REFPROPERTYKEY key,
+                     const FLOAT Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFloatValue(
-        REFPROPERTYKEY key,
-        FLOAT *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     FLOAT *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetErrorValue(
-        REFPROPERTYKEY key,
-        const HRESULT Value) = 0;
+                     REFPROPERTYKEY key,
+                     const HRESULT Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetErrorValue(
-        REFPROPERTYKEY key,
-        HRESULT *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     HRESULT *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetKeyValue(
-        REFPROPERTYKEY key,
-        REFPROPERTYKEY Value) = 0;
+                     REFPROPERTYKEY key,
+                     REFPROPERTYKEY Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetKeyValue(
-        REFPROPERTYKEY key,
-        PROPERTYKEY *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     PROPERTYKEY *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBoolValue(
-        REFPROPERTYKEY key,
-        const WINBOOL Value) = 0;
+                     REFPROPERTYKEY key,
+                     const WINBOOL Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBoolValue(
-        REFPROPERTYKEY key,
-        WINBOOL *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     WINBOOL *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIUnknownValue(
-        REFPROPERTYKEY key,
-        IUnknown *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     IUnknown *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIUnknownValue(
-        REFPROPERTYKEY key,
-        IUnknown **ppValue) = 0;
+                     REFPROPERTYKEY key,
+                     IUnknown **ppValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGuidValue(
-        REFPROPERTYKEY key,
-        REFGUID Value) = 0;
+                     REFPROPERTYKEY key,
+                     REFGUID Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGuidValue(
-        REFPROPERTYKEY key,
-        GUID *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     GUID *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBufferValue(
-        REFPROPERTYKEY key,
-        BYTE *pValue,
-        DWORD cbValue) = 0;
+                     REFPROPERTYKEY key,
+                     BYTE *pValue,
+                     DWORD cbValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBufferValue(
-        REFPROPERTYKEY key,
-        BYTE **ppValue,
-        DWORD *pcbValue) = 0;
+                     REFPROPERTYKEY key,
+                     BYTE **ppValue,
+                     DWORD *pcbValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIPortableDeviceValuesValue(
-        REFPROPERTYKEY key,
-        IPortableDeviceValues *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     IPortableDeviceValues *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIPortableDeviceValuesValue(
-        REFPROPERTYKEY key,
-        IPortableDeviceValues **ppValue) = 0;
+                     REFPROPERTYKEY key,
+                     IPortableDeviceValues **ppValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIPortableDevicePropVariantCollectionValue(
-        REFPROPERTYKEY key,
-        IPortableDevicePropVariantCollection *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     IPortableDevicePropVariantCollection *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIPortableDevicePropVariantCollectionValue(
-        REFPROPERTYKEY key,
-        IPortableDevicePropVariantCollection **ppValue) = 0;
+                     REFPROPERTYKEY key,
+                     IPortableDevicePropVariantCollection **ppValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIPortableDeviceKeyCollectionValue(
-        REFPROPERTYKEY key,
-        IPortableDeviceKeyCollection *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     IPortableDeviceKeyCollection *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIPortableDeviceKeyCollectionValue(
-        REFPROPERTYKEY key,
-        IPortableDeviceKeyCollection **ppValue) = 0;
+                     REFPROPERTYKEY key,
+                     IPortableDeviceKeyCollection **ppValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIPortableDeviceValuesCollectionValue(
-        REFPROPERTYKEY key,
-        IPortableDeviceValuesCollection *pValue) = 0;
+                     REFPROPERTYKEY key,
+                     IPortableDeviceValuesCollection *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIPortableDeviceValuesCollectionValue(
-        REFPROPERTYKEY key,
-        IPortableDeviceValuesCollection **ppValue) = 0;
+                     REFPROPERTYKEY key,
+                     IPortableDeviceValuesCollection **ppValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveValue(
-        REFPROPERTYKEY key) = 0;
+                     REFPROPERTYKEY key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyValuesFromPropertyStore(
-        IPropertyStore *pStore) = 0;
+                     IPropertyStore *pStore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyValuesToPropertyStore(
-        IPropertyStore *pStore) = 0;
+                     IPropertyStore *pStore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -272,213 +272,213 @@ typedef struct IPortableDeviceValuesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPortableDeviceValues *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPortableDeviceValues *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPortableDeviceValues *This);
+                     IPortableDeviceValues *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPortableDeviceValues *This);
+                     IPortableDeviceValues *This);
 
     /*** IPortableDeviceValues methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPortableDeviceValues *This,
-        DWORD *pcelt);
+                     IPortableDeviceValues *This,
+                     DWORD *pcelt);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPortableDeviceValues *This,
-        const DWORD index,
-        PROPERTYKEY *pKey,
-        PROPVARIANT *pValue);
+                     IPortableDeviceValues *This,
+                     const DWORD index,
+                     PROPERTYKEY *pKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        const PROPVARIANT *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     const PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        PROPVARIANT *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetStringValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        LPCWSTR Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     LPCWSTR Value);
 
     HRESULT (STDMETHODCALLTYPE *GetStringValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        LPWSTR *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     LPWSTR *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUnsignedIntegerValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        const ULONG Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     const ULONG Value);
 
     HRESULT (STDMETHODCALLTYPE *GetUnsignedIntegerValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        ULONG *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     ULONG *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetSignedIntegerValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        const LONG Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     const LONG Value);
 
     HRESULT (STDMETHODCALLTYPE *GetSignedIntegerValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        LONG *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     LONG *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUnsignedLargeIntegerValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        const ULONGLONG Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     const ULONGLONG Value);
 
     HRESULT (STDMETHODCALLTYPE *GetUnsignedLargeIntegerValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        ULONGLONG *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     ULONGLONG *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetSignedLargeIntegerValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        const LONGLONG Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     const LONGLONG Value);
 
     HRESULT (STDMETHODCALLTYPE *GetSignedLargeIntegerValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        LONGLONG *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     LONGLONG *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetFloatValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        const FLOAT Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     const FLOAT Value);
 
     HRESULT (STDMETHODCALLTYPE *GetFloatValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        FLOAT *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     FLOAT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetErrorValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        const HRESULT Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     const HRESULT Value);
 
     HRESULT (STDMETHODCALLTYPE *GetErrorValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        HRESULT *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     HRESULT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetKeyValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        REFPROPERTYKEY Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     REFPROPERTYKEY Value);
 
     HRESULT (STDMETHODCALLTYPE *GetKeyValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        PROPERTYKEY *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     PROPERTYKEY *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetBoolValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        const WINBOOL Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     const WINBOOL Value);
 
     HRESULT (STDMETHODCALLTYPE *GetBoolValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        WINBOOL *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     WINBOOL *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetIUnknownValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IUnknown *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IUnknown *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetIUnknownValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IUnknown **ppValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IUnknown **ppValue);
 
     HRESULT (STDMETHODCALLTYPE *SetGuidValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        REFGUID Value);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     REFGUID Value);
 
     HRESULT (STDMETHODCALLTYPE *GetGuidValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        GUID *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     GUID *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetBufferValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        BYTE *pValue,
-        DWORD cbValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     BYTE *pValue,
+                     DWORD cbValue);
 
     HRESULT (STDMETHODCALLTYPE *GetBufferValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        BYTE **ppValue,
-        DWORD *pcbValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     BYTE **ppValue,
+                     DWORD *pcbValue);
 
     HRESULT (STDMETHODCALLTYPE *SetIPortableDeviceValuesValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IPortableDeviceValues *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IPortableDeviceValues *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetIPortableDeviceValuesValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IPortableDeviceValues **ppValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IPortableDeviceValues **ppValue);
 
     HRESULT (STDMETHODCALLTYPE *SetIPortableDevicePropVariantCollectionValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IPortableDevicePropVariantCollection *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IPortableDevicePropVariantCollection *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetIPortableDevicePropVariantCollectionValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IPortableDevicePropVariantCollection **ppValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IPortableDevicePropVariantCollection **ppValue);
 
     HRESULT (STDMETHODCALLTYPE *SetIPortableDeviceKeyCollectionValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IPortableDeviceKeyCollection *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IPortableDeviceKeyCollection *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetIPortableDeviceKeyCollectionValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IPortableDeviceKeyCollection **ppValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IPortableDeviceKeyCollection **ppValue);
 
     HRESULT (STDMETHODCALLTYPE *SetIPortableDeviceValuesCollectionValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IPortableDeviceValuesCollection *pValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IPortableDeviceValuesCollection *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetIPortableDeviceValuesCollectionValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key,
-        IPortableDeviceValuesCollection **ppValue);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key,
+                     IPortableDeviceValuesCollection **ppValue);
 
     HRESULT (STDMETHODCALLTYPE *RemoveValue)(
-        IPortableDeviceValues *This,
-        REFPROPERTYKEY key);
+                     IPortableDeviceValues *This,
+                     REFPROPERTYKEY key);
 
     HRESULT (STDMETHODCALLTYPE *CopyValuesFromPropertyStore)(
-        IPortableDeviceValues *This,
-        IPropertyStore *pStore);
+                     IPortableDeviceValues *This,
+                     IPropertyStore *pStore);
 
     HRESULT (STDMETHODCALLTYPE *CopyValuesToPropertyStore)(
-        IPortableDeviceValues *This,
-        IPropertyStore *pStore);
+                     IPortableDeviceValues *This,
+                     IPropertyStore *pStore);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IPortableDeviceValues *This);
+                     IPortableDeviceValues *This);
 
     END_INTERFACE
 } IPortableDeviceValuesVtbl;
@@ -686,20 +686,20 @@ MIDL_INTERFACE("dada2357-e0ad-492e-98db-dd61c53ba353")
 IPortableDeviceKeyCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        DWORD *pcElems) = 0;
+                     DWORD *pcElems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        const DWORD dwIndex,
-        PROPERTYKEY *pKey) = 0;
+                     const DWORD dwIndex,
+                     PROPERTYKEY *pKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        REFPROPERTYKEY Key) = 0;
+                     REFPROPERTYKEY Key) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        const DWORD dwIndex) = 0;
+                     const DWORD dwIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -711,36 +711,36 @@ typedef struct IPortableDeviceKeyCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPortableDeviceKeyCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPortableDeviceKeyCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPortableDeviceKeyCollection *This);
+                     IPortableDeviceKeyCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPortableDeviceKeyCollection *This);
+                     IPortableDeviceKeyCollection *This);
 
     /*** IPortableDeviceKeyCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPortableDeviceKeyCollection *This,
-        DWORD *pcElems);
+                     IPortableDeviceKeyCollection *This,
+                     DWORD *pcElems);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPortableDeviceKeyCollection *This,
-        const DWORD dwIndex,
-        PROPERTYKEY *pKey);
+                     IPortableDeviceKeyCollection *This,
+                     const DWORD dwIndex,
+                     PROPERTYKEY *pKey);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IPortableDeviceKeyCollection *This,
-        REFPROPERTYKEY Key);
+                     IPortableDeviceKeyCollection *This,
+                     REFPROPERTYKEY Key);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IPortableDeviceKeyCollection *This);
+                     IPortableDeviceKeyCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IPortableDeviceKeyCollection *This,
-        const DWORD dwIndex);
+                     IPortableDeviceKeyCollection *This,
+                     const DWORD dwIndex);
 
     END_INTERFACE
 } IPortableDeviceKeyCollectionVtbl;
@@ -808,26 +808,26 @@ MIDL_INTERFACE("89b2e422-4f1b-4316-bcef-a44afea83eb3")
 IPortableDevicePropVariantCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        DWORD *pcElems) = 0;
+                     DWORD *pcElems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        const DWORD dwIndex,
-        PROPVARIANT *pValue) = 0;
+                     const DWORD dwIndex,
+                     PROPVARIANT *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        const PROPVARIANT *pValue) = 0;
+                     const PROPVARIANT *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        VARTYPE *pvt) = 0;
+                     VARTYPE *pvt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ChangeType(
-        const VARTYPE vt) = 0;
+                     const VARTYPE vt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        const DWORD dwIndex) = 0;
+                     const DWORD dwIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -839,44 +839,44 @@ typedef struct IPortableDevicePropVariantCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPortableDevicePropVariantCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPortableDevicePropVariantCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPortableDevicePropVariantCollection *This);
+                     IPortableDevicePropVariantCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPortableDevicePropVariantCollection *This);
+                     IPortableDevicePropVariantCollection *This);
 
     /*** IPortableDevicePropVariantCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPortableDevicePropVariantCollection *This,
-        DWORD *pcElems);
+                     IPortableDevicePropVariantCollection *This,
+                     DWORD *pcElems);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPortableDevicePropVariantCollection *This,
-        const DWORD dwIndex,
-        PROPVARIANT *pValue);
+                     IPortableDevicePropVariantCollection *This,
+                     const DWORD dwIndex,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IPortableDevicePropVariantCollection *This,
-        const PROPVARIANT *pValue);
+                     IPortableDevicePropVariantCollection *This,
+                     const PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IPortableDevicePropVariantCollection *This,
-        VARTYPE *pvt);
+                     IPortableDevicePropVariantCollection *This,
+                     VARTYPE *pvt);
 
     HRESULT (STDMETHODCALLTYPE *ChangeType)(
-        IPortableDevicePropVariantCollection *This,
-        const VARTYPE vt);
+                     IPortableDevicePropVariantCollection *This,
+                     const VARTYPE vt);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IPortableDevicePropVariantCollection *This);
+                     IPortableDevicePropVariantCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IPortableDevicePropVariantCollection *This,
-        const DWORD dwIndex);
+                     IPortableDevicePropVariantCollection *This,
+                     const DWORD dwIndex);
 
     END_INTERFACE
 } IPortableDevicePropVariantCollectionVtbl;
@@ -952,20 +952,20 @@ MIDL_INTERFACE("6e3f2d79-4e07-48c4-8208-d8c2e5af4a99")
 IPortableDeviceValuesCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        DWORD *pcElems) = 0;
+                     DWORD *pcElems) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        DWORD dwIndex,
-        IPortableDeviceValues **ppValues) = 0;
+                     DWORD dwIndex,
+                     IPortableDeviceValues **ppValues) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IPortableDeviceValues *pValues) = 0;
+                     IPortableDeviceValues *pValues) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        const DWORD dwIndex) = 0;
+                     const DWORD dwIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -977,36 +977,36 @@ typedef struct IPortableDeviceValuesCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPortableDeviceValuesCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPortableDeviceValuesCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPortableDeviceValuesCollection *This);
+                     IPortableDeviceValuesCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPortableDeviceValuesCollection *This);
+                     IPortableDeviceValuesCollection *This);
 
     /*** IPortableDeviceValuesCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPortableDeviceValuesCollection *This,
-        DWORD *pcElems);
+                     IPortableDeviceValuesCollection *This,
+                     DWORD *pcElems);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IPortableDeviceValuesCollection *This,
-        DWORD dwIndex,
-        IPortableDeviceValues **ppValues);
+                     IPortableDeviceValuesCollection *This,
+                     DWORD dwIndex,
+                     IPortableDeviceValues **ppValues);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IPortableDeviceValuesCollection *This,
-        IPortableDeviceValues *pValues);
+                     IPortableDeviceValuesCollection *This,
+                     IPortableDeviceValues *pValues);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IPortableDeviceValuesCollection *This);
+                     IPortableDeviceValuesCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IPortableDeviceValuesCollection *This,
-        const DWORD dwIndex);
+                     IPortableDeviceValuesCollection *This,
+                     const DWORD dwIndex);
 
     END_INTERFACE
 } IPortableDeviceValuesCollectionVtbl;
@@ -1080,14 +1080,14 @@ __CRT_UUID_DECL(PortableDeviceValues, 0x0c15d503, 0xd017, 0x47ce, 0x90,0x16, 0x7
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
 
 /* End additional prototypes */
 

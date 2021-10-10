@@ -65,14 +65,14 @@
 #endif /* !__i386__ */
 
 /* Arbitrarily choose the same ptrace numbers as used by the Sparc code. */
-#define PTRACE_GETREGS            12
-#define PTRACE_SETREGS            13
-#define PTRACE_GETFPREGS          14
-#define PTRACE_SETFPREGS          15
-#define PTRACE_GETFPXREGS         18
-#define PTRACE_SETFPXREGS         19
+#define PTRACE_GETREGS                                      12
+#define PTRACE_SETREGS                                      13
+#define PTRACE_GETFPREGS                       14
+#define PTRACE_SETFPREGS                       15
+#define PTRACE_GETFPXREGS                      18
+#define PTRACE_SETFPXREGS                      19
 
-#define PTRACE_OLDSETOPTIONS      21
+#define PTRACE_OLDSETOPTIONS                   21
 
 /* only useful for access 32bit programs / kernels */
 #define PTRACE_GET_THREAD_AREA    25

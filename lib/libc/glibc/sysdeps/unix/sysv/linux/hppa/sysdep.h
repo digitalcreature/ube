@@ -54,8 +54,8 @@
 	copy LREG , %r19
 /* Inline assembly defines */
 #define TREG_ASM "%r4" /* Cant clobber r3, it holds framemarker */
-#define SAVE_ASM_PIC	"       copy %%r19, %" TREG_ASM "\n"
-#define LOAD_ASM_PIC	"       copy %" TREG_ASM ", %%r19\n"
+#define SAVE_ASM_PIC	"                    copy %%r19, %" TREG_ASM "\n"
+#define LOAD_ASM_PIC	"                    copy %" TREG_ASM ", %%r19\n"
 #define CLOB_TREG	TREG_ASM ,
 #define PIC_REG_DEF	register unsigned long __r19 asm("r19");
 #define PIC_REG_USE	, "r" (__r19)
@@ -324,8 +324,8 @@ L(pre_end):					ASM_LINE_SEP	\
 #undef  DO_CALL_NOERRNO
 #define DO_CALL_NOERRNO(syscall_name, args)			\
 	/* No need to store r19 */		ASM_LINE_SEP	\
-	ble  0x100(%sr2,%r0)                    ASM_LINE_SEP    \
-	ldi SYS_ify (syscall_name), %r20        ASM_LINE_SEP    \
+	ble  0x100(%sr2,%r0)                                                           ASM_LINE_SEP    \
+	ldi SYS_ify (syscall_name), %r20                     ASM_LINE_SEP    \
 	/* Caller will restore r19 */		ASM_LINE_SEP
 
 /* Here, we return the ERRVAL in assembly, note we don't call the
@@ -365,10 +365,10 @@ L(pre_end):					ASM_LINE_SEP	\
 ({									\
     long __sys_res = INTERNAL_SYSCALL (name, , nr, args);		\
     if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (__sys_res, )))	\
-      {									\
+                   {									\
 	__set_errno (INTERNAL_SYSCALL_ERRNO (__sys_res, ));		\
 	__sys_res = -1;							\
-      }									\
+                   }									\
     __sys_res;								\
 })
 

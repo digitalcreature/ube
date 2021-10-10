@@ -1937,24 +1937,24 @@ extern "C" {
   typedef struct _CERT_ALT_NAME_ENTRY {
     DWORD dwAltNameChoice;
     __C89_NAMELESS union {
-      PCERT_OTHER_NAME pOtherName;
-      LPWSTR pwszRfc822Name;
-      LPWSTR pwszDNSName;
-      /* CERT_DATA_BLOB is not documented, and x400Address is documented
-       * to be not implemented; commented out to prevent compile errors
-       * see http://msdn.microsoft.com/en-us/library/aa377173.aspx for
-       * CERT_ALT_NAME_ENTRY documentation where this is specified.
-      CERT_DATA_BLOB x400Address;
-       */
-      CERT_NAME_BLOB DirectoryName;
-      /* pEdiPartyName is not implemented, either. see:
-       * http://msdn.microsoft.com/en-us/library/aa924681.aspx or
-       * http://msdn.microsoft.com/en-us/library/aa377173.aspx
-      LPWSTR pEdiPartyName;
-       */
-      LPWSTR pwszURL;
-      CRYPT_DATA_BLOB IPAddress;
-      LPSTR pszRegisteredID;
+                   PCERT_OTHER_NAME pOtherName;
+                   LPWSTR pwszRfc822Name;
+                   LPWSTR pwszDNSName;
+                   /* CERT_DATA_BLOB is not documented, and x400Address is documented
+                    * to be not implemented; commented out to prevent compile errors
+                    * see http://msdn.microsoft.com/en-us/library/aa377173.aspx for
+                    * CERT_ALT_NAME_ENTRY documentation where this is specified.
+                   CERT_DATA_BLOB x400Address;
+                    */
+                   CERT_NAME_BLOB DirectoryName;
+                   /* pEdiPartyName is not implemented, either. see:
+                    * http://msdn.microsoft.com/en-us/library/aa924681.aspx or
+                    * http://msdn.microsoft.com/en-us/library/aa377173.aspx
+                   LPWSTR pEdiPartyName;
+                    */
+                   LPWSTR pwszURL;
+                   CRYPT_DATA_BLOB IPAddress;
+                   LPSTR pszRegisteredID;
     };
   } CERT_ALT_NAME_ENTRY,*PCERT_ALT_NAME_ENTRY;
 
@@ -2109,7 +2109,7 @@ extern "C" {
   typedef struct _CRL_DIST_POINT_NAME {
     DWORD dwDistPointNameChoice;
     __C89_NAMELESS union {
-      CERT_ALT_NAME_INFO FullName;
+                   CERT_ALT_NAME_INFO FullName;
     };
   } CRL_DIST_POINT_NAME,*PCRL_DIST_POINT_NAME;
 
@@ -2384,7 +2384,7 @@ extern "C" {
   typedef struct _CMC_TAGGED_REQUEST {
     DWORD dwTaggedRequestChoice;
     __C89_NAMELESS union {
-      PCMC_TAGGED_CERT_REQUEST pTaggedCertRequest;
+                   PCMC_TAGGED_CERT_REQUEST pTaggedCertRequest;
     };
   } CMC_TAGGED_REQUEST,*PCMC_TAGGED_REQUEST;
 
@@ -2433,8 +2433,8 @@ extern "C" {
     LPWSTR pwszStatusString;
     DWORD dwOtherInfoChoice;
     __C89_NAMELESS union {
-      DWORD dwFailInfo;
-      PCMC_PEND_INFO pPendInfo;
+                   DWORD dwFailInfo;
+                   PCMC_PEND_INFO pPendInfo;
     };
   } CMC_STATUS_INFO,*PCMC_STATUS_INFO;
 
@@ -2509,8 +2509,8 @@ extern "C" {
     DWORD dwYSize;
     DWORD dwLogotypeImageResolutionChoice;
     __C89_NAMELESS union {
-      DWORD dwNumBits;
-      DWORD dwTableSize;
+                   DWORD dwNumBits;
+                   DWORD dwTableSize;
     };
     LPWSTR pwszLanguage;
   } CERT_LOGOTYPE_IMAGE_INFO,*PCERT_LOGOTYPE_IMAGE_INFO;
@@ -2550,8 +2550,8 @@ extern "C" {
   typedef struct _CERT_LOGOTYPE_INFO {
     DWORD dwLogotypeInfoChoice;
     __C89_NAMELESS union {
-      PCERT_LOGOTYPE_DATA pLogotypeDirectInfo;
-      PCERT_LOGOTYPE_REFERENCE pLogotypeIndirectInfo;
+                   PCERT_LOGOTYPE_DATA pLogotypeDirectInfo;
+                   PCERT_LOGOTYPE_REFERENCE pLogotypeIndirectInfo;
     };
   } CERT_LOGOTYPE_INFO,*PCERT_LOGOTYPE_INFO;
 
@@ -2578,8 +2578,8 @@ extern "C" {
   typedef struct _CERT_BIOMETRIC_DATA {
     DWORD dwTypeOfBiometricDataChoice;
     __C89_NAMELESS union {
-      DWORD dwPredefined;
-      LPSTR pszObjId;
+                   DWORD dwPredefined;
+                   LPSTR pszObjId;
     };
     CERT_HASHED_URL HashedUrl;
   } CERT_BIOMETRIC_DATA,*PCERT_BIOMETRIC_DATA;
@@ -2660,7 +2660,7 @@ extern "C" {
     OCSP_CERT_ID CertId;
     DWORD dwCertStatus;
     __C89_NAMELESS union {
-      POCSP_BASIC_REVOKED_INFO pRevokedInfo;
+                   POCSP_BASIC_REVOKED_INFO pRevokedInfo;
     };
     FILETIME ThisUpdate;
     FILETIME NextUpdate;
@@ -2676,8 +2676,8 @@ extern "C" {
     DWORD dwVersion;
     DWORD dwResponderIdChoice;
     __C89_NAMELESS union {
-      CERT_NAME_BLOB ByNameResponderId;
-      CRYPT_HASH_BLOB ByKeyResponderId;
+                   CERT_NAME_BLOB ByNameResponderId;
+                   CRYPT_HASH_BLOB ByKeyResponderId;
     };
     FILETIME ProducedAt;
     DWORD cResponseEntry;
@@ -2773,9 +2773,9 @@ extern "C" {
     LPCWSTR pwszName;
     DWORD dwGroupId;
     __C89_NAMELESS union {
-      DWORD dwValue;
-      ALG_ID Algid;
-      DWORD dwLength;
+                   DWORD dwValue;
+                   ALG_ID Algid;
+                   DWORD dwLength;
     };
     CRYPT_DATA_BLOB ExtraInfo;
 #ifdef CRYPT_OID_INFO_HAS_EXTRA_FIELDS
@@ -2856,9 +2856,9 @@ extern "C" {
     DWORD cbSize;
     DWORD dwInfoChoice;
     __C89_NAMELESS union {
-      void *pvInfo;
-      PCERT_STRONG_SIGN_SERIALIZED_INFO pSerializedInfo;
-      LPSTR pszOID;
+                   void *pvInfo;
+                   PCERT_STRONG_SIGN_SERIALIZED_INFO pSerializedInfo;
+                   LPSTR pszOID;
     };
   } CERT_STRONG_SIGN_PARA,*PCERT_STRONG_SIGN_PARA;
 
@@ -2920,9 +2920,9 @@ extern "C" {
   typedef struct _CERT_ID {
     DWORD dwIdChoice;
     __C89_NAMELESS union {
-      CERT_ISSUER_SERIAL_NUMBER IssuerSerialNumber;
-      CRYPT_HASH_BLOB KeyId;
-      CRYPT_HASH_BLOB HashId;
+                   CERT_ISSUER_SERIAL_NUMBER IssuerSerialNumber;
+                   CRYPT_HASH_BLOB KeyId;
+                   CRYPT_HASH_BLOB HashId;
     };
   } CERT_ID,*PCERT_ID;
 
@@ -2934,8 +2934,8 @@ extern "C" {
     DWORD cbSize;
     PCERT_INFO pCertInfo;
     __C89_NAMELESS union {
-      HCRYPTPROV hCryptProv;
-      NCRYPT_KEY_HANDLE hNCryptKey;
+                   HCRYPTPROV hCryptProv;
+                   NCRYPT_KEY_HANDLE hNCryptKey;
     };
     DWORD dwKeySpec;
     CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
@@ -3014,8 +3014,8 @@ extern "C" {
     DWORD dwKeySpec;
     DWORD dwKeyChoice;
     __C89_NAMELESS union {
-      PCRYPT_ALGORITHM_IDENTIFIER pEphemeralAlgorithm;
-      PCERT_ID pSenderId;
+                   PCRYPT_ALGORITHM_IDENTIFIER pEphemeralAlgorithm;
+                   PCERT_ID pSenderId;
     };
     CRYPT_DATA_BLOB UserKeyingMaterial;
     DWORD cRecipientEncryptedKeys;
@@ -3032,8 +3032,8 @@ extern "C" {
     HCRYPTPROV hCryptProv;
     DWORD dwKeyChoice;
     __C89_NAMELESS union {
-      HCRYPTKEY hKeyEncryptionKey;
-      void *pvKeyEncryptionKey;
+                   HCRYPTKEY hKeyEncryptionKey;
+                   void *pvKeyEncryptionKey;
     };
     CRYPT_DATA_BLOB KeyId;
     FILETIME Date;
@@ -3052,9 +3052,9 @@ extern "C" {
   struct _CMSG_RECIPIENT_ENCODE_INFO {
     DWORD dwRecipientChoice;
     __C89_NAMELESS union {
-      PCMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO pKeyTrans;
-      PCMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO pKeyAgree;
-      PCMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO pMailList;
+                   PCMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO pKeyTrans;
+                   PCMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO pKeyAgree;
+                   PCMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO pMailList;
     };
   };
 
@@ -3218,8 +3218,8 @@ extern "C" {
     DWORD dwVersion;
     DWORD dwOriginatorChoice;
     __C89_NAMELESS union {
-      CERT_ID OriginatorCertId;
-      CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo;
+                   CERT_ID OriginatorCertId;
+                   CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo;
     };
     CRYPT_DATA_BLOB UserKeyingMaterial;
     CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
@@ -3242,9 +3242,9 @@ extern "C" {
   typedef struct _CMSG_CMS_RECIPIENT_INFO {
     DWORD dwRecipientChoice;
     __C89_NAMELESS union {
-      PCMSG_KEY_TRANS_RECIPIENT_INFO pKeyTrans;
-      PCMSG_KEY_AGREE_RECIPIENT_INFO pKeyAgree;
-      PCMSG_MAIL_LIST_RECIPIENT_INFO pMailList;
+                   PCMSG_KEY_TRANS_RECIPIENT_INFO pKeyTrans;
+                   PCMSG_KEY_AGREE_RECIPIENT_INFO pKeyAgree;
+                   PCMSG_MAIL_LIST_RECIPIENT_INFO pMailList;
     };
   } CMSG_CMS_RECIPIENT_INFO,*PCMSG_CMS_RECIPIENT_INFO;
 
@@ -3295,8 +3295,8 @@ extern "C" {
   typedef struct _CMSG_CTRL_DECRYPT_PARA {
     DWORD cbSize;
     __C89_NAMELESS union {
-      HCRYPTPROV hCryptProv;
-      NCRYPT_KEY_HANDLE hNCryptKey;
+                   HCRYPTPROV hCryptProv;
+                   NCRYPT_KEY_HANDLE hNCryptKey;
     };
     DWORD dwKeySpec;
     DWORD dwRecipientIndex;
@@ -3305,8 +3305,8 @@ extern "C" {
   typedef struct _CMSG_CTRL_KEY_TRANS_DECRYPT_PARA {
     DWORD cbSize;
     __C89_NAMELESS union {
-      HCRYPTPROV hCryptProv;
-      NCRYPT_KEY_HANDLE hNCryptKey;
+                   HCRYPTPROV hCryptProv;
+                   NCRYPT_KEY_HANDLE hNCryptKey;
     };
     DWORD dwKeySpec;
     PCMSG_KEY_TRANS_RECIPIENT_INFO pKeyTrans;
@@ -3316,8 +3316,8 @@ extern "C" {
   typedef struct _CMSG_CTRL_KEY_AGREE_DECRYPT_PARA {
     DWORD cbSize;
     __C89_NAMELESS union {
-      HCRYPTPROV hCryptProv;
-      NCRYPT_KEY_HANDLE hNCryptKey;
+                   HCRYPTPROV hCryptProv;
+                   NCRYPT_KEY_HANDLE hNCryptKey;
     };
     DWORD dwKeySpec;
     PCMSG_KEY_AGREE_RECIPIENT_INFO pKeyAgree;
@@ -3333,8 +3333,8 @@ extern "C" {
     DWORD dwRecipientIndex;
     DWORD dwKeyChoice;
     __C89_NAMELESS union {
-      HCRYPTKEY hKeyEncryptionKey;
-      void *pvKeyEncryptionKey;
+                   HCRYPTKEY hKeyEncryptionKey;
+                   void *pvKeyEncryptionKey;
     };
   } CMSG_CTRL_MAIL_LIST_DECRYPT_PARA,*PCMSG_CTRL_MAIL_LIST_DECRYPT_PARA;
 
@@ -3383,8 +3383,8 @@ extern "C" {
     PFN_CMSG_FREE pfnFree;
     DWORD dwEncryptFlags;
     __C89_NAMELESS union {
-      HCRYPTKEY hContentEncryptKey;
-      BCRYPT_KEY_HANDLE hCNGContentEncryptKey;
+                   HCRYPTKEY hContentEncryptKey;
+                   BCRYPT_KEY_HANDLE hCNGContentEncryptKey;
     };
     DWORD dwFlags;
     WINBOOL fCNG;
@@ -3434,8 +3434,8 @@ extern "C" {
     CRYPT_DATA_BLOB UserKeyingMaterial;
     DWORD dwOriginatorChoice;
     __C89_NAMELESS union {
-      CERT_ID OriginatorCertId;
-      CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo;
+                   CERT_ID OriginatorCertId;
+                   CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo;
     };
     DWORD cKeyAgreeKeyEncryptInfo;
     PCMSG_KEY_AGREE_KEY_ENCRYPT_INFO *rgpKeyAgreeKeyEncryptInfo;
@@ -3721,8 +3721,8 @@ extern "C" {
   typedef struct _CERT_KEY_CONTEXT {
     DWORD cbSize;
     __C89_NAMELESS union {
-      HCRYPTPROV hCryptProv;
-      NCRYPT_KEY_HANDLE hNCryptKey;
+                   HCRYPTPROV hCryptProv;
+                   NCRYPT_KEY_HANDLE hNCryptKey;
     };
     DWORD dwKeySpec;
   } CERT_KEY_CONTEXT,*PCERT_KEY_CONTEXT;
@@ -3813,13 +3813,13 @@ extern "C" {
 
   typedef struct _CERT_SYSTEM_STORE_RELOCATE_PARA {
     __C89_NAMELESS union {
-      HKEY hKeyBase;
-      void *pvBase;
+                   HKEY hKeyBase;
+                   void *pvBase;
     };
     __C89_NAMELESS union {
-      void *pvSystemStore;
-      LPCSTR pszSystemStore;
-      LPCWSTR pwszSystemStore;
+                   void *pvSystemStore;
+                   LPCSTR pszSystemStore;
+                   LPCWSTR pwszSystemStore;
     };
   } CERT_SYSTEM_STORE_RELOCATE_PARA,*PCERT_SYSTEM_STORE_RELOCATE_PARA;
 
@@ -4698,8 +4698,8 @@ WINIMPM HCERTSTORE WINAPI CertOpenStore (LPCSTR lpszStoreProvider, DWORD dwEncod
     DWORD cbSize;
     DWORD dwMsgAndCertEncodingType;
     __C89_NAMELESS union {
-      HCRYPTPROV hCryptProv;
-      NCRYPT_KEY_HANDLE hNCryptKey;
+                   HCRYPTPROV hCryptProv;
+                   NCRYPT_KEY_HANDLE hNCryptKey;
     };
     DWORD dwKeySpec;
     CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
@@ -5559,8 +5559,8 @@ WINIMPM HCERTSTORE WINAPI CertOpenStore (LPCSTR lpszStoreProvider, DWORD dwEncod
 
   typedef struct _HTTPSPolicyCallbackData {
     __C89_NAMELESS union {
-      DWORD cbStruct;
-      DWORD cbSize;
+                   DWORD cbStruct;
+                   DWORD cbSize;
     };
     DWORD dwAuthType;
     DWORD fdwChecks;

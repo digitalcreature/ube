@@ -22,7 +22,7 @@
 #include <sysdeps/m68k/m680x0/sysdep.h>
 #include <sysdeps/unix/sysv/linux/m68k/sysdep.h>
 
-#define SYSCALL_ERROR_LOAD_GOT(reg)					      \
+#define SYSCALL_ERROR_LOAD_GOT(reg)					                   \
     lea (_GLOBAL_OFFSET_TABLE_@GOTPC, %pc), reg
 
 #endif

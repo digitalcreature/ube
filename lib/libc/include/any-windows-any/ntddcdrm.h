@@ -29,7 +29,7 @@
 extern "C" {
 #endif
 
-#define IOCTL_CDROM_BASE                  FILE_DEVICE_CD_ROM
+#define IOCTL_CDROM_BASE                                                         FILE_DEVICE_CD_ROM
 
 #define IOCTL_CDROM_CHECK_VERIFY \
   CTL_CODE(IOCTL_CDROM_BASE, 0x0200, METHOD_BUFFERED, FILE_READ_ACCESS)
@@ -95,8 +95,8 @@ extern "C" {
   CTL_CODE(IOCTL_CDROM_BASE, 0x0002, METHOD_BUFFERED, FILE_READ_ACCESS)
 
 
-#define MAXIMUM_NUMBER_TRACKS             100
-#define MAXIMUM_CDROM_SIZE                804
+#define MAXIMUM_NUMBER_TRACKS                                       100
+#define MAXIMUM_CDROM_SIZE                                          804
 #define MINIMUM_CDROM_READ_TOC_EX_SIZE    2
 
 typedef struct _TRACK_DATA {
@@ -109,8 +109,8 @@ typedef struct _TRACK_DATA {
 } TRACK_DATA, *PTRACK_DATA;
 
 /* CDROM_DISK_DATA.DiskData flags */
-#define CDROM_DISK_AUDIO_TRACK            0x00000001
-#define CDROM_DISK_DATA_TRACK             0x00000002
+#define CDROM_DISK_AUDIO_TRACK                                      0x00000001
+#define CDROM_DISK_DATA_TRACK                                       0x00000002
 
 typedef struct _CDROM_DISK_DATA {
   ULONG  DiskData;
@@ -126,10 +126,10 @@ typedef struct _CDROM_PLAY_AUDIO_MSF {
 } CDROM_PLAY_AUDIO_MSF, *PCDROM_PLAY_AUDIO_MSF;
 
 /* CDROM_READ_TOC_EX.Format constants */
-#define CDROM_READ_TOC_EX_FORMAT_TOC      0x00
+#define CDROM_READ_TOC_EX_FORMAT_TOC                   0x00
 #define CDROM_READ_TOC_EX_FORMAT_SESSION  0x01
 #define CDROM_READ_TOC_EX_FORMAT_FULL_TOC 0x02
-#define CDROM_READ_TOC_EX_FORMAT_PMA      0x03
+#define CDROM_READ_TOC_EX_FORMAT_PMA                   0x03
 #define CDROM_READ_TOC_EX_FORMAT_ATIP     0x04
 #define CDROM_READ_TOC_EX_FORMAT_CDTEXT   0x05
 
@@ -149,10 +149,10 @@ typedef struct _CDROM_SEEK_AUDIO_MSF {
 } CDROM_SEEK_AUDIO_MSF, *PCDROM_SEEK_AUDIO_MSF;
 
 /* CDROM_SUB_Q_DATA_FORMAT.Format constants */
-#define IOCTL_CDROM_SUB_Q_CHANNEL         0x00
-#define IOCTL_CDROM_CURRENT_POSITION      0x01
-#define IOCTL_CDROM_MEDIA_CATALOG         0x02
-#define IOCTL_CDROM_TRACK_ISRC            0x03
+#define IOCTL_CDROM_SUB_Q_CHANNEL                      0x00
+#define IOCTL_CDROM_CURRENT_POSITION                   0x01
+#define IOCTL_CDROM_MEDIA_CATALOG                      0x02
+#define IOCTL_CDROM_TRACK_ISRC                                      0x03
 
 typedef struct _CDROM_SUB_Q_DATA_FORMAT {
   UCHAR Format;
@@ -217,7 +217,7 @@ typedef struct _CDROM_TOC_ATIP_DATA {
 #define CDROM_CD_TEXT_PACK_ARRANGER   0x84
 #define CDROM_CD_TEXT_PACK_MESSAGES   0x85
 #define CDROM_CD_TEXT_PACK_DISC_ID    0x86
-#define CDROM_CD_TEXT_PACK_GENRE      0x87
+#define CDROM_CD_TEXT_PACK_GENRE                   0x87
 #define CDROM_CD_TEXT_PACK_TOC_INFO   0x88
 #define CDROM_CD_TEXT_PACK_TOC_INFO2  0x89
 #define CDROM_CD_TEXT_PACK_UPC_EAN    0x8e
@@ -246,10 +246,10 @@ typedef struct _CDROM_TOC_CD_TEXT_DATA {
 } CDROM_TOC_CD_TEXT_DATA, *PCDROM_TOC_CD_TEXT_DATA;
 
 /* CDROM_TOC_FULL_TOC_DATA_BLOCK.Adr constants */
-#define ADR_NO_MODE_INFORMATION           0x0
-#define ADR_ENCODES_CURRENT_POSITION      0x1
-#define ADR_ENCODES_MEDIA_CATALOG         0x2
-#define ADR_ENCODES_ISRC                  0x3
+#define ADR_NO_MODE_INFORMATION                        0x0
+#define ADR_ENCODES_CURRENT_POSITION                   0x1
+#define ADR_ENCODES_MEDIA_CATALOG                      0x2
+#define ADR_ENCODES_ISRC                                                         0x3
 
 typedef struct _CDROM_TOC_FULL_TOC_DATA_BLOCK {
   UCHAR  SessionNumber;
@@ -279,10 +279,10 @@ typedef struct _CDROM_TOC_PMA_DATA {
 /* SUB_Q_HEADER.AudioStatus constants */
 #define AUDIO_STATUS_NOT_SUPPORTED  0x00
 #define AUDIO_STATUS_IN_PROGRESS    0x11
-#define AUDIO_STATUS_PAUSED         0x12
+#define AUDIO_STATUS_PAUSED                      0x12
 #define AUDIO_STATUS_PLAY_COMPLETE  0x13
 #define AUDIO_STATUS_PLAY_ERROR     0x14
-#define AUDIO_STATUS_NO_STATUS      0x15
+#define AUDIO_STATUS_NO_STATUS                   0x15
 
 typedef struct _SUB_Q_HEADER {
   UCHAR  Reserved;
@@ -328,10 +328,10 @@ typedef union _SUB_Q_CHANNEL_DATA {
 } SUB_Q_CHANNEL_DATA, *PSUB_Q_CHANNEL_DATA;
 
 /* CDROM_AUDIO_CONTROL.LbaFormat constants */
-#define AUDIO_WITH_PREEMPHASIS            0x1
-#define DIGITAL_COPY_PERMITTED            0x2
-#define AUDIO_DATA_TRACK                  0x4
-#define TWO_FOUR_CHANNEL_AUDIO            0x8
+#define AUDIO_WITH_PREEMPHASIS                                      0x1
+#define DIGITAL_COPY_PERMITTED                                      0x2
+#define AUDIO_DATA_TRACK                                                         0x4
+#define TWO_FOUR_CHANNEL_AUDIO                                      0x8
 
 typedef struct _CDROM_AUDIO_CONTROL {
 	UCHAR  LbaFormat;

@@ -173,42 +173,42 @@ MIDL_INTERFACE("a6ef9860-c720-11d0-9337-00a0c90dcaa9")
 IDispatchEx : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetDispID(
-        BSTR bstrName,
-        DWORD grfdex,
-        DISPID *pid) = 0;
+                     BSTR bstrName,
+                     DWORD grfdex,
+                     DISPID *pid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvokeEx(
-        DISPID id,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pdp,
-        VARIANT *pvarRes,
-        EXCEPINFO *pei,
-        IServiceProvider *pspCaller) = 0;
+                     DISPID id,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pdp,
+                     VARIANT *pvarRes,
+                     EXCEPINFO *pei,
+                     IServiceProvider *pspCaller) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteMemberByName(
-        BSTR bstrName,
-        DWORD grfdex) = 0;
+                     BSTR bstrName,
+                     DWORD grfdex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteMemberByDispID(
-        DISPID id) = 0;
+                     DISPID id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMemberProperties(
-        DISPID id,
-        DWORD grfdexFetch,
-        DWORD *pgrfdex) = 0;
+                     DISPID id,
+                     DWORD grfdexFetch,
+                     DWORD *pgrfdex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMemberName(
-        DISPID id,
-        BSTR *pbstrName) = 0;
+                     DISPID id,
+                     BSTR *pbstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNextDispID(
-        DWORD grfdex,
-        DISPID id,
-        DISPID *pid) = 0;
+                     DWORD grfdex,
+                     DISPID id,
+                     DISPID *pid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNameSpaceParent(
-        IUnknown **ppunk) = 0;
+                     IUnknown **ppunk) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -220,92 +220,92 @@ typedef struct IDispatchExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDispatchEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDispatchEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDispatchEx *This);
+                     IDispatchEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDispatchEx *This);
+                     IDispatchEx *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDispatchEx *This,
-        UINT *pctinfo);
+                     IDispatchEx *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDispatchEx *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDispatchEx *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDispatchEx *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDispatchEx *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDispatchEx *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDispatchEx *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IDispatchEx methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDispID)(
-        IDispatchEx *This,
-        BSTR bstrName,
-        DWORD grfdex,
-        DISPID *pid);
+                     IDispatchEx *This,
+                     BSTR bstrName,
+                     DWORD grfdex,
+                     DISPID *pid);
 
     HRESULT (STDMETHODCALLTYPE *InvokeEx)(
-        IDispatchEx *This,
-        DISPID id,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pdp,
-        VARIANT *pvarRes,
-        EXCEPINFO *pei,
-        IServiceProvider *pspCaller);
+                     IDispatchEx *This,
+                     DISPID id,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pdp,
+                     VARIANT *pvarRes,
+                     EXCEPINFO *pei,
+                     IServiceProvider *pspCaller);
 
     HRESULT (STDMETHODCALLTYPE *DeleteMemberByName)(
-        IDispatchEx *This,
-        BSTR bstrName,
-        DWORD grfdex);
+                     IDispatchEx *This,
+                     BSTR bstrName,
+                     DWORD grfdex);
 
     HRESULT (STDMETHODCALLTYPE *DeleteMemberByDispID)(
-        IDispatchEx *This,
-        DISPID id);
+                     IDispatchEx *This,
+                     DISPID id);
 
     HRESULT (STDMETHODCALLTYPE *GetMemberProperties)(
-        IDispatchEx *This,
-        DISPID id,
-        DWORD grfdexFetch,
-        DWORD *pgrfdex);
+                     IDispatchEx *This,
+                     DISPID id,
+                     DWORD grfdexFetch,
+                     DWORD *pgrfdex);
 
     HRESULT (STDMETHODCALLTYPE *GetMemberName)(
-        IDispatchEx *This,
-        DISPID id,
-        BSTR *pbstrName);
+                     IDispatchEx *This,
+                     DISPID id,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetNextDispID)(
-        IDispatchEx *This,
-        DWORD grfdex,
-        DISPID id,
-        DISPID *pid);
+                     IDispatchEx *This,
+                     DWORD grfdex,
+                     DISPID id,
+                     DISPID *pid);
 
     HRESULT (STDMETHODCALLTYPE *GetNameSpaceParent)(
-        IDispatchEx *This,
-        IUnknown **ppunk);
+                     IDispatchEx *This,
+                     IUnknown **ppunk);
 
     END_INTERFACE
 } IDispatchExVtbl;
@@ -441,24 +441,24 @@ MIDL_INTERFACE("a6ef9861-c720-11d0-9337-00a0c90dcaa9")
 IDispError : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryErrorInfo(
-        GUID guidErrorType,
-        IDispError **ppde) = 0;
+                     GUID guidErrorType,
+                     IDispError **ppde) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNext(
-        IDispError **ppde) = 0;
+                     IDispError **ppde) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHresult(
-        HRESULT *phr) = 0;
+                     HRESULT *phr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSource(
-        BSTR *pbstrSource) = 0;
+                     BSTR *pbstrSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHelpInfo(
-        BSTR *pbstrFileName,
-        DWORD *pdwContext) = 0;
+                     BSTR *pbstrFileName,
+                     DWORD *pdwContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        BSTR *pbstrDescription) = 0;
+                     BSTR *pbstrDescription) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -470,42 +470,42 @@ typedef struct IDispErrorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDispError *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDispError *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDispError *This);
+                     IDispError *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDispError *This);
+                     IDispError *This);
 
     /*** IDispError methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryErrorInfo)(
-        IDispError *This,
-        GUID guidErrorType,
-        IDispError **ppde);
+                     IDispError *This,
+                     GUID guidErrorType,
+                     IDispError **ppde);
 
     HRESULT (STDMETHODCALLTYPE *GetNext)(
-        IDispError *This,
-        IDispError **ppde);
+                     IDispError *This,
+                     IDispError **ppde);
 
     HRESULT (STDMETHODCALLTYPE *GetHresult)(
-        IDispError *This,
-        HRESULT *phr);
+                     IDispError *This,
+                     HRESULT *phr);
 
     HRESULT (STDMETHODCALLTYPE *GetSource)(
-        IDispError *This,
-        BSTR *pbstrSource);
+                     IDispError *This,
+                     BSTR *pbstrSource);
 
     HRESULT (STDMETHODCALLTYPE *GetHelpInfo)(
-        IDispError *This,
-        BSTR *pbstrFileName,
-        DWORD *pdwContext);
+                     IDispError *This,
+                     BSTR *pbstrFileName,
+                     DWORD *pdwContext);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        IDispError *This,
-        BSTR *pbstrDescription);
+                     IDispError *This,
+                     BSTR *pbstrDescription);
 
     END_INTERFACE
 } IDispErrorVtbl;
@@ -577,10 +577,10 @@ MIDL_INTERFACE("a6ef9862-c720-11d0-9337-00a0c90dcaa9")
 IVariantChangeType : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ChangeType(
-        VARIANT *pvarDst,
-        VARIANT *pvarSrc,
-        LCID lcid,
-        VARTYPE vtNew) = 0;
+                     VARIANT *pvarDst,
+                     VARIANT *pvarSrc,
+                     LCID lcid,
+                     VARTYPE vtNew) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -592,23 +592,23 @@ typedef struct IVariantChangeTypeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IVariantChangeType *This,
-        REFIID riid,
-        void **ppvObject);
+                     IVariantChangeType *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IVariantChangeType *This);
+                     IVariantChangeType *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IVariantChangeType *This);
+                     IVariantChangeType *This);
 
     /*** IVariantChangeType methods ***/
     HRESULT (STDMETHODCALLTYPE *ChangeType)(
-        IVariantChangeType *This,
-        VARIANT *pvarDst,
-        VARIANT *pvarSrc,
-        LCID lcid,
-        VARTYPE vtNew);
+                     IVariantChangeType *This,
+                     VARIANT *pvarDst,
+                     VARIANT *pvarSrc,
+                     LCID lcid,
+                     VARTYPE vtNew);
 
     END_INTERFACE
 } IVariantChangeTypeVtbl;
@@ -660,7 +660,7 @@ MIDL_INTERFACE("ca04b7e6-0d21-11d1-8cc5-00c04fc2b085")
 IObjectIdentity : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsEqualObject(
-        IUnknown *punk) = 0;
+                     IUnknown *punk) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -672,20 +672,20 @@ typedef struct IObjectIdentityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectIdentity *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectIdentity *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectIdentity *This);
+                     IObjectIdentity *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectIdentity *This);
+                     IObjectIdentity *This);
 
     /*** IObjectIdentity methods ***/
     HRESULT (STDMETHODCALLTYPE *IsEqualObject)(
-        IObjectIdentity *This,
-        IUnknown *punk);
+                     IObjectIdentity *This,
+                     IUnknown *punk);
 
     END_INTERFACE
 } IObjectIdentityVtbl;
@@ -737,8 +737,8 @@ MIDL_INTERFACE("c5598e60-b307-11d1-b27d-006008c3fbfb")
 ICanHandleException : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CanHandleException(
-        EXCEPINFO *pExcepInfo,
-        VARIANT *pvar) = 0;
+                     EXCEPINFO *pExcepInfo,
+                     VARIANT *pvar) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -750,21 +750,21 @@ typedef struct ICanHandleExceptionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICanHandleException *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICanHandleException *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICanHandleException *This);
+                     ICanHandleException *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICanHandleException *This);
+                     ICanHandleException *This);
 
     /*** ICanHandleException methods ***/
     HRESULT (STDMETHODCALLTYPE *CanHandleException)(
-        ICanHandleException *This,
-        EXCEPINFO *pExcepInfo,
-        VARIANT *pvar);
+                     ICanHandleException *This,
+                     EXCEPINFO *pExcepInfo,
+                     VARIANT *pvar);
 
     END_INTERFACE
 } ICanHandleExceptionVtbl;
@@ -816,8 +816,8 @@ MIDL_INTERFACE("10e2414a-ec59-49d2-bc51-5add2c36febc")
 IProvideRuntimeContext : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCurrentSourceContext(
-        DWORD_PTR *pdwContext,
-        VARIANT_BOOL *pfExecutingGlobalCode) = 0;
+                     DWORD_PTR *pdwContext,
+                     VARIANT_BOOL *pfExecutingGlobalCode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -829,21 +829,21 @@ typedef struct IProvideRuntimeContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IProvideRuntimeContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     IProvideRuntimeContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IProvideRuntimeContext *This);
+                     IProvideRuntimeContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IProvideRuntimeContext *This);
+                     IProvideRuntimeContext *This);
 
     /*** IProvideRuntimeContext methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurrentSourceContext)(
-        IProvideRuntimeContext *This,
-        DWORD_PTR *pdwContext,
-        VARIANT_BOOL *pfExecutingGlobalCode);
+                     IProvideRuntimeContext *This,
+                     DWORD_PTR *pdwContext,
+                     VARIANT_BOOL *pfExecutingGlobalCode);
 
     END_INTERFACE
 } IProvideRuntimeContextVtbl;
@@ -887,14 +887,14 @@ static FORCEINLINE HRESULT IProvideRuntimeContext_GetCurrentSourceContext(IProvi
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

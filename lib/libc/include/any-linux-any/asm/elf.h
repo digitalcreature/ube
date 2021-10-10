@@ -184,7 +184,7 @@ typedef elf_fpreg_t elf_vsrreghalf_t32[ELF_NVSRHALFREG];
 #define R_PPC64_GOT16_HI  R_PPC_GOT16_HI
 #define R_PPC64_GOT16_HA  R_PPC_GOT16_HA
 
-#define R_PPC64_COPY      R_PPC_COPY
+#define R_PPC64_COPY                   R_PPC_COPY
 #define R_PPC64_GLOB_DAT  R_PPC_GLOB_DAT
 #define R_PPC64_JMP_SLOT  R_PPC_JMP_SLOT
 #define R_PPC64_RELATIVE  R_PPC_RELATIVE
@@ -202,34 +202,34 @@ typedef elf_fpreg_t elf_vsrreghalf_t32[ELF_NVSRHALFREG];
 #define R_PPC64_SECTOFF_LO  R_PPC_SECTOFF_LO
 #define R_PPC64_SECTOFF_HI  R_PPC_SECTOFF_HI
 #define R_PPC64_SECTOFF_HA  R_PPC_SECTOFF_HA
-#define R_PPC64_ADDR30          37  /* word30 (S + A - P) >> 2.  */
-#define R_PPC64_ADDR64          38  /* doubleword64 S + A.  */
+#define R_PPC64_ADDR30                       37  /* word30 (S + A - P) >> 2.  */
+#define R_PPC64_ADDR64                       38  /* doubleword64 S + A.  */
 #define R_PPC64_ADDR16_HIGHER   39  /* half16 #higher(S + A).  */
 #define R_PPC64_ADDR16_HIGHERA  40  /* half16 #highera(S + A).  */
 #define R_PPC64_ADDR16_HIGHEST  41  /* half16 #highest(S + A).  */
 #define R_PPC64_ADDR16_HIGHESTA 42  /* half16 #highesta(S + A). */
 #define R_PPC64_UADDR64     43  /* doubleword64 S + A.  */
-#define R_PPC64_REL64       44  /* doubleword64 S + A - P.  */
-#define R_PPC64_PLT64       45  /* doubleword64 L + A.  */
+#define R_PPC64_REL64                    44  /* doubleword64 S + A - P.  */
+#define R_PPC64_PLT64                    45  /* doubleword64 L + A.  */
 #define R_PPC64_PLTREL64    46  /* doubleword64 L + A - P.  */
-#define R_PPC64_TOC16       47  /* half16* S + A - .TOC.  */
+#define R_PPC64_TOC16                    47  /* half16* S + A - .TOC.  */
 #define R_PPC64_TOC16_LO    48  /* half16 #lo(S + A - .TOC.).  */
 #define R_PPC64_TOC16_HI    49  /* half16 #hi(S + A - .TOC.).  */
 #define R_PPC64_TOC16_HA    50  /* half16 #ha(S + A - .TOC.).  */
-#define R_PPC64_TOC         51  /* doubleword64 .TOC. */
+#define R_PPC64_TOC                      51  /* doubleword64 .TOC. */
 #define R_PPC64_PLTGOT16    52  /* half16* M + A.  */
 #define R_PPC64_PLTGOT16_LO 53  /* half16 #lo(M + A).  */
 #define R_PPC64_PLTGOT16_HI 54  /* half16 #hi(M + A).  */
 #define R_PPC64_PLTGOT16_HA 55  /* half16 #ha(M + A).  */
 
-#define R_PPC64_ADDR16_DS      56 /* half16ds* (S + A) >> 2.  */
+#define R_PPC64_ADDR16_DS                   56 /* half16ds* (S + A) >> 2.  */
 #define R_PPC64_ADDR16_LO_DS   57 /* half16ds  #lo(S + A) >> 2.  */
-#define R_PPC64_GOT16_DS       58 /* half16ds* (G + A) >> 2.  */
+#define R_PPC64_GOT16_DS                    58 /* half16ds* (G + A) >> 2.  */
 #define R_PPC64_GOT16_LO_DS    59 /* half16ds  #lo(G + A) >> 2.  */
 #define R_PPC64_PLT16_LO_DS    60 /* half16ds  #lo(L + A) >> 2.  */
 #define R_PPC64_SECTOFF_DS     61 /* half16ds* (R + A) >> 2.  */
 #define R_PPC64_SECTOFF_LO_DS  62 /* half16ds  #lo(R + A) >> 2.  */
-#define R_PPC64_TOC16_DS       63 /* half16ds* (S + A - .TOC.) >> 2.  */
+#define R_PPC64_TOC16_DS                    63 /* half16ds* (S + A - .TOC.) >> 2.  */
 #define R_PPC64_TOC16_LO_DS    64 /* half16ds  #lo(S + A - .TOC.) >> 2.  */
 #define R_PPC64_PLTGOT16_DS    65 /* half16ds* (M + A) >> 2.  */
 #define R_PPC64_PLTGOT16_LO_DS 66 /* half16ds  #lo(M + A) >> 2.  */

@@ -36,16 +36,16 @@ extern int _dl_sysinfo_break attribute_hidden;
 # define DL_SYSINFO_DEFAULT ((uintptr_t) &_dl_sysinfo_break)
 # define DL_SYSINFO_IMPLEMENTATION		\
   asm (".text\n\t"				\
-       ".hidden _dl_sysinfo_break\n\t"		\
-       ".proc _dl_sysinfo_break\n\t"		\
-       "_dl_sysinfo_break:\n\t"			\
-       ".prologue\n\t"				\
-       ".altrp b6\n\t"				\
-       ".body\n\t"				\
-       "break 0x100000;\n\t"			\
-       "br.ret.sptk.many b6;\n\t"		\
-       ".endp _dl_sysinfo_break\n\t"		\
-       ".previous");
+                    ".hidden _dl_sysinfo_break\n\t"		\
+                    ".proc _dl_sysinfo_break\n\t"		\
+                    "_dl_sysinfo_break:\n\t"			\
+                    ".prologue\n\t"				\
+                    ".altrp b6\n\t"				\
+                    ".body\n\t"				\
+                    "break 0x100000;\n\t"			\
+                    "br.ret.sptk.many b6;\n\t"		\
+                    ".endp _dl_sysinfo_break\n\t"		\
+                    ".previous");
 #endif
 
 /* _dl_argv cannot be attribute_relro, because _dl_start_user

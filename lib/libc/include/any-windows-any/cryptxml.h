@@ -40,38 +40,38 @@ typedef HANDLE HCRYPTXML;
 #if (_WIN32_WINNT >= 0x0601)
 
 typedef enum tagCRYPT_XML_CHARSET {
-  CRYPT_XML_CHARSET_AUTO      = 0,
-  CRYPT_XML_CHARSET_UTF8      = 1,
+  CRYPT_XML_CHARSET_AUTO                   = 0,
+  CRYPT_XML_CHARSET_UTF8                   = 1,
   CRYPT_XML_CHARSET_UTF16LE   = 2,
   CRYPT_XML_CHARSET_UTF16BE   = 3 
 } CRYPT_XML_CHARSET;
 
 typedef enum tagCRYPT_XML_KEYINFO_SPEC {
-  CRYPT_XML_KEYINFO_SPEC_NONE      = 0,
+  CRYPT_XML_KEYINFO_SPEC_NONE                   = 0,
   CRYPT_XML_KEYINFO_SPEC_ENCODED   = 1,
   CRYPT_XML_KEYINFO_SPEC_PARAM     = 2 
 } CRYPT_XML_KEYINFO_SPEC;
 
 typedef enum tagCRYPT_XML_PROPERTY_ID {
-  CRYPT_XML_PROPERTY_MAX_HEAP_SIZE        = 1,
+  CRYPT_XML_PROPERTY_MAX_HEAP_SIZE                     = 1,
   CRYPT_XML_PROPERTY_SIGNATURE_LOCATION   = 2,
-  CRYPT_XML_PROPERTY_MAX_SIGNATURES       = 3,
-  CRYPT_XML_PROPERTY_DOC_DECLARATION      = 4,
+  CRYPT_XML_PROPERTY_MAX_SIGNATURES                    = 3,
+  CRYPT_XML_PROPERTY_DOC_DECLARATION                   = 4,
   CRYPT_XML_PROPERTY_XML_OUTPUT_CHARSET   = 5,
   CRYPT_XML_PROPERTY_HMAC_OUTPUT_LENGTH   = 6 
 } CRYPT_XML_PROPERTY_ID;
 
 typedef struct _CRYPT_XML_BLOB {
   CRYPT_XML_CHARSET dwCharset;
-  ULONG             cbData;
-  BYTE              *pbData;
+  ULONG                                       cbData;
+  BYTE                                        *pbData;
 } CRYPT_XML_BLOB, *PCRYPT_XML_BLOB;
 
 #define CRYPT_XML_BLOB_MAX 0x7FFFFFF8
 
 typedef struct _CRYPT_XML_ALGORITHM {
-  ULONG          cbSize;
-  LPCWSTR        wszAlgorithm;
+  ULONG                       cbSize;
+  LPCWSTR                     wszAlgorithm;
   CRYPT_XML_BLOB Encoded;
 } CRYPT_XML_ALGORITHM, *PCRYPT_XML_ALGORITHM;
 
@@ -162,13 +162,13 @@ typedef HRESULT ( WINAPI *CryptXmlDllEncodeKeyValue )(
 );
 
 typedef struct _CRYPT_XML_CRYPTOGRAPHIC_INTERFACE {
-  ULONG                       cbSize;
+  ULONG                                                              cbSize;
   CryptXmlDllEncodeAlgorithm  fpCryptXmlEncodeAlgorithm;
   CryptXmlDllCreateDigest     fpCryptXmlCreateDigest;
-  CryptXmlDllDigestData       fpCryptXmlDigestData;
+  CryptXmlDllDigestData                    fpCryptXmlDigestData;
   CryptXmlDllFinalizeDigest   fpCryptXmlFinalizeDigest;
-  CryptXmlDllCloseDigest      fpCryptXmlCloseDigest;
-  CryptXmlDllSignData         fpCryptXmlSignData;
+  CryptXmlDllCloseDigest                   fpCryptXmlCloseDigest;
+  CryptXmlDllSignData                      fpCryptXmlSignData;
   CryptXmlDllVerifySignature  fpCryptXmlVerifySignature;
   CryptXmlDllGetAlgorithmInfo fpCryptXmlGetAlgorithmInfo;
 } CRYPT_XML_CRYPTOGRAPHIC_INTERFACE, *PCRYPT_XML_CRYPTOGRAPHIC_INTERFACE;
@@ -196,8 +196,8 @@ typedef HRESULT (CALLBACK *PFN_CRYPT_XML_DATA_PROVIDER_CLOSE)(
 );
 
 typedef struct _CRYPT_XML_DATA_PROVIDER {
-  void                              *pvCallbackState;
-  ULONG                             cbBufferSize;
+  void                                                                                               *pvCallbackState;
+  ULONG                                                                                 cbBufferSize;
   PFN_CRYPT_XML_DATA_PROVIDER_READ  pfnRead;
   PFN_CRYPT_XML_DATA_PROVIDER_CLOSE pfnClose;
 } CRYPT_XML_DATA_PROVIDER, *PCRYPT_XML_DATA_PROVIDER;
@@ -209,10 +209,10 @@ typedef HRESULT (CALLBACK *PFN_CRYPT_XML_CREATE_TRANSFORM)(
 );
 
 typedef struct _CRYPT_XML_TRANSFORM_INFO {
-  ULONG                          cbSize;
-  LPCWSTR                        wszAlgorithm;
-  ULONG                          cbBufferSize;
-  DWORD                          dwFlags;
+  ULONG                                                                              cbSize;
+  LPCWSTR                                                                            wszAlgorithm;
+  ULONG                                                                              cbBufferSize;
+  DWORD                                                                              dwFlags;
   PFN_CRYPT_XML_CREATE_TRANSFORM pfnCreateTransform;
 } CRYPT_XML_TRANSFORM_INFO, *PCRYPT_XML_TRANSFORM_INFO;
 
@@ -221,36 +221,36 @@ typedef struct _CRYPT_XML_TRANSFORM_INFO {
 #define CRYPT_XML_TRANSFORM_URI_QUERY_STRING 0x00000003
 
 typedef struct _CRYPT_XML_TRANSFORM_CHAIN_CONFIG {
-  ULONG                     cbSize;
-  ULONG                     cTransformInfo;
+  ULONG                                                            cbSize;
+  ULONG                                                            cTransformInfo;
   PCRYPT_XML_TRANSFORM_INFO *rgpTransformInfo;
 } CRYPT_XML_TRANSFORM_CHAIN_CONFIG, *PCRYPT_XML_TRANSFORM_CHAIN_CONFIG;
 
 typedef struct _CRYPT_XML_REFERENCE {
-  ULONG               cbSize;
-  HCRYPTXML           hReference;
-  LPCWSTR             wszId;
-  LPCWSTR             wszUri;
-  LPCWSTR             wszType;
+  ULONG                                         cbSize;
+  HCRYPTXML                        hReference;
+  LPCWSTR                                       wszId;
+  LPCWSTR                                       wszUri;
+  LPCWSTR                                       wszType;
   CRYPT_XML_ALGORITHM DigestMethod;
   CRYPT_DATA_BLOB     DigestValue;
-  ULONG               cTransform;
+  ULONG                                         cTransform;
   CRYPT_XML_ALGORITHM *rgTransform;
 } CRYPT_XML_REFERENCE, *PCRYPT_XML_REFERENCE;
 
 typedef struct _CRYPT_XML_REFERENCES {
-  ULONG                cReference;
+  ULONG                                          cReference;
   PCRYPT_XML_REFERENCE *rgpReference;
 } CRYPT_XML_REFERENCES, *PCRYPT_XML_REFERENCES;
 
 typedef struct _CRYPT_XML_SIGNED_INFO {
-  ULONG                cbSize;
-  LPCWSTR              wszId;
+  ULONG                                          cbSize;
+  LPCWSTR                                        wszId;
   CRYPT_XML_ALGORITHM  Canonicalization;
   CRYPT_XML_ALGORITHM  SignatureMethod;
-  ULONG                cReference;
+  ULONG                                          cReference;
   PCRYPT_XML_REFERENCE *rgpReference;
-  CRYPT_XML_BLOB       Encoded;
+  CRYPT_XML_BLOB                    Encoded;
 } CRYPT_XML_SIGNED_INFO, *PCRYPT_XML_SIGNED_INFO;
 
 typedef struct _CRYPT_XML_ISSUER_SERIAL {
@@ -263,10 +263,10 @@ typedef struct _CRYPT_XML_X509DATA_ITEM {
   __C89_NAMELESS union {
     CRYPT_XML_ISSUER_SERIAL IssuerSerial;
     CRYPT_XML_DATA_BLOB     SKI;
-    LPCWSTR                 wszSubjectName;
+    LPCWSTR                                           wszSubjectName;
     CRYPT_XML_DATA_BLOB     Certificate;
     CRYPT_XML_DATA_BLOB     CRL;
-    CRYPT_XML_BLOB          Custom;
+    CRYPT_XML_BLOB                       Custom;
   } ;
 } CRYPT_XML_X509DATA_ITEM;
 
@@ -278,18 +278,18 @@ typedef struct _CRYPT_XML_X509DATA_ITEM {
 #define CRYPT_XML_X509DATA_TYPE_CUSTOM 0x00000006
 
 typedef struct _CRYPT_XML_X509DATA {
-  UINT                    cX509Data;
+  UINT                                                           cX509Data;
   CRYPT_XML_X509DATA_ITEM *rgX509Data;
 } CRYPT_XML_X509DATA, *PCRYPT_XML_X509DATA;
 
 typedef struct _CRYPT_XML_KEY_INFO_ITEM {
   DWORD dwType;
   __C89_NAMELESS union {
-    LPCWSTR             wszKeyName;
+    LPCWSTR                                       wszKeyName;
     CRYPT_XML_KEY_VALUE KeyValue;
-    CRYPT_XML_BLOB      RetrievalMethod;
+    CRYPT_XML_BLOB                   RetrievalMethod;
     CRYPT_XML_X509DATA  X509Data;
-    CRYPT_XML_BLOB      Custom;
+    CRYPT_XML_BLOB                   Custom;
   } ;
 } CRYPT_XML_KEY_INFO_ITEM;
 
@@ -315,10 +315,10 @@ typedef struct _CRYPT_XML_KEY_RSA_KEY_VALUE {
 } CRYPT_XML_KEY_RSA_KEY_VALUE;
 
 typedef struct _CRYPT_XML_KEY_ECDSA_KEY_VALUE {
-  LPCWSTR                  wszNamedCurve;
-  CRYPT_XML_DATA_BLOB      X;
-  CRYPT_XML_DATA_BLOB      Y;
-  CRYPT_XML_BLOB           ExplicitPara;
+  LPCWSTR                                                         wszNamedCurve;
+  CRYPT_XML_DATA_BLOB                   X;
+  CRYPT_XML_DATA_BLOB                   Y;
+  CRYPT_XML_BLOB                        ExplicitPara;
 } CRYPT_XML_KEY_ECDSA_KEY_VALUE;
 
 typedef struct _CRYPT_XML_KEY_VALUE {
@@ -327,7 +327,7 @@ typedef struct _CRYPT_XML_KEY_VALUE {
     CRYPT_XML_KEY_DSA_KEY_VALUE   DSAKeyValue;
     CRYPT_XML_KEY_RSA_KEY_VALUE   RSAKeyValue;
     CRYPT_XML_KEY_ECDSA_KEY_VALUE ECDSAKeyValue;
-    CRYPT_XML_BLOB                Custom;
+    CRYPT_XML_BLOB                                          Custom;
   } ;
 } CRYPT_XML_KEY_VALUE;
 
@@ -337,40 +337,40 @@ typedef struct _CRYPT_XML_KEY_VALUE {
 #define CRYPT_XML_KEY_VALUE_TYPE_CUSTOM 0x00000004
 
 typedef struct _CRYPT_XML_KEY_INFO {
-  ULONG                   cbSize;
-  LPCWSTR                 wszId;
-  UINT                    cKeyInfo;
+  ULONG                                                          cbSize;
+  LPCWSTR                                           wszId;
+  UINT                                                           cKeyInfo;
   CRYPT_XML_KEY_INFO_ITEM *rgKeyInfo;
-  BCRYPT_KEY_HANDLE       hVerifyKey;
+  BCRYPT_KEY_HANDLE                    hVerifyKey;
 } CRYPT_XML_KEY_INFO;
 
 typedef struct _CRYPT_XML_OBJECT {
-  ULONG                cbSize;
-  HCRYPTXML            hObject;
-  LPCWSTR              wszId;
-  LPCWSTR              wszMimeType;
-  LPCWSTR              wszEncoding;
+  ULONG                                          cbSize;
+  HCRYPTXML                                      hObject;
+  LPCWSTR                                        wszId;
+  LPCWSTR                                        wszMimeType;
+  LPCWSTR                                        wszEncoding;
   CRYPT_XML_REFERENCES Manifest;
-  CRYPT_XML_BLOB       Encoded;
+  CRYPT_XML_BLOB                    Encoded;
 } CRYPT_XML_OBJECT, *PCRYPT_XML_OBJECT;
 
 typedef struct _CRYPT_XML_SIGNATURE {
-  ULONG                 cbSize;
-  HCRYPTXML             hSignature;
-  LPCWSTR               wszId;
+  ULONG                                           cbSize;
+  HCRYPTXML                                       hSignature;
+  LPCWSTR                                         wszId;
   CRYPT_XML_SIGNED_INFO SignedInfo;
-  CRYPT_DATA_BLOB       SignatureValue;
+  CRYPT_DATA_BLOB                    SignatureValue;
   CRYPT_XML_KEY_INFO    *pKeyInfo;
-  ULONG                 cObject;
+  ULONG                                           cObject;
   PCRYPT_XML_OBJECT     *rgpObject;
 } CRYPT_XML_SIGNATURE, *PCRYPT_XML_SIGNATURE;
 
 typedef struct _CRYPT_XML_DOC_CTXT {
-  ULONG                            cbSize;
-  HCRYPTXML                        hDocCtxt;
+  ULONG                                                                                cbSize;
+  HCRYPTXML                                                                            hDocCtxt;
   CRYPT_XML_TRANSFORM_CHAIN_CONFIG *pTransformsConfig;
-  ULONG                            cSignature;
-  PCRYPT_XML_SIGNATURE             *rgpSignature;
+  ULONG                                                                                cSignature;
+  PCRYPT_XML_SIGNATURE                                       *rgpSignature;
 } CRYPT_XML_DOC_CTXT, *PCRYPT_XML_DOC_CTXT;
 
 typedef struct _CRYPT_XML_KEYINFO_PARAM {
@@ -386,8 +386,8 @@ typedef struct _CRYPT_XML_KEYINFO_PARAM {
 
 typedef struct _CRYPT_XML_PROPERTY {
   CRYPT_XML_PROPERTY_ID dwPropId;
-  const void            *pvValue;
-  ULONG                 cbValue;
+  const void                                      *pvValue;
+  ULONG                                           cbValue;
 } CRYPT_XML_PROPERTY, *PCRYPT_XML_PROPERTY;
 
 typedef struct _CRYPT_XML_STATUS {

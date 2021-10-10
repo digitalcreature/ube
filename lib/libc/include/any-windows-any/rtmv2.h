@@ -70,12 +70,12 @@ extern "C" {
     RTM_VIEW_SET BelongsToViews;
     UINT NumberOfViews;
     struct {
-      RTM_VIEW_ID ViewId;
-      UINT NumRoutes;
-      RTM_ROUTE_HANDLE Route;
-      RTM_ENTITY_HANDLE Owner;
-      DWORD DestFlags;
-      RTM_ROUTE_HANDLE HoldRoute;
+                   RTM_VIEW_ID ViewId;
+                   UINT NumRoutes;
+                   RTM_ROUTE_HANDLE Route;
+                   RTM_ENTITY_HANDLE Owner;
+                   DWORD DestFlags;
+                   RTM_ROUTE_HANDLE HoldRoute;
     } ViewInfo[1];
   } RTM_DEST_INFO,*PRTM_DEST_INFO;
 
@@ -153,11 +153,11 @@ extern "C" {
 
   typedef struct _RTM_ENTITY_ID {
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	ULONG EntityProtocolId;
 	ULONG EntityInstanceId;
-      };
-      ULONGLONG EntityId;
+                   };
+                   ULONGLONG EntityId;
     };
   } RTM_ENTITY_ID,*PRTM_ENTITY_ID;
 

@@ -60,12 +60,12 @@ extern "C" {
   typedef union {
     PLLC_PARMS pParameterTable;
     struct {
-      USHORT usStationId;
-      USHORT usParameter;
+                   USHORT usStationId;
+                   USHORT usParameter;
     } dlc;
     struct {
-      USHORT usParameter0;
-      USHORT usParameter1;
+                   USHORT usParameter0;
+                   USHORT usParameter1;
     } dir;
     UCHAR auchBuffer[4];
     ULONG ulParameter;
@@ -135,18 +135,18 @@ extern "C" {
     PLLC_BUFFER pNext;
     LLC_NEXT_BUFFER Next;
     struct LlcNextBuffer {
-      LLC_NEXT_BUFFER Header;
-      UCHAR auchData[];
+                   LLC_NEXT_BUFFER Header;
+                   UCHAR auchData[];
     } Buffer;
     LLC_NOT_CONTIGUOUS_BUFFER NotContiguous;
     struct {
-      LLC_NOT_CONTIGUOUS_BUFFER Header;
-      UCHAR auchData[];
+                   LLC_NOT_CONTIGUOUS_BUFFER Header;
+                   UCHAR auchData[];
     } NotCont;
     LLC_CONTIGUOUS_BUFFER Contiguous;
     struct {
-      LLC_CONTIGUOUS_BUFFER Header;
-      UCHAR auchData[];
+                   LLC_CONTIGUOUS_BUFFER Header;
+                   UCHAR auchData[];
     } Cont;
   };
 
@@ -436,8 +436,8 @@ extern "C" {
     LLC_ADAPTER_LOG Adapter;
     LLC_DIRECT_LOG Dir;
     struct {
-      LLC_ADAPTER_LOG Adapter;
-      LLC_DIRECT_LOG Dir;
+                   LLC_ADAPTER_LOG Adapter;
+                   LLC_DIRECT_LOG Dir;
     } both;
   } LLC_DIR_READ_LOG_BUFFER,*PLLC_DIR_READ_LOG_BUFFER;
 
@@ -515,7 +515,7 @@ extern "C" {
     UCHAR uchCriticalSubset;
     ULONG ulNotificationFlag;
     union {
-      struct {
+                   struct {
 	USHORT usCcbCount;
 	PLLC_CCB pCcbCompletionList;
 	USHORT usBufferCount;
@@ -524,8 +524,8 @@ extern "C" {
 	PLLC_BUFFER pReceivedFrame;
 	USHORT usEventErrorCode;
 	USHORT usEventErrorData[3];
-      } Event;
-      struct {
+                   } Event;
+                   struct {
 	USHORT usStationId;
 	USHORT usDlcStatusCode;
 	UCHAR uchFrmrData[5];
@@ -534,7 +534,7 @@ extern "C" {
 	UCHAR uchRemoteSap;
 	UCHAR uchReserved;
 	USHORT usUserStatusValue;
-      } Status;
+                   } Status;
     } Type;
   } LLC_READ_PARMS,*PLLC_READ_PARMS;
 

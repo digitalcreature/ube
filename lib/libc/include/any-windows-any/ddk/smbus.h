@@ -45,33 +45,33 @@ extern "C" {
 
 struct _SMB_CLASS;
 
-#define SMB_MAX_DATA_SIZE                 32
+#define SMB_MAX_DATA_SIZE                                           32
 
 /* SMB_REQUEST.Status constants */
-#define SMB_STATUS_OK                     0x00
-#define SMB_UNKNOWN_FAILURE               0x07
-#define SMB_ADDRESS_NOT_ACKNOWLEDGED      0x10
-#define SMB_DEVICE_ERROR                  0x11
-#define SMB_COMMAND_ACCESS_DENIED         0x12
-#define SMB_UNKNOWN_ERROR                 0x13
-#define SMB_DEVICE_ACCESS_DENIED          0x17
-#define SMB_TIMEOUT                       0x18
-#define SMB_UNSUPPORTED_PROTOCOL          0x19
-#define SMB_BUS_BUSY                      0x1A
+#define SMB_STATUS_OK                                                            0x00
+#define SMB_UNKNOWN_FAILURE                                         0x07
+#define SMB_ADDRESS_NOT_ACKNOWLEDGED                   0x10
+#define SMB_DEVICE_ERROR                                                         0x11
+#define SMB_COMMAND_ACCESS_DENIED                      0x12
+#define SMB_UNKNOWN_ERROR                                           0x13
+#define SMB_DEVICE_ACCESS_DENIED                       0x17
+#define SMB_TIMEOUT                                                              0x18
+#define SMB_UNSUPPORTED_PROTOCOL                       0x19
+#define SMB_BUS_BUSY                                                             0x1A
 
 /* SMB_REQUEST.Protocol constants */
-#define SMB_WRITE_QUICK                   0x00
-#define SMB_READ_QUICK                    0x01
-#define SMB_SEND_BYTE                     0x02
-#define SMB_RECEIVE_BYTE                  0x03
-#define SMB_WRITE_BYTE                    0x04
-#define SMB_READ_BYTE                     0x05
-#define SMB_WRITE_WORD                    0x06
-#define SMB_READ_WORD                     0x07
-#define SMB_WRITE_BLOCK                   0x08
-#define SMB_READ_BLOCK                    0x09
-#define SMB_PROCESS_CALL                  0x0A
-#define SMB_MAXIMUM_PROTOCOL              0x0A
+#define SMB_WRITE_QUICK                                                          0x00
+#define SMB_READ_QUICK                                                           0x01
+#define SMB_SEND_BYTE                                                            0x02
+#define SMB_RECEIVE_BYTE                                                         0x03
+#define SMB_WRITE_BYTE                                                           0x04
+#define SMB_READ_BYTE                                                            0x05
+#define SMB_WRITE_WORD                                                           0x06
+#define SMB_READ_WORD                                                            0x07
+#define SMB_WRITE_BLOCK                                                          0x08
+#define SMB_READ_BLOCK                                                           0x09
+#define SMB_PROCESS_CALL                                                         0x0A
+#define SMB_MAXIMUM_PROTOCOL                                        0x0A
 
 typedef struct _SMB_REQUEST {
   UCHAR  Status;
@@ -96,8 +96,8 @@ typedef struct _SMB_REGISTER_ALARM {
 } SMB_REGISTER_ALARM, *PSMB_REGISTER_ALARM;
 
 /* SMB_CLASS.XxxVersion constants */
-#define SMB_CLASS_MAJOR_VERSION           0x0001
-#define SMB_CLASS_MINOR_VERSION           0x0000
+#define SMB_CLASS_MAJOR_VERSION                        0x0001
+#define SMB_CLASS_MINOR_VERSION                        0x0000
 
 typedef NTSTATUS
 (NTAPI *SMB_RESET_DEVICE)(

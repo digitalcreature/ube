@@ -51,7 +51,7 @@ ENTRY (ENTRY_POINT)
 	mv    a5, a0  /* rtld_fini.  */
 	/* main may be in a shared library.  */
 	la   a0, main
-	REG_L a1, 0(sp)      /* argc.  */
+	REG_L a1, 0(sp)                   /* argc.  */
 	addi  a2, sp, SZREG  /* argv.  */
 	andi  sp, sp, ALMASK /* Align stack. */
 	lla   a3, __libc_csu_init

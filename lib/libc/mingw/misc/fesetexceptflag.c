@@ -44,11 +44,11 @@ int fesetexceptflag (const fexcept_t * flagp, int excepts)
 
   if (__mingw_has_sse ())
     {
-      int sse_cw;
-      __asm__ volatile ("stmxcsr %0;" : "=m" (sse_cw));
-      sse_cw &= ~(excepts << 7);
-      sse_cw |= ((*flagp & excepts) << 7);
-      __asm__ volatile ("ldmxcsr %0" : : "m" (sse_cw));
+                   int sse_cw;
+                   __asm__ volatile ("stmxcsr %0;" : "=m" (sse_cw));
+                   sse_cw &= ~(excepts << 7);
+                   sse_cw |= ((*flagp & excepts) << 7);
+                   __asm__ volatile ("ldmxcsr %0" : : "m" (sse_cw));
     }
 
 #endif /* defined(_ARM_) || defined(__arm__) || defined(_ARM64_) || defined(__aarch64__) */

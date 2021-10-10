@@ -21,7 +21,7 @@
 /* This indicates that the new set of kvmclock msrs
  * are available. The use of 0x11 and 0x12 is deprecated
  */
-#define KVM_FEATURE_CLOCKSOURCE2        3
+#define KVM_FEATURE_CLOCKSOURCE2                     3
 #define KVM_FEATURE_ASYNC_PF		4
 #define KVM_FEATURE_STEAL_TIME		5
 #define KVM_FEATURE_PV_EOI		6
@@ -30,7 +30,7 @@
 #define KVM_FEATURE_ASYNC_PF_VMEXIT	10
 #define KVM_FEATURE_PV_SEND_IPI	11
 
-#define KVM_HINTS_REALTIME      0
+#define KVM_HINTS_REALTIME                   0
 
 /* The last 8 bits are used to indicate how to interpret the flags field
  * in pvclock structure. If no bits are set, all flags are ignored.
@@ -46,7 +46,7 @@
 #define MSR_KVM_SYSTEM_TIME_NEW 0x4b564d01
 #define MSR_KVM_ASYNC_PF_EN 0x4b564d02
 #define MSR_KVM_STEAL_TIME  0x4b564d03
-#define MSR_KVM_PV_EOI_EN      0x4b564d04
+#define MSR_KVM_PV_EOI_EN                   0x4b564d04
 
 struct kvm_steal_time {
 	__u64 steal;
@@ -57,8 +57,8 @@ struct kvm_steal_time {
 	__u32 pad[11];
 };
 
-#define KVM_VCPU_PREEMPTED          (1 << 0)
-#define KVM_VCPU_FLUSH_TLB          (1 << 1)
+#define KVM_VCPU_PREEMPTED                       (1 << 0)
+#define KVM_VCPU_FLUSH_TLB                       (1 << 1)
 
 #define KVM_CLOCK_PAIRING_WALLCLOCK 0
 struct kvm_clock_pairing {
@@ -73,16 +73,16 @@ struct kvm_clock_pairing {
 #define KVM_STEAL_VALID_BITS ((-1ULL << (KVM_STEAL_ALIGNMENT_BITS + 1)))
 #define KVM_STEAL_RESERVED_MASK (((1 << KVM_STEAL_ALIGNMENT_BITS) - 1 ) << 1)
 
-#define KVM_MAX_MMU_OP_BATCH           32
+#define KVM_MAX_MMU_OP_BATCH                        32
 
 #define KVM_ASYNC_PF_ENABLED			(1 << 0)
 #define KVM_ASYNC_PF_SEND_ALWAYS		(1 << 1)
 #define KVM_ASYNC_PF_DELIVERY_AS_PF_VMEXIT	(1 << 2)
 
 /* Operations for KVM_HC_MMU_OP */
-#define KVM_MMU_OP_WRITE_PTE            1
-#define KVM_MMU_OP_FLUSH_TLB	        2
-#define KVM_MMU_OP_RELEASE_PT	        3
+#define KVM_MMU_OP_WRITE_PTE                                      1
+#define KVM_MMU_OP_FLUSH_TLB	                     2
+#define KVM_MMU_OP_RELEASE_PT	                     3
 
 /* Payload for KVM_HC_MMU_OP */
 struct kvm_mmu_op_header {

@@ -213,64 +213,64 @@ extern "C"{
 #else
   typedef struct IAzAuthorizationStoreVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzAuthorizationStore *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzAuthorizationStore *This);
-      ULONG (WINAPI *Release)(IAzAuthorizationStore *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzAuthorizationStore *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzAuthorizationStore *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzAuthorizationStore *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzAuthorizationStore *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Description)(IAzAuthorizationStore *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzAuthorizationStore *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_ApplicationData)(IAzAuthorizationStore *This,BSTR *pbstrApplicationData);
-      HRESULT (WINAPI *put_ApplicationData)(IAzAuthorizationStore *This,BSTR bstrApplicationData);
-      HRESULT (WINAPI *get_DomainTimeout)(IAzAuthorizationStore *This,LONG *plProp);
-      HRESULT (WINAPI *put_DomainTimeout)(IAzAuthorizationStore *This,LONG lProp);
-      HRESULT (WINAPI *get_ScriptEngineTimeout)(IAzAuthorizationStore *This,LONG *plProp);
-      HRESULT (WINAPI *put_ScriptEngineTimeout)(IAzAuthorizationStore *This,LONG lProp);
-      HRESULT (WINAPI *get_MaxScriptEngines)(IAzAuthorizationStore *This,LONG *plProp);
-      HRESULT (WINAPI *put_MaxScriptEngines)(IAzAuthorizationStore *This,LONG lProp);
-      HRESULT (WINAPI *get_GenerateAudits)(IAzAuthorizationStore *This,WINBOOL *pbProp);
-      HRESULT (WINAPI *put_GenerateAudits)(IAzAuthorizationStore *This,WINBOOL bProp);
-      HRESULT (WINAPI *get_Writable)(IAzAuthorizationStore *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzAuthorizationStore *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzAuthorizationStore *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddPropertyItem)(IAzAuthorizationStore *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePropertyItem)(IAzAuthorizationStore *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_PolicyAdministrators)(IAzAuthorizationStore *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReaders)(IAzAuthorizationStore *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministrator)(IAzAuthorizationStore *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministrator)(IAzAuthorizationStore *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReader)(IAzAuthorizationStore *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReader)(IAzAuthorizationStore *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *Initialize)(IAzAuthorizationStore *This,LONG lFlags,BSTR bstrPolicyURL,VARIANT varReserved);
-      HRESULT (WINAPI *UpdateCache)(IAzAuthorizationStore *This,VARIANT varReserved);
-      HRESULT (WINAPI *Delete)(IAzAuthorizationStore *This,VARIANT varReserved);
-      HRESULT (WINAPI *get_Applications)(IAzAuthorizationStore *This,IAzApplications **ppAppCollection);
-      HRESULT (WINAPI *OpenApplication)(IAzAuthorizationStore *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication **ppApplication);
-      HRESULT (WINAPI *CreateApplication)(IAzAuthorizationStore *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication **ppApplication);
-      HRESULT (WINAPI *DeleteApplication)(IAzAuthorizationStore *This,BSTR bstrApplicationName,VARIANT varReserved);
-      HRESULT (WINAPI *get_ApplicationGroups)(IAzAuthorizationStore *This,IAzApplicationGroups **ppGroupCollection);
-      HRESULT (WINAPI *CreateApplicationGroup)(IAzAuthorizationStore *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *OpenApplicationGroup)(IAzAuthorizationStore *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *DeleteApplicationGroup)(IAzAuthorizationStore *This,BSTR bstrGroupName,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzAuthorizationStore *This,LONG lFlags,VARIANT varReserved);
-      HRESULT (WINAPI *get_DelegatedPolicyUsers)(IAzAuthorizationStore *This,VARIANT *pvarDelegatedPolicyUsers);
-      HRESULT (WINAPI *AddDelegatedPolicyUser)(IAzAuthorizationStore *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteDelegatedPolicyUser)(IAzAuthorizationStore *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *get_TargetMachine)(IAzAuthorizationStore *This,BSTR *pbstrTargetMachine);
-      HRESULT (WINAPI *get_ApplyStoreSacl)(IAzAuthorizationStore *This,WINBOOL *pbApplyStoreSacl);
-      HRESULT (WINAPI *put_ApplyStoreSacl)(IAzAuthorizationStore *This,WINBOOL bApplyStoreSacl);
-      HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzAuthorizationStore *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReadersName)(IAzAuthorizationStore *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministratorName)(IAzAuthorizationStore *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzAuthorizationStore *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReaderName)(IAzAuthorizationStore *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReaderName)(IAzAuthorizationStore *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *get_DelegatedPolicyUsersName)(IAzAuthorizationStore *This,VARIANT *pvarDelegatedPolicyUsers);
-      HRESULT (WINAPI *AddDelegatedPolicyUserName)(IAzAuthorizationStore *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteDelegatedPolicyUserName)(IAzAuthorizationStore *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *CloseApplication)(IAzAuthorizationStore *This,BSTR bstrApplicationName,LONG lFlag);
+                   HRESULT (WINAPI *QueryInterface)(IAzAuthorizationStore *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzAuthorizationStore *This);
+                   ULONG (WINAPI *Release)(IAzAuthorizationStore *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzAuthorizationStore *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzAuthorizationStore *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzAuthorizationStore *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzAuthorizationStore *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Description)(IAzAuthorizationStore *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzAuthorizationStore *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_ApplicationData)(IAzAuthorizationStore *This,BSTR *pbstrApplicationData);
+                   HRESULT (WINAPI *put_ApplicationData)(IAzAuthorizationStore *This,BSTR bstrApplicationData);
+                   HRESULT (WINAPI *get_DomainTimeout)(IAzAuthorizationStore *This,LONG *plProp);
+                   HRESULT (WINAPI *put_DomainTimeout)(IAzAuthorizationStore *This,LONG lProp);
+                   HRESULT (WINAPI *get_ScriptEngineTimeout)(IAzAuthorizationStore *This,LONG *plProp);
+                   HRESULT (WINAPI *put_ScriptEngineTimeout)(IAzAuthorizationStore *This,LONG lProp);
+                   HRESULT (WINAPI *get_MaxScriptEngines)(IAzAuthorizationStore *This,LONG *plProp);
+                   HRESULT (WINAPI *put_MaxScriptEngines)(IAzAuthorizationStore *This,LONG lProp);
+                   HRESULT (WINAPI *get_GenerateAudits)(IAzAuthorizationStore *This,WINBOOL *pbProp);
+                   HRESULT (WINAPI *put_GenerateAudits)(IAzAuthorizationStore *This,WINBOOL bProp);
+                   HRESULT (WINAPI *get_Writable)(IAzAuthorizationStore *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzAuthorizationStore *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzAuthorizationStore *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPropertyItem)(IAzAuthorizationStore *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePropertyItem)(IAzAuthorizationStore *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_PolicyAdministrators)(IAzAuthorizationStore *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReaders)(IAzAuthorizationStore *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministrator)(IAzAuthorizationStore *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministrator)(IAzAuthorizationStore *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReader)(IAzAuthorizationStore *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReader)(IAzAuthorizationStore *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *Initialize)(IAzAuthorizationStore *This,LONG lFlags,BSTR bstrPolicyURL,VARIANT varReserved);
+                   HRESULT (WINAPI *UpdateCache)(IAzAuthorizationStore *This,VARIANT varReserved);
+                   HRESULT (WINAPI *Delete)(IAzAuthorizationStore *This,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Applications)(IAzAuthorizationStore *This,IAzApplications **ppAppCollection);
+                   HRESULT (WINAPI *OpenApplication)(IAzAuthorizationStore *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication **ppApplication);
+                   HRESULT (WINAPI *CreateApplication)(IAzAuthorizationStore *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication **ppApplication);
+                   HRESULT (WINAPI *DeleteApplication)(IAzAuthorizationStore *This,BSTR bstrApplicationName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_ApplicationGroups)(IAzAuthorizationStore *This,IAzApplicationGroups **ppGroupCollection);
+                   HRESULT (WINAPI *CreateApplicationGroup)(IAzAuthorizationStore *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *OpenApplicationGroup)(IAzAuthorizationStore *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *DeleteApplicationGroup)(IAzAuthorizationStore *This,BSTR bstrGroupName,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzAuthorizationStore *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *get_DelegatedPolicyUsers)(IAzAuthorizationStore *This,VARIANT *pvarDelegatedPolicyUsers);
+                   HRESULT (WINAPI *AddDelegatedPolicyUser)(IAzAuthorizationStore *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteDelegatedPolicyUser)(IAzAuthorizationStore *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *get_TargetMachine)(IAzAuthorizationStore *This,BSTR *pbstrTargetMachine);
+                   HRESULT (WINAPI *get_ApplyStoreSacl)(IAzAuthorizationStore *This,WINBOOL *pbApplyStoreSacl);
+                   HRESULT (WINAPI *put_ApplyStoreSacl)(IAzAuthorizationStore *This,WINBOOL bApplyStoreSacl);
+                   HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzAuthorizationStore *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReadersName)(IAzAuthorizationStore *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministratorName)(IAzAuthorizationStore *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzAuthorizationStore *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReaderName)(IAzAuthorizationStore *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReaderName)(IAzAuthorizationStore *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *get_DelegatedPolicyUsersName)(IAzAuthorizationStore *This,VARIANT *pvarDelegatedPolicyUsers);
+                   HRESULT (WINAPI *AddDelegatedPolicyUserName)(IAzAuthorizationStore *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteDelegatedPolicyUserName)(IAzAuthorizationStore *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *CloseApplication)(IAzAuthorizationStore *This,BSTR bstrApplicationName,LONG lFlag);
     END_INTERFACE
   } IAzAuthorizationStoreVtbl;
   struct IAzAuthorizationStore {
@@ -453,66 +453,66 @@ extern "C"{
 #else
   typedef struct IAzAuthorizationStore2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzAuthorizationStore2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzAuthorizationStore2 *This);
-      ULONG (WINAPI *Release)(IAzAuthorizationStore2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzAuthorizationStore2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzAuthorizationStore2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzAuthorizationStore2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzAuthorizationStore2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Description)(IAzAuthorizationStore2 *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzAuthorizationStore2 *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_ApplicationData)(IAzAuthorizationStore2 *This,BSTR *pbstrApplicationData);
-      HRESULT (WINAPI *put_ApplicationData)(IAzAuthorizationStore2 *This,BSTR bstrApplicationData);
-      HRESULT (WINAPI *get_DomainTimeout)(IAzAuthorizationStore2 *This,LONG *plProp);
-      HRESULT (WINAPI *put_DomainTimeout)(IAzAuthorizationStore2 *This,LONG lProp);
-      HRESULT (WINAPI *get_ScriptEngineTimeout)(IAzAuthorizationStore2 *This,LONG *plProp);
-      HRESULT (WINAPI *put_ScriptEngineTimeout)(IAzAuthorizationStore2 *This,LONG lProp);
-      HRESULT (WINAPI *get_MaxScriptEngines)(IAzAuthorizationStore2 *This,LONG *plProp);
-      HRESULT (WINAPI *put_MaxScriptEngines)(IAzAuthorizationStore2 *This,LONG lProp);
-      HRESULT (WINAPI *get_GenerateAudits)(IAzAuthorizationStore2 *This,WINBOOL *pbProp);
-      HRESULT (WINAPI *put_GenerateAudits)(IAzAuthorizationStore2 *This,WINBOOL bProp);
-      HRESULT (WINAPI *get_Writable)(IAzAuthorizationStore2 *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzAuthorizationStore2 *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzAuthorizationStore2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddPropertyItem)(IAzAuthorizationStore2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePropertyItem)(IAzAuthorizationStore2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_PolicyAdministrators)(IAzAuthorizationStore2 *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReaders)(IAzAuthorizationStore2 *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministrator)(IAzAuthorizationStore2 *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministrator)(IAzAuthorizationStore2 *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReader)(IAzAuthorizationStore2 *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReader)(IAzAuthorizationStore2 *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *Initialize)(IAzAuthorizationStore2 *This,LONG lFlags,BSTR bstrPolicyURL,VARIANT varReserved);
-      HRESULT (WINAPI *UpdateCache)(IAzAuthorizationStore2 *This,VARIANT varReserved);
-      HRESULT (WINAPI *Delete)(IAzAuthorizationStore2 *This,VARIANT varReserved);
-      HRESULT (WINAPI *get_Applications)(IAzAuthorizationStore2 *This,IAzApplications **ppAppCollection);
-      HRESULT (WINAPI *OpenApplication)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication **ppApplication);
-      HRESULT (WINAPI *CreateApplication)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication **ppApplication);
-      HRESULT (WINAPI *DeleteApplication)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved);
-      HRESULT (WINAPI *get_ApplicationGroups)(IAzAuthorizationStore2 *This,IAzApplicationGroups **ppGroupCollection);
-      HRESULT (WINAPI *CreateApplicationGroup)(IAzAuthorizationStore2 *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *OpenApplicationGroup)(IAzAuthorizationStore2 *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *DeleteApplicationGroup)(IAzAuthorizationStore2 *This,BSTR bstrGroupName,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzAuthorizationStore2 *This,LONG lFlags,VARIANT varReserved);
-      HRESULT (WINAPI *get_DelegatedPolicyUsers)(IAzAuthorizationStore2 *This,VARIANT *pvarDelegatedPolicyUsers);
-      HRESULT (WINAPI *AddDelegatedPolicyUser)(IAzAuthorizationStore2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteDelegatedPolicyUser)(IAzAuthorizationStore2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *get_TargetMachine)(IAzAuthorizationStore2 *This,BSTR *pbstrTargetMachine);
-      HRESULT (WINAPI *get_ApplyStoreSacl)(IAzAuthorizationStore2 *This,WINBOOL *pbApplyStoreSacl);
-      HRESULT (WINAPI *put_ApplyStoreSacl)(IAzAuthorizationStore2 *This,WINBOOL bApplyStoreSacl);
-      HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzAuthorizationStore2 *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReadersName)(IAzAuthorizationStore2 *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministratorName)(IAzAuthorizationStore2 *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzAuthorizationStore2 *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReaderName)(IAzAuthorizationStore2 *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReaderName)(IAzAuthorizationStore2 *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *get_DelegatedPolicyUsersName)(IAzAuthorizationStore2 *This,VARIANT *pvarDelegatedPolicyUsers);
-      HRESULT (WINAPI *AddDelegatedPolicyUserName)(IAzAuthorizationStore2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteDelegatedPolicyUserName)(IAzAuthorizationStore2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *CloseApplication)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,LONG lFlag);
-      HRESULT (WINAPI *OpenApplication2)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication2 **ppApplication);
-      HRESULT (WINAPI *CreateApplication2)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication2 **ppApplication);
+                   HRESULT (WINAPI *QueryInterface)(IAzAuthorizationStore2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzAuthorizationStore2 *This);
+                   ULONG (WINAPI *Release)(IAzAuthorizationStore2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzAuthorizationStore2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzAuthorizationStore2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzAuthorizationStore2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzAuthorizationStore2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Description)(IAzAuthorizationStore2 *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzAuthorizationStore2 *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_ApplicationData)(IAzAuthorizationStore2 *This,BSTR *pbstrApplicationData);
+                   HRESULT (WINAPI *put_ApplicationData)(IAzAuthorizationStore2 *This,BSTR bstrApplicationData);
+                   HRESULT (WINAPI *get_DomainTimeout)(IAzAuthorizationStore2 *This,LONG *plProp);
+                   HRESULT (WINAPI *put_DomainTimeout)(IAzAuthorizationStore2 *This,LONG lProp);
+                   HRESULT (WINAPI *get_ScriptEngineTimeout)(IAzAuthorizationStore2 *This,LONG *plProp);
+                   HRESULT (WINAPI *put_ScriptEngineTimeout)(IAzAuthorizationStore2 *This,LONG lProp);
+                   HRESULT (WINAPI *get_MaxScriptEngines)(IAzAuthorizationStore2 *This,LONG *plProp);
+                   HRESULT (WINAPI *put_MaxScriptEngines)(IAzAuthorizationStore2 *This,LONG lProp);
+                   HRESULT (WINAPI *get_GenerateAudits)(IAzAuthorizationStore2 *This,WINBOOL *pbProp);
+                   HRESULT (WINAPI *put_GenerateAudits)(IAzAuthorizationStore2 *This,WINBOOL bProp);
+                   HRESULT (WINAPI *get_Writable)(IAzAuthorizationStore2 *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzAuthorizationStore2 *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzAuthorizationStore2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPropertyItem)(IAzAuthorizationStore2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePropertyItem)(IAzAuthorizationStore2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_PolicyAdministrators)(IAzAuthorizationStore2 *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReaders)(IAzAuthorizationStore2 *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministrator)(IAzAuthorizationStore2 *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministrator)(IAzAuthorizationStore2 *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReader)(IAzAuthorizationStore2 *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReader)(IAzAuthorizationStore2 *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *Initialize)(IAzAuthorizationStore2 *This,LONG lFlags,BSTR bstrPolicyURL,VARIANT varReserved);
+                   HRESULT (WINAPI *UpdateCache)(IAzAuthorizationStore2 *This,VARIANT varReserved);
+                   HRESULT (WINAPI *Delete)(IAzAuthorizationStore2 *This,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Applications)(IAzAuthorizationStore2 *This,IAzApplications **ppAppCollection);
+                   HRESULT (WINAPI *OpenApplication)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication **ppApplication);
+                   HRESULT (WINAPI *CreateApplication)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication **ppApplication);
+                   HRESULT (WINAPI *DeleteApplication)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_ApplicationGroups)(IAzAuthorizationStore2 *This,IAzApplicationGroups **ppGroupCollection);
+                   HRESULT (WINAPI *CreateApplicationGroup)(IAzAuthorizationStore2 *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *OpenApplicationGroup)(IAzAuthorizationStore2 *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *DeleteApplicationGroup)(IAzAuthorizationStore2 *This,BSTR bstrGroupName,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzAuthorizationStore2 *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *get_DelegatedPolicyUsers)(IAzAuthorizationStore2 *This,VARIANT *pvarDelegatedPolicyUsers);
+                   HRESULT (WINAPI *AddDelegatedPolicyUser)(IAzAuthorizationStore2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteDelegatedPolicyUser)(IAzAuthorizationStore2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *get_TargetMachine)(IAzAuthorizationStore2 *This,BSTR *pbstrTargetMachine);
+                   HRESULT (WINAPI *get_ApplyStoreSacl)(IAzAuthorizationStore2 *This,WINBOOL *pbApplyStoreSacl);
+                   HRESULT (WINAPI *put_ApplyStoreSacl)(IAzAuthorizationStore2 *This,WINBOOL bApplyStoreSacl);
+                   HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzAuthorizationStore2 *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReadersName)(IAzAuthorizationStore2 *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministratorName)(IAzAuthorizationStore2 *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzAuthorizationStore2 *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReaderName)(IAzAuthorizationStore2 *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReaderName)(IAzAuthorizationStore2 *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *get_DelegatedPolicyUsersName)(IAzAuthorizationStore2 *This,VARIANT *pvarDelegatedPolicyUsers);
+                   HRESULT (WINAPI *AddDelegatedPolicyUserName)(IAzAuthorizationStore2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteDelegatedPolicyUserName)(IAzAuthorizationStore2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *CloseApplication)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,LONG lFlag);
+                   HRESULT (WINAPI *OpenApplication2)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication2 **ppApplication);
+                   HRESULT (WINAPI *CreateApplication2)(IAzAuthorizationStore2 *This,BSTR bstrApplicationName,VARIANT varReserved,IAzApplication2 **ppApplication);
     END_INTERFACE
   } IAzAuthorizationStore2Vtbl;
   struct IAzAuthorizationStore2 {
@@ -658,74 +658,74 @@ extern "C"{
 #else
   typedef struct IAzApplicationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzApplication *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzApplication *This);
-      ULONG (WINAPI *Release)(IAzApplication *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzApplication *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzApplication *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzApplication *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzApplication *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IAzApplication *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IAzApplication *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Description)(IAzApplication *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzApplication *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_ApplicationData)(IAzApplication *This,BSTR *pbstrApplicationData);
-      HRESULT (WINAPI *put_ApplicationData)(IAzApplication *This,BSTR bstrApplicationData);
-      HRESULT (WINAPI *get_AuthzInterfaceClsid)(IAzApplication *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_AuthzInterfaceClsid)(IAzApplication *This,BSTR bstrProp);
-      HRESULT (WINAPI *get_Version)(IAzApplication *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_Version)(IAzApplication *This,BSTR bstrProp);
-      HRESULT (WINAPI *get_GenerateAudits)(IAzApplication *This,WINBOOL *pbProp);
-      HRESULT (WINAPI *put_GenerateAudits)(IAzApplication *This,WINBOOL bProp);
-      HRESULT (WINAPI *get_ApplyStoreSacl)(IAzApplication *This,WINBOOL *pbProp);
-      HRESULT (WINAPI *put_ApplyStoreSacl)(IAzApplication *This,WINBOOL bProp);
-      HRESULT (WINAPI *get_Writable)(IAzApplication *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzApplication *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzApplication *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_PolicyAdministrators)(IAzApplication *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReaders)(IAzApplication *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministrator)(IAzApplication *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministrator)(IAzApplication *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReader)(IAzApplication *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReader)(IAzApplication *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *get_Scopes)(IAzApplication *This,IAzScopes **ppScopeCollection);
-      HRESULT (WINAPI *OpenScope)(IAzApplication *This,BSTR bstrScopeName,VARIANT varReserved,IAzScope **ppScope);
-      HRESULT (WINAPI *CreateScope)(IAzApplication *This,BSTR bstrScopeName,VARIANT varReserved,IAzScope **ppScope);
-      HRESULT (WINAPI *DeleteScope)(IAzApplication *This,BSTR bstrScopeName,VARIANT varReserved);
-      HRESULT (WINAPI *get_Operations)(IAzApplication *This,IAzOperations **ppOperationCollection);
-      HRESULT (WINAPI *OpenOperation)(IAzApplication *This,BSTR bstrOperationName,VARIANT varReserved,IAzOperation **ppOperation);
-      HRESULT (WINAPI *CreateOperation)(IAzApplication *This,BSTR bstrOperationName,VARIANT varReserved,IAzOperation **ppOperation);
-      HRESULT (WINAPI *DeleteOperation)(IAzApplication *This,BSTR bstrOperationName,VARIANT varReserved);
-      HRESULT (WINAPI *get_Tasks)(IAzApplication *This,IAzTasks **ppTaskCollection);
-      HRESULT (WINAPI *OpenTask)(IAzApplication *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
-      HRESULT (WINAPI *CreateTask)(IAzApplication *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
-      HRESULT (WINAPI *DeleteTask)(IAzApplication *This,BSTR bstrTaskName,VARIANT varReserved);
-      HRESULT (WINAPI *get_ApplicationGroups)(IAzApplication *This,IAzApplicationGroups **ppGroupCollection);
-      HRESULT (WINAPI *OpenApplicationGroup)(IAzApplication *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *CreateApplicationGroup)(IAzApplication *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *DeleteApplicationGroup)(IAzApplication *This,BSTR bstrGroupName,VARIANT varReserved);
-      HRESULT (WINAPI *get_Roles)(IAzApplication *This,IAzRoles **ppRoleCollection);
-      HRESULT (WINAPI *OpenRole)(IAzApplication *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
-      HRESULT (WINAPI *CreateRole)(IAzApplication *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
-      HRESULT (WINAPI *DeleteRole)(IAzApplication *This,BSTR bstrRoleName,VARIANT varReserved);
-      HRESULT (WINAPI *InitializeClientContextFromToken)(IAzApplication *This,ULONGLONG ullTokenHandle,VARIANT varReserved,IAzClientContext **ppClientContext);
-      HRESULT (WINAPI *AddPropertyItem)(IAzApplication *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePropertyItem)(IAzApplication *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzApplication *This,LONG lFlags,VARIANT varReserved);
-      HRESULT (WINAPI *InitializeClientContextFromName)(IAzApplication *This,BSTR ClientName,BSTR DomainName,VARIANT varReserved,IAzClientContext **ppClientContext);
-      HRESULT (WINAPI *get_DelegatedPolicyUsers)(IAzApplication *This,VARIANT *pvarDelegatedPolicyUsers);
-      HRESULT (WINAPI *AddDelegatedPolicyUser)(IAzApplication *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteDelegatedPolicyUser)(IAzApplication *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *InitializeClientContextFromStringSid)(IAzApplication *This,BSTR SidString,LONG lOptions,VARIANT varReserved,IAzClientContext **ppClientContext);
-      HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzApplication *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReadersName)(IAzApplication *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministratorName)(IAzApplication *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzApplication *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReaderName)(IAzApplication *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReaderName)(IAzApplication *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *get_DelegatedPolicyUsersName)(IAzApplication *This,VARIANT *pvarDelegatedPolicyUsers);
-      HRESULT (WINAPI *AddDelegatedPolicyUserName)(IAzApplication *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteDelegatedPolicyUserName)(IAzApplication *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *QueryInterface)(IAzApplication *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzApplication *This);
+                   ULONG (WINAPI *Release)(IAzApplication *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzApplication *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzApplication *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzApplication *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzApplication *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IAzApplication *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IAzApplication *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Description)(IAzApplication *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzApplication *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_ApplicationData)(IAzApplication *This,BSTR *pbstrApplicationData);
+                   HRESULT (WINAPI *put_ApplicationData)(IAzApplication *This,BSTR bstrApplicationData);
+                   HRESULT (WINAPI *get_AuthzInterfaceClsid)(IAzApplication *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_AuthzInterfaceClsid)(IAzApplication *This,BSTR bstrProp);
+                   HRESULT (WINAPI *get_Version)(IAzApplication *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_Version)(IAzApplication *This,BSTR bstrProp);
+                   HRESULT (WINAPI *get_GenerateAudits)(IAzApplication *This,WINBOOL *pbProp);
+                   HRESULT (WINAPI *put_GenerateAudits)(IAzApplication *This,WINBOOL bProp);
+                   HRESULT (WINAPI *get_ApplyStoreSacl)(IAzApplication *This,WINBOOL *pbProp);
+                   HRESULT (WINAPI *put_ApplyStoreSacl)(IAzApplication *This,WINBOOL bProp);
+                   HRESULT (WINAPI *get_Writable)(IAzApplication *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzApplication *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzApplication *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_PolicyAdministrators)(IAzApplication *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReaders)(IAzApplication *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministrator)(IAzApplication *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministrator)(IAzApplication *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReader)(IAzApplication *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReader)(IAzApplication *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Scopes)(IAzApplication *This,IAzScopes **ppScopeCollection);
+                   HRESULT (WINAPI *OpenScope)(IAzApplication *This,BSTR bstrScopeName,VARIANT varReserved,IAzScope **ppScope);
+                   HRESULT (WINAPI *CreateScope)(IAzApplication *This,BSTR bstrScopeName,VARIANT varReserved,IAzScope **ppScope);
+                   HRESULT (WINAPI *DeleteScope)(IAzApplication *This,BSTR bstrScopeName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Operations)(IAzApplication *This,IAzOperations **ppOperationCollection);
+                   HRESULT (WINAPI *OpenOperation)(IAzApplication *This,BSTR bstrOperationName,VARIANT varReserved,IAzOperation **ppOperation);
+                   HRESULT (WINAPI *CreateOperation)(IAzApplication *This,BSTR bstrOperationName,VARIANT varReserved,IAzOperation **ppOperation);
+                   HRESULT (WINAPI *DeleteOperation)(IAzApplication *This,BSTR bstrOperationName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Tasks)(IAzApplication *This,IAzTasks **ppTaskCollection);
+                   HRESULT (WINAPI *OpenTask)(IAzApplication *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
+                   HRESULT (WINAPI *CreateTask)(IAzApplication *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
+                   HRESULT (WINAPI *DeleteTask)(IAzApplication *This,BSTR bstrTaskName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_ApplicationGroups)(IAzApplication *This,IAzApplicationGroups **ppGroupCollection);
+                   HRESULT (WINAPI *OpenApplicationGroup)(IAzApplication *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *CreateApplicationGroup)(IAzApplication *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *DeleteApplicationGroup)(IAzApplication *This,BSTR bstrGroupName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Roles)(IAzApplication *This,IAzRoles **ppRoleCollection);
+                   HRESULT (WINAPI *OpenRole)(IAzApplication *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
+                   HRESULT (WINAPI *CreateRole)(IAzApplication *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
+                   HRESULT (WINAPI *DeleteRole)(IAzApplication *This,BSTR bstrRoleName,VARIANT varReserved);
+                   HRESULT (WINAPI *InitializeClientContextFromToken)(IAzApplication *This,ULONGLONG ullTokenHandle,VARIANT varReserved,IAzClientContext **ppClientContext);
+                   HRESULT (WINAPI *AddPropertyItem)(IAzApplication *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePropertyItem)(IAzApplication *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzApplication *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *InitializeClientContextFromName)(IAzApplication *This,BSTR ClientName,BSTR DomainName,VARIANT varReserved,IAzClientContext **ppClientContext);
+                   HRESULT (WINAPI *get_DelegatedPolicyUsers)(IAzApplication *This,VARIANT *pvarDelegatedPolicyUsers);
+                   HRESULT (WINAPI *AddDelegatedPolicyUser)(IAzApplication *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteDelegatedPolicyUser)(IAzApplication *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *InitializeClientContextFromStringSid)(IAzApplication *This,BSTR SidString,LONG lOptions,VARIANT varReserved,IAzClientContext **ppClientContext);
+                   HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzApplication *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReadersName)(IAzApplication *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministratorName)(IAzApplication *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzApplication *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReaderName)(IAzApplication *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReaderName)(IAzApplication *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *get_DelegatedPolicyUsersName)(IAzApplication *This,VARIANT *pvarDelegatedPolicyUsers);
+                   HRESULT (WINAPI *AddDelegatedPolicyUserName)(IAzApplication *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteDelegatedPolicyUserName)(IAzApplication *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
     END_INTERFACE
   } IAzApplicationVtbl;
   struct IAzApplication {
@@ -938,76 +938,76 @@ extern "C"{
 #else
   typedef struct IAzApplication2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzApplication2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzApplication2 *This);
-      ULONG (WINAPI *Release)(IAzApplication2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzApplication2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzApplication2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzApplication2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzApplication2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IAzApplication2 *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IAzApplication2 *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Description)(IAzApplication2 *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzApplication2 *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_ApplicationData)(IAzApplication2 *This,BSTR *pbstrApplicationData);
-      HRESULT (WINAPI *put_ApplicationData)(IAzApplication2 *This,BSTR bstrApplicationData);
-      HRESULT (WINAPI *get_AuthzInterfaceClsid)(IAzApplication2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_AuthzInterfaceClsid)(IAzApplication2 *This,BSTR bstrProp);
-      HRESULT (WINAPI *get_Version)(IAzApplication2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_Version)(IAzApplication2 *This,BSTR bstrProp);
-      HRESULT (WINAPI *get_GenerateAudits)(IAzApplication2 *This,WINBOOL *pbProp);
-      HRESULT (WINAPI *put_GenerateAudits)(IAzApplication2 *This,WINBOOL bProp);
-      HRESULT (WINAPI *get_ApplyStoreSacl)(IAzApplication2 *This,WINBOOL *pbProp);
-      HRESULT (WINAPI *put_ApplyStoreSacl)(IAzApplication2 *This,WINBOOL bProp);
-      HRESULT (WINAPI *get_Writable)(IAzApplication2 *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzApplication2 *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzApplication2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_PolicyAdministrators)(IAzApplication2 *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReaders)(IAzApplication2 *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministrator)(IAzApplication2 *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministrator)(IAzApplication2 *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReader)(IAzApplication2 *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReader)(IAzApplication2 *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *get_Scopes)(IAzApplication2 *This,IAzScopes **ppScopeCollection);
-      HRESULT (WINAPI *OpenScope)(IAzApplication2 *This,BSTR bstrScopeName,VARIANT varReserved,IAzScope **ppScope);
-      HRESULT (WINAPI *CreateScope)(IAzApplication2 *This,BSTR bstrScopeName,VARIANT varReserved,IAzScope **ppScope);
-      HRESULT (WINAPI *DeleteScope)(IAzApplication2 *This,BSTR bstrScopeName,VARIANT varReserved);
-      HRESULT (WINAPI *get_Operations)(IAzApplication2 *This,IAzOperations **ppOperationCollection);
-      HRESULT (WINAPI *OpenOperation)(IAzApplication2 *This,BSTR bstrOperationName,VARIANT varReserved,IAzOperation **ppOperation);
-      HRESULT (WINAPI *CreateOperation)(IAzApplication2 *This,BSTR bstrOperationName,VARIANT varReserved,IAzOperation **ppOperation);
-      HRESULT (WINAPI *DeleteOperation)(IAzApplication2 *This,BSTR bstrOperationName,VARIANT varReserved);
-      HRESULT (WINAPI *get_Tasks)(IAzApplication2 *This,IAzTasks **ppTaskCollection);
-      HRESULT (WINAPI *OpenTask)(IAzApplication2 *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
-      HRESULT (WINAPI *CreateTask)(IAzApplication2 *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
-      HRESULT (WINAPI *DeleteTask)(IAzApplication2 *This,BSTR bstrTaskName,VARIANT varReserved);
-      HRESULT (WINAPI *get_ApplicationGroups)(IAzApplication2 *This,IAzApplicationGroups **ppGroupCollection);
-      HRESULT (WINAPI *OpenApplicationGroup)(IAzApplication2 *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *CreateApplicationGroup)(IAzApplication2 *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *DeleteApplicationGroup)(IAzApplication2 *This,BSTR bstrGroupName,VARIANT varReserved);
-      HRESULT (WINAPI *get_Roles)(IAzApplication2 *This,IAzRoles **ppRoleCollection);
-      HRESULT (WINAPI *OpenRole)(IAzApplication2 *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
-      HRESULT (WINAPI *CreateRole)(IAzApplication2 *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
-      HRESULT (WINAPI *DeleteRole)(IAzApplication2 *This,BSTR bstrRoleName,VARIANT varReserved);
-      HRESULT (WINAPI *InitializeClientContextFromToken)(IAzApplication2 *This,ULONGLONG ullTokenHandle,VARIANT varReserved,IAzClientContext **ppClientContext);
-      HRESULT (WINAPI *AddPropertyItem)(IAzApplication2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePropertyItem)(IAzApplication2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzApplication2 *This,LONG lFlags,VARIANT varReserved);
-      HRESULT (WINAPI *InitializeClientContextFromName)(IAzApplication2 *This,BSTR ClientName,BSTR DomainName,VARIANT varReserved,IAzClientContext **ppClientContext);
-      HRESULT (WINAPI *get_DelegatedPolicyUsers)(IAzApplication2 *This,VARIANT *pvarDelegatedPolicyUsers);
-      HRESULT (WINAPI *AddDelegatedPolicyUser)(IAzApplication2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteDelegatedPolicyUser)(IAzApplication2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *InitializeClientContextFromStringSid)(IAzApplication2 *This,BSTR SidString,LONG lOptions,VARIANT varReserved,IAzClientContext **ppClientContext);
-      HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzApplication2 *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReadersName)(IAzApplication2 *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministratorName)(IAzApplication2 *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzApplication2 *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReaderName)(IAzApplication2 *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReaderName)(IAzApplication2 *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *get_DelegatedPolicyUsersName)(IAzApplication2 *This,VARIANT *pvarDelegatedPolicyUsers);
-      HRESULT (WINAPI *AddDelegatedPolicyUserName)(IAzApplication2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteDelegatedPolicyUserName)(IAzApplication2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
-      HRESULT (WINAPI *InitializeClientContextFromToken2)(IAzApplication2 *This,ULONG ulTokenHandleLowPart,ULONG ulTokenHandleHighPart,VARIANT varReserved,IAzClientContext2 **ppClientContext);
-      HRESULT (WINAPI *InitializeClientContext2)(IAzApplication2 *This,BSTR IdentifyingString,VARIANT varReserved,IAzClientContext2 **ppClientContext);
+                   HRESULT (WINAPI *QueryInterface)(IAzApplication2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzApplication2 *This);
+                   ULONG (WINAPI *Release)(IAzApplication2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzApplication2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzApplication2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzApplication2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzApplication2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IAzApplication2 *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IAzApplication2 *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Description)(IAzApplication2 *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzApplication2 *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_ApplicationData)(IAzApplication2 *This,BSTR *pbstrApplicationData);
+                   HRESULT (WINAPI *put_ApplicationData)(IAzApplication2 *This,BSTR bstrApplicationData);
+                   HRESULT (WINAPI *get_AuthzInterfaceClsid)(IAzApplication2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_AuthzInterfaceClsid)(IAzApplication2 *This,BSTR bstrProp);
+                   HRESULT (WINAPI *get_Version)(IAzApplication2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_Version)(IAzApplication2 *This,BSTR bstrProp);
+                   HRESULT (WINAPI *get_GenerateAudits)(IAzApplication2 *This,WINBOOL *pbProp);
+                   HRESULT (WINAPI *put_GenerateAudits)(IAzApplication2 *This,WINBOOL bProp);
+                   HRESULT (WINAPI *get_ApplyStoreSacl)(IAzApplication2 *This,WINBOOL *pbProp);
+                   HRESULT (WINAPI *put_ApplyStoreSacl)(IAzApplication2 *This,WINBOOL bProp);
+                   HRESULT (WINAPI *get_Writable)(IAzApplication2 *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzApplication2 *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzApplication2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_PolicyAdministrators)(IAzApplication2 *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReaders)(IAzApplication2 *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministrator)(IAzApplication2 *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministrator)(IAzApplication2 *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReader)(IAzApplication2 *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReader)(IAzApplication2 *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Scopes)(IAzApplication2 *This,IAzScopes **ppScopeCollection);
+                   HRESULT (WINAPI *OpenScope)(IAzApplication2 *This,BSTR bstrScopeName,VARIANT varReserved,IAzScope **ppScope);
+                   HRESULT (WINAPI *CreateScope)(IAzApplication2 *This,BSTR bstrScopeName,VARIANT varReserved,IAzScope **ppScope);
+                   HRESULT (WINAPI *DeleteScope)(IAzApplication2 *This,BSTR bstrScopeName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Operations)(IAzApplication2 *This,IAzOperations **ppOperationCollection);
+                   HRESULT (WINAPI *OpenOperation)(IAzApplication2 *This,BSTR bstrOperationName,VARIANT varReserved,IAzOperation **ppOperation);
+                   HRESULT (WINAPI *CreateOperation)(IAzApplication2 *This,BSTR bstrOperationName,VARIANT varReserved,IAzOperation **ppOperation);
+                   HRESULT (WINAPI *DeleteOperation)(IAzApplication2 *This,BSTR bstrOperationName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Tasks)(IAzApplication2 *This,IAzTasks **ppTaskCollection);
+                   HRESULT (WINAPI *OpenTask)(IAzApplication2 *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
+                   HRESULT (WINAPI *CreateTask)(IAzApplication2 *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
+                   HRESULT (WINAPI *DeleteTask)(IAzApplication2 *This,BSTR bstrTaskName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_ApplicationGroups)(IAzApplication2 *This,IAzApplicationGroups **ppGroupCollection);
+                   HRESULT (WINAPI *OpenApplicationGroup)(IAzApplication2 *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *CreateApplicationGroup)(IAzApplication2 *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *DeleteApplicationGroup)(IAzApplication2 *This,BSTR bstrGroupName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Roles)(IAzApplication2 *This,IAzRoles **ppRoleCollection);
+                   HRESULT (WINAPI *OpenRole)(IAzApplication2 *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
+                   HRESULT (WINAPI *CreateRole)(IAzApplication2 *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
+                   HRESULT (WINAPI *DeleteRole)(IAzApplication2 *This,BSTR bstrRoleName,VARIANT varReserved);
+                   HRESULT (WINAPI *InitializeClientContextFromToken)(IAzApplication2 *This,ULONGLONG ullTokenHandle,VARIANT varReserved,IAzClientContext **ppClientContext);
+                   HRESULT (WINAPI *AddPropertyItem)(IAzApplication2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePropertyItem)(IAzApplication2 *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzApplication2 *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *InitializeClientContextFromName)(IAzApplication2 *This,BSTR ClientName,BSTR DomainName,VARIANT varReserved,IAzClientContext **ppClientContext);
+                   HRESULT (WINAPI *get_DelegatedPolicyUsers)(IAzApplication2 *This,VARIANT *pvarDelegatedPolicyUsers);
+                   HRESULT (WINAPI *AddDelegatedPolicyUser)(IAzApplication2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteDelegatedPolicyUser)(IAzApplication2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *InitializeClientContextFromStringSid)(IAzApplication2 *This,BSTR SidString,LONG lOptions,VARIANT varReserved,IAzClientContext **ppClientContext);
+                   HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzApplication2 *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReadersName)(IAzApplication2 *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministratorName)(IAzApplication2 *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzApplication2 *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReaderName)(IAzApplication2 *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReaderName)(IAzApplication2 *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *get_DelegatedPolicyUsersName)(IAzApplication2 *This,VARIANT *pvarDelegatedPolicyUsers);
+                   HRESULT (WINAPI *AddDelegatedPolicyUserName)(IAzApplication2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteDelegatedPolicyUserName)(IAzApplication2 *This,BSTR bstrDelegatedPolicyUser,VARIANT varReserved);
+                   HRESULT (WINAPI *InitializeClientContextFromToken2)(IAzApplication2 *This,ULONG ulTokenHandleLowPart,ULONG ulTokenHandleHighPart,VARIANT varReserved,IAzClientContext2 **ppClientContext);
+                   HRESULT (WINAPI *InitializeClientContext2)(IAzApplication2 *This,BSTR IdentifyingString,VARIANT varReserved,IAzClientContext2 **ppClientContext);
     END_INTERFACE
   } IAzApplication2Vtbl;
   struct IAzApplication2 {
@@ -1105,16 +1105,16 @@ extern "C"{
 #else
   typedef struct IAzApplicationsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzApplications *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzApplications *This);
-      ULONG (WINAPI *Release)(IAzApplications *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzApplications *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzApplications *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzApplications *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzApplications *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IAzApplications *This,__LONG32 Index,VARIANT *pvarObtPtr);
-      HRESULT (WINAPI *get_Count)(IAzApplications *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(IAzApplications *This,LPUNKNOWN *ppEnumPtr);
+                   HRESULT (WINAPI *QueryInterface)(IAzApplications *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzApplications *This);
+                   ULONG (WINAPI *Release)(IAzApplications *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzApplications *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzApplications *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzApplications *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzApplications *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IAzApplications *This,__LONG32 Index,VARIANT *pvarObtPtr);
+                   HRESULT (WINAPI *get_Count)(IAzApplications *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(IAzApplications *This,LPUNKNOWN *ppEnumPtr);
     END_INTERFACE
   } IAzApplicationsVtbl;
   struct IAzApplications {
@@ -1163,25 +1163,25 @@ extern "C"{
 #else
   typedef struct IAzOperationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzOperation *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzOperation *This);
-      ULONG (WINAPI *Release)(IAzOperation *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzOperation *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzOperation *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzOperation *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzOperation *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IAzOperation *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IAzOperation *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Description)(IAzOperation *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzOperation *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_ApplicationData)(IAzOperation *This,BSTR *pbstrApplicationData);
-      HRESULT (WINAPI *put_ApplicationData)(IAzOperation *This,BSTR bstrApplicationData);
-      HRESULT (WINAPI *get_OperationID)(IAzOperation *This,LONG *plProp);
-      HRESULT (WINAPI *put_OperationID)(IAzOperation *This,LONG lProp);
-      HRESULT (WINAPI *get_Writable)(IAzOperation *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzOperation *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzOperation *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzOperation *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *QueryInterface)(IAzOperation *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzOperation *This);
+                   ULONG (WINAPI *Release)(IAzOperation *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzOperation *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzOperation *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzOperation *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzOperation *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IAzOperation *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IAzOperation *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Description)(IAzOperation *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzOperation *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_ApplicationData)(IAzOperation *This,BSTR *pbstrApplicationData);
+                   HRESULT (WINAPI *put_ApplicationData)(IAzOperation *This,BSTR bstrApplicationData);
+                   HRESULT (WINAPI *get_OperationID)(IAzOperation *This,LONG *plProp);
+                   HRESULT (WINAPI *put_OperationID)(IAzOperation *This,LONG lProp);
+                   HRESULT (WINAPI *get_Writable)(IAzOperation *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzOperation *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzOperation *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzOperation *This,LONG lFlags,VARIANT varReserved);
     END_INTERFACE
   } IAzOperationVtbl;
   struct IAzOperation {
@@ -1248,16 +1248,16 @@ extern "C"{
 #else
   typedef struct IAzOperationsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzOperations *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzOperations *This);
-      ULONG (WINAPI *Release)(IAzOperations *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzOperations *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IAzOperations *This,LONG Index,VARIANT *pvarObtPtr);
-      HRESULT (WINAPI *get_Count)(IAzOperations *This,LONG *plCount);
-      HRESULT (WINAPI *get__NewEnum)(IAzOperations *This,LPUNKNOWN *ppEnumPtr);
+                   HRESULT (WINAPI *QueryInterface)(IAzOperations *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzOperations *This);
+                   ULONG (WINAPI *Release)(IAzOperations *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzOperations *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzOperations *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzOperations *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzOperations *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IAzOperations *This,LONG Index,VARIANT *pvarObtPtr);
+                   HRESULT (WINAPI *get_Count)(IAzOperations *This,LONG *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(IAzOperations *This,LPUNKNOWN *ppEnumPtr);
     END_INTERFACE
   } IAzOperationsVtbl;
   struct IAzOperations {
@@ -1320,39 +1320,39 @@ extern "C"{
 #else
   typedef struct IAzTaskVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzTask *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzTask *This);
-      ULONG (WINAPI *Release)(IAzTask *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzTask *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzTask *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzTask *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzTask *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IAzTask *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IAzTask *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Description)(IAzTask *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzTask *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_ApplicationData)(IAzTask *This,BSTR *pbstrApplicationData);
-      HRESULT (WINAPI *put_ApplicationData)(IAzTask *This,BSTR bstrApplicationData);
-      HRESULT (WINAPI *get_BizRule)(IAzTask *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_BizRule)(IAzTask *This,BSTR bstrProp);
-      HRESULT (WINAPI *get_BizRuleLanguage)(IAzTask *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_BizRuleLanguage)(IAzTask *This,BSTR bstrProp);
-      HRESULT (WINAPI *get_BizRuleImportedPath)(IAzTask *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_BizRuleImportedPath)(IAzTask *This,BSTR bstrProp);
-      HRESULT (WINAPI *get_IsRoleDefinition)(IAzTask *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *put_IsRoleDefinition)(IAzTask *This,WINBOOL fProp);
-      HRESULT (WINAPI *get_Operations)(IAzTask *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_Tasks)(IAzTask *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *AddOperation)(IAzTask *This,BSTR bstrOp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteOperation)(IAzTask *This,BSTR bstrOp,VARIANT varReserved);
-      HRESULT (WINAPI *AddTask)(IAzTask *This,BSTR bstrTask,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteTask)(IAzTask *This,BSTR bstrTask,VARIANT varReserved);
-      HRESULT (WINAPI *get_Writable)(IAzTask *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzTask *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzTask *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddPropertyItem)(IAzTask *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePropertyItem)(IAzTask *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzTask *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *QueryInterface)(IAzTask *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzTask *This);
+                   ULONG (WINAPI *Release)(IAzTask *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzTask *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzTask *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzTask *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzTask *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IAzTask *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IAzTask *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Description)(IAzTask *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzTask *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_ApplicationData)(IAzTask *This,BSTR *pbstrApplicationData);
+                   HRESULT (WINAPI *put_ApplicationData)(IAzTask *This,BSTR bstrApplicationData);
+                   HRESULT (WINAPI *get_BizRule)(IAzTask *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_BizRule)(IAzTask *This,BSTR bstrProp);
+                   HRESULT (WINAPI *get_BizRuleLanguage)(IAzTask *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_BizRuleLanguage)(IAzTask *This,BSTR bstrProp);
+                   HRESULT (WINAPI *get_BizRuleImportedPath)(IAzTask *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_BizRuleImportedPath)(IAzTask *This,BSTR bstrProp);
+                   HRESULT (WINAPI *get_IsRoleDefinition)(IAzTask *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *put_IsRoleDefinition)(IAzTask *This,WINBOOL fProp);
+                   HRESULT (WINAPI *get_Operations)(IAzTask *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_Tasks)(IAzTask *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *AddOperation)(IAzTask *This,BSTR bstrOp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteOperation)(IAzTask *This,BSTR bstrOp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddTask)(IAzTask *This,BSTR bstrTask,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteTask)(IAzTask *This,BSTR bstrTask,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Writable)(IAzTask *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzTask *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzTask *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPropertyItem)(IAzTask *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePropertyItem)(IAzTask *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzTask *This,LONG lFlags,VARIANT varReserved);
     END_INTERFACE
   } IAzTaskVtbl;
   struct IAzTask {
@@ -1461,16 +1461,16 @@ extern "C"{
 #else
   typedef struct IAzTasksVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzTasks *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzTasks *This);
-      ULONG (WINAPI *Release)(IAzTasks *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzTasks *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzTasks *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzTasks *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzTasks *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IAzTasks *This,LONG Index,VARIANT *pvarObtPtr);
-      HRESULT (WINAPI *get_Count)(IAzTasks *This,LONG *plCount);
-      HRESULT (WINAPI *get__NewEnum)(IAzTasks *This,LPUNKNOWN *ppEnumPtr);
+                   HRESULT (WINAPI *QueryInterface)(IAzTasks *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzTasks *This);
+                   ULONG (WINAPI *Release)(IAzTasks *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzTasks *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzTasks *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzTasks *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzTasks *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IAzTasks *This,LONG Index,VARIANT *pvarObtPtr);
+                   HRESULT (WINAPI *get_Count)(IAzTasks *This,LONG *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(IAzTasks *This,LPUNKNOWN *ppEnumPtr);
     END_INTERFACE
   } IAzTasksVtbl;
   struct IAzTasks {
@@ -1545,51 +1545,51 @@ extern "C"{
 #else
   typedef struct IAzScopeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzScope *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzScope *This);
-      ULONG (WINAPI *Release)(IAzScope *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzScope *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzScope *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzScope *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzScope *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IAzScope *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IAzScope *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Description)(IAzScope *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzScope *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_ApplicationData)(IAzScope *This,BSTR *pbstrApplicationData);
-      HRESULT (WINAPI *put_ApplicationData)(IAzScope *This,BSTR bstrApplicationData);
-      HRESULT (WINAPI *get_Writable)(IAzScope *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzScope *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzScope *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddPropertyItem)(IAzScope *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePropertyItem)(IAzScope *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_PolicyAdministrators)(IAzScope *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReaders)(IAzScope *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministrator)(IAzScope *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministrator)(IAzScope *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReader)(IAzScope *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReader)(IAzScope *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *get_ApplicationGroups)(IAzScope *This,IAzApplicationGroups **ppGroupCollection);
-      HRESULT (WINAPI *OpenApplicationGroup)(IAzScope *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *CreateApplicationGroup)(IAzScope *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
-      HRESULT (WINAPI *DeleteApplicationGroup)(IAzScope *This,BSTR bstrGroupName,VARIANT varReserved);
-      HRESULT (WINAPI *get_Roles)(IAzScope *This,IAzRoles **ppRoleCollection);
-      HRESULT (WINAPI *OpenRole)(IAzScope *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
-      HRESULT (WINAPI *CreateRole)(IAzScope *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
-      HRESULT (WINAPI *DeleteRole)(IAzScope *This,BSTR bstrRoleName,VARIANT varReserved);
-      HRESULT (WINAPI *get_Tasks)(IAzScope *This,IAzTasks **ppTaskCollection);
-      HRESULT (WINAPI *OpenTask)(IAzScope *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
-      HRESULT (WINAPI *CreateTask)(IAzScope *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
-      HRESULT (WINAPI *DeleteTask)(IAzScope *This,BSTR bstrTaskName,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzScope *This,LONG lFlags,VARIANT varReserved);
-      HRESULT (WINAPI *get_CanBeDelegated)(IAzScope *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *get_BizrulesWritable)(IAzScope *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzScope *This,VARIANT *pvarAdmins);
-      HRESULT (WINAPI *get_PolicyReadersName)(IAzScope *This,VARIANT *pvarReaders);
-      HRESULT (WINAPI *AddPolicyAdministratorName)(IAzScope *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzScope *This,BSTR bstrAdmin,VARIANT varReserved);
-      HRESULT (WINAPI *AddPolicyReaderName)(IAzScope *This,BSTR bstrReader,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePolicyReaderName)(IAzScope *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *QueryInterface)(IAzScope *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzScope *This);
+                   ULONG (WINAPI *Release)(IAzScope *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzScope *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzScope *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzScope *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzScope *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IAzScope *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IAzScope *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Description)(IAzScope *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzScope *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_ApplicationData)(IAzScope *This,BSTR *pbstrApplicationData);
+                   HRESULT (WINAPI *put_ApplicationData)(IAzScope *This,BSTR bstrApplicationData);
+                   HRESULT (WINAPI *get_Writable)(IAzScope *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzScope *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzScope *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPropertyItem)(IAzScope *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePropertyItem)(IAzScope *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_PolicyAdministrators)(IAzScope *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReaders)(IAzScope *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministrator)(IAzScope *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministrator)(IAzScope *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReader)(IAzScope *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReader)(IAzScope *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *get_ApplicationGroups)(IAzScope *This,IAzApplicationGroups **ppGroupCollection);
+                   HRESULT (WINAPI *OpenApplicationGroup)(IAzScope *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *CreateApplicationGroup)(IAzScope *This,BSTR bstrGroupName,VARIANT varReserved,IAzApplicationGroup **ppGroup);
+                   HRESULT (WINAPI *DeleteApplicationGroup)(IAzScope *This,BSTR bstrGroupName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Roles)(IAzScope *This,IAzRoles **ppRoleCollection);
+                   HRESULT (WINAPI *OpenRole)(IAzScope *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
+                   HRESULT (WINAPI *CreateRole)(IAzScope *This,BSTR bstrRoleName,VARIANT varReserved,IAzRole **ppRole);
+                   HRESULT (WINAPI *DeleteRole)(IAzScope *This,BSTR bstrRoleName,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Tasks)(IAzScope *This,IAzTasks **ppTaskCollection);
+                   HRESULT (WINAPI *OpenTask)(IAzScope *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
+                   HRESULT (WINAPI *CreateTask)(IAzScope *This,BSTR bstrTaskName,VARIANT varReserved,IAzTask **ppTask);
+                   HRESULT (WINAPI *DeleteTask)(IAzScope *This,BSTR bstrTaskName,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzScope *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *get_CanBeDelegated)(IAzScope *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *get_BizrulesWritable)(IAzScope *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *get_PolicyAdministratorsName)(IAzScope *This,VARIANT *pvarAdmins);
+                   HRESULT (WINAPI *get_PolicyReadersName)(IAzScope *This,VARIANT *pvarReaders);
+                   HRESULT (WINAPI *AddPolicyAdministratorName)(IAzScope *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyAdministratorName)(IAzScope *This,BSTR bstrAdmin,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPolicyReaderName)(IAzScope *This,BSTR bstrReader,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePolicyReaderName)(IAzScope *This,BSTR bstrReader,VARIANT varReserved);
     END_INTERFACE
   } IAzScopeVtbl;
   struct IAzScope {
@@ -1734,16 +1734,16 @@ extern "C"{
 #else
   typedef struct IAzScopesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzScopes *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzScopes *This);
-      ULONG (WINAPI *Release)(IAzScopes *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzScopes *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzScopes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzScopes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzScopes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IAzScopes *This,LONG Index,VARIANT *pvarObtPtr);
-      HRESULT (WINAPI *get_Count)(IAzScopes *This,LONG *plCount);
-      HRESULT (WINAPI *get__NewEnum)(IAzScopes *This,LPUNKNOWN *ppEnumPtr);
+                   HRESULT (WINAPI *QueryInterface)(IAzScopes *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzScopes *This);
+                   ULONG (WINAPI *Release)(IAzScopes *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzScopes *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzScopes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzScopes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzScopes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IAzScopes *This,LONG Index,VARIANT *pvarObtPtr);
+                   HRESULT (WINAPI *get_Count)(IAzScopes *This,LONG *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(IAzScopes *This,LPUNKNOWN *ppEnumPtr);
     END_INTERFACE
   } IAzScopesVtbl;
   struct IAzScopes {
@@ -1812,45 +1812,45 @@ extern "C"{
 #else
   typedef struct IAzApplicationGroupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzApplicationGroup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzApplicationGroup *This);
-      ULONG (WINAPI *Release)(IAzApplicationGroup *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzApplicationGroup *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzApplicationGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzApplicationGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzApplicationGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IAzApplicationGroup *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IAzApplicationGroup *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Type)(IAzApplicationGroup *This,LONG *plProp);
-      HRESULT (WINAPI *put_Type)(IAzApplicationGroup *This,LONG lProp);
-      HRESULT (WINAPI *get_LdapQuery)(IAzApplicationGroup *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_LdapQuery)(IAzApplicationGroup *This,BSTR bstrProp);
-      HRESULT (WINAPI *get_AppMembers)(IAzApplicationGroup *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_AppNonMembers)(IAzApplicationGroup *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_Members)(IAzApplicationGroup *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_NonMembers)(IAzApplicationGroup *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_Description)(IAzApplicationGroup *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzApplicationGroup *This,BSTR bstrDescription);
-      HRESULT (WINAPI *AddAppMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteAppMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddAppNonMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteAppNonMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddNonMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteNonMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_Writable)(IAzApplicationGroup *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzApplicationGroup *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzApplicationGroup *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddPropertyItem)(IAzApplicationGroup *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePropertyItem)(IAzApplicationGroup *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzApplicationGroup *This,LONG lFlags,VARIANT varReserved);
-      HRESULT (WINAPI *AddMemberName)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteMemberName)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddNonMemberName)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteNonMemberName)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_MembersName)(IAzApplicationGroup *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_NonMembersName)(IAzApplicationGroup *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *QueryInterface)(IAzApplicationGroup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzApplicationGroup *This);
+                   ULONG (WINAPI *Release)(IAzApplicationGroup *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzApplicationGroup *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzApplicationGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzApplicationGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzApplicationGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IAzApplicationGroup *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IAzApplicationGroup *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Type)(IAzApplicationGroup *This,LONG *plProp);
+                   HRESULT (WINAPI *put_Type)(IAzApplicationGroup *This,LONG lProp);
+                   HRESULT (WINAPI *get_LdapQuery)(IAzApplicationGroup *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_LdapQuery)(IAzApplicationGroup *This,BSTR bstrProp);
+                   HRESULT (WINAPI *get_AppMembers)(IAzApplicationGroup *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_AppNonMembers)(IAzApplicationGroup *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_Members)(IAzApplicationGroup *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_NonMembers)(IAzApplicationGroup *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_Description)(IAzApplicationGroup *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzApplicationGroup *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *AddAppMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteAppMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddAppNonMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteAppNonMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddNonMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteNonMember)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Writable)(IAzApplicationGroup *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzApplicationGroup *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzApplicationGroup *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddPropertyItem)(IAzApplicationGroup *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePropertyItem)(IAzApplicationGroup *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzApplicationGroup *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *AddMemberName)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteMemberName)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddNonMemberName)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteNonMemberName)(IAzApplicationGroup *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_MembersName)(IAzApplicationGroup *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_NonMembersName)(IAzApplicationGroup *This,VARIANT *pvarProp);
     END_INTERFACE
   } IAzApplicationGroupVtbl;
   struct IAzApplicationGroup {
@@ -1977,16 +1977,16 @@ extern "C"{
 #else
   typedef struct IAzApplicationGroupsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzApplicationGroups *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzApplicationGroups *This);
-      ULONG (WINAPI *Release)(IAzApplicationGroups *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzApplicationGroups *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzApplicationGroups *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzApplicationGroups *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzApplicationGroups *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IAzApplicationGroups *This,LONG Index,VARIANT *pvarObtPtr);
-      HRESULT (WINAPI *get_Count)(IAzApplicationGroups *This,LONG *plCount);
-      HRESULT (WINAPI *get__NewEnum)(IAzApplicationGroups *This,LPUNKNOWN *ppEnumPtr);
+                   HRESULT (WINAPI *QueryInterface)(IAzApplicationGroups *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzApplicationGroups *This);
+                   ULONG (WINAPI *Release)(IAzApplicationGroups *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzApplicationGroups *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzApplicationGroups *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzApplicationGroups *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzApplicationGroups *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IAzApplicationGroups *This,LONG Index,VARIANT *pvarObtPtr);
+                   HRESULT (WINAPI *get_Count)(IAzApplicationGroups *This,LONG *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(IAzApplicationGroups *This,LPUNKNOWN *ppEnumPtr);
     END_INTERFACE
   } IAzApplicationGroupsVtbl;
   struct IAzApplicationGroups {
@@ -2050,40 +2050,40 @@ extern "C"{
 #else
   typedef struct IAzRoleVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzRole *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzRole *This);
-      ULONG (WINAPI *Release)(IAzRole *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzRole *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzRole *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzRole *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzRole *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IAzRole *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(IAzRole *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Description)(IAzRole *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *put_Description)(IAzRole *This,BSTR bstrDescription);
-      HRESULT (WINAPI *get_ApplicationData)(IAzRole *This,BSTR *pbstrApplicationData);
-      HRESULT (WINAPI *put_ApplicationData)(IAzRole *This,BSTR bstrApplicationData);
-      HRESULT (WINAPI *AddAppMember)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteAppMember)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddTask)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteTask)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddOperation)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteOperation)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *AddMember)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteMember)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_Writable)(IAzRole *This,WINBOOL *pfProp);
-      HRESULT (WINAPI *GetProperty)(IAzRole *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *SetProperty)(IAzRole *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_AppMembers)(IAzRole *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_Members)(IAzRole *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_Operations)(IAzRole *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *get_Tasks)(IAzRole *This,VARIANT *pvarProp);
-      HRESULT (WINAPI *AddPropertyItem)(IAzRole *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeletePropertyItem)(IAzRole *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
-      HRESULT (WINAPI *Submit)(IAzRole *This,LONG lFlags,VARIANT varReserved);
-      HRESULT (WINAPI *AddMemberName)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *DeleteMemberName)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
-      HRESULT (WINAPI *get_MembersName)(IAzRole *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *QueryInterface)(IAzRole *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzRole *This);
+                   ULONG (WINAPI *Release)(IAzRole *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzRole *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzRole *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzRole *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzRole *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IAzRole *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(IAzRole *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Description)(IAzRole *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *put_Description)(IAzRole *This,BSTR bstrDescription);
+                   HRESULT (WINAPI *get_ApplicationData)(IAzRole *This,BSTR *pbstrApplicationData);
+                   HRESULT (WINAPI *put_ApplicationData)(IAzRole *This,BSTR bstrApplicationData);
+                   HRESULT (WINAPI *AddAppMember)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteAppMember)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddTask)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteTask)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddOperation)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteOperation)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *AddMember)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteMember)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_Writable)(IAzRole *This,WINBOOL *pfProp);
+                   HRESULT (WINAPI *GetProperty)(IAzRole *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *SetProperty)(IAzRole *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_AppMembers)(IAzRole *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_Members)(IAzRole *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_Operations)(IAzRole *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *get_Tasks)(IAzRole *This,VARIANT *pvarProp);
+                   HRESULT (WINAPI *AddPropertyItem)(IAzRole *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeletePropertyItem)(IAzRole *This,LONG lPropId,VARIANT varProp,VARIANT varReserved);
+                   HRESULT (WINAPI *Submit)(IAzRole *This,LONG lFlags,VARIANT varReserved);
+                   HRESULT (WINAPI *AddMemberName)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *DeleteMemberName)(IAzRole *This,BSTR bstrProp,VARIANT varReserved);
+                   HRESULT (WINAPI *get_MembersName)(IAzRole *This,VARIANT *pvarProp);
     END_INTERFACE
   } IAzRoleVtbl;
   struct IAzRole {
@@ -2195,16 +2195,16 @@ extern "C"{
 #else
   typedef struct IAzRolesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzRoles *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzRoles *This);
-      ULONG (WINAPI *Release)(IAzRoles *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzRoles *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzRoles *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzRoles *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzRoles *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IAzRoles *This,LONG Index,VARIANT *pvarObtPtr);
-      HRESULT (WINAPI *get_Count)(IAzRoles *This,LONG *plCount);
-      HRESULT (WINAPI *get__NewEnum)(IAzRoles *This,LPUNKNOWN *ppEnumPtr);
+                   HRESULT (WINAPI *QueryInterface)(IAzRoles *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzRoles *This);
+                   ULONG (WINAPI *Release)(IAzRoles *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzRoles *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzRoles *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzRoles *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzRoles *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IAzRoles *This,LONG Index,VARIANT *pvarObtPtr);
+                   HRESULT (WINAPI *get_Count)(IAzRoles *This,LONG *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(IAzRoles *This,LPUNKNOWN *ppEnumPtr);
     END_INTERFACE
   } IAzRolesVtbl;
   struct IAzRoles {
@@ -2254,26 +2254,26 @@ extern "C"{
 #else
   typedef struct IAzClientContextVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzClientContext *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzClientContext *This);
-      ULONG (WINAPI *Release)(IAzClientContext *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzClientContext *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzClientContext *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzClientContext *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzClientContext *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *AccessCheck)(IAzClientContext *This,BSTR bstrObjectName,VARIANT varScopeNames,VARIANT varOperations,VARIANT varParameterNames,VARIANT varParameterValues,VARIANT varInterfaceNames,VARIANT varInterfaceFlags,VARIANT varInterfaces,VARIANT *pvarResults);
-      HRESULT (WINAPI *GetBusinessRuleString)(IAzClientContext *This,BSTR *pbstrBusinessRuleString);
-      HRESULT (WINAPI *get_UserDn)(IAzClientContext *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserSamCompat)(IAzClientContext *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserDisplay)(IAzClientContext *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserGuid)(IAzClientContext *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserCanonical)(IAzClientContext *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserUpn)(IAzClientContext *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserDnsSamCompat)(IAzClientContext *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *GetProperty)(IAzClientContext *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *GetRoles)(IAzClientContext *This,BSTR bstrScopeName,VARIANT *pvarRoleNames);
-      HRESULT (WINAPI *get_RoleForAccessCheck)(IAzClientContext *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_RoleForAccessCheck)(IAzClientContext *This,BSTR bstrProp);
+                   HRESULT (WINAPI *QueryInterface)(IAzClientContext *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzClientContext *This);
+                   ULONG (WINAPI *Release)(IAzClientContext *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzClientContext *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzClientContext *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzClientContext *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzClientContext *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *AccessCheck)(IAzClientContext *This,BSTR bstrObjectName,VARIANT varScopeNames,VARIANT varOperations,VARIANT varParameterNames,VARIANT varParameterValues,VARIANT varInterfaceNames,VARIANT varInterfaceFlags,VARIANT varInterfaces,VARIANT *pvarResults);
+                   HRESULT (WINAPI *GetBusinessRuleString)(IAzClientContext *This,BSTR *pbstrBusinessRuleString);
+                   HRESULT (WINAPI *get_UserDn)(IAzClientContext *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserSamCompat)(IAzClientContext *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserDisplay)(IAzClientContext *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserGuid)(IAzClientContext *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserCanonical)(IAzClientContext *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserUpn)(IAzClientContext *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserDnsSamCompat)(IAzClientContext *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *GetProperty)(IAzClientContext *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *GetRoles)(IAzClientContext *This,BSTR bstrScopeName,VARIANT *pvarRoleNames);
+                   HRESULT (WINAPI *get_RoleForAccessCheck)(IAzClientContext *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_RoleForAccessCheck)(IAzClientContext *This,BSTR bstrProp);
     END_INTERFACE
   } IAzClientContextVtbl;
   struct IAzClientContext {
@@ -2346,32 +2346,32 @@ extern "C"{
 #else
   typedef struct IAzClientContext2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzClientContext2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzClientContext2 *This);
-      ULONG (WINAPI *Release)(IAzClientContext2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzClientContext2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzClientContext2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzClientContext2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzClientContext2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *AccessCheck)(IAzClientContext2 *This,BSTR bstrObjectName,VARIANT varScopeNames,VARIANT varOperations,VARIANT varParameterNames,VARIANT varParameterValues,VARIANT varInterfaceNames,VARIANT varInterfaceFlags,VARIANT varInterfaces,VARIANT *pvarResults);
-      HRESULT (WINAPI *GetBusinessRuleString)(IAzClientContext2 *This,BSTR *pbstrBusinessRuleString);
-      HRESULT (WINAPI *get_UserDn)(IAzClientContext2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserSamCompat)(IAzClientContext2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserDisplay)(IAzClientContext2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserGuid)(IAzClientContext2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserCanonical)(IAzClientContext2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserUpn)(IAzClientContext2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *get_UserDnsSamCompat)(IAzClientContext2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *GetProperty)(IAzClientContext2 *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
-      HRESULT (WINAPI *GetRoles)(IAzClientContext2 *This,BSTR bstrScopeName,VARIANT *pvarRoleNames);
-      HRESULT (WINAPI *get_RoleForAccessCheck)(IAzClientContext2 *This,BSTR *pbstrProp);
-      HRESULT (WINAPI *put_RoleForAccessCheck)(IAzClientContext2 *This,BSTR bstrProp);
-      HRESULT (WINAPI *GetAssignedScopesPage)(IAzClientContext2 *This,LONG lOptions,LONG PageSize,VARIANT *pvarCursor,VARIANT *pvarScopeNames);
-      HRESULT (WINAPI *AddRoles)(IAzClientContext2 *This,VARIANT varRoles,BSTR bstrScopeName);
-      HRESULT (WINAPI *AddApplicationGroups)(IAzClientContext2 *This,VARIANT varApplicationGroups);
-      HRESULT (WINAPI *AddStringSids)(IAzClientContext2 *This,VARIANT varStringSids);
-      HRESULT (WINAPI *put_LDAPQueryDN)(IAzClientContext2 *This,BSTR bstrLDAPQueryDN);
-      HRESULT (WINAPI *get_LDAPQueryDN)(IAzClientContext2 *This,BSTR *pbstrLDAPQueryDN);
+                   HRESULT (WINAPI *QueryInterface)(IAzClientContext2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzClientContext2 *This);
+                   ULONG (WINAPI *Release)(IAzClientContext2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzClientContext2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzClientContext2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzClientContext2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzClientContext2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *AccessCheck)(IAzClientContext2 *This,BSTR bstrObjectName,VARIANT varScopeNames,VARIANT varOperations,VARIANT varParameterNames,VARIANT varParameterValues,VARIANT varInterfaceNames,VARIANT varInterfaceFlags,VARIANT varInterfaces,VARIANT *pvarResults);
+                   HRESULT (WINAPI *GetBusinessRuleString)(IAzClientContext2 *This,BSTR *pbstrBusinessRuleString);
+                   HRESULT (WINAPI *get_UserDn)(IAzClientContext2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserSamCompat)(IAzClientContext2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserDisplay)(IAzClientContext2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserGuid)(IAzClientContext2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserCanonical)(IAzClientContext2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserUpn)(IAzClientContext2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *get_UserDnsSamCompat)(IAzClientContext2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *GetProperty)(IAzClientContext2 *This,LONG lPropId,VARIANT varReserved,VARIANT *pvarProp);
+                   HRESULT (WINAPI *GetRoles)(IAzClientContext2 *This,BSTR bstrScopeName,VARIANT *pvarRoleNames);
+                   HRESULT (WINAPI *get_RoleForAccessCheck)(IAzClientContext2 *This,BSTR *pbstrProp);
+                   HRESULT (WINAPI *put_RoleForAccessCheck)(IAzClientContext2 *This,BSTR bstrProp);
+                   HRESULT (WINAPI *GetAssignedScopesPage)(IAzClientContext2 *This,LONG lOptions,LONG PageSize,VARIANT *pvarCursor,VARIANT *pvarScopeNames);
+                   HRESULT (WINAPI *AddRoles)(IAzClientContext2 *This,VARIANT varRoles,BSTR bstrScopeName);
+                   HRESULT (WINAPI *AddApplicationGroups)(IAzClientContext2 *This,VARIANT varApplicationGroups);
+                   HRESULT (WINAPI *AddStringSids)(IAzClientContext2 *This,VARIANT varStringSids);
+                   HRESULT (WINAPI *put_LDAPQueryDN)(IAzClientContext2 *This,BSTR bstrLDAPQueryDN);
+                   HRESULT (WINAPI *get_LDAPQueryDN)(IAzClientContext2 *This,BSTR *pbstrLDAPQueryDN);
     END_INTERFACE
   } IAzClientContext2Vtbl;
   struct IAzClientContext2 {
@@ -2434,17 +2434,17 @@ extern "C"{
 #else
   typedef struct IAzBizRuleContextVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAzBizRuleContext *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAzBizRuleContext *This);
-      ULONG (WINAPI *Release)(IAzBizRuleContext *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAzBizRuleContext *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAzBizRuleContext *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAzBizRuleContext *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAzBizRuleContext *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_BusinessRuleResult)(IAzBizRuleContext *This,WINBOOL bResult);
-      HRESULT (WINAPI *put_BusinessRuleString)(IAzBizRuleContext *This,BSTR bstrBusinessRuleString);
-      HRESULT (WINAPI *get_BusinessRuleString)(IAzBizRuleContext *This,BSTR *pbstrBusinessRuleString);
-      HRESULT (WINAPI *GetParameter)(IAzBizRuleContext *This,BSTR bstrParameterName,VARIANT *pvarParameterValue);
+                   HRESULT (WINAPI *QueryInterface)(IAzBizRuleContext *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAzBizRuleContext *This);
+                   ULONG (WINAPI *Release)(IAzBizRuleContext *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAzBizRuleContext *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAzBizRuleContext *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAzBizRuleContext *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAzBizRuleContext *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_BusinessRuleResult)(IAzBizRuleContext *This,WINBOOL bResult);
+                   HRESULT (WINAPI *put_BusinessRuleString)(IAzBizRuleContext *This,BSTR bstrBusinessRuleString);
+                   HRESULT (WINAPI *get_BusinessRuleString)(IAzBizRuleContext *This,BSTR *pbstrBusinessRuleString);
+                   HRESULT (WINAPI *GetParameter)(IAzBizRuleContext *This,BSTR bstrParameterName,VARIANT *pvarParameterValue);
     END_INTERFACE
   } IAzBizRuleContextVtbl;
   struct IAzBizRuleContext {
@@ -2477,103 +2477,103 @@ extern "C"{
 #ifndef __AZROLESLib_LIBRARY_DEFINED__
 #define __AZROLESLib_LIBRARY_DEFINED__
   typedef enum tagAZ_PROP_CONSTANTS {
-    AZ_PROP_NAME                                    = 1,
-    AZ_PROP_DESCRIPTION                             = 2,
-    AZ_PROP_WRITABLE                                = 3,
-    AZ_PROP_APPLICATION_DATA                        = 4,
-    AZ_PROP_CHILD_CREATE                            = 5,
-    AZ_MAX_APPLICATION_NAME_LENGTH                  = 512,
-    AZ_MAX_OPERATION_NAME_LENGTH                    = 64,
-    AZ_MAX_TASK_NAME_LENGTH                         = 64,
-    AZ_MAX_SCOPE_NAME_LENGTH                        = 65536,
-    AZ_MAX_GROUP_NAME_LENGTH                        = 64,
-    AZ_MAX_ROLE_NAME_LENGTH                         = 64,
-    AZ_MAX_NAME_LENGTH                              = 65536,
-    AZ_MAX_DESCRIPTION_LENGTH                       = 1024,
-    AZ_MAX_APPLICATION_DATA_LENGTH                  = 4096,
-    AZ_SUBMIT_FLAG_ABORT                            = 0x1,
-    AZ_SUBMIT_FLAG_FLUSH                            = 0x2,
-    AZ_MAX_POLICY_URL_LENGTH                        = 65536,
-    AZ_AZSTORE_FLAG_CREATE                          = 0x1,
-    AZ_AZSTORE_FLAG_MANAGE_STORE_ONLY               = 0x2,
-    AZ_AZSTORE_FLAG_BATCH_UPDATE                    = 0x4,
-    AZ_AZSTORE_FLAG_AUDIT_IS_CRITICAL               = 0x8,
-    AZ_AZSTORE_FORCE_APPLICATION_CLOSE              = 0x10,
-    AZ_AZSTORE_NT6_FUNCTION_LEVEL                   = 0x20,
-    AZ_AZSTORE_FLAG_MANAGE_ONLY_PASSIVE_SUBMIT      = 0x8000,
-    AZ_PROP_AZSTORE_DOMAIN_TIMEOUT                  = 100,
-    AZ_AZSTORE_DEFAULT_DOMAIN_TIMEOUT               = ( 15 * 1000 ),
-    AZ_PROP_AZSTORE_SCRIPT_ENGINE_TIMEOUT           = 101,
-    AZ_AZSTORE_MIN_DOMAIN_TIMEOUT                   = 500,
-    AZ_AZSTORE_MIN_SCRIPT_ENGINE_TIMEOUT            = ( 5 * 1000 ),
-    AZ_AZSTORE_DEFAULT_SCRIPT_ENGINE_TIMEOUT        = ( 45 * 1000 ),
-    AZ_PROP_AZSTORE_MAX_SCRIPT_ENGINES              = 102,
-    AZ_AZSTORE_DEFAULT_MAX_SCRIPT_ENGINES           = 120,
-    AZ_PROP_AZSTORE_MAJOR_VERSION                   = 103,
-    AZ_PROP_AZSTORE_MINOR_VERSION                   = 104,
-    AZ_PROP_AZSTORE_TARGET_MACHINE                  = 105,
-    AZ_PROP_AZTORE_IS_ADAM_INSTANCE                 = 106,
-    AZ_PROP_OPERATION_ID                            = 200,
-    AZ_PROP_TASK_OPERATIONS                         = 300,
-    AZ_PROP_TASK_BIZRULE                            = 301,
-    AZ_PROP_TASK_BIZRULE_LANGUAGE                   = 302,
-    AZ_PROP_TASK_TASKS                              = 303,
-    AZ_PROP_TASK_BIZRULE_IMPORTED_PATH              = 304,
-    AZ_PROP_TASK_IS_ROLE_DEFINITION                 = 305,
-    AZ_MAX_TASK_BIZRULE_LENGTH                      = 65536,
-    AZ_MAX_TASK_BIZRULE_LANGUAGE_LENGTH             = 64,
-    AZ_MAX_TASK_BIZRULE_IMPORTED_PATH_LENGTH        = 512,
-    AZ_MAX_BIZRULE_STRING                           = 65536,
-    AZ_PROP_GROUP_TYPE                              = 400,
-    AZ_GROUPTYPE_LDAP_QUERY                         = 1,
-    AZ_GROUPTYPE_BASIC                              = 2,
-    AZ_GROUPTYPE_BIZRULE                            = 3,
-    AZ_PROP_GROUP_APP_MEMBERS                       = 401,
-    AZ_PROP_GROUP_APP_NON_MEMBERS                   = 402,
-    AZ_PROP_GROUP_LDAP_QUERY                        = 403,
-    AZ_MAX_GROUP_LDAP_QUERY_LENGTH                  = 4096,
-    AZ_PROP_GROUP_MEMBERS                           = 404,
-    AZ_PROP_GROUP_NON_MEMBERS                       = 405,
-    AZ_PROP_GROUP_MEMBERS_NAME                      = 406,
-    AZ_PROP_GROUP_NON_MEMBERS_NAME                  = 407,
-    AZ_PROP_GROUP_BIZRULE                           = 408,
-    AZ_PROP_GROUP_BIZRULE_LANGUAGE                  = 409,
-    AZ_PROP_GROUP_BIZRULE_IMPORTED_PATH             = 410,
-    AZ_MAX_GROUP_BIZRULE_LENGTH                     = 65536,
-    AZ_MAX_GROUP_BIZRULE_LANGUAGE_LENGTH            = 64,
-    AZ_MAX_GROUP_BIZRULE_IMPORTED_PATH_LENGTH       = 512,
-    AZ_PROP_ROLE_APP_MEMBERS                        = 500,
-    AZ_PROP_ROLE_MEMBERS                            = 501,
-    AZ_PROP_ROLE_OPERATIONS                         = 502,
-    AZ_PROP_ROLE_TASKS                              = 504,
-    AZ_PROP_ROLE_MEMBERS_NAME                       = 505,
-    AZ_PROP_SCOPE_BIZRULES_WRITABLE                 = 600,
-    AZ_PROP_SCOPE_CAN_BE_DELEGATED                  = 601,
-    AZ_PROP_CLIENT_CONTEXT_USER_DN                  = 700,
-    AZ_PROP_CLIENT_CONTEXT_USER_SAM_COMPAT          = 701,
-    AZ_PROP_CLIENT_CONTEXT_USER_DISPLAY             = 702,
-    AZ_PROP_CLIENT_CONTEXT_USER_GUID                = 703,
-    AZ_PROP_CLIENT_CONTEXT_USER_CANONICAL           = 704,
-    AZ_PROP_CLIENT_CONTEXT_USER_UPN                 = 705,
-    AZ_PROP_CLIENT_CONTEXT_USER_DNS_SAM_COMPAT      = 707,
+    AZ_PROP_NAME                                                                                                                  = 1,
+    AZ_PROP_DESCRIPTION                                                                                 = 2,
+    AZ_PROP_WRITABLE                                                                                                 = 3,
+    AZ_PROP_APPLICATION_DATA                                                                            = 4,
+    AZ_PROP_CHILD_CREATE                                                                                = 5,
+    AZ_MAX_APPLICATION_NAME_LENGTH                                                         = 512,
+    AZ_MAX_OPERATION_NAME_LENGTH                                                           = 64,
+    AZ_MAX_TASK_NAME_LENGTH                                                                             = 64,
+    AZ_MAX_SCOPE_NAME_LENGTH                                                                            = 65536,
+    AZ_MAX_GROUP_NAME_LENGTH                                                                            = 64,
+    AZ_MAX_ROLE_NAME_LENGTH                                                                             = 64,
+    AZ_MAX_NAME_LENGTH                                                                                               = 65536,
+    AZ_MAX_DESCRIPTION_LENGTH                                                              = 1024,
+    AZ_MAX_APPLICATION_DATA_LENGTH                                                         = 4096,
+    AZ_SUBMIT_FLAG_ABORT                                                                                = 0x1,
+    AZ_SUBMIT_FLAG_FLUSH                                                                                = 0x2,
+    AZ_MAX_POLICY_URL_LENGTH                                                                            = 65536,
+    AZ_AZSTORE_FLAG_CREATE                                                                              = 0x1,
+    AZ_AZSTORE_FLAG_MANAGE_STORE_ONLY                                         = 0x2,
+    AZ_AZSTORE_FLAG_BATCH_UPDATE                                                           = 0x4,
+    AZ_AZSTORE_FLAG_AUDIT_IS_CRITICAL                                         = 0x8,
+    AZ_AZSTORE_FORCE_APPLICATION_CLOSE                                        = 0x10,
+    AZ_AZSTORE_NT6_FUNCTION_LEVEL                                                          = 0x20,
+    AZ_AZSTORE_FLAG_MANAGE_ONLY_PASSIVE_SUBMIT                   = 0x8000,
+    AZ_PROP_AZSTORE_DOMAIN_TIMEOUT                                                         = 100,
+    AZ_AZSTORE_DEFAULT_DOMAIN_TIMEOUT                                         = ( 15 * 1000 ),
+    AZ_PROP_AZSTORE_SCRIPT_ENGINE_TIMEOUT                        = 101,
+    AZ_AZSTORE_MIN_DOMAIN_TIMEOUT                                                          = 500,
+    AZ_AZSTORE_MIN_SCRIPT_ENGINE_TIMEOUT                                      = ( 5 * 1000 ),
+    AZ_AZSTORE_DEFAULT_SCRIPT_ENGINE_TIMEOUT                     = ( 45 * 1000 ),
+    AZ_PROP_AZSTORE_MAX_SCRIPT_ENGINES                                        = 102,
+    AZ_AZSTORE_DEFAULT_MAX_SCRIPT_ENGINES                        = 120,
+    AZ_PROP_AZSTORE_MAJOR_VERSION                                                          = 103,
+    AZ_PROP_AZSTORE_MINOR_VERSION                                                          = 104,
+    AZ_PROP_AZSTORE_TARGET_MACHINE                                                         = 105,
+    AZ_PROP_AZTORE_IS_ADAM_INSTANCE                                           = 106,
+    AZ_PROP_OPERATION_ID                                                                                = 200,
+    AZ_PROP_TASK_OPERATIONS                                                                             = 300,
+    AZ_PROP_TASK_BIZRULE                                                                                = 301,
+    AZ_PROP_TASK_BIZRULE_LANGUAGE                                                          = 302,
+    AZ_PROP_TASK_TASKS                                                                                               = 303,
+    AZ_PROP_TASK_BIZRULE_IMPORTED_PATH                                        = 304,
+    AZ_PROP_TASK_IS_ROLE_DEFINITION                                           = 305,
+    AZ_MAX_TASK_BIZRULE_LENGTH                                                             = 65536,
+    AZ_MAX_TASK_BIZRULE_LANGUAGE_LENGTH                                       = 64,
+    AZ_MAX_TASK_BIZRULE_IMPORTED_PATH_LENGTH                     = 512,
+    AZ_MAX_BIZRULE_STRING                                                                               = 65536,
+    AZ_PROP_GROUP_TYPE                                                                                               = 400,
+    AZ_GROUPTYPE_LDAP_QUERY                                                                             = 1,
+    AZ_GROUPTYPE_BASIC                                                                                               = 2,
+    AZ_GROUPTYPE_BIZRULE                                                                                = 3,
+    AZ_PROP_GROUP_APP_MEMBERS                                                              = 401,
+    AZ_PROP_GROUP_APP_NON_MEMBERS                                                          = 402,
+    AZ_PROP_GROUP_LDAP_QUERY                                                                            = 403,
+    AZ_MAX_GROUP_LDAP_QUERY_LENGTH                                                         = 4096,
+    AZ_PROP_GROUP_MEMBERS                                                                               = 404,
+    AZ_PROP_GROUP_NON_MEMBERS                                                              = 405,
+    AZ_PROP_GROUP_MEMBERS_NAME                                                             = 406,
+    AZ_PROP_GROUP_NON_MEMBERS_NAME                                                         = 407,
+    AZ_PROP_GROUP_BIZRULE                                                                               = 408,
+    AZ_PROP_GROUP_BIZRULE_LANGUAGE                                                         = 409,
+    AZ_PROP_GROUP_BIZRULE_IMPORTED_PATH                                       = 410,
+    AZ_MAX_GROUP_BIZRULE_LENGTH                                                            = 65536,
+    AZ_MAX_GROUP_BIZRULE_LANGUAGE_LENGTH                                      = 64,
+    AZ_MAX_GROUP_BIZRULE_IMPORTED_PATH_LENGTH                    = 512,
+    AZ_PROP_ROLE_APP_MEMBERS                                                                            = 500,
+    AZ_PROP_ROLE_MEMBERS                                                                                = 501,
+    AZ_PROP_ROLE_OPERATIONS                                                                             = 502,
+    AZ_PROP_ROLE_TASKS                                                                                               = 504,
+    AZ_PROP_ROLE_MEMBERS_NAME                                                              = 505,
+    AZ_PROP_SCOPE_BIZRULES_WRITABLE                                           = 600,
+    AZ_PROP_SCOPE_CAN_BE_DELEGATED                                                         = 601,
+    AZ_PROP_CLIENT_CONTEXT_USER_DN                                                         = 700,
+    AZ_PROP_CLIENT_CONTEXT_USER_SAM_COMPAT                       = 701,
+    AZ_PROP_CLIENT_CONTEXT_USER_DISPLAY                                       = 702,
+    AZ_PROP_CLIENT_CONTEXT_USER_GUID                                          = 703,
+    AZ_PROP_CLIENT_CONTEXT_USER_CANONICAL                        = 704,
+    AZ_PROP_CLIENT_CONTEXT_USER_UPN                                           = 705,
+    AZ_PROP_CLIENT_CONTEXT_USER_DNS_SAM_COMPAT                   = 707,
     AZ_PROP_CLIENT_CONTEXT_ROLE_FOR_ACCESS_CHECK    = 708,
-    AZ_PROP_CLIENT_CONTEXT_LDAP_QUERY_DN            = 709,
-    AZ_PROP_APPLICATION_AUTHZ_INTERFACE_CLSID       = 800,
-    AZ_PROP_APPLICATION_VERSION                     = 801,
-    AZ_MAX_APPLICATION_VERSION_LENGTH               = 512,
-    AZ_PROP_APPLICATION_NAME                        = 802,
-    AZ_PROP_APPLICATION_BIZRULE_ENABLED             = 803,
-    AZ_PROP_APPLY_STORE_SACL                        = 900,
-    AZ_PROP_GENERATE_AUDITS                         = 901,
-    AZ_PROP_POLICY_ADMINS                           = 902,
-    AZ_PROP_POLICY_READERS                          = 903,
-    AZ_PROP_DELEGATED_POLICY_USERS                  = 904,
-    AZ_PROP_POLICY_ADMINS_NAME                      = 905,
-    AZ_PROP_POLICY_READERS_NAME                     = 906,
-    AZ_PROP_DELEGATED_POLICY_USERS_NAME             = 907,
-    AZ_CLIENT_CONTEXT_SKIP_GROUP                    = 1,
-    AZ_CLIENT_CONTEXT_SKIP_LDAP_QUERY               = 1,
-    AZ_CLIENT_CONTEXT_GET_GROUP_RECURSIVE           = 2,
+    AZ_PROP_CLIENT_CONTEXT_LDAP_QUERY_DN                                      = 709,
+    AZ_PROP_APPLICATION_AUTHZ_INTERFACE_CLSID                    = 800,
+    AZ_PROP_APPLICATION_VERSION                                                            = 801,
+    AZ_MAX_APPLICATION_VERSION_LENGTH                                         = 512,
+    AZ_PROP_APPLICATION_NAME                                                                            = 802,
+    AZ_PROP_APPLICATION_BIZRULE_ENABLED                                       = 803,
+    AZ_PROP_APPLY_STORE_SACL                                                                            = 900,
+    AZ_PROP_GENERATE_AUDITS                                                                             = 901,
+    AZ_PROP_POLICY_ADMINS                                                                               = 902,
+    AZ_PROP_POLICY_READERS                                                                              = 903,
+    AZ_PROP_DELEGATED_POLICY_USERS                                                         = 904,
+    AZ_PROP_POLICY_ADMINS_NAME                                                             = 905,
+    AZ_PROP_POLICY_READERS_NAME                                                            = 906,
+    AZ_PROP_DELEGATED_POLICY_USERS_NAME                                       = 907,
+    AZ_CLIENT_CONTEXT_SKIP_GROUP                                                           = 1,
+    AZ_CLIENT_CONTEXT_SKIP_LDAP_QUERY                                         = 1,
+    AZ_CLIENT_CONTEXT_GET_GROUP_RECURSIVE                        = 2,
     AZ_CLIENT_CONTEXT_GET_GROUPS_STORE_LEVEL_ONLY   = 2
   } AZ_PROP_CONSTANTS;
 

@@ -67,16 +67,16 @@ extern "C"{
 #else
   typedef struct ICertManageModuleVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertManageModule *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertManageModule *This);
-      ULONG (WINAPI *Release)(ICertManageModule *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertManageModule *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertManageModule *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertManageModule *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertManageModule *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetProperty)(ICertManageModule *This,const BSTR strConfig,BSTR strStorageLocation,BSTR strPropertyName,LONG Flags,VARIANT *pvarProperty);
-      HRESULT (WINAPI *SetProperty)(ICertManageModule *This,const BSTR strConfig,BSTR strStorageLocation,BSTR strPropertyName,LONG Flags,const VARIANT *pvarProperty);
-      HRESULT (WINAPI *Configure)(ICertManageModule *This,const BSTR strConfig,BSTR strStorageLocation,LONG Flags);
+                   HRESULT (WINAPI *QueryInterface)(ICertManageModule *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertManageModule *This);
+                   ULONG (WINAPI *Release)(ICertManageModule *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertManageModule *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertManageModule *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertManageModule *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertManageModule *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetProperty)(ICertManageModule *This,const BSTR strConfig,BSTR strStorageLocation,BSTR strPropertyName,LONG Flags,VARIANT *pvarProperty);
+                   HRESULT (WINAPI *SetProperty)(ICertManageModule *This,const BSTR strConfig,BSTR strStorageLocation,BSTR strPropertyName,LONG Flags,const VARIANT *pvarProperty);
+                   HRESULT (WINAPI *Configure)(ICertManageModule *This,const BSTR strConfig,BSTR strStorageLocation,LONG Flags);
     END_INTERFACE
   } ICertManageModuleVtbl;
   struct ICertManageModule {

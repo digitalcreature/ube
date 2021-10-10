@@ -119,17 +119,17 @@ typedef struct D3D11_SHADER_RESOURCE_VIEW_DESC1
 
     union
     {
-        D3D11_BUFFER_SRV Buffer;
-        D3D11_TEX1D_SRV Texture1D;
-        D3D11_TEX1D_ARRAY_SRV Texture1DArray;
-        D3D11_TEX2D_SRV1 Texture2D;
-        D3D11_TEX2D_ARRAY_SRV1 Texture2DArray;
-        D3D11_TEX2DMS_SRV Texture2DMS;
-        D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray;
-        D3D11_TEX3D_SRV Texture3D;
-        D3D11_TEXCUBE_SRV TextureCube;
-        D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray;
-        D3D11_BUFFEREX_SRV BufferEx;
+                     D3D11_BUFFER_SRV Buffer;
+                     D3D11_TEX1D_SRV Texture1D;
+                     D3D11_TEX1D_ARRAY_SRV Texture1DArray;
+                     D3D11_TEX2D_SRV1 Texture2D;
+                     D3D11_TEX2D_ARRAY_SRV1 Texture2DArray;
+                     D3D11_TEX2DMS_SRV Texture2DMS;
+                     D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray;
+                     D3D11_TEX3D_SRV Texture3D;
+                     D3D11_TEXCUBE_SRV TextureCube;
+                     D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray;
+                     D3D11_BUFFEREX_SRV BufferEx;
     };
 } D3D11_SHADER_RESOURCE_VIEW_DESC1;
 
@@ -154,14 +154,14 @@ typedef struct D3D11_RENDER_TARGET_VIEW_DESC1
 
     union
     {
-        D3D11_BUFFER_RTV Buffer;
-        D3D11_TEX1D_RTV Texture1D;
-        D3D11_TEX1D_ARRAY_RTV Texture1DArray;
-        D3D11_TEX2D_RTV1 Texture2D;
-        D3D11_TEX2D_ARRAY_RTV1 Texture2DArray;
-        D3D11_TEX2DMS_RTV Texture2DMS;
-        D3D11_TEX2DMS_ARRAY_RTV Texture2DMSArray;
-        D3D11_TEX3D_RTV Texture3D;
+                     D3D11_BUFFER_RTV Buffer;
+                     D3D11_TEX1D_RTV Texture1D;
+                     D3D11_TEX1D_ARRAY_RTV Texture1DArray;
+                     D3D11_TEX2D_RTV1 Texture2D;
+                     D3D11_TEX2D_ARRAY_RTV1 Texture2DArray;
+                     D3D11_TEX2DMS_RTV Texture2DMS;
+                     D3D11_TEX2DMS_ARRAY_RTV Texture2DMSArray;
+                     D3D11_TEX3D_RTV Texture3D;
     };
 } D3D11_RENDER_TARGET_VIEW_DESC1;
 
@@ -186,12 +186,12 @@ typedef struct D3D11_UNORDERED_ACCESS_VIEW_DESC1
 
     union
     {
-        D3D11_BUFFER_UAV Buffer;
-        D3D11_TEX1D_UAV Texture1D;
-        D3D11_TEX1D_ARRAY_UAV Texture1DArray;
-        D3D11_TEX2D_UAV1 Texture2D;
-        D3D11_TEX2D_ARRAY_UAV1 Texture2DArray;
-        D3D11_TEX3D_UAV Texture3D;
+                     D3D11_BUFFER_UAV Buffer;
+                     D3D11_TEX1D_UAV Texture1D;
+                     D3D11_TEX1D_ARRAY_UAV Texture1DArray;
+                     D3D11_TEX2D_UAV1 Texture2D;
+                     D3D11_TEX2D_ARRAY_UAV1 Texture2DArray;
+                     D3D11_TEX3D_UAV Texture3D;
     };
 } D3D11_UNORDERED_ACCESS_VIEW_DESC1;
 
@@ -301,15 +301,15 @@ interface ID3D11DeviceContext3 : ID3D11DeviceContext2
 interface ID3D11Fence : ID3D11DeviceChild
 {
     HRESULT CreateSharedHandle(
-        const SECURITY_ATTRIBUTES *attributes,
-        DWORD access,
-        const WCHAR *name,
-        HANDLE *handle
+                     const SECURITY_ATTRIBUTES *attributes,
+                     DWORD access,
+                     const WCHAR *name,
+                     HANDLE *handle
     );
     UINT64 GetCompletedValue();
     HRESULT SetEventOnCompletion(
-        UINT64 value,
-        HANDLE event
+                     UINT64 value,
+                     HANDLE event
     );
 }
 
@@ -334,51 +334,51 @@ interface ID3D11DeviceContext4 : ID3D11DeviceContext3
 interface ID3D11Device3 : ID3D11Device2
 {
     HRESULT CreateTexture2D1(
-        const D3D11_TEXTURE2D_DESC1 *desc,
-        const D3D11_SUBRESOURCE_DATA *initial_data,
-        ID3D11Texture2D1 **texture
+                     const D3D11_TEXTURE2D_DESC1 *desc,
+                     const D3D11_SUBRESOURCE_DATA *initial_data,
+                     ID3D11Texture2D1 **texture
     );
     HRESULT CreateTexture3D1(
-        const D3D11_TEXTURE3D_DESC1 *desc,
-        const D3D11_SUBRESOURCE_DATA *initial_data,
-        ID3D11Texture3D1 **texture
+                     const D3D11_TEXTURE3D_DESC1 *desc,
+                     const D3D11_SUBRESOURCE_DATA *initial_data,
+                     ID3D11Texture3D1 **texture
     );
     HRESULT CreateRasterizerState2(
-        const D3D11_RASTERIZER_DESC2 *desc,
-        ID3D11RasterizerState2 **state
+                     const D3D11_RASTERIZER_DESC2 *desc,
+                     ID3D11RasterizerState2 **state
     );
     HRESULT CreateShaderResourceView1(
-        ID3D11Resource *resource,
-        const D3D11_SHADER_RESOURCE_VIEW_DESC1 *desc,
-        ID3D11ShaderResourceView1 **view
+                     ID3D11Resource *resource,
+                     const D3D11_SHADER_RESOURCE_VIEW_DESC1 *desc,
+                     ID3D11ShaderResourceView1 **view
     );
     HRESULT CreateUnorderedAccessView1(
-        ID3D11Resource *resource,
-        const D3D11_UNORDERED_ACCESS_VIEW_DESC1 *desc,
-        ID3D11UnorderedAccessView1 **view
+                     ID3D11Resource *resource,
+                     const D3D11_UNORDERED_ACCESS_VIEW_DESC1 *desc,
+                     ID3D11UnorderedAccessView1 **view
     );
     HRESULT CreateRenderTargetView1(
-        ID3D11Resource *resource,
-        const D3D11_RENDER_TARGET_VIEW_DESC1 *desc,
-        ID3D11RenderTargetView1 **view
+                     ID3D11Resource *resource,
+                     const D3D11_RENDER_TARGET_VIEW_DESC1 *desc,
+                     ID3D11RenderTargetView1 **view
     );
     HRESULT CreateQuery1(const D3D11_QUERY_DESC1 *desc, ID3D11Query1 **query);
     void GetImmediateContext3(ID3D11DeviceContext3 **context);
     HRESULT CreateDeferredContext3(UINT flags, ID3D11DeviceContext3 **context);
     void WriteToSubresource(
-        ID3D11Resource *dst_resource,
-        UINT dst_subresource,
-        const D3D11_BOX *dst_box,
-        const void *src_data,
-        UINT src_row_pitch,
-        UINT src_depth_pitch
+                     ID3D11Resource *dst_resource,
+                     UINT dst_subresource,
+                     const D3D11_BOX *dst_box,
+                     const void *src_data,
+                     UINT src_row_pitch,
+                     UINT src_depth_pitch
     );
     void ReadFromSubresource(
-        void *dst_data,
-        UINT dst_row_pitch,
-        UINT dst_depth_pitch,
-        ID3D11Resource *src_resource,
-        UINT src_subresource,
-        const D3D11_BOX *src_box
+                     void *dst_data,
+                     UINT dst_row_pitch,
+                     UINT dst_depth_pitch,
+                     ID3D11Resource *src_resource,
+                     UINT src_subresource,
+                     const D3D11_BOX *src_box
     );
 }

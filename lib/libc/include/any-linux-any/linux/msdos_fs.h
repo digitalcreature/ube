@@ -55,8 +55,8 @@
 #define FAT_LFN_LEN	255	/* maximum long name length */
 #define MSDOS_NAME	11	/* maximum name length */
 #define MSDOS_SLOTS	21	/* max # of slots for short and long names */
-#define MSDOS_DOT	".          "	/* ".", padded to MSDOS_NAME chars */
-#define MSDOS_DOTDOT	"..         "	/* "..", padded to MSDOS_NAME chars */
+#define MSDOS_DOT	".                       "	/* ".", padded to MSDOS_NAME chars */
+#define MSDOS_DOTDOT	"..                      "	/* "..", padded to MSDOS_NAME chars */
 
 #define FAT_FIRST_ENT(s, x)	((MSDOS_SB(s)->fat_bits == 32 ? 0x0FFFFF00 : \
 	MSDOS_SB(s)->fat_bits == 16 ? 0xFF00 : 0xF00) | (x))
@@ -154,7 +154,7 @@ struct fat_boot_sector {
 			__le16	reserved2[6];	/* Unused */
 			/* Extended BPB Fields for FAT32 */
 			__u8	drive_number;   /* Physical drive number */
-			__u8    state;       	/* undocumented, but used
+			__u8    state;                    	/* undocumented, but used
 						   for mount state. */
 			__u8	signature;  /* extended boot signature */
 			__u8	vol_id[4];	/* volume ID */

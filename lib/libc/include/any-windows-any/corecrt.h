@@ -162,7 +162,7 @@ typedef __time64_t time_t;
   extern "C++" { \
     template <size_t __size> \
     inline __ret __cdecl __func(__dsttype (&__dst)[__size]) { \
-        return __func(__dst,__size); \
+                     return __func(__dst,__size); \
     } \
   }
 
@@ -170,7 +170,7 @@ typedef __time64_t time_t;
   extern "C++" {\
     template <size_t __size> \
     inline __ret __cdecl __func(__dsttype (&__dst)[__size], __type1 __arg1) { \
-        return __func(__dst,__size,__arg1);  \
+                     return __func(__dst,__size,__arg1);  \
     }\
   }
 
@@ -178,7 +178,7 @@ typedef __time64_t time_t;
   extern "C++" {\
     template <size_t __size> inline\
     __ret __cdecl __func(__dsttype (&__dst)[__size], __type1 __arg1, __type2 __arg2) { \
-        return __func(__dst,__size,__arg1,__arg2);  \
+                     return __func(__dst,__size,__arg1,__arg2);  \
     }\
   }
 
@@ -186,7 +186,7 @@ typedef __time64_t time_t;
   extern "C++" { \
     template <size_t __size> inline \
     __ret __cdecl __func(__dsttype (&__dst)[__size], __type1 __arg1, __type2 __arg2, __type3 __arg3) { \
-        return __func(__dst,__size,__arg1,__arg2,__arg3); \
+                     return __func(__dst,__size,__arg1,__arg2,__arg3); \
     }\
   }
 
@@ -194,15 +194,15 @@ typedef __time64_t time_t;
   extern "C++" { \
     template <size_t __size> inline \
     __ret __cdecl __func(__dsttype (&__dst)[__size], __type1 __arg1, __type2 __arg2, __type3 __arg3, __type4 __arg4) { \
-        return __func(__dst,__size,__arg1,__arg2,__arg3,__arg4); \
+                     return __func(__dst,__size,__arg1,__arg2,__arg3,__arg4); \
     }\
   }
 
 #define __DEFINE_CPP_OVERLOAD_SECURE_FUNC_1_1(__ret,__func,__type0,__arg0,__dsttype,__dst,__type1,__arg1) \
   extern "C++" { \
     template <size_t __size> inline \
-      __ret __cdecl __func(__type0 __arg0, __dsttype (&__dst)[__size], __type1 __arg1) { \
-      return __func(__arg0, __dst, __size, __arg1); \
+                   __ret __cdecl __func(__type0 __arg0, __dsttype (&__dst)[__size], __type1 __arg1) { \
+                   return __func(__arg0, __dst, __size, __arg1); \
     } \
   }
 
@@ -210,15 +210,15 @@ typedef __time64_t time_t;
   extern "C++" { \
     template <size_t __size> inline \
     __ret __cdecl __func(__type0 __arg0, __dsttype (&__dst)[__size], __type1 __arg1, __type2 __arg2) { \
-      return __func(__arg0, __dst, __size, __arg1, __arg2); \
+                   return __func(__arg0, __dst, __size, __arg1, __arg2); \
     } \
   }
 
 #define __DEFINE_CPP_OVERLOAD_SECURE_FUNC_1_3(__ret,__func,__type0,__arg0,__dsttype,__dst,__type1,__arg1,__type2,__arg2,__type3,__arg3) \
   extern "C++" { \
     template <size_t __size> inline \
-      __ret __cdecl __func(__type0 __arg0, __dsttype (&__dst)[__size], __type1 __arg1, __type2 __arg2, __type3 __arg3) { \
-      return __func(__arg0, __dst, __size, __arg1, __arg2, __arg3); \
+                   __ret __cdecl __func(__type0 __arg0, __dsttype (&__dst)[__size], __type1 __arg1, __type2 __arg2, __type3 __arg3) { \
+                   return __func(__arg0, __dst, __size, __arg1, __arg2, __arg3); \
     } \
   }
 
@@ -226,7 +226,7 @@ typedef __time64_t time_t;
   extern "C++" { \
     template <size_t __size> inline \
     __ret __cdecl __func(__type1 __arg1, __type2 __arg2, __dsttype (&__dst)[__size]) { \
-      return __func(__arg1, __arg2, __dst, __size); \
+                   return __func(__arg1, __arg2, __dst, __size); \
     } \
   }
 
@@ -234,11 +234,11 @@ typedef __time64_t time_t;
   extern "C++" {\
     template <size_t __size> \
     inline __ret __cdecl __func(__dsttype (&__dst)[__size], __type1 __arg1, ...) { \
-      va_list __vaargs; \
-      _crt_va_start(__vaargs, __arg1); \
-      __ret __retval = __vfunc(__dst,__size,__arg1,__vaargs); \
-      _crt_va_end(__vaargs); \
-      return __retval; \
+                   va_list __vaargs; \
+                   _crt_va_start(__vaargs, __arg1); \
+                   __ret __retval = __vfunc(__dst,__size,__arg1,__vaargs); \
+                   _crt_va_end(__vaargs); \
+                   return __retval; \
     }\
   }
 
@@ -246,11 +246,11 @@ typedef __time64_t time_t;
   extern "C++" {\
     template <size_t __size> \
     inline __ret __cdecl __func(__dsttype (&__dst)[__size], __type1 __arg1, __type2 __arg2, ...) { \
-      va_list __vaargs; \
-      _crt_va_start(__vaargs, __arg2); \
-      __ret __retval = __vfunc(__dst,__size,__arg1,__arg2,__vaargs); \
-      _crt_va_end(__vaargs); \
-      return __retval; \
+                   va_list __vaargs; \
+                   _crt_va_start(__vaargs, __arg2); \
+                   __ret __retval = __vfunc(__dst,__size,__arg1,__arg2,__vaargs); \
+                   _crt_va_end(__vaargs); \
+                   return __retval; \
     }\
   }
 
@@ -258,7 +258,7 @@ typedef __time64_t time_t;
   extern "C++" { \
     template <size_t __drive_size, size_t __dir_size, size_t __name_size, size_t __ext_size> inline \
     __ret __cdecl __func(const __dsttype *__src, __dsttype (&__drive)[__drive_size], __dsttype (&__dir)[__dir_size], __dsttype (&__name)[__name_size], __dsttype (&__ext)[__ext_size]) { \
-        return __func(__src, __drive, __drive_size, __dir, __dir_size, __name, __name_size, __ext, __ext_size); \
+                     return __func(__src, __drive, __drive_size, __dir, __dir_size, __name, __name_size, __ext, __ext_size); \
     } \
   }
 
@@ -300,125 +300,125 @@ typedef __time64_t time_t;
 #define __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_0_EX(__ret_type, __ret_policy, __decl_spec, __name, __sec_name, __dst_attr, __dst_type, __dst) \
     __inline __ret_type __CRTDECL __insecure_##__name(__dst_attr __dst_type *__dst) \
     { \
-        __decl_spec __ret_type __cdecl __name(__dst_type *__dst); \
-        return __name(__dst); \
+                     __decl_spec __ret_type __cdecl __name(__dst_type *__dst); \
+                     return __name(__dst); \
     } \
     extern "C++" { \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(_T &__dst) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type*>(__dst)); \
+                     return __insecure_##__name(static_cast<__dst_type*>(__dst)); \
     } \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(const _T &__dst) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type *>(__dst)); \
+                     return __insecure_##__name(static_cast<__dst_type *>(__dst)); \
     } \
     template <> \
     inline __ret_type __CRTDECL __name(__dst_type *&__dst) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(__dst); \
+                     return __insecure_##__name(__dst); \
     } \
     template <size_t __size> \
     inline __ret_type __CRTDECL __name(__dst_type (&__dst)[__size]) _CRT_SECURE_CPP_NOTHROW { \
-        __ret_policy(__sec_name(__dst, __size), __dst); \
+                     __ret_policy(__sec_name(__dst, __size), __dst); \
     } \
     }
 
 #define __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_2_EX(__ret_type, __ret_policy, __decl_spec, __name, __sec_name, __sec_dst_type, __dst_attr, __dst_type, __dst, __arg1_type, __arg1, __arg2_type, __arg2) \
     __inline __ret_type __CRTDECL __insecure_##__name(__dst_attr __dst_type *__dst, __arg1_type __arg1, __arg2_type __arg2) \
     { \
-        __decl_spec __ret_type __cdecl __name(__dst_type *__dst, __arg1_type, __arg2_type); \
-        return __name(__dst, __arg1, __arg2); \
+                     __decl_spec __ret_type __cdecl __name(__dst_type *__dst, __arg1_type, __arg2_type); \
+                     return __name(__dst, __arg1, __arg2); \
     } \
     extern "C++" { \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(_T &__dst, __arg1_type __arg1, __arg2_type __arg2) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type*>(__dst), __arg1, __arg2); \
+                     return __insecure_##__name(static_cast<__dst_type*>(__dst), __arg1, __arg2); \
     } \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(const _T &__dst, __arg1_type __arg1, __arg2_type __arg2) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type *>(__dst), __arg1, __arg2); \
+                     return __insecure_##__name(static_cast<__dst_type *>(__dst), __arg1, __arg2); \
     } \
     template <> \
     inline __ret_type __CRTDECL __name(__dst_type *&__dst, __arg1_type __arg1, __arg2_type __arg2) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(__dst, __arg1, __arg2); \
+                     return __insecure_##__name(__dst, __arg1, __arg2); \
     } \
     template <size_t __size> \
     inline __ret_type __CRTDECL __name(__sec_dst_type (&__dst)[__size], __arg1_type __arg1, __arg2_type __arg2) _CRT_SECURE_CPP_NOTHROW { \
-        __ret_policy(__sec_name(__dst, __size), __dst); \
+                     __ret_policy(__sec_name(__dst, __size), __dst); \
     } \
     }
 
 #define __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1_EX(__ret_type, __ret_policy, __decl_spec, __name, __sec_name, __sec_dst_type, __dst_attr, __dst_type, __dst, __arg1_type, __arg1) \
     __inline __ret_type __CRTDECL __insecure_##__name(__dst_attr __dst_type *__dst, __arg1_type __arg1) \
     { \
-        __decl_spec __ret_type __cdecl __name(__dst_type *__dst, __arg1_type); \
-        return __name(__dst, __arg1); \
+                     __decl_spec __ret_type __cdecl __name(__dst_type *__dst, __arg1_type); \
+                     return __name(__dst, __arg1); \
     } \
     extern "C++" { \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(_T &__dst, __arg1_type __arg1) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type*>(__dst), __arg1); \
+                     return __insecure_##__name(static_cast<__dst_type*>(__dst), __arg1); \
     } \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(const _T &__dst, __arg1_type __arg1) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type *>(__dst), __arg1); \
+                     return __insecure_##__name(static_cast<__dst_type *>(__dst), __arg1); \
     } \
     template <> \
     inline __ret_type __CRTDECL __name(__dst_type *&__dst, __arg1_type __arg1) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(__dst, __arg1); \
+                     return __insecure_##__name(__dst, __arg1); \
     } \
     template <size_t __size> \
     inline __ret_type __CRTDECL __name(__sec_dst_type (&__dst)[__size], __arg1_type __arg1) _CRT_SECURE_CPP_NOTHROW { \
-        __ret_policy(__sec_name(__dst, __size), __dst); \
+                     __ret_policy(__sec_name(__dst, __size), __dst); \
     } \
     }
 
 #define __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_3_EX(__ret_type, __ret_policy, __decl_spec, __name, __sec_name, __sec_dst_type, __dst_attr, __dst_type, __dst, __arg1_type, __arg1, __arg2_type, __arg2, __arg3_type, __arg3) \
     __inline __ret_type __CRTDECL __insecure_##__name(__dst_attr __dst_type *__dst, __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3) \
     { \
-        __decl_spec __ret_type __cdecl __name(__dst_type *__dst, __arg1_type, __arg2_type, __arg3_type); \
-        return __name(__dst, __arg1, __arg2, __arg3); \
+                     __decl_spec __ret_type __cdecl __name(__dst_type *__dst, __arg1_type, __arg2_type, __arg3_type); \
+                     return __name(__dst, __arg1, __arg2, __arg3); \
     } \
     extern "C++" { \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(_T &__dst, __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type*>(__dst), __arg1, __arg2, __arg3); \
+                     return __insecure_##__name(static_cast<__dst_type*>(__dst), __arg1, __arg2, __arg3); \
     } \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(const _T &__dst, __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type *>(__dst), __arg1, __arg2, __arg3); \
+                     return __insecure_##__name(static_cast<__dst_type *>(__dst), __arg1, __arg2, __arg3); \
     } \
     template <> \
     inline __ret_type __CRTDECL __name(__dst_type *&__dst, __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(__dst, __arg1, __arg2, __arg3); \
+                     return __insecure_##__name(__dst, __arg1, __arg2, __arg3); \
     } \
     template <size_t __size> \
     inline __ret_type __CRTDECL __name(__sec_dst_type (&__dst)[__size], __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3) _CRT_SECURE_CPP_NOTHROW { \
-        __ret_policy(__sec_name(__dst, __size), __dst); \
+                     __ret_policy(__sec_name(__dst, __size), __dst); \
     } \
     }
 
 #define __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_4_EX(__ret_type, __ret_policy, __decl_spec, __name, __sec_name, __sec_dst_type, __dst_attr, __dst_type, __dst, __arg1_type, __arg1, __arg2_type, __arg2, __arg3_type, __arg3, __arg4_type, __arg4) \
     __inline __ret_type __CRTDECL __insecure_##__name(__dst_attr __dst_type *__dst, __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3, __arg4_type __arg4) \
     { \
-        __decl_spec __ret_type __cdecl __name(__dst_type *__dst, __arg1_type, __arg2_type, __arg3_type, __arg4_type); \
-        return __name(__dst, __arg1, __arg2, __arg3, __arg4); \
+                     __decl_spec __ret_type __cdecl __name(__dst_type *__dst, __arg1_type, __arg2_type, __arg3_type, __arg4_type); \
+                     return __name(__dst, __arg1, __arg2, __arg3, __arg4); \
     } \
     extern "C++" { \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(_T &__dst, __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3, __arg4_type __arg4) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type*>(__dst), __arg1, __arg2, __arg3, __arg4); \
+                     return __insecure_##__name(static_cast<__dst_type*>(__dst), __arg1, __arg2, __arg3, __arg4); \
     } \
     template <typename _T> \
     inline __ret_type __CRTDECL __name(const _T &__dst, __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3, __arg4_type __arg4) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(static_cast<__dst_type *>(__dst), __arg1, __arg2, __arg3, __arg4); \
+                     return __insecure_##__name(static_cast<__dst_type *>(__dst), __arg1, __arg2, __arg3, __arg4); \
     } \
     template <> \
     inline __ret_type __CRTDECL __name(__dst_type *&__dst, __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3, __arg4_type __arg4) _CRT_SECURE_CPP_NOTHROW { \
-        return __insecure_##__name(__dst, __arg1, __arg2, __arg3, __arg4); \
+                     return __insecure_##__name(__dst, __arg1, __arg2, __arg3, __arg4); \
     } \
     template <size_t __size> \
     inline __ret_type __CRTDECL __name(__sec_dst_type (&__dst)[__size], __arg1_type __arg1, __arg2_type __arg2, __arg3_type __arg3, __arg4_type __arg4) _CRT_SECURE_CPP_NOTHROW { \
-        __ret_policy(__sec_name(__dst, __size)); \
+                     __ret_policy(__sec_name(__dst, __size)); \
     } \
     }
 

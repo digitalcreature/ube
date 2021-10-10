@@ -21,9 +21,9 @@ const expect = std.testing.expect;
 pub fn exp2(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => exp2_32(x),
-        f64 => exp2_64(x),
-        else => @compileError("exp2 not implemented for " ++ @typeName(T)),
+                     f32 => exp2_32(x),
+                     f64 => exp2_64(x),
+                     else => @compileError("exp2 not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -59,28 +59,28 @@ fn exp2_32(x: f32) f32 {
 
     // |x| > 126
     if (ix > 0x42FC0000) {
-        // nan
-        if (ix > 0x7F800000) {
-            return x;
-        }
-        // x >= 128
-        if (u >= 0x43000000 and u < 0x80000000) {
-            return x * 0x1.0p127;
-        }
-        // x < -126
-        if (u >= 0x80000000) {
-            if (u >= 0xC3160000 or u & 0x000FFFF != 0) {
-                math.doNotOptimizeAway(-0x1.0p-149 / x);
-            }
-            // x <= -150
-            if (u >= 0x3160000) {
-                return 0;
-            }
-        }
+                     // nan
+                     if (ix > 0x7F800000) {
+                                      return x;
+                     }
+                     // x >= 128
+                     if (u >= 0x43000000 and u < 0x80000000) {
+                                      return x * 0x1.0p127;
+                     }
+                     // x < -126
+                     if (u >= 0x80000000) {
+                                      if (u >= 0xC3160000 or u & 0x000FFFF != 0) {
+                                          math.doNotOptimizeAway(-0x1.0p-149 / x);
+                                      }
+                                      // x <= -150
+                                      if (u >= 0x3160000) {
+                                          return 0;
+                                      }
+                     }
     }
     // |x| <= 0x1p-25
     else if (ix <= 0x33000000) {
-        return 1.0 + x;
+                     return 1.0 + x;
     }
 
     var uf = x + redux;
@@ -102,7 +102,7 @@ fn exp2_32(x: f32) f32 {
 }
 
 const exp2dt = [_]f64{
-    //  exp2(z + eps)          eps
+    //  exp2(z + eps)                       eps
     0x1.6a09e667f3d5dp-1, 0x1.9880p-44,
     0x1.6b052fa751744p-1, 0x1.8000p-50,
     0x1.6c012750bd9fep-1, -0x1.8780p-45,
@@ -375,34 +375,34 @@ fn exp2_64(x: f64) f64 {
 
     // TODO: This should be handled beneath.
     if (math.isNan(x)) {
-        return math.nan(f64);
+                     return math.nan(f64);
     }
 
     // |x| >= 1022 or nan
     if (ix >= 0x408FF000) {
-        // x >= 1024 or nan
-        if (ix >= 0x40900000 and ux >> 63 == 0) {
-            math.raiseOverflow();
-            return math.inf(f64);
-        }
-        // -inf or -nan
-        if (ix >= 0x7FF00000) {
-            return -1 / x;
-        }
-        // x <= -1022
-        if (ux >> 63 != 0) {
-            // underflow
-            if (x <= -1075 or x - 0x1.0p52 + 0x1.0p52 != x) {
-                math.doNotOptimizeAway(@floatCast(f32, -0x1.0p-149 / x));
-            }
-            if (x <= -1075) {
-                return 0;
-            }
-        }
+                     // x >= 1024 or nan
+                     if (ix >= 0x40900000 and ux >> 63 == 0) {
+                                      math.raiseOverflow();
+                                      return math.inf(f64);
+                     }
+                     // -inf or -nan
+                     if (ix >= 0x7FF00000) {
+                                      return -1 / x;
+                     }
+                     // x <= -1022
+                     if (ux >> 63 != 0) {
+                                      // underflow
+                                      if (x <= -1075 or x - 0x1.0p52 + 0x1.0p52 != x) {
+                                          math.doNotOptimizeAway(@floatCast(f32, -0x1.0p-149 / x));
+                                      }
+                                      if (x <= -1075) {
+                                          return 0;
+                                      }
+                     }
     }
     // |x| < 0x1p-54
     else if (ix < 0x3C900000) {
-        return 1.0 + x;
+                     return 1.0 + x;
     }
 
     // reduce x

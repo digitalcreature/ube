@@ -93,9 +93,9 @@ public:
   friend std::ostream & operator<<(std::ostream & os,const F32vec4 &a) {
     float *fp = (float*)&a;
     os << "[3]:" << *(fp+3)
-      << " [2]:" << *(fp+2)
-      << " [1]:" << *(fp+1)
-      << " [0]:" << *fp;
+                   << " [2]:" << *(fp+2)
+                   << " [1]:" << *(fp+1)
+                   << " [0]:" << *fp;
     return os;
   }
 #endif

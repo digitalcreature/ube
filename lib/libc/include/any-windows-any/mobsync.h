@@ -143,19 +143,19 @@ extern "C" {
 #else
   typedef struct ISyncMgrSynchronizeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISyncMgrSynchronize *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISyncMgrSynchronize *This);
-      ULONG (WINAPI *Release)(ISyncMgrSynchronize *This);
-      HRESULT (WINAPI *Initialize)(ISyncMgrSynchronize *This,DWORD dwReserved,DWORD dwSyncMgrFlags,DWORD cbCookie,const BYTE *lpCookie);
-      HRESULT (WINAPI *GetHandlerInfo)(ISyncMgrSynchronize *This,LPSYNCMGRHANDLERINFO *ppSyncMgrHandlerInfo);
-      HRESULT (WINAPI *EnumSyncMgrItems)(ISyncMgrSynchronize *This,ISyncMgrEnumItems **ppSyncMgrEnumItems);
-      HRESULT (WINAPI *GetItemObject)(ISyncMgrSynchronize *This,REFSYNCMGRITEMID ItemID,REFIID riid,void **ppv);
-      HRESULT (WINAPI *ShowProperties)(ISyncMgrSynchronize *This,HWND hWndParent,REFSYNCMGRITEMID ItemID);
-      HRESULT (WINAPI *SetProgressCallback)(ISyncMgrSynchronize *This,ISyncMgrSynchronizeCallback *lpCallBack);
-      HRESULT (WINAPI *PrepareForSync)(ISyncMgrSynchronize *This,ULONG cbNumItems,SYNCMGRITEMID *pItemIDs,HWND hWndParent,DWORD dwReserved);
-      HRESULT (WINAPI *Synchronize)(ISyncMgrSynchronize *This,HWND hWndParent);
-      HRESULT (WINAPI *SetItemStatus)(ISyncMgrSynchronize *This,REFSYNCMGRITEMID pItemID,DWORD dwSyncMgrStatus);
-      HRESULT (WINAPI *ShowError)(ISyncMgrSynchronize *This,HWND hWndParent,REFSYNCMGRERRORID ErrorID);
+                   HRESULT (WINAPI *QueryInterface)(ISyncMgrSynchronize *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISyncMgrSynchronize *This);
+                   ULONG (WINAPI *Release)(ISyncMgrSynchronize *This);
+                   HRESULT (WINAPI *Initialize)(ISyncMgrSynchronize *This,DWORD dwReserved,DWORD dwSyncMgrFlags,DWORD cbCookie,const BYTE *lpCookie);
+                   HRESULT (WINAPI *GetHandlerInfo)(ISyncMgrSynchronize *This,LPSYNCMGRHANDLERINFO *ppSyncMgrHandlerInfo);
+                   HRESULT (WINAPI *EnumSyncMgrItems)(ISyncMgrSynchronize *This,ISyncMgrEnumItems **ppSyncMgrEnumItems);
+                   HRESULT (WINAPI *GetItemObject)(ISyncMgrSynchronize *This,REFSYNCMGRITEMID ItemID,REFIID riid,void **ppv);
+                   HRESULT (WINAPI *ShowProperties)(ISyncMgrSynchronize *This,HWND hWndParent,REFSYNCMGRITEMID ItemID);
+                   HRESULT (WINAPI *SetProgressCallback)(ISyncMgrSynchronize *This,ISyncMgrSynchronizeCallback *lpCallBack);
+                   HRESULT (WINAPI *PrepareForSync)(ISyncMgrSynchronize *This,ULONG cbNumItems,SYNCMGRITEMID *pItemIDs,HWND hWndParent,DWORD dwReserved);
+                   HRESULT (WINAPI *Synchronize)(ISyncMgrSynchronize *This,HWND hWndParent);
+                   HRESULT (WINAPI *SetItemStatus)(ISyncMgrSynchronize *This,REFSYNCMGRITEMID pItemID,DWORD dwSyncMgrStatus);
+                   HRESULT (WINAPI *ShowError)(ISyncMgrSynchronize *This,HWND hWndParent,REFSYNCMGRERRORID ErrorID);
     END_INTERFACE
   } ISyncMgrSynchronizeVtbl;
   struct ISyncMgrSynchronize {
@@ -258,18 +258,18 @@ extern "C" {
 #else
   typedef struct ISyncMgrSynchronizeCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISyncMgrSynchronizeCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISyncMgrSynchronizeCallback *This);
-      ULONG (WINAPI *Release)(ISyncMgrSynchronizeCallback *This);
-      HRESULT (WINAPI *ShowPropertiesCompleted)(ISyncMgrSynchronizeCallback *This,HRESULT hr);
-      HRESULT (WINAPI *PrepareForSyncCompleted)(ISyncMgrSynchronizeCallback *This,HRESULT hr);
-      HRESULT (WINAPI *SynchronizeCompleted)(ISyncMgrSynchronizeCallback *This,HRESULT hr);
-      HRESULT (WINAPI *ShowErrorCompleted)(ISyncMgrSynchronizeCallback *This,HRESULT hr,ULONG cbNumItems,SYNCMGRITEMID *pItemIDs);
-      HRESULT (WINAPI *EnableModeless)(ISyncMgrSynchronizeCallback *This,WINBOOL fEnable);
-      HRESULT (WINAPI *Progress)(ISyncMgrSynchronizeCallback *This,REFSYNCMGRITEMID pItemID,LPSYNCMGRPROGRESSITEM lpSyncProgressItem);
-      HRESULT (WINAPI *LogError)(ISyncMgrSynchronizeCallback *This,DWORD dwErrorLevel,LPCWSTR lpcErrorText,LPSYNCMGRLOGERRORINFO lpSyncLogError);
-      HRESULT (WINAPI *DeleteLogError)(ISyncMgrSynchronizeCallback *This,REFSYNCMGRERRORID ErrorID,DWORD dwReserved);
-      HRESULT (WINAPI *EstablishConnection)(ISyncMgrSynchronizeCallback *This,LPCWSTR lpwszConnection,DWORD dwReserved);
+                   HRESULT (WINAPI *QueryInterface)(ISyncMgrSynchronizeCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISyncMgrSynchronizeCallback *This);
+                   ULONG (WINAPI *Release)(ISyncMgrSynchronizeCallback *This);
+                   HRESULT (WINAPI *ShowPropertiesCompleted)(ISyncMgrSynchronizeCallback *This,HRESULT hr);
+                   HRESULT (WINAPI *PrepareForSyncCompleted)(ISyncMgrSynchronizeCallback *This,HRESULT hr);
+                   HRESULT (WINAPI *SynchronizeCompleted)(ISyncMgrSynchronizeCallback *This,HRESULT hr);
+                   HRESULT (WINAPI *ShowErrorCompleted)(ISyncMgrSynchronizeCallback *This,HRESULT hr,ULONG cbNumItems,SYNCMGRITEMID *pItemIDs);
+                   HRESULT (WINAPI *EnableModeless)(ISyncMgrSynchronizeCallback *This,WINBOOL fEnable);
+                   HRESULT (WINAPI *Progress)(ISyncMgrSynchronizeCallback *This,REFSYNCMGRITEMID pItemID,LPSYNCMGRPROGRESSITEM lpSyncProgressItem);
+                   HRESULT (WINAPI *LogError)(ISyncMgrSynchronizeCallback *This,DWORD dwErrorLevel,LPCWSTR lpcErrorText,LPSYNCMGRLOGERRORINFO lpSyncLogError);
+                   HRESULT (WINAPI *DeleteLogError)(ISyncMgrSynchronizeCallback *This,REFSYNCMGRERRORID ErrorID,DWORD dwReserved);
+                   HRESULT (WINAPI *EstablishConnection)(ISyncMgrSynchronizeCallback *This,LPCWSTR lpwszConnection,DWORD dwReserved);
     END_INTERFACE
   } ISyncMgrSynchronizeCallbackVtbl;
   struct ISyncMgrSynchronizeCallback {
@@ -346,13 +346,13 @@ extern "C" {
 #else
   typedef struct ISyncMgrEnumItemsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISyncMgrEnumItems *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISyncMgrEnumItems *This);
-      ULONG (WINAPI *Release)(ISyncMgrEnumItems *This);
-      HRESULT (WINAPI *Next)(ISyncMgrEnumItems *This,ULONG celt,LPSYNCMGRITEM rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(ISyncMgrEnumItems *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(ISyncMgrEnumItems *This);
-      HRESULT (WINAPI *Clone)(ISyncMgrEnumItems *This,ISyncMgrEnumItems **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(ISyncMgrEnumItems *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISyncMgrEnumItems *This);
+                   ULONG (WINAPI *Release)(ISyncMgrEnumItems *This);
+                   HRESULT (WINAPI *Next)(ISyncMgrEnumItems *This,ULONG celt,LPSYNCMGRITEM rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(ISyncMgrEnumItems *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(ISyncMgrEnumItems *This);
+                   HRESULT (WINAPI *Clone)(ISyncMgrEnumItems *This,ISyncMgrEnumItems **ppenum);
     END_INTERFACE
   } ISyncMgrEnumItemsVtbl;
   struct ISyncMgrEnumItems {
@@ -396,11 +396,11 @@ extern "C" {
 #else
   typedef struct ISyncMgrSynchronizeInvokeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISyncMgrSynchronizeInvoke *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISyncMgrSynchronizeInvoke *This);
-      ULONG (WINAPI *Release)(ISyncMgrSynchronizeInvoke *This);
-      HRESULT (WINAPI *UpdateItems)(ISyncMgrSynchronizeInvoke *This,DWORD dwInvokeFlags,REFCLSID rclsid,DWORD cbCookie,const BYTE *lpCookie);
-      HRESULT (WINAPI *UpdateAll)(ISyncMgrSynchronizeInvoke *This);
+                   HRESULT (WINAPI *QueryInterface)(ISyncMgrSynchronizeInvoke *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISyncMgrSynchronizeInvoke *This);
+                   ULONG (WINAPI *Release)(ISyncMgrSynchronizeInvoke *This);
+                   HRESULT (WINAPI *UpdateItems)(ISyncMgrSynchronizeInvoke *This,DWORD dwInvokeFlags,REFCLSID rclsid,DWORD cbCookie,const BYTE *lpCookie);
+                   HRESULT (WINAPI *UpdateAll)(ISyncMgrSynchronizeInvoke *This);
     END_INTERFACE
   } ISyncMgrSynchronizeInvokeVtbl;
   struct ISyncMgrSynchronizeInvoke {
@@ -441,12 +441,12 @@ extern "C" {
 #else
   typedef struct ISyncMgrRegisterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISyncMgrRegister *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISyncMgrRegister *This);
-      ULONG (WINAPI *Release)(ISyncMgrRegister *This);
-      HRESULT (WINAPI *RegisterSyncMgrHandler)(ISyncMgrRegister *This,REFCLSID rclsidHandler,LPCWSTR pwszDescription,DWORD dwSyncMgrRegisterFlags);
-      HRESULT (WINAPI *UnregisterSyncMgrHandler)(ISyncMgrRegister *This,REFCLSID rclsidHandler,DWORD dwReserved);
-      HRESULT (WINAPI *GetHandlerRegistrationInfo)(ISyncMgrRegister *This,REFCLSID rclsidHandler,LPDWORD pdwSyncMgrRegisterFlags);
+                   HRESULT (WINAPI *QueryInterface)(ISyncMgrRegister *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISyncMgrRegister *This);
+                   ULONG (WINAPI *Release)(ISyncMgrRegister *This);
+                   HRESULT (WINAPI *RegisterSyncMgrHandler)(ISyncMgrRegister *This,REFCLSID rclsidHandler,LPCWSTR pwszDescription,DWORD dwSyncMgrRegisterFlags);
+                   HRESULT (WINAPI *UnregisterSyncMgrHandler)(ISyncMgrRegister *This,REFCLSID rclsidHandler,DWORD dwReserved);
+                   HRESULT (WINAPI *GetHandlerRegistrationInfo)(ISyncMgrRegister *This,REFCLSID rclsidHandler,LPDWORD pdwSyncMgrRegisterFlags);
     END_INTERFACE
   } ISyncMgrRegisterVtbl;
   struct ISyncMgrRegister {

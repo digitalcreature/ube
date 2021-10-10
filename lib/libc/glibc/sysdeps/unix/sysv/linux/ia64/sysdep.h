@@ -191,24 +191,24 @@
 
 #ifdef IA64_USE_NEW_STUB
 
-# define DO_INLINE_SYSCALL_NCS(name, nr, args...)			      \
-    LOAD_ARGS_##nr (args)						      \
-    register long _r8 __asm ("r8");					      \
-    register long _r10 __asm ("r10");					      \
-    register long _r15 __asm ("r15") = name;				      \
+# define DO_INLINE_SYSCALL_NCS(name, nr, args...)			                   \
+    LOAD_ARGS_##nr (args)						                   \
+    register long _r8 __asm ("r8");					                   \
+    register long _r10 __asm ("r10");					                   \
+    register long _r15 __asm ("r15") = name;				                   \
     register void *_b7 __asm ("b7") = ((tcbhead_t *)__thread_self)->__private;\
-    long _retval;							      \
-    LOAD_REGS_##nr							      \
-    /*									      \
-     * Don't specify any unwind info here.  We mark ar.pfs as		      \
-     * clobbered.  This will force the compiler to save ar.pfs		      \
-     * somewhere and emit appropriate unwind info for that save.	      \
-     */									      \
-    __asm __volatile ("br.call.sptk.many b6=%0;;\n"			      \
-		      : "=b"(_b7), "=r" (_r8), "=r" (_r10), "=r" (_r15)	      \
-			ASM_OUTARGS_##nr				      \
-		      : "0" (_b7), "3" (_r15) ASM_ARGS_##nr		      \
-		      : "memory", "ar.pfs" ASM_CLOBBERS_##nr);		      \
+    long _retval;							                   \
+    LOAD_REGS_##nr							                   \
+    /*									                   \
+     * Don't specify any unwind info here.  We mark ar.pfs as		                   \
+     * clobbered.  This will force the compiler to save ar.pfs		                   \
+     * somewhere and emit appropriate unwind info for that save.	                   \
+     */									                   \
+    __asm __volatile ("br.call.sptk.many b6=%0;;\n"			                   \
+		                   : "=b"(_b7), "=r" (_r8), "=r" (_r10), "=r" (_r15)	                   \
+			ASM_OUTARGS_##nr				                   \
+		                   : "0" (_b7), "3" (_r15) ASM_ARGS_##nr		                   \
+		                   : "memory", "ar.pfs" ASM_CLOBBERS_##nr);		                   \
     _retval = _r8;
 
 #else /* !IA64_USE_NEW_STUB */
@@ -221,10 +221,10 @@
     long _retval;						\
     LOAD_REGS_##nr						\
     __asm __volatile (BREAK_INSN (__IA64_BREAK_SYSCALL)		\
-		      : "=r" (_r8), "=r" (_r10), "=r" (_r15)	\
+		                   : "=r" (_r8), "=r" (_r10), "=r" (_r15)	\
 			ASM_OUTARGS_##nr			\
-		      : "2" (_r15) ASM_ARGS_##nr		\
-		      : "memory" ASM_CLOBBERS_##nr);		\
+		                   : "2" (_r15) ASM_ARGS_##nr		\
+		                   : "memory" ASM_CLOBBERS_##nr);		\
     _retval = _r8;
 
 #endif /* !IA64_USE_NEW_STUB */
@@ -237,10 +237,10 @@
   ({							\
     DO_INLINE_SYSCALL_NCS (__NR_##name, nr, args)	\
     if (_r10 == -1)					\
-      {							\
+                   {							\
 	__set_errno (_retval);				\
 	_retval = -1;					\
-      }							\
+                   }							\
     _retval; })
 
 #undef INTERNAL_SYSCALL_DECL
@@ -362,11 +362,11 @@
 #else
 # ifdef __ASSEMBLER__
 #  define PTR_MANGLE(reg, tmpreg) \
-        add	tmpreg=-16,r13		\
-        ;;				\
-        ld8	tmpreg=[tmpreg]		\
-        ;;				\
-        xor	reg=reg, tmpreg
+                     add	tmpreg=-16,r13		\
+                     ;;				\
+                     ld8	tmpreg=[tmpreg]		\
+                     ;;				\
+                     xor	reg=reg, tmpreg
 #  define PTR_DEMANGLE(reg, tmpreg) PTR_MANGLE (reg, tmpreg)
 # else
 #  define PTR_MANGLE(var) \

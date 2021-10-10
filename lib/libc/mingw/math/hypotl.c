@@ -35,10 +35,10 @@ hypotl (long double x, long double y)
   long double yy =fabsl(y);
   if (!isfinite(xx) || !isfinite(yy))
     {
-      /* Annex F.9.4.3, hypot returns +infinity if
-         either component is an infinity, even when the
-         other component is NaN.  */
-      return (isinf(xx) || isinf(yy)) ? INFINITY : NAN;
+                   /* Annex F.9.4.3, hypot returns +infinity if
+                      either component is an infinity, even when the
+                      other component is NaN.  */
+                   return (isinf(xx) || isinf(yy)) ? INFINITY : NAN;
     }
 
   if (xx == 0.0L)
@@ -71,8 +71,8 @@ hypotl (long double x, long double y)
   exx += scale;
     if (exx > LDBL_MAX_EXP)
     {
-      errno = ERANGE; 
-      return INFINITY;
+                   errno = ERANGE; 
+                   return INFINITY;
     }
   if (exx < LDBL_MIN_EXP)
     return 0.0L;

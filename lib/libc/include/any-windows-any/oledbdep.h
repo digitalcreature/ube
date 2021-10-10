@@ -191,10 +191,10 @@ extern "C" {
 #else
   typedef struct IRowsetNextRowsetVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetNextRowset *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetNextRowset *This);
-      ULONG (WINAPI *Release)(IRowsetNextRowset *This);
-      HRESULT (WINAPI *GetNextRowset)(IRowsetNextRowset *This,IUnknown *pUnkOuter,REFIID riid,IUnknown **ppNextRowset);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetNextRowset *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetNextRowset *This);
+                   ULONG (WINAPI *Release)(IRowsetNextRowset *This);
+                   HRESULT (WINAPI *GetNextRowset)(IRowsetNextRowset *This,IUnknown *pUnkOuter,REFIID riid,IUnknown **ppNextRowset);
     END_INTERFACE
   } IRowsetNextRowsetVtbl;
   struct IRowsetNextRowset {
@@ -222,10 +222,10 @@ extern "C" {
 #else
   typedef struct IRowsetNewRowAfterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetNewRowAfter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetNewRowAfter *This);
-      ULONG (WINAPI *Release)(IRowsetNewRowAfter *This);
-      HRESULT (WINAPI *SetNewDataAfter)(IRowsetNewRowAfter *This,HCHAPTER hChapter,ULONG cbbmPrevious,const BYTE *pbmPrevious,HACCESSOR hAccessor,BYTE *pData,HROW *phRow);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetNewRowAfter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetNewRowAfter *This);
+                   ULONG (WINAPI *Release)(IRowsetNewRowAfter *This);
+                   HRESULT (WINAPI *SetNewDataAfter)(IRowsetNewRowAfter *This,HCHAPTER hChapter,ULONG cbbmPrevious,const BYTE *pbmPrevious,HACCESSOR hAccessor,BYTE *pData,HROW *phRow);
     END_INTERFACE
   } IRowsetNewRowAfterVtbl;
   struct IRowsetNewRowAfter {
@@ -254,11 +254,11 @@ extern "C" {
 #else
   typedef struct IRowsetWithParametersVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetWithParameters *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetWithParameters *This);
-      ULONG (WINAPI *Release)(IRowsetWithParameters *This);
-      HRESULT (WINAPI *GetParameterInfo)(IRowsetWithParameters *This,DB_UPARAMS *pcParams,DBPARAMINFO **prgParamInfo,OLECHAR **ppNamesBuffer);
-      HRESULT (WINAPI *Requery)(IRowsetWithParameters *This,DBPARAMS *pParams,ULONG *pulErrorParam,HCHAPTER *phReserved);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetWithParameters *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetWithParameters *This);
+                   ULONG (WINAPI *Release)(IRowsetWithParameters *This);
+                   HRESULT (WINAPI *GetParameterInfo)(IRowsetWithParameters *This,DB_UPARAMS *pcParams,DBPARAMINFO **prgParamInfo,OLECHAR **ppNamesBuffer);
+                   HRESULT (WINAPI *Requery)(IRowsetWithParameters *This,DBPARAMS *pParams,ULONG *pulErrorParam,HCHAPTER *phReserved);
     END_INTERFACE
   } IRowsetWithParametersVtbl;
   struct IRowsetWithParameters {
@@ -290,11 +290,11 @@ extern "C" {
 #else
   typedef struct IRowsetAsynchVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetAsynch *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetAsynch *This);
-      ULONG (WINAPI *Release)(IRowsetAsynch *This);
-      HRESULT (WINAPI *RatioFinished)(IRowsetAsynch *This,DBCOUNTITEM *pulDenominator,DBCOUNTITEM *pulNumerator,DBCOUNTITEM *pcRows,WINBOOL *pfNewRows);
-      HRESULT (WINAPI *Stop)(IRowsetAsynch *This);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetAsynch *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetAsynch *This);
+                   ULONG (WINAPI *Release)(IRowsetAsynch *This);
+                   HRESULT (WINAPI *RatioFinished)(IRowsetAsynch *This,DBCOUNTITEM *pulDenominator,DBCOUNTITEM *pulNumerator,DBCOUNTITEM *pcRows,WINBOOL *pfNewRows);
+                   HRESULT (WINAPI *Stop)(IRowsetAsynch *This);
     END_INTERFACE
   } IRowsetAsynchVtbl;
   struct IRowsetAsynch {
@@ -325,10 +325,10 @@ extern "C" {
 #else
   typedef struct IRowsetKeysVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetKeys *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetKeys *This);
-      ULONG (WINAPI *Release)(IRowsetKeys *This);
-      HRESULT (WINAPI *ListKeys)(IRowsetKeys *This,DBORDINAL *pcColumns,DBORDINAL **prgColumns);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetKeys *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetKeys *This);
+                   ULONG (WINAPI *Release)(IRowsetKeys *This);
+                   HRESULT (WINAPI *ListKeys)(IRowsetKeys *This,DBORDINAL *pcColumns,DBORDINAL **prgColumns);
     END_INTERFACE
   } IRowsetKeysVtbl;
   struct IRowsetKeys {
@@ -358,12 +358,12 @@ extern "C" {
 #else
   typedef struct IRowsetWatchAllVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetWatchAll *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetWatchAll *This);
-      ULONG (WINAPI *Release)(IRowsetWatchAll *This);
-      HRESULT (WINAPI *Acknowledge)(IRowsetWatchAll *This);
-      HRESULT (WINAPI *Start)(IRowsetWatchAll *This);
-      HRESULT (WINAPI *StopWatching)(IRowsetWatchAll *This);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetWatchAll *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetWatchAll *This);
+                   ULONG (WINAPI *Release)(IRowsetWatchAll *This);
+                   HRESULT (WINAPI *Acknowledge)(IRowsetWatchAll *This);
+                   HRESULT (WINAPI *Start)(IRowsetWatchAll *This);
+                   HRESULT (WINAPI *StopWatching)(IRowsetWatchAll *This);
     END_INTERFACE
   } IRowsetWatchAllVtbl;
   struct IRowsetWatchAll {
@@ -403,10 +403,10 @@ extern "C" {
 #else
   typedef struct IRowsetWatchNotifyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetWatchNotify *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetWatchNotify *This);
-      ULONG (WINAPI *Release)(IRowsetWatchNotify *This);
-      HRESULT (WINAPI *OnChange)(IRowsetWatchNotify *This,IRowset *pRowset,DBWATCHNOTIFY eChangeReason);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetWatchNotify *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetWatchNotify *This);
+                   ULONG (WINAPI *Release)(IRowsetWatchNotify *This);
+                   HRESULT (WINAPI *OnChange)(IRowsetWatchNotify *This,IRowset *pRowset,DBWATCHNOTIFY eChangeReason);
     END_INTERFACE
   } IRowsetWatchNotifyVtbl;
   struct IRowsetWatchNotify {
@@ -458,18 +458,18 @@ extern "C" {
 #else
   typedef struct IRowsetWatchRegionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetWatchRegion *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetWatchRegion *This);
-      ULONG (WINAPI *Release)(IRowsetWatchRegion *This);
-      HRESULT (WINAPI *Acknowledge)(IRowsetWatchRegion *This);
-      HRESULT (WINAPI *Start)(IRowsetWatchRegion *This);
-      HRESULT (WINAPI *StopWatching)(IRowsetWatchRegion *This);
-      HRESULT (WINAPI *CreateWatchRegion)(IRowsetWatchRegion *This,DBWATCHMODE dwWatchMode,HWATCHREGION *phRegion);
-      HRESULT (WINAPI *ChangeWatchMode)(IRowsetWatchRegion *This,HWATCHREGION hRegion,DBWATCHMODE dwWatchMode);
-      HRESULT (WINAPI *DeleteWatchRegion)(IRowsetWatchRegion *This,HWATCHREGION hRegion);
-      HRESULT (WINAPI *GetWatchRegionInfo)(IRowsetWatchRegion *This,HWATCHREGION hRegion,DBWATCHMODE *pdwWatchMode,HCHAPTER *phChapter,DBBKMARK *pcbBookmark,BYTE **ppBookmark,DBROWCOUNT *pcRows);
-      HRESULT (WINAPI *Refresh)(IRowsetWatchRegion *This,DBCOUNTITEM *pcChangesObtained,DBROWWATCHCHANGE **prgChanges);
-      HRESULT (WINAPI *ShrinkWatchRegion)(IRowsetWatchRegion *This,HWATCHREGION hRegion,HCHAPTER hChapter,DBBKMARK cbBookmark,BYTE *pBookmark,DBROWCOUNT cRows);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetWatchRegion *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetWatchRegion *This);
+                   ULONG (WINAPI *Release)(IRowsetWatchRegion *This);
+                   HRESULT (WINAPI *Acknowledge)(IRowsetWatchRegion *This);
+                   HRESULT (WINAPI *Start)(IRowsetWatchRegion *This);
+                   HRESULT (WINAPI *StopWatching)(IRowsetWatchRegion *This);
+                   HRESULT (WINAPI *CreateWatchRegion)(IRowsetWatchRegion *This,DBWATCHMODE dwWatchMode,HWATCHREGION *phRegion);
+                   HRESULT (WINAPI *ChangeWatchMode)(IRowsetWatchRegion *This,HWATCHREGION hRegion,DBWATCHMODE dwWatchMode);
+                   HRESULT (WINAPI *DeleteWatchRegion)(IRowsetWatchRegion *This,HWATCHREGION hRegion);
+                   HRESULT (WINAPI *GetWatchRegionInfo)(IRowsetWatchRegion *This,HWATCHREGION hRegion,DBWATCHMODE *pdwWatchMode,HCHAPTER *phChapter,DBBKMARK *pcbBookmark,BYTE **ppBookmark,DBROWCOUNT *pcRows);
+                   HRESULT (WINAPI *Refresh)(IRowsetWatchRegion *This,DBCOUNTITEM *pcChangesObtained,DBROWWATCHCHANGE **prgChanges);
+                   HRESULT (WINAPI *ShrinkWatchRegion)(IRowsetWatchRegion *This,HWATCHREGION hRegion,HCHAPTER hChapter,DBBKMARK cbBookmark,BYTE *pBookmark,DBROWCOUNT cRows);
     END_INTERFACE
   } IRowsetWatchRegionVtbl;
   struct IRowsetWatchRegion {
@@ -520,13 +520,13 @@ extern "C" {
 #else
   typedef struct IRowsetCopyRowsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetCopyRows *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetCopyRows *This);
-      ULONG (WINAPI *Release)(IRowsetCopyRows *This);
-      HRESULT (WINAPI *CloseSource)(IRowsetCopyRows *This,HSOURCE hSourceID);
-      HRESULT (WINAPI *CopyByHROWS)(IRowsetCopyRows *This,HSOURCE hSourceID,HCHAPTER hReserved,DBROWCOUNT cRows,const HROW rghRows[],ULONG bFlags);
-      HRESULT (WINAPI *CopyRows)(IRowsetCopyRows *This,HSOURCE hSourceID,HCHAPTER hReserved,DBROWCOUNT cRows,ULONG bFlags,DBCOUNTITEM *pcRowsCopied);
-      HRESULT (WINAPI *DefineSource)(IRowsetCopyRows *This,const IRowset *pRowsetSource,const DBORDINAL cColIds,const DB_LORDINAL rgSourceColumns[],const DB_LORDINAL rgTargetColumns[],HSOURCE *phSourceID);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetCopyRows *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetCopyRows *This);
+                   ULONG (WINAPI *Release)(IRowsetCopyRows *This);
+                   HRESULT (WINAPI *CloseSource)(IRowsetCopyRows *This,HSOURCE hSourceID);
+                   HRESULT (WINAPI *CopyByHROWS)(IRowsetCopyRows *This,HSOURCE hSourceID,HCHAPTER hReserved,DBROWCOUNT cRows,const HROW rghRows[],ULONG bFlags);
+                   HRESULT (WINAPI *CopyRows)(IRowsetCopyRows *This,HSOURCE hSourceID,HCHAPTER hReserved,DBROWCOUNT cRows,ULONG bFlags,DBCOUNTITEM *pcRowsCopied);
+                   HRESULT (WINAPI *DefineSource)(IRowsetCopyRows *This,const IRowset *pRowsetSource,const DBORDINAL cColIds,const DB_LORDINAL rgSourceColumns[],const DB_LORDINAL rgTargetColumns[],HSOURCE *phSourceID);
     END_INTERFACE
   } IRowsetCopyRowsVtbl;
   struct IRowsetCopyRows {
@@ -564,11 +564,11 @@ extern "C" {
 #else
   typedef struct IReadDataVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IReadData *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IReadData *This);
-      ULONG (WINAPI *Release)(IReadData *This);
-      HRESULT (WINAPI *ReadData)(IReadData *This,HCHAPTER hChapter,DBBKMARK cbBookmark,const BYTE *pBookmark,DBROWOFFSET lRowsOffset,HACCESSOR hAccessor,DBROWCOUNT cRows,DBCOUNTITEM *pcRowsObtained,BYTE **ppFixedData,DBLENGTH *pcbVariableTotal,BYTE **ppVariableData);
-      HRESULT (WINAPI *ReleaseChapter)(IReadData *This,HCHAPTER hChapter);
+                   HRESULT (WINAPI *QueryInterface)(IReadData *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IReadData *This);
+                   ULONG (WINAPI *Release)(IReadData *This);
+                   HRESULT (WINAPI *ReadData)(IReadData *This,HCHAPTER hChapter,DBBKMARK cbBookmark,const BYTE *pBookmark,DBROWOFFSET lRowsOffset,HACCESSOR hAccessor,DBROWCOUNT cRows,DBCOUNTITEM *pcRowsObtained,BYTE **ppFixedData,DBLENGTH *pcbVariableTotal,BYTE **ppVariableData);
+                   HRESULT (WINAPI *ReleaseChapter)(IReadData *This,HCHAPTER hChapter);
     END_INTERFACE
   } IReadDataVtbl;
   struct IReadData {
@@ -632,15 +632,15 @@ extern "C" {
 #else
   typedef struct ICommandCostVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICommandCost *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICommandCost *This);
-      ULONG (WINAPI *Release)(ICommandCost *This);
-      HRESULT (WINAPI *GetAccumulatedCost)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG *pcCostLimits,DBCOST **prgCostLimits);
-      HRESULT (WINAPI *GetCostEstimate)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG *pcCostEstimates,DBCOST *prgCostEstimates);
-      HRESULT (WINAPI *GetCostGoals)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG *pcCostGoals,DBCOST *prgCostGoals);
-      HRESULT (WINAPI *GetCostLimits)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG *pcCostLimits,DBCOST *prgCostLimits);
-      HRESULT (WINAPI *SetCostGoals)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG cCostGoals,const DBCOST rgCostGoals[]);
-      HRESULT (WINAPI *SetCostLimits)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG cCostLimits,DBCOST *prgCostLimits,DBEXECLIMITS dwExecutionFlags);
+                   HRESULT (WINAPI *QueryInterface)(ICommandCost *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICommandCost *This);
+                   ULONG (WINAPI *Release)(ICommandCost *This);
+                   HRESULT (WINAPI *GetAccumulatedCost)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG *pcCostLimits,DBCOST **prgCostLimits);
+                   HRESULT (WINAPI *GetCostEstimate)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG *pcCostEstimates,DBCOST *prgCostEstimates);
+                   HRESULT (WINAPI *GetCostGoals)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG *pcCostGoals,DBCOST *prgCostGoals);
+                   HRESULT (WINAPI *GetCostLimits)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG *pcCostLimits,DBCOST *prgCostLimits);
+                   HRESULT (WINAPI *SetCostGoals)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG cCostGoals,const DBCOST rgCostGoals[]);
+                   HRESULT (WINAPI *SetCostLimits)(ICommandCost *This,LPCOLESTR pwszRowsetName,ULONG cCostLimits,DBCOST *prgCostLimits,DBEXECLIMITS dwExecutionFlags);
     END_INTERFACE
   } ICommandCostVtbl;
   struct ICommandCost {
@@ -684,11 +684,11 @@ extern "C" {
 #else
   typedef struct ICommandValidateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICommandValidate *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICommandValidate *This);
-      ULONG (WINAPI *Release)(ICommandValidate *This);
-      HRESULT (WINAPI *ValidateCompletely)(ICommandValidate *This);
-      HRESULT (WINAPI *ValidateSyntax)(ICommandValidate *This);
+                   HRESULT (WINAPI *QueryInterface)(ICommandValidate *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICommandValidate *This);
+                   ULONG (WINAPI *Release)(ICommandValidate *This);
+                   HRESULT (WINAPI *ValidateCompletely)(ICommandValidate *This);
+                   HRESULT (WINAPI *ValidateSyntax)(ICommandValidate *This);
     END_INTERFACE
   } ICommandValidateVtbl;
   struct ICommandValidate {
@@ -720,11 +720,11 @@ extern "C" {
 #else
   typedef struct ITableRenameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITableRename *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITableRename *This);
-      ULONG (WINAPI *Release)(ITableRename *This);
-      HRESULT (WINAPI *RenameColumn)(ITableRename *This,DBID *pTableId,DBID *pOldColumnId,DBID *pNewColumnId);
-      HRESULT (WINAPI *RenameTable)(ITableRename *This,DBID *pOldTableId,DBID *pOldIndexId,DBID *pNewTableId,DBID *pNewIndexId);
+                   HRESULT (WINAPI *QueryInterface)(ITableRename *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITableRename *This);
+                   ULONG (WINAPI *Release)(ITableRename *This);
+                   HRESULT (WINAPI *RenameColumn)(ITableRename *This,DBID *pTableId,DBID *pOldColumnId,DBID *pNewColumnId);
+                   HRESULT (WINAPI *RenameTable)(ITableRename *This,DBID *pOldTableId,DBID *pOldIndexId,DBID *pNewTableId,DBID *pNewIndexId);
     END_INTERFACE
   } ITableRenameVtbl;
   struct ITableRename {
@@ -756,11 +756,11 @@ extern "C" {
 #else
   typedef struct IDBSchemaCommandVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDBSchemaCommand *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDBSchemaCommand *This);
-      ULONG (WINAPI *Release)(IDBSchemaCommand *This);
-      HRESULT (WINAPI *GetCommand)(IDBSchemaCommand *This,IUnknown *pUnkOuter,REFGUID rguidSchema,ICommand **ppCommand);
-      HRESULT (WINAPI *GetSchemas)(IDBSchemaCommand *This,ULONG *pcSchemas,GUID **prgSchemas);
+                   HRESULT (WINAPI *QueryInterface)(IDBSchemaCommand *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDBSchemaCommand *This);
+                   ULONG (WINAPI *Release)(IDBSchemaCommand *This);
+                   HRESULT (WINAPI *GetCommand)(IDBSchemaCommand *This,IUnknown *pUnkOuter,REFGUID rguidSchema,ICommand **ppCommand);
+                   HRESULT (WINAPI *GetSchemas)(IDBSchemaCommand *This,ULONG *pcSchemas,GUID **prgSchemas);
     END_INTERFACE
   } IDBSchemaCommandVtbl;
   struct IDBSchemaCommand {
@@ -791,10 +791,10 @@ extern "C" {
 #else
   typedef struct IProvideMonikerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IProvideMoniker *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IProvideMoniker *This);
-      ULONG (WINAPI *Release)(IProvideMoniker *This);
-      HRESULT (WINAPI *GetMoniker)(IProvideMoniker *This,IMoniker **ppIMoniker);
+                   HRESULT (WINAPI *QueryInterface)(IProvideMoniker *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IProvideMoniker *This);
+                   ULONG (WINAPI *Release)(IProvideMoniker *This);
+                   HRESULT (WINAPI *GetMoniker)(IProvideMoniker *This,IMoniker **ppIMoniker);
     END_INTERFACE
   } IProvideMonikerVtbl;
   struct IProvideMoniker {

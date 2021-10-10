@@ -171,7 +171,7 @@ enum rio_transfer_dir {
  *
  * NREAD:    read up to 256 bytes from remote device memory into local memory
  * NWRITE:   write up to 256 bytes from local memory to remote device memory
- *           without confirmation
+ *                        without confirmation
  * SWRITE:   as NWRITE, but all addresses and payloads must be 64-bit aligned
  * NWRITE_R: as NWRITE, but expect acknowledgment from remote device.
  *
@@ -224,7 +224,7 @@ struct rio_rdev_info {
 };
 
 /* Driver IOCTL codes */
-#define RIO_MPORT_DRV_MAGIC           'm'
+#define RIO_MPORT_DRV_MAGIC                        'm'
 
 #define RIO_MPORT_MAINT_HDID_SET	\
 	_IOW(RIO_MPORT_DRV_MAGIC, 1, __u16)

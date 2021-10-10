@@ -47,7 +47,7 @@ extern int ether_hostton (const char *__hostname, struct ether_addr *__addr)
 
 /* Scan LINE and set ADDR and HOSTNAME.  */
 extern int ether_line (const char *__line, struct ether_addr *__addr,
-		       char *__hostname) __THROW;
+		                    char *__hostname) __THROW;
 
 __END_DECLS
 #endif /* Use misc.  */

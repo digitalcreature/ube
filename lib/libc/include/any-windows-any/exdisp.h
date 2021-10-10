@@ -332,83 +332,83 @@ MIDL_INTERFACE("eab22ac1-30c1-11cf-a7eb-0000c05bae0b")
 IWebBrowser : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GoBack(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GoForward(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GoHome(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GoSearch(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Navigate(
-        BSTR URL,
-        VARIANT *Flags,
-        VARIANT *TargetFrameName,
-        VARIANT *PostData,
-        VARIANT *Headers) = 0;
+                     BSTR URL,
+                     VARIANT *Flags,
+                     VARIANT *TargetFrameName,
+                     VARIANT *PostData,
+                     VARIANT *Headers) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Refresh(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Refresh2(
-        VARIANT *Level) = 0;
+                     VARIANT *Level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Application(
-        IDispatch **ppDisp) = 0;
+                     IDispatch **ppDisp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Parent(
-        IDispatch **ppDisp) = 0;
+                     IDispatch **ppDisp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Container(
-        IDispatch **ppDisp) = 0;
+                     IDispatch **ppDisp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Document(
-        IDispatch **ppDisp) = 0;
+                     IDispatch **ppDisp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TopLevelContainer(
-        VARIANT_BOOL *pBool) = 0;
+                     VARIANT_BOOL *pBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        BSTR *Type) = 0;
+                     BSTR *Type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Left(
-        LONG *pl) = 0;
+                     LONG *pl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Left(
-        LONG Left) = 0;
+                     LONG Left) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Top(
-        LONG *pl) = 0;
+                     LONG *pl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Top(
-        LONG Top) = 0;
+                     LONG Top) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Width(
-        LONG *pl) = 0;
+                     LONG *pl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Width(
-        LONG Width) = 0;
+                     LONG Width) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Height(
-        LONG *pl) = 0;
+                     LONG *pl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Height(
-        LONG Height) = 0;
+                     LONG Height) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocationName(
-        BSTR *LocationName) = 0;
+                     BSTR *LocationName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocationURL(
-        BSTR *LocationURL) = 0;
+                     BSTR *LocationURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Busy(
-        VARIANT_BOOL *pBool) = 0;
+                     VARIANT_BOOL *pBool) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -420,144 +420,144 @@ typedef struct IWebBrowserVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWebBrowser *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWebBrowser *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWebBrowser *This);
+                     IWebBrowser *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWebBrowser *This);
+                     IWebBrowser *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWebBrowser *This,
-        UINT *pctinfo);
+                     IWebBrowser *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWebBrowser *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWebBrowser *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWebBrowser *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWebBrowser *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWebBrowser *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWebBrowser *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWebBrowser methods ***/
     HRESULT (STDMETHODCALLTYPE *GoBack)(
-        IWebBrowser *This);
+                     IWebBrowser *This);
 
     HRESULT (STDMETHODCALLTYPE *GoForward)(
-        IWebBrowser *This);
+                     IWebBrowser *This);
 
     HRESULT (STDMETHODCALLTYPE *GoHome)(
-        IWebBrowser *This);
+                     IWebBrowser *This);
 
     HRESULT (STDMETHODCALLTYPE *GoSearch)(
-        IWebBrowser *This);
+                     IWebBrowser *This);
 
     HRESULT (STDMETHODCALLTYPE *Navigate)(
-        IWebBrowser *This,
-        BSTR URL,
-        VARIANT *Flags,
-        VARIANT *TargetFrameName,
-        VARIANT *PostData,
-        VARIANT *Headers);
+                     IWebBrowser *This,
+                     BSTR URL,
+                     VARIANT *Flags,
+                     VARIANT *TargetFrameName,
+                     VARIANT *PostData,
+                     VARIANT *Headers);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWebBrowser *This);
+                     IWebBrowser *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh2)(
-        IWebBrowser *This,
-        VARIANT *Level);
+                     IWebBrowser *This,
+                     VARIANT *Level);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IWebBrowser *This);
+                     IWebBrowser *This);
 
     HRESULT (STDMETHODCALLTYPE *get_Application)(
-        IWebBrowser *This,
-        IDispatch **ppDisp);
+                     IWebBrowser *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Parent)(
-        IWebBrowser *This,
-        IDispatch **ppDisp);
+                     IWebBrowser *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Container)(
-        IWebBrowser *This,
-        IDispatch **ppDisp);
+                     IWebBrowser *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Document)(
-        IWebBrowser *This,
-        IDispatch **ppDisp);
+                     IWebBrowser *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_TopLevelContainer)(
-        IWebBrowser *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowser *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IWebBrowser *This,
-        BSTR *Type);
+                     IWebBrowser *This,
+                     BSTR *Type);
 
     HRESULT (STDMETHODCALLTYPE *get_Left)(
-        IWebBrowser *This,
-        LONG *pl);
+                     IWebBrowser *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Left)(
-        IWebBrowser *This,
-        LONG Left);
+                     IWebBrowser *This,
+                     LONG Left);
 
     HRESULT (STDMETHODCALLTYPE *get_Top)(
-        IWebBrowser *This,
-        LONG *pl);
+                     IWebBrowser *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Top)(
-        IWebBrowser *This,
-        LONG Top);
+                     IWebBrowser *This,
+                     LONG Top);
 
     HRESULT (STDMETHODCALLTYPE *get_Width)(
-        IWebBrowser *This,
-        LONG *pl);
+                     IWebBrowser *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Width)(
-        IWebBrowser *This,
-        LONG Width);
+                     IWebBrowser *This,
+                     LONG Width);
 
     HRESULT (STDMETHODCALLTYPE *get_Height)(
-        IWebBrowser *This,
-        LONG *pl);
+                     IWebBrowser *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Height)(
-        IWebBrowser *This,
-        LONG Height);
+                     IWebBrowser *This,
+                     LONG Height);
 
     HRESULT (STDMETHODCALLTYPE *get_LocationName)(
-        IWebBrowser *This,
-        BSTR *LocationName);
+                     IWebBrowser *This,
+                     BSTR *LocationName);
 
     HRESULT (STDMETHODCALLTYPE *get_LocationURL)(
-        IWebBrowser *This,
-        BSTR *LocationURL);
+                     IWebBrowser *This,
+                     BSTR *LocationURL);
 
     HRESULT (STDMETHODCALLTYPE *get_Busy)(
-        IWebBrowser *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowser *This,
+                     VARIANT_BOOL *pBool);
 
     END_INTERFACE
 } IWebBrowserVtbl;
@@ -732,45 +732,45 @@ typedef struct DWebBrowserEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        DWebBrowserEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     DWebBrowserEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        DWebBrowserEvents *This);
+                     DWebBrowserEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        DWebBrowserEvents *This);
+                     DWebBrowserEvents *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        DWebBrowserEvents *This,
-        UINT *pctinfo);
+                     DWebBrowserEvents *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        DWebBrowserEvents *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     DWebBrowserEvents *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        DWebBrowserEvents *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     DWebBrowserEvents *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        DWebBrowserEvents *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     DWebBrowserEvents *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } DWebBrowserEventsVtbl;
@@ -838,67 +838,67 @@ MIDL_INTERFACE("0002df05-0000-0000-c000-000000000046")
 IWebBrowserApp : public IWebBrowser
 {
     virtual HRESULT STDMETHODCALLTYPE Quit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClientToWindow(
-        int *pcx,
-        int *pcy) = 0;
+                     int *pcx,
+                     int *pcy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutProperty(
-        BSTR Property,
-        VARIANT vtValue) = 0;
+                     BSTR Property,
+                     VARIANT vtValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        BSTR Property,
-        VARIANT *pvtValue) = 0;
+                     BSTR Property,
+                     VARIANT *pvtValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HWND(
-        SHANDLE_PTR *pHWND) = 0;
+                     SHANDLE_PTR *pHWND) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FullName(
-        BSTR *FullName) = 0;
+                     BSTR *FullName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *Path) = 0;
+                     BSTR *Path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Visible(
-        VARIANT_BOOL *pBool) = 0;
+                     VARIANT_BOOL *pBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Visible(
-        VARIANT_BOOL Value) = 0;
+                     VARIANT_BOOL Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StatusBar(
-        VARIANT_BOOL *pBool) = 0;
+                     VARIANT_BOOL *pBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StatusBar(
-        VARIANT_BOOL Value) = 0;
+                     VARIANT_BOOL Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StatusText(
-        BSTR *StatusText) = 0;
+                     BSTR *StatusText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StatusText(
-        BSTR StatusText) = 0;
+                     BSTR StatusText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ToolBar(
-        int *Value) = 0;
+                     int *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ToolBar(
-        int Value) = 0;
+                     int Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MenuBar(
-        VARIANT_BOOL *Value) = 0;
+                     VARIANT_BOOL *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MenuBar(
-        VARIANT_BOOL Value) = 0;
+                     VARIANT_BOOL Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FullScreen(
-        VARIANT_BOOL *pbFullScreen) = 0;
+                     VARIANT_BOOL *pbFullScreen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FullScreen(
-        VARIANT_BOOL bFullScreen) = 0;
+                     VARIANT_BOOL bFullScreen) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -910,227 +910,227 @@ typedef struct IWebBrowserAppVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWebBrowserApp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWebBrowserApp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWebBrowserApp *This,
-        UINT *pctinfo);
+                     IWebBrowserApp *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWebBrowserApp *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWebBrowserApp *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWebBrowserApp *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWebBrowserApp *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWebBrowserApp *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWebBrowserApp *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWebBrowser methods ***/
     HRESULT (STDMETHODCALLTYPE *GoBack)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     HRESULT (STDMETHODCALLTYPE *GoForward)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     HRESULT (STDMETHODCALLTYPE *GoHome)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     HRESULT (STDMETHODCALLTYPE *GoSearch)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     HRESULT (STDMETHODCALLTYPE *Navigate)(
-        IWebBrowserApp *This,
-        BSTR URL,
-        VARIANT *Flags,
-        VARIANT *TargetFrameName,
-        VARIANT *PostData,
-        VARIANT *Headers);
+                     IWebBrowserApp *This,
+                     BSTR URL,
+                     VARIANT *Flags,
+                     VARIANT *TargetFrameName,
+                     VARIANT *PostData,
+                     VARIANT *Headers);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh2)(
-        IWebBrowserApp *This,
-        VARIANT *Level);
+                     IWebBrowserApp *This,
+                     VARIANT *Level);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     HRESULT (STDMETHODCALLTYPE *get_Application)(
-        IWebBrowserApp *This,
-        IDispatch **ppDisp);
+                     IWebBrowserApp *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Parent)(
-        IWebBrowserApp *This,
-        IDispatch **ppDisp);
+                     IWebBrowserApp *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Container)(
-        IWebBrowserApp *This,
-        IDispatch **ppDisp);
+                     IWebBrowserApp *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Document)(
-        IWebBrowserApp *This,
-        IDispatch **ppDisp);
+                     IWebBrowserApp *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_TopLevelContainer)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IWebBrowserApp *This,
-        BSTR *Type);
+                     IWebBrowserApp *This,
+                     BSTR *Type);
 
     HRESULT (STDMETHODCALLTYPE *get_Left)(
-        IWebBrowserApp *This,
-        LONG *pl);
+                     IWebBrowserApp *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Left)(
-        IWebBrowserApp *This,
-        LONG Left);
+                     IWebBrowserApp *This,
+                     LONG Left);
 
     HRESULT (STDMETHODCALLTYPE *get_Top)(
-        IWebBrowserApp *This,
-        LONG *pl);
+                     IWebBrowserApp *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Top)(
-        IWebBrowserApp *This,
-        LONG Top);
+                     IWebBrowserApp *This,
+                     LONG Top);
 
     HRESULT (STDMETHODCALLTYPE *get_Width)(
-        IWebBrowserApp *This,
-        LONG *pl);
+                     IWebBrowserApp *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Width)(
-        IWebBrowserApp *This,
-        LONG Width);
+                     IWebBrowserApp *This,
+                     LONG Width);
 
     HRESULT (STDMETHODCALLTYPE *get_Height)(
-        IWebBrowserApp *This,
-        LONG *pl);
+                     IWebBrowserApp *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Height)(
-        IWebBrowserApp *This,
-        LONG Height);
+                     IWebBrowserApp *This,
+                     LONG Height);
 
     HRESULT (STDMETHODCALLTYPE *get_LocationName)(
-        IWebBrowserApp *This,
-        BSTR *LocationName);
+                     IWebBrowserApp *This,
+                     BSTR *LocationName);
 
     HRESULT (STDMETHODCALLTYPE *get_LocationURL)(
-        IWebBrowserApp *This,
-        BSTR *LocationURL);
+                     IWebBrowserApp *This,
+                     BSTR *LocationURL);
 
     HRESULT (STDMETHODCALLTYPE *get_Busy)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL *pBool);
 
     /*** IWebBrowserApp methods ***/
     HRESULT (STDMETHODCALLTYPE *Quit)(
-        IWebBrowserApp *This);
+                     IWebBrowserApp *This);
 
     HRESULT (STDMETHODCALLTYPE *ClientToWindow)(
-        IWebBrowserApp *This,
-        int *pcx,
-        int *pcy);
+                     IWebBrowserApp *This,
+                     int *pcx,
+                     int *pcy);
 
     HRESULT (STDMETHODCALLTYPE *PutProperty)(
-        IWebBrowserApp *This,
-        BSTR Property,
-        VARIANT vtValue);
+                     IWebBrowserApp *This,
+                     BSTR Property,
+                     VARIANT vtValue);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IWebBrowserApp *This,
-        BSTR Property,
-        VARIANT *pvtValue);
+                     IWebBrowserApp *This,
+                     BSTR Property,
+                     VARIANT *pvtValue);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWebBrowserApp *This,
-        BSTR *Name);
+                     IWebBrowserApp *This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *get_HWND)(
-        IWebBrowserApp *This,
-        SHANDLE_PTR *pHWND);
+                     IWebBrowserApp *This,
+                     SHANDLE_PTR *pHWND);
 
     HRESULT (STDMETHODCALLTYPE *get_FullName)(
-        IWebBrowserApp *This,
-        BSTR *FullName);
+                     IWebBrowserApp *This,
+                     BSTR *FullName);
 
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IWebBrowserApp *This,
-        BSTR *Path);
+                     IWebBrowserApp *This,
+                     BSTR *Path);
 
     HRESULT (STDMETHODCALLTYPE *get_Visible)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *put_Visible)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL Value);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL Value);
 
     HRESULT (STDMETHODCALLTYPE *get_StatusBar)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *put_StatusBar)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL Value);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL Value);
 
     HRESULT (STDMETHODCALLTYPE *get_StatusText)(
-        IWebBrowserApp *This,
-        BSTR *StatusText);
+                     IWebBrowserApp *This,
+                     BSTR *StatusText);
 
     HRESULT (STDMETHODCALLTYPE *put_StatusText)(
-        IWebBrowserApp *This,
-        BSTR StatusText);
+                     IWebBrowserApp *This,
+                     BSTR StatusText);
 
     HRESULT (STDMETHODCALLTYPE *get_ToolBar)(
-        IWebBrowserApp *This,
-        int *Value);
+                     IWebBrowserApp *This,
+                     int *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_ToolBar)(
-        IWebBrowserApp *This,
-        int Value);
+                     IWebBrowserApp *This,
+                     int Value);
 
     HRESULT (STDMETHODCALLTYPE *get_MenuBar)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL *Value);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_MenuBar)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL Value);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL Value);
 
     HRESULT (STDMETHODCALLTYPE *get_FullScreen)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL *pbFullScreen);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL *pbFullScreen);
 
     HRESULT (STDMETHODCALLTYPE *put_FullScreen)(
-        IWebBrowserApp *This,
-        VARIANT_BOOL bFullScreen);
+                     IWebBrowserApp *This,
+                     VARIANT_BOOL bFullScreen);
 
     END_INTERFACE
 } IWebBrowserAppVtbl;
@@ -1378,71 +1378,71 @@ MIDL_INTERFACE("d30c1661-cdaf-11d0-8a3e-00c04fc9e26e")
 IWebBrowser2 : public IWebBrowserApp
 {
     virtual HRESULT STDMETHODCALLTYPE Navigate2(
-        VARIANT *URL,
-        VARIANT *Flags,
-        VARIANT *TargetFrameName,
-        VARIANT *PostData,
-        VARIANT *Headers) = 0;
+                     VARIANT *URL,
+                     VARIANT *Flags,
+                     VARIANT *TargetFrameName,
+                     VARIANT *PostData,
+                     VARIANT *Headers) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryStatusWB(
-        OLECMDID cmdID,
-        OLECMDF *pcmdf) = 0;
+                     OLECMDID cmdID,
+                     OLECMDF *pcmdf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExecWB(
-        OLECMDID cmdID,
-        OLECMDEXECOPT cmdexecopt,
-        VARIANT *pvaIn,
-        VARIANT *pvaOut) = 0;
+                     OLECMDID cmdID,
+                     OLECMDEXECOPT cmdexecopt,
+                     VARIANT *pvaIn,
+                     VARIANT *pvaOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowBrowserBar(
-        VARIANT *pvaClsid,
-        VARIANT *pvarShow,
-        VARIANT *pvarSize) = 0;
+                     VARIANT *pvaClsid,
+                     VARIANT *pvarShow,
+                     VARIANT *pvarSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ReadyState(
-        READYSTATE *plReadyState) = 0;
+                     READYSTATE *plReadyState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Offline(
-        VARIANT_BOOL *pbOffline) = 0;
+                     VARIANT_BOOL *pbOffline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Offline(
-        VARIANT_BOOL bOffline) = 0;
+                     VARIANT_BOOL bOffline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Silent(
-        VARIANT_BOOL *pbSilent) = 0;
+                     VARIANT_BOOL *pbSilent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Silent(
-        VARIANT_BOOL bSilent) = 0;
+                     VARIANT_BOOL bSilent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RegisterAsBrowser(
-        VARIANT_BOOL *pbRegister) = 0;
+                     VARIANT_BOOL *pbRegister) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RegisterAsBrowser(
-        VARIANT_BOOL bRegister) = 0;
+                     VARIANT_BOOL bRegister) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RegisterAsDropTarget(
-        VARIANT_BOOL *pbRegister) = 0;
+                     VARIANT_BOOL *pbRegister) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RegisterAsDropTarget(
-        VARIANT_BOOL bRegister) = 0;
+                     VARIANT_BOOL bRegister) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TheaterMode(
-        VARIANT_BOOL *pbRegister) = 0;
+                     VARIANT_BOOL *pbRegister) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TheaterMode(
-        VARIANT_BOOL bRegister) = 0;
+                     VARIANT_BOOL bRegister) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AddressBar(
-        VARIANT_BOOL *Value) = 0;
+                     VARIANT_BOOL *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AddressBar(
-        VARIANT_BOOL Value) = 0;
+                     VARIANT_BOOL Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Resizable(
-        VARIANT_BOOL *Value) = 0;
+                     VARIANT_BOOL *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Resizable(
-        VARIANT_BOOL Value) = 0;
+                     VARIANT_BOOL Value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1454,314 +1454,314 @@ typedef struct IWebBrowser2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWebBrowser2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWebBrowser2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWebBrowser2 *This,
-        UINT *pctinfo);
+                     IWebBrowser2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWebBrowser2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWebBrowser2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWebBrowser2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWebBrowser2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWebBrowser2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWebBrowser2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWebBrowser methods ***/
     HRESULT (STDMETHODCALLTYPE *GoBack)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GoForward)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GoHome)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GoSearch)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Navigate)(
-        IWebBrowser2 *This,
-        BSTR URL,
-        VARIANT *Flags,
-        VARIANT *TargetFrameName,
-        VARIANT *PostData,
-        VARIANT *Headers);
+                     IWebBrowser2 *This,
+                     BSTR URL,
+                     VARIANT *Flags,
+                     VARIANT *TargetFrameName,
+                     VARIANT *PostData,
+                     VARIANT *Headers);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh2)(
-        IWebBrowser2 *This,
-        VARIANT *Level);
+                     IWebBrowser2 *This,
+                     VARIANT *Level);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     HRESULT (STDMETHODCALLTYPE *get_Application)(
-        IWebBrowser2 *This,
-        IDispatch **ppDisp);
+                     IWebBrowser2 *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Parent)(
-        IWebBrowser2 *This,
-        IDispatch **ppDisp);
+                     IWebBrowser2 *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Container)(
-        IWebBrowser2 *This,
-        IDispatch **ppDisp);
+                     IWebBrowser2 *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_Document)(
-        IWebBrowser2 *This,
-        IDispatch **ppDisp);
+                     IWebBrowser2 *This,
+                     IDispatch **ppDisp);
 
     HRESULT (STDMETHODCALLTYPE *get_TopLevelContainer)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IWebBrowser2 *This,
-        BSTR *Type);
+                     IWebBrowser2 *This,
+                     BSTR *Type);
 
     HRESULT (STDMETHODCALLTYPE *get_Left)(
-        IWebBrowser2 *This,
-        LONG *pl);
+                     IWebBrowser2 *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Left)(
-        IWebBrowser2 *This,
-        LONG Left);
+                     IWebBrowser2 *This,
+                     LONG Left);
 
     HRESULT (STDMETHODCALLTYPE *get_Top)(
-        IWebBrowser2 *This,
-        LONG *pl);
+                     IWebBrowser2 *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Top)(
-        IWebBrowser2 *This,
-        LONG Top);
+                     IWebBrowser2 *This,
+                     LONG Top);
 
     HRESULT (STDMETHODCALLTYPE *get_Width)(
-        IWebBrowser2 *This,
-        LONG *pl);
+                     IWebBrowser2 *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Width)(
-        IWebBrowser2 *This,
-        LONG Width);
+                     IWebBrowser2 *This,
+                     LONG Width);
 
     HRESULT (STDMETHODCALLTYPE *get_Height)(
-        IWebBrowser2 *This,
-        LONG *pl);
+                     IWebBrowser2 *This,
+                     LONG *pl);
 
     HRESULT (STDMETHODCALLTYPE *put_Height)(
-        IWebBrowser2 *This,
-        LONG Height);
+                     IWebBrowser2 *This,
+                     LONG Height);
 
     HRESULT (STDMETHODCALLTYPE *get_LocationName)(
-        IWebBrowser2 *This,
-        BSTR *LocationName);
+                     IWebBrowser2 *This,
+                     BSTR *LocationName);
 
     HRESULT (STDMETHODCALLTYPE *get_LocationURL)(
-        IWebBrowser2 *This,
-        BSTR *LocationURL);
+                     IWebBrowser2 *This,
+                     BSTR *LocationURL);
 
     HRESULT (STDMETHODCALLTYPE *get_Busy)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pBool);
 
     /*** IWebBrowserApp methods ***/
     HRESULT (STDMETHODCALLTYPE *Quit)(
-        IWebBrowser2 *This);
+                     IWebBrowser2 *This);
 
     HRESULT (STDMETHODCALLTYPE *ClientToWindow)(
-        IWebBrowser2 *This,
-        int *pcx,
-        int *pcy);
+                     IWebBrowser2 *This,
+                     int *pcx,
+                     int *pcy);
 
     HRESULT (STDMETHODCALLTYPE *PutProperty)(
-        IWebBrowser2 *This,
-        BSTR Property,
-        VARIANT vtValue);
+                     IWebBrowser2 *This,
+                     BSTR Property,
+                     VARIANT vtValue);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IWebBrowser2 *This,
-        BSTR Property,
-        VARIANT *pvtValue);
+                     IWebBrowser2 *This,
+                     BSTR Property,
+                     VARIANT *pvtValue);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWebBrowser2 *This,
-        BSTR *Name);
+                     IWebBrowser2 *This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *get_HWND)(
-        IWebBrowser2 *This,
-        SHANDLE_PTR *pHWND);
+                     IWebBrowser2 *This,
+                     SHANDLE_PTR *pHWND);
 
     HRESULT (STDMETHODCALLTYPE *get_FullName)(
-        IWebBrowser2 *This,
-        BSTR *FullName);
+                     IWebBrowser2 *This,
+                     BSTR *FullName);
 
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IWebBrowser2 *This,
-        BSTR *Path);
+                     IWebBrowser2 *This,
+                     BSTR *Path);
 
     HRESULT (STDMETHODCALLTYPE *get_Visible)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *put_Visible)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL Value);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL Value);
 
     HRESULT (STDMETHODCALLTYPE *get_StatusBar)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pBool);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *put_StatusBar)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL Value);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL Value);
 
     HRESULT (STDMETHODCALLTYPE *get_StatusText)(
-        IWebBrowser2 *This,
-        BSTR *StatusText);
+                     IWebBrowser2 *This,
+                     BSTR *StatusText);
 
     HRESULT (STDMETHODCALLTYPE *put_StatusText)(
-        IWebBrowser2 *This,
-        BSTR StatusText);
+                     IWebBrowser2 *This,
+                     BSTR StatusText);
 
     HRESULT (STDMETHODCALLTYPE *get_ToolBar)(
-        IWebBrowser2 *This,
-        int *Value);
+                     IWebBrowser2 *This,
+                     int *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_ToolBar)(
-        IWebBrowser2 *This,
-        int Value);
+                     IWebBrowser2 *This,
+                     int Value);
 
     HRESULT (STDMETHODCALLTYPE *get_MenuBar)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *Value);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_MenuBar)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL Value);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL Value);
 
     HRESULT (STDMETHODCALLTYPE *get_FullScreen)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pbFullScreen);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pbFullScreen);
 
     HRESULT (STDMETHODCALLTYPE *put_FullScreen)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL bFullScreen);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL bFullScreen);
 
     /*** IWebBrowser2 methods ***/
     HRESULT (STDMETHODCALLTYPE *Navigate2)(
-        IWebBrowser2 *This,
-        VARIANT *URL,
-        VARIANT *Flags,
-        VARIANT *TargetFrameName,
-        VARIANT *PostData,
-        VARIANT *Headers);
+                     IWebBrowser2 *This,
+                     VARIANT *URL,
+                     VARIANT *Flags,
+                     VARIANT *TargetFrameName,
+                     VARIANT *PostData,
+                     VARIANT *Headers);
 
     HRESULT (STDMETHODCALLTYPE *QueryStatusWB)(
-        IWebBrowser2 *This,
-        OLECMDID cmdID,
-        OLECMDF *pcmdf);
+                     IWebBrowser2 *This,
+                     OLECMDID cmdID,
+                     OLECMDF *pcmdf);
 
     HRESULT (STDMETHODCALLTYPE *ExecWB)(
-        IWebBrowser2 *This,
-        OLECMDID cmdID,
-        OLECMDEXECOPT cmdexecopt,
-        VARIANT *pvaIn,
-        VARIANT *pvaOut);
+                     IWebBrowser2 *This,
+                     OLECMDID cmdID,
+                     OLECMDEXECOPT cmdexecopt,
+                     VARIANT *pvaIn,
+                     VARIANT *pvaOut);
 
     HRESULT (STDMETHODCALLTYPE *ShowBrowserBar)(
-        IWebBrowser2 *This,
-        VARIANT *pvaClsid,
-        VARIANT *pvarShow,
-        VARIANT *pvarSize);
+                     IWebBrowser2 *This,
+                     VARIANT *pvaClsid,
+                     VARIANT *pvarShow,
+                     VARIANT *pvarSize);
 
     HRESULT (STDMETHODCALLTYPE *get_ReadyState)(
-        IWebBrowser2 *This,
-        READYSTATE *plReadyState);
+                     IWebBrowser2 *This,
+                     READYSTATE *plReadyState);
 
     HRESULT (STDMETHODCALLTYPE *get_Offline)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pbOffline);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pbOffline);
 
     HRESULT (STDMETHODCALLTYPE *put_Offline)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL bOffline);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL bOffline);
 
     HRESULT (STDMETHODCALLTYPE *get_Silent)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pbSilent);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pbSilent);
 
     HRESULT (STDMETHODCALLTYPE *put_Silent)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL bSilent);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL bSilent);
 
     HRESULT (STDMETHODCALLTYPE *get_RegisterAsBrowser)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pbRegister);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pbRegister);
 
     HRESULT (STDMETHODCALLTYPE *put_RegisterAsBrowser)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL bRegister);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL bRegister);
 
     HRESULT (STDMETHODCALLTYPE *get_RegisterAsDropTarget)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pbRegister);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pbRegister);
 
     HRESULT (STDMETHODCALLTYPE *put_RegisterAsDropTarget)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL bRegister);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL bRegister);
 
     HRESULT (STDMETHODCALLTYPE *get_TheaterMode)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *pbRegister);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *pbRegister);
 
     HRESULT (STDMETHODCALLTYPE *put_TheaterMode)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL bRegister);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL bRegister);
 
     HRESULT (STDMETHODCALLTYPE *get_AddressBar)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *Value);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_AddressBar)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL Value);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL Value);
 
     HRESULT (STDMETHODCALLTYPE *get_Resizable)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL *Value);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_Resizable)(
-        IWebBrowser2 *This,
-        VARIANT_BOOL Value);
+                     IWebBrowser2 *This,
+                     VARIANT_BOOL Value);
 
     END_INTERFACE
 } IWebBrowser2Vtbl;
@@ -2105,45 +2105,45 @@ typedef struct DWebBrowserEvents2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        DWebBrowserEvents2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     DWebBrowserEvents2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        DWebBrowserEvents2 *This);
+                     DWebBrowserEvents2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        DWebBrowserEvents2 *This);
+                     DWebBrowserEvents2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        DWebBrowserEvents2 *This,
-        UINT *pctinfo);
+                     DWebBrowserEvents2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        DWebBrowserEvents2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     DWebBrowserEvents2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        DWebBrowserEvents2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     DWebBrowserEvents2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        DWebBrowserEvents2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     DWebBrowserEvents2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } DWebBrowserEvents2Vtbl;
@@ -2279,45 +2279,45 @@ typedef struct DShellWindowsEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        DShellWindowsEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     DShellWindowsEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        DShellWindowsEvents *This);
+                     DShellWindowsEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        DShellWindowsEvents *This);
+                     DShellWindowsEvents *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        DShellWindowsEvents *This,
-        UINT *pctinfo);
+                     DShellWindowsEvents *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        DShellWindowsEvents *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     DShellWindowsEvents *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        DShellWindowsEvents *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     DShellWindowsEvents *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        DShellWindowsEvents *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     DShellWindowsEvents *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } DShellWindowsEventsVtbl;
@@ -2380,53 +2380,53 @@ MIDL_INTERFACE("85cb6900-4d95-11cf-960c-0080c7f4ee85")
 IShellWindows : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        VARIANT index,
-        IDispatch **Folder) = 0;
+                     VARIANT index,
+                     IDispatch **Folder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE _NewEnum(
-        IUnknown **ppunk) = 0;
+                     IUnknown **ppunk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Register(
-        IDispatch *pid,
-        LONG hWnd,
-        int swClass,
-        LONG *plCookie) = 0;
+                     IDispatch *pid,
+                     LONG hWnd,
+                     int swClass,
+                     LONG *plCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterPending(
-        LONG lThreadId,
-        VARIANT *pvarloc,
-        VARIANT *pvarlocRoot,
-        int swClass,
-        LONG *plCookie) = 0;
+                     LONG lThreadId,
+                     VARIANT *pvarloc,
+                     VARIANT *pvarlocRoot,
+                     int swClass,
+                     LONG *plCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Revoke(
-        LONG lCookie) = 0;
+                     LONG lCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnNavigate(
-        LONG lCookie,
-        VARIANT *pvarLoc) = 0;
+                     LONG lCookie,
+                     VARIANT *pvarLoc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnActivated(
-        LONG lCookie,
-        VARIANT_BOOL fActive) = 0;
+                     LONG lCookie,
+                     VARIANT_BOOL fActive) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindWindowSW(
-        VARIANT *pvarLoc,
-        VARIANT *pvarLocRoot,
-        int swClass,
-        LONG *phwnd,
-        int swfwOptions,
-        IDispatch **ppdispOut) = 0;
+                     VARIANT *pvarLoc,
+                     VARIANT *pvarLocRoot,
+                     int swClass,
+                     LONG *phwnd,
+                     int swfwOptions,
+                     IDispatch **ppdispOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnCreated(
-        LONG lCookie,
-        IUnknown *punk) = 0;
+                     LONG lCookie,
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessAttachDetach(
-        VARIANT_BOOL fAttach) = 0;
+                     VARIANT_BOOL fAttach) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2438,106 +2438,106 @@ typedef struct IShellWindowsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellWindows *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellWindows *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellWindows *This);
+                     IShellWindows *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellWindows *This);
+                     IShellWindows *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IShellWindows *This,
-        UINT *pctinfo);
+                     IShellWindows *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IShellWindows *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IShellWindows *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IShellWindows *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IShellWindows *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IShellWindows *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IShellWindows *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IShellWindows methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IShellWindows *This,
-        LONG *Count);
+                     IShellWindows *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IShellWindows *This,
-        VARIANT index,
-        IDispatch **Folder);
+                     IShellWindows *This,
+                     VARIANT index,
+                     IDispatch **Folder);
 
     HRESULT (STDMETHODCALLTYPE *_NewEnum)(
-        IShellWindows *This,
-        IUnknown **ppunk);
+                     IShellWindows *This,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IShellWindows *This,
-        IDispatch *pid,
-        LONG hWnd,
-        int swClass,
-        LONG *plCookie);
+                     IShellWindows *This,
+                     IDispatch *pid,
+                     LONG hWnd,
+                     int swClass,
+                     LONG *plCookie);
 
     HRESULT (STDMETHODCALLTYPE *RegisterPending)(
-        IShellWindows *This,
-        LONG lThreadId,
-        VARIANT *pvarloc,
-        VARIANT *pvarlocRoot,
-        int swClass,
-        LONG *plCookie);
+                     IShellWindows *This,
+                     LONG lThreadId,
+                     VARIANT *pvarloc,
+                     VARIANT *pvarlocRoot,
+                     int swClass,
+                     LONG *plCookie);
 
     HRESULT (STDMETHODCALLTYPE *Revoke)(
-        IShellWindows *This,
-        LONG lCookie);
+                     IShellWindows *This,
+                     LONG lCookie);
 
     HRESULT (STDMETHODCALLTYPE *OnNavigate)(
-        IShellWindows *This,
-        LONG lCookie,
-        VARIANT *pvarLoc);
+                     IShellWindows *This,
+                     LONG lCookie,
+                     VARIANT *pvarLoc);
 
     HRESULT (STDMETHODCALLTYPE *OnActivated)(
-        IShellWindows *This,
-        LONG lCookie,
-        VARIANT_BOOL fActive);
+                     IShellWindows *This,
+                     LONG lCookie,
+                     VARIANT_BOOL fActive);
 
     HRESULT (STDMETHODCALLTYPE *FindWindowSW)(
-        IShellWindows *This,
-        VARIANT *pvarLoc,
-        VARIANT *pvarLocRoot,
-        int swClass,
-        LONG *phwnd,
-        int swfwOptions,
-        IDispatch **ppdispOut);
+                     IShellWindows *This,
+                     VARIANT *pvarLoc,
+                     VARIANT *pvarLocRoot,
+                     int swClass,
+                     LONG *phwnd,
+                     int swfwOptions,
+                     IDispatch **ppdispOut);
 
     HRESULT (STDMETHODCALLTYPE *OnCreated)(
-        IShellWindows *This,
-        LONG lCookie,
-        IUnknown *punk);
+                     IShellWindows *This,
+                     LONG lCookie,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *ProcessAttachDetach)(
-        IShellWindows *This,
-        VARIANT_BOOL fAttach);
+                     IShellWindows *This,
+                     VARIANT_BOOL fAttach);
 
     END_INTERFACE
 } IShellWindowsVtbl;
@@ -2660,57 +2660,57 @@ MIDL_INTERFACE("729fe2f8-1ea8-11d1-8f85-00c04fc2fbe1")
 IShellUIHelper : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE ResetFirstBootMode(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetSafeMode(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RefreshOfflineDesktop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddFavorite(
-        BSTR URL,
-        VARIANT *Title) = 0;
+                     BSTR URL,
+                     VARIANT *Title) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddChannel(
-        BSTR URL) = 0;
+                     BSTR URL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddDesktopComponent(
-        BSTR URL,
-        BSTR Type,
-        VARIANT *Left,
-        VARIANT *Top,
-        VARIANT *Width,
-        VARIANT *Height) = 0;
+                     BSTR URL,
+                     BSTR Type,
+                     VARIANT *Left,
+                     VARIANT *Top,
+                     VARIANT *Width,
+                     VARIANT *Height) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSubscribed(
-        BSTR URL,
-        VARIANT_BOOL *pBool) = 0;
+                     BSTR URL,
+                     VARIANT_BOOL *pBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NavigateAndFind(
-        BSTR URL,
-        BSTR strQuery,
-        VARIANT *varTargetFrame) = 0;
+                     BSTR URL,
+                     BSTR strQuery,
+                     VARIANT *varTargetFrame) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportExportFavorites(
-        VARIANT_BOOL fImport,
-        BSTR strImpExpPath) = 0;
+                     VARIANT_BOOL fImport,
+                     BSTR strImpExpPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AutoCompleteSaveForm(
-        VARIANT *Form) = 0;
+                     VARIANT *Form) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AutoScan(
-        BSTR strSearch,
-        BSTR strFailureUrl,
-        VARIANT *pvarTargetFrame) = 0;
+                     BSTR strSearch,
+                     BSTR strFailureUrl,
+                     VARIANT *pvarTargetFrame) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AutoCompleteAttach(
-        VARIANT *Reserved) = 0;
+                     VARIANT *Reserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowBrowserUI(
-        BSTR bstrName,
-        VARIANT *pvarIn,
-        VARIANT *pvarOut) = 0;
+                     BSTR bstrName,
+                     VARIANT *pvarIn,
+                     VARIANT *pvarOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2722,109 +2722,109 @@ typedef struct IShellUIHelperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellUIHelper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellUIHelper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellUIHelper *This);
+                     IShellUIHelper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellUIHelper *This);
+                     IShellUIHelper *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IShellUIHelper *This,
-        UINT *pctinfo);
+                     IShellUIHelper *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IShellUIHelper *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IShellUIHelper *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IShellUIHelper *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IShellUIHelper *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IShellUIHelper *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IShellUIHelper *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IShellUIHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *ResetFirstBootMode)(
-        IShellUIHelper *This);
+                     IShellUIHelper *This);
 
     HRESULT (STDMETHODCALLTYPE *ResetSafeMode)(
-        IShellUIHelper *This);
+                     IShellUIHelper *This);
 
     HRESULT (STDMETHODCALLTYPE *RefreshOfflineDesktop)(
-        IShellUIHelper *This);
+                     IShellUIHelper *This);
 
     HRESULT (STDMETHODCALLTYPE *AddFavorite)(
-        IShellUIHelper *This,
-        BSTR URL,
-        VARIANT *Title);
+                     IShellUIHelper *This,
+                     BSTR URL,
+                     VARIANT *Title);
 
     HRESULT (STDMETHODCALLTYPE *AddChannel)(
-        IShellUIHelper *This,
-        BSTR URL);
+                     IShellUIHelper *This,
+                     BSTR URL);
 
     HRESULT (STDMETHODCALLTYPE *AddDesktopComponent)(
-        IShellUIHelper *This,
-        BSTR URL,
-        BSTR Type,
-        VARIANT *Left,
-        VARIANT *Top,
-        VARIANT *Width,
-        VARIANT *Height);
+                     IShellUIHelper *This,
+                     BSTR URL,
+                     BSTR Type,
+                     VARIANT *Left,
+                     VARIANT *Top,
+                     VARIANT *Width,
+                     VARIANT *Height);
 
     HRESULT (STDMETHODCALLTYPE *IsSubscribed)(
-        IShellUIHelper *This,
-        BSTR URL,
-        VARIANT_BOOL *pBool);
+                     IShellUIHelper *This,
+                     BSTR URL,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *NavigateAndFind)(
-        IShellUIHelper *This,
-        BSTR URL,
-        BSTR strQuery,
-        VARIANT *varTargetFrame);
+                     IShellUIHelper *This,
+                     BSTR URL,
+                     BSTR strQuery,
+                     VARIANT *varTargetFrame);
 
     HRESULT (STDMETHODCALLTYPE *ImportExportFavorites)(
-        IShellUIHelper *This,
-        VARIANT_BOOL fImport,
-        BSTR strImpExpPath);
+                     IShellUIHelper *This,
+                     VARIANT_BOOL fImport,
+                     BSTR strImpExpPath);
 
     HRESULT (STDMETHODCALLTYPE *AutoCompleteSaveForm)(
-        IShellUIHelper *This,
-        VARIANT *Form);
+                     IShellUIHelper *This,
+                     VARIANT *Form);
 
     HRESULT (STDMETHODCALLTYPE *AutoScan)(
-        IShellUIHelper *This,
-        BSTR strSearch,
-        BSTR strFailureUrl,
-        VARIANT *pvarTargetFrame);
+                     IShellUIHelper *This,
+                     BSTR strSearch,
+                     BSTR strFailureUrl,
+                     VARIANT *pvarTargetFrame);
 
     HRESULT (STDMETHODCALLTYPE *AutoCompleteAttach)(
-        IShellUIHelper *This,
-        VARIANT *Reserved);
+                     IShellUIHelper *This,
+                     VARIANT *Reserved);
 
     HRESULT (STDMETHODCALLTYPE *ShowBrowserUI)(
-        IShellUIHelper *This,
-        BSTR bstrName,
-        VARIANT *pvarIn,
-        VARIANT *pvarOut);
+                     IShellUIHelper *This,
+                     BSTR bstrName,
+                     VARIANT *pvarIn,
+                     VARIANT *pvarOut);
 
     END_INTERFACE
 } IShellUIHelperVtbl;
@@ -2942,55 +2942,55 @@ MIDL_INTERFACE("a7fe6eda-1932-4281-b881-87b31b8bc52c")
 IShellUIHelper2 : public IShellUIHelper
 {
     virtual HRESULT STDMETHODCALLTYPE AddSearchProvider(
-        BSTR URL) = 0;
+                     BSTR URL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RunOnceShown(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SkipRunOnce(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CustomizeSettings(
-        VARIANT_BOOL fSQM,
-        VARIANT_BOOL fPhishing,
-        BSTR bstrLocale) = 0;
+                     VARIANT_BOOL fSQM,
+                     VARIANT_BOOL fPhishing,
+                     BSTR bstrLocale) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SqmEnabled(
-        VARIANT_BOOL *pfEnabled) = 0;
+                     VARIANT_BOOL *pfEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PhishingEnabled(
-        VARIANT_BOOL *pfEnabled) = 0;
+                     VARIANT_BOOL *pfEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BrandImageUri(
-        BSTR *pbstrUri) = 0;
+                     BSTR *pbstrUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SkipTabsWelcome(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DiagnoseConnection(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CustomizeClearType(
-        VARIANT_BOOL fSet) = 0;
+                     VARIANT_BOOL fSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSearchProviderInstalled(
-        BSTR URL,
-        DWORD *pdwResult) = 0;
+                     BSTR URL,
+                     DWORD *pdwResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSearchMigrated(
-        VARIANT_BOOL *pfMigrated) = 0;
+                     VARIANT_BOOL *pfMigrated) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DefaultSearchProvider(
-        BSTR *pbstrName) = 0;
+                     BSTR *pbstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RunOnceRequiredSettingsComplete(
-        VARIANT_BOOL fComplete) = 0;
+                     VARIANT_BOOL fComplete) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RunOnceHasShown(
-        VARIANT_BOOL *pfShown) = 0;
+                     VARIANT_BOOL *pfShown) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SearchGuideUrl(
-        BSTR *pbstrUrl) = 0;
+                     BSTR *pbstrUrl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3002,173 +3002,173 @@ typedef struct IShellUIHelper2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellUIHelper2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellUIHelper2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IShellUIHelper2 *This,
-        UINT *pctinfo);
+                     IShellUIHelper2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IShellUIHelper2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IShellUIHelper2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IShellUIHelper2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IShellUIHelper2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IShellUIHelper2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IShellUIHelper2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IShellUIHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *ResetFirstBootMode)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     HRESULT (STDMETHODCALLTYPE *ResetSafeMode)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     HRESULT (STDMETHODCALLTYPE *RefreshOfflineDesktop)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     HRESULT (STDMETHODCALLTYPE *AddFavorite)(
-        IShellUIHelper2 *This,
-        BSTR URL,
-        VARIANT *Title);
+                     IShellUIHelper2 *This,
+                     BSTR URL,
+                     VARIANT *Title);
 
     HRESULT (STDMETHODCALLTYPE *AddChannel)(
-        IShellUIHelper2 *This,
-        BSTR URL);
+                     IShellUIHelper2 *This,
+                     BSTR URL);
 
     HRESULT (STDMETHODCALLTYPE *AddDesktopComponent)(
-        IShellUIHelper2 *This,
-        BSTR URL,
-        BSTR Type,
-        VARIANT *Left,
-        VARIANT *Top,
-        VARIANT *Width,
-        VARIANT *Height);
+                     IShellUIHelper2 *This,
+                     BSTR URL,
+                     BSTR Type,
+                     VARIANT *Left,
+                     VARIANT *Top,
+                     VARIANT *Width,
+                     VARIANT *Height);
 
     HRESULT (STDMETHODCALLTYPE *IsSubscribed)(
-        IShellUIHelper2 *This,
-        BSTR URL,
-        VARIANT_BOOL *pBool);
+                     IShellUIHelper2 *This,
+                     BSTR URL,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *NavigateAndFind)(
-        IShellUIHelper2 *This,
-        BSTR URL,
-        BSTR strQuery,
-        VARIANT *varTargetFrame);
+                     IShellUIHelper2 *This,
+                     BSTR URL,
+                     BSTR strQuery,
+                     VARIANT *varTargetFrame);
 
     HRESULT (STDMETHODCALLTYPE *ImportExportFavorites)(
-        IShellUIHelper2 *This,
-        VARIANT_BOOL fImport,
-        BSTR strImpExpPath);
+                     IShellUIHelper2 *This,
+                     VARIANT_BOOL fImport,
+                     BSTR strImpExpPath);
 
     HRESULT (STDMETHODCALLTYPE *AutoCompleteSaveForm)(
-        IShellUIHelper2 *This,
-        VARIANT *Form);
+                     IShellUIHelper2 *This,
+                     VARIANT *Form);
 
     HRESULT (STDMETHODCALLTYPE *AutoScan)(
-        IShellUIHelper2 *This,
-        BSTR strSearch,
-        BSTR strFailureUrl,
-        VARIANT *pvarTargetFrame);
+                     IShellUIHelper2 *This,
+                     BSTR strSearch,
+                     BSTR strFailureUrl,
+                     VARIANT *pvarTargetFrame);
 
     HRESULT (STDMETHODCALLTYPE *AutoCompleteAttach)(
-        IShellUIHelper2 *This,
-        VARIANT *Reserved);
+                     IShellUIHelper2 *This,
+                     VARIANT *Reserved);
 
     HRESULT (STDMETHODCALLTYPE *ShowBrowserUI)(
-        IShellUIHelper2 *This,
-        BSTR bstrName,
-        VARIANT *pvarIn,
-        VARIANT *pvarOut);
+                     IShellUIHelper2 *This,
+                     BSTR bstrName,
+                     VARIANT *pvarIn,
+                     VARIANT *pvarOut);
 
     /*** IShellUIHelper2 methods ***/
     HRESULT (STDMETHODCALLTYPE *AddSearchProvider)(
-        IShellUIHelper2 *This,
-        BSTR URL);
+                     IShellUIHelper2 *This,
+                     BSTR URL);
 
     HRESULT (STDMETHODCALLTYPE *RunOnceShown)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SkipRunOnce)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     HRESULT (STDMETHODCALLTYPE *CustomizeSettings)(
-        IShellUIHelper2 *This,
-        VARIANT_BOOL fSQM,
-        VARIANT_BOOL fPhishing,
-        BSTR bstrLocale);
+                     IShellUIHelper2 *This,
+                     VARIANT_BOOL fSQM,
+                     VARIANT_BOOL fPhishing,
+                     BSTR bstrLocale);
 
     HRESULT (STDMETHODCALLTYPE *SqmEnabled)(
-        IShellUIHelper2 *This,
-        VARIANT_BOOL *pfEnabled);
+                     IShellUIHelper2 *This,
+                     VARIANT_BOOL *pfEnabled);
 
     HRESULT (STDMETHODCALLTYPE *PhishingEnabled)(
-        IShellUIHelper2 *This,
-        VARIANT_BOOL *pfEnabled);
+                     IShellUIHelper2 *This,
+                     VARIANT_BOOL *pfEnabled);
 
     HRESULT (STDMETHODCALLTYPE *BrandImageUri)(
-        IShellUIHelper2 *This,
-        BSTR *pbstrUri);
+                     IShellUIHelper2 *This,
+                     BSTR *pbstrUri);
 
     HRESULT (STDMETHODCALLTYPE *SkipTabsWelcome)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     HRESULT (STDMETHODCALLTYPE *DiagnoseConnection)(
-        IShellUIHelper2 *This);
+                     IShellUIHelper2 *This);
 
     HRESULT (STDMETHODCALLTYPE *CustomizeClearType)(
-        IShellUIHelper2 *This,
-        VARIANT_BOOL fSet);
+                     IShellUIHelper2 *This,
+                     VARIANT_BOOL fSet);
 
     HRESULT (STDMETHODCALLTYPE *IsSearchProviderInstalled)(
-        IShellUIHelper2 *This,
-        BSTR URL,
-        DWORD *pdwResult);
+                     IShellUIHelper2 *This,
+                     BSTR URL,
+                     DWORD *pdwResult);
 
     HRESULT (STDMETHODCALLTYPE *IsSearchMigrated)(
-        IShellUIHelper2 *This,
-        VARIANT_BOOL *pfMigrated);
+                     IShellUIHelper2 *This,
+                     VARIANT_BOOL *pfMigrated);
 
     HRESULT (STDMETHODCALLTYPE *DefaultSearchProvider)(
-        IShellUIHelper2 *This,
-        BSTR *pbstrName);
+                     IShellUIHelper2 *This,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *RunOnceRequiredSettingsComplete)(
-        IShellUIHelper2 *This,
-        VARIANT_BOOL fComplete);
+                     IShellUIHelper2 *This,
+                     VARIANT_BOOL fComplete);
 
     HRESULT (STDMETHODCALLTYPE *RunOnceHasShown)(
-        IShellUIHelper2 *This,
-        VARIANT_BOOL *pfShown);
+                     IShellUIHelper2 *This,
+                     VARIANT_BOOL *pfShown);
 
     HRESULT (STDMETHODCALLTYPE *SearchGuideUrl)(
-        IShellUIHelper2 *This,
-        BSTR *pbstrUrl);
+                     IShellUIHelper2 *This,
+                     BSTR *pbstrUrl);
 
     END_INTERFACE
 } IShellUIHelper2Vtbl;
@@ -3374,45 +3374,45 @@ typedef struct DShellNameSpaceEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        DShellNameSpaceEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     DShellNameSpaceEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        DShellNameSpaceEvents *This);
+                     DShellNameSpaceEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        DShellNameSpaceEvents *This);
+                     DShellNameSpaceEvents *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        DShellNameSpaceEvents *This,
-        UINT *pctinfo);
+                     DShellNameSpaceEvents *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        DShellNameSpaceEvents *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     DShellNameSpaceEvents *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        DShellNameSpaceEvents *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     DShellNameSpaceEvents *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        DShellNameSpaceEvents *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     DShellNameSpaceEvents *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } DShellNameSpaceEventsVtbl;
@@ -3475,43 +3475,43 @@ MIDL_INTERFACE("55136804-b2de-11d1-b9f2-00a0c98bc547")
 IShellFavoritesNameSpace : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE MoveSelectionUp(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveSelectionDown(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetSort(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NewFolder(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Synchronize(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Import(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Export(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvokeContextMenuCommand(
-        BSTR strCommand) = 0;
+                     BSTR strCommand) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MoveSelectionTo(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SubscriptionsEnabled(
-        VARIANT_BOOL *pBool) = 0;
+                     VARIANT_BOOL *pBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSubscriptionForSelection(
-        VARIANT_BOOL *pBool) = 0;
+                     VARIANT_BOOL *pBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteSubscriptionForSelection(
-        VARIANT_BOOL *pBool) = 0;
+                     VARIANT_BOOL *pBool) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRoot(
-        BSTR bstrFullPath) = 0;
+                     BSTR bstrFullPath) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3523,90 +3523,90 @@ typedef struct IShellFavoritesNameSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellFavoritesNameSpace *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellFavoritesNameSpace *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IShellFavoritesNameSpace *This,
-        UINT *pctinfo);
+                     IShellFavoritesNameSpace *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IShellFavoritesNameSpace *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IShellFavoritesNameSpace *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IShellFavoritesNameSpace *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IShellFavoritesNameSpace *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IShellFavoritesNameSpace *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IShellFavoritesNameSpace *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IShellFavoritesNameSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveSelectionUp)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *MoveSelectionDown)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *ResetSort)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *NewFolder)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *Synchronize)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *Import)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *Export)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *InvokeContextMenuCommand)(
-        IShellFavoritesNameSpace *This,
-        BSTR strCommand);
+                     IShellFavoritesNameSpace *This,
+                     BSTR strCommand);
 
     HRESULT (STDMETHODCALLTYPE *MoveSelectionTo)(
-        IShellFavoritesNameSpace *This);
+                     IShellFavoritesNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *get_SubscriptionsEnabled)(
-        IShellFavoritesNameSpace *This,
-        VARIANT_BOOL *pBool);
+                     IShellFavoritesNameSpace *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *CreateSubscriptionForSelection)(
-        IShellFavoritesNameSpace *This,
-        VARIANT_BOOL *pBool);
+                     IShellFavoritesNameSpace *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *DeleteSubscriptionForSelection)(
-        IShellFavoritesNameSpace *This,
-        VARIANT_BOOL *pBool);
+                     IShellFavoritesNameSpace *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *SetRoot)(
-        IShellFavoritesNameSpace *This,
-        BSTR bstrFullPath);
+                     IShellFavoritesNameSpace *This,
+                     BSTR bstrFullPath);
 
     END_INTERFACE
 } IShellFavoritesNameSpaceVtbl;
@@ -3724,68 +3724,68 @@ MIDL_INTERFACE("e572d3c9-37be-4ae2-825d-d521763e3108")
 IShellNameSpace : public IShellFavoritesNameSpace
 {
     virtual HRESULT STDMETHODCALLTYPE get_EnumOptions(
-        LONG *pgrfEnumFlags) = 0;
+                     LONG *pgrfEnumFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EnumOptions(
-        LONG pgrfEnumFlags) = 0;
+                     LONG pgrfEnumFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SelectedItem(
-        IDispatch **pItem) = 0;
+                     IDispatch **pItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SelectedItem(
-        IDispatch *pItem) = 0;
+                     IDispatch *pItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Root(
-        VARIANT *pvar) = 0;
+                     VARIANT *pvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Root(
-        VARIANT pvar) = 0;
+                     VARIANT pvar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Depth(
-        int *piDepth) = 0;
+                     int *piDepth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Depth(
-        int piDepth) = 0;
+                     int piDepth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Mode(
-        unsigned int *puMode) = 0;
+                     unsigned int *puMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Mode(
-        unsigned int puMode) = 0;
+                     unsigned int puMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Flags(
-        ULONG *pdwFlags) = 0;
+                     ULONG *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Flags(
-        ULONG pdwFlags) = 0;
+                     ULONG pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TVFlags(
-        ULONG dwFlags) = 0;
+                     ULONG dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TVFlags(
-        ULONG *dwFlags) = 0;
+                     ULONG *dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Columns(
-        BSTR *bstrColumns) = 0;
+                     BSTR *bstrColumns) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Columns(
-        BSTR bstrColumns) = 0;
+                     BSTR bstrColumns) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CountViewTypes(
-        int *piTypes) = 0;
+                     int *piTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetViewType(
-        int iType) = 0;
+                     int iType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectedItems(
-        IDispatch **ppid) = 0;
+                     IDispatch **ppid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Expand(
-        VARIANT var,
-        int iDepth) = 0;
+                     VARIANT var,
+                     int iDepth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnselectAll(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3797,175 +3797,175 @@ typedef struct IShellNameSpaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IShellNameSpace *This,
-        REFIID riid,
-        void **ppvObject);
+                     IShellNameSpace *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IShellNameSpace *This,
-        UINT *pctinfo);
+                     IShellNameSpace *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IShellNameSpace *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IShellNameSpace *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IShellNameSpace *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IShellNameSpace *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IShellNameSpace *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IShellNameSpace *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IShellFavoritesNameSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveSelectionUp)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *MoveSelectionDown)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *ResetSort)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *NewFolder)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *Synchronize)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *Import)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *Export)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *InvokeContextMenuCommand)(
-        IShellNameSpace *This,
-        BSTR strCommand);
+                     IShellNameSpace *This,
+                     BSTR strCommand);
 
     HRESULT (STDMETHODCALLTYPE *MoveSelectionTo)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     HRESULT (STDMETHODCALLTYPE *get_SubscriptionsEnabled)(
-        IShellNameSpace *This,
-        VARIANT_BOOL *pBool);
+                     IShellNameSpace *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *CreateSubscriptionForSelection)(
-        IShellNameSpace *This,
-        VARIANT_BOOL *pBool);
+                     IShellNameSpace *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *DeleteSubscriptionForSelection)(
-        IShellNameSpace *This,
-        VARIANT_BOOL *pBool);
+                     IShellNameSpace *This,
+                     VARIANT_BOOL *pBool);
 
     HRESULT (STDMETHODCALLTYPE *SetRoot)(
-        IShellNameSpace *This,
-        BSTR bstrFullPath);
+                     IShellNameSpace *This,
+                     BSTR bstrFullPath);
 
     /*** IShellNameSpace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_EnumOptions)(
-        IShellNameSpace *This,
-        LONG *pgrfEnumFlags);
+                     IShellNameSpace *This,
+                     LONG *pgrfEnumFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_EnumOptions)(
-        IShellNameSpace *This,
-        LONG pgrfEnumFlags);
+                     IShellNameSpace *This,
+                     LONG pgrfEnumFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_SelectedItem)(
-        IShellNameSpace *This,
-        IDispatch **pItem);
+                     IShellNameSpace *This,
+                     IDispatch **pItem);
 
     HRESULT (STDMETHODCALLTYPE *put_SelectedItem)(
-        IShellNameSpace *This,
-        IDispatch *pItem);
+                     IShellNameSpace *This,
+                     IDispatch *pItem);
 
     HRESULT (STDMETHODCALLTYPE *get_Root)(
-        IShellNameSpace *This,
-        VARIANT *pvar);
+                     IShellNameSpace *This,
+                     VARIANT *pvar);
 
     HRESULT (STDMETHODCALLTYPE *put_Root)(
-        IShellNameSpace *This,
-        VARIANT pvar);
+                     IShellNameSpace *This,
+                     VARIANT pvar);
 
     HRESULT (STDMETHODCALLTYPE *get_Depth)(
-        IShellNameSpace *This,
-        int *piDepth);
+                     IShellNameSpace *This,
+                     int *piDepth);
 
     HRESULT (STDMETHODCALLTYPE *put_Depth)(
-        IShellNameSpace *This,
-        int piDepth);
+                     IShellNameSpace *This,
+                     int piDepth);
 
     HRESULT (STDMETHODCALLTYPE *get_Mode)(
-        IShellNameSpace *This,
-        unsigned int *puMode);
+                     IShellNameSpace *This,
+                     unsigned int *puMode);
 
     HRESULT (STDMETHODCALLTYPE *put_Mode)(
-        IShellNameSpace *This,
-        unsigned int puMode);
+                     IShellNameSpace *This,
+                     unsigned int puMode);
 
     HRESULT (STDMETHODCALLTYPE *get_Flags)(
-        IShellNameSpace *This,
-        ULONG *pdwFlags);
+                     IShellNameSpace *This,
+                     ULONG *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_Flags)(
-        IShellNameSpace *This,
-        ULONG pdwFlags);
+                     IShellNameSpace *This,
+                     ULONG pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_TVFlags)(
-        IShellNameSpace *This,
-        ULONG dwFlags);
+                     IShellNameSpace *This,
+                     ULONG dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_TVFlags)(
-        IShellNameSpace *This,
-        ULONG *dwFlags);
+                     IShellNameSpace *This,
+                     ULONG *dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_Columns)(
-        IShellNameSpace *This,
-        BSTR *bstrColumns);
+                     IShellNameSpace *This,
+                     BSTR *bstrColumns);
 
     HRESULT (STDMETHODCALLTYPE *put_Columns)(
-        IShellNameSpace *This,
-        BSTR bstrColumns);
+                     IShellNameSpace *This,
+                     BSTR bstrColumns);
 
     HRESULT (STDMETHODCALLTYPE *get_CountViewTypes)(
-        IShellNameSpace *This,
-        int *piTypes);
+                     IShellNameSpace *This,
+                     int *piTypes);
 
     HRESULT (STDMETHODCALLTYPE *SetViewType)(
-        IShellNameSpace *This,
-        int iType);
+                     IShellNameSpace *This,
+                     int iType);
 
     HRESULT (STDMETHODCALLTYPE *SelectedItems)(
-        IShellNameSpace *This,
-        IDispatch **ppid);
+                     IShellNameSpace *This,
+                     IDispatch **ppid);
 
     HRESULT (STDMETHODCALLTYPE *Expand)(
-        IShellNameSpace *This,
-        VARIANT var,
-        int iDepth);
+                     IShellNameSpace *This,
+                     VARIANT var,
+                     int iDepth);
 
     HRESULT (STDMETHODCALLTYPE *UnselectAll)(
-        IShellNameSpace *This);
+                     IShellNameSpace *This);
 
     END_INTERFACE
 } IShellNameSpaceVtbl;
@@ -4195,46 +4195,46 @@ MIDL_INTERFACE("f3470f24-15fd-11d2-bb2e-00805ff7efca")
 IScriptErrorList : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE advanceError(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE retreatError(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE canAdvanceError(
-        LONG *pfCanAdvance) = 0;
+                     LONG *pfCanAdvance) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE canRetreatError(
-        LONG *pfCanRetreat) = 0;
+                     LONG *pfCanRetreat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE getErrorLine(
-        LONG *plLine) = 0;
+                     LONG *plLine) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE getErrorChar(
-        LONG *plChar) = 0;
+                     LONG *plChar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE getErrorCode(
-        LONG *plCode) = 0;
+                     LONG *plCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE getErrorMsg(
-        BSTR *pstr) = 0;
+                     BSTR *pstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE getErrorUrl(
-        BSTR *pstr) = 0;
+                     BSTR *pstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE getAlwaysShowLockState(
-        LONG *pfAlwaysShowLocked) = 0;
+                     LONG *pfAlwaysShowLocked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE getDetailsPaneOpen(
-        LONG *pfDetailsPaneOpen) = 0;
+                     LONG *pfDetailsPaneOpen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE setDetailsPaneOpen(
-        LONG fDetailsPaneOpen) = 0;
+                     LONG fDetailsPaneOpen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE getPerErrorDisplay(
-        LONG *pfPerErrorDisplay) = 0;
+                     LONG *pfPerErrorDisplay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE setPerErrorDisplay(
-        LONG fPerErrorDisplay) = 0;
+                     LONG fPerErrorDisplay) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4246,100 +4246,100 @@ typedef struct IScriptErrorListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IScriptErrorList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IScriptErrorList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IScriptErrorList *This);
+                     IScriptErrorList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IScriptErrorList *This);
+                     IScriptErrorList *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IScriptErrorList *This,
-        UINT *pctinfo);
+                     IScriptErrorList *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IScriptErrorList *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IScriptErrorList *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IScriptErrorList *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IScriptErrorList *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IScriptErrorList *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IScriptErrorList *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IScriptErrorList methods ***/
     HRESULT (STDMETHODCALLTYPE *advanceError)(
-        IScriptErrorList *This);
+                     IScriptErrorList *This);
 
     HRESULT (STDMETHODCALLTYPE *retreatError)(
-        IScriptErrorList *This);
+                     IScriptErrorList *This);
 
     HRESULT (STDMETHODCALLTYPE *canAdvanceError)(
-        IScriptErrorList *This,
-        LONG *pfCanAdvance);
+                     IScriptErrorList *This,
+                     LONG *pfCanAdvance);
 
     HRESULT (STDMETHODCALLTYPE *canRetreatError)(
-        IScriptErrorList *This,
-        LONG *pfCanRetreat);
+                     IScriptErrorList *This,
+                     LONG *pfCanRetreat);
 
     HRESULT (STDMETHODCALLTYPE *getErrorLine)(
-        IScriptErrorList *This,
-        LONG *plLine);
+                     IScriptErrorList *This,
+                     LONG *plLine);
 
     HRESULT (STDMETHODCALLTYPE *getErrorChar)(
-        IScriptErrorList *This,
-        LONG *plChar);
+                     IScriptErrorList *This,
+                     LONG *plChar);
 
     HRESULT (STDMETHODCALLTYPE *getErrorCode)(
-        IScriptErrorList *This,
-        LONG *plCode);
+                     IScriptErrorList *This,
+                     LONG *plCode);
 
     HRESULT (STDMETHODCALLTYPE *getErrorMsg)(
-        IScriptErrorList *This,
-        BSTR *pstr);
+                     IScriptErrorList *This,
+                     BSTR *pstr);
 
     HRESULT (STDMETHODCALLTYPE *getErrorUrl)(
-        IScriptErrorList *This,
-        BSTR *pstr);
+                     IScriptErrorList *This,
+                     BSTR *pstr);
 
     HRESULT (STDMETHODCALLTYPE *getAlwaysShowLockState)(
-        IScriptErrorList *This,
-        LONG *pfAlwaysShowLocked);
+                     IScriptErrorList *This,
+                     LONG *pfAlwaysShowLocked);
 
     HRESULT (STDMETHODCALLTYPE *getDetailsPaneOpen)(
-        IScriptErrorList *This,
-        LONG *pfDetailsPaneOpen);
+                     IScriptErrorList *This,
+                     LONG *pfDetailsPaneOpen);
 
     HRESULT (STDMETHODCALLTYPE *setDetailsPaneOpen)(
-        IScriptErrorList *This,
-        LONG fDetailsPaneOpen);
+                     IScriptErrorList *This,
+                     LONG fDetailsPaneOpen);
 
     HRESULT (STDMETHODCALLTYPE *getPerErrorDisplay)(
-        IScriptErrorList *This,
-        LONG *pfPerErrorDisplay);
+                     IScriptErrorList *This,
+                     LONG *pfPerErrorDisplay);
 
     HRESULT (STDMETHODCALLTYPE *setPerErrorDisplay)(
-        IScriptErrorList *This,
-        LONG fPerErrorDisplay);
+                     IScriptErrorList *This,
+                     LONG fPerErrorDisplay);
 
     END_INTERFACE
 } IScriptErrorListVtbl;
@@ -4474,13 +4474,13 @@ MIDL_INTERFACE("ba9239a4-3dd5-11d2-bf8b-00c04fb93661")
 ISearch : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Title(
-        BSTR *pbstrTitle) = 0;
+                     BSTR *pbstrTitle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        BSTR *pbstrId) = 0;
+                     BSTR *pbstrId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_URL(
-        BSTR *pbstrUrl) = 0;
+                     BSTR *pbstrUrl) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4492,58 +4492,58 @@ typedef struct ISearchVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISearch *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISearch *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISearch *This);
+                     ISearch *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISearch *This);
+                     ISearch *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISearch *This,
-        UINT *pctinfo);
+                     ISearch *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISearch *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISearch *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISearch *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISearch *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISearch *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISearch *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISearch methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Title)(
-        ISearch *This,
-        BSTR *pbstrTitle);
+                     ISearch *This,
+                     BSTR *pbstrTitle);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ISearch *This,
-        BSTR *pbstrId);
+                     ISearch *This,
+                     BSTR *pbstrId);
 
     HRESULT (STDMETHODCALLTYPE *get_URL)(
-        ISearch *This,
-        BSTR *pbstrUrl);
+                     ISearch *This,
+                     BSTR *pbstrUrl);
 
     END_INTERFACE
 } ISearchVtbl;
@@ -4621,17 +4621,17 @@ MIDL_INTERFACE("47c922a2-3dd5-11d2-bf8b-00c04fb93661")
 ISearches : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *plCount) = 0;
+                     LONG *plCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Default(
-        BSTR *pbstrDefault) = 0;
+                     BSTR *pbstrDefault) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        VARIANT index,
-        ISearch **ppid) = 0;
+                     VARIANT index,
+                     ISearch **ppid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE _NewEnum(
-        IUnknown **ppunk) = 0;
+                     IUnknown **ppunk) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4643,63 +4643,63 @@ typedef struct ISearchesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISearches *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISearches *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISearches *This);
+                     ISearches *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISearches *This);
+                     ISearches *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISearches *This,
-        UINT *pctinfo);
+                     ISearches *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISearches *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISearches *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISearches *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISearches *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISearches *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISearches *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISearches methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISearches *This,
-        LONG *plCount);
+                     ISearches *This,
+                     LONG *plCount);
 
     HRESULT (STDMETHODCALLTYPE *get_Default)(
-        ISearches *This,
-        BSTR *pbstrDefault);
+                     ISearches *This,
+                     BSTR *pbstrDefault);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISearches *This,
-        VARIANT index,
-        ISearch **ppid);
+                     ISearches *This,
+                     VARIANT index,
+                     ISearch **ppid);
 
     HRESULT (STDMETHODCALLTYPE *_NewEnum)(
-        ISearches *This,
-        IUnknown **ppunk);
+                     ISearches *This,
+                     IUnknown **ppunk);
 
     END_INTERFACE
 } ISearchesVtbl;
@@ -4781,96 +4781,96 @@ MIDL_INTERFACE("72423e8f-8011-11d2-be79-00a0c9a83da1")
 ISearchAssistantOC : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE AddNextMenuItem(
-        BSTR bstrText,
-        LONG idItem) = 0;
+                     BSTR bstrText,
+                     LONG idItem) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultSearchUrl(
-        BSTR bstrUrl) = 0;
+                     BSTR bstrUrl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NavigateToDefaultSearch(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRestricted(
-        BSTR bstrGuid,
-        VARIANT_BOOL *pVal) = 0;
+                     BSTR bstrGuid,
+                     VARIANT_BOOL *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ShellFeaturesEnabled(
-        VARIANT_BOOL *pVal) = 0;
+                     VARIANT_BOOL *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SearchAssistantDefault(
-        VARIANT_BOOL *pVal) = 0;
+                     VARIANT_BOOL *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Searches(
-        ISearches **ppid) = 0;
+                     ISearches **ppid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InWebFolder(
-        VARIANT_BOOL *pVal) = 0;
+                     VARIANT_BOOL *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutProperty(
-        VARIANT_BOOL bPerLocale,
-        BSTR bstrName,
-        BSTR bstrValue) = 0;
+                     VARIANT_BOOL bPerLocale,
+                     BSTR bstrName,
+                     BSTR bstrValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        VARIANT_BOOL bPerLocale,
-        BSTR bstrName,
-        BSTR *pbstrValue) = 0;
+                     VARIANT_BOOL bPerLocale,
+                     BSTR bstrName,
+                     BSTR *pbstrValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EventHandled(
-        VARIANT_BOOL rhs) = 0;
+                     VARIANT_BOOL rhs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetNextMenu(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindOnWeb(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindFilesOrFolders(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindComputer(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindPrinter(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindPeople(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSearchAssistantURL(
-        VARIANT_BOOL bSubstitute,
-        VARIANT_BOOL bCustomize,
-        BSTR *pbstrValue) = 0;
+                     VARIANT_BOOL bSubstitute,
+                     VARIANT_BOOL bCustomize,
+                     BSTR *pbstrValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifySearchSettingsChanged(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ASProvider(
-        BSTR pProvider) = 0;
+                     BSTR pProvider) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ASProvider(
-        BSTR *pProvider) = 0;
+                     BSTR *pProvider) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ASSetting(
-        int pSetting) = 0;
+                     int pSetting) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ASSetting(
-        int *pSetting) = 0;
+                     int *pSetting) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NETDetectNextNavigate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutFindText(
-        BSTR FindText) = 0;
+                     BSTR FindText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Version(
-        int *pVersion) = 0;
+                     int *pVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EncodeString(
-        BSTR bstrValue,
-        BSTR bstrCharSet,
-        VARIANT_BOOL bUseUTF8,
-        BSTR *pbstrResult) = 0;
+                     BSTR bstrValue,
+                     BSTR bstrCharSet,
+                     VARIANT_BOOL bUseUTF8,
+                     BSTR *pbstrResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4882,156 +4882,156 @@ typedef struct ISearchAssistantOCVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISearchAssistantOC *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISearchAssistantOC *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISearchAssistantOC *This,
-        UINT *pctinfo);
+                     ISearchAssistantOC *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISearchAssistantOC *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISearchAssistantOC *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISearchAssistantOC *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISearchAssistantOC *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISearchAssistantOC *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISearchAssistantOC *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISearchAssistantOC methods ***/
     HRESULT (STDMETHODCALLTYPE *AddNextMenuItem)(
-        ISearchAssistantOC *This,
-        BSTR bstrText,
-        LONG idItem);
+                     ISearchAssistantOC *This,
+                     BSTR bstrText,
+                     LONG idItem);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultSearchUrl)(
-        ISearchAssistantOC *This,
-        BSTR bstrUrl);
+                     ISearchAssistantOC *This,
+                     BSTR bstrUrl);
 
     HRESULT (STDMETHODCALLTYPE *NavigateToDefaultSearch)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *IsRestricted)(
-        ISearchAssistantOC *This,
-        BSTR bstrGuid,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC *This,
+                     BSTR bstrGuid,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_ShellFeaturesEnabled)(
-        ISearchAssistantOC *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_SearchAssistantDefault)(
-        ISearchAssistantOC *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Searches)(
-        ISearchAssistantOC *This,
-        ISearches **ppid);
+                     ISearchAssistantOC *This,
+                     ISearches **ppid);
 
     HRESULT (STDMETHODCALLTYPE *get_InWebFolder)(
-        ISearchAssistantOC *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *PutProperty)(
-        ISearchAssistantOC *This,
-        VARIANT_BOOL bPerLocale,
-        BSTR bstrName,
-        BSTR bstrValue);
+                     ISearchAssistantOC *This,
+                     VARIANT_BOOL bPerLocale,
+                     BSTR bstrName,
+                     BSTR bstrValue);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        ISearchAssistantOC *This,
-        VARIANT_BOOL bPerLocale,
-        BSTR bstrName,
-        BSTR *pbstrValue);
+                     ISearchAssistantOC *This,
+                     VARIANT_BOOL bPerLocale,
+                     BSTR bstrName,
+                     BSTR *pbstrValue);
 
     HRESULT (STDMETHODCALLTYPE *put_EventHandled)(
-        ISearchAssistantOC *This,
-        VARIANT_BOOL rhs);
+                     ISearchAssistantOC *This,
+                     VARIANT_BOOL rhs);
 
     HRESULT (STDMETHODCALLTYPE *ResetNextMenu)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *FindOnWeb)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *FindFilesOrFolders)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *FindComputer)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *FindPrinter)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *FindPeople)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *GetSearchAssistantURL)(
-        ISearchAssistantOC *This,
-        VARIANT_BOOL bSubstitute,
-        VARIANT_BOOL bCustomize,
-        BSTR *pbstrValue);
+                     ISearchAssistantOC *This,
+                     VARIANT_BOOL bSubstitute,
+                     VARIANT_BOOL bCustomize,
+                     BSTR *pbstrValue);
 
     HRESULT (STDMETHODCALLTYPE *NotifySearchSettingsChanged)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *put_ASProvider)(
-        ISearchAssistantOC *This,
-        BSTR pProvider);
+                     ISearchAssistantOC *This,
+                     BSTR pProvider);
 
     HRESULT (STDMETHODCALLTYPE *get_ASProvider)(
-        ISearchAssistantOC *This,
-        BSTR *pProvider);
+                     ISearchAssistantOC *This,
+                     BSTR *pProvider);
 
     HRESULT (STDMETHODCALLTYPE *put_ASSetting)(
-        ISearchAssistantOC *This,
-        int pSetting);
+                     ISearchAssistantOC *This,
+                     int pSetting);
 
     HRESULT (STDMETHODCALLTYPE *get_ASSetting)(
-        ISearchAssistantOC *This,
-        int *pSetting);
+                     ISearchAssistantOC *This,
+                     int *pSetting);
 
     HRESULT (STDMETHODCALLTYPE *NETDetectNextNavigate)(
-        ISearchAssistantOC *This);
+                     ISearchAssistantOC *This);
 
     HRESULT (STDMETHODCALLTYPE *PutFindText)(
-        ISearchAssistantOC *This,
-        BSTR FindText);
+                     ISearchAssistantOC *This,
+                     BSTR FindText);
 
     HRESULT (STDMETHODCALLTYPE *get_Version)(
-        ISearchAssistantOC *This,
-        int *pVersion);
+                     ISearchAssistantOC *This,
+                     int *pVersion);
 
     HRESULT (STDMETHODCALLTYPE *EncodeString)(
-        ISearchAssistantOC *This,
-        BSTR bstrValue,
-        BSTR bstrCharSet,
-        VARIANT_BOOL bUseUTF8,
-        BSTR *pbstrResult);
+                     ISearchAssistantOC *This,
+                     BSTR bstrValue,
+                     BSTR bstrCharSet,
+                     VARIANT_BOOL bUseUTF8,
+                     BSTR *pbstrResult);
 
     END_INTERFACE
 } ISearchAssistantOCVtbl;
@@ -5205,7 +5205,7 @@ MIDL_INTERFACE("72423e8f-8011-11d2-be79-00a0c9a83da2")
 ISearchAssistantOC2 : public ISearchAssistantOC
 {
     virtual HRESULT STDMETHODCALLTYPE get_ShowFindPrinter(
-        VARIANT_BOOL *pbShowFindPrinter) = 0;
+                     VARIANT_BOOL *pbShowFindPrinter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5217,161 +5217,161 @@ typedef struct ISearchAssistantOC2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISearchAssistantOC2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISearchAssistantOC2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISearchAssistantOC2 *This,
-        UINT *pctinfo);
+                     ISearchAssistantOC2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISearchAssistantOC2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISearchAssistantOC2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISearchAssistantOC2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISearchAssistantOC2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISearchAssistantOC2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISearchAssistantOC2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISearchAssistantOC methods ***/
     HRESULT (STDMETHODCALLTYPE *AddNextMenuItem)(
-        ISearchAssistantOC2 *This,
-        BSTR bstrText,
-        LONG idItem);
+                     ISearchAssistantOC2 *This,
+                     BSTR bstrText,
+                     LONG idItem);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultSearchUrl)(
-        ISearchAssistantOC2 *This,
-        BSTR bstrUrl);
+                     ISearchAssistantOC2 *This,
+                     BSTR bstrUrl);
 
     HRESULT (STDMETHODCALLTYPE *NavigateToDefaultSearch)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *IsRestricted)(
-        ISearchAssistantOC2 *This,
-        BSTR bstrGuid,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC2 *This,
+                     BSTR bstrGuid,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_ShellFeaturesEnabled)(
-        ISearchAssistantOC2 *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC2 *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_SearchAssistantDefault)(
-        ISearchAssistantOC2 *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC2 *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Searches)(
-        ISearchAssistantOC2 *This,
-        ISearches **ppid);
+                     ISearchAssistantOC2 *This,
+                     ISearches **ppid);
 
     HRESULT (STDMETHODCALLTYPE *get_InWebFolder)(
-        ISearchAssistantOC2 *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC2 *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *PutProperty)(
-        ISearchAssistantOC2 *This,
-        VARIANT_BOOL bPerLocale,
-        BSTR bstrName,
-        BSTR bstrValue);
+                     ISearchAssistantOC2 *This,
+                     VARIANT_BOOL bPerLocale,
+                     BSTR bstrName,
+                     BSTR bstrValue);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        ISearchAssistantOC2 *This,
-        VARIANT_BOOL bPerLocale,
-        BSTR bstrName,
-        BSTR *pbstrValue);
+                     ISearchAssistantOC2 *This,
+                     VARIANT_BOOL bPerLocale,
+                     BSTR bstrName,
+                     BSTR *pbstrValue);
 
     HRESULT (STDMETHODCALLTYPE *put_EventHandled)(
-        ISearchAssistantOC2 *This,
-        VARIANT_BOOL rhs);
+                     ISearchAssistantOC2 *This,
+                     VARIANT_BOOL rhs);
 
     HRESULT (STDMETHODCALLTYPE *ResetNextMenu)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindOnWeb)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindFilesOrFolders)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindComputer)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindPrinter)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindPeople)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetSearchAssistantURL)(
-        ISearchAssistantOC2 *This,
-        VARIANT_BOOL bSubstitute,
-        VARIANT_BOOL bCustomize,
-        BSTR *pbstrValue);
+                     ISearchAssistantOC2 *This,
+                     VARIANT_BOOL bSubstitute,
+                     VARIANT_BOOL bCustomize,
+                     BSTR *pbstrValue);
 
     HRESULT (STDMETHODCALLTYPE *NotifySearchSettingsChanged)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *put_ASProvider)(
-        ISearchAssistantOC2 *This,
-        BSTR pProvider);
+                     ISearchAssistantOC2 *This,
+                     BSTR pProvider);
 
     HRESULT (STDMETHODCALLTYPE *get_ASProvider)(
-        ISearchAssistantOC2 *This,
-        BSTR *pProvider);
+                     ISearchAssistantOC2 *This,
+                     BSTR *pProvider);
 
     HRESULT (STDMETHODCALLTYPE *put_ASSetting)(
-        ISearchAssistantOC2 *This,
-        int pSetting);
+                     ISearchAssistantOC2 *This,
+                     int pSetting);
 
     HRESULT (STDMETHODCALLTYPE *get_ASSetting)(
-        ISearchAssistantOC2 *This,
-        int *pSetting);
+                     ISearchAssistantOC2 *This,
+                     int *pSetting);
 
     HRESULT (STDMETHODCALLTYPE *NETDetectNextNavigate)(
-        ISearchAssistantOC2 *This);
+                     ISearchAssistantOC2 *This);
 
     HRESULT (STDMETHODCALLTYPE *PutFindText)(
-        ISearchAssistantOC2 *This,
-        BSTR FindText);
+                     ISearchAssistantOC2 *This,
+                     BSTR FindText);
 
     HRESULT (STDMETHODCALLTYPE *get_Version)(
-        ISearchAssistantOC2 *This,
-        int *pVersion);
+                     ISearchAssistantOC2 *This,
+                     int *pVersion);
 
     HRESULT (STDMETHODCALLTYPE *EncodeString)(
-        ISearchAssistantOC2 *This,
-        BSTR bstrValue,
-        BSTR bstrCharSet,
-        VARIANT_BOOL bUseUTF8,
-        BSTR *pbstrResult);
+                     ISearchAssistantOC2 *This,
+                     BSTR bstrValue,
+                     BSTR bstrCharSet,
+                     VARIANT_BOOL bUseUTF8,
+                     BSTR *pbstrResult);
 
     /*** ISearchAssistantOC2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ShowFindPrinter)(
-        ISearchAssistantOC2 *This,
-        VARIANT_BOOL *pbShowFindPrinter);
+                     ISearchAssistantOC2 *This,
+                     VARIANT_BOOL *pbShowFindPrinter);
 
     END_INTERFACE
 } ISearchAssistantOC2Vtbl;
@@ -5551,13 +5551,13 @@ MIDL_INTERFACE("72423e8f-8011-11d2-be79-00a0c9a83da3")
 ISearchAssistantOC3 : public ISearchAssistantOC2
 {
     virtual HRESULT STDMETHODCALLTYPE get_SearchCompanionAvailable(
-        VARIANT_BOOL *pbAvailable) = 0;
+                     VARIANT_BOOL *pbAvailable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UseSearchCompanion(
-        VARIANT_BOOL pbUseSC) = 0;
+                     VARIANT_BOOL pbUseSC) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UseSearchCompanion(
-        VARIANT_BOOL *pbUseSC) = 0;
+                     VARIANT_BOOL *pbUseSC) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5569,174 +5569,174 @@ typedef struct ISearchAssistantOC3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISearchAssistantOC3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISearchAssistantOC3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISearchAssistantOC3 *This,
-        UINT *pctinfo);
+                     ISearchAssistantOC3 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISearchAssistantOC3 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISearchAssistantOC3 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISearchAssistantOC3 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISearchAssistantOC3 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISearchAssistantOC3 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISearchAssistantOC3 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISearchAssistantOC methods ***/
     HRESULT (STDMETHODCALLTYPE *AddNextMenuItem)(
-        ISearchAssistantOC3 *This,
-        BSTR bstrText,
-        LONG idItem);
+                     ISearchAssistantOC3 *This,
+                     BSTR bstrText,
+                     LONG idItem);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultSearchUrl)(
-        ISearchAssistantOC3 *This,
-        BSTR bstrUrl);
+                     ISearchAssistantOC3 *This,
+                     BSTR bstrUrl);
 
     HRESULT (STDMETHODCALLTYPE *NavigateToDefaultSearch)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *IsRestricted)(
-        ISearchAssistantOC3 *This,
-        BSTR bstrGuid,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC3 *This,
+                     BSTR bstrGuid,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_ShellFeaturesEnabled)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_SearchAssistantDefault)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Searches)(
-        ISearchAssistantOC3 *This,
-        ISearches **ppid);
+                     ISearchAssistantOC3 *This,
+                     ISearches **ppid);
 
     HRESULT (STDMETHODCALLTYPE *get_InWebFolder)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL *pVal);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL *pVal);
 
     HRESULT (STDMETHODCALLTYPE *PutProperty)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL bPerLocale,
-        BSTR bstrName,
-        BSTR bstrValue);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL bPerLocale,
+                     BSTR bstrName,
+                     BSTR bstrValue);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL bPerLocale,
-        BSTR bstrName,
-        BSTR *pbstrValue);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL bPerLocale,
+                     BSTR bstrName,
+                     BSTR *pbstrValue);
 
     HRESULT (STDMETHODCALLTYPE *put_EventHandled)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL rhs);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL rhs);
 
     HRESULT (STDMETHODCALLTYPE *ResetNextMenu)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindOnWeb)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindFilesOrFolders)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindComputer)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindPrinter)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *FindPeople)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetSearchAssistantURL)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL bSubstitute,
-        VARIANT_BOOL bCustomize,
-        BSTR *pbstrValue);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL bSubstitute,
+                     VARIANT_BOOL bCustomize,
+                     BSTR *pbstrValue);
 
     HRESULT (STDMETHODCALLTYPE *NotifySearchSettingsChanged)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *put_ASProvider)(
-        ISearchAssistantOC3 *This,
-        BSTR pProvider);
+                     ISearchAssistantOC3 *This,
+                     BSTR pProvider);
 
     HRESULT (STDMETHODCALLTYPE *get_ASProvider)(
-        ISearchAssistantOC3 *This,
-        BSTR *pProvider);
+                     ISearchAssistantOC3 *This,
+                     BSTR *pProvider);
 
     HRESULT (STDMETHODCALLTYPE *put_ASSetting)(
-        ISearchAssistantOC3 *This,
-        int pSetting);
+                     ISearchAssistantOC3 *This,
+                     int pSetting);
 
     HRESULT (STDMETHODCALLTYPE *get_ASSetting)(
-        ISearchAssistantOC3 *This,
-        int *pSetting);
+                     ISearchAssistantOC3 *This,
+                     int *pSetting);
 
     HRESULT (STDMETHODCALLTYPE *NETDetectNextNavigate)(
-        ISearchAssistantOC3 *This);
+                     ISearchAssistantOC3 *This);
 
     HRESULT (STDMETHODCALLTYPE *PutFindText)(
-        ISearchAssistantOC3 *This,
-        BSTR FindText);
+                     ISearchAssistantOC3 *This,
+                     BSTR FindText);
 
     HRESULT (STDMETHODCALLTYPE *get_Version)(
-        ISearchAssistantOC3 *This,
-        int *pVersion);
+                     ISearchAssistantOC3 *This,
+                     int *pVersion);
 
     HRESULT (STDMETHODCALLTYPE *EncodeString)(
-        ISearchAssistantOC3 *This,
-        BSTR bstrValue,
-        BSTR bstrCharSet,
-        VARIANT_BOOL bUseUTF8,
-        BSTR *pbstrResult);
+                     ISearchAssistantOC3 *This,
+                     BSTR bstrValue,
+                     BSTR bstrCharSet,
+                     VARIANT_BOOL bUseUTF8,
+                     BSTR *pbstrResult);
 
     /*** ISearchAssistantOC2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ShowFindPrinter)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL *pbShowFindPrinter);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL *pbShowFindPrinter);
 
     /*** ISearchAssistantOC3 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SearchCompanionAvailable)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL *pbAvailable);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL *pbAvailable);
 
     HRESULT (STDMETHODCALLTYPE *put_UseSearchCompanion)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL pbUseSC);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL pbUseSC);
 
     HRESULT (STDMETHODCALLTYPE *get_UseSearchCompanion)(
-        ISearchAssistantOC3 *This,
-        VARIANT_BOOL *pbUseSC);
+                     ISearchAssistantOC3 *This,
+                     VARIANT_BOOL *pbUseSC);
 
     END_INTERFACE
 } ISearchAssistantOC3Vtbl;
@@ -5939,45 +5939,45 @@ typedef struct _SearchAssistantEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        _SearchAssistantEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     _SearchAssistantEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        _SearchAssistantEvents *This);
+                     _SearchAssistantEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        _SearchAssistantEvents *This);
+                     _SearchAssistantEvents *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        _SearchAssistantEvents *This,
-        UINT *pctinfo);
+                     _SearchAssistantEvents *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        _SearchAssistantEvents *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     _SearchAssistantEvents *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        _SearchAssistantEvents *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     _SearchAssistantEvents *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        _SearchAssistantEvents *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     _SearchAssistantEvents *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } _SearchAssistantEventsVtbl;
@@ -6056,14 +6056,14 @@ __CRT_UUID_DECL(SearchAssistantOC, 0xb45ff030, 0x4447, 0x11d2, 0x85,0xde, 0x00,0
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

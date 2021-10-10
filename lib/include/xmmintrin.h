@@ -611,8 +611,8 @@ static __inline__ __m128 __DEFAULT_FN_ATTRS
 _mm_cmpgt_ss(__m128 __a, __m128 __b)
 {
   return (__m128)__builtin_shufflevector((__v4sf)__a,
-                                         (__v4sf)__builtin_ia32_cmpltss((__v4sf)__b, (__v4sf)__a),
-                                         4, 1, 2, 3);
+                                                                                                                       (__v4sf)__builtin_ia32_cmpltss((__v4sf)__b, (__v4sf)__a),
+                                                                                                                       4, 1, 2, 3);
 }
 
 /// Compares each of the corresponding 32-bit float values of the
@@ -656,8 +656,8 @@ static __inline__ __m128 __DEFAULT_FN_ATTRS
 _mm_cmpge_ss(__m128 __a, __m128 __b)
 {
   return (__m128)__builtin_shufflevector((__v4sf)__a,
-                                         (__v4sf)__builtin_ia32_cmpless((__v4sf)__b, (__v4sf)__a),
-                                         4, 1, 2, 3);
+                                                                                                                       (__v4sf)__builtin_ia32_cmpless((__v4sf)__b, (__v4sf)__a),
+                                                                                                                       4, 1, 2, 3);
 }
 
 /// Compares each of the corresponding 32-bit float values of the
@@ -833,8 +833,8 @@ static __inline__ __m128 __DEFAULT_FN_ATTRS
 _mm_cmpngt_ss(__m128 __a, __m128 __b)
 {
   return (__m128)__builtin_shufflevector((__v4sf)__a,
-                                         (__v4sf)__builtin_ia32_cmpnltss((__v4sf)__b, (__v4sf)__a),
-                                         4, 1, 2, 3);
+                                                                                                                       (__v4sf)__builtin_ia32_cmpnltss((__v4sf)__b, (__v4sf)__a),
+                                                                                                                       4, 1, 2, 3);
 }
 
 /// Compares each of the corresponding 32-bit float values of the
@@ -880,8 +880,8 @@ static __inline__ __m128 __DEFAULT_FN_ATTRS
 _mm_cmpnge_ss(__m128 __a, __m128 __b)
 {
   return (__m128)__builtin_shufflevector((__v4sf)__a,
-                                         (__v4sf)__builtin_ia32_cmpnless((__v4sf)__b, (__v4sf)__a),
-                                         4, 1, 2, 3);
+                                                                                                                       (__v4sf)__builtin_ia32_cmpnless((__v4sf)__b, (__v4sf)__a),
+                                                                                                                       4, 1, 2, 3);
 }
 
 /// Compares each of the corresponding 32-bit float values of the
@@ -1706,7 +1706,7 @@ _mm_load1_ps(const float *__p)
   return __extension__ (__m128){ __u, __u, __u, __u };
 }
 
-#define        _mm_load_ps1(p) _mm_load1_ps(p)
+#define                     _mm_load_ps1(p) _mm_load1_ps(p)
 
 /// Loads a 128-bit floating-point vector of [4 x float] from an aligned
 ///    memory location.
@@ -2101,7 +2101,7 @@ _mm_storer_ps(float *__p, __m128 __a)
 ///    _MM_HINT_T2: Move data using the T2 hint. The PREFETCHT2 instruction will
 ///    be generated.
 #define _mm_prefetch(a, sel) (__builtin_prefetch((const void *)(a), \
-                                                 ((sel) >> 2) & 1, (sel) & 0x3))
+                                                                                                                                                         ((sel) >> 2) & 1, (sel) & 0x3))
 #endif
 
 /// Stores a 64-bit integer in the specified aligned memory location. To
@@ -2461,41 +2461,41 @@ extern "C" {
 ///    intrinsic, including:
 ///    <ul>
 ///    <li>
-///      For checking exception states: _MM_EXCEPT_INVALID, _MM_EXCEPT_DIV_ZERO,
-///      _MM_EXCEPT_DENORM, _MM_EXCEPT_OVERFLOW, _MM_EXCEPT_UNDERFLOW,
-///      _MM_EXCEPT_INEXACT. There is a convenience wrapper
-///      _MM_GET_EXCEPTION_STATE().
+///                   For checking exception states: _MM_EXCEPT_INVALID, _MM_EXCEPT_DIV_ZERO,
+///                   _MM_EXCEPT_DENORM, _MM_EXCEPT_OVERFLOW, _MM_EXCEPT_UNDERFLOW,
+///                   _MM_EXCEPT_INEXACT. There is a convenience wrapper
+///                   _MM_GET_EXCEPTION_STATE().
 ///    </li>
 ///    <li>
-///      For checking exception masks: _MM_MASK_UNDERFLOW, _MM_MASK_OVERFLOW,
-///      _MM_MASK_INVALID, _MM_MASK_DENORM, _MM_MASK_DIV_ZERO, _MM_MASK_INEXACT.
-///      There is a convenience wrapper _MM_GET_EXCEPTION_MASK().
+///                   For checking exception masks: _MM_MASK_UNDERFLOW, _MM_MASK_OVERFLOW,
+///                   _MM_MASK_INVALID, _MM_MASK_DENORM, _MM_MASK_DIV_ZERO, _MM_MASK_INEXACT.
+///                   There is a convenience wrapper _MM_GET_EXCEPTION_MASK().
 ///    </li>
 ///    <li>
-///      For checking rounding modes: _MM_ROUND_NEAREST, _MM_ROUND_DOWN,
-///      _MM_ROUND_UP, _MM_ROUND_TOWARD_ZERO. There is a convenience wrapper
-///      _MM_GET_ROUNDING_MODE().
+///                   For checking rounding modes: _MM_ROUND_NEAREST, _MM_ROUND_DOWN,
+///                   _MM_ROUND_UP, _MM_ROUND_TOWARD_ZERO. There is a convenience wrapper
+///                   _MM_GET_ROUNDING_MODE().
 ///    </li>
 ///    <li>
-///      For checking flush-to-zero mode: _MM_FLUSH_ZERO_ON, _MM_FLUSH_ZERO_OFF.
-///      There is a convenience wrapper _MM_GET_FLUSH_ZERO_MODE().
+///                   For checking flush-to-zero mode: _MM_FLUSH_ZERO_ON, _MM_FLUSH_ZERO_OFF.
+///                   There is a convenience wrapper _MM_GET_FLUSH_ZERO_MODE().
 ///    </li>
 ///    <li>
-///      For checking denormals-are-zero mode: _MM_DENORMALS_ZERO_ON,
-///      _MM_DENORMALS_ZERO_OFF. There is a convenience wrapper
-///      _MM_GET_DENORMALS_ZERO_MODE().
+///                   For checking denormals-are-zero mode: _MM_DENORMALS_ZERO_ON,
+///                   _MM_DENORMALS_ZERO_OFF. There is a convenience wrapper
+///                   _MM_GET_DENORMALS_ZERO_MODE().
 ///    </li>
 ///    </ul>
 ///
 ///    For example, the following expression checks if an overflow exception has
 ///    occurred:
 ///    \code
-///      ( _mm_getcsr() & _MM_EXCEPT_OVERFLOW )
+///                   ( _mm_getcsr() & _MM_EXCEPT_OVERFLOW )
 ///    \endcode
 ///
 ///    The following expression gets the current rounding mode:
 ///    \code
-///      _MM_GET_ROUNDING_MODE()
+///                   _MM_GET_ROUNDING_MODE()
 ///    \endcode
 ///
 /// \headerfile <x86intrin.h>
@@ -2512,43 +2512,43 @@ unsigned int _mm_getcsr(void);
 ///    including:
 ///    <ul>
 ///    <li>
-///      For setting exception states: _MM_EXCEPT_INVALID, _MM_EXCEPT_DIV_ZERO,
-///      _MM_EXCEPT_DENORM, _MM_EXCEPT_OVERFLOW, _MM_EXCEPT_UNDERFLOW,
-///      _MM_EXCEPT_INEXACT. There is a convenience wrapper
-///      _MM_SET_EXCEPTION_STATE(x) where x is one of these macros.
+///                   For setting exception states: _MM_EXCEPT_INVALID, _MM_EXCEPT_DIV_ZERO,
+///                   _MM_EXCEPT_DENORM, _MM_EXCEPT_OVERFLOW, _MM_EXCEPT_UNDERFLOW,
+///                   _MM_EXCEPT_INEXACT. There is a convenience wrapper
+///                   _MM_SET_EXCEPTION_STATE(x) where x is one of these macros.
 ///    </li>
 ///    <li>
-///      For setting exception masks: _MM_MASK_UNDERFLOW, _MM_MASK_OVERFLOW,
-///      _MM_MASK_INVALID, _MM_MASK_DENORM, _MM_MASK_DIV_ZERO, _MM_MASK_INEXACT.
-///      There is a convenience wrapper _MM_SET_EXCEPTION_MASK(x) where x is one
-///      of these macros.
+///                   For setting exception masks: _MM_MASK_UNDERFLOW, _MM_MASK_OVERFLOW,
+///                   _MM_MASK_INVALID, _MM_MASK_DENORM, _MM_MASK_DIV_ZERO, _MM_MASK_INEXACT.
+///                   There is a convenience wrapper _MM_SET_EXCEPTION_MASK(x) where x is one
+///                   of these macros.
 ///    </li>
 ///    <li>
-///      For setting rounding modes: _MM_ROUND_NEAREST, _MM_ROUND_DOWN,
-///      _MM_ROUND_UP, _MM_ROUND_TOWARD_ZERO. There is a convenience wrapper
-///      _MM_SET_ROUNDING_MODE(x) where x is one of these macros.
+///                   For setting rounding modes: _MM_ROUND_NEAREST, _MM_ROUND_DOWN,
+///                   _MM_ROUND_UP, _MM_ROUND_TOWARD_ZERO. There is a convenience wrapper
+///                   _MM_SET_ROUNDING_MODE(x) where x is one of these macros.
 ///    </li>
 ///    <li>
-///      For setting flush-to-zero mode: _MM_FLUSH_ZERO_ON, _MM_FLUSH_ZERO_OFF.
-///      There is a convenience wrapper _MM_SET_FLUSH_ZERO_MODE(x) where x is
-///      one of these macros.
+///                   For setting flush-to-zero mode: _MM_FLUSH_ZERO_ON, _MM_FLUSH_ZERO_OFF.
+///                   There is a convenience wrapper _MM_SET_FLUSH_ZERO_MODE(x) where x is
+///                   one of these macros.
 ///    </li>
 ///    <li>
-///      For setting denormals-are-zero mode: _MM_DENORMALS_ZERO_ON,
-///      _MM_DENORMALS_ZERO_OFF. There is a convenience wrapper
-///      _MM_SET_DENORMALS_ZERO_MODE(x) where x is one of these macros.
+///                   For setting denormals-are-zero mode: _MM_DENORMALS_ZERO_ON,
+///                   _MM_DENORMALS_ZERO_OFF. There is a convenience wrapper
+///                   _MM_SET_DENORMALS_ZERO_MODE(x) where x is one of these macros.
 ///    </li>
 ///    </ul>
 ///
 ///    For example, the following expression causes subsequent floating-point
 ///    operations to round up:
-///      _mm_setcsr(_mm_getcsr() | _MM_ROUND_UP)
+///                   _mm_setcsr(_mm_getcsr() | _MM_ROUND_UP)
 ///
 ///    The following example sets the DAZ and FTZ flags:
 ///    \code
 ///    void setFlags() {
-///      _MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON);
-///      _MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
+///                   _MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON);
+///                   _MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
 ///    }
 ///    \endcode
 ///
@@ -2602,7 +2602,7 @@ void _mm_setcsr(unsigned int __i);
 /// \returns A 128-bit vector of [4 x float] containing the shuffled values.
 #define _mm_shuffle_ps(a, b, mask) \
   (__m128)__builtin_ia32_shufps((__v4sf)(__m128)(a), (__v4sf)(__m128)(b), \
-                                (int)(mask))
+                                                                                                 (int)(mask))
 
 /// Unpacks the high-order (index 2,3) values from two 128-bit vectors of
 ///    [4 x float] and interleaves them into a 128-bit vector of [4 x float].
@@ -2937,21 +2937,21 @@ _mm_movemask_ps(__m128 __a)
 #define _MM_EXCEPT_OVERFLOW   (0x0008U)
 #define _MM_EXCEPT_UNDERFLOW  (0x0010U)
 #define _MM_EXCEPT_INEXACT    (0x0020U)
-#define _MM_EXCEPT_MASK       (0x003fU)
+#define _MM_EXCEPT_MASK                    (0x003fU)
 
-#define _MM_MASK_INVALID      (0x0080U)
-#define _MM_MASK_DENORM       (0x0100U)
+#define _MM_MASK_INVALID                   (0x0080U)
+#define _MM_MASK_DENORM                    (0x0100U)
 #define _MM_MASK_DIV_ZERO     (0x0200U)
 #define _MM_MASK_OVERFLOW     (0x0400U)
 #define _MM_MASK_UNDERFLOW    (0x0800U)
-#define _MM_MASK_INEXACT      (0x1000U)
-#define _MM_MASK_MASK         (0x1f80U)
+#define _MM_MASK_INEXACT                   (0x1000U)
+#define _MM_MASK_MASK                      (0x1f80U)
 
 #define _MM_ROUND_NEAREST     (0x0000U)
-#define _MM_ROUND_DOWN        (0x2000U)
-#define _MM_ROUND_UP          (0x4000U)
+#define _MM_ROUND_DOWN                     (0x2000U)
+#define _MM_ROUND_UP                       (0x4000U)
 #define _MM_ROUND_TOWARD_ZERO (0x6000U)
-#define _MM_ROUND_MASK        (0x6000U)
+#define _MM_ROUND_MASK                     (0x6000U)
 
 #define _MM_FLUSH_ZERO_MASK   (0x8000U)
 #define _MM_FLUSH_ZERO_ON     (0x8000U)

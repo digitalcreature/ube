@@ -5,16 +5,16 @@
 #include <linux/ipc.h>
 
 /* semop flags */
-#define SEM_UNDO        0x1000  /* undo the operation on exit */
+#define SEM_UNDO                     0x1000  /* undo the operation on exit */
 
 /* semctl Command Definitions. */
-#define GETPID  11       /* get sempid */
-#define GETVAL  12       /* get semval */
-#define GETALL  13       /* get all semval's */
-#define GETNCNT 14       /* get semncnt */
-#define GETZCNT 15       /* get semzcnt */
-#define SETVAL  16       /* set semval */
-#define SETALL  17       /* set all semval's */
+#define GETPID  11                    /* get sempid */
+#define GETVAL  12                    /* get semval */
+#define GETALL  13                    /* get all semval's */
+#define GETNCNT 14                    /* get semncnt */
+#define GETZCNT 15                    /* get semzcnt */
+#define SETVAL  16                    /* set semval */
+#define SETALL  17                    /* set all semval's */
 
 /* ipcs ctl cmds */
 #define SEM_STAT 18
@@ -77,17 +77,17 @@ struct  seminfo {
  */
 
 
-#define SEMMNI  32000           /* <= IPCMNI  max # of semaphore identifiers */
-#define SEMMSL  32000           /* <= INT_MAX max num of semaphores per id */
+#define SEMMNI  32000                        /* <= IPCMNI  max # of semaphore identifiers */
+#define SEMMSL  32000                        /* <= INT_MAX max num of semaphores per id */
 #define SEMMNS  (SEMMNI*SEMMSL) /* <= INT_MAX max # of semaphores in system */
-#define SEMOPM  500	        /* <= 1 000 max num of ops per semop call */
-#define SEMVMX  32767           /* <= 32767 semaphore maximum value */
-#define SEMAEM  SEMVMX          /* adjust on exit max value */
+#define SEMOPM  500	                     /* <= 1 000 max num of ops per semop call */
+#define SEMVMX  32767                        /* <= 32767 semaphore maximum value */
+#define SEMAEM  SEMVMX                       /* adjust on exit max value */
 
 /* unused */
-#define SEMUME  SEMOPM          /* max num of undo entries per process */
-#define SEMMNU  SEMMNS          /* num of undo structures system wide */
-#define SEMMAP  SEMMNS          /* # of entries in semaphore map */
+#define SEMUME  SEMOPM                       /* max num of undo entries per process */
+#define SEMMNU  SEMMNS                       /* num of undo structures system wide */
+#define SEMMAP  SEMMNS                       /* # of entries in semaphore map */
 #define SEMUSZ  20		/* sizeof struct sem_undo */
 
 

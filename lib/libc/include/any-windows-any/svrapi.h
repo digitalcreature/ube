@@ -89,7 +89,7 @@ extern "C" {
 #define ACCESS_GROUP 0x8000
 #define ACCESS_AUDIT 0x1
 #define ACCESS_ATTR_PARMNUM 2
-#define ACCESS_LETTERS "RWCXDAP         "
+#define ACCESS_LETTERS "RWCXDAP                      "
 
   extern API_FUNCTION NetShareAdd(const char *pszServer,short sLevel,const char *pbBuffer,unsigned short cbBuffer);
   extern API_FUNCTION NetShareDel(const char *pszServer,const char *pszNetName,unsigned short usReserved);

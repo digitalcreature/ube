@@ -31,8 +31,8 @@ int getgrnam_r(const char *, struct group *, char *, size_t, struct group **);
 
 #if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 struct group  *getgrent(void);
-void           endgrent(void);
-void           setgrent(void);
+void                        endgrent(void);
+void                        setgrent(void);
 #endif
 
 #ifdef _GNU_SOURCE

@@ -36,24 +36,24 @@
 #ifdef	PROF
 /* The mcount code relies on a normal frame pointer being on the stack
    to locate our caller, so push one just for its benefit.  */
-#define CALL_MCOUNT                                                          \
-  pushq %rbp;                                                                \
-  cfi_adjust_cfa_offset(8);                                                  \
-  movq %rsp, %rbp;                                                           \
-  cfi_def_cfa_register(%rbp);                                                \
-  call JUMPTARGET(mcount);                                                   \
-  popq %rbp;                                                                 \
+#define CALL_MCOUNT                                                                                                                                                                               \
+  pushq %rbp;                                                                                                                                                                                                  \
+  cfi_adjust_cfa_offset(8);                                                                                                                                                          \
+  movq %rsp, %rbp;                                                                                                                                                                                \
+  cfi_def_cfa_register(%rbp);                                                                                                                                                        \
+  call JUMPTARGET(mcount);                                                                                                                                                           \
+  popq %rbp;                                                                                                                                                                                                   \
   cfi_def_cfa(rsp,8);
 #else
 #define CALL_MCOUNT		/* Do nothing.  */
 #endif
 
-#define	PSEUDO(name, syscall_name, args)				      \
-lose:									      \
-  jmp JUMPTARGET(syscall_error)						      \
-  .globl syscall_error;							      \
-  ENTRY (name)								      \
-  DO_CALL (syscall_name, args);						      \
+#define	PSEUDO(name, syscall_name, args)				                   \
+lose:									                   \
+  jmp JUMPTARGET(syscall_error)						                   \
+  .globl syscall_error;							                   \
+  ENTRY (name)								                   \
+  DO_CALL (syscall_name, args);						                   \
   jb lose
 
 #undef JUMPTARGET

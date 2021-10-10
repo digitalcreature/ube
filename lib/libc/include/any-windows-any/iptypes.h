@@ -72,11 +72,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_UNICAST_ADDRESS_XP {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD Flags;
-      };
+                   };
     };
     struct _IP_ADAPTER_UNICAST_ADDRESS_XP *Next;
     SOCKET_ADDRESS Address;
@@ -90,11 +90,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_UNICAST_ADDRESS_LH {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD Flags;
-      };
+                   };
     };
     struct _IP_ADAPTER_UNICAST_ADDRESS_LH *Next;
     SOCKET_ADDRESS Address;
@@ -117,11 +117,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_ANYCAST_ADDRESS_XP {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD Flags;
-      };
+                   };
     };
     struct _IP_ADAPTER_ANYCAST_ADDRESS_XP *Next;
     SOCKET_ADDRESS Address;
@@ -131,11 +131,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_MULTICAST_ADDRESS_XP {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD Flags;
-      };
+                   };
     };
     struct _IP_ADAPTER_MULTICAST_ADDRESS_XP *Next;
     SOCKET_ADDRESS Address;
@@ -149,11 +149,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_DNS_SERVER_ADDRESS_XP {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD Reserved;
-      };
+                   };
     };
     struct _IP_ADAPTER_DNS_SERVER_ADDRESS_XP *Next;
     SOCKET_ADDRESS Address;
@@ -163,11 +163,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_PREFIX_XP {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD Flags;
-      };
+                   };
     };
     struct _IP_ADAPTER_PREFIX_XP *Next;
     SOCKET_ADDRESS Address;
@@ -178,11 +178,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_WINS_SERVER_ADDRESS_LH {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD Reserved;
-      };
+                   };
     };
     struct _IP_ADAPTER_WINS_SERVER_ADDRESS_LH *Next;
     SOCKET_ADDRESS Address;
@@ -194,11 +194,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_GATEWAY_ADDRESS_LH {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD Reserved;
-      };
+                   };
     };
     struct _IP_ADAPTER_GATEWAY_ADDRESS_LH *Next;
     SOCKET_ADDRESS Address;
@@ -226,11 +226,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_ADDRESSES_LH {
     __C89_NAMELESS union {
-      ULONGLONG   Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG   Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	IF_INDEX IfIndex;
-      };
+                   };
     };
     struct _IP_ADAPTER_ADDRESSES_LH *Next;
     PCHAR AdapterName;
@@ -244,8 +244,8 @@ extern "C" {
     BYTE PhysicalAddress[MAX_ADAPTER_ADDRESS_LENGTH];
     ULONG PhysicalAddressLength;
     __C89_NAMELESS union {
-      ULONG Flags;
-      __C89_NAMELESS struct {
+                   ULONG Flags;
+                   __C89_NAMELESS struct {
 	ULONG DdnsEnabled : 1;
 	ULONG RegisterAdapterSuffix : 1;
 	ULONG Dhcpv4Enabled : 1;
@@ -256,7 +256,7 @@ extern "C" {
 	ULONG Ipv4Enabled : 1;
 	ULONG Ipv6Enabled : 1;
 	ULONG Ipv6ManagedAddressConfigurationSupported : 1;
-      };
+                   };
     };
     ULONG Mtu;
     IFTYPE IfType;
@@ -289,11 +289,11 @@ extern "C" {
 
   typedef struct _IP_ADAPTER_ADDRESSES_XP {
     __C89_NAMELESS union {
-      ULONGLONG Alignment;
-      __C89_NAMELESS struct {
+                   ULONGLONG Alignment;
+                   __C89_NAMELESS struct {
 	ULONG Length;
 	DWORD IfIndex;
-      };
+                   };
     };
     struct _IP_ADAPTER_ADDRESSES_XP *Next;
     PCHAR AdapterName;

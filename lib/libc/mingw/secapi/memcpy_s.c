@@ -39,18 +39,18 @@ _int_memcpy_s (void *d, size_t dn, const void *s, size_t n)
 
   if (!d || !s)
     {
-      if (d)
-        memset (d, 0, dn);
-      errno = EINVAL;
-      return EINVAL;
+                   if (d)
+                     memset (d, 0, dn);
+                   errno = EINVAL;
+                   return EINVAL;
     }
 
   if (dn < n)
     {
-      memset (d, 0, dn);
+                   memset (d, 0, dn);
 
-      errno = ERANGE;
-      return ERANGE;
+                   errno = ERANGE;
+                   return ERANGE;
     }
 
   memcpy (d, s, n);

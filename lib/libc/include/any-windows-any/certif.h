@@ -74,27 +74,27 @@ extern "C"{
 #else
   typedef struct ICertServerPolicyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertServerPolicy *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertServerPolicy *This);
-      ULONG (WINAPI *Release)(ICertServerPolicy *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertServerPolicy *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertServerPolicy *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertServerPolicy *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertServerPolicy *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetContext)(ICertServerPolicy *This,LONG Context);
-      HRESULT (WINAPI *GetRequestProperty)(ICertServerPolicy *This,const BSTR strPropertyName,LONG PropertyType,VARIANT *pvarPropertyValue);
-      HRESULT (WINAPI *GetRequestAttribute)(ICertServerPolicy *This,const BSTR strAttributeName,BSTR *pstrAttributeValue);
-      HRESULT (WINAPI *GetCertificateProperty)(ICertServerPolicy *This,const BSTR strPropertyName,LONG PropertyType,VARIANT *pvarPropertyValue);
-      HRESULT (WINAPI *SetCertificateProperty)(ICertServerPolicy *This,const BSTR strPropertyName,LONG PropertyType,const VARIANT *pvarPropertyValue);
-      HRESULT (WINAPI *GetCertificateExtension)(ICertServerPolicy *This,const BSTR strExtensionName,LONG Type,VARIANT *pvarValue);
-      HRESULT (WINAPI *GetCertificateExtensionFlags)(ICertServerPolicy *This,LONG *pExtFlags);
-      HRESULT (WINAPI *SetCertificateExtension)(ICertServerPolicy *This,const BSTR strExtensionName,LONG Type,LONG ExtFlags,const VARIANT *pvarValue);
-      HRESULT (WINAPI *EnumerateExtensionsSetup)(ICertServerPolicy *This,LONG Flags);
-      HRESULT (WINAPI *EnumerateExtensions)(ICertServerPolicy *This,BSTR *pstrExtensionName);
-      HRESULT (WINAPI *EnumerateExtensionsClose)(ICertServerPolicy *This);
-      HRESULT (WINAPI *EnumerateAttributesSetup)(ICertServerPolicy *This,LONG Flags);
-      HRESULT (WINAPI *EnumerateAttributes)(ICertServerPolicy *This,BSTR *pstrAttributeName);
-      HRESULT (WINAPI *EnumerateAttributesClose)(ICertServerPolicy *This);
+                   HRESULT (WINAPI *QueryInterface)(ICertServerPolicy *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertServerPolicy *This);
+                   ULONG (WINAPI *Release)(ICertServerPolicy *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertServerPolicy *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertServerPolicy *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertServerPolicy *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertServerPolicy *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetContext)(ICertServerPolicy *This,LONG Context);
+                   HRESULT (WINAPI *GetRequestProperty)(ICertServerPolicy *This,const BSTR strPropertyName,LONG PropertyType,VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *GetRequestAttribute)(ICertServerPolicy *This,const BSTR strAttributeName,BSTR *pstrAttributeValue);
+                   HRESULT (WINAPI *GetCertificateProperty)(ICertServerPolicy *This,const BSTR strPropertyName,LONG PropertyType,VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *SetCertificateProperty)(ICertServerPolicy *This,const BSTR strPropertyName,LONG PropertyType,const VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *GetCertificateExtension)(ICertServerPolicy *This,const BSTR strExtensionName,LONG Type,VARIANT *pvarValue);
+                   HRESULT (WINAPI *GetCertificateExtensionFlags)(ICertServerPolicy *This,LONG *pExtFlags);
+                   HRESULT (WINAPI *SetCertificateExtension)(ICertServerPolicy *This,const BSTR strExtensionName,LONG Type,LONG ExtFlags,const VARIANT *pvarValue);
+                   HRESULT (WINAPI *EnumerateExtensionsSetup)(ICertServerPolicy *This,LONG Flags);
+                   HRESULT (WINAPI *EnumerateExtensions)(ICertServerPolicy *This,BSTR *pstrExtensionName);
+                   HRESULT (WINAPI *EnumerateExtensionsClose)(ICertServerPolicy *This);
+                   HRESULT (WINAPI *EnumerateAttributesSetup)(ICertServerPolicy *This,LONG Flags);
+                   HRESULT (WINAPI *EnumerateAttributes)(ICertServerPolicy *This,BSTR *pstrAttributeName);
+                   HRESULT (WINAPI *EnumerateAttributesClose)(ICertServerPolicy *This);
     END_INTERFACE
   } ICertServerPolicyVtbl;
   struct ICertServerPolicy {
@@ -176,25 +176,25 @@ extern "C"{
 #else
   typedef struct ICertServerExitVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertServerExit *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertServerExit *This);
-      ULONG (WINAPI *Release)(ICertServerExit *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertServerExit *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertServerExit *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertServerExit *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertServerExit *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetContext)(ICertServerExit *This,LONG Context);
-      HRESULT (WINAPI *GetRequestProperty)(ICertServerExit *This,const BSTR strPropertyName,LONG PropertyType,VARIANT *pvarPropertyValue);
-      HRESULT (WINAPI *GetRequestAttribute)(ICertServerExit *This,const BSTR strAttributeName,BSTR *pstrAttributeValue);
-      HRESULT (WINAPI *GetCertificateProperty)(ICertServerExit *This,const BSTR strPropertyName,LONG PropertyType,VARIANT *pvarPropertyValue);
-      HRESULT (WINAPI *GetCertificateExtension)(ICertServerExit *This,const BSTR strExtensionName,LONG Type,VARIANT *pvarValue);
-      HRESULT (WINAPI *GetCertificateExtensionFlags)(ICertServerExit *This,LONG *pExtFlags);
-      HRESULT (WINAPI *EnumerateExtensionsSetup)(ICertServerExit *This,LONG Flags);
-      HRESULT (WINAPI *EnumerateExtensions)(ICertServerExit *This,BSTR *pstrExtensionName);
-      HRESULT (WINAPI *EnumerateExtensionsClose)(ICertServerExit *This);
-      HRESULT (WINAPI *EnumerateAttributesSetup)(ICertServerExit *This,LONG Flags);
-      HRESULT (WINAPI *EnumerateAttributes)(ICertServerExit *This,BSTR *pstrAttributeName);
-      HRESULT (WINAPI *EnumerateAttributesClose)(ICertServerExit *This);
+                   HRESULT (WINAPI *QueryInterface)(ICertServerExit *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertServerExit *This);
+                   ULONG (WINAPI *Release)(ICertServerExit *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertServerExit *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertServerExit *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertServerExit *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertServerExit *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetContext)(ICertServerExit *This,LONG Context);
+                   HRESULT (WINAPI *GetRequestProperty)(ICertServerExit *This,const BSTR strPropertyName,LONG PropertyType,VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *GetRequestAttribute)(ICertServerExit *This,const BSTR strAttributeName,BSTR *pstrAttributeValue);
+                   HRESULT (WINAPI *GetCertificateProperty)(ICertServerExit *This,const BSTR strPropertyName,LONG PropertyType,VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *GetCertificateExtension)(ICertServerExit *This,const BSTR strExtensionName,LONG Type,VARIANT *pvarValue);
+                   HRESULT (WINAPI *GetCertificateExtensionFlags)(ICertServerExit *This,LONG *pExtFlags);
+                   HRESULT (WINAPI *EnumerateExtensionsSetup)(ICertServerExit *This,LONG Flags);
+                   HRESULT (WINAPI *EnumerateExtensions)(ICertServerExit *This,BSTR *pstrExtensionName);
+                   HRESULT (WINAPI *EnumerateExtensionsClose)(ICertServerExit *This);
+                   HRESULT (WINAPI *EnumerateAttributesSetup)(ICertServerExit *This,LONG Flags);
+                   HRESULT (WINAPI *EnumerateAttributes)(ICertServerExit *This,BSTR *pstrAttributeName);
+                   HRESULT (WINAPI *EnumerateAttributesClose)(ICertServerExit *This);
     END_INTERFACE
   } ICertServerExitVtbl;
   struct ICertServerExit {

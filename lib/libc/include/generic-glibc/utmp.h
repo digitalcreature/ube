@@ -84,7 +84,7 @@ extern struct utmp *pututline (const struct utmp *__utmp_ptr) __THROW;
 extern int getutent_r (struct utmp *__buffer, struct utmp **__result) __THROW;
 
 extern int getutid_r (const struct utmp *__id, struct utmp *__buffer,
-		      struct utmp **__result) __THROW;
+		                   struct utmp **__result) __THROW;
 
 extern int getutline_r (const struct utmp *__line,
 			struct utmp *__buffer, struct utmp **__result) __THROW;

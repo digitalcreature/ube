@@ -26,7 +26,7 @@
 #endif
 
 /* Value returned if `sem_open' failed.  */
-#define SEM_FAILED      ((sem_t *) 0)
+#define SEM_FAILED                   ((sem_t *) 0)
 
 
 typedef union

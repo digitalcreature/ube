@@ -26,12 +26,12 @@ _mingw_no_trailing_slash (const char* _path)
     /* Ignore X:\ */
 
     if (len <= 1 || ((len == 2 || len == 3) && _path[1] == ':'))
-      return p;
+                   return p;
 
     /* Check UNC \\abc\<name>\ */
     if ((_path[0] == '\\' || _path[0] == '/')
 	&& (_path[1] == '\\' || _path[1] == '/'))
-      {
+                   {
 	const char *r = &_path[2];
 	while (*r != 0 && *r != '\\' && *r != '/')
 	  ++r;
@@ -45,14 +45,14 @@ _mingw_no_trailing_slash (const char* _path)
 	  ++r;
 	if (*r == 0)
 	  return p;
-      }
+                   }
 
     if (_path[len - 1] == '/' || _path[len - 1] == '\\')
-      {
+                   {
 	p = (char*)malloc (len);
 	memcpy (p, _path, len - 1);
 	p[len - 1] = '\0';
-      }
+                   }
   }
 
   return p;

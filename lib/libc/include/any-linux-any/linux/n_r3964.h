@@ -55,10 +55,10 @@
  * Ioctl-commands
  */
 
-#define R3964_ENABLE_SIGNALS      0x5301
-#define R3964_SETPRIORITY         0x5302
-#define R3964_USE_BCC             0x5303
-#define R3964_READ_TELEGRAM       0x5304
+#define R3964_ENABLE_SIGNALS                   0x5301
+#define R3964_SETPRIORITY                      0x5302
+#define R3964_USE_BCC                                       0x5303
+#define R3964_READ_TELEGRAM                    0x5304
 
 /* Options for R3964_SETPRIORITY */
 #define R3964_MASTER   0
@@ -81,7 +81,7 @@ enum {R3964_MSG_ACK=1, R3964_MSG_DATA };
 #define R3964_MAX_MSG_COUNT 32
 
 /* error codes for client messages */
-#define R3964_OK 0        /* no error. */
+#define R3964_OK 0                     /* no error. */
 #define R3964_TX_FAIL -1  /* transmission error, block NOT sent */
 #define R3964_OVERFLOW -2 /* msg queue overflow */
 
@@ -92,7 +92,7 @@ struct r3964_client_message {
 	  int     error_code;
 };
 
-#define R3964_MTU      256
+#define R3964_MTU                   256
 
 
 

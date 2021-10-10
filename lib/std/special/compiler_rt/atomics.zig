@@ -40,21 +40,21 @@ const SpinlockTable = struct {
     const max_spinlocks = 64;
 
     const Spinlock = struct {
-        // Prevent false sharing by providing enough padding between two
-        // consecutive spinlock elements
-        v: enum(usize) { Unlocked = 0, Locked } align(cache_line_size) = .Unlocked,
+                     // Prevent false sharing by providing enough padding between two
+                     // consecutive spinlock elements
+                     v: enum(usize) { Unlocked = 0, Locked } align(cache_line_size) = .Unlocked,
 
-        fn acquire(self: *@This()) void {
-            while (true) {
-                switch (@atomicRmw(@TypeOf(self.v), &self.v, .Xchg, .Locked, .Acquire)) {
-                    .Unlocked => break,
-                    .Locked => {},
-                }
-            }
-        }
-        fn release(self: *@This()) void {
-            @atomicStore(@TypeOf(self.v), &self.v, .Unlocked, .Release);
-        }
+                     fn acquire(self: *@This()) void {
+                                      while (true) {
+                                          switch (@atomicRmw(@TypeOf(self.v), &self.v, .Xchg, .Locked, .Acquire)) {
+                                                           .Unlocked => break,
+                                                           .Locked => {},
+                                          }
+                                      }
+                     }
+                     fn release(self: *@This()) void {
+                                      @atomicStore(@TypeOf(self.v), &self.v, .Unlocked, .Release);
+                     }
     };
 
     list: [max_spinlocks]Spinlock = [_]Spinlock{.{}} ** max_spinlocks,
@@ -64,9 +64,9 @@ const SpinlockTable = struct {
     // performance problem as the lock will be contended by more than a pair of
     // threads.
     fn get(self: *@This(), address: usize) *Spinlock {
-        var sl = &self.list[(address >> 3) % max_spinlocks];
-        sl.acquire();
-        return sl;
+                     var sl = &self.list[(address >> 3) % max_spinlocks];
+                     sl.acquire();
+                     return sl;
     }
 };
 
@@ -108,11 +108,11 @@ fn __atomic_compare_exchange(
     var sl = spinlocks.get(@ptrToInt(ptr));
     defer sl.release();
     for (ptr[0..size]) |b, i| {
-        if (expected[i] != b) break;
+                     if (expected[i] != b) break;
     } else {
-        // The two objects, ptr and expected, are equal
-        @memcpy(ptr, desired, size);
-        return 1;
+                     // The two objects, ptr and expected, are equal
+                     @memcpy(ptr, desired, size);
+                     return 1;
     }
     @memcpy(expected, ptr, size);
     return 0;
@@ -120,10 +120,10 @@ fn __atomic_compare_exchange(
 
 comptime {
     if (supports_atomic_ops) {
-        @export(__atomic_load, .{ .name = "__atomic_load", .linkage = linkage });
-        @export(__atomic_store, .{ .name = "__atomic_store", .linkage = linkage });
-        @export(__atomic_exchange, .{ .name = "__atomic_exchange", .linkage = linkage });
-        @export(__atomic_compare_exchange, .{ .name = "__atomic_compare_exchange", .linkage = linkage });
+                     @export(__atomic_load, .{ .name = "__atomic_load", .linkage = linkage });
+                     @export(__atomic_store, .{ .name = "__atomic_store", .linkage = linkage });
+                     @export(__atomic_exchange, .{ .name = "__atomic_exchange", .linkage = linkage });
+                     @export(__atomic_compare_exchange, .{ .name = "__atomic_compare_exchange", .linkage = linkage });
     }
 }
 
@@ -133,164 +133,164 @@ comptime {
 
 fn atomicLoadFn(comptime T: type) fn (*T, i32) callconv(.C) T {
     return struct {
-        fn atomic_load_N(src: *T, model: i32) callconv(.C) T {
-            if (@sizeOf(T) > largest_atomic_size) {
-                var sl = spinlocks.get(@ptrToInt(src));
-                defer sl.release();
-                return src.*;
-            } else {
-                return @atomicLoad(T, src, .SeqCst);
-            }
-        }
+                     fn atomic_load_N(src: *T, model: i32) callconv(.C) T {
+                                      if (@sizeOf(T) > largest_atomic_size) {
+                                          var sl = spinlocks.get(@ptrToInt(src));
+                                          defer sl.release();
+                                          return src.*;
+                                      } else {
+                                          return @atomicLoad(T, src, .SeqCst);
+                                      }
+                     }
     }.atomic_load_N;
 }
 
 comptime {
     if (supports_atomic_ops) {
-        @export(atomicLoadFn(u8), .{ .name = "__atomic_load_1", .linkage = linkage });
-        @export(atomicLoadFn(u16), .{ .name = "__atomic_load_2", .linkage = linkage });
-        @export(atomicLoadFn(u32), .{ .name = "__atomic_load_4", .linkage = linkage });
-        @export(atomicLoadFn(u64), .{ .name = "__atomic_load_8", .linkage = linkage });
+                     @export(atomicLoadFn(u8), .{ .name = "__atomic_load_1", .linkage = linkage });
+                     @export(atomicLoadFn(u16), .{ .name = "__atomic_load_2", .linkage = linkage });
+                     @export(atomicLoadFn(u32), .{ .name = "__atomic_load_4", .linkage = linkage });
+                     @export(atomicLoadFn(u64), .{ .name = "__atomic_load_8", .linkage = linkage });
     }
 }
 
 fn atomicStoreFn(comptime T: type) fn (*T, T, i32) callconv(.C) void {
     return struct {
-        fn atomic_store_N(dst: *T, value: T, model: i32) callconv(.C) void {
-            if (@sizeOf(T) > largest_atomic_size) {
-                var sl = spinlocks.get(@ptrToInt(dst));
-                defer sl.release();
-                dst.* = value;
-            } else {
-                @atomicStore(T, dst, value, .SeqCst);
-            }
-        }
+                     fn atomic_store_N(dst: *T, value: T, model: i32) callconv(.C) void {
+                                      if (@sizeOf(T) > largest_atomic_size) {
+                                          var sl = spinlocks.get(@ptrToInt(dst));
+                                          defer sl.release();
+                                          dst.* = value;
+                                      } else {
+                                          @atomicStore(T, dst, value, .SeqCst);
+                                      }
+                     }
     }.atomic_store_N;
 }
 
 comptime {
     if (supports_atomic_ops) {
-        @export(atomicStoreFn(u8), .{ .name = "__atomic_store_1", .linkage = linkage });
-        @export(atomicStoreFn(u16), .{ .name = "__atomic_store_2", .linkage = linkage });
-        @export(atomicStoreFn(u32), .{ .name = "__atomic_store_4", .linkage = linkage });
-        @export(atomicStoreFn(u64), .{ .name = "__atomic_store_8", .linkage = linkage });
+                     @export(atomicStoreFn(u8), .{ .name = "__atomic_store_1", .linkage = linkage });
+                     @export(atomicStoreFn(u16), .{ .name = "__atomic_store_2", .linkage = linkage });
+                     @export(atomicStoreFn(u32), .{ .name = "__atomic_store_4", .linkage = linkage });
+                     @export(atomicStoreFn(u64), .{ .name = "__atomic_store_8", .linkage = linkage });
     }
 }
 
 fn atomicExchangeFn(comptime T: type) fn (*T, T, i32) callconv(.C) T {
     return struct {
-        fn atomic_exchange_N(ptr: *T, val: T, model: i32) callconv(.C) T {
-            if (@sizeOf(T) > largest_atomic_size) {
-                var sl = spinlocks.get(@ptrToInt(ptr));
-                defer sl.release();
-                const value = ptr.*;
-                ptr.* = val;
-                return value;
-            } else {
-                return @atomicRmw(T, ptr, .Xchg, val, .SeqCst);
-            }
-        }
+                     fn atomic_exchange_N(ptr: *T, val: T, model: i32) callconv(.C) T {
+                                      if (@sizeOf(T) > largest_atomic_size) {
+                                          var sl = spinlocks.get(@ptrToInt(ptr));
+                                          defer sl.release();
+                                          const value = ptr.*;
+                                          ptr.* = val;
+                                          return value;
+                                      } else {
+                                          return @atomicRmw(T, ptr, .Xchg, val, .SeqCst);
+                                      }
+                     }
     }.atomic_exchange_N;
 }
 
 comptime {
     if (supports_atomic_ops) {
-        @export(atomicExchangeFn(u8), .{ .name = "__atomic_exchange_1", .linkage = linkage });
-        @export(atomicExchangeFn(u16), .{ .name = "__atomic_exchange_2", .linkage = linkage });
-        @export(atomicExchangeFn(u32), .{ .name = "__atomic_exchange_4", .linkage = linkage });
-        @export(atomicExchangeFn(u64), .{ .name = "__atomic_exchange_8", .linkage = linkage });
+                     @export(atomicExchangeFn(u8), .{ .name = "__atomic_exchange_1", .linkage = linkage });
+                     @export(atomicExchangeFn(u16), .{ .name = "__atomic_exchange_2", .linkage = linkage });
+                     @export(atomicExchangeFn(u32), .{ .name = "__atomic_exchange_4", .linkage = linkage });
+                     @export(atomicExchangeFn(u64), .{ .name = "__atomic_exchange_8", .linkage = linkage });
     }
 }
 
 fn atomicCompareExchangeFn(comptime T: type) fn (*T, *T, T, i32, i32) callconv(.C) i32 {
     return struct {
-        fn atomic_compare_exchange_N(ptr: *T, expected: *T, desired: T, success: i32, failure: i32) callconv(.C) i32 {
-            if (@sizeOf(T) > largest_atomic_size) {
-                var sl = spinlocks.get(@ptrToInt(ptr));
-                defer sl.release();
-                const value = ptr.*;
-                if (value == expected.*) {
-                    ptr.* = desired;
-                    return 1;
-                }
-                expected.* = value;
-                return 0;
-            } else {
-                if (@cmpxchgStrong(T, ptr, expected.*, desired, .SeqCst, .SeqCst)) |old_value| {
-                    expected.* = old_value;
-                    return 0;
-                }
-                return 1;
-            }
-        }
+                     fn atomic_compare_exchange_N(ptr: *T, expected: *T, desired: T, success: i32, failure: i32) callconv(.C) i32 {
+                                      if (@sizeOf(T) > largest_atomic_size) {
+                                          var sl = spinlocks.get(@ptrToInt(ptr));
+                                          defer sl.release();
+                                          const value = ptr.*;
+                                          if (value == expected.*) {
+                                                           ptr.* = desired;
+                                                           return 1;
+                                          }
+                                          expected.* = value;
+                                          return 0;
+                                      } else {
+                                          if (@cmpxchgStrong(T, ptr, expected.*, desired, .SeqCst, .SeqCst)) |old_value| {
+                                                           expected.* = old_value;
+                                                           return 0;
+                                          }
+                                          return 1;
+                                      }
+                     }
     }.atomic_compare_exchange_N;
 }
 
 comptime {
     if (supports_atomic_ops) {
-        @export(atomicCompareExchangeFn(u8), .{ .name = "__atomic_compare_exchange_1", .linkage = linkage });
-        @export(atomicCompareExchangeFn(u16), .{ .name = "__atomic_compare_exchange_2", .linkage = linkage });
-        @export(atomicCompareExchangeFn(u32), .{ .name = "__atomic_compare_exchange_4", .linkage = linkage });
-        @export(atomicCompareExchangeFn(u64), .{ .name = "__atomic_compare_exchange_8", .linkage = linkage });
+                     @export(atomicCompareExchangeFn(u8), .{ .name = "__atomic_compare_exchange_1", .linkage = linkage });
+                     @export(atomicCompareExchangeFn(u16), .{ .name = "__atomic_compare_exchange_2", .linkage = linkage });
+                     @export(atomicCompareExchangeFn(u32), .{ .name = "__atomic_compare_exchange_4", .linkage = linkage });
+                     @export(atomicCompareExchangeFn(u64), .{ .name = "__atomic_compare_exchange_8", .linkage = linkage });
     }
 }
 
 fn fetchFn(comptime T: type, comptime op: builtin.AtomicRmwOp) fn (*T, T, i32) callconv(.C) T {
     return struct {
-        pub fn fetch_op_N(ptr: *T, val: T, model: i32) callconv(.C) T {
-            if (@sizeOf(T) > largest_atomic_size) {
-                var sl = spinlocks.get(@ptrToInt(ptr));
-                defer sl.release();
+                     pub fn fetch_op_N(ptr: *T, val: T, model: i32) callconv(.C) T {
+                                      if (@sizeOf(T) > largest_atomic_size) {
+                                          var sl = spinlocks.get(@ptrToInt(ptr));
+                                          defer sl.release();
 
-                const value = ptr.*;
-                ptr.* = switch (op) {
-                    .Add => value +% val,
-                    .Sub => value -% val,
-                    .And => value & val,
-                    .Nand => ~(value & val),
-                    .Or => value | val,
-                    .Xor => value ^ val,
-                    else => @compileError("unsupported atomic op"),
-                };
+                                          const value = ptr.*;
+                                          ptr.* = switch (op) {
+                                                           .Add => value +% val,
+                                                           .Sub => value -% val,
+                                                           .And => value & val,
+                                                           .Nand => ~(value & val),
+                                                           .Or => value | val,
+                                                           .Xor => value ^ val,
+                                                           else => @compileError("unsupported atomic op"),
+                                          };
 
-                return value;
-            }
+                                          return value;
+                                      }
 
-            return @atomicRmw(T, ptr, op, val, .SeqCst);
-        }
+                                      return @atomicRmw(T, ptr, op, val, .SeqCst);
+                     }
     }.fetch_op_N;
 }
 
 comptime {
     if (supports_atomic_ops) {
-        @export(fetchFn(u8, .Add), .{ .name = "__atomic_fetch_add_1", .linkage = linkage });
-        @export(fetchFn(u16, .Add), .{ .name = "__atomic_fetch_add_2", .linkage = linkage });
-        @export(fetchFn(u32, .Add), .{ .name = "__atomic_fetch_add_4", .linkage = linkage });
-        @export(fetchFn(u64, .Add), .{ .name = "__atomic_fetch_add_8", .linkage = linkage });
+                     @export(fetchFn(u8, .Add), .{ .name = "__atomic_fetch_add_1", .linkage = linkage });
+                     @export(fetchFn(u16, .Add), .{ .name = "__atomic_fetch_add_2", .linkage = linkage });
+                     @export(fetchFn(u32, .Add), .{ .name = "__atomic_fetch_add_4", .linkage = linkage });
+                     @export(fetchFn(u64, .Add), .{ .name = "__atomic_fetch_add_8", .linkage = linkage });
 
-        @export(fetchFn(u8, .Sub), .{ .name = "__atomic_fetch_sub_1", .linkage = linkage });
-        @export(fetchFn(u16, .Sub), .{ .name = "__atomic_fetch_sub_2", .linkage = linkage });
-        @export(fetchFn(u32, .Sub), .{ .name = "__atomic_fetch_sub_4", .linkage = linkage });
-        @export(fetchFn(u64, .Sub), .{ .name = "__atomic_fetch_sub_8", .linkage = linkage });
+                     @export(fetchFn(u8, .Sub), .{ .name = "__atomic_fetch_sub_1", .linkage = linkage });
+                     @export(fetchFn(u16, .Sub), .{ .name = "__atomic_fetch_sub_2", .linkage = linkage });
+                     @export(fetchFn(u32, .Sub), .{ .name = "__atomic_fetch_sub_4", .linkage = linkage });
+                     @export(fetchFn(u64, .Sub), .{ .name = "__atomic_fetch_sub_8", .linkage = linkage });
 
-        @export(fetchFn(u8, .And), .{ .name = "__atomic_fetch_and_1", .linkage = linkage });
-        @export(fetchFn(u16, .And), .{ .name = "__atomic_fetch_and_2", .linkage = linkage });
-        @export(fetchFn(u32, .And), .{ .name = "__atomic_fetch_and_4", .linkage = linkage });
-        @export(fetchFn(u64, .And), .{ .name = "__atomic_fetch_and_8", .linkage = linkage });
+                     @export(fetchFn(u8, .And), .{ .name = "__atomic_fetch_and_1", .linkage = linkage });
+                     @export(fetchFn(u16, .And), .{ .name = "__atomic_fetch_and_2", .linkage = linkage });
+                     @export(fetchFn(u32, .And), .{ .name = "__atomic_fetch_and_4", .linkage = linkage });
+                     @export(fetchFn(u64, .And), .{ .name = "__atomic_fetch_and_8", .linkage = linkage });
 
-        @export(fetchFn(u8, .Or), .{ .name = "__atomic_fetch_or_1", .linkage = linkage });
-        @export(fetchFn(u16, .Or), .{ .name = "__atomic_fetch_or_2", .linkage = linkage });
-        @export(fetchFn(u32, .Or), .{ .name = "__atomic_fetch_or_4", .linkage = linkage });
-        @export(fetchFn(u64, .Or), .{ .name = "__atomic_fetch_or_8", .linkage = linkage });
+                     @export(fetchFn(u8, .Or), .{ .name = "__atomic_fetch_or_1", .linkage = linkage });
+                     @export(fetchFn(u16, .Or), .{ .name = "__atomic_fetch_or_2", .linkage = linkage });
+                     @export(fetchFn(u32, .Or), .{ .name = "__atomic_fetch_or_4", .linkage = linkage });
+                     @export(fetchFn(u64, .Or), .{ .name = "__atomic_fetch_or_8", .linkage = linkage });
 
-        @export(fetchFn(u8, .Xor), .{ .name = "__atomic_fetch_xor_1", .linkage = linkage });
-        @export(fetchFn(u16, .Xor), .{ .name = "__atomic_fetch_xor_2", .linkage = linkage });
-        @export(fetchFn(u32, .Xor), .{ .name = "__atomic_fetch_xor_4", .linkage = linkage });
-        @export(fetchFn(u64, .Xor), .{ .name = "__atomic_fetch_xor_8", .linkage = linkage });
+                     @export(fetchFn(u8, .Xor), .{ .name = "__atomic_fetch_xor_1", .linkage = linkage });
+                     @export(fetchFn(u16, .Xor), .{ .name = "__atomic_fetch_xor_2", .linkage = linkage });
+                     @export(fetchFn(u32, .Xor), .{ .name = "__atomic_fetch_xor_4", .linkage = linkage });
+                     @export(fetchFn(u64, .Xor), .{ .name = "__atomic_fetch_xor_8", .linkage = linkage });
 
-        @export(fetchFn(u8, .Nand), .{ .name = "__atomic_fetch_nand_1", .linkage = linkage });
-        @export(fetchFn(u16, .Nand), .{ .name = "__atomic_fetch_nand_2", .linkage = linkage });
-        @export(fetchFn(u32, .Nand), .{ .name = "__atomic_fetch_nand_4", .linkage = linkage });
-        @export(fetchFn(u64, .Nand), .{ .name = "__atomic_fetch_nand_8", .linkage = linkage });
+                     @export(fetchFn(u8, .Nand), .{ .name = "__atomic_fetch_nand_1", .linkage = linkage });
+                     @export(fetchFn(u16, .Nand), .{ .name = "__atomic_fetch_nand_2", .linkage = linkage });
+                     @export(fetchFn(u32, .Nand), .{ .name = "__atomic_fetch_nand_4", .linkage = linkage });
+                     @export(fetchFn(u64, .Nand), .{ .name = "__atomic_fetch_nand_8", .linkage = linkage });
     }
 }

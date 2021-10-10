@@ -103,7 +103,7 @@ struct nilfs_super_root {
 /*
  * Maximal mount counts
  */
-#define NILFS_DFL_MAX_MNT_COUNT		50      /* 50 mounts */
+#define NILFS_DFL_MAX_MNT_COUNT		50                   /* 50 mounts */
 
 /*
  * File system states (sbp->s_state, nilfs->ns_mount_state)
@@ -161,7 +161,7 @@ struct nilfs_super_block {
 
 	__le64  s_last_cno;		/* Last checkpoint number */
 /*40*/	__le64  s_last_pseg;		/* disk block addr pseg written last */
-	__le64  s_last_seq;             /* seq. number of seg written last */
+	__le64  s_last_seq;                                       /* seq. number of seg written last */
 /*50*/	__le64	s_free_blocks_count;	/* Free blocks count */
 
 	__le64	s_ctime;		/*
@@ -183,15 +183,15 @@ struct nilfs_super_block {
 	__le32	s_first_ino;		/* First non-reserved inode */
 
 /*90*/	__le16  s_inode_size;		/* Size of an inode */
-	__le16  s_dat_entry_size;       /* Size of a dat entry */
-	__le16  s_checkpoint_size;      /* Size of a checkpoint */
+	__le16  s_dat_entry_size;                    /* Size of a dat entry */
+	__le16  s_checkpoint_size;                   /* Size of a checkpoint */
 	__le16	s_segment_usage_size;	/* Size of a segment usage */
 
 /*98*/	__u8	s_uuid[16];		/* 128-bit uuid for volume */
 /*A8*/	char	s_volume_name[80];	/* volume name */
 
-/*F8*/	__le32  s_c_interval;           /* Commit interval of segment */
-	__le32  s_c_block_max;          /*
+/*F8*/	__le32  s_c_interval;                        /* Commit interval of segment */
+	__le32  s_c_block_max;                       /*
 					 * Threshold of data amount for
 					 * the segment construction
 					 */
@@ -441,9 +441,9 @@ struct nilfs_btree_node {
 #define NILFS_BTREE_NODE_ROOT   0x01
 
 /* level */
-#define NILFS_BTREE_LEVEL_DATA          0
-#define NILFS_BTREE_LEVEL_NODE_MIN      (NILFS_BTREE_LEVEL_DATA + 1)
-#define NILFS_BTREE_LEVEL_MAX           14	/* Max level (exclusive) */
+#define NILFS_BTREE_LEVEL_DATA                       0
+#define NILFS_BTREE_LEVEL_NODE_MIN                   (NILFS_BTREE_LEVEL_DATA + 1)
+#define NILFS_BTREE_LEVEL_MAX                        14	/* Max level (exclusive) */
 
 /**
  * struct nilfs_direct_node - header of built-in bmap array
@@ -603,7 +603,7 @@ nilfs_segment_usage_clear_##name(struct nilfs_segment_usage *su)	\
 {									\
 	su->su_flags =							\
 		cpu_to_le32(le32_to_cpu(su->su_flags) &			\
-			    ~(1UL << NILFS_SEGMENT_USAGE_##flag));      \
+			    ~(1UL << NILFS_SEGMENT_USAGE_##flag));                   \
 }									\
 static __inline__ int							\
 nilfs_segment_usage_##name(const struct nilfs_segment_usage *su)	\

@@ -12,14 +12,14 @@
  *     without modification, are permitted provided that the following
  *     conditions are met:
  *
- *      - Redistributions of source code must retain the above
- *        copyright notice, this list of conditions and the following
- *        disclaimer.
+ *                   - Redistributions of source code must retain the above
+ *                     copyright notice, this list of conditions and the following
+ *                     disclaimer.
  *
- *      - Redistributions in binary form must reproduce the above
- *        copyright notice, this list of conditions and the following
- *        disclaimer in the documentation and/or other materials
- *        provided with the distribution.
+ *                   - Redistributions in binary form must reproduce the above
+ *                     copyright notice, this list of conditions and the following
+ *                     disclaimer in the documentation and/or other materials
+ *                     provided with the distribution.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -46,7 +46,7 @@
 /*
  * setsockopt/getsockopt for SOL_RDS
  */
-#define RDS_CANCEL_SENT_TO      	1
+#define RDS_CANCEL_SENT_TO                   	1
 #define RDS_GET_MR			2
 #define RDS_FREE_MR			3
 /* deprecated: RDS_BARRIER 4 */
@@ -112,10 +112,10 @@
 #define RDS_INFO_CONNECTIONS		10001
 /* 10002 aka RDS_INFO_FLOWS is deprecated */
 #define RDS_INFO_SEND_MESSAGES		10003
-#define RDS_INFO_RETRANS_MESSAGES       10004
-#define RDS_INFO_RECV_MESSAGES          10005
-#define RDS_INFO_SOCKETS                10006
-#define RDS_INFO_TCP_SOCKETS            10007
+#define RDS_INFO_RETRANS_MESSAGES                    10004
+#define RDS_INFO_RECV_MESSAGES                       10005
+#define RDS_INFO_SOCKETS                                          10006
+#define RDS_INFO_TCP_SOCKETS                                      10007
 #define RDS_INFO_IB_CONNECTIONS		10008
 #define RDS_INFO_CONNECTION_STATS	10009
 #define RDS_INFO_IWARP_CONNECTIONS	10010
@@ -160,8 +160,8 @@ struct rds6_info_connection {
 	__u8		flags;
 } __attribute__((packed));
 
-#define RDS_INFO_MESSAGE_FLAG_ACK               0x01
-#define RDS_INFO_MESSAGE_FLAG_FAST_ACK          0x02
+#define RDS_INFO_MESSAGE_FLAG_ACK                                         0x01
+#define RDS_INFO_MESSAGE_FLAG_FAST_ACK                       0x02
 
 struct rds_info_message {
 	__u64		seq;
@@ -205,15 +205,15 @@ struct rds6_info_socket {
 } __attribute__((packed));
 
 struct rds_info_tcp_socket {
-	__be32          local_addr;
-	__be16          local_port;
-	__be32          peer_addr;
-	__be16          peer_port;
-	__u64           hdr_rem;
-	__u64           data_rem;
-	__u32           last_sent_nxt;
-	__u32           last_expected_una;
-	__u32           last_seen_una;
+	__be32                       local_addr;
+	__be16                       local_port;
+	__be32                       peer_addr;
+	__be16                       peer_port;
+	__u64                        hdr_rem;
+	__u64                        data_rem;
+	__u32                        last_sent_nxt;
+	__u32                        last_expected_una;
+	__u32                        last_seen_una;
 } __attribute__((packed));
 
 struct rds6_info_tcp_socket {

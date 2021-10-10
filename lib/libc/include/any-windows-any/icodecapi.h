@@ -71,64 +71,64 @@ MIDL_INTERFACE("901db4c7-31ce-41a2-85dc-8fa0bf41b8da")
 ICodecAPI : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsSupported(
-        const GUID *Api) = 0;
+                     const GUID *Api) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsModifiable(
-        const GUID *Api) = 0;
+                     const GUID *Api) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParameterRange(
-        const GUID *Api,
-        VARIANT *ValueMin,
-        VARIANT *ValueMax,
-        VARIANT *SteppingDelta) = 0;
+                     const GUID *Api,
+                     VARIANT *ValueMin,
+                     VARIANT *ValueMax,
+                     VARIANT *SteppingDelta) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParameterValues(
-        const GUID *Api,
-        VARIANT **Values,
-        ULONG *ValuesCount) = 0;
+                     const GUID *Api,
+                     VARIANT **Values,
+                     ULONG *ValuesCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultValue(
-        const GUID *Api,
-        VARIANT *Value) = 0;
+                     const GUID *Api,
+                     VARIANT *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        const GUID *Api,
-        VARIANT *Value) = 0;
+                     const GUID *Api,
+                     VARIANT *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValue(
-        const GUID *Api,
-        VARIANT *Value) = 0;
+                     const GUID *Api,
+                     VARIANT *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterForEvent(
-        const GUID *Api,
-        LONG_PTR userData) = 0;
+                     const GUID *Api,
+                     LONG_PTR userData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterForEvent(
-        const GUID *Api) = 0;
+                     const GUID *Api) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAllDefaults(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValueWithNotify(
-        const GUID *Api,
-        VARIANT *Value,
-        GUID **ChangedParam,
-        ULONG *ChangedParamCount) = 0;
+                     const GUID *Api,
+                     VARIANT *Value,
+                     GUID **ChangedParam,
+                     ULONG *ChangedParamCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAllDefaultsWithNotify(
-        GUID **ChangedParam,
-        ULONG *ChangedParamCount) = 0;
+                     GUID **ChangedParam,
+                     ULONG *ChangedParamCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAllSettings(
-        IStream *a) = 0;
+                     IStream *a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAllSettings(
-        IStream *a) = 0;
+                     IStream *a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAllSettingsWithNotify(
-        IStream *a,
-        GUID **ChangedParam,
-        ULONG *ChangedParamCount) = 0;
+                     IStream *a,
+                     GUID **ChangedParam,
+                     ULONG *ChangedParamCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -140,90 +140,90 @@ typedef struct ICodecAPIVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICodecAPI *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICodecAPI *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICodecAPI *This);
+                     ICodecAPI *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICodecAPI *This);
+                     ICodecAPI *This);
 
     /*** ICodecAPI methods ***/
     HRESULT (STDMETHODCALLTYPE *IsSupported)(
-        ICodecAPI *This,
-        const GUID *Api);
+                     ICodecAPI *This,
+                     const GUID *Api);
 
     HRESULT (STDMETHODCALLTYPE *IsModifiable)(
-        ICodecAPI *This,
-        const GUID *Api);
+                     ICodecAPI *This,
+                     const GUID *Api);
 
     HRESULT (STDMETHODCALLTYPE *GetParameterRange)(
-        ICodecAPI *This,
-        const GUID *Api,
-        VARIANT *ValueMin,
-        VARIANT *ValueMax,
-        VARIANT *SteppingDelta);
+                     ICodecAPI *This,
+                     const GUID *Api,
+                     VARIANT *ValueMin,
+                     VARIANT *ValueMax,
+                     VARIANT *SteppingDelta);
 
     HRESULT (STDMETHODCALLTYPE *GetParameterValues)(
-        ICodecAPI *This,
-        const GUID *Api,
-        VARIANT **Values,
-        ULONG *ValuesCount);
+                     ICodecAPI *This,
+                     const GUID *Api,
+                     VARIANT **Values,
+                     ULONG *ValuesCount);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultValue)(
-        ICodecAPI *This,
-        const GUID *Api,
-        VARIANT *Value);
+                     ICodecAPI *This,
+                     const GUID *Api,
+                     VARIANT *Value);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        ICodecAPI *This,
-        const GUID *Api,
-        VARIANT *Value);
+                     ICodecAPI *This,
+                     const GUID *Api,
+                     VARIANT *Value);
 
     HRESULT (STDMETHODCALLTYPE *SetValue)(
-        ICodecAPI *This,
-        const GUID *Api,
-        VARIANT *Value);
+                     ICodecAPI *This,
+                     const GUID *Api,
+                     VARIANT *Value);
 
     HRESULT (STDMETHODCALLTYPE *RegisterForEvent)(
-        ICodecAPI *This,
-        const GUID *Api,
-        LONG_PTR userData);
+                     ICodecAPI *This,
+                     const GUID *Api,
+                     LONG_PTR userData);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterForEvent)(
-        ICodecAPI *This,
-        const GUID *Api);
+                     ICodecAPI *This,
+                     const GUID *Api);
 
     HRESULT (STDMETHODCALLTYPE *SetAllDefaults)(
-        ICodecAPI *This);
+                     ICodecAPI *This);
 
     HRESULT (STDMETHODCALLTYPE *SetValueWithNotify)(
-        ICodecAPI *This,
-        const GUID *Api,
-        VARIANT *Value,
-        GUID **ChangedParam,
-        ULONG *ChangedParamCount);
+                     ICodecAPI *This,
+                     const GUID *Api,
+                     VARIANT *Value,
+                     GUID **ChangedParam,
+                     ULONG *ChangedParamCount);
 
     HRESULT (STDMETHODCALLTYPE *SetAllDefaultsWithNotify)(
-        ICodecAPI *This,
-        GUID **ChangedParam,
-        ULONG *ChangedParamCount);
+                     ICodecAPI *This,
+                     GUID **ChangedParam,
+                     ULONG *ChangedParamCount);
 
     HRESULT (STDMETHODCALLTYPE *GetAllSettings)(
-        ICodecAPI *This,
-        IStream *a);
+                     ICodecAPI *This,
+                     IStream *a);
 
     HRESULT (STDMETHODCALLTYPE *SetAllSettings)(
-        ICodecAPI *This,
-        IStream *a);
+                     ICodecAPI *This,
+                     IStream *a);
 
     HRESULT (STDMETHODCALLTYPE *SetAllSettingsWithNotify)(
-        ICodecAPI *This,
-        IStream *a,
-        GUID **ChangedParam,
-        ULONG *ChangedParamCount);
+                     ICodecAPI *This,
+                     IStream *a,
+                     GUID **ChangedParam,
+                     ULONG *ChangedParamCount);
 
     END_INTERFACE
 } ICodecAPIVtbl;

@@ -100,26 +100,26 @@ MIDL_INTERFACE("6d6cbb61-a223-44aa-842f-a2f06750be6e")
 IMediaParams : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddEnvelope(
-        DWORD dwParamIndex,
-        DWORD cPoints,
-        MP_ENVELOPE_SEGMENT *pEnvelope) = 0;
+                     DWORD dwParamIndex,
+                     DWORD cPoints,
+                     MP_ENVELOPE_SEGMENT *pEnvelope) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FlushEnvelope(
-        DWORD dwParamIndex,
-        REFERENCE_TIME refTimeStart,
-        REFERENCE_TIME refTimeEnd) = 0;
+                     DWORD dwParamIndex,
+                     REFERENCE_TIME refTimeStart,
+                     REFERENCE_TIME refTimeEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParam(
-        DWORD dwParamIndex,
-        MP_DATA *pValue) = 0;
+                     DWORD dwParamIndex,
+                     MP_DATA *pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetParam(
-        DWORD dwParamIndex,
-        MP_DATA value) = 0;
+                     DWORD dwParamIndex,
+                     MP_DATA value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimeFormat(
-        GUID guidTimeFormat,
-        MP_TIMEDATA mpTimeData) = 0;
+                     GUID guidTimeFormat,
+                     MP_TIMEDATA mpTimeData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -131,43 +131,43 @@ typedef struct IMediaParamsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaParams *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaParams *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaParams *This);
+                     IMediaParams *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaParams *This);
+                     IMediaParams *This);
 
     /*** IMediaParams methods ***/
     HRESULT (STDMETHODCALLTYPE *AddEnvelope)(
-        IMediaParams *This,
-        DWORD dwParamIndex,
-        DWORD cPoints,
-        MP_ENVELOPE_SEGMENT *pEnvelope);
+                     IMediaParams *This,
+                     DWORD dwParamIndex,
+                     DWORD cPoints,
+                     MP_ENVELOPE_SEGMENT *pEnvelope);
 
     HRESULT (STDMETHODCALLTYPE *FlushEnvelope)(
-        IMediaParams *This,
-        DWORD dwParamIndex,
-        REFERENCE_TIME refTimeStart,
-        REFERENCE_TIME refTimeEnd);
+                     IMediaParams *This,
+                     DWORD dwParamIndex,
+                     REFERENCE_TIME refTimeStart,
+                     REFERENCE_TIME refTimeEnd);
 
     HRESULT (STDMETHODCALLTYPE *GetParam)(
-        IMediaParams *This,
-        DWORD dwParamIndex,
-        MP_DATA *pValue);
+                     IMediaParams *This,
+                     DWORD dwParamIndex,
+                     MP_DATA *pValue);
 
     HRESULT (STDMETHODCALLTYPE *SetParam)(
-        IMediaParams *This,
-        DWORD dwParamIndex,
-        MP_DATA value);
+                     IMediaParams *This,
+                     DWORD dwParamIndex,
+                     MP_DATA value);
 
     HRESULT (STDMETHODCALLTYPE *SetTimeFormat)(
-        IMediaParams *This,
-        GUID guidTimeFormat,
-        MP_TIMEDATA mpTimeData);
+                     IMediaParams *This,
+                     GUID guidTimeFormat,
+                     MP_TIMEDATA mpTimeData);
 
     END_INTERFACE
 } IMediaParamsVtbl;
@@ -235,26 +235,26 @@ MIDL_INTERFACE("6d6cbb60-a223-44aa-842f-a2f06750be6d")
 IMediaParamInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetParamCount(
-        DWORD *pdwParams) = 0;
+                     DWORD *pdwParams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParamInfo(
-        DWORD dwParamIndex,
-        MP_PARAMINFO *pInfo) = 0;
+                     DWORD dwParamIndex,
+                     MP_PARAMINFO *pInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParamText(
-        DWORD dwParamIndex,
-        WCHAR **ppwchText) = 0;
+                     DWORD dwParamIndex,
+                     WCHAR **ppwchText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumTimeFormats(
-        DWORD *pdwNumTimeFormats) = 0;
+                     DWORD *pdwNumTimeFormats) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSupportedTimeFormat(
-        DWORD dwFormatIndex,
-        GUID *pguidTimeFormat) = 0;
+                     DWORD dwFormatIndex,
+                     GUID *pguidTimeFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentTimeFormat(
-        GUID *pguidTimeFormat,
-        MP_TIMEDATA *pTimeData) = 0;
+                     GUID *pguidTimeFormat,
+                     MP_TIMEDATA *pTimeData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -266,44 +266,44 @@ typedef struct IMediaParamInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaParamInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaParamInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaParamInfo *This);
+                     IMediaParamInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaParamInfo *This);
+                     IMediaParamInfo *This);
 
     /*** IMediaParamInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetParamCount)(
-        IMediaParamInfo *This,
-        DWORD *pdwParams);
+                     IMediaParamInfo *This,
+                     DWORD *pdwParams);
 
     HRESULT (STDMETHODCALLTYPE *GetParamInfo)(
-        IMediaParamInfo *This,
-        DWORD dwParamIndex,
-        MP_PARAMINFO *pInfo);
+                     IMediaParamInfo *This,
+                     DWORD dwParamIndex,
+                     MP_PARAMINFO *pInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetParamText)(
-        IMediaParamInfo *This,
-        DWORD dwParamIndex,
-        WCHAR **ppwchText);
+                     IMediaParamInfo *This,
+                     DWORD dwParamIndex,
+                     WCHAR **ppwchText);
 
     HRESULT (STDMETHODCALLTYPE *GetNumTimeFormats)(
-        IMediaParamInfo *This,
-        DWORD *pdwNumTimeFormats);
+                     IMediaParamInfo *This,
+                     DWORD *pdwNumTimeFormats);
 
     HRESULT (STDMETHODCALLTYPE *GetSupportedTimeFormat)(
-        IMediaParamInfo *This,
-        DWORD dwFormatIndex,
-        GUID *pguidTimeFormat);
+                     IMediaParamInfo *This,
+                     DWORD dwFormatIndex,
+                     GUID *pguidTimeFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentTimeFormat)(
-        IMediaParamInfo *This,
-        GUID *pguidTimeFormat,
-        MP_TIMEDATA *pTimeData);
+                     IMediaParamInfo *This,
+                     GUID *pguidTimeFormat,
+                     MP_TIMEDATA *pTimeData);
 
     END_INTERFACE
 } IMediaParamInfoVtbl;

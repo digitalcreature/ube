@@ -57,13 +57,13 @@ MIDL_INTERFACE("905a0fe0-bc53-11df-8c49-001e4fc686da")
 IBuffer : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_Capacity(
-        UINT32 *value) = 0;
+                     UINT32 *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Length(
-        UINT32 *value) = 0;
+                     UINT32 *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Length(
-        UINT32 value) = 0;
+                     UINT32 value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -75,42 +75,42 @@ typedef struct IBufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBuffer* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBuffer* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBuffer* This);
+                     IBuffer* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBuffer* This);
+                     IBuffer* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IBuffer* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IBuffer* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IBuffer* This,
-        HSTRING *className);
+                     IBuffer* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IBuffer* This,
-        TrustLevel *trustLevel);
+                     IBuffer* This,
+                     TrustLevel *trustLevel);
 
     /*** IBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Capacity)(
-        IBuffer* This,
-        UINT32 *value);
+                     IBuffer* This,
+                     UINT32 *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Length)(
-        IBuffer* This,
-        UINT32 *value);
+                     IBuffer* This,
+                     UINT32 *value);
 
     HRESULT (STDMETHODCALLTYPE *put_Length)(
-        IBuffer* This,
-        UINT32 value);
+                     IBuffer* This,
+                     UINT32 value);
 
     END_INTERFACE
 } IBufferVtbl;
@@ -207,8 +207,8 @@ MIDL_INTERFACE("71af914d-c10f-484b-bc50-14bc623b3a27")
 IBufferFactory : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE Create(
-        UINT32 capacity,
-        IBuffer **value) = 0;
+                     UINT32 capacity,
+                     IBuffer **value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -220,35 +220,35 @@ typedef struct IBufferFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBufferFactory* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBufferFactory* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBufferFactory* This);
+                     IBufferFactory* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBufferFactory* This);
+                     IBufferFactory* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IBufferFactory* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IBufferFactory* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IBufferFactory* This,
-        HSTRING *className);
+                     IBufferFactory* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IBufferFactory* This,
-        TrustLevel *trustLevel);
+                     IBufferFactory* This,
+                     TrustLevel *trustLevel);
 
     /*** IBufferFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IBufferFactory* This,
-        UINT32 capacity,
-        IBuffer **value);
+                     IBufferFactory* This,
+                     UINT32 capacity,
+                     IBuffer **value);
 
     END_INTERFACE
 } IBufferFactoryVtbl;

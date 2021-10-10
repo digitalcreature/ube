@@ -68,7 +68,7 @@ extern int tcgetattr (int __fd, struct termios *__termios_p) __THROW;
 /* Set the state of FD to *TERMIOS_P.
    Values for OPTIONAL_ACTIONS (TCSA*) are in <bits/termios.h>.  */
 extern int tcsetattr (int __fd, int __optional_actions,
-		      const struct termios *__termios_p) __THROW;
+		                   const struct termios *__termios_p) __THROW;
 
 
 #ifdef	__USE_MISC

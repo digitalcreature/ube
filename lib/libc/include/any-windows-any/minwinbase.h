@@ -20,11 +20,11 @@ extern "C" {
     ULONG_PTR Internal;
     ULONG_PTR InternalHigh;
     __C89_NAMELESS union {
-        struct {
-            DWORD Offset;
-            DWORD OffsetHigh;
-        } DUMMYSTRUCTNAME;
-        PVOID Pointer;
+                     struct {
+                                      DWORD Offset;
+                                      DWORD OffsetHigh;
+                     } DUMMYSTRUCTNAME;
+                     PVOID Pointer;
     } DUMMYUNIONNAME;
     HANDLE hEvent;
   } OVERLAPPED, *LPOVERLAPPED;
@@ -187,16 +187,16 @@ extern "C" {
     BYTE iRegionIndex;
     WORD wFlags;
     __C89_NAMELESS union {
-        struct {
-            HANDLE hMem;
-            DWORD dwReserved[3];
-        } Block;
-        struct {
-            DWORD dwCommittedSize;
-            DWORD dwUnCommittedSize;
-            LPVOID lpFirstBlock;
-            LPVOID lpLastBlock;
-        } Region;
+                     struct {
+                                      HANDLE hMem;
+                                      DWORD dwReserved[3];
+                     } Block;
+                     struct {
+                                      DWORD dwCommittedSize;
+                                      DWORD dwUnCommittedSize;
+                                      LPVOID lpFirstBlock;
+                                      LPVOID lpLastBlock;
+                     } Region;
     } DUMMYUNIONNAME;
   } PROCESS_HEAP_ENTRY,*LPPROCESS_HEAP_ENTRY,*PPROCESS_HEAP_ENTRY;
 
@@ -211,13 +211,13 @@ extern "C" {
     ULONG Version;
     DWORD Flags;
     union {
-        struct {
-            HMODULE LocalizedReasonModule;
-            ULONG LocalizedReasonId;
-            ULONG ReasonStringCount;
-            LPWSTR *ReasonStrings;
-        } Detailed;
-        LPWSTR SimpleReasonString;
+                     struct {
+                                      HMODULE LocalizedReasonModule;
+                                      ULONG LocalizedReasonId;
+                                      ULONG ReasonStringCount;
+                                      LPWSTR *ReasonStrings;
+                     } Detailed;
+                     LPWSTR SimpleReasonString;
     } Reason;
   } REASON_CONTEXT, *PREASON_CONTEXT;
 
@@ -298,15 +298,15 @@ extern "C" {
     DWORD dwProcessId;
     DWORD dwThreadId;
     union {
-      EXCEPTION_DEBUG_INFO Exception;
-      CREATE_THREAD_DEBUG_INFO CreateThread;
-      CREATE_PROCESS_DEBUG_INFO CreateProcessInfo;
-      EXIT_THREAD_DEBUG_INFO ExitThread;
-      EXIT_PROCESS_DEBUG_INFO ExitProcess;
-      LOAD_DLL_DEBUG_INFO LoadDll;
-      UNLOAD_DLL_DEBUG_INFO UnloadDll;
-      OUTPUT_DEBUG_STRING_INFO DebugString;
-      RIP_INFO RipInfo;
+                   EXCEPTION_DEBUG_INFO Exception;
+                   CREATE_THREAD_DEBUG_INFO CreateThread;
+                   CREATE_PROCESS_DEBUG_INFO CreateProcessInfo;
+                   EXIT_THREAD_DEBUG_INFO ExitThread;
+                   EXIT_PROCESS_DEBUG_INFO ExitProcess;
+                   LOAD_DLL_DEBUG_INFO LoadDll;
+                   UNLOAD_DLL_DEBUG_INFO UnloadDll;
+                   OUTPUT_DEBUG_STRING_INFO DebugString;
+                   RIP_INFO RipInfo;
     } u;
   } DEBUG_EVENT, *LPDEBUG_EVENT;
 

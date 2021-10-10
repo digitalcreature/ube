@@ -11,17 +11,17 @@ extern "C" {
 #endif
 
 typedef enum _CLFS_MGMT_POLICY_TYPE {
-  ClfsMgmtPolicyMaximumSize             = 0x0,
-  ClfsMgmtPolicyMinimumSize             = 0x1,
-  ClfsMgmtPolicyNewContainerSize        = 0x2,
-  ClfsMgmtPolicyGrowthRate              = 0x3,
-  ClfsMgmtPolicyLogTail                 = 0x4,
-  ClfsMgmtPolicyAutoShrink              = 0x5,
-  ClfsMgmtPolicyAutoGrow                = 0x6,
-  ClfsMgmtPolicyNewContainerPrefix      = 0x7,
-  ClfsMgmtPolicyNewContainerSuffix      = 0x8,
+  ClfsMgmtPolicyMaximumSize                                       = 0x0,
+  ClfsMgmtPolicyMinimumSize                                       = 0x1,
+  ClfsMgmtPolicyNewContainerSize                     = 0x2,
+  ClfsMgmtPolicyGrowthRate                                        = 0x3,
+  ClfsMgmtPolicyLogTail                                           = 0x4,
+  ClfsMgmtPolicyAutoShrink                                        = 0x5,
+  ClfsMgmtPolicyAutoGrow                                          = 0x6,
+  ClfsMgmtPolicyNewContainerPrefix                   = 0x7,
+  ClfsMgmtPolicyNewContainerSuffix                   = 0x8,
   ClfsMgmtPolicyNewContainerExtension   = 9,
-  ClfsMgmtPolicyInvalid                 = 10
+  ClfsMgmtPolicyInvalid                                           = 10
 } CLFS_MGMT_POLICY_TYPE, *PCLFS_MGMT_POLICY_TYPE;
 
 typedef enum _CLFS_MGMT_NOTIFICATION_TYPE {
@@ -33,8 +33,8 @@ typedef enum _CLFS_MGMT_NOTIFICATION_TYPE {
 
 typedef struct _CLFS_MGMT_NOTIFICATION {
   CLFS_MGMT_NOTIFICATION_TYPE Notification;
-  CLFS_LSN                    Lsn;
-  USHORT                      LogIsPinned;
+  CLFS_LSN                                                           Lsn;
+  USHORT                                                             LogIsPinned;
 } CLFS_MGMT_NOTIFICATION, *PCLFS_MGMT_NOTIFICATION;
 
 typedef struct _CLFS_MGMT_POLICY {
@@ -44,38 +44,38 @@ typedef struct _CLFS_MGMT_POLICY {
   CLFS_MGMT_POLICY_TYPE PolicyType;
   union {
     struct {
-      ULONG Containers;
+                   ULONG Containers;
     } MaximumSize;
     struct {
-      ULONG Containers;
+                   ULONG Containers;
     } MinimumSize;
     struct {
-      ULONG SizeInBytes;
+                   ULONG SizeInBytes;
     } NewContainerSize;
     struct {
-      ULONG AbsoluteGrowthInContainers;
-      ULONG RelativeGrowthPercentage;
+                   ULONG AbsoluteGrowthInContainers;
+                   ULONG RelativeGrowthPercentage;
     } GrowthRate;
     struct {
-      ULONG MinimumAvailablePercentage;
-      ULONG MinimumAvailableContainers;
+                   ULONG MinimumAvailablePercentage;
+                   ULONG MinimumAvailableContainers;
     } LogTail;
     struct {
-      ULONG Percentage;
+                   ULONG Percentage;
     } AutoShrink;
     struct {
-      ULONG Enabled;
+                   ULONG Enabled;
     } AutoGrow;
     struct {
-      USHORT PrefixLengthInBytes;
-      WCHAR PrefixString[1];
+                   USHORT PrefixLengthInBytes;
+                   WCHAR PrefixString[1];
     } NewContainerPrefix;
     struct {
-      ULONGLONG NextContainerSuffix;
+                   ULONGLONG NextContainerSuffix;
     } NewContainerSuffix;
     struct {
-      USHORT ExtensionLengthInBytes;
-      WCHAR ExtensionString[1];
+                   USHORT ExtensionLengthInBytes;
+                   WCHAR ExtensionString[1];
     } NewContainerExtension;
   } PolicyParameters;
 } CLFS_MGMT_POLICY,  *PCLFS_MGMT_POLICY;

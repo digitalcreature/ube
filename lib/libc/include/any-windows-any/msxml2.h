@@ -806,14 +806,14 @@ extern "C" {
 #endif
 #ifndef __msxml_h__
     typedef struct _xml_error {
-      unsigned int _nLine;
-      BSTR _pchBuf;
-      unsigned int _cchBuf;
-      unsigned int _ich;
-      BSTR _pszFound;
-      BSTR _pszExpected;
-      DWORD _reserved1;
-      DWORD _reserved2;
+                   unsigned int _nLine;
+                   BSTR _pchBuf;
+                   unsigned int _cchBuf;
+                   unsigned int _ich;
+                   BSTR _pszFound;
+                   BSTR _pszExpected;
+                   DWORD _reserved1;
+                   DWORD _reserved2;
     } XML_ERROR;
 #endif
 #ifdef __ISAXXMLReader_INTERFACE_DEFINED__
@@ -829,84 +829,84 @@ extern "C" {
 #undef ParseURL
 #if !defined(__msxml_h__)
     typedef enum tagXMLEMEM_TYPE {
-      XMLELEMTYPE_ELEMENT = 0,XMLELEMTYPE_TEXT,XMLELEMTYPE_COMMENT,
-      XMLELEMTYPE_DOCUMENT,XMLELEMTYPE_DTD,XMLELEMTYPE_PI,XMLELEMTYPE_OTHER
+                   XMLELEMTYPE_ELEMENT = 0,XMLELEMTYPE_TEXT,XMLELEMTYPE_COMMENT,
+                   XMLELEMTYPE_DOCUMENT,XMLELEMTYPE_DTD,XMLELEMTYPE_PI,XMLELEMTYPE_OTHER
     } XMLELEM_TYPE;
 #endif
 #if !defined(__msxml_h__) || defined(__IXMLElementNotificationSink_INTERFACE_DEFINED__)
     typedef enum tagDOMNodeType {
-      NODE_INVALID = 0,NODE_ELEMENT,NODE_ATTRIBUTE,NODE_TEXT,NODE_CDATA_SECTION,
-      NODE_ENTITY_REFERENCE,NODE_ENTITY,NODE_PROCESSING_INSTRUCTION,NODE_COMMENT,
-      NODE_DOCUMENT,NODE_DOCUMENT_TYPE,NODE_DOCUMENT_FRAGMENT,NODE_NOTATION
+                   NODE_INVALID = 0,NODE_ELEMENT,NODE_ATTRIBUTE,NODE_TEXT,NODE_CDATA_SECTION,
+                   NODE_ENTITY_REFERENCE,NODE_ENTITY,NODE_PROCESSING_INSTRUCTION,NODE_COMMENT,
+                   NODE_DOCUMENT,NODE_DOCUMENT_TYPE,NODE_DOCUMENT_FRAGMENT,NODE_NOTATION
     } DOMNodeType;
 #endif
 #if !defined(__msxml_sxh_enums__)
 #define __msxml_sxh_enums__
     typedef enum _SERVERXMLHTTP_OPTION {
-      SXH_OPTION_URL = -1,SXH_OPTION_URL_CODEPAGE,SXH_OPTION_ESCAPE_PERCENT_IN_URL,
-      SXH_OPTION_IGNORE_SERVER_SSL_CERT_ERROR_FLAGS,SXH_OPTION_SELECT_CLIENT_SSL_CERT
+                   SXH_OPTION_URL = -1,SXH_OPTION_URL_CODEPAGE,SXH_OPTION_ESCAPE_PERCENT_IN_URL,
+                   SXH_OPTION_IGNORE_SERVER_SSL_CERT_ERROR_FLAGS,SXH_OPTION_SELECT_CLIENT_SSL_CERT
     } SERVERXMLHTTP_OPTION;
 
     typedef enum _SXH_SERVER_CERT_OPTION {
-      SXH_SERVER_CERT_IGNORE_UNKNOWN_CA = 0x100,SXH_SERVER_CERT_IGNORE_WRONG_USAGE = 0x200,SXH_SERVER_CERT_IGNORE_CERT_CN_INVALID = 0x1000,
-      SXH_SERVER_CERT_IGNORE_CERT_DATE_INVALID = 0x2000,
-      SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS = SXH_SERVER_CERT_IGNORE_UNKNOWN_CA + SXH_SERVER_CERT_IGNORE_WRONG_USAGE + SXH_SERVER_CERT_IGNORE_CERT_CN_INVALID + SXH_SERVER_CERT_IGNORE_CERT_DATE_INVALID
+                   SXH_SERVER_CERT_IGNORE_UNKNOWN_CA = 0x100,SXH_SERVER_CERT_IGNORE_WRONG_USAGE = 0x200,SXH_SERVER_CERT_IGNORE_CERT_CN_INVALID = 0x1000,
+                   SXH_SERVER_CERT_IGNORE_CERT_DATE_INVALID = 0x2000,
+                   SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS = SXH_SERVER_CERT_IGNORE_UNKNOWN_CA + SXH_SERVER_CERT_IGNORE_WRONG_USAGE + SXH_SERVER_CERT_IGNORE_CERT_CN_INVALID + SXH_SERVER_CERT_IGNORE_CERT_DATE_INVALID
     } SXH_SERVER_CERT_OPTION;
 
     typedef enum _SXH_PROXY_SETTING {
-      SXH_PROXY_SET_DEFAULT = 0,SXH_PROXY_SET_PRECONFIG = 0,SXH_PROXY_SET_DIRECT = 0x1,SXH_PROXY_SET_PROXY = 0x2
+                   SXH_PROXY_SET_DEFAULT = 0,SXH_PROXY_SET_PRECONFIG = 0,SXH_PROXY_SET_DIRECT = 0x1,SXH_PROXY_SET_PROXY = 0x2
     } SXH_PROXY_SETTING;
 #endif
 
 #ifndef __msxml_som_enums__
 #define __msxml_som_enums__
     typedef enum _SOMITEMTYPE {
-      SOMITEM_SCHEMA = 0x1000,SOMITEM_ATTRIBUTE = 0x1001,SOMITEM_ATTRIBUTEGROUP = 0x1002,SOMITEM_NOTATION = 0x1003,
-      SOMITEM_IDENTITYCONSTRAINT = 0x1100,SOMITEM_KEY = 0x1101,SOMITEM_KEYREF = 0x1102,SOMITEM_UNIQUE = 0x1103,SOMITEM_ANYTYPE = 0x2000,
-      SOMITEM_DATATYPE = 0x2100,SOMITEM_DATATYPE_ANYTYPE = 0x2101,SOMITEM_DATATYPE_ANYURI = 0x2102,SOMITEM_DATATYPE_BASE64BINARY = 0x2103,
-      SOMITEM_DATATYPE_BOOLEAN = 0x2104,SOMITEM_DATATYPE_BYTE = 0x2105,SOMITEM_DATATYPE_DATE = 0x2106,SOMITEM_DATATYPE_DATETIME = 0x2107,
-      SOMITEM_DATATYPE_DAY = 0x2108,SOMITEM_DATATYPE_DECIMAL = 0x2109,SOMITEM_DATATYPE_DOUBLE = 0x210a,SOMITEM_DATATYPE_DURATION = 0x210b,
-      SOMITEM_DATATYPE_ENTITIES = 0x210c,SOMITEM_DATATYPE_ENTITY = 0x210d,SOMITEM_DATATYPE_FLOAT = 0x210e,SOMITEM_DATATYPE_HEXBINARY = 0x210f,
-      SOMITEM_DATATYPE_ID = 0x2110,SOMITEM_DATATYPE_IDREF = 0x2111,SOMITEM_DATATYPE_IDREFS = 0x2112,SOMITEM_DATATYPE_INT = 0x2113,
-      SOMITEM_DATATYPE_INTEGER = 0x2114,SOMITEM_DATATYPE_LANGUAGE = 0x2115,SOMITEM_DATATYPE_LONG = 0x2116,SOMITEM_DATATYPE_MONTH = 0x2117,
-      SOMITEM_DATATYPE_MONTHDAY = 0x2118,SOMITEM_DATATYPE_NAME = 0x2119,SOMITEM_DATATYPE_NCNAME = 0x211a,SOMITEM_DATATYPE_NEGATIVEINTEGER = 0x211b,
-      SOMITEM_DATATYPE_NMTOKEN = 0x211c,SOMITEM_DATATYPE_NMTOKENS = 0x211d,SOMITEM_DATATYPE_NONNEGATIVEINTEGER = 0x211e,
-      SOMITEM_DATATYPE_NONPOSITIVEINTEGER = 0x211f,SOMITEM_DATATYPE_NORMALIZEDSTRING = 0x2120,SOMITEM_DATATYPE_NOTATION = 0x2121,
-      SOMITEM_DATATYPE_POSITIVEINTEGER = 0x2122,SOMITEM_DATATYPE_QNAME = 0x2123,SOMITEM_DATATYPE_SHORT = 0x2124,SOMITEM_DATATYPE_STRING = 0x2125,
-      SOMITEM_DATATYPE_TIME = 0x2126,SOMITEM_DATATYPE_TOKEN = 0x2127,SOMITEM_DATATYPE_UNSIGNEDBYTE = 0x2128,SOMITEM_DATATYPE_UNSIGNEDINT = 0x2129,
-      SOMITEM_DATATYPE_UNSIGNEDLONG = 0x212a,SOMITEM_DATATYPE_UNSIGNEDSHORT = 0x212b,SOMITEM_DATATYPE_YEAR = 0x212c,SOMITEM_DATATYPE_YEARMONTH = 0x212d,
-      SOMITEM_DATATYPE_ANYSIMPLETYPE = 0x21ff,SOMITEM_SIMPLETYPE = 0x2200,SOMITEM_COMPLEXTYPE = 0x2400,SOMITEM_PARTICLE = 0x4000,SOMITEM_ANY = 0x4001,
-      SOMITEM_ANYATTRIBUTE = 0x4002,SOMITEM_ELEMENT = 0x4003,SOMITEM_GROUP = 0x4100,SOMITEM_ALL = 0x4101,SOMITEM_CHOICE = 0x4102,SOMITEM_SEQUENCE = 0x4103,
-      SOMITEM_EMPTYPARTICLE = 0x4104,SOMITEM_NULL = 0x800,SOMITEM_NULL_TYPE = 0x2800,SOMITEM_NULL_ANY = 0x4801,SOMITEM_NULL_ANYATTRIBUTE = 0x4802,
-      SOMITEM_NULL_ELEMENT = 0x4803
+                   SOMITEM_SCHEMA = 0x1000,SOMITEM_ATTRIBUTE = 0x1001,SOMITEM_ATTRIBUTEGROUP = 0x1002,SOMITEM_NOTATION = 0x1003,
+                   SOMITEM_IDENTITYCONSTRAINT = 0x1100,SOMITEM_KEY = 0x1101,SOMITEM_KEYREF = 0x1102,SOMITEM_UNIQUE = 0x1103,SOMITEM_ANYTYPE = 0x2000,
+                   SOMITEM_DATATYPE = 0x2100,SOMITEM_DATATYPE_ANYTYPE = 0x2101,SOMITEM_DATATYPE_ANYURI = 0x2102,SOMITEM_DATATYPE_BASE64BINARY = 0x2103,
+                   SOMITEM_DATATYPE_BOOLEAN = 0x2104,SOMITEM_DATATYPE_BYTE = 0x2105,SOMITEM_DATATYPE_DATE = 0x2106,SOMITEM_DATATYPE_DATETIME = 0x2107,
+                   SOMITEM_DATATYPE_DAY = 0x2108,SOMITEM_DATATYPE_DECIMAL = 0x2109,SOMITEM_DATATYPE_DOUBLE = 0x210a,SOMITEM_DATATYPE_DURATION = 0x210b,
+                   SOMITEM_DATATYPE_ENTITIES = 0x210c,SOMITEM_DATATYPE_ENTITY = 0x210d,SOMITEM_DATATYPE_FLOAT = 0x210e,SOMITEM_DATATYPE_HEXBINARY = 0x210f,
+                   SOMITEM_DATATYPE_ID = 0x2110,SOMITEM_DATATYPE_IDREF = 0x2111,SOMITEM_DATATYPE_IDREFS = 0x2112,SOMITEM_DATATYPE_INT = 0x2113,
+                   SOMITEM_DATATYPE_INTEGER = 0x2114,SOMITEM_DATATYPE_LANGUAGE = 0x2115,SOMITEM_DATATYPE_LONG = 0x2116,SOMITEM_DATATYPE_MONTH = 0x2117,
+                   SOMITEM_DATATYPE_MONTHDAY = 0x2118,SOMITEM_DATATYPE_NAME = 0x2119,SOMITEM_DATATYPE_NCNAME = 0x211a,SOMITEM_DATATYPE_NEGATIVEINTEGER = 0x211b,
+                   SOMITEM_DATATYPE_NMTOKEN = 0x211c,SOMITEM_DATATYPE_NMTOKENS = 0x211d,SOMITEM_DATATYPE_NONNEGATIVEINTEGER = 0x211e,
+                   SOMITEM_DATATYPE_NONPOSITIVEINTEGER = 0x211f,SOMITEM_DATATYPE_NORMALIZEDSTRING = 0x2120,SOMITEM_DATATYPE_NOTATION = 0x2121,
+                   SOMITEM_DATATYPE_POSITIVEINTEGER = 0x2122,SOMITEM_DATATYPE_QNAME = 0x2123,SOMITEM_DATATYPE_SHORT = 0x2124,SOMITEM_DATATYPE_STRING = 0x2125,
+                   SOMITEM_DATATYPE_TIME = 0x2126,SOMITEM_DATATYPE_TOKEN = 0x2127,SOMITEM_DATATYPE_UNSIGNEDBYTE = 0x2128,SOMITEM_DATATYPE_UNSIGNEDINT = 0x2129,
+                   SOMITEM_DATATYPE_UNSIGNEDLONG = 0x212a,SOMITEM_DATATYPE_UNSIGNEDSHORT = 0x212b,SOMITEM_DATATYPE_YEAR = 0x212c,SOMITEM_DATATYPE_YEARMONTH = 0x212d,
+                   SOMITEM_DATATYPE_ANYSIMPLETYPE = 0x21ff,SOMITEM_SIMPLETYPE = 0x2200,SOMITEM_COMPLEXTYPE = 0x2400,SOMITEM_PARTICLE = 0x4000,SOMITEM_ANY = 0x4001,
+                   SOMITEM_ANYATTRIBUTE = 0x4002,SOMITEM_ELEMENT = 0x4003,SOMITEM_GROUP = 0x4100,SOMITEM_ALL = 0x4101,SOMITEM_CHOICE = 0x4102,SOMITEM_SEQUENCE = 0x4103,
+                   SOMITEM_EMPTYPARTICLE = 0x4104,SOMITEM_NULL = 0x800,SOMITEM_NULL_TYPE = 0x2800,SOMITEM_NULL_ANY = 0x4801,SOMITEM_NULL_ANYATTRIBUTE = 0x4802,
+                   SOMITEM_NULL_ELEMENT = 0x4803
     } SOMITEMTYPE;
 
     typedef enum _SCHEMAUSE {
-      SCHEMAUSE_OPTIONAL = 0,SCHEMAUSE_PROHIBITED,SCHEMAUSE_REQUIRED
+                   SCHEMAUSE_OPTIONAL = 0,SCHEMAUSE_PROHIBITED,SCHEMAUSE_REQUIRED
     } SCHEMAUSE;
 
     typedef enum _SCHEMADERIVATIONMETHOD {
-      SCHEMADERIVATIONMETHOD_EMPTY = 0,SCHEMADERIVATIONMETHOD_SUBSTITUTION = 0x1,SCHEMADERIVATIONMETHOD_EXTENSION = 0x2,
-      SCHEMADERIVATIONMETHOD_RESTRICTION = 0x4,SCHEMADERIVATIONMETHOD_LIST = 0x8,SCHEMADERIVATIONMETHOD_UNION = 0x10,SCHEMADERIVATIONMETHOD_ALL = 0xff,
-      SCHEMADERIVATIONMETHOD_NONE = 0x100
+                   SCHEMADERIVATIONMETHOD_EMPTY = 0,SCHEMADERIVATIONMETHOD_SUBSTITUTION = 0x1,SCHEMADERIVATIONMETHOD_EXTENSION = 0x2,
+                   SCHEMADERIVATIONMETHOD_RESTRICTION = 0x4,SCHEMADERIVATIONMETHOD_LIST = 0x8,SCHEMADERIVATIONMETHOD_UNION = 0x10,SCHEMADERIVATIONMETHOD_ALL = 0xff,
+                   SCHEMADERIVATIONMETHOD_NONE = 0x100
     } SCHEMADERIVATIONMETHOD;
 
     typedef enum _SCHEMACONTENTTYPE {
-      SCHEMACONTENTTYPE_EMPTY = 0,SCHEMACONTENTTYPE_TEXTONLY,SCHEMACONTENTTYPE_ELEMENTONLY,
-      SCHEMACONTENTTYPE_MIXED
+                   SCHEMACONTENTTYPE_EMPTY = 0,SCHEMACONTENTTYPE_TEXTONLY,SCHEMACONTENTTYPE_ELEMENTONLY,
+                   SCHEMACONTENTTYPE_MIXED
     } SCHEMACONTENTTYPE;
 
     typedef enum _SCHEMAPROCESSCONTENTS {
-      SCHEMAPROCESSCONTENTS_NONE = 0,SCHEMAPROCESSCONTENTS_SKIP,SCHEMAPROCESSCONTENTS_LAX,
-      SCHEMAPROCESSCONTENTS_STRICT
+                   SCHEMAPROCESSCONTENTS_NONE = 0,SCHEMAPROCESSCONTENTS_SKIP,SCHEMAPROCESSCONTENTS_LAX,
+                   SCHEMAPROCESSCONTENTS_STRICT
     } SCHEMAPROCESSCONTENTS;
 
     typedef enum _SCHEMAWHITESPACE {
-      SCHEMAWHITESPACE_NONE = -1,SCHEMAWHITESPACE_PRESERVE = 0,SCHEMAWHITESPACE_REPLACE = 1,SCHEMAWHITESPACE_COLLAPSE = 2
+                   SCHEMAWHITESPACE_NONE = -1,SCHEMAWHITESPACE_PRESERVE = 0,SCHEMAWHITESPACE_REPLACE = 1,SCHEMAWHITESPACE_COLLAPSE = 2
     } SCHEMAWHITESPACE;
 
     typedef enum _SCHEMATYPEVARIETY {
-      SCHEMATYPEVARIETY_NONE = -1,SCHEMATYPEVARIETY_ATOMIC = 0,SCHEMATYPEVARIETY_LIST = 1,SCHEMATYPEVARIETY_UNION = 2
+                   SCHEMATYPEVARIETY_NONE = -1,SCHEMATYPEVARIETY_ATOMIC = 0,SCHEMATYPEVARIETY_LIST = 1,SCHEMATYPEVARIETY_UNION = 2
     } SCHEMATYPEVARIETY;
 #endif
 
@@ -917,11 +917,11 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMImplementation : public IDispatch {
     public:
-      virtual HRESULT WINAPI hasFeature(BSTR feature,BSTR version,VARIANT_BOOL *hasFeature) = 0;
+                   virtual HRESULT WINAPI hasFeature(BSTR feature,BSTR version,VARIANT_BOOL *hasFeature) = 0;
     };
 #else
     typedef struct IXMLDOMImplementationVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMImplementation *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMImplementation *This);
 	ULONG (WINAPI *Release)(IXMLDOMImplementation *This);
@@ -930,10 +930,10 @@ extern "C" {
 	HRESULT (WINAPI *GetIDsOfNames)(IXMLDOMImplementation *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
 	HRESULT (WINAPI *Invoke)(IXMLDOMImplementation *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
 	HRESULT (WINAPI *hasFeature)(IXMLDOMImplementation *This,BSTR feature,BSTR version,VARIANT_BOOL *hasFeature);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMImplementationVtbl;
     struct IXMLDOMImplementation {
-      CONST_VTBL struct IXMLDOMImplementationVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMImplementationVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMImplementation_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -956,46 +956,46 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMNode : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_nodeName(BSTR *name) = 0;
-      virtual HRESULT WINAPI get_nodeValue(VARIANT *value) = 0;
-      virtual HRESULT WINAPI put_nodeValue(VARIANT value) = 0;
-      virtual HRESULT WINAPI get_nodeType(DOMNodeType *type) = 0;
-      virtual HRESULT WINAPI get_parentNode(IXMLDOMNode **parent) = 0;
-      virtual HRESULT WINAPI get_childNodes(IXMLDOMNodeList **childList) = 0;
-      virtual HRESULT WINAPI get_firstChild(IXMLDOMNode **firstChild) = 0;
-      virtual HRESULT WINAPI get_lastChild(IXMLDOMNode **lastChild) = 0;
-      virtual HRESULT WINAPI get_previousSibling(IXMLDOMNode **previousSibling) = 0;
-      virtual HRESULT WINAPI get_nextSibling(IXMLDOMNode **nextSibling) = 0;
-      virtual HRESULT WINAPI get_attributes(IXMLDOMNamedNodeMap **attributeMap) = 0;
-      virtual HRESULT WINAPI insertBefore(IXMLDOMNode *newChild,VARIANT refChild,IXMLDOMNode **outNewChild) = 0;
-      virtual HRESULT WINAPI replaceChild(IXMLDOMNode *newChild,IXMLDOMNode *oldChild,IXMLDOMNode **outOldChild) = 0;
-      virtual HRESULT WINAPI removeChild(IXMLDOMNode *childNode,IXMLDOMNode **oldChild) = 0;
-      virtual HRESULT WINAPI appendChild(IXMLDOMNode *newChild,IXMLDOMNode **outNewChild) = 0;
-      virtual HRESULT WINAPI hasChildNodes(VARIANT_BOOL *hasChild) = 0;
-      virtual HRESULT WINAPI get_ownerDocument(IXMLDOMDocument **DOMDocument) = 0;
-      virtual HRESULT WINAPI cloneNode(VARIANT_BOOL deep,IXMLDOMNode **cloneRoot) = 0;
-      virtual HRESULT WINAPI get_nodeTypeString(BSTR *nodeType) = 0;
-      virtual HRESULT WINAPI get_text(BSTR *text) = 0;
-      virtual HRESULT WINAPI put_text(BSTR text) = 0;
-      virtual HRESULT WINAPI get_specified(VARIANT_BOOL *isSpecified) = 0;
-      virtual HRESULT WINAPI get_definition(IXMLDOMNode **definitionNode) = 0;
-      virtual HRESULT WINAPI get_nodeTypedValue(VARIANT *typedValue) = 0;
-      virtual HRESULT WINAPI put_nodeTypedValue(VARIANT typedValue) = 0;
-      virtual HRESULT WINAPI get_dataType(VARIANT *dataTypeName) = 0;
-      virtual HRESULT WINAPI put_dataType(BSTR dataTypeName) = 0;
-      virtual HRESULT WINAPI get_xml(BSTR *xmlString) = 0;
-      virtual HRESULT WINAPI transformNode(IXMLDOMNode *stylesheet,BSTR *xmlString) = 0;
-      virtual HRESULT WINAPI selectNodes(BSTR queryString,IXMLDOMNodeList **resultList) = 0;
-      virtual HRESULT WINAPI selectSingleNode(BSTR queryString,IXMLDOMNode **resultNode) = 0;
-      virtual HRESULT WINAPI get_parsed(VARIANT_BOOL *isParsed) = 0;
-      virtual HRESULT WINAPI get_namespaceURI(BSTR *namespaceURI) = 0;
-      virtual HRESULT WINAPI get_prefix(BSTR *prefixString) = 0;
-      virtual HRESULT WINAPI get_baseName(BSTR *nameString) = 0;
-      virtual HRESULT WINAPI transformNodeToObject(IXMLDOMNode *stylesheet,VARIANT outputObject) = 0;
+                   virtual HRESULT WINAPI get_nodeName(BSTR *name) = 0;
+                   virtual HRESULT WINAPI get_nodeValue(VARIANT *value) = 0;
+                   virtual HRESULT WINAPI put_nodeValue(VARIANT value) = 0;
+                   virtual HRESULT WINAPI get_nodeType(DOMNodeType *type) = 0;
+                   virtual HRESULT WINAPI get_parentNode(IXMLDOMNode **parent) = 0;
+                   virtual HRESULT WINAPI get_childNodes(IXMLDOMNodeList **childList) = 0;
+                   virtual HRESULT WINAPI get_firstChild(IXMLDOMNode **firstChild) = 0;
+                   virtual HRESULT WINAPI get_lastChild(IXMLDOMNode **lastChild) = 0;
+                   virtual HRESULT WINAPI get_previousSibling(IXMLDOMNode **previousSibling) = 0;
+                   virtual HRESULT WINAPI get_nextSibling(IXMLDOMNode **nextSibling) = 0;
+                   virtual HRESULT WINAPI get_attributes(IXMLDOMNamedNodeMap **attributeMap) = 0;
+                   virtual HRESULT WINAPI insertBefore(IXMLDOMNode *newChild,VARIANT refChild,IXMLDOMNode **outNewChild) = 0;
+                   virtual HRESULT WINAPI replaceChild(IXMLDOMNode *newChild,IXMLDOMNode *oldChild,IXMLDOMNode **outOldChild) = 0;
+                   virtual HRESULT WINAPI removeChild(IXMLDOMNode *childNode,IXMLDOMNode **oldChild) = 0;
+                   virtual HRESULT WINAPI appendChild(IXMLDOMNode *newChild,IXMLDOMNode **outNewChild) = 0;
+                   virtual HRESULT WINAPI hasChildNodes(VARIANT_BOOL *hasChild) = 0;
+                   virtual HRESULT WINAPI get_ownerDocument(IXMLDOMDocument **DOMDocument) = 0;
+                   virtual HRESULT WINAPI cloneNode(VARIANT_BOOL deep,IXMLDOMNode **cloneRoot) = 0;
+                   virtual HRESULT WINAPI get_nodeTypeString(BSTR *nodeType) = 0;
+                   virtual HRESULT WINAPI get_text(BSTR *text) = 0;
+                   virtual HRESULT WINAPI put_text(BSTR text) = 0;
+                   virtual HRESULT WINAPI get_specified(VARIANT_BOOL *isSpecified) = 0;
+                   virtual HRESULT WINAPI get_definition(IXMLDOMNode **definitionNode) = 0;
+                   virtual HRESULT WINAPI get_nodeTypedValue(VARIANT *typedValue) = 0;
+                   virtual HRESULT WINAPI put_nodeTypedValue(VARIANT typedValue) = 0;
+                   virtual HRESULT WINAPI get_dataType(VARIANT *dataTypeName) = 0;
+                   virtual HRESULT WINAPI put_dataType(BSTR dataTypeName) = 0;
+                   virtual HRESULT WINAPI get_xml(BSTR *xmlString) = 0;
+                   virtual HRESULT WINAPI transformNode(IXMLDOMNode *stylesheet,BSTR *xmlString) = 0;
+                   virtual HRESULT WINAPI selectNodes(BSTR queryString,IXMLDOMNodeList **resultList) = 0;
+                   virtual HRESULT WINAPI selectSingleNode(BSTR queryString,IXMLDOMNode **resultNode) = 0;
+                   virtual HRESULT WINAPI get_parsed(VARIANT_BOOL *isParsed) = 0;
+                   virtual HRESULT WINAPI get_namespaceURI(BSTR *namespaceURI) = 0;
+                   virtual HRESULT WINAPI get_prefix(BSTR *prefixString) = 0;
+                   virtual HRESULT WINAPI get_baseName(BSTR *nameString) = 0;
+                   virtual HRESULT WINAPI transformNodeToObject(IXMLDOMNode *stylesheet,VARIANT outputObject) = 0;
     };
 #else
     typedef struct IXMLDOMNodeVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMNode *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMNode *This);
 	ULONG (WINAPI *Release)(IXMLDOMNode *This);
@@ -1039,10 +1039,10 @@ extern "C" {
 	HRESULT (WINAPI *get_prefix)(IXMLDOMNode *This,BSTR *prefixString);
 	HRESULT (WINAPI *get_baseName)(IXMLDOMNode *This,BSTR *nameString);
 	HRESULT (WINAPI *transformNodeToObject)(IXMLDOMNode *This,IXMLDOMNode *stylesheet,VARIANT outputObject);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMNodeVtbl;
     struct IXMLDOMNode {
-      CONST_VTBL struct IXMLDOMNodeVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMNodeVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMNode_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -1172,7 +1172,7 @@ extern "C" {
     };
 #else
     typedef struct IXMLDOMDocumentFragmentVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMDocumentFragment *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMDocumentFragment *This);
 	ULONG (WINAPI *Release)(IXMLDOMDocumentFragment *This);
@@ -1216,10 +1216,10 @@ extern "C" {
 	HRESULT (WINAPI *get_prefix)(IXMLDOMDocumentFragment *This,BSTR *prefixString);
 	HRESULT (WINAPI *get_baseName)(IXMLDOMDocumentFragment *This,BSTR *nameString);
 	HRESULT (WINAPI *transformNodeToObject)(IXMLDOMDocumentFragment *This,IXMLDOMNode *stylesheet,VARIANT outputObject);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMDocumentFragmentVtbl;
     struct IXMLDOMDocumentFragment {
-      CONST_VTBL struct IXMLDOMDocumentFragmentVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMDocumentFragmentVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMDocumentFragment_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -1275,43 +1275,43 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMDocument : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI get_doctype(IXMLDOMDocumentType **documentType) = 0;
-      virtual HRESULT WINAPI get_implementation(IXMLDOMImplementation **impl) = 0;
-      virtual HRESULT WINAPI get_documentElement(IXMLDOMElement **DOMElement) = 0;
-      virtual HRESULT WINAPI putref_documentElement(IXMLDOMElement *DOMElement) = 0;
-      virtual HRESULT WINAPI createElement(BSTR tagName,IXMLDOMElement **element) = 0;
-      virtual HRESULT WINAPI createDocumentFragment(IXMLDOMDocumentFragment **docFrag) = 0;
-      virtual HRESULT WINAPI createTextNode(BSTR data,IXMLDOMText **text) = 0;
-      virtual HRESULT WINAPI createComment(BSTR data,IXMLDOMComment **comment) = 0;
-      virtual HRESULT WINAPI createCDATASection(BSTR data,IXMLDOMCDATASection **cdata) = 0;
-      virtual HRESULT WINAPI createProcessingInstruction(BSTR target,BSTR data,IXMLDOMProcessingInstruction **pi) = 0;
-      virtual HRESULT WINAPI createAttribute(BSTR name,IXMLDOMAttribute **attribute) = 0;
-      virtual HRESULT WINAPI createEntityReference(BSTR name,IXMLDOMEntityReference **entityRef) = 0;
-      virtual HRESULT WINAPI getElementsByTagName(BSTR tagName,IXMLDOMNodeList **resultList) = 0;
-      virtual HRESULT WINAPI createNode(VARIANT Type,BSTR name,BSTR namespaceURI,IXMLDOMNode **node) = 0;
-      virtual HRESULT WINAPI nodeFromID(BSTR idString,IXMLDOMNode **node) = 0;
-      virtual HRESULT WINAPI load(VARIANT xmlSource,VARIANT_BOOL *isSuccessful) = 0;
-      virtual HRESULT WINAPI get_readyState(__LONG32 *value) = 0;
-      virtual HRESULT WINAPI get_parseError(IXMLDOMParseError **errorObj) = 0;
-      virtual HRESULT WINAPI get_url(BSTR *urlString) = 0;
-      virtual HRESULT WINAPI get_async(VARIANT_BOOL *isAsync) = 0;
-      virtual HRESULT WINAPI put_async(VARIANT_BOOL isAsync) = 0;
-      virtual HRESULT WINAPI abort(void) = 0;
-      virtual HRESULT WINAPI loadXML(BSTR bstrXML,VARIANT_BOOL *isSuccessful) = 0;
-      virtual HRESULT WINAPI save(VARIANT destination) = 0;
-      virtual HRESULT WINAPI get_validateOnParse(VARIANT_BOOL *isValidating) = 0;
-      virtual HRESULT WINAPI put_validateOnParse(VARIANT_BOOL isValidating) = 0;
-      virtual HRESULT WINAPI get_resolveExternals(VARIANT_BOOL *isResolving) = 0;
-      virtual HRESULT WINAPI put_resolveExternals(VARIANT_BOOL isResolving) = 0;
-      virtual HRESULT WINAPI get_preserveWhiteSpace(VARIANT_BOOL *isPreserving) = 0;
-      virtual HRESULT WINAPI put_preserveWhiteSpace(VARIANT_BOOL isPreserving) = 0;
-      virtual HRESULT WINAPI put_onreadystatechange(VARIANT readystatechangeSink) = 0;
-      virtual HRESULT WINAPI put_ondataavailable(VARIANT ondataavailableSink) = 0;
-      virtual HRESULT WINAPI put_ontransformnode(VARIANT ontransformnodeSink) = 0;
+                   virtual HRESULT WINAPI get_doctype(IXMLDOMDocumentType **documentType) = 0;
+                   virtual HRESULT WINAPI get_implementation(IXMLDOMImplementation **impl) = 0;
+                   virtual HRESULT WINAPI get_documentElement(IXMLDOMElement **DOMElement) = 0;
+                   virtual HRESULT WINAPI putref_documentElement(IXMLDOMElement *DOMElement) = 0;
+                   virtual HRESULT WINAPI createElement(BSTR tagName,IXMLDOMElement **element) = 0;
+                   virtual HRESULT WINAPI createDocumentFragment(IXMLDOMDocumentFragment **docFrag) = 0;
+                   virtual HRESULT WINAPI createTextNode(BSTR data,IXMLDOMText **text) = 0;
+                   virtual HRESULT WINAPI createComment(BSTR data,IXMLDOMComment **comment) = 0;
+                   virtual HRESULT WINAPI createCDATASection(BSTR data,IXMLDOMCDATASection **cdata) = 0;
+                   virtual HRESULT WINAPI createProcessingInstruction(BSTR target,BSTR data,IXMLDOMProcessingInstruction **pi) = 0;
+                   virtual HRESULT WINAPI createAttribute(BSTR name,IXMLDOMAttribute **attribute) = 0;
+                   virtual HRESULT WINAPI createEntityReference(BSTR name,IXMLDOMEntityReference **entityRef) = 0;
+                   virtual HRESULT WINAPI getElementsByTagName(BSTR tagName,IXMLDOMNodeList **resultList) = 0;
+                   virtual HRESULT WINAPI createNode(VARIANT Type,BSTR name,BSTR namespaceURI,IXMLDOMNode **node) = 0;
+                   virtual HRESULT WINAPI nodeFromID(BSTR idString,IXMLDOMNode **node) = 0;
+                   virtual HRESULT WINAPI load(VARIANT xmlSource,VARIANT_BOOL *isSuccessful) = 0;
+                   virtual HRESULT WINAPI get_readyState(__LONG32 *value) = 0;
+                   virtual HRESULT WINAPI get_parseError(IXMLDOMParseError **errorObj) = 0;
+                   virtual HRESULT WINAPI get_url(BSTR *urlString) = 0;
+                   virtual HRESULT WINAPI get_async(VARIANT_BOOL *isAsync) = 0;
+                   virtual HRESULT WINAPI put_async(VARIANT_BOOL isAsync) = 0;
+                   virtual HRESULT WINAPI abort(void) = 0;
+                   virtual HRESULT WINAPI loadXML(BSTR bstrXML,VARIANT_BOOL *isSuccessful) = 0;
+                   virtual HRESULT WINAPI save(VARIANT destination) = 0;
+                   virtual HRESULT WINAPI get_validateOnParse(VARIANT_BOOL *isValidating) = 0;
+                   virtual HRESULT WINAPI put_validateOnParse(VARIANT_BOOL isValidating) = 0;
+                   virtual HRESULT WINAPI get_resolveExternals(VARIANT_BOOL *isResolving) = 0;
+                   virtual HRESULT WINAPI put_resolveExternals(VARIANT_BOOL isResolving) = 0;
+                   virtual HRESULT WINAPI get_preserveWhiteSpace(VARIANT_BOOL *isPreserving) = 0;
+                   virtual HRESULT WINAPI put_preserveWhiteSpace(VARIANT_BOOL isPreserving) = 0;
+                   virtual HRESULT WINAPI put_onreadystatechange(VARIANT readystatechangeSink) = 0;
+                   virtual HRESULT WINAPI put_ondataavailable(VARIANT ondataavailableSink) = 0;
+                   virtual HRESULT WINAPI put_ontransformnode(VARIANT ontransformnodeSink) = 0;
     };
 #else
     typedef struct IXMLDOMDocumentVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMDocument *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMDocument *This);
 	ULONG (WINAPI *Release)(IXMLDOMDocument *This);
@@ -1388,10 +1388,10 @@ extern "C" {
 	HRESULT (WINAPI *put_onreadystatechange)(IXMLDOMDocument *This,VARIANT readystatechangeSink);
 	HRESULT (WINAPI *put_ondataavailable)(IXMLDOMDocument *This,VARIANT ondataavailableSink);
 	HRESULT (WINAPI *put_ontransformnode)(IXMLDOMDocument *This,VARIANT ontransformnodeSink);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMDocumentVtbl;
     struct IXMLDOMDocument {
-      CONST_VTBL struct IXMLDOMDocumentVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMDocumentVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMDocument_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -1546,16 +1546,16 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMDocument2 : public IXMLDOMDocument {
     public:
-      virtual HRESULT WINAPI get_namespaces(IXMLDOMSchemaCollection **namespaceCollection) = 0;
-      virtual HRESULT WINAPI get_schemas(VARIANT *otherCollection) = 0;
-      virtual HRESULT WINAPI putref_schemas(VARIANT otherCollection) = 0;
-      virtual HRESULT WINAPI validate(IXMLDOMParseError **errorObj) = 0;
-      virtual HRESULT WINAPI setProperty(BSTR name,VARIANT value) = 0;
-      virtual HRESULT WINAPI getProperty(BSTR name,VARIANT *value) = 0;
+                   virtual HRESULT WINAPI get_namespaces(IXMLDOMSchemaCollection **namespaceCollection) = 0;
+                   virtual HRESULT WINAPI get_schemas(VARIANT *otherCollection) = 0;
+                   virtual HRESULT WINAPI putref_schemas(VARIANT otherCollection) = 0;
+                   virtual HRESULT WINAPI validate(IXMLDOMParseError **errorObj) = 0;
+                   virtual HRESULT WINAPI setProperty(BSTR name,VARIANT value) = 0;
+                   virtual HRESULT WINAPI getProperty(BSTR name,VARIANT *value) = 0;
     };
 #else
     typedef struct IXMLDOMDocument2Vtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMDocument2 *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMDocument2 *This);
 	ULONG (WINAPI *Release)(IXMLDOMDocument2 *This);
@@ -1638,10 +1638,10 @@ extern "C" {
 	HRESULT (WINAPI *validate)(IXMLDOMDocument2 *This,IXMLDOMParseError **errorObj);
 	HRESULT (WINAPI *setProperty)(IXMLDOMDocument2 *This,BSTR name,VARIANT value);
 	HRESULT (WINAPI *getProperty)(IXMLDOMDocument2 *This,BSTR name,VARIANT *value);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMDocument2Vtbl;
     struct IXMLDOMDocument2 {
-      CONST_VTBL struct IXMLDOMDocument2Vtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMDocument2Vtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMDocument2_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -1748,15 +1748,15 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMNodeList : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_item(__LONG32 index,IXMLDOMNode **listItem) = 0;
-      virtual HRESULT WINAPI get_length(__LONG32 *listLength) = 0;
-      virtual HRESULT WINAPI nextNode(IXMLDOMNode **nextItem) = 0;
-      virtual HRESULT WINAPI reset(void) = 0;
-      virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
+                   virtual HRESULT WINAPI get_item(__LONG32 index,IXMLDOMNode **listItem) = 0;
+                   virtual HRESULT WINAPI get_length(__LONG32 *listLength) = 0;
+                   virtual HRESULT WINAPI nextNode(IXMLDOMNode **nextItem) = 0;
+                   virtual HRESULT WINAPI reset(void) = 0;
+                   virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
     };
 #else
     typedef struct IXMLDOMNodeListVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMNodeList *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMNodeList *This);
 	ULONG (WINAPI *Release)(IXMLDOMNodeList *This);
@@ -1769,10 +1769,10 @@ extern "C" {
 	HRESULT (WINAPI *nextNode)(IXMLDOMNodeList *This,IXMLDOMNode **nextItem);
 	HRESULT (WINAPI *reset)(IXMLDOMNodeList *This);
 	HRESULT (WINAPI *get__newEnum)(IXMLDOMNodeList *This,IUnknown **ppUnk);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMNodeListVtbl;
     struct IXMLDOMNodeList {
-      CONST_VTBL struct IXMLDOMNodeListVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMNodeListVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMNodeList_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -1807,20 +1807,20 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMNamedNodeMap : public IDispatch {
     public:
-      virtual HRESULT WINAPI getNamedItem(BSTR name,IXMLDOMNode **namedItem) = 0;
-      virtual HRESULT WINAPI setNamedItem(IXMLDOMNode *newItem,IXMLDOMNode **nameItem) = 0;
-      virtual HRESULT WINAPI removeNamedItem(BSTR name,IXMLDOMNode **namedItem) = 0;
-      virtual HRESULT WINAPI get_item(__LONG32 index,IXMLDOMNode **listItem) = 0;
-      virtual HRESULT WINAPI get_length(__LONG32 *listLength) = 0;
-      virtual HRESULT WINAPI getQualifiedItem(BSTR baseName,BSTR namespaceURI,IXMLDOMNode **qualifiedItem) = 0;
-      virtual HRESULT WINAPI removeQualifiedItem(BSTR baseName,BSTR namespaceURI,IXMLDOMNode **qualifiedItem) = 0;
-      virtual HRESULT WINAPI nextNode(IXMLDOMNode **nextItem) = 0;
-      virtual HRESULT WINAPI reset(void) = 0;
-      virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
+                   virtual HRESULT WINAPI getNamedItem(BSTR name,IXMLDOMNode **namedItem) = 0;
+                   virtual HRESULT WINAPI setNamedItem(IXMLDOMNode *newItem,IXMLDOMNode **nameItem) = 0;
+                   virtual HRESULT WINAPI removeNamedItem(BSTR name,IXMLDOMNode **namedItem) = 0;
+                   virtual HRESULT WINAPI get_item(__LONG32 index,IXMLDOMNode **listItem) = 0;
+                   virtual HRESULT WINAPI get_length(__LONG32 *listLength) = 0;
+                   virtual HRESULT WINAPI getQualifiedItem(BSTR baseName,BSTR namespaceURI,IXMLDOMNode **qualifiedItem) = 0;
+                   virtual HRESULT WINAPI removeQualifiedItem(BSTR baseName,BSTR namespaceURI,IXMLDOMNode **qualifiedItem) = 0;
+                   virtual HRESULT WINAPI nextNode(IXMLDOMNode **nextItem) = 0;
+                   virtual HRESULT WINAPI reset(void) = 0;
+                   virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
     };
 #else
     typedef struct IXMLDOMNamedNodeMapVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMNamedNodeMap *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMNamedNodeMap *This);
 	ULONG (WINAPI *Release)(IXMLDOMNamedNodeMap *This);
@@ -1838,10 +1838,10 @@ extern "C" {
 	HRESULT (WINAPI *nextNode)(IXMLDOMNamedNodeMap *This,IXMLDOMNode **nextItem);
 	HRESULT (WINAPI *reset)(IXMLDOMNamedNodeMap *This);
 	HRESULT (WINAPI *get__newEnum)(IXMLDOMNamedNodeMap *This,IUnknown **ppUnk);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMNamedNodeMapVtbl;
     struct IXMLDOMNamedNodeMap {
-      CONST_VTBL struct IXMLDOMNamedNodeMapVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMNamedNodeMapVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMNamedNodeMap_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -1891,18 +1891,18 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMCharacterData : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI get_data(BSTR *data) = 0;
-      virtual HRESULT WINAPI put_data(BSTR data) = 0;
-      virtual HRESULT WINAPI get_length(__LONG32 *dataLength) = 0;
-      virtual HRESULT WINAPI substringData(__LONG32 offset,__LONG32 count,BSTR *data) = 0;
-      virtual HRESULT WINAPI appendData(BSTR data) = 0;
-      virtual HRESULT WINAPI insertData(__LONG32 offset,BSTR data) = 0;
-      virtual HRESULT WINAPI deleteData(__LONG32 offset,__LONG32 count) = 0;
-      virtual HRESULT WINAPI replaceData(__LONG32 offset,__LONG32 count,BSTR data) = 0;
+                   virtual HRESULT WINAPI get_data(BSTR *data) = 0;
+                   virtual HRESULT WINAPI put_data(BSTR data) = 0;
+                   virtual HRESULT WINAPI get_length(__LONG32 *dataLength) = 0;
+                   virtual HRESULT WINAPI substringData(__LONG32 offset,__LONG32 count,BSTR *data) = 0;
+                   virtual HRESULT WINAPI appendData(BSTR data) = 0;
+                   virtual HRESULT WINAPI insertData(__LONG32 offset,BSTR data) = 0;
+                   virtual HRESULT WINAPI deleteData(__LONG32 offset,__LONG32 count) = 0;
+                   virtual HRESULT WINAPI replaceData(__LONG32 offset,__LONG32 count,BSTR data) = 0;
     };
 #else
     typedef struct IXMLDOMCharacterDataVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMCharacterData *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMCharacterData *This);
 	ULONG (WINAPI *Release)(IXMLDOMCharacterData *This);
@@ -1954,10 +1954,10 @@ extern "C" {
 	HRESULT (WINAPI *insertData)(IXMLDOMCharacterData *This,__LONG32 offset,BSTR data);
 	HRESULT (WINAPI *deleteData)(IXMLDOMCharacterData *This,__LONG32 offset,__LONG32 count);
 	HRESULT (WINAPI *replaceData)(IXMLDOMCharacterData *This,__LONG32 offset,__LONG32 count,BSTR data);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMCharacterDataVtbl;
     struct IXMLDOMCharacterData {
-      CONST_VTBL struct IXMLDOMCharacterDataVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMCharacterDataVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMCharacterData_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -2037,13 +2037,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMAttribute : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI get_name(BSTR *attributeName) = 0;
-      virtual HRESULT WINAPI get_value(VARIANT *attributeValue) = 0;
-      virtual HRESULT WINAPI put_value(VARIANT attributeValue) = 0;
+                   virtual HRESULT WINAPI get_name(BSTR *attributeName) = 0;
+                   virtual HRESULT WINAPI get_value(VARIANT *attributeValue) = 0;
+                   virtual HRESULT WINAPI put_value(VARIANT attributeValue) = 0;
     };
 #else
     typedef struct IXMLDOMAttributeVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMAttribute *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMAttribute *This);
 	ULONG (WINAPI *Release)(IXMLDOMAttribute *This);
@@ -2090,10 +2090,10 @@ extern "C" {
 	HRESULT (WINAPI *get_name)(IXMLDOMAttribute *This,BSTR *attributeName);
 	HRESULT (WINAPI *get_value)(IXMLDOMAttribute *This,VARIANT *attributeValue);
 	HRESULT (WINAPI *put_value)(IXMLDOMAttribute *This,VARIANT attributeValue);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMAttributeVtbl;
     struct IXMLDOMAttribute {
-      CONST_VTBL struct IXMLDOMAttributeVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMAttributeVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMAttribute_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -2158,19 +2158,19 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMElement : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI get_tagName(BSTR *tagName) = 0;
-      virtual HRESULT WINAPI getAttribute(BSTR name,VARIANT *value) = 0;
-      virtual HRESULT WINAPI setAttribute(BSTR name,VARIANT value) = 0;
-      virtual HRESULT WINAPI removeAttribute(BSTR name) = 0;
-      virtual HRESULT WINAPI getAttributeNode(BSTR name,IXMLDOMAttribute **attributeNode) = 0;
-      virtual HRESULT WINAPI setAttributeNode(IXMLDOMAttribute *DOMAttribute,IXMLDOMAttribute **attributeNode) = 0;
-      virtual HRESULT WINAPI removeAttributeNode(IXMLDOMAttribute *DOMAttribute,IXMLDOMAttribute **attributeNode) = 0;
-      virtual HRESULT WINAPI getElementsByTagName(BSTR tagName,IXMLDOMNodeList **resultList) = 0;
-      virtual HRESULT WINAPI normalize(void) = 0;
+                   virtual HRESULT WINAPI get_tagName(BSTR *tagName) = 0;
+                   virtual HRESULT WINAPI getAttribute(BSTR name,VARIANT *value) = 0;
+                   virtual HRESULT WINAPI setAttribute(BSTR name,VARIANT value) = 0;
+                   virtual HRESULT WINAPI removeAttribute(BSTR name) = 0;
+                   virtual HRESULT WINAPI getAttributeNode(BSTR name,IXMLDOMAttribute **attributeNode) = 0;
+                   virtual HRESULT WINAPI setAttributeNode(IXMLDOMAttribute *DOMAttribute,IXMLDOMAttribute **attributeNode) = 0;
+                   virtual HRESULT WINAPI removeAttributeNode(IXMLDOMAttribute *DOMAttribute,IXMLDOMAttribute **attributeNode) = 0;
+                   virtual HRESULT WINAPI getElementsByTagName(BSTR tagName,IXMLDOMNodeList **resultList) = 0;
+                   virtual HRESULT WINAPI normalize(void) = 0;
     };
 #else
     typedef struct IXMLDOMElementVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMElement *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMElement *This);
 	ULONG (WINAPI *Release)(IXMLDOMElement *This);
@@ -2223,10 +2223,10 @@ extern "C" {
 	HRESULT (WINAPI *removeAttributeNode)(IXMLDOMElement *This,IXMLDOMAttribute *DOMAttribute,IXMLDOMAttribute **attributeNode);
 	HRESULT (WINAPI *getElementsByTagName)(IXMLDOMElement *This,BSTR tagName,IXMLDOMNodeList **resultList);
 	HRESULT (WINAPI *normalize)(IXMLDOMElement *This);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMElementVtbl;
     struct IXMLDOMElement {
-      CONST_VTBL struct IXMLDOMElementVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMElementVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMElement_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -2309,11 +2309,11 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMText : public IXMLDOMCharacterData {
     public:
-      virtual HRESULT WINAPI splitText(__LONG32 offset,IXMLDOMText **rightHandTextNode) = 0;
+                   virtual HRESULT WINAPI splitText(__LONG32 offset,IXMLDOMText **rightHandTextNode) = 0;
     };
 #else
     typedef struct IXMLDOMTextVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMText *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMText *This);
 	ULONG (WINAPI *Release)(IXMLDOMText *This);
@@ -2366,10 +2366,10 @@ extern "C" {
 	HRESULT (WINAPI *deleteData)(IXMLDOMText *This,__LONG32 offset,__LONG32 count);
 	HRESULT (WINAPI *replaceData)(IXMLDOMText *This,__LONG32 offset,__LONG32 count,BSTR data);
 	HRESULT (WINAPI *splitText)(IXMLDOMText *This,__LONG32 offset,IXMLDOMText **rightHandTextNode);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMTextVtbl;
     struct IXMLDOMText {
-      CONST_VTBL struct IXMLDOMTextVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMTextVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMText_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -2439,7 +2439,7 @@ extern "C" {
     };
 #else
     typedef struct IXMLDOMCommentVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMComment *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMComment *This);
 	ULONG (WINAPI *Release)(IXMLDOMComment *This);
@@ -2491,10 +2491,10 @@ extern "C" {
 	HRESULT (WINAPI *insertData)(IXMLDOMComment *This,__LONG32 offset,BSTR data);
 	HRESULT (WINAPI *deleteData)(IXMLDOMComment *This,__LONG32 offset,__LONG32 count);
 	HRESULT (WINAPI *replaceData)(IXMLDOMComment *This,__LONG32 offset,__LONG32 count,BSTR data);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMCommentVtbl;
     struct IXMLDOMComment {
-      CONST_VTBL struct IXMLDOMCommentVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMCommentVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMComment_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -2558,13 +2558,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMProcessingInstruction : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI get_target(BSTR *name) = 0;
-      virtual HRESULT WINAPI get_data(BSTR *value) = 0;
-      virtual HRESULT WINAPI put_data(BSTR value) = 0;
+                   virtual HRESULT WINAPI get_target(BSTR *name) = 0;
+                   virtual HRESULT WINAPI get_data(BSTR *value) = 0;
+                   virtual HRESULT WINAPI put_data(BSTR value) = 0;
     };
 #else
     typedef struct IXMLDOMProcessingInstructionVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMProcessingInstruction *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMProcessingInstruction *This);
 	ULONG (WINAPI *Release)(IXMLDOMProcessingInstruction *This);
@@ -2611,10 +2611,10 @@ extern "C" {
 	HRESULT (WINAPI *get_target)(IXMLDOMProcessingInstruction *This,BSTR *name);
 	HRESULT (WINAPI *get_data)(IXMLDOMProcessingInstruction *This,BSTR *value);
 	HRESULT (WINAPI *put_data)(IXMLDOMProcessingInstruction *This,BSTR value);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMProcessingInstructionVtbl;
     struct IXMLDOMProcessingInstruction {
-      CONST_VTBL struct IXMLDOMProcessingInstructionVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMProcessingInstructionVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMProcessingInstruction_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -2681,7 +2681,7 @@ extern "C" {
     };
 #else
     typedef struct IXMLDOMCDATASectionVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMCDATASection *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMCDATASection *This);
 	ULONG (WINAPI *Release)(IXMLDOMCDATASection *This);
@@ -2734,10 +2734,10 @@ extern "C" {
 	HRESULT (WINAPI *deleteData)(IXMLDOMCDATASection *This,__LONG32 offset,__LONG32 count);
 	HRESULT (WINAPI *replaceData)(IXMLDOMCDATASection *This,__LONG32 offset,__LONG32 count,BSTR data);
 	HRESULT (WINAPI *splitText)(IXMLDOMCDATASection *This,__LONG32 offset,IXMLDOMText **rightHandTextNode);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMCDATASectionVtbl;
     struct IXMLDOMCDATASection {
-      CONST_VTBL struct IXMLDOMCDATASectionVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMCDATASectionVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMCDATASection_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -2802,13 +2802,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMDocumentType : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI get_name(BSTR *rootName) = 0;
-      virtual HRESULT WINAPI get_entities(IXMLDOMNamedNodeMap **entityMap) = 0;
-      virtual HRESULT WINAPI get_notations(IXMLDOMNamedNodeMap **notationMap) = 0;
+                   virtual HRESULT WINAPI get_name(BSTR *rootName) = 0;
+                   virtual HRESULT WINAPI get_entities(IXMLDOMNamedNodeMap **entityMap) = 0;
+                   virtual HRESULT WINAPI get_notations(IXMLDOMNamedNodeMap **notationMap) = 0;
     };
 #else
     typedef struct IXMLDOMDocumentTypeVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMDocumentType *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMDocumentType *This);
 	ULONG (WINAPI *Release)(IXMLDOMDocumentType *This);
@@ -2855,10 +2855,10 @@ extern "C" {
 	HRESULT (WINAPI *get_name)(IXMLDOMDocumentType *This,BSTR *rootName);
 	HRESULT (WINAPI *get_entities)(IXMLDOMDocumentType *This,IXMLDOMNamedNodeMap **entityMap);
 	HRESULT (WINAPI *get_notations)(IXMLDOMDocumentType *This,IXMLDOMNamedNodeMap **notationMap);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMDocumentTypeVtbl;
     struct IXMLDOMDocumentType {
-      CONST_VTBL struct IXMLDOMDocumentTypeVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMDocumentTypeVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMDocumentType_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -2924,12 +2924,12 @@ extern "C" {
 
     struct IXMLDOMNotation : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI get_publicId(VARIANT *publicID) = 0;
-      virtual HRESULT WINAPI get_systemId(VARIANT *systemID) = 0;
+                   virtual HRESULT WINAPI get_publicId(VARIANT *publicID) = 0;
+                   virtual HRESULT WINAPI get_systemId(VARIANT *systemID) = 0;
     };
 #else
     typedef struct IXMLDOMNotationVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMNotation *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMNotation *This);
 	ULONG (WINAPI *Release)(IXMLDOMNotation *This);
@@ -2975,10 +2975,10 @@ extern "C" {
 	HRESULT (WINAPI *transformNodeToObject)(IXMLDOMNotation *This,IXMLDOMNode *stylesheet,VARIANT outputObject);
 	HRESULT (WINAPI *get_publicId)(IXMLDOMNotation *This,VARIANT *publicID);
 	HRESULT (WINAPI *get_systemId)(IXMLDOMNotation *This,VARIANT *systemID);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMNotationVtbl;
     struct IXMLDOMNotation {
-      CONST_VTBL struct IXMLDOMNotationVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMNotationVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMNotation_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3040,13 +3040,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMEntity : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI get_publicId(VARIANT *publicID) = 0;
-      virtual HRESULT WINAPI get_systemId(VARIANT *systemID) = 0;
-      virtual HRESULT WINAPI get_notationName(BSTR *name) = 0;
+                   virtual HRESULT WINAPI get_publicId(VARIANT *publicID) = 0;
+                   virtual HRESULT WINAPI get_systemId(VARIANT *systemID) = 0;
+                   virtual HRESULT WINAPI get_notationName(BSTR *name) = 0;
     };
 #else
     typedef struct IXMLDOMEntityVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMEntity *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMEntity *This);
 	ULONG (WINAPI *Release)(IXMLDOMEntity *This);
@@ -3093,10 +3093,10 @@ extern "C" {
 	HRESULT (WINAPI *get_publicId)(IXMLDOMEntity *This,VARIANT *publicID);
 	HRESULT (WINAPI *get_systemId)(IXMLDOMEntity *This,VARIANT *systemID);
 	HRESULT (WINAPI *get_notationName)(IXMLDOMEntity *This,BSTR *name);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMEntityVtbl;
     struct IXMLDOMEntity {
-      CONST_VTBL struct IXMLDOMEntityVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMEntityVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMEntity_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3163,7 +3163,7 @@ extern "C" {
     };
 #else
     typedef struct IXMLDOMEntityReferenceVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMEntityReference *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMEntityReference *This);
 	ULONG (WINAPI *Release)(IXMLDOMEntityReference *This);
@@ -3207,10 +3207,10 @@ extern "C" {
 	HRESULT (WINAPI *get_prefix)(IXMLDOMEntityReference *This,BSTR *prefixString);
 	HRESULT (WINAPI *get_baseName)(IXMLDOMEntityReference *This,BSTR *nameString);
 	HRESULT (WINAPI *transformNodeToObject)(IXMLDOMEntityReference *This,IXMLDOMNode *stylesheet,VARIANT outputObject);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMEntityReferenceVtbl;
     struct IXMLDOMEntityReference {
-      CONST_VTBL struct IXMLDOMEntityReferenceVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMEntityReferenceVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMEntityReference_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3266,17 +3266,17 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMParseError : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_errorCode(__LONG32 *errorCode) = 0;
-      virtual HRESULT WINAPI get_url(BSTR *urlString) = 0;
-      virtual HRESULT WINAPI get_reason(BSTR *reasonString) = 0;
-      virtual HRESULT WINAPI get_srcText(BSTR *sourceString) = 0;
-      virtual HRESULT WINAPI get_line(__LONG32 *lineNumber) = 0;
-      virtual HRESULT WINAPI get_linepos(__LONG32 *linePosition) = 0;
-      virtual HRESULT WINAPI get_filepos(__LONG32 *filePosition) = 0;
+                   virtual HRESULT WINAPI get_errorCode(__LONG32 *errorCode) = 0;
+                   virtual HRESULT WINAPI get_url(BSTR *urlString) = 0;
+                   virtual HRESULT WINAPI get_reason(BSTR *reasonString) = 0;
+                   virtual HRESULT WINAPI get_srcText(BSTR *sourceString) = 0;
+                   virtual HRESULT WINAPI get_line(__LONG32 *lineNumber) = 0;
+                   virtual HRESULT WINAPI get_linepos(__LONG32 *linePosition) = 0;
+                   virtual HRESULT WINAPI get_filepos(__LONG32 *filePosition) = 0;
     };
 #else
     typedef struct IXMLDOMParseErrorVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMParseError *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMParseError *This);
 	ULONG (WINAPI *Release)(IXMLDOMParseError *This);
@@ -3291,10 +3291,10 @@ extern "C" {
 	HRESULT (WINAPI *get_line)(IXMLDOMParseError *This,__LONG32 *lineNumber);
 	HRESULT (WINAPI *get_linepos)(IXMLDOMParseError *This,__LONG32 *linePosition);
 	HRESULT (WINAPI *get_filepos)(IXMLDOMParseError *This,__LONG32 *filePosition);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMParseErrorVtbl;
     struct IXMLDOMParseError {
-      CONST_VTBL struct IXMLDOMParseErrorVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMParseErrorVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMParseError_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3335,17 +3335,17 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMSchemaCollection : public IDispatch {
     public:
-      virtual HRESULT WINAPI add(BSTR namespaceURI,VARIANT var) = 0;
-      virtual HRESULT WINAPI get(BSTR namespaceURI,IXMLDOMNode **schemaNode) = 0;
-      virtual HRESULT WINAPI remove(BSTR namespaceURI) = 0;
-      virtual HRESULT WINAPI get_length(__LONG32 *length) = 0;
-      virtual HRESULT WINAPI get_namespaceURI(__LONG32 index,BSTR *length) = 0;
-      virtual HRESULT WINAPI addCollection(IXMLDOMSchemaCollection *otherCollection) = 0;
-      virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
+                   virtual HRESULT WINAPI add(BSTR namespaceURI,VARIANT var) = 0;
+                   virtual HRESULT WINAPI get(BSTR namespaceURI,IXMLDOMNode **schemaNode) = 0;
+                   virtual HRESULT WINAPI remove(BSTR namespaceURI) = 0;
+                   virtual HRESULT WINAPI get_length(__LONG32 *length) = 0;
+                   virtual HRESULT WINAPI get_namespaceURI(__LONG32 index,BSTR *length) = 0;
+                   virtual HRESULT WINAPI addCollection(IXMLDOMSchemaCollection *otherCollection) = 0;
+                   virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
     };
 #else
     typedef struct IXMLDOMSchemaCollectionVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMSchemaCollection *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMSchemaCollection *This);
 	ULONG (WINAPI *Release)(IXMLDOMSchemaCollection *This);
@@ -3360,10 +3360,10 @@ extern "C" {
 	HRESULT (WINAPI *get_namespaceURI)(IXMLDOMSchemaCollection *This,__LONG32 index,BSTR *length);
 	HRESULT (WINAPI *addCollection)(IXMLDOMSchemaCollection *This,IXMLDOMSchemaCollection *otherCollection);
 	HRESULT (WINAPI *get__newEnum)(IXMLDOMSchemaCollection *This,IUnknown **ppUnk);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMSchemaCollectionVtbl;
     struct IXMLDOMSchemaCollection {
-      CONST_VTBL struct IXMLDOMSchemaCollectionVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMSchemaCollectionVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMSchemaCollection_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3404,19 +3404,19 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXTLRuntime : public IXMLDOMNode {
     public:
-      virtual HRESULT WINAPI uniqueID(IXMLDOMNode *pNode,__LONG32 *pID) = 0;
-      virtual HRESULT WINAPI depth(IXMLDOMNode *pNode,__LONG32 *pDepth) = 0;
-      virtual HRESULT WINAPI childNumber(IXMLDOMNode *pNode,__LONG32 *pNumber) = 0;
-      virtual HRESULT WINAPI ancestorChildNumber(BSTR bstrNodeName,IXMLDOMNode *pNode,__LONG32 *pNumber) = 0;
-      virtual HRESULT WINAPI absoluteChildNumber(IXMLDOMNode *pNode,__LONG32 *pNumber) = 0;
-      virtual HRESULT WINAPI formatIndex(__LONG32 lIndex,BSTR bstrFormat,BSTR *pbstrFormattedString) = 0;
-      virtual HRESULT WINAPI formatNumber(double dblNumber,BSTR bstrFormat,BSTR *pbstrFormattedString) = 0;
-      virtual HRESULT WINAPI formatDate(VARIANT varDate,BSTR bstrFormat,VARIANT varDestLocale,BSTR *pbstrFormattedString) = 0;
-      virtual HRESULT WINAPI formatTime(VARIANT varTime,BSTR bstrFormat,VARIANT varDestLocale,BSTR *pbstrFormattedString) = 0;
+                   virtual HRESULT WINAPI uniqueID(IXMLDOMNode *pNode,__LONG32 *pID) = 0;
+                   virtual HRESULT WINAPI depth(IXMLDOMNode *pNode,__LONG32 *pDepth) = 0;
+                   virtual HRESULT WINAPI childNumber(IXMLDOMNode *pNode,__LONG32 *pNumber) = 0;
+                   virtual HRESULT WINAPI ancestorChildNumber(BSTR bstrNodeName,IXMLDOMNode *pNode,__LONG32 *pNumber) = 0;
+                   virtual HRESULT WINAPI absoluteChildNumber(IXMLDOMNode *pNode,__LONG32 *pNumber) = 0;
+                   virtual HRESULT WINAPI formatIndex(__LONG32 lIndex,BSTR bstrFormat,BSTR *pbstrFormattedString) = 0;
+                   virtual HRESULT WINAPI formatNumber(double dblNumber,BSTR bstrFormat,BSTR *pbstrFormattedString) = 0;
+                   virtual HRESULT WINAPI formatDate(VARIANT varDate,BSTR bstrFormat,VARIANT varDestLocale,BSTR *pbstrFormattedString) = 0;
+                   virtual HRESULT WINAPI formatTime(VARIANT varTime,BSTR bstrFormat,VARIANT varDestLocale,BSTR *pbstrFormattedString) = 0;
     };
 #else
     typedef struct IXTLRuntimeVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXTLRuntime *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXTLRuntime *This);
 	ULONG (WINAPI *Release)(IXTLRuntime *This);
@@ -3469,10 +3469,10 @@ extern "C" {
 	HRESULT (WINAPI *formatNumber)(IXTLRuntime *This,double dblNumber,BSTR bstrFormat,BSTR *pbstrFormattedString);
 	HRESULT (WINAPI *formatDate)(IXTLRuntime *This,VARIANT varDate,BSTR bstrFormat,VARIANT varDestLocale,BSTR *pbstrFormattedString);
 	HRESULT (WINAPI *formatTime)(IXTLRuntime *This,VARIANT varTime,BSTR bstrFormat,VARIANT varDestLocale,BSTR *pbstrFormattedString);
-      END_INTERFACE
+                   END_INTERFACE
     } IXTLRuntimeVtbl;
     struct IXTLRuntime {
-      CONST_VTBL struct IXTLRuntimeVtbl *lpVtbl;
+                   CONST_VTBL struct IXTLRuntimeVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXTLRuntime_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3555,13 +3555,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXSLTemplate : public IDispatch {
     public:
-      virtual HRESULT WINAPI putref_stylesheet(IXMLDOMNode *stylesheet) = 0;
-      virtual HRESULT WINAPI get_stylesheet(IXMLDOMNode **stylesheet) = 0;
-      virtual HRESULT WINAPI createProcessor(IXSLProcessor **ppProcessor) = 0;
+                   virtual HRESULT WINAPI putref_stylesheet(IXMLDOMNode *stylesheet) = 0;
+                   virtual HRESULT WINAPI get_stylesheet(IXMLDOMNode **stylesheet) = 0;
+                   virtual HRESULT WINAPI createProcessor(IXSLProcessor **ppProcessor) = 0;
     };
 #else
     typedef struct IXSLTemplateVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXSLTemplate *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXSLTemplate *This);
 	ULONG (WINAPI *Release)(IXSLTemplate *This);
@@ -3572,10 +3572,10 @@ extern "C" {
 	HRESULT (WINAPI *putref_stylesheet)(IXSLTemplate *This,IXMLDOMNode *stylesheet);
 	HRESULT (WINAPI *get_stylesheet)(IXSLTemplate *This,IXMLDOMNode **stylesheet);
 	HRESULT (WINAPI *createProcessor)(IXSLTemplate *This,IXSLProcessor **ppProcessor);
-      END_INTERFACE
+                   END_INTERFACE
     } IXSLTemplateVtbl;
     struct IXSLTemplate {
-      CONST_VTBL struct IXSLTemplateVtbl *lpVtbl;
+                   CONST_VTBL struct IXSLTemplateVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXSLTemplate_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3604,24 +3604,24 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXSLProcessor : public IDispatch {
     public:
-      virtual HRESULT WINAPI put_input(VARIANT var) = 0;
-      virtual HRESULT WINAPI get_input(VARIANT *pVar) = 0;
-      virtual HRESULT WINAPI get_ownerTemplate(IXSLTemplate **ppTemplate) = 0;
-      virtual HRESULT WINAPI setStartMode(BSTR mode,BSTR namespaceURI = L"") = 0;
-      virtual HRESULT WINAPI get_startMode(BSTR *mode) = 0;
-      virtual HRESULT WINAPI get_startModeURI(BSTR *namespaceURI) = 0;
-      virtual HRESULT WINAPI put_output(VARIANT output) = 0;
-      virtual HRESULT WINAPI get_output(VARIANT *pOutput) = 0;
-      virtual HRESULT WINAPI transform(VARIANT_BOOL *pDone) = 0;
-      virtual HRESULT WINAPI reset(void) = 0;
-      virtual HRESULT WINAPI get_readyState(__LONG32 *pReadyState) = 0;
-      virtual HRESULT WINAPI addParameter(BSTR baseName,VARIANT parameter,BSTR namespaceURI = L"") = 0;
-      virtual HRESULT WINAPI addObject(IDispatch *obj,BSTR namespaceURI) = 0;
-      virtual HRESULT WINAPI get_stylesheet(IXMLDOMNode **stylesheet) = 0;
+                   virtual HRESULT WINAPI put_input(VARIANT var) = 0;
+                   virtual HRESULT WINAPI get_input(VARIANT *pVar) = 0;
+                   virtual HRESULT WINAPI get_ownerTemplate(IXSLTemplate **ppTemplate) = 0;
+                   virtual HRESULT WINAPI setStartMode(BSTR mode,BSTR namespaceURI = L"") = 0;
+                   virtual HRESULT WINAPI get_startMode(BSTR *mode) = 0;
+                   virtual HRESULT WINAPI get_startModeURI(BSTR *namespaceURI) = 0;
+                   virtual HRESULT WINAPI put_output(VARIANT output) = 0;
+                   virtual HRESULT WINAPI get_output(VARIANT *pOutput) = 0;
+                   virtual HRESULT WINAPI transform(VARIANT_BOOL *pDone) = 0;
+                   virtual HRESULT WINAPI reset(void) = 0;
+                   virtual HRESULT WINAPI get_readyState(__LONG32 *pReadyState) = 0;
+                   virtual HRESULT WINAPI addParameter(BSTR baseName,VARIANT parameter,BSTR namespaceURI = L"") = 0;
+                   virtual HRESULT WINAPI addObject(IDispatch *obj,BSTR namespaceURI) = 0;
+                   virtual HRESULT WINAPI get_stylesheet(IXMLDOMNode **stylesheet) = 0;
     };
 #else
     typedef struct IXSLProcessorVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXSLProcessor *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXSLProcessor *This);
 	ULONG (WINAPI *Release)(IXSLProcessor *This);
@@ -3643,10 +3643,10 @@ extern "C" {
 	HRESULT (WINAPI *addParameter)(IXSLProcessor *This,BSTR baseName,VARIANT parameter,BSTR namespaceURI);
 	HRESULT (WINAPI *addObject)(IXSLProcessor *This,IDispatch *obj,BSTR namespaceURI);
 	HRESULT (WINAPI *get_stylesheet)(IXSLProcessor *This,IXMLDOMNode **stylesheet);
-      END_INTERFACE
+                   END_INTERFACE
     } IXSLProcessorVtbl;
     struct IXSLProcessor {
-      CONST_VTBL struct IXSLProcessorVtbl *lpVtbl;
+                   CONST_VTBL struct IXSLProcessorVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXSLProcessor_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3708,28 +3708,28 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXXMLReader : public IUnknown {
     public:
-      virtual HRESULT WINAPI getFeature(const wchar_t *pwchName,VARIANT_BOOL *pvfValue) = 0;
-      virtual HRESULT WINAPI putFeature(const wchar_t *pwchName,VARIANT_BOOL vfValue) = 0;
-      virtual HRESULT WINAPI getProperty(const wchar_t *pwchName,VARIANT *pvarValue) = 0;
-      virtual HRESULT WINAPI putProperty(const wchar_t *pwchName,VARIANT varValue) = 0;
-      virtual HRESULT WINAPI getEntityResolver(ISAXEntityResolver **ppResolver) = 0;
-      virtual HRESULT WINAPI putEntityResolver(ISAXEntityResolver *pResolver) = 0;
-      virtual HRESULT WINAPI getContentHandler(ISAXContentHandler **ppHandler) = 0;
-      virtual HRESULT WINAPI putContentHandler(ISAXContentHandler *pHandler) = 0;
-      virtual HRESULT WINAPI getDTDHandler(ISAXDTDHandler **ppHandler) = 0;
-      virtual HRESULT WINAPI putDTDHandler(ISAXDTDHandler *pHandler) = 0;
-      virtual HRESULT WINAPI getErrorHandler(ISAXErrorHandler **ppHandler) = 0;
-      virtual HRESULT WINAPI putErrorHandler(ISAXErrorHandler *pHandler) = 0;
-      virtual HRESULT WINAPI getBaseURL(const wchar_t **ppwchBaseUrl) = 0;
-      virtual HRESULT WINAPI putBaseURL(const wchar_t *pwchBaseUrl) = 0;
-      virtual HRESULT WINAPI getSecureBaseURL(const wchar_t **ppwchSecureBaseUrl) = 0;
-      virtual HRESULT WINAPI putSecureBaseURL(const wchar_t *pwchSecureBaseUrl) = 0;
-      virtual HRESULT WINAPI parse(VARIANT varInput) = 0;
-      virtual HRESULT WINAPI parseURL(const wchar_t *pwchUrl) = 0;
+                   virtual HRESULT WINAPI getFeature(const wchar_t *pwchName,VARIANT_BOOL *pvfValue) = 0;
+                   virtual HRESULT WINAPI putFeature(const wchar_t *pwchName,VARIANT_BOOL vfValue) = 0;
+                   virtual HRESULT WINAPI getProperty(const wchar_t *pwchName,VARIANT *pvarValue) = 0;
+                   virtual HRESULT WINAPI putProperty(const wchar_t *pwchName,VARIANT varValue) = 0;
+                   virtual HRESULT WINAPI getEntityResolver(ISAXEntityResolver **ppResolver) = 0;
+                   virtual HRESULT WINAPI putEntityResolver(ISAXEntityResolver *pResolver) = 0;
+                   virtual HRESULT WINAPI getContentHandler(ISAXContentHandler **ppHandler) = 0;
+                   virtual HRESULT WINAPI putContentHandler(ISAXContentHandler *pHandler) = 0;
+                   virtual HRESULT WINAPI getDTDHandler(ISAXDTDHandler **ppHandler) = 0;
+                   virtual HRESULT WINAPI putDTDHandler(ISAXDTDHandler *pHandler) = 0;
+                   virtual HRESULT WINAPI getErrorHandler(ISAXErrorHandler **ppHandler) = 0;
+                   virtual HRESULT WINAPI putErrorHandler(ISAXErrorHandler *pHandler) = 0;
+                   virtual HRESULT WINAPI getBaseURL(const wchar_t **ppwchBaseUrl) = 0;
+                   virtual HRESULT WINAPI putBaseURL(const wchar_t *pwchBaseUrl) = 0;
+                   virtual HRESULT WINAPI getSecureBaseURL(const wchar_t **ppwchSecureBaseUrl) = 0;
+                   virtual HRESULT WINAPI putSecureBaseURL(const wchar_t *pwchSecureBaseUrl) = 0;
+                   virtual HRESULT WINAPI parse(VARIANT varInput) = 0;
+                   virtual HRESULT WINAPI parseURL(const wchar_t *pwchUrl) = 0;
     };
 #else
     typedef struct ISAXXMLReaderVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXXMLReader *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXXMLReader *This);
 	ULONG (WINAPI *Release)(ISAXXMLReader *This);
@@ -3751,10 +3751,10 @@ extern "C" {
 	HRESULT (WINAPI *putSecureBaseURL)(ISAXXMLReader *This,const wchar_t *pwchSecureBaseUrl);
 	HRESULT (WINAPI *parse)(ISAXXMLReader *This,VARIANT varInput);
 	HRESULT (WINAPI *parseURL)(ISAXXMLReader *This,const wchar_t *pwchUrl);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXXMLReaderVtbl;
     struct ISAXXMLReader {
-      CONST_VTBL struct ISAXXMLReaderVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXXMLReaderVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXXMLReader_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3824,12 +3824,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXXMLFilter : public ISAXXMLReader {
     public:
-      virtual HRESULT WINAPI getParent(ISAXXMLReader **ppReader) = 0;
-      virtual HRESULT WINAPI putParent(ISAXXMLReader *pReader) = 0;
+                   virtual HRESULT WINAPI getParent(ISAXXMLReader **ppReader) = 0;
+                   virtual HRESULT WINAPI putParent(ISAXXMLReader *pReader) = 0;
     };
 #else
     typedef struct ISAXXMLFilterVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXXMLFilter *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXXMLFilter *This);
 	ULONG (WINAPI *Release)(ISAXXMLFilter *This);
@@ -3853,10 +3853,10 @@ extern "C" {
 	HRESULT (WINAPI *parseURL)(ISAXXMLFilter *This,const wchar_t *pwchUrl);
 	HRESULT (WINAPI *getParent)(ISAXXMLFilter *This,ISAXXMLReader **ppReader);
 	HRESULT (WINAPI *putParent)(ISAXXMLFilter *This,ISAXXMLReader *pReader);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXXMLFilterVtbl;
     struct ISAXXMLFilter {
-      CONST_VTBL struct ISAXXMLFilterVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXXMLFilterVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXXMLFilter_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3896,14 +3896,14 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXLocator : public IUnknown {
     public:
-      virtual HRESULT WINAPI getColumnNumber(int *pnColumn) = 0;
-      virtual HRESULT WINAPI getLineNumber(int *pnLine) = 0;
-      virtual HRESULT WINAPI getPublicId(const wchar_t **ppwchPublicId) = 0;
-      virtual HRESULT WINAPI getSystemId(const wchar_t **ppwchSystemId) = 0;
+                   virtual HRESULT WINAPI getColumnNumber(int *pnColumn) = 0;
+                   virtual HRESULT WINAPI getLineNumber(int *pnLine) = 0;
+                   virtual HRESULT WINAPI getPublicId(const wchar_t **ppwchPublicId) = 0;
+                   virtual HRESULT WINAPI getSystemId(const wchar_t **ppwchSystemId) = 0;
     };
 #else
     typedef struct ISAXLocatorVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXLocator *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXLocator *This);
 	ULONG (WINAPI *Release)(ISAXLocator *This);
@@ -3911,10 +3911,10 @@ extern "C" {
 	HRESULT (WINAPI *getLineNumber)(ISAXLocator *This,int *pnLine);
 	HRESULT (WINAPI *getPublicId)(ISAXLocator *This,const wchar_t **ppwchPublicId);
 	HRESULT (WINAPI *getSystemId)(ISAXLocator *This,const wchar_t **ppwchSystemId);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXLocatorVtbl;
     struct ISAXLocator {
-      CONST_VTBL struct ISAXLocatorVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXLocatorVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXLocator_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3942,19 +3942,19 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXEntityResolver : public IUnknown {
     public:
-      virtual HRESULT WINAPI resolveEntity(const wchar_t *pwchPublicId,const wchar_t *pwchSystemId,VARIANT *pvarInput) = 0;
+                   virtual HRESULT WINAPI resolveEntity(const wchar_t *pwchPublicId,const wchar_t *pwchSystemId,VARIANT *pvarInput) = 0;
     };
 #else
     typedef struct ISAXEntityResolverVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXEntityResolver *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXEntityResolver *This);
 	ULONG (WINAPI *Release)(ISAXEntityResolver *This);
 	HRESULT (WINAPI *resolveEntity)(ISAXEntityResolver *This,const wchar_t *pwchPublicId,const wchar_t *pwchSystemId,VARIANT *pvarInput);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXEntityResolverVtbl;
     struct ISAXEntityResolver {
-      CONST_VTBL struct ISAXEntityResolverVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXEntityResolverVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXEntityResolver_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -3973,21 +3973,21 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXContentHandler : public IUnknown {
     public:
-      virtual HRESULT WINAPI putDocumentLocator(ISAXLocator *pLocator) = 0;
-      virtual HRESULT WINAPI startDocument(void) = 0;
-      virtual HRESULT WINAPI endDocument(void) = 0;
-      virtual HRESULT WINAPI startPrefixMapping(const wchar_t *pwchPrefix,int cchPrefix,const wchar_t *pwchUri,int cchUri) = 0;
-      virtual HRESULT WINAPI endPrefixMapping(const wchar_t *pwchPrefix,int cchPrefix) = 0;
-      virtual HRESULT WINAPI startElement(const wchar_t *pwchNamespaceUri,int cchNamespaceUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t *pwchQName,int cchQName,ISAXAttributes *pAttributes) = 0;
-      virtual HRESULT WINAPI endElement(const wchar_t *pwchNamespaceUri,int cchNamespaceUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t *pwchQName,int cchQName) = 0;
-      virtual HRESULT WINAPI characters(const wchar_t *pwchChars,int cchChars) = 0;
-      virtual HRESULT WINAPI ignorableWhitespace(const wchar_t *pwchChars,int cchChars) = 0;
-      virtual HRESULT WINAPI processingInstruction(const wchar_t *pwchTarget,int cchTarget,const wchar_t *pwchData,int cchData) = 0;
-      virtual HRESULT WINAPI skippedEntity(const wchar_t *pwchName,int cchName) = 0;
+                   virtual HRESULT WINAPI putDocumentLocator(ISAXLocator *pLocator) = 0;
+                   virtual HRESULT WINAPI startDocument(void) = 0;
+                   virtual HRESULT WINAPI endDocument(void) = 0;
+                   virtual HRESULT WINAPI startPrefixMapping(const wchar_t *pwchPrefix,int cchPrefix,const wchar_t *pwchUri,int cchUri) = 0;
+                   virtual HRESULT WINAPI endPrefixMapping(const wchar_t *pwchPrefix,int cchPrefix) = 0;
+                   virtual HRESULT WINAPI startElement(const wchar_t *pwchNamespaceUri,int cchNamespaceUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t *pwchQName,int cchQName,ISAXAttributes *pAttributes) = 0;
+                   virtual HRESULT WINAPI endElement(const wchar_t *pwchNamespaceUri,int cchNamespaceUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t *pwchQName,int cchQName) = 0;
+                   virtual HRESULT WINAPI characters(const wchar_t *pwchChars,int cchChars) = 0;
+                   virtual HRESULT WINAPI ignorableWhitespace(const wchar_t *pwchChars,int cchChars) = 0;
+                   virtual HRESULT WINAPI processingInstruction(const wchar_t *pwchTarget,int cchTarget,const wchar_t *pwchData,int cchData) = 0;
+                   virtual HRESULT WINAPI skippedEntity(const wchar_t *pwchName,int cchName) = 0;
     };
 #else
     typedef struct ISAXContentHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXContentHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXContentHandler *This);
 	ULONG (WINAPI *Release)(ISAXContentHandler *This);
@@ -4002,10 +4002,10 @@ extern "C" {
 	HRESULT (WINAPI *ignorableWhitespace)(ISAXContentHandler *This,const wchar_t *pwchChars,int cchChars);
 	HRESULT (WINAPI *processingInstruction)(ISAXContentHandler *This,const wchar_t *pwchTarget,int cchTarget,const wchar_t *pwchData,int cchData);
 	HRESULT (WINAPI *skippedEntity)(ISAXContentHandler *This,const wchar_t *pwchName,int cchName);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXContentHandlerVtbl;
     struct ISAXContentHandler {
-      CONST_VTBL struct ISAXContentHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXContentHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXContentHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4054,21 +4054,21 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXDTDHandler : public IUnknown {
     public:
-      virtual HRESULT WINAPI notationDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId) = 0;
-      virtual HRESULT WINAPI unparsedEntityDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId,const wchar_t *pwchNotationName,int cchNotationName) = 0;
+                   virtual HRESULT WINAPI notationDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId) = 0;
+                   virtual HRESULT WINAPI unparsedEntityDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId,const wchar_t *pwchNotationName,int cchNotationName) = 0;
     };
 #else
     typedef struct ISAXDTDHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXDTDHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXDTDHandler *This);
 	ULONG (WINAPI *Release)(ISAXDTDHandler *This);
 	HRESULT (WINAPI *notationDecl)(ISAXDTDHandler *This,const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId);
 	HRESULT (WINAPI *unparsedEntityDecl)(ISAXDTDHandler *This,const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId,const wchar_t *pwchNotationName,int cchNotationName);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXDTDHandlerVtbl;
     struct ISAXDTDHandler {
-      CONST_VTBL struct ISAXDTDHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXDTDHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXDTDHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4090,23 +4090,23 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXErrorHandler : public IUnknown {
     public:
-      virtual HRESULT WINAPI error(ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode) = 0;
-      virtual HRESULT WINAPI fatalError(ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode) = 0;
-      virtual HRESULT WINAPI ignorableWarning(ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode) = 0;
+                   virtual HRESULT WINAPI error(ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode) = 0;
+                   virtual HRESULT WINAPI fatalError(ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode) = 0;
+                   virtual HRESULT WINAPI ignorableWarning(ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode) = 0;
     };
 #else
     typedef struct ISAXErrorHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXErrorHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXErrorHandler *This);
 	ULONG (WINAPI *Release)(ISAXErrorHandler *This);
 	HRESULT (WINAPI *error)(ISAXErrorHandler *This,ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode);
 	HRESULT (WINAPI *fatalError)(ISAXErrorHandler *This,ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode);
 	HRESULT (WINAPI *ignorableWarning)(ISAXErrorHandler *This,ISAXLocator *pLocator,const wchar_t *pwchErrorMessage,HRESULT hrErrorCode);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXErrorHandlerVtbl;
     struct ISAXErrorHandler {
-      CONST_VTBL struct ISAXErrorHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXErrorHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXErrorHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4131,17 +4131,17 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXLexicalHandler : public IUnknown {
     public:
-      virtual HRESULT WINAPI startDTD(const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId) = 0;
-      virtual HRESULT WINAPI endDTD(void) = 0;
-      virtual HRESULT WINAPI startEntity(const wchar_t *pwchName,int cchName) = 0;
-      virtual HRESULT WINAPI endEntity(const wchar_t *pwchName,int cchName) = 0;
-      virtual HRESULT WINAPI startCDATA(void) = 0;
-      virtual HRESULT WINAPI endCDATA(void) = 0;
-      virtual HRESULT WINAPI comment(const wchar_t *pwchChars,int cchChars) = 0;
+                   virtual HRESULT WINAPI startDTD(const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId) = 0;
+                   virtual HRESULT WINAPI endDTD(void) = 0;
+                   virtual HRESULT WINAPI startEntity(const wchar_t *pwchName,int cchName) = 0;
+                   virtual HRESULT WINAPI endEntity(const wchar_t *pwchName,int cchName) = 0;
+                   virtual HRESULT WINAPI startCDATA(void) = 0;
+                   virtual HRESULT WINAPI endCDATA(void) = 0;
+                   virtual HRESULT WINAPI comment(const wchar_t *pwchChars,int cchChars) = 0;
     };
 #else
     typedef struct ISAXLexicalHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXLexicalHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXLexicalHandler *This);
 	ULONG (WINAPI *Release)(ISAXLexicalHandler *This);
@@ -4152,10 +4152,10 @@ extern "C" {
 	HRESULT (WINAPI *startCDATA)(ISAXLexicalHandler *This);
 	HRESULT (WINAPI *endCDATA)(ISAXLexicalHandler *This);
 	HRESULT (WINAPI *comment)(ISAXLexicalHandler *This,const wchar_t *pwchChars,int cchChars);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXLexicalHandlerVtbl;
     struct ISAXLexicalHandler {
-      CONST_VTBL struct ISAXLexicalHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXLexicalHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXLexicalHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4192,14 +4192,14 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXDeclHandler : public IUnknown {
     public:
-      virtual HRESULT WINAPI elementDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchModel,int cchModel) = 0;
-      virtual HRESULT WINAPI attributeDecl(const wchar_t *pwchElementName,int cchElementName,const wchar_t *pwchAttributeName,int cchAttributeName,const wchar_t *pwchType,int cchType,const wchar_t *pwchValueDefault,int cchValueDefault,const wchar_t *pwchValue,int cchValue) = 0;
-      virtual HRESULT WINAPI internalEntityDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchValue,int cchValue) = 0;
-      virtual HRESULT WINAPI externalEntityDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId) = 0;
+                   virtual HRESULT WINAPI elementDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchModel,int cchModel) = 0;
+                   virtual HRESULT WINAPI attributeDecl(const wchar_t *pwchElementName,int cchElementName,const wchar_t *pwchAttributeName,int cchAttributeName,const wchar_t *pwchType,int cchType,const wchar_t *pwchValueDefault,int cchValueDefault,const wchar_t *pwchValue,int cchValue) = 0;
+                   virtual HRESULT WINAPI internalEntityDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchValue,int cchValue) = 0;
+                   virtual HRESULT WINAPI externalEntityDecl(const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId) = 0;
     };
 #else
     typedef struct ISAXDeclHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXDeclHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXDeclHandler *This);
 	ULONG (WINAPI *Release)(ISAXDeclHandler *This);
@@ -4207,10 +4207,10 @@ extern "C" {
 	HRESULT (WINAPI *attributeDecl)(ISAXDeclHandler *This,const wchar_t *pwchElementName,int cchElementName,const wchar_t *pwchAttributeName,int cchAttributeName,const wchar_t *pwchType,int cchType,const wchar_t *pwchValueDefault,int cchValueDefault,const wchar_t *pwchValue,int cchValue);
 	HRESULT (WINAPI *internalEntityDecl)(ISAXDeclHandler *This,const wchar_t *pwchName,int cchName,const wchar_t *pwchValue,int cchValue);
 	HRESULT (WINAPI *externalEntityDecl)(ISAXDeclHandler *This,const wchar_t *pwchName,int cchName,const wchar_t *pwchPublicId,int cchPublicId,const wchar_t *pwchSystemId,int cchSystemId);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXDeclHandlerVtbl;
     struct ISAXDeclHandler {
-      CONST_VTBL struct ISAXDeclHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXDeclHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXDeclHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4238,23 +4238,23 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISAXAttributes : public IUnknown {
     public:
-      virtual HRESULT WINAPI getLength(int *pnLength) = 0;
-      virtual HRESULT WINAPI getURI(int nIndex,const wchar_t **ppwchUri,int *pcchUri) = 0;
-      virtual HRESULT WINAPI getLocalName(int nIndex,const wchar_t **ppwchLocalName,int *pcchLocalName) = 0;
-      virtual HRESULT WINAPI getQName(int nIndex,const wchar_t **ppwchQName,int *pcchQName) = 0;
-      virtual HRESULT WINAPI getName(int nIndex,const wchar_t **ppwchUri,int *pcchUri,const wchar_t **ppwchLocalName,int *pcchLocalName,const wchar_t **ppwchQName,int *pcchQName) = 0;
-      virtual HRESULT WINAPI getIndexFromName(const wchar_t *pwchUri,int cchUri,const wchar_t *pwchLocalName,int cchLocalName,int *pnIndex) = 0;
-      virtual HRESULT WINAPI getIndexFromQName(const wchar_t *pwchQName,int cchQName,int *pnIndex) = 0;
-      virtual HRESULT WINAPI getType(int nIndex,const wchar_t **ppwchType,int *pcchType) = 0;
-      virtual HRESULT WINAPI getTypeFromName(const wchar_t *pwchUri,int cchUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t **ppwchType,int *pcchType) = 0;
-      virtual HRESULT WINAPI getTypeFromQName(const wchar_t *pwchQName,int cchQName,const wchar_t **ppwchType,int *pcchType) = 0;
-      virtual HRESULT WINAPI getValue(int nIndex,const wchar_t **ppwchValue,int *pcchValue) = 0;
-      virtual HRESULT WINAPI getValueFromName(const wchar_t *pwchUri,int cchUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t **ppwchValue,int *pcchValue) = 0;
-      virtual HRESULT WINAPI getValueFromQName(const wchar_t *pwchQName,int cchQName,const wchar_t **ppwchValue,int *pcchValue) = 0;
+                   virtual HRESULT WINAPI getLength(int *pnLength) = 0;
+                   virtual HRESULT WINAPI getURI(int nIndex,const wchar_t **ppwchUri,int *pcchUri) = 0;
+                   virtual HRESULT WINAPI getLocalName(int nIndex,const wchar_t **ppwchLocalName,int *pcchLocalName) = 0;
+                   virtual HRESULT WINAPI getQName(int nIndex,const wchar_t **ppwchQName,int *pcchQName) = 0;
+                   virtual HRESULT WINAPI getName(int nIndex,const wchar_t **ppwchUri,int *pcchUri,const wchar_t **ppwchLocalName,int *pcchLocalName,const wchar_t **ppwchQName,int *pcchQName) = 0;
+                   virtual HRESULT WINAPI getIndexFromName(const wchar_t *pwchUri,int cchUri,const wchar_t *pwchLocalName,int cchLocalName,int *pnIndex) = 0;
+                   virtual HRESULT WINAPI getIndexFromQName(const wchar_t *pwchQName,int cchQName,int *pnIndex) = 0;
+                   virtual HRESULT WINAPI getType(int nIndex,const wchar_t **ppwchType,int *pcchType) = 0;
+                   virtual HRESULT WINAPI getTypeFromName(const wchar_t *pwchUri,int cchUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t **ppwchType,int *pcchType) = 0;
+                   virtual HRESULT WINAPI getTypeFromQName(const wchar_t *pwchQName,int cchQName,const wchar_t **ppwchType,int *pcchType) = 0;
+                   virtual HRESULT WINAPI getValue(int nIndex,const wchar_t **ppwchValue,int *pcchValue) = 0;
+                   virtual HRESULT WINAPI getValueFromName(const wchar_t *pwchUri,int cchUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t **ppwchValue,int *pcchValue) = 0;
+                   virtual HRESULT WINAPI getValueFromQName(const wchar_t *pwchQName,int cchQName,const wchar_t **ppwchValue,int *pcchValue) = 0;
     };
 #else
     typedef struct ISAXAttributesVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISAXAttributes *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISAXAttributes *This);
 	ULONG (WINAPI *Release)(ISAXAttributes *This);
@@ -4271,10 +4271,10 @@ extern "C" {
 	HRESULT (WINAPI *getValue)(ISAXAttributes *This,int nIndex,const wchar_t **ppwchValue,int *pcchValue);
 	HRESULT (WINAPI *getValueFromName)(ISAXAttributes *This,const wchar_t *pwchUri,int cchUri,const wchar_t *pwchLocalName,int cchLocalName,const wchar_t **ppwchValue,int *pcchValue);
 	HRESULT (WINAPI *getValueFromQName)(ISAXAttributes *This,const wchar_t *pwchQName,int cchQName,const wchar_t **ppwchValue,int *pcchValue);
-      END_INTERFACE
+                   END_INTERFACE
     } ISAXAttributesVtbl;
     struct ISAXAttributes {
-      CONST_VTBL struct ISAXAttributesVtbl *lpVtbl;
+                   CONST_VTBL struct ISAXAttributesVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISAXAttributes_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4329,28 +4329,28 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXXMLReader : public IDispatch {
     public:
-      virtual HRESULT WINAPI getFeature(BSTR strName,VARIANT_BOOL *fValue) = 0;
-      virtual HRESULT WINAPI putFeature(BSTR strName,VARIANT_BOOL fValue) = 0;
-      virtual HRESULT WINAPI getProperty(BSTR strName,VARIANT *varValue) = 0;
-      virtual HRESULT WINAPI putProperty(BSTR strName,VARIANT varValue) = 0;
-      virtual HRESULT WINAPI get_entityResolver(IVBSAXEntityResolver **oResolver) = 0;
-      virtual HRESULT WINAPI putref_entityResolver(IVBSAXEntityResolver *oResolver) = 0;
-      virtual HRESULT WINAPI get_contentHandler(IVBSAXContentHandler **oHandler) = 0;
-      virtual HRESULT WINAPI putref_contentHandler(IVBSAXContentHandler *oHandler) = 0;
-      virtual HRESULT WINAPI get_dtdHandler(IVBSAXDTDHandler **oHandler) = 0;
-      virtual HRESULT WINAPI putref_dtdHandler(IVBSAXDTDHandler *oHandler) = 0;
-      virtual HRESULT WINAPI get_errorHandler(IVBSAXErrorHandler **oHandler) = 0;
-      virtual HRESULT WINAPI putref_errorHandler(IVBSAXErrorHandler *oHandler) = 0;
-      virtual HRESULT WINAPI get_baseURL(BSTR *strBaseURL) = 0;
-      virtual HRESULT WINAPI put_baseURL(BSTR strBaseURL) = 0;
-      virtual HRESULT WINAPI get_secureBaseURL(BSTR *strSecureBaseURL) = 0;
-      virtual HRESULT WINAPI put_secureBaseURL(BSTR strSecureBaseURL) = 0;
-      virtual HRESULT WINAPI parse(VARIANT varInput) = 0;
-      virtual HRESULT WINAPI parseURL(BSTR strURL) = 0;
+                   virtual HRESULT WINAPI getFeature(BSTR strName,VARIANT_BOOL *fValue) = 0;
+                   virtual HRESULT WINAPI putFeature(BSTR strName,VARIANT_BOOL fValue) = 0;
+                   virtual HRESULT WINAPI getProperty(BSTR strName,VARIANT *varValue) = 0;
+                   virtual HRESULT WINAPI putProperty(BSTR strName,VARIANT varValue) = 0;
+                   virtual HRESULT WINAPI get_entityResolver(IVBSAXEntityResolver **oResolver) = 0;
+                   virtual HRESULT WINAPI putref_entityResolver(IVBSAXEntityResolver *oResolver) = 0;
+                   virtual HRESULT WINAPI get_contentHandler(IVBSAXContentHandler **oHandler) = 0;
+                   virtual HRESULT WINAPI putref_contentHandler(IVBSAXContentHandler *oHandler) = 0;
+                   virtual HRESULT WINAPI get_dtdHandler(IVBSAXDTDHandler **oHandler) = 0;
+                   virtual HRESULT WINAPI putref_dtdHandler(IVBSAXDTDHandler *oHandler) = 0;
+                   virtual HRESULT WINAPI get_errorHandler(IVBSAXErrorHandler **oHandler) = 0;
+                   virtual HRESULT WINAPI putref_errorHandler(IVBSAXErrorHandler *oHandler) = 0;
+                   virtual HRESULT WINAPI get_baseURL(BSTR *strBaseURL) = 0;
+                   virtual HRESULT WINAPI put_baseURL(BSTR strBaseURL) = 0;
+                   virtual HRESULT WINAPI get_secureBaseURL(BSTR *strSecureBaseURL) = 0;
+                   virtual HRESULT WINAPI put_secureBaseURL(BSTR strSecureBaseURL) = 0;
+                   virtual HRESULT WINAPI parse(VARIANT varInput) = 0;
+                   virtual HRESULT WINAPI parseURL(BSTR strURL) = 0;
     };
 #else
     typedef struct IVBSAXXMLReaderVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXXMLReader *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXXMLReader *This);
 	ULONG (WINAPI *Release)(IVBSAXXMLReader *This);
@@ -4376,10 +4376,10 @@ extern "C" {
 	HRESULT (WINAPI *put_secureBaseURL)(IVBSAXXMLReader *This,BSTR strSecureBaseURL);
 	HRESULT (WINAPI *parse)(IVBSAXXMLReader *This,VARIANT varInput);
 	HRESULT (WINAPI *parseURL)(IVBSAXXMLReader *This,BSTR strURL);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXXMLReaderVtbl;
     struct IVBSAXXMLReader {
-      CONST_VTBL struct IVBSAXXMLReaderVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXXMLReaderVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXXMLReader_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4453,12 +4453,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXXMLFilter : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_parent(IVBSAXXMLReader **oReader) = 0;
-      virtual HRESULT WINAPI putref_parent(IVBSAXXMLReader *oReader) = 0;
+                   virtual HRESULT WINAPI get_parent(IVBSAXXMLReader **oReader) = 0;
+                   virtual HRESULT WINAPI putref_parent(IVBSAXXMLReader *oReader) = 0;
     };
 #else
     typedef struct IVBSAXXMLFilterVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXXMLFilter *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXXMLFilter *This);
 	ULONG (WINAPI *Release)(IVBSAXXMLFilter *This);
@@ -4468,10 +4468,10 @@ extern "C" {
 	HRESULT (WINAPI *Invoke)(IVBSAXXMLFilter *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
 	HRESULT (WINAPI *get_parent)(IVBSAXXMLFilter *This,IVBSAXXMLReader **oReader);
 	HRESULT (WINAPI *putref_parent)(IVBSAXXMLFilter *This,IVBSAXXMLReader *oReader);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXXMLFilterVtbl;
     struct IVBSAXXMLFilter {
-      CONST_VTBL struct IVBSAXXMLFilterVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXXMLFilterVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXXMLFilter_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4497,14 +4497,14 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXLocator : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_columnNumber(int *nColumn) = 0;
-      virtual HRESULT WINAPI get_lineNumber(int *nLine) = 0;
-      virtual HRESULT WINAPI get_publicId(BSTR *strPublicId) = 0;
-      virtual HRESULT WINAPI get_systemId(BSTR *strSystemId) = 0;
+                   virtual HRESULT WINAPI get_columnNumber(int *nColumn) = 0;
+                   virtual HRESULT WINAPI get_lineNumber(int *nLine) = 0;
+                   virtual HRESULT WINAPI get_publicId(BSTR *strPublicId) = 0;
+                   virtual HRESULT WINAPI get_systemId(BSTR *strSystemId) = 0;
     };
 #else
     typedef struct IVBSAXLocatorVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXLocator *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXLocator *This);
 	ULONG (WINAPI *Release)(IVBSAXLocator *This);
@@ -4516,10 +4516,10 @@ extern "C" {
 	HRESULT (WINAPI *get_lineNumber)(IVBSAXLocator *This,int *nLine);
 	HRESULT (WINAPI *get_publicId)(IVBSAXLocator *This,BSTR *strPublicId);
 	HRESULT (WINAPI *get_systemId)(IVBSAXLocator *This,BSTR *strSystemId);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXLocatorVtbl;
     struct IVBSAXLocator {
-      CONST_VTBL struct IVBSAXLocatorVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXLocatorVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXLocator_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4551,11 +4551,11 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXEntityResolver : public IDispatch {
     public:
-      virtual HRESULT WINAPI resolveEntity(BSTR *strPublicId,BSTR *strSystemId,VARIANT *varInput) = 0;
+                   virtual HRESULT WINAPI resolveEntity(BSTR *strPublicId,BSTR *strSystemId,VARIANT *varInput) = 0;
     };
 #else
     typedef struct IVBSAXEntityResolverVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXEntityResolver *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXEntityResolver *This);
 	ULONG (WINAPI *Release)(IVBSAXEntityResolver *This);
@@ -4564,10 +4564,10 @@ extern "C" {
 	HRESULT (WINAPI *GetIDsOfNames)(IVBSAXEntityResolver *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
 	HRESULT (WINAPI *Invoke)(IVBSAXEntityResolver *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
 	HRESULT (WINAPI *resolveEntity)(IVBSAXEntityResolver *This,BSTR *strPublicId,BSTR *strSystemId,VARIANT *varInput);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXEntityResolverVtbl;
     struct IVBSAXEntityResolver {
-      CONST_VTBL struct IVBSAXEntityResolverVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXEntityResolverVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXEntityResolver_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4590,21 +4590,21 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXContentHandler : public IDispatch {
     public:
-      virtual HRESULT WINAPI putref_documentLocator(IVBSAXLocator *oLocator) = 0;
-      virtual HRESULT WINAPI startDocument(void) = 0;
-      virtual HRESULT WINAPI endDocument(void) = 0;
-      virtual HRESULT WINAPI startPrefixMapping(BSTR *strPrefix,BSTR *strURI) = 0;
-      virtual HRESULT WINAPI endPrefixMapping(BSTR *strPrefix) = 0;
-      virtual HRESULT WINAPI startElement(BSTR *strNamespaceURI,BSTR *strLocalName,BSTR *strQName,IVBSAXAttributes *oAttributes) = 0;
-      virtual HRESULT WINAPI endElement(BSTR *strNamespaceURI,BSTR *strLocalName,BSTR *strQName) = 0;
-      virtual HRESULT WINAPI characters(BSTR *strChars) = 0;
-      virtual HRESULT WINAPI ignorableWhitespace(BSTR *strChars) = 0;
-      virtual HRESULT WINAPI processingInstruction(BSTR *strTarget,BSTR *strData) = 0;
-      virtual HRESULT WINAPI skippedEntity(BSTR *strName) = 0;
+                   virtual HRESULT WINAPI putref_documentLocator(IVBSAXLocator *oLocator) = 0;
+                   virtual HRESULT WINAPI startDocument(void) = 0;
+                   virtual HRESULT WINAPI endDocument(void) = 0;
+                   virtual HRESULT WINAPI startPrefixMapping(BSTR *strPrefix,BSTR *strURI) = 0;
+                   virtual HRESULT WINAPI endPrefixMapping(BSTR *strPrefix) = 0;
+                   virtual HRESULT WINAPI startElement(BSTR *strNamespaceURI,BSTR *strLocalName,BSTR *strQName,IVBSAXAttributes *oAttributes) = 0;
+                   virtual HRESULT WINAPI endElement(BSTR *strNamespaceURI,BSTR *strLocalName,BSTR *strQName) = 0;
+                   virtual HRESULT WINAPI characters(BSTR *strChars) = 0;
+                   virtual HRESULT WINAPI ignorableWhitespace(BSTR *strChars) = 0;
+                   virtual HRESULT WINAPI processingInstruction(BSTR *strTarget,BSTR *strData) = 0;
+                   virtual HRESULT WINAPI skippedEntity(BSTR *strName) = 0;
     };
 #else
     typedef struct IVBSAXContentHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXContentHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXContentHandler *This);
 	ULONG (WINAPI *Release)(IVBSAXContentHandler *This);
@@ -4623,10 +4623,10 @@ extern "C" {
 	HRESULT (WINAPI *ignorableWhitespace)(IVBSAXContentHandler *This,BSTR *strChars);
 	HRESULT (WINAPI *processingInstruction)(IVBSAXContentHandler *This,BSTR *strTarget,BSTR *strData);
 	HRESULT (WINAPI *skippedEntity)(IVBSAXContentHandler *This,BSTR *strName);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXContentHandlerVtbl;
     struct IVBSAXContentHandler {
-      CONST_VTBL struct IVBSAXContentHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXContentHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXContentHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4679,12 +4679,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXDTDHandler : public IDispatch {
     public:
-      virtual HRESULT WINAPI notationDecl(BSTR *strName,BSTR *strPublicId,BSTR *strSystemId) = 0;
-      virtual HRESULT WINAPI unparsedEntityDecl(BSTR *strName,BSTR *strPublicId,BSTR *strSystemId,BSTR *strNotationName) = 0;
+                   virtual HRESULT WINAPI notationDecl(BSTR *strName,BSTR *strPublicId,BSTR *strSystemId) = 0;
+                   virtual HRESULT WINAPI unparsedEntityDecl(BSTR *strName,BSTR *strPublicId,BSTR *strSystemId,BSTR *strNotationName) = 0;
     };
 #else
     typedef struct IVBSAXDTDHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXDTDHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXDTDHandler *This);
 	ULONG (WINAPI *Release)(IVBSAXDTDHandler *This);
@@ -4694,10 +4694,10 @@ extern "C" {
 	HRESULT (WINAPI *Invoke)(IVBSAXDTDHandler *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
 	HRESULT (WINAPI *notationDecl)(IVBSAXDTDHandler *This,BSTR *strName,BSTR *strPublicId,BSTR *strSystemId);
 	HRESULT (WINAPI *unparsedEntityDecl)(IVBSAXDTDHandler *This,BSTR *strName,BSTR *strPublicId,BSTR *strSystemId,BSTR *strNotationName);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXDTDHandlerVtbl;
     struct IVBSAXDTDHandler {
-      CONST_VTBL struct IVBSAXDTDHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXDTDHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXDTDHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4723,13 +4723,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXErrorHandler : public IDispatch {
     public:
-      virtual HRESULT WINAPI error(IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode) = 0;
-      virtual HRESULT WINAPI fatalError(IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode) = 0;
-      virtual HRESULT WINAPI ignorableWarning(IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode) = 0;
+                   virtual HRESULT WINAPI error(IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode) = 0;
+                   virtual HRESULT WINAPI fatalError(IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode) = 0;
+                   virtual HRESULT WINAPI ignorableWarning(IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode) = 0;
     };
 #else
     typedef struct IVBSAXErrorHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXErrorHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXErrorHandler *This);
 	ULONG (WINAPI *Release)(IVBSAXErrorHandler *This);
@@ -4740,10 +4740,10 @@ extern "C" {
 	HRESULT (WINAPI *error)(IVBSAXErrorHandler *This,IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode);
 	HRESULT (WINAPI *fatalError)(IVBSAXErrorHandler *This,IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode);
 	HRESULT (WINAPI *ignorableWarning)(IVBSAXErrorHandler *This,IVBSAXLocator *oLocator,BSTR *strErrorMessage,__LONG32 nErrorCode);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXErrorHandlerVtbl;
     struct IVBSAXErrorHandler {
-      CONST_VTBL struct IVBSAXErrorHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXErrorHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXErrorHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4772,17 +4772,17 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXLexicalHandler : public IDispatch {
     public:
-      virtual HRESULT WINAPI startDTD(BSTR *strName,BSTR *strPublicId,BSTR *strSystemId) = 0;
-      virtual HRESULT WINAPI endDTD(void) = 0;
-      virtual HRESULT WINAPI startEntity(BSTR *strName) = 0;
-      virtual HRESULT WINAPI endEntity(BSTR *strName) = 0;
-      virtual HRESULT WINAPI startCDATA(void) = 0;
-      virtual HRESULT WINAPI endCDATA(void) = 0;
-      virtual HRESULT WINAPI comment(BSTR *strChars) = 0;
+                   virtual HRESULT WINAPI startDTD(BSTR *strName,BSTR *strPublicId,BSTR *strSystemId) = 0;
+                   virtual HRESULT WINAPI endDTD(void) = 0;
+                   virtual HRESULT WINAPI startEntity(BSTR *strName) = 0;
+                   virtual HRESULT WINAPI endEntity(BSTR *strName) = 0;
+                   virtual HRESULT WINAPI startCDATA(void) = 0;
+                   virtual HRESULT WINAPI endCDATA(void) = 0;
+                   virtual HRESULT WINAPI comment(BSTR *strChars) = 0;
     };
 #else
     typedef struct IVBSAXLexicalHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXLexicalHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXLexicalHandler *This);
 	ULONG (WINAPI *Release)(IVBSAXLexicalHandler *This);
@@ -4797,10 +4797,10 @@ extern "C" {
 	HRESULT (WINAPI *startCDATA)(IVBSAXLexicalHandler *This);
 	HRESULT (WINAPI *endCDATA)(IVBSAXLexicalHandler *This);
 	HRESULT (WINAPI *comment)(IVBSAXLexicalHandler *This,BSTR *strChars);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXLexicalHandlerVtbl;
     struct IVBSAXLexicalHandler {
-      CONST_VTBL struct IVBSAXLexicalHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXLexicalHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXLexicalHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4841,14 +4841,14 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXDeclHandler : public IDispatch {
     public:
-      virtual HRESULT WINAPI elementDecl(BSTR *strName,BSTR *strModel) = 0;
-      virtual HRESULT WINAPI attributeDecl(BSTR *strElementName,BSTR *strAttributeName,BSTR *strType,BSTR *strValueDefault,BSTR *strValue) = 0;
-      virtual HRESULT WINAPI internalEntityDecl(BSTR *strName,BSTR *strValue) = 0;
-      virtual HRESULT WINAPI externalEntityDecl(BSTR *strName,BSTR *strPublicId,BSTR *strSystemId) = 0;
+                   virtual HRESULT WINAPI elementDecl(BSTR *strName,BSTR *strModel) = 0;
+                   virtual HRESULT WINAPI attributeDecl(BSTR *strElementName,BSTR *strAttributeName,BSTR *strType,BSTR *strValueDefault,BSTR *strValue) = 0;
+                   virtual HRESULT WINAPI internalEntityDecl(BSTR *strName,BSTR *strValue) = 0;
+                   virtual HRESULT WINAPI externalEntityDecl(BSTR *strName,BSTR *strPublicId,BSTR *strSystemId) = 0;
     };
 #else
     typedef struct IVBSAXDeclHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXDeclHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXDeclHandler *This);
 	ULONG (WINAPI *Release)(IVBSAXDeclHandler *This);
@@ -4860,10 +4860,10 @@ extern "C" {
 	HRESULT (WINAPI *attributeDecl)(IVBSAXDeclHandler *This,BSTR *strElementName,BSTR *strAttributeName,BSTR *strType,BSTR *strValueDefault,BSTR *strValue);
 	HRESULT (WINAPI *internalEntityDecl)(IVBSAXDeclHandler *This,BSTR *strName,BSTR *strValue);
 	HRESULT (WINAPI *externalEntityDecl)(IVBSAXDeclHandler *This,BSTR *strName,BSTR *strPublicId,BSTR *strSystemId);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXDeclHandlerVtbl;
     struct IVBSAXDeclHandler {
-      CONST_VTBL struct IVBSAXDeclHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXDeclHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXDeclHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4895,22 +4895,22 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBSAXAttributes : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_length(int *nLength) = 0;
-      virtual HRESULT WINAPI getURI(int nIndex,BSTR *strURI) = 0;
-      virtual HRESULT WINAPI getLocalName(int nIndex,BSTR *strLocalName) = 0;
-      virtual HRESULT WINAPI getQName(int nIndex,BSTR *strQName) = 0;
-      virtual HRESULT WINAPI getIndexFromName(BSTR strURI,BSTR strLocalName,int *nIndex) = 0;
-      virtual HRESULT WINAPI getIndexFromQName(BSTR strQName,int *nIndex) = 0;
-      virtual HRESULT WINAPI getType(int nIndex,BSTR *strType) = 0;
-      virtual HRESULT WINAPI getTypeFromName(BSTR strURI,BSTR strLocalName,BSTR *strType) = 0;
-      virtual HRESULT WINAPI getTypeFromQName(BSTR strQName,BSTR *strType) = 0;
-      virtual HRESULT WINAPI getValue(int nIndex,BSTR *strValue) = 0;
-      virtual HRESULT WINAPI getValueFromName(BSTR strURI,BSTR strLocalName,BSTR *strValue) = 0;
-      virtual HRESULT WINAPI getValueFromQName(BSTR strQName,BSTR *strValue) = 0;
+                   virtual HRESULT WINAPI get_length(int *nLength) = 0;
+                   virtual HRESULT WINAPI getURI(int nIndex,BSTR *strURI) = 0;
+                   virtual HRESULT WINAPI getLocalName(int nIndex,BSTR *strLocalName) = 0;
+                   virtual HRESULT WINAPI getQName(int nIndex,BSTR *strQName) = 0;
+                   virtual HRESULT WINAPI getIndexFromName(BSTR strURI,BSTR strLocalName,int *nIndex) = 0;
+                   virtual HRESULT WINAPI getIndexFromQName(BSTR strQName,int *nIndex) = 0;
+                   virtual HRESULT WINAPI getType(int nIndex,BSTR *strType) = 0;
+                   virtual HRESULT WINAPI getTypeFromName(BSTR strURI,BSTR strLocalName,BSTR *strType) = 0;
+                   virtual HRESULT WINAPI getTypeFromQName(BSTR strQName,BSTR *strType) = 0;
+                   virtual HRESULT WINAPI getValue(int nIndex,BSTR *strValue) = 0;
+                   virtual HRESULT WINAPI getValueFromName(BSTR strURI,BSTR strLocalName,BSTR *strValue) = 0;
+                   virtual HRESULT WINAPI getValueFromQName(BSTR strQName,BSTR *strValue) = 0;
     };
 #else
     typedef struct IVBSAXAttributesVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBSAXAttributes *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBSAXAttributes *This);
 	ULONG (WINAPI *Release)(IVBSAXAttributes *This);
@@ -4930,10 +4930,10 @@ extern "C" {
 	HRESULT (WINAPI *getValue)(IVBSAXAttributes *This,int nIndex,BSTR *strValue);
 	HRESULT (WINAPI *getValueFromName)(IVBSAXAttributes *This,BSTR strURI,BSTR strLocalName,BSTR *strValue);
 	HRESULT (WINAPI *getValueFromQName)(IVBSAXAttributes *This,BSTR strQName,BSTR *strValue);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBSAXAttributesVtbl;
     struct IVBSAXAttributes {
-      CONST_VTBL struct IVBSAXAttributesVtbl *lpVtbl;
+                   CONST_VTBL struct IVBSAXAttributesVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBSAXAttributes_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -4989,27 +4989,27 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IMXWriter : public IDispatch {
     public:
-      virtual HRESULT WINAPI put_output(VARIANT varDestination) = 0;
-      virtual HRESULT WINAPI get_output(VARIANT *varDestination) = 0;
-      virtual HRESULT WINAPI put_encoding(BSTR strEncoding) = 0;
-      virtual HRESULT WINAPI get_encoding(BSTR *strEncoding) = 0;
-      virtual HRESULT WINAPI put_byteOrderMark(VARIANT_BOOL fWriteByteOrderMark) = 0;
-      virtual HRESULT WINAPI get_byteOrderMark(VARIANT_BOOL *fWriteByteOrderMark) = 0;
-      virtual HRESULT WINAPI put_indent(VARIANT_BOOL fIndentMode) = 0;
-      virtual HRESULT WINAPI get_indent(VARIANT_BOOL *fIndentMode) = 0;
-      virtual HRESULT WINAPI put_standalone(VARIANT_BOOL fValue) = 0;
-      virtual HRESULT WINAPI get_standalone(VARIANT_BOOL *fValue) = 0;
-      virtual HRESULT WINAPI put_omitXMLDeclaration(VARIANT_BOOL fValue) = 0;
-      virtual HRESULT WINAPI get_omitXMLDeclaration(VARIANT_BOOL *fValue) = 0;
-      virtual HRESULT WINAPI put_version(BSTR strVersion) = 0;
-      virtual HRESULT WINAPI get_version(BSTR *strVersion) = 0;
-      virtual HRESULT WINAPI put_disableOutputEscaping(VARIANT_BOOL fValue) = 0;
-      virtual HRESULT WINAPI get_disableOutputEscaping(VARIANT_BOOL *fValue) = 0;
-      virtual HRESULT WINAPI flush(void) = 0;
+                   virtual HRESULT WINAPI put_output(VARIANT varDestination) = 0;
+                   virtual HRESULT WINAPI get_output(VARIANT *varDestination) = 0;
+                   virtual HRESULT WINAPI put_encoding(BSTR strEncoding) = 0;
+                   virtual HRESULT WINAPI get_encoding(BSTR *strEncoding) = 0;
+                   virtual HRESULT WINAPI put_byteOrderMark(VARIANT_BOOL fWriteByteOrderMark) = 0;
+                   virtual HRESULT WINAPI get_byteOrderMark(VARIANT_BOOL *fWriteByteOrderMark) = 0;
+                   virtual HRESULT WINAPI put_indent(VARIANT_BOOL fIndentMode) = 0;
+                   virtual HRESULT WINAPI get_indent(VARIANT_BOOL *fIndentMode) = 0;
+                   virtual HRESULT WINAPI put_standalone(VARIANT_BOOL fValue) = 0;
+                   virtual HRESULT WINAPI get_standalone(VARIANT_BOOL *fValue) = 0;
+                   virtual HRESULT WINAPI put_omitXMLDeclaration(VARIANT_BOOL fValue) = 0;
+                   virtual HRESULT WINAPI get_omitXMLDeclaration(VARIANT_BOOL *fValue) = 0;
+                   virtual HRESULT WINAPI put_version(BSTR strVersion) = 0;
+                   virtual HRESULT WINAPI get_version(BSTR *strVersion) = 0;
+                   virtual HRESULT WINAPI put_disableOutputEscaping(VARIANT_BOOL fValue) = 0;
+                   virtual HRESULT WINAPI get_disableOutputEscaping(VARIANT_BOOL *fValue) = 0;
+                   virtual HRESULT WINAPI flush(void) = 0;
     };
 #else
     typedef struct IMXWriterVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IMXWriter *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IMXWriter *This);
 	ULONG (WINAPI *Release)(IMXWriter *This);
@@ -5034,10 +5034,10 @@ extern "C" {
 	HRESULT (WINAPI *put_disableOutputEscaping)(IMXWriter *This,VARIANT_BOOL fValue);
 	HRESULT (WINAPI *get_disableOutputEscaping)(IMXWriter *This,VARIANT_BOOL *fValue);
 	HRESULT (WINAPI *flush)(IMXWriter *This);
-      END_INTERFACE
+                   END_INTERFACE
     } IMXWriterVtbl;
     struct IMXWriter {
-      CONST_VTBL struct IMXWriterVtbl *lpVtbl;
+                   CONST_VTBL struct IMXWriterVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IMXWriter_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5109,21 +5109,21 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IMXAttributes : public IDispatch {
     public:
-      virtual HRESULT WINAPI addAttribute(BSTR strURI,BSTR strLocalName,BSTR strQName,BSTR strType,BSTR strValue) = 0;
-      virtual HRESULT WINAPI addAttributeFromIndex(VARIANT varAtts,int nIndex) = 0;
-      virtual HRESULT WINAPI clear(void) = 0;
-      virtual HRESULT WINAPI removeAttribute(int nIndex) = 0;
-      virtual HRESULT WINAPI setAttribute(int nIndex,BSTR strURI,BSTR strLocalName,BSTR strQName,BSTR strType,BSTR strValue) = 0;
-      virtual HRESULT WINAPI setAttributes(VARIANT varAtts) = 0;
-      virtual HRESULT WINAPI setLocalName(int nIndex,BSTR strLocalName) = 0;
-      virtual HRESULT WINAPI setQName(int nIndex,BSTR strQName) = 0;
-      virtual HRESULT WINAPI setType(int nIndex,BSTR strType) = 0;
-      virtual HRESULT WINAPI setURI(int nIndex,BSTR strURI) = 0;
-      virtual HRESULT WINAPI setValue(int nIndex,BSTR strValue) = 0;
+                   virtual HRESULT WINAPI addAttribute(BSTR strURI,BSTR strLocalName,BSTR strQName,BSTR strType,BSTR strValue) = 0;
+                   virtual HRESULT WINAPI addAttributeFromIndex(VARIANT varAtts,int nIndex) = 0;
+                   virtual HRESULT WINAPI clear(void) = 0;
+                   virtual HRESULT WINAPI removeAttribute(int nIndex) = 0;
+                   virtual HRESULT WINAPI setAttribute(int nIndex,BSTR strURI,BSTR strLocalName,BSTR strQName,BSTR strType,BSTR strValue) = 0;
+                   virtual HRESULT WINAPI setAttributes(VARIANT varAtts) = 0;
+                   virtual HRESULT WINAPI setLocalName(int nIndex,BSTR strLocalName) = 0;
+                   virtual HRESULT WINAPI setQName(int nIndex,BSTR strQName) = 0;
+                   virtual HRESULT WINAPI setType(int nIndex,BSTR strType) = 0;
+                   virtual HRESULT WINAPI setURI(int nIndex,BSTR strURI) = 0;
+                   virtual HRESULT WINAPI setValue(int nIndex,BSTR strValue) = 0;
     };
 #else
     typedef struct IMXAttributesVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IMXAttributes *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IMXAttributes *This);
 	ULONG (WINAPI *Release)(IMXAttributes *This);
@@ -5142,10 +5142,10 @@ extern "C" {
 	HRESULT (WINAPI *setType)(IMXAttributes *This,int nIndex,BSTR strType);
 	HRESULT (WINAPI *setURI)(IMXAttributes *This,int nIndex,BSTR strURI);
 	HRESULT (WINAPI *setValue)(IMXAttributes *This,int nIndex,BSTR strValue);
-      END_INTERFACE
+                   END_INTERFACE
     } IMXAttributesVtbl;
     struct IMXAttributes {
-      CONST_VTBL struct IMXAttributesVtbl *lpVtbl;
+                   CONST_VTBL struct IMXAttributesVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IMXAttributes_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5198,13 +5198,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IMXReaderControl : public IDispatch {
     public:
-      virtual HRESULT WINAPI abort(void) = 0;
-      virtual HRESULT WINAPI resume(void) = 0;
-      virtual HRESULT WINAPI suspend(void) = 0;
+                   virtual HRESULT WINAPI abort(void) = 0;
+                   virtual HRESULT WINAPI resume(void) = 0;
+                   virtual HRESULT WINAPI suspend(void) = 0;
     };
 #else
     typedef struct IMXReaderControlVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IMXReaderControl *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IMXReaderControl *This);
 	ULONG (WINAPI *Release)(IMXReaderControl *This);
@@ -5215,10 +5215,10 @@ extern "C" {
 	HRESULT (WINAPI *abort)(IMXReaderControl *This);
 	HRESULT (WINAPI *resume)(IMXReaderControl *This);
 	HRESULT (WINAPI *suspend)(IMXReaderControl *This);
-      END_INTERFACE
+                   END_INTERFACE
     } IMXReaderControlVtbl;
     struct IMXReaderControl {
-      CONST_VTBL struct IMXReaderControlVtbl *lpVtbl;
+                   CONST_VTBL struct IMXReaderControlVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IMXReaderControl_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5247,11 +5247,11 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IMXSchemaDeclHandler : public IDispatch {
     public:
-      virtual HRESULT WINAPI schemaElementDecl(ISchemaElement *oSchemaElement) = 0;
+                   virtual HRESULT WINAPI schemaElementDecl(ISchemaElement *oSchemaElement) = 0;
     };
 #else
     typedef struct IMXSchemaDeclHandlerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IMXSchemaDeclHandler *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IMXSchemaDeclHandler *This);
 	ULONG (WINAPI *Release)(IMXSchemaDeclHandler *This);
@@ -5260,10 +5260,10 @@ extern "C" {
 	HRESULT (WINAPI *GetIDsOfNames)(IMXSchemaDeclHandler *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
 	HRESULT (WINAPI *Invoke)(IMXSchemaDeclHandler *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
 	HRESULT (WINAPI *schemaElementDecl)(IMXSchemaDeclHandler *This,ISchemaElement *oSchemaElement);
-      END_INTERFACE
+                   END_INTERFACE
     } IMXSchemaDeclHandlerVtbl;
     struct IMXSchemaDeclHandler {
-      CONST_VTBL struct IMXSchemaDeclHandlerVtbl *lpVtbl;
+                   CONST_VTBL struct IMXSchemaDeclHandlerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IMXSchemaDeclHandler_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5286,15 +5286,15 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMSchemaCollection2 : public IXMLDOMSchemaCollection {
     public:
-      virtual HRESULT WINAPI validate(void) = 0;
-      virtual HRESULT WINAPI put_validateOnLoad(VARIANT_BOOL validateOnLoad) = 0;
-      virtual HRESULT WINAPI get_validateOnLoad(VARIANT_BOOL *validateOnLoad) = 0;
-      virtual HRESULT WINAPI getSchema(BSTR namespaceURI,ISchema **schema) = 0;
-      virtual HRESULT WINAPI getDeclaration(IXMLDOMNode *node,ISchemaItem **item) = 0;
+                   virtual HRESULT WINAPI validate(void) = 0;
+                   virtual HRESULT WINAPI put_validateOnLoad(VARIANT_BOOL validateOnLoad) = 0;
+                   virtual HRESULT WINAPI get_validateOnLoad(VARIANT_BOOL *validateOnLoad) = 0;
+                   virtual HRESULT WINAPI getSchema(BSTR namespaceURI,ISchema **schema) = 0;
+                   virtual HRESULT WINAPI getDeclaration(IXMLDOMNode *node,ISchemaItem **item) = 0;
     };
 #else
     typedef struct IXMLDOMSchemaCollection2Vtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMSchemaCollection2 *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMSchemaCollection2 *This);
 	ULONG (WINAPI *Release)(IXMLDOMSchemaCollection2 *This);
@@ -5314,10 +5314,10 @@ extern "C" {
 	HRESULT (WINAPI *get_validateOnLoad)(IXMLDOMSchemaCollection2 *This,VARIANT_BOOL *validateOnLoad);
 	HRESULT (WINAPI *getSchema)(IXMLDOMSchemaCollection2 *This,BSTR namespaceURI,ISchema **schema);
 	HRESULT (WINAPI *getDeclaration)(IXMLDOMSchemaCollection2 *This,IXMLDOMNode *node,ISchemaItem **item);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMSchemaCollection2Vtbl;
     struct IXMLDOMSchemaCollection2 {
-      CONST_VTBL struct IXMLDOMSchemaCollection2Vtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMSchemaCollection2Vtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMSchemaCollection2_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5359,13 +5359,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaStringCollection : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_item(__LONG32 index,BSTR *bstr) = 0;
-      virtual HRESULT WINAPI get_length(__LONG32 *length) = 0;
-      virtual HRESULT WINAPI get__newEnum(IUnknown **ppunk) = 0;
+                   virtual HRESULT WINAPI get_item(__LONG32 index,BSTR *bstr) = 0;
+                   virtual HRESULT WINAPI get_length(__LONG32 *length) = 0;
+                   virtual HRESULT WINAPI get__newEnum(IUnknown **ppunk) = 0;
     };
 #else
     typedef struct ISchemaStringCollectionVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaStringCollection *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaStringCollection *This);
 	ULONG (WINAPI *Release)(ISchemaStringCollection *This);
@@ -5376,10 +5376,10 @@ extern "C" {
 	HRESULT (WINAPI *get_item)(ISchemaStringCollection *This,__LONG32 index,BSTR *bstr);
 	HRESULT (WINAPI *get_length)(ISchemaStringCollection *This,__LONG32 *length);
 	HRESULT (WINAPI *get__newEnum)(ISchemaStringCollection *This,IUnknown **ppunk);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaStringCollectionVtbl;
     struct ISchemaStringCollection {
-      CONST_VTBL struct ISchemaStringCollectionVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaStringCollectionVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaStringCollection_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5408,15 +5408,15 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaItemCollection : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_item(__LONG32 index,ISchemaItem **item) = 0;
-      virtual HRESULT WINAPI itemByName(BSTR name,ISchemaItem **item) = 0;
-      virtual HRESULT WINAPI itemByQName(BSTR name,BSTR namespaceURI,ISchemaItem **item) = 0;
-      virtual HRESULT WINAPI get_length(__LONG32 *length) = 0;
-      virtual HRESULT WINAPI get__newEnum(IUnknown **ppunk) = 0;
+                   virtual HRESULT WINAPI get_item(__LONG32 index,ISchemaItem **item) = 0;
+                   virtual HRESULT WINAPI itemByName(BSTR name,ISchemaItem **item) = 0;
+                   virtual HRESULT WINAPI itemByQName(BSTR name,BSTR namespaceURI,ISchemaItem **item) = 0;
+                   virtual HRESULT WINAPI get_length(__LONG32 *length) = 0;
+                   virtual HRESULT WINAPI get__newEnum(IUnknown **ppunk) = 0;
     };
 #else
     typedef struct ISchemaItemCollectionVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaItemCollection *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaItemCollection *This);
 	ULONG (WINAPI *Release)(ISchemaItemCollection *This);
@@ -5429,10 +5429,10 @@ extern "C" {
 	HRESULT (WINAPI *itemByQName)(ISchemaItemCollection *This,BSTR name,BSTR namespaceURI,ISchemaItem **item);
 	HRESULT (WINAPI *get_length)(ISchemaItemCollection *This,__LONG32 *length);
 	HRESULT (WINAPI *get__newEnum)(ISchemaItemCollection *This,IUnknown **ppunk);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaItemCollectionVtbl;
     struct ISchemaItemCollection {
-      CONST_VTBL struct ISchemaItemCollectionVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaItemCollectionVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaItemCollection_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5467,17 +5467,17 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaItem : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_name(BSTR *name) = 0;
-      virtual HRESULT WINAPI get_namespaceURI(BSTR *namespaceURI) = 0;
-      virtual HRESULT WINAPI get_schema(ISchema **schema) = 0;
-      virtual HRESULT WINAPI get_id(BSTR *id) = 0;
-      virtual HRESULT WINAPI get_itemType(SOMITEMTYPE *itemType) = 0;
-      virtual HRESULT WINAPI get_unhandledAttributes(IVBSAXAttributes **attributes) = 0;
-      virtual HRESULT WINAPI writeAnnotation(IUnknown *annotationSink,VARIANT_BOOL *isWritten) = 0;
+                   virtual HRESULT WINAPI get_name(BSTR *name) = 0;
+                   virtual HRESULT WINAPI get_namespaceURI(BSTR *namespaceURI) = 0;
+                   virtual HRESULT WINAPI get_schema(ISchema **schema) = 0;
+                   virtual HRESULT WINAPI get_id(BSTR *id) = 0;
+                   virtual HRESULT WINAPI get_itemType(SOMITEMTYPE *itemType) = 0;
+                   virtual HRESULT WINAPI get_unhandledAttributes(IVBSAXAttributes **attributes) = 0;
+                   virtual HRESULT WINAPI writeAnnotation(IUnknown *annotationSink,VARIANT_BOOL *isWritten) = 0;
     };
 #else
     typedef struct ISchemaItemVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaItem *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaItem *This);
 	ULONG (WINAPI *Release)(ISchemaItem *This);
@@ -5492,10 +5492,10 @@ extern "C" {
 	HRESULT (WINAPI *get_itemType)(ISchemaItem *This,SOMITEMTYPE *itemType);
 	HRESULT (WINAPI *get_unhandledAttributes)(ISchemaItem *This,IVBSAXAttributes **attributes);
 	HRESULT (WINAPI *writeAnnotation)(ISchemaItem *This,IUnknown *annotationSink,VARIANT_BOOL *isWritten);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaItemVtbl;
     struct ISchemaItem {
-      CONST_VTBL struct ISchemaItemVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaItemVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaItem_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5536,19 +5536,19 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchema : public ISchemaItem {
     public:
-      virtual HRESULT WINAPI get_targetNamespace(BSTR *targetNamespace) = 0;
-      virtual HRESULT WINAPI get_version(BSTR *version) = 0;
-      virtual HRESULT WINAPI get_types(ISchemaItemCollection **types) = 0;
-      virtual HRESULT WINAPI get_elements(ISchemaItemCollection **elements) = 0;
-      virtual HRESULT WINAPI get_attributes(ISchemaItemCollection **attributes) = 0;
-      virtual HRESULT WINAPI get_attributeGroups(ISchemaItemCollection **attributeGroups) = 0;
-      virtual HRESULT WINAPI get_modelGroups(ISchemaItemCollection **modelGroups) = 0;
-      virtual HRESULT WINAPI get_notations(ISchemaItemCollection **notations) = 0;
-      virtual HRESULT WINAPI get_schemaLocations(ISchemaStringCollection **schemaLocations) = 0;
+                   virtual HRESULT WINAPI get_targetNamespace(BSTR *targetNamespace) = 0;
+                   virtual HRESULT WINAPI get_version(BSTR *version) = 0;
+                   virtual HRESULT WINAPI get_types(ISchemaItemCollection **types) = 0;
+                   virtual HRESULT WINAPI get_elements(ISchemaItemCollection **elements) = 0;
+                   virtual HRESULT WINAPI get_attributes(ISchemaItemCollection **attributes) = 0;
+                   virtual HRESULT WINAPI get_attributeGroups(ISchemaItemCollection **attributeGroups) = 0;
+                   virtual HRESULT WINAPI get_modelGroups(ISchemaItemCollection **modelGroups) = 0;
+                   virtual HRESULT WINAPI get_notations(ISchemaItemCollection **notations) = 0;
+                   virtual HRESULT WINAPI get_schemaLocations(ISchemaStringCollection **schemaLocations) = 0;
     };
 #else
     typedef struct ISchemaVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchema *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchema *This);
 	ULONG (WINAPI *Release)(ISchema *This);
@@ -5572,10 +5572,10 @@ extern "C" {
 	HRESULT (WINAPI *get_modelGroups)(ISchema *This,ISchemaItemCollection **modelGroups);
 	HRESULT (WINAPI *get_notations)(ISchema *This,ISchemaItemCollection **notations);
 	HRESULT (WINAPI *get_schemaLocations)(ISchema *This,ISchemaStringCollection **schemaLocations);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaVtbl;
     struct ISchema {
-      CONST_VTBL struct ISchemaVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchema_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5629,12 +5629,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaParticle : public ISchemaItem {
     public:
-      virtual HRESULT WINAPI get_minOccurs(VARIANT *minOccurs) = 0;
-      virtual HRESULT WINAPI get_maxOccurs(VARIANT *maxOccurs) = 0;
+                   virtual HRESULT WINAPI get_minOccurs(VARIANT *minOccurs) = 0;
+                   virtual HRESULT WINAPI get_maxOccurs(VARIANT *maxOccurs) = 0;
     };
 #else
     typedef struct ISchemaParticleVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaParticle *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaParticle *This);
 	ULONG (WINAPI *Release)(ISchemaParticle *This);
@@ -5651,10 +5651,10 @@ extern "C" {
 	HRESULT (WINAPI *writeAnnotation)(ISchemaParticle *This,IUnknown *annotationSink,VARIANT_BOOL *isWritten);
 	HRESULT (WINAPI *get_minOccurs)(ISchemaParticle *This,VARIANT *minOccurs);
 	HRESULT (WINAPI *get_maxOccurs)(ISchemaParticle *This,VARIANT *maxOccurs);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaParticleVtbl;
     struct ISchemaParticle {
-      CONST_VTBL struct ISchemaParticleVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaParticleVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaParticle_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5687,16 +5687,16 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaAttribute : public ISchemaItem {
     public:
-      virtual HRESULT WINAPI get_type(ISchemaType **type) = 0;
-      virtual HRESULT WINAPI get_scope(ISchemaComplexType **scope) = 0;
-      virtual HRESULT WINAPI get_defaultValue(BSTR *defaultValue) = 0;
-      virtual HRESULT WINAPI get_fixedValue(BSTR *fixedValue) = 0;
-      virtual HRESULT WINAPI get_use(SCHEMAUSE *use) = 0;
-      virtual HRESULT WINAPI get_isReference(VARIANT_BOOL *reference) = 0;
+                   virtual HRESULT WINAPI get_type(ISchemaType **type) = 0;
+                   virtual HRESULT WINAPI get_scope(ISchemaComplexType **scope) = 0;
+                   virtual HRESULT WINAPI get_defaultValue(BSTR *defaultValue) = 0;
+                   virtual HRESULT WINAPI get_fixedValue(BSTR *fixedValue) = 0;
+                   virtual HRESULT WINAPI get_use(SCHEMAUSE *use) = 0;
+                   virtual HRESULT WINAPI get_isReference(VARIANT_BOOL *reference) = 0;
     };
 #else
     typedef struct ISchemaAttributeVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaAttribute *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaAttribute *This);
 	ULONG (WINAPI *Release)(ISchemaAttribute *This);
@@ -5717,10 +5717,10 @@ extern "C" {
 	HRESULT (WINAPI *get_fixedValue)(ISchemaAttribute *This,BSTR *fixedValue);
 	HRESULT (WINAPI *get_use)(ISchemaAttribute *This,SCHEMAUSE *use);
 	HRESULT (WINAPI *get_isReference)(ISchemaAttribute *This,VARIANT_BOOL *reference);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaAttributeVtbl;
     struct ISchemaAttribute {
-      CONST_VTBL struct ISchemaAttributeVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaAttributeVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaAttribute_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5765,21 +5765,21 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaElement : public ISchemaParticle {
     public:
-      virtual HRESULT WINAPI get_type(ISchemaType **type) = 0;
-      virtual HRESULT WINAPI get_scope(ISchemaComplexType **scope) = 0;
-      virtual HRESULT WINAPI get_defaultValue(BSTR *defaultValue) = 0;
-      virtual HRESULT WINAPI get_fixedValue(BSTR *fixedValue) = 0;
-      virtual HRESULT WINAPI get_isNillable(VARIANT_BOOL *nillable) = 0;
-      virtual HRESULT WINAPI get_identityConstraints(ISchemaItemCollection **constraints) = 0;
-      virtual HRESULT WINAPI get_substitutionGroup(ISchemaElement **element) = 0;
-      virtual HRESULT WINAPI get_substitutionGroupExclusions(SCHEMADERIVATIONMETHOD *exclusions) = 0;
-      virtual HRESULT WINAPI get_disallowedSubstitutions(SCHEMADERIVATIONMETHOD *disallowed) = 0;
-      virtual HRESULT WINAPI get_isAbstract(VARIANT_BOOL *abstract) = 0;
-      virtual HRESULT WINAPI get_isReference(VARIANT_BOOL *reference) = 0;
+                   virtual HRESULT WINAPI get_type(ISchemaType **type) = 0;
+                   virtual HRESULT WINAPI get_scope(ISchemaComplexType **scope) = 0;
+                   virtual HRESULT WINAPI get_defaultValue(BSTR *defaultValue) = 0;
+                   virtual HRESULT WINAPI get_fixedValue(BSTR *fixedValue) = 0;
+                   virtual HRESULT WINAPI get_isNillable(VARIANT_BOOL *nillable) = 0;
+                   virtual HRESULT WINAPI get_identityConstraints(ISchemaItemCollection **constraints) = 0;
+                   virtual HRESULT WINAPI get_substitutionGroup(ISchemaElement **element) = 0;
+                   virtual HRESULT WINAPI get_substitutionGroupExclusions(SCHEMADERIVATIONMETHOD *exclusions) = 0;
+                   virtual HRESULT WINAPI get_disallowedSubstitutions(SCHEMADERIVATIONMETHOD *disallowed) = 0;
+                   virtual HRESULT WINAPI get_isAbstract(VARIANT_BOOL *abstract) = 0;
+                   virtual HRESULT WINAPI get_isReference(VARIANT_BOOL *reference) = 0;
     };
 #else
     typedef struct ISchemaElementVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaElement *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaElement *This);
 	ULONG (WINAPI *Release)(ISchemaElement *This);
@@ -5807,10 +5807,10 @@ extern "C" {
 	HRESULT (WINAPI *get_disallowedSubstitutions)(ISchemaElement *This,SCHEMADERIVATIONMETHOD *disallowed);
 	HRESULT (WINAPI *get_isAbstract)(ISchemaElement *This,VARIANT_BOOL *abstract);
 	HRESULT (WINAPI *get_isReference)(ISchemaElement *This,VARIANT_BOOL *reference);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaElementVtbl;
     struct ISchemaElement {
-      CONST_VTBL struct ISchemaElementVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaElementVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaElement_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -5872,27 +5872,27 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaType : public ISchemaItem {
     public:
-      virtual HRESULT WINAPI get_baseTypes(ISchemaItemCollection **baseTypes) = 0;
-      virtual HRESULT WINAPI get_final(SCHEMADERIVATIONMETHOD *final) = 0;
-      virtual HRESULT WINAPI get_variety(SCHEMATYPEVARIETY *variety) = 0;
-      virtual HRESULT WINAPI get_derivedBy(SCHEMADERIVATIONMETHOD *derivedBy) = 0;
-      virtual HRESULT WINAPI isValid(BSTR data,VARIANT_BOOL *valid) = 0;
-      virtual HRESULT WINAPI get_minExclusive(BSTR *minExclusive) = 0;
-      virtual HRESULT WINAPI get_minInclusive(BSTR *minInclusive) = 0;
-      virtual HRESULT WINAPI get_maxExclusive(BSTR *maxExclusive) = 0;
-      virtual HRESULT WINAPI get_maxInclusive(BSTR *maxInclusive) = 0;
-      virtual HRESULT WINAPI get_totalDigits(VARIANT *totalDigits) = 0;
-      virtual HRESULT WINAPI get_fractionDigits(VARIANT *fractionDigits) = 0;
-      virtual HRESULT WINAPI get_length(VARIANT *length) = 0;
-      virtual HRESULT WINAPI get_minLength(VARIANT *minLength) = 0;
-      virtual HRESULT WINAPI get_maxLength(VARIANT *maxLength) = 0;
-      virtual HRESULT WINAPI get_enumeration(ISchemaStringCollection **enumeration) = 0;
-      virtual HRESULT WINAPI get_whitespace(SCHEMAWHITESPACE *whitespace) = 0;
-      virtual HRESULT WINAPI get_patterns(ISchemaStringCollection **patterns) = 0;
+                   virtual HRESULT WINAPI get_baseTypes(ISchemaItemCollection **baseTypes) = 0;
+                   virtual HRESULT WINAPI get_final(SCHEMADERIVATIONMETHOD *final) = 0;
+                   virtual HRESULT WINAPI get_variety(SCHEMATYPEVARIETY *variety) = 0;
+                   virtual HRESULT WINAPI get_derivedBy(SCHEMADERIVATIONMETHOD *derivedBy) = 0;
+                   virtual HRESULT WINAPI isValid(BSTR data,VARIANT_BOOL *valid) = 0;
+                   virtual HRESULT WINAPI get_minExclusive(BSTR *minExclusive) = 0;
+                   virtual HRESULT WINAPI get_minInclusive(BSTR *minInclusive) = 0;
+                   virtual HRESULT WINAPI get_maxExclusive(BSTR *maxExclusive) = 0;
+                   virtual HRESULT WINAPI get_maxInclusive(BSTR *maxInclusive) = 0;
+                   virtual HRESULT WINAPI get_totalDigits(VARIANT *totalDigits) = 0;
+                   virtual HRESULT WINAPI get_fractionDigits(VARIANT *fractionDigits) = 0;
+                   virtual HRESULT WINAPI get_length(VARIANT *length) = 0;
+                   virtual HRESULT WINAPI get_minLength(VARIANT *minLength) = 0;
+                   virtual HRESULT WINAPI get_maxLength(VARIANT *maxLength) = 0;
+                   virtual HRESULT WINAPI get_enumeration(ISchemaStringCollection **enumeration) = 0;
+                   virtual HRESULT WINAPI get_whitespace(SCHEMAWHITESPACE *whitespace) = 0;
+                   virtual HRESULT WINAPI get_patterns(ISchemaStringCollection **patterns) = 0;
     };
 #else
     typedef struct ISchemaTypeVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaType *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaType *This);
 	ULONG (WINAPI *Release)(ISchemaType *This);
@@ -5924,10 +5924,10 @@ extern "C" {
 	HRESULT (WINAPI *get_enumeration)(ISchemaType *This,ISchemaStringCollection **enumeration);
 	HRESULT (WINAPI *get_whitespace)(ISchemaType *This,SCHEMAWHITESPACE *whitespace);
 	HRESULT (WINAPI *get_patterns)(ISchemaType *This,ISchemaStringCollection **patterns);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaTypeVtbl;
     struct ISchemaType {
-      CONST_VTBL struct ISchemaTypeVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaTypeVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaType_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6005,16 +6005,16 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaComplexType : public ISchemaType {
     public:
-      virtual HRESULT WINAPI get_isAbstract(VARIANT_BOOL *abstract) = 0;
-      virtual HRESULT WINAPI get_anyAttribute(ISchemaAny **anyAttribute) = 0;
-      virtual HRESULT WINAPI get_attributes(ISchemaItemCollection **attributes) = 0;
-      virtual HRESULT WINAPI get_contentType(SCHEMACONTENTTYPE *contentType) = 0;
-      virtual HRESULT WINAPI get_contentModel(ISchemaModelGroup **contentModel) = 0;
-      virtual HRESULT WINAPI get_prohibitedSubstitutions(SCHEMADERIVATIONMETHOD *prohibited) = 0;
+                   virtual HRESULT WINAPI get_isAbstract(VARIANT_BOOL *abstract) = 0;
+                   virtual HRESULT WINAPI get_anyAttribute(ISchemaAny **anyAttribute) = 0;
+                   virtual HRESULT WINAPI get_attributes(ISchemaItemCollection **attributes) = 0;
+                   virtual HRESULT WINAPI get_contentType(SCHEMACONTENTTYPE *contentType) = 0;
+                   virtual HRESULT WINAPI get_contentModel(ISchemaModelGroup **contentModel) = 0;
+                   virtual HRESULT WINAPI get_prohibitedSubstitutions(SCHEMADERIVATIONMETHOD *prohibited) = 0;
     };
 #else
     typedef struct ISchemaComplexTypeVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaComplexType *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaComplexType *This);
 	ULONG (WINAPI *Release)(ISchemaComplexType *This);
@@ -6052,10 +6052,10 @@ extern "C" {
 	HRESULT (WINAPI *get_contentType)(ISchemaComplexType *This,SCHEMACONTENTTYPE *contentType);
 	HRESULT (WINAPI *get_contentModel)(ISchemaComplexType *This,ISchemaModelGroup **contentModel);
 	HRESULT (WINAPI *get_prohibitedSubstitutions)(ISchemaComplexType *This,SCHEMADERIVATIONMETHOD *prohibited);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaComplexTypeVtbl;
     struct ISchemaComplexType {
-      CONST_VTBL struct ISchemaComplexTypeVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaComplexTypeVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaComplexType_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6118,12 +6118,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaAttributeGroup : public ISchemaItem {
     public:
-      virtual HRESULT WINAPI get_anyAttribute(ISchemaAny **anyAttribute) = 0;
-      virtual HRESULT WINAPI get_attributes(ISchemaItemCollection **attributes) = 0;
+                   virtual HRESULT WINAPI get_anyAttribute(ISchemaAny **anyAttribute) = 0;
+                   virtual HRESULT WINAPI get_attributes(ISchemaItemCollection **attributes) = 0;
     };
 #else
     typedef struct ISchemaAttributeGroupVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaAttributeGroup *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaAttributeGroup *This);
 	ULONG (WINAPI *Release)(ISchemaAttributeGroup *This);
@@ -6140,10 +6140,10 @@ extern "C" {
 	HRESULT (WINAPI *writeAnnotation)(ISchemaAttributeGroup *This,IUnknown *annotationSink,VARIANT_BOOL *isWritten);
 	HRESULT (WINAPI *get_anyAttribute)(ISchemaAttributeGroup *This,ISchemaAny **anyAttribute);
 	HRESULT (WINAPI *get_attributes)(ISchemaAttributeGroup *This,ISchemaItemCollection **attributes);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaAttributeGroupVtbl;
     struct ISchemaAttributeGroup {
-      CONST_VTBL struct ISchemaAttributeGroupVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaAttributeGroupVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaAttributeGroup_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6176,11 +6176,11 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaModelGroup : public ISchemaParticle {
     public:
-      virtual HRESULT WINAPI get_particles(ISchemaItemCollection **particles) = 0;
+                   virtual HRESULT WINAPI get_particles(ISchemaItemCollection **particles) = 0;
     };
 #else
     typedef struct ISchemaModelGroupVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaModelGroup *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaModelGroup *This);
 	ULONG (WINAPI *Release)(ISchemaModelGroup *This);
@@ -6198,10 +6198,10 @@ extern "C" {
 	HRESULT (WINAPI *get_minOccurs)(ISchemaModelGroup *This,VARIANT *minOccurs);
 	HRESULT (WINAPI *get_maxOccurs)(ISchemaModelGroup *This,VARIANT *maxOccurs);
 	HRESULT (WINAPI *get_particles)(ISchemaModelGroup *This,ISchemaItemCollection **particles);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaModelGroupVtbl;
     struct ISchemaModelGroup {
-      CONST_VTBL struct ISchemaModelGroupVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaModelGroupVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaModelGroup_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6233,12 +6233,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaAny : public ISchemaParticle {
     public:
-      virtual HRESULT WINAPI get_namespaces(ISchemaStringCollection **namespaces) = 0;
-      virtual HRESULT WINAPI get_processContents(SCHEMAPROCESSCONTENTS *processContents) = 0;
+                   virtual HRESULT WINAPI get_namespaces(ISchemaStringCollection **namespaces) = 0;
+                   virtual HRESULT WINAPI get_processContents(SCHEMAPROCESSCONTENTS *processContents) = 0;
     };
 #else
     typedef struct ISchemaAnyVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaAny *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaAny *This);
 	ULONG (WINAPI *Release)(ISchemaAny *This);
@@ -6257,10 +6257,10 @@ extern "C" {
 	HRESULT (WINAPI *get_maxOccurs)(ISchemaAny *This,VARIANT *maxOccurs);
 	HRESULT (WINAPI *get_namespaces)(ISchemaAny *This,ISchemaStringCollection **namespaces);
 	HRESULT (WINAPI *get_processContents)(ISchemaAny *This,SCHEMAPROCESSCONTENTS *processContents);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaAnyVtbl;
     struct ISchemaAny {
-      CONST_VTBL struct ISchemaAnyVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaAnyVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaAny_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6295,13 +6295,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaIdentityConstraint : public ISchemaItem {
     public:
-      virtual HRESULT WINAPI get_selector(BSTR *selector) = 0;
-      virtual HRESULT WINAPI get_fields(ISchemaStringCollection **fields) = 0;
-      virtual HRESULT WINAPI get_referencedKey(ISchemaIdentityConstraint **key) = 0;
+                   virtual HRESULT WINAPI get_selector(BSTR *selector) = 0;
+                   virtual HRESULT WINAPI get_fields(ISchemaStringCollection **fields) = 0;
+                   virtual HRESULT WINAPI get_referencedKey(ISchemaIdentityConstraint **key) = 0;
     };
 #else
     typedef struct ISchemaIdentityConstraintVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaIdentityConstraint *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaIdentityConstraint *This);
 	ULONG (WINAPI *Release)(ISchemaIdentityConstraint *This);
@@ -6319,10 +6319,10 @@ extern "C" {
 	HRESULT (WINAPI *get_selector)(ISchemaIdentityConstraint *This,BSTR *selector);
 	HRESULT (WINAPI *get_fields)(ISchemaIdentityConstraint *This,ISchemaStringCollection **fields);
 	HRESULT (WINAPI *get_referencedKey)(ISchemaIdentityConstraint *This,ISchemaIdentityConstraint **key);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaIdentityConstraintVtbl;
     struct ISchemaIdentityConstraint {
-      CONST_VTBL struct ISchemaIdentityConstraintVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaIdentityConstraintVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaIdentityConstraint_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6358,12 +6358,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct ISchemaNotation : public ISchemaItem {
     public:
-      virtual HRESULT WINAPI get_systemIdentifier(BSTR *uri) = 0;
-      virtual HRESULT WINAPI get_publicIdentifier(BSTR *uri) = 0;
+                   virtual HRESULT WINAPI get_systemIdentifier(BSTR *uri) = 0;
+                   virtual HRESULT WINAPI get_publicIdentifier(BSTR *uri) = 0;
     };
 #else
     typedef struct ISchemaNotationVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(ISchemaNotation *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(ISchemaNotation *This);
 	ULONG (WINAPI *Release)(ISchemaNotation *This);
@@ -6380,10 +6380,10 @@ extern "C" {
 	HRESULT (WINAPI *writeAnnotation)(ISchemaNotation *This,IUnknown *annotationSink,VARIANT_BOOL *isWritten);
 	HRESULT (WINAPI *get_systemIdentifier)(ISchemaNotation *This,BSTR *uri);
 	HRESULT (WINAPI *get_publicIdentifier)(ISchemaNotation *This,BSTR *uri);
-      END_INTERFACE
+                   END_INTERFACE
     } ISchemaNotationVtbl;
     struct ISchemaNotation {
-      CONST_VTBL struct ISchemaNotationVtbl *lpVtbl;
+                   CONST_VTBL struct ISchemaNotationVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define ISchemaNotation_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6416,14 +6416,14 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLElementCollection : public IDispatch {
     public:
-      virtual HRESULT WINAPI put_length(__LONG32 v) = 0;
-      virtual HRESULT WINAPI get_length(__LONG32 *p) = 0;
-      virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
-      virtual HRESULT WINAPI item(VARIANT var1,VARIANT var2,IDispatch **ppDisp) = 0;
+                   virtual HRESULT WINAPI put_length(__LONG32 v) = 0;
+                   virtual HRESULT WINAPI get_length(__LONG32 *p) = 0;
+                   virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
+                   virtual HRESULT WINAPI item(VARIANT var1,VARIANT var2,IDispatch **ppDisp) = 0;
     };
 #else
     typedef struct IXMLElementCollectionVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLElementCollection *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLElementCollection *This);
 	ULONG (WINAPI *Release)(IXMLElementCollection *This);
@@ -6435,10 +6435,10 @@ extern "C" {
 	HRESULT (WINAPI *get_length)(IXMLElementCollection *This,__LONG32 *p);
 	HRESULT (WINAPI *get__newEnum)(IXMLElementCollection *This,IUnknown **ppUnk);
 	HRESULT (WINAPI *item)(IXMLElementCollection *This,VARIANT var1,VARIANT var2,IDispatch **ppDisp);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLElementCollectionVtbl;
     struct IXMLElementCollection {
-      CONST_VTBL struct IXMLElementCollectionVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLElementCollectionVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLElementCollection_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6470,24 +6470,24 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDocument : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_root(IXMLElement **p) = 0;
-      virtual HRESULT WINAPI get_fileSize(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_fileModifiedDate(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_fileUpdatedDate(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_URL(BSTR *p) = 0;
-      virtual HRESULT WINAPI put_URL(BSTR p) = 0;
-      virtual HRESULT WINAPI get_mimeType(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_readyState(__LONG32 *pl) = 0;
-      virtual HRESULT WINAPI get_charset(BSTR *p) = 0;
-      virtual HRESULT WINAPI put_charset(BSTR p) = 0;
-      virtual HRESULT WINAPI get_version(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_doctype(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_dtdURL(BSTR *p) = 0;
-      virtual HRESULT WINAPI createElement(VARIANT vType,VARIANT var1,IXMLElement **ppElem) = 0;
+                   virtual HRESULT WINAPI get_root(IXMLElement **p) = 0;
+                   virtual HRESULT WINAPI get_fileSize(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_fileModifiedDate(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_fileUpdatedDate(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_URL(BSTR *p) = 0;
+                   virtual HRESULT WINAPI put_URL(BSTR p) = 0;
+                   virtual HRESULT WINAPI get_mimeType(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_readyState(__LONG32 *pl) = 0;
+                   virtual HRESULT WINAPI get_charset(BSTR *p) = 0;
+                   virtual HRESULT WINAPI put_charset(BSTR p) = 0;
+                   virtual HRESULT WINAPI get_version(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_doctype(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_dtdURL(BSTR *p) = 0;
+                   virtual HRESULT WINAPI createElement(VARIANT vType,VARIANT var1,IXMLElement **ppElem) = 0;
     };
 #else
     typedef struct IXMLDocumentVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDocument *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDocument *This);
 	ULONG (WINAPI *Release)(IXMLDocument *This);
@@ -6509,10 +6509,10 @@ extern "C" {
 	HRESULT (WINAPI *get_doctype)(IXMLDocument *This,BSTR *p);
 	HRESULT (WINAPI *get_dtdURL)(IXMLDocument *This,BSTR *p);
 	HRESULT (WINAPI *createElement)(IXMLDocument *This,VARIANT vType,VARIANT var1,IXMLElement **ppElem);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDocumentVtbl;
     struct IXMLDocument {
-      CONST_VTBL struct IXMLDocumentVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDocumentVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDocument_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6574,26 +6574,26 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDocument2 : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_root(IXMLElement2 **p) = 0;
-      virtual HRESULT WINAPI get_fileSize(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_fileModifiedDate(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_fileUpdatedDate(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_URL(BSTR *p) = 0;
-      virtual HRESULT WINAPI put_URL(BSTR p) = 0;
-      virtual HRESULT WINAPI get_mimeType(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_readyState(__LONG32 *pl) = 0;
-      virtual HRESULT WINAPI get_charset(BSTR *p) = 0;
-      virtual HRESULT WINAPI put_charset(BSTR p) = 0;
-      virtual HRESULT WINAPI get_version(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_doctype(BSTR *p) = 0;
-      virtual HRESULT WINAPI get_dtdURL(BSTR *p) = 0;
-      virtual HRESULT WINAPI createElement(VARIANT vType,VARIANT var1,IXMLElement2 **ppElem) = 0;
-      virtual HRESULT WINAPI get_async(VARIANT_BOOL *pf) = 0;
-      virtual HRESULT WINAPI put_async(VARIANT_BOOL f) = 0;
+                   virtual HRESULT WINAPI get_root(IXMLElement2 **p) = 0;
+                   virtual HRESULT WINAPI get_fileSize(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_fileModifiedDate(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_fileUpdatedDate(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_URL(BSTR *p) = 0;
+                   virtual HRESULT WINAPI put_URL(BSTR p) = 0;
+                   virtual HRESULT WINAPI get_mimeType(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_readyState(__LONG32 *pl) = 0;
+                   virtual HRESULT WINAPI get_charset(BSTR *p) = 0;
+                   virtual HRESULT WINAPI put_charset(BSTR p) = 0;
+                   virtual HRESULT WINAPI get_version(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_doctype(BSTR *p) = 0;
+                   virtual HRESULT WINAPI get_dtdURL(BSTR *p) = 0;
+                   virtual HRESULT WINAPI createElement(VARIANT vType,VARIANT var1,IXMLElement2 **ppElem) = 0;
+                   virtual HRESULT WINAPI get_async(VARIANT_BOOL *pf) = 0;
+                   virtual HRESULT WINAPI put_async(VARIANT_BOOL f) = 0;
     };
 #else
     typedef struct IXMLDocument2Vtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDocument2 *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDocument2 *This);
 	ULONG (WINAPI *Release)(IXMLDocument2 *This);
@@ -6617,10 +6617,10 @@ extern "C" {
 	HRESULT (WINAPI *createElement)(IXMLDocument2 *This,VARIANT vType,VARIANT var1,IXMLElement2 **ppElem);
 	HRESULT (WINAPI *get_async)(IXMLDocument2 *This,VARIANT_BOOL *pf);
 	HRESULT (WINAPI *put_async)(IXMLDocument2 *This,VARIANT_BOOL f);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDocument2Vtbl;
     struct IXMLDocument2 {
-      CONST_VTBL struct IXMLDocument2Vtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDocument2Vtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDocument2_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6688,22 +6688,22 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLElement : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_tagName(BSTR *p) = 0;
-      virtual HRESULT WINAPI put_tagName(BSTR p) = 0;
-      virtual HRESULT WINAPI get_parent(IXMLElement **ppParent) = 0;
-      virtual HRESULT WINAPI setAttribute(BSTR strPropertyName,VARIANT PropertyValue) = 0;
-      virtual HRESULT WINAPI getAttribute(BSTR strPropertyName,VARIANT *PropertyValue) = 0;
-      virtual HRESULT WINAPI removeAttribute(BSTR strPropertyName) = 0;
-      virtual HRESULT WINAPI get_children(IXMLElementCollection **pp) = 0;
-      virtual HRESULT WINAPI get_type(__LONG32 *plType) = 0;
-      virtual HRESULT WINAPI get_text(BSTR *p) = 0;
-      virtual HRESULT WINAPI put_text(BSTR p) = 0;
-      virtual HRESULT WINAPI addChild(IXMLElement *pChildElem,__LONG32 lIndex,__LONG32 lReserved) = 0;
-      virtual HRESULT WINAPI removeChild(IXMLElement *pChildElem) = 0;
+                   virtual HRESULT WINAPI get_tagName(BSTR *p) = 0;
+                   virtual HRESULT WINAPI put_tagName(BSTR p) = 0;
+                   virtual HRESULT WINAPI get_parent(IXMLElement **ppParent) = 0;
+                   virtual HRESULT WINAPI setAttribute(BSTR strPropertyName,VARIANT PropertyValue) = 0;
+                   virtual HRESULT WINAPI getAttribute(BSTR strPropertyName,VARIANT *PropertyValue) = 0;
+                   virtual HRESULT WINAPI removeAttribute(BSTR strPropertyName) = 0;
+                   virtual HRESULT WINAPI get_children(IXMLElementCollection **pp) = 0;
+                   virtual HRESULT WINAPI get_type(__LONG32 *plType) = 0;
+                   virtual HRESULT WINAPI get_text(BSTR *p) = 0;
+                   virtual HRESULT WINAPI put_text(BSTR p) = 0;
+                   virtual HRESULT WINAPI addChild(IXMLElement *pChildElem,__LONG32 lIndex,__LONG32 lReserved) = 0;
+                   virtual HRESULT WINAPI removeChild(IXMLElement *pChildElem) = 0;
     };
 #else
     typedef struct IXMLElementVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLElement *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLElement *This);
 	ULONG (WINAPI *Release)(IXMLElement *This);
@@ -6723,10 +6723,10 @@ extern "C" {
 	HRESULT (WINAPI *put_text)(IXMLElement *This,BSTR p);
 	HRESULT (WINAPI *addChild)(IXMLElement *This,IXMLElement *pChildElem,__LONG32 lIndex,__LONG32 lReserved);
 	HRESULT (WINAPI *removeChild)(IXMLElement *This,IXMLElement *pChildElem);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLElementVtbl;
     struct IXMLElement {
-      CONST_VTBL struct IXMLElementVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLElementVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLElement_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6782,23 +6782,23 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLElement2 : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_tagName(BSTR *p) = 0;
-      virtual HRESULT WINAPI put_tagName(BSTR p) = 0;
-      virtual HRESULT WINAPI get_parent(IXMLElement2 **ppParent) = 0;
-      virtual HRESULT WINAPI setAttribute(BSTR strPropertyName,VARIANT PropertyValue) = 0;
-      virtual HRESULT WINAPI getAttribute(BSTR strPropertyName,VARIANT *PropertyValue) = 0;
-      virtual HRESULT WINAPI removeAttribute(BSTR strPropertyName) = 0;
-      virtual HRESULT WINAPI get_children(IXMLElementCollection **pp) = 0;
-      virtual HRESULT WINAPI get_type(__LONG32 *plType) = 0;
-      virtual HRESULT WINAPI get_text(BSTR *p) = 0;
-      virtual HRESULT WINAPI put_text(BSTR p) = 0;
-      virtual HRESULT WINAPI addChild(IXMLElement2 *pChildElem,__LONG32 lIndex,__LONG32 lReserved) = 0;
-      virtual HRESULT WINAPI removeChild(IXMLElement2 *pChildElem) = 0;
-      virtual HRESULT WINAPI get_attributes(IXMLElementCollection **pp) = 0;
+                   virtual HRESULT WINAPI get_tagName(BSTR *p) = 0;
+                   virtual HRESULT WINAPI put_tagName(BSTR p) = 0;
+                   virtual HRESULT WINAPI get_parent(IXMLElement2 **ppParent) = 0;
+                   virtual HRESULT WINAPI setAttribute(BSTR strPropertyName,VARIANT PropertyValue) = 0;
+                   virtual HRESULT WINAPI getAttribute(BSTR strPropertyName,VARIANT *PropertyValue) = 0;
+                   virtual HRESULT WINAPI removeAttribute(BSTR strPropertyName) = 0;
+                   virtual HRESULT WINAPI get_children(IXMLElementCollection **pp) = 0;
+                   virtual HRESULT WINAPI get_type(__LONG32 *plType) = 0;
+                   virtual HRESULT WINAPI get_text(BSTR *p) = 0;
+                   virtual HRESULT WINAPI put_text(BSTR p) = 0;
+                   virtual HRESULT WINAPI addChild(IXMLElement2 *pChildElem,__LONG32 lIndex,__LONG32 lReserved) = 0;
+                   virtual HRESULT WINAPI removeChild(IXMLElement2 *pChildElem) = 0;
+                   virtual HRESULT WINAPI get_attributes(IXMLElementCollection **pp) = 0;
     };
 #else
     typedef struct IXMLElement2Vtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLElement2 *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLElement2 *This);
 	ULONG (WINAPI *Release)(IXMLElement2 *This);
@@ -6819,10 +6819,10 @@ extern "C" {
 	HRESULT (WINAPI *addChild)(IXMLElement2 *This,IXMLElement2 *pChildElem,__LONG32 lIndex,__LONG32 lReserved);
 	HRESULT (WINAPI *removeChild)(IXMLElement2 *This,IXMLElement2 *pChildElem);
 	HRESULT (WINAPI *get_attributes)(IXMLElement2 *This,IXMLElementCollection **pp);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLElement2Vtbl;
     struct IXMLElement2 {
-      CONST_VTBL struct IXMLElement2Vtbl *lpVtbl;
+                   CONST_VTBL struct IXMLElement2Vtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLElement2_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6881,12 +6881,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLAttribute : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_name(BSTR *n) = 0;
-      virtual HRESULT WINAPI get_value(BSTR *v) = 0;
+                   virtual HRESULT WINAPI get_name(BSTR *n) = 0;
+                   virtual HRESULT WINAPI get_value(BSTR *v) = 0;
     };
 #else
     typedef struct IXMLAttributeVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLAttribute *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLAttribute *This);
 	ULONG (WINAPI *Release)(IXMLAttribute *This);
@@ -6896,10 +6896,10 @@ extern "C" {
 	HRESULT (WINAPI *Invoke)(IXMLAttribute *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
 	HRESULT (WINAPI *get_name)(IXMLAttribute *This,BSTR *n);
 	HRESULT (WINAPI *get_value)(IXMLAttribute *This,BSTR *v);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLAttributeVtbl;
     struct IXMLAttribute {
-      CONST_VTBL struct IXMLAttributeVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLAttributeVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLAttribute_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6925,19 +6925,19 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLError : public IUnknown {
     public:
-      virtual HRESULT WINAPI GetErrorInfo(XML_ERROR *pErrorReturn) = 0;
+                   virtual HRESULT WINAPI GetErrorInfo(XML_ERROR *pErrorReturn) = 0;
     };
 #else
     typedef struct IXMLErrorVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLError *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLError *This);
 	ULONG (WINAPI *Release)(IXMLError *This);
 	HRESULT (WINAPI *GetErrorInfo)(IXMLError *This,XML_ERROR *pErrorReturn);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLErrorVtbl;
     struct IXMLError {
-      CONST_VTBL struct IXMLErrorVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLErrorVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLError_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -6956,21 +6956,21 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLDOMSelection : public IXMLDOMNodeList {
     public:
-      virtual HRESULT WINAPI get_expr(BSTR *expression) = 0;
-      virtual HRESULT WINAPI put_expr(BSTR expression) = 0;
-      virtual HRESULT WINAPI get_context(IXMLDOMNode **ppNode) = 0;
-      virtual HRESULT WINAPI putref_context(IXMLDOMNode *pNode) = 0;
-      virtual HRESULT WINAPI peekNode(IXMLDOMNode **ppNode) = 0;
-      virtual HRESULT WINAPI matches(IXMLDOMNode *pNode,IXMLDOMNode **ppNode) = 0;
-      virtual HRESULT WINAPI removeNext(IXMLDOMNode **ppNode) = 0;
-      virtual HRESULT WINAPI removeAll(void) = 0;
-      virtual HRESULT WINAPI clone(IXMLDOMSelection **ppNode) = 0;
-      virtual HRESULT WINAPI getProperty(BSTR name,VARIANT *value) = 0;
-      virtual HRESULT WINAPI setProperty(BSTR name,VARIANT value) = 0;
+                   virtual HRESULT WINAPI get_expr(BSTR *expression) = 0;
+                   virtual HRESULT WINAPI put_expr(BSTR expression) = 0;
+                   virtual HRESULT WINAPI get_context(IXMLDOMNode **ppNode) = 0;
+                   virtual HRESULT WINAPI putref_context(IXMLDOMNode *pNode) = 0;
+                   virtual HRESULT WINAPI peekNode(IXMLDOMNode **ppNode) = 0;
+                   virtual HRESULT WINAPI matches(IXMLDOMNode *pNode,IXMLDOMNode **ppNode) = 0;
+                   virtual HRESULT WINAPI removeNext(IXMLDOMNode **ppNode) = 0;
+                   virtual HRESULT WINAPI removeAll(void) = 0;
+                   virtual HRESULT WINAPI clone(IXMLDOMSelection **ppNode) = 0;
+                   virtual HRESULT WINAPI getProperty(BSTR name,VARIANT *value) = 0;
+                   virtual HRESULT WINAPI setProperty(BSTR name,VARIANT value) = 0;
     };
 #else
     typedef struct IXMLDOMSelectionVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLDOMSelection *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLDOMSelection *This);
 	ULONG (WINAPI *Release)(IXMLDOMSelection *This);
@@ -6994,10 +6994,10 @@ extern "C" {
 	HRESULT (WINAPI *clone)(IXMLDOMSelection *This,IXMLDOMSelection **ppNode);
 	HRESULT (WINAPI *getProperty)(IXMLDOMSelection *This,BSTR name,VARIANT *value);
 	HRESULT (WINAPI *setProperty)(IXMLDOMSelection *This,BSTR name,VARIANT value);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLDOMSelectionVtbl;
     struct IXMLDOMSelection {
-      CONST_VTBL struct IXMLDOMSelectionVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLDOMSelectionVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLDOMSelection_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -7057,7 +7057,7 @@ extern "C" {
     };
 #else
     typedef struct XMLDOMDocumentEventsVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(XMLDOMDocumentEvents *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(XMLDOMDocumentEvents *This);
 	ULONG (WINAPI *Release)(XMLDOMDocumentEvents *This);
@@ -7065,10 +7065,10 @@ extern "C" {
 	HRESULT (WINAPI *GetTypeInfo)(XMLDOMDocumentEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
 	HRESULT (WINAPI *GetIDsOfNames)(XMLDOMDocumentEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
 	HRESULT (WINAPI *Invoke)(XMLDOMDocumentEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      END_INTERFACE
+                   END_INTERFACE
     } XMLDOMDocumentEventsVtbl;
     struct XMLDOMDocumentEvents {
-      CONST_VTBL struct XMLDOMDocumentEventsVtbl *lpVtbl;
+                   CONST_VTBL struct XMLDOMDocumentEventsVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define XMLDOMDocumentEvents_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -7088,15 +7088,15 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IDSOControl : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_XMLDocument(IXMLDOMDocument **ppDoc) = 0;
-      virtual HRESULT WINAPI put_XMLDocument(IXMLDOMDocument *ppDoc) = 0;
-      virtual HRESULT WINAPI get_JavaDSOCompatible(WINBOOL *fJavaDSOCompatible) = 0;
-      virtual HRESULT WINAPI put_JavaDSOCompatible(WINBOOL fJavaDSOCompatible) = 0;
-      virtual HRESULT WINAPI get_readyState(__LONG32 *state) = 0;
+                   virtual HRESULT WINAPI get_XMLDocument(IXMLDOMDocument **ppDoc) = 0;
+                   virtual HRESULT WINAPI put_XMLDocument(IXMLDOMDocument *ppDoc) = 0;
+                   virtual HRESULT WINAPI get_JavaDSOCompatible(WINBOOL *fJavaDSOCompatible) = 0;
+                   virtual HRESULT WINAPI put_JavaDSOCompatible(WINBOOL fJavaDSOCompatible) = 0;
+                   virtual HRESULT WINAPI get_readyState(__LONG32 *state) = 0;
     };
 #else
     typedef struct IDSOControlVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IDSOControl *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IDSOControl *This);
 	ULONG (WINAPI *Release)(IDSOControl *This);
@@ -7109,10 +7109,10 @@ extern "C" {
 	HRESULT (WINAPI *get_JavaDSOCompatible)(IDSOControl *This,WINBOOL *fJavaDSOCompatible);
 	HRESULT (WINAPI *put_JavaDSOCompatible)(IDSOControl *This,WINBOOL fJavaDSOCompatible);
 	HRESULT (WINAPI *get_readyState)(IDSOControl *This,__LONG32 *state);
-      END_INTERFACE
+                   END_INTERFACE
     } IDSOControlVtbl;
     struct IDSOControl {
-      CONST_VTBL struct IDSOControlVtbl *lpVtbl;
+                   CONST_VTBL struct IDSOControlVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IDSOControl_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -7147,24 +7147,24 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IXMLHTTPRequest : public IDispatch {
     public:
-      virtual HRESULT WINAPI open(BSTR bstrMethod,BSTR bstrUrl,VARIANT varAsync,VARIANT bstrUser,VARIANT bstrPassword) = 0;
-      virtual HRESULT WINAPI setRequestHeader(BSTR bstrHeader,BSTR bstrValue) = 0;
-      virtual HRESULT WINAPI getResponseHeader(BSTR bstrHeader,BSTR *pbstrValue) = 0;
-      virtual HRESULT WINAPI getAllResponseHeaders(BSTR *pbstrHeaders) = 0;
-      virtual HRESULT WINAPI send(VARIANT varBody) = 0;
-      virtual HRESULT WINAPI abort(void) = 0;
-      virtual HRESULT WINAPI get_status(__LONG32 *plStatus) = 0;
-      virtual HRESULT WINAPI get_statusText(BSTR *pbstrStatus) = 0;
-      virtual HRESULT WINAPI get_responseXML(IDispatch **ppBody) = 0;
-      virtual HRESULT WINAPI get_responseText(BSTR *pbstrBody) = 0;
-      virtual HRESULT WINAPI get_responseBody(VARIANT *pvarBody) = 0;
-      virtual HRESULT WINAPI get_responseStream(VARIANT *pvarBody) = 0;
-      virtual HRESULT WINAPI get_readyState(__LONG32 *plState) = 0;
-      virtual HRESULT WINAPI put_onreadystatechange(IDispatch *pReadyStateSink) = 0;
+                   virtual HRESULT WINAPI open(BSTR bstrMethod,BSTR bstrUrl,VARIANT varAsync,VARIANT bstrUser,VARIANT bstrPassword) = 0;
+                   virtual HRESULT WINAPI setRequestHeader(BSTR bstrHeader,BSTR bstrValue) = 0;
+                   virtual HRESULT WINAPI getResponseHeader(BSTR bstrHeader,BSTR *pbstrValue) = 0;
+                   virtual HRESULT WINAPI getAllResponseHeaders(BSTR *pbstrHeaders) = 0;
+                   virtual HRESULT WINAPI send(VARIANT varBody) = 0;
+                   virtual HRESULT WINAPI abort(void) = 0;
+                   virtual HRESULT WINAPI get_status(__LONG32 *plStatus) = 0;
+                   virtual HRESULT WINAPI get_statusText(BSTR *pbstrStatus) = 0;
+                   virtual HRESULT WINAPI get_responseXML(IDispatch **ppBody) = 0;
+                   virtual HRESULT WINAPI get_responseText(BSTR *pbstrBody) = 0;
+                   virtual HRESULT WINAPI get_responseBody(VARIANT *pvarBody) = 0;
+                   virtual HRESULT WINAPI get_responseStream(VARIANT *pvarBody) = 0;
+                   virtual HRESULT WINAPI get_readyState(__LONG32 *plState) = 0;
+                   virtual HRESULT WINAPI put_onreadystatechange(IDispatch *pReadyStateSink) = 0;
     };
 #else
     typedef struct IXMLHTTPRequestVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IXMLHTTPRequest *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IXMLHTTPRequest *This);
 	ULONG (WINAPI *Release)(IXMLHTTPRequest *This);
@@ -7186,10 +7186,10 @@ extern "C" {
 	HRESULT (WINAPI *get_responseStream)(IXMLHTTPRequest *This,VARIANT *pvarBody);
 	HRESULT (WINAPI *get_readyState)(IXMLHTTPRequest *This,__LONG32 *plState);
 	HRESULT (WINAPI *put_onreadystatechange)(IXMLHTTPRequest *This,IDispatch *pReadyStateSink);
-      END_INTERFACE
+                   END_INTERFACE
     } IXMLHTTPRequestVtbl;
     struct IXMLHTTPRequest {
-      CONST_VTBL struct IXMLHTTPRequestVtbl *lpVtbl;
+                   CONST_VTBL struct IXMLHTTPRequestVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IXMLHTTPRequest_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -7251,14 +7251,14 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IServerXMLHTTPRequest : public IXMLHTTPRequest {
     public:
-      virtual HRESULT WINAPI setTimeouts(__LONG32 resolveTimeout,__LONG32 connectTimeout,__LONG32 sendTimeout,__LONG32 receiveTimeout) = 0;
-      virtual HRESULT WINAPI waitForResponse(VARIANT timeoutInSeconds,VARIANT_BOOL *isSuccessful) = 0;
-      virtual HRESULT WINAPI getOption(SERVERXMLHTTP_OPTION option,VARIANT *value) = 0;
-      virtual HRESULT WINAPI setOption(SERVERXMLHTTP_OPTION option,VARIANT value) = 0;
+                   virtual HRESULT WINAPI setTimeouts(__LONG32 resolveTimeout,__LONG32 connectTimeout,__LONG32 sendTimeout,__LONG32 receiveTimeout) = 0;
+                   virtual HRESULT WINAPI waitForResponse(VARIANT timeoutInSeconds,VARIANT_BOOL *isSuccessful) = 0;
+                   virtual HRESULT WINAPI getOption(SERVERXMLHTTP_OPTION option,VARIANT *value) = 0;
+                   virtual HRESULT WINAPI setOption(SERVERXMLHTTP_OPTION option,VARIANT value) = 0;
     };
 #else
     typedef struct IServerXMLHTTPRequestVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IServerXMLHTTPRequest *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IServerXMLHTTPRequest *This);
 	ULONG (WINAPI *Release)(IServerXMLHTTPRequest *This);
@@ -7284,10 +7284,10 @@ extern "C" {
 	HRESULT (WINAPI *waitForResponse)(IServerXMLHTTPRequest *This,VARIANT timeoutInSeconds,VARIANT_BOOL *isSuccessful);
 	HRESULT (WINAPI *getOption)(IServerXMLHTTPRequest *This,SERVERXMLHTTP_OPTION option,VARIANT *value);
 	HRESULT (WINAPI *setOption)(IServerXMLHTTPRequest *This,SERVERXMLHTTP_OPTION option,VARIANT value);
-      END_INTERFACE
+                   END_INTERFACE
     } IServerXMLHTTPRequestVtbl;
     struct IServerXMLHTTPRequest {
-      CONST_VTBL struct IServerXMLHTTPRequestVtbl *lpVtbl;
+                   CONST_VTBL struct IServerXMLHTTPRequestVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IServerXMLHTTPRequest_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -7333,12 +7333,12 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IServerXMLHTTPRequest2 : public IServerXMLHTTPRequest {
     public:
-      virtual HRESULT WINAPI setProxy(SXH_PROXY_SETTING proxySetting,VARIANT varProxyServer,VARIANT varBypassList) = 0;
-      virtual HRESULT WINAPI setProxyCredentials(BSTR bstrUserName,BSTR bstrPassword) = 0;
+                   virtual HRESULT WINAPI setProxy(SXH_PROXY_SETTING proxySetting,VARIANT varProxyServer,VARIANT varBypassList) = 0;
+                   virtual HRESULT WINAPI setProxyCredentials(BSTR bstrUserName,BSTR bstrPassword) = 0;
     };
 #else
     typedef struct IServerXMLHTTPRequest2Vtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IServerXMLHTTPRequest2 *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IServerXMLHTTPRequest2 *This);
 	ULONG (WINAPI *Release)(IServerXMLHTTPRequest2 *This);
@@ -7366,10 +7366,10 @@ extern "C" {
 	HRESULT (WINAPI *setOption)(IServerXMLHTTPRequest2 *This,SERVERXMLHTTP_OPTION option,VARIANT value);
 	HRESULT (WINAPI *setProxy)(IServerXMLHTTPRequest2 *This,SXH_PROXY_SETTING proxySetting,VARIANT varProxyServer,VARIANT varBypassList);
 	HRESULT (WINAPI *setProxyCredentials)(IServerXMLHTTPRequest2 *This,BSTR bstrUserName,BSTR bstrPassword);
-      END_INTERFACE
+                   END_INTERFACE
     } IServerXMLHTTPRequest2Vtbl;
     struct IServerXMLHTTPRequest2 {
-      CONST_VTBL struct IServerXMLHTTPRequest2Vtbl *lpVtbl;
+                   CONST_VTBL struct IServerXMLHTTPRequest2Vtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IServerXMLHTTPRequest2_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -7413,13 +7413,13 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IMXNamespacePrefixes : public IDispatch {
     public:
-      virtual HRESULT WINAPI get_item(__LONG32 index,BSTR *prefix) = 0;
-      virtual HRESULT WINAPI get_length(__LONG32 *length) = 0;
-      virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
+                   virtual HRESULT WINAPI get_item(__LONG32 index,BSTR *prefix) = 0;
+                   virtual HRESULT WINAPI get_length(__LONG32 *length) = 0;
+                   virtual HRESULT WINAPI get__newEnum(IUnknown **ppUnk) = 0;
     };
 #else
     typedef struct IMXNamespacePrefixesVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IMXNamespacePrefixes *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IMXNamespacePrefixes *This);
 	ULONG (WINAPI *Release)(IMXNamespacePrefixes *This);
@@ -7430,10 +7430,10 @@ extern "C" {
 	HRESULT (WINAPI *get_item)(IMXNamespacePrefixes *This,__LONG32 index,BSTR *prefix);
 	HRESULT (WINAPI *get_length)(IMXNamespacePrefixes *This,__LONG32 *length);
 	HRESULT (WINAPI *get__newEnum)(IMXNamespacePrefixes *This,IUnknown **ppUnk);
-      END_INTERFACE
+                   END_INTERFACE
     } IMXNamespacePrefixesVtbl;
     struct IMXNamespacePrefixes {
-      CONST_VTBL struct IMXNamespacePrefixesVtbl *lpVtbl;
+                   CONST_VTBL struct IMXNamespacePrefixesVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IMXNamespacePrefixes_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -7462,21 +7462,21 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IVBMXNamespaceManager : public IDispatch {
     public:
-      virtual HRESULT WINAPI put_allowOverride(VARIANT_BOOL fOverride) = 0;
-      virtual HRESULT WINAPI get_allowOverride(VARIANT_BOOL *fOverride) = 0;
-      virtual HRESULT WINAPI reset(void) = 0;
-      virtual HRESULT WINAPI pushContext(void) = 0;
-      virtual HRESULT WINAPI pushNodeContext(IXMLDOMNode *contextNode,VARIANT_BOOL fDeep = -1) = 0;
-      virtual HRESULT WINAPI popContext(void) = 0;
-      virtual HRESULT WINAPI declarePrefix(BSTR prefix,BSTR namespaceURI) = 0;
-      virtual HRESULT WINAPI getDeclaredPrefixes(IMXNamespacePrefixes **prefixes) = 0;
-      virtual HRESULT WINAPI getPrefixes(BSTR namespaceURI,IMXNamespacePrefixes **prefixes) = 0;
-      virtual HRESULT WINAPI getURI(BSTR prefix,VARIANT *uri) = 0;
-      virtual HRESULT WINAPI getURIFromNode(BSTR strPrefix,IXMLDOMNode *contextNode,VARIANT *uri) = 0;
+                   virtual HRESULT WINAPI put_allowOverride(VARIANT_BOOL fOverride) = 0;
+                   virtual HRESULT WINAPI get_allowOverride(VARIANT_BOOL *fOverride) = 0;
+                   virtual HRESULT WINAPI reset(void) = 0;
+                   virtual HRESULT WINAPI pushContext(void) = 0;
+                   virtual HRESULT WINAPI pushNodeContext(IXMLDOMNode *contextNode,VARIANT_BOOL fDeep = -1) = 0;
+                   virtual HRESULT WINAPI popContext(void) = 0;
+                   virtual HRESULT WINAPI declarePrefix(BSTR prefix,BSTR namespaceURI) = 0;
+                   virtual HRESULT WINAPI getDeclaredPrefixes(IMXNamespacePrefixes **prefixes) = 0;
+                   virtual HRESULT WINAPI getPrefixes(BSTR namespaceURI,IMXNamespacePrefixes **prefixes) = 0;
+                   virtual HRESULT WINAPI getURI(BSTR prefix,VARIANT *uri) = 0;
+                   virtual HRESULT WINAPI getURIFromNode(BSTR strPrefix,IXMLDOMNode *contextNode,VARIANT *uri) = 0;
     };
 #else
     typedef struct IVBMXNamespaceManagerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IVBMXNamespaceManager *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IVBMXNamespaceManager *This);
 	ULONG (WINAPI *Release)(IVBMXNamespaceManager *This);
@@ -7495,10 +7495,10 @@ extern "C" {
 	HRESULT (WINAPI *getPrefixes)(IVBMXNamespaceManager *This,BSTR namespaceURI,IMXNamespacePrefixes **prefixes);
 	HRESULT (WINAPI *getURI)(IVBMXNamespaceManager *This,BSTR prefix,VARIANT *uri);
 	HRESULT (WINAPI *getURIFromNode)(IVBMXNamespaceManager *This,BSTR strPrefix,IXMLDOMNode *contextNode,VARIANT *uri);
-      END_INTERFACE
+                   END_INTERFACE
     } IVBMXNamespaceManagerVtbl;
     struct IVBMXNamespaceManager {
-      CONST_VTBL struct IVBMXNamespaceManagerVtbl *lpVtbl;
+                   CONST_VTBL struct IVBMXNamespaceManagerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IVBMXNamespaceManager_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)
@@ -7551,20 +7551,20 @@ extern "C" {
 #if defined(__cplusplus) && !defined(CINTERFACE)
     struct IMXNamespaceManager : public IUnknown {
     public:
-      virtual HRESULT WINAPI putAllowOverride(VARIANT_BOOL fOverride) = 0;
-      virtual HRESULT WINAPI getAllowOverride(VARIANT_BOOL *fOverride) = 0;
-      virtual HRESULT WINAPI reset(void) = 0;
-      virtual HRESULT WINAPI pushContext(void) = 0;
-      virtual HRESULT WINAPI pushNodeContext(IXMLDOMNode *contextNode,VARIANT_BOOL fDeep) = 0;
-      virtual HRESULT WINAPI popContext(void) = 0;
-      virtual HRESULT WINAPI declarePrefix(const wchar_t *prefix,const wchar_t *namespaceURI) = 0;
-      virtual HRESULT WINAPI getDeclaredPrefix(__LONG32 nIndex,wchar_t *pwchPrefix,int *pcchPrefix) = 0;
-      virtual HRESULT WINAPI getPrefix(const wchar_t *pwszNamespaceURI,__LONG32 nIndex,wchar_t *pwchPrefix,int *pcchPrefix) = 0;
-      virtual HRESULT WINAPI getURI(const wchar_t *pwchPrefix,IXMLDOMNode *pContextNode,wchar_t *pwchUri,int *pcchUri) = 0;
+                   virtual HRESULT WINAPI putAllowOverride(VARIANT_BOOL fOverride) = 0;
+                   virtual HRESULT WINAPI getAllowOverride(VARIANT_BOOL *fOverride) = 0;
+                   virtual HRESULT WINAPI reset(void) = 0;
+                   virtual HRESULT WINAPI pushContext(void) = 0;
+                   virtual HRESULT WINAPI pushNodeContext(IXMLDOMNode *contextNode,VARIANT_BOOL fDeep) = 0;
+                   virtual HRESULT WINAPI popContext(void) = 0;
+                   virtual HRESULT WINAPI declarePrefix(const wchar_t *prefix,const wchar_t *namespaceURI) = 0;
+                   virtual HRESULT WINAPI getDeclaredPrefix(__LONG32 nIndex,wchar_t *pwchPrefix,int *pcchPrefix) = 0;
+                   virtual HRESULT WINAPI getPrefix(const wchar_t *pwszNamespaceURI,__LONG32 nIndex,wchar_t *pwchPrefix,int *pcchPrefix) = 0;
+                   virtual HRESULT WINAPI getURI(const wchar_t *pwchPrefix,IXMLDOMNode *pContextNode,wchar_t *pwchUri,int *pcchUri) = 0;
     };
 #else
     typedef struct IMXNamespaceManagerVtbl {
-      BEGIN_INTERFACE
+                   BEGIN_INTERFACE
 	HRESULT (WINAPI *QueryInterface)(IMXNamespaceManager *This,REFIID riid,void **ppvObject);
 	ULONG (WINAPI *AddRef)(IMXNamespaceManager *This);
 	ULONG (WINAPI *Release)(IMXNamespaceManager *This);
@@ -7578,10 +7578,10 @@ extern "C" {
 	HRESULT (WINAPI *getDeclaredPrefix)(IMXNamespaceManager *This,__LONG32 nIndex,wchar_t *pwchPrefix,int *pcchPrefix);
 	HRESULT (WINAPI *getPrefix)(IMXNamespaceManager *This,const wchar_t *pwszNamespaceURI,__LONG32 nIndex,wchar_t *pwchPrefix,int *pcchPrefix);
 	HRESULT (WINAPI *getURI)(IMXNamespaceManager *This,const wchar_t *pwchPrefix,IXMLDOMNode *pContextNode,wchar_t *pwchUri,int *pcchUri);
-      END_INTERFACE
+                   END_INTERFACE
     } IMXNamespaceManagerVtbl;
     struct IMXNamespaceManager {
-      CONST_VTBL struct IMXNamespaceManagerVtbl *lpVtbl;
+                   CONST_VTBL struct IMXNamespaceManagerVtbl *lpVtbl;
     };
 #ifdef COBJMACROS
 #define IMXNamespaceManager_QueryInterface(This,riid,ppvObject) (This)->lpVtbl->QueryInterface(This,riid,ppvObject)

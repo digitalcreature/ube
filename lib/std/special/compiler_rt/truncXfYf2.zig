@@ -85,55 +85,55 @@ fn truncXfYf2(comptime dst_t: type, comptime src_t: type, a: src_t) dst_t {
     var absResult: dst_rep_t = undefined;
 
     if (aAbs -% underflow < aAbs -% overflow) {
-        // The exponent of a is within the range of normal numbers in the
-        // destination format.  We can convert by simply right-shifting with
-        // rounding and adjusting the exponent.
-        absResult = @truncate(dst_rep_t, aAbs >> (srcSigBits - dstSigBits));
-        absResult -%= @as(dst_rep_t, srcExpBias - dstExpBias) << dstSigBits;
+                     // The exponent of a is within the range of normal numbers in the
+                     // destination format.  We can convert by simply right-shifting with
+                     // rounding and adjusting the exponent.
+                     absResult = @truncate(dst_rep_t, aAbs >> (srcSigBits - dstSigBits));
+                     absResult -%= @as(dst_rep_t, srcExpBias - dstExpBias) << dstSigBits;
 
-        const roundBits: src_rep_t = aAbs & roundMask;
-        if (roundBits > halfway) {
-            // Round to nearest
-            absResult += 1;
-        } else if (roundBits == halfway) {
-            // Ties to even
-            absResult += absResult & 1;
-        }
+                     const roundBits: src_rep_t = aAbs & roundMask;
+                     if (roundBits > halfway) {
+                                      // Round to nearest
+                                      absResult += 1;
+                     } else if (roundBits == halfway) {
+                                      // Ties to even
+                                      absResult += absResult & 1;
+                     }
     } else if (aAbs > srcInfinity) {
-        // a is NaN.
-        // Conjure the result by beginning with infinity, setting the qNaN
-        // bit and inserting the (truncated) trailing NaN field.
-        absResult = @intCast(dst_rep_t, dstInfExp) << dstSigBits;
-        absResult |= dstQNaN;
-        absResult |= @intCast(dst_rep_t, ((aAbs & srcNaNCode) >> (srcSigBits - dstSigBits)) & dstNaNCode);
+                     // a is NaN.
+                     // Conjure the result by beginning with infinity, setting the qNaN
+                     // bit and inserting the (truncated) trailing NaN field.
+                     absResult = @intCast(dst_rep_t, dstInfExp) << dstSigBits;
+                     absResult |= dstQNaN;
+                     absResult |= @intCast(dst_rep_t, ((aAbs & srcNaNCode) >> (srcSigBits - dstSigBits)) & dstNaNCode);
     } else if (aAbs >= overflow) {
-        // a overflows to infinity.
-        absResult = @intCast(dst_rep_t, dstInfExp) << dstSigBits;
+                     // a overflows to infinity.
+                     absResult = @intCast(dst_rep_t, dstInfExp) << dstSigBits;
     } else {
-        // a underflows on conversion to the destination type or is an exact
-        // zero.  The result may be a denormal or zero.  Extract the exponent
-        // to get the shift amount for the denormalization.
-        const aExp = @intCast(u32, aAbs >> srcSigBits);
-        const shift = @intCast(u32, srcExpBias - dstExpBias - aExp + 1);
+                     // a underflows on conversion to the destination type or is an exact
+                     // zero.  The result may be a denormal or zero.  Extract the exponent
+                     // to get the shift amount for the denormalization.
+                     const aExp = @intCast(u32, aAbs >> srcSigBits);
+                     const shift = @intCast(u32, srcExpBias - dstExpBias - aExp + 1);
 
-        const significand: src_rep_t = (aRep & srcSignificandMask) | srcMinNormal;
+                     const significand: src_rep_t = (aRep & srcSignificandMask) | srcMinNormal;
 
-        // Right shift by the denormalization amount with sticky.
-        if (shift > srcSigBits) {
-            absResult = 0;
-        } else {
-            const sticky: src_rep_t = significand << @intCast(SrcShift, srcBits - shift);
-            const denormalizedSignificand: src_rep_t = significand >> @intCast(SrcShift, shift) | sticky;
-            absResult = @intCast(dst_rep_t, denormalizedSignificand >> (srcSigBits - dstSigBits));
-            const roundBits: src_rep_t = denormalizedSignificand & roundMask;
-            if (roundBits > halfway) {
-                // Round to nearest
-                absResult += 1;
-            } else if (roundBits == halfway) {
-                // Ties to even
-                absResult += absResult & 1;
-            }
-        }
+                     // Right shift by the denormalization amount with sticky.
+                     if (shift > srcSigBits) {
+                                      absResult = 0;
+                     } else {
+                                      const sticky: src_rep_t = significand << @intCast(SrcShift, srcBits - shift);
+                                      const denormalizedSignificand: src_rep_t = significand >> @intCast(SrcShift, shift) | sticky;
+                                      absResult = @intCast(dst_rep_t, denormalizedSignificand >> (srcSigBits - dstSigBits));
+                                      const roundBits: src_rep_t = denormalizedSignificand & roundMask;
+                                      if (roundBits > halfway) {
+                                          // Round to nearest
+                                          absResult += 1;
+                                      } else if (roundBits == halfway) {
+                                          // Ties to even
+                                          absResult += absResult & 1;
+                                      }
+                     }
     }
 
     const result: dst_rep_t align(@alignOf(dst_t)) = absResult | @truncate(dst_rep_t, sign >> @intCast(SrcShift, srcBits - dstBits));

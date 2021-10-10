@@ -11,7 +11,7 @@
 #define		BPF_ALU		0x04
 #define		BPF_JMP		0x05
 #define		BPF_RET		0x06
-#define		BPF_MISC        0x07
+#define		BPF_MISC                     0x07
 
 /* ld/ldx fields */
 #define BPF_SIZE(code)  ((code) & 0x18)
@@ -45,7 +45,7 @@
 #define		BPF_JEQ		0x10
 #define		BPF_JGT		0x20
 #define		BPF_JGE		0x30
-#define		BPF_JSET        0x40
+#define		BPF_JSET                     0x40
 #define BPF_SRC(code)   ((code) & 0x08)
 #define		BPF_K		0x00
 #define		BPF_X		0x08

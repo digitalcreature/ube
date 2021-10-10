@@ -19,8 +19,8 @@ typedef enum _SysmonDataType {
 } SysmonDataType;
 
 typedef enum _SysmonBatchReason {
-  SysmonBatchNone          = 0,
-  SysmonBatchAddFiles      = 1,
+  SysmonBatchNone                       = 0,
+  SysmonBatchAddFiles                   = 1,
   SysmonBatchAddCounters   = 2 
 } SysmonBatchReason;
 

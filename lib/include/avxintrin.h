@@ -388,16 +388,16 @@ _mm256_rcp_ps(__m256 __a)
 ///    An integer value that specifies the rounding operation. \n
 ///    Bits [7:4] are reserved. \n
 ///    Bit [3] is a precision exception value: \n
-///      0: A normal PE exception is used. \n
-///      1: The PE field is not updated. \n
+///                   0: A normal PE exception is used. \n
+///                   1: The PE field is not updated. \n
 ///    Bit [2] is the rounding control source: \n
-///      0: Use bits [1:0] of \a M. \n
-///      1: Use the current MXCSR setting. \n
+///                   0: Use bits [1:0] of \a M. \n
+///                   1: Use the current MXCSR setting. \n
 ///    Bits [1:0] contain the rounding control definition: \n
-///      00: Nearest. \n
-///      01: Downward (toward negative infinity). \n
-///      10: Upward (toward positive infinity). \n
-///      11: Truncated.
+///                   00: Nearest. \n
+///                   01: Downward (toward negative infinity). \n
+///                   10: Upward (toward positive infinity). \n
+///                   11: Truncated.
 /// \returns A 256-bit vector of [4 x double] containing the rounded values.
 #define _mm256_round_pd(V, M) \
     (__m256d)__builtin_ia32_roundpd256((__v4df)(__m256d)(V), (M))
@@ -420,16 +420,16 @@ _mm256_rcp_ps(__m256 __a)
 ///    An integer value that specifies the rounding operation. \n
 ///    Bits [7:4] are reserved. \n
 ///    Bit [3] is a precision exception value: \n
-///      0: A normal PE exception is used. \n
-///      1: The PE field is not updated. \n
+///                   0: A normal PE exception is used. \n
+///                   1: The PE field is not updated. \n
 ///    Bit [2] is the rounding control source: \n
-///      0: Use bits [1:0] of \a M. \n
-///      1: Use the current MXCSR setting. \n
+///                   0: Use bits [1:0] of \a M. \n
+///                   1: Use the current MXCSR setting. \n
 ///    Bits [1:0] contain the rounding control definition: \n
-///      00: Nearest. \n
-///      01: Downward (toward negative infinity). \n
-///      10: Upward (toward positive infinity). \n
-///      11: Truncated.
+///                   00: Nearest. \n
+///                   01: Downward (toward negative infinity). \n
+///                   10: Upward (toward positive infinity). \n
+///                   11: Truncated.
 /// \returns A 256-bit vector of [8 x float] containing the rounded values.
 #define _mm256_round_ps(V, M) \
   (__m256)__builtin_ia32_roundps256((__v8sf)(__m256)(V), (M))
@@ -761,15 +761,15 @@ _mm256_hsub_ps(__m256 __a, __m256 __b)
 ///    A 128-bit integer vector operand specifying how the values are to be
 ///    copied. \n
 ///    Bit [1]: \n
-///      0: Bits [63:0] of the source are copied to bits [63:0] of the returned
-///         vector. \n
-///      1: Bits [127:64] of the source are copied to bits [63:0] of the
-///         returned vector. \n
+///                   0: Bits [63:0] of the source are copied to bits [63:0] of the returned
+///                      vector. \n
+///                   1: Bits [127:64] of the source are copied to bits [63:0] of the
+///                      returned vector. \n
 ///    Bit [65]: \n
-///      0: Bits [63:0] of the source are copied to bits [127:64] of the
-///         returned vector. \n
-///      1: Bits [127:64] of the source are copied to bits [127:64] of the
-///         returned vector.
+///                   0: Bits [63:0] of the source are copied to bits [127:64] of the
+///                      returned vector. \n
+///                   1: Bits [127:64] of the source are copied to bits [127:64] of the
+///                      returned vector.
 /// \returns A 128-bit vector of [2 x double] containing the copied values.
 static __inline __m128d __DEFAULT_FN_ATTRS128
 _mm_permutevar_pd(__m128d __a, __m128i __c)
@@ -790,24 +790,24 @@ _mm_permutevar_pd(__m128d __a, __m128i __c)
 ///    A 256-bit integer vector operand specifying how the values are to be
 ///    copied. \n
 ///    Bit [1]: \n
-///      0: Bits [63:0] of the source are copied to bits [63:0] of the returned
-///         vector. \n
-///      1: Bits [127:64] of the source are copied to bits [63:0] of the
-///         returned vector. \n
+///                   0: Bits [63:0] of the source are copied to bits [63:0] of the returned
+///                      vector. \n
+///                   1: Bits [127:64] of the source are copied to bits [63:0] of the
+///                      returned vector. \n
 ///    Bit [65]: \n
-///      0: Bits [63:0] of the source are copied to bits [127:64] of the
-///         returned vector. \n
-///      1: Bits [127:64] of the source are copied to bits [127:64] of the
-///         returned vector. \n
+///                   0: Bits [63:0] of the source are copied to bits [127:64] of the
+///                      returned vector. \n
+///                   1: Bits [127:64] of the source are copied to bits [127:64] of the
+///                      returned vector. \n
 ///    Bit [129]: \n
-///      0: Bits [191:128] of the source are copied to bits [191:128] of the
-///         returned vector. \n
-///      1: Bits [255:192] of the source are copied to bits [191:128] of the
-///         returned vector. \n
+///                   0: Bits [191:128] of the source are copied to bits [191:128] of the
+///                      returned vector. \n
+///                   1: Bits [255:192] of the source are copied to bits [191:128] of the
+///                      returned vector. \n
 ///    Bit [193]: \n
-///      0: Bits [191:128] of the source are copied to bits [255:192] of the
-///         returned vector. \n
-///      1: Bits [255:192] of the source are copied to bits [255:192] of the
+///                   0: Bits [191:128] of the source are copied to bits [255:192] of the
+///                      returned vector. \n
+///                   1: Bits [255:192] of the source are copied to bits [255:192] of the
 ///    returned vector.
 /// \returns A 256-bit vector of [4 x double] containing the copied values.
 static __inline __m256d __DEFAULT_FN_ATTRS
@@ -828,41 +828,41 @@ _mm256_permutevar_pd(__m256d __a, __m256i __c)
 ///    A 128-bit integer vector operand specifying how the values are to be
 ///    copied. \n
 ///    Bits [1:0]: \n
-///      00: Bits [31:0] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [31:0] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
 ///    Bits [33:32]: \n
-///      00: Bits [31:0] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [63:32] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
 ///    Bits [65:64]: \n
-///      00: Bits [31:0] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [95:64] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
 ///    Bits [97:96]: \n
-///      00: Bits [31:0] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [127:96] of the
-///          returned vector.
+///                   00: Bits [31:0] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [127:96] of the
+///                       returned vector.
 /// \returns A 128-bit vector of [4 x float] containing the copied values.
 static __inline __m128 __DEFAULT_FN_ATTRS128
 _mm_permutevar_ps(__m128 __a, __m128i __c)
@@ -883,77 +883,77 @@ _mm_permutevar_ps(__m128 __a, __m128i __c)
 ///    A 256-bit integer vector operand specifying how the values are to be
 ///    copied. \n
 ///    Bits [1:0]: \n
-///      00: Bits [31:0] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [31:0] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
 ///    Bits [33:32]: \n
-///      00: Bits [31:0] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [63:32] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
 ///    Bits [65:64]: \n
-///      00: Bits [31:0] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [95:64] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
 ///    Bits [97:96]: \n
-///      00: Bits [31:0] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [127:96] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
 ///    Bits [129:128]: \n
-///      00: Bits [159:128] of the source are copied to bits [159:128] of the
-///          returned vector. \n
-///      01: Bits [191:160] of the source are copied to bits [159:128] of the
-///          returned vector. \n
-///      10: Bits [223:192] of the source are copied to bits [159:128] of the
-///          returned vector. \n
-///      11: Bits [255:224] of the source are copied to bits [159:128] of the
-///          returned vector. \n
+///                   00: Bits [159:128] of the source are copied to bits [159:128] of the
+///                       returned vector. \n
+///                   01: Bits [191:160] of the source are copied to bits [159:128] of the
+///                       returned vector. \n
+///                   10: Bits [223:192] of the source are copied to bits [159:128] of the
+///                       returned vector. \n
+///                   11: Bits [255:224] of the source are copied to bits [159:128] of the
+///                       returned vector. \n
 ///    Bits [161:160]: \n
-///      00: Bits [159:128] of the source are copied to bits [191:160] of the
-///          returned vector. \n
-///      01: Bits [191:160] of the source are copied to bits [191:160] of the
-///          returned vector. \n
-///      10: Bits [223:192] of the source are copied to bits [191:160] of the
-///          returned vector. \n
-///      11: Bits [255:224] of the source are copied to bits [191:160] of the
-///          returned vector. \n
+///                   00: Bits [159:128] of the source are copied to bits [191:160] of the
+///                       returned vector. \n
+///                   01: Bits [191:160] of the source are copied to bits [191:160] of the
+///                       returned vector. \n
+///                   10: Bits [223:192] of the source are copied to bits [191:160] of the
+///                       returned vector. \n
+///                   11: Bits [255:224] of the source are copied to bits [191:160] of the
+///                       returned vector. \n
 ///    Bits [193:192]: \n
-///      00: Bits [159:128] of the source are copied to bits [223:192] of the
-///          returned vector. \n
-///      01: Bits [191:160] of the source are copied to bits [223:192] of the
-///          returned vector. \n
-///      10: Bits [223:192] of the source are copied to bits [223:192] of the
-///          returned vector. \n
-///      11: Bits [255:224] of the source are copied to bits [223:192] of the
-///          returned vector. \n
+///                   00: Bits [159:128] of the source are copied to bits [223:192] of the
+///                       returned vector. \n
+///                   01: Bits [191:160] of the source are copied to bits [223:192] of the
+///                       returned vector. \n
+///                   10: Bits [223:192] of the source are copied to bits [223:192] of the
+///                       returned vector. \n
+///                   11: Bits [255:224] of the source are copied to bits [223:192] of the
+///                       returned vector. \n
 ///    Bits [225:224]: \n
-///      00: Bits [159:128] of the source are copied to bits [255:224] of the
-///          returned vector. \n
-///      01: Bits [191:160] of the source are copied to bits [255:224] of the
-///          returned vector. \n
-///      10: Bits [223:192] of the source are copied to bits [255:224] of the
-///          returned vector. \n
-///      11: Bits [255:224] of the source are copied to bits [255:224] of the
-///          returned vector.
+///                   00: Bits [159:128] of the source are copied to bits [255:224] of the
+///                       returned vector. \n
+///                   01: Bits [191:160] of the source are copied to bits [255:224] of the
+///                       returned vector. \n
+///                   10: Bits [223:192] of the source are copied to bits [255:224] of the
+///                       returned vector. \n
+///                   11: Bits [255:224] of the source are copied to bits [255:224] of the
+///                       returned vector.
 /// \returns A 256-bit vector of [8 x float] containing the copied values.
 static __inline __m256 __DEFAULT_FN_ATTRS
 _mm256_permutevar_ps(__m256 __a, __m256i __c)
@@ -978,15 +978,15 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 ///    An immediate integer operand specifying how the values are to be
 ///    copied. \n
 ///    Bit [0]: \n
-///      0: Bits [63:0] of the source are copied to bits [63:0] of the returned
-///         vector. \n
-///      1: Bits [127:64] of the source are copied to bits [63:0] of the
-///         returned vector. \n
+///                   0: Bits [63:0] of the source are copied to bits [63:0] of the returned
+///                      vector. \n
+///                   1: Bits [127:64] of the source are copied to bits [63:0] of the
+///                      returned vector. \n
 ///    Bit [1]: \n
-///      0: Bits [63:0] of the source are copied to bits [127:64] of the
-///         returned vector. \n
-///      1: Bits [127:64] of the source are copied to bits [127:64] of the
-///         returned vector.
+///                   0: Bits [63:0] of the source are copied to bits [127:64] of the
+///                      returned vector. \n
+///                   1: Bits [127:64] of the source are copied to bits [127:64] of the
+///                      returned vector.
 /// \returns A 128-bit vector of [2 x double] containing the copied values.
 #define _mm_permute_pd(A, C) \
   (__m128d)__builtin_ia32_vpermilpd((__v2df)(__m128d)(A), (int)(C))
@@ -1008,25 +1008,25 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 ///    An immediate integer operand specifying how the values are to be
 ///    copied. \n
 ///    Bit [0]: \n
-///      0: Bits [63:0] of the source are copied to bits [63:0] of the returned
-///         vector. \n
-///      1: Bits [127:64] of the source are copied to bits [63:0] of the
-///         returned vector. \n
+///                   0: Bits [63:0] of the source are copied to bits [63:0] of the returned
+///                      vector. \n
+///                   1: Bits [127:64] of the source are copied to bits [63:0] of the
+///                      returned vector. \n
 ///    Bit [1]: \n
-///      0: Bits [63:0] of the source are copied to bits [127:64] of the
-///         returned vector. \n
-///      1: Bits [127:64] of the source are copied to bits [127:64] of the
-///         returned vector. \n
+///                   0: Bits [63:0] of the source are copied to bits [127:64] of the
+///                      returned vector. \n
+///                   1: Bits [127:64] of the source are copied to bits [127:64] of the
+///                      returned vector. \n
 ///    Bit [2]: \n
-///      0: Bits [191:128] of the source are copied to bits [191:128] of the
-///         returned vector. \n
-///      1: Bits [255:192] of the source are copied to bits [191:128] of the
-///         returned vector. \n
+///                   0: Bits [191:128] of the source are copied to bits [191:128] of the
+///                      returned vector. \n
+///                   1: Bits [255:192] of the source are copied to bits [191:128] of the
+///                      returned vector. \n
 ///    Bit [3]: \n
-///      0: Bits [191:128] of the source are copied to bits [255:192] of the
-///         returned vector. \n
-///      1: Bits [255:192] of the source are copied to bits [255:192] of the
-///         returned vector.
+///                   0: Bits [191:128] of the source are copied to bits [255:192] of the
+///                      returned vector. \n
+///                   1: Bits [255:192] of the source are copied to bits [255:192] of the
+///                      returned vector.
 /// \returns A 256-bit vector of [4 x double] containing the copied values.
 #define _mm256_permute_pd(A, C) \
   (__m256d)__builtin_ia32_vpermilpd256((__v4df)(__m256d)(A), (int)(C))
@@ -1048,41 +1048,41 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 ///    An immediate integer operand specifying how the values are to be
 ///    copied. \n
 ///    Bits [1:0]: \n
-///      00: Bits [31:0] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [31:0] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
 ///    Bits [3:2]: \n
-///      00: Bits [31:0] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [63:32] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
 ///    Bits [5:4]: \n
-///      00: Bits [31:0] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [95:64] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
 ///    Bits [7:6]: \n
-///      00: Bits [31:0] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [127:96] of the
-///          returned vector.
+///                   00: Bits [31:0] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [127:96] of the
+///                       returned vector.
 /// \returns A 128-bit vector of [4 x float] containing the copied values.
 #define _mm_permute_ps(A, C) \
   (__m128)__builtin_ia32_vpermilps((__v4sf)(__m128)(A), (int)(C))
@@ -1104,77 +1104,77 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 ///    An immediate integer operand specifying how the values are to be
 ///    copied. \n
 ///    Bits [1:0]: \n
-///      00: Bits [31:0] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [31:0] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [31:0] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [31:0] of the
+///                       returned vector. \n
 ///    Bits [3:2]: \n
-///      00: Bits [31:0] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [63:32] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [63:32] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [63:32] of the
+///                       returned vector. \n
 ///    Bits [5:4]: \n
-///      00: Bits [31:0] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [95:64] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [95:64] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [95:64] of the
+///                       returned vector. \n
 ///    Bits [7:6]: \n
-///      00: Bits [31:0] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      01: Bits [63:32] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      10: Bits [95:64] of the source are copied to bits [127:96] of the
-///          returned vector. \n
-///      11: Bits [127:96] of the source are copied to bits [127:96] of the
-///          returned vector. \n
+///                   00: Bits [31:0] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   01: Bits [63:32] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   10: Bits [95:64] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
+///                   11: Bits [127:96] of the source are copied to bits [127:96] of the
+///                       returned vector. \n
 ///    Bits [1:0]: \n
-///      00: Bits [159:128] of the source are copied to bits [159:128] of the
-///          returned vector. \n
-///      01: Bits [191:160] of the source are copied to bits [159:128] of the
-///          returned vector. \n
-///      10: Bits [223:192] of the source are copied to bits [159:128] of the
-///          returned vector. \n
-///      11: Bits [255:224] of the source are copied to bits [159:128] of the
-///          returned vector. \n
+///                   00: Bits [159:128] of the source are copied to bits [159:128] of the
+///                       returned vector. \n
+///                   01: Bits [191:160] of the source are copied to bits [159:128] of the
+///                       returned vector. \n
+///                   10: Bits [223:192] of the source are copied to bits [159:128] of the
+///                       returned vector. \n
+///                   11: Bits [255:224] of the source are copied to bits [159:128] of the
+///                       returned vector. \n
 ///    Bits [3:2]: \n
-///      00: Bits [159:128] of the source are copied to bits [191:160] of the
-///          returned vector. \n
-///      01: Bits [191:160] of the source are copied to bits [191:160] of the
-///          returned vector. \n
-///      10: Bits [223:192] of the source are copied to bits [191:160] of the
-///          returned vector. \n
-///      11: Bits [255:224] of the source are copied to bits [191:160] of the
-///          returned vector. \n
+///                   00: Bits [159:128] of the source are copied to bits [191:160] of the
+///                       returned vector. \n
+///                   01: Bits [191:160] of the source are copied to bits [191:160] of the
+///                       returned vector. \n
+///                   10: Bits [223:192] of the source are copied to bits [191:160] of the
+///                       returned vector. \n
+///                   11: Bits [255:224] of the source are copied to bits [191:160] of the
+///                       returned vector. \n
 ///    Bits [5:4]: \n
-///      00: Bits [159:128] of the source are copied to bits [223:192] of the
-///          returned vector. \n
-///      01: Bits [191:160] of the source are copied to bits [223:192] of the
-///          returned vector. \n
-///      10: Bits [223:192] of the source are copied to bits [223:192] of the
-///          returned vector. \n
-///      11: Bits [255:224] of the source are copied to bits [223:192] of the
-///          returned vector. \n
+///                   00: Bits [159:128] of the source are copied to bits [223:192] of the
+///                       returned vector. \n
+///                   01: Bits [191:160] of the source are copied to bits [223:192] of the
+///                       returned vector. \n
+///                   10: Bits [223:192] of the source are copied to bits [223:192] of the
+///                       returned vector. \n
+///                   11: Bits [255:224] of the source are copied to bits [223:192] of the
+///                       returned vector. \n
 ///    Bits [7:6]: \n
-///      00: Bits [159:128] of the source are copied to bits [255:224] of the
-///          returned vector. \n
-///      01: Bits [191:160] of the source are copied to bits [255:224] of the
-///          returned vector. \n
-///      10: Bits [223:192] of the source are copied to bits [255:224] of the
-///          returned vector. \n
-///      11: Bits [255:224] of the source are copied to bits [255:224] of the
-///          returned vector.
+///                   00: Bits [159:128] of the source are copied to bits [255:224] of the
+///                       returned vector. \n
+///                   01: Bits [191:160] of the source are copied to bits [255:224] of the
+///                       returned vector. \n
+///                   10: Bits [223:192] of the source are copied to bits [255:224] of the
+///                       returned vector. \n
+///                   11: Bits [255:224] of the source are copied to bits [255:224] of the
+///                       returned vector.
 /// \returns A 256-bit vector of [8 x float] containing the copied values.
 #define _mm256_permute_ps(A, C) \
   (__m256)__builtin_ia32_vpermilps256((__v8sf)(__m256)(A), (int)(C))
@@ -1198,27 +1198,27 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 ///    An immediate integer operand specifying how the values are to be
 ///    permuted. \n
 ///    Bits [1:0]: \n
-///      00: Bits [127:0] of operand \a V1 are copied to bits [127:0] of the
-///          destination. \n
-///      01: Bits [255:128] of operand \a V1 are copied to bits [127:0] of the
-///          destination. \n
-///      10: Bits [127:0] of operand \a V2 are copied to bits [127:0] of the
-///          destination. \n
-///      11: Bits [255:128] of operand \a V2 are copied to bits [127:0] of the
-///          destination. \n
+///                   00: Bits [127:0] of operand \a V1 are copied to bits [127:0] of the
+///                       destination. \n
+///                   01: Bits [255:128] of operand \a V1 are copied to bits [127:0] of the
+///                       destination. \n
+///                   10: Bits [127:0] of operand \a V2 are copied to bits [127:0] of the
+///                       destination. \n
+///                   11: Bits [255:128] of operand \a V2 are copied to bits [127:0] of the
+///                       destination. \n
 ///    Bits [5:4]: \n
-///      00: Bits [127:0] of operand \a V1 are copied to bits [255:128] of the
-///          destination. \n
-///      01: Bits [255:128] of operand \a V1 are copied to bits [255:128] of the
-///          destination. \n
-///      10: Bits [127:0] of operand \a V2 are copied to bits [255:128] of the
-///          destination. \n
-///      11: Bits [255:128] of operand \a V2 are copied to bits [255:128] of the
-///          destination.
+///                   00: Bits [127:0] of operand \a V1 are copied to bits [255:128] of the
+///                       destination. \n
+///                   01: Bits [255:128] of operand \a V1 are copied to bits [255:128] of the
+///                       destination. \n
+///                   10: Bits [127:0] of operand \a V2 are copied to bits [255:128] of the
+///                       destination. \n
+///                   11: Bits [255:128] of operand \a V2 are copied to bits [255:128] of the
+///                       destination.
 /// \returns A 256-bit vector of [4 x double] containing the copied values.
 #define _mm256_permute2f128_pd(V1, V2, M) \
   (__m256d)__builtin_ia32_vperm2f128_pd256((__v4df)(__m256d)(V1), \
-                                           (__v4df)(__m256d)(V2), (int)(M))
+                                                                                                                                      (__v4df)(__m256d)(V2), (int)(M))
 
 /// Permutes 128-bit data values stored in two 256-bit vectors of
 ///    [8 x float], as specified by the immediate integer operand.
@@ -1259,7 +1259,7 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 /// \returns A 256-bit vector of [8 x float] containing the copied values.
 #define _mm256_permute2f128_ps(V1, V2, M) \
   (__m256)__builtin_ia32_vperm2f128_ps256((__v8sf)(__m256)(V1), \
-                                          (__v8sf)(__m256)(V2), (int)(M))
+                                                                                                                                     (__v8sf)(__m256)(V2), (int)(M))
 
 /// Permutes 128-bit data values stored in two 256-bit integer vectors,
 ///    as specified by the immediate integer operand.
@@ -1299,7 +1299,7 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 /// \returns A 256-bit integer vector containing the copied values.
 #define _mm256_permute2f128_si256(V1, V2, M) \
   (__m256i)__builtin_ia32_vperm2f128_si256((__v8si)(__m256i)(V1), \
-                                           (__v8si)(__m256i)(V2), (int)(M))
+                                                                                                                                      (__v8si)(__m256i)(V2), (int)(M))
 
 /* Vector Blend */
 /// Merges 64-bit double-precision data values stored in either of the
@@ -1328,7 +1328,7 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 /// \returns A 256-bit vector of [4 x double] containing the copied values.
 #define _mm256_blend_pd(V1, V2, M) \
   (__m256d)__builtin_ia32_blendpd256((__v4df)(__m256d)(V1), \
-                                     (__v4df)(__m256d)(V2), (int)(M))
+                                                                                                                   (__v4df)(__m256d)(V2), (int)(M))
 
 /// Merges 32-bit single-precision data values stored in either of the
 ///    two 256-bit vectors of [8 x float], as specified by the immediate
@@ -1356,7 +1356,7 @@ _mm256_permutevar_ps(__m256 __a, __m256i __c)
 /// \returns A 256-bit vector of [8 x float] containing the copied values.
 #define _mm256_blend_ps(V1, V2, M) \
   (__m256)__builtin_ia32_blendps256((__v8sf)(__m256)(V1), \
-                                    (__v8sf)(__m256)(V2), (int)(M))
+                                                                                                                  (__v8sf)(__m256)(V2), (int)(M))
 
 /// Merges 64-bit double-precision data values stored in either of the
 ///    two 256-bit vectors of [4 x double], as specified by the 256-bit vector
@@ -1454,7 +1454,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 256-bit vector of [8 x float] containing the two dot products.
 #define _mm256_dp_ps(V1, V2, M) \
   (__m256)__builtin_ia32_dpps256((__v8sf)(__m256)(V1), \
-                                 (__v8sf)(__m256)(V2), (M))
+                                                                                                  (__v8sf)(__m256)(V2), (M))
 
 /* Vector shuffle */
 /// Selects 8 float values from the 256-bit operands of [8 x float], as
@@ -1508,7 +1508,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 256-bit vector of [8 x float] containing the shuffled values.
 #define _mm256_shuffle_ps(a, b, mask) \
   (__m256)__builtin_ia32_shufps256((__v8sf)(__m256)(a), \
-                                   (__v8sf)(__m256)(b), (int)(mask))
+                                                                                                    (__v8sf)(__m256)(b), (int)(mask))
 
 /// Selects four double-precision values from the 256-bit operands of
 ///    [4 x double], as specified by the immediate value operand.
@@ -1554,7 +1554,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 256-bit vector of [4 x double] containing the shuffled values.
 #define _mm256_shuffle_pd(a, b, mask) \
   (__m256d)__builtin_ia32_shufpd256((__v4df)(__m256d)(a), \
-                                    (__v4df)(__m256d)(b), (int)(mask))
+                                                                                                                  (__v4df)(__m256d)(b), (int)(mask))
 
 /* Compare */
 #define _CMP_EQ_OQ    0x00 /* Equal (ordered, non-signaling)  */
@@ -1648,7 +1648,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 128-bit vector of [2 x double] containing the comparison results.
 #define _mm_cmp_pd(a, b, c) \
   (__m128d)__builtin_ia32_cmppd((__v2df)(__m128d)(a), \
-                                (__v2df)(__m128d)(b), (c))
+                                                                                                 (__v2df)(__m128d)(b), (c))
 
 /// Compares each of the corresponding values of two 128-bit vectors of
 ///    [4 x float], using the operation specified by the immediate integer
@@ -1708,7 +1708,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 128-bit vector of [4 x float] containing the comparison results.
 #define _mm_cmp_ps(a, b, c) \
   (__m128)__builtin_ia32_cmpps((__v4sf)(__m128)(a), \
-                               (__v4sf)(__m128)(b), (c))
+                                                                                                (__v4sf)(__m128)(b), (c))
 
 /// Compares each of the corresponding double-precision values of two
 ///    256-bit vectors of [4 x double], using the operation specified by the
@@ -1768,7 +1768,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 256-bit vector of [4 x double] containing the comparison results.
 #define _mm256_cmp_pd(a, b, c) \
   (__m256d)__builtin_ia32_cmppd256((__v4df)(__m256d)(a), \
-                                   (__v4df)(__m256d)(b), (c))
+                                                                                                    (__v4df)(__m256d)(b), (c))
 
 /// Compares each of the corresponding values of two 256-bit vectors of
 ///    [8 x float], using the operation specified by the immediate integer
@@ -1828,7 +1828,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 256-bit vector of [8 x float] containing the comparison results.
 #define _mm256_cmp_ps(a, b, c) \
   (__m256)__builtin_ia32_cmpps256((__v8sf)(__m256)(a), \
-                                  (__v8sf)(__m256)(b), (c))
+                                                                                                   (__v8sf)(__m256)(b), (c))
 
 /// Compares each of the corresponding scalar double-precision values of
 ///    two 128-bit vectors of [2 x double], using the operation specified by the
@@ -1887,7 +1887,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 128-bit vector of [2 x double] containing the comparison results.
 #define _mm_cmp_sd(a, b, c) \
   (__m128d)__builtin_ia32_cmpsd((__v2df)(__m128d)(a), \
-                                (__v2df)(__m128d)(b), (c))
+                                                                                                 (__v2df)(__m128d)(b), (c))
 
 /// Compares each of the corresponding scalar values of two 128-bit
 ///    vectors of [4 x float], using the operation specified by the immediate
@@ -1946,7 +1946,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 /// \returns A 128-bit vector of [4 x float] containing the comparison results.
 #define _mm_cmp_ss(a, b, c) \
   (__m128)__builtin_ia32_cmpss((__v4sf)(__m128)(a), \
-                               (__v4sf)(__m128)(b), (c))
+                                                                                                (__v4sf)(__m128)(b), (c))
 
 /// Takes a [8 x i32] vector and returns the vector element value
 ///    indexed by the immediate constant operand.
@@ -1983,7 +1983,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 ///    packed data.
 #define _mm256_extract_epi16(X, N) \
   (int)(unsigned short)__builtin_ia32_vec_ext_v16hi((__v16hi)(__m256i)(X), \
-                                                    (int)(N))
+                                                                                                                                                            (int)(N))
 
 /// Takes a [32 x i8] vector and returns the vector element value
 ///    indexed by the immediate constant operand.
@@ -2002,7 +2002,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 ///    packed data.
 #define _mm256_extract_epi8(X, N) \
   (int)(unsigned char)__builtin_ia32_vec_ext_v32qi((__v32qi)(__m256i)(X), \
-                                                   (int)(N))
+                                                                                                                                                           (int)(N))
 
 #ifdef __x86_64__
 /// Takes a [4 x i64] vector and returns the vector element value
@@ -2044,7 +2044,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 ///    \a __imm with \a __b.
 #define _mm256_insert_epi32(X, I, N) \
   (__m256i)__builtin_ia32_vec_set_v8si((__v8si)(__m256i)(X), \
-                                       (int)(I), (int)(N))
+                                                                                                                     (int)(I), (int)(N))
 
 
 /// Takes a [16 x i16] vector and replaces the vector element value
@@ -2067,7 +2067,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 ///    \a __imm with \a __b.
 #define _mm256_insert_epi16(X, I, N) \
   (__m256i)__builtin_ia32_vec_set_v16hi((__v16hi)(__m256i)(X), \
-                                        (int)(I), (int)(N))
+                                                                                                                      (int)(I), (int)(N))
 
 /// Takes a [32 x i8] vector and replaces the vector element value
 ///    indexed by the immediate constant operand with a new value. Returns the
@@ -2089,7 +2089,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 ///    \a __imm with \a __b.
 #define _mm256_insert_epi8(X, I, N) \
   (__m256i)__builtin_ia32_vec_set_v32qi((__v32qi)(__m256i)(X), \
-                                        (int)(I), (int)(N))
+                                                                                                                      (int)(I), (int)(N))
 
 #ifdef __x86_64__
 /// Takes a [4 x i64] vector and replaces the vector element value
@@ -2112,7 +2112,7 @@ _mm256_blendv_ps(__m256 __a, __m256 __b, __m256 __c)
 ///     \a __imm with \a __b.
 #define _mm256_insert_epi64(X, I, N) \
   (__m256i)__builtin_ia32_vec_set_v4di((__v4di)(__m256i)(X), \
-                                       (long long)(I), (int)(N))
+                                                                                                                     (long long)(I), (int)(N))
 #endif
 
 /* Conversion */
@@ -3031,7 +3031,7 @@ _mm256_broadcast_pd(__m128d const *__a)
 {
   __m128d __b = _mm_loadu_pd((const double *)__a);
   return (__m256d)__builtin_shufflevector((__v2df)__b, (__v2df)__b,
-                                          0, 1, 0, 1);
+                                                                                                                                     0, 1, 0, 1);
 }
 
 /// Loads the data from a 128-bit vector of [4 x float] from the
@@ -3051,7 +3051,7 @@ _mm256_broadcast_ps(__m128 const *__a)
 {
   __m128 __b = _mm_loadu_ps((const float *)__a);
   return (__m256)__builtin_shufflevector((__v4sf)__b, (__v4sf)__b,
-                                         0, 1, 2, 3, 0, 1, 2, 3);
+                                                                                                                       0, 1, 2, 3, 0, 1, 2, 3);
 }
 
 /* SIMD load ops */
@@ -3346,7 +3346,7 @@ static __inline __m256d __DEFAULT_FN_ATTRS
 _mm256_maskload_pd(double const *__p, __m256i __m)
 {
   return (__m256d)__builtin_ia32_maskloadpd256((const __v4df *)__p,
-                                               (__v4di)__m);
+                                                                                                                                          (__v4di)__m);
 }
 
 /// Conditionally loads single-precision floating point elements from a
@@ -3658,7 +3658,7 @@ _mm256_set_pd(double __a, double __b, double __c, double __d)
 /// \returns An initialized 256-bit floating-point vector of [8 x float].
 static __inline __m256 __DEFAULT_FN_ATTRS
 _mm256_set_ps(float __a, float __b, float __c, float __d,
-              float __e, float __f, float __g, float __h)
+                                        float __e, float __f, float __g, float __h)
 {
   return __extension__ (__m256){ __h, __g, __f, __e, __d, __c, __b, __a };
 }
@@ -3690,7 +3690,7 @@ _mm256_set_ps(float __a, float __b, float __c, float __d,
 /// \returns An initialized 256-bit integer vector.
 static __inline __m256i __DEFAULT_FN_ATTRS
 _mm256_set_epi32(int __i0, int __i1, int __i2, int __i3,
-                 int __i4, int __i5, int __i6, int __i7)
+                                           int __i4, int __i5, int __i6, int __i7)
 {
   return __extension__ (__m256i)(__v8si){ __i7, __i6, __i5, __i4, __i3, __i2, __i1, __i0 };
 }
@@ -3738,9 +3738,9 @@ _mm256_set_epi32(int __i0, int __i1, int __i2, int __i3,
 /// \returns An initialized 256-bit integer vector.
 static __inline __m256i __DEFAULT_FN_ATTRS
 _mm256_set_epi16(short __w15, short __w14, short __w13, short __w12,
-                 short __w11, short __w10, short __w09, short __w08,
-                 short __w07, short __w06, short __w05, short __w04,
-                 short __w03, short __w02, short __w01, short __w00)
+                                           short __w11, short __w10, short __w09, short __w08,
+                                           short __w07, short __w06, short __w05, short __w04,
+                                           short __w03, short __w02, short __w01, short __w00)
 {
   return __extension__ (__m256i)(__v16hi){ __w00, __w01, __w02, __w03, __w04, __w05, __w06,
     __w07, __w08, __w09, __w10, __w11, __w12, __w13, __w14, __w15 };
@@ -3821,13 +3821,13 @@ _mm256_set_epi16(short __w15, short __w14, short __w13, short __w12,
 /// \returns An initialized 256-bit integer vector.
 static __inline __m256i __DEFAULT_FN_ATTRS
 _mm256_set_epi8(char __b31, char __b30, char __b29, char __b28,
-                char __b27, char __b26, char __b25, char __b24,
-                char __b23, char __b22, char __b21, char __b20,
-                char __b19, char __b18, char __b17, char __b16,
-                char __b15, char __b14, char __b13, char __b12,
-                char __b11, char __b10, char __b09, char __b08,
-                char __b07, char __b06, char __b05, char __b04,
-                char __b03, char __b02, char __b01, char __b00)
+                                          char __b27, char __b26, char __b25, char __b24,
+                                          char __b23, char __b22, char __b21, char __b20,
+                                          char __b19, char __b18, char __b17, char __b16,
+                                          char __b15, char __b14, char __b13, char __b12,
+                                          char __b11, char __b10, char __b09, char __b08,
+                                          char __b07, char __b06, char __b05, char __b04,
+                                          char __b03, char __b02, char __b01, char __b00)
 {
   return __extension__ (__m256i)(__v32qi){
     __b00, __b01, __b02, __b03, __b04, __b05, __b06, __b07,
@@ -3925,7 +3925,7 @@ _mm256_setr_pd(double __a, double __b, double __c, double __d)
 /// \returns An initialized 256-bit floating-point vector of [8 x float].
 static __inline __m256 __DEFAULT_FN_ATTRS
 _mm256_setr_ps(float __a, float __b, float __c, float __d,
-               float __e, float __f, float __g, float __h)
+                                         float __e, float __f, float __g, float __h)
 {
   return _mm256_set_ps(__h, __g, __f, __e, __d, __c, __b, __a);
 }
@@ -3957,7 +3957,7 @@ _mm256_setr_ps(float __a, float __b, float __c, float __d,
 /// \returns An initialized 256-bit integer vector.
 static __inline __m256i __DEFAULT_FN_ATTRS
 _mm256_setr_epi32(int __i0, int __i1, int __i2, int __i3,
-                  int __i4, int __i5, int __i6, int __i7)
+                                                         int __i4, int __i5, int __i6, int __i7)
 {
   return _mm256_set_epi32(__i7, __i6, __i5, __i4, __i3, __i2, __i1, __i0);
 }
@@ -4005,14 +4005,14 @@ _mm256_setr_epi32(int __i0, int __i1, int __i2, int __i3,
 /// \returns An initialized 256-bit integer vector.
 static __inline __m256i __DEFAULT_FN_ATTRS
 _mm256_setr_epi16(short __w15, short __w14, short __w13, short __w12,
-       short __w11, short __w10, short __w09, short __w08,
-       short __w07, short __w06, short __w05, short __w04,
-       short __w03, short __w02, short __w01, short __w00)
+                    short __w11, short __w10, short __w09, short __w08,
+                    short __w07, short __w06, short __w05, short __w04,
+                    short __w03, short __w02, short __w01, short __w00)
 {
   return _mm256_set_epi16(__w00, __w01, __w02, __w03,
-                          __w04, __w05, __w06, __w07,
-                          __w08, __w09, __w10, __w11,
-                          __w12, __w13, __w14, __w15);
+                                                                              __w04, __w05, __w06, __w07,
+                                                                              __w08, __w09, __w10, __w11,
+                                                                              __w12, __w13, __w14, __w15);
 }
 
 /// Constructs a 256-bit integer vector, initialized in reverse order
@@ -4090,18 +4090,18 @@ _mm256_setr_epi16(short __w15, short __w14, short __w13, short __w12,
 /// \returns An initialized 256-bit integer vector.
 static __inline __m256i __DEFAULT_FN_ATTRS
 _mm256_setr_epi8(char __b31, char __b30, char __b29, char __b28,
-                 char __b27, char __b26, char __b25, char __b24,
-                 char __b23, char __b22, char __b21, char __b20,
-                 char __b19, char __b18, char __b17, char __b16,
-                 char __b15, char __b14, char __b13, char __b12,
-                 char __b11, char __b10, char __b09, char __b08,
-                 char __b07, char __b06, char __b05, char __b04,
-                 char __b03, char __b02, char __b01, char __b00)
+                                           char __b27, char __b26, char __b25, char __b24,
+                                           char __b23, char __b22, char __b21, char __b20,
+                                           char __b19, char __b18, char __b17, char __b16,
+                                           char __b15, char __b14, char __b13, char __b12,
+                                           char __b11, char __b10, char __b09, char __b08,
+                                           char __b07, char __b06, char __b05, char __b04,
+                                           char __b03, char __b02, char __b01, char __b00)
 {
   return _mm256_set_epi8(__b00, __b01, __b02, __b03, __b04, __b05, __b06, __b07,
-                         __b08, __b09, __b10, __b11, __b12, __b13, __b14, __b15,
-                         __b16, __b17, __b18, __b19, __b20, __b21, __b22, __b23,
-                         __b24, __b25, __b26, __b27, __b28, __b29, __b30, __b31);
+                                                                             __b08, __b09, __b10, __b11, __b12, __b13, __b14, __b15,
+                                                                             __b16, __b17, __b18, __b19, __b20, __b21, __b22, __b23,
+                                                                             __b24, __b25, __b26, __b27, __b28, __b29, __b30, __b31);
 }
 
 /// Constructs a 256-bit integer vector, initialized in reverse order
@@ -4200,7 +4200,7 @@ static __inline __m256i __DEFAULT_FN_ATTRS
 _mm256_set1_epi16(short __w)
 {
   return _mm256_set_epi16(__w, __w, __w, __w, __w, __w, __w, __w,
-                          __w, __w, __w, __w, __w, __w, __w, __w);
+                                                                              __w, __w, __w, __w, __w, __w, __w, __w);
 }
 
 /// Constructs a 256-bit integer vector of [32 x i8], with each of the
@@ -4218,9 +4218,9 @@ static __inline __m256i __DEFAULT_FN_ATTRS
 _mm256_set1_epi8(char __b)
 {
   return _mm256_set_epi8(__b, __b, __b, __b, __b, __b, __b, __b,
-                         __b, __b, __b, __b, __b, __b, __b, __b,
-                         __b, __b, __b, __b, __b, __b, __b, __b,
-                         __b, __b, __b, __b, __b, __b, __b, __b);
+                                                                             __b, __b, __b, __b, __b, __b, __b, __b,
+                                                                             __b, __b, __b, __b, __b, __b, __b, __b,
+                                                                             __b, __b, __b, __b, __b, __b, __b, __b);
 }
 
 /// Constructs a 256-bit integer vector of [4 x i64], with each of the
@@ -4593,7 +4593,7 @@ _mm256_zextsi128_si256(__m128i __a)
 /// \returns A 256-bit vector of [8 x float] containing the interleaved values.
 #define _mm256_insertf128_ps(V1, V2, M) \
   (__m256)__builtin_ia32_vinsertf128_ps256((__v8sf)(__m256)(V1), \
-                                           (__v4sf)(__m128)(V2), (int)(M))
+                                                                                                                                      (__v4sf)(__m128)(V2), (int)(M))
 
 /// Constructs a new 256-bit vector of [4 x double] by first duplicating
 ///    a 256-bit vector of [4 x double] given in the first parameter, and then
@@ -4631,7 +4631,7 @@ _mm256_zextsi128_si256(__m128i __a)
 /// \returns A 256-bit vector of [4 x double] containing the interleaved values.
 #define _mm256_insertf128_pd(V1, V2, M) \
   (__m256d)__builtin_ia32_vinsertf128_pd256((__v4df)(__m256d)(V1), \
-                                            (__v2df)(__m128d)(V2), (int)(M))
+                                                                                                                                       (__v2df)(__m128d)(V2), (int)(M))
 
 /// Constructs a new 256-bit integer vector by first duplicating a
 ///    256-bit integer vector given in the first parameter, and then replacing
@@ -4669,7 +4669,7 @@ _mm256_zextsi128_si256(__m128i __a)
 /// \returns A 256-bit integer vector containing the interleaved values.
 #define _mm256_insertf128_si256(V1, V2, M) \
   (__m256i)__builtin_ia32_vinsertf128_si256((__v8si)(__m256i)(V1), \
-                                            (__v4si)(__m128i)(V2), (int)(M))
+                                                                                                                                       (__v4si)(__m128i)(V2), (int)(M))
 
 /*
    Vector extract.

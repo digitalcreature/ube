@@ -238,19 +238,19 @@ enum
   {
     FP_INT_UPWARD =
 # define FP_INT_UPWARD 0
-      FP_INT_UPWARD,
+                   FP_INT_UPWARD,
     FP_INT_DOWNWARD =
 # define FP_INT_DOWNWARD 1
-      FP_INT_DOWNWARD,
+                   FP_INT_DOWNWARD,
     FP_INT_TOWARDZERO =
 # define FP_INT_TOWARDZERO 2
-      FP_INT_TOWARDZERO,
+                   FP_INT_TOWARDZERO,
     FP_INT_TONEARESTFROMZERO =
 # define FP_INT_TONEARESTFROMZERO 3
-      FP_INT_TONEARESTFROMZERO,
+                   FP_INT_TONEARESTFROMZERO,
     FP_INT_TONEAREST =
 # define FP_INT_TONEAREST 4
-      FP_INT_TONEAREST,
+                   FP_INT_TONEAREST,
   };
 #endif
 
@@ -332,7 +332,7 @@ extern float __REDIRECT_NTH (nexttowardf, (float __x, long double __y),
 			     __nldbl_nexttowardf)
      __attribute__ ((__const__));
 extern double __REDIRECT_NTH (nexttoward, (double __x, long double __y),
-			      nextafter) __attribute__ ((__const__));
+			                   nextafter) __attribute__ ((__const__));
 extern long double __REDIRECT_NTH (nexttowardl,
 				   (long double __x, long double __y),
 				   nextafter) __attribute__ ((__const__));
@@ -390,7 +390,7 @@ extern double __REDIRECT_NTH (nexttoward, (double __x, long double __y),
 #  undef __MATH_DECLARING_FLOATN
 
 #  if defined __LDBL_COMPAT \
-      || __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI == 1
+                   || __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI == 1
 #   undef __REDIRTO
 #   undef __REDIRTO_ALT
 #   undef __MATHDECL_1
@@ -876,12 +876,12 @@ extern int signgam;
 #  endif
 #  define __MATH_TG(TG_ARG, FUNC, ARGS)	\
      _Generic ((TG_ARG),			\
-	       float: FUNC ## f ARGS,		\
-	       __MATH_TG_F32 (FUNC, ARGS)	\
-	       default: FUNC ARGS,		\
-	       long double: FUNC ## l ARGS,	\
-	       __MATH_TG_F64X (FUNC, ARGS)	\
-	       _Float128: FUNC ## f128 ARGS)
+	                    float: FUNC ## f ARGS,		\
+	                    __MATH_TG_F32 (FUNC, ARGS)	\
+	                    default: FUNC ARGS,		\
+	                    long double: FUNC ## l ARGS,	\
+	                    __MATH_TG_F64X (FUNC, ARGS)	\
+	                    _Float128: FUNC ## f128 ARGS)
 # else
 #  if __HAVE_FLOATN_NOT_TYPEDEF
 #   error "Non-typedef _FloatN but no _Generic."
@@ -889,12 +889,12 @@ extern int signgam;
 #  define __MATH_TG(TG_ARG, FUNC, ARGS)					\
      __builtin_choose_expr						\
      (__builtin_types_compatible_p (__typeof (TG_ARG), float),		\
-      FUNC ## f ARGS,							\
-      __builtin_choose_expr						\
-      (__builtin_types_compatible_p (__typeof (TG_ARG), double),	\
-       FUNC ARGS,							\
-       __builtin_choose_expr						\
-       (__builtin_types_compatible_p (__typeof (TG_ARG), long double),	\
+                   FUNC ## f ARGS,							\
+                   __builtin_choose_expr						\
+                   (__builtin_types_compatible_p (__typeof (TG_ARG), double),	\
+                    FUNC ARGS,							\
+                    __builtin_choose_expr						\
+                    (__builtin_types_compatible_p (__typeof (TG_ARG), long double),	\
 	FUNC ## l ARGS,							\
 	FUNC ## f128 ARGS)))
 # endif
@@ -915,19 +915,19 @@ enum
   {
     FP_NAN =
 # define FP_NAN 0
-      FP_NAN,
+                   FP_NAN,
     FP_INFINITE =
 # define FP_INFINITE 1
-      FP_INFINITE,
+                   FP_INFINITE,
     FP_ZERO =
 # define FP_ZERO 2
-      FP_ZERO,
+                   FP_ZERO,
     FP_SUBNORMAL =
 # define FP_SUBNORMAL 3
-      FP_SUBNORMAL,
+                   FP_SUBNORMAL,
     FP_NORMAL =
 # define FP_NORMAL 4
-      FP_NORMAL
+                   FP_NORMAL
   };
 
 /* GCC bug 66462 means we cannot use the math builtins with -fsignaling-nan,
@@ -935,8 +935,8 @@ enum
    the __SUPPORT_SNAN__ check may be skipped for those versions.  */
 
 /* Return number of classification appropriate for X.  */
-# if ((__GNUC_PREREQ (4,4) && !defined __SUPPORT_SNAN__)		      \
-      || __glibc_clang_prereq (2,8))					      \
+# if ((__GNUC_PREREQ (4,4) && !defined __SUPPORT_SNAN__)		                   \
+                   || __glibc_clang_prereq (2,8))					                   \
      && (!defined __OPTIMIZE_SIZE__ || defined __cplusplus)
      /* The check for __cplusplus allows the use of the builtin, even
 	when optimization for size is on.  This is provided for
@@ -944,7 +944,7 @@ enum
 	with -Os.  No further use of this definition of fpclassify is
 	expected in C++ mode, since libstdc++ provides its own version
 	of fpclassify in cmath (which undefines fpclassify).  */
-#  define fpclassify(x) __builtin_fpclassify (FP_NAN, FP_INFINITE,	      \
+#  define fpclassify(x) __builtin_fpclassify (FP_NAN, FP_INFINITE,	                   \
      FP_NORMAL, FP_SUBNORMAL, FP_ZERO, x)
 # else
 #  define fpclassify(x) __MATH_TG ((x), __fpclassify, (x))
@@ -997,15 +997,15 @@ enum
 # if __HAVE_DISTINCT_FLOAT128 && !__GNUC_PREREQ (7,0) \
      && !defined __SUPPORT_SNAN__ && !defined __cplusplus
    /* Since __builtin_isinf_sign is broken for float128 before GCC 7.0,
-      use the helper function, __isinff128, with older compilers.  This is
-      only provided for C mode, because in C++ mode, GCC has no support
-      for __builtin_types_compatible_p (and when in C++ mode, this macro is
-      not used anyway, because libstdc++ headers undefine it).  */
+                   use the helper function, __isinff128, with older compilers.  This is
+                   only provided for C mode, because in C++ mode, GCC has no support
+                   for __builtin_types_compatible_p (and when in C++ mode, this macro is
+                   not used anyway, because libstdc++ headers undefine it).  */
 #  define isinf(x) \
     (__builtin_types_compatible_p (__typeof (x), _Float128) \
      ? __isinff128 (x) : __builtin_isinf_sign (x))
 # elif (__GNUC_PREREQ (4,4) && !defined __SUPPORT_SNAN__) \
-       || __glibc_clang_prereq (3,7)
+                    || __glibc_clang_prereq (3,7)
 #  define isinf(x) __builtin_isinf_sign (x)
 # else
 #  define isinf(x) __MATH_TG ((x), __isinf, (x))
@@ -1038,11 +1038,11 @@ enum
 #  define issignaling(x) __MATH_TG ((x), __issignaling, (x))
 # else
    /* In C++ mode, __MATH_TG cannot be used, because it relies on
-      __builtin_types_compatible_p, which is a C-only builtin.  On the
-      other hand, overloading provides the means to distinguish between
-      the floating-point types.  The overloading resolution will match
-      the correct parameter (regardless of type qualifiers (i.e.: const
-      and volatile)).  */
+                   __builtin_types_compatible_p, which is a C-only builtin.  On the
+                   other hand, overloading provides the means to distinguish between
+                   the floating-point types.  The overloading resolution will match
+                   the correct parameter (regardless of type qualifiers (i.e.: const
+                   and volatile)).  */
 extern "C++" {
 inline int issignaling (float __val) { return __issignalingf (__val); }
 inline int issignaling (double __val) { return __issignaling (__val); }

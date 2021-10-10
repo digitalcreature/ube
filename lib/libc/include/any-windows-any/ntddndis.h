@@ -1174,8 +1174,8 @@ extern "C" {
     ULONG Length;
     ULONG Type;
     __C89_NAMELESS union {
-      NDIS_802_11_AUTHENTICATION_EVENT AuthenticationEvent;
-      NDIS_802_11_RSSI RssiTrigger;
+                   NDIS_802_11_AUTHENTICATION_EVENT AuthenticationEvent;
+                   NDIS_802_11_RSSI RssiTrigger;
     };
   } NDIS_802_11_TEST, *PNDIS_802_11_TEST;
 
@@ -1904,8 +1904,8 @@ extern "C" {
   typedef struct _NDIS_GUID {
     GUID Guid;
     __C89_NAMELESS union {
-      NDIS_OID Oid;
-      NDIS_STATUS Status;
+                   NDIS_OID Oid;
+                   NDIS_STATUS Status;
     };
     ULONG Size;
     ULONG Flags;
@@ -2062,14 +2062,14 @@ extern "C" {
 #endif
 #if NDIS_SUPPORT_NDIS630
     __C89_NAMELESS struct {
-      UCHAR RscIPv4;
-      UCHAR RscIPv6;
+                   UCHAR RscIPv4;
+                   UCHAR RscIPv6;
     };
 #endif
 #if NDIS_SUPPORT_NDIS630
     __C89_NAMELESS struct {
-      UCHAR EncapsulatedPacketTaskOffload;
-      UCHAR EncapsulationTypes;
+                   UCHAR EncapsulatedPacketTaskOffload;
+                   UCHAR EncapsulationTypes;
     };
 #endif
   } NDIS_OFFLOAD_PARAMETERS, *PNDIS_OFFLOAD_PARAMETERS;
@@ -2098,86 +2098,86 @@ extern "C" {
 
   typedef struct _NDIS_TCP_LARGE_SEND_OFFLOAD_V1 {
     struct {
-      ULONG Encapsulation;
-      ULONG MaxOffLoadSize;
-      ULONG MinSegmentCount;
-      ULONG TcpOptions:2;
-      ULONG IpOptions:2;
+                   ULONG Encapsulation;
+                   ULONG MaxOffLoadSize;
+                   ULONG MinSegmentCount;
+                   ULONG TcpOptions:2;
+                   ULONG IpOptions:2;
     } IPv4;
   } NDIS_TCP_LARGE_SEND_OFFLOAD_V1, *PNDIS_TCP_LARGE_SEND_OFFLOAD_V1;
 
   typedef struct _NDIS_TCP_IP_CHECKSUM_OFFLOAD {
     struct {
-      ULONG Encapsulation;
-      ULONG IpOptionsSupported:2;
-      ULONG TcpOptionsSupported:2;
-      ULONG TcpChecksum:2;
-      ULONG UdpChecksum:2;
-      ULONG IpChecksum:2;
+                   ULONG Encapsulation;
+                   ULONG IpOptionsSupported:2;
+                   ULONG TcpOptionsSupported:2;
+                   ULONG TcpChecksum:2;
+                   ULONG UdpChecksum:2;
+                   ULONG IpChecksum:2;
     } IPv4Transmit;
     struct {
-      ULONG Encapsulation;
-      ULONG IpOptionsSupported:2;
-      ULONG TcpOptionsSupported:2;
-      ULONG TcpChecksum:2;
-      ULONG UdpChecksum:2;
-      ULONG IpChecksum:2;
+                   ULONG Encapsulation;
+                   ULONG IpOptionsSupported:2;
+                   ULONG TcpOptionsSupported:2;
+                   ULONG TcpChecksum:2;
+                   ULONG UdpChecksum:2;
+                   ULONG IpChecksum:2;
     } IPv4Receive;
     struct {
-      ULONG Encapsulation;
-      ULONG IpExtensionHeadersSupported:2;
-      ULONG TcpOptionsSupported:2;
-      ULONG TcpChecksum:2;
-      ULONG UdpChecksum:2;
+                   ULONG Encapsulation;
+                   ULONG IpExtensionHeadersSupported:2;
+                   ULONG TcpOptionsSupported:2;
+                   ULONG TcpChecksum:2;
+                   ULONG UdpChecksum:2;
     } IPv6Transmit;
     struct {
-      ULONG Encapsulation;
-      ULONG IpExtensionHeadersSupported:2;
-      ULONG TcpOptionsSupported:2;
-      ULONG TcpChecksum:2;
-      ULONG UdpChecksum:2;
+                   ULONG Encapsulation;
+                   ULONG IpExtensionHeadersSupported:2;
+                   ULONG TcpOptionsSupported:2;
+                   ULONG TcpChecksum:2;
+                   ULONG UdpChecksum:2;
     } IPv6Receive;
   } NDIS_TCP_IP_CHECKSUM_OFFLOAD, *PNDIS_TCP_IP_CHECKSUM_OFFLOAD;
   typedef struct _NDIS_IPSEC_OFFLOAD_V1 {
     struct {
-      ULONG Encapsulation;
-      ULONG AhEspCombined;
-      ULONG TransportTunnelCombined;
-      ULONG IPv4Options;
-      ULONG Flags;
+                   ULONG Encapsulation;
+                   ULONG AhEspCombined;
+                   ULONG TransportTunnelCombined;
+                   ULONG IPv4Options;
+                   ULONG Flags;
     } Supported;
     struct {
-      ULONG Md5 : 2;
-      ULONG Sha_1 : 2;
-      ULONG Transport : 2;
-      ULONG Tunnel : 2;
-      ULONG Send : 2;
-      ULONG Receive : 2;
+                   ULONG Md5 : 2;
+                   ULONG Sha_1 : 2;
+                   ULONG Transport : 2;
+                   ULONG Tunnel : 2;
+                   ULONG Send : 2;
+                   ULONG Receive : 2;
     } IPv4AH;
     struct {
-      ULONG Des : 2;
-      ULONG Reserved : 2;
-      ULONG TripleDes : 2;
-      ULONG NullEsp : 2;
-      ULONG Transport : 2;
-      ULONG Tunnel : 2;
-      ULONG Send : 2;
-      ULONG Receive : 2;
+                   ULONG Des : 2;
+                   ULONG Reserved : 2;
+                   ULONG TripleDes : 2;
+                   ULONG NullEsp : 2;
+                   ULONG Transport : 2;
+                   ULONG Tunnel : 2;
+                   ULONG Send : 2;
+                   ULONG Receive : 2;
     } IPv4ESP;
   } NDIS_IPSEC_OFFLOAD_V1, *PNDIS_IPSEC_OFFLOAD_V1;
 
   typedef struct _NDIS_TCP_LARGE_SEND_OFFLOAD_V2 {
     struct {
-      ULONG Encapsulation;
-      ULONG MaxOffLoadSize;
-      ULONG MinSegmentCount;
+                   ULONG Encapsulation;
+                   ULONG MaxOffLoadSize;
+                   ULONG MinSegmentCount;
     }IPv4;
     struct {
-      ULONG Encapsulation;
-      ULONG MaxOffLoadSize;
-      ULONG MinSegmentCount;
-      ULONG IpExtensionHeadersSupported:2;
-      ULONG TcpOptionsSupported:2;
+                   ULONG Encapsulation;
+                   ULONG MaxOffLoadSize;
+                   ULONG MinSegmentCount;
+                   ULONG IpExtensionHeadersSupported:2;
+                   ULONG TcpOptionsSupported:2;
     } IPv6;
   } NDIS_TCP_LARGE_SEND_OFFLOAD_V2, *PNDIS_TCP_LARGE_SEND_OFFLOAD_V2;
 
@@ -2287,10 +2287,10 @@ extern "C" {
 #if NDIS_SUPPORT_NDIS630
   typedef struct _NDIS_TCP_RECV_SEG_COALESCE_OFFLOAD {
     struct {
-      BOOLEAN Enabled;
+                   BOOLEAN Enabled;
     } IPv4;
     struct {
-      BOOLEAN Enabled;
+                   BOOLEAN Enabled;
     } IPv6;
   } NDIS_TCP_RECV_SEG_COALESCE_OFFLOAD, *PNDIS_TCP_RECV_SEG_COALESCE_OFFLOAD;
 
@@ -2322,87 +2322,87 @@ extern "C" {
 
   typedef struct _NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V1 {
     struct {
-      ULONG Encapsulation;
-      ULONG MaxOffLoadSize;
-      ULONG MinSegmentCount;
-      ULONG TcpOptions;
-      ULONG IpOptions;
+                   ULONG Encapsulation;
+                   ULONG MaxOffLoadSize;
+                   ULONG MinSegmentCount;
+                   ULONG TcpOptions;
+                   ULONG IpOptions;
     } IPv4;
   } NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V1, *PNDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V1;
 
   typedef struct _NDIS_WMI_TCP_IP_CHECKSUM_OFFLOAD {
     struct {
-      ULONG Encapsulation;
-      ULONG IpOptionsSupported;
-      ULONG TcpOptionsSupported;
-      ULONG TcpChecksum;
-      ULONG UdpChecksum;
-      ULONG IpChecksum;
+                   ULONG Encapsulation;
+                   ULONG IpOptionsSupported;
+                   ULONG TcpOptionsSupported;
+                   ULONG TcpChecksum;
+                   ULONG UdpChecksum;
+                   ULONG IpChecksum;
     } IPv4Transmit;
     struct {
-      ULONG Encapsulation;
-      ULONG IpOptionsSupported;
-      ULONG TcpOptionsSupported;
-      ULONG TcpChecksum;
-      ULONG UdpChecksum;
-      ULONG IpChecksum;
+                   ULONG Encapsulation;
+                   ULONG IpOptionsSupported;
+                   ULONG TcpOptionsSupported;
+                   ULONG TcpChecksum;
+                   ULONG UdpChecksum;
+                   ULONG IpChecksum;
     } IPv4Receive;
     struct {
-      ULONG Encapsulation;
-      ULONG IpExtensionHeadersSupported;
-      ULONG TcpOptionsSupported;
-      ULONG TcpChecksum;
-      ULONG UdpChecksum;
+                   ULONG Encapsulation;
+                   ULONG IpExtensionHeadersSupported;
+                   ULONG TcpOptionsSupported;
+                   ULONG TcpChecksum;
+                   ULONG UdpChecksum;
     } IPv6Transmit;
     struct {
-      ULONG Encapsulation;
-      ULONG IpExtensionHeadersSupported;
-      ULONG TcpOptionsSupported;
-      ULONG TcpChecksum;
-      ULONG UdpChecksum;
+                   ULONG Encapsulation;
+                   ULONG IpExtensionHeadersSupported;
+                   ULONG TcpOptionsSupported;
+                   ULONG TcpChecksum;
+                   ULONG UdpChecksum;
     } IPv6Receive;
   } NDIS_WMI_TCP_IP_CHECKSUM_OFFLOAD, *PNDIS_WMI_TCP_IP_CHECKSUM_OFFLOAD;
 
   typedef struct _NDIS_WMI_IPSEC_OFFLOAD_V1 {
     struct {
-      ULONG Encapsulation;
-      ULONG AhEspCombined;
-      ULONG TransportTunnelCombined;
-      ULONG IPv4Options;
-      ULONG Flags;
+                   ULONG Encapsulation;
+                   ULONG AhEspCombined;
+                   ULONG TransportTunnelCombined;
+                   ULONG IPv4Options;
+                   ULONG Flags;
     } Supported;
     struct {
-      ULONG Md5;
-      ULONG Sha_1;
-      ULONG Transport;
-      ULONG Tunnel;
-      ULONG Send;
-      ULONG Receive;
+                   ULONG Md5;
+                   ULONG Sha_1;
+                   ULONG Transport;
+                   ULONG Tunnel;
+                   ULONG Send;
+                   ULONG Receive;
     } IPv4AH;
     struct {
-      ULONG Des;
-      ULONG Reserved;
-      ULONG TripleDes;
-      ULONG NullEsp;
-      ULONG Transport;
-      ULONG Tunnel;
-      ULONG Send;
-      ULONG Receive;
+                   ULONG Des;
+                   ULONG Reserved;
+                   ULONG TripleDes;
+                   ULONG NullEsp;
+                   ULONG Transport;
+                   ULONG Tunnel;
+                   ULONG Send;
+                   ULONG Receive;
     } IPv4ESP;
   } NDIS_WMI_IPSEC_OFFLOAD_V1, *PNDIS_WMI_IPSEC_OFFLOAD_V1;
 
   typedef struct _NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V2 {
     struct {
-      ULONG Encapsulation;
-      ULONG MaxOffLoadSize;
-      ULONG MinSegmentCount;
+                   ULONG Encapsulation;
+                   ULONG MaxOffLoadSize;
+                   ULONG MinSegmentCount;
     } IPv4;
     struct {
-      ULONG Encapsulation;
-      ULONG MaxOffLoadSize;
-      ULONG MinSegmentCount;
-      ULONG IpExtensionHeadersSupported;
-      ULONG TcpOptionsSupported;
+                   ULONG Encapsulation;
+                   ULONG MaxOffLoadSize;
+                   ULONG MinSegmentCount;
+                   ULONG IpExtensionHeadersSupported;
+                   ULONG TcpOptionsSupported;
     } IPv6;
   } NDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V2, *PNDIS_WMI_TCP_LARGE_SEND_OFFLOAD_V2;
 
@@ -2853,30 +2853,30 @@ extern "C" {
     ULONG PatternId;
     ULONG NextWoLPatternOffset;
     union _WOL_PATTERN {
-      struct _IPV4_TCP_SYN_WOL_PACKET_PARAMETERS {
+                   struct _IPV4_TCP_SYN_WOL_PACKET_PARAMETERS {
 	ULONG Flags;
 	UCHAR IPv4SourceAddress[4];
 	UCHAR IPv4DestAddress[4];
 	USHORT TCPSourcePortNumber;
 	USHORT TCPDestPortNumber;
-      } IPv4TcpSynParameters;
-      struct _IPV6_TCP_SYN_WOL_PACKET_PARAMETERS {
+                   } IPv4TcpSynParameters;
+                   struct _IPV6_TCP_SYN_WOL_PACKET_PARAMETERS {
 	ULONG Flags;
 	UCHAR IPv6SourceAddress[16];
 	UCHAR IPv6DestAddress[16];
 	USHORT TCPSourcePortNumber;
 	USHORT TCPDestPortNumber;
-      } IPv6TcpSynParameters;
-      struct _EAPOL_REQUEST_ID_MESSAGE_WOL_PACKET_PARAMETERS {
+                   } IPv6TcpSynParameters;
+                   struct _EAPOL_REQUEST_ID_MESSAGE_WOL_PACKET_PARAMETERS {
 	ULONG Flags;
-      } EapolRequestIdMessageParameters;
-      struct _WOL_BITMAP_PATTERN {
+                   } EapolRequestIdMessageParameters;
+                   struct _WOL_BITMAP_PATTERN {
 	ULONG Flags;
 	ULONG MaskOffset;
 	ULONG MaskSize;
 	ULONG PatternOffset;
 	ULONG PatternSize;
-      } WoLBitMapPattern;
+                   } WoLBitMapPattern;
     } WoLPattern;
   } NDIS_PM_WOL_PATTERN, *PNDIS_PM_WOL_PATTERN;
 
@@ -2889,25 +2889,25 @@ extern "C" {
     ULONG ProtocolOffloadId;
     ULONG NextProtocolOffloadOffset;
     union _PROTOCOL_OFFLOAD_PARAMETERS {
-      struct _IPV4_ARP_PARAMETERS {
+                   struct _IPV4_ARP_PARAMETERS {
 	ULONG Flags;
 	UCHAR RemoteIPv4Address[4];
 	UCHAR HostIPv4Address[4];
 	UCHAR MacAddress[6];
-      } IPv4ARPParameters;
-      struct _IPV6_NS_PARAMETERS {
+                   } IPv4ARPParameters;
+                   struct _IPV6_NS_PARAMETERS {
 	ULONG Flags;
 	UCHAR RemoteIPv6Address[16];
 	UCHAR SolicitedNodeIPv6Address[16];
 	UCHAR MacAddress[6];
 	UCHAR TargetIPv6Addresses[2][16];
-      } IPv6NSParameters;
-      struct _DOT11_RSN_REKEY_PARAMETERS {
+                   } IPv6NSParameters;
+                   struct _DOT11_RSN_REKEY_PARAMETERS {
 	ULONG Flags;
 	UCHAR KCK[DOT11_RSN_KCK_LENGTH];
 	UCHAR KEK[DOT11_RSN_KEK_LENGTH];
 	ULONGLONG KeyReplayCounter;
-      } Dot11RSNRekeyParameters;
+                   } Dot11RSNRekeyParameters;
     } ProtocolOffloadParameters;
   } NDIS_PM_PROTOCOL_OFFLOAD, *PNDIS_PM_PROTOCOL_OFFLOAD;
 
@@ -3124,25 +3124,25 @@ extern "C" {
     NDIS_FRAME_HEADER FrameHeader;
     NDIS_RECEIVE_FILTER_TEST ReceiveFilterTest;
     union _HEADER_FIELD {
-      NDIS_MAC_HEADER_FIELD MacHeaderField;
-      NDIS_ARP_HEADER_FIELD ArpHeaderField;
-      NDIS_IPV4_HEADER_FIELD IPv4HeaderField;
-      NDIS_IPV6_HEADER_FIELD IPv6HeaderField;
-      NDIS_UDP_HEADER_FIELD UdpHeaderField;
+                   NDIS_MAC_HEADER_FIELD MacHeaderField;
+                   NDIS_ARP_HEADER_FIELD ArpHeaderField;
+                   NDIS_IPV4_HEADER_FIELD IPv4HeaderField;
+                   NDIS_IPV6_HEADER_FIELD IPv6HeaderField;
+                   NDIS_UDP_HEADER_FIELD UdpHeaderField;
     } HeaderField;
     union _FIELD_VALUE {
-      UCHAR FieldByteValue;
-      USHORT FieldShortValue;
-      ULONG FieldLongValue;
-      ULONG64 FieldLong64Value;
-      UCHAR FieldByteArrayValue[16];
+                   UCHAR FieldByteValue;
+                   USHORT FieldShortValue;
+                   ULONG FieldLongValue;
+                   ULONG64 FieldLong64Value;
+                   UCHAR FieldByteArrayValue[16];
     } FieldValue;
     union _RESULT_VALUE {
-      UCHAR ResultByteValue;
-      USHORT ResultShortValue;
-      ULONG ResultLongValue;
-      ULONG64 ResultLong64Value;
-      UCHAR ResultByteArrayValue[16];
+                   UCHAR ResultByteValue;
+                   USHORT ResultShortValue;
+                   ULONG ResultLongValue;
+                   ULONG64 ResultLong64Value;
+                   UCHAR ResultByteArrayValue[16];
     } ResultValue;
   } NDIS_RECEIVE_FILTER_FIELD_PARAMETERS, *PNDIS_RECEIVE_FILTER_FIELD_PARAMETERS;
 
@@ -4215,20 +4215,20 @@ extern "C" {
     ULONG Flags;
     NDIS_SWITCH_PORT_VLAN_MODE OperationMode;
     __C89_NAMELESS union {
-      struct {
+                   struct {
 	UINT16 AccessVlanId;
 	UINT16 NativeVlanId;
 	UINT64 PruneVlanIdArray[64];
 	UINT64 TrunkVlanIdArray[64];
-      } VlanProperties;
-      struct {
+                   } VlanProperties;
+                   struct {
 	NDIS_SWITCH_PORT_PVLAN_MODE PvlanMode;
 	UINT16 PrimaryVlanId;
 	__C89_NAMELESS union {
 	  UINT16 SecondaryVlanId;
 	  UINT64 SecondaryVlanIdArray[64];
 	};
-      } PvlanProperties;
+                   } PvlanProperties;
     };
   } NDIS_SWITCH_PORT_PROPERTY_VLAN, *PNDIS_SWITCH_PORT_PROPERTY_VLAN;
 
@@ -4242,10 +4242,10 @@ extern "C" {
     UINT32 ProfileData;
     GUID NetCfgInstanceId;
     struct {
-      UINT32 PciSegmentNumber:16;
-      UINT32 PciBusNumber:8;
-      UINT32 PciDeviceNumber:5;
-      UINT32 PciFunctionNumber:3;
+                   UINT32 PciSegmentNumber:16;
+                   UINT32 PciBusNumber:8;
+                   UINT32 PciDeviceNumber:5;
+                   UINT32 PciFunctionNumber:3;
     } PciLocation;
     UINT32 CdnLabelId;
     NDIS_SWITCH_PORT_PROPERTY_PROFILE_CDN_LABEL CdnLabel;

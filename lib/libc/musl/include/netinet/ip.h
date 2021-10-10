@@ -124,7 +124,7 @@ struct ip_timestamp {
 #define	IPTOS_MINCOST		IPTOS_LOWCOST
 
 #define	IPTOS_PREC_MASK			0xe0
-#define	IPTOS_PREC(tos)                ((tos) & IPTOS_PREC_MASK)
+#define	IPTOS_PREC(tos)                                          ((tos) & IPTOS_PREC_MASK)
 #define	IPTOS_PREC_NETCONTROL		0xe0
 #define	IPTOS_PREC_INTERNETCONTROL	0xc0
 #define	IPTOS_PREC_CRITIC_ECP		0xa0
@@ -145,7 +145,7 @@ struct ip_timestamp {
 #define	IPOPT_CONTROL		0x00
 #define	IPOPT_RESERVED1		0x20
 #define	IPOPT_DEBMEAS		0x40
-#define	IPOPT_MEASUREMENT       IPOPT_DEBMEAS
+#define	IPOPT_MEASUREMENT                    IPOPT_DEBMEAS
 #define	IPOPT_RESERVED2		0x60
 
 #define	IPOPT_EOL		0

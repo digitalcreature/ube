@@ -37,8 +37,8 @@ _int_waccess_s (const wchar_t *s, int m)
 {
   if (!s || (m & ~6) != 0)
     {
-      _waccess (NULL, m);
-      return EINVAL;
+                   _waccess (NULL, m);
+                   return EINVAL;
     }
   if (!_waccess (s, m))
     return 0;

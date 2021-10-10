@@ -29,7 +29,7 @@ inline void *operator new(__SIZE_TYPE__ size) {
   return ::malloc(size);
 }
 inline void *operator new(__SIZE_TYPE__ size,
-                          const std::nothrow_t &) OPENMP_NOEXCEPT {
+                                                                              const std::nothrow_t &) OPENMP_NOEXCEPT {
   return ::operator new(size);
 }
 
@@ -50,7 +50,7 @@ inline void operator delete[](void *ptr) OPENMP_NOEXCEPT {
   ::operator delete(ptr);
 }
 inline void operator delete[](void *ptr,
-                              const std::nothrow_t &) OPENMP_NOEXCEPT {
+                                                                                               const std::nothrow_t &) OPENMP_NOEXCEPT {
   ::operator delete(ptr);
 }
 

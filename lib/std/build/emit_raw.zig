@@ -42,114 +42,114 @@ const BinaryElfOutput = struct {
     const Self = @This();
 
     pub fn deinit(self: *Self) void {
-        self.sections.deinit();
-        self.segments.deinit();
+                     self.sections.deinit();
+                     self.segments.deinit();
     }
 
     pub fn parse(allocator: *Allocator, elf_file: File) !Self {
-        var self: Self = .{
-            .segments = ArrayList(*BinaryElfSegment).init(allocator),
-            .sections = ArrayList(*BinaryElfSection).init(allocator),
-        };
-        const elf_hdr = try std.elf.readHeader(elf_file);
+                     var self: Self = .{
+                                      .segments = ArrayList(*BinaryElfSegment).init(allocator),
+                                      .sections = ArrayList(*BinaryElfSection).init(allocator),
+                     };
+                     const elf_hdr = try std.elf.readHeader(elf_file);
 
-        var section_headers = elf_hdr.section_header_iterator(elf_file);
-        while (try section_headers.next()) |section| {
-            if (sectionValidForOutput(section)) {
-                const newSection = try allocator.create(BinaryElfSection);
+                     var section_headers = elf_hdr.section_header_iterator(elf_file);
+                     while (try section_headers.next()) |section| {
+                                      if (sectionValidForOutput(section)) {
+                                          const newSection = try allocator.create(BinaryElfSection);
 
-                newSection.binaryOffset = 0;
-                newSection.elfOffset = section.sh_offset;
-                newSection.fileSize = @intCast(usize, section.sh_size);
-                newSection.segment = null;
+                                          newSection.binaryOffset = 0;
+                                          newSection.elfOffset = section.sh_offset;
+                                          newSection.fileSize = @intCast(usize, section.sh_size);
+                                          newSection.segment = null;
 
-                try self.sections.append(newSection);
-            }
-        }
+                                          try self.sections.append(newSection);
+                                      }
+                     }
 
-        var program_headers = elf_hdr.program_header_iterator(elf_file);
-        while (try program_headers.next()) |phdr| {
-            if (phdr.p_type == elf.PT_LOAD) {
-                const newSegment = try allocator.create(BinaryElfSegment);
+                     var program_headers = elf_hdr.program_header_iterator(elf_file);
+                     while (try program_headers.next()) |phdr| {
+                                      if (phdr.p_type == elf.PT_LOAD) {
+                                          const newSegment = try allocator.create(BinaryElfSegment);
 
-                newSegment.physicalAddress = if (phdr.p_paddr != 0) phdr.p_paddr else phdr.p_vaddr;
-                newSegment.virtualAddress = phdr.p_vaddr;
-                newSegment.fileSize = @intCast(usize, phdr.p_filesz);
-                newSegment.elfOffset = phdr.p_offset;
-                newSegment.binaryOffset = 0;
-                newSegment.firstSection = null;
+                                          newSegment.physicalAddress = if (phdr.p_paddr != 0) phdr.p_paddr else phdr.p_vaddr;
+                                          newSegment.virtualAddress = phdr.p_vaddr;
+                                          newSegment.fileSize = @intCast(usize, phdr.p_filesz);
+                                          newSegment.elfOffset = phdr.p_offset;
+                                          newSegment.binaryOffset = 0;
+                                          newSegment.firstSection = null;
 
-                for (self.sections.span()) |section| {
-                    if (sectionWithinSegment(section, phdr)) {
-                        if (section.segment) |sectionSegment| {
-                            if (sectionSegment.elfOffset > newSegment.elfOffset) {
-                                section.segment = newSegment;
-                            }
-                        } else {
-                            section.segment = newSegment;
-                        }
+                                          for (self.sections.span()) |section| {
+                                                           if (sectionWithinSegment(section, phdr)) {
+                                                                            if (section.segment) |sectionSegment| {
+                                                                                if (sectionSegment.elfOffset > newSegment.elfOffset) {
+                                                                                                 section.segment = newSegment;
+                                                                                }
+                                                                            } else {
+                                                                                section.segment = newSegment;
+                                                                            }
 
-                        if (newSegment.firstSection == null) {
-                            newSegment.firstSection = section;
-                        }
-                    }
-                }
+                                                                            if (newSegment.firstSection == null) {
+                                                                                newSegment.firstSection = section;
+                                                                            }
+                                                           }
+                                          }
 
-                try self.segments.append(newSegment);
-            }
-        }
+                                          try self.segments.append(newSegment);
+                                      }
+                     }
 
-        sort.sort(*BinaryElfSegment, self.segments.span(), {}, segmentSortCompare);
+                     sort.sort(*BinaryElfSegment, self.segments.span(), {}, segmentSortCompare);
 
-        if (self.segments.items.len > 0) {
-            const firstSegment = self.segments.items[0];
-            if (firstSegment.firstSection) |firstSection| {
-                const diff = firstSection.elfOffset - firstSegment.elfOffset;
+                     if (self.segments.items.len > 0) {
+                                      const firstSegment = self.segments.items[0];
+                                      if (firstSegment.firstSection) |firstSection| {
+                                          const diff = firstSection.elfOffset - firstSegment.elfOffset;
 
-                firstSegment.elfOffset += diff;
-                firstSegment.fileSize += diff;
-                firstSegment.physicalAddress += diff;
+                                          firstSegment.elfOffset += diff;
+                                          firstSegment.fileSize += diff;
+                                          firstSegment.physicalAddress += diff;
 
-                const basePhysicalAddress = firstSegment.physicalAddress;
+                                          const basePhysicalAddress = firstSegment.physicalAddress;
 
-                for (self.segments.span()) |segment| {
-                    segment.binaryOffset = segment.physicalAddress - basePhysicalAddress;
-                }
-            }
-        }
+                                          for (self.segments.span()) |segment| {
+                                                           segment.binaryOffset = segment.physicalAddress - basePhysicalAddress;
+                                          }
+                                      }
+                     }
 
-        for (self.sections.span()) |section| {
-            if (section.segment) |segment| {
-                section.binaryOffset = segment.binaryOffset + (section.elfOffset - segment.elfOffset);
-            }
-        }
+                     for (self.sections.span()) |section| {
+                                      if (section.segment) |segment| {
+                                          section.binaryOffset = segment.binaryOffset + (section.elfOffset - segment.elfOffset);
+                                      }
+                     }
 
-        sort.sort(*BinaryElfSection, self.sections.span(), {}, sectionSortCompare);
+                     sort.sort(*BinaryElfSection, self.sections.span(), {}, sectionSortCompare);
 
-        return self;
+                     return self;
     }
 
     fn sectionWithinSegment(section: *BinaryElfSection, segment: elf.Elf64_Phdr) bool {
-        return segment.p_offset <= section.elfOffset and (segment.p_offset + segment.p_filesz) >= (section.elfOffset + section.fileSize);
+                     return segment.p_offset <= section.elfOffset and (segment.p_offset + segment.p_filesz) >= (section.elfOffset + section.fileSize);
     }
 
     fn sectionValidForOutput(shdr: anytype) bool {
-        return shdr.sh_size > 0 and shdr.sh_type != elf.SHT_NOBITS and
-            ((shdr.sh_flags & elf.SHF_ALLOC) == elf.SHF_ALLOC);
+                     return shdr.sh_size > 0 and shdr.sh_type != elf.SHT_NOBITS and
+                                      ((shdr.sh_flags & elf.SHF_ALLOC) == elf.SHF_ALLOC);
     }
 
     fn segmentSortCompare(context: void, left: *BinaryElfSegment, right: *BinaryElfSegment) bool {
-        if (left.physicalAddress < right.physicalAddress) {
-            return true;
-        }
-        if (left.physicalAddress > right.physicalAddress) {
-            return false;
-        }
-        return false;
+                     if (left.physicalAddress < right.physicalAddress) {
+                                      return true;
+                     }
+                     if (left.physicalAddress > right.physicalAddress) {
+                                      return false;
+                     }
+                     return false;
     }
 
     fn sectionSortCompare(context: void, left: *BinaryElfSection, right: *BinaryElfSection) bool {
-        return left.binaryOffset < right.binaryOffset;
+                     return left.binaryOffset < right.binaryOffset;
     }
 };
 
@@ -157,8 +157,8 @@ fn writeBinaryElfSection(elf_file: File, out_file: File, section: *BinaryElfSect
     try out_file.seekTo(section.binaryOffset);
 
     try out_file.writeFileAll(elf_file, .{
-        .in_offset = section.elfOffset,
-        .in_len = section.fileSize,
+                     .in_offset = section.elfOffset,
+                     .in_len = section.fileSize,
     });
 }
 
@@ -173,7 +173,7 @@ fn emitRaw(allocator: *Allocator, elf_path: []const u8, raw_path: []const u8) !v
     defer binary_elf_output.deinit();
 
     for (binary_elf_output.sections.span()) |section| {
-        try writeBinaryElfSection(elf_file, out_file, section);
+                     try writeBinaryElfSection(elf_file, out_file, section);
     }
 }
 
@@ -187,39 +187,39 @@ pub const InstallRawStep = struct {
     const Self = @This();
 
     pub fn create(builder: *Builder, artifact: *LibExeObjStep, dest_filename: []const u8) *Self {
-        const self = builder.allocator.create(Self) catch unreachable;
-        self.* = Self{
-            .step = Step.init(.InstallRaw, builder.fmt("install raw binary {}", .{artifact.step.name}), builder.allocator, make),
-            .builder = builder,
-            .artifact = artifact,
-            .dest_dir = switch (artifact.kind) {
-                .Obj => unreachable,
-                .Test => unreachable,
-                .Exe => .Bin,
-                .Lib => unreachable,
-            },
-            .dest_filename = dest_filename,
-        };
-        self.step.dependOn(&artifact.step);
+                     const self = builder.allocator.create(Self) catch unreachable;
+                     self.* = Self{
+                                      .step = Step.init(.InstallRaw, builder.fmt("install raw binary {}", .{artifact.step.name}), builder.allocator, make),
+                                      .builder = builder,
+                                      .artifact = artifact,
+                                      .dest_dir = switch (artifact.kind) {
+                                          .Obj => unreachable,
+                                          .Test => unreachable,
+                                          .Exe => .Bin,
+                                          .Lib => unreachable,
+                                      },
+                                      .dest_filename = dest_filename,
+                     };
+                     self.step.dependOn(&artifact.step);
 
-        builder.pushInstalledFile(self.dest_dir, dest_filename);
-        return self;
+                     builder.pushInstalledFile(self.dest_dir, dest_filename);
+                     return self;
     }
 
     fn make(step: *Step) !void {
-        const self = @fieldParentPtr(Self, "step", step);
-        const builder = self.builder;
+                     const self = @fieldParentPtr(Self, "step", step);
+                     const builder = self.builder;
 
-        if (self.artifact.target.getObjectFormat() != .elf) {
-            warn("InstallRawStep only works with ELF format.\n", .{});
-            return error.InvalidObjectFormat;
-        }
+                     if (self.artifact.target.getObjectFormat() != .elf) {
+                                      warn("InstallRawStep only works with ELF format.\n", .{});
+                                      return error.InvalidObjectFormat;
+                     }
 
-        const full_src_path = self.artifact.getOutputPath();
-        const full_dest_path = builder.getInstallPath(self.dest_dir, self.dest_filename);
+                     const full_src_path = self.artifact.getOutputPath();
+                     const full_dest_path = builder.getInstallPath(self.dest_dir, self.dest_filename);
 
-        fs.cwd().makePath(builder.getInstallPath(self.dest_dir, "")) catch unreachable;
-        try emitRaw(builder.allocator, full_src_path, full_dest_path);
+                     fs.cwd().makePath(builder.getInstallPath(self.dest_dir, "")) catch unreachable;
+                     try emitRaw(builder.allocator, full_src_path, full_dest_path);
     }
 };
 

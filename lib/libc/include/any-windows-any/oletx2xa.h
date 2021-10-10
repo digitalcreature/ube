@@ -97,13 +97,13 @@ extern "C" {
 #else
   typedef struct IDtcToXaMapperVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcToXaMapper *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcToXaMapper *This);
-      ULONG (WINAPI *Release)(IDtcToXaMapper *This);
-      HRESULT (WINAPI *RequestNewResourceManager)(IDtcToXaMapper *This,char *pszDSN,char *pszClientDllName,DWORD *pdwRMCookie);
-      HRESULT (WINAPI *TranslateTridToXid)(IDtcToXaMapper *This,DWORD *pdwITransaction,DWORD dwRMCookie,XID *pXid);
-      HRESULT (WINAPI *EnlistResourceManager)(IDtcToXaMapper *This,DWORD dwRMCookie,DWORD *pdwITransaction);
-      HRESULT (WINAPI *ReleaseResourceManager)(IDtcToXaMapper *This,DWORD dwRMCookie);
+                   HRESULT (WINAPI *QueryInterface)(IDtcToXaMapper *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcToXaMapper *This);
+                   ULONG (WINAPI *Release)(IDtcToXaMapper *This);
+                   HRESULT (WINAPI *RequestNewResourceManager)(IDtcToXaMapper *This,char *pszDSN,char *pszClientDllName,DWORD *pdwRMCookie);
+                   HRESULT (WINAPI *TranslateTridToXid)(IDtcToXaMapper *This,DWORD *pdwITransaction,DWORD dwRMCookie,XID *pXid);
+                   HRESULT (WINAPI *EnlistResourceManager)(IDtcToXaMapper *This,DWORD dwRMCookie,DWORD *pdwITransaction);
+                   HRESULT (WINAPI *ReleaseResourceManager)(IDtcToXaMapper *This,DWORD dwRMCookie);
     END_INTERFACE
   } IDtcToXaMapperVtbl;
   struct IDtcToXaMapper {
@@ -140,10 +140,10 @@ extern "C" {
 #else
   typedef struct IDtcToXaHelperFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcToXaHelperFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcToXaHelperFactory *This);
-      ULONG (WINAPI *Release)(IDtcToXaHelperFactory *This);
-      HRESULT (WINAPI *Create)(IDtcToXaHelperFactory *This,char *pszDSN,char *pszClientDllName,GUID *pguidRm,IDtcToXaHelper **ppXaHelper);
+                   HRESULT (WINAPI *QueryInterface)(IDtcToXaHelperFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcToXaHelperFactory *This);
+                   ULONG (WINAPI *Release)(IDtcToXaHelperFactory *This);
+                   HRESULT (WINAPI *Create)(IDtcToXaHelperFactory *This,char *pszDSN,char *pszClientDllName,GUID *pguidRm,IDtcToXaHelper **ppXaHelper);
     END_INTERFACE
   } IDtcToXaHelperFactoryVtbl;
   struct IDtcToXaHelperFactory {
@@ -172,11 +172,11 @@ extern "C" {
 #else
   typedef struct IDtcToXaHelperVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcToXaHelper *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcToXaHelper *This);
-      ULONG (WINAPI *Release)(IDtcToXaHelper *This);
-      HRESULT (WINAPI *Close)(IDtcToXaHelper *This,WINBOOL i_fDoRecovery);
-      HRESULT (WINAPI *TranslateTridToXid)(IDtcToXaHelper *This,ITransaction *pITransaction,GUID *pguidBqual,XID *pXid);
+                   HRESULT (WINAPI *QueryInterface)(IDtcToXaHelper *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcToXaHelper *This);
+                   ULONG (WINAPI *Release)(IDtcToXaHelper *This);
+                   HRESULT (WINAPI *Close)(IDtcToXaHelper *This,WINBOOL i_fDoRecovery);
+                   HRESULT (WINAPI *TranslateTridToXid)(IDtcToXaHelper *This,ITransaction *pITransaction,GUID *pguidBqual,XID *pXid);
     END_INTERFACE
   } IDtcToXaHelperVtbl;
   struct IDtcToXaHelper {
@@ -210,13 +210,13 @@ extern "C" {
 #else
   typedef struct IDtcToXaHelperSinglePipeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcToXaHelperSinglePipe *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcToXaHelperSinglePipe *This);
-      ULONG (WINAPI *Release)(IDtcToXaHelperSinglePipe *This);
-      HRESULT (WINAPI *XARMCreate)(IDtcToXaHelperSinglePipe *This,char *pszDSN,char *pszClientDll,DWORD *pdwRMCookie);
-      HRESULT (WINAPI *ConvertTridToXID)(IDtcToXaHelperSinglePipe *This,DWORD *pdwITrans,DWORD dwRMCookie,XID *pxid);
-      HRESULT (WINAPI *EnlistWithRM)(IDtcToXaHelperSinglePipe *This,DWORD dwRMCookie,ITransaction *i_pITransaction,ITransactionResourceAsync *i_pITransRes,ITransactionEnlistmentAsync **o_ppITransEnslitment);
-      void (WINAPI *ReleaseRMCookie)(IDtcToXaHelperSinglePipe *This,DWORD i_dwRMCookie,WINBOOL i_fNormal);
+                   HRESULT (WINAPI *QueryInterface)(IDtcToXaHelperSinglePipe *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcToXaHelperSinglePipe *This);
+                   ULONG (WINAPI *Release)(IDtcToXaHelperSinglePipe *This);
+                   HRESULT (WINAPI *XARMCreate)(IDtcToXaHelperSinglePipe *This,char *pszDSN,char *pszClientDll,DWORD *pdwRMCookie);
+                   HRESULT (WINAPI *ConvertTridToXID)(IDtcToXaHelperSinglePipe *This,DWORD *pdwITrans,DWORD dwRMCookie,XID *pxid);
+                   HRESULT (WINAPI *EnlistWithRM)(IDtcToXaHelperSinglePipe *This,DWORD dwRMCookie,ITransaction *i_pITransaction,ITransactionResourceAsync *i_pITransRes,ITransactionEnlistmentAsync **o_ppITransEnslitment);
+                   void (WINAPI *ReleaseRMCookie)(IDtcToXaHelperSinglePipe *This,DWORD i_dwRMCookie,WINBOOL i_fNormal);
     END_INTERFACE
   } IDtcToXaHelperSinglePipeVtbl;
   struct IDtcToXaHelperSinglePipe {

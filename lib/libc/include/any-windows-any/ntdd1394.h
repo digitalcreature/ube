@@ -33,8 +33,8 @@ extern "C" {
     ULONG RequestNumber;
     ULONG Flags;
     union {
-      IEEE1394_VDEV_PNP_REQUEST AddVirtualDevice;
-      IEEE1394_VDEV_PNP_REQUEST RemoveVirtualDevice;
+                   IEEE1394_VDEV_PNP_REQUEST AddVirtualDevice;
+                   IEEE1394_VDEV_PNP_REQUEST RemoveVirtualDevice;
     } u;
   } IEEE1394_API_REQUEST,*PIEEE1394_API_REQUEST;
 

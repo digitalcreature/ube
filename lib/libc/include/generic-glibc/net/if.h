@@ -89,10 +89,10 @@ struct ifaddr
   {
     struct sockaddr ifa_addr;	/* Address of interface.  */
     union
-      {
+                   {
 	struct sockaddr	ifu_broadaddr;
 	struct sockaddr	ifu_dstaddr;
-      } ifa_ifu;
+                   } ifa_ifu;
     struct iface *ifa_ifp;	/* Back-pointer to interface.  */
     struct ifaddr *ifa_next;	/* Next address for interface.  */
   };
@@ -128,12 +128,12 @@ struct ifreq
 # define IFHWADDRLEN	6
 # define IFNAMSIZ	IF_NAMESIZE
     union
-      {
+                   {
 	char ifrn_name[IFNAMSIZ];	/* Interface name, e.g. "en0".  */
-      } ifr_ifrn;
+                   } ifr_ifrn;
 
     union
-      {
+                   {
 	struct sockaddr ifru_addr;
 	struct sockaddr ifru_dstaddr;
 	struct sockaddr ifru_broadaddr;
@@ -146,7 +146,7 @@ struct ifreq
 	char ifru_slave[IFNAMSIZ];	/* Just fits the size */
 	char ifru_newname[IFNAMSIZ];
 	__caddr_t ifru_data;
-      } ifr_ifru;
+                   } ifr_ifru;
   };
 # define ifr_name	ifr_ifrn.ifrn_name	/* interface name 	*/
 # define ifr_hwaddr	ifr_ifru.ifru_hwaddr	/* MAC address 		*/
@@ -160,7 +160,7 @@ struct ifreq
 # define ifr_map	ifr_ifru.ifru_map	/* device map		*/
 # define ifr_slave	ifr_ifru.ifru_slave	/* slave device		*/
 # define ifr_data	ifr_ifru.ifru_data	/* for use by interface	*/
-# define ifr_ifindex	ifr_ifru.ifru_ivalue    /* interface index      */
+# define ifr_ifindex	ifr_ifru.ifru_ivalue    /* interface index                   */
 # define ifr_bandwidth	ifr_ifru.ifru_ivalue	/* link bandwidth	*/
 # define ifr_qlen	ifr_ifru.ifru_ivalue	/* queue length		*/
 # define ifr_newname	ifr_ifru.ifru_newname	/* New name		*/
@@ -177,10 +177,10 @@ struct ifconf
   {
     int	ifc_len;			/* Size of buffer.  */
     union
-      {
+                   {
 	__caddr_t ifcu_buf;
 	struct ifreq *ifcu_req;
-      } ifc_ifcu;
+                   } ifc_ifcu;
   };
 # define ifc_buf	ifc_ifcu.ifcu_buf	/* Buffer address.  */
 # define ifc_req	ifc_ifcu.ifcu_req	/* Array of structures.  */

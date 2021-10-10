@@ -145,7 +145,7 @@ enum
 #define	_SC_TIMER_MAX			_SC_TIMER_MAX
 
     /* Values for the argument to `sysconf'
-       corresponding to _POSIX2_* symbols.  */
+                    corresponding to _POSIX2_* symbols.  */
     _SC_BC_BASE_MAX,
 #define	_SC_BC_BASE_MAX			_SC_BC_BASE_MAX
     _SC_BC_DIM_MAX,

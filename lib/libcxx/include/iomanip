@@ -32,11 +32,11 @@ template <class charT>
 
 template <class charT, class traits, class Allocator>
   T12 quoted(const basic_string<charT, traits, Allocator>& s,
-             charT delim=charT('"'), charT escape=charT('\\')); // C++14
+                                       charT delim=charT('"'), charT escape=charT('\\')); // C++14
 
 template <class charT, class traits, class Allocator>
   T13 quoted(basic_string<charT, traits, Allocator>& s,
-             charT delim=charT('"'), charT escape=charT('\\')); // C++14
+                                       charT delim=charT('"'), charT escape=charT('\\')); // C++14
 
 }  // std
 
@@ -68,8 +68,8 @@ public:
     basic_istream<_CharT, _Traits>&
     operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t1& __x)
     {
-        __is.unsetf(__x.__mask_);
-        return __is;
+                     __is.unsetf(__x.__mask_);
+                     return __is;
     }
 
     template <class _CharT, class _Traits>
@@ -78,8 +78,8 @@ public:
     basic_ostream<_CharT, _Traits>&
     operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t1& __x)
     {
-        __os.unsetf(__x.__mask_);
-        return __os;
+                     __os.unsetf(__x.__mask_);
+                     return __os;
     }
 };
 
@@ -105,8 +105,8 @@ public:
     basic_istream<_CharT, _Traits>&
     operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t2& __x)
     {
-        __is.setf(__x.__mask_);
-        return __is;
+                     __is.setf(__x.__mask_);
+                     return __is;
     }
 
     template <class _CharT, class _Traits>
@@ -115,8 +115,8 @@ public:
     basic_ostream<_CharT, _Traits>&
     operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t2& __x)
     {
-        __os.setf(__x.__mask_);
-        return __os;
+                     __os.setf(__x.__mask_);
+                     return __os;
     }
 };
 
@@ -142,11 +142,11 @@ public:
     basic_istream<_CharT, _Traits>&
     operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t3& __x)
     {
-        __is.setf(__x.__base_ == 8  ? ios_base::oct :
-                  __x.__base_ == 10 ? ios_base::dec :
-                  __x.__base_ == 16 ? ios_base::hex :
-                  ios_base::fmtflags(0), ios_base::basefield);
-        return __is;
+                     __is.setf(__x.__base_ == 8  ? ios_base::oct :
+                                                         __x.__base_ == 10 ? ios_base::dec :
+                                                         __x.__base_ == 16 ? ios_base::hex :
+                                                         ios_base::fmtflags(0), ios_base::basefield);
+                     return __is;
     }
 
     template <class _CharT, class _Traits>
@@ -155,11 +155,11 @@ public:
     basic_ostream<_CharT, _Traits>&
     operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t3& __x)
     {
-        __os.setf(__x.__base_ == 8  ? ios_base::oct :
-                  __x.__base_ == 10 ? ios_base::dec :
-                  __x.__base_ == 16 ? ios_base::hex :
-                  ios_base::fmtflags(0), ios_base::basefield);
-        return __os;
+                     __os.setf(__x.__base_ == 8  ? ios_base::oct :
+                                                         __x.__base_ == 10 ? ios_base::dec :
+                                                         __x.__base_ == 16 ? ios_base::hex :
+                                                         ios_base::fmtflags(0), ios_base::basefield);
+                     return __os;
     }
 };
 
@@ -186,8 +186,8 @@ public:
     basic_ostream<_CharT, _Traits>&
     operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t4& __x)
     {
-        __os.fill(__x.__fill_);
-        return __os;
+                     __os.fill(__x.__fill_);
+                     return __os;
     }
 };
 
@@ -214,8 +214,8 @@ public:
     basic_istream<_CharT, _Traits>&
     operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t5& __x)
     {
-        __is.precision(__x.__n_);
-        return __is;
+                     __is.precision(__x.__n_);
+                     return __is;
     }
 
     template <class _CharT, class _Traits>
@@ -224,8 +224,8 @@ public:
     basic_ostream<_CharT, _Traits>&
     operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t5& __x)
     {
-        __os.precision(__x.__n_);
-        return __os;
+                     __os.precision(__x.__n_);
+                     return __os;
     }
 };
 
@@ -251,8 +251,8 @@ public:
     basic_istream<_CharT, _Traits>&
     operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t6& __x)
     {
-        __is.width(__x.__n_);
-        return __is;
+                     __is.width(__x.__n_);
+                     return __is;
     }
 
     template <class _CharT, class _Traits>
@@ -261,8 +261,8 @@ public:
     basic_ostream<_CharT, _Traits>&
     operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t6& __x)
     {
-        __os.width(__x.__n_);
-        return __os;
+                     __os.width(__x.__n_);
+                     return __os;
     }
 };
 
@@ -289,7 +289,7 @@ class __iom_t7
 public:
     _LIBCPP_INLINE_VISIBILITY
     __iom_t7(_MoneyT& __mon, bool __intl)
-        : __mon_(__mon), __intl_(__intl) {}
+                     : __mon_(__mon), __intl_(__intl) {}
 
     template <class _CharT, class _Traits, class _Mp>
     friend
@@ -305,21 +305,21 @@ operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t7<_MoneyT>& __x)
     try
     {
 #endif  // _LIBCPP_NO_EXCEPTIONS
-        typename basic_istream<_CharT, _Traits>::sentry __s(__is);
-        if (__s)
-        {
-            typedef istreambuf_iterator<_CharT, _Traits> _Ip;
-            typedef money_get<_CharT, _Ip> _Fp;
-            ios_base::iostate __err = ios_base::goodbit;
-            const _Fp& __mf = use_facet<_Fp>(__is.getloc());
-            __mf.get(_Ip(__is), _Ip(), __x.__intl_, __is, __err, __x.__mon_);
-            __is.setstate(__err);
-        }
+                     typename basic_istream<_CharT, _Traits>::sentry __s(__is);
+                     if (__s)
+                     {
+                                      typedef istreambuf_iterator<_CharT, _Traits> _Ip;
+                                      typedef money_get<_CharT, _Ip> _Fp;
+                                      ios_base::iostate __err = ios_base::goodbit;
+                                      const _Fp& __mf = use_facet<_Fp>(__is.getloc());
+                                      __mf.get(_Ip(__is), _Ip(), __x.__intl_, __is, __err, __x.__mon_);
+                                      __is.setstate(__err);
+                     }
 #ifndef _LIBCPP_NO_EXCEPTIONS
     }
     catch (...)
     {
-        __is.__set_badbit_and_consider_rethrow();
+                     __is.__set_badbit_and_consider_rethrow();
     }
 #endif  // _LIBCPP_NO_EXCEPTIONS
     return __is;
@@ -349,7 +349,7 @@ class __iom_t8
 public:
     _LIBCPP_INLINE_VISIBILITY
     __iom_t8(const _MoneyT& __mon, bool __intl)
-        : __mon_(__mon), __intl_(__intl) {}
+                     : __mon_(__mon), __intl_(__intl) {}
 
     template <class _CharT, class _Traits, class _Mp>
     friend
@@ -365,20 +365,20 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t8<_MoneyT>& __x)
     try
     {
 #endif  // _LIBCPP_NO_EXCEPTIONS
-        typename basic_ostream<_CharT, _Traits>::sentry __s(__os);
-        if (__s)
-        {
-            typedef ostreambuf_iterator<_CharT, _Traits> _Op;
-            typedef money_put<_CharT, _Op> _Fp;
-            const _Fp& __mf = use_facet<_Fp>(__os.getloc());
-            if (__mf.put(_Op(__os), __x.__intl_, __os, __os.fill(), __x.__mon_).failed())
-                __os.setstate(ios_base::badbit);
-        }
+                     typename basic_ostream<_CharT, _Traits>::sentry __s(__os);
+                     if (__s)
+                     {
+                                      typedef ostreambuf_iterator<_CharT, _Traits> _Op;
+                                      typedef money_put<_CharT, _Op> _Fp;
+                                      const _Fp& __mf = use_facet<_Fp>(__os.getloc());
+                                      if (__mf.put(_Op(__os), __x.__intl_, __os, __os.fill(), __x.__mon_).failed())
+                                          __os.setstate(ios_base::badbit);
+                     }
 #ifndef _LIBCPP_NO_EXCEPTIONS
     }
     catch (...)
     {
-        __os.__set_badbit_and_consider_rethrow();
+                     __os.__set_badbit_and_consider_rethrow();
     }
 #endif  // _LIBCPP_NO_EXCEPTIONS
     return __os;
@@ -408,7 +408,7 @@ class __iom_t9
 public:
     _LIBCPP_INLINE_VISIBILITY
     __iom_t9(tm* __tm, const _CharT* __fmt)
-        : __tm_(__tm), __fmt_(__fmt) {}
+                     : __tm_(__tm), __fmt_(__fmt) {}
 
     template <class _Cp, class _Traits>
     friend
@@ -424,22 +424,22 @@ operator>>(basic_istream<_CharT, _Traits>& __is, const __iom_t9<_CharT>& __x)
     try
     {
 #endif  // _LIBCPP_NO_EXCEPTIONS
-        typename basic_istream<_CharT, _Traits>::sentry __s(__is);
-        if (__s)
-        {
-            typedef istreambuf_iterator<_CharT, _Traits> _Ip;
-            typedef time_get<_CharT, _Ip> _Fp;
-            ios_base::iostate __err = ios_base::goodbit;
-            const _Fp& __tf = use_facet<_Fp>(__is.getloc());
-            __tf.get(_Ip(__is), _Ip(), __is, __err, __x.__tm_,
-                     __x.__fmt_, __x.__fmt_ + _Traits::length(__x.__fmt_));
-            __is.setstate(__err);
-        }
+                     typename basic_istream<_CharT, _Traits>::sentry __s(__is);
+                     if (__s)
+                     {
+                                      typedef istreambuf_iterator<_CharT, _Traits> _Ip;
+                                      typedef time_get<_CharT, _Ip> _Fp;
+                                      ios_base::iostate __err = ios_base::goodbit;
+                                      const _Fp& __tf = use_facet<_Fp>(__is.getloc());
+                                      __tf.get(_Ip(__is), _Ip(), __is, __err, __x.__tm_,
+                                                            __x.__fmt_, __x.__fmt_ + _Traits::length(__x.__fmt_));
+                                      __is.setstate(__err);
+                     }
 #ifndef _LIBCPP_NO_EXCEPTIONS
     }
     catch (...)
     {
-        __is.__set_badbit_and_consider_rethrow();
+                     __is.__set_badbit_and_consider_rethrow();
     }
 #endif  // _LIBCPP_NO_EXCEPTIONS
     return __is;
@@ -469,7 +469,7 @@ class __iom_t10
 public:
     _LIBCPP_INLINE_VISIBILITY
     __iom_t10(const tm* __tm, const _CharT* __fmt)
-        : __tm_(__tm), __fmt_(__fmt) {}
+                     : __tm_(__tm), __fmt_(__fmt) {}
 
     template <class _Cp, class _Traits>
     friend
@@ -485,21 +485,21 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const __iom_t10<_CharT>& __x)
     try
     {
 #endif  // _LIBCPP_NO_EXCEPTIONS
-        typename basic_ostream<_CharT, _Traits>::sentry __s(__os);
-        if (__s)
-        {
-            typedef ostreambuf_iterator<_CharT, _Traits> _Op;
-            typedef time_put<_CharT, _Op> _Fp;
-            const _Fp& __tf = use_facet<_Fp>(__os.getloc());
-            if (__tf.put(_Op(__os), __os, __os.fill(), __x.__tm_,
-                         __x.__fmt_, __x.__fmt_ + _Traits::length(__x.__fmt_)).failed())
-                __os.setstate(ios_base::badbit);
-        }
+                     typename basic_ostream<_CharT, _Traits>::sentry __s(__os);
+                     if (__s)
+                     {
+                                      typedef ostreambuf_iterator<_CharT, _Traits> _Op;
+                                      typedef time_put<_CharT, _Op> _Fp;
+                                      const _Fp& __tf = use_facet<_Fp>(__os.getloc());
+                                      if (__tf.put(_Op(__os), __os, __os.fill(), __x.__tm_,
+                                                                             __x.__fmt_, __x.__fmt_ + _Traits::length(__x.__fmt_)).failed())
+                                          __os.setstate(ios_base::badbit);
+                     }
 #ifndef _LIBCPP_NO_EXCEPTIONS
     }
     catch (...)
     {
-        __os.__set_badbit_and_consider_rethrow();
+                     __os.__set_badbit_and_consider_rethrow();
     }
 #endif  // _LIBCPP_NO_EXCEPTIONS
     return __os;
@@ -516,15 +516,15 @@ put_time(const tm* __tm, const _CharT* __fmt)
 template <class _CharT, class _Traits, class _ForwardIterator>
 std::basic_ostream<_CharT, _Traits> &
 __quoted_output ( basic_ostream<_CharT, _Traits> &__os,
-        _ForwardIterator __first, _ForwardIterator __last, _CharT __delim, _CharT __escape )
+                     _ForwardIterator __first, _ForwardIterator __last, _CharT __delim, _CharT __escape )
 {
     _VSTD::basic_string<_CharT, _Traits> __str;
     __str.push_back(__delim);
     for ( ; __first != __last; ++ __first )
     {
-        if (_Traits::eq (*__first, __escape) || _Traits::eq (*__first, __delim))
-            __str.push_back(__escape);
-        __str.push_back(*__first);
+                     if (_Traits::eq (*__first, __escape) || _Traits::eq (*__first, __delim))
+                                      __str.push_back(__escape);
+                     __str.push_back(*__first);
     }
     __str.push_back(__delim);
     return __put_character_sequence(__os, __str.data(), __str.size());
@@ -538,40 +538,40 @@ __quoted_input ( basic_istream<_CharT, _Traits> &__is, _String & __string, _Char
     _CharT __c;
     __is >> __c;
     if ( __is.fail ())
-        return __is;
+                     return __is;
 
     if (!_Traits::eq (__c, __delim))    // no delimiter, read the whole string
     {
-        __is.unget ();
-        __is >> __string;
-        return __is;
+                     __is.unget ();
+                     __is >> __string;
+                     return __is;
     }
 
     __save_flags<_CharT, _Traits> sf(__is);
     noskipws (__is);
     while (true)
-        {
-        __is >> __c;
-        if ( __is.fail ())
-            break;
-        if (_Traits::eq (__c, __escape))
-        {
-            __is >> __c;
-            if ( __is.fail ())
-                break;
-        }
-        else if (_Traits::eq (__c, __delim))
-            break;
-        __string.push_back ( __c );
-        }
+                     {
+                     __is >> __c;
+                     if ( __is.fail ())
+                                      break;
+                     if (_Traits::eq (__c, __escape))
+                     {
+                                      __is >> __c;
+                                      if ( __is.fail ())
+                                          break;
+                     }
+                     else if (_Traits::eq (__c, __delim))
+                                      break;
+                     __string.push_back ( __c );
+                     }
     return __is;
 }
 
 
 template <class _CharT, class _Traits, class _Iter>
 basic_ostream<_CharT, _Traits>& operator<<(
-         basic_ostream<_CharT, _Traits>& __os,
-         const __quoted_output_proxy<_CharT, _Iter, _Traits> & __proxy)
+                      basic_ostream<_CharT, _Traits>& __os,
+                      const __quoted_output_proxy<_CharT, _Iter, _Traits> & __proxy)
 {
     return __quoted_output (__os, __proxy.__first, __proxy.__last, __proxy.__delim, __proxy.__escape);
 }
@@ -590,8 +590,8 @@ struct __quoted_proxy
 template <class _CharT, class _Traits, class _Allocator>
 _LIBCPP_INLINE_VISIBILITY
 basic_ostream<_CharT, _Traits>& operator<<(
-        basic_ostream<_CharT, _Traits>& __os,
-        const __quoted_proxy<_CharT, _Traits, _Allocator> & __proxy)
+                     basic_ostream<_CharT, _Traits>& __os,
+                     const __quoted_proxy<_CharT, _Traits, _Allocator> & __proxy)
 {
     return __quoted_output (__os, __proxy.__string.cbegin (), __proxy.__string.cend (), __proxy.__delim, __proxy.__escape);
 }
@@ -600,8 +600,8 @@ basic_ostream<_CharT, _Traits>& operator<<(
 template <class _CharT, class _Traits, class _Allocator>
 _LIBCPP_INLINE_VISIBILITY
 basic_istream<_CharT, _Traits>& operator>>(
-        basic_istream<_CharT, _Traits>& __is,
-        const __quoted_proxy<_CharT, _Traits, _Allocator> & __proxy)
+                     basic_istream<_CharT, _Traits>& __is,
+                     const __quoted_proxy<_CharT, _Traits, _Allocator> & __proxy)
 {
     return __quoted_input ( __is, __proxy.__string, __proxy.__delim, __proxy.__escape );
 }
@@ -624,8 +624,8 @@ __quoted_output_proxy<_CharT, typename basic_string <_CharT, _Traits, _Allocator
 __quoted ( const basic_string <_CharT, _Traits, _Allocator> &__s, _CharT __delim = _CharT('"'), _CharT __escape=_CharT('\\'))
 {
     return __quoted_output_proxy<_CharT,
-            typename basic_string <_CharT, _Traits, _Allocator>::const_iterator>
-                    ( __s.cbegin(), __s.cend (), __delim, __escape );
+                                      typename basic_string <_CharT, _Traits, _Allocator>::const_iterator>
+                                                           ( __s.cbegin(), __s.cend (), __delim, __escape );
 }
 
 template <class _CharT, class _Traits, class _Allocator>
@@ -658,10 +658,10 @@ quoted ( basic_string <_CharT, _Traits, _Allocator> &__s, _CharT __delim = _Char
 template <class _CharT, class _Traits>
 __quoted_output_proxy<_CharT, const _CharT *, _Traits>
 quoted (basic_string_view <_CharT, _Traits> __sv,
-             _CharT __delim = _CharT('"'), _CharT __escape=_CharT('\\'))
+                                       _CharT __delim = _CharT('"'), _CharT __escape=_CharT('\\'))
 {
     return __quoted_output_proxy<_CharT, const _CharT *, _Traits>
-         ( __sv.data(), __sv.data() + __sv.size(), __delim, __escape );
+                      ( __sv.data(), __sv.data() + __sv.size(), __delim, __escape );
 }
 #endif
 

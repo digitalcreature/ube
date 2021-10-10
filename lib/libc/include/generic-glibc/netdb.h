@@ -133,7 +133,7 @@ extern struct hostent *gethostent (void);
    This function is a possible cancellation point and therefore not
    marked with __THROW.  */
 extern struct hostent *gethostbyaddr (const void *__addr, __socklen_t __len,
-				      int __type);
+				                   int __type);
 
 /* Return entry from host data base for host with NAME.
 
@@ -379,9 +379,9 @@ extern int getprotobyname_r (const char *__restrict __name,
 			     struct protoent **__restrict __result);
 
 extern int getprotobynumber_r (int __proto,
-			       struct protoent *__restrict __result_buf,
-			       char *__restrict __buf, size_t __buflen,
-			       struct protoent **__restrict __result);
+			                    struct protoent *__restrict __result_buf,
+			                    char *__restrict __buf, size_t __buflen,
+			                    struct protoent **__restrict __result);
 
 
 /* Establish network group NETGROUP for enumeration.
@@ -511,8 +511,8 @@ extern int ruserok (const char *__rhost, int __suser,
    or due to the implementation it is a cancellation point and
    therefore not marked with __THROW.  */
 extern int ruserok_af (const char *__rhost, int __suser,
-		       const char *__remuser, const char *__locuser,
-		       sa_family_t __af);
+		                    const char *__remuser, const char *__locuser,
+		                    sa_family_t __af);
 
 /* Check whether user REMUSER on system indicated by IPv4 address
    RADDR is allowed to login as LOCUSER.  Non-IPv4 (e.g., IPv6) are
@@ -635,8 +635,8 @@ struct gaicb
 # endif
 
 # ifdef __USE_MISC
-#  define NI_MAXHOST      1025
-#  define NI_MAXSERV      32
+#  define NI_MAXHOST                   1025
+#  define NI_MAXSERV                   32
 # endif
 
 # define NI_NUMERICHOST	1	/* Don't try to look up hostname.  */

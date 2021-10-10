@@ -33,7 +33,7 @@
  *		- add UINPUT_VERSION
  *	0.2	16/10/2004 (Micah Dowty <micah@navi.cx>)
  *		- added force feedback support
- *             - added UI_SET_PHYS
+ *                                       - added UI_SET_PHYS
  *	0.1	20/06/2002
  *		- first public version
  */
@@ -80,11 +80,11 @@ struct uinput_setup {
  *
  * The ioctl takes a "struct uinput_setup" object as argument. The fields of
  * this object are as follows:
- *              id: See the description of "struct input_id". This field is
- *                  copied unchanged into the new device.
- *            name: This is used unchanged as name for the new device.
+ *                                        id: See the description of "struct input_id". This field is
+ *                                                         copied unchanged into the new device.
+ *                                      name: This is used unchanged as name for the new device.
  *  ff_effects_max: This limits the maximum numbers of force-feedback effects.
- *                  See below for a description of FF with uinput.
+ *                                                         See below for a description of FF with uinput.
  *
  * This ioctl can be called multiple times and will overwrite previous values.
  * If this ioctl fails with -EINVAL, it is recommended to use the old
@@ -114,12 +114,12 @@ struct uinput_abs_setup {
  *
  * The ioctl takes a "struct uinput_abs_setup" object as argument. The fields
  * of this object are as follows:
- *            code: The corresponding input code associated with this axis
- *                  (ABS_X, ABS_Y, etc...)
- *         absinfo: See "struct input_absinfo" for a description of this field.
- *                  This field is copied unchanged into the kernel for the
- *                  specified axis. If the axis is not enabled via
- *                  UI_SET_ABSBIT, this ioctl will enable it.
+ *                                      code: The corresponding input code associated with this axis
+ *                                                         (ABS_X, ABS_Y, etc...)
+ *                      absinfo: See "struct input_absinfo" for a description of this field.
+ *                                                         This field is copied unchanged into the kernel for the
+ *                                                         specified axis. If the axis is not enabled via
+ *                                                         UI_SET_ABSBIT, this ioctl will enable it.
  *
  * This ioctl can be called multiple times and will overwrite previous values.
  * If this ioctl fails with -EINVAL, it is recommended to use the old
@@ -182,31 +182,31 @@ struct uinput_abs_setup {
  *
  * To implement upload_effect():
  *   1. Wait for an event with type == EV_UINPUT and code == UI_FF_UPLOAD.
- *      A request ID will be given in 'value'.
+ *                   A request ID will be given in 'value'.
  *   2. Allocate a uinput_ff_upload struct, fill in request_id with
- *      the 'value' from the EV_UINPUT event.
+ *                   the 'value' from the EV_UINPUT event.
  *   3. Issue a UI_BEGIN_FF_UPLOAD ioctl, giving it the
- *      uinput_ff_upload struct. It will be filled in with the
- *      ff_effects passed to upload_effect().
+ *                   uinput_ff_upload struct. It will be filled in with the
+ *                   ff_effects passed to upload_effect().
  *   4. Perform the effect upload, and place a return code back into
-        the uinput_ff_upload struct.
+                     the uinput_ff_upload struct.
  *   5. Issue a UI_END_FF_UPLOAD ioctl, also giving it the
- *      uinput_ff_upload_effect struct. This will complete execution
- *      of our upload_effect() handler.
+ *                   uinput_ff_upload_effect struct. This will complete execution
+ *                   of our upload_effect() handler.
  *
  * To implement erase_effect():
  *   1. Wait for an event with type == EV_UINPUT and code == UI_FF_ERASE.
- *      A request ID will be given in 'value'.
+ *                   A request ID will be given in 'value'.
  *   2. Allocate a uinput_ff_erase struct, fill in request_id with
- *      the 'value' from the EV_UINPUT event.
+ *                   the 'value' from the EV_UINPUT event.
  *   3. Issue a UI_BEGIN_FF_ERASE ioctl, giving it the
- *      uinput_ff_erase struct. It will be filled in with the
- *      effect ID passed to erase_effect().
+ *                   uinput_ff_erase struct. It will be filled in with the
+ *                   effect ID passed to erase_effect().
  *   4. Perform the effect erasure, and place a return code back
- *      into the uinput_ff_erase struct.
+ *                   into the uinput_ff_erase struct.
  *   5. Issue a UI_END_FF_ERASE ioctl, also giving it the
- *      uinput_ff_erase_effect struct. This will complete execution
- *      of our erase_effect() handler.
+ *                   uinput_ff_erase_effect struct. This will complete execution
+ *                   of our erase_effect() handler.
  */
 
 /*

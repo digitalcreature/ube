@@ -96,22 +96,22 @@ MIDL_INTERFACE("3c374a42-bae4-11cf-bf7d-00aa006946ee")
 IEnumSTATURL : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        LPSTATURL rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     LPSTATURL rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumSTATURL **ppenum) = 0;
+                     IEnumSTATURL **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFilter(
-        LPCOLESTR poszFilter,
-        DWORD dwFlags) = 0;
+                     LPCOLESTR poszFilter,
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -123,38 +123,38 @@ typedef struct IEnumSTATURLVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumSTATURL *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumSTATURL *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumSTATURL *This);
+                     IEnumSTATURL *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumSTATURL *This);
+                     IEnumSTATURL *This);
 
     /*** IEnumSTATURL methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumSTATURL *This,
-        ULONG celt,
-        LPSTATURL rgelt,
-        ULONG *pceltFetched);
+                     IEnumSTATURL *This,
+                     ULONG celt,
+                     LPSTATURL rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumSTATURL *This,
-        ULONG celt);
+                     IEnumSTATURL *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumSTATURL *This);
+                     IEnumSTATURL *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumSTATURL *This,
-        IEnumSTATURL **ppenum);
+                     IEnumSTATURL *This,
+                     IEnumSTATURL **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *SetFilter)(
-        IEnumSTATURL *This,
-        LPCOLESTR poszFilter,
-        DWORD dwFlags);
+                     IEnumSTATURL *This,
+                     LPCOLESTR poszFilter,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } IEnumSTATURLVtbl;
@@ -223,26 +223,26 @@ MIDL_INTERFACE("3c374a41-bae4-11cf-bf7d-00aa006946ee")
 IUrlHistoryStg : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddUrl(
-        LPCOLESTR pocsUrl,
-        LPCOLESTR pocsTitle,
-        DWORD dwFlags) = 0;
+                     LPCOLESTR pocsUrl,
+                     LPCOLESTR pocsTitle,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteUrl(
-        LPCOLESTR pocsUrl,
-        DWORD dwFlags) = 0;
+                     LPCOLESTR pocsUrl,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryUrl(
-        LPCOLESTR pocsUrl,
-        DWORD dwFlags,
-        LPSTATURL lpSTATURL) = 0;
+                     LPCOLESTR pocsUrl,
+                     DWORD dwFlags,
+                     LPSTATURL lpSTATURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BindToObject(
-        LPCOLESTR pocsUrl,
-        REFIID riid,
-        void **ppvOut) = 0;
+                     LPCOLESTR pocsUrl,
+                     REFIID riid,
+                     void **ppvOut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumUrls(
-        IEnumSTATURL **ppEnum) = 0;
+                     IEnumSTATURL **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -254,43 +254,43 @@ typedef struct IUrlHistoryStgVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUrlHistoryStg *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUrlHistoryStg *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUrlHistoryStg *This);
+                     IUrlHistoryStg *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUrlHistoryStg *This);
+                     IUrlHistoryStg *This);
 
     /*** IUrlHistoryStg methods ***/
     HRESULT (STDMETHODCALLTYPE *AddUrl)(
-        IUrlHistoryStg *This,
-        LPCOLESTR pocsUrl,
-        LPCOLESTR pocsTitle,
-        DWORD dwFlags);
+                     IUrlHistoryStg *This,
+                     LPCOLESTR pocsUrl,
+                     LPCOLESTR pocsTitle,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *DeleteUrl)(
-        IUrlHistoryStg *This,
-        LPCOLESTR pocsUrl,
-        DWORD dwFlags);
+                     IUrlHistoryStg *This,
+                     LPCOLESTR pocsUrl,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *QueryUrl)(
-        IUrlHistoryStg *This,
-        LPCOLESTR pocsUrl,
-        DWORD dwFlags,
-        LPSTATURL lpSTATURL);
+                     IUrlHistoryStg *This,
+                     LPCOLESTR pocsUrl,
+                     DWORD dwFlags,
+                     LPSTATURL lpSTATURL);
 
     HRESULT (STDMETHODCALLTYPE *BindToObject)(
-        IUrlHistoryStg *This,
-        LPCOLESTR pocsUrl,
-        REFIID riid,
-        void **ppvOut);
+                     IUrlHistoryStg *This,
+                     LPCOLESTR pocsUrl,
+                     REFIID riid,
+                     void **ppvOut);
 
     HRESULT (STDMETHODCALLTYPE *EnumUrls)(
-        IUrlHistoryStg *This,
-        IEnumSTATURL **ppEnum);
+                     IUrlHistoryStg *This,
+                     IEnumSTATURL **ppEnum);
 
     END_INTERFACE
 } IUrlHistoryStgVtbl;
@@ -359,15 +359,15 @@ MIDL_INTERFACE("afa0dc11-c313-11d0-831a-00c04fd5ae38")
 IUrlHistoryStg2 : public IUrlHistoryStg
 {
     virtual HRESULT STDMETHODCALLTYPE AddUrlAndNotify(
-        LPCOLESTR pocsUrl,
-        LPCOLESTR pocsTitle,
-        DWORD dwFlags,
-        WINBOOL fWriteHistory,
-        IOleCommandTarget *poctNotify,
-        IUnknown *punkISFolder) = 0;
+                     LPCOLESTR pocsUrl,
+                     LPCOLESTR pocsTitle,
+                     DWORD dwFlags,
+                     WINBOOL fWriteHistory,
+                     IOleCommandTarget *poctNotify,
+                     IUnknown *punkISFolder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearHistory(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -379,56 +379,56 @@ typedef struct IUrlHistoryStg2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUrlHistoryStg2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUrlHistoryStg2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUrlHistoryStg2 *This);
+                     IUrlHistoryStg2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUrlHistoryStg2 *This);
+                     IUrlHistoryStg2 *This);
 
     /*** IUrlHistoryStg methods ***/
     HRESULT (STDMETHODCALLTYPE *AddUrl)(
-        IUrlHistoryStg2 *This,
-        LPCOLESTR pocsUrl,
-        LPCOLESTR pocsTitle,
-        DWORD dwFlags);
+                     IUrlHistoryStg2 *This,
+                     LPCOLESTR pocsUrl,
+                     LPCOLESTR pocsTitle,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *DeleteUrl)(
-        IUrlHistoryStg2 *This,
-        LPCOLESTR pocsUrl,
-        DWORD dwFlags);
+                     IUrlHistoryStg2 *This,
+                     LPCOLESTR pocsUrl,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *QueryUrl)(
-        IUrlHistoryStg2 *This,
-        LPCOLESTR pocsUrl,
-        DWORD dwFlags,
-        LPSTATURL lpSTATURL);
+                     IUrlHistoryStg2 *This,
+                     LPCOLESTR pocsUrl,
+                     DWORD dwFlags,
+                     LPSTATURL lpSTATURL);
 
     HRESULT (STDMETHODCALLTYPE *BindToObject)(
-        IUrlHistoryStg2 *This,
-        LPCOLESTR pocsUrl,
-        REFIID riid,
-        void **ppvOut);
+                     IUrlHistoryStg2 *This,
+                     LPCOLESTR pocsUrl,
+                     REFIID riid,
+                     void **ppvOut);
 
     HRESULT (STDMETHODCALLTYPE *EnumUrls)(
-        IUrlHistoryStg2 *This,
-        IEnumSTATURL **ppEnum);
+                     IUrlHistoryStg2 *This,
+                     IEnumSTATURL **ppEnum);
 
     /*** IUrlHistoryStg2 methods ***/
     HRESULT (STDMETHODCALLTYPE *AddUrlAndNotify)(
-        IUrlHistoryStg2 *This,
-        LPCOLESTR pocsUrl,
-        LPCOLESTR pocsTitle,
-        DWORD dwFlags,
-        WINBOOL fWriteHistory,
-        IOleCommandTarget *poctNotify,
-        IUnknown *punkISFolder);
+                     IUrlHistoryStg2 *This,
+                     LPCOLESTR pocsUrl,
+                     LPCOLESTR pocsTitle,
+                     DWORD dwFlags,
+                     WINBOOL fWriteHistory,
+                     IOleCommandTarget *poctNotify,
+                     IUnknown *punkISFolder);
 
     HRESULT (STDMETHODCALLTYPE *ClearHistory)(
-        IUrlHistoryStg2 *This);
+                     IUrlHistoryStg2 *This);
 
     END_INTERFACE
 } IUrlHistoryStg2Vtbl;
@@ -516,31 +516,31 @@ typedef struct IUrlHistoryNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUrlHistoryNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUrlHistoryNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUrlHistoryNotify *This);
+                     IUrlHistoryNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUrlHistoryNotify *This);
+                     IUrlHistoryNotify *This);
 
     /*** IOleCommandTarget methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryStatus)(
-        IUrlHistoryNotify *This,
-        const GUID *pguidCmdGroup,
-        ULONG cCmds,
-        OLECMD prgCmds[],
-        OLECMDTEXT *pCmdText);
+                     IUrlHistoryNotify *This,
+                     const GUID *pguidCmdGroup,
+                     ULONG cCmds,
+                     OLECMD prgCmds[],
+                     OLECMDTEXT *pCmdText);
 
     HRESULT (STDMETHODCALLTYPE *Exec)(
-        IUrlHistoryNotify *This,
-        const GUID *pguidCmdGroup,
-        DWORD nCmdID,
-        DWORD nCmdexecopt,
-        VARIANT *pvaIn,
-        VARIANT *pvaOut);
+                     IUrlHistoryNotify *This,
+                     const GUID *pguidCmdGroup,
+                     DWORD nCmdID,
+                     DWORD nCmdexecopt,
+                     VARIANT *pvaIn,
+                     VARIANT *pvaOut);
 
     END_INTERFACE
 } IUrlHistoryNotifyVtbl;

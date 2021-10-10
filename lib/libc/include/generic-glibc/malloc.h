@@ -116,13 +116,13 @@ extern struct mallinfo mallinfo (void) __THROW;
 
 /* mallopt options that actually do something */
 #define M_TRIM_THRESHOLD    -1
-#define M_TOP_PAD           -2
+#define M_TOP_PAD                        -2
 #define M_MMAP_THRESHOLD    -3
-#define M_MMAP_MAX          -4
-#define M_CHECK_ACTION      -5
-#define M_PERTURB           -6
-#define M_ARENA_TEST        -7
-#define M_ARENA_MAX         -8
+#define M_MMAP_MAX                       -4
+#define M_CHECK_ACTION                   -5
+#define M_PERTURB                        -6
+#define M_ARENA_TEST                     -7
+#define M_ARENA_MAX                      -8
 
 /* General SVID/XPG interface to tunable parameters. */
 extern int mallopt (int __param, int __val) __THROW;
@@ -143,18 +143,18 @@ extern int malloc_info (int __options, FILE *__fp) __THROW;
 
 /* Hooks for debugging and user-defined versions. */
 extern void (*__MALLOC_HOOK_VOLATILE __free_hook) (void *__ptr,
-                                                   const void *)
+                                                                                                                                                           const void *)
 __MALLOC_DEPRECATED;
 extern void *(*__MALLOC_HOOK_VOLATILE __malloc_hook)(size_t __size,
-                                                     const void *)
+                                                                                                                                                             const void *)
 __MALLOC_DEPRECATED;
 extern void *(*__MALLOC_HOOK_VOLATILE __realloc_hook)(void *__ptr,
-                                                      size_t __size,
-                                                      const void *)
+                                                                                                                                                                           size_t __size,
+                                                                                                                                                                           const void *)
 __MALLOC_DEPRECATED;
 extern void *(*__MALLOC_HOOK_VOLATILE __memalign_hook)(size_t __alignment,
-                                                       size_t __size,
-                                                       const void *)
+                                                                                                                                                                            size_t __size,
+                                                                                                                                                                            const void *)
 __MALLOC_DEPRECATED;
 extern void (*__MALLOC_HOOK_VOLATILE __after_morecore_hook) (void)
   __MALLOC_DEPRECATED;

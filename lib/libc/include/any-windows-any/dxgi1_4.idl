@@ -53,20 +53,20 @@ interface IDXGISwapChain3 : IDXGISwapChain2
 {
     UINT GetCurrentBackBufferIndex();
     HRESULT CheckColorSpaceSupport(
-        [in] DXGI_COLOR_SPACE_TYPE colour_space,
-        [out] UINT *colour_space_support
+                     [in] DXGI_COLOR_SPACE_TYPE colour_space,
+                     [out] UINT *colour_space_support
     );
     HRESULT SetColorSpace1(
-        [in] DXGI_COLOR_SPACE_TYPE colour_space
+                     [in] DXGI_COLOR_SPACE_TYPE colour_space
     );
     HRESULT ResizeBuffers1(
-        [in] UINT buffer_count,
-        [in] UINT width,
-        [in] UINT height,
-        [in] DXGI_FORMAT format,
-        [in] UINT flags,
-        [in] const UINT *node_mask,
-        [in] IUnknown *const *present_queue
+                     [in] UINT buffer_count,
+                     [in] UINT width,
+                     [in] UINT height,
+                     [in] DXGI_FORMAT format,
+                     [in] UINT flags,
+                     [in] const UINT *node_mask,
+                     [in] IUnknown *const *present_queue
     );
 }
 
@@ -79,10 +79,10 @@ interface IDXGISwapChain3 : IDXGISwapChain2
 interface IDXGIOutput4 : IDXGIOutput3
 {
     HRESULT CheckOverlayColorSpaceSupport(
-        [in] DXGI_FORMAT format,
-        [in] DXGI_COLOR_SPACE_TYPE colour_space,
-        [in] IUnknown *device,
-        [out] UINT *flags
+                     [in] DXGI_FORMAT format,
+                     [in] DXGI_COLOR_SPACE_TYPE colour_space,
+                     [in] IUnknown *device,
+                     [out] UINT *flags
     );
 }
 
@@ -95,13 +95,13 @@ interface IDXGIOutput4 : IDXGIOutput3
 interface IDXGIFactory4 : IDXGIFactory3
 {
     HRESULT EnumAdapterByLuid(
-        [in] LUID luid,
-        [in] REFIID iid,
-        [out] void **adapter
+                     [in] LUID luid,
+                     [in] REFIID iid,
+                     [out] void **adapter
     );
     HRESULT EnumWarpAdapter(
-        [in] REFIID iid,
-        [out] void **adapter
+                     [in] REFIID iid,
+                     [out] void **adapter
     );
 }
 
@@ -114,27 +114,27 @@ interface IDXGIFactory4 : IDXGIFactory3
 interface IDXGIAdapter3 : IDXGIAdapter2
 {
     HRESULT RegisterHardwareContentProtectionTeardownStatusEvent(
-        [in] HANDLE event,
-        [out] DWORD *cookie
+                     [in] HANDLE event,
+                     [out] DWORD *cookie
     );
     void UnregisterHardwareContentProtectionTeardownStatus(
-        [in] DWORD cookie
+                     [in] DWORD cookie
     );
     HRESULT QueryVideoMemoryInfo(
-        [in] UINT node_index,
-        [in] DXGI_MEMORY_SEGMENT_GROUP segment_group,
-        [out] DXGI_QUERY_VIDEO_MEMORY_INFO *memory_info
+                     [in] UINT node_index,
+                     [in] DXGI_MEMORY_SEGMENT_GROUP segment_group,
+                     [out] DXGI_QUERY_VIDEO_MEMORY_INFO *memory_info
     );
     HRESULT SetVideoMemoryReservation(
-        [in] UINT node_index,
-        [in] DXGI_MEMORY_SEGMENT_GROUP segment_group,
-        [in] UINT64 reservation
+                     [in] UINT node_index,
+                     [in] DXGI_MEMORY_SEGMENT_GROUP segment_group,
+                     [in] UINT64 reservation
     );
     HRESULT RegisterVideoMemoryBudgetChangeNotificationEvent(
-        [in] HANDLE event,
-        [out] DWORD *cookie
+                     [in] HANDLE event,
+                     [out] DWORD *cookie
     );
     void UnregisterVideoMemoryBudgetChangeNotification(
-        [in] DWORD cookie
+                     [in] DWORD cookie
     );
 }

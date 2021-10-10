@@ -29,15 +29,15 @@ struct sockaddr_ipx {
 
 #if __UAPI_DEF_IPX_ROUTE_DEFINITION
 struct ipx_route_definition {
-	__be32        ipx_network;
-	__be32        ipx_router_network;
+	__be32                     ipx_network;
+	__be32                     ipx_router_network;
 	unsigned char ipx_router_node[IPX_NODE_LEN];
 };
 #endif /* __UAPI_DEF_IPX_ROUTE_DEFINITION */
 
 #if __UAPI_DEF_IPX_INTERFACE_DEFINITION
 struct ipx_interface_definition {
-	__be32        ipx_network;
+	__be32                     ipx_network;
 	unsigned char ipx_device[16];
 	unsigned char ipx_dlink_type;
 #define IPX_FRAME_NONE		0
@@ -45,7 +45,7 @@ struct ipx_interface_definition {
 #define IPX_FRAME_8022		2
 #define IPX_FRAME_ETHERII	3
 #define IPX_FRAME_8023		4
-#define IPX_FRAME_TR_8022       5 /* obsolete */
+#define IPX_FRAME_TR_8022                    5 /* obsolete */
 	unsigned char ipx_special;
 #define IPX_SPECIAL_NONE	0
 #define IPX_PRIMARY		1

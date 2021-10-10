@@ -83,11 +83,11 @@
 # define MADV_HUGEPAGE	  14	/* Worth backing with hugepages.  */
 # define MADV_NOHUGEPAGE  15	/* Not worth backing with hugepages.  */
 # define MADV_DONTDUMP	  16    /* Explicity exclude from the core dump,
-                                   overrides the coredump filter bits.  */
+                                                                                                    overrides the coredump filter bits.  */
 # define MADV_DODUMP	  17	/* Clear the MADV_DONTDUMP flag.  */
 # define MADV_WIPEONFORK  18	/* Zero memory on fork, child only.  */
 # define MADV_KEEPONFORK  19	/* Undo MADV_WIPEONFORK.  */
-# define MADV_COLD        20	/* Deactivate these pages.  */
+# define MADV_COLD                     20	/* Deactivate these pages.  */
 # define MADV_PAGEOUT     21	/* Reclaim these pages.  */
 # define MADV_HWPOISON	  100	/* Poison a page for testing.  */
 #endif

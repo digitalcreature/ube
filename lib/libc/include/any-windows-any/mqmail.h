@@ -96,11 +96,11 @@ extern "C" {
     LPMQMailRecipList pRecips;
     MQMailEMailType iType;
     __C89_NAMELESS union {
-      MQMailFormData form;
-      MQMailMessageData message;
-      MQMailTnefData tnef;
-      MQMailDeliveryReportData DeliveryReport;
-      MQMailNonDeliveryReportData NonDeliveryReport;
+                   MQMailFormData form;
+                   MQMailMessageData message;
+                   MQMailTnefData tnef;
+                   MQMailDeliveryReportData DeliveryReport;
+                   MQMailNonDeliveryReportData NonDeliveryReport;
     };
     LPVOID pReserved;
   } MQMailEMail,*LPMQMailEMail;

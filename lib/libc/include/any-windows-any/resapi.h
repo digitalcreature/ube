@@ -267,9 +267,9 @@ extern "C" {
     DWORD TableSize;
     DWORD Version;
     __C89_NAMELESS union {
-      CLRES_V1_FUNCTIONS V1Functions;
+                   CLRES_V1_FUNCTIONS V1Functions;
 #if CLUSAPI_VERSION >= CLUSAPI_VERSION_WINDOWS8
-      CLRES_V2_FUNCTIONS V2Functions;
+                   CLRES_V2_FUNCTIONS V2Functions;
 #endif
     } DUMMYUNIONNAME;
   } CLRES_FUNCTION_TABLE,*PCLRES_FUNCTION_TABLE;
@@ -297,12 +297,12 @@ extern "C" {
     LPWSTR KeyName;
     DWORD Format;
     __C89_NAMELESS union {
-      DWORD_PTR DefaultPtr;
-      DWORD Default;
-      LPVOID lpDefault;
-      PRESUTIL_LARGEINT_DATA LargeIntData;
-      PRESUTIL_ULARGEINT_DATA ULargeIntData;
-      PRESUTIL_FILETIME_DATA FileTimeData;
+                   DWORD_PTR DefaultPtr;
+                   DWORD Default;
+                   LPVOID lpDefault;
+                   PRESUTIL_LARGEINT_DATA LargeIntData;
+                   PRESUTIL_ULARGEINT_DATA ULargeIntData;
+                   PRESUTIL_FILETIME_DATA FileTimeData;
     } DUMMYUNIONNAME;
     DWORD Minimum;
     DWORD Maximum;

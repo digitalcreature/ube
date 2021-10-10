@@ -155,7 +155,7 @@ typedef struct {
 #define si_upper   __si_fields.__sigfault.__first.__addr_bnd.si_upper
 #define si_pkey    __si_fields.__sigfault.__first.si_pkey
 #define si_band    __si_fields.__sigpoll.si_band
-#define si_fd      __si_fields.__sigpoll.si_fd
+#define si_fd                   __si_fields.__sigpoll.si_fd
 #define si_timerid __si_fields.__si_common.__first.__timer.si_timerid
 #define si_overrun __si_fields.__si_common.__first.__timer.si_overrun
 #define si_ptr     si_value.sival_ptr

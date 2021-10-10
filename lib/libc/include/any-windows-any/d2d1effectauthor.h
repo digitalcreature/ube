@@ -13,24 +13,24 @@ typedef HRESULT (CALLBACK *PD2D1_PROPERTY_SET_FUNCTION)(IUnknown*,const BYTE*,UI
 typedef HRESULT (CALLBACK *PD2D1_PROPERTY_GET_FUNCTION)(const IUnknown*,BYTE*,UINT32 dataSize,UINT32*);
 
 typedef enum D2D1_BLEND_OPERATION {
-    D2D1_BLEND_OPERATION_ADD          = 1,
+    D2D1_BLEND_OPERATION_ADD                       = 1,
     D2D1_BLEND_OPERATION_SUBTRACT     = 2,
     D2D1_BLEND_OPERATION_REV_SUBTRACT = 3,
-    D2D1_BLEND_OPERATION_MIN          = 4,
-    D2D1_BLEND_OPERATION_MAX          = 5,
+    D2D1_BLEND_OPERATION_MIN                       = 4,
+    D2D1_BLEND_OPERATION_MAX                       = 5,
     D2D1_BLEND_OPERATION_FORCE_DWORD = 0xffffffff
 } D2D1_BLEND_OPERATION;
 
 typedef enum D2D1_BLEND {
-    D2D1_BLEND_ZERO             = 1,
-    D2D1_BLEND_ONE              = 2,
-    D2D1_BLEND_SRC_COLOR        = 3,
+    D2D1_BLEND_ZERO                                       = 1,
+    D2D1_BLEND_ONE                                        = 2,
+    D2D1_BLEND_SRC_COLOR                     = 3,
     D2D1_BLEND_INV_SRC_COLOR    = 4,
-    D2D1_BLEND_SRC_ALPHA        = 5,
+    D2D1_BLEND_SRC_ALPHA                     = 5,
     D2D1_BLEND_INV_SRC_ALPHA    = 6,
-    D2D1_BLEND_DEST_ALPHA       = 7,
+    D2D1_BLEND_DEST_ALPHA                    = 7,
     D2D1_BLEND_INV_DEST_ALPHA   = 8,
-    D2D1_BLEND_DEST_COLOR       = 9,
+    D2D1_BLEND_DEST_COLOR                    = 9,
     D2D1_BLEND_INV_DEST_COLOR   = 10,
     D2D1_BLEND_SRC_ALPHA_SAT    = 11,
     D2D1_BLEND_BLEND_FACTOR     = 14,
@@ -39,15 +39,15 @@ typedef enum D2D1_BLEND {
 } D2D1_BLEND;
 
 typedef enum D2D1_FILTER {
-    D2D1_FILTER_MIN_MAG_MIP_POINT               = 0x00,
-    D2D1_FILTER_MIN_MAG_POINT_MIP_LINEAR        = 0x01,
+    D2D1_FILTER_MIN_MAG_MIP_POINT                                         = 0x00,
+    D2D1_FILTER_MIN_MAG_POINT_MIP_LINEAR                     = 0x01,
     D2D1_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT  = 0x04,
-    D2D1_FILTER_MIN_POINT_MAG_MIP_LINEAR        = 0x05,
-    D2D1_FILTER_MIN_LINEAR_MAG_MIP_POINT        = 0x10,
+    D2D1_FILTER_MIN_POINT_MAG_MIP_LINEAR                     = 0x05,
+    D2D1_FILTER_MIN_LINEAR_MAG_MIP_POINT                     = 0x10,
     D2D1_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR = 0x11,
-    D2D1_FILTER_MIN_MAG_LINEAR_MIP_POINT        = 0x14,
-    D2D1_FILTER_MIN_MAG_MIP_LINEAR              = 0x15,
-    D2D1_FILTER_ANISOTROPIC                     = 0x55,
+    D2D1_FILTER_MIN_MAG_LINEAR_MIP_POINT                     = 0x14,
+    D2D1_FILTER_MIN_MAG_MIP_LINEAR                                        = 0x15,
+    D2D1_FILTER_ANISOTROPIC                                                            = 0x55,
     D2D1_FILTER_FORCE_DWORD = 0xffffffff
 } D2D1_FILTER;
 
@@ -58,23 +58,23 @@ typedef enum D2D1_VERTEX_USAGE {
 } D2D1_VERTEX_USAGE;
 
 typedef enum D2D1_FEATURE {
-    D2D1_FEATURE_DOUBLES                  = 0,
+    D2D1_FEATURE_DOUBLES                                                         = 0,
     D2D1_FEATURE_D3D10_X_HARDWARE_OPTIONS = 1,
     D2D1_FEATURE_FORCE_DWORD = 0xffffffff
 } D2D1_FEATURE;
 
 typedef enum D2D1_CHANGE_TYPE {
-    D2D1_CHANGE_TYPE_NONE       = 0,
+    D2D1_CHANGE_TYPE_NONE                    = 0,
     D2D1_CHANGE_TYPE_PROPERTIES = 1,
     D2D1_CHANGE_TYPE_CONTEXT    = 2,
-    D2D1_CHANGE_TYPE_GRAPH      = 3,
+    D2D1_CHANGE_TYPE_GRAPH                   = 3,
     D2D1_CHANGE_TYPE_FORCE_DWORD = 0xffffffff
 } D2D1_CHANGE_TYPE;
 
 DEFINE_ENUM_FLAG_OPERATORS(D2D1_CHANGE_TYPE);
 
 typedef enum D2D1_PIXEL_OPTIONS {
-    D2D1_PIXEL_OPTIONS_NONE             = 0,
+    D2D1_PIXEL_OPTIONS_NONE                                       = 0,
     D2D1_PIXEL_OPTIONS_TRIVIAL_SAMPLING = 1,
     D2D1_PIXEL_OPTIONS_FORCE_DWORD = 0xffffffff
 } D2D1_PIXEL_OPTIONS;
@@ -82,8 +82,8 @@ typedef enum D2D1_PIXEL_OPTIONS {
 DEFINE_ENUM_FLAG_OPERATORS(D2D1_PIXEL_OPTIONS);
 
 typedef enum D2D1_VERTEX_OPTIONS {
-    D2D1_VERTEX_OPTIONS_NONE              = 0,
-    D2D1_VERTEX_OPTIONS_DO_NOT_CLEAR      = 1,
+    D2D1_VERTEX_OPTIONS_NONE                                        = 0,
+    D2D1_VERTEX_OPTIONS_DO_NOT_CLEAR                   = 1,
     D2D1_VERTEX_OPTIONS_USE_DEPTH_BUFFER  = 2,
     D2D1_VERTEX_OPTIONS_ASSUME_NO_OVERLAP = 4,
     D2D1_VERTEX_OPTIONS_FORCE_DWORD = 0xffffffff
@@ -172,7 +172,7 @@ __CRT_UUID_DECL(ID2D1VertexBuffer, 0x9b8b1336,0x00a5,0x4668,0x92,0xb7,0xce,0xd5,
 interface ID2D1ResourceTexture : public IUnknown
 {
     STDMETHOD(Update)(CONST UINT32 *minimumExtents, CONST UINT32 *maximimumExtents,
-            CONST UINT32 *strides, UINT32 dimensions, CONST BYTE *data, UINT32 dataCount) PURE;
+                                      CONST UINT32 *strides, UINT32 dimensions, CONST BYTE *data, UINT32 dataCount) PURE;
 };
 
 #else
@@ -214,8 +214,8 @@ interface ID2D1DrawInfo : public ID2D1RenderInfo
     STDMETHOD(SetVertexShaderConstantBuffer)(CONST BYTE *buffer, UINT32 bufferCount) PURE;
     STDMETHOD(SetPixelShader)(REFGUID shaderId, D2D1_PIXEL_OPTIONS pixelOptions = D2D1_PIXEL_OPTIONS_NONE) PURE;
     STDMETHOD(SetVertexProcessing)(ID2D1VertexBuffer *vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions,
-            CONST D2D1_BLEND_DESCRIPTION *blendDescription = NULL, CONST D2D1_VERTEX_RANGE *vertexRange = NULL,
-            CONST GUID *vertexShader = NULL) PURE;
+                                      CONST D2D1_BLEND_DESCRIPTION *blendDescription = NULL, CONST D2D1_VERTEX_RANGE *vertexRange = NULL,
+                                      CONST GUID *vertexShader = NULL) PURE;
 };
 
 #else
@@ -250,9 +250,9 @@ __CRT_UUID_DECL(ID2D1TransformNode, 0xb2efe1e7,0x729f,0x4102,0x94,0x9f,0x50,0x5f
 interface ID2D1Transform : public ID2D1TransformNode
 {
     STDMETHOD(MapOutputRectToInputRects)(CONST D2D1_RECT_L *outputRect, D2D1_RECT_L *inputRects,
-            UINT32 inputRectsCount) CONST PURE;
+                                      UINT32 inputRectsCount) CONST PURE;
     STDMETHOD(MapInputRectsToOutputRect)(CONST D2D1_RECT_L *inputRects, CONST D2D1_RECT_L *inputOpaqueSubRects,
-            UINT32 inputRectCount, D2D1_RECT_L *outputRect, D2D1_RECT_L *outputOpaqueSubRect) PURE;
+                                      UINT32 inputRectCount, D2D1_RECT_L *outputRect, D2D1_RECT_L *outputOpaqueSubRect) PURE;
     STDMETHOD(MapInvalidRect)(UINT32 inputIndex, D2D1_RECT_L invalidInputRect, D2D1_RECT_L *invalidOutputRect) CONST PURE;
 };
 
@@ -407,7 +407,7 @@ interface ID2D1EffectContext : public IUnknown
     STDMETHOD_(void, GetDpi)(FLOAT *dpiX, FLOAT *dpiY) CONST PURE;
     STDMETHOD(CreateEffect)(REFCLSID effectId, ID2D1Effect **effect) PURE;
     STDMETHOD(GetMaximumSupportedFeatureLevel)(CONST D3D_FEATURE_LEVEL *featureLevels, UINT32 featureLevelsCount,
-            D3D_FEATURE_LEVEL *maximumSupportedFeatureLevel) CONST PURE;
+                                      D3D_FEATURE_LEVEL *maximumSupportedFeatureLevel) CONST PURE;
     STDMETHOD(CreateTransformNodeFromEffect)(ID2D1Effect *effect, ID2D1TransformNode **transformNode) PURE;
     STDMETHOD(CreateBlendTransform)(UINT32 numInputs, CONST D2D1_BLEND_DESCRIPTION *blendDescription, ID2D1BlendTransform **transform) PURE;
     STDMETHOD(CreateBorderTransform)(D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, ID2D1BorderTransform **transform) PURE;
@@ -418,10 +418,10 @@ interface ID2D1EffectContext : public IUnknown
     STDMETHOD(LoadComputeShader)(REFGUID resourceId, CONST BYTE *shaderBuffer, UINT32 shaderBufferCount) PURE;
     STDMETHOD_(BOOL, IsShaderLoaded)(REFGUID shaderId) PURE;
     STDMETHOD(CreateResourceTexture)(CONST GUID *resourceId, CONST D2D1_RESOURCE_TEXTURE_PROPERTIES *resourceTextureProperties,
-            CONST BYTE *data, CONST UINT32 *strides, UINT32 dataSize, ID2D1ResourceTexture **resourceTexture) PURE;
+                                      CONST BYTE *data, CONST UINT32 *strides, UINT32 dataSize, ID2D1ResourceTexture **resourceTexture) PURE;
     STDMETHOD(FindResourceTexture)(CONST GUID *resourceId, ID2D1ResourceTexture **resourceTexture) PURE;
     STDMETHOD(CreateVertexBuffer)(CONST D2D1_VERTEX_BUFFER_PROPERTIES *vertexBufferProperties, CONST GUID *resourceId,
-            CONST D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES *customVertexBufferProperties, ID2D1VertexBuffer **buffer) PURE;
+                                      CONST D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES *customVertexBufferProperties, ID2D1VertexBuffer **buffer) PURE;
     STDMETHOD(FindVertexBuffer)(CONST GUID *resourceId, ID2D1VertexBuffer **buffer) PURE;
     STDMETHOD(CreateColorContext)(D2D1_COLOR_SPACE space, CONST BYTE *profile, UINT32 profileSize, ID2D1ColorContext **colorContext) PURE;
     STDMETHOD(CreateColorContextFromFilename)(PCWSTR filename, ID2D1ColorContext **colorContext) PURE;

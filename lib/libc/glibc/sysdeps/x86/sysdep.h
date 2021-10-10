@@ -73,18 +73,18 @@ enum cf_protection_level
 #define ASM_SIZE_DIRECTIVE(name) .size name,.-name;
 
 /* Define an entry point visible from C.  */
-#define	ENTRY(name)							      \
-  .globl C_SYMBOL_NAME(name);						      \
-  .type C_SYMBOL_NAME(name),@function;					      \
-  .align ALIGNARG(4);							      \
-  C_LABEL(name)								      \
-  cfi_startproc;							      \
-  _CET_ENDBR;								      \
+#define	ENTRY(name)							                   \
+  .globl C_SYMBOL_NAME(name);						                   \
+  .type C_SYMBOL_NAME(name),@function;					                   \
+  .align ALIGNARG(4);							                   \
+  C_LABEL(name)								                   \
+  cfi_startproc;							                   \
+  _CET_ENDBR;								                   \
   CALL_MCOUNT
 
 #undef	END
-#define END(name)							      \
-  cfi_endproc;								      \
+#define END(name)							                   \
+  cfi_endproc;								                   \
   ASM_SIZE_DIRECTIVE(name)
 
 #define ENTRY_CHK(name) ENTRY (name)
@@ -97,7 +97,7 @@ enum cf_protection_level
 #define mcount		_mcount
 
 #undef	PSEUDO_END
-#define	PSEUDO_END(name)						      \
+#define	PSEUDO_END(name)						                   \
   END (name)
 
 /* Local label name for asm code. */

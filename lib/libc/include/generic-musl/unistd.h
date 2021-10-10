@@ -204,52 +204,52 @@ ssize_t copy_file_range(int, off_t *, int, off_t *, size_t, unsigned);
 
 #define POSIX_CLOSE_RESTART     0
 
-#define _XOPEN_VERSION          700
-#define _XOPEN_UNIX             1
-#define _XOPEN_ENH_I18N         1
+#define _XOPEN_VERSION                       700
+#define _XOPEN_UNIX                                       1
+#define _XOPEN_ENH_I18N                      1
 
-#define _POSIX_VERSION          200809L
-#define _POSIX2_VERSION         _POSIX_VERSION
+#define _POSIX_VERSION                       200809L
+#define _POSIX2_VERSION                      _POSIX_VERSION
 
 #define _POSIX_ADVISORY_INFO    _POSIX_VERSION
 #define _POSIX_CHOWN_RESTRICTED 1
-#define _POSIX_IPV6             _POSIX_VERSION
-#define _POSIX_JOB_CONTROL      1
+#define _POSIX_IPV6                                       _POSIX_VERSION
+#define _POSIX_JOB_CONTROL                   1
 #define _POSIX_MAPPED_FILES     _POSIX_VERSION
-#define _POSIX_MEMLOCK          _POSIX_VERSION
+#define _POSIX_MEMLOCK                       _POSIX_VERSION
 #define _POSIX_MEMLOCK_RANGE    _POSIX_VERSION
 #define _POSIX_MEMORY_PROTECTION _POSIX_VERSION
 #define _POSIX_MESSAGE_PASSING  _POSIX_VERSION
-#define _POSIX_FSYNC            _POSIX_VERSION
-#define _POSIX_NO_TRUNC         1
-#define _POSIX_RAW_SOCKETS      _POSIX_VERSION
+#define _POSIX_FSYNC                                      _POSIX_VERSION
+#define _POSIX_NO_TRUNC                      1
+#define _POSIX_RAW_SOCKETS                   _POSIX_VERSION
 #define _POSIX_REALTIME_SIGNALS _POSIX_VERSION
-#define _POSIX_REGEXP           1
-#define _POSIX_SAVED_IDS        1
-#define _POSIX_SHELL            1
-#define _POSIX_SPAWN            _POSIX_VERSION
-#define _POSIX_VDISABLE         0
+#define _POSIX_REGEXP                        1
+#define _POSIX_SAVED_IDS                     1
+#define _POSIX_SHELL                                      1
+#define _POSIX_SPAWN                                      _POSIX_VERSION
+#define _POSIX_VDISABLE                      0
 
-#define _POSIX_THREADS          _POSIX_VERSION
+#define _POSIX_THREADS                       _POSIX_VERSION
 #define _POSIX_THREAD_PROCESS_SHARED _POSIX_VERSION
 #define _POSIX_THREAD_SAFE_FUNCTIONS _POSIX_VERSION
 #define _POSIX_THREAD_ATTR_STACKADDR _POSIX_VERSION
 #define _POSIX_THREAD_ATTR_STACKSIZE _POSIX_VERSION
 #define _POSIX_THREAD_PRIORITY_SCHEDULING _POSIX_VERSION
 #define _POSIX_THREAD_CPUTIME   _POSIX_VERSION
-#define _POSIX_TIMERS           _POSIX_VERSION
-#define _POSIX_TIMEOUTS         _POSIX_VERSION
+#define _POSIX_TIMERS                        _POSIX_VERSION
+#define _POSIX_TIMEOUTS                      _POSIX_VERSION
 #define _POSIX_MONOTONIC_CLOCK  _POSIX_VERSION
-#define _POSIX_CPUTIME          _POSIX_VERSION
+#define _POSIX_CPUTIME                       _POSIX_VERSION
 #define _POSIX_CLOCK_SELECTION  _POSIX_VERSION
-#define _POSIX_BARRIERS         _POSIX_VERSION
-#define _POSIX_SPIN_LOCKS       _POSIX_VERSION
+#define _POSIX_BARRIERS                      _POSIX_VERSION
+#define _POSIX_SPIN_LOCKS                    _POSIX_VERSION
 #define _POSIX_READER_WRITER_LOCKS _POSIX_VERSION
 #define _POSIX_ASYNCHRONOUS_IO  _POSIX_VERSION
-#define _POSIX_SEMAPHORES       _POSIX_VERSION
+#define _POSIX_SEMAPHORES                    _POSIX_VERSION
 #define _POSIX_SHARED_MEMORY_OBJECTS _POSIX_VERSION
 
-#define _POSIX2_C_BIND          _POSIX_VERSION
+#define _POSIX2_C_BIND                       _POSIX_VERSION
 
 #include <bits/posix.h>
 

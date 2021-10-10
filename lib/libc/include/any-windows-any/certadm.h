@@ -111,23 +111,23 @@ extern "C"{
 #else
   typedef struct ICertAdminVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertAdmin *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertAdmin *This);
-      ULONG (WINAPI *Release)(ICertAdmin *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertAdmin *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertAdmin *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertAdmin *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertAdmin *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *IsValidCertificate)(ICertAdmin *This,const BSTR strConfig,const BSTR strSerialNumber,LONG *pDisposition);
-      HRESULT (WINAPI *GetRevocationReason)(ICertAdmin *This,LONG *pReason);
-      HRESULT (WINAPI *RevokeCertificate)(ICertAdmin *This,const BSTR strConfig,const BSTR strSerialNumber,LONG Reason,DATE Date);
-      HRESULT (WINAPI *SetRequestAttributes)(ICertAdmin *This,const BSTR strConfig,LONG RequestId,const BSTR strAttributes);
-      HRESULT (WINAPI *SetCertificateExtension)(ICertAdmin *This,const BSTR strConfig,LONG RequestId,const BSTR strExtensionName,LONG Type,LONG Flags,const VARIANT *pvarValue);
-      HRESULT (WINAPI *DenyRequest)(ICertAdmin *This,const BSTR strConfig,LONG RequestId);
-      HRESULT (WINAPI *ResubmitRequest)(ICertAdmin *This,const BSTR strConfig,LONG RequestId,LONG *pDisposition);
-      HRESULT (WINAPI *PublishCRL)(ICertAdmin *This,const BSTR strConfig,DATE Date);
-      HRESULT (WINAPI *GetCRL)(ICertAdmin *This,const BSTR strConfig,LONG Flags,BSTR *pstrCRL);
-      HRESULT (WINAPI *ImportCertificate)(ICertAdmin *This,const BSTR strConfig,const BSTR strCertificate,LONG Flags,LONG *pRequestId);
+                   HRESULT (WINAPI *QueryInterface)(ICertAdmin *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertAdmin *This);
+                   ULONG (WINAPI *Release)(ICertAdmin *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertAdmin *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertAdmin *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertAdmin *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertAdmin *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *IsValidCertificate)(ICertAdmin *This,const BSTR strConfig,const BSTR strSerialNumber,LONG *pDisposition);
+                   HRESULT (WINAPI *GetRevocationReason)(ICertAdmin *This,LONG *pReason);
+                   HRESULT (WINAPI *RevokeCertificate)(ICertAdmin *This,const BSTR strConfig,const BSTR strSerialNumber,LONG Reason,DATE Date);
+                   HRESULT (WINAPI *SetRequestAttributes)(ICertAdmin *This,const BSTR strConfig,LONG RequestId,const BSTR strAttributes);
+                   HRESULT (WINAPI *SetCertificateExtension)(ICertAdmin *This,const BSTR strConfig,LONG RequestId,const BSTR strExtensionName,LONG Type,LONG Flags,const VARIANT *pvarValue);
+                   HRESULT (WINAPI *DenyRequest)(ICertAdmin *This,const BSTR strConfig,LONG RequestId);
+                   HRESULT (WINAPI *ResubmitRequest)(ICertAdmin *This,const BSTR strConfig,LONG RequestId,LONG *pDisposition);
+                   HRESULT (WINAPI *PublishCRL)(ICertAdmin *This,const BSTR strConfig,DATE Date);
+                   HRESULT (WINAPI *GetCRL)(ICertAdmin *This,const BSTR strConfig,LONG Flags,BSTR *pstrCRL);
+                   HRESULT (WINAPI *ImportCertificate)(ICertAdmin *This,const BSTR strConfig,const BSTR strCertificate,LONG Flags,LONG *pRequestId);
     END_INTERFACE
   } ICertAdminVtbl;
   struct ICertAdmin {
@@ -208,34 +208,34 @@ extern "C"{
 #else
   typedef struct ICertAdmin2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertAdmin2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertAdmin2 *This);
-      ULONG (WINAPI *Release)(ICertAdmin2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertAdmin2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertAdmin2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertAdmin2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertAdmin2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *IsValidCertificate)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strSerialNumber,LONG *pDisposition);
-      HRESULT (WINAPI *GetRevocationReason)(ICertAdmin2 *This,LONG *pReason);
-      HRESULT (WINAPI *RevokeCertificate)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strSerialNumber,LONG Reason,DATE Date);
-      HRESULT (WINAPI *SetRequestAttributes)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,const BSTR strAttributes);
-      HRESULT (WINAPI *SetCertificateExtension)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,const BSTR strExtensionName,LONG Type,LONG Flags,const VARIANT *pvarValue);
-      HRESULT (WINAPI *DenyRequest)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId);
-      HRESULT (WINAPI *ResubmitRequest)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,LONG *pDisposition);
-      HRESULT (WINAPI *PublishCRL)(ICertAdmin2 *This,const BSTR strConfig,DATE Date);
-      HRESULT (WINAPI *GetCRL)(ICertAdmin2 *This,const BSTR strConfig,LONG Flags,BSTR *pstrCRL);
-      HRESULT (WINAPI *ImportCertificate)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strCertificate,LONG Flags,LONG *pRequestId);
-      HRESULT (WINAPI *PublishCRLs)(ICertAdmin2 *This,const BSTR strConfig,DATE Date,LONG CRLFlags);
-      HRESULT (WINAPI *GetCAProperty)(ICertAdmin2 *This,const BSTR strConfig,LONG PropId,LONG PropIndex,LONG PropType,LONG Flags,VARIANT *pvarPropertyValue);
-      HRESULT (WINAPI *SetCAProperty)(ICertAdmin2 *This,const BSTR strConfig,LONG PropId,LONG PropIndex,LONG PropType,VARIANT *pvarPropertyValue);
-      HRESULT (WINAPI *GetCAPropertyFlags)(ICertAdmin2 *This,const BSTR strConfig,LONG PropId,LONG *pPropFlags);
-      HRESULT (WINAPI *GetCAPropertyDisplayName)(ICertAdmin2 *This,const BSTR strConfig,LONG PropId,BSTR *pstrDisplayName);
-      HRESULT (WINAPI *GetArchivedKey)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,LONG Flags,BSTR *pstrArchivedKey);
-      HRESULT (WINAPI *GetConfigEntry)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strNodePath,const BSTR strEntryName,VARIANT *pvarEntry);
-      HRESULT (WINAPI *SetConfigEntry)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strNodePath,const BSTR strEntryName,VARIANT *pvarEntry);
-      HRESULT (WINAPI *ImportKey)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,const BSTR strCertHash,LONG Flags,const BSTR strKey);
-      HRESULT (WINAPI *GetMyRoles)(ICertAdmin2 *This,const BSTR strConfig,LONG *pRoles);
-      HRESULT (WINAPI *DeleteRow)(ICertAdmin2 *This,const BSTR strConfig,LONG Flags,DATE Date,LONG Table,LONG RowId,LONG *pcDeleted);
+                   HRESULT (WINAPI *QueryInterface)(ICertAdmin2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertAdmin2 *This);
+                   ULONG (WINAPI *Release)(ICertAdmin2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertAdmin2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertAdmin2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertAdmin2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertAdmin2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *IsValidCertificate)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strSerialNumber,LONG *pDisposition);
+                   HRESULT (WINAPI *GetRevocationReason)(ICertAdmin2 *This,LONG *pReason);
+                   HRESULT (WINAPI *RevokeCertificate)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strSerialNumber,LONG Reason,DATE Date);
+                   HRESULT (WINAPI *SetRequestAttributes)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,const BSTR strAttributes);
+                   HRESULT (WINAPI *SetCertificateExtension)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,const BSTR strExtensionName,LONG Type,LONG Flags,const VARIANT *pvarValue);
+                   HRESULT (WINAPI *DenyRequest)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId);
+                   HRESULT (WINAPI *ResubmitRequest)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,LONG *pDisposition);
+                   HRESULT (WINAPI *PublishCRL)(ICertAdmin2 *This,const BSTR strConfig,DATE Date);
+                   HRESULT (WINAPI *GetCRL)(ICertAdmin2 *This,const BSTR strConfig,LONG Flags,BSTR *pstrCRL);
+                   HRESULT (WINAPI *ImportCertificate)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strCertificate,LONG Flags,LONG *pRequestId);
+                   HRESULT (WINAPI *PublishCRLs)(ICertAdmin2 *This,const BSTR strConfig,DATE Date,LONG CRLFlags);
+                   HRESULT (WINAPI *GetCAProperty)(ICertAdmin2 *This,const BSTR strConfig,LONG PropId,LONG PropIndex,LONG PropType,LONG Flags,VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *SetCAProperty)(ICertAdmin2 *This,const BSTR strConfig,LONG PropId,LONG PropIndex,LONG PropType,VARIANT *pvarPropertyValue);
+                   HRESULT (WINAPI *GetCAPropertyFlags)(ICertAdmin2 *This,const BSTR strConfig,LONG PropId,LONG *pPropFlags);
+                   HRESULT (WINAPI *GetCAPropertyDisplayName)(ICertAdmin2 *This,const BSTR strConfig,LONG PropId,BSTR *pstrDisplayName);
+                   HRESULT (WINAPI *GetArchivedKey)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,LONG Flags,BSTR *pstrArchivedKey);
+                   HRESULT (WINAPI *GetConfigEntry)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strNodePath,const BSTR strEntryName,VARIANT *pvarEntry);
+                   HRESULT (WINAPI *SetConfigEntry)(ICertAdmin2 *This,const BSTR strConfig,const BSTR strNodePath,const BSTR strEntryName,VARIANT *pvarEntry);
+                   HRESULT (WINAPI *ImportKey)(ICertAdmin2 *This,const BSTR strConfig,LONG RequestId,const BSTR strCertHash,LONG Flags,const BSTR strKey);
+                   HRESULT (WINAPI *GetMyRoles)(ICertAdmin2 *This,const BSTR strConfig,LONG *pRoles);
+                   HRESULT (WINAPI *DeleteRow)(ICertAdmin2 *This,const BSTR strConfig,LONG Flags,DATE Date,LONG Table,LONG RowId,LONG *pcDeleted);
     END_INTERFACE
   } ICertAdmin2Vtbl;
   struct ICertAdmin2 {

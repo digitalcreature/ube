@@ -270,11 +270,11 @@ extern "C" {
   typedef struct _SECPKG_EXTENDED_INFORMATION {
     SECPKG_EXTENDED_INFORMATION_CLASS Class;
     union {
-      SECPKG_GSS_INFO GssInfo;
-      SECPKG_CONTEXT_THUNKS ContextThunks;
-      SECPKG_MUTUAL_AUTH_LEVEL MutualAuthLevel;
-      SECPKG_WOW_CLIENT_DLL WowClientDll;
-      SECPKG_EXTRA_OIDS ExtraOids;
+                   SECPKG_GSS_INFO GssInfo;
+                   SECPKG_CONTEXT_THUNKS ContextThunks;
+                   SECPKG_MUTUAL_AUTH_LEVEL MutualAuthLevel;
+                   SECPKG_WOW_CLIENT_DLL WowClientDll;
+                   SECPKG_EXTRA_OIDS ExtraOids;
     } Info;
   } SECPKG_EXTENDED_INFORMATION,*PSECPKG_EXTENDED_INFORMATION;
 

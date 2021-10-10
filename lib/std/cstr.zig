@@ -18,11 +18,11 @@ pub fn cmp(a: [*:0]const u8, b: [*:0]const u8) i8 {
     var index: usize = 0;
     while (a[index] == b[index] and a[index] != 0) : (index += 1) {}
     if (a[index] > b[index]) {
-        return 1;
+                     return 1;
     } else if (a[index] < b[index]) {
-        return -1;
+                     return -1;
     } else {
-        return 0;
+                     return 0;
     }
 }
 
@@ -60,47 +60,47 @@ pub const NullTerminated2DArray = struct {
     /// Takes N lists of strings, concatenates the lists together, and adds a null terminator
     /// Caller must deinit result
     pub fn fromSlices(allocator: *mem.Allocator, slices: []const []const []const u8) !NullTerminated2DArray {
-        var new_len: usize = 1; // 1 for the list null
-        var byte_count: usize = 0;
-        for (slices) |slice| {
-            new_len += slice.len;
-            for (slice) |inner| {
-                byte_count += inner.len;
-            }
-            byte_count += slice.len; // for the null terminators of inner
-        }
+                     var new_len: usize = 1; // 1 for the list null
+                     var byte_count: usize = 0;
+                     for (slices) |slice| {
+                                      new_len += slice.len;
+                                      for (slice) |inner| {
+                                          byte_count += inner.len;
+                                      }
+                                      byte_count += slice.len; // for the null terminators of inner
+                     }
 
-        const index_size = @sizeOf(usize) * new_len; // size of the ptrs
-        byte_count += index_size;
+                     const index_size = @sizeOf(usize) * new_len; // size of the ptrs
+                     byte_count += index_size;
 
-        const buf = try allocator.alignedAlloc(u8, @alignOf(?*u8), byte_count);
-        errdefer allocator.free(buf);
+                     const buf = try allocator.alignedAlloc(u8, @alignOf(?*u8), byte_count);
+                     errdefer allocator.free(buf);
 
-        var write_index = index_size;
-        const index_buf = mem.bytesAsSlice(?[*]u8, buf);
+                     var write_index = index_size;
+                     const index_buf = mem.bytesAsSlice(?[*]u8, buf);
 
-        var i: usize = 0;
-        for (slices) |slice| {
-            for (slice) |inner| {
-                index_buf[i] = buf.ptr + write_index;
-                i += 1;
-                mem.copy(u8, buf[write_index..], inner);
-                write_index += inner.len;
-                buf[write_index] = 0;
-                write_index += 1;
-            }
-        }
-        index_buf[i] = null;
+                     var i: usize = 0;
+                     for (slices) |slice| {
+                                      for (slice) |inner| {
+                                          index_buf[i] = buf.ptr + write_index;
+                                          i += 1;
+                                          mem.copy(u8, buf[write_index..], inner);
+                                          write_index += inner.len;
+                                          buf[write_index] = 0;
+                                          write_index += 1;
+                                      }
+                     }
+                     index_buf[i] = null;
 
-        return NullTerminated2DArray{
-            .allocator = allocator,
-            .byte_count = byte_count,
-            .ptr = @ptrCast(?[*:null]?[*:0]u8, buf.ptr),
-        };
+                     return NullTerminated2DArray{
+                                      .allocator = allocator,
+                                      .byte_count = byte_count,
+                                      .ptr = @ptrCast(?[*:null]?[*:0]u8, buf.ptr),
+                     };
     }
 
     pub fn deinit(self: *NullTerminated2DArray) void {
-        const buf = @ptrCast([*]u8, self.ptr);
-        self.allocator.free(buf[0..self.byte_count]);
+                     const buf = @ptrCast([*]u8, self.ptr);
+                     self.allocator.free(buf[0..self.byte_count]);
     }
 };

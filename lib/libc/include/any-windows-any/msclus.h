@@ -1211,16 +1211,16 @@ extern "C" {
 #else
   typedef struct ISClusApplicationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusApplication *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusApplication *This);
-      ULONG (WINAPI *Release)(ISClusApplication *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusApplication *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusApplication *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusApplication *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusApplication *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DomainNames)(ISClusApplication *This,ISDomainNames **ppDomains);
-      HRESULT (WINAPI *get_ClusterNames)(ISClusApplication *This,BSTR bstrDomainName,ISClusterNames **ppClusters);
-      HRESULT (WINAPI *OpenCluster)(ISClusApplication *This,BSTR bstrClusterName,ISCluster **pCluster);
+                   HRESULT (WINAPI *QueryInterface)(ISClusApplication *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusApplication *This);
+                   ULONG (WINAPI *Release)(ISClusApplication *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusApplication *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusApplication *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusApplication *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusApplication *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DomainNames)(ISClusApplication *This,ISDomainNames **ppDomains);
+                   HRESULT (WINAPI *get_ClusterNames)(ISClusApplication *This,BSTR bstrDomainName,ISClusterNames **ppClusters);
+                   HRESULT (WINAPI *OpenCluster)(ISClusApplication *This,BSTR bstrClusterName,ISCluster **pCluster);
     END_INTERFACE
   } ISClusApplicationVtbl;
   struct ISClusApplication {
@@ -1261,17 +1261,17 @@ extern "C" {
 #else
   typedef struct ISDomainNamesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISDomainNames *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISDomainNames *This);
-      ULONG (WINAPI *Release)(ISDomainNames *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISDomainNames *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISDomainNames *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISDomainNames *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISDomainNames *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISDomainNames *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISDomainNames *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISDomainNames *This);
-      HRESULT (WINAPI *get_Item)(ISDomainNames *This,VARIANT varIndex,BSTR *pbstrDomainName);
+                   HRESULT (WINAPI *QueryInterface)(ISDomainNames *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISDomainNames *This);
+                   ULONG (WINAPI *Release)(ISDomainNames *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISDomainNames *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISDomainNames *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISDomainNames *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISDomainNames *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISDomainNames *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISDomainNames *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISDomainNames *This);
+                   HRESULT (WINAPI *get_Item)(ISDomainNames *This,VARIANT varIndex,BSTR *pbstrDomainName);
     END_INTERFACE
   } ISDomainNamesVtbl;
   struct ISDomainNames {
@@ -1316,18 +1316,18 @@ extern "C" {
 #else
   typedef struct ISClusterNamesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusterNames *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusterNames *This);
-      ULONG (WINAPI *Release)(ISClusterNames *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusterNames *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusterNames *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusterNames *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusterNames *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusterNames *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusterNames *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusterNames *This);
-      HRESULT (WINAPI *get_Item)(ISClusterNames *This,VARIANT varIndex,BSTR *pbstrClusterName);
-      HRESULT (WINAPI *get_DomainName)(ISClusterNames *This,BSTR *pbstrDomainName);
+                   HRESULT (WINAPI *QueryInterface)(ISClusterNames *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusterNames *This);
+                   ULONG (WINAPI *Release)(ISClusterNames *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusterNames *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusterNames *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusterNames *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusterNames *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusterNames *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusterNames *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusterNames *This);
+                   HRESULT (WINAPI *get_Item)(ISClusterNames *This,VARIANT varIndex,BSTR *pbstrClusterName);
+                   HRESULT (WINAPI *get_DomainName)(ISClusterNames *This,BSTR *pbstrDomainName);
     END_INTERFACE
   } ISClusterNamesVtbl;
   struct ISClusterNames {
@@ -1371,14 +1371,14 @@ extern "C" {
 #else
   typedef struct ISClusRefObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusRefObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusRefObject *This);
-      ULONG (WINAPI *Release)(ISClusRefObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusRefObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusRefObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusRefObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusRefObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Handle)(ISClusRefObject *This,ULONG_PTR *phandle);
+                   HRESULT (WINAPI *QueryInterface)(ISClusRefObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusRefObject *This);
+                   ULONG (WINAPI *Release)(ISClusRefObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusRefObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusRefObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusRefObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusRefObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Handle)(ISClusRefObject *This,ULONG_PTR *phandle);
     END_INTERFACE
   } ISClusRefObjectVtbl;
   struct ISClusRefObject {
@@ -1419,23 +1419,23 @@ extern "C" {
 #else
   typedef struct ISClusVersionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusVersion *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusVersion *This);
-      ULONG (WINAPI *Release)(ISClusVersion *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusVersion *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusVersion *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusVersion *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusVersion *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(ISClusVersion *This,BSTR *pbstrClusterName);
-      HRESULT (WINAPI *get_MajorVersion)(ISClusVersion *This,__LONG32 *pnMajorVersion);
-      HRESULT (WINAPI *get_MinorVersion)(ISClusVersion *This,__LONG32 *pnMinorVersion);
-      HRESULT (WINAPI *get_BuildNumber)(ISClusVersion *This,SHORT *pnBuildNumber);
-      HRESULT (WINAPI *get_VendorId)(ISClusVersion *This,BSTR *pbstrVendorId);
-      HRESULT (WINAPI *get_CSDVersion)(ISClusVersion *This,BSTR *pbstrCSDVersion);
-      HRESULT (WINAPI *get_ClusterHighestVersion)(ISClusVersion *This,__LONG32 *pnClusterHighestVersion);
-      HRESULT (WINAPI *get_ClusterLowestVersion)(ISClusVersion *This,__LONG32 *pnClusterLowestVersion);
-      HRESULT (WINAPI *get_Flags)(ISClusVersion *This,__LONG32 *pnFlags);
-      HRESULT (WINAPI *get_MixedVersion)(ISClusVersion *This,VARIANT *pvarMixedVersion);
+                   HRESULT (WINAPI *QueryInterface)(ISClusVersion *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusVersion *This);
+                   ULONG (WINAPI *Release)(ISClusVersion *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusVersion *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusVersion *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusVersion *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusVersion *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(ISClusVersion *This,BSTR *pbstrClusterName);
+                   HRESULT (WINAPI *get_MajorVersion)(ISClusVersion *This,__LONG32 *pnMajorVersion);
+                   HRESULT (WINAPI *get_MinorVersion)(ISClusVersion *This,__LONG32 *pnMinorVersion);
+                   HRESULT (WINAPI *get_BuildNumber)(ISClusVersion *This,SHORT *pnBuildNumber);
+                   HRESULT (WINAPI *get_VendorId)(ISClusVersion *This,BSTR *pbstrVendorId);
+                   HRESULT (WINAPI *get_CSDVersion)(ISClusVersion *This,BSTR *pbstrCSDVersion);
+                   HRESULT (WINAPI *get_ClusterHighestVersion)(ISClusVersion *This,__LONG32 *pnClusterHighestVersion);
+                   HRESULT (WINAPI *get_ClusterLowestVersion)(ISClusVersion *This,__LONG32 *pnClusterLowestVersion);
+                   HRESULT (WINAPI *get_Flags)(ISClusVersion *This,__LONG32 *pnFlags);
+                   HRESULT (WINAPI *get_MixedVersion)(ISClusVersion *This,VARIANT *pvarMixedVersion);
     END_INTERFACE
   } ISClusVersionVtbl;
   struct ISClusVersion {
@@ -1514,34 +1514,34 @@ extern "C" {
 #else
   typedef struct ISClusterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISCluster *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISCluster *This);
-      ULONG (WINAPI *Release)(ISCluster *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISCluster *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISCluster *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISCluster *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISCluster *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_CommonProperties)(ISCluster *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateProperties)(ISCluster *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_CommonROProperties)(ISCluster *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateROProperties)(ISCluster *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_Handle)(ISCluster *This,ULONG_PTR *phandle);
-      HRESULT (WINAPI *Open)(ISCluster *This,BSTR bstrClusterName);
-      HRESULT (WINAPI *get_Name)(ISCluster *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(ISCluster *This,BSTR bstrClusterName);
-      HRESULT (WINAPI *get_Version)(ISCluster *This,ISClusVersion **ppClusVersion);
-      HRESULT (WINAPI *put_QuorumResource)(ISCluster *This,ISClusResource *pClusterResource);
-      HRESULT (WINAPI *get_QuorumResource)(ISCluster *This,ISClusResource **pClusterResource);
-      HRESULT (WINAPI *get_QuorumLogSize)(ISCluster *This,__LONG32 *pnLogSize);
-      HRESULT (WINAPI *put_QuorumLogSize)(ISCluster *This,__LONG32 nLogSize);
-      HRESULT (WINAPI *get_QuorumPath)(ISCluster *This,BSTR *ppPath);
-      HRESULT (WINAPI *put_QuorumPath)(ISCluster *This,BSTR pPath);
-      HRESULT (WINAPI *get_Nodes)(ISCluster *This,ISClusNodes **ppNodes);
-      HRESULT (WINAPI *get_ResourceGroups)(ISCluster *This,ISClusResGroups **ppClusterResourceGroups);
-      HRESULT (WINAPI *get_Resources)(ISCluster *This,ISClusResources **ppClusterResources);
-      HRESULT (WINAPI *get_ResourceTypes)(ISCluster *This,ISClusResTypes **ppResourceTypes);
-      HRESULT (WINAPI *get_Networks)(ISCluster *This,ISClusNetworks **ppNetworks);
-      HRESULT (WINAPI *get_NetInterfaces)(ISCluster *This,ISClusNetInterfaces **ppNetInterfaces);
+                   HRESULT (WINAPI *QueryInterface)(ISCluster *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISCluster *This);
+                   ULONG (WINAPI *Release)(ISCluster *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISCluster *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISCluster *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISCluster *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISCluster *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_CommonProperties)(ISCluster *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateProperties)(ISCluster *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_CommonROProperties)(ISCluster *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateROProperties)(ISCluster *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_Handle)(ISCluster *This,ULONG_PTR *phandle);
+                   HRESULT (WINAPI *Open)(ISCluster *This,BSTR bstrClusterName);
+                   HRESULT (WINAPI *get_Name)(ISCluster *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(ISCluster *This,BSTR bstrClusterName);
+                   HRESULT (WINAPI *get_Version)(ISCluster *This,ISClusVersion **ppClusVersion);
+                   HRESULT (WINAPI *put_QuorumResource)(ISCluster *This,ISClusResource *pClusterResource);
+                   HRESULT (WINAPI *get_QuorumResource)(ISCluster *This,ISClusResource **pClusterResource);
+                   HRESULT (WINAPI *get_QuorumLogSize)(ISCluster *This,__LONG32 *pnLogSize);
+                   HRESULT (WINAPI *put_QuorumLogSize)(ISCluster *This,__LONG32 nLogSize);
+                   HRESULT (WINAPI *get_QuorumPath)(ISCluster *This,BSTR *ppPath);
+                   HRESULT (WINAPI *put_QuorumPath)(ISCluster *This,BSTR pPath);
+                   HRESULT (WINAPI *get_Nodes)(ISCluster *This,ISClusNodes **ppNodes);
+                   HRESULT (WINAPI *get_ResourceGroups)(ISCluster *This,ISClusResGroups **ppClusterResourceGroups);
+                   HRESULT (WINAPI *get_Resources)(ISCluster *This,ISClusResources **ppClusterResources);
+                   HRESULT (WINAPI *get_ResourceTypes)(ISCluster *This,ISClusResTypes **ppResourceTypes);
+                   HRESULT (WINAPI *get_Networks)(ISCluster *This,ISClusNetworks **ppNetworks);
+                   HRESULT (WINAPI *get_NetInterfaces)(ISCluster *This,ISClusNetInterfaces **ppNetInterfaces);
     END_INTERFACE
   } ISClusterVtbl;
   struct ISCluster {
@@ -1646,27 +1646,27 @@ extern "C" {
 #else
   typedef struct ISClusNodeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusNode *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusNode *This);
-      ULONG (WINAPI *Release)(ISClusNode *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusNode *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusNode *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusNode *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusNode *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_CommonProperties)(ISClusNode *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateProperties)(ISClusNode *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_CommonROProperties)(ISClusNode *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateROProperties)(ISClusNode *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_Name)(ISClusNode *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_Handle)(ISClusNode *This,ULONG_PTR *phandle);
-      HRESULT (WINAPI *get_NodeID)(ISClusNode *This,BSTR *pbstrNodeID);
-      HRESULT (WINAPI *get_State)(ISClusNode *This,CLUSTER_NODE_STATE *dwState);
-      HRESULT (WINAPI *Pause)(ISClusNode *This);
-      HRESULT (WINAPI *Resume)(ISClusNode *This);
-      HRESULT (WINAPI *Evict)(ISClusNode *This);
-      HRESULT (WINAPI *get_ResourceGroups)(ISClusNode *This,ISClusResGroups **ppResourceGroups);
-      HRESULT (WINAPI *get_Cluster)(ISClusNode *This,ISCluster **ppCluster);
-      HRESULT (WINAPI *get_NetInterfaces)(ISClusNode *This,ISClusNodeNetInterfaces **ppClusNetInterfaces);
+                   HRESULT (WINAPI *QueryInterface)(ISClusNode *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusNode *This);
+                   ULONG (WINAPI *Release)(ISClusNode *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusNode *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusNode *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusNode *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusNode *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_CommonProperties)(ISClusNode *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateProperties)(ISClusNode *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_CommonROProperties)(ISClusNode *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateROProperties)(ISClusNode *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_Name)(ISClusNode *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_Handle)(ISClusNode *This,ULONG_PTR *phandle);
+                   HRESULT (WINAPI *get_NodeID)(ISClusNode *This,BSTR *pbstrNodeID);
+                   HRESULT (WINAPI *get_State)(ISClusNode *This,CLUSTER_NODE_STATE *dwState);
+                   HRESULT (WINAPI *Pause)(ISClusNode *This);
+                   HRESULT (WINAPI *Resume)(ISClusNode *This);
+                   HRESULT (WINAPI *Evict)(ISClusNode *This);
+                   HRESULT (WINAPI *get_ResourceGroups)(ISClusNode *This,ISClusResGroups **ppResourceGroups);
+                   HRESULT (WINAPI *get_Cluster)(ISClusNode *This,ISCluster **ppCluster);
+                   HRESULT (WINAPI *get_NetInterfaces)(ISClusNode *This,ISClusNodeNetInterfaces **ppClusNetInterfaces);
     END_INTERFACE
   } ISClusNodeVtbl;
   struct ISClusNode {
@@ -1740,17 +1740,17 @@ extern "C" {
 #else
   typedef struct ISClusNodesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusNodes *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusNodes *This);
-      ULONG (WINAPI *Release)(ISClusNodes *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusNodes *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusNodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusNodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusNodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusNodes *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusNodes *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusNodes *This);
-      HRESULT (WINAPI *get_Item)(ISClusNodes *This,VARIANT varIndex,ISClusNode **ppNode);
+                   HRESULT (WINAPI *QueryInterface)(ISClusNodes *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusNodes *This);
+                   ULONG (WINAPI *Release)(ISClusNodes *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusNodes *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusNodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusNodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusNodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusNodes *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusNodes *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusNodes *This);
+                   HRESULT (WINAPI *get_Item)(ISClusNodes *This,VARIANT varIndex,ISClusNode **ppNode);
     END_INTERFACE
   } ISClusNodesVtbl;
   struct ISClusNodes {
@@ -1801,24 +1801,24 @@ extern "C" {
 #else
   typedef struct ISClusNetworkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusNetwork *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusNetwork *This);
-      ULONG (WINAPI *Release)(ISClusNetwork *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetwork *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusNetwork *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusNetwork *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusNetwork *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_CommonProperties)(ISClusNetwork *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateProperties)(ISClusNetwork *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_CommonROProperties)(ISClusNetwork *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateROProperties)(ISClusNetwork *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_Handle)(ISClusNetwork *This,ULONG_PTR *phandle);
-      HRESULT (WINAPI *get_Name)(ISClusNetwork *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(ISClusNetwork *This,BSTR bstrNetworkName);
-      HRESULT (WINAPI *get_NetworkID)(ISClusNetwork *This,BSTR *pbstrNetworkID);
-      HRESULT (WINAPI *get_State)(ISClusNetwork *This,CLUSTER_NETWORK_STATE *dwState);
-      HRESULT (WINAPI *get_NetInterfaces)(ISClusNetwork *This,ISClusNetworkNetInterfaces **ppClusNetInterfaces);
-      HRESULT (WINAPI *get_Cluster)(ISClusNetwork *This,ISCluster **ppCluster);
+                   HRESULT (WINAPI *QueryInterface)(ISClusNetwork *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusNetwork *This);
+                   ULONG (WINAPI *Release)(ISClusNetwork *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetwork *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusNetwork *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusNetwork *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusNetwork *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_CommonProperties)(ISClusNetwork *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateProperties)(ISClusNetwork *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_CommonROProperties)(ISClusNetwork *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateROProperties)(ISClusNetwork *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_Handle)(ISClusNetwork *This,ULONG_PTR *phandle);
+                   HRESULT (WINAPI *get_Name)(ISClusNetwork *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(ISClusNetwork *This,BSTR bstrNetworkName);
+                   HRESULT (WINAPI *get_NetworkID)(ISClusNetwork *This,BSTR *pbstrNetworkID);
+                   HRESULT (WINAPI *get_State)(ISClusNetwork *This,CLUSTER_NETWORK_STATE *dwState);
+                   HRESULT (WINAPI *get_NetInterfaces)(ISClusNetwork *This,ISClusNetworkNetInterfaces **ppClusNetInterfaces);
+                   HRESULT (WINAPI *get_Cluster)(ISClusNetwork *This,ISCluster **ppCluster);
     END_INTERFACE
   } ISClusNetworkVtbl;
   struct ISClusNetwork {
@@ -1883,17 +1883,17 @@ extern "C" {
 #else
   typedef struct ISClusNetworksVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusNetworks *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusNetworks *This);
-      ULONG (WINAPI *Release)(ISClusNetworks *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetworks *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusNetworks *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusNetworks *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusNetworks *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusNetworks *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusNetworks *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusNetworks *This);
-      HRESULT (WINAPI *get_Item)(ISClusNetworks *This,VARIANT varIndex,ISClusNetwork **ppClusNetwork);
+                   HRESULT (WINAPI *QueryInterface)(ISClusNetworks *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusNetworks *This);
+                   ULONG (WINAPI *Release)(ISClusNetworks *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetworks *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusNetworks *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusNetworks *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusNetworks *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusNetworks *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusNetworks *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusNetworks *This);
+                   HRESULT (WINAPI *get_Item)(ISClusNetworks *This,VARIANT varIndex,ISClusNetwork **ppClusNetwork);
     END_INTERFACE
   } ISClusNetworksVtbl;
   struct ISClusNetworks {
@@ -1941,21 +1941,21 @@ extern "C" {
 #else
   typedef struct ISClusNetInterfaceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusNetInterface *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusNetInterface *This);
-      ULONG (WINAPI *Release)(ISClusNetInterface *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetInterface *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusNetInterface *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusNetInterface *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusNetInterface *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_CommonProperties)(ISClusNetInterface *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateProperties)(ISClusNetInterface *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_CommonROProperties)(ISClusNetInterface *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateROProperties)(ISClusNetInterface *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_Name)(ISClusNetInterface *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_Handle)(ISClusNetInterface *This,ULONG_PTR *phandle);
-      HRESULT (WINAPI *get_State)(ISClusNetInterface *This,CLUSTER_NETINTERFACE_STATE *dwState);
-      HRESULT (WINAPI *get_Cluster)(ISClusNetInterface *This,ISCluster **ppCluster);
+                   HRESULT (WINAPI *QueryInterface)(ISClusNetInterface *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusNetInterface *This);
+                   ULONG (WINAPI *Release)(ISClusNetInterface *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetInterface *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusNetInterface *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusNetInterface *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusNetInterface *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_CommonProperties)(ISClusNetInterface *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateProperties)(ISClusNetInterface *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_CommonROProperties)(ISClusNetInterface *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateROProperties)(ISClusNetInterface *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_Name)(ISClusNetInterface *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_Handle)(ISClusNetInterface *This,ULONG_PTR *phandle);
+                   HRESULT (WINAPI *get_State)(ISClusNetInterface *This,CLUSTER_NETINTERFACE_STATE *dwState);
+                   HRESULT (WINAPI *get_Cluster)(ISClusNetInterface *This,ISCluster **ppCluster);
     END_INTERFACE
   } ISClusNetInterfaceVtbl;
   struct ISClusNetInterface {
@@ -2011,17 +2011,17 @@ extern "C" {
 #else
   typedef struct ISClusNetInterfacesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusNetInterfaces *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusNetInterfaces *This);
-      ULONG (WINAPI *Release)(ISClusNetInterfaces *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetInterfaces *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusNetInterfaces *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusNetInterfaces *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusNetInterfaces *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusNetInterfaces *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusNetInterfaces *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusNetInterfaces *This);
-      HRESULT (WINAPI *get_Item)(ISClusNetInterfaces *This,VARIANT varIndex,ISClusNetInterface **ppClusNetInterface);
+                   HRESULT (WINAPI *QueryInterface)(ISClusNetInterfaces *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusNetInterfaces *This);
+                   ULONG (WINAPI *Release)(ISClusNetInterfaces *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetInterfaces *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusNetInterfaces *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusNetInterfaces *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusNetInterfaces *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusNetInterfaces *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusNetInterfaces *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusNetInterfaces *This);
+                   HRESULT (WINAPI *get_Item)(ISClusNetInterfaces *This,VARIANT varIndex,ISClusNetInterface **ppClusNetInterface);
     END_INTERFACE
   } ISClusNetInterfacesVtbl;
   struct ISClusNetInterfaces {
@@ -2065,17 +2065,17 @@ extern "C" {
 #else
   typedef struct ISClusNodeNetInterfacesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusNodeNetInterfaces *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusNodeNetInterfaces *This);
-      ULONG (WINAPI *Release)(ISClusNodeNetInterfaces *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusNodeNetInterfaces *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusNodeNetInterfaces *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusNodeNetInterfaces *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusNodeNetInterfaces *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusNodeNetInterfaces *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusNodeNetInterfaces *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusNodeNetInterfaces *This);
-      HRESULT (WINAPI *get_Item)(ISClusNodeNetInterfaces *This,VARIANT varIndex,ISClusNetInterface **ppClusNetInterface);
+                   HRESULT (WINAPI *QueryInterface)(ISClusNodeNetInterfaces *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusNodeNetInterfaces *This);
+                   ULONG (WINAPI *Release)(ISClusNodeNetInterfaces *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusNodeNetInterfaces *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusNodeNetInterfaces *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusNodeNetInterfaces *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusNodeNetInterfaces *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusNodeNetInterfaces *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusNodeNetInterfaces *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusNodeNetInterfaces *This);
+                   HRESULT (WINAPI *get_Item)(ISClusNodeNetInterfaces *This,VARIANT varIndex,ISClusNetInterface **ppClusNetInterface);
     END_INTERFACE
   } ISClusNodeNetInterfacesVtbl;
   struct ISClusNodeNetInterfaces {
@@ -2119,17 +2119,17 @@ extern "C" {
 #else
   typedef struct ISClusNetworkNetInterfacesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusNetworkNetInterfaces *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusNetworkNetInterfaces *This);
-      ULONG (WINAPI *Release)(ISClusNetworkNetInterfaces *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetworkNetInterfaces *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusNetworkNetInterfaces *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusNetworkNetInterfaces *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusNetworkNetInterfaces *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusNetworkNetInterfaces *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusNetworkNetInterfaces *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusNetworkNetInterfaces *This);
-      HRESULT (WINAPI *get_Item)(ISClusNetworkNetInterfaces *This,VARIANT varIndex,ISClusNetInterface **ppClusNetInterface);
+                   HRESULT (WINAPI *QueryInterface)(ISClusNetworkNetInterfaces *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusNetworkNetInterfaces *This);
+                   ULONG (WINAPI *Release)(ISClusNetworkNetInterfaces *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusNetworkNetInterfaces *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusNetworkNetInterfaces *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusNetworkNetInterfaces *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusNetworkNetInterfaces *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusNetworkNetInterfaces *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusNetworkNetInterfaces *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusNetworkNetInterfaces *This);
+                   HRESULT (WINAPI *get_Item)(ISClusNetworkNetInterfaces *This,VARIANT varIndex,ISClusNetInterface **ppClusNetInterface);
     END_INTERFACE
   } ISClusNetworkNetInterfacesVtbl;
   struct ISClusNetworkNetInterfaces {
@@ -2185,29 +2185,29 @@ extern "C" {
 #else
   typedef struct ISClusResGroupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResGroup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResGroup *This);
-      ULONG (WINAPI *Release)(ISClusResGroup *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResGroup *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_CommonProperties)(ISClusResGroup *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateProperties)(ISClusResGroup *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_CommonROProperties)(ISClusResGroup *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateROProperties)(ISClusResGroup *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_Handle)(ISClusResGroup *This,ULONG_PTR *phandle);
-      HRESULT (WINAPI *get_Name)(ISClusResGroup *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(ISClusResGroup *This,BSTR bstrGroupName);
-      HRESULT (WINAPI *get_State)(ISClusResGroup *This,CLUSTER_GROUP_STATE *dwState);
-      HRESULT (WINAPI *get_OwnerNode)(ISClusResGroup *This,ISClusNode **ppOwnerNode);
-      HRESULT (WINAPI *get_Resources)(ISClusResGroup *This,ISClusResGroupResources **ppClusterGroupResources);
-      HRESULT (WINAPI *get_PreferredOwnerNodes)(ISClusResGroup *This,ISClusResGroupPreferredOwnerNodes **ppOwnerNodes);
-      HRESULT (WINAPI *Delete)(ISClusResGroup *This);
-      HRESULT (WINAPI *Online)(ISClusResGroup *This,VARIANT varTimeout,VARIANT varNode,VARIANT *pvarPending);
-      HRESULT (WINAPI *Move)(ISClusResGroup *This,VARIANT varTimeout,VARIANT varNode,VARIANT *pvarPending);
-      HRESULT (WINAPI *Offline)(ISClusResGroup *This,VARIANT varTimeout,VARIANT *pvarPending);
-      HRESULT (WINAPI *get_Cluster)(ISClusResGroup *This,ISCluster **ppCluster);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResGroup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResGroup *This);
+                   ULONG (WINAPI *Release)(ISClusResGroup *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResGroup *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_CommonProperties)(ISClusResGroup *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateProperties)(ISClusResGroup *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_CommonROProperties)(ISClusResGroup *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateROProperties)(ISClusResGroup *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_Handle)(ISClusResGroup *This,ULONG_PTR *phandle);
+                   HRESULT (WINAPI *get_Name)(ISClusResGroup *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(ISClusResGroup *This,BSTR bstrGroupName);
+                   HRESULT (WINAPI *get_State)(ISClusResGroup *This,CLUSTER_GROUP_STATE *dwState);
+                   HRESULT (WINAPI *get_OwnerNode)(ISClusResGroup *This,ISClusNode **ppOwnerNode);
+                   HRESULT (WINAPI *get_Resources)(ISClusResGroup *This,ISClusResGroupResources **ppClusterGroupResources);
+                   HRESULT (WINAPI *get_PreferredOwnerNodes)(ISClusResGroup *This,ISClusResGroupPreferredOwnerNodes **ppOwnerNodes);
+                   HRESULT (WINAPI *Delete)(ISClusResGroup *This);
+                   HRESULT (WINAPI *Online)(ISClusResGroup *This,VARIANT varTimeout,VARIANT varNode,VARIANT *pvarPending);
+                   HRESULT (WINAPI *Move)(ISClusResGroup *This,VARIANT varTimeout,VARIANT varNode,VARIANT *pvarPending);
+                   HRESULT (WINAPI *Offline)(ISClusResGroup *This,VARIANT varTimeout,VARIANT *pvarPending);
+                   HRESULT (WINAPI *get_Cluster)(ISClusResGroup *This,ISCluster **ppCluster);
     END_INTERFACE
   } ISClusResGroupVtbl;
   struct ISClusResGroup {
@@ -2289,19 +2289,19 @@ extern "C" {
 #else
   typedef struct ISClusResGroupsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResGroups *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResGroups *This);
-      ULONG (WINAPI *Release)(ISClusResGroups *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResGroups *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResGroups *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResGroups *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResGroups *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResGroups *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResGroups *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResGroups *This);
-      HRESULT (WINAPI *get_Item)(ISClusResGroups *This,VARIANT varIndex,ISClusResGroup **ppClusResGroup);
-      HRESULT (WINAPI *CreateItem)(ISClusResGroups *This,BSTR bstrResourceGroupName,ISClusResGroup **ppResourceGroup);
-      HRESULT (WINAPI *DeleteItem)(ISClusResGroups *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResGroups *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResGroups *This);
+                   ULONG (WINAPI *Release)(ISClusResGroups *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResGroups *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResGroups *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResGroups *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResGroups *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResGroups *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResGroups *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResGroups *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResGroups *This,VARIANT varIndex,ISClusResGroup **ppClusResGroup);
+                   HRESULT (WINAPI *CreateItem)(ISClusResGroups *This,BSTR bstrResourceGroupName,ISClusResGroup **ppResourceGroup);
+                   HRESULT (WINAPI *DeleteItem)(ISClusResGroups *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusResGroupsVtbl;
   struct ISClusResGroups {
@@ -2379,45 +2379,45 @@ extern "C" {
 #else
   typedef struct ISClusResourceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResource *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResource *This);
-      ULONG (WINAPI *Release)(ISClusResource *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResource *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResource *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResource *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResource *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_CommonProperties)(ISClusResource *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateProperties)(ISClusResource *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_CommonROProperties)(ISClusResource *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateROProperties)(ISClusResource *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_Handle)(ISClusResource *This,ULONG_PTR *phandle);
-      HRESULT (WINAPI *get_Name)(ISClusResource *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_Name)(ISClusResource *This,BSTR bstrResourceName);
-      HRESULT (WINAPI *get_State)(ISClusResource *This,CLUSTER_RESOURCE_STATE *dwState);
-      HRESULT (WINAPI *get_CoreFlag)(ISClusResource *This,CLUS_FLAGS *dwCoreFlag);
-      HRESULT (WINAPI *BecomeQuorumResource)(ISClusResource *This,BSTR bstrDevicePath,__LONG32 lMaxLogSize);
-      HRESULT (WINAPI *Delete)(ISClusResource *This);
-      HRESULT (WINAPI *Fail)(ISClusResource *This);
-      HRESULT (WINAPI *Online)(ISClusResource *This,__LONG32 nTimeout,VARIANT *pvarPending);
-      HRESULT (WINAPI *Offline)(ISClusResource *This,__LONG32 nTimeout,VARIANT *pvarPending);
-      HRESULT (WINAPI *ChangeResourceGroup)(ISClusResource *This,ISClusResGroup *pResourceGroup);
-      HRESULT (WINAPI *AddResourceNode)(ISClusResource *This,ISClusNode *pNode);
-      HRESULT (WINAPI *RemoveResourceNode)(ISClusResource *This,ISClusNode *pNode);
-      HRESULT (WINAPI *CanResourceBeDependent)(ISClusResource *This,ISClusResource *pResource,VARIANT *pvarDependent);
-      HRESULT (WINAPI *get_PossibleOwnerNodes)(ISClusResource *This,ISClusResPossibleOwnerNodes **ppOwnerNodes);
-      HRESULT (WINAPI *get_Dependencies)(ISClusResource *This,ISClusResDependencies **ppResDependencies);
-      HRESULT (WINAPI *get_Dependents)(ISClusResource *This,ISClusResDependents **ppResDependents);
-      HRESULT (WINAPI *get_Group)(ISClusResource *This,ISClusResGroup **ppResGroup);
-      HRESULT (WINAPI *get_OwnerNode)(ISClusResource *This,ISClusNode **ppOwnerNode);
-      HRESULT (WINAPI *get_Cluster)(ISClusResource *This,ISCluster **ppCluster);
-      HRESULT (WINAPI *get_ClassInfo)(ISClusResource *This,CLUSTER_RESOURCE_CLASS *prcClassInfo);
-      HRESULT (WINAPI *get_Disk)(ISClusResource *This,ISClusDisk **ppDisk);
-      HRESULT (WINAPI *get_RegistryKeys)(ISClusResource *This,ISClusRegistryKeys **ppRegistryKeys);
-      HRESULT (WINAPI *get_CryptoKeys)(ISClusResource *This,ISClusCryptoKeys **ppCryptoKeys);
-      HRESULT (WINAPI *get_TypeName)(ISClusResource *This,BSTR *pbstrTypeName);
-      HRESULT (WINAPI *get_Type)(ISClusResource *This,ISClusResType **ppResourceType);
-      HRESULT (WINAPI *get_MaintenanceMode)(ISClusResource *This,WINBOOL *pbMaintenanceMode);
-      HRESULT (WINAPI *put_MaintenanceMode)(ISClusResource *This,WINBOOL bMaintenanceMode);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResource *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResource *This);
+                   ULONG (WINAPI *Release)(ISClusResource *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResource *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResource *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResource *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResource *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_CommonProperties)(ISClusResource *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateProperties)(ISClusResource *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_CommonROProperties)(ISClusResource *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateROProperties)(ISClusResource *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_Handle)(ISClusResource *This,ULONG_PTR *phandle);
+                   HRESULT (WINAPI *get_Name)(ISClusResource *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_Name)(ISClusResource *This,BSTR bstrResourceName);
+                   HRESULT (WINAPI *get_State)(ISClusResource *This,CLUSTER_RESOURCE_STATE *dwState);
+                   HRESULT (WINAPI *get_CoreFlag)(ISClusResource *This,CLUS_FLAGS *dwCoreFlag);
+                   HRESULT (WINAPI *BecomeQuorumResource)(ISClusResource *This,BSTR bstrDevicePath,__LONG32 lMaxLogSize);
+                   HRESULT (WINAPI *Delete)(ISClusResource *This);
+                   HRESULT (WINAPI *Fail)(ISClusResource *This);
+                   HRESULT (WINAPI *Online)(ISClusResource *This,__LONG32 nTimeout,VARIANT *pvarPending);
+                   HRESULT (WINAPI *Offline)(ISClusResource *This,__LONG32 nTimeout,VARIANT *pvarPending);
+                   HRESULT (WINAPI *ChangeResourceGroup)(ISClusResource *This,ISClusResGroup *pResourceGroup);
+                   HRESULT (WINAPI *AddResourceNode)(ISClusResource *This,ISClusNode *pNode);
+                   HRESULT (WINAPI *RemoveResourceNode)(ISClusResource *This,ISClusNode *pNode);
+                   HRESULT (WINAPI *CanResourceBeDependent)(ISClusResource *This,ISClusResource *pResource,VARIANT *pvarDependent);
+                   HRESULT (WINAPI *get_PossibleOwnerNodes)(ISClusResource *This,ISClusResPossibleOwnerNodes **ppOwnerNodes);
+                   HRESULT (WINAPI *get_Dependencies)(ISClusResource *This,ISClusResDependencies **ppResDependencies);
+                   HRESULT (WINAPI *get_Dependents)(ISClusResource *This,ISClusResDependents **ppResDependents);
+                   HRESULT (WINAPI *get_Group)(ISClusResource *This,ISClusResGroup **ppResGroup);
+                   HRESULT (WINAPI *get_OwnerNode)(ISClusResource *This,ISClusNode **ppOwnerNode);
+                   HRESULT (WINAPI *get_Cluster)(ISClusResource *This,ISCluster **ppCluster);
+                   HRESULT (WINAPI *get_ClassInfo)(ISClusResource *This,CLUSTER_RESOURCE_CLASS *prcClassInfo);
+                   HRESULT (WINAPI *get_Disk)(ISClusResource *This,ISClusDisk **ppDisk);
+                   HRESULT (WINAPI *get_RegistryKeys)(ISClusResource *This,ISClusRegistryKeys **ppRegistryKeys);
+                   HRESULT (WINAPI *get_CryptoKeys)(ISClusResource *This,ISClusCryptoKeys **ppCryptoKeys);
+                   HRESULT (WINAPI *get_TypeName)(ISClusResource *This,BSTR *pbstrTypeName);
+                   HRESULT (WINAPI *get_Type)(ISClusResource *This,ISClusResType **ppResourceType);
+                   HRESULT (WINAPI *get_MaintenanceMode)(ISClusResource *This,WINBOOL *pbMaintenanceMode);
+                   HRESULT (WINAPI *put_MaintenanceMode)(ISClusResource *This,WINBOOL bMaintenanceMode);
     END_INTERFACE
   } ISClusResourceVtbl;
   struct ISClusResource {
@@ -2549,21 +2549,21 @@ extern "C" {
 #else
   typedef struct ISClusResDependenciesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResDependencies *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResDependencies *This);
-      ULONG (WINAPI *Release)(ISClusResDependencies *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResDependencies *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResDependencies *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResDependencies *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResDependencies *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResDependencies *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResDependencies *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResDependencies *This);
-      HRESULT (WINAPI *get_Item)(ISClusResDependencies *This,VARIANT varIndex,ISClusResource **ppClusResource);
-      HRESULT (WINAPI *CreateItem)(ISClusResDependencies *This,BSTR bstrResourceName,BSTR bstrResourceType,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
-      HRESULT (WINAPI *DeleteItem)(ISClusResDependencies *This,VARIANT varIndex);
-      HRESULT (WINAPI *AddItem)(ISClusResDependencies *This,ISClusResource *pResource);
-      HRESULT (WINAPI *RemoveItem)(ISClusResDependencies *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResDependencies *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResDependencies *This);
+                   ULONG (WINAPI *Release)(ISClusResDependencies *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResDependencies *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResDependencies *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResDependencies *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResDependencies *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResDependencies *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResDependencies *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResDependencies *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResDependencies *This,VARIANT varIndex,ISClusResource **ppClusResource);
+                   HRESULT (WINAPI *CreateItem)(ISClusResDependencies *This,BSTR bstrResourceName,BSTR bstrResourceType,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
+                   HRESULT (WINAPI *DeleteItem)(ISClusResDependencies *This,VARIANT varIndex);
+                   HRESULT (WINAPI *AddItem)(ISClusResDependencies *This,ISClusResource *pResource);
+                   HRESULT (WINAPI *RemoveItem)(ISClusResDependencies *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusResDependenciesVtbl;
   struct ISClusResDependencies {
@@ -2621,19 +2621,19 @@ extern "C" {
 #else
   typedef struct ISClusResGroupResourcesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResGroupResources *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResGroupResources *This);
-      ULONG (WINAPI *Release)(ISClusResGroupResources *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResGroupResources *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResGroupResources *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResGroupResources *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResGroupResources *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResGroupResources *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResGroupResources *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResGroupResources *This);
-      HRESULT (WINAPI *get_Item)(ISClusResGroupResources *This,VARIANT varIndex,ISClusResource **ppClusResource);
-      HRESULT (WINAPI *CreateItem)(ISClusResGroupResources *This,BSTR bstrResourceName,BSTR bstrResourceType,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
-      HRESULT (WINAPI *DeleteItem)(ISClusResGroupResources *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResGroupResources *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResGroupResources *This);
+                   ULONG (WINAPI *Release)(ISClusResGroupResources *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResGroupResources *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResGroupResources *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResGroupResources *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResGroupResources *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResGroupResources *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResGroupResources *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResGroupResources *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResGroupResources *This,VARIANT varIndex,ISClusResource **ppClusResource);
+                   HRESULT (WINAPI *CreateItem)(ISClusResGroupResources *This,BSTR bstrResourceName,BSTR bstrResourceType,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
+                   HRESULT (WINAPI *DeleteItem)(ISClusResGroupResources *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusResGroupResourcesVtbl;
   struct ISClusResGroupResources {
@@ -2685,19 +2685,19 @@ extern "C" {
 #else
   typedef struct ISClusResTypeResourcesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResTypeResources *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResTypeResources *This);
-      ULONG (WINAPI *Release)(ISClusResTypeResources *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResTypeResources *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResTypeResources *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResTypeResources *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResTypeResources *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResTypeResources *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResTypeResources *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResTypeResources *This);
-      HRESULT (WINAPI *get_Item)(ISClusResTypeResources *This,VARIANT varIndex,ISClusResource **ppClusResource);
-      HRESULT (WINAPI *CreateItem)(ISClusResTypeResources *This,BSTR bstrResourceName,BSTR bstrGroupName,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
-      HRESULT (WINAPI *DeleteItem)(ISClusResTypeResources *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResTypeResources *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResTypeResources *This);
+                   ULONG (WINAPI *Release)(ISClusResTypeResources *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResTypeResources *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResTypeResources *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResTypeResources *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResTypeResources *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResTypeResources *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResTypeResources *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResTypeResources *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResTypeResources *This,VARIANT varIndex,ISClusResource **ppClusResource);
+                   HRESULT (WINAPI *CreateItem)(ISClusResTypeResources *This,BSTR bstrResourceName,BSTR bstrGroupName,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
+                   HRESULT (WINAPI *DeleteItem)(ISClusResTypeResources *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusResTypeResourcesVtbl;
   struct ISClusResTypeResources {
@@ -2749,19 +2749,19 @@ extern "C" {
 #else
   typedef struct ISClusResourcesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResources *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResources *This);
-      ULONG (WINAPI *Release)(ISClusResources *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResources *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResources *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResources *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResources *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResources *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResources *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResources *This);
-      HRESULT (WINAPI *get_Item)(ISClusResources *This,VARIANT varIndex,ISClusResource **ppClusResource);
-      HRESULT (WINAPI *CreateItem)(ISClusResources *This,BSTR bstrResourceName,BSTR bstrResourceType,BSTR bstrGroupName,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
-      HRESULT (WINAPI *DeleteItem)(ISClusResources *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResources *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResources *This);
+                   ULONG (WINAPI *Release)(ISClusResources *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResources *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResources *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResources *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResources *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResources *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResources *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResources *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResources *This,VARIANT varIndex,ISClusResource **ppClusResource);
+                   HRESULT (WINAPI *CreateItem)(ISClusResources *This,BSTR bstrResourceName,BSTR bstrResourceType,BSTR bstrGroupName,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
+                   HRESULT (WINAPI *DeleteItem)(ISClusResources *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusResourcesVtbl;
   struct ISClusResources {
@@ -2816,22 +2816,22 @@ extern "C" {
 #else
   typedef struct ISClusResGroupPreferredOwnerNodesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResGroupPreferredOwnerNodes *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResGroupPreferredOwnerNodes *This);
-      ULONG (WINAPI *Release)(ISClusResGroupPreferredOwnerNodes *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResGroupPreferredOwnerNodes *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResGroupPreferredOwnerNodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResGroupPreferredOwnerNodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResGroupPreferredOwnerNodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResGroupPreferredOwnerNodes *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResGroupPreferredOwnerNodes *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResGroupPreferredOwnerNodes *This);
-      HRESULT (WINAPI *get_Item)(ISClusResGroupPreferredOwnerNodes *This,VARIANT varIndex,ISClusNode **ppNode);
-      HRESULT (WINAPI *InsertItem)(ISClusResGroupPreferredOwnerNodes *This,ISClusNode *pNode,__LONG32 nPosition);
-      HRESULT (WINAPI *RemoveItem)(ISClusResGroupPreferredOwnerNodes *This,VARIANT varIndex);
-      HRESULT (WINAPI *get_Modified)(ISClusResGroupPreferredOwnerNodes *This,VARIANT *pvarModified);
-      HRESULT (WINAPI *SaveChanges)(ISClusResGroupPreferredOwnerNodes *This);
-      HRESULT (WINAPI *AddItem)(ISClusResGroupPreferredOwnerNodes *This,ISClusNode *pNode);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResGroupPreferredOwnerNodes *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResGroupPreferredOwnerNodes *This);
+                   ULONG (WINAPI *Release)(ISClusResGroupPreferredOwnerNodes *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResGroupPreferredOwnerNodes *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResGroupPreferredOwnerNodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResGroupPreferredOwnerNodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResGroupPreferredOwnerNodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResGroupPreferredOwnerNodes *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResGroupPreferredOwnerNodes *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResGroupPreferredOwnerNodes *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResGroupPreferredOwnerNodes *This,VARIANT varIndex,ISClusNode **ppNode);
+                   HRESULT (WINAPI *InsertItem)(ISClusResGroupPreferredOwnerNodes *This,ISClusNode *pNode,__LONG32 nPosition);
+                   HRESULT (WINAPI *RemoveItem)(ISClusResGroupPreferredOwnerNodes *This,VARIANT varIndex);
+                   HRESULT (WINAPI *get_Modified)(ISClusResGroupPreferredOwnerNodes *This,VARIANT *pvarModified);
+                   HRESULT (WINAPI *SaveChanges)(ISClusResGroupPreferredOwnerNodes *This);
+                   HRESULT (WINAPI *AddItem)(ISClusResGroupPreferredOwnerNodes *This,ISClusNode *pNode);
     END_INTERFACE
   } ISClusResGroupPreferredOwnerNodesVtbl;
   struct ISClusResGroupPreferredOwnerNodes {
@@ -2893,20 +2893,20 @@ extern "C" {
 #else
   typedef struct ISClusResPossibleOwnerNodesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResPossibleOwnerNodes *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResPossibleOwnerNodes *This);
-      ULONG (WINAPI *Release)(ISClusResPossibleOwnerNodes *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResPossibleOwnerNodes *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResPossibleOwnerNodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResPossibleOwnerNodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResPossibleOwnerNodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResPossibleOwnerNodes *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResPossibleOwnerNodes *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResPossibleOwnerNodes *This);
-      HRESULT (WINAPI *get_Item)(ISClusResPossibleOwnerNodes *This,VARIANT varIndex,ISClusNode **ppNode);
-      HRESULT (WINAPI *AddItem)(ISClusResPossibleOwnerNodes *This,ISClusNode *pNode);
-      HRESULT (WINAPI *RemoveItem)(ISClusResPossibleOwnerNodes *This,VARIANT varIndex);
-      HRESULT (WINAPI *get_Modified)(ISClusResPossibleOwnerNodes *This,VARIANT *pvarModified);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResPossibleOwnerNodes *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResPossibleOwnerNodes *This);
+                   ULONG (WINAPI *Release)(ISClusResPossibleOwnerNodes *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResPossibleOwnerNodes *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResPossibleOwnerNodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResPossibleOwnerNodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResPossibleOwnerNodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResPossibleOwnerNodes *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResPossibleOwnerNodes *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResPossibleOwnerNodes *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResPossibleOwnerNodes *This,VARIANT varIndex,ISClusNode **ppNode);
+                   HRESULT (WINAPI *AddItem)(ISClusResPossibleOwnerNodes *This,ISClusNode *pNode);
+                   HRESULT (WINAPI *RemoveItem)(ISClusResPossibleOwnerNodes *This,VARIANT varIndex);
+                   HRESULT (WINAPI *get_Modified)(ISClusResPossibleOwnerNodes *This,VARIANT *pvarModified);
     END_INTERFACE
   } ISClusResPossibleOwnerNodesVtbl;
   struct ISClusResPossibleOwnerNodes {
@@ -2959,17 +2959,17 @@ extern "C" {
 #else
   typedef struct ISClusResTypePossibleOwnerNodesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResTypePossibleOwnerNodes *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResTypePossibleOwnerNodes *This);
-      ULONG (WINAPI *Release)(ISClusResTypePossibleOwnerNodes *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResTypePossibleOwnerNodes *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResTypePossibleOwnerNodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResTypePossibleOwnerNodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResTypePossibleOwnerNodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResTypePossibleOwnerNodes *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResTypePossibleOwnerNodes *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResTypePossibleOwnerNodes *This);
-      HRESULT (WINAPI *get_Item)(ISClusResTypePossibleOwnerNodes *This,VARIANT varIndex,ISClusNode **ppNode);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResTypePossibleOwnerNodes *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResTypePossibleOwnerNodes *This);
+                   ULONG (WINAPI *Release)(ISClusResTypePossibleOwnerNodes *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResTypePossibleOwnerNodes *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResTypePossibleOwnerNodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResTypePossibleOwnerNodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResTypePossibleOwnerNodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResTypePossibleOwnerNodes *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResTypePossibleOwnerNodes *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResTypePossibleOwnerNodes *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResTypePossibleOwnerNodes *This,VARIANT varIndex,ISClusNode **ppNode);
     END_INTERFACE
   } ISClusResTypePossibleOwnerNodesVtbl;
   struct ISClusResTypePossibleOwnerNodes {
@@ -3019,23 +3019,23 @@ extern "C" {
 #else
   typedef struct ISClusResTypeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResType *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResType *This);
-      ULONG (WINAPI *Release)(ISClusResType *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResType *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResType *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResType *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResType *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_CommonProperties)(ISClusResType *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateProperties)(ISClusResType *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_CommonROProperties)(ISClusResType *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_PrivateROProperties)(ISClusResType *This,ISClusProperties **ppProperties);
-      HRESULT (WINAPI *get_Name)(ISClusResType *This,BSTR *pbstrName);
-      HRESULT (WINAPI *Delete)(ISClusResType *This);
-      HRESULT (WINAPI *get_Cluster)(ISClusResType *This,ISCluster **ppCluster);
-      HRESULT (WINAPI *get_Resources)(ISClusResType *This,ISClusResTypeResources **ppClusterResTypeResources);
-      HRESULT (WINAPI *get_PossibleOwnerNodes)(ISClusResType *This,ISClusResTypePossibleOwnerNodes **ppOwnerNodes);
-      HRESULT (WINAPI *get_AvailableDisks)(ISClusResType *This,ISClusDisks **ppAvailableDisks);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResType *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResType *This);
+                   ULONG (WINAPI *Release)(ISClusResType *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResType *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResType *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResType *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResType *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_CommonProperties)(ISClusResType *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateProperties)(ISClusResType *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_CommonROProperties)(ISClusResType *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_PrivateROProperties)(ISClusResType *This,ISClusProperties **ppProperties);
+                   HRESULT (WINAPI *get_Name)(ISClusResType *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *Delete)(ISClusResType *This);
+                   HRESULT (WINAPI *get_Cluster)(ISClusResType *This,ISCluster **ppCluster);
+                   HRESULT (WINAPI *get_Resources)(ISClusResType *This,ISClusResTypeResources **ppClusterResTypeResources);
+                   HRESULT (WINAPI *get_PossibleOwnerNodes)(ISClusResType *This,ISClusResTypePossibleOwnerNodes **ppOwnerNodes);
+                   HRESULT (WINAPI *get_AvailableDisks)(ISClusResType *This,ISClusDisks **ppAvailableDisks);
     END_INTERFACE
   } ISClusResTypeVtbl;
   struct ISClusResType {
@@ -3099,19 +3099,19 @@ extern "C" {
 #else
   typedef struct ISClusResTypesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResTypes *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResTypes *This);
-      ULONG (WINAPI *Release)(ISClusResTypes *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResTypes *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResTypes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResTypes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResTypes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResTypes *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResTypes *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResTypes *This);
-      HRESULT (WINAPI *get_Item)(ISClusResTypes *This,VARIANT varIndex,ISClusResType **ppClusResType);
-      HRESULT (WINAPI *CreateItem)(ISClusResTypes *This,BSTR bstrResourceTypeName,BSTR bstrDisplayName,BSTR bstrResourceTypeDll,__LONG32 dwLooksAlivePollInterval,__LONG32 dwIsAlivePollInterval,ISClusResType **ppResourceType);
-      HRESULT (WINAPI *DeleteItem)(ISClusResTypes *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResTypes *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResTypes *This);
+                   ULONG (WINAPI *Release)(ISClusResTypes *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResTypes *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResTypes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResTypes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResTypes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResTypes *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResTypes *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResTypes *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResTypes *This,VARIANT varIndex,ISClusResType **ppClusResType);
+                   HRESULT (WINAPI *CreateItem)(ISClusResTypes *This,BSTR bstrResourceTypeName,BSTR bstrDisplayName,BSTR bstrResourceTypeDll,__LONG32 dwLooksAlivePollInterval,__LONG32 dwIsAlivePollInterval,ISClusResType **ppResourceType);
+                   HRESULT (WINAPI *DeleteItem)(ISClusResTypes *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusResTypesVtbl;
   struct ISClusResTypes {
@@ -3172,28 +3172,28 @@ extern "C" {
 #else
   typedef struct ISClusPropertyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusProperty *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusProperty *This);
-      ULONG (WINAPI *Release)(ISClusProperty *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusProperty *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusProperty *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusProperty *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusProperty *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(ISClusProperty *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_Length)(ISClusProperty *This,__LONG32 *pLength);
-      HRESULT (WINAPI *get_ValueCount)(ISClusProperty *This,__LONG32 *pCount);
-      HRESULT (WINAPI *get_Values)(ISClusProperty *This,ISClusPropertyValues **ppClusterPropertyValues);
-      HRESULT (WINAPI *get_Value)(ISClusProperty *This,VARIANT *pvarValue);
-      HRESULT (WINAPI *put_Value)(ISClusProperty *This,VARIANT varValue);
-      HRESULT (WINAPI *get_Type)(ISClusProperty *This,CLUSTER_PROPERTY_TYPE *pType);
-      HRESULT (WINAPI *put_Type)(ISClusProperty *This,CLUSTER_PROPERTY_TYPE Type);
-      HRESULT (WINAPI *get_Format)(ISClusProperty *This,CLUSTER_PROPERTY_FORMAT *pFormat);
-      HRESULT (WINAPI *put_Format)(ISClusProperty *This,CLUSTER_PROPERTY_FORMAT Format);
-      HRESULT (WINAPI *get_ReadOnly)(ISClusProperty *This,VARIANT *pvarReadOnly);
-      HRESULT (WINAPI *get_Private)(ISClusProperty *This,VARIANT *pvarPrivate);
-      HRESULT (WINAPI *get_Common)(ISClusProperty *This,VARIANT *pvarCommon);
-      HRESULT (WINAPI *get_Modified)(ISClusProperty *This,VARIANT *pvarModified);
-      HRESULT (WINAPI *UseDefaultValue)(ISClusProperty *This);
+                   HRESULT (WINAPI *QueryInterface)(ISClusProperty *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusProperty *This);
+                   ULONG (WINAPI *Release)(ISClusProperty *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusProperty *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusProperty *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusProperty *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusProperty *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(ISClusProperty *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_Length)(ISClusProperty *This,__LONG32 *pLength);
+                   HRESULT (WINAPI *get_ValueCount)(ISClusProperty *This,__LONG32 *pCount);
+                   HRESULT (WINAPI *get_Values)(ISClusProperty *This,ISClusPropertyValues **ppClusterPropertyValues);
+                   HRESULT (WINAPI *get_Value)(ISClusProperty *This,VARIANT *pvarValue);
+                   HRESULT (WINAPI *put_Value)(ISClusProperty *This,VARIANT varValue);
+                   HRESULT (WINAPI *get_Type)(ISClusProperty *This,CLUSTER_PROPERTY_TYPE *pType);
+                   HRESULT (WINAPI *put_Type)(ISClusProperty *This,CLUSTER_PROPERTY_TYPE Type);
+                   HRESULT (WINAPI *get_Format)(ISClusProperty *This,CLUSTER_PROPERTY_FORMAT *pFormat);
+                   HRESULT (WINAPI *put_Format)(ISClusProperty *This,CLUSTER_PROPERTY_FORMAT Format);
+                   HRESULT (WINAPI *get_ReadOnly)(ISClusProperty *This,VARIANT *pvarReadOnly);
+                   HRESULT (WINAPI *get_Private)(ISClusProperty *This,VARIANT *pvarPrivate);
+                   HRESULT (WINAPI *get_Common)(ISClusProperty *This,VARIANT *pvarCommon);
+                   HRESULT (WINAPI *get_Modified)(ISClusProperty *This,VARIANT *pvarModified);
+                   HRESULT (WINAPI *UseDefaultValue)(ISClusProperty *This);
     END_INTERFACE
   } ISClusPropertyVtbl;
   struct ISClusProperty {
@@ -3275,22 +3275,22 @@ extern "C" {
 #else
   typedef struct ISClusPropertyValueVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusPropertyValue *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusPropertyValue *This);
-      ULONG (WINAPI *Release)(ISClusPropertyValue *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusPropertyValue *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusPropertyValue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusPropertyValue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusPropertyValue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Value)(ISClusPropertyValue *This,VARIANT *pvarValue);
-      HRESULT (WINAPI *put_Value)(ISClusPropertyValue *This,VARIANT varValue);
-      HRESULT (WINAPI *get_Type)(ISClusPropertyValue *This,CLUSTER_PROPERTY_TYPE *pType);
-      HRESULT (WINAPI *put_Type)(ISClusPropertyValue *This,CLUSTER_PROPERTY_TYPE Type);
-      HRESULT (WINAPI *get_Format)(ISClusPropertyValue *This,CLUSTER_PROPERTY_FORMAT *pFormat);
-      HRESULT (WINAPI *put_Format)(ISClusPropertyValue *This,CLUSTER_PROPERTY_FORMAT Format);
-      HRESULT (WINAPI *get_Length)(ISClusPropertyValue *This,__LONG32 *pLength);
-      HRESULT (WINAPI *get_DataCount)(ISClusPropertyValue *This,__LONG32 *pCount);
-      HRESULT (WINAPI *get_Data)(ISClusPropertyValue *This,ISClusPropertyValueData **ppClusterPropertyValueData);
+                   HRESULT (WINAPI *QueryInterface)(ISClusPropertyValue *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusPropertyValue *This);
+                   ULONG (WINAPI *Release)(ISClusPropertyValue *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusPropertyValue *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusPropertyValue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusPropertyValue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusPropertyValue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Value)(ISClusPropertyValue *This,VARIANT *pvarValue);
+                   HRESULT (WINAPI *put_Value)(ISClusPropertyValue *This,VARIANT varValue);
+                   HRESULT (WINAPI *get_Type)(ISClusPropertyValue *This,CLUSTER_PROPERTY_TYPE *pType);
+                   HRESULT (WINAPI *put_Type)(ISClusPropertyValue *This,CLUSTER_PROPERTY_TYPE Type);
+                   HRESULT (WINAPI *get_Format)(ISClusPropertyValue *This,CLUSTER_PROPERTY_FORMAT *pFormat);
+                   HRESULT (WINAPI *put_Format)(ISClusPropertyValue *This,CLUSTER_PROPERTY_FORMAT Format);
+                   HRESULT (WINAPI *get_Length)(ISClusPropertyValue *This,__LONG32 *pLength);
+                   HRESULT (WINAPI *get_DataCount)(ISClusPropertyValue *This,__LONG32 *pCount);
+                   HRESULT (WINAPI *get_Data)(ISClusPropertyValue *This,ISClusPropertyValueData **ppClusterPropertyValueData);
     END_INTERFACE
   } ISClusPropertyValueVtbl;
   struct ISClusPropertyValue {
@@ -3350,18 +3350,18 @@ extern "C" {
 #else
   typedef struct ISClusPropertyValuesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusPropertyValues *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusPropertyValues *This);
-      ULONG (WINAPI *Release)(ISClusPropertyValues *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusPropertyValues *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusPropertyValues *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusPropertyValues *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusPropertyValues *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusPropertyValues *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusPropertyValues *This,IUnknown **retval);
-      HRESULT (WINAPI *get_Item)(ISClusPropertyValues *This,VARIANT varIndex,ISClusPropertyValue **ppPropertyValue);
-      HRESULT (WINAPI *CreateItem)(ISClusPropertyValues *This,BSTR bstrName,VARIANT varValue,ISClusPropertyValue **ppPropertyValue);
-      HRESULT (WINAPI *RemoveItem)(ISClusPropertyValues *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusPropertyValues *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusPropertyValues *This);
+                   ULONG (WINAPI *Release)(ISClusPropertyValues *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusPropertyValues *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusPropertyValues *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusPropertyValues *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusPropertyValues *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusPropertyValues *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusPropertyValues *This,IUnknown **retval);
+                   HRESULT (WINAPI *get_Item)(ISClusPropertyValues *This,VARIANT varIndex,ISClusPropertyValue **ppPropertyValue);
+                   HRESULT (WINAPI *CreateItem)(ISClusPropertyValues *This,BSTR bstrName,VARIANT varValue,ISClusPropertyValue **ppPropertyValue);
+                   HRESULT (WINAPI *RemoveItem)(ISClusPropertyValues *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusPropertyValuesVtbl;
   struct ISClusPropertyValues {
@@ -3415,24 +3415,24 @@ extern "C" {
 #else
   typedef struct ISClusPropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusProperties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusProperties *This);
-      ULONG (WINAPI *Release)(ISClusProperties *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusProperties *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusProperties *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusProperties *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusProperties *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusProperties *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusProperties *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusProperties *This);
-      HRESULT (WINAPI *get_Item)(ISClusProperties *This,VARIANT varIndex,ISClusProperty **ppClusProperty);
-      HRESULT (WINAPI *CreateItem)(ISClusProperties *This,BSTR bstrName,VARIANT varValue,ISClusProperty **pProperty);
-      HRESULT (WINAPI *UseDefaultValue)(ISClusProperties *This,VARIANT varIndex);
-      HRESULT (WINAPI *SaveChanges)(ISClusProperties *This,VARIANT *pvarStatusCode);
-      HRESULT (WINAPI *get_ReadOnly)(ISClusProperties *This,VARIANT *pvarReadOnly);
-      HRESULT (WINAPI *get_Private)(ISClusProperties *This,VARIANT *pvarPrivate);
-      HRESULT (WINAPI *get_Common)(ISClusProperties *This,VARIANT *pvarCommon);
-      HRESULT (WINAPI *get_Modified)(ISClusProperties *This,VARIANT *pvarModified);
+                   HRESULT (WINAPI *QueryInterface)(ISClusProperties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusProperties *This);
+                   ULONG (WINAPI *Release)(ISClusProperties *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusProperties *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusProperties *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusProperties *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusProperties *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusProperties *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusProperties *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusProperties *This);
+                   HRESULT (WINAPI *get_Item)(ISClusProperties *This,VARIANT varIndex,ISClusProperty **ppClusProperty);
+                   HRESULT (WINAPI *CreateItem)(ISClusProperties *This,BSTR bstrName,VARIANT varValue,ISClusProperty **pProperty);
+                   HRESULT (WINAPI *UseDefaultValue)(ISClusProperties *This,VARIANT varIndex);
+                   HRESULT (WINAPI *SaveChanges)(ISClusProperties *This,VARIANT *pvarStatusCode);
+                   HRESULT (WINAPI *get_ReadOnly)(ISClusProperties *This,VARIANT *pvarReadOnly);
+                   HRESULT (WINAPI *get_Private)(ISClusProperties *This,VARIANT *pvarPrivate);
+                   HRESULT (WINAPI *get_Common)(ISClusProperties *This,VARIANT *pvarCommon);
+                   HRESULT (WINAPI *get_Modified)(ISClusProperties *This,VARIANT *pvarModified);
     END_INTERFACE
   } ISClusPropertiesVtbl;
   struct ISClusProperties {
@@ -3498,18 +3498,18 @@ extern "C" {
 #else
   typedef struct ISClusPropertyValueDataVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusPropertyValueData *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusPropertyValueData *This);
-      ULONG (WINAPI *Release)(ISClusPropertyValueData *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusPropertyValueData *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusPropertyValueData *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusPropertyValueData *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusPropertyValueData *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusPropertyValueData *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusPropertyValueData *This,IUnknown **retval);
-      HRESULT (WINAPI *get_Item)(ISClusPropertyValueData *This,VARIANT varIndex,VARIANT *pvarValue);
-      HRESULT (WINAPI *CreateItem)(ISClusPropertyValueData *This,VARIANT varValue,VARIANT *pvarData);
-      HRESULT (WINAPI *RemoveItem)(ISClusPropertyValueData *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusPropertyValueData *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusPropertyValueData *This);
+                   ULONG (WINAPI *Release)(ISClusPropertyValueData *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusPropertyValueData *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusPropertyValueData *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusPropertyValueData *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusPropertyValueData *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusPropertyValueData *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusPropertyValueData *This,IUnknown **retval);
+                   HRESULT (WINAPI *get_Item)(ISClusPropertyValueData *This,VARIANT varIndex,VARIANT *pvarValue);
+                   HRESULT (WINAPI *CreateItem)(ISClusPropertyValueData *This,VARIANT varValue,VARIANT *pvarData);
+                   HRESULT (WINAPI *RemoveItem)(ISClusPropertyValueData *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusPropertyValueDataVtbl;
   struct ISClusPropertyValueData {
@@ -3559,20 +3559,20 @@ extern "C" {
 #else
   typedef struct ISClusPartitionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusPartition *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusPartition *This);
-      ULONG (WINAPI *Release)(ISClusPartition *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusPartition *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusPartition *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusPartition *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusPartition *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Flags)(ISClusPartition *This,__LONG32 *plFlags);
-      HRESULT (WINAPI *get_DeviceName)(ISClusPartition *This,BSTR *pbstrDeviceName);
-      HRESULT (WINAPI *get_VolumeLabel)(ISClusPartition *This,BSTR *pbstrVolumeLabel);
-      HRESULT (WINAPI *get_SerialNumber)(ISClusPartition *This,__LONG32 *plSerialNumber);
-      HRESULT (WINAPI *get_MaximumComponentLength)(ISClusPartition *This,__LONG32 *plMaximumComponentLength);
-      HRESULT (WINAPI *get_FileSystemFlags)(ISClusPartition *This,__LONG32 *plFileSystemFlags);
-      HRESULT (WINAPI *get_FileSystem)(ISClusPartition *This,BSTR *pbstrFileSystem);
+                   HRESULT (WINAPI *QueryInterface)(ISClusPartition *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusPartition *This);
+                   ULONG (WINAPI *Release)(ISClusPartition *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusPartition *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusPartition *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusPartition *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusPartition *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Flags)(ISClusPartition *This,__LONG32 *plFlags);
+                   HRESULT (WINAPI *get_DeviceName)(ISClusPartition *This,BSTR *pbstrDeviceName);
+                   HRESULT (WINAPI *get_VolumeLabel)(ISClusPartition *This,BSTR *pbstrVolumeLabel);
+                   HRESULT (WINAPI *get_SerialNumber)(ISClusPartition *This,__LONG32 *plSerialNumber);
+                   HRESULT (WINAPI *get_MaximumComponentLength)(ISClusPartition *This,__LONG32 *plMaximumComponentLength);
+                   HRESULT (WINAPI *get_FileSystemFlags)(ISClusPartition *This,__LONG32 *plFileSystemFlags);
+                   HRESULT (WINAPI *get_FileSystem)(ISClusPartition *This,BSTR *pbstrFileSystem);
     END_INTERFACE
   } ISClusPartitionVtbl;
   struct ISClusPartition {
@@ -3624,16 +3624,16 @@ extern "C" {
 #else
   typedef struct ISClusPartitionsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusPartitions *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusPartitions *This);
-      ULONG (WINAPI *Release)(ISClusPartitions *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusPartitions *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusPartitions *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusPartitions *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusPartitions *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusPartitions *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusPartitions *This,IUnknown **retval);
-      HRESULT (WINAPI *get_Item)(ISClusPartitions *This,VARIANT varIndex,ISClusPartition **ppPartition);
+                   HRESULT (WINAPI *QueryInterface)(ISClusPartitions *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusPartitions *This);
+                   ULONG (WINAPI *Release)(ISClusPartitions *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusPartitions *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusPartitions *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusPartitions *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusPartitions *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusPartitions *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusPartitions *This,IUnknown **retval);
+                   HRESULT (WINAPI *get_Item)(ISClusPartitions *This,VARIANT varIndex,ISClusPartition **ppPartition);
     END_INTERFACE
   } ISClusPartitionsVtbl;
   struct ISClusPartitions {
@@ -3674,17 +3674,17 @@ extern "C" {
 #else
   typedef struct ISClusDiskVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusDisk *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusDisk *This);
-      ULONG (WINAPI *Release)(ISClusDisk *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusDisk *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusDisk *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusDisk *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusDisk *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Signature)(ISClusDisk *This,__LONG32 *plSignature);
-      HRESULT (WINAPI *get_ScsiAddress)(ISClusDisk *This,ISClusScsiAddress **ppScsiAddress);
-      HRESULT (WINAPI *get_DiskNumber)(ISClusDisk *This,__LONG32 *plDiskNumber);
-      HRESULT (WINAPI *get_Partitions)(ISClusDisk *This,ISClusPartitions **ppPartitions);
+                   HRESULT (WINAPI *QueryInterface)(ISClusDisk *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusDisk *This);
+                   ULONG (WINAPI *Release)(ISClusDisk *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusDisk *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusDisk *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusDisk *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusDisk *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Signature)(ISClusDisk *This,__LONG32 *plSignature);
+                   HRESULT (WINAPI *get_ScsiAddress)(ISClusDisk *This,ISClusScsiAddress **ppScsiAddress);
+                   HRESULT (WINAPI *get_DiskNumber)(ISClusDisk *This,__LONG32 *plDiskNumber);
+                   HRESULT (WINAPI *get_Partitions)(ISClusDisk *This,ISClusPartitions **ppPartitions);
     END_INTERFACE
   } ISClusDiskVtbl;
   struct ISClusDisk {
@@ -3727,16 +3727,16 @@ extern "C" {
 #else
   typedef struct ISClusDisksVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusDisks *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusDisks *This);
-      ULONG (WINAPI *Release)(ISClusDisks *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusDisks *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusDisks *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusDisks *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusDisks *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusDisks *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusDisks *This,IUnknown **retval);
-      HRESULT (WINAPI *get_Item)(ISClusDisks *This,VARIANT varIndex,ISClusDisk **ppDisk);
+                   HRESULT (WINAPI *QueryInterface)(ISClusDisks *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusDisks *This);
+                   ULONG (WINAPI *Release)(ISClusDisks *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusDisks *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusDisks *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusDisks *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusDisks *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusDisks *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusDisks *This,IUnknown **retval);
+                   HRESULT (WINAPI *get_Item)(ISClusDisks *This,VARIANT varIndex,ISClusDisk **ppDisk);
     END_INTERFACE
   } ISClusDisksVtbl;
   struct ISClusDisks {
@@ -3777,17 +3777,17 @@ extern "C" {
 #else
   typedef struct ISClusScsiAddressVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusScsiAddress *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusScsiAddress *This);
-      ULONG (WINAPI *Release)(ISClusScsiAddress *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusScsiAddress *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusScsiAddress *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusScsiAddress *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusScsiAddress *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_PortNumber)(ISClusScsiAddress *This,VARIANT *pvarPortNumber);
-      HRESULT (WINAPI *get_PathId)(ISClusScsiAddress *This,VARIANT *pvarPathId);
-      HRESULT (WINAPI *get_TargetId)(ISClusScsiAddress *This,VARIANT *pvarTargetId);
-      HRESULT (WINAPI *get_Lun)(ISClusScsiAddress *This,VARIANT *pvarLun);
+                   HRESULT (WINAPI *QueryInterface)(ISClusScsiAddress *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusScsiAddress *This);
+                   ULONG (WINAPI *Release)(ISClusScsiAddress *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusScsiAddress *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusScsiAddress *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusScsiAddress *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusScsiAddress *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_PortNumber)(ISClusScsiAddress *This,VARIANT *pvarPortNumber);
+                   HRESULT (WINAPI *get_PathId)(ISClusScsiAddress *This,VARIANT *pvarPathId);
+                   HRESULT (WINAPI *get_TargetId)(ISClusScsiAddress *This,VARIANT *pvarTargetId);
+                   HRESULT (WINAPI *get_Lun)(ISClusScsiAddress *This,VARIANT *pvarLun);
     END_INTERFACE
   } ISClusScsiAddressVtbl;
   struct ISClusScsiAddress {
@@ -3833,19 +3833,19 @@ extern "C" {
 #else
   typedef struct ISClusRegistryKeysVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusRegistryKeys *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusRegistryKeys *This);
-      ULONG (WINAPI *Release)(ISClusRegistryKeys *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusRegistryKeys *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusRegistryKeys *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusRegistryKeys *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusRegistryKeys *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusRegistryKeys *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusRegistryKeys *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusRegistryKeys *This);
-      HRESULT (WINAPI *get_Item)(ISClusRegistryKeys *This,VARIANT varIndex,BSTR *pbstrRegistryKey);
-      HRESULT (WINAPI *AddItem)(ISClusRegistryKeys *This,BSTR bstrRegistryKey);
-      HRESULT (WINAPI *RemoveItem)(ISClusRegistryKeys *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusRegistryKeys *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusRegistryKeys *This);
+                   ULONG (WINAPI *Release)(ISClusRegistryKeys *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusRegistryKeys *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusRegistryKeys *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusRegistryKeys *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusRegistryKeys *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusRegistryKeys *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusRegistryKeys *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusRegistryKeys *This);
+                   HRESULT (WINAPI *get_Item)(ISClusRegistryKeys *This,VARIANT varIndex,BSTR *pbstrRegistryKey);
+                   HRESULT (WINAPI *AddItem)(ISClusRegistryKeys *This,BSTR bstrRegistryKey);
+                   HRESULT (WINAPI *RemoveItem)(ISClusRegistryKeys *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusRegistryKeysVtbl;
   struct ISClusRegistryKeys {
@@ -3897,19 +3897,19 @@ extern "C" {
 #else
   typedef struct ISClusCryptoKeysVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusCryptoKeys *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusCryptoKeys *This);
-      ULONG (WINAPI *Release)(ISClusCryptoKeys *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusCryptoKeys *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusCryptoKeys *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusCryptoKeys *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusCryptoKeys *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusCryptoKeys *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusCryptoKeys *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusCryptoKeys *This);
-      HRESULT (WINAPI *get_Item)(ISClusCryptoKeys *This,VARIANT varIndex,BSTR *pbstrCyrptoKey);
-      HRESULT (WINAPI *AddItem)(ISClusCryptoKeys *This,BSTR bstrCryptoKey);
-      HRESULT (WINAPI *RemoveItem)(ISClusCryptoKeys *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusCryptoKeys *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusCryptoKeys *This);
+                   ULONG (WINAPI *Release)(ISClusCryptoKeys *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusCryptoKeys *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusCryptoKeys *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusCryptoKeys *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusCryptoKeys *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusCryptoKeys *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusCryptoKeys *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusCryptoKeys *This);
+                   HRESULT (WINAPI *get_Item)(ISClusCryptoKeys *This,VARIANT varIndex,BSTR *pbstrCyrptoKey);
+                   HRESULT (WINAPI *AddItem)(ISClusCryptoKeys *This,BSTR bstrCryptoKey);
+                   HRESULT (WINAPI *RemoveItem)(ISClusCryptoKeys *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusCryptoKeysVtbl;
   struct ISClusCryptoKeys {
@@ -3963,21 +3963,21 @@ extern "C" {
 #else
   typedef struct ISClusResDependentsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISClusResDependents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISClusResDependents *This);
-      ULONG (WINAPI *Release)(ISClusResDependents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISClusResDependents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISClusResDependents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISClusResDependents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISClusResDependents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ISClusResDependents *This,__LONG32 *plCount);
-      HRESULT (WINAPI *get__NewEnum)(ISClusResDependents *This,IUnknown **retval);
-      HRESULT (WINAPI *Refresh)(ISClusResDependents *This);
-      HRESULT (WINAPI *get_Item)(ISClusResDependents *This,VARIANT varIndex,ISClusResource **ppClusResource);
-      HRESULT (WINAPI *CreateItem)(ISClusResDependents *This,BSTR bstrResourceName,BSTR bstrResourceType,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
-      HRESULT (WINAPI *DeleteItem)(ISClusResDependents *This,VARIANT varIndex);
-      HRESULT (WINAPI *AddItem)(ISClusResDependents *This,ISClusResource *pResource);
-      HRESULT (WINAPI *RemoveItem)(ISClusResDependents *This,VARIANT varIndex);
+                   HRESULT (WINAPI *QueryInterface)(ISClusResDependents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISClusResDependents *This);
+                   ULONG (WINAPI *Release)(ISClusResDependents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISClusResDependents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISClusResDependents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISClusResDependents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISClusResDependents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ISClusResDependents *This,__LONG32 *plCount);
+                   HRESULT (WINAPI *get__NewEnum)(ISClusResDependents *This,IUnknown **retval);
+                   HRESULT (WINAPI *Refresh)(ISClusResDependents *This);
+                   HRESULT (WINAPI *get_Item)(ISClusResDependents *This,VARIANT varIndex,ISClusResource **ppClusResource);
+                   HRESULT (WINAPI *CreateItem)(ISClusResDependents *This,BSTR bstrResourceName,BSTR bstrResourceType,CLUSTER_RESOURCE_CREATE_FLAGS dwFlags,ISClusResource **ppClusterResource);
+                   HRESULT (WINAPI *DeleteItem)(ISClusResDependents *This,VARIANT varIndex);
+                   HRESULT (WINAPI *AddItem)(ISClusResDependents *This,ISClusResource *pResource);
+                   HRESULT (WINAPI *RemoveItem)(ISClusResDependents *This,VARIANT varIndex);
     END_INTERFACE
   } ISClusResDependentsVtbl;
   struct ISClusResDependents {

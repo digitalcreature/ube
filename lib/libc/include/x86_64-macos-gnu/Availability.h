@@ -32,13 +32,13 @@
     The desktop Mac OS X and iOS each have different version numbers.
     The __OSX_AVAILABLE_STARTING() macro allows you to specify both the desktop
     and iOS version numbers.  For instance:
-        __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0)
+                     __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0)
     means the function/method was first available on Mac OS X 10.2 on the desktop
     and first available in iOS 2.0 on the iPhone.
     
     If a function is available on one platform, but not the other a _NA (not
     applicable) parameter is used.  For instance:
-            __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA)
+                                      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA)
     means that the function/method was first available on Mac OS X 10.3, and it
     currently not implemented on the iPhone.
 
@@ -48,7 +48,7 @@
     functions/methods can be tagged with a __OSX_AVAILABLE_BUT_DEPRECATED()
     macro which specifies the OS version where the function became available
     as well as the OS version in which it became deprecated.  For instance:
-        __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_5,__IPHONE_NA,__IPHONE_NA)
+                     __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_5,__IPHONE_NA,__IPHONE_NA)
     means that the function/method was introduced in Mac OS X 10.0, then
     became deprecated beginning in Mac OS X 10.5.  On iOS the function 
     has never been available.  
@@ -62,35 +62,35 @@
     
     Examples:
 
-        A function available in Mac OS X 10.5 and later, but not on the phone:
-        
-            extern void mymacfunc() __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA);
+                     A function available in Mac OS X 10.5 and later, but not on the phone:
+                     
+                                      extern void mymacfunc() __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA);
 
 
-        An Objective-C method in Mac OS X 10.5 and later, but not on the phone:
-        
-            @interface MyClass : NSObject
-            -(void) mymacmethod __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA);
-            @end
+                     An Objective-C method in Mac OS X 10.5 and later, but not on the phone:
+                     
+                                      @interface MyClass : NSObject
+                                      -(void) mymacmethod __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA);
+                                      @end
 
-        
-        An enum available on the phone, but not available on Mac OS X:
-        
-            #if __IPHONE_OS_VERSION_MIN_REQUIRED
-                enum { myEnum = 1 };
-            #endif
-           Note: this works when targeting the Mac OS X platform because 
-           __IPHONE_OS_VERSION_MIN_REQUIRED is undefined which evaluates to zero. 
-        
+                     
+                     An enum available on the phone, but not available on Mac OS X:
+                     
+                                      #if __IPHONE_OS_VERSION_MIN_REQUIRED
+                                          enum { myEnum = 1 };
+                                      #endif
+                        Note: this works when targeting the Mac OS X platform because 
+                        __IPHONE_OS_VERSION_MIN_REQUIRED is undefined which evaluates to zero. 
+                     
 
-        An enum with values added in different iPhoneOS versions:
+                     An enum with values added in different iPhoneOS versions:
 		
 			enum {
 			    myX  = 1,	// Usable on iPhoneOS 2.1 and later
 			    myY  = 2,	// Usable on iPhoneOS 3.0 and later
 			    myZ  = 3,	// Usable on iPhoneOS 3.0 and later
 				...
-		      Note: you do not want to use #if with enumeration values
+		                   Note: you do not want to use #if with enumeration values
 			  when a client needs to see all values at compile time
 			  and use runtime logic to only use the viable values.
 			  
@@ -103,15 +103,15 @@
     in expresssions, which could cause the #if expression to evaluate in an unexpected
     way.
     
-        #ifdef __MAC_OS_X_VERSION_MIN_REQUIRED
-            // code only compiled when targeting Mac OS X and not iPhone
-            // note use of 1050 instead of __MAC_10_5
-            #if __MAC_OS_X_VERSION_MIN_REQUIRED < 1050
-                // code in here might run on pre-Leopard OS
-            #else
-                // code here can assume Leopard or later
-            #endif
-        #endif
+                     #ifdef __MAC_OS_X_VERSION_MIN_REQUIRED
+                                      // code only compiled when targeting Mac OS X and not iPhone
+                                      // note use of 1050 instead of __MAC_10_5
+                                      #if __MAC_OS_X_VERSION_MIN_REQUIRED < 1050
+                                          // code in here might run on pre-Leopard OS
+                                      #else
+                                          // code here can assume Leopard or later
+                                      #endif
+                     #endif
 
 
 */
@@ -133,64 +133,64 @@
 #endif
 
 #ifndef __MAC_10_0
-#define __MAC_10_0            1000
-#define __MAC_10_1            1010
-#define __MAC_10_2            1020
-#define __MAC_10_3            1030
-#define __MAC_10_4            1040
-#define __MAC_10_5            1050
-#define __MAC_10_6            1060
-#define __MAC_10_7            1070
-#define __MAC_10_8            1080
-#define __MAC_10_9            1090
-#define __MAC_10_10         101000
-#define __MAC_10_10_2       101002
-#define __MAC_10_10_3       101003
-#define __MAC_10_11         101100
-#define __MAC_10_11_2       101102
-#define __MAC_10_11_3       101103
-#define __MAC_10_11_4       101104
-#define __MAC_10_12         101200
-#define __MAC_10_12_1       101201
-#define __MAC_10_12_2       101202
-#define __MAC_10_12_4       101204
-#define __MAC_10_13         101300
-#define __MAC_10_13_1       101301
-#define __MAC_10_13_2       101302
-#define __MAC_10_13_4       101304
-#define __MAC_10_14         101400
-#define __MAC_10_14_1       101401
-#define __MAC_10_14_4       101404
-#define __MAC_10_15         101500
-#define __MAC_10_15_1       101501
-#define __MAC_10_15_4       101504
+#define __MAC_10_0                                      1000
+#define __MAC_10_1                                      1010
+#define __MAC_10_2                                      1020
+#define __MAC_10_3                                      1030
+#define __MAC_10_4                                      1040
+#define __MAC_10_5                                      1050
+#define __MAC_10_6                                      1060
+#define __MAC_10_7                                      1070
+#define __MAC_10_8                                      1080
+#define __MAC_10_9                                      1090
+#define __MAC_10_10                      101000
+#define __MAC_10_10_2                    101002
+#define __MAC_10_10_3                    101003
+#define __MAC_10_11                      101100
+#define __MAC_10_11_2                    101102
+#define __MAC_10_11_3                    101103
+#define __MAC_10_11_4                    101104
+#define __MAC_10_12                      101200
+#define __MAC_10_12_1                    101201
+#define __MAC_10_12_2                    101202
+#define __MAC_10_12_4                    101204
+#define __MAC_10_13                      101300
+#define __MAC_10_13_1                    101301
+#define __MAC_10_13_2                    101302
+#define __MAC_10_13_4                    101304
+#define __MAC_10_14                      101400
+#define __MAC_10_14_1                    101401
+#define __MAC_10_14_4                    101404
+#define __MAC_10_15                      101500
+#define __MAC_10_15_1                    101501
+#define __MAC_10_15_4                    101504
 /* __MAC_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
-#define __IPHONE_2_0      20000
-#define __IPHONE_2_1      20100
-#define __IPHONE_2_2      20200
-#define __IPHONE_3_0      30000
-#define __IPHONE_3_1      30100
-#define __IPHONE_3_2      30200
-#define __IPHONE_4_0      40000
-#define __IPHONE_4_1      40100
-#define __IPHONE_4_2      40200
-#define __IPHONE_4_3      40300
-#define __IPHONE_5_0      50000
-#define __IPHONE_5_1      50100
-#define __IPHONE_6_0      60000
-#define __IPHONE_6_1      60100
-#define __IPHONE_7_0      70000
-#define __IPHONE_7_1      70100
-#define __IPHONE_8_0      80000
-#define __IPHONE_8_1      80100
-#define __IPHONE_8_2      80200
-#define __IPHONE_8_3      80300
-#define __IPHONE_8_4      80400
-#define __IPHONE_9_0      90000
-#define __IPHONE_9_1      90100
-#define __IPHONE_9_2      90200
-#define __IPHONE_9_3      90300
+#define __IPHONE_2_0                   20000
+#define __IPHONE_2_1                   20100
+#define __IPHONE_2_2                   20200
+#define __IPHONE_3_0                   30000
+#define __IPHONE_3_1                   30100
+#define __IPHONE_3_2                   30200
+#define __IPHONE_4_0                   40000
+#define __IPHONE_4_1                   40100
+#define __IPHONE_4_2                   40200
+#define __IPHONE_4_3                   40300
+#define __IPHONE_5_0                   50000
+#define __IPHONE_5_1                   50100
+#define __IPHONE_6_0                   60000
+#define __IPHONE_6_1                   60100
+#define __IPHONE_7_0                   70000
+#define __IPHONE_7_1                   70100
+#define __IPHONE_8_0                   80000
+#define __IPHONE_8_1                   80100
+#define __IPHONE_8_2                   80200
+#define __IPHONE_8_3                   80300
+#define __IPHONE_8_4                   80400
+#define __IPHONE_9_0                   90000
+#define __IPHONE_9_1                   90100
+#define __IPHONE_9_2                   90200
+#define __IPHONE_9_3                   90300
 #define __IPHONE_10_0    100000
 #define __IPHONE_10_1    100100
 #define __IPHONE_10_2    100200
@@ -213,26 +213,26 @@
 #define __IPHONE_13_6    130600
 /* __IPHONE_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
-#define __TVOS_9_0        90000
-#define __TVOS_9_1        90100
-#define __TVOS_9_2        90200
-#define __TVOS_10_0      100000
+#define __TVOS_9_0                     90000
+#define __TVOS_9_1                     90100
+#define __TVOS_9_2                     90200
+#define __TVOS_10_0                   100000
 #define __TVOS_10_0_1    100001
-#define __TVOS_10_1      100100
-#define __TVOS_10_2      100200
-#define __TVOS_11_0      110000
-#define __TVOS_11_1      110100
-#define __TVOS_11_2      110200
-#define __TVOS_11_3      110300
-#define __TVOS_11_4      110400
-#define __TVOS_12_0      120000
-#define __TVOS_12_1      120100
-#define __TVOS_12_2      120200
-#define __TVOS_12_3      120300
-#define __TVOS_13_0      130000
-#define __TVOS_13_2      130200
-#define __TVOS_13_3      130300
-#define __TVOS_13_4      130400
+#define __TVOS_10_1                   100100
+#define __TVOS_10_2                   100200
+#define __TVOS_11_0                   110000
+#define __TVOS_11_1                   110100
+#define __TVOS_11_2                   110200
+#define __TVOS_11_3                   110300
+#define __TVOS_11_4                   110400
+#define __TVOS_12_0                   120000
+#define __TVOS_12_1                   120100
+#define __TVOS_12_2                   120200
+#define __TVOS_12_3                   120300
+#define __TVOS_13_0                   130000
+#define __TVOS_13_2                   130200
+#define __TVOS_13_3                   130300
+#define __TVOS_13_4                   130400
 
 #define __WATCHOS_1_0     10000
 #define __WATCHOS_2_0     20000
@@ -261,51 +261,51 @@
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
     #define __OSX_AVAILABLE_STARTING(_osx, _ios) __AVAILABILITY_INTERNAL##_ios
     #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep) \
-                                                    __AVAILABILITY_INTERNAL##_iosIntro##_DEP##_iosDep
+                                                                                                                                                            __AVAILABILITY_INTERNAL##_iosIntro##_DEP##_iosDep
     #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg) \
-                                                    __AVAILABILITY_INTERNAL##_iosIntro##_DEP##_iosDep##_MSG(_msg)
+                                                                                                                                                            __AVAILABILITY_INTERNAL##_iosIntro##_DEP##_iosDep##_MSG(_msg)
 
 #elif defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
 
    #if defined(__has_builtin)
     #if __has_builtin(__is_target_arch)
      #if __has_builtin(__is_target_vendor)
-      #if __has_builtin(__is_target_os)
-       #if __has_builtin(__is_target_environment)
-        #if __has_builtin(__is_target_variant_os)
-         #if __has_builtin(__is_target_variant_environment)
-          #if (__is_target_arch(x86_64) && __is_target_vendor(apple) && ((__is_target_os(ios) && __is_target_environment(macabi)) || (__is_target_variant_os(ios) && __is_target_variant_environment(macabi))))
-            #define __OSX_AVAILABLE_STARTING(_osx, _ios) __AVAILABILITY_INTERNAL##_osx __AVAILABILITY_INTERNAL##_ios
-            #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep) \
-                                                            __AVAILABILITY_INTERNAL##_osxIntro##_DEP##_osxDep __AVAILABILITY_INTERNAL##_iosIntro##_DEP##_iosDep
-            #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg) \
-                                                            __AVAILABILITY_INTERNAL##_osxIntro##_DEP##_osxDep##_MSG(_msg) __AVAILABILITY_INTERNAL##_iosIntro##_DEP##_iosDep##_MSG(_msg)
-          #endif /* # if __is_target_arch... */
-         #endif /* #if __has_builtin(__is_target_variant_environment) */
-        #endif /* #if __has_builtin(__is_target_variant_os) */
-       #endif /* #if __has_builtin(__is_target_environment) */
-      #endif /* #if __has_builtin(__is_target_os) */
+                   #if __has_builtin(__is_target_os)
+                    #if __has_builtin(__is_target_environment)
+                     #if __has_builtin(__is_target_variant_os)
+                      #if __has_builtin(__is_target_variant_environment)
+                       #if (__is_target_arch(x86_64) && __is_target_vendor(apple) && ((__is_target_os(ios) && __is_target_environment(macabi)) || (__is_target_variant_os(ios) && __is_target_variant_environment(macabi))))
+                                      #define __OSX_AVAILABLE_STARTING(_osx, _ios) __AVAILABILITY_INTERNAL##_osx __AVAILABILITY_INTERNAL##_ios
+                                      #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep) \
+                                                                                                                                                                                              __AVAILABILITY_INTERNAL##_osxIntro##_DEP##_osxDep __AVAILABILITY_INTERNAL##_iosIntro##_DEP##_iosDep
+                                      #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg) \
+                                                                                                                                                                                              __AVAILABILITY_INTERNAL##_osxIntro##_DEP##_osxDep##_MSG(_msg) __AVAILABILITY_INTERNAL##_iosIntro##_DEP##_iosDep##_MSG(_msg)
+                       #endif /* # if __is_target_arch... */
+                      #endif /* #if __has_builtin(__is_target_variant_environment) */
+                     #endif /* #if __has_builtin(__is_target_variant_os) */
+                    #endif /* #if __has_builtin(__is_target_environment) */
+                   #endif /* #if __has_builtin(__is_target_os) */
      #endif /* #if __has_builtin(__is_target_vendor) */
     #endif /* #if __has_builtin(__is_target_arch) */
    #endif /* #if defined(__has_builtin) */
 
     #ifndef __OSX_AVAILABLE_STARTING
-      #if defined(__has_attribute) && defined(__has_feature)
-          #if __has_attribute(availability)      
-        #define __OSX_AVAILABLE_STARTING(_osx, _ios) __AVAILABILITY_INTERNAL##_osx
-        #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep) \
-                                                        __AVAILABILITY_INTERNAL##_osxIntro##_DEP##_osxDep
-        #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg) \
-                                                        __AVAILABILITY_INTERNAL##_osxIntro##_DEP##_osxDep##_MSG(_msg)
-        #else
-        #define __OSX_AVAILABLE_STARTING(_osx, _ios)
-        #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep)
-        #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg)
-        #endif
-      #else
-      #define __OSX_AVAILABLE_STARTING(_osx, _ios)
-      #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep)
-      #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg)
+                   #if defined(__has_attribute) && defined(__has_feature)
+                       #if __has_attribute(availability)                   
+                     #define __OSX_AVAILABLE_STARTING(_osx, _ios) __AVAILABILITY_INTERNAL##_osx
+                     #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep) \
+                                                                                                                                                                             __AVAILABILITY_INTERNAL##_osxIntro##_DEP##_osxDep
+                     #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg) \
+                                                                                                                                                                             __AVAILABILITY_INTERNAL##_osxIntro##_DEP##_osxDep##_MSG(_msg)
+                     #else
+                     #define __OSX_AVAILABLE_STARTING(_osx, _ios)
+                     #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep)
+                     #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg)
+                     #endif
+                   #else
+                   #define __OSX_AVAILABLE_STARTING(_osx, _ios)
+                   #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep)
+                   #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg)
     #endif
 #endif /* __OSX_AVAILABLE_STARTING */
 
@@ -318,10 +318,10 @@
 
 #if defined(__has_feature)
   #if __has_feature(attribute_availability_with_message)
-    #define __OS_AVAILABILITY(_target, _availability)            __attribute__((availability(_target,_availability)))
+    #define __OS_AVAILABILITY(_target, _availability)                                      __attribute__((availability(_target,_availability)))
     #define __OS_AVAILABILITY_MSG(_target, _availability, _msg)  __attribute__((availability(_target,_availability,message=_msg)))
   #elif __has_feature(attribute_availability)
-    #define __OS_AVAILABILITY(_target, _availability)            __attribute__((availability(_target,_availability)))
+    #define __OS_AVAILABILITY(_target, _availability)                                      __attribute__((availability(_target,_availability)))
     #define __OS_AVAILABILITY_MSG(_target, _availability, _msg)  __attribute__((availability(_target,_availability)))
   #else
     #define __OS_AVAILABILITY(_target, _availability)
@@ -354,8 +354,8 @@
 /* for use marking APIs available info for Mac OSX */
 #if defined(__has_attribute)
   #if __has_attribute(availability)
-    #define __OSX_UNAVAILABLE                    __OS_AVAILABILITY(macosx,unavailable)
-    #define __OSX_AVAILABLE(_vers)               __OS_AVAILABILITY(macosx,introduced=_vers)
+    #define __OSX_UNAVAILABLE                                                           __OS_AVAILABILITY(macosx,unavailable)
+    #define __OSX_AVAILABLE(_vers)                                         __OS_AVAILABILITY(macosx,introduced=_vers)
     #define __OSX_DEPRECATED(_start, _dep, _msg) __OSX_AVAILABLE(_start) __OS_AVAILABILITY_MSG(macosx,deprecated=_dep,_msg)
   #endif
 #endif
@@ -376,9 +376,9 @@
 /* for use marking APIs available info for iOS */
 #if defined(__has_attribute)
   #if __has_attribute(availability)
-    #define __IOS_UNAVAILABLE                    __OS_AVAILABILITY(ios,unavailable)
-    #define __IOS_PROHIBITED                     __OS_AVAILABILITY(ios,unavailable)
-    #define __IOS_AVAILABLE(_vers)               __OS_AVAILABILITY(ios,introduced=_vers)
+    #define __IOS_UNAVAILABLE                                                           __OS_AVAILABILITY(ios,unavailable)
+    #define __IOS_PROHIBITED                                                            __OS_AVAILABILITY(ios,unavailable)
+    #define __IOS_AVAILABLE(_vers)                                         __OS_AVAILABILITY(ios,introduced=_vers)
     #define __IOS_DEPRECATED(_start, _dep, _msg) __IOS_AVAILABLE(_start) __OS_AVAILABILITY_MSG(ios,deprecated=_dep,_msg)
   #endif
 #endif
@@ -403,9 +403,9 @@
 /* for use marking APIs available info for tvOS */
 #if defined(__has_feature)
   #if __has_feature(attribute_availability_tvos)
-    #define __TVOS_UNAVAILABLE                    __OS_AVAILABILITY(tvos,unavailable)
-    #define __TVOS_PROHIBITED                     __OS_AVAILABILITY(tvos,unavailable)
-    #define __TVOS_AVAILABLE(_vers)               __OS_AVAILABILITY(tvos,introduced=_vers)
+    #define __TVOS_UNAVAILABLE                                                           __OS_AVAILABILITY(tvos,unavailable)
+    #define __TVOS_PROHIBITED                                                            __OS_AVAILABILITY(tvos,unavailable)
+    #define __TVOS_AVAILABLE(_vers)                                         __OS_AVAILABILITY(tvos,introduced=_vers)
     #define __TVOS_DEPRECATED(_start, _dep, _msg) __TVOS_AVAILABLE(_start) __OS_AVAILABILITY_MSG(tvos,deprecated=_dep,_msg)
   #endif
 #endif
@@ -430,9 +430,9 @@
 /* for use marking APIs available info for Watch OS */
 #if defined(__has_feature)
   #if __has_feature(attribute_availability_watchos)
-    #define __WATCHOS_UNAVAILABLE                    __OS_AVAILABILITY(watchos,unavailable)
-    #define __WATCHOS_PROHIBITED                     __OS_AVAILABILITY(watchos,unavailable)
-    #define __WATCHOS_AVAILABLE(_vers)               __OS_AVAILABILITY(watchos,introduced=_vers)
+    #define __WATCHOS_UNAVAILABLE                                                           __OS_AVAILABILITY(watchos,unavailable)
+    #define __WATCHOS_PROHIBITED                                                            __OS_AVAILABILITY(watchos,unavailable)
+    #define __WATCHOS_AVAILABLE(_vers)                                         __OS_AVAILABILITY(watchos,introduced=_vers)
     #define __WATCHOS_DEPRECATED(_start, _dep, _msg) __WATCHOS_AVAILABLE(_start) __OS_AVAILABILITY_MSG(watchos,deprecated=_dep,_msg)
   #endif
 #endif
@@ -457,8 +457,8 @@
 /* for use marking APIs unavailable for swift */
 #if defined(__has_feature)
   #if __has_feature(attribute_availability_swift)
-    #define __SWIFT_UNAVAILABLE                   __OS_AVAILABILITY(swift,unavailable)
-    #define __SWIFT_UNAVAILABLE_MSG(_msg)         __OS_AVAILABILITY_MSG(swift,unavailable,_msg)
+    #define __SWIFT_UNAVAILABLE                                                          __OS_AVAILABILITY(swift,unavailable)
+    #define __SWIFT_UNAVAILABLE_MSG(_msg)                      __OS_AVAILABILITY_MSG(swift,unavailable,_msg)
   #endif
 #endif
 

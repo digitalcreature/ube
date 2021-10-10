@@ -1467,7 +1467,7 @@ int vsnwprintf (wchar_t *__stream, size_t __n, const wchar_t *__format, __builti
 #endif
   __CRT_INLINE _CONST_RETURN wchar_t *__cdecl wmemchr(const wchar_t *_S,wchar_t _C,size_t _N) {
     if (_S) {
-      for ( ; 0 < _N; ++_S, --_N)
+                   for ( ; 0 < _N; ++_S, --_N)
 	if (*_S == _C)
 	  return (_CONST_RETURN wchar_t *)(_S);
     }
@@ -1475,11 +1475,11 @@ int vsnwprintf (wchar_t *__stream, size_t __n, const wchar_t *__format, __builti
   }
   __CRT_INLINE int __cdecl wmemcmp(const wchar_t *_S1,const wchar_t *_S2,size_t _N) {
     if (_N == 0 || _S1 == _S2)
-      return 0;	/* even for NULL pointers.  */
+                   return 0;	/* even for NULL pointers.  */
     if ((_S1 && !(_S2)) || (_S2 && !(_S1)))
-      return !(_S2) ? 1 : -1; /* robust.  */
+                   return !(_S2) ? 1 : -1; /* robust.  */
     for ( ; 0 < _N; ++_S1, ++_S2, --_N)
-      if (*_S1 != *_S2)
+                   if (*_S1 != *_S2)
 	return (*_S1 < *_S2 ? -1 : +1);
     return 0;
   }
@@ -1491,7 +1491,7 @@ int vsnwprintf (wchar_t *__stream, size_t __n, const wchar_t *__format, __builti
   __CRT_INLINE wchar_t *__cdecl wmemset(wchar_t *_S,wchar_t _C,size_t _N) {
     wchar_t *_Su = _S;
     for (;0<_N;++_Su,--_N) {
-      *_Su = _C;
+                   *_Su = _C;
     }
     return (_S);
   }

@@ -43,10 +43,10 @@ typedef struct
 typedef struct
   {
     union
-      {
+                   {
 	unsigned long	pr_regs[32];
 	double		pr_dregs[16];
-      }			pr_fr;
+                   }			pr_fr;
     unsigned long	__glibc_reserved;
     unsigned long	pr_fsr;
     unsigned char	pr_qcnt;

@@ -118,7 +118,7 @@ MIDL_INTERFACE("9ab8fd0d-cb94-49c2-9cb0-97ec1d5469d2")
 IXpsRasterizerNotificationCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Continue(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -130,19 +130,19 @@ typedef struct IXpsRasterizerNotificationCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsRasterizerNotificationCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsRasterizerNotificationCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsRasterizerNotificationCallback *This);
+                     IXpsRasterizerNotificationCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsRasterizerNotificationCallback *This);
+                     IXpsRasterizerNotificationCallback *This);
 
     /*** IXpsRasterizerNotificationCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *Continue)(
-        IXpsRasterizerNotificationCallback *This);
+                     IXpsRasterizerNotificationCallback *This);
 
     END_INTERFACE
 } IXpsRasterizerNotificationCallbackVtbl;
@@ -194,15 +194,15 @@ MIDL_INTERFACE("7567cfc8-c156-47a8-9dac-11a2ae5bdd6b")
 IXpsRasterizer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RasterizeRect(
-        INT x,
-        INT y,
-        INT width,
-        INT height,
-        IXpsRasterizerNotificationCallback *notificationCallback,
-        IWICBitmap **bitmap) = 0;
+                     INT x,
+                     INT y,
+                     INT width,
+                     INT height,
+                     IXpsRasterizerNotificationCallback *notificationCallback,
+                     IWICBitmap **bitmap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMinimalLineWidth(
-        INT width) = 0;
+                     INT width) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -214,29 +214,29 @@ typedef struct IXpsRasterizerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsRasterizer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsRasterizer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsRasterizer *This);
+                     IXpsRasterizer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsRasterizer *This);
+                     IXpsRasterizer *This);
 
     /*** IXpsRasterizer methods ***/
     HRESULT (STDMETHODCALLTYPE *RasterizeRect)(
-        IXpsRasterizer *This,
-        INT x,
-        INT y,
-        INT width,
-        INT height,
-        IXpsRasterizerNotificationCallback *notificationCallback,
-        IWICBitmap **bitmap);
+                     IXpsRasterizer *This,
+                     INT x,
+                     INT y,
+                     INT width,
+                     INT height,
+                     IXpsRasterizerNotificationCallback *notificationCallback,
+                     IWICBitmap **bitmap);
 
     HRESULT (STDMETHODCALLTYPE *SetMinimalLineWidth)(
-        IXpsRasterizer *This,
-        INT width);
+                     IXpsRasterizer *This,
+                     INT width);
 
     END_INTERFACE
 } IXpsRasterizerVtbl;
@@ -292,11 +292,11 @@ MIDL_INTERFACE("e094808a-24c6-482b-a3a7-c21ac9b55f17")
 IXpsRasterizationFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateRasterizer(
-        IXpsOMPage *xpsPage,
-        FLOAT DPI,
-        XPSRAS_RENDERING_MODE nonTextRenderingMode,
-        XPSRAS_RENDERING_MODE textRenderingMode,
-        IXpsRasterizer **ppIXPSRasterizer) = 0;
+                     IXpsOMPage *xpsPage,
+                     FLOAT DPI,
+                     XPSRAS_RENDERING_MODE nonTextRenderingMode,
+                     XPSRAS_RENDERING_MODE textRenderingMode,
+                     IXpsRasterizer **ppIXPSRasterizer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -308,24 +308,24 @@ typedef struct IXpsRasterizationFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsRasterizationFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsRasterizationFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsRasterizationFactory *This);
+                     IXpsRasterizationFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsRasterizationFactory *This);
+                     IXpsRasterizationFactory *This);
 
     /*** IXpsRasterizationFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateRasterizer)(
-        IXpsRasterizationFactory *This,
-        IXpsOMPage *xpsPage,
-        FLOAT DPI,
-        XPSRAS_RENDERING_MODE nonTextRenderingMode,
-        XPSRAS_RENDERING_MODE textRenderingMode,
-        IXpsRasterizer **ppIXPSRasterizer);
+                     IXpsRasterizationFactory *This,
+                     IXpsOMPage *xpsPage,
+                     FLOAT DPI,
+                     XPSRAS_RENDERING_MODE nonTextRenderingMode,
+                     XPSRAS_RENDERING_MODE textRenderingMode,
+                     IXpsRasterizer **ppIXPSRasterizer);
 
     END_INTERFACE
 } IXpsRasterizationFactoryVtbl;
@@ -378,12 +378,12 @@ MIDL_INTERFACE("2d6e5f77-6414-4a1e-a8e0-d4194ce6a26f")
 IXpsRasterizationFactory1 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateRasterizer(
-        IXpsOMPage *xpsPage,
-        FLOAT DPI,
-        XPSRAS_RENDERING_MODE nonTextRenderingMode,
-        XPSRAS_RENDERING_MODE textRenderingMode,
-        XPSRAS_PIXEL_FORMAT pixelFormat,
-        IXpsRasterizer **ppIXPSRasterizer) = 0;
+                     IXpsOMPage *xpsPage,
+                     FLOAT DPI,
+                     XPSRAS_RENDERING_MODE nonTextRenderingMode,
+                     XPSRAS_RENDERING_MODE textRenderingMode,
+                     XPSRAS_PIXEL_FORMAT pixelFormat,
+                     IXpsRasterizer **ppIXPSRasterizer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -395,25 +395,25 @@ typedef struct IXpsRasterizationFactory1Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsRasterizationFactory1 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsRasterizationFactory1 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsRasterizationFactory1 *This);
+                     IXpsRasterizationFactory1 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsRasterizationFactory1 *This);
+                     IXpsRasterizationFactory1 *This);
 
     /*** IXpsRasterizationFactory1 methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateRasterizer)(
-        IXpsRasterizationFactory1 *This,
-        IXpsOMPage *xpsPage,
-        FLOAT DPI,
-        XPSRAS_RENDERING_MODE nonTextRenderingMode,
-        XPSRAS_RENDERING_MODE textRenderingMode,
-        XPSRAS_PIXEL_FORMAT pixelFormat,
-        IXpsRasterizer **ppIXPSRasterizer);
+                     IXpsRasterizationFactory1 *This,
+                     IXpsOMPage *xpsPage,
+                     FLOAT DPI,
+                     XPSRAS_RENDERING_MODE nonTextRenderingMode,
+                     XPSRAS_RENDERING_MODE textRenderingMode,
+                     XPSRAS_PIXEL_FORMAT pixelFormat,
+                     IXpsRasterizer **ppIXPSRasterizer);
 
     END_INTERFACE
 } IXpsRasterizationFactory1Vtbl;

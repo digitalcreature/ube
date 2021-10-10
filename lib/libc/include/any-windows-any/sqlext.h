@@ -1512,12 +1512,12 @@ extern "C" {
     const GUID *pguidEvent;
     DWORD dwFlags;
     __C89_NAMELESS union {
-      WCHAR *wszArg;
-      CHAR *szArg;
+                   WCHAR *wszArg;
+                   CHAR *szArg;
     };
     __C89_NAMELESS union {
-      WCHAR *wszCorrelation;
-      CHAR *szCorrelation;
+                   WCHAR *wszCorrelation;
+                   CHAR *szCorrelation;
     };
     RETCODE RetCode;
   } ODBC_VS_ARGS,*PODBC_VS_ARGS;

@@ -50,38 +50,38 @@ static const unsigned int _SNAN_LDBL128[4] = {0x7ff55555, 0x55555555, 0x0, 0x0};
 #define __builtin_nansl(__dummy) DBL_SNAN //0x7ff5555555555555
 
 #define __FLT_MANT_DIG__   FLT_MANT_DIG
-#define __FLT_DIG__        FLT_DIG
-#define __FLT_RADIX__      FLT_RADIX
+#define __FLT_DIG__                     FLT_DIG
+#define __FLT_RADIX__                   FLT_RADIX
 #define __FLT_MIN_EXP__    FLT_MIN_EXP
 #define __FLT_MIN_10_EXP__ FLT_MIN_10_EXP
 #define __FLT_MAX_EXP__    FLT_MAX_EXP
 #define __FLT_MAX_10_EXP__ FLT_MAX_10_EXP
-#define __FLT_MIN__        FLT_MIN
-#define __FLT_MAX__        FLT_MAX
+#define __FLT_MIN__                     FLT_MIN
+#define __FLT_MAX__                     FLT_MAX
 #define __FLT_EPSILON__    FLT_EPSILON
 // predefined by XLC on LoP
 #define __FLT_DENORM_MIN__ 1.40129846e-45F
 
 #define __DBL_MANT_DIG__   DBL_MANT_DIG
-#define __DBL_DIG__        DBL_DIG
+#define __DBL_DIG__                     DBL_DIG
 #define __DBL_MIN_EXP__    DBL_MIN_EXP
 #define __DBL_MIN_10_EXP__ DBL_MIN_10_EXP
 #define __DBL_MAX_EXP__    DBL_MAX_EXP
 #define __DBL_MAX_10_EXP__ DBL_MAX_10_EXP
-#define __DBL_MIN__        DBL_MIN
-#define __DBL_MAX__        DBL_MAX
+#define __DBL_MIN__                     DBL_MIN
+#define __DBL_MAX__                     DBL_MAX
 #define __DBL_EPSILON__    DBL_EPSILON
 // predefined by XLC on LoP
 #define __DBL_DENORM_MIN__ 4.9406564584124654e-324
 
 #define __LDBL_MANT_DIG__   LDBL_MANT_DIG
-#define __LDBL_DIG__        LDBL_DIG
+#define __LDBL_DIG__                     LDBL_DIG
 #define __LDBL_MIN_EXP__    LDBL_MIN_EXP
 #define __LDBL_MIN_10_EXP__ LDBL_MIN_10_EXP
 #define __LDBL_MAX_EXP__    LDBL_MAX_EXP
 #define __LDBL_MAX_10_EXP__ LDBL_MAX_10_EXP
-#define __LDBL_MIN__        LDBL_MIN
-#define __LDBL_MAX__        LDBL_MAX
+#define __LDBL_MIN__                     LDBL_MIN
+#define __LDBL_MAX__                     LDBL_MAX
 #define __LDBL_EPSILON__    LDBL_EPSILON
 // predefined by XLC on LoP
 #if __LONGDOUBLE128

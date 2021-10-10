@@ -234,18 +234,18 @@ public:
 
     typedef unsigned int fmtflags;
     static const fmtflags boolalpha   = 0x0001;
-    static const fmtflags dec         = 0x0002;
-    static const fmtflags fixed       = 0x0004;
-    static const fmtflags hex         = 0x0008;
+    static const fmtflags dec                      = 0x0002;
+    static const fmtflags fixed                    = 0x0004;
+    static const fmtflags hex                      = 0x0008;
     static const fmtflags internal    = 0x0010;
-    static const fmtflags left        = 0x0020;
-    static const fmtflags oct         = 0x0040;
-    static const fmtflags right       = 0x0080;
+    static const fmtflags left                     = 0x0020;
+    static const fmtflags oct                      = 0x0040;
+    static const fmtflags right                    = 0x0080;
     static const fmtflags scientific  = 0x0100;
     static const fmtflags showbase    = 0x0200;
     static const fmtflags showpoint   = 0x0400;
     static const fmtflags showpos     = 0x0800;
-    static const fmtflags skipws      = 0x1000;
+    static const fmtflags skipws                   = 0x1000;
     static const fmtflags unitbuf     = 0x2000;
     static const fmtflags uppercase   = 0x4000;
     static const fmtflags adjustfield = left | right | internal;
@@ -269,9 +269,9 @@ public:
     enum seekdir {beg, cur, end};
 
 #if _LIBCPP_STD_VER <= 14
-    typedef iostate      io_state;
+    typedef iostate                   io_state;
     typedef openmode     open_mode;
-    typedef seekdir      seek_dir;
+    typedef seekdir                   seek_dir;
 
     typedef _VSTD::streamoff streamoff;
     typedef _VSTD::streampos streampos;
@@ -333,16 +333,16 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     void __setstate_nothrow(iostate __state)
     {
-        if (__rdbuf_)
-            __rdstate_ |= __state;
-        else
-            __rdstate_ |= __state | ios_base::badbit;
+                     if (__rdbuf_)
+                                      __rdstate_ |= __state;
+                     else
+                                      __rdstate_ |= __state | ios_base::badbit;
     }
 
 protected:
     _LIBCPP_INLINE_VISIBILITY
     ios_base() {// purposefully does no initialization
-               }
+                                         }
 
     void init(void* __sb);
     _LIBCPP_INLINE_VISIBILITY void* rdbuf() const {return __rdbuf_;}
@@ -350,8 +350,8 @@ protected:
     _LIBCPP_INLINE_VISIBILITY
     void rdbuf(void* __sb)
     {
-        __rdbuf_ = __sb;
-        clear();
+                     __rdbuf_ = __sb;
+                     clear();
     }
 
     void __call_callbacks(event);
@@ -362,35 +362,35 @@ protected:
     _LIBCPP_INLINE_VISIBILITY
     void set_rdbuf(void* __sb)
     {
-        __rdbuf_ = __sb;
+                     __rdbuf_ = __sb;
     }
 
 private:
     // All data members must be scalars
-    fmtflags        __fmtflags_;
-    streamsize      __precision_;
-    streamsize      __width_;
-    iostate         __rdstate_;
-    iostate         __exceptions_;
-    void*           __rdbuf_;
-    void*           __loc_;
+    fmtflags                     __fmtflags_;
+    streamsize                   __precision_;
+    streamsize                   __width_;
+    iostate                      __rdstate_;
+    iostate                      __exceptions_;
+    void*                        __rdbuf_;
+    void*                        __loc_;
     event_callback* __fn_;
-    int*            __index_;
-    size_t          __event_size_;
-    size_t          __event_cap_;
+    int*                                      __index_;
+    size_t                       __event_size_;
+    size_t                       __event_cap_;
 // TODO(EricWF): Enable this for both Clang and GCC. Currently it is only
 // enabled with clang.
 #if defined(_LIBCPP_HAS_C_ATOMIC_IMP) && !defined(_LIBCPP_HAS_NO_THREADS)
     static atomic<int> __xindex_;
 #else
-    static int      __xindex_;
+    static int                   __xindex_;
 #endif
-    long*           __iarray_;
-    size_t          __iarray_size_;
-    size_t          __iarray_cap_;
-    void**          __parray_;
-    size_t          __parray_size_;
-    size_t          __parray_cap_;
+    long*                        __iarray_;
+    size_t                       __iarray_size_;
+    size_t                       __iarray_cap_;
+    void**                       __parray_;
+    size_t                       __parray_size_;
+    size_t                       __parray_cap_;
 };
 
 //enum class io_errc
@@ -612,7 +612,7 @@ public:
     typedef typename traits_type::off_type off_type;
 
     static_assert((is_same<_CharT, typename traits_type::char_type>::value),
-                  "traits_type::char_type must be the same type as CharT");
+                                                         "traits_type::char_type must be the same type as CharT");
 
   // __true_value will generate undefined references when linking unless
   // we give it internal linkage.
@@ -620,7 +620,7 @@ public:
 #if defined(_LIBCPP_CXX03_LANG)
     _LIBCPP_INLINE_VISIBILITY
     operator __cxx03_bool::__bool_type() const {
-        return !fail() ? &__cxx03_bool::__true_value : nullptr;
+                     return !fail() ? &__cxx03_bool::__true_value : nullptr;
     }
 #else
     _LIBCPP_INLINE_VISIBILITY
@@ -673,7 +673,7 @@ public:
 protected:
     _LIBCPP_INLINE_VISIBILITY
     basic_ios() {// purposefully does no initialization
-                }
+                                          }
     _LIBCPP_INLINE_VISIBILITY
     void init(basic_streambuf<char_type, traits_type>* __sb);
 
@@ -758,7 +758,7 @@ basic_ios<_CharT, _Traits>::imbue(const locale& __loc)
     locale __r = getloc();
     ios_base::imbue(__loc);
     if (rdbuf())
-        rdbuf()->pubimbue(__loc);
+                     rdbuf()->pubimbue(__loc);
     return __r;
 }
 
@@ -784,7 +784,7 @@ _CharT
 basic_ios<_CharT, _Traits>::fill() const
 {
     if (traits_type::eq_int_type(traits_type::eof(), __fill_))
-        __fill_ = widen(' ');
+                     __fill_ = widen(' ');
     return __fill_;
 }
 
@@ -804,12 +804,12 @@ basic_ios<_CharT, _Traits>::copyfmt(const basic_ios& __rhs)
 {
     if (this != &__rhs)
     {
-        __call_callbacks(erase_event);
-        ios_base::copyfmt(__rhs);
-        __tie_ = __rhs.__tie_;
-        __fill_ = __rhs.__fill_;
-        __call_callbacks(copyfmt_event);
-        exceptions(__rhs.exceptions());
+                     __call_callbacks(erase_event);
+                     ios_base::copyfmt(__rhs);
+                     __tie_ = __rhs.__tie_;
+                     __fill_ = __rhs.__fill_;
+                     __call_callbacks(copyfmt_event);
+                     exceptions(__rhs.exceptions());
     }
     return *this;
 }
@@ -1042,23 +1042,23 @@ class __save_flags
     typedef typename __stream_type::fmtflags fmtflags;
 
     __stream_type& __stream_;
-    fmtflags       __fmtflags_;
-    _CharT         __fill_;
+    fmtflags                    __fmtflags_;
+    _CharT                      __fill_;
 
     __save_flags(const __save_flags&);
     __save_flags& operator=(const __save_flags&);
 public:
     _LIBCPP_INLINE_VISIBILITY
     explicit __save_flags(__stream_type& __stream)
-        : __stream_(__stream),
-          __fmtflags_(__stream.flags()),
-          __fill_(__stream.fill())
-        {}
+                     : __stream_(__stream),
+                       __fmtflags_(__stream.flags()),
+                       __fill_(__stream.fill())
+                     {}
     _LIBCPP_INLINE_VISIBILITY
     ~__save_flags()
     {
-        __stream_.flags(__fmtflags_);
-        __stream_.fill(__fill_);
+                     __stream_.flags(__fmtflags_);
+                     __stream_.fill(__fill_);
     }
 };
 

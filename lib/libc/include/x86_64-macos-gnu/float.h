@@ -117,14 +117,14 @@
 #endif
 
 #if __STDC_VERSION__ >= 201112L || !defined(__STRICT_ANSI__)
-#  if defined __arm__ /*  On 32-bit arm, denorms are not supported.           */
+#  if defined __arm__ /*  On 32-bit arm, denorms are not supported.                        */
 #    define FLT_HAS_SUBNORM 0
 #    define DBL_HAS_SUBNORM 0
 #    define LDBL_HAS_SUBNORM 0
 #    define FLT_TRUE_MIN __FLT_MIN__
 #    define DBL_TRUE_MIN __DBL_MIN__
 #    define LDBL_TRUE_MIN __LDBL_MIN__
-#  else /* All Apple platforms except 32-bit arm have denorms.                */
+#  else /* All Apple platforms except 32-bit arm have denorms.                                          */
 #    define FLT_HAS_SUBNORM 1
 #    define DBL_HAS_SUBNORM 1
 #    define LDBL_HAS_SUBNORM 1

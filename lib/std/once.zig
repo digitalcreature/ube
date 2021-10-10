@@ -14,32 +14,32 @@ pub fn once(comptime f: fn () void) Once(f) {
 /// An object that executes the function `f` just once.
 pub fn Once(comptime f: fn () void) type {
     return struct {
-        done: bool = false,
-        mutex: std.Mutex = std.Mutex{},
+                     done: bool = false,
+                     mutex: std.Mutex = std.Mutex{},
 
-        /// Call the function `f`.
-        /// If `call` is invoked multiple times `f` will be executed only the
-        /// first time.
-        /// The invocations are thread-safe.
-        pub fn call(self: *@This()) void {
-            if (@atomicLoad(bool, &self.done, .Acquire))
-                return;
+                     /// Call the function `f`.
+                     /// If `call` is invoked multiple times `f` will be executed only the
+                     /// first time.
+                     /// The invocations are thread-safe.
+                     pub fn call(self: *@This()) void {
+                                      if (@atomicLoad(bool, &self.done, .Acquire))
+                                          return;
 
-            return self.callSlow();
-        }
+                                      return self.callSlow();
+                     }
 
-        fn callSlow(self: *@This()) void {
-            @setCold(true);
+                     fn callSlow(self: *@This()) void {
+                                      @setCold(true);
 
-            const T = self.mutex.acquire();
-            defer T.release();
+                                      const T = self.mutex.acquire();
+                                      defer T.release();
 
-            // The first thread to acquire the mutex gets to run the initializer
-            if (!self.done) {
-                f();
-                @atomicStore(bool, &self.done, true, .Release);
-            }
-        }
+                                      // The first thread to acquire the mutex gets to run the initializer
+                                      if (!self.done) {
+                                          f();
+                                          @atomicStore(bool, &self.done, true, .Release);
+                                      }
+                     }
     };
 }
 
@@ -52,19 +52,19 @@ fn incr() void {
 
 test "Once executes its function just once" {
     if (builtin.single_threaded) {
-        global_once.call();
-        global_once.call();
+                     global_once.call();
+                     global_once.call();
     } else {
-        var threads: [10]*std.Thread = undefined;
-        defer for (threads) |handle| handle.wait();
+                     var threads: [10]*std.Thread = undefined;
+                     defer for (threads) |handle| handle.wait();
 
-        for (threads) |*handle| {
-            handle.* = try std.Thread.spawn(@as(u8, 0), struct {
-                fn thread_fn(x: u8) void {
-                    global_once.call();
-                }
-            }.thread_fn);
-        }
+                     for (threads) |*handle| {
+                                      handle.* = try std.Thread.spawn(@as(u8, 0), struct {
+                                          fn thread_fn(x: u8) void {
+                                                           global_once.call();
+                                          }
+                                      }.thread_fn);
+                     }
     }
 
     testing.expectEqual(@as(i32, 1), global_number);

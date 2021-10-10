@@ -94,15 +94,15 @@ extern "C"{
 #else
   typedef struct IWamAdminVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWamAdmin *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWamAdmin *This);
-      ULONG (WINAPI *Release)(IWamAdmin *This);
-      HRESULT (WINAPI *AppCreate)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fInProc);
-      HRESULT (WINAPI *AppDelete)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
-      HRESULT (WINAPI *AppUnLoad)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
-      HRESULT (WINAPI *AppGetStatus)(IWamAdmin *This,LPCWSTR szMDPath,DWORD *pdwAppStatus);
-      HRESULT (WINAPI *AppDeleteRecoverable)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
-      HRESULT (WINAPI *AppRecover)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *QueryInterface)(IWamAdmin *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWamAdmin *This);
+                   ULONG (WINAPI *Release)(IWamAdmin *This);
+                   HRESULT (WINAPI *AppCreate)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fInProc);
+                   HRESULT (WINAPI *AppDelete)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *AppUnLoad)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *AppGetStatus)(IWamAdmin *This,LPCWSTR szMDPath,DWORD *pdwAppStatus);
+                   HRESULT (WINAPI *AppDeleteRecoverable)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *AppRecover)(IWamAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
     END_INTERFACE
   } IWamAdminVtbl;
   struct IWamAdmin {
@@ -145,16 +145,16 @@ extern "C"{
 #else
   typedef struct IWamAdmin2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWamAdmin2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWamAdmin2 *This);
-      ULONG (WINAPI *Release)(IWamAdmin2 *This);
-      HRESULT (WINAPI *AppCreate)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fInProc);
-      HRESULT (WINAPI *AppDelete)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fRecursive);
-      HRESULT (WINAPI *AppUnLoad)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fRecursive);
-      HRESULT (WINAPI *AppGetStatus)(IWamAdmin2 *This,LPCWSTR szMDPath,DWORD *pdwAppStatus);
-      HRESULT (WINAPI *AppDeleteRecoverable)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fRecursive);
-      HRESULT (WINAPI *AppRecover)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fRecursive);
-      HRESULT (WINAPI *AppCreate2)(IWamAdmin2 *This,LPCWSTR szMDPath,DWORD dwAppMode);
+                   HRESULT (WINAPI *QueryInterface)(IWamAdmin2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWamAdmin2 *This);
+                   ULONG (WINAPI *Release)(IWamAdmin2 *This);
+                   HRESULT (WINAPI *AppCreate)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fInProc);
+                   HRESULT (WINAPI *AppDelete)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *AppUnLoad)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *AppGetStatus)(IWamAdmin2 *This,LPCWSTR szMDPath,DWORD *pdwAppStatus);
+                   HRESULT (WINAPI *AppDeleteRecoverable)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *AppRecover)(IWamAdmin2 *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *AppCreate2)(IWamAdmin2 *This,LPCWSTR szMDPath,DWORD dwAppMode);
     END_INTERFACE
   } IWamAdmin2Vtbl;
   struct IWamAdmin2 {
@@ -194,16 +194,16 @@ extern "C"{
 #else
   typedef struct IIISApplicationAdminVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIISApplicationAdmin *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIISApplicationAdmin *This);
-      ULONG (WINAPI *Release)(IIISApplicationAdmin *This);
-      HRESULT (WINAPI *CreateApplication)(IIISApplicationAdmin *This,LPCWSTR szMDPath,DWORD dwAppMode,LPCWSTR szAppPoolId,WINBOOL fCreatePool);
-      HRESULT (WINAPI *DeleteApplication)(IIISApplicationAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
-      HRESULT (WINAPI *CreateApplicationPool)(IIISApplicationAdmin *This,LPCWSTR szPool);
-      HRESULT (WINAPI *DeleteApplicationPool)(IIISApplicationAdmin *This,LPCWSTR szPool);
-      HRESULT (WINAPI *EnumerateApplicationsInPool)(IIISApplicationAdmin *This,LPCWSTR szPool,BSTR *bstrBuffer);
-      HRESULT (WINAPI *RecycleApplicationPool)(IIISApplicationAdmin *This,LPCWSTR szPool);
-      HRESULT (WINAPI *GetProcessMode)(IIISApplicationAdmin *This,DWORD *pdwMode);
+                   HRESULT (WINAPI *QueryInterface)(IIISApplicationAdmin *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIISApplicationAdmin *This);
+                   ULONG (WINAPI *Release)(IIISApplicationAdmin *This);
+                   HRESULT (WINAPI *CreateApplication)(IIISApplicationAdmin *This,LPCWSTR szMDPath,DWORD dwAppMode,LPCWSTR szAppPoolId,WINBOOL fCreatePool);
+                   HRESULT (WINAPI *DeleteApplication)(IIISApplicationAdmin *This,LPCWSTR szMDPath,WINBOOL fRecursive);
+                   HRESULT (WINAPI *CreateApplicationPool)(IIISApplicationAdmin *This,LPCWSTR szPool);
+                   HRESULT (WINAPI *DeleteApplicationPool)(IIISApplicationAdmin *This,LPCWSTR szPool);
+                   HRESULT (WINAPI *EnumerateApplicationsInPool)(IIISApplicationAdmin *This,LPCWSTR szPool,BSTR *bstrBuffer);
+                   HRESULT (WINAPI *RecycleApplicationPool)(IIISApplicationAdmin *This,LPCWSTR szPool);
+                   HRESULT (WINAPI *GetProcessMode)(IIISApplicationAdmin *This,DWORD *pdwMode);
     END_INTERFACE
   } IIISApplicationAdminVtbl;
   struct IIISApplicationAdmin {

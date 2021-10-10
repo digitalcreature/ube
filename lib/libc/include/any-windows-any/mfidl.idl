@@ -50,23 +50,23 @@ interface IMFTopologyNode : IMFAttributes
 
     [local]
     HRESULT ConnectOutput([in] DWORD dwOutputIndex, [in] IMFTopologyNode* pDownstreamNode,
-            [in] DWORD dwInputIndexOnDownstreamNode);
+                                      [in] DWORD dwInputIndexOnDownstreamNode);
     [local] HRESULT DisconnectOutput([in] DWORD dwOutputIndex);
     HRESULT GetInput([in] DWORD dwInputIndex, [out] IMFTopologyNode** ppUpstreamNode,
-            [out] DWORD *pdwOutputIndexOnUpstreamNode);
+                                      [out] DWORD *pdwOutputIndexOnUpstreamNode);
     HRESULT GetOutput([in] DWORD dwOutputIndex, [out] IMFTopologyNode** ppDownstreamNode,
-            [out] DWORD* pdwInputIndexOnDownstreamNode);
+                                      [out] DWORD* pdwInputIndexOnDownstreamNode);
     [local] HRESULT SetOutputPrefType([in] DWORD dwOutputIndex, [in] IMFMediaType *pType);
 
     [local] HRESULT GetOutputPrefType([in] DWORD dwOutputIndex, [out] IMFMediaType **ppType);
     [call_as(GetOutputPrefType)] HRESULT RemoteGetOutputPrefType([in] DWORD dwOutputIndex,
-                                         [out] DWORD *pcbData, [out, size_is(,*pcbData)] BYTE **ppbData);
+                                                                                                                       [out] DWORD *pcbData, [out, size_is(,*pcbData)] BYTE **ppbData);
 
     [local] HRESULT SetInputPrefType([in] DWORD dwInputIndex, [in] IMFMediaType *pType);
 
     [local] HRESULT GetInputPrefType([in] DWORD dwInputIndex, [out] IMFMediaType **ppType);
     [call_as(GetInputPrefType)] HRESULT RemoteGetInputPrefType( [in] DWORD dwInputIndex,
-                                        [out] DWORD *pcbData, [out, size_is(,*pcbData)] BYTE **ppbData);
+                                                                                                                      [out] DWORD *pcbData, [out, size_is(,*pcbData)] BYTE **ppbData);
 
     HRESULT CloneFrom([in] IMFTopologyNode *pNode);
 }
@@ -100,11 +100,11 @@ typedef enum _MF_CLOCK_STATE {
 
 typedef struct _MFCLOCK_PROPERTIES {
     unsigned __int64 qwCorrelationRate;
-    GUID             guidClockId;
-    DWORD            dwClockFlags;
+    GUID                                       guidClockId;
+    DWORD                                      dwClockFlags;
     unsigned __int64 qwClockFrequency;
-    DWORD            dwClockTolerance;
-    DWORD            dwClockJitter;
+    DWORD                                      dwClockTolerance;
+    DWORD                                      dwClockJitter;
 } MFCLOCK_PROPERTIES;
 
 [
@@ -133,12 +133,12 @@ cpp_quote("} MFRR_COMPONENT_HASH_INFO, *PMFRR_COMPONENT_HASH_INFO;")
 cpp_quote("EXTERN_GUID(MF_PD_DURATION, 0x6c990d33,0xbb8e,0x477a,0x85,0x98,0xd,0x5d,0x96,0xfc,0xd8,0x8a);")
 
 typedef enum _MF_CONNECT_METHOD {
-    MF_CONNECT_DIRECT                            = 0x00000000,
-    MF_CONNECT_ALLOW_CONVERTER                   = 0x00000001,
-    MF_CONNECT_ALLOW_DECODER                     = 0x00000003,
+    MF_CONNECT_DIRECT                                                                                = 0x00000000,
+    MF_CONNECT_ALLOW_CONVERTER                                                          = 0x00000001,
+    MF_CONNECT_ALLOW_DECODER                                                            = 0x00000003,
     MF_CONNECT_RESOLVE_INDEPENDENT_OUTPUTTYPES   = 0x00000004,
-    MF_CONNECT_AS_OPTIONAL                       = 0x00010000,
-    MF_CONNECT_AS_OPTIONAL_BRANCH                = 0x00020000
+    MF_CONNECT_AS_OPTIONAL                                                              = 0x00010000,
+    MF_CONNECT_AS_OPTIONAL_BRANCH                                          = 0x00020000
 } MF_CONNECT_METHOD;
 
 [
@@ -213,14 +213,14 @@ interface IMFMediaSource : IMFMediaEventGenerator
     HRESULT CreatePresentationDescriptor([out] IMFPresentationDescriptor **ppPresentationDescriptor);
     [call_as(CreatePresentationDescriptor)]
     HRESULT RemoteCreatePresentationDescriptor(
-            [out] DWORD *pcbPD,
-            [out, size_is(,*pcbPD)] BYTE **pbPD,
-            [out] IMFPresentationDescriptor **ppRemotePD);
+                                      [out] DWORD *pcbPD,
+                                      [out, size_is(,*pcbPD)] BYTE **pbPD,
+                                      [out] IMFPresentationDescriptor **ppRemotePD);
 
     HRESULT Start(
-            [in] IMFPresentationDescriptor *pPresentationDescriptor,
-            [in, unique] const GUID *pguidTimeFormat,
-            [in, unique] const PROPVARIANT *pvarStartPosition);
+                                      [in] IMFPresentationDescriptor *pPresentationDescriptor,
+                                      [in, unique] const GUID *pguidTimeFormat,
+                                      [in, unique] const PROPVARIANT *pvarStartPosition);
 
     HRESULT Stop();
     HRESULT Pause();
@@ -233,14 +233,14 @@ typedef [public] struct _MF_LEAKY_BUCKET_PAIR {
 } MF_LEAKY_BUCKET_PAIR;
 
 typedef [public] struct _MFBYTESTREAM_BUFFERING_PARAMS {
-    QWORD                cbTotalFileSize;
-    QWORD                cbPlayableDataSize;
+    QWORD                                          cbTotalFileSize;
+    QWORD                                          cbPlayableDataSize;
     MF_LEAKY_BUCKET_PAIR *prgBuckets;
-    DWORD                cBuckets;
-    QWORD                qwNetBufferingTime;
-    QWORD                qwExtraBufferingTimeDuringSeek;
-    QWORD                qwPlayDuration;
-    float                dRate;
+    DWORD                                          cBuckets;
+    QWORD                                          qwNetBufferingTime;
+    QWORD                                          qwExtraBufferingTimeDuringSeek;
+    QWORD                                          qwPlayDuration;
+    float                                          dRate;
 } MFBYTESTREAM_BUFFERING_PARAMS;
 
 [
@@ -302,7 +302,7 @@ typedef enum _MF_QUALITY_DROP_MODE
 
 typedef enum _MF_QUALITY_LEVEL
 {
-    MF_QUALITY_NORMAL         = 0x0,
+    MF_QUALITY_NORMAL                      = 0x0,
     MF_QUALITY_NORMAL_MINUS_1 = 0x1,
     MF_QUALITY_NORMAL_MINUS_2 = 0x2,
     MF_QUALITY_NORMAL_MINUS_3 = 0x3,
@@ -313,8 +313,8 @@ typedef enum _MF_QUALITY_LEVEL
 
 typedef enum _MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS
 {
-    MF_TOPOLOGY_RESOLUTION_SUCCEEDED            = 0x00000000,
-    MF_OPTIONAL_NODE_REJECTED_MEDIA_TYPE        = 0x00000001,
+    MF_TOPOLOGY_RESOLUTION_SUCCEEDED                                      = 0x00000000,
+    MF_OPTIONAL_NODE_REJECTED_MEDIA_TYPE                     = 0x00000001,
     MF_OPTIONAL_NODE_REJECTED_PROTECTED_PROCESS = 0x00000002
 } MF_TOPOLOGY_RESOLUTION_STATUS_FLAGS;
 
@@ -356,13 +356,13 @@ typedef enum _MFCLOCK_RELATIONAL_FLAGS
 
 typedef enum _MFMEDIASOURCE_CHARACTERISTICS
 {
-    MFMEDIASOURCE_IS_LIVE                    = 0x1,
-    MFMEDIASOURCE_CAN_SEEK                   = 0x2,
-    MFMEDIASOURCE_CAN_PAUSE                  = 0x4,
-    MFMEDIASOURCE_HAS_SLOW_SEEK              = 0x8,
+    MFMEDIASOURCE_IS_LIVE                                                           = 0x1,
+    MFMEDIASOURCE_CAN_SEEK                                                          = 0x2,
+    MFMEDIASOURCE_CAN_PAUSE                                                         = 0x4,
+    MFMEDIASOURCE_HAS_SLOW_SEEK                                        = 0x8,
     MFMEDIASOURCE_HAS_MULTIPLE_PRESENTATIONS = 0x10,
-    MFMEDIASOURCE_CAN_SKIPFORWARD            = 0x20,
-    MFMEDIASOURCE_CAN_SKIPBACKWARD           = 0x40
+    MFMEDIASOURCE_CAN_SKIPFORWARD                                      = 0x20,
+    MFMEDIASOURCE_CAN_SKIPBACKWARD                        = 0x40
 } MFMEDIASOURCE_CHARACTERISTICS;
 
 typedef enum _MFNET_PROXYSETTINGS
@@ -375,20 +375,20 @@ typedef enum _MFNET_PROXYSETTINGS
 
 typedef enum _MFNetAuthenticationFlags
 {
-    MFNET_AUTHENTICATION_PROXY          = 0x00000001,
+    MFNET_AUTHENTICATION_PROXY                       = 0x00000001,
     MFNET_AUTHENTICATION_CLEAR_TEXT     = 0x00000002,
     MFNET_AUTHENTICATION_LOGGED_ON_USER = 0x00000004
 } MFNetAuthenticationFlags;
 
 typedef enum _MFNetCredentialOptions
 {
-    MFNET_CREDENTIAL_SAVE             = 0x00000001,
-    MFNET_CREDENTIAL_DONT_CACHE       = 0x00000002,
+    MFNET_CREDENTIAL_SAVE                                       = 0x00000001,
+    MFNET_CREDENTIAL_DONT_CACHE                    = 0x00000002,
     MFNET_CREDENTIAL_ALLOW_CLEAR_TEXT = 0x00000004
 } MFNetCredentialOptions;
 
 typedef enum _MFNetCredentialRequirements {
-    REQUIRE_PROMPT        = 0x00000001,
+    REQUIRE_PROMPT                     = 0x00000001,
     REQUIRE_SAVE_SELECTED = 0x00000002
 } MFNetCredentialRequirements;
 
@@ -402,9 +402,9 @@ typedef enum _MFNETSOURCE_CACHE_STATE
 typedef enum _MFNETSOURCE_PROTOCOL_TYPE
 {
     MFNETSOURCE_UNDEFINED = 0x0,
-    MFNETSOURCE_HTTP      = 0x1,
-    MFNETSOURCE_RTSP      = 0x2,
-    MFNETSOURCE_FILE      = 0x3,
+    MFNETSOURCE_HTTP                   = 0x1,
+    MFNETSOURCE_RTSP                   = 0x2,
+    MFNETSOURCE_FILE                   = 0x3,
     MFNETSOURCE_MULTICAST = 0x4
 } MFNETSOURCE_PROTOCOL_TYPE;
 
@@ -456,15 +456,15 @@ typedef enum MF_OBJECT_TYPE
 
 typedef enum _MFPOLICYMANAGER_ACTION
 {
-    PEACTION_NO        = 0,
-    PEACTION_PLAY      = 1,
-    PEACTION_COPY      = 2,
+    PEACTION_NO                     = 0,
+    PEACTION_PLAY                   = 1,
+    PEACTION_COPY                   = 2,
     PEACTION_EXPORT    = 3,
     PEACTION_EXTRACT   = 4,
     PEACTION_RESERVED1 = 5,
     PEACTION_RESERVED2 = 6,
     PEACTION_RESERVED3 = 7,
-    PEACTION_LAST      = 7
+    PEACTION_LAST                   = 7
 } MFPOLICYMANAGER_ACTION;
 
 typedef enum _MFRATE_DIRECTION
@@ -539,28 +539,28 @@ cpp_quote("} ASF_FLAT_SYNCHRONISED_LYRICS;")
 
 typedef enum SAMPLE_PROTECTION_VERSION
 {
-    SAMPLE_PROTECTION_VERSION_NO         = 0,
+    SAMPLE_PROTECTION_VERSION_NO                      = 0,
     SAMPLE_PROTECTION_VERSION_BASIC_LOKI = 1,
     SAMPLE_PROTECTION_VERSION_SCATTER    = 2,
-    SAMPLE_PROTECTION_VERSION_RC4        = 3
+    SAMPLE_PROTECTION_VERSION_RC4                     = 3
 } SAMPLE_PROTECTION_VERSION;
 
 typedef struct _MFINPUTTRUSTAUTHORITY_ACTION
 {
     MFPOLICYMANAGER_ACTION Action;
-    BYTE                   *pbTicket;
-    DWORD                  cbTicket;
+    BYTE                                                          *pbTicket;
+    DWORD                                                         cbTicket;
 } MFINPUTTRUSTAUTHORITY_ACCESS_ACTION;
 
 typedef struct _MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS
 {
-    DWORD                               dwSize;
-    DWORD                               dwVer;
-    DWORD                               cbSignatureOffset;
-    DWORD                               cbSignatureSize;
-    DWORD                               cbExtensionOffset;
-    DWORD                               cbExtensionSize;
-    DWORD                               cActions;
+    DWORD                                                                                                dwSize;
+    DWORD                                                                                                dwVer;
+    DWORD                                                                                                cbSignatureOffset;
+    DWORD                                                                                                cbSignatureSize;
+    DWORD                                                                                                cbExtensionOffset;
+    DWORD                                                                                                cbExtensionSize;
+    DWORD                                                                                                cActions;
     MFINPUTTRUSTAUTHORITY_ACCESS_ACTION rgOutputActions[1];
 } MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS;
 
@@ -576,21 +576,21 @@ typedef struct _MFNetCredentialManagerGetParam
     LONG    nRetries;
 } MFNetCredentialManagerGetParam;
 
-cpp_quote("#define MEDIASINK_FIXED_STREAMS                 0x00000001")
-cpp_quote("#define MEDIASINK_CANNOT_MATCH_CLOCK            0x00000002")
-cpp_quote("#define MEDIASINK_RATELESS                      0x00000004")
-cpp_quote("#define MEDIASINK_CLOCK_REQUIRED                0x00000008")
-cpp_quote("#define MEDIASINK_CAN_PREROLL                   0x00000010")
+cpp_quote("#define MEDIASINK_FIXED_STREAMS                                           0x00000001")
+cpp_quote("#define MEDIASINK_CANNOT_MATCH_CLOCK                                      0x00000002")
+cpp_quote("#define MEDIASINK_RATELESS                                                             0x00000004")
+cpp_quote("#define MEDIASINK_CLOCK_REQUIRED                                          0x00000008")
+cpp_quote("#define MEDIASINK_CAN_PREROLL                                                          0x00000010")
 cpp_quote("#define MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE   0x00000020")
 
 enum
 {
-    MF_RESOLUTION_MEDIASOURCE                                           = 0x00000001,
-    MF_RESOLUTION_BYTESTREAM                                            = 0x00000002,
+    MF_RESOLUTION_MEDIASOURCE                                                                                                                                      = 0x00000001,
+    MF_RESOLUTION_BYTESTREAM                                                                                                                                       = 0x00000002,
     MF_RESOLUTION_CONTENT_DOES_NOT_HAVE_TO_MATCH_EXTENSION_OR_MIME_TYPE = 0x00000010,
-    MF_RESOLUTION_KEEP_BYTE_STREAM_ALIVE_ON_FAIL                        = 0x00000020,
-    MF_RESOLUTION_READ                                                  = 0x00010000,
-    MF_RESOLUTION_WRITE                                                 = 0x00020000
+    MF_RESOLUTION_KEEP_BYTE_STREAM_ALIVE_ON_FAIL                                                                            = 0x00000020,
+    MF_RESOLUTION_READ                                                                                                                                                          = 0x00010000,
+    MF_RESOLUTION_WRITE                                                                                                                                                         = 0x00020000
 };
 
 /* FIXME: Properly declare followinf interfaces: */

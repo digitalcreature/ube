@@ -13,7 +13,7 @@
 /* double erf(double x)
  * double erfc(double x)
  *			     x
- *		      2      |\
+ *		                   2                   |\
  *     erf(x)  =  ---------  | exp(-t*t)dt
  *	 	   sqrt(pi) \| 
  *			     0
@@ -26,24 +26,24 @@
  * Method:
  *	1. For |x| in [0, 0.84375]
  *	    erf(x)  = x + x*R(x^2)
- *          erfc(x) = 1 - erf(x)           if x in [-.84375,0.25]
- *                  = 0.5 + ((0.5-x)-x*R)  if x in [0.25,0.84375]
+ *                       erfc(x) = 1 - erf(x)                        if x in [-.84375,0.25]
+ *                                                         = 0.5 + ((0.5-x)-x*R)  if x in [0.25,0.84375]
  *	   where R = P/Q where P is an odd poly of degree 8 and
  *	   Q is an odd poly of degree 10.
  *						 -57.90
  *			| R - (erf(x)-x)/x | <= 2
  *
  *	   Remark. The formula is derived by noting
- *          erf(x) = (2/sqrt(pi))*(x - x^3/3 + x^5/10 - x^7/42 + ....)
+ *                       erf(x) = (2/sqrt(pi))*(x - x^3/3 + x^5/10 - x^7/42 + ....)
  *	   and that
- *          2/sqrt(pi) = 1.128379167095512573896158903121545171688
+ *                       2/sqrt(pi) = 1.128379167095512573896158903121545171688
  *	   is close to one. The interval is chosen because the fix
  *	   point of erf(x) is near 0.6174 (i.e., erf(x)=x when x is
  *	   near 0.6174), and by some experiment, 0.84375 is chosen to
  *	   guarantee the error is less than one ulp for erf.
  *
  *	2. For |x| in [0.84375,1.25], let s = |x| - 1, and
- *         c = 0.84506291151 rounded to single (24 bits)
+ *                      c = 0.84506291151 rounded to single (24 bits)
  *		erf(x)  = sign(x) * (c  + P1(s)/Q1(s))
  *		erfc(x) = (1-c)  - P1(s)/Q1(s) if x > 0
  *			  1+(c+P1(s)/Q1(s))    if x < 0
@@ -228,7 +228,7 @@ double erf(double x)
 
 	if (ix < 0x3feb0000) {		/* |x|<0.84375 */
 	    if (ix < 0x3e300000) {	/* |x|<2**-28 */
-	        if (ix < 0x00800000) 
+	                     if (ix < 0x00800000) 
 		    return 0.125*(8.0*x+efx8*x);  /*avoid underflow */
 		return x + efx*x;
 	    }
@@ -243,15 +243,15 @@ double erf(double x)
 	    P = pa0+s*(pa1+s*(pa2+s*(pa3+s*(pa4+s*(pa5+s*pa6)))));
 	    Q = one+s*(qa1+s*(qa2+s*(qa3+s*(qa4+s*(qa5+s*qa6)))));
 	    if (hx >= 0)
-	      return erx + P/Q;
+	                   return erx + P/Q;
 	    else
-	      return -erx - P/Q;
+	                   return -erx - P/Q;
 	}
 	if (ix >= 0x40180000) {		/* inf>|x|>=6 */
 	    if (hx >= 0)
-	      return one-tiny;
+	                   return one-tiny;
 	    else
-	      return tiny-one;
+	                   return tiny-one;
 	}
 	x = fabs(x);
  	s = one/(x*x);
@@ -298,7 +298,7 @@ double erfc(double x)
 	    } else {
 		r = x*y;
 		r += (x-half);
-	        return half - r ;
+	                     return half - r ;
 	    }
 	}
 	if (ix < 0x3ff40000) {		/* 0.84375 <= |x| < 1.25 */
@@ -306,7 +306,7 @@ double erfc(double x)
 	    P = pa0+s*(pa1+s*(pa2+s*(pa3+s*(pa4+s*(pa5+s*pa6)))));
 	    Q = one+s*(qa1+s*(qa2+s*(qa3+s*(qa4+s*(qa5+s*qa6)))));
 	    if (hx >= 0) {
-	        z  = one-erx; return z - P/Q; 
+	                     z  = one-erx; return z - P/Q; 
 	    } else {
 		z = erx+P/Q; return one+z;
 	    }
@@ -332,16 +332,16 @@ double erfc(double x)
 	    r = __ieee754_exp(-z*z-0.5625)*
 			__ieee754_exp((z-x)*(z+x)+R/S);
 	    if (hx > 0)
-	      return r/x;
+	                   return r/x;
 	    else
-	      return two-r/x;
+	                   return two-r/x;
 	} else {
 	    /* set range error */
-            errno = ERANGE;
+                                      errno = ERANGE;
 	    if (hx > 0)
-	      return tiny*tiny;
+	                   return tiny*tiny;
 	    else
-	      return two-tiny;
+	                   return two-tiny;
 	}
 }
 

@@ -152,20 +152,20 @@ struct icmp {
 #define	ICMP_MASKREPLY		18
 #define	ICMP_MAXTYPE		18
 
-#define	ICMP_UNREACH_NET	        0
-#define	ICMP_UNREACH_HOST	        1
-#define	ICMP_UNREACH_PROTOCOL	        2
-#define	ICMP_UNREACH_PORT	        3
-#define	ICMP_UNREACH_NEEDFRAG	        4
-#define	ICMP_UNREACH_SRCFAIL	        5
-#define	ICMP_UNREACH_NET_UNKNOWN        6
-#define	ICMP_UNREACH_HOST_UNKNOWN       7
-#define	ICMP_UNREACH_ISOLATED	        8
-#define	ICMP_UNREACH_NET_PROHIB	        9
-#define	ICMP_UNREACH_HOST_PROHIB        10
-#define	ICMP_UNREACH_TOSNET	        11
-#define	ICMP_UNREACH_TOSHOST	        12
-#define	ICMP_UNREACH_FILTER_PROHIB      13
+#define	ICMP_UNREACH_NET	                     0
+#define	ICMP_UNREACH_HOST	                     1
+#define	ICMP_UNREACH_PROTOCOL	                     2
+#define	ICMP_UNREACH_PORT	                     3
+#define	ICMP_UNREACH_NEEDFRAG	                     4
+#define	ICMP_UNREACH_SRCFAIL	                     5
+#define	ICMP_UNREACH_NET_UNKNOWN                     6
+#define	ICMP_UNREACH_HOST_UNKNOWN                    7
+#define	ICMP_UNREACH_ISOLATED	                     8
+#define	ICMP_UNREACH_NET_PROHIB	                     9
+#define	ICMP_UNREACH_HOST_PROHIB                     10
+#define	ICMP_UNREACH_TOSNET	                     11
+#define	ICMP_UNREACH_TOSHOST	                     12
+#define	ICMP_UNREACH_FILTER_PROHIB                   13
 #define	ICMP_UNREACH_HOST_PRECEDENCE    14
 #define	ICMP_UNREACH_PRECEDENCE_CUTOFF  15
 

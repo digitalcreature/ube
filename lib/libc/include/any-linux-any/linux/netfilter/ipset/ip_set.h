@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
 /* Copyright (C) 2000-2002 Joakim Axelsson <gozem@linux.nu>
- *                         Patrick Schaaf <bof@bof.de>
- *                         Martin Josefsson <gandalf@wlug.westbo.se>
+ *                                                                             Patrick Schaaf <bof@bof.de>
+ *                                                                             Martin Josefsson <gandalf@wlug.westbo.se>
  * Copyright (C) 2003-2011 Jozsef Kadlecsik <kadlec@blackhole.kfki.hu>
  *
  * This program is free software; you can redistribute it and/or modify

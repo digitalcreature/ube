@@ -16,70 +16,70 @@ pub const Sha3_512 = Keccak(512, 0x06);
 
 fn Keccak(comptime bits: usize, comptime delim: u8) type {
     return struct {
-        const Self = @This();
-        pub const block_length = 200;
-        pub const digest_length = bits / 8;
-        pub const Options = struct {};
+                     const Self = @This();
+                     pub const block_length = 200;
+                     pub const digest_length = bits / 8;
+                     pub const Options = struct {};
 
-        s: [200]u8,
-        offset: usize,
-        rate: usize,
+                     s: [200]u8,
+                     offset: usize,
+                     rate: usize,
 
-        pub fn init(options: Options) Self {
-            return Self{ .s = [_]u8{0} ** 200, .offset = 0, .rate = 200 - (bits / 4) };
-        }
+                     pub fn init(options: Options) Self {
+                                      return Self{ .s = [_]u8{0} ** 200, .offset = 0, .rate = 200 - (bits / 4) };
+                     }
 
-        pub fn hash(b: []const u8, out: *[digest_length]u8, options: Options) void {
-            var d = Self.init(options);
-            d.update(b);
-            d.final(out);
-        }
+                     pub fn hash(b: []const u8, out: *[digest_length]u8, options: Options) void {
+                                      var d = Self.init(options);
+                                      d.update(b);
+                                      d.final(out);
+                     }
 
-        pub fn update(d: *Self, b: []const u8) void {
-            var ip: usize = 0;
-            var len = b.len;
-            var rate = d.rate - d.offset;
-            var offset = d.offset;
+                     pub fn update(d: *Self, b: []const u8) void {
+                                      var ip: usize = 0;
+                                      var len = b.len;
+                                      var rate = d.rate - d.offset;
+                                      var offset = d.offset;
 
-            // absorb
-            while (len >= rate) {
-                for (d.s[offset .. offset + rate]) |*r, i|
-                    r.* ^= b[ip..][i];
+                                      // absorb
+                                      while (len >= rate) {
+                                          for (d.s[offset .. offset + rate]) |*r, i|
+                                                           r.* ^= b[ip..][i];
 
-                keccakF(1600, &d.s);
+                                          keccakF(1600, &d.s);
 
-                ip += rate;
-                len -= rate;
-                rate = d.rate;
-                offset = 0;
-            }
+                                          ip += rate;
+                                          len -= rate;
+                                          rate = d.rate;
+                                          offset = 0;
+                                      }
 
-            for (d.s[offset .. offset + len]) |*r, i|
-                r.* ^= b[ip..][i];
+                                      for (d.s[offset .. offset + len]) |*r, i|
+                                          r.* ^= b[ip..][i];
 
-            d.offset = offset + len;
-        }
+                                      d.offset = offset + len;
+                     }
 
-        pub fn final(d: *Self, out: *[digest_length]u8) void {
-            // padding
-            d.s[d.offset] ^= delim;
-            d.s[d.rate - 1] ^= 0x80;
+                     pub fn final(d: *Self, out: *[digest_length]u8) void {
+                                      // padding
+                                      d.s[d.offset] ^= delim;
+                                      d.s[d.rate - 1] ^= 0x80;
 
-            keccakF(1600, &d.s);
+                                      keccakF(1600, &d.s);
 
-            // squeeze
-            var op: usize = 0;
-            var len: usize = bits / 8;
+                                      // squeeze
+                                      var op: usize = 0;
+                                      var len: usize = bits / 8;
 
-            while (len >= d.rate) {
-                mem.copy(u8, out[op..], d.s[0..d.rate]);
-                keccakF(1600, &d.s);
-                op += d.rate;
-                len -= d.rate;
-            }
+                                      while (len >= d.rate) {
+                                          mem.copy(u8, out[op..], d.s[0..d.rate]);
+                                          keccakF(1600, &d.s);
+                                          op += d.rate;
+                                          len -= d.rate;
+                                      }
 
-            mem.copy(u8, out[op..], d.s[0..len]);
-        }
+                                      mem.copy(u8, out[op..], d.s[0..len]);
+                     }
     };
 }
 
@@ -107,7 +107,7 @@ const M5 = [_]usize{
 fn keccakF(comptime F: usize, d: *[F / 8]u8) void {
     const B = F / 25;
     const no_rounds = comptime x: {
-        break :x 12 + 2 * math.log2(B);
+                     break :x 12 + 2 * math.log2(B);
     };
 
     var s = [_]u64{0} ** 25;
@@ -115,54 +115,54 @@ fn keccakF(comptime F: usize, d: *[F / 8]u8) void {
     var c = [_]u64{0} ** 5;
 
     for (s) |*r, i| {
-        r.* = mem.readIntLittle(u64, d[8 * i ..][0..8]);
+                     r.* = mem.readIntLittle(u64, d[8 * i ..][0..8]);
     }
 
     comptime var x: usize = 0;
     comptime var y: usize = 0;
     for (RC[0..no_rounds]) |round| {
-        // theta
-        x = 0;
-        inline while (x < 5) : (x += 1) {
-            c[x] = s[x] ^ s[x + 5] ^ s[x + 10] ^ s[x + 15] ^ s[x + 20];
-        }
-        x = 0;
-        inline while (x < 5) : (x += 1) {
-            t[0] = c[M5[x + 4]] ^ math.rotl(u64, c[M5[x + 1]], @as(usize, 1));
-            y = 0;
-            inline while (y < 5) : (y += 1) {
-                s[x + y * 5] ^= t[0];
-            }
-        }
+                     // theta
+                     x = 0;
+                     inline while (x < 5) : (x += 1) {
+                                      c[x] = s[x] ^ s[x + 5] ^ s[x + 10] ^ s[x + 15] ^ s[x + 20];
+                     }
+                     x = 0;
+                     inline while (x < 5) : (x += 1) {
+                                      t[0] = c[M5[x + 4]] ^ math.rotl(u64, c[M5[x + 1]], @as(usize, 1));
+                                      y = 0;
+                                      inline while (y < 5) : (y += 1) {
+                                          s[x + y * 5] ^= t[0];
+                                      }
+                     }
 
-        // rho+pi
-        t[0] = s[1];
-        x = 0;
-        inline while (x < 24) : (x += 1) {
-            c[0] = s[PIL[x]];
-            s[PIL[x]] = math.rotl(u64, t[0], ROTC[x]);
-            t[0] = c[0];
-        }
+                     // rho+pi
+                     t[0] = s[1];
+                     x = 0;
+                     inline while (x < 24) : (x += 1) {
+                                      c[0] = s[PIL[x]];
+                                      s[PIL[x]] = math.rotl(u64, t[0], ROTC[x]);
+                                      t[0] = c[0];
+                     }
 
-        // chi
-        y = 0;
-        inline while (y < 5) : (y += 1) {
-            x = 0;
-            inline while (x < 5) : (x += 1) {
-                c[x] = s[x + y * 5];
-            }
-            x = 0;
-            inline while (x < 5) : (x += 1) {
-                s[x + y * 5] = c[x] ^ (~c[M5[x + 1]] & c[M5[x + 2]]);
-            }
-        }
+                     // chi
+                     y = 0;
+                     inline while (y < 5) : (y += 1) {
+                                      x = 0;
+                                      inline while (x < 5) : (x += 1) {
+                                          c[x] = s[x + y * 5];
+                                      }
+                                      x = 0;
+                                      inline while (x < 5) : (x += 1) {
+                                          s[x + y * 5] = c[x] ^ (~c[M5[x + 1]] & c[M5[x + 2]]);
+                                      }
+                     }
 
-        // iota
-        s[0] ^= round;
+                     // iota
+                     s[0] ^= round;
     }
 
     for (s) |r, i| {
-        mem.writeIntLittle(u64, d[8 * i ..][0..8], r);
+                     mem.writeIntLittle(u64, d[8 * i ..][0..8], r);
     }
 }
 

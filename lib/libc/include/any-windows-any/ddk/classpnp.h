@@ -16,10 +16,10 @@
 #define max(a,b) (((a) > (b)) ? (a) : (b))
 #define min(a,b) (((a) < (b)) ? (a) : (b))
 
-#define SRB_CLASS_FLAGS_LOW_PRIORITY      0x10000000
-#define SRB_CLASS_FLAGS_PERSISTANT        0x20000000
-#define SRB_CLASS_FLAGS_PAGING            0x40000000
-#define SRB_CLASS_FLAGS_FREE_MDL          0x80000000
+#define SRB_CLASS_FLAGS_LOW_PRIORITY                   0x10000000
+#define SRB_CLASS_FLAGS_PERSISTANT                     0x20000000
+#define SRB_CLASS_FLAGS_PAGING                                      0x40000000
+#define SRB_CLASS_FLAGS_FREE_MDL                       0x80000000
 
 #define ASSERT_FDO(x) \
   ASSERT(((PCOMMON_DEVICE_EXTENSION) (x)->DeviceExtension)->IsFdo)
@@ -28,11 +28,11 @@
   ASSERT(!(((PCOMMON_DEVICE_EXTENSION) (x)->DeviceExtension)->IsFdo))
 
 #define IS_CLEANUP_REQUEST(majorFunction)   \
-  ((majorFunction == IRP_MJ_CLOSE) ||       \
+  ((majorFunction == IRP_MJ_CLOSE) ||                    \
    (majorFunction == IRP_MJ_CLEANUP) ||     \
    (majorFunction == IRP_MJ_SHUTDOWN))
 
-#define DO_MCD(fdoExtension)                                 \
+#define DO_MCD(fdoExtension)                                                                                                  \
   (((fdoExtension)->MediaChangeDetectionInfo != NULL) &&     \
    ((fdoExtension)->MediaChangeDetectionInfo->MediaChangeDetectionDisableCount == 0))
 
@@ -50,20 +50,20 @@
 
 #define IS_SCSIOP_READWRITE(opCode) (IS_SCSIOP_READ(opCode) || IS_SCSIOP_WRITE(opCode))
 
-#define ADJUST_FUA_FLAG(fdoExt) {                                                       \
-    if (TEST_FLAG(fdoExt->DeviceFlags, DEV_WRITE_CACHE) &&                              \
-        !TEST_FLAG(fdoExt->DeviceFlags, DEV_POWER_PROTECTED) &&                         \
-        !TEST_FLAG(fdoExt->ScanForSpecialFlags, CLASS_SPECIAL_FUA_NOT_SUPPORTED) ) {    \
-        fdoExt->CdbForceUnitAccess = TRUE;                                              \
-    } else {                                                                            \
-        fdoExt->CdbForceUnitAccess = FALSE;                                             \
-    }                                                                                   \
+#define ADJUST_FUA_FLAG(fdoExt) {                                                                                                                                                                            \
+    if (TEST_FLAG(fdoExt->DeviceFlags, DEV_WRITE_CACHE) &&                                                                                               \
+                     !TEST_FLAG(fdoExt->DeviceFlags, DEV_POWER_PROTECTED) &&                                                                             \
+                     !TEST_FLAG(fdoExt->ScanForSpecialFlags, CLASS_SPECIAL_FUA_NOT_SUPPORTED) ) {    \
+                     fdoExt->CdbForceUnitAccess = TRUE;                                                                                                                                         \
+    } else {                                                                                                                                                                                                                                        \
+                     fdoExt->CdbForceUnitAccess = FALSE;                                                                                                                                        \
+    }                                                                                                                                                                                                                                                            \
 }
 
 #define FREE_POOL(_PoolPtr)     \
     if (_PoolPtr != NULL) {     \
-        ExFreePool(_PoolPtr);   \
-        _PoolPtr = NULL;        \
+                     ExFreePool(_PoolPtr);   \
+                     _PoolPtr = NULL;                     \
     }
 
 #ifdef POOL_TAGGING
@@ -74,25 +74,25 @@
 #define ExAllocatePoolWithQuota(a,b) ExAllocatePoolWithQuotaTag(a,b,'nUcS')
 #endif
 
-#define CLASS_TAG_AUTORUN_DISABLE           'ALcS'
+#define CLASS_TAG_AUTORUN_DISABLE                        'ALcS'
 #define CLASS_TAG_FILE_OBJECT_EXTENSION     'FLcS'
 #define CLASS_TAG_MEDIA_CHANGE_DETECTION    'MLcS'
-#define CLASS_TAG_MOUNT                     'mLcS'
-#define CLASS_TAG_RELEASE_QUEUE             'qLcS'
-#define CLASS_TAG_POWER                     'WLcS'
-#define CLASS_TAG_WMI                       'wLcS'
-#define CLASS_TAG_FAILURE_PREDICT           'fLcS'
-#define CLASS_TAG_DEVICE_CONTROL            'OIcS'
-#define CLASS_TAG_MODE_DATA                 'oLcS'
-#define CLASS_TAG_MULTIPATH                 'mPcS'
+#define CLASS_TAG_MOUNT                                                            'mLcS'
+#define CLASS_TAG_RELEASE_QUEUE                                       'qLcS'
+#define CLASS_TAG_POWER                                                            'WLcS'
+#define CLASS_TAG_WMI                                                              'wLcS'
+#define CLASS_TAG_FAILURE_PREDICT                        'fLcS'
+#define CLASS_TAG_DEVICE_CONTROL                                      'OIcS'
+#define CLASS_TAG_MODE_DATA                                           'oLcS'
+#define CLASS_TAG_MULTIPATH                                           'mPcS'
 
 #define MAXIMUM_RETRIES 4
 
 #define CLASS_DRIVER_EXTENSION_KEY ((PVOID) ClassInitialize)
 
-#define NO_REMOVE                         0
-#define REMOVE_PENDING                    1
-#define REMOVE_COMPLETE                   2
+#define NO_REMOVE                                                                             0
+#define REMOVE_PENDING                                                           1
+#define REMOVE_COMPLETE                                                          2
 
 #define ClassAcquireRemoveLock(devobj, tag) \
   ClassAcquireRemoveLockEx(devobj, tag, __FILE__, __LINE__)
@@ -109,8 +109,8 @@
 #endif
 
 #define TRY
-#define LEAVE             goto __tryLabel;
-#define FINALLY           __tryLabel:
+#define LEAVE                                       goto __tryLabel;
+#define FINALLY                        __tryLabel:
 
 #if defined DebugPrint
 #undef DebugPrint
@@ -122,34 +122,34 @@
 #define DebugPrint(x)
 #endif
 
-#define DEBUG_BUFFER_LENGTH                        256
+#define DEBUG_BUFFER_LENGTH                                                                            256
 
-#define START_UNIT_TIMEOUT                         (60 * 4)
+#define START_UNIT_TIMEOUT                                                                             (60 * 4)
 
-#define MEDIA_CHANGE_DEFAULT_TIME                  1
-#define MEDIA_CHANGE_TIMEOUT_TIME                  300
+#define MEDIA_CHANGE_DEFAULT_TIME                                                         1
+#define MEDIA_CHANGE_TIMEOUT_TIME                                                         300
 
 #define MAXIMUM_RETRY_FOR_SINGLE_IO_IN_100NS_UNITS 0x3b9aca00
 
 #ifdef ALLOCATE_SRB_FROM_POOL
 
-#define ClasspAllocateSrb(ext)                      \
-  ExAllocatePoolWithTag(NonPagedPool,               \
-                        sizeof(SCSI_REQUEST_BLOCK), \
-                        'sBRS')
+#define ClasspAllocateSrb(ext)                                                             \
+  ExAllocatePoolWithTag(NonPagedPool,                                         \
+                                                                            sizeof(SCSI_REQUEST_BLOCK), \
+                                                                            'sBRS')
 
 #define ClasspFreeSrb(ext, srb) ExFreePool((srb));
 
 #else /* ALLOCATE_SRB_FROM_POOL */
 
-#define ClasspAllocateSrb(ext)                      \
-  ExAllocateFromNPagedLookasideList(                \
-      &((ext)->CommonExtension.SrbLookasideList))
+#define ClasspAllocateSrb(ext)                                                             \
+  ExAllocateFromNPagedLookasideList(                                          \
+                   &((ext)->CommonExtension.SrbLookasideList))
 
-#define ClasspFreeSrb(ext, srb)                   \
-  ExFreeToNPagedLookasideList(                    \
-      &((ext)->CommonExtension.SrbLookasideList), \
-      (srb))
+#define ClasspFreeSrb(ext, srb)                                                          \
+  ExFreeToNPagedLookasideList(                                                           \
+                   &((ext)->CommonExtension.SrbLookasideList), \
+                   (srb))
 
 #endif /* ALLOCATE_SRB_FROM_POOL */
 
@@ -157,32 +157,32 @@
 #define CLEAR_FLAG(Flags, Bit)  ((Flags) &= ~(Bit))
 #define TEST_FLAG(Flags, Bit)   (((Flags) & (Bit)) != 0)
 
-#define CLASS_WORKING_SET_MAXIMUM                         2048
+#define CLASS_WORKING_SET_MAXIMUM                                                                             2048
 
 #define CLASS_INTERPRET_SENSE_INFO2_MAXIMUM_HISTORY_COUNT 30000
 
-#define CLASS_SPECIAL_DISABLE_SPIN_DOWN                 0x00000001
-#define CLASS_SPECIAL_DISABLE_SPIN_UP                   0x00000002
-#define CLASS_SPECIAL_NO_QUEUE_LOCK                     0x00000008
-#define CLASS_SPECIAL_DISABLE_WRITE_CACHE               0x00000010
-#define CLASS_SPECIAL_CAUSE_NOT_REPORTABLE_HACK         0x00000020
+#define CLASS_SPECIAL_DISABLE_SPIN_DOWN                                           0x00000001
+#define CLASS_SPECIAL_DISABLE_SPIN_UP                                                          0x00000002
+#define CLASS_SPECIAL_NO_QUEUE_LOCK                                                            0x00000008
+#define CLASS_SPECIAL_DISABLE_WRITE_CACHE                                         0x00000010
+#define CLASS_SPECIAL_CAUSE_NOT_REPORTABLE_HACK                      0x00000020
 #if ((NTDDI_VERSION == NTDDI_WIN2KSP3) || (OSVER(NTDDI_VERSION) == NTDDI_WINXP))
 #define CLASS_SPECIAL_DISABLE_WRITE_CACHE_NOT_SUPPORTED 0x00000040
 #endif
-#define CLASS_SPECIAL_MODIFY_CACHE_UNSUCCESSFUL         0x00000040
-#define CLASS_SPECIAL_FUA_NOT_SUPPORTED                 0x00000080
-#define CLASS_SPECIAL_VALID_MASK                        0x000000FB
-#define CLASS_SPECIAL_RESERVED         (~CLASS_SPECIAL_VALID_MASK)
+#define CLASS_SPECIAL_MODIFY_CACHE_UNSUCCESSFUL                      0x00000040
+#define CLASS_SPECIAL_FUA_NOT_SUPPORTED                                           0x00000080
+#define CLASS_SPECIAL_VALID_MASK                                                                            0x000000FB
+#define CLASS_SPECIAL_RESERVED                      (~CLASS_SPECIAL_VALID_MASK)
 
-#define DEV_WRITE_CACHE                                 0x00000001
-#define DEV_USE_SCSI1                                   0x00000002
-#define DEV_SAFE_START_UNIT                             0x00000004
-#define DEV_NO_12BYTE_CDB                               0x00000008
-#define DEV_POWER_PROTECTED                             0x00000010
-#define DEV_USE_16BYTE_CDB                              0x00000020
+#define DEV_WRITE_CACHE                                                                                                  0x00000001
+#define DEV_USE_SCSI1                                                                                                    0x00000002
+#define DEV_SAFE_START_UNIT                                                                                 0x00000004
+#define DEV_NO_12BYTE_CDB                                                                                                0x00000008
+#define DEV_POWER_PROTECTED                                                                                 0x00000010
+#define DEV_USE_16BYTE_CDB                                                                                               0x00000020
 
 #define GUID_CLASSPNP_QUERY_REGINFOEX {0x00e34b11, 0x2444, 0x4745, {0xa5, 0x3d, 0x62, 0x01, 0x00, 0xcd, 0x82, 0xf7}}
-#define GUID_CLASSPNP_SENSEINFO2      {0x509a8c5f, 0x71d7, 0x48f6, {0x82, 0x1e, 0x17, 0x3c, 0x49, 0xbf, 0x2f, 0x18}}
+#define GUID_CLASSPNP_SENSEINFO2                   {0x509a8c5f, 0x71d7, 0x48f6, {0x82, 0x1e, 0x17, 0x3c, 0x49, 0xbf, 0x2f, 0x18}}
 #define GUID_CLASSPNP_WORKING_SET     {0x105701b0, 0x9e9b, 0x47cb, {0x97, 0x80, 0x81, 0x19, 0x8a, 0xf7, 0xb5, 0x24}}
 
 #define DEFAULT_FAILURE_PREDICTION_PERIOD 60 * 60 * 1
@@ -594,8 +594,8 @@ typedef struct _COMMON_DEVICE_EXTENSION {
 typedef struct _PHYSICAL_DEVICE_EXTENSION {
   _ANONYMOUS_UNION union {
     _ANONYMOUS_STRUCT struct {
-      ULONG Version;
-      PDEVICE_OBJECT DeviceObject;
+                   ULONG Version;
+                   PDEVICE_OBJECT DeviceObject;
     } DUMMYSTRUCTNAME;
     COMMON_DEVICE_EXTENSION CommonExtension;
   } DUMMYUNIONNAME;
@@ -659,8 +659,8 @@ typedef struct _CLASS_QUERY_WMI_REGINFO_EX_LIST {
 typedef struct _FUNCTIONAL_DEVICE_EXTENSION {
   _ANONYMOUS_UNION union {
     _ANONYMOUS_STRUCT struct {
-      ULONG Version;
-      PDEVICE_OBJECT DeviceObject;
+                   ULONG Version;
+                   PDEVICE_OBJECT DeviceObject;
     } DUMMYSTRUCTNAME;
     COMMON_DEVICE_EXTENSION CommonExtension;
   } DUMMYUNIONNAME;
@@ -1187,8 +1187,8 @@ PORT_ALLOCATED_SENSE(
   PSCSI_REQUEST_BLOCK Srb)
 {
   return ((BOOLEAN)((TEST_FLAG(Srb->SrbFlags, SRB_FLAGS_PORT_DRIVER_ALLOCSENSE) &&
-          TEST_FLAG(Srb->SrbFlags, SRB_FLAGS_FREE_SENSE_BUFFER))                &&
-          (Srb->SenseInfoBuffer != FdoExtension->SenseData)));
+                       TEST_FLAG(Srb->SrbFlags, SRB_FLAGS_FREE_SENSE_BUFFER))                                          &&
+                       (Srb->SenseInfoBuffer != FdoExtension->SenseData)));
 }
 
 static __inline

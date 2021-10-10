@@ -97,7 +97,7 @@ typedef void printf_va_arg_function (void *__mem, va_list *__ap);
    what their types are.  */
 
 extern int register_printf_specifier (int __spec, printf_function __func,
-				      printf_arginfo_size_function __arginfo)
+				                   printf_arginfo_size_function __arginfo)
   __THROW;
 
 

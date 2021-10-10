@@ -73,7 +73,7 @@
 #else	/* Not GCC.  */
 
 # if (defined __cplusplus						\
-      || (defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L))
+                   || (defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L))
 #  define __inline	inline
 # else
 #  define __inline		/* No inline functions.  */
@@ -86,7 +86,7 @@
 #endif	/* GCC.  */
 
 /* Compilers that are not clang may object to
-       #if defined __clang__ && __has_extension(...)
+                    #if defined __clang__ && __has_extension(...)
    even though they do not need to evaluate the right-hand side of the &&.  */
 #if defined __clang__ && defined __has_extension
 # define __glibc_clang_has_extension(ext) __has_extension (ext)
@@ -341,7 +341,7 @@
    __GNUC_GNU_INLINE__ macro definitions.  */
 #if (!defined __cplusplus || __GNUC_PREREQ (4,3) \
      || (defined __clang__ && (defined __GNUC_STDC_INLINE__ \
-			       || defined __GNUC_GNU_INLINE__)))
+			                    || defined __GNUC_GNU_INLINE__)))
 # if defined __GNUC_STDC_INLINE__ || defined __cplusplus
 #  define __extern_inline extern __inline __attribute__ ((__gnu_inline__))
 #  define __extern_always_inline \
@@ -446,7 +446,7 @@
      && (!__GNUC_PREREQ (4, 6) || defined __STRICT_ANSI__))
 # define _Static_assert(expr, diagnostic) \
     extern int (*__Static_assert_function (void)) \
-      [!!sizeof (struct { int __error_if_negative: (expr) ? 2 : -1; })]
+                   [!!sizeof (struct { int __error_if_negative: (expr) ? 2 : -1; })]
 #endif
 
 #include <bits/wordsize.h>

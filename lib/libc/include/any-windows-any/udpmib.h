@@ -23,7 +23,7 @@ typedef struct _MIB_UDP6ROW {
 } MIB_UDP6ROW, *PMIB_UDP6ROW;
 
 typedef struct _MIB_UDP6TABLE {
-  DWORD       dwNumEntries;
+  DWORD                    dwNumEntries;
   MIB_UDP6ROW table[ANY_SIZE];
 } MIB_UDP6TABLE, *PMIB_UDP6TABLE;
 

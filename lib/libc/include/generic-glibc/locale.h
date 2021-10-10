@@ -32,12 +32,12 @@ __BEGIN_DECLS
 
 /* These are the possibilities for the first argument to setlocale.
    The code assumes that the lowest LC_* symbol has the value zero.  */
-#define LC_CTYPE          __LC_CTYPE
-#define LC_NUMERIC        __LC_NUMERIC
-#define LC_TIME           __LC_TIME
-#define LC_COLLATE        __LC_COLLATE
-#define LC_MONETARY       __LC_MONETARY
-#define LC_MESSAGES       __LC_MESSAGES
+#define LC_CTYPE                       __LC_CTYPE
+#define LC_NUMERIC                     __LC_NUMERIC
+#define LC_TIME                        __LC_TIME
+#define LC_COLLATE                     __LC_COLLATE
+#define LC_MONETARY                    __LC_MONETARY
+#define LC_MESSAGES                    __LC_MESSAGES
 #define	LC_ALL		  __LC_ALL
 #define LC_PAPER	  __LC_PAPER
 #define LC_NAME		  __LC_NAME

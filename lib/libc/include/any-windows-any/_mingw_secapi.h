@@ -10,13 +10,13 @@
 /* http://msdn.microsoft.com/en-us/library/ms175759%28v=VS.100%29.aspx */
 #if defined(__cplusplus)
 #ifndef _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES
-#define _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES 1         /* default to 1 */
+#define _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES 1                      /* default to 1 */
 #endif /*_CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES*/
 #ifndef _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES_MEMORY
 #define _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES_MEMORY 0  /* default to 0 */
 #endif /*_CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES_MEMORY*/
 #ifndef _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES
-#define _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES 0       /* default to 0 */
+#define _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES 0                    /* default to 0 */
 #endif /* _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES */
 #ifndef _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT
 #define _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT 0 /* default to 0 */
@@ -62,7 +62,7 @@ template <typename __dsttype>
     __dsttype (&__arg1)[__size],\
     __type2 __attrib2 (__arg2),\
     __type3 __attrib3 (__arg3)) {\
-      return __MINGW_CRT_NAME_CONCAT2(__func) (__arg1,__size * sizeof(__dsttype),__arg2,__arg3) == 0 ? __arg1 : NULL;\
+                   return __MINGW_CRT_NAME_CONCAT2(__func) (__arg1,__size * sizeof(__dsttype),__arg2,__arg3) == 0 ? __arg1 : NULL;\
     }\
   }
 #else

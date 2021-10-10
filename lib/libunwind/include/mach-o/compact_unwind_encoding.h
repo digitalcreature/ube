@@ -29,7 +29,7 @@
 // of the FDE in the __TEXT,__eh_frame section in the final linked image.
 //
 // Note: Previously, the linker would transform some DWARF unwind infos into
-//       compact unwind info.  But that is fragile and no longer done.
+//                    compact unwind info.  But that is fragile and no longer done.
 
 
 //
@@ -42,9 +42,9 @@ typedef uint32_t compact_unwind_encoding_t;
 
 // architecture independent bits
 enum {
-    UNWIND_IS_NOT_FUNCTION_START           = 0x80000000,
-    UNWIND_HAS_LSDA                        = 0x40000000,
-    UNWIND_PERSONALITY_MASK                = 0x30000000,
+    UNWIND_IS_NOT_FUNCTION_START                        = 0x80000000,
+    UNWIND_HAS_LSDA                                                                            = 0x40000000,
+    UNWIND_PERSONALITY_MASK                                          = 0x30000000,
 };
 
 
@@ -59,40 +59,40 @@ enum {
 //
 // 4-bits: 0=old, 1=ebp based, 2=stack-imm, 3=stack-ind, 4=DWARF
 //  ebp based:
-//        15-bits (5*3-bits per reg) register permutation
-//        8-bits for stack offset
+//                     15-bits (5*3-bits per reg) register permutation
+//                     8-bits for stack offset
 //  frameless:
-//        8-bits stack size
-//        3-bits stack adjust
-//        3-bits register count
-//        10-bits register permutation
+//                     8-bits stack size
+//                     3-bits stack adjust
+//                     3-bits register count
+//                     10-bits register permutation
 //
 enum {
-    UNWIND_X86_MODE_MASK                         = 0x0F000000,
-    UNWIND_X86_MODE_EBP_FRAME                    = 0x01000000,
-    UNWIND_X86_MODE_STACK_IMMD                   = 0x02000000,
-    UNWIND_X86_MODE_STACK_IND                    = 0x03000000,
-    UNWIND_X86_MODE_DWARF                        = 0x04000000,
+    UNWIND_X86_MODE_MASK                                                                             = 0x0F000000,
+    UNWIND_X86_MODE_EBP_FRAME                                                           = 0x01000000,
+    UNWIND_X86_MODE_STACK_IMMD                                                          = 0x02000000,
+    UNWIND_X86_MODE_STACK_IND                                                           = 0x03000000,
+    UNWIND_X86_MODE_DWARF                                                                            = 0x04000000,
 
-    UNWIND_X86_EBP_FRAME_REGISTERS               = 0x00007FFF,
-    UNWIND_X86_EBP_FRAME_OFFSET                  = 0x00FF0000,
+    UNWIND_X86_EBP_FRAME_REGISTERS                                         = 0x00007FFF,
+    UNWIND_X86_EBP_FRAME_OFFSET                                                         = 0x00FF0000,
 
-    UNWIND_X86_FRAMELESS_STACK_SIZE              = 0x00FF0000,
-    UNWIND_X86_FRAMELESS_STACK_ADJUST            = 0x0000E000,
-    UNWIND_X86_FRAMELESS_STACK_REG_COUNT         = 0x00001C00,
+    UNWIND_X86_FRAMELESS_STACK_SIZE                                        = 0x00FF0000,
+    UNWIND_X86_FRAMELESS_STACK_ADJUST                                      = 0x0000E000,
+    UNWIND_X86_FRAMELESS_STACK_REG_COUNT                      = 0x00001C00,
     UNWIND_X86_FRAMELESS_STACK_REG_PERMUTATION   = 0x000003FF,
 
-    UNWIND_X86_DWARF_SECTION_OFFSET              = 0x00FFFFFF,
+    UNWIND_X86_DWARF_SECTION_OFFSET                                        = 0x00FFFFFF,
 };
 
 enum {
     UNWIND_X86_REG_NONE     = 0,
-    UNWIND_X86_REG_EBX      = 1,
-    UNWIND_X86_REG_ECX      = 2,
-    UNWIND_X86_REG_EDX      = 3,
-    UNWIND_X86_REG_EDI      = 4,
-    UNWIND_X86_REG_ESI      = 5,
-    UNWIND_X86_REG_EBP      = 6,
+    UNWIND_X86_REG_EBX                   = 1,
+    UNWIND_X86_REG_ECX                   = 2,
+    UNWIND_X86_REG_EDX                   = 3,
+    UNWIND_X86_REG_EDI                   = 4,
+    UNWIND_X86_REG_ESI                   = 5,
+    UNWIND_X86_REG_EBP                   = 6,
 };
 
 //
@@ -144,39 +144,39 @@ enum {
 //{
 //    uint32_t renumregs[6];
 //    for (int i=6-registerCount; i < 6; ++i) {
-//        int countless = 0;
-//        for (int j=6-registerCount; j < i; ++j) {
-//            if ( registers[j] < registers[i] )
-//                ++countless;
-//        }
-//        renumregs[i] = registers[i] - countless -1;
+//                     int countless = 0;
+//                     for (int j=6-registerCount; j < i; ++j) {
+//                                      if ( registers[j] < registers[i] )
+//                                          ++countless;
+//                     }
+//                     renumregs[i] = registers[i] - countless -1;
 //    }
 //    uint32_t permutationEncoding = 0;
 //    switch ( registerCount ) {
-//        case 6:
-//            permutationEncoding |= (120*renumregs[0] + 24*renumregs[1]
-//                                    + 6*renumregs[2] + 2*renumregs[3]
-//                                      + renumregs[4]);
-//            break;
-//        case 5:
-//            permutationEncoding |= (120*renumregs[1] + 24*renumregs[2]
-//                                    + 6*renumregs[3] + 2*renumregs[4]
-//                                      + renumregs[5]);
-//            break;
-//        case 4:
-//            permutationEncoding |= (60*renumregs[2] + 12*renumregs[3]
-//                                   + 3*renumregs[4] + renumregs[5]);
-//            break;
-//        case 3:
-//            permutationEncoding |= (20*renumregs[3] + 4*renumregs[4]
-//                                     + renumregs[5]);
-//            break;
-//        case 2:
-//            permutationEncoding |= (5*renumregs[4] + renumregs[5]);
-//            break;
-//        case 1:
-//            permutationEncoding |= (renumregs[5]);
-//            break;
+//                     case 6:
+//                                      permutationEncoding |= (120*renumregs[0] + 24*renumregs[1]
+//                                                                                                                  + 6*renumregs[2] + 2*renumregs[3]
+//                                                                                                                    + renumregs[4]);
+//                                      break;
+//                     case 5:
+//                                      permutationEncoding |= (120*renumregs[1] + 24*renumregs[2]
+//                                                                                                                  + 6*renumregs[3] + 2*renumregs[4]
+//                                                                                                                    + renumregs[5]);
+//                                      break;
+//                     case 4:
+//                                      permutationEncoding |= (60*renumregs[2] + 12*renumregs[3]
+//                                                                                                    + 3*renumregs[4] + renumregs[5]);
+//                                      break;
+//                     case 3:
+//                                      permutationEncoding |= (20*renumregs[3] + 4*renumregs[4]
+//                                                                                                                   + renumregs[5]);
+//                                      break;
+//                     case 2:
+//                                      permutationEncoding |= (5*renumregs[4] + renumregs[5]);
+//                                      break;
+//                     case 1:
+//                                      permutationEncoding |= (renumregs[5]);
+//                                      break;
 //    }
 //    return permutationEncoding;
 //}
@@ -194,40 +194,40 @@ enum {
 //
 // 4-bits: 0=old, 1=rbp based, 2=stack-imm, 3=stack-ind, 4=DWARF
 //  rbp based:
-//        15-bits (5*3-bits per reg) register permutation
-//        8-bits for stack offset
+//                     15-bits (5*3-bits per reg) register permutation
+//                     8-bits for stack offset
 //  frameless:
-//        8-bits stack size
-//        3-bits stack adjust
-//        3-bits register count
-//        10-bits register permutation
+//                     8-bits stack size
+//                     3-bits stack adjust
+//                     3-bits register count
+//                     10-bits register permutation
 //
 enum {
-    UNWIND_X86_64_MODE_MASK                         = 0x0F000000,
-    UNWIND_X86_64_MODE_RBP_FRAME                    = 0x01000000,
-    UNWIND_X86_64_MODE_STACK_IMMD                   = 0x02000000,
-    UNWIND_X86_64_MODE_STACK_IND                    = 0x03000000,
-    UNWIND_X86_64_MODE_DWARF                        = 0x04000000,
+    UNWIND_X86_64_MODE_MASK                                                                             = 0x0F000000,
+    UNWIND_X86_64_MODE_RBP_FRAME                                                           = 0x01000000,
+    UNWIND_X86_64_MODE_STACK_IMMD                                                          = 0x02000000,
+    UNWIND_X86_64_MODE_STACK_IND                                                           = 0x03000000,
+    UNWIND_X86_64_MODE_DWARF                                                                            = 0x04000000,
 
-    UNWIND_X86_64_RBP_FRAME_REGISTERS               = 0x00007FFF,
-    UNWIND_X86_64_RBP_FRAME_OFFSET                  = 0x00FF0000,
+    UNWIND_X86_64_RBP_FRAME_REGISTERS                                         = 0x00007FFF,
+    UNWIND_X86_64_RBP_FRAME_OFFSET                                                         = 0x00FF0000,
 
-    UNWIND_X86_64_FRAMELESS_STACK_SIZE              = 0x00FF0000,
-    UNWIND_X86_64_FRAMELESS_STACK_ADJUST            = 0x0000E000,
-    UNWIND_X86_64_FRAMELESS_STACK_REG_COUNT         = 0x00001C00,
+    UNWIND_X86_64_FRAMELESS_STACK_SIZE                                        = 0x00FF0000,
+    UNWIND_X86_64_FRAMELESS_STACK_ADJUST                                      = 0x0000E000,
+    UNWIND_X86_64_FRAMELESS_STACK_REG_COUNT                      = 0x00001C00,
     UNWIND_X86_64_FRAMELESS_STACK_REG_PERMUTATION   = 0x000003FF,
 
-    UNWIND_X86_64_DWARF_SECTION_OFFSET              = 0x00FFFFFF,
+    UNWIND_X86_64_DWARF_SECTION_OFFSET                                        = 0x00FFFFFF,
 };
 
 enum {
-    UNWIND_X86_64_REG_NONE       = 0,
-    UNWIND_X86_64_REG_RBX        = 1,
-    UNWIND_X86_64_REG_R12        = 2,
-    UNWIND_X86_64_REG_R13        = 3,
-    UNWIND_X86_64_REG_R14        = 4,
-    UNWIND_X86_64_REG_R15        = 5,
-    UNWIND_X86_64_REG_RBP        = 6,
+    UNWIND_X86_64_REG_NONE                    = 0,
+    UNWIND_X86_64_REG_RBX                     = 1,
+    UNWIND_X86_64_REG_R12                     = 2,
+    UNWIND_X86_64_REG_R13                     = 3,
+    UNWIND_X86_64_REG_R14                     = 4,
+    UNWIND_X86_64_REG_R15                     = 5,
+    UNWIND_X86_64_REG_RBP                     = 6,
 };
 //
 // For x86_64 there are four modes for the compact unwind encoding:
@@ -276,31 +276,31 @@ enum {
 //
 // 4-bits: 4=frame-based, 3=DWARF, 2=frameless
 //  frameless:
-//        12-bits of stack size
+//                     12-bits of stack size
 //  frame-based:
-//        4-bits D reg pairs saved
-//        5-bits X reg pairs saved
+//                     4-bits D reg pairs saved
+//                     5-bits X reg pairs saved
 //  DWARF:
-//        24-bits offset of DWARF FDE in __eh_frame section
+//                     24-bits offset of DWARF FDE in __eh_frame section
 //
 enum {
-    UNWIND_ARM64_MODE_MASK                     = 0x0F000000,
-    UNWIND_ARM64_MODE_FRAMELESS                = 0x02000000,
-    UNWIND_ARM64_MODE_DWARF                    = 0x03000000,
-    UNWIND_ARM64_MODE_FRAME                    = 0x04000000,
+    UNWIND_ARM64_MODE_MASK                                                            = 0x0F000000,
+    UNWIND_ARM64_MODE_FRAMELESS                                          = 0x02000000,
+    UNWIND_ARM64_MODE_DWARF                                                           = 0x03000000,
+    UNWIND_ARM64_MODE_FRAME                                                           = 0x04000000,
 
-    UNWIND_ARM64_FRAME_X19_X20_PAIR            = 0x00000001,
-    UNWIND_ARM64_FRAME_X21_X22_PAIR            = 0x00000002,
-    UNWIND_ARM64_FRAME_X23_X24_PAIR            = 0x00000004,
-    UNWIND_ARM64_FRAME_X25_X26_PAIR            = 0x00000008,
-    UNWIND_ARM64_FRAME_X27_X28_PAIR            = 0x00000010,
-    UNWIND_ARM64_FRAME_D8_D9_PAIR              = 0x00000100,
-    UNWIND_ARM64_FRAME_D10_D11_PAIR            = 0x00000200,
-    UNWIND_ARM64_FRAME_D12_D13_PAIR            = 0x00000400,
-    UNWIND_ARM64_FRAME_D14_D15_PAIR            = 0x00000800,
+    UNWIND_ARM64_FRAME_X19_X20_PAIR                                      = 0x00000001,
+    UNWIND_ARM64_FRAME_X21_X22_PAIR                                      = 0x00000002,
+    UNWIND_ARM64_FRAME_X23_X24_PAIR                                      = 0x00000004,
+    UNWIND_ARM64_FRAME_X25_X26_PAIR                                      = 0x00000008,
+    UNWIND_ARM64_FRAME_X27_X28_PAIR                                      = 0x00000010,
+    UNWIND_ARM64_FRAME_D8_D9_PAIR                                        = 0x00000100,
+    UNWIND_ARM64_FRAME_D10_D11_PAIR                                      = 0x00000200,
+    UNWIND_ARM64_FRAME_D12_D13_PAIR                                      = 0x00000400,
+    UNWIND_ARM64_FRAME_D14_D15_PAIR                                      = 0x00000800,
 
     UNWIND_ARM64_FRAMELESS_STACK_SIZE_MASK     = 0x00FFF000,
-    UNWIND_ARM64_DWARF_SECTION_OFFSET          = 0x00FFFFFF,
+    UNWIND_ARM64_DWARF_SECTION_OFFSET                       = 0x00FFFFFF,
 };
 // For arm64 there are three modes for the compact unwind encoding:
 // UNWIND_ARM64_MODE_FRAME:
@@ -343,11 +343,11 @@ enum {
 // This section is a table, initially with one row per function (that needs 
 // unwind info).  The table columns and some conceptual entries are:
 //
-//     range-start               pointer to start of function/range
-//     range-length              
+//     range-start                                         pointer to start of function/range
+//     range-length                                        
 //     compact-unwind-encoding   32-bit encoding  
-//     personality-function      or zero if no personality function
-//     lsda                      or zero if no LSDA data
+//     personality-function                   or zero if no personality function
+//     lsda                                                             or zero if no LSDA data
 //
 // The length and encoding fields are 32-bits.  The other are all pointer sized. 
 //
@@ -373,8 +373,8 @@ enum {
 //
 //
 // Notes: There is no need for any labels in the the __compact_unwind section.  
-//        The use of the .set directive is to force the evaluation of the 
-//        range-length at assembly time, instead of generating relocations.
+//                     The use of the .set directive is to force the evaluation of the 
+//                     range-length at assembly time, instead of generating relocations.
 //
 // To support future compiler optimizations where which non-volatile registers 
 // are saved changes within a function (e.g. delay saving non-volatiles until
@@ -408,7 +408,7 @@ enum {
 #define UNWIND_SECTION_VERSION 1
 struct unwind_info_section_header
 {
-    uint32_t    version;            // UNWIND_SECTION_VERSION
+    uint32_t    version;                                      // UNWIND_SECTION_VERSION
     uint32_t    commonEncodingsArraySectionOffset;
     uint32_t    commonEncodingsArrayCount;
     uint32_t    personalityArraySectionOffset;
@@ -423,15 +423,15 @@ struct unwind_info_section_header
 
 struct unwind_info_section_header_index_entry
 {
-    uint32_t        functionOffset;
-    uint32_t        secondLevelPagesSectionOffset;  // section offset to start of regular or compress page
-    uint32_t        lsdaIndexArraySectionOffset;    // section offset to start of lsda_index array for this range
+    uint32_t                     functionOffset;
+    uint32_t                     secondLevelPagesSectionOffset;  // section offset to start of regular or compress page
+    uint32_t                     lsdaIndexArraySectionOffset;    // section offset to start of lsda_index array for this range
 };
 
 struct unwind_info_section_header_lsda_index_entry
 {
-    uint32_t        functionOffset;
-    uint32_t        lsdaOffset;
+    uint32_t                     functionOffset;
+    uint32_t                     lsdaOffset;
 };
 
 //
@@ -443,7 +443,7 @@ struct unwind_info_section_header_lsda_index_entry
 
 struct unwind_info_regular_second_level_entry
 {
-    uint32_t                    functionOffset;
+    uint32_t                                                           functionOffset;
     compact_unwind_encoding_t    encoding;
 };
 
@@ -468,8 +468,8 @@ struct unwind_info_compressed_second_level_page_header
     // encodings array
 };
 
-#define UNWIND_INFO_COMPRESSED_ENTRY_FUNC_OFFSET(entry)            (entry & 0x00FFFFFF)
-#define UNWIND_INFO_COMPRESSED_ENTRY_ENCODING_INDEX(entry)        ((entry >> 24) & 0xFF)
+#define UNWIND_INFO_COMPRESSED_ENTRY_FUNC_OFFSET(entry)                                      (entry & 0x00FFFFFF)
+#define UNWIND_INFO_COMPRESSED_ENTRY_ENCODING_INDEX(entry)                     ((entry >> 24) & 0xFF)
 
 
 

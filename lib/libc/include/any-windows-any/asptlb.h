@@ -154,16 +154,16 @@ extern "C"{
 #else
   typedef struct IStringListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IStringList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IStringList *This);
-      ULONG (WINAPI *Release)(IStringList *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IStringList *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IStringList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IStringList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IStringList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IStringList *This,VARIANT i,VARIANT *pVariantReturn);
-      HRESULT (WINAPI *get_Count)(IStringList *This,int *cStrRet);
-      HRESULT (WINAPI *get__NewEnum)(IStringList *This,IUnknown **ppEnumReturn);
+                   HRESULT (WINAPI *QueryInterface)(IStringList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IStringList *This);
+                   ULONG (WINAPI *Release)(IStringList *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IStringList *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IStringList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IStringList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IStringList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IStringList *This,VARIANT i,VARIANT *pVariantReturn);
+                   HRESULT (WINAPI *get_Count)(IStringList *This,int *cStrRet);
+                   HRESULT (WINAPI *get__NewEnum)(IStringList *This,IUnknown **ppEnumReturn);
     END_INTERFACE
   } IStringListVtbl;
   struct IStringList {
@@ -204,17 +204,17 @@ extern "C"{
 #else
   typedef struct IRequestDictionaryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRequestDictionary *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRequestDictionary *This);
-      ULONG (WINAPI *Release)(IRequestDictionary *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRequestDictionary *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRequestDictionary *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRequestDictionary *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRequestDictionary *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IRequestDictionary *This,VARIANT Var,VARIANT *pVariantReturn);
-      HRESULT (WINAPI *get__NewEnum)(IRequestDictionary *This,IUnknown **ppEnumReturn);
-      HRESULT (WINAPI *get_Count)(IRequestDictionary *This,int *cStrRet);
-      HRESULT (WINAPI *get_Key)(IRequestDictionary *This,VARIANT VarKey,VARIANT *pvar);
+                   HRESULT (WINAPI *QueryInterface)(IRequestDictionary *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRequestDictionary *This);
+                   ULONG (WINAPI *Release)(IRequestDictionary *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRequestDictionary *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRequestDictionary *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRequestDictionary *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRequestDictionary *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IRequestDictionary *This,VARIANT Var,VARIANT *pVariantReturn);
+                   HRESULT (WINAPI *get__NewEnum)(IRequestDictionary *This,IUnknown **ppEnumReturn);
+                   HRESULT (WINAPI *get_Count)(IRequestDictionary *This,int *cStrRet);
+                   HRESULT (WINAPI *get_Key)(IRequestDictionary *This,VARIANT VarKey,VARIANT *pvar);
     END_INTERFACE
   } IRequestDictionaryVtbl;
   struct IRequestDictionary {
@@ -263,22 +263,22 @@ extern "C"{
 #else
   typedef struct IRequestVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRequest *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRequest *This);
-      ULONG (WINAPI *Release)(IRequest *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRequest *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRequest *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRequest *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRequest *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IRequest *This,BSTR bstrVar,IDispatch **ppObjReturn);
-      HRESULT (WINAPI *get_QueryString)(IRequest *This,IRequestDictionary **ppDictReturn);
-      HRESULT (WINAPI *get_Form)(IRequest *This,IRequestDictionary **ppDictReturn);
-      HRESULT (WINAPI *get_Body)(IRequest *This,IRequestDictionary **ppDictReturn);
-      HRESULT (WINAPI *get_ServerVariables)(IRequest *This,IRequestDictionary **ppDictReturn);
-      HRESULT (WINAPI *get_ClientCertificate)(IRequest *This,IRequestDictionary **ppDictReturn);
-      HRESULT (WINAPI *get_Cookies)(IRequest *This,IRequestDictionary **ppDictReturn);
-      HRESULT (WINAPI *get_TotalBytes)(IRequest *This,__LONG32 *pcbTotal);
-      HRESULT (WINAPI *BinaryRead)(IRequest *This,VARIANT *pvarCountToRead,VARIANT *pvarReturn);
+                   HRESULT (WINAPI *QueryInterface)(IRequest *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRequest *This);
+                   ULONG (WINAPI *Release)(IRequest *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRequest *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRequest *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRequest *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRequest *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IRequest *This,BSTR bstrVar,IDispatch **ppObjReturn);
+                   HRESULT (WINAPI *get_QueryString)(IRequest *This,IRequestDictionary **ppDictReturn);
+                   HRESULT (WINAPI *get_Form)(IRequest *This,IRequestDictionary **ppDictReturn);
+                   HRESULT (WINAPI *get_Body)(IRequest *This,IRequestDictionary **ppDictReturn);
+                   HRESULT (WINAPI *get_ServerVariables)(IRequest *This,IRequestDictionary **ppDictReturn);
+                   HRESULT (WINAPI *get_ClientCertificate)(IRequest *This,IRequestDictionary **ppDictReturn);
+                   HRESULT (WINAPI *get_Cookies)(IRequest *This,IRequestDictionary **ppDictReturn);
+                   HRESULT (WINAPI *get_TotalBytes)(IRequest *This,__LONG32 *pcbTotal);
+                   HRESULT (WINAPI *BinaryRead)(IRequest *This,VARIANT *pvarCountToRead,VARIANT *pvarReturn);
     END_INTERFACE
   } IRequestVtbl;
   struct IRequest {
@@ -343,18 +343,18 @@ extern "C"{
 #else
   typedef struct IReadCookieVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IReadCookie *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IReadCookie *This);
-      ULONG (WINAPI *Release)(IReadCookie *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IReadCookie *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IReadCookie *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IReadCookie *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IReadCookie *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IReadCookie *This,VARIANT Var,VARIANT *pVariantReturn);
-      HRESULT (WINAPI *get_HasKeys)(IReadCookie *This,VARIANT_BOOL *pfHasKeys);
-      HRESULT (WINAPI *get__NewEnum)(IReadCookie *This,IUnknown **ppEnumReturn);
-      HRESULT (WINAPI *get_Count)(IReadCookie *This,int *cStrRet);
-      HRESULT (WINAPI *get_Key)(IReadCookie *This,VARIANT VarKey,VARIANT *pvar);
+                   HRESULT (WINAPI *QueryInterface)(IReadCookie *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IReadCookie *This);
+                   ULONG (WINAPI *Release)(IReadCookie *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IReadCookie *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IReadCookie *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IReadCookie *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IReadCookie *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IReadCookie *This,VARIANT Var,VARIANT *pVariantReturn);
+                   HRESULT (WINAPI *get_HasKeys)(IReadCookie *This,VARIANT_BOOL *pfHasKeys);
+                   HRESULT (WINAPI *get__NewEnum)(IReadCookie *This,IUnknown **ppEnumReturn);
+                   HRESULT (WINAPI *get_Count)(IReadCookie *This,int *cStrRet);
+                   HRESULT (WINAPI *get_Key)(IReadCookie *This,VARIANT VarKey,VARIANT *pvar);
     END_INTERFACE
   } IReadCookieVtbl;
   struct IReadCookie {
@@ -404,20 +404,20 @@ extern "C"{
 #else
   typedef struct IWriteCookieVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWriteCookie *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWriteCookie *This);
-      ULONG (WINAPI *Release)(IWriteCookie *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IWriteCookie *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IWriteCookie *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IWriteCookie *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IWriteCookie *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_Item)(IWriteCookie *This,VARIANT key,BSTR bstrValue);
-      HRESULT (WINAPI *put_Expires)(IWriteCookie *This,DATE dtExpires);
-      HRESULT (WINAPI *put_Domain)(IWriteCookie *This,BSTR bstrDomain);
-      HRESULT (WINAPI *put_Path)(IWriteCookie *This,BSTR bstrPath);
-      HRESULT (WINAPI *put_Secure)(IWriteCookie *This,VARIANT_BOOL fSecure);
-      HRESULT (WINAPI *get_HasKeys)(IWriteCookie *This,VARIANT_BOOL *pfHasKeys);
-      HRESULT (WINAPI *get__NewEnum)(IWriteCookie *This,IUnknown **ppEnumReturn);
+                   HRESULT (WINAPI *QueryInterface)(IWriteCookie *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWriteCookie *This);
+                   ULONG (WINAPI *Release)(IWriteCookie *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IWriteCookie *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IWriteCookie *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IWriteCookie *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IWriteCookie *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_Item)(IWriteCookie *This,VARIANT key,BSTR bstrValue);
+                   HRESULT (WINAPI *put_Expires)(IWriteCookie *This,DATE dtExpires);
+                   HRESULT (WINAPI *put_Domain)(IWriteCookie *This,BSTR bstrDomain);
+                   HRESULT (WINAPI *put_Path)(IWriteCookie *This,BSTR bstrPath);
+                   HRESULT (WINAPI *put_Secure)(IWriteCookie *This,VARIANT_BOOL fSecure);
+                   HRESULT (WINAPI *get_HasKeys)(IWriteCookie *This,VARIANT_BOOL *pfHasKeys);
+                   HRESULT (WINAPI *get__NewEnum)(IWriteCookie *This,IUnknown **ppEnumReturn);
     END_INTERFACE
   } IWriteCookieVtbl;
   struct IWriteCookie {
@@ -493,40 +493,40 @@ extern "C"{
 #else
   typedef struct IResponseVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResponse *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResponse *This);
-      ULONG (WINAPI *Release)(IResponse *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IResponse *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IResponse *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IResponse *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IResponse *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Buffer)(IResponse *This,VARIANT_BOOL *fIsBuffering);
-      HRESULT (WINAPI *put_Buffer)(IResponse *This,VARIANT_BOOL fIsBuffering);
-      HRESULT (WINAPI *get_ContentType)(IResponse *This,BSTR *pbstrContentTypeRet);
-      HRESULT (WINAPI *put_ContentType)(IResponse *This,BSTR bstrContentType);
-      HRESULT (WINAPI *get_Expires)(IResponse *This,VARIANT *pvarExpiresMinutesRet);
-      HRESULT (WINAPI *put_Expires)(IResponse *This,__LONG32 lExpiresMinutes);
-      HRESULT (WINAPI *get_ExpiresAbsolute)(IResponse *This,VARIANT *pvarExpiresRet);
-      HRESULT (WINAPI *put_ExpiresAbsolute)(IResponse *This,DATE dtExpires);
-      HRESULT (WINAPI *get_Cookies)(IResponse *This,IRequestDictionary **ppCookies);
-      HRESULT (WINAPI *get_Status)(IResponse *This,BSTR *pbstrStatusRet);
-      HRESULT (WINAPI *put_Status)(IResponse *This,BSTR bstrStatus);
-      HRESULT (WINAPI *Add)(IResponse *This,BSTR bstrHeaderValue,BSTR bstrHeaderName);
-      HRESULT (WINAPI *AddHeader)(IResponse *This,BSTR bstrHeaderName,BSTR bstrHeaderValue);
-      HRESULT (WINAPI *AppendToLog)(IResponse *This,BSTR bstrLogEntry);
-      HRESULT (WINAPI *BinaryWrite)(IResponse *This,VARIANT varInput);
-      HRESULT (WINAPI *Clear)(IResponse *This);
-      HRESULT (WINAPI *End)(IResponse *This);
-      HRESULT (WINAPI *Flush)(IResponse *This);
-      HRESULT (WINAPI *Redirect)(IResponse *This,BSTR bstrURL);
-      HRESULT (WINAPI *Write)(IResponse *This,VARIANT varText);
-      HRESULT (WINAPI *WriteBlock)(IResponse *This,short iBlockNumber);
-      HRESULT (WINAPI *IsClientConnected)(IResponse *This,VARIANT_BOOL *pfIsClientConnected);
-      HRESULT (WINAPI *get_CharSet)(IResponse *This,BSTR *pbstrCharSetRet);
-      HRESULT (WINAPI *put_CharSet)(IResponse *This,BSTR bstrCharSet);
-      HRESULT (WINAPI *Pics)(IResponse *This,BSTR bstrHeaderValue);
-      HRESULT (WINAPI *get_CacheControl)(IResponse *This,BSTR *pbstrCacheControl);
-      HRESULT (WINAPI *put_CacheControl)(IResponse *This,BSTR bstrCacheControl);
+                   HRESULT (WINAPI *QueryInterface)(IResponse *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResponse *This);
+                   ULONG (WINAPI *Release)(IResponse *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IResponse *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IResponse *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IResponse *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IResponse *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Buffer)(IResponse *This,VARIANT_BOOL *fIsBuffering);
+                   HRESULT (WINAPI *put_Buffer)(IResponse *This,VARIANT_BOOL fIsBuffering);
+                   HRESULT (WINAPI *get_ContentType)(IResponse *This,BSTR *pbstrContentTypeRet);
+                   HRESULT (WINAPI *put_ContentType)(IResponse *This,BSTR bstrContentType);
+                   HRESULT (WINAPI *get_Expires)(IResponse *This,VARIANT *pvarExpiresMinutesRet);
+                   HRESULT (WINAPI *put_Expires)(IResponse *This,__LONG32 lExpiresMinutes);
+                   HRESULT (WINAPI *get_ExpiresAbsolute)(IResponse *This,VARIANT *pvarExpiresRet);
+                   HRESULT (WINAPI *put_ExpiresAbsolute)(IResponse *This,DATE dtExpires);
+                   HRESULT (WINAPI *get_Cookies)(IResponse *This,IRequestDictionary **ppCookies);
+                   HRESULT (WINAPI *get_Status)(IResponse *This,BSTR *pbstrStatusRet);
+                   HRESULT (WINAPI *put_Status)(IResponse *This,BSTR bstrStatus);
+                   HRESULT (WINAPI *Add)(IResponse *This,BSTR bstrHeaderValue,BSTR bstrHeaderName);
+                   HRESULT (WINAPI *AddHeader)(IResponse *This,BSTR bstrHeaderName,BSTR bstrHeaderValue);
+                   HRESULT (WINAPI *AppendToLog)(IResponse *This,BSTR bstrLogEntry);
+                   HRESULT (WINAPI *BinaryWrite)(IResponse *This,VARIANT varInput);
+                   HRESULT (WINAPI *Clear)(IResponse *This);
+                   HRESULT (WINAPI *End)(IResponse *This);
+                   HRESULT (WINAPI *Flush)(IResponse *This);
+                   HRESULT (WINAPI *Redirect)(IResponse *This,BSTR bstrURL);
+                   HRESULT (WINAPI *Write)(IResponse *This,VARIANT varText);
+                   HRESULT (WINAPI *WriteBlock)(IResponse *This,short iBlockNumber);
+                   HRESULT (WINAPI *IsClientConnected)(IResponse *This,VARIANT_BOOL *pfIsClientConnected);
+                   HRESULT (WINAPI *get_CharSet)(IResponse *This,BSTR *pbstrCharSetRet);
+                   HRESULT (WINAPI *put_CharSet)(IResponse *This,BSTR bstrCharSet);
+                   HRESULT (WINAPI *Pics)(IResponse *This,BSTR bstrHeaderValue);
+                   HRESULT (WINAPI *get_CacheControl)(IResponse *This,BSTR *pbstrCacheControl);
+                   HRESULT (WINAPI *put_CacheControl)(IResponse *This,BSTR bstrCacheControl);
     END_INTERFACE
   } IResponseVtbl;
   struct IResponse {
@@ -648,21 +648,21 @@ extern "C"{
 #else
   typedef struct IVariantDictionaryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVariantDictionary *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVariantDictionary *This);
-      ULONG (WINAPI *Release)(IVariantDictionary *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IVariantDictionary *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IVariantDictionary *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IVariantDictionary *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IVariantDictionary *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IVariantDictionary *This,VARIANT VarKey,VARIANT *pvar);
-      HRESULT (WINAPI *put_Item)(IVariantDictionary *This,VARIANT VarKey,VARIANT var);
-      HRESULT (WINAPI *putref_Item)(IVariantDictionary *This,VARIANT VarKey,VARIANT var);
-      HRESULT (WINAPI *get_Key)(IVariantDictionary *This,VARIANT VarKey,VARIANT *pvar);
-      HRESULT (WINAPI *get_Count)(IVariantDictionary *This,int *cStrRet);
-      HRESULT (WINAPI *get__NewEnum)(IVariantDictionary *This,IUnknown **ppEnumReturn);
-      HRESULT (WINAPI *Remove)(IVariantDictionary *This,VARIANT VarKey);
-      HRESULT (WINAPI *RemoveAll)(IVariantDictionary *This);
+                   HRESULT (WINAPI *QueryInterface)(IVariantDictionary *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVariantDictionary *This);
+                   ULONG (WINAPI *Release)(IVariantDictionary *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IVariantDictionary *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IVariantDictionary *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IVariantDictionary *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IVariantDictionary *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IVariantDictionary *This,VARIANT VarKey,VARIANT *pvar);
+                   HRESULT (WINAPI *put_Item)(IVariantDictionary *This,VARIANT VarKey,VARIANT var);
+                   HRESULT (WINAPI *putref_Item)(IVariantDictionary *This,VARIANT VarKey,VARIANT var);
+                   HRESULT (WINAPI *get_Key)(IVariantDictionary *This,VARIANT VarKey,VARIANT *pvar);
+                   HRESULT (WINAPI *get_Count)(IVariantDictionary *This,int *cStrRet);
+                   HRESULT (WINAPI *get__NewEnum)(IVariantDictionary *This,IUnknown **ppEnumReturn);
+                   HRESULT (WINAPI *Remove)(IVariantDictionary *This,VARIANT VarKey);
+                   HRESULT (WINAPI *RemoveAll)(IVariantDictionary *This);
     END_INTERFACE
   } IVariantDictionaryVtbl;
   struct IVariantDictionary {
@@ -727,26 +727,26 @@ extern "C"{
 #else
   typedef struct ISessionObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISessionObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISessionObject *This);
-      ULONG (WINAPI *Release)(ISessionObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISessionObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISessionObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISessionObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISessionObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_SessionID)(ISessionObject *This,BSTR *pbstrRet);
-      HRESULT (WINAPI *get_Value)(ISessionObject *This,BSTR bstrValue,VARIANT *pvar);
-      HRESULT (WINAPI *put_Value)(ISessionObject *This,BSTR bstrValue,VARIANT var);
-      HRESULT (WINAPI *putref_Value)(ISessionObject *This,BSTR bstrValue,VARIANT var);
-      HRESULT (WINAPI *get_Timeout)(ISessionObject *This,__LONG32 *plvar);
-      HRESULT (WINAPI *put_Timeout)(ISessionObject *This,__LONG32 lvar);
-      HRESULT (WINAPI *Abandon)(ISessionObject *This);
-      HRESULT (WINAPI *get_CodePage)(ISessionObject *This,__LONG32 *plvar);
-      HRESULT (WINAPI *put_CodePage)(ISessionObject *This,__LONG32 lvar);
-      HRESULT (WINAPI *get_LCID)(ISessionObject *This,__LONG32 *plvar);
-      HRESULT (WINAPI *put_LCID)(ISessionObject *This,__LONG32 lvar);
-      HRESULT (WINAPI *get_StaticObjects)(ISessionObject *This,IVariantDictionary **ppTaggedObjects);
-      HRESULT (WINAPI *get_Contents)(ISessionObject *This,IVariantDictionary **ppProperties);
+                   HRESULT (WINAPI *QueryInterface)(ISessionObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISessionObject *This);
+                   ULONG (WINAPI *Release)(ISessionObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISessionObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISessionObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISessionObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISessionObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_SessionID)(ISessionObject *This,BSTR *pbstrRet);
+                   HRESULT (WINAPI *get_Value)(ISessionObject *This,BSTR bstrValue,VARIANT *pvar);
+                   HRESULT (WINAPI *put_Value)(ISessionObject *This,BSTR bstrValue,VARIANT var);
+                   HRESULT (WINAPI *putref_Value)(ISessionObject *This,BSTR bstrValue,VARIANT var);
+                   HRESULT (WINAPI *get_Timeout)(ISessionObject *This,__LONG32 *plvar);
+                   HRESULT (WINAPI *put_Timeout)(ISessionObject *This,__LONG32 lvar);
+                   HRESULT (WINAPI *Abandon)(ISessionObject *This);
+                   HRESULT (WINAPI *get_CodePage)(ISessionObject *This,__LONG32 *plvar);
+                   HRESULT (WINAPI *put_CodePage)(ISessionObject *This,__LONG32 lvar);
+                   HRESULT (WINAPI *get_LCID)(ISessionObject *This,__LONG32 *plvar);
+                   HRESULT (WINAPI *put_LCID)(ISessionObject *This,__LONG32 lvar);
+                   HRESULT (WINAPI *get_StaticObjects)(ISessionObject *This,IVariantDictionary **ppTaggedObjects);
+                   HRESULT (WINAPI *get_Contents)(ISessionObject *This,IVariantDictionary **ppProperties);
     END_INTERFACE
   } ISessionObjectVtbl;
   struct ISessionObject {
@@ -825,20 +825,20 @@ extern "C"{
 #else
   typedef struct IApplicationObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IApplicationObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IApplicationObject *This);
-      ULONG (WINAPI *Release)(IApplicationObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IApplicationObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IApplicationObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IApplicationObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IApplicationObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Value)(IApplicationObject *This,BSTR bstrValue,VARIANT *pvar);
-      HRESULT (WINAPI *put_Value)(IApplicationObject *This,BSTR bstrValue,VARIANT var);
-      HRESULT (WINAPI *putref_Value)(IApplicationObject *This,BSTR bstrValue,VARIANT var);
-      HRESULT (WINAPI *Lock)(IApplicationObject *This);
-      HRESULT (WINAPI *UnLock)(IApplicationObject *This);
-      HRESULT (WINAPI *get_StaticObjects)(IApplicationObject *This,IVariantDictionary **ppProperties);
-      HRESULT (WINAPI *get_Contents)(IApplicationObject *This,IVariantDictionary **ppProperties);
+                   HRESULT (WINAPI *QueryInterface)(IApplicationObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IApplicationObject *This);
+                   ULONG (WINAPI *Release)(IApplicationObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IApplicationObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IApplicationObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IApplicationObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IApplicationObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Value)(IApplicationObject *This,BSTR bstrValue,VARIANT *pvar);
+                   HRESULT (WINAPI *put_Value)(IApplicationObject *This,BSTR bstrValue,VARIANT var);
+                   HRESULT (WINAPI *putref_Value)(IApplicationObject *This,BSTR bstrValue,VARIANT var);
+                   HRESULT (WINAPI *Lock)(IApplicationObject *This);
+                   HRESULT (WINAPI *UnLock)(IApplicationObject *This);
+                   HRESULT (WINAPI *get_StaticObjects)(IApplicationObject *This,IVariantDictionary **ppProperties);
+                   HRESULT (WINAPI *get_Contents)(IApplicationObject *This,IVariantDictionary **ppProperties);
     END_INTERFACE
   } IApplicationObjectVtbl;
   struct IApplicationObject {
@@ -901,22 +901,22 @@ extern "C"{
 #else
   typedef struct IASPErrorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IASPError *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IASPError *This);
-      ULONG (WINAPI *Release)(IASPError *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IASPError *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IASPError *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IASPError *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IASPError *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ASPCode)(IASPError *This,BSTR *pbstrASPCode);
-      HRESULT (WINAPI *get_Number)(IASPError *This,__LONG32 *plNumber);
-      HRESULT (WINAPI *get_Category)(IASPError *This,BSTR *pbstrSource);
-      HRESULT (WINAPI *get_File)(IASPError *This,BSTR *pbstrFileName);
-      HRESULT (WINAPI *get_Line)(IASPError *This,__LONG32 *plLineNumber);
-      HRESULT (WINAPI *get_Description)(IASPError *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *get_ASPDescription)(IASPError *This,BSTR *pbstrDescription);
-      HRESULT (WINAPI *get_Column)(IASPError *This,__LONG32 *plColumn);
-      HRESULT (WINAPI *get_Source)(IASPError *This,BSTR *pbstrLineText);
+                   HRESULT (WINAPI *QueryInterface)(IASPError *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IASPError *This);
+                   ULONG (WINAPI *Release)(IASPError *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IASPError *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IASPError *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IASPError *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IASPError *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ASPCode)(IASPError *This,BSTR *pbstrASPCode);
+                   HRESULT (WINAPI *get_Number)(IASPError *This,__LONG32 *plNumber);
+                   HRESULT (WINAPI *get_Category)(IASPError *This,BSTR *pbstrSource);
+                   HRESULT (WINAPI *get_File)(IASPError *This,BSTR *pbstrFileName);
+                   HRESULT (WINAPI *get_Line)(IASPError *This,__LONG32 *plLineNumber);
+                   HRESULT (WINAPI *get_Description)(IASPError *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *get_ASPDescription)(IASPError *This,BSTR *pbstrDescription);
+                   HRESULT (WINAPI *get_Column)(IASPError *This,__LONG32 *plColumn);
+                   HRESULT (WINAPI *get_Source)(IASPError *This,BSTR *pbstrLineText);
     END_INTERFACE
   } IASPErrorVtbl;
   struct IASPError {
@@ -981,23 +981,23 @@ extern "C"{
 #else
   typedef struct IServerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IServer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IServer *This);
-      ULONG (WINAPI *Release)(IServer *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IServer *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IServer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IServer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IServer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ScriptTimeout)(IServer *This,__LONG32 *plTimeoutSeconds);
-      HRESULT (WINAPI *put_ScriptTimeout)(IServer *This,__LONG32 lTimeoutSeconds);
-      HRESULT (WINAPI *CreateObject)(IServer *This,BSTR bstrProgID,IDispatch **ppDispObject);
-      HRESULT (WINAPI *HTMLEncode)(IServer *This,BSTR bstrIn,BSTR *pbstrEncoded);
-      HRESULT (WINAPI *MapPath)(IServer *This,BSTR bstrLogicalPath,BSTR *pbstrPhysicalPath);
-      HRESULT (WINAPI *URLEncode)(IServer *This,BSTR bstrIn,BSTR *pbstrEncoded);
-      HRESULT (WINAPI *URLPathEncode)(IServer *This,BSTR bstrIn,BSTR *pbstrEncoded);
-      HRESULT (WINAPI *Execute)(IServer *This,BSTR bstrLogicalPath);
-      HRESULT (WINAPI *Transfer)(IServer *This,BSTR bstrLogicalPath);
-      HRESULT (WINAPI *GetLastError)(IServer *This,IASPError **ppASPErrorObject);
+                   HRESULT (WINAPI *QueryInterface)(IServer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IServer *This);
+                   ULONG (WINAPI *Release)(IServer *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IServer *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IServer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IServer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IServer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ScriptTimeout)(IServer *This,__LONG32 *plTimeoutSeconds);
+                   HRESULT (WINAPI *put_ScriptTimeout)(IServer *This,__LONG32 lTimeoutSeconds);
+                   HRESULT (WINAPI *CreateObject)(IServer *This,BSTR bstrProgID,IDispatch **ppDispObject);
+                   HRESULT (WINAPI *HTMLEncode)(IServer *This,BSTR bstrIn,BSTR *pbstrEncoded);
+                   HRESULT (WINAPI *MapPath)(IServer *This,BSTR bstrLogicalPath,BSTR *pbstrPhysicalPath);
+                   HRESULT (WINAPI *URLEncode)(IServer *This,BSTR bstrIn,BSTR *pbstrEncoded);
+                   HRESULT (WINAPI *URLPathEncode)(IServer *This,BSTR bstrIn,BSTR *pbstrEncoded);
+                   HRESULT (WINAPI *Execute)(IServer *This,BSTR bstrLogicalPath);
+                   HRESULT (WINAPI *Transfer)(IServer *This,BSTR bstrLogicalPath);
+                   HRESULT (WINAPI *GetLastError)(IServer *This,IASPError **ppASPErrorObject);
     END_INTERFACE
   } IServerVtbl;
   struct IServer {
@@ -1065,18 +1065,18 @@ extern "C"{
 #else
   typedef struct IScriptingContextVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IScriptingContext *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IScriptingContext *This);
-      ULONG (WINAPI *Release)(IScriptingContext *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IScriptingContext *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IScriptingContext *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IScriptingContext *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IScriptingContext *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Request)(IScriptingContext *This,IRequest **ppRequest);
-      HRESULT (WINAPI *get_Response)(IScriptingContext *This,IResponse **ppResponse);
-      HRESULT (WINAPI *get_Server)(IScriptingContext *This,IServer **ppServer);
-      HRESULT (WINAPI *get_Session)(IScriptingContext *This,ISessionObject **ppSession);
-      HRESULT (WINAPI *get_Application)(IScriptingContext *This,IApplicationObject **ppApplication);
+                   HRESULT (WINAPI *QueryInterface)(IScriptingContext *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IScriptingContext *This);
+                   ULONG (WINAPI *Release)(IScriptingContext *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IScriptingContext *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IScriptingContext *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IScriptingContext *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IScriptingContext *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Request)(IScriptingContext *This,IRequest **ppRequest);
+                   HRESULT (WINAPI *get_Response)(IScriptingContext *This,IResponse **ppResponse);
+                   HRESULT (WINAPI *get_Server)(IScriptingContext *This,IServer **ppServer);
+                   HRESULT (WINAPI *get_Session)(IScriptingContext *This,ISessionObject **ppSession);
+                   HRESULT (WINAPI *get_Application)(IScriptingContext *This,IApplicationObject **ppApplication);
     END_INTERFACE
   } IScriptingContextVtbl;
   struct IScriptingContext {

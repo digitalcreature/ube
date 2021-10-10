@@ -40,7 +40,7 @@ static __inline__  __u32 __arch_swab32(__u32 x)
 #endif
 		t = x ^ ((x << 16) | (x >> 16)); /* eor r1,r0,r0,ror #16 */
 
-	x = (x << 24) | (x >> 8);		/* mov r0,r0,ror #8      */
+	x = (x << 24) | (x >> 8);		/* mov r0,r0,ror #8                   */
 	t &= ~0x00FF0000;			/* bic r1,r1,#0x00FF0000 */
 	x ^= (t >> 8);				/* eor r0,r0,r1,lsr #8   */
 

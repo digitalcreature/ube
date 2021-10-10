@@ -121,12 +121,12 @@ struct atm_blli {
 	    unsigned char window;/* packet window size, 1-127 (0 to omit) */
 	} itu;			/* ITU-T encoding */
 	unsigned char user;	/* user specified l3 information */
-	struct {		      /* if l3_proto = ATM_L3_H310 */
+	struct {		                   /* if l3_proto = ATM_L3_H310 */
 	    unsigned char term_type;  /* terminal type */
 	    unsigned char fw_mpx_cap; /* forward multiplexing capability */
-				      /* only if term_type != ATM_TT_NONE */
+				                   /* only if term_type != ATM_TT_NONE */
 	    unsigned char bw_mpx_cap; /* backward multiplexing capability */
-				      /* only if term_type != ATM_TT_NONE */
+				                   /* only if term_type != ATM_TT_NONE */
 	} h310;
 	struct {		  /* if l3_proto = ATM_L3_TR9577 */
 	    unsigned char ipi;	  /* initial protocol id */

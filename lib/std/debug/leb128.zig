@@ -18,20 +18,20 @@ pub fn readULEB128(comptime T: type, reader: anytype) !T {
     var group = @as(ShiftT, 0);
 
     while (group < max_group) : (group += 1) {
-        const byte = try reader.readByte();
-        var temp = @as(U, byte & 0x7f);
+                     const byte = try reader.readByte();
+                     var temp = @as(U, byte & 0x7f);
 
-        if (@shlWithOverflow(U, temp, group * 7, &temp)) return error.Overflow;
+                     if (@shlWithOverflow(U, temp, group * 7, &temp)) return error.Overflow;
 
-        value |= temp;
-        if (byte & 0x80 == 0) break;
+                     value |= temp;
+                     if (byte & 0x80 == 0) break;
     } else {
-        return error.Overflow;
+                     return error.Overflow;
     }
 
     // only applies in the case that we extended to u8
     if (U != T) {
-        if (value > std.math.maxInt(T)) return error.Overflow;
+                     if (value > std.math.maxInt(T)) return error.Overflow;
     }
 
     return @truncate(T, value);
@@ -44,14 +44,14 @@ pub fn writeULEB128(writer: anytype, uint_value: anytype) !void {
     var value = @intCast(U, uint_value);
 
     while (true) {
-        const byte = @truncate(u8, value & 0x7f);
-        value >>= 7;
-        if (value == 0) {
-            try writer.writeByte(byte);
-            break;
-        } else {
-            try writer.writeByte(byte | 0x80);
-        }
+                     const byte = @truncate(u8, value & 0x7f);
+                     value >>= 7;
+                     if (value == 0) {
+                                      try writer.writeByte(byte);
+                                      break;
+                     } else {
+                                      try writer.writeByte(byte | 0x80);
+                     }
     }
 }
 
@@ -87,38 +87,38 @@ pub fn readILEB128(comptime T: type, reader: anytype) !T {
     var group = @as(ShiftU, 0);
 
     while (group < max_group) : (group += 1) {
-        const byte = try reader.readByte();
-        var temp = @as(U, byte & 0x7f);
+                     const byte = try reader.readByte();
+                     var temp = @as(U, byte & 0x7f);
 
-        const shift = group * 7;
-        if (@shlWithOverflow(U, temp, shift, &temp)) {
-            // Overflow is ok so long as the sign bit is set and this is the last byte
-            if (byte & 0x80 != 0) return error.Overflow;
-            if (@bitCast(S, temp) >= 0) return error.Overflow;
+                     const shift = group * 7;
+                     if (@shlWithOverflow(U, temp, shift, &temp)) {
+                                      // Overflow is ok so long as the sign bit is set and this is the last byte
+                                      if (byte & 0x80 != 0) return error.Overflow;
+                                      if (@bitCast(S, temp) >= 0) return error.Overflow;
 
-            // and all the overflowed bits are 1
-            const remaining_shift = @intCast(u3, @typeInfo(U).Int.bits - @as(u16, shift));
-            const remaining_bits = @bitCast(i8, byte | 0x80) >> remaining_shift;
-            if (remaining_bits != -1) return error.Overflow;
-        }
+                                      // and all the overflowed bits are 1
+                                      const remaining_shift = @intCast(u3, @typeInfo(U).Int.bits - @as(u16, shift));
+                                      const remaining_bits = @bitCast(i8, byte | 0x80) >> remaining_shift;
+                                      if (remaining_bits != -1) return error.Overflow;
+                     }
 
-        value |= temp;
-        if (byte & 0x80 == 0) {
-            const needs_sign_ext = group + 1 < max_group;
-            if (byte & 0x40 != 0 and needs_sign_ext) {
-                const ones = @as(S, -1);
-                value |= @bitCast(U, ones) << (shift + 7);
-            }
-            break;
-        }
+                     value |= temp;
+                     if (byte & 0x80 == 0) {
+                                      const needs_sign_ext = group + 1 < max_group;
+                                      if (byte & 0x40 != 0 and needs_sign_ext) {
+                                          const ones = @as(S, -1);
+                                          value |= @bitCast(U, ones) << (shift + 7);
+                                      }
+                                      break;
+                     }
     } else {
-        return error.Overflow;
+                     return error.Overflow;
     }
 
     const result = @bitCast(S, value);
     // Only applies if we extended to i8
     if (S != T) {
-        if (result > std.math.maxInt(T) or result < std.math.minInt(T)) return error.Overflow;
+                     if (result > std.math.maxInt(T) or result < std.math.minInt(T)) return error.Overflow;
     }
 
     return @truncate(T, result);
@@ -133,16 +133,16 @@ pub fn writeILEB128(writer: anytype, int_value: anytype) !void {
     var value = @intCast(S, int_value);
 
     while (true) {
-        const uvalue = @bitCast(U, value);
-        const byte = @truncate(u8, uvalue);
-        value >>= 6;
-        if (value == -1 or value == 0) {
-            try writer.writeByte(byte & 0x7F);
-            break;
-        } else {
-            value >>= 1;
-            try writer.writeByte(byte | 0x80);
-        }
+                     const uvalue = @bitCast(U, value);
+                     const byte = @truncate(u8, uvalue);
+                     value >>= 6;
+                     if (value == -1 or value == 0) {
+                                      try writer.writeByte(byte & 0x7F);
+                                      break;
+                     } else {
+                                      value >>= 1;
+                                      try writer.writeByte(byte | 0x80);
+                     }
     }
 }
 
@@ -178,33 +178,33 @@ pub fn writeUnsignedFixed(comptime l: usize, ptr: *[l]u8, int: std.meta.Int(.uns
 
     comptime var i = 0;
     inline while (i < (l - 1)) : (i += 1) {
-        const byte = @truncate(u8, value) | 0b1000_0000;
-        value >>= 7;
-        ptr[i] = byte;
+                     const byte = @truncate(u8, value) | 0b1000_0000;
+                     value >>= 7;
+                     ptr[i] = byte;
     }
     ptr[i] = @truncate(u8, value);
 }
 
 test "writeUnsignedFixed" {
     {
-        var buf: [4]u8 = undefined;
-        writeUnsignedFixed(4, &buf, 0);
-        testing.expect((try test_read_uleb128(u64, &buf)) == 0);
+                     var buf: [4]u8 = undefined;
+                     writeUnsignedFixed(4, &buf, 0);
+                     testing.expect((try test_read_uleb128(u64, &buf)) == 0);
     }
     {
-        var buf: [4]u8 = undefined;
-        writeUnsignedFixed(4, &buf, 1);
-        testing.expect((try test_read_uleb128(u64, &buf)) == 1);
+                     var buf: [4]u8 = undefined;
+                     writeUnsignedFixed(4, &buf, 1);
+                     testing.expect((try test_read_uleb128(u64, &buf)) == 1);
     }
     {
-        var buf: [4]u8 = undefined;
-        writeUnsignedFixed(4, &buf, 1000);
-        testing.expect((try test_read_uleb128(u64, &buf)) == 1000);
+                     var buf: [4]u8 = undefined;
+                     writeUnsignedFixed(4, &buf, 1000);
+                     testing.expect((try test_read_uleb128(u64, &buf)) == 1000);
     }
     {
-        var buf: [4]u8 = undefined;
-        writeUnsignedFixed(4, &buf, 10000000);
-        testing.expect((try test_read_uleb128(u64, &buf)) == 10000000);
+                     var buf: [4]u8 = undefined;
+                     writeUnsignedFixed(4, &buf, 10000000);
+                     testing.expect((try test_read_uleb128(u64, &buf)) == 10000000);
     }
 }
 
@@ -242,9 +242,9 @@ fn test_read_ileb128_seq(comptime T: type, comptime N: usize, encoded: []const u
     var in_ptr = encoded;
     var i: usize = 0;
     while (i < N) : (i += 1) {
-        const v1 = try readILEB128(T, reader.reader());
-        const v2 = try readILEB128Mem(T, &in_ptr);
-        testing.expectEqual(v1, v2);
+                     const v1 = try readILEB128(T, reader.reader());
+                     const v2 = try readILEB128Mem(T, &in_ptr);
+                     testing.expectEqual(v1, v2);
     }
 }
 
@@ -253,9 +253,9 @@ fn test_read_uleb128_seq(comptime T: type, comptime N: usize, encoded: []const u
     var in_ptr = encoded;
     var i: usize = 0;
     while (i < N) : (i += 1) {
-        const v1 = try readULEB128(T, reader.reader());
-        const v2 = try readULEB128Mem(T, &in_ptr);
-        testing.expectEqual(v1, v2);
+                     const v1 = try readULEB128(T, reader.reader());
+                     const v2 = try readULEB128Mem(T, &in_ptr);
+                     testing.expectEqual(v1, v2);
     }
 }
 
@@ -360,13 +360,13 @@ fn test_write_leb128(value: anytype) !void {
     const B = std.meta.Int(signedness, larger_type_bits);
 
     const bytes_needed = bn: {
-        const S = std.meta.Int(signedness, @sizeOf(T) * 8);
-        if (@typeInfo(T).Int.bits <= 7) break :bn @as(u16, 1);
+                     const S = std.meta.Int(signedness, @sizeOf(T) * 8);
+                     if (@typeInfo(T).Int.bits <= 7) break :bn @as(u16, 1);
 
-        const unused_bits = if (value < 0) @clz(T, ~value) else @clz(T, value);
-        const used_bits: u16 = (@typeInfo(T).Int.bits - unused_bits) + @boolToInt(t_signed);
-        if (used_bits <= 7) break :bn @as(u16, 1);
-        break :bn ((used_bits + 6) / 7);
+                     const unused_bits = if (value < 0) @clz(T, ~value) else @clz(T, value);
+                     const used_bits: u16 = (@typeInfo(T).Int.bits - unused_bits) + @boolToInt(t_signed);
+                     if (used_bits <= 7) break :bn @as(u16, 1);
+                     break :bn ((used_bits + 6) / 7);
     };
 
     const max_groups = if (@typeInfo(T).Int.bits == 0) 1 else (@typeInfo(T).Int.bits + 6) / 7;
@@ -413,12 +413,12 @@ test "serialize unsigned LEB128" {
 
     comptime var t = 0;
     inline while (t <= max_bits) : (t += 1) {
-        const T = std.meta.Int(.unsigned, t);
-        const min = std.math.minInt(T);
-        const max = std.math.maxInt(T);
-        var i = @as(std.meta.Int(.unsigned, @typeInfo(T).Int.bits + 1), min);
+                     const T = std.meta.Int(.unsigned, t);
+                     const min = std.math.minInt(T);
+                     const max = std.math.maxInt(T);
+                     var i = @as(std.meta.Int(.unsigned, @typeInfo(T).Int.bits + 1), min);
 
-        while (i <= max) : (i += 1) try test_write_leb128(@intCast(T, i));
+                     while (i <= max) : (i += 1) try test_write_leb128(@intCast(T, i));
     }
 }
 
@@ -431,11 +431,11 @@ test "serialize signed LEB128" {
 
     comptime var t = 1;
     inline while (t <= max_bits) : (t += 1) {
-        const T = std.meta.Int(.signed, t);
-        const min = std.math.minInt(T);
-        const max = std.math.maxInt(T);
-        var i = @as(std.meta.Int(.signed, @typeInfo(T).Int.bits + 1), min);
+                     const T = std.meta.Int(.signed, t);
+                     const min = std.math.minInt(T);
+                     const max = std.math.maxInt(T);
+                     var i = @as(std.meta.Int(.signed, @typeInfo(T).Int.bits + 1), min);
 
-        while (i <= max) : (i += 1) try test_write_leb128(@intCast(T, i));
+                     while (i <= max) : (i += 1) try test_write_leb128(@intCast(T, i));
     }
 }

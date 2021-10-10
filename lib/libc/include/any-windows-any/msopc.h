@@ -316,15 +316,15 @@ MIDL_INTERFACE("bc9c1b9b-d62c-49eb-aef0-3b4e0b28ebed")
 IOpcUri : public IUri
 {
     virtual HRESULT STDMETHODCALLTYPE GetRelationshipsPartUri(
-        IOpcPartUri **relationshipPartUri) = 0;
+                     IOpcPartUri **relationshipPartUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelativeUri(
-        IOpcPartUri *targetPartUri,
-        IUri **relativeUri) = 0;
+                     IOpcPartUri *targetPartUri,
+                     IUri **relativeUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CombinePartUri(
-        IUri *relativeUri,
-        IOpcPartUri **combinedUri) = 0;
+                     IUri *relativeUri,
+                     IOpcPartUri **combinedUri) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -336,139 +336,139 @@ typedef struct IOpcUriVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcUri *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcUri *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcUri *This);
+                     IOpcUri *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcUri *This);
+                     IOpcUri *This);
 
     /*** IUri methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyBSTR)(
-        IOpcUri *This,
-        Uri_PROPERTY uriProp,
-        BSTR *pbstrProperty,
-        DWORD dwFlags);
+                     IOpcUri *This,
+                     Uri_PROPERTY uriProp,
+                     BSTR *pbstrProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyLength)(
-        IOpcUri *This,
-        Uri_PROPERTY uriProp,
-        DWORD *pcchProperty,
-        DWORD dwFlags);
+                     IOpcUri *This,
+                     Uri_PROPERTY uriProp,
+                     DWORD *pcchProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyDWORD)(
-        IOpcUri *This,
-        Uri_PROPERTY uriProp,
-        DWORD *pdwProperty,
-        DWORD dwFlags);
+                     IOpcUri *This,
+                     Uri_PROPERTY uriProp,
+                     DWORD *pdwProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *HasProperty)(
-        IOpcUri *This,
-        Uri_PROPERTY uriProp,
-        WINBOOL *pfHasProperty);
+                     IOpcUri *This,
+                     Uri_PROPERTY uriProp,
+                     WINBOOL *pfHasProperty);
 
     HRESULT (STDMETHODCALLTYPE *GetAbsoluteUri)(
-        IOpcUri *This,
-        BSTR *pbstrAbsoluteUri);
+                     IOpcUri *This,
+                     BSTR *pbstrAbsoluteUri);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthority)(
-        IOpcUri *This,
-        BSTR *pbstrAuthority);
+                     IOpcUri *This,
+                     BSTR *pbstrAuthority);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayUri)(
-        IOpcUri *This,
-        BSTR *pbstrDisplayString);
+                     IOpcUri *This,
+                     BSTR *pbstrDisplayString);
 
     HRESULT (STDMETHODCALLTYPE *GetDomain)(
-        IOpcUri *This,
-        BSTR *pbstrDomain);
+                     IOpcUri *This,
+                     BSTR *pbstrDomain);
 
     HRESULT (STDMETHODCALLTYPE *GetExtension)(
-        IOpcUri *This,
-        BSTR *pbstrExtension);
+                     IOpcUri *This,
+                     BSTR *pbstrExtension);
 
     HRESULT (STDMETHODCALLTYPE *GetFragment)(
-        IOpcUri *This,
-        BSTR *pbstrFragment);
+                     IOpcUri *This,
+                     BSTR *pbstrFragment);
 
     HRESULT (STDMETHODCALLTYPE *GetHost)(
-        IOpcUri *This,
-        BSTR *pbstrHost);
+                     IOpcUri *This,
+                     BSTR *pbstrHost);
 
     HRESULT (STDMETHODCALLTYPE *GetPassword)(
-        IOpcUri *This,
-        BSTR *pbstrPassword);
+                     IOpcUri *This,
+                     BSTR *pbstrPassword);
 
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IOpcUri *This,
-        BSTR *pbstrPath);
+                     IOpcUri *This,
+                     BSTR *pbstrPath);
 
     HRESULT (STDMETHODCALLTYPE *GetPathAndQuery)(
-        IOpcUri *This,
-        BSTR *pbstrPathAndQuery);
+                     IOpcUri *This,
+                     BSTR *pbstrPathAndQuery);
 
     HRESULT (STDMETHODCALLTYPE *GetQuery)(
-        IOpcUri *This,
-        BSTR *pbstrQuery);
+                     IOpcUri *This,
+                     BSTR *pbstrQuery);
 
     HRESULT (STDMETHODCALLTYPE *GetRawUri)(
-        IOpcUri *This,
-        BSTR *pbstrRawUri);
+                     IOpcUri *This,
+                     BSTR *pbstrRawUri);
 
     HRESULT (STDMETHODCALLTYPE *GetSchemeName)(
-        IOpcUri *This,
-        BSTR *pbstrSchemeName);
+                     IOpcUri *This,
+                     BSTR *pbstrSchemeName);
 
     HRESULT (STDMETHODCALLTYPE *GetUserInfo)(
-        IOpcUri *This,
-        BSTR *pbstrUserInfo);
+                     IOpcUri *This,
+                     BSTR *pbstrUserInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetUserName)(
-        IOpcUri *This,
-        BSTR *pbstrUserName);
+                     IOpcUri *This,
+                     BSTR *pbstrUserName);
 
     HRESULT (STDMETHODCALLTYPE *GetHostType)(
-        IOpcUri *This,
-        DWORD *pdwHostType);
+                     IOpcUri *This,
+                     DWORD *pdwHostType);
 
     HRESULT (STDMETHODCALLTYPE *GetPort)(
-        IOpcUri *This,
-        DWORD *pdwPort);
+                     IOpcUri *This,
+                     DWORD *pdwPort);
 
     HRESULT (STDMETHODCALLTYPE *GetScheme)(
-        IOpcUri *This,
-        DWORD *pdwScheme);
+                     IOpcUri *This,
+                     DWORD *pdwScheme);
 
     HRESULT (STDMETHODCALLTYPE *GetZone)(
-        IOpcUri *This,
-        DWORD *pdwZone);
+                     IOpcUri *This,
+                     DWORD *pdwZone);
 
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        IOpcUri *This,
-        LPDWORD pdwFlags);
+                     IOpcUri *This,
+                     LPDWORD pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *IsEqual)(
-        IOpcUri *This,
-        IUri *pUri,
-        WINBOOL *pfEqual);
+                     IOpcUri *This,
+                     IUri *pUri,
+                     WINBOOL *pfEqual);
 
     /*** IOpcUri methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRelationshipsPartUri)(
-        IOpcUri *This,
-        IOpcPartUri **relationshipPartUri);
+                     IOpcUri *This,
+                     IOpcPartUri **relationshipPartUri);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeUri)(
-        IOpcUri *This,
-        IOpcPartUri *targetPartUri,
-        IUri **relativeUri);
+                     IOpcUri *This,
+                     IOpcPartUri *targetPartUri,
+                     IUri **relativeUri);
 
     HRESULT (STDMETHODCALLTYPE *CombinePartUri)(
-        IOpcUri *This,
-        IUri *relativeUri,
-        IOpcPartUri **combinedUri);
+                     IOpcUri *This,
+                     IUri *relativeUri,
+                     IOpcPartUri **combinedUri);
 
     END_INTERFACE
 } IOpcUriVtbl;
@@ -630,14 +630,14 @@ MIDL_INTERFACE("7d3babe7-88b2-46ba-85cb-4203cb016c87")
 IOpcPartUri : public IOpcUri
 {
     virtual HRESULT STDMETHODCALLTYPE ComparePartUri(
-        IOpcPartUri *partUri,
-        INT32 *comparisonResult) = 0;
+                     IOpcPartUri *partUri,
+                     INT32 *comparisonResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSourceUri(
-        IOpcUri **sourceUri) = 0;
+                     IOpcUri **sourceUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRelationshipsPartUri(
-        WINBOOL *isRelationshipUri) = 0;
+                     WINBOOL *isRelationshipUri) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -649,153 +649,153 @@ typedef struct IOpcPartUriVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcPartUri *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcPartUri *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcPartUri *This);
+                     IOpcPartUri *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcPartUri *This);
+                     IOpcPartUri *This);
 
     /*** IUri methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPropertyBSTR)(
-        IOpcPartUri *This,
-        Uri_PROPERTY uriProp,
-        BSTR *pbstrProperty,
-        DWORD dwFlags);
+                     IOpcPartUri *This,
+                     Uri_PROPERTY uriProp,
+                     BSTR *pbstrProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyLength)(
-        IOpcPartUri *This,
-        Uri_PROPERTY uriProp,
-        DWORD *pcchProperty,
-        DWORD dwFlags);
+                     IOpcPartUri *This,
+                     Uri_PROPERTY uriProp,
+                     DWORD *pcchProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyDWORD)(
-        IOpcPartUri *This,
-        Uri_PROPERTY uriProp,
-        DWORD *pdwProperty,
-        DWORD dwFlags);
+                     IOpcPartUri *This,
+                     Uri_PROPERTY uriProp,
+                     DWORD *pdwProperty,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *HasProperty)(
-        IOpcPartUri *This,
-        Uri_PROPERTY uriProp,
-        WINBOOL *pfHasProperty);
+                     IOpcPartUri *This,
+                     Uri_PROPERTY uriProp,
+                     WINBOOL *pfHasProperty);
 
     HRESULT (STDMETHODCALLTYPE *GetAbsoluteUri)(
-        IOpcPartUri *This,
-        BSTR *pbstrAbsoluteUri);
+                     IOpcPartUri *This,
+                     BSTR *pbstrAbsoluteUri);
 
     HRESULT (STDMETHODCALLTYPE *GetAuthority)(
-        IOpcPartUri *This,
-        BSTR *pbstrAuthority);
+                     IOpcPartUri *This,
+                     BSTR *pbstrAuthority);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayUri)(
-        IOpcPartUri *This,
-        BSTR *pbstrDisplayString);
+                     IOpcPartUri *This,
+                     BSTR *pbstrDisplayString);
 
     HRESULT (STDMETHODCALLTYPE *GetDomain)(
-        IOpcPartUri *This,
-        BSTR *pbstrDomain);
+                     IOpcPartUri *This,
+                     BSTR *pbstrDomain);
 
     HRESULT (STDMETHODCALLTYPE *GetExtension)(
-        IOpcPartUri *This,
-        BSTR *pbstrExtension);
+                     IOpcPartUri *This,
+                     BSTR *pbstrExtension);
 
     HRESULT (STDMETHODCALLTYPE *GetFragment)(
-        IOpcPartUri *This,
-        BSTR *pbstrFragment);
+                     IOpcPartUri *This,
+                     BSTR *pbstrFragment);
 
     HRESULT (STDMETHODCALLTYPE *GetHost)(
-        IOpcPartUri *This,
-        BSTR *pbstrHost);
+                     IOpcPartUri *This,
+                     BSTR *pbstrHost);
 
     HRESULT (STDMETHODCALLTYPE *GetPassword)(
-        IOpcPartUri *This,
-        BSTR *pbstrPassword);
+                     IOpcPartUri *This,
+                     BSTR *pbstrPassword);
 
     HRESULT (STDMETHODCALLTYPE *GetPath)(
-        IOpcPartUri *This,
-        BSTR *pbstrPath);
+                     IOpcPartUri *This,
+                     BSTR *pbstrPath);
 
     HRESULT (STDMETHODCALLTYPE *GetPathAndQuery)(
-        IOpcPartUri *This,
-        BSTR *pbstrPathAndQuery);
+                     IOpcPartUri *This,
+                     BSTR *pbstrPathAndQuery);
 
     HRESULT (STDMETHODCALLTYPE *GetQuery)(
-        IOpcPartUri *This,
-        BSTR *pbstrQuery);
+                     IOpcPartUri *This,
+                     BSTR *pbstrQuery);
 
     HRESULT (STDMETHODCALLTYPE *GetRawUri)(
-        IOpcPartUri *This,
-        BSTR *pbstrRawUri);
+                     IOpcPartUri *This,
+                     BSTR *pbstrRawUri);
 
     HRESULT (STDMETHODCALLTYPE *GetSchemeName)(
-        IOpcPartUri *This,
-        BSTR *pbstrSchemeName);
+                     IOpcPartUri *This,
+                     BSTR *pbstrSchemeName);
 
     HRESULT (STDMETHODCALLTYPE *GetUserInfo)(
-        IOpcPartUri *This,
-        BSTR *pbstrUserInfo);
+                     IOpcPartUri *This,
+                     BSTR *pbstrUserInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetUserName)(
-        IOpcPartUri *This,
-        BSTR *pbstrUserName);
+                     IOpcPartUri *This,
+                     BSTR *pbstrUserName);
 
     HRESULT (STDMETHODCALLTYPE *GetHostType)(
-        IOpcPartUri *This,
-        DWORD *pdwHostType);
+                     IOpcPartUri *This,
+                     DWORD *pdwHostType);
 
     HRESULT (STDMETHODCALLTYPE *GetPort)(
-        IOpcPartUri *This,
-        DWORD *pdwPort);
+                     IOpcPartUri *This,
+                     DWORD *pdwPort);
 
     HRESULT (STDMETHODCALLTYPE *GetScheme)(
-        IOpcPartUri *This,
-        DWORD *pdwScheme);
+                     IOpcPartUri *This,
+                     DWORD *pdwScheme);
 
     HRESULT (STDMETHODCALLTYPE *GetZone)(
-        IOpcPartUri *This,
-        DWORD *pdwZone);
+                     IOpcPartUri *This,
+                     DWORD *pdwZone);
 
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        IOpcPartUri *This,
-        LPDWORD pdwFlags);
+                     IOpcPartUri *This,
+                     LPDWORD pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *IsEqual)(
-        IOpcPartUri *This,
-        IUri *pUri,
-        WINBOOL *pfEqual);
+                     IOpcPartUri *This,
+                     IUri *pUri,
+                     WINBOOL *pfEqual);
 
     /*** IOpcUri methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRelationshipsPartUri)(
-        IOpcPartUri *This,
-        IOpcPartUri **relationshipPartUri);
+                     IOpcPartUri *This,
+                     IOpcPartUri **relationshipPartUri);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeUri)(
-        IOpcPartUri *This,
-        IOpcPartUri *targetPartUri,
-        IUri **relativeUri);
+                     IOpcPartUri *This,
+                     IOpcPartUri *targetPartUri,
+                     IUri **relativeUri);
 
     HRESULT (STDMETHODCALLTYPE *CombinePartUri)(
-        IOpcPartUri *This,
-        IUri *relativeUri,
-        IOpcPartUri **combinedUri);
+                     IOpcPartUri *This,
+                     IUri *relativeUri,
+                     IOpcPartUri **combinedUri);
 
     /*** IOpcPartUri methods ***/
     HRESULT (STDMETHODCALLTYPE *ComparePartUri)(
-        IOpcPartUri *This,
-        IOpcPartUri *partUri,
-        INT32 *comparisonResult);
+                     IOpcPartUri *This,
+                     IOpcPartUri *partUri,
+                     INT32 *comparisonResult);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceUri)(
-        IOpcPartUri *This,
-        IOpcUri **sourceUri);
+                     IOpcPartUri *This,
+                     IOpcUri **sourceUri);
 
     HRESULT (STDMETHODCALLTYPE *IsRelationshipsPartUri)(
-        IOpcPartUri *This,
-        WINBOOL *isRelationshipUri);
+                     IOpcPartUri *This,
+                     WINBOOL *isRelationshipUri);
 
     END_INTERFACE
 } IOpcPartUriVtbl;
@@ -1375,19 +1375,19 @@ MIDL_INTERFACE("42195949-3b79-4fc8-89c6-fc7fb979ee71")
 IOpcPart : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRelationshipSet(
-        IOpcRelationshipSet **relationshipSet) = 0;
+                     IOpcRelationshipSet **relationshipSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContentStream(
-        IStream **stream) = 0;
+                     IStream **stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        IOpcPartUri **name) = 0;
+                     IOpcPartUri **name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContentType(
-        LPWSTR *contentType) = 0;
+                     LPWSTR *contentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCompressionOptions(
-        OPC_COMPRESSION_OPTIONS *compressionOptions) = 0;
+                     OPC_COMPRESSION_OPTIONS *compressionOptions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1399,36 +1399,36 @@ typedef struct IOpcPartVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcPart *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcPart *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcPart *This);
+                     IOpcPart *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcPart *This);
+                     IOpcPart *This);
 
     /*** IOpcPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRelationshipSet)(
-        IOpcPart *This,
-        IOpcRelationshipSet **relationshipSet);
+                     IOpcPart *This,
+                     IOpcRelationshipSet **relationshipSet);
 
     HRESULT (STDMETHODCALLTYPE *GetContentStream)(
-        IOpcPart *This,
-        IStream **stream);
+                     IOpcPart *This,
+                     IStream **stream);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IOpcPart *This,
-        IOpcPartUri **name);
+                     IOpcPart *This,
+                     IOpcPartUri **name);
 
     HRESULT (STDMETHODCALLTYPE *GetContentType)(
-        IOpcPart *This,
-        LPWSTR *contentType);
+                     IOpcPart *This,
+                     LPWSTR *contentType);
 
     HRESULT (STDMETHODCALLTYPE *GetCompressionOptions)(
-        IOpcPart *This,
-        OPC_COMPRESSION_OPTIONS *compressionOptions);
+                     IOpcPart *This,
+                     OPC_COMPRESSION_OPTIONS *compressionOptions);
 
     END_INTERFACE
 } IOpcPartVtbl;
@@ -1496,16 +1496,16 @@ MIDL_INTERFACE("42195949-3b79-4fc8-89c6-fc7fb979ee75")
 IOpcPartEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        IOpcPart **part) = 0;
+                     IOpcPart **part) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcPartEnumerator **copy) = 0;
+                     IOpcPartEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1517,32 +1517,32 @@ typedef struct IOpcPartEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcPartEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcPartEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcPartEnumerator *This);
+                     IOpcPartEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcPartEnumerator *This);
+                     IOpcPartEnumerator *This);
 
     /*** IOpcPartEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcPartEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcPartEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcPartEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcPartEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcPartEnumerator *This,
-        IOpcPart **part);
+                     IOpcPartEnumerator *This,
+                     IOpcPart **part);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcPartEnumerator *This,
-        IOpcPartEnumerator **copy);
+                     IOpcPartEnumerator *This,
+                     IOpcPartEnumerator **copy);
 
     END_INTERFACE
 } IOpcPartEnumeratorVtbl;
@@ -1606,24 +1606,24 @@ MIDL_INTERFACE("42195949-3b79-4fc8-89c6-fc7fb979ee73")
 IOpcPartSet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPart(
-        IOpcPartUri *name,
-        IOpcPart **part) = 0;
+                     IOpcPartUri *name,
+                     IOpcPart **part) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePart(
-        IOpcPartUri *name,
-        LPCWSTR contentType,
-        OPC_COMPRESSION_OPTIONS compressionOptions,
-        IOpcPart **part) = 0;
+                     IOpcPartUri *name,
+                     LPCWSTR contentType,
+                     OPC_COMPRESSION_OPTIONS compressionOptions,
+                     IOpcPart **part) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeletePart(
-        IOpcPartUri *name) = 0;
+                     IOpcPartUri *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PartExists(
-        IOpcPartUri *name,
-        WINBOOL *partExists) = 0;
+                     IOpcPartUri *name,
+                     WINBOOL *partExists) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IOpcPartEnumerator **partEnumerator) = 0;
+                     IOpcPartEnumerator **partEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1635,41 +1635,41 @@ typedef struct IOpcPartSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcPartSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcPartSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcPartSet *This);
+                     IOpcPartSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcPartSet *This);
+                     IOpcPartSet *This);
 
     /*** IOpcPartSet methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPart)(
-        IOpcPartSet *This,
-        IOpcPartUri *name,
-        IOpcPart **part);
+                     IOpcPartSet *This,
+                     IOpcPartUri *name,
+                     IOpcPart **part);
 
     HRESULT (STDMETHODCALLTYPE *CreatePart)(
-        IOpcPartSet *This,
-        IOpcPartUri *name,
-        LPCWSTR contentType,
-        OPC_COMPRESSION_OPTIONS compressionOptions,
-        IOpcPart **part);
+                     IOpcPartSet *This,
+                     IOpcPartUri *name,
+                     LPCWSTR contentType,
+                     OPC_COMPRESSION_OPTIONS compressionOptions,
+                     IOpcPart **part);
 
     HRESULT (STDMETHODCALLTYPE *DeletePart)(
-        IOpcPartSet *This,
-        IOpcPartUri *name);
+                     IOpcPartSet *This,
+                     IOpcPartUri *name);
 
     HRESULT (STDMETHODCALLTYPE *PartExists)(
-        IOpcPartSet *This,
-        IOpcPartUri *name,
-        WINBOOL *partExists);
+                     IOpcPartSet *This,
+                     IOpcPartUri *name,
+                     WINBOOL *partExists);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IOpcPartSet *This,
-        IOpcPartEnumerator **partEnumerator);
+                     IOpcPartSet *This,
+                     IOpcPartEnumerator **partEnumerator);
 
     END_INTERFACE
 } IOpcPartSetVtbl;
@@ -1737,10 +1737,10 @@ MIDL_INTERFACE("42195949-3b79-4fc8-89c6-fc7fb979ee70")
 IOpcPackage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPartSet(
-        IOpcPartSet **partSet) = 0;
+                     IOpcPartSet **partSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelationshipSet(
-        IOpcRelationshipSet **relationshipSet) = 0;
+                     IOpcRelationshipSet **relationshipSet) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1752,24 +1752,24 @@ typedef struct IOpcPackageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcPackage *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcPackage *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcPackage *This);
+                     IOpcPackage *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcPackage *This);
+                     IOpcPackage *This);
 
     /*** IOpcPackage methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartSet)(
-        IOpcPackage *This,
-        IOpcPartSet **partSet);
+                     IOpcPackage *This,
+                     IOpcPartSet **partSet);
 
     HRESULT (STDMETHODCALLTYPE *GetRelationshipSet)(
-        IOpcPackage *This,
-        IOpcRelationshipSet **relationshipSet);
+                     IOpcPackage *This,
+                     IOpcRelationshipSet **relationshipSet);
 
     END_INTERFACE
 } IOpcPackageVtbl;
@@ -1825,19 +1825,19 @@ MIDL_INTERFACE("42195949-3b79-4fc8-89c6-fc7fb979ee72")
 IOpcRelationship : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetId(
-        LPWSTR *relationshipIdentifier) = 0;
+                     LPWSTR *relationshipIdentifier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelationshipType(
-        LPWSTR *relationshipType) = 0;
+                     LPWSTR *relationshipType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSourceUri(
-        IOpcUri **sourceUri) = 0;
+                     IOpcUri **sourceUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTargetUri(
-        IUri **targetUri) = 0;
+                     IUri **targetUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTargetMode(
-        OPC_URI_TARGET_MODE *targetMode) = 0;
+                     OPC_URI_TARGET_MODE *targetMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1849,36 +1849,36 @@ typedef struct IOpcRelationshipVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcRelationship *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcRelationship *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcRelationship *This);
+                     IOpcRelationship *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcRelationship *This);
+                     IOpcRelationship *This);
 
     /*** IOpcRelationship methods ***/
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        IOpcRelationship *This,
-        LPWSTR *relationshipIdentifier);
+                     IOpcRelationship *This,
+                     LPWSTR *relationshipIdentifier);
 
     HRESULT (STDMETHODCALLTYPE *GetRelationshipType)(
-        IOpcRelationship *This,
-        LPWSTR *relationshipType);
+                     IOpcRelationship *This,
+                     LPWSTR *relationshipType);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceUri)(
-        IOpcRelationship *This,
-        IOpcUri **sourceUri);
+                     IOpcRelationship *This,
+                     IOpcUri **sourceUri);
 
     HRESULT (STDMETHODCALLTYPE *GetTargetUri)(
-        IOpcRelationship *This,
-        IUri **targetUri);
+                     IOpcRelationship *This,
+                     IUri **targetUri);
 
     HRESULT (STDMETHODCALLTYPE *GetTargetMode)(
-        IOpcRelationship *This,
-        OPC_URI_TARGET_MODE *targetMode);
+                     IOpcRelationship *This,
+                     OPC_URI_TARGET_MODE *targetMode);
 
     END_INTERFACE
 } IOpcRelationshipVtbl;
@@ -1946,16 +1946,16 @@ MIDL_INTERFACE("42195949-3b79-4fc8-89c6-fc7fb979ee76")
 IOpcRelationshipEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        IOpcRelationship **relationship) = 0;
+                     IOpcRelationship **relationship) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcRelationshipEnumerator **copy) = 0;
+                     IOpcRelationshipEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1967,32 +1967,32 @@ typedef struct IOpcRelationshipEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcRelationshipEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcRelationshipEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcRelationshipEnumerator *This);
+                     IOpcRelationshipEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcRelationshipEnumerator *This);
+                     IOpcRelationshipEnumerator *This);
 
     /*** IOpcRelationshipEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcRelationshipEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcRelationshipEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcRelationshipEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcRelationshipEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcRelationshipEnumerator *This,
-        IOpcRelationship **relationship);
+                     IOpcRelationshipEnumerator *This,
+                     IOpcRelationship **relationship);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcRelationshipEnumerator *This,
-        IOpcRelationshipEnumerator **copy);
+                     IOpcRelationshipEnumerator *This,
+                     IOpcRelationshipEnumerator **copy);
 
     END_INTERFACE
 } IOpcRelationshipEnumeratorVtbl;
@@ -2056,10 +2056,10 @@ MIDL_INTERFACE("f8f26c7f-b28f-4899-84c8-5d5639ede75f")
 IOpcRelationshipSelector : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSelectorType(
-        OPC_RELATIONSHIP_SELECTOR *selector) = 0;
+                     OPC_RELATIONSHIP_SELECTOR *selector) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelectionCriterion(
-        LPWSTR *selectionCriterion) = 0;
+                     LPWSTR *selectionCriterion) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2071,24 +2071,24 @@ typedef struct IOpcRelationshipSelectorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcRelationshipSelector *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcRelationshipSelector *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcRelationshipSelector *This);
+                     IOpcRelationshipSelector *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcRelationshipSelector *This);
+                     IOpcRelationshipSelector *This);
 
     /*** IOpcRelationshipSelector methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSelectorType)(
-        IOpcRelationshipSelector *This,
-        OPC_RELATIONSHIP_SELECTOR *selector);
+                     IOpcRelationshipSelector *This,
+                     OPC_RELATIONSHIP_SELECTOR *selector);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectionCriterion)(
-        IOpcRelationshipSelector *This,
-        LPWSTR *selectionCriterion);
+                     IOpcRelationshipSelector *This,
+                     LPWSTR *selectionCriterion);
 
     END_INTERFACE
 } IOpcRelationshipSelectorVtbl;
@@ -2144,32 +2144,32 @@ MIDL_INTERFACE("42195949-3b79-4fc8-89c6-fc7fb979ee74")
 IOpcRelationshipSet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRelationship(
-        LPCWSTR relationshipIdentifier,
-        IOpcRelationship **relationship) = 0;
+                     LPCWSTR relationshipIdentifier,
+                     IOpcRelationship **relationship) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRelationship(
-        LPCWSTR relationshipIdentifier,
-        LPCWSTR relationshipType,
-        IUri *targetUri,
-        OPC_URI_TARGET_MODE targetMode,
-        IOpcRelationship **relationship) = 0;
+                     LPCWSTR relationshipIdentifier,
+                     LPCWSTR relationshipType,
+                     IUri *targetUri,
+                     OPC_URI_TARGET_MODE targetMode,
+                     IOpcRelationship **relationship) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteRelationship(
-        LPCWSTR relationshipIdentifier) = 0;
+                     LPCWSTR relationshipIdentifier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RelationshipExists(
-        LPCWSTR relationshipIdentifier,
-        WINBOOL *relationshipExists) = 0;
+                     LPCWSTR relationshipIdentifier,
+                     WINBOOL *relationshipExists) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IOpcRelationshipEnumerator **relationshipEnumerator) = 0;
+                     IOpcRelationshipEnumerator **relationshipEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumeratorForType(
-        LPCWSTR relationshipType,
-        IOpcRelationshipEnumerator **relationshipEnumerator) = 0;
+                     LPCWSTR relationshipType,
+                     IOpcRelationshipEnumerator **relationshipEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelationshipsContentStream(
-        IStream **contents) = 0;
+                     IStream **contents) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2181,51 +2181,51 @@ typedef struct IOpcRelationshipSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcRelationshipSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcRelationshipSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcRelationshipSet *This);
+                     IOpcRelationshipSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcRelationshipSet *This);
+                     IOpcRelationshipSet *This);
 
     /*** IOpcRelationshipSet methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRelationship)(
-        IOpcRelationshipSet *This,
-        LPCWSTR relationshipIdentifier,
-        IOpcRelationship **relationship);
+                     IOpcRelationshipSet *This,
+                     LPCWSTR relationshipIdentifier,
+                     IOpcRelationship **relationship);
 
     HRESULT (STDMETHODCALLTYPE *CreateRelationship)(
-        IOpcRelationshipSet *This,
-        LPCWSTR relationshipIdentifier,
-        LPCWSTR relationshipType,
-        IUri *targetUri,
-        OPC_URI_TARGET_MODE targetMode,
-        IOpcRelationship **relationship);
+                     IOpcRelationshipSet *This,
+                     LPCWSTR relationshipIdentifier,
+                     LPCWSTR relationshipType,
+                     IUri *targetUri,
+                     OPC_URI_TARGET_MODE targetMode,
+                     IOpcRelationship **relationship);
 
     HRESULT (STDMETHODCALLTYPE *DeleteRelationship)(
-        IOpcRelationshipSet *This,
-        LPCWSTR relationshipIdentifier);
+                     IOpcRelationshipSet *This,
+                     LPCWSTR relationshipIdentifier);
 
     HRESULT (STDMETHODCALLTYPE *RelationshipExists)(
-        IOpcRelationshipSet *This,
-        LPCWSTR relationshipIdentifier,
-        WINBOOL *relationshipExists);
+                     IOpcRelationshipSet *This,
+                     LPCWSTR relationshipIdentifier,
+                     WINBOOL *relationshipExists);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IOpcRelationshipSet *This,
-        IOpcRelationshipEnumerator **relationshipEnumerator);
+                     IOpcRelationshipSet *This,
+                     IOpcRelationshipEnumerator **relationshipEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumeratorForType)(
-        IOpcRelationshipSet *This,
-        LPCWSTR relationshipType,
-        IOpcRelationshipEnumerator **relationshipEnumerator);
+                     IOpcRelationshipSet *This,
+                     LPCWSTR relationshipType,
+                     IOpcRelationshipEnumerator **relationshipEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetRelationshipsContentStream)(
-        IOpcRelationshipSet *This,
-        IStream **contents);
+                     IOpcRelationshipSet *This,
+                     IStream **contents);
 
     END_INTERFACE
 } IOpcRelationshipSetVtbl;
@@ -2301,8 +2301,8 @@ MIDL_INTERFACE("5d77a19e-62c1-44e7-becd-45da5ae51a56")
 IOpcSignatureCustomObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetXml(
-        UINT8 **xmlMarkup,
-        UINT32 *count) = 0;
+                     UINT8 **xmlMarkup,
+                     UINT32 *count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2314,21 +2314,21 @@ typedef struct IOpcSignatureCustomObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureCustomObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureCustomObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureCustomObject *This);
+                     IOpcSignatureCustomObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureCustomObject *This);
+                     IOpcSignatureCustomObject *This);
 
     /*** IOpcSignatureCustomObject methods ***/
     HRESULT (STDMETHODCALLTYPE *GetXml)(
-        IOpcSignatureCustomObject *This,
-        UINT8 **xmlMarkup,
-        UINT32 *count);
+                     IOpcSignatureCustomObject *This,
+                     UINT8 **xmlMarkup,
+                     UINT32 *count);
 
     END_INTERFACE
 } IOpcSignatureCustomObjectVtbl;
@@ -2380,16 +2380,16 @@ MIDL_INTERFACE("5ee4fe1d-e1b0-4683-8079-7ea0fcf80b4c")
 IOpcSignatureCustomObjectEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        IOpcSignatureCustomObject **customObject) = 0;
+                     IOpcSignatureCustomObject **customObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcSignatureCustomObjectEnumerator **copy) = 0;
+                     IOpcSignatureCustomObjectEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2401,32 +2401,32 @@ typedef struct IOpcSignatureCustomObjectEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureCustomObjectEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureCustomObjectEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureCustomObjectEnumerator *This);
+                     IOpcSignatureCustomObjectEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureCustomObjectEnumerator *This);
+                     IOpcSignatureCustomObjectEnumerator *This);
 
     /*** IOpcSignatureCustomObjectEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcSignatureCustomObjectEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcSignatureCustomObjectEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcSignatureCustomObjectEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcSignatureCustomObjectEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcSignatureCustomObjectEnumerator *This,
-        IOpcSignatureCustomObject **customObject);
+                     IOpcSignatureCustomObjectEnumerator *This,
+                     IOpcSignatureCustomObject **customObject);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcSignatureCustomObjectEnumerator *This,
-        IOpcSignatureCustomObjectEnumerator **copy);
+                     IOpcSignatureCustomObjectEnumerator *This,
+                     IOpcSignatureCustomObjectEnumerator **copy);
 
     END_INTERFACE
 } IOpcSignatureCustomObjectEnumeratorVtbl;
@@ -2490,20 +2490,20 @@ MIDL_INTERFACE("e24231ca-59f4-484e-b64b-36eeda36072c")
 IOpcSignaturePartReference : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPartName(
-        IOpcPartUri **partName) = 0;
+                     IOpcPartUri **partName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContentType(
-        LPWSTR *contentType) = 0;
+                     LPWSTR *contentType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDigestMethod(
-        LPWSTR *digestMethod) = 0;
+                     LPWSTR *digestMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDigestValue(
-        UINT8 **digestValue,
-        UINT32 *count) = 0;
+                     UINT8 **digestValue,
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformMethod(
-        OPC_CANONICALIZATION_METHOD *transformMethod) = 0;
+                     OPC_CANONICALIZATION_METHOD *transformMethod) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2515,37 +2515,37 @@ typedef struct IOpcSignaturePartReferenceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignaturePartReference *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignaturePartReference *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignaturePartReference *This);
+                     IOpcSignaturePartReference *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignaturePartReference *This);
+                     IOpcSignaturePartReference *This);
 
     /*** IOpcSignaturePartReference methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IOpcSignaturePartReference *This,
-        IOpcPartUri **partName);
+                     IOpcSignaturePartReference *This,
+                     IOpcPartUri **partName);
 
     HRESULT (STDMETHODCALLTYPE *GetContentType)(
-        IOpcSignaturePartReference *This,
-        LPWSTR *contentType);
+                     IOpcSignaturePartReference *This,
+                     LPWSTR *contentType);
 
     HRESULT (STDMETHODCALLTYPE *GetDigestMethod)(
-        IOpcSignaturePartReference *This,
-        LPWSTR *digestMethod);
+                     IOpcSignaturePartReference *This,
+                     LPWSTR *digestMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetDigestValue)(
-        IOpcSignaturePartReference *This,
-        UINT8 **digestValue,
-        UINT32 *count);
+                     IOpcSignaturePartReference *This,
+                     UINT8 **digestValue,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformMethod)(
-        IOpcSignaturePartReference *This,
-        OPC_CANONICALIZATION_METHOD *transformMethod);
+                     IOpcSignaturePartReference *This,
+                     OPC_CANONICALIZATION_METHOD *transformMethod);
 
     END_INTERFACE
 } IOpcSignaturePartReferenceVtbl;
@@ -2613,16 +2613,16 @@ MIDL_INTERFACE("80eb1561-8c77-49cf-8266-459b356ee99a")
 IOpcSignaturePartReferenceEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        IOpcSignaturePartReference **partReference) = 0;
+                     IOpcSignaturePartReference **partReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcSignaturePartReferenceEnumerator **copy) = 0;
+                     IOpcSignaturePartReferenceEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2634,32 +2634,32 @@ typedef struct IOpcSignaturePartReferenceEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignaturePartReferenceEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignaturePartReferenceEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignaturePartReferenceEnumerator *This);
+                     IOpcSignaturePartReferenceEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignaturePartReferenceEnumerator *This);
+                     IOpcSignaturePartReferenceEnumerator *This);
 
     /*** IOpcSignaturePartReferenceEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcSignaturePartReferenceEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcSignaturePartReferenceEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcSignaturePartReferenceEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcSignaturePartReferenceEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcSignaturePartReferenceEnumerator *This,
-        IOpcSignaturePartReference **partReference);
+                     IOpcSignaturePartReferenceEnumerator *This,
+                     IOpcSignaturePartReference **partReference);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcSignaturePartReferenceEnumerator *This,
-        IOpcSignaturePartReferenceEnumerator **copy);
+                     IOpcSignaturePartReferenceEnumerator *This,
+                     IOpcSignaturePartReferenceEnumerator **copy);
 
     END_INTERFACE
 } IOpcSignaturePartReferenceEnumeratorVtbl;
@@ -2723,23 +2723,23 @@ MIDL_INTERFACE("1b47005e-3011-4edc-be6f-0f65e5ab0342")
 IOpcSignatureReference : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetId(
-        LPWSTR *referenceId) = 0;
+                     LPWSTR *referenceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUri(
-        IUri **referenceUri) = 0;
+                     IUri **referenceUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        LPWSTR *type) = 0;
+                     LPWSTR *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformMethod(
-        OPC_CANONICALIZATION_METHOD *transformMethod) = 0;
+                     OPC_CANONICALIZATION_METHOD *transformMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDigestMethod(
-        LPWSTR *digestMethod) = 0;
+                     LPWSTR *digestMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDigestValue(
-        UINT8 **digestValue,
-        UINT32 *count) = 0;
+                     UINT8 **digestValue,
+                     UINT32 *count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2751,41 +2751,41 @@ typedef struct IOpcSignatureReferenceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureReference *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureReference *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureReference *This);
+                     IOpcSignatureReference *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureReference *This);
+                     IOpcSignatureReference *This);
 
     /*** IOpcSignatureReference methods ***/
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        IOpcSignatureReference *This,
-        LPWSTR *referenceId);
+                     IOpcSignatureReference *This,
+                     LPWSTR *referenceId);
 
     HRESULT (STDMETHODCALLTYPE *GetUri)(
-        IOpcSignatureReference *This,
-        IUri **referenceUri);
+                     IOpcSignatureReference *This,
+                     IUri **referenceUri);
 
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IOpcSignatureReference *This,
-        LPWSTR *type);
+                     IOpcSignatureReference *This,
+                     LPWSTR *type);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformMethod)(
-        IOpcSignatureReference *This,
-        OPC_CANONICALIZATION_METHOD *transformMethod);
+                     IOpcSignatureReference *This,
+                     OPC_CANONICALIZATION_METHOD *transformMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetDigestMethod)(
-        IOpcSignatureReference *This,
-        LPWSTR *digestMethod);
+                     IOpcSignatureReference *This,
+                     LPWSTR *digestMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetDigestValue)(
-        IOpcSignatureReference *This,
-        UINT8 **digestValue,
-        UINT32 *count);
+                     IOpcSignatureReference *This,
+                     UINT8 **digestValue,
+                     UINT32 *count);
 
     END_INTERFACE
 } IOpcSignatureReferenceVtbl;
@@ -2857,16 +2857,16 @@ MIDL_INTERFACE("cfa59a45-28b1-4868-969e-fa8097fdc12a")
 IOpcSignatureReferenceEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        IOpcSignatureReference **reference) = 0;
+                     IOpcSignatureReference **reference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcSignatureReferenceEnumerator **copy) = 0;
+                     IOpcSignatureReferenceEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2878,32 +2878,32 @@ typedef struct IOpcSignatureReferenceEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureReferenceEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureReferenceEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureReferenceEnumerator *This);
+                     IOpcSignatureReferenceEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureReferenceEnumerator *This);
+                     IOpcSignatureReferenceEnumerator *This);
 
     /*** IOpcSignatureReferenceEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcSignatureReferenceEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcSignatureReferenceEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcSignatureReferenceEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcSignatureReferenceEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcSignatureReferenceEnumerator *This,
-        IOpcSignatureReference **reference);
+                     IOpcSignatureReferenceEnumerator *This,
+                     IOpcSignatureReference **reference);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcSignatureReferenceEnumerator *This,
-        IOpcSignatureReferenceEnumerator **copy);
+                     IOpcSignatureReferenceEnumerator *This,
+                     IOpcSignatureReferenceEnumerator **copy);
 
     END_INTERFACE
 } IOpcSignatureReferenceEnumeratorVtbl;
@@ -2967,16 +2967,16 @@ MIDL_INTERFACE("773ba3e4-f021-48e4-aa04-9816db5d3495")
 IOpcSignatureRelationshipReferenceEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        IOpcSignatureRelationshipReference **relationshipReference) = 0;
+                     IOpcSignatureRelationshipReference **relationshipReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcSignatureRelationshipReferenceEnumerator **copy) = 0;
+                     IOpcSignatureRelationshipReferenceEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2988,32 +2988,32 @@ typedef struct IOpcSignatureRelationshipReferenceEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureRelationshipReferenceEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureRelationshipReferenceEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureRelationshipReferenceEnumerator *This);
+                     IOpcSignatureRelationshipReferenceEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureRelationshipReferenceEnumerator *This);
+                     IOpcSignatureRelationshipReferenceEnumerator *This);
 
     /*** IOpcSignatureRelationshipReferenceEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcSignatureRelationshipReferenceEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcSignatureRelationshipReferenceEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcSignatureRelationshipReferenceEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcSignatureRelationshipReferenceEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcSignatureRelationshipReferenceEnumerator *This,
-        IOpcSignatureRelationshipReference **relationshipReference);
+                     IOpcSignatureRelationshipReferenceEnumerator *This,
+                     IOpcSignatureRelationshipReference **relationshipReference);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcSignatureRelationshipReferenceEnumerator *This,
-        IOpcSignatureRelationshipReferenceEnumerator **copy);
+                     IOpcSignatureRelationshipReferenceEnumerator *This,
+                     IOpcSignatureRelationshipReferenceEnumerator **copy);
 
     END_INTERFACE
 } IOpcSignatureRelationshipReferenceEnumeratorVtbl;
@@ -3077,23 +3077,23 @@ MIDL_INTERFACE("57babac6-9d4a-4e50-8b86-e5d4051eae7c")
 IOpcSignatureRelationshipReference : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSourceUri(
-        IOpcUri **sourceUri) = 0;
+                     IOpcUri **sourceUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDigestMethod(
-        LPWSTR *digestMethod) = 0;
+                     LPWSTR *digestMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDigestValue(
-        UINT8 **digestValue,
-        UINT32 *count) = 0;
+                     UINT8 **digestValue,
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransformMethod(
-        OPC_CANONICALIZATION_METHOD *transformMethod) = 0;
+                     OPC_CANONICALIZATION_METHOD *transformMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelationshipSigningOption(
-        OPC_RELATIONSHIPS_SIGNING_OPTION *relationshipSigningOption) = 0;
+                     OPC_RELATIONSHIPS_SIGNING_OPTION *relationshipSigningOption) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelationshipSelectorEnumerator(
-        IOpcRelationshipSelectorEnumerator **selectorEnumerator) = 0;
+                     IOpcRelationshipSelectorEnumerator **selectorEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3105,41 +3105,41 @@ typedef struct IOpcSignatureRelationshipReferenceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureRelationshipReference *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureRelationshipReference *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureRelationshipReference *This);
+                     IOpcSignatureRelationshipReference *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureRelationshipReference *This);
+                     IOpcSignatureRelationshipReference *This);
 
     /*** IOpcSignatureRelationshipReference methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSourceUri)(
-        IOpcSignatureRelationshipReference *This,
-        IOpcUri **sourceUri);
+                     IOpcSignatureRelationshipReference *This,
+                     IOpcUri **sourceUri);
 
     HRESULT (STDMETHODCALLTYPE *GetDigestMethod)(
-        IOpcSignatureRelationshipReference *This,
-        LPWSTR *digestMethod);
+                     IOpcSignatureRelationshipReference *This,
+                     LPWSTR *digestMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetDigestValue)(
-        IOpcSignatureRelationshipReference *This,
-        UINT8 **digestValue,
-        UINT32 *count);
+                     IOpcSignatureRelationshipReference *This,
+                     UINT8 **digestValue,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetTransformMethod)(
-        IOpcSignatureRelationshipReference *This,
-        OPC_CANONICALIZATION_METHOD *transformMethod);
+                     IOpcSignatureRelationshipReference *This,
+                     OPC_CANONICALIZATION_METHOD *transformMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetRelationshipSigningOption)(
-        IOpcSignatureRelationshipReference *This,
-        OPC_RELATIONSHIPS_SIGNING_OPTION *relationshipSigningOption);
+                     IOpcSignatureRelationshipReference *This,
+                     OPC_RELATIONSHIPS_SIGNING_OPTION *relationshipSigningOption);
 
     HRESULT (STDMETHODCALLTYPE *GetRelationshipSelectorEnumerator)(
-        IOpcSignatureRelationshipReference *This,
-        IOpcRelationshipSelectorEnumerator **selectorEnumerator);
+                     IOpcSignatureRelationshipReference *This,
+                     IOpcRelationshipSelectorEnumerator **selectorEnumerator);
 
     END_INTERFACE
 } IOpcSignatureRelationshipReferenceVtbl;
@@ -3211,16 +3211,16 @@ MIDL_INTERFACE("5e50a181-a91b-48ac-88d2-bca3d8f8c0b1")
 IOpcRelationshipSelectorEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        IOpcRelationshipSelector **relationshipSelector) = 0;
+                     IOpcRelationshipSelector **relationshipSelector) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcRelationshipSelectorEnumerator **copy) = 0;
+                     IOpcRelationshipSelectorEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3232,32 +3232,32 @@ typedef struct IOpcRelationshipSelectorEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcRelationshipSelectorEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcRelationshipSelectorEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcRelationshipSelectorEnumerator *This);
+                     IOpcRelationshipSelectorEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcRelationshipSelectorEnumerator *This);
+                     IOpcRelationshipSelectorEnumerator *This);
 
     /*** IOpcRelationshipSelectorEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcRelationshipSelectorEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcRelationshipSelectorEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcRelationshipSelectorEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcRelationshipSelectorEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcRelationshipSelectorEnumerator *This,
-        IOpcRelationshipSelector **relationshipSelector);
+                     IOpcRelationshipSelectorEnumerator *This,
+                     IOpcRelationshipSelector **relationshipSelector);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcRelationshipSelectorEnumerator *This,
-        IOpcRelationshipSelectorEnumerator **copy);
+                     IOpcRelationshipSelectorEnumerator *This,
+                     IOpcRelationshipSelectorEnumerator **copy);
 
     END_INTERFACE
 } IOpcRelationshipSelectorEnumeratorVtbl;
@@ -3321,16 +3321,16 @@ MIDL_INTERFACE("85131937-8f24-421f-b439-59ab24d140b8")
 IOpcCertificateEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        const CERT_CONTEXT **certificate) = 0;
+                     const CERT_CONTEXT **certificate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcCertificateEnumerator **copy) = 0;
+                     IOpcCertificateEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3342,32 +3342,32 @@ typedef struct IOpcCertificateEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcCertificateEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcCertificateEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcCertificateEnumerator *This);
+                     IOpcCertificateEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcCertificateEnumerator *This);
+                     IOpcCertificateEnumerator *This);
 
     /*** IOpcCertificateEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcCertificateEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcCertificateEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcCertificateEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcCertificateEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcCertificateEnumerator *This,
-        const CERT_CONTEXT **certificate);
+                     IOpcCertificateEnumerator *This,
+                     const CERT_CONTEXT **certificate);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcCertificateEnumerator *This,
-        IOpcCertificateEnumerator **copy);
+                     IOpcCertificateEnumerator *This,
+                     IOpcCertificateEnumerator **copy);
 
     END_INTERFACE
 } IOpcCertificateEnumeratorVtbl;
@@ -3431,13 +3431,13 @@ MIDL_INTERFACE("56ea4325-8e2d-4167-b1a4-e486d24c8fa7")
 IOpcCertificateSet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Add(
-        const CERT_CONTEXT *certificate) = 0;
+                     const CERT_CONTEXT *certificate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        const CERT_CONTEXT *certificate) = 0;
+                     const CERT_CONTEXT *certificate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IOpcCertificateEnumerator **certificateEnumerator) = 0;
+                     IOpcCertificateEnumerator **certificateEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3449,28 +3449,28 @@ typedef struct IOpcCertificateSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcCertificateSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcCertificateSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcCertificateSet *This);
+                     IOpcCertificateSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcCertificateSet *This);
+                     IOpcCertificateSet *This);
 
     /*** IOpcCertificateSet methods ***/
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IOpcCertificateSet *This,
-        const CERT_CONTEXT *certificate);
+                     IOpcCertificateSet *This,
+                     const CERT_CONTEXT *certificate);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IOpcCertificateSet *This,
-        const CERT_CONTEXT *certificate);
+                     IOpcCertificateSet *This,
+                     const CERT_CONTEXT *certificate);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IOpcCertificateSet *This,
-        IOpcCertificateEnumerator **certificateEnumerator);
+                     IOpcCertificateSet *This,
+                     IOpcCertificateEnumerator **certificateEnumerator);
 
     END_INTERFACE
 } IOpcCertificateSetVtbl;
@@ -3530,16 +3530,16 @@ MIDL_INTERFACE("967b6882-0ba3-4358-b9e7-b64c75063c5e")
 IOpcDigitalSignatureEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *hasNext) = 0;
+                     WINBOOL *hasNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MovePrevious(
-        WINBOOL *hasPrevious) = 0;
+                     WINBOOL *hasPrevious) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrent(
-        IOpcDigitalSignature **digitalSignature) = 0;
+                     IOpcDigitalSignature **digitalSignature) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IOpcDigitalSignatureEnumerator **copy) = 0;
+                     IOpcDigitalSignatureEnumerator **copy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3551,32 +3551,32 @@ typedef struct IOpcDigitalSignatureEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcDigitalSignatureEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcDigitalSignatureEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcDigitalSignatureEnumerator *This);
+                     IOpcDigitalSignatureEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcDigitalSignatureEnumerator *This);
+                     IOpcDigitalSignatureEnumerator *This);
 
     /*** IOpcDigitalSignatureEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IOpcDigitalSignatureEnumerator *This,
-        WINBOOL *hasNext);
+                     IOpcDigitalSignatureEnumerator *This,
+                     WINBOOL *hasNext);
 
     HRESULT (STDMETHODCALLTYPE *MovePrevious)(
-        IOpcDigitalSignatureEnumerator *This,
-        WINBOOL *hasPrevious);
+                     IOpcDigitalSignatureEnumerator *This,
+                     WINBOOL *hasPrevious);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrent)(
-        IOpcDigitalSignatureEnumerator *This,
-        IOpcDigitalSignature **digitalSignature);
+                     IOpcDigitalSignatureEnumerator *This,
+                     IOpcDigitalSignature **digitalSignature);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IOpcDigitalSignatureEnumerator *This,
-        IOpcDigitalSignatureEnumerator **copy);
+                     IOpcDigitalSignatureEnumerator *This,
+                     IOpcDigitalSignatureEnumerator **copy);
 
     END_INTERFACE
 } IOpcDigitalSignatureEnumeratorVtbl;
@@ -3640,35 +3640,35 @@ MIDL_INTERFACE("d5e62a0b-696d-462f-94df-72e33cef2659")
 IOpcDigitalSignatureManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSignatureOriginPartName(
-        IOpcPartUri **signatureOriginPartName) = 0;
+                     IOpcPartUri **signatureOriginPartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignatureOriginPartName(
-        IOpcPartUri *signatureOriginPartName) = 0;
+                     IOpcPartUri *signatureOriginPartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureEnumerator(
-        IOpcDigitalSignatureEnumerator **signatureEnumerator) = 0;
+                     IOpcDigitalSignatureEnumerator **signatureEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveSignature(
-        IOpcPartUri *signaturePartName) = 0;
+                     IOpcPartUri *signaturePartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSigningOptions(
-        IOpcSigningOptions **signingOptions) = 0;
+                     IOpcSigningOptions **signingOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Validate(
-        IOpcDigitalSignature *signature,
-        const CERT_CONTEXT *certificate,
-        OPC_SIGNATURE_VALIDATION_RESULT *validationResult) = 0;
+                     IOpcDigitalSignature *signature,
+                     const CERT_CONTEXT *certificate,
+                     OPC_SIGNATURE_VALIDATION_RESULT *validationResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Sign(
-        const CERT_CONTEXT *certificate,
-        IOpcSigningOptions *signingOptions,
-        IOpcDigitalSignature **digitalSignature) = 0;
+                     const CERT_CONTEXT *certificate,
+                     IOpcSigningOptions *signingOptions,
+                     IOpcDigitalSignature **digitalSignature) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReplaceSignatureXml(
-        IOpcPartUri *signaturePartName,
-        const UINT8 *newSignatureXml,
-        UINT32 count,
-        IOpcDigitalSignature **digitalSignature) = 0;
+                     IOpcPartUri *signaturePartName,
+                     const UINT8 *newSignatureXml,
+                     UINT32 count,
+                     IOpcDigitalSignature **digitalSignature) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3680,55 +3680,55 @@ typedef struct IOpcDigitalSignatureManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcDigitalSignatureManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcDigitalSignatureManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcDigitalSignatureManager *This);
+                     IOpcDigitalSignatureManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcDigitalSignatureManager *This);
+                     IOpcDigitalSignatureManager *This);
 
     /*** IOpcDigitalSignatureManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSignatureOriginPartName)(
-        IOpcDigitalSignatureManager *This,
-        IOpcPartUri **signatureOriginPartName);
+                     IOpcDigitalSignatureManager *This,
+                     IOpcPartUri **signatureOriginPartName);
 
     HRESULT (STDMETHODCALLTYPE *SetSignatureOriginPartName)(
-        IOpcDigitalSignatureManager *This,
-        IOpcPartUri *signatureOriginPartName);
+                     IOpcDigitalSignatureManager *This,
+                     IOpcPartUri *signatureOriginPartName);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureEnumerator)(
-        IOpcDigitalSignatureManager *This,
-        IOpcDigitalSignatureEnumerator **signatureEnumerator);
+                     IOpcDigitalSignatureManager *This,
+                     IOpcDigitalSignatureEnumerator **signatureEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *RemoveSignature)(
-        IOpcDigitalSignatureManager *This,
-        IOpcPartUri *signaturePartName);
+                     IOpcDigitalSignatureManager *This,
+                     IOpcPartUri *signaturePartName);
 
     HRESULT (STDMETHODCALLTYPE *CreateSigningOptions)(
-        IOpcDigitalSignatureManager *This,
-        IOpcSigningOptions **signingOptions);
+                     IOpcDigitalSignatureManager *This,
+                     IOpcSigningOptions **signingOptions);
 
     HRESULT (STDMETHODCALLTYPE *Validate)(
-        IOpcDigitalSignatureManager *This,
-        IOpcDigitalSignature *signature,
-        const CERT_CONTEXT *certificate,
-        OPC_SIGNATURE_VALIDATION_RESULT *validationResult);
+                     IOpcDigitalSignatureManager *This,
+                     IOpcDigitalSignature *signature,
+                     const CERT_CONTEXT *certificate,
+                     OPC_SIGNATURE_VALIDATION_RESULT *validationResult);
 
     HRESULT (STDMETHODCALLTYPE *Sign)(
-        IOpcDigitalSignatureManager *This,
-        const CERT_CONTEXT *certificate,
-        IOpcSigningOptions *signingOptions,
-        IOpcDigitalSignature **digitalSignature);
+                     IOpcDigitalSignatureManager *This,
+                     const CERT_CONTEXT *certificate,
+                     IOpcSigningOptions *signingOptions,
+                     IOpcDigitalSignature **digitalSignature);
 
     HRESULT (STDMETHODCALLTYPE *ReplaceSignatureXml)(
-        IOpcDigitalSignatureManager *This,
-        IOpcPartUri *signaturePartName,
-        const UINT8 *newSignatureXml,
-        UINT32 count,
-        IOpcDigitalSignature **digitalSignature);
+                     IOpcDigitalSignatureManager *This,
+                     IOpcPartUri *signaturePartName,
+                     const UINT8 *newSignatureXml,
+                     UINT32 count,
+                     IOpcDigitalSignature **digitalSignature);
 
     END_INTERFACE
 } IOpcDigitalSignatureManagerVtbl;
@@ -3808,16 +3808,16 @@ MIDL_INTERFACE("6c9fe28c-ecd9-4b22-9d36-7fdde670fec0")
 IOpcSignaturePartReferenceSet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Create(
-        IOpcPartUri *partUri,
-        LPCWSTR digestMethod,
-        OPC_CANONICALIZATION_METHOD transformMethod,
-        IOpcSignaturePartReference **partReference) = 0;
+                     IOpcPartUri *partUri,
+                     LPCWSTR digestMethod,
+                     OPC_CANONICALIZATION_METHOD transformMethod,
+                     IOpcSignaturePartReference **partReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        IOpcSignaturePartReference *partReference) = 0;
+                     IOpcSignaturePartReference *partReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IOpcSignaturePartReferenceEnumerator **partReferenceEnumerator) = 0;
+                     IOpcSignaturePartReferenceEnumerator **partReferenceEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3829,31 +3829,31 @@ typedef struct IOpcSignaturePartReferenceSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignaturePartReferenceSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignaturePartReferenceSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignaturePartReferenceSet *This);
+                     IOpcSignaturePartReferenceSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignaturePartReferenceSet *This);
+                     IOpcSignaturePartReferenceSet *This);
 
     /*** IOpcSignaturePartReferenceSet methods ***/
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IOpcSignaturePartReferenceSet *This,
-        IOpcPartUri *partUri,
-        LPCWSTR digestMethod,
-        OPC_CANONICALIZATION_METHOD transformMethod,
-        IOpcSignaturePartReference **partReference);
+                     IOpcSignaturePartReferenceSet *This,
+                     IOpcPartUri *partUri,
+                     LPCWSTR digestMethod,
+                     OPC_CANONICALIZATION_METHOD transformMethod,
+                     IOpcSignaturePartReference **partReference);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IOpcSignaturePartReferenceSet *This,
-        IOpcSignaturePartReference *partReference);
+                     IOpcSignaturePartReferenceSet *This,
+                     IOpcSignaturePartReference *partReference);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IOpcSignaturePartReferenceSet *This,
-        IOpcSignaturePartReferenceEnumerator **partReferenceEnumerator);
+                     IOpcSignaturePartReferenceSet *This,
+                     IOpcSignaturePartReferenceEnumerator **partReferenceEnumerator);
 
     END_INTERFACE
 } IOpcSignaturePartReferenceSetVtbl;
@@ -3913,15 +3913,15 @@ MIDL_INTERFACE("6e34c269-a4d3-47c0-b5c4-87ff2b3b6136")
 IOpcRelationshipSelectorSet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Create(
-        OPC_RELATIONSHIP_SELECTOR selector,
-        LPCWSTR selectionCriterion,
-        IOpcRelationshipSelector **relationshipSelector) = 0;
+                     OPC_RELATIONSHIP_SELECTOR selector,
+                     LPCWSTR selectionCriterion,
+                     IOpcRelationshipSelector **relationshipSelector) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        IOpcRelationshipSelector *relationshipSelector) = 0;
+                     IOpcRelationshipSelector *relationshipSelector) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IOpcRelationshipSelectorEnumerator **relationshipSelectorEnumerator) = 0;
+                     IOpcRelationshipSelectorEnumerator **relationshipSelectorEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3933,30 +3933,30 @@ typedef struct IOpcRelationshipSelectorSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcRelationshipSelectorSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcRelationshipSelectorSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcRelationshipSelectorSet *This);
+                     IOpcRelationshipSelectorSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcRelationshipSelectorSet *This);
+                     IOpcRelationshipSelectorSet *This);
 
     /*** IOpcRelationshipSelectorSet methods ***/
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IOpcRelationshipSelectorSet *This,
-        OPC_RELATIONSHIP_SELECTOR selector,
-        LPCWSTR selectionCriterion,
-        IOpcRelationshipSelector **relationshipSelector);
+                     IOpcRelationshipSelectorSet *This,
+                     OPC_RELATIONSHIP_SELECTOR selector,
+                     LPCWSTR selectionCriterion,
+                     IOpcRelationshipSelector **relationshipSelector);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IOpcRelationshipSelectorSet *This,
-        IOpcRelationshipSelector *relationshipSelector);
+                     IOpcRelationshipSelectorSet *This,
+                     IOpcRelationshipSelector *relationshipSelector);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IOpcRelationshipSelectorSet *This,
-        IOpcRelationshipSelectorEnumerator **relationshipSelectorEnumerator);
+                     IOpcRelationshipSelectorSet *This,
+                     IOpcRelationshipSelectorEnumerator **relationshipSelectorEnumerator);
 
     END_INTERFACE
 } IOpcRelationshipSelectorSetVtbl;
@@ -4016,21 +4016,21 @@ MIDL_INTERFACE("9f863ca5-3631-404c-828d-807e0715069b")
 IOpcSignatureRelationshipReferenceSet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Create(
-        IOpcUri *sourceUri,
-        LPCWSTR digestMethod,
-        OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption,
-        IOpcRelationshipSelectorSet *selectorSet,
-        OPC_CANONICALIZATION_METHOD transformMethod,
-        IOpcSignatureRelationshipReference **relationshipReference) = 0;
+                     IOpcUri *sourceUri,
+                     LPCWSTR digestMethod,
+                     OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption,
+                     IOpcRelationshipSelectorSet *selectorSet,
+                     OPC_CANONICALIZATION_METHOD transformMethod,
+                     IOpcSignatureRelationshipReference **relationshipReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRelationshipSelectorSet(
-        IOpcRelationshipSelectorSet **selectorSet) = 0;
+                     IOpcRelationshipSelectorSet **selectorSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        IOpcSignatureRelationshipReference *relationshipReference) = 0;
+                     IOpcSignatureRelationshipReference *relationshipReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IOpcSignatureRelationshipReferenceEnumerator **relationshipReferenceEnumerator) = 0;
+                     IOpcSignatureRelationshipReferenceEnumerator **relationshipReferenceEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4042,37 +4042,37 @@ typedef struct IOpcSignatureRelationshipReferenceSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureRelationshipReferenceSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureRelationshipReferenceSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureRelationshipReferenceSet *This);
+                     IOpcSignatureRelationshipReferenceSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureRelationshipReferenceSet *This);
+                     IOpcSignatureRelationshipReferenceSet *This);
 
     /*** IOpcSignatureRelationshipReferenceSet methods ***/
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IOpcSignatureRelationshipReferenceSet *This,
-        IOpcUri *sourceUri,
-        LPCWSTR digestMethod,
-        OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption,
-        IOpcRelationshipSelectorSet *selectorSet,
-        OPC_CANONICALIZATION_METHOD transformMethod,
-        IOpcSignatureRelationshipReference **relationshipReference);
+                     IOpcSignatureRelationshipReferenceSet *This,
+                     IOpcUri *sourceUri,
+                     LPCWSTR digestMethod,
+                     OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption,
+                     IOpcRelationshipSelectorSet *selectorSet,
+                     OPC_CANONICALIZATION_METHOD transformMethod,
+                     IOpcSignatureRelationshipReference **relationshipReference);
 
     HRESULT (STDMETHODCALLTYPE *CreateRelationshipSelectorSet)(
-        IOpcSignatureRelationshipReferenceSet *This,
-        IOpcRelationshipSelectorSet **selectorSet);
+                     IOpcSignatureRelationshipReferenceSet *This,
+                     IOpcRelationshipSelectorSet **selectorSet);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IOpcSignatureRelationshipReferenceSet *This,
-        IOpcSignatureRelationshipReference *relationshipReference);
+                     IOpcSignatureRelationshipReferenceSet *This,
+                     IOpcSignatureRelationshipReference *relationshipReference);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IOpcSignatureRelationshipReferenceSet *This,
-        IOpcSignatureRelationshipReferenceEnumerator **relationshipReferenceEnumerator);
+                     IOpcSignatureRelationshipReferenceSet *This,
+                     IOpcSignatureRelationshipReferenceEnumerator **relationshipReferenceEnumerator);
 
     END_INTERFACE
 } IOpcSignatureRelationshipReferenceSetVtbl;
@@ -4136,18 +4136,18 @@ MIDL_INTERFACE("f3b02d31-ab12-42dd-9e2f-2b16761c3c1e")
 IOpcSignatureReferenceSet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Create(
-        IUri *referenceUri,
-        LPCWSTR referenceId,
-        LPCWSTR type,
-        LPCWSTR digestMethod,
-        OPC_CANONICALIZATION_METHOD transformMethod,
-        IOpcSignatureReference **reference) = 0;
+                     IUri *referenceUri,
+                     LPCWSTR referenceId,
+                     LPCWSTR type,
+                     LPCWSTR digestMethod,
+                     OPC_CANONICALIZATION_METHOD transformMethod,
+                     IOpcSignatureReference **reference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        IOpcSignatureReference *reference) = 0;
+                     IOpcSignatureReference *reference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IOpcSignatureReferenceEnumerator **referenceEnumerator) = 0;
+                     IOpcSignatureReferenceEnumerator **referenceEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4159,33 +4159,33 @@ typedef struct IOpcSignatureReferenceSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureReferenceSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureReferenceSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureReferenceSet *This);
+                     IOpcSignatureReferenceSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureReferenceSet *This);
+                     IOpcSignatureReferenceSet *This);
 
     /*** IOpcSignatureReferenceSet methods ***/
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IOpcSignatureReferenceSet *This,
-        IUri *referenceUri,
-        LPCWSTR referenceId,
-        LPCWSTR type,
-        LPCWSTR digestMethod,
-        OPC_CANONICALIZATION_METHOD transformMethod,
-        IOpcSignatureReference **reference);
+                     IOpcSignatureReferenceSet *This,
+                     IUri *referenceUri,
+                     LPCWSTR referenceId,
+                     LPCWSTR type,
+                     LPCWSTR digestMethod,
+                     OPC_CANONICALIZATION_METHOD transformMethod,
+                     IOpcSignatureReference **reference);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IOpcSignatureReferenceSet *This,
-        IOpcSignatureReference *reference);
+                     IOpcSignatureReferenceSet *This,
+                     IOpcSignatureReference *reference);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IOpcSignatureReferenceSet *This,
-        IOpcSignatureReferenceEnumerator **referenceEnumerator);
+                     IOpcSignatureReferenceSet *This,
+                     IOpcSignatureReferenceEnumerator **referenceEnumerator);
 
     END_INTERFACE
 } IOpcSignatureReferenceSetVtbl;
@@ -4245,15 +4245,15 @@ MIDL_INTERFACE("8f792ac5-7947-4e11-bc3d-2659ff046ae1")
 IOpcSignatureCustomObjectSet : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Create(
-        const UINT8 *xmlMarkup,
-        UINT32 count,
-        IOpcSignatureCustomObject **customObject) = 0;
+                     const UINT8 *xmlMarkup,
+                     UINT32 count,
+                     IOpcSignatureCustomObject **customObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        IOpcSignatureCustomObject *customObject) = 0;
+                     IOpcSignatureCustomObject *customObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnumerator(
-        IOpcSignatureCustomObjectEnumerator **customObjectEnumerator) = 0;
+                     IOpcSignatureCustomObjectEnumerator **customObjectEnumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4265,30 +4265,30 @@ typedef struct IOpcSignatureCustomObjectSetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSignatureCustomObjectSet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSignatureCustomObjectSet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSignatureCustomObjectSet *This);
+                     IOpcSignatureCustomObjectSet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSignatureCustomObjectSet *This);
+                     IOpcSignatureCustomObjectSet *This);
 
     /*** IOpcSignatureCustomObjectSet methods ***/
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IOpcSignatureCustomObjectSet *This,
-        const UINT8 *xmlMarkup,
-        UINT32 count,
-        IOpcSignatureCustomObject **customObject);
+                     IOpcSignatureCustomObjectSet *This,
+                     const UINT8 *xmlMarkup,
+                     UINT32 count,
+                     IOpcSignatureCustomObject **customObject);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IOpcSignatureCustomObjectSet *This,
-        IOpcSignatureCustomObject *customObject);
+                     IOpcSignatureCustomObjectSet *This,
+                     IOpcSignatureCustomObject *customObject);
 
     HRESULT (STDMETHODCALLTYPE *GetEnumerator)(
-        IOpcSignatureCustomObjectSet *This,
-        IOpcSignatureCustomObjectEnumerator **customObjectEnumerator);
+                     IOpcSignatureCustomObjectSet *This,
+                     IOpcSignatureCustomObjectEnumerator **customObjectEnumerator);
 
     END_INTERFACE
 } IOpcSignatureCustomObjectSetVtbl;
@@ -4348,53 +4348,53 @@ MIDL_INTERFACE("52ab21dd-1cd0-4949-bc80-0c1232d00cb4")
 IOpcDigitalSignature : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNamespaces(
-        LPWSTR **prefixes,
-        LPWSTR **namespaces,
-        UINT32 *count) = 0;
+                     LPWSTR **prefixes,
+                     LPWSTR **namespaces,
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureId(
-        LPWSTR *signatureId) = 0;
+                     LPWSTR *signatureId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignaturePartName(
-        IOpcPartUri **signaturePartName) = 0;
+                     IOpcPartUri **signaturePartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureMethod(
-        LPWSTR *signatureMethod) = 0;
+                     LPWSTR *signatureMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCanonicalizationMethod(
-        OPC_CANONICALIZATION_METHOD *canonicalizationMethod) = 0;
+                     OPC_CANONICALIZATION_METHOD *canonicalizationMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureValue(
-        UINT8 **signatureValue,
-        UINT32 *count) = 0;
+                     UINT8 **signatureValue,
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignaturePartReferenceEnumerator(
-        IOpcSignaturePartReferenceEnumerator **partReferenceEnumerator) = 0;
+                     IOpcSignaturePartReferenceEnumerator **partReferenceEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureRelationshipReferenceEnumerator(
-        IOpcSignatureRelationshipReferenceEnumerator **relationshipReferenceEnumerator) = 0;
+                     IOpcSignatureRelationshipReferenceEnumerator **relationshipReferenceEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSigningTime(
-        LPWSTR *signingTime) = 0;
+                     LPWSTR *signingTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimeFormat(
-        OPC_SIGNATURE_TIME_FORMAT *timeFormat) = 0;
+                     OPC_SIGNATURE_TIME_FORMAT *timeFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPackageObjectReference(
-        IOpcSignatureReference **packageObjectReference) = 0;
+                     IOpcSignatureReference **packageObjectReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCertificateEnumerator(
-        IOpcCertificateEnumerator **certificateEnumerator) = 0;
+                     IOpcCertificateEnumerator **certificateEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCustomReferenceEnumerator(
-        IOpcSignatureReferenceEnumerator **customReferenceEnumerator) = 0;
+                     IOpcSignatureReferenceEnumerator **customReferenceEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCustomObjectEnumerator(
-        IOpcSignatureCustomObjectEnumerator **customObjectEnumerator) = 0;
+                     IOpcSignatureCustomObjectEnumerator **customObjectEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureXml(
-        UINT8 **signatureXml,
-        UINT32 *count) = 0;
+                     UINT8 **signatureXml,
+                     UINT32 *count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4406,80 +4406,80 @@ typedef struct IOpcDigitalSignatureVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcDigitalSignature *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcDigitalSignature *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcDigitalSignature *This);
+                     IOpcDigitalSignature *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcDigitalSignature *This);
+                     IOpcDigitalSignature *This);
 
     /*** IOpcDigitalSignature methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNamespaces)(
-        IOpcDigitalSignature *This,
-        LPWSTR **prefixes,
-        LPWSTR **namespaces,
-        UINT32 *count);
+                     IOpcDigitalSignature *This,
+                     LPWSTR **prefixes,
+                     LPWSTR **namespaces,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureId)(
-        IOpcDigitalSignature *This,
-        LPWSTR *signatureId);
+                     IOpcDigitalSignature *This,
+                     LPWSTR *signatureId);
 
     HRESULT (STDMETHODCALLTYPE *GetSignaturePartName)(
-        IOpcDigitalSignature *This,
-        IOpcPartUri **signaturePartName);
+                     IOpcDigitalSignature *This,
+                     IOpcPartUri **signaturePartName);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureMethod)(
-        IOpcDigitalSignature *This,
-        LPWSTR *signatureMethod);
+                     IOpcDigitalSignature *This,
+                     LPWSTR *signatureMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetCanonicalizationMethod)(
-        IOpcDigitalSignature *This,
-        OPC_CANONICALIZATION_METHOD *canonicalizationMethod);
+                     IOpcDigitalSignature *This,
+                     OPC_CANONICALIZATION_METHOD *canonicalizationMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureValue)(
-        IOpcDigitalSignature *This,
-        UINT8 **signatureValue,
-        UINT32 *count);
+                     IOpcDigitalSignature *This,
+                     UINT8 **signatureValue,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetSignaturePartReferenceEnumerator)(
-        IOpcDigitalSignature *This,
-        IOpcSignaturePartReferenceEnumerator **partReferenceEnumerator);
+                     IOpcDigitalSignature *This,
+                     IOpcSignaturePartReferenceEnumerator **partReferenceEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureRelationshipReferenceEnumerator)(
-        IOpcDigitalSignature *This,
-        IOpcSignatureRelationshipReferenceEnumerator **relationshipReferenceEnumerator);
+                     IOpcDigitalSignature *This,
+                     IOpcSignatureRelationshipReferenceEnumerator **relationshipReferenceEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningTime)(
-        IOpcDigitalSignature *This,
-        LPWSTR *signingTime);
+                     IOpcDigitalSignature *This,
+                     LPWSTR *signingTime);
 
     HRESULT (STDMETHODCALLTYPE *GetTimeFormat)(
-        IOpcDigitalSignature *This,
-        OPC_SIGNATURE_TIME_FORMAT *timeFormat);
+                     IOpcDigitalSignature *This,
+                     OPC_SIGNATURE_TIME_FORMAT *timeFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetPackageObjectReference)(
-        IOpcDigitalSignature *This,
-        IOpcSignatureReference **packageObjectReference);
+                     IOpcDigitalSignature *This,
+                     IOpcSignatureReference **packageObjectReference);
 
     HRESULT (STDMETHODCALLTYPE *GetCertificateEnumerator)(
-        IOpcDigitalSignature *This,
-        IOpcCertificateEnumerator **certificateEnumerator);
+                     IOpcDigitalSignature *This,
+                     IOpcCertificateEnumerator **certificateEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetCustomReferenceEnumerator)(
-        IOpcDigitalSignature *This,
-        IOpcSignatureReferenceEnumerator **customReferenceEnumerator);
+                     IOpcDigitalSignature *This,
+                     IOpcSignatureReferenceEnumerator **customReferenceEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetCustomObjectEnumerator)(
-        IOpcDigitalSignature *This,
-        IOpcSignatureCustomObjectEnumerator **customObjectEnumerator);
+                     IOpcDigitalSignature *This,
+                     IOpcSignatureCustomObjectEnumerator **customObjectEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureXml)(
-        IOpcDigitalSignature *This,
-        UINT8 **signatureXml,
-        UINT32 *count);
+                     IOpcDigitalSignature *This,
+                     UINT8 **signatureXml,
+                     UINT32 *count);
 
     END_INTERFACE
 } IOpcDigitalSignatureVtbl;
@@ -4587,55 +4587,55 @@ MIDL_INTERFACE("50d2d6a5-7aeb-46c0-b241-43ab0e9b407e")
 IOpcSigningOptions : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSignatureId(
-        LPWSTR *signatureId) = 0;
+                     LPWSTR *signatureId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignatureId(
-        LPCWSTR signatureId) = 0;
+                     LPCWSTR signatureId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureMethod(
-        LPWSTR *signatureMethod) = 0;
+                     LPWSTR *signatureMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignatureMethod(
-        LPCWSTR signatureMethod) = 0;
+                     LPCWSTR signatureMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultDigestMethod(
-        LPWSTR *digestMethod) = 0;
+                     LPWSTR *digestMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultDigestMethod(
-        LPCWSTR digestMethod) = 0;
+                     LPCWSTR digestMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCertificateEmbeddingOption(
-        OPC_CERTIFICATE_EMBEDDING_OPTION *embeddingOption) = 0;
+                     OPC_CERTIFICATE_EMBEDDING_OPTION *embeddingOption) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCertificateEmbeddingOption(
-        OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) = 0;
+                     OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimeFormat(
-        OPC_SIGNATURE_TIME_FORMAT *timeFormat) = 0;
+                     OPC_SIGNATURE_TIME_FORMAT *timeFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTimeFormat(
-        OPC_SIGNATURE_TIME_FORMAT timeFormat) = 0;
+                     OPC_SIGNATURE_TIME_FORMAT timeFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignaturePartReferenceSet(
-        IOpcSignaturePartReferenceSet **partReferenceSet) = 0;
+                     IOpcSignaturePartReferenceSet **partReferenceSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureRelationshipReferenceSet(
-        IOpcSignatureRelationshipReferenceSet **relationshipReferenceSet) = 0;
+                     IOpcSignatureRelationshipReferenceSet **relationshipReferenceSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCustomObjectSet(
-        IOpcSignatureCustomObjectSet **customObjectSet) = 0;
+                     IOpcSignatureCustomObjectSet **customObjectSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCustomReferenceSet(
-        IOpcSignatureReferenceSet **customReferenceSet) = 0;
+                     IOpcSignatureReferenceSet **customReferenceSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCertificateSet(
-        IOpcCertificateSet **certificateSet) = 0;
+                     IOpcCertificateSet **certificateSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignaturePartName(
-        IOpcPartUri **signaturePartName) = 0;
+                     IOpcPartUri **signaturePartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignaturePartName(
-        IOpcPartUri *signaturePartName) = 0;
+                     IOpcPartUri *signaturePartName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4647,84 +4647,84 @@ typedef struct IOpcSigningOptionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcSigningOptions *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcSigningOptions *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcSigningOptions *This);
+                     IOpcSigningOptions *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcSigningOptions *This);
+                     IOpcSigningOptions *This);
 
     /*** IOpcSigningOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSignatureId)(
-        IOpcSigningOptions *This,
-        LPWSTR *signatureId);
+                     IOpcSigningOptions *This,
+                     LPWSTR *signatureId);
 
     HRESULT (STDMETHODCALLTYPE *SetSignatureId)(
-        IOpcSigningOptions *This,
-        LPCWSTR signatureId);
+                     IOpcSigningOptions *This,
+                     LPCWSTR signatureId);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureMethod)(
-        IOpcSigningOptions *This,
-        LPWSTR *signatureMethod);
+                     IOpcSigningOptions *This,
+                     LPWSTR *signatureMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetSignatureMethod)(
-        IOpcSigningOptions *This,
-        LPCWSTR signatureMethod);
+                     IOpcSigningOptions *This,
+                     LPCWSTR signatureMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultDigestMethod)(
-        IOpcSigningOptions *This,
-        LPWSTR *digestMethod);
+                     IOpcSigningOptions *This,
+                     LPWSTR *digestMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultDigestMethod)(
-        IOpcSigningOptions *This,
-        LPCWSTR digestMethod);
+                     IOpcSigningOptions *This,
+                     LPCWSTR digestMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetCertificateEmbeddingOption)(
-        IOpcSigningOptions *This,
-        OPC_CERTIFICATE_EMBEDDING_OPTION *embeddingOption);
+                     IOpcSigningOptions *This,
+                     OPC_CERTIFICATE_EMBEDDING_OPTION *embeddingOption);
 
     HRESULT (STDMETHODCALLTYPE *SetCertificateEmbeddingOption)(
-        IOpcSigningOptions *This,
-        OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption);
+                     IOpcSigningOptions *This,
+                     OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption);
 
     HRESULT (STDMETHODCALLTYPE *GetTimeFormat)(
-        IOpcSigningOptions *This,
-        OPC_SIGNATURE_TIME_FORMAT *timeFormat);
+                     IOpcSigningOptions *This,
+                     OPC_SIGNATURE_TIME_FORMAT *timeFormat);
 
     HRESULT (STDMETHODCALLTYPE *SetTimeFormat)(
-        IOpcSigningOptions *This,
-        OPC_SIGNATURE_TIME_FORMAT timeFormat);
+                     IOpcSigningOptions *This,
+                     OPC_SIGNATURE_TIME_FORMAT timeFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetSignaturePartReferenceSet)(
-        IOpcSigningOptions *This,
-        IOpcSignaturePartReferenceSet **partReferenceSet);
+                     IOpcSigningOptions *This,
+                     IOpcSignaturePartReferenceSet **partReferenceSet);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureRelationshipReferenceSet)(
-        IOpcSigningOptions *This,
-        IOpcSignatureRelationshipReferenceSet **relationshipReferenceSet);
+                     IOpcSigningOptions *This,
+                     IOpcSignatureRelationshipReferenceSet **relationshipReferenceSet);
 
     HRESULT (STDMETHODCALLTYPE *GetCustomObjectSet)(
-        IOpcSigningOptions *This,
-        IOpcSignatureCustomObjectSet **customObjectSet);
+                     IOpcSigningOptions *This,
+                     IOpcSignatureCustomObjectSet **customObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *GetCustomReferenceSet)(
-        IOpcSigningOptions *This,
-        IOpcSignatureReferenceSet **customReferenceSet);
+                     IOpcSigningOptions *This,
+                     IOpcSignatureReferenceSet **customReferenceSet);
 
     HRESULT (STDMETHODCALLTYPE *GetCertificateSet)(
-        IOpcSigningOptions *This,
-        IOpcCertificateSet **certificateSet);
+                     IOpcSigningOptions *This,
+                     IOpcCertificateSet **certificateSet);
 
     HRESULT (STDMETHODCALLTYPE *GetSignaturePartName)(
-        IOpcSigningOptions *This,
-        IOpcPartUri **signaturePartName);
+                     IOpcSigningOptions *This,
+                     IOpcPartUri **signaturePartName);
 
     HRESULT (STDMETHODCALLTYPE *SetSignaturePartName)(
-        IOpcSigningOptions *This,
-        IOpcPartUri *signaturePartName);
+                     IOpcSigningOptions *This,
+                     IOpcPartUri *signaturePartName);
 
     END_INTERFACE
 } IOpcSigningOptionsVtbl;
@@ -4840,35 +4840,35 @@ MIDL_INTERFACE("6d0b4446-cd73-4ab3-94f4-8ccdf6116154")
 IOpcFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreatePackageRootUri(
-        IOpcUri **rootUri) = 0;
+                     IOpcUri **rootUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePartUri(
-        LPCWSTR pwzUri,
-        IOpcPartUri **partUri) = 0;
+                     LPCWSTR pwzUri,
+                     IOpcPartUri **partUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStreamOnFile(
-        LPCWSTR filename,
-        OPC_STREAM_IO_MODE ioMode,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD dwFlagsAndAttributes,
-        IStream **stream) = 0;
+                     LPCWSTR filename,
+                     OPC_STREAM_IO_MODE ioMode,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD dwFlagsAndAttributes,
+                     IStream **stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePackage(
-        IOpcPackage **package) = 0;
+                     IOpcPackage **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReadPackageFromStream(
-        IStream *stream,
-        OPC_READ_FLAGS flags,
-        IOpcPackage **package) = 0;
+                     IStream *stream,
+                     OPC_READ_FLAGS flags,
+                     IOpcPackage **package) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WritePackageToStream(
-        IOpcPackage *package,
-        OPC_WRITE_FLAGS flags,
-        IStream *stream) = 0;
+                     IOpcPackage *package,
+                     OPC_WRITE_FLAGS flags,
+                     IStream *stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDigitalSignatureManager(
-        IOpcPackage *package,
-        IOpcDigitalSignatureManager **signatureManager) = 0;
+                     IOpcPackage *package,
+                     IOpcDigitalSignatureManager **signatureManager) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4880,54 +4880,54 @@ typedef struct IOpcFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOpcFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOpcFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOpcFactory *This);
+                     IOpcFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOpcFactory *This);
+                     IOpcFactory *This);
 
     /*** IOpcFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreatePackageRootUri)(
-        IOpcFactory *This,
-        IOpcUri **rootUri);
+                     IOpcFactory *This,
+                     IOpcUri **rootUri);
 
     HRESULT (STDMETHODCALLTYPE *CreatePartUri)(
-        IOpcFactory *This,
-        LPCWSTR pwzUri,
-        IOpcPartUri **partUri);
+                     IOpcFactory *This,
+                     LPCWSTR pwzUri,
+                     IOpcPartUri **partUri);
 
     HRESULT (STDMETHODCALLTYPE *CreateStreamOnFile)(
-        IOpcFactory *This,
-        LPCWSTR filename,
-        OPC_STREAM_IO_MODE ioMode,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD dwFlagsAndAttributes,
-        IStream **stream);
+                     IOpcFactory *This,
+                     LPCWSTR filename,
+                     OPC_STREAM_IO_MODE ioMode,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD dwFlagsAndAttributes,
+                     IStream **stream);
 
     HRESULT (STDMETHODCALLTYPE *CreatePackage)(
-        IOpcFactory *This,
-        IOpcPackage **package);
+                     IOpcFactory *This,
+                     IOpcPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *ReadPackageFromStream)(
-        IOpcFactory *This,
-        IStream *stream,
-        OPC_READ_FLAGS flags,
-        IOpcPackage **package);
+                     IOpcFactory *This,
+                     IStream *stream,
+                     OPC_READ_FLAGS flags,
+                     IOpcPackage **package);
 
     HRESULT (STDMETHODCALLTYPE *WritePackageToStream)(
-        IOpcFactory *This,
-        IOpcPackage *package,
-        OPC_WRITE_FLAGS flags,
-        IStream *stream);
+                     IOpcFactory *This,
+                     IOpcPackage *package,
+                     OPC_WRITE_FLAGS flags,
+                     IStream *stream);
 
     HRESULT (STDMETHODCALLTYPE *CreateDigitalSignatureManager)(
-        IOpcFactory *This,
-        IOpcPackage *package,
-        IOpcDigitalSignatureManager **signatureManager);
+                     IOpcFactory *This,
+                     IOpcPackage *package,
+                     IOpcDigitalSignatureManager **signatureManager);
 
     END_INTERFACE
 } IOpcFactoryVtbl;

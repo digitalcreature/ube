@@ -15,9 +15,9 @@ const math = @import("../math.zig");
 pub fn expo2(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => expo2f(x),
-        f64 => expo2d(x),
-        else => @compileError("expo2 not implemented for " ++ @typeName(T)),
+                     f32 => expo2f(x),
+                     f64 => expo2d(x),
+                     else => @compileError("expo2 not implemented for " ++ @typeName(T)),
     };
 }
 

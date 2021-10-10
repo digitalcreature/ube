@@ -38,9 +38,9 @@ struct ifaddrs
   union
   {
     /* At most one of the following two is valid.  If the IFF_BROADCAST
-       bit is set in `ifa_flags', then `ifa_broadaddr' is valid.  If the
-       IFF_POINTOPOINT bit is set, then `ifa_dstaddr' is valid.
-       It is never the case that both these bits are set at once.  */
+                    bit is set in `ifa_flags', then `ifa_broadaddr' is valid.  If the
+                    IFF_POINTOPOINT bit is set, then `ifa_dstaddr' is valid.
+                    It is never the case that both these bits are set at once.  */
     struct sockaddr *ifu_broadaddr; /* Broadcast address of this interface. */
     struct sockaddr *ifu_dstaddr; /* Point-to-point destination address.  */
   } ifa_ifu;

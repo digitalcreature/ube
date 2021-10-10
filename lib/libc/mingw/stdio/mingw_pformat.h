@@ -67,31 +67,31 @@
   * implementation defined equivalent function names.
   */
 #ifdef __BUILD_WIDEAPI
-# define __pformat        __mingw_wpformat
+# define __pformat                     __mingw_wpformat
 #define __fputc(X,STR) fputwc((wchar_t) (X), (STR))
 
-# define __printf         __mingw_wprintf
-# define __fprintf        __mingw_fwprintf
-# define __sprintf        __mingw_swprintf
-# define __snprintf       __mingw_snwprintf
+# define __printf                      __mingw_wprintf
+# define __fprintf                     __mingw_fwprintf
+# define __sprintf                     __mingw_swprintf
+# define __snprintf                    __mingw_snwprintf
 
-# define __vprintf        __mingw_vwprintf
-# define __vfprintf       __mingw_vfwprintf
-# define __vsprintf       __mingw_vswprintf
-# define __vsnprintf      __mingw_vsnwprintf
+# define __vprintf                     __mingw_vwprintf
+# define __vfprintf                    __mingw_vfwprintf
+# define __vsprintf                    __mingw_vswprintf
+# define __vsnprintf                   __mingw_vsnwprintf
 #else
-# define __pformat        __mingw_pformat
+# define __pformat                     __mingw_pformat
 #define __fputc(X,STR) fputc((X), (STR))
 
-# define __printf         __mingw_printf
-# define __fprintf        __mingw_fprintf
-# define __sprintf        __mingw_sprintf
-# define __snprintf       __mingw_snprintf
+# define __printf                      __mingw_printf
+# define __fprintf                     __mingw_fprintf
+# define __sprintf                     __mingw_sprintf
+# define __snprintf                    __mingw_snprintf
 
-# define __vprintf        __mingw_vprintf
-# define __vfprintf       __mingw_vfprintf
-# define __vsprintf       __mingw_vsprintf
-# define __vsnprintf      __mingw_vsnprintf
+# define __vprintf                     __mingw_vprintf
+# define __vfprintf                    __mingw_vfprintf
+# define __vsprintf                    __mingw_vsprintf
+# define __vsnprintf                   __mingw_vsnprintf
 #endif /* __BUILD_WIDEAPI */
 #endif
 

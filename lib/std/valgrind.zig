@@ -9,42 +9,42 @@ const math = std.math;
 
 pub fn doClientRequest(default: usize, request: usize, a1: usize, a2: usize, a3: usize, a4: usize, a5: usize) usize {
     if (!builtin.valgrind_support) {
-        return default;
+                     return default;
     }
 
     switch (builtin.arch) {
-        .i386 => {
-            return asm volatile (
-                \\ roll $3,  %%edi ; roll $13, %%edi
-                \\ roll $29, %%edi ; roll $19, %%edi
-                \\ xchgl %%ebx,%%ebx
-                : [_] "={edx}" (-> usize)
-                : [_] "{eax}" (&[_]usize{ request, a1, a2, a3, a4, a5 }),
-                  [_] "0" (default)
-                : "cc", "memory"
-            );
-        },
-        .x86_64 => {
-            return asm volatile (
-                \\ rolq $3,  %%rdi ; rolq $13, %%rdi
-                \\ rolq $61, %%rdi ; rolq $51, %%rdi
-                \\ xchgq %%rbx,%%rbx
-                : [_] "={rdx}" (-> usize)
-                : [_] "{rax}" (&[_]usize{ request, a1, a2, a3, a4, a5 }),
-                  [_] "0" (default)
-                : "cc", "memory"
-            );
-        },
-        // ppc32
-        // ppc64
-        // arm
-        // arm64
-        // s390x
-        // mips32
-        // mips64
-        else => {
-            return default;
-        },
+                     .i386 => {
+                                      return asm volatile (
+                                          \\ roll $3,  %%edi ; roll $13, %%edi
+                                          \\ roll $29, %%edi ; roll $19, %%edi
+                                          \\ xchgl %%ebx,%%ebx
+                                          : [_] "={edx}" (-> usize)
+                                          : [_] "{eax}" (&[_]usize{ request, a1, a2, a3, a4, a5 }),
+                                                         [_] "0" (default)
+                                          : "cc", "memory"
+                                      );
+                     },
+                     .x86_64 => {
+                                      return asm volatile (
+                                          \\ rolq $3,  %%rdi ; rolq $13, %%rdi
+                                          \\ rolq $61, %%rdi ; rolq $51, %%rdi
+                                          \\ xchgq %%rbx,%%rbx
+                                          : [_] "={rdx}" (-> usize)
+                                          : [_] "{rax}" (&[_]usize{ request, a1, a2, a3, a4, a5 }),
+                                                         [_] "0" (default)
+                                          : "cc", "memory"
+                                      );
+                     },
+                     // ppc32
+                     // ppc64
+                     // arm
+                     // arm64
+                     // s390x
+                     // mips32
+                     // mips64
+                     else => {
+                                      return default;
+                     },
     }
 }
 
@@ -140,7 +140,7 @@ pub fn nonSIMDCall3(func: fn (usize, usize, usize, usize) usize, a1: usize, a2: 
 /// VG_(unique_error)() for them to be counted.
 pub fn countErrors() usize {
     return doClientRequestExpr(0, // default return
-        .CountErrors, 0, 0, 0, 0, 0);
+                     .CountErrors, 0, 0, 0, 0, 0);
 }
 
 pub fn mallocLikeBlock(mem: []u8, rzB: usize, is_zeroed: bool) void {
@@ -221,8 +221,8 @@ pub fn stackChange(id: usize, newstack: []u8) void {
 // Load PDB debug info for Wine PE image_map.
 // pub fn loadPdbDebuginfo(fd, ptr, total_size, delta) void {
 //     doClientRequestStmt(.LoadPdbDebuginfo,
-//         fd, ptr, total_size, delta,
-//         0);
+//                      fd, ptr, total_size, delta,
+//                      0);
 // }
 
 /// Map a code address to a source file name and line number.  buf64

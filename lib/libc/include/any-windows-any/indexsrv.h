@@ -89,11 +89,11 @@ extern "C"{
 #else
   typedef struct IPhraseSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPhraseSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPhraseSink *This);
-      ULONG (WINAPI *Release)(IPhraseSink *This);
-      HRESULT (WINAPI *PutSmallPhrase)(IPhraseSink *This,const WCHAR *pwcNoun,ULONG cwcNoun,const WCHAR *pwcModifier,ULONG cwcModifier,ULONG ulAttachmentType);
-      HRESULT (WINAPI *PutPhrase)(IPhraseSink *This,const WCHAR *pwcPhrase,ULONG cwcPhrase);
+                   HRESULT (WINAPI *QueryInterface)(IPhraseSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPhraseSink *This);
+                   ULONG (WINAPI *Release)(IPhraseSink *This);
+                   HRESULT (WINAPI *PutSmallPhrase)(IPhraseSink *This,const WCHAR *pwcNoun,ULONG cwcNoun,const WCHAR *pwcModifier,ULONG cwcModifier,ULONG ulAttachmentType);
+                   HRESULT (WINAPI *PutPhrase)(IPhraseSink *This,const WCHAR *pwcPhrase,ULONG cwcPhrase);
     END_INTERFACE
   } IPhraseSinkVtbl;
   struct IPhraseSink {
@@ -136,14 +136,14 @@ extern "C"{
 #else
   typedef struct IWordSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWordSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWordSink *This);
-      ULONG (WINAPI *Release)(IWordSink *This);
-      HRESULT (WINAPI *PutWord)(IWordSink *This,ULONG cwc,const WCHAR *pwcInBuf,ULONG cwcSrcLen,ULONG cwcSrcPos);
-      HRESULT (WINAPI *PutAltWord)(IWordSink *This,ULONG cwc,const WCHAR *pwcInBuf,ULONG cwcSrcLen,ULONG cwcSrcPos);
-      HRESULT (WINAPI *StartAltPhrase)(IWordSink *This);
-      HRESULT (WINAPI *EndAltPhrase)(IWordSink *This);
-      HRESULT (WINAPI *PutBreak)(IWordSink *This,WORDREP_BREAK_TYPE breakType);
+                   HRESULT (WINAPI *QueryInterface)(IWordSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWordSink *This);
+                   ULONG (WINAPI *Release)(IWordSink *This);
+                   HRESULT (WINAPI *PutWord)(IWordSink *This,ULONG cwc,const WCHAR *pwcInBuf,ULONG cwcSrcLen,ULONG cwcSrcPos);
+                   HRESULT (WINAPI *PutAltWord)(IWordSink *This,ULONG cwc,const WCHAR *pwcInBuf,ULONG cwcSrcLen,ULONG cwcSrcPos);
+                   HRESULT (WINAPI *StartAltPhrase)(IWordSink *This);
+                   HRESULT (WINAPI *EndAltPhrase)(IWordSink *This);
+                   HRESULT (WINAPI *PutBreak)(IWordSink *This,WORDREP_BREAK_TYPE breakType);
     END_INTERFACE
   } IWordSinkVtbl;
   struct IWordSink {
@@ -201,13 +201,13 @@ extern "C"{
 #else
   typedef struct IWordBreakerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWordBreaker *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWordBreaker *This);
-      ULONG (WINAPI *Release)(IWordBreaker *This);
-      HRESULT (WINAPI *Init)(IWordBreaker *This,WINBOOL fQuery,ULONG ulMaxTokenSize,WINBOOL *pfLicense);
-      HRESULT (WINAPI *BreakText)(IWordBreaker *This,TEXT_SOURCE *pTextSource,IWordSink *pWordSink,IPhraseSink *pPhraseSink);
-      HRESULT (WINAPI *ComposePhrase)(IWordBreaker *This,const WCHAR *pwcNoun,ULONG cwcNoun,const WCHAR *pwcModifier,ULONG cwcModifier,ULONG ulAttachmentType,WCHAR *pwcPhrase,ULONG *pcwcPhrase);
-      HRESULT (WINAPI *GetLicenseToUse)(IWordBreaker *This,const WCHAR **ppwcsLicense);
+                   HRESULT (WINAPI *QueryInterface)(IWordBreaker *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWordBreaker *This);
+                   ULONG (WINAPI *Release)(IWordBreaker *This);
+                   HRESULT (WINAPI *Init)(IWordBreaker *This,WINBOOL fQuery,ULONG ulMaxTokenSize,WINBOOL *pfLicense);
+                   HRESULT (WINAPI *BreakText)(IWordBreaker *This,TEXT_SOURCE *pTextSource,IWordSink *pWordSink,IPhraseSink *pPhraseSink);
+                   HRESULT (WINAPI *ComposePhrase)(IWordBreaker *This,const WCHAR *pwcNoun,ULONG cwcNoun,const WCHAR *pwcModifier,ULONG cwcModifier,ULONG ulAttachmentType,WCHAR *pwcPhrase,ULONG *pcwcPhrase);
+                   HRESULT (WINAPI *GetLicenseToUse)(IWordBreaker *This,const WCHAR **ppwcsLicense);
     END_INTERFACE
   } IWordBreakerVtbl;
   struct IWordBreaker {
@@ -245,11 +245,11 @@ extern "C"{
 #else
   typedef struct IWordFormSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWordFormSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWordFormSink *This);
-      ULONG (WINAPI *Release)(IWordFormSink *This);
-      HRESULT (WINAPI *PutAltWord)(IWordFormSink *This,const WCHAR *pwcInBuf,ULONG cwc);
-      HRESULT (WINAPI *PutWord)(IWordFormSink *This,const WCHAR *pwcInBuf,ULONG cwc);
+                   HRESULT (WINAPI *QueryInterface)(IWordFormSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWordFormSink *This);
+                   ULONG (WINAPI *Release)(IWordFormSink *This);
+                   HRESULT (WINAPI *PutAltWord)(IWordFormSink *This,const WCHAR *pwcInBuf,ULONG cwc);
+                   HRESULT (WINAPI *PutWord)(IWordFormSink *This,const WCHAR *pwcInBuf,ULONG cwc);
     END_INTERFACE
   } IWordFormSinkVtbl;
   struct IWordFormSink {
@@ -282,12 +282,12 @@ extern "C"{
 #else
   typedef struct IStemmerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IStemmer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IStemmer *This);
-      ULONG (WINAPI *Release)(IStemmer *This);
-      HRESULT (WINAPI *Init)(IStemmer *This,ULONG ulMaxTokenSize,WINBOOL *pfLicense);
-      HRESULT (WINAPI *GenerateWordForms)(IStemmer *This,const WCHAR *pwcInBuf,ULONG cwc,IWordFormSink *pStemSink);
-      HRESULT (WINAPI *GetLicenseToUse)(IStemmer *This,const WCHAR **ppwcsLicense);
+                   HRESULT (WINAPI *QueryInterface)(IStemmer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IStemmer *This);
+                   ULONG (WINAPI *Release)(IStemmer *This);
+                   HRESULT (WINAPI *Init)(IStemmer *This,ULONG ulMaxTokenSize,WINBOOL *pfLicense);
+                   HRESULT (WINAPI *GenerateWordForms)(IStemmer *This,const WCHAR *pwcInBuf,ULONG cwc,IWordFormSink *pStemSink);
+                   HRESULT (WINAPI *GetLicenseToUse)(IStemmer *This,const WCHAR **ppwcsLicense);
     END_INTERFACE
   } IStemmerVtbl;
   struct IStemmer {
@@ -326,12 +326,12 @@ extern "C"{
 #else
   typedef struct ISimpleCommandCreatorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISimpleCommandCreator *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISimpleCommandCreator *This);
-      ULONG (WINAPI *Release)(ISimpleCommandCreator *This);
-      HRESULT (WINAPI *CreateICommand)(ISimpleCommandCreator *This,IUnknown **ppIUnknown,IUnknown *pOuterUnk);
-      HRESULT (WINAPI *VerifyCatalog)(ISimpleCommandCreator *This,const WCHAR *pwszMachine,const WCHAR *pwszCatalogName);
-      HRESULT (WINAPI *GetDefaultCatalog)(ISimpleCommandCreator *This,WCHAR *pwszCatalogName,ULONG cwcIn,ULONG *pcwcOut);
+                   HRESULT (WINAPI *QueryInterface)(ISimpleCommandCreator *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISimpleCommandCreator *This);
+                   ULONG (WINAPI *Release)(ISimpleCommandCreator *This);
+                   HRESULT (WINAPI *CreateICommand)(ISimpleCommandCreator *This,IUnknown **ppIUnknown,IUnknown *pOuterUnk);
+                   HRESULT (WINAPI *VerifyCatalog)(ISimpleCommandCreator *This,const WCHAR *pwszMachine,const WCHAR *pwszCatalogName);
+                   HRESULT (WINAPI *GetDefaultCatalog)(ISimpleCommandCreator *This,WCHAR *pwszCatalogName,ULONG cwcIn,ULONG *pcwcOut);
     END_INTERFACE
   } ISimpleCommandCreatorVtbl;
   struct ISimpleCommandCreator {
@@ -375,13 +375,13 @@ extern "C"{
 #else
   typedef struct IColumnMapperVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IColumnMapper *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IColumnMapper *This);
-      ULONG (WINAPI *Release)(IColumnMapper *This);
-      HRESULT (WINAPI *GetPropInfoFromName)(IColumnMapper *This,const WCHAR *wcsPropName,DBID **ppPropId,DBTYPE *pPropType,unsigned int *puiWidth);
-      HRESULT (WINAPI *GetPropInfoFromId)(IColumnMapper *This,const DBID *pPropId,WCHAR **pwcsName,DBTYPE *pPropType,unsigned int *puiWidth);
-      HRESULT (WINAPI *EnumPropInfo)(IColumnMapper *This,ULONG iEntry,const WCHAR **pwcsName,DBID **ppPropId,DBTYPE *pPropType,unsigned int *puiWidth);
-      HRESULT (WINAPI *IsMapUpToDate)(IColumnMapper *This);
+                   HRESULT (WINAPI *QueryInterface)(IColumnMapper *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IColumnMapper *This);
+                   ULONG (WINAPI *Release)(IColumnMapper *This);
+                   HRESULT (WINAPI *GetPropInfoFromName)(IColumnMapper *This,const WCHAR *wcsPropName,DBID **ppPropId,DBTYPE *pPropType,unsigned int *puiWidth);
+                   HRESULT (WINAPI *GetPropInfoFromId)(IColumnMapper *This,const DBID *pPropId,WCHAR **pwcsName,DBTYPE *pPropType,unsigned int *puiWidth);
+                   HRESULT (WINAPI *EnumPropInfo)(IColumnMapper *This,ULONG iEntry,const WCHAR **pwcsName,DBID **ppPropId,DBTYPE *pPropType,unsigned int *puiWidth);
+                   HRESULT (WINAPI *IsMapUpToDate)(IColumnMapper *This);
     END_INTERFACE
   } IColumnMapperVtbl;
   struct IColumnMapper {
@@ -425,10 +425,10 @@ extern "C"{
 #else
   typedef struct IColumnMapperCreatorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IColumnMapperCreator *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IColumnMapperCreator *This);
-      ULONG (WINAPI *Release)(IColumnMapperCreator *This);
-      HRESULT (WINAPI *GetColumnMapper)(IColumnMapperCreator *This,const WCHAR *wcsMachineName,const WCHAR *wcsCatalogName,IColumnMapper **ppColumnMapper);
+                   HRESULT (WINAPI *QueryInterface)(IColumnMapperCreator *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IColumnMapperCreator *This);
+                   ULONG (WINAPI *Release)(IColumnMapperCreator *This);
+                   HRESULT (WINAPI *GetColumnMapper)(IColumnMapperCreator *This,const WCHAR *wcsMachineName,const WCHAR *wcsCatalogName,IColumnMapper **ppColumnMapper);
     END_INTERFACE
   } IColumnMapperCreatorVtbl;
   struct IColumnMapperCreator {

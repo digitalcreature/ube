@@ -29,7 +29,7 @@ extern fn memmove(dest: ?[*]u8, src: ?[*]const u8, n: usize) callconv(.C) ?[*]u8
 pub fn panic(msg: []const u8, error_return_trace: ?*builtin.StackTrace) noreturn {
     @setCold(true);
     if (@hasDecl(std.os, "abort"))
-        std.os.abort();
+                     std.os.abort();
     while (true) {}
 }
 
@@ -60,7 +60,7 @@ export fn __strcpy_chk(dest: [*:0]u8, src: [*:0]const u8, dest_n: usize) callcon
 
     var i: usize = 0;
     while (i < dest_n and src[i] != 0) : (i += 1) {
-        dest[i] = src[i];
+                     dest[i] = src[i];
     }
 
     if (i == dest_n) __chk_fail();
@@ -82,15 +82,15 @@ export fn __strcat_chk(dest: [*:0]u8, src: [*:0]const u8, dest_n: usize) callcon
 
     var dest_end: usize = 0;
     while (avail > 0 and dest[dest_end] != 0) : (dest_end += 1) {
-        avail -= 1;
+                     avail -= 1;
     }
 
     if (avail < 1) __chk_fail();
 
     var i: usize = 0;
     while (avail > 0 and src[i] != 0) : (i += 1) {
-        dest[dest_end + i] = src[i];
-        avail -= 1;
+                     dest[dest_end + i] = src[i];
+                     avail -= 1;
     }
 
     if (avail < 1) __chk_fail();
@@ -107,15 +107,15 @@ export fn __strncat_chk(dest: [*:0]u8, src: [*:0]const u8, n: usize, dest_n: usi
 
     var dest_end: usize = 0;
     while (avail > 0 and dest[dest_end] != 0) : (dest_end += 1) {
-        avail -= 1;
+                     avail -= 1;
     }
 
     if (avail < 1) __chk_fail();
 
     var i: usize = 0;
     while (avail > 0 and i < n and src[i] != 0) : (i += 1) {
-        dest[dest_end + i] = src[i];
-        avail -= 1;
+                     dest[dest_end + i] = src[i];
+                     avail -= 1;
     }
 
     if (avail < 1) __chk_fail();

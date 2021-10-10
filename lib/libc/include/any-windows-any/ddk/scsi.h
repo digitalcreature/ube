@@ -32,141 +32,141 @@ extern "C" {
 #endif
 
 #define NOTIFICATION_OPERATIONAL_CHANGE_CLASS_MASK    0x02
-#define NOTIFICATION_POWER_MANAGEMENT_CLASS_MASK      0x04
-#define NOTIFICATION_EXTERNAL_REQUEST_CLASS_MASK      0x08
-#define NOTIFICATION_MEDIA_STATUS_CLASS_MASK          0x10
-#define NOTIFICATION_MULTI_HOST_CLASS_MASK            0x20
-#define NOTIFICATION_DEVICE_BUSY_CLASS_MASK           0x40
+#define NOTIFICATION_POWER_MANAGEMENT_CLASS_MASK                   0x04
+#define NOTIFICATION_EXTERNAL_REQUEST_CLASS_MASK                   0x08
+#define NOTIFICATION_MEDIA_STATUS_CLASS_MASK                       0x10
+#define NOTIFICATION_MULTI_HOST_CLASS_MASK                                      0x20
+#define NOTIFICATION_DEVICE_BUSY_CLASS_MASK                        0x40
 
 
-#define NOTIFICATION_NO_CLASS_EVENTS                  0x0
+#define NOTIFICATION_NO_CLASS_EVENTS                                                         0x0
 #define NOTIFICATION_OPERATIONAL_CHANGE_CLASS_EVENTS  0x1
 #define NOTIFICATION_POWER_MANAGEMENT_CLASS_EVENTS    0x2
 #define NOTIFICATION_EXTERNAL_REQUEST_CLASS_EVENTS    0x3
-#define NOTIFICATION_MEDIA_STATUS_CLASS_EVENTS        0x4
-#define NOTIFICATION_MULTI_HOST_CLASS_EVENTS          0x5
-#define NOTIFICATION_DEVICE_BUSY_CLASS_EVENTS         0x6
+#define NOTIFICATION_MEDIA_STATUS_CLASS_EVENTS                     0x4
+#define NOTIFICATION_MULTI_HOST_CLASS_EVENTS                       0x5
+#define NOTIFICATION_DEVICE_BUSY_CLASS_EVENTS                      0x6
 
-#define NOTIFICATION_OPERATIONAL_EVENT_NO_CHANGE         0x0
+#define NOTIFICATION_OPERATIONAL_EVENT_NO_CHANGE                      0x0
 #define NOTIFICATION_OPERATIONAL_EVENT_CHANGE_REQUESTED  0x1
 #define NOTIFICATION_OPERATIONAL_EVENT_CHANGE_OCCURRED   0x2
 
-#define NOTIFICATION_OPERATIONAL_STATUS_AVAILABLE        0x0
+#define NOTIFICATION_OPERATIONAL_STATUS_AVAILABLE                     0x0
 #define NOTIFICATION_OPERATIONAL_STATUS_TEMPORARY_BUSY   0x1
 #define NOTIFICATION_OPERATIONAL_STATUS_EXTENDED_BUSY    0x2
 
-#define NOTIFICATION_OPERATIONAL_OPCODE_NONE             0x0
+#define NOTIFICATION_OPERATIONAL_OPCODE_NONE                                       0x0
 #define NOTIFICATION_OPERATIONAL_OPCODE_FEATURE_CHANGE   0x1
 #define NOTIFICATION_OPERATIONAL_OPCODE_FEATURE_ADDED    0x2
-#define NOTIFICATION_OPERATIONAL_OPCODE_UNIT_RESET       0x3
+#define NOTIFICATION_OPERATIONAL_OPCODE_UNIT_RESET                    0x3
 #define NOTIFICATION_OPERATIONAL_OPCODE_FIRMWARE_CHANGED 0x4
 #define NOTIFICATION_OPERATIONAL_OPCODE_INQUIRY_CHANGED  0x5
 
-#define NOTIFICATION_POWER_EVENT_NO_CHANGE          0x0
+#define NOTIFICATION_POWER_EVENT_NO_CHANGE                       0x0
 #define NOTIFICATION_POWER_EVENT_CHANGE_SUCCEEDED   0x1
-#define NOTIFICATION_POWER_EVENT_CHANGE_FAILED      0x2
+#define NOTIFICATION_POWER_EVENT_CHANGE_FAILED                   0x2
 
-#define NOTIFICATION_POWER_STATUS_ACTIVE            0x1
-#define NOTIFICATION_POWER_STATUS_IDLE              0x2
-#define NOTIFICATION_POWER_STATUS_STANDBY           0x3
-#define NOTIFICATION_POWER_STATUS_SLEEP             0x4
+#define NOTIFICATION_POWER_STATUS_ACTIVE                                      0x1
+#define NOTIFICATION_POWER_STATUS_IDLE                                        0x2
+#define NOTIFICATION_POWER_STATUS_STANDBY                        0x3
+#define NOTIFICATION_POWER_STATUS_SLEEP                                       0x4
 
-#define NOTIFICATION_MEDIA_EVENT_NO_EVENT           0x0
-#define NOTIFICATION_EXTERNAL_EVENT_NO_CHANGE       0x0
+#define NOTIFICATION_MEDIA_EVENT_NO_EVENT                        0x0
+#define NOTIFICATION_EXTERNAL_EVENT_NO_CHANGE                    0x0
 #define NOTIFICATION_EXTERNAL_EVENT_BUTTON_DOWN     0x1
-#define NOTIFICATION_EXTERNAL_EVENT_BUTTON_UP       0x2
-#define NOTIFICATION_EXTERNAL_EVENT_EXTERNAL        0x3
+#define NOTIFICATION_EXTERNAL_EVENT_BUTTON_UP                    0x2
+#define NOTIFICATION_EXTERNAL_EVENT_EXTERNAL                     0x3
 
-#define NOTIFICATION_EXTERNAL_STATUS_READY          0x0
-#define NOTIFICATION_EXTERNAL_STATUS_PREVENT        0x1
+#define NOTIFICATION_EXTERNAL_STATUS_READY                       0x0
+#define NOTIFICATION_EXTERNAL_STATUS_PREVENT                     0x1
 
-#define NOTIFICATION_EXTERNAL_REQUEST_NONE          0x0000
+#define NOTIFICATION_EXTERNAL_REQUEST_NONE                       0x0000
 #define NOTIFICATION_EXTERNAL_REQUEST_QUEUE_OVERRUN 0x0001
-#define NOTIFICATION_EXTERNAL_REQUEST_PLAY          0x0101
+#define NOTIFICATION_EXTERNAL_REQUEST_PLAY                       0x0101
 #define NOTIFICATION_EXTERNAL_REQUEST_REWIND_BACK   0x0102
 #define NOTIFICATION_EXTERNAL_REQUEST_FAST_FORWARD  0x0103
-#define NOTIFICATION_EXTERNAL_REQUEST_PAUSE         0x0104
-#define NOTIFICATION_EXTERNAL_REQUEST_STOP          0x0106
+#define NOTIFICATION_EXTERNAL_REQUEST_PAUSE                      0x0104
+#define NOTIFICATION_EXTERNAL_REQUEST_STOP                       0x0106
 #define NOTIFICATION_EXTERNAL_REQUEST_ASCII_LOW     0x0200
 #define NOTIFICATION_EXTERNAL_REQUEST_ASCII_HIGH    0x02ff
 
-#define NOTIFICATION_MEDIA_EVENT_NO_CHANGE          0x0
-#define NOTIFICATION_MEDIA_EVENT_EJECT_REQUEST      0x1
-#define NOTIFICATION_MEDIA_EVENT_NEW_MEDIA          0x2
-#define NOTIFICATION_MEDIA_EVENT_MEDIA_REMOVAL      0x3
-#define NOTIFICATION_MEDIA_EVENT_MEDIA_CHANGE       0x4
+#define NOTIFICATION_MEDIA_EVENT_NO_CHANGE                       0x0
+#define NOTIFICATION_MEDIA_EVENT_EJECT_REQUEST                   0x1
+#define NOTIFICATION_MEDIA_EVENT_NEW_MEDIA                       0x2
+#define NOTIFICATION_MEDIA_EVENT_MEDIA_REMOVAL                   0x3
+#define NOTIFICATION_MEDIA_EVENT_MEDIA_CHANGE                    0x4
 
-#define NOTIFICATION_BUSY_EVENT_NO_EVENT               0x0
-#define NOTIFICATION_MULTI_HOST_EVENT_NO_CHANGE        0x0
+#define NOTIFICATION_BUSY_EVENT_NO_EVENT                                         0x0
+#define NOTIFICATION_MULTI_HOST_EVENT_NO_CHANGE                     0x0
 #define NOTIFICATION_MULTI_HOST_EVENT_CONTROL_REQUEST  0x1
 #define NOTIFICATION_MULTI_HOST_EVENT_CONTROL_GRANT    0x2
 #define NOTIFICATION_MULTI_HOST_EVENT_CONTROL_RELEASE  0x3
 
-#define NOTIFICATION_MULTI_HOST_STATUS_READY           0x0
-#define NOTIFICATION_MULTI_HOST_STATUS_PREVENT         0x1
+#define NOTIFICATION_MULTI_HOST_STATUS_READY                        0x0
+#define NOTIFICATION_MULTI_HOST_STATUS_PREVENT                      0x1
 
 #define NOTIFICATION_MULTI_HOST_PRIORITY_NO_REQUESTS   0x0
-#define NOTIFICATION_MULTI_HOST_PRIORITY_LOW           0x1
-#define NOTIFICATION_MULTI_HOST_PRIORITY_MEDIUM        0x2
-#define NOTIFICATION_MULTI_HOST_PRIORITY_HIGH          0x3
+#define NOTIFICATION_MULTI_HOST_PRIORITY_LOW                        0x1
+#define NOTIFICATION_MULTI_HOST_PRIORITY_MEDIUM                     0x2
+#define NOTIFICATION_MULTI_HOST_PRIORITY_HIGH                       0x3
 
-#define NOTIFICATION_BUSY_EVENT_NO_EVENT            0x0
-#define NOTIFICATION_BUSY_EVENT_NO_CHANGE           0x0
-#define NOTIFICATION_BUSY_EVENT_BUSY                0x1
-#define NOTIFICATION_BUSY_EVENT_LO_CHANGE           0x2
+#define NOTIFICATION_BUSY_EVENT_NO_EVENT                                      0x0
+#define NOTIFICATION_BUSY_EVENT_NO_CHANGE                        0x0
+#define NOTIFICATION_BUSY_EVENT_BUSY                                          0x1
+#define NOTIFICATION_BUSY_EVENT_LO_CHANGE                        0x2
 
-#define NOTIFICATION_BUSY_STATUS_NO_EVENT           0x0
-#define NOTIFICATION_BUSY_STATUS_POWER              0x1
-#define NOTIFICATION_BUSY_STATUS_IMMEDIATE          0x2
-#define NOTIFICATION_BUSY_STATUS_DEFERRED           0x3
+#define NOTIFICATION_BUSY_STATUS_NO_EVENT                        0x0
+#define NOTIFICATION_BUSY_STATUS_POWER                                        0x1
+#define NOTIFICATION_BUSY_STATUS_IMMEDIATE                       0x2
+#define NOTIFICATION_BUSY_STATUS_DEFERRED                        0x3
 
 #define SECURITY_PROTOCOL_IEEE1667  0xEE
 
-#define DVD_FORMAT_LEAD_IN          0x00
-#define DVD_FORMAT_COPYRIGHT        0x01
-#define DVD_FORMAT_DISK_KEY         0x02
-#define DVD_FORMAT_BCA              0x03
+#define DVD_FORMAT_LEAD_IN                       0x00
+#define DVD_FORMAT_COPYRIGHT                     0x01
+#define DVD_FORMAT_DISK_KEY                      0x02
+#define DVD_FORMAT_BCA                                        0x03
 #define DVD_FORMAT_MANUFACTURING    0x04
 
-#define DVD_REPORT_AGID            0x00
-#define DVD_CHALLENGE_KEY          0x01
-#define DVD_KEY_1                  0x02
-#define DVD_KEY_2                  0x03
-#define DVD_TITLE_KEY              0x04
-#define DVD_REPORT_ASF             0x05
-#define DVD_INVALIDATE_AGID        0x3F
+#define DVD_REPORT_AGID                                      0x00
+#define DVD_CHALLENGE_KEY                       0x01
+#define DVD_KEY_1                                                         0x02
+#define DVD_KEY_2                                                         0x03
+#define DVD_TITLE_KEY                                        0x04
+#define DVD_REPORT_ASF                                       0x05
+#define DVD_INVALIDATE_AGID                     0x3F
 
-#define BLANK_FULL              0x0
-#define BLANK_MINIMAL           0x1
-#define BLANK_TRACK             0x2
+#define BLANK_FULL                                        0x0
+#define BLANK_MINIMAL                        0x1
+#define BLANK_TRACK                                       0x2
 #define BLANK_UNRESERVE_TRACK   0x3
-#define BLANK_TAIL              0x4
+#define BLANK_TAIL                                        0x4
 #define BLANK_UNCLOSE_SESSION   0x5
-#define BLANK_SESSION           0x6
+#define BLANK_SESSION                        0x6
 
-#define CD_EXPECTED_SECTOR_ANY          0x0
-#define CD_EXPECTED_SECTOR_CDDA         0x1
-#define CD_EXPECTED_SECTOR_MODE1        0x2
-#define CD_EXPECTED_SECTOR_MODE2        0x3
+#define CD_EXPECTED_SECTOR_ANY                       0x0
+#define CD_EXPECTED_SECTOR_CDDA                      0x1
+#define CD_EXPECTED_SECTOR_MODE1                     0x2
+#define CD_EXPECTED_SECTOR_MODE2                     0x3
 #define CD_EXPECTED_SECTOR_MODE2_FORM1  0x4
 #define CD_EXPECTED_SECTOR_MODE2_FORM2  0x5
 
-#define DISK_STATUS_EMPTY       0x00
+#define DISK_STATUS_EMPTY                    0x00
 #define DISK_STATUS_INCOMPLETE  0x01
 #define DISK_STATUS_COMPLETE    0x02
-#define DISK_STATUS_OTHERS      0x03
+#define DISK_STATUS_OTHERS                   0x03
 
-#define LAST_SESSION_EMPTY              0x00
-#define LAST_SESSION_INCOMPLETE         0x01
+#define LAST_SESSION_EMPTY                                        0x00
+#define LAST_SESSION_INCOMPLETE                      0x01
 #define LAST_SESSION_RESERVED_DAMAGED   0x02
-#define LAST_SESSION_COMPLETE           0x03
+#define LAST_SESSION_COMPLETE                        0x03
 
-#define DISK_TYPE_CDDA          0x00
-#define DISK_TYPE_CDI           0x10
-#define DISK_TYPE_XA            0x20
+#define DISK_TYPE_CDDA                       0x00
+#define DISK_TYPE_CDI                        0x10
+#define DISK_TYPE_XA                                      0x20
 #define DISK_TYPE_UNDEFINED     0xFF
 
-#define DISC_BGFORMAT_STATE_NONE        0x0
+#define DISC_BGFORMAT_STATE_NONE                     0x0
 #define DISC_BGFORMAT_STATE_INCOMPLETE  0x1
 #define DISC_BGFORMAT_STATE_RUNNING     0x2
 #define DISC_BGFORMAT_STATE_COMPLETE    0x3
@@ -176,322 +176,322 @@ extern "C" {
 #define DATA_BLOCK_MODE2    0x2
 
 /* READ_TOC formats */
-#define READ_TOC_FORMAT_TOC         0x00
+#define READ_TOC_FORMAT_TOC                      0x00
 #define READ_TOC_FORMAT_SESSION     0x01
 #define READ_TOC_FORMAT_FULL_TOC    0x02
-#define READ_TOC_FORMAT_PMA         0x03
-#define READ_TOC_FORMAT_ATIP        0x04
+#define READ_TOC_FORMAT_PMA                      0x03
+#define READ_TOC_FORMAT_ATIP                     0x04
 
-#define CDB6GENERIC_LENGTH                   6
-#define CDB10GENERIC_LENGTH                  10
-#define CDB12GENERIC_LENGTH                  12
+#define CDB6GENERIC_LENGTH                                                          6
+#define CDB10GENERIC_LENGTH                                                         10
+#define CDB12GENERIC_LENGTH                                                         12
 
-#define SETBITON                             1
-#define SETBITOFF                            0
+#define SETBITON                                                                                 1
+#define SETBITOFF                                                                                0
 
 /* Mode Sense/Select page constants */
-#define MODE_PAGE_VENDOR_SPECIFIC       0x00
-#define MODE_PAGE_ERROR_RECOVERY        0x01
-#define MODE_PAGE_DISCONNECT            0x02
-#define MODE_PAGE_FORMAT_DEVICE         0x03
-#define MODE_PAGE_MRW                   0x03
-#define MODE_PAGE_RIGID_GEOMETRY        0x04
-#define MODE_PAGE_FLEXIBILE             0x05
-#define MODE_PAGE_WRITE_PARAMETERS      0x05
-#define MODE_PAGE_VERIFY_ERROR          0x07
-#define MODE_PAGE_CACHING               0x08
-#define MODE_PAGE_PERIPHERAL            0x09
-#define MODE_PAGE_CONTROL               0x0A
-#define MODE_PAGE_MEDIUM_TYPES          0x0B
-#define MODE_PAGE_NOTCH_PARTITION       0x0C
-#define MODE_PAGE_CD_AUDIO_CONTROL      0x0E
-#define MODE_PAGE_DATA_COMPRESS         0x0F
-#define MODE_PAGE_DEVICE_CONFIG         0x10
-#define MODE_PAGE_XOR_CONTROL           0x10
-#define MODE_PAGE_MEDIUM_PARTITION      0x11
+#define MODE_PAGE_VENDOR_SPECIFIC                    0x00
+#define MODE_PAGE_ERROR_RECOVERY                     0x01
+#define MODE_PAGE_DISCONNECT                                      0x02
+#define MODE_PAGE_FORMAT_DEVICE                      0x03
+#define MODE_PAGE_MRW                                                          0x03
+#define MODE_PAGE_RIGID_GEOMETRY                     0x04
+#define MODE_PAGE_FLEXIBILE                                       0x05
+#define MODE_PAGE_WRITE_PARAMETERS                   0x05
+#define MODE_PAGE_VERIFY_ERROR                       0x07
+#define MODE_PAGE_CACHING                                         0x08
+#define MODE_PAGE_PERIPHERAL                                      0x09
+#define MODE_PAGE_CONTROL                                         0x0A
+#define MODE_PAGE_MEDIUM_TYPES                       0x0B
+#define MODE_PAGE_NOTCH_PARTITION                    0x0C
+#define MODE_PAGE_CD_AUDIO_CONTROL                   0x0E
+#define MODE_PAGE_DATA_COMPRESS                      0x0F
+#define MODE_PAGE_DEVICE_CONFIG                      0x10
+#define MODE_PAGE_XOR_CONTROL                        0x10
+#define MODE_PAGE_MEDIUM_PARTITION                   0x11
 #define MODE_PAGE_ENCLOSURE_SERVICES_MANAGEMENT 0x14
-#define MODE_PAGE_EXTENDED              0x15
+#define MODE_PAGE_EXTENDED                                        0x15
 #define MODE_PAGE_EXTENDED_DEVICE_SPECIFIC 0x16
-#define MODE_PAGE_CDVD_FEATURE_SET      0x18
+#define MODE_PAGE_CDVD_FEATURE_SET                   0x18
 #define MODE_PAGE_PROTOCOL_SPECIFIC_LUN 0x18
 #define MODE_PAGE_PROTOCOL_SPECIFIC_PORT 0x19
-#define MODE_PAGE_POWER_CONDITION       0x1A
-#define MODE_PAGE_LUN_MAPPING           0x1B
-#define MODE_PAGE_FAULT_REPORTING       0x1C
-#define MODE_PAGE_CDVD_INACTIVITY       0x1D
-#define MODE_PAGE_ELEMENT_ADDRESS       0x1D
+#define MODE_PAGE_POWER_CONDITION                    0x1A
+#define MODE_PAGE_LUN_MAPPING                        0x1B
+#define MODE_PAGE_FAULT_REPORTING                    0x1C
+#define MODE_PAGE_CDVD_INACTIVITY                    0x1D
+#define MODE_PAGE_ELEMENT_ADDRESS                    0x1D
 #define MODE_PAGE_TRANSPORT_GEOMETRY    0x1E
 #define MODE_PAGE_DEVICE_CAPABILITIES   0x1F
-#define MODE_PAGE_CAPABILITIES          0x2A
+#define MODE_PAGE_CAPABILITIES                       0x2A
 
-#define MODE_SENSE_RETURN_ALL           0x3f
+#define MODE_SENSE_RETURN_ALL                        0x3f
 
-#define MODE_SENSE_CURRENT_VALUES       0x00
+#define MODE_SENSE_CURRENT_VALUES                    0x00
 #define MODE_SENSE_CHANGEABLE_VALUES    0x40
-#define MODE_SENSE_DEFAULT_VAULES       0x80
-#define MODE_SENSE_SAVED_VALUES         0xc0
+#define MODE_SENSE_DEFAULT_VAULES                    0x80
+#define MODE_SENSE_SAVED_VALUES                      0xc0
 
 /* SCSI CDB operation codes */
-#define SCSIOP_TEST_UNIT_READY          0x00
-#define SCSIOP_REZERO_UNIT              0x01
-#define SCSIOP_REWIND                   0x01
-#define SCSIOP_REQUEST_BLOCK_ADDR       0x02
-#define SCSIOP_REQUEST_SENSE            0x03
-#define SCSIOP_FORMAT_UNIT              0x04
-#define SCSIOP_READ_BLOCK_LIMITS        0x05
-#define SCSIOP_REASSIGN_BLOCKS          0x07
-#define SCSIOP_INIT_ELEMENT_STATUS      0x07
-#define SCSIOP_READ6                    0x08
-#define SCSIOP_RECEIVE                  0x08
-#define SCSIOP_WRITE6                   0x0A
-#define SCSIOP_PRINT                    0x0A
-#define SCSIOP_SEND                     0x0A
-#define SCSIOP_SEEK6                    0x0B
-#define SCSIOP_TRACK_SELECT             0x0B
-#define SCSIOP_SLEW_PRINT               0x0B
-#define SCSIOP_SET_CAPACITY             0x0B
-#define SCSIOP_SEEK_BLOCK               0x0C
-#define SCSIOP_PARTITION                0x0D
-#define SCSIOP_READ_REVERSE             0x0F
-#define SCSIOP_WRITE_FILEMARKS          0x10
-#define SCSIOP_FLUSH_BUFFER             0x10
-#define SCSIOP_SPACE                    0x11
-#define SCSIOP_INQUIRY                  0x12
-#define SCSIOP_VERIFY6                  0x13
-#define SCSIOP_RECOVER_BUF_DATA         0x14
-#define SCSIOP_MODE_SELECT              0x15
-#define SCSIOP_RESERVE_UNIT             0x16
-#define SCSIOP_RELEASE_UNIT             0x17
-#define SCSIOP_COPY                     0x18
-#define SCSIOP_ERASE                    0x19
-#define SCSIOP_MODE_SENSE               0x1A
-#define SCSIOP_START_STOP_UNIT          0x1B
-#define SCSIOP_STOP_PRINT               0x1B
-#define SCSIOP_LOAD_UNLOAD              0x1B
-#define SCSIOP_RECEIVE_DIAGNOSTIC       0x1C
-#define SCSIOP_SEND_DIAGNOSTIC          0x1D
-#define SCSIOP_MEDIUM_REMOVAL           0x1E
+#define SCSIOP_TEST_UNIT_READY                       0x00
+#define SCSIOP_REZERO_UNIT                                        0x01
+#define SCSIOP_REWIND                                                          0x01
+#define SCSIOP_REQUEST_BLOCK_ADDR                    0x02
+#define SCSIOP_REQUEST_SENSE                                      0x03
+#define SCSIOP_FORMAT_UNIT                                        0x04
+#define SCSIOP_READ_BLOCK_LIMITS                     0x05
+#define SCSIOP_REASSIGN_BLOCKS                       0x07
+#define SCSIOP_INIT_ELEMENT_STATUS                   0x07
+#define SCSIOP_READ6                                                           0x08
+#define SCSIOP_RECEIVE                                                         0x08
+#define SCSIOP_WRITE6                                                          0x0A
+#define SCSIOP_PRINT                                                           0x0A
+#define SCSIOP_SEND                                                            0x0A
+#define SCSIOP_SEEK6                                                           0x0B
+#define SCSIOP_TRACK_SELECT                                       0x0B
+#define SCSIOP_SLEW_PRINT                                         0x0B
+#define SCSIOP_SET_CAPACITY                                       0x0B
+#define SCSIOP_SEEK_BLOCK                                         0x0C
+#define SCSIOP_PARTITION                                          0x0D
+#define SCSIOP_READ_REVERSE                                       0x0F
+#define SCSIOP_WRITE_FILEMARKS                       0x10
+#define SCSIOP_FLUSH_BUFFER                                       0x10
+#define SCSIOP_SPACE                                                           0x11
+#define SCSIOP_INQUIRY                                                         0x12
+#define SCSIOP_VERIFY6                                                         0x13
+#define SCSIOP_RECOVER_BUF_DATA                      0x14
+#define SCSIOP_MODE_SELECT                                        0x15
+#define SCSIOP_RESERVE_UNIT                                       0x16
+#define SCSIOP_RELEASE_UNIT                                       0x17
+#define SCSIOP_COPY                                                            0x18
+#define SCSIOP_ERASE                                                           0x19
+#define SCSIOP_MODE_SENSE                                         0x1A
+#define SCSIOP_START_STOP_UNIT                       0x1B
+#define SCSIOP_STOP_PRINT                                         0x1B
+#define SCSIOP_LOAD_UNLOAD                                        0x1B
+#define SCSIOP_RECEIVE_DIAGNOSTIC                    0x1C
+#define SCSIOP_SEND_DIAGNOSTIC                       0x1D
+#define SCSIOP_MEDIUM_REMOVAL                        0x1E
 
 #define SCSIOP_READ_FORMATTED_CAPACITY  0x23
-#define SCSIOP_READ_CAPACITY            0x25
-#define SCSIOP_READ                     0x28
-#define SCSIOP_WRITE                    0x2A
-#define SCSIOP_SEEK                     0x2B
-#define SCSIOP_LOCATE                   0x2B
-#define SCSIOP_POSITION_TO_ELEMENT      0x2B
-#define SCSIOP_WRITE_VERIFY             0x2E
-#define SCSIOP_VERIFY                   0x2F
-#define SCSIOP_SEARCH_DATA_HIGH         0x30
-#define SCSIOP_SEARCH_DATA_EQUAL        0x31
-#define SCSIOP_SEARCH_DATA_LOW          0x32
-#define SCSIOP_SET_LIMITS               0x33
-#define SCSIOP_READ_POSITION            0x34
-#define SCSIOP_SYNCHRONIZE_CACHE        0x35
-#define SCSIOP_COMPARE                  0x39
-#define SCSIOP_COPY_COMPARE             0x3A
-#define SCSIOP_WRITE_DATA_BUFF          0x3B
-#define SCSIOP_READ_DATA_BUFF           0x3C
-#define SCSIOP_WRITE_LONG               0x3F
-#define SCSIOP_CHANGE_DEFINITION        0x40
-#define SCSIOP_WRITE_SAME               0x41
-#define SCSIOP_READ_SUB_CHANNEL         0x42
-#define SCSIOP_UNMAP                    0x42
-#define SCSIOP_READ_TOC                 0x43
-#define SCSIOP_READ_HEADER              0x44
+#define SCSIOP_READ_CAPACITY                                      0x25
+#define SCSIOP_READ                                                            0x28
+#define SCSIOP_WRITE                                                           0x2A
+#define SCSIOP_SEEK                                                            0x2B
+#define SCSIOP_LOCATE                                                          0x2B
+#define SCSIOP_POSITION_TO_ELEMENT                   0x2B
+#define SCSIOP_WRITE_VERIFY                                       0x2E
+#define SCSIOP_VERIFY                                                          0x2F
+#define SCSIOP_SEARCH_DATA_HIGH                      0x30
+#define SCSIOP_SEARCH_DATA_EQUAL                     0x31
+#define SCSIOP_SEARCH_DATA_LOW                       0x32
+#define SCSIOP_SET_LIMITS                                         0x33
+#define SCSIOP_READ_POSITION                                      0x34
+#define SCSIOP_SYNCHRONIZE_CACHE                     0x35
+#define SCSIOP_COMPARE                                                         0x39
+#define SCSIOP_COPY_COMPARE                                       0x3A
+#define SCSIOP_WRITE_DATA_BUFF                       0x3B
+#define SCSIOP_READ_DATA_BUFF                        0x3C
+#define SCSIOP_WRITE_LONG                                         0x3F
+#define SCSIOP_CHANGE_DEFINITION                     0x40
+#define SCSIOP_WRITE_SAME                                         0x41
+#define SCSIOP_READ_SUB_CHANNEL                      0x42
+#define SCSIOP_UNMAP                                                           0x42
+#define SCSIOP_READ_TOC                                           0x43
+#define SCSIOP_READ_HEADER                                        0x44
 #define SCSIOP_REPORT_DENSITY_SUPPORT   0x44
-#define SCSIOP_PLAY_AUDIO               0x45
-#define SCSIOP_GET_CONFIGURATION        0x46
-#define SCSIOP_PLAY_AUDIO_MSF           0x47
-#define SCSIOP_PLAY_TRACK_INDEX         0x48
-#define SCSIOP_SANITIZE                 0x48
-#define SCSIOP_PLAY_TRACK_RELATIVE      0x49
-#define SCSIOP_GET_EVENT_STATUS         0x4A
-#define SCSIOP_PAUSE_RESUME             0x4B
-#define SCSIOP_LOG_SELECT               0x4C
-#define SCSIOP_LOG_SENSE                0x4D
-#define SCSIOP_STOP_PLAY_SCAN           0x4E
-#define SCSIOP_XDWRITE                  0x50
-#define SCSIOP_XPWRITE                  0x51
+#define SCSIOP_PLAY_AUDIO                                         0x45
+#define SCSIOP_GET_CONFIGURATION                     0x46
+#define SCSIOP_PLAY_AUDIO_MSF                        0x47
+#define SCSIOP_PLAY_TRACK_INDEX                      0x48
+#define SCSIOP_SANITIZE                                           0x48
+#define SCSIOP_PLAY_TRACK_RELATIVE                   0x49
+#define SCSIOP_GET_EVENT_STATUS                      0x4A
+#define SCSIOP_PAUSE_RESUME                                       0x4B
+#define SCSIOP_LOG_SELECT                                         0x4C
+#define SCSIOP_LOG_SENSE                                          0x4D
+#define SCSIOP_STOP_PLAY_SCAN                        0x4E
+#define SCSIOP_XDWRITE                                                         0x50
+#define SCSIOP_XPWRITE                                                         0x51
 #define SCSIOP_READ_DISK_INFORMATION    0x51
 #define SCSIOP_READ_DISC_INFORMATION    0x51
 #define SCSIOP_READ_TRACK_INFORMATION   0x52
-#define SCSIOP_XDWRITE_READ             0x53
-#define SCSIOP_RESERVE_TRACK_RZONE      0x53
+#define SCSIOP_XDWRITE_READ                                       0x53
+#define SCSIOP_RESERVE_TRACK_RZONE                   0x53
 #define SCSIOP_SEND_OPC_INFORMATION     0x54
-#define SCSIOP_MODE_SELECT10            0x55
-#define SCSIOP_RESERVE_UNIT10           0x56
-#define SCSIOP_RESERVE_ELEMENT          0x56
-#define SCSIOP_RELEASE_UNIT10           0x57
-#define SCSIOP_RELEASE_ELEMENT          0x57
-#define SCSIOP_REPAIR_TRACK             0x58
-#define SCSIOP_MODE_SENSE10             0x5A
-#define SCSIOP_CLOSE_TRACK_SESSION      0x5B
+#define SCSIOP_MODE_SELECT10                                      0x55
+#define SCSIOP_RESERVE_UNIT10                        0x56
+#define SCSIOP_RESERVE_ELEMENT                       0x56
+#define SCSIOP_RELEASE_UNIT10                        0x57
+#define SCSIOP_RELEASE_ELEMENT                       0x57
+#define SCSIOP_REPAIR_TRACK                                       0x58
+#define SCSIOP_MODE_SENSE10                                       0x5A
+#define SCSIOP_CLOSE_TRACK_SESSION                   0x5B
 #define SCSIOP_READ_BUFFER_CAPACITY     0x5C
-#define SCSIOP_SEND_CUE_SHEET           0x5D
+#define SCSIOP_SEND_CUE_SHEET                        0x5D
 #define SCSIOP_PERSISTENT_RESERVE_IN    0x5E
 #define SCSIOP_PERSISTENT_RESERVE_OUT   0x5F
 
-#define SCSIOP_REPORT_LUNS              0xA0
-#define SCSIOP_BLANK                    0xA1
-#define SCSIOP_ATA_PASSTHROUGH12        0xA1
-#define SCSIOP_SEND_EVENT               0xA2
+#define SCSIOP_REPORT_LUNS                                        0xA0
+#define SCSIOP_BLANK                                                           0xA1
+#define SCSIOP_ATA_PASSTHROUGH12                     0xA1
+#define SCSIOP_SEND_EVENT                                         0xA2
 #define SCSIOP_SECURITY_PROTOCOL_IN     0xA2
-#define SCSIOP_SEND_KEY                 0xA3
-#define SCSIOP_MAINTENANCE_IN           0xA3
-#define SCSIOP_REPORT_KEY               0xA4
-#define SCSIOP_MAINTENANCE_OUT          0xA4
-#define SCSIOP_MOVE_MEDIUM              0xA5
-#define SCSIOP_LOAD_UNLOAD_SLOT         0xA6
-#define SCSIOP_EXCHANGE_MEDIUM          0xA6
-#define SCSIOP_SET_READ_AHEAD           0xA7
+#define SCSIOP_SEND_KEY                                           0xA3
+#define SCSIOP_MAINTENANCE_IN                        0xA3
+#define SCSIOP_REPORT_KEY                                         0xA4
+#define SCSIOP_MAINTENANCE_OUT                       0xA4
+#define SCSIOP_MOVE_MEDIUM                                        0xA5
+#define SCSIOP_LOAD_UNLOAD_SLOT                      0xA6
+#define SCSIOP_EXCHANGE_MEDIUM                       0xA6
+#define SCSIOP_SET_READ_AHEAD                        0xA7
 #define SCSIOP_MOVE_MEDIUM_ATTACHED     0xA7
-#define SCSIOP_READ12                   0xA8
-#define SCSIOP_GET_MESSAGE              0xA8
+#define SCSIOP_READ12                                                          0xA8
+#define SCSIOP_GET_MESSAGE                                        0xA8
 #define SCSIOP_SERVICE_ACTION_OUT12     0xA9
-#define SCSIOP_WRITE12                  0xAA
-#define SCSIOP_SEND_MESSAGE             0xAB
-#define SCSIOP_SERVICE_ACTION_IN12      0xAB
-#define SCSIOP_GET_PERFORMANCE          0xAC
-#define SCSIOP_READ_DVD_STRUCTURE       0xAD
-#define SCSIOP_WRITE_VERIFY12           0xAE
-#define SCSIOP_VERIFY12                 0xAF
-#define SCSIOP_SEARCH_DATA_HIGH12       0xB0
-#define SCSIOP_SEARCH_DATA_EQUAL12      0xB1
-#define SCSIOP_SEARCH_DATA_LOW12        0xB2
-#define SCSIOP_SET_LIMITS12             0xB3
+#define SCSIOP_WRITE12                                                         0xAA
+#define SCSIOP_SEND_MESSAGE                                       0xAB
+#define SCSIOP_SERVICE_ACTION_IN12                   0xAB
+#define SCSIOP_GET_PERFORMANCE                       0xAC
+#define SCSIOP_READ_DVD_STRUCTURE                    0xAD
+#define SCSIOP_WRITE_VERIFY12                        0xAE
+#define SCSIOP_VERIFY12                                           0xAF
+#define SCSIOP_SEARCH_DATA_HIGH12                    0xB0
+#define SCSIOP_SEARCH_DATA_EQUAL12                   0xB1
+#define SCSIOP_SEARCH_DATA_LOW12                     0xB2
+#define SCSIOP_SET_LIMITS12                                       0xB3
 #define SCSIOP_READ_ELEMENT_STATUS_ATTACHED 0xB4
-#define SCSIOP_REQUEST_VOL_ELEMENT      0xB5
+#define SCSIOP_REQUEST_VOL_ELEMENT                   0xB5
 #define SCSIOP_SECURITY_PROTOCOL_OUT    0xB5
-#define SCSIOP_SEND_VOLUME_TAG          0xB6
-#define SCSIOP_SET_STREAMING            0xB6
-#define SCSIOP_READ_DEFECT_DATA         0xB7
-#define SCSIOP_READ_ELEMENT_STATUS      0xB8
-#define SCSIOP_READ_CD_MSF              0xB9
-#define SCSIOP_SCAN_CD                  0xBA
-#define SCSIOP_REDUNDANCY_GROUP_IN      0xBA
-#define SCSIOP_SET_CD_SPEED             0xBB
+#define SCSIOP_SEND_VOLUME_TAG                       0xB6
+#define SCSIOP_SET_STREAMING                                      0xB6
+#define SCSIOP_READ_DEFECT_DATA                      0xB7
+#define SCSIOP_READ_ELEMENT_STATUS                   0xB8
+#define SCSIOP_READ_CD_MSF                                        0xB9
+#define SCSIOP_SCAN_CD                                                         0xBA
+#define SCSIOP_REDUNDANCY_GROUP_IN                   0xBA
+#define SCSIOP_SET_CD_SPEED                                       0xBB
 #define SCSIOP_REDUNDANCY_GROUP_OUT     0xBB
-#define SCSIOP_PLAY_CD                  0xBC
-#define SCSIOP_SPARE_IN                 0xBC
-#define SCSIOP_MECHANISM_STATUS         0xBD
-#define SCSIOP_SPARE_OUT                0xBD
-#define SCSIOP_READ_CD                  0xBE
-#define SCSIOP_VOLUME_SET_IN            0xBE
-#define SCSIOP_SEND_DVD_STRUCTURE       0xBF
-#define SCSIOP_VOLUME_SET_OUT           0xBF
-#define SCSIOP_INIT_ELEMENT_RANGE       0xE7
+#define SCSIOP_PLAY_CD                                                         0xBC
+#define SCSIOP_SPARE_IN                                           0xBC
+#define SCSIOP_MECHANISM_STATUS                      0xBD
+#define SCSIOP_SPARE_OUT                                          0xBD
+#define SCSIOP_READ_CD                                                         0xBE
+#define SCSIOP_VOLUME_SET_IN                                      0xBE
+#define SCSIOP_SEND_DVD_STRUCTURE                    0xBF
+#define SCSIOP_VOLUME_SET_OUT                        0xBF
+#define SCSIOP_INIT_ELEMENT_RANGE                    0xE7
 
-#define SCSIOP_XDWRITE_EXTENDED16       0x80
-#define SCSIOP_WRITE_FILEMARKS16        0x80
-#define SCSIOP_REBUILD16                0x81
-#define SCSIOP_READ_REVERSE16           0x81
-#define SCSIOP_REGENERATE16             0x82
-#define SCSIOP_EXTENDED_COPY            0x83
-#define SCSIOP_POPULATE_TOKEN           0x83
-#define SCSIOP_WRITE_USING_TOKEN        0x83
+#define SCSIOP_XDWRITE_EXTENDED16                    0x80
+#define SCSIOP_WRITE_FILEMARKS16                     0x80
+#define SCSIOP_REBUILD16                                          0x81
+#define SCSIOP_READ_REVERSE16                        0x81
+#define SCSIOP_REGENERATE16                                       0x82
+#define SCSIOP_EXTENDED_COPY                                      0x83
+#define SCSIOP_POPULATE_TOKEN                        0x83
+#define SCSIOP_WRITE_USING_TOKEN                     0x83
 #define SCSIOP_RECEIVE_COPY_RESULTS     0x84
 #define SCSIOP_RECEIVE_ROD_TOKEN_INFORMATION 0x84
-#define SCSIOP_ATA_PASSTHROUGH16        0x85
-#define SCSIOP_ACCESS_CONTROL_IN        0x86
-#define SCSIOP_ACCESS_CONTROL_OUT       0x87
-#define SCSIOP_READ16                   0x88
-#define SCSIOP_COMPARE_AND_WRITE        0x89
-#define SCSIOP_WRITE16                  0x8A
-#define SCSIOP_READ_ATTRIBUTES          0x8C
-#define SCSIOP_WRITE_ATTRIBUTES         0x8D
-#define SCSIOP_WRITE_VERIFY16           0x8E
-#define SCSIOP_VERIFY16                 0x8F
-#define SCSIOP_PREFETCH16               0x90
-#define SCSIOP_SYNCHRONIZE_CACHE16      0x91
-#define SCSIOP_SPACE16                  0x91
-#define SCSIOP_LOCK_UNLOCK_CACHE16      0x92
-#define SCSIOP_LOCATE16                 0x92
-#define SCSIOP_WRITE_SAME16             0x93
-#define SCSIOP_ERASE16                  0x93
-#define SCSIOP_ZBC_OUT                  0x94
-#define SCSIOP_ZBC_IN                   0x95
-#define SCSIOP_READ_DATA_BUFF16         0x9B
-#define SCSIOP_READ_CAPACITY16          0x9E
-#define SCSIOP_GET_LBA_STATUS           0x9E
+#define SCSIOP_ATA_PASSTHROUGH16                     0x85
+#define SCSIOP_ACCESS_CONTROL_IN                     0x86
+#define SCSIOP_ACCESS_CONTROL_OUT                    0x87
+#define SCSIOP_READ16                                                          0x88
+#define SCSIOP_COMPARE_AND_WRITE                     0x89
+#define SCSIOP_WRITE16                                                         0x8A
+#define SCSIOP_READ_ATTRIBUTES                       0x8C
+#define SCSIOP_WRITE_ATTRIBUTES                      0x8D
+#define SCSIOP_WRITE_VERIFY16                        0x8E
+#define SCSIOP_VERIFY16                                           0x8F
+#define SCSIOP_PREFETCH16                                         0x90
+#define SCSIOP_SYNCHRONIZE_CACHE16                   0x91
+#define SCSIOP_SPACE16                                                         0x91
+#define SCSIOP_LOCK_UNLOCK_CACHE16                   0x92
+#define SCSIOP_LOCATE16                                           0x92
+#define SCSIOP_WRITE_SAME16                                       0x93
+#define SCSIOP_ERASE16                                                         0x93
+#define SCSIOP_ZBC_OUT                                                         0x94
+#define SCSIOP_ZBC_IN                                                          0x95
+#define SCSIOP_READ_DATA_BUFF16                      0x9B
+#define SCSIOP_READ_CAPACITY16                       0x9E
+#define SCSIOP_GET_LBA_STATUS                        0x9E
 #define SCSIOP_GET_PHYSICAL_ELEMENT_STATUS 0x9E
 #define SCSIOP_REMOVE_ELEMENT_AND_TRUNCATE 0x9E
-#define SCSIOP_SERVICE_ACTION_IN16      0x9E
+#define SCSIOP_SERVICE_ACTION_IN16                   0x9E
 #define SCSIOP_SERVICE_ACTION_OUT16     0x9F
 
-#define SCSIOP_OPERATION32              0x7F
+#define SCSIOP_OPERATION32                                        0x7F
 
-#define SERVICE_ACTION_OVERWRITE        0x01
-#define SERVICE_ACTION_BLOCK_ERASE      0x02
+#define SERVICE_ACTION_OVERWRITE                     0x01
+#define SERVICE_ACTION_BLOCK_ERASE                   0x02
 #define SERVICE_ACTION_CRYPTO_ERASE     0x03
 #define SERVICE_ACTION_EXIT_FAILURE     0x1f
 
-#define SERVICE_ACTION_XDWRITE          0x0004
-#define SERVICE_ACTION_XPWRITE          0x0006
-#define SERVICE_ACTION_XDWRITEREAD      0x0007
-#define SERVICE_ACTION_WRITE            0x000B
+#define SERVICE_ACTION_XDWRITE                       0x0004
+#define SERVICE_ACTION_XPWRITE                       0x0006
+#define SERVICE_ACTION_XDWRITEREAD                   0x0007
+#define SERVICE_ACTION_WRITE                                      0x000B
 #define SERVICE_ACTION_WRITE_VERIFY     0x000C
-#define SERVICE_ACTION_WRITE_SAME       0x000D
-#define SERVICE_ACTION_ORWRITE          0x000E
+#define SERVICE_ACTION_WRITE_SAME                    0x000D
+#define SERVICE_ACTION_ORWRITE                       0x000E
 
 #define SERVICE_ACTION_POPULATE_TOKEN     0x10
 #define SERVICE_ACTION_WRITE_USING_TOKEN 0x11
 
 #define SERVICE_ACTION_RECEIVE_TOKEN_INFORMATION 0x07
 
-#define SERVICE_ACTION_CLOSE_ZONE           0x01
-#define SERVICE_ACTION_FINISH_ZONE          0x02
-#define SERVICE_ACTION_OPEN_ZONE            0x03
+#define SERVICE_ACTION_CLOSE_ZONE                        0x01
+#define SERVICE_ACTION_FINISH_ZONE                       0x02
+#define SERVICE_ACTION_OPEN_ZONE                                      0x03
 #define SERVICE_ACTION_RESET_WRITE_POINTER  0x04
 
-#define SERVICE_ACTION_REPORT_ZONES         0x00
+#define SERVICE_ACTION_REPORT_ZONES                      0x00
 
-#define REPORT_ZONES_OPTION_LIST_ALL_ZONES               0x00
-#define REPORT_ZONES_OPTION_LIST_EMPTY_ZONES             0x01
+#define REPORT_ZONES_OPTION_LIST_ALL_ZONES                                         0x00
+#define REPORT_ZONES_OPTION_LIST_EMPTY_ZONES                                       0x01
 #define REPORT_ZONES_OPTION_LIST_IMPLICITLY_OPENED_ZONES 0x02
 #define REPORT_ZONES_OPTION_LIST_EXPLICITLY_OPENED_ZONES 0x03
-#define REPORT_ZONES_OPTION_LIST_CLOSED_ZONES            0x04
-#define REPORT_ZONES_OPTION_LIST_FULL_ZONES              0x05
-#define REPORT_ZONES_OPTION_LIST_READ_ONLY_ZONES         0x06
-#define REPORT_ZONES_OPTION_LIST_OFFLINE_ZONES           0x07
-#define REPORT_ZONES_OPTION_LIST_RWP_ZONES               0x10
+#define REPORT_ZONES_OPTION_LIST_CLOSED_ZONES                                      0x04
+#define REPORT_ZONES_OPTION_LIST_FULL_ZONES                                        0x05
+#define REPORT_ZONES_OPTION_LIST_READ_ONLY_ZONES                      0x06
+#define REPORT_ZONES_OPTION_LIST_OFFLINE_ZONES                        0x07
+#define REPORT_ZONES_OPTION_LIST_RWP_ZONES                                         0x10
 #define REPORT_ZONES_OPTION_LIST_NON_SEQUENTIAL_WRITE_RESOURCES_ACTIVE_ZONES 0x11
 #define REPORT_ZONES_OPTION_LIST_NOT_WRITE_POINTER_ZONES 0x3F
 
-#define SERVICE_ACTION_READ_CAPACITY16              0x10
-#define SERVICE_ACTION_GET_LBA_STATUS               0x12
+#define SERVICE_ACTION_READ_CAPACITY16                                        0x10
+#define SERVICE_ACTION_GET_LBA_STATUS                                         0x12
 #define SERVICE_ACTION_GET_PHYSICAL_ELEMENT_STATUS  0x17
 #define SERVICE_ACTION_REMOVE_ELEMENT_AND_TRUNCATE  0x18
-#define SERVICE_ACTION_REPORT_TIMESTAMP             0x0F
-#define SERVICE_ACTION_SET_TIMESTAMP                0x0F
+#define SERVICE_ACTION_REPORT_TIMESTAMP                                       0x0F
+#define SERVICE_ACTION_SET_TIMESTAMP                                          0x0F
 
 #define CDB_RETURN_ON_COMPLETION   0
-#define CDB_RETURN_IMMEDIATE       1
+#define CDB_RETURN_IMMEDIATE                    1
 
 #define CDB_FORCE_MEDIA_ACCESS 0x08
 
 #define SCSIOP_DENON_EJECT_DISC    0xE6
 #define SCSIOP_DENON_STOP_AUDIO    0xE7
 #define SCSIOP_DENON_PLAY_AUDIO    0xE8
-#define SCSIOP_DENON_READ_TOC      0xE9
+#define SCSIOP_DENON_READ_TOC                   0xE9
 #define SCSIOP_DENON_READ_SUBCODE  0xEB
 
-#define SCSIMESS_ABORT                0x06
-#define SCSIMESS_ABORT_WITH_TAG       0x0D
+#define SCSIMESS_ABORT                                          0x06
+#define SCSIMESS_ABORT_WITH_TAG                    0x0D
 #define SCSIMESS_BUS_DEVICE_RESET     0X0C
-#define SCSIMESS_CLEAR_QUEUE          0X0E
+#define SCSIMESS_CLEAR_QUEUE                       0X0E
 #define SCSIMESS_COMMAND_COMPLETE     0X00
-#define SCSIMESS_DISCONNECT           0X04
+#define SCSIMESS_DISCONNECT                        0X04
 #define SCSIMESS_EXTENDED_MESSAGE     0X01
-#define SCSIMESS_IDENTIFY             0X80
+#define SCSIMESS_IDENTIFY                                       0X80
 #define SCSIMESS_IDENTIFY_WITH_DISCON 0XC0
 #define SCSIMESS_IGNORE_WIDE_RESIDUE  0X23
 #define SCSIMESS_INITIATE_RECOVERY    0X0F
 #define SCSIMESS_INIT_DETECTED_ERROR  0X05
-#define SCSIMESS_LINK_CMD_COMP        0X0A
+#define SCSIMESS_LINK_CMD_COMP                     0X0A
 #define SCSIMESS_LINK_CMD_COMP_W_FLAG 0X0B
 #define SCSIMESS_MESS_PARITY_ERROR    0X09
-#define SCSIMESS_MESSAGE_REJECT       0X07
-#define SCSIMESS_NO_OPERATION         0X08
+#define SCSIMESS_MESSAGE_REJECT                    0X07
+#define SCSIMESS_NO_OPERATION                      0X08
 #define SCSIMESS_HEAD_OF_QUEUE_TAG    0X21
 #define SCSIMESS_ORDERED_QUEUE_TAG    0X22
 #define SCSIMESS_SIMPLE_QUEUE_TAG     0X20
@@ -508,7 +508,7 @@ extern "C" {
 #define SCSIMESS_SYNCH_DATA_LENGTH    3
 #define SCSIMESS_WIDE_DATA_LENGTH     2
 
-#define CDB_INQUIRY_EVPD           0x01
+#define CDB_INQUIRY_EVPD                        0x01
 
 #define LUN0_FORMAT_SAVING_DEFECT_LIST 0
 #define USE_DEFAULTMSB 0
@@ -521,158 +521,158 @@ extern "C" {
 #define OFFSET_VER_DESCRIPTOR_EIGHT (FIELD_OFFSET(INQUIRYDATA, VersionDescriptors[8]))
 
 /* INQUIRYDATA.DeviceType constants */
-#define DIRECT_ACCESS_DEVICE              0x00
-#define SEQUENTIAL_ACCESS_DEVICE          0x01
-#define PRINTER_DEVICE                    0x02
-#define PROCESSOR_DEVICE                  0x03
+#define DIRECT_ACCESS_DEVICE                                        0x00
+#define SEQUENTIAL_ACCESS_DEVICE                       0x01
+#define PRINTER_DEVICE                                                           0x02
+#define PROCESSOR_DEVICE                                                         0x03
 #define WRITE_ONCE_READ_MULTIPLE_DEVICE   0x04
 #define READ_ONLY_DIRECT_ACCESS_DEVICE    0x05
-#define SCANNER_DEVICE                    0x06
-#define OPTICAL_DEVICE                    0x07
-#define MEDIUM_CHANGER                    0x08
-#define COMMUNICATION_DEVICE              0x09
-#define ARRAY_CONTROLLER_DEVICE           0x0C
-#define SCSI_ENCLOSURE_DEVICE             0x0D
-#define REDUCED_BLOCK_DEVICE              0x0E
+#define SCANNER_DEVICE                                                           0x06
+#define OPTICAL_DEVICE                                                           0x07
+#define MEDIUM_CHANGER                                                           0x08
+#define COMMUNICATION_DEVICE                                        0x09
+#define ARRAY_CONTROLLER_DEVICE                        0x0C
+#define SCSI_ENCLOSURE_DEVICE                                       0x0D
+#define REDUCED_BLOCK_DEVICE                                        0x0E
 #define OPTICAL_CARD_READER_WRITER_DEVICE 0x0F
-#define BRIDGE_CONTROLLER_DEVICE          0x10
-#define OBJECT_BASED_STORAGE_DEVICE       0x11
+#define BRIDGE_CONTROLLER_DEVICE                       0x10
+#define OBJECT_BASED_STORAGE_DEVICE                    0x11
 #define HOST_MANAGED_ZONED_BLOCK_DEVICE   0x14
-#define UNKNOWN_OR_NO_DEVICE              0x1F
+#define UNKNOWN_OR_NO_DEVICE                                        0x1F
 #define LOGICAL_UNIT_NOT_PRESENT_DEVICE   0x7F
 
-#define DEVICE_QUALIFIER_ACTIVE           0x00
-#define DEVICE_QUALIFIER_NOT_ACTIVE       0x01
+#define DEVICE_QUALIFIER_ACTIVE                        0x00
+#define DEVICE_QUALIFIER_NOT_ACTIVE                    0x01
 #define DEVICE_QUALIFIER_NOT_SUPPORTED    0x03
 
 /* INQUIRYDATA.DeviceTypeQualifier constants */
 #define DEVICE_CONNECTED 0x00
 
-#define SCSISTAT_GOOD                     0x00
-#define SCSISTAT_CHECK_CONDITION          0x02
-#define SCSISTAT_CONDITION_MET            0x04
-#define SCSISTAT_BUSY                     0x08
-#define SCSISTAT_INTERMEDIATE             0x10
+#define SCSISTAT_GOOD                                                            0x00
+#define SCSISTAT_CHECK_CONDITION                       0x02
+#define SCSISTAT_CONDITION_MET                                      0x04
+#define SCSISTAT_BUSY                                                            0x08
+#define SCSISTAT_INTERMEDIATE                                       0x10
 #define SCSISTAT_INTERMEDIATE_COND_MET    0x14
 #define SCSISTAT_RESERVATION_CONFLICT     0x18
-#define SCSISTAT_COMMAND_TERMINATED       0x22
-#define SCSISTAT_QUEUE_FULL               0x28
+#define SCSISTAT_COMMAND_TERMINATED                    0x22
+#define SCSISTAT_QUEUE_FULL                                         0x28
 
-#define VPD_MAX_BUFFER_SIZE                 0xff
+#define VPD_MAX_BUFFER_SIZE                                           0xff
 
-#define VPD_SUPPORTED_PAGES                 0x00
-#define VPD_SERIAL_NUMBER                   0x80
-#define VPD_DEVICE_IDENTIFIERS              0x83
-#define VPD_MEDIA_SERIAL_NUMBER             0x84
+#define VPD_SUPPORTED_PAGES                                           0x00
+#define VPD_SERIAL_NUMBER                                                          0x80
+#define VPD_DEVICE_IDENTIFIERS                                        0x83
+#define VPD_MEDIA_SERIAL_NUMBER                                       0x84
 #define VPD_SOFTWARE_INTERFACE_IDENTIFIERS  0x84
 #define VPD_NETWORK_MANAGEMENT_ADDRESSES    0x85
-#define VPD_EXTENDED_INQUIRY_DATA           0x86
-#define VPD_MODE_PAGE_POLICY                0x87
-#define VPD_SCSI_PORTS                      0x88
+#define VPD_EXTENDED_INQUIRY_DATA                        0x86
+#define VPD_MODE_PAGE_POLICY                                          0x87
+#define VPD_SCSI_PORTS                                                             0x88
 
-#define RESERVATION_ACTION_READ_KEYS                    0x00
-#define RESERVATION_ACTION_READ_RESERVATIONS            0x01
+#define RESERVATION_ACTION_READ_KEYS                                                           0x00
+#define RESERVATION_ACTION_READ_RESERVATIONS                                      0x01
 
-#define RESERVATION_ACTION_REGISTER                     0x00
-#define RESERVATION_ACTION_RESERVE                      0x01
-#define RESERVATION_ACTION_RELEASE                      0x02
-#define RESERVATION_ACTION_CLEAR                        0x03
-#define RESERVATION_ACTION_PREEMPT                      0x04
-#define RESERVATION_ACTION_PREEMPT_ABORT                0x05
+#define RESERVATION_ACTION_REGISTER                                                            0x00
+#define RESERVATION_ACTION_RESERVE                                                             0x01
+#define RESERVATION_ACTION_RELEASE                                                             0x02
+#define RESERVATION_ACTION_CLEAR                                                                            0x03
+#define RESERVATION_ACTION_PREEMPT                                                             0x04
+#define RESERVATION_ACTION_PREEMPT_ABORT                                          0x05
 #define RESERVATION_ACTION_REGISTER_IGNORE_EXISTING     0x06
 
-#define RESERVATION_SCOPE_LU                            0x00
-#define RESERVATION_SCOPE_ELEMENT                       0x02
+#define RESERVATION_SCOPE_LU                                                                                0x00
+#define RESERVATION_SCOPE_ELEMENT                                                              0x02
 
-#define RESERVATION_TYPE_WRITE_EXCLUSIVE                0x01
-#define RESERVATION_TYPE_EXCLUSIVE                      0x03
+#define RESERVATION_TYPE_WRITE_EXCLUSIVE                                          0x01
+#define RESERVATION_TYPE_EXCLUSIVE                                                             0x03
 #define RESERVATION_TYPE_WRITE_EXCLUSIVE_REGISTRANTS    0x05
-#define RESERVATION_TYPE_EXCLUSIVE_REGISTRANTS          0x06
+#define RESERVATION_TYPE_EXCLUSIVE_REGISTRANTS                       0x06
 
-#define SENSE_BUFFER_SIZE              18
+#define SENSE_BUFFER_SIZE                                        18
 
-#define MAX_SENSE_BUFFER_SIZE          255
+#define MAX_SENSE_BUFFER_SIZE                       255
 
 #define MAX_ADDITIONAL_SENSE_BYTES (MAX_SENSE_BUFFER_SIZE - SENSE_BUFFER_SIZE)
 
 /* Sense codes */
-#define SCSI_SENSE_NO_SENSE               0x00
-#define SCSI_SENSE_RECOVERED_ERROR        0x01
-#define SCSI_SENSE_NOT_READY              0x02
-#define SCSI_SENSE_MEDIUM_ERROR           0x03
-#define SCSI_SENSE_HARDWARE_ERROR         0x04
-#define SCSI_SENSE_ILLEGAL_REQUEST        0x05
-#define SCSI_SENSE_UNIT_ATTENTION         0x06
-#define SCSI_SENSE_DATA_PROTECT           0x07
-#define SCSI_SENSE_BLANK_CHECK            0x08
-#define SCSI_SENSE_UNIQUE                 0x09
-#define SCSI_SENSE_COPY_ABORTED           0x0A
-#define SCSI_SENSE_ABORTED_COMMAND        0x0B
-#define SCSI_SENSE_EQUAL                  0x0C
-#define SCSI_SENSE_VOL_OVERFLOW           0x0D
-#define SCSI_SENSE_MISCOMPARE             0x0E
-#define SCSI_SENSE_RESERVED               0x0F
+#define SCSI_SENSE_NO_SENSE                                         0x00
+#define SCSI_SENSE_RECOVERED_ERROR                     0x01
+#define SCSI_SENSE_NOT_READY                                        0x02
+#define SCSI_SENSE_MEDIUM_ERROR                        0x03
+#define SCSI_SENSE_HARDWARE_ERROR                      0x04
+#define SCSI_SENSE_ILLEGAL_REQUEST                     0x05
+#define SCSI_SENSE_UNIT_ATTENTION                      0x06
+#define SCSI_SENSE_DATA_PROTECT                        0x07
+#define SCSI_SENSE_BLANK_CHECK                                      0x08
+#define SCSI_SENSE_UNIQUE                                           0x09
+#define SCSI_SENSE_COPY_ABORTED                        0x0A
+#define SCSI_SENSE_ABORTED_COMMAND                     0x0B
+#define SCSI_SENSE_EQUAL                                                         0x0C
+#define SCSI_SENSE_VOL_OVERFLOW                        0x0D
+#define SCSI_SENSE_MISCOMPARE                                       0x0E
+#define SCSI_SENSE_RESERVED                                         0x0F
 
 /* Additional tape bit */
-#define SCSI_ILLEGAL_LENGTH               0x20
-#define SCSI_EOM                          0x40
-#define SCSI_FILE_MARK                    0x80
+#define SCSI_ILLEGAL_LENGTH                                         0x20
+#define SCSI_EOM                                                                              0x40
+#define SCSI_FILE_MARK                                                           0x80
 
 /* Additional Sense codes */
-#define SCSI_ADSENSE_NO_SENSE                              0x00
-#define SCSI_ADSENSE_NO_SEEK_COMPLETE                      0x02
-#define SCSI_ADSENSE_LUN_NOT_READY                         0x04
-#define SCSI_ADSENSE_LUN_COMMUNICATION                     0x08
-#define SCSI_ADSENSE_WRITE_ERROR                           0x0C
-#define SCSI_ADSENSE_TRACK_ERROR                           0x14
-#define SCSI_ADSENSE_SEEK_ERROR                            0x15
-#define SCSI_ADSENSE_REC_DATA_NOECC                        0x17
-#define SCSI_ADSENSE_REC_DATA_ECC                          0x18
-#define SCSI_ADSENSE_PARAMETER_LIST_LENGTH                 0x1A
-#define SCSI_ADSENSE_ILLEGAL_COMMAND                       0x20
-#define SCSI_ADSENSE_ILLEGAL_BLOCK                         0x21
-#define SCSI_ADSENSE_INVALID_CDB                           0x24
-#define SCSI_ADSENSE_INVALID_LUN                           0x25
-#define SCSI_ADSENSE_INVALID_FIELD_PARAMETER_LIST          0x26
-#define SCSI_ADSENSE_WRITE_PROTECT                         0x27
-#define SCSI_ADSENSE_MEDIUM_CHANGED                        0x28
-#define SCSI_ADSENSE_BUS_RESET                             0x29
-#define SCSI_ADSENSE_PARAMETERS_CHANGED                    0x2A
-#define SCSI_ADSENSE_INSUFFICIENT_TIME_FOR_OPERATION       0x2E
-#define SCSI_ADSENSE_INVALID_MEDIA                         0x30
-#define SCSI_ADSENSE_NO_MEDIA_IN_DEVICE                    0x3a
-#define SCSI_ADSENSE_POSITION_ERROR                        0x3b
-#define SCSI_ADSENSE_OPERATING_CONDITIONS_CHANGED          0x3f
-#define SCSI_ADSENSE_OPERATOR_REQUEST                      0x5a
+#define SCSI_ADSENSE_NO_SENSE                                                                                               0x00
+#define SCSI_ADSENSE_NO_SEEK_COMPLETE                                                             0x02
+#define SCSI_ADSENSE_LUN_NOT_READY                                                                             0x04
+#define SCSI_ADSENSE_LUN_COMMUNICATION                                                            0x08
+#define SCSI_ADSENSE_WRITE_ERROR                                                                               0x0C
+#define SCSI_ADSENSE_TRACK_ERROR                                                                               0x14
+#define SCSI_ADSENSE_SEEK_ERROR                                                                                0x15
+#define SCSI_ADSENSE_REC_DATA_NOECC                                                                            0x17
+#define SCSI_ADSENSE_REC_DATA_ECC                                                                              0x18
+#define SCSI_ADSENSE_PARAMETER_LIST_LENGTH                                           0x1A
+#define SCSI_ADSENSE_ILLEGAL_COMMAND                                                              0x20
+#define SCSI_ADSENSE_ILLEGAL_BLOCK                                                                             0x21
+#define SCSI_ADSENSE_INVALID_CDB                                                                               0x24
+#define SCSI_ADSENSE_INVALID_LUN                                                                               0x25
+#define SCSI_ADSENSE_INVALID_FIELD_PARAMETER_LIST                       0x26
+#define SCSI_ADSENSE_WRITE_PROTECT                                                                             0x27
+#define SCSI_ADSENSE_MEDIUM_CHANGED                                                                            0x28
+#define SCSI_ADSENSE_BUS_RESET                                                                                 0x29
+#define SCSI_ADSENSE_PARAMETERS_CHANGED                                                           0x2A
+#define SCSI_ADSENSE_INSUFFICIENT_TIME_FOR_OPERATION                    0x2E
+#define SCSI_ADSENSE_INVALID_MEDIA                                                                             0x30
+#define SCSI_ADSENSE_NO_MEDIA_IN_DEVICE                                                           0x3a
+#define SCSI_ADSENSE_POSITION_ERROR                                                                            0x3b
+#define SCSI_ADSENSE_OPERATING_CONDITIONS_CHANGED                       0x3f
+#define SCSI_ADSENSE_OPERATOR_REQUEST                                                             0x5a
 #define SCSI_ADSENSE_FAILURE_PREDICTION_THRESHOLD_EXCEEDED 0x5d
-#define SCSI_ADSENSE_ILLEGAL_MODE_FOR_THIS_TRACK           0x64
-#define SCSI_ADSENSE_COPY_PROTECTION_FAILURE               0x6f
-#define SCSI_ADSENSE_POWER_CALIBRATION_ERROR               0x73
-#define SCSI_ADSENSE_VENDOR_UNIQUE                         0x80
-#define SCSI_ADSENSE_MUSIC_AREA                            0xA0
-#define SCSI_ADSENSE_DATA_AREA                             0xA1
-#define SCSI_ADSENSE_VOLUME_OVERFLOW                       0xA7
+#define SCSI_ADSENSE_ILLEGAL_MODE_FOR_THIS_TRACK                        0x64
+#define SCSI_ADSENSE_COPY_PROTECTION_FAILURE                                         0x6f
+#define SCSI_ADSENSE_POWER_CALIBRATION_ERROR                                         0x73
+#define SCSI_ADSENSE_VENDOR_UNIQUE                                                                             0x80
+#define SCSI_ADSENSE_MUSIC_AREA                                                                                0xA0
+#define SCSI_ADSENSE_DATA_AREA                                                                                 0xA1
+#define SCSI_ADSENSE_VOLUME_OVERFLOW                                                              0xA7
 
-#define SCSI_ADWRITE_PROTECT                        SCSI_ADSENSE_WRITE_PROTECT
+#define SCSI_ADWRITE_PROTECT                                                                            SCSI_ADSENSE_WRITE_PROTECT
 #define SCSI_FAILURE_PREDICTION_THRESHOLD_EXCEEDED  SCSI_ADSENSE_FAILURE_PREDICTION_THRESHOLD_EXCEEDED
 
-#define SCSI_SENSEQ_CAUSE_NOT_REPORTABLE                   0x00
-#define SCSI_SENSEQ_BECOMING_READY                         0x01
-#define SCSI_SENSEQ_INIT_COMMAND_REQUIRED                  0x02
-#define SCSI_SENSEQ_MANUAL_INTERVENTION_REQUIRED           0x03
-#define SCSI_SENSEQ_FORMAT_IN_PROGRESS                     0x04
-#define SCSI_SENSEQ_REBUILD_IN_PROGRESS                    0x05
-#define SCSI_SENSEQ_RECALCULATION_IN_PROGRESS              0x06
-#define SCSI_SENSEQ_OPERATION_IN_PROGRESS                  0x07
-#define SCSI_SENSEQ_LONG_WRITE_IN_PROGRESS                 0x08
-#define SCSI_SENSEQ_LOSS_OF_STREAMING                      0x09
-#define SCSI_SENSEQ_PADDING_BLOCKS_ADDED                   0x0A
+#define SCSI_SENSEQ_CAUSE_NOT_REPORTABLE                                                          0x00
+#define SCSI_SENSEQ_BECOMING_READY                                                                             0x01
+#define SCSI_SENSEQ_INIT_COMMAND_REQUIRED                                                         0x02
+#define SCSI_SENSEQ_MANUAL_INTERVENTION_REQUIRED                        0x03
+#define SCSI_SENSEQ_FORMAT_IN_PROGRESS                                                            0x04
+#define SCSI_SENSEQ_REBUILD_IN_PROGRESS                                                           0x05
+#define SCSI_SENSEQ_RECALCULATION_IN_PROGRESS                                        0x06
+#define SCSI_SENSEQ_OPERATION_IN_PROGRESS                                                         0x07
+#define SCSI_SENSEQ_LONG_WRITE_IN_PROGRESS                                           0x08
+#define SCSI_SENSEQ_LOSS_OF_STREAMING                                                             0x09
+#define SCSI_SENSEQ_PADDING_BLOCKS_ADDED                                                          0x0A
 
-#define SCSI_SENSEQ_COMM_FAILURE                 0x00
-#define SCSI_SENSEQ_COMM_TIMEOUT                 0x01
-#define SCSI_SENSEQ_COMM_PARITY_ERROR            0x02
-#define SCSI_SESNEQ_COMM_CRC_ERROR               0x03
-#define SCSI_SENSEQ_UNREACHABLE_TARGET           0x04
+#define SCSI_SENSEQ_COMM_FAILURE                                           0x00
+#define SCSI_SENSEQ_COMM_TIMEOUT                                           0x01
+#define SCSI_SENSEQ_COMM_PARITY_ERROR                                      0x02
+#define SCSI_SESNEQ_COMM_CRC_ERROR                                         0x03
+#define SCSI_SENSEQ_UNREACHABLE_TARGET                        0x04
 
 #define SCSI_SENSEQ_FILEMARK_DETECTED 0x01
 #define SCSI_SENSEQ_END_OF_MEDIA_DETECTED 0x02
@@ -690,42 +690,42 @@ extern "C" {
 #define SCSI_SENSEQ_CLEANING_CARTRIDGE_INSTALLED 0x03
 
 #define SCSI_SENSEQ_TARGET_OPERATING_CONDITIONS_CHANGED 0x00
-#define SCSI_SENSEQ_MICROCODE_CHANGED                   0x01
-#define SCSI_SENSEQ_OPERATING_DEFINITION_CHANGED        0x02
-#define SCSI_SENSEQ_INQUIRY_DATA_CHANGED                0x03
-#define SCSI_SENSEQ_COMPONENT_DEVICE_ATTACHED           0x04
-#define SCSI_SENSEQ_DEVICE_IDENTIFIER_CHANGED           0x05
-#define SCSI_SENSEQ_REDUNDANCY_GROUP_MODIFIED           0x06
-#define SCSI_SENSEQ_REDUNDANCY_GROUP_DELETED            0x07
-#define SCSI_SENSEQ_SPARE_MODIFIED                      0x08
-#define SCSI_SENSEQ_SPARE_DELETED                       0x09
-#define SCSI_SENSEQ_VOLUME_SET_MODIFIED                 0x0A
-#define SCSI_SENSEQ_VOLUME_SET_DELETED                  0x0B
-#define SCSI_SENSEQ_VOLUME_SET_DEASSIGNED               0x0C
-#define SCSI_SENSEQ_VOLUME_SET_REASSIGNED               0x0D
-#define SCSI_SENSEQ_REPORTED_LUNS_DATA_CHANGED          0x0E
-#define SCSI_SENSEQ_ECHO_BUFFER_OVERWRITTEN             0x0F
-#define SCSI_SENSEQ_MEDIUM_LOADABLE                     0x10
+#define SCSI_SENSEQ_MICROCODE_CHANGED                                                          0x01
+#define SCSI_SENSEQ_OPERATING_DEFINITION_CHANGED                     0x02
+#define SCSI_SENSEQ_INQUIRY_DATA_CHANGED                                          0x03
+#define SCSI_SENSEQ_COMPONENT_DEVICE_ATTACHED                        0x04
+#define SCSI_SENSEQ_DEVICE_IDENTIFIER_CHANGED                        0x05
+#define SCSI_SENSEQ_REDUNDANCY_GROUP_MODIFIED                        0x06
+#define SCSI_SENSEQ_REDUNDANCY_GROUP_DELETED                                      0x07
+#define SCSI_SENSEQ_SPARE_MODIFIED                                                             0x08
+#define SCSI_SENSEQ_SPARE_DELETED                                                              0x09
+#define SCSI_SENSEQ_VOLUME_SET_MODIFIED                                           0x0A
+#define SCSI_SENSEQ_VOLUME_SET_DELETED                                                         0x0B
+#define SCSI_SENSEQ_VOLUME_SET_DEASSIGNED                                         0x0C
+#define SCSI_SENSEQ_VOLUME_SET_REASSIGNED                                         0x0D
+#define SCSI_SENSEQ_REPORTED_LUNS_DATA_CHANGED                       0x0E
+#define SCSI_SENSEQ_ECHO_BUFFER_OVERWRITTEN                                       0x0F
+#define SCSI_SENSEQ_MEDIUM_LOADABLE                                                            0x10
 #define SCSI_SENSEQ_MEDIUM_AUXILIARY_MEMORY_ACCESSIBLE  0x11
 
 #define SCSI_SENSEQ_STATE_CHANGE_INPUT     0x00
-#define SCSI_SENSEQ_MEDIUM_REMOVAL         0x01
+#define SCSI_SENSEQ_MEDIUM_REMOVAL                      0x01
 #define SCSI_SENSEQ_WRITE_PROTECT_ENABLE   0x02
 #define SCSI_SENSEQ_WRITE_PROTECT_DISABLE  0x03
 
-#define SCSI_SENSEQ_AUTHENTICATION_FAILURE                          0x00
-#define SCSI_SENSEQ_KEY_NOT_PRESENT                                 0x01
-#define SCSI_SENSEQ_KEY_NOT_ESTABLISHED                             0x02
+#define SCSI_SENSEQ_AUTHENTICATION_FAILURE                                                                              0x00
+#define SCSI_SENSEQ_KEY_NOT_PRESENT                                                                                                  0x01
+#define SCSI_SENSEQ_KEY_NOT_ESTABLISHED                                                                                 0x02
 #define SCSI_SENSEQ_READ_OF_SCRAMBLED_SECTOR_WITHOUT_AUTHENTICATION 0x03
-#define SCSI_SENSEQ_MEDIA_CODE_MISMATCHED_TO_LOGICAL_UNIT           0x04
-#define SCSI_SENSEQ_LOGICAL_UNIT_RESET_COUNT_ERROR                  0x05
+#define SCSI_SENSEQ_MEDIA_CODE_MISMATCHED_TO_LOGICAL_UNIT                        0x04
+#define SCSI_SENSEQ_LOGICAL_UNIT_RESET_COUNT_ERROR                                                         0x05
 
 #define SCSI_SENSEQ_POWER_CALIBRATION_AREA_ALMOST_FULL 0x01
-#define SCSI_SENSEQ_POWER_CALIBRATION_AREA_FULL        0x02
-#define SCSI_SENSEQ_POWER_CALIBRATION_AREA_ERROR       0x03
-#define SCSI_SENSEQ_PMA_RMA_UPDATE_FAILURE             0x04
-#define SCSI_SENSEQ_PMA_RMA_IS_FULL                    0x05
-#define SCSI_SENSEQ_PMA_RMA_ALMOST_FULL                0x06
+#define SCSI_SENSEQ_POWER_CALIBRATION_AREA_FULL                     0x02
+#define SCSI_SENSEQ_POWER_CALIBRATION_AREA_ERROR                    0x03
+#define SCSI_SENSEQ_PMA_RMA_UPDATE_FAILURE                                       0x04
+#define SCSI_SENSEQ_PMA_RMA_IS_FULL                                                           0x05
+#define SCSI_SENSEQ_PMA_RMA_ALMOST_FULL                                          0x06
 
 #define FILE_DEVICE_SCSI 0x0000001b
 
@@ -734,70 +734,70 @@ extern "C" {
 #define IOCTL_SCSI_EXECUTE_NONE ((FILE_DEVICE_SCSI << 16) + 0x0013)
 
 /* SMART support in ATAPI */
-#define IOCTL_SCSI_MINIPORT_SMART_VERSION               ((FILE_DEVICE_SCSI << 16) + 0x0500)
-#define IOCTL_SCSI_MINIPORT_IDENTIFY                    ((FILE_DEVICE_SCSI << 16) + 0x0501)
-#define IOCTL_SCSI_MINIPORT_READ_SMART_ATTRIBS          ((FILE_DEVICE_SCSI << 16) + 0x0502)
-#define IOCTL_SCSI_MINIPORT_READ_SMART_THRESHOLDS       ((FILE_DEVICE_SCSI << 16) + 0x0503)
-#define IOCTL_SCSI_MINIPORT_ENABLE_SMART                ((FILE_DEVICE_SCSI << 16) + 0x0504)
-#define IOCTL_SCSI_MINIPORT_DISABLE_SMART               ((FILE_DEVICE_SCSI << 16) + 0x0505)
-#define IOCTL_SCSI_MINIPORT_RETURN_STATUS               ((FILE_DEVICE_SCSI << 16) + 0x0506)
+#define IOCTL_SCSI_MINIPORT_SMART_VERSION                                         ((FILE_DEVICE_SCSI << 16) + 0x0500)
+#define IOCTL_SCSI_MINIPORT_IDENTIFY                                                           ((FILE_DEVICE_SCSI << 16) + 0x0501)
+#define IOCTL_SCSI_MINIPORT_READ_SMART_ATTRIBS                       ((FILE_DEVICE_SCSI << 16) + 0x0502)
+#define IOCTL_SCSI_MINIPORT_READ_SMART_THRESHOLDS                    ((FILE_DEVICE_SCSI << 16) + 0x0503)
+#define IOCTL_SCSI_MINIPORT_ENABLE_SMART                                          ((FILE_DEVICE_SCSI << 16) + 0x0504)
+#define IOCTL_SCSI_MINIPORT_DISABLE_SMART                                         ((FILE_DEVICE_SCSI << 16) + 0x0505)
+#define IOCTL_SCSI_MINIPORT_RETURN_STATUS                                         ((FILE_DEVICE_SCSI << 16) + 0x0506)
 #define IOCTL_SCSI_MINIPORT_ENABLE_DISABLE_AUTOSAVE     ((FILE_DEVICE_SCSI << 16) + 0x0507)
-#define IOCTL_SCSI_MINIPORT_SAVE_ATTRIBUTE_VALUES       ((FILE_DEVICE_SCSI << 16) + 0x0508)
-#define IOCTL_SCSI_MINIPORT_EXECUTE_OFFLINE_DIAGS       ((FILE_DEVICE_SCSI << 16) + 0x0509)
+#define IOCTL_SCSI_MINIPORT_SAVE_ATTRIBUTE_VALUES                    ((FILE_DEVICE_SCSI << 16) + 0x0508)
+#define IOCTL_SCSI_MINIPORT_EXECUTE_OFFLINE_DIAGS                    ((FILE_DEVICE_SCSI << 16) + 0x0509)
 #define IOCTL_SCSI_MINIPORT_ENABLE_DISABLE_AUTO_OFFLINE ((FILE_DEVICE_SCSI << 16) + 0x050a)
-#define IOCTL_SCSI_MINIPORT_READ_SMART_LOG              ((FILE_DEVICE_SCSI << 16) + 0x050b)
-#define IOCTL_SCSI_MINIPORT_WRITE_SMART_LOG             ((FILE_DEVICE_SCSI << 16) + 0x050c)
+#define IOCTL_SCSI_MINIPORT_READ_SMART_LOG                                        ((FILE_DEVICE_SCSI << 16) + 0x050b)
+#define IOCTL_SCSI_MINIPORT_WRITE_SMART_LOG                                       ((FILE_DEVICE_SCSI << 16) + 0x050c)
 
 /* CLUSTER support */
 #define IOCTL_SCSI_MINIPORT_NOT_QUORUM_CAPABLE ((FILE_DEVICE_SCSI << 16) + 0x0520)
 #define IOCTL_SCSI_MINIPORT_NOT_CLUSTER_CAPABLE ((FILE_DEVICE_SCSI << 16) + 0x0521)
 
-#define MODE_FD_SINGLE_SIDE               0x01
-#define MODE_FD_DOUBLE_SIDE               0x02
-#define MODE_FD_MAXIMUM_TYPE              0x1E
-#define MODE_DSP_FUA_SUPPORTED            0x10
-#define MODE_DSP_WRITE_PROTECT            0x80
+#define MODE_FD_SINGLE_SIDE                                         0x01
+#define MODE_FD_DOUBLE_SIDE                                         0x02
+#define MODE_FD_MAXIMUM_TYPE                                        0x1E
+#define MODE_DSP_FUA_SUPPORTED                                      0x10
+#define MODE_DSP_WRITE_PROTECT                                      0x80
 
-#define CDDA_CHANNEL_MUTED      0x0
-#define CDDA_CHANNEL_ZERO       0x1
-#define CDDA_CHANNEL_ONE        0x2
-#define CDDA_CHANNEL_TWO        0x4
-#define CDDA_CHANNEL_THREE      0x8
+#define CDDA_CHANNEL_MUTED                   0x0
+#define CDDA_CHANNEL_ZERO                    0x1
+#define CDDA_CHANNEL_ONE                     0x2
+#define CDDA_CHANNEL_TWO                     0x4
+#define CDDA_CHANNEL_THREE                   0x8
 
-#define CDVD_LMT_CADDY              0
-#define CDVD_LMT_TRAY               1
-#define CDVD_LMT_POPUP              2
-#define CDVD_LMT_RESERVED1          3
+#define CDVD_LMT_CADDY                                        0
+#define CDVD_LMT_TRAY                                         1
+#define CDVD_LMT_POPUP                                        2
+#define CDVD_LMT_RESERVED1                       3
 #define CDVD_LMT_CHANGER_INDIVIDUAL 4
 #define CDVD_LMT_CHANGER_CARTRIDGE  5
-#define CDVD_LMT_RESERVED2          6
-#define CDVD_LMT_RESERVED3          7
+#define CDVD_LMT_RESERVED2                       6
+#define CDVD_LMT_RESERVED3                       7
 
-#define LOADING_MECHANISM_CADDY                 0x00
-#define LOADING_MECHANISM_TRAY                  0x01
-#define LOADING_MECHANISM_POPUP                 0x02
+#define LOADING_MECHANISM_CADDY                                           0x00
+#define LOADING_MECHANISM_TRAY                                                         0x01
+#define LOADING_MECHANISM_POPUP                                           0x02
 #define LOADING_MECHANISM_INDIVIDUAL_CHANGER    0x04
 #define LOADING_MECHANISM_CARTRIDGE_CHANGER     0x05
 
-#define MODE_BLOCK_DESC_LENGTH        8
-#define MODE_HEADER_LENGTH            4
-#define MODE_HEADER_LENGTH10          8
+#define MODE_BLOCK_DESC_LENGTH                     8
+#define MODE_HEADER_LENGTH                                      4
+#define MODE_HEADER_LENGTH10                       8
 
 /* CDROM audio control */
-#define CDB_AUDIO_PAUSE                   0x00
-#define CDB_AUDIO_RESUME                  0x01
-#define CDB_DEVICE_START                  0x11
-#define CDB_DEVICE_STOP                   0x10
-#define CDB_EJECT_MEDIA                   0x10
-#define CDB_LOAD_MEDIA                    0x01
-#define CDB_SUBCHANNEL_HEADER             0x00
-#define CDB_SUBCHANNEL_BLOCK              0x01
+#define CDB_AUDIO_PAUSE                                                          0x00
+#define CDB_AUDIO_RESUME                                                         0x01
+#define CDB_DEVICE_START                                                         0x11
+#define CDB_DEVICE_STOP                                                          0x10
+#define CDB_EJECT_MEDIA                                                          0x10
+#define CDB_LOAD_MEDIA                                                           0x01
+#define CDB_SUBCHANNEL_HEADER                                       0x00
+#define CDB_SUBCHANNEL_BLOCK                                        0x01
 
-#define CDROM_AUDIO_CONTROL_PAGE          0x0E
-#define MODE_SELECT_IMMEDIATE             0x04
-#define MODE_SELECT_PFBIT                 0x10
+#define CDROM_AUDIO_CONTROL_PAGE                       0x0E
+#define MODE_SELECT_IMMEDIATE                                       0x04
+#define MODE_SELECT_PFBIT                                           0x10
 
-#define CDB_USE_MSF                       0x01
+#define CDB_USE_MSF                                                              0x01
 
 /* Multisession CDROMs */
 #define GET_LAST_SESSION 0x01
@@ -1123,20 +1123,20 @@ typedef union _CDB {
     UCHAR ExpectedSectorType:3;
     UCHAR Lun:3;
     _ANONYMOUS_UNION union {
-      struct {
-        UCHAR StartingBlockAddress[4];
-        UCHAR PlayLength[4];
-      } LBA;
-      struct {
-        UCHAR Reserved1;
-        UCHAR StartingM;
-        UCHAR StartingS;
-        UCHAR StartingF;
-        UCHAR EndingM;
-        UCHAR EndingS;
-        UCHAR EndingF;
-        UCHAR Reserved2;
-      } MSF;
+                   struct {
+                     UCHAR StartingBlockAddress[4];
+                     UCHAR PlayLength[4];
+                   } LBA;
+                   struct {
+                     UCHAR Reserved1;
+                     UCHAR StartingM;
+                     UCHAR StartingS;
+                     UCHAR StartingF;
+                     UCHAR EndingM;
+                     UCHAR EndingS;
+                     UCHAR EndingF;
+                     UCHAR Reserved2;
+                   } MSF;
     };
     UCHAR Audio:1;
     UCHAR Composite:1;
@@ -1343,8 +1343,8 @@ typedef union _CDB {
     UCHAR PageCode:6;
     UCHAR PCBit:2;
     _ANONYMOUS_UNION union {
-      UCHAR SubPageCode;
-      UCHAR Reserved2;
+                   UCHAR SubPageCode;
+                   UCHAR Reserved2;
     };
     UCHAR Reserved3;
     UCHAR ParameterPointer[2];
@@ -1455,10 +1455,10 @@ typedef union _CDB {
   union {
     UCHAR value;
     struct {
-      UCHAR Link:1;
-      UCHAR Flag:1;
-      UCHAR Reserved:4;
-      UCHAR VendorUnique:2;
+                   UCHAR Link:1;
+                   UCHAR Flag:1;
+                   UCHAR Reserved:4;
+                   UCHAR VendorUnique:2;
     } Fields;
   } Byte6;
   } SPACE_TAPE_MARKS;
@@ -1753,11 +1753,11 @@ typedef union _CDB {
   struct _SET_CD_SPEED {
     UCHAR OperationCode;
     _ANONYMOUS_UNION union {
-      UCHAR Reserved1;
-      _ANONYMOUS_STRUCT struct {
-        UCHAR RotationControl:2;
-        UCHAR Reserved3:6;
-      } DUMMYSTRUCTNAME;
+                   UCHAR Reserved1;
+                   _ANONYMOUS_STRUCT struct {
+                     UCHAR RotationControl:2;
+                     UCHAR Reserved3:6;
+                   } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
     UCHAR ReadSpeed[2];
     UCHAR WriteSpeed[2];
@@ -2051,9 +2051,9 @@ typedef struct _NOTIFICATION_MEDIA_STATUS {
     UCHAR PowerStatus;
     UCHAR MediaStatus;
     _ANONYMOUS_STRUCT struct {
-      UCHAR DoorTrayOpen:1;
-      UCHAR MediaPresent:1;
-      UCHAR ReservedX:6;
+                   UCHAR DoorTrayOpen:1;
+                   UCHAR MediaPresent:1;
+                   UCHAR ReservedX:6;
     } DUMMYSTRUCTNAME;
   } DUMMYUNIONNAME;
   UCHAR StartSlot;
@@ -2227,10 +2227,10 @@ typedef struct _DATA_BLOCK_HEADER {
   _ANONYMOUS_UNION union {
     UCHAR LogicalBlockAddress[4];
     struct {
-      UCHAR Reserved;
-      UCHAR M;
-      UCHAR S;
-      UCHAR F;
+                   UCHAR Reserved;
+                   UCHAR M;
+                   UCHAR S;
+                   UCHAR F;
     } MSF;
   } DUMMYUNIONNAME;
 } DATA_BLOCK_HEADER, *PDATA_BLOCK_HEADER;
@@ -2335,14 +2335,14 @@ typedef struct _SCSI_EXTENDED_MESSAGE {
   UCHAR MessageType;
   union _EXTENDED_ARGUMENTS {
     struct {
-      UCHAR Modifier[4];
+                   UCHAR Modifier[4];
     } Modify;
     struct {
-      UCHAR TransferPeriod;
-      UCHAR ReqAckOffset;
+                   UCHAR TransferPeriod;
+                   UCHAR ReqAckOffset;
     } Synchronous;
     struct{
-      UCHAR Width;
+                   UCHAR Width;
     } Wide;
   } ExtendedArguments;
 }SCSI_EXTENDED_MESSAGE, *PSCSI_EXTENDED_MESSAGE;
@@ -2389,9 +2389,9 @@ typedef struct _INQUIRYDATA {
   _ANONYMOUS_UNION union {
     UCHAR Versions;
     _ANONYMOUS_STRUCT struct {
-      UCHAR ANSIVersion:3;
-      UCHAR ECMAVersion:3;
-      UCHAR ISOVersion:2;
+                   UCHAR ANSIVersion:3;
+                   UCHAR ECMAVersion:3;
+                   UCHAR ISOVersion:2;
     } DUMMYSTRUCTNAME;
   } DUMMYUNIONNAME;
   UCHAR ResponseDataFormat:4;
@@ -2789,12 +2789,12 @@ typedef struct _MODE_INFO_EXCEPTIONS {
   _ANONYMOUS_UNION union {
     UCHAR Flags;
     _ANONYMOUS_STRUCT struct {
-      UCHAR LogErr:1;
-      UCHAR Reserved2:1;
-      UCHAR Test:1;
-      UCHAR Dexcpt:1;
-      UCHAR Reserved3:3;
-      UCHAR Perf:1;
+                   UCHAR LogErr:1;
+                   UCHAR Reserved2:1;
+                   UCHAR Test:1;
+                   UCHAR Dexcpt:1;
+                   UCHAR Reserved3:3;
+                   UCHAR Perf:1;
     } DUMMYSTRUCTNAME;
   } DUMMYUNIONNAME;
   UCHAR ReportMethod:4;
@@ -3101,7 +3101,7 @@ typedef union _TWO_BYTE {
   UCHAR _val; \
   for (_val = 0; _val < 32; _val++) { \
     if (((Data) >> _val) == 1) { \
-      break; \
+                   break; \
     } \
   } \
   ASSERT(_val != 32); \

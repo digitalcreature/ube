@@ -67,88 +67,88 @@
 # endif
 
 # undef PSEUDO
-# define PSEUDO(name, syscall_name, args)           \
-  .text;                                            \
-  ENTRY (name)                                      \
-    DO_CALL (syscall_name, args);                   \
-    addik r12,r0,-4095;                             \
-    cmpu  r12,r12,r3;                               \
+# define PSEUDO(name, syscall_name, args)                        \
+  .text;                                                                                                                                       \
+  ENTRY (name)                                                                                                                    \
+    DO_CALL (syscall_name, args);                                                          \
+    addik r12,r0,-4095;                                                                                 \
+    cmpu  r12,r12,r3;                                                                                                \
     bgei  r12,SYSCALL_ERROR_LABEL;
 
 # undef PSEUDO_END
-# define PSEUDO_END(name)                           \
-  SYSCALL_ERROR_HANDLER;                            \
+# define PSEUDO_END(name)                                                                               \
+  SYSCALL_ERROR_HANDLER;                                                                                \
   END (name)
 
 # undef PSEUDO_NOERRNO
 # define PSEUDO_NOERRNO(name, syscall_name, args)   \
-  .text;                                            \
-  ENTRY (name)                                      \
+  .text;                                                                                                                                       \
+  ENTRY (name)                                                                                                                    \
     DO_CALL (syscall_name, args);
 
 # undef PSEUDO_END_NOERRNO
-# define PSEUDO_END_NOERRNO(name)                   \
+# define PSEUDO_END_NOERRNO(name)                                                          \
   END (name)
 
 /* The function has to return the error code.  */
 # undef  PSEUDO_ERRVAL
 # define PSEUDO_ERRVAL(name, syscall_name, args)    \
-  .text;                                            \
-  ENTRY (name)                                      \
-    DO_CALL (syscall_name, args);                   \
+  .text;                                                                                                                                       \
+  ENTRY (name)                                                                                                                    \
+    DO_CALL (syscall_name, args);                                                          \
 
 # undef  PSEUDO_END_ERRVAL
-# define PSEUDO_END_ERRVAL(name)                    \
+# define PSEUDO_END_ERRVAL(name)                                                           \
   END (name)
 
-# define ret_NOERRNO                                \
+# define ret_NOERRNO                                                                                                 \
   rtsd r15,8; addk r0,r0,r0;
 
-# define ret_ERRVAL                                 \
+# define ret_ERRVAL                                                                                                  \
   rtsd r15,8; rsubk r3,r3,r0;
 
 # ifdef PIC
 #  define SYSCALL_ERROR_LABEL_DCL 0
 #  if RTLD_PRIVATE_ERRNO
-#   define SYSCALL_ERROR_HANDLER                    \
-SYSCALL_ERROR_LABEL_DCL:                            \
-    mfs   r12,rpc;                                  \
-    addik r12,r12,_GLOBAL_OFFSET_TABLE_+8;          \
-    lwi   r12,r12,rtld_errno@GOT;                   \
-    rsubk r3,r3,r0;                                 \
-    swi   r3,r12,0;                                 \
-    rtsd  r15,8;                                    \
+#   define SYSCALL_ERROR_HANDLER                                                           \
+SYSCALL_ERROR_LABEL_DCL:                                                                                \
+    mfs   r12,rpc;                                                                                                   \
+    addik r12,r12,_GLOBAL_OFFSET_TABLE_+8;                       \
+    lwi   r12,r12,rtld_errno@GOT;                                                          \
+    rsubk r3,r3,r0;                                                                                                  \
+    swi   r3,r12,0;                                                                                                  \
+    rtsd  r15,8;                                                                                                                  \
     addik r3,r0,-1;
 #  else /* !RTLD_PRIVATE_ERRNO.  */
 /* Store (-r3) into errno through the GOT.  */
 #   if defined _LIBC_REENTRANT
-#    define SYSCALL_ERROR_HANDLER                   \
-SYSCALL_ERROR_LABEL_DCL:                            \
-    addik r1,r1,-16;                                \
-    swi   r15,r1,0;                                 \
-    swi   r20,r1,8;                                 \
-    rsubk r3,r3,r0;                                 \
-    swi   r3,r1,12;                                 \
-    mfs   r20,rpc;                                  \
-    addik r20,r20,_GLOBAL_OFFSET_TABLE_+8;          \
-    brlid r15,__errno_location@PLT;                 \
-    nop;                                            \
-    lwi   r4,r1,12;                                 \
-    swi   r4,r3,0;                                  \
-    lwi   r20,r1,8;                                 \
-    lwi   r15,r1,0;                                 \
-    addik r1,r1,16;                                 \
-    rtsd  r15,8;                                    \
+#    define SYSCALL_ERROR_HANDLER                                                          \
+SYSCALL_ERROR_LABEL_DCL:                                                                                \
+    addik r1,r1,-16;                                                                                                 \
+    swi   r15,r1,0;                                                                                                  \
+    swi   r20,r1,8;                                                                                                  \
+    rsubk r3,r3,r0;                                                                                                  \
+    swi   r3,r1,12;                                                                                                  \
+    mfs   r20,rpc;                                                                                                   \
+    addik r20,r20,_GLOBAL_OFFSET_TABLE_+8;                       \
+    brlid r15,__errno_location@PLT;                                           \
+    nop;                                                                                                                                       \
+    lwi   r4,r1,12;                                                                                                  \
+    swi   r4,r3,0;                                                                                                   \
+    lwi   r20,r1,8;                                                                                                  \
+    lwi   r15,r1,0;                                                                                                  \
+    addik r1,r1,16;                                                                                                  \
+    rtsd  r15,8;                                                                                                                  \
     addik r3,r0,-1;
 #   else /* !_LIBC_REENTRANT.  */
-#    define SYSCALL_ERROR_HANDLER                   \
-SYSCALL_ERROR_LABEL_DCL:                            \
-    mfs   r12,rpc;                                  \
-    addik r12,r12,_GLOBAL_OFFSET_TABLE_+8;          \
-    lwi   r12,r12,errno@GOT;                        \
-    rsubk r3,r3,r0;                                 \
-    swi   r3,r12,0;                                 \
-    rtsd  r15,8;                                    \
+#    define SYSCALL_ERROR_HANDLER                                                          \
+SYSCALL_ERROR_LABEL_DCL:                                                                                \
+    mfs   r12,rpc;                                                                                                   \
+    addik r12,r12,_GLOBAL_OFFSET_TABLE_+8;                       \
+    lwi   r12,r12,errno@GOT;                                                                            \
+    rsubk r3,r3,r0;                                                                                                  \
+    swi   r3,r12,0;                                                                                                  \
+    rtsd  r15,8;                                                                                                                  \
     addik r3,r0,-1;
 #    endif /* _LIBC_REENTRANT.  */
 # endif /* RTLD_PRIVATE_ERRNO.  */
@@ -156,9 +156,9 @@ SYSCALL_ERROR_LABEL_DCL:                            \
 #  define SYSCALL_ERROR_HANDLER  /* Nothing here; code in sysdep.S is used.  */
 # endif /* PIC.  */
 
-# define DO_CALL(syscall_name, args)                \
-    addik r12,r0,SYS_ify (syscall_name);            \
-    brki  r14,8;                                    \
+# define DO_CALL(syscall_name, args)                                          \
+    addik r12,r0,SYS_ify (syscall_name);                                      \
+    brki  r14,8;                                                                                                                  \
     addk  r0,r0,r0;
 
 #else /* not __ASSEMBLER__ */
@@ -166,15 +166,15 @@ SYSCALL_ERROR_LABEL_DCL:                            \
 /* Define a macro which expands into the inline wrapper code for a system
    call.  */
 # undef INLINE_SYSCALL
-# define INLINE_SYSCALL(name, nr, args...)                           \
-({  INTERNAL_SYSCALL_DECL(err);                                      \
+# define INLINE_SYSCALL(name, nr, args...)                                                                               \
+({  INTERNAL_SYSCALL_DECL(err);                                                                                                                    \
     unsigned long resultvar = INTERNAL_SYSCALL(name, err, nr, args); \
-    if (INTERNAL_SYSCALL_ERROR_P (resultvar, err))                   \
-       {                                                             \
-        __set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, err));       \
-        resultvar = (unsigned long) -1;                              \
-       }                                                             \
-    (long) resultvar;                                                \
+    if (INTERNAL_SYSCALL_ERROR_P (resultvar, err))                                                          \
+                    {                                                                                                                                                                                               \
+                     __set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, err));                    \
+                     resultvar = (unsigned long) -1;                                                                                               \
+                    }                                                                                                                                                                                               \
+    (long) resultvar;                                                                                                                                                        \
 })
 
 # undef INTERNAL_SYSCALL_DECL
@@ -185,15 +185,15 @@ SYSCALL_ERROR_LABEL_DCL:                            \
    normally.  It will never touch errno.  This returns just what the kernel
    gave back.  */
 # undef INTERNAL_SYSCALL
-# define INTERNAL_SYSCALL(name, err, nr, args...)                    \
+# define INTERNAL_SYSCALL(name, err, nr, args...)                                                           \
   inline_syscall##nr(SYS_ify(name), args)
 
 # undef INTERNAL_SYSCALL_NCS
-# define INTERNAL_SYSCALL_NCS(name, err, nr, args...)                \
+# define INTERNAL_SYSCALL_NCS(name, err, nr, args...)                                          \
   inline_syscall##nr(name, args)
 
 # undef INTERNAL_SYSCALL_ERROR_P
-# define INTERNAL_SYSCALL_ERROR_P(val, err)                          \
+# define INTERNAL_SYSCALL_ERROR_P(val, err)                                                                              \
   ((unsigned int) (val) >= -4095U)
 
 # undef INTERNAL_SYSCALL_ERRNO
@@ -207,100 +207,100 @@ SYSCALL_ERROR_LABEL_DCL:                            \
 # define SYSCALL_CLOBBERS_1 "r6", SYSCALL_CLOBBERS_2
 # define SYSCALL_CLOBBERS_0 "r5", SYSCALL_CLOBBERS_1
 
-# define inline_syscall0(name,dummy)                                          \
-  ({                                                                          \
-    register long __ret __asm__("r3");                                        \
-    register long __r12 __asm__("r12") = name;                                \
-    __asm__ __volatile__( "brki r14,8; nop;"                                  \
-      : "=r"(__ret)                                                           \
-      : "r"(__r12)                                                            \
-      : SYSCALL_CLOBBERS_0 ); __ret;                                          \
+# define inline_syscall0(name,dummy)                                                                                                                                     \
+  ({                                                                                                                                                                                                                                      \
+    register long __ret __asm__("r3");                                                                                                                      \
+    register long __r12 __asm__("r12") = name;                                                                                                 \
+    __asm__ __volatile__( "brki r14,8; nop;"                                                                                                   \
+                   : "=r"(__ret)                                                                                                                                                                                \
+                   : "r"(__r12)                                                                                                                                                                                              \
+                   : SYSCALL_CLOBBERS_0 ); __ret;                                                                                                                                     \
   })
 
-# define inline_syscall1(name,arg1)                                           \
-  ({                                                                          \
-    register long __ret __asm__("r3");                                        \
-    register long __r12 __asm__("r12") = name;                                \
-    register long __r5 __asm__("r5") = (long)(arg1);                          \
-    __asm__ __volatile__( "brki r14,8; nop;"                                  \
-      : "=r"(__ret)                                                           \
-      : "r"(__r5), "r"(__r12)                                                 \
-      : SYSCALL_CLOBBERS_1 ); __ret;                                          \
+# define inline_syscall1(name,arg1)                                                                                                                                      \
+  ({                                                                                                                                                                                                                                      \
+    register long __ret __asm__("r3");                                                                                                                      \
+    register long __r12 __asm__("r12") = name;                                                                                                 \
+    register long __r5 __asm__("r5") = (long)(arg1);                                                                              \
+    __asm__ __volatile__( "brki r14,8; nop;"                                                                                                   \
+                   : "=r"(__ret)                                                                                                                                                                                \
+                   : "r"(__r5), "r"(__r12)                                                                                                                                                         \
+                   : SYSCALL_CLOBBERS_1 ); __ret;                                                                                                                                     \
   })
 
-# define inline_syscall2(name,arg1,arg2)                                      \
-  ({                                                                          \
-    register long __ret __asm__("r3");                                        \
-    register long __r12 __asm__("r12") = name;                                \
-    register long __r5 __asm__("r5") = (long)(arg1);                          \
-    register long __r6 __asm__("r6") = (long)(arg2);                          \
-    __asm__ __volatile__( "brki r14,8; nop;"                                  \
-      : "=r"(__ret)                                                           \
-      : "r"(__r5), "r"(__r6), "r"(__r12)                                      \
-      : SYSCALL_CLOBBERS_2 ); __ret;                                          \
-  })
-
-
-# define inline_syscall3(name,arg1,arg2,arg3)                                 \
-  ({                                                                          \
-    register long __ret __asm__("r3");                                        \
-    register long __r12 __asm__("r12") = name;                                \
-    register long __r5 __asm__("r5") = (long)(arg1);                          \
-    register long __r6 __asm__("r6") = (long)(arg2);                          \
-    register long __r7 __asm__("r7") = (long)(arg3);                          \
-    __asm__ __volatile__( "brki r14,8; nop;"                                  \
-      : "=r"(__ret)                                                           \
-      : "r"(__r5), "r"(__r6), "r"(__r7), "r"(__r12)                           \
-      : SYSCALL_CLOBBERS_3 ); __ret;                                          \
+# define inline_syscall2(name,arg1,arg2)                                                                                                                    \
+  ({                                                                                                                                                                                                                                      \
+    register long __ret __asm__("r3");                                                                                                                      \
+    register long __r12 __asm__("r12") = name;                                                                                                 \
+    register long __r5 __asm__("r5") = (long)(arg1);                                                                              \
+    register long __r6 __asm__("r6") = (long)(arg2);                                                                              \
+    __asm__ __volatile__( "brki r14,8; nop;"                                                                                                   \
+                   : "=r"(__ret)                                                                                                                                                                                \
+                   : "r"(__r5), "r"(__r6), "r"(__r12)                                                                                                                    \
+                   : SYSCALL_CLOBBERS_2 ); __ret;                                                                                                                                     \
   })
 
 
-# define inline_syscall4(name,arg1,arg2,arg3,arg4)                            \
-  ({                                                                          \
-    register long __ret __asm__("r3");                                        \
-    register long __r12 __asm__("r12") = name;                                \
-    register long __r5 __asm__("r5") = (long)(arg1);                          \
-    register long __r6 __asm__("r6") = (long)(arg2);                          \
-    register long __r7 __asm__("r7") = (long)(arg3);                          \
-    register long __r8 __asm__("r8") = (long)(arg4);                          \
-    __asm__ __volatile__( "brki r14,8; nop;"                                  \
-      : "=r"(__ret)                                                           \
-      : "r"(__r5), "r"(__r6), "r"(__r7), "r"(__r8),"r"(__r12)                 \
-      : SYSCALL_CLOBBERS_4 ); __ret;                                          \
+# define inline_syscall3(name,arg1,arg2,arg3)                                                                                                  \
+  ({                                                                                                                                                                                                                                      \
+    register long __ret __asm__("r3");                                                                                                                      \
+    register long __r12 __asm__("r12") = name;                                                                                                 \
+    register long __r5 __asm__("r5") = (long)(arg1);                                                                              \
+    register long __r6 __asm__("r6") = (long)(arg2);                                                                              \
+    register long __r7 __asm__("r7") = (long)(arg3);                                                                              \
+    __asm__ __volatile__( "brki r14,8; nop;"                                                                                                   \
+                   : "=r"(__ret)                                                                                                                                                                                \
+                   : "r"(__r5), "r"(__r6), "r"(__r7), "r"(__r12)                                                                               \
+                   : SYSCALL_CLOBBERS_3 ); __ret;                                                                                                                                     \
   })
 
 
-# define inline_syscall5(name,arg1,arg2,arg3,arg4,arg5)                       \
-  ({                                                                          \
-    register long __ret __asm__("r3");                                        \
-    register long __r12 __asm__("r12") = name;                                \
-    register long __r5 __asm__("r5") = (long)(arg1);                          \
-    register long __r6 __asm__("r6") = (long)(arg2);                          \
-    register long __r7 __asm__("r7") = (long)(arg3);                          \
-    register long __r8 __asm__("r8") = (long)(arg4);                          \
-    register long __r9 __asm__("r9") = (long)(arg5);                          \
-    __asm__ __volatile__( "brki r14,8; nop;"                                  \
-      : "=r"(__ret)                                                           \
-      : "r"(__r5), "r"(__r6), "r"(__r7), "r"(__r8),"r"(__r9), "r"(__r12)      \
-      : SYSCALL_CLOBBERS_5 ); __ret;                                          \
+# define inline_syscall4(name,arg1,arg2,arg3,arg4)                                                                                \
+  ({                                                                                                                                                                                                                                      \
+    register long __ret __asm__("r3");                                                                                                                      \
+    register long __r12 __asm__("r12") = name;                                                                                                 \
+    register long __r5 __asm__("r5") = (long)(arg1);                                                                              \
+    register long __r6 __asm__("r6") = (long)(arg2);                                                                              \
+    register long __r7 __asm__("r7") = (long)(arg3);                                                                              \
+    register long __r8 __asm__("r8") = (long)(arg4);                                                                              \
+    __asm__ __volatile__( "brki r14,8; nop;"                                                                                                   \
+                   : "=r"(__ret)                                                                                                                                                                                \
+                   : "r"(__r5), "r"(__r6), "r"(__r7), "r"(__r8),"r"(__r12)                                           \
+                   : SYSCALL_CLOBBERS_4 ); __ret;                                                                                                                                     \
   })
 
 
-# define inline_syscall6(name,arg1,arg2,arg3,arg4,arg5,arg6)                  \
-  ({                                                                          \
-    register long __ret __asm__("r3");                                        \
-    register long __r12 __asm__("r12") = name;                                \
-    register long __r5 __asm__("r5") = (long)(arg1);                          \
-    register long __r6 __asm__("r6") = (long)(arg2);                          \
-    register long __r7 __asm__("r7") = (long)(arg3);                          \
-    register long __r8 __asm__("r8") = (long)(arg4);                          \
-    register long __r9 __asm__("r9") = (long)(arg5);                          \
-    register long __r10 __asm__("r10") = (long)(arg6);                        \
-    __asm__ __volatile__( "brki r14,8; nop;"                                  \
-      : "=r"(__ret)                                                           \
-      : "r"(__r5), "r"(__r6), "r"(__r7), "r"(__r8),"r"(__r9), "r"(__r10),     \
-      "r"(__r12)                                                              \
-      : SYSCALL_CLOBBERS_6 ); __ret;                                          \
+# define inline_syscall5(name,arg1,arg2,arg3,arg4,arg5)                                                              \
+  ({                                                                                                                                                                                                                                      \
+    register long __ret __asm__("r3");                                                                                                                      \
+    register long __r12 __asm__("r12") = name;                                                                                                 \
+    register long __r5 __asm__("r5") = (long)(arg1);                                                                              \
+    register long __r6 __asm__("r6") = (long)(arg2);                                                                              \
+    register long __r7 __asm__("r7") = (long)(arg3);                                                                              \
+    register long __r8 __asm__("r8") = (long)(arg4);                                                                              \
+    register long __r9 __asm__("r9") = (long)(arg5);                                                                              \
+    __asm__ __volatile__( "brki r14,8; nop;"                                                                                                   \
+                   : "=r"(__ret)                                                                                                                                                                                \
+                   : "r"(__r5), "r"(__r6), "r"(__r7), "r"(__r8),"r"(__r9), "r"(__r12)                   \
+                   : SYSCALL_CLOBBERS_5 ); __ret;                                                                                                                                     \
+  })
+
+
+# define inline_syscall6(name,arg1,arg2,arg3,arg4,arg5,arg6)                                                         \
+  ({                                                                                                                                                                                                                                      \
+    register long __ret __asm__("r3");                                                                                                                      \
+    register long __r12 __asm__("r12") = name;                                                                                                 \
+    register long __r5 __asm__("r5") = (long)(arg1);                                                                              \
+    register long __r6 __asm__("r6") = (long)(arg2);                                                                              \
+    register long __r7 __asm__("r7") = (long)(arg3);                                                                              \
+    register long __r8 __asm__("r8") = (long)(arg4);                                                                              \
+    register long __r9 __asm__("r9") = (long)(arg5);                                                                              \
+    register long __r10 __asm__("r10") = (long)(arg6);                                                                            \
+    __asm__ __volatile__( "brki r14,8; nop;"                                                                                                   \
+                   : "=r"(__ret)                                                                                                                                                                                \
+                   : "r"(__r5), "r"(__r6), "r"(__r7), "r"(__r8),"r"(__r9), "r"(__r10),     \
+                   "r"(__r12)                                                                                                                                                                                                \
+                   : SYSCALL_CLOBBERS_6 ); __ret;                                                                                                                                     \
   })
 
 

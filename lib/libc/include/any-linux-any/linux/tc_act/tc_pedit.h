@@ -52,18 +52,18 @@ enum pedit_cmd {
 #define TCA_PEDIT_CMD_MAX (__PEDIT_CMD_MAX - 1)
 
 struct tc_pedit_key {
-	__u32           mask;  /* AND */
-	__u32           val;   /*XOR */
-	__u32           off;  /*offset */
-	__u32           at;
-	__u32           offmask;
-	__u32           shift;
+	__u32                        mask;  /* AND */
+	__u32                        val;   /*XOR */
+	__u32                        off;  /*offset */
+	__u32                        at;
+	__u32                        offmask;
+	__u32                        shift;
 };
 
 struct tc_pedit_sel {
 	tc_gen;
-	unsigned char           nkeys;
-	unsigned char           flags;
+	unsigned char                        nkeys;
+	unsigned char                        flags;
 	struct tc_pedit_key     keys[0];
 };
 

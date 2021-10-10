@@ -136,12 +136,12 @@ extern "C"{
 #else
   typedef struct ITimerServiceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITimerService *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITimerService *This);
-      ULONG (WINAPI *Release)(ITimerService *This);
-      HRESULT (WINAPI *CreateTimer)(ITimerService *This,ITimer *pReferenceTimer,ITimer **ppNewTimer);
-      HRESULT (WINAPI *GetNamedTimer)(ITimerService *This,REFGUID rguidName,ITimer **ppTimer);
-      HRESULT (WINAPI *SetNamedTimerReference)(ITimerService *This,REFGUID rguidName,ITimer *pReferenceTimer);
+                   HRESULT (WINAPI *QueryInterface)(ITimerService *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITimerService *This);
+                   ULONG (WINAPI *Release)(ITimerService *This);
+                   HRESULT (WINAPI *CreateTimer)(ITimerService *This,ITimer *pReferenceTimer,ITimer **ppNewTimer);
+                   HRESULT (WINAPI *GetNamedTimer)(ITimerService *This,REFGUID rguidName,ITimer **ppTimer);
+                   HRESULT (WINAPI *SetNamedTimerReference)(ITimerService *This,REFGUID rguidName,ITimer *pReferenceTimer);
     END_INTERFACE
   } ITimerServiceVtbl;
   struct ITimerService {
@@ -178,13 +178,13 @@ extern "C"{
 #else
   typedef struct ITimerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITimer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITimer *This);
-      ULONG (WINAPI *Release)(ITimer *This);
-      HRESULT (WINAPI *Advise)(ITimer *This,VARIANT vtimeMin,VARIANT vtimeMax,VARIANT vtimeInterval,DWORD dwFlags,ITimerSink *pTimerSink,DWORD *pdwCookie);
-      HRESULT (WINAPI *Unadvise)(ITimer *This,DWORD dwCookie);
-      HRESULT (WINAPI *Freeze)(ITimer *This,WINBOOL fFreeze);
-      HRESULT (WINAPI *GetTime)(ITimer *This,VARIANT *pvtime);
+                   HRESULT (WINAPI *QueryInterface)(ITimer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITimer *This);
+                   ULONG (WINAPI *Release)(ITimer *This);
+                   HRESULT (WINAPI *Advise)(ITimer *This,VARIANT vtimeMin,VARIANT vtimeMax,VARIANT vtimeInterval,DWORD dwFlags,ITimerSink *pTimerSink,DWORD *pdwCookie);
+                   HRESULT (WINAPI *Unadvise)(ITimer *This,DWORD dwCookie);
+                   HRESULT (WINAPI *Freeze)(ITimer *This,WINBOOL fFreeze);
+                   HRESULT (WINAPI *GetTime)(ITimer *This,VARIANT *pvtime);
     END_INTERFACE
   } ITimerVtbl;
   struct ITimer {
@@ -221,10 +221,10 @@ extern "C"{
 #else
   typedef struct ITimerSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITimerSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITimerSink *This);
-      ULONG (WINAPI *Release)(ITimerSink *This);
-      HRESULT (WINAPI *OnTimer)(ITimerSink *This,VARIANT vtimeAdvise);
+                   HRESULT (WINAPI *QueryInterface)(ITimerSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITimerSink *This);
+                   ULONG (WINAPI *Release)(ITimerSink *This);
+                   HRESULT (WINAPI *OnTimer)(ITimerSink *This,VARIANT vtimeAdvise);
     END_INTERFACE
   } ITimerSinkVtbl;
   struct ITimerSink {
@@ -259,12 +259,12 @@ extern "C"{
 #else
   typedef struct IMapMIMEToCLSIDVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMapMIMEToCLSID *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMapMIMEToCLSID *This);
-      ULONG (WINAPI *Release)(IMapMIMEToCLSID *This);
-      HRESULT (WINAPI *EnableDefaultMappings)(IMapMIMEToCLSID *This,WINBOOL bEnable);
-      HRESULT (WINAPI *MapMIMEToCLSID)(IMapMIMEToCLSID *This,LPCOLESTR pszMIMEType,CLSID *pCLSID);
-      HRESULT (WINAPI *SetMapping)(IMapMIMEToCLSID *This,LPCOLESTR pszMIMEType,DWORD dwMapMode,REFCLSID clsid);
+                   HRESULT (WINAPI *QueryInterface)(IMapMIMEToCLSID *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMapMIMEToCLSID *This);
+                   ULONG (WINAPI *Release)(IMapMIMEToCLSID *This);
+                   HRESULT (WINAPI *EnableDefaultMappings)(IMapMIMEToCLSID *This,WINBOOL bEnable);
+                   HRESULT (WINAPI *MapMIMEToCLSID)(IMapMIMEToCLSID *This,LPCOLESTR pszMIMEType,CLSID *pCLSID);
+                   HRESULT (WINAPI *SetMapping)(IMapMIMEToCLSID *This,LPCOLESTR pszMIMEType,DWORD dwMapMode,REFCLSID clsid);
     END_INTERFACE
   } IMapMIMEToCLSIDVtbl;
   struct IMapMIMEToCLSID {
@@ -300,12 +300,12 @@ extern "C"{
 #else
   typedef struct IImageDecodeFilterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IImageDecodeFilter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IImageDecodeFilter *This);
-      ULONG (WINAPI *Release)(IImageDecodeFilter *This);
-      HRESULT (WINAPI *Initialize)(IImageDecodeFilter *This,IImageDecodeEventSink *pEventSink);
-      HRESULT (WINAPI *Process)(IImageDecodeFilter *This,IStream *pStream);
-      HRESULT (WINAPI *Terminate)(IImageDecodeFilter *This,HRESULT hrStatus);
+                   HRESULT (WINAPI *QueryInterface)(IImageDecodeFilter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IImageDecodeFilter *This);
+                   ULONG (WINAPI *Release)(IImageDecodeFilter *This);
+                   HRESULT (WINAPI *Initialize)(IImageDecodeFilter *This,IImageDecodeEventSink *pEventSink);
+                   HRESULT (WINAPI *Process)(IImageDecodeFilter *This,IStream *pStream);
+                   HRESULT (WINAPI *Terminate)(IImageDecodeFilter *This,HRESULT hrStatus);
     END_INTERFACE
   } IImageDecodeFilterVtbl;
   struct IImageDecodeFilter {
@@ -344,15 +344,15 @@ extern "C"{
 #else
   typedef struct IImageDecodeEventSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IImageDecodeEventSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IImageDecodeEventSink *This);
-      ULONG (WINAPI *Release)(IImageDecodeEventSink *This);
-      HRESULT (WINAPI *GetSurface)(IImageDecodeEventSink *This,LONG nWidth,LONG nHeight,REFGUID bfid,ULONG nPasses,DWORD dwHints,IUnknown **ppSurface);
-      HRESULT (WINAPI *OnBeginDecode)(IImageDecodeEventSink *This,DWORD *pdwEvents,ULONG *pnFormats,BFID **ppFormats);
-      HRESULT (WINAPI *OnBitsComplete)(IImageDecodeEventSink *This);
-      HRESULT (WINAPI *OnDecodeComplete)(IImageDecodeEventSink *This,HRESULT hrStatus);
-      HRESULT (WINAPI *OnPalette)(IImageDecodeEventSink *This);
-      HRESULT (WINAPI *OnProgress)(IImageDecodeEventSink *This,RECT *pBounds,WINBOOL bComplete);
+                   HRESULT (WINAPI *QueryInterface)(IImageDecodeEventSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IImageDecodeEventSink *This);
+                   ULONG (WINAPI *Release)(IImageDecodeEventSink *This);
+                   HRESULT (WINAPI *GetSurface)(IImageDecodeEventSink *This,LONG nWidth,LONG nHeight,REFGUID bfid,ULONG nPasses,DWORD dwHints,IUnknown **ppSurface);
+                   HRESULT (WINAPI *OnBeginDecode)(IImageDecodeEventSink *This,DWORD *pdwEvents,ULONG *pnFormats,BFID **ppFormats);
+                   HRESULT (WINAPI *OnBitsComplete)(IImageDecodeEventSink *This);
+                   HRESULT (WINAPI *OnDecodeComplete)(IImageDecodeEventSink *This,HRESULT hrStatus);
+                   HRESULT (WINAPI *OnPalette)(IImageDecodeEventSink *This);
+                   HRESULT (WINAPI *OnProgress)(IImageDecodeEventSink *This,RECT *pBounds,WINBOOL bComplete);
     END_INTERFACE
   } IImageDecodeEventSinkVtbl;
   struct IImageDecodeEventSink {

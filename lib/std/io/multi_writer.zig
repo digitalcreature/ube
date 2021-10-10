@@ -11,40 +11,40 @@ const testing = std.testing;
 pub fn MultiWriter(comptime Writers: type) type {
     comptime var ErrSet = error{};
     inline for (@typeInfo(Writers).Struct.fields) |field| {
-        const StreamType = field.field_type;
-        ErrSet = ErrSet || StreamType.Error;
+                     const StreamType = field.field_type;
+                     ErrSet = ErrSet || StreamType.Error;
     }
 
     return struct {
-        const Self = @This();
+                     const Self = @This();
 
-        streams: Writers,
+                     streams: Writers,
 
-        pub const Error = ErrSet;
-        pub const Writer = io.Writer(*Self, Error, write);
-        /// Deprecated: use `Writer`
-        pub const OutStream = Writer;
+                     pub const Error = ErrSet;
+                     pub const Writer = io.Writer(*Self, Error, write);
+                     /// Deprecated: use `Writer`
+                     pub const OutStream = Writer;
 
-        pub fn writer(self: *Self) Writer {
-            return .{ .context = self };
-        }
+                     pub fn writer(self: *Self) Writer {
+                                      return .{ .context = self };
+                     }
 
-        /// Deprecated: use `writer`
-        pub fn outStream(self: *Self) OutStream {
-            return .{ .context = self };
-        }
+                     /// Deprecated: use `writer`
+                     pub fn outStream(self: *Self) OutStream {
+                                      return .{ .context = self };
+                     }
 
-        pub fn write(self: *Self, bytes: []const u8) Error!usize {
-            var batch = std.event.Batch(Error!void, self.streams.len, .auto_async).init();
-            comptime var i = 0;
-            inline while (i < self.streams.len) : (i += 1) {
-                const stream = self.streams[i];
-                // TODO: remove ptrCast: https://github.com/ziglang/zig/issues/5258
-                batch.add(@ptrCast(anyframe->Error!void, &async stream.writeAll(bytes)));
-            }
-            try batch.wait();
-            return bytes.len;
-        }
+                     pub fn write(self: *Self, bytes: []const u8) Error!usize {
+                                      var batch = std.event.Batch(Error!void, self.streams.len, .auto_async).init();
+                                      comptime var i = 0;
+                                      inline while (i < self.streams.len) : (i += 1) {
+                                          const stream = self.streams[i];
+                                          // TODO: remove ptrCast: https://github.com/ziglang/zig/issues/5258
+                                          batch.add(@ptrCast(anyframe->Error!void, &async stream.writeAll(bytes)));
+                                      }
+                                      try batch.wait();
+                                      return bytes.len;
+                     }
     };
 }
 

@@ -34,9 +34,9 @@ int fetestexcept (int excepts)
 
   if (__mingw_has_sse ())
     {
-      int sse_sw;
-      __asm__ __volatile__ ("stmxcsr %0;" : "=m" (sse_sw));
-      _sw |= sse_sw;
+                   int sse_sw;
+                   __asm__ __volatile__ ("stmxcsr %0;" : "=m" (sse_sw));
+                   _sw |= sse_sw;
     }
   return _sw & excepts & FE_ALL_EXCEPT;
 #endif /* defined(_ARM_) || defined(__arm__) || defined(_ARM64_) || defined(__aarch64__) */

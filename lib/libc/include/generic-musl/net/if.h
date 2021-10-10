@@ -46,7 +46,7 @@ void if_freenameindex (struct if_nameindex *);
 #define IFF_DORMANT 0x20000
 #define IFF_ECHO 0x40000
 #define IFF_VOLATILE (IFF_LOOPBACK|IFF_POINTOPOINT|IFF_BROADCAST| \
-        IFF_ECHO|IFF_MASTER|IFF_SLAVE|IFF_RUNNING|IFF_LOWER_UP|IFF_DORMANT)
+                     IFF_ECHO|IFF_MASTER|IFF_SLAVE|IFF_RUNNING|IFF_LOWER_UP|IFF_DORMANT)
 
 struct ifaddr {
 	struct sockaddr ifa_addr;
@@ -125,11 +125,11 @@ struct ifconf {
 #define ifc_req		ifc_ifcu.ifcu_req
 #define _IOT_ifconf _IOT(_IOTS(struct ifconf),1,0,0,0,0)
 
-#define __UAPI_DEF_IF_IFCONF                                    0
-#define __UAPI_DEF_IF_IFMAP                                     0
-#define __UAPI_DEF_IF_IFNAMSIZ                                  0
-#define __UAPI_DEF_IF_IFREQ                                     0
-#define __UAPI_DEF_IF_NET_DEVICE_FLAGS                          0
+#define __UAPI_DEF_IF_IFCONF                                                                                                                  0
+#define __UAPI_DEF_IF_IFMAP                                                                                                                   0
+#define __UAPI_DEF_IF_IFNAMSIZ                                                                                                   0
+#define __UAPI_DEF_IF_IFREQ                                                                                                                   0
+#define __UAPI_DEF_IF_NET_DEVICE_FLAGS                                                                              0
 #define __UAPI_DEF_IF_NET_DEVICE_FLAGS_LOWER_UP_DORMANT_ECHO    0
 
 #endif

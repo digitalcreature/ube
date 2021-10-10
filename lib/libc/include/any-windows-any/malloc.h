@@ -145,8 +145,8 @@ void * __mingw_aligned_realloc (void *_Memory, size_t _Size, size_t _Offset);
 #if !defined(RC_INVOKED)
   static __inline void *_MarkAllocaS(void *_Ptr,unsigned int _Marker) {
     if(_Ptr) {
-      *((unsigned int*)_Ptr) = _Marker;
-      _Ptr = (char*)_Ptr + _ALLOCA_S_MARKER_SIZE;
+                   *((unsigned int*)_Ptr) = _Marker;
+                   _Ptr = (char*)_Ptr + _ALLOCA_S_MARKER_SIZE;
     }
     return _Ptr;
   }
@@ -165,15 +165,15 @@ void * __mingw_aligned_realloc (void *_Memory, size_t _Size, size_t _Offset);
   static __inline void __cdecl _freea(void *_Memory) {
     unsigned int _Marker;
     if(_Memory) {
-      _Memory = (char*)_Memory - _ALLOCA_S_MARKER_SIZE;
-      _Marker = *(unsigned int *)_Memory;
-      if(_Marker==_ALLOCA_S_HEAP_MARKER) {
+                   _Memory = (char*)_Memory - _ALLOCA_S_MARKER_SIZE;
+                   _Marker = *(unsigned int *)_Memory;
+                   if(_Marker==_ALLOCA_S_HEAP_MARKER) {
 	free(_Memory);
-      }
+                   }
 #ifdef _ASSERTE
-      else if(_Marker!=_ALLOCA_S_STACK_MARKER) {
+                   else if(_Marker!=_ALLOCA_S_STACK_MARKER) {
 	_ASSERTE(("Corrupted pointer passed to _freea",0));
-      }
+                   }
 #endif
     }
   }

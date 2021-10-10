@@ -33,17 +33,17 @@ int strncmp(const char* s1, const char* s2, size_t n);
 int strcoll(const char* s1, const char* s2);
 size_t strxfrm(char* restrict s1, const char* restrict s2, size_t n);
 const void* memchr(const void* s, int c, size_t n);
-      void* memchr(      void* s, int c, size_t n);
+                   void* memchr(                   void* s, int c, size_t n);
 const char* strchr(const char* s, int c);
-      char* strchr(      char* s, int c);
+                   char* strchr(                   char* s, int c);
 size_t strcspn(const char* s1, const char* s2);
 const char* strpbrk(const char* s1, const char* s2);
-      char* strpbrk(      char* s1, const char* s2);
+                   char* strpbrk(                   char* s1, const char* s2);
 const char* strrchr(const char* s, int c);
-      char* strrchr(      char* s, int c);
+                   char* strrchr(                   char* s, int c);
 size_t strspn(const char* s1, const char* s2);
 const char* strstr(const char* s1, const char* s2);
-      char* strstr(      char* s1, const char* s2);
+                   char* strstr(                   char* s1, const char* s2);
 char* strtok(char* restrict s1, const char* restrict s2);
 void* memset(void* s, int c, size_t n);
 char* strerror(int errnum);
@@ -74,35 +74,35 @@ char* __libcpp_strchr(const char* __s, int __c) {return (char*)strchr(__s, __c);
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
 const char* strchr(const char* __s, int __c) {return __libcpp_strchr(__s, __c);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
-      char* strchr(      char* __s, int __c) {return __libcpp_strchr(__s, __c);}
+                   char* strchr(                   char* __s, int __c) {return __libcpp_strchr(__s, __c);}
 
 inline _LIBCPP_INLINE_VISIBILITY
 char* __libcpp_strpbrk(const char* __s1, const char* __s2) {return (char*)strpbrk(__s1, __s2);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
 const char* strpbrk(const char* __s1, const char* __s2) {return __libcpp_strpbrk(__s1, __s2);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
-      char* strpbrk(      char* __s1, const char* __s2) {return __libcpp_strpbrk(__s1, __s2);}
+                   char* strpbrk(                   char* __s1, const char* __s2) {return __libcpp_strpbrk(__s1, __s2);}
 
 inline _LIBCPP_INLINE_VISIBILITY
 char* __libcpp_strrchr(const char* __s, int __c) {return (char*)strrchr(__s, __c);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
 const char* strrchr(const char* __s, int __c) {return __libcpp_strrchr(__s, __c);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
-      char* strrchr(      char* __s, int __c) {return __libcpp_strrchr(__s, __c);}
+                   char* strrchr(                   char* __s, int __c) {return __libcpp_strrchr(__s, __c);}
 
 inline _LIBCPP_INLINE_VISIBILITY
 void* __libcpp_memchr(const void* __s, int __c, size_t __n) {return (void*)memchr(__s, __c, __n);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
 const void* memchr(const void* __s, int __c, size_t __n) {return __libcpp_memchr(__s, __c, __n);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
-      void* memchr(      void* __s, int __c, size_t __n) {return __libcpp_memchr(__s, __c, __n);}
+                   void* memchr(                   void* __s, int __c, size_t __n) {return __libcpp_memchr(__s, __c, __n);}
 
 inline _LIBCPP_INLINE_VISIBILITY
 char* __libcpp_strstr(const char* __s1, const char* __s2) {return (char*)strstr(__s1, __s2);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
 const char* strstr(const char* __s1, const char* __s2) {return __libcpp_strstr(__s1, __s2);}
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
-      char* strstr(      char* __s1, const char* __s2) {return __libcpp_strstr(__s1, __s2);}
+                   char* strstr(                   char* __s1, const char* __s2) {return __libcpp_strstr(__s1, __s2);}
 }
 #endif
 

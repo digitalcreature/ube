@@ -66,11 +66,11 @@ extern "C"
     DWORD fdwRevocationChecks;
     DWORD dwUnionChoice;
     __C89_NAMELESS union {
-      struct WINTRUST_FILE_INFO_ *pFile;
-      struct WINTRUST_CATALOG_INFO_ *pCatalog;
-      struct WINTRUST_BLOB_INFO_ *pBlob;
-      struct WINTRUST_SGNR_INFO_ *pSgnr;
-      struct WINTRUST_CERT_INFO_ *pCert;
+                   struct WINTRUST_FILE_INFO_ *pFile;
+                   struct WINTRUST_CATALOG_INFO_ *pCatalog;
+                   struct WINTRUST_BLOB_INFO_ *pBlob;
+                   struct WINTRUST_SGNR_INFO_ *pSgnr;
+                   struct WINTRUST_CERT_INFO_ *pCert;
     };
     DWORD dwStateAction;
     HANDLE hWVTStateData;
@@ -241,7 +241,7 @@ extern "C"
     struct _CRYPT_PROVIDER_PRIVDATA *pasProvPrivData;
     DWORD dwSubjectChoice;
     __C89_NAMELESS union {
-      struct _PROVDATA_SIP *pPDSip;
+                   struct _PROVDATA_SIP *pPDSip;
     };
     char *pszUsageOID;
     WINBOOL fRecallWithState;
@@ -486,9 +486,9 @@ extern "C"
   typedef struct SPC_LINK_ {
     DWORD dwLinkChoice;
     __C89_NAMELESS union {
-      LPWSTR pwszUrl;
-      SPC_SERIALIZED_OBJECT Moniker;
-      LPWSTR pwszFile;
+                   LPWSTR pwszUrl;
+                   SPC_SERIALIZED_OBJECT Moniker;
+                   LPWSTR pwszFile;
     };
   } SPC_LINK,*PSPC_LINK;
 

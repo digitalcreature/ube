@@ -122,15 +122,15 @@ extern "C" {
 #else
   typedef struct ITTerminalControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITTerminalControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITTerminalControl *This);
-      ULONG (WINAPI *Release)(ITTerminalControl *This);
-      HRESULT (WINAPI *get_AddressHandle)(ITTerminalControl *This,MSP_HANDLE *phtAddress);
-      HRESULT (WINAPI *ConnectTerminal)(ITTerminalControl *This,IGraphBuilder *pGraph,DWORD dwTerminalDirection,DWORD *pdwNumPins,IPin **ppPins);
-      HRESULT (WINAPI *CompleteConnectTerminal)(ITTerminalControl *This);
-      HRESULT (WINAPI *DisconnectTerminal)(ITTerminalControl *This,IGraphBuilder *pGraph,DWORD dwReserved);
-      HRESULT (WINAPI *RunRenderFilter)(ITTerminalControl *This);
-      HRESULT (WINAPI *StopRenderFilter)(ITTerminalControl *This);
+                   HRESULT (WINAPI *QueryInterface)(ITTerminalControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITTerminalControl *This);
+                   ULONG (WINAPI *Release)(ITTerminalControl *This);
+                   HRESULT (WINAPI *get_AddressHandle)(ITTerminalControl *This,MSP_HANDLE *phtAddress);
+                   HRESULT (WINAPI *ConnectTerminal)(ITTerminalControl *This,IGraphBuilder *pGraph,DWORD dwTerminalDirection,DWORD *pdwNumPins,IPin **ppPins);
+                   HRESULT (WINAPI *CompleteConnectTerminal)(ITTerminalControl *This);
+                   HRESULT (WINAPI *DisconnectTerminal)(ITTerminalControl *This,IGraphBuilder *pGraph,DWORD dwReserved);
+                   HRESULT (WINAPI *RunRenderFilter)(ITTerminalControl *This);
+                   HRESULT (WINAPI *StopRenderFilter)(ITTerminalControl *This);
     END_INTERFACE
   } ITTerminalControlVtbl;
   struct ITTerminalControl {
@@ -173,10 +173,10 @@ extern "C" {
 #else
   typedef struct ITPluggableTerminalInitializationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalInitialization *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITPluggableTerminalInitialization *This);
-      ULONG (WINAPI *Release)(ITPluggableTerminalInitialization *This);
-      HRESULT (WINAPI *InitializeDynamic)(ITPluggableTerminalInitialization *This,IID iidTerminalClass,DWORD dwMediaType,TERMINAL_DIRECTION Direction,MSP_HANDLE htAddress);
+                   HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalInitialization *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITPluggableTerminalInitialization *This);
+                   ULONG (WINAPI *Release)(ITPluggableTerminalInitialization *This);
+                   HRESULT (WINAPI *InitializeDynamic)(ITPluggableTerminalInitialization *This,IID iidTerminalClass,DWORD dwMediaType,TERMINAL_DIRECTION Direction,MSP_HANDLE htAddress);
     END_INTERFACE
   } ITPluggableTerminalInitializationVtbl;
   struct ITPluggableTerminalInitialization {
@@ -205,11 +205,11 @@ extern "C" {
 #else
   typedef struct ITTerminalManagerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITTerminalManager *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITTerminalManager *This);
-      ULONG (WINAPI *Release)(ITTerminalManager *This);
-      HRESULT (WINAPI *GetDynamicTerminalClasses)(ITTerminalManager *This,DWORD dwMediaTypes,DWORD *pdwNumClasses,IID *pTerminalClasses);
-      HRESULT (WINAPI *CreateDynamicTerminal)(ITTerminalManager *This,IUnknown *pOuterUnknown,IID iidTerminalClass,DWORD dwMediaType,TERMINAL_DIRECTION Direction,MSP_HANDLE htAddress,ITTerminal **ppTerminal);
+                   HRESULT (WINAPI *QueryInterface)(ITTerminalManager *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITTerminalManager *This);
+                   ULONG (WINAPI *Release)(ITTerminalManager *This);
+                   HRESULT (WINAPI *GetDynamicTerminalClasses)(ITTerminalManager *This,DWORD dwMediaTypes,DWORD *pdwNumClasses,IID *pTerminalClasses);
+                   HRESULT (WINAPI *CreateDynamicTerminal)(ITTerminalManager *This,IUnknown *pOuterUnknown,IID iidTerminalClass,DWORD dwMediaType,TERMINAL_DIRECTION Direction,MSP_HANDLE htAddress,ITTerminal **ppTerminal);
     END_INTERFACE
   } ITTerminalManagerVtbl;
   struct ITTerminalManager {
@@ -241,13 +241,13 @@ extern "C" {
 #else
   typedef struct ITTerminalManager2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITTerminalManager2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITTerminalManager2 *This);
-      ULONG (WINAPI *Release)(ITTerminalManager2 *This);
-      HRESULT (WINAPI *GetDynamicTerminalClasses)(ITTerminalManager2 *This,DWORD dwMediaTypes,DWORD *pdwNumClasses,IID *pTerminalClasses);
-      HRESULT (WINAPI *CreateDynamicTerminal)(ITTerminalManager2 *This,IUnknown *pOuterUnknown,IID iidTerminalClass,DWORD dwMediaType,TERMINAL_DIRECTION Direction,MSP_HANDLE htAddress,ITTerminal **ppTerminal);
-      HRESULT (WINAPI *GetPluggableSuperclasses)(ITTerminalManager2 *This,DWORD *pdwNumSuperclasses,IID *pSuperclasses);
-      HRESULT (WINAPI *GetPluggableTerminalClasses)(ITTerminalManager2 *This,IID iidSuperclass,DWORD dwMediaTypes,DWORD *pdwNumClasses,IID *pTerminalClasses);
+                   HRESULT (WINAPI *QueryInterface)(ITTerminalManager2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITTerminalManager2 *This);
+                   ULONG (WINAPI *Release)(ITTerminalManager2 *This);
+                   HRESULT (WINAPI *GetDynamicTerminalClasses)(ITTerminalManager2 *This,DWORD dwMediaTypes,DWORD *pdwNumClasses,IID *pTerminalClasses);
+                   HRESULT (WINAPI *CreateDynamicTerminal)(ITTerminalManager2 *This,IUnknown *pOuterUnknown,IID iidTerminalClass,DWORD dwMediaType,TERMINAL_DIRECTION Direction,MSP_HANDLE htAddress,ITTerminal **ppTerminal);
+                   HRESULT (WINAPI *GetPluggableSuperclasses)(ITTerminalManager2 *This,DWORD *pdwNumSuperclasses,IID *pSuperclasses);
+                   HRESULT (WINAPI *GetPluggableTerminalClasses)(ITTerminalManager2 *This,IID iidSuperclass,DWORD dwMediaTypes,DWORD *pdwNumClasses,IID *pTerminalClasses);
     END_INTERFACE
   } ITTerminalManager2Vtbl;
   struct ITTerminalManager2 {
@@ -296,30 +296,30 @@ extern "C" {
 #else
   typedef struct ITPluggableTerminalClassRegistrationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalClassRegistration *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITPluggableTerminalClassRegistration *This);
-      ULONG (WINAPI *Release)(ITPluggableTerminalClassRegistration *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITPluggableTerminalClassRegistration *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITPluggableTerminalClassRegistration *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITPluggableTerminalClassRegistration *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITPluggableTerminalClassRegistration *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(ITPluggableTerminalClassRegistration *This,BSTR *pName);
-      HRESULT (WINAPI *put_Name)(ITPluggableTerminalClassRegistration *This,BSTR bstrName);
-      HRESULT (WINAPI *get_Company)(ITPluggableTerminalClassRegistration *This,BSTR *pCompany);
-      HRESULT (WINAPI *put_Company)(ITPluggableTerminalClassRegistration *This,BSTR bstrCompany);
-      HRESULT (WINAPI *get_Version)(ITPluggableTerminalClassRegistration *This,BSTR *pVersion);
-      HRESULT (WINAPI *put_Version)(ITPluggableTerminalClassRegistration *This,BSTR bstrVersion);
-      HRESULT (WINAPI *get_TerminalClass)(ITPluggableTerminalClassRegistration *This,BSTR *pTerminalClass);
-      HRESULT (WINAPI *put_TerminalClass)(ITPluggableTerminalClassRegistration *This,BSTR bstrTerminalClass);
-      HRESULT (WINAPI *get_CLSID)(ITPluggableTerminalClassRegistration *This,BSTR *pCLSID);
-      HRESULT (WINAPI *put_CLSID)(ITPluggableTerminalClassRegistration *This,BSTR bstrCLSID);
-      HRESULT (WINAPI *get_Direction)(ITPluggableTerminalClassRegistration *This,TMGR_DIRECTION *pDirection);
-      HRESULT (WINAPI *put_Direction)(ITPluggableTerminalClassRegistration *This,TMGR_DIRECTION nDirection);
-      HRESULT (WINAPI *get_MediaTypes)(ITPluggableTerminalClassRegistration *This,__LONG32 *pMediaTypes);
-      HRESULT (WINAPI *put_MediaTypes)(ITPluggableTerminalClassRegistration *This,__LONG32 nMediaTypes);
-      HRESULT (WINAPI *Add)(ITPluggableTerminalClassRegistration *This,BSTR bstrSuperclass);
-      HRESULT (WINAPI *Delete)(ITPluggableTerminalClassRegistration *This,BSTR bstrSuperclass);
-      HRESULT (WINAPI *GetTerminalClassInfo)(ITPluggableTerminalClassRegistration *This,BSTR bstrSuperclass);
+                   HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalClassRegistration *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITPluggableTerminalClassRegistration *This);
+                   ULONG (WINAPI *Release)(ITPluggableTerminalClassRegistration *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITPluggableTerminalClassRegistration *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITPluggableTerminalClassRegistration *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITPluggableTerminalClassRegistration *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITPluggableTerminalClassRegistration *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(ITPluggableTerminalClassRegistration *This,BSTR *pName);
+                   HRESULT (WINAPI *put_Name)(ITPluggableTerminalClassRegistration *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_Company)(ITPluggableTerminalClassRegistration *This,BSTR *pCompany);
+                   HRESULT (WINAPI *put_Company)(ITPluggableTerminalClassRegistration *This,BSTR bstrCompany);
+                   HRESULT (WINAPI *get_Version)(ITPluggableTerminalClassRegistration *This,BSTR *pVersion);
+                   HRESULT (WINAPI *put_Version)(ITPluggableTerminalClassRegistration *This,BSTR bstrVersion);
+                   HRESULT (WINAPI *get_TerminalClass)(ITPluggableTerminalClassRegistration *This,BSTR *pTerminalClass);
+                   HRESULT (WINAPI *put_TerminalClass)(ITPluggableTerminalClassRegistration *This,BSTR bstrTerminalClass);
+                   HRESULT (WINAPI *get_CLSID)(ITPluggableTerminalClassRegistration *This,BSTR *pCLSID);
+                   HRESULT (WINAPI *put_CLSID)(ITPluggableTerminalClassRegistration *This,BSTR bstrCLSID);
+                   HRESULT (WINAPI *get_Direction)(ITPluggableTerminalClassRegistration *This,TMGR_DIRECTION *pDirection);
+                   HRESULT (WINAPI *put_Direction)(ITPluggableTerminalClassRegistration *This,TMGR_DIRECTION nDirection);
+                   HRESULT (WINAPI *get_MediaTypes)(ITPluggableTerminalClassRegistration *This,__LONG32 *pMediaTypes);
+                   HRESULT (WINAPI *put_MediaTypes)(ITPluggableTerminalClassRegistration *This,__LONG32 nMediaTypes);
+                   HRESULT (WINAPI *Add)(ITPluggableTerminalClassRegistration *This,BSTR bstrSuperclass);
+                   HRESULT (WINAPI *Delete)(ITPluggableTerminalClassRegistration *This,BSTR bstrSuperclass);
+                   HRESULT (WINAPI *GetTerminalClassInfo)(ITPluggableTerminalClassRegistration *This,BSTR bstrSuperclass);
     END_INTERFACE
   } ITPluggableTerminalClassRegistrationVtbl;
   struct ITPluggableTerminalClassRegistration {
@@ -407,22 +407,22 @@ extern "C" {
 #else
   typedef struct ITPluggableTerminalSuperclassRegistrationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalSuperclassRegistration *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITPluggableTerminalSuperclassRegistration *This);
-      ULONG (WINAPI *Release)(ITPluggableTerminalSuperclassRegistration *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITPluggableTerminalSuperclassRegistration *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITPluggableTerminalSuperclassRegistration *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITPluggableTerminalSuperclassRegistration *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITPluggableTerminalSuperclassRegistration *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(ITPluggableTerminalSuperclassRegistration *This,BSTR *pName);
-      HRESULT (WINAPI *put_Name)(ITPluggableTerminalSuperclassRegistration *This,BSTR bstrName);
-      HRESULT (WINAPI *get_CLSID)(ITPluggableTerminalSuperclassRegistration *This,BSTR *pCLSID);
-      HRESULT (WINAPI *put_CLSID)(ITPluggableTerminalSuperclassRegistration *This,BSTR bstrCLSID);
-      HRESULT (WINAPI *Add)(ITPluggableTerminalSuperclassRegistration *This);
-      HRESULT (WINAPI *Delete)(ITPluggableTerminalSuperclassRegistration *This);
-      HRESULT (WINAPI *GetTerminalSuperclassInfo)(ITPluggableTerminalSuperclassRegistration *This);
-      HRESULT (WINAPI *get_TerminalClasses)(ITPluggableTerminalSuperclassRegistration *This,VARIANT *pTerminals);
-      HRESULT (WINAPI *EnumerateTerminalClasses)(ITPluggableTerminalSuperclassRegistration *This,IEnumTerminalClass **ppTerminals);
+                   HRESULT (WINAPI *QueryInterface)(ITPluggableTerminalSuperclassRegistration *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITPluggableTerminalSuperclassRegistration *This);
+                   ULONG (WINAPI *Release)(ITPluggableTerminalSuperclassRegistration *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITPluggableTerminalSuperclassRegistration *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITPluggableTerminalSuperclassRegistration *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITPluggableTerminalSuperclassRegistration *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITPluggableTerminalSuperclassRegistration *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(ITPluggableTerminalSuperclassRegistration *This,BSTR *pName);
+                   HRESULT (WINAPI *put_Name)(ITPluggableTerminalSuperclassRegistration *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_CLSID)(ITPluggableTerminalSuperclassRegistration *This,BSTR *pCLSID);
+                   HRESULT (WINAPI *put_CLSID)(ITPluggableTerminalSuperclassRegistration *This,BSTR bstrCLSID);
+                   HRESULT (WINAPI *Add)(ITPluggableTerminalSuperclassRegistration *This);
+                   HRESULT (WINAPI *Delete)(ITPluggableTerminalSuperclassRegistration *This);
+                   HRESULT (WINAPI *GetTerminalSuperclassInfo)(ITPluggableTerminalSuperclassRegistration *This);
+                   HRESULT (WINAPI *get_TerminalClasses)(ITPluggableTerminalSuperclassRegistration *This,VARIANT *pTerminals);
+                   HRESULT (WINAPI *EnumerateTerminalClasses)(ITPluggableTerminalSuperclassRegistration *This,IEnumTerminalClass **ppTerminals);
     END_INTERFACE
   } ITPluggableTerminalSuperclassRegistrationVtbl;
   struct ITPluggableTerminalSuperclassRegistration {

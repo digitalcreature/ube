@@ -472,10 +472,10 @@ typedef struct _LUID {
 typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS;
 
 /* Native API Return Value Macros */
-#define NT_SUCCESS(Status)              (((NTSTATUS)(Status)) >= 0)
-#define NT_INFORMATION(Status)          ((((ULONG)(Status)) >> 30) == 1)
-#define NT_WARNING(Status)              ((((ULONG)(Status)) >> 30) == 2)
-#define NT_ERROR(Status)                ((((ULONG)(Status)) >> 30) == 3)
+#define NT_SUCCESS(Status)                                        (((NTSTATUS)(Status)) >= 0)
+#define NT_INFORMATION(Status)                       ((((ULONG)(Status)) >> 30) == 1)
+#define NT_WARNING(Status)                                        ((((ULONG)(Status)) >> 30) == 2)
+#define NT_ERROR(Status)                                          ((((ULONG)(Status)) >> 30) == 3)
 
 /* String Types */
 #ifndef __UNICODE_STRING_DEFINED
@@ -558,17 +558,17 @@ typedef struct _STRING64 {
   ANSI_STRING64, *PANSI_STRING64;
 
 /* LangID and NLS */
-#define MAKELANGID(p, s)       ((((USHORT)(s)) << 10) | (USHORT)(p))
+#define MAKELANGID(p, s)                    ((((USHORT)(s)) << 10) | (USHORT)(p))
 #define PRIMARYLANGID(lgid)    ((USHORT)(lgid) & 0x3ff)
-#define SUBLANGID(lgid)        ((USHORT)(lgid) >> 10)
+#define SUBLANGID(lgid)                     ((USHORT)(lgid) >> 10)
 
 #define NLS_VALID_LOCALE_MASK  0x000fffff
 
 #define MAKELCID(lgid, srtid)  ((ULONG)((((ULONG)((USHORT)(srtid))) << 16) |  \
-                                         ((ULONG)((USHORT)(lgid)))))
-#define MAKESORTLCID(lgid, srtid, ver)                                        \
-                               ((ULONG)((MAKELCID(lgid, srtid)) |             \
-                                    (((ULONG)((USHORT)(ver))) << 20)))
+                                                                                                                       ((ULONG)((USHORT)(lgid)))))
+#define MAKESORTLCID(lgid, srtid, ver)                                                                                                                      \
+                                                                                                ((ULONG)((MAKELCID(lgid, srtid)) |                                       \
+                                                                                                                  (((ULONG)((USHORT)(ver))) << 20)))
 #define LANGIDFROMLCID(lcid)   ((USHORT)(lcid))
 #define SORTIDFROMLCID(lcid)   ((USHORT)((((ULONG)(lcid)) >> 16) & 0xf))
 #define SORTVERSIONFROMLCID(lcid)  ((USHORT)((((ULONG)(lcid)) >> 20) & 0xf))
@@ -609,16 +609,16 @@ typedef struct _OBJECT_ATTRIBUTES32 {
 typedef CONST OBJECT_ATTRIBUTES32 *PCOBJECT_ATTRIBUTES32;
 
 /* Values for the Attributes member */
-#define OBJ_INHERIT             0x00000002
-#define OBJ_PERMANENT           0x00000010
-#define OBJ_EXCLUSIVE           0x00000020
+#define OBJ_INHERIT                                       0x00000002
+#define OBJ_PERMANENT                        0x00000010
+#define OBJ_EXCLUSIVE                        0x00000020
 #define OBJ_CASE_INSENSITIVE    0x00000040
-#define OBJ_OPENIF              0x00000080
-#define OBJ_OPENLINK            0x00000100
-#define OBJ_KERNEL_HANDLE       0x00000200
+#define OBJ_OPENIF                                        0x00000080
+#define OBJ_OPENLINK                                      0x00000100
+#define OBJ_KERNEL_HANDLE                    0x00000200
 #define OBJ_FORCE_ACCESS_CHECK  0x00000400
 #define OBJ_IGNORE_IMPERSONATED_DEVICEMAP 0x00000800
-#define OBJ_DONT_REPARSE        0x00001000
+#define OBJ_DONT_REPARSE                     0x00001000
 #define OBJ_VALID_ATTRIBUTES    0x00001FF2
 
 /* Helper Macro */
@@ -690,8 +690,8 @@ typedef struct _RTL_BALANCED_NODE {
   __C89_NAMELESS union {
     struct _RTL_BALANCED_NODE *Children[2];
     __C89_NAMELESS struct {
-      struct _RTL_BALANCED_NODE *Left;
-      struct _RTL_BALANCED_NODE *Right;
+                   struct _RTL_BALANCED_NODE *Left;
+                   struct _RTL_BALANCED_NODE *Right;
     };
   };
 
@@ -749,7 +749,7 @@ typedef const WNF_STATE_NAME *PCWNF_STATE_NAME;
 
 /* Helper Macros */
 #define RTL_FIELD_TYPE(type, field)    (((type*)0)->field)
-#define RTL_BITS_OF(sizeOfArg)         (sizeof(sizeOfArg) * 8)
+#define RTL_BITS_OF(sizeOfArg)                      (sizeof(sizeOfArg) * 8)
 #define RTL_BITS_OF_FIELD(type, field) (RTL_BITS_OF(RTL_FIELD_TYPE(type, field)))
 
 #define RTL_CONSTANT_STRING(s) { sizeof(s)-sizeof((s)[0]), sizeof(s), s }
@@ -796,193 +796,193 @@ typedef const WNF_STATE_NAME *PCWNF_STATE_NAME;
 /* C_ASSERT Definition */
 #define C_ASSERT(expr) extern char (*c_assert(void)) [(expr) ? 1 : -1]
 
-#define VER_WORKSTATION_NT                  0x40000000
-#define VER_SERVER_NT                       0x80000000
-#define VER_SUITE_SMALLBUSINESS             0x00000001
-#define VER_SUITE_ENTERPRISE                0x00000002
-#define VER_SUITE_BACKOFFICE                0x00000004
-#define VER_SUITE_COMMUNICATIONS            0x00000008
-#define VER_SUITE_TERMINAL                  0x00000010
+#define VER_WORKSTATION_NT                                                         0x40000000
+#define VER_SERVER_NT                                                              0x80000000
+#define VER_SUITE_SMALLBUSINESS                                       0x00000001
+#define VER_SUITE_ENTERPRISE                                          0x00000002
+#define VER_SUITE_BACKOFFICE                                          0x00000004
+#define VER_SUITE_COMMUNICATIONS                                      0x00000008
+#define VER_SUITE_TERMINAL                                                         0x00000010
 #define VER_SUITE_SMALLBUSINESS_RESTRICTED  0x00000020
-#define VER_SUITE_EMBEDDEDNT                0x00000040
-#define VER_SUITE_DATACENTER                0x00000080
-#define VER_SUITE_SINGLEUSERTS              0x00000100
-#define VER_SUITE_PERSONAL                  0x00000200
-#define VER_SUITE_BLADE                     0x00000400
-#define VER_SUITE_EMBEDDED_RESTRICTED       0x00000800
-#define VER_SUITE_SECURITY_APPLIANCE        0x00001000
-#define VER_SUITE_STORAGE_SERVER            0x00002000
-#define VER_SUITE_COMPUTE_SERVER            0x00004000
-#define VER_SUITE_WH_SERVER                 0x00008000
-#define VER_SUITE_MULTIUSERTS               0x00020000
+#define VER_SUITE_EMBEDDEDNT                                          0x00000040
+#define VER_SUITE_DATACENTER                                          0x00000080
+#define VER_SUITE_SINGLEUSERTS                                        0x00000100
+#define VER_SUITE_PERSONAL                                                         0x00000200
+#define VER_SUITE_BLADE                                                            0x00000400
+#define VER_SUITE_EMBEDDED_RESTRICTED                    0x00000800
+#define VER_SUITE_SECURITY_APPLIANCE                     0x00001000
+#define VER_SUITE_STORAGE_SERVER                                      0x00002000
+#define VER_SUITE_COMPUTE_SERVER                                      0x00004000
+#define VER_SUITE_WH_SERVER                                           0x00008000
+#define VER_SUITE_MULTIUSERTS                                         0x00020000
 
 /*  Primary language IDs. */
-#define LANG_NEUTRAL                              0x00
-#define LANG_INVARIANT                            0x7f
+#define LANG_NEUTRAL                                                                                               0x00
+#define LANG_INVARIANT                                                                                0x7f
 
-#define LANG_AFRIKAANS                            0x36
-#define LANG_ALBANIAN                             0x1c
-#define LANG_ALSATIAN                             0x84
-#define LANG_AMHARIC                              0x5e
-#define LANG_ARABIC                               0x01
-#define LANG_ARMENIAN                             0x2b
-#define LANG_ASSAMESE                             0x4d
-#define LANG_AZERI                                0x2c
-#define LANG_BASHKIR                              0x6d
-#define LANG_BASQUE                               0x2d
-#define LANG_BELARUSIAN                           0x23
-#define LANG_BENGALI                              0x45
-#define LANG_BRETON                               0x7e
-#define LANG_BOSNIAN                              0x1a
-#define LANG_BOSNIAN_NEUTRAL                    0x781a
-#define LANG_BULGARIAN                            0x02
-#define LANG_CATALAN                              0x03
-#define LANG_CHINESE                              0x04
-#define LANG_CHINESE_SIMPLIFIED                   0x04
-#define LANG_CHINESE_TRADITIONAL                0x7c04
-#define LANG_CORSICAN                             0x83
-#define LANG_CROATIAN                             0x1a
-#define LANG_CZECH                                0x05
-#define LANG_DANISH                               0x06
-#define LANG_DARI                                 0x8c
-#define LANG_DIVEHI                               0x65
-#define LANG_DUTCH                                0x13
-#define LANG_ENGLISH                              0x09
-#define LANG_ESTONIAN                             0x25
-#define LANG_FAEROESE                             0x38
-#define LANG_FARSI                                0x29
-#define LANG_FILIPINO                             0x64
-#define LANG_FINNISH                              0x0b
-#define LANG_FRENCH                               0x0c
-#define LANG_FRISIAN                              0x62
-#define LANG_GALICIAN                             0x56
-#define LANG_GEORGIAN                             0x37
-#define LANG_GERMAN                               0x07
-#define LANG_GREEK                                0x08
-#define LANG_GREENLANDIC                          0x6f
-#define LANG_GUJARATI                             0x47
-#define LANG_HAUSA                                0x68
-#define LANG_HEBREW                               0x0d
-#define LANG_HINDI                                0x39
-#define LANG_HUNGARIAN                            0x0e
-#define LANG_ICELANDIC                            0x0f
-#define LANG_IGBO                                 0x70
-#define LANG_INDONESIAN                           0x21
-#define LANG_INUKTITUT                            0x5d
-#define LANG_IRISH                                0x3c
-#define LANG_ITALIAN                              0x10
-#define LANG_JAPANESE                             0x11
-#define LANG_KANNADA                              0x4b
-#define LANG_KASHMIRI                             0x60
-#define LANG_KAZAK                                0x3f
-#define LANG_KHMER                                0x53
-#define LANG_KICHE                                0x86
-#define LANG_KINYARWANDA                          0x87
-#define LANG_KONKANI                              0x57
-#define LANG_KOREAN                               0x12
-#define LANG_KYRGYZ                               0x40
-#define LANG_LAO                                  0x54
-#define LANG_LATVIAN                              0x26
-#define LANG_LITHUANIAN                           0x27
-#define LANG_LOWER_SORBIAN                        0x2e
-#define LANG_LUXEMBOURGISH                        0x6e
-#define LANG_MACEDONIAN                           0x2f
-#define LANG_MALAY                                0x3e
-#define LANG_MALAYALAM                            0x4c
-#define LANG_MALTESE                              0x3a
-#define LANG_MANIPURI                             0x58
-#define LANG_MAORI                                0x81
-#define LANG_MAPUDUNGUN                           0x7a
-#define LANG_MARATHI                              0x4e
-#define LANG_MOHAWK                               0x7c
-#define LANG_MONGOLIAN                            0x50
-#define LANG_NEPALI                               0x61
-#define LANG_NORWEGIAN                            0x14
-#define LANG_OCCITAN                              0x82
-#define LANG_ORIYA                                0x48
-#define LANG_PASHTO                               0x63
-#define LANG_PERSIAN                              0x29
-#define LANG_POLISH                               0x15
-#define LANG_PORTUGUESE                           0x16
-#define LANG_PUNJABI                              0x46
-#define LANG_QUECHUA                              0x6b
-#define LANG_ROMANIAN                             0x18
-#define LANG_ROMANSH                              0x17
-#define LANG_RUSSIAN                              0x19
-#define LANG_SAMI                                 0x3b
-#define LANG_SANSKRIT                             0x4f
-#define LANG_SERBIAN                              0x1a
-#define LANG_SERBIAN_NEUTRAL                    0x7c1a
-#define LANG_SINDHI                               0x59
-#define LANG_SINHALESE                            0x5b
-#define LANG_SLOVAK                               0x1b
-#define LANG_SLOVENIAN                            0x24
-#define LANG_SOTHO                                0x6c
-#define LANG_SPANISH                              0x0a
-#define LANG_SWAHILI                              0x41
-#define LANG_SWEDISH                              0x1d
-#define LANG_SYRIAC                               0x5a
-#define LANG_TAJIK                                0x28
-#define LANG_TAMAZIGHT                            0x5f
-#define LANG_TAMIL                                0x49
-#define LANG_TATAR                                0x44
-#define LANG_TELUGU                               0x4a
-#define LANG_THAI                                 0x1e
-#define LANG_TIBETAN                              0x51
-#define LANG_TIGRIGNA                             0x73
-#define LANG_TSWANA                               0x32
-#define LANG_TURKISH                              0x1f
-#define LANG_TURKMEN                              0x42
-#define LANG_UIGHUR                               0x80
-#define LANG_UKRAINIAN                            0x22
-#define LANG_UPPER_SORBIAN                        0x2e
-#define LANG_URDU                                 0x20
-#define LANG_UZBEK                                0x43
-#define LANG_VIETNAMESE                           0x2a
-#define LANG_WELSH                                0x52
-#define LANG_WOLOF                                0x88
-#define LANG_XHOSA                                0x34
-#define LANG_YAKUT                                0x85
-#define LANG_YI                                   0x78
-#define LANG_YORUBA                               0x6a
-#define LANG_ZULU                                 0x35
+#define LANG_AFRIKAANS                                                                                0x36
+#define LANG_ALBANIAN                                                                                 0x1c
+#define LANG_ALSATIAN                                                                                 0x84
+#define LANG_AMHARIC                                                                                               0x5e
+#define LANG_ARABIC                                                                                                0x01
+#define LANG_ARMENIAN                                                                                 0x2b
+#define LANG_ASSAMESE                                                                                 0x4d
+#define LANG_AZERI                                                                                                 0x2c
+#define LANG_BASHKIR                                                                                               0x6d
+#define LANG_BASQUE                                                                                                0x2d
+#define LANG_BELARUSIAN                                                                               0x23
+#define LANG_BENGALI                                                                                               0x45
+#define LANG_BRETON                                                                                                0x7e
+#define LANG_BOSNIAN                                                                                               0x1a
+#define LANG_BOSNIAN_NEUTRAL                                                           0x781a
+#define LANG_BULGARIAN                                                                                0x02
+#define LANG_CATALAN                                                                                               0x03
+#define LANG_CHINESE                                                                                               0x04
+#define LANG_CHINESE_SIMPLIFIED                                                          0x04
+#define LANG_CHINESE_TRADITIONAL                                          0x7c04
+#define LANG_CORSICAN                                                                                 0x83
+#define LANG_CROATIAN                                                                                 0x1a
+#define LANG_CZECH                                                                                                 0x05
+#define LANG_DANISH                                                                                                0x06
+#define LANG_DARI                                                                                                  0x8c
+#define LANG_DIVEHI                                                                                                0x65
+#define LANG_DUTCH                                                                                                 0x13
+#define LANG_ENGLISH                                                                                               0x09
+#define LANG_ESTONIAN                                                                                 0x25
+#define LANG_FAEROESE                                                                                 0x38
+#define LANG_FARSI                                                                                                 0x29
+#define LANG_FILIPINO                                                                                 0x64
+#define LANG_FINNISH                                                                                               0x0b
+#define LANG_FRENCH                                                                                                0x0c
+#define LANG_FRISIAN                                                                                               0x62
+#define LANG_GALICIAN                                                                                 0x56
+#define LANG_GEORGIAN                                                                                 0x37
+#define LANG_GERMAN                                                                                                0x07
+#define LANG_GREEK                                                                                                 0x08
+#define LANG_GREENLANDIC                                                                              0x6f
+#define LANG_GUJARATI                                                                                 0x47
+#define LANG_HAUSA                                                                                                 0x68
+#define LANG_HEBREW                                                                                                0x0d
+#define LANG_HINDI                                                                                                 0x39
+#define LANG_HUNGARIAN                                                                                0x0e
+#define LANG_ICELANDIC                                                                                0x0f
+#define LANG_IGBO                                                                                                  0x70
+#define LANG_INDONESIAN                                                                               0x21
+#define LANG_INUKTITUT                                                                                0x5d
+#define LANG_IRISH                                                                                                 0x3c
+#define LANG_ITALIAN                                                                                               0x10
+#define LANG_JAPANESE                                                                                 0x11
+#define LANG_KANNADA                                                                                               0x4b
+#define LANG_KASHMIRI                                                                                 0x60
+#define LANG_KAZAK                                                                                                 0x3f
+#define LANG_KHMER                                                                                                 0x53
+#define LANG_KICHE                                                                                                 0x86
+#define LANG_KINYARWANDA                                                                              0x87
+#define LANG_KONKANI                                                                                               0x57
+#define LANG_KOREAN                                                                                                0x12
+#define LANG_KYRGYZ                                                                                                0x40
+#define LANG_LAO                                                                                                   0x54
+#define LANG_LATVIAN                                                                                               0x26
+#define LANG_LITHUANIAN                                                                               0x27
+#define LANG_LOWER_SORBIAN                                                                            0x2e
+#define LANG_LUXEMBOURGISH                                                                            0x6e
+#define LANG_MACEDONIAN                                                                               0x2f
+#define LANG_MALAY                                                                                                 0x3e
+#define LANG_MALAYALAM                                                                                0x4c
+#define LANG_MALTESE                                                                                               0x3a
+#define LANG_MANIPURI                                                                                 0x58
+#define LANG_MAORI                                                                                                 0x81
+#define LANG_MAPUDUNGUN                                                                               0x7a
+#define LANG_MARATHI                                                                                               0x4e
+#define LANG_MOHAWK                                                                                                0x7c
+#define LANG_MONGOLIAN                                                                                0x50
+#define LANG_NEPALI                                                                                                0x61
+#define LANG_NORWEGIAN                                                                                0x14
+#define LANG_OCCITAN                                                                                               0x82
+#define LANG_ORIYA                                                                                                 0x48
+#define LANG_PASHTO                                                                                                0x63
+#define LANG_PERSIAN                                                                                               0x29
+#define LANG_POLISH                                                                                                0x15
+#define LANG_PORTUGUESE                                                                               0x16
+#define LANG_PUNJABI                                                                                               0x46
+#define LANG_QUECHUA                                                                                               0x6b
+#define LANG_ROMANIAN                                                                                 0x18
+#define LANG_ROMANSH                                                                                               0x17
+#define LANG_RUSSIAN                                                                                               0x19
+#define LANG_SAMI                                                                                                  0x3b
+#define LANG_SANSKRIT                                                                                 0x4f
+#define LANG_SERBIAN                                                                                               0x1a
+#define LANG_SERBIAN_NEUTRAL                                                           0x7c1a
+#define LANG_SINDHI                                                                                                0x59
+#define LANG_SINHALESE                                                                                0x5b
+#define LANG_SLOVAK                                                                                                0x1b
+#define LANG_SLOVENIAN                                                                                0x24
+#define LANG_SOTHO                                                                                                 0x6c
+#define LANG_SPANISH                                                                                               0x0a
+#define LANG_SWAHILI                                                                                               0x41
+#define LANG_SWEDISH                                                                                               0x1d
+#define LANG_SYRIAC                                                                                                0x5a
+#define LANG_TAJIK                                                                                                 0x28
+#define LANG_TAMAZIGHT                                                                                0x5f
+#define LANG_TAMIL                                                                                                 0x49
+#define LANG_TATAR                                                                                                 0x44
+#define LANG_TELUGU                                                                                                0x4a
+#define LANG_THAI                                                                                                  0x1e
+#define LANG_TIBETAN                                                                                               0x51
+#define LANG_TIGRIGNA                                                                                 0x73
+#define LANG_TSWANA                                                                                                0x32
+#define LANG_TURKISH                                                                                               0x1f
+#define LANG_TURKMEN                                                                                               0x42
+#define LANG_UIGHUR                                                                                                0x80
+#define LANG_UKRAINIAN                                                                                0x22
+#define LANG_UPPER_SORBIAN                                                                            0x2e
+#define LANG_URDU                                                                                                  0x20
+#define LANG_UZBEK                                                                                                 0x43
+#define LANG_VIETNAMESE                                                                               0x2a
+#define LANG_WELSH                                                                                                 0x52
+#define LANG_WOLOF                                                                                                 0x88
+#define LANG_XHOSA                                                                                                 0x34
+#define LANG_YAKUT                                                                                                 0x85
+#define LANG_YI                                                                                                    0x78
+#define LANG_YORUBA                                                                                                0x6a
+#define LANG_ZULU                                                                                                  0x35
 
 #ifndef NT_INCLUDED
 
 #define FILE_ATTRIBUTE_VALID_FLAGS 0x00007fb7
 #define FILE_SHARE_VALID_FLAGS (FILE_SHARE_READ|FILE_SHARE_WRITE|FILE_SHARE_DELETE)
 
-#define FILE_SUPERSEDE                    0x00000000
-#define FILE_OPEN                         0x00000001
-#define FILE_CREATE                       0x00000002
-#define FILE_OPEN_IF                      0x00000003
-#define FILE_OVERWRITE                    0x00000004
-#define FILE_OVERWRITE_IF                 0x00000005
-#define FILE_MAXIMUM_DISPOSITION          0x00000005
+#define FILE_SUPERSEDE                                                           0x00000000
+#define FILE_OPEN                                                                             0x00000001
+#define FILE_CREATE                                                              0x00000002
+#define FILE_OPEN_IF                                                             0x00000003
+#define FILE_OVERWRITE                                                           0x00000004
+#define FILE_OVERWRITE_IF                                           0x00000005
+#define FILE_MAXIMUM_DISPOSITION                       0x00000005
 
-#define FILE_DIRECTORY_FILE               0x00000001
-#define FILE_WRITE_THROUGH                0x00000002
-#define FILE_SEQUENTIAL_ONLY              0x00000004
+#define FILE_DIRECTORY_FILE                                         0x00000001
+#define FILE_WRITE_THROUGH                                          0x00000002
+#define FILE_SEQUENTIAL_ONLY                                        0x00000004
 #define FILE_NO_INTERMEDIATE_BUFFERING    0x00000008
-#define FILE_SYNCHRONOUS_IO_ALERT         0x00000010
-#define FILE_SYNCHRONOUS_IO_NONALERT      0x00000020
-#define FILE_NON_DIRECTORY_FILE           0x00000040
-#define FILE_CREATE_TREE_CONNECTION       0x00000080
-#define FILE_COMPLETE_IF_OPLOCKED         0x00000100
-#define FILE_NO_EA_KNOWLEDGE              0x00000200
-#define FILE_OPEN_REMOTE_INSTANCE         0x00000400
-#define FILE_RANDOM_ACCESS                0x00000800
-#define FILE_DELETE_ON_CLOSE              0x00001000
-#define FILE_OPEN_BY_FILE_ID              0x00002000
-#define FILE_OPEN_FOR_BACKUP_INTENT       0x00004000
-#define FILE_NO_COMPRESSION               0x00008000
+#define FILE_SYNCHRONOUS_IO_ALERT                      0x00000010
+#define FILE_SYNCHRONOUS_IO_NONALERT                   0x00000020
+#define FILE_NON_DIRECTORY_FILE                        0x00000040
+#define FILE_CREATE_TREE_CONNECTION                    0x00000080
+#define FILE_COMPLETE_IF_OPLOCKED                      0x00000100
+#define FILE_NO_EA_KNOWLEDGE                                        0x00000200
+#define FILE_OPEN_REMOTE_INSTANCE                      0x00000400
+#define FILE_RANDOM_ACCESS                                          0x00000800
+#define FILE_DELETE_ON_CLOSE                                        0x00001000
+#define FILE_OPEN_BY_FILE_ID                                        0x00002000
+#define FILE_OPEN_FOR_BACKUP_INTENT                    0x00004000
+#define FILE_NO_COMPRESSION                                         0x00008000
 #if (NTDDI_VERSION >= NTDDI_WIN7)
-#define FILE_OPEN_REQUIRING_OPLOCK        0x00010000
-#define FILE_DISALLOW_EXCLUSIVE           0x00020000
+#define FILE_OPEN_REQUIRING_OPLOCK                     0x00010000
+#define FILE_DISALLOW_EXCLUSIVE                        0x00020000
 #endif /* (NTDDI_VERSION >= NTDDI_WIN7) */
-#define FILE_RESERVE_OPFILTER             0x00100000
-#define FILE_OPEN_REPARSE_POINT           0x00200000
-#define FILE_OPEN_NO_RECALL               0x00400000
+#define FILE_RESERVE_OPFILTER                                       0x00100000
+#define FILE_OPEN_REPARSE_POINT                        0x00200000
+#define FILE_OPEN_NO_RECALL                                         0x00400000
 #define FILE_OPEN_FOR_FREE_SPACE_QUERY    0x00800000
 
 typedef struct _REPARSE_DATA_BUFFER
@@ -994,29 +994,29 @@ typedef struct _REPARSE_DATA_BUFFER
   {
     struct
     {
-      USHORT SubstituteNameOffset;
-      USHORT SubstituteNameLength;
-      USHORT PrintNameOffset;
-      USHORT PrintNameLength;
-      ULONG  Flags;
-      WCHAR  PathBuffer[1];
+                   USHORT SubstituteNameOffset;
+                   USHORT SubstituteNameLength;
+                   USHORT PrintNameOffset;
+                   USHORT PrintNameLength;
+                   ULONG  Flags;
+                   WCHAR  PathBuffer[1];
     } SymbolicLinkReparseBuffer;
     struct
     {
-      USHORT SubstituteNameOffset;
-      USHORT SubstituteNameLength;
-      USHORT PrintNameOffset;
-      USHORT PrintNameLength;
-      WCHAR  PathBuffer[1];
+                   USHORT SubstituteNameOffset;
+                   USHORT SubstituteNameLength;
+                   USHORT PrintNameOffset;
+                   USHORT PrintNameLength;
+                   WCHAR  PathBuffer[1];
     } MountPointReparseBuffer;
     struct
     {
-      UCHAR  DataBuffer[1];
+                   UCHAR  DataBuffer[1];
     } GenericReparseBuffer;
   };
 } REPARSE_DATA_BUFFER, *PREPARSE_DATA_BUFFER;
 
-#define REPARSE_DATA_BUFFER_HEADER_SIZE      FIELD_OFFSET(REPARSE_DATA_BUFFER, GenericReparseBuffer)
+#define REPARSE_DATA_BUFFER_HEADER_SIZE                   FIELD_OFFSET(REPARSE_DATA_BUFFER, GenericReparseBuffer)
 
 #endif /* !NT_DEFINED */
 

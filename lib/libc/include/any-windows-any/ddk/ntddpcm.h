@@ -27,10 +27,10 @@
 extern "C" {
 #endif
 
-#define IOCTL_PCMCIA_BASE                 FILE_DEVICE_CONTROLLER
+#define IOCTL_PCMCIA_BASE                                           FILE_DEVICE_CONTROLLER
 
-#define DD_PCMCIA_DEVICE_NAME             "\\\\.\\Pcmcia"
-#define DD_PCMCIA_DEVICE_NAME_U           L"\\\\.\\Pcmcia"
+#define DD_PCMCIA_DEVICE_NAME                                       "\\\\.\\Pcmcia"
+#define DD_PCMCIA_DEVICE_NAME_U                        L"\\\\.\\Pcmcia"
 
 #define IOCTL_GET_TUPLE_DATA \
   CTL_CODE(IOCTL_PCMCIA_BASE, 3000, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -38,11 +38,11 @@ extern "C" {
 #define IOCTL_SOCKET_INFORMATION \
   CTL_CODE(IOCTL_PCMCIA_BASE, 3004, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
-#define DEVICE_IDENTIFIER_LENGTH          64
-#define DRIVER_NAME_LENGTH                32
-#define MANUFACTURER_NAME_LENGTH          64
+#define DEVICE_IDENTIFIER_LENGTH                       64
+#define DRIVER_NAME_LENGTH                                          32
+#define MANUFACTURER_NAME_LENGTH                       64
 
-#define PcmciaInvalidControllerType       0xffffffff
+#define PcmciaInvalidControllerType                    0xffffffff
 
 typedef struct _TUPLE_REQUEST {
  USHORT  Socket;
@@ -99,8 +99,8 @@ typedef ULONG
   IN ULONG  Length);
 
 #define PCCARD_PCI_CONFIGURATION_SPACE    0
-#define PCCARD_ATTRIBUTE_MEMORY           1
-#define PCCARD_COMMON_MEMORY              2
+#define PCCARD_ATTRIBUTE_MEMORY                        1
+#define PCCARD_COMMON_MEMORY                                        2
 #define PCCARD_ATTRIBUTE_MEMORY_INDIRECT  3
 #define PCCARD_COMMON_MEMORY_INDIRECT     4
 
@@ -114,8 +114,8 @@ typedef struct _PCMCIA_BUS_INTERFACE_STANDARD {
 	PPCMCIA_READ_WRITE_CONFIG  WriteConfig;
 } PCMCIA_BUS_INTERFACE_STANDARD, *PPCMCIA_BUS_INTERFACE_STANDARD;
 
-#define PCMCIA_MEMORY_8BIT_ACCESS         0
-#define PCMCIA_MEMORY_16BIT_ACCESS        1
+#define PCMCIA_MEMORY_8BIT_ACCESS                      0
+#define PCMCIA_MEMORY_16BIT_ACCESS                     1
 
 typedef BOOLEAN
 (NTAPI *PPCMCIA_MODIFY_MEMORY_WINDOW)(
@@ -128,9 +128,9 @@ typedef BOOLEAN
   IN UCHAR  BusWidth  OPTIONAL,
   IN BOOLEAN  IsAttributeMemory  OPTIONAL);
 
-#define PCMCIA_VPP_0V                     0
-#define PCMCIA_VPP_12V                    1
-#define PCMCIA_VPP_IS_VCC                 2
+#define PCMCIA_VPP_0V                                                            0
+#define PCMCIA_VPP_12V                                                           1
+#define PCMCIA_VPP_IS_VCC                                           2
 
 typedef BOOLEAN
 (NTAPI *PPCMCIA_SET_VPP)(

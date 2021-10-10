@@ -93,13 +93,13 @@ struct rtnl_link_ifmap {
  *
  *   Example:
  *   [IFLA_AF_SPEC] = {
- *       [AF_INET] = {
- *           [IFLA_INET_CONF] = ...,
- *       },
- *       [AF_INET6] = {
- *           [IFLA_INET6_FLAGS] = ...,
- *           [IFLA_INET6_CONF] = ...,
- *       }
+ *                    [AF_INET] = {
+ *                        [IFLA_INET_CONF] = ...,
+ *                    },
+ *                    [AF_INET6] = {
+ *                        [IFLA_INET6_FLAGS] = ...,
+ *                        [IFLA_INET6_CONF] = ...,
+ *                    }
  *   }
  */
 
@@ -302,10 +302,10 @@ enum {
 enum {
 	IFLA_BRPORT_UNSPEC,
 	IFLA_BRPORT_STATE,	/* Spanning tree state     */
-	IFLA_BRPORT_PRIORITY,	/* "             priority  */
-	IFLA_BRPORT_COST,	/* "             cost      */
-	IFLA_BRPORT_MODE,	/* mode (hairpin)          */
-	IFLA_BRPORT_GUARD,	/* bpdu guard              */
+	IFLA_BRPORT_PRIORITY,	/* "                                       priority  */
+	IFLA_BRPORT_COST,	/* "                                       cost                   */
+	IFLA_BRPORT_MODE,	/* mode (hairpin)                       */
+	IFLA_BRPORT_GUARD,	/* bpdu guard                                        */
 	IFLA_BRPORT_PROTECT,	/* root port protection    */
 	IFLA_BRPORT_FAST_LEAVE,	/* multicast fast leave    */
 	IFLA_BRPORT_LEARNING,	/* mac learning */
@@ -978,10 +978,10 @@ enum {
 
 /* rmnet section */
 
-#define RMNET_FLAGS_INGRESS_DEAGGREGATION         (1U << 0)
-#define RMNET_FLAGS_INGRESS_MAP_COMMANDS          (1U << 1)
-#define RMNET_FLAGS_INGRESS_MAP_CKSUMV4           (1U << 2)
-#define RMNET_FLAGS_EGRESS_MAP_CKSUMV4            (1U << 3)
+#define RMNET_FLAGS_INGRESS_DEAGGREGATION                      (1U << 0)
+#define RMNET_FLAGS_INGRESS_MAP_COMMANDS                       (1U << 1)
+#define RMNET_FLAGS_INGRESS_MAP_CKSUMV4                        (1U << 2)
+#define RMNET_FLAGS_EGRESS_MAP_CKSUMV4                                      (1U << 3)
 
 enum {
 	IFLA_RMNET_UNSPEC,

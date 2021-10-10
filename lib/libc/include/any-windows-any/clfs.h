@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 typedef enum  {
-  ClfsContextNone       = 0x00,
+  ClfsContextNone                    = 0x00,
   ClfsContextUndoNext,
   ClfsContextPrevious,
   ClfsContextForward 
@@ -19,7 +19,7 @@ typedef enum  {
 
 typedef enum _CLFS_IOSTATS_CLASS {
   ClfsIoStatsDefault   = 0x0000,
-  ClfsIoStatsMax       = 0xFFFF 
+  ClfsIoStatsMax                    = 0xFFFF 
 } CLFS_IOSTATS_CLASS, *PCLFS_IOSTATS_CLASS, **PPCLFS_IOSTATS_CLASS;
 
 typedef enum _CLFS_LOG_ARCHIVE_MODE {
@@ -61,14 +61,14 @@ typedef DWORD CLFS_CONTAINER_ID;
 
 /* Goes in wdm.h */
 typedef struct _CLFS_CONTAINER_INFORMATION {
-  ULONG                FileAttributes;
-  ULONGLONG            CreationTime;
-  ULONGLONG            LastAccessTime;
-  ULONGLONG            LastWriteTime;
-  LONGLONG             ContainerSize;
-  ULONG                FileNameActualLength;
-  ULONG                FileNameLength;
-  WCHAR                FileName[MAX_PATH];
+  ULONG                                          FileAttributes;
+  ULONGLONG                                      CreationTime;
+  ULONGLONG                                      LastAccessTime;
+  ULONGLONG                                      LastWriteTime;
+  LONGLONG                                       ContainerSize;
+  ULONG                                          FileNameActualLength;
+  ULONG                                          FileNameLength;
+  WCHAR                                          FileName[MAX_PATH];
   CLFS_CONTAINER_STATE State;
   CLFS_CONTAINER_ID    PhysicalContainerId;
   CLFS_CONTAINER_ID    LogicalContainerId;
@@ -76,16 +76,16 @@ typedef struct _CLFS_CONTAINER_INFORMATION {
 /**/
 
 typedef struct _CLFS_IO_STATISTICS_HEADER {
-  UCHAR              ubMajorVersion;
-  UCHAR              ubMinorVersion;
+  UCHAR                                        ubMajorVersion;
+  UCHAR                                        ubMinorVersion;
   CLFS_IOSTATS_CLASS eStatsClass;
-  USHORT             cbLength;
-  ULONG              coffData;
+  USHORT                                       cbLength;
+  ULONG                                        coffData;
 } CLFS_IO_STATISTICS_HEADER, *PCLFS_IO_STATISTICS_HEADER, **PPCLFS_IO_STATISTICS_HEADER;
 
 typedef struct _CLFS_ARCHIVE_DESCRIPTOR {
-  ULONGLONG                  coffLow;
-  ULONGLONG                  coffHigh;
+  ULONGLONG                                                         coffLow;
+  ULONGLONG                                                         coffHigh;
   CLFS_CONTAINER_INFORMATION infoContainer;
 } CLFS_ARCHIVE_DESCRIPTOR, *PCLFS_ARCHIVE_DESCRIPTOR, **PPCLFS_ARCHIVE_DESCRIPTOR;
 
@@ -106,15 +106,15 @@ typedef struct _CLFS_INFORMATION {
   CLFS_LSN  LastFlushedLsn;
   CLFS_LSN  LastLsn;
   CLFS_LSN  RestartLsn;
-  GUID      Identity;
+  GUID                   Identity;
 } CLFS_INFORMATION, *PCLFS_INFORMATION, **PPCLFS_INFORMATION;
 
 typedef struct _CLFS_IO_STATISTICS {
   CLFS_IO_STATISTICS_HEADER hdrIoStats;
-  ULONGLONG                 cFlush;
-  ULONGLONG                 cbFlush;
-  ULONGLONG                 cMetaFlush;
-  ULONGLONG                 cbMetaFlush;
+  ULONGLONG                                           cFlush;
+  ULONGLONG                                           cbFlush;
+  ULONGLONG                                           cMetaFlush;
+  ULONGLONG                                           cbMetaFlush;
 } CLFS_IO_STATISTICS, *PCLFS_IO_STATISTICS, **PPCLFS_IO_STATISTICS;
 
 typedef struct _CLFS_NODE_ID {
@@ -123,12 +123,12 @@ typedef struct _CLFS_NODE_ID {
 } CLFS_NODE_ID, *PCLFS_NODE_ID;
 
 typedef struct _CLFS_SCAN_CONTEXT {
-  CLFS_NODE_ID                cidNode;
-  HANDLE                      hLog;
-  ULONG                       cIndex;
-  ULONG                       cContainers;
-  ULONG                       cContainersReturned;
-  CLFS_SCAN_MODE              eScanMode;
+  CLFS_NODE_ID                                          cidNode;
+  HANDLE                                                             hLog;
+  ULONG                                                              cIndex;
+  ULONG                                                              cContainers;
+  ULONG                                                              cContainersReturned;
+  CLFS_SCAN_MODE                                        eScanMode;
   PCLFS_CONTAINER_INFORMATION pinfoContainer;
 } CLFS_SCAN_CONTEXT, *PCLFS_SCAN_CONTEXT;
 

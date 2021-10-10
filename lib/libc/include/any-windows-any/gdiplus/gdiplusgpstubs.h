@@ -91,20 +91,20 @@ class GpFont {};
 class GpFontCollection {};
 class GpFontFamily {};
 class GpGraphics {};
-class GpHatch: public GpBrush {};         /* HatchBrush */
+class GpHatch: public GpBrush {};                      /* HatchBrush */
 class GpImageAttributes {};
 class GpLineGradient: public GpBrush {};  /* LinearGradientBrush */
 class GpMatrix {};
 class GpMetafile: public GpImage {};
-class GpPath {};                          /* GraphicsPath */
+class GpPath {};                                                                              /* GraphicsPath */
 class GpPathData {};
 class GpPathGradient: public GpBrush {};  /* PathGradientBrush */
-class GpPathIterator {};                  /* GraphicsPathIterator */
+class GpPathIterator {};                                                         /* GraphicsPathIterator */
 class GpPen {};
 class GpRegion {};
 class GpSolidFill: public GpBrush {};     /* SolidBrush */
 class GpStringFormat {};
-class GpTexture: public GpBrush {};       /* TextureBrush */
+class GpTexture: public GpBrush {};                    /* TextureBrush */
 
 #else /* !__cplusplus */
 

@@ -112,13 +112,13 @@ extern "C" {
     USHORT LimitLow;
     USHORT BaseLow;
     union {
-      struct {
+                   struct {
 	UCHAR BaseMid;
 	UCHAR Flags1;
 	UCHAR Flags2;
 	UCHAR BaseHi;
-      } Bytes;
-      struct {
+                   } Bytes;
+                   struct {
 	ULONG BaseMid : 8;
 	ULONG Type : 5;
 	ULONG Dpl : 2;
@@ -129,7 +129,7 @@ extern "C" {
 	ULONG Default_Big : 1;
 	ULONG Granularity : 1;
 	ULONG BaseHi : 8;
-      } Bits;
+                   } Bits;
     } HighWord;
   } VDMLDT_ENTRY;
 #endif

@@ -35,12 +35,12 @@ typedef struct _DXVA_PicEntry_H264
 {
     union
     {
-        struct
-        {
-            UCHAR Index7Bits     : 7;
-            UCHAR AssociatedFlag : 1;
-        } DUMMYSTRUCTNAME;
-        UCHAR bPicEntry;
+                     struct
+                     {
+                                      UCHAR Index7Bits     : 7;
+                                      UCHAR AssociatedFlag : 1;
+                     } DUMMYSTRUCTNAME;
+                     UCHAR bPicEntry;
     } DUMMYUNIONNAME;
 } DXVA_PicEntry_H264, *LPDXVA_PicEntry_H264;
 
@@ -139,24 +139,24 @@ typedef struct _DXVA_PicParams_H264
     UCHAR num_ref_frames;
     union
     {
-        struct
-        {
-            USHORT field_pic_flag                   : 1;
-            USHORT MbaffFrameFlag                   : 1;
-            USHORT residual_colour_transform_flag   : 1;
-            USHORT sp_for_switch_flag               : 1;
-            USHORT chroma_format_idc                : 2;
-            USHORT RefPicFlag                       : 1;
-            USHORT constrained_intra_pred_flag      : 1;
-            USHORT weighted_pred_flag               : 1;
-            USHORT weighted_bipred_idc              : 2;
-            USHORT MbsConsecutiveFlag               : 1;
-            USHORT frame_mbs_only_flag              : 1;
-            USHORT transform_8x8_mode_flag          : 1;
-            USHORT MinLumaBipredSize8x8Flag         : 1;
-            USHORT IntraPicFlag                     : 1;
-        } DUMMYSTRUCTNAME;
-        USHORT wBitFields;
+                     struct
+                     {
+                                      USHORT field_pic_flag                                                          : 1;
+                                      USHORT MbaffFrameFlag                                                          : 1;
+                                      USHORT residual_colour_transform_flag   : 1;
+                                      USHORT sp_for_switch_flag                                         : 1;
+                                      USHORT chroma_format_idc                                          : 2;
+                                      USHORT RefPicFlag                                                              : 1;
+                                      USHORT constrained_intra_pred_flag                   : 1;
+                                      USHORT weighted_pred_flag                                         : 1;
+                                      USHORT weighted_bipred_idc                                        : 2;
+                                      USHORT MbsConsecutiveFlag                                         : 1;
+                                      USHORT frame_mbs_only_flag                                        : 1;
+                                      USHORT transform_8x8_mode_flag                       : 1;
+                                      USHORT MinLumaBipredSize8x8Flag                      : 1;
+                                      USHORT IntraPicFlag                                                            : 1;
+                     } DUMMYSTRUCTNAME;
+                     USHORT wBitFields;
     } DUMMYUNIONNAME;
     UCHAR bit_depth_luma_minus8;
     UCHAR bit_depth_chroma_minus8;
@@ -240,33 +240,33 @@ typedef struct _DXVA_PicEntry_HEVC
 {
     union
     {
-        struct
-        {
-            UCHAR Index7Bits : 7;
-            UCHAR AssociatedFlag : 1;
-        };
-        UCHAR bPicEntry;
+                     struct
+                     {
+                                      UCHAR Index7Bits : 7;
+                                      UCHAR AssociatedFlag : 1;
+                     };
+                     UCHAR bPicEntry;
     };
 } DXVA_PicEntry_HEVC, *LPDXVA_PicEntry_HEVC;
 
 typedef struct _DXVA_PicParams_HEVC
 {
-    USHORT      PicWidthInMinCbsY;
-    USHORT      PicHeightInMinCbsY;
+    USHORT                   PicWidthInMinCbsY;
+    USHORT                   PicHeightInMinCbsY;
     union
     {
-        struct
-        {
-            USHORT  chroma_format_idc                       : 2;
-            USHORT  separate_colour_plane_flag              : 1;
-            USHORT  bit_depth_luma_minus8                   : 3;
-            USHORT  bit_depth_chroma_minus8                 : 3;
-            USHORT  log2_max_pic_order_cnt_lsb_minus4       : 4;
-            USHORT  NoPicReorderingFlag                     : 1;
-            USHORT  NoBiPredFlag                            : 1;
-            USHORT  ReservedBits1                            : 1;
-        };
-        USHORT wFormatAndSequenceInfoFlags;
+                     struct
+                     {
+                                      USHORT  chroma_format_idc                                                              : 2;
+                                      USHORT  separate_colour_plane_flag                                        : 1;
+                                      USHORT  bit_depth_luma_minus8                                                          : 3;
+                                      USHORT  bit_depth_chroma_minus8                                           : 3;
+                                      USHORT  log2_max_pic_order_cnt_lsb_minus4                    : 4;
+                                      USHORT  NoPicReorderingFlag                                                            : 1;
+                                      USHORT  NoBiPredFlag                                                                                : 1;
+                                      USHORT  ReservedBits1                                                                                : 1;
+                     };
+                     USHORT wFormatAndSequenceInfoFlags;
     };
     DXVA_PicEntry_HEVC  CurrPic;
     UCHAR   sps_max_dec_pic_buffering_minus1;
@@ -287,56 +287,56 @@ typedef struct _DXVA_PicParams_HEVC
 
     union
     {
-        struct
-        {
-            UINT32  scaling_list_enabled_flag                    : 1;
-            UINT32  amp_enabled_flag                            : 1;
-            UINT32  sample_adaptive_offset_enabled_flag         : 1;
-            UINT32  pcm_enabled_flag                            : 1;
-            UINT32  pcm_sample_bit_depth_luma_minus1            : 4;
-            UINT32  pcm_sample_bit_depth_chroma_minus1          : 4;
-            UINT32  log2_min_pcm_luma_coding_block_size_minus3  : 2;
-            UINT32  log2_diff_max_min_pcm_luma_coding_block_size : 2;
-            UINT32  pcm_loop_filter_disabled_flag                : 1;
-            UINT32  long_term_ref_pics_present_flag             : 1;
-            UINT32  sps_temporal_mvp_enabled_flag               : 1;
-            UINT32  strong_intra_smoothing_enabled_flag         : 1;
-            UINT32  dependent_slice_segments_enabled_flag       : 1;
-            UINT32  output_flag_present_flag                    : 1;
-            UINT32  num_extra_slice_header_bits                 : 3;
-            UINT32  sign_data_hiding_enabled_flag               : 1;
-            UINT32  cabac_init_present_flag                     : 1;
-            UINT32  ReservedBits3                               : 5;
-        };
-        UINT32 dwCodingParamToolFlags;
+                     struct
+                     {
+                                      UINT32  scaling_list_enabled_flag                                                           : 1;
+                                      UINT32  amp_enabled_flag                                                                                : 1;
+                                      UINT32  sample_adaptive_offset_enabled_flag                      : 1;
+                                      UINT32  pcm_enabled_flag                                                                                : 1;
+                                      UINT32  pcm_sample_bit_depth_luma_minus1                                      : 4;
+                                      UINT32  pcm_sample_bit_depth_chroma_minus1                       : 4;
+                                      UINT32  log2_min_pcm_luma_coding_block_size_minus3  : 2;
+                                      UINT32  log2_diff_max_min_pcm_luma_coding_block_size : 2;
+                                      UINT32  pcm_loop_filter_disabled_flag                                          : 1;
+                                      UINT32  long_term_ref_pics_present_flag                                       : 1;
+                                      UINT32  sps_temporal_mvp_enabled_flag                                         : 1;
+                                      UINT32  strong_intra_smoothing_enabled_flag                      : 1;
+                                      UINT32  dependent_slice_segments_enabled_flag                    : 1;
+                                      UINT32  output_flag_present_flag                                                           : 1;
+                                      UINT32  num_extra_slice_header_bits                                           : 3;
+                                      UINT32  sign_data_hiding_enabled_flag                                         : 1;
+                                      UINT32  cabac_init_present_flag                                                            : 1;
+                                      UINT32  ReservedBits3                                                                                                : 5;
+                     };
+                     UINT32 dwCodingParamToolFlags;
     };
 
     union
     {
-        struct
-        {
-            UINT32  constrained_intra_pred_flag                 : 1;
-            UINT32  transform_skip_enabled_flag                 : 1;
-            UINT32  cu_qp_delta_enabled_flag                    : 1;
-            UINT32  pps_slice_chroma_qp_offsets_present_flag    : 1;
-            UINT32  weighted_pred_flag                          : 1;
-            UINT32  weighted_bipred_flag                        : 1;
-            UINT32  transquant_bypass_enabled_flag              : 1;
-            UINT32  tiles_enabled_flag                          : 1;
-            UINT32  entropy_coding_sync_enabled_flag            : 1;
-            UINT32  uniform_spacing_flag                        : 1;
-            UINT32  loop_filter_across_tiles_enabled_flag       : 1;
-            UINT32  pps_loop_filter_across_slices_enabled_flag  : 1;
-            UINT32  deblocking_filter_override_enabled_flag     : 1;
-            UINT32  pps_deblocking_filter_disabled_flag         : 1;
-            UINT32  lists_modification_present_flag             : 1;
-            UINT32  slice_segment_header_extension_present_flag : 1;
-            UINT32  IrapPicFlag                                 : 1;
-            UINT32  IdrPicFlag                                  : 1;
-            UINT32  IntraPicFlag                                : 1;
-            UINT32  ReservedBits4                               : 13;
-        };
-        UINT32 dwCodingSettingPicturePropertyFlags;
+                     struct
+                     {
+                                      UINT32  constrained_intra_pred_flag                                           : 1;
+                                      UINT32  transform_skip_enabled_flag                                           : 1;
+                                      UINT32  cu_qp_delta_enabled_flag                                                           : 1;
+                                      UINT32  pps_slice_chroma_qp_offsets_present_flag    : 1;
+                                      UINT32  weighted_pred_flag                                                                              : 1;
+                                      UINT32  weighted_bipred_flag                                                                            : 1;
+                                      UINT32  transquant_bypass_enabled_flag                                        : 1;
+                                      UINT32  tiles_enabled_flag                                                                              : 1;
+                                      UINT32  entropy_coding_sync_enabled_flag                                      : 1;
+                                      UINT32  uniform_spacing_flag                                                                            : 1;
+                                      UINT32  loop_filter_across_tiles_enabled_flag                    : 1;
+                                      UINT32  pps_loop_filter_across_slices_enabled_flag  : 1;
+                                      UINT32  deblocking_filter_override_enabled_flag     : 1;
+                                      UINT32  pps_deblocking_filter_disabled_flag                      : 1;
+                                      UINT32  lists_modification_present_flag                                       : 1;
+                                      UINT32  slice_segment_header_extension_present_flag : 1;
+                                      UINT32  IrapPicFlag                                                                                                  : 1;
+                                      UINT32  IdrPicFlag                                                                                                   : 1;
+                                      UINT32  IntraPicFlag                                                                                                 : 1;
+                                      UINT32  ReservedBits4                                                                                                : 13;
+                     };
+                     UINT32 dwCodingSettingPicturePropertyFlags;
     };
     CHAR    pps_cb_qp_offset;
     CHAR    pps_cr_qp_offset;
@@ -381,12 +381,12 @@ typedef struct _DXVA_PicEntry_VPx
 {
     union
     {
-        struct
-        {
-            UCHAR Index7Bits     : 7;
-            UCHAR AssociatedFlag : 1;
-        };
-        UCHAR bPicEntry;
+                     struct
+                     {
+                                      UCHAR Index7Bits     : 7;
+                                      UCHAR AssociatedFlag : 1;
+                     };
+                     UCHAR bPicEntry;
     };
 } DXVA_PicEntry_VPx, *LPDXVA_PicEntry_VPx;
 
@@ -394,15 +394,15 @@ typedef struct _segmentation_VP9
 {
     union
     {
-        struct
-        {
-            UCHAR enabled                   : 1;
-            UCHAR update_map                : 1;
-            UCHAR temporal_update           : 1;
-            UCHAR abs_delta                 : 1;
-            UCHAR ReservedSegmentFlags4Bits : 4;
-        };
-        UCHAR wSegmentInfoFlags;
+                     struct
+                     {
+                                      UCHAR enabled                                                          : 1;
+                                      UCHAR update_map                                          : 1;
+                                      UCHAR temporal_update                        : 1;
+                                      UCHAR abs_delta                                           : 1;
+                                      UCHAR ReservedSegmentFlags4Bits : 4;
+                     };
+                     UCHAR wSegmentInfoFlags;
     };
     UCHAR tree_probs[7];
     UCHAR pred_probs[3];
@@ -413,26 +413,26 @@ typedef struct _segmentation_VP9
 typedef struct _DXVA_PicParams_VP9
 {
     DXVA_PicEntry_VPx    CurrPic;
-    UCHAR                profile;
+    UCHAR                                          profile;
     union
     {
-        struct
-        {
-            USHORT frame_type                   : 1;
-            USHORT show_frame                   : 1;
-            USHORT error_resilient_mode         : 1;
-            USHORT subsampling_x                : 1;
-            USHORT subsampling_y                : 1;
-            USHORT extra_plane                  : 1;
-            USHORT refresh_frame_context        : 1;
-            USHORT frame_parallel_decoding_mode : 1;
-            USHORT intra_only                   : 1;
-            USHORT frame_context_idx            : 2;
-            USHORT reset_frame_context          : 2;
-            USHORT allow_high_precision_mv      : 1;
-            USHORT ReservedFormatInfo2Bits      : 2;
-        };
-        USHORT wFormatAndPictureInfoFlags;
+                     struct
+                     {
+                                      USHORT frame_type                                                          : 1;
+                                      USHORT show_frame                                                          : 1;
+                                      USHORT error_resilient_mode                      : 1;
+                                      USHORT subsampling_x                                          : 1;
+                                      USHORT subsampling_y                                          : 1;
+                                      USHORT extra_plane                                                         : 1;
+                                      USHORT refresh_frame_context                     : 1;
+                                      USHORT frame_parallel_decoding_mode : 1;
+                                      USHORT intra_only                                                          : 1;
+                                      USHORT frame_context_idx                                      : 2;
+                                      USHORT reset_frame_context                       : 2;
+                                      USHORT allow_high_precision_mv                   : 1;
+                                      USHORT ReservedFormatInfo2Bits                   : 2;
+                     };
+                     USHORT wFormatAndPictureInfoFlags;
     };
     UINT  width;
     UINT  height;
@@ -449,14 +449,14 @@ typedef struct _DXVA_PicParams_VP9
     CHAR  sharpness_level;
     union
     {
-        struct
-        {
-            UCHAR mode_ref_delta_enabled   : 1;
-            UCHAR mode_ref_delta_update    : 1;
-            UCHAR use_prev_in_find_mv_refs : 1;
-            UCHAR ReservedControlInfo5Bits : 5;
-        };
-        UCHAR wControlInfoFlags;
+                     struct
+                     {
+                                      UCHAR mode_ref_delta_enabled   : 1;
+                                      UCHAR mode_ref_delta_update    : 1;
+                                      UCHAR use_prev_in_find_mv_refs : 1;
+                                      UCHAR ReservedControlInfo5Bits : 5;
+                     };
+                     UCHAR wControlInfoFlags;
     };
     CHAR   ref_deltas[4];
     CHAR   mode_deltas[2];
@@ -478,15 +478,15 @@ typedef struct _segmentation_VP8
 {
     union
     {
-        struct
-        {
-            UCHAR segmentation_enabled        : 1;
-            UCHAR update_mb_segmentation_map  : 1;
-            UCHAR update_mb_segmentation_data : 1;
-            UCHAR mb_segement_abs_delta       : 1;
-            UCHAR ReservedSegmentFlags4Bits   : 4;
-        };
-        UCHAR wSegmentFlags;
+                     struct
+                     {
+                                      UCHAR segmentation_enabled                     : 1;
+                                      UCHAR update_mb_segmentation_map  : 1;
+                                      UCHAR update_mb_segmentation_data : 1;
+                                      UCHAR mb_segement_abs_delta                    : 1;
+                                      UCHAR ReservedSegmentFlags4Bits   : 4;
+                     };
+                     UCHAR wSegmentFlags;
     };
     CHAR  segment_feature_data[2][4];
     UCHAR mb_segment_tree_probs[3];
@@ -500,15 +500,15 @@ typedef struct _DXVA_PicParams_VP8
     DXVA_PicEntry_VPx  CurrPic;
     union
     {
-        struct
-        {
-            UCHAR frame_type            : 1;
-            UCHAR version               : 3;
-            UCHAR show_frame            : 1;
-            UCHAR clamp_type            : 1;
-            UCHAR ReservedFrameTag3Bits : 2;
-        };
-        UCHAR wFrameTagFlags;
+                     struct
+                     {
+                                      UCHAR frame_type                                      : 1;
+                                      UCHAR version                                         : 3;
+                                      UCHAR show_frame                                      : 1;
+                                      UCHAR clamp_type                                      : 1;
+                                      UCHAR ReservedFrameTag3Bits : 2;
+                     };
+                     UCHAR wFrameTagFlags;
     };
     DXVA_segmentation_VP8  stVP8Segments;
     UCHAR  filter_type;

@@ -121,7 +121,7 @@
 
 /* Local label name for asm code.  */
 #ifndef L
-# define L(name)         .L##name
+# define L(name)                      .L##name
 #endif
 
 /* Load or store to/from a pc-relative EXPR into/from R, using T.

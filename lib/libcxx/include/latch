@@ -59,7 +59,7 @@ class latch
 
 public:
     static constexpr ptrdiff_t max() noexcept {
-        return numeric_limits<ptrdiff_t>::max();
+                     return numeric_limits<ptrdiff_t>::max();
     }
 
     inline _LIBCPP_INLINE_VISIBILITY
@@ -72,28 +72,28 @@ public:
     inline _LIBCPP_AVAILABILITY_SYNC _LIBCPP_INLINE_VISIBILITY
     void count_down(ptrdiff_t __update = 1)
     {
-        auto const __old = __a.fetch_sub(__update, memory_order_release);
-        if(__old == __update)
-            __a.notify_all();
+                     auto const __old = __a.fetch_sub(__update, memory_order_release);
+                     if(__old == __update)
+                                      __a.notify_all();
     }
     inline _LIBCPP_INLINE_VISIBILITY
     bool try_wait() const noexcept
     {
-        return 0 == __a.load(memory_order_acquire);
+                     return 0 == __a.load(memory_order_acquire);
     }
     inline _LIBCPP_AVAILABILITY_SYNC _LIBCPP_INLINE_VISIBILITY
     void wait() const
     {
-        auto const __test_fn = [=]() -> bool {
-            return try_wait();
-        };
-        __cxx_atomic_wait(&__a.__a_, __test_fn);
+                     auto const __test_fn = [=]() -> bool {
+                                      return try_wait();
+                     };
+                     __cxx_atomic_wait(&__a.__a_, __test_fn);
     }
     inline _LIBCPP_AVAILABILITY_SYNC _LIBCPP_INLINE_VISIBILITY
     void arrive_and_wait(ptrdiff_t __update = 1)
     {
-        count_down(__update);
-        wait();
+                     count_down(__update);
+                     wait();
     }
 };
 

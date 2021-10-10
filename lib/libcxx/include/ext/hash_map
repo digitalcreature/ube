@@ -18,22 +18,22 @@ namespace __gnu_cxx
 {
 
 template <class Key, class T, class Hash = hash<Key>, class Pred = equal_to<Key>,
-          class Alloc = allocator<pair<const Key, T>>>
+                       class Alloc = allocator<pair<const Key, T>>>
 class hash_map
 {
 public:
     // types
-    typedef Key                                                        key_type;
-    typedef T                                                          mapped_type;
-    typedef Hash                                                       hasher;
-    typedef Pred                                                       key_equal;
-    typedef Alloc                                                      allocator_type;
-    typedef pair<const key_type, mapped_type>                          value_type;
-    typedef value_type&                                                reference;
-    typedef const value_type&                                          const_reference;
-    typedef typename allocator_traits<allocator_type>::pointer         pointer;
+    typedef Key                                                                                                                                                                             key_type;
+    typedef T                                                                                                                                                                               mapped_type;
+    typedef Hash                                                                                                                                                                            hasher;
+    typedef Pred                                                                                                                                                                            key_equal;
+    typedef Alloc                                                                                                                                                                           allocator_type;
+    typedef pair<const key_type, mapped_type>                                                                              value_type;
+    typedef value_type&                                                                                                                                                        reference;
+    typedef const value_type&                                                                                                                                     const_reference;
+    typedef typename allocator_traits<allocator_type>::pointer                      pointer;
     typedef typename allocator_traits<allocator_type>::const_pointer   const_pointer;
-    typedef typename allocator_traits<allocator_type>::size_type       size_type;
+    typedef typename allocator_traits<allocator_type>::size_type                    size_type;
     typedef typename allocator_traits<allocator_type>::difference_type difference_type;
 
     typedef /unspecified/ iterator;
@@ -41,33 +41,33 @@ public:
 
     hash_map();
     explicit hash_map(size_type n, const hasher& hf = hasher(),
-                           const key_equal& eql = key_equal(),
-                           const allocator_type& a = allocator_type());
+                                                                               const key_equal& eql = key_equal(),
+                                                                               const allocator_type& a = allocator_type());
     template <class InputIterator>
     hash_map(InputIterator f, InputIterator l);
     template <class InputIterator>
     hash_map(InputIterator f, InputIterator l,
-                size_type n, const hasher& hf = hasher(),
-                const key_equal& eql = key_equal(),
-                const allocator_type& a = allocator_type());
+                                          size_type n, const hasher& hf = hasher(),
+                                          const key_equal& eql = key_equal(),
+                                          const allocator_type& a = allocator_type());
     hash_map(const hash_map&);
     ~hash_map();
     hash_map& operator=(const hash_map&);
 
     allocator_type get_allocator() const;
 
-    bool      empty() const;
+    bool                   empty() const;
     size_type size() const;
     size_type max_size() const;
 
-    iterator       begin();
-    iterator       end();
+    iterator                    begin();
+    iterator                    end();
     const_iterator begin()  const;
     const_iterator end()    const;
 
     pair<iterator, bool> insert(const value_type& obj);
     template <class InputIterator>
-        void insert(InputIterator first, InputIterator last);
+                     void insert(InputIterator first, InputIterator last);
 
     void erase(const_iterator position);
     size_type erase(const key_type& k);
@@ -79,10 +79,10 @@ public:
     hasher hash_funct() const;
     key_equal key_eq() const;
 
-    iterator       find(const key_type& k);
+    iterator                    find(const key_type& k);
     const_iterator find(const key_type& k) const;
     size_type count(const key_type& k) const;
-    pair<iterator, iterator>             equal_range(const key_type& k);
+    pair<iterator, iterator>                                       equal_range(const key_type& k);
     pair<const_iterator, const_iterator> equal_range(const key_type& k) const;
 
     mapped_type& operator[](const key_type& k);
@@ -97,48 +97,48 @@ public:
 
 template <class Key, class T, class Hash, class Pred, class Alloc>
     void swap(hash_map<Key, T, Hash, Pred, Alloc>& x,
-              hash_map<Key, T, Hash, Pred, Alloc>& y);
+                                        hash_map<Key, T, Hash, Pred, Alloc>& y);
 
 template <class Key, class T, class Hash, class Pred, class Alloc>
     bool
     operator==(const hash_map<Key, T, Hash, Pred, Alloc>& x,
-               const hash_map<Key, T, Hash, Pred, Alloc>& y);
+                                         const hash_map<Key, T, Hash, Pred, Alloc>& y);
 
 template <class Key, class T, class Hash, class Pred, class Alloc>
     bool
     operator!=(const hash_map<Key, T, Hash, Pred, Alloc>& x,
-               const hash_map<Key, T, Hash, Pred, Alloc>& y);
+                                         const hash_map<Key, T, Hash, Pred, Alloc>& y);
 
 template <class Key, class T, class Hash = hash<Key>, class Pred = equal_to<Key>,
-          class Alloc = allocator<pair<const Key, T>>>
+                       class Alloc = allocator<pair<const Key, T>>>
 class hash_multimap
 {
 public:
     // types
-    typedef Key                                                        key_type;
-    typedef T                                                          mapped_type;
-    typedef Hash                                                       hasher;
-    typedef Pred                                                       key_equal;
-    typedef Alloc                                                      allocator_type;
-    typedef pair<const key_type, mapped_type>                          value_type;
-    typedef value_type&                                                reference;
-    typedef const value_type&                                          const_reference;
-    typedef typename allocator_traits<allocator_type>::pointer         pointer;
+    typedef Key                                                                                                                                                                             key_type;
+    typedef T                                                                                                                                                                               mapped_type;
+    typedef Hash                                                                                                                                                                            hasher;
+    typedef Pred                                                                                                                                                                            key_equal;
+    typedef Alloc                                                                                                                                                                           allocator_type;
+    typedef pair<const key_type, mapped_type>                                                                              value_type;
+    typedef value_type&                                                                                                                                                        reference;
+    typedef const value_type&                                                                                                                                     const_reference;
+    typedef typename allocator_traits<allocator_type>::pointer                      pointer;
     typedef typename allocator_traits<allocator_type>::const_pointer   const_pointer;
-    typedef typename allocator_traits<allocator_type>::size_type       size_type;
+    typedef typename allocator_traits<allocator_type>::size_type                    size_type;
     typedef typename allocator_traits<allocator_type>::difference_type difference_type;
 
     typedef /unspecified/ iterator;
     typedef /unspecified/ const_iterator;
 
     explicit hash_multimap(size_type n = 193, const hasher& hf = hasher(),
-                           const key_equal& eql = key_equal(),
-                           const allocator_type& a = allocator_type());
+                                                                               const key_equal& eql = key_equal(),
+                                                                               const allocator_type& a = allocator_type());
     template <class InputIterator>
-        hash_multimap(InputIterator f, InputIterator l,
-                      size_type n = 193, const hasher& hf = hasher(),
-                      const key_equal& eql = key_equal(),
-                      const allocator_type& a = allocator_type());
+                     hash_multimap(InputIterator f, InputIterator l,
+                                                             size_type n = 193, const hasher& hf = hasher(),
+                                                             const key_equal& eql = key_equal(),
+                                                             const allocator_type& a = allocator_type());
     explicit hash_multimap(const allocator_type&);
     hash_multimap(const hash_multimap&);
     ~hash_multimap();
@@ -146,18 +146,18 @@ public:
 
     allocator_type get_allocator() const;
 
-    bool      empty() const;
+    bool                   empty() const;
     size_type size() const;
     size_type max_size() const;
 
-    iterator       begin();
-    iterator       end();
+    iterator                    begin();
+    iterator                    end();
     const_iterator begin()  const;
     const_iterator end()    const;
 
     iterator insert(const value_type& obj);
     template <class InputIterator>
-        void insert(InputIterator first, InputIterator last);
+                     void insert(InputIterator first, InputIterator last);
 
     void erase(const_iterator position);
     size_type erase(const key_type& k);
@@ -169,10 +169,10 @@ public:
     hasher hash_funct() const;
     key_equal key_eq() const;
 
-    iterator       find(const key_type& k);
+    iterator                    find(const key_type& k);
     const_iterator find(const key_type& k) const;
     size_type count(const key_type& k) const;
-    pair<iterator, iterator>             equal_range(const key_type& k);
+    pair<iterator, iterator>                                       equal_range(const key_type& k);
     pair<const_iterator, const_iterator> equal_range(const key_type& k) const;
 
     size_type bucket_count() const;
@@ -185,17 +185,17 @@ public:
 
 template <class Key, class T, class Hash, class Pred, class Alloc>
     void swap(hash_multimap<Key, T, Hash, Pred, Alloc>& x,
-              hash_multimap<Key, T, Hash, Pred, Alloc>& y);
+                                        hash_multimap<Key, T, Hash, Pred, Alloc>& y);
 
 template <class Key, class T, class Hash, class Pred, class Alloc>
     bool
     operator==(const hash_multimap<Key, T, Hash, Pred, Alloc>& x,
-               const hash_multimap<Key, T, Hash, Pred, Alloc>& y);
+                                         const hash_multimap<Key, T, Hash, Pred, Alloc>& y);
 
 template <class Key, class T, class Hash, class Pred, class Alloc>
     bool
     operator!=(const hash_multimap<Key, T, Hash, Pred, Alloc>& x,
-               const hash_multimap<Key, T, Hash, Pred, Alloc>& y);
+                                         const hash_multimap<Key, T, Hash, Pred, Alloc>& y);
 
 }  // __gnu_cxx
 
@@ -223,8 +223,8 @@ template <class Key, class T, class Hash, class Pred, class Alloc>
 namespace __gnu_cxx {
 
 template <class _Tp, class _Hash,
-          bool = std::is_empty<_Hash>::value && !std::__libcpp_is_final<_Hash>::value
-        >
+                       bool = std::is_empty<_Hash>::value && !std::__libcpp_is_final<_Hash>::value
+                     >
 class __hash_map_hasher
     : private _Hash
 {
@@ -234,10 +234,10 @@ public:
     _LIBCPP_INLINE_VISIBILITY const _Hash& hash_function() const {return *this;}
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(const _Tp& __x) const
-        {return static_cast<const _Hash&>(*this)(__x.first);}
+                     {return static_cast<const _Hash&>(*this)(__x.first);}
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(const typename _Tp::first_type& __x) const
-        {return static_cast<const _Hash&>(*this)(__x);}
+                     {return static_cast<const _Hash&>(*this)(__x);}
 };
 
 template <class _Tp, class _Hash>
@@ -250,15 +250,15 @@ public:
     _LIBCPP_INLINE_VISIBILITY const _Hash& hash_function() const {return __hash_;}
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(const _Tp& __x) const
-        {return __hash_(__x.first);}
+                     {return __hash_(__x.first);}
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(const typename _Tp::first_type& __x) const
-        {return __hash_(__x);}
+                     {return __hash_(__x);}
 };
 
 template <class _Tp, class _Pred,
-          bool = std::is_empty<_Pred>::value && !std::__libcpp_is_final<_Pred>::value
-         >
+                       bool = std::is_empty<_Pred>::value && !std::__libcpp_is_final<_Pred>::value
+                      >
 class __hash_map_equal
     : private _Pred
 {
@@ -268,17 +268,17 @@ public:
     _LIBCPP_INLINE_VISIBILITY const _Pred& key_eq() const {return *this;}
     _LIBCPP_INLINE_VISIBILITY
     bool operator()(const _Tp& __x, const _Tp& __y) const
-        {return static_cast<const _Pred&>(*this)(__x.first, __y.first);}
+                     {return static_cast<const _Pred&>(*this)(__x.first, __y.first);}
     _LIBCPP_INLINE_VISIBILITY
     bool operator()(const typename _Tp::first_type& __x, const _Tp& __y) const
-        {return static_cast<const _Pred&>(*this)(__x, __y.first);}
+                     {return static_cast<const _Pred&>(*this)(__x, __y.first);}
     _LIBCPP_INLINE_VISIBILITY
     bool operator()(const _Tp& __x, const typename _Tp::first_type& __y) const
-        {return static_cast<const _Pred&>(*this)(__x.first, __y);}
+                     {return static_cast<const _Pred&>(*this)(__x.first, __y);}
     _LIBCPP_INLINE_VISIBILITY
     bool operator()(const typename _Tp::first_type& __x,
-                    const typename _Tp::first_type& __y) const
-        {return static_cast<const _Pred&>(*this)(__x, __y);}
+                                                           const typename _Tp::first_type& __y) const
+                     {return static_cast<const _Pred&>(*this)(__x, __y);}
 };
 
 template <class _Tp, class _Pred>
@@ -291,23 +291,23 @@ public:
     _LIBCPP_INLINE_VISIBILITY const _Pred& key_eq() const {return __pred_;}
     _LIBCPP_INLINE_VISIBILITY
     bool operator()(const _Tp& __x, const _Tp& __y) const
-        {return __pred_(__x.first, __y.first);}
+                     {return __pred_(__x.first, __y.first);}
     _LIBCPP_INLINE_VISIBILITY
     bool operator()(const typename _Tp::first_type& __x, const _Tp& __y) const
-        {return __pred_(__x, __y.first);}
+                     {return __pred_(__x, __y.first);}
     _LIBCPP_INLINE_VISIBILITY
     bool operator()(const _Tp& __x, const typename _Tp::first_type& __y) const
-        {return __pred_(__x.first, __y);}
+                     {return __pred_(__x.first, __y);}
     _LIBCPP_INLINE_VISIBILITY
     bool operator()(const typename _Tp::first_type& __x,
-                    const typename _Tp::first_type& __y) const
-        {return __pred_(__x, __y);}
+                                                           const typename _Tp::first_type& __y) const
+                     {return __pred_(__x, __y);}
 };
 
 template <class _Alloc>
 class __hash_map_node_destructor
 {
-    typedef _Alloc                              allocator_type;
+    typedef _Alloc                                                                                               allocator_type;
     typedef std::allocator_traits<allocator_type>    __alloc_traits;
     typedef typename __alloc_traits::value_type::__node_value_type value_type;
 public:
@@ -327,40 +327,40 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     explicit __hash_map_node_destructor(allocator_type& __na)
-        : __na_(__na),
-          __first_constructed(false),
-          __second_constructed(false)
-        {}
+                     : __na_(__na),
+                       __first_constructed(false),
+                       __second_constructed(false)
+                     {}
 
 #ifndef _LIBCPP_CXX03_LANG
     _LIBCPP_INLINE_VISIBILITY
     __hash_map_node_destructor(std::__hash_node_destructor<allocator_type>&& __x)
-        : __na_(__x.__na_),
-          __first_constructed(__x.__value_constructed),
-          __second_constructed(__x.__value_constructed)
-        {
-            __x.__value_constructed = false;
-        }
+                     : __na_(__x.__na_),
+                       __first_constructed(__x.__value_constructed),
+                       __second_constructed(__x.__value_constructed)
+                     {
+                                      __x.__value_constructed = false;
+                     }
 #else  // _LIBCPP_CXX03_LANG
     _LIBCPP_INLINE_VISIBILITY
     __hash_map_node_destructor(const std::__hash_node_destructor<allocator_type>& __x)
-        : __na_(__x.__na_),
-          __first_constructed(__x.__value_constructed),
-          __second_constructed(__x.__value_constructed)
-        {
-            const_cast<bool&>(__x.__value_constructed) = false;
-        }
+                     : __na_(__x.__na_),
+                       __first_constructed(__x.__value_constructed),
+                       __second_constructed(__x.__value_constructed)
+                     {
+                                      const_cast<bool&>(__x.__value_constructed) = false;
+                     }
 #endif  // _LIBCPP_CXX03_LANG
 
     _LIBCPP_INLINE_VISIBILITY
     void operator()(pointer __p)
     {
-        if (__second_constructed)
-            __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__value_.second));
-        if (__first_constructed)
-            __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__value_.first));
-        if (__p)
-            __alloc_traits::deallocate(__na_, __p, 1);
+                     if (__second_constructed)
+                                      __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__value_.second));
+                     if (__first_constructed)
+                                      __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__value_.first));
+                     if (__p)
+                                      __alloc_traits::deallocate(__na_, __p, 1);
     }
 };
 
@@ -370,14 +370,14 @@ class _LIBCPP_TEMPLATE_VIS __hash_map_iterator
     _HashIterator __i_;
 
     typedef const typename _HashIterator::value_type::first_type key_type;
-    typedef typename _HashIterator::value_type::second_type      mapped_type;
+    typedef typename _HashIterator::value_type::second_type                   mapped_type;
 public:
-    typedef std::forward_iterator_tag                            iterator_category;
-    typedef std::pair<key_type, mapped_type>                     value_type;
-    typedef typename _HashIterator::difference_type              difference_type;
-    typedef value_type&                                          reference;
+    typedef std::forward_iterator_tag                                                                                iterator_category;
+    typedef std::pair<key_type, mapped_type>                                                            value_type;
+    typedef typename _HashIterator::difference_type                                        difference_type;
+    typedef value_type&                                                                                                                                     reference;
     typedef typename std::__rebind_pointer<typename _HashIterator::pointer, value_type>::type
-        pointer;
+                     pointer;
 
     _LIBCPP_INLINE_VISIBILITY __hash_map_iterator() {}
 
@@ -390,17 +390,17 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     __hash_map_iterator operator++(int)
     {
-        __hash_map_iterator __t(*this);
-        ++(*this);
-        return __t;
+                     __hash_map_iterator __t(*this);
+                     ++(*this);
+                     return __t;
     }
 
     friend _LIBCPP_INLINE_VISIBILITY
     bool operator==(const __hash_map_iterator& __x, const __hash_map_iterator& __y)
-        {return __x.__i_ == __y.__i_;}
+                     {return __x.__i_ == __y.__i_;}
     friend _LIBCPP_INLINE_VISIBILITY
     bool operator!=(const __hash_map_iterator& __x, const __hash_map_iterator& __y)
-        {return __x.__i_ != __y.__i_;}
+                     {return __x.__i_ != __y.__i_;}
 
     template <class, class, class, class, class> friend class _LIBCPP_TEMPLATE_VIS hash_map;
     template <class, class, class, class, class> friend class _LIBCPP_TEMPLATE_VIS hash_multimap;
@@ -415,14 +415,14 @@ class _LIBCPP_TEMPLATE_VIS __hash_map_const_iterator
     _HashIterator __i_;
 
     typedef const typename _HashIterator::value_type::first_type key_type;
-    typedef typename _HashIterator::value_type::second_type      mapped_type;
+    typedef typename _HashIterator::value_type::second_type                   mapped_type;
 public:
-    typedef std::forward_iterator_tag                            iterator_category;
-    typedef std::pair<key_type, mapped_type>                     value_type;
-    typedef typename _HashIterator::difference_type              difference_type;
-    typedef const value_type&                                    reference;
+    typedef std::forward_iterator_tag                                                                                iterator_category;
+    typedef std::pair<key_type, mapped_type>                                                            value_type;
+    typedef typename _HashIterator::difference_type                                        difference_type;
+    typedef const value_type&                                                                                                                  reference;
     typedef typename std::__rebind_pointer<typename _HashIterator::pointer, const value_type>::type
-        pointer;
+                     pointer;
 
     _LIBCPP_INLINE_VISIBILITY __hash_map_const_iterator() {}
 
@@ -430,8 +430,8 @@ public:
     __hash_map_const_iterator(_HashIterator __i) : __i_(__i) {}
     _LIBCPP_INLINE_VISIBILITY
     __hash_map_const_iterator(
-            __hash_map_iterator<typename _HashIterator::__non_const_iterator> __i)
-                : __i_(__i.__i_) {}
+                                      __hash_map_iterator<typename _HashIterator::__non_const_iterator> __i)
+                                          : __i_(__i.__i_) {}
 
     _LIBCPP_INLINE_VISIBILITY
     reference operator*() const {return *operator->();}
@@ -443,17 +443,17 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     __hash_map_const_iterator operator++(int)
     {
-        __hash_map_const_iterator __t(*this);
-        ++(*this);
-        return __t;
+                     __hash_map_const_iterator __t(*this);
+                     ++(*this);
+                     return __t;
     }
 
     friend _LIBCPP_INLINE_VISIBILITY
     bool operator==(const __hash_map_const_iterator& __x, const __hash_map_const_iterator& __y)
-        {return __x.__i_ == __y.__i_;}
+                     {return __x.__i_ == __y.__i_;}
     friend _LIBCPP_INLINE_VISIBILITY
     bool operator!=(const __hash_map_const_iterator& __x, const __hash_map_const_iterator& __y)
-        {return __x.__i_ != __y.__i_;}
+                     {return __x.__i_ != __y.__i_;}
 
     template <class, class, class, class, class> friend class _LIBCPP_TEMPLATE_VIS hash_map;
     template <class, class, class, class, class> friend class _LIBCPP_TEMPLATE_VIS hash_multimap;
@@ -462,84 +462,84 @@ public:
 };
 
 template <class _Key, class _Tp, class _Hash = hash<_Key>, class _Pred = std::equal_to<_Key>,
-          class _Alloc = std::allocator<std::pair<const _Key, _Tp> > >
+                       class _Alloc = std::allocator<std::pair<const _Key, _Tp> > >
 class _LIBCPP_TEMPLATE_VIS hash_map
 {
 public:
     // types
-    typedef _Key                                           key_type;
-    typedef _Tp                                            mapped_type;
-    typedef _Tp                                            data_type;
-    typedef _Hash                                          hasher;
-    typedef _Pred                                          key_equal;
-    typedef _Alloc                                         allocator_type;
-    typedef std::pair<const key_type, mapped_type>         value_type;
-    typedef value_type&                                    reference;
-    typedef const value_type&                              const_reference;
+    typedef _Key                                                                                                                                      key_type;
+    typedef _Tp                                                                                                                                       mapped_type;
+    typedef _Tp                                                                                                                                       data_type;
+    typedef _Hash                                                                                                                                     hasher;
+    typedef _Pred                                                                                                                                     key_equal;
+    typedef _Alloc                                                                                                                       allocator_type;
+    typedef std::pair<const key_type, mapped_type>                      value_type;
+    typedef value_type&                                                                                                                  reference;
+    typedef const value_type&                                                                                               const_reference;
 
 private:
-    typedef std::pair<key_type, mapped_type>                    __value_type;
+    typedef std::pair<key_type, mapped_type>                                                           __value_type;
     typedef __hash_map_hasher<__value_type, hasher>   __hasher;
     typedef __hash_map_equal<__value_type, key_equal> __key_equal;
     typedef typename std::__rebind_alloc_helper<
-        std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
+                     std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
 
     typedef std::__hash_table<__value_type, __hasher,
-                         __key_equal,  __allocator_type>   __table;
+                                                                             __key_equal,  __allocator_type>   __table;
 
     __table __table_;
 
-    typedef typename __table::__node_pointer               __node_pointer;
-    typedef typename __table::__node_const_pointer         __node_const_pointer;
-    typedef typename __table::__node_traits                __node_traits;
-    typedef typename __table::__node_allocator             __node_allocator;
-    typedef typename __table::__node                       __node;
+    typedef typename __table::__node_pointer                                         __node_pointer;
+    typedef typename __table::__node_const_pointer                      __node_const_pointer;
+    typedef typename __table::__node_traits                                          __node_traits;
+    typedef typename __table::__node_allocator                                       __node_allocator;
+    typedef typename __table::__node                                                              __node;
     typedef __hash_map_node_destructor<__node_allocator>   _Dp;
-    typedef std::unique_ptr<__node, _Dp>                   __node_holder;
-    typedef std::allocator_traits<allocator_type>          __alloc_traits;
+    typedef std::unique_ptr<__node, _Dp>                                                          __node_holder;
+    typedef std::allocator_traits<allocator_type>                       __alloc_traits;
 public:
-    typedef typename __alloc_traits::pointer         pointer;
+    typedef typename __alloc_traits::pointer                      pointer;
     typedef typename __alloc_traits::const_pointer   const_pointer;
-    typedef typename __alloc_traits::size_type       size_type;
+    typedef typename __alloc_traits::size_type                    size_type;
     typedef typename __alloc_traits::difference_type difference_type;
 
-    typedef __hash_map_iterator<typename __table::iterator>       iterator;
+    typedef __hash_map_iterator<typename __table::iterator>                    iterator;
     typedef __hash_map_const_iterator<typename __table::const_iterator> const_iterator;
 
     _LIBCPP_INLINE_VISIBILITY hash_map() { }
     explicit hash_map(size_type __n, const hasher& __hf = hasher(),
-                           const key_equal& __eql = key_equal());
+                                                                               const key_equal& __eql = key_equal());
     hash_map(size_type __n, const hasher& __hf,
-                  const key_equal& __eql,
-                  const allocator_type& __a);
+                                                         const key_equal& __eql,
+                                                         const allocator_type& __a);
     template <class _InputIterator>
-        hash_map(_InputIterator __first, _InputIterator __last);
+                     hash_map(_InputIterator __first, _InputIterator __last);
     template <class _InputIterator>
-        hash_map(_InputIterator __first, _InputIterator __last,
-                      size_type __n, const hasher& __hf = hasher(),
-                      const key_equal& __eql = key_equal());
+                     hash_map(_InputIterator __first, _InputIterator __last,
+                                                             size_type __n, const hasher& __hf = hasher(),
+                                                             const key_equal& __eql = key_equal());
     template <class _InputIterator>
-        hash_map(_InputIterator __first, _InputIterator __last,
-                      size_type __n, const hasher& __hf,
-                      const key_equal& __eql,
-                      const allocator_type& __a);
+                     hash_map(_InputIterator __first, _InputIterator __last,
+                                                             size_type __n, const hasher& __hf,
+                                                             const key_equal& __eql,
+                                                             const allocator_type& __a);
     hash_map(const hash_map& __u);
 
     _LIBCPP_INLINE_VISIBILITY
     allocator_type get_allocator() const
-        {return allocator_type(__table_.__node_alloc());}
+                     {return allocator_type(__table_.__node_alloc());}
 
     _LIBCPP_INLINE_VISIBILITY
-    bool      empty() const {return __table_.size() == 0;}
+    bool                   empty() const {return __table_.size() == 0;}
     _LIBCPP_INLINE_VISIBILITY
     size_type size() const  {return __table_.size();}
     _LIBCPP_INLINE_VISIBILITY
     size_type max_size() const {return __table_.max_size();}
 
     _LIBCPP_INLINE_VISIBILITY
-    iterator       begin()        {return __table_.begin();}
+    iterator                    begin()                     {return __table_.begin();}
     _LIBCPP_INLINE_VISIBILITY
-    iterator       end()          {return __table_.end();}
+    iterator                    end()                       {return __table_.end();}
     _LIBCPP_INLINE_VISIBILITY
     const_iterator begin()  const {return __table_.begin();}
     _LIBCPP_INLINE_VISIBILITY
@@ -547,12 +547,12 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     std::pair<iterator, bool> insert(const value_type& __x)
-        {return __table_.__insert_unique(__x);}
+                     {return __table_.__insert_unique(__x);}
     _LIBCPP_INLINE_VISIBILITY
     iterator insert(const_iterator, const value_type& __x) {return insert(__x).first;}
     template <class _InputIterator>
-        _LIBCPP_INLINE_VISIBILITY
-        void insert(_InputIterator __first, _InputIterator __last);
+                     _LIBCPP_INLINE_VISIBILITY
+                     void insert(_InputIterator __first, _InputIterator __last);
 
     _LIBCPP_INLINE_VISIBILITY
     void erase(const_iterator __p) {__table_.erase(__p.__i_);}
@@ -560,7 +560,7 @@ public:
     size_type erase(const key_type& __k) {return __table_.__erase_unique(__k);}
     _LIBCPP_INLINE_VISIBILITY
     void erase(const_iterator __first, const_iterator __last)
-        {__table_.erase(__first.__i_, __last.__i_);}
+                     {__table_.erase(__first.__i_, __last.__i_);}
     _LIBCPP_INLINE_VISIBILITY
     void clear() {__table_.clear();}
 
@@ -569,23 +569,23 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     hasher hash_funct() const
-        {return __table_.hash_function().hash_function();}
+                     {return __table_.hash_function().hash_function();}
     _LIBCPP_INLINE_VISIBILITY
     key_equal key_eq() const
-        {return __table_.key_eq().key_eq();}
+                     {return __table_.key_eq().key_eq();}
 
     _LIBCPP_INLINE_VISIBILITY
-    iterator       find(const key_type& __k)       {return __table_.find(__k);}
+    iterator                    find(const key_type& __k)                    {return __table_.find(__k);}
     _LIBCPP_INLINE_VISIBILITY
     const_iterator find(const key_type& __k) const {return __table_.find(__k);}
     _LIBCPP_INLINE_VISIBILITY
     size_type count(const key_type& __k) const {return __table_.__count_unique(__k);}
     _LIBCPP_INLINE_VISIBILITY
-    std::pair<iterator, iterator>             equal_range(const key_type& __k)
-        {return __table_.__equal_range_unique(__k);}
+    std::pair<iterator, iterator>                                       equal_range(const key_type& __k)
+                     {return __table_.__equal_range_unique(__k);}
     _LIBCPP_INLINE_VISIBILITY
     std::pair<const_iterator, const_iterator> equal_range(const key_type& __k) const
-        {return __table_.__equal_range_unique(__k);}
+                     {return __table_.__equal_range_unique(__k);}
 
     mapped_type& operator[](const key_type& __k);
 
@@ -596,7 +596,7 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     size_type elems_in_bucket(size_type __n) const
-        {return __table_.bucket_size(__n);}
+                     {return __table_.bucket_size(__n);}
 
     _LIBCPP_INLINE_VISIBILITY
     void resize(size_type __n) {__table_.rehash(__n);}
@@ -607,7 +607,7 @@ private:
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
-        size_type __n, const hasher& __hf, const key_equal& __eql)
+                     size_type __n, const hasher& __hf, const key_equal& __eql)
     : __table_(__hf, __eql)
 {
     __table_.rehash(__n);
@@ -615,8 +615,8 @@ hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
-        size_type __n, const hasher& __hf, const key_equal& __eql,
-        const allocator_type& __a)
+                     size_type __n, const hasher& __hf, const key_equal& __eql,
+                     const allocator_type& __a)
     : __table_(__hf, __eql, __a)
 {
     __table_.rehash(__n);
@@ -625,7 +625,7 @@ hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
-        _InputIterator __first, _InputIterator __last)
+                     _InputIterator __first, _InputIterator __last)
 {
     insert(__first, __last);
 }
@@ -633,8 +633,8 @@ hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
-        _InputIterator __first, _InputIterator __last, size_type __n,
-        const hasher& __hf, const key_equal& __eql)
+                     _InputIterator __first, _InputIterator __last, size_type __n,
+                     const hasher& __hf, const key_equal& __eql)
     : __table_(__hf, __eql)
 {
     __table_.rehash(__n);
@@ -644,8 +644,8 @@ hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
-        _InputIterator __first, _InputIterator __last, size_type __n,
-        const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
+                     _InputIterator __first, _InputIterator __last, size_type __n,
+                     const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
     : __table_(__hf, __eql, __a)
 {
     __table_.rehash(__n);
@@ -654,7 +654,7 @@ hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_map(
-        const hash_map& __u)
+                     const hash_map& __u)
     : __table_(__u.__table_)
 {
     __table_.rehash(__u.bucket_count());
@@ -679,10 +679,10 @@ template <class _InputIterator>
 inline
 void
 hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::insert(_InputIterator __first,
-                                                       _InputIterator __last)
+                                                                                                                                                                            _InputIterator __last)
 {
     for (; __first != __last; ++__first)
-        __table_.__insert_unique(*__first);
+                     __table_.__insert_unique(*__first);
 }
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
@@ -691,7 +691,7 @@ hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const key_type& __k)
 {
     iterator __i = find(__k);
     if (__i != end())
-        return __i->second;
+                     return __i->second;
     __node_holder __h = __construct_node(__k);
     std::pair<iterator, bool> __r = __table_.__node_insert_unique(__h.get());
     __h.release();
@@ -710,18 +710,18 @@ swap(hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 bool
 operator==(const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-           const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
+                        const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
 {
     if (__x.size() != __y.size())
-        return false;
+                     return false;
     typedef typename hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::const_iterator
-                                                                 const_iterator;
+                                                                                                                                                                                                   const_iterator;
     for (const_iterator __i = __x.begin(), __ex = __x.end(), __ey = __y.end();
-            __i != __ex; ++__i)
+                                      __i != __ex; ++__i)
     {
-        const_iterator __j = __y.find(__i->first);
-        if (__j == __ey || !(*__i == *__j))
-            return false;
+                     const_iterator __j = __y.find(__i->first);
+                     if (__j == __ey || !(*__i == *__j))
+                                      return false;
     }
     return true;
 }
@@ -730,88 +730,88 @@ template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-           const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
+                        const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
 {
     return !(__x == __y);
 }
 
 template <class _Key, class _Tp, class _Hash = hash<_Key>, class _Pred = std::equal_to<_Key>,
-          class _Alloc = std::allocator<std::pair<const _Key, _Tp> > >
+                       class _Alloc = std::allocator<std::pair<const _Key, _Tp> > >
 class _LIBCPP_TEMPLATE_VIS hash_multimap
 {
 public:
     // types
-    typedef _Key                                           key_type;
-    typedef _Tp                                            mapped_type;
-    typedef _Tp                                            data_type;
-    typedef _Hash                                          hasher;
-    typedef _Pred                                          key_equal;
-    typedef _Alloc                                         allocator_type;
-    typedef std::pair<const key_type, mapped_type>         value_type;
-    typedef value_type&                                    reference;
-    typedef const value_type&                              const_reference;
+    typedef _Key                                                                                                                                      key_type;
+    typedef _Tp                                                                                                                                       mapped_type;
+    typedef _Tp                                                                                                                                       data_type;
+    typedef _Hash                                                                                                                                     hasher;
+    typedef _Pred                                                                                                                                     key_equal;
+    typedef _Alloc                                                                                                                       allocator_type;
+    typedef std::pair<const key_type, mapped_type>                      value_type;
+    typedef value_type&                                                                                                                  reference;
+    typedef const value_type&                                                                                               const_reference;
 
 private:
-    typedef std::pair<key_type, mapped_type>               __value_type;
+    typedef std::pair<key_type, mapped_type>                                         __value_type;
     typedef __hash_map_hasher<__value_type, hasher>   __hasher;
     typedef __hash_map_equal<__value_type, key_equal> __key_equal;
     typedef typename std::__rebind_alloc_helper<std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
 
     typedef std::__hash_table<__value_type, __hasher,
-                         __key_equal,  __allocator_type>   __table;
+                                                                             __key_equal,  __allocator_type>   __table;
 
     __table __table_;
 
-    typedef typename __table::__node_traits                __node_traits;
-    typedef typename __table::__node_allocator             __node_allocator;
-    typedef typename __table::__node                       __node;
+    typedef typename __table::__node_traits                                          __node_traits;
+    typedef typename __table::__node_allocator                                       __node_allocator;
+    typedef typename __table::__node                                                              __node;
     typedef __hash_map_node_destructor<__node_allocator>   _Dp;
-    typedef std::unique_ptr<__node, _Dp>                         __node_holder;
-    typedef std::allocator_traits<allocator_type>               __alloc_traits;
+    typedef std::unique_ptr<__node, _Dp>                                                                             __node_holder;
+    typedef std::allocator_traits<allocator_type>                                         __alloc_traits;
 public:
-    typedef typename __alloc_traits::pointer         pointer;
+    typedef typename __alloc_traits::pointer                      pointer;
     typedef typename __alloc_traits::const_pointer   const_pointer;
-    typedef typename __alloc_traits::size_type       size_type;
+    typedef typename __alloc_traits::size_type                    size_type;
     typedef typename __alloc_traits::difference_type difference_type;
 
-    typedef __hash_map_iterator<typename __table::iterator>       iterator;
+    typedef __hash_map_iterator<typename __table::iterator>                    iterator;
     typedef __hash_map_const_iterator<typename __table::const_iterator> const_iterator;
 
     _LIBCPP_INLINE_VISIBILITY
     hash_multimap() { }
     explicit hash_multimap(size_type __n, const hasher& __hf = hasher(),
-                                const key_equal& __eql = key_equal());
+                                                                                                 const key_equal& __eql = key_equal());
     hash_multimap(size_type __n, const hasher& __hf,
-                                const key_equal& __eql,
-                                const allocator_type& __a);
+                                                                                                 const key_equal& __eql,
+                                                                                                 const allocator_type& __a);
     template <class _InputIterator>
-        hash_multimap(_InputIterator __first, _InputIterator __last);
+                     hash_multimap(_InputIterator __first, _InputIterator __last);
     template <class _InputIterator>
-        hash_multimap(_InputIterator __first, _InputIterator __last,
-                      size_type __n, const hasher& __hf = hasher(),
-                      const key_equal& __eql = key_equal());
+                     hash_multimap(_InputIterator __first, _InputIterator __last,
+                                                             size_type __n, const hasher& __hf = hasher(),
+                                                             const key_equal& __eql = key_equal());
     template <class _InputIterator>
-        hash_multimap(_InputIterator __first, _InputIterator __last,
-                      size_type __n, const hasher& __hf,
-                      const key_equal& __eql,
-                      const allocator_type& __a);
+                     hash_multimap(_InputIterator __first, _InputIterator __last,
+                                                             size_type __n, const hasher& __hf,
+                                                             const key_equal& __eql,
+                                                             const allocator_type& __a);
     hash_multimap(const hash_multimap& __u);
 
     _LIBCPP_INLINE_VISIBILITY
     allocator_type get_allocator() const
-        {return allocator_type(__table_.__node_alloc());}
+                     {return allocator_type(__table_.__node_alloc());}
 
     _LIBCPP_INLINE_VISIBILITY
-    bool      empty() const {return __table_.size() == 0;}
+    bool                   empty() const {return __table_.size() == 0;}
     _LIBCPP_INLINE_VISIBILITY
     size_type size() const  {return __table_.size();}
     _LIBCPP_INLINE_VISIBILITY
     size_type max_size() const {return __table_.max_size();}
 
     _LIBCPP_INLINE_VISIBILITY
-    iterator       begin()        {return __table_.begin();}
+    iterator                    begin()                     {return __table_.begin();}
     _LIBCPP_INLINE_VISIBILITY
-    iterator       end()          {return __table_.end();}
+    iterator                    end()                       {return __table_.end();}
     _LIBCPP_INLINE_VISIBILITY
     const_iterator begin()  const {return __table_.begin();}
     _LIBCPP_INLINE_VISIBILITY
@@ -822,8 +822,8 @@ public:
     _LIBCPP_INLINE_VISIBILITY
     iterator insert(const_iterator, const value_type& __x) {return insert(__x);}
     template <class _InputIterator>
-        _LIBCPP_INLINE_VISIBILITY
-        void insert(_InputIterator __first, _InputIterator __last);
+                     _LIBCPP_INLINE_VISIBILITY
+                     void insert(_InputIterator __first, _InputIterator __last);
 
     _LIBCPP_INLINE_VISIBILITY
     void erase(const_iterator __p) {__table_.erase(__p.__i_);}
@@ -831,7 +831,7 @@ public:
     size_type erase(const key_type& __k) {return __table_.__erase_multi(__k);}
     _LIBCPP_INLINE_VISIBILITY
     void erase(const_iterator __first, const_iterator __last)
-        {__table_.erase(__first.__i_, __last.__i_);}
+                     {__table_.erase(__first.__i_, __last.__i_);}
     _LIBCPP_INLINE_VISIBILITY
     void clear() {__table_.clear();}
 
@@ -840,23 +840,23 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     hasher hash_funct() const
-        {return __table_.hash_function().hash_function();}
+                     {return __table_.hash_function().hash_function();}
     _LIBCPP_INLINE_VISIBILITY
     key_equal key_eq() const
-        {return __table_.key_eq().key_eq();}
+                     {return __table_.key_eq().key_eq();}
 
     _LIBCPP_INLINE_VISIBILITY
-    iterator       find(const key_type& __k)       {return __table_.find(__k);}
+    iterator                    find(const key_type& __k)                    {return __table_.find(__k);}
     _LIBCPP_INLINE_VISIBILITY
     const_iterator find(const key_type& __k) const {return __table_.find(__k);}
     _LIBCPP_INLINE_VISIBILITY
     size_type count(const key_type& __k) const {return __table_.__count_multi(__k);}
     _LIBCPP_INLINE_VISIBILITY
-    std::pair<iterator, iterator>             equal_range(const key_type& __k)
-        {return __table_.__equal_range_multi(__k);}
+    std::pair<iterator, iterator>                                       equal_range(const key_type& __k)
+                     {return __table_.__equal_range_multi(__k);}
     _LIBCPP_INLINE_VISIBILITY
     std::pair<const_iterator, const_iterator> equal_range(const key_type& __k) const
-        {return __table_.__equal_range_multi(__k);}
+                     {return __table_.__equal_range_multi(__k);}
 
     _LIBCPP_INLINE_VISIBILITY
     size_type bucket_count() const {return __table_.bucket_count();}
@@ -865,7 +865,7 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     size_type elems_in_bucket(size_type __n) const
-        {return __table_.bucket_size(__n);}
+                     {return __table_.bucket_size(__n);}
 
     _LIBCPP_INLINE_VISIBILITY
     void resize(size_type __n) {__table_.rehash(__n);}
@@ -873,7 +873,7 @@ public:
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
-        size_type __n, const hasher& __hf, const key_equal& __eql)
+                     size_type __n, const hasher& __hf, const key_equal& __eql)
     : __table_(__hf, __eql)
 {
     __table_.rehash(__n);
@@ -881,8 +881,8 @@ hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
-        size_type __n, const hasher& __hf, const key_equal& __eql,
-        const allocator_type& __a)
+                     size_type __n, const hasher& __hf, const key_equal& __eql,
+                     const allocator_type& __a)
     : __table_(__hf, __eql, __a)
 {
     __table_.rehash(__n);
@@ -891,7 +891,7 @@ hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
-        _InputIterator __first, _InputIterator __last)
+                     _InputIterator __first, _InputIterator __last)
 {
     insert(__first, __last);
 }
@@ -899,8 +899,8 @@ hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
-        _InputIterator __first, _InputIterator __last, size_type __n,
-        const hasher& __hf, const key_equal& __eql)
+                     _InputIterator __first, _InputIterator __last, size_type __n,
+                     const hasher& __hf, const key_equal& __eql)
     : __table_(__hf, __eql)
 {
     __table_.rehash(__n);
@@ -910,8 +910,8 @@ hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 template <class _InputIterator>
 hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
-        _InputIterator __first, _InputIterator __last, size_type __n,
-        const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
+                     _InputIterator __first, _InputIterator __last, size_type __n,
+                     const hasher& __hf, const key_equal& __eql, const allocator_type& __a)
     : __table_(__hf, __eql, __a)
 {
     __table_.rehash(__n);
@@ -920,7 +920,7 @@ hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::hash_multimap(
-        const hash_multimap& __u)
+                     const hash_multimap& __u)
     : __table_(__u.__table_)
 {
     __table_.rehash(__u.bucket_count());
@@ -932,10 +932,10 @@ template <class _InputIterator>
 inline
 void
 hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::insert(_InputIterator __first,
-                                                            _InputIterator __last)
+                                                                                                                                                                                              _InputIterator __last)
 {
     for (; __first != __last; ++__first)
-        __table_.__insert_multi(*__first);
+                     __table_.__insert_multi(*__first);
 }
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
@@ -950,22 +950,22 @@ swap(hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 bool
 operator==(const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-           const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
+                        const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
 {
     if (__x.size() != __y.size())
-        return false;
+                     return false;
     typedef typename hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>::const_iterator
-                                                                 const_iterator;
+                                                                                                                                                                                                   const_iterator;
     typedef std::pair<const_iterator, const_iterator> _EqRng;
     for (const_iterator __i = __x.begin(), __ex = __x.end(); __i != __ex;)
     {
-        _EqRng __xeq = __x.equal_range(__i->first);
-        _EqRng __yeq = __y.equal_range(__i->first);
-        if (_VSTD::distance(__xeq.first, __xeq.second) !=
-            _VSTD::distance(__yeq.first, __yeq.second) ||
-                  !_VSTD::is_permutation(__xeq.first, __xeq.second, __yeq.first))
-            return false;
-        __i = __xeq.second;
+                     _EqRng __xeq = __x.equal_range(__i->first);
+                     _EqRng __yeq = __y.equal_range(__i->first);
+                     if (_VSTD::distance(__xeq.first, __xeq.second) !=
+                                      _VSTD::distance(__yeq.first, __yeq.second) ||
+                                                         !_VSTD::is_permutation(__xeq.first, __xeq.second, __yeq.first))
+                                      return false;
+                     __i = __xeq.second;
     }
     return true;
 }
@@ -974,7 +974,7 @@ template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
 inline _LIBCPP_INLINE_VISIBILITY
 bool
 operator!=(const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-           const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
+                        const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
 {
     return !(__x == __y);
 }

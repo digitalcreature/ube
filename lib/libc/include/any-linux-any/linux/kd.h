@@ -118,20 +118,20 @@ struct kbsentry {
 #define KDSKBSENT	0x4B49	/* sets one function key string entry */
 
 struct kbdiacr {
-        unsigned char diacr, base, result;
+                     unsigned char diacr, base, result;
 };
 struct kbdiacrs {
-        unsigned int kb_cnt;    /* number of entries in following array */
+                     unsigned int kb_cnt;    /* number of entries in following array */
 	struct kbdiacr kbdiacr[256];    /* MAX_DIACR from keyboard.h */
 };
-#define KDGKBDIACR      0x4B4A  /* read kernel accent table */
-#define KDSKBDIACR      0x4B4B  /* write kernel accent table */
+#define KDGKBDIACR                   0x4B4A  /* read kernel accent table */
+#define KDSKBDIACR                   0x4B4B  /* write kernel accent table */
 
 struct kbdiacruc {
 	unsigned int diacr, base, result;
 };
 struct kbdiacrsuc {
-        unsigned int kb_cnt;    /* number of entries in following array */
+                     unsigned int kb_cnt;    /* number of entries in following array */
 	struct kbdiacruc kbdiacruc[256];    /* MAX_DIACR from keyboard.h */
 };
 #define KDGKBDIACRUC    0x4BFA  /* read kernel accent table - UCS */
@@ -151,7 +151,7 @@ struct kbd_repeat {
 			/* earlier this field was misnamed "rate" */
 };
 
-#define KDKBDREP        0x4B52  /* set keyboard delay/repeat rate;
+#define KDKBDREP                     0x4B52  /* set keyboard delay/repeat rate;
 				 * actually used values are returned */
 
 #define KDFONTOP	0x4B72	/* font operations */

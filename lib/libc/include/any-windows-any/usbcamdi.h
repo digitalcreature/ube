@@ -37,21 +37,21 @@ typedef struct _pipe_config_descriptor {
   UCHAR PipeConfigFlags;
 } USBCAMD_Pipe_Config_Descriptor, *PUSBCAMD_Pipe_Config_Descriptor;
 
-#define USBCAMD_DATA_PIPE                 0x0001
-#define USBCAMD_MULTIPLEX_PIPE            0x0002
-#define USBCAMD_SYNC_PIPE                 0x0004
-#define USBCAMD_DONT_CARE_PIPE            0x0008
+#define USBCAMD_DATA_PIPE                                           0x0001
+#define USBCAMD_MULTIPLEX_PIPE                                      0x0002
+#define USBCAMD_SYNC_PIPE                                           0x0004
+#define USBCAMD_DONT_CARE_PIPE                                      0x0008
 
-#define USBCAMD_VIDEO_STREAM              0x1
-#define USBCAMD_STILL_STREAM              0x2
-#define USBCAMD_VIDEO_STILL_STREAM        (USBCAMD_VIDEO_STREAM | USBCAMD_STILL_STREAM)
+#define USBCAMD_VIDEO_STREAM                                        0x1
+#define USBCAMD_STILL_STREAM                                        0x2
+#define USBCAMD_VIDEO_STILL_STREAM                     (USBCAMD_VIDEO_STREAM | USBCAMD_STILL_STREAM)
 
-#define USBCAMD_PROCESSPACKETEX_DropFrame             0x0002
-#define USBCAMD_PROCESSPACKETEX_NextFrameIsStill      0x0004
+#define USBCAMD_PROCESSPACKETEX_DropFrame                                       0x0002
+#define USBCAMD_PROCESSPACKETEX_NextFrameIsStill                   0x0004
 #define USBCAMD_PROCESSPACKETEX_CurrentFrameIsStill   0x0008
 
-#define USBCAMD_STOP_STREAM               0x00000001
-#define USBCAMD_START_STREAM              0x00000000
+#define USBCAMD_STOP_STREAM                                         0x00000001
+#define USBCAMD_START_STREAM                                        0x00000000
 
 typedef enum {
   USBCAMD_CamControlFlag_NoVideoRawProcessing = 1,
@@ -305,7 +305,7 @@ typedef NTSTATUS
   PCOMMAND_COMPLETE_FUNCTION CommandComplete,
   PVOID CommandContext);
 
-#define USBCAMD_VERSION_200               0x200
+#define USBCAMD_VERSION_200                                         0x200
 
 typedef struct _USBCAMD_INTERFACE {
   INTERFACE Interface;

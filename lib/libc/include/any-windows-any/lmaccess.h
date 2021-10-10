@@ -455,7 +455,7 @@ extern "C" {
 #define USER_POSIX_ID_INFOLEVEL (PARMNUM_BASE_INFOLEVEL + USER_POSIX_ID_PARMNUM)
 #define USER_HOME_DIR_DRIVE_INFOLEVEL (PARMNUM_BASE_INFOLEVEL + USER_HOME_DIR_DRIVE_PARMNUM)
 
-#define NULL_USERSETINFO_PASSWD "              "
+#define NULL_USERSETINFO_PASSWD "                                        "
 
 #define TIMEQ_FOREVER ((unsigned __LONG32) -1)
 #define USER_MAXSTORAGE_UNLIMITED ((unsigned __LONG32) -1)
@@ -738,7 +738,7 @@ extern "C" {
 #define ACCESS_COUNT_INFOLEVEL (PARMNUM_BASE_INFOLEVEL + ACCESS_COUNT_PARMNUM)
 #define ACCESS_ACCESS_LIST_INFOLEVEL (PARMNUM_BASE_INFOLEVEL + ACCESS_ACCESS_LIST_PARMNUM)
 
-#define ACCESS_LETTERS "RWCXDAP         "
+#define ACCESS_LETTERS "RWCXDAP                      "
 
   typedef enum _NET_VALIDATE_PASSWORD_TYPE {
     NetValidateAuthentication = 1,NetValidatePasswordChange,NetValidatePasswordReset
@@ -878,7 +878,7 @@ extern "C" {
 #if (_WIN32_WINNT >= 0x0601)
 
 typedef enum _MSA_INFO_STATE {
-  MsaInfoNotExist        = 1,
+  MsaInfoNotExist                     = 1,
   MsaInfoNotService,
   MsaInfoCannotInstall,
   MsaInfoCanInstall,

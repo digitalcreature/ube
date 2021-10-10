@@ -74,18 +74,18 @@ MIDL_INTERFACE("a9e0af1a-3713-478e-ae03-8edd272d21fa")
 INapComponentConfig : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsUISupported(
-        WINBOOL *isSupported) = 0;
+                     WINBOOL *isSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvokeUI(
-        HWND hwndParent) = 0;
+                     HWND hwndParent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConfig(
-        UINT16 *bCount,
-        BYTE **data) = 0;
+                     UINT16 *bCount,
+                     BYTE **data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetConfig(
-        UINT16 bCount,
-        BYTE *data) = 0;
+                     UINT16 bCount,
+                     BYTE *data) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -97,34 +97,34 @@ typedef struct INapComponentConfigVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapComponentConfig *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapComponentConfig *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapComponentConfig *This);
+                     INapComponentConfig *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapComponentConfig *This);
+                     INapComponentConfig *This);
 
     /*** INapComponentConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        INapComponentConfig *This,
-        WINBOOL *isSupported);
+                     INapComponentConfig *This,
+                     WINBOOL *isSupported);
 
     HRESULT (STDMETHODCALLTYPE *InvokeUI)(
-        INapComponentConfig *This,
-        HWND hwndParent);
+                     INapComponentConfig *This,
+                     HWND hwndParent);
 
     HRESULT (STDMETHODCALLTYPE *GetConfig)(
-        INapComponentConfig *This,
-        UINT16 *bCount,
-        BYTE **data);
+                     INapComponentConfig *This,
+                     UINT16 *bCount,
+                     BYTE **data);
 
     HRESULT (STDMETHODCALLTYPE *SetConfig)(
-        INapComponentConfig *This,
-        UINT16 bCount,
-        BYTE *data);
+                     INapComponentConfig *This,
+                     UINT16 bCount,
+                     BYTE *data);
 
     END_INTERFACE
 } INapComponentConfigVtbl;
@@ -188,28 +188,28 @@ MIDL_INTERFACE("b475f925-e3f7-414c-8c72-1cee64b9d8f6")
 INapComponentInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetFriendlyName(
-        MessageId *friendlyName) = 0;
+                     MessageId *friendlyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        MessageId *description) = 0;
+                     MessageId *description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVendorName(
-        MessageId *vendorName) = 0;
+                     MessageId *vendorName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVersion(
-        MessageId *version) = 0;
+                     MessageId *version) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIcon(
-        CountedString **dllFilePath,
-        UINT32 *iconResourceId) = 0;
+                     CountedString **dllFilePath,
+                     UINT32 *iconResourceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertErrorCodeToMessageId(
-        HRESULT errorCode,
-        MessageId *msgId) = 0;
+                     HRESULT errorCode,
+                     MessageId *msgId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocalizedString(
-        MessageId msgId,
-        CountedString **string) = 0;
+                     MessageId msgId,
+                     CountedString **string) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -221,47 +221,47 @@ typedef struct INapComponentInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapComponentInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapComponentInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapComponentInfo *This);
+                     INapComponentInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapComponentInfo *This);
+                     INapComponentInfo *This);
 
     /*** INapComponentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        INapComponentInfo *This,
-        MessageId *friendlyName);
+                     INapComponentInfo *This,
+                     MessageId *friendlyName);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        INapComponentInfo *This,
-        MessageId *description);
+                     INapComponentInfo *This,
+                     MessageId *description);
 
     HRESULT (STDMETHODCALLTYPE *GetVendorName)(
-        INapComponentInfo *This,
-        MessageId *vendorName);
+                     INapComponentInfo *This,
+                     MessageId *vendorName);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        INapComponentInfo *This,
-        MessageId *version);
+                     INapComponentInfo *This,
+                     MessageId *version);
 
     HRESULT (STDMETHODCALLTYPE *GetIcon)(
-        INapComponentInfo *This,
-        CountedString **dllFilePath,
-        UINT32 *iconResourceId);
+                     INapComponentInfo *This,
+                     CountedString **dllFilePath,
+                     UINT32 *iconResourceId);
 
     HRESULT (STDMETHODCALLTYPE *ConvertErrorCodeToMessageId)(
-        INapComponentInfo *This,
-        HRESULT errorCode,
-        MessageId *msgId);
+                     INapComponentInfo *This,
+                     HRESULT errorCode,
+                     MessageId *msgId);
 
     HRESULT (STDMETHODCALLTYPE *GetLocalizedString)(
-        INapComponentInfo *This,
-        MessageId msgId,
-        CountedString **string);
+                     INapComponentInfo *This,
+                     MessageId msgId,
+                     CountedString **string);
 
     END_INTERFACE
 } INapComponentInfoVtbl;
@@ -337,20 +337,20 @@ MIDL_INTERFACE("47cbdb9e-1972-4f5e-bd3c-5eb6230614b5")
 INapComponentConfig2 : public INapComponentConfig
 {
     virtual HRESULT STDMETHODCALLTYPE IsRemoteConfigSupported(
-        WINBOOL *isSupported,
-        UINT8 *remoteConfigType) = 0;
+                     WINBOOL *isSupported,
+                     UINT8 *remoteConfigType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvokeUIForMachine(
-        HWND hwndParent,
-        CountedString *machineName) = 0;
+                     HWND hwndParent,
+                     CountedString *machineName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InvokeUIFromConfigBlob(
-        HWND hwndParent,
-        UINT16 inbCount,
-        BYTE *inData,
-        UINT16 *outbCount,
-        BYTE **outdata,
-        WINBOOL *fConfigChanged) = 0;
+                     HWND hwndParent,
+                     UINT16 inbCount,
+                     BYTE *inData,
+                     UINT16 *outbCount,
+                     BYTE **outdata,
+                     WINBOOL *fConfigChanged) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -362,54 +362,54 @@ typedef struct INapComponentConfig2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapComponentConfig2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapComponentConfig2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapComponentConfig2 *This);
+                     INapComponentConfig2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapComponentConfig2 *This);
+                     INapComponentConfig2 *This);
 
     /*** INapComponentConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        INapComponentConfig2 *This,
-        WINBOOL *isSupported);
+                     INapComponentConfig2 *This,
+                     WINBOOL *isSupported);
 
     HRESULT (STDMETHODCALLTYPE *InvokeUI)(
-        INapComponentConfig2 *This,
-        HWND hwndParent);
+                     INapComponentConfig2 *This,
+                     HWND hwndParent);
 
     HRESULT (STDMETHODCALLTYPE *GetConfig)(
-        INapComponentConfig2 *This,
-        UINT16 *bCount,
-        BYTE **data);
+                     INapComponentConfig2 *This,
+                     UINT16 *bCount,
+                     BYTE **data);
 
     HRESULT (STDMETHODCALLTYPE *SetConfig)(
-        INapComponentConfig2 *This,
-        UINT16 bCount,
-        BYTE *data);
+                     INapComponentConfig2 *This,
+                     UINT16 bCount,
+                     BYTE *data);
 
     /*** INapComponentConfig2 methods ***/
     HRESULT (STDMETHODCALLTYPE *IsRemoteConfigSupported)(
-        INapComponentConfig2 *This,
-        WINBOOL *isSupported,
-        UINT8 *remoteConfigType);
+                     INapComponentConfig2 *This,
+                     WINBOOL *isSupported,
+                     UINT8 *remoteConfigType);
 
     HRESULT (STDMETHODCALLTYPE *InvokeUIForMachine)(
-        INapComponentConfig2 *This,
-        HWND hwndParent,
-        CountedString *machineName);
+                     INapComponentConfig2 *This,
+                     HWND hwndParent,
+                     CountedString *machineName);
 
     HRESULT (STDMETHODCALLTYPE *InvokeUIFromConfigBlob)(
-        INapComponentConfig2 *This,
-        HWND hwndParent,
-        UINT16 inbCount,
-        BYTE *inData,
-        UINT16 *outbCount,
-        BYTE **outdata,
-        WINBOOL *fConfigChanged);
+                     INapComponentConfig2 *This,
+                     HWND hwndParent,
+                     UINT16 inbCount,
+                     BYTE *inData,
+                     UINT16 *outbCount,
+                     BYTE **outdata,
+                     WINBOOL *fConfigChanged);
 
     END_INTERFACE
 } INapComponentConfig2Vtbl;
@@ -487,23 +487,23 @@ MIDL_INTERFACE("9c4a8101-8cfe-4332-876e-c4a49d1d3f77")
 INapComponentConfig3 : public INapComponentConfig2
 {
     virtual HRESULT STDMETHODCALLTYPE NewConfig(
-        UINT32 configID) = 0;
+                     UINT32 configID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteConfig(
-        UINT32 configID) = 0;
+                     UINT32 configID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteAllConfig(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConfigFromID(
-        UINT32 configID,
-        UINT16 *count,
-        BYTE **outdata) = 0;
+                     UINT32 configID,
+                     UINT16 *count,
+                     BYTE **outdata) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetConfigToID(
-        UINT32 configID,
-        UINT16 count,
-        BYTE *data) = 0;
+                     UINT32 configID,
+                     UINT16 count,
+                     BYTE *data) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -515,78 +515,78 @@ typedef struct INapComponentConfig3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapComponentConfig3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapComponentConfig3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapComponentConfig3 *This);
+                     INapComponentConfig3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapComponentConfig3 *This);
+                     INapComponentConfig3 *This);
 
     /*** INapComponentConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        INapComponentConfig3 *This,
-        WINBOOL *isSupported);
+                     INapComponentConfig3 *This,
+                     WINBOOL *isSupported);
 
     HRESULT (STDMETHODCALLTYPE *InvokeUI)(
-        INapComponentConfig3 *This,
-        HWND hwndParent);
+                     INapComponentConfig3 *This,
+                     HWND hwndParent);
 
     HRESULT (STDMETHODCALLTYPE *GetConfig)(
-        INapComponentConfig3 *This,
-        UINT16 *bCount,
-        BYTE **data);
+                     INapComponentConfig3 *This,
+                     UINT16 *bCount,
+                     BYTE **data);
 
     HRESULT (STDMETHODCALLTYPE *SetConfig)(
-        INapComponentConfig3 *This,
-        UINT16 bCount,
-        BYTE *data);
+                     INapComponentConfig3 *This,
+                     UINT16 bCount,
+                     BYTE *data);
 
     /*** INapComponentConfig2 methods ***/
     HRESULT (STDMETHODCALLTYPE *IsRemoteConfigSupported)(
-        INapComponentConfig3 *This,
-        WINBOOL *isSupported,
-        UINT8 *remoteConfigType);
+                     INapComponentConfig3 *This,
+                     WINBOOL *isSupported,
+                     UINT8 *remoteConfigType);
 
     HRESULT (STDMETHODCALLTYPE *InvokeUIForMachine)(
-        INapComponentConfig3 *This,
-        HWND hwndParent,
-        CountedString *machineName);
+                     INapComponentConfig3 *This,
+                     HWND hwndParent,
+                     CountedString *machineName);
 
     HRESULT (STDMETHODCALLTYPE *InvokeUIFromConfigBlob)(
-        INapComponentConfig3 *This,
-        HWND hwndParent,
-        UINT16 inbCount,
-        BYTE *inData,
-        UINT16 *outbCount,
-        BYTE **outdata,
-        WINBOOL *fConfigChanged);
+                     INapComponentConfig3 *This,
+                     HWND hwndParent,
+                     UINT16 inbCount,
+                     BYTE *inData,
+                     UINT16 *outbCount,
+                     BYTE **outdata,
+                     WINBOOL *fConfigChanged);
 
     /*** INapComponentConfig3 methods ***/
     HRESULT (STDMETHODCALLTYPE *NewConfig)(
-        INapComponentConfig3 *This,
-        UINT32 configID);
+                     INapComponentConfig3 *This,
+                     UINT32 configID);
 
     HRESULT (STDMETHODCALLTYPE *DeleteConfig)(
-        INapComponentConfig3 *This,
-        UINT32 configID);
+                     INapComponentConfig3 *This,
+                     UINT32 configID);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAllConfig)(
-        INapComponentConfig3 *This);
+                     INapComponentConfig3 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetConfigFromID)(
-        INapComponentConfig3 *This,
-        UINT32 configID,
-        UINT16 *count,
-        BYTE **outdata);
+                     INapComponentConfig3 *This,
+                     UINT32 configID,
+                     UINT16 *count,
+                     BYTE **outdata);
 
     HRESULT (STDMETHODCALLTYPE *SetConfigToID)(
-        INapComponentConfig3 *This,
-        UINT32 configID,
-        UINT16 count,
-        BYTE *data);
+                     INapComponentConfig3 *This,
+                     UINT32 configID,
+                     UINT16 count,
+                     BYTE *data);
 
     END_INTERFACE
 } INapComponentConfig3Vtbl;
@@ -677,10 +677,10 @@ static FORCEINLINE HRESULT INapComponentConfig3_SetConfigToID(INapComponentConfi
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
 
 /* End additional prototypes */
 

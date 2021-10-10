@@ -33,7 +33,7 @@
 /* 0xb0-0xbf: Reserved for future use */
 #define ATMIOC_AREQUIPA	  0xc0 /* Application requested IP over ATM, glob. u. */
 #define ATMIOC_LANE	  0xd0 /* LAN Emulation, globally unique */
-#define ATMIOC_MPOA       0xd8 /* MPOA, globally unique */
+#define ATMIOC_MPOA                    0xd8 /* MPOA, globally unique */
 #define	ATMIOC_CLIP	  0xe0 /* Classical IP over ATM control, globally u. */
 #define	ATMIOC_CLIP_END	  0xef
 #define	ATMIOC_SPECIAL	  0xf0 /* Special-purpose controls, globally unique */

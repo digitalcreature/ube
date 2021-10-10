@@ -13,16 +13,16 @@
 
 #define PROT_SAO	0x10		/* Strong Access Ordering */
 
-#define MAP_RENAME      MAP_ANONYMOUS   /* In SunOS terminology */
-#define MAP_NORESERVE   0x40            /* don't reserve swap pages */
+#define MAP_RENAME                   MAP_ANONYMOUS   /* In SunOS terminology */
+#define MAP_NORESERVE   0x40                                      /* don't reserve swap pages */
 #define MAP_LOCKED	0x80
 
 #define MAP_GROWSDOWN	0x0100		/* stack-like segment */
 #define MAP_DENYWRITE	0x0800		/* ETXTBSY */
 #define MAP_EXECUTABLE	0x1000		/* mark it as an executable */
 
-#define MCL_CURRENT     0x2000          /* lock all currently mapped pages */
-#define MCL_FUTURE      0x4000          /* lock all additions to address space */
+#define MCL_CURRENT     0x2000                       /* lock all currently mapped pages */
+#define MCL_FUTURE                   0x4000                       /* lock all additions to address space */
 #define MCL_ONFAULT	0x8000		/* lock all pages that are faulted in */
 
 #define MAP_POPULATE	0x8000		/* populate (prefault) pagetables */
@@ -33,7 +33,7 @@
 /* Override any generic PKEY permission defines */
 #define PKEY_DISABLE_EXECUTE   0x4
 #undef PKEY_ACCESS_MASK
-#define PKEY_ACCESS_MASK       (PKEY_DISABLE_ACCESS |\
+#define PKEY_ACCESS_MASK                    (PKEY_DISABLE_ACCESS |\
 				PKEY_DISABLE_WRITE  |\
 				PKEY_DISABLE_EXECUTE)
 #endif /* _ASM_POWERPC_MMAN_H */

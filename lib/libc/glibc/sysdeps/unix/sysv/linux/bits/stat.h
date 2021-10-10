@@ -64,11 +64,11 @@ struct stat
 #endif
 #ifdef __USE_XOPEN2K8
     /* Nanosecond resolution timestamps are stored in a format
-       equivalent to 'struct timespec'.  This is the type used
-       whenever possible but the Unix namespace rules do not allow the
-       identifier 'timespec' to appear in the <sys/stat.h> header.
-       Therefore we have to handle the use of this header in strictly
-       standard-compliant sources special.  */
+                    equivalent to 'struct timespec'.  This is the type used
+                    whenever possible but the Unix namespace rules do not allow the
+                    identifier 'timespec' to appear in the <sys/stat.h> header.
+                    Therefore we have to handle the use of this header in strictly
+                    standard-compliant sources special.  */
     struct timespec st_atim;		/* Time of last access.  */
     struct timespec st_mtim;		/* Time of last modification.  */
     struct timespec st_ctim;		/* Time of last status change.  */
@@ -110,11 +110,11 @@ struct stat64
     __blkcnt64_t st_blocks;		/* Number 512-byte blocks allocated. */
 # ifdef __USE_XOPEN2K8
     /* Nanosecond resolution timestamps are stored in a format
-       equivalent to 'struct timespec'.  This is the type used
-       whenever possible but the Unix namespace rules do not allow the
-       identifier 'timespec' to appear in the <sys/stat.h> header.
-       Therefore we have to handle the use of this header in strictly
-       standard-compliant sources special.  */
+                    equivalent to 'struct timespec'.  This is the type used
+                    whenever possible but the Unix namespace rules do not allow the
+                    identifier 'timespec' to appear in the <sys/stat.h> header.
+                    Therefore we have to handle the use of this header in strictly
+                    standard-compliant sources special.  */
     struct timespec st_atim;		/* Time of last access.  */
     struct timespec st_mtim;		/* Time of last modification.  */
     struct timespec st_ctim;		/* Time of last status change.  */

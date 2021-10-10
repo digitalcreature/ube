@@ -50,14 +50,14 @@
 /* Define a macro which expands into the inline wrapper code for a system
    call.  */
 #undef INLINE_SYSCALL
-#define INLINE_SYSCALL(name, nr, args...)                               \
+#define INLINE_SYSCALL(name, nr, args...)                                                                                                \
   ({ INTERNAL_SYSCALL_DECL (_sc_err);					\
      long result_var = INTERNAL_SYSCALL (name, _sc_err, nr, args);	\
      if ( INTERNAL_SYSCALL_ERROR_P (result_var, _sc_err) )		\
-       {								\
+                    {								\
 	 __set_errno (INTERNAL_SYSCALL_ERRNO (result_var, _sc_err));	\
 	 result_var = -1L;						\
-       }								\
+                    }								\
      result_var; })
 
 #undef INTERNAL_SYSCALL_DECL
@@ -105,10 +105,10 @@ union __mips_syscall_return
   {
     long long val;
     struct
-      {
+                   {
 	long v0;
 	long v1;
-      }
+                   }
     reg;
   };
 
@@ -134,19 +134,19 @@ union __mips_syscall_return
 
 # define INTERNAL_SYSCALL_MIPS16(number, err, nr, args...)		\
 	internal_syscall##nr ("lw\t%0, %2\n\t",				\
-			      "R" (number),				\
-			      number, err, args)
+			                   "R" (number),				\
+			                   number, err, args)
 
 #else /* !__mips16 */
 # define INTERNAL_SYSCALL(name, err, nr, args...)			\
 	internal_syscall##nr ("li\t%0, %2\t\t\t# " #name "\n\t",	\
-			      "IK" (SYS_ify (name)),			\
-			      SYS_ify (name), err, args)
+			                   "IK" (SYS_ify (name)),			\
+			                   SYS_ify (name), err, args)
 
 # define INTERNAL_SYSCALL_NCS(number, err, nr, args...)			\
 	internal_syscall##nr (MOVE32 "\t%0, %2\n\t",			\
-			      "r" (__s0),				\
-			      number, err, args)
+			                   "r" (__s0),				\
+			                   number, err, args)
 
 #endif /* !__mips16 */
 
@@ -286,8 +286,8 @@ union __mips_syscall_return
    which would be the case if these syscalls were inlined.  */
 
 long long __nomips16 __mips_syscall5 (long arg1, long arg2, long arg3,
-				      long arg4, long arg5,
-				      long number);
+				                   long arg4, long arg5,
+				                   long number);
 libc_hidden_proto (__mips_syscall5, nomips16)
 
 #define internal_syscall5(v0_init, input, number, err,			\
@@ -295,18 +295,18 @@ libc_hidden_proto (__mips_syscall5, nomips16)
 ({									\
 	union __mips_syscall_return _sc_ret;				\
 	_sc_ret.val = __mips_syscall5 ((long) (arg1),			\
-				       (long) (arg2),			\
-				       (long) (arg3),			\
-				       (long) (arg4),			\
-				       (long) (arg5),			\
-				       (long) (number));		\
+				                    (long) (arg2),			\
+				                    (long) (arg3),			\
+				                    (long) (arg4),			\
+				                    (long) (arg5),			\
+				                    (long) (number));		\
 	err = _sc_ret.reg.v1;						\
 	_sc_ret.reg.v0;							\
 })
 
 long long __nomips16 __mips_syscall6 (long arg1, long arg2, long arg3,
-				      long arg4, long arg5, long arg6,
-				      long number);
+				                   long arg4, long arg5, long arg6,
+				                   long number);
 libc_hidden_proto (__mips_syscall6, nomips16)
 
 #define internal_syscall6(v0_init, input, number, err,			\
@@ -314,20 +314,20 @@ libc_hidden_proto (__mips_syscall6, nomips16)
 ({									\
 	union __mips_syscall_return _sc_ret;				\
 	_sc_ret.val = __mips_syscall6 ((long) (arg1),			\
-				       (long) (arg2),			\
-				       (long) (arg3),			\
-				       (long) (arg4),			\
-				       (long) (arg5),			\
-				       (long) (arg6),			\
-				       (long) (number));		\
+				                    (long) (arg2),			\
+				                    (long) (arg3),			\
+				                    (long) (arg4),			\
+				                    (long) (arg5),			\
+				                    (long) (arg6),			\
+				                    (long) (number));		\
 	err = _sc_ret.reg.v1;						\
 	_sc_ret.reg.v0;							\
 })
 
 long long __nomips16 __mips_syscall7 (long arg1, long arg2, long arg3,
-				      long arg4, long arg5, long arg6,
-				      long arg7,
-				      long number);
+				                   long arg4, long arg5, long arg6,
+				                   long arg7,
+				                   long number);
 libc_hidden_proto (__mips_syscall7, nomips16)
 
 #define internal_syscall7(v0_init, input, number, err,			\
@@ -335,13 +335,13 @@ libc_hidden_proto (__mips_syscall7, nomips16)
 ({									\
 	union __mips_syscall_return _sc_ret;				\
 	_sc_ret.val = __mips_syscall7 ((long) (arg1),			\
-				       (long) (arg2),			\
-				       (long) (arg3),			\
-				       (long) (arg4),			\
-				       (long) (arg5),			\
-				       (long) (arg6),			\
-				       (long) (arg7),			\
-				       (long) (number));		\
+				                    (long) (arg2),			\
+				                    (long) (arg3),			\
+				                    (long) (arg4),			\
+				                    (long) (arg5),			\
+				                    (long) (arg6),			\
+				                    (long) (arg7),			\
+				                    (long) (number));		\
 	err = _sc_ret.reg.v1;						\
 	_sc_ret.reg.v0;							\
 })

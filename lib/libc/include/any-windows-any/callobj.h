@@ -149,28 +149,28 @@ extern "C"{
 #else
   typedef struct ICallFrameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICallFrame *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICallFrame *This);
-      ULONG (WINAPI *Release)(ICallFrame *This);
-      HRESULT (WINAPI *GetInfo)(ICallFrame *This,CALLFRAMEINFO *pInfo);
-      HRESULT (WINAPI *GetIIDAndMethod)(ICallFrame *This,IID *pIID,ULONG *piMethod);
-      HRESULT (WINAPI *GetNames)(ICallFrame *This,LPWSTR *pwszInterface,LPWSTR *pwszMethod);
-      PVOID (WINAPI *GetStackLocation)(ICallFrame *This);
-      void (WINAPI *SetStackLocation)(ICallFrame *This,PVOID pvStack);
-      void (WINAPI *SetReturnValue)(ICallFrame *This,HRESULT hr);
-      HRESULT (WINAPI *GetReturnValue)(ICallFrame *This);
-      HRESULT (WINAPI *GetParamInfo)(ICallFrame *This,ULONG iparam,CALLFRAMEPARAMINFO *pInfo);
-      HRESULT (WINAPI *SetParam)(ICallFrame *This,ULONG iparam,VARIANT *pvar);
-      HRESULT (WINAPI *GetParam)(ICallFrame *This,ULONG iparam,VARIANT *pvar);
-      HRESULT (WINAPI *Copy)(ICallFrame *This,CALLFRAME_COPY copyControl,ICallFrameWalker *pWalker,ICallFrame **ppFrame);
-      HRESULT (WINAPI *Free)(ICallFrame *This,ICallFrame *pframeArgsDest,ICallFrameWalker *pWalkerDestFree,ICallFrameWalker *pWalkerCopy,DWORD freeFlags,ICallFrameWalker *pWalkerFree,DWORD nullFlags);
-      HRESULT (WINAPI *FreeParam)(ICallFrame *This,ULONG iparam,DWORD freeFlags,ICallFrameWalker *pWalkerFree,DWORD nullFlags);
-      HRESULT (WINAPI *WalkFrame)(ICallFrame *This,DWORD walkWhat,ICallFrameWalker *pWalker);
-      HRESULT (WINAPI *GetMarshalSizeMax)(ICallFrame *This,CALLFRAME_MARSHALCONTEXT *pmshlContext,MSHLFLAGS mshlflags,ULONG *pcbBufferNeeded);
-      HRESULT (WINAPI *Marshal)(ICallFrame *This,CALLFRAME_MARSHALCONTEXT *pmshlContext,MSHLFLAGS mshlflags,PVOID pBuffer,ULONG cbBuffer,ULONG *pcbBufferUsed,RPCOLEDATAREP *pdataRep,ULONG *prpcFlags);
-      HRESULT (WINAPI *Unmarshal)(ICallFrame *This,PVOID pBuffer,ULONG cbBuffer,RPCOLEDATAREP dataRep,CALLFRAME_MARSHALCONTEXT *pcontext,ULONG *pcbUnmarshalled);
-      HRESULT (WINAPI *ReleaseMarshalData)(ICallFrame *This,PVOID pBuffer,ULONG cbBuffer,ULONG ibFirstRelease,RPCOLEDATAREP dataRep,CALLFRAME_MARSHALCONTEXT *pcontext);
-      HRESULT (WINAPI *Invoke)(ICallFrame *This,void *pvReceiver,...);
+                   HRESULT (WINAPI *QueryInterface)(ICallFrame *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICallFrame *This);
+                   ULONG (WINAPI *Release)(ICallFrame *This);
+                   HRESULT (WINAPI *GetInfo)(ICallFrame *This,CALLFRAMEINFO *pInfo);
+                   HRESULT (WINAPI *GetIIDAndMethod)(ICallFrame *This,IID *pIID,ULONG *piMethod);
+                   HRESULT (WINAPI *GetNames)(ICallFrame *This,LPWSTR *pwszInterface,LPWSTR *pwszMethod);
+                   PVOID (WINAPI *GetStackLocation)(ICallFrame *This);
+                   void (WINAPI *SetStackLocation)(ICallFrame *This,PVOID pvStack);
+                   void (WINAPI *SetReturnValue)(ICallFrame *This,HRESULT hr);
+                   HRESULT (WINAPI *GetReturnValue)(ICallFrame *This);
+                   HRESULT (WINAPI *GetParamInfo)(ICallFrame *This,ULONG iparam,CALLFRAMEPARAMINFO *pInfo);
+                   HRESULT (WINAPI *SetParam)(ICallFrame *This,ULONG iparam,VARIANT *pvar);
+                   HRESULT (WINAPI *GetParam)(ICallFrame *This,ULONG iparam,VARIANT *pvar);
+                   HRESULT (WINAPI *Copy)(ICallFrame *This,CALLFRAME_COPY copyControl,ICallFrameWalker *pWalker,ICallFrame **ppFrame);
+                   HRESULT (WINAPI *Free)(ICallFrame *This,ICallFrame *pframeArgsDest,ICallFrameWalker *pWalkerDestFree,ICallFrameWalker *pWalkerCopy,DWORD freeFlags,ICallFrameWalker *pWalkerFree,DWORD nullFlags);
+                   HRESULT (WINAPI *FreeParam)(ICallFrame *This,ULONG iparam,DWORD freeFlags,ICallFrameWalker *pWalkerFree,DWORD nullFlags);
+                   HRESULT (WINAPI *WalkFrame)(ICallFrame *This,DWORD walkWhat,ICallFrameWalker *pWalker);
+                   HRESULT (WINAPI *GetMarshalSizeMax)(ICallFrame *This,CALLFRAME_MARSHALCONTEXT *pmshlContext,MSHLFLAGS mshlflags,ULONG *pcbBufferNeeded);
+                   HRESULT (WINAPI *Marshal)(ICallFrame *This,CALLFRAME_MARSHALCONTEXT *pmshlContext,MSHLFLAGS mshlflags,PVOID pBuffer,ULONG cbBuffer,ULONG *pcbBufferUsed,RPCOLEDATAREP *pdataRep,ULONG *prpcFlags);
+                   HRESULT (WINAPI *Unmarshal)(ICallFrame *This,PVOID pBuffer,ULONG cbBuffer,RPCOLEDATAREP dataRep,CALLFRAME_MARSHALCONTEXT *pcontext,ULONG *pcbUnmarshalled);
+                   HRESULT (WINAPI *ReleaseMarshalData)(ICallFrame *This,PVOID pBuffer,ULONG cbBuffer,ULONG ibFirstRelease,RPCOLEDATAREP dataRep,CALLFRAME_MARSHALCONTEXT *pcontext);
+                   HRESULT (WINAPI *Invoke)(ICallFrame *This,void *pvReceiver,...);
     END_INTERFACE
   } ICallFrameVtbl;
   struct ICallFrame {
@@ -255,13 +255,13 @@ extern "C"{
 #else
   typedef struct ICallIndirectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICallIndirect *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICallIndirect *This);
-      ULONG (WINAPI *Release)(ICallIndirect *This);
-      HRESULT (WINAPI *CallIndirect)(ICallIndirect *This,HRESULT *phrReturn,ULONG iMethod,void *pvArgs,ULONG *cbArgs);
-      HRESULT (WINAPI *GetMethodInfo)(ICallIndirect *This,ULONG iMethod,CALLFRAMEINFO *pInfo,LPWSTR *pwszMethod);
-      HRESULT (WINAPI *GetStackSize)(ICallIndirect *This,ULONG iMethod,ULONG *cbArgs);
-      HRESULT (WINAPI *GetIID)(ICallIndirect *This,IID *piid,WINBOOL *pfDerivesFromIDispatch,ULONG *pcMethod,LPWSTR *pwszInterface);
+                   HRESULT (WINAPI *QueryInterface)(ICallIndirect *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICallIndirect *This);
+                   ULONG (WINAPI *Release)(ICallIndirect *This);
+                   HRESULT (WINAPI *CallIndirect)(ICallIndirect *This,HRESULT *phrReturn,ULONG iMethod,void *pvArgs,ULONG *cbArgs);
+                   HRESULT (WINAPI *GetMethodInfo)(ICallIndirect *This,ULONG iMethod,CALLFRAMEINFO *pInfo,LPWSTR *pwszMethod);
+                   HRESULT (WINAPI *GetStackSize)(ICallIndirect *This,ULONG iMethod,ULONG *cbArgs);
+                   HRESULT (WINAPI *GetIID)(ICallIndirect *This,IID *piid,WINBOOL *pfDerivesFromIDispatch,ULONG *pcMethod,LPWSTR *pwszInterface);
     END_INTERFACE
   } ICallIndirectVtbl;
   struct ICallIndirect {
@@ -299,15 +299,15 @@ extern "C"{
 #else
   typedef struct ICallInterceptorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICallInterceptor *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICallInterceptor *This);
-      ULONG (WINAPI *Release)(ICallInterceptor *This);
-      HRESULT (WINAPI *CallIndirect)(ICallInterceptor *This,HRESULT *phrReturn,ULONG iMethod,void *pvArgs,ULONG *cbArgs);
-      HRESULT (WINAPI *GetMethodInfo)(ICallInterceptor *This,ULONG iMethod,CALLFRAMEINFO *pInfo,LPWSTR *pwszMethod);
-      HRESULT (WINAPI *GetStackSize)(ICallInterceptor *This,ULONG iMethod,ULONG *cbArgs);
-      HRESULT (WINAPI *GetIID)(ICallInterceptor *This,IID *piid,WINBOOL *pfDerivesFromIDispatch,ULONG *pcMethod,LPWSTR *pwszInterface);
-      HRESULT (WINAPI *RegisterSink)(ICallInterceptor *This,ICallFrameEvents *psink);
-      HRESULT (WINAPI *GetRegisteredSink)(ICallInterceptor *This,ICallFrameEvents **ppsink);
+                   HRESULT (WINAPI *QueryInterface)(ICallInterceptor *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICallInterceptor *This);
+                   ULONG (WINAPI *Release)(ICallInterceptor *This);
+                   HRESULT (WINAPI *CallIndirect)(ICallInterceptor *This,HRESULT *phrReturn,ULONG iMethod,void *pvArgs,ULONG *cbArgs);
+                   HRESULT (WINAPI *GetMethodInfo)(ICallInterceptor *This,ULONG iMethod,CALLFRAMEINFO *pInfo,LPWSTR *pwszMethod);
+                   HRESULT (WINAPI *GetStackSize)(ICallInterceptor *This,ULONG iMethod,ULONG *cbArgs);
+                   HRESULT (WINAPI *GetIID)(ICallInterceptor *This,IID *piid,WINBOOL *pfDerivesFromIDispatch,ULONG *pcMethod,LPWSTR *pwszInterface);
+                   HRESULT (WINAPI *RegisterSink)(ICallInterceptor *This,ICallFrameEvents *psink);
+                   HRESULT (WINAPI *GetRegisteredSink)(ICallInterceptor *This,ICallFrameEvents **ppsink);
     END_INTERFACE
   } ICallInterceptorVtbl;
   struct ICallInterceptor {
@@ -342,10 +342,10 @@ extern "C"{
 #else
   typedef struct ICallFrameEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICallFrameEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICallFrameEvents *This);
-      ULONG (WINAPI *Release)(ICallFrameEvents *This);
-      HRESULT (WINAPI *OnCall)(ICallFrameEvents *This,ICallFrame *pFrame);
+                   HRESULT (WINAPI *QueryInterface)(ICallFrameEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICallFrameEvents *This);
+                   ULONG (WINAPI *Release)(ICallFrameEvents *This);
+                   HRESULT (WINAPI *OnCall)(ICallFrameEvents *This,ICallFrame *pFrame);
     END_INTERFACE
   } ICallFrameEventsVtbl;
   struct ICallFrameEvents {
@@ -374,11 +374,11 @@ extern "C"{
 #else
   typedef struct ICallUnmarshalVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICallUnmarshal *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICallUnmarshal *This);
-      ULONG (WINAPI *Release)(ICallUnmarshal *This);
-      HRESULT (WINAPI *Unmarshal)(ICallUnmarshal *This,ULONG iMethod,PVOID pBuffer,ULONG cbBuffer,WINBOOL fForceBufferCopy,RPCOLEDATAREP dataRep,CALLFRAME_MARSHALCONTEXT *pcontext,ULONG *pcbUnmarshalled,ICallFrame **ppFrame);
-      HRESULT (WINAPI *ReleaseMarshalData)(ICallUnmarshal *This,ULONG iMethod,PVOID pBuffer,ULONG cbBuffer,ULONG ibFirstRelease,RPCOLEDATAREP dataRep,CALLFRAME_MARSHALCONTEXT *pcontext);
+                   HRESULT (WINAPI *QueryInterface)(ICallUnmarshal *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICallUnmarshal *This);
+                   ULONG (WINAPI *Release)(ICallUnmarshal *This);
+                   HRESULT (WINAPI *Unmarshal)(ICallUnmarshal *This,ULONG iMethod,PVOID pBuffer,ULONG cbBuffer,WINBOOL fForceBufferCopy,RPCOLEDATAREP dataRep,CALLFRAME_MARSHALCONTEXT *pcontext,ULONG *pcbUnmarshalled,ICallFrame **ppFrame);
+                   HRESULT (WINAPI *ReleaseMarshalData)(ICallUnmarshal *This,ULONG iMethod,PVOID pBuffer,ULONG cbBuffer,ULONG ibFirstRelease,RPCOLEDATAREP dataRep,CALLFRAME_MARSHALCONTEXT *pcontext);
     END_INTERFACE
   } ICallUnmarshalVtbl;
   struct ICallUnmarshal {
@@ -409,10 +409,10 @@ extern "C"{
 #else
   typedef struct ICallFrameWalkerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICallFrameWalker *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICallFrameWalker *This);
-      ULONG (WINAPI *Release)(ICallFrameWalker *This);
-      HRESULT (WINAPI *OnWalkInterface)(ICallFrameWalker *This,REFIID iid,PVOID *ppvInterface,WINBOOL fIn,WINBOOL fOut);
+                   HRESULT (WINAPI *QueryInterface)(ICallFrameWalker *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICallFrameWalker *This);
+                   ULONG (WINAPI *Release)(ICallFrameWalker *This);
+                   HRESULT (WINAPI *OnWalkInterface)(ICallFrameWalker *This,REFIID iid,PVOID *ppvInterface,WINBOOL fIn,WINBOOL fOut);
     END_INTERFACE
   } ICallFrameWalkerVtbl;
   struct ICallFrameWalker {
@@ -441,11 +441,11 @@ extern "C"{
 #else
   typedef struct IInterfaceRelatedVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IInterfaceRelated *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IInterfaceRelated *This);
-      ULONG (WINAPI *Release)(IInterfaceRelated *This);
-      HRESULT (WINAPI *SetIID)(IInterfaceRelated *This,REFIID iid);
-      HRESULT (WINAPI *GetIID)(IInterfaceRelated *This,IID *piid);
+                   HRESULT (WINAPI *QueryInterface)(IInterfaceRelated *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IInterfaceRelated *This);
+                   ULONG (WINAPI *Release)(IInterfaceRelated *This);
+                   HRESULT (WINAPI *SetIID)(IInterfaceRelated *This,REFIID iid);
+                   HRESULT (WINAPI *GetIID)(IInterfaceRelated *This,IID *piid);
     END_INTERFACE
   } IInterfaceRelatedVtbl;
   struct IInterfaceRelated {

@@ -18,12 +18,12 @@ typedef ULONG (WINAPI *PERFLIBREQUEST)(ULONG RequestCode,PVOID Buffer,ULONG Buff
 typedef void (CALLBACK *PERF_MEM_FREE)(LPVOID pBuffer,LPVOID pContext);
 
 typedef struct _PERF_PROVIDER_CONTEXT {
-  DWORD          ContextSize;
-  DWORD          Reserved;
+  DWORD                       ContextSize;
+  DWORD                       Reserved;
   PERFLIBREQUEST ControlCallback;
   PERF_MEM_ALLOC MemAllocRoutine;
   PERF_MEM_FREE  MemFreeRoutine;
-  LPVOID         pMemContext;
+  LPVOID                      pMemContext;
 } PERF_PROVIDER_CONTEXT, *PPERF_PROVIDER_CONTEXT;
 
 typedef struct _PERF_COUNTER_IDENTITY {
@@ -42,7 +42,7 @@ typedef struct _PERF_COUNTER_INFO {
   ULONGLONG Attrib;
   ULONG     Size;
   ULONG     DetailLevel;
-  LONG      Scale;
+  LONG                   Scale;
   ULONG     Offset;
 } PERF_COUNTER_INFO, *PPERF_COUNTER_INFO;
 

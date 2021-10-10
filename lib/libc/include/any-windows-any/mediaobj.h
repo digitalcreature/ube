@@ -99,19 +99,19 @@ MIDL_INTERFACE("2c3cd98a-2bfa-4a53-9c27-5249ba64ba0f")
 IEnumDMO : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        DWORD cItemsToFetch,
-        CLSID *pCLSID,
-        WCHAR **Names,
-        DWORD *pcItemsFetched) = 0;
+                     DWORD cItemsToFetch,
+                     CLSID *pCLSID,
+                     WCHAR **Names,
+                     DWORD *pcItemsFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        DWORD cItemsToSkip) = 0;
+                     DWORD cItemsToSkip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDMO **ppEnum) = 0;
+                     IEnumDMO **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -123,34 +123,34 @@ typedef struct IEnumDMOVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDMO *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDMO *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDMO *This);
+                     IEnumDMO *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDMO *This);
+                     IEnumDMO *This);
 
     /*** IEnumDMO methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumDMO *This,
-        DWORD cItemsToFetch,
-        CLSID *pCLSID,
-        WCHAR **Names,
-        DWORD *pcItemsFetched);
+                     IEnumDMO *This,
+                     DWORD cItemsToFetch,
+                     CLSID *pCLSID,
+                     WCHAR **Names,
+                     DWORD *pcItemsFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDMO *This,
-        DWORD cItemsToSkip);
+                     IEnumDMO *This,
+                     DWORD cItemsToSkip);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDMO *This);
+                     IEnumDMO *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDMO *This,
-        IEnumDMO **ppEnum);
+                     IEnumDMO *This,
+                     IEnumDMO **ppEnum);
 
     END_INTERFACE
 } IEnumDMOVtbl;
@@ -214,14 +214,14 @@ MIDL_INTERFACE("59eff8b9-938c-4a26-82f2-95cb84cdc837")
 IMediaBuffer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetLength(
-        DWORD cbLength) = 0;
+                     DWORD cbLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxLength(
-        DWORD *pcbMaxLength) = 0;
+                     DWORD *pcbMaxLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBufferAndLength(
-        BYTE **ppBuffer,
-        DWORD *pcbLength) = 0;
+                     BYTE **ppBuffer,
+                     DWORD *pcbLength) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -233,29 +233,29 @@ typedef struct IMediaBufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaBuffer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaBuffer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaBuffer *This);
+                     IMediaBuffer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaBuffer *This);
+                     IMediaBuffer *This);
 
     /*** IMediaBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *SetLength)(
-        IMediaBuffer *This,
-        DWORD cbLength);
+                     IMediaBuffer *This,
+                     DWORD cbLength);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxLength)(
-        IMediaBuffer *This,
-        DWORD *pcbMaxLength);
+                     IMediaBuffer *This,
+                     DWORD *pcbMaxLength);
 
     HRESULT (STDMETHODCALLTYPE *GetBufferAndLength)(
-        IMediaBuffer *This,
-        BYTE **ppBuffer,
-        DWORD *pcbLength);
+                     IMediaBuffer *This,
+                     BYTE **ppBuffer,
+                     DWORD *pcbLength);
 
     END_INTERFACE
 } IMediaBufferVtbl;
@@ -347,95 +347,95 @@ MIDL_INTERFACE("d8ad0f58-5494-4102-97c5-ec798e59bcf4")
 IMediaObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamCount(
-        DWORD *pcInputStreams,
-        DWORD *pcOutputStreams) = 0;
+                     DWORD *pcInputStreams,
+                     DWORD *pcOutputStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputStreamInfo(
-        DWORD dwInputStreamIndex,
-        DWORD *pdwFlags) = 0;
+                     DWORD dwInputStreamIndex,
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputStreamInfo(
-        DWORD dwOutputStreamIndex,
-        DWORD *pdwFlags) = 0;
+                     DWORD dwOutputStreamIndex,
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputType(
-        DWORD dwInputStreamIndex,
-        DWORD dwTypeIndex,
-        DMO_MEDIA_TYPE *pmt) = 0;
+                     DWORD dwInputStreamIndex,
+                     DWORD dwTypeIndex,
+                     DMO_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputType(
-        DWORD dwOutputStreamIndex,
-        DWORD dwTypeIndex,
-        DMO_MEDIA_TYPE *pmt) = 0;
+                     DWORD dwOutputStreamIndex,
+                     DWORD dwTypeIndex,
+                     DMO_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInputType(
-        DWORD dwInputStreamIndex,
-        const DMO_MEDIA_TYPE *pmt,
-        DWORD dwFlags) = 0;
+                     DWORD dwInputStreamIndex,
+                     const DMO_MEDIA_TYPE *pmt,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputType(
-        DWORD dwOutputStreamIndex,
-        const DMO_MEDIA_TYPE *pmt,
-        DWORD dwFlags) = 0;
+                     DWORD dwOutputStreamIndex,
+                     const DMO_MEDIA_TYPE *pmt,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputCurrentType(
-        DWORD dwInputStreamIndex,
-        DMO_MEDIA_TYPE *pmt) = 0;
+                     DWORD dwInputStreamIndex,
+                     DMO_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputCurrentType(
-        DWORD dwOutputStreamIndex,
-        DMO_MEDIA_TYPE *pmt) = 0;
+                     DWORD dwOutputStreamIndex,
+                     DMO_MEDIA_TYPE *pmt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputSizeInfo(
-        DWORD dwInputStreamIndex,
-        DWORD *pcbSize,
-        DWORD *pcbMaxLookahead,
-        DWORD *pcbAlignment) = 0;
+                     DWORD dwInputStreamIndex,
+                     DWORD *pcbSize,
+                     DWORD *pcbMaxLookahead,
+                     DWORD *pcbAlignment) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputSizeInfo(
-        DWORD dwOutputStreamIndex,
-        DWORD *pcbSize,
-        DWORD *pcbAlignment) = 0;
+                     DWORD dwOutputStreamIndex,
+                     DWORD *pcbSize,
+                     DWORD *pcbAlignment) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputMaxLatency(
-        DWORD dwInputStreamIndex,
-        REFERENCE_TIME *prtMaxLatency) = 0;
+                     DWORD dwInputStreamIndex,
+                     REFERENCE_TIME *prtMaxLatency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInputMaxLatency(
-        DWORD dwInputStreamIndex,
-        REFERENCE_TIME rtMaxLatency) = 0;
+                     DWORD dwInputStreamIndex,
+                     REFERENCE_TIME rtMaxLatency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Flush(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Discontinuity(
-        DWORD dwInputStreamIndex) = 0;
+                     DWORD dwInputStreamIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AllocateStreamingResources(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FreeStreamingResources(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputStatus(
-        DWORD dwInputStreamIndex,
-        DWORD *dwFlags) = 0;
+                     DWORD dwInputStreamIndex,
+                     DWORD *dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessInput(
-        DWORD dwInputStreamIndex,
-        IMediaBuffer *pBuffer,
-        DWORD dwFlags,
-        REFERENCE_TIME rtTimestamp,
-        REFERENCE_TIME rtTimelength) = 0;
+                     DWORD dwInputStreamIndex,
+                     IMediaBuffer *pBuffer,
+                     DWORD dwFlags,
+                     REFERENCE_TIME rtTimestamp,
+                     REFERENCE_TIME rtTimelength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessOutput(
-        DWORD dwFlags,
-        DWORD cOutputBufferCount,
-        DMO_OUTPUT_DATA_BUFFER *pOutputBuffers,
-        DWORD *pdwStatus) = 0;
+                     DWORD dwFlags,
+                     DWORD cOutputBufferCount,
+                     DMO_OUTPUT_DATA_BUFFER *pOutputBuffers,
+                     DWORD *pdwStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Lock(
-        LONG bLock) = 0;
+                     LONG bLock) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -447,125 +447,125 @@ typedef struct IMediaObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaObject *This);
+                     IMediaObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaObject *This);
+                     IMediaObject *This);
 
     /*** IMediaObject methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamCount)(
-        IMediaObject *This,
-        DWORD *pcInputStreams,
-        DWORD *pcOutputStreams);
+                     IMediaObject *This,
+                     DWORD *pcInputStreams,
+                     DWORD *pcOutputStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetInputStreamInfo)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        DWORD *pdwFlags);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputStreamInfo)(
-        IMediaObject *This,
-        DWORD dwOutputStreamIndex,
-        DWORD *pdwFlags);
+                     IMediaObject *This,
+                     DWORD dwOutputStreamIndex,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetInputType)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        DWORD dwTypeIndex,
-        DMO_MEDIA_TYPE *pmt);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     DWORD dwTypeIndex,
+                     DMO_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputType)(
-        IMediaObject *This,
-        DWORD dwOutputStreamIndex,
-        DWORD dwTypeIndex,
-        DMO_MEDIA_TYPE *pmt);
+                     IMediaObject *This,
+                     DWORD dwOutputStreamIndex,
+                     DWORD dwTypeIndex,
+                     DMO_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *SetInputType)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        const DMO_MEDIA_TYPE *pmt,
-        DWORD dwFlags);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     const DMO_MEDIA_TYPE *pmt,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputType)(
-        IMediaObject *This,
-        DWORD dwOutputStreamIndex,
-        const DMO_MEDIA_TYPE *pmt,
-        DWORD dwFlags);
+                     IMediaObject *This,
+                     DWORD dwOutputStreamIndex,
+                     const DMO_MEDIA_TYPE *pmt,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetInputCurrentType)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        DMO_MEDIA_TYPE *pmt);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     DMO_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputCurrentType)(
-        IMediaObject *This,
-        DWORD dwOutputStreamIndex,
-        DMO_MEDIA_TYPE *pmt);
+                     IMediaObject *This,
+                     DWORD dwOutputStreamIndex,
+                     DMO_MEDIA_TYPE *pmt);
 
     HRESULT (STDMETHODCALLTYPE *GetInputSizeInfo)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        DWORD *pcbSize,
-        DWORD *pcbMaxLookahead,
-        DWORD *pcbAlignment);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     DWORD *pcbSize,
+                     DWORD *pcbMaxLookahead,
+                     DWORD *pcbAlignment);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputSizeInfo)(
-        IMediaObject *This,
-        DWORD dwOutputStreamIndex,
-        DWORD *pcbSize,
-        DWORD *pcbAlignment);
+                     IMediaObject *This,
+                     DWORD dwOutputStreamIndex,
+                     DWORD *pcbSize,
+                     DWORD *pcbAlignment);
 
     HRESULT (STDMETHODCALLTYPE *GetInputMaxLatency)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        REFERENCE_TIME *prtMaxLatency);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     REFERENCE_TIME *prtMaxLatency);
 
     HRESULT (STDMETHODCALLTYPE *SetInputMaxLatency)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        REFERENCE_TIME rtMaxLatency);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     REFERENCE_TIME rtMaxLatency);
 
     HRESULT (STDMETHODCALLTYPE *Flush)(
-        IMediaObject *This);
+                     IMediaObject *This);
 
     HRESULT (STDMETHODCALLTYPE *Discontinuity)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex);
 
     HRESULT (STDMETHODCALLTYPE *AllocateStreamingResources)(
-        IMediaObject *This);
+                     IMediaObject *This);
 
     HRESULT (STDMETHODCALLTYPE *FreeStreamingResources)(
-        IMediaObject *This);
+                     IMediaObject *This);
 
     HRESULT (STDMETHODCALLTYPE *GetInputStatus)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        DWORD *dwFlags);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     DWORD *dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *ProcessInput)(
-        IMediaObject *This,
-        DWORD dwInputStreamIndex,
-        IMediaBuffer *pBuffer,
-        DWORD dwFlags,
-        REFERENCE_TIME rtTimestamp,
-        REFERENCE_TIME rtTimelength);
+                     IMediaObject *This,
+                     DWORD dwInputStreamIndex,
+                     IMediaBuffer *pBuffer,
+                     DWORD dwFlags,
+                     REFERENCE_TIME rtTimestamp,
+                     REFERENCE_TIME rtTimelength);
 
     HRESULT (STDMETHODCALLTYPE *ProcessOutput)(
-        IMediaObject *This,
-        DWORD dwFlags,
-        DWORD cOutputBufferCount,
-        DMO_OUTPUT_DATA_BUFFER *pOutputBuffers,
-        DWORD *pdwStatus);
+                     IMediaObject *This,
+                     DWORD dwFlags,
+                     DWORD cOutputBufferCount,
+                     DMO_OUTPUT_DATA_BUFFER *pOutputBuffers,
+                     DWORD *pdwStatus);
 
     HRESULT (STDMETHODCALLTYPE *Lock)(
-        IMediaObject *This,
-        LONG bLock);
+                     IMediaObject *This,
+                     LONG bLock);
 
     END_INTERFACE
 } IMediaObjectVtbl;
@@ -697,16 +697,16 @@ MIDL_INTERFACE("651b9ad0-0fc7-4aa9-9538-d89931010741")
 IMediaObjectInPlace : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Process(
-        ULONG ulSize,
-        BYTE *pData,
-        REFERENCE_TIME refTimeStart,
-        DWORD dwFlags) = 0;
+                     ULONG ulSize,
+                     BYTE *pData,
+                     REFERENCE_TIME refTimeStart,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IMediaObjectInPlace **ppMediaObject) = 0;
+                     IMediaObjectInPlace **ppMediaObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLatency(
-        REFERENCE_TIME *pLatencyTime) = 0;
+                     REFERENCE_TIME *pLatencyTime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -718,31 +718,31 @@ typedef struct IMediaObjectInPlaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaObjectInPlace *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaObjectInPlace *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaObjectInPlace *This);
+                     IMediaObjectInPlace *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaObjectInPlace *This);
+                     IMediaObjectInPlace *This);
 
     /*** IMediaObjectInPlace methods ***/
     HRESULT (STDMETHODCALLTYPE *Process)(
-        IMediaObjectInPlace *This,
-        ULONG ulSize,
-        BYTE *pData,
-        REFERENCE_TIME refTimeStart,
-        DWORD dwFlags);
+                     IMediaObjectInPlace *This,
+                     ULONG ulSize,
+                     BYTE *pData,
+                     REFERENCE_TIME refTimeStart,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMediaObjectInPlace *This,
-        IMediaObjectInPlace **ppMediaObject);
+                     IMediaObjectInPlace *This,
+                     IMediaObjectInPlace **ppMediaObject);
 
     HRESULT (STDMETHODCALLTYPE *GetLatency)(
-        IMediaObjectInPlace *This,
-        REFERENCE_TIME *pLatencyTime);
+                     IMediaObjectInPlace *This,
+                     REFERENCE_TIME *pLatencyTime);
 
     END_INTERFACE
 } IMediaObjectInPlaceVtbl;
@@ -805,13 +805,13 @@ MIDL_INTERFACE("65abea96-cf36-453f-af8a-705e98f16260")
 IDMOQualityControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetNow(
-        REFERENCE_TIME now) = 0;
+                     REFERENCE_TIME now) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStatus(
-        DWORD flags) = 0;
+                     DWORD flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        DWORD *flags) = 0;
+                     DWORD *flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -823,28 +823,28 @@ typedef struct IDMOQualityControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDMOQualityControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDMOQualityControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDMOQualityControl *This);
+                     IDMOQualityControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDMOQualityControl *This);
+                     IDMOQualityControl *This);
 
     /*** IDMOQualityControl methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNow)(
-        IDMOQualityControl *This,
-        REFERENCE_TIME now);
+                     IDMOQualityControl *This,
+                     REFERENCE_TIME now);
 
     HRESULT (STDMETHODCALLTYPE *SetStatus)(
-        IDMOQualityControl *This,
-        DWORD flags);
+                     IDMOQualityControl *This,
+                     DWORD flags);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IDMOQualityControl *This,
-        DWORD *flags);
+                     IDMOQualityControl *This,
+                     DWORD *flags);
 
     END_INTERFACE
 } IDMOQualityControlVtbl;
@@ -907,20 +907,20 @@ MIDL_INTERFACE("be8f4f4e-5b16-4d29-b350-7f6b5d9298ac")
 IDMOVideoOutputOptimizations : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryOperationModePreferences(
-        ULONG index,
-        DWORD *flags) = 0;
+                     ULONG index,
+                     DWORD *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOperationMode(
-        ULONG index,
-        DWORD flags) = 0;
+                     ULONG index,
+                     DWORD flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentOperationMode(
-        ULONG index,
-        DWORD *flags) = 0;
+                     ULONG index,
+                     DWORD *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentSampleRequirements(
-        ULONG index,
-        DWORD *flags) = 0;
+                     ULONG index,
+                     DWORD *flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -932,36 +932,36 @@ typedef struct IDMOVideoOutputOptimizationsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDMOVideoOutputOptimizations *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDMOVideoOutputOptimizations *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDMOVideoOutputOptimizations *This);
+                     IDMOVideoOutputOptimizations *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDMOVideoOutputOptimizations *This);
+                     IDMOVideoOutputOptimizations *This);
 
     /*** IDMOVideoOutputOptimizations methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryOperationModePreferences)(
-        IDMOVideoOutputOptimizations *This,
-        ULONG index,
-        DWORD *flags);
+                     IDMOVideoOutputOptimizations *This,
+                     ULONG index,
+                     DWORD *flags);
 
     HRESULT (STDMETHODCALLTYPE *SetOperationMode)(
-        IDMOVideoOutputOptimizations *This,
-        ULONG index,
-        DWORD flags);
+                     IDMOVideoOutputOptimizations *This,
+                     ULONG index,
+                     DWORD flags);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentOperationMode)(
-        IDMOVideoOutputOptimizations *This,
-        ULONG index,
-        DWORD *flags);
+                     IDMOVideoOutputOptimizations *This,
+                     ULONG index,
+                     DWORD *flags);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSampleRequirements)(
-        IDMOVideoOutputOptimizations *This,
-        ULONG index,
-        DWORD *flags);
+                     IDMOVideoOutputOptimizations *This,
+                     ULONG index,
+                     DWORD *flags);
 
     END_INTERFACE
 } IDMOVideoOutputOptimizationsVtbl;

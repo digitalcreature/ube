@@ -173,7 +173,7 @@ template <class _Tp>
 __thread_specific_ptr<_Tp>::__thread_specific_ptr()
 {
   int __ec =
-      __libcpp_tls_create(&__key_, &__thread_specific_ptr::__at_thread_exit);
+                   __libcpp_tls_create(&__key_, &__thread_specific_ptr::__at_thread_exit);
   if (__ec)
     __throw_system_error(__ec, "__thread_specific_ptr construction failed");
 }
@@ -192,7 +192,7 @@ void
 __thread_specific_ptr<_Tp>::set_pointer(pointer __p)
 {
     _LIBCPP_ASSERT(get() == nullptr,
-                   "Attempting to overwrite thread local data");
+                                                          "Attempting to overwrite thread local data");
     __libcpp_tls_set(__key_, __p);
 }
 
@@ -203,7 +203,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<__thread_id>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(__thread_id __v) const _NOEXCEPT
     {
-        return hash<__libcpp_thread_id>()(__v.__id_);
+                     return hash<__libcpp_thread_id>()(__v.__id_);
     }
 };
 
@@ -227,13 +227,13 @@ public:
     thread() _NOEXCEPT : __t_(_LIBCPP_NULL_THREAD) {}
 #ifndef _LIBCPP_CXX03_LANG
     template <class _Fp, class ..._Args,
-              class = typename enable_if
-              <
-                   !is_same<typename __uncvref<_Fp>::type, thread>::value
-              >::type
-             >
-        _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
-        explicit thread(_Fp&& __f, _Args&&... __args);
+                                        class = typename enable_if
+                                        <
+                                                          !is_same<typename __uncvref<_Fp>::type, thread>::value
+                                        >::type
+                                       >
+                     _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
+                     explicit thread(_Fp&& __f, _Args&&... __args);
 #else  // _LIBCPP_CXX03_LANG
     template <class _Fp>
     _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
@@ -243,16 +243,16 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     thread(thread&& __t) _NOEXCEPT : __t_(__t.__t_) {
-        __t.__t_ = _LIBCPP_NULL_THREAD;
+                     __t.__t_ = _LIBCPP_NULL_THREAD;
     }
 
     _LIBCPP_INLINE_VISIBILITY
     thread& operator=(thread&& __t) _NOEXCEPT {
-        if (!__libcpp_thread_isnull(&__t_))
-            terminate();
-        __t_ = __t.__t_;
-        __t.__t_ = _LIBCPP_NULL_THREAD;
-        return *this;
+                     if (!__libcpp_thread_isnull(&__t_))
+                                      terminate();
+                     __t_ = __t.__t_;
+                     __t.__t_ = _LIBCPP_NULL_THREAD;
+                     return *this;
     }
 
     _LIBCPP_INLINE_VISIBILITY
@@ -293,22 +293,22 @@ void* __thread_proxy(void* __vp)
 }
 
 template <class _Fp, class ..._Args,
-          class
-         >
+                       class
+                      >
 thread::thread(_Fp&& __f, _Args&&... __args)
 {
     typedef unique_ptr<__thread_struct> _TSPtr;
     _TSPtr __tsp(new __thread_struct);
     typedef tuple<_TSPtr, typename decay<_Fp>::type, typename decay<_Args>::type...> _Gp;
     _VSTD::unique_ptr<_Gp> __p(
-            new _Gp(std::move(__tsp),
-                    __decay_copy(_VSTD::forward<_Fp>(__f)),
-                    __decay_copy(_VSTD::forward<_Args>(__args))...));
+                                      new _Gp(std::move(__tsp),
+                                                           __decay_copy(_VSTD::forward<_Fp>(__f)),
+                                                           __decay_copy(_VSTD::forward<_Args>(__args))...));
     int __ec = __libcpp_thread_create(&__t_, &__thread_proxy<_Gp>, __p.get());
     if (__ec == 0)
-        __p.release();
+                     __p.release();
     else
-        __throw_system_error(__ec, "thread constructor failed");
+                     __throw_system_error(__ec, "thread constructor failed");
 }
 
 #else  // _LIBCPP_CXX03_LANG
@@ -341,9 +341,9 @@ thread::thread(_Fp __f)
     _PairPtr __pp(new _InvokePair(__f));
     int __ec = __libcpp_thread_create(&__t_, &__thread_proxy_cxx03<_InvokePair>, __pp.get());
     if (__ec == 0)
-        __pp.release();
+                     __pp.release();
     else
-        __throw_system_error(__ec, "thread constructor failed");
+                     __throw_system_error(__ec, "thread constructor failed");
 }
 
 #endif  // _LIBCPP_CXX03_LANG
@@ -365,20 +365,20 @@ sleep_for(const chrono::duration<_Rep, _Period>& __d)
     {
 #if defined(_LIBCPP_COMPILER_GCC) && (__powerpc__ || __POWERPC__)
     //  GCC's long double const folding is incomplete for IBM128 long doubles.
-        _LIBCPP_CONSTEXPR duration<long double> _Max = duration<long double>(ULLONG_MAX/1000000000ULL) ;
+                     _LIBCPP_CONSTEXPR duration<long double> _Max = duration<long double>(ULLONG_MAX/1000000000ULL) ;
 #else
-        _LIBCPP_CONSTEXPR duration<long double> _Max = nanoseconds::max();
+                     _LIBCPP_CONSTEXPR duration<long double> _Max = nanoseconds::max();
 #endif
-        nanoseconds __ns;
-        if (__d < _Max)
-        {
-            __ns = duration_cast<nanoseconds>(__d);
-            if (__ns < __d)
-                ++__ns;
-        }
-        else
-            __ns = nanoseconds::max();
-        sleep_for(__ns);
+                     nanoseconds __ns;
+                     if (__d < _Max)
+                     {
+                                      __ns = duration_cast<nanoseconds>(__d);
+                                      if (__ns < __d)
+                                          ++__ns;
+                     }
+                     else
+                                      __ns = nanoseconds::max();
+                     sleep_for(__ns);
     }
 }
 
@@ -391,7 +391,7 @@ sleep_until(const chrono::time_point<_Clock, _Duration>& __t)
     condition_variable __cv;
     unique_lock<mutex> __lk(__mut);
     while (_Clock::now() < __t)
-        __cv.wait_until(__lk, __t);
+                     __cv.wait_until(__lk, __t);
 }
 
 template <class _Duration>

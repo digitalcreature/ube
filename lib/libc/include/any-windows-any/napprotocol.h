@@ -81,24 +81,24 @@ typedef enum tagHealthClassValue {
 typedef union tagSoHAttributeValue {
     SystemHealthEntityId idVal;
     struct tagIpv4Addresses {
-        UINT16 count;
-        Ipv4Address *addresses;
+                     UINT16 count;
+                     Ipv4Address *addresses;
     } v4AddressesVal;
     struct tagIpv6Addresses {
-        UINT16 count;
-        Ipv6Address *addresses;
+                     UINT16 count;
+                     Ipv6Address *addresses;
     } v6AddressesVal;
     ResultCodes codesVal;
     FILETIME dateTimeVal;
     struct tagVendorSpecific {
-        UINT32 vendorId;
-        UINT16 size;
-        BYTE *vendorSpecificData;
+                     UINT32 vendorId;
+                     UINT16 size;
+                     BYTE *vendorSpecificData;
     } vendorSpecificVal;
     UINT8 uint8Val;
     struct tagOctetString {
-        UINT16 size;
-        BYTE *data;
+                     UINT16 size;
+                     BYTE *data;
     } octetStringVal;
 } SoHAttributeValue;
 
@@ -116,19 +116,19 @@ MIDL_INTERFACE("35298344-96a6-45e7-9b6b-62ecc6e09920")
 INapSoHConstructor : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        SystemHealthEntityId id,
-        WINBOOL isRequest) = 0;
+                     SystemHealthEntityId id,
+                     WINBOOL isRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AppendAttribute(
-        SoHAttributeType type,
-        const SoHAttributeValue *value) = 0;
+                     SoHAttributeType type,
+                     const SoHAttributeValue *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSoH(
-        SoH **soh) = 0;
+                     SoH **soh) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Validate(
-        const SoH *soh,
-        WINBOOL isRequest) = 0;
+                     const SoH *soh,
+                     WINBOOL isRequest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -140,35 +140,35 @@ typedef struct INapSoHConstructorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSoHConstructor *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSoHConstructor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSoHConstructor *This);
+                     INapSoHConstructor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSoHConstructor *This);
+                     INapSoHConstructor *This);
 
     /*** INapSoHConstructor methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INapSoHConstructor *This,
-        SystemHealthEntityId id,
-        WINBOOL isRequest);
+                     INapSoHConstructor *This,
+                     SystemHealthEntityId id,
+                     WINBOOL isRequest);
 
     HRESULT (STDMETHODCALLTYPE *AppendAttribute)(
-        INapSoHConstructor *This,
-        SoHAttributeType type,
-        const SoHAttributeValue *value);
+                     INapSoHConstructor *This,
+                     SoHAttributeType type,
+                     const SoHAttributeValue *value);
 
     HRESULT (STDMETHODCALLTYPE *GetSoH)(
-        INapSoHConstructor *This,
-        SoH **soh);
+                     INapSoHConstructor *This,
+                     SoH **soh);
 
     HRESULT (STDMETHODCALLTYPE *Validate)(
-        INapSoHConstructor *This,
-        const SoH *soh,
-        WINBOOL isRequest);
+                     INapSoHConstructor *This,
+                     const SoH *soh,
+                     WINBOOL isRequest);
 
     END_INTERFACE
 } INapSoHConstructorVtbl;
@@ -232,22 +232,22 @@ MIDL_INTERFACE("fb2fa8b0-2cd5-457d-aba8-4376f63ea1c0")
 INapSoHProcessor : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        const SoH *soh,
-        WINBOOL isRequest,
-        SystemHealthEntityId *id) = 0;
+                     const SoH *soh,
+                     WINBOOL isRequest,
+                     SystemHealthEntityId *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindNextAttribute(
-        UINT16 fromLocation,
-        SoHAttributeType type,
-        UINT16 *attributeLocation) = 0;
+                     UINT16 fromLocation,
+                     SoHAttributeType type,
+                     UINT16 *attributeLocation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAttribute(
-        UINT16 attributeLocation,
-        SoHAttributeType *type,
-        SoHAttributeValue **value) = 0;
+                     UINT16 attributeLocation,
+                     SoHAttributeType *type,
+                     SoHAttributeValue **value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfAttributes(
-        UINT16 *attributeCount) = 0;
+                     UINT16 *attributeCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -259,38 +259,38 @@ typedef struct INapSoHProcessorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSoHProcessor *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSoHProcessor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSoHProcessor *This);
+                     INapSoHProcessor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSoHProcessor *This);
+                     INapSoHProcessor *This);
 
     /*** INapSoHProcessor methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INapSoHProcessor *This,
-        const SoH *soh,
-        WINBOOL isRequest,
-        SystemHealthEntityId *id);
+                     INapSoHProcessor *This,
+                     const SoH *soh,
+                     WINBOOL isRequest,
+                     SystemHealthEntityId *id);
 
     HRESULT (STDMETHODCALLTYPE *FindNextAttribute)(
-        INapSoHProcessor *This,
-        UINT16 fromLocation,
-        SoHAttributeType type,
-        UINT16 *attributeLocation);
+                     INapSoHProcessor *This,
+                     UINT16 fromLocation,
+                     SoHAttributeType type,
+                     UINT16 *attributeLocation);
 
     HRESULT (STDMETHODCALLTYPE *GetAttribute)(
-        INapSoHProcessor *This,
-        UINT16 attributeLocation,
-        SoHAttributeType *type,
-        SoHAttributeValue **value);
+                     INapSoHProcessor *This,
+                     UINT16 attributeLocation,
+                     SoHAttributeType *type,
+                     SoHAttributeValue **value);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfAttributes)(
-        INapSoHProcessor *This,
-        UINT16 *attributeCount);
+                     INapSoHProcessor *This,
+                     UINT16 *attributeCount);
 
     END_INTERFACE
 } INapSoHProcessorVtbl;

@@ -34,6 +34,6 @@
 #endif
 
 #define __WNOTHREAD     0x20000000 /* Don't wait on children of other threads
-				      in this group */
+				                   in this group */
 #define __WALL		0x40000000 /* Wait for any child.  */
 #define __WCLONE	0x80000000 /* Wait for cloned process.  */

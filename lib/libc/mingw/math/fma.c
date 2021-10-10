@@ -64,29 +64,29 @@ double fma(double x, double y, double z) {
     POSIX-2013:
     1. If x or y are NaN, a NaN shall be returned.
     2. If x multiplied by y is an exact infinity and z is also an infinity
-       but with the opposite sign, a domain error shall occur, and either a NaN
-       (if supported), or an implementation-defined value shall be returned.
+                    but with the opposite sign, a domain error shall occur, and either a NaN
+                    (if supported), or an implementation-defined value shall be returned.
     3. If one of x and y is infinite, the other is zero, and z is not a NaN,
-       a domain error shall occur, and either a NaN (if supported), or an
-       implementation-defined value shall be returned.
+                    a domain error shall occur, and either a NaN (if supported), or an
+                    implementation-defined value shall be returned.
     4. If one of x and y is infinite, the other is zero, and z is a NaN, a NaN
-       shall be returned and a domain error may occur.
+                    shall be returned and a domain error may occur.
     5. If x* y is not 0*Inf nor Inf*0 and z is a NaN, a NaN shall be returned.
   */
   /* Check whether the result is finite. */
   double ret = x * y + z;
   if(!isfinite(ret)) {
     return ret; /* If this naive check doesn't yield a finite value, the FMA isn't
-                   likely to return one either. Forward the value as is. */
+                                                          likely to return one either. Forward the value as is. */
   }
   iec559_double xlo, xhi, ylo, yhi;
   break_down(&xlo, &xhi, x);
   break_down(&ylo, &yhi, y);
   /* The order of these four statements is essential. Don't move them around. */
   ret = z;
-  ret += xhi.f * yhi.f;                 /* The most significant item comes first. */
+  ret += xhi.f * yhi.f;                                           /* The most significant item comes first. */
   ret += xhi.f * ylo.f + xlo.f * yhi.f; /* They are equally significant. */
-  ret += xlo.f * ylo.f;                 /* The least significant item comes last. */
+  ret += xlo.f * ylo.f;                                           /* The least significant item comes last. */
   return ret;
 }
 

@@ -145,33 +145,33 @@ MIDL_INTERFACE("56a868b1-0ad4-11ce-b03a-0020af0ba770")
 IMediaControl : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE Run(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        LONG msTimeout,
-        OAFilterState *pfs) = 0;
+                     LONG msTimeout,
+                     OAFilterState *pfs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenderFile(
-        BSTR strFilename) = 0;
+                     BSTR strFilename) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSourceFilter(
-        BSTR strFilename,
-        IDispatch **ppUnk) = 0;
+                     BSTR strFilename,
+                     IDispatch **ppUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FilterCollection(
-        IDispatch **ppUnk) = 0;
+                     IDispatch **ppUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RegFilterCollection(
-        IDispatch **ppUnk) = 0;
+                     IDispatch **ppUnk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopWhenReady(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -183,80 +183,80 @@ typedef struct IMediaControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMediaControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMediaControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMediaControl *This);
+                     IMediaControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMediaControl *This);
+                     IMediaControl *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IMediaControl *This,
-        UINT *pctinfo);
+                     IMediaControl *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IMediaControl *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IMediaControl *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IMediaControl *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IMediaControl *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IMediaControl *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IMediaControl *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IMediaControl methods ***/
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IMediaControl *This);
+                     IMediaControl *This);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IMediaControl *This);
+                     IMediaControl *This);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IMediaControl *This);
+                     IMediaControl *This);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IMediaControl *This,
-        LONG msTimeout,
-        OAFilterState *pfs);
+                     IMediaControl *This,
+                     LONG msTimeout,
+                     OAFilterState *pfs);
 
     HRESULT (STDMETHODCALLTYPE *RenderFile)(
-        IMediaControl *This,
-        BSTR strFilename);
+                     IMediaControl *This,
+                     BSTR strFilename);
 
     HRESULT (STDMETHODCALLTYPE *AddSourceFilter)(
-        IMediaControl *This,
-        BSTR strFilename,
-        IDispatch **ppUnk);
+                     IMediaControl *This,
+                     BSTR strFilename,
+                     IDispatch **ppUnk);
 
     HRESULT (STDMETHODCALLTYPE *get_FilterCollection)(
-        IMediaControl *This,
-        IDispatch **ppUnk);
+                     IMediaControl *This,
+                     IDispatch **ppUnk);
 
     HRESULT (STDMETHODCALLTYPE *get_RegFilterCollection)(
-        IMediaControl *This,
-        IDispatch **ppUnk);
+                     IMediaControl *This,
+                     IDispatch **ppUnk);
 
     HRESULT (STDMETHODCALLTYPE *StopWhenReady)(
-        IMediaControl *This);
+                     IMediaControl *This);
 
     END_INTERFACE
 } IMediaControlVtbl;
@@ -359,16 +359,16 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IAMCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMCollection *This);
-      ULONG (WINAPI *Release)(IAMCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAMCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAMCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAMCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAMCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IAMCollection *This,LONG *plCount);
-      HRESULT (WINAPI *Item)(IAMCollection *This,__LONG32 lItem,IUnknown **ppUnk);
-      HRESULT (WINAPI *get__NewEnum)(IAMCollection *This,IUnknown **ppUnk);
+                   HRESULT (WINAPI *QueryInterface)(IAMCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMCollection *This);
+                   ULONG (WINAPI *Release)(IAMCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAMCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAMCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAMCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAMCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IAMCollection *This,LONG *plCount);
+                   HRESULT (WINAPI *Item)(IAMCollection *This,__LONG32 lItem,IUnknown **ppUnk);
+                   HRESULT (WINAPI *get__NewEnum)(IAMCollection *This,IUnknown **ppUnk);
     END_INTERFACE
   } IAMCollectionVtbl;
   struct IAMCollection {
@@ -410,19 +410,19 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IMediaEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMediaEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMediaEvent *This);
-      ULONG (WINAPI *Release)(IMediaEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMediaEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMediaEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMediaEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMediaEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetEventHandle)(IMediaEvent *This,OAEVENT *hEvent);
-      HRESULT (WINAPI *GetEvent)(IMediaEvent *This,__LONG32 *lEventCode,LONG_PTR *lParam1,LONG_PTR *lParam2,__LONG32 msTimeout);
-      HRESULT (WINAPI *WaitForCompletion)(IMediaEvent *This,__LONG32 msTimeout,__LONG32 *pEvCode);
-      HRESULT (WINAPI *CancelDefaultHandling)(IMediaEvent *This,__LONG32 lEvCode);
-      HRESULT (WINAPI *RestoreDefaultHandling)(IMediaEvent *This,__LONG32 lEvCode);
-      HRESULT (WINAPI *FreeEventParams)(IMediaEvent *This,__LONG32 lEvCode,LONG_PTR lParam1,LONG_PTR lParam2);
+                   HRESULT (WINAPI *QueryInterface)(IMediaEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMediaEvent *This);
+                   ULONG (WINAPI *Release)(IMediaEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMediaEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMediaEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMediaEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMediaEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetEventHandle)(IMediaEvent *This,OAEVENT *hEvent);
+                   HRESULT (WINAPI *GetEvent)(IMediaEvent *This,__LONG32 *lEventCode,LONG_PTR *lParam1,LONG_PTR *lParam2,__LONG32 msTimeout);
+                   HRESULT (WINAPI *WaitForCompletion)(IMediaEvent *This,__LONG32 msTimeout,__LONG32 *pEvCode);
+                   HRESULT (WINAPI *CancelDefaultHandling)(IMediaEvent *This,__LONG32 lEvCode);
+                   HRESULT (WINAPI *RestoreDefaultHandling)(IMediaEvent *This,__LONG32 lEvCode);
+                   HRESULT (WINAPI *FreeEventParams)(IMediaEvent *This,__LONG32 lEvCode,LONG_PTR lParam1,LONG_PTR lParam2);
     END_INTERFACE
   } IMediaEventVtbl;
   struct IMediaEvent {
@@ -471,22 +471,22 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IMediaEventExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMediaEventEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMediaEventEx *This);
-      ULONG (WINAPI *Release)(IMediaEventEx *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMediaEventEx *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMediaEventEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMediaEventEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMediaEventEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetEventHandle)(IMediaEventEx *This,OAEVENT *hEvent);
-      HRESULT (WINAPI *GetEvent)(IMediaEventEx *This,__LONG32 *lEventCode,LONG_PTR *lParam1,LONG_PTR *lParam2,__LONG32 msTimeout);
-      HRESULT (WINAPI *WaitForCompletion)(IMediaEventEx *This,__LONG32 msTimeout,__LONG32 *pEvCode);
-      HRESULT (WINAPI *CancelDefaultHandling)(IMediaEventEx *This,__LONG32 lEvCode);
-      HRESULT (WINAPI *RestoreDefaultHandling)(IMediaEventEx *This,__LONG32 lEvCode);
-      HRESULT (WINAPI *FreeEventParams)(IMediaEventEx *This,__LONG32 lEvCode,LONG_PTR lParam1,LONG_PTR lParam2);
-      HRESULT (WINAPI *SetNotifyWindow)(IMediaEventEx *This,OAHWND hwnd,__LONG32 lMsg,LONG_PTR lInstanceData);
-      HRESULT (WINAPI *SetNotifyFlags)(IMediaEventEx *This,__LONG32 lNoNotifyFlags);
-      HRESULT (WINAPI *GetNotifyFlags)(IMediaEventEx *This,__LONG32 *lplNoNotifyFlags);
+                   HRESULT (WINAPI *QueryInterface)(IMediaEventEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMediaEventEx *This);
+                   ULONG (WINAPI *Release)(IMediaEventEx *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMediaEventEx *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMediaEventEx *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMediaEventEx *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMediaEventEx *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetEventHandle)(IMediaEventEx *This,OAEVENT *hEvent);
+                   HRESULT (WINAPI *GetEvent)(IMediaEventEx *This,__LONG32 *lEventCode,LONG_PTR *lParam1,LONG_PTR *lParam2,__LONG32 msTimeout);
+                   HRESULT (WINAPI *WaitForCompletion)(IMediaEventEx *This,__LONG32 msTimeout,__LONG32 *pEvCode);
+                   HRESULT (WINAPI *CancelDefaultHandling)(IMediaEventEx *This,__LONG32 lEvCode);
+                   HRESULT (WINAPI *RestoreDefaultHandling)(IMediaEventEx *This,__LONG32 lEvCode);
+                   HRESULT (WINAPI *FreeEventParams)(IMediaEventEx *This,__LONG32 lEvCode,LONG_PTR lParam1,LONG_PTR lParam2);
+                   HRESULT (WINAPI *SetNotifyWindow)(IMediaEventEx *This,OAHWND hwnd,__LONG32 lMsg,LONG_PTR lInstanceData);
+                   HRESULT (WINAPI *SetNotifyFlags)(IMediaEventEx *This,__LONG32 lNoNotifyFlags);
+                   HRESULT (WINAPI *GetNotifyFlags)(IMediaEventEx *This,__LONG32 *lplNoNotifyFlags);
     END_INTERFACE
   } IMediaEventExVtbl;
   struct IMediaEventEx {
@@ -540,24 +540,24 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IMediaPositionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMediaPosition *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMediaPosition *This);
-      ULONG (WINAPI *Release)(IMediaPosition *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMediaPosition *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMediaPosition *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMediaPosition *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMediaPosition *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Duration)(IMediaPosition *This,REFTIME *plength);
-      HRESULT (WINAPI *put_CurrentPosition)(IMediaPosition *This,REFTIME llTime);
-      HRESULT (WINAPI *get_CurrentPosition)(IMediaPosition *This,REFTIME *pllTime);
-      HRESULT (WINAPI *get_StopTime)(IMediaPosition *This,REFTIME *pllTime);
-      HRESULT (WINAPI *put_StopTime)(IMediaPosition *This,REFTIME llTime);
-      HRESULT (WINAPI *get_PrerollTime)(IMediaPosition *This,REFTIME *pllTime);
-      HRESULT (WINAPI *put_PrerollTime)(IMediaPosition *This,REFTIME llTime);
-      HRESULT (WINAPI *put_Rate)(IMediaPosition *This,double dRate);
-      HRESULT (WINAPI *get_Rate)(IMediaPosition *This,double *pdRate);
-      HRESULT (WINAPI *CanSeekForward)(IMediaPosition *This,LONG *pCanSeekForward);
-      HRESULT (WINAPI *CanSeekBackward)(IMediaPosition *This,LONG *pCanSeekBackward);
+                   HRESULT (WINAPI *QueryInterface)(IMediaPosition *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMediaPosition *This);
+                   ULONG (WINAPI *Release)(IMediaPosition *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMediaPosition *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMediaPosition *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMediaPosition *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMediaPosition *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Duration)(IMediaPosition *This,REFTIME *plength);
+                   HRESULT (WINAPI *put_CurrentPosition)(IMediaPosition *This,REFTIME llTime);
+                   HRESULT (WINAPI *get_CurrentPosition)(IMediaPosition *This,REFTIME *pllTime);
+                   HRESULT (WINAPI *get_StopTime)(IMediaPosition *This,REFTIME *pllTime);
+                   HRESULT (WINAPI *put_StopTime)(IMediaPosition *This,REFTIME llTime);
+                   HRESULT (WINAPI *get_PrerollTime)(IMediaPosition *This,REFTIME *pllTime);
+                   HRESULT (WINAPI *put_PrerollTime)(IMediaPosition *This,REFTIME llTime);
+                   HRESULT (WINAPI *put_Rate)(IMediaPosition *This,double dRate);
+                   HRESULT (WINAPI *get_Rate)(IMediaPosition *This,double *pdRate);
+                   HRESULT (WINAPI *CanSeekForward)(IMediaPosition *This,LONG *pCanSeekForward);
+                   HRESULT (WINAPI *CanSeekBackward)(IMediaPosition *This,LONG *pCanSeekBackward);
     END_INTERFACE
   } IMediaPositionVtbl;
   struct IMediaPosition {
@@ -622,17 +622,17 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IBasicAudioVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBasicAudio *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBasicAudio *This);
-      ULONG (WINAPI *Release)(IBasicAudio *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IBasicAudio *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IBasicAudio *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IBasicAudio *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IBasicAudio *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_Volume)(IBasicAudio *This,__LONG32 lVolume);
-      HRESULT (WINAPI *get_Volume)(IBasicAudio *This,__LONG32 *plVolume);
-      HRESULT (WINAPI *put_Balance)(IBasicAudio *This,__LONG32 lBalance);
-      HRESULT (WINAPI *get_Balance)(IBasicAudio *This,__LONG32 *plBalance);
+                   HRESULT (WINAPI *QueryInterface)(IBasicAudio *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBasicAudio *This);
+                   ULONG (WINAPI *Release)(IBasicAudio *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IBasicAudio *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IBasicAudio *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IBasicAudio *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IBasicAudio *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_Volume)(IBasicAudio *This,__LONG32 lVolume);
+                   HRESULT (WINAPI *get_Volume)(IBasicAudio *This,__LONG32 *plVolume);
+                   HRESULT (WINAPI *put_Balance)(IBasicAudio *This,__LONG32 lBalance);
+                   HRESULT (WINAPI *get_Balance)(IBasicAudio *This,__LONG32 *plBalance);
     END_INTERFACE
   } IBasicAudioVtbl;
   struct IBasicAudio {
@@ -711,52 +711,52 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IVideoWindowVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IVideoWindow *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IVideoWindow *This);
-      ULONG (WINAPI *Release)(IVideoWindow *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IVideoWindow *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IVideoWindow *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IVideoWindow *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IVideoWindow *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_Caption)(IVideoWindow *This,BSTR strCaption);
-      HRESULT (WINAPI *get_Caption)(IVideoWindow *This,BSTR *strCaption);
-      HRESULT (WINAPI *put_WindowStyle)(IVideoWindow *This,__LONG32 WindowStyle);
-      HRESULT (WINAPI *get_WindowStyle)(IVideoWindow *This,__LONG32 *WindowStyle);
-      HRESULT (WINAPI *put_WindowStyleEx)(IVideoWindow *This,__LONG32 WindowStyleEx);
-      HRESULT (WINAPI *get_WindowStyleEx)(IVideoWindow *This,__LONG32 *WindowStyleEx);
-      HRESULT (WINAPI *put_AutoShow)(IVideoWindow *This,__LONG32 AutoShow);
-      HRESULT (WINAPI *get_AutoShow)(IVideoWindow *This,__LONG32 *AutoShow);
-      HRESULT (WINAPI *put_WindowState)(IVideoWindow *This,__LONG32 WindowState);
-      HRESULT (WINAPI *get_WindowState)(IVideoWindow *This,__LONG32 *WindowState);
-      HRESULT (WINAPI *put_BackgroundPalette)(IVideoWindow *This,__LONG32 BackgroundPalette);
-      HRESULT (WINAPI *get_BackgroundPalette)(IVideoWindow *This,__LONG32 *pBackgroundPalette);
-      HRESULT (WINAPI *put_Visible)(IVideoWindow *This,__LONG32 Visible);
-      HRESULT (WINAPI *get_Visible)(IVideoWindow *This,__LONG32 *pVisible);
-      HRESULT (WINAPI *put_Left)(IVideoWindow *This,__LONG32 Left);
-      HRESULT (WINAPI *get_Left)(IVideoWindow *This,__LONG32 *pLeft);
-      HRESULT (WINAPI *put_Width)(IVideoWindow *This,__LONG32 Width);
-      HRESULT (WINAPI *get_Width)(IVideoWindow *This,__LONG32 *pWidth);
-      HRESULT (WINAPI *put_Top)(IVideoWindow *This,__LONG32 Top);
-      HRESULT (WINAPI *get_Top)(IVideoWindow *This,__LONG32 *pTop);
-      HRESULT (WINAPI *put_Height)(IVideoWindow *This,__LONG32 Height);
-      HRESULT (WINAPI *get_Height)(IVideoWindow *This,__LONG32 *pHeight);
-      HRESULT (WINAPI *put_Owner)(IVideoWindow *This,OAHWND Owner);
-      HRESULT (WINAPI *get_Owner)(IVideoWindow *This,OAHWND *Owner);
-      HRESULT (WINAPI *put_MessageDrain)(IVideoWindow *This,OAHWND Drain);
-      HRESULT (WINAPI *get_MessageDrain)(IVideoWindow *This,OAHWND *Drain);
-      HRESULT (WINAPI *get_BorderColor)(IVideoWindow *This,__LONG32 *Color);
-      HRESULT (WINAPI *put_BorderColor)(IVideoWindow *This,__LONG32 Color);
-      HRESULT (WINAPI *get_FullScreenMode)(IVideoWindow *This,__LONG32 *FullScreenMode);
-      HRESULT (WINAPI *put_FullScreenMode)(IVideoWindow *This,__LONG32 FullScreenMode);
-      HRESULT (WINAPI *SetWindowForeground)(IVideoWindow *This,__LONG32 Focus);
-      HRESULT (WINAPI *NotifyOwnerMessage)(IVideoWindow *This,OAHWND hwnd,__LONG32 uMsg,LONG_PTR wParam,LONG_PTR lParam);
-      HRESULT (WINAPI *SetWindowPosition)(IVideoWindow *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
-      HRESULT (WINAPI *GetWindowPosition)(IVideoWindow *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *GetMinIdealImageSize)(IVideoWindow *This,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *GetMaxIdealImageSize)(IVideoWindow *This,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *GetRestorePosition)(IVideoWindow *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *HideCursor)(IVideoWindow *This,__LONG32 HideCursor);
-      HRESULT (WINAPI *IsCursorHidden)(IVideoWindow *This,__LONG32 *CursorHidden);
+                   HRESULT (WINAPI *QueryInterface)(IVideoWindow *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IVideoWindow *This);
+                   ULONG (WINAPI *Release)(IVideoWindow *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IVideoWindow *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IVideoWindow *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IVideoWindow *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IVideoWindow *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_Caption)(IVideoWindow *This,BSTR strCaption);
+                   HRESULT (WINAPI *get_Caption)(IVideoWindow *This,BSTR *strCaption);
+                   HRESULT (WINAPI *put_WindowStyle)(IVideoWindow *This,__LONG32 WindowStyle);
+                   HRESULT (WINAPI *get_WindowStyle)(IVideoWindow *This,__LONG32 *WindowStyle);
+                   HRESULT (WINAPI *put_WindowStyleEx)(IVideoWindow *This,__LONG32 WindowStyleEx);
+                   HRESULT (WINAPI *get_WindowStyleEx)(IVideoWindow *This,__LONG32 *WindowStyleEx);
+                   HRESULT (WINAPI *put_AutoShow)(IVideoWindow *This,__LONG32 AutoShow);
+                   HRESULT (WINAPI *get_AutoShow)(IVideoWindow *This,__LONG32 *AutoShow);
+                   HRESULT (WINAPI *put_WindowState)(IVideoWindow *This,__LONG32 WindowState);
+                   HRESULT (WINAPI *get_WindowState)(IVideoWindow *This,__LONG32 *WindowState);
+                   HRESULT (WINAPI *put_BackgroundPalette)(IVideoWindow *This,__LONG32 BackgroundPalette);
+                   HRESULT (WINAPI *get_BackgroundPalette)(IVideoWindow *This,__LONG32 *pBackgroundPalette);
+                   HRESULT (WINAPI *put_Visible)(IVideoWindow *This,__LONG32 Visible);
+                   HRESULT (WINAPI *get_Visible)(IVideoWindow *This,__LONG32 *pVisible);
+                   HRESULT (WINAPI *put_Left)(IVideoWindow *This,__LONG32 Left);
+                   HRESULT (WINAPI *get_Left)(IVideoWindow *This,__LONG32 *pLeft);
+                   HRESULT (WINAPI *put_Width)(IVideoWindow *This,__LONG32 Width);
+                   HRESULT (WINAPI *get_Width)(IVideoWindow *This,__LONG32 *pWidth);
+                   HRESULT (WINAPI *put_Top)(IVideoWindow *This,__LONG32 Top);
+                   HRESULT (WINAPI *get_Top)(IVideoWindow *This,__LONG32 *pTop);
+                   HRESULT (WINAPI *put_Height)(IVideoWindow *This,__LONG32 Height);
+                   HRESULT (WINAPI *get_Height)(IVideoWindow *This,__LONG32 *pHeight);
+                   HRESULT (WINAPI *put_Owner)(IVideoWindow *This,OAHWND Owner);
+                   HRESULT (WINAPI *get_Owner)(IVideoWindow *This,OAHWND *Owner);
+                   HRESULT (WINAPI *put_MessageDrain)(IVideoWindow *This,OAHWND Drain);
+                   HRESULT (WINAPI *get_MessageDrain)(IVideoWindow *This,OAHWND *Drain);
+                   HRESULT (WINAPI *get_BorderColor)(IVideoWindow *This,__LONG32 *Color);
+                   HRESULT (WINAPI *put_BorderColor)(IVideoWindow *This,__LONG32 Color);
+                   HRESULT (WINAPI *get_FullScreenMode)(IVideoWindow *This,__LONG32 *FullScreenMode);
+                   HRESULT (WINAPI *put_FullScreenMode)(IVideoWindow *This,__LONG32 FullScreenMode);
+                   HRESULT (WINAPI *SetWindowForeground)(IVideoWindow *This,__LONG32 Focus);
+                   HRESULT (WINAPI *NotifyOwnerMessage)(IVideoWindow *This,OAHWND hwnd,__LONG32 uMsg,LONG_PTR wParam,LONG_PTR lParam);
+                   HRESULT (WINAPI *SetWindowPosition)(IVideoWindow *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
+                   HRESULT (WINAPI *GetWindowPosition)(IVideoWindow *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *GetMinIdealImageSize)(IVideoWindow *This,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *GetMaxIdealImageSize)(IVideoWindow *This,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *GetRestorePosition)(IVideoWindow *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *HideCursor)(IVideoWindow *This,__LONG32 HideCursor);
+                   HRESULT (WINAPI *IsCursorHidden)(IVideoWindow *This,__LONG32 *CursorHidden);
     END_INTERFACE
   } IVideoWindowVtbl;
   struct IVideoWindow {
@@ -933,45 +933,45 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IBasicVideoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBasicVideo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBasicVideo *This);
-      ULONG (WINAPI *Release)(IBasicVideo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IBasicVideo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IBasicVideo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IBasicVideo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IBasicVideo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_AvgTimePerFrame)(IBasicVideo *This,REFTIME *pAvgTimePerFrame);
-      HRESULT (WINAPI *get_BitRate)(IBasicVideo *This,__LONG32 *pBitRate);
-      HRESULT (WINAPI *get_BitErrorRate)(IBasicVideo *This,__LONG32 *pBitErrorRate);
-      HRESULT (WINAPI *get_VideoWidth)(IBasicVideo *This,__LONG32 *pVideoWidth);
-      HRESULT (WINAPI *get_VideoHeight)(IBasicVideo *This,__LONG32 *pVideoHeight);
-      HRESULT (WINAPI *put_SourceLeft)(IBasicVideo *This,__LONG32 SourceLeft);
-      HRESULT (WINAPI *get_SourceLeft)(IBasicVideo *This,__LONG32 *pSourceLeft);
-      HRESULT (WINAPI *put_SourceWidth)(IBasicVideo *This,__LONG32 SourceWidth);
-      HRESULT (WINAPI *get_SourceWidth)(IBasicVideo *This,__LONG32 *pSourceWidth);
-      HRESULT (WINAPI *put_SourceTop)(IBasicVideo *This,__LONG32 SourceTop);
-      HRESULT (WINAPI *get_SourceTop)(IBasicVideo *This,__LONG32 *pSourceTop);
-      HRESULT (WINAPI *put_SourceHeight)(IBasicVideo *This,__LONG32 SourceHeight);
-      HRESULT (WINAPI *get_SourceHeight)(IBasicVideo *This,__LONG32 *pSourceHeight);
-      HRESULT (WINAPI *put_DestinationLeft)(IBasicVideo *This,__LONG32 DestinationLeft);
-      HRESULT (WINAPI *get_DestinationLeft)(IBasicVideo *This,__LONG32 *pDestinationLeft);
-      HRESULT (WINAPI *put_DestinationWidth)(IBasicVideo *This,__LONG32 DestinationWidth);
-      HRESULT (WINAPI *get_DestinationWidth)(IBasicVideo *This,__LONG32 *pDestinationWidth);
-      HRESULT (WINAPI *put_DestinationTop)(IBasicVideo *This,__LONG32 DestinationTop);
-      HRESULT (WINAPI *get_DestinationTop)(IBasicVideo *This,__LONG32 *pDestinationTop);
-      HRESULT (WINAPI *put_DestinationHeight)(IBasicVideo *This,__LONG32 DestinationHeight);
-      HRESULT (WINAPI *get_DestinationHeight)(IBasicVideo *This,__LONG32 *pDestinationHeight);
-      HRESULT (WINAPI *SetSourcePosition)(IBasicVideo *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
-      HRESULT (WINAPI *GetSourcePosition)(IBasicVideo *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *SetDefaultSourcePosition)(IBasicVideo *This);
-      HRESULT (WINAPI *SetDestinationPosition)(IBasicVideo *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
-      HRESULT (WINAPI *GetDestinationPosition)(IBasicVideo *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *SetDefaultDestinationPosition)(IBasicVideo *This);
-      HRESULT (WINAPI *GetVideoSize)(IBasicVideo *This,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *GetVideoPaletteEntries)(IBasicVideo *This,__LONG32 StartIndex,__LONG32 Entries,__LONG32 *pRetrieved,__LONG32 *pPalette);
-      HRESULT (WINAPI *GetCurrentImage)(IBasicVideo *This,__LONG32 *pBufferSize,__LONG32 *pDIBImage);
-      HRESULT (WINAPI *IsUsingDefaultSource)(IBasicVideo *This);
-      HRESULT (WINAPI *IsUsingDefaultDestination)(IBasicVideo *This);
+                   HRESULT (WINAPI *QueryInterface)(IBasicVideo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBasicVideo *This);
+                   ULONG (WINAPI *Release)(IBasicVideo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IBasicVideo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IBasicVideo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IBasicVideo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IBasicVideo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_AvgTimePerFrame)(IBasicVideo *This,REFTIME *pAvgTimePerFrame);
+                   HRESULT (WINAPI *get_BitRate)(IBasicVideo *This,__LONG32 *pBitRate);
+                   HRESULT (WINAPI *get_BitErrorRate)(IBasicVideo *This,__LONG32 *pBitErrorRate);
+                   HRESULT (WINAPI *get_VideoWidth)(IBasicVideo *This,__LONG32 *pVideoWidth);
+                   HRESULT (WINAPI *get_VideoHeight)(IBasicVideo *This,__LONG32 *pVideoHeight);
+                   HRESULT (WINAPI *put_SourceLeft)(IBasicVideo *This,__LONG32 SourceLeft);
+                   HRESULT (WINAPI *get_SourceLeft)(IBasicVideo *This,__LONG32 *pSourceLeft);
+                   HRESULT (WINAPI *put_SourceWidth)(IBasicVideo *This,__LONG32 SourceWidth);
+                   HRESULT (WINAPI *get_SourceWidth)(IBasicVideo *This,__LONG32 *pSourceWidth);
+                   HRESULT (WINAPI *put_SourceTop)(IBasicVideo *This,__LONG32 SourceTop);
+                   HRESULT (WINAPI *get_SourceTop)(IBasicVideo *This,__LONG32 *pSourceTop);
+                   HRESULT (WINAPI *put_SourceHeight)(IBasicVideo *This,__LONG32 SourceHeight);
+                   HRESULT (WINAPI *get_SourceHeight)(IBasicVideo *This,__LONG32 *pSourceHeight);
+                   HRESULT (WINAPI *put_DestinationLeft)(IBasicVideo *This,__LONG32 DestinationLeft);
+                   HRESULT (WINAPI *get_DestinationLeft)(IBasicVideo *This,__LONG32 *pDestinationLeft);
+                   HRESULT (WINAPI *put_DestinationWidth)(IBasicVideo *This,__LONG32 DestinationWidth);
+                   HRESULT (WINAPI *get_DestinationWidth)(IBasicVideo *This,__LONG32 *pDestinationWidth);
+                   HRESULT (WINAPI *put_DestinationTop)(IBasicVideo *This,__LONG32 DestinationTop);
+                   HRESULT (WINAPI *get_DestinationTop)(IBasicVideo *This,__LONG32 *pDestinationTop);
+                   HRESULT (WINAPI *put_DestinationHeight)(IBasicVideo *This,__LONG32 DestinationHeight);
+                   HRESULT (WINAPI *get_DestinationHeight)(IBasicVideo *This,__LONG32 *pDestinationHeight);
+                   HRESULT (WINAPI *SetSourcePosition)(IBasicVideo *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
+                   HRESULT (WINAPI *GetSourcePosition)(IBasicVideo *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *SetDefaultSourcePosition)(IBasicVideo *This);
+                   HRESULT (WINAPI *SetDestinationPosition)(IBasicVideo *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
+                   HRESULT (WINAPI *GetDestinationPosition)(IBasicVideo *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *SetDefaultDestinationPosition)(IBasicVideo *This);
+                   HRESULT (WINAPI *GetVideoSize)(IBasicVideo *This,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *GetVideoPaletteEntries)(IBasicVideo *This,__LONG32 StartIndex,__LONG32 Entries,__LONG32 *pRetrieved,__LONG32 *pPalette);
+                   HRESULT (WINAPI *GetCurrentImage)(IBasicVideo *This,__LONG32 *pBufferSize,__LONG32 *pDIBImage);
+                   HRESULT (WINAPI *IsUsingDefaultSource)(IBasicVideo *This);
+                   HRESULT (WINAPI *IsUsingDefaultDestination)(IBasicVideo *This);
     END_INTERFACE
   } IBasicVideoVtbl;
   struct IBasicVideo {
@@ -1096,46 +1096,46 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IBasicVideo2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBasicVideo2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBasicVideo2 *This);
-      ULONG (WINAPI *Release)(IBasicVideo2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IBasicVideo2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IBasicVideo2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IBasicVideo2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IBasicVideo2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_AvgTimePerFrame)(IBasicVideo2 *This,REFTIME *pAvgTimePerFrame);
-      HRESULT (WINAPI *get_BitRate)(IBasicVideo2 *This,__LONG32 *pBitRate);
-      HRESULT (WINAPI *get_BitErrorRate)(IBasicVideo2 *This,__LONG32 *pBitErrorRate);
-      HRESULT (WINAPI *get_VideoWidth)(IBasicVideo2 *This,__LONG32 *pVideoWidth);
-      HRESULT (WINAPI *get_VideoHeight)(IBasicVideo2 *This,__LONG32 *pVideoHeight);
-      HRESULT (WINAPI *put_SourceLeft)(IBasicVideo2 *This,__LONG32 SourceLeft);
-      HRESULT (WINAPI *get_SourceLeft)(IBasicVideo2 *This,__LONG32 *pSourceLeft);
-      HRESULT (WINAPI *put_SourceWidth)(IBasicVideo2 *This,__LONG32 SourceWidth);
-      HRESULT (WINAPI *get_SourceWidth)(IBasicVideo2 *This,__LONG32 *pSourceWidth);
-      HRESULT (WINAPI *put_SourceTop)(IBasicVideo2 *This,__LONG32 SourceTop);
-      HRESULT (WINAPI *get_SourceTop)(IBasicVideo2 *This,__LONG32 *pSourceTop);
-      HRESULT (WINAPI *put_SourceHeight)(IBasicVideo2 *This,__LONG32 SourceHeight);
-      HRESULT (WINAPI *get_SourceHeight)(IBasicVideo2 *This,__LONG32 *pSourceHeight);
-      HRESULT (WINAPI *put_DestinationLeft)(IBasicVideo2 *This,__LONG32 DestinationLeft);
-      HRESULT (WINAPI *get_DestinationLeft)(IBasicVideo2 *This,__LONG32 *pDestinationLeft);
-      HRESULT (WINAPI *put_DestinationWidth)(IBasicVideo2 *This,__LONG32 DestinationWidth);
-      HRESULT (WINAPI *get_DestinationWidth)(IBasicVideo2 *This,__LONG32 *pDestinationWidth);
-      HRESULT (WINAPI *put_DestinationTop)(IBasicVideo2 *This,__LONG32 DestinationTop);
-      HRESULT (WINAPI *get_DestinationTop)(IBasicVideo2 *This,__LONG32 *pDestinationTop);
-      HRESULT (WINAPI *put_DestinationHeight)(IBasicVideo2 *This,__LONG32 DestinationHeight);
-      HRESULT (WINAPI *get_DestinationHeight)(IBasicVideo2 *This,__LONG32 *pDestinationHeight);
-      HRESULT (WINAPI *SetSourcePosition)(IBasicVideo2 *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
-      HRESULT (WINAPI *GetSourcePosition)(IBasicVideo2 *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *SetDefaultSourcePosition)(IBasicVideo2 *This);
-      HRESULT (WINAPI *SetDestinationPosition)(IBasicVideo2 *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
-      HRESULT (WINAPI *GetDestinationPosition)(IBasicVideo2 *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *SetDefaultDestinationPosition)(IBasicVideo2 *This);
-      HRESULT (WINAPI *GetVideoSize)(IBasicVideo2 *This,__LONG32 *pWidth,__LONG32 *pHeight);
-      HRESULT (WINAPI *GetVideoPaletteEntries)(IBasicVideo2 *This,__LONG32 StartIndex,__LONG32 Entries,__LONG32 *pRetrieved,__LONG32 *pPalette);
-      HRESULT (WINAPI *GetCurrentImage)(IBasicVideo2 *This,__LONG32 *pBufferSize,__LONG32 *pDIBImage);
-      HRESULT (WINAPI *IsUsingDefaultSource)(IBasicVideo2 *This);
-      HRESULT (WINAPI *IsUsingDefaultDestination)(IBasicVideo2 *This);
-      HRESULT (WINAPI *GetPreferredAspectRatio)(IBasicVideo2 *This,__LONG32 *plAspectX,__LONG32 *plAspectY);
+                   HRESULT (WINAPI *QueryInterface)(IBasicVideo2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBasicVideo2 *This);
+                   ULONG (WINAPI *Release)(IBasicVideo2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IBasicVideo2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IBasicVideo2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IBasicVideo2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IBasicVideo2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_AvgTimePerFrame)(IBasicVideo2 *This,REFTIME *pAvgTimePerFrame);
+                   HRESULT (WINAPI *get_BitRate)(IBasicVideo2 *This,__LONG32 *pBitRate);
+                   HRESULT (WINAPI *get_BitErrorRate)(IBasicVideo2 *This,__LONG32 *pBitErrorRate);
+                   HRESULT (WINAPI *get_VideoWidth)(IBasicVideo2 *This,__LONG32 *pVideoWidth);
+                   HRESULT (WINAPI *get_VideoHeight)(IBasicVideo2 *This,__LONG32 *pVideoHeight);
+                   HRESULT (WINAPI *put_SourceLeft)(IBasicVideo2 *This,__LONG32 SourceLeft);
+                   HRESULT (WINAPI *get_SourceLeft)(IBasicVideo2 *This,__LONG32 *pSourceLeft);
+                   HRESULT (WINAPI *put_SourceWidth)(IBasicVideo2 *This,__LONG32 SourceWidth);
+                   HRESULT (WINAPI *get_SourceWidth)(IBasicVideo2 *This,__LONG32 *pSourceWidth);
+                   HRESULT (WINAPI *put_SourceTop)(IBasicVideo2 *This,__LONG32 SourceTop);
+                   HRESULT (WINAPI *get_SourceTop)(IBasicVideo2 *This,__LONG32 *pSourceTop);
+                   HRESULT (WINAPI *put_SourceHeight)(IBasicVideo2 *This,__LONG32 SourceHeight);
+                   HRESULT (WINAPI *get_SourceHeight)(IBasicVideo2 *This,__LONG32 *pSourceHeight);
+                   HRESULT (WINAPI *put_DestinationLeft)(IBasicVideo2 *This,__LONG32 DestinationLeft);
+                   HRESULT (WINAPI *get_DestinationLeft)(IBasicVideo2 *This,__LONG32 *pDestinationLeft);
+                   HRESULT (WINAPI *put_DestinationWidth)(IBasicVideo2 *This,__LONG32 DestinationWidth);
+                   HRESULT (WINAPI *get_DestinationWidth)(IBasicVideo2 *This,__LONG32 *pDestinationWidth);
+                   HRESULT (WINAPI *put_DestinationTop)(IBasicVideo2 *This,__LONG32 DestinationTop);
+                   HRESULT (WINAPI *get_DestinationTop)(IBasicVideo2 *This,__LONG32 *pDestinationTop);
+                   HRESULT (WINAPI *put_DestinationHeight)(IBasicVideo2 *This,__LONG32 DestinationHeight);
+                   HRESULT (WINAPI *get_DestinationHeight)(IBasicVideo2 *This,__LONG32 *pDestinationHeight);
+                   HRESULT (WINAPI *SetSourcePosition)(IBasicVideo2 *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
+                   HRESULT (WINAPI *GetSourcePosition)(IBasicVideo2 *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *SetDefaultSourcePosition)(IBasicVideo2 *This);
+                   HRESULT (WINAPI *SetDestinationPosition)(IBasicVideo2 *This,__LONG32 Left,__LONG32 Top,__LONG32 Width,__LONG32 Height);
+                   HRESULT (WINAPI *GetDestinationPosition)(IBasicVideo2 *This,__LONG32 *pLeft,__LONG32 *pTop,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *SetDefaultDestinationPosition)(IBasicVideo2 *This);
+                   HRESULT (WINAPI *GetVideoSize)(IBasicVideo2 *This,__LONG32 *pWidth,__LONG32 *pHeight);
+                   HRESULT (WINAPI *GetVideoPaletteEntries)(IBasicVideo2 *This,__LONG32 StartIndex,__LONG32 Entries,__LONG32 *pRetrieved,__LONG32 *pPalette);
+                   HRESULT (WINAPI *GetCurrentImage)(IBasicVideo2 *This,__LONG32 *pBufferSize,__LONG32 *pDIBImage);
+                   HRESULT (WINAPI *IsUsingDefaultSource)(IBasicVideo2 *This);
+                   HRESULT (WINAPI *IsUsingDefaultDestination)(IBasicVideo2 *This);
+                   HRESULT (WINAPI *GetPreferredAspectRatio)(IBasicVideo2 *This,__LONG32 *plAspectX,__LONG32 *plAspectY);
     END_INTERFACE
   } IBasicVideo2Vtbl;
   struct IBasicVideo2 {
@@ -1202,13 +1202,13 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IDeferredCommandVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDeferredCommand *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDeferredCommand *This);
-      ULONG (WINAPI *Release)(IDeferredCommand *This);
-      HRESULT (WINAPI *Cancel)(IDeferredCommand *This);
-      HRESULT (WINAPI *Confidence)(IDeferredCommand *This,LONG *pConfidence);
-      HRESULT (WINAPI *Postpone)(IDeferredCommand *This,REFTIME newtime);
-      HRESULT (WINAPI *GetHResult)(IDeferredCommand *This,HRESULT *phrResult);
+                   HRESULT (WINAPI *QueryInterface)(IDeferredCommand *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDeferredCommand *This);
+                   ULONG (WINAPI *Release)(IDeferredCommand *This);
+                   HRESULT (WINAPI *Cancel)(IDeferredCommand *This);
+                   HRESULT (WINAPI *Confidence)(IDeferredCommand *This,LONG *pConfidence);
+                   HRESULT (WINAPI *Postpone)(IDeferredCommand *This,REFTIME newtime);
+                   HRESULT (WINAPI *GetHResult)(IDeferredCommand *This,HRESULT *phrResult);
     END_INTERFACE
   } IDeferredCommandVtbl;
   struct IDeferredCommand {
@@ -1246,11 +1246,11 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IQueueCommandVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IQueueCommand *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IQueueCommand *This);
-      ULONG (WINAPI *Release)(IQueueCommand *This);
-      HRESULT (WINAPI *InvokeAtStreamTime)(IQueueCommand *This,IDeferredCommand **pCmd,REFTIME time,GUID *iid,__LONG32 dispidMethod,short wFlags,__LONG32 cArgs,VARIANT *pDispParams,VARIANT *pvarResult,short *puArgErr);
-      HRESULT (WINAPI *InvokeAtPresentationTime)(IQueueCommand *This,IDeferredCommand **pCmd,REFTIME time,GUID *iid,__LONG32 dispidMethod,short wFlags,__LONG32 cArgs,VARIANT *pDispParams,VARIANT *pvarResult,short *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(IQueueCommand *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IQueueCommand *This);
+                   ULONG (WINAPI *Release)(IQueueCommand *This);
+                   HRESULT (WINAPI *InvokeAtStreamTime)(IQueueCommand *This,IDeferredCommand **pCmd,REFTIME time,GUID *iid,__LONG32 dispidMethod,short wFlags,__LONG32 cArgs,VARIANT *pDispParams,VARIANT *pvarResult,short *puArgErr);
+                   HRESULT (WINAPI *InvokeAtPresentationTime)(IQueueCommand *This,IDeferredCommand **pCmd,REFTIME time,GUID *iid,__LONG32 dispidMethod,short wFlags,__LONG32 cArgs,VARIANT *pDispParams,VARIANT *pvarResult,short *puArgErr);
     END_INTERFACE
   } IQueueCommandVtbl;
   struct IQueueCommand {
@@ -1293,21 +1293,21 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IFilterInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IFilterInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IFilterInfo *This);
-      ULONG (WINAPI *Release)(IFilterInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IFilterInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IFilterInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IFilterInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IFilterInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *FindPin)(IFilterInfo *This,BSTR strPinID,IDispatch **ppUnk);
-      HRESULT (WINAPI *get_Name)(IFilterInfo *This,BSTR *strName);
-      HRESULT (WINAPI *get_VendorInfo)(IFilterInfo *This,BSTR *strVendorInfo);
-      HRESULT (WINAPI *get_Filter)(IFilterInfo *This,IUnknown **ppUnk);
-      HRESULT (WINAPI *get_Pins)(IFilterInfo *This,IDispatch **ppUnk);
-      HRESULT (WINAPI *get_IsFileSource)(IFilterInfo *This,LONG *pbIsSource);
-      HRESULT (WINAPI *get_Filename)(IFilterInfo *This,BSTR *pstrFilename);
-      HRESULT (WINAPI *put_Filename)(IFilterInfo *This,BSTR strFilename);
+                   HRESULT (WINAPI *QueryInterface)(IFilterInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IFilterInfo *This);
+                   ULONG (WINAPI *Release)(IFilterInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IFilterInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IFilterInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IFilterInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IFilterInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *FindPin)(IFilterInfo *This,BSTR strPinID,IDispatch **ppUnk);
+                   HRESULT (WINAPI *get_Name)(IFilterInfo *This,BSTR *strName);
+                   HRESULT (WINAPI *get_VendorInfo)(IFilterInfo *This,BSTR *strVendorInfo);
+                   HRESULT (WINAPI *get_Filter)(IFilterInfo *This,IUnknown **ppUnk);
+                   HRESULT (WINAPI *get_Pins)(IFilterInfo *This,IDispatch **ppUnk);
+                   HRESULT (WINAPI *get_IsFileSource)(IFilterInfo *This,LONG *pbIsSource);
+                   HRESULT (WINAPI *get_Filename)(IFilterInfo *This,BSTR *pstrFilename);
+                   HRESULT (WINAPI *put_Filename)(IFilterInfo *This,BSTR strFilename);
     END_INTERFACE
   } IFilterInfoVtbl;
   struct IFilterInfo {
@@ -1361,15 +1361,15 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IRegFilterInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRegFilterInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRegFilterInfo *This);
-      ULONG (WINAPI *Release)(IRegFilterInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IRegFilterInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IRegFilterInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IRegFilterInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IRegFilterInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IRegFilterInfo *This,BSTR *strName);
-      HRESULT (WINAPI *Filter)(IRegFilterInfo *This,IDispatch **ppUnk);
+                   HRESULT (WINAPI *QueryInterface)(IRegFilterInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRegFilterInfo *This);
+                   ULONG (WINAPI *Release)(IRegFilterInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IRegFilterInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IRegFilterInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IRegFilterInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IRegFilterInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IRegFilterInfo *This,BSTR *strName);
+                   HRESULT (WINAPI *Filter)(IRegFilterInfo *This,IDispatch **ppUnk);
     END_INTERFACE
   } IRegFilterInfoVtbl;
   struct IRegFilterInfo {
@@ -1405,15 +1405,15 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IMediaTypeInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMediaTypeInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMediaTypeInfo *This);
-      ULONG (WINAPI *Release)(IMediaTypeInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMediaTypeInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMediaTypeInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMediaTypeInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMediaTypeInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Type)(IMediaTypeInfo *This,BSTR *strType);
-      HRESULT (WINAPI *get_Subtype)(IMediaTypeInfo *This,BSTR *strType);
+                   HRESULT (WINAPI *QueryInterface)(IMediaTypeInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMediaTypeInfo *This);
+                   ULONG (WINAPI *Release)(IMediaTypeInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMediaTypeInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMediaTypeInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMediaTypeInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMediaTypeInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Type)(IMediaTypeInfo *This,BSTR *strType);
+                   HRESULT (WINAPI *get_Subtype)(IMediaTypeInfo *This,BSTR *strType);
     END_INTERFACE
   } IMediaTypeInfoVtbl;
   struct IMediaTypeInfo {
@@ -1460,26 +1460,26 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IPinInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPinInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPinInfo *This);
-      ULONG (WINAPI *Release)(IPinInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IPinInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IPinInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IPinInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IPinInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Pin)(IPinInfo *This,IUnknown **ppUnk);
-      HRESULT (WINAPI *get_ConnectedTo)(IPinInfo *This,IDispatch **ppUnk);
-      HRESULT (WINAPI *get_ConnectionMediaType)(IPinInfo *This,IDispatch **ppUnk);
-      HRESULT (WINAPI *get_FilterInfo)(IPinInfo *This,IDispatch **ppUnk);
-      HRESULT (WINAPI *get_Name)(IPinInfo *This,BSTR *ppUnk);
-      HRESULT (WINAPI *get_Direction)(IPinInfo *This,LONG *ppDirection);
-      HRESULT (WINAPI *get_PinID)(IPinInfo *This,BSTR *strPinID);
-      HRESULT (WINAPI *get_MediaTypes)(IPinInfo *This,IDispatch **ppUnk);
-      HRESULT (WINAPI *Connect)(IPinInfo *This,IUnknown *pPin);
-      HRESULT (WINAPI *ConnectDirect)(IPinInfo *This,IUnknown *pPin);
-      HRESULT (WINAPI *ConnectWithType)(IPinInfo *This,IUnknown *pPin,IDispatch *pMediaType);
-      HRESULT (WINAPI *Disconnect)(IPinInfo *This);
-      HRESULT (WINAPI *Render)(IPinInfo *This);
+                   HRESULT (WINAPI *QueryInterface)(IPinInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPinInfo *This);
+                   ULONG (WINAPI *Release)(IPinInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IPinInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IPinInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IPinInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IPinInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Pin)(IPinInfo *This,IUnknown **ppUnk);
+                   HRESULT (WINAPI *get_ConnectedTo)(IPinInfo *This,IDispatch **ppUnk);
+                   HRESULT (WINAPI *get_ConnectionMediaType)(IPinInfo *This,IDispatch **ppUnk);
+                   HRESULT (WINAPI *get_FilterInfo)(IPinInfo *This,IDispatch **ppUnk);
+                   HRESULT (WINAPI *get_Name)(IPinInfo *This,BSTR *ppUnk);
+                   HRESULT (WINAPI *get_Direction)(IPinInfo *This,LONG *ppDirection);
+                   HRESULT (WINAPI *get_PinID)(IPinInfo *This,BSTR *strPinID);
+                   HRESULT (WINAPI *get_MediaTypes)(IPinInfo *This,IDispatch **ppUnk);
+                   HRESULT (WINAPI *Connect)(IPinInfo *This,IUnknown *pPin);
+                   HRESULT (WINAPI *ConnectDirect)(IPinInfo *This,IUnknown *pPin);
+                   HRESULT (WINAPI *ConnectWithType)(IPinInfo *This,IUnknown *pPin,IDispatch *pMediaType);
+                   HRESULT (WINAPI *Disconnect)(IPinInfo *This);
+                   HRESULT (WINAPI *Render)(IPinInfo *This);
     END_INTERFACE
   } IPinInfoVtbl;
   struct IPinInfo {
@@ -1552,19 +1552,19 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #else
   typedef struct IAMStatsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAMStats *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAMStats *This);
-      ULONG (WINAPI *Release)(IAMStats *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IAMStats *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IAMStats *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IAMStats *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IAMStats *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Reset)(IAMStats *This);
-      HRESULT (WINAPI *get_Count)(IAMStats *This,LONG *plCount);
-      HRESULT (WINAPI *GetValueByIndex)(IAMStats *This,__LONG32 lIndex,BSTR *szName,__LONG32 *lCount,double *dLast,double *dAverage,double *dStdDev,double *dMin,double *dMax);
-      HRESULT (WINAPI *GetValueByName)(IAMStats *This,BSTR szName,__LONG32 *lIndex,__LONG32 *lCount,double *dLast,double *dAverage,double *dStdDev,double *dMin,double *dMax);
-      HRESULT (WINAPI *GetIndex)(IAMStats *This,BSTR szName,__LONG32 lCreate,__LONG32 *plIndex);
-      HRESULT (WINAPI *AddValue)(IAMStats *This,__LONG32 lIndex,double dValue);
+                   HRESULT (WINAPI *QueryInterface)(IAMStats *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAMStats *This);
+                   ULONG (WINAPI *Release)(IAMStats *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IAMStats *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IAMStats *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IAMStats *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IAMStats *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Reset)(IAMStats *This);
+                   HRESULT (WINAPI *get_Count)(IAMStats *This,LONG *plCount);
+                   HRESULT (WINAPI *GetValueByIndex)(IAMStats *This,__LONG32 lIndex,BSTR *szName,__LONG32 *lCount,double *dLast,double *dAverage,double *dStdDev,double *dMin,double *dMax);
+                   HRESULT (WINAPI *GetValueByName)(IAMStats *This,BSTR szName,__LONG32 *lIndex,__LONG32 *lCount,double *dLast,double *dAverage,double *dStdDev,double *dMin,double *dMax);
+                   HRESULT (WINAPI *GetIndex)(IAMStats *This,BSTR szName,__LONG32 lCreate,__LONG32 *plIndex);
+                   HRESULT (WINAPI *AddValue)(IAMStats *This,__LONG32 lIndex,double dValue);
     END_INTERFACE
   } IAMStatsVtbl;
   struct IAMStats {
@@ -1602,10 +1602,10 @@ static FORCEINLINE HRESULT IMediaControl_StopWhenReady(IMediaControl* This) {
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

@@ -740,7 +740,7 @@ MIDL_INTERFACE("cee3def2-3808-414d-be66-fafd472210bc")
 IWMValidate : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetIdentifier(
-        GUID guidValidationID) = 0;
+                     GUID guidValidationID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -752,20 +752,20 @@ typedef struct IWMValidateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWMValidate *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWMValidate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWMValidate *This);
+                     IWMValidate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWMValidate *This);
+                     IWMValidate *This);
 
     /*** IWMValidate methods ***/
     HRESULT (STDMETHODCALLTYPE *SetIdentifier)(
-        IWMValidate *This,
-        GUID guidValidationID);
+                     IWMValidate *This,
+                     GUID guidValidationID);
 
     END_INTERFACE
 } IWMValidateVtbl;

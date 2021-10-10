@@ -87,7 +87,7 @@ typedef __ino64_t ino64_t;
 #  define _D_ALLOC_NAMLEN(d) (((char *) (d) + (d)->d_reclen) - &(d)->d_name[0])
 # else
 #  define _D_ALLOC_NAMLEN(d) (sizeof (d)->d_name > 1 ? sizeof (d)->d_name \
-			      : _D_EXACT_NAMLEN (d) + 1)
+			                   : _D_EXACT_NAMLEN (d) + 1)
 # endif
 #endif
 
@@ -181,16 +181,16 @@ extern struct dirent64 *readdir64 (DIR *__dirp) __nonnull ((1));
    marked with __THROW.  */
 # ifndef __USE_FILE_OFFSET64
 extern int readdir_r (DIR *__restrict __dirp,
-		      struct dirent *__restrict __entry,
-		      struct dirent **__restrict __result)
+		                   struct dirent *__restrict __entry,
+		                   struct dirent **__restrict __result)
      __nonnull ((1, 2, 3)) __attribute_deprecated__;
 # else
 #  ifdef __REDIRECT
 extern int __REDIRECT (readdir_r,
-		       (DIR *__restrict __dirp,
+		                    (DIR *__restrict __dirp,
 			struct dirent *__restrict __entry,
 			struct dirent **__restrict __result),
-		       readdir64_r)
+		                    readdir64_r)
   __nonnull ((1, 2, 3)) __attribute_deprecated__;
 #  else
 #   define readdir_r readdir64_r
@@ -261,12 +261,12 @@ extern int scandir (const char *__restrict __dir,
 # else
 #  ifdef __REDIRECT
 extern int __REDIRECT (scandir,
-		       (const char *__restrict __dir,
+		                    (const char *__restrict __dir,
 			struct dirent ***__restrict __namelist,
 			int (*__selector) (const struct dirent *),
 			int (*__cmp) (const struct dirent **,
-				      const struct dirent **)),
-		       scandir64) __nonnull ((1, 2));
+				                   const struct dirent **)),
+		                    scandir64) __nonnull ((1, 2));
 #  else
 #   define scandir scandir64
 #  endif
@@ -276,9 +276,9 @@ extern int __REDIRECT (scandir,
 /* This function is like `scandir' but it uses the 64bit dirent structure.
    Please note that the CMP function must now work with struct dirent64 **.  */
 extern int scandir64 (const char *__restrict __dir,
-		      struct dirent64 ***__restrict __namelist,
-		      int (*__selector) (const struct dirent64 *),
-		      int (*__cmp) (const struct dirent64 **,
+		                   struct dirent64 ***__restrict __namelist,
+		                   int (*__selector) (const struct dirent64 *),
+		                   int (*__cmp) (const struct dirent64 **,
 				    const struct dirent64 **))
      __nonnull ((1, 2));
 # endif
@@ -291,20 +291,20 @@ extern int scandir64 (const char *__restrict __dir,
    __THROW.  */
 #  ifndef __USE_FILE_OFFSET64
 extern int scandirat (int __dfd, const char *__restrict __dir,
-		      struct dirent ***__restrict __namelist,
-		      int (*__selector) (const struct dirent *),
-		      int (*__cmp) (const struct dirent **,
+		                   struct dirent ***__restrict __namelist,
+		                   int (*__selector) (const struct dirent *),
+		                   int (*__cmp) (const struct dirent **,
 				    const struct dirent **))
      __nonnull ((2, 3));
 #  else
 #   ifdef __REDIRECT
 extern int __REDIRECT (scandirat,
-		       (int __dfd, const char *__restrict __dir,
+		                    (int __dfd, const char *__restrict __dir,
 			struct dirent ***__restrict __namelist,
 			int (*__selector) (const struct dirent *),
 			int (*__cmp) (const struct dirent **,
-				      const struct dirent **)),
-		       scandirat64) __nonnull ((2, 3));
+				                   const struct dirent **)),
+		                    scandirat64) __nonnull ((2, 3));
 #   else
 #    define scandirat scandirat64
 #   endif
@@ -316,14 +316,14 @@ extern int scandirat64 (int __dfd, const char *__restrict __dir,
 			struct dirent64 ***__restrict __namelist,
 			int (*__selector) (const struct dirent64 *),
 			int (*__cmp) (const struct dirent64 **,
-				      const struct dirent64 **))
+				                   const struct dirent64 **))
      __nonnull ((2, 3));
 # endif
 
 /* Function to compare two `struct dirent's alphabetically.  */
 # ifndef __USE_FILE_OFFSET64
 extern int alphasort (const struct dirent **__e1,
-		      const struct dirent **__e2)
+		                   const struct dirent **__e2)
      __THROW __attribute_pure__ __nonnull ((1, 2));
 # else
 #  ifdef __REDIRECT

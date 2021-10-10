@@ -7,7 +7,7 @@
  * These constants are also useful for user-level apps (e.g., VC
  * resizing).
  */
-#define MIN_NR_CONSOLES 1       /* must be at least 1 */
+#define MIN_NR_CONSOLES 1                    /* must be at least 1 */
 #define MAX_NR_CONSOLES	63	/* serial lines start at 64 */
 		/* Note: the ioctl VT_GETSTATE does not work for
 		   consoles 16 and higher (since it returns a short) */
@@ -58,7 +58,7 @@ struct vt_consize {
 	unsigned short v_vcol;	/* number of pixel columns on screen */
 	unsigned short v_ccol;	/* number of pixel columns per character */
 };
-#define VT_RESIZEX      0x560A  /* set kernel's idea of screensize + more */
+#define VT_RESIZEX                   0x560A  /* set kernel's idea of screensize + more */
 #define VT_LOCKSWITCH   0x560B  /* disallow vt switching */
 #define VT_UNLOCKSWITCH 0x560C  /* allow vt switching */
 #define VT_GETHIFONTMASK 0x560D  /* return hi font mask */

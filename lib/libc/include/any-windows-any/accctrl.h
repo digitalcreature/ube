@@ -92,10 +92,10 @@ extern "C" {
     TRUSTEE_TYPE TrusteeType;
 #ifdef __WIDL__
     [switch_is (TrusteeForm)] union {
-      [case (TRUSTEE_IS_NAME)] LPSTR ptstrName;
-      [case (TRUSTEE_IS_SID)] SID *pSid;
-      [case (TRUSTEE_IS_OBJECTS_AND_SID)] OBJECTS_AND_SID *pObjectsAndSid;
-      [case (TRUSTEE_IS_OBJECTS_AND_NAME)] OBJECTS_AND_NAME_A *pObjectsAndName;
+                   [case (TRUSTEE_IS_NAME)] LPSTR ptstrName;
+                   [case (TRUSTEE_IS_SID)] SID *pSid;
+                   [case (TRUSTEE_IS_OBJECTS_AND_SID)] OBJECTS_AND_SID *pObjectsAndSid;
+                   [case (TRUSTEE_IS_OBJECTS_AND_NAME)] OBJECTS_AND_NAME_A *pObjectsAndName;
     };
 #else
     LPSTR ptstrName;
@@ -109,10 +109,10 @@ extern "C" {
     TRUSTEE_TYPE TrusteeType;
 #ifdef __WIDL__
     [switch_is (TrusteeForm)] union {
-      [case (TRUSTEE_IS_NAME)] LPWSTR ptstrName;
-      [case (TRUSTEE_IS_SID)] SID *pSid;
-      [case (TRUSTEE_IS_OBJECTS_AND_SID)] OBJECTS_AND_SID *pObjectsAndSid;
-      [case (TRUSTEE_IS_OBJECTS_AND_NAME)] OBJECTS_AND_NAME_W *pObjectsAndName;
+                   [case (TRUSTEE_IS_NAME)] LPWSTR ptstrName;
+                   [case (TRUSTEE_IS_SID)] SID *pSid;
+                   [case (TRUSTEE_IS_OBJECTS_AND_SID)] OBJECTS_AND_SID *pObjectsAndSid;
+                   [case (TRUSTEE_IS_OBJECTS_AND_NAME)] OBJECTS_AND_NAME_W *pObjectsAndName;
     };
 #else
     LPWSTR ptstrName;
@@ -388,8 +388,8 @@ extern "C" {
 
   typedef struct _ACTRL_OVERLAPPED {
     __C89_NAMELESS union {
-      PVOID Provider;
-      ULONG Reserved1;
+                   PVOID Provider;
+                   ULONG Reserved1;
     } DUMMYUNIONNAME;
     ULONG Reserved2;
     HANDLE hEvent;

@@ -33,8 +33,8 @@ logb (double x)
 #else
   double res = 0.0;
   asm volatile (
-       "fxtract\n\t"
-       "fstp	%%st" : "=t" (res) : "0" (x));
+                    "fxtract\n\t"
+                    "fstp	%%st" : "=t" (res) : "0" (x));
   return res;
 #endif
 }

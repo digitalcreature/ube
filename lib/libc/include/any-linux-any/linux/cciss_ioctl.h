@@ -40,7 +40,7 @@ typedef __u32 DriverVer_type;
 
 typedef struct _IOCTL_Command_struct {
   LUNAddr_struct	   LUN_info;
-  RequestBlock_struct      Request;
+  RequestBlock_struct                   Request;
   ErrorInfo_struct  	   error_info; 
   WORD			   buf_size;  /* size in bytes of the buf */
   BYTE			   *buf;
@@ -48,11 +48,11 @@ typedef struct _IOCTL_Command_struct {
 
 typedef struct _BIG_IOCTL_Command_struct {
   LUNAddr_struct	   LUN_info;
-  RequestBlock_struct      Request;
+  RequestBlock_struct                   Request;
   ErrorInfo_struct  	   error_info;
   DWORD			   malloc_size; /* < MAX_KMALLOC_SIZE in cciss.c */
   DWORD			   buf_size;    /* size in bytes of the buf */
-  				        /* < malloc_size * MAXSGENTRIES */
+  				                     /* < malloc_size * MAXSGENTRIES */
   BYTE			   *buf;
 } BIG_IOCTL_Command_struct;
 

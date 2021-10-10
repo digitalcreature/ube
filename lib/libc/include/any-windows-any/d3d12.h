@@ -531,8 +531,8 @@ typedef struct D3D12_DEPTH_STENCIL_VALUE {
 typedef struct D3D12_CLEAR_VALUE {
     DXGI_FORMAT Format;
     __C89_NAMELESS union {
-        FLOAT Color[4];
-        D3D12_DEPTH_STENCIL_VALUE DepthStencil;
+                     FLOAT Color[4];
+                     D3D12_DEPTH_STENCIL_VALUE DepthStencil;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_CLEAR_VALUE;
 typedef struct D3D12_PACKED_MIP_INFO {
@@ -589,9 +589,9 @@ typedef struct D3D12_RESOURCE_BARRIER {
     D3D12_RESOURCE_BARRIER_TYPE Type;
     D3D12_RESOURCE_BARRIER_FLAGS Flags;
     __C89_NAMELESS union {
-        D3D12_RESOURCE_TRANSITION_BARRIER Transition;
-        D3D12_RESOURCE_ALIASING_BARRIER Aliasing;
-        D3D12_RESOURCE_UAV_BARRIER UAV;
+                     D3D12_RESOURCE_TRANSITION_BARRIER Transition;
+                     D3D12_RESOURCE_ALIASING_BARRIER Aliasing;
+                     D3D12_RESOURCE_UAV_BARRIER UAV;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_RESOURCE_BARRIER;
 typedef enum D3D12_RESOURCE_DIMENSION {
@@ -648,8 +648,8 @@ typedef struct D3D12_TEXTURE_COPY_LOCATION {
     ID3D12Resource *pResource;
     D3D12_TEXTURE_COPY_TYPE Type;
     __C89_NAMELESS union {
-        D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint;
-        UINT SubresourceIndex;
+                     D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint;
+                     UINT SubresourceIndex;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_TEXTURE_COPY_LOCATION;
 typedef enum D3D12_DESCRIPTOR_RANGE_TYPE {
@@ -719,18 +719,18 @@ typedef enum D3D12_SHADER_VISIBILITY {
 typedef struct D3D12_ROOT_PARAMETER {
     D3D12_ROOT_PARAMETER_TYPE ParameterType;
     __C89_NAMELESS union {
-        D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable;
-        D3D12_ROOT_CONSTANTS Constants;
-        D3D12_ROOT_DESCRIPTOR Descriptor;
+                     D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable;
+                     D3D12_ROOT_CONSTANTS Constants;
+                     D3D12_ROOT_DESCRIPTOR Descriptor;
     } __C89_NAMELESSUNIONNAME;
     D3D12_SHADER_VISIBILITY ShaderVisibility;
 } D3D12_ROOT_PARAMETER;
 typedef struct D3D12_ROOT_PARAMETER1 {
     D3D12_ROOT_PARAMETER_TYPE ParameterType;
     __C89_NAMELESS union {
-        D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable;
-        D3D12_ROOT_CONSTANTS Constants;
-        D3D12_ROOT_DESCRIPTOR1 Descriptor;
+                     D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable;
+                     D3D12_ROOT_CONSTANTS Constants;
+                     D3D12_ROOT_DESCRIPTOR1 Descriptor;
     } __C89_NAMELESSUNIONNAME;
     D3D12_SHADER_VISIBILITY ShaderVisibility;
 } D3D12_ROOT_PARAMETER1;
@@ -881,8 +881,8 @@ typedef enum D3D_ROOT_SIGNATURE_VERSION {
 typedef struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC {
     D3D_ROOT_SIGNATURE_VERSION Version;
     __C89_NAMELESS union {
-        D3D12_ROOT_SIGNATURE_DESC Desc_1_0;
-        D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1;
+                     D3D12_ROOT_SIGNATURE_DESC Desc_1_0;
+                     D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_VERSIONED_ROOT_SIGNATURE_DESC;
 typedef enum D3D12_DESCRIPTOR_HEAP_TYPE {
@@ -933,11 +933,11 @@ typedef enum D3D12_SHADER_COMPONENT_MAPPING {
     D3D12_SHADER_COMPONENT_MAPPING_FORCE_VALUE_1 = 5
 } D3D12_SHADER_COMPONENT_MAPPING;
 #define D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING(x, y, z, w) \
-        (((x) & D3D12_SHADER_COMPONENT_MAPPING_MASK) \
-        | (((y) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << D3D12_SHADER_COMPONENT_MAPPING_SHIFT) \
-        | (((z) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 2)) \
-        | (((w) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 3)) \
-        | D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES)
+                     (((x) & D3D12_SHADER_COMPONENT_MAPPING_MASK) \
+                     | (((y) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << D3D12_SHADER_COMPONENT_MAPPING_SHIFT) \
+                     | (((z) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 2)) \
+                     | (((w) & D3D12_SHADER_COMPONENT_MAPPING_MASK) << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 3)) \
+                     | D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES)
 #define D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING(0, 1, 2, 3)
 typedef struct D3D12_BUFFER_SRV {
     UINT64 FirstElement;
@@ -1000,16 +1000,16 @@ typedef struct D3D12_SHADER_RESOURCE_VIEW_DESC {
     D3D12_SRV_DIMENSION ViewDimension;
     UINT Shader4ComponentMapping;
     __C89_NAMELESS union {
-        D3D12_BUFFER_SRV Buffer;
-        D3D12_TEX1D_SRV Texture1D;
-        D3D12_TEX1D_ARRAY_SRV Texture1DArray;
-        D3D12_TEX2D_SRV Texture2D;
-        D3D12_TEX2D_ARRAY_SRV Texture2DArray;
-        D3D12_TEX2DMS_SRV Texture2DMS;
-        D3D12_TEX2DMS_ARRAY_SRV Texture2DMSArray;
-        D3D12_TEX3D_SRV Texture3D;
-        D3D12_TEXCUBE_SRV TextureCube;
-        D3D12_TEXCUBE_ARRAY_SRV TextureCubeArray;
+                     D3D12_BUFFER_SRV Buffer;
+                     D3D12_TEX1D_SRV Texture1D;
+                     D3D12_TEX1D_ARRAY_SRV Texture1DArray;
+                     D3D12_TEX2D_SRV Texture2D;
+                     D3D12_TEX2D_ARRAY_SRV Texture2DArray;
+                     D3D12_TEX2DMS_SRV Texture2DMS;
+                     D3D12_TEX2DMS_ARRAY_SRV Texture2DMSArray;
+                     D3D12_TEX3D_SRV Texture3D;
+                     D3D12_TEXCUBE_SRV TextureCube;
+                     D3D12_TEXCUBE_ARRAY_SRV TextureCubeArray;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_SHADER_RESOURCE_VIEW_DESC;
 typedef enum D3D12_UAV_DIMENSION {
@@ -1059,12 +1059,12 @@ typedef struct D3D12_UNORDERED_ACCESS_VIEW_DESC {
     DXGI_FORMAT Format;
     D3D12_UAV_DIMENSION ViewDimension;
     __C89_NAMELESS union {
-        D3D12_BUFFER_UAV Buffer;
-        D3D12_TEX1D_UAV Texture1D;
-        D3D12_TEX1D_ARRAY_UAV Texture1DArray;
-        D3D12_TEX2D_UAV Texture2D;
-        D3D12_TEX2D_ARRAY_UAV Texture2DArray;
-        D3D12_TEX3D_UAV Texture3D;
+                     D3D12_BUFFER_UAV Buffer;
+                     D3D12_TEX1D_UAV Texture1D;
+                     D3D12_TEX1D_ARRAY_UAV Texture1DArray;
+                     D3D12_TEX2D_UAV Texture2D;
+                     D3D12_TEX2D_ARRAY_UAV Texture2DArray;
+                     D3D12_TEX3D_UAV Texture3D;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_UNORDERED_ACCESS_VIEW_DESC;
 typedef enum D3D12_RTV_DIMENSION {
@@ -1116,14 +1116,14 @@ typedef struct D3D12_RENDER_TARGET_VIEW_DESC {
     DXGI_FORMAT Format;
     D3D12_RTV_DIMENSION ViewDimension;
     __C89_NAMELESS union {
-        D3D12_BUFFER_RTV Buffer;
-        D3D12_TEX1D_RTV Texture1D;
-        D3D12_TEX1D_ARRAY_RTV Texture1DArray;
-        D3D12_TEX2D_RTV Texture2D;
-        D3D12_TEX2D_ARRAY_RTV Texture2DArray;
-        D3D12_TEX2DMS_RTV Texture2DMS;
-        D3D12_TEX2DMS_ARRAY_RTV Texture2DMSArray;
-        D3D12_TEX3D_RTV Texture3D;
+                     D3D12_BUFFER_RTV Buffer;
+                     D3D12_TEX1D_RTV Texture1D;
+                     D3D12_TEX1D_ARRAY_RTV Texture1DArray;
+                     D3D12_TEX2D_RTV Texture2D;
+                     D3D12_TEX2D_ARRAY_RTV Texture2DArray;
+                     D3D12_TEX2DMS_RTV Texture2DMS;
+                     D3D12_TEX2DMS_ARRAY_RTV Texture2DMSArray;
+                     D3D12_TEX3D_RTV Texture3D;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_RENDER_TARGET_VIEW_DESC;
 typedef enum D3D12_DSV_DIMENSION {
@@ -1169,12 +1169,12 @@ typedef struct D3D12_DEPTH_STENCIL_VIEW_DESC {
     D3D12_DSV_DIMENSION ViewDimension;
     D3D12_DSV_FLAGS Flags;
     __C89_NAMELESS union {
-        D3D12_TEX1D_DSV Texture1D;
-        D3D12_TEX1D_ARRAY_DSV Texture1DArray;
-        D3D12_TEX2D_DSV Texture2D;
-        D3D12_TEX2D_ARRAY_DSV Texture2DArray;
-        D3D12_TEX2DMS_DSV Texture2DMS;
-        D3D12_TEX2DMS_ARRAY_DSV Texture2DMSArray;
+                     D3D12_TEX1D_DSV Texture1D;
+                     D3D12_TEX1D_ARRAY_DSV Texture1DArray;
+                     D3D12_TEX2D_DSV Texture2D;
+                     D3D12_TEX2D_ARRAY_DSV Texture2DArray;
+                     D3D12_TEX2DMS_DSV Texture2DMS;
+                     D3D12_TEX2DMS_ARRAY_DSV Texture2DMSArray;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_DEPTH_STENCIL_VIEW_DESC;
 typedef struct D3D12_SAMPLER_DESC {
@@ -1456,21 +1456,21 @@ MIDL_INTERFACE("c4fec28f-7966-4e95-9f94-f431cb56c3b8")
 ID3D12Object : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPrivateData(
-        REFGUID guid,
-        UINT *data_size,
-        void *data) = 0;
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateData(
-        REFGUID guid,
-        UINT data_size,
-        const void *data) = 0;
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPrivateDataInterface(
-        REFGUID guid,
-        const IUnknown *data) = 0;
+                     REFGUID guid,
+                     const IUnknown *data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetName(
-        const WCHAR *name) = 0;
+                     const WCHAR *name) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1482,37 +1482,37 @@ typedef struct ID3D12ObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12Object *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12Object *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12Object *This);
+                     ID3D12Object *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12Object *This);
+                     ID3D12Object *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12Object *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12Object *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12Object *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12Object *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12Object *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12Object *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12Object *This,
-        const WCHAR *name);
+                     ID3D12Object *This,
+                     const WCHAR *name);
 
     END_INTERFACE
 } ID3D12ObjectVtbl;
@@ -1576,8 +1576,8 @@ MIDL_INTERFACE("905db94b-a00c-4140-9df5-2b64ca9ea357")
 ID3D12DeviceChild : public ID3D12Object
 {
     virtual HRESULT STDMETHODCALLTYPE GetDevice(
-        REFIID riid,
-        void **device) = 0;
+                     REFIID riid,
+                     void **device) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1589,43 +1589,43 @@ typedef struct ID3D12DeviceChildVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12DeviceChild *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12DeviceChild *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12DeviceChild *This);
+                     ID3D12DeviceChild *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12DeviceChild *This);
+                     ID3D12DeviceChild *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12DeviceChild *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12DeviceChild *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12DeviceChild *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12DeviceChild *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12DeviceChild *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12DeviceChild *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12DeviceChild *This,
-        const WCHAR *name);
+                     ID3D12DeviceChild *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12DeviceChild *This,
-        REFIID riid,
-        void **device);
+                     ID3D12DeviceChild *This,
+                     REFIID riid,
+                     void **device);
 
     END_INTERFACE
 } ID3D12DeviceChildVtbl;
@@ -1704,43 +1704,43 @@ typedef struct ID3D12PageableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12Pageable *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12Pageable *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12Pageable *This);
+                     ID3D12Pageable *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12Pageable *This);
+                     ID3D12Pageable *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12Pageable *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12Pageable *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12Pageable *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12Pageable *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12Pageable *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12Pageable *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12Pageable *This,
-        const WCHAR *name);
+                     ID3D12Pageable *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12Pageable *This,
-        REFIID riid,
-        void **device);
+                     ID3D12Pageable *This,
+                     REFIID riid,
+                     void **device);
 
     END_INTERFACE
 } ID3D12PageableVtbl;
@@ -1810,48 +1810,48 @@ MIDL_INTERFACE("696442be-a72e-4059-bc79-5b5c98040fad")
 ID3D12Resource : public ID3D12Pageable
 {
     virtual HRESULT STDMETHODCALLTYPE Map(
-        UINT sub_resource,
-        const D3D12_RANGE *read_range,
-        void **data) = 0;
+                     UINT sub_resource,
+                     const D3D12_RANGE *read_range,
+                     void **data) = 0;
 
     virtual void STDMETHODCALLTYPE Unmap(
-        UINT sub_resource,
-        const D3D12_RANGE *written_range) = 0;
+                     UINT sub_resource,
+                     const D3D12_RANGE *written_range) = 0;
 
 #ifdef WIDL_EXPLICIT_AGGREGATE_RETURNS
     virtual D3D12_RESOURCE_DESC* STDMETHODCALLTYPE GetDesc(
-        D3D12_RESOURCE_DESC *__ret) = 0;
+                     D3D12_RESOURCE_DESC *__ret) = 0;
     D3D12_RESOURCE_DESC STDMETHODCALLTYPE GetDesc(
-        )
+                     )
     {
-        D3D12_RESOURCE_DESC __ret;
-        return *GetDesc(&__ret);
+                     D3D12_RESOURCE_DESC __ret;
+                     return *GetDesc(&__ret);
     }
 #else
     virtual D3D12_RESOURCE_DESC STDMETHODCALLTYPE GetDesc(
-        ) = 0;
+                     ) = 0;
 #endif
 
     virtual D3D12_GPU_VIRTUAL_ADDRESS STDMETHODCALLTYPE GetGPUVirtualAddress(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WriteToSubresource(
-        UINT dst_sub_resource,
-        const D3D12_BOX *dst_box,
-        const void *src_data,
-        UINT src_row_pitch,
-        UINT src_slice_pitch) = 0;
+                     UINT dst_sub_resource,
+                     const D3D12_BOX *dst_box,
+                     const void *src_data,
+                     UINT src_row_pitch,
+                     UINT src_slice_pitch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReadFromSubresource(
-        void *dst_data,
-        UINT dst_row_pitch,
-        UINT dst_slice_pitch,
-        UINT src_sub_resource,
-        const D3D12_BOX *src_box) = 0;
+                     void *dst_data,
+                     UINT dst_row_pitch,
+                     UINT dst_slice_pitch,
+                     UINT src_sub_resource,
+                     const D3D12_BOX *src_box) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHeapProperties(
-        D3D12_HEAP_PROPERTIES *heap_properties,
-        D3D12_HEAP_FLAGS *flags) = 0;
+                     D3D12_HEAP_PROPERTIES *heap_properties,
+                     D3D12_HEAP_FLAGS *flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1863,83 +1863,83 @@ typedef struct ID3D12ResourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12Resource *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12Resource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12Resource *This);
+                     ID3D12Resource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12Resource *This);
+                     ID3D12Resource *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12Resource *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12Resource *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12Resource *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12Resource *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12Resource *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12Resource *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12Resource *This,
-        const WCHAR *name);
+                     ID3D12Resource *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12Resource *This,
-        REFIID riid,
-        void **device);
+                     ID3D12Resource *This,
+                     REFIID riid,
+                     void **device);
 
     /*** ID3D12Resource methods ***/
     HRESULT (STDMETHODCALLTYPE *Map)(
-        ID3D12Resource *This,
-        UINT sub_resource,
-        const D3D12_RANGE *read_range,
-        void **data);
+                     ID3D12Resource *This,
+                     UINT sub_resource,
+                     const D3D12_RANGE *read_range,
+                     void **data);
 
     void (STDMETHODCALLTYPE *Unmap)(
-        ID3D12Resource *This,
-        UINT sub_resource,
-        const D3D12_RANGE *written_range);
+                     ID3D12Resource *This,
+                     UINT sub_resource,
+                     const D3D12_RANGE *written_range);
 
     D3D12_RESOURCE_DESC * (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12Resource *This,
-        D3D12_RESOURCE_DESC *__ret);
+                     ID3D12Resource *This,
+                     D3D12_RESOURCE_DESC *__ret);
 
     D3D12_GPU_VIRTUAL_ADDRESS (STDMETHODCALLTYPE *GetGPUVirtualAddress)(
-        ID3D12Resource *This);
+                     ID3D12Resource *This);
 
     HRESULT (STDMETHODCALLTYPE *WriteToSubresource)(
-        ID3D12Resource *This,
-        UINT dst_sub_resource,
-        const D3D12_BOX *dst_box,
-        const void *src_data,
-        UINT src_row_pitch,
-        UINT src_slice_pitch);
+                     ID3D12Resource *This,
+                     UINT dst_sub_resource,
+                     const D3D12_BOX *dst_box,
+                     const void *src_data,
+                     UINT src_row_pitch,
+                     UINT src_slice_pitch);
 
     HRESULT (STDMETHODCALLTYPE *ReadFromSubresource)(
-        ID3D12Resource *This,
-        void *dst_data,
-        UINT dst_row_pitch,
-        UINT dst_slice_pitch,
-        UINT src_sub_resource,
-        const D3D12_BOX *src_box);
+                     ID3D12Resource *This,
+                     void *dst_data,
+                     UINT dst_row_pitch,
+                     UINT dst_slice_pitch,
+                     UINT src_sub_resource,
+                     const D3D12_BOX *src_box);
 
     HRESULT (STDMETHODCALLTYPE *GetHeapProperties)(
-        ID3D12Resource *This,
-        D3D12_HEAP_PROPERTIES *heap_properties,
-        D3D12_HEAP_FLAGS *flags);
+                     ID3D12Resource *This,
+                     D3D12_HEAP_PROPERTIES *heap_properties,
+                     D3D12_HEAP_FLAGS *flags);
 
     END_INTERFACE
 } ID3D12ResourceVtbl;
@@ -2040,7 +2040,7 @@ MIDL_INTERFACE("7116d91c-e7e4-47ce-b8c6-ec8168f437e5")
 ID3D12CommandList : public ID3D12DeviceChild
 {
     virtual D3D12_COMMAND_LIST_TYPE STDMETHODCALLTYPE GetType(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2052,47 +2052,47 @@ typedef struct ID3D12CommandListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12CommandList *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12CommandList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12CommandList *This);
+                     ID3D12CommandList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12CommandList *This);
+                     ID3D12CommandList *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12CommandList *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12CommandList *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12CommandList *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12CommandList *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12CommandList *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12CommandList *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12CommandList *This,
-        const WCHAR *name);
+                     ID3D12CommandList *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12CommandList *This,
-        REFIID riid,
-        void **device);
+                     ID3D12CommandList *This,
+                     REFIID riid,
+                     void **device);
 
     /*** ID3D12CommandList methods ***/
     D3D12_COMMAND_LIST_TYPE (STDMETHODCALLTYPE *GetType)(
-        ID3D12CommandList *This);
+                     ID3D12CommandList *This);
 
     END_INTERFACE
 } ID3D12CommandListVtbl;
@@ -2228,44 +2228,44 @@ ID3D12DescriptorHeap : public ID3D12Pageable
 {
 #ifdef WIDL_EXPLICIT_AGGREGATE_RETURNS
     virtual D3D12_DESCRIPTOR_HEAP_DESC* STDMETHODCALLTYPE GetDesc(
-        D3D12_DESCRIPTOR_HEAP_DESC *__ret) = 0;
+                     D3D12_DESCRIPTOR_HEAP_DESC *__ret) = 0;
     D3D12_DESCRIPTOR_HEAP_DESC STDMETHODCALLTYPE GetDesc(
-        )
+                     )
     {
-        D3D12_DESCRIPTOR_HEAP_DESC __ret;
-        return *GetDesc(&__ret);
+                     D3D12_DESCRIPTOR_HEAP_DESC __ret;
+                     return *GetDesc(&__ret);
     }
 #else
     virtual D3D12_DESCRIPTOR_HEAP_DESC STDMETHODCALLTYPE GetDesc(
-        ) = 0;
+                     ) = 0;
 #endif
 
 #ifdef WIDL_EXPLICIT_AGGREGATE_RETURNS
     virtual D3D12_CPU_DESCRIPTOR_HANDLE* STDMETHODCALLTYPE GetCPUDescriptorHandleForHeapStart(
-        D3D12_CPU_DESCRIPTOR_HANDLE *__ret) = 0;
+                     D3D12_CPU_DESCRIPTOR_HANDLE *__ret) = 0;
     D3D12_CPU_DESCRIPTOR_HANDLE STDMETHODCALLTYPE GetCPUDescriptorHandleForHeapStart(
-        )
+                     )
     {
-        D3D12_CPU_DESCRIPTOR_HANDLE __ret;
-        return *GetCPUDescriptorHandleForHeapStart(&__ret);
+                     D3D12_CPU_DESCRIPTOR_HANDLE __ret;
+                     return *GetCPUDescriptorHandleForHeapStart(&__ret);
     }
 #else
     virtual D3D12_CPU_DESCRIPTOR_HANDLE STDMETHODCALLTYPE GetCPUDescriptorHandleForHeapStart(
-        ) = 0;
+                     ) = 0;
 #endif
 
 #ifdef WIDL_EXPLICIT_AGGREGATE_RETURNS
     virtual D3D12_GPU_DESCRIPTOR_HANDLE* STDMETHODCALLTYPE GetGPUDescriptorHandleForHeapStart(
-        D3D12_GPU_DESCRIPTOR_HANDLE *__ret) = 0;
+                     D3D12_GPU_DESCRIPTOR_HANDLE *__ret) = 0;
     D3D12_GPU_DESCRIPTOR_HANDLE STDMETHODCALLTYPE GetGPUDescriptorHandleForHeapStart(
-        )
+                     )
     {
-        D3D12_GPU_DESCRIPTOR_HANDLE __ret;
-        return *GetGPUDescriptorHandleForHeapStart(&__ret);
+                     D3D12_GPU_DESCRIPTOR_HANDLE __ret;
+                     return *GetGPUDescriptorHandleForHeapStart(&__ret);
     }
 #else
     virtual D3D12_GPU_DESCRIPTOR_HANDLE STDMETHODCALLTYPE GetGPUDescriptorHandleForHeapStart(
-        ) = 0;
+                     ) = 0;
 #endif
 
 };
@@ -2278,56 +2278,56 @@ typedef struct ID3D12DescriptorHeapVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12DescriptorHeap *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12DescriptorHeap *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12DescriptorHeap *This);
+                     ID3D12DescriptorHeap *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12DescriptorHeap *This);
+                     ID3D12DescriptorHeap *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12DescriptorHeap *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12DescriptorHeap *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12DescriptorHeap *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12DescriptorHeap *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12DescriptorHeap *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12DescriptorHeap *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12DescriptorHeap *This,
-        const WCHAR *name);
+                     ID3D12DescriptorHeap *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12DescriptorHeap *This,
-        REFIID riid,
-        void **device);
+                     ID3D12DescriptorHeap *This,
+                     REFIID riid,
+                     void **device);
 
     /*** ID3D12DescriptorHeap methods ***/
     D3D12_DESCRIPTOR_HEAP_DESC * (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12DescriptorHeap *This,
-        D3D12_DESCRIPTOR_HEAP_DESC *__ret);
+                     ID3D12DescriptorHeap *This,
+                     D3D12_DESCRIPTOR_HEAP_DESC *__ret);
 
     D3D12_CPU_DESCRIPTOR_HANDLE * (STDMETHODCALLTYPE *GetCPUDescriptorHandleForHeapStart)(
-        ID3D12DescriptorHeap *This,
-        D3D12_CPU_DESCRIPTOR_HANDLE *__ret);
+                     ID3D12DescriptorHeap *This,
+                     D3D12_CPU_DESCRIPTOR_HANDLE *__ret);
 
     D3D12_GPU_DESCRIPTOR_HANDLE * (STDMETHODCALLTYPE *GetGPUDescriptorHandleForHeapStart)(
-        ID3D12DescriptorHeap *This,
-        D3D12_GPU_DESCRIPTOR_HANDLE *__ret);
+                     ID3D12DescriptorHeap *This,
+                     D3D12_GPU_DESCRIPTOR_HANDLE *__ret);
 
     END_INTERFACE
 } ID3D12DescriptorHeapVtbl;
@@ -2423,43 +2423,43 @@ typedef struct ID3D12QueryHeapVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12QueryHeap *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12QueryHeap *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12QueryHeap *This);
+                     ID3D12QueryHeap *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12QueryHeap *This);
+                     ID3D12QueryHeap *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12QueryHeap *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12QueryHeap *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12QueryHeap *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12QueryHeap *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12QueryHeap *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12QueryHeap *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12QueryHeap *This,
-        const WCHAR *name);
+                     ID3D12QueryHeap *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12QueryHeap *This,
-        REFIID riid,
-        void **device);
+                     ID3D12QueryHeap *This,
+                     REFIID riid,
+                     void **device);
 
     END_INTERFACE
 } ID3D12QueryHeapVtbl;
@@ -2538,43 +2538,43 @@ typedef struct ID3D12CommandSignatureVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12CommandSignature *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12CommandSignature *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12CommandSignature *This);
+                     ID3D12CommandSignature *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12CommandSignature *This);
+                     ID3D12CommandSignature *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12CommandSignature *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12CommandSignature *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12CommandSignature *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12CommandSignature *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12CommandSignature *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12CommandSignature *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12CommandSignature *This,
-        const WCHAR *name);
+                     ID3D12CommandSignature *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12CommandSignature *This,
-        REFIID riid,
-        void **device);
+                     ID3D12CommandSignature *This,
+                     REFIID riid,
+                     void **device);
 
     END_INTERFACE
 } ID3D12CommandSignatureVtbl;
@@ -2644,254 +2644,254 @@ MIDL_INTERFACE("5b160d0f-ac1b-4185-8ba8-b3ae42a5a455")
 ID3D12GraphicsCommandList : public ID3D12CommandList
 {
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ID3D12CommandAllocator *allocator,
-        ID3D12PipelineState *initial_state) = 0;
+                     ID3D12CommandAllocator *allocator,
+                     ID3D12PipelineState *initial_state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearState(
-        ID3D12PipelineState *pipeline_state) = 0;
+                     ID3D12PipelineState *pipeline_state) = 0;
 
     virtual void STDMETHODCALLTYPE DrawInstanced(
-        UINT vertex_count_per_instance,
-        UINT instance_count,
-        UINT start_vertex_location,
-        UINT start_instance_location) = 0;
+                     UINT vertex_count_per_instance,
+                     UINT instance_count,
+                     UINT start_vertex_location,
+                     UINT start_instance_location) = 0;
 
     virtual void STDMETHODCALLTYPE DrawIndexedInstanced(
-        UINT index_count_per_instance,
-        UINT instance_count,
-        UINT start_vertex_location,
-        INT base_vertex_location,
-        UINT start_instance_location) = 0;
+                     UINT index_count_per_instance,
+                     UINT instance_count,
+                     UINT start_vertex_location,
+                     INT base_vertex_location,
+                     UINT start_instance_location) = 0;
 
     virtual void STDMETHODCALLTYPE Dispatch(
-        UINT x,
-        UINT u,
-        UINT z) = 0;
+                     UINT x,
+                     UINT u,
+                     UINT z) = 0;
 
     virtual void STDMETHODCALLTYPE CopyBufferRegion(
-        ID3D12Resource *dst_buffer,
-        UINT64 dst_offset,
-        ID3D12Resource *src_buffer,
-        UINT64 src_offset,
-        UINT64 byte_count) = 0;
+                     ID3D12Resource *dst_buffer,
+                     UINT64 dst_offset,
+                     ID3D12Resource *src_buffer,
+                     UINT64 src_offset,
+                     UINT64 byte_count) = 0;
 
     virtual void STDMETHODCALLTYPE CopyTextureRegion(
-        const D3D12_TEXTURE_COPY_LOCATION *dst,
-        UINT dst_x,
-        UINT dst_y,
-        UINT dst_z,
-        const D3D12_TEXTURE_COPY_LOCATION *src,
-        const D3D12_BOX *src_box) = 0;
+                     const D3D12_TEXTURE_COPY_LOCATION *dst,
+                     UINT dst_x,
+                     UINT dst_y,
+                     UINT dst_z,
+                     const D3D12_TEXTURE_COPY_LOCATION *src,
+                     const D3D12_BOX *src_box) = 0;
 
     virtual void STDMETHODCALLTYPE CopyResource(
-        ID3D12Resource *dst_resource,
-        ID3D12Resource *src_resource) = 0;
+                     ID3D12Resource *dst_resource,
+                     ID3D12Resource *src_resource) = 0;
 
     virtual void STDMETHODCALLTYPE CopyTiles(
-        ID3D12Resource *tiled_resource,
-        const D3D12_TILED_RESOURCE_COORDINATE *tile_region_start_coordinate,
-        const D3D12_TILE_REGION_SIZE *tile_region_size,
-        ID3D12Resource *buffer,
-        UINT64 buffer_offset,
-        D3D12_TILE_COPY_FLAGS flags) = 0;
+                     ID3D12Resource *tiled_resource,
+                     const D3D12_TILED_RESOURCE_COORDINATE *tile_region_start_coordinate,
+                     const D3D12_TILE_REGION_SIZE *tile_region_size,
+                     ID3D12Resource *buffer,
+                     UINT64 buffer_offset,
+                     D3D12_TILE_COPY_FLAGS flags) = 0;
 
     virtual void STDMETHODCALLTYPE ResolveSubresource(
-        ID3D12Resource *dst_resource,
-        UINT dst_sub_resource,
-        ID3D12Resource *src_resource,
-        UINT src_sub_resource,
-        DXGI_FORMAT format) = 0;
+                     ID3D12Resource *dst_resource,
+                     UINT dst_sub_resource,
+                     ID3D12Resource *src_resource,
+                     UINT src_sub_resource,
+                     DXGI_FORMAT format) = 0;
 
     virtual void STDMETHODCALLTYPE IASetPrimitiveTopology(
-        D3D12_PRIMITIVE_TOPOLOGY primitive_topology) = 0;
+                     D3D12_PRIMITIVE_TOPOLOGY primitive_topology) = 0;
 
     virtual void STDMETHODCALLTYPE RSSetViewports(
-        UINT viewport_count,
-        const D3D12_VIEWPORT *viewports) = 0;
+                     UINT viewport_count,
+                     const D3D12_VIEWPORT *viewports) = 0;
 
     virtual void STDMETHODCALLTYPE RSSetScissorRects(
-        UINT rect_count,
-        const D3D12_RECT *rects) = 0;
+                     UINT rect_count,
+                     const D3D12_RECT *rects) = 0;
 
     virtual void STDMETHODCALLTYPE OMSetBlendFactor(
-        const FLOAT blend_factor[4]) = 0;
+                     const FLOAT blend_factor[4]) = 0;
 
     virtual void STDMETHODCALLTYPE OMSetStencilRef(
-        UINT stencil_ref) = 0;
+                     UINT stencil_ref) = 0;
 
     virtual void STDMETHODCALLTYPE SetPipelineState(
-        ID3D12PipelineState *pipeline_state) = 0;
+                     ID3D12PipelineState *pipeline_state) = 0;
 
     virtual void STDMETHODCALLTYPE ResourceBarrier(
-        UINT barrier_count,
-        const D3D12_RESOURCE_BARRIER *barriers) = 0;
+                     UINT barrier_count,
+                     const D3D12_RESOURCE_BARRIER *barriers) = 0;
 
     virtual void STDMETHODCALLTYPE ExecuteBundle(
-        ID3D12GraphicsCommandList *command_list) = 0;
+                     ID3D12GraphicsCommandList *command_list) = 0;
 
     virtual void STDMETHODCALLTYPE SetDescriptorHeaps(
-        UINT heap_count,
-        ID3D12DescriptorHeap *const *heaps) = 0;
+                     UINT heap_count,
+                     ID3D12DescriptorHeap *const *heaps) = 0;
 
     virtual void STDMETHODCALLTYPE SetComputeRootSignature(
-        ID3D12RootSignature *root_signature) = 0;
+                     ID3D12RootSignature *root_signature) = 0;
 
     virtual void STDMETHODCALLTYPE SetGraphicsRootSignature(
-        ID3D12RootSignature *root_signature) = 0;
+                     ID3D12RootSignature *root_signature) = 0;
 
     virtual void STDMETHODCALLTYPE SetComputeRootDescriptorTable(
-        UINT root_parameter_index,
-        D3D12_GPU_DESCRIPTOR_HANDLE base_descriptor) = 0;
+                     UINT root_parameter_index,
+                     D3D12_GPU_DESCRIPTOR_HANDLE base_descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE SetGraphicsRootDescriptorTable(
-        UINT root_parameter_index,
-        D3D12_GPU_DESCRIPTOR_HANDLE base_descriptor) = 0;
+                     UINT root_parameter_index,
+                     D3D12_GPU_DESCRIPTOR_HANDLE base_descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE SetComputeRoot32BitConstant(
-        UINT root_parameter_index,
-        UINT data,
-        UINT dst_offset) = 0;
+                     UINT root_parameter_index,
+                     UINT data,
+                     UINT dst_offset) = 0;
 
     virtual void STDMETHODCALLTYPE SetGraphicsRoot32BitConstant(
-        UINT root_parameter_index,
-        UINT data,
-        UINT dst_offset) = 0;
+                     UINT root_parameter_index,
+                     UINT data,
+                     UINT dst_offset) = 0;
 
     virtual void STDMETHODCALLTYPE SetComputeRoot32BitConstants(
-        UINT root_parameter_index,
-        UINT constant_count,
-        const void *data,
-        UINT dst_offset) = 0;
+                     UINT root_parameter_index,
+                     UINT constant_count,
+                     const void *data,
+                     UINT dst_offset) = 0;
 
     virtual void STDMETHODCALLTYPE SetGraphicsRoot32BitConstants(
-        UINT root_parameter_index,
-        UINT constant_count,
-        const void *data,
-        UINT dst_offset) = 0;
+                     UINT root_parameter_index,
+                     UINT constant_count,
+                     const void *data,
+                     UINT dst_offset) = 0;
 
     virtual void STDMETHODCALLTYPE SetComputeRootConstantBufferView(
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
 
     virtual void STDMETHODCALLTYPE SetGraphicsRootConstantBufferView(
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
 
     virtual void STDMETHODCALLTYPE SetComputeRootShaderResourceView(
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
 
     virtual void STDMETHODCALLTYPE SetGraphicsRootShaderResourceView(
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
 
     virtual void STDMETHODCALLTYPE SetComputeRootUnorderedAccessView(
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
 
     virtual void STDMETHODCALLTYPE SetGraphicsRootUnorderedAccessView(
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address) = 0;
 
     virtual void STDMETHODCALLTYPE IASetIndexBuffer(
-        const D3D12_INDEX_BUFFER_VIEW *view) = 0;
+                     const D3D12_INDEX_BUFFER_VIEW *view) = 0;
 
     virtual void STDMETHODCALLTYPE IASetVertexBuffers(
-        UINT start_slot,
-        UINT view_count,
-        const D3D12_VERTEX_BUFFER_VIEW *views) = 0;
+                     UINT start_slot,
+                     UINT view_count,
+                     const D3D12_VERTEX_BUFFER_VIEW *views) = 0;
 
     virtual void STDMETHODCALLTYPE SOSetTargets(
-        UINT start_slot,
-        UINT view_count,
-        const D3D12_STREAM_OUTPUT_BUFFER_VIEW *views) = 0;
+                     UINT start_slot,
+                     UINT view_count,
+                     const D3D12_STREAM_OUTPUT_BUFFER_VIEW *views) = 0;
 
     virtual void STDMETHODCALLTYPE OMSetRenderTargets(
-        UINT render_target_descriptor_count,
-        const D3D12_CPU_DESCRIPTOR_HANDLE *render_target_descriptors,
-        WINBOOL single_descriptor_handle,
-        const D3D12_CPU_DESCRIPTOR_HANDLE *depth_stencil_descriptor) = 0;
+                     UINT render_target_descriptor_count,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE *render_target_descriptors,
+                     WINBOOL single_descriptor_handle,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE *depth_stencil_descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE ClearDepthStencilView(
-        D3D12_CPU_DESCRIPTOR_HANDLE dsv,
-        D3D12_CLEAR_FLAGS flags,
-        FLOAT depth,
-        UINT8 stencil,
-        UINT rect_count,
-        const D3D12_RECT *rects) = 0;
+                     D3D12_CPU_DESCRIPTOR_HANDLE dsv,
+                     D3D12_CLEAR_FLAGS flags,
+                     FLOAT depth,
+                     UINT8 stencil,
+                     UINT rect_count,
+                     const D3D12_RECT *rects) = 0;
 
     virtual void STDMETHODCALLTYPE ClearRenderTargetView(
-        D3D12_CPU_DESCRIPTOR_HANDLE rtv,
-        const FLOAT color[4],
-        UINT rect_count,
-        const D3D12_RECT *rects) = 0;
+                     D3D12_CPU_DESCRIPTOR_HANDLE rtv,
+                     const FLOAT color[4],
+                     UINT rect_count,
+                     const D3D12_RECT *rects) = 0;
 
     virtual void STDMETHODCALLTYPE ClearUnorderedAccessViewUint(
-        D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
-        D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle,
-        ID3D12Resource *resource,
-        const UINT values[4],
-        UINT rect_count,
-        const D3D12_RECT *rects) = 0;
+                     D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
+                     D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle,
+                     ID3D12Resource *resource,
+                     const UINT values[4],
+                     UINT rect_count,
+                     const D3D12_RECT *rects) = 0;
 
     virtual void STDMETHODCALLTYPE ClearUnorderedAccessViewFloat(
-        D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
-        D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle,
-        ID3D12Resource *resource,
-        const float values[4],
-        UINT rect_count,
-        const D3D12_RECT *rects) = 0;
+                     D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
+                     D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle,
+                     ID3D12Resource *resource,
+                     const float values[4],
+                     UINT rect_count,
+                     const D3D12_RECT *rects) = 0;
 
     virtual void STDMETHODCALLTYPE DiscardResource(
-        ID3D12Resource *resource,
-        const D3D12_DISCARD_REGION *region) = 0;
+                     ID3D12Resource *resource,
+                     const D3D12_DISCARD_REGION *region) = 0;
 
     virtual void STDMETHODCALLTYPE BeginQuery(
-        ID3D12QueryHeap *heap,
-        D3D12_QUERY_TYPE type,
-        UINT index) = 0;
+                     ID3D12QueryHeap *heap,
+                     D3D12_QUERY_TYPE type,
+                     UINT index) = 0;
 
     virtual void STDMETHODCALLTYPE EndQuery(
-        ID3D12QueryHeap *heap,
-        D3D12_QUERY_TYPE type,
-        UINT index) = 0;
+                     ID3D12QueryHeap *heap,
+                     D3D12_QUERY_TYPE type,
+                     UINT index) = 0;
 
     virtual void STDMETHODCALLTYPE ResolveQueryData(
-        ID3D12QueryHeap *heap,
-        D3D12_QUERY_TYPE type,
-        UINT start_index,
-        UINT query_count,
-        ID3D12Resource *dst_buffer,
-        UINT64 aligned_dst_buffer_offset) = 0;
+                     ID3D12QueryHeap *heap,
+                     D3D12_QUERY_TYPE type,
+                     UINT start_index,
+                     UINT query_count,
+                     ID3D12Resource *dst_buffer,
+                     UINT64 aligned_dst_buffer_offset) = 0;
 
     virtual void STDMETHODCALLTYPE SetPredication(
-        ID3D12Resource *buffer,
-        UINT64 aligned_buffer_offset,
-        D3D12_PREDICATION_OP operation) = 0;
+                     ID3D12Resource *buffer,
+                     UINT64 aligned_buffer_offset,
+                     D3D12_PREDICATION_OP operation) = 0;
 
     virtual void STDMETHODCALLTYPE SetMarker(
-        UINT metadata,
-        const void *data,
-        UINT size) = 0;
+                     UINT metadata,
+                     const void *data,
+                     UINT size) = 0;
 
     virtual void STDMETHODCALLTYPE BeginEvent(
-        UINT metadata,
-        const void *data,
-        UINT size) = 0;
+                     UINT metadata,
+                     const void *data,
+                     UINT size) = 0;
 
     virtual void STDMETHODCALLTYPE EndEvent(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE ExecuteIndirect(
-        ID3D12CommandSignature *command_signature,
-        UINT max_command_count,
-        ID3D12Resource *arg_buffer,
-        UINT64 arg_buffer_offset,
-        ID3D12Resource *count_buffer,
-        UINT64 count_buffer_offset) = 0;
+                     ID3D12CommandSignature *command_signature,
+                     UINT max_command_count,
+                     ID3D12Resource *arg_buffer,
+                     UINT64 arg_buffer_offset,
+                     ID3D12Resource *count_buffer,
+                     UINT64 count_buffer_offset) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2903,347 +2903,347 @@ typedef struct ID3D12GraphicsCommandListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12GraphicsCommandList *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12GraphicsCommandList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12GraphicsCommandList *This);
+                     ID3D12GraphicsCommandList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12GraphicsCommandList *This);
+                     ID3D12GraphicsCommandList *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12GraphicsCommandList *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12GraphicsCommandList *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12GraphicsCommandList *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12GraphicsCommandList *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12GraphicsCommandList *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12GraphicsCommandList *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12GraphicsCommandList *This,
-        const WCHAR *name);
+                     ID3D12GraphicsCommandList *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12GraphicsCommandList *This,
-        REFIID riid,
-        void **device);
+                     ID3D12GraphicsCommandList *This,
+                     REFIID riid,
+                     void **device);
 
     /*** ID3D12CommandList methods ***/
     D3D12_COMMAND_LIST_TYPE (STDMETHODCALLTYPE *GetType)(
-        ID3D12GraphicsCommandList *This);
+                     ID3D12GraphicsCommandList *This);
 
     /*** ID3D12GraphicsCommandList methods ***/
     HRESULT (STDMETHODCALLTYPE *Close)(
-        ID3D12GraphicsCommandList *This);
+                     ID3D12GraphicsCommandList *This);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12CommandAllocator *allocator,
-        ID3D12PipelineState *initial_state);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12CommandAllocator *allocator,
+                     ID3D12PipelineState *initial_state);
 
     HRESULT (STDMETHODCALLTYPE *ClearState)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12PipelineState *pipeline_state);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12PipelineState *pipeline_state);
 
     void (STDMETHODCALLTYPE *DrawInstanced)(
-        ID3D12GraphicsCommandList *This,
-        UINT vertex_count_per_instance,
-        UINT instance_count,
-        UINT start_vertex_location,
-        UINT start_instance_location);
+                     ID3D12GraphicsCommandList *This,
+                     UINT vertex_count_per_instance,
+                     UINT instance_count,
+                     UINT start_vertex_location,
+                     UINT start_instance_location);
 
     void (STDMETHODCALLTYPE *DrawIndexedInstanced)(
-        ID3D12GraphicsCommandList *This,
-        UINT index_count_per_instance,
-        UINT instance_count,
-        UINT start_vertex_location,
-        INT base_vertex_location,
-        UINT start_instance_location);
+                     ID3D12GraphicsCommandList *This,
+                     UINT index_count_per_instance,
+                     UINT instance_count,
+                     UINT start_vertex_location,
+                     INT base_vertex_location,
+                     UINT start_instance_location);
 
     void (STDMETHODCALLTYPE *Dispatch)(
-        ID3D12GraphicsCommandList *This,
-        UINT x,
-        UINT u,
-        UINT z);
+                     ID3D12GraphicsCommandList *This,
+                     UINT x,
+                     UINT u,
+                     UINT z);
 
     void (STDMETHODCALLTYPE *CopyBufferRegion)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12Resource *dst_buffer,
-        UINT64 dst_offset,
-        ID3D12Resource *src_buffer,
-        UINT64 src_offset,
-        UINT64 byte_count);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12Resource *dst_buffer,
+                     UINT64 dst_offset,
+                     ID3D12Resource *src_buffer,
+                     UINT64 src_offset,
+                     UINT64 byte_count);
 
     void (STDMETHODCALLTYPE *CopyTextureRegion)(
-        ID3D12GraphicsCommandList *This,
-        const D3D12_TEXTURE_COPY_LOCATION *dst,
-        UINT dst_x,
-        UINT dst_y,
-        UINT dst_z,
-        const D3D12_TEXTURE_COPY_LOCATION *src,
-        const D3D12_BOX *src_box);
+                     ID3D12GraphicsCommandList *This,
+                     const D3D12_TEXTURE_COPY_LOCATION *dst,
+                     UINT dst_x,
+                     UINT dst_y,
+                     UINT dst_z,
+                     const D3D12_TEXTURE_COPY_LOCATION *src,
+                     const D3D12_BOX *src_box);
 
     void (STDMETHODCALLTYPE *CopyResource)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12Resource *dst_resource,
-        ID3D12Resource *src_resource);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12Resource *dst_resource,
+                     ID3D12Resource *src_resource);
 
     void (STDMETHODCALLTYPE *CopyTiles)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12Resource *tiled_resource,
-        const D3D12_TILED_RESOURCE_COORDINATE *tile_region_start_coordinate,
-        const D3D12_TILE_REGION_SIZE *tile_region_size,
-        ID3D12Resource *buffer,
-        UINT64 buffer_offset,
-        D3D12_TILE_COPY_FLAGS flags);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12Resource *tiled_resource,
+                     const D3D12_TILED_RESOURCE_COORDINATE *tile_region_start_coordinate,
+                     const D3D12_TILE_REGION_SIZE *tile_region_size,
+                     ID3D12Resource *buffer,
+                     UINT64 buffer_offset,
+                     D3D12_TILE_COPY_FLAGS flags);
 
     void (STDMETHODCALLTYPE *ResolveSubresource)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12Resource *dst_resource,
-        UINT dst_sub_resource,
-        ID3D12Resource *src_resource,
-        UINT src_sub_resource,
-        DXGI_FORMAT format);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12Resource *dst_resource,
+                     UINT dst_sub_resource,
+                     ID3D12Resource *src_resource,
+                     UINT src_sub_resource,
+                     DXGI_FORMAT format);
 
     void (STDMETHODCALLTYPE *IASetPrimitiveTopology)(
-        ID3D12GraphicsCommandList *This,
-        D3D12_PRIMITIVE_TOPOLOGY primitive_topology);
+                     ID3D12GraphicsCommandList *This,
+                     D3D12_PRIMITIVE_TOPOLOGY primitive_topology);
 
     void (STDMETHODCALLTYPE *RSSetViewports)(
-        ID3D12GraphicsCommandList *This,
-        UINT viewport_count,
-        const D3D12_VIEWPORT *viewports);
+                     ID3D12GraphicsCommandList *This,
+                     UINT viewport_count,
+                     const D3D12_VIEWPORT *viewports);
 
     void (STDMETHODCALLTYPE *RSSetScissorRects)(
-        ID3D12GraphicsCommandList *This,
-        UINT rect_count,
-        const D3D12_RECT *rects);
+                     ID3D12GraphicsCommandList *This,
+                     UINT rect_count,
+                     const D3D12_RECT *rects);
 
     void (STDMETHODCALLTYPE *OMSetBlendFactor)(
-        ID3D12GraphicsCommandList *This,
-        const FLOAT blend_factor[4]);
+                     ID3D12GraphicsCommandList *This,
+                     const FLOAT blend_factor[4]);
 
     void (STDMETHODCALLTYPE *OMSetStencilRef)(
-        ID3D12GraphicsCommandList *This,
-        UINT stencil_ref);
+                     ID3D12GraphicsCommandList *This,
+                     UINT stencil_ref);
 
     void (STDMETHODCALLTYPE *SetPipelineState)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12PipelineState *pipeline_state);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12PipelineState *pipeline_state);
 
     void (STDMETHODCALLTYPE *ResourceBarrier)(
-        ID3D12GraphicsCommandList *This,
-        UINT barrier_count,
-        const D3D12_RESOURCE_BARRIER *barriers);
+                     ID3D12GraphicsCommandList *This,
+                     UINT barrier_count,
+                     const D3D12_RESOURCE_BARRIER *barriers);
 
     void (STDMETHODCALLTYPE *ExecuteBundle)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12GraphicsCommandList *command_list);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12GraphicsCommandList *command_list);
 
     void (STDMETHODCALLTYPE *SetDescriptorHeaps)(
-        ID3D12GraphicsCommandList *This,
-        UINT heap_count,
-        ID3D12DescriptorHeap *const *heaps);
+                     ID3D12GraphicsCommandList *This,
+                     UINT heap_count,
+                     ID3D12DescriptorHeap *const *heaps);
 
     void (STDMETHODCALLTYPE *SetComputeRootSignature)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12RootSignature *root_signature);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12RootSignature *root_signature);
 
     void (STDMETHODCALLTYPE *SetGraphicsRootSignature)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12RootSignature *root_signature);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12RootSignature *root_signature);
 
     void (STDMETHODCALLTYPE *SetComputeRootDescriptorTable)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        D3D12_GPU_DESCRIPTOR_HANDLE base_descriptor);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     D3D12_GPU_DESCRIPTOR_HANDLE base_descriptor);
 
     void (STDMETHODCALLTYPE *SetGraphicsRootDescriptorTable)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        D3D12_GPU_DESCRIPTOR_HANDLE base_descriptor);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     D3D12_GPU_DESCRIPTOR_HANDLE base_descriptor);
 
     void (STDMETHODCALLTYPE *SetComputeRoot32BitConstant)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        UINT data,
-        UINT dst_offset);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     UINT data,
+                     UINT dst_offset);
 
     void (STDMETHODCALLTYPE *SetGraphicsRoot32BitConstant)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        UINT data,
-        UINT dst_offset);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     UINT data,
+                     UINT dst_offset);
 
     void (STDMETHODCALLTYPE *SetComputeRoot32BitConstants)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        UINT constant_count,
-        const void *data,
-        UINT dst_offset);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     UINT constant_count,
+                     const void *data,
+                     UINT dst_offset);
 
     void (STDMETHODCALLTYPE *SetGraphicsRoot32BitConstants)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        UINT constant_count,
-        const void *data,
-        UINT dst_offset);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     UINT constant_count,
+                     const void *data,
+                     UINT dst_offset);
 
     void (STDMETHODCALLTYPE *SetComputeRootConstantBufferView)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address);
 
     void (STDMETHODCALLTYPE *SetGraphicsRootConstantBufferView)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address);
 
     void (STDMETHODCALLTYPE *SetComputeRootShaderResourceView)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address);
 
     void (STDMETHODCALLTYPE *SetGraphicsRootShaderResourceView)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address);
 
     void (STDMETHODCALLTYPE *SetComputeRootUnorderedAccessView)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address);
 
     void (STDMETHODCALLTYPE *SetGraphicsRootUnorderedAccessView)(
-        ID3D12GraphicsCommandList *This,
-        UINT root_parameter_index,
-        D3D12_GPU_VIRTUAL_ADDRESS address);
+                     ID3D12GraphicsCommandList *This,
+                     UINT root_parameter_index,
+                     D3D12_GPU_VIRTUAL_ADDRESS address);
 
     void (STDMETHODCALLTYPE *IASetIndexBuffer)(
-        ID3D12GraphicsCommandList *This,
-        const D3D12_INDEX_BUFFER_VIEW *view);
+                     ID3D12GraphicsCommandList *This,
+                     const D3D12_INDEX_BUFFER_VIEW *view);
 
     void (STDMETHODCALLTYPE *IASetVertexBuffers)(
-        ID3D12GraphicsCommandList *This,
-        UINT start_slot,
-        UINT view_count,
-        const D3D12_VERTEX_BUFFER_VIEW *views);
+                     ID3D12GraphicsCommandList *This,
+                     UINT start_slot,
+                     UINT view_count,
+                     const D3D12_VERTEX_BUFFER_VIEW *views);
 
     void (STDMETHODCALLTYPE *SOSetTargets)(
-        ID3D12GraphicsCommandList *This,
-        UINT start_slot,
-        UINT view_count,
-        const D3D12_STREAM_OUTPUT_BUFFER_VIEW *views);
+                     ID3D12GraphicsCommandList *This,
+                     UINT start_slot,
+                     UINT view_count,
+                     const D3D12_STREAM_OUTPUT_BUFFER_VIEW *views);
 
     void (STDMETHODCALLTYPE *OMSetRenderTargets)(
-        ID3D12GraphicsCommandList *This,
-        UINT render_target_descriptor_count,
-        const D3D12_CPU_DESCRIPTOR_HANDLE *render_target_descriptors,
-        WINBOOL single_descriptor_handle,
-        const D3D12_CPU_DESCRIPTOR_HANDLE *depth_stencil_descriptor);
+                     ID3D12GraphicsCommandList *This,
+                     UINT render_target_descriptor_count,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE *render_target_descriptors,
+                     WINBOOL single_descriptor_handle,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE *depth_stencil_descriptor);
 
     void (STDMETHODCALLTYPE *ClearDepthStencilView)(
-        ID3D12GraphicsCommandList *This,
-        D3D12_CPU_DESCRIPTOR_HANDLE dsv,
-        D3D12_CLEAR_FLAGS flags,
-        FLOAT depth,
-        UINT8 stencil,
-        UINT rect_count,
-        const D3D12_RECT *rects);
+                     ID3D12GraphicsCommandList *This,
+                     D3D12_CPU_DESCRIPTOR_HANDLE dsv,
+                     D3D12_CLEAR_FLAGS flags,
+                     FLOAT depth,
+                     UINT8 stencil,
+                     UINT rect_count,
+                     const D3D12_RECT *rects);
 
     void (STDMETHODCALLTYPE *ClearRenderTargetView)(
-        ID3D12GraphicsCommandList *This,
-        D3D12_CPU_DESCRIPTOR_HANDLE rtv,
-        const FLOAT color[4],
-        UINT rect_count,
-        const D3D12_RECT *rects);
+                     ID3D12GraphicsCommandList *This,
+                     D3D12_CPU_DESCRIPTOR_HANDLE rtv,
+                     const FLOAT color[4],
+                     UINT rect_count,
+                     const D3D12_RECT *rects);
 
     void (STDMETHODCALLTYPE *ClearUnorderedAccessViewUint)(
-        ID3D12GraphicsCommandList *This,
-        D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
-        D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle,
-        ID3D12Resource *resource,
-        const UINT values[4],
-        UINT rect_count,
-        const D3D12_RECT *rects);
+                     ID3D12GraphicsCommandList *This,
+                     D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
+                     D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle,
+                     ID3D12Resource *resource,
+                     const UINT values[4],
+                     UINT rect_count,
+                     const D3D12_RECT *rects);
 
     void (STDMETHODCALLTYPE *ClearUnorderedAccessViewFloat)(
-        ID3D12GraphicsCommandList *This,
-        D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
-        D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle,
-        ID3D12Resource *resource,
-        const float values[4],
-        UINT rect_count,
-        const D3D12_RECT *rects);
+                     ID3D12GraphicsCommandList *This,
+                     D3D12_GPU_DESCRIPTOR_HANDLE gpu_handle,
+                     D3D12_CPU_DESCRIPTOR_HANDLE cpu_handle,
+                     ID3D12Resource *resource,
+                     const float values[4],
+                     UINT rect_count,
+                     const D3D12_RECT *rects);
 
     void (STDMETHODCALLTYPE *DiscardResource)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12Resource *resource,
-        const D3D12_DISCARD_REGION *region);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12Resource *resource,
+                     const D3D12_DISCARD_REGION *region);
 
     void (STDMETHODCALLTYPE *BeginQuery)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12QueryHeap *heap,
-        D3D12_QUERY_TYPE type,
-        UINT index);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12QueryHeap *heap,
+                     D3D12_QUERY_TYPE type,
+                     UINT index);
 
     void (STDMETHODCALLTYPE *EndQuery)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12QueryHeap *heap,
-        D3D12_QUERY_TYPE type,
-        UINT index);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12QueryHeap *heap,
+                     D3D12_QUERY_TYPE type,
+                     UINT index);
 
     void (STDMETHODCALLTYPE *ResolveQueryData)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12QueryHeap *heap,
-        D3D12_QUERY_TYPE type,
-        UINT start_index,
-        UINT query_count,
-        ID3D12Resource *dst_buffer,
-        UINT64 aligned_dst_buffer_offset);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12QueryHeap *heap,
+                     D3D12_QUERY_TYPE type,
+                     UINT start_index,
+                     UINT query_count,
+                     ID3D12Resource *dst_buffer,
+                     UINT64 aligned_dst_buffer_offset);
 
     void (STDMETHODCALLTYPE *SetPredication)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12Resource *buffer,
-        UINT64 aligned_buffer_offset,
-        D3D12_PREDICATION_OP operation);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12Resource *buffer,
+                     UINT64 aligned_buffer_offset,
+                     D3D12_PREDICATION_OP operation);
 
     void (STDMETHODCALLTYPE *SetMarker)(
-        ID3D12GraphicsCommandList *This,
-        UINT metadata,
-        const void *data,
-        UINT size);
+                     ID3D12GraphicsCommandList *This,
+                     UINT metadata,
+                     const void *data,
+                     UINT size);
 
     void (STDMETHODCALLTYPE *BeginEvent)(
-        ID3D12GraphicsCommandList *This,
-        UINT metadata,
-        const void *data,
-        UINT size);
+                     ID3D12GraphicsCommandList *This,
+                     UINT metadata,
+                     const void *data,
+                     UINT size);
 
     void (STDMETHODCALLTYPE *EndEvent)(
-        ID3D12GraphicsCommandList *This);
+                     ID3D12GraphicsCommandList *This);
 
     void (STDMETHODCALLTYPE *ExecuteIndirect)(
-        ID3D12GraphicsCommandList *This,
-        ID3D12CommandSignature *command_signature,
-        UINT max_command_count,
-        ID3D12Resource *arg_buffer,
-        UINT64 arg_buffer_offset,
-        ID3D12Resource *count_buffer,
-        UINT64 count_buffer_offset);
+                     ID3D12GraphicsCommandList *This,
+                     ID3D12CommandSignature *command_signature,
+                     UINT max_command_count,
+                     ID3D12Resource *arg_buffer,
+                     UINT64 arg_buffer_offset,
+                     ID3D12Resource *count_buffer,
+                     UINT64 count_buffer_offset);
 
     END_INTERFACE
 } ID3D12GraphicsCommandListVtbl;
@@ -3535,68 +3535,68 @@ MIDL_INTERFACE("0ec870a6-5d7e-4c22-8cfc-5baae07616ed")
 ID3D12CommandQueue : public ID3D12Pageable
 {
     virtual void STDMETHODCALLTYPE UpdateTileMappings(
-        ID3D12Resource *resource,
-        UINT region_count,
-        const D3D12_TILED_RESOURCE_COORDINATE *region_start_coordinates,
-        const D3D12_TILE_REGION_SIZE *region_sizes,
-        UINT range_count,
-        const D3D12_TILE_RANGE_FLAGS *range_flags,
-        UINT *heap_range_offsets,
-        UINT *range_tile_counts,
-        D3D12_TILE_MAPPING_FLAGS flags) = 0;
+                     ID3D12Resource *resource,
+                     UINT region_count,
+                     const D3D12_TILED_RESOURCE_COORDINATE *region_start_coordinates,
+                     const D3D12_TILE_REGION_SIZE *region_sizes,
+                     UINT range_count,
+                     const D3D12_TILE_RANGE_FLAGS *range_flags,
+                     UINT *heap_range_offsets,
+                     UINT *range_tile_counts,
+                     D3D12_TILE_MAPPING_FLAGS flags) = 0;
 
     virtual void STDMETHODCALLTYPE CopyTileMappings(
-        ID3D12Resource *dst_resource,
-        const D3D12_TILED_RESOURCE_COORDINATE *dst_region_start_coordinate,
-        ID3D12Resource *src_resource,
-        const D3D12_TILED_RESOURCE_COORDINATE *src_region_start_coordinate,
-        const D3D12_TILE_REGION_SIZE *region_size,
-        D3D12_TILE_MAPPING_FLAGS flags) = 0;
+                     ID3D12Resource *dst_resource,
+                     const D3D12_TILED_RESOURCE_COORDINATE *dst_region_start_coordinate,
+                     ID3D12Resource *src_resource,
+                     const D3D12_TILED_RESOURCE_COORDINATE *src_region_start_coordinate,
+                     const D3D12_TILE_REGION_SIZE *region_size,
+                     D3D12_TILE_MAPPING_FLAGS flags) = 0;
 
     virtual void STDMETHODCALLTYPE ExecuteCommandLists(
-        UINT command_list_count,
-        ID3D12CommandList *const *command_lists) = 0;
+                     UINT command_list_count,
+                     ID3D12CommandList *const *command_lists) = 0;
 
     virtual void STDMETHODCALLTYPE SetMarker(
-        UINT metadata,
-        const void *data,
-        UINT size) = 0;
+                     UINT metadata,
+                     const void *data,
+                     UINT size) = 0;
 
     virtual void STDMETHODCALLTYPE BeginEvent(
-        UINT metadata,
-        const void *data,
-        UINT size) = 0;
+                     UINT metadata,
+                     const void *data,
+                     UINT size) = 0;
 
     virtual void STDMETHODCALLTYPE EndEvent(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Signal(
-        ID3D12Fence *fence,
-        UINT64 value) = 0;
+                     ID3D12Fence *fence,
+                     UINT64 value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Wait(
-        ID3D12Fence *fence,
-        UINT64 value) = 0;
+                     ID3D12Fence *fence,
+                     UINT64 value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTimestampFrequency(
-        UINT64 *frequency) = 0;
+                     UINT64 *frequency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClockCalibration(
-        UINT64 *gpu_timestamp,
-        UINT64 *cpu_timestamp) = 0;
+                     UINT64 *gpu_timestamp,
+                     UINT64 *cpu_timestamp) = 0;
 
 #ifdef WIDL_EXPLICIT_AGGREGATE_RETURNS
     virtual D3D12_COMMAND_QUEUE_DESC* STDMETHODCALLTYPE GetDesc(
-        D3D12_COMMAND_QUEUE_DESC *__ret) = 0;
+                     D3D12_COMMAND_QUEUE_DESC *__ret) = 0;
     D3D12_COMMAND_QUEUE_DESC STDMETHODCALLTYPE GetDesc(
-        )
+                     )
     {
-        D3D12_COMMAND_QUEUE_DESC __ret;
-        return *GetDesc(&__ret);
+                     D3D12_COMMAND_QUEUE_DESC __ret;
+                     return *GetDesc(&__ret);
     }
 #else
     virtual D3D12_COMMAND_QUEUE_DESC STDMETHODCALLTYPE GetDesc(
-        ) = 0;
+                     ) = 0;
 #endif
 
 };
@@ -3609,108 +3609,108 @@ typedef struct ID3D12CommandQueueVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12CommandQueue *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12CommandQueue *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12CommandQueue *This);
+                     ID3D12CommandQueue *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12CommandQueue *This);
+                     ID3D12CommandQueue *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12CommandQueue *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12CommandQueue *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12CommandQueue *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12CommandQueue *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12CommandQueue *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12CommandQueue *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12CommandQueue *This,
-        const WCHAR *name);
+                     ID3D12CommandQueue *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12CommandQueue *This,
-        REFIID riid,
-        void **device);
+                     ID3D12CommandQueue *This,
+                     REFIID riid,
+                     void **device);
 
     /*** ID3D12CommandQueue methods ***/
     void (STDMETHODCALLTYPE *UpdateTileMappings)(
-        ID3D12CommandQueue *This,
-        ID3D12Resource *resource,
-        UINT region_count,
-        const D3D12_TILED_RESOURCE_COORDINATE *region_start_coordinates,
-        const D3D12_TILE_REGION_SIZE *region_sizes,
-        UINT range_count,
-        const D3D12_TILE_RANGE_FLAGS *range_flags,
-        UINT *heap_range_offsets,
-        UINT *range_tile_counts,
-        D3D12_TILE_MAPPING_FLAGS flags);
+                     ID3D12CommandQueue *This,
+                     ID3D12Resource *resource,
+                     UINT region_count,
+                     const D3D12_TILED_RESOURCE_COORDINATE *region_start_coordinates,
+                     const D3D12_TILE_REGION_SIZE *region_sizes,
+                     UINT range_count,
+                     const D3D12_TILE_RANGE_FLAGS *range_flags,
+                     UINT *heap_range_offsets,
+                     UINT *range_tile_counts,
+                     D3D12_TILE_MAPPING_FLAGS flags);
 
     void (STDMETHODCALLTYPE *CopyTileMappings)(
-        ID3D12CommandQueue *This,
-        ID3D12Resource *dst_resource,
-        const D3D12_TILED_RESOURCE_COORDINATE *dst_region_start_coordinate,
-        ID3D12Resource *src_resource,
-        const D3D12_TILED_RESOURCE_COORDINATE *src_region_start_coordinate,
-        const D3D12_TILE_REGION_SIZE *region_size,
-        D3D12_TILE_MAPPING_FLAGS flags);
+                     ID3D12CommandQueue *This,
+                     ID3D12Resource *dst_resource,
+                     const D3D12_TILED_RESOURCE_COORDINATE *dst_region_start_coordinate,
+                     ID3D12Resource *src_resource,
+                     const D3D12_TILED_RESOURCE_COORDINATE *src_region_start_coordinate,
+                     const D3D12_TILE_REGION_SIZE *region_size,
+                     D3D12_TILE_MAPPING_FLAGS flags);
 
     void (STDMETHODCALLTYPE *ExecuteCommandLists)(
-        ID3D12CommandQueue *This,
-        UINT command_list_count,
-        ID3D12CommandList *const *command_lists);
+                     ID3D12CommandQueue *This,
+                     UINT command_list_count,
+                     ID3D12CommandList *const *command_lists);
 
     void (STDMETHODCALLTYPE *SetMarker)(
-        ID3D12CommandQueue *This,
-        UINT metadata,
-        const void *data,
-        UINT size);
+                     ID3D12CommandQueue *This,
+                     UINT metadata,
+                     const void *data,
+                     UINT size);
 
     void (STDMETHODCALLTYPE *BeginEvent)(
-        ID3D12CommandQueue *This,
-        UINT metadata,
-        const void *data,
-        UINT size);
+                     ID3D12CommandQueue *This,
+                     UINT metadata,
+                     const void *data,
+                     UINT size);
 
     void (STDMETHODCALLTYPE *EndEvent)(
-        ID3D12CommandQueue *This);
+                     ID3D12CommandQueue *This);
 
     HRESULT (STDMETHODCALLTYPE *Signal)(
-        ID3D12CommandQueue *This,
-        ID3D12Fence *fence,
-        UINT64 value);
+                     ID3D12CommandQueue *This,
+                     ID3D12Fence *fence,
+                     UINT64 value);
 
     HRESULT (STDMETHODCALLTYPE *Wait)(
-        ID3D12CommandQueue *This,
-        ID3D12Fence *fence,
-        UINT64 value);
+                     ID3D12CommandQueue *This,
+                     ID3D12Fence *fence,
+                     UINT64 value);
 
     HRESULT (STDMETHODCALLTYPE *GetTimestampFrequency)(
-        ID3D12CommandQueue *This,
-        UINT64 *frequency);
+                     ID3D12CommandQueue *This,
+                     UINT64 *frequency);
 
     HRESULT (STDMETHODCALLTYPE *GetClockCalibration)(
-        ID3D12CommandQueue *This,
-        UINT64 *gpu_timestamp,
-        UINT64 *cpu_timestamp);
+                     ID3D12CommandQueue *This,
+                     UINT64 *gpu_timestamp,
+                     UINT64 *cpu_timestamp);
 
     D3D12_COMMAND_QUEUE_DESC * (STDMETHODCALLTYPE *GetDesc)(
-        ID3D12CommandQueue *This,
-        D3D12_COMMAND_QUEUE_DESC *__ret);
+                     ID3D12CommandQueue *This,
+                     D3D12_COMMAND_QUEUE_DESC *__ret);
 
     END_INTERFACE
 } ID3D12CommandQueueVtbl;
@@ -3845,23 +3845,23 @@ typedef enum D3D12_INDIRECT_ARGUMENT_TYPE {
 typedef struct D3D12_INDIRECT_ARGUMENT_DESC {
     D3D12_INDIRECT_ARGUMENT_TYPE Type;
     __C89_NAMELESS union {
-        struct {
-            UINT Slot;
-        } VertexBuffer;
-        struct {
-            UINT RootParameterIndex;
-            UINT DestOffsetIn32BitValues;
-            UINT Num32BitValuesToSet;
-        } Constant;
-        struct {
-            UINT RootParameterIndex;
-        } ConstantBufferView;
-        struct {
-            UINT RootParameterIndex;
-        } ShaderResourceView;
-        struct {
-            UINT RootParameterIndex;
-        } UnorderedAccessView;
+                     struct {
+                                      UINT Slot;
+                     } VertexBuffer;
+                     struct {
+                                      UINT RootParameterIndex;
+                                      UINT DestOffsetIn32BitValues;
+                                      UINT Num32BitValuesToSet;
+                     } Constant;
+                     struct {
+                                      UINT RootParameterIndex;
+                     } ConstantBufferView;
+                     struct {
+                                      UINT RootParameterIndex;
+                     } ShaderResourceView;
+                     struct {
+                                      UINT RootParameterIndex;
+                     } UnorderedAccessView;
     } __C89_NAMELESSUNIONNAME;
 } D3D12_INDIRECT_ARGUMENT_DESC;
 typedef struct D3D12_COMMAND_SIGNATURE_DESC {
@@ -3891,43 +3891,43 @@ typedef struct ID3D12RootSignatureVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12RootSignature *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12RootSignature *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12RootSignature *This);
+                     ID3D12RootSignature *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12RootSignature *This);
+                     ID3D12RootSignature *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12RootSignature *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12RootSignature *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12RootSignature *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12RootSignature *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12RootSignature *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12RootSignature *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12RootSignature *This,
-        const WCHAR *name);
+                     ID3D12RootSignature *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12RootSignature *This,
-        REFIID riid,
-        void **device);
+                     ID3D12RootSignature *This,
+                     REFIID riid,
+                     void **device);
 
     END_INTERFACE
 } ID3D12RootSignatureVtbl;
@@ -3997,7 +3997,7 @@ MIDL_INTERFACE("765a30f3-f624-4c6f-a828-ace948622445")
 ID3D12PipelineState : public ID3D12Pageable
 {
     virtual HRESULT STDMETHODCALLTYPE GetCachedBlob(
-        ID3DBlob **blob) = 0;
+                     ID3DBlob **blob) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4009,48 +4009,48 @@ typedef struct ID3D12PipelineStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12PipelineState *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12PipelineState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12PipelineState *This);
+                     ID3D12PipelineState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12PipelineState *This);
+                     ID3D12PipelineState *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12PipelineState *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12PipelineState *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12PipelineState *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12PipelineState *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12PipelineState *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12PipelineState *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12PipelineState *This,
-        const WCHAR *name);
+                     ID3D12PipelineState *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12PipelineState *This,
-        REFIID riid,
-        void **device);
+                     ID3D12PipelineState *This,
+                     REFIID riid,
+                     void **device);
 
     /*** ID3D12PipelineState methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCachedBlob)(
-        ID3D12PipelineState *This,
-        ID3DBlob **blob);
+                     ID3D12PipelineState *This,
+                     ID3DBlob **blob);
 
     END_INTERFACE
 } ID3D12PipelineStateVtbl;
@@ -4126,14 +4126,14 @@ MIDL_INTERFACE("0a753dcf-c4d8-4b91-adf6-be5a60d95a76")
 ID3D12Fence : public ID3D12Pageable
 {
     virtual UINT64 STDMETHODCALLTYPE GetCompletedValue(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEventOnCompletion(
-        UINT64 value,
-        HANDLE event) = 0;
+                     UINT64 value,
+                     HANDLE event) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Signal(
-        UINT64 value) = 0;
+                     UINT64 value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4145,56 +4145,56 @@ typedef struct ID3D12FenceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12Fence *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12Fence *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12Fence *This);
+                     ID3D12Fence *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12Fence *This);
+                     ID3D12Fence *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12Fence *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12Fence *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12Fence *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12Fence *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12Fence *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12Fence *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12Fence *This,
-        const WCHAR *name);
+                     ID3D12Fence *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12Fence *This,
-        REFIID riid,
-        void **device);
+                     ID3D12Fence *This,
+                     REFIID riid,
+                     void **device);
 
     /*** ID3D12Fence methods ***/
     UINT64 (STDMETHODCALLTYPE *GetCompletedValue)(
-        ID3D12Fence *This);
+                     ID3D12Fence *This);
 
     HRESULT (STDMETHODCALLTYPE *SetEventOnCompletion)(
-        ID3D12Fence *This,
-        UINT64 value,
-        HANDLE event);
+                     ID3D12Fence *This,
+                     UINT64 value,
+                     HANDLE event);
 
     HRESULT (STDMETHODCALLTYPE *Signal)(
-        ID3D12Fence *This,
-        UINT64 value);
+                     ID3D12Fence *This,
+                     UINT64 value);
 
     END_INTERFACE
 } ID3D12FenceVtbl;
@@ -4278,7 +4278,7 @@ MIDL_INTERFACE("6102dee4-af59-4b09-b999-b44d73f09b24")
 ID3D12CommandAllocator : public ID3D12Pageable
 {
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4290,47 +4290,47 @@ typedef struct ID3D12CommandAllocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12CommandAllocator *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12CommandAllocator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12CommandAllocator *This);
+                     ID3D12CommandAllocator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12CommandAllocator *This);
+                     ID3D12CommandAllocator *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12CommandAllocator *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12CommandAllocator *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12CommandAllocator *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12CommandAllocator *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12CommandAllocator *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12CommandAllocator *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12CommandAllocator *This,
-        const WCHAR *name);
+                     ID3D12CommandAllocator *This,
+                     const WCHAR *name);
 
     /*** ID3D12DeviceChild methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        ID3D12CommandAllocator *This,
-        REFIID riid,
-        void **device);
+                     ID3D12CommandAllocator *This,
+                     REFIID riid,
+                     void **device);
 
     /*** ID3D12CommandAllocator methods ***/
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        ID3D12CommandAllocator *This);
+                     ID3D12CommandAllocator *This);
 
     END_INTERFACE
 } ID3D12CommandAllocatorVtbl;
@@ -4406,248 +4406,248 @@ MIDL_INTERFACE("189819f1-1db6-4b57-be54-1821339b85f7")
 ID3D12Device : public ID3D12Object
 {
     virtual UINT STDMETHODCALLTYPE GetNodeCount(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCommandQueue(
-        const D3D12_COMMAND_QUEUE_DESC *desc,
-        REFIID riid,
-        void **command_queue) = 0;
+                     const D3D12_COMMAND_QUEUE_DESC *desc,
+                     REFIID riid,
+                     void **command_queue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCommandAllocator(
-        D3D12_COMMAND_LIST_TYPE type,
-        REFIID riid,
-        void **command_allocator) = 0;
+                     D3D12_COMMAND_LIST_TYPE type,
+                     REFIID riid,
+                     void **command_allocator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGraphicsPipelineState(
-        const D3D12_GRAPHICS_PIPELINE_STATE_DESC *desc,
-        REFIID riid,
-        void **pipeline_state) = 0;
+                     const D3D12_GRAPHICS_PIPELINE_STATE_DESC *desc,
+                     REFIID riid,
+                     void **pipeline_state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateComputePipelineState(
-        const D3D12_COMPUTE_PIPELINE_STATE_DESC *desc,
-        REFIID riid,
-        void **pipeline_state) = 0;
+                     const D3D12_COMPUTE_PIPELINE_STATE_DESC *desc,
+                     REFIID riid,
+                     void **pipeline_state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCommandList(
-        UINT node_mask,
-        D3D12_COMMAND_LIST_TYPE type,
-        ID3D12CommandAllocator *command_allocator,
-        ID3D12PipelineState *initial_pipeline_state,
-        REFIID riid,
-        void **command_list) = 0;
+                     UINT node_mask,
+                     D3D12_COMMAND_LIST_TYPE type,
+                     ID3D12CommandAllocator *command_allocator,
+                     ID3D12PipelineState *initial_pipeline_state,
+                     REFIID riid,
+                     void **command_list) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckFeatureSupport(
-        D3D12_FEATURE feature,
-        void *feature_data,
-        UINT feature_data_size) = 0;
+                     D3D12_FEATURE feature,
+                     void *feature_data,
+                     UINT feature_data_size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDescriptorHeap(
-        const D3D12_DESCRIPTOR_HEAP_DESC *desc,
-        REFIID riid,
-        void **descriptor_heap) = 0;
+                     const D3D12_DESCRIPTOR_HEAP_DESC *desc,
+                     REFIID riid,
+                     void **descriptor_heap) = 0;
 
     virtual UINT STDMETHODCALLTYPE GetDescriptorHandleIncrementSize(
-        D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type) = 0;
+                     D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRootSignature(
-        UINT node_mask,
-        const void *bytecode,
-        SIZE_T bytecode_length,
-        REFIID riid,
-        void **root_signature) = 0;
+                     UINT node_mask,
+                     const void *bytecode,
+                     SIZE_T bytecode_length,
+                     REFIID riid,
+                     void **root_signature) = 0;
 
     virtual void STDMETHODCALLTYPE CreateConstantBufferView(
-        const D3D12_CONSTANT_BUFFER_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
+                     const D3D12_CONSTANT_BUFFER_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE CreateShaderResourceView(
-        ID3D12Resource *resource,
-        const D3D12_SHADER_RESOURCE_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
+                     ID3D12Resource *resource,
+                     const D3D12_SHADER_RESOURCE_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE CreateUnorderedAccessView(
-        ID3D12Resource *resource,
-        ID3D12Resource *counter_resource,
-        const D3D12_UNORDERED_ACCESS_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
+                     ID3D12Resource *resource,
+                     ID3D12Resource *counter_resource,
+                     const D3D12_UNORDERED_ACCESS_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE CreateRenderTargetView(
-        ID3D12Resource *resource,
-        const D3D12_RENDER_TARGET_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
+                     ID3D12Resource *resource,
+                     const D3D12_RENDER_TARGET_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE CreateDepthStencilView(
-        ID3D12Resource *resource,
-        const D3D12_DEPTH_STENCIL_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
+                     ID3D12Resource *resource,
+                     const D3D12_DEPTH_STENCIL_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE CreateSampler(
-        const D3D12_SAMPLER_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
+                     const D3D12_SAMPLER_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor) = 0;
 
     virtual void STDMETHODCALLTYPE CopyDescriptors(
-        UINT dst_descriptor_range_count,
-        const D3D12_CPU_DESCRIPTOR_HANDLE *dst_descriptor_range_offsets,
-        const UINT *dst_descriptor_range_sizes,
-        UINT src_descriptor_range_count,
-        const D3D12_CPU_DESCRIPTOR_HANDLE *src_descriptor_range_offsets,
-        const UINT *src_descriptor_range_sizes,
-        D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type) = 0;
+                     UINT dst_descriptor_range_count,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE *dst_descriptor_range_offsets,
+                     const UINT *dst_descriptor_range_sizes,
+                     UINT src_descriptor_range_count,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE *src_descriptor_range_offsets,
+                     const UINT *src_descriptor_range_sizes,
+                     D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type) = 0;
 
     virtual void STDMETHODCALLTYPE CopyDescriptorsSimple(
-        UINT descriptor_count,
-        const D3D12_CPU_DESCRIPTOR_HANDLE dst_descriptor_range_offset,
-        const D3D12_CPU_DESCRIPTOR_HANDLE src_descriptor_range_offset,
-        D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type) = 0;
+                     UINT descriptor_count,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE dst_descriptor_range_offset,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE src_descriptor_range_offset,
+                     D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type) = 0;
 
 #ifdef WIDL_EXPLICIT_AGGREGATE_RETURNS
     virtual D3D12_RESOURCE_ALLOCATION_INFO* STDMETHODCALLTYPE GetResourceAllocationInfo(
-        D3D12_RESOURCE_ALLOCATION_INFO *__ret,
-        UINT visible_mask,
-        UINT reource_desc_count,
-        const D3D12_RESOURCE_DESC *resource_descs) = 0;
+                     D3D12_RESOURCE_ALLOCATION_INFO *__ret,
+                     UINT visible_mask,
+                     UINT reource_desc_count,
+                     const D3D12_RESOURCE_DESC *resource_descs) = 0;
     D3D12_RESOURCE_ALLOCATION_INFO STDMETHODCALLTYPE GetResourceAllocationInfo(
-        UINT visible_mask,
-        UINT reource_desc_count,
-        const D3D12_RESOURCE_DESC *resource_descs)
+                     UINT visible_mask,
+                     UINT reource_desc_count,
+                     const D3D12_RESOURCE_DESC *resource_descs)
     {
-        D3D12_RESOURCE_ALLOCATION_INFO __ret;
-        return *GetResourceAllocationInfo(&__ret, visible_mask, reource_desc_count, resource_descs);
+                     D3D12_RESOURCE_ALLOCATION_INFO __ret;
+                     return *GetResourceAllocationInfo(&__ret, visible_mask, reource_desc_count, resource_descs);
     }
 #else
     virtual D3D12_RESOURCE_ALLOCATION_INFO STDMETHODCALLTYPE GetResourceAllocationInfo(
-        UINT visible_mask,
-        UINT reource_desc_count,
-        const D3D12_RESOURCE_DESC *resource_descs) = 0;
+                     UINT visible_mask,
+                     UINT reource_desc_count,
+                     const D3D12_RESOURCE_DESC *resource_descs) = 0;
 #endif
 
 #ifdef WIDL_EXPLICIT_AGGREGATE_RETURNS
     virtual D3D12_HEAP_PROPERTIES* STDMETHODCALLTYPE GetCustomHeapProperties(
-        D3D12_HEAP_PROPERTIES *__ret,
-        UINT node_mask,
-        D3D12_HEAP_TYPE heap_type) = 0;
+                     D3D12_HEAP_PROPERTIES *__ret,
+                     UINT node_mask,
+                     D3D12_HEAP_TYPE heap_type) = 0;
     D3D12_HEAP_PROPERTIES STDMETHODCALLTYPE GetCustomHeapProperties(
-        UINT node_mask,
-        D3D12_HEAP_TYPE heap_type)
+                     UINT node_mask,
+                     D3D12_HEAP_TYPE heap_type)
     {
-        D3D12_HEAP_PROPERTIES __ret;
-        return *GetCustomHeapProperties(&__ret, node_mask, heap_type);
+                     D3D12_HEAP_PROPERTIES __ret;
+                     return *GetCustomHeapProperties(&__ret, node_mask, heap_type);
     }
 #else
     virtual D3D12_HEAP_PROPERTIES STDMETHODCALLTYPE GetCustomHeapProperties(
-        UINT node_mask,
-        D3D12_HEAP_TYPE heap_type) = 0;
+                     UINT node_mask,
+                     D3D12_HEAP_TYPE heap_type) = 0;
 #endif
 
     virtual HRESULT STDMETHODCALLTYPE CreateCommittedResource(
-        const D3D12_HEAP_PROPERTIES *heap_properties,
-        D3D12_HEAP_FLAGS heap_flags,
-        const D3D12_RESOURCE_DESC *desc,
-        D3D12_RESOURCE_STATES initial_state,
-        const D3D12_CLEAR_VALUE *optimized_clear_value,
-        REFIID riid,
-        void **resource) = 0;
+                     const D3D12_HEAP_PROPERTIES *heap_properties,
+                     D3D12_HEAP_FLAGS heap_flags,
+                     const D3D12_RESOURCE_DESC *desc,
+                     D3D12_RESOURCE_STATES initial_state,
+                     const D3D12_CLEAR_VALUE *optimized_clear_value,
+                     REFIID riid,
+                     void **resource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateHeap(
-        const D3D12_HEAP_DESC *desc,
-        REFIID riid,
-        void **heap) = 0;
+                     const D3D12_HEAP_DESC *desc,
+                     REFIID riid,
+                     void **heap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePlacedResource(
-        ID3D12Heap *heap,
-        UINT64 heap_offset,
-        const D3D12_RESOURCE_DESC *desc,
-        D3D12_RESOURCE_STATES initial_state,
-        const D3D12_CLEAR_VALUE *optimized_clear_value,
-        REFIID riid,
-        void **resource) = 0;
+                     ID3D12Heap *heap,
+                     UINT64 heap_offset,
+                     const D3D12_RESOURCE_DESC *desc,
+                     D3D12_RESOURCE_STATES initial_state,
+                     const D3D12_CLEAR_VALUE *optimized_clear_value,
+                     REFIID riid,
+                     void **resource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateReservedResource(
-        const D3D12_RESOURCE_DESC *desc,
-        D3D12_RESOURCE_STATES initial_state,
-        const D3D12_CLEAR_VALUE *optimized_clear_value,
-        REFIID riid,
-        void **resource) = 0;
+                     const D3D12_RESOURCE_DESC *desc,
+                     D3D12_RESOURCE_STATES initial_state,
+                     const D3D12_CLEAR_VALUE *optimized_clear_value,
+                     REFIID riid,
+                     void **resource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSharedHandle(
-        ID3D12DeviceChild *object,
-        const SECURITY_ATTRIBUTES *attributes,
-        DWORD access,
-        const WCHAR *name,
-        HANDLE *handle) = 0;
+                     ID3D12DeviceChild *object,
+                     const SECURITY_ATTRIBUTES *attributes,
+                     DWORD access,
+                     const WCHAR *name,
+                     HANDLE *handle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenSharedHandle(
-        HANDLE handle,
-        REFIID riid,
-        void **object) = 0;
+                     HANDLE handle,
+                     REFIID riid,
+                     void **object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenSharedHandleByName(
-        const WCHAR *name,
-        DWORD access,
-        HANDLE *handle) = 0;
+                     const WCHAR *name,
+                     DWORD access,
+                     HANDLE *handle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MakeResident(
-        UINT object_count,
-        ID3D12Pageable *const *objects) = 0;
+                     UINT object_count,
+                     ID3D12Pageable *const *objects) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Evict(
-        UINT object_count,
-        ID3D12Pageable *const *objects) = 0;
+                     UINT object_count,
+                     ID3D12Pageable *const *objects) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFence(
-        UINT64 initial_value,
-        D3D12_FENCE_FLAGS flags,
-        REFIID riid,
-        void **fence) = 0;
+                     UINT64 initial_value,
+                     D3D12_FENCE_FLAGS flags,
+                     REFIID riid,
+                     void **fence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceRemovedReason(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE GetCopyableFootprints(
-        const D3D12_RESOURCE_DESC *desc,
-        UINT first_sub_resource,
-        UINT sub_resource_count,
-        UINT64 base_offset,
-        D3D12_PLACED_SUBRESOURCE_FOOTPRINT *layouts,
-        UINT *row_count,
-        UINT64 *row_size,
-        UINT64 *total_bytes) = 0;
+                     const D3D12_RESOURCE_DESC *desc,
+                     UINT first_sub_resource,
+                     UINT sub_resource_count,
+                     UINT64 base_offset,
+                     D3D12_PLACED_SUBRESOURCE_FOOTPRINT *layouts,
+                     UINT *row_count,
+                     UINT64 *row_size,
+                     UINT64 *total_bytes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateQueryHeap(
-        const D3D12_QUERY_HEAP_DESC *desc,
-        REFIID riid,
-        void **heap) = 0;
+                     const D3D12_QUERY_HEAP_DESC *desc,
+                     REFIID riid,
+                     void **heap) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStablePowerState(
-        WINBOOL enable) = 0;
+                     WINBOOL enable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCommandSignature(
-        const D3D12_COMMAND_SIGNATURE_DESC *desc,
-        ID3D12RootSignature *root_signature,
-        REFIID riid,
-        void **command_signature) = 0;
+                     const D3D12_COMMAND_SIGNATURE_DESC *desc,
+                     ID3D12RootSignature *root_signature,
+                     REFIID riid,
+                     void **command_signature) = 0;
 
     virtual void STDMETHODCALLTYPE GetResourceTiling(
-        ID3D12Resource *resource,
-        UINT *total_tile_count,
-        D3D12_PACKED_MIP_INFO *packed_mip_info,
-        D3D12_TILE_SHAPE *standard_tile_shape,
-        UINT *sub_resource_tiling_count,
-        UINT first_sub_resource_tiling,
-        D3D12_SUBRESOURCE_TILING *sub_resource_tilings) = 0;
+                     ID3D12Resource *resource,
+                     UINT *total_tile_count,
+                     D3D12_PACKED_MIP_INFO *packed_mip_info,
+                     D3D12_TILE_SHAPE *standard_tile_shape,
+                     UINT *sub_resource_tiling_count,
+                     UINT first_sub_resource_tiling,
+                     D3D12_SUBRESOURCE_TILING *sub_resource_tilings) = 0;
 
 #ifdef WIDL_EXPLICIT_AGGREGATE_RETURNS
     virtual LUID* STDMETHODCALLTYPE GetAdapterLuid(
-        LUID *__ret) = 0;
+                     LUID *__ret) = 0;
     LUID STDMETHODCALLTYPE GetAdapterLuid(
-        )
+                     )
     {
-        LUID __ret;
-        return *GetAdapterLuid(&__ret);
+                     LUID __ret;
+                     return *GetAdapterLuid(&__ret);
     }
 #else
     virtual LUID STDMETHODCALLTYPE GetAdapterLuid(
-        ) = 0;
+                     ) = 0;
 #endif
 
 };
@@ -4660,279 +4660,279 @@ typedef struct ID3D12DeviceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12Device *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12Device *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12Device *This);
+                     ID3D12Device *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12Device *This);
+                     ID3D12Device *This);
 
     /*** ID3D12Object methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPrivateData)(
-        ID3D12Device *This,
-        REFGUID guid,
-        UINT *data_size,
-        void *data);
+                     ID3D12Device *This,
+                     REFGUID guid,
+                     UINT *data_size,
+                     void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateData)(
-        ID3D12Device *This,
-        REFGUID guid,
-        UINT data_size,
-        const void *data);
+                     ID3D12Device *This,
+                     REFGUID guid,
+                     UINT data_size,
+                     const void *data);
 
     HRESULT (STDMETHODCALLTYPE *SetPrivateDataInterface)(
-        ID3D12Device *This,
-        REFGUID guid,
-        const IUnknown *data);
+                     ID3D12Device *This,
+                     REFGUID guid,
+                     const IUnknown *data);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        ID3D12Device *This,
-        const WCHAR *name);
+                     ID3D12Device *This,
+                     const WCHAR *name);
 
     /*** ID3D12Device methods ***/
     UINT (STDMETHODCALLTYPE *GetNodeCount)(
-        ID3D12Device *This);
+                     ID3D12Device *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateCommandQueue)(
-        ID3D12Device *This,
-        const D3D12_COMMAND_QUEUE_DESC *desc,
-        REFIID riid,
-        void **command_queue);
+                     ID3D12Device *This,
+                     const D3D12_COMMAND_QUEUE_DESC *desc,
+                     REFIID riid,
+                     void **command_queue);
 
     HRESULT (STDMETHODCALLTYPE *CreateCommandAllocator)(
-        ID3D12Device *This,
-        D3D12_COMMAND_LIST_TYPE type,
-        REFIID riid,
-        void **command_allocator);
+                     ID3D12Device *This,
+                     D3D12_COMMAND_LIST_TYPE type,
+                     REFIID riid,
+                     void **command_allocator);
 
     HRESULT (STDMETHODCALLTYPE *CreateGraphicsPipelineState)(
-        ID3D12Device *This,
-        const D3D12_GRAPHICS_PIPELINE_STATE_DESC *desc,
-        REFIID riid,
-        void **pipeline_state);
+                     ID3D12Device *This,
+                     const D3D12_GRAPHICS_PIPELINE_STATE_DESC *desc,
+                     REFIID riid,
+                     void **pipeline_state);
 
     HRESULT (STDMETHODCALLTYPE *CreateComputePipelineState)(
-        ID3D12Device *This,
-        const D3D12_COMPUTE_PIPELINE_STATE_DESC *desc,
-        REFIID riid,
-        void **pipeline_state);
+                     ID3D12Device *This,
+                     const D3D12_COMPUTE_PIPELINE_STATE_DESC *desc,
+                     REFIID riid,
+                     void **pipeline_state);
 
     HRESULT (STDMETHODCALLTYPE *CreateCommandList)(
-        ID3D12Device *This,
-        UINT node_mask,
-        D3D12_COMMAND_LIST_TYPE type,
-        ID3D12CommandAllocator *command_allocator,
-        ID3D12PipelineState *initial_pipeline_state,
-        REFIID riid,
-        void **command_list);
+                     ID3D12Device *This,
+                     UINT node_mask,
+                     D3D12_COMMAND_LIST_TYPE type,
+                     ID3D12CommandAllocator *command_allocator,
+                     ID3D12PipelineState *initial_pipeline_state,
+                     REFIID riid,
+                     void **command_list);
 
     HRESULT (STDMETHODCALLTYPE *CheckFeatureSupport)(
-        ID3D12Device *This,
-        D3D12_FEATURE feature,
-        void *feature_data,
-        UINT feature_data_size);
+                     ID3D12Device *This,
+                     D3D12_FEATURE feature,
+                     void *feature_data,
+                     UINT feature_data_size);
 
     HRESULT (STDMETHODCALLTYPE *CreateDescriptorHeap)(
-        ID3D12Device *This,
-        const D3D12_DESCRIPTOR_HEAP_DESC *desc,
-        REFIID riid,
-        void **descriptor_heap);
+                     ID3D12Device *This,
+                     const D3D12_DESCRIPTOR_HEAP_DESC *desc,
+                     REFIID riid,
+                     void **descriptor_heap);
 
     UINT (STDMETHODCALLTYPE *GetDescriptorHandleIncrementSize)(
-        ID3D12Device *This,
-        D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
+                     ID3D12Device *This,
+                     D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
 
     HRESULT (STDMETHODCALLTYPE *CreateRootSignature)(
-        ID3D12Device *This,
-        UINT node_mask,
-        const void *bytecode,
-        SIZE_T bytecode_length,
-        REFIID riid,
-        void **root_signature);
+                     ID3D12Device *This,
+                     UINT node_mask,
+                     const void *bytecode,
+                     SIZE_T bytecode_length,
+                     REFIID riid,
+                     void **root_signature);
 
     void (STDMETHODCALLTYPE *CreateConstantBufferView)(
-        ID3D12Device *This,
-        const D3D12_CONSTANT_BUFFER_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                     ID3D12Device *This,
+                     const D3D12_CONSTANT_BUFFER_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
 
     void (STDMETHODCALLTYPE *CreateShaderResourceView)(
-        ID3D12Device *This,
-        ID3D12Resource *resource,
-        const D3D12_SHADER_RESOURCE_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                     ID3D12Device *This,
+                     ID3D12Resource *resource,
+                     const D3D12_SHADER_RESOURCE_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
 
     void (STDMETHODCALLTYPE *CreateUnorderedAccessView)(
-        ID3D12Device *This,
-        ID3D12Resource *resource,
-        ID3D12Resource *counter_resource,
-        const D3D12_UNORDERED_ACCESS_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                     ID3D12Device *This,
+                     ID3D12Resource *resource,
+                     ID3D12Resource *counter_resource,
+                     const D3D12_UNORDERED_ACCESS_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
 
     void (STDMETHODCALLTYPE *CreateRenderTargetView)(
-        ID3D12Device *This,
-        ID3D12Resource *resource,
-        const D3D12_RENDER_TARGET_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                     ID3D12Device *This,
+                     ID3D12Resource *resource,
+                     const D3D12_RENDER_TARGET_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
 
     void (STDMETHODCALLTYPE *CreateDepthStencilView)(
-        ID3D12Device *This,
-        ID3D12Resource *resource,
-        const D3D12_DEPTH_STENCIL_VIEW_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                     ID3D12Device *This,
+                     ID3D12Resource *resource,
+                     const D3D12_DEPTH_STENCIL_VIEW_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
 
     void (STDMETHODCALLTYPE *CreateSampler)(
-        ID3D12Device *This,
-        const D3D12_SAMPLER_DESC *desc,
-        D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
+                     ID3D12Device *This,
+                     const D3D12_SAMPLER_DESC *desc,
+                     D3D12_CPU_DESCRIPTOR_HANDLE descriptor);
 
     void (STDMETHODCALLTYPE *CopyDescriptors)(
-        ID3D12Device *This,
-        UINT dst_descriptor_range_count,
-        const D3D12_CPU_DESCRIPTOR_HANDLE *dst_descriptor_range_offsets,
-        const UINT *dst_descriptor_range_sizes,
-        UINT src_descriptor_range_count,
-        const D3D12_CPU_DESCRIPTOR_HANDLE *src_descriptor_range_offsets,
-        const UINT *src_descriptor_range_sizes,
-        D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
+                     ID3D12Device *This,
+                     UINT dst_descriptor_range_count,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE *dst_descriptor_range_offsets,
+                     const UINT *dst_descriptor_range_sizes,
+                     UINT src_descriptor_range_count,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE *src_descriptor_range_offsets,
+                     const UINT *src_descriptor_range_sizes,
+                     D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
 
     void (STDMETHODCALLTYPE *CopyDescriptorsSimple)(
-        ID3D12Device *This,
-        UINT descriptor_count,
-        const D3D12_CPU_DESCRIPTOR_HANDLE dst_descriptor_range_offset,
-        const D3D12_CPU_DESCRIPTOR_HANDLE src_descriptor_range_offset,
-        D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
+                     ID3D12Device *This,
+                     UINT descriptor_count,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE dst_descriptor_range_offset,
+                     const D3D12_CPU_DESCRIPTOR_HANDLE src_descriptor_range_offset,
+                     D3D12_DESCRIPTOR_HEAP_TYPE descriptor_heap_type);
 
     D3D12_RESOURCE_ALLOCATION_INFO * (STDMETHODCALLTYPE *GetResourceAllocationInfo)(
-        ID3D12Device *This,
-        D3D12_RESOURCE_ALLOCATION_INFO *__ret,
-        UINT visible_mask,
-        UINT reource_desc_count,
-        const D3D12_RESOURCE_DESC *resource_descs);
+                     ID3D12Device *This,
+                     D3D12_RESOURCE_ALLOCATION_INFO *__ret,
+                     UINT visible_mask,
+                     UINT reource_desc_count,
+                     const D3D12_RESOURCE_DESC *resource_descs);
 
     D3D12_HEAP_PROPERTIES * (STDMETHODCALLTYPE *GetCustomHeapProperties)(
-        ID3D12Device *This,
-        D3D12_HEAP_PROPERTIES *__ret,
-        UINT node_mask,
-        D3D12_HEAP_TYPE heap_type);
+                     ID3D12Device *This,
+                     D3D12_HEAP_PROPERTIES *__ret,
+                     UINT node_mask,
+                     D3D12_HEAP_TYPE heap_type);
 
     HRESULT (STDMETHODCALLTYPE *CreateCommittedResource)(
-        ID3D12Device *This,
-        const D3D12_HEAP_PROPERTIES *heap_properties,
-        D3D12_HEAP_FLAGS heap_flags,
-        const D3D12_RESOURCE_DESC *desc,
-        D3D12_RESOURCE_STATES initial_state,
-        const D3D12_CLEAR_VALUE *optimized_clear_value,
-        REFIID riid,
-        void **resource);
+                     ID3D12Device *This,
+                     const D3D12_HEAP_PROPERTIES *heap_properties,
+                     D3D12_HEAP_FLAGS heap_flags,
+                     const D3D12_RESOURCE_DESC *desc,
+                     D3D12_RESOURCE_STATES initial_state,
+                     const D3D12_CLEAR_VALUE *optimized_clear_value,
+                     REFIID riid,
+                     void **resource);
 
     HRESULT (STDMETHODCALLTYPE *CreateHeap)(
-        ID3D12Device *This,
-        const D3D12_HEAP_DESC *desc,
-        REFIID riid,
-        void **heap);
+                     ID3D12Device *This,
+                     const D3D12_HEAP_DESC *desc,
+                     REFIID riid,
+                     void **heap);
 
     HRESULT (STDMETHODCALLTYPE *CreatePlacedResource)(
-        ID3D12Device *This,
-        ID3D12Heap *heap,
-        UINT64 heap_offset,
-        const D3D12_RESOURCE_DESC *desc,
-        D3D12_RESOURCE_STATES initial_state,
-        const D3D12_CLEAR_VALUE *optimized_clear_value,
-        REFIID riid,
-        void **resource);
+                     ID3D12Device *This,
+                     ID3D12Heap *heap,
+                     UINT64 heap_offset,
+                     const D3D12_RESOURCE_DESC *desc,
+                     D3D12_RESOURCE_STATES initial_state,
+                     const D3D12_CLEAR_VALUE *optimized_clear_value,
+                     REFIID riid,
+                     void **resource);
 
     HRESULT (STDMETHODCALLTYPE *CreateReservedResource)(
-        ID3D12Device *This,
-        const D3D12_RESOURCE_DESC *desc,
-        D3D12_RESOURCE_STATES initial_state,
-        const D3D12_CLEAR_VALUE *optimized_clear_value,
-        REFIID riid,
-        void **resource);
+                     ID3D12Device *This,
+                     const D3D12_RESOURCE_DESC *desc,
+                     D3D12_RESOURCE_STATES initial_state,
+                     const D3D12_CLEAR_VALUE *optimized_clear_value,
+                     REFIID riid,
+                     void **resource);
 
     HRESULT (STDMETHODCALLTYPE *CreateSharedHandle)(
-        ID3D12Device *This,
-        ID3D12DeviceChild *object,
-        const SECURITY_ATTRIBUTES *attributes,
-        DWORD access,
-        const WCHAR *name,
-        HANDLE *handle);
+                     ID3D12Device *This,
+                     ID3D12DeviceChild *object,
+                     const SECURITY_ATTRIBUTES *attributes,
+                     DWORD access,
+                     const WCHAR *name,
+                     HANDLE *handle);
 
     HRESULT (STDMETHODCALLTYPE *OpenSharedHandle)(
-        ID3D12Device *This,
-        HANDLE handle,
-        REFIID riid,
-        void **object);
+                     ID3D12Device *This,
+                     HANDLE handle,
+                     REFIID riid,
+                     void **object);
 
     HRESULT (STDMETHODCALLTYPE *OpenSharedHandleByName)(
-        ID3D12Device *This,
-        const WCHAR *name,
-        DWORD access,
-        HANDLE *handle);
+                     ID3D12Device *This,
+                     const WCHAR *name,
+                     DWORD access,
+                     HANDLE *handle);
 
     HRESULT (STDMETHODCALLTYPE *MakeResident)(
-        ID3D12Device *This,
-        UINT object_count,
-        ID3D12Pageable *const *objects);
+                     ID3D12Device *This,
+                     UINT object_count,
+                     ID3D12Pageable *const *objects);
 
     HRESULT (STDMETHODCALLTYPE *Evict)(
-        ID3D12Device *This,
-        UINT object_count,
-        ID3D12Pageable *const *objects);
+                     ID3D12Device *This,
+                     UINT object_count,
+                     ID3D12Pageable *const *objects);
 
     HRESULT (STDMETHODCALLTYPE *CreateFence)(
-        ID3D12Device *This,
-        UINT64 initial_value,
-        D3D12_FENCE_FLAGS flags,
-        REFIID riid,
-        void **fence);
+                     ID3D12Device *This,
+                     UINT64 initial_value,
+                     D3D12_FENCE_FLAGS flags,
+                     REFIID riid,
+                     void **fence);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceRemovedReason)(
-        ID3D12Device *This);
+                     ID3D12Device *This);
 
     void (STDMETHODCALLTYPE *GetCopyableFootprints)(
-        ID3D12Device *This,
-        const D3D12_RESOURCE_DESC *desc,
-        UINT first_sub_resource,
-        UINT sub_resource_count,
-        UINT64 base_offset,
-        D3D12_PLACED_SUBRESOURCE_FOOTPRINT *layouts,
-        UINT *row_count,
-        UINT64 *row_size,
-        UINT64 *total_bytes);
+                     ID3D12Device *This,
+                     const D3D12_RESOURCE_DESC *desc,
+                     UINT first_sub_resource,
+                     UINT sub_resource_count,
+                     UINT64 base_offset,
+                     D3D12_PLACED_SUBRESOURCE_FOOTPRINT *layouts,
+                     UINT *row_count,
+                     UINT64 *row_size,
+                     UINT64 *total_bytes);
 
     HRESULT (STDMETHODCALLTYPE *CreateQueryHeap)(
-        ID3D12Device *This,
-        const D3D12_QUERY_HEAP_DESC *desc,
-        REFIID riid,
-        void **heap);
+                     ID3D12Device *This,
+                     const D3D12_QUERY_HEAP_DESC *desc,
+                     REFIID riid,
+                     void **heap);
 
     HRESULT (STDMETHODCALLTYPE *SetStablePowerState)(
-        ID3D12Device *This,
-        WINBOOL enable);
+                     ID3D12Device *This,
+                     WINBOOL enable);
 
     HRESULT (STDMETHODCALLTYPE *CreateCommandSignature)(
-        ID3D12Device *This,
-        const D3D12_COMMAND_SIGNATURE_DESC *desc,
-        ID3D12RootSignature *root_signature,
-        REFIID riid,
-        void **command_signature);
+                     ID3D12Device *This,
+                     const D3D12_COMMAND_SIGNATURE_DESC *desc,
+                     ID3D12RootSignature *root_signature,
+                     REFIID riid,
+                     void **command_signature);
 
     void (STDMETHODCALLTYPE *GetResourceTiling)(
-        ID3D12Device *This,
-        ID3D12Resource *resource,
-        UINT *total_tile_count,
-        D3D12_PACKED_MIP_INFO *packed_mip_info,
-        D3D12_TILE_SHAPE *standard_tile_shape,
-        UINT *sub_resource_tiling_count,
-        UINT first_sub_resource_tiling,
-        D3D12_SUBRESOURCE_TILING *sub_resource_tilings);
+                     ID3D12Device *This,
+                     ID3D12Resource *resource,
+                     UINT *total_tile_count,
+                     D3D12_PACKED_MIP_INFO *packed_mip_info,
+                     D3D12_TILE_SHAPE *standard_tile_shape,
+                     UINT *sub_resource_tiling_count,
+                     UINT first_sub_resource_tiling,
+                     D3D12_SUBRESOURCE_TILING *sub_resource_tilings);
 
     LUID * (STDMETHODCALLTYPE *GetAdapterLuid)(
-        ID3D12Device *This,
-        LUID *__ret);
+                     ID3D12Device *This,
+                     LUID *__ret);
 
     END_INTERFACE
 } ID3D12DeviceVtbl;
@@ -5149,7 +5149,7 @@ MIDL_INTERFACE("344488b7-6846-474b-b989-f027448245e0")
 ID3D12Debug : public IUnknown
 {
     virtual void STDMETHODCALLTYPE EnableDebugLayer(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5161,19 +5161,19 @@ typedef struct ID3D12DebugVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12Debug *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12Debug *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12Debug *This);
+                     ID3D12Debug *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12Debug *This);
+                     ID3D12Debug *This);
 
     /*** ID3D12Debug methods ***/
     void (STDMETHODCALLTYPE *EnableDebugLayer)(
-        ID3D12Debug *This);
+                     ID3D12Debug *This);
 
     END_INTERFACE
 } ID3D12DebugVtbl;
@@ -5225,7 +5225,7 @@ MIDL_INTERFACE("34ab647b-3cc8-46ac-841b-c0965645c046")
 ID3D12RootSignatureDeserializer : public IUnknown
 {
     virtual const D3D12_ROOT_SIGNATURE_DESC * STDMETHODCALLTYPE GetRootSignatureDesc(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5237,19 +5237,19 @@ typedef struct ID3D12RootSignatureDeserializerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ID3D12RootSignatureDeserializer *This,
-        REFIID riid,
-        void **ppvObject);
+                     ID3D12RootSignatureDeserializer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ID3D12RootSignatureDeserializer *This);
+                     ID3D12RootSignatureDeserializer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ID3D12RootSignatureDeserializer *This);
+                     ID3D12RootSignatureDeserializer *This);
 
     /*** ID3D12RootSignatureDeserializer methods ***/
     const D3D12_ROOT_SIGNATURE_DESC * (STDMETHODCALLTYPE *GetRootSignatureDesc)(
-        ID3D12RootSignatureDeserializer *This);
+                     ID3D12RootSignatureDeserializer *This);
 
     END_INTERFACE
 } ID3D12RootSignatureDeserializerVtbl;

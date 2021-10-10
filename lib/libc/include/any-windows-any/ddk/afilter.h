@@ -27,20 +27,20 @@
 extern "C" {
 #endif
 
-#define ARC_RECEIVE_BUFFERS            64
-#define ARCNET_ADDRESS_LEN             1
-#define ARC_PROTOCOL_HEADER_SIZE       (sizeof(ARC_PROTOCOL_HEADER))
-#define ARC_MAX_FRAME_SIZE             504
-#define ARC_MAX_ADDRESS_IDS            256
-#define ARC_MAX_FRAME_HEADER_SIZE      6
-#define ARC_MAX_PACKET_SIZE            576
-#define ARC_FILTER_MAX_OPENS           (sizeof(ULONG) * 8)
+#define ARC_RECEIVE_BUFFERS                                      64
+#define ARCNET_ADDRESS_LEN                                       1
+#define ARC_PROTOCOL_HEADER_SIZE                    (sizeof(ARC_PROTOCOL_HEADER))
+#define ARC_MAX_FRAME_SIZE                                       504
+#define ARC_MAX_ADDRESS_IDS                                      256
+#define ARC_MAX_FRAME_HEADER_SIZE                   6
+#define ARC_MAX_PACKET_SIZE                                      576
+#define ARC_FILTER_MAX_OPENS                        (sizeof(ULONG) * 8)
 
 #define ARC_IS_BROADCAST(Address) (BOOLEAN)(!(Address))
 
 #define ARC_QUERY_FILTER_CLASSES(Filter) ((Filter)->CombinedPacketFilter)
 #define ARC_QUERY_PACKET_FILTER(Filter, NdisFilterHandle) \
-        (((PARC_BINDING_INFO)(NdisFilterHandle))->PacketFilters)
+                     (((PARC_BINDING_INFO)(NdisFilterHandle))->PacketFilters)
 
 typedef ULONG MASK, *PMASK;
 

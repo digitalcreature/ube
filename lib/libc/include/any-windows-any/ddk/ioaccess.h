@@ -45,18 +45,18 @@ extern "C" {
 
 #elif defined(_PPC_) || defined(_MIPS_) || defined(_ARM_)
 
-#define READ_REGISTER_UCHAR(r)      (*(volatile UCHAR * const)(r))
+#define READ_REGISTER_UCHAR(r)                   (*(volatile UCHAR * const)(r))
 #define READ_REGISTER_USHORT(r)     (*(volatile USHORT * const)(r))
-#define READ_REGISTER_ULONG(r)      (*(volatile ULONG * const)(r))
+#define READ_REGISTER_ULONG(r)                   (*(volatile ULONG * const)(r))
 #define WRITE_REGISTER_UCHAR(r, v)  (*(volatile UCHAR * const)(r) = (v))
 #define WRITE_REGISTER_USHORT(r, v) (*(volatile USHORT * const)(r) = (v))
 #define WRITE_REGISTER_ULONG(r, v)  (*(volatile ULONG * const)(r) = (v))
-#define READ_PORT_UCHAR(r)          READ_REGISTER_UCHAR(r)
-#define READ_PORT_USHORT(r)         READ_REGISTER_USHORT(r)
-#define READ_PORT_ULONG(r)          READ_REGISTER_ULONG(r)
-#define WRITE_PORT_UCHAR(p, v)      WRITE_REGISTER_UCHAR(p, (UCHAR) (v))
+#define READ_PORT_UCHAR(r)                       READ_REGISTER_UCHAR(r)
+#define READ_PORT_USHORT(r)                      READ_REGISTER_USHORT(r)
+#define READ_PORT_ULONG(r)                       READ_REGISTER_ULONG(r)
+#define WRITE_PORT_UCHAR(p, v)                   WRITE_REGISTER_UCHAR(p, (UCHAR) (v))
 #define WRITE_PORT_USHORT(p, v)     WRITE_REGISTER_USHORT(p, (USHORT) (v))
-#define WRITE_PORT_ULONG(p, v)      WRITE_REGISTER_ULONG(p, (ULONG) (v))
+#define WRITE_PORT_ULONG(p, v)                   WRITE_REGISTER_ULONG(p, (ULONG) (v))
 
 #else
 

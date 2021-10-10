@@ -2,11 +2,11 @@
 /*
  * -- <linux/cdrom.h>
  * General header file for linux CD-ROM drivers 
- * Copyright (C) 1992         David Giller, rafetmad@oxy.edu
- *               1994, 1995   Eberhard Mönkeberg, emoenke@gwdg.de
- *               1996         David van Leeuwen, david@tm.tno.nl
- *               1997, 1998   Erik Andersen, andersee@debian.org
- *               1998-2002    Jens Axboe, axboe@suse.de
+ * Copyright (C) 1992                      David Giller, rafetmad@oxy.edu
+ *                                         1994, 1995   Eberhard Mönkeberg, emoenke@gwdg.de
+ *                                         1996                      David van Leeuwen, david@tm.tno.nl
+ *                                         1997, 1998   Erik Andersen, andersee@debian.org
+ *                                         1998-2002    Jens Axboe, axboe@suse.de
  */
  
 #ifndef _LINUX_CDROM_H
@@ -30,8 +30,8 @@
  * mount or play an empty slot, mount an audio disc, or play a data disc.
  * Generally, changing an application program to support O_NONBLOCK
  * is as easy as the following:
- *       -    drive = open("/dev/cdrom", O_RDONLY);
- *       +    drive = open("/dev/cdrom", O_RDONLY | O_NONBLOCK);
+ *                    -    drive = open("/dev/cdrom", O_RDONLY);
+ *                    +    drive = open("/dev/cdrom", O_RDONLY | O_NONBLOCK);
  * It is worth the small change.
  *
  *  Patches for many common CD programs (provided by David A. van Leeuwen)
@@ -55,36 +55,36 @@
 #define CDROMRESUME		0x5302 /* Resume paused Audio Operation */
 #define CDROMPLAYMSF		0x5303 /* Play Audio MSF (struct cdrom_msf) */
 #define CDROMPLAYTRKIND		0x5304 /* Play Audio Track/index 
-                                           (struct cdrom_ti) */
+                                                                                                                                      (struct cdrom_ti) */
 #define CDROMREADTOCHDR		0x5305 /* Read TOC header 
-                                           (struct cdrom_tochdr) */
+                                                                                                                                      (struct cdrom_tochdr) */
 #define CDROMREADTOCENTRY	0x5306 /* Read TOC entry 
-                                           (struct cdrom_tocentry) */
+                                                                                                                                      (struct cdrom_tocentry) */
 #define CDROMSTOP		0x5307 /* Stop the cdrom drive */
 #define CDROMSTART		0x5308 /* Start the cdrom drive */
 #define CDROMEJECT		0x5309 /* Ejects the cdrom media */
 #define CDROMVOLCTRL		0x530a /* Control output volume 
-                                           (struct cdrom_volctrl) */
+                                                                                                                                      (struct cdrom_volctrl) */
 #define CDROMSUBCHNL		0x530b /* Read subchannel data 
-                                           (struct cdrom_subchnl) */
+                                                                                                                                      (struct cdrom_subchnl) */
 #define CDROMREADMODE2		0x530c /* Read CDROM mode 2 data (2336 Bytes) 
-                                           (struct cdrom_read) */
+                                                                                                                                      (struct cdrom_read) */
 #define CDROMREADMODE1		0x530d /* Read CDROM mode 1 data (2048 Bytes)
-                                           (struct cdrom_read) */
+                                                                                                                                      (struct cdrom_read) */
 #define CDROMREADAUDIO		0x530e /* (struct cdrom_read_audio) */
 #define CDROMEJECT_SW		0x530f /* enable(1)/disable(0) auto-ejecting */
 #define CDROMMULTISESSION	0x5310 /* Obtain the start-of-last-session 
-                                           address of multi session disks 
-                                           (struct cdrom_multisession) */
+                                                                                                                                      address of multi session disks 
+                                                                                                                                      (struct cdrom_multisession) */
 #define CDROM_GET_MCN		0x5311 /* Obtain the "Universal Product Code" 
-                                           if available (struct cdrom_mcn) */
+                                                                                                                                      if available (struct cdrom_mcn) */
 #define CDROM_GET_UPC		CDROM_GET_MCN  /* This one is deprecated, 
-                                          but here anyway for compatibility */
+                                                                                                                                     but here anyway for compatibility */
 #define CDROMRESET		0x5312 /* hard-reset the drive */
 #define CDROMVOLREAD		0x5313 /* Get the drive's volume setting 
-                                          (struct cdrom_volctrl) */
+                                                                                                                                     (struct cdrom_volctrl) */
 #define CDROMREADRAW		0x5314	/* read data in raw mode (2352 Bytes)
-                                           (struct cdrom_read) */
+                                                                                                                                      (struct cdrom_read) */
 /* 
  * These ioctls are used only used in aztcd.c and optcd.c
  */
@@ -109,8 +109,8 @@
  * GPCMD_MODE_SENSE_10 and the GPMODE_POWER_PAGE...
  *  -Erik
  */
-#define CDROMGETSPINDOWN        0x531d
-#define CDROMSETSPINDOWN        0x531e
+#define CDROMGETSPINDOWN                     0x531d
+#define CDROMSETSPINDOWN                     0x531e
 
 /* 
  * These ioctls are implemented through the uniform CD-ROM driver
@@ -135,7 +135,7 @@
  */
 
 /* This ioctl is only used by sbpcd at the moment */
-#define CDROMAUDIOBUFSIZ        0x5382	/* set the audio buffer size */
+#define CDROMAUDIOBUFSIZ                     0x5382	/* set the audio buffer size */
 					/* conflict with SCSI_IOCTL_GET_IDLUN */
 
 /* DVD-ROM Specific ioctls */
@@ -228,7 +228,7 @@ struct cdrom_tocentry
 };
 
 /* This struct is used by the CDROMREADMODE1, and CDROMREADMODE2 ioctls */
-struct cdrom_read      
+struct cdrom_read                   
 {
 	int	cdread_lba;
 	char 	*cdread_bufaddr;
@@ -239,18 +239,18 @@ struct cdrom_read
 struct cdrom_read_audio
 {
 	union cdrom_addr addr; /* frame address */
-	__u8 addr_format;      /* CDROM_LBA or CDROM_MSF */
-	int nframes;           /* number of 2352-byte-frames to read at once */
-	__u8 *buf;      /* frame buffer (size: nframes*2352 bytes) */
+	__u8 addr_format;                   /* CDROM_LBA or CDROM_MSF */
+	int nframes;                        /* number of 2352-byte-frames to read at once */
+	__u8 *buf;                   /* frame buffer (size: nframes*2352 bytes) */
 };
 
 /* This struct is used with the CDROMMULTISESSION ioctl */
 struct cdrom_multisession
 {
 	union cdrom_addr addr; /* frame address: start-of-last-session 
-	                           (not the new "frame 16"!).  Only valid
-	                           if the "xa_flag" is true. */
-	__u8 xa_flag;        /* 1: "is XA disk" */
+	                                                                               (not the new "frame 16"!).  Only valid
+	                                                                               if the "xa_flag" is true. */
+	__u8 xa_flag;                     /* 1: "is XA disk" */
 	__u8 addr_format;    /* CDROM_LBA or CDROM_MSF */
 };
 
@@ -296,59 +296,59 @@ struct cdrom_generic_command
  * A CD-ROM physical sector size is 2048, 2052, 2056, 2324, 2332, 2336, 
  * 2340, or 2352 bytes long.  
 
-*         Sector types of the standard CD-ROM data formats:
+*                      Sector types of the standard CD-ROM data formats:
  *
- * format   sector type               user data size (bytes)
+ * format   sector type                                         user data size (bytes)
  * -----------------------------------------------------------------------------
- *   1     (Red Book)    CD-DA          2352    (CD_FRAMESIZE_RAW)
+ *   1     (Red Book)    CD-DA                       2352    (CD_FRAMESIZE_RAW)
  *   2     (Yellow Book) Mode1 Form1    2048    (CD_FRAMESIZE)
  *   3     (Yellow Book) Mode1 Form2    2336    (CD_FRAMESIZE_RAW0)
  *   4     (Green Book)  Mode2 Form1    2048    (CD_FRAMESIZE)
  *   5     (Green Book)  Mode2 Form2    2328    (2324+4 spare bytes)
  *
  *
- *       The layout of the standard CD-ROM data formats:
+ *                    The layout of the standard CD-ROM data formats:
  * -----------------------------------------------------------------------------
- * - audio (red):                  | audio_sample_bytes |
- *                                 |        2352        |
+ * - audio (red):                                                         | audio_sample_bytes |
+ *                                                                                                  |                     2352                     |
  *
- * - data (yellow, mode1):         | sync - head - data - EDC - zero - ECC |
- *                                 |  12  -   4  - 2048 -  4  -   8  - 276 |
+ * - data (yellow, mode1):                      | sync - head - data - EDC - zero - ECC |
+ *                                                                                                  |  12  -   4  - 2048 -  4  -   8  - 276 |
  *
- * - data (yellow, mode2):         | sync - head - data |
- *                                 |  12  -   4  - 2336 |
+ * - data (yellow, mode2):                      | sync - head - data |
+ *                                                                                                  |  12  -   4  - 2336 |
  *
  * - XA data (green, mode2 form1): | sync - head - sub - data - EDC - ECC |
- *                                 |  12  -   4  -  8  - 2048 -  4  - 276 |
+ *                                                                                                  |  12  -   4  -  8  - 2048 -  4  - 276 |
  *
  * - XA data (green, mode2 form2): | sync - head - sub - data - Spare |
- *                                 |  12  -   4  -  8  - 2324 -  4    |
+ *                                                                                                  |  12  -   4  -  8  - 2324 -  4    |
  *
  */
 
 /* Some generally useful CD-ROM information -- mostly based on the above */
-#define CD_MINS              74 /* max. minutes per CD, not really a limit */
-#define CD_SECS              60 /* seconds per minute */
-#define CD_FRAMES            75 /* frames per second */
-#define CD_SYNC_SIZE         12 /* 12 sync bytes per raw data frame */
-#define CD_MSF_OFFSET       150 /* MSF numbering offset of first frame */
-#define CD_CHUNK_SIZE        24 /* lowest-level "data bytes piece" */
+#define CD_MINS                                        74 /* max. minutes per CD, not really a limit */
+#define CD_SECS                                        60 /* seconds per minute */
+#define CD_FRAMES                                      75 /* frames per second */
+#define CD_SYNC_SIZE                      12 /* 12 sync bytes per raw data frame */
+#define CD_MSF_OFFSET                    150 /* MSF numbering offset of first frame */
+#define CD_CHUNK_SIZE                     24 /* lowest-level "data bytes piece" */
 #define CD_NUM_OF_CHUNKS     98 /* chunks per frame */
 #define CD_FRAMESIZE_SUB     96 /* subchannel data "frame" size */
-#define CD_HEAD_SIZE          4 /* header (address) bytes per raw data frame */
-#define CD_SUBHEAD_SIZE       8 /* subheader bytes per raw XA data frame */
-#define CD_EDC_SIZE           4 /* bytes EDC per most raw data frame types */
-#define CD_ZERO_SIZE          8 /* bytes zero per yellow book mode 1 frame */
-#define CD_ECC_SIZE         276 /* bytes ECC per most raw data frame types */
-#define CD_FRAMESIZE       2048 /* bytes per frame, "cooked" mode */
+#define CD_HEAD_SIZE                       4 /* header (address) bytes per raw data frame */
+#define CD_SUBHEAD_SIZE                    8 /* subheader bytes per raw XA data frame */
+#define CD_EDC_SIZE                        4 /* bytes EDC per most raw data frame types */
+#define CD_ZERO_SIZE                       8 /* bytes zero per yellow book mode 1 frame */
+#define CD_ECC_SIZE                      276 /* bytes ECC per most raw data frame types */
+#define CD_FRAMESIZE                    2048 /* bytes per frame, "cooked" mode */
 #define CD_FRAMESIZE_RAW   2352 /* bytes per frame, "raw" mode */
 #define CD_FRAMESIZE_RAWER 2646 /* The maximum possible returned bytes */ 
 /* most drives don't deliver everything: */
 #define CD_FRAMESIZE_RAW1 (CD_FRAMESIZE_RAW-CD_SYNC_SIZE) /*2340*/
 #define CD_FRAMESIZE_RAW0 (CD_FRAMESIZE_RAW-CD_SYNC_SIZE-CD_HEAD_SIZE) /*2336*/
 
-#define CD_XA_HEAD        (CD_HEAD_SIZE+CD_SUBHEAD_SIZE) /* "before data" part of raw XA frame */
-#define CD_XA_TAIL        (CD_EDC_SIZE+CD_ECC_SIZE) /* "after data" part of raw XA frame */
+#define CD_XA_HEAD                     (CD_HEAD_SIZE+CD_SUBHEAD_SIZE) /* "before data" part of raw XA frame */
+#define CD_XA_TAIL                     (CD_EDC_SIZE+CD_ECC_SIZE) /* "after data" part of raw XA frame */
 #define CD_XA_SYNC_HEAD   (CD_SYNC_SIZE+CD_XA_HEAD) /* sync bytes + header of XA frame */
 
 /* CD-ROM address types (cdrom_tocentry.cdte_format) */
@@ -379,8 +379,8 @@ struct cdrom_generic_command
 #define CDC_MCN			0x40    /* Medium Catalog Number */
 #define CDC_MEDIA_CHANGED 	0x80    /* media changed */
 #define CDC_PLAY_AUDIO		0x100   /* audio functions */
-#define CDC_RESET               0x200   /* hard reset device */
-#define CDC_DRIVE_STATUS        0x800   /* driver implements drive status */
+#define CDC_RESET                                         0x200   /* hard reset device */
+#define CDC_DRIVE_STATUS                     0x800   /* driver implements drive status */
 #define CDC_GENERIC_PACKET	0x1000	/* driver implements generic packets */
 #define CDC_CD_R		0x2000	/* drive is a CD-R */
 #define CDC_CD_RW		0x4000	/* drive is a CD-RW */
@@ -416,7 +416,7 @@ struct cdrom_generic_command
 #define CDO_CHECK_TYPE		0x10    /* check type on open for data */
 
 /* Special codes used when specifying changer slots. */
-#define CDSL_NONE       	(INT_MAX-1)
+#define CDSL_NONE                    	(INT_MAX-1)
 #define CDSL_CURRENT    	INT_MAX
 
 /* For partition based multisession access. IDE can handle 64 partitions
@@ -811,13 +811,13 @@ typedef struct {
 	__be16 disc_information_length;
 #if defined(__BIG_ENDIAN_BITFIELD)
 	__u8 reserved1			: 3;
-        __u8 erasable			: 1;
-        __u8 border_status		: 2;
-        __u8 disc_status		: 2;
+                     __u8 erasable			: 1;
+                     __u8 border_status		: 2;
+                     __u8 disc_status		: 2;
 #elif defined(__LITTLE_ENDIAN_BITFIELD)
-        __u8 disc_status		: 2;
-        __u8 border_status		: 2;
-        __u8 erasable			: 1;
+                     __u8 disc_status		: 2;
+                     __u8 border_status		: 2;
+                     __u8 erasable			: 1;
 	__u8 reserved1			: 3;
 #else
 #error "Please fix <asm/byteorder.h>"
@@ -828,17 +828,17 @@ typedef struct {
 	__u8 last_track_lsb;
 #if defined(__BIG_ENDIAN_BITFIELD)
 	__u8 did_v			: 1;
-        __u8 dbc_v			: 1;
-        __u8 uru			: 1;
-        __u8 reserved2			: 2;
+                     __u8 dbc_v			: 1;
+                     __u8 uru			: 1;
+                     __u8 reserved2			: 2;
 	__u8 dbit			: 1;
 	__u8 mrw_status			: 2;
 #elif defined(__LITTLE_ENDIAN_BITFIELD)
 	__u8 mrw_status			: 2;
 	__u8 dbit			: 1;
-        __u8 reserved2			: 2;
-        __u8 uru			: 1;
-        __u8 dbc_v			: 1;
+                     __u8 reserved2			: 2;
+                     __u8 uru			: 1;
+                     __u8 dbc_v			: 1;
 	__u8 did_v			: 1;
 #endif
 	__u8 disc_type;
@@ -860,9 +860,9 @@ typedef struct {
 	__u8 reserved1;
 #if defined(__BIG_ENDIAN_BITFIELD)
 	__u8 reserved2			: 2;
-        __u8 damage			: 1;
-        __u8 copy			: 1;
-        __u8 track_mode			: 4;
+                     __u8 damage			: 1;
+                     __u8 copy			: 1;
+                     __u8 track_mode			: 4;
 	__u8 rt				: 1;
 	__u8 blank			: 1;
 	__u8 packet			: 1;
@@ -872,9 +872,9 @@ typedef struct {
 	__u8 lra_v			: 1;
 	__u8 nwa_v			: 1;
 #elif defined(__LITTLE_ENDIAN_BITFIELD)
-        __u8 track_mode			: 4;
-        __u8 copy			: 1;
-        __u8 damage			: 1;
+                     __u8 track_mode			: 4;
+                     __u8 copy			: 1;
+                     __u8 damage			: 1;
 	__u8 reserved2			: 2;
 	__u8 data_mode			: 4;
 	__u8 fp				: 1;

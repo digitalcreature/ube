@@ -88,8 +88,8 @@ __END_DECLS
 # if defined __cplusplus
 #  define assert(expr)							\
      (static_cast <bool> (expr)						\
-      ? void (0)							\
-      : __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION))
+                   ? void (0)							\
+                   : __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION))
 # elif !defined __GNUC__ || defined __STRICT_ANSI__
 #  define assert(expr)							\
     ((expr)								\
@@ -103,10 +103,10 @@ __END_DECLS
    suppress the evaluation of variable length arrays.  */
 #  define assert(expr)							\
   ((void) sizeof ((expr) ? 1 : 0), __extension__ ({			\
-      if (expr)								\
-        ; /* empty */							\
-      else								\
-        __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION);	\
+                   if (expr)								\
+                     ; /* empty */							\
+                   else								\
+                     __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION);	\
     }))
 # endif
 

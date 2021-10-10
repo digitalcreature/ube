@@ -96,8 +96,8 @@
 #define HDLC_TXIDLE_ALT_MARK_SPACE	4
 #define HDLC_TXIDLE_SPACE		5
 #define HDLC_TXIDLE_MARK		6
-#define HDLC_TXIDLE_CUSTOM_8            0x10000000
-#define HDLC_TXIDLE_CUSTOM_16           0x20000000
+#define HDLC_TXIDLE_CUSTOM_8                                      0x10000000
+#define HDLC_TXIDLE_CUSTOM_16                        0x20000000
 
 #define HDLC_ENCODING_NRZ			0
 #define HDLC_ENCODING_NRZB			1
@@ -127,7 +127,7 @@
 #define MGSL_MODE_BISYNC	4
 #define MGSL_MODE_RAW		6
 #define MGSL_MODE_BASE_CLOCK    7
-#define MGSL_MODE_XSYNC         8
+#define MGSL_MODE_XSYNC                      8
 
 #define MGSL_BUS_TYPE_ISA	1
 #define MGSL_BUS_TYPE_EISA	2
@@ -136,11 +136,11 @@
 #define MGSL_INTERFACE_MASK     0xf
 #define MGSL_INTERFACE_DISABLE  0
 #define MGSL_INTERFACE_RS232    1
-#define MGSL_INTERFACE_V35      2
+#define MGSL_INTERFACE_V35                   2
 #define MGSL_INTERFACE_RS422    3
 #define MGSL_INTERFACE_RTS_EN   0x10
-#define MGSL_INTERFACE_LL       0x20
-#define MGSL_INTERFACE_RL       0x40
+#define MGSL_INTERFACE_LL                    0x20
+#define MGSL_INTERFACE_RL                    0x40
 #define MGSL_INTERFACE_MSB_FIRST 0x80
 
 typedef struct _MGSL_PARAMS
@@ -197,14 +197,14 @@ typedef struct _MGSL_PARAMS
 #define DiagStatus_CantAssignPciIrq		11
 #define DiagStatus_MemoryError			12
 
-#define SerialSignal_DCD            0x01     /* Data Carrier Detect */
-#define SerialSignal_TXD            0x02     /* Transmit Data */
-#define SerialSignal_RI             0x04     /* Ring Indicator */
-#define SerialSignal_RXD            0x08     /* Receive Data */
-#define SerialSignal_CTS            0x10     /* Clear to Send */
-#define SerialSignal_RTS            0x20     /* Request to Send */
-#define SerialSignal_DSR            0x40     /* Data Set Ready */
-#define SerialSignal_DTR            0x80     /* Data Terminal Ready */
+#define SerialSignal_DCD                                      0x01     /* Data Carrier Detect */
+#define SerialSignal_TXD                                      0x02     /* Transmit Data */
+#define SerialSignal_RI                                       0x04     /* Ring Indicator */
+#define SerialSignal_RXD                                      0x08     /* Receive Data */
+#define SerialSignal_CTS                                      0x10     /* Clear to Send */
+#define SerialSignal_RTS                                      0x20     /* Request to Send */
+#define SerialSignal_DSR                                      0x40     /* Data Set Ready */
+#define SerialSignal_DTR                                      0x80     /* Data Terminal Ready */
 
 
 /*
@@ -272,8 +272,8 @@ struct gpio_desc {
  * MGSL_IOCGSTATS	return current statistics
  * MGSL_IOCWAITEVENT	wait for specified event to occur
  * MGSL_LOOPTXDONE	transmit in HDLC LoopMode done
- * MGSL_IOCSIF          set the serial interface type
- * MGSL_IOCGIF          get the serial interface type
+ * MGSL_IOCSIF                       set the serial interface type
+ * MGSL_IOCGIF                       get the serial interface type
  */
 #define MGSL_MAGIC_IOC	'm'
 #define MGSL_IOCSPARAMS		_IOW(MGSL_MAGIC_IOC,0,struct _MGSL_PARAMS)

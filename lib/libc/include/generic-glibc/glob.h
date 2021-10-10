@@ -53,7 +53,7 @@ typedef __SIZE_TYPE__ size_t;
 # define GLOB_TILDE	 (1 << 12)/* Expand ~user and ~ to home directories. */
 # define GLOB_ONLYDIR	 (1 << 13)/* Match only directories.  */
 # define GLOB_TILDE_CHECK (1 << 14)/* Like GLOB_TILDE but return an error
-				      if the user name is not available.  */
+				                   if the user name is not available.  */
 # define __GLOB_FLAGS	(GLOB_ERR|GLOB_MARK|GLOB_NOSORT|GLOB_DOOFFS  \
 			 |GLOB_NOESCAPE|GLOB_NOCHECK|GLOB_APPEND     \
 			 |GLOB_PERIOD|GLOB_ALTDIRFUNC|GLOB_BRACE     \
@@ -87,7 +87,7 @@ typedef struct
     int gl_flags;		/* Set to FLAGS, maybe | GLOB_MAGCHAR.  */
 
     /* If the GLOB_ALTDIRFUNC flag is set, the following functions
-       are used instead of the normal file access functions.  */
+                    are used instead of the normal file access functions.  */
     void (*gl_closedir) (void *);
 #ifdef __USE_GNU
     struct dirent *(*gl_readdir) (void *);
@@ -116,7 +116,7 @@ typedef struct
     int gl_flags;
 
     /* If the GLOB_ALTDIRFUNC flag is set, the following functions
-       are used instead of the normal file access functions.  */
+                    are used instead of the normal file access functions.  */
     void (*gl_closedir) (void *);
 # ifdef __USE_GNU
     struct dirent64 *(*gl_readdir) (void *);

@@ -1117,10 +1117,10 @@ extern "C" {
 
   typedef struct lineagentgroupentry_tag {
     struct {
-      DWORD dwGroupID1;
-      DWORD dwGroupID2;
-      DWORD dwGroupID3;
-      DWORD dwGroupID4;
+                   DWORD dwGroupID1;
+                   DWORD dwGroupID2;
+                   DWORD dwGroupID3;
+                   DWORD dwGroupID4;
     } GroupID;
     DWORD dwNameSize;
     DWORD dwNameOffset;
@@ -1611,8 +1611,8 @@ extern "C" {
     DWORD dwUsedSize;
     DWORD dwOptions;
     union {
-      HANDLE hEvent;
-      HANDLE hCompletionPort;
+                   HANDLE hEvent;
+                   HANDLE hCompletionPort;
     } Handles;
     DWORD dwCompletionKey;
   } LINEINITIALIZEEXPARAMS,*LPLINEINITIALIZEEXPARAMS;
@@ -1704,97 +1704,97 @@ extern "C" {
     DWORD dwClientAppAPIVersion;
     DWORD dwRequestType;
     __C89_NAMELESS union {
-      struct {
+                   struct {
 	DWORD dwAddressID;
 	LINEAGENTGROUPLIST GroupList;
-      } SetAgentGroup;
-      struct {
+                   } SetAgentGroup;
+                   struct {
 	DWORD dwAddressID;
 	DWORD dwAgentState;
 	DWORD dwNextAgentState;
-      } SetAgentState;
-      struct {
+                   } SetAgentState;
+                   struct {
 	DWORD dwAddressID;
 	DWORD dwActivityID;
-      } SetAgentActivity;
-      struct {
+                   } SetAgentActivity;
+                   struct {
 	DWORD dwAddressID;
 	LINEAGENTCAPS AgentCaps;
-      } GetAgentCaps;
-      struct {
+                   } GetAgentCaps;
+                   struct {
 	DWORD dwAddressID;
 	LINEAGENTSTATUS AgentStatus;
-      } GetAgentStatus;
-      struct {
+                   } GetAgentStatus;
+                   struct {
 	DWORD dwAddressID;
 	DWORD dwAgentExtensionIDIndex;
 	DWORD dwSize;
 	BYTE Params[1];
-      } AgentSpecific;
-      struct {
+                   } AgentSpecific;
+                   struct {
 	DWORD dwAddressID;
 	LINEAGENTACTIVITYLIST ActivityList;
-      } GetAgentActivityList;
-      struct {
+                   } GetAgentActivityList;
+                   struct {
 	DWORD dwAddressID;
 	LINEAGENTGROUPLIST GroupList;
-      } GetAgentGroupList;
-      struct {
+                   } GetAgentGroupList;
+                   struct {
 	HAGENT hAgent;
 	DWORD dwAgentIDSize;
 	DWORD dwAgentIDOffset;
 	DWORD dwAgentPINSize;
 	DWORD dwAgentPINOffset;
-      } CreateAgent;
-      struct {
+                   } CreateAgent;
+                   struct {
 	HAGENT hAgent;
 	DWORD dwAgentState;
 	DWORD dwNextAgentState;
-      } SetAgentStateEx;
-      struct {
+                   } SetAgentStateEx;
+                   struct {
 	HAGENT hAgent;
 	DWORD dwMeasurementPeriod;
-      } SetAgentMeasurementPeriod;
-      struct {
+                   } SetAgentMeasurementPeriod;
+                   struct {
 	HAGENT hAgent;
 	LINEAGENTINFO AgentInfo;
-      } GetAgentInfo;
-      struct {
+                   } GetAgentInfo;
+                   struct {
 	HAGENTSESSION hAgentSession;
 	DWORD dwAgentPINSize;
 	DWORD dwAgentPINOffset;
 	HAGENT hAgent;
 	GUID GroupID;
 	DWORD dwWorkingAddressID;
-      } CreateAgentSession;
-      struct {
+                   } CreateAgentSession;
+                   struct {
 	HAGENT hAgent;
 	LINEAGENTSESSIONLIST SessionList;
-      } GetAgentSessionList;
-      struct {
+                   } GetAgentSessionList;
+                   struct {
 	HAGENTSESSION hAgentSession;
 	LINEAGENTSESSIONINFO SessionInfo;
-      } GetAgentSessionInfo;
-      struct {
+                   } GetAgentSessionInfo;
+                   struct {
 	HAGENTSESSION hAgentSession;
 	DWORD dwAgentSessionState;
 	DWORD dwNextAgentSessionState;
-      } SetAgentSessionState;
-      struct {
+                   } SetAgentSessionState;
+                   struct {
 	GUID GroupID;
 	LINEQUEUELIST QueueList;
-      } GetQueueList;
-      struct {
+                   } GetQueueList;
+                   struct {
 	DWORD dwQueueID;
 	DWORD dwMeasurementPeriod;
-      } SetQueueMeasurementPeriod;
-      struct {
+                   } SetQueueMeasurementPeriod;
+                   struct {
 	DWORD dwQueueID;
 	LINEQUEUEINFO QueueInfo;
-      } GetQueueInfo;
-      struct {
+                   } GetQueueInfo;
+                   struct {
 	LINEAGENTGROUPLIST GroupList;
-      } GetGroupList;
+                   } GetGroupList;
     };
   } LINEPROXYREQUEST,*LPLINEPROXYREQUEST;
 
@@ -1954,8 +1954,8 @@ extern "C" {
     DWORD dwUsedSize;
     DWORD dwOptions;
     union {
-      HANDLE hEvent;
-      HANDLE hCompletionPort;
+                   HANDLE hEvent;
+                   HANDLE hCompletionPort;
     } Handles;
     DWORD dwCompletionKey;
   } PHONEINITIALIZEEXPARAMS,*LPPHONEINITIALIZEEXPARAMS;

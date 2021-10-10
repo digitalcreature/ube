@@ -54,16 +54,16 @@
 
 /* Layout of FPCR and FPSR:
 
-   |       |       |       |       |       |       |       |
+   |                    |                    |                    |                    |                    |                    |                    |
    0 0 0 0 1 1 1 0 0 0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 1 1 1 0 0 0 0 0
-   s s s s s                                       s     s s s s s
-             c c c c c c c               c c c c c
+   s s s s s                                                                                                                     s     s s s s s
+                                       c c c c c c c                                         c c c c c
    N Z C V Q A D F R R S S S L L L I U U I U O D I I U U I U O D I
-           C H N Z M M T T B E E E D N N X F F Z O D N N X F F Z O
-             P     O O R R Z N N N E K K E E E E E C K K C C C C C
-                   D D I I P
-                   E E D D
-                       E E
+                        C H N Z M M T T B E E E D N N X F F Z O D N N X F F Z O
+                                       P     O O R R Z N N N E K K E E E E E C K K C C C C C
+                                                          D D I I P
+                                                          E E D D
+                                                              E E
  */
 
 #define _FPU_FPCR_RM_MASK  0xc00000
@@ -74,7 +74,7 @@
 #define _FPU_FPCR_MASK_DZE 0x0200
 #define _FPU_FPCR_MASK_IOE 0x0100
 
-#define _FPU_FPCR_IEEE                       \
+#define _FPU_FPCR_IEEE                                                              \
   (_FPU_DEFAULT  | _FPU_FPCR_MASK_IXE	     \
    | _FPU_FPCR_MASK_UFE | _FPU_FPCR_MASK_OFE \
    | _FPU_FPCR_MASK_DZE | _FPU_FPCR_MASK_IOE)

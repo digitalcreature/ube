@@ -38,12 +38,12 @@ interface IAMMediaTypeStream;
 interface IAMMediaTypeSample;
 
 enum {
-	AMMSF_NOGRAPHTHREAD      = 0x00000001
+	AMMSF_NOGRAPHTHREAD                   = 0x00000001
 };
 
 enum {
 	AMMSF_ADDDEFAULTRENDERER = 0x00000001,
-	AMMSF_CREATEPEER         = 0x00000002,
+	AMMSF_CREATEPEER                      = 0x00000002,
 	AMMSF_STOPIFNOSAMPLES	 = 0x00000004,
 	AMMSF_NOSTALL		 = 0x00000008
 };
@@ -52,9 +52,9 @@ enum {
 	AMMSF_RENDERTYPEMASK     = 0x00000003,
 	AMMSF_RENDERTOEXISTING   = 0x00000000,
 	AMMSF_RENDERALLSTREAMS   = 0x00000001,
-	AMMSF_NORENDER           = 0x00000002,
-	AMMSF_NOCLOCK            = 0x00000004,
-	AMMSF_RUN                = 0x00000008
+	AMMSF_NORENDER                        = 0x00000002,
+	AMMSF_NOCLOCK                                      = 0x00000004,
+	AMMSF_RUN                                          = 0x00000008
 };
 
 
@@ -312,7 +312,7 @@ coclass AMMultiMediaStream
 }
 
 cpp_quote("DEFINE_GUID(CLSID_AMDirectDrawStream,  0x49c47ce4, 0x9ba4, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);")
-cpp_quote("DEFINE_GUID(CLSID_AMAudioStream,       0x8496e040, 0xaf4c, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);")
-cpp_quote("DEFINE_GUID(CLSID_AMAudioData,         0xf2468580, 0xaf8a, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);")
+cpp_quote("DEFINE_GUID(CLSID_AMAudioStream,                    0x8496e040, 0xaf4c, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);")
+cpp_quote("DEFINE_GUID(CLSID_AMAudioData,                      0xf2468580, 0xaf8a, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);")
 cpp_quote("DEFINE_GUID(CLSID_AMMediaTypeStream,   0xcf0f2f7c, 0xf7bf, 0x11d0, 0x90, 0x0d, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);")
 cpp_quote("DEFINE_GUID(CLSID_MediaStreamFilter,   0x49c47ce0, 0x9ba4, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);")

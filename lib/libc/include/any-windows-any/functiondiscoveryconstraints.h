@@ -65,16 +65,16 @@ extern "C" {
 #define WSD_CONSTRAINTVALUE_REQUIRE_SECURECHANNEL_AND_COMPACTSIGNATURE (L"2")
 
 typedef enum tagPropertyConstraint {
-  QC_EQUALS               = 0,
-  QC_NOTEQUAL             = 1,
-  QC_LESSTHAN             = 2,
-  QC_LESSTHANOREQUAL      = 3,
-  QC_GREATERTHAN          = 4,
+  QC_EQUALS                                         = 0,
+  QC_NOTEQUAL                                       = 1,
+  QC_LESSTHAN                                       = 2,
+  QC_LESSTHANOREQUAL                   = 3,
+  QC_GREATERTHAN                       = 4,
   QC_GREATERTHANOREQUAL   = 5,
-  QC_STARTSWITH           = 6,
-  QC_EXISTS               = 7,
-  QC_DOESNOTEXIST         = 8,
-  QC_CONTAINS             = 8 
+  QC_STARTSWITH                        = 6,
+  QC_EXISTS                                         = 7,
+  QC_DOESNOTEXIST                      = 8,
+  QC_CONTAINS                                       = 8 
 } PropertyConstraint;
 
 #ifdef __cplusplus

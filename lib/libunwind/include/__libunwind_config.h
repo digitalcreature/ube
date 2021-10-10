@@ -14,14 +14,14 @@
 #define _LIBUNWIND_ARM_EHABI
 #endif
 
-#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_X86       8
+#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_X86                    8
 #define _LIBUNWIND_HIGHEST_DWARF_REGISTER_X86_64    32
-#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_PPC       112
+#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_PPC                    112
 #define _LIBUNWIND_HIGHEST_DWARF_REGISTER_PPC64     116
 #define _LIBUNWIND_HIGHEST_DWARF_REGISTER_ARM64     95
-#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_ARM       287
-#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_OR1K      32
-#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_MIPS      65
+#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_ARM                    287
+#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_OR1K                   32
+#define _LIBUNWIND_HIGHEST_DWARF_REGISTER_MIPS                   65
 #define _LIBUNWIND_HIGHEST_DWARF_REGISTER_SPARC     31
 #define _LIBUNWIND_HIGHEST_DWARF_REGISTER_HEXAGON   34
 #define _LIBUNWIND_HIGHEST_DWARF_REGISTER_RISCV     64
@@ -37,9 +37,9 @@
 #  if defined(_WIN64)
 #    define _LIBUNWIND_CONTEXT_SIZE 54
 #    ifdef __SEH__
-#      define _LIBUNWIND_CURSOR_SIZE 204
+#                   define _LIBUNWIND_CURSOR_SIZE 204
 #    else
-#      define _LIBUNWIND_CURSOR_SIZE 66
+#                   define _LIBUNWIND_CURSOR_SIZE 66
 #    endif
 #  else
 #    define _LIBUNWIND_CONTEXT_SIZE 21
@@ -93,29 +93,29 @@
 #  if defined(_ABIO32) && _MIPS_SIM == _ABIO32
 #    define _LIBUNWIND_TARGET_MIPS_O32 1
 #    if defined(__mips_hard_float)
-#      define _LIBUNWIND_CONTEXT_SIZE 50
-#      define _LIBUNWIND_CURSOR_SIZE 57
+#                   define _LIBUNWIND_CONTEXT_SIZE 50
+#                   define _LIBUNWIND_CURSOR_SIZE 57
 #    else
-#      define _LIBUNWIND_CONTEXT_SIZE 18
-#      define _LIBUNWIND_CURSOR_SIZE 24
+#                   define _LIBUNWIND_CONTEXT_SIZE 18
+#                   define _LIBUNWIND_CURSOR_SIZE 24
 #    endif
 #  elif defined(_ABIN32) && _MIPS_SIM == _ABIN32
 #    define _LIBUNWIND_TARGET_MIPS_NEWABI 1
 #    if defined(__mips_hard_float)
-#      define _LIBUNWIND_CONTEXT_SIZE 67
-#      define _LIBUNWIND_CURSOR_SIZE 74
+#                   define _LIBUNWIND_CONTEXT_SIZE 67
+#                   define _LIBUNWIND_CURSOR_SIZE 74
 #    else
-#      define _LIBUNWIND_CONTEXT_SIZE 35
-#      define _LIBUNWIND_CURSOR_SIZE 42
+#                   define _LIBUNWIND_CONTEXT_SIZE 35
+#                   define _LIBUNWIND_CURSOR_SIZE 42
 #    endif
 #  elif defined(_ABI64) && _MIPS_SIM == _ABI64
 #    define _LIBUNWIND_TARGET_MIPS_NEWABI 1
 #    if defined(__mips_hard_float)
-#      define _LIBUNWIND_CONTEXT_SIZE 67
-#      define _LIBUNWIND_CURSOR_SIZE 79
+#                   define _LIBUNWIND_CONTEXT_SIZE 67
+#                   define _LIBUNWIND_CURSOR_SIZE 79
 #    else
-#      define _LIBUNWIND_CONTEXT_SIZE 35
-#      define _LIBUNWIND_CURSOR_SIZE 47
+#                   define _LIBUNWIND_CONTEXT_SIZE 35
+#                   define _LIBUNWIND_CURSOR_SIZE 47
 #    endif
 #  else
 #    error "Unsupported MIPS ABI and/or environment"

@@ -161,14 +161,14 @@
 
 #if defined (__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
 /* The floating-point expression evaluation method.
-      -1  indeterminate
-       0  evaluate all operations and constants just to the range and
+                   -1  indeterminate
+                    0  evaluate all operations and constants just to the range and
 	  precision of the type
-       1  evaluate operations and constants of type float and double
+                    1  evaluate operations and constants of type float and double
 	  to the range and precision of the double type, evaluate
 	  long double operations and constants to the range and
 	  precision of the long double type
-       2  evaluate all operations and constants to the range and
+                    2  evaluate all operations and constants to the range and
 	  precision of the long double type
 
    ??? This ought to change with the setting of the fp control word;

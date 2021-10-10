@@ -57,17 +57,17 @@
 /* userfaultfd ioctl ids */
 #define UFFDIO 0xAA
 #define UFFDIO_API		_IOWR(UFFDIO, _UFFDIO_API,	\
-				      struct uffdio_api)
+				                   struct uffdio_api)
 #define UFFDIO_REGISTER		_IOWR(UFFDIO, _UFFDIO_REGISTER, \
-				      struct uffdio_register)
+				                   struct uffdio_register)
 #define UFFDIO_UNREGISTER	_IOR(UFFDIO, _UFFDIO_UNREGISTER,	\
 				     struct uffdio_range)
 #define UFFDIO_WAKE		_IOR(UFFDIO, _UFFDIO_WAKE,	\
 				     struct uffdio_range)
 #define UFFDIO_COPY		_IOWR(UFFDIO, _UFFDIO_COPY,	\
-				      struct uffdio_copy)
+				                   struct uffdio_copy)
 #define UFFDIO_ZEROPAGE		_IOWR(UFFDIO, _UFFDIO_ZEROPAGE,	\
-				      struct uffdio_zeropage)
+				                   struct uffdio_zeropage)
 
 /* read() structure */
 struct uffd_msg {

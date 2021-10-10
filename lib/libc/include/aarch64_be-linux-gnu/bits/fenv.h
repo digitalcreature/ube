@@ -25,19 +25,19 @@ enum
   {
     FE_INVALID =
 #define FE_INVALID	1
-      FE_INVALID,
+                   FE_INVALID,
     FE_DIVBYZERO =
 #define FE_DIVBYZERO	2
-      FE_DIVBYZERO,
+                   FE_DIVBYZERO,
     FE_OVERFLOW =
 #define FE_OVERFLOW	4
-      FE_OVERFLOW,
+                   FE_OVERFLOW,
     FE_UNDERFLOW =
 #define FE_UNDERFLOW	8
-      FE_UNDERFLOW,
+                   FE_UNDERFLOW,
     FE_INEXACT =
 #define FE_INEXACT	16
-      FE_INEXACT,
+                   FE_INEXACT,
   };
 
 /* Amount to shift by to convert an exception bit in FPSR to a an

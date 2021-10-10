@@ -127,10 +127,10 @@ struct dfl_fpga_port_dma_map {
 	/* Input */
 	__u32 argsz;		/* Structure length */
 	__u32 flags;		/* Zero for now */
-	__u64 user_addr;        /* Process virtual address */
-	__u64 length;           /* Length of mapping (bytes)*/
+	__u64 user_addr;                     /* Process virtual address */
+	__u64 length;                        /* Length of mapping (bytes)*/
 	/* Output */
-	__u64 iova;             /* IO virtual address */
+	__u64 iova;                                       /* IO virtual address */
 };
 
 #define DFL_FPGA_PORT_DMA_MAP		_IO(DFL_FPGA_MAGIC, DFL_PORT_BASE + 3)

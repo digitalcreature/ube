@@ -219,8 +219,8 @@ extern reg_syntax_t re_syntax_options;
 
 # define RE_SYNTAX_AWK							\
   (RE_BACKSLASH_ESCAPE_IN_LISTS   | RE_DOT_NOT_NULL			\
-   | RE_NO_BK_PARENS              | RE_NO_BK_REFS			\
-   | RE_NO_BK_VBAR                | RE_NO_EMPTY_RANGES			\
+   | RE_NO_BK_PARENS                                        | RE_NO_BK_REFS			\
+   | RE_NO_BK_VBAR                                          | RE_NO_EMPTY_RANGES			\
    | RE_DOT_NEWLINE		  | RE_CONTEXT_INDEP_ANCHORS		\
    | RE_CHAR_CLASSES							\
    | RE_UNMATCHED_RIGHT_PAREN_ORD | RE_NO_GNU_OPS)
@@ -229,7 +229,7 @@ extern reg_syntax_t re_syntax_options;
   ((RE_SYNTAX_POSIX_EXTENDED | RE_BACKSLASH_ESCAPE_IN_LISTS		\
     | RE_INVALID_INTERVAL_ORD)						\
    & ~(RE_DOT_NOT_NULL | RE_CONTEXT_INDEP_OPS				\
-      | RE_CONTEXT_INVALID_OPS ))
+                   | RE_CONTEXT_INVALID_OPS ))
 
 # define RE_SYNTAX_POSIX_AWK						\
   (RE_SYNTAX_POSIX_EXTENDED | RE_BACKSLASH_ESCAPE_IN_LISTS		\
@@ -255,7 +255,7 @@ extern reg_syntax_t re_syntax_options;
 
 /* Syntax bits common to both basic and extended POSIX regex syntax.  */
 # define _RE_SYNTAX_POSIX_COMMON					\
-  (RE_CHAR_CLASSES | RE_DOT_NEWLINE      | RE_DOT_NOT_NULL		\
+  (RE_CHAR_CLASSES | RE_DOT_NEWLINE                   | RE_DOT_NOT_NULL		\
    | RE_INTERVALS  | RE_NO_EMPTY_RANGES)
 
 # define RE_SYNTAX_POSIX_BASIC						\
@@ -270,7 +270,7 @@ extern reg_syntax_t re_syntax_options;
 # define RE_SYNTAX_POSIX_EXTENDED					\
   (_RE_SYNTAX_POSIX_COMMON  | RE_CONTEXT_INDEP_ANCHORS			\
    | RE_CONTEXT_INDEP_OPS   | RE_NO_BK_BRACES				\
-   | RE_NO_BK_PARENS        | RE_NO_BK_VBAR				\
+   | RE_NO_BK_PARENS                     | RE_NO_BK_VBAR				\
    | RE_CONTEXT_INVALID_OPS | RE_UNMATCHED_RIGHT_PAREN_ORD)
 
 /* Differs from ..._POSIX_EXTENDED in that RE_CONTEXT_INDEP_OPS is
@@ -278,7 +278,7 @@ extern reg_syntax_t re_syntax_options;
 # define RE_SYNTAX_POSIX_MINIMAL_EXTENDED				\
   (_RE_SYNTAX_POSIX_COMMON  | RE_CONTEXT_INDEP_ANCHORS			\
    | RE_CONTEXT_INVALID_OPS | RE_NO_BK_BRACES				\
-   | RE_NO_BK_PARENS        | RE_NO_BK_REFS				\
+   | RE_NO_BK_PARENS                     | RE_NO_BK_REFS				\
    | RE_NO_BK_VBAR	    | RE_UNMATCHED_RIGHT_PAREN_ORD)
 /* [[[end syntaxes]]] */
 
@@ -536,7 +536,7 @@ extern reg_syntax_t re_set_syntax (reg_syntax_t __syntax);
    'regcomp', with a malloc'ed value, or set to NULL before calling
    'regfree'.  */
 extern const char *re_compile_pattern (const char *__pattern, size_t __length,
-				       struct re_pattern_buffer *__buffer);
+				                    struct re_pattern_buffer *__buffer);
 
 
 /* Compile a fastmap for the compiled pattern in BUFFER; used to
@@ -594,9 +594,9 @@ extern regoff_t re_match_2 (struct re_pattern_buffer *__buffer,
    BUFFER will allocate its own register data, without
    freeing the old data.  */
 extern void re_set_registers (struct re_pattern_buffer *__buffer,
-			      struct re_registers *__regs,
-			      __re_size_t __num_regs,
-			      regoff_t *__starts, regoff_t *__ends);
+			                   struct re_registers *__regs,
+			                   __re_size_t __num_regs,
+			                   regoff_t *__starts, regoff_t *__ends);
 #endif	/* Use GNU */
 
 #if defined _REGEX_RE_COMP || (defined _LIBC && defined __USE_MISC)
@@ -628,7 +628,7 @@ extern int re_exec (const char *);
 # ifdef __restrict_arr
 #  define _Restrict_arr_ __restrict_arr
 # elif ((199901L <= __STDC_VERSION__ || 3 < __GNUC__ + (1 <= __GNUC_MINOR__)) \
-        && !defined __GNUG__)
+                     && !defined __GNUG__)
 #  define _Restrict_arr_ _Restrict_
 # else
 #  define _Restrict_arr_

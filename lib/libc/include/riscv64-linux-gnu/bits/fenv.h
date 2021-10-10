@@ -24,19 +24,19 @@ enum
   {
     FE_INEXACT   =
 #define FE_INEXACT	(0x01)
-      FE_INEXACT,
+                   FE_INEXACT,
     FE_UNDERFLOW =
 #define FE_UNDERFLOW	(0x02)
-      FE_UNDERFLOW,
+                   FE_UNDERFLOW,
     FE_OVERFLOW  =
 #define FE_OVERFLOW	(0x04)
-      FE_OVERFLOW,
+                   FE_OVERFLOW,
     FE_DIVBYZERO =
 #define FE_DIVBYZERO	(0x08)
-      FE_DIVBYZERO,
+                   FE_DIVBYZERO,
     FE_INVALID   =
 #define FE_INVALID	(0x10)
-      FE_INVALID
+                   FE_INVALID
   };
 
 #define FE_ALL_EXCEPT \
@@ -46,16 +46,16 @@ enum
   {
     FE_TONEAREST  =
 #define FE_TONEAREST	(0x0)
-      FE_TONEAREST,
+                   FE_TONEAREST,
     FE_TOWARDZERO =
 #define FE_TOWARDZERO	(0x1)
-      FE_TOWARDZERO,
+                   FE_TOWARDZERO,
     FE_DOWNWARD   =
 #define FE_DOWNWARD	(0x2)
-      FE_DOWNWARD,
+                   FE_DOWNWARD,
     FE_UPWARD     =
 #define FE_UPWARD	(0x3)
-      FE_UPWARD
+                   FE_UPWARD
   };
 
 

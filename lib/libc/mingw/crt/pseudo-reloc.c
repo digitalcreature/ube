@@ -106,8 +106,8 @@ __report_error (const char *msg, ...)
 
   if (errh == INVALID_HANDLE_VALUE)
     cygwin_internal (CW_EXIT_PROCESS,
-                     STATUS_ILLEGAL_DLL_PSEUDO_RELOCATION,
-                     1);
+                                                            STATUS_ILLEGAL_DLL_PSEUDO_RELOCATION,
+                                                            1);
 
   if (modulelen > 0)
     posix_module = cygwin_create_path (CCP_WIN_W_TO_POSIX, module);
@@ -119,27 +119,27 @@ __report_error (const char *msg, ...)
 
   if (posix_module)
     {
-      WriteFile (errh, (PCVOID)CYGWIN_FAILURE_MSG,
-                 CYGWIN_FAILURE_MSG_LEN, &done, NULL);
-      WriteFile (errh, (PCVOID)posix_module,
-                 strlen(posix_module), &done, NULL);
-      WriteFile (errh, (PCVOID)": ", 2, &done, NULL);
-      WriteFile (errh, (PCVOID)buf, len, &done, NULL);
-      free (posix_module);
+                   WriteFile (errh, (PCVOID)CYGWIN_FAILURE_MSG,
+                                           CYGWIN_FAILURE_MSG_LEN, &done, NULL);
+                   WriteFile (errh, (PCVOID)posix_module,
+                                           strlen(posix_module), &done, NULL);
+                   WriteFile (errh, (PCVOID)": ", 2, &done, NULL);
+                   WriteFile (errh, (PCVOID)buf, len, &done, NULL);
+                   free (posix_module);
     }
   else
     {
-      WriteFile (errh, (PCVOID)CYGWIN_FAILURE_MSG,
-                 CYGWIN_FAILURE_MSG_LEN, &done, NULL);
-      WriteFile (errh, (PCVOID)UNKNOWN_MODULE,
-                 UNKNOWN_MODULE_LEN, &done, NULL);
-      WriteFile (errh, (PCVOID)buf, len, &done, NULL);
+                   WriteFile (errh, (PCVOID)CYGWIN_FAILURE_MSG,
+                                           CYGWIN_FAILURE_MSG_LEN, &done, NULL);
+                   WriteFile (errh, (PCVOID)UNKNOWN_MODULE,
+                                           UNKNOWN_MODULE_LEN, &done, NULL);
+                   WriteFile (errh, (PCVOID)buf, len, &done, NULL);
     }
   WriteFile (errh, (PCVOID)"\n", 1, &done, NULL);
 
   cygwin_internal (CW_EXIT_PROCESS,
-                   STATUS_ILLEGAL_DLL_PSEUDO_RELOCATION,
-                   1);
+                                                          STATUS_ILLEGAL_DLL_PSEUDO_RELOCATION,
+                                                          1);
   /* not reached, but silences noreturn warning */
   abort ();
 #else
@@ -187,15 +187,15 @@ mark_section_writable (LPVOID addr)
 
   for (i = 0; i < maxSections; i++)
     {
-      if (the_secs[i].sec_start <= ((LPBYTE) addr)
-          && ((LPBYTE) addr) < (the_secs[i].sec_start + the_secs[i].hash->Misc.VirtualSize))
-        return;
+                   if (the_secs[i].sec_start <= ((LPBYTE) addr)
+                       && ((LPBYTE) addr) < (the_secs[i].sec_start + the_secs[i].hash->Misc.VirtualSize))
+                     return;
     }
   h = __mingw_GetSectionForAddress (addr);
   if (!h)
     {
-      __report_error ("Address %p has no image-section", addr);
-      return;
+                   __report_error ("Address %p has no image-section", addr);
+                   return;
     }
   the_secs[i].hash = h;
   the_secs[i].old_protect = 0;
@@ -203,22 +203,22 @@ mark_section_writable (LPVOID addr)
 
   if (!VirtualQuery (the_secs[i].sec_start, &b, sizeof(b)))
     {
-      __report_error ("  VirtualQuery failed for %d bytes at address %p",
-		      (int) h->Misc.VirtualSize, the_secs[i].sec_start);
-      return;
+                   __report_error ("  VirtualQuery failed for %d bytes at address %p",
+		                   (int) h->Misc.VirtualSize, the_secs[i].sec_start);
+                   return;
     }
 
   if (b.Protect != PAGE_EXECUTE_READWRITE && b.Protect != PAGE_READWRITE
-      && b.Protect != PAGE_EXECUTE_WRITECOPY && b.Protect != PAGE_WRITECOPY)
+                   && b.Protect != PAGE_EXECUTE_WRITECOPY && b.Protect != PAGE_WRITECOPY)
     {
-      ULONG new_protect;
-      if (b.Protect == PAGE_READONLY)
-        new_protect = PAGE_READWRITE;
-      else
-        new_protect = PAGE_EXECUTE_READWRITE;
-      the_secs[i].base_address = b.BaseAddress;
-      the_secs[i].region_size = b.RegionSize;
-      if (!VirtualProtect (b.BaseAddress, b.RegionSize,
+                   ULONG new_protect;
+                   if (b.Protect == PAGE_READONLY)
+                     new_protect = PAGE_READWRITE;
+                   else
+                     new_protect = PAGE_EXECUTE_READWRITE;
+                   the_secs[i].base_address = b.BaseAddress;
+                   the_secs[i].region_size = b.RegionSize;
+                   if (!VirtualProtect (b.BaseAddress, b.RegionSize,
 			   new_protect,
 			   &the_secs[i].old_protect))
 	__report_error ("  VirtualProtect failed with code 0x%x",
@@ -236,10 +236,10 @@ restore_modified_sections (void)
 
   for (i = 0; i < maxSections; i++)
     {
-      if (the_secs[i].old_protect == 0)
-        continue;
-      VirtualProtect (the_secs[i].base_address, the_secs[i].region_size,
-                      the_secs[i].old_protect, &oldprot);
+                   if (the_secs[i].old_protect == 0)
+                     continue;
+                   VirtualProtect (the_secs[i].base_address, the_secs[i].region_size,
+                                                             the_secs[i].old_protect, &oldprot);
     }
 }
 
@@ -275,17 +275,17 @@ __write_memory (void *addr, const void *src, size_t len)
 
   if (!VirtualQuery (addr, &b, sizeof(b)))
     {
-      __report_error ("  VirtualQuery failed for %d bytes at address %p",
-		      (int) sizeof(b), addr);
+                   __report_error ("  VirtualQuery failed for %d bytes at address %p",
+		                   (int) sizeof(b), addr);
     }
 
   /* Temporarily allow write access to read-only protected memory.  */
   if (b.Protect != PAGE_EXECUTE_READWRITE && b.Protect != PAGE_READWRITE
-      && b.Protect != PAGE_WRITECOPY && b.Protect != PAGE_EXECUTE_WRITECOPY)
+                   && b.Protect != PAGE_WRITECOPY && b.Protect != PAGE_EXECUTE_WRITECOPY)
     {
-      call_unprotect = 1;
-      VirtualProtect (b.BaseAddress, b.RegionSize, PAGE_EXECUTE_READWRITE,
-		      &oldprot);
+                   call_unprotect = 1;
+                   VirtualProtect (b.BaseAddress, b.RegionSize, PAGE_EXECUTE_READWRITE,
+		                   &oldprot);
     }
 #endif
 
@@ -295,8 +295,8 @@ __write_memory (void *addr, const void *src, size_t len)
 #ifndef __MINGW64_VERSION_MAJOR
   /* Restore original protection. */
   if (call_unprotect
-      && b.Protect != PAGE_EXECUTE_READWRITE && b.Protect != PAGE_READWRITE
-      && b.Protect != PAGE_WRITECOPY && b.Protect != PAGE_EXECUTE_WRITECOPY)
+                   && b.Protect != PAGE_EXECUTE_READWRITE && b.Protect != PAGE_READWRITE
+                   && b.Protect != PAGE_WRITECOPY && b.Protect != PAGE_EXECUTE_WRITECOPY)
     VirtualProtect (b.BaseAddress, b.RegionSize, oldprot, &oldprot);
 #endif
 }
@@ -322,53 +322,53 @@ do_pseudo_reloc (void * start, void * end, void * base)
   /* Check if this is the old pseudo relocation version.  */
   /* There are two kinds of v1 relocation lists:
    *   1) With a (v2-style) version header. In this case, the
-   *      first entry in the list is a 3-DWORD structure, with
-   *      value:
-   *         { 0, 0, RP_VERSION_V1 }
-   *      In this case, we skip to the next entry in the list,
-   *      knowing that all elements after the head item can
-   *      be cast to runtime_pseudo_reloc_item_v1.
+   *                   first entry in the list is a 3-DWORD structure, with
+   *                   value:
+   *                      { 0, 0, RP_VERSION_V1 }
+   *                   In this case, we skip to the next entry in the list,
+   *                   knowing that all elements after the head item can
+   *                   be cast to runtime_pseudo_reloc_item_v1.
    *   2) Without a (v2-style) version header. In this case, the
-   *      first element in the list IS an actual v1 relocation
-   *      record, which is two DWORDs.  Because there will never
-   *      be a case where a v1 relocation record has both
-   *      addend == 0 and target == 0, this case will not be
-   *      confused with the prior one.
+   *                   first element in the list IS an actual v1 relocation
+   *                   record, which is two DWORDs.  Because there will never
+   *                   be a case where a v1 relocation record has both
+   *                   addend == 0 and target == 0, this case will not be
+   *                   confused with the prior one.
    * All current binutils, when generating a v1 relocation list,
    * use the second (e.g. original) form -- that is, without the
    * v2-style version header.
    */
   if (reloc_target >= 12
-      && v2_hdr->magic1 == 0 && v2_hdr->magic2 == 0
-      && v2_hdr->version == RP_VERSION_V1)
+                   && v2_hdr->magic1 == 0 && v2_hdr->magic2 == 0
+                   && v2_hdr->version == RP_VERSION_V1)
     {
-      /* We have a list header item indicating that the rest
-       * of the list contains v1 entries.  Move the pointer to
-       * the first true v1 relocation record.  By definition,
-       * that v1 element will not have both addend == 0 and
-       * target == 0 (and thus, when interpreted as a
-       * runtime_pseudo_reloc_v2, it will not have both
-       * magic1 == 0 and magic2 == 0).
-       */
-      v2_hdr++;
+                   /* We have a list header item indicating that the rest
+                    * of the list contains v1 entries.  Move the pointer to
+                    * the first true v1 relocation record.  By definition,
+                    * that v1 element will not have both addend == 0 and
+                    * target == 0 (and thus, when interpreted as a
+                    * runtime_pseudo_reloc_v2, it will not have both
+                    * magic1 == 0 and magic2 == 0).
+                    */
+                   v2_hdr++;
     }
 
   if (v2_hdr->magic1 != 0 || v2_hdr->magic2 != 0)
     {
-      /*************************
-       * Handle v1 relocations *
-       *************************/
-      runtime_pseudo_reloc_item_v1 * o;
-      for (o = (runtime_pseudo_reloc_item_v1 *) v2_hdr;
+                   /*************************
+                    * Handle v1 relocations *
+                    *************************/
+                   runtime_pseudo_reloc_item_v1 * o;
+                   for (o = (runtime_pseudo_reloc_item_v1 *) v2_hdr;
 	   o < (runtime_pseudo_reloc_item_v1 *)end;
-           o++)
+                        o++)
 	{
 	  DWORD newval;
 	  reloc_target = (ptrdiff_t) base + o->target;
 	  newval = (*((DWORD*) reloc_target)) + o->addend;
 	  __write_memory ((void *) reloc_target, &newval, sizeof(DWORD));
 	}
-      return;
+                   return;
     }
 
   /* If we got this far, then we have relocations of version 2 or newer */
@@ -376,9 +376,9 @@ do_pseudo_reloc (void * start, void * end, void * base)
   /* Check if this is a known version.  */
   if (v2_hdr->version != RP_VERSION_V2)
     {
-      __report_error ("  Unknown pseudo relocation protocol version %d.\n",
-		      (int) v2_hdr->version);
-      return;
+                   __report_error ("  Unknown pseudo relocation protocol version %d.\n",
+		                   (int) v2_hdr->version);
+                   return;
     }
 
   /*************************
@@ -390,38 +390,38 @@ do_pseudo_reloc (void * start, void * end, void * base)
 
   for (; r < (runtime_pseudo_reloc_item_v2 *) end; r++)
     {
-      /* location where new address will be written */
-      reloc_target = (ptrdiff_t) base + r->target;
+                   /* location where new address will be written */
+                   reloc_target = (ptrdiff_t) base + r->target;
 
-      /* get sym pointer. It points either to the iat entry
-       * of the referenced element, or to the stub function.
-       */
-      addr_imp = (ptrdiff_t) base + r->sym;
-      addr_imp = *((ptrdiff_t *) addr_imp);
+                   /* get sym pointer. It points either to the iat entry
+                    * of the referenced element, or to the stub function.
+                    */
+                   addr_imp = (ptrdiff_t) base + r->sym;
+                   addr_imp = *((ptrdiff_t *) addr_imp);
 
-      /* read existing relocation value from image, casting to the
-       * bitsize indicated by the 8 LSBs of flags. If the value is
-       * negative, manually sign-extend to ptrdiff_t width. Raise an
-       * error if the bitsize indicated by the 8 LSBs of flags is not
-       * supported.
-       */
-      switch ((r->flags & 0xff))
-        {
-          case 8:
+                   /* read existing relocation value from image, casting to the
+                    * bitsize indicated by the 8 LSBs of flags. If the value is
+                    * negative, manually sign-extend to ptrdiff_t width. Raise an
+                    * error if the bitsize indicated by the 8 LSBs of flags is not
+                    * supported.
+                    */
+                   switch ((r->flags & 0xff))
+                     {
+                       case 8:
 	    reldata = (ptrdiff_t) (*((unsigned char *)reloc_target));
 	    if ((reldata & 0x80) != 0)
-	      reldata |= ~((ptrdiff_t) 0xff);
+	                   reldata |= ~((ptrdiff_t) 0xff);
 	    break;
 	  case 16:
 	    reldata = (ptrdiff_t) (*((unsigned short *)reloc_target));
 	    if ((reldata & 0x8000) != 0)
-	      reldata |= ~((ptrdiff_t) 0xffff);
+	                   reldata |= ~((ptrdiff_t) 0xffff);
 	    break;
 	  case 32:
 	    reldata = (ptrdiff_t) (*((unsigned int *)reloc_target));
 #ifdef _WIN64
 	    if ((reldata & 0x80000000) != 0)
-	      reldata |= ~((ptrdiff_t) 0xffffffff);
+	                   reldata |= ~((ptrdiff_t) 0xffffffff);
 #endif
 	    break;
 #ifdef _WIN64
@@ -434,27 +434,27 @@ do_pseudo_reloc (void * start, void * end, void * base)
 	    __report_error ("  Unknown pseudo relocation bit size %d.\n",
 		    (int) (r->flags & 0xff));
 	    break;
-        }
+                     }
 
-      /* Adjust the relocation value */
-      reldata -= ((ptrdiff_t) base + r->sym);
-      reldata += addr_imp;
+                   /* Adjust the relocation value */
+                   reldata -= ((ptrdiff_t) base + r->sym);
+                   reldata += addr_imp;
 
-      /* Write the new relocation value back to *reloc_target */
-      switch ((r->flags & 0xff))
+                   /* Write the new relocation value back to *reloc_target */
+                   switch ((r->flags & 0xff))
 	{
-         case 8:
-           __write_memory ((void *) reloc_target, &reldata, 1);
+                      case 8:
+                        __write_memory ((void *) reloc_target, &reldata, 1);
 	   break;
 	 case 16:
-           __write_memory ((void *) reloc_target, &reldata, 2);
+                        __write_memory ((void *) reloc_target, &reldata, 2);
 	   break;
 	 case 32:
-           __write_memory ((void *) reloc_target, &reldata, 4);
+                        __write_memory ((void *) reloc_target, &reldata, 4);
 	   break;
 #ifdef _WIN64
 	 case 64:
-           __write_memory ((void *) reloc_target, &reldata, 8);
+                        __write_memory ((void *) reloc_target, &reldata, 8);
 	   break;
 #endif
 	}

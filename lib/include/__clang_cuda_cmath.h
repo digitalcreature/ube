@@ -55,11 +55,11 @@ __DEVICE__ float floor(float __x) { return ::floorf(__x); }
 __DEVICE__ float fmod(float __x, float __y) { return ::fmodf(__x, __y); }
 __DEVICE__ int fpclassify(float __x) {
   return __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL,
-                              FP_ZERO, __x);
+                                                                                               FP_ZERO, __x);
 }
 __DEVICE__ int fpclassify(double __x) {
   return __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL,
-                              FP_ZERO, __x);
+                                                                                               FP_ZERO, __x);
 }
 __DEVICE__ float frexp(float __arg, int *__exp) {
   return ::frexpf(__arg, __exp);
@@ -172,13 +172,13 @@ template <class __T> struct __clang_cuda_enable_if<true, __T> {
 
 // Defines an overload of __fn that accepts one integral argument, calls
 // __fn((double)x), and returns __retty.
-#define __CUDA_CLANG_FN_INTEGER_OVERLOAD_1(__retty, __fn)                      \
-  template <typename __T>                                                      \
-  __DEVICE__                                                                   \
-      typename __clang_cuda_enable_if<std::numeric_limits<__T>::is_integer,    \
-                                      __retty>::type                           \
-      __fn(__T __x) {                                                          \
-    return ::__fn((double)__x);                                                \
+#define __CUDA_CLANG_FN_INTEGER_OVERLOAD_1(__retty, __fn)                                                             \
+  template <typename __T>                                                                                                                                                                           \
+  __DEVICE__                                                                                                                                                                                                                  \
+                   typename __clang_cuda_enable_if<std::numeric_limits<__T>::is_integer,    \
+                                                                                                                    __retty>::type                                                                               \
+                   __fn(__T __x) {                                                                                                                                                                               \
+    return ::__fn((double)__x);                                                                                                                                                        \
   }
 
 // Defines an overload of __fn that accepts one two arithmetic arguments, calls
@@ -186,14 +186,14 @@ template <class __T> struct __clang_cuda_enable_if<true, __T> {
 //
 // Note this is different from OVERLOAD_1, which generates an overload that
 // accepts only *integral* arguments.
-#define __CUDA_CLANG_FN_INTEGER_OVERLOAD_2(__retty, __fn)                      \
-  template <typename __T1, typename __T2>                                      \
-  __DEVICE__ typename __clang_cuda_enable_if<                                  \
-      std::numeric_limits<__T1>::is_specialized &&                             \
-          std::numeric_limits<__T2>::is_specialized,                           \
-      __retty>::type                                                           \
-  __fn(__T1 __x, __T2 __y) {                                                   \
-    return __fn((double)__x, (double)__y);                                     \
+#define __CUDA_CLANG_FN_INTEGER_OVERLOAD_2(__retty, __fn)                                                             \
+  template <typename __T1, typename __T2>                                                                                                                    \
+  __DEVICE__ typename __clang_cuda_enable_if<                                                                                                   \
+                   std::numeric_limits<__T1>::is_specialized &&                                                                                 \
+                       std::numeric_limits<__T2>::is_specialized,                                                                               \
+                   __retty>::type                                                                                                                                                                                \
+  __fn(__T1 __x, __T2 __y) {                                                                                                                                                           \
+    return __fn((double)__x, (double)__y);                                                                                                                   \
   }
 
 __CUDA_CLANG_FN_INTEGER_OVERLOAD_1(double, acos)
@@ -265,8 +265,8 @@ __CUDA_CLANG_FN_INTEGER_OVERLOAD_1(double, trunc);
 template <typename __T1, typename __T2, typename __T3>
 __DEVICE__ typename __clang_cuda_enable_if<
     std::numeric_limits<__T1>::is_specialized &&
-        std::numeric_limits<__T2>::is_specialized &&
-        std::numeric_limits<__T3>::is_specialized,
+                     std::numeric_limits<__T2>::is_specialized &&
+                     std::numeric_limits<__T3>::is_specialized,
     double>::type
 fma(__T1 __x, __T2 __y, __T3 __z) {
   return std::fma((double)__x, (double)__y, (double)__z);
@@ -274,14 +274,14 @@ fma(__T1 __x, __T2 __y, __T3 __z) {
 
 template <typename __T>
 __DEVICE__ typename __clang_cuda_enable_if<std::numeric_limits<__T>::is_integer,
-                                           double>::type
+                                                                                                                                      double>::type
 frexp(__T __x, int *__exp) {
   return std::frexp((double)__x, __exp);
 }
 
 template <typename __T>
 __DEVICE__ typename __clang_cuda_enable_if<std::numeric_limits<__T>::is_integer,
-                                           double>::type
+                                                                                                                                      double>::type
 ldexp(__T __x, int __exp) {
   return std::ldexp((double)__x, __exp);
 }
@@ -289,7 +289,7 @@ ldexp(__T __x, int __exp) {
 template <typename __T1, typename __T2>
 __DEVICE__ typename __clang_cuda_enable_if<
     std::numeric_limits<__T1>::is_specialized &&
-        std::numeric_limits<__T2>::is_specialized,
+                     std::numeric_limits<__T2>::is_specialized,
     double>::type
 remquo(__T1 __x, __T2 __y, int *__quo) {
   return std::remquo((double)__x, (double)__y, __quo);
@@ -297,14 +297,14 @@ remquo(__T1 __x, __T2 __y, int *__quo) {
 
 template <typename __T>
 __DEVICE__ typename __clang_cuda_enable_if<std::numeric_limits<__T>::is_integer,
-                                           double>::type
+                                                                                                                                      double>::type
 scalbln(__T __x, long __exp) {
   return std::scalbln((double)__x, __exp);
 }
 
 template <typename __T>
 __DEVICE__ typename __clang_cuda_enable_if<std::numeric_limits<__T>::is_integer,
-                                           double>::type
+                                                                                                                                      double>::type
 scalbn(__T __x, int __exp) {
   return std::scalbn((double)__x, __exp);
 }

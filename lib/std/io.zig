@@ -42,11 +42,11 @@ pub const default_mode: ModeOverride = if (is_async) Mode.evented else .blocking
 
 fn getStdOutHandle() os.fd_t {
     if (builtin.os.tag == .windows) {
-        return os.windows.peb().ProcessParameters.hStdOutput;
+                     return os.windows.peb().ProcessParameters.hStdOutput;
     }
 
     if (@hasDecl(root, "os") and @hasDecl(root.os, "io") and @hasDecl(root.os.io, "getStdOutHandle")) {
-        return root.os.io.getStdOutHandle();
+                     return root.os.io.getStdOutHandle();
     }
 
     return os.STDOUT_FILENO;
@@ -56,19 +56,19 @@ fn getStdOutHandle() os.fd_t {
 /// https://github.com/ziglang/zig/pull/4816#issuecomment-604521023
 pub fn getStdOut() File {
     return File{
-        .handle = getStdOutHandle(),
-        .capable_io_mode = .blocking,
-        .intended_io_mode = default_mode,
+                     .handle = getStdOutHandle(),
+                     .capable_io_mode = .blocking,
+                     .intended_io_mode = default_mode,
     };
 }
 
 fn getStdErrHandle() os.fd_t {
     if (builtin.os.tag == .windows) {
-        return os.windows.peb().ProcessParameters.hStdError;
+                     return os.windows.peb().ProcessParameters.hStdError;
     }
 
     if (@hasDecl(root, "os") and @hasDecl(root.os, "io") and @hasDecl(root.os.io, "getStdErrHandle")) {
-        return root.os.io.getStdErrHandle();
+                     return root.os.io.getStdErrHandle();
     }
 
     return os.STDERR_FILENO;
@@ -78,19 +78,19 @@ fn getStdErrHandle() os.fd_t {
 /// to facilitate better debugging. This can be changed by modifying the `intended_io_mode` field.
 pub fn getStdErr() File {
     return File{
-        .handle = getStdErrHandle(),
-        .capable_io_mode = .blocking,
-        .intended_io_mode = .blocking,
+                     .handle = getStdErrHandle(),
+                     .capable_io_mode = .blocking,
+                     .intended_io_mode = .blocking,
     };
 }
 
 fn getStdInHandle() os.fd_t {
     if (builtin.os.tag == .windows) {
-        return os.windows.peb().ProcessParameters.hStdInput;
+                     return os.windows.peb().ProcessParameters.hStdInput;
     }
 
     if (@hasDecl(root, "os") and @hasDecl(root.os, "io") and @hasDecl(root.os.io, "getStdInHandle")) {
-        return root.os.io.getStdInHandle();
+                     return root.os.io.getStdInHandle();
     }
 
     return os.STDIN_FILENO;
@@ -100,9 +100,9 @@ fn getStdInHandle() os.fd_t {
 /// https://github.com/ziglang/zig/pull/4816#issuecomment-604521023
 pub fn getStdIn() File {
     return File{
-        .handle = getStdInHandle(),
-        .capable_io_mode = .blocking,
-        .intended_io_mode = default_mode,
+                     .handle = getStdInHandle(),
+                     .capable_io_mode = .blocking,
+                     .intended_io_mode = default_mode,
     };
 }
 

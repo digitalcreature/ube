@@ -131,11 +131,11 @@ extern "C" {
 #else
   typedef struct IRowsetChangeExtInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetChangeExtInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetChangeExtInfo *This);
-      ULONG (WINAPI *Release)(IRowsetChangeExtInfo *This);
-      HRESULT (WINAPI *GetOriginalRow)(IRowsetChangeExtInfo *This,HCHAPTER hReserved,HROW hRow,HROW *phRowOriginal);
-      HRESULT (WINAPI *GetPendingColumns)(IRowsetChangeExtInfo *This,HCHAPTER hReserved,HROW hRow,ULONG cColumnOrdinals,const ULONG rgiOrdinals[],DBPENDINGSTATUS rgColumnStatus[]);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetChangeExtInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetChangeExtInfo *This);
+                   ULONG (WINAPI *Release)(IRowsetChangeExtInfo *This);
+                   HRESULT (WINAPI *GetOriginalRow)(IRowsetChangeExtInfo *This,HCHAPTER hReserved,HROW hRow,HROW *phRowOriginal);
+                   HRESULT (WINAPI *GetPendingColumns)(IRowsetChangeExtInfo *This,HCHAPTER hReserved,HROW hRow,ULONG cColumnOrdinals,const ULONG rgiOrdinals[],DBPENDINGSTATUS rgColumnStatus[]);
     END_INTERFACE
   } IRowsetChangeExtInfoVtbl;
   struct IRowsetChangeExtInfo {
@@ -232,10 +232,10 @@ extern "C" {
 #else
   typedef struct ISQLRequestDiagFieldsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISQLRequestDiagFields *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISQLRequestDiagFields *This);
-      ULONG (WINAPI *Release)(ISQLRequestDiagFields *This);
-      HRESULT (WINAPI *RequestDiagFields)(ISQLRequestDiagFields *This,ULONG cDiagFields,KAGREQDIAG rgDiagFields[]);
+                   HRESULT (WINAPI *QueryInterface)(ISQLRequestDiagFields *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISQLRequestDiagFields *This);
+                   ULONG (WINAPI *Release)(ISQLRequestDiagFields *This);
+                   HRESULT (WINAPI *RequestDiagFields)(ISQLRequestDiagFields *This,ULONG cDiagFields,KAGREQDIAG rgDiagFields[]);
     END_INTERFACE
   } ISQLRequestDiagFieldsVtbl;
   struct ISQLRequestDiagFields {
@@ -263,10 +263,10 @@ extern "C" {
 #else
   typedef struct ISQLGetDiagFieldVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISQLGetDiagField *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISQLGetDiagField *This);
-      ULONG (WINAPI *Release)(ISQLGetDiagField *This);
-      HRESULT (WINAPI *GetDiagField)(ISQLGetDiagField *This,KAGGETDIAG *pDiagInfo);
+                   HRESULT (WINAPI *QueryInterface)(ISQLGetDiagField *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISQLGetDiagField *This);
+                   ULONG (WINAPI *Release)(ISQLGetDiagField *This);
+                   HRESULT (WINAPI *GetDiagField)(ISQLGetDiagField *This,KAGGETDIAG *pDiagInfo);
     END_INTERFACE
   } ISQLGetDiagFieldVtbl;
   struct ISQLGetDiagField {

@@ -85,9 +85,9 @@
    __USE_XOPEN		Define XPG things.
    __USE_XOPEN_EXTENDED	Define X/Open Unix things.
    __USE_UNIX98		Define Single Unix V2 things.
-   __USE_XOPEN2K        Define XPG6 things.
+   __USE_XOPEN2K                     Define XPG6 things.
    __USE_XOPEN2KXSI     Define XPG6 XSI things.
-   __USE_XOPEN2K8       Define XPG7 things.
+   __USE_XOPEN2K8                    Define XPG7 things.
    __USE_XOPEN2K8XSI    Define XPG7 XSI things.
    __USE_LARGEFILE	Define correct standard I/O things.
    __USE_LARGEFILE64	Define LFS things with separate names.
@@ -282,7 +282,7 @@
 #endif
 
 #if ((!defined __STRICT_ANSI__					\
-      || (defined _XOPEN_SOURCE && (_XOPEN_SOURCE - 0) >= 500))	\
+                   || (defined _XOPEN_SOURCE && (_XOPEN_SOURCE - 0) >= 500))	\
      && !defined _POSIX_SOURCE && !defined _POSIX_C_SOURCE)
 # define _POSIX_SOURCE	1
 # if defined _XOPEN_SOURCE && (_XOPEN_SOURCE - 0) < 500

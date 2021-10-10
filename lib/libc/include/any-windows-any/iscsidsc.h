@@ -12,8 +12,8 @@ extern "C" {
 #endif
 
   typedef enum  {
-    ISCSI_NO_AUTH_TYPE             = 0,
-    ISCSI_CHAP_AUTH_TYPE           = 1,
+    ISCSI_NO_AUTH_TYPE                                       = 0,
+    ISCSI_CHAP_AUTH_TYPE                        = 1,
     ISCSI_MUTUAL_CHAP_AUTH_TYPE    = 2 
   } ISCSI_AUTH_TYPES;
 
@@ -23,36 +23,36 @@ extern "C" {
   } ISCSI_DIGEST_TYPES;
 
   typedef ULONG ISCSI_LOGIN_OPTIONS_INFO_SPECIFIED,
-	      *PISCSI_LOGIN_OPTIONS_INFO_SPECIFIED;
-#define ISCSI_LOGIN_OPTIONS_HEADER_DIGEST            0x00000001
-#define ISCSI_LOGIN_OPTIONS_DATA_DIGEST              0x00000002
-#define ISCSI_LOGIN_OPTIONS_MAXIMUM_CONNECTIONS      0x00000004
-#define ISCSI_LOGIN_OPTIONS_DEFAULT_TIME_2_WAIT      0x00000008
+	                   *PISCSI_LOGIN_OPTIONS_INFO_SPECIFIED;
+#define ISCSI_LOGIN_OPTIONS_HEADER_DIGEST                                      0x00000001
+#define ISCSI_LOGIN_OPTIONS_DATA_DIGEST                                        0x00000002
+#define ISCSI_LOGIN_OPTIONS_MAXIMUM_CONNECTIONS                   0x00000004
+#define ISCSI_LOGIN_OPTIONS_DEFAULT_TIME_2_WAIT                   0x00000008
 #define ISCSI_LOGIN_OPTIONS_DEFAULT_TIME_2_RETAIN    0x00000010
-#define ISCSI_LOGIN_OPTIONS_USERNAME                 0x00000020
-#define ISCSI_LOGIN_OPTIONS_PASSWORD                 0x00000040
-#define ISCSI_LOGIN_OPTIONS_AUTH_TYPE                0x00000080
+#define ISCSI_LOGIN_OPTIONS_USERNAME                                           0x00000020
+#define ISCSI_LOGIN_OPTIONS_PASSWORD                                           0x00000040
+#define ISCSI_LOGIN_OPTIONS_AUTH_TYPE                                          0x00000080
 
-#define ISCSI_LOGIN_OPTIONS_VERSION                  0x00000000
+#define ISCSI_LOGIN_OPTIONS_VERSION                                                         0x00000000
 
   typedef ULONG ISCSI_LOGIN_FLAGS,
-	      *PISCSI_LOGIN_FLAGS;
+	                   *PISCSI_LOGIN_FLAGS;
 
-#define ISCSI_LOGIN_FLAG_REQUIRE_IPSEC               0x00000001
-#define ISCSI_LOGIN_FLAG_MULTIPATH_ENABLED           0x00000002
-#define ISCSI_LOGIN_FLAG_RESERVED1                   0x00000004
-#define ISCSI_LOGIN_FLAG_ALLOW_PORTAL_HOPPING        0x00000008
-#define ISCSI_LOGIN_FLAG_USE_RADIUS_RESPONSE         0x00000010
+#define ISCSI_LOGIN_FLAG_REQUIRE_IPSEC                                         0x00000001
+#define ISCSI_LOGIN_FLAG_MULTIPATH_ENABLED                        0x00000002
+#define ISCSI_LOGIN_FLAG_RESERVED1                                                          0x00000004
+#define ISCSI_LOGIN_FLAG_ALLOW_PORTAL_HOPPING                     0x00000008
+#define ISCSI_LOGIN_FLAG_USE_RADIUS_RESPONSE                      0x00000010
 #define ISCSI_LOGIN_FLAG_USE_RADIUS_VERIFICATION     0x00000020
 
   typedef ULONGLONG ISCSI_SECURITY_FLAGS,
 		  *PISCSI_SECURITY_FLAGS;
 
-#define ISCSI_SECURITY_FLAG_VALID                    0x00000001
-#define ISCSI_SECURITY_FLAG_IKE_IPSEC_ENABLED        0x00000002
-#define ISCSI_SECURITY_FLAG_MAIN_MODE_ENABLED        0x00000004
+#define ISCSI_SECURITY_FLAG_VALID                                                           0x00000001
+#define ISCSI_SECURITY_FLAG_IKE_IPSEC_ENABLED                     0x00000002
+#define ISCSI_SECURITY_FLAG_MAIN_MODE_ENABLED                     0x00000004
 #define ISCSI_SECURITY_FLAG_AGGRESSIVE_MODE_ENABLED  0x00000008
-#define ISCSI_SECURITY_FLAG_PFS_ENABLED              0x00000010
+#define ISCSI_SECURITY_FLAG_PFS_ENABLED                                        0x00000010
 #define ISCSI_SECURITY_FLAG_TRANSPORT_MODE_PREFERRED 0x00000020
 #define ISCSI_SECURITY_FLAG_TUNNEL_MODE_PREFERRED    0x00000040
 
@@ -93,19 +93,19 @@ typedef enum _IKE_AUTHENTICATION_METHOD {
 } IKE_AUTHENTICATION_METHOD, *PIKE_AUTHENTICATION_METHOD;
 
 typedef struct _ISCSI_LOGIN_OPTIONS {
-  ULONG                              Version;
+  ULONG                                                                                               Version;
   ISCSI_LOGIN_OPTIONS_INFO_SPECIFIED InformationSpecified;
-  ISCSI_LOGIN_FLAGS                  LoginFlags;
-  ISCSI_AUTH_TYPES                   AuthType;
-  ISCSI_DIGEST_TYPES                 HeaderDigest;
-  ISCSI_DIGEST_TYPES                 DataDigest;
-  ULONG                              MaximumConnections;
-  ULONG                              DefaultTime2Wait;
-  ULONG                              DefaultTime2Retain;
-  ULONG                              UsernameLength;
-  ULONG                              PasswordLength;
-  PUCHAR                             Username;
-  PUCHAR                             Password;
+  ISCSI_LOGIN_FLAGS                                                         LoginFlags;
+  ISCSI_AUTH_TYPES                                                          AuthType;
+  ISCSI_DIGEST_TYPES                                           HeaderDigest;
+  ISCSI_DIGEST_TYPES                                           DataDigest;
+  ULONG                                                                                               MaximumConnections;
+  ULONG                                                                                               DefaultTime2Wait;
+  ULONG                                                                                               DefaultTime2Retain;
+  ULONG                                                                                               UsernameLength;
+  ULONG                                                                                               PasswordLength;
+  PUCHAR                                                                                 Username;
+  PUCHAR                                                                                 Password;
 } ISCSI_LOGIN_OPTIONS, *PISCSI_LOGIN_OPTIONS, *PSCSI_LOGIN_OPTIONS, *PISCI_LOGIN_OPTIONS;
 
 typedef struct _ISCSI_TARGET_PORTALA {
@@ -121,12 +121,12 @@ typedef struct _ISCSI_TARGET_PORTALW {
 } ISCSI_TARGET_PORTALW, *PISCSI_TARGET_PORTALW;
 
 typedef struct _ISCSI_TARGET_PORTAL_GROUPA {
-  ULONG               Count;
+  ULONG                                         Count;
   ISCSI_TARGET_PORTALA Portals[1];
 } ISCSI_TARGET_PORTAL_GROUPA, *PISCSI_TARGET_PORTAL_GROUPA;
 
 typedef struct _ISCSI_TARGET_PORTAL_GROUPW {
-  ULONG               Count;
+  ULONG                                         Count;
   ISCSI_TARGET_PORTALW Portals[1];
 } ISCSI_TARGET_PORTAL_GROUPW, *PISCSI_TARGET_PORTAL_GROUPW;
 
@@ -143,32 +143,32 @@ ISCSI_UNIQUE_SESSION_ID,    *PISCSI_UNIQUE_SESSION_ID,
 ISCSI_UNIQUE_CONNECTION_ID, *PISCSI_UNIQUE_CONNECTION_ID;
 
 typedef struct _ISCSI_TARGET_MAPPINGA {
-  CHAR                    InitiatorName[MAX_ISCSI_HBANAME_LEN];
-  CHAR                    TargetName[MAX_ISCSI_NAME_LEN];
-  CHAR                    OSDeviceName[MAX_PATH];
+  CHAR                                                           InitiatorName[MAX_ISCSI_HBANAME_LEN];
+  CHAR                                                           TargetName[MAX_ISCSI_NAME_LEN];
+  CHAR                                                           OSDeviceName[MAX_PATH];
   ISCSI_UNIQUE_SESSION_ID SessionId;
-  ULONG                   OSBusNumber;
-  ULONG                   OSTargetNumber;
-  ULONG                   LUNCount;
-  PSCSI_LUN_LIST          LUNList;
+  ULONG                                                          OSBusNumber;
+  ULONG                                                          OSTargetNumber;
+  ULONG                                                          LUNCount;
+  PSCSI_LUN_LIST                       LUNList;
 } ISCSI_TARGET_MAPPINGA, *PISCSI_TARGET_MAPPINGA;
 
 typedef struct _ISCSI_TARGET_MAPPINGW {
-  WCHAR                   InitiatorName[MAX_ISCSI_HBANAME_LEN];
-  WCHAR                   TargetName[MAX_ISCSI_NAME_LEN];
-  WCHAR                   OSDeviceName[MAX_PATH];
+  WCHAR                                                          InitiatorName[MAX_ISCSI_HBANAME_LEN];
+  WCHAR                                                          TargetName[MAX_ISCSI_NAME_LEN];
+  WCHAR                                                          OSDeviceName[MAX_PATH];
   ISCSI_UNIQUE_SESSION_ID SessionId;
-  ULONG                   OSBusNumber;
-  ULONG                   OSTargetNumber;
-  ULONG                   LUNCount;
-  PSCSI_LUN_LIST          LUNList;
+  ULONG                                                          OSBusNumber;
+  ULONG                                                          OSTargetNumber;
+  ULONG                                                          LUNCount;
+  PSCSI_LUN_LIST                       LUNList;
 } ISCSI_TARGET_MAPPINGW, *PISCSI_TARGET_MAPPINGW;
 
 typedef struct _PERSISTENT_ISCSI_LOGIN_INFOA {
-  CHAR                   TargetName[MAX_ISCSI_NAME_LEN];
-  BOOLEAN                IsInformationalSession;
-  CHAR                   InitiatorInstance[MAX_ISCSI_HBANAME_LEN];
-  ULONG                  InitiatorPortNumber;
+  CHAR                                                          TargetName[MAX_ISCSI_NAME_LEN];
+  BOOLEAN                                          IsInformationalSession;
+  CHAR                                                          InitiatorInstance[MAX_ISCSI_HBANAME_LEN];
+  ULONG                                                         InitiatorPortNumber;
   ISCSI_TARGET_PORTALA   TargetPortal;
   ISCSI_SECURITY_FLAGS   SecurityFlags;
   PISCSI_TARGET_MAPPINGA Mappings;
@@ -176,10 +176,10 @@ typedef struct _PERSISTENT_ISCSI_LOGIN_INFOA {
 } PERSISTENT_ISCSI_LOGIN_INFOA, *PPERSISTENT_ISCSI_LOGIN_INFOA;
 
 typedef struct _PERSISTENT_ISCSI_LOGIN_INFOW {
-  CHAR                   TargetName[MAX_ISCSI_NAME_LEN];
-  BOOLEAN                IsInformationalSession;
-  CHAR                   InitiatorInstance[MAX_ISCSI_HBANAME_LEN];
-  ULONG                  InitiatorPortNumber;
+  CHAR                                                          TargetName[MAX_ISCSI_NAME_LEN];
+  BOOLEAN                                          IsInformationalSession;
+  CHAR                                                          InitiatorInstance[MAX_ISCSI_HBANAME_LEN];
+  ULONG                                                         InitiatorPortNumber;
   ISCSI_TARGET_PORTALW   TargetPortal;
   ISCSI_SECURITY_FLAGS   SecurityFlags;
   PISCSI_TARGET_MAPPINGW Mappings;
@@ -189,12 +189,12 @@ typedef struct _PERSISTENT_ISCSI_LOGIN_INFOW {
 typedef UCHAR IKE_IDENTIFICATION_PAYLOAD_TYPE, *PIKE_IDENTIFICATION_PAYLOAD_TYPE;
 
 typedef struct _IKE_AUTHENTICATION_PRESHARED_KEY {
-  ISCSI_SECURITY_FLAGS            SecurityFlags;
+  ISCSI_SECURITY_FLAGS                                      SecurityFlags;
   IKE_IDENTIFICATION_PAYLOAD_TYPE IdType;
-  ULONG                           IdLengthInBytes;
-  PUCHAR                          Id;
-  ULONG                           KeyLengthInBytes;
-  PUCHAR                          Key;
+  ULONG                                                                               IdLengthInBytes;
+  PUCHAR                                                                              Id;
+  ULONG                                                                               KeyLengthInBytes;
+  PUCHAR                                                                              Key;
 } IKE_AUTHENTICATION_PRESHARED_KEY, *PIKE_AUTHENTICATION_PRESHARED_KEY;
 
 typedef struct _IKE_AUTHENTICATION_INFORMATION {
@@ -206,41 +206,41 @@ typedef struct _IKE_AUTHENTICATION_INFORMATION {
 
 typedef struct _ISCSI_CONNECTION_INFOA {
   ISCSI_UNIQUE_CONNECTION_ID ConnectionId;
-  CHAR                       InitiatorAddress;
-  CHAR                       TargetAddress;
-  USHORT                     InitiatorSocket;
-  USHORT                     TargetSocket;
-  UCHAR                      CID[2];
+  CHAR                                                              InitiatorAddress;
+  CHAR                                                              TargetAddress;
+  USHORT                                                            InitiatorSocket;
+  USHORT                                                            TargetSocket;
+  UCHAR                                                             CID[2];
 } ISCSI_CONNECTION_INFOA, *PISCSI_CONNECTION_INFOA;
 
 typedef struct _ISCSI_CONNECTION_INFO {
   ISCSI_UNIQUE_CONNECTION_ID ConnectionId;
-  TCHAR                      InitiatorAddress;
-  TCHAR                      TargetAddress;
-  USHORT                     InitiatorSocket;
-  USHORT                     TargetSocket;
-  UCHAR                      CID[2];
+  TCHAR                                                             InitiatorAddress;
+  TCHAR                                                             TargetAddress;
+  USHORT                                                            InitiatorSocket;
+  USHORT                                                            TargetSocket;
+  UCHAR                                                             CID[2];
 } ISCSI_CONNECTION_INFOW, *PISCSI_CONNECTION_INFOW;
 
 typedef struct _ISCSI_SESSION_INFOA {
   ISCSI_UNIQUE_SESSION_ID SessionId;
-  CHAR                    InitiatorName;
-  CHAR                    TargetName;
-  CHAR                    TargetNodeName;
-  UCHAR                   ISID[6];
-  UCHAR                   TSID[2];
-  ULONG                   ConnectionCount;
+  CHAR                                                           InitiatorName;
+  CHAR                                                           TargetName;
+  CHAR                                                           TargetNodeName;
+  UCHAR                                                          ISID[6];
+  UCHAR                                                          TSID[2];
+  ULONG                                                          ConnectionCount;
   PISCSI_CONNECTION_INFOA Connections;
 } ISCSI_SESSION_INFOA, *PISCSI_SESSION_INFOA;
 
 typedef struct _ISCSI_SESSION_INFO {
   ISCSI_UNIQUE_SESSION_ID SessionId;
-  WCHAR                   InitiatorName;
-  WCHAR                   TargetName;
-  WCHAR                   TargetNodeName;
-  UCHAR                   ISID[6];
-  UCHAR                   TSID[2];
-  ULONG                   ConnectionCount;
+  WCHAR                                                          InitiatorName;
+  WCHAR                                                          TargetName;
+  WCHAR                                                          TargetNodeName;
+  UCHAR                                                          ISID[6];
+  UCHAR                                                          TSID[2];
+  ULONG                                                          ConnectionCount;
   PISCSI_CONNECTION_INFOW Connections;
 } ISCSI_SESSION_INFOW, *PISCSI_SESSION_INFOW;
 
@@ -346,14 +346,14 @@ typedef ULONG ISCSI_TARGET_FLAGS;
   HRESULT WINAPI SendScsiReportLuns(PISCSI_UNIQUE_SESSION_ID UniqueSessionId,PUCHAR *ScsiStatus,PULONG *ResponseSize,PUCHAR ResponseBuffer,PULONG *SenseSize,PUCHAR SenseBuffer);
 
 typedef struct _ISCSI_DEVICE_ON_SESSION {
-  TCHAR                 InitiatorName[MAX_ISCSI_HBANAME_LEN];
-  TCHAR                 TargetName[MAX_ISCSI_NAME_LEN + 1];
-  SCSI_ADDRESS          ScsiAddress;
-  GUID                  DeviceInterfaceType;
-  TCHAR                 DeviceInterfaceName[MAX_PATH];
-  TCHAR                 LegacyName[MAX_PATH];
+  TCHAR                                           InitiatorName[MAX_ISCSI_HBANAME_LEN];
+  TCHAR                                           TargetName[MAX_ISCSI_NAME_LEN + 1];
+  SCSI_ADDRESS                       ScsiAddress;
+  GUID                                                         DeviceInterfaceType;
+  TCHAR                                           DeviceInterfaceName[MAX_PATH];
+  TCHAR                                           LegacyName[MAX_PATH];
   STORAGE_DEVICE_NUMBER StorageDeviceNumber;
-  DWORD                 DeviceInstance;
+  DWORD                                           DeviceInstance;
 } ISCSI_DEVICE_ON_SESSION, *PISCSI_DEVICE_ON_SESSION;
 
 HRESULT WINAPI GetDevicesForiSCSISession(

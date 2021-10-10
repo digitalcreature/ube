@@ -318,8 +318,8 @@ MIDL_INTERFACE("96deb3b5-8b91-4a2a-9d93-80a35d8aa847")
 IFsrmCommittableCollection : public IFsrmMutableCollection
 {
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        FsrmCommitOptions options,
-        IFsrmCollection **results) = 0;
+                     FsrmCommitOptions options,
+                     IFsrmCollection **results) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -331,99 +331,99 @@ typedef struct IFsrmCommittableCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmCommittableCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmCommittableCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmCommittableCollection *This);
+                     IFsrmCommittableCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmCommittableCollection *This);
+                     IFsrmCommittableCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmCommittableCollection *This,
-        UINT *pctinfo);
+                     IFsrmCommittableCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmCommittableCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmCommittableCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmCommittableCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmCommittableCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmCommittableCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmCommittableCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IFsrmCommittableCollection *This,
-        IUnknown **unknown);
+                     IFsrmCommittableCollection *This,
+                     IUnknown **unknown);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IFsrmCommittableCollection *This,
-        LONG index,
-        VARIANT *item);
+                     IFsrmCommittableCollection *This,
+                     LONG index,
+                     VARIANT *item);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IFsrmCommittableCollection *This,
-        LONG *count);
+                     IFsrmCommittableCollection *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        IFsrmCommittableCollection *This,
-        FsrmCollectionState *state);
+                     IFsrmCommittableCollection *This,
+                     FsrmCollectionState *state);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IFsrmCommittableCollection *This);
+                     IFsrmCommittableCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForCompletion)(
-        IFsrmCommittableCollection *This,
-        LONG waitSeconds,
-        VARIANT_BOOL *completed);
+                     IFsrmCommittableCollection *This,
+                     LONG waitSeconds,
+                     VARIANT_BOOL *completed);
 
     HRESULT (STDMETHODCALLTYPE *GetById)(
-        IFsrmCommittableCollection *This,
-        FSRM_OBJECT_ID id,
-        VARIANT *entry);
+                     IFsrmCommittableCollection *This,
+                     FSRM_OBJECT_ID id,
+                     VARIANT *entry);
 
     /*** IFsrmMutableCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IFsrmCommittableCollection *This,
-        VARIANT item);
+                     IFsrmCommittableCollection *This,
+                     VARIANT item);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IFsrmCommittableCollection *This,
-        LONG index);
+                     IFsrmCommittableCollection *This,
+                     LONG index);
 
     HRESULT (STDMETHODCALLTYPE *RemoveById)(
-        IFsrmCommittableCollection *This,
-        FSRM_OBJECT_ID id);
+                     IFsrmCommittableCollection *This,
+                     FSRM_OBJECT_ID id);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IFsrmCommittableCollection *This,
-        IFsrmMutableCollection **collection);
+                     IFsrmCommittableCollection *This,
+                     IFsrmMutableCollection **collection);
 
     /*** IFsrmCommittableCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmCommittableCollection *This,
-        FsrmCommitOptions options,
-        IFsrmCollection **results);
+                     IFsrmCommittableCollection *This,
+                     FsrmCommitOptions options,
+                     IFsrmCollection **results);
 
     END_INTERFACE
 } IFsrmCommittableCollectionVtbl;
@@ -541,13 +541,13 @@ MIDL_INTERFACE("40002314-590b-45a5-8e1b-8c05da527e52")
 IFsrmAccessDeniedRemediationClient : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE Show(
-        ULONG_PTR parentWnd,
-        BSTR accessPath,
-        AdrClientErrorType errorType,
-        LONG flags,
-        BSTR windowTitle,
-        BSTR windowMessage,
-        LONG *result) = 0;
+                     ULONG_PTR parentWnd,
+                     BSTR accessPath,
+                     AdrClientErrorType errorType,
+                     LONG flags,
+                     BSTR windowTitle,
+                     BSTR windowMessage,
+                     LONG *result) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -559,56 +559,56 @@ typedef struct IFsrmAccessDeniedRemediationClientVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmAccessDeniedRemediationClient *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmAccessDeniedRemediationClient *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmAccessDeniedRemediationClient *This);
+                     IFsrmAccessDeniedRemediationClient *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmAccessDeniedRemediationClient *This);
+                     IFsrmAccessDeniedRemediationClient *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmAccessDeniedRemediationClient *This,
-        UINT *pctinfo);
+                     IFsrmAccessDeniedRemediationClient *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmAccessDeniedRemediationClient *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmAccessDeniedRemediationClient *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmAccessDeniedRemediationClient *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmAccessDeniedRemediationClient *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmAccessDeniedRemediationClient *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmAccessDeniedRemediationClient *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmAccessDeniedRemediationClient methods ***/
     HRESULT (STDMETHODCALLTYPE *Show)(
-        IFsrmAccessDeniedRemediationClient *This,
-        ULONG_PTR parentWnd,
-        BSTR accessPath,
-        AdrClientErrorType errorType,
-        LONG flags,
-        BSTR windowTitle,
-        BSTR windowMessage,
-        LONG *result);
+                     IFsrmAccessDeniedRemediationClient *This,
+                     ULONG_PTR parentWnd,
+                     BSTR accessPath,
+                     AdrClientErrorType errorType,
+                     LONG flags,
+                     BSTR windowTitle,
+                     BSTR windowMessage,
+                     LONG *result);
 
     END_INTERFACE
 } IFsrmAccessDeniedRemediationClientVtbl;
@@ -678,19 +678,19 @@ MIDL_INTERFACE("6cd6408a-ae60-463b-9ef1-e117534d69dc")
 IFsrmAction : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        FSRM_OBJECT_ID *id) = 0;
+                     FSRM_OBJECT_ID *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ActionType(
-        FsrmActionType *actionType) = 0;
+                     FsrmActionType *actionType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RunLimitInterval(
-        LONG *minutes) = 0;
+                     LONG *minutes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RunLimitInterval(
-        LONG minutes) = 0;
+                     LONG minutes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -702,65 +702,65 @@ typedef struct IFsrmActionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmAction *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmAction *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmAction *This);
+                     IFsrmAction *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmAction *This);
+                     IFsrmAction *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmAction *This,
-        UINT *pctinfo);
+                     IFsrmAction *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmAction *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmAction *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmAction *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmAction *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmAction *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmAction *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmAction *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmAction *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionType)(
-        IFsrmAction *This,
-        FsrmActionType *actionType);
+                     IFsrmAction *This,
+                     FsrmActionType *actionType);
 
     HRESULT (STDMETHODCALLTYPE *get_RunLimitInterval)(
-        IFsrmAction *This,
-        LONG *minutes);
+                     IFsrmAction *This,
+                     LONG *minutes);
 
     HRESULT (STDMETHODCALLTYPE *put_RunLimitInterval)(
-        IFsrmAction *This,
-        LONG minutes);
+                     IFsrmAction *This,
+                     LONG minutes);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmAction *This);
+                     IFsrmAction *This);
 
     END_INTERFACE
 } IFsrmActionVtbl;
@@ -846,46 +846,46 @@ MIDL_INTERFACE("12937789-e247-4917-9c20-f3ee9c7ee783")
 IFsrmActionCommand : public IFsrmAction
 {
     virtual HRESULT STDMETHODCALLTYPE get_ExecutablePath(
-        BSTR *executablePath) = 0;
+                     BSTR *executablePath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ExecutablePath(
-        BSTR executablePath) = 0;
+                     BSTR executablePath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Arguments(
-        BSTR *arguments) = 0;
+                     BSTR *arguments) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Arguments(
-        BSTR arguments) = 0;
+                     BSTR arguments) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Account(
-        FsrmAccountType *account) = 0;
+                     FsrmAccountType *account) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Account(
-        FsrmAccountType account) = 0;
+                     FsrmAccountType account) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_WorkingDirectory(
-        BSTR *workingDirectory) = 0;
+                     BSTR *workingDirectory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_WorkingDirectory(
-        BSTR workingDirectory) = 0;
+                     BSTR workingDirectory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MonitorCommand(
-        VARIANT_BOOL *monitorCommand) = 0;
+                     VARIANT_BOOL *monitorCommand) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MonitorCommand(
-        VARIANT_BOOL monitorCommand) = 0;
+                     VARIANT_BOOL monitorCommand) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_KillTimeOut(
-        LONG *minutes) = 0;
+                     LONG *minutes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_KillTimeOut(
-        LONG minutes) = 0;
+                     LONG minutes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LogResult(
-        VARIANT_BOOL *logResults) = 0;
+                     VARIANT_BOOL *logResults) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LogResult(
-        VARIANT_BOOL logResults) = 0;
+                     VARIANT_BOOL logResults) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -897,122 +897,122 @@ typedef struct IFsrmActionCommandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmActionCommand *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmActionCommand *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmActionCommand *This);
+                     IFsrmActionCommand *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmActionCommand *This);
+                     IFsrmActionCommand *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmActionCommand *This,
-        UINT *pctinfo);
+                     IFsrmActionCommand *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmActionCommand *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmActionCommand *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmActionCommand *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmActionCommand *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmActionCommand *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmActionCommand *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmActionCommand *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmActionCommand *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionType)(
-        IFsrmActionCommand *This,
-        FsrmActionType *actionType);
+                     IFsrmActionCommand *This,
+                     FsrmActionType *actionType);
 
     HRESULT (STDMETHODCALLTYPE *get_RunLimitInterval)(
-        IFsrmActionCommand *This,
-        LONG *minutes);
+                     IFsrmActionCommand *This,
+                     LONG *minutes);
 
     HRESULT (STDMETHODCALLTYPE *put_RunLimitInterval)(
-        IFsrmActionCommand *This,
-        LONG minutes);
+                     IFsrmActionCommand *This,
+                     LONG minutes);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmActionCommand *This);
+                     IFsrmActionCommand *This);
 
     /*** IFsrmActionCommand methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ExecutablePath)(
-        IFsrmActionCommand *This,
-        BSTR *executablePath);
+                     IFsrmActionCommand *This,
+                     BSTR *executablePath);
 
     HRESULT (STDMETHODCALLTYPE *put_ExecutablePath)(
-        IFsrmActionCommand *This,
-        BSTR executablePath);
+                     IFsrmActionCommand *This,
+                     BSTR executablePath);
 
     HRESULT (STDMETHODCALLTYPE *get_Arguments)(
-        IFsrmActionCommand *This,
-        BSTR *arguments);
+                     IFsrmActionCommand *This,
+                     BSTR *arguments);
 
     HRESULT (STDMETHODCALLTYPE *put_Arguments)(
-        IFsrmActionCommand *This,
-        BSTR arguments);
+                     IFsrmActionCommand *This,
+                     BSTR arguments);
 
     HRESULT (STDMETHODCALLTYPE *get_Account)(
-        IFsrmActionCommand *This,
-        FsrmAccountType *account);
+                     IFsrmActionCommand *This,
+                     FsrmAccountType *account);
 
     HRESULT (STDMETHODCALLTYPE *put_Account)(
-        IFsrmActionCommand *This,
-        FsrmAccountType account);
+                     IFsrmActionCommand *This,
+                     FsrmAccountType account);
 
     HRESULT (STDMETHODCALLTYPE *get_WorkingDirectory)(
-        IFsrmActionCommand *This,
-        BSTR *workingDirectory);
+                     IFsrmActionCommand *This,
+                     BSTR *workingDirectory);
 
     HRESULT (STDMETHODCALLTYPE *put_WorkingDirectory)(
-        IFsrmActionCommand *This,
-        BSTR workingDirectory);
+                     IFsrmActionCommand *This,
+                     BSTR workingDirectory);
 
     HRESULT (STDMETHODCALLTYPE *get_MonitorCommand)(
-        IFsrmActionCommand *This,
-        VARIANT_BOOL *monitorCommand);
+                     IFsrmActionCommand *This,
+                     VARIANT_BOOL *monitorCommand);
 
     HRESULT (STDMETHODCALLTYPE *put_MonitorCommand)(
-        IFsrmActionCommand *This,
-        VARIANT_BOOL monitorCommand);
+                     IFsrmActionCommand *This,
+                     VARIANT_BOOL monitorCommand);
 
     HRESULT (STDMETHODCALLTYPE *get_KillTimeOut)(
-        IFsrmActionCommand *This,
-        LONG *minutes);
+                     IFsrmActionCommand *This,
+                     LONG *minutes);
 
     HRESULT (STDMETHODCALLTYPE *put_KillTimeOut)(
-        IFsrmActionCommand *This,
-        LONG minutes);
+                     IFsrmActionCommand *This,
+                     LONG minutes);
 
     HRESULT (STDMETHODCALLTYPE *get_LogResult)(
-        IFsrmActionCommand *This,
-        VARIANT_BOOL *logResults);
+                     IFsrmActionCommand *This,
+                     VARIANT_BOOL *logResults);
 
     HRESULT (STDMETHODCALLTYPE *put_LogResult)(
-        IFsrmActionCommand *This,
-        VARIANT_BOOL logResults);
+                     IFsrmActionCommand *This,
+                     VARIANT_BOOL logResults);
 
     END_INTERFACE
 } IFsrmActionCommandVtbl;
@@ -1156,16 +1156,16 @@ MIDL_INTERFACE("4c8f96c3-5d94-4f37-a4f4-f56ab463546f")
 IFsrmActionEventLog : public IFsrmAction
 {
     virtual HRESULT STDMETHODCALLTYPE get_EventType(
-        FsrmEventType *eventType) = 0;
+                     FsrmEventType *eventType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EventType(
-        FsrmEventType eventType) = 0;
+                     FsrmEventType eventType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MessageText(
-        BSTR *messageText) = 0;
+                     BSTR *messageText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MessageText(
-        BSTR messageText) = 0;
+                     BSTR messageText) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1177,82 +1177,82 @@ typedef struct IFsrmActionEventLogVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmActionEventLog *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmActionEventLog *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmActionEventLog *This);
+                     IFsrmActionEventLog *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmActionEventLog *This);
+                     IFsrmActionEventLog *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmActionEventLog *This,
-        UINT *pctinfo);
+                     IFsrmActionEventLog *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmActionEventLog *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmActionEventLog *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmActionEventLog *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmActionEventLog *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmActionEventLog *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmActionEventLog *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmActionEventLog *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmActionEventLog *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionType)(
-        IFsrmActionEventLog *This,
-        FsrmActionType *actionType);
+                     IFsrmActionEventLog *This,
+                     FsrmActionType *actionType);
 
     HRESULT (STDMETHODCALLTYPE *get_RunLimitInterval)(
-        IFsrmActionEventLog *This,
-        LONG *minutes);
+                     IFsrmActionEventLog *This,
+                     LONG *minutes);
 
     HRESULT (STDMETHODCALLTYPE *put_RunLimitInterval)(
-        IFsrmActionEventLog *This,
-        LONG minutes);
+                     IFsrmActionEventLog *This,
+                     LONG minutes);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmActionEventLog *This);
+                     IFsrmActionEventLog *This);
 
     /*** IFsrmActionEventLog methods ***/
     HRESULT (STDMETHODCALLTYPE *get_EventType)(
-        IFsrmActionEventLog *This,
-        FsrmEventType *eventType);
+                     IFsrmActionEventLog *This,
+                     FsrmEventType *eventType);
 
     HRESULT (STDMETHODCALLTYPE *put_EventType)(
-        IFsrmActionEventLog *This,
-        FsrmEventType eventType);
+                     IFsrmActionEventLog *This,
+                     FsrmEventType eventType);
 
     HRESULT (STDMETHODCALLTYPE *get_MessageText)(
-        IFsrmActionEventLog *This,
-        BSTR *messageText);
+                     IFsrmActionEventLog *This,
+                     BSTR *messageText);
 
     HRESULT (STDMETHODCALLTYPE *put_MessageText)(
-        IFsrmActionEventLog *This,
-        BSTR messageText);
+                     IFsrmActionEventLog *This,
+                     BSTR messageText);
 
     END_INTERFACE
 } IFsrmActionEventLogVtbl;
@@ -1356,16 +1356,16 @@ MIDL_INTERFACE("2dbe63c4-b340-48a0-a5b0-158e07fc567e")
 IFsrmActionReport : public IFsrmAction
 {
     virtual HRESULT STDMETHODCALLTYPE get_ReportTypes(
-        SAFEARRAY **reportTypes) = 0;
+                     SAFEARRAY **reportTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ReportTypes(
-        SAFEARRAY *reportTypes) = 0;
+                     SAFEARRAY *reportTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailTo(
-        BSTR *mailTo) = 0;
+                     BSTR *mailTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailTo(
-        BSTR mailTo) = 0;
+                     BSTR mailTo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1377,82 +1377,82 @@ typedef struct IFsrmActionReportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmActionReport *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmActionReport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmActionReport *This);
+                     IFsrmActionReport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmActionReport *This);
+                     IFsrmActionReport *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmActionReport *This,
-        UINT *pctinfo);
+                     IFsrmActionReport *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmActionReport *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmActionReport *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmActionReport *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmActionReport *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmActionReport *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmActionReport *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmActionReport *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmActionReport *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionType)(
-        IFsrmActionReport *This,
-        FsrmActionType *actionType);
+                     IFsrmActionReport *This,
+                     FsrmActionType *actionType);
 
     HRESULT (STDMETHODCALLTYPE *get_RunLimitInterval)(
-        IFsrmActionReport *This,
-        LONG *minutes);
+                     IFsrmActionReport *This,
+                     LONG *minutes);
 
     HRESULT (STDMETHODCALLTYPE *put_RunLimitInterval)(
-        IFsrmActionReport *This,
-        LONG minutes);
+                     IFsrmActionReport *This,
+                     LONG minutes);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmActionReport *This);
+                     IFsrmActionReport *This);
 
     /*** IFsrmActionReport methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ReportTypes)(
-        IFsrmActionReport *This,
-        SAFEARRAY **reportTypes);
+                     IFsrmActionReport *This,
+                     SAFEARRAY **reportTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_ReportTypes)(
-        IFsrmActionReport *This,
-        SAFEARRAY *reportTypes);
+                     IFsrmActionReport *This,
+                     SAFEARRAY *reportTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_MailTo)(
-        IFsrmActionReport *This,
-        BSTR *mailTo);
+                     IFsrmActionReport *This,
+                     BSTR *mailTo);
 
     HRESULT (STDMETHODCALLTYPE *put_MailTo)(
-        IFsrmActionReport *This,
-        BSTR mailTo);
+                     IFsrmActionReport *This,
+                     BSTR mailTo);
 
     END_INTERFACE
 } IFsrmActionReportVtbl;
@@ -1556,28 +1556,28 @@ MIDL_INTERFACE("f76fbf3b-8ddd-4b42-b05a-cb1c3ff1fee8")
 IFsrmCollection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **unknown) = 0;
+                     IUnknown **unknown) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        LONG index,
-        VARIANT *item) = 0;
+                     LONG index,
+                     VARIANT *item) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_State(
-        FsrmCollectionState *state) = 0;
+                     FsrmCollectionState *state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitForCompletion(
-        LONG waitSeconds,
-        VARIANT_BOOL *completed) = 0;
+                     LONG waitSeconds,
+                     VARIANT_BOOL *completed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetById(
-        FSRM_OBJECT_ID id,
-        VARIANT *entry) = 0;
+                     FSRM_OBJECT_ID id,
+                     VARIANT *entry) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1589,76 +1589,76 @@ typedef struct IFsrmCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmCollection *This);
+                     IFsrmCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmCollection *This);
+                     IFsrmCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmCollection *This,
-        UINT *pctinfo);
+                     IFsrmCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IFsrmCollection *This,
-        IUnknown **unknown);
+                     IFsrmCollection *This,
+                     IUnknown **unknown);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IFsrmCollection *This,
-        LONG index,
-        VARIANT *item);
+                     IFsrmCollection *This,
+                     LONG index,
+                     VARIANT *item);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IFsrmCollection *This,
-        LONG *count);
+                     IFsrmCollection *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        IFsrmCollection *This,
-        FsrmCollectionState *state);
+                     IFsrmCollection *This,
+                     FsrmCollectionState *state);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IFsrmCollection *This);
+                     IFsrmCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForCompletion)(
-        IFsrmCollection *This,
-        LONG waitSeconds,
-        VARIANT_BOOL *completed);
+                     IFsrmCollection *This,
+                     LONG waitSeconds,
+                     VARIANT_BOOL *completed);
 
     HRESULT (STDMETHODCALLTYPE *GetById)(
-        IFsrmCollection *This,
-        FSRM_OBJECT_ID id,
-        VARIANT *entry);
+                     IFsrmCollection *This,
+                     FSRM_OBJECT_ID id,
+                     VARIANT *entry);
 
     END_INTERFACE
 } IFsrmCollectionVtbl;
@@ -1752,10 +1752,10 @@ MIDL_INTERFACE("39322a2d-38ee-4d0d-8095-421a80849a82")
 IFsrmDerivedObjectsResult : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_DerivedObjects(
-        IFsrmCollection **derivedObjects) = 0;
+                     IFsrmCollection **derivedObjects) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Results(
-        IFsrmCollection **results) = 0;
+                     IFsrmCollection **results) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1767,54 +1767,54 @@ typedef struct IFsrmDerivedObjectsResultVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmDerivedObjectsResult *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmDerivedObjectsResult *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmDerivedObjectsResult *This);
+                     IFsrmDerivedObjectsResult *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmDerivedObjectsResult *This);
+                     IFsrmDerivedObjectsResult *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmDerivedObjectsResult *This,
-        UINT *pctinfo);
+                     IFsrmDerivedObjectsResult *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmDerivedObjectsResult *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmDerivedObjectsResult *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmDerivedObjectsResult *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmDerivedObjectsResult *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmDerivedObjectsResult *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmDerivedObjectsResult *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmDerivedObjectsResult methods ***/
     HRESULT (STDMETHODCALLTYPE *get_DerivedObjects)(
-        IFsrmDerivedObjectsResult *This,
-        IFsrmCollection **derivedObjects);
+                     IFsrmDerivedObjectsResult *This,
+                     IFsrmCollection **derivedObjects);
 
     HRESULT (STDMETHODCALLTYPE *get_Results)(
-        IFsrmDerivedObjectsResult *This,
-        IFsrmCollection **results);
+                     IFsrmDerivedObjectsResult *This,
+                     IFsrmCollection **results);
 
     END_INTERFACE
 } IFsrmDerivedObjectsResultVtbl;
@@ -1888,37 +1888,37 @@ MIDL_INTERFACE("efcb0ab1-16c4-4a79-812c-725614c3306b")
 IFsrmExportImport : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE ExportFileGroups(
-        BSTR filePath,
-        VARIANT *fileGroupNamesSafeArray = 0,
-        BSTR remoteHost = L"") = 0;
+                     BSTR filePath,
+                     VARIANT *fileGroupNamesSafeArray = 0,
+                     BSTR remoteHost = L"") = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportFileGroups(
-        BSTR filePath,
-        VARIANT *fileGroupNamesSafeArray,
-        BSTR remoteHost,
-        IFsrmCommittableCollection **fileGroups) = 0;
+                     BSTR filePath,
+                     VARIANT *fileGroupNamesSafeArray,
+                     BSTR remoteHost,
+                     IFsrmCommittableCollection **fileGroups) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExportFileScreenTemplates(
-        BSTR filePath,
-        VARIANT *templateNamesSafeArray = 0,
-        BSTR remoteHost = L"") = 0;
+                     BSTR filePath,
+                     VARIANT *templateNamesSafeArray = 0,
+                     BSTR remoteHost = L"") = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportFileScreenTemplates(
-        BSTR filePath,
-        VARIANT *templateNamesSafeArray,
-        BSTR remoteHost,
-        IFsrmCommittableCollection **templates) = 0;
+                     BSTR filePath,
+                     VARIANT *templateNamesSafeArray,
+                     BSTR remoteHost,
+                     IFsrmCommittableCollection **templates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExportQuotaTemplates(
-        BSTR filePath,
-        VARIANT *templateNamesSafeArray = 0,
-        BSTR remoteHost = L"") = 0;
+                     BSTR filePath,
+                     VARIANT *templateNamesSafeArray = 0,
+                     BSTR remoteHost = L"") = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportQuotaTemplates(
-        BSTR filePath,
-        VARIANT *templateNamesSafeArray,
-        BSTR remoteHost,
-        IFsrmCommittableCollection **templates) = 0;
+                     BSTR filePath,
+                     VARIANT *templateNamesSafeArray,
+                     BSTR remoteHost,
+                     IFsrmCommittableCollection **templates) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1930,85 +1930,85 @@ typedef struct IFsrmExportImportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmExportImport *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmExportImport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmExportImport *This);
+                     IFsrmExportImport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmExportImport *This);
+                     IFsrmExportImport *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmExportImport *This,
-        UINT *pctinfo);
+                     IFsrmExportImport *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmExportImport *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmExportImport *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmExportImport *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmExportImport *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmExportImport *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmExportImport *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmExportImport methods ***/
     HRESULT (STDMETHODCALLTYPE *ExportFileGroups)(
-        IFsrmExportImport *This,
-        BSTR filePath,
-        VARIANT *fileGroupNamesSafeArray,
-        BSTR remoteHost);
+                     IFsrmExportImport *This,
+                     BSTR filePath,
+                     VARIANT *fileGroupNamesSafeArray,
+                     BSTR remoteHost);
 
     HRESULT (STDMETHODCALLTYPE *ImportFileGroups)(
-        IFsrmExportImport *This,
-        BSTR filePath,
-        VARIANT *fileGroupNamesSafeArray,
-        BSTR remoteHost,
-        IFsrmCommittableCollection **fileGroups);
+                     IFsrmExportImport *This,
+                     BSTR filePath,
+                     VARIANT *fileGroupNamesSafeArray,
+                     BSTR remoteHost,
+                     IFsrmCommittableCollection **fileGroups);
 
     HRESULT (STDMETHODCALLTYPE *ExportFileScreenTemplates)(
-        IFsrmExportImport *This,
-        BSTR filePath,
-        VARIANT *templateNamesSafeArray,
-        BSTR remoteHost);
+                     IFsrmExportImport *This,
+                     BSTR filePath,
+                     VARIANT *templateNamesSafeArray,
+                     BSTR remoteHost);
 
     HRESULT (STDMETHODCALLTYPE *ImportFileScreenTemplates)(
-        IFsrmExportImport *This,
-        BSTR filePath,
-        VARIANT *templateNamesSafeArray,
-        BSTR remoteHost,
-        IFsrmCommittableCollection **templates);
+                     IFsrmExportImport *This,
+                     BSTR filePath,
+                     VARIANT *templateNamesSafeArray,
+                     BSTR remoteHost,
+                     IFsrmCommittableCollection **templates);
 
     HRESULT (STDMETHODCALLTYPE *ExportQuotaTemplates)(
-        IFsrmExportImport *This,
-        BSTR filePath,
-        VARIANT *templateNamesSafeArray,
-        BSTR remoteHost);
+                     IFsrmExportImport *This,
+                     BSTR filePath,
+                     VARIANT *templateNamesSafeArray,
+                     BSTR remoteHost);
 
     HRESULT (STDMETHODCALLTYPE *ImportQuotaTemplates)(
-        IFsrmExportImport *This,
-        BSTR filePath,
-        VARIANT *templateNamesSafeArray,
-        BSTR remoteHost,
-        IFsrmCommittableCollection **templates);
+                     IFsrmExportImport *This,
+                     BSTR filePath,
+                     VARIANT *templateNamesSafeArray,
+                     BSTR remoteHost,
+                     IFsrmCommittableCollection **templates);
 
     END_INTERFACE
 } IFsrmExportImportVtbl;
@@ -2098,19 +2098,19 @@ MIDL_INTERFACE("22bcef93-4a3f-4183-89f9-2f8b8a628aee")
 IFsrmObject : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        FSRM_OBJECT_ID *id) = 0;
+                     FSRM_OBJECT_ID *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Description(
-        BSTR *description) = 0;
+                     BSTR *description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Description(
-        BSTR description) = 0;
+                     BSTR description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2122,64 +2122,64 @@ typedef struct IFsrmObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmObject *This);
+                     IFsrmObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmObject *This);
+                     IFsrmObject *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmObject *This,
-        UINT *pctinfo);
+                     IFsrmObject *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmObject *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmObject *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmObject *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmObject *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmObject *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmObject *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmObject *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmObject *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmObject *This,
-        BSTR *description);
+                     IFsrmObject *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmObject *This,
-        BSTR description);
+                     IFsrmObject *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmObject *This);
+                     IFsrmObject *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmObject *This);
+                     IFsrmObject *This);
 
     END_INTERFACE
 } IFsrmObjectVtbl;
@@ -2265,8 +2265,8 @@ MIDL_INTERFACE("6f4dbfff-6920-4821-a6c3-b7e94c1fd60c")
 IFsrmPathMapper : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetSharePathsForLocalPath(
-        BSTR localPath,
-        SAFEARRAY **sharePaths) = 0;
+                     BSTR localPath,
+                     SAFEARRAY **sharePaths) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2278,51 +2278,51 @@ typedef struct IFsrmPathMapperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmPathMapper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmPathMapper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmPathMapper *This);
+                     IFsrmPathMapper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmPathMapper *This);
+                     IFsrmPathMapper *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmPathMapper *This,
-        UINT *pctinfo);
+                     IFsrmPathMapper *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmPathMapper *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmPathMapper *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmPathMapper *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmPathMapper *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmPathMapper *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmPathMapper *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmPathMapper methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSharePathsForLocalPath)(
-        IFsrmPathMapper *This,
-        BSTR localPath,
-        SAFEARRAY **sharePaths);
+                     IFsrmPathMapper *This,
+                     BSTR localPath,
+                     SAFEARRAY **sharePaths);
 
     END_INTERFACE
 } IFsrmPathMapperVtbl;
@@ -2392,45 +2392,45 @@ MIDL_INTERFACE("f411d4fd-14be-4260-8c40-03b7c95e608a")
 IFsrmSetting : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_SmtpServer(
-        BSTR *smtpServer) = 0;
+                     BSTR *smtpServer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SmtpServer(
-        BSTR smtpServer) = 0;
+                     BSTR smtpServer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailFrom(
-        BSTR *mailFrom) = 0;
+                     BSTR *mailFrom) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailFrom(
-        BSTR mailFrom) = 0;
+                     BSTR mailFrom) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AdminEmail(
-        BSTR *adminEmail) = 0;
+                     BSTR *adminEmail) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AdminEmail(
-        BSTR adminEmail) = 0;
+                     BSTR adminEmail) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DisableCommandLine(
-        VARIANT_BOOL *disableCommandLine) = 0;
+                     VARIANT_BOOL *disableCommandLine) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DisableCommandLine(
-        VARIANT_BOOL disableCommandLine) = 0;
+                     VARIANT_BOOL disableCommandLine) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EnableScreeningAudit(
-        VARIANT_BOOL *enableScreeningAudit) = 0;
+                     VARIANT_BOOL *enableScreeningAudit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EnableScreeningAudit(
-        VARIANT_BOOL enableScreeningAudit) = 0;
+                     VARIANT_BOOL enableScreeningAudit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EmailTest(
-        BSTR mailTo) = 0;
+                     BSTR mailTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetActionRunLimitInterval(
-        FsrmActionType actionType,
-        LONG delayTimeMinutes) = 0;
+                     FsrmActionType actionType,
+                     LONG delayTimeMinutes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActionRunLimitInterval(
-        FsrmActionType actionType,
-        LONG *delayTimeMinutes) = 0;
+                     FsrmActionType actionType,
+                     LONG *delayTimeMinutes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2442,100 +2442,100 @@ typedef struct IFsrmSettingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmSetting *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmSetting *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmSetting *This);
+                     IFsrmSetting *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmSetting *This);
+                     IFsrmSetting *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmSetting *This,
-        UINT *pctinfo);
+                     IFsrmSetting *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmSetting *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmSetting *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmSetting *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmSetting *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmSetting *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmSetting *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmSetting methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SmtpServer)(
-        IFsrmSetting *This,
-        BSTR *smtpServer);
+                     IFsrmSetting *This,
+                     BSTR *smtpServer);
 
     HRESULT (STDMETHODCALLTYPE *put_SmtpServer)(
-        IFsrmSetting *This,
-        BSTR smtpServer);
+                     IFsrmSetting *This,
+                     BSTR smtpServer);
 
     HRESULT (STDMETHODCALLTYPE *get_MailFrom)(
-        IFsrmSetting *This,
-        BSTR *mailFrom);
+                     IFsrmSetting *This,
+                     BSTR *mailFrom);
 
     HRESULT (STDMETHODCALLTYPE *put_MailFrom)(
-        IFsrmSetting *This,
-        BSTR mailFrom);
+                     IFsrmSetting *This,
+                     BSTR mailFrom);
 
     HRESULT (STDMETHODCALLTYPE *get_AdminEmail)(
-        IFsrmSetting *This,
-        BSTR *adminEmail);
+                     IFsrmSetting *This,
+                     BSTR *adminEmail);
 
     HRESULT (STDMETHODCALLTYPE *put_AdminEmail)(
-        IFsrmSetting *This,
-        BSTR adminEmail);
+                     IFsrmSetting *This,
+                     BSTR adminEmail);
 
     HRESULT (STDMETHODCALLTYPE *get_DisableCommandLine)(
-        IFsrmSetting *This,
-        VARIANT_BOOL *disableCommandLine);
+                     IFsrmSetting *This,
+                     VARIANT_BOOL *disableCommandLine);
 
     HRESULT (STDMETHODCALLTYPE *put_DisableCommandLine)(
-        IFsrmSetting *This,
-        VARIANT_BOOL disableCommandLine);
+                     IFsrmSetting *This,
+                     VARIANT_BOOL disableCommandLine);
 
     HRESULT (STDMETHODCALLTYPE *get_EnableScreeningAudit)(
-        IFsrmSetting *This,
-        VARIANT_BOOL *enableScreeningAudit);
+                     IFsrmSetting *This,
+                     VARIANT_BOOL *enableScreeningAudit);
 
     HRESULT (STDMETHODCALLTYPE *put_EnableScreeningAudit)(
-        IFsrmSetting *This,
-        VARIANT_BOOL enableScreeningAudit);
+                     IFsrmSetting *This,
+                     VARIANT_BOOL enableScreeningAudit);
 
     HRESULT (STDMETHODCALLTYPE *EmailTest)(
-        IFsrmSetting *This,
-        BSTR mailTo);
+                     IFsrmSetting *This,
+                     BSTR mailTo);
 
     HRESULT (STDMETHODCALLTYPE *SetActionRunLimitInterval)(
-        IFsrmSetting *This,
-        FsrmActionType actionType,
-        LONG delayTimeMinutes);
+                     IFsrmSetting *This,
+                     FsrmActionType actionType,
+                     LONG delayTimeMinutes);
 
     HRESULT (STDMETHODCALLTYPE *GetActionRunLimitInterval)(
-        IFsrmSetting *This,
-        FsrmActionType actionType,
-        LONG *delayTimeMinutes);
+                     IFsrmSetting *This,
+                     FsrmActionType actionType,
+                     LONG *delayTimeMinutes);
 
     END_INTERFACE
 } IFsrmSettingVtbl;
@@ -2653,46 +2653,46 @@ MIDL_INTERFACE("d646567d-26ae-4caa-9f84-4e0aad207fca")
 IFsrmActionEmail : public IFsrmAction
 {
     virtual HRESULT STDMETHODCALLTYPE get_MailFrom(
-        BSTR *mailFrom) = 0;
+                     BSTR *mailFrom) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailFrom(
-        BSTR mailFrom) = 0;
+                     BSTR mailFrom) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailReplyTo(
-        BSTR *mailReplyTo) = 0;
+                     BSTR *mailReplyTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailReplyTo(
-        BSTR mailReplyTo) = 0;
+                     BSTR mailReplyTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailTo(
-        BSTR *mailTo) = 0;
+                     BSTR *mailTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailTo(
-        BSTR mailTo) = 0;
+                     BSTR mailTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailCc(
-        BSTR *mailCc) = 0;
+                     BSTR *mailCc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailCc(
-        BSTR mailCc) = 0;
+                     BSTR mailCc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailBcc(
-        BSTR *mailBcc) = 0;
+                     BSTR *mailBcc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailBcc(
-        BSTR mailBcc) = 0;
+                     BSTR mailBcc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailSubject(
-        BSTR *mailSubject) = 0;
+                     BSTR *mailSubject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailSubject(
-        BSTR mailSubject) = 0;
+                     BSTR mailSubject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MessageText(
-        BSTR *messageText) = 0;
+                     BSTR *messageText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MessageText(
-        BSTR messageText) = 0;
+                     BSTR messageText) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2704,122 +2704,122 @@ typedef struct IFsrmActionEmailVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmActionEmail *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmActionEmail *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmActionEmail *This);
+                     IFsrmActionEmail *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmActionEmail *This);
+                     IFsrmActionEmail *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmActionEmail *This,
-        UINT *pctinfo);
+                     IFsrmActionEmail *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmActionEmail *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmActionEmail *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmActionEmail *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmActionEmail *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmActionEmail *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmActionEmail *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmActionEmail *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmActionEmail *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionType)(
-        IFsrmActionEmail *This,
-        FsrmActionType *actionType);
+                     IFsrmActionEmail *This,
+                     FsrmActionType *actionType);
 
     HRESULT (STDMETHODCALLTYPE *get_RunLimitInterval)(
-        IFsrmActionEmail *This,
-        LONG *minutes);
+                     IFsrmActionEmail *This,
+                     LONG *minutes);
 
     HRESULT (STDMETHODCALLTYPE *put_RunLimitInterval)(
-        IFsrmActionEmail *This,
-        LONG minutes);
+                     IFsrmActionEmail *This,
+                     LONG minutes);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmActionEmail *This);
+                     IFsrmActionEmail *This);
 
     /*** IFsrmActionEmail methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MailFrom)(
-        IFsrmActionEmail *This,
-        BSTR *mailFrom);
+                     IFsrmActionEmail *This,
+                     BSTR *mailFrom);
 
     HRESULT (STDMETHODCALLTYPE *put_MailFrom)(
-        IFsrmActionEmail *This,
-        BSTR mailFrom);
+                     IFsrmActionEmail *This,
+                     BSTR mailFrom);
 
     HRESULT (STDMETHODCALLTYPE *get_MailReplyTo)(
-        IFsrmActionEmail *This,
-        BSTR *mailReplyTo);
+                     IFsrmActionEmail *This,
+                     BSTR *mailReplyTo);
 
     HRESULT (STDMETHODCALLTYPE *put_MailReplyTo)(
-        IFsrmActionEmail *This,
-        BSTR mailReplyTo);
+                     IFsrmActionEmail *This,
+                     BSTR mailReplyTo);
 
     HRESULT (STDMETHODCALLTYPE *get_MailTo)(
-        IFsrmActionEmail *This,
-        BSTR *mailTo);
+                     IFsrmActionEmail *This,
+                     BSTR *mailTo);
 
     HRESULT (STDMETHODCALLTYPE *put_MailTo)(
-        IFsrmActionEmail *This,
-        BSTR mailTo);
+                     IFsrmActionEmail *This,
+                     BSTR mailTo);
 
     HRESULT (STDMETHODCALLTYPE *get_MailCc)(
-        IFsrmActionEmail *This,
-        BSTR *mailCc);
+                     IFsrmActionEmail *This,
+                     BSTR *mailCc);
 
     HRESULT (STDMETHODCALLTYPE *put_MailCc)(
-        IFsrmActionEmail *This,
-        BSTR mailCc);
+                     IFsrmActionEmail *This,
+                     BSTR mailCc);
 
     HRESULT (STDMETHODCALLTYPE *get_MailBcc)(
-        IFsrmActionEmail *This,
-        BSTR *mailBcc);
+                     IFsrmActionEmail *This,
+                     BSTR *mailBcc);
 
     HRESULT (STDMETHODCALLTYPE *put_MailBcc)(
-        IFsrmActionEmail *This,
-        BSTR mailBcc);
+                     IFsrmActionEmail *This,
+                     BSTR mailBcc);
 
     HRESULT (STDMETHODCALLTYPE *get_MailSubject)(
-        IFsrmActionEmail *This,
-        BSTR *mailSubject);
+                     IFsrmActionEmail *This,
+                     BSTR *mailSubject);
 
     HRESULT (STDMETHODCALLTYPE *put_MailSubject)(
-        IFsrmActionEmail *This,
-        BSTR mailSubject);
+                     IFsrmActionEmail *This,
+                     BSTR mailSubject);
 
     HRESULT (STDMETHODCALLTYPE *get_MessageText)(
-        IFsrmActionEmail *This,
-        BSTR *messageText);
+                     IFsrmActionEmail *This,
+                     BSTR *messageText);
 
     HRESULT (STDMETHODCALLTYPE *put_MessageText)(
-        IFsrmActionEmail *This,
-        BSTR messageText);
+                     IFsrmActionEmail *This,
+                     BSTR messageText);
 
     END_INTERFACE
 } IFsrmActionEmailVtbl;
@@ -2963,10 +2963,10 @@ MIDL_INTERFACE("8276702f-2532-4839-89bf-4872609a2ea4")
 IFsrmActionEmail2 : public IFsrmActionEmail
 {
     virtual HRESULT STDMETHODCALLTYPE get_AttachmentFileListSize(
-        LONG *attachmentFileListSize) = 0;
+                     LONG *attachmentFileListSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AttachmentFileListSize(
-        LONG attachmentFileListSize) = 0;
+                     LONG attachmentFileListSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2978,131 +2978,131 @@ typedef struct IFsrmActionEmail2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmActionEmail2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmActionEmail2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmActionEmail2 *This);
+                     IFsrmActionEmail2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmActionEmail2 *This);
+                     IFsrmActionEmail2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmActionEmail2 *This,
-        UINT *pctinfo);
+                     IFsrmActionEmail2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmActionEmail2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmActionEmail2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmActionEmail2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmActionEmail2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmActionEmail2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmActionEmail2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmActionEmail2 *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmActionEmail2 *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionType)(
-        IFsrmActionEmail2 *This,
-        FsrmActionType *actionType);
+                     IFsrmActionEmail2 *This,
+                     FsrmActionType *actionType);
 
     HRESULT (STDMETHODCALLTYPE *get_RunLimitInterval)(
-        IFsrmActionEmail2 *This,
-        LONG *minutes);
+                     IFsrmActionEmail2 *This,
+                     LONG *minutes);
 
     HRESULT (STDMETHODCALLTYPE *put_RunLimitInterval)(
-        IFsrmActionEmail2 *This,
-        LONG minutes);
+                     IFsrmActionEmail2 *This,
+                     LONG minutes);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmActionEmail2 *This);
+                     IFsrmActionEmail2 *This);
 
     /*** IFsrmActionEmail methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MailFrom)(
-        IFsrmActionEmail2 *This,
-        BSTR *mailFrom);
+                     IFsrmActionEmail2 *This,
+                     BSTR *mailFrom);
 
     HRESULT (STDMETHODCALLTYPE *put_MailFrom)(
-        IFsrmActionEmail2 *This,
-        BSTR mailFrom);
+                     IFsrmActionEmail2 *This,
+                     BSTR mailFrom);
 
     HRESULT (STDMETHODCALLTYPE *get_MailReplyTo)(
-        IFsrmActionEmail2 *This,
-        BSTR *mailReplyTo);
+                     IFsrmActionEmail2 *This,
+                     BSTR *mailReplyTo);
 
     HRESULT (STDMETHODCALLTYPE *put_MailReplyTo)(
-        IFsrmActionEmail2 *This,
-        BSTR mailReplyTo);
+                     IFsrmActionEmail2 *This,
+                     BSTR mailReplyTo);
 
     HRESULT (STDMETHODCALLTYPE *get_MailTo)(
-        IFsrmActionEmail2 *This,
-        BSTR *mailTo);
+                     IFsrmActionEmail2 *This,
+                     BSTR *mailTo);
 
     HRESULT (STDMETHODCALLTYPE *put_MailTo)(
-        IFsrmActionEmail2 *This,
-        BSTR mailTo);
+                     IFsrmActionEmail2 *This,
+                     BSTR mailTo);
 
     HRESULT (STDMETHODCALLTYPE *get_MailCc)(
-        IFsrmActionEmail2 *This,
-        BSTR *mailCc);
+                     IFsrmActionEmail2 *This,
+                     BSTR *mailCc);
 
     HRESULT (STDMETHODCALLTYPE *put_MailCc)(
-        IFsrmActionEmail2 *This,
-        BSTR mailCc);
+                     IFsrmActionEmail2 *This,
+                     BSTR mailCc);
 
     HRESULT (STDMETHODCALLTYPE *get_MailBcc)(
-        IFsrmActionEmail2 *This,
-        BSTR *mailBcc);
+                     IFsrmActionEmail2 *This,
+                     BSTR *mailBcc);
 
     HRESULT (STDMETHODCALLTYPE *put_MailBcc)(
-        IFsrmActionEmail2 *This,
-        BSTR mailBcc);
+                     IFsrmActionEmail2 *This,
+                     BSTR mailBcc);
 
     HRESULT (STDMETHODCALLTYPE *get_MailSubject)(
-        IFsrmActionEmail2 *This,
-        BSTR *mailSubject);
+                     IFsrmActionEmail2 *This,
+                     BSTR *mailSubject);
 
     HRESULT (STDMETHODCALLTYPE *put_MailSubject)(
-        IFsrmActionEmail2 *This,
-        BSTR mailSubject);
+                     IFsrmActionEmail2 *This,
+                     BSTR mailSubject);
 
     HRESULT (STDMETHODCALLTYPE *get_MessageText)(
-        IFsrmActionEmail2 *This,
-        BSTR *messageText);
+                     IFsrmActionEmail2 *This,
+                     BSTR *messageText);
 
     HRESULT (STDMETHODCALLTYPE *put_MessageText)(
-        IFsrmActionEmail2 *This,
-        BSTR messageText);
+                     IFsrmActionEmail2 *This,
+                     BSTR messageText);
 
     /*** IFsrmActionEmail2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_AttachmentFileListSize)(
-        IFsrmActionEmail2 *This,
-        LONG *attachmentFileListSize);
+                     IFsrmActionEmail2 *This,
+                     LONG *attachmentFileListSize);
 
     HRESULT (STDMETHODCALLTYPE *put_AttachmentFileListSize)(
-        IFsrmActionEmail2 *This,
-        LONG attachmentFileListSize);
+                     IFsrmActionEmail2 *This,
+                     LONG attachmentFileListSize);
 
     END_INTERFACE
 } IFsrmActionEmail2Vtbl;
@@ -3256,16 +3256,16 @@ MIDL_INTERFACE("1bb617b8-3886-49dc-af82-a6c90fa35dda")
 IFsrmMutableCollection : public IFsrmCollection
 {
     virtual HRESULT STDMETHODCALLTYPE Add(
-        VARIANT item) = 0;
+                     VARIANT item) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        LONG index) = 0;
+                     LONG index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveById(
-        FSRM_OBJECT_ID id) = 0;
+                     FSRM_OBJECT_ID id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IFsrmMutableCollection **collection) = 0;
+                     IFsrmMutableCollection **collection) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3277,93 +3277,93 @@ typedef struct IFsrmMutableCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmMutableCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmMutableCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmMutableCollection *This);
+                     IFsrmMutableCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmMutableCollection *This);
+                     IFsrmMutableCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmMutableCollection *This,
-        UINT *pctinfo);
+                     IFsrmMutableCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmMutableCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmMutableCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmMutableCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmMutableCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmMutableCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmMutableCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IFsrmMutableCollection *This,
-        IUnknown **unknown);
+                     IFsrmMutableCollection *This,
+                     IUnknown **unknown);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IFsrmMutableCollection *This,
-        LONG index,
-        VARIANT *item);
+                     IFsrmMutableCollection *This,
+                     LONG index,
+                     VARIANT *item);
 
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IFsrmMutableCollection *This,
-        LONG *count);
+                     IFsrmMutableCollection *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        IFsrmMutableCollection *This,
-        FsrmCollectionState *state);
+                     IFsrmMutableCollection *This,
+                     FsrmCollectionState *state);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IFsrmMutableCollection *This);
+                     IFsrmMutableCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForCompletion)(
-        IFsrmMutableCollection *This,
-        LONG waitSeconds,
-        VARIANT_BOOL *completed);
+                     IFsrmMutableCollection *This,
+                     LONG waitSeconds,
+                     VARIANT_BOOL *completed);
 
     HRESULT (STDMETHODCALLTYPE *GetById)(
-        IFsrmMutableCollection *This,
-        FSRM_OBJECT_ID id,
-        VARIANT *entry);
+                     IFsrmMutableCollection *This,
+                     FSRM_OBJECT_ID id,
+                     VARIANT *entry);
 
     /*** IFsrmMutableCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IFsrmMutableCollection *This,
-        VARIANT item);
+                     IFsrmMutableCollection *This,
+                     VARIANT item);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IFsrmMutableCollection *This,
-        LONG index);
+                     IFsrmMutableCollection *This,
+                     LONG index);
 
     HRESULT (STDMETHODCALLTYPE *RemoveById)(
-        IFsrmMutableCollection *This,
-        FSRM_OBJECT_ID id);
+                     IFsrmMutableCollection *This,
+                     FSRM_OBJECT_ID id);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IFsrmMutableCollection *This,
-        IFsrmMutableCollection **collection);
+                     IFsrmMutableCollection *This,
+                     IFsrmMutableCollection **collection);
 
     END_INTERFACE
 } IFsrmMutableCollectionVtbl;
@@ -3466,14 +3466,14 @@ static FORCEINLINE HRESULT IFsrmMutableCollection_Clone(IFsrmMutableCollection* 
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

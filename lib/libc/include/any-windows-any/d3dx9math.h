@@ -136,9 +136,9 @@ typedef struct D3DXMATRIX : public D3DMATRIX
     D3DXMATRIX(const FLOAT *pf);
     D3DXMATRIX(const D3DMATRIX& mat);
     D3DXMATRIX(FLOAT f11, FLOAT f12, FLOAT f13, FLOAT f14,
-               FLOAT f21, FLOAT f22, FLOAT f23, FLOAT f24,
-               FLOAT f31, FLOAT f32, FLOAT f33, FLOAT f34,
-               FLOAT f41, FLOAT f42, FLOAT f43, FLOAT f44);
+                                         FLOAT f21, FLOAT f22, FLOAT f23, FLOAT f24,
+                                         FLOAT f31, FLOAT f32, FLOAT f33, FLOAT f34,
+                                         FLOAT f41, FLOAT f42, FLOAT f43, FLOAT f44);
 
     FLOAT& operator () (UINT row, UINT col);
     FLOAT operator () (UINT row, UINT col) const;
@@ -439,24 +439,24 @@ DECLARE_INTERFACE_(ID3DXMatrixStack, IUnknown)
 
 #if !defined(__cplusplus) || defined(CINTERFACE)
 
-#define ID3DXMatrixStack_QueryInterface(p,a,b)            (p)->lpVtbl->QueryInterface(p,a,b)
-#define ID3DXMatrixStack_AddRef(p)                        (p)->lpVtbl->AddRef(p)
-#define ID3DXMatrixStack_Release(p)                       (p)->lpVtbl->Release(p)
-#define ID3DXMatrixStack_Pop(p)                           (p)->lpVtbl->Pop(p)
-#define ID3DXMatrixStack_Push(p)                          (p)->lpVtbl->Push(p)
-#define ID3DXMatrixStack_LoadIdentity(p)                  (p)->lpVtbl->LoadIdentity(p)
-#define ID3DXMatrixStack_LoadMatrix(p,a)                  (p)->lpVtbl->LoadMatrix(p,a)
-#define ID3DXMatrixStack_MultMatrix(p,a)                  (p)->lpVtbl->MultMatrix(p,a)
-#define ID3DXMatrixStack_MultMatrixLocal(p,a)             (p)->lpVtbl->MultMatrixLocal(p,a)
-#define ID3DXMatrixStack_RotateAxis(p,a,b)                (p)->lpVtbl->RotateAxis(p,a,b)
-#define ID3DXMatrixStack_RotateAxisLocal(p,a,b)           (p)->lpVtbl->RotateAxisLocal(p,a,b)
-#define ID3DXMatrixStack_RotateYawPitchRoll(p,a,b,c)      (p)->lpVtbl->RotateYawPitchRoll(p,a,b,c)
+#define ID3DXMatrixStack_QueryInterface(p,a,b)                                      (p)->lpVtbl->QueryInterface(p,a,b)
+#define ID3DXMatrixStack_AddRef(p)                                                                            (p)->lpVtbl->AddRef(p)
+#define ID3DXMatrixStack_Release(p)                                                              (p)->lpVtbl->Release(p)
+#define ID3DXMatrixStack_Pop(p)                                                                               (p)->lpVtbl->Pop(p)
+#define ID3DXMatrixStack_Push(p)                                                                              (p)->lpVtbl->Push(p)
+#define ID3DXMatrixStack_LoadIdentity(p)                                                         (p)->lpVtbl->LoadIdentity(p)
+#define ID3DXMatrixStack_LoadMatrix(p,a)                                                         (p)->lpVtbl->LoadMatrix(p,a)
+#define ID3DXMatrixStack_MultMatrix(p,a)                                                         (p)->lpVtbl->MultMatrix(p,a)
+#define ID3DXMatrixStack_MultMatrixLocal(p,a)                                       (p)->lpVtbl->MultMatrixLocal(p,a)
+#define ID3DXMatrixStack_RotateAxis(p,a,b)                                          (p)->lpVtbl->RotateAxis(p,a,b)
+#define ID3DXMatrixStack_RotateAxisLocal(p,a,b)                        (p)->lpVtbl->RotateAxisLocal(p,a,b)
+#define ID3DXMatrixStack_RotateYawPitchRoll(p,a,b,c)                   (p)->lpVtbl->RotateYawPitchRoll(p,a,b,c)
 #define ID3DXMatrixStack_RotateYawPitchRollLocal(p,a,b,c) (p)->lpVtbl->RotateYawPitchRollLocal(p,a,b,c)
-#define ID3DXMatrixStack_Scale(p,a,b,c)                   (p)->lpVtbl->Scale(p,a,b,c)
-#define ID3DXMatrixStack_ScaleLocal(p,a,b,c)              (p)->lpVtbl->ScaleLocal(p,a,b,c)
-#define ID3DXMatrixStack_Translate(p,a,b,c)               (p)->lpVtbl->Translate(p,a,b,c)
-#define ID3DXMatrixStack_TranslateLocal(p,a,b,c)          (p)->lpVtbl->TranslateLocal(p,a,b,c)
-#define ID3DXMatrixStack_GetTop(p)                        (p)->lpVtbl->GetTop(p)
+#define ID3DXMatrixStack_Scale(p,a,b,c)                                                          (p)->lpVtbl->Scale(p,a,b,c)
+#define ID3DXMatrixStack_ScaleLocal(p,a,b,c)                                        (p)->lpVtbl->ScaleLocal(p,a,b,c)
+#define ID3DXMatrixStack_Translate(p,a,b,c)                                         (p)->lpVtbl->Translate(p,a,b,c)
+#define ID3DXMatrixStack_TranslateLocal(p,a,b,c)                       (p)->lpVtbl->TranslateLocal(p,a,b,c)
+#define ID3DXMatrixStack_GetTop(p)                                                                            (p)->lpVtbl->GetTop(p)
 
 #endif
 

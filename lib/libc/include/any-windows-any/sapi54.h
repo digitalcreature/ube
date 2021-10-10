@@ -1706,32 +1706,32 @@ MIDL_INTERFACE("5eff4aef-8487-11d2-961c-00c04f8ee628")
 ISpNotifySource : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetNotifySink(
-        ISpNotifySink *pNotifySink) = 0;
+                     ISpNotifySink *pNotifySink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNotifyWindowMessage(
-        HWND hWnd,
-        UINT Msg,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     HWND hWnd,
+                     UINT Msg,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNotifyCallbackFunction(
-        SPNOTIFYCALLBACK *pfnCallback,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     SPNOTIFYCALLBACK *pfnCallback,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNotifyCallbackInterface(
-        ISpNotifyCallback *pSpCallback,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     ISpNotifyCallback *pSpCallback,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNotifyWin32Event(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitForNotifyEvent(
-        DWORD dwMilliseconds) = 0;
+                     DWORD dwMilliseconds) = 0;
 
     virtual HANDLE STDMETHODCALLTYPE GetNotifyEventHandle(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1743,49 +1743,49 @@ typedef struct ISpNotifySourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpNotifySource *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpNotifySource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpNotifySource *This);
+                     ISpNotifySource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpNotifySource *This);
+                     ISpNotifySource *This);
 
     /*** ISpNotifySource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNotifySink)(
-        ISpNotifySource *This,
-        ISpNotifySink *pNotifySink);
+                     ISpNotifySource *This,
+                     ISpNotifySink *pNotifySink);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWindowMessage)(
-        ISpNotifySource *This,
-        HWND hWnd,
-        UINT Msg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpNotifySource *This,
+                     HWND hWnd,
+                     UINT Msg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackFunction)(
-        ISpNotifySource *This,
-        SPNOTIFYCALLBACK *pfnCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpNotifySource *This,
+                     SPNOTIFYCALLBACK *pfnCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackInterface)(
-        ISpNotifySource *This,
-        ISpNotifyCallback *pSpCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpNotifySource *This,
+                     ISpNotifyCallback *pSpCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWin32Event)(
-        ISpNotifySource *This);
+                     ISpNotifySource *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForNotifyEvent)(
-        ISpNotifySource *This,
-        DWORD dwMilliseconds);
+                     ISpNotifySource *This,
+                     DWORD dwMilliseconds);
 
     HANDLE (STDMETHODCALLTYPE *GetNotifyEventHandle)(
-        ISpNotifySource *This);
+                     ISpNotifySource *This);
 
     END_INTERFACE
 } ISpNotifySourceVtbl;
@@ -1861,7 +1861,7 @@ MIDL_INTERFACE("259684dc-37c3-11d2-9603-00c04f8ee628")
 ISpNotifySink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Notify(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1873,19 +1873,19 @@ typedef struct ISpNotifySinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpNotifySink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpNotifySink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpNotifySink *This);
+                     ISpNotifySink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpNotifySink *This);
+                     ISpNotifySink *This);
 
     /*** ISpNotifySink methods ***/
     HRESULT (STDMETHODCALLTYPE *Notify)(
-        ISpNotifySink *This);
+                     ISpNotifySink *This);
 
     END_INTERFACE
 } ISpNotifySinkVtbl;
@@ -1937,30 +1937,30 @@ MIDL_INTERFACE("aca16614-5d3d-11d2-960e-00c04f8ee628")
 ISpNotifyTranslator : public ISpNotifySink
 {
     virtual HRESULT STDMETHODCALLTYPE InitWindowMessage(
-        HWND hWnd,
-        UINT Msg,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     HWND hWnd,
+                     UINT Msg,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitCallback(
-        SPNOTIFYCALLBACK *pfnCallback,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     SPNOTIFYCALLBACK *pfnCallback,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitSpNotifyCallback(
-        ISpNotifyCallback *pSpCallback,
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     ISpNotifyCallback *pSpCallback,
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitWin32Event(
-        HANDLE hEvent,
-        WINBOOL fCloseHandleOnRelease) = 0;
+                     HANDLE hEvent,
+                     WINBOOL fCloseHandleOnRelease) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Wait(
-        DWORD dwMilliseconds) = 0;
+                     DWORD dwMilliseconds) = 0;
 
     virtual HANDLE STDMETHODCALLTYPE GetEventHandle(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1972,51 +1972,51 @@ typedef struct ISpNotifyTranslatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpNotifyTranslator *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpNotifyTranslator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpNotifyTranslator *This);
+                     ISpNotifyTranslator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpNotifyTranslator *This);
+                     ISpNotifyTranslator *This);
 
     /*** ISpNotifySink methods ***/
     HRESULT (STDMETHODCALLTYPE *Notify)(
-        ISpNotifyTranslator *This);
+                     ISpNotifyTranslator *This);
 
     /*** ISpNotifyTranslator methods ***/
     HRESULT (STDMETHODCALLTYPE *InitWindowMessage)(
-        ISpNotifyTranslator *This,
-        HWND hWnd,
-        UINT Msg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpNotifyTranslator *This,
+                     HWND hWnd,
+                     UINT Msg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *InitCallback)(
-        ISpNotifyTranslator *This,
-        SPNOTIFYCALLBACK *pfnCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpNotifyTranslator *This,
+                     SPNOTIFYCALLBACK *pfnCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *InitSpNotifyCallback)(
-        ISpNotifyTranslator *This,
-        ISpNotifyCallback *pSpCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpNotifyTranslator *This,
+                     ISpNotifyCallback *pSpCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *InitWin32Event)(
-        ISpNotifyTranslator *This,
-        HANDLE hEvent,
-        WINBOOL fCloseHandleOnRelease);
+                     ISpNotifyTranslator *This,
+                     HANDLE hEvent,
+                     WINBOOL fCloseHandleOnRelease);
 
     HRESULT (STDMETHODCALLTYPE *Wait)(
-        ISpNotifyTranslator *This,
-        DWORD dwMilliseconds);
+                     ISpNotifyTranslator *This,
+                     DWORD dwMilliseconds);
 
     HANDLE (STDMETHODCALLTYPE *GetEventHandle)(
-        ISpNotifyTranslator *This);
+                     ISpNotifyTranslator *This);
 
     END_INTERFACE
 } ISpNotifyTranslatorVtbl;
@@ -2094,52 +2094,52 @@ MIDL_INTERFACE("14056581-e16c-11d2-bb90-00c04f8ee6c0")
 ISpDataKey : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetData(
-        LPCWSTR pszValueName,
-        ULONG cbData,
-        const BYTE *pData) = 0;
+                     LPCWSTR pszValueName,
+                     ULONG cbData,
+                     const BYTE *pData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetData(
-        LPCWSTR pszValueName,
-        ULONG *pcbData,
-        BYTE *pData) = 0;
+                     LPCWSTR pszValueName,
+                     ULONG *pcbData,
+                     BYTE *pData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStringValue(
-        LPCWSTR pszValueName,
-        LPCWSTR pszValue) = 0;
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringValue(
-        LPCWSTR pszValueName,
-        LPWSTR *ppszValue) = 0;
+                     LPCWSTR pszValueName,
+                     LPWSTR *ppszValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDWORD(
-        LPCWSTR pszValueName,
-        DWORD dwValue) = 0;
+                     LPCWSTR pszValueName,
+                     DWORD dwValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDWORD(
-        LPCWSTR pszValueName,
-        DWORD *pdwValue) = 0;
+                     LPCWSTR pszValueName,
+                     DWORD *pdwValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenKey(
-        LPCWSTR pszSubKeyName,
-        ISpDataKey **ppSubKey) = 0;
+                     LPCWSTR pszSubKeyName,
+                     ISpDataKey **ppSubKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateKey(
-        LPCWSTR pszSubKey,
-        ISpDataKey **ppSubKey) = 0;
+                     LPCWSTR pszSubKey,
+                     ISpDataKey **ppSubKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteKey(
-        LPCWSTR pszSubKey) = 0;
+                     LPCWSTR pszSubKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteValue(
-        LPCWSTR pszValueName) = 0;
+                     LPCWSTR pszValueName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumKeys(
-        ULONG Index,
-        LPWSTR *ppszSubKeyName) = 0;
+                     ULONG Index,
+                     LPWSTR *ppszSubKeyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumValues(
-        ULONG Index,
-        LPWSTR *ppszValueName) = 0;
+                     ULONG Index,
+                     LPWSTR *ppszValueName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2151,76 +2151,76 @@ typedef struct ISpDataKeyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpDataKey *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpDataKey *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpDataKey *This);
+                     ISpDataKey *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpDataKey *This);
+                     ISpDataKey *This);
 
     /*** ISpDataKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        ISpDataKey *This,
-        LPCWSTR pszValueName,
-        ULONG cbData,
-        const BYTE *pData);
+                     ISpDataKey *This,
+                     LPCWSTR pszValueName,
+                     ULONG cbData,
+                     const BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ISpDataKey *This,
-        LPCWSTR pszValueName,
-        ULONG *pcbData,
-        BYTE *pData);
+                     ISpDataKey *This,
+                     LPCWSTR pszValueName,
+                     ULONG *pcbData,
+                     BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetStringValue)(
-        ISpDataKey *This,
-        LPCWSTR pszValueName,
-        LPCWSTR pszValue);
+                     ISpDataKey *This,
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringValue)(
-        ISpDataKey *This,
-        LPCWSTR pszValueName,
-        LPWSTR *ppszValue);
+                     ISpDataKey *This,
+                     LPCWSTR pszValueName,
+                     LPWSTR *ppszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDWORD)(
-        ISpDataKey *This,
-        LPCWSTR pszValueName,
-        DWORD dwValue);
+                     ISpDataKey *This,
+                     LPCWSTR pszValueName,
+                     DWORD dwValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDWORD)(
-        ISpDataKey *This,
-        LPCWSTR pszValueName,
-        DWORD *pdwValue);
+                     ISpDataKey *This,
+                     LPCWSTR pszValueName,
+                     DWORD *pdwValue);
 
     HRESULT (STDMETHODCALLTYPE *OpenKey)(
-        ISpDataKey *This,
-        LPCWSTR pszSubKeyName,
-        ISpDataKey **ppSubKey);
+                     ISpDataKey *This,
+                     LPCWSTR pszSubKeyName,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *CreateKey)(
-        ISpDataKey *This,
-        LPCWSTR pszSubKey,
-        ISpDataKey **ppSubKey);
+                     ISpDataKey *This,
+                     LPCWSTR pszSubKey,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteKey)(
-        ISpDataKey *This,
-        LPCWSTR pszSubKey);
+                     ISpDataKey *This,
+                     LPCWSTR pszSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteValue)(
-        ISpDataKey *This,
-        LPCWSTR pszValueName);
+                     ISpDataKey *This,
+                     LPCWSTR pszValueName);
 
     HRESULT (STDMETHODCALLTYPE *EnumKeys)(
-        ISpDataKey *This,
-        ULONG Index,
-        LPWSTR *ppszSubKeyName);
+                     ISpDataKey *This,
+                     ULONG Index,
+                     LPWSTR *ppszSubKeyName);
 
     HRESULT (STDMETHODCALLTYPE *EnumValues)(
-        ISpDataKey *This,
-        ULONG Index,
-        LPWSTR *ppszValueName);
+                     ISpDataKey *This,
+                     ULONG Index,
+                     LPWSTR *ppszValueName);
 
     END_INTERFACE
 } ISpDataKeyVtbl;
@@ -2316,10 +2316,10 @@ MIDL_INTERFACE("5b559f40-e952-11d2-bb91-00c04f8ee6c0")
 ISpObjectWithToken : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetObjectToken(
-        ISpObjectToken *pToken) = 0;
+                     ISpObjectToken *pToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObjectToken(
-        ISpObjectToken **ppToken) = 0;
+                     ISpObjectToken **ppToken) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2331,24 +2331,24 @@ typedef struct ISpObjectWithTokenVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpObjectWithToken *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpObjectWithToken *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpObjectWithToken *This);
+                     ISpObjectWithToken *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpObjectWithToken *This);
+                     ISpObjectWithToken *This);
 
     /*** ISpObjectWithToken methods ***/
     HRESULT (STDMETHODCALLTYPE *SetObjectToken)(
-        ISpObjectWithToken *This,
-        ISpObjectToken *pToken);
+                     ISpObjectWithToken *This,
+                     ISpObjectToken *pToken);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectToken)(
-        ISpObjectWithToken *This,
-        ISpObjectToken **ppToken);
+                     ISpObjectWithToken *This,
+                     ISpObjectToken **ppToken);
 
     END_INTERFACE
 } ISpObjectWithTokenVtbl;
@@ -2404,25 +2404,25 @@ MIDL_INTERFACE("06b64f9e-7fda-11d2-b4f2-00c04f797396")
 IEnumSpObjectTokens : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        ISpObjectToken **pelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     ISpObjectToken **pelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumSpObjectTokens **ppEnum) = 0;
+                     IEnumSpObjectTokens **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        ULONG Index,
-        ISpObjectToken **ppToken) = 0;
+                     ULONG Index,
+                     ISpObjectToken **ppToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        ULONG *pCount) = 0;
+                     ULONG *pCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2434,42 +2434,42 @@ typedef struct IEnumSpObjectTokensVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumSpObjectTokens *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumSpObjectTokens *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumSpObjectTokens *This);
+                     IEnumSpObjectTokens *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumSpObjectTokens *This);
+                     IEnumSpObjectTokens *This);
 
     /*** IEnumSpObjectTokens methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumSpObjectTokens *This,
-        ULONG celt,
-        ISpObjectToken **pelt,
-        ULONG *pceltFetched);
+                     IEnumSpObjectTokens *This,
+                     ULONG celt,
+                     ISpObjectToken **pelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumSpObjectTokens *This,
-        ULONG celt);
+                     IEnumSpObjectTokens *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumSpObjectTokens *This);
+                     IEnumSpObjectTokens *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumSpObjectTokens *This,
-        IEnumSpObjectTokens **ppEnum);
+                     IEnumSpObjectTokens *This,
+                     IEnumSpObjectTokens **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IEnumSpObjectTokens *This,
-        ULONG Index,
-        ISpObjectToken **ppToken);
+                     IEnumSpObjectTokens *This,
+                     ULONG Index,
+                     ISpObjectToken **ppToken);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IEnumSpObjectTokens *This,
-        ULONG *pCount);
+                     IEnumSpObjectTokens *This,
+                     ULONG *pCount);
 
     END_INTERFACE
 } IEnumSpObjectTokensVtbl;
@@ -2541,8 +2541,8 @@ MIDL_INTERFACE("92a66e2b-c830-4149-83df-6fc2ba1e7a5b")
 ISpRegDataKey : public ISpDataKey
 {
     virtual HRESULT STDMETHODCALLTYPE SetKey(
-        HKEY hkey,
-        WINBOOL fReadOnly) = 0;
+                     HKEY hkey,
+                     WINBOOL fReadOnly) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2554,82 +2554,82 @@ typedef struct ISpRegDataKeyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRegDataKey *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRegDataKey *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRegDataKey *This);
+                     ISpRegDataKey *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRegDataKey *This);
+                     ISpRegDataKey *This);
 
     /*** ISpDataKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        ISpRegDataKey *This,
-        LPCWSTR pszValueName,
-        ULONG cbData,
-        const BYTE *pData);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszValueName,
+                     ULONG cbData,
+                     const BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ISpRegDataKey *This,
-        LPCWSTR pszValueName,
-        ULONG *pcbData,
-        BYTE *pData);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszValueName,
+                     ULONG *pcbData,
+                     BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetStringValue)(
-        ISpRegDataKey *This,
-        LPCWSTR pszValueName,
-        LPCWSTR pszValue);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringValue)(
-        ISpRegDataKey *This,
-        LPCWSTR pszValueName,
-        LPWSTR *ppszValue);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszValueName,
+                     LPWSTR *ppszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDWORD)(
-        ISpRegDataKey *This,
-        LPCWSTR pszValueName,
-        DWORD dwValue);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszValueName,
+                     DWORD dwValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDWORD)(
-        ISpRegDataKey *This,
-        LPCWSTR pszValueName,
-        DWORD *pdwValue);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszValueName,
+                     DWORD *pdwValue);
 
     HRESULT (STDMETHODCALLTYPE *OpenKey)(
-        ISpRegDataKey *This,
-        LPCWSTR pszSubKeyName,
-        ISpDataKey **ppSubKey);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszSubKeyName,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *CreateKey)(
-        ISpRegDataKey *This,
-        LPCWSTR pszSubKey,
-        ISpDataKey **ppSubKey);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszSubKey,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteKey)(
-        ISpRegDataKey *This,
-        LPCWSTR pszSubKey);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteValue)(
-        ISpRegDataKey *This,
-        LPCWSTR pszValueName);
+                     ISpRegDataKey *This,
+                     LPCWSTR pszValueName);
 
     HRESULT (STDMETHODCALLTYPE *EnumKeys)(
-        ISpRegDataKey *This,
-        ULONG Index,
-        LPWSTR *ppszSubKeyName);
+                     ISpRegDataKey *This,
+                     ULONG Index,
+                     LPWSTR *ppszSubKeyName);
 
     HRESULT (STDMETHODCALLTYPE *EnumValues)(
-        ISpRegDataKey *This,
-        ULONG Index,
-        LPWSTR *ppszValueName);
+                     ISpRegDataKey *This,
+                     ULONG Index,
+                     LPWSTR *ppszValueName);
 
     /*** ISpRegDataKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetKey)(
-        ISpRegDataKey *This,
-        HKEY hkey,
-        WINBOOL fReadOnly);
+                     ISpRegDataKey *This,
+                     HKEY hkey,
+                     WINBOOL fReadOnly);
 
     END_INTERFACE
 } ISpRegDataKeyVtbl;
@@ -2731,26 +2731,26 @@ MIDL_INTERFACE("2d3d3845-39af-4850-bbf9-40b49780011d")
 ISpObjectTokenCategory : public ISpDataKey
 {
     virtual HRESULT STDMETHODCALLTYPE SetId(
-        LPCWSTR pszCategoryId,
-        WINBOOL fCreateIfNotExist) = 0;
+                     LPCWSTR pszCategoryId,
+                     WINBOOL fCreateIfNotExist) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetId(
-        LPWSTR *ppszCoMemCategoryId) = 0;
+                     LPWSTR *ppszCoMemCategoryId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataKey(
-        SPDATAKEYLOCATION spdkl,
-        ISpDataKey **ppDataKey) = 0;
+                     SPDATAKEYLOCATION spdkl,
+                     ISpDataKey **ppDataKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumTokens(
-        LPCWSTR pzsReqAttribs,
-        LPCWSTR pszOptAttribs,
-        IEnumSpObjectTokens **ppEnum) = 0;
+                     LPCWSTR pzsReqAttribs,
+                     LPCWSTR pszOptAttribs,
+                     IEnumSpObjectTokens **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultTokenId(
-        LPCWSTR pszTokenId) = 0;
+                     LPCWSTR pszTokenId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultTokenId(
-        LPWSTR *ppszCoMemTokenId) = 0;
+                     LPWSTR *ppszCoMemTokenId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2762,105 +2762,105 @@ typedef struct ISpObjectTokenCategoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpObjectTokenCategory *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpObjectTokenCategory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpObjectTokenCategory *This);
+                     ISpObjectTokenCategory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpObjectTokenCategory *This);
+                     ISpObjectTokenCategory *This);
 
     /*** ISpDataKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszValueName,
-        ULONG cbData,
-        const BYTE *pData);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszValueName,
+                     ULONG cbData,
+                     const BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszValueName,
-        ULONG *pcbData,
-        BYTE *pData);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszValueName,
+                     ULONG *pcbData,
+                     BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetStringValue)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszValueName,
-        LPCWSTR pszValue);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringValue)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszValueName,
-        LPWSTR *ppszValue);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszValueName,
+                     LPWSTR *ppszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDWORD)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszValueName,
-        DWORD dwValue);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszValueName,
+                     DWORD dwValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDWORD)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszValueName,
-        DWORD *pdwValue);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszValueName,
+                     DWORD *pdwValue);
 
     HRESULT (STDMETHODCALLTYPE *OpenKey)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszSubKeyName,
-        ISpDataKey **ppSubKey);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszSubKeyName,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *CreateKey)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszSubKey,
-        ISpDataKey **ppSubKey);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszSubKey,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteKey)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszSubKey);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteValue)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszValueName);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszValueName);
 
     HRESULT (STDMETHODCALLTYPE *EnumKeys)(
-        ISpObjectTokenCategory *This,
-        ULONG Index,
-        LPWSTR *ppszSubKeyName);
+                     ISpObjectTokenCategory *This,
+                     ULONG Index,
+                     LPWSTR *ppszSubKeyName);
 
     HRESULT (STDMETHODCALLTYPE *EnumValues)(
-        ISpObjectTokenCategory *This,
-        ULONG Index,
-        LPWSTR *ppszValueName);
+                     ISpObjectTokenCategory *This,
+                     ULONG Index,
+                     LPWSTR *ppszValueName);
 
     /*** ISpObjectTokenCategory methods ***/
     HRESULT (STDMETHODCALLTYPE *SetId)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszCategoryId,
-        WINBOOL fCreateIfNotExist);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszCategoryId,
+                     WINBOOL fCreateIfNotExist);
 
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        ISpObjectTokenCategory *This,
-        LPWSTR *ppszCoMemCategoryId);
+                     ISpObjectTokenCategory *This,
+                     LPWSTR *ppszCoMemCategoryId);
 
     HRESULT (STDMETHODCALLTYPE *GetDataKey)(
-        ISpObjectTokenCategory *This,
-        SPDATAKEYLOCATION spdkl,
-        ISpDataKey **ppDataKey);
+                     ISpObjectTokenCategory *This,
+                     SPDATAKEYLOCATION spdkl,
+                     ISpDataKey **ppDataKey);
 
     HRESULT (STDMETHODCALLTYPE *EnumTokens)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pzsReqAttribs,
-        LPCWSTR pszOptAttribs,
-        IEnumSpObjectTokens **ppEnum);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pzsReqAttribs,
+                     LPCWSTR pszOptAttribs,
+                     IEnumSpObjectTokens **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultTokenId)(
-        ISpObjectTokenCategory *This,
-        LPCWSTR pszTokenId);
+                     ISpObjectTokenCategory *This,
+                     LPCWSTR pszTokenId);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultTokenId)(
-        ISpObjectTokenCategory *This,
-        LPWSTR *ppszCoMemTokenId);
+                     ISpObjectTokenCategory *This,
+                     LPWSTR *ppszCoMemTokenId);
 
     END_INTERFACE
 } ISpObjectTokenCategoryVtbl;
@@ -2982,55 +2982,55 @@ MIDL_INTERFACE("14056589-e16c-11d2-bb90-00c04f8ee6c0")
 ISpObjectToken : public ISpDataKey
 {
     virtual HRESULT STDMETHODCALLTYPE SetId(
-        LPCWSTR pszCategoryId,
-        LPCWSTR pszTokenId,
-        WINBOOL fCreateIfNotExist) = 0;
+                     LPCWSTR pszCategoryId,
+                     LPCWSTR pszTokenId,
+                     WINBOOL fCreateIfNotExist) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetId(
-        LPWSTR *ppszCoMemTokenId) = 0;
+                     LPWSTR *ppszCoMemTokenId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategory(
-        ISpObjectTokenCategory **ppTokenCategory) = 0;
+                     ISpObjectTokenCategory **ppTokenCategory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        void **ppvObject) = 0;
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     void **ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStorageFileName(
-        REFCLSID clsidCaller,
-        LPCWSTR pszValueName,
-        LPCWSTR pszFileNameSpecifier,
-        ULONG nFolder,
-        LPWSTR *ppszFilePath) = 0;
+                     REFCLSID clsidCaller,
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszFileNameSpecifier,
+                     ULONG nFolder,
+                     LPWSTR *ppszFilePath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStorageFileName(
-        REFCLSID clsidCaller,
-        LPCWSTR pszKeyName,
-        WINBOOL fDeleteFile) = 0;
+                     REFCLSID clsidCaller,
+                     LPCWSTR pszKeyName,
+                     WINBOOL fDeleteFile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        const CLSID *pclsidCaller) = 0;
+                     const CLSID *pclsidCaller) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUISupported(
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        IUnknown *punkObject,
-        WINBOOL *pfSupported) = 0;
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     IUnknown *punkObject,
+                     WINBOOL *pfSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisplayUI(
-        HWND hwndParent,
-        LPCWSTR pszTitle,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        IUnknown *punkObject) = 0;
+                     HWND hwndParent,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     IUnknown *punkObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchesAttributes(
-        LPCWSTR pszAttributes,
-        WINBOOL *pfMatches) = 0;
+                     LPCWSTR pszAttributes,
+                     WINBOOL *pfMatches) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3042,138 +3042,138 @@ typedef struct ISpObjectTokenVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpObjectToken *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpObjectToken *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpObjectToken *This);
+                     ISpObjectToken *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpObjectToken *This);
+                     ISpObjectToken *This);
 
     /*** ISpDataKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        ISpObjectToken *This,
-        LPCWSTR pszValueName,
-        ULONG cbData,
-        const BYTE *pData);
+                     ISpObjectToken *This,
+                     LPCWSTR pszValueName,
+                     ULONG cbData,
+                     const BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ISpObjectToken *This,
-        LPCWSTR pszValueName,
-        ULONG *pcbData,
-        BYTE *pData);
+                     ISpObjectToken *This,
+                     LPCWSTR pszValueName,
+                     ULONG *pcbData,
+                     BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetStringValue)(
-        ISpObjectToken *This,
-        LPCWSTR pszValueName,
-        LPCWSTR pszValue);
+                     ISpObjectToken *This,
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringValue)(
-        ISpObjectToken *This,
-        LPCWSTR pszValueName,
-        LPWSTR *ppszValue);
+                     ISpObjectToken *This,
+                     LPCWSTR pszValueName,
+                     LPWSTR *ppszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDWORD)(
-        ISpObjectToken *This,
-        LPCWSTR pszValueName,
-        DWORD dwValue);
+                     ISpObjectToken *This,
+                     LPCWSTR pszValueName,
+                     DWORD dwValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDWORD)(
-        ISpObjectToken *This,
-        LPCWSTR pszValueName,
-        DWORD *pdwValue);
+                     ISpObjectToken *This,
+                     LPCWSTR pszValueName,
+                     DWORD *pdwValue);
 
     HRESULT (STDMETHODCALLTYPE *OpenKey)(
-        ISpObjectToken *This,
-        LPCWSTR pszSubKeyName,
-        ISpDataKey **ppSubKey);
+                     ISpObjectToken *This,
+                     LPCWSTR pszSubKeyName,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *CreateKey)(
-        ISpObjectToken *This,
-        LPCWSTR pszSubKey,
-        ISpDataKey **ppSubKey);
+                     ISpObjectToken *This,
+                     LPCWSTR pszSubKey,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteKey)(
-        ISpObjectToken *This,
-        LPCWSTR pszSubKey);
+                     ISpObjectToken *This,
+                     LPCWSTR pszSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteValue)(
-        ISpObjectToken *This,
-        LPCWSTR pszValueName);
+                     ISpObjectToken *This,
+                     LPCWSTR pszValueName);
 
     HRESULT (STDMETHODCALLTYPE *EnumKeys)(
-        ISpObjectToken *This,
-        ULONG Index,
-        LPWSTR *ppszSubKeyName);
+                     ISpObjectToken *This,
+                     ULONG Index,
+                     LPWSTR *ppszSubKeyName);
 
     HRESULT (STDMETHODCALLTYPE *EnumValues)(
-        ISpObjectToken *This,
-        ULONG Index,
-        LPWSTR *ppszValueName);
+                     ISpObjectToken *This,
+                     ULONG Index,
+                     LPWSTR *ppszValueName);
 
     /*** ISpObjectToken methods ***/
     HRESULT (STDMETHODCALLTYPE *SetId)(
-        ISpObjectToken *This,
-        LPCWSTR pszCategoryId,
-        LPCWSTR pszTokenId,
-        WINBOOL fCreateIfNotExist);
+                     ISpObjectToken *This,
+                     LPCWSTR pszCategoryId,
+                     LPCWSTR pszTokenId,
+                     WINBOOL fCreateIfNotExist);
 
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        ISpObjectToken *This,
-        LPWSTR *ppszCoMemTokenId);
+                     ISpObjectToken *This,
+                     LPWSTR *ppszCoMemTokenId);
 
     HRESULT (STDMETHODCALLTYPE *GetCategory)(
-        ISpObjectToken *This,
-        ISpObjectTokenCategory **ppTokenCategory);
+                     ISpObjectToken *This,
+                     ISpObjectTokenCategory **ppTokenCategory);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        ISpObjectToken *This,
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        void **ppvObject);
+                     ISpObjectToken *This,
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *GetStorageFileName)(
-        ISpObjectToken *This,
-        REFCLSID clsidCaller,
-        LPCWSTR pszValueName,
-        LPCWSTR pszFileNameSpecifier,
-        ULONG nFolder,
-        LPWSTR *ppszFilePath);
+                     ISpObjectToken *This,
+                     REFCLSID clsidCaller,
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszFileNameSpecifier,
+                     ULONG nFolder,
+                     LPWSTR *ppszFilePath);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStorageFileName)(
-        ISpObjectToken *This,
-        REFCLSID clsidCaller,
-        LPCWSTR pszKeyName,
-        WINBOOL fDeleteFile);
+                     ISpObjectToken *This,
+                     REFCLSID clsidCaller,
+                     LPCWSTR pszKeyName,
+                     WINBOOL fDeleteFile);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISpObjectToken *This,
-        const CLSID *pclsidCaller);
+                     ISpObjectToken *This,
+                     const CLSID *pclsidCaller);
 
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        ISpObjectToken *This,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        IUnknown *punkObject,
-        WINBOOL *pfSupported);
+                     ISpObjectToken *This,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     IUnknown *punkObject,
+                     WINBOOL *pfSupported);
 
     HRESULT (STDMETHODCALLTYPE *DisplayUI)(
-        ISpObjectToken *This,
-        HWND hwndParent,
-        LPCWSTR pszTitle,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        IUnknown *punkObject);
+                     ISpObjectToken *This,
+                     HWND hwndParent,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     IUnknown *punkObject);
 
     HRESULT (STDMETHODCALLTYPE *MatchesAttributes)(
-        ISpObjectToken *This,
-        LPCWSTR pszAttributes,
-        WINBOOL *pfMatches);
+                     ISpObjectToken *This,
+                     LPCWSTR pszAttributes,
+                     WINBOOL *pfMatches);
 
     END_INTERFACE
 } ISpObjectTokenVtbl;
@@ -3311,9 +3311,9 @@ MIDL_INTERFACE("b8aab0cf-346f-49d8-9499-c8b03f161d51")
 ISpObjectTokenInit : public ISpObjectToken
 {
     virtual HRESULT STDMETHODCALLTYPE InitFromDataKey(
-        LPCWSTR pszCategoryId,
-        LPCWSTR pszTokenId,
-        ISpDataKey *pDataKey) = 0;
+                     LPCWSTR pszCategoryId,
+                     LPCWSTR pszTokenId,
+                     ISpDataKey *pDataKey) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3325,145 +3325,145 @@ typedef struct ISpObjectTokenInitVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpObjectTokenInit *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpObjectTokenInit *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpObjectTokenInit *This);
+                     ISpObjectTokenInit *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpObjectTokenInit *This);
+                     ISpObjectTokenInit *This);
 
     /*** ISpDataKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszValueName,
-        ULONG cbData,
-        const BYTE *pData);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszValueName,
+                     ULONG cbData,
+                     const BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszValueName,
-        ULONG *pcbData,
-        BYTE *pData);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszValueName,
+                     ULONG *pcbData,
+                     BYTE *pData);
 
     HRESULT (STDMETHODCALLTYPE *SetStringValue)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszValueName,
-        LPCWSTR pszValue);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringValue)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszValueName,
-        LPWSTR *ppszValue);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszValueName,
+                     LPWSTR *ppszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDWORD)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszValueName,
-        DWORD dwValue);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszValueName,
+                     DWORD dwValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDWORD)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszValueName,
-        DWORD *pdwValue);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszValueName,
+                     DWORD *pdwValue);
 
     HRESULT (STDMETHODCALLTYPE *OpenKey)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszSubKeyName,
-        ISpDataKey **ppSubKey);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszSubKeyName,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *CreateKey)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszSubKey,
-        ISpDataKey **ppSubKey);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszSubKey,
+                     ISpDataKey **ppSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteKey)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszSubKey);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszSubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteValue)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszValueName);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszValueName);
 
     HRESULT (STDMETHODCALLTYPE *EnumKeys)(
-        ISpObjectTokenInit *This,
-        ULONG Index,
-        LPWSTR *ppszSubKeyName);
+                     ISpObjectTokenInit *This,
+                     ULONG Index,
+                     LPWSTR *ppszSubKeyName);
 
     HRESULT (STDMETHODCALLTYPE *EnumValues)(
-        ISpObjectTokenInit *This,
-        ULONG Index,
-        LPWSTR *ppszValueName);
+                     ISpObjectTokenInit *This,
+                     ULONG Index,
+                     LPWSTR *ppszValueName);
 
     /*** ISpObjectToken methods ***/
     HRESULT (STDMETHODCALLTYPE *SetId)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszCategoryId,
-        LPCWSTR pszTokenId,
-        WINBOOL fCreateIfNotExist);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszCategoryId,
+                     LPCWSTR pszTokenId,
+                     WINBOOL fCreateIfNotExist);
 
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        ISpObjectTokenInit *This,
-        LPWSTR *ppszCoMemTokenId);
+                     ISpObjectTokenInit *This,
+                     LPWSTR *ppszCoMemTokenId);
 
     HRESULT (STDMETHODCALLTYPE *GetCategory)(
-        ISpObjectTokenInit *This,
-        ISpObjectTokenCategory **ppTokenCategory);
+                     ISpObjectTokenInit *This,
+                     ISpObjectTokenCategory **ppTokenCategory);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        ISpObjectTokenInit *This,
-        IUnknown *pUnkOuter,
-        DWORD dwClsContext,
-        REFIID riid,
-        void **ppvObject);
+                     ISpObjectTokenInit *This,
+                     IUnknown *pUnkOuter,
+                     DWORD dwClsContext,
+                     REFIID riid,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *GetStorageFileName)(
-        ISpObjectTokenInit *This,
-        REFCLSID clsidCaller,
-        LPCWSTR pszValueName,
-        LPCWSTR pszFileNameSpecifier,
-        ULONG nFolder,
-        LPWSTR *ppszFilePath);
+                     ISpObjectTokenInit *This,
+                     REFCLSID clsidCaller,
+                     LPCWSTR pszValueName,
+                     LPCWSTR pszFileNameSpecifier,
+                     ULONG nFolder,
+                     LPWSTR *ppszFilePath);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStorageFileName)(
-        ISpObjectTokenInit *This,
-        REFCLSID clsidCaller,
-        LPCWSTR pszKeyName,
-        WINBOOL fDeleteFile);
+                     ISpObjectTokenInit *This,
+                     REFCLSID clsidCaller,
+                     LPCWSTR pszKeyName,
+                     WINBOOL fDeleteFile);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISpObjectTokenInit *This,
-        const CLSID *pclsidCaller);
+                     ISpObjectTokenInit *This,
+                     const CLSID *pclsidCaller);
 
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        IUnknown *punkObject,
-        WINBOOL *pfSupported);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     IUnknown *punkObject,
+                     WINBOOL *pfSupported);
 
     HRESULT (STDMETHODCALLTYPE *DisplayUI)(
-        ISpObjectTokenInit *This,
-        HWND hwndParent,
-        LPCWSTR pszTitle,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        IUnknown *punkObject);
+                     ISpObjectTokenInit *This,
+                     HWND hwndParent,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     IUnknown *punkObject);
 
     HRESULT (STDMETHODCALLTYPE *MatchesAttributes)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszAttributes,
-        WINBOOL *pfMatches);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszAttributes,
+                     WINBOOL *pfMatches);
 
     /*** ISpObjectTokenInit methods ***/
     HRESULT (STDMETHODCALLTYPE *InitFromDataKey)(
-        ISpObjectTokenInit *This,
-        LPCWSTR pszCategoryId,
-        LPCWSTR pszTokenId,
-        ISpDataKey *pDataKey);
+                     ISpObjectTokenInit *This,
+                     LPCWSTR pszCategoryId,
+                     LPCWSTR pszTokenId,
+                     ISpDataKey *pDataKey);
 
     END_INTERFACE
 } ISpObjectTokenInitVtbl;
@@ -3607,15 +3607,15 @@ MIDL_INTERFACE("93384e18-5014-43d5-adbb-a78e055926bd")
 ISpResourceManager : public IServiceProvider
 {
     virtual HRESULT STDMETHODCALLTYPE SetObject(
-        REFGUID guidServiceId,
-        IUnknown *pUnkObject) = 0;
+                     REFGUID guidServiceId,
+                     IUnknown *pUnkObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObject(
-        REFGUID guidServiceId,
-        REFCLSID ObjectCLSID,
-        REFIID ObjectIID,
-        WINBOOL fReleaseWhenLastExternalRefReleased,
-        void **ppObject) = 0;
+                     REFGUID guidServiceId,
+                     REFCLSID ObjectCLSID,
+                     REFIID ObjectIID,
+                     WINBOOL fReleaseWhenLastExternalRefReleased,
+                     void **ppObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3627,36 +3627,36 @@ typedef struct ISpResourceManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpResourceManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpResourceManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpResourceManager *This);
+                     ISpResourceManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpResourceManager *This);
+                     ISpResourceManager *This);
 
     /*** IServiceProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryService)(
-        ISpResourceManager *This,
-        REFGUID guidService,
-        REFIID riid,
-        void **ppvObject);
+                     ISpResourceManager *This,
+                     REFGUID guidService,
+                     REFIID riid,
+                     void **ppvObject);
 
     /*** ISpResourceManager methods ***/
     HRESULT (STDMETHODCALLTYPE *SetObject)(
-        ISpResourceManager *This,
-        REFGUID guidServiceId,
-        IUnknown *pUnkObject);
+                     ISpResourceManager *This,
+                     REFGUID guidServiceId,
+                     IUnknown *pUnkObject);
 
     HRESULT (STDMETHODCALLTYPE *GetObject)(
-        ISpResourceManager *This,
-        REFGUID guidServiceId,
-        REFCLSID ObjectCLSID,
-        REFIID ObjectIID,
-        WINBOOL fReleaseWhenLastExternalRefReleased,
-        void **ppObject);
+                     ISpResourceManager *This,
+                     REFGUID guidServiceId,
+                     REFCLSID ObjectCLSID,
+                     REFIID ObjectIID,
+                     WINBOOL fReleaseWhenLastExternalRefReleased,
+                     void **ppObject);
 
     END_INTERFACE
 } ISpResourceManagerVtbl;
@@ -3737,8 +3737,8 @@ typedef struct SPEVENT {
   SPEVENTLPARAMTYPE elParamType : 16;
   ULONG ulStreamNum;
   ULONGLONG ullAudioStreamOffset;
-  WPARAM      wParam;
-  LPARAM      lParam;
+  WPARAM                   wParam;
+  LPARAM                   lParam;
 } SPEVENT;
 
 typedef struct SPSERIALIZEDEVENT {
@@ -3797,16 +3797,16 @@ MIDL_INTERFACE("be7a9cce-5f9e-11d2-960f-00c04f8ee628")
 ISpEventSource : public ISpNotifySource
 {
     virtual HRESULT STDMETHODCALLTYPE SetInterest(
-        ULONGLONG ullEventInterest,
-        ULONGLONG ullQueuedInterest) = 0;
+                     ULONGLONG ullEventInterest,
+                     ULONGLONG ullQueuedInterest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEvents(
-        ULONG ulCount,
-        SPEVENT *pEventArray,
-        ULONG *pulFetched) = 0;
+                     ULONG ulCount,
+                     SPEVENT *pEventArray,
+                     ULONG *pulFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInfo(
-        SPEVENTSOURCEINFO *pInfo) = 0;
+                     SPEVENTSOURCEINFO *pInfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3818,65 +3818,65 @@ typedef struct ISpEventSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpEventSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpEventSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpEventSource *This);
+                     ISpEventSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpEventSource *This);
+                     ISpEventSource *This);
 
     /*** ISpNotifySource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNotifySink)(
-        ISpEventSource *This,
-        ISpNotifySink *pNotifySink);
+                     ISpEventSource *This,
+                     ISpNotifySink *pNotifySink);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWindowMessage)(
-        ISpEventSource *This,
-        HWND hWnd,
-        UINT Msg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpEventSource *This,
+                     HWND hWnd,
+                     UINT Msg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackFunction)(
-        ISpEventSource *This,
-        SPNOTIFYCALLBACK *pfnCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpEventSource *This,
+                     SPNOTIFYCALLBACK *pfnCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackInterface)(
-        ISpEventSource *This,
-        ISpNotifyCallback *pSpCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpEventSource *This,
+                     ISpNotifyCallback *pSpCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWin32Event)(
-        ISpEventSource *This);
+                     ISpEventSource *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForNotifyEvent)(
-        ISpEventSource *This,
-        DWORD dwMilliseconds);
+                     ISpEventSource *This,
+                     DWORD dwMilliseconds);
 
     HANDLE (STDMETHODCALLTYPE *GetNotifyEventHandle)(
-        ISpEventSource *This);
+                     ISpEventSource *This);
 
     /*** ISpEventSource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInterest)(
-        ISpEventSource *This,
-        ULONGLONG ullEventInterest,
-        ULONGLONG ullQueuedInterest);
+                     ISpEventSource *This,
+                     ULONGLONG ullEventInterest,
+                     ULONGLONG ullQueuedInterest);
 
     HRESULT (STDMETHODCALLTYPE *GetEvents)(
-        ISpEventSource *This,
-        ULONG ulCount,
-        SPEVENT *pEventArray,
-        ULONG *pulFetched);
+                     ISpEventSource *This,
+                     ULONG ulCount,
+                     SPEVENT *pEventArray,
+                     ULONG *pulFetched);
 
     HRESULT (STDMETHODCALLTYPE *GetInfo)(
-        ISpEventSource *This,
-        SPEVENTSOURCEINFO *pInfo);
+                     ISpEventSource *This,
+                     SPEVENTSOURCEINFO *pInfo);
 
     END_INTERFACE
 } ISpEventSourceVtbl;
@@ -3966,9 +3966,9 @@ MIDL_INTERFACE("2373a435-6a4b-429e-a6ac-d4231a61975b")
 ISpEventSource2 : public ISpEventSource
 {
     virtual HRESULT STDMETHODCALLTYPE GetEventsEx(
-        ULONG ulCount,
-        SPEVENTEX *pEventArray,
-        ULONG *pulFetched) = 0;
+                     ULONG ulCount,
+                     SPEVENTEX *pEventArray,
+                     ULONG *pulFetched) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3980,72 +3980,72 @@ typedef struct ISpEventSource2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpEventSource2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpEventSource2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpEventSource2 *This);
+                     ISpEventSource2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpEventSource2 *This);
+                     ISpEventSource2 *This);
 
     /*** ISpNotifySource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNotifySink)(
-        ISpEventSource2 *This,
-        ISpNotifySink *pNotifySink);
+                     ISpEventSource2 *This,
+                     ISpNotifySink *pNotifySink);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWindowMessage)(
-        ISpEventSource2 *This,
-        HWND hWnd,
-        UINT Msg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpEventSource2 *This,
+                     HWND hWnd,
+                     UINT Msg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackFunction)(
-        ISpEventSource2 *This,
-        SPNOTIFYCALLBACK *pfnCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpEventSource2 *This,
+                     SPNOTIFYCALLBACK *pfnCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackInterface)(
-        ISpEventSource2 *This,
-        ISpNotifyCallback *pSpCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpEventSource2 *This,
+                     ISpNotifyCallback *pSpCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWin32Event)(
-        ISpEventSource2 *This);
+                     ISpEventSource2 *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForNotifyEvent)(
-        ISpEventSource2 *This,
-        DWORD dwMilliseconds);
+                     ISpEventSource2 *This,
+                     DWORD dwMilliseconds);
 
     HANDLE (STDMETHODCALLTYPE *GetNotifyEventHandle)(
-        ISpEventSource2 *This);
+                     ISpEventSource2 *This);
 
     /*** ISpEventSource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInterest)(
-        ISpEventSource2 *This,
-        ULONGLONG ullEventInterest,
-        ULONGLONG ullQueuedInterest);
+                     ISpEventSource2 *This,
+                     ULONGLONG ullEventInterest,
+                     ULONGLONG ullQueuedInterest);
 
     HRESULT (STDMETHODCALLTYPE *GetEvents)(
-        ISpEventSource2 *This,
-        ULONG ulCount,
-        SPEVENT *pEventArray,
-        ULONG *pulFetched);
+                     ISpEventSource2 *This,
+                     ULONG ulCount,
+                     SPEVENT *pEventArray,
+                     ULONG *pulFetched);
 
     HRESULT (STDMETHODCALLTYPE *GetInfo)(
-        ISpEventSource2 *This,
-        SPEVENTSOURCEINFO *pInfo);
+                     ISpEventSource2 *This,
+                     SPEVENTSOURCEINFO *pInfo);
 
     /*** ISpEventSource2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEventsEx)(
-        ISpEventSource2 *This,
-        ULONG ulCount,
-        SPEVENTEX *pEventArray,
-        ULONG *pulFetched);
+                     ISpEventSource2 *This,
+                     ULONG ulCount,
+                     SPEVENTEX *pEventArray,
+                     ULONG *pulFetched);
 
     END_INTERFACE
 } ISpEventSource2Vtbl;
@@ -4141,11 +4141,11 @@ MIDL_INTERFACE("be7a9cc9-5f9e-11d2-960f-00c04f8ee628")
 ISpEventSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddEvents(
-        const SPEVENT *pEventArray,
-        ULONG ulCount) = 0;
+                     const SPEVENT *pEventArray,
+                     ULONG ulCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEventInterest(
-        ULONGLONG *pullEventInterest) = 0;
+                     ULONGLONG *pullEventInterest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4157,25 +4157,25 @@ typedef struct ISpEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpEventSink *This);
+                     ISpEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpEventSink *This);
+                     ISpEventSink *This);
 
     /*** ISpEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *AddEvents)(
-        ISpEventSink *This,
-        const SPEVENT *pEventArray,
-        ULONG ulCount);
+                     ISpEventSink *This,
+                     const SPEVENT *pEventArray,
+                     ULONG ulCount);
 
     HRESULT (STDMETHODCALLTYPE *GetEventInterest)(
-        ISpEventSink *This,
-        ULONGLONG *pullEventInterest);
+                     ISpEventSink *This,
+                     ULONGLONG *pullEventInterest);
 
     END_INTERFACE
 } ISpEventSinkVtbl;
@@ -4231,8 +4231,8 @@ MIDL_INTERFACE("bed530be-2606-4f4d-a1c0-54c5cda5566f")
 ISpStreamFormat : public IStream
 {
     virtual HRESULT STDMETHODCALLTYPE GetFormat(
-        GUID *pguidFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx) = 0;
+                     GUID *pguidFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4244,80 +4244,80 @@ typedef struct ISpStreamFormatVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpStreamFormat *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpStreamFormat *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpStreamFormat *This);
+                     ISpStreamFormat *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpStreamFormat *This);
+                     ISpStreamFormat *This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpStreamFormat *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     ISpStreamFormat *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpStreamFormat *This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     ISpStreamFormat *This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpStreamFormat *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     ISpStreamFormat *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        ISpStreamFormat *This,
-        ULARGE_INTEGER libNewSize);
+                     ISpStreamFormat *This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        ISpStreamFormat *This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     ISpStreamFormat *This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpStreamFormat *This,
-        DWORD grfCommitFlags);
+                     ISpStreamFormat *This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        ISpStreamFormat *This);
+                     ISpStreamFormat *This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        ISpStreamFormat *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpStreamFormat *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        ISpStreamFormat *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpStreamFormat *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        ISpStreamFormat *This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     ISpStreamFormat *This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ISpStreamFormat *This,
-        IStream **ppstm);
+                     ISpStreamFormat *This,
+                     IStream **ppstm);
 
     /*** ISpStreamFormat methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        ISpStreamFormat *This,
-        GUID *pguidFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx);
+                     ISpStreamFormat *This,
+                     GUID *pguidFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx);
 
     END_INTERFACE
 } ISpStreamFormatVtbl;
@@ -4417,22 +4417,22 @@ MIDL_INTERFACE("12e3cca9-7518-44c5-a5e7-ba5a79cb929e")
 ISpStream : public ISpStreamFormat
 {
     virtual HRESULT STDMETHODCALLTYPE SetBaseStream(
-        IStream *pStream,
-        REFGUID rguidFormat,
-        const WAVEFORMATEX *pWaveFormatEx) = 0;
+                     IStream *pStream,
+                     REFGUID rguidFormat,
+                     const WAVEFORMATEX *pWaveFormatEx) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBaseStream(
-        IStream **ppStream) = 0;
+                     IStream **ppStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BindToFile(
-        LPCWSTR pszFileName,
-        SPFILEMODE eMode,
-        const GUID *pFormatId,
-        const WAVEFORMATEX *pWaveFormatEx,
-        ULONGLONG ullEventInterest) = 0;
+                     LPCWSTR pszFileName,
+                     SPFILEMODE eMode,
+                     const GUID *pFormatId,
+                     const WAVEFORMATEX *pWaveFormatEx,
+                     ULONGLONG ullEventInterest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4444,102 +4444,102 @@ typedef struct ISpStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpStream *This);
+                     ISpStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpStream *This);
+                     ISpStream *This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpStream *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     ISpStream *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpStream *This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     ISpStream *This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpStream *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     ISpStream *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        ISpStream *This,
-        ULARGE_INTEGER libNewSize);
+                     ISpStream *This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        ISpStream *This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     ISpStream *This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpStream *This,
-        DWORD grfCommitFlags);
+                     ISpStream *This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        ISpStream *This);
+                     ISpStream *This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        ISpStream *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpStream *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        ISpStream *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpStream *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        ISpStream *This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     ISpStream *This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ISpStream *This,
-        IStream **ppstm);
+                     ISpStream *This,
+                     IStream **ppstm);
 
     /*** ISpStreamFormat methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        ISpStream *This,
-        GUID *pguidFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx);
+                     ISpStream *This,
+                     GUID *pguidFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx);
 
     /*** ISpStream methods ***/
     HRESULT (STDMETHODCALLTYPE *SetBaseStream)(
-        ISpStream *This,
-        IStream *pStream,
-        REFGUID rguidFormat,
-        const WAVEFORMATEX *pWaveFormatEx);
+                     ISpStream *This,
+                     IStream *pStream,
+                     REFGUID rguidFormat,
+                     const WAVEFORMATEX *pWaveFormatEx);
 
     HRESULT (STDMETHODCALLTYPE *GetBaseStream)(
-        ISpStream *This,
-        IStream **ppStream);
+                     ISpStream *This,
+                     IStream **ppStream);
 
     HRESULT (STDMETHODCALLTYPE *BindToFile)(
-        ISpStream *This,
-        LPCWSTR pszFileName,
-        SPFILEMODE eMode,
-        const GUID *pFormatId,
-        const WAVEFORMATEX *pWaveFormatEx,
-        ULONGLONG ullEventInterest);
+                     ISpStream *This,
+                     LPCWSTR pszFileName,
+                     SPFILEMODE eMode,
+                     const GUID *pFormatId,
+                     const WAVEFORMATEX *pWaveFormatEx,
+                     ULONGLONG ullEventInterest);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        ISpStream *This);
+                     ISpStream *This);
 
     END_INTERFACE
 } ISpStreamVtbl;
@@ -4657,27 +4657,27 @@ MIDL_INTERFACE("678a932c-ea71-4446-9b41-78fda6280a29")
 ISpStreamFormatConverter : public ISpStreamFormat
 {
     virtual HRESULT STDMETHODCALLTYPE SetBaseStream(
-        ISpStreamFormat *pStream,
-        WINBOOL fSetFormatToBaseStreamFormat,
-        WINBOOL fWriteToBaseStream) = 0;
+                     ISpStreamFormat *pStream,
+                     WINBOOL fSetFormatToBaseStreamFormat,
+                     WINBOOL fWriteToBaseStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBaseStream(
-        ISpStreamFormat **ppStream) = 0;
+                     ISpStreamFormat **ppStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFormat(
-        REFGUID rguidFormatIdOfConvertedStream,
-        const WAVEFORMATEX *pWaveFormatExOfConvertedStream) = 0;
+                     REFGUID rguidFormatIdOfConvertedStream,
+                     const WAVEFORMATEX *pWaveFormatExOfConvertedStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetSeekPosition(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleConvertedToBaseOffset(
-        ULONGLONG ullOffsetConvertedStream,
-        ULONGLONG *pullOffsetBaseStream) = 0;
+                     ULONGLONG ullOffsetConvertedStream,
+                     ULONGLONG *pullOffsetBaseStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleBaseToConvertedOffset(
-        ULONGLONG ullOffsetBaseStream,
-        ULONGLONG *pullOffsetConvertedStream) = 0;
+                     ULONGLONG ullOffsetBaseStream,
+                     ULONGLONG *pullOffsetConvertedStream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4689,109 +4689,109 @@ typedef struct ISpStreamFormatConverterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpStreamFormatConverter *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpStreamFormatConverter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpStreamFormatConverter *This);
+                     ISpStreamFormatConverter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpStreamFormatConverter *This);
+                     ISpStreamFormatConverter *This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpStreamFormatConverter *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     ISpStreamFormatConverter *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpStreamFormatConverter *This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     ISpStreamFormatConverter *This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpStreamFormatConverter *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     ISpStreamFormatConverter *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        ISpStreamFormatConverter *This,
-        ULARGE_INTEGER libNewSize);
+                     ISpStreamFormatConverter *This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        ISpStreamFormatConverter *This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     ISpStreamFormatConverter *This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpStreamFormatConverter *This,
-        DWORD grfCommitFlags);
+                     ISpStreamFormatConverter *This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        ISpStreamFormatConverter *This);
+                     ISpStreamFormatConverter *This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        ISpStreamFormatConverter *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpStreamFormatConverter *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        ISpStreamFormatConverter *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpStreamFormatConverter *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        ISpStreamFormatConverter *This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     ISpStreamFormatConverter *This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ISpStreamFormatConverter *This,
-        IStream **ppstm);
+                     ISpStreamFormatConverter *This,
+                     IStream **ppstm);
 
     /*** ISpStreamFormat methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        ISpStreamFormatConverter *This,
-        GUID *pguidFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx);
+                     ISpStreamFormatConverter *This,
+                     GUID *pguidFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx);
 
     /*** ISpStreamFormatConverter methods ***/
     HRESULT (STDMETHODCALLTYPE *SetBaseStream)(
-        ISpStreamFormatConverter *This,
-        ISpStreamFormat *pStream,
-        WINBOOL fSetFormatToBaseStreamFormat,
-        WINBOOL fWriteToBaseStream);
+                     ISpStreamFormatConverter *This,
+                     ISpStreamFormat *pStream,
+                     WINBOOL fSetFormatToBaseStreamFormat,
+                     WINBOOL fWriteToBaseStream);
 
     HRESULT (STDMETHODCALLTYPE *GetBaseStream)(
-        ISpStreamFormatConverter *This,
-        ISpStreamFormat **ppStream);
+                     ISpStreamFormatConverter *This,
+                     ISpStreamFormat **ppStream);
 
     HRESULT (STDMETHODCALLTYPE *SetFormat)(
-        ISpStreamFormatConverter *This,
-        REFGUID rguidFormatIdOfConvertedStream,
-        const WAVEFORMATEX *pWaveFormatExOfConvertedStream);
+                     ISpStreamFormatConverter *This,
+                     REFGUID rguidFormatIdOfConvertedStream,
+                     const WAVEFORMATEX *pWaveFormatExOfConvertedStream);
 
     HRESULT (STDMETHODCALLTYPE *ResetSeekPosition)(
-        ISpStreamFormatConverter *This);
+                     ISpStreamFormatConverter *This);
 
     HRESULT (STDMETHODCALLTYPE *ScaleConvertedToBaseOffset)(
-        ISpStreamFormatConverter *This,
-        ULONGLONG ullOffsetConvertedStream,
-        ULONGLONG *pullOffsetBaseStream);
+                     ISpStreamFormatConverter *This,
+                     ULONGLONG ullOffsetConvertedStream,
+                     ULONGLONG *pullOffsetBaseStream);
 
     HRESULT (STDMETHODCALLTYPE *ScaleBaseToConvertedOffset)(
-        ISpStreamFormatConverter *This,
-        ULONGLONG ullOffsetBaseStream,
-        ULONGLONG *pullOffsetConvertedStream);
+                     ISpStreamFormatConverter *This,
+                     ULONGLONG ullOffsetBaseStream,
+                     ULONGLONG *pullOffsetConvertedStream);
 
     END_INTERFACE
 } ISpStreamFormatConverterVtbl;
@@ -4931,40 +4931,40 @@ MIDL_INTERFACE("c05c768f-fae8-4ec2-8e07-338321c12452")
 ISpAudio : public ISpStreamFormat
 {
     virtual HRESULT STDMETHODCALLTYPE SetState(
-        SPAUDIOSTATE NewState,
-        ULONGLONG ullReserved) = 0;
+                     SPAUDIOSTATE NewState,
+                     ULONGLONG ullReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFormat(
-        REFGUID rguidFmtId,
-        const WAVEFORMATEX *pWaveFormatEx) = 0;
+                     REFGUID rguidFmtId,
+                     const WAVEFORMATEX *pWaveFormatEx) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        SPAUDIOSTATUS *pStatus) = 0;
+                     SPAUDIOSTATUS *pStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBufferInfo(
-        const SPAUDIOBUFFERINFO *pBuffInfo) = 0;
+                     const SPAUDIOBUFFERINFO *pBuffInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBufferInfo(
-        SPAUDIOBUFFERINFO *pBuffInfo) = 0;
+                     SPAUDIOBUFFERINFO *pBuffInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultFormat(
-        GUID *pFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx) = 0;
+                     GUID *pFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx) = 0;
 
     virtual HANDLE STDMETHODCALLTYPE EventHandle(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVolumeLevel(
-        ULONG *pLevel) = 0;
+                     ULONG *pLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVolumeLevel(
-        ULONG Level) = 0;
+                     ULONG Level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBufferNotifySize(
-        ULONG *pcbSize) = 0;
+                     ULONG *pcbSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBufferNotifySize(
-        ULONG cbSize) = 0;
+                     ULONG cbSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4976,127 +4976,127 @@ typedef struct ISpAudioVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpAudio *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpAudio *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpAudio *This);
+                     ISpAudio *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpAudio *This);
+                     ISpAudio *This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpAudio *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     ISpAudio *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpAudio *This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     ISpAudio *This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpAudio *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     ISpAudio *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        ISpAudio *This,
-        ULARGE_INTEGER libNewSize);
+                     ISpAudio *This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        ISpAudio *This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     ISpAudio *This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpAudio *This,
-        DWORD grfCommitFlags);
+                     ISpAudio *This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        ISpAudio *This);
+                     ISpAudio *This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        ISpAudio *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpAudio *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        ISpAudio *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpAudio *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        ISpAudio *This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     ISpAudio *This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ISpAudio *This,
-        IStream **ppstm);
+                     ISpAudio *This,
+                     IStream **ppstm);
 
     /*** ISpStreamFormat methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        ISpAudio *This,
-        GUID *pguidFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx);
+                     ISpAudio *This,
+                     GUID *pguidFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx);
 
     /*** ISpAudio methods ***/
     HRESULT (STDMETHODCALLTYPE *SetState)(
-        ISpAudio *This,
-        SPAUDIOSTATE NewState,
-        ULONGLONG ullReserved);
+                     ISpAudio *This,
+                     SPAUDIOSTATE NewState,
+                     ULONGLONG ullReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetFormat)(
-        ISpAudio *This,
-        REFGUID rguidFmtId,
-        const WAVEFORMATEX *pWaveFormatEx);
+                     ISpAudio *This,
+                     REFGUID rguidFmtId,
+                     const WAVEFORMATEX *pWaveFormatEx);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        ISpAudio *This,
-        SPAUDIOSTATUS *pStatus);
+                     ISpAudio *This,
+                     SPAUDIOSTATUS *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *SetBufferInfo)(
-        ISpAudio *This,
-        const SPAUDIOBUFFERINFO *pBuffInfo);
+                     ISpAudio *This,
+                     const SPAUDIOBUFFERINFO *pBuffInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetBufferInfo)(
-        ISpAudio *This,
-        SPAUDIOBUFFERINFO *pBuffInfo);
+                     ISpAudio *This,
+                     SPAUDIOBUFFERINFO *pBuffInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultFormat)(
-        ISpAudio *This,
-        GUID *pFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx);
+                     ISpAudio *This,
+                     GUID *pFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx);
 
     HANDLE (STDMETHODCALLTYPE *EventHandle)(
-        ISpAudio *This);
+                     ISpAudio *This);
 
     HRESULT (STDMETHODCALLTYPE *GetVolumeLevel)(
-        ISpAudio *This,
-        ULONG *pLevel);
+                     ISpAudio *This,
+                     ULONG *pLevel);
 
     HRESULT (STDMETHODCALLTYPE *SetVolumeLevel)(
-        ISpAudio *This,
-        ULONG Level);
+                     ISpAudio *This,
+                     ULONG Level);
 
     HRESULT (STDMETHODCALLTYPE *GetBufferNotifySize)(
-        ISpAudio *This,
-        ULONG *pcbSize);
+                     ISpAudio *This,
+                     ULONG *pcbSize);
 
     HRESULT (STDMETHODCALLTYPE *SetBufferNotifySize)(
-        ISpAudio *This,
-        ULONG cbSize);
+                     ISpAudio *This,
+                     ULONG cbSize);
 
     END_INTERFACE
 } ISpAudioVtbl;
@@ -5242,19 +5242,19 @@ MIDL_INTERFACE("15806f6e-1d70-4b48-98e6-3b1a007509ab")
 ISpMMSysAudio : public ISpAudio
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeviceId(
-        UINT *puDeviceId) = 0;
+                     UINT *puDeviceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDeviceId(
-        UINT uDeviceId) = 0;
+                     UINT uDeviceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMMHandle(
-        void **pHandle) = 0;
+                     void **pHandle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLineId(
-        UINT *puLineId) = 0;
+                     UINT *puLineId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLineId(
-        UINT uLineId) = 0;
+                     UINT uLineId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5266,148 +5266,148 @@ typedef struct ISpMMSysAudioVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpMMSysAudio *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpMMSysAudio *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpMMSysAudio *This);
+                     ISpMMSysAudio *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpMMSysAudio *This);
+                     ISpMMSysAudio *This);
 
     /*** ISequentialStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpMMSysAudio *This,
-        void *pv,
-        ULONG cb,
-        ULONG *pcbRead);
+                     ISpMMSysAudio *This,
+                     void *pv,
+                     ULONG cb,
+                     ULONG *pcbRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpMMSysAudio *This,
-        const void *pv,
-        ULONG cb,
-        ULONG *pcbWritten);
+                     ISpMMSysAudio *This,
+                     const void *pv,
+                     ULONG cb,
+                     ULONG *pcbWritten);
 
     /*** IStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpMMSysAudio *This,
-        LARGE_INTEGER dlibMove,
-        DWORD dwOrigin,
-        ULARGE_INTEGER *plibNewPosition);
+                     ISpMMSysAudio *This,
+                     LARGE_INTEGER dlibMove,
+                     DWORD dwOrigin,
+                     ULARGE_INTEGER *plibNewPosition);
 
     HRESULT (STDMETHODCALLTYPE *SetSize)(
-        ISpMMSysAudio *This,
-        ULARGE_INTEGER libNewSize);
+                     ISpMMSysAudio *This,
+                     ULARGE_INTEGER libNewSize);
 
     HRESULT (STDMETHODCALLTYPE *CopyTo)(
-        ISpMMSysAudio *This,
-        IStream *pstm,
-        ULARGE_INTEGER cb,
-        ULARGE_INTEGER *pcbRead,
-        ULARGE_INTEGER *pcbWritten);
+                     ISpMMSysAudio *This,
+                     IStream *pstm,
+                     ULARGE_INTEGER cb,
+                     ULARGE_INTEGER *pcbRead,
+                     ULARGE_INTEGER *pcbWritten);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpMMSysAudio *This,
-        DWORD grfCommitFlags);
+                     ISpMMSysAudio *This,
+                     DWORD grfCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *Revert)(
-        ISpMMSysAudio *This);
+                     ISpMMSysAudio *This);
 
     HRESULT (STDMETHODCALLTYPE *LockRegion)(
-        ISpMMSysAudio *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpMMSysAudio *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *UnlockRegion)(
-        ISpMMSysAudio *This,
-        ULARGE_INTEGER libOffset,
-        ULARGE_INTEGER cb,
-        DWORD dwLockType);
+                     ISpMMSysAudio *This,
+                     ULARGE_INTEGER libOffset,
+                     ULARGE_INTEGER cb,
+                     DWORD dwLockType);
 
     HRESULT (STDMETHODCALLTYPE *Stat)(
-        ISpMMSysAudio *This,
-        STATSTG *pstatstg,
-        DWORD grfStatFlag);
+                     ISpMMSysAudio *This,
+                     STATSTG *pstatstg,
+                     DWORD grfStatFlag);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ISpMMSysAudio *This,
-        IStream **ppstm);
+                     ISpMMSysAudio *This,
+                     IStream **ppstm);
 
     /*** ISpStreamFormat methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        ISpMMSysAudio *This,
-        GUID *pguidFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx);
+                     ISpMMSysAudio *This,
+                     GUID *pguidFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx);
 
     /*** ISpAudio methods ***/
     HRESULT (STDMETHODCALLTYPE *SetState)(
-        ISpMMSysAudio *This,
-        SPAUDIOSTATE NewState,
-        ULONGLONG ullReserved);
+                     ISpMMSysAudio *This,
+                     SPAUDIOSTATE NewState,
+                     ULONGLONG ullReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetFormat)(
-        ISpMMSysAudio *This,
-        REFGUID rguidFmtId,
-        const WAVEFORMATEX *pWaveFormatEx);
+                     ISpMMSysAudio *This,
+                     REFGUID rguidFmtId,
+                     const WAVEFORMATEX *pWaveFormatEx);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        ISpMMSysAudio *This,
-        SPAUDIOSTATUS *pStatus);
+                     ISpMMSysAudio *This,
+                     SPAUDIOSTATUS *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *SetBufferInfo)(
-        ISpMMSysAudio *This,
-        const SPAUDIOBUFFERINFO *pBuffInfo);
+                     ISpMMSysAudio *This,
+                     const SPAUDIOBUFFERINFO *pBuffInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetBufferInfo)(
-        ISpMMSysAudio *This,
-        SPAUDIOBUFFERINFO *pBuffInfo);
+                     ISpMMSysAudio *This,
+                     SPAUDIOBUFFERINFO *pBuffInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultFormat)(
-        ISpMMSysAudio *This,
-        GUID *pFormatId,
-        WAVEFORMATEX **ppCoMemWaveFormatEx);
+                     ISpMMSysAudio *This,
+                     GUID *pFormatId,
+                     WAVEFORMATEX **ppCoMemWaveFormatEx);
 
     HANDLE (STDMETHODCALLTYPE *EventHandle)(
-        ISpMMSysAudio *This);
+                     ISpMMSysAudio *This);
 
     HRESULT (STDMETHODCALLTYPE *GetVolumeLevel)(
-        ISpMMSysAudio *This,
-        ULONG *pLevel);
+                     ISpMMSysAudio *This,
+                     ULONG *pLevel);
 
     HRESULT (STDMETHODCALLTYPE *SetVolumeLevel)(
-        ISpMMSysAudio *This,
-        ULONG Level);
+                     ISpMMSysAudio *This,
+                     ULONG Level);
 
     HRESULT (STDMETHODCALLTYPE *GetBufferNotifySize)(
-        ISpMMSysAudio *This,
-        ULONG *pcbSize);
+                     ISpMMSysAudio *This,
+                     ULONG *pcbSize);
 
     HRESULT (STDMETHODCALLTYPE *SetBufferNotifySize)(
-        ISpMMSysAudio *This,
-        ULONG cbSize);
+                     ISpMMSysAudio *This,
+                     ULONG cbSize);
 
     /*** ISpMMSysAudio methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeviceId)(
-        ISpMMSysAudio *This,
-        UINT *puDeviceId);
+                     ISpMMSysAudio *This,
+                     UINT *puDeviceId);
 
     HRESULT (STDMETHODCALLTYPE *SetDeviceId)(
-        ISpMMSysAudio *This,
-        UINT uDeviceId);
+                     ISpMMSysAudio *This,
+                     UINT uDeviceId);
 
     HRESULT (STDMETHODCALLTYPE *GetMMHandle)(
-        ISpMMSysAudio *This,
-        void **pHandle);
+                     ISpMMSysAudio *This,
+                     void **pHandle);
 
     HRESULT (STDMETHODCALLTYPE *GetLineId)(
-        ISpMMSysAudio *This,
-        UINT *puLineId);
+                     ISpMMSysAudio *This,
+                     UINT *puLineId);
 
     HRESULT (STDMETHODCALLTYPE *SetLineId)(
-        ISpMMSysAudio *This,
-        UINT uLineId);
+                     ISpMMSysAudio *This,
+                     UINT uLineId);
 
     END_INTERFACE
 } ISpMMSysAudioVtbl;
@@ -5575,10 +5575,10 @@ MIDL_INTERFACE("10f63bce-201a-11d3-ac70-00c04f8ee6c0")
 ISpTranscript : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetTranscript(
-        LPWSTR *ppszTranscript) = 0;
+                     LPWSTR *ppszTranscript) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AppendTranscript(
-        LPCWSTR pszTranscript) = 0;
+                     LPCWSTR pszTranscript) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5590,24 +5590,24 @@ typedef struct ISpTranscriptVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpTranscript *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpTranscript *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpTranscript *This);
+                     ISpTranscript *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpTranscript *This);
+                     ISpTranscript *This);
 
     /*** ISpTranscript methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTranscript)(
-        ISpTranscript *This,
-        LPWSTR *ppszTranscript);
+                     ISpTranscript *This,
+                     LPWSTR *ppszTranscript);
 
     HRESULT (STDMETHODCALLTYPE *AppendTranscript)(
-        ISpTranscript *This,
-        LPCWSTR pszTranscript);
+                     ISpTranscript *This,
+                     LPCWSTR pszTranscript);
 
     END_INTERFACE
 } ISpTranscriptVtbl;
@@ -5685,12 +5685,12 @@ struct SPPHRASERULE {
 struct SPPHRASEPROPERTY {
     LPCWSTR pszName;
     __C89_NAMELESS union {
-        ULONG ulId;
-        __C89_NAMELESS struct {
-            byte bType;
-            byte bReserved;
-            unsigned short usArrayIndex;
-        } __C89_NAMELESSSTRUCTNAME;
+                     ULONG ulId;
+                     __C89_NAMELESS struct {
+                                      byte bType;
+                                      byte bReserved;
+                                      unsigned short usArrayIndex;
+                     } __C89_NAMELESSSTRUCTNAME;
     } __C89_NAMELESSUNIONNAME;
     LPCWSTR pszValue;
     VARIANT vValue;
@@ -5845,36 +5845,36 @@ MIDL_INTERFACE("da41a7c2-5383-4db2-916b-6c1719e3db58")
 ISpLexicon : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPronunciations(
-        LPCWSTR pszWord,
-        WORD LangID,
-        DWORD dwFlags,
-        SPWORDPRONUNCIATIONLIST *pWordPronunciationList) = 0;
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     DWORD dwFlags,
+                     SPWORDPRONUNCIATIONLIST *pWordPronunciationList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPronunciation(
-        LPCWSTR pszWord,
-        WORD LangID,
-        SPPARTOFSPEECH ePartOfSpeech,
-        PCSPPHONEID pszPronunciation) = 0;
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     SPPARTOFSPEECH ePartOfSpeech,
+                     PCSPPHONEID pszPronunciation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemovePronunciation(
-        LPCWSTR pszWord,
-        WORD LangID,
-        SPPARTOFSPEECH ePartOfSpeech,
-        PCSPPHONEID pszPronunciation) = 0;
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     SPPARTOFSPEECH ePartOfSpeech,
+                     PCSPPHONEID pszPronunciation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGeneration(
-        DWORD *pdwGeneration) = 0;
+                     DWORD *pdwGeneration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGenerationChange(
-        DWORD dwFlags,
-        DWORD *pdwGeneration,
-        SPWORDLIST *pWordList) = 0;
+                     DWORD dwFlags,
+                     DWORD *pdwGeneration,
+                     SPWORDLIST *pWordList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWords(
-        DWORD dwFlags,
-        DWORD *pdwGeneration,
-        DWORD *pdwCookie,
-        SPWORDLIST *pWordList) = 0;
+                     DWORD dwFlags,
+                     DWORD *pdwGeneration,
+                     DWORD *pdwCookie,
+                     SPWORDLIST *pWordList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5886,54 +5886,54 @@ typedef struct ISpLexiconVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpLexicon *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpLexicon *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpLexicon *This);
+                     ISpLexicon *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpLexicon *This);
+                     ISpLexicon *This);
 
     /*** ISpLexicon methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPronunciations)(
-        ISpLexicon *This,
-        LPCWSTR pszWord,
-        WORD LangID,
-        DWORD dwFlags,
-        SPWORDPRONUNCIATIONLIST *pWordPronunciationList);
+                     ISpLexicon *This,
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     DWORD dwFlags,
+                     SPWORDPRONUNCIATIONLIST *pWordPronunciationList);
 
     HRESULT (STDMETHODCALLTYPE *AddPronunciation)(
-        ISpLexicon *This,
-        LPCWSTR pszWord,
-        WORD LangID,
-        SPPARTOFSPEECH ePartOfSpeech,
-        PCSPPHONEID pszPronunciation);
+                     ISpLexicon *This,
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     SPPARTOFSPEECH ePartOfSpeech,
+                     PCSPPHONEID pszPronunciation);
 
     HRESULT (STDMETHODCALLTYPE *RemovePronunciation)(
-        ISpLexicon *This,
-        LPCWSTR pszWord,
-        WORD LangID,
-        SPPARTOFSPEECH ePartOfSpeech,
-        PCSPPHONEID pszPronunciation);
+                     ISpLexicon *This,
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     SPPARTOFSPEECH ePartOfSpeech,
+                     PCSPPHONEID pszPronunciation);
 
     HRESULT (STDMETHODCALLTYPE *GetGeneration)(
-        ISpLexicon *This,
-        DWORD *pdwGeneration);
+                     ISpLexicon *This,
+                     DWORD *pdwGeneration);
 
     HRESULT (STDMETHODCALLTYPE *GetGenerationChange)(
-        ISpLexicon *This,
-        DWORD dwFlags,
-        DWORD *pdwGeneration,
-        SPWORDLIST *pWordList);
+                     ISpLexicon *This,
+                     DWORD dwFlags,
+                     DWORD *pdwGeneration,
+                     SPWORDLIST *pWordList);
 
     HRESULT (STDMETHODCALLTYPE *GetWords)(
-        ISpLexicon *This,
-        DWORD dwFlags,
-        DWORD *pdwGeneration,
-        DWORD *pdwCookie,
-        SPWORDLIST *pWordList);
+                     ISpLexicon *This,
+                     DWORD dwFlags,
+                     DWORD *pdwGeneration,
+                     DWORD *pdwCookie,
+                     SPWORDLIST *pWordList);
 
     END_INTERFACE
 } ISpLexiconVtbl;
@@ -6005,8 +6005,8 @@ MIDL_INTERFACE("8565572f-c094-41cc-b56e-10bd9c3ff044")
 ISpContainerLexicon : public ISpLexicon
 {
     virtual HRESULT STDMETHODCALLTYPE AddLexicon(
-        ISpLexicon *pAddLexicon,
-        DWORD dwFlags) = 0;
+                     ISpLexicon *pAddLexicon,
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6018,60 +6018,60 @@ typedef struct ISpContainerLexiconVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpContainerLexicon *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpContainerLexicon *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpContainerLexicon *This);
+                     ISpContainerLexicon *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpContainerLexicon *This);
+                     ISpContainerLexicon *This);
 
     /*** ISpLexicon methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPronunciations)(
-        ISpContainerLexicon *This,
-        LPCWSTR pszWord,
-        WORD LangID,
-        DWORD dwFlags,
-        SPWORDPRONUNCIATIONLIST *pWordPronunciationList);
+                     ISpContainerLexicon *This,
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     DWORD dwFlags,
+                     SPWORDPRONUNCIATIONLIST *pWordPronunciationList);
 
     HRESULT (STDMETHODCALLTYPE *AddPronunciation)(
-        ISpContainerLexicon *This,
-        LPCWSTR pszWord,
-        WORD LangID,
-        SPPARTOFSPEECH ePartOfSpeech,
-        PCSPPHONEID pszPronunciation);
+                     ISpContainerLexicon *This,
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     SPPARTOFSPEECH ePartOfSpeech,
+                     PCSPPHONEID pszPronunciation);
 
     HRESULT (STDMETHODCALLTYPE *RemovePronunciation)(
-        ISpContainerLexicon *This,
-        LPCWSTR pszWord,
-        WORD LangID,
-        SPPARTOFSPEECH ePartOfSpeech,
-        PCSPPHONEID pszPronunciation);
+                     ISpContainerLexicon *This,
+                     LPCWSTR pszWord,
+                     WORD LangID,
+                     SPPARTOFSPEECH ePartOfSpeech,
+                     PCSPPHONEID pszPronunciation);
 
     HRESULT (STDMETHODCALLTYPE *GetGeneration)(
-        ISpContainerLexicon *This,
-        DWORD *pdwGeneration);
+                     ISpContainerLexicon *This,
+                     DWORD *pdwGeneration);
 
     HRESULT (STDMETHODCALLTYPE *GetGenerationChange)(
-        ISpContainerLexicon *This,
-        DWORD dwFlags,
-        DWORD *pdwGeneration,
-        SPWORDLIST *pWordList);
+                     ISpContainerLexicon *This,
+                     DWORD dwFlags,
+                     DWORD *pdwGeneration,
+                     SPWORDLIST *pWordList);
 
     HRESULT (STDMETHODCALLTYPE *GetWords)(
-        ISpContainerLexicon *This,
-        DWORD dwFlags,
-        DWORD *pdwGeneration,
-        DWORD *pdwCookie,
-        SPWORDLIST *pWordList);
+                     ISpContainerLexicon *This,
+                     DWORD dwFlags,
+                     DWORD *pdwGeneration,
+                     DWORD *pdwCookie,
+                     SPWORDLIST *pWordList);
 
     /*** ISpContainerLexicon methods ***/
     HRESULT (STDMETHODCALLTYPE *AddLexicon)(
-        ISpContainerLexicon *This,
-        ISpLexicon *pAddLexicon,
-        DWORD dwFlags);
+                     ISpContainerLexicon *This,
+                     ISpLexicon *pAddLexicon,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } ISpContainerLexiconVtbl;
@@ -6161,41 +6161,41 @@ MIDL_INTERFACE("3df681e2-ea56-11d9-8bde-f66bad1e3f3a")
 ISpShortcut : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddShortcut(
-        LPCWSTR pszDisplay,
-        WORD LangID,
-        LPCWSTR pszSpoken,
-        SPSHORTCUTTYPE shType) = 0;
+                     LPCWSTR pszDisplay,
+                     WORD LangID,
+                     LPCWSTR pszSpoken,
+                     SPSHORTCUTTYPE shType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveShortcut(
-        LPCWSTR pszDisplay,
-        WORD LangID,
-        LPCWSTR pszSpoken,
-        SPSHORTCUTTYPE shType) = 0;
+                     LPCWSTR pszDisplay,
+                     WORD LangID,
+                     LPCWSTR pszSpoken,
+                     SPSHORTCUTTYPE shType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetShortcuts(
-        WORD LangID,
-        SPSHORTCUTPAIRLIST *pShortcutpairList) = 0;
+                     WORD LangID,
+                     SPSHORTCUTPAIRLIST *pShortcutpairList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGeneration(
-        DWORD *pdwGeneration) = 0;
+                     DWORD *pdwGeneration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWordsFromGenerationChange(
-        DWORD *pdwGeneration,
-        SPWORDLIST *pWordList) = 0;
+                     DWORD *pdwGeneration,
+                     SPWORDLIST *pWordList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWords(
-        DWORD *pdwGeneration,
-        DWORD *pdwCookie,
-        SPWORDLIST *pWordList) = 0;
+                     DWORD *pdwGeneration,
+                     DWORD *pdwCookie,
+                     SPWORDLIST *pWordList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetShortcutsForGeneration(
-        DWORD *pdwGeneration,
-        DWORD *pdwCookie,
-        SPSHORTCUTPAIRLIST *pShortcutpairList) = 0;
+                     DWORD *pdwGeneration,
+                     DWORD *pdwCookie,
+                     SPSHORTCUTPAIRLIST *pShortcutpairList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGenerationChange(
-        DWORD *pdwGeneration,
-        SPSHORTCUTPAIRLIST *pShortcutpairList) = 0;
+                     DWORD *pdwGeneration,
+                     SPSHORTCUTPAIRLIST *pShortcutpairList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6207,61 +6207,61 @@ typedef struct ISpShortcutVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpShortcut *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpShortcut *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpShortcut *This);
+                     ISpShortcut *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpShortcut *This);
+                     ISpShortcut *This);
 
     /*** ISpShortcut methods ***/
     HRESULT (STDMETHODCALLTYPE *AddShortcut)(
-        ISpShortcut *This,
-        LPCWSTR pszDisplay,
-        WORD LangID,
-        LPCWSTR pszSpoken,
-        SPSHORTCUTTYPE shType);
+                     ISpShortcut *This,
+                     LPCWSTR pszDisplay,
+                     WORD LangID,
+                     LPCWSTR pszSpoken,
+                     SPSHORTCUTTYPE shType);
 
     HRESULT (STDMETHODCALLTYPE *RemoveShortcut)(
-        ISpShortcut *This,
-        LPCWSTR pszDisplay,
-        WORD LangID,
-        LPCWSTR pszSpoken,
-        SPSHORTCUTTYPE shType);
+                     ISpShortcut *This,
+                     LPCWSTR pszDisplay,
+                     WORD LangID,
+                     LPCWSTR pszSpoken,
+                     SPSHORTCUTTYPE shType);
 
     HRESULT (STDMETHODCALLTYPE *GetShortcuts)(
-        ISpShortcut *This,
-        WORD LangID,
-        SPSHORTCUTPAIRLIST *pShortcutpairList);
+                     ISpShortcut *This,
+                     WORD LangID,
+                     SPSHORTCUTPAIRLIST *pShortcutpairList);
 
     HRESULT (STDMETHODCALLTYPE *GetGeneration)(
-        ISpShortcut *This,
-        DWORD *pdwGeneration);
+                     ISpShortcut *This,
+                     DWORD *pdwGeneration);
 
     HRESULT (STDMETHODCALLTYPE *GetWordsFromGenerationChange)(
-        ISpShortcut *This,
-        DWORD *pdwGeneration,
-        SPWORDLIST *pWordList);
+                     ISpShortcut *This,
+                     DWORD *pdwGeneration,
+                     SPWORDLIST *pWordList);
 
     HRESULT (STDMETHODCALLTYPE *GetWords)(
-        ISpShortcut *This,
-        DWORD *pdwGeneration,
-        DWORD *pdwCookie,
-        SPWORDLIST *pWordList);
+                     ISpShortcut *This,
+                     DWORD *pdwGeneration,
+                     DWORD *pdwCookie,
+                     SPWORDLIST *pWordList);
 
     HRESULT (STDMETHODCALLTYPE *GetShortcutsForGeneration)(
-        ISpShortcut *This,
-        DWORD *pdwGeneration,
-        DWORD *pdwCookie,
-        SPSHORTCUTPAIRLIST *pShortcutpairList);
+                     ISpShortcut *This,
+                     DWORD *pdwGeneration,
+                     DWORD *pdwCookie,
+                     SPSHORTCUTPAIRLIST *pShortcutpairList);
 
     HRESULT (STDMETHODCALLTYPE *GetGenerationChange)(
-        ISpShortcut *This,
-        DWORD *pdwGeneration,
-        SPSHORTCUTPAIRLIST *pShortcutpairList);
+                     ISpShortcut *This,
+                     DWORD *pdwGeneration,
+                     SPSHORTCUTPAIRLIST *pShortcutpairList);
 
     END_INTERFACE
 } ISpShortcutVtbl;
@@ -6341,12 +6341,12 @@ MIDL_INTERFACE("8445c581-0cac-4a38-abfe-9b2ce2826455")
 ISpPhoneConverter : public ISpObjectWithToken
 {
     virtual HRESULT STDMETHODCALLTYPE PhoneToId(
-        LPCWSTR pszPhone,
-        SPPHONEID *pId) = 0;
+                     LPCWSTR pszPhone,
+                     SPPHONEID *pId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IdToPhone(
-        PCSPPHONEID pId,
-        WCHAR *pszPhone) = 0;
+                     PCSPPHONEID pId,
+                     WCHAR *pszPhone) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6358,35 +6358,35 @@ typedef struct ISpPhoneConverterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpPhoneConverter *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpPhoneConverter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpPhoneConverter *This);
+                     ISpPhoneConverter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpPhoneConverter *This);
+                     ISpPhoneConverter *This);
 
     /*** ISpObjectWithToken methods ***/
     HRESULT (STDMETHODCALLTYPE *SetObjectToken)(
-        ISpPhoneConverter *This,
-        ISpObjectToken *pToken);
+                     ISpPhoneConverter *This,
+                     ISpObjectToken *pToken);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectToken)(
-        ISpPhoneConverter *This,
-        ISpObjectToken **ppToken);
+                     ISpPhoneConverter *This,
+                     ISpObjectToken **ppToken);
 
     /*** ISpPhoneConverter methods ***/
     HRESULT (STDMETHODCALLTYPE *PhoneToId)(
-        ISpPhoneConverter *This,
-        LPCWSTR pszPhone,
-        SPPHONEID *pId);
+                     ISpPhoneConverter *This,
+                     LPCWSTR pszPhone,
+                     SPPHONEID *pId);
 
     HRESULT (STDMETHODCALLTYPE *IdToPhone)(
-        ISpPhoneConverter *This,
-        PCSPPHONEID pId,
-        WCHAR *pszPhone);
+                     ISpPhoneConverter *This,
+                     PCSPPHONEID pId,
+                     WCHAR *pszPhone);
 
     END_INTERFACE
 } ISpPhoneConverterVtbl;
@@ -6452,25 +6452,25 @@ MIDL_INTERFACE("133adcd4-19b4-4020-9fdc-842e78253b17")
 ISpPhoneticAlphabetConverter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetLangId(
-        WORD *pLangID) = 0;
+                     WORD *pLangID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLangId(
-        WORD LangID) = 0;
+                     WORD LangID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SAPI2UPS(
-        const SPPHONEID *pszSAPIId,
-        SPPHONEID *pszUPSId,
-        DWORD cMaxLength) = 0;
+                     const SPPHONEID *pszSAPIId,
+                     SPPHONEID *pszUPSId,
+                     DWORD cMaxLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UPS2SAPI(
-        const SPPHONEID *pszUPSId,
-        SPPHONEID *pszSAPIId,
-        DWORD cMaxLength) = 0;
+                     const SPPHONEID *pszUPSId,
+                     SPPHONEID *pszSAPIId,
+                     DWORD cMaxLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxConvertLength(
-        DWORD cSrcLength,
-        WINBOOL bSAPI2UPS,
-        DWORD *pcMaxDestLength) = 0;
+                     DWORD cSrcLength,
+                     WINBOOL bSAPI2UPS,
+                     DWORD *pcMaxDestLength) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6482,42 +6482,42 @@ typedef struct ISpPhoneticAlphabetConverterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpPhoneticAlphabetConverter *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpPhoneticAlphabetConverter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpPhoneticAlphabetConverter *This);
+                     ISpPhoneticAlphabetConverter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpPhoneticAlphabetConverter *This);
+                     ISpPhoneticAlphabetConverter *This);
 
     /*** ISpPhoneticAlphabetConverter methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLangId)(
-        ISpPhoneticAlphabetConverter *This,
-        WORD *pLangID);
+                     ISpPhoneticAlphabetConverter *This,
+                     WORD *pLangID);
 
     HRESULT (STDMETHODCALLTYPE *SetLangId)(
-        ISpPhoneticAlphabetConverter *This,
-        WORD LangID);
+                     ISpPhoneticAlphabetConverter *This,
+                     WORD LangID);
 
     HRESULT (STDMETHODCALLTYPE *SAPI2UPS)(
-        ISpPhoneticAlphabetConverter *This,
-        const SPPHONEID *pszSAPIId,
-        SPPHONEID *pszUPSId,
-        DWORD cMaxLength);
+                     ISpPhoneticAlphabetConverter *This,
+                     const SPPHONEID *pszSAPIId,
+                     SPPHONEID *pszUPSId,
+                     DWORD cMaxLength);
 
     HRESULT (STDMETHODCALLTYPE *UPS2SAPI)(
-        ISpPhoneticAlphabetConverter *This,
-        const SPPHONEID *pszUPSId,
-        SPPHONEID *pszSAPIId,
-        DWORD cMaxLength);
+                     ISpPhoneticAlphabetConverter *This,
+                     const SPPHONEID *pszUPSId,
+                     SPPHONEID *pszSAPIId,
+                     DWORD cMaxLength);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxConvertLength)(
-        ISpPhoneticAlphabetConverter *This,
-        DWORD cSrcLength,
-        WINBOOL bSAPI2UPS,
-        DWORD *pcMaxDestLength);
+                     ISpPhoneticAlphabetConverter *This,
+                     DWORD cSrcLength,
+                     WINBOOL bSAPI2UPS,
+                     DWORD *pcMaxDestLength);
 
     END_INTERFACE
 } ISpPhoneticAlphabetConverterVtbl;
@@ -6585,10 +6585,10 @@ MIDL_INTERFACE("b2745efd-42ce-48ca-81f1-a96e02538a90")
 ISpPhoneticAlphabetSelection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsAlphabetUPS(
-        WINBOOL *pfIsUPS) = 0;
+                     WINBOOL *pfIsUPS) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAlphabetToUPS(
-        WINBOOL fForceUPS) = 0;
+                     WINBOOL fForceUPS) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6600,24 +6600,24 @@ typedef struct ISpPhoneticAlphabetSelectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpPhoneticAlphabetSelection *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpPhoneticAlphabetSelection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpPhoneticAlphabetSelection *This);
+                     ISpPhoneticAlphabetSelection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpPhoneticAlphabetSelection *This);
+                     ISpPhoneticAlphabetSelection *This);
 
     /*** ISpPhoneticAlphabetSelection methods ***/
     HRESULT (STDMETHODCALLTYPE *IsAlphabetUPS)(
-        ISpPhoneticAlphabetSelection *This,
-        WINBOOL *pfIsUPS);
+                     ISpPhoneticAlphabetSelection *This,
+                     WINBOOL *pfIsUPS);
 
     HRESULT (STDMETHODCALLTYPE *SetAlphabetToUPS)(
-        ISpPhoneticAlphabetSelection *This,
-        WINBOOL fForceUPS);
+                     ISpPhoneticAlphabetSelection *This,
+                     WINBOOL fForceUPS);
 
     END_INTERFACE
 } ISpPhoneticAlphabetSelectionVtbl;
@@ -6727,94 +6727,94 @@ MIDL_INTERFACE("6c44df74-72b9-4992-a1ec-ef996e0422d4")
 ISpVoice : public ISpEventSource
 {
     virtual HRESULT STDMETHODCALLTYPE SetOutput(
-        IUnknown *pUnkOutput,
-        WINBOOL fAllowFormatChanges) = 0;
+                     IUnknown *pUnkOutput,
+                     WINBOOL fAllowFormatChanges) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputObjectToken(
-        ISpObjectToken **ppObjectToken) = 0;
+                     ISpObjectToken **ppObjectToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputStream(
-        ISpStreamFormat **ppStream) = 0;
+                     ISpStreamFormat **ppStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVoice(
-        ISpObjectToken *pToken) = 0;
+                     ISpObjectToken *pToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVoice(
-        ISpObjectToken **ppToken) = 0;
+                     ISpObjectToken **ppToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Speak(
-        LPCWSTR pwcs,
-        DWORD dwFlags,
-        ULONG *pulStreamNumber) = 0;
+                     LPCWSTR pwcs,
+                     DWORD dwFlags,
+                     ULONG *pulStreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpeakStream(
-        IStream *pStream,
-        DWORD dwFlags,
-        ULONG *pulStreamNumber) = 0;
+                     IStream *pStream,
+                     DWORD dwFlags,
+                     ULONG *pulStreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        SPVOICESTATUS *pStatus,
-        LPWSTR *ppszLastBookmark) = 0;
+                     SPVOICESTATUS *pStatus,
+                     LPWSTR *ppszLastBookmark) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        LPCWSTR pItemType,
-        LONG lNumItems,
-        ULONG *pulNumSkipped) = 0;
+                     LPCWSTR pItemType,
+                     LONG lNumItems,
+                     ULONG *pulNumSkipped) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPriority(
-        SPVPRIORITY ePriority) = 0;
+                     SPVPRIORITY ePriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPriority(
-        SPVPRIORITY *pePriority) = 0;
+                     SPVPRIORITY *pePriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAlertBoundary(
-        SPEVENTENUM eBoundary) = 0;
+                     SPEVENTENUM eBoundary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAlertBoundary(
-        SPEVENTENUM *peBoundary) = 0;
+                     SPEVENTENUM *peBoundary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRate(
-        LONG RateAdjust) = 0;
+                     LONG RateAdjust) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRate(
-        LONG *pRateAdjust) = 0;
+                     LONG *pRateAdjust) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVolume(
-        USHORT usVolume) = 0;
+                     USHORT usVolume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVolume(
-        USHORT *pusVolume) = 0;
+                     USHORT *pusVolume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitUntilDone(
-        ULONG msTimeout) = 0;
+                     ULONG msTimeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSyncSpeakTimeout(
-        ULONG msTimeout) = 0;
+                     ULONG msTimeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSyncSpeakTimeout(
-        ULONG *pmsTimeout) = 0;
+                     ULONG *pmsTimeout) = 0;
 
     virtual HANDLE STDMETHODCALLTYPE SpeakCompleteEvent(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUISupported(
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        WINBOOL *pfSupported) = 0;
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     WINBOOL *pfSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisplayUI(
-        HWND hwndParent,
-        LPCWSTR pszTitle,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData) = 0;
+                     HWND hwndParent,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6826,178 +6826,178 @@ typedef struct ISpVoiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpVoice *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpVoice *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpVoice *This);
+                     ISpVoice *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpVoice *This);
+                     ISpVoice *This);
 
     /*** ISpNotifySource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNotifySink)(
-        ISpVoice *This,
-        ISpNotifySink *pNotifySink);
+                     ISpVoice *This,
+                     ISpNotifySink *pNotifySink);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWindowMessage)(
-        ISpVoice *This,
-        HWND hWnd,
-        UINT Msg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpVoice *This,
+                     HWND hWnd,
+                     UINT Msg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackFunction)(
-        ISpVoice *This,
-        SPNOTIFYCALLBACK *pfnCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpVoice *This,
+                     SPNOTIFYCALLBACK *pfnCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackInterface)(
-        ISpVoice *This,
-        ISpNotifyCallback *pSpCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpVoice *This,
+                     ISpNotifyCallback *pSpCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWin32Event)(
-        ISpVoice *This);
+                     ISpVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForNotifyEvent)(
-        ISpVoice *This,
-        DWORD dwMilliseconds);
+                     ISpVoice *This,
+                     DWORD dwMilliseconds);
 
     HANDLE (STDMETHODCALLTYPE *GetNotifyEventHandle)(
-        ISpVoice *This);
+                     ISpVoice *This);
 
     /*** ISpEventSource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInterest)(
-        ISpVoice *This,
-        ULONGLONG ullEventInterest,
-        ULONGLONG ullQueuedInterest);
+                     ISpVoice *This,
+                     ULONGLONG ullEventInterest,
+                     ULONGLONG ullQueuedInterest);
 
     HRESULT (STDMETHODCALLTYPE *GetEvents)(
-        ISpVoice *This,
-        ULONG ulCount,
-        SPEVENT *pEventArray,
-        ULONG *pulFetched);
+                     ISpVoice *This,
+                     ULONG ulCount,
+                     SPEVENT *pEventArray,
+                     ULONG *pulFetched);
 
     HRESULT (STDMETHODCALLTYPE *GetInfo)(
-        ISpVoice *This,
-        SPEVENTSOURCEINFO *pInfo);
+                     ISpVoice *This,
+                     SPEVENTSOURCEINFO *pInfo);
 
     /*** ISpVoice methods ***/
     HRESULT (STDMETHODCALLTYPE *SetOutput)(
-        ISpVoice *This,
-        IUnknown *pUnkOutput,
-        WINBOOL fAllowFormatChanges);
+                     ISpVoice *This,
+                     IUnknown *pUnkOutput,
+                     WINBOOL fAllowFormatChanges);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputObjectToken)(
-        ISpVoice *This,
-        ISpObjectToken **ppObjectToken);
+                     ISpVoice *This,
+                     ISpObjectToken **ppObjectToken);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputStream)(
-        ISpVoice *This,
-        ISpStreamFormat **ppStream);
+                     ISpVoice *This,
+                     ISpStreamFormat **ppStream);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        ISpVoice *This);
+                     ISpVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        ISpVoice *This);
+                     ISpVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *SetVoice)(
-        ISpVoice *This,
-        ISpObjectToken *pToken);
+                     ISpVoice *This,
+                     ISpObjectToken *pToken);
 
     HRESULT (STDMETHODCALLTYPE *GetVoice)(
-        ISpVoice *This,
-        ISpObjectToken **ppToken);
+                     ISpVoice *This,
+                     ISpObjectToken **ppToken);
 
     HRESULT (STDMETHODCALLTYPE *Speak)(
-        ISpVoice *This,
-        LPCWSTR pwcs,
-        DWORD dwFlags,
-        ULONG *pulStreamNumber);
+                     ISpVoice *This,
+                     LPCWSTR pwcs,
+                     DWORD dwFlags,
+                     ULONG *pulStreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *SpeakStream)(
-        ISpVoice *This,
-        IStream *pStream,
-        DWORD dwFlags,
-        ULONG *pulStreamNumber);
+                     ISpVoice *This,
+                     IStream *pStream,
+                     DWORD dwFlags,
+                     ULONG *pulStreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        ISpVoice *This,
-        SPVOICESTATUS *pStatus,
-        LPWSTR *ppszLastBookmark);
+                     ISpVoice *This,
+                     SPVOICESTATUS *pStatus,
+                     LPWSTR *ppszLastBookmark);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        ISpVoice *This,
-        LPCWSTR pItemType,
-        LONG lNumItems,
-        ULONG *pulNumSkipped);
+                     ISpVoice *This,
+                     LPCWSTR pItemType,
+                     LONG lNumItems,
+                     ULONG *pulNumSkipped);
 
     HRESULT (STDMETHODCALLTYPE *SetPriority)(
-        ISpVoice *This,
-        SPVPRIORITY ePriority);
+                     ISpVoice *This,
+                     SPVPRIORITY ePriority);
 
     HRESULT (STDMETHODCALLTYPE *GetPriority)(
-        ISpVoice *This,
-        SPVPRIORITY *pePriority);
+                     ISpVoice *This,
+                     SPVPRIORITY *pePriority);
 
     HRESULT (STDMETHODCALLTYPE *SetAlertBoundary)(
-        ISpVoice *This,
-        SPEVENTENUM eBoundary);
+                     ISpVoice *This,
+                     SPEVENTENUM eBoundary);
 
     HRESULT (STDMETHODCALLTYPE *GetAlertBoundary)(
-        ISpVoice *This,
-        SPEVENTENUM *peBoundary);
+                     ISpVoice *This,
+                     SPEVENTENUM *peBoundary);
 
     HRESULT (STDMETHODCALLTYPE *SetRate)(
-        ISpVoice *This,
-        LONG RateAdjust);
+                     ISpVoice *This,
+                     LONG RateAdjust);
 
     HRESULT (STDMETHODCALLTYPE *GetRate)(
-        ISpVoice *This,
-        LONG *pRateAdjust);
+                     ISpVoice *This,
+                     LONG *pRateAdjust);
 
     HRESULT (STDMETHODCALLTYPE *SetVolume)(
-        ISpVoice *This,
-        USHORT usVolume);
+                     ISpVoice *This,
+                     USHORT usVolume);
 
     HRESULT (STDMETHODCALLTYPE *GetVolume)(
-        ISpVoice *This,
-        USHORT *pusVolume);
+                     ISpVoice *This,
+                     USHORT *pusVolume);
 
     HRESULT (STDMETHODCALLTYPE *WaitUntilDone)(
-        ISpVoice *This,
-        ULONG msTimeout);
+                     ISpVoice *This,
+                     ULONG msTimeout);
 
     HRESULT (STDMETHODCALLTYPE *SetSyncSpeakTimeout)(
-        ISpVoice *This,
-        ULONG msTimeout);
+                     ISpVoice *This,
+                     ULONG msTimeout);
 
     HRESULT (STDMETHODCALLTYPE *GetSyncSpeakTimeout)(
-        ISpVoice *This,
-        ULONG *pmsTimeout);
+                     ISpVoice *This,
+                     ULONG *pmsTimeout);
 
     HANDLE (STDMETHODCALLTYPE *SpeakCompleteEvent)(
-        ISpVoice *This);
+                     ISpVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        ISpVoice *This,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        WINBOOL *pfSupported);
+                     ISpVoice *This,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     WINBOOL *pfSupported);
 
     HRESULT (STDMETHODCALLTYPE *DisplayUI)(
-        ISpVoice *This,
-        HWND hwndParent,
-        LPCWSTR pszTitle,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData);
+                     ISpVoice *This,
+                     HWND hwndParent,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData);
 
     END_INTERFACE
 } ISpVoiceVtbl;
@@ -7189,20 +7189,20 @@ MIDL_INTERFACE("1a5c0354-b621-4b5a-8791-d306ed379e53")
 ISpPhrase : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPhrase(
-        SPPHRASE **ppCoMemPhrase) = 0;
+                     SPPHRASE **ppCoMemPhrase) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSerializedPhrase(
-        SPSERIALIZEDPHRASE **ppCoMemPhrase) = 0;
+                     SPSERIALIZEDPHRASE **ppCoMemPhrase) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetText(
-        ULONG ulStart,
-        ULONG ulCount,
-        WINBOOL fUseTextReplacements,
-        LPWSTR *ppszCoMemText,
-        BYTE *pbDisplayAttributes) = 0;
+                     ULONG ulStart,
+                     ULONG ulCount,
+                     WINBOOL fUseTextReplacements,
+                     LPWSTR *ppszCoMemText,
+                     BYTE *pbDisplayAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Discard(
-        DWORD dwValueTypes) = 0;
+                     DWORD dwValueTypes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7214,36 +7214,36 @@ typedef struct ISpPhraseVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpPhrase *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpPhrase *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpPhrase *This);
+                     ISpPhrase *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpPhrase *This);
+                     ISpPhrase *This);
 
     /*** ISpPhrase methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPhrase)(
-        ISpPhrase *This,
-        SPPHRASE **ppCoMemPhrase);
+                     ISpPhrase *This,
+                     SPPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetSerializedPhrase)(
-        ISpPhrase *This,
-        SPSERIALIZEDPHRASE **ppCoMemPhrase);
+                     ISpPhrase *This,
+                     SPSERIALIZEDPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ISpPhrase *This,
-        ULONG ulStart,
-        ULONG ulCount,
-        WINBOOL fUseTextReplacements,
-        LPWSTR *ppszCoMemText,
-        BYTE *pbDisplayAttributes);
+                     ISpPhrase *This,
+                     ULONG ulStart,
+                     ULONG ulCount,
+                     WINBOOL fUseTextReplacements,
+                     LPWSTR *ppszCoMemText,
+                     BYTE *pbDisplayAttributes);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        ISpPhrase *This,
-        DWORD dwValueTypes);
+                     ISpPhrase *This,
+                     DWORD dwValueTypes);
 
     END_INTERFACE
 } ISpPhraseVtbl;
@@ -7307,13 +7307,13 @@ MIDL_INTERFACE("8fcebc98-4e49-4067-9c6c-d86a0e092e3d")
 ISpPhraseAlt : public ISpPhrase
 {
     virtual HRESULT STDMETHODCALLTYPE GetAltInfo(
-        ISpPhrase **ppParent,
-        ULONG *pulStartElementInParent,
-        ULONG *pcElementsInParent,
-        ULONG *pcElementsInAlt) = 0;
+                     ISpPhrase **ppParent,
+                     ULONG *pulStartElementInParent,
+                     ULONG *pcElementsInParent,
+                     ULONG *pcElementsInAlt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7325,47 +7325,47 @@ typedef struct ISpPhraseAltVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpPhraseAlt *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpPhraseAlt *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpPhraseAlt *This);
+                     ISpPhraseAlt *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpPhraseAlt *This);
+                     ISpPhraseAlt *This);
 
     /*** ISpPhrase methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPhrase)(
-        ISpPhraseAlt *This,
-        SPPHRASE **ppCoMemPhrase);
+                     ISpPhraseAlt *This,
+                     SPPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetSerializedPhrase)(
-        ISpPhraseAlt *This,
-        SPSERIALIZEDPHRASE **ppCoMemPhrase);
+                     ISpPhraseAlt *This,
+                     SPSERIALIZEDPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ISpPhraseAlt *This,
-        ULONG ulStart,
-        ULONG ulCount,
-        WINBOOL fUseTextReplacements,
-        LPWSTR *ppszCoMemText,
-        BYTE *pbDisplayAttributes);
+                     ISpPhraseAlt *This,
+                     ULONG ulStart,
+                     ULONG ulCount,
+                     WINBOOL fUseTextReplacements,
+                     LPWSTR *ppszCoMemText,
+                     BYTE *pbDisplayAttributes);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        ISpPhraseAlt *This,
-        DWORD dwValueTypes);
+                     ISpPhraseAlt *This,
+                     DWORD dwValueTypes);
 
     /*** ISpPhraseAlt methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAltInfo)(
-        ISpPhraseAlt *This,
-        ISpPhrase **ppParent,
-        ULONG *pulStartElementInParent,
-        ULONG *pcElementsInParent,
-        ULONG *pcElementsInAlt);
+                     ISpPhraseAlt *This,
+                     ISpPhrase **ppParent,
+                     ULONG *pulStartElementInParent,
+                     ULONG *pcElementsInParent,
+                     ULONG *pcElementsInAlt);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpPhraseAlt *This);
+                     ISpPhraseAlt *This);
 
     END_INTERFACE
 } ISpPhraseAltVtbl;
@@ -7443,16 +7443,16 @@ MIDL_INTERFACE("f264da52-e457-4696-b856-a737b717af79")
 ISpPhrase2 : public ISpPhrase
 {
     virtual HRESULT STDMETHODCALLTYPE GetXMLResult(
-        LPWSTR *ppszCoMemXMLResult,
-        SPXMLRESULTOPTIONS Options) = 0;
+                     LPWSTR *ppszCoMemXMLResult,
+                     SPXMLRESULTOPTIONS Options) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXMLErrorInfo(
-        SPSEMANTICERRORINFO *pSemanticErrorInfo) = 0;
+                     SPSEMANTICERRORINFO *pSemanticErrorInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAudio(
-        ULONG ulStartElement,
-        ULONG cElements,
-        ISpStreamFormat **ppStream) = 0;
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ISpStreamFormat **ppStream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7464,52 +7464,52 @@ typedef struct ISpPhrase2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpPhrase2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpPhrase2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpPhrase2 *This);
+                     ISpPhrase2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpPhrase2 *This);
+                     ISpPhrase2 *This);
 
     /*** ISpPhrase methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPhrase)(
-        ISpPhrase2 *This,
-        SPPHRASE **ppCoMemPhrase);
+                     ISpPhrase2 *This,
+                     SPPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetSerializedPhrase)(
-        ISpPhrase2 *This,
-        SPSERIALIZEDPHRASE **ppCoMemPhrase);
+                     ISpPhrase2 *This,
+                     SPSERIALIZEDPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ISpPhrase2 *This,
-        ULONG ulStart,
-        ULONG ulCount,
-        WINBOOL fUseTextReplacements,
-        LPWSTR *ppszCoMemText,
-        BYTE *pbDisplayAttributes);
+                     ISpPhrase2 *This,
+                     ULONG ulStart,
+                     ULONG ulCount,
+                     WINBOOL fUseTextReplacements,
+                     LPWSTR *ppszCoMemText,
+                     BYTE *pbDisplayAttributes);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        ISpPhrase2 *This,
-        DWORD dwValueTypes);
+                     ISpPhrase2 *This,
+                     DWORD dwValueTypes);
 
     /*** ISpPhrase2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetXMLResult)(
-        ISpPhrase2 *This,
-        LPWSTR *ppszCoMemXMLResult,
-        SPXMLRESULTOPTIONS Options);
+                     ISpPhrase2 *This,
+                     LPWSTR *ppszCoMemXMLResult,
+                     SPXMLRESULTOPTIONS Options);
 
     HRESULT (STDMETHODCALLTYPE *GetXMLErrorInfo)(
-        ISpPhrase2 *This,
-        SPSEMANTICERRORINFO *pSemanticErrorInfo);
+                     ISpPhrase2 *This,
+                     SPSEMANTICERRORINFO *pSemanticErrorInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetAudio)(
-        ISpPhrase2 *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        ISpStreamFormat **ppStream);
+                     ISpPhrase2 *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ISpStreamFormat **ppStream);
 
     END_INTERFACE
 } ISpPhrase2Vtbl;
@@ -7596,35 +7596,35 @@ MIDL_INTERFACE("20b053be-e235-43cd-9a2a-8d17a48b7842")
 ISpRecoResult : public ISpPhrase
 {
     virtual HRESULT STDMETHODCALLTYPE GetResultTimes(
-        SPRECORESULTTIMES *pTimes) = 0;
+                     SPRECORESULTTIMES *pTimes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAlternates(
-        ULONG ulStartElement,
-        ULONG cElements,
-        ULONG ulRequestCount,
-        ISpPhraseAlt **ppPhrases,
-        ULONG *pcPhrasesReturned) = 0;
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ULONG ulRequestCount,
+                     ISpPhraseAlt **ppPhrases,
+                     ULONG *pcPhrasesReturned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAudio(
-        ULONG ulStartElement,
-        ULONG cElements,
-        ISpStreamFormat **ppStream) = 0;
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ISpStreamFormat **ppStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpeakAudio(
-        ULONG ulStartElement,
-        ULONG cElements,
-        DWORD dwFlags,
-        ULONG *pulStreamNumber) = 0;
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     DWORD dwFlags,
+                     ULONG *pulStreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Serialize(
-        SPSERIALIZEDRESULT **ppCoMemSerializedResult) = 0;
+                     SPSERIALIZEDRESULT **ppCoMemSerializedResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleAudio(
-        const GUID *pAudioFormatId,
-        const WAVEFORMATEX *pWaveFormatEx) = 0;
+                     const GUID *pAudioFormatId,
+                     const WAVEFORMATEX *pWaveFormatEx) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRecoContext(
-        ISpRecoContext **ppRecoContext) = 0;
+                     ISpRecoContext **ppRecoContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7636,75 +7636,75 @@ typedef struct ISpRecoResultVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecoResult *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecoResult *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecoResult *This);
+                     ISpRecoResult *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecoResult *This);
+                     ISpRecoResult *This);
 
     /*** ISpPhrase methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPhrase)(
-        ISpRecoResult *This,
-        SPPHRASE **ppCoMemPhrase);
+                     ISpRecoResult *This,
+                     SPPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetSerializedPhrase)(
-        ISpRecoResult *This,
-        SPSERIALIZEDPHRASE **ppCoMemPhrase);
+                     ISpRecoResult *This,
+                     SPSERIALIZEDPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ISpRecoResult *This,
-        ULONG ulStart,
-        ULONG ulCount,
-        WINBOOL fUseTextReplacements,
-        LPWSTR *ppszCoMemText,
-        BYTE *pbDisplayAttributes);
+                     ISpRecoResult *This,
+                     ULONG ulStart,
+                     ULONG ulCount,
+                     WINBOOL fUseTextReplacements,
+                     LPWSTR *ppszCoMemText,
+                     BYTE *pbDisplayAttributes);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        ISpRecoResult *This,
-        DWORD dwValueTypes);
+                     ISpRecoResult *This,
+                     DWORD dwValueTypes);
 
     /*** ISpRecoResult methods ***/
     HRESULT (STDMETHODCALLTYPE *GetResultTimes)(
-        ISpRecoResult *This,
-        SPRECORESULTTIMES *pTimes);
+                     ISpRecoResult *This,
+                     SPRECORESULTTIMES *pTimes);
 
     HRESULT (STDMETHODCALLTYPE *GetAlternates)(
-        ISpRecoResult *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        ULONG ulRequestCount,
-        ISpPhraseAlt **ppPhrases,
-        ULONG *pcPhrasesReturned);
+                     ISpRecoResult *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ULONG ulRequestCount,
+                     ISpPhraseAlt **ppPhrases,
+                     ULONG *pcPhrasesReturned);
 
     HRESULT (STDMETHODCALLTYPE *GetAudio)(
-        ISpRecoResult *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        ISpStreamFormat **ppStream);
+                     ISpRecoResult *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ISpStreamFormat **ppStream);
 
     HRESULT (STDMETHODCALLTYPE *SpeakAudio)(
-        ISpRecoResult *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        DWORD dwFlags,
-        ULONG *pulStreamNumber);
+                     ISpRecoResult *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     DWORD dwFlags,
+                     ULONG *pulStreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        ISpRecoResult *This,
-        SPSERIALIZEDRESULT **ppCoMemSerializedResult);
+                     ISpRecoResult *This,
+                     SPSERIALIZEDRESULT **ppCoMemSerializedResult);
 
     HRESULT (STDMETHODCALLTYPE *ScaleAudio)(
-        ISpRecoResult *This,
-        const GUID *pAudioFormatId,
-        const WAVEFORMATEX *pWaveFormatEx);
+                     ISpRecoResult *This,
+                     const GUID *pAudioFormatId,
+                     const WAVEFORMATEX *pWaveFormatEx);
 
     HRESULT (STDMETHODCALLTYPE *GetRecoContext)(
-        ISpRecoResult *This,
-        ISpRecoContext **ppRecoContext);
+                     ISpRecoResult *This,
+                     ISpRecoContext **ppRecoContext);
 
     END_INTERFACE
 } ISpRecoResultVtbl;
@@ -7803,18 +7803,18 @@ MIDL_INTERFACE("27cac6c4-88f2-41f2-8817-0c95e59f1e6e")
 ISpRecoResult2 : public ISpRecoResult
 {
     virtual HRESULT STDMETHODCALLTYPE CommitAlternate(
-        ISpPhraseAlt *pPhraseAlt,
-        ISpRecoResult **ppNewResult) = 0;
+                     ISpPhraseAlt *pPhraseAlt,
+                     ISpRecoResult **ppNewResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitText(
-        ULONG ulStartElement,
-        ULONG cElements,
-        LPCWSTR pszCorrectedData,
-        DWORD eCommitFlags) = 0;
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     LPCWSTR pszCorrectedData,
+                     DWORD eCommitFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTextFeedback(
-        LPCWSTR pszFeedback,
-        WINBOOL fSuccessful) = 0;
+                     LPCWSTR pszFeedback,
+                     WINBOOL fSuccessful) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7826,93 +7826,93 @@ typedef struct ISpRecoResult2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecoResult2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecoResult2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecoResult2 *This);
+                     ISpRecoResult2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecoResult2 *This);
+                     ISpRecoResult2 *This);
 
     /*** ISpPhrase methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPhrase)(
-        ISpRecoResult2 *This,
-        SPPHRASE **ppCoMemPhrase);
+                     ISpRecoResult2 *This,
+                     SPPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetSerializedPhrase)(
-        ISpRecoResult2 *This,
-        SPSERIALIZEDPHRASE **ppCoMemPhrase);
+                     ISpRecoResult2 *This,
+                     SPSERIALIZEDPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ISpRecoResult2 *This,
-        ULONG ulStart,
-        ULONG ulCount,
-        WINBOOL fUseTextReplacements,
-        LPWSTR *ppszCoMemText,
-        BYTE *pbDisplayAttributes);
+                     ISpRecoResult2 *This,
+                     ULONG ulStart,
+                     ULONG ulCount,
+                     WINBOOL fUseTextReplacements,
+                     LPWSTR *ppszCoMemText,
+                     BYTE *pbDisplayAttributes);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        ISpRecoResult2 *This,
-        DWORD dwValueTypes);
+                     ISpRecoResult2 *This,
+                     DWORD dwValueTypes);
 
     /*** ISpRecoResult methods ***/
     HRESULT (STDMETHODCALLTYPE *GetResultTimes)(
-        ISpRecoResult2 *This,
-        SPRECORESULTTIMES *pTimes);
+                     ISpRecoResult2 *This,
+                     SPRECORESULTTIMES *pTimes);
 
     HRESULT (STDMETHODCALLTYPE *GetAlternates)(
-        ISpRecoResult2 *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        ULONG ulRequestCount,
-        ISpPhraseAlt **ppPhrases,
-        ULONG *pcPhrasesReturned);
+                     ISpRecoResult2 *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ULONG ulRequestCount,
+                     ISpPhraseAlt **ppPhrases,
+                     ULONG *pcPhrasesReturned);
 
     HRESULT (STDMETHODCALLTYPE *GetAudio)(
-        ISpRecoResult2 *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        ISpStreamFormat **ppStream);
+                     ISpRecoResult2 *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ISpStreamFormat **ppStream);
 
     HRESULT (STDMETHODCALLTYPE *SpeakAudio)(
-        ISpRecoResult2 *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        DWORD dwFlags,
-        ULONG *pulStreamNumber);
+                     ISpRecoResult2 *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     DWORD dwFlags,
+                     ULONG *pulStreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        ISpRecoResult2 *This,
-        SPSERIALIZEDRESULT **ppCoMemSerializedResult);
+                     ISpRecoResult2 *This,
+                     SPSERIALIZEDRESULT **ppCoMemSerializedResult);
 
     HRESULT (STDMETHODCALLTYPE *ScaleAudio)(
-        ISpRecoResult2 *This,
-        const GUID *pAudioFormatId,
-        const WAVEFORMATEX *pWaveFormatEx);
+                     ISpRecoResult2 *This,
+                     const GUID *pAudioFormatId,
+                     const WAVEFORMATEX *pWaveFormatEx);
 
     HRESULT (STDMETHODCALLTYPE *GetRecoContext)(
-        ISpRecoResult2 *This,
-        ISpRecoContext **ppRecoContext);
+                     ISpRecoResult2 *This,
+                     ISpRecoContext **ppRecoContext);
 
     /*** ISpRecoResult2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CommitAlternate)(
-        ISpRecoResult2 *This,
-        ISpPhraseAlt *pPhraseAlt,
-        ISpRecoResult **ppNewResult);
+                     ISpRecoResult2 *This,
+                     ISpPhraseAlt *pPhraseAlt,
+                     ISpRecoResult **ppNewResult);
 
     HRESULT (STDMETHODCALLTYPE *CommitText)(
-        ISpRecoResult2 *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        LPCWSTR pszCorrectedData,
-        DWORD eCommitFlags);
+                     ISpRecoResult2 *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     LPCWSTR pszCorrectedData,
+                     DWORD eCommitFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetTextFeedback)(
-        ISpRecoResult2 *This,
-        LPCWSTR pszFeedback,
-        WINBOOL fSuccessful);
+                     ISpRecoResult2 *This,
+                     LPCWSTR pszFeedback,
+                     WINBOOL fSuccessful);
 
     END_INTERFACE
 } ISpRecoResult2Vtbl;
@@ -8020,11 +8020,11 @@ MIDL_INTERFACE("ae39362b-45a8-4074-9b9e-ccf49aa2d0b6")
 ISpXMLRecoResult : public ISpRecoResult
 {
     virtual HRESULT STDMETHODCALLTYPE GetXMLResult(
-        LPWSTR *ppszCoMemXMLResult,
-        SPXMLRESULTOPTIONS Options) = 0;
+                     LPWSTR *ppszCoMemXMLResult,
+                     SPXMLRESULTOPTIONS Options) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXMLErrorInfo(
-        SPSEMANTICERRORINFO *pSemanticErrorInfo) = 0;
+                     SPSEMANTICERRORINFO *pSemanticErrorInfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8036,85 +8036,85 @@ typedef struct ISpXMLRecoResultVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpXMLRecoResult *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpXMLRecoResult *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpXMLRecoResult *This);
+                     ISpXMLRecoResult *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpXMLRecoResult *This);
+                     ISpXMLRecoResult *This);
 
     /*** ISpPhrase methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPhrase)(
-        ISpXMLRecoResult *This,
-        SPPHRASE **ppCoMemPhrase);
+                     ISpXMLRecoResult *This,
+                     SPPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetSerializedPhrase)(
-        ISpXMLRecoResult *This,
-        SPSERIALIZEDPHRASE **ppCoMemPhrase);
+                     ISpXMLRecoResult *This,
+                     SPSERIALIZEDPHRASE **ppCoMemPhrase);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ISpXMLRecoResult *This,
-        ULONG ulStart,
-        ULONG ulCount,
-        WINBOOL fUseTextReplacements,
-        LPWSTR *ppszCoMemText,
-        BYTE *pbDisplayAttributes);
+                     ISpXMLRecoResult *This,
+                     ULONG ulStart,
+                     ULONG ulCount,
+                     WINBOOL fUseTextReplacements,
+                     LPWSTR *ppszCoMemText,
+                     BYTE *pbDisplayAttributes);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        ISpXMLRecoResult *This,
-        DWORD dwValueTypes);
+                     ISpXMLRecoResult *This,
+                     DWORD dwValueTypes);
 
     /*** ISpRecoResult methods ***/
     HRESULT (STDMETHODCALLTYPE *GetResultTimes)(
-        ISpXMLRecoResult *This,
-        SPRECORESULTTIMES *pTimes);
+                     ISpXMLRecoResult *This,
+                     SPRECORESULTTIMES *pTimes);
 
     HRESULT (STDMETHODCALLTYPE *GetAlternates)(
-        ISpXMLRecoResult *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        ULONG ulRequestCount,
-        ISpPhraseAlt **ppPhrases,
-        ULONG *pcPhrasesReturned);
+                     ISpXMLRecoResult *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ULONG ulRequestCount,
+                     ISpPhraseAlt **ppPhrases,
+                     ULONG *pcPhrasesReturned);
 
     HRESULT (STDMETHODCALLTYPE *GetAudio)(
-        ISpXMLRecoResult *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        ISpStreamFormat **ppStream);
+                     ISpXMLRecoResult *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     ISpStreamFormat **ppStream);
 
     HRESULT (STDMETHODCALLTYPE *SpeakAudio)(
-        ISpXMLRecoResult *This,
-        ULONG ulStartElement,
-        ULONG cElements,
-        DWORD dwFlags,
-        ULONG *pulStreamNumber);
+                     ISpXMLRecoResult *This,
+                     ULONG ulStartElement,
+                     ULONG cElements,
+                     DWORD dwFlags,
+                     ULONG *pulStreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        ISpXMLRecoResult *This,
-        SPSERIALIZEDRESULT **ppCoMemSerializedResult);
+                     ISpXMLRecoResult *This,
+                     SPSERIALIZEDRESULT **ppCoMemSerializedResult);
 
     HRESULT (STDMETHODCALLTYPE *ScaleAudio)(
-        ISpXMLRecoResult *This,
-        const GUID *pAudioFormatId,
-        const WAVEFORMATEX *pWaveFormatEx);
+                     ISpXMLRecoResult *This,
+                     const GUID *pAudioFormatId,
+                     const WAVEFORMATEX *pWaveFormatEx);
 
     HRESULT (STDMETHODCALLTYPE *GetRecoContext)(
-        ISpXMLRecoResult *This,
-        ISpRecoContext **ppRecoContext);
+                     ISpXMLRecoResult *This,
+                     ISpRecoContext **ppRecoContext);
 
     /*** ISpXMLRecoResult methods ***/
     HRESULT (STDMETHODCALLTYPE *GetXMLResult)(
-        ISpXMLRecoResult *This,
-        LPWSTR *ppszCoMemXMLResult,
-        SPXMLRESULTOPTIONS Options);
+                     ISpXMLRecoResult *This,
+                     LPWSTR *ppszCoMemXMLResult,
+                     SPXMLRESULTOPTIONS Options);
 
     HRESULT (STDMETHODCALLTYPE *GetXMLErrorInfo)(
-        ISpXMLRecoResult *This,
-        SPSEMANTICERRORINFO *pSemanticErrorInfo);
+                     ISpXMLRecoResult *This,
+                     SPSEMANTICERRORINFO *pSemanticErrorInfo);
 
     END_INTERFACE
 } ISpXMLRecoResultVtbl;
@@ -8274,45 +8274,45 @@ MIDL_INTERFACE("8137828f-591a-4a42-be58-49ea7ebaac68")
 ISpGrammarBuilder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ResetGrammar(
-        WORD NewLanguage) = 0;
+                     WORD NewLanguage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRule(
-        LPCWSTR pszRuleName,
-        DWORD dwRuleId,
-        DWORD dwAttributes,
-        WINBOOL fCreateIfNotExist,
-        SPSTATEHANDLE *phInitialState) = 0;
+                     LPCWSTR pszRuleName,
+                     DWORD dwRuleId,
+                     DWORD dwAttributes,
+                     WINBOOL fCreateIfNotExist,
+                     SPSTATEHANDLE *phInitialState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearRule(
-        SPSTATEHANDLE hState) = 0;
+                     SPSTATEHANDLE hState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateNewState(
-        SPSTATEHANDLE hState,
-        SPSTATEHANDLE *phState) = 0;
+                     SPSTATEHANDLE hState,
+                     SPSTATEHANDLE *phState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddWordTransition(
-        SPSTATEHANDLE hFromState,
-        SPSTATEHANDLE hToState,
-        LPCWSTR psz,
-        LPCWSTR pszSeparators,
-        SPGRAMMARWORDTYPE eWordType,
-        float Weight,
-        const SPPROPERTYINFO *pPropInfo) = 0;
+                     SPSTATEHANDLE hFromState,
+                     SPSTATEHANDLE hToState,
+                     LPCWSTR psz,
+                     LPCWSTR pszSeparators,
+                     SPGRAMMARWORDTYPE eWordType,
+                     float Weight,
+                     const SPPROPERTYINFO *pPropInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddRuleTransition(
-        SPSTATEHANDLE hFromState,
-        SPSTATEHANDLE hToState,
-        SPSTATEHANDLE hRule,
-        float Weight,
-        const SPPROPERTYINFO *pPropInfo) = 0;
+                     SPSTATEHANDLE hFromState,
+                     SPSTATEHANDLE hToState,
+                     SPSTATEHANDLE hRule,
+                     float Weight,
+                     const SPPROPERTYINFO *pPropInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddResource(
-        SPSTATEHANDLE hRuleState,
-        LPCWSTR pszResourceName,
-        LPCWSTR pszResourceValue) = 0;
+                     SPSTATEHANDLE hRuleState,
+                     LPCWSTR pszResourceName,
+                     LPCWSTR pszResourceValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        DWORD dwReserved) = 0;
+                     DWORD dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8324,65 +8324,65 @@ typedef struct ISpGrammarBuilderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpGrammarBuilder *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpGrammarBuilder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpGrammarBuilder *This);
+                     ISpGrammarBuilder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpGrammarBuilder *This);
+                     ISpGrammarBuilder *This);
 
     /*** ISpGrammarBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *ResetGrammar)(
-        ISpGrammarBuilder *This,
-        WORD NewLanguage);
+                     ISpGrammarBuilder *This,
+                     WORD NewLanguage);
 
     HRESULT (STDMETHODCALLTYPE *GetRule)(
-        ISpGrammarBuilder *This,
-        LPCWSTR pszRuleName,
-        DWORD dwRuleId,
-        DWORD dwAttributes,
-        WINBOOL fCreateIfNotExist,
-        SPSTATEHANDLE *phInitialState);
+                     ISpGrammarBuilder *This,
+                     LPCWSTR pszRuleName,
+                     DWORD dwRuleId,
+                     DWORD dwAttributes,
+                     WINBOOL fCreateIfNotExist,
+                     SPSTATEHANDLE *phInitialState);
 
     HRESULT (STDMETHODCALLTYPE *ClearRule)(
-        ISpGrammarBuilder *This,
-        SPSTATEHANDLE hState);
+                     ISpGrammarBuilder *This,
+                     SPSTATEHANDLE hState);
 
     HRESULT (STDMETHODCALLTYPE *CreateNewState)(
-        ISpGrammarBuilder *This,
-        SPSTATEHANDLE hState,
-        SPSTATEHANDLE *phState);
+                     ISpGrammarBuilder *This,
+                     SPSTATEHANDLE hState,
+                     SPSTATEHANDLE *phState);
 
     HRESULT (STDMETHODCALLTYPE *AddWordTransition)(
-        ISpGrammarBuilder *This,
-        SPSTATEHANDLE hFromState,
-        SPSTATEHANDLE hToState,
-        LPCWSTR psz,
-        LPCWSTR pszSeparators,
-        SPGRAMMARWORDTYPE eWordType,
-        float Weight,
-        const SPPROPERTYINFO *pPropInfo);
+                     ISpGrammarBuilder *This,
+                     SPSTATEHANDLE hFromState,
+                     SPSTATEHANDLE hToState,
+                     LPCWSTR psz,
+                     LPCWSTR pszSeparators,
+                     SPGRAMMARWORDTYPE eWordType,
+                     float Weight,
+                     const SPPROPERTYINFO *pPropInfo);
 
     HRESULT (STDMETHODCALLTYPE *AddRuleTransition)(
-        ISpGrammarBuilder *This,
-        SPSTATEHANDLE hFromState,
-        SPSTATEHANDLE hToState,
-        SPSTATEHANDLE hRule,
-        float Weight,
-        const SPPROPERTYINFO *pPropInfo);
+                     ISpGrammarBuilder *This,
+                     SPSTATEHANDLE hFromState,
+                     SPSTATEHANDLE hToState,
+                     SPSTATEHANDLE hRule,
+                     float Weight,
+                     const SPPROPERTYINFO *pPropInfo);
 
     HRESULT (STDMETHODCALLTYPE *AddResource)(
-        ISpGrammarBuilder *This,
-        SPSTATEHANDLE hRuleState,
-        LPCWSTR pszResourceName,
-        LPCWSTR pszResourceValue);
+                     ISpGrammarBuilder *This,
+                     SPSTATEHANDLE hRuleState,
+                     LPCWSTR pszResourceName,
+                     LPCWSTR pszResourceValue);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpGrammarBuilder *This,
-        DWORD dwReserved);
+                     ISpGrammarBuilder *This,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } ISpGrammarBuilderVtbl;
@@ -8466,78 +8466,78 @@ MIDL_INTERFACE("2177db29-7f45-47d0-8554-067e91c80502")
 ISpRecoGrammar : public ISpGrammarBuilder
 {
     virtual HRESULT STDMETHODCALLTYPE GetGrammarId(
-        ULONGLONG *pullGrammarId) = 0;
+                     ULONGLONG *pullGrammarId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRecoContext(
-        ISpRecoContext **ppRecoCtxt) = 0;
+                     ISpRecoContext **ppRecoCtxt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadCmdFromFile(
-        LPCWSTR pszFileName,
-        SPLOADOPTIONS Options) = 0;
+                     LPCWSTR pszFileName,
+                     SPLOADOPTIONS Options) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadCmdFromObject(
-        REFCLSID rcid,
-        LPCWSTR pszGrammarName,
-        SPLOADOPTIONS Options) = 0;
+                     REFCLSID rcid,
+                     LPCWSTR pszGrammarName,
+                     SPLOADOPTIONS Options) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadCmdFromResource(
-        HMODULE hModule,
-        LPCWSTR pszResourceName,
-        LPCWSTR pszResourceType,
-        WORD wLanguage,
-        SPLOADOPTIONS Options) = 0;
+                     HMODULE hModule,
+                     LPCWSTR pszResourceName,
+                     LPCWSTR pszResourceType,
+                     WORD wLanguage,
+                     SPLOADOPTIONS Options) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadCmdFromMemory(
-        const SPBINARYGRAMMAR *pGrammar,
-        SPLOADOPTIONS Options) = 0;
+                     const SPBINARYGRAMMAR *pGrammar,
+                     SPLOADOPTIONS Options) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadCmdFromProprietaryGrammar(
-        REFGUID rguidParam,
-        LPCWSTR pszStringParam,
-        const void *pvDataPrarm,
-        ULONG cbDataSize,
-        SPLOADOPTIONS Options) = 0;
+                     REFGUID rguidParam,
+                     LPCWSTR pszStringParam,
+                     const void *pvDataPrarm,
+                     ULONG cbDataSize,
+                     SPLOADOPTIONS Options) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRuleState(
-        LPCWSTR pszName,
-        void *pReserved,
-        SPRULESTATE NewState) = 0;
+                     LPCWSTR pszName,
+                     void *pReserved,
+                     SPRULESTATE NewState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRuleIdState(
-        ULONG ulRuleId,
-        SPRULESTATE NewState) = 0;
+                     ULONG ulRuleId,
+                     SPRULESTATE NewState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadDictation(
-        LPCWSTR pszTopicName,
-        SPLOADOPTIONS Options) = 0;
+                     LPCWSTR pszTopicName,
+                     SPLOADOPTIONS Options) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnloadDictation(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDictationState(
-        SPRULESTATE NewState) = 0;
+                     SPRULESTATE NewState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetWordSequenceData(
-        const WCHAR *pText,
-        ULONG cchText,
-        const SPTEXTSELECTIONINFO *pInfo) = 0;
+                     const WCHAR *pText,
+                     ULONG cchText,
+                     const SPTEXTSELECTIONINFO *pInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTextSelection(
-        const SPTEXTSELECTIONINFO *pInfo) = 0;
+                     const SPTEXTSELECTIONINFO *pInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPronounceable(
-        LPCWSTR pszWord,
-        SPWORDPRONOUNCEABLE *pWordPronounceable) = 0;
+                     LPCWSTR pszWord,
+                     SPWORDPRONOUNCEABLE *pWordPronounceable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGrammarState(
-        SPGRAMMARSTATE eGrammarState) = 0;
+                     SPGRAMMARSTATE eGrammarState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveCmd(
-        IStream *pStream,
-        LPWSTR *ppszCoMemErrorText) = 0;
+                     IStream *pStream,
+                     LPWSTR *ppszCoMemErrorText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGrammarState(
-        SPGRAMMARSTATE *peGrammarState) = 0;
+                     SPGRAMMARSTATE *peGrammarState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8549,157 +8549,157 @@ typedef struct ISpRecoGrammarVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecoGrammar *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecoGrammar *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecoGrammar *This);
+                     ISpRecoGrammar *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecoGrammar *This);
+                     ISpRecoGrammar *This);
 
     /*** ISpGrammarBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *ResetGrammar)(
-        ISpRecoGrammar *This,
-        WORD NewLanguage);
+                     ISpRecoGrammar *This,
+                     WORD NewLanguage);
 
     HRESULT (STDMETHODCALLTYPE *GetRule)(
-        ISpRecoGrammar *This,
-        LPCWSTR pszRuleName,
-        DWORD dwRuleId,
-        DWORD dwAttributes,
-        WINBOOL fCreateIfNotExist,
-        SPSTATEHANDLE *phInitialState);
+                     ISpRecoGrammar *This,
+                     LPCWSTR pszRuleName,
+                     DWORD dwRuleId,
+                     DWORD dwAttributes,
+                     WINBOOL fCreateIfNotExist,
+                     SPSTATEHANDLE *phInitialState);
 
     HRESULT (STDMETHODCALLTYPE *ClearRule)(
-        ISpRecoGrammar *This,
-        SPSTATEHANDLE hState);
+                     ISpRecoGrammar *This,
+                     SPSTATEHANDLE hState);
 
     HRESULT (STDMETHODCALLTYPE *CreateNewState)(
-        ISpRecoGrammar *This,
-        SPSTATEHANDLE hState,
-        SPSTATEHANDLE *phState);
+                     ISpRecoGrammar *This,
+                     SPSTATEHANDLE hState,
+                     SPSTATEHANDLE *phState);
 
     HRESULT (STDMETHODCALLTYPE *AddWordTransition)(
-        ISpRecoGrammar *This,
-        SPSTATEHANDLE hFromState,
-        SPSTATEHANDLE hToState,
-        LPCWSTR psz,
-        LPCWSTR pszSeparators,
-        SPGRAMMARWORDTYPE eWordType,
-        float Weight,
-        const SPPROPERTYINFO *pPropInfo);
+                     ISpRecoGrammar *This,
+                     SPSTATEHANDLE hFromState,
+                     SPSTATEHANDLE hToState,
+                     LPCWSTR psz,
+                     LPCWSTR pszSeparators,
+                     SPGRAMMARWORDTYPE eWordType,
+                     float Weight,
+                     const SPPROPERTYINFO *pPropInfo);
 
     HRESULT (STDMETHODCALLTYPE *AddRuleTransition)(
-        ISpRecoGrammar *This,
-        SPSTATEHANDLE hFromState,
-        SPSTATEHANDLE hToState,
-        SPSTATEHANDLE hRule,
-        float Weight,
-        const SPPROPERTYINFO *pPropInfo);
+                     ISpRecoGrammar *This,
+                     SPSTATEHANDLE hFromState,
+                     SPSTATEHANDLE hToState,
+                     SPSTATEHANDLE hRule,
+                     float Weight,
+                     const SPPROPERTYINFO *pPropInfo);
 
     HRESULT (STDMETHODCALLTYPE *AddResource)(
-        ISpRecoGrammar *This,
-        SPSTATEHANDLE hRuleState,
-        LPCWSTR pszResourceName,
-        LPCWSTR pszResourceValue);
+                     ISpRecoGrammar *This,
+                     SPSTATEHANDLE hRuleState,
+                     LPCWSTR pszResourceName,
+                     LPCWSTR pszResourceValue);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpRecoGrammar *This,
-        DWORD dwReserved);
+                     ISpRecoGrammar *This,
+                     DWORD dwReserved);
 
     /*** ISpRecoGrammar methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGrammarId)(
-        ISpRecoGrammar *This,
-        ULONGLONG *pullGrammarId);
+                     ISpRecoGrammar *This,
+                     ULONGLONG *pullGrammarId);
 
     HRESULT (STDMETHODCALLTYPE *GetRecoContext)(
-        ISpRecoGrammar *This,
-        ISpRecoContext **ppRecoCtxt);
+                     ISpRecoGrammar *This,
+                     ISpRecoContext **ppRecoCtxt);
 
     HRESULT (STDMETHODCALLTYPE *LoadCmdFromFile)(
-        ISpRecoGrammar *This,
-        LPCWSTR pszFileName,
-        SPLOADOPTIONS Options);
+                     ISpRecoGrammar *This,
+                     LPCWSTR pszFileName,
+                     SPLOADOPTIONS Options);
 
     HRESULT (STDMETHODCALLTYPE *LoadCmdFromObject)(
-        ISpRecoGrammar *This,
-        REFCLSID rcid,
-        LPCWSTR pszGrammarName,
-        SPLOADOPTIONS Options);
+                     ISpRecoGrammar *This,
+                     REFCLSID rcid,
+                     LPCWSTR pszGrammarName,
+                     SPLOADOPTIONS Options);
 
     HRESULT (STDMETHODCALLTYPE *LoadCmdFromResource)(
-        ISpRecoGrammar *This,
-        HMODULE hModule,
-        LPCWSTR pszResourceName,
-        LPCWSTR pszResourceType,
-        WORD wLanguage,
-        SPLOADOPTIONS Options);
+                     ISpRecoGrammar *This,
+                     HMODULE hModule,
+                     LPCWSTR pszResourceName,
+                     LPCWSTR pszResourceType,
+                     WORD wLanguage,
+                     SPLOADOPTIONS Options);
 
     HRESULT (STDMETHODCALLTYPE *LoadCmdFromMemory)(
-        ISpRecoGrammar *This,
-        const SPBINARYGRAMMAR *pGrammar,
-        SPLOADOPTIONS Options);
+                     ISpRecoGrammar *This,
+                     const SPBINARYGRAMMAR *pGrammar,
+                     SPLOADOPTIONS Options);
 
     HRESULT (STDMETHODCALLTYPE *LoadCmdFromProprietaryGrammar)(
-        ISpRecoGrammar *This,
-        REFGUID rguidParam,
-        LPCWSTR pszStringParam,
-        const void *pvDataPrarm,
-        ULONG cbDataSize,
-        SPLOADOPTIONS Options);
+                     ISpRecoGrammar *This,
+                     REFGUID rguidParam,
+                     LPCWSTR pszStringParam,
+                     const void *pvDataPrarm,
+                     ULONG cbDataSize,
+                     SPLOADOPTIONS Options);
 
     HRESULT (STDMETHODCALLTYPE *SetRuleState)(
-        ISpRecoGrammar *This,
-        LPCWSTR pszName,
-        void *pReserved,
-        SPRULESTATE NewState);
+                     ISpRecoGrammar *This,
+                     LPCWSTR pszName,
+                     void *pReserved,
+                     SPRULESTATE NewState);
 
     HRESULT (STDMETHODCALLTYPE *SetRuleIdState)(
-        ISpRecoGrammar *This,
-        ULONG ulRuleId,
-        SPRULESTATE NewState);
+                     ISpRecoGrammar *This,
+                     ULONG ulRuleId,
+                     SPRULESTATE NewState);
 
     HRESULT (STDMETHODCALLTYPE *LoadDictation)(
-        ISpRecoGrammar *This,
-        LPCWSTR pszTopicName,
-        SPLOADOPTIONS Options);
+                     ISpRecoGrammar *This,
+                     LPCWSTR pszTopicName,
+                     SPLOADOPTIONS Options);
 
     HRESULT (STDMETHODCALLTYPE *UnloadDictation)(
-        ISpRecoGrammar *This);
+                     ISpRecoGrammar *This);
 
     HRESULT (STDMETHODCALLTYPE *SetDictationState)(
-        ISpRecoGrammar *This,
-        SPRULESTATE NewState);
+                     ISpRecoGrammar *This,
+                     SPRULESTATE NewState);
 
     HRESULT (STDMETHODCALLTYPE *SetWordSequenceData)(
-        ISpRecoGrammar *This,
-        const WCHAR *pText,
-        ULONG cchText,
-        const SPTEXTSELECTIONINFO *pInfo);
+                     ISpRecoGrammar *This,
+                     const WCHAR *pText,
+                     ULONG cchText,
+                     const SPTEXTSELECTIONINFO *pInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetTextSelection)(
-        ISpRecoGrammar *This,
-        const SPTEXTSELECTIONINFO *pInfo);
+                     ISpRecoGrammar *This,
+                     const SPTEXTSELECTIONINFO *pInfo);
 
     HRESULT (STDMETHODCALLTYPE *IsPronounceable)(
-        ISpRecoGrammar *This,
-        LPCWSTR pszWord,
-        SPWORDPRONOUNCEABLE *pWordPronounceable);
+                     ISpRecoGrammar *This,
+                     LPCWSTR pszWord,
+                     SPWORDPRONOUNCEABLE *pWordPronounceable);
 
     HRESULT (STDMETHODCALLTYPE *SetGrammarState)(
-        ISpRecoGrammar *This,
-        SPGRAMMARSTATE eGrammarState);
+                     ISpRecoGrammar *This,
+                     SPGRAMMARSTATE eGrammarState);
 
     HRESULT (STDMETHODCALLTYPE *SaveCmd)(
-        ISpRecoGrammar *This,
-        IStream *pStream,
-        LPWSTR *ppszCoMemErrorText);
+                     ISpRecoGrammar *This,
+                     IStream *pStream,
+                     LPWSTR *ppszCoMemErrorText);
 
     HRESULT (STDMETHODCALLTYPE *GetGrammarState)(
-        ISpRecoGrammar *This,
-        SPGRAMMARSTATE *peGrammarState);
+                     ISpRecoGrammar *This,
+                     SPGRAMMARSTATE *peGrammarState);
 
     END_INTERFACE
 } ISpRecoGrammarVtbl;
@@ -8865,13 +8865,13 @@ MIDL_INTERFACE("8ab10026-20cc-4b20-8c22-a49c9ba78f60")
 ISpGrammarBuilder2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddTextSubset(
-        SPSTATEHANDLE hFromState,
-        SPSTATEHANDLE hToState,
-        LPCWSTR psz,
-        SPMATCHINGMODE eMatchMode) = 0;
+                     SPSTATEHANDLE hFromState,
+                     SPSTATEHANDLE hToState,
+                     LPCWSTR psz,
+                     SPMATCHINGMODE eMatchMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPhoneticAlphabet(
-        PHONETICALPHABET phoneticALphabet) = 0;
+                     PHONETICALPHABET phoneticALphabet) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8883,27 +8883,27 @@ typedef struct ISpGrammarBuilder2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpGrammarBuilder2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpGrammarBuilder2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpGrammarBuilder2 *This);
+                     ISpGrammarBuilder2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpGrammarBuilder2 *This);
+                     ISpGrammarBuilder2 *This);
 
     /*** ISpGrammarBuilder2 methods ***/
     HRESULT (STDMETHODCALLTYPE *AddTextSubset)(
-        ISpGrammarBuilder2 *This,
-        SPSTATEHANDLE hFromState,
-        SPSTATEHANDLE hToState,
-        LPCWSTR psz,
-        SPMATCHINGMODE eMatchMode);
+                     ISpGrammarBuilder2 *This,
+                     SPSTATEHANDLE hFromState,
+                     SPSTATEHANDLE hToState,
+                     LPCWSTR psz,
+                     SPMATCHINGMODE eMatchMode);
 
     HRESULT (STDMETHODCALLTYPE *SetPhoneticAlphabet)(
-        ISpGrammarBuilder2 *This,
-        PHONETICALPHABET phoneticALphabet);
+                     ISpGrammarBuilder2 *This,
+                     PHONETICALPHABET phoneticALphabet);
 
     END_INTERFACE
 } ISpGrammarBuilder2Vtbl;
@@ -8960,39 +8960,39 @@ MIDL_INTERFACE("4b37bc9e-9ed6-44a3-93d3-18f022b79ec3")
 ISpRecoGrammar2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRules(
-        SPRULE **ppCoMemRules,
-        UINT *puNumRules) = 0;
+                     SPRULE **ppCoMemRules,
+                     UINT *puNumRules) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadCmdFromFile2(
-        LPCWSTR pszFileName,
-        SPLOADOPTIONS Options,
-        LPCWSTR pszSharingUri,
-        LPCWSTR pszBaseUri) = 0;
+                     LPCWSTR pszFileName,
+                     SPLOADOPTIONS Options,
+                     LPCWSTR pszSharingUri,
+                     LPCWSTR pszBaseUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadCmdFromMemory2(
-        const SPBINARYGRAMMAR *pGrammar,
-        SPLOADOPTIONS Options,
-        LPCWSTR pszSharingUri,
-        LPCWSTR pszBaseUri) = 0;
+                     const SPBINARYGRAMMAR *pGrammar,
+                     SPLOADOPTIONS Options,
+                     LPCWSTR pszSharingUri,
+                     LPCWSTR pszBaseUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRulePriority(
-        LPCWSTR pszRuleName,
-        ULONG ulRuleId,
-        int nRulePriority) = 0;
+                     LPCWSTR pszRuleName,
+                     ULONG ulRuleId,
+                     int nRulePriority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRuleWeight(
-        LPCWSTR pszRuleName,
-        ULONG ulRuleId,
-        float flWeight) = 0;
+                     LPCWSTR pszRuleName,
+                     ULONG ulRuleId,
+                     float flWeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDictationWeight(
-        float flWeight) = 0;
+                     float flWeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGrammarLoader(
-        ISpeechResourceLoader *pLoader) = 0;
+                     ISpeechResourceLoader *pLoader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSMLSecurityManager(
-        IInternetSecurityManager *pSMLSecurityManager) = 0;
+                     IInternetSecurityManager *pSMLSecurityManager) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9004,59 +9004,59 @@ typedef struct ISpRecoGrammar2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecoGrammar2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecoGrammar2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecoGrammar2 *This);
+                     ISpRecoGrammar2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecoGrammar2 *This);
+                     ISpRecoGrammar2 *This);
 
     /*** ISpRecoGrammar2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRules)(
-        ISpRecoGrammar2 *This,
-        SPRULE **ppCoMemRules,
-        UINT *puNumRules);
+                     ISpRecoGrammar2 *This,
+                     SPRULE **ppCoMemRules,
+                     UINT *puNumRules);
 
     HRESULT (STDMETHODCALLTYPE *LoadCmdFromFile2)(
-        ISpRecoGrammar2 *This,
-        LPCWSTR pszFileName,
-        SPLOADOPTIONS Options,
-        LPCWSTR pszSharingUri,
-        LPCWSTR pszBaseUri);
+                     ISpRecoGrammar2 *This,
+                     LPCWSTR pszFileName,
+                     SPLOADOPTIONS Options,
+                     LPCWSTR pszSharingUri,
+                     LPCWSTR pszBaseUri);
 
     HRESULT (STDMETHODCALLTYPE *LoadCmdFromMemory2)(
-        ISpRecoGrammar2 *This,
-        const SPBINARYGRAMMAR *pGrammar,
-        SPLOADOPTIONS Options,
-        LPCWSTR pszSharingUri,
-        LPCWSTR pszBaseUri);
+                     ISpRecoGrammar2 *This,
+                     const SPBINARYGRAMMAR *pGrammar,
+                     SPLOADOPTIONS Options,
+                     LPCWSTR pszSharingUri,
+                     LPCWSTR pszBaseUri);
 
     HRESULT (STDMETHODCALLTYPE *SetRulePriority)(
-        ISpRecoGrammar2 *This,
-        LPCWSTR pszRuleName,
-        ULONG ulRuleId,
-        int nRulePriority);
+                     ISpRecoGrammar2 *This,
+                     LPCWSTR pszRuleName,
+                     ULONG ulRuleId,
+                     int nRulePriority);
 
     HRESULT (STDMETHODCALLTYPE *SetRuleWeight)(
-        ISpRecoGrammar2 *This,
-        LPCWSTR pszRuleName,
-        ULONG ulRuleId,
-        float flWeight);
+                     ISpRecoGrammar2 *This,
+                     LPCWSTR pszRuleName,
+                     ULONG ulRuleId,
+                     float flWeight);
 
     HRESULT (STDMETHODCALLTYPE *SetDictationWeight)(
-        ISpRecoGrammar2 *This,
-        float flWeight);
+                     ISpRecoGrammar2 *This,
+                     float flWeight);
 
     HRESULT (STDMETHODCALLTYPE *SetGrammarLoader)(
-        ISpRecoGrammar2 *This,
-        ISpeechResourceLoader *pLoader);
+                     ISpRecoGrammar2 *This,
+                     ISpeechResourceLoader *pLoader);
 
     HRESULT (STDMETHODCALLTYPE *SetSMLSecurityManager)(
-        ISpRecoGrammar2 *This,
-        IInternetSecurityManager *pSMLSecurityManager);
+                     ISpRecoGrammar2 *This,
+                     IInternetSecurityManager *pSMLSecurityManager);
 
     END_INTERFACE
 } ISpRecoGrammar2Vtbl;
@@ -9136,21 +9136,21 @@ MIDL_INTERFACE("b9ac5783-fcd0-4b21-b119-b4f8da8fd2c3")
 ISpeechResourceLoader : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE LoadResource(
-        BSTR bstrResourceUri,
-        VARIANT_BOOL fAlwaysReload,
-        IUnknown **pStream,
-        BSTR *pbstrMIMEType,
-        VARIANT_BOOL *pfModified,
-        BSTR *pbstrRedirectUrl) = 0;
+                     BSTR bstrResourceUri,
+                     VARIANT_BOOL fAlwaysReload,
+                     IUnknown **pStream,
+                     BSTR *pbstrMIMEType,
+                     VARIANT_BOOL *pfModified,
+                     BSTR *pbstrRedirectUrl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocalCopy(
-        BSTR bstrResourceUri,
-        BSTR *pbstrLocalPath,
-        BSTR *pbstrMIMEType,
-        BSTR *pbstrRedirectUrl) = 0;
+                     BSTR bstrResourceUri,
+                     BSTR *pbstrLocalPath,
+                     BSTR *pbstrMIMEType,
+                     BSTR *pbstrRedirectUrl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseLocalCopy(
-        BSTR pbstrLocalPath) = 0;
+                     BSTR pbstrLocalPath) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9162,66 +9162,66 @@ typedef struct ISpeechResourceLoaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechResourceLoader *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechResourceLoader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechResourceLoader *This);
+                     ISpeechResourceLoader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechResourceLoader *This);
+                     ISpeechResourceLoader *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechResourceLoader *This,
-        UINT *pctinfo);
+                     ISpeechResourceLoader *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechResourceLoader *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechResourceLoader *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechResourceLoader *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechResourceLoader *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechResourceLoader *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechResourceLoader *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechResourceLoader methods ***/
     HRESULT (STDMETHODCALLTYPE *LoadResource)(
-        ISpeechResourceLoader *This,
-        BSTR bstrResourceUri,
-        VARIANT_BOOL fAlwaysReload,
-        IUnknown **pStream,
-        BSTR *pbstrMIMEType,
-        VARIANT_BOOL *pfModified,
-        BSTR *pbstrRedirectUrl);
+                     ISpeechResourceLoader *This,
+                     BSTR bstrResourceUri,
+                     VARIANT_BOOL fAlwaysReload,
+                     IUnknown **pStream,
+                     BSTR *pbstrMIMEType,
+                     VARIANT_BOOL *pfModified,
+                     BSTR *pbstrRedirectUrl);
 
     HRESULT (STDMETHODCALLTYPE *GetLocalCopy)(
-        ISpeechResourceLoader *This,
-        BSTR bstrResourceUri,
-        BSTR *pbstrLocalPath,
-        BSTR *pbstrMIMEType,
-        BSTR *pbstrRedirectUrl);
+                     ISpeechResourceLoader *This,
+                     BSTR bstrResourceUri,
+                     BSTR *pbstrLocalPath,
+                     BSTR *pbstrMIMEType,
+                     BSTR *pbstrRedirectUrl);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseLocalCopy)(
-        ISpeechResourceLoader *This,
-        BSTR pbstrLocalPath);
+                     ISpeechResourceLoader *This,
+                     BSTR pbstrLocalPath);
 
     END_INTERFACE
 } ISpeechResourceLoaderVtbl;
@@ -9315,68 +9315,68 @@ MIDL_INTERFACE("f740a62f-7c15-489e-8234-940a33d9272d")
 ISpRecoContext : public ISpEventSource
 {
     virtual HRESULT STDMETHODCALLTYPE GetRecognizer(
-        ISpRecognizer **ppRecognizer) = 0;
+                     ISpRecognizer **ppRecognizer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGrammar(
-        ULONGLONG ullGrammarId,
-        ISpRecoGrammar **ppGrammar) = 0;
+                     ULONGLONG ullGrammarId,
+                     ISpRecoGrammar **ppGrammar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        SPRECOCONTEXTSTATUS *pStatus) = 0;
+                     SPRECOCONTEXTSTATUS *pStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxAlternates(
-        ULONG *pcAlternates) = 0;
+                     ULONG *pcAlternates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMaxAlternates(
-        ULONG cAlternates) = 0;
+                     ULONG cAlternates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAudioOptions(
-        SPAUDIOOPTIONS Options,
-        const GUID *pAudioFormatId,
-        const WAVEFORMATEX *pWaveFormatEx) = 0;
+                     SPAUDIOOPTIONS Options,
+                     const GUID *pAudioFormatId,
+                     const WAVEFORMATEX *pWaveFormatEx) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAudioOptions(
-        SPAUDIOOPTIONS *pOptions,
-        GUID *pAudioFormatId,
-        WAVEFORMATEX **ppCoMemWFEX) = 0;
+                     SPAUDIOOPTIONS *pOptions,
+                     GUID *pAudioFormatId,
+                     WAVEFORMATEX **ppCoMemWFEX) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeserializeResult(
-        const SPSERIALIZEDRESULT *pSerializedResult,
-        ISpRecoResult **ppResult) = 0;
+                     const SPSERIALIZEDRESULT *pSerializedResult,
+                     ISpRecoResult **ppResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Bookmark(
-        SPBOOKMARKOPTIONS Options,
-        ULONGLONG ullStreamPosition,
-        LPARAM lparamEvent) = 0;
+                     SPBOOKMARKOPTIONS Options,
+                     ULONGLONG ullStreamPosition,
+                     LPARAM lparamEvent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAdaptationData(
-        LPCWSTR pAdaptationData,
-        const ULONG cch) = 0;
+                     LPCWSTR pAdaptationData,
+                     const ULONG cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        DWORD dwReserved) = 0;
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        DWORD dwReserved) = 0;
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVoice(
-        ISpVoice *pVoice,
-        WINBOOL fAllowFormatChanges) = 0;
+                     ISpVoice *pVoice,
+                     WINBOOL fAllowFormatChanges) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVoice(
-        ISpVoice **ppVoice) = 0;
+                     ISpVoice **ppVoice) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVoicePurgeEvent(
-        ULONGLONG ullEventInterest) = 0;
+                     ULONGLONG ullEventInterest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVoicePurgeEvent(
-        ULONGLONG *pullEventInterest) = 0;
+                     ULONGLONG *pullEventInterest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetContextState(
-        SPCONTEXTSTATE eContextState) = 0;
+                     SPCONTEXTSTATE eContextState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContextState(
-        SPCONTEXTSTATE *peContextState) = 0;
+                     SPCONTEXTSTATE *peContextState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9388,148 +9388,148 @@ typedef struct ISpRecoContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecoContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecoContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecoContext *This);
+                     ISpRecoContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecoContext *This);
+                     ISpRecoContext *This);
 
     /*** ISpNotifySource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNotifySink)(
-        ISpRecoContext *This,
-        ISpNotifySink *pNotifySink);
+                     ISpRecoContext *This,
+                     ISpNotifySink *pNotifySink);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWindowMessage)(
-        ISpRecoContext *This,
-        HWND hWnd,
-        UINT Msg,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpRecoContext *This,
+                     HWND hWnd,
+                     UINT Msg,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackFunction)(
-        ISpRecoContext *This,
-        SPNOTIFYCALLBACK *pfnCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpRecoContext *This,
+                     SPNOTIFYCALLBACK *pfnCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyCallbackInterface)(
-        ISpRecoContext *This,
-        ISpNotifyCallback *pSpCallback,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ISpRecoContext *This,
+                     ISpNotifyCallback *pSpCallback,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *SetNotifyWin32Event)(
-        ISpRecoContext *This);
+                     ISpRecoContext *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForNotifyEvent)(
-        ISpRecoContext *This,
-        DWORD dwMilliseconds);
+                     ISpRecoContext *This,
+                     DWORD dwMilliseconds);
 
     HANDLE (STDMETHODCALLTYPE *GetNotifyEventHandle)(
-        ISpRecoContext *This);
+                     ISpRecoContext *This);
 
     /*** ISpEventSource methods ***/
     HRESULT (STDMETHODCALLTYPE *SetInterest)(
-        ISpRecoContext *This,
-        ULONGLONG ullEventInterest,
-        ULONGLONG ullQueuedInterest);
+                     ISpRecoContext *This,
+                     ULONGLONG ullEventInterest,
+                     ULONGLONG ullQueuedInterest);
 
     HRESULT (STDMETHODCALLTYPE *GetEvents)(
-        ISpRecoContext *This,
-        ULONG ulCount,
-        SPEVENT *pEventArray,
-        ULONG *pulFetched);
+                     ISpRecoContext *This,
+                     ULONG ulCount,
+                     SPEVENT *pEventArray,
+                     ULONG *pulFetched);
 
     HRESULT (STDMETHODCALLTYPE *GetInfo)(
-        ISpRecoContext *This,
-        SPEVENTSOURCEINFO *pInfo);
+                     ISpRecoContext *This,
+                     SPEVENTSOURCEINFO *pInfo);
 
     /*** ISpRecoContext methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRecognizer)(
-        ISpRecoContext *This,
-        ISpRecognizer **ppRecognizer);
+                     ISpRecoContext *This,
+                     ISpRecognizer **ppRecognizer);
 
     HRESULT (STDMETHODCALLTYPE *CreateGrammar)(
-        ISpRecoContext *This,
-        ULONGLONG ullGrammarId,
-        ISpRecoGrammar **ppGrammar);
+                     ISpRecoContext *This,
+                     ULONGLONG ullGrammarId,
+                     ISpRecoGrammar **ppGrammar);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        ISpRecoContext *This,
-        SPRECOCONTEXTSTATUS *pStatus);
+                     ISpRecoContext *This,
+                     SPRECOCONTEXTSTATUS *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxAlternates)(
-        ISpRecoContext *This,
-        ULONG *pcAlternates);
+                     ISpRecoContext *This,
+                     ULONG *pcAlternates);
 
     HRESULT (STDMETHODCALLTYPE *SetMaxAlternates)(
-        ISpRecoContext *This,
-        ULONG cAlternates);
+                     ISpRecoContext *This,
+                     ULONG cAlternates);
 
     HRESULT (STDMETHODCALLTYPE *SetAudioOptions)(
-        ISpRecoContext *This,
-        SPAUDIOOPTIONS Options,
-        const GUID *pAudioFormatId,
-        const WAVEFORMATEX *pWaveFormatEx);
+                     ISpRecoContext *This,
+                     SPAUDIOOPTIONS Options,
+                     const GUID *pAudioFormatId,
+                     const WAVEFORMATEX *pWaveFormatEx);
 
     HRESULT (STDMETHODCALLTYPE *GetAudioOptions)(
-        ISpRecoContext *This,
-        SPAUDIOOPTIONS *pOptions,
-        GUID *pAudioFormatId,
-        WAVEFORMATEX **ppCoMemWFEX);
+                     ISpRecoContext *This,
+                     SPAUDIOOPTIONS *pOptions,
+                     GUID *pAudioFormatId,
+                     WAVEFORMATEX **ppCoMemWFEX);
 
     HRESULT (STDMETHODCALLTYPE *DeserializeResult)(
-        ISpRecoContext *This,
-        const SPSERIALIZEDRESULT *pSerializedResult,
-        ISpRecoResult **ppResult);
+                     ISpRecoContext *This,
+                     const SPSERIALIZEDRESULT *pSerializedResult,
+                     ISpRecoResult **ppResult);
 
     HRESULT (STDMETHODCALLTYPE *Bookmark)(
-        ISpRecoContext *This,
-        SPBOOKMARKOPTIONS Options,
-        ULONGLONG ullStreamPosition,
-        LPARAM lparamEvent);
+                     ISpRecoContext *This,
+                     SPBOOKMARKOPTIONS Options,
+                     ULONGLONG ullStreamPosition,
+                     LPARAM lparamEvent);
 
     HRESULT (STDMETHODCALLTYPE *SetAdaptationData)(
-        ISpRecoContext *This,
-        LPCWSTR pAdaptationData,
-        const ULONG cch);
+                     ISpRecoContext *This,
+                     LPCWSTR pAdaptationData,
+                     const ULONG cch);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        ISpRecoContext *This,
-        DWORD dwReserved);
+                     ISpRecoContext *This,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        ISpRecoContext *This,
-        DWORD dwReserved);
+                     ISpRecoContext *This,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetVoice)(
-        ISpRecoContext *This,
-        ISpVoice *pVoice,
-        WINBOOL fAllowFormatChanges);
+                     ISpRecoContext *This,
+                     ISpVoice *pVoice,
+                     WINBOOL fAllowFormatChanges);
 
     HRESULT (STDMETHODCALLTYPE *GetVoice)(
-        ISpRecoContext *This,
-        ISpVoice **ppVoice);
+                     ISpRecoContext *This,
+                     ISpVoice **ppVoice);
 
     HRESULT (STDMETHODCALLTYPE *SetVoicePurgeEvent)(
-        ISpRecoContext *This,
-        ULONGLONG ullEventInterest);
+                     ISpRecoContext *This,
+                     ULONGLONG ullEventInterest);
 
     HRESULT (STDMETHODCALLTYPE *GetVoicePurgeEvent)(
-        ISpRecoContext *This,
-        ULONGLONG *pullEventInterest);
+                     ISpRecoContext *This,
+                     ULONGLONG *pullEventInterest);
 
     HRESULT (STDMETHODCALLTYPE *SetContextState)(
-        ISpRecoContext *This,
-        SPCONTEXTSTATE eContextState);
+                     ISpRecoContext *This,
+                     SPCONTEXTSTATE eContextState);
 
     HRESULT (STDMETHODCALLTYPE *GetContextState)(
-        ISpRecoContext *This,
-        SPCONTEXTSTATE *peContextState);
+                     ISpRecoContext *This,
+                     SPCONTEXTSTATE *peContextState);
 
     END_INTERFACE
 } ISpRecoContextVtbl;
@@ -9722,17 +9722,17 @@ MIDL_INTERFACE("bead311c-52ff-437f-9464-6b21054ca73d")
 ISpRecoContext2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetGrammarOptions(
-        DWORD eGrammarOptions) = 0;
+                     DWORD eGrammarOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGrammarOptions(
-        DWORD *peGrammarOptions) = 0;
+                     DWORD *peGrammarOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAdaptationData2(
-        LPCWSTR pAdaptationData,
-        const ULONG cch,
-        LPCWSTR pTopicName,
-        DWORD eAdaptationSettings,
-        SPADAPTATIONRELEVANCE eRelevance) = 0;
+                     LPCWSTR pAdaptationData,
+                     const ULONG cch,
+                     LPCWSTR pTopicName,
+                     DWORD eAdaptationSettings,
+                     SPADAPTATIONRELEVANCE eRelevance) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9744,32 +9744,32 @@ typedef struct ISpRecoContext2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecoContext2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecoContext2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecoContext2 *This);
+                     ISpRecoContext2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecoContext2 *This);
+                     ISpRecoContext2 *This);
 
     /*** ISpRecoContext2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetGrammarOptions)(
-        ISpRecoContext2 *This,
-        DWORD eGrammarOptions);
+                     ISpRecoContext2 *This,
+                     DWORD eGrammarOptions);
 
     HRESULT (STDMETHODCALLTYPE *GetGrammarOptions)(
-        ISpRecoContext2 *This,
-        DWORD *peGrammarOptions);
+                     ISpRecoContext2 *This,
+                     DWORD *peGrammarOptions);
 
     HRESULT (STDMETHODCALLTYPE *SetAdaptationData2)(
-        ISpRecoContext2 *This,
-        LPCWSTR pAdaptationData,
-        const ULONG cch,
-        LPCWSTR pTopicName,
-        DWORD eAdaptationSettings,
-        SPADAPTATIONRELEVANCE eRelevance);
+                     ISpRecoContext2 *This,
+                     LPCWSTR pAdaptationData,
+                     const ULONG cch,
+                     LPCWSTR pTopicName,
+                     DWORD eAdaptationSettings,
+                     SPADAPTATIONRELEVANCE eRelevance);
 
     END_INTERFACE
 } ISpRecoContext2Vtbl;
@@ -9829,20 +9829,20 @@ MIDL_INTERFACE("5b4fb971-b115-4de1-ad97-e482e3bf6ee4")
 ISpProperties : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetPropertyNum(
-        LPCWSTR pName,
-        LONG lValue) = 0;
+                     LPCWSTR pName,
+                     LONG lValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyNum(
-        LPCWSTR pName,
-        LONG *plValue) = 0;
+                     LPCWSTR pName,
+                     LONG *plValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPropertyString(
-        LPCWSTR pName,
-        LPCWSTR pValue) = 0;
+                     LPCWSTR pName,
+                     LPCWSTR pValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyString(
-        LPCWSTR pName,
-        LPWSTR *ppCoMemValue) = 0;
+                     LPCWSTR pName,
+                     LPWSTR *ppCoMemValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9854,36 +9854,36 @@ typedef struct ISpPropertiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpProperties *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpProperties *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpProperties *This);
+                     ISpProperties *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpProperties *This);
+                     ISpProperties *This);
 
     /*** ISpProperties methods ***/
     HRESULT (STDMETHODCALLTYPE *SetPropertyNum)(
-        ISpProperties *This,
-        LPCWSTR pName,
-        LONG lValue);
+                     ISpProperties *This,
+                     LPCWSTR pName,
+                     LONG lValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyNum)(
-        ISpProperties *This,
-        LPCWSTR pName,
-        LONG *plValue);
+                     ISpProperties *This,
+                     LPCWSTR pName,
+                     LONG *plValue);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertyString)(
-        ISpProperties *This,
-        LPCWSTR pName,
-        LPCWSTR pValue);
+                     ISpProperties *This,
+                     LPCWSTR pName,
+                     LPCWSTR pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyString)(
-        ISpProperties *This,
-        LPCWSTR pName,
-        LPWSTR *ppCoMemValue);
+                     ISpProperties *This,
+                     LPCWSTR pName,
+                     LPWSTR *ppCoMemValue);
 
     END_INTERFACE
 } ISpPropertiesVtbl;
@@ -9977,62 +9977,62 @@ MIDL_INTERFACE("c2b5f241-daa0-4507-9e16-5a1eaa2b7a5c")
 ISpRecognizer : public ISpProperties
 {
     virtual HRESULT STDMETHODCALLTYPE SetRecognizer(
-        ISpObjectToken *pRecognizer) = 0;
+                     ISpObjectToken *pRecognizer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRecognizer(
-        ISpObjectToken **ppRecognizer) = 0;
+                     ISpObjectToken **ppRecognizer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInput(
-        IUnknown *pUnkInput,
-        WINBOOL fAllowFormatChanges) = 0;
+                     IUnknown *pUnkInput,
+                     WINBOOL fAllowFormatChanges) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputObjectToken(
-        ISpObjectToken **ppToken) = 0;
+                     ISpObjectToken **ppToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputStream(
-        ISpStreamFormat **ppStream) = 0;
+                     ISpStreamFormat **ppStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRecoContext(
-        ISpRecoContext **ppNewCtxt) = 0;
+                     ISpRecoContext **ppNewCtxt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRecoProfile(
-        ISpObjectToken **ppToken) = 0;
+                     ISpObjectToken **ppToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRecoProfile(
-        ISpObjectToken *pToken) = 0;
+                     ISpObjectToken *pToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSharedInstance(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRecoState(
-        SPRECOSTATE *pState) = 0;
+                     SPRECOSTATE *pState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRecoState(
-        SPRECOSTATE NewState) = 0;
+                     SPRECOSTATE NewState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        SPRECOGNIZERSTATUS *pStatus) = 0;
+                     SPRECOGNIZERSTATUS *pStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFormat(
-        SPSTREAMFORMATTYPE WaveFormatType,
-        GUID *pFormatId,
-        WAVEFORMATEX **ppCoMemWFEX) = 0;
+                     SPSTREAMFORMATTYPE WaveFormatType,
+                     GUID *pFormatId,
+                     WAVEFORMATEX **ppCoMemWFEX) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUISupported(
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        WINBOOL *pfSupported) = 0;
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     WINBOOL *pfSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisplayUI(
-        HWND hwndParent,
-        LPCWSTR pszTitle,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData) = 0;
+                     HWND hwndParent,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EmulateRecognition(
-        ISpPhrase *pPhrase) = 0;
+                     ISpPhrase *pPhrase) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10044,110 +10044,110 @@ typedef struct ISpRecognizerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecognizer *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecognizer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecognizer *This);
+                     ISpRecognizer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecognizer *This);
+                     ISpRecognizer *This);
 
     /*** ISpProperties methods ***/
     HRESULT (STDMETHODCALLTYPE *SetPropertyNum)(
-        ISpRecognizer *This,
-        LPCWSTR pName,
-        LONG lValue);
+                     ISpRecognizer *This,
+                     LPCWSTR pName,
+                     LONG lValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyNum)(
-        ISpRecognizer *This,
-        LPCWSTR pName,
-        LONG *plValue);
+                     ISpRecognizer *This,
+                     LPCWSTR pName,
+                     LONG *plValue);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertyString)(
-        ISpRecognizer *This,
-        LPCWSTR pName,
-        LPCWSTR pValue);
+                     ISpRecognizer *This,
+                     LPCWSTR pName,
+                     LPCWSTR pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyString)(
-        ISpRecognizer *This,
-        LPCWSTR pName,
-        LPWSTR *ppCoMemValue);
+                     ISpRecognizer *This,
+                     LPCWSTR pName,
+                     LPWSTR *ppCoMemValue);
 
     /*** ISpRecognizer methods ***/
     HRESULT (STDMETHODCALLTYPE *SetRecognizer)(
-        ISpRecognizer *This,
-        ISpObjectToken *pRecognizer);
+                     ISpRecognizer *This,
+                     ISpObjectToken *pRecognizer);
 
     HRESULT (STDMETHODCALLTYPE *GetRecognizer)(
-        ISpRecognizer *This,
-        ISpObjectToken **ppRecognizer);
+                     ISpRecognizer *This,
+                     ISpObjectToken **ppRecognizer);
 
     HRESULT (STDMETHODCALLTYPE *SetInput)(
-        ISpRecognizer *This,
-        IUnknown *pUnkInput,
-        WINBOOL fAllowFormatChanges);
+                     ISpRecognizer *This,
+                     IUnknown *pUnkInput,
+                     WINBOOL fAllowFormatChanges);
 
     HRESULT (STDMETHODCALLTYPE *GetInputObjectToken)(
-        ISpRecognizer *This,
-        ISpObjectToken **ppToken);
+                     ISpRecognizer *This,
+                     ISpObjectToken **ppToken);
 
     HRESULT (STDMETHODCALLTYPE *GetInputStream)(
-        ISpRecognizer *This,
-        ISpStreamFormat **ppStream);
+                     ISpRecognizer *This,
+                     ISpStreamFormat **ppStream);
 
     HRESULT (STDMETHODCALLTYPE *CreateRecoContext)(
-        ISpRecognizer *This,
-        ISpRecoContext **ppNewCtxt);
+                     ISpRecognizer *This,
+                     ISpRecoContext **ppNewCtxt);
 
     HRESULT (STDMETHODCALLTYPE *GetRecoProfile)(
-        ISpRecognizer *This,
-        ISpObjectToken **ppToken);
+                     ISpRecognizer *This,
+                     ISpObjectToken **ppToken);
 
     HRESULT (STDMETHODCALLTYPE *SetRecoProfile)(
-        ISpRecognizer *This,
-        ISpObjectToken *pToken);
+                     ISpRecognizer *This,
+                     ISpObjectToken *pToken);
 
     HRESULT (STDMETHODCALLTYPE *IsSharedInstance)(
-        ISpRecognizer *This);
+                     ISpRecognizer *This);
 
     HRESULT (STDMETHODCALLTYPE *GetRecoState)(
-        ISpRecognizer *This,
-        SPRECOSTATE *pState);
+                     ISpRecognizer *This,
+                     SPRECOSTATE *pState);
 
     HRESULT (STDMETHODCALLTYPE *SetRecoState)(
-        ISpRecognizer *This,
-        SPRECOSTATE NewState);
+                     ISpRecognizer *This,
+                     SPRECOSTATE NewState);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        ISpRecognizer *This,
-        SPRECOGNIZERSTATUS *pStatus);
+                     ISpRecognizer *This,
+                     SPRECOGNIZERSTATUS *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        ISpRecognizer *This,
-        SPSTREAMFORMATTYPE WaveFormatType,
-        GUID *pFormatId,
-        WAVEFORMATEX **ppCoMemWFEX);
+                     ISpRecognizer *This,
+                     SPSTREAMFORMATTYPE WaveFormatType,
+                     GUID *pFormatId,
+                     WAVEFORMATEX **ppCoMemWFEX);
 
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        ISpRecognizer *This,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData,
-        WINBOOL *pfSupported);
+                     ISpRecognizer *This,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData,
+                     WINBOOL *pfSupported);
 
     HRESULT (STDMETHODCALLTYPE *DisplayUI)(
-        ISpRecognizer *This,
-        HWND hwndParent,
-        LPCWSTR pszTitle,
-        LPCWSTR pszTypeOfUI,
-        void *pvExtraData,
-        ULONG cbExtraData);
+                     ISpRecognizer *This,
+                     HWND hwndParent,
+                     LPCWSTR pszTitle,
+                     LPCWSTR pszTypeOfUI,
+                     void *pvExtraData,
+                     ULONG cbExtraData);
 
     HRESULT (STDMETHODCALLTYPE *EmulateRecognition)(
-        ISpRecognizer *This,
-        ISpPhrase *pPhrase);
+                     ISpRecognizer *This,
+                     ISpPhrase *pPhrase);
 
     END_INTERFACE
 } ISpRecognizerVtbl;
@@ -10277,14 +10277,14 @@ MIDL_INTERFACE("21b501a0-0ec7-46c9-92c3-a2bc784c54b9")
 ISpSerializeState : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSerializedState(
-        BYTE **ppbData,
-        ULONG *pulSize,
-        DWORD dwReserved) = 0;
+                     BYTE **ppbData,
+                     ULONG *pulSize,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSerializedState(
-        BYTE *pbData,
-        ULONG ulSize,
-        DWORD dwReserved) = 0;
+                     BYTE *pbData,
+                     ULONG ulSize,
+                     DWORD dwReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10296,28 +10296,28 @@ typedef struct ISpSerializeStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpSerializeState *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpSerializeState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpSerializeState *This);
+                     ISpSerializeState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpSerializeState *This);
+                     ISpSerializeState *This);
 
     /*** ISpSerializeState methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSerializedState)(
-        ISpSerializeState *This,
-        BYTE **ppbData,
-        ULONG *pulSize,
-        DWORD dwReserved);
+                     ISpSerializeState *This,
+                     BYTE **ppbData,
+                     ULONG *pulSize,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *SetSerializedState)(
-        ISpSerializeState *This,
-        BYTE *pbData,
-        ULONG ulSize,
-        DWORD dwReserved);
+                     ISpSerializeState *This,
+                     BYTE *pbData,
+                     ULONG ulSize,
+                     DWORD dwReserved);
 
     END_INTERFACE
 } ISpSerializeStateVtbl;
@@ -10373,15 +10373,15 @@ MIDL_INTERFACE("8fc6d974-c81e-4098-93c5-0147f61ed4d3")
 ISpRecognizer2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EmulateRecognitionEx(
-        ISpPhrase *pPhrase,
-        DWORD dwCompareFlags) = 0;
+                     ISpPhrase *pPhrase,
+                     DWORD dwCompareFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTrainingState(
-        WINBOOL fDoingTraining,
-        WINBOOL fAdaptFromTrainingData) = 0;
+                     WINBOOL fDoingTraining,
+                     WINBOOL fAdaptFromTrainingData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResetAcousticModelAdaptation(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10393,29 +10393,29 @@ typedef struct ISpRecognizer2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecognizer2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecognizer2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecognizer2 *This);
+                     ISpRecognizer2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecognizer2 *This);
+                     ISpRecognizer2 *This);
 
     /*** ISpRecognizer2 methods ***/
     HRESULT (STDMETHODCALLTYPE *EmulateRecognitionEx)(
-        ISpRecognizer2 *This,
-        ISpPhrase *pPhrase,
-        DWORD dwCompareFlags);
+                     ISpRecognizer2 *This,
+                     ISpPhrase *pPhrase,
+                     DWORD dwCompareFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetTrainingState)(
-        ISpRecognizer2 *This,
-        WINBOOL fDoingTraining,
-        WINBOOL fAdaptFromTrainingData);
+                     ISpRecognizer2 *This,
+                     WINBOOL fDoingTraining,
+                     WINBOOL fAdaptFromTrainingData);
 
     HRESULT (STDMETHODCALLTYPE *ResetAcousticModelAdaptation)(
-        ISpRecognizer2 *This);
+                     ISpRecognizer2 *This);
 
     END_INTERFACE
 } ISpRecognizer2Vtbl;
@@ -10475,7 +10475,7 @@ MIDL_INTERFACE("da0cd0f9-14a2-4f09-8c2a-85cc48979345")
 ISpRecoCategory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        SPCATEGORYTYPE *peCategoryType) = 0;
+                     SPCATEGORYTYPE *peCategoryType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10487,20 +10487,20 @@ typedef struct ISpRecoCategoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecoCategory *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecoCategory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecoCategory *This);
+                     ISpRecoCategory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecoCategory *This);
+                     ISpRecoCategory *This);
 
     /*** ISpRecoCategory methods ***/
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        ISpRecoCategory *This,
-        SPCATEGORYTYPE *peCategoryType);
+                     ISpRecoCategory *This,
+                     SPCATEGORYTYPE *peCategoryType);
 
     END_INTERFACE
 } ISpRecoCategoryVtbl;
@@ -10552,14 +10552,14 @@ MIDL_INTERFACE("df1b943c-5838-4aa2-8706-d7cd5b333499")
 ISpRecognizer3 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCategory(
-        SPCATEGORYTYPE categoryType,
-        ISpRecoCategory **ppCategory) = 0;
+                     SPCATEGORYTYPE categoryType,
+                     ISpRecoCategory **ppCategory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetActiveCategory(
-        ISpRecoCategory *pCategory) = 0;
+                     ISpRecoCategory *pCategory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActiveCategory(
-        ISpRecoCategory **ppCategory) = 0;
+                     ISpRecoCategory **ppCategory) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10571,29 +10571,29 @@ typedef struct ISpRecognizer3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpRecognizer3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpRecognizer3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpRecognizer3 *This);
+                     ISpRecognizer3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpRecognizer3 *This);
+                     ISpRecognizer3 *This);
 
     /*** ISpRecognizer3 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCategory)(
-        ISpRecognizer3 *This,
-        SPCATEGORYTYPE categoryType,
-        ISpRecoCategory **ppCategory);
+                     ISpRecognizer3 *This,
+                     SPCATEGORYTYPE categoryType,
+                     ISpRecoCategory **ppCategory);
 
     HRESULT (STDMETHODCALLTYPE *SetActiveCategory)(
-        ISpRecognizer3 *This,
-        ISpRecoCategory *pCategory);
+                     ISpRecognizer3 *This,
+                     ISpRecoCategory *pCategory);
 
     HRESULT (STDMETHODCALLTYPE *GetActiveCategory)(
-        ISpRecognizer3 *This,
-        ISpRecoCategory **ppCategory);
+                     ISpRecognizer3 *This,
+                     ISpRecoCategory **ppCategory);
 
     END_INTERFACE
 } ISpRecognizer3Vtbl;
@@ -10657,18 +10657,18 @@ MIDL_INTERFACE("c360ce4b-76d1-4214-ad68-52657d5083da")
 ISpEnginePronunciation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Normalize(
-        LPCWSTR pszWord,
-        LPCWSTR pszLeftContext,
-        LPCWSTR pszRightContext,
-        WORD LangID,
-        SPNORMALIZATIONLIST *pNormalizationList) = 0;
+                     LPCWSTR pszWord,
+                     LPCWSTR pszLeftContext,
+                     LPCWSTR pszRightContext,
+                     WORD LangID,
+                     SPNORMALIZATIONLIST *pNormalizationList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPronunciations(
-        LPCWSTR pszWord,
-        LPCWSTR pszLeftContext,
-        LPCWSTR pszRightContext,
-        WORD LangID,
-        SPWORDPRONUNCIATIONLIST *pEnginePronunciationList) = 0;
+                     LPCWSTR pszWord,
+                     LPCWSTR pszLeftContext,
+                     LPCWSTR pszRightContext,
+                     WORD LangID,
+                     SPWORDPRONUNCIATIONLIST *pEnginePronunciationList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10680,32 +10680,32 @@ typedef struct ISpEnginePronunciationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpEnginePronunciation *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpEnginePronunciation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpEnginePronunciation *This);
+                     ISpEnginePronunciation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpEnginePronunciation *This);
+                     ISpEnginePronunciation *This);
 
     /*** ISpEnginePronunciation methods ***/
     HRESULT (STDMETHODCALLTYPE *Normalize)(
-        ISpEnginePronunciation *This,
-        LPCWSTR pszWord,
-        LPCWSTR pszLeftContext,
-        LPCWSTR pszRightContext,
-        WORD LangID,
-        SPNORMALIZATIONLIST *pNormalizationList);
+                     ISpEnginePronunciation *This,
+                     LPCWSTR pszWord,
+                     LPCWSTR pszLeftContext,
+                     LPCWSTR pszRightContext,
+                     WORD LangID,
+                     SPNORMALIZATIONLIST *pNormalizationList);
 
     HRESULT (STDMETHODCALLTYPE *GetPronunciations)(
-        ISpEnginePronunciation *This,
-        LPCWSTR pszWord,
-        LPCWSTR pszLeftContext,
-        LPCWSTR pszRightContext,
-        WORD LangID,
-        SPWORDPRONUNCIATIONLIST *pEnginePronunciationList);
+                     ISpEnginePronunciation *This,
+                     LPCWSTR pszWord,
+                     LPCWSTR pszLeftContext,
+                     LPCWSTR pszRightContext,
+                     WORD LangID,
+                     SPWORDPRONUNCIATIONLIST *pEnginePronunciationList);
 
     END_INTERFACE
 } ISpEnginePronunciationVtbl;
@@ -10770,13 +10770,13 @@ MIDL_INTERFACE("c8d7c7e2-0dde-44b7-afe3-b0c991fbeb5e")
 ISpDisplayAlternates : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDisplayAlternates(
-        const SPDISPLAYPHRASE *pPhrase,
-        ULONG cRequestCount,
-        SPDISPLAYPHRASE **ppCoMemPhrases,
-        ULONG *pcPhrasesReturned) = 0;
+                     const SPDISPLAYPHRASE *pPhrase,
+                     ULONG cRequestCount,
+                     SPDISPLAYPHRASE **ppCoMemPhrases,
+                     ULONG *pcPhrasesReturned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFullStopTrailSpace(
-        ULONG ulTrailSpace) = 0;
+                     ULONG ulTrailSpace) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -10788,27 +10788,27 @@ typedef struct ISpDisplayAlternatesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpDisplayAlternates *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpDisplayAlternates *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpDisplayAlternates *This);
+                     ISpDisplayAlternates *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpDisplayAlternates *This);
+                     ISpDisplayAlternates *This);
 
     /*** ISpDisplayAlternates methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDisplayAlternates)(
-        ISpDisplayAlternates *This,
-        const SPDISPLAYPHRASE *pPhrase,
-        ULONG cRequestCount,
-        SPDISPLAYPHRASE **ppCoMemPhrases,
-        ULONG *pcPhrasesReturned);
+                     ISpDisplayAlternates *This,
+                     const SPDISPLAYPHRASE *pPhrase,
+                     ULONG cRequestCount,
+                     SPDISPLAYPHRASE **ppCoMemPhrases,
+                     ULONG *pcPhrasesReturned);
 
     HRESULT (STDMETHODCALLTYPE *SetFullStopTrailSpace)(
-        ISpDisplayAlternates *This,
-        ULONG ulTrailSpace);
+                     ISpDisplayAlternates *This,
+                     ULONG ulTrailSpace);
 
     END_INTERFACE
 } ISpDisplayAlternatesVtbl;
@@ -11305,50 +11305,50 @@ MIDL_INTERFACE("ce17c09b-4efa-44d5-a4c9-59d9585ab0cd")
 ISpeechDataKey : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE SetBinaryValue(
-        const BSTR ValueName,
-        VARIANT Value) = 0;
+                     const BSTR ValueName,
+                     VARIANT Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBinaryValue(
-        const BSTR ValueName,
-        VARIANT *Value) = 0;
+                     const BSTR ValueName,
+                     VARIANT *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStringValue(
-        const BSTR ValueName,
-        const BSTR Value) = 0;
+                     const BSTR ValueName,
+                     const BSTR Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringValue(
-        const BSTR ValueName,
-        BSTR *Value) = 0;
+                     const BSTR ValueName,
+                     BSTR *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLongValue(
-        const BSTR ValueName,
-        LONG Value) = 0;
+                     const BSTR ValueName,
+                     LONG Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLongValue(
-        const BSTR ValueName,
-        LONG *Value) = 0;
+                     const BSTR ValueName,
+                     LONG *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenKey(
-        const BSTR SubKeyName,
-        ISpeechDataKey **SubKey) = 0;
+                     const BSTR SubKeyName,
+                     ISpeechDataKey **SubKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateKey(
-        const BSTR SubKeyName,
-        ISpeechDataKey **SubKey) = 0;
+                     const BSTR SubKeyName,
+                     ISpeechDataKey **SubKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteKey(
-        const BSTR SubKeyName) = 0;
+                     const BSTR SubKeyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteValue(
-        const BSTR ValueName) = 0;
+                     const BSTR ValueName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumKeys(
-        LONG Index,
-        BSTR *SubKeyName) = 0;
+                     LONG Index,
+                     BSTR *SubKeyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumValues(
-        LONG Index,
-        BSTR *ValueName) = 0;
+                     LONG Index,
+                     BSTR *ValueName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11360,104 +11360,104 @@ typedef struct ISpeechDataKeyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechDataKey *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechDataKey *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechDataKey *This);
+                     ISpeechDataKey *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechDataKey *This);
+                     ISpeechDataKey *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechDataKey *This,
-        UINT *pctinfo);
+                     ISpeechDataKey *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechDataKey *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechDataKey *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechDataKey *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechDataKey *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechDataKey *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechDataKey *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechDataKey methods ***/
     HRESULT (STDMETHODCALLTYPE *SetBinaryValue)(
-        ISpeechDataKey *This,
-        const BSTR ValueName,
-        VARIANT Value);
+                     ISpeechDataKey *This,
+                     const BSTR ValueName,
+                     VARIANT Value);
 
     HRESULT (STDMETHODCALLTYPE *GetBinaryValue)(
-        ISpeechDataKey *This,
-        const BSTR ValueName,
-        VARIANT *Value);
+                     ISpeechDataKey *This,
+                     const BSTR ValueName,
+                     VARIANT *Value);
 
     HRESULT (STDMETHODCALLTYPE *SetStringValue)(
-        ISpeechDataKey *This,
-        const BSTR ValueName,
-        const BSTR Value);
+                     ISpeechDataKey *This,
+                     const BSTR ValueName,
+                     const BSTR Value);
 
     HRESULT (STDMETHODCALLTYPE *GetStringValue)(
-        ISpeechDataKey *This,
-        const BSTR ValueName,
-        BSTR *Value);
+                     ISpeechDataKey *This,
+                     const BSTR ValueName,
+                     BSTR *Value);
 
     HRESULT (STDMETHODCALLTYPE *SetLongValue)(
-        ISpeechDataKey *This,
-        const BSTR ValueName,
-        LONG Value);
+                     ISpeechDataKey *This,
+                     const BSTR ValueName,
+                     LONG Value);
 
     HRESULT (STDMETHODCALLTYPE *GetLongValue)(
-        ISpeechDataKey *This,
-        const BSTR ValueName,
-        LONG *Value);
+                     ISpeechDataKey *This,
+                     const BSTR ValueName,
+                     LONG *Value);
 
     HRESULT (STDMETHODCALLTYPE *OpenKey)(
-        ISpeechDataKey *This,
-        const BSTR SubKeyName,
-        ISpeechDataKey **SubKey);
+                     ISpeechDataKey *This,
+                     const BSTR SubKeyName,
+                     ISpeechDataKey **SubKey);
 
     HRESULT (STDMETHODCALLTYPE *CreateKey)(
-        ISpeechDataKey *This,
-        const BSTR SubKeyName,
-        ISpeechDataKey **SubKey);
+                     ISpeechDataKey *This,
+                     const BSTR SubKeyName,
+                     ISpeechDataKey **SubKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteKey)(
-        ISpeechDataKey *This,
-        const BSTR SubKeyName);
+                     ISpeechDataKey *This,
+                     const BSTR SubKeyName);
 
     HRESULT (STDMETHODCALLTYPE *DeleteValue)(
-        ISpeechDataKey *This,
-        const BSTR ValueName);
+                     ISpeechDataKey *This,
+                     const BSTR ValueName);
 
     HRESULT (STDMETHODCALLTYPE *EnumKeys)(
-        ISpeechDataKey *This,
-        LONG Index,
-        BSTR *SubKeyName);
+                     ISpeechDataKey *This,
+                     LONG Index,
+                     BSTR *SubKeyName);
 
     HRESULT (STDMETHODCALLTYPE *EnumValues)(
-        ISpeechDataKey *This,
-        LONG Index,
-        BSTR *ValueName);
+                     ISpeechDataKey *This,
+                     LONG Index,
+                     BSTR *ValueName);
 
     END_INTERFACE
 } ISpeechDataKeyVtbl;
@@ -11571,63 +11571,63 @@ MIDL_INTERFACE("c74a3adc-b727-4500-a84a-b526721c8b8c")
 ISpeechObjectToken : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        BSTR *ObjectId) = 0;
+                     BSTR *ObjectId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DataKey(
-        ISpeechDataKey **DataKey) = 0;
+                     ISpeechDataKey **DataKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Category(
-        ISpeechObjectTokenCategory **Category) = 0;
+                     ISpeechObjectTokenCategory **Category) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        LONG Locale,
-        BSTR *Description) = 0;
+                     LONG Locale,
+                     BSTR *Description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetId(
-        BSTR Id,
-        BSTR CategoryID = L"",
-        VARIANT_BOOL CreateIfNotExist = 0) = 0;
+                     BSTR Id,
+                     BSTR CategoryID = L"",
+                     VARIANT_BOOL CreateIfNotExist = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAttribute(
-        BSTR AttributeName,
-        BSTR *AttributeValue) = 0;
+                     BSTR AttributeName,
+                     BSTR *AttributeValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-        IUnknown *pUnkOuter,
-        SpeechTokenContext ClsContext,
-        IUnknown **Object) = 0;
+                     IUnknown *pUnkOuter,
+                     SpeechTokenContext ClsContext,
+                     IUnknown **Object) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        BSTR ObjectStorageCLSID) = 0;
+                     BSTR ObjectStorageCLSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStorageFileName(
-        BSTR ObjectStorageCLSID,
-        BSTR KeyName,
-        BSTR FileName,
-        SpeechTokenShellFolder Folder,
-        BSTR *FilePath) = 0;
+                     BSTR ObjectStorageCLSID,
+                     BSTR KeyName,
+                     BSTR FileName,
+                     SpeechTokenShellFolder Folder,
+                     BSTR *FilePath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStorageFileName(
-        BSTR ObjectStorageCLSID,
-        BSTR KeyName,
-        VARIANT_BOOL DeleteFile) = 0;
+                     BSTR ObjectStorageCLSID,
+                     BSTR KeyName,
+                     VARIANT_BOOL DeleteFile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUISupported(
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData,
-        IUnknown *Object,
-        VARIANT_BOOL *Supported) = 0;
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData,
+                     IUnknown *Object,
+                     VARIANT_BOOL *Supported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisplayUI(
-        LONG hWnd,
-        BSTR Title,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData = 0,
-        IUnknown *Object = 0) = 0;
+                     LONG hWnd,
+                     BSTR Title,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData = 0,
+                     IUnknown *Object = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchesAttributes(
-        BSTR Attributes,
-        VARIANT_BOOL *Matches) = 0;
+                     BSTR Attributes,
+                     VARIANT_BOOL *Matches) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11639,118 +11639,118 @@ typedef struct ISpeechObjectTokenVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechObjectToken *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechObjectToken *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechObjectToken *This);
+                     ISpeechObjectToken *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechObjectToken *This);
+                     ISpeechObjectToken *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechObjectToken *This,
-        UINT *pctinfo);
+                     ISpeechObjectToken *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechObjectToken *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechObjectToken *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechObjectToken *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechObjectToken *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechObjectToken *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechObjectToken *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechObjectToken methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ISpeechObjectToken *This,
-        BSTR *ObjectId);
+                     ISpeechObjectToken *This,
+                     BSTR *ObjectId);
 
     HRESULT (STDMETHODCALLTYPE *get_DataKey)(
-        ISpeechObjectToken *This,
-        ISpeechDataKey **DataKey);
+                     ISpeechObjectToken *This,
+                     ISpeechDataKey **DataKey);
 
     HRESULT (STDMETHODCALLTYPE *get_Category)(
-        ISpeechObjectToken *This,
-        ISpeechObjectTokenCategory **Category);
+                     ISpeechObjectToken *This,
+                     ISpeechObjectTokenCategory **Category);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        ISpeechObjectToken *This,
-        LONG Locale,
-        BSTR *Description);
+                     ISpeechObjectToken *This,
+                     LONG Locale,
+                     BSTR *Description);
 
     HRESULT (STDMETHODCALLTYPE *SetId)(
-        ISpeechObjectToken *This,
-        BSTR Id,
-        BSTR CategoryID,
-        VARIANT_BOOL CreateIfNotExist);
+                     ISpeechObjectToken *This,
+                     BSTR Id,
+                     BSTR CategoryID,
+                     VARIANT_BOOL CreateIfNotExist);
 
     HRESULT (STDMETHODCALLTYPE *GetAttribute)(
-        ISpeechObjectToken *This,
-        BSTR AttributeName,
-        BSTR *AttributeValue);
+                     ISpeechObjectToken *This,
+                     BSTR AttributeName,
+                     BSTR *AttributeValue);
 
     HRESULT (STDMETHODCALLTYPE *CreateInstance)(
-        ISpeechObjectToken *This,
-        IUnknown *pUnkOuter,
-        SpeechTokenContext ClsContext,
-        IUnknown **Object);
+                     ISpeechObjectToken *This,
+                     IUnknown *pUnkOuter,
+                     SpeechTokenContext ClsContext,
+                     IUnknown **Object);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ISpeechObjectToken *This,
-        BSTR ObjectStorageCLSID);
+                     ISpeechObjectToken *This,
+                     BSTR ObjectStorageCLSID);
 
     HRESULT (STDMETHODCALLTYPE *GetStorageFileName)(
-        ISpeechObjectToken *This,
-        BSTR ObjectStorageCLSID,
-        BSTR KeyName,
-        BSTR FileName,
-        SpeechTokenShellFolder Folder,
-        BSTR *FilePath);
+                     ISpeechObjectToken *This,
+                     BSTR ObjectStorageCLSID,
+                     BSTR KeyName,
+                     BSTR FileName,
+                     SpeechTokenShellFolder Folder,
+                     BSTR *FilePath);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStorageFileName)(
-        ISpeechObjectToken *This,
-        BSTR ObjectStorageCLSID,
-        BSTR KeyName,
-        VARIANT_BOOL DeleteFile);
+                     ISpeechObjectToken *This,
+                     BSTR ObjectStorageCLSID,
+                     BSTR KeyName,
+                     VARIANT_BOOL DeleteFile);
 
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        ISpeechObjectToken *This,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData,
-        IUnknown *Object,
-        VARIANT_BOOL *Supported);
+                     ISpeechObjectToken *This,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData,
+                     IUnknown *Object,
+                     VARIANT_BOOL *Supported);
 
     HRESULT (STDMETHODCALLTYPE *DisplayUI)(
-        ISpeechObjectToken *This,
-        LONG hWnd,
-        BSTR Title,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData,
-        IUnknown *Object);
+                     ISpeechObjectToken *This,
+                     LONG hWnd,
+                     BSTR Title,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData,
+                     IUnknown *Object);
 
     HRESULT (STDMETHODCALLTYPE *MatchesAttributes)(
-        ISpeechObjectToken *This,
-        BSTR Attributes,
-        VARIANT_BOOL *Matches);
+                     ISpeechObjectToken *This,
+                     BSTR Attributes,
+                     VARIANT_BOOL *Matches);
 
     END_INTERFACE
 } ISpeechObjectTokenVtbl;
@@ -11868,14 +11868,14 @@ MIDL_INTERFACE("9285b776-2e7b-4bc0-b53e-580eb6fa967f")
 ISpeechObjectTokens : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechObjectToken **Token) = 0;
+                     LONG Index,
+                     ISpeechObjectToken **Token) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **ppEnumVARIANT) = 0;
+                     IUnknown **ppEnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -11887,59 +11887,59 @@ typedef struct ISpeechObjectTokensVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechObjectTokens *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechObjectTokens *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechObjectTokens *This);
+                     ISpeechObjectTokens *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechObjectTokens *This);
+                     ISpeechObjectTokens *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechObjectTokens *This,
-        UINT *pctinfo);
+                     ISpeechObjectTokens *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechObjectTokens *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechObjectTokens *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechObjectTokens *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechObjectTokens *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechObjectTokens *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechObjectTokens *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechObjectTokens methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechObjectTokens *This,
-        LONG *Count);
+                     ISpeechObjectTokens *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechObjectTokens *This,
-        LONG Index,
-        ISpeechObjectToken **Token);
+                     ISpeechObjectTokens *This,
+                     LONG Index,
+                     ISpeechObjectToken **Token);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechObjectTokens *This,
-        IUnknown **ppEnumVARIANT);
+                     ISpeechObjectTokens *This,
+                     IUnknown **ppEnumVARIANT);
 
     END_INTERFACE
 } ISpeechObjectTokensVtbl;
@@ -12017,26 +12017,26 @@ MIDL_INTERFACE("ca7eac50-2d01-4145-86d4-5ae7d70f4469")
 ISpeechObjectTokenCategory : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        BSTR *Id) = 0;
+                     BSTR *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Default(
-        const BSTR TokenId) = 0;
+                     const BSTR TokenId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Default(
-        BSTR *TokenId) = 0;
+                     BSTR *TokenId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetId(
-        const BSTR Id,
-        VARIANT_BOOL CreateIfNotExist = 0) = 0;
+                     const BSTR Id,
+                     VARIANT_BOOL CreateIfNotExist = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataKey(
-        SpeechDataKeyLocation Location,
-        ISpeechDataKey **DataKey) = 0;
+                     SpeechDataKeyLocation Location,
+                     ISpeechDataKey **DataKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerateTokens(
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **Tokens) = 0;
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **Tokens) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12048,74 +12048,74 @@ typedef struct ISpeechObjectTokenCategoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechObjectTokenCategory *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechObjectTokenCategory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechObjectTokenCategory *This);
+                     ISpeechObjectTokenCategory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechObjectTokenCategory *This);
+                     ISpeechObjectTokenCategory *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechObjectTokenCategory *This,
-        UINT *pctinfo);
+                     ISpeechObjectTokenCategory *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechObjectTokenCategory *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechObjectTokenCategory *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechObjectTokenCategory *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechObjectTokenCategory *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechObjectTokenCategory *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechObjectTokenCategory *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechObjectTokenCategory methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ISpeechObjectTokenCategory *This,
-        BSTR *Id);
+                     ISpeechObjectTokenCategory *This,
+                     BSTR *Id);
 
     HRESULT (STDMETHODCALLTYPE *put_Default)(
-        ISpeechObjectTokenCategory *This,
-        const BSTR TokenId);
+                     ISpeechObjectTokenCategory *This,
+                     const BSTR TokenId);
 
     HRESULT (STDMETHODCALLTYPE *get_Default)(
-        ISpeechObjectTokenCategory *This,
-        BSTR *TokenId);
+                     ISpeechObjectTokenCategory *This,
+                     BSTR *TokenId);
 
     HRESULT (STDMETHODCALLTYPE *SetId)(
-        ISpeechObjectTokenCategory *This,
-        const BSTR Id,
-        VARIANT_BOOL CreateIfNotExist);
+                     ISpeechObjectTokenCategory *This,
+                     const BSTR Id,
+                     VARIANT_BOOL CreateIfNotExist);
 
     HRESULT (STDMETHODCALLTYPE *GetDataKey)(
-        ISpeechObjectTokenCategory *This,
-        SpeechDataKeyLocation Location,
-        ISpeechDataKey **DataKey);
+                     ISpeechObjectTokenCategory *This,
+                     SpeechDataKeyLocation Location,
+                     ISpeechDataKey **DataKey);
 
     HRESULT (STDMETHODCALLTYPE *EnumerateTokens)(
-        ISpeechObjectTokenCategory *This,
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **Tokens);
+                     ISpeechObjectTokenCategory *This,
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **Tokens);
 
     END_INTERFACE
 } ISpeechObjectTokenCategoryVtbl;
@@ -12429,22 +12429,22 @@ MIDL_INTERFACE("e6e9c590-3e18-40e3-8299-061f98bde7c7")
 ISpeechAudioFormat : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        SpeechAudioFormatType *AudioFormat) = 0;
+                     SpeechAudioFormatType *AudioFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Type(
-        SpeechAudioFormatType AudioFormat) = 0;
+                     SpeechAudioFormatType AudioFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Guid(
-        BSTR *Guid) = 0;
+                     BSTR *Guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Guid(
-        BSTR Guid) = 0;
+                     BSTR Guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWaveFormatEx(
-        ISpeechWaveFormatEx **SpeechWaveFormatEx) = 0;
+                     ISpeechWaveFormatEx **SpeechWaveFormatEx) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetWaveFormatEx(
-        ISpeechWaveFormatEx *SpeechWaveFormatEx) = 0;
+                     ISpeechWaveFormatEx *SpeechWaveFormatEx) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12456,70 +12456,70 @@ typedef struct ISpeechAudioFormatVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechAudioFormat *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechAudioFormat *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechAudioFormat *This);
+                     ISpeechAudioFormat *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechAudioFormat *This);
+                     ISpeechAudioFormat *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechAudioFormat *This,
-        UINT *pctinfo);
+                     ISpeechAudioFormat *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechAudioFormat *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechAudioFormat *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechAudioFormat *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechAudioFormat *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechAudioFormat *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechAudioFormat *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechAudioFormat methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        ISpeechAudioFormat *This,
-        SpeechAudioFormatType *AudioFormat);
+                     ISpeechAudioFormat *This,
+                     SpeechAudioFormatType *AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *put_Type)(
-        ISpeechAudioFormat *This,
-        SpeechAudioFormatType AudioFormat);
+                     ISpeechAudioFormat *This,
+                     SpeechAudioFormatType AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *get_Guid)(
-        ISpeechAudioFormat *This,
-        BSTR *Guid);
+                     ISpeechAudioFormat *This,
+                     BSTR *Guid);
 
     HRESULT (STDMETHODCALLTYPE *put_Guid)(
-        ISpeechAudioFormat *This,
-        BSTR Guid);
+                     ISpeechAudioFormat *This,
+                     BSTR Guid);
 
     HRESULT (STDMETHODCALLTYPE *GetWaveFormatEx)(
-        ISpeechAudioFormat *This,
-        ISpeechWaveFormatEx **SpeechWaveFormatEx);
+                     ISpeechAudioFormat *This,
+                     ISpeechWaveFormatEx **SpeechWaveFormatEx);
 
     HRESULT (STDMETHODCALLTYPE *SetWaveFormatEx)(
-        ISpeechAudioFormat *This,
-        ISpeechWaveFormatEx *SpeechWaveFormatEx);
+                     ISpeechAudioFormat *This,
+                     ISpeechWaveFormatEx *SpeechWaveFormatEx);
 
     END_INTERFACE
 } ISpeechAudioFormatVtbl;
@@ -12609,24 +12609,24 @@ MIDL_INTERFACE("6450336f-7d49-4ced-8097-49d6dee37294")
 ISpeechBaseStream : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Format(
-        ISpeechAudioFormat **AudioFormat) = 0;
+                     ISpeechAudioFormat **AudioFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_Format(
-        ISpeechAudioFormat *AudioFormat) = 0;
+                     ISpeechAudioFormat *AudioFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Read(
-        VARIANT *Buffer,
-        LONG NumberOfBytes,
-        LONG *BytesRead) = 0;
+                     VARIANT *Buffer,
+                     LONG NumberOfBytes,
+                     LONG *BytesRead) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Write(
-        VARIANT Buffer,
-        LONG *BytesWritten) = 0;
+                     VARIANT Buffer,
+                     LONG *BytesWritten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Seek(
-        VARIANT Position,
-        SpeechStreamSeekPositionType Origin,
-        VARIANT *NewPosition) = 0;
+                     VARIANT Position,
+                     SpeechStreamSeekPositionType Origin,
+                     VARIANT *NewPosition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12638,71 +12638,71 @@ typedef struct ISpeechBaseStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechBaseStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechBaseStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechBaseStream *This);
+                     ISpeechBaseStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechBaseStream *This);
+                     ISpeechBaseStream *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechBaseStream *This,
-        UINT *pctinfo);
+                     ISpeechBaseStream *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechBaseStream *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechBaseStream *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechBaseStream *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechBaseStream *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechBaseStream *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechBaseStream *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechBaseStream methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Format)(
-        ISpeechBaseStream *This,
-        ISpeechAudioFormat **AudioFormat);
+                     ISpeechBaseStream *This,
+                     ISpeechAudioFormat **AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *putref_Format)(
-        ISpeechBaseStream *This,
-        ISpeechAudioFormat *AudioFormat);
+                     ISpeechBaseStream *This,
+                     ISpeechAudioFormat *AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpeechBaseStream *This,
-        VARIANT *Buffer,
-        LONG NumberOfBytes,
-        LONG *BytesRead);
+                     ISpeechBaseStream *This,
+                     VARIANT *Buffer,
+                     LONG NumberOfBytes,
+                     LONG *BytesRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpeechBaseStream *This,
-        VARIANT Buffer,
-        LONG *BytesWritten);
+                     ISpeechBaseStream *This,
+                     VARIANT Buffer,
+                     LONG *BytesWritten);
 
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpeechBaseStream *This,
-        VARIANT Position,
-        SpeechStreamSeekPositionType Origin,
-        VARIANT *NewPosition);
+                     ISpeechBaseStream *This,
+                     VARIANT Position,
+                     SpeechStreamSeekPositionType Origin,
+                     VARIANT *NewPosition);
 
     END_INTERFACE
 } ISpeechBaseStreamVtbl;
@@ -12788,31 +12788,31 @@ MIDL_INTERFACE("cff8e175-019e-11d3-a08e-00c04f8ef9b5")
 ISpeechAudio : public ISpeechBaseStream
 {
     virtual HRESULT STDMETHODCALLTYPE get_Status(
-        ISpeechAudioStatus **Status) = 0;
+                     ISpeechAudioStatus **Status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BufferInfo(
-        ISpeechAudioBufferInfo **BufferInfo) = 0;
+                     ISpeechAudioBufferInfo **BufferInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DefaultFormat(
-        ISpeechAudioFormat **StreamFormat) = 0;
+                     ISpeechAudioFormat **StreamFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Volume(
-        LONG *Volume) = 0;
+                     LONG *Volume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Volume(
-        LONG Volume) = 0;
+                     LONG Volume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BufferNotifySize(
-        LONG *BufferNotifySize) = 0;
+                     LONG *BufferNotifySize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_BufferNotifySize(
-        LONG BufferNotifySize) = 0;
+                     LONG BufferNotifySize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EventHandle(
-        LONG *EventHandle) = 0;
+                     LONG *EventHandle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetState(
-        SpeechAudioState State) = 0;
+                     SpeechAudioState State) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -12824,108 +12824,108 @@ typedef struct ISpeechAudioVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechAudio *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechAudio *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechAudio *This);
+                     ISpeechAudio *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechAudio *This);
+                     ISpeechAudio *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechAudio *This,
-        UINT *pctinfo);
+                     ISpeechAudio *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechAudio *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechAudio *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechAudio *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechAudio *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechAudio *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechAudio *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechBaseStream methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Format)(
-        ISpeechAudio *This,
-        ISpeechAudioFormat **AudioFormat);
+                     ISpeechAudio *This,
+                     ISpeechAudioFormat **AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *putref_Format)(
-        ISpeechAudio *This,
-        ISpeechAudioFormat *AudioFormat);
+                     ISpeechAudio *This,
+                     ISpeechAudioFormat *AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpeechAudio *This,
-        VARIANT *Buffer,
-        LONG NumberOfBytes,
-        LONG *BytesRead);
+                     ISpeechAudio *This,
+                     VARIANT *Buffer,
+                     LONG NumberOfBytes,
+                     LONG *BytesRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpeechAudio *This,
-        VARIANT Buffer,
-        LONG *BytesWritten);
+                     ISpeechAudio *This,
+                     VARIANT Buffer,
+                     LONG *BytesWritten);
 
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpeechAudio *This,
-        VARIANT Position,
-        SpeechStreamSeekPositionType Origin,
-        VARIANT *NewPosition);
+                     ISpeechAudio *This,
+                     VARIANT Position,
+                     SpeechStreamSeekPositionType Origin,
+                     VARIANT *NewPosition);
 
     /*** ISpeechAudio methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Status)(
-        ISpeechAudio *This,
-        ISpeechAudioStatus **Status);
+                     ISpeechAudio *This,
+                     ISpeechAudioStatus **Status);
 
     HRESULT (STDMETHODCALLTYPE *get_BufferInfo)(
-        ISpeechAudio *This,
-        ISpeechAudioBufferInfo **BufferInfo);
+                     ISpeechAudio *This,
+                     ISpeechAudioBufferInfo **BufferInfo);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultFormat)(
-        ISpeechAudio *This,
-        ISpeechAudioFormat **StreamFormat);
+                     ISpeechAudio *This,
+                     ISpeechAudioFormat **StreamFormat);
 
     HRESULT (STDMETHODCALLTYPE *get_Volume)(
-        ISpeechAudio *This,
-        LONG *Volume);
+                     ISpeechAudio *This,
+                     LONG *Volume);
 
     HRESULT (STDMETHODCALLTYPE *put_Volume)(
-        ISpeechAudio *This,
-        LONG Volume);
+                     ISpeechAudio *This,
+                     LONG Volume);
 
     HRESULT (STDMETHODCALLTYPE *get_BufferNotifySize)(
-        ISpeechAudio *This,
-        LONG *BufferNotifySize);
+                     ISpeechAudio *This,
+                     LONG *BufferNotifySize);
 
     HRESULT (STDMETHODCALLTYPE *put_BufferNotifySize)(
-        ISpeechAudio *This,
-        LONG BufferNotifySize);
+                     ISpeechAudio *This,
+                     LONG BufferNotifySize);
 
     HRESULT (STDMETHODCALLTYPE *get_EventHandle)(
-        ISpeechAudio *This,
-        LONG *EventHandle);
+                     ISpeechAudio *This,
+                     LONG *EventHandle);
 
     HRESULT (STDMETHODCALLTYPE *SetState)(
-        ISpeechAudio *This,
-        SpeechAudioState State);
+                     ISpeechAudio *This,
+                     SpeechAudioState State);
 
     END_INTERFACE
 } ISpeechAudioVtbl;
@@ -13049,19 +13049,19 @@ MIDL_INTERFACE("3c76af6d-1fd7-4831-81d1-3b71d5a13c44")
 ISpeechMMSysAudio : public ISpeechAudio
 {
     virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
-        LONG *DeviceId) = 0;
+                     LONG *DeviceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DeviceId(
-        LONG DeviceId) = 0;
+                     LONG DeviceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LineId(
-        LONG *LineId) = 0;
+                     LONG *LineId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LineId(
-        LONG LineId) = 0;
+                     LONG LineId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MMHandle(
-        LONG *Handle) = 0;
+                     LONG *Handle) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13073,129 +13073,129 @@ typedef struct ISpeechMMSysAudioVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechMMSysAudio *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechMMSysAudio *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechMMSysAudio *This);
+                     ISpeechMMSysAudio *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechMMSysAudio *This);
+                     ISpeechMMSysAudio *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechMMSysAudio *This,
-        UINT *pctinfo);
+                     ISpeechMMSysAudio *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechMMSysAudio *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechMMSysAudio *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechMMSysAudio *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechMMSysAudio *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechMMSysAudio *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechMMSysAudio *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechBaseStream methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Format)(
-        ISpeechMMSysAudio *This,
-        ISpeechAudioFormat **AudioFormat);
+                     ISpeechMMSysAudio *This,
+                     ISpeechAudioFormat **AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *putref_Format)(
-        ISpeechMMSysAudio *This,
-        ISpeechAudioFormat *AudioFormat);
+                     ISpeechMMSysAudio *This,
+                     ISpeechAudioFormat *AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpeechMMSysAudio *This,
-        VARIANT *Buffer,
-        LONG NumberOfBytes,
-        LONG *BytesRead);
+                     ISpeechMMSysAudio *This,
+                     VARIANT *Buffer,
+                     LONG NumberOfBytes,
+                     LONG *BytesRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpeechMMSysAudio *This,
-        VARIANT Buffer,
-        LONG *BytesWritten);
+                     ISpeechMMSysAudio *This,
+                     VARIANT Buffer,
+                     LONG *BytesWritten);
 
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpeechMMSysAudio *This,
-        VARIANT Position,
-        SpeechStreamSeekPositionType Origin,
-        VARIANT *NewPosition);
+                     ISpeechMMSysAudio *This,
+                     VARIANT Position,
+                     SpeechStreamSeekPositionType Origin,
+                     VARIANT *NewPosition);
 
     /*** ISpeechAudio methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Status)(
-        ISpeechMMSysAudio *This,
-        ISpeechAudioStatus **Status);
+                     ISpeechMMSysAudio *This,
+                     ISpeechAudioStatus **Status);
 
     HRESULT (STDMETHODCALLTYPE *get_BufferInfo)(
-        ISpeechMMSysAudio *This,
-        ISpeechAudioBufferInfo **BufferInfo);
+                     ISpeechMMSysAudio *This,
+                     ISpeechAudioBufferInfo **BufferInfo);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultFormat)(
-        ISpeechMMSysAudio *This,
-        ISpeechAudioFormat **StreamFormat);
+                     ISpeechMMSysAudio *This,
+                     ISpeechAudioFormat **StreamFormat);
 
     HRESULT (STDMETHODCALLTYPE *get_Volume)(
-        ISpeechMMSysAudio *This,
-        LONG *Volume);
+                     ISpeechMMSysAudio *This,
+                     LONG *Volume);
 
     HRESULT (STDMETHODCALLTYPE *put_Volume)(
-        ISpeechMMSysAudio *This,
-        LONG Volume);
+                     ISpeechMMSysAudio *This,
+                     LONG Volume);
 
     HRESULT (STDMETHODCALLTYPE *get_BufferNotifySize)(
-        ISpeechMMSysAudio *This,
-        LONG *BufferNotifySize);
+                     ISpeechMMSysAudio *This,
+                     LONG *BufferNotifySize);
 
     HRESULT (STDMETHODCALLTYPE *put_BufferNotifySize)(
-        ISpeechMMSysAudio *This,
-        LONG BufferNotifySize);
+                     ISpeechMMSysAudio *This,
+                     LONG BufferNotifySize);
 
     HRESULT (STDMETHODCALLTYPE *get_EventHandle)(
-        ISpeechMMSysAudio *This,
-        LONG *EventHandle);
+                     ISpeechMMSysAudio *This,
+                     LONG *EventHandle);
 
     HRESULT (STDMETHODCALLTYPE *SetState)(
-        ISpeechMMSysAudio *This,
-        SpeechAudioState State);
+                     ISpeechMMSysAudio *This,
+                     SpeechAudioState State);
 
     /*** ISpeechMMSysAudio methods ***/
     HRESULT (STDMETHODCALLTYPE *get_DeviceId)(
-        ISpeechMMSysAudio *This,
-        LONG *DeviceId);
+                     ISpeechMMSysAudio *This,
+                     LONG *DeviceId);
 
     HRESULT (STDMETHODCALLTYPE *put_DeviceId)(
-        ISpeechMMSysAudio *This,
-        LONG DeviceId);
+                     ISpeechMMSysAudio *This,
+                     LONG DeviceId);
 
     HRESULT (STDMETHODCALLTYPE *get_LineId)(
-        ISpeechMMSysAudio *This,
-        LONG *LineId);
+                     ISpeechMMSysAudio *This,
+                     LONG *LineId);
 
     HRESULT (STDMETHODCALLTYPE *put_LineId)(
-        ISpeechMMSysAudio *This,
-        LONG LineId);
+                     ISpeechMMSysAudio *This,
+                     LONG LineId);
 
     HRESULT (STDMETHODCALLTYPE *get_MMHandle)(
-        ISpeechMMSysAudio *This,
-        LONG *Handle);
+                     ISpeechMMSysAudio *This,
+                     LONG *Handle);
 
     END_INTERFACE
 } ISpeechMMSysAudioVtbl;
@@ -13341,12 +13341,12 @@ MIDL_INTERFACE("af67f125-ab39-4e93-b4a2-cc2e66e182a7")
 ISpeechFileStream : public ISpeechBaseStream
 {
     virtual HRESULT STDMETHODCALLTYPE Open(
-        BSTR FileName,
-        SpeechStreamFileMode FileMode = SSFMOpenForRead,
-        VARIANT_BOOL DoEvents = 0) = 0;
+                     BSTR FileName,
+                     SpeechStreamFileMode FileMode = SSFMOpenForRead,
+                     VARIANT_BOOL DoEvents = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13358,81 +13358,81 @@ typedef struct ISpeechFileStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechFileStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechFileStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechFileStream *This);
+                     ISpeechFileStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechFileStream *This);
+                     ISpeechFileStream *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechFileStream *This,
-        UINT *pctinfo);
+                     ISpeechFileStream *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechFileStream *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechFileStream *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechFileStream *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechFileStream *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechFileStream *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechFileStream *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechBaseStream methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Format)(
-        ISpeechFileStream *This,
-        ISpeechAudioFormat **AudioFormat);
+                     ISpeechFileStream *This,
+                     ISpeechAudioFormat **AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *putref_Format)(
-        ISpeechFileStream *This,
-        ISpeechAudioFormat *AudioFormat);
+                     ISpeechFileStream *This,
+                     ISpeechAudioFormat *AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpeechFileStream *This,
-        VARIANT *Buffer,
-        LONG NumberOfBytes,
-        LONG *BytesRead);
+                     ISpeechFileStream *This,
+                     VARIANT *Buffer,
+                     LONG NumberOfBytes,
+                     LONG *BytesRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpeechFileStream *This,
-        VARIANT Buffer,
-        LONG *BytesWritten);
+                     ISpeechFileStream *This,
+                     VARIANT Buffer,
+                     LONG *BytesWritten);
 
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpeechFileStream *This,
-        VARIANT Position,
-        SpeechStreamSeekPositionType Origin,
-        VARIANT *NewPosition);
+                     ISpeechFileStream *This,
+                     VARIANT Position,
+                     SpeechStreamSeekPositionType Origin,
+                     VARIANT *NewPosition);
 
     /*** ISpeechFileStream methods ***/
     HRESULT (STDMETHODCALLTYPE *Open)(
-        ISpeechFileStream *This,
-        BSTR FileName,
-        SpeechStreamFileMode FileMode,
-        VARIANT_BOOL DoEvents);
+                     ISpeechFileStream *This,
+                     BSTR FileName,
+                     SpeechStreamFileMode FileMode,
+                     VARIANT_BOOL DoEvents);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        ISpeechFileStream *This);
+                     ISpeechFileStream *This);
 
     END_INTERFACE
 } ISpeechFileStreamVtbl;
@@ -13528,10 +13528,10 @@ MIDL_INTERFACE("1a9e9f4f-104f-4db8-a115-efd7fd0c97ae")
 ISpeechCustomStream : public ISpeechBaseStream
 {
     virtual HRESULT STDMETHODCALLTYPE get_BaseStream(
-        IUnknown **ppUnkStream) = 0;
+                     IUnknown **ppUnkStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_BaseStream(
-        IUnknown *pUnkStream) = 0;
+                     IUnknown *pUnkStream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13543,80 +13543,80 @@ typedef struct ISpeechCustomStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechCustomStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechCustomStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechCustomStream *This);
+                     ISpeechCustomStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechCustomStream *This);
+                     ISpeechCustomStream *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechCustomStream *This,
-        UINT *pctinfo);
+                     ISpeechCustomStream *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechCustomStream *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechCustomStream *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechCustomStream *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechCustomStream *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechCustomStream *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechCustomStream *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechBaseStream methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Format)(
-        ISpeechCustomStream *This,
-        ISpeechAudioFormat **AudioFormat);
+                     ISpeechCustomStream *This,
+                     ISpeechAudioFormat **AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *putref_Format)(
-        ISpeechCustomStream *This,
-        ISpeechAudioFormat *AudioFormat);
+                     ISpeechCustomStream *This,
+                     ISpeechAudioFormat *AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpeechCustomStream *This,
-        VARIANT *Buffer,
-        LONG NumberOfBytes,
-        LONG *BytesRead);
+                     ISpeechCustomStream *This,
+                     VARIANT *Buffer,
+                     LONG NumberOfBytes,
+                     LONG *BytesRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpeechCustomStream *This,
-        VARIANT Buffer,
-        LONG *BytesWritten);
+                     ISpeechCustomStream *This,
+                     VARIANT Buffer,
+                     LONG *BytesWritten);
 
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpeechCustomStream *This,
-        VARIANT Position,
-        SpeechStreamSeekPositionType Origin,
-        VARIANT *NewPosition);
+                     ISpeechCustomStream *This,
+                     VARIANT Position,
+                     SpeechStreamSeekPositionType Origin,
+                     VARIANT *NewPosition);
 
     /*** ISpeechCustomStream methods ***/
     HRESULT (STDMETHODCALLTYPE *get_BaseStream)(
-        ISpeechCustomStream *This,
-        IUnknown **ppUnkStream);
+                     ISpeechCustomStream *This,
+                     IUnknown **ppUnkStream);
 
     HRESULT (STDMETHODCALLTYPE *putref_BaseStream)(
-        ISpeechCustomStream *This,
-        IUnknown *pUnkStream);
+                     ISpeechCustomStream *This,
+                     IUnknown *pUnkStream);
 
     END_INTERFACE
 } ISpeechCustomStreamVtbl;
@@ -13712,10 +13712,10 @@ MIDL_INTERFACE("eeb14b68-808b-4abe-a5ea-b51da7588008")
 ISpeechMemoryStream : public ISpeechBaseStream
 {
     virtual HRESULT STDMETHODCALLTYPE SetData(
-        VARIANT Data) = 0;
+                     VARIANT Data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetData(
-        VARIANT *pData) = 0;
+                     VARIANT *pData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13727,80 +13727,80 @@ typedef struct ISpeechMemoryStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechMemoryStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechMemoryStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechMemoryStream *This);
+                     ISpeechMemoryStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechMemoryStream *This);
+                     ISpeechMemoryStream *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechMemoryStream *This,
-        UINT *pctinfo);
+                     ISpeechMemoryStream *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechMemoryStream *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechMemoryStream *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechMemoryStream *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechMemoryStream *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechMemoryStream *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechMemoryStream *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechBaseStream methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Format)(
-        ISpeechMemoryStream *This,
-        ISpeechAudioFormat **AudioFormat);
+                     ISpeechMemoryStream *This,
+                     ISpeechAudioFormat **AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *putref_Format)(
-        ISpeechMemoryStream *This,
-        ISpeechAudioFormat *AudioFormat);
+                     ISpeechMemoryStream *This,
+                     ISpeechAudioFormat *AudioFormat);
 
     HRESULT (STDMETHODCALLTYPE *Read)(
-        ISpeechMemoryStream *This,
-        VARIANT *Buffer,
-        LONG NumberOfBytes,
-        LONG *BytesRead);
+                     ISpeechMemoryStream *This,
+                     VARIANT *Buffer,
+                     LONG NumberOfBytes,
+                     LONG *BytesRead);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        ISpeechMemoryStream *This,
-        VARIANT Buffer,
-        LONG *BytesWritten);
+                     ISpeechMemoryStream *This,
+                     VARIANT Buffer,
+                     LONG *BytesWritten);
 
     HRESULT (STDMETHODCALLTYPE *Seek)(
-        ISpeechMemoryStream *This,
-        VARIANT Position,
-        SpeechStreamSeekPositionType Origin,
-        VARIANT *NewPosition);
+                     ISpeechMemoryStream *This,
+                     VARIANT Position,
+                     SpeechStreamSeekPositionType Origin,
+                     VARIANT *NewPosition);
 
     /*** ISpeechMemoryStream methods ***/
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        ISpeechMemoryStream *This,
-        VARIANT Data);
+                     ISpeechMemoryStream *This,
+                     VARIANT Data);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ISpeechMemoryStream *This,
-        VARIANT *pData);
+                     ISpeechMemoryStream *This,
+                     VARIANT *pData);
 
     END_INTERFACE
 } ISpeechMemoryStreamVtbl;
@@ -13896,19 +13896,19 @@ MIDL_INTERFACE("c62d9c91-7458-47f6-862d-1ef86fb0b278")
 ISpeechAudioStatus : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_FreeBufferSpace(
-        LONG *FreeBufferSpace) = 0;
+                     LONG *FreeBufferSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NonBlockingIO(
-        LONG *NonBlockingIO) = 0;
+                     LONG *NonBlockingIO) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_State(
-        SpeechAudioState *State) = 0;
+                     SpeechAudioState *State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentSeekPosition(
-        VARIANT *CurrentSeekPosition) = 0;
+                     VARIANT *CurrentSeekPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentDevicePosition(
-        VARIANT *CurrentDevicePosition) = 0;
+                     VARIANT *CurrentDevicePosition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -13920,66 +13920,66 @@ typedef struct ISpeechAudioStatusVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechAudioStatus *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechAudioStatus *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechAudioStatus *This);
+                     ISpeechAudioStatus *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechAudioStatus *This);
+                     ISpeechAudioStatus *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechAudioStatus *This,
-        UINT *pctinfo);
+                     ISpeechAudioStatus *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechAudioStatus *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechAudioStatus *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechAudioStatus *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechAudioStatus *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechAudioStatus *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechAudioStatus *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechAudioStatus methods ***/
     HRESULT (STDMETHODCALLTYPE *get_FreeBufferSpace)(
-        ISpeechAudioStatus *This,
-        LONG *FreeBufferSpace);
+                     ISpeechAudioStatus *This,
+                     LONG *FreeBufferSpace);
 
     HRESULT (STDMETHODCALLTYPE *get_NonBlockingIO)(
-        ISpeechAudioStatus *This,
-        LONG *NonBlockingIO);
+                     ISpeechAudioStatus *This,
+                     LONG *NonBlockingIO);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        ISpeechAudioStatus *This,
-        SpeechAudioState *State);
+                     ISpeechAudioStatus *This,
+                     SpeechAudioState *State);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentSeekPosition)(
-        ISpeechAudioStatus *This,
-        VARIANT *CurrentSeekPosition);
+                     ISpeechAudioStatus *This,
+                     VARIANT *CurrentSeekPosition);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentDevicePosition)(
-        ISpeechAudioStatus *This,
-        VARIANT *CurrentDevicePosition);
+                     ISpeechAudioStatus *This,
+                     VARIANT *CurrentDevicePosition);
 
     END_INTERFACE
 } ISpeechAudioStatusVtbl;
@@ -14065,22 +14065,22 @@ MIDL_INTERFACE("11b103d8-1142-4edf-a093-82fb3915f8cc")
 ISpeechAudioBufferInfo : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_MinNotification(
-        LONG *MinNotification) = 0;
+                     LONG *MinNotification) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinNotification(
-        LONG MinNotification) = 0;
+                     LONG MinNotification) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BufferSize(
-        LONG *BufferSize) = 0;
+                     LONG *BufferSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_BufferSize(
-        LONG BufferSize) = 0;
+                     LONG BufferSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EventBias(
-        LONG *EventBias) = 0;
+                     LONG *EventBias) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EventBias(
-        LONG EventBias) = 0;
+                     LONG EventBias) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14092,70 +14092,70 @@ typedef struct ISpeechAudioBufferInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechAudioBufferInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechAudioBufferInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechAudioBufferInfo *This);
+                     ISpeechAudioBufferInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechAudioBufferInfo *This);
+                     ISpeechAudioBufferInfo *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechAudioBufferInfo *This,
-        UINT *pctinfo);
+                     ISpeechAudioBufferInfo *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechAudioBufferInfo *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechAudioBufferInfo *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechAudioBufferInfo *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechAudioBufferInfo *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechAudioBufferInfo *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechAudioBufferInfo *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechAudioBufferInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinNotification)(
-        ISpeechAudioBufferInfo *This,
-        LONG *MinNotification);
+                     ISpeechAudioBufferInfo *This,
+                     LONG *MinNotification);
 
     HRESULT (STDMETHODCALLTYPE *put_MinNotification)(
-        ISpeechAudioBufferInfo *This,
-        LONG MinNotification);
+                     ISpeechAudioBufferInfo *This,
+                     LONG MinNotification);
 
     HRESULT (STDMETHODCALLTYPE *get_BufferSize)(
-        ISpeechAudioBufferInfo *This,
-        LONG *BufferSize);
+                     ISpeechAudioBufferInfo *This,
+                     LONG *BufferSize);
 
     HRESULT (STDMETHODCALLTYPE *put_BufferSize)(
-        ISpeechAudioBufferInfo *This,
-        LONG BufferSize);
+                     ISpeechAudioBufferInfo *This,
+                     LONG BufferSize);
 
     HRESULT (STDMETHODCALLTYPE *get_EventBias)(
-        ISpeechAudioBufferInfo *This,
-        LONG *EventBias);
+                     ISpeechAudioBufferInfo *This,
+                     LONG *EventBias);
 
     HRESULT (STDMETHODCALLTYPE *put_EventBias)(
-        ISpeechAudioBufferInfo *This,
-        LONG EventBias);
+                     ISpeechAudioBufferInfo *This,
+                     LONG EventBias);
 
     END_INTERFACE
 } ISpeechAudioBufferInfoVtbl;
@@ -14245,46 +14245,46 @@ MIDL_INTERFACE("7a1ef0d5-1581-4741-88e4-209a49f11a10")
 ISpeechWaveFormatEx : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_FormatTag(
-        short *FormatTag) = 0;
+                     short *FormatTag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FormatTag(
-        short FormatTag) = 0;
+                     short FormatTag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Channels(
-        short *Channels) = 0;
+                     short *Channels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Channels(
-        short Channels) = 0;
+                     short Channels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SamplesPerSec(
-        LONG *SamplesPerSec) = 0;
+                     LONG *SamplesPerSec) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SamplesPerSec(
-        LONG SamplesPerSec) = 0;
+                     LONG SamplesPerSec) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AvgBytesPerSec(
-        LONG *AvgBytesPerSec) = 0;
+                     LONG *AvgBytesPerSec) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AvgBytesPerSec(
-        LONG AvgBytesPerSec) = 0;
+                     LONG AvgBytesPerSec) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BlockAlign(
-        short *BlockAlign) = 0;
+                     short *BlockAlign) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_BlockAlign(
-        short BlockAlign) = 0;
+                     short BlockAlign) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BitsPerSample(
-        short *BitsPerSample) = 0;
+                     short *BitsPerSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_BitsPerSample(
-        short BitsPerSample) = 0;
+                     short BitsPerSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExtraData(
-        VARIANT *ExtraData) = 0;
+                     VARIANT *ExtraData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ExtraData(
-        VARIANT ExtraData) = 0;
+                     VARIANT ExtraData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14296,102 +14296,102 @@ typedef struct ISpeechWaveFormatExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechWaveFormatEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechWaveFormatEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechWaveFormatEx *This);
+                     ISpeechWaveFormatEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechWaveFormatEx *This);
+                     ISpeechWaveFormatEx *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechWaveFormatEx *This,
-        UINT *pctinfo);
+                     ISpeechWaveFormatEx *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechWaveFormatEx *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechWaveFormatEx *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechWaveFormatEx *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechWaveFormatEx *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechWaveFormatEx *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechWaveFormatEx *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechWaveFormatEx methods ***/
     HRESULT (STDMETHODCALLTYPE *get_FormatTag)(
-        ISpeechWaveFormatEx *This,
-        short *FormatTag);
+                     ISpeechWaveFormatEx *This,
+                     short *FormatTag);
 
     HRESULT (STDMETHODCALLTYPE *put_FormatTag)(
-        ISpeechWaveFormatEx *This,
-        short FormatTag);
+                     ISpeechWaveFormatEx *This,
+                     short FormatTag);
 
     HRESULT (STDMETHODCALLTYPE *get_Channels)(
-        ISpeechWaveFormatEx *This,
-        short *Channels);
+                     ISpeechWaveFormatEx *This,
+                     short *Channels);
 
     HRESULT (STDMETHODCALLTYPE *put_Channels)(
-        ISpeechWaveFormatEx *This,
-        short Channels);
+                     ISpeechWaveFormatEx *This,
+                     short Channels);
 
     HRESULT (STDMETHODCALLTYPE *get_SamplesPerSec)(
-        ISpeechWaveFormatEx *This,
-        LONG *SamplesPerSec);
+                     ISpeechWaveFormatEx *This,
+                     LONG *SamplesPerSec);
 
     HRESULT (STDMETHODCALLTYPE *put_SamplesPerSec)(
-        ISpeechWaveFormatEx *This,
-        LONG SamplesPerSec);
+                     ISpeechWaveFormatEx *This,
+                     LONG SamplesPerSec);
 
     HRESULT (STDMETHODCALLTYPE *get_AvgBytesPerSec)(
-        ISpeechWaveFormatEx *This,
-        LONG *AvgBytesPerSec);
+                     ISpeechWaveFormatEx *This,
+                     LONG *AvgBytesPerSec);
 
     HRESULT (STDMETHODCALLTYPE *put_AvgBytesPerSec)(
-        ISpeechWaveFormatEx *This,
-        LONG AvgBytesPerSec);
+                     ISpeechWaveFormatEx *This,
+                     LONG AvgBytesPerSec);
 
     HRESULT (STDMETHODCALLTYPE *get_BlockAlign)(
-        ISpeechWaveFormatEx *This,
-        short *BlockAlign);
+                     ISpeechWaveFormatEx *This,
+                     short *BlockAlign);
 
     HRESULT (STDMETHODCALLTYPE *put_BlockAlign)(
-        ISpeechWaveFormatEx *This,
-        short BlockAlign);
+                     ISpeechWaveFormatEx *This,
+                     short BlockAlign);
 
     HRESULT (STDMETHODCALLTYPE *get_BitsPerSample)(
-        ISpeechWaveFormatEx *This,
-        short *BitsPerSample);
+                     ISpeechWaveFormatEx *This,
+                     short *BitsPerSample);
 
     HRESULT (STDMETHODCALLTYPE *put_BitsPerSample)(
-        ISpeechWaveFormatEx *This,
-        short BitsPerSample);
+                     ISpeechWaveFormatEx *This,
+                     short BitsPerSample);
 
     HRESULT (STDMETHODCALLTYPE *get_ExtraData)(
-        ISpeechWaveFormatEx *This,
-        VARIANT *ExtraData);
+                     ISpeechWaveFormatEx *This,
+                     VARIANT *ExtraData);
 
     HRESULT (STDMETHODCALLTYPE *put_ExtraData)(
-        ISpeechWaveFormatEx *This,
-        VARIANT ExtraData);
+                     ISpeechWaveFormatEx *This,
+                     VARIANT ExtraData);
 
     END_INTERFACE
 } ISpeechWaveFormatExVtbl;
@@ -14513,116 +14513,116 @@ MIDL_INTERFACE("269316d8-57bd-11d2-9eee-00c04f797396")
 ISpeechVoice : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Status(
-        ISpeechVoiceStatus **Status) = 0;
+                     ISpeechVoiceStatus **Status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Voice(
-        ISpeechObjectToken **Voice) = 0;
+                     ISpeechObjectToken **Voice) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_Voice(
-        ISpeechObjectToken *Voice) = 0;
+                     ISpeechObjectToken *Voice) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioOutput(
-        ISpeechObjectToken **AudioOutput) = 0;
+                     ISpeechObjectToken **AudioOutput) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_AudioOutput(
-        ISpeechObjectToken *AudioOutput) = 0;
+                     ISpeechObjectToken *AudioOutput) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioOutputStream(
-        ISpeechBaseStream **AudioOutputStream) = 0;
+                     ISpeechBaseStream **AudioOutputStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_AudioOutputStream(
-        ISpeechBaseStream *AudioOutputStream) = 0;
+                     ISpeechBaseStream *AudioOutputStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Rate(
-        LONG *Rate) = 0;
+                     LONG *Rate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Rate(
-        LONG Rate) = 0;
+                     LONG Rate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Volume(
-        LONG *Volume) = 0;
+                     LONG *Volume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Volume(
-        LONG Volume) = 0;
+                     LONG Volume) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowAudioOutputFormatChangesOnNextSet(
-        VARIANT_BOOL Allow) = 0;
+                     VARIANT_BOOL Allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowAudioOutputFormatChangesOnNextSet(
-        VARIANT_BOOL *Allow) = 0;
+                     VARIANT_BOOL *Allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EventInterests(
-        SpeechVoiceEvents *EventInterestFlags) = 0;
+                     SpeechVoiceEvents *EventInterestFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EventInterests(
-        SpeechVoiceEvents EventInterestFlags) = 0;
+                     SpeechVoiceEvents EventInterestFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Priority(
-        SpeechVoicePriority Priority) = 0;
+                     SpeechVoicePriority Priority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Priority(
-        SpeechVoicePriority *Priority) = 0;
+                     SpeechVoicePriority *Priority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AlertBoundary(
-        SpeechVoiceEvents Boundary) = 0;
+                     SpeechVoiceEvents Boundary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AlertBoundary(
-        SpeechVoiceEvents *Boundary) = 0;
+                     SpeechVoiceEvents *Boundary) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SynchronousSpeakTimeout(
-        LONG msTimeout) = 0;
+                     LONG msTimeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SynchronousSpeakTimeout(
-        LONG *msTimeout) = 0;
+                     LONG *msTimeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Speak(
-        BSTR Text,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber) = 0;
+                     BSTR Text,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpeakStream(
-        ISpeechBaseStream *Stream,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber) = 0;
+                     ISpeechBaseStream *Stream,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        const BSTR Type,
-        LONG NumItems,
-        LONG *NumSkipped) = 0;
+                     const BSTR Type,
+                     LONG NumItems,
+                     LONG *NumSkipped) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVoices(
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens) = 0;
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAudioOutputs(
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens) = 0;
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitUntilDone(
-        LONG msTimeout,
-        VARIANT_BOOL *Done) = 0;
+                     LONG msTimeout,
+                     VARIANT_BOOL *Done) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpeakCompleteEvent(
-        LONG *Handle) = 0;
+                     LONG *Handle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUISupported(
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData,
-        VARIANT_BOOL *Supported) = 0;
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData,
+                     VARIANT_BOOL *Supported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisplayUI(
-        LONG hWndParent,
-        BSTR Title,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData = 0) = 0;
+                     LONG hWndParent,
+                     BSTR Title,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData = 0) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -14634,188 +14634,188 @@ typedef struct ISpeechVoiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechVoice *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechVoice *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechVoice *This);
+                     ISpeechVoice *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechVoice *This);
+                     ISpeechVoice *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechVoice *This,
-        UINT *pctinfo);
+                     ISpeechVoice *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechVoice *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechVoice *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechVoice *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechVoice *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechVoice *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechVoice *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechVoice methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Status)(
-        ISpeechVoice *This,
-        ISpeechVoiceStatus **Status);
+                     ISpeechVoice *This,
+                     ISpeechVoiceStatus **Status);
 
     HRESULT (STDMETHODCALLTYPE *get_Voice)(
-        ISpeechVoice *This,
-        ISpeechObjectToken **Voice);
+                     ISpeechVoice *This,
+                     ISpeechObjectToken **Voice);
 
     HRESULT (STDMETHODCALLTYPE *putref_Voice)(
-        ISpeechVoice *This,
-        ISpeechObjectToken *Voice);
+                     ISpeechVoice *This,
+                     ISpeechObjectToken *Voice);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioOutput)(
-        ISpeechVoice *This,
-        ISpeechObjectToken **AudioOutput);
+                     ISpeechVoice *This,
+                     ISpeechObjectToken **AudioOutput);
 
     HRESULT (STDMETHODCALLTYPE *putref_AudioOutput)(
-        ISpeechVoice *This,
-        ISpeechObjectToken *AudioOutput);
+                     ISpeechVoice *This,
+                     ISpeechObjectToken *AudioOutput);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioOutputStream)(
-        ISpeechVoice *This,
-        ISpeechBaseStream **AudioOutputStream);
+                     ISpeechVoice *This,
+                     ISpeechBaseStream **AudioOutputStream);
 
     HRESULT (STDMETHODCALLTYPE *putref_AudioOutputStream)(
-        ISpeechVoice *This,
-        ISpeechBaseStream *AudioOutputStream);
+                     ISpeechVoice *This,
+                     ISpeechBaseStream *AudioOutputStream);
 
     HRESULT (STDMETHODCALLTYPE *get_Rate)(
-        ISpeechVoice *This,
-        LONG *Rate);
+                     ISpeechVoice *This,
+                     LONG *Rate);
 
     HRESULT (STDMETHODCALLTYPE *put_Rate)(
-        ISpeechVoice *This,
-        LONG Rate);
+                     ISpeechVoice *This,
+                     LONG Rate);
 
     HRESULT (STDMETHODCALLTYPE *get_Volume)(
-        ISpeechVoice *This,
-        LONG *Volume);
+                     ISpeechVoice *This,
+                     LONG *Volume);
 
     HRESULT (STDMETHODCALLTYPE *put_Volume)(
-        ISpeechVoice *This,
-        LONG Volume);
+                     ISpeechVoice *This,
+                     LONG Volume);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowAudioOutputFormatChangesOnNextSet)(
-        ISpeechVoice *This,
-        VARIANT_BOOL Allow);
+                     ISpeechVoice *This,
+                     VARIANT_BOOL Allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowAudioOutputFormatChangesOnNextSet)(
-        ISpeechVoice *This,
-        VARIANT_BOOL *Allow);
+                     ISpeechVoice *This,
+                     VARIANT_BOOL *Allow);
 
     HRESULT (STDMETHODCALLTYPE *get_EventInterests)(
-        ISpeechVoice *This,
-        SpeechVoiceEvents *EventInterestFlags);
+                     ISpeechVoice *This,
+                     SpeechVoiceEvents *EventInterestFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_EventInterests)(
-        ISpeechVoice *This,
-        SpeechVoiceEvents EventInterestFlags);
+                     ISpeechVoice *This,
+                     SpeechVoiceEvents EventInterestFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_Priority)(
-        ISpeechVoice *This,
-        SpeechVoicePriority Priority);
+                     ISpeechVoice *This,
+                     SpeechVoicePriority Priority);
 
     HRESULT (STDMETHODCALLTYPE *get_Priority)(
-        ISpeechVoice *This,
-        SpeechVoicePriority *Priority);
+                     ISpeechVoice *This,
+                     SpeechVoicePriority *Priority);
 
     HRESULT (STDMETHODCALLTYPE *put_AlertBoundary)(
-        ISpeechVoice *This,
-        SpeechVoiceEvents Boundary);
+                     ISpeechVoice *This,
+                     SpeechVoiceEvents Boundary);
 
     HRESULT (STDMETHODCALLTYPE *get_AlertBoundary)(
-        ISpeechVoice *This,
-        SpeechVoiceEvents *Boundary);
+                     ISpeechVoice *This,
+                     SpeechVoiceEvents *Boundary);
 
     HRESULT (STDMETHODCALLTYPE *put_SynchronousSpeakTimeout)(
-        ISpeechVoice *This,
-        LONG msTimeout);
+                     ISpeechVoice *This,
+                     LONG msTimeout);
 
     HRESULT (STDMETHODCALLTYPE *get_SynchronousSpeakTimeout)(
-        ISpeechVoice *This,
-        LONG *msTimeout);
+                     ISpeechVoice *This,
+                     LONG *msTimeout);
 
     HRESULT (STDMETHODCALLTYPE *Speak)(
-        ISpeechVoice *This,
-        BSTR Text,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber);
+                     ISpeechVoice *This,
+                     BSTR Text,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *SpeakStream)(
-        ISpeechVoice *This,
-        ISpeechBaseStream *Stream,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber);
+                     ISpeechVoice *This,
+                     ISpeechBaseStream *Stream,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        ISpeechVoice *This);
+                     ISpeechVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        ISpeechVoice *This);
+                     ISpeechVoice *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        ISpeechVoice *This,
-        const BSTR Type,
-        LONG NumItems,
-        LONG *NumSkipped);
+                     ISpeechVoice *This,
+                     const BSTR Type,
+                     LONG NumItems,
+                     LONG *NumSkipped);
 
     HRESULT (STDMETHODCALLTYPE *GetVoices)(
-        ISpeechVoice *This,
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens);
+                     ISpeechVoice *This,
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens);
 
     HRESULT (STDMETHODCALLTYPE *GetAudioOutputs)(
-        ISpeechVoice *This,
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens);
+                     ISpeechVoice *This,
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens);
 
     HRESULT (STDMETHODCALLTYPE *WaitUntilDone)(
-        ISpeechVoice *This,
-        LONG msTimeout,
-        VARIANT_BOOL *Done);
+                     ISpeechVoice *This,
+                     LONG msTimeout,
+                     VARIANT_BOOL *Done);
 
     HRESULT (STDMETHODCALLTYPE *SpeakCompleteEvent)(
-        ISpeechVoice *This,
-        LONG *Handle);
+                     ISpeechVoice *This,
+                     LONG *Handle);
 
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        ISpeechVoice *This,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData,
-        VARIANT_BOOL *Supported);
+                     ISpeechVoice *This,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData,
+                     VARIANT_BOOL *Supported);
 
     HRESULT (STDMETHODCALLTYPE *DisplayUI)(
-        ISpeechVoice *This,
-        LONG hWndParent,
-        BSTR Title,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData);
+                     ISpeechVoice *This,
+                     LONG hWndParent,
+                     BSTR Title,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData);
 
     END_INTERFACE
 } ISpeechVoiceVtbl;
@@ -15009,40 +15009,40 @@ MIDL_INTERFACE("8be47b07-57f6-11d2-9eee-00c04f797396")
 ISpeechVoiceStatus : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_CurrentStreamNumber(
-        LONG *StreamNumber) = 0;
+                     LONG *StreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastStreamNumberQueued(
-        LONG *StreamNumber) = 0;
+                     LONG *StreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastHResult(
-        LONG *HResult) = 0;
+                     LONG *HResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RunningState(
-        SpeechRunState *State) = 0;
+                     SpeechRunState *State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InputWordPosition(
-        LONG *Position) = 0;
+                     LONG *Position) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InputWordLength(
-        LONG *Length) = 0;
+                     LONG *Length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InputSentencePosition(
-        LONG *Position) = 0;
+                     LONG *Position) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InputSentenceLength(
-        LONG *Length) = 0;
+                     LONG *Length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastBookmark(
-        BSTR *Bookmark) = 0;
+                     BSTR *Bookmark) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastBookmarkId(
-        LONG *BookmarkId) = 0;
+                     LONG *BookmarkId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PhonemeId(
-        short *PhoneId) = 0;
+                     short *PhoneId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_VisemeId(
-        short *VisemeId) = 0;
+                     short *VisemeId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15054,94 +15054,94 @@ typedef struct ISpeechVoiceStatusVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechVoiceStatus *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechVoiceStatus *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechVoiceStatus *This);
+                     ISpeechVoiceStatus *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechVoiceStatus *This);
+                     ISpeechVoiceStatus *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechVoiceStatus *This,
-        UINT *pctinfo);
+                     ISpeechVoiceStatus *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechVoiceStatus *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechVoiceStatus *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechVoiceStatus *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechVoiceStatus *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechVoiceStatus *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechVoiceStatus *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechVoiceStatus methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CurrentStreamNumber)(
-        ISpeechVoiceStatus *This,
-        LONG *StreamNumber);
+                     ISpeechVoiceStatus *This,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *get_LastStreamNumberQueued)(
-        ISpeechVoiceStatus *This,
-        LONG *StreamNumber);
+                     ISpeechVoiceStatus *This,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *get_LastHResult)(
-        ISpeechVoiceStatus *This,
-        LONG *HResult);
+                     ISpeechVoiceStatus *This,
+                     LONG *HResult);
 
     HRESULT (STDMETHODCALLTYPE *get_RunningState)(
-        ISpeechVoiceStatus *This,
-        SpeechRunState *State);
+                     ISpeechVoiceStatus *This,
+                     SpeechRunState *State);
 
     HRESULT (STDMETHODCALLTYPE *get_InputWordPosition)(
-        ISpeechVoiceStatus *This,
-        LONG *Position);
+                     ISpeechVoiceStatus *This,
+                     LONG *Position);
 
     HRESULT (STDMETHODCALLTYPE *get_InputWordLength)(
-        ISpeechVoiceStatus *This,
-        LONG *Length);
+                     ISpeechVoiceStatus *This,
+                     LONG *Length);
 
     HRESULT (STDMETHODCALLTYPE *get_InputSentencePosition)(
-        ISpeechVoiceStatus *This,
-        LONG *Position);
+                     ISpeechVoiceStatus *This,
+                     LONG *Position);
 
     HRESULT (STDMETHODCALLTYPE *get_InputSentenceLength)(
-        ISpeechVoiceStatus *This,
-        LONG *Length);
+                     ISpeechVoiceStatus *This,
+                     LONG *Length);
 
     HRESULT (STDMETHODCALLTYPE *get_LastBookmark)(
-        ISpeechVoiceStatus *This,
-        BSTR *Bookmark);
+                     ISpeechVoiceStatus *This,
+                     BSTR *Bookmark);
 
     HRESULT (STDMETHODCALLTYPE *get_LastBookmarkId)(
-        ISpeechVoiceStatus *This,
-        LONG *BookmarkId);
+                     ISpeechVoiceStatus *This,
+                     LONG *BookmarkId);
 
     HRESULT (STDMETHODCALLTYPE *get_PhonemeId)(
-        ISpeechVoiceStatus *This,
-        short *PhoneId);
+                     ISpeechVoiceStatus *This,
+                     short *PhoneId);
 
     HRESULT (STDMETHODCALLTYPE *get_VisemeId)(
-        ISpeechVoiceStatus *This,
-        short *VisemeId);
+                     ISpeechVoiceStatus *This,
+                     short *VisemeId);
 
     END_INTERFACE
 } ISpeechVoiceStatusVtbl;
@@ -15756,45 +15756,45 @@ typedef struct _ISpeechVoiceEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        _ISpeechVoiceEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     _ISpeechVoiceEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        _ISpeechVoiceEvents *This);
+                     _ISpeechVoiceEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        _ISpeechVoiceEvents *This);
+                     _ISpeechVoiceEvents *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        _ISpeechVoiceEvents *This,
-        UINT *pctinfo);
+                     _ISpeechVoiceEvents *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        _ISpeechVoiceEvents *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     _ISpeechVoiceEvents *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        _ISpeechVoiceEvents *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     _ISpeechVoiceEvents *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        _ISpeechVoiceEvents *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     _ISpeechVoiceEvents *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } _ISpeechVoiceEventsVtbl;
@@ -15857,104 +15857,104 @@ MIDL_INTERFACE("2d5f1c0c-bd75-4b08-9478-3b11fea2586c")
 ISpeechRecognizer : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE putref_Recognizer(
-        ISpeechObjectToken *Recognizer) = 0;
+                     ISpeechObjectToken *Recognizer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Recognizer(
-        ISpeechObjectToken **Recognizer) = 0;
+                     ISpeechObjectToken **Recognizer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowAudioInputFormatChangesOnNextSet(
-        VARIANT_BOOL Allow) = 0;
+                     VARIANT_BOOL Allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowAudioInputFormatChangesOnNextSet(
-        VARIANT_BOOL *Allow) = 0;
+                     VARIANT_BOOL *Allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_AudioInput(
-        ISpeechObjectToken *AudioInput = 0) = 0;
+                     ISpeechObjectToken *AudioInput = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioInput(
-        ISpeechObjectToken **AudioInput) = 0;
+                     ISpeechObjectToken **AudioInput) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_AudioInputStream(
-        ISpeechBaseStream *AudioInputStream = 0) = 0;
+                     ISpeechBaseStream *AudioInputStream = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioInputStream(
-        ISpeechBaseStream **AudioInputStream) = 0;
+                     ISpeechBaseStream **AudioInputStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsShared(
-        VARIANT_BOOL *Shared) = 0;
+                     VARIANT_BOOL *Shared) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_State(
-        SpeechRecognizerState State) = 0;
+                     SpeechRecognizerState State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_State(
-        SpeechRecognizerState *State) = 0;
+                     SpeechRecognizerState *State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Status(
-        ISpeechRecognizerStatus **Status) = 0;
+                     ISpeechRecognizerStatus **Status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_Profile(
-        ISpeechObjectToken *Profile = 0) = 0;
+                     ISpeechObjectToken *Profile = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Profile(
-        ISpeechObjectToken **Profile) = 0;
+                     ISpeechObjectToken **Profile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EmulateRecognition(
-        VARIANT TextElements,
-        VARIANT *ElementDisplayAttributes = 0,
-        LONG LanguageId = 0) = 0;
+                     VARIANT TextElements,
+                     VARIANT *ElementDisplayAttributes = 0,
+                     LONG LanguageId = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRecoContext(
-        ISpeechRecoContext **NewContext) = 0;
+                     ISpeechRecoContext **NewContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFormat(
-        SpeechFormatType Type,
-        ISpeechAudioFormat **Format) = 0;
+                     SpeechFormatType Type,
+                     ISpeechAudioFormat **Format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPropertyNumber(
-        const BSTR Name,
-        LONG Value,
-        VARIANT_BOOL *Supported) = 0;
+                     const BSTR Name,
+                     LONG Value,
+                     VARIANT_BOOL *Supported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyNumber(
-        const BSTR Name,
-        LONG *Value,
-        VARIANT_BOOL *Supported) = 0;
+                     const BSTR Name,
+                     LONG *Value,
+                     VARIANT_BOOL *Supported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPropertyString(
-        const BSTR Name,
-        const BSTR Value,
-        VARIANT_BOOL *Supported) = 0;
+                     const BSTR Name,
+                     const BSTR Value,
+                     VARIANT_BOOL *Supported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyString(
-        const BSTR Name,
-        BSTR *Value,
-        VARIANT_BOOL *Supported) = 0;
+                     const BSTR Name,
+                     BSTR *Value,
+                     VARIANT_BOOL *Supported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUISupported(
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData,
-        VARIANT_BOOL *Supported) = 0;
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData,
+                     VARIANT_BOOL *Supported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisplayUI(
-        LONG hWndParent,
-        BSTR Title,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData = 0) = 0;
+                     LONG hWndParent,
+                     BSTR Title,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRecognizers(
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens) = 0;
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAudioInputs(
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens) = 0;
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProfiles(
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens) = 0;
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -15966,172 +15966,172 @@ typedef struct ISpeechRecognizerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechRecognizer *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechRecognizer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechRecognizer *This);
+                     ISpeechRecognizer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechRecognizer *This);
+                     ISpeechRecognizer *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechRecognizer *This,
-        UINT *pctinfo);
+                     ISpeechRecognizer *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechRecognizer *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechRecognizer *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechRecognizer *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechRecognizer *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechRecognizer *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechRecognizer *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecognizer methods ***/
     HRESULT (STDMETHODCALLTYPE *putref_Recognizer)(
-        ISpeechRecognizer *This,
-        ISpeechObjectToken *Recognizer);
+                     ISpeechRecognizer *This,
+                     ISpeechObjectToken *Recognizer);
 
     HRESULT (STDMETHODCALLTYPE *get_Recognizer)(
-        ISpeechRecognizer *This,
-        ISpeechObjectToken **Recognizer);
+                     ISpeechRecognizer *This,
+                     ISpeechObjectToken **Recognizer);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowAudioInputFormatChangesOnNextSet)(
-        ISpeechRecognizer *This,
-        VARIANT_BOOL Allow);
+                     ISpeechRecognizer *This,
+                     VARIANT_BOOL Allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowAudioInputFormatChangesOnNextSet)(
-        ISpeechRecognizer *This,
-        VARIANT_BOOL *Allow);
+                     ISpeechRecognizer *This,
+                     VARIANT_BOOL *Allow);
 
     HRESULT (STDMETHODCALLTYPE *putref_AudioInput)(
-        ISpeechRecognizer *This,
-        ISpeechObjectToken *AudioInput);
+                     ISpeechRecognizer *This,
+                     ISpeechObjectToken *AudioInput);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioInput)(
-        ISpeechRecognizer *This,
-        ISpeechObjectToken **AudioInput);
+                     ISpeechRecognizer *This,
+                     ISpeechObjectToken **AudioInput);
 
     HRESULT (STDMETHODCALLTYPE *putref_AudioInputStream)(
-        ISpeechRecognizer *This,
-        ISpeechBaseStream *AudioInputStream);
+                     ISpeechRecognizer *This,
+                     ISpeechBaseStream *AudioInputStream);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioInputStream)(
-        ISpeechRecognizer *This,
-        ISpeechBaseStream **AudioInputStream);
+                     ISpeechRecognizer *This,
+                     ISpeechBaseStream **AudioInputStream);
 
     HRESULT (STDMETHODCALLTYPE *get_IsShared)(
-        ISpeechRecognizer *This,
-        VARIANT_BOOL *Shared);
+                     ISpeechRecognizer *This,
+                     VARIANT_BOOL *Shared);
 
     HRESULT (STDMETHODCALLTYPE *put_State)(
-        ISpeechRecognizer *This,
-        SpeechRecognizerState State);
+                     ISpeechRecognizer *This,
+                     SpeechRecognizerState State);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        ISpeechRecognizer *This,
-        SpeechRecognizerState *State);
+                     ISpeechRecognizer *This,
+                     SpeechRecognizerState *State);
 
     HRESULT (STDMETHODCALLTYPE *get_Status)(
-        ISpeechRecognizer *This,
-        ISpeechRecognizerStatus **Status);
+                     ISpeechRecognizer *This,
+                     ISpeechRecognizerStatus **Status);
 
     HRESULT (STDMETHODCALLTYPE *putref_Profile)(
-        ISpeechRecognizer *This,
-        ISpeechObjectToken *Profile);
+                     ISpeechRecognizer *This,
+                     ISpeechObjectToken *Profile);
 
     HRESULT (STDMETHODCALLTYPE *get_Profile)(
-        ISpeechRecognizer *This,
-        ISpeechObjectToken **Profile);
+                     ISpeechRecognizer *This,
+                     ISpeechObjectToken **Profile);
 
     HRESULT (STDMETHODCALLTYPE *EmulateRecognition)(
-        ISpeechRecognizer *This,
-        VARIANT TextElements,
-        VARIANT *ElementDisplayAttributes,
-        LONG LanguageId);
+                     ISpeechRecognizer *This,
+                     VARIANT TextElements,
+                     VARIANT *ElementDisplayAttributes,
+                     LONG LanguageId);
 
     HRESULT (STDMETHODCALLTYPE *CreateRecoContext)(
-        ISpeechRecognizer *This,
-        ISpeechRecoContext **NewContext);
+                     ISpeechRecognizer *This,
+                     ISpeechRecoContext **NewContext);
 
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        ISpeechRecognizer *This,
-        SpeechFormatType Type,
-        ISpeechAudioFormat **Format);
+                     ISpeechRecognizer *This,
+                     SpeechFormatType Type,
+                     ISpeechAudioFormat **Format);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertyNumber)(
-        ISpeechRecognizer *This,
-        const BSTR Name,
-        LONG Value,
-        VARIANT_BOOL *Supported);
+                     ISpeechRecognizer *This,
+                     const BSTR Name,
+                     LONG Value,
+                     VARIANT_BOOL *Supported);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyNumber)(
-        ISpeechRecognizer *This,
-        const BSTR Name,
-        LONG *Value,
-        VARIANT_BOOL *Supported);
+                     ISpeechRecognizer *This,
+                     const BSTR Name,
+                     LONG *Value,
+                     VARIANT_BOOL *Supported);
 
     HRESULT (STDMETHODCALLTYPE *SetPropertyString)(
-        ISpeechRecognizer *This,
-        const BSTR Name,
-        const BSTR Value,
-        VARIANT_BOOL *Supported);
+                     ISpeechRecognizer *This,
+                     const BSTR Name,
+                     const BSTR Value,
+                     VARIANT_BOOL *Supported);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyString)(
-        ISpeechRecognizer *This,
-        const BSTR Name,
-        BSTR *Value,
-        VARIANT_BOOL *Supported);
+                     ISpeechRecognizer *This,
+                     const BSTR Name,
+                     BSTR *Value,
+                     VARIANT_BOOL *Supported);
 
     HRESULT (STDMETHODCALLTYPE *IsUISupported)(
-        ISpeechRecognizer *This,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData,
-        VARIANT_BOOL *Supported);
+                     ISpeechRecognizer *This,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData,
+                     VARIANT_BOOL *Supported);
 
     HRESULT (STDMETHODCALLTYPE *DisplayUI)(
-        ISpeechRecognizer *This,
-        LONG hWndParent,
-        BSTR Title,
-        const BSTR TypeOfUI,
-        const VARIANT *ExtraData);
+                     ISpeechRecognizer *This,
+                     LONG hWndParent,
+                     BSTR Title,
+                     const BSTR TypeOfUI,
+                     const VARIANT *ExtraData);
 
     HRESULT (STDMETHODCALLTYPE *GetRecognizers)(
-        ISpeechRecognizer *This,
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens);
+                     ISpeechRecognizer *This,
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens);
 
     HRESULT (STDMETHODCALLTYPE *GetAudioInputs)(
-        ISpeechRecognizer *This,
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens);
+                     ISpeechRecognizer *This,
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens);
 
     HRESULT (STDMETHODCALLTYPE *GetProfiles)(
-        ISpeechRecognizer *This,
-        BSTR RequiredAttributes,
-        BSTR OptionalAttributes,
-        ISpeechObjectTokens **ObjectTokens);
+                     ISpeechRecognizer *This,
+                     BSTR RequiredAttributes,
+                     BSTR OptionalAttributes,
+                     ISpeechObjectTokens **ObjectTokens);
 
     END_INTERFACE
 } ISpeechRecognizerVtbl;
@@ -16301,22 +16301,22 @@ MIDL_INTERFACE("bff9e781-53ec-484e-bb8a-0e1b5551e35c")
 ISpeechRecognizerStatus : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_AudioStatus(
-        ISpeechAudioStatus **AudioStatus) = 0;
+                     ISpeechAudioStatus **AudioStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentStreamPosition(
-        VARIANT *pCurrentStreamPos) = 0;
+                     VARIANT *pCurrentStreamPos) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentStreamNumber(
-        LONG *StreamNumber) = 0;
+                     LONG *StreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NumberOfActiveRules(
-        LONG *NumberOfActiveRules) = 0;
+                     LONG *NumberOfActiveRules) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ClsidEngine(
-        BSTR *ClsidEngine) = 0;
+                     BSTR *ClsidEngine) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SupportedLanguages(
-        VARIANT *SupportedLanguages) = 0;
+                     VARIANT *SupportedLanguages) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16328,70 +16328,70 @@ typedef struct ISpeechRecognizerStatusVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechRecognizerStatus *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechRecognizerStatus *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechRecognizerStatus *This);
+                     ISpeechRecognizerStatus *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechRecognizerStatus *This);
+                     ISpeechRecognizerStatus *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechRecognizerStatus *This,
-        UINT *pctinfo);
+                     ISpeechRecognizerStatus *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechRecognizerStatus *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechRecognizerStatus *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechRecognizerStatus *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechRecognizerStatus *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechRecognizerStatus *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechRecognizerStatus *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecognizerStatus methods ***/
     HRESULT (STDMETHODCALLTYPE *get_AudioStatus)(
-        ISpeechRecognizerStatus *This,
-        ISpeechAudioStatus **AudioStatus);
+                     ISpeechRecognizerStatus *This,
+                     ISpeechAudioStatus **AudioStatus);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentStreamPosition)(
-        ISpeechRecognizerStatus *This,
-        VARIANT *pCurrentStreamPos);
+                     ISpeechRecognizerStatus *This,
+                     VARIANT *pCurrentStreamPos);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentStreamNumber)(
-        ISpeechRecognizerStatus *This,
-        LONG *StreamNumber);
+                     ISpeechRecognizerStatus *This,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *get_NumberOfActiveRules)(
-        ISpeechRecognizerStatus *This,
-        LONG *NumberOfActiveRules);
+                     ISpeechRecognizerStatus *This,
+                     LONG *NumberOfActiveRules);
 
     HRESULT (STDMETHODCALLTYPE *get_ClsidEngine)(
-        ISpeechRecognizerStatus *This,
-        BSTR *ClsidEngine);
+                     ISpeechRecognizerStatus *This,
+                     BSTR *ClsidEngine);
 
     HRESULT (STDMETHODCALLTYPE *get_SupportedLanguages)(
-        ISpeechRecognizerStatus *This,
-        VARIANT *SupportedLanguages);
+                     ISpeechRecognizerStatus *This,
+                     VARIANT *SupportedLanguages);
 
     END_INTERFACE
 } ISpeechRecognizerStatusVtbl;
@@ -16481,83 +16481,83 @@ MIDL_INTERFACE("580aa49d-7e1e-4809-b8e2-57da806104b8")
 ISpeechRecoContext : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Recognizer(
-        ISpeechRecognizer **Recognizer) = 0;
+                     ISpeechRecognizer **Recognizer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioInputInterferenceStatus(
-        SpeechInterference *Interference) = 0;
+                     SpeechInterference *Interference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RequestedUIType(
-        BSTR *UIType) = 0;
+                     BSTR *UIType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_Voice(
-        ISpeechVoice *Voice) = 0;
+                     ISpeechVoice *Voice) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Voice(
-        ISpeechVoice **Voice) = 0;
+                     ISpeechVoice **Voice) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowVoiceFormatMatchingOnNextSet(
-        VARIANT_BOOL Allow) = 0;
+                     VARIANT_BOOL Allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowVoiceFormatMatchingOnNextSet(
-        VARIANT_BOOL *pAllow) = 0;
+                     VARIANT_BOOL *pAllow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_VoicePurgeEvent(
-        SpeechRecoEvents EventInterest) = 0;
+                     SpeechRecoEvents EventInterest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_VoicePurgeEvent(
-        SpeechRecoEvents *EventInterest) = 0;
+                     SpeechRecoEvents *EventInterest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EventInterests(
-        SpeechRecoEvents EventInterest) = 0;
+                     SpeechRecoEvents EventInterest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EventInterests(
-        SpeechRecoEvents *EventInterest) = 0;
+                     SpeechRecoEvents *EventInterest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CmdMaxAlternates(
-        LONG MaxAlternates) = 0;
+                     LONG MaxAlternates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CmdMaxAlternates(
-        LONG *MaxAlternates) = 0;
+                     LONG *MaxAlternates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_State(
-        SpeechRecoContextState State) = 0;
+                     SpeechRecoContextState State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_State(
-        SpeechRecoContextState *State) = 0;
+                     SpeechRecoContextState *State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RetainedAudio(
-        SpeechRetainedAudioOptions Option) = 0;
+                     SpeechRetainedAudioOptions Option) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RetainedAudio(
-        SpeechRetainedAudioOptions *Option) = 0;
+                     SpeechRetainedAudioOptions *Option) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_RetainedAudioFormat(
-        ISpeechAudioFormat *Format) = 0;
+                     ISpeechAudioFormat *Format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RetainedAudioFormat(
-        ISpeechAudioFormat **Format) = 0;
+                     ISpeechAudioFormat **Format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGrammar(
-        VARIANT GrammarId,
-        ISpeechRecoGrammar **Grammar) = 0;
+                     VARIANT GrammarId,
+                     ISpeechRecoGrammar **Grammar) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateResultFromMemory(
-        VARIANT *ResultBlock,
-        ISpeechRecoResult **Result) = 0;
+                     VARIANT *ResultBlock,
+                     ISpeechRecoResult **Result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Bookmark(
-        SpeechBookmarkOptions Options,
-        VARIANT StreamPos,
-        VARIANT BookmarkId) = 0;
+                     SpeechBookmarkOptions Options,
+                     VARIANT StreamPos,
+                     VARIANT BookmarkId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAdaptationData(
-        BSTR AdaptationString) = 0;
+                     BSTR AdaptationString) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16569,148 +16569,148 @@ typedef struct ISpeechRecoContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechRecoContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechRecoContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechRecoContext *This);
+                     ISpeechRecoContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechRecoContext *This);
+                     ISpeechRecoContext *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechRecoContext *This,
-        UINT *pctinfo);
+                     ISpeechRecoContext *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechRecoContext *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechRecoContext *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechRecoContext *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechRecoContext *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechRecoContext *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechRecoContext *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecoContext methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Recognizer)(
-        ISpeechRecoContext *This,
-        ISpeechRecognizer **Recognizer);
+                     ISpeechRecoContext *This,
+                     ISpeechRecognizer **Recognizer);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioInputInterferenceStatus)(
-        ISpeechRecoContext *This,
-        SpeechInterference *Interference);
+                     ISpeechRecoContext *This,
+                     SpeechInterference *Interference);
 
     HRESULT (STDMETHODCALLTYPE *get_RequestedUIType)(
-        ISpeechRecoContext *This,
-        BSTR *UIType);
+                     ISpeechRecoContext *This,
+                     BSTR *UIType);
 
     HRESULT (STDMETHODCALLTYPE *putref_Voice)(
-        ISpeechRecoContext *This,
-        ISpeechVoice *Voice);
+                     ISpeechRecoContext *This,
+                     ISpeechVoice *Voice);
 
     HRESULT (STDMETHODCALLTYPE *get_Voice)(
-        ISpeechRecoContext *This,
-        ISpeechVoice **Voice);
+                     ISpeechRecoContext *This,
+                     ISpeechVoice **Voice);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowVoiceFormatMatchingOnNextSet)(
-        ISpeechRecoContext *This,
-        VARIANT_BOOL Allow);
+                     ISpeechRecoContext *This,
+                     VARIANT_BOOL Allow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowVoiceFormatMatchingOnNextSet)(
-        ISpeechRecoContext *This,
-        VARIANT_BOOL *pAllow);
+                     ISpeechRecoContext *This,
+                     VARIANT_BOOL *pAllow);
 
     HRESULT (STDMETHODCALLTYPE *put_VoicePurgeEvent)(
-        ISpeechRecoContext *This,
-        SpeechRecoEvents EventInterest);
+                     ISpeechRecoContext *This,
+                     SpeechRecoEvents EventInterest);
 
     HRESULT (STDMETHODCALLTYPE *get_VoicePurgeEvent)(
-        ISpeechRecoContext *This,
-        SpeechRecoEvents *EventInterest);
+                     ISpeechRecoContext *This,
+                     SpeechRecoEvents *EventInterest);
 
     HRESULT (STDMETHODCALLTYPE *put_EventInterests)(
-        ISpeechRecoContext *This,
-        SpeechRecoEvents EventInterest);
+                     ISpeechRecoContext *This,
+                     SpeechRecoEvents EventInterest);
 
     HRESULT (STDMETHODCALLTYPE *get_EventInterests)(
-        ISpeechRecoContext *This,
-        SpeechRecoEvents *EventInterest);
+                     ISpeechRecoContext *This,
+                     SpeechRecoEvents *EventInterest);
 
     HRESULT (STDMETHODCALLTYPE *put_CmdMaxAlternates)(
-        ISpeechRecoContext *This,
-        LONG MaxAlternates);
+                     ISpeechRecoContext *This,
+                     LONG MaxAlternates);
 
     HRESULT (STDMETHODCALLTYPE *get_CmdMaxAlternates)(
-        ISpeechRecoContext *This,
-        LONG *MaxAlternates);
+                     ISpeechRecoContext *This,
+                     LONG *MaxAlternates);
 
     HRESULT (STDMETHODCALLTYPE *put_State)(
-        ISpeechRecoContext *This,
-        SpeechRecoContextState State);
+                     ISpeechRecoContext *This,
+                     SpeechRecoContextState State);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        ISpeechRecoContext *This,
-        SpeechRecoContextState *State);
+                     ISpeechRecoContext *This,
+                     SpeechRecoContextState *State);
 
     HRESULT (STDMETHODCALLTYPE *put_RetainedAudio)(
-        ISpeechRecoContext *This,
-        SpeechRetainedAudioOptions Option);
+                     ISpeechRecoContext *This,
+                     SpeechRetainedAudioOptions Option);
 
     HRESULT (STDMETHODCALLTYPE *get_RetainedAudio)(
-        ISpeechRecoContext *This,
-        SpeechRetainedAudioOptions *Option);
+                     ISpeechRecoContext *This,
+                     SpeechRetainedAudioOptions *Option);
 
     HRESULT (STDMETHODCALLTYPE *putref_RetainedAudioFormat)(
-        ISpeechRecoContext *This,
-        ISpeechAudioFormat *Format);
+                     ISpeechRecoContext *This,
+                     ISpeechAudioFormat *Format);
 
     HRESULT (STDMETHODCALLTYPE *get_RetainedAudioFormat)(
-        ISpeechRecoContext *This,
-        ISpeechAudioFormat **Format);
+                     ISpeechRecoContext *This,
+                     ISpeechAudioFormat **Format);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        ISpeechRecoContext *This);
+                     ISpeechRecoContext *This);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        ISpeechRecoContext *This);
+                     ISpeechRecoContext *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateGrammar)(
-        ISpeechRecoContext *This,
-        VARIANT GrammarId,
-        ISpeechRecoGrammar **Grammar);
+                     ISpeechRecoContext *This,
+                     VARIANT GrammarId,
+                     ISpeechRecoGrammar **Grammar);
 
     HRESULT (STDMETHODCALLTYPE *CreateResultFromMemory)(
-        ISpeechRecoContext *This,
-        VARIANT *ResultBlock,
-        ISpeechRecoResult **Result);
+                     ISpeechRecoContext *This,
+                     VARIANT *ResultBlock,
+                     ISpeechRecoResult **Result);
 
     HRESULT (STDMETHODCALLTYPE *Bookmark)(
-        ISpeechRecoContext *This,
-        SpeechBookmarkOptions Options,
-        VARIANT StreamPos,
-        VARIANT BookmarkId);
+                     ISpeechRecoContext *This,
+                     SpeechBookmarkOptions Options,
+                     VARIANT StreamPos,
+                     VARIANT BookmarkId);
 
     HRESULT (STDMETHODCALLTYPE *SetAdaptationData)(
-        ISpeechRecoContext *This,
-        BSTR AdaptationString);
+                     ISpeechRecoContext *This,
+                     BSTR AdaptationString);
 
     END_INTERFACE
 } ISpeechRecoContextVtbl;
@@ -16876,78 +16876,78 @@ MIDL_INTERFACE("b6d6f79f-2158-4e50-b5bc-9a9ccd852a09")
 ISpeechRecoGrammar : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        VARIANT *Id) = 0;
+                     VARIANT *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RecoContext(
-        ISpeechRecoContext **RecoContext) = 0;
+                     ISpeechRecoContext **RecoContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_State(
-        SpeechGrammarState State) = 0;
+                     SpeechGrammarState State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_State(
-        SpeechGrammarState *State) = 0;
+                     SpeechGrammarState *State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Rules(
-        ISpeechGrammarRules **Rules) = 0;
+                     ISpeechGrammarRules **Rules) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        SpeechLanguageId NewLanguage = 0) = 0;
+                     SpeechLanguageId NewLanguage = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CmdLoadFromFile(
-        const BSTR FileName,
-        SpeechLoadOption LoadOption = SLOStatic) = 0;
+                     const BSTR FileName,
+                     SpeechLoadOption LoadOption = SLOStatic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CmdLoadFromObject(
-        const BSTR ClassId,
-        const BSTR GrammarName,
-        SpeechLoadOption LoadOption = SLOStatic) = 0;
+                     const BSTR ClassId,
+                     const BSTR GrammarName,
+                     SpeechLoadOption LoadOption = SLOStatic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CmdLoadFromResource(
-        LONG hModule,
-        VARIANT ResourceName,
-        VARIANT ResourceType,
-        SpeechLanguageId LanguageId,
-        SpeechLoadOption LoadOption = SLOStatic) = 0;
+                     LONG hModule,
+                     VARIANT ResourceName,
+                     VARIANT ResourceType,
+                     SpeechLanguageId LanguageId,
+                     SpeechLoadOption LoadOption = SLOStatic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CmdLoadFromMemory(
-        VARIANT GrammarData,
-        SpeechLoadOption LoadOption = SLOStatic) = 0;
+                     VARIANT GrammarData,
+                     SpeechLoadOption LoadOption = SLOStatic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CmdLoadFromProprietaryGrammar(
-        const BSTR ProprietaryGuid,
-        const BSTR ProprietaryString,
-        VARIANT ProprietaryData,
-        SpeechLoadOption LoadOption = SLOStatic) = 0;
+                     const BSTR ProprietaryGuid,
+                     const BSTR ProprietaryString,
+                     VARIANT ProprietaryData,
+                     SpeechLoadOption LoadOption = SLOStatic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CmdSetRuleState(
-        const BSTR Name,
-        SpeechRuleState State) = 0;
+                     const BSTR Name,
+                     SpeechRuleState State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CmdSetRuleIdState(
-        LONG RuleId,
-        SpeechRuleState State) = 0;
+                     LONG RuleId,
+                     SpeechRuleState State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DictationLoad(
-        const BSTR TopicName = L"",
-        SpeechLoadOption LoadOption = SLOStatic) = 0;
+                     const BSTR TopicName = L"",
+                     SpeechLoadOption LoadOption = SLOStatic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DictationUnload(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DictationSetState(
-        SpeechRuleState State) = 0;
+                     SpeechRuleState State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetWordSequenceData(
-        const BSTR Text,
-        LONG TextLength,
-        ISpeechTextSelectionInformation *Info) = 0;
+                     const BSTR Text,
+                     LONG TextLength,
+                     ISpeechTextSelectionInformation *Info) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTextSelection(
-        ISpeechTextSelectionInformation *Info) = 0;
+                     ISpeechTextSelectionInformation *Info) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPronounceable(
-        const BSTR Word,
-        SpeechWordPronounceable *WordPronounceable) = 0;
+                     const BSTR Word,
+                     SpeechWordPronounceable *WordPronounceable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -16959,138 +16959,138 @@ typedef struct ISpeechRecoGrammarVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechRecoGrammar *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechRecoGrammar *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechRecoGrammar *This);
+                     ISpeechRecoGrammar *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechRecoGrammar *This);
+                     ISpeechRecoGrammar *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechRecoGrammar *This,
-        UINT *pctinfo);
+                     ISpeechRecoGrammar *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechRecoGrammar *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechRecoGrammar *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechRecoGrammar *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechRecoGrammar *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechRecoGrammar *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechRecoGrammar *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecoGrammar methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ISpeechRecoGrammar *This,
-        VARIANT *Id);
+                     ISpeechRecoGrammar *This,
+                     VARIANT *Id);
 
     HRESULT (STDMETHODCALLTYPE *get_RecoContext)(
-        ISpeechRecoGrammar *This,
-        ISpeechRecoContext **RecoContext);
+                     ISpeechRecoGrammar *This,
+                     ISpeechRecoContext **RecoContext);
 
     HRESULT (STDMETHODCALLTYPE *put_State)(
-        ISpeechRecoGrammar *This,
-        SpeechGrammarState State);
+                     ISpeechRecoGrammar *This,
+                     SpeechGrammarState State);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        ISpeechRecoGrammar *This,
-        SpeechGrammarState *State);
+                     ISpeechRecoGrammar *This,
+                     SpeechGrammarState *State);
 
     HRESULT (STDMETHODCALLTYPE *get_Rules)(
-        ISpeechRecoGrammar *This,
-        ISpeechGrammarRules **Rules);
+                     ISpeechRecoGrammar *This,
+                     ISpeechGrammarRules **Rules);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        ISpeechRecoGrammar *This,
-        SpeechLanguageId NewLanguage);
+                     ISpeechRecoGrammar *This,
+                     SpeechLanguageId NewLanguage);
 
     HRESULT (STDMETHODCALLTYPE *CmdLoadFromFile)(
-        ISpeechRecoGrammar *This,
-        const BSTR FileName,
-        SpeechLoadOption LoadOption);
+                     ISpeechRecoGrammar *This,
+                     const BSTR FileName,
+                     SpeechLoadOption LoadOption);
 
     HRESULT (STDMETHODCALLTYPE *CmdLoadFromObject)(
-        ISpeechRecoGrammar *This,
-        const BSTR ClassId,
-        const BSTR GrammarName,
-        SpeechLoadOption LoadOption);
+                     ISpeechRecoGrammar *This,
+                     const BSTR ClassId,
+                     const BSTR GrammarName,
+                     SpeechLoadOption LoadOption);
 
     HRESULT (STDMETHODCALLTYPE *CmdLoadFromResource)(
-        ISpeechRecoGrammar *This,
-        LONG hModule,
-        VARIANT ResourceName,
-        VARIANT ResourceType,
-        SpeechLanguageId LanguageId,
-        SpeechLoadOption LoadOption);
+                     ISpeechRecoGrammar *This,
+                     LONG hModule,
+                     VARIANT ResourceName,
+                     VARIANT ResourceType,
+                     SpeechLanguageId LanguageId,
+                     SpeechLoadOption LoadOption);
 
     HRESULT (STDMETHODCALLTYPE *CmdLoadFromMemory)(
-        ISpeechRecoGrammar *This,
-        VARIANT GrammarData,
-        SpeechLoadOption LoadOption);
+                     ISpeechRecoGrammar *This,
+                     VARIANT GrammarData,
+                     SpeechLoadOption LoadOption);
 
     HRESULT (STDMETHODCALLTYPE *CmdLoadFromProprietaryGrammar)(
-        ISpeechRecoGrammar *This,
-        const BSTR ProprietaryGuid,
-        const BSTR ProprietaryString,
-        VARIANT ProprietaryData,
-        SpeechLoadOption LoadOption);
+                     ISpeechRecoGrammar *This,
+                     const BSTR ProprietaryGuid,
+                     const BSTR ProprietaryString,
+                     VARIANT ProprietaryData,
+                     SpeechLoadOption LoadOption);
 
     HRESULT (STDMETHODCALLTYPE *CmdSetRuleState)(
-        ISpeechRecoGrammar *This,
-        const BSTR Name,
-        SpeechRuleState State);
+                     ISpeechRecoGrammar *This,
+                     const BSTR Name,
+                     SpeechRuleState State);
 
     HRESULT (STDMETHODCALLTYPE *CmdSetRuleIdState)(
-        ISpeechRecoGrammar *This,
-        LONG RuleId,
-        SpeechRuleState State);
+                     ISpeechRecoGrammar *This,
+                     LONG RuleId,
+                     SpeechRuleState State);
 
     HRESULT (STDMETHODCALLTYPE *DictationLoad)(
-        ISpeechRecoGrammar *This,
-        const BSTR TopicName,
-        SpeechLoadOption LoadOption);
+                     ISpeechRecoGrammar *This,
+                     const BSTR TopicName,
+                     SpeechLoadOption LoadOption);
 
     HRESULT (STDMETHODCALLTYPE *DictationUnload)(
-        ISpeechRecoGrammar *This);
+                     ISpeechRecoGrammar *This);
 
     HRESULT (STDMETHODCALLTYPE *DictationSetState)(
-        ISpeechRecoGrammar *This,
-        SpeechRuleState State);
+                     ISpeechRecoGrammar *This,
+                     SpeechRuleState State);
 
     HRESULT (STDMETHODCALLTYPE *SetWordSequenceData)(
-        ISpeechRecoGrammar *This,
-        const BSTR Text,
-        LONG TextLength,
-        ISpeechTextSelectionInformation *Info);
+                     ISpeechRecoGrammar *This,
+                     const BSTR Text,
+                     LONG TextLength,
+                     ISpeechTextSelectionInformation *Info);
 
     HRESULT (STDMETHODCALLTYPE *SetTextSelection)(
-        ISpeechRecoGrammar *This,
-        ISpeechTextSelectionInformation *Info);
+                     ISpeechRecoGrammar *This,
+                     ISpeechTextSelectionInformation *Info);
 
     HRESULT (STDMETHODCALLTYPE *IsPronounceable)(
-        ISpeechRecoGrammar *This,
-        const BSTR Word,
-        SpeechWordPronounceable *WordPronounceable);
+                     ISpeechRecoGrammar *This,
+                     const BSTR Word,
+                     SpeechWordPronounceable *WordPronounceable);
 
     END_INTERFACE
 } ISpeechRecoGrammarVtbl;
@@ -17241,45 +17241,45 @@ typedef struct _ISpeechRecoContextEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        _ISpeechRecoContextEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     _ISpeechRecoContextEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        _ISpeechRecoContextEvents *This);
+                     _ISpeechRecoContextEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        _ISpeechRecoContextEvents *This);
+                     _ISpeechRecoContextEvents *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        _ISpeechRecoContextEvents *This,
-        UINT *pctinfo);
+                     _ISpeechRecoContextEvents *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        _ISpeechRecoContextEvents *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     _ISpeechRecoContextEvents *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        _ISpeechRecoContextEvents *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     _ISpeechRecoContextEvents *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        _ISpeechRecoContextEvents *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     _ISpeechRecoContextEvents *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } _ISpeechRecoContextEventsVtbl;
@@ -17342,26 +17342,26 @@ MIDL_INTERFACE("afe719cf-5dd1-44f2-999c-7a399f1cfccc")
 ISpeechGrammarRule : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Attributes(
-        SpeechRuleAttributes *Attributes) = 0;
+                     SpeechRuleAttributes *Attributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InitialState(
-        ISpeechGrammarRuleState **State) = 0;
+                     ISpeechGrammarRuleState **State) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        LONG *Id) = 0;
+                     LONG *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddResource(
-        const BSTR ResourceName,
-        const BSTR ResourceValue) = 0;
+                     const BSTR ResourceName,
+                     const BSTR ResourceValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddState(
-        ISpeechGrammarRuleState **State) = 0;
+                     ISpeechGrammarRuleState **State) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17373,74 +17373,74 @@ typedef struct ISpeechGrammarRuleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechGrammarRule *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechGrammarRule *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechGrammarRule *This);
+                     ISpeechGrammarRule *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechGrammarRule *This);
+                     ISpeechGrammarRule *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechGrammarRule *This,
-        UINT *pctinfo);
+                     ISpeechGrammarRule *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechGrammarRule *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechGrammarRule *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechGrammarRule *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechGrammarRule *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechGrammarRule *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechGrammarRule *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechGrammarRule methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Attributes)(
-        ISpeechGrammarRule *This,
-        SpeechRuleAttributes *Attributes);
+                     ISpeechGrammarRule *This,
+                     SpeechRuleAttributes *Attributes);
 
     HRESULT (STDMETHODCALLTYPE *get_InitialState)(
-        ISpeechGrammarRule *This,
-        ISpeechGrammarRuleState **State);
+                     ISpeechGrammarRule *This,
+                     ISpeechGrammarRuleState **State);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ISpeechGrammarRule *This,
-        BSTR *Name);
+                     ISpeechGrammarRule *This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ISpeechGrammarRule *This,
-        LONG *Id);
+                     ISpeechGrammarRule *This,
+                     LONG *Id);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        ISpeechGrammarRule *This);
+                     ISpeechGrammarRule *This);
 
     HRESULT (STDMETHODCALLTYPE *AddResource)(
-        ISpeechGrammarRule *This,
-        const BSTR ResourceName,
-        const BSTR ResourceValue);
+                     ISpeechGrammarRule *This,
+                     const BSTR ResourceName,
+                     const BSTR ResourceValue);
 
     HRESULT (STDMETHODCALLTYPE *AddState)(
-        ISpeechGrammarRule *This,
-        ISpeechGrammarRuleState **State);
+                     ISpeechGrammarRule *This,
+                     ISpeechGrammarRuleState **State);
 
     END_INTERFACE
 } ISpeechGrammarRuleVtbl;
@@ -17534,34 +17534,34 @@ MIDL_INTERFACE("6ffa3b44-fc2d-40d1-8afc-32911c7f1ad1")
 ISpeechGrammarRules : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindRule(
-        VARIANT RuleNameOrId,
-        ISpeechGrammarRule **Rule) = 0;
+                     VARIANT RuleNameOrId,
+                     ISpeechGrammarRule **Rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechGrammarRule **Rule) = 0;
+                     LONG Index,
+                     ISpeechGrammarRule **Rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Dynamic(
-        VARIANT_BOOL *Dynamic) = 0;
+                     VARIANT_BOOL *Dynamic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        BSTR RuleName,
-        SpeechRuleAttributes Attributes,
-        LONG RuleId,
-        ISpeechGrammarRule **Rule) = 0;
+                     BSTR RuleName,
+                     SpeechRuleAttributes Attributes,
+                     LONG RuleId,
+                     ISpeechGrammarRule **Rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitAndSave(
-        BSTR *ErrorText,
-        VARIANT *SaveStream) = 0;
+                     BSTR *ErrorText,
+                     VARIANT *SaveStream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17573,83 +17573,83 @@ typedef struct ISpeechGrammarRulesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechGrammarRules *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechGrammarRules *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechGrammarRules *This);
+                     ISpeechGrammarRules *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechGrammarRules *This);
+                     ISpeechGrammarRules *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechGrammarRules *This,
-        UINT *pctinfo);
+                     ISpeechGrammarRules *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechGrammarRules *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechGrammarRules *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechGrammarRules *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechGrammarRules *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechGrammarRules *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechGrammarRules *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechGrammarRules methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechGrammarRules *This,
-        LONG *Count);
+                     ISpeechGrammarRules *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *FindRule)(
-        ISpeechGrammarRules *This,
-        VARIANT RuleNameOrId,
-        ISpeechGrammarRule **Rule);
+                     ISpeechGrammarRules *This,
+                     VARIANT RuleNameOrId,
+                     ISpeechGrammarRule **Rule);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechGrammarRules *This,
-        LONG Index,
-        ISpeechGrammarRule **Rule);
+                     ISpeechGrammarRules *This,
+                     LONG Index,
+                     ISpeechGrammarRule **Rule);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechGrammarRules *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechGrammarRules *This,
+                     IUnknown **EnumVARIANT);
 
     HRESULT (STDMETHODCALLTYPE *get_Dynamic)(
-        ISpeechGrammarRules *This,
-        VARIANT_BOOL *Dynamic);
+                     ISpeechGrammarRules *This,
+                     VARIANT_BOOL *Dynamic);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        ISpeechGrammarRules *This,
-        BSTR RuleName,
-        SpeechRuleAttributes Attributes,
-        LONG RuleId,
-        ISpeechGrammarRule **Rule);
+                     ISpeechGrammarRules *This,
+                     BSTR RuleName,
+                     SpeechRuleAttributes Attributes,
+                     LONG RuleId,
+                     ISpeechGrammarRule **Rule);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpeechGrammarRules *This);
+                     ISpeechGrammarRules *This);
 
     HRESULT (STDMETHODCALLTYPE *CommitAndSave)(
-        ISpeechGrammarRules *This,
-        BSTR *ErrorText,
-        VARIANT *SaveStream);
+                     ISpeechGrammarRules *This,
+                     BSTR *ErrorText,
+                     VARIANT *SaveStream);
 
     END_INTERFACE
 } ISpeechGrammarRulesVtbl;
@@ -17747,36 +17747,36 @@ MIDL_INTERFACE("d4286f2c-ee67-45ae-b928-28d695362eda")
 ISpeechGrammarRuleState : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Rule(
-        ISpeechGrammarRule **Rule) = 0;
+                     ISpeechGrammarRule **Rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Transitions(
-        ISpeechGrammarRuleStateTransitions **Transitions) = 0;
+                     ISpeechGrammarRuleStateTransitions **Transitions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddWordTransition(
-        ISpeechGrammarRuleState *DestState,
-        const BSTR Words,
-        const BSTR Separators = L" ",
-        SpeechGrammarWordType Type = SGLexical,
-        const BSTR PropertyName = L"",
-        LONG PropertyId = 0,
-        VARIANT *PropertyValue = 0,
-        float Weight = 1) = 0;
+                     ISpeechGrammarRuleState *DestState,
+                     const BSTR Words,
+                     const BSTR Separators = L" ",
+                     SpeechGrammarWordType Type = SGLexical,
+                     const BSTR PropertyName = L"",
+                     LONG PropertyId = 0,
+                     VARIANT *PropertyValue = 0,
+                     float Weight = 1) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddRuleTransition(
-        ISpeechGrammarRuleState *DestinationState,
-        ISpeechGrammarRule *Rule,
-        const BSTR PropertyName = L"",
-        LONG PropertyId = 0,
-        VARIANT *PropertyValue = 0,
-        float Weight = 1) = 0;
+                     ISpeechGrammarRuleState *DestinationState,
+                     ISpeechGrammarRule *Rule,
+                     const BSTR PropertyName = L"",
+                     LONG PropertyId = 0,
+                     VARIANT *PropertyValue = 0,
+                     float Weight = 1) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSpecialTransition(
-        ISpeechGrammarRuleState *DestinationState,
-        SpeechSpecialTransitionType Type,
-        const BSTR PropertyName = L"",
-        LONG PropertyId = 0,
-        VARIANT *PropertyValue = 0,
-        float Weight = 1) = 0;
+                     ISpeechGrammarRuleState *DestinationState,
+                     SpeechSpecialTransitionType Type,
+                     const BSTR PropertyName = L"",
+                     LONG PropertyId = 0,
+                     VARIANT *PropertyValue = 0,
+                     float Weight = 1) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17788,83 +17788,83 @@ typedef struct ISpeechGrammarRuleStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechGrammarRuleState *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechGrammarRuleState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechGrammarRuleState *This);
+                     ISpeechGrammarRuleState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechGrammarRuleState *This);
+                     ISpeechGrammarRuleState *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechGrammarRuleState *This,
-        UINT *pctinfo);
+                     ISpeechGrammarRuleState *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechGrammarRuleState *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechGrammarRuleState *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechGrammarRuleState *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechGrammarRuleState *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechGrammarRuleState *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechGrammarRuleState *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechGrammarRuleState methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Rule)(
-        ISpeechGrammarRuleState *This,
-        ISpeechGrammarRule **Rule);
+                     ISpeechGrammarRuleState *This,
+                     ISpeechGrammarRule **Rule);
 
     HRESULT (STDMETHODCALLTYPE *get_Transitions)(
-        ISpeechGrammarRuleState *This,
-        ISpeechGrammarRuleStateTransitions **Transitions);
+                     ISpeechGrammarRuleState *This,
+                     ISpeechGrammarRuleStateTransitions **Transitions);
 
     HRESULT (STDMETHODCALLTYPE *AddWordTransition)(
-        ISpeechGrammarRuleState *This,
-        ISpeechGrammarRuleState *DestState,
-        const BSTR Words,
-        const BSTR Separators,
-        SpeechGrammarWordType Type,
-        const BSTR PropertyName,
-        LONG PropertyId,
-        VARIANT *PropertyValue,
-        float Weight);
+                     ISpeechGrammarRuleState *This,
+                     ISpeechGrammarRuleState *DestState,
+                     const BSTR Words,
+                     const BSTR Separators,
+                     SpeechGrammarWordType Type,
+                     const BSTR PropertyName,
+                     LONG PropertyId,
+                     VARIANT *PropertyValue,
+                     float Weight);
 
     HRESULT (STDMETHODCALLTYPE *AddRuleTransition)(
-        ISpeechGrammarRuleState *This,
-        ISpeechGrammarRuleState *DestinationState,
-        ISpeechGrammarRule *Rule,
-        const BSTR PropertyName,
-        LONG PropertyId,
-        VARIANT *PropertyValue,
-        float Weight);
+                     ISpeechGrammarRuleState *This,
+                     ISpeechGrammarRuleState *DestinationState,
+                     ISpeechGrammarRule *Rule,
+                     const BSTR PropertyName,
+                     LONG PropertyId,
+                     VARIANT *PropertyValue,
+                     float Weight);
 
     HRESULT (STDMETHODCALLTYPE *AddSpecialTransition)(
-        ISpeechGrammarRuleState *This,
-        ISpeechGrammarRuleState *DestinationState,
-        SpeechSpecialTransitionType Type,
-        const BSTR PropertyName,
-        LONG PropertyId,
-        VARIANT *PropertyValue,
-        float Weight);
+                     ISpeechGrammarRuleState *This,
+                     ISpeechGrammarRuleState *DestinationState,
+                     SpeechSpecialTransitionType Type,
+                     const BSTR PropertyName,
+                     LONG PropertyId,
+                     VARIANT *PropertyValue,
+                     float Weight);
 
     END_INTERFACE
 } ISpeechGrammarRuleStateVtbl;
@@ -17950,14 +17950,14 @@ MIDL_INTERFACE("eabce657-75bc-44a2-aa7f-c56476742963")
 ISpeechGrammarRuleStateTransitions : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechGrammarRuleStateTransition **Transition) = 0;
+                     LONG Index,
+                     ISpeechGrammarRuleStateTransition **Transition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -17969,59 +17969,59 @@ typedef struct ISpeechGrammarRuleStateTransitionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechGrammarRuleStateTransitions *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechGrammarRuleStateTransitions *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechGrammarRuleStateTransitions *This);
+                     ISpeechGrammarRuleStateTransitions *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechGrammarRuleStateTransitions *This);
+                     ISpeechGrammarRuleStateTransitions *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechGrammarRuleStateTransitions *This,
-        UINT *pctinfo);
+                     ISpeechGrammarRuleStateTransitions *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechGrammarRuleStateTransitions *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechGrammarRuleStateTransitions *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechGrammarRuleStateTransitions *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechGrammarRuleStateTransitions *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechGrammarRuleStateTransitions *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechGrammarRuleStateTransitions *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechGrammarRuleStateTransitions methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechGrammarRuleStateTransitions *This,
-        LONG *Count);
+                     ISpeechGrammarRuleStateTransitions *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechGrammarRuleStateTransitions *This,
-        LONG Index,
-        ISpeechGrammarRuleStateTransition **Transition);
+                     ISpeechGrammarRuleStateTransitions *This,
+                     LONG Index,
+                     ISpeechGrammarRuleStateTransition **Transition);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechGrammarRuleStateTransitions *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechGrammarRuleStateTransitions *This,
+                     IUnknown **EnumVARIANT);
 
     END_INTERFACE
 } ISpeechGrammarRuleStateTransitionsVtbl;
@@ -18099,28 +18099,28 @@ MIDL_INTERFACE("cafd1db1-41d1-4a06-9863-e2e81da17a9a")
 ISpeechGrammarRuleStateTransition : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        SpeechGrammarRuleStateTransitionType *Type) = 0;
+                     SpeechGrammarRuleStateTransitionType *Type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Text(
-        BSTR *Text) = 0;
+                     BSTR *Text) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Rule(
-        ISpeechGrammarRule **Rule) = 0;
+                     ISpeechGrammarRule **Rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Weight(
-        VARIANT *Weight) = 0;
+                     VARIANT *Weight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PropertyName(
-        BSTR *PropertyName) = 0;
+                     BSTR *PropertyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PropertyId(
-        LONG *PropertyId) = 0;
+                     LONG *PropertyId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PropertyValue(
-        VARIANT *PropertyValue) = 0;
+                     VARIANT *PropertyValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NextState(
-        ISpeechGrammarRuleState **NextState) = 0;
+                     ISpeechGrammarRuleState **NextState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18132,78 +18132,78 @@ typedef struct ISpeechGrammarRuleStateTransitionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechGrammarRuleStateTransition *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechGrammarRuleStateTransition *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechGrammarRuleStateTransition *This);
+                     ISpeechGrammarRuleStateTransition *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechGrammarRuleStateTransition *This);
+                     ISpeechGrammarRuleStateTransition *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechGrammarRuleStateTransition *This,
-        UINT *pctinfo);
+                     ISpeechGrammarRuleStateTransition *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechGrammarRuleStateTransition *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechGrammarRuleStateTransition *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechGrammarRuleStateTransition *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechGrammarRuleStateTransition *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechGrammarRuleStateTransition *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechGrammarRuleStateTransition *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechGrammarRuleStateTransition methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        ISpeechGrammarRuleStateTransition *This,
-        SpeechGrammarRuleStateTransitionType *Type);
+                     ISpeechGrammarRuleStateTransition *This,
+                     SpeechGrammarRuleStateTransitionType *Type);
 
     HRESULT (STDMETHODCALLTYPE *get_Text)(
-        ISpeechGrammarRuleStateTransition *This,
-        BSTR *Text);
+                     ISpeechGrammarRuleStateTransition *This,
+                     BSTR *Text);
 
     HRESULT (STDMETHODCALLTYPE *get_Rule)(
-        ISpeechGrammarRuleStateTransition *This,
-        ISpeechGrammarRule **Rule);
+                     ISpeechGrammarRuleStateTransition *This,
+                     ISpeechGrammarRule **Rule);
 
     HRESULT (STDMETHODCALLTYPE *get_Weight)(
-        ISpeechGrammarRuleStateTransition *This,
-        VARIANT *Weight);
+                     ISpeechGrammarRuleStateTransition *This,
+                     VARIANT *Weight);
 
     HRESULT (STDMETHODCALLTYPE *get_PropertyName)(
-        ISpeechGrammarRuleStateTransition *This,
-        BSTR *PropertyName);
+                     ISpeechGrammarRuleStateTransition *This,
+                     BSTR *PropertyName);
 
     HRESULT (STDMETHODCALLTYPE *get_PropertyId)(
-        ISpeechGrammarRuleStateTransition *This,
-        LONG *PropertyId);
+                     ISpeechGrammarRuleStateTransition *This,
+                     LONG *PropertyId);
 
     HRESULT (STDMETHODCALLTYPE *get_PropertyValue)(
-        ISpeechGrammarRuleStateTransition *This,
-        VARIANT *PropertyValue);
+                     ISpeechGrammarRuleStateTransition *This,
+                     VARIANT *PropertyValue);
 
     HRESULT (STDMETHODCALLTYPE *get_NextState)(
-        ISpeechGrammarRuleStateTransition *This,
-        ISpeechGrammarRuleState **NextState);
+                     ISpeechGrammarRuleStateTransition *This,
+                     ISpeechGrammarRuleState **NextState);
 
     END_INTERFACE
 } ISpeechGrammarRuleStateTransitionVtbl;
@@ -18301,28 +18301,28 @@ MIDL_INTERFACE("3b9c7e7a-6eee-4ded-9092-11657279adbe")
 ISpeechTextSelectionInformation : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE put_ActiveOffset(
-        LONG ActiveOffset) = 0;
+                     LONG ActiveOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ActiveOffset(
-        LONG *ActiveOffset) = 0;
+                     LONG *ActiveOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ActiveLength(
-        LONG ActiveLength) = 0;
+                     LONG ActiveLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ActiveLength(
-        LONG *ActiveLength) = 0;
+                     LONG *ActiveLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SelectionOffset(
-        LONG SelectionOffset) = 0;
+                     LONG SelectionOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SelectionOffset(
-        LONG *SelectionOffset) = 0;
+                     LONG *SelectionOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SelectionLength(
-        LONG SelectionLength) = 0;
+                     LONG SelectionLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SelectionLength(
-        LONG *SelectionLength) = 0;
+                     LONG *SelectionLength) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18334,78 +18334,78 @@ typedef struct ISpeechTextSelectionInformationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechTextSelectionInformation *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechTextSelectionInformation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechTextSelectionInformation *This);
+                     ISpeechTextSelectionInformation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechTextSelectionInformation *This);
+                     ISpeechTextSelectionInformation *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechTextSelectionInformation *This,
-        UINT *pctinfo);
+                     ISpeechTextSelectionInformation *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechTextSelectionInformation *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechTextSelectionInformation *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechTextSelectionInformation *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechTextSelectionInformation *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechTextSelectionInformation *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechTextSelectionInformation *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechTextSelectionInformation methods ***/
     HRESULT (STDMETHODCALLTYPE *put_ActiveOffset)(
-        ISpeechTextSelectionInformation *This,
-        LONG ActiveOffset);
+                     ISpeechTextSelectionInformation *This,
+                     LONG ActiveOffset);
 
     HRESULT (STDMETHODCALLTYPE *get_ActiveOffset)(
-        ISpeechTextSelectionInformation *This,
-        LONG *ActiveOffset);
+                     ISpeechTextSelectionInformation *This,
+                     LONG *ActiveOffset);
 
     HRESULT (STDMETHODCALLTYPE *put_ActiveLength)(
-        ISpeechTextSelectionInformation *This,
-        LONG ActiveLength);
+                     ISpeechTextSelectionInformation *This,
+                     LONG ActiveLength);
 
     HRESULT (STDMETHODCALLTYPE *get_ActiveLength)(
-        ISpeechTextSelectionInformation *This,
-        LONG *ActiveLength);
+                     ISpeechTextSelectionInformation *This,
+                     LONG *ActiveLength);
 
     HRESULT (STDMETHODCALLTYPE *put_SelectionOffset)(
-        ISpeechTextSelectionInformation *This,
-        LONG SelectionOffset);
+                     ISpeechTextSelectionInformation *This,
+                     LONG SelectionOffset);
 
     HRESULT (STDMETHODCALLTYPE *get_SelectionOffset)(
-        ISpeechTextSelectionInformation *This,
-        LONG *SelectionOffset);
+                     ISpeechTextSelectionInformation *This,
+                     LONG *SelectionOffset);
 
     HRESULT (STDMETHODCALLTYPE *put_SelectionLength)(
-        ISpeechTextSelectionInformation *This,
-        LONG SelectionLength);
+                     ISpeechTextSelectionInformation *This,
+                     LONG SelectionLength);
 
     HRESULT (STDMETHODCALLTYPE *get_SelectionLength)(
-        ISpeechTextSelectionInformation *This,
-        LONG *SelectionLength);
+                     ISpeechTextSelectionInformation *This,
+                     LONG *SelectionLength);
 
     END_INTERFACE
 } ISpeechTextSelectionInformationVtbl;
@@ -18503,42 +18503,42 @@ MIDL_INTERFACE("ed2879cf-ced9-4ee6-a534-de0191d5468d")
 ISpeechRecoResult : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_RecoContext(
-        ISpeechRecoContext **RecoContext) = 0;
+                     ISpeechRecoContext **RecoContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Times(
-        ISpeechRecoResultTimes **Times) = 0;
+                     ISpeechRecoResultTimes **Times) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_AudioFormat(
-        ISpeechAudioFormat *Format) = 0;
+                     ISpeechAudioFormat *Format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioFormat(
-        ISpeechAudioFormat **Format) = 0;
+                     ISpeechAudioFormat **Format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PhraseInfo(
-        ISpeechPhraseInfo **PhraseInfo) = 0;
+                     ISpeechPhraseInfo **PhraseInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Alternates(
-        LONG RequestCount,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechPhraseAlternates **Alternates) = 0;
+                     LONG RequestCount,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechPhraseAlternates **Alternates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Audio(
-        LONG StartElement,
-        LONG Elements,
-        ISpeechMemoryStream **Stream) = 0;
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechMemoryStream **Stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpeakAudio(
-        LONG StartElement,
-        LONG Elements,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber) = 0;
+                     LONG StartElement,
+                     LONG Elements,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveToMemory(
-        VARIANT *ResultBlock) = 0;
+                     VARIANT *ResultBlock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DiscardResultInfo(
-        SpeechDiscardType ValueTypes) = 0;
+                     SpeechDiscardType ValueTypes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18550,94 +18550,94 @@ typedef struct ISpeechRecoResultVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechRecoResult *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechRecoResult *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechRecoResult *This);
+                     ISpeechRecoResult *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechRecoResult *This);
+                     ISpeechRecoResult *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechRecoResult *This,
-        UINT *pctinfo);
+                     ISpeechRecoResult *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechRecoResult *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechRecoResult *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechRecoResult *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechRecoResult *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechRecoResult *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechRecoResult *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecoResult methods ***/
     HRESULT (STDMETHODCALLTYPE *get_RecoContext)(
-        ISpeechRecoResult *This,
-        ISpeechRecoContext **RecoContext);
+                     ISpeechRecoResult *This,
+                     ISpeechRecoContext **RecoContext);
 
     HRESULT (STDMETHODCALLTYPE *get_Times)(
-        ISpeechRecoResult *This,
-        ISpeechRecoResultTimes **Times);
+                     ISpeechRecoResult *This,
+                     ISpeechRecoResultTimes **Times);
 
     HRESULT (STDMETHODCALLTYPE *putref_AudioFormat)(
-        ISpeechRecoResult *This,
-        ISpeechAudioFormat *Format);
+                     ISpeechRecoResult *This,
+                     ISpeechAudioFormat *Format);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioFormat)(
-        ISpeechRecoResult *This,
-        ISpeechAudioFormat **Format);
+                     ISpeechRecoResult *This,
+                     ISpeechAudioFormat **Format);
 
     HRESULT (STDMETHODCALLTYPE *get_PhraseInfo)(
-        ISpeechRecoResult *This,
-        ISpeechPhraseInfo **PhraseInfo);
+                     ISpeechRecoResult *This,
+                     ISpeechPhraseInfo **PhraseInfo);
 
     HRESULT (STDMETHODCALLTYPE *Alternates)(
-        ISpeechRecoResult *This,
-        LONG RequestCount,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechPhraseAlternates **Alternates);
+                     ISpeechRecoResult *This,
+                     LONG RequestCount,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechPhraseAlternates **Alternates);
 
     HRESULT (STDMETHODCALLTYPE *Audio)(
-        ISpeechRecoResult *This,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechMemoryStream **Stream);
+                     ISpeechRecoResult *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechMemoryStream **Stream);
 
     HRESULT (STDMETHODCALLTYPE *SpeakAudio)(
-        ISpeechRecoResult *This,
-        LONG StartElement,
-        LONG Elements,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber);
+                     ISpeechRecoResult *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *SaveToMemory)(
-        ISpeechRecoResult *This,
-        VARIANT *ResultBlock);
+                     ISpeechRecoResult *This,
+                     VARIANT *ResultBlock);
 
     HRESULT (STDMETHODCALLTYPE *DiscardResultInfo)(
-        ISpeechRecoResult *This,
-        SpeechDiscardType ValueTypes);
+                     ISpeechRecoResult *This,
+                     SpeechDiscardType ValueTypes);
 
     END_INTERFACE
 } ISpeechRecoResultVtbl;
@@ -18743,16 +18743,16 @@ MIDL_INTERFACE("aaec54af-8f85-4924-944d-b79d39d72e19")
 ISpeechXMLRecoResult : public ISpeechRecoResult
 {
     virtual HRESULT STDMETHODCALLTYPE GetXMLResult(
-        SPXMLRESULTOPTIONS Options,
-        BSTR *pResult) = 0;
+                     SPXMLRESULTOPTIONS Options,
+                     BSTR *pResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXMLErrorInfo(
-        LONG *LineNumber,
-        BSTR *ScriptLine,
-        BSTR *Source,
-        BSTR *Description,
-        LONG *ResultCode,
-        VARIANT_BOOL *IsError) = 0;
+                     LONG *LineNumber,
+                     BSTR *ScriptLine,
+                     BSTR *Source,
+                     BSTR *Description,
+                     LONG *ResultCode,
+                     VARIANT_BOOL *IsError) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18764,109 +18764,109 @@ typedef struct ISpeechXMLRecoResultVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechXMLRecoResult *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechXMLRecoResult *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechXMLRecoResult *This);
+                     ISpeechXMLRecoResult *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechXMLRecoResult *This);
+                     ISpeechXMLRecoResult *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechXMLRecoResult *This,
-        UINT *pctinfo);
+                     ISpeechXMLRecoResult *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechXMLRecoResult *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechXMLRecoResult *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechXMLRecoResult *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechXMLRecoResult *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechXMLRecoResult *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechXMLRecoResult *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecoResult methods ***/
     HRESULT (STDMETHODCALLTYPE *get_RecoContext)(
-        ISpeechXMLRecoResult *This,
-        ISpeechRecoContext **RecoContext);
+                     ISpeechXMLRecoResult *This,
+                     ISpeechRecoContext **RecoContext);
 
     HRESULT (STDMETHODCALLTYPE *get_Times)(
-        ISpeechXMLRecoResult *This,
-        ISpeechRecoResultTimes **Times);
+                     ISpeechXMLRecoResult *This,
+                     ISpeechRecoResultTimes **Times);
 
     HRESULT (STDMETHODCALLTYPE *putref_AudioFormat)(
-        ISpeechXMLRecoResult *This,
-        ISpeechAudioFormat *Format);
+                     ISpeechXMLRecoResult *This,
+                     ISpeechAudioFormat *Format);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioFormat)(
-        ISpeechXMLRecoResult *This,
-        ISpeechAudioFormat **Format);
+                     ISpeechXMLRecoResult *This,
+                     ISpeechAudioFormat **Format);
 
     HRESULT (STDMETHODCALLTYPE *get_PhraseInfo)(
-        ISpeechXMLRecoResult *This,
-        ISpeechPhraseInfo **PhraseInfo);
+                     ISpeechXMLRecoResult *This,
+                     ISpeechPhraseInfo **PhraseInfo);
 
     HRESULT (STDMETHODCALLTYPE *Alternates)(
-        ISpeechXMLRecoResult *This,
-        LONG RequestCount,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechPhraseAlternates **Alternates);
+                     ISpeechXMLRecoResult *This,
+                     LONG RequestCount,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechPhraseAlternates **Alternates);
 
     HRESULT (STDMETHODCALLTYPE *Audio)(
-        ISpeechXMLRecoResult *This,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechMemoryStream **Stream);
+                     ISpeechXMLRecoResult *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechMemoryStream **Stream);
 
     HRESULT (STDMETHODCALLTYPE *SpeakAudio)(
-        ISpeechXMLRecoResult *This,
-        LONG StartElement,
-        LONG Elements,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber);
+                     ISpeechXMLRecoResult *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *SaveToMemory)(
-        ISpeechXMLRecoResult *This,
-        VARIANT *ResultBlock);
+                     ISpeechXMLRecoResult *This,
+                     VARIANT *ResultBlock);
 
     HRESULT (STDMETHODCALLTYPE *DiscardResultInfo)(
-        ISpeechXMLRecoResult *This,
-        SpeechDiscardType ValueTypes);
+                     ISpeechXMLRecoResult *This,
+                     SpeechDiscardType ValueTypes);
 
     /*** ISpeechXMLRecoResult methods ***/
     HRESULT (STDMETHODCALLTYPE *GetXMLResult)(
-        ISpeechXMLRecoResult *This,
-        SPXMLRESULTOPTIONS Options,
-        BSTR *pResult);
+                     ISpeechXMLRecoResult *This,
+                     SPXMLRESULTOPTIONS Options,
+                     BSTR *pResult);
 
     HRESULT (STDMETHODCALLTYPE *GetXMLErrorInfo)(
-        ISpeechXMLRecoResult *This,
-        LONG *LineNumber,
-        BSTR *ScriptLine,
-        BSTR *Source,
-        BSTR *Description,
-        LONG *ResultCode,
-        VARIANT_BOOL *IsError);
+                     ISpeechXMLRecoResult *This,
+                     LONG *LineNumber,
+                     BSTR *ScriptLine,
+                     BSTR *Source,
+                     BSTR *Description,
+                     LONG *ResultCode,
+                     VARIANT_BOOL *IsError);
 
     END_INTERFACE
 } ISpeechXMLRecoResultVtbl;
@@ -18982,8 +18982,8 @@ MIDL_INTERFACE("8e0a246d-d3c8-45de-8657-04290c458c3c")
 ISpeechRecoResult2 : public ISpeechRecoResult
 {
     virtual HRESULT STDMETHODCALLTYPE SetTextFeedback(
-        BSTR Feedback,
-        VARIANT_BOOL WasSuccessful) = 0;
+                     BSTR Feedback,
+                     VARIANT_BOOL WasSuccessful) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -18995,100 +18995,100 @@ typedef struct ISpeechRecoResult2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechRecoResult2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechRecoResult2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechRecoResult2 *This);
+                     ISpeechRecoResult2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechRecoResult2 *This);
+                     ISpeechRecoResult2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechRecoResult2 *This,
-        UINT *pctinfo);
+                     ISpeechRecoResult2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechRecoResult2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechRecoResult2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechRecoResult2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechRecoResult2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechRecoResult2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechRecoResult2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecoResult methods ***/
     HRESULT (STDMETHODCALLTYPE *get_RecoContext)(
-        ISpeechRecoResult2 *This,
-        ISpeechRecoContext **RecoContext);
+                     ISpeechRecoResult2 *This,
+                     ISpeechRecoContext **RecoContext);
 
     HRESULT (STDMETHODCALLTYPE *get_Times)(
-        ISpeechRecoResult2 *This,
-        ISpeechRecoResultTimes **Times);
+                     ISpeechRecoResult2 *This,
+                     ISpeechRecoResultTimes **Times);
 
     HRESULT (STDMETHODCALLTYPE *putref_AudioFormat)(
-        ISpeechRecoResult2 *This,
-        ISpeechAudioFormat *Format);
+                     ISpeechRecoResult2 *This,
+                     ISpeechAudioFormat *Format);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioFormat)(
-        ISpeechRecoResult2 *This,
-        ISpeechAudioFormat **Format);
+                     ISpeechRecoResult2 *This,
+                     ISpeechAudioFormat **Format);
 
     HRESULT (STDMETHODCALLTYPE *get_PhraseInfo)(
-        ISpeechRecoResult2 *This,
-        ISpeechPhraseInfo **PhraseInfo);
+                     ISpeechRecoResult2 *This,
+                     ISpeechPhraseInfo **PhraseInfo);
 
     HRESULT (STDMETHODCALLTYPE *Alternates)(
-        ISpeechRecoResult2 *This,
-        LONG RequestCount,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechPhraseAlternates **Alternates);
+                     ISpeechRecoResult2 *This,
+                     LONG RequestCount,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechPhraseAlternates **Alternates);
 
     HRESULT (STDMETHODCALLTYPE *Audio)(
-        ISpeechRecoResult2 *This,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechMemoryStream **Stream);
+                     ISpeechRecoResult2 *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechMemoryStream **Stream);
 
     HRESULT (STDMETHODCALLTYPE *SpeakAudio)(
-        ISpeechRecoResult2 *This,
-        LONG StartElement,
-        LONG Elements,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber);
+                     ISpeechRecoResult2 *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *SaveToMemory)(
-        ISpeechRecoResult2 *This,
-        VARIANT *ResultBlock);
+                     ISpeechRecoResult2 *This,
+                     VARIANT *ResultBlock);
 
     HRESULT (STDMETHODCALLTYPE *DiscardResultInfo)(
-        ISpeechRecoResult2 *This,
-        SpeechDiscardType ValueTypes);
+                     ISpeechRecoResult2 *This,
+                     SpeechDiscardType ValueTypes);
 
     /*** ISpeechRecoResult2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetTextFeedback)(
-        ISpeechRecoResult2 *This,
-        BSTR Feedback,
-        VARIANT_BOOL WasSuccessful);
+                     ISpeechRecoResult2 *This,
+                     BSTR Feedback,
+                     VARIANT_BOOL WasSuccessful);
 
     END_INTERFACE
 } ISpeechRecoResult2Vtbl;
@@ -19200,58 +19200,58 @@ MIDL_INTERFACE("6d60eb64-aced-40a6-bbf3-4e557f71dee2")
 ISpeechRecoResultDispatch : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_RecoContext(
-        ISpeechRecoContext **RecoContext) = 0;
+                     ISpeechRecoContext **RecoContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Times(
-        ISpeechRecoResultTimes **Times) = 0;
+                     ISpeechRecoResultTimes **Times) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_AudioFormat(
-        ISpeechAudioFormat *Format) = 0;
+                     ISpeechAudioFormat *Format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioFormat(
-        ISpeechAudioFormat **Format) = 0;
+                     ISpeechAudioFormat **Format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PhraseInfo(
-        ISpeechPhraseInfo **PhraseInfo) = 0;
+                     ISpeechPhraseInfo **PhraseInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Alternates(
-        LONG RequestCount,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechPhraseAlternates **Alternates) = 0;
+                     LONG RequestCount,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechPhraseAlternates **Alternates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Audio(
-        LONG StartElement,
-        LONG Elements,
-        ISpeechMemoryStream **Stream) = 0;
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechMemoryStream **Stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SpeakAudio(
-        LONG StartElement,
-        LONG Elements,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber) = 0;
+                     LONG StartElement,
+                     LONG Elements,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveToMemory(
-        VARIANT *ResultBlock) = 0;
+                     VARIANT *ResultBlock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DiscardResultInfo(
-        SpeechDiscardType ValueTypes) = 0;
+                     SpeechDiscardType ValueTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXMLResult(
-        SPXMLRESULTOPTIONS Options,
-        BSTR *pResult) = 0;
+                     SPXMLRESULTOPTIONS Options,
+                     BSTR *pResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXMLErrorInfo(
-        LONG *LineNumber,
-        BSTR *ScriptLine,
-        BSTR *Source,
-        BSTR *Description,
-        HRESULT *ResultCode,
-        VARIANT_BOOL *IsError) = 0;
+                     LONG *LineNumber,
+                     BSTR *ScriptLine,
+                     BSTR *Source,
+                     BSTR *Description,
+                     HRESULT *ResultCode,
+                     VARIANT_BOOL *IsError) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTextFeedback(
-        BSTR Feedback,
-        VARIANT_BOOL WasSuccessful) = 0;
+                     BSTR Feedback,
+                     VARIANT_BOOL WasSuccessful) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19263,113 +19263,113 @@ typedef struct ISpeechRecoResultDispatchVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechRecoResultDispatch *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechRecoResultDispatch *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechRecoResultDispatch *This);
+                     ISpeechRecoResultDispatch *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechRecoResultDispatch *This);
+                     ISpeechRecoResultDispatch *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechRecoResultDispatch *This,
-        UINT *pctinfo);
+                     ISpeechRecoResultDispatch *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechRecoResultDispatch *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechRecoResultDispatch *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechRecoResultDispatch *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechRecoResultDispatch *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechRecoResultDispatch *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechRecoResultDispatch *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecoResultDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *get_RecoContext)(
-        ISpeechRecoResultDispatch *This,
-        ISpeechRecoContext **RecoContext);
+                     ISpeechRecoResultDispatch *This,
+                     ISpeechRecoContext **RecoContext);
 
     HRESULT (STDMETHODCALLTYPE *get_Times)(
-        ISpeechRecoResultDispatch *This,
-        ISpeechRecoResultTimes **Times);
+                     ISpeechRecoResultDispatch *This,
+                     ISpeechRecoResultTimes **Times);
 
     HRESULT (STDMETHODCALLTYPE *putref_AudioFormat)(
-        ISpeechRecoResultDispatch *This,
-        ISpeechAudioFormat *Format);
+                     ISpeechRecoResultDispatch *This,
+                     ISpeechAudioFormat *Format);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioFormat)(
-        ISpeechRecoResultDispatch *This,
-        ISpeechAudioFormat **Format);
+                     ISpeechRecoResultDispatch *This,
+                     ISpeechAudioFormat **Format);
 
     HRESULT (STDMETHODCALLTYPE *get_PhraseInfo)(
-        ISpeechRecoResultDispatch *This,
-        ISpeechPhraseInfo **PhraseInfo);
+                     ISpeechRecoResultDispatch *This,
+                     ISpeechPhraseInfo **PhraseInfo);
 
     HRESULT (STDMETHODCALLTYPE *Alternates)(
-        ISpeechRecoResultDispatch *This,
-        LONG RequestCount,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechPhraseAlternates **Alternates);
+                     ISpeechRecoResultDispatch *This,
+                     LONG RequestCount,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechPhraseAlternates **Alternates);
 
     HRESULT (STDMETHODCALLTYPE *Audio)(
-        ISpeechRecoResultDispatch *This,
-        LONG StartElement,
-        LONG Elements,
-        ISpeechMemoryStream **Stream);
+                     ISpeechRecoResultDispatch *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     ISpeechMemoryStream **Stream);
 
     HRESULT (STDMETHODCALLTYPE *SpeakAudio)(
-        ISpeechRecoResultDispatch *This,
-        LONG StartElement,
-        LONG Elements,
-        SpeechVoiceSpeakFlags Flags,
-        LONG *StreamNumber);
+                     ISpeechRecoResultDispatch *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     SpeechVoiceSpeakFlags Flags,
+                     LONG *StreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *SaveToMemory)(
-        ISpeechRecoResultDispatch *This,
-        VARIANT *ResultBlock);
+                     ISpeechRecoResultDispatch *This,
+                     VARIANT *ResultBlock);
 
     HRESULT (STDMETHODCALLTYPE *DiscardResultInfo)(
-        ISpeechRecoResultDispatch *This,
-        SpeechDiscardType ValueTypes);
+                     ISpeechRecoResultDispatch *This,
+                     SpeechDiscardType ValueTypes);
 
     HRESULT (STDMETHODCALLTYPE *GetXMLResult)(
-        ISpeechRecoResultDispatch *This,
-        SPXMLRESULTOPTIONS Options,
-        BSTR *pResult);
+                     ISpeechRecoResultDispatch *This,
+                     SPXMLRESULTOPTIONS Options,
+                     BSTR *pResult);
 
     HRESULT (STDMETHODCALLTYPE *GetXMLErrorInfo)(
-        ISpeechRecoResultDispatch *This,
-        LONG *LineNumber,
-        BSTR *ScriptLine,
-        BSTR *Source,
-        BSTR *Description,
-        HRESULT *ResultCode,
-        VARIANT_BOOL *IsError);
+                     ISpeechRecoResultDispatch *This,
+                     LONG *LineNumber,
+                     BSTR *ScriptLine,
+                     BSTR *Source,
+                     BSTR *Description,
+                     HRESULT *ResultCode,
+                     VARIANT_BOOL *IsError);
 
     HRESULT (STDMETHODCALLTYPE *SetTextFeedback)(
-        ISpeechRecoResultDispatch *This,
-        BSTR Feedback,
-        VARIANT_BOOL WasSuccessful);
+                     ISpeechRecoResultDispatch *This,
+                     BSTR Feedback,
+                     VARIANT_BOOL WasSuccessful);
 
     END_INTERFACE
 } ISpeechRecoResultDispatchVtbl;
@@ -19487,8 +19487,8 @@ MIDL_INTERFACE("3b151836-df3a-4e0a-846c-d2adc9334333")
 ISpeechPhraseInfoBuilder : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE RestorePhraseFromMemory(
-        VARIANT *PhraseInMemory,
-        ISpeechPhraseInfo **PhraseInfo) = 0;
+                     VARIANT *PhraseInMemory,
+                     ISpeechPhraseInfo **PhraseInfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19500,51 +19500,51 @@ typedef struct ISpeechPhraseInfoBuilderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseInfoBuilder *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseInfoBuilder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseInfoBuilder *This);
+                     ISpeechPhraseInfoBuilder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseInfoBuilder *This);
+                     ISpeechPhraseInfoBuilder *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseInfoBuilder *This,
-        UINT *pctinfo);
+                     ISpeechPhraseInfoBuilder *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseInfoBuilder *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseInfoBuilder *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseInfoBuilder *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseInfoBuilder *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseInfoBuilder *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseInfoBuilder *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseInfoBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *RestorePhraseFromMemory)(
-        ISpeechPhraseInfoBuilder *This,
-        VARIANT *PhraseInMemory,
-        ISpeechPhraseInfo **PhraseInfo);
+                     ISpeechPhraseInfoBuilder *This,
+                     VARIANT *PhraseInMemory,
+                     ISpeechPhraseInfo **PhraseInfo);
 
     END_INTERFACE
 } ISpeechPhraseInfoBuilderVtbl;
@@ -19614,16 +19614,16 @@ MIDL_INTERFACE("62b3b8fb-f6e7-41be-bdcb-056b1c29efc0")
 ISpeechRecoResultTimes : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_StreamTime(
-        VARIANT *Time) = 0;
+                     VARIANT *Time) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Length(
-        VARIANT *Length) = 0;
+                     VARIANT *Length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TickCount(
-        LONG *TickCount) = 0;
+                     LONG *TickCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OffsetFromStart(
-        VARIANT *OffsetFromStart) = 0;
+                     VARIANT *OffsetFromStart) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19635,62 +19635,62 @@ typedef struct ISpeechRecoResultTimesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechRecoResultTimes *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechRecoResultTimes *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechRecoResultTimes *This);
+                     ISpeechRecoResultTimes *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechRecoResultTimes *This);
+                     ISpeechRecoResultTimes *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechRecoResultTimes *This,
-        UINT *pctinfo);
+                     ISpeechRecoResultTimes *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechRecoResultTimes *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechRecoResultTimes *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechRecoResultTimes *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechRecoResultTimes *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechRecoResultTimes *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechRecoResultTimes *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechRecoResultTimes methods ***/
     HRESULT (STDMETHODCALLTYPE *get_StreamTime)(
-        ISpeechRecoResultTimes *This,
-        VARIANT *Time);
+                     ISpeechRecoResultTimes *This,
+                     VARIANT *Time);
 
     HRESULT (STDMETHODCALLTYPE *get_Length)(
-        ISpeechRecoResultTimes *This,
-        VARIANT *Length);
+                     ISpeechRecoResultTimes *This,
+                     VARIANT *Length);
 
     HRESULT (STDMETHODCALLTYPE *get_TickCount)(
-        ISpeechRecoResultTimes *This,
-        LONG *TickCount);
+                     ISpeechRecoResultTimes *This,
+                     LONG *TickCount);
 
     HRESULT (STDMETHODCALLTYPE *get_OffsetFromStart)(
-        ISpeechRecoResultTimes *This,
-        VARIANT *OffsetFromStart);
+                     ISpeechRecoResultTimes *This,
+                     VARIANT *OffsetFromStart);
 
     END_INTERFACE
 } ISpeechRecoResultTimesVtbl;
@@ -19772,19 +19772,19 @@ MIDL_INTERFACE("27864a2a-2b9f-4cb8-92d3-0d2722fd1e73")
 ISpeechPhraseAlternate : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_RecoResult(
-        ISpeechRecoResult **RecoResult) = 0;
+                     ISpeechRecoResult **RecoResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StartElementInResult(
-        LONG *StartElement) = 0;
+                     LONG *StartElement) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NumberOfElementsInResult(
-        LONG *NumberOfElements) = 0;
+                     LONG *NumberOfElements) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PhraseInfo(
-        ISpeechPhraseInfo **PhraseInfo) = 0;
+                     ISpeechPhraseInfo **PhraseInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19796,65 +19796,65 @@ typedef struct ISpeechPhraseAlternateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseAlternate *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseAlternate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseAlternate *This);
+                     ISpeechPhraseAlternate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseAlternate *This);
+                     ISpeechPhraseAlternate *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseAlternate *This,
-        UINT *pctinfo);
+                     ISpeechPhraseAlternate *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseAlternate *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseAlternate *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseAlternate *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseAlternate *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseAlternate *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseAlternate *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseAlternate methods ***/
     HRESULT (STDMETHODCALLTYPE *get_RecoResult)(
-        ISpeechPhraseAlternate *This,
-        ISpeechRecoResult **RecoResult);
+                     ISpeechPhraseAlternate *This,
+                     ISpeechRecoResult **RecoResult);
 
     HRESULT (STDMETHODCALLTYPE *get_StartElementInResult)(
-        ISpeechPhraseAlternate *This,
-        LONG *StartElement);
+                     ISpeechPhraseAlternate *This,
+                     LONG *StartElement);
 
     HRESULT (STDMETHODCALLTYPE *get_NumberOfElementsInResult)(
-        ISpeechPhraseAlternate *This,
-        LONG *NumberOfElements);
+                     ISpeechPhraseAlternate *This,
+                     LONG *NumberOfElements);
 
     HRESULT (STDMETHODCALLTYPE *get_PhraseInfo)(
-        ISpeechPhraseAlternate *This,
-        ISpeechPhraseInfo **PhraseInfo);
+                     ISpeechPhraseAlternate *This,
+                     ISpeechPhraseInfo **PhraseInfo);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        ISpeechPhraseAlternate *This);
+                     ISpeechPhraseAlternate *This);
 
     END_INTERFACE
 } ISpeechPhraseAlternateVtbl;
@@ -19940,14 +19940,14 @@ MIDL_INTERFACE("b238b6d5-f276-4c3d-a6c1-2974801c3cc2")
 ISpeechPhraseAlternates : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechPhraseAlternate **PhraseAlternate) = 0;
+                     LONG Index,
+                     ISpeechPhraseAlternate **PhraseAlternate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -19959,59 +19959,59 @@ typedef struct ISpeechPhraseAlternatesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseAlternates *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseAlternates *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseAlternates *This);
+                     ISpeechPhraseAlternates *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseAlternates *This);
+                     ISpeechPhraseAlternates *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseAlternates *This,
-        UINT *pctinfo);
+                     ISpeechPhraseAlternates *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseAlternates *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseAlternates *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseAlternates *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseAlternates *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseAlternates *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseAlternates *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseAlternates methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechPhraseAlternates *This,
-        LONG *Count);
+                     ISpeechPhraseAlternates *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechPhraseAlternates *This,
-        LONG Index,
-        ISpeechPhraseAlternate **PhraseAlternate);
+                     ISpeechPhraseAlternates *This,
+                     LONG Index,
+                     ISpeechPhraseAlternate **PhraseAlternate);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechPhraseAlternates *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechPhraseAlternates *This,
+                     IUnknown **EnumVARIANT);
 
     END_INTERFACE
 } ISpeechPhraseAlternatesVtbl;
@@ -20089,58 +20089,58 @@ MIDL_INTERFACE("961559cf-4e67-4662-8bf0-d93f1fcd61b3")
 ISpeechPhraseInfo : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_LanguageId(
-        LONG *LanguageId) = 0;
+                     LONG *LanguageId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_GrammarId(
-        VARIANT *GrammarId) = 0;
+                     VARIANT *GrammarId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StartTime(
-        VARIANT *StartTime) = 0;
+                     VARIANT *StartTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioStreamPosition(
-        VARIANT *AudioStreamPosition) = 0;
+                     VARIANT *AudioStreamPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioSizeBytes(
-        LONG *pAudioSizeBytes) = 0;
+                     LONG *pAudioSizeBytes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RetainedSizeBytes(
-        LONG *RetainedSizeBytes) = 0;
+                     LONG *RetainedSizeBytes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioSizeTime(
-        LONG *AudioSizeTime) = 0;
+                     LONG *AudioSizeTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Rule(
-        ISpeechPhraseRule **Rule) = 0;
+                     ISpeechPhraseRule **Rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Properties(
-        ISpeechPhraseProperties **Properties) = 0;
+                     ISpeechPhraseProperties **Properties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Elements(
-        ISpeechPhraseElements **Elements) = 0;
+                     ISpeechPhraseElements **Elements) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Replacements(
-        ISpeechPhraseReplacements **Replacements) = 0;
+                     ISpeechPhraseReplacements **Replacements) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EngineId(
-        BSTR *EngineIdGuid) = 0;
+                     BSTR *EngineIdGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EnginePrivateData(
-        VARIANT *PrivateData) = 0;
+                     VARIANT *PrivateData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SaveToMemory(
-        VARIANT *PhraseBlock) = 0;
+                     VARIANT *PhraseBlock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetText(
-        LONG StartElement,
-        LONG Elements,
-        VARIANT_BOOL UseReplacements,
-        BSTR *Text) = 0;
+                     LONG StartElement,
+                     LONG Elements,
+                     VARIANT_BOOL UseReplacements,
+                     BSTR *Text) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayAttributes(
-        LONG StartElement,
-        LONG Elements,
-        VARIANT_BOOL UseReplacements,
-        SpeechDisplayAttributes *DisplayAttributes) = 0;
+                     LONG StartElement,
+                     LONG Elements,
+                     VARIANT_BOOL UseReplacements,
+                     SpeechDisplayAttributes *DisplayAttributes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20152,116 +20152,116 @@ typedef struct ISpeechPhraseInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseInfo *This);
+                     ISpeechPhraseInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseInfo *This);
+                     ISpeechPhraseInfo *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseInfo *This,
-        UINT *pctinfo);
+                     ISpeechPhraseInfo *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseInfo *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseInfo *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseInfo *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseInfo *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseInfo *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseInfo *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LanguageId)(
-        ISpeechPhraseInfo *This,
-        LONG *LanguageId);
+                     ISpeechPhraseInfo *This,
+                     LONG *LanguageId);
 
     HRESULT (STDMETHODCALLTYPE *get_GrammarId)(
-        ISpeechPhraseInfo *This,
-        VARIANT *GrammarId);
+                     ISpeechPhraseInfo *This,
+                     VARIANT *GrammarId);
 
     HRESULT (STDMETHODCALLTYPE *get_StartTime)(
-        ISpeechPhraseInfo *This,
-        VARIANT *StartTime);
+                     ISpeechPhraseInfo *This,
+                     VARIANT *StartTime);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioStreamPosition)(
-        ISpeechPhraseInfo *This,
-        VARIANT *AudioStreamPosition);
+                     ISpeechPhraseInfo *This,
+                     VARIANT *AudioStreamPosition);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioSizeBytes)(
-        ISpeechPhraseInfo *This,
-        LONG *pAudioSizeBytes);
+                     ISpeechPhraseInfo *This,
+                     LONG *pAudioSizeBytes);
 
     HRESULT (STDMETHODCALLTYPE *get_RetainedSizeBytes)(
-        ISpeechPhraseInfo *This,
-        LONG *RetainedSizeBytes);
+                     ISpeechPhraseInfo *This,
+                     LONG *RetainedSizeBytes);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioSizeTime)(
-        ISpeechPhraseInfo *This,
-        LONG *AudioSizeTime);
+                     ISpeechPhraseInfo *This,
+                     LONG *AudioSizeTime);
 
     HRESULT (STDMETHODCALLTYPE *get_Rule)(
-        ISpeechPhraseInfo *This,
-        ISpeechPhraseRule **Rule);
+                     ISpeechPhraseInfo *This,
+                     ISpeechPhraseRule **Rule);
 
     HRESULT (STDMETHODCALLTYPE *get_Properties)(
-        ISpeechPhraseInfo *This,
-        ISpeechPhraseProperties **Properties);
+                     ISpeechPhraseInfo *This,
+                     ISpeechPhraseProperties **Properties);
 
     HRESULT (STDMETHODCALLTYPE *get_Elements)(
-        ISpeechPhraseInfo *This,
-        ISpeechPhraseElements **Elements);
+                     ISpeechPhraseInfo *This,
+                     ISpeechPhraseElements **Elements);
 
     HRESULT (STDMETHODCALLTYPE *get_Replacements)(
-        ISpeechPhraseInfo *This,
-        ISpeechPhraseReplacements **Replacements);
+                     ISpeechPhraseInfo *This,
+                     ISpeechPhraseReplacements **Replacements);
 
     HRESULT (STDMETHODCALLTYPE *get_EngineId)(
-        ISpeechPhraseInfo *This,
-        BSTR *EngineIdGuid);
+                     ISpeechPhraseInfo *This,
+                     BSTR *EngineIdGuid);
 
     HRESULT (STDMETHODCALLTYPE *get_EnginePrivateData)(
-        ISpeechPhraseInfo *This,
-        VARIANT *PrivateData);
+                     ISpeechPhraseInfo *This,
+                     VARIANT *PrivateData);
 
     HRESULT (STDMETHODCALLTYPE *SaveToMemory)(
-        ISpeechPhraseInfo *This,
-        VARIANT *PhraseBlock);
+                     ISpeechPhraseInfo *This,
+                     VARIANT *PhraseBlock);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ISpeechPhraseInfo *This,
-        LONG StartElement,
-        LONG Elements,
-        VARIANT_BOOL UseReplacements,
-        BSTR *Text);
+                     ISpeechPhraseInfo *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     VARIANT_BOOL UseReplacements,
+                     BSTR *Text);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayAttributes)(
-        ISpeechPhraseInfo *This,
-        LONG StartElement,
-        LONG Elements,
-        VARIANT_BOOL UseReplacements,
-        SpeechDisplayAttributes *DisplayAttributes);
+                     ISpeechPhraseInfo *This,
+                     LONG StartElement,
+                     LONG Elements,
+                     VARIANT_BOOL UseReplacements,
+                     SpeechDisplayAttributes *DisplayAttributes);
 
     END_INTERFACE
 } ISpeechPhraseInfoVtbl;
@@ -20391,43 +20391,43 @@ MIDL_INTERFACE("e6176f96-e373-4801-b223-3b62c068c0b4")
 ISpeechPhraseElement : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_AudioTimeOffset(
-        LONG *AudioTimeOffset) = 0;
+                     LONG *AudioTimeOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioSizeTime(
-        LONG *AudioSizeTime) = 0;
+                     LONG *AudioSizeTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioStreamOffset(
-        LONG *AudioStreamOffset) = 0;
+                     LONG *AudioStreamOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AudioSizeBytes(
-        LONG *AudioSizeBytes) = 0;
+                     LONG *AudioSizeBytes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RetainedStreamOffset(
-        LONG *RetainedStreamOffset) = 0;
+                     LONG *RetainedStreamOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RetainedSizeBytes(
-        LONG *RetainedSizeBytes) = 0;
+                     LONG *RetainedSizeBytes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DisplayText(
-        BSTR *DisplayText) = 0;
+                     BSTR *DisplayText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LexicalForm(
-        BSTR *LexicalForm) = 0;
+                     BSTR *LexicalForm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Pronunciation(
-        VARIANT *Pronunciation) = 0;
+                     VARIANT *Pronunciation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DisplayAttributes(
-        SpeechDisplayAttributes *DisplayAttributes) = 0;
+                     SpeechDisplayAttributes *DisplayAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RequiredConfidence(
-        SpeechEngineConfidence *RequiredConfidence) = 0;
+                     SpeechEngineConfidence *RequiredConfidence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ActualConfidence(
-        SpeechEngineConfidence *ActualConfidence) = 0;
+                     SpeechEngineConfidence *ActualConfidence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EngineConfidence(
-        float *EngineConfidence) = 0;
+                     float *EngineConfidence) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20439,98 +20439,98 @@ typedef struct ISpeechPhraseElementVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseElement *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseElement *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseElement *This);
+                     ISpeechPhraseElement *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseElement *This);
+                     ISpeechPhraseElement *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseElement *This,
-        UINT *pctinfo);
+                     ISpeechPhraseElement *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseElement *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseElement *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseElement *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseElement *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseElement *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseElement *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseElement methods ***/
     HRESULT (STDMETHODCALLTYPE *get_AudioTimeOffset)(
-        ISpeechPhraseElement *This,
-        LONG *AudioTimeOffset);
+                     ISpeechPhraseElement *This,
+                     LONG *AudioTimeOffset);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioSizeTime)(
-        ISpeechPhraseElement *This,
-        LONG *AudioSizeTime);
+                     ISpeechPhraseElement *This,
+                     LONG *AudioSizeTime);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioStreamOffset)(
-        ISpeechPhraseElement *This,
-        LONG *AudioStreamOffset);
+                     ISpeechPhraseElement *This,
+                     LONG *AudioStreamOffset);
 
     HRESULT (STDMETHODCALLTYPE *get_AudioSizeBytes)(
-        ISpeechPhraseElement *This,
-        LONG *AudioSizeBytes);
+                     ISpeechPhraseElement *This,
+                     LONG *AudioSizeBytes);
 
     HRESULT (STDMETHODCALLTYPE *get_RetainedStreamOffset)(
-        ISpeechPhraseElement *This,
-        LONG *RetainedStreamOffset);
+                     ISpeechPhraseElement *This,
+                     LONG *RetainedStreamOffset);
 
     HRESULT (STDMETHODCALLTYPE *get_RetainedSizeBytes)(
-        ISpeechPhraseElement *This,
-        LONG *RetainedSizeBytes);
+                     ISpeechPhraseElement *This,
+                     LONG *RetainedSizeBytes);
 
     HRESULT (STDMETHODCALLTYPE *get_DisplayText)(
-        ISpeechPhraseElement *This,
-        BSTR *DisplayText);
+                     ISpeechPhraseElement *This,
+                     BSTR *DisplayText);
 
     HRESULT (STDMETHODCALLTYPE *get_LexicalForm)(
-        ISpeechPhraseElement *This,
-        BSTR *LexicalForm);
+                     ISpeechPhraseElement *This,
+                     BSTR *LexicalForm);
 
     HRESULT (STDMETHODCALLTYPE *get_Pronunciation)(
-        ISpeechPhraseElement *This,
-        VARIANT *Pronunciation);
+                     ISpeechPhraseElement *This,
+                     VARIANT *Pronunciation);
 
     HRESULT (STDMETHODCALLTYPE *get_DisplayAttributes)(
-        ISpeechPhraseElement *This,
-        SpeechDisplayAttributes *DisplayAttributes);
+                     ISpeechPhraseElement *This,
+                     SpeechDisplayAttributes *DisplayAttributes);
 
     HRESULT (STDMETHODCALLTYPE *get_RequiredConfidence)(
-        ISpeechPhraseElement *This,
-        SpeechEngineConfidence *RequiredConfidence);
+                     ISpeechPhraseElement *This,
+                     SpeechEngineConfidence *RequiredConfidence);
 
     HRESULT (STDMETHODCALLTYPE *get_ActualConfidence)(
-        ISpeechPhraseElement *This,
-        SpeechEngineConfidence *ActualConfidence);
+                     ISpeechPhraseElement *This,
+                     SpeechEngineConfidence *ActualConfidence);
 
     HRESULT (STDMETHODCALLTYPE *get_EngineConfidence)(
-        ISpeechPhraseElement *This,
-        float *EngineConfidence);
+                     ISpeechPhraseElement *This,
+                     float *EngineConfidence);
 
     END_INTERFACE
 } ISpeechPhraseElementVtbl;
@@ -20648,14 +20648,14 @@ MIDL_INTERFACE("0626b328-3478-467d-a0b3-d0853b93dda3")
 ISpeechPhraseElements : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechPhraseElement **Element) = 0;
+                     LONG Index,
+                     ISpeechPhraseElement **Element) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20667,59 +20667,59 @@ typedef struct ISpeechPhraseElementsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseElements *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseElements *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseElements *This);
+                     ISpeechPhraseElements *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseElements *This);
+                     ISpeechPhraseElements *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseElements *This,
-        UINT *pctinfo);
+                     ISpeechPhraseElements *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseElements *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseElements *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseElements *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseElements *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseElements *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseElements *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseElements methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechPhraseElements *This,
-        LONG *Count);
+                     ISpeechPhraseElements *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechPhraseElements *This,
-        LONG Index,
-        ISpeechPhraseElement **Element);
+                     ISpeechPhraseElements *This,
+                     LONG Index,
+                     ISpeechPhraseElement **Element);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechPhraseElements *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechPhraseElements *This,
+                     IUnknown **EnumVARIANT);
 
     END_INTERFACE
 } ISpeechPhraseElementsVtbl;
@@ -20797,16 +20797,16 @@ MIDL_INTERFACE("2890a410-53a7-4fb5-94ec-06d4998e3d02")
 ISpeechPhraseReplacement : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_DisplayAttributes(
-        SpeechDisplayAttributes *DisplayAttributes) = 0;
+                     SpeechDisplayAttributes *DisplayAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Text(
-        BSTR *Text) = 0;
+                     BSTR *Text) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FirstElement(
-        LONG *FirstElement) = 0;
+                     LONG *FirstElement) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NumberOfElements(
-        LONG *NumberOfElements) = 0;
+                     LONG *NumberOfElements) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20818,62 +20818,62 @@ typedef struct ISpeechPhraseReplacementVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseReplacement *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseReplacement *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseReplacement *This);
+                     ISpeechPhraseReplacement *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseReplacement *This);
+                     ISpeechPhraseReplacement *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseReplacement *This,
-        UINT *pctinfo);
+                     ISpeechPhraseReplacement *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseReplacement *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseReplacement *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseReplacement *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseReplacement *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseReplacement *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseReplacement *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseReplacement methods ***/
     HRESULT (STDMETHODCALLTYPE *get_DisplayAttributes)(
-        ISpeechPhraseReplacement *This,
-        SpeechDisplayAttributes *DisplayAttributes);
+                     ISpeechPhraseReplacement *This,
+                     SpeechDisplayAttributes *DisplayAttributes);
 
     HRESULT (STDMETHODCALLTYPE *get_Text)(
-        ISpeechPhraseReplacement *This,
-        BSTR *Text);
+                     ISpeechPhraseReplacement *This,
+                     BSTR *Text);
 
     HRESULT (STDMETHODCALLTYPE *get_FirstElement)(
-        ISpeechPhraseReplacement *This,
-        LONG *FirstElement);
+                     ISpeechPhraseReplacement *This,
+                     LONG *FirstElement);
 
     HRESULT (STDMETHODCALLTYPE *get_NumberOfElements)(
-        ISpeechPhraseReplacement *This,
-        LONG *NumberOfElements);
+                     ISpeechPhraseReplacement *This,
+                     LONG *NumberOfElements);
 
     END_INTERFACE
 } ISpeechPhraseReplacementVtbl;
@@ -20955,14 +20955,14 @@ MIDL_INTERFACE("38bc662f-2257-4525-959e-2069d2596c05")
 ISpeechPhraseReplacements : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechPhraseReplacement **Reps) = 0;
+                     LONG Index,
+                     ISpeechPhraseReplacement **Reps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -20974,59 +20974,59 @@ typedef struct ISpeechPhraseReplacementsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseReplacements *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseReplacements *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseReplacements *This);
+                     ISpeechPhraseReplacements *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseReplacements *This);
+                     ISpeechPhraseReplacements *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseReplacements *This,
-        UINT *pctinfo);
+                     ISpeechPhraseReplacements *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseReplacements *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseReplacements *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseReplacements *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseReplacements *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseReplacements *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseReplacements *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseReplacements methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechPhraseReplacements *This,
-        LONG *Count);
+                     ISpeechPhraseReplacements *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechPhraseReplacements *This,
-        LONG Index,
-        ISpeechPhraseReplacement **Reps);
+                     ISpeechPhraseReplacements *This,
+                     LONG Index,
+                     ISpeechPhraseReplacement **Reps);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechPhraseReplacements *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechPhraseReplacements *This,
+                     IUnknown **EnumVARIANT);
 
     END_INTERFACE
 } ISpeechPhraseReplacementsVtbl;
@@ -21104,31 +21104,31 @@ MIDL_INTERFACE("ce563d48-961e-4732-a2e1-378a42b430be")
 ISpeechPhraseProperty : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        LONG *Id) = 0;
+                     LONG *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Value(
-        VARIANT *Value) = 0;
+                     VARIANT *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FirstElement(
-        LONG *FirstElement) = 0;
+                     LONG *FirstElement) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NumberOfElements(
-        LONG *NumberOfElements) = 0;
+                     LONG *NumberOfElements) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EngineConfidence(
-        float *Confidence) = 0;
+                     float *Confidence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Confidence(
-        SpeechEngineConfidence *Confidence) = 0;
+                     SpeechEngineConfidence *Confidence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Parent(
-        ISpeechPhraseProperty **ParentProperty) = 0;
+                     ISpeechPhraseProperty **ParentProperty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Children(
-        ISpeechPhraseProperties **Children) = 0;
+                     ISpeechPhraseProperties **Children) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21140,82 +21140,82 @@ typedef struct ISpeechPhrasePropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseProperty *This);
+                     ISpeechPhraseProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseProperty *This);
+                     ISpeechPhraseProperty *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseProperty *This,
-        UINT *pctinfo);
+                     ISpeechPhraseProperty *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseProperty *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseProperty *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseProperty *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseProperty *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseProperty *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseProperty *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ISpeechPhraseProperty *This,
-        BSTR *Name);
+                     ISpeechPhraseProperty *This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ISpeechPhraseProperty *This,
-        LONG *Id);
+                     ISpeechPhraseProperty *This,
+                     LONG *Id);
 
     HRESULT (STDMETHODCALLTYPE *get_Value)(
-        ISpeechPhraseProperty *This,
-        VARIANT *Value);
+                     ISpeechPhraseProperty *This,
+                     VARIANT *Value);
 
     HRESULT (STDMETHODCALLTYPE *get_FirstElement)(
-        ISpeechPhraseProperty *This,
-        LONG *FirstElement);
+                     ISpeechPhraseProperty *This,
+                     LONG *FirstElement);
 
     HRESULT (STDMETHODCALLTYPE *get_NumberOfElements)(
-        ISpeechPhraseProperty *This,
-        LONG *NumberOfElements);
+                     ISpeechPhraseProperty *This,
+                     LONG *NumberOfElements);
 
     HRESULT (STDMETHODCALLTYPE *get_EngineConfidence)(
-        ISpeechPhraseProperty *This,
-        float *Confidence);
+                     ISpeechPhraseProperty *This,
+                     float *Confidence);
 
     HRESULT (STDMETHODCALLTYPE *get_Confidence)(
-        ISpeechPhraseProperty *This,
-        SpeechEngineConfidence *Confidence);
+                     ISpeechPhraseProperty *This,
+                     SpeechEngineConfidence *Confidence);
 
     HRESULT (STDMETHODCALLTYPE *get_Parent)(
-        ISpeechPhraseProperty *This,
-        ISpeechPhraseProperty **ParentProperty);
+                     ISpeechPhraseProperty *This,
+                     ISpeechPhraseProperty **ParentProperty);
 
     HRESULT (STDMETHODCALLTYPE *get_Children)(
-        ISpeechPhraseProperty *This,
-        ISpeechPhraseProperties **Children);
+                     ISpeechPhraseProperty *This,
+                     ISpeechPhraseProperties **Children);
 
     END_INTERFACE
 } ISpeechPhrasePropertyVtbl;
@@ -21317,14 +21317,14 @@ MIDL_INTERFACE("08166b47-102e-4b23-a599-bdb98dbfd1f4")
 ISpeechPhraseProperties : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechPhraseProperty **Property) = 0;
+                     LONG Index,
+                     ISpeechPhraseProperty **Property) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21336,59 +21336,59 @@ typedef struct ISpeechPhrasePropertiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseProperties *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseProperties *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseProperties *This);
+                     ISpeechPhraseProperties *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseProperties *This);
+                     ISpeechPhraseProperties *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseProperties *This,
-        UINT *pctinfo);
+                     ISpeechPhraseProperties *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseProperties *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseProperties *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseProperties *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseProperties *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseProperties *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseProperties *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseProperties methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechPhraseProperties *This,
-        LONG *Count);
+                     ISpeechPhraseProperties *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechPhraseProperties *This,
-        LONG Index,
-        ISpeechPhraseProperty **Property);
+                     ISpeechPhraseProperties *This,
+                     LONG Index,
+                     ISpeechPhraseProperty **Property);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechPhraseProperties *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechPhraseProperties *This,
+                     IUnknown **EnumVARIANT);
 
     END_INTERFACE
 } ISpeechPhrasePropertiesVtbl;
@@ -21466,28 +21466,28 @@ MIDL_INTERFACE("a7bfe112-a4a0-48d9-b602-c313843f6964")
 ISpeechPhraseRule : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        LONG *Id) = 0;
+                     LONG *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FirstElement(
-        LONG *FirstElement) = 0;
+                     LONG *FirstElement) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NumberOfElements(
-        LONG *NumberOfElements) = 0;
+                     LONG *NumberOfElements) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Parent(
-        ISpeechPhraseRule **Parent) = 0;
+                     ISpeechPhraseRule **Parent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Children(
-        ISpeechPhraseRules **Children) = 0;
+                     ISpeechPhraseRules **Children) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Confidence(
-        SpeechEngineConfidence *ActualConfidence) = 0;
+                     SpeechEngineConfidence *ActualConfidence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EngineConfidence(
-        float *EngineConfidence) = 0;
+                     float *EngineConfidence) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21499,78 +21499,78 @@ typedef struct ISpeechPhraseRuleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseRule *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseRule *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseRule *This);
+                     ISpeechPhraseRule *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseRule *This);
+                     ISpeechPhraseRule *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseRule *This,
-        UINT *pctinfo);
+                     ISpeechPhraseRule *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseRule *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseRule *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseRule *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseRule *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseRule *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseRule *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseRule methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ISpeechPhraseRule *This,
-        BSTR *Name);
+                     ISpeechPhraseRule *This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ISpeechPhraseRule *This,
-        LONG *Id);
+                     ISpeechPhraseRule *This,
+                     LONG *Id);
 
     HRESULT (STDMETHODCALLTYPE *get_FirstElement)(
-        ISpeechPhraseRule *This,
-        LONG *FirstElement);
+                     ISpeechPhraseRule *This,
+                     LONG *FirstElement);
 
     HRESULT (STDMETHODCALLTYPE *get_NumberOfElements)(
-        ISpeechPhraseRule *This,
-        LONG *NumberOfElements);
+                     ISpeechPhraseRule *This,
+                     LONG *NumberOfElements);
 
     HRESULT (STDMETHODCALLTYPE *get_Parent)(
-        ISpeechPhraseRule *This,
-        ISpeechPhraseRule **Parent);
+                     ISpeechPhraseRule *This,
+                     ISpeechPhraseRule **Parent);
 
     HRESULT (STDMETHODCALLTYPE *get_Children)(
-        ISpeechPhraseRule *This,
-        ISpeechPhraseRules **Children);
+                     ISpeechPhraseRule *This,
+                     ISpeechPhraseRules **Children);
 
     HRESULT (STDMETHODCALLTYPE *get_Confidence)(
-        ISpeechPhraseRule *This,
-        SpeechEngineConfidence *ActualConfidence);
+                     ISpeechPhraseRule *This,
+                     SpeechEngineConfidence *ActualConfidence);
 
     HRESULT (STDMETHODCALLTYPE *get_EngineConfidence)(
-        ISpeechPhraseRule *This,
-        float *EngineConfidence);
+                     ISpeechPhraseRule *This,
+                     float *EngineConfidence);
 
     END_INTERFACE
 } ISpeechPhraseRuleVtbl;
@@ -21668,14 +21668,14 @@ MIDL_INTERFACE("9047d593-01dd-4b72-81a3-e4a0ca69f407")
 ISpeechPhraseRules : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechPhraseRule **Rule) = 0;
+                     LONG Index,
+                     ISpeechPhraseRule **Rule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21687,59 +21687,59 @@ typedef struct ISpeechPhraseRulesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhraseRules *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhraseRules *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhraseRules *This);
+                     ISpeechPhraseRules *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhraseRules *This);
+                     ISpeechPhraseRules *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhraseRules *This,
-        UINT *pctinfo);
+                     ISpeechPhraseRules *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhraseRules *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhraseRules *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhraseRules *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhraseRules *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhraseRules *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhraseRules *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhraseRules methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechPhraseRules *This,
-        LONG *Count);
+                     ISpeechPhraseRules *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechPhraseRules *This,
-        LONG Index,
-        ISpeechPhraseRule **Rule);
+                     ISpeechPhraseRules *This,
+                     LONG Index,
+                     ISpeechPhraseRule **Rule);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechPhraseRules *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechPhraseRules *This,
+                     IUnknown **EnumVARIANT);
 
     END_INTERFACE
 } ISpeechPhraseRulesVtbl;
@@ -21817,14 +21817,14 @@ MIDL_INTERFACE("8d199862-415e-47d5-ac4f-faa608b424e6")
 ISpeechLexiconWords : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechLexiconWord **Word) = 0;
+                     LONG Index,
+                     ISpeechLexiconWord **Word) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -21836,59 +21836,59 @@ typedef struct ISpeechLexiconWordsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechLexiconWords *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechLexiconWords *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechLexiconWords *This);
+                     ISpeechLexiconWords *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechLexiconWords *This);
+                     ISpeechLexiconWords *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechLexiconWords *This,
-        UINT *pctinfo);
+                     ISpeechLexiconWords *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechLexiconWords *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechLexiconWords *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechLexiconWords *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechLexiconWords *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechLexiconWords *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechLexiconWords *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechLexiconWords methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechLexiconWords *This,
-        LONG *Count);
+                     ISpeechLexiconWords *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechLexiconWords *This,
-        LONG Index,
-        ISpeechLexiconWord **Word);
+                     ISpeechLexiconWords *This,
+                     LONG Index,
+                     ISpeechLexiconWord **Word);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechLexiconWords *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechLexiconWords *This,
+                     IUnknown **EnumVARIANT);
 
     END_INTERFACE
 } ISpeechLexiconWordsVtbl;
@@ -21966,46 +21966,46 @@ MIDL_INTERFACE("3da7627a-c7ae-4b23-8708-638c50362c25")
 ISpeechLexicon : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_GenerationId(
-        LONG *GenerationId) = 0;
+                     LONG *GenerationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWords(
-        SpeechLexiconType Flags,
-        LONG *GenerationID,
-        ISpeechLexiconWords **Words) = 0;
+                     SpeechLexiconType Flags,
+                     LONG *GenerationID,
+                     ISpeechLexiconWords **Words) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPronunciation(
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
-        BSTR bstrPronunciation = L"") = 0;
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
+                     BSTR bstrPronunciation = L"") = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPronunciationByPhoneIds(
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
-        VARIANT *PhoneIds = 0) = 0;
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
+                     VARIANT *PhoneIds = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemovePronunciation(
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
-        BSTR bstrPronunciation = L"") = 0;
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
+                     BSTR bstrPronunciation = L"") = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemovePronunciationByPhoneIds(
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
-        VARIANT *PhoneIds = 0) = 0;
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
+                     VARIANT *PhoneIds = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPronunciations(
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechLexiconType TypeFlags,
-        ISpeechLexiconPronunciations **ppPronunciations) = 0;
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechLexiconType TypeFlags,
+                     ISpeechLexiconPronunciations **ppPronunciations) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGenerationChange(
-        LONG *GenerationID,
-        ISpeechLexiconWords **ppWords) = 0;
+                     LONG *GenerationID,
+                     ISpeechLexiconWords **ppWords) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -22017,96 +22017,96 @@ typedef struct ISpeechLexiconVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechLexicon *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechLexicon *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechLexicon *This);
+                     ISpeechLexicon *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechLexicon *This);
+                     ISpeechLexicon *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechLexicon *This,
-        UINT *pctinfo);
+                     ISpeechLexicon *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechLexicon *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechLexicon *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechLexicon *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechLexicon *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechLexicon *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechLexicon *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechLexicon methods ***/
     HRESULT (STDMETHODCALLTYPE *get_GenerationId)(
-        ISpeechLexicon *This,
-        LONG *GenerationId);
+                     ISpeechLexicon *This,
+                     LONG *GenerationId);
 
     HRESULT (STDMETHODCALLTYPE *GetWords)(
-        ISpeechLexicon *This,
-        SpeechLexiconType Flags,
-        LONG *GenerationID,
-        ISpeechLexiconWords **Words);
+                     ISpeechLexicon *This,
+                     SpeechLexiconType Flags,
+                     LONG *GenerationID,
+                     ISpeechLexiconWords **Words);
 
     HRESULT (STDMETHODCALLTYPE *AddPronunciation)(
-        ISpeechLexicon *This,
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechPartOfSpeech PartOfSpeech,
-        BSTR bstrPronunciation);
+                     ISpeechLexicon *This,
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechPartOfSpeech PartOfSpeech,
+                     BSTR bstrPronunciation);
 
     HRESULT (STDMETHODCALLTYPE *AddPronunciationByPhoneIds)(
-        ISpeechLexicon *This,
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechPartOfSpeech PartOfSpeech,
-        VARIANT *PhoneIds);
+                     ISpeechLexicon *This,
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechPartOfSpeech PartOfSpeech,
+                     VARIANT *PhoneIds);
 
     HRESULT (STDMETHODCALLTYPE *RemovePronunciation)(
-        ISpeechLexicon *This,
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechPartOfSpeech PartOfSpeech,
-        BSTR bstrPronunciation);
+                     ISpeechLexicon *This,
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechPartOfSpeech PartOfSpeech,
+                     BSTR bstrPronunciation);
 
     HRESULT (STDMETHODCALLTYPE *RemovePronunciationByPhoneIds)(
-        ISpeechLexicon *This,
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechPartOfSpeech PartOfSpeech,
-        VARIANT *PhoneIds);
+                     ISpeechLexicon *This,
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechPartOfSpeech PartOfSpeech,
+                     VARIANT *PhoneIds);
 
     HRESULT (STDMETHODCALLTYPE *GetPronunciations)(
-        ISpeechLexicon *This,
-        BSTR bstrWord,
-        SpeechLanguageId LangId,
-        SpeechLexiconType TypeFlags,
-        ISpeechLexiconPronunciations **ppPronunciations);
+                     ISpeechLexicon *This,
+                     BSTR bstrWord,
+                     SpeechLanguageId LangId,
+                     SpeechLexiconType TypeFlags,
+                     ISpeechLexiconPronunciations **ppPronunciations);
 
     HRESULT (STDMETHODCALLTYPE *GetGenerationChange)(
-        ISpeechLexicon *This,
-        LONG *GenerationID,
-        ISpeechLexiconWords **ppWords);
+                     ISpeechLexicon *This,
+                     LONG *GenerationID,
+                     ISpeechLexiconWords **ppWords);
 
     END_INTERFACE
 } ISpeechLexiconVtbl;
@@ -22204,16 +22204,16 @@ MIDL_INTERFACE("4e5b933c-c9be-48ed-8842-1ee51bb1d4ff")
 ISpeechLexiconWord : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_LangId(
-        SpeechLanguageId *LangId) = 0;
+                     SpeechLanguageId *LangId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        SpeechWordType *WordType) = 0;
+                     SpeechWordType *WordType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Word(
-        BSTR *Word) = 0;
+                     BSTR *Word) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Pronunciations(
-        ISpeechLexiconPronunciations **Pronunciations) = 0;
+                     ISpeechLexiconPronunciations **Pronunciations) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -22225,62 +22225,62 @@ typedef struct ISpeechLexiconWordVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechLexiconWord *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechLexiconWord *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechLexiconWord *This);
+                     ISpeechLexiconWord *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechLexiconWord *This);
+                     ISpeechLexiconWord *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechLexiconWord *This,
-        UINT *pctinfo);
+                     ISpeechLexiconWord *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechLexiconWord *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechLexiconWord *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechLexiconWord *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechLexiconWord *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechLexiconWord *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechLexiconWord *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechLexiconWord methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LangId)(
-        ISpeechLexiconWord *This,
-        SpeechLanguageId *LangId);
+                     ISpeechLexiconWord *This,
+                     SpeechLanguageId *LangId);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        ISpeechLexiconWord *This,
-        SpeechWordType *WordType);
+                     ISpeechLexiconWord *This,
+                     SpeechWordType *WordType);
 
     HRESULT (STDMETHODCALLTYPE *get_Word)(
-        ISpeechLexiconWord *This,
-        BSTR *Word);
+                     ISpeechLexiconWord *This,
+                     BSTR *Word);
 
     HRESULT (STDMETHODCALLTYPE *get_Pronunciations)(
-        ISpeechLexiconWord *This,
-        ISpeechLexiconPronunciations **Pronunciations);
+                     ISpeechLexiconWord *This,
+                     ISpeechLexiconPronunciations **Pronunciations);
 
     END_INTERFACE
 } ISpeechLexiconWordVtbl;
@@ -22362,14 +22362,14 @@ MIDL_INTERFACE("72829128-5682-4704-a0d4-3e2bb6f2ead3")
 ISpeechLexiconPronunciations : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        ISpeechLexiconPronunciation **Pronunciation) = 0;
+                     LONG Index,
+                     ISpeechLexiconPronunciation **Pronunciation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **EnumVARIANT) = 0;
+                     IUnknown **EnumVARIANT) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -22381,59 +22381,59 @@ typedef struct ISpeechLexiconPronunciationsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechLexiconPronunciations *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechLexiconPronunciations *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechLexiconPronunciations *This);
+                     ISpeechLexiconPronunciations *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechLexiconPronunciations *This);
+                     ISpeechLexiconPronunciations *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechLexiconPronunciations *This,
-        UINT *pctinfo);
+                     ISpeechLexiconPronunciations *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechLexiconPronunciations *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechLexiconPronunciations *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechLexiconPronunciations *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechLexiconPronunciations *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechLexiconPronunciations *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechLexiconPronunciations *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechLexiconPronunciations methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ISpeechLexiconPronunciations *This,
-        LONG *Count);
+                     ISpeechLexiconPronunciations *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        ISpeechLexiconPronunciations *This,
-        LONG Index,
-        ISpeechLexiconPronunciation **Pronunciation);
+                     ISpeechLexiconPronunciations *This,
+                     LONG Index,
+                     ISpeechLexiconPronunciation **Pronunciation);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ISpeechLexiconPronunciations *This,
-        IUnknown **EnumVARIANT);
+                     ISpeechLexiconPronunciations *This,
+                     IUnknown **EnumVARIANT);
 
     END_INTERFACE
 } ISpeechLexiconPronunciationsVtbl;
@@ -22511,19 +22511,19 @@ MIDL_INTERFACE("95252c5d-9e43-4f4a-9899-48ee73352f9f")
 ISpeechLexiconPronunciation : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        SpeechLexiconType *LexiconType) = 0;
+                     SpeechLexiconType *LexiconType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LangId(
-        SpeechLanguageId *LangId) = 0;
+                     SpeechLanguageId *LangId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PartOfSpeech(
-        SpeechPartOfSpeech *PartOfSpeech) = 0;
+                     SpeechPartOfSpeech *PartOfSpeech) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PhoneIds(
-        VARIANT *PhoneIds) = 0;
+                     VARIANT *PhoneIds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Symbolic(
-        BSTR *Symbolic) = 0;
+                     BSTR *Symbolic) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -22535,66 +22535,66 @@ typedef struct ISpeechLexiconPronunciationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechLexiconPronunciation *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechLexiconPronunciation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechLexiconPronunciation *This);
+                     ISpeechLexiconPronunciation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechLexiconPronunciation *This);
+                     ISpeechLexiconPronunciation *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechLexiconPronunciation *This,
-        UINT *pctinfo);
+                     ISpeechLexiconPronunciation *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechLexiconPronunciation *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechLexiconPronunciation *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechLexiconPronunciation *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechLexiconPronunciation *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechLexiconPronunciation *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechLexiconPronunciation *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechLexiconPronunciation methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        ISpeechLexiconPronunciation *This,
-        SpeechLexiconType *LexiconType);
+                     ISpeechLexiconPronunciation *This,
+                     SpeechLexiconType *LexiconType);
 
     HRESULT (STDMETHODCALLTYPE *get_LangId)(
-        ISpeechLexiconPronunciation *This,
-        SpeechLanguageId *LangId);
+                     ISpeechLexiconPronunciation *This,
+                     SpeechLanguageId *LangId);
 
     HRESULT (STDMETHODCALLTYPE *get_PartOfSpeech)(
-        ISpeechLexiconPronunciation *This,
-        SpeechPartOfSpeech *PartOfSpeech);
+                     ISpeechLexiconPronunciation *This,
+                     SpeechPartOfSpeech *PartOfSpeech);
 
     HRESULT (STDMETHODCALLTYPE *get_PhoneIds)(
-        ISpeechLexiconPronunciation *This,
-        VARIANT *PhoneIds);
+                     ISpeechLexiconPronunciation *This,
+                     VARIANT *PhoneIds);
 
     HRESULT (STDMETHODCALLTYPE *get_Symbolic)(
-        ISpeechLexiconPronunciation *This,
-        BSTR *Symbolic);
+                     ISpeechLexiconPronunciation *This,
+                     BSTR *Symbolic);
 
     END_INTERFACE
 } ISpeechLexiconPronunciationVtbl;
@@ -22680,18 +22680,18 @@ MIDL_INTERFACE("c3e4f353-433f-43d6-89a1-6a62a7054c3d")
 ISpeechPhoneConverter : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_LanguageId(
-        SpeechLanguageId *LanguageId) = 0;
+                     SpeechLanguageId *LanguageId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LanguageId(
-        SpeechLanguageId LanguageId) = 0;
+                     SpeechLanguageId LanguageId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PhoneToId(
-        const BSTR Phonemes,
-        VARIANT *IdArray) = 0;
+                     const BSTR Phonemes,
+                     VARIANT *IdArray) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IdToPhone(
-        const VARIANT IdArray,
-        BSTR *Phonemes) = 0;
+                     const VARIANT IdArray,
+                     BSTR *Phonemes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -22703,64 +22703,64 @@ typedef struct ISpeechPhoneConverterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpeechPhoneConverter *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpeechPhoneConverter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpeechPhoneConverter *This);
+                     ISpeechPhoneConverter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpeechPhoneConverter *This);
+                     ISpeechPhoneConverter *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ISpeechPhoneConverter *This,
-        UINT *pctinfo);
+                     ISpeechPhoneConverter *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ISpeechPhoneConverter *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ISpeechPhoneConverter *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ISpeechPhoneConverter *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ISpeechPhoneConverter *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ISpeechPhoneConverter *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ISpeechPhoneConverter *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ISpeechPhoneConverter methods ***/
     HRESULT (STDMETHODCALLTYPE *get_LanguageId)(
-        ISpeechPhoneConverter *This,
-        SpeechLanguageId *LanguageId);
+                     ISpeechPhoneConverter *This,
+                     SpeechLanguageId *LanguageId);
 
     HRESULT (STDMETHODCALLTYPE *put_LanguageId)(
-        ISpeechPhoneConverter *This,
-        SpeechLanguageId LanguageId);
+                     ISpeechPhoneConverter *This,
+                     SpeechLanguageId LanguageId);
 
     HRESULT (STDMETHODCALLTYPE *PhoneToId)(
-        ISpeechPhoneConverter *This,
-        const BSTR Phonemes,
-        VARIANT *IdArray);
+                     ISpeechPhoneConverter *This,
+                     const BSTR Phonemes,
+                     VARIANT *IdArray);
 
     HRESULT (STDMETHODCALLTYPE *IdToPhone)(
-        ISpeechPhoneConverter *This,
-        const VARIANT IdArray,
-        BSTR *Phonemes);
+                     ISpeechPhoneConverter *This,
+                     const VARIANT IdArray,
+                     BSTR *Phonemes);
 
     END_INTERFACE
 } ISpeechPhoneConverterVtbl;
@@ -23220,18 +23220,18 @@ interface ISpeechResourceLoader;
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

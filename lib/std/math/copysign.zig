@@ -17,10 +17,10 @@ const maxInt = std.math.maxInt;
 /// Returns a value with the magnitude of x and the sign of y.
 pub fn copysign(comptime T: type, x: T, y: T) T {
     return switch (T) {
-        f16 => copysign16(x, y),
-        f32 => copysign32(x, y),
-        f64 => copysign64(x, y),
-        else => @compileError("copysign not implemented for " ++ @typeName(T)),
+                     f16 => copysign16(x, y),
+                     f32 => copysign32(x, y),
+                     f64 => copysign64(x, y),
+                     else => @compileError("copysign not implemented for " ++ @typeName(T)),
     };
 }
 

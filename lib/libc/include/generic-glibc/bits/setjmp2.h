@@ -23,14 +23,14 @@
 /* Variant of the longjmp functions which perform some sanity checking.  */
 #ifdef __REDIRECT_NTH
 extern void __REDIRECT_NTHNL (longjmp,
-			      (struct __jmp_buf_tag __env[1], int __val),
-			      __longjmp_chk) __attribute__ ((__noreturn__));
+			                   (struct __jmp_buf_tag __env[1], int __val),
+			                   __longjmp_chk) __attribute__ ((__noreturn__));
 extern void __REDIRECT_NTHNL (_longjmp,
-			      (struct __jmp_buf_tag __env[1], int __val),
-			      __longjmp_chk) __attribute__ ((__noreturn__));
+			                   (struct __jmp_buf_tag __env[1], int __val),
+			                   __longjmp_chk) __attribute__ ((__noreturn__));
 extern void __REDIRECT_NTHNL (siglongjmp,
-			      (struct __jmp_buf_tag __env[1], int __val),
-			      __longjmp_chk) __attribute__ ((__noreturn__));
+			                   (struct __jmp_buf_tag __env[1], int __val),
+			                   __longjmp_chk) __attribute__ ((__noreturn__));
 #else
 extern void __longjmp_chk (struct __jmp_buf_tag __env[1], int __val),
      __THROWNL __attribute__ ((__noreturn__));

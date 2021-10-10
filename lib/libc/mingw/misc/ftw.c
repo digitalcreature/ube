@@ -76,12 +76,12 @@ prepare_for_insert (int forced, node_t **bp, node_t **pp1, node_t **pp2, int p1_
 
   if ((p1_c > 0) == (p2_c > 0))
     {
-      *pp2 = *pp1;
-      p1->colored = 0;
-      p2->colored = 1;
-      *(p1_c < 0 ? &p2->l : &p2->r) = (p1_c < 0 ? p1->r : p1->l);
-      *(p1_c < 0 ? &p1->r : &p1->l) = p2;
-      return;
+                   *pp2 = *pp1;
+                   p1->colored = 0;
+                   p2->colored = 1;
+                   *(p1_c < 0 ? &p2->l : &p2->r) = (p1_c < 0 ? p1->r : p1->l);
+                   *(p1_c < 0 ? &p1->r : &p1->l) = p2;
+                   return;
     }
 
   b->colored = 0;
@@ -106,9 +106,9 @@ add_object (ctx_t *ctx)
 
   if (ctx->objs != NULL)
     {
-      c = 1;
+                   c = 1;
 
-      do
+                   do
 	{
 	  b = *bp;
 	  prepare_for_insert (0, bp, pp1, pp2, p1_c, p2_c);
@@ -123,7 +123,7 @@ add_object (ctx_t *ctx)
 	  p1_c = 1;
 	  bp = np;
 	}
-      while (*np != NULL);
+                   while (*np != NULL);
     }
 
   if (!(n = (node_t *) malloc (sizeof (node_t))))
@@ -150,22 +150,22 @@ open_directory (ctx_t *ctx, dir_data_t *dirp)
 
   if (ctx->dirs[ctx->cur_dir] != NULL)
     {
-      if (!(buf = malloc (1024)))
+                   if (!(buf = malloc (1024)))
 	return -1;
 
-      st = ctx->dirs[ctx->cur_dir]->h;
+                   st = ctx->dirs[ctx->cur_dir]->h;
 
-      buf_sz = 1024;
-      cur_sz = 0;
+                   buf_sz = 1024;
+                   cur_sz = 0;
 
-      while ((d = readdir (st)) != NULL)
+                   while ((d = readdir (st)) != NULL)
 	{
 	  sz = strlen (d->d_name);
 
 	  if ((cur_sz + sz + 2) >= buf_sz)
 	    {
-	      buf_sz += ((2 * sz) < 1024 ? 1024 : (2 * sz));
-	      if (!(h = (char *) realloc (buf, buf_sz)))
+	                   buf_sz += ((2 * sz) < 1024 ? 1024 : (2 * sz));
+	                   if (!(h = (char *) realloc (buf, buf_sz)))
 		{
 		  sv_e = errno;
 		  free (buf);
@@ -174,25 +174,25 @@ open_directory (ctx_t *ctx, dir_data_t *dirp)
 		  return -1;
 		}
 
-	      buf = h;
+	                   buf = h;
 	    }
 
 	  *((char *) memcpy (buf + cur_sz, d->d_name, sz) + sz) = 0;
 	  cur_sz += sz + 1;
 	}
 
-      buf[cur_sz++] = 0;
+                   buf[cur_sz++] = 0;
 
-      ctx->dirs[ctx->cur_dir]->buf = realloc (buf, cur_sz);
+                   ctx->dirs[ctx->cur_dir]->buf = realloc (buf, cur_sz);
 
-      if (ctx->dirs[ctx->cur_dir]->buf == NULL)
+                   if (ctx->dirs[ctx->cur_dir]->buf == NULL)
 	{
 	  sv_e = errno;
 	  free (buf);
 	  errno = sv_e;
 	  ret = -1;
 	}
-      else
+                   else
 	{
 	  closedir (st);
 
@@ -203,11 +203,11 @@ open_directory (ctx_t *ctx, dir_data_t *dirp)
 
   if (!ret)
     {
-      dirp->h = opendir (ctx->buf);
+                   dirp->h = opendir (ctx->buf);
 
-      if (dirp->h == NULL)
+                   if (dirp->h == NULL)
 	ret = -1;
-      else
+                   else
 	{
 	  dirp->buf = NULL;
 	  ctx->dirs[ctx->cur_dir] = dirp;
@@ -237,12 +237,12 @@ do_entity (ctx_t *ctx, dir_data_t *dir, const char *name, size_t namlen)
 
   if (ctx->buf_sz < cnt_sz)
     {
-      ctx->buf_sz = cnt_sz * 2;
-      
-      if (!(h = (char *) realloc (ctx->buf, ctx->buf_sz)))
+                   ctx->buf_sz = cnt_sz * 2;
+                   
+                   if (!(h = (char *) realloc (ctx->buf, ctx->buf_sz)))
 	return -1;
 
-      ctx->buf = h;
+                   ctx->buf = h;
     }
 
   *((char *) memcpy (ctx->buf + ctx->ftw.base, name, namlen) + namlen) = 0;
@@ -251,12 +251,12 @@ do_entity (ctx_t *ctx, dir_data_t *dir, const char *name, size_t namlen)
 
   if (stat (name, &st) < 0)
     {
-      if (errno != EACCES && errno != ENOENT)
+                   if (errno != EACCES && errno != ENOENT)
 	ret = -1;
-      else
+                   else
 	flag = FTW_NS;
 
-      if (!(ctx->flags & FTW_PHYS))
+                   if (!(ctx->flags & FTW_PHYS))
 	stat (name, &st);
     }
   else
@@ -264,12 +264,12 @@ do_entity (ctx_t *ctx, dir_data_t *dir, const char *name, size_t namlen)
 
   if (!ret && (flag == FTW_NS || !(ctx->flags & FTW_MOUNT) || st.st_dev == ctx->dev))
     {
-      if (flag == FTW_D)
+                   if (flag == FTW_D)
 	{
 	  if ((ctx->flags & FTW_PHYS) || !(ret = add_object (ctx)))
 	    ret = do_dir (ctx, &st, dir);
 	}
-      else
+                   else
 	ret = (*ctx->fcb) (ctx->buf, &st, flag, &ctx->ftw);
     }
 
@@ -290,24 +290,24 @@ do_dir (ctx_t *ctx, struct stat *st, __UNUSED_PARAM(dir_data_t *old_dir))
 
   if ((ret = open_directory (ctx, &dir)) != 0)
     {
-      if (errno == EACCES)
+                   if (errno == EACCES)
 	ret = (*ctx->fcb) (ctx->buf, st, FTW_DNR, &ctx->ftw);
 
-      return ret;
+                   return ret;
     }
 
   if (!(ctx->flags & FTW_DEPTH) && (ret = (*ctx->fcb) (ctx->buf, st, FTW_D, &ctx->ftw)) != 0)
     {
-      sv_e = errno;
-      closedir (dir.h);
-      errno = sv_e;
+                   sv_e = errno;
+                   closedir (dir.h);
+                   errno = sv_e;
 
-      if (ctx->cur_dir-- == 0)
+                   if (ctx->cur_dir-- == 0)
 	ctx->cur_dir = ctx->msz_dir - 1;
 
-      ctx->dirs[ctx->cur_dir] = NULL;
+                   ctx->dirs[ctx->cur_dir] = NULL;
 
-      return ret;
+                   return ret;
     }
 
   ctx->ftw.level += 1;
@@ -319,34 +319,34 @@ do_dir (ctx_t *ctx, struct stat *st, __UNUSED_PARAM(dir_data_t *old_dir))
   ctx->ftw.base = (startp - ctx->buf);
 
   while (dir.h != NULL && (d = readdir (dir.h)) != NULL
-         && !(ret = do_entity (ctx, &dir, d->d_name, strlen (d->d_name))))
-      ;
+                      && !(ret = do_entity (ctx, &dir, d->d_name, strlen (d->d_name))))
+                   ;
 
   if (dir.h != NULL)
     {
-      sv_e = errno;
-      closedir (dir.h);
-      errno = sv_e;
+                   sv_e = errno;
+                   closedir (dir.h);
+                   errno = sv_e;
 
-      if (ctx->cur_dir-- == 0)
+                   if (ctx->cur_dir-- == 0)
 	ctx->cur_dir = ctx->msz_dir - 1;
 
-      ctx->dirs[ctx->cur_dir] = NULL;
+                   ctx->dirs[ctx->cur_dir] = NULL;
     }
   else
     {
-      runp = dir.buf;
+                   runp = dir.buf;
 
-      while (!ret && *runp != 0)
+                   while (!ret && *runp != 0)
 	{
 	  endp = strchr (runp, 0);
 	  ret = do_entity (ctx, &dir, runp, endp - runp);
 	  runp = endp + 1;
 	}
 
-      sv_e = errno;
-      free (dir.buf);
-      errno = sv_e;
+                   sv_e = errno;
+                   free (dir.buf);
+                   errno = sv_e;
     }
 
   if ((ctx->flags & FTW_ACTIONRETVAL) && ret == FTW_SKIP_SIBLINGS)
@@ -422,9 +422,9 @@ do_it (const char *dir, __UNUSED_PARAM(int is_nftw), void *fcb, int descriptors,
 
   if (!ret)
     {
-      if (stat (ctx.buf, &st) < 0)
+                   if (stat (ctx.buf, &st) < 0)
 	ret = -1;
-      else if (S_ISDIR (st.st_mode))
+                   else if (S_ISDIR (st.st_mode))
 	{
 	  ctx.dev = st.st_dev;
 
@@ -434,10 +434,10 @@ do_it (const char *dir, __UNUSED_PARAM(int is_nftw), void *fcb, int descriptors,
 	  if (!ret)
 	    ret = do_dir (&ctx, &st, NULL);
 	}
-      else
+                   else
 	ret = (*ctx.fcb) (ctx.buf, &st, FTW_F, &ctx.ftw);
 
-      if ((flags & FTW_ACTIONRETVAL) && (ret == FTW_SKIP_SUBTREE || ret == FTW_SKIP_SIBLINGS))
+                   if ((flags & FTW_ACTIONRETVAL) && (ret == FTW_SKIP_SUBTREE || ret == FTW_SKIP_SIBLINGS))
 	ret = 0;
     }
 

@@ -19,12 +19,12 @@ pub fn __mulodi4(a: i64, b: i64, overflow: *c_int) callconv(.C) i64 {
 
     // Edge cases
     if (a == min) {
-        if (b != 0 and b != 1) overflow.* = 1;
-        return result;
+                     if (b != 0 and b != 1) overflow.* = 1;
+                     return result;
     }
     if (b == min) {
-        if (a != 0 and a != 1) overflow.* = 1;
-        return result;
+                     if (a != 0 and a != 1) overflow.* = 1;
+                     return result;
     }
 
     // Take absolute value of a and b via abs(x) = (x^(x >> 63)) - (x >> 63).
@@ -36,9 +36,9 @@ pub fn __mulodi4(a: i64, b: i64, overflow: *c_int) callconv(.C) i64 {
 
     // Compare the signs of the operands
     if ((a ^ b) >> 63 != 0) {
-        if (abs_a > @divTrunc(max, abs_b)) overflow.* = 1;
+                     if (abs_a > @divTrunc(max, abs_b)) overflow.* = 1;
     } else {
-        if (abs_a > @divTrunc(min, -abs_b)) overflow.* = 1;
+                     if (abs_a > @divTrunc(min, -abs_b)) overflow.* = 1;
     }
 
     return result;

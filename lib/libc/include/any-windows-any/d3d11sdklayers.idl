@@ -1247,7 +1247,7 @@ interface ID3D11Debug : IUnknown {
 ]
 interface ID3D11SwitchToRef : IUnknown {
     BOOL SetUseRef(
-        [in] BOOL useref
+                     [in] BOOL useref
     );
     BOOL GetUseRef();
 }
@@ -1290,7 +1290,7 @@ cpp_quote("#endif")
     void PopRetrievalFilter();
     UINT GetRetrievalFilterStackSize();
     HRESULT AddMessage(D3D11_MESSAGE_CATEGORY Category, D3D11_MESSAGE_SEVERITY Severity,
-            D3D11_MESSAGE_ID ID, LPCSTR pDescription);
+                                      D3D11_MESSAGE_ID ID, LPCSTR pDescription);
     HRESULT AddApplicationMessage(D3D11_MESSAGE_SEVERITY Severity, LPCSTR pDescription);
     HRESULT SetBreakOnCategory(D3D11_MESSAGE_CATEGORY Category, BOOL bEnable);
     HRESULT SetBreakOnSeverity(D3D11_MESSAGE_SEVERITY Severity, BOOL bEnable);

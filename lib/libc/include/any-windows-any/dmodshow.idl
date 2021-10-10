@@ -28,7 +28,7 @@ cpp_quote("DEFINE_GUID(CLSID_DMOWrapperFilter,  0x94297043, 0xbd82, 0x4dfd, 0xb0
 interface IDMOWrapperFilter : IUnknown
 {
     HRESULT Init(
-      REFCLSID clsidDMO,
-      REFCLSID catDMO
+                   REFCLSID clsidDMO,
+                   REFCLSID catDMO
     );
 }

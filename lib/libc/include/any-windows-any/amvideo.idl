@@ -201,9 +201,9 @@ typedef struct tagVIDEOINFO
 
     union
     {
-        RGBQUAD bmiColors[iPALETTE_COLORS];
-        DWORD dwBitMasks[iMASK_COLORS];
-        TRUECOLORINFO TrueColorInfo;
+                     RGBQUAD bmiColors[iPALETTE_COLORS];
+                     DWORD dwBitMasks[iMASK_COLORS];
+                     TRUECOLORINFO TrueColorInfo;
     };
 } VIDEOINFO;
 

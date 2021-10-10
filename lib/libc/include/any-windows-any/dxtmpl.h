@@ -75,10 +75,10 @@ struct CDXPlex {
   void FreeDataChain() {
     CDXPlex *p = this;
     while(p!=NULL) {
-      BYTE *bytes = (BYTE*) p;
-      CDXPlex *pNext = p->pNext;
-      delete [] bytes;
-      p = pNext;
+                   BYTE *bytes = (BYTE*) p;
+                   CDXPlex *pNext = p->pNext;
+                   delete [] bytes;
+                   p = pNext;
     }
   }
 };
@@ -160,9 +160,9 @@ void CDXArray<TYPE,ARG_TYPE>::SetSize(int nNewSize,int nGrowBy) {
   if(nGrowBy!=-1) m_nGrowBy = nGrowBy;
   if(nNewSize==0) {
     if(m_pData!=NULL) {
-      DXDestructElements(m_pData,m_nSize);
-      delete[] (BYTE*)m_pData;
-      m_pData = NULL;
+                   DXDestructElements(m_pData,m_nSize);
+                   delete[] (BYTE*)m_pData;
+                   m_pData = NULL;
     }
     m_nSize = m_nMaxSize = 0;
   } else if(!m_pData) {
@@ -174,9 +174,9 @@ void CDXArray<TYPE,ARG_TYPE>::SetSize(int nNewSize,int nGrowBy) {
     m_nSize = m_nMaxSize = nNewSize;
   } else if(nNewSize <= m_nMaxSize) {
     if(nNewSize > m_nSize) {
-      DXConstructElements(&m_pData[m_nSize],nNewSize-m_nSize);
+                   DXConstructElements(&m_pData[m_nSize],nNewSize-m_nSize);
     } else if(m_nSize > nNewSize) {
-      DXDestructElements(&m_pData[nNewSize],m_nSize-nNewSize);
+                   DXDestructElements(&m_pData[nNewSize],m_nSize-nNewSize);
     }
     m_nSize = nNewSize;
   } else {
@@ -229,9 +229,9 @@ void CDXArray<TYPE,ARG_TYPE>::FreeExtra() {
 #endif
     TYPE *pNewData = NULL;
     if(m_nSize!=0) {
-      pNewData = (TYPE*) new BYTE[m_nSize *sizeof(TYPE)];
-      if(!pNewData) return;
-      memcpy(pNewData,m_pData,m_nSize *sizeof(TYPE));
+                   pNewData = (TYPE*) new BYTE[m_nSize *sizeof(TYPE)];
+                   if(!pNewData) return;
+                   memcpy(pNewData,m_pData,m_nSize *sizeof(TYPE));
     }
     delete[] (BYTE*)m_pData;
     m_pData = pNewData;
@@ -285,7 +285,7 @@ void CDXArray<TYPE,ARG_TYPE>::InsertAt(int nStartIndex,CDXArray *pNewArray) {
   if(pNewArray->GetSize() > 0) {
     InsertAt(nStartIndex,pNewArray->GetAt(0),pNewArray->GetSize());
     for(int i = 0;i < pNewArray->GetSize();i++)
-      SetAt(nStartIndex + i,pNewArray->GetAt(i));
+                   SetAt(nStartIndex + i,pNewArray->GetAt(i));
   }
 }
 
@@ -463,8 +463,8 @@ CDXList<TYPE,ARG_TYPE>::NewNode(CNode *pPrev,CNode *pNext) {
     CNode *pNode = (CNode *) pNewBlock->data();
     pNode += m_nBlockSize - 1;
     for(int i = m_nBlockSize-1;i >= 0;i--,pNode--) {
-      pNode->pNext = m_pNodeFree;
-      m_pNodeFree = pNode;
+                   pNode->pNext = m_pNodeFree;
+                   m_pNodeFree = pNode;
     }
   }
   _ASSERT(m_pNodeFree!=NULL);
@@ -734,13 +734,13 @@ void CDXMap<KEY,ARG_KEY,VALUE,ARG_VALUE>::RemoveAll() {
   DXASSERT_VALID(this);
   if(m_pHashTable!=NULL) {
     for(UINT nHash = 0;nHash < m_nHashTableSize;nHash++) {
-      CAssoc *pAssoc;
-      for(pAssoc = m_pHashTable[nHash]; pAssoc!=NULL;
+                   CAssoc *pAssoc;
+                   for(pAssoc = m_pHashTable[nHash]; pAssoc!=NULL;
 	pAssoc = pAssoc->pNext)
-      {
+                   {
 	DXDestructElements(&pAssoc->value,1);
 	DXDestructElements(&pAssoc->key,1);
-      }
+                   }
     }
   }
   delete[] m_pHashTable;
@@ -765,8 +765,8 @@ CDXMap<KEY,ARG_KEY,VALUE,ARG_VALUE>::NewAssoc() {
     CDXMap::CAssoc *pAssoc = (CDXMap::CAssoc*) newBlock->data();
     pAssoc += m_nBlockSize - 1;
     for(int i = m_nBlockSize-1;i >= 0;i--,pAssoc--) {
-      pAssoc->pNext = m_pFreeList;
-      m_pFreeList = pAssoc;
+                   pAssoc->pNext = m_pFreeList;
+                   m_pFreeList = pAssoc;
     }
   }
   _ASSERT(m_pFreeList!=NULL);
@@ -836,9 +836,9 @@ WINBOOL CDXMap<KEY,ARG_KEY,VALUE,ARG_VALUE>::RemoveKey(ARG_KEY key) {
   CAssoc *pAssoc;
   for(pAssoc = *ppAssocPrev;pAssoc!=NULL;pAssoc = pAssoc->pNext) {
     if(DXCompareElements(&pAssoc->key,&key)) {
-      *ppAssocPrev = pAssoc->pNext;
-      FreeAssoc(pAssoc);
-      return TRUE;
+                   *ppAssocPrev = pAssoc->pNext;
+                   FreeAssoc(pAssoc);
+                   return TRUE;
     }
     ppAssocPrev = &pAssoc->pNext;
   }
@@ -853,7 +853,7 @@ void CDXMap<KEY,ARG_KEY,VALUE,ARG_VALUE>::GetNextAssoc(DXLISTPOS &rNextPosition,
   _ASSERT(pAssocRet!=NULL);
   if(pAssocRet==(CAssoc*) DX_BEFORE_START_POSITION) {
     for(UINT nBucket = 0;nBucket < m_nHashTableSize;nBucket++)
-      if((pAssocRet = m_pHashTable[nBucket])!=NULL)
+                   if((pAssocRet = m_pHashTable[nBucket])!=NULL)
 	break;
     _ASSERT(pAssocRet!=NULL);
   }
@@ -861,7 +861,7 @@ void CDXMap<KEY,ARG_KEY,VALUE,ARG_VALUE>::GetNextAssoc(DXLISTPOS &rNextPosition,
   CAssoc *pAssocNext;
   if(!(pAssocNext = pAssocRet->pNext)) {
     for(UINT nBucket = pAssocRet->nHashValue + 1;nBucket < m_nHashTableSize;nBucket++)
-      if((pAssocNext = m_pHashTable[nBucket])!=NULL)
+                   if((pAssocNext = m_pHashTable[nBucket])!=NULL)
 	break;
   }
   rNextPosition = (DXLISTPOS) pAssocNext;

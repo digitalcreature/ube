@@ -41,7 +41,7 @@ _int_localtime32_s (struct tm *ptm, const __time32_t *pt)
     memset (ptm, 0xff, sizeof (*ptm));
   if (!ptm || !pt)
      {
-        errno = EINVAL;
+                     errno = EINVAL;
 	return EINVAL;
      }
   if ((ltm = _localtime32 (pt)) == NULL)

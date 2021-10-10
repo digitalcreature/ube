@@ -41,12 +41,12 @@ struct elf_prstatus32
     __pid_t pr_pgrp;
     __pid_t pr_sid;
     struct
-      {
+                   {
 	int tv_sec, tv_usec;
-      } pr_utime,			/* User time.  */
-        pr_stime,			/* System time.  */
-        pr_cutime,			/* Cumulative user time.  */
-        pr_cstime;			/* Cumulative system time.  */
+                   } pr_utime,			/* User time.  */
+                     pr_stime,			/* System time.  */
+                     pr_cutime,			/* Cumulative user time.  */
+                     pr_cstime;			/* Cumulative system time.  */
     elf_gregset_t32 pr_reg;		/* GP registers.  */
     int pr_fpvalid;			/* True if math copro being used.  */
   };

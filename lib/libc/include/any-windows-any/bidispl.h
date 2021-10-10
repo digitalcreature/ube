@@ -91,14 +91,14 @@ extern "C"{
 #else
   typedef struct IBidiRequestVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBidiRequest *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBidiRequest *This);
-      ULONG (WINAPI *Release)(IBidiRequest *This);
-      HRESULT (WINAPI *SetSchema)(IBidiRequest *This,const LPCWSTR pszSchema);
-      HRESULT (WINAPI *SetInputData)(IBidiRequest *This,const DWORD dwType,const BYTE *pData,const UINT uSize);
-      HRESULT (WINAPI *GetResult)(IBidiRequest *This,HRESULT *phr);
-      HRESULT (WINAPI *GetOutputData)(IBidiRequest *This,const DWORD dwIndex,LPWSTR *ppszSchema,DWORD *pdwType,BYTE **ppData,ULONG *uSize);
-      HRESULT (WINAPI *GetEnumCount)(IBidiRequest *This,DWORD *pdwTotal);
+                   HRESULT (WINAPI *QueryInterface)(IBidiRequest *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBidiRequest *This);
+                   ULONG (WINAPI *Release)(IBidiRequest *This);
+                   HRESULT (WINAPI *SetSchema)(IBidiRequest *This,const LPCWSTR pszSchema);
+                   HRESULT (WINAPI *SetInputData)(IBidiRequest *This,const DWORD dwType,const BYTE *pData,const UINT uSize);
+                   HRESULT (WINAPI *GetResult)(IBidiRequest *This,HRESULT *phr);
+                   HRESULT (WINAPI *GetOutputData)(IBidiRequest *This,const DWORD dwIndex,LPWSTR *ppszSchema,DWORD *pdwType,BYTE **ppData,ULONG *uSize);
+                   HRESULT (WINAPI *GetEnumCount)(IBidiRequest *This,DWORD *pdwTotal);
     END_INTERFACE
   } IBidiRequestVtbl;
   struct IBidiRequest {
@@ -140,12 +140,12 @@ extern "C"{
 #else
   typedef struct IBidiRequestContainerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBidiRequestContainer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBidiRequestContainer *This);
-      ULONG (WINAPI *Release)(IBidiRequestContainer *This);
-      HRESULT (WINAPI *AddRequest)(IBidiRequestContainer *This,IBidiRequest *pRequest);
-      HRESULT (WINAPI *GetEnumObject)(IBidiRequestContainer *This,IEnumUnknown **ppenum);
-      HRESULT (WINAPI *GetRequestCount)(IBidiRequestContainer *This,ULONG *puCount);
+                   HRESULT (WINAPI *QueryInterface)(IBidiRequestContainer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBidiRequestContainer *This);
+                   ULONG (WINAPI *Release)(IBidiRequestContainer *This);
+                   HRESULT (WINAPI *AddRequest)(IBidiRequestContainer *This,IBidiRequest *pRequest);
+                   HRESULT (WINAPI *GetEnumObject)(IBidiRequestContainer *This,IEnumUnknown **ppenum);
+                   HRESULT (WINAPI *GetRequestCount)(IBidiRequestContainer *This,ULONG *puCount);
     END_INTERFACE
   } IBidiRequestContainerVtbl;
   struct IBidiRequestContainer {
@@ -182,13 +182,13 @@ extern "C"{
 #else
   typedef struct IBidiSplVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBidiSpl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBidiSpl *This);
-      ULONG (WINAPI *Release)(IBidiSpl *This);
-      HRESULT (WINAPI *BindDevice)(IBidiSpl *This,const LPCWSTR pszDeviceName,const DWORD dwAccess);
-      HRESULT (WINAPI *UnbindDevice)(IBidiSpl *This);
-      HRESULT (WINAPI *SendRecv)(IBidiSpl *This,const LPCWSTR pszAction,IBidiRequest *pRequest);
-      HRESULT (WINAPI *MultiSendRecv)(IBidiSpl *This,const LPCWSTR pszAction,IBidiRequestContainer *pRequestContainer);
+                   HRESULT (WINAPI *QueryInterface)(IBidiSpl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBidiSpl *This);
+                   ULONG (WINAPI *Release)(IBidiSpl *This);
+                   HRESULT (WINAPI *BindDevice)(IBidiSpl *This,const LPCWSTR pszDeviceName,const DWORD dwAccess);
+                   HRESULT (WINAPI *UnbindDevice)(IBidiSpl *This);
+                   HRESULT (WINAPI *SendRecv)(IBidiSpl *This,const LPCWSTR pszAction,IBidiRequest *pRequest);
+                   HRESULT (WINAPI *MultiSendRecv)(IBidiSpl *This,const LPCWSTR pszAction,IBidiRequestContainer *pRequestContainer);
     END_INTERFACE
   } IBidiSplVtbl;
   struct IBidiSpl {

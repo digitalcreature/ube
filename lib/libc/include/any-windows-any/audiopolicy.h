@@ -119,33 +119,33 @@ MIDL_INTERFACE("24918acc-64b3-37c1-8ca9-74a66e9957a8")
 IAudioSessionEvents : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnDisplayNameChanged(
-        LPCWSTR NewDisplayName,
-        LPCGUID EventContext) = 0;
+                     LPCWSTR NewDisplayName,
+                     LPCGUID EventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnIconPathChanged(
-        LPCWSTR NewIconPath,
-        LPCGUID EventContext) = 0;
+                     LPCWSTR NewIconPath,
+                     LPCGUID EventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnSimpleVolumeChanged(
-        float NewVolume,
-        WINBOOL NewMute,
-        LPCGUID EventContext) = 0;
+                     float NewVolume,
+                     WINBOOL NewMute,
+                     LPCGUID EventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnChannelVolumeChanged(
-        DWORD ChannelCount,
-        float NewChannelVolumeArray[],
-        DWORD ChangedChannel,
-        LPCGUID EventContext) = 0;
+                     DWORD ChannelCount,
+                     float NewChannelVolumeArray[],
+                     DWORD ChangedChannel,
+                     LPCGUID EventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnGroupingParamChanged(
-        LPCGUID NewGroupingParam,
-        LPCGUID EventContext) = 0;
+                     LPCGUID NewGroupingParam,
+                     LPCGUID EventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStateChanged(
-        AudioSessionState NewState) = 0;
+                     AudioSessionState NewState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnSessionDisconnected(
-        AudioSessionDisconnectReason DisconnectReason) = 0;
+                     AudioSessionDisconnectReason DisconnectReason) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -157,52 +157,52 @@ typedef struct IAudioSessionEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioSessionEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioSessionEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioSessionEvents *This);
+                     IAudioSessionEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioSessionEvents *This);
+                     IAudioSessionEvents *This);
 
     /*** IAudioSessionEvents methods ***/
     HRESULT (STDMETHODCALLTYPE *OnDisplayNameChanged)(
-        IAudioSessionEvents *This,
-        LPCWSTR NewDisplayName,
-        LPCGUID EventContext);
+                     IAudioSessionEvents *This,
+                     LPCWSTR NewDisplayName,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *OnIconPathChanged)(
-        IAudioSessionEvents *This,
-        LPCWSTR NewIconPath,
-        LPCGUID EventContext);
+                     IAudioSessionEvents *This,
+                     LPCWSTR NewIconPath,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *OnSimpleVolumeChanged)(
-        IAudioSessionEvents *This,
-        float NewVolume,
-        WINBOOL NewMute,
-        LPCGUID EventContext);
+                     IAudioSessionEvents *This,
+                     float NewVolume,
+                     WINBOOL NewMute,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *OnChannelVolumeChanged)(
-        IAudioSessionEvents *This,
-        DWORD ChannelCount,
-        float NewChannelVolumeArray[],
-        DWORD ChangedChannel,
-        LPCGUID EventContext);
+                     IAudioSessionEvents *This,
+                     DWORD ChannelCount,
+                     float NewChannelVolumeArray[],
+                     DWORD ChangedChannel,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *OnGroupingParamChanged)(
-        IAudioSessionEvents *This,
-        LPCGUID NewGroupingParam,
-        LPCGUID EventContext);
+                     IAudioSessionEvents *This,
+                     LPCGUID NewGroupingParam,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *OnStateChanged)(
-        IAudioSessionEvents *This,
-        AudioSessionState NewState);
+                     IAudioSessionEvents *This,
+                     AudioSessionState NewState);
 
     HRESULT (STDMETHODCALLTYPE *OnSessionDisconnected)(
-        IAudioSessionEvents *This,
-        AudioSessionDisconnectReason DisconnectReason);
+                     IAudioSessionEvents *This,
+                     AudioSessionDisconnectReason DisconnectReason);
 
     END_INTERFACE
 } IAudioSessionEventsVtbl;
@@ -279,34 +279,34 @@ MIDL_INTERFACE("f4b1a599-7266-4319-a8ca-e70acb11e8cd")
 IAudioSessionControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        AudioSessionState *pRetVal) = 0;
+                     AudioSessionState *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayName(
-        LPWSTR *pRetVal) = 0;
+                     LPWSTR *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDisplayName(
-        LPCWSTR Value,
-        LPCGUID EventContext) = 0;
+                     LPCWSTR Value,
+                     LPCGUID EventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIconPath(
-        LPWSTR *pRetVal) = 0;
+                     LPWSTR *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIconPath(
-        LPCWSTR Value,
-        LPCGUID EventContext) = 0;
+                     LPCWSTR Value,
+                     LPCGUID EventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGroupingParam(
-        GUID *pRetVal) = 0;
+                     GUID *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGroupingParam(
-        LPCGUID Override,
-        LPCGUID EventContext) = 0;
+                     LPCGUID Override,
+                     LPCGUID EventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterAudioSessionNotification(
-        IAudioSessionEvents *NewNotifications) = 0;
+                     IAudioSessionEvents *NewNotifications) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterAudioSessionNotification(
-        IAudioSessionEvents *NewNotifications) = 0;
+                     IAudioSessionEvents *NewNotifications) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -318,55 +318,55 @@ typedef struct IAudioSessionControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioSessionControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioSessionControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioSessionControl *This);
+                     IAudioSessionControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioSessionControl *This);
+                     IAudioSessionControl *This);
 
     /*** IAudioSessionControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IAudioSessionControl *This,
-        AudioSessionState *pRetVal);
+                     IAudioSessionControl *This,
+                     AudioSessionState *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IAudioSessionControl *This,
-        LPWSTR *pRetVal);
+                     IAudioSessionControl *This,
+                     LPWSTR *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *SetDisplayName)(
-        IAudioSessionControl *This,
-        LPCWSTR Value,
-        LPCGUID EventContext);
+                     IAudioSessionControl *This,
+                     LPCWSTR Value,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *GetIconPath)(
-        IAudioSessionControl *This,
-        LPWSTR *pRetVal);
+                     IAudioSessionControl *This,
+                     LPWSTR *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *SetIconPath)(
-        IAudioSessionControl *This,
-        LPCWSTR Value,
-        LPCGUID EventContext);
+                     IAudioSessionControl *This,
+                     LPCWSTR Value,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupingParam)(
-        IAudioSessionControl *This,
-        GUID *pRetVal);
+                     IAudioSessionControl *This,
+                     GUID *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *SetGroupingParam)(
-        IAudioSessionControl *This,
-        LPCGUID Override,
-        LPCGUID EventContext);
+                     IAudioSessionControl *This,
+                     LPCGUID Override,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *RegisterAudioSessionNotification)(
-        IAudioSessionControl *This,
-        IAudioSessionEvents *NewNotifications);
+                     IAudioSessionControl *This,
+                     IAudioSessionEvents *NewNotifications);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterAudioSessionNotification)(
-        IAudioSessionControl *This,
-        IAudioSessionEvents *NewNotifications);
+                     IAudioSessionControl *This,
+                     IAudioSessionEvents *NewNotifications);
 
     END_INTERFACE
 } IAudioSessionControlVtbl;
@@ -453,19 +453,19 @@ MIDL_INTERFACE("bfb7ff88-7239-4fc9-8fa2-07c950be9c6d")
 IAudioSessionControl2 : public IAudioSessionControl
 {
     virtual HRESULT STDMETHODCALLTYPE GetSessionIdentifier(
-        LPWSTR *pRetVal) = 0;
+                     LPWSTR *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSessionInstanceIdentifier(
-        LPWSTR *pRetVal) = 0;
+                     LPWSTR *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProcessId(
-        DWORD *pRetVal) = 0;
+                     DWORD *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSystemSoundsSession(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDuckingPreference(
-        WINBOOL optOut) = 0;
+                     WINBOOL optOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -477,75 +477,75 @@ typedef struct IAudioSessionControl2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioSessionControl2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioSessionControl2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioSessionControl2 *This);
+                     IAudioSessionControl2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioSessionControl2 *This);
+                     IAudioSessionControl2 *This);
 
     /*** IAudioSessionControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IAudioSessionControl2 *This,
-        AudioSessionState *pRetVal);
+                     IAudioSessionControl2 *This,
+                     AudioSessionState *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IAudioSessionControl2 *This,
-        LPWSTR *pRetVal);
+                     IAudioSessionControl2 *This,
+                     LPWSTR *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *SetDisplayName)(
-        IAudioSessionControl2 *This,
-        LPCWSTR Value,
-        LPCGUID EventContext);
+                     IAudioSessionControl2 *This,
+                     LPCWSTR Value,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *GetIconPath)(
-        IAudioSessionControl2 *This,
-        LPWSTR *pRetVal);
+                     IAudioSessionControl2 *This,
+                     LPWSTR *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *SetIconPath)(
-        IAudioSessionControl2 *This,
-        LPCWSTR Value,
-        LPCGUID EventContext);
+                     IAudioSessionControl2 *This,
+                     LPCWSTR Value,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *GetGroupingParam)(
-        IAudioSessionControl2 *This,
-        GUID *pRetVal);
+                     IAudioSessionControl2 *This,
+                     GUID *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *SetGroupingParam)(
-        IAudioSessionControl2 *This,
-        LPCGUID Override,
-        LPCGUID EventContext);
+                     IAudioSessionControl2 *This,
+                     LPCGUID Override,
+                     LPCGUID EventContext);
 
     HRESULT (STDMETHODCALLTYPE *RegisterAudioSessionNotification)(
-        IAudioSessionControl2 *This,
-        IAudioSessionEvents *NewNotifications);
+                     IAudioSessionControl2 *This,
+                     IAudioSessionEvents *NewNotifications);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterAudioSessionNotification)(
-        IAudioSessionControl2 *This,
-        IAudioSessionEvents *NewNotifications);
+                     IAudioSessionControl2 *This,
+                     IAudioSessionEvents *NewNotifications);
 
     /*** IAudioSessionControl2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSessionIdentifier)(
-        IAudioSessionControl2 *This,
-        LPWSTR *pRetVal);
+                     IAudioSessionControl2 *This,
+                     LPWSTR *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *GetSessionInstanceIdentifier)(
-        IAudioSessionControl2 *This,
-        LPWSTR *pRetVal);
+                     IAudioSessionControl2 *This,
+                     LPWSTR *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *GetProcessId)(
-        IAudioSessionControl2 *This,
-        DWORD *pRetVal);
+                     IAudioSessionControl2 *This,
+                     DWORD *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *IsSystemSoundsSession)(
-        IAudioSessionControl2 *This);
+                     IAudioSessionControl2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetDuckingPreference)(
-        IAudioSessionControl2 *This,
-        WINBOOL optOut);
+                     IAudioSessionControl2 *This,
+                     WINBOOL optOut);
 
     END_INTERFACE
 } IAudioSessionControl2Vtbl;
@@ -652,14 +652,14 @@ MIDL_INTERFACE("bfa971f1-4d5e-40bb-935e-967039bfbee4")
 IAudioSessionManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAudioSessionControl(
-        LPCGUID AudioSessionGuid,
-        DWORD StreamFlags,
-        IAudioSessionControl **SessionControl) = 0;
+                     LPCGUID AudioSessionGuid,
+                     DWORD StreamFlags,
+                     IAudioSessionControl **SessionControl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSimpleAudioVolume(
-        LPCGUID AudioSessionGuid,
-        DWORD StreamFlags,
-        ISimpleAudioVolume **AudioVolume) = 0;
+                     LPCGUID AudioSessionGuid,
+                     DWORD StreamFlags,
+                     ISimpleAudioVolume **AudioVolume) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -671,28 +671,28 @@ typedef struct IAudioSessionManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioSessionManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioSessionManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioSessionManager *This);
+                     IAudioSessionManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioSessionManager *This);
+                     IAudioSessionManager *This);
 
     /*** IAudioSessionManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAudioSessionControl)(
-        IAudioSessionManager *This,
-        LPCGUID AudioSessionGuid,
-        DWORD StreamFlags,
-        IAudioSessionControl **SessionControl);
+                     IAudioSessionManager *This,
+                     LPCGUID AudioSessionGuid,
+                     DWORD StreamFlags,
+                     IAudioSessionControl **SessionControl);
 
     HRESULT (STDMETHODCALLTYPE *GetSimpleAudioVolume)(
-        IAudioSessionManager *This,
-        LPCGUID AudioSessionGuid,
-        DWORD StreamFlags,
-        ISimpleAudioVolume **AudioVolume);
+                     IAudioSessionManager *This,
+                     LPCGUID AudioSessionGuid,
+                     DWORD StreamFlags,
+                     ISimpleAudioVolume **AudioVolume);
 
     END_INTERFACE
 } IAudioSessionManagerVtbl;
@@ -749,11 +749,11 @@ MIDL_INTERFACE("c3b284d4-6d39-4359-b3cf-b56ddb3bb39c")
 IAudioVolumeDuckNotification : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnVolumeDuckNotification(
-        LPCWSTR sessionID,
-        UINT32 countCommunicationSessions) = 0;
+                     LPCWSTR sessionID,
+                     UINT32 countCommunicationSessions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnVolumeUnduckNotification(
-        LPCWSTR sessionID) = 0;
+                     LPCWSTR sessionID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -765,25 +765,25 @@ typedef struct IAudioVolumeDuckNotificationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioVolumeDuckNotification *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioVolumeDuckNotification *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioVolumeDuckNotification *This);
+                     IAudioVolumeDuckNotification *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioVolumeDuckNotification *This);
+                     IAudioVolumeDuckNotification *This);
 
     /*** IAudioVolumeDuckNotification methods ***/
     HRESULT (STDMETHODCALLTYPE *OnVolumeDuckNotification)(
-        IAudioVolumeDuckNotification *This,
-        LPCWSTR sessionID,
-        UINT32 countCommunicationSessions);
+                     IAudioVolumeDuckNotification *This,
+                     LPCWSTR sessionID,
+                     UINT32 countCommunicationSessions);
 
     HRESULT (STDMETHODCALLTYPE *OnVolumeUnduckNotification)(
-        IAudioVolumeDuckNotification *This,
-        LPCWSTR sessionID);
+                     IAudioVolumeDuckNotification *This,
+                     LPCWSTR sessionID);
 
     END_INTERFACE
 } IAudioVolumeDuckNotificationVtbl;
@@ -840,7 +840,7 @@ MIDL_INTERFACE("641dd20b-4d41-49cc-aba3-174b9477bb08")
 IAudioSessionNotification : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnSessionCreated(
-        IAudioSessionControl *NewSession) = 0;
+                     IAudioSessionControl *NewSession) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -852,20 +852,20 @@ typedef struct IAudioSessionNotificationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioSessionNotification *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioSessionNotification *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioSessionNotification *This);
+                     IAudioSessionNotification *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioSessionNotification *This);
+                     IAudioSessionNotification *This);
 
     /*** IAudioSessionNotification methods ***/
     HRESULT (STDMETHODCALLTYPE *OnSessionCreated)(
-        IAudioSessionNotification *This,
-        IAudioSessionControl *NewSession);
+                     IAudioSessionNotification *This,
+                     IAudioSessionControl *NewSession);
 
     END_INTERFACE
 } IAudioSessionNotificationVtbl;
@@ -918,11 +918,11 @@ MIDL_INTERFACE("e2f5bb11-0570-40ca-acdd-3aa01277dee8")
 IAudioSessionEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        int *SessionCount) = 0;
+                     int *SessionCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSession(
-        int SessionCount,
-        IAudioSessionControl **Session) = 0;
+                     int SessionCount,
+                     IAudioSessionControl **Session) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -934,25 +934,25 @@ typedef struct IAudioSessionEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioSessionEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioSessionEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioSessionEnumerator *This);
+                     IAudioSessionEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioSessionEnumerator *This);
+                     IAudioSessionEnumerator *This);
 
     /*** IAudioSessionEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IAudioSessionEnumerator *This,
-        int *SessionCount);
+                     IAudioSessionEnumerator *This,
+                     int *SessionCount);
 
     HRESULT (STDMETHODCALLTYPE *GetSession)(
-        IAudioSessionEnumerator *This,
-        int SessionCount,
-        IAudioSessionControl **Session);
+                     IAudioSessionEnumerator *This,
+                     int SessionCount,
+                     IAudioSessionControl **Session);
 
     END_INTERFACE
 } IAudioSessionEnumeratorVtbl;
@@ -1009,20 +1009,20 @@ MIDL_INTERFACE("77aa99a0-1bd6-484f-8bc7-2c654c9a9b6f")
 IAudioSessionManager2 : public IAudioSessionManager
 {
     virtual HRESULT STDMETHODCALLTYPE GetSessionEnumerator(
-        IAudioSessionEnumerator **SessionEnum) = 0;
+                     IAudioSessionEnumerator **SessionEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterSessionNotification(
-        IAudioSessionNotification *SessionNotification) = 0;
+                     IAudioSessionNotification *SessionNotification) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterSessionNotification(
-        IAudioSessionNotification *SessionNotification) = 0;
+                     IAudioSessionNotification *SessionNotification) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterDuckNotification(
-        LPCWSTR sessionID,
-        IAudioVolumeDuckNotification *duckNotification) = 0;
+                     LPCWSTR sessionID,
+                     IAudioVolumeDuckNotification *duckNotification) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterDuckNotification(
-        IAudioVolumeDuckNotification *duckNotification) = 0;
+                     IAudioVolumeDuckNotification *duckNotification) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1034,50 +1034,50 @@ typedef struct IAudioSessionManager2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioSessionManager2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioSessionManager2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioSessionManager2 *This);
+                     IAudioSessionManager2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioSessionManager2 *This);
+                     IAudioSessionManager2 *This);
 
     /*** IAudioSessionManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAudioSessionControl)(
-        IAudioSessionManager2 *This,
-        LPCGUID AudioSessionGuid,
-        DWORD StreamFlags,
-        IAudioSessionControl **SessionControl);
+                     IAudioSessionManager2 *This,
+                     LPCGUID AudioSessionGuid,
+                     DWORD StreamFlags,
+                     IAudioSessionControl **SessionControl);
 
     HRESULT (STDMETHODCALLTYPE *GetSimpleAudioVolume)(
-        IAudioSessionManager2 *This,
-        LPCGUID AudioSessionGuid,
-        DWORD StreamFlags,
-        ISimpleAudioVolume **AudioVolume);
+                     IAudioSessionManager2 *This,
+                     LPCGUID AudioSessionGuid,
+                     DWORD StreamFlags,
+                     ISimpleAudioVolume **AudioVolume);
 
     /*** IAudioSessionManager2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSessionEnumerator)(
-        IAudioSessionManager2 *This,
-        IAudioSessionEnumerator **SessionEnum);
+                     IAudioSessionManager2 *This,
+                     IAudioSessionEnumerator **SessionEnum);
 
     HRESULT (STDMETHODCALLTYPE *RegisterSessionNotification)(
-        IAudioSessionManager2 *This,
-        IAudioSessionNotification *SessionNotification);
+                     IAudioSessionManager2 *This,
+                     IAudioSessionNotification *SessionNotification);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterSessionNotification)(
-        IAudioSessionManager2 *This,
-        IAudioSessionNotification *SessionNotification);
+                     IAudioSessionManager2 *This,
+                     IAudioSessionNotification *SessionNotification);
 
     HRESULT (STDMETHODCALLTYPE *RegisterDuckNotification)(
-        IAudioSessionManager2 *This,
-        LPCWSTR sessionID,
-        IAudioVolumeDuckNotification *duckNotification);
+                     IAudioSessionManager2 *This,
+                     LPCWSTR sessionID,
+                     IAudioVolumeDuckNotification *duckNotification);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterDuckNotification)(
-        IAudioSessionManager2 *This,
-        IAudioVolumeDuckNotification *duckNotification);
+                     IAudioSessionManager2 *This,
+                     IAudioVolumeDuckNotification *duckNotification);
 
     END_INTERFACE
 } IAudioSessionManager2Vtbl;

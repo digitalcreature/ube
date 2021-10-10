@@ -21,12 +21,12 @@ typedef enum _ATTENDEE_DISCONNECT_REASON {
 } ATTENDEE_DISCONNECT_REASON;
 
 typedef enum _CHANNEL_ACCESS_ENUM {
-  CHANNEL_ACCESS_ENUM_NONE          = 0,
+  CHANNEL_ACCESS_ENUM_NONE                       = 0,
   CHANNEL_ACCESS_ENUM_SENDRECEIVE   = 1
 } CHANNEL_ACCESS_ENUM;
 
 typedef enum _CHANNEL_FLAGS {
-  CHANNEL_FLAGS_LEGACY         = 0x01,
+  CHANNEL_FLAGS_LEGACY                      = 0x01,
   CHANNEL_FLAGS_UNCOMPRESSED   = 0x02
 } CHANNEL_FLAGS;
 
@@ -37,12 +37,12 @@ typedef enum _CHANNEL_PRIORITY {
 } CHANNEL_PRIORITY;
 
 typedef enum _CTRL_LEVEL {
-  CTRL_LEVEL_MIN           = 0,
-  CTRL_LEVEL_INVALID       = 0,
-  CTRL_LEVEL_NONE          = 1,
-  CTRL_LEVEL_VIEW          = 2,
+  CTRL_LEVEL_MIN                        = 0,
+  CTRL_LEVEL_INVALID                    = 0,
+  CTRL_LEVEL_NONE                       = 1,
+  CTRL_LEVEL_VIEW                       = 2,
   CTRL_LEVEL_INTERACTIVE   = 3,
-  CTRL_LEVEL_MAX           = 3
+  CTRL_LEVEL_MAX                        = 3
 } CTRL_LEVEL;
 
 typedef enum _RDPENCOMAPI_ATTENDEE_FLAGS {
@@ -50,12 +50,12 @@ typedef enum _RDPENCOMAPI_ATTENDEE_FLAGS {
 } RDPENCOMAPI_ATTENDEE_FLAGS;
 
 typedef enum _RDPENCOMAPI_CONSTANTS {
-  CONST_MAX_CHANNEL_MESSAGE_SIZE          = 1024,
-  CONST_MAX_CHANNEL_NAME_LEN              = 8,
+  CONST_MAX_CHANNEL_MESSAGE_SIZE                       = 1024,
+  CONST_MAX_CHANNEL_NAME_LEN                                        = 8,
   CONST_MAX_LEGACY_CHANNEL_MESSAGE_SIZE   = 409600,
-  CONST_ATTENDEE_ID_EVERYONE              = -1,
-  CONST_ATTENDEE_ID_HOST                  = 0,
-  CONST_CONN_INTERVAL                     = 50
+  CONST_ATTENDEE_ID_EVERYONE                                        = -1,
+  CONST_ATTENDEE_ID_HOST                                                         = 0,
+  CONST_CONN_INTERVAL                                                            = 50
 } RDPENCOMAPI_CONSTANTS;
 
 typedef enum _RDPSRAPI_APP_FLAGS {

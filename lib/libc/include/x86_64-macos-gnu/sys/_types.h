@@ -52,28 +52,28 @@
 #define __DARWIN_NULL ((void *)0)
 #endif /* __cplusplus */
 
-typedef __int64_t       __darwin_blkcnt_t;      /* total blocks */
-typedef __int32_t       __darwin_blksize_t;     /* preferred block size */
-typedef __int32_t       __darwin_dev_t;         /* dev_t */
+typedef __int64_t                    __darwin_blkcnt_t;                   /* total blocks */
+typedef __int32_t                    __darwin_blksize_t;     /* preferred block size */
+typedef __int32_t                    __darwin_dev_t;                      /* dev_t */
 typedef unsigned int    __darwin_fsblkcnt_t;    /* Used by statvfs and fstatvfs */
 typedef unsigned int    __darwin_fsfilcnt_t;    /* Used by statvfs and fstatvfs */
-typedef __uint32_t      __darwin_gid_t;         /* [???] process and group IDs */
-typedef __uint32_t      __darwin_id_t;          /* [XSI] pid_t, uid_t, or gid_t*/
-typedef __uint64_t      __darwin_ino64_t;       /* [???] Used for 64 bit inodes */
+typedef __uint32_t                   __darwin_gid_t;                      /* [???] process and group IDs */
+typedef __uint32_t                   __darwin_id_t;                       /* [XSI] pid_t, uid_t, or gid_t*/
+typedef __uint64_t                   __darwin_ino64_t;                    /* [???] Used for 64 bit inodes */
 #if __DARWIN_64_BIT_INO_T
-typedef __darwin_ino64_t __darwin_ino_t;        /* [???] Used for inodes */
+typedef __darwin_ino64_t __darwin_ino_t;                     /* [???] Used for inodes */
 #else /* !__DARWIN_64_BIT_INO_T */
-typedef __uint32_t      __darwin_ino_t;         /* [???] Used for inodes */
+typedef __uint32_t                   __darwin_ino_t;                      /* [???] Used for inodes */
 #endif /* __DARWIN_64_BIT_INO_T */
 typedef __darwin_natural_t __darwin_mach_port_name_t; /* Used by mach */
 typedef __darwin_mach_port_name_t __darwin_mach_port_t; /* Used by mach */
-typedef __uint16_t      __darwin_mode_t;        /* [???] Some file attributes */
-typedef __int64_t       __darwin_off_t;         /* [???] Used for file sizes */
-typedef __int32_t       __darwin_pid_t;         /* [???] process and group IDs */
-typedef __uint32_t      __darwin_sigset_t;      /* [???] signal set */
-typedef __int32_t       __darwin_suseconds_t;   /* [???] microseconds */
-typedef __uint32_t      __darwin_uid_t;         /* [???] user IDs */
-typedef __uint32_t      __darwin_useconds_t;    /* [???] microseconds */
+typedef __uint16_t                   __darwin_mode_t;                     /* [???] Some file attributes */
+typedef __int64_t                    __darwin_off_t;                      /* [???] Used for file sizes */
+typedef __int32_t                    __darwin_pid_t;                      /* [???] process and group IDs */
+typedef __uint32_t                   __darwin_sigset_t;                   /* [???] signal set */
+typedef __int32_t                    __darwin_suseconds_t;   /* [???] microseconds */
+typedef __uint32_t                   __darwin_uid_t;                      /* [???] user IDs */
+typedef __uint32_t                   __darwin_useconds_t;    /* [???] microseconds */
 typedef unsigned char   __darwin_uuid_t[16];
 typedef char    __darwin_uuid_string_t[37];
 

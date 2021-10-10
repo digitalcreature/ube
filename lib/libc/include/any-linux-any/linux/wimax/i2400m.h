@@ -89,19 +89,19 @@
  * The requests can be clasified as follows:
  *
  *   COMMAND:  implies a request from the host to the device requesting
- *             an action being performed. The device will reply with a
- *             message (with the same type as the command), status and
- *             no (TLV) payload. Execution of a command might cause
- *             events (of different type) to be sent later on as
- *             device's state changes.
+ *                                       an action being performed. The device will reply with a
+ *                                       message (with the same type as the command), status and
+ *                                       no (TLV) payload. Execution of a command might cause
+ *                                       events (of different type) to be sent later on as
+ *                                       device's state changes.
  *
  *   GET/SET:  similar to COMMAND, but will not cause other
- *             EVENTs. The reply, in the case of GET, will contain
- *             TLVs with the requested information.
+ *                                       EVENTs. The reply, in the case of GET, will contain
+ *                                       TLVs with the requested information.
  *
  *   EVENT:    asynchronous messages sent from the device, maybe as a
- *             consequence of previous COMMANDs but disassociated from
- *             them.
+ *                                       consequence of previous COMMANDs but disassociated from
+ *                                       them.
  *
  * Only one request might be pending at the same time (ie: don't
  * parallelize nor post another GET request before the previous
@@ -138,7 +138,7 @@ struct i2400m_bcf_hdr {
 	__le32 module_id;
 	__le32 module_vendor;
 	__le32 date;		/* BCD YYYMMDD */
-	__le32 size;            /* in dwords */
+	__le32 size;                                      /* in dwords */
 	__le32 key_size;	/* in dwords */
 	__le32 modulus_size;	/* in dwords */
 	__le32 exponent_size;	/* in dwords */
@@ -236,13 +236,13 @@ enum i2400m_cs {
 
 enum i2400m_ro {
 	I2400M_RO_NEEDED     = 0x01,
-	I2400M_RO_TYPE       = 0x03,
+	I2400M_RO_TYPE                    = 0x03,
 	I2400M_RO_TYPE_SHIFT = 1,
-	I2400M_RO_CIN        = 0x0f,
+	I2400M_RO_CIN                     = 0x0f,
 	I2400M_RO_CIN_SHIFT  = 4,
-	I2400M_RO_FBN        = 0x07ff,
+	I2400M_RO_FBN                     = 0x07ff,
 	I2400M_RO_FBN_SHIFT  = 8,
-	I2400M_RO_SN         = 0x07ff,
+	I2400M_RO_SN                      = 0x07ff,
 	I2400M_RO_SN_SHIFT   = 21,
 };
 
@@ -302,7 +302,7 @@ struct i2400m_pld {
  *     alignment.
  * @num_pls: number of payloads in this message
  * @padding: amount of padding bytes at the end of the message to make
- *           it be of block-size aligned
+ *                        it be of block-size aligned
  *
  * Look in rx.c and tx.c for a full description of the format.
  */
@@ -330,39 +330,39 @@ struct i2400m_msg_hdr {
 
 enum {
 	/* Interface version */
-	I2400M_L3L4_VERSION             = 0x0100,
+	I2400M_L3L4_VERSION                                       = 0x0100,
 };
 
 /* Message types */
 enum i2400m_mt {
-	I2400M_MT_RESERVED              = 0x0000,
-	I2400M_MT_INVALID               = 0xffff,
+	I2400M_MT_RESERVED                                        = 0x0000,
+	I2400M_MT_INVALID                                         = 0xffff,
 	I2400M_MT_REPORT_MASK		= 0x8000,
 
 	I2400M_MT_GET_SCAN_RESULT  	= 0x4202,
 	I2400M_MT_SET_SCAN_PARAM   	= 0x4402,
 	I2400M_MT_CMD_RF_CONTROL   	= 0x4602,
-	I2400M_MT_CMD_SCAN         	= 0x4603,
-	I2400M_MT_CMD_CONNECT      	= 0x4604,
+	I2400M_MT_CMD_SCAN                      	= 0x4603,
+	I2400M_MT_CMD_CONNECT                   	= 0x4604,
 	I2400M_MT_CMD_DISCONNECT   	= 0x4605,
 	I2400M_MT_CMD_EXIT_IDLE   	= 0x4606,
 	I2400M_MT_GET_LM_VERSION   	= 0x5201,
 	I2400M_MT_GET_DEVICE_INFO  	= 0x5202,
 	I2400M_MT_GET_LINK_STATUS  	= 0x5203,
 	I2400M_MT_GET_STATISTICS   	= 0x5204,
-	I2400M_MT_GET_STATE        	= 0x5205,
+	I2400M_MT_GET_STATE                     	= 0x5205,
 	I2400M_MT_GET_MEDIA_STATUS	= 0x5206,
 	I2400M_MT_SET_INIT_CONFIG	= 0x5404,
-	I2400M_MT_CMD_INIT	        = 0x5601,
+	I2400M_MT_CMD_INIT	                     = 0x5601,
 	I2400M_MT_CMD_TERMINATE		= 0x5602,
 	I2400M_MT_CMD_MODE_OF_OP	= 0x5603,
 	I2400M_MT_CMD_RESET_DEVICE	= 0x5604,
 	I2400M_MT_CMD_MONITOR_CONTROL   = 0x5605,
 	I2400M_MT_CMD_ENTER_POWERSAVE   = 0x5606,
 	I2400M_MT_GET_TLS_OPERATION_RESULT = 0x6201,
-	I2400M_MT_SET_EAP_SUCCESS       = 0x6402,
-	I2400M_MT_SET_EAP_FAIL          = 0x6403,
-	I2400M_MT_SET_EAP_KEY          	= 0x6404,
+	I2400M_MT_SET_EAP_SUCCESS                    = 0x6402,
+	I2400M_MT_SET_EAP_FAIL                       = 0x6403,
+	I2400M_MT_SET_EAP_KEY                       	= 0x6404,
 	I2400M_MT_CMD_SEND_EAP_RESPONSE = 0x6602,
 	I2400M_MT_REPORT_SCAN_RESULT    = 0xc002,
 	I2400M_MT_REPORT_STATE		= 0xd002,
@@ -380,22 +380,22 @@ enum i2400m_mt {
  * When a message is replied-to, this status is reported.
  */
 enum i2400m_ms {
-	I2400M_MS_DONE_OK                  = 0,
-	I2400M_MS_DONE_IN_PROGRESS         = 1,
-	I2400M_MS_INVALID_OP               = 2,
-	I2400M_MS_BAD_STATE                = 3,
-	I2400M_MS_ILLEGAL_VALUE            = 4,
-	I2400M_MS_MISSING_PARAMS           = 5,
-	I2400M_MS_VERSION_ERROR            = 6,
-	I2400M_MS_ACCESSIBILITY_ERROR      = 7,
-	I2400M_MS_BUSY                     = 8,
-	I2400M_MS_CORRUPTED_TLV            = 9,
-	I2400M_MS_UNINITIALIZED            = 10,
-	I2400M_MS_UNKNOWN_ERROR            = 11,
-	I2400M_MS_PRODUCTION_ERROR         = 12,
-	I2400M_MS_NO_RF                    = 13,
+	I2400M_MS_DONE_OK                                                         = 0,
+	I2400M_MS_DONE_IN_PROGRESS                      = 1,
+	I2400M_MS_INVALID_OP                                         = 2,
+	I2400M_MS_BAD_STATE                                          = 3,
+	I2400M_MS_ILLEGAL_VALUE                                      = 4,
+	I2400M_MS_MISSING_PARAMS                        = 5,
+	I2400M_MS_VERSION_ERROR                                      = 6,
+	I2400M_MS_ACCESSIBILITY_ERROR                   = 7,
+	I2400M_MS_BUSY                                                            = 8,
+	I2400M_MS_CORRUPTED_TLV                                      = 9,
+	I2400M_MS_UNINITIALIZED                                      = 10,
+	I2400M_MS_UNKNOWN_ERROR                                      = 11,
+	I2400M_MS_PRODUCTION_ERROR                      = 12,
+	I2400M_MS_NO_RF                                                           = 13,
 	I2400M_MS_NOT_READY_FOR_POWERSAVE  = 14,
-	I2400M_MS_THERMAL_CRITICAL         = 15,
+	I2400M_MS_THERMAL_CRITICAL                      = 15,
 	I2400M_MS_MAX
 };
 

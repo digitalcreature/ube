@@ -29,7 +29,7 @@ typedef VOID (CALLBACK * PLOG_TAIL_ADVANCE_CALLBACK )(
 );
 
 typedef struct _LOG_MANAGEMENT_CALLBACKS {
-  PVOID                      CallbackContext;
+  PVOID                                                             CallbackContext;
   PLOG_TAIL_ADVANCE_CALLBACK AdvanceTailCallback;
   PLOG_FULL_HANDLER_CALLBACK LogFullHandlerCallback;
   PLOG_UNPINNED_CALLBACK     LogUnpinnedCallback;

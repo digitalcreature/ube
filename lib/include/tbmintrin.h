@@ -19,7 +19,7 @@
 
 #define __bextri_u32(a, b) \
   ((unsigned int)__builtin_ia32_bextri_u32((unsigned int)(a), \
-                                           (unsigned int)(b)))
+                                                                                                                                      (unsigned int)(b)))
 
 static __inline__ unsigned int __DEFAULT_FN_ATTRS
 __blcfill_u32(unsigned int __a)
@@ -78,7 +78,7 @@ __tzmsk_u32(unsigned int __a)
 #ifdef __x86_64__
 #define __bextri_u64(a, b) \
   ((unsigned long long)__builtin_ia32_bextri_u64((unsigned long long)(a), \
-                                                 (unsigned long long)(b)))
+                                                                                                                                                         (unsigned long long)(b)))
 
 static __inline__ unsigned long long __DEFAULT_FN_ATTRS
 __blcfill_u64(unsigned long long __a)

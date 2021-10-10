@@ -6,7 +6,7 @@
 #include <_mingw_mac.h>
 
 	.file	"remquo.S"
-        .text
+                     .text
 #ifdef __x86_64__
 	.align 8
 #else
@@ -63,7 +63,7 @@ __MINGW_USYMBOL(remquo):
 	movl $0xef2a60, %eax
 	shrl %cl, %eax
 	andl $7, %eax
-	movl 4 +8 +8(%esp), %ecx      
+	movl 4 +8 +8(%esp), %ecx                   
 	movl 4 +4(%esp), %edx
 	xorl 4 +8 +4(%esp), %edx
 	testl $0x80000000, %edx

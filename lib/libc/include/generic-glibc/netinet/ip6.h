@@ -24,7 +24,7 @@
 struct ip6_hdr
   {
     union
-      {
+                   {
 	struct ip6_hdrctl
 	  {
 	    uint32_t ip6_un1_flow;   /* 4 bits version, 8 bits TC,
@@ -33,10 +33,10 @@ struct ip6_hdr
 	    uint8_t  ip6_un1_nxt;    /* next header */
 	    uint8_t  ip6_un1_hlim;   /* hop limit */
 	  } ip6_un1;
-	uint8_t ip6_un2_vfc;       /* 4 bits version, top 4 bits tclass */
-      } ip6_ctlun;
-    struct in6_addr ip6_src;      /* source address */
-    struct in6_addr ip6_dst;      /* destination address */
+	uint8_t ip6_un2_vfc;                    /* 4 bits version, top 4 bits tclass */
+                   } ip6_ctlun;
+    struct in6_addr ip6_src;                   /* source address */
+    struct in6_addr ip6_dst;                   /* destination address */
   };
 
 #define ip6_vfc   ip6_ctlun.ip6_un2_vfc
@@ -102,13 +102,13 @@ struct ip6_frag
   };
 
 #if __BYTE_ORDER == __BIG_ENDIAN
-# define IP6F_OFF_MASK       0xfff8  /* mask out offset from _offlg */
+# define IP6F_OFF_MASK                    0xfff8  /* mask out offset from _offlg */
 # define IP6F_RESERVED_MASK  0x0006  /* reserved bits in ip6f_offlg */
-# define IP6F_MORE_FRAG      0x0001  /* more-fragments flag */
+# define IP6F_MORE_FRAG                   0x0001  /* more-fragments flag */
 #else   /* __BYTE_ORDER == __LITTLE_ENDIAN */
-# define IP6F_OFF_MASK       0xf8ff  /* mask out offset from _offlg */
+# define IP6F_OFF_MASK                    0xf8ff  /* mask out offset from _offlg */
 # define IP6F_RESERVED_MASK  0x0600  /* reserved bits in ip6f_offlg */
-# define IP6F_MORE_FRAG      0x0100  /* more-fragments flag */
+# define IP6F_MORE_FRAG                   0x0100  /* more-fragments flag */
 #endif
 
 /* IPv6 options */
@@ -154,8 +154,8 @@ struct ip6_opt_nsap
     uint8_t  ip6on_len;
     uint8_t  ip6on_src_nsap_len;
     uint8_t  ip6on_dst_nsap_len;
-      /* followed by source NSAP */
-      /* followed by destination NSAP */
+                   /* followed by source NSAP */
+                   /* followed by destination NSAP */
   };
 
 /* Tunnel Limit Option */

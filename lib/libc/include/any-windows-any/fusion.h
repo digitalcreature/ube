@@ -158,7 +158,7 @@ typedef struct _ASSEMBLY_INFO {
     LPWSTR pszCurrentAssemblyPathBuf;
     ULONG cchBuf;
 } ASSEMBLY_INFO;
-#define IASSEMBLYCACHE_INSTALL_FLAG_REFRESH       0x00000001
+#define IASSEMBLYCACHE_INSTALL_FLAG_REFRESH                    0x00000001
 #define IASSEMBLYCACHE_INSTALL_FLAG_FORCE_REFRESH 0x00000002
 #define IASSEMBLYCACHE_UNINSTALL_DISPOSITION_UNINSTALLED 1
 #define IASSEMBLYCACHE_UNINSTALL_DISPOSITION_STILL_IN_USE 2
@@ -168,7 +168,7 @@ typedef struct _ASSEMBLY_INFO {
 #define IASSEMBLYCACHE_UNINSTALL_DISPOSITION_REFERENCE_NOT_FOUND 6
 #define QUERYASMINFO_FLAG_VALIDATE   0x00000001
 #define QUERYASMINFO_FLAG_GETSIZE    0x00000002
-#define ASSEMBLYINFO_FLAG_INSTALLED       0x00000001
+#define ASSEMBLYINFO_FLAG_INSTALLED                    0x00000001
 #define ASSEMBLYINFO_FLAG_PAYLOADRESIDENT 0x00000002
 DEFINE_GUID(IID_IAssemblyCache, 0xe707dcde, 0xd1cd, 0x11d2, 0xba,0xb9, 0x00,0xc0,0x4f,0x8e,0xce,0xae);
 #if defined(__cplusplus) && !defined(CINTERFACE)
@@ -176,29 +176,29 @@ MIDL_INTERFACE("e707dcde-d1cd-11d2-bab9-00c04f8eceae")
 IAssemblyCache : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE UninstallAssembly(
-        DWORD dwFlags,
-        LPCWSTR pszAssemblyName,
-        LPCFUSION_INSTALL_REFERENCE pRefData,
-        ULONG *pulDisposition) = 0;
+                     DWORD dwFlags,
+                     LPCWSTR pszAssemblyName,
+                     LPCFUSION_INSTALL_REFERENCE pRefData,
+                     ULONG *pulDisposition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryAssemblyInfo(
-        DWORD dwFlags,
-        LPCWSTR pszAssemblyName,
-        ASSEMBLY_INFO *pAsmInfo) = 0;
+                     DWORD dwFlags,
+                     LPCWSTR pszAssemblyName,
+                     ASSEMBLY_INFO *pAsmInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAssemblyCacheItem(
-        DWORD dwFlags,
-        PVOID pvReserved,
-        IAssemblyCacheItem **ppAsmItem,
-        LPCWSTR pszAssemblyName) = 0;
+                     DWORD dwFlags,
+                     PVOID pvReserved,
+                     IAssemblyCacheItem **ppAsmItem,
+                     LPCWSTR pszAssemblyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAssemblyScavenger(
-        IUnknown **ppUnkReserved) = 0;
+                     IUnknown **ppUnkReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InstallAssembly(
-        DWORD dwFlags,
-        LPCWSTR pszManifestFilePath,
-        LPCFUSION_INSTALL_REFERENCE pRefData) = 0;
+                     DWORD dwFlags,
+                     LPCWSTR pszManifestFilePath,
+                     LPCFUSION_INSTALL_REFERENCE pRefData) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -210,46 +210,46 @@ typedef struct IAssemblyCacheVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAssemblyCache *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAssemblyCache *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAssemblyCache *This);
+                     IAssemblyCache *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAssemblyCache *This);
+                     IAssemblyCache *This);
 
     /*** IAssemblyCache methods ***/
     HRESULT (STDMETHODCALLTYPE *UninstallAssembly)(
-        IAssemblyCache *This,
-        DWORD dwFlags,
-        LPCWSTR pszAssemblyName,
-        LPCFUSION_INSTALL_REFERENCE pRefData,
-        ULONG *pulDisposition);
+                     IAssemblyCache *This,
+                     DWORD dwFlags,
+                     LPCWSTR pszAssemblyName,
+                     LPCFUSION_INSTALL_REFERENCE pRefData,
+                     ULONG *pulDisposition);
 
     HRESULT (STDMETHODCALLTYPE *QueryAssemblyInfo)(
-        IAssemblyCache *This,
-        DWORD dwFlags,
-        LPCWSTR pszAssemblyName,
-        ASSEMBLY_INFO *pAsmInfo);
+                     IAssemblyCache *This,
+                     DWORD dwFlags,
+                     LPCWSTR pszAssemblyName,
+                     ASSEMBLY_INFO *pAsmInfo);
 
     HRESULT (STDMETHODCALLTYPE *CreateAssemblyCacheItem)(
-        IAssemblyCache *This,
-        DWORD dwFlags,
-        PVOID pvReserved,
-        IAssemblyCacheItem **ppAsmItem,
-        LPCWSTR pszAssemblyName);
+                     IAssemblyCache *This,
+                     DWORD dwFlags,
+                     PVOID pvReserved,
+                     IAssemblyCacheItem **ppAsmItem,
+                     LPCWSTR pszAssemblyName);
 
     HRESULT (STDMETHODCALLTYPE *CreateAssemblyScavenger)(
-        IAssemblyCache *This,
-        IUnknown **ppUnkReserved);
+                     IAssemblyCache *This,
+                     IUnknown **ppUnkReserved);
 
     HRESULT (STDMETHODCALLTYPE *InstallAssembly)(
-        IAssemblyCache *This,
-        DWORD dwFlags,
-        LPCWSTR pszManifestFilePath,
-        LPCFUSION_INSTALL_REFERENCE pRefData);
+                     IAssemblyCache *This,
+                     DWORD dwFlags,
+                     LPCWSTR pszManifestFilePath,
+                     LPCFUSION_INSTALL_REFERENCE pRefData);
 
     END_INTERFACE
 } IAssemblyCacheVtbl;
@@ -313,9 +313,9 @@ static FORCEINLINE HRESULT IAssemblyCache_InstallAssembly(IAssemblyCache* This,D
 
 #define STREAM_FORMAT_COMPLIB_MODULE    0
 #define STREAM_FORMAT_COMPLIB_MANIFEST  1
-#define STREAM_FORMAT_WIN32_MODULE      2
+#define STREAM_FORMAT_WIN32_MODULE                   2
 #define STREAM_FORMAT_WIN32_MANIFEST    4
-#define IASSEMBLYCACHEITEM_COMMIT_FLAG_REFRESH       0x00000001
+#define IASSEMBLYCACHEITEM_COMMIT_FLAG_REFRESH                    0x00000001
 #define IASSEMBLYCACHEITEM_COMMIT_FLAG_FORCE_REFRESH 0x00000002
 #define IASSEMBLYCACHEITEM_COMMIT_DISPOSITION_INSTALLED 1
 #define IASSEMBLYCACHEITEM_COMMIT_DISPOSITION_REFRESHED 2
@@ -326,19 +326,19 @@ MIDL_INTERFACE("9e3aaeb4-d1cd-11d2-bab9-00c04f8eceae")
 IAssemblyCacheItem : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateStream(
-        DWORD dwFlags,
-        LPCWSTR pszStreamName,
-        DWORD dwFormat,
-        DWORD dwFormatFlags,
-        IStream **ppIStream,
-        ULARGE_INTEGER *puliMaxSize) = 0;
+                     DWORD dwFlags,
+                     LPCWSTR pszStreamName,
+                     DWORD dwFormat,
+                     DWORD dwFormatFlags,
+                     IStream **ppIStream,
+                     ULARGE_INTEGER *puliMaxSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        DWORD dwFlags,
-        ULONG *pulDisposition) = 0;
+                     DWORD dwFlags,
+                     ULONG *pulDisposition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AbortItem(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -350,33 +350,33 @@ typedef struct IAssemblyCacheItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAssemblyCacheItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAssemblyCacheItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAssemblyCacheItem *This);
+                     IAssemblyCacheItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAssemblyCacheItem *This);
+                     IAssemblyCacheItem *This);
 
     /*** IAssemblyCacheItem methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateStream)(
-        IAssemblyCacheItem *This,
-        DWORD dwFlags,
-        LPCWSTR pszStreamName,
-        DWORD dwFormat,
-        DWORD dwFormatFlags,
-        IStream **ppIStream,
-        ULARGE_INTEGER *puliMaxSize);
+                     IAssemblyCacheItem *This,
+                     DWORD dwFlags,
+                     LPCWSTR pszStreamName,
+                     DWORD dwFormat,
+                     DWORD dwFormatFlags,
+                     IStream **ppIStream,
+                     ULARGE_INTEGER *puliMaxSize);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IAssemblyCacheItem *This,
-        DWORD dwFlags,
-        ULONG *pulDisposition);
+                     IAssemblyCacheItem *This,
+                     DWORD dwFlags,
+                     ULONG *pulDisposition);
 
     HRESULT (STDMETHODCALLTYPE *AbortItem)(
-        IAssemblyCacheItem *This);
+                     IAssemblyCacheItem *This);
 
     END_INTERFACE
 } IAssemblyCacheItemVtbl;
@@ -506,47 +506,47 @@ MIDL_INTERFACE("cd193bc0-b4bc-11d2-9833-00c04fc31d2e")
 IAssemblyName : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetProperty(
-        DWORD PropertyId,
-        LPVOID pvProperty,
-        DWORD cbProperty) = 0;
+                     DWORD PropertyId,
+                     LPVOID pvProperty,
+                     DWORD cbProperty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        DWORD PropertyId,
-        LPVOID pvProperty,
-        LPDWORD pcbProperty) = 0;
+                     DWORD PropertyId,
+                     LPVOID pvProperty,
+                     LPDWORD pcbProperty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finalize(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayName(
-        LPOLESTR szDisplayName,
-        LPDWORD pccDisplayName,
-        DWORD dwDisplayFlags) = 0;
+                     LPOLESTR szDisplayName,
+                     LPDWORD pccDisplayName,
+                     DWORD dwDisplayFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reserved(
-        REFIID refIID,
-        IUnknown *pUnkReserved1,
-        IUnknown *pUnkReserved2,
-        LPCOLESTR szReserved,
-        LONGLONG llReserved,
-        LPVOID pvReserved,
-        DWORD cbReserved,
-        LPVOID *ppReserved) = 0;
+                     REFIID refIID,
+                     IUnknown *pUnkReserved1,
+                     IUnknown *pUnkReserved2,
+                     LPCOLESTR szReserved,
+                     LONGLONG llReserved,
+                     LPVOID pvReserved,
+                     DWORD cbReserved,
+                     LPVOID *ppReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        LPDWORD lpcwBuffer,
-        WCHAR *pwzName) = 0;
+                     LPDWORD lpcwBuffer,
+                     WCHAR *pwzName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVersion(
-        LPDWORD pdwVersionHi,
-        LPDWORD pdwVersionLow) = 0;
+                     LPDWORD pdwVersionHi,
+                     LPDWORD pdwVersionLow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEqual(
-        IAssemblyName *pName,
-        DWORD dwCmpFlags) = 0;
+                     IAssemblyName *pName,
+                     DWORD dwCmpFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IAssemblyName **pName) = 0;
+                     IAssemblyName **pName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -558,67 +558,67 @@ typedef struct IAssemblyNameVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAssemblyName *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAssemblyName *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAssemblyName *This);
+                     IAssemblyName *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAssemblyName *This);
+                     IAssemblyName *This);
 
     /*** IAssemblyName methods ***/
     HRESULT (STDMETHODCALLTYPE *SetProperty)(
-        IAssemblyName *This,
-        DWORD PropertyId,
-        LPVOID pvProperty,
-        DWORD cbProperty);
+                     IAssemblyName *This,
+                     DWORD PropertyId,
+                     LPVOID pvProperty,
+                     DWORD cbProperty);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IAssemblyName *This,
-        DWORD PropertyId,
-        LPVOID pvProperty,
-        LPDWORD pcbProperty);
+                     IAssemblyName *This,
+                     DWORD PropertyId,
+                     LPVOID pvProperty,
+                     LPDWORD pcbProperty);
 
     HRESULT (STDMETHODCALLTYPE *Finalize)(
-        IAssemblyName *This);
+                     IAssemblyName *This);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayName)(
-        IAssemblyName *This,
-        LPOLESTR szDisplayName,
-        LPDWORD pccDisplayName,
-        DWORD dwDisplayFlags);
+                     IAssemblyName *This,
+                     LPOLESTR szDisplayName,
+                     LPDWORD pccDisplayName,
+                     DWORD dwDisplayFlags);
 
     HRESULT (STDMETHODCALLTYPE *Reserved)(
-        IAssemblyName *This,
-        REFIID refIID,
-        IUnknown *pUnkReserved1,
-        IUnknown *pUnkReserved2,
-        LPCOLESTR szReserved,
-        LONGLONG llReserved,
-        LPVOID pvReserved,
-        DWORD cbReserved,
-        LPVOID *ppReserved);
+                     IAssemblyName *This,
+                     REFIID refIID,
+                     IUnknown *pUnkReserved1,
+                     IUnknown *pUnkReserved2,
+                     LPCOLESTR szReserved,
+                     LONGLONG llReserved,
+                     LPVOID pvReserved,
+                     DWORD cbReserved,
+                     LPVOID *ppReserved);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IAssemblyName *This,
-        LPDWORD lpcwBuffer,
-        WCHAR *pwzName);
+                     IAssemblyName *This,
+                     LPDWORD lpcwBuffer,
+                     WCHAR *pwzName);
 
     HRESULT (STDMETHODCALLTYPE *GetVersion)(
-        IAssemblyName *This,
-        LPDWORD pdwVersionHi,
-        LPDWORD pdwVersionLow);
+                     IAssemblyName *This,
+                     LPDWORD pdwVersionHi,
+                     LPDWORD pdwVersionLow);
 
     HRESULT (STDMETHODCALLTYPE *IsEqual)(
-        IAssemblyName *This,
-        IAssemblyName *pName,
-        DWORD dwCmpFlags);
+                     IAssemblyName *This,
+                     IAssemblyName *pName,
+                     DWORD dwCmpFlags);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAssemblyName *This,
-        IAssemblyName **pName);
+                     IAssemblyName *This,
+                     IAssemblyName **pName);
 
     END_INTERFACE
 } IAssemblyNameVtbl;
@@ -702,15 +702,15 @@ MIDL_INTERFACE("21b8916c-f28e-11d2-a473-00c04f8ef448")
 IAssemblyEnum : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNextAssembly(
-        LPVOID pvReserved,
-        IAssemblyName **ppName,
-        DWORD dwFlags) = 0;
+                     LPVOID pvReserved,
+                     IAssemblyName **ppName,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IAssemblyEnum **ppEnum) = 0;
+                     IAssemblyEnum **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -722,29 +722,29 @@ typedef struct IAssemblyEnumVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAssemblyEnum *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAssemblyEnum *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAssemblyEnum *This);
+                     IAssemblyEnum *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAssemblyEnum *This);
+                     IAssemblyEnum *This);
 
     /*** IAssemblyEnum methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNextAssembly)(
-        IAssemblyEnum *This,
-        LPVOID pvReserved,
-        IAssemblyName **ppName,
-        DWORD dwFlags);
+                     IAssemblyEnum *This,
+                     LPVOID pvReserved,
+                     IAssemblyName **ppName,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IAssemblyEnum *This);
+                     IAssemblyEnum *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IAssemblyEnum *This,
-        IAssemblyEnum **ppEnum);
+                     IAssemblyEnum *This,
+                     IAssemblyEnum **ppEnum);
 
     END_INTERFACE
 } IAssemblyEnumVtbl;
@@ -813,15 +813,15 @@ typedef struct IInstallReferenceItemVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInstallReferenceItem *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInstallReferenceItem *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInstallReferenceItem *This);
+                     IInstallReferenceItem *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInstallReferenceItem *This);
+                     IInstallReferenceItem *This);
 
     END_INTERFACE
 } IInstallReferenceItemVtbl;
@@ -876,15 +876,15 @@ typedef struct IInstallReferenceEnumVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInstallReferenceEnum *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInstallReferenceEnum *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInstallReferenceEnum *This);
+                     IInstallReferenceEnum *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInstallReferenceEnum *This);
+                     IInstallReferenceEnum *This);
 
     END_INTERFACE
 } IInstallReferenceEnumVtbl;

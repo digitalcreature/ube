@@ -31,27 +31,27 @@ int __cdecl mkstemp (char *template_name)
 
     /* The last six characters of template must be "XXXXXX" */
     if (template_name == NULL || (len = strlen (template_name)) < 6
-            || memcmp (template_name + (len - 6), "XXXXXX", 6)) {
-        errno = EINVAL;
-        return -1;
+                                      || memcmp (template_name + (len - 6), "XXXXXX", 6)) {
+                     errno = EINVAL;
+                     return -1;
     }
 
     /* User may supply more than six trailing Xs */
     for (index = len - 6; index > 0 && template_name[index - 1] == 'X'; index--);
 
     /*
-        Like OpenBSD, mkstemp() will try at least 2 ** 31 combinations before
-        giving up.
+                     Like OpenBSD, mkstemp() will try at least 2 ** 31 combinations before
+                     giving up.
      */
     for (i = 0; i >= 0; i++) {
-        for(j = index; j < len; j++) {
-            template_name[j] = letters[rand () % 62];
-        }
-        fd = _sopen(template_name,
-                _O_RDWR | _O_CREAT | _O_EXCL | _O_BINARY,
-                _SH_DENYRW, _S_IREAD | _S_IWRITE);
-        if (fd != -1) return fd;
-        if (fd == -1 && errno != EEXIST) return -1;
+                     for(j = index; j < len; j++) {
+                                      template_name[j] = letters[rand () % 62];
+                     }
+                     fd = _sopen(template_name,
+                                          _O_RDWR | _O_CREAT | _O_EXCL | _O_BINARY,
+                                          _SH_DENYRW, _S_IREAD | _S_IWRITE);
+                     if (fd != -1) return fd;
+                     if (fd == -1 && errno != EEXIST) return -1;
     }
 
     return -1;
@@ -63,25 +63,25 @@ int main (int argc, char *argv[])
     int i, fd;
 
     for (i = 0; i < 10; i++) {
-        char template_name[] = { "temp_XXXXXX" };
-        fd = mkstemp (template_name);
-        if (fd >= 0) {
-            fprintf (stderr, "fd=%d, name=%s\n", fd, template_name);
-            _close (fd);
-        } else {
-            fprintf (stderr, "errno=%d\n", errno);
-        }
+                     char template_name[] = { "temp_XXXXXX" };
+                     fd = mkstemp (template_name);
+                     if (fd >= 0) {
+                                      fprintf (stderr, "fd=%d, name=%s\n", fd, template_name);
+                                      _close (fd);
+                     } else {
+                                      fprintf (stderr, "errno=%d\n", errno);
+                     }
     }
 
     for (i = 0; i < 10; i++) {
-        char template_name[] = { "temp_XXXXXXXX" };
-        fd = mkstemp (template_name);
-        if (fd >= 0) {
-            fprintf (stderr, "fd=%d, name=%s\n", fd, template_name);
-            _close (fd);
-        } else {
-            fprintf (stderr, "errno=%d\n", errno);
-        }
+                     char template_name[] = { "temp_XXXXXXXX" };
+                     fd = mkstemp (template_name);
+                     if (fd >= 0) {
+                                      fprintf (stderr, "fd=%d, name=%s\n", fd, template_name);
+                                      _close (fd);
+                     } else {
+                                      fprintf (stderr, "errno=%d\n", errno);
+                     }
     }
 
     return 0;

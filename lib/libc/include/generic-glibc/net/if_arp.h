@@ -59,7 +59,7 @@ struct arphdr
     unsigned short int ar_op;		/* ARP opcode (command).  */
 #if 0
     /* Ethernet looks like this : This bit is variable sized
-       however...  */
+                    however...  */
     unsigned char __ar_sha[ETH_ALEN];	/* Sender hardware address.  */
     unsigned char __ar_sip[4];		/* Sender IP address.  */
     unsigned char __ar_tha[ETH_ALEN];	/* Target hardware address.  */
@@ -105,12 +105,12 @@ struct arphdr
 
 #define ARPHRD_TUNNEL	768		/* IPIP tunnel.  */
 #define ARPHRD_TUNNEL6	769		/* IPIP6 tunnel.  */
-#define ARPHRD_FRAD	770             /* Frame Relay Access Device.  */
+#define ARPHRD_FRAD	770                                       /* Frame Relay Access Device.  */
 #define ARPHRD_SKIP	771		/* SKIP vif.  */
 #define ARPHRD_LOOPBACK	772		/* Loopback device.  */
 #define ARPHRD_LOCALTLK 773		/* Localtalk device.  */
 #define ARPHRD_FDDI	774		/* Fiber Distributed Data Interface. */
-#define ARPHRD_BIF	775             /* AP1000 BIF.  */
+#define ARPHRD_BIF	775                                       /* AP1000 BIF.  */
 #define ARPHRD_SIT	776		/* sit0 device - IPv6-in-IPv4.  */
 #define ARPHRD_IPDDP	777		/* IP-in-DDP tunnel.  */
 #define ARPHRD_IPGRE	778		/* GRE over IP.  */
@@ -157,7 +157,7 @@ struct arpreq_old
 #define	ATF_PERM	0x04		/* Permanent entry.  */
 #define	ATF_PUBL	0x08		/* Publish entry.  */
 #define	ATF_USETRAILERS	0x10		/* Has requested trailers.  */
-#define ATF_NETMASK     0x20            /* Want to use a netmask (only
+#define ATF_NETMASK     0x20                                      /* Want to use a netmask (only
 					   for proxy entries).  */
 #define ATF_DONTPUB	0x40		/* Don't answer this addresses.  */
 #define ATF_MAGIC	0x80		/* Automatically added entry.  */

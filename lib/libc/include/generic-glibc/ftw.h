@@ -115,12 +115,12 @@ typedef int (*__ftw_func_t) (const char *__filename,
 			     const struct stat *__status, int __flag);
 #ifdef __USE_LARGEFILE64
 typedef int (*__ftw64_func_t) (const char *__filename,
-			       const struct stat64 *__status, int __flag);
+			                    const struct stat64 *__status, int __flag);
 #endif
 #ifdef __USE_XOPEN_EXTENDED
 typedef int (*__nftw_func_t) (const char *__filename,
-			      const struct stat *__status, int __flag,
-			      struct FTW *__info);
+			                   const struct stat *__status, int __flag,
+			                   struct FTW *__info);
 # ifdef __USE_LARGEFILE64
 typedef int (*__nftw64_func_t) (const char *__filename,
 				const struct stat64 *__status,
@@ -160,7 +160,7 @@ extern int nftw (const char *__dir, __nftw_func_t __func, int __descriptors,
 # else
 #  ifdef __REDIRECT
 extern int __REDIRECT (nftw, (const char *__dir, __nftw_func_t __func,
-			      int __descriptors, int __flag), nftw64)
+			                   int __descriptors, int __flag), nftw64)
      __nonnull ((1, 2));
 #  else
 #   define nftw nftw64

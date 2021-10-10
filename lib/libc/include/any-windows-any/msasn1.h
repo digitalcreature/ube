@@ -144,8 +144,8 @@ extern "C" {
   typedef struct tagASN1open_t {
     ASN1uint32_t length;
     __C89_NAMELESS union {
-      void *encoded;
-      void *value;
+                   void *encoded;
+                   void *value;
     };
   } ASN1open_t;
 
@@ -209,8 +209,8 @@ extern "C" {
     const ASN1FreeFun_t *apfnFreeMemory;
     const ASN1uint32_t *acbStructSize;
     __C89_NAMELESS union {
-      ASN1PerFunArr_t PER;
-      ASN1BerFunArr_t BER;
+                   ASN1PerFunArr_t PER;
+                   ASN1BerFunArr_t BER;
     };
   } *ASN1module_t;
 
@@ -280,12 +280,12 @@ extern "C" {
   typedef struct tagASN1optionparam_t {
     ASN1option_e eOption;
     __C89_NAMELESS union {
-      ASN1encodingrule_e eRule;
-      ASN1uint32_t cbRequiredDecodedBufSize;
-      struct {
+                   ASN1encodingrule_e eRule;
+                   ASN1uint32_t cbRequiredDecodedBufSize;
+                   struct {
 	ASN1octet_t *pbBuf;
 	ASN1uint32_t cbBufSize;
-      } Buffer;
+                   } Buffer;
     };
   } ASN1optionparam_t,ASN1optionparam_s;
 
@@ -348,8 +348,8 @@ extern "C" {
 #define ASN1external_data_value_descriptor_o 0
     ASN1octet_t o[1];
     struct ASN1external_identification_s {
-      ASN1uint8_t o;
-      union {
+                   ASN1uint8_t o;
+                   union {
 #define ASN1external_identification_syntax_o 1
 	ASN1objectidentifier_t syntax;
 #define ASN1external_identification_presentation_context_id_o 2
@@ -359,17 +359,17 @@ extern "C" {
 	  ASN1uint32_t presentation_context_id;
 	  ASN1objectidentifier_t transfer_syntax;
 	} context_negotiation;
-      } u;
+                   } u;
     } identification;
     ASN1objectdescriptor_t data_value_descriptor;
     struct ASN1external_data_value_s {
-      ASN1uint8_t o;
-      union {
+                   ASN1uint8_t o;
+                   union {
 #define ASN1external_data_value_notation_o 0
 	ASN1open_t notation;
 #define ASN1external_data_value_encoded_o 1
 	ASN1bitstring_t encoded;
-      } u;
+                   } u;
     } data_value;
   } ASN1external_t;
 
@@ -379,8 +379,8 @@ extern "C" {
 
   typedef struct tagASN1embeddedpdv_t {
     struct ASN1embeddedpdv_identification_s {
-      ASN1uint8_t o;
-      union {
+                   ASN1uint8_t o;
+                   union {
 #define ASN1embeddedpdv_identification_syntaxes_o 0
 	struct ASN1embeddedpdv_identification_syntaxes_s {
 	  ASN1objectidentifier_t abstract;
@@ -398,16 +398,16 @@ extern "C" {
 #define ASN1embeddedpdv_identification_transfer_syntax_o 4
 	ASN1objectidentifier_t transfer_syntax;
 #define ASN1embeddedpdv_identification_fixed_o 5
-      } u;
+                   } u;
     } identification;
     struct ASN1embeddedpdv_data_value_s {
-      ASN1uint8_t o;
-      union {
+                   ASN1uint8_t o;
+                   union {
 #define ASN1embeddedpdv_data_value_notation_o 0
 	ASN1open_t notation;
 #define ASN1embeddedpdv_data_value_encoded_o 1
 	ASN1bitstring_t encoded;
-      } u;
+                   } u;
     } data_value;
   } ASN1embeddedpdv_t;
 
@@ -418,8 +418,8 @@ extern "C" {
 
   typedef struct tagASN1characterstring_t {
     struct ASN1characterstring_identification_s {
-      ASN1uint8_t o;
-      union {
+                   ASN1uint8_t o;
+                   union {
 #define ASN1characterstring_identification_syntaxes_o 0
 	struct ASN1characterstring_identification_syntaxes_s {
 	  ASN1objectidentifier_t abstract;
@@ -437,16 +437,16 @@ extern "C" {
 #define ASN1characterstring_identification_transfer_syntax_o 4
 	ASN1objectidentifier_t transfer_syntax;
 #define ASN1characterstring_identification_fixed_o 5
-      } u;
+                   } u;
     } identification;
     struct ASN1characterstring_data_value_s {
-      ASN1uint8_t o;
-      union {
+                   ASN1uint8_t o;
+                   union {
 #define ASN1characterstring_data_value_notation_o 0
 	ASN1open_t notation;
 #define ASN1characterstring_data_value_encoded_o 1
 	ASN1octetstring_t encoded;
-      } u;
+                   } u;
     } data_value;
   } ASN1characterstring_t;
 

@@ -839,15 +839,15 @@ typedef HCMNOTIFICATION *PHCMNOTIFICATION;
     CM_NOTIFY_FILTER_TYPE FilterType;
     DWORD Reserved;
     union {
-      struct {
-        GUID ClassGuid;
-      } DeviceInterface;
-      struct {
-        HANDLE  hTarget;
-      } DeviceHandle;
-      struct {
-        WCHAR InstanceId[MAX_DEVICE_ID_LEN];
-      } DeviceInstance;
+                   struct {
+                     GUID ClassGuid;
+                   } DeviceInterface;
+                   struct {
+                     HANDLE  hTarget;
+                   } DeviceHandle;
+                   struct {
+                     WCHAR InstanceId[MAX_DEVICE_ID_LEN];
+                   } DeviceInstance;
     } u;
   } CM_NOTIFY_FILTER, *PCM_NOTIFY_FILTER;
 
@@ -869,19 +869,19 @@ typedef HCMNOTIFICATION *PHCMNOTIFICATION;
     CM_NOTIFY_FILTER_TYPE FilterType;
     DWORD Reserved;
     union {
-      struct {
-        GUID ClassGuid;
-        WCHAR SymbolicLink[ANYSIZE_ARRAY];
-      } DeviceInterface;
-      struct {
-        GUID EventGuid;
-        LONG NameOffset;
-        DWORD DataSize;
-        BYTE Data[ANYSIZE_ARRAY];
-      } DeviceHandle;
-      struct {
-        WCHAR InstanceId[ANYSIZE_ARRAY];
-      } DeviceInstance;
+                   struct {
+                     GUID ClassGuid;
+                     WCHAR SymbolicLink[ANYSIZE_ARRAY];
+                   } DeviceInterface;
+                   struct {
+                     GUID EventGuid;
+                     LONG NameOffset;
+                     DWORD DataSize;
+                     BYTE Data[ANYSIZE_ARRAY];
+                   } DeviceHandle;
+                   struct {
+                     WCHAR InstanceId[ANYSIZE_ARRAY];
+                   } DeviceInstance;
     } u;
   } CM_NOTIFY_EVENT_DATA, *PCM_NOTIFY_EVENT_DATA;
 

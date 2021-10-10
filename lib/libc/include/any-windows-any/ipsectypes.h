@@ -117,18 +117,18 @@ typedef struct IPSEC_SA_IDLE_TIMEOUT0_ {
 
 typedef struct IPSEC_PROPOSAL0_ {
   IPSEC_SA_LIFETIME0  lifetime;
-  UINT32              numSaTransforms;
+  UINT32                                        numSaTransforms;
   IPSEC_SA_TRANSFORM0 *saTransforms;
   IPSEC_PFS_GROUP     pfsGroup;
 } IPSEC_PROPOSAL0;
 
 typedef struct IPSEC_TRANSPORT_POLICY0_ {
-  UINT32                 numIpsecProposals;
-  IPSEC_PROPOSAL0        *ipsecProposals;
-  UINT32                 flags;
-  UINT32                 ndAllowClearTimeoutSeconds;
+  UINT32                                           numIpsecProposals;
+  IPSEC_PROPOSAL0                     *ipsecProposals;
+  UINT32                                           flags;
+  UINT32                                           ndAllowClearTimeoutSeconds;
   IPSEC_SA_IDLE_TIMEOUT0 saIdleTimeout;
-  IKEEXT_EM_POLICY0      *emPolicy;
+  IKEEXT_EM_POLICY0                   *emPolicy;
 } IPSEC_TRANSPORT_POLICY0;
 
 typedef struct IPSEC_AUTH_TRANSFORM_ID0_ {
@@ -159,11 +159,11 @@ typedef struct IPSEC_AUTH_AND_CIPHER_TRANSFORM0_ {
 typedef struct IPSEC_SA_TRANSFORM0_ {
   IPSEC_TRANSFORM_TYPE ipsecTransformType;
   __C89_NAMELESS union {
-    IPSEC_AUTH_TRANSFORM0            *ahTransform;
-    IPSEC_AUTH_TRANSFORM0            *espAuthTransform;
-    IPSEC_CIPHER_TRANSFORM0          *espCipherTransform;
+    IPSEC_AUTH_TRANSFORM0                                      *ahTransform;
+    IPSEC_AUTH_TRANSFORM0                                      *espAuthTransform;
+    IPSEC_CIPHER_TRANSFORM0                       *espCipherTransform;
     IPSEC_AUTH_AND_CIPHER_TRANSFORM0 *espAuthAndCipherTransform;
-    IPSEC_AUTH_TRANSFORM0            *espAuthFwTransform;
+    IPSEC_AUTH_TRANSFORM0                                      *espAuthFwTransform;
   };
 } IPSEC_SA_TRANSFORM0;
 
@@ -180,12 +180,12 @@ typedef struct IPSEC_TUNNEL_ENDPOINTS0_ {
 } IPSEC_TUNNEL_ENDPOINTS0;
 
 typedef struct IPSEC_TUNNEL_POLICY0_ {
-  UINT32                  flags;
-  UINT32                  numIpsecProposals;
-  IPSEC_PROPOSAL0         *ipsecProposals;
+  UINT32                                                         flags;
+  UINT32                                                         numIpsecProposals;
+  IPSEC_PROPOSAL0                      *ipsecProposals;
   IPSEC_TUNNEL_ENDPOINTS0 tunnelEndpoints;
   IPSEC_SA_IDLE_TIMEOUT0  saIdleTimeout;
-  IKEEXT_EM_POLICY0       *emPolicy;
+  IKEEXT_EM_POLICY0                    *emPolicy;
 } IPSEC_TUNNEL_POLICY0;
 
 typedef struct IPSEC_V4_UDP_ENCAPSULATION0_ {
@@ -240,38 +240,38 @@ typedef struct IPSEC_TRAFFIC_STATISTICS0_ {
 } IPSEC_TRAFFIC_STATISTICS0;
 
 typedef struct IPSEC_STATISTICS0_ {
-  IPSEC_AGGREGATE_SA_STATISTICS0          aggregateSaStatistics;
-  IPSEC_ESP_DROP_PACKET_STATISTICS0       espDropPacketStatistics;
-  IPSEC_AH_DROP_PACKET_STATISTICS0        ahDropPacketStatistics;
+  IPSEC_AGGREGATE_SA_STATISTICS0                       aggregateSaStatistics;
+  IPSEC_ESP_DROP_PACKET_STATISTICS0                    espDropPacketStatistics;
+  IPSEC_AH_DROP_PACKET_STATISTICS0                     ahDropPacketStatistics;
   IPSEC_AGGREGATE_DROP_PACKET_STATISTICS0 aggregateDropPacketStatistics;
-  IPSEC_TRAFFIC_STATISTICS0               inboundTrafficStatistics;
-  IPSEC_TRAFFIC_STATISTICS0               outboundTrafficStatistics;
+  IPSEC_TRAFFIC_STATISTICS0                                         inboundTrafficStatistics;
+  IPSEC_TRAFFIC_STATISTICS0                                         outboundTrafficStatistics;
 } IPSEC_STATISTICS0;
 
 typedef struct IPSEC_TOKEN0_ {
-  IPSEC_TOKEN_TYPE      type;
+  IPSEC_TOKEN_TYPE                   type;
   IPSEC_TOKEN_PRINCIPAL principal;
-  IPSEC_TOKEN_MODE      mode;
+  IPSEC_TOKEN_MODE                   mode;
   IPSEC_TOKEN_HANDLE    token;
 } IPSEC_TOKEN0;
 
 typedef struct IPSEC_ID0_ {
-  wchar_t      *mmTargetName;
-  wchar_t      *emTargetName;
-  UINT32       numTokens;
+  wchar_t                   *mmTargetName;
+  wchar_t                   *emTargetName;
+  UINT32                    numTokens;
   IPSEC_TOKEN0 *tokens;
-  UINT64       explicitCredentials;
-  UINT64       logonId;
+  UINT64                    explicitCredentials;
+  UINT64                    logonId;
 } IPSEC_ID0;
 
 typedef struct IPSEC_SA_AUTH_INFORMATION0_ {
   IPSEC_AUTH_TRANSFORM0 authTransform;
-  FWP_BYTE_BLOB         authKey;
+  FWP_BYTE_BLOB                      authKey;
 } IPSEC_SA_AUTH_INFORMATION0;
 
 typedef struct IPSEC_SA_CIPHER_INFORMATION0_ {
   IPSEC_CIPHER_TRANSFORM0 cipherTransform;
-  FWP_BYTE_BLOB           cipherKey;
+  FWP_BYTE_BLOB                        cipherKey;
 } IPSEC_SA_CIPHER_INFORMATION0;
 
 typedef struct IPSEC_SA_AUTH_AND_CIPHER_INFORMATION0_ {
@@ -280,40 +280,40 @@ typedef struct IPSEC_SA_AUTH_AND_CIPHER_INFORMATION0_ {
 } IPSEC_SA_AUTH_AND_CIPHER_INFORMATION0;
 
 typedef struct IPSEC_SA0_ {
-  IPSEC_SA_SPI         spi;
+  IPSEC_SA_SPI                      spi;
   IPSEC_TRANSFORM_TYPE saTransformType;
   __C89_NAMELESS union {
-    IPSEC_SA_AUTH_INFORMATION0            *ahInformation;
-    IPSEC_SA_AUTH_INFORMATION0            *espAuthInformation;
-    IPSEC_SA_CIPHER_INFORMATION0          *espCipherInformation;
+    IPSEC_SA_AUTH_INFORMATION0                                      *ahInformation;
+    IPSEC_SA_AUTH_INFORMATION0                                      *espAuthInformation;
+    IPSEC_SA_CIPHER_INFORMATION0                       *espCipherInformation;
     IPSEC_SA_AUTH_AND_CIPHER_INFORMATION0 *espAuthAndCipherInformation;
-    IPSEC_SA_AUTH_INFORMATION0            *espAuthFwInformation;
+    IPSEC_SA_AUTH_INFORMATION0                                      *espAuthFwInformation;
   };
 } IPSEC_SA0;
 
 typedef struct IPSEC_KEYMODULE_STATE0_ {
-  GUID          keyModuleKey;
+  GUID                       keyModuleKey;
   FWP_BYTE_BLOB stateBlob;
 } IPSEC_KEYMODULE_STATE0;
 
 typedef struct IPSEC_SA_BUNDLE0_ {
-  UINT32                 flags;
+  UINT32                                           flags;
   IPSEC_SA_LIFETIME0     lifetime;
-  UINT32                 idleTimeoutSeconds;
-  UINT32                 ndAllowClearTimeoutSeconds;
-  IPSEC_ID0              *ipsecId;
-  UINT32                 napContext;
-  UINT32                 qmSaId;
-  UINT32                 numSAs;
-  IPSEC_SA0              *saList;
+  UINT32                                           idleTimeoutSeconds;
+  UINT32                                           ndAllowClearTimeoutSeconds;
+  IPSEC_ID0                                        *ipsecId;
+  UINT32                                           napContext;
+  UINT32                                           qmSaId;
+  UINT32                                           numSAs;
+  IPSEC_SA0                                        *saList;
   IPSEC_KEYMODULE_STATE0 *keyModuleState;
-  FWP_IP_VERSION         ipVersion;
+  FWP_IP_VERSION                      ipVersion;
   __C89_NAMELESS union {
     UINT32 peerV4PrivateAddress;
-    ;      // case(FWP_IP_VERSION_V6)
+    ;                   // case(FWP_IP_VERSION_V6)
   };
-  UINT64                 mmSaId;
-  IPSEC_PFS_GROUP        pfsGroup;
+  UINT64                                           mmSaId;
+  IPSEC_PFS_GROUP                     pfsGroup;
 } IPSEC_SA_BUNDLE0;
 
 typedef struct IPSEC_TRAFFIC0_ {
@@ -331,7 +331,7 @@ typedef struct IPSEC_TRAFFIC0_ {
     UINT64 ipsecFilterId;
     UINT64 tunnelPolicyId;
   };
-  UINT16             remotePort;
+  UINT16                                       remotePort;
 } IPSEC_TRAFFIC0;
 
 typedef struct IPSEC_SA_DETAILS0_ {
@@ -341,23 +341,23 @@ typedef struct IPSEC_SA_DETAILS0_ {
   IPSEC_SA_BUNDLE0 saBundle;
   __C89_NAMELESS union {
     IPSEC_V4_UDP_ENCAPSULATION0 *udpEncapsulation;
-    ;      // case(FWP_IP_VERSION_V6)
+    ;                   // case(FWP_IP_VERSION_V6)
   };
   FWPM_FILTER0     *transportFilter;
 } IPSEC_SA_DETAILS0;
 
 typedef struct IPSEC_SA_CONTEXT0_ {
-  UINT64            saContextId;
+  UINT64                                      saContextId;
   IPSEC_SA_DETAILS0 *inboundSa;
   IPSEC_SA_DETAILS0 *outboundSa;
 } IPSEC_SA_CONTEXT0;
 
 typedef struct IPSEC_GETSPI0_ {
-  IPSEC_TRAFFIC0         inboundIpsecTraffic;
-  FWP_IP_VERSION         ipVersion;
+  IPSEC_TRAFFIC0                      inboundIpsecTraffic;
+  FWP_IP_VERSION                      ipVersion;
   __C89_NAMELESS union {
     IPSEC_V4_UDP_ENCAPSULATION0 *inboundUdpEncapsulation;
-    ;      // case(FWP_IP_VERSION_V6)
+    ;                   // case(FWP_IP_VERSION_V6)
   };
   IPSEC_CRYPTO_MODULE_ID *rngCryptoModuleID;
 } IPSEC_GETSPI0;
@@ -384,48 +384,48 @@ typedef struct IPSEC_TUNNEL_ENDPOINTS1_ {
     UINT32 remoteV4Address;
     UINT8  remoteV6Address[16];
   };
-  UINT64         localIfLuid;
+  UINT64                      localIfLuid;
 } IPSEC_TUNNEL_ENDPOINTS1;
 
 typedef struct IPSEC_TUNNEL_POLICY1_ {
-  UINT32                  flags;
-  UINT32                  numIpsecProposals;
-  IPSEC_PROPOSAL0         *ipsecProposals;
+  UINT32                                                         flags;
+  UINT32                                                         numIpsecProposals;
+  IPSEC_PROPOSAL0                      *ipsecProposals;
   IPSEC_TUNNEL_ENDPOINTS1 tunnelEndpoints;
   IPSEC_SA_IDLE_TIMEOUT0  saIdleTimeout;
-  IKEEXT_EM_POLICY1       *emPolicy;
+  IKEEXT_EM_POLICY1                    *emPolicy;
 } IPSEC_TUNNEL_POLICY1;
 
 typedef struct IPSEC_TRANSPORT_POLICY1_ {
-  UINT32                 numIpsecProposals;
-  IPSEC_PROPOSAL0        *ipsecProposals;
-  UINT32                 flags;
-  UINT32                 ndAllowClearTimeoutSeconds;
+  UINT32                                           numIpsecProposals;
+  IPSEC_PROPOSAL0                     *ipsecProposals;
+  UINT32                                           flags;
+  UINT32                                           ndAllowClearTimeoutSeconds;
   IPSEC_SA_IDLE_TIMEOUT0 saIdleTimeout;
-  IKEEXT_EM_POLICY1      *emPolicy;
+  IKEEXT_EM_POLICY1                   *emPolicy;
 } IPSEC_TRANSPORT_POLICY1;
 
 typedef struct _IPSEC_DOSP_OPTIONS0 {
-  UINT32               stateIdleTimeoutSeconds;
-  UINT32               perIPRateLimitQueueIdleTimeoutSeconds;
-  UINT8                ipV6IPsecUnauthDscp;
-  UINT32               ipV6IPsecUnauthRateLimitBytesPerSec;
-  UINT32               ipV6IPsecUnauthPerIPRateLimitBytesPerSec;
-  UINT8                ipV6IPsecAuthDscp;
-  UINT32               ipV6IPsecAuthRateLimitBytesPerSec;
-  UINT8                icmpV6Dscp;
-  UINT32               icmpV6RateLimitBytesPerSec;
-  UINT8                ipV6FilterExemptDscp;
-  UINT32               ipV6FilterExemptRateLimitBytesPerSec;
-  UINT8                defBlockExemptDscp;
-  UINT32               defBlockExemptRateLimitBytesPerSec;
-  UINT32               maxStateEntries;
-  UINT32               maxPerIPRateLimitQueues;
-  UINT32               flags;
-  UINT32               numPublicIFLuids;
-  UINT64               *publicIFLuids;
-  UINT32               numInternalIFLuids;
-  UINT64               *internalIFLuids;
+  UINT32                                         stateIdleTimeoutSeconds;
+  UINT32                                         perIPRateLimitQueueIdleTimeoutSeconds;
+  UINT8                                          ipV6IPsecUnauthDscp;
+  UINT32                                         ipV6IPsecUnauthRateLimitBytesPerSec;
+  UINT32                                         ipV6IPsecUnauthPerIPRateLimitBytesPerSec;
+  UINT8                                          ipV6IPsecAuthDscp;
+  UINT32                                         ipV6IPsecAuthRateLimitBytesPerSec;
+  UINT8                                          icmpV6Dscp;
+  UINT32                                         icmpV6RateLimitBytesPerSec;
+  UINT8                                          ipV6FilterExemptDscp;
+  UINT32                                         ipV6FilterExemptRateLimitBytesPerSec;
+  UINT8                                          defBlockExemptDscp;
+  UINT32                                         defBlockExemptRateLimitBytesPerSec;
+  UINT32                                         maxStateEntries;
+  UINT32                                         maxPerIPRateLimitQueues;
+  UINT32                                         flags;
+  UINT32                                         numPublicIFLuids;
+  UINT64                                         *publicIFLuids;
+  UINT32                                         numInternalIFLuids;
+  UINT64                                         *internalIFLuids;
   FWP_V6_ADDR_AND_MASK publicV6AddrMask;
   FWP_V6_ADDR_AND_MASK internalV6AddrMask;
 } IPSEC_DOSP_OPTIONS0;
@@ -488,34 +488,34 @@ typedef struct IPSEC_AGGREGATE_DROP_PACKET_STATISTICS1_ {
 } IPSEC_AGGREGATE_DROP_PACKET_STATISTICS1;
 
 typedef struct IPSEC_STATISTICS1_ {
-  IPSEC_AGGREGATE_SA_STATISTICS0          aggregateSaStatistics;
-  IPSEC_ESP_DROP_PACKET_STATISTICS0       espDropPacketStatistics;
-  IPSEC_AH_DROP_PACKET_STATISTICS0        ahDropPacketStatistics;
+  IPSEC_AGGREGATE_SA_STATISTICS0                       aggregateSaStatistics;
+  IPSEC_ESP_DROP_PACKET_STATISTICS0                    espDropPacketStatistics;
+  IPSEC_AH_DROP_PACKET_STATISTICS0                     ahDropPacketStatistics;
   IPSEC_AGGREGATE_DROP_PACKET_STATISTICS1 aggregateDropPacketStatistics;
-  IPSEC_TRAFFIC_STATISTICS1               inboundTrafficStatistics;
-  IPSEC_TRAFFIC_STATISTICS1               outboundTrafficStatistics;
+  IPSEC_TRAFFIC_STATISTICS1                                         inboundTrafficStatistics;
+  IPSEC_TRAFFIC_STATISTICS1                                         outboundTrafficStatistics;
 } IPSEC_STATISTICS1;
 
 typedef struct IPSEC_SA_BUNDLE1_ {
-  UINT32                 flags;
+  UINT32                                           flags;
   IPSEC_SA_LIFETIME0     lifetime;
-  UINT32                 idleTimeoutSeconds;
-  UINT32                 ndAllowClearTimeoutSeconds;
-  IPSEC_ID0              *ipsecId;
-  UINT32                 napContext;
-  UINT32                 qmSaId;
-  UINT32                 numSAs;
-  IPSEC_SA0              *saList;
+  UINT32                                           idleTimeoutSeconds;
+  UINT32                                           ndAllowClearTimeoutSeconds;
+  IPSEC_ID0                                        *ipsecId;
+  UINT32                                           napContext;
+  UINT32                                           qmSaId;
+  UINT32                                           numSAs;
+  IPSEC_SA0                                        *saList;
   IPSEC_KEYMODULE_STATE0 *keyModuleState;
-  FWP_IP_VERSION         ipVersion;
+  FWP_IP_VERSION                      ipVersion;
   __C89_NAMELESS union {
     UINT32 peerV4PrivateAddress;
-    ;      // case(FWP_IP_VERSION_V6)
+    ;                   // case(FWP_IP_VERSION_V6)
   };
-  UINT64                 mmSaId;
-  IPSEC_PFS_GROUP        pfsGroup;
-  GUID                   saLookupContext;
-  UINT64                 qmFilterId;
+  UINT64                                           mmSaId;
+  IPSEC_PFS_GROUP                     pfsGroup;
+  GUID                                                          saLookupContext;
+  UINT64                                           qmFilterId;
 } IPSEC_SA_BUNDLE1;
 
 typedef struct _IPSEC_VIRTUAL_IF_TUNNEL_INFO0 {
@@ -538,46 +538,46 @@ typedef struct IPSEC_TRAFFIC1_ {
     UINT64 ipsecFilterId;
     UINT64 tunnelPolicyId;
   };
-  UINT16             remotePort;
-  UINT16             localPort;
-  UINT8              ipProtocol;
-  UINT64             localIfLuid;
-  UINT32             realIfProfileId;
+  UINT16                                       remotePort;
+  UINT16                                       localPort;
+  UINT8                                        ipProtocol;
+  UINT64                                       localIfLuid;
+  UINT32                                       realIfProfileId;
 } IPSEC_TRAFFIC1;
 
 typedef struct IPSEC_SA_DETAILS1_ {
-  FWP_IP_VERSION                ipVersion;
-  FWP_DIRECTION                 saDirection;
-  IPSEC_TRAFFIC1                traffic;
-  IPSEC_SA_BUNDLE1              saBundle;
+  FWP_IP_VERSION                                          ipVersion;
+  FWP_DIRECTION                                           saDirection;
+  IPSEC_TRAFFIC1                                          traffic;
+  IPSEC_SA_BUNDLE1                                        saBundle;
   __C89_NAMELESS union {
     IPSEC_V4_UDP_ENCAPSULATION0 *udpEncapsulation;
-    ;      // case(FWP_IP_VERSION_V6)
+    ;                   // case(FWP_IP_VERSION_V6)
   };
-  FWPM_FILTER0                  *transportFilter;
+  FWPM_FILTER0                                                         *transportFilter;
   IPSEC_VIRTUAL_IF_TUNNEL_INFO0 *virtualIfTunnelInfo;
 } IPSEC_SA_DETAILS1;
 
 typedef struct IPSEC_SA_CONTEXT1_ {
-  UINT64            saContextId;
+  UINT64                                      saContextId;
   IPSEC_SA_DETAILS1 *inboundSa;
   IPSEC_SA_DETAILS1 *outboundSa;
 } IPSEC_SA_CONTEXT1;
 
 typedef struct IPSEC_GETSPI1_ {
-  IPSEC_TRAFFIC1         inboundIpsecTraffic;
-  FWP_IP_VERSION         ipVersion;
+  IPSEC_TRAFFIC1                      inboundIpsecTraffic;
+  FWP_IP_VERSION                      ipVersion;
   __C89_NAMELESS union {
     IPSEC_V4_UDP_ENCAPSULATION0 *inboundUdpEncapsulation;
-    ;      // case(FWP_IP_VERSION_V6)
+    ;                   // case(FWP_IP_VERSION_V6)
   };
   IPSEC_CRYPTO_MODULE_ID *rngCryptoModuleID;
 } IPSEC_GETSPI1;
 
 typedef struct _IPSEC_ADDRESS_INFO0 {
-  UINT32           numV4Addresses;
-  UINT32           *v4Addresses;
-  UINT32           numV6Addresses;
+  UINT32                        numV4Addresses;
+  UINT32                        *v4Addresses;
+  UINT32                        numV6Addresses;
   FWP_BYTE_ARRAY16 *v6Addresses;
 } IPSEC_ADDRESS_INFO0;
 

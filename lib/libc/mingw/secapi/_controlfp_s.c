@@ -45,11 +45,11 @@ static errno_t __cdecl _stub (
 
   if (f == _stub)
     {
-        f = (errno_t __cdecl (*)(unsigned int *, unsigned int, unsigned int))
-            GetProcAddress (__mingw_get_msvcrt_handle (), "_controlfp_s");
-        if (!f)
-          f = _int_controlfp_s;
-        __MINGW_IMP_SYMBOL(_controlfp_s) = f;
+                     f = (errno_t __cdecl (*)(unsigned int *, unsigned int, unsigned int))
+                                      GetProcAddress (__mingw_get_msvcrt_handle (), "_controlfp_s");
+                     if (!f)
+                       f = _int_controlfp_s;
+                     __MINGW_IMP_SYMBOL(_controlfp_s) = f;
     }
   return (*f)(currentControl, newControl, mask);
 }

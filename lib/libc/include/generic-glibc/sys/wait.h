@@ -145,13 +145,13 @@ struct rusage;
    WUNTRACED bit is set in OPTIONS, return status for stopped children;
    otherwise don't.  */
 extern __pid_t wait3 (int *__stat_loc, int __options,
-		      struct rusage * __usage) __THROWNL;
+		                   struct rusage * __usage) __THROWNL;
 #endif
 
 #ifdef __USE_MISC
 /* PID is like waitpid.  Other args are like wait3.  */
 extern __pid_t wait4 (__pid_t __pid, int *__stat_loc, int __options,
-		      struct rusage *__usage) __THROWNL;
+		                   struct rusage *__usage) __THROWNL;
 #endif /* Use misc.  */
 
 

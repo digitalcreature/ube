@@ -28,19 +28,19 @@
  */
 struct changer_params {
 	int cp_curpicker;  /* current transport element */
-	int cp_npickers;   /* number of transport elements      (CHET_MT) */
-	int cp_nslots;     /* number of storage elements        (CHET_ST) */
+	int cp_npickers;   /* number of transport elements                   (CHET_MT) */
+	int cp_nslots;     /* number of storage elements                     (CHET_ST) */
 	int cp_nportals;   /* number of import/export elements  (CHET_IE) */
 	int cp_ndrives;    /* number of data transfer elements  (CHET_DT) */
 };
 struct changer_vendor_params {
-	int  cvp_n1;       /* number of vendor specific elems   (CHET_V1) */
+	int  cvp_n1;                    /* number of vendor specific elems   (CHET_V1) */
 	char cvp_label1[16];
-	int  cvp_n2;       /* number of vendor specific elems   (CHET_V2) */
+	int  cvp_n2;                    /* number of vendor specific elems   (CHET_V2) */
 	char cvp_label2[16];
-	int  cvp_n3;       /* number of vendor specific elems   (CHET_V3) */
+	int  cvp_n3;                    /* number of vendor specific elems   (CHET_V3) */
 	char cvp_label3[16];
-	int  cvp_n4;       /* number of vendor specific elems   (CHET_V4) */
+	int  cvp_n4;                    /* number of vendor specific elems   (CHET_V4) */
 	char cvp_label4[16];
 	int  reserved[8];
 };
@@ -96,7 +96,7 @@ struct changer_position {
  *    get element status for all elements of a specific type
  */
 struct changer_element_status {
-	int             ces_type;
+	int                                       ces_type;
 	unsigned char   *ces_data;
 };
 #define CESTATUS_FULL     0x01 /* full */
@@ -114,23 +114,23 @@ struct changer_element_status {
 struct changer_get_element {
 	int	cge_type;	 /* type/unit */
 	int	cge_unit;
-	int	cge_status;      /* status */
-	int     cge_errno;       /* errno */
+	int	cge_status;                   /* status */
+	int     cge_errno;                    /* errno */
 	int     cge_srctype;     /* source element of the last move/exchange */
 	int     cge_srcunit;
-	int     cge_id;          /* scsi id  (for data transfer elements) */
-	int     cge_lun;         /* scsi lun (for data transfer elements) */
+	int     cge_id;                       /* scsi id  (for data transfer elements) */
+	int     cge_lun;                      /* scsi lun (for data transfer elements) */
 	char    cge_pvoltag[36]; /* primary volume tag */
 	char    cge_avoltag[36]; /* alternate volume tag */
 	int     cge_flags;
 };
 /* flags */
-#define CGE_ERRNO     0x01       /* errno available       */
-#define CGE_INVERT    0x02       /* media inverted        */
-#define CGE_SRC       0x04       /* media src available   */
-#define CGE_IDLUN     0x08       /* ID+LUN available      */
-#define CGE_PVOLTAG   0x10       /* primary volume tag available */
-#define CGE_AVOLTAG   0x20       /* alternate volume tag available */
+#define CGE_ERRNO     0x01                    /* errno available                    */
+#define CGE_INVERT    0x02                    /* media inverted                     */
+#define CGE_SRC                    0x04                    /* media src available   */
+#define CGE_IDLUN     0x08                    /* ID+LUN available                   */
+#define CGE_PVOLTAG   0x10                    /* primary volume tag available */
+#define CGE_AVOLTAG   0x20                    /* alternate volume tag available */
 
 
 /*
@@ -143,19 +143,19 @@ struct changer_set_voltag {
 	char    csv_voltag[36];  /* volume tag */
 	int     csv_flags;
 };
-#define CSV_PVOLTAG   0x01       /* primary volume tag */
-#define CSV_AVOLTAG   0x02       /* alternate volume tag */
-#define CSV_CLEARTAG  0x04       /* clear volume tag */
+#define CSV_PVOLTAG   0x01                    /* primary volume tag */
+#define CSV_AVOLTAG   0x02                    /* alternate volume tag */
+#define CSV_CLEARTAG  0x04                    /* clear volume tag */
 
 /* ioctls */
-#define CHIOMOVE       _IOW('c', 1,struct changer_move)
+#define CHIOMOVE                    _IOW('c', 1,struct changer_move)
 #define CHIOEXCHANGE   _IOW('c', 2,struct changer_exchange)
 #define CHIOPOSITION   _IOW('c', 3,struct changer_position)
-#define CHIOGPICKER    _IOR('c', 4,int)                        /* not impl. */
-#define CHIOSPICKER    _IOW('c', 5,int)                        /* not impl. */
+#define CHIOGPICKER    _IOR('c', 4,int)                                                                            /* not impl. */
+#define CHIOSPICKER    _IOW('c', 5,int)                                                                            /* not impl. */
 #define CHIOGPARAMS    _IOR('c', 6,struct changer_params)
 #define CHIOGSTATUS    _IOW('c', 8,struct changer_element_status)
-#define CHIOGELEM      _IOW('c',16,struct changer_get_element)
+#define CHIOGELEM                   _IOW('c',16,struct changer_get_element)
 #define CHIOINITELEM   _IO('c',17)
 #define CHIOSVOLTAG    _IOW('c',18,struct changer_set_voltag)
 #define CHIOGVPARAMS   _IOR('c',19,struct changer_vendor_params)

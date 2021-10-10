@@ -37,33 +37,33 @@
 #  define __PRI_MAX_LENGTH_MODIFIER__ "j"
 #  define __SCN_MAX_LENGTH_MODIFIER__ "j"
 
-#  define PRId8         __PRI_8_LENGTH_MODIFIER__ "d"
-#  define PRIi8         __PRI_8_LENGTH_MODIFIER__ "i"
-#  define PRIo8         __PRI_8_LENGTH_MODIFIER__ "o"
-#  define PRIu8         __PRI_8_LENGTH_MODIFIER__ "u"
-#  define PRIx8         __PRI_8_LENGTH_MODIFIER__ "x"
-#  define PRIX8         __PRI_8_LENGTH_MODIFIER__ "X"
+#  define PRId8                      __PRI_8_LENGTH_MODIFIER__ "d"
+#  define PRIi8                      __PRI_8_LENGTH_MODIFIER__ "i"
+#  define PRIo8                      __PRI_8_LENGTH_MODIFIER__ "o"
+#  define PRIu8                      __PRI_8_LENGTH_MODIFIER__ "u"
+#  define PRIx8                      __PRI_8_LENGTH_MODIFIER__ "x"
+#  define PRIX8                      __PRI_8_LENGTH_MODIFIER__ "X"
 
-#  define PRId16        "hd"
-#  define PRIi16        "hi"
-#  define PRIo16        "ho"
-#  define PRIu16        "hu"
-#  define PRIx16        "hx"
-#  define PRIX16        "hX"
+#  define PRId16                     "hd"
+#  define PRIi16                     "hi"
+#  define PRIo16                     "ho"
+#  define PRIu16                     "hu"
+#  define PRIx16                     "hx"
+#  define PRIX16                     "hX"
 
-#  define PRId32        "d"
-#  define PRIi32        "i"
-#  define PRIo32        "o"
-#  define PRIu32        "u"
-#  define PRIx32        "x"
-#  define PRIX32        "X"
+#  define PRId32                     "d"
+#  define PRIi32                     "i"
+#  define PRIo32                     "o"
+#  define PRIu32                     "u"
+#  define PRIx32                     "x"
+#  define PRIX32                     "X"
 
-#  define PRId64        __PRI_64_LENGTH_MODIFIER__ "d"
-#  define PRIi64        __PRI_64_LENGTH_MODIFIER__ "i"
-#  define PRIo64        __PRI_64_LENGTH_MODIFIER__ "o"
-#  define PRIu64        __PRI_64_LENGTH_MODIFIER__ "u"
-#  define PRIx64        __PRI_64_LENGTH_MODIFIER__ "x"
-#  define PRIX64        __PRI_64_LENGTH_MODIFIER__ "X"
+#  define PRId64                     __PRI_64_LENGTH_MODIFIER__ "d"
+#  define PRIi64                     __PRI_64_LENGTH_MODIFIER__ "i"
+#  define PRIo64                     __PRI_64_LENGTH_MODIFIER__ "o"
+#  define PRIu64                     __PRI_64_LENGTH_MODIFIER__ "u"
+#  define PRIx64                     __PRI_64_LENGTH_MODIFIER__ "x"
+#  define PRIX64                     __PRI_64_LENGTH_MODIFIER__ "X"
 
 #  define PRIdLEAST8    PRId8
 #  define PRIiLEAST8    PRIi8
@@ -122,43 +122,43 @@
 #  define PRIXFAST64    PRIX64
 
 /* int32_t is 'int', but intptr_t is 'long'.  */
-#  define PRIdPTR       "ld"
-#  define PRIiPTR       "li"
-#  define PRIoPTR       "lo"
-#  define PRIuPTR       "lu"
-#  define PRIxPTR       "lx"
-#  define PRIXPTR       "lX"
+#  define PRIdPTR                    "ld"
+#  define PRIiPTR                    "li"
+#  define PRIoPTR                    "lo"
+#  define PRIuPTR                    "lu"
+#  define PRIxPTR                    "lx"
+#  define PRIXPTR                    "lX"
 
-#  define PRIdMAX        __PRI_MAX_LENGTH_MODIFIER__ "d"
-#  define PRIiMAX        __PRI_MAX_LENGTH_MODIFIER__ "i"
-#  define PRIoMAX        __PRI_MAX_LENGTH_MODIFIER__ "o"
-#  define PRIuMAX        __PRI_MAX_LENGTH_MODIFIER__ "u"
-#  define PRIxMAX        __PRI_MAX_LENGTH_MODIFIER__ "x"
-#  define PRIXMAX        __PRI_MAX_LENGTH_MODIFIER__ "X"
+#  define PRIdMAX                     __PRI_MAX_LENGTH_MODIFIER__ "d"
+#  define PRIiMAX                     __PRI_MAX_LENGTH_MODIFIER__ "i"
+#  define PRIoMAX                     __PRI_MAX_LENGTH_MODIFIER__ "o"
+#  define PRIuMAX                     __PRI_MAX_LENGTH_MODIFIER__ "u"
+#  define PRIxMAX                     __PRI_MAX_LENGTH_MODIFIER__ "x"
+#  define PRIXMAX                     __PRI_MAX_LENGTH_MODIFIER__ "X"
 
-#  define SCNd8         __PRI_8_LENGTH_MODIFIER__ "d"
-#  define SCNi8         __PRI_8_LENGTH_MODIFIER__ "i"
-#  define SCNo8         __PRI_8_LENGTH_MODIFIER__ "o"
-#  define SCNu8         __PRI_8_LENGTH_MODIFIER__ "u"
-#  define SCNx8         __PRI_8_LENGTH_MODIFIER__ "x"
+#  define SCNd8                      __PRI_8_LENGTH_MODIFIER__ "d"
+#  define SCNi8                      __PRI_8_LENGTH_MODIFIER__ "i"
+#  define SCNo8                      __PRI_8_LENGTH_MODIFIER__ "o"
+#  define SCNu8                      __PRI_8_LENGTH_MODIFIER__ "u"
+#  define SCNx8                      __PRI_8_LENGTH_MODIFIER__ "x"
 
-#  define SCNd16        "hd"
-#  define SCNi16        "hi"
-#  define SCNo16        "ho"
-#  define SCNu16        "hu"
-#  define SCNx16        "hx"
+#  define SCNd16                     "hd"
+#  define SCNi16                     "hi"
+#  define SCNo16                     "ho"
+#  define SCNu16                     "hu"
+#  define SCNx16                     "hx"
 
-#  define SCNd32        "d"
-#  define SCNi32        "i"
-#  define SCNo32        "o"
-#  define SCNu32        "u"
-#  define SCNx32        "x"
+#  define SCNd32                     "d"
+#  define SCNi32                     "i"
+#  define SCNo32                     "o"
+#  define SCNu32                     "u"
+#  define SCNx32                     "x"
 
-#  define SCNd64        __SCN_64_LENGTH_MODIFIER__ "d"
-#  define SCNi64        __SCN_64_LENGTH_MODIFIER__ "i"
-#  define SCNo64        __SCN_64_LENGTH_MODIFIER__ "o"
-#  define SCNu64        __SCN_64_LENGTH_MODIFIER__ "u"
-#  define SCNx64        __SCN_64_LENGTH_MODIFIER__ "x"
+#  define SCNd64                     __SCN_64_LENGTH_MODIFIER__ "d"
+#  define SCNi64                     __SCN_64_LENGTH_MODIFIER__ "i"
+#  define SCNo64                     __SCN_64_LENGTH_MODIFIER__ "o"
+#  define SCNu64                     __SCN_64_LENGTH_MODIFIER__ "u"
+#  define SCNx64                     __SCN_64_LENGTH_MODIFIER__ "x"
 
 #  define SCNdLEAST8    SCNd8
 #  define SCNiLEAST8    SCNi8
@@ -208,17 +208,17 @@
 #  define SCNuFAST64    SCNu64
 #  define SCNxFAST64    SCNx64
 
-#  define SCNdPTR       "ld"
-#  define SCNiPTR       "li"
-#  define SCNoPTR       "lo"
-#  define SCNuPTR       "lu"
-#  define SCNxPTR       "lx"
+#  define SCNdPTR                    "ld"
+#  define SCNiPTR                    "li"
+#  define SCNoPTR                    "lo"
+#  define SCNuPTR                    "lu"
+#  define SCNxPTR                    "lx"
 
-#  define SCNdMAX       __SCN_MAX_LENGTH_MODIFIER__ "d"
-#  define SCNiMAX       __SCN_MAX_LENGTH_MODIFIER__ "i"
-#  define SCNoMAX       __SCN_MAX_LENGTH_MODIFIER__ "o"
-#  define SCNuMAX       __SCN_MAX_LENGTH_MODIFIER__ "u"
-#  define SCNxMAX       __SCN_MAX_LENGTH_MODIFIER__ "x"
+#  define SCNdMAX                    __SCN_MAX_LENGTH_MODIFIER__ "d"
+#  define SCNiMAX                    __SCN_MAX_LENGTH_MODIFIER__ "i"
+#  define SCNoMAX                    __SCN_MAX_LENGTH_MODIFIER__ "o"
+#  define SCNuMAX                    __SCN_MAX_LENGTH_MODIFIER__ "u"
+#  define SCNxMAX                    __SCN_MAX_LENGTH_MODIFIER__ "x"
 
 #include <sys/cdefs.h>
 #include <Availability.h>
@@ -288,7 +288,7 @@ __END_DECLS
    their dependents will *not* then do the intended substitution.
    Expansion of a #define like this one:
 
-        #define x IDENT y
+                     #define x IDENT y
 
    uses the cpp value of IDENT at the location where x is *expanded*,
    not where it is #defined.

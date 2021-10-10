@@ -183,23 +183,23 @@ extern "C"{
 #else
   typedef struct IHlinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IHlink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IHlink *This);
-      ULONG (WINAPI *Release)(IHlink *This);
-      HRESULT (WINAPI *SetHlinkSite)(IHlink *This,IHlinkSite *pihlSite,DWORD dwSiteData);
-      HRESULT (WINAPI *GetHlinkSite)(IHlink *This,IHlinkSite **ppihlSite,DWORD *pdwSiteData);
-      HRESULT (WINAPI *SetMonikerReference)(IHlink *This,DWORD grfHLSETF,IMoniker *pimkTarget,LPCWSTR pwzLocation);
-      HRESULT (WINAPI *GetMonikerReference)(IHlink *This,DWORD dwWhichRef,IMoniker **ppimkTarget,LPWSTR *ppwzLocation);
-      HRESULT (WINAPI *SetStringReference)(IHlink *This,DWORD grfHLSETF,LPCWSTR pwzTarget,LPCWSTR pwzLocation);
-      HRESULT (WINAPI *GetStringReference)(IHlink *This,DWORD dwWhichRef,LPWSTR *ppwzTarget,LPWSTR *ppwzLocation);
-      HRESULT (WINAPI *SetFriendlyName)(IHlink *This,LPCWSTR pwzFriendlyName);
-      HRESULT (WINAPI *GetFriendlyName)(IHlink *This,DWORD grfHLFNAMEF,LPWSTR *ppwzFriendlyName);
-      HRESULT (WINAPI *SetTargetFrameName)(IHlink *This,LPCWSTR pwzTargetFrameName);
-      HRESULT (WINAPI *GetTargetFrameName)(IHlink *This,LPWSTR *ppwzTargetFrameName);
-      HRESULT (WINAPI *GetMiscStatus)(IHlink *This,DWORD *pdwStatus);
-      HRESULT (WINAPI *Navigate)(IHlink *This,DWORD grfHLNF,LPBC pibc,IBindStatusCallback *pibsc,IHlinkBrowseContext *pihlbc);
-      HRESULT (WINAPI *SetAdditionalParams)(IHlink *This,LPCWSTR pwzAdditionalParams);
-      HRESULT (WINAPI *GetAdditionalParams)(IHlink *This,LPWSTR *ppwzAdditionalParams);
+                   HRESULT (WINAPI *QueryInterface)(IHlink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IHlink *This);
+                   ULONG (WINAPI *Release)(IHlink *This);
+                   HRESULT (WINAPI *SetHlinkSite)(IHlink *This,IHlinkSite *pihlSite,DWORD dwSiteData);
+                   HRESULT (WINAPI *GetHlinkSite)(IHlink *This,IHlinkSite **ppihlSite,DWORD *pdwSiteData);
+                   HRESULT (WINAPI *SetMonikerReference)(IHlink *This,DWORD grfHLSETF,IMoniker *pimkTarget,LPCWSTR pwzLocation);
+                   HRESULT (WINAPI *GetMonikerReference)(IHlink *This,DWORD dwWhichRef,IMoniker **ppimkTarget,LPWSTR *ppwzLocation);
+                   HRESULT (WINAPI *SetStringReference)(IHlink *This,DWORD grfHLSETF,LPCWSTR pwzTarget,LPCWSTR pwzLocation);
+                   HRESULT (WINAPI *GetStringReference)(IHlink *This,DWORD dwWhichRef,LPWSTR *ppwzTarget,LPWSTR *ppwzLocation);
+                   HRESULT (WINAPI *SetFriendlyName)(IHlink *This,LPCWSTR pwzFriendlyName);
+                   HRESULT (WINAPI *GetFriendlyName)(IHlink *This,DWORD grfHLFNAMEF,LPWSTR *ppwzFriendlyName);
+                   HRESULT (WINAPI *SetTargetFrameName)(IHlink *This,LPCWSTR pwzTargetFrameName);
+                   HRESULT (WINAPI *GetTargetFrameName)(IHlink *This,LPWSTR *ppwzTargetFrameName);
+                   HRESULT (WINAPI *GetMiscStatus)(IHlink *This,DWORD *pdwStatus);
+                   HRESULT (WINAPI *Navigate)(IHlink *This,DWORD grfHLNF,LPBC pibc,IBindStatusCallback *pibsc,IHlinkBrowseContext *pihlbc);
+                   HRESULT (WINAPI *SetAdditionalParams)(IHlink *This,LPCWSTR pwzAdditionalParams);
+                   HRESULT (WINAPI *GetAdditionalParams)(IHlink *This,LPWSTR *ppwzAdditionalParams);
     END_INTERFACE
   } IHlinkVtbl;
   struct IHlink {
@@ -281,13 +281,13 @@ extern "C"{
 #else
   typedef struct IHlinkSiteVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IHlinkSite *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IHlinkSite *This);
-      ULONG (WINAPI *Release)(IHlinkSite *This);
-      HRESULT (WINAPI *QueryService)(IHlinkSite *This,DWORD dwSiteData,REFGUID guidService,REFIID riid,IUnknown **ppiunk);
-      HRESULT (WINAPI *GetMoniker)(IHlinkSite *This,DWORD dwSiteData,DWORD dwAssign,DWORD dwWhich,IMoniker **ppimk);
-      HRESULT (WINAPI *ReadyToNavigate)(IHlinkSite *This,DWORD dwSiteData,DWORD dwReserved);
-      HRESULT (WINAPI *OnNavigationComplete)(IHlinkSite *This,DWORD dwSiteData,DWORD dwreserved,HRESULT hrError,LPCWSTR pwzError);
+                   HRESULT (WINAPI *QueryInterface)(IHlinkSite *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IHlinkSite *This);
+                   ULONG (WINAPI *Release)(IHlinkSite *This);
+                   HRESULT (WINAPI *QueryService)(IHlinkSite *This,DWORD dwSiteData,REFGUID guidService,REFIID riid,IUnknown **ppiunk);
+                   HRESULT (WINAPI *GetMoniker)(IHlinkSite *This,DWORD dwSiteData,DWORD dwAssign,DWORD dwWhich,IMoniker **ppimk);
+                   HRESULT (WINAPI *ReadyToNavigate)(IHlinkSite *This,DWORD dwSiteData,DWORD dwReserved);
+                   HRESULT (WINAPI *OnNavigationComplete)(IHlinkSite *This,DWORD dwSiteData,DWORD dwreserved,HRESULT hrError,LPCWSTR pwzError);
     END_INTERFACE
   } IHlinkSiteVtbl;
   struct IHlinkSite {
@@ -334,14 +334,14 @@ extern "C"{
 #else
   typedef struct IHlinkTargetVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IHlinkTarget *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IHlinkTarget *This);
-      ULONG (WINAPI *Release)(IHlinkTarget *This);
-      HRESULT (WINAPI *SetBrowseContext)(IHlinkTarget *This,IHlinkBrowseContext *pihlbc);
-      HRESULT (WINAPI *GetBrowseContext)(IHlinkTarget *This,IHlinkBrowseContext **ppihlbc);
-      HRESULT (WINAPI *Navigate)(IHlinkTarget *This,DWORD grfHLNF,LPCWSTR pwzJumpLocation);
-      HRESULT (WINAPI *GetMoniker)(IHlinkTarget *This,LPCWSTR pwzLocation,DWORD dwAssign,IMoniker **ppimkLocation);
-      HRESULT (WINAPI *GetFriendlyName)(IHlinkTarget *This,LPCWSTR pwzLocation,LPWSTR *ppwzFriendlyName);
+                   HRESULT (WINAPI *QueryInterface)(IHlinkTarget *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IHlinkTarget *This);
+                   ULONG (WINAPI *Release)(IHlinkTarget *This);
+                   HRESULT (WINAPI *SetBrowseContext)(IHlinkTarget *This,IHlinkBrowseContext *pihlbc);
+                   HRESULT (WINAPI *GetBrowseContext)(IHlinkTarget *This,IHlinkBrowseContext **ppihlbc);
+                   HRESULT (WINAPI *Navigate)(IHlinkTarget *This,DWORD grfHLNF,LPCWSTR pwzJumpLocation);
+                   HRESULT (WINAPI *GetMoniker)(IHlinkTarget *This,LPCWSTR pwzLocation,DWORD dwAssign,IMoniker **ppimkLocation);
+                   HRESULT (WINAPI *GetFriendlyName)(IHlinkTarget *This,LPCWSTR pwzLocation,LPWSTR *ppwzFriendlyName);
     END_INTERFACE
   } IHlinkTargetVtbl;
   struct IHlinkTarget {
@@ -393,14 +393,14 @@ extern "C"{
 #else
   typedef struct IHlinkFrameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IHlinkFrame *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IHlinkFrame *This);
-      ULONG (WINAPI *Release)(IHlinkFrame *This);
-      HRESULT (WINAPI *SetBrowseContext)(IHlinkFrame *This,IHlinkBrowseContext *pihlbc);
-      HRESULT (WINAPI *GetBrowseContext)(IHlinkFrame *This,IHlinkBrowseContext **ppihlbc);
-      HRESULT (WINAPI *Navigate)(IHlinkFrame *This,DWORD grfHLNF,LPBC pbc,IBindStatusCallback *pibsc,IHlink *pihlNavigate);
-      HRESULT (WINAPI *OnNavigate)(IHlinkFrame *This,DWORD grfHLNF,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName,DWORD dwreserved);
-      HRESULT (WINAPI *UpdateHlink)(IHlinkFrame *This,ULONG uHLID,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName);
+                   HRESULT (WINAPI *QueryInterface)(IHlinkFrame *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IHlinkFrame *This);
+                   ULONG (WINAPI *Release)(IHlinkFrame *This);
+                   HRESULT (WINAPI *SetBrowseContext)(IHlinkFrame *This,IHlinkBrowseContext *pihlbc);
+                   HRESULT (WINAPI *GetBrowseContext)(IHlinkFrame *This,IHlinkBrowseContext **ppihlbc);
+                   HRESULT (WINAPI *Navigate)(IHlinkFrame *This,DWORD grfHLNF,LPBC pbc,IBindStatusCallback *pibsc,IHlink *pihlNavigate);
+                   HRESULT (WINAPI *OnNavigate)(IHlinkFrame *This,DWORD grfHLNF,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName,DWORD dwreserved);
+                   HRESULT (WINAPI *UpdateHlink)(IHlinkFrame *This,ULONG uHLID,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName);
     END_INTERFACE
   } IHlinkFrameVtbl;
   struct IHlinkFrame {
@@ -456,13 +456,13 @@ extern "C"{
 #else
   typedef struct IEnumHLITEMVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumHLITEM *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumHLITEM *This);
-      ULONG (WINAPI *Release)(IEnumHLITEM *This);
-      HRESULT (WINAPI *Next)(IEnumHLITEM *This,ULONG celt,HLITEM *rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumHLITEM *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumHLITEM *This);
-      HRESULT (WINAPI *Clone)(IEnumHLITEM *This,IEnumHLITEM **ppienumhlitem);
+                   HRESULT (WINAPI *QueryInterface)(IEnumHLITEM *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumHLITEM *This);
+                   ULONG (WINAPI *Release)(IEnumHLITEM *This);
+                   HRESULT (WINAPI *Next)(IEnumHLITEM *This,ULONG celt,HLITEM *rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumHLITEM *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumHLITEM *This);
+                   HRESULT (WINAPI *Clone)(IEnumHLITEM *This,IEnumHLITEM **ppienumhlitem);
     END_INTERFACE
   } IEnumHLITEMVtbl;
   struct IEnumHLITEM {
@@ -550,23 +550,23 @@ extern "C"{
 #else
   typedef struct IHlinkBrowseContextVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IHlinkBrowseContext *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IHlinkBrowseContext *This);
-      ULONG (WINAPI *Release)(IHlinkBrowseContext *This);
-      HRESULT (WINAPI *Register)(IHlinkBrowseContext *This,DWORD reserved,IUnknown *piunk,IMoniker *pimk,DWORD *pdwRegister);
-      HRESULT (WINAPI *GetObject)(IHlinkBrowseContext *This,IMoniker *pimk,WINBOOL fBindIfRootRegistered,IUnknown **ppiunk);
-      HRESULT (WINAPI *Revoke)(IHlinkBrowseContext *This,DWORD dwRegister);
-      HRESULT (WINAPI *SetBrowseWindowInfo)(IHlinkBrowseContext *This,HLBWINFO *phlbwi);
-      HRESULT (WINAPI *GetBrowseWindowInfo)(IHlinkBrowseContext *This,HLBWINFO *phlbwi);
-      HRESULT (WINAPI *SetInitialHlink)(IHlinkBrowseContext *This,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName);
-      HRESULT (WINAPI *OnNavigateHlink)(IHlinkBrowseContext *This,DWORD grfHLNF,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName,ULONG *puHLID);
-      HRESULT (WINAPI *UpdateHlink)(IHlinkBrowseContext *This,ULONG uHLID,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName);
-      HRESULT (WINAPI *EnumNavigationStack)(IHlinkBrowseContext *This,DWORD dwReserved,DWORD grfHLFNAMEF,IEnumHLITEM **ppienumhlitem);
-      HRESULT (WINAPI *QueryHlink)(IHlinkBrowseContext *This,DWORD grfHLQF,ULONG uHLID);
-      HRESULT (WINAPI *GetHlink)(IHlinkBrowseContext *This,ULONG uHLID,IHlink **ppihl);
-      HRESULT (WINAPI *SetCurrentHlink)(IHlinkBrowseContext *This,ULONG uHLID);
-      HRESULT (WINAPI *Clone)(IHlinkBrowseContext *This,IUnknown *piunkOuter,REFIID riid,IUnknown **ppiunkObj);
-      HRESULT (WINAPI *Close)(IHlinkBrowseContext *This,DWORD reserved);
+                   HRESULT (WINAPI *QueryInterface)(IHlinkBrowseContext *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IHlinkBrowseContext *This);
+                   ULONG (WINAPI *Release)(IHlinkBrowseContext *This);
+                   HRESULT (WINAPI *Register)(IHlinkBrowseContext *This,DWORD reserved,IUnknown *piunk,IMoniker *pimk,DWORD *pdwRegister);
+                   HRESULT (WINAPI *GetObject)(IHlinkBrowseContext *This,IMoniker *pimk,WINBOOL fBindIfRootRegistered,IUnknown **ppiunk);
+                   HRESULT (WINAPI *Revoke)(IHlinkBrowseContext *This,DWORD dwRegister);
+                   HRESULT (WINAPI *SetBrowseWindowInfo)(IHlinkBrowseContext *This,HLBWINFO *phlbwi);
+                   HRESULT (WINAPI *GetBrowseWindowInfo)(IHlinkBrowseContext *This,HLBWINFO *phlbwi);
+                   HRESULT (WINAPI *SetInitialHlink)(IHlinkBrowseContext *This,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName);
+                   HRESULT (WINAPI *OnNavigateHlink)(IHlinkBrowseContext *This,DWORD grfHLNF,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName,ULONG *puHLID);
+                   HRESULT (WINAPI *UpdateHlink)(IHlinkBrowseContext *This,ULONG uHLID,IMoniker *pimkTarget,LPCWSTR pwzLocation,LPCWSTR pwzFriendlyName);
+                   HRESULT (WINAPI *EnumNavigationStack)(IHlinkBrowseContext *This,DWORD dwReserved,DWORD grfHLFNAMEF,IEnumHLITEM **ppienumhlitem);
+                   HRESULT (WINAPI *QueryHlink)(IHlinkBrowseContext *This,DWORD grfHLQF,ULONG uHLID);
+                   HRESULT (WINAPI *GetHlink)(IHlinkBrowseContext *This,ULONG uHLID,IHlink **ppihl);
+                   HRESULT (WINAPI *SetCurrentHlink)(IHlinkBrowseContext *This,ULONG uHLID);
+                   HRESULT (WINAPI *Clone)(IHlinkBrowseContext *This,IUnknown *piunkOuter,REFIID riid,IUnknown **ppiunkObj);
+                   HRESULT (WINAPI *Close)(IHlinkBrowseContext *This,DWORD reserved);
     END_INTERFACE
   } IHlinkBrowseContextVtbl;
   struct IHlinkBrowseContext {
@@ -642,11 +642,11 @@ extern "C"{
 #else
   typedef struct IExtensionServicesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IExtensionServices *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IExtensionServices *This);
-      ULONG (WINAPI *Release)(IExtensionServices *This);
-      HRESULT (WINAPI *SetAdditionalHeaders)(IExtensionServices *This,LPCWSTR pwzAdditionalHeaders);
-      HRESULT (WINAPI *SetAuthenticateData)(IExtensionServices *This,HWND phwnd,LPCWSTR pwzUsername,LPCWSTR pwzPassword);
+                   HRESULT (WINAPI *QueryInterface)(IExtensionServices *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IExtensionServices *This);
+                   ULONG (WINAPI *Release)(IExtensionServices *This);
+                   HRESULT (WINAPI *SetAdditionalHeaders)(IExtensionServices *This,LPCWSTR pwzAdditionalHeaders);
+                   HRESULT (WINAPI *SetAuthenticateData)(IExtensionServices *This,HWND phwnd,LPCWSTR pwzUsername,LPCWSTR pwzPassword);
     END_INTERFACE
   } IExtensionServicesVtbl;
   struct IExtensionServices {

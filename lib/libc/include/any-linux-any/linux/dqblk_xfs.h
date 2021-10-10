@@ -64,8 +64,8 @@ typedef struct fs_disk_quota {
 	__s32		d_itimer;	/* zero if within inode limits */
 					/* if not, we refuse service */
 	__s32		d_btimer;	/* similar to above; for disk blocks */
-	__u16	  	d_iwarns;       /* # warnings issued wrt num inodes */
-	__u16	  	d_bwarns;       /* # warnings issued wrt disk blocks */
+	__u16	  	d_iwarns;                    /* # warnings issued wrt num inodes */
+	__u16	  	d_bwarns;                    /* # warnings issued wrt disk blocks */
 	__s32		d_padding2;	/* padding2 - for future use */
 	__u64		d_rtb_hardlimit;/* absolute limit on realtime blks */
 	__u64		d_rtb_softlimit;/* preferred limit on RT disk blks */

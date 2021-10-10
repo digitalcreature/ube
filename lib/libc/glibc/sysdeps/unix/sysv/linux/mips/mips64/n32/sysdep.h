@@ -56,10 +56,10 @@
   ({ INTERNAL_SYSCALL_DECL (_sc_err);					\
      long result_var = INTERNAL_SYSCALL (name, _sc_err, nr, args);	\
      if ( INTERNAL_SYSCALL_ERROR_P (result_var, _sc_err) )		\
-       {								\
+                    {								\
 	 __set_errno (INTERNAL_SYSCALL_ERRNO (result_var, _sc_err));	\
 	 result_var = -1L;						\
-       }								\
+                    }								\
      result_var; })
 
 #undef INTERNAL_SYSCALL_DECL
@@ -101,14 +101,14 @@
 #undef INTERNAL_SYSCALL
 #define INTERNAL_SYSCALL(name, err, nr, args...)			\
 	internal_syscall##nr ("li\t%0, %2\t\t\t# " #name "\n\t",	\
-			      "IK" (SYS_ify (name)),			\
-			      0, err, args)
+			                   "IK" (SYS_ify (name)),			\
+			                   0, err, args)
 
 #undef INTERNAL_SYSCALL_NCS
 #define INTERNAL_SYSCALL_NCS(number, err, nr, args...)			\
 	internal_syscall##nr (MOVE32 "\t%0, %2\n\t",			\
-			      "r" (__s0),				\
-			      number, err, args)
+			                   "r" (__s0),				\
+			                   number, err, args)
 
 #define internal_syscall0(v0_init, input, number, err, dummy...)	\
 ({									\

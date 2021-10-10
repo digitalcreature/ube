@@ -229,7 +229,7 @@ static __inline__ uint64_t __attribute__((__always_inline__, __nodebug__))
 __rbitll(uint64_t __t) {
 #if __ARM_32BIT_STATE
   return (((uint64_t)__builtin_arm_rbit(__t)) << 32) |
-         __builtin_arm_rbit(__t >> 32);
+                      __builtin_arm_rbit(__t >> 32);
 #else
   return __builtin_arm_rbit64(__t);
 #endif
@@ -676,10 +676,10 @@ __jcvt(double __a) {
 #define _TMFAILURE_INT     0x00800000u
 #define _TMFAILURE_TRIVIAL 0x01000000u
 
-#define __tstart()        __builtin_arm_tstart()
-#define __tcommit()       __builtin_arm_tcommit()
+#define __tstart()                     __builtin_arm_tstart()
+#define __tcommit()                    __builtin_arm_tcommit()
 #define __tcancel(__arg)  __builtin_arm_tcancel(__arg)
-#define __ttest()         __builtin_arm_ttest()
+#define __ttest()                      __builtin_arm_ttest()
 
 #endif /* __ARM_FEATURE_TME */
 

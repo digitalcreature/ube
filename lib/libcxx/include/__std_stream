@@ -35,8 +35,8 @@ class _LIBCPP_HIDDEN __stdinbuf
     : public basic_streambuf<_CharT, char_traits<_CharT> >
 {
 public:
-    typedef _CharT                           char_type;
-    typedef char_traits<char_type>           traits_type;
+    typedef _CharT                                                                               char_type;
+    typedef char_traits<char_type>                        traits_type;
     typedef typename traits_type::int_type   int_type;
     typedef typename traits_type::pos_type   pos_type;
     typedef typename traits_type::off_type   off_type;
@@ -69,9 +69,9 @@ private:
 template <class _CharT>
 __stdinbuf<_CharT>::__stdinbuf(FILE* __fp, state_type* __st)
     : __file_(__fp),
-      __st_(__st),
-      __last_consumed_(traits_type::eof()),
-      __last_consumed_is_next_(false)
+                   __st_(__st),
+                   __last_consumed_(traits_type::eof()),
+                   __last_consumed_is_next_(false)
 {
     imbue(this->getloc());
 }
@@ -84,7 +84,7 @@ __stdinbuf<_CharT>::imbue(const locale& __loc)
     __encoding_ = __cv_->encoding();
     __always_noconv_ = __cv_->always_noconv();
     if (__encoding_ > __limit)
-        __throw_runtime_error("unsupported locale for standard input");
+                     __throw_runtime_error("unsupported locale for standard input");
 }
 
 template <class _CharT>
@@ -107,70 +107,70 @@ __stdinbuf<_CharT>::__getchar(bool __consume)
 {
     if (__last_consumed_is_next_)
     {
-        int_type __result = __last_consumed_;
-        if (__consume)
-        {
-            __last_consumed_ = traits_type::eof();
-            __last_consumed_is_next_ = false;
-        }
-        return __result;
+                     int_type __result = __last_consumed_;
+                     if (__consume)
+                     {
+                                      __last_consumed_ = traits_type::eof();
+                                      __last_consumed_is_next_ = false;
+                     }
+                     return __result;
     }
     char __extbuf[__limit];
     int __nread = _VSTD::max(1, __encoding_);
     for (int __i = 0; __i < __nread; ++__i)
     {
-        int __c = getc(__file_);
-        if (__c == EOF)
-            return traits_type::eof();
-        __extbuf[__i] = static_cast<char>(__c);
+                     int __c = getc(__file_);
+                     if (__c == EOF)
+                                      return traits_type::eof();
+                     __extbuf[__i] = static_cast<char>(__c);
     }
     char_type __1buf;
     if (__always_noconv_)
-        __1buf = static_cast<char_type>(__extbuf[0]);
+                     __1buf = static_cast<char_type>(__extbuf[0]);
     else
     {
-        const char* __enxt;
-        char_type* __inxt;
-        codecvt_base::result __r;
-        do
-        {
-            state_type __sv_st = *__st_;
-            __r = __cv_->in(*__st_, __extbuf, __extbuf + __nread, __enxt,
-                                   &__1buf, &__1buf + 1, __inxt);
-            switch (__r)
-            {
-            case _VSTD::codecvt_base::ok:
-                break;
-            case codecvt_base::partial:
-                *__st_ = __sv_st;
-                if (__nread == sizeof(__extbuf))
-                    return traits_type::eof();
-                {
-                    int __c = getc(__file_);
-                    if (__c == EOF)
-                        return traits_type::eof();
-                    __extbuf[__nread] = static_cast<char>(__c);
-                }
-                ++__nread;
-                break;
-            case codecvt_base::error:
-                return traits_type::eof();
-            case _VSTD::codecvt_base::noconv:
-                __1buf = static_cast<char_type>(__extbuf[0]);
-                break;
-            }
-        } while (__r == _VSTD::codecvt_base::partial);
+                     const char* __enxt;
+                     char_type* __inxt;
+                     codecvt_base::result __r;
+                     do
+                     {
+                                      state_type __sv_st = *__st_;
+                                      __r = __cv_->in(*__st_, __extbuf, __extbuf + __nread, __enxt,
+                                                                                                    &__1buf, &__1buf + 1, __inxt);
+                                      switch (__r)
+                                      {
+                                      case _VSTD::codecvt_base::ok:
+                                          break;
+                                      case codecvt_base::partial:
+                                          *__st_ = __sv_st;
+                                          if (__nread == sizeof(__extbuf))
+                                                           return traits_type::eof();
+                                          {
+                                                           int __c = getc(__file_);
+                                                           if (__c == EOF)
+                                                                            return traits_type::eof();
+                                                           __extbuf[__nread] = static_cast<char>(__c);
+                                          }
+                                          ++__nread;
+                                          break;
+                                      case codecvt_base::error:
+                                          return traits_type::eof();
+                                      case _VSTD::codecvt_base::noconv:
+                                          __1buf = static_cast<char_type>(__extbuf[0]);
+                                          break;
+                                      }
+                     } while (__r == _VSTD::codecvt_base::partial);
     }
     if (!__consume)
     {
-        for (int __i = __nread; __i > 0;)
-        {
-            if (ungetc(traits_type::to_int_type(__extbuf[--__i]), __file_) == EOF)
-                return traits_type::eof();
-        }
+                     for (int __i = __nread; __i > 0;)
+                     {
+                                      if (ungetc(traits_type::to_int_type(__extbuf[--__i]), __file_) == EOF)
+                                          return traits_type::eof();
+                     }
     }
     else
-        __last_consumed_ = traits_type::to_int_type(__1buf);
+                     __last_consumed_ = traits_type::to_int_type(__1buf);
     return traits_type::to_int_type(__1buf);
 }
 
@@ -180,36 +180,36 @@ __stdinbuf<_CharT>::pbackfail(int_type __c)
 {
     if (traits_type::eq_int_type(__c, traits_type::eof()))
     {
-        if (!__last_consumed_is_next_)
-        {
-            __c = __last_consumed_;
-            __last_consumed_is_next_ = !traits_type::eq_int_type(__last_consumed_,
-                                                                 traits_type::eof());
-        }
-        return __c;
+                     if (!__last_consumed_is_next_)
+                     {
+                                      __c = __last_consumed_;
+                                      __last_consumed_is_next_ = !traits_type::eq_int_type(__last_consumed_,
+                                                                                                                                                                                                   traits_type::eof());
+                     }
+                     return __c;
     }
     if (__last_consumed_is_next_)
     {
-        char __extbuf[__limit];
-        char* __enxt;
-        const char_type __ci = traits_type::to_char_type(__last_consumed_);
-        const char_type* __inxt;
-        switch (__cv_->out(*__st_, &__ci, &__ci + 1, __inxt,
-                                  __extbuf, __extbuf + sizeof(__extbuf), __enxt))
-        {
-        case _VSTD::codecvt_base::ok:
-            break;
-        case _VSTD::codecvt_base::noconv:
-            __extbuf[0] = static_cast<char>(__last_consumed_);
-            __enxt = __extbuf + 1;
-            break;
-        case codecvt_base::partial:
-        case codecvt_base::error:
-            return traits_type::eof();
-        }
-        while (__enxt > __extbuf)
-            if (ungetc(*--__enxt, __file_) == EOF)
-                return traits_type::eof();
+                     char __extbuf[__limit];
+                     char* __enxt;
+                     const char_type __ci = traits_type::to_char_type(__last_consumed_);
+                     const char_type* __inxt;
+                     switch (__cv_->out(*__st_, &__ci, &__ci + 1, __inxt,
+                                                                                                   __extbuf, __extbuf + sizeof(__extbuf), __enxt))
+                     {
+                     case _VSTD::codecvt_base::ok:
+                                      break;
+                     case _VSTD::codecvt_base::noconv:
+                                      __extbuf[0] = static_cast<char>(__last_consumed_);
+                                      __enxt = __extbuf + 1;
+                                      break;
+                     case codecvt_base::partial:
+                     case codecvt_base::error:
+                                      return traits_type::eof();
+                     }
+                     while (__enxt > __extbuf)
+                                      if (ungetc(*--__enxt, __file_) == EOF)
+                                          return traits_type::eof();
     }
     __last_consumed_ = __c;
     __last_consumed_is_next_ = true;
@@ -223,8 +223,8 @@ class _LIBCPP_HIDDEN __stdoutbuf
     : public basic_streambuf<_CharT, char_traits<_CharT> >
 {
 public:
-    typedef _CharT                           char_type;
-    typedef char_traits<char_type>           traits_type;
+    typedef _CharT                                                                               char_type;
+    typedef char_traits<char_type>                        traits_type;
     typedef typename traits_type::int_type   int_type;
     typedef typename traits_type::pos_type   pos_type;
     typedef typename traits_type::off_type   off_type;
@@ -251,9 +251,9 @@ private:
 template <class _CharT>
 __stdoutbuf<_CharT>::__stdoutbuf(FILE* __fp, state_type* __st)
     : __file_(__fp),
-      __cv_(&use_facet<codecvt<char_type, char, state_type> >(this->getloc())),
-      __st_(__st),
-      __always_noconv_(__cv_->always_noconv())
+                   __cv_(&use_facet<codecvt<char_type, char, state_type> >(this->getloc())),
+                   __st_(__st),
+                   __always_noconv_(__cv_->always_noconv())
 {
 }
 
@@ -265,46 +265,46 @@ __stdoutbuf<_CharT>::overflow(int_type __c)
     char_type __1buf;
     if (!traits_type::eq_int_type(__c, traits_type::eof()))
     {
-        __1buf = traits_type::to_char_type(__c);
-        if (__always_noconv_)
-        {
-            if (fwrite(&__1buf, sizeof(char_type), 1, __file_) != 1)
-                return traits_type::eof();
-        }
-        else
-        {
-            char* __extbe = __extbuf;
-            codecvt_base::result __r;
-            char_type* pbase = &__1buf;
-            char_type* pptr = pbase + 1;
-            do
-            {
-                const char_type* __e;
-                __r = __cv_->out(*__st_, pbase, pptr, __e,
-                                        __extbuf,
-                                        __extbuf + sizeof(__extbuf),
-                                        __extbe);
-                if (__e == pbase)
-                    return traits_type::eof();
-                if (__r == codecvt_base::noconv)
-                {
-                    if (fwrite(pbase, 1, 1, __file_) != 1)
-                        return traits_type::eof();
-                }
-                else if (__r == codecvt_base::ok || __r == codecvt_base::partial)
-                {
-                    size_t __nmemb = static_cast<size_t>(__extbe - __extbuf);
-                    if (fwrite(__extbuf, 1, __nmemb, __file_) != __nmemb)
-                        return traits_type::eof();
-                    if (__r == codecvt_base::partial)
-                    {
-                        pbase = const_cast<char_type*>(__e);
-                    }
-                }
-                else
-                    return traits_type::eof();
-            } while (__r == codecvt_base::partial);
-        }
+                     __1buf = traits_type::to_char_type(__c);
+                     if (__always_noconv_)
+                     {
+                                      if (fwrite(&__1buf, sizeof(char_type), 1, __file_) != 1)
+                                          return traits_type::eof();
+                     }
+                     else
+                     {
+                                      char* __extbe = __extbuf;
+                                      codecvt_base::result __r;
+                                      char_type* pbase = &__1buf;
+                                      char_type* pptr = pbase + 1;
+                                      do
+                                      {
+                                          const char_type* __e;
+                                          __r = __cv_->out(*__st_, pbase, pptr, __e,
+                                                                                                                      __extbuf,
+                                                                                                                      __extbuf + sizeof(__extbuf),
+                                                                                                                      __extbe);
+                                          if (__e == pbase)
+                                                           return traits_type::eof();
+                                          if (__r == codecvt_base::noconv)
+                                          {
+                                                           if (fwrite(pbase, 1, 1, __file_) != 1)
+                                                                            return traits_type::eof();
+                                          }
+                                          else if (__r == codecvt_base::ok || __r == codecvt_base::partial)
+                                          {
+                                                           size_t __nmemb = static_cast<size_t>(__extbe - __extbuf);
+                                                           if (fwrite(__extbuf, 1, __nmemb, __file_) != __nmemb)
+                                                                            return traits_type::eof();
+                                                           if (__r == codecvt_base::partial)
+                                                           {
+                                                                            pbase = const_cast<char_type*>(__e);
+                                                           }
+                                          }
+                                          else
+                                                           return traits_type::eof();
+                                      } while (__r == codecvt_base::partial);
+                     }
     }
     return traits_type::not_eof(__c);
 }
@@ -314,11 +314,11 @@ streamsize
 __stdoutbuf<_CharT>::xsputn(const char_type* __s, streamsize __n)
 {
     if (__always_noconv_)
-        return fwrite(__s, sizeof(char_type), __n, __file_);
+                     return fwrite(__s, sizeof(char_type), __n, __file_);
     streamsize __i = 0;
     for (; __i < __n; ++__i, ++__s)
-        if (overflow(traits_type::to_int_type(*__s)) == traits_type::eof())
-            break;
+                     if (overflow(traits_type::to_int_type(*__s)) == traits_type::eof())
+                                      break;
     return __i;
 }
 
@@ -330,18 +330,18 @@ __stdoutbuf<_CharT>::sync()
     codecvt_base::result __r;
     do
     {
-        char* __extbe;
-        __r = __cv_->unshift(*__st_, __extbuf,
-                                    __extbuf + sizeof(__extbuf),
-                                    __extbe);
-        size_t __nmemb = static_cast<size_t>(__extbe - __extbuf);
-        if (fwrite(__extbuf, 1, __nmemb, __file_) != __nmemb)
-            return -1;
+                     char* __extbe;
+                     __r = __cv_->unshift(*__st_, __extbuf,
+                                                                                                                  __extbuf + sizeof(__extbuf),
+                                                                                                                  __extbe);
+                     size_t __nmemb = static_cast<size_t>(__extbe - __extbuf);
+                     if (fwrite(__extbuf, 1, __nmemb, __file_) != __nmemb)
+                                      return -1;
     } while (__r == codecvt_base::partial);
     if (__r == codecvt_base::error)
-        return -1;
+                     return -1;
     if (fflush(__file_))
-        return -1;
+                     return -1;
     return 0;
 }
 

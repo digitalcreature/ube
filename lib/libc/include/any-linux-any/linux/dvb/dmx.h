@@ -3,8 +3,8 @@
  * dmx.h
  *
  * Copyright (C) 2000 Marcus Metzler <marcus@convergence.de>
- *                  & Ralph  Metzler <ralph@convergence.de>
- *                    for convergence integrated media GmbH
+ *                                                         & Ralph  Metzler <ralph@convergence.de>
+ *                                                           for convergence integrated media GmbH
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public License
@@ -130,7 +130,7 @@ enum dmx_ts_pes {
 #define DMX_PES_VIDEO    DMX_PES_VIDEO0
 #define DMX_PES_TELETEXT DMX_PES_TELETEXT0
 #define DMX_PES_SUBTITLE DMX_PES_SUBTITLE0
-#define DMX_PES_PCR      DMX_PES_PCR0
+#define DMX_PES_PCR                   DMX_PES_PCR0
 
 
 
@@ -169,12 +169,12 @@ struct dmx_filter {
  *	  :ref:`DMX_START`.
  */
 struct dmx_sct_filter_params {
-	__u16             pid;
+	__u16                                       pid;
 	struct dmx_filter filter;
-	__u32             timeout;
-	__u32             flags;
-#define DMX_CHECK_CRC       1
-#define DMX_ONESHOT         2
+	__u32                                       timeout;
+	__u32                                       flags;
+#define DMX_CHECK_CRC                    1
+#define DMX_ONESHOT                      2
 #define DMX_IMMEDIATE_START 4
 };
 
@@ -189,11 +189,11 @@ struct dmx_sct_filter_params {
  * @flags:	Demux PES flags.
  */
 struct dmx_pes_filter_params {
-	__u16           pid;
+	__u16                        pid;
 	enum dmx_input  input;
 	enum dmx_output output;
 	enum dmx_ts_pes pes_type;
-	__u32           flags;
+	__u32                        flags;
 };
 
 /**
@@ -299,15 +299,15 @@ struct dmx_exportbuffer {
 	__s32		fd;
 };
 
-#define DMX_START                _IO('o', 41)
-#define DMX_STOP                 _IO('o', 42)
-#define DMX_SET_FILTER           _IOW('o', 43, struct dmx_sct_filter_params)
-#define DMX_SET_PES_FILTER       _IOW('o', 44, struct dmx_pes_filter_params)
-#define DMX_SET_BUFFER_SIZE      _IO('o', 45)
-#define DMX_GET_PES_PIDS         _IOR('o', 47, __u16[5])
-#define DMX_GET_STC              _IOWR('o', 50, struct dmx_stc)
-#define DMX_ADD_PID              _IOW('o', 51, __u16)
-#define DMX_REMOVE_PID           _IOW('o', 52, __u16)
+#define DMX_START                                          _IO('o', 41)
+#define DMX_STOP                                           _IO('o', 42)
+#define DMX_SET_FILTER                        _IOW('o', 43, struct dmx_sct_filter_params)
+#define DMX_SET_PES_FILTER                    _IOW('o', 44, struct dmx_pes_filter_params)
+#define DMX_SET_BUFFER_SIZE                   _IO('o', 45)
+#define DMX_GET_PES_PIDS                      _IOR('o', 47, __u16[5])
+#define DMX_GET_STC                                        _IOWR('o', 50, struct dmx_stc)
+#define DMX_ADD_PID                                        _IOW('o', 51, __u16)
+#define DMX_REMOVE_PID                        _IOW('o', 52, __u16)
 
 
 /* This is needed for legacy userspace support */
@@ -317,10 +317,10 @@ typedef enum dmx_ts_pes dmx_pes_type_t;
 typedef struct dmx_filter dmx_filter_t;
 
 
-#define DMX_REQBUFS              _IOWR('o', 60, struct dmx_requestbuffers)
-#define DMX_QUERYBUF             _IOWR('o', 61, struct dmx_buffer)
-#define DMX_EXPBUF               _IOWR('o', 62, struct dmx_exportbuffer)
-#define DMX_QBUF                 _IOWR('o', 63, struct dmx_buffer)
-#define DMX_DQBUF                _IOWR('o', 64, struct dmx_buffer)
+#define DMX_REQBUFS                                        _IOWR('o', 60, struct dmx_requestbuffers)
+#define DMX_QUERYBUF                                       _IOWR('o', 61, struct dmx_buffer)
+#define DMX_EXPBUF                                         _IOWR('o', 62, struct dmx_exportbuffer)
+#define DMX_QBUF                                           _IOWR('o', 63, struct dmx_buffer)
+#define DMX_DQBUF                                          _IOWR('o', 64, struct dmx_buffer)
 
 #endif /* _DVBDMX_H_ */

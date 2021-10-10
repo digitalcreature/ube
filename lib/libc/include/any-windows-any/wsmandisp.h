@@ -329,19 +329,19 @@ MIDL_INTERFACE("190d8637-5cd3-496d-ad24-69636bb5a3b5")
 IWSMan : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE CreateSession(
-        BSTR connection,
-        LONG flags,
-        IDispatch *connectionOptions,
-        IDispatch **session) = 0;
+                     BSTR connection,
+                     LONG flags,
+                     IDispatch *connectionOptions,
+                     IDispatch **session) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateConnectionOptions(
-        IDispatch **connectionOptions) = 0;
+                     IDispatch **connectionOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CommandLine(
-        BSTR *value) = 0;
+                     BSTR *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Error(
-        BSTR *value) = 0;
+                     BSTR *value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -353,65 +353,65 @@ typedef struct IWSManVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSMan *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSMan *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSMan *This);
+                     IWSMan *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSMan *This);
+                     IWSMan *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSMan *This,
-        UINT *pctinfo);
+                     IWSMan *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSMan *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSMan *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSMan *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSMan *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSMan *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSMan *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSMan methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateSession)(
-        IWSMan *This,
-        BSTR connection,
-        LONG flags,
-        IDispatch *connectionOptions,
-        IDispatch **session);
+                     IWSMan *This,
+                     BSTR connection,
+                     LONG flags,
+                     IDispatch *connectionOptions,
+                     IDispatch **session);
 
     HRESULT (STDMETHODCALLTYPE *CreateConnectionOptions)(
-        IWSMan *This,
-        IDispatch **connectionOptions);
+                     IWSMan *This,
+                     IDispatch **connectionOptions);
 
     HRESULT (STDMETHODCALLTYPE *get_CommandLine)(
-        IWSMan *This,
-        BSTR *value);
+                     IWSMan *This,
+                     BSTR *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Error)(
-        IWSMan *This,
-        BSTR *value);
+                     IWSMan *This,
+                     BSTR *value);
 
     END_INTERFACE
 } IWSManVtbl;
@@ -493,66 +493,66 @@ MIDL_INTERFACE("2d53bdaa-798e-49e6-a1aa-74d01256f411")
 IWSManEx : public IWSMan
 {
     virtual HRESULT STDMETHODCALLTYPE CreateResourceLocator(
-        BSTR strResourceLocator,
-        IDispatch **newResourceLocator) = 0;
+                     BSTR strResourceLocator,
+                     IDispatch **newResourceLocator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUTF8(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagCredUsernamePassword(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagSkipCACheck(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagSkipCNCheck(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUseDigest(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUseNegotiate(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUseBasic(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUseKerberos(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagNoEncryption(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagEnableSPNServerPort(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUseNoAuthentication(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagNonXmlText(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagReturnEPR(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagReturnObjectAndEPR(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetErrorMessage(
-        DWORD errorNumber,
-        BSTR *errorMessage) = 0;
+                     DWORD errorNumber,
+                     BSTR *errorMessage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagHierarchyDeep(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagHierarchyShallow(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagHierarchyDeepBasePropsOnly(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagReturnObject(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -564,148 +564,148 @@ typedef struct IWSManExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManEx *This);
+                     IWSManEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManEx *This);
+                     IWSManEx *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManEx *This,
-        UINT *pctinfo);
+                     IWSManEx *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManEx *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManEx *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManEx *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManEx *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManEx *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManEx *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSMan methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateSession)(
-        IWSManEx *This,
-        BSTR connection,
-        LONG flags,
-        IDispatch *connectionOptions,
-        IDispatch **session);
+                     IWSManEx *This,
+                     BSTR connection,
+                     LONG flags,
+                     IDispatch *connectionOptions,
+                     IDispatch **session);
 
     HRESULT (STDMETHODCALLTYPE *CreateConnectionOptions)(
-        IWSManEx *This,
-        IDispatch **connectionOptions);
+                     IWSManEx *This,
+                     IDispatch **connectionOptions);
 
     HRESULT (STDMETHODCALLTYPE *get_CommandLine)(
-        IWSManEx *This,
-        BSTR *value);
+                     IWSManEx *This,
+                     BSTR *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Error)(
-        IWSManEx *This,
-        BSTR *value);
+                     IWSManEx *This,
+                     BSTR *value);
 
     /*** IWSManEx methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateResourceLocator)(
-        IWSManEx *This,
-        BSTR strResourceLocator,
-        IDispatch **newResourceLocator);
+                     IWSManEx *This,
+                     BSTR strResourceLocator,
+                     IDispatch **newResourceLocator);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUTF8)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagCredUsernamePassword)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagSkipCACheck)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagSkipCNCheck)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseDigest)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseNegotiate)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseBasic)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseKerberos)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagNoEncryption)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagEnableSPNServerPort)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseNoAuthentication)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagNonXmlText)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnEPR)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnObjectAndEPR)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *GetErrorMessage)(
-        IWSManEx *This,
-        DWORD errorNumber,
-        BSTR *errorMessage);
+                     IWSManEx *This,
+                     DWORD errorNumber,
+                     BSTR *errorMessage);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyDeep)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyShallow)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyDeepBasePropsOnly)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnObject)(
-        IWSManEx *This,
-        LONG *flags);
+                     IWSManEx *This,
+                     LONG *flags);
 
     END_INTERFACE
 } IWSManExVtbl;
@@ -869,7 +869,7 @@ MIDL_INTERFACE("1d1b5ae0-42d9-4021-8261-3987619512e9")
 IWSManEx2 : public IWSManEx
 {
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUseClientCertificate(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -881,153 +881,153 @@ typedef struct IWSManEx2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManEx2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManEx2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManEx2 *This);
+                     IWSManEx2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManEx2 *This);
+                     IWSManEx2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManEx2 *This,
-        UINT *pctinfo);
+                     IWSManEx2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManEx2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManEx2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManEx2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManEx2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManEx2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManEx2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSMan methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateSession)(
-        IWSManEx2 *This,
-        BSTR connection,
-        LONG flags,
-        IDispatch *connectionOptions,
-        IDispatch **session);
+                     IWSManEx2 *This,
+                     BSTR connection,
+                     LONG flags,
+                     IDispatch *connectionOptions,
+                     IDispatch **session);
 
     HRESULT (STDMETHODCALLTYPE *CreateConnectionOptions)(
-        IWSManEx2 *This,
-        IDispatch **connectionOptions);
+                     IWSManEx2 *This,
+                     IDispatch **connectionOptions);
 
     HRESULT (STDMETHODCALLTYPE *get_CommandLine)(
-        IWSManEx2 *This,
-        BSTR *value);
+                     IWSManEx2 *This,
+                     BSTR *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Error)(
-        IWSManEx2 *This,
-        BSTR *value);
+                     IWSManEx2 *This,
+                     BSTR *value);
 
     /*** IWSManEx methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateResourceLocator)(
-        IWSManEx2 *This,
-        BSTR strResourceLocator,
-        IDispatch **newResourceLocator);
+                     IWSManEx2 *This,
+                     BSTR strResourceLocator,
+                     IDispatch **newResourceLocator);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUTF8)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagCredUsernamePassword)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagSkipCACheck)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagSkipCNCheck)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseDigest)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseNegotiate)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseBasic)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseKerberos)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagNoEncryption)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagEnableSPNServerPort)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseNoAuthentication)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagNonXmlText)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnEPR)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnObjectAndEPR)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *GetErrorMessage)(
-        IWSManEx2 *This,
-        DWORD errorNumber,
-        BSTR *errorMessage);
+                     IWSManEx2 *This,
+                     DWORD errorNumber,
+                     BSTR *errorMessage);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyDeep)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyShallow)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyDeepBasePropsOnly)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnObject)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     /*** IWSManEx2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseClientCertificate)(
-        IWSManEx2 *This,
-        LONG *flags);
+                     IWSManEx2 *This,
+                     LONG *flags);
 
     END_INTERFACE
 } IWSManEx2Vtbl;
@@ -1197,25 +1197,25 @@ MIDL_INTERFACE("6400e966-011d-4eac-8474-049e0848afad")
 IWSManEx3 : public IWSManEx2
 {
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUTF16(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUseCredSsp(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagAssociationInstance(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumerationFlagAssociatedInstance(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagSkipRevocationCheck(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagAllowNegotiateImplicitCredentials(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SessionFlagUseSsl(
-        LONG *flags) = 0;
+                     LONG *flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1227,182 +1227,182 @@ typedef struct IWSManEx3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManEx3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManEx3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManEx3 *This);
+                     IWSManEx3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManEx3 *This);
+                     IWSManEx3 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManEx3 *This,
-        UINT *pctinfo);
+                     IWSManEx3 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManEx3 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManEx3 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManEx3 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManEx3 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManEx3 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManEx3 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSMan methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateSession)(
-        IWSManEx3 *This,
-        BSTR connection,
-        LONG flags,
-        IDispatch *connectionOptions,
-        IDispatch **session);
+                     IWSManEx3 *This,
+                     BSTR connection,
+                     LONG flags,
+                     IDispatch *connectionOptions,
+                     IDispatch **session);
 
     HRESULT (STDMETHODCALLTYPE *CreateConnectionOptions)(
-        IWSManEx3 *This,
-        IDispatch **connectionOptions);
+                     IWSManEx3 *This,
+                     IDispatch **connectionOptions);
 
     HRESULT (STDMETHODCALLTYPE *get_CommandLine)(
-        IWSManEx3 *This,
-        BSTR *value);
+                     IWSManEx3 *This,
+                     BSTR *value);
 
     HRESULT (STDMETHODCALLTYPE *get_Error)(
-        IWSManEx3 *This,
-        BSTR *value);
+                     IWSManEx3 *This,
+                     BSTR *value);
 
     /*** IWSManEx methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateResourceLocator)(
-        IWSManEx3 *This,
-        BSTR strResourceLocator,
-        IDispatch **newResourceLocator);
+                     IWSManEx3 *This,
+                     BSTR strResourceLocator,
+                     IDispatch **newResourceLocator);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUTF8)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagCredUsernamePassword)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagSkipCACheck)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagSkipCNCheck)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseDigest)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseNegotiate)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseBasic)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseKerberos)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagNoEncryption)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagEnableSPNServerPort)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseNoAuthentication)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagNonXmlText)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnEPR)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnObjectAndEPR)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *GetErrorMessage)(
-        IWSManEx3 *This,
-        DWORD errorNumber,
-        BSTR *errorMessage);
+                     IWSManEx3 *This,
+                     DWORD errorNumber,
+                     BSTR *errorMessage);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyDeep)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyShallow)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagHierarchyDeepBasePropsOnly)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagReturnObject)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     /*** IWSManEx2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseClientCertificate)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     /*** IWSManEx3 methods ***/
     HRESULT (STDMETHODCALLTYPE *SessionFlagUTF16)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseCredSsp)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagAssociationInstance)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *EnumerationFlagAssociatedInstance)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagSkipRevocationCheck)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagAllowNegotiateImplicitCredentials)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *SessionFlagUseSsl)(
-        IWSManEx3 *This,
-        LONG *flags);
+                     IWSManEx3 *This,
+                     LONG *flags);
 
     END_INTERFACE
 } IWSManEx3Vtbl;
@@ -1602,13 +1602,13 @@ MIDL_INTERFACE("f704e861-9e52-464f-b786-da5eb2320fdd")
 IWSManConnectionOptions : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_UserName(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UserName(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Password(
-        BSTR password) = 0;
+                     BSTR password) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1620,58 +1620,58 @@ typedef struct IWSManConnectionOptionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManConnectionOptions *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManConnectionOptions *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManConnectionOptions *This);
+                     IWSManConnectionOptions *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManConnectionOptions *This);
+                     IWSManConnectionOptions *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManConnectionOptions *This,
-        UINT *pctinfo);
+                     IWSManConnectionOptions *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManConnectionOptions *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManConnectionOptions *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManConnectionOptions *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManConnectionOptions *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManConnectionOptions *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManConnectionOptions *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSManConnectionOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UserName)(
-        IWSManConnectionOptions *This,
-        BSTR *name);
+                     IWSManConnectionOptions *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_UserName)(
-        IWSManConnectionOptions *This,
-        BSTR name);
+                     IWSManConnectionOptions *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *put_Password)(
-        IWSManConnectionOptions *This,
-        BSTR password);
+                     IWSManConnectionOptions *This,
+                     BSTR password);
 
     END_INTERFACE
 } IWSManConnectionOptionsVtbl;
@@ -1749,10 +1749,10 @@ MIDL_INTERFACE("ef43edf7-2a48-4d93-9526-8bd6ab6d4a6b")
 IWSManConnectionOptionsEx : public IWSManConnectionOptions
 {
     virtual HRESULT STDMETHODCALLTYPE get_CertificateThumbprint(
-        BSTR *thumbprint) = 0;
+                     BSTR *thumbprint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CertificateThumbprint(
-        BSTR thumbprint) = 0;
+                     BSTR thumbprint) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1764,67 +1764,67 @@ typedef struct IWSManConnectionOptionsExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManConnectionOptionsEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManConnectionOptionsEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManConnectionOptionsEx *This);
+                     IWSManConnectionOptionsEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManConnectionOptionsEx *This);
+                     IWSManConnectionOptionsEx *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManConnectionOptionsEx *This,
-        UINT *pctinfo);
+                     IWSManConnectionOptionsEx *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManConnectionOptionsEx *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManConnectionOptionsEx *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManConnectionOptionsEx *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManConnectionOptionsEx *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManConnectionOptionsEx *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManConnectionOptionsEx *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSManConnectionOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UserName)(
-        IWSManConnectionOptionsEx *This,
-        BSTR *name);
+                     IWSManConnectionOptionsEx *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_UserName)(
-        IWSManConnectionOptionsEx *This,
-        BSTR name);
+                     IWSManConnectionOptionsEx *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *put_Password)(
-        IWSManConnectionOptionsEx *This,
-        BSTR password);
+                     IWSManConnectionOptionsEx *This,
+                     BSTR password);
 
     /*** IWSManConnectionOptionsEx methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CertificateThumbprint)(
-        IWSManConnectionOptionsEx *This,
-        BSTR *thumbprint);
+                     IWSManConnectionOptionsEx *This,
+                     BSTR *thumbprint);
 
     HRESULT (STDMETHODCALLTYPE *put_CertificateThumbprint)(
-        IWSManConnectionOptionsEx *This,
-        BSTR thumbprint);
+                     IWSManConnectionOptionsEx *This,
+                     BSTR thumbprint);
 
     END_INTERFACE
 } IWSManConnectionOptionsExVtbl;
@@ -1912,31 +1912,31 @@ MIDL_INTERFACE("f500c9ec-24ee-48ab-b38d-fc9a164c658e")
 IWSManConnectionOptionsEx2 : public IWSManConnectionOptionsEx
 {
     virtual HRESULT STDMETHODCALLTYPE SetProxy(
-        LONG accessType = 0,
-        LONG authenticationMechanism = 0,
-        BSTR userName = L"",
-        BSTR password = L"") = 0;
+                     LONG accessType = 0,
+                     LONG authenticationMechanism = 0,
+                     BSTR userName = L"",
+                     BSTR password = L"") = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProxyIEConfig(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProxyWinHttpConfig(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProxyAutoDetect(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProxyNoProxyServer(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProxyAuthenticationUseNegotiate(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProxyAuthenticationUseBasic(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProxyAuthenticationUseDigest(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1948,103 +1948,103 @@ typedef struct IWSManConnectionOptionsEx2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManConnectionOptionsEx2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManConnectionOptionsEx2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManConnectionOptionsEx2 *This);
+                     IWSManConnectionOptionsEx2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManConnectionOptionsEx2 *This);
+                     IWSManConnectionOptionsEx2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManConnectionOptionsEx2 *This,
-        UINT *pctinfo);
+                     IWSManConnectionOptionsEx2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManConnectionOptionsEx2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManConnectionOptionsEx2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManConnectionOptionsEx2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManConnectionOptionsEx2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManConnectionOptionsEx2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManConnectionOptionsEx2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSManConnectionOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UserName)(
-        IWSManConnectionOptionsEx2 *This,
-        BSTR *name);
+                     IWSManConnectionOptionsEx2 *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_UserName)(
-        IWSManConnectionOptionsEx2 *This,
-        BSTR name);
+                     IWSManConnectionOptionsEx2 *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *put_Password)(
-        IWSManConnectionOptionsEx2 *This,
-        BSTR password);
+                     IWSManConnectionOptionsEx2 *This,
+                     BSTR password);
 
     /*** IWSManConnectionOptionsEx methods ***/
     HRESULT (STDMETHODCALLTYPE *get_CertificateThumbprint)(
-        IWSManConnectionOptionsEx2 *This,
-        BSTR *thumbprint);
+                     IWSManConnectionOptionsEx2 *This,
+                     BSTR *thumbprint);
 
     HRESULT (STDMETHODCALLTYPE *put_CertificateThumbprint)(
-        IWSManConnectionOptionsEx2 *This,
-        BSTR thumbprint);
+                     IWSManConnectionOptionsEx2 *This,
+                     BSTR thumbprint);
 
     /*** IWSManConnectionOptionsEx2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetProxy)(
-        IWSManConnectionOptionsEx2 *This,
-        LONG accessType,
-        LONG authenticationMechanism,
-        BSTR userName,
-        BSTR password);
+                     IWSManConnectionOptionsEx2 *This,
+                     LONG accessType,
+                     LONG authenticationMechanism,
+                     BSTR userName,
+                     BSTR password);
 
     HRESULT (STDMETHODCALLTYPE *ProxyIEConfig)(
-        IWSManConnectionOptionsEx2 *This,
-        LONG *value);
+                     IWSManConnectionOptionsEx2 *This,
+                     LONG *value);
 
     HRESULT (STDMETHODCALLTYPE *ProxyWinHttpConfig)(
-        IWSManConnectionOptionsEx2 *This,
-        LONG *value);
+                     IWSManConnectionOptionsEx2 *This,
+                     LONG *value);
 
     HRESULT (STDMETHODCALLTYPE *ProxyAutoDetect)(
-        IWSManConnectionOptionsEx2 *This,
-        LONG *value);
+                     IWSManConnectionOptionsEx2 *This,
+                     LONG *value);
 
     HRESULT (STDMETHODCALLTYPE *ProxyNoProxyServer)(
-        IWSManConnectionOptionsEx2 *This,
-        LONG *value);
+                     IWSManConnectionOptionsEx2 *This,
+                     LONG *value);
 
     HRESULT (STDMETHODCALLTYPE *ProxyAuthenticationUseNegotiate)(
-        IWSManConnectionOptionsEx2 *This,
-        LONG *value);
+                     IWSManConnectionOptionsEx2 *This,
+                     LONG *value);
 
     HRESULT (STDMETHODCALLTYPE *ProxyAuthenticationUseBasic)(
-        IWSManConnectionOptionsEx2 *This,
-        LONG *value);
+                     IWSManConnectionOptionsEx2 *This,
+                     LONG *value);
 
     HRESULT (STDMETHODCALLTYPE *ProxyAuthenticationUseDigest)(
-        IWSManConnectionOptionsEx2 *This,
-        LONG *value);
+                     IWSManConnectionOptionsEx2 *This,
+                     LONG *value);
 
     END_INTERFACE
 } IWSManConnectionOptionsEx2Vtbl;
@@ -2166,58 +2166,58 @@ MIDL_INTERFACE("fc84dc58-1286-40c4-9da0-c8ef6ec241e0")
 IWSManSession : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE Get(
-        VARIANT resourceUri,
-        LONG flags,
-        BSTR *resource) = 0;
+                     VARIANT resourceUri,
+                     LONG flags,
+                     BSTR *resource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Put(
-        VARIANT resourceUri,
-        BSTR resource,
-        LONG flags,
-        BSTR *resultResource) = 0;
+                     VARIANT resourceUri,
+                     BSTR resource,
+                     LONG flags,
+                     BSTR *resultResource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Create(
-        VARIANT resourceUri,
-        BSTR resource,
-        LONG flags,
-        BSTR *newUri) = 0;
+                     VARIANT resourceUri,
+                     BSTR resource,
+                     LONG flags,
+                     BSTR *newUri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        VARIANT resourceUri,
-        LONG flags = 0) = 0;
+                     VARIANT resourceUri,
+                     LONG flags = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        BSTR actionUri,
-        VARIANT resourceUri,
-        BSTR parameters,
-        LONG flags,
-        BSTR *result) = 0;
+                     BSTR actionUri,
+                     VARIANT resourceUri,
+                     BSTR parameters,
+                     LONG flags,
+                     BSTR *result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Enumerate(
-        VARIANT resourceUri,
-        BSTR filter,
-        BSTR dialect,
-        LONG flags,
-        IDispatch **resultSet) = 0;
+                     VARIANT resourceUri,
+                     BSTR filter,
+                     BSTR dialect,
+                     LONG flags,
+                     IDispatch **resultSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Identify(
-        LONG flags,
-        BSTR *result) = 0;
+                     LONG flags,
+                     BSTR *result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Error(
-        BSTR *value) = 0;
+                     BSTR *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BatchItems(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_BatchItems(
-        LONG value) = 0;
+                     LONG value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Timeout(
-        LONG *value) = 0;
+                     LONG *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Timeout(
-        LONG value) = 0;
+                     LONG value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2229,112 +2229,112 @@ typedef struct IWSManSessionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManSession *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManSession *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManSession *This);
+                     IWSManSession *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManSession *This);
+                     IWSManSession *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManSession *This,
-        UINT *pctinfo);
+                     IWSManSession *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManSession *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManSession *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManSession *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManSession *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManSession *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManSession *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSManSession methods ***/
     HRESULT (STDMETHODCALLTYPE *Get)(
-        IWSManSession *This,
-        VARIANT resourceUri,
-        LONG flags,
-        BSTR *resource);
+                     IWSManSession *This,
+                     VARIANT resourceUri,
+                     LONG flags,
+                     BSTR *resource);
 
     HRESULT (STDMETHODCALLTYPE *Put)(
-        IWSManSession *This,
-        VARIANT resourceUri,
-        BSTR resource,
-        LONG flags,
-        BSTR *resultResource);
+                     IWSManSession *This,
+                     VARIANT resourceUri,
+                     BSTR resource,
+                     LONG flags,
+                     BSTR *resultResource);
 
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IWSManSession *This,
-        VARIANT resourceUri,
-        BSTR resource,
-        LONG flags,
-        BSTR *newUri);
+                     IWSManSession *This,
+                     VARIANT resourceUri,
+                     BSTR resource,
+                     LONG flags,
+                     BSTR *newUri);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IWSManSession *This,
-        VARIANT resourceUri,
-        LONG flags);
+                     IWSManSession *This,
+                     VARIANT resourceUri,
+                     LONG flags);
 
     HRESULT (STDMETHODCALLTYPE *IWSManSession_Invoke)(
-        IWSManSession *This,
-        BSTR actionUri,
-        VARIANT resourceUri,
-        BSTR parameters,
-        LONG flags,
-        BSTR *result);
+                     IWSManSession *This,
+                     BSTR actionUri,
+                     VARIANT resourceUri,
+                     BSTR parameters,
+                     LONG flags,
+                     BSTR *result);
 
     HRESULT (STDMETHODCALLTYPE *Enumerate)(
-        IWSManSession *This,
-        VARIANT resourceUri,
-        BSTR filter,
-        BSTR dialect,
-        LONG flags,
-        IDispatch **resultSet);
+                     IWSManSession *This,
+                     VARIANT resourceUri,
+                     BSTR filter,
+                     BSTR dialect,
+                     LONG flags,
+                     IDispatch **resultSet);
 
     HRESULT (STDMETHODCALLTYPE *Identify)(
-        IWSManSession *This,
-        LONG flags,
-        BSTR *result);
+                     IWSManSession *This,
+                     LONG flags,
+                     BSTR *result);
 
     HRESULT (STDMETHODCALLTYPE *get_Error)(
-        IWSManSession *This,
-        BSTR *value);
+                     IWSManSession *This,
+                     BSTR *value);
 
     HRESULT (STDMETHODCALLTYPE *get_BatchItems)(
-        IWSManSession *This,
-        LONG *value);
+                     IWSManSession *This,
+                     LONG *value);
 
     HRESULT (STDMETHODCALLTYPE *put_BatchItems)(
-        IWSManSession *This,
-        LONG value);
+                     IWSManSession *This,
+                     LONG value);
 
     HRESULT (STDMETHODCALLTYPE *get_Timeout)(
-        IWSManSession *This,
-        LONG *value);
+                     IWSManSession *This,
+                     LONG *value);
 
     HRESULT (STDMETHODCALLTYPE *put_Timeout)(
-        IWSManSession *This,
-        LONG value);
+                     IWSManSession *This,
+                     LONG value);
 
     END_INTERFACE
 } IWSManSessionVtbl;
@@ -2444,13 +2444,13 @@ MIDL_INTERFACE("f3457ca9-abb9-4fa5-b850-90e8ca300e7f")
 IWSManEnumerator : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE ReadItem(
-        BSTR *resource) = 0;
+                     BSTR *resource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AtEndOfStream(
-        VARIANT_BOOL *eos) = 0;
+                     VARIANT_BOOL *eos) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Error(
-        BSTR *value) = 0;
+                     BSTR *value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2462,58 +2462,58 @@ typedef struct IWSManEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManEnumerator *This);
+                     IWSManEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManEnumerator *This);
+                     IWSManEnumerator *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManEnumerator *This,
-        UINT *pctinfo);
+                     IWSManEnumerator *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManEnumerator *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManEnumerator *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManEnumerator *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManEnumerator *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManEnumerator *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManEnumerator *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSManEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *ReadItem)(
-        IWSManEnumerator *This,
-        BSTR *resource);
+                     IWSManEnumerator *This,
+                     BSTR *resource);
 
     HRESULT (STDMETHODCALLTYPE *get_AtEndOfStream)(
-        IWSManEnumerator *This,
-        VARIANT_BOOL *eos);
+                     IWSManEnumerator *This,
+                     VARIANT_BOOL *eos);
 
     HRESULT (STDMETHODCALLTYPE *get_Error)(
-        IWSManEnumerator *This,
-        BSTR *value);
+                     IWSManEnumerator *This,
+                     BSTR *value);
 
     END_INTERFACE
 } IWSManEnumeratorVtbl;
@@ -2591,46 +2591,46 @@ MIDL_INTERFACE("a7a1ba28-de41-466a-ad0a-c4059ead7428")
 IWSManResourceLocator : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE put_ResourceURI(
-        BSTR uri) = 0;
+                     BSTR uri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ResourceURI(
-        BSTR *uri) = 0;
+                     BSTR *uri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSelector(
-        BSTR resourceSelName,
-        VARIANT selValue) = 0;
+                     BSTR resourceSelName,
+                     VARIANT selValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearSelectors(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FragmentPath(
-        BSTR *text) = 0;
+                     BSTR *text) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FragmentPath(
-        BSTR text) = 0;
+                     BSTR text) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FragmentDialect(
-        BSTR *text) = 0;
+                     BSTR *text) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FragmentDialect(
-        BSTR text) = 0;
+                     BSTR text) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddOption(
-        BSTR OptionName,
-        VARIANT OptionValue,
-        WINBOOL mustComply = 0) = 0;
+                     BSTR OptionName,
+                     VARIANT OptionValue,
+                     WINBOOL mustComply = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MustUnderstandOptions(
-        WINBOOL mustUnderstand) = 0;
+                     WINBOOL mustUnderstand) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MustUnderstandOptions(
-        WINBOOL *mustUnderstand) = 0;
+                     WINBOOL *mustUnderstand) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearOptions(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Error(
-        BSTR *value) = 0;
+                     BSTR *value) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2642,99 +2642,99 @@ typedef struct IWSManResourceLocatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManResourceLocator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManResourceLocator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManResourceLocator *This);
+                     IWSManResourceLocator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManResourceLocator *This);
+                     IWSManResourceLocator *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManResourceLocator *This,
-        UINT *pctinfo);
+                     IWSManResourceLocator *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManResourceLocator *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManResourceLocator *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManResourceLocator *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManResourceLocator *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManResourceLocator *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManResourceLocator *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSManResourceLocator methods ***/
     HRESULT (STDMETHODCALLTYPE *put_ResourceURI)(
-        IWSManResourceLocator *This,
-        BSTR uri);
+                     IWSManResourceLocator *This,
+                     BSTR uri);
 
     HRESULT (STDMETHODCALLTYPE *get_ResourceURI)(
-        IWSManResourceLocator *This,
-        BSTR *uri);
+                     IWSManResourceLocator *This,
+                     BSTR *uri);
 
     HRESULT (STDMETHODCALLTYPE *AddSelector)(
-        IWSManResourceLocator *This,
-        BSTR resourceSelName,
-        VARIANT selValue);
+                     IWSManResourceLocator *This,
+                     BSTR resourceSelName,
+                     VARIANT selValue);
 
     HRESULT (STDMETHODCALLTYPE *ClearSelectors)(
-        IWSManResourceLocator *This);
+                     IWSManResourceLocator *This);
 
     HRESULT (STDMETHODCALLTYPE *get_FragmentPath)(
-        IWSManResourceLocator *This,
-        BSTR *text);
+                     IWSManResourceLocator *This,
+                     BSTR *text);
 
     HRESULT (STDMETHODCALLTYPE *put_FragmentPath)(
-        IWSManResourceLocator *This,
-        BSTR text);
+                     IWSManResourceLocator *This,
+                     BSTR text);
 
     HRESULT (STDMETHODCALLTYPE *get_FragmentDialect)(
-        IWSManResourceLocator *This,
-        BSTR *text);
+                     IWSManResourceLocator *This,
+                     BSTR *text);
 
     HRESULT (STDMETHODCALLTYPE *put_FragmentDialect)(
-        IWSManResourceLocator *This,
-        BSTR text);
+                     IWSManResourceLocator *This,
+                     BSTR text);
 
     HRESULT (STDMETHODCALLTYPE *AddOption)(
-        IWSManResourceLocator *This,
-        BSTR OptionName,
-        VARIANT OptionValue,
-        WINBOOL mustComply);
+                     IWSManResourceLocator *This,
+                     BSTR OptionName,
+                     VARIANT OptionValue,
+                     WINBOOL mustComply);
 
     HRESULT (STDMETHODCALLTYPE *put_MustUnderstandOptions)(
-        IWSManResourceLocator *This,
-        WINBOOL mustUnderstand);
+                     IWSManResourceLocator *This,
+                     WINBOOL mustUnderstand);
 
     HRESULT (STDMETHODCALLTYPE *get_MustUnderstandOptions)(
-        IWSManResourceLocator *This,
-        WINBOOL *mustUnderstand);
+                     IWSManResourceLocator *This,
+                     WINBOOL *mustUnderstand);
 
     HRESULT (STDMETHODCALLTYPE *ClearOptions)(
-        IWSManResourceLocator *This);
+                     IWSManResourceLocator *This);
 
     HRESULT (STDMETHODCALLTYPE *get_Error)(
-        IWSManResourceLocator *This,
-        BSTR *value);
+                     IWSManResourceLocator *This,
+                     BSTR *value);
 
     END_INTERFACE
 } IWSManResourceLocatorVtbl;
@@ -2861,15 +2861,15 @@ typedef struct IWSManResourceLocatorInternalVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManResourceLocatorInternal *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManResourceLocatorInternal *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManResourceLocatorInternal *This);
+                     IWSManResourceLocatorInternal *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManResourceLocatorInternal *This);
+                     IWSManResourceLocatorInternal *This);
 
     END_INTERFACE
 } IWSManResourceLocatorInternalVtbl;
@@ -2915,10 +2915,10 @@ MIDL_INTERFACE("04ae2b1d-9954-4d99-94a9-a961e72c3a13")
 IWSManInternal : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE ConfigSDDL(
-        IDispatch *session,
-        VARIANT resourceUri,
-        LONG flags,
-        BSTR *resource) = 0;
+                     IDispatch *session,
+                     VARIANT resourceUri,
+                     LONG flags,
+                     BSTR *resource) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2930,53 +2930,53 @@ typedef struct IWSManInternalVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSManInternal *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSManInternal *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSManInternal *This);
+                     IWSManInternal *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSManInternal *This);
+                     IWSManInternal *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWSManInternal *This,
-        UINT *pctinfo);
+                     IWSManInternal *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWSManInternal *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWSManInternal *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWSManInternal *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWSManInternal *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWSManInternal *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWSManInternal *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWSManInternal methods ***/
     HRESULT (STDMETHODCALLTYPE *ConfigSDDL)(
-        IWSManInternal *This,
-        IDispatch *session,
-        VARIANT resourceUri,
-        LONG flags,
-        BSTR *resource);
+                     IWSManInternal *This,
+                     IDispatch *session,
+                     VARIANT resourceUri,
+                     LONG flags,
+                     BSTR *resource);
 
     END_INTERFACE
 } IWSManInternalVtbl;

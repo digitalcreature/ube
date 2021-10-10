@@ -21,11 +21,11 @@
 #define TPOFF_K (-0x7000)
 
 #define REL_SYM_OR_REL  4611
-#define REL_PLT         R_MIPS_JUMP_SLOT
-#define REL_COPY        R_MIPS_COPY
-#define REL_DTPMOD      R_MIPS_TLS_DTPMOD64
-#define REL_DTPOFF      R_MIPS_TLS_DTPREL64
-#define REL_TPOFF       R_MIPS_TLS_TPREL64
+#define REL_PLT                      R_MIPS_JUMP_SLOT
+#define REL_COPY                     R_MIPS_COPY
+#define REL_DTPMOD                   R_MIPS_TLS_DTPMOD64
+#define REL_DTPOFF                   R_MIPS_TLS_DTPREL64
+#define REL_TPOFF                    R_MIPS_TLS_TPREL64
 
 #include <endian.h>
 

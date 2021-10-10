@@ -137,20 +137,20 @@ extern "C"{
 #else
   typedef struct ICertEncodeStringArrayVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertEncodeStringArray *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertEncodeStringArray *This);
-      ULONG (WINAPI *Release)(ICertEncodeStringArray *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeStringArray *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertEncodeStringArray *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeStringArray *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertEncodeStringArray *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Decode)(ICertEncodeStringArray *This,const BSTR strBinary);
-      HRESULT (WINAPI *GetStringType)(ICertEncodeStringArray *This,LONG *pStringType);
-      HRESULT (WINAPI *GetCount)(ICertEncodeStringArray *This,LONG *pCount);
-      HRESULT (WINAPI *GetValue)(ICertEncodeStringArray *This,LONG Index,BSTR *pstr);
-      HRESULT (WINAPI *Reset)(ICertEncodeStringArray *This,LONG Count,LONG StringType);
-      HRESULT (WINAPI *SetValue)(ICertEncodeStringArray *This,LONG Index,const BSTR str);
-      HRESULT (WINAPI *Encode)(ICertEncodeStringArray *This,BSTR *pstrBinary);
+                   HRESULT (WINAPI *QueryInterface)(ICertEncodeStringArray *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertEncodeStringArray *This);
+                   ULONG (WINAPI *Release)(ICertEncodeStringArray *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeStringArray *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertEncodeStringArray *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeStringArray *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertEncodeStringArray *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Decode)(ICertEncodeStringArray *This,const BSTR strBinary);
+                   HRESULT (WINAPI *GetStringType)(ICertEncodeStringArray *This,LONG *pStringType);
+                   HRESULT (WINAPI *GetCount)(ICertEncodeStringArray *This,LONG *pCount);
+                   HRESULT (WINAPI *GetValue)(ICertEncodeStringArray *This,LONG Index,BSTR *pstr);
+                   HRESULT (WINAPI *Reset)(ICertEncodeStringArray *This,LONG Count,LONG StringType);
+                   HRESULT (WINAPI *SetValue)(ICertEncodeStringArray *This,LONG Index,const BSTR str);
+                   HRESULT (WINAPI *Encode)(ICertEncodeStringArray *This,BSTR *pstrBinary);
     END_INTERFACE
   } ICertEncodeStringArrayVtbl;
   struct ICertEncodeStringArray {
@@ -205,19 +205,19 @@ extern "C"{
 #else
   typedef struct ICertEncodeLongArrayVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertEncodeLongArray *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertEncodeLongArray *This);
-      ULONG (WINAPI *Release)(ICertEncodeLongArray *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeLongArray *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertEncodeLongArray *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeLongArray *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertEncodeLongArray *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Decode)(ICertEncodeLongArray *This,const BSTR strBinary);
-      HRESULT (WINAPI *GetCount)(ICertEncodeLongArray *This,LONG *pCount);
-      HRESULT (WINAPI *GetValue)(ICertEncodeLongArray *This,LONG Index,LONG *pValue);
-      HRESULT (WINAPI *Reset)(ICertEncodeLongArray *This,LONG Count);
-      HRESULT (WINAPI *SetValue)(ICertEncodeLongArray *This,LONG Index,LONG Value);
-      HRESULT (WINAPI *Encode)(ICertEncodeLongArray *This,BSTR *pstrBinary);
+                   HRESULT (WINAPI *QueryInterface)(ICertEncodeLongArray *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertEncodeLongArray *This);
+                   ULONG (WINAPI *Release)(ICertEncodeLongArray *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeLongArray *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertEncodeLongArray *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeLongArray *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertEncodeLongArray *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Decode)(ICertEncodeLongArray *This,const BSTR strBinary);
+                   HRESULT (WINAPI *GetCount)(ICertEncodeLongArray *This,LONG *pCount);
+                   HRESULT (WINAPI *GetValue)(ICertEncodeLongArray *This,LONG Index,LONG *pValue);
+                   HRESULT (WINAPI *Reset)(ICertEncodeLongArray *This,LONG Count);
+                   HRESULT (WINAPI *SetValue)(ICertEncodeLongArray *This,LONG Index,LONG Value);
+                   HRESULT (WINAPI *Encode)(ICertEncodeLongArray *This,BSTR *pstrBinary);
     END_INTERFACE
   } ICertEncodeLongArrayVtbl;
   struct ICertEncodeLongArray {
@@ -269,19 +269,19 @@ extern "C"{
 #else
   typedef struct ICertEncodeDateArrayVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertEncodeDateArray *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertEncodeDateArray *This);
-      ULONG (WINAPI *Release)(ICertEncodeDateArray *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeDateArray *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertEncodeDateArray *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeDateArray *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertEncodeDateArray *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Decode)(ICertEncodeDateArray *This,const BSTR strBinary);
-      HRESULT (WINAPI *GetCount)(ICertEncodeDateArray *This,LONG *pCount);
-      HRESULT (WINAPI *GetValue)(ICertEncodeDateArray *This,LONG Index,DATE *pValue);
-      HRESULT (WINAPI *Reset)(ICertEncodeDateArray *This,LONG Count);
-      HRESULT (WINAPI *SetValue)(ICertEncodeDateArray *This,LONG Index,DATE Value);
-      HRESULT (WINAPI *Encode)(ICertEncodeDateArray *This,BSTR *pstrBinary);
+                   HRESULT (WINAPI *QueryInterface)(ICertEncodeDateArray *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertEncodeDateArray *This);
+                   ULONG (WINAPI *Release)(ICertEncodeDateArray *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeDateArray *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertEncodeDateArray *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeDateArray *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertEncodeDateArray *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Decode)(ICertEncodeDateArray *This,const BSTR strBinary);
+                   HRESULT (WINAPI *GetCount)(ICertEncodeDateArray *This,LONG *pCount);
+                   HRESULT (WINAPI *GetValue)(ICertEncodeDateArray *This,LONG Index,DATE *pValue);
+                   HRESULT (WINAPI *Reset)(ICertEncodeDateArray *This,LONG Count);
+                   HRESULT (WINAPI *SetValue)(ICertEncodeDateArray *This,LONG Index,DATE Value);
+                   HRESULT (WINAPI *Encode)(ICertEncodeDateArray *This,BSTR *pstrBinary);
     END_INTERFACE
   } ICertEncodeDateArrayVtbl;
   struct ICertEncodeDateArray {
@@ -336,22 +336,22 @@ extern "C"{
 #else
   typedef struct ICertEncodeCRLDistInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertEncodeCRLDistInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertEncodeCRLDistInfo *This);
-      ULONG (WINAPI *Release)(ICertEncodeCRLDistInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeCRLDistInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertEncodeCRLDistInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeCRLDistInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertEncodeCRLDistInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Decode)(ICertEncodeCRLDistInfo *This,const BSTR strBinary);
-      HRESULT (WINAPI *GetDistPointCount)(ICertEncodeCRLDistInfo *This,LONG *pDistPointCount);
-      HRESULT (WINAPI *GetNameCount)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG *pNameCount);
-      HRESULT (WINAPI *GetNameChoice)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG NameIndex,LONG *pNameChoice);
-      HRESULT (WINAPI *GetName)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG NameIndex,BSTR *pstrName);
-      HRESULT (WINAPI *Reset)(ICertEncodeCRLDistInfo *This,LONG DistPointCount);
-      HRESULT (WINAPI *SetNameCount)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG NameCount);
-      HRESULT (WINAPI *SetNameEntry)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG NameIndex,LONG NameChoice,const BSTR strName);
-      HRESULT (WINAPI *Encode)(ICertEncodeCRLDistInfo *This,BSTR *pstrBinary);
+                   HRESULT (WINAPI *QueryInterface)(ICertEncodeCRLDistInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertEncodeCRLDistInfo *This);
+                   ULONG (WINAPI *Release)(ICertEncodeCRLDistInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeCRLDistInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertEncodeCRLDistInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeCRLDistInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertEncodeCRLDistInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Decode)(ICertEncodeCRLDistInfo *This,const BSTR strBinary);
+                   HRESULT (WINAPI *GetDistPointCount)(ICertEncodeCRLDistInfo *This,LONG *pDistPointCount);
+                   HRESULT (WINAPI *GetNameCount)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG *pNameCount);
+                   HRESULT (WINAPI *GetNameChoice)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG NameIndex,LONG *pNameChoice);
+                   HRESULT (WINAPI *GetName)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG NameIndex,BSTR *pstrName);
+                   HRESULT (WINAPI *Reset)(ICertEncodeCRLDistInfo *This,LONG DistPointCount);
+                   HRESULT (WINAPI *SetNameCount)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG NameCount);
+                   HRESULT (WINAPI *SetNameEntry)(ICertEncodeCRLDistInfo *This,LONG DistPointIndex,LONG NameIndex,LONG NameChoice,const BSTR strName);
+                   HRESULT (WINAPI *Encode)(ICertEncodeCRLDistInfo *This,BSTR *pstrBinary);
     END_INTERFACE
   } ICertEncodeCRLDistInfoVtbl;
   struct ICertEncodeCRLDistInfo {
@@ -418,20 +418,20 @@ extern "C"{
 #else
   typedef struct ICertEncodeAltNameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertEncodeAltName *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertEncodeAltName *This);
-      ULONG (WINAPI *Release)(ICertEncodeAltName *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeAltName *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertEncodeAltName *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeAltName *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertEncodeAltName *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Decode)(ICertEncodeAltName *This,const BSTR strBinary);
-      HRESULT (WINAPI *GetNameCount)(ICertEncodeAltName *This,LONG *pNameCount);
-      HRESULT (WINAPI *GetNameChoice)(ICertEncodeAltName *This,LONG NameIndex,LONG *pNameChoice);
-      HRESULT (WINAPI *GetName)(ICertEncodeAltName *This,LONG NameIndex,BSTR *pstrName);
-      HRESULT (WINAPI *Reset)(ICertEncodeAltName *This,LONG NameCount);
-      HRESULT (WINAPI *SetNameEntry)(ICertEncodeAltName *This,LONG NameIndex,LONG NameChoice,const BSTR strName);
-      HRESULT (WINAPI *Encode)(ICertEncodeAltName *This,BSTR *pstrBinary);
+                   HRESULT (WINAPI *QueryInterface)(ICertEncodeAltName *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertEncodeAltName *This);
+                   ULONG (WINAPI *Release)(ICertEncodeAltName *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeAltName *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertEncodeAltName *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeAltName *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertEncodeAltName *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Decode)(ICertEncodeAltName *This,const BSTR strBinary);
+                   HRESULT (WINAPI *GetNameCount)(ICertEncodeAltName *This,LONG *pNameCount);
+                   HRESULT (WINAPI *GetNameChoice)(ICertEncodeAltName *This,LONG NameIndex,LONG *pNameChoice);
+                   HRESULT (WINAPI *GetName)(ICertEncodeAltName *This,LONG NameIndex,BSTR *pstrName);
+                   HRESULT (WINAPI *Reset)(ICertEncodeAltName *This,LONG NameCount);
+                   HRESULT (WINAPI *SetNameEntry)(ICertEncodeAltName *This,LONG NameIndex,LONG NameChoice,const BSTR strName);
+                   HRESULT (WINAPI *Encode)(ICertEncodeAltName *This,BSTR *pstrBinary);
     END_INTERFACE
   } ICertEncodeAltNameVtbl;
   struct ICertEncodeAltName {
@@ -484,17 +484,17 @@ extern "C"{
 #else
   typedef struct ICertEncodeBitStringVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertEncodeBitString *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertEncodeBitString *This);
-      ULONG (WINAPI *Release)(ICertEncodeBitString *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeBitString *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertEncodeBitString *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeBitString *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertEncodeBitString *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Decode)(ICertEncodeBitString *This,const BSTR strBinary);
-      HRESULT (WINAPI *GetBitCount)(ICertEncodeBitString *This,LONG *pBitCount);
-      HRESULT (WINAPI *GetBitString)(ICertEncodeBitString *This,BSTR *pstrBitString);
-      HRESULT (WINAPI *Encode)(ICertEncodeBitString *This,LONG BitCount,BSTR strBitString,BSTR *pstrBinary);
+                   HRESULT (WINAPI *QueryInterface)(ICertEncodeBitString *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertEncodeBitString *This);
+                   ULONG (WINAPI *Release)(ICertEncodeBitString *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertEncodeBitString *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertEncodeBitString *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertEncodeBitString *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertEncodeBitString *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Decode)(ICertEncodeBitString *This,const BSTR strBinary);
+                   HRESULT (WINAPI *GetBitCount)(ICertEncodeBitString *This,LONG *pBitCount);
+                   HRESULT (WINAPI *GetBitString)(ICertEncodeBitString *This,BSTR *pstrBitString);
+                   HRESULT (WINAPI *Encode)(ICertEncodeBitString *This,LONG BitCount,BSTR strBitString,BSTR *pstrBinary);
     END_INTERFACE
   } ICertEncodeBitStringVtbl;
   struct ICertEncodeBitString {

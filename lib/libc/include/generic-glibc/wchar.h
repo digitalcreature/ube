@@ -16,7 +16,7 @@
    <https://www.gnu.org/licenses/>.  */
 
 /*
- *      ISO C99 Standard: 7.24
+ *                   ISO C99 Standard: 7.24
  *	Extended multibyte and wide character utilities	<wchar.h>
  */
 
@@ -133,7 +133,7 @@ extern int wcscoll (const wchar_t *__s1, const wchar_t *__s2) __THROW;
    applied to two transformed strings the result is the as applying
    `wcscoll' to the original strings.  */
 extern size_t wcsxfrm (wchar_t *__restrict __s1,
-		       const wchar_t *__restrict __s2, size_t __n) __THROW;
+		                    const wchar_t *__restrict __s2, size_t __n) __THROW;
 
 #ifdef __USE_XOPEN2K8
 /* Similar to the two functions above but take the information from
@@ -142,7 +142,7 @@ extern size_t wcsxfrm (wchar_t *__restrict __s1,
 /* Compare S1 and S2, both interpreted as appropriate to the
    LC_COLLATE category of the given locale.  */
 extern int wcscoll_l (const wchar_t *__s1, const wchar_t *__s2,
-		      locale_t __loc) __THROW;
+		                   locale_t __loc) __THROW;
 
 /* Transform S2 into array pointed to by S1 such that if wcscmp is
    applied to two transformed strings the result is the as applying
@@ -294,18 +294,18 @@ extern int mbsinit (const mbstate_t *__ps) __THROW __attribute_pure__;
 /* Write wide character representation of multibyte character pointed
    to by S to PWC.  */
 extern size_t mbrtowc (wchar_t *__restrict __pwc,
-		       const char *__restrict __s, size_t __n,
-		       mbstate_t *__restrict __p) __THROW;
+		                    const char *__restrict __s, size_t __n,
+		                    mbstate_t *__restrict __p) __THROW;
 
 /* Write multibyte representation of wide character WC to S.  */
 extern size_t wcrtomb (char *__restrict __s, wchar_t __wc,
-		       mbstate_t *__restrict __ps) __THROW;
+		                    mbstate_t *__restrict __ps) __THROW;
 
 /* Return number of bytes in multibyte character pointed to by S.  */
 extern size_t __mbrlen (const char *__restrict __s, size_t __n,
 			mbstate_t *__restrict __ps) __THROW;
 extern size_t mbrlen (const char *__restrict __s, size_t __n,
-		      mbstate_t *__restrict __ps) __THROW;
+		                   mbstate_t *__restrict __ps) __THROW;
 
 #ifdef __USE_EXTERN_INLINES
 /* Define inline function as optimization.  */
@@ -327,7 +327,7 @@ __NTH (wctob (wint_t __wc))
 
 __extern_inline size_t
 __NTH (mbrlen (const char *__restrict __s, size_t __n,
-	       mbstate_t *__restrict __ps))
+	                    mbstate_t *__restrict __ps))
 { return (__ps != NULL
 	  ? mbrtowc (NULL, __s, __n, __ps) : __mbrlen (__s, __n, NULL)); }
 #endif
@@ -375,7 +375,7 @@ extern int wcswidth (const wchar_t *__s, size_t __n) __THROW;
 /* Convert initial portion of the wide string NPTR to `double'
    representation.  */
 extern double wcstod (const wchar_t *__restrict __nptr,
-		      wchar_t **__restrict __endptr) __THROW;
+		                   wchar_t **__restrict __endptr) __THROW;
 
 #ifdef __USE_ISOC99
 /* Likewise for `float' and `long double' sizes of floating-point numbers.  */
@@ -419,7 +419,7 @@ extern _Float64x wcstof64x (const wchar_t *__restrict __nptr,
 
 #if __HAVE_FLOAT128X && defined __USE_GNU
 extern _Float128x wcstof128x (const wchar_t *__restrict __nptr,
-			      wchar_t **__restrict __endptr) __THROW;
+			                   wchar_t **__restrict __endptr) __THROW;
 #endif
 
 
@@ -439,7 +439,7 @@ extern unsigned long int wcstoul (const wchar_t *__restrict __nptr,
    representation.  */
 __extension__
 extern long long int wcstoll (const wchar_t *__restrict __nptr,
-			      wchar_t **__restrict __endptr, int __base)
+			                   wchar_t **__restrict __endptr, int __base)
      __THROW;
 
 /* Convert initial portion of wide string NPTR to `unsigned long long int'
@@ -462,8 +462,8 @@ extern long long int wcstoq (const wchar_t *__restrict __nptr,
    representation.  */
 __extension__
 extern unsigned long long int wcstouq (const wchar_t *__restrict __nptr,
-				       wchar_t **__restrict __endptr,
-				       int __base) __THROW;
+				                    wchar_t **__restrict __endptr,
+				                    int __base) __THROW;
 #endif /* Use GNU.  */
 
 #ifdef __USE_GNU
@@ -494,12 +494,12 @@ extern double wcstod_l (const wchar_t *__restrict __nptr,
      __THROW;
 
 extern float wcstof_l (const wchar_t *__restrict __nptr,
-		       wchar_t **__restrict __endptr, locale_t __loc)
+		                    wchar_t **__restrict __endptr, locale_t __loc)
      __THROW;
 
 extern long double wcstold_l (const wchar_t *__restrict __nptr,
-			      wchar_t **__restrict __endptr,
-			      locale_t __loc) __THROW;
+			                   wchar_t **__restrict __endptr,
+			                   locale_t __loc) __THROW;
 
 # if __HAVE_FLOAT16
 extern _Float16 wcstof16_l (const wchar_t *__restrict __nptr,
@@ -521,20 +521,20 @@ extern _Float64 wcstof64_l (const wchar_t *__restrict __nptr,
 
 # if __HAVE_FLOAT128
 extern _Float128 wcstof128_l (const wchar_t *__restrict __nptr,
-			      wchar_t **__restrict __endptr,
-			      locale_t __loc) __THROW;
+			                   wchar_t **__restrict __endptr,
+			                   locale_t __loc) __THROW;
 # endif
 
 # if __HAVE_FLOAT32X
 extern _Float32x wcstof32x_l (const wchar_t *__restrict __nptr,
-			      wchar_t **__restrict __endptr,
-			      locale_t __loc) __THROW;
+			                   wchar_t **__restrict __endptr,
+			                   locale_t __loc) __THROW;
 # endif
 
 # if __HAVE_FLOAT64X
 extern _Float64x wcstof64x_l (const wchar_t *__restrict __nptr,
-			      wchar_t **__restrict __endptr,
-			      locale_t __loc) __THROW;
+			                   wchar_t **__restrict __endptr,
+			                   locale_t __loc) __THROW;
 # endif
 
 # if __HAVE_FLOAT128X
@@ -596,8 +596,8 @@ extern int swprintf (wchar_t *__restrict __s, size_t __n,
    This function is a possible cancellation point and therefore not
    marked with __THROW.  */
 extern int vfwprintf (__FILE *__restrict __s,
-		      const wchar_t *__restrict __format,
-		      __gnuc_va_list __arg)
+		                   const wchar_t *__restrict __format,
+		                   __gnuc_va_list __arg)
      /* __attribute__ ((__format__ (__wprintf__, 2, 0))) */;
 /* Write formatted output to stdout from argument list ARG.
 
@@ -609,8 +609,8 @@ extern int vwprintf (const wchar_t *__restrict __format,
 /* Write formatted output of at most N character to S from argument
    list ARG.  */
 extern int vswprintf (wchar_t *__restrict __s, size_t __n,
-		      const wchar_t *__restrict __format,
-		      __gnuc_va_list __arg)
+		                   const wchar_t *__restrict __format,
+		                   __gnuc_va_list __arg)
      __THROW /* __attribute__ ((__format__ (__wprintf__, 3, 0))) */;
 
 
@@ -641,10 +641,10 @@ extern int swscanf (const wchar_t *__restrict __s,
 #  ifdef __REDIRECT
 extern int __REDIRECT (fwscanf, (__FILE *__restrict __stream,
 				 const wchar_t *__restrict __format, ...),
-		       __isoc99_fwscanf)
+		                    __isoc99_fwscanf)
      /* __attribute__ ((__format__ (__wscanf__, 2, 3))) */;
 extern int __REDIRECT (wscanf, (const wchar_t *__restrict __format, ...),
-		       __isoc99_wscanf)
+		                    __isoc99_wscanf)
      /* __attribute__ ((__format__ (__wscanf__, 1, 2))) */;
 extern int __REDIRECT_NTH (swscanf, (const wchar_t *__restrict __s,
 				     const wchar_t *__restrict __format,
@@ -701,18 +701,18 @@ extern int __REDIRECT (vwscanf, (const wchar_t *__restrict __format,
 				 __gnuc_va_list __arg), __isoc99_vwscanf)
      /* __attribute__ ((__format__ (__wscanf__, 1, 0))) */;
 extern int __REDIRECT_NTH (vswscanf, (const wchar_t *__restrict __s,
-				      const wchar_t *__restrict __format,
-				      __gnuc_va_list __arg), __isoc99_vswscanf)
+				                   const wchar_t *__restrict __format,
+				                   __gnuc_va_list __arg), __isoc99_vswscanf)
      /* __attribute__ ((__format__ (__wscanf__, 2, 0))) */;
 #  else
 extern int __isoc99_vfwscanf (__FILE *__restrict __s,
-			      const wchar_t *__restrict __format,
-			      __gnuc_va_list __arg);
+			                   const wchar_t *__restrict __format,
+			                   __gnuc_va_list __arg);
 extern int __isoc99_vwscanf (const wchar_t *__restrict __format,
 			     __gnuc_va_list __arg);
 extern int __isoc99_vswscanf (const wchar_t *__restrict __s,
-			      const wchar_t *__restrict __format,
-			      __gnuc_va_list __arg) __THROW;
+			                   const wchar_t *__restrict __format,
+			                   __gnuc_va_list __arg) __THROW;
 #   define vfwscanf __isoc99_vfwscanf
 #   define vwscanf __isoc99_vwscanf
 #   define vswscanf __isoc99_vswscanf

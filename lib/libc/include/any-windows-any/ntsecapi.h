@@ -427,9 +427,9 @@ extern "C" {
     LSA_FOREST_TRUST_RECORD_TYPE ForestTrustType;
     LARGE_INTEGER Time;
     union {
-      LSA_UNICODE_STRING TopLevelName;
-      LSA_FOREST_TRUST_DOMAIN_INFO DomainInfo;
-      LSA_FOREST_TRUST_BINARY_DATA Data;
+                   LSA_UNICODE_STRING TopLevelName;
+                   LSA_FOREST_TRUST_DOMAIN_INFO DomainInfo;
+                   LSA_FOREST_TRUST_BINARY_DATA Data;
     } ForestTrustData;
   } LSA_FOREST_TRUST_RECORD,*PLSA_FOREST_TRUST_RECORD;
 
@@ -980,8 +980,8 @@ extern "C" {
     KerbInteractiveLogon = 2,KerbSmartCardLogon = 6,KerbWorkstationUnlockLogon = 7,KerbSmartCardUnlockLogon = 8,KerbProxyLogon = 9,
     KerbTicketLogon = 10,KerbTicketUnlockLogon = 11,KerbS4ULogon = 12
 #if (_WIN32_WINNT >= 0x0600)
-   ,KerbCertificateLogon         = 13,
-    KerbCertificateS4ULogon      = 14,
+   ,KerbCertificateLogon                      = 13,
+    KerbCertificateS4ULogon                   = 14,
     KerbCertificateUnlockLogon   = 15 
 #endif
   } KERB_LOGON_SUBMIT_TYPE,*PKERB_LOGON_SUBMIT_TYPE;
@@ -1348,25 +1348,25 @@ extern "C" {
 
   typedef struct _KERB_CERTIFICATE_LOGON {
     KERB_LOGON_SUBMIT_TYPE MessageType;
-    UNICODE_STRING         DomainName;
-    UNICODE_STRING         UserName;
-    UNICODE_STRING         Pin;
-    ULONG                  Flags;
-    ULONG                  CspDataLength;
-    PUCHAR                 CspData;
+    UNICODE_STRING                      DomainName;
+    UNICODE_STRING                      UserName;
+    UNICODE_STRING                      Pin;
+    ULONG                                                         Flags;
+    ULONG                                                         CspDataLength;
+    PUCHAR                                           CspData;
   } KERB_CERTIFICATE_LOGON, *PKERB_CERTIFICATE_LOGON;
 
   typedef struct _KERB_CERTIFICATE_UNLOCK_LOGON {
     KERB_CERTIFICATE_LOGON Logon;
-    LUID                   LogonId;
+    LUID                                                          LogonId;
   } KERB_CERTIFICATE_UNLOCK_LOGON, *PKERB_CERTIFICATE_UNLOCK_LOGON;
 
   typedef struct _KERB_SMARTCARD_CSP_INFO {
     DWORD dwCspInfoLen;
     DWORD MessageType;
     __C89_NAMELESS union {
-      PVOID   ContextInformation;
-      ULONG64 SpaceHolderForWow64;
+                   PVOID   ContextInformation;
+                   ULONG64 SpaceHolderForWow64;
     };
     DWORD flags;
     DWORD KeySpec;

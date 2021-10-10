@@ -64,12 +64,12 @@ extern "C"{
 #else
   typedef struct IH323LineExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IH323LineEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IH323LineEx *This);
-      ULONG (WINAPI *Release)(IH323LineEx *This);
-      HRESULT (WINAPI *SetExternalT120Address)(IH323LineEx *This,WINBOOL fEnable,DWORD dwIP,WORD wPort);
-      HRESULT (WINAPI *SetDefaultCapabilityPreferrence)(IH323LineEx *This,DWORD dwNumCaps,H245_CAPABILITY *pCapabilities,DWORD *pWeights);
-      HRESULT (WINAPI *SetAlias)(IH323LineEx *This,WCHAR *strAlias,DWORD dwLength);
+                   HRESULT (WINAPI *QueryInterface)(IH323LineEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IH323LineEx *This);
+                   ULONG (WINAPI *Release)(IH323LineEx *This);
+                   HRESULT (WINAPI *SetExternalT120Address)(IH323LineEx *This,WINBOOL fEnable,DWORD dwIP,WORD wPort);
+                   HRESULT (WINAPI *SetDefaultCapabilityPreferrence)(IH323LineEx *This,DWORD dwNumCaps,H245_CAPABILITY *pCapabilities,DWORD *pWeights);
+                   HRESULT (WINAPI *SetAlias)(IH323LineEx *This,WCHAR *strAlias,DWORD dwLength);
     END_INTERFACE
   } IH323LineExVtbl;
   struct IH323LineEx {
@@ -104,11 +104,11 @@ extern "C"{
 #else
   typedef struct IKeyFrameControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IKeyFrameControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IKeyFrameControl *This);
-      ULONG (WINAPI *Release)(IKeyFrameControl *This);
-      HRESULT (WINAPI *UpdatePicture)(IKeyFrameControl *This);
-      HRESULT (WINAPI *PeriodicUpdatePicture)(IKeyFrameControl *This,WINBOOL fEnable,DWORD dwInterval);
+                   HRESULT (WINAPI *QueryInterface)(IKeyFrameControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IKeyFrameControl *This);
+                   ULONG (WINAPI *Release)(IKeyFrameControl *This);
+                   HRESULT (WINAPI *UpdatePicture)(IKeyFrameControl *This);
+                   HRESULT (WINAPI *PeriodicUpdatePicture)(IKeyFrameControl *This,WINBOOL fEnable,DWORD dwInterval);
     END_INTERFACE
   } IKeyFrameControlVtbl;
   struct IKeyFrameControl {

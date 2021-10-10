@@ -78,8 +78,8 @@
  * Definitions for MPPE.
  */
 
-#define CI_MPPE                18      /* config option for MPPE */
-#define CILEN_MPPE              6      /* length of config option */
+#define CI_MPPE                                          18                   /* config option for MPPE */
+#define CILEN_MPPE                                        6                   /* length of config option */
 
 /*
  * Definitions for other, as yet unsupported, compression methods.

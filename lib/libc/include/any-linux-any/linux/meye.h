@@ -32,7 +32,7 @@
 #define _MEYE_H_
 
 /****************************************************************************/
-/* Private API for handling mjpeg capture / playback.                       */
+/* Private API for handling mjpeg capture / playback.                                                              */
 /****************************************************************************/
 
 struct meye_params {

@@ -42,8 +42,8 @@
 #define FIONBIO		0x667E
 #define FIOQSIZE	0x667F
 
-#define TIOCGLTC        0x7474
-#define TIOCSLTC        0x7475
+#define TIOCGLTC                     0x7474
+#define TIOCSLTC                     0x7475
 #define TIOCSPGRP	_IOW('t', 118, int)
 #define TIOCGPGRP	_IOR('t', 119, int)
 #define TIOCCONS	_IOW('t', 120, int)
@@ -51,9 +51,9 @@
 #define FIONREAD	0x467F
 #define TIOCINQ		FIONREAD
 
-#define TIOCGETP        0x7408
-#define TIOCSETP        0x7409
-#define TIOCSETN        0x740A
+#define TIOCGETP                     0x7408
+#define TIOCSETP                     0x7409
+#define TIOCSETN                     0x740A
 
 #define TIOCSBRK	0x5427
 #define TIOCCBRK	0x5428
@@ -105,10 +105,10 @@
 #define TIOCM_OUT2	0x4000
 #define TIOCM_LOOP	0x8000
 
-#define FIOGETOWN       _IOR('f', 123, int)
-#define FIOSETOWN       _IOW('f', 124, int)
-#define SIOCATMARK      _IOR('s', 7, int)
-#define SIOCSPGRP       _IOW('s', 8, pid_t)
-#define SIOCGPGRP       _IOR('s', 9, pid_t)
-#define SIOCGSTAMP      0x8906
+#define FIOGETOWN                    _IOR('f', 123, int)
+#define FIOSETOWN                    _IOW('f', 124, int)
+#define SIOCATMARK                   _IOR('s', 7, int)
+#define SIOCSPGRP                    _IOW('s', 8, pid_t)
+#define SIOCGPGRP                    _IOR('s', 9, pid_t)
+#define SIOCGSTAMP                   0x8906
 #define SIOCGSTAMPNS    0x8907

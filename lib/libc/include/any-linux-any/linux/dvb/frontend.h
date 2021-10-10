@@ -140,20 +140,20 @@ enum fe_type {
  * .. note:
  *
  *    #. The frequencies are specified in Hz for Terrestrial and Cable
- *       systems.
+ *                    systems.
  *    #. The frequencies are specified in kHz for Satellite systems.
  */
 struct dvb_frontend_info {
-	char       name[128];
+	char                    name[128];
 	enum fe_type type;	/* DEPRECATED. Use DTV_ENUM_DELSYS instead */
-	__u32      frequency_min;
-	__u32      frequency_max;
-	__u32      frequency_stepsize;
-	__u32      frequency_tolerance;
-	__u32      symbol_rate_min;
-	__u32      symbol_rate_max;
-	__u32      symbol_rate_tolerance;
-	__u32      notifier_delay;		/* DEPRECATED */
+	__u32                   frequency_min;
+	__u32                   frequency_max;
+	__u32                   frequency_stepsize;
+	__u32                   frequency_tolerance;
+	__u32                   symbol_rate_min;
+	__u32                   symbol_rate_max;
+	__u32                   symbol_rate_tolerance;
+	__u32                   notifier_delay;		/* DEPRECATED */
 	enum fe_caps caps;
 };
 
@@ -667,9 +667,9 @@ enum fe_delivery_system {
  *	Reserved. Shouldn't be used.
  */
 enum atscmh_sccc_block_mode {
-	ATSCMH_SCCC_BLK_SEP      = 0,
+	ATSCMH_SCCC_BLK_SEP                   = 0,
 	ATSCMH_SCCC_BLK_COMB     = 1,
-	ATSCMH_SCCC_BLK_RES      = 2,
+	ATSCMH_SCCC_BLK_RES                   = 2,
 };
 
 /**
@@ -716,7 +716,7 @@ enum atscmh_rs_frame_ensemble {
 enum atscmh_rs_frame_mode {
 	ATSCMH_RSFRAME_PRI_ONLY  = 0,
 	ATSCMH_RSFRAME_PRI_SEC   = 1,
-	ATSCMH_RSFRAME_RES       = 2,
+	ATSCMH_RSFRAME_RES                    = 2,
 };
 
 /**
@@ -730,11 +730,11 @@ enum atscmh_rs_code_mode {
 	ATSCMH_RSCODE_211_187    = 0,
 	ATSCMH_RSCODE_223_187    = 1,
 	ATSCMH_RSCODE_235_187    = 2,
-	ATSCMH_RSCODE_RES        = 3,
+	ATSCMH_RSCODE_RES                     = 3,
 };
 
 #define NO_STREAM_ID_FILTER	(~0U)
-#define LNA_AUTO                (~0U)
+#define LNA_AUTO                                          (~0U)
 
 /**
  * enum fecap_scale_params - scale types for the quality parameters.
@@ -743,11 +743,11 @@ enum atscmh_rs_code_mode {
  *			    could indicate a temporary or a permanent
  *			    condition.
  * @FE_SCALE_DECIBEL: The scale is measured in 0.001 dB steps, typically
- *		      used on signal measures.
+ *		                   used on signal measures.
  * @FE_SCALE_RELATIVE: The scale is a relative percentual measure,
- *		       ranging from 0 (0%) to 0xffff (100%).
+ *		                    ranging from 0 (0%) to 0xffff (100%).
  * @FE_SCALE_COUNTER: The scale counts the occurrence of an event, like
- *		      bit error, block error, lapsed time.
+ *		                   bit error, block error, lapsed time.
  */
 enum fecap_scale_params {
 	FE_SCALE_NOT_AVAILABLE = 0,
@@ -890,7 +890,7 @@ struct dtv_properties {
 #define FE_DISEQC_RESET_OVERLOAD   _IO('o', 62)
 #define FE_DISEQC_SEND_MASTER_CMD  _IOW('o', 63, struct dvb_diseqc_master_cmd)
 #define FE_DISEQC_RECV_SLAVE_REPLY _IOR('o', 64, struct dvb_diseqc_slave_reply)
-#define FE_DISEQC_SEND_BURST       _IO('o', 65)  /* fe_sec_mini_cmd_t */
+#define FE_DISEQC_SEND_BURST                    _IO('o', 65)  /* fe_sec_mini_cmd_t */
 
 #define FE_SET_TONE		   _IO('o', 66)  /* fe_sec_tone_mode_t */
 #define FE_SET_VOLTAGE		   _IO('o', 67)  /* fe_sec_voltage_t */
@@ -974,13 +974,13 @@ struct dvb_vsb_parameters {
 };
 
 struct dvb_ofdm_parameters {
-	fe_bandwidth_t      bandwidth;
-	fe_code_rate_t      code_rate_HP;  /* high priority stream code rate */
-	fe_code_rate_t      code_rate_LP;  /* low priority stream code rate */
+	fe_bandwidth_t                   bandwidth;
+	fe_code_rate_t                   code_rate_HP;  /* high priority stream code rate */
+	fe_code_rate_t                   code_rate_LP;  /* low priority stream code rate */
 	fe_modulation_t     constellation; /* modulation type (see above) */
 	fe_transmit_mode_t  transmission_mode;
 	fe_guard_interval_t guard_interval;
-	fe_hierarchy_t      hierarchy_information;
+	fe_hierarchy_t                   hierarchy_information;
 };
 
 struct dvb_frontend_parameters {

@@ -32,21 +32,21 @@ pub fn roundToPrecision(float_decimal: *FloatDecimal, precision: usize, mode: Ro
     var round_digit: usize = 0;
 
     switch (mode) {
-        RoundMode.Decimal => {
-            if (float_decimal.exp >= 0) {
-                round_digit = precision + @intCast(usize, float_decimal.exp);
-            } else {
-                // if a small negative exp, then adjust we need to offset by the number
-                // of leading zeros that will occur.
-                const min_exp_required = @intCast(usize, -float_decimal.exp);
-                if (precision > min_exp_required) {
-                    round_digit = precision - min_exp_required;
-                }
-            }
-        },
-        RoundMode.Scientific => {
-            round_digit = 1 + precision;
-        },
+                     RoundMode.Decimal => {
+                                      if (float_decimal.exp >= 0) {
+                                          round_digit = precision + @intCast(usize, float_decimal.exp);
+                                      } else {
+                                          // if a small negative exp, then adjust we need to offset by the number
+                                          // of leading zeros that will occur.
+                                          const min_exp_required = @intCast(usize, -float_decimal.exp);
+                                          if (precision > min_exp_required) {
+                                                           round_digit = precision - min_exp_required;
+                                          }
+                                      }
+                     },
+                     RoundMode.Scientific => {
+                                      round_digit = 1 + precision;
+                     },
     }
 
     // It suffices to look at just this digit. We don't round and propagate say 0.04999 to 0.05
@@ -54,32 +54,32 @@ pub fn roundToPrecision(float_decimal: *FloatDecimal, precision: usize, mode: Ro
 
     // Find the digit which will signify the round point and start rounding backwards.
     if (round_digit < float_decimal.digits.len and float_decimal.digits[round_digit] - '0' >= 5) {
-        assert(round_digit >= 0);
+                     assert(round_digit >= 0);
 
-        var i = round_digit;
-        while (true) {
-            if (i == 0) {
-                // Rounded all the way past the start. This was of the form 9.999...
-                // Slot the new digit in place and increase the exponent.
-                float_decimal.exp += 1;
+                     var i = round_digit;
+                     while (true) {
+                                      if (i == 0) {
+                                          // Rounded all the way past the start. This was of the form 9.999...
+                                          // Slot the new digit in place and increase the exponent.
+                                          float_decimal.exp += 1;
 
-                // Re-size the buffer to use the reserved leading byte.
-                const one_before = @intToPtr([*]u8, @ptrToInt(&float_decimal.digits[0]) - 1);
-                float_decimal.digits = one_before[0 .. float_decimal.digits.len + 1];
-                float_decimal.digits[0] = '1';
-                return;
-            }
+                                          // Re-size the buffer to use the reserved leading byte.
+                                          const one_before = @intToPtr([*]u8, @ptrToInt(&float_decimal.digits[0]) - 1);
+                                          float_decimal.digits = one_before[0 .. float_decimal.digits.len + 1];
+                                          float_decimal.digits[0] = '1';
+                                          return;
+                                      }
 
-            i -= 1;
+                                      i -= 1;
 
-            const new_value = (float_decimal.digits[i] - '0' + 1) % 10;
-            float_decimal.digits[i] = new_value + '0';
+                                      const new_value = (float_decimal.digits[i] - '0' + 1) % 10;
+                                      float_decimal.digits[i] = new_value + '0';
 
-            // must continue rounding until non-9
-            if (new_value != 0) {
-                return;
-            }
-        }
+                                      // must continue rounding until non-9
+                                      if (new_value != 0) {
+                                          return;
+                                      }
+                     }
     }
 }
 
@@ -88,13 +88,13 @@ pub fn errol3(value: f64, buffer: []u8) FloatDecimal {
     const bits = @bitCast(u64, value);
     const i = tableLowerBound(bits);
     if (i < enum3.len and enum3[i] == bits) {
-        const data = enum3_data[i];
-        const digits = buffer[1 .. data.str.len + 1];
-        mem.copy(u8, digits, data.str);
-        return FloatDecimal{
-            .digits = digits,
-            .exp = data.exp,
-        };
+                     const data = enum3_data[i];
+                     const digits = buffer[1 .. data.str.len + 1];
+                     mem.copy(u8, digits, data.str);
+                     return FloatDecimal{
+                                      .digits = digits,
+                                      .exp = data.exp,
+                     };
     }
 
     return errol3u(value, buffer);
@@ -104,9 +104,9 @@ pub fn errol3(value: f64, buffer: []u8) FloatDecimal {
 fn errol3u(val: f64, buffer: []u8) FloatDecimal {
     // check if in integer or fixed range
     if (val > 9.007199254740992e15 and val < 3.40282366920938e+38) {
-        return errolInt(val, buffer);
+                     return errolInt(val, buffer);
     } else if (val >= 16.0 and val < 9.007199254740992e15) {
-        return errolFixed(val, buffer);
+                     return errolFixed(val, buffer);
     }
 
     // normalize the midpoint
@@ -114,9 +114,9 @@ fn errol3u(val: f64, buffer: []u8) FloatDecimal {
     const e = math.frexp(val).exponent;
     var exp = @floatToInt(i16, math.floor(307 + @intToFloat(f64, e) * 0.30103));
     if (exp < 20) {
-        exp = 20;
+                     exp = 20;
     } else if (@intCast(usize, exp) >= lookup_table.len) {
-        exp = @intCast(i16, lookup_table.len - 1);
+                     exp = @intCast(i16, lookup_table.len - 1);
     }
 
     var mid = lookup_table[@intCast(usize, exp)];
@@ -128,25 +128,25 @@ fn errol3u(val: f64, buffer: []u8) FloatDecimal {
     var ten: f64 = 1.0;
 
     while (mid.val > 10.0 or (mid.val == 10.0 and mid.off >= 0.0)) {
-        exp += 1;
-        hpDiv10(&mid);
-        ten /= 10.0;
+                     exp += 1;
+                     hpDiv10(&mid);
+                     ten /= 10.0;
     }
 
     while (mid.val < 1.0 or (mid.val == 1.0 and mid.off < 0.0)) {
-        exp -= 1;
-        hpMul10(&mid);
-        ten *= 10.0;
+                     exp -= 1;
+                     hpMul10(&mid);
+                     ten *= 10.0;
     }
 
     // compute boundaries
     var high = HP{
-        .val = mid.val,
-        .off = mid.off + (fpnext(val) - val) * lten * ten / 2.0,
+                     .val = mid.val,
+                     .off = mid.off + (fpnext(val) - val) * lten * ten / 2.0,
     };
     var low = HP{
-        .val = mid.val,
-        .off = mid.off + (fpprev(val) - val) * lten * ten / 2.0,
+                     .val = mid.val,
+                     .off = mid.off + (fpprev(val) - val) * lten * ten / 2.0,
     };
 
     hpNormalize(&high);
@@ -155,15 +155,15 @@ fn errol3u(val: f64, buffer: []u8) FloatDecimal {
     // normalized boundaries
 
     while (high.val > 10.0 or (high.val == 10.0 and high.off >= 0.0)) {
-        exp += 1;
-        hpDiv10(&high);
-        hpDiv10(&low);
+                     exp += 1;
+                     hpDiv10(&high);
+                     hpDiv10(&low);
     }
 
     while (high.val < 1.0 or (high.val == 1.0 and high.off < 0.0)) {
-        exp -= 1;
-        hpMul10(&high);
-        hpMul10(&low);
+                     exp -= 1;
+                     hpMul10(&high);
+                     hpMul10(&low);
     }
 
     // digit generation
@@ -173,20 +173,20 @@ fn errol3u(val: f64, buffer: []u8) FloatDecimal {
     // the 0-index for this extra digit.
     var buf_index: usize = 1;
     while (true) {
-        var hdig = @floatToInt(u8, math.floor(high.val));
-        if ((high.val == @intToFloat(f64, hdig)) and (high.off < 0)) hdig -= 1;
+                     var hdig = @floatToInt(u8, math.floor(high.val));
+                     if ((high.val == @intToFloat(f64, hdig)) and (high.off < 0)) hdig -= 1;
 
-        var ldig = @floatToInt(u8, math.floor(low.val));
-        if ((low.val == @intToFloat(f64, ldig)) and (low.off < 0)) ldig -= 1;
+                     var ldig = @floatToInt(u8, math.floor(low.val));
+                     if ((low.val == @intToFloat(f64, ldig)) and (low.off < 0)) ldig -= 1;
 
-        if (ldig != hdig) break;
+                     if (ldig != hdig) break;
 
-        buffer[buf_index] = hdig + '0';
-        buf_index += 1;
-        high.val -= @intToFloat(f64, hdig);
-        low.val -= @intToFloat(f64, ldig);
-        hpMul10(&high);
-        hpMul10(&low);
+                     buffer[buf_index] = hdig + '0';
+                     buf_index += 1;
+                     high.val -= @intToFloat(f64, hdig);
+                     low.val -= @intToFloat(f64, ldig);
+                     hpMul10(&high);
+                     hpMul10(&low);
     }
 
     const tmp = (high.val + low.val) / 2.0;
@@ -197,8 +197,8 @@ fn errol3u(val: f64, buffer: []u8) FloatDecimal {
     buf_index += 1;
 
     return FloatDecimal{
-        .digits = buffer[1..buf_index],
-        .exp = exp,
+                     .digits = buffer[1..buf_index],
+                     .exp = exp,
     };
 }
 
@@ -207,12 +207,12 @@ fn tableLowerBound(k: u64) usize {
     var j: usize = 0;
 
     while (j < enum3.len) {
-        if (enum3[j] < k) {
-            j = 2 * j + 2;
-        } else {
-            i = j;
-            j = 2 * j + 1;
-        }
+                     if (enum3[j] < k) {
+                                      j = 2 * j + 2;
+                     } else {
+                                      i = j;
+                                      j = 2 * j + 1;
+                     }
     }
 
     return i;
@@ -235,8 +235,8 @@ fn hpProd(in: HP, val: f64) HP {
     const e = ((hi * hi2 - p) + lo * hi2 + hi * lo2) + lo * lo2;
 
     return HP{
-        .val = p,
-        .off = in.off * val + e,
+                     .val = p,
+                     .off = in.off * val + e,
     };
 }
 
@@ -310,9 +310,9 @@ fn errolInt(val: f64, buffer: []u8) FloatDecimal {
     var high: u128 = mid + fpeint((val - fpprev(val)) / 2.0);
 
     if (@bitCast(u64, val) & 0x1 != 0) {
-        high -= 1;
+                     high -= 1;
     } else {
-        low -= 1;
+                     low -= 1;
     }
 
     var l64 = @intCast(u64, low % pow19);
@@ -322,18 +322,18 @@ fn errolInt(val: f64, buffer: []u8) FloatDecimal {
     const hf = @intCast(u64, (high / pow19) % pow19);
 
     if (lf != hf) {
-        l64 = lf;
-        h64 = hf;
-        mid = mid / (pow19 / 10);
+                     l64 = lf;
+                     h64 = hf;
+                     mid = mid / (pow19 / 10);
     }
 
     var mi: i32 = mismatch10(l64, h64);
     var x: u64 = 1;
     {
-        var i: i32 = @boolToInt(lf == hf);
-        while (i < mi) : (i += 1) {
-            x *= 10;
-        }
+                     var i: i32 = @boolToInt(lf == hf);
+                     while (i < mi) : (i += 1) {
+                                      x *= 10;
+                     }
     }
     const m64 = @truncate(u64, @divTrunc(mid, x));
 
@@ -342,14 +342,14 @@ fn errolInt(val: f64, buffer: []u8) FloatDecimal {
     var buf_index = u64toa(m64, buffer) - 1;
 
     if (mi != 0) {
-        buffer[buf_index - 1] += @boolToInt(buffer[buf_index] >= '5');
+                     buffer[buf_index - 1] += @boolToInt(buffer[buf_index] >= '5');
     } else {
-        buf_index += 1;
+                     buf_index += 1;
     }
 
     return FloatDecimal{
-        .digits = buffer[0..buf_index],
-        .exp = @intCast(i32, buf_index) + mi,
+                     .digits = buffer[0..buf_index],
+                     .exp = @intCast(i32, buf_index) + mi,
     };
 }
 
@@ -373,42 +373,42 @@ fn errolFixed(val: f64, buffer: []u8) FloatDecimal {
     buffer[j] = 0;
 
     if (mid != 0.0) {
-        while (mid != 0.0) {
-            lo *= 10.0;
-            const ldig = @floatToInt(i32, lo);
-            lo -= @intToFloat(f64, ldig);
+                     while (mid != 0.0) {
+                                      lo *= 10.0;
+                                      const ldig = @floatToInt(i32, lo);
+                                      lo -= @intToFloat(f64, ldig);
 
-            mid *= 10.0;
-            const mdig = @floatToInt(i32, mid);
-            mid -= @intToFloat(f64, mdig);
+                                      mid *= 10.0;
+                                      const mdig = @floatToInt(i32, mid);
+                                      mid -= @intToFloat(f64, mdig);
 
-            hi *= 10.0;
-            const hdig = @floatToInt(i32, hi);
-            hi -= @intToFloat(f64, hdig);
+                                      hi *= 10.0;
+                                      const hdig = @floatToInt(i32, hi);
+                                      hi -= @intToFloat(f64, hdig);
 
-            buffer[j] = @intCast(u8, mdig + '0');
-            j += 1;
+                                      buffer[j] = @intCast(u8, mdig + '0');
+                                      j += 1;
 
-            if (hdig != ldig or j > 50) break;
-        }
+                                      if (hdig != ldig or j > 50) break;
+                     }
 
-        if (mid > 0.5) {
-            buffer[j - 1] += 1;
-        } else if ((mid == 0.5) and (buffer[j - 1] & 0x1) != 0) {
-            buffer[j - 1] += 1;
-        }
+                     if (mid > 0.5) {
+                                      buffer[j - 1] += 1;
+                     } else if ((mid == 0.5) and (buffer[j - 1] & 0x1) != 0) {
+                                      buffer[j - 1] += 1;
+                     }
     } else {
-        while (buffer[j - 1] == '0') {
-            buffer[j - 1] = 0;
-            j -= 1;
-        }
+                     while (buffer[j - 1] == '0') {
+                                      buffer[j - 1] = 0;
+                                      j -= 1;
+                     }
     }
 
     buffer[j] = 0;
 
     return FloatDecimal{
-        .digits = buffer[0..j],
-        .exp = exp,
+                     .digits = buffer[0..j],
+                     .exp = exp,
     };
 }
 
@@ -453,219 +453,219 @@ fn u64toa(value_param: u64, buffer: []u8) usize {
     var buf_index: usize = 0;
 
     if (value < kTen8) {
-        const v = @intCast(u32, value);
-        if (v < 10000) {
-            const d1: u32 = (v / 100) << 1;
-            const d2: u32 = (v % 100) << 1;
+                     const v = @intCast(u32, value);
+                     if (v < 10000) {
+                                      const d1: u32 = (v / 100) << 1;
+                                      const d2: u32 = (v % 100) << 1;
 
-            if (v >= 1000) {
-                buffer[buf_index] = c_digits_lut[d1];
-                buf_index += 1;
-            }
-            if (v >= 100) {
-                buffer[buf_index] = c_digits_lut[d1 + 1];
-                buf_index += 1;
-            }
-            if (v >= 10) {
-                buffer[buf_index] = c_digits_lut[d2];
-                buf_index += 1;
-            }
-            buffer[buf_index] = c_digits_lut[d2 + 1];
-            buf_index += 1;
-        } else {
-            // value = bbbbcccc
-            const b: u32 = v / 10000;
-            const c: u32 = v % 10000;
+                                      if (v >= 1000) {
+                                          buffer[buf_index] = c_digits_lut[d1];
+                                          buf_index += 1;
+                                      }
+                                      if (v >= 100) {
+                                          buffer[buf_index] = c_digits_lut[d1 + 1];
+                                          buf_index += 1;
+                                      }
+                                      if (v >= 10) {
+                                          buffer[buf_index] = c_digits_lut[d2];
+                                          buf_index += 1;
+                                      }
+                                      buffer[buf_index] = c_digits_lut[d2 + 1];
+                                      buf_index += 1;
+                     } else {
+                                      // value = bbbbcccc
+                                      const b: u32 = v / 10000;
+                                      const c: u32 = v % 10000;
 
-            const d1: u32 = (b / 100) << 1;
-            const d2: u32 = (b % 100) << 1;
+                                      const d1: u32 = (b / 100) << 1;
+                                      const d2: u32 = (b % 100) << 1;
 
-            const d3: u32 = (c / 100) << 1;
-            const d4: u32 = (c % 100) << 1;
+                                      const d3: u32 = (c / 100) << 1;
+                                      const d4: u32 = (c % 100) << 1;
 
-            if (value >= 10000000) {
-                buffer[buf_index] = c_digits_lut[d1];
-                buf_index += 1;
-            }
-            if (value >= 1000000) {
-                buffer[buf_index] = c_digits_lut[d1 + 1];
-                buf_index += 1;
-            }
-            if (value >= 100000) {
-                buffer[buf_index] = c_digits_lut[d2];
-                buf_index += 1;
-            }
-            buffer[buf_index] = c_digits_lut[d2 + 1];
-            buf_index += 1;
+                                      if (value >= 10000000) {
+                                          buffer[buf_index] = c_digits_lut[d1];
+                                          buf_index += 1;
+                                      }
+                                      if (value >= 1000000) {
+                                          buffer[buf_index] = c_digits_lut[d1 + 1];
+                                          buf_index += 1;
+                                      }
+                                      if (value >= 100000) {
+                                          buffer[buf_index] = c_digits_lut[d2];
+                                          buf_index += 1;
+                                      }
+                                      buffer[buf_index] = c_digits_lut[d2 + 1];
+                                      buf_index += 1;
 
-            buffer[buf_index] = c_digits_lut[d3];
-            buf_index += 1;
-            buffer[buf_index] = c_digits_lut[d3 + 1];
-            buf_index += 1;
-            buffer[buf_index] = c_digits_lut[d4];
-            buf_index += 1;
-            buffer[buf_index] = c_digits_lut[d4 + 1];
-            buf_index += 1;
-        }
+                                      buffer[buf_index] = c_digits_lut[d3];
+                                      buf_index += 1;
+                                      buffer[buf_index] = c_digits_lut[d3 + 1];
+                                      buf_index += 1;
+                                      buffer[buf_index] = c_digits_lut[d4];
+                                      buf_index += 1;
+                                      buffer[buf_index] = c_digits_lut[d4 + 1];
+                                      buf_index += 1;
+                     }
     } else if (value < kTen16) {
-        const v0: u32 = @intCast(u32, value / kTen8);
-        const v1: u32 = @intCast(u32, value % kTen8);
+                     const v0: u32 = @intCast(u32, value / kTen8);
+                     const v1: u32 = @intCast(u32, value % kTen8);
 
-        const b0: u32 = v0 / 10000;
-        const c0: u32 = v0 % 10000;
+                     const b0: u32 = v0 / 10000;
+                     const c0: u32 = v0 % 10000;
 
-        const d1: u32 = (b0 / 100) << 1;
-        const d2: u32 = (b0 % 100) << 1;
+                     const d1: u32 = (b0 / 100) << 1;
+                     const d2: u32 = (b0 % 100) << 1;
 
-        const d3: u32 = (c0 / 100) << 1;
-        const d4: u32 = (c0 % 100) << 1;
+                     const d3: u32 = (c0 / 100) << 1;
+                     const d4: u32 = (c0 % 100) << 1;
 
-        const b1: u32 = v1 / 10000;
-        const c1: u32 = v1 % 10000;
+                     const b1: u32 = v1 / 10000;
+                     const c1: u32 = v1 % 10000;
 
-        const d5: u32 = (b1 / 100) << 1;
-        const d6: u32 = (b1 % 100) << 1;
+                     const d5: u32 = (b1 / 100) << 1;
+                     const d6: u32 = (b1 % 100) << 1;
 
-        const d7: u32 = (c1 / 100) << 1;
-        const d8: u32 = (c1 % 100) << 1;
+                     const d7: u32 = (c1 / 100) << 1;
+                     const d8: u32 = (c1 % 100) << 1;
 
-        if (value >= kTen15) {
-            buffer[buf_index] = c_digits_lut[d1];
-            buf_index += 1;
-        }
-        if (value >= kTen14) {
-            buffer[buf_index] = c_digits_lut[d1 + 1];
-            buf_index += 1;
-        }
-        if (value >= kTen13) {
-            buffer[buf_index] = c_digits_lut[d2];
-            buf_index += 1;
-        }
-        if (value >= kTen12) {
-            buffer[buf_index] = c_digits_lut[d2 + 1];
-            buf_index += 1;
-        }
-        if (value >= kTen11) {
-            buffer[buf_index] = c_digits_lut[d3];
-            buf_index += 1;
-        }
-        if (value >= kTen10) {
-            buffer[buf_index] = c_digits_lut[d3 + 1];
-            buf_index += 1;
-        }
-        if (value >= kTen9) {
-            buffer[buf_index] = c_digits_lut[d4];
-            buf_index += 1;
-        }
-        if (value >= kTen8) {
-            buffer[buf_index] = c_digits_lut[d4 + 1];
-            buf_index += 1;
-        }
+                     if (value >= kTen15) {
+                                      buffer[buf_index] = c_digits_lut[d1];
+                                      buf_index += 1;
+                     }
+                     if (value >= kTen14) {
+                                      buffer[buf_index] = c_digits_lut[d1 + 1];
+                                      buf_index += 1;
+                     }
+                     if (value >= kTen13) {
+                                      buffer[buf_index] = c_digits_lut[d2];
+                                      buf_index += 1;
+                     }
+                     if (value >= kTen12) {
+                                      buffer[buf_index] = c_digits_lut[d2 + 1];
+                                      buf_index += 1;
+                     }
+                     if (value >= kTen11) {
+                                      buffer[buf_index] = c_digits_lut[d3];
+                                      buf_index += 1;
+                     }
+                     if (value >= kTen10) {
+                                      buffer[buf_index] = c_digits_lut[d3 + 1];
+                                      buf_index += 1;
+                     }
+                     if (value >= kTen9) {
+                                      buffer[buf_index] = c_digits_lut[d4];
+                                      buf_index += 1;
+                     }
+                     if (value >= kTen8) {
+                                      buffer[buf_index] = c_digits_lut[d4 + 1];
+                                      buf_index += 1;
+                     }
 
-        buffer[buf_index] = c_digits_lut[d5];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d5 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d6];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d6 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d7];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d7 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d8];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d8 + 1];
-        buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d5];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d5 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d6];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d6 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d7];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d7 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d8];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d8 + 1];
+                     buf_index += 1;
     } else {
-        const a = @intCast(u32, value / kTen16); // 1 to 1844
-        value %= kTen16;
+                     const a = @intCast(u32, value / kTen16); // 1 to 1844
+                     value %= kTen16;
 
-        if (a < 10) {
-            buffer[buf_index] = '0' + @intCast(u8, a);
-            buf_index += 1;
-        } else if (a < 100) {
-            const i: u32 = a << 1;
-            buffer[buf_index] = c_digits_lut[i];
-            buf_index += 1;
-            buffer[buf_index] = c_digits_lut[i + 1];
-            buf_index += 1;
-        } else if (a < 1000) {
-            buffer[buf_index] = '0' + @intCast(u8, a / 100);
-            buf_index += 1;
+                     if (a < 10) {
+                                      buffer[buf_index] = '0' + @intCast(u8, a);
+                                      buf_index += 1;
+                     } else if (a < 100) {
+                                      const i: u32 = a << 1;
+                                      buffer[buf_index] = c_digits_lut[i];
+                                      buf_index += 1;
+                                      buffer[buf_index] = c_digits_lut[i + 1];
+                                      buf_index += 1;
+                     } else if (a < 1000) {
+                                      buffer[buf_index] = '0' + @intCast(u8, a / 100);
+                                      buf_index += 1;
 
-            const i: u32 = (a % 100) << 1;
-            buffer[buf_index] = c_digits_lut[i];
-            buf_index += 1;
-            buffer[buf_index] = c_digits_lut[i + 1];
-            buf_index += 1;
-        } else {
-            const i: u32 = (a / 100) << 1;
-            const j: u32 = (a % 100) << 1;
-            buffer[buf_index] = c_digits_lut[i];
-            buf_index += 1;
-            buffer[buf_index] = c_digits_lut[i + 1];
-            buf_index += 1;
-            buffer[buf_index] = c_digits_lut[j];
-            buf_index += 1;
-            buffer[buf_index] = c_digits_lut[j + 1];
-            buf_index += 1;
-        }
+                                      const i: u32 = (a % 100) << 1;
+                                      buffer[buf_index] = c_digits_lut[i];
+                                      buf_index += 1;
+                                      buffer[buf_index] = c_digits_lut[i + 1];
+                                      buf_index += 1;
+                     } else {
+                                      const i: u32 = (a / 100) << 1;
+                                      const j: u32 = (a % 100) << 1;
+                                      buffer[buf_index] = c_digits_lut[i];
+                                      buf_index += 1;
+                                      buffer[buf_index] = c_digits_lut[i + 1];
+                                      buf_index += 1;
+                                      buffer[buf_index] = c_digits_lut[j];
+                                      buf_index += 1;
+                                      buffer[buf_index] = c_digits_lut[j + 1];
+                                      buf_index += 1;
+                     }
 
-        const v0 = @intCast(u32, value / kTen8);
-        const v1 = @intCast(u32, value % kTen8);
+                     const v0 = @intCast(u32, value / kTen8);
+                     const v1 = @intCast(u32, value % kTen8);
 
-        const b0: u32 = v0 / 10000;
-        const c0: u32 = v0 % 10000;
+                     const b0: u32 = v0 / 10000;
+                     const c0: u32 = v0 % 10000;
 
-        const d1: u32 = (b0 / 100) << 1;
-        const d2: u32 = (b0 % 100) << 1;
+                     const d1: u32 = (b0 / 100) << 1;
+                     const d2: u32 = (b0 % 100) << 1;
 
-        const d3: u32 = (c0 / 100) << 1;
-        const d4: u32 = (c0 % 100) << 1;
+                     const d3: u32 = (c0 / 100) << 1;
+                     const d4: u32 = (c0 % 100) << 1;
 
-        const b1: u32 = v1 / 10000;
-        const c1: u32 = v1 % 10000;
+                     const b1: u32 = v1 / 10000;
+                     const c1: u32 = v1 % 10000;
 
-        const d5: u32 = (b1 / 100) << 1;
-        const d6: u32 = (b1 % 100) << 1;
+                     const d5: u32 = (b1 / 100) << 1;
+                     const d6: u32 = (b1 % 100) << 1;
 
-        const d7: u32 = (c1 / 100) << 1;
-        const d8: u32 = (c1 % 100) << 1;
+                     const d7: u32 = (c1 / 100) << 1;
+                     const d8: u32 = (c1 % 100) << 1;
 
-        buffer[buf_index] = c_digits_lut[d1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d1 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d2];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d2 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d3];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d3 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d4];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d4 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d5];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d5 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d6];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d6 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d7];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d7 + 1];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d8];
-        buf_index += 1;
-        buffer[buf_index] = c_digits_lut[d8 + 1];
-        buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d1 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d2];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d2 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d3];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d3 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d4];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d4 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d5];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d5 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d6];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d6 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d7];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d7 + 1];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d8];
+                     buf_index += 1;
+                     buffer[buf_index] = c_digits_lut[d8 + 1];
+                     buf_index += 1;
     }
 
     return buf_index;
@@ -695,15 +695,15 @@ fn mismatch10(a: u64, b: u64) i32 {
     var b_copy = b;
 
     if (af != bf) {
-        i = 10;
-        a_copy = af;
-        b_copy = bf;
+                     i = 10;
+                     a_copy = af;
+                     b_copy = bf;
     }
 
     while (true) : (i += 1) {
-        a_copy /= 10;
-        b_copy /= 10;
+                     a_copy /= 10;
+                     b_copy /= 10;
 
-        if (a_copy == b_copy) return i;
+                     if (a_copy == b_copy) return i;
     }
 }

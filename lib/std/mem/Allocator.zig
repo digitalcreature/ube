@@ -56,7 +56,7 @@ pub fn noResize(
     ret_addr: usize,
 ) Error!usize {
     if (new_len > buf.len)
-        return error.OutOfMemory;
+                     return error.OutOfMemory;
     return new_len;
 }
 
@@ -107,26 +107,26 @@ fn reallocBytes(
     return_address: usize,
 ) Error![]u8 {
     if (old_mem.len == 0) {
-        const new_mem = try self.allocFn(self, new_byte_count, new_alignment, len_align, return_address);
-        // TODO: https://github.com/ziglang/zig/issues/4298
-        @memset(new_mem.ptr, undefined, new_byte_count);
-        return new_mem;
+                     const new_mem = try self.allocFn(self, new_byte_count, new_alignment, len_align, return_address);
+                     // TODO: https://github.com/ziglang/zig/issues/4298
+                     @memset(new_mem.ptr, undefined, new_byte_count);
+                     return new_mem;
     }
 
     if (mem.isAligned(@ptrToInt(old_mem.ptr), new_alignment)) {
-        if (new_byte_count <= old_mem.len) {
-            const shrunk_len = self.shrinkBytes(old_mem, old_alignment, new_byte_count, len_align, return_address);
-            return old_mem.ptr[0..shrunk_len];
-        }
-        if (self.resizeFn(self, old_mem, old_alignment, new_byte_count, len_align, return_address)) |resized_len| {
-            assert(resized_len >= new_byte_count);
-            // TODO: https://github.com/ziglang/zig/issues/4298
-            @memset(old_mem.ptr + new_byte_count, undefined, resized_len - new_byte_count);
-            return old_mem.ptr[0..resized_len];
-        } else |_| {}
+                     if (new_byte_count <= old_mem.len) {
+                                      const shrunk_len = self.shrinkBytes(old_mem, old_alignment, new_byte_count, len_align, return_address);
+                                      return old_mem.ptr[0..shrunk_len];
+                     }
+                     if (self.resizeFn(self, old_mem, old_alignment, new_byte_count, len_align, return_address)) |resized_len| {
+                                      assert(resized_len >= new_byte_count);
+                                      // TODO: https://github.com/ziglang/zig/issues/4298
+                                      @memset(old_mem.ptr + new_byte_count, undefined, resized_len - new_byte_count);
+                                      return old_mem.ptr[0..resized_len];
+                     } else |_| {}
     }
     if (new_byte_count <= old_mem.len and new_alignment <= old_alignment) {
-        return error.OutOfMemory;
+                     return error.OutOfMemory;
     }
     return self.moveBytes(old_mem, old_alignment, new_byte_count, new_alignment, len_align, return_address);
 }
@@ -207,19 +207,19 @@ pub fn allocWithOptionsRetAddr(
     return_address: usize,
 ) Error!AllocWithOptionsPayload(Elem, optional_alignment, optional_sentinel) {
     if (optional_sentinel) |sentinel| {
-        const ptr = try self.allocAdvancedWithRetAddr(Elem, optional_alignment, n + 1, .exact, return_address);
-        ptr[n] = sentinel;
-        return ptr[0..n :sentinel];
+                     const ptr = try self.allocAdvancedWithRetAddr(Elem, optional_alignment, n + 1, .exact, return_address);
+                     ptr[n] = sentinel;
+                     return ptr[0..n :sentinel];
     } else {
-        return self.allocAdvancedWithRetAddr(Elem, optional_alignment, n, .exact, return_address);
+                     return self.allocAdvancedWithRetAddr(Elem, optional_alignment, n, .exact, return_address);
     }
 }
 
 fn AllocWithOptionsPayload(comptime Elem: type, comptime alignment: ?u29, comptime sentinel: ?Elem) type {
     if (sentinel) |s| {
-        return [:s]align(alignment orelse @alignOf(Elem)) Elem;
+                     return [:s]align(alignment orelse @alignOf(Elem)) Elem;
     } else {
-        return []align(alignment orelse @alignOf(Elem)) Elem;
+                     return []align(alignment orelse @alignOf(Elem)) Elem;
     }
 }
 
@@ -274,12 +274,12 @@ pub fn allocAdvancedWithRetAddr(
     return_address: usize,
 ) Error![]align(alignment orelse @alignOf(T)) T {
     const a = if (alignment) |a| blk: {
-        if (a == @alignOf(T)) return allocAdvancedWithRetAddr(self, T, null, n, exact, return_address);
-        break :blk a;
+                     if (a == @alignOf(T)) return allocAdvancedWithRetAddr(self, T, null, n, exact, return_address);
+                     break :blk a;
     } else @alignOf(T);
 
     if (n == 0) {
-        return @as([*]align(a) T, undefined)[0..0];
+                     return @as([*]align(a) T, undefined)[0..0];
     }
 
     const byte_count = math.mul(usize, @sizeOf(T), n) catch return Error.OutOfMemory;
@@ -288,21 +288,21 @@ pub fn allocAdvancedWithRetAddr(
     // functions that heap-allocate their own frame with @Frame(func).
     const size_of_T = if (alignment == null) @intCast(u29, @divExact(byte_count, n)) else @sizeOf(T);
     const len_align: u29 = switch (exact) {
-        .exact => 0,
-        .at_least => size_of_T,
+                     .exact => 0,
+                     .at_least => size_of_T,
     };
     const byte_slice = try self.allocFn(self, byte_count, a, len_align, return_address);
     switch (exact) {
-        .exact => assert(byte_slice.len == byte_count),
-        .at_least => assert(byte_slice.len >= byte_count),
+                     .exact => assert(byte_slice.len == byte_count),
+                     .at_least => assert(byte_slice.len >= byte_count),
     }
     // TODO: https://github.com/ziglang/zig/issues/4298
     @memset(byte_slice.ptr, undefined, byte_slice.len);
     if (alignment == null) {
-        // This if block is a workaround (see comment above)
-        return @intToPtr([*]T, @ptrToInt(byte_slice.ptr))[0..@divExact(byte_slice.len, @sizeOf(T))];
+                     // This if block is a workaround (see comment above)
+                     return @intToPtr([*]T, @ptrToInt(byte_slice.ptr))[0..@divExact(byte_slice.len, @sizeOf(T))];
     } else {
-        return mem.bytesAsSlice(T, @alignCast(a, byte_slice));
+                     return mem.bytesAsSlice(T, @alignCast(a, byte_slice));
     }
 }
 
@@ -311,8 +311,8 @@ pub fn resize(self: *Allocator, old_mem: anytype, new_n: usize) Error!@TypeOf(ol
     const Slice = @typeInfo(@TypeOf(old_mem)).Pointer;
     const T = Slice.child;
     if (new_n == 0) {
-        self.free(old_mem);
-        return &[0]T{};
+                     self.free(old_mem);
+                     return &[0]T{};
     }
     const old_byte_slice = mem.sliceAsBytes(old_mem);
     const new_byte_count = math.mul(usize, @sizeOf(T), new_n) catch return Error.OutOfMemory;
@@ -372,19 +372,19 @@ pub fn reallocAdvancedWithRetAddr(
     const Slice = @typeInfo(@TypeOf(old_mem)).Pointer;
     const T = Slice.child;
     if (old_mem.len == 0) {
-        return self.allocAdvancedWithRetAddr(T, new_alignment, new_n, exact, return_address);
+                     return self.allocAdvancedWithRetAddr(T, new_alignment, new_n, exact, return_address);
     }
     if (new_n == 0) {
-        self.free(old_mem);
-        return @as([*]align(new_alignment) T, undefined)[0..0];
+                     self.free(old_mem);
+                     return @as([*]align(new_alignment) T, undefined)[0..0];
     }
 
     const old_byte_slice = mem.sliceAsBytes(old_mem);
     const byte_count = math.mul(usize, @sizeOf(T), new_n) catch return Error.OutOfMemory;
     // Note: can't set shrunk memory to undefined as memory shouldn't be modified on realloc failure
     const len_align: u29 = switch (exact) {
-        .exact => 0,
-        .at_least => @sizeOf(T),
+                     .exact => 0,
+                     .at_least => @sizeOf(T),
     };
     const new_byte_slice = try self.reallocBytes(old_byte_slice, Slice.alignment, byte_count, new_alignment, len_align, return_address);
     return mem.bytesAsSlice(T, @alignCast(new_alignment, new_byte_slice));
@@ -429,7 +429,7 @@ pub fn alignedShrinkWithRetAddr(
     const T = Slice.child;
 
     if (new_n == old_mem.len)
-        return old_mem;
+                     return old_mem;
     assert(new_n < old_mem.len);
     assert(new_alignment <= Slice.alignment);
 

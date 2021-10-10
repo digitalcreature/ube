@@ -137,26 +137,26 @@ struct ip6t_error {
 	struct xt_error_target target;
 };
 
-#define IP6T_ENTRY_INIT(__size)						       \
-{									       \
-	.target_offset	= sizeof(struct ip6t_entry),			       \
-	.next_offset	= (__size),					       \
+#define IP6T_ENTRY_INIT(__size)						                    \
+{									                    \
+	.target_offset	= sizeof(struct ip6t_entry),			                    \
+	.next_offset	= (__size),					                    \
 }
 
-#define IP6T_STANDARD_INIT(__verdict)					       \
-{									       \
-	.entry		= IP6T_ENTRY_INIT(sizeof(struct ip6t_standard)),       \
-	.target		= XT_TARGET_INIT(XT_STANDARD_TARGET,		       \
+#define IP6T_STANDARD_INIT(__verdict)					                    \
+{									                    \
+	.entry		= IP6T_ENTRY_INIT(sizeof(struct ip6t_standard)),                    \
+	.target		= XT_TARGET_INIT(XT_STANDARD_TARGET,		                    \
 					 sizeof(struct xt_standard_target)),   \
-	.target.verdict	= -(__verdict) - 1,				       \
+	.target.verdict	= -(__verdict) - 1,				                    \
 }
 
-#define IP6T_ERROR_INIT							       \
-{									       \
-	.entry		= IP6T_ENTRY_INIT(sizeof(struct ip6t_error)),	       \
-	.target		= XT_TARGET_INIT(XT_ERROR_TARGET,		       \
-					 sizeof(struct xt_error_target)),      \
-	.target.errorname = "ERROR",					       \
+#define IP6T_ERROR_INIT							                    \
+{									                    \
+	.entry		= IP6T_ENTRY_INIT(sizeof(struct ip6t_error)),	                    \
+	.target		= XT_TARGET_INIT(XT_ERROR_TARGET,		                    \
+					 sizeof(struct xt_error_target)),                   \
+	.target.errorname = "ERROR",					                    \
 }
 
 /*
@@ -179,7 +179,7 @@ struct ip6t_error {
 #define IP6T_SO_GET_MAX			IP6T_SO_GET_REVISION_TARGET
 
 /* obtain original address if REDIRECT'd connection */
-#define IP6T_SO_ORIGINAL_DST            80
+#define IP6T_SO_ORIGINAL_DST                                      80
 
 /* ICMP matching stuff */
 struct ip6t_icmp {
@@ -219,7 +219,7 @@ struct ip6t_replace {
 	char name[XT_TABLE_MAXNAMELEN];
 
 	/* Which hook entry points are valid: bitmask.  You can't
-           change this. */
+                        change this. */
 	unsigned int valid_hooks;
 
 	/* Number of entries */

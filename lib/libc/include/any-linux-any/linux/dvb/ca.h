@@ -3,8 +3,8 @@
  * ca.h
  *
  * Copyright (C) 2000 Ralph  Metzler <ralph@convergence.de>
- *                  & Marcus Metzler <marcus@convergence.de>
- *                    for convergence integrated media GmbH
+ *                                                         & Marcus Metzler <marcus@convergence.de>
+ *                                                           for convergence integrated media GmbH
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Lesser Public License
@@ -51,11 +51,11 @@
 struct ca_slot_info {
 	int num;
 	int type;
-#define CA_CI            1
-#define CA_CI_LINK       2
-#define CA_CI_PHYS       4
-#define CA_DESCR         8
-#define CA_SC          128
+#define CA_CI                                      1
+#define CA_CI_LINK                    2
+#define CA_CI_PHYS                    4
+#define CA_DESCR                      8
+#define CA_SC                       128
 
 	unsigned int flags;
 #define CA_CI_MODULE_PRESENT 1
@@ -80,9 +80,9 @@ struct ca_slot_info {
 struct ca_descr_info {
 	unsigned int num;
 	unsigned int type;
-#define CA_ECD           1
-#define CA_NDS           2
-#define CA_DSS           4
+#define CA_ECD                        1
+#define CA_NDS                        2
+#define CA_DSS                        4
 };
 
 /**
@@ -132,13 +132,13 @@ struct ca_descr {
 	unsigned char cw[8];
 };
 
-#define CA_RESET          _IO('o', 128)
-#define CA_GET_CAP        _IOR('o', 129, struct ca_caps)
+#define CA_RESET                       _IO('o', 128)
+#define CA_GET_CAP                     _IOR('o', 129, struct ca_caps)
 #define CA_GET_SLOT_INFO  _IOR('o', 130, struct ca_slot_info)
 #define CA_GET_DESCR_INFO _IOR('o', 131, struct ca_descr_info)
-#define CA_GET_MSG        _IOR('o', 132, struct ca_msg)
-#define CA_SEND_MSG       _IOW('o', 133, struct ca_msg)
-#define CA_SET_DESCR      _IOW('o', 134, struct ca_descr)
+#define CA_GET_MSG                     _IOR('o', 132, struct ca_msg)
+#define CA_SEND_MSG                    _IOW('o', 133, struct ca_msg)
+#define CA_SET_DESCR                   _IOW('o', 134, struct ca_descr)
 
 
 /* This is needed for legacy userspace support */

@@ -109,10 +109,10 @@ enum
 	KERN_RTSIGNR=32,	/* Number of rt sigs queued */
 	KERN_RTSIGMAX=33,	/* Max queuable */
 	
-	KERN_SHMMAX=34,         /* long: Maximum shared memory segment */
-	KERN_MSGMAX=35,         /* int: Maximum size of a messege */
-	KERN_MSGMNB=36,         /* int: Maximum message queue size */
-	KERN_MSGPOOL=37,        /* int: Maximum system message pool size */
+	KERN_SHMMAX=34,                      /* long: Maximum shared memory segment */
+	KERN_MSGMAX=35,                      /* int: Maximum size of a messege */
+	KERN_MSGMNB=36,                      /* int: Maximum message queue size */
+	KERN_MSGPOOL=37,                     /* int: Maximum system message pool size */
 	KERN_SYSRQ=38,		/* int: Sysreq enable */
 	KERN_MAX_THREADS=39,	/* int: Maximum nr of threads in the system */
  	KERN_RANDOM=40,		/* Random driver */
@@ -758,13 +758,13 @@ enum {
 	NET_SCTP_RTO_MAX     = 3,
 	NET_SCTP_RTO_ALPHA   = 4,
 	NET_SCTP_RTO_BETA    = 5,
-	NET_SCTP_VALID_COOKIE_LIFE       =  6,
+	NET_SCTP_VALID_COOKIE_LIFE                    =  6,
 	NET_SCTP_ASSOCIATION_MAX_RETRANS =  7,
-	NET_SCTP_PATH_MAX_RETRANS        =  8,
+	NET_SCTP_PATH_MAX_RETRANS                     =  8,
 	NET_SCTP_MAX_INIT_RETRANSMITS    =  9,
-	NET_SCTP_HB_INTERVAL             = 10,
-	NET_SCTP_PRESERVE_ENABLE         = 11,
-	NET_SCTP_MAX_BURST               = 12,
+	NET_SCTP_HB_INTERVAL                                       = 10,
+	NET_SCTP_PRESERVE_ENABLE                      = 11,
+	NET_SCTP_MAX_BURST                                         = 12,
 	NET_SCTP_ADDIP_ENABLE		 = 13,
 	NET_SCTP_PRSCTP_ENABLE		 = 14,
 	NET_SCTP_SNDBUF_POLICY		 = 15,

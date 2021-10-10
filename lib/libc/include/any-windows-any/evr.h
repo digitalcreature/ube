@@ -349,12 +349,12 @@ MIDL_INTERFACE("1f6a9f17-e70b-4e24-8ae4-0b2c3ba7a4ae")
 IMFVideoPositionMapper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MapOutputCoordinateToInputStream(
-        float xOut,
-        float yOut,
-        DWORD dwOutputStreamIndex,
-        DWORD dwInputStreamIndex,
-        float *pxIn,
-        float *pyIn) = 0;
+                     float xOut,
+                     float yOut,
+                     DWORD dwOutputStreamIndex,
+                     DWORD dwInputStreamIndex,
+                     float *pxIn,
+                     float *pyIn) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -366,25 +366,25 @@ typedef struct IMFVideoPositionMapperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFVideoPositionMapper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFVideoPositionMapper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFVideoPositionMapper *This);
+                     IMFVideoPositionMapper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFVideoPositionMapper *This);
+                     IMFVideoPositionMapper *This);
 
     /*** IMFVideoPositionMapper methods ***/
     HRESULT (STDMETHODCALLTYPE *MapOutputCoordinateToInputStream)(
-        IMFVideoPositionMapper *This,
-        float xOut,
-        float yOut,
-        DWORD dwOutputStreamIndex,
-        DWORD dwInputStreamIndex,
-        float *pxIn,
-        float *pyIn);
+                     IMFVideoPositionMapper *This,
+                     float xOut,
+                     float yOut,
+                     DWORD dwOutputStreamIndex,
+                     DWORD dwInputStreamIndex,
+                     float *pxIn,
+                     float *pyIn);
 
     END_INTERFACE
 } IMFVideoPositionMapperVtbl;
@@ -437,7 +437,7 @@ MIDL_INTERFACE("a38d9567-5a9c-4f3c-b293-8eb415b279ba")
 IMFVideoDeviceID : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeviceID(
-        IID *pDeviceID) = 0;
+                     IID *pDeviceID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -449,20 +449,20 @@ typedef struct IMFVideoDeviceIDVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFVideoDeviceID *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFVideoDeviceID *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFVideoDeviceID *This);
+                     IMFVideoDeviceID *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFVideoDeviceID *This);
+                     IMFVideoDeviceID *This);
 
     /*** IMFVideoDeviceID methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeviceID)(
-        IMFVideoDeviceID *This,
-        IID *pDeviceID);
+                     IMFVideoDeviceID *This,
+                     IID *pDeviceID);
 
     END_INTERFACE
 } IMFVideoDeviceIDVtbl;
@@ -515,59 +515,59 @@ MIDL_INTERFACE("a490b1e4-ab84-4d31-a1b2-181e03b1077a")
 IMFVideoDisplayControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNativeVideoSize(
-        SIZE *pszVideo,
-        SIZE *pszARVideo) = 0;
+                     SIZE *pszVideo,
+                     SIZE *pszARVideo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIdealVideoSize(
-        SIZE *pszMin,
-        SIZE *pszMax) = 0;
+                     SIZE *pszMin,
+                     SIZE *pszMax) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVideoPosition(
-        const MFVideoNormalizedRect *pnrcSource,
-        const LPRECT prcDest) = 0;
+                     const MFVideoNormalizedRect *pnrcSource,
+                     const LPRECT prcDest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoPosition(
-        MFVideoNormalizedRect *pnrcSource,
-        LPRECT prcDest) = 0;
+                     MFVideoNormalizedRect *pnrcSource,
+                     LPRECT prcDest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAspectRatioMode(
-        DWORD dwAspectRatioMode) = 0;
+                     DWORD dwAspectRatioMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAspectRatioMode(
-        DWORD *pdwAspectRatioMode) = 0;
+                     DWORD *pdwAspectRatioMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetVideoWindow(
-        HWND hwndVideo) = 0;
+                     HWND hwndVideo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoWindow(
-        HWND *phwndVideo) = 0;
+                     HWND *phwndVideo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RepaintVideo(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentImage(
-        BITMAPINFOHEADER *pBih,
-        BYTE **pDib,
-        DWORD *pcbDib,
-        LONGLONG *pTimeStamp) = 0;
+                     BITMAPINFOHEADER *pBih,
+                     BYTE **pDib,
+                     DWORD *pcbDib,
+                     LONGLONG *pTimeStamp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBorderColor(
-        COLORREF Clr) = 0;
+                     COLORREF Clr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBorderColor(
-        COLORREF *pClr) = 0;
+                     COLORREF *pClr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRenderingPrefs(
-        DWORD dwRenderFlags) = 0;
+                     DWORD dwRenderFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRenderingPrefs(
-        DWORD *pdwRenderFlags) = 0;
+                     DWORD *pdwRenderFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFullscreen(
-        WINBOOL fFullscreen) = 0;
+                     WINBOOL fFullscreen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFullscreen(
-        WINBOOL *pfFullscreen) = 0;
+                     WINBOOL *pfFullscreen) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -579,86 +579,86 @@ typedef struct IMFVideoDisplayControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFVideoDisplayControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFVideoDisplayControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFVideoDisplayControl *This);
+                     IMFVideoDisplayControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFVideoDisplayControl *This);
+                     IMFVideoDisplayControl *This);
 
     /*** IMFVideoDisplayControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNativeVideoSize)(
-        IMFVideoDisplayControl *This,
-        SIZE *pszVideo,
-        SIZE *pszARVideo);
+                     IMFVideoDisplayControl *This,
+                     SIZE *pszVideo,
+                     SIZE *pszARVideo);
 
     HRESULT (STDMETHODCALLTYPE *GetIdealVideoSize)(
-        IMFVideoDisplayControl *This,
-        SIZE *pszMin,
-        SIZE *pszMax);
+                     IMFVideoDisplayControl *This,
+                     SIZE *pszMin,
+                     SIZE *pszMax);
 
     HRESULT (STDMETHODCALLTYPE *SetVideoPosition)(
-        IMFVideoDisplayControl *This,
-        const MFVideoNormalizedRect *pnrcSource,
-        const LPRECT prcDest);
+                     IMFVideoDisplayControl *This,
+                     const MFVideoNormalizedRect *pnrcSource,
+                     const LPRECT prcDest);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoPosition)(
-        IMFVideoDisplayControl *This,
-        MFVideoNormalizedRect *pnrcSource,
-        LPRECT prcDest);
+                     IMFVideoDisplayControl *This,
+                     MFVideoNormalizedRect *pnrcSource,
+                     LPRECT prcDest);
 
     HRESULT (STDMETHODCALLTYPE *SetAspectRatioMode)(
-        IMFVideoDisplayControl *This,
-        DWORD dwAspectRatioMode);
+                     IMFVideoDisplayControl *This,
+                     DWORD dwAspectRatioMode);
 
     HRESULT (STDMETHODCALLTYPE *GetAspectRatioMode)(
-        IMFVideoDisplayControl *This,
-        DWORD *pdwAspectRatioMode);
+                     IMFVideoDisplayControl *This,
+                     DWORD *pdwAspectRatioMode);
 
     HRESULT (STDMETHODCALLTYPE *SetVideoWindow)(
-        IMFVideoDisplayControl *This,
-        HWND hwndVideo);
+                     IMFVideoDisplayControl *This,
+                     HWND hwndVideo);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoWindow)(
-        IMFVideoDisplayControl *This,
-        HWND *phwndVideo);
+                     IMFVideoDisplayControl *This,
+                     HWND *phwndVideo);
 
     HRESULT (STDMETHODCALLTYPE *RepaintVideo)(
-        IMFVideoDisplayControl *This);
+                     IMFVideoDisplayControl *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentImage)(
-        IMFVideoDisplayControl *This,
-        BITMAPINFOHEADER *pBih,
-        BYTE **pDib,
-        DWORD *pcbDib,
-        LONGLONG *pTimeStamp);
+                     IMFVideoDisplayControl *This,
+                     BITMAPINFOHEADER *pBih,
+                     BYTE **pDib,
+                     DWORD *pcbDib,
+                     LONGLONG *pTimeStamp);
 
     HRESULT (STDMETHODCALLTYPE *SetBorderColor)(
-        IMFVideoDisplayControl *This,
-        COLORREF Clr);
+                     IMFVideoDisplayControl *This,
+                     COLORREF Clr);
 
     HRESULT (STDMETHODCALLTYPE *GetBorderColor)(
-        IMFVideoDisplayControl *This,
-        COLORREF *pClr);
+                     IMFVideoDisplayControl *This,
+                     COLORREF *pClr);
 
     HRESULT (STDMETHODCALLTYPE *SetRenderingPrefs)(
-        IMFVideoDisplayControl *This,
-        DWORD dwRenderFlags);
+                     IMFVideoDisplayControl *This,
+                     DWORD dwRenderFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetRenderingPrefs)(
-        IMFVideoDisplayControl *This,
-        DWORD *pdwRenderFlags);
+                     IMFVideoDisplayControl *This,
+                     DWORD *pdwRenderFlags);
 
     HRESULT (STDMETHODCALLTYPE *SetFullscreen)(
-        IMFVideoDisplayControl *This,
-        WINBOOL fFullscreen);
+                     IMFVideoDisplayControl *This,
+                     WINBOOL fFullscreen);
 
     HRESULT (STDMETHODCALLTYPE *GetFullscreen)(
-        IMFVideoDisplayControl *This,
-        WINBOOL *pfFullscreen);
+                     IMFVideoDisplayControl *This,
+                     WINBOOL *pfFullscreen);
 
     END_INTERFACE
 } IMFVideoDisplayControlVtbl;
@@ -771,11 +771,11 @@ MIDL_INTERFACE("29aff080-182a-4a5d-af3b-448f3a6346cb")
 IMFVideoPresenter : public IMFClockStateSink
 {
     virtual HRESULT STDMETHODCALLTYPE ProcessMessage(
-        MFVP_MESSAGE_TYPE eMessage,
-        ULONG_PTR ulParam) = 0;
+                     MFVP_MESSAGE_TYPE eMessage,
+                     ULONG_PTR ulParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentMediaType(
-        IMFVideoMediaType **ppMediaType) = 0;
+                     IMFVideoMediaType **ppMediaType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -787,48 +787,48 @@ typedef struct IMFVideoPresenterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFVideoPresenter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFVideoPresenter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFVideoPresenter *This);
+                     IMFVideoPresenter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFVideoPresenter *This);
+                     IMFVideoPresenter *This);
 
     /*** IMFClockStateSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnClockStart)(
-        IMFVideoPresenter *This,
-        MFTIME hnsSystemTime,
-        LONGLONG llClockStartOffset);
+                     IMFVideoPresenter *This,
+                     MFTIME hnsSystemTime,
+                     LONGLONG llClockStartOffset);
 
     HRESULT (STDMETHODCALLTYPE *OnClockStop)(
-        IMFVideoPresenter *This,
-        MFTIME hnsSystemTime);
+                     IMFVideoPresenter *This,
+                     MFTIME hnsSystemTime);
 
     HRESULT (STDMETHODCALLTYPE *OnClockPause)(
-        IMFVideoPresenter *This,
-        MFTIME hnsSystemTime);
+                     IMFVideoPresenter *This,
+                     MFTIME hnsSystemTime);
 
     HRESULT (STDMETHODCALLTYPE *OnClockRestart)(
-        IMFVideoPresenter *This,
-        MFTIME hnsSystemTime);
+                     IMFVideoPresenter *This,
+                     MFTIME hnsSystemTime);
 
     HRESULT (STDMETHODCALLTYPE *OnClockSetRate)(
-        IMFVideoPresenter *This,
-        MFTIME hnsSystemTime,
-        float flRate);
+                     IMFVideoPresenter *This,
+                     MFTIME hnsSystemTime,
+                     float flRate);
 
     /*** IMFVideoPresenter methods ***/
     HRESULT (STDMETHODCALLTYPE *ProcessMessage)(
-        IMFVideoPresenter *This,
-        MFVP_MESSAGE_TYPE eMessage,
-        ULONG_PTR ulParam);
+                     IMFVideoPresenter *This,
+                     MFVP_MESSAGE_TYPE eMessage,
+                     ULONG_PTR ulParam);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentMediaType)(
-        IMFVideoPresenter *This,
-        IMFVideoMediaType **ppMediaType);
+                     IMFVideoPresenter *This,
+                     IMFVideoMediaType **ppMediaType);
 
     END_INTERFACE
 } IMFVideoPresenterVtbl;
@@ -907,15 +907,15 @@ MIDL_INTERFACE("56c294d0-753e-4260-8d61-a3d8820b1d54")
 IMFDesiredSample : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDesiredSampleTimeAndDuration(
-        LONGLONG *phnsSampleTime,
-        LONGLONG *phnsSampleDuration) = 0;
+                     LONGLONG *phnsSampleTime,
+                     LONGLONG *phnsSampleDuration) = 0;
 
     virtual void STDMETHODCALLTYPE SetDesiredSampleTimeAndDuration(
-        LONGLONG hnsSampleTime,
-        LONGLONG hnsSampleDuration) = 0;
+                     LONGLONG hnsSampleTime,
+                     LONGLONG hnsSampleDuration) = 0;
 
     virtual void STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -927,29 +927,29 @@ typedef struct IMFDesiredSampleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFDesiredSample *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFDesiredSample *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFDesiredSample *This);
+                     IMFDesiredSample *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFDesiredSample *This);
+                     IMFDesiredSample *This);
 
     /*** IMFDesiredSample methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDesiredSampleTimeAndDuration)(
-        IMFDesiredSample *This,
-        LONGLONG *phnsSampleTime,
-        LONGLONG *phnsSampleDuration);
+                     IMFDesiredSample *This,
+                     LONGLONG *phnsSampleTime,
+                     LONGLONG *phnsSampleDuration);
 
     void (STDMETHODCALLTYPE *SetDesiredSampleTimeAndDuration)(
-        IMFDesiredSample *This,
-        LONGLONG hnsSampleTime,
-        LONGLONG hnsSampleDuration);
+                     IMFDesiredSample *This,
+                     LONGLONG hnsSampleTime,
+                     LONGLONG hnsSampleDuration);
 
     void (STDMETHODCALLTYPE *Clear)(
-        IMFDesiredSample *This);
+                     IMFDesiredSample *This);
 
     END_INTERFACE
 } IMFDesiredSampleVtbl;
@@ -1010,8 +1010,8 @@ MIDL_INTERFACE("245bf8e9-0755-40f7-88a5-ae0f18d55e17")
 IMFTrackedSample : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAllocator(
-        IMFAsyncCallback *pSampleAllocator,
-        IUnknown *pUnkState) = 0;
+                     IMFAsyncCallback *pSampleAllocator,
+                     IUnknown *pUnkState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1023,21 +1023,21 @@ typedef struct IMFTrackedSampleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFTrackedSample *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFTrackedSample *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFTrackedSample *This);
+                     IMFTrackedSample *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFTrackedSample *This);
+                     IMFTrackedSample *This);
 
     /*** IMFTrackedSample methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAllocator)(
-        IMFTrackedSample *This,
-        IMFAsyncCallback *pSampleAllocator,
-        IUnknown *pUnkState);
+                     IMFTrackedSample *This,
+                     IMFAsyncCallback *pSampleAllocator,
+                     IUnknown *pUnkState);
 
     END_INTERFACE
 } IMFTrackedSampleVtbl;
@@ -1090,20 +1090,20 @@ MIDL_INTERFACE("a5c6c53f-c202-4aa5-9695-175ba8c508a5")
 IMFVideoMixerControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetStreamZOrder(
-        DWORD dwStreamID,
-        DWORD dwZ) = 0;
+                     DWORD dwStreamID,
+                     DWORD dwZ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamZOrder(
-        DWORD dwStreamID,
-        DWORD *pdwZ) = 0;
+                     DWORD dwStreamID,
+                     DWORD *pdwZ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStreamOutputRect(
-        DWORD dwStreamID,
-        const MFVideoNormalizedRect *pnrcOutput) = 0;
+                     DWORD dwStreamID,
+                     const MFVideoNormalizedRect *pnrcOutput) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamOutputRect(
-        DWORD dwStreamID,
-        MFVideoNormalizedRect *pnrcOutput) = 0;
+                     DWORD dwStreamID,
+                     MFVideoNormalizedRect *pnrcOutput) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1115,36 +1115,36 @@ typedef struct IMFVideoMixerControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFVideoMixerControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFVideoMixerControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFVideoMixerControl *This);
+                     IMFVideoMixerControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFVideoMixerControl *This);
+                     IMFVideoMixerControl *This);
 
     /*** IMFVideoMixerControl methods ***/
     HRESULT (STDMETHODCALLTYPE *SetStreamZOrder)(
-        IMFVideoMixerControl *This,
-        DWORD dwStreamID,
-        DWORD dwZ);
+                     IMFVideoMixerControl *This,
+                     DWORD dwStreamID,
+                     DWORD dwZ);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamZOrder)(
-        IMFVideoMixerControl *This,
-        DWORD dwStreamID,
-        DWORD *pdwZ);
+                     IMFVideoMixerControl *This,
+                     DWORD dwStreamID,
+                     DWORD *pdwZ);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamOutputRect)(
-        IMFVideoMixerControl *This,
-        DWORD dwStreamID,
-        const MFVideoNormalizedRect *pnrcOutput);
+                     IMFVideoMixerControl *This,
+                     DWORD dwStreamID,
+                     const MFVideoNormalizedRect *pnrcOutput);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamOutputRect)(
-        IMFVideoMixerControl *This,
-        DWORD dwStreamID,
-        MFVideoNormalizedRect *pnrcOutput);
+                     IMFVideoMixerControl *This,
+                     DWORD dwStreamID,
+                     MFVideoNormalizedRect *pnrcOutput);
 
     END_INTERFACE
 } IMFVideoMixerControlVtbl;
@@ -1209,10 +1209,10 @@ MIDL_INTERFACE("8459616d-966e-4930-b658-54fa7e5a16d3")
 IMFVideoMixerControl2 : public IMFVideoMixerControl
 {
     virtual HRESULT STDMETHODCALLTYPE SetMixingPrefs(
-        DWORD dwMixFlags) = 0;
+                     DWORD dwMixFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMixingPrefs(
-        DWORD *pdwMixFlags) = 0;
+                     DWORD *pdwMixFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1224,45 +1224,45 @@ typedef struct IMFVideoMixerControl2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFVideoMixerControl2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFVideoMixerControl2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFVideoMixerControl2 *This);
+                     IMFVideoMixerControl2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFVideoMixerControl2 *This);
+                     IMFVideoMixerControl2 *This);
 
     /*** IMFVideoMixerControl methods ***/
     HRESULT (STDMETHODCALLTYPE *SetStreamZOrder)(
-        IMFVideoMixerControl2 *This,
-        DWORD dwStreamID,
-        DWORD dwZ);
+                     IMFVideoMixerControl2 *This,
+                     DWORD dwStreamID,
+                     DWORD dwZ);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamZOrder)(
-        IMFVideoMixerControl2 *This,
-        DWORD dwStreamID,
-        DWORD *pdwZ);
+                     IMFVideoMixerControl2 *This,
+                     DWORD dwStreamID,
+                     DWORD *pdwZ);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamOutputRect)(
-        IMFVideoMixerControl2 *This,
-        DWORD dwStreamID,
-        const MFVideoNormalizedRect *pnrcOutput);
+                     IMFVideoMixerControl2 *This,
+                     DWORD dwStreamID,
+                     const MFVideoNormalizedRect *pnrcOutput);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamOutputRect)(
-        IMFVideoMixerControl2 *This,
-        DWORD dwStreamID,
-        MFVideoNormalizedRect *pnrcOutput);
+                     IMFVideoMixerControl2 *This,
+                     DWORD dwStreamID,
+                     MFVideoNormalizedRect *pnrcOutput);
 
     /*** IMFVideoMixerControl2 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetMixingPrefs)(
-        IMFVideoMixerControl2 *This,
-        DWORD dwMixFlags);
+                     IMFVideoMixerControl2 *This,
+                     DWORD dwMixFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetMixingPrefs)(
-        IMFVideoMixerControl2 *This,
-        DWORD *pdwMixFlags);
+                     IMFVideoMixerControl2 *This,
+                     DWORD *pdwMixFlags);
 
     END_INTERFACE
 } IMFVideoMixerControl2Vtbl;
@@ -1337,8 +1337,8 @@ MIDL_INTERFACE("dfdfd197-a9ca-43d8-b341-6af3503792cd")
 IMFVideoRenderer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitializeRenderer(
-        IMFTransform *pVideoMixer,
-        IMFVideoPresenter *pVideoPresenter) = 0;
+                     IMFTransform *pVideoMixer,
+                     IMFVideoPresenter *pVideoPresenter) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1350,21 +1350,21 @@ typedef struct IMFVideoRendererVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFVideoRenderer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFVideoRenderer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFVideoRenderer *This);
+                     IMFVideoRenderer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFVideoRenderer *This);
+                     IMFVideoRenderer *This);
 
     /*** IMFVideoRenderer methods ***/
     HRESULT (STDMETHODCALLTYPE *InitializeRenderer)(
-        IMFVideoRenderer *This,
-        IMFTransform *pVideoMixer,
-        IMFVideoPresenter *pVideoPresenter);
+                     IMFVideoRenderer *This,
+                     IMFTransform *pVideoMixer,
+                     IMFVideoPresenter *pVideoPresenter);
 
     END_INTERFACE
 } IMFVideoRendererVtbl;
@@ -1417,10 +1417,10 @@ MIDL_INTERFACE("83e91e85-82c1-4ea7-801d-85dc50b75086")
 IEVRFilterConfig : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetNumberOfStreams(
-        DWORD dwMaxStreams) = 0;
+                     DWORD dwMaxStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfStreams(
-        DWORD *pdwMaxStreams) = 0;
+                     DWORD *pdwMaxStreams) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1432,24 +1432,24 @@ typedef struct IEVRFilterConfigVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEVRFilterConfig *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEVRFilterConfig *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEVRFilterConfig *This);
+                     IEVRFilterConfig *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEVRFilterConfig *This);
+                     IEVRFilterConfig *This);
 
     /*** IEVRFilterConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNumberOfStreams)(
-        IEVRFilterConfig *This,
-        DWORD dwMaxStreams);
+                     IEVRFilterConfig *This,
+                     DWORD dwMaxStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfStreams)(
-        IEVRFilterConfig *This,
-        DWORD *pdwMaxStreams);
+                     IEVRFilterConfig *This,
+                     DWORD *pdwMaxStreams);
 
     END_INTERFACE
 } IEVRFilterConfigVtbl;
@@ -1506,10 +1506,10 @@ MIDL_INTERFACE("aea36028-796d-454f-beee-b48071e24304")
 IEVRFilterConfigEx : public IEVRFilterConfig
 {
     virtual HRESULT STDMETHODCALLTYPE SetConfigPrefs(
-        DWORD dwConfigFlags) = 0;
+                     DWORD dwConfigFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConfigPrefs(
-        DWORD *pdwConfigFlags) = 0;
+                     DWORD *pdwConfigFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1521,33 +1521,33 @@ typedef struct IEVRFilterConfigExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEVRFilterConfigEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEVRFilterConfigEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEVRFilterConfigEx *This);
+                     IEVRFilterConfigEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEVRFilterConfigEx *This);
+                     IEVRFilterConfigEx *This);
 
     /*** IEVRFilterConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *SetNumberOfStreams)(
-        IEVRFilterConfigEx *This,
-        DWORD dwMaxStreams);
+                     IEVRFilterConfigEx *This,
+                     DWORD dwMaxStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfStreams)(
-        IEVRFilterConfigEx *This,
-        DWORD *pdwMaxStreams);
+                     IEVRFilterConfigEx *This,
+                     DWORD *pdwMaxStreams);
 
     /*** IEVRFilterConfigEx methods ***/
     HRESULT (STDMETHODCALLTYPE *SetConfigPrefs)(
-        IEVRFilterConfigEx *This,
-        DWORD dwConfigFlags);
+                     IEVRFilterConfigEx *This,
+                     DWORD dwConfigFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetConfigPrefs)(
-        IEVRFilterConfigEx *This,
-        DWORD *pdwConfigFlags);
+                     IEVRFilterConfigEx *This,
+                     DWORD *pdwConfigFlags);
 
     END_INTERFACE
 } IEVRFilterConfigExVtbl;
@@ -1614,12 +1614,12 @@ MIDL_INTERFACE("fa993889-4383-415a-a930-dd472a8cf6f7")
 IMFTopologyServiceLookup : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE LookupService(
-        MF_SERVICE_LOOKUP_TYPE Type,
-        DWORD dwIndex,
-        REFGUID guidService,
-        REFIID riid,
-        LPVOID *ppvObjects,
-        DWORD *pnObjects) = 0;
+                     MF_SERVICE_LOOKUP_TYPE Type,
+                     DWORD dwIndex,
+                     REFGUID guidService,
+                     REFIID riid,
+                     LPVOID *ppvObjects,
+                     DWORD *pnObjects) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1631,25 +1631,25 @@ typedef struct IMFTopologyServiceLookupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFTopologyServiceLookup *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFTopologyServiceLookup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFTopologyServiceLookup *This);
+                     IMFTopologyServiceLookup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFTopologyServiceLookup *This);
+                     IMFTopologyServiceLookup *This);
 
     /*** IMFTopologyServiceLookup methods ***/
     HRESULT (STDMETHODCALLTYPE *LookupService)(
-        IMFTopologyServiceLookup *This,
-        MF_SERVICE_LOOKUP_TYPE Type,
-        DWORD dwIndex,
-        REFGUID guidService,
-        REFIID riid,
-        LPVOID *ppvObjects,
-        DWORD *pnObjects);
+                     IMFTopologyServiceLookup *This,
+                     MF_SERVICE_LOOKUP_TYPE Type,
+                     DWORD dwIndex,
+                     REFGUID guidService,
+                     REFIID riid,
+                     LPVOID *ppvObjects,
+                     DWORD *pnObjects);
 
     END_INTERFACE
 } IMFTopologyServiceLookupVtbl;
@@ -1702,10 +1702,10 @@ MIDL_INTERFACE("fa99388a-4383-415a-a930-dd472a8cf6f7")
 IMFTopologyServiceLookupClient : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InitServicePointers(
-        IMFTopologyServiceLookup *pLookup) = 0;
+                     IMFTopologyServiceLookup *pLookup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseServicePointers(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1717,23 +1717,23 @@ typedef struct IMFTopologyServiceLookupClientVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFTopologyServiceLookupClient *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFTopologyServiceLookupClient *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFTopologyServiceLookupClient *This);
+                     IMFTopologyServiceLookupClient *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFTopologyServiceLookupClient *This);
+                     IMFTopologyServiceLookupClient *This);
 
     /*** IMFTopologyServiceLookupClient methods ***/
     HRESULT (STDMETHODCALLTYPE *InitServicePointers)(
-        IMFTopologyServiceLookupClient *This,
-        IMFTopologyServiceLookup *pLookup);
+                     IMFTopologyServiceLookupClient *This,
+                     IMFTopologyServiceLookup *pLookup);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseServicePointers)(
-        IMFTopologyServiceLookupClient *This);
+                     IMFTopologyServiceLookupClient *This);
 
     END_INTERFACE
 } IMFTopologyServiceLookupClientVtbl;
@@ -1790,16 +1790,16 @@ MIDL_INTERFACE("83a4ce40-7710-494b-a893-a472049af630")
 IEVRTrustedVideoPlugin : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsInTrustedVideoMode(
-        WINBOOL *pYes) = 0;
+                     WINBOOL *pYes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CanConstrict(
-        WINBOOL *pYes) = 0;
+                     WINBOOL *pYes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetConstriction(
-        DWORD dwKPix) = 0;
+                     DWORD dwKPix) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisableImageExport(
-        WINBOOL bDisable) = 0;
+                     WINBOOL bDisable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1811,32 +1811,32 @@ typedef struct IEVRTrustedVideoPluginVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEVRTrustedVideoPlugin *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEVRTrustedVideoPlugin *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEVRTrustedVideoPlugin *This);
+                     IEVRTrustedVideoPlugin *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEVRTrustedVideoPlugin *This);
+                     IEVRTrustedVideoPlugin *This);
 
     /*** IEVRTrustedVideoPlugin methods ***/
     HRESULT (STDMETHODCALLTYPE *IsInTrustedVideoMode)(
-        IEVRTrustedVideoPlugin *This,
-        WINBOOL *pYes);
+                     IEVRTrustedVideoPlugin *This,
+                     WINBOOL *pYes);
 
     HRESULT (STDMETHODCALLTYPE *CanConstrict)(
-        IEVRTrustedVideoPlugin *This,
-        WINBOOL *pYes);
+                     IEVRTrustedVideoPlugin *This,
+                     WINBOOL *pYes);
 
     HRESULT (STDMETHODCALLTYPE *SetConstriction)(
-        IEVRTrustedVideoPlugin *This,
-        DWORD dwKPix);
+                     IEVRTrustedVideoPlugin *This,
+                     DWORD dwKPix);
 
     HRESULT (STDMETHODCALLTYPE *DisableImageExport)(
-        IEVRTrustedVideoPlugin *This,
-        WINBOOL bDisable);
+                     IEVRTrustedVideoPlugin *This,
+                     WINBOOL bDisable);
 
     END_INTERFACE
 } IEVRTrustedVideoPluginVtbl;
@@ -1899,10 +1899,10 @@ HRESULT WINAPI MFCreateVideoSampleAllocator(REFIID riid, void **ppSampleAllocato
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
 
 /* End additional prototypes */
 

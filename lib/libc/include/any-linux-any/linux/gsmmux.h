@@ -31,10 +31,10 @@ struct gsm_netconfig {
 	unsigned short protocol;/* Protocol to use - only ETH_P_IP supported */
 	unsigned short unused2;
 	char if_name[IFNAMSIZ];	/* interface name format string */
-	__u8 unused[28];        /* For future use */
+	__u8 unused[28];                     /* For future use */
 };
 
-#define GSMIOC_ENABLE_NET      _IOW('G', 2, struct gsm_netconfig)
+#define GSMIOC_ENABLE_NET                   _IOW('G', 2, struct gsm_netconfig)
 #define GSMIOC_DISABLE_NET     _IO('G', 3)
 
 

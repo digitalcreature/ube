@@ -236,29 +236,29 @@ MIDL_INTERFACE("8f10cc26-cf0d-42a0-acbe-e2de7007384d")
 IDot11AdHocManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateNetwork(
-        LPCWSTR Name,
-        LPCWSTR Password,
-        LONG GeographicalId,
-        IDot11AdHocInterface *pInterface,
-        IDot11AdHocSecuritySettings *pSecurity,
-        GUID *pContextGuid,
-        IDot11AdHocNetwork **pIAdHoc) = 0;
+                     LPCWSTR Name,
+                     LPCWSTR Password,
+                     LONG GeographicalId,
+                     IDot11AdHocInterface *pInterface,
+                     IDot11AdHocSecuritySettings *pSecurity,
+                     GUID *pContextGuid,
+                     IDot11AdHocNetwork **pIAdHoc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitCreatedNetwork(
-        IDot11AdHocNetwork *pIAdHoc,
-        BOOLEAN fSaveProfile,
-        BOOLEAN fMakeSavedProfileUserSpecific) = 0;
+                     IDot11AdHocNetwork *pIAdHoc,
+                     BOOLEAN fSaveProfile,
+                     BOOLEAN fMakeSavedProfileUserSpecific) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIEnumDot11AdHocNetworks(
-        GUID *pContextGuid,
-        IEnumDot11AdHocNetworks **ppEnum) = 0;
+                     GUID *pContextGuid,
+                     IEnumDot11AdHocNetworks **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIEnumDot11AdHocInterfaces(
-        IEnumDot11AdHocInterfaces **ppEnum) = 0;
+                     IEnumDot11AdHocInterfaces **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNetwork(
-        GUID *NetworkSignature,
-        IDot11AdHocNetwork **pNetwork) = 0;
+                     GUID *NetworkSignature,
+                     IDot11AdHocNetwork **pNetwork) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -270,46 +270,46 @@ typedef struct IDot11AdHocManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDot11AdHocManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDot11AdHocManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDot11AdHocManager *This);
+                     IDot11AdHocManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDot11AdHocManager *This);
+                     IDot11AdHocManager *This);
 
     /*** IDot11AdHocManager methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateNetwork)(
-        IDot11AdHocManager *This,
-        LPCWSTR Name,
-        LPCWSTR Password,
-        LONG GeographicalId,
-        IDot11AdHocInterface *pInterface,
-        IDot11AdHocSecuritySettings *pSecurity,
-        GUID *pContextGuid,
-        IDot11AdHocNetwork **pIAdHoc);
+                     IDot11AdHocManager *This,
+                     LPCWSTR Name,
+                     LPCWSTR Password,
+                     LONG GeographicalId,
+                     IDot11AdHocInterface *pInterface,
+                     IDot11AdHocSecuritySettings *pSecurity,
+                     GUID *pContextGuid,
+                     IDot11AdHocNetwork **pIAdHoc);
 
     HRESULT (STDMETHODCALLTYPE *CommitCreatedNetwork)(
-        IDot11AdHocManager *This,
-        IDot11AdHocNetwork *pIAdHoc,
-        BOOLEAN fSaveProfile,
-        BOOLEAN fMakeSavedProfileUserSpecific);
+                     IDot11AdHocManager *This,
+                     IDot11AdHocNetwork *pIAdHoc,
+                     BOOLEAN fSaveProfile,
+                     BOOLEAN fMakeSavedProfileUserSpecific);
 
     HRESULT (STDMETHODCALLTYPE *GetIEnumDot11AdHocNetworks)(
-        IDot11AdHocManager *This,
-        GUID *pContextGuid,
-        IEnumDot11AdHocNetworks **ppEnum);
+                     IDot11AdHocManager *This,
+                     GUID *pContextGuid,
+                     IEnumDot11AdHocNetworks **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetIEnumDot11AdHocInterfaces)(
-        IDot11AdHocManager *This,
-        IEnumDot11AdHocInterfaces **ppEnum);
+                     IDot11AdHocManager *This,
+                     IEnumDot11AdHocInterfaces **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetNetwork)(
-        IDot11AdHocManager *This,
-        GUID *NetworkSignature,
-        IDot11AdHocNetwork **pNetwork);
+                     IDot11AdHocManager *This,
+                     GUID *NetworkSignature,
+                     IDot11AdHocNetwork **pNetwork);
 
     END_INTERFACE
 } IDot11AdHocManagerVtbl;
@@ -377,16 +377,16 @@ MIDL_INTERFACE("8f10cc27-cf0d-42a0-acbe-e2de7007384d")
 IDot11AdHocManagerNotificationSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnNetworkAdd(
-        IDot11AdHocNetwork *pIAdHocNetwork) = 0;
+                     IDot11AdHocNetwork *pIAdHocNetwork) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnNetworkRemove(
-        GUID *Signature) = 0;
+                     GUID *Signature) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnInterfaceAdd(
-        IDot11AdHocInterface *pIAdHocInterface) = 0;
+                     IDot11AdHocInterface *pIAdHocInterface) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnInterfaceRemove(
-        GUID *Signature) = 0;
+                     GUID *Signature) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -398,32 +398,32 @@ typedef struct IDot11AdHocManagerNotificationSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDot11AdHocManagerNotificationSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDot11AdHocManagerNotificationSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDot11AdHocManagerNotificationSink *This);
+                     IDot11AdHocManagerNotificationSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDot11AdHocManagerNotificationSink *This);
+                     IDot11AdHocManagerNotificationSink *This);
 
     /*** IDot11AdHocManagerNotificationSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnNetworkAdd)(
-        IDot11AdHocManagerNotificationSink *This,
-        IDot11AdHocNetwork *pIAdHocNetwork);
+                     IDot11AdHocManagerNotificationSink *This,
+                     IDot11AdHocNetwork *pIAdHocNetwork);
 
     HRESULT (STDMETHODCALLTYPE *OnNetworkRemove)(
-        IDot11AdHocManagerNotificationSink *This,
-        GUID *Signature);
+                     IDot11AdHocManagerNotificationSink *This,
+                     GUID *Signature);
 
     HRESULT (STDMETHODCALLTYPE *OnInterfaceAdd)(
-        IDot11AdHocManagerNotificationSink *This,
-        IDot11AdHocInterface *pIAdHocInterface);
+                     IDot11AdHocManagerNotificationSink *This,
+                     IDot11AdHocInterface *pIAdHocInterface);
 
     HRESULT (STDMETHODCALLTYPE *OnInterfaceRemove)(
-        IDot11AdHocManagerNotificationSink *This,
-        GUID *Signature);
+                     IDot11AdHocManagerNotificationSink *This,
+                     GUID *Signature);
 
     END_INTERFACE
 } IDot11AdHocManagerNotificationSinkVtbl;
@@ -487,18 +487,18 @@ MIDL_INTERFACE("8f10cc28-cf0d-42a0-acbe-e2de7007384d")
 IEnumDot11AdHocNetworks : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cElt,
-        IDot11AdHocNetwork **rgElt,
-        ULONG *pcEltFetched) = 0;
+                     ULONG cElt,
+                     IDot11AdHocNetwork **rgElt,
+                     ULONG *pcEltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cElt) = 0;
+                     ULONG cElt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDot11AdHocNetworks **ppEnum) = 0;
+                     IEnumDot11AdHocNetworks **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -510,33 +510,33 @@ typedef struct IEnumDot11AdHocNetworksVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDot11AdHocNetworks *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDot11AdHocNetworks *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDot11AdHocNetworks *This);
+                     IEnumDot11AdHocNetworks *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDot11AdHocNetworks *This);
+                     IEnumDot11AdHocNetworks *This);
 
     /*** IEnumDot11AdHocNetworks methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumDot11AdHocNetworks *This,
-        ULONG cElt,
-        IDot11AdHocNetwork **rgElt,
-        ULONG *pcEltFetched);
+                     IEnumDot11AdHocNetworks *This,
+                     ULONG cElt,
+                     IDot11AdHocNetwork **rgElt,
+                     ULONG *pcEltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDot11AdHocNetworks *This,
-        ULONG cElt);
+                     IEnumDot11AdHocNetworks *This,
+                     ULONG cElt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDot11AdHocNetworks *This);
+                     IEnumDot11AdHocNetworks *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDot11AdHocNetworks *This,
-        IEnumDot11AdHocNetworks **ppEnum);
+                     IEnumDot11AdHocNetworks *This,
+                     IEnumDot11AdHocNetworks **ppEnum);
 
     END_INTERFACE
 } IEnumDot11AdHocNetworksVtbl;
@@ -600,44 +600,44 @@ MIDL_INTERFACE("8f10cc29-cf0d-42a0-acbe-e2de7007384d")
 IDot11AdHocNetwork : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        DOT11_ADHOC_NETWORK_CONNECTION_STATUS *eStatus) = 0;
+                     DOT11_ADHOC_NETWORK_CONNECTION_STATUS *eStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSSID(
-        LPWSTR *ppszwSSID) = 0;
+                     LPWSTR *ppszwSSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasProfile(
-        BOOLEAN *pf11d) = 0;
+                     BOOLEAN *pf11d) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProfileName(
-        LPWSTR *ppszwProfileName) = 0;
+                     LPWSTR *ppszwProfileName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteProfile(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignalQuality(
-        ULONG *puStrengthValue,
-        ULONG *puStrengthMax) = 0;
+                     ULONG *puStrengthValue,
+                     ULONG *puStrengthMax) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSecuritySetting(
-        IDot11AdHocSecuritySettings **pAdHocSecuritySetting) = 0;
+                     IDot11AdHocSecuritySettings **pAdHocSecuritySetting) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContextGuid(
-        GUID *pContextGuid) = 0;
+                     GUID *pContextGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignature(
-        GUID *pSignature) = 0;
+                     GUID *pSignature) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInterface(
-        IDot11AdHocInterface **pAdHocInterface) = 0;
+                     IDot11AdHocInterface **pAdHocInterface) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Connect(
-        LPCWSTR Passphrase,
-        LONG GeographicalId,
-        BOOLEAN fSaveProfile,
-        BOOLEAN fMakeSavedProfileUserSpecific) = 0;
+                     LPCWSTR Passphrase,
+                     LONG GeographicalId,
+                     BOOLEAN fSaveProfile,
+                     BOOLEAN fMakeSavedProfileUserSpecific) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Disconnect(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -649,66 +649,66 @@ typedef struct IDot11AdHocNetworkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDot11AdHocNetwork *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDot11AdHocNetwork *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDot11AdHocNetwork *This);
+                     IDot11AdHocNetwork *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDot11AdHocNetwork *This);
+                     IDot11AdHocNetwork *This);
 
     /*** IDot11AdHocNetwork methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IDot11AdHocNetwork *This,
-        DOT11_ADHOC_NETWORK_CONNECTION_STATUS *eStatus);
+                     IDot11AdHocNetwork *This,
+                     DOT11_ADHOC_NETWORK_CONNECTION_STATUS *eStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetSSID)(
-        IDot11AdHocNetwork *This,
-        LPWSTR *ppszwSSID);
+                     IDot11AdHocNetwork *This,
+                     LPWSTR *ppszwSSID);
 
     HRESULT (STDMETHODCALLTYPE *HasProfile)(
-        IDot11AdHocNetwork *This,
-        BOOLEAN *pf11d);
+                     IDot11AdHocNetwork *This,
+                     BOOLEAN *pf11d);
 
     HRESULT (STDMETHODCALLTYPE *GetProfileName)(
-        IDot11AdHocNetwork *This,
-        LPWSTR *ppszwProfileName);
+                     IDot11AdHocNetwork *This,
+                     LPWSTR *ppszwProfileName);
 
     HRESULT (STDMETHODCALLTYPE *DeleteProfile)(
-        IDot11AdHocNetwork *This);
+                     IDot11AdHocNetwork *This);
 
     HRESULT (STDMETHODCALLTYPE *GetSignalQuality)(
-        IDot11AdHocNetwork *This,
-        ULONG *puStrengthValue,
-        ULONG *puStrengthMax);
+                     IDot11AdHocNetwork *This,
+                     ULONG *puStrengthValue,
+                     ULONG *puStrengthMax);
 
     HRESULT (STDMETHODCALLTYPE *GetSecuritySetting)(
-        IDot11AdHocNetwork *This,
-        IDot11AdHocSecuritySettings **pAdHocSecuritySetting);
+                     IDot11AdHocNetwork *This,
+                     IDot11AdHocSecuritySettings **pAdHocSecuritySetting);
 
     HRESULT (STDMETHODCALLTYPE *GetContextGuid)(
-        IDot11AdHocNetwork *This,
-        GUID *pContextGuid);
+                     IDot11AdHocNetwork *This,
+                     GUID *pContextGuid);
 
     HRESULT (STDMETHODCALLTYPE *GetSignature)(
-        IDot11AdHocNetwork *This,
-        GUID *pSignature);
+                     IDot11AdHocNetwork *This,
+                     GUID *pSignature);
 
     HRESULT (STDMETHODCALLTYPE *GetInterface)(
-        IDot11AdHocNetwork *This,
-        IDot11AdHocInterface **pAdHocInterface);
+                     IDot11AdHocNetwork *This,
+                     IDot11AdHocInterface **pAdHocInterface);
 
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        IDot11AdHocNetwork *This,
-        LPCWSTR Passphrase,
-        LONG GeographicalId,
-        BOOLEAN fSaveProfile,
-        BOOLEAN fMakeSavedProfileUserSpecific);
+                     IDot11AdHocNetwork *This,
+                     LPCWSTR Passphrase,
+                     LONG GeographicalId,
+                     BOOLEAN fSaveProfile,
+                     BOOLEAN fMakeSavedProfileUserSpecific);
 
     HRESULT (STDMETHODCALLTYPE *Disconnect)(
-        IDot11AdHocNetwork *This);
+                     IDot11AdHocNetwork *This);
 
     END_INTERFACE
 } IDot11AdHocNetworkVtbl;
@@ -804,10 +804,10 @@ MIDL_INTERFACE("8f10cc2a-cf0d-42a0-acbe-e2de7007384d")
 IDot11AdHocNetworkNotificationSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnStatusChange(
-        DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) = 0;
+                     DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnConnectFail(
-        DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) = 0;
+                     DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -819,24 +819,24 @@ typedef struct IDot11AdHocNetworkNotificationSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDot11AdHocNetworkNotificationSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDot11AdHocNetworkNotificationSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDot11AdHocNetworkNotificationSink *This);
+                     IDot11AdHocNetworkNotificationSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDot11AdHocNetworkNotificationSink *This);
+                     IDot11AdHocNetworkNotificationSink *This);
 
     /*** IDot11AdHocNetworkNotificationSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStatusChange)(
-        IDot11AdHocNetworkNotificationSink *This,
-        DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus);
+                     IDot11AdHocNetworkNotificationSink *This,
+                     DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus);
 
     HRESULT (STDMETHODCALLTYPE *OnConnectFail)(
-        IDot11AdHocNetworkNotificationSink *This,
-        DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason);
+                     IDot11AdHocNetworkNotificationSink *This,
+                     DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason);
 
     END_INTERFACE
 } IDot11AdHocNetworkNotificationSinkVtbl;
@@ -892,32 +892,32 @@ MIDL_INTERFACE("8f10cc2b-cf0d-42a0-acbe-e2de7007384d")
 IDot11AdHocInterface : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDeviceSignature(
-        GUID *pSignature) = 0;
+                     GUID *pSignature) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFriendlyName(
-        LPWSTR *ppszName) = 0;
+                     LPWSTR *ppszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsDot11d(
-        BOOLEAN *pf11d) = 0;
+                     BOOLEAN *pf11d) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsAdHocCapable(
-        BOOLEAN *pfAdHocCapable) = 0;
+                     BOOLEAN *pfAdHocCapable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRadioOn(
-        BOOLEAN *pfIsRadioOn) = 0;
+                     BOOLEAN *pfIsRadioOn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActiveNetwork(
-        IDot11AdHocNetwork **ppNetwork) = 0;
+                     IDot11AdHocNetwork **ppNetwork) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIEnumSecuritySettings(
-        IEnumDot11AdHocSecuritySettings **ppEnum) = 0;
+                     IEnumDot11AdHocSecuritySettings **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIEnumDot11AdHocNetworks(
-        GUID *pFilterGuid,
-        IEnumDot11AdHocNetworks **ppEnum) = 0;
+                     GUID *pFilterGuid,
+                     IEnumDot11AdHocNetworks **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        DOT11_ADHOC_NETWORK_CONNECTION_STATUS *pState) = 0;
+                     DOT11_ADHOC_NETWORK_CONNECTION_STATUS *pState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -929,53 +929,53 @@ typedef struct IDot11AdHocInterfaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDot11AdHocInterface *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDot11AdHocInterface *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDot11AdHocInterface *This);
+                     IDot11AdHocInterface *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDot11AdHocInterface *This);
+                     IDot11AdHocInterface *This);
 
     /*** IDot11AdHocInterface methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDeviceSignature)(
-        IDot11AdHocInterface *This,
-        GUID *pSignature);
+                     IDot11AdHocInterface *This,
+                     GUID *pSignature);
 
     HRESULT (STDMETHODCALLTYPE *GetFriendlyName)(
-        IDot11AdHocInterface *This,
-        LPWSTR *ppszName);
+                     IDot11AdHocInterface *This,
+                     LPWSTR *ppszName);
 
     HRESULT (STDMETHODCALLTYPE *IsDot11d)(
-        IDot11AdHocInterface *This,
-        BOOLEAN *pf11d);
+                     IDot11AdHocInterface *This,
+                     BOOLEAN *pf11d);
 
     HRESULT (STDMETHODCALLTYPE *IsAdHocCapable)(
-        IDot11AdHocInterface *This,
-        BOOLEAN *pfAdHocCapable);
+                     IDot11AdHocInterface *This,
+                     BOOLEAN *pfAdHocCapable);
 
     HRESULT (STDMETHODCALLTYPE *IsRadioOn)(
-        IDot11AdHocInterface *This,
-        BOOLEAN *pfIsRadioOn);
+                     IDot11AdHocInterface *This,
+                     BOOLEAN *pfIsRadioOn);
 
     HRESULT (STDMETHODCALLTYPE *GetActiveNetwork)(
-        IDot11AdHocInterface *This,
-        IDot11AdHocNetwork **ppNetwork);
+                     IDot11AdHocInterface *This,
+                     IDot11AdHocNetwork **ppNetwork);
 
     HRESULT (STDMETHODCALLTYPE *GetIEnumSecuritySettings)(
-        IDot11AdHocInterface *This,
-        IEnumDot11AdHocSecuritySettings **ppEnum);
+                     IDot11AdHocInterface *This,
+                     IEnumDot11AdHocSecuritySettings **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetIEnumDot11AdHocNetworks)(
-        IDot11AdHocInterface *This,
-        GUID *pFilterGuid,
-        IEnumDot11AdHocNetworks **ppEnum);
+                     IDot11AdHocInterface *This,
+                     GUID *pFilterGuid,
+                     IEnumDot11AdHocNetworks **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IDot11AdHocInterface *This,
-        DOT11_ADHOC_NETWORK_CONNECTION_STATUS *pState);
+                     IDot11AdHocInterface *This,
+                     DOT11_ADHOC_NETWORK_CONNECTION_STATUS *pState);
 
     END_INTERFACE
 } IDot11AdHocInterfaceVtbl;
@@ -1059,18 +1059,18 @@ MIDL_INTERFACE("8f10cc2c-cf0d-42a0-acbe-e2de7007384d")
 IEnumDot11AdHocInterfaces : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cElt,
-        IDot11AdHocInterface **rgElt,
-        ULONG *pcEltFetched) = 0;
+                     ULONG cElt,
+                     IDot11AdHocInterface **rgElt,
+                     ULONG *pcEltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cElt) = 0;
+                     ULONG cElt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDot11AdHocInterfaces **ppEnum) = 0;
+                     IEnumDot11AdHocInterfaces **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1082,33 +1082,33 @@ typedef struct IEnumDot11AdHocInterfacesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDot11AdHocInterfaces *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDot11AdHocInterfaces *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDot11AdHocInterfaces *This);
+                     IEnumDot11AdHocInterfaces *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDot11AdHocInterfaces *This);
+                     IEnumDot11AdHocInterfaces *This);
 
     /*** IEnumDot11AdHocInterfaces methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumDot11AdHocInterfaces *This,
-        ULONG cElt,
-        IDot11AdHocInterface **rgElt,
-        ULONG *pcEltFetched);
+                     IEnumDot11AdHocInterfaces *This,
+                     ULONG cElt,
+                     IDot11AdHocInterface **rgElt,
+                     ULONG *pcEltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDot11AdHocInterfaces *This,
-        ULONG cElt);
+                     IEnumDot11AdHocInterfaces *This,
+                     ULONG cElt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDot11AdHocInterfaces *This);
+                     IEnumDot11AdHocInterfaces *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDot11AdHocInterfaces *This,
-        IEnumDot11AdHocInterfaces **ppEnum);
+                     IEnumDot11AdHocInterfaces *This,
+                     IEnumDot11AdHocInterfaces **ppEnum);
 
     END_INTERFACE
 } IEnumDot11AdHocInterfacesVtbl;
@@ -1172,18 +1172,18 @@ MIDL_INTERFACE("8f10cc2d-cf0d-42a0-acbe-e2de7007384d")
 IEnumDot11AdHocSecuritySettings : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cElt,
-        IDot11AdHocSecuritySettings **rgElt,
-        ULONG *pcEltFetched) = 0;
+                     ULONG cElt,
+                     IDot11AdHocSecuritySettings **rgElt,
+                     ULONG *pcEltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cElt) = 0;
+                     ULONG cElt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumDot11AdHocSecuritySettings **ppEnum) = 0;
+                     IEnumDot11AdHocSecuritySettings **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1195,33 +1195,33 @@ typedef struct IEnumDot11AdHocSecuritySettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumDot11AdHocSecuritySettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumDot11AdHocSecuritySettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumDot11AdHocSecuritySettings *This);
+                     IEnumDot11AdHocSecuritySettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumDot11AdHocSecuritySettings *This);
+                     IEnumDot11AdHocSecuritySettings *This);
 
     /*** IEnumDot11AdHocSecuritySettings methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumDot11AdHocSecuritySettings *This,
-        ULONG cElt,
-        IDot11AdHocSecuritySettings **rgElt,
-        ULONG *pcEltFetched);
+                     IEnumDot11AdHocSecuritySettings *This,
+                     ULONG cElt,
+                     IDot11AdHocSecuritySettings **rgElt,
+                     ULONG *pcEltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumDot11AdHocSecuritySettings *This,
-        ULONG cElt);
+                     IEnumDot11AdHocSecuritySettings *This,
+                     ULONG cElt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumDot11AdHocSecuritySettings *This);
+                     IEnumDot11AdHocSecuritySettings *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumDot11AdHocSecuritySettings *This,
-        IEnumDot11AdHocSecuritySettings **ppEnum);
+                     IEnumDot11AdHocSecuritySettings *This,
+                     IEnumDot11AdHocSecuritySettings **ppEnum);
 
     END_INTERFACE
 } IEnumDot11AdHocSecuritySettingsVtbl;
@@ -1285,10 +1285,10 @@ MIDL_INTERFACE("8f10cc2e-cf0d-42a0-acbe-e2de7007384d")
 IDot11AdHocSecuritySettings : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDot11AuthAlgorithm(
-        DOT11_ADHOC_AUTH_ALGORITHM *pAuth) = 0;
+                     DOT11_ADHOC_AUTH_ALGORITHM *pAuth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDot11CipherAlgorithm(
-        DOT11_ADHOC_CIPHER_ALGORITHM *pCipher) = 0;
+                     DOT11_ADHOC_CIPHER_ALGORITHM *pCipher) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1300,24 +1300,24 @@ typedef struct IDot11AdHocSecuritySettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDot11AdHocSecuritySettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDot11AdHocSecuritySettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDot11AdHocSecuritySettings *This);
+                     IDot11AdHocSecuritySettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDot11AdHocSecuritySettings *This);
+                     IDot11AdHocSecuritySettings *This);
 
     /*** IDot11AdHocSecuritySettings methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDot11AuthAlgorithm)(
-        IDot11AdHocSecuritySettings *This,
-        DOT11_ADHOC_AUTH_ALGORITHM *pAuth);
+                     IDot11AdHocSecuritySettings *This,
+                     DOT11_ADHOC_AUTH_ALGORITHM *pAuth);
 
     HRESULT (STDMETHODCALLTYPE *GetDot11CipherAlgorithm)(
-        IDot11AdHocSecuritySettings *This,
-        DOT11_ADHOC_CIPHER_ALGORITHM *pCipher);
+                     IDot11AdHocSecuritySettings *This,
+                     DOT11_ADHOC_CIPHER_ALGORITHM *pCipher);
 
     END_INTERFACE
 } IDot11AdHocSecuritySettingsVtbl;
@@ -1373,7 +1373,7 @@ MIDL_INTERFACE("8f10cc2f-cf0d-42a0-acbe-e2de7007384d")
 IDot11AdHocInterfaceNotificationSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnConnectionStatusChange(
-        DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) = 0;
+                     DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1385,20 +1385,20 @@ typedef struct IDot11AdHocInterfaceNotificationSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDot11AdHocInterfaceNotificationSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDot11AdHocInterfaceNotificationSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDot11AdHocInterfaceNotificationSink *This);
+                     IDot11AdHocInterfaceNotificationSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDot11AdHocInterfaceNotificationSink *This);
+                     IDot11AdHocInterfaceNotificationSink *This);
 
     /*** IDot11AdHocInterfaceNotificationSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnConnectionStatusChange)(
-        IDot11AdHocInterfaceNotificationSink *This,
-        DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus);
+                     IDot11AdHocInterfaceNotificationSink *This,
+                     DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus);
 
     END_INTERFACE
 } IDot11AdHocInterfaceNotificationSinkVtbl;

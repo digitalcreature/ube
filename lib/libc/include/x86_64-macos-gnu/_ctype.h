@@ -145,7 +145,7 @@ __maskrune(__darwin_ct_rune_t _c, unsigned long _f)
 }
 #else /* !USE_ASCII */
 __BEGIN_DECLS
-int             	__maskrune(__darwin_ct_rune_t, unsigned long);
+int                                       	__maskrune(__darwin_ct_rune_t, unsigned long);
 __END_DECLS
 #endif /* USE_ASCII */
 
@@ -291,13 +291,13 @@ toascii(int _c)
 __DARWIN_CTYPE_TOP_inline int
 tolower(int _c)
 {
-        return (__tolower(_c));
+                     return (__tolower(_c));
 }
 
 __DARWIN_CTYPE_TOP_inline int
 toupper(int _c)
 {
-        return (__toupper(_c));
+                     return (__toupper(_c));
 }
 
 #if !defined(_ANSI_SOURCE) && (!defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE))

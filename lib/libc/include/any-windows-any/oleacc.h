@@ -332,89 +332,89 @@ MIDL_INTERFACE("618736e0-3c3d-11cf-810c-00aa00389b71")
 IAccessible : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_accParent(
-        IDispatch **ppdispParent) = 0;
+                     IDispatch **ppdispParent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accChildCount(
-        LONG *pcountChildren) = 0;
+                     LONG *pcountChildren) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accChild(
-        VARIANT varChildID,
-        IDispatch **ppdispChild) = 0;
+                     VARIANT varChildID,
+                     IDispatch **ppdispChild) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accName(
-        VARIANT varID,
-        BSTR *pszName) = 0;
+                     VARIANT varID,
+                     BSTR *pszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accValue(
-        VARIANT varID,
-        BSTR *pszValue) = 0;
+                     VARIANT varID,
+                     BSTR *pszValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accDescription(
-        VARIANT varID,
-        BSTR *pszDescription) = 0;
+                     VARIANT varID,
+                     BSTR *pszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accRole(
-        VARIANT varID,
-        VARIANT *pvarRole) = 0;
+                     VARIANT varID,
+                     VARIANT *pvarRole) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accState(
-        VARIANT varID,
-        VARIANT *pvarState) = 0;
+                     VARIANT varID,
+                     VARIANT *pvarState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accHelp(
-        VARIANT varID,
-        BSTR *pszHelp) = 0;
+                     VARIANT varID,
+                     BSTR *pszHelp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accHelpTopic(
-        BSTR *pszHelpFile,
-        VARIANT varID,
-        LONG *pidTopic) = 0;
+                     BSTR *pszHelpFile,
+                     VARIANT varID,
+                     LONG *pidTopic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accKeyboardShortcut(
-        VARIANT varID,
-        BSTR *pszKeyboardShortcut) = 0;
+                     VARIANT varID,
+                     BSTR *pszKeyboardShortcut) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accFocus(
-        VARIANT *pvarID) = 0;
+                     VARIANT *pvarID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accSelection(
-        VARIANT *pvarID) = 0;
+                     VARIANT *pvarID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_accDefaultAction(
-        VARIANT varID,
-        BSTR *pszDefaultAction) = 0;
+                     VARIANT varID,
+                     BSTR *pszDefaultAction) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE accSelect(
-        LONG flagsSelect,
-        VARIANT varID) = 0;
+                     LONG flagsSelect,
+                     VARIANT varID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE accLocation(
-        LONG *pxLeft,
-        LONG *pyTop,
-        LONG *pcxWidth,
-        LONG *pcyHeight,
-        VARIANT varID) = 0;
+                     LONG *pxLeft,
+                     LONG *pyTop,
+                     LONG *pcxWidth,
+                     LONG *pcyHeight,
+                     VARIANT varID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE accNavigate(
-        LONG navDir,
-        VARIANT varStart,
-        VARIANT *pvarEnd) = 0;
+                     LONG navDir,
+                     VARIANT varStart,
+                     VARIANT *pvarEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE accHitTest(
-        LONG xLeft,
-        LONG yTop,
-        VARIANT *pvarID) = 0;
+                     LONG xLeft,
+                     LONG yTop,
+                     VARIANT *pvarID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE accDoDefaultAction(
-        VARIANT varID) = 0;
+                     VARIANT varID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_accName(
-        VARIANT varID,
-        BSTR pszName) = 0;
+                     VARIANT varID,
+                     BSTR pszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_accValue(
-        VARIANT varID,
-        BSTR pszValue) = 0;
+                     VARIANT varID,
+                     BSTR pszValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -426,152 +426,152 @@ typedef struct IAccessibleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAccessible *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAccessible *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAccessible *This);
+                     IAccessible *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAccessible *This);
+                     IAccessible *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAccessible *This,
-        UINT *pctinfo);
+                     IAccessible *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAccessible *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAccessible *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAccessible *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAccessible *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAccessible *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAccessible *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IAccessible methods ***/
     HRESULT (STDMETHODCALLTYPE *get_accParent)(
-        IAccessible *This,
-        IDispatch **ppdispParent);
+                     IAccessible *This,
+                     IDispatch **ppdispParent);
 
     HRESULT (STDMETHODCALLTYPE *get_accChildCount)(
-        IAccessible *This,
-        LONG *pcountChildren);
+                     IAccessible *This,
+                     LONG *pcountChildren);
 
     HRESULT (STDMETHODCALLTYPE *get_accChild)(
-        IAccessible *This,
-        VARIANT varChildID,
-        IDispatch **ppdispChild);
+                     IAccessible *This,
+                     VARIANT varChildID,
+                     IDispatch **ppdispChild);
 
     HRESULT (STDMETHODCALLTYPE *get_accName)(
-        IAccessible *This,
-        VARIANT varID,
-        BSTR *pszName);
+                     IAccessible *This,
+                     VARIANT varID,
+                     BSTR *pszName);
 
     HRESULT (STDMETHODCALLTYPE *get_accValue)(
-        IAccessible *This,
-        VARIANT varID,
-        BSTR *pszValue);
+                     IAccessible *This,
+                     VARIANT varID,
+                     BSTR *pszValue);
 
     HRESULT (STDMETHODCALLTYPE *get_accDescription)(
-        IAccessible *This,
-        VARIANT varID,
-        BSTR *pszDescription);
+                     IAccessible *This,
+                     VARIANT varID,
+                     BSTR *pszDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_accRole)(
-        IAccessible *This,
-        VARIANT varID,
-        VARIANT *pvarRole);
+                     IAccessible *This,
+                     VARIANT varID,
+                     VARIANT *pvarRole);
 
     HRESULT (STDMETHODCALLTYPE *get_accState)(
-        IAccessible *This,
-        VARIANT varID,
-        VARIANT *pvarState);
+                     IAccessible *This,
+                     VARIANT varID,
+                     VARIANT *pvarState);
 
     HRESULT (STDMETHODCALLTYPE *get_accHelp)(
-        IAccessible *This,
-        VARIANT varID,
-        BSTR *pszHelp);
+                     IAccessible *This,
+                     VARIANT varID,
+                     BSTR *pszHelp);
 
     HRESULT (STDMETHODCALLTYPE *get_accHelpTopic)(
-        IAccessible *This,
-        BSTR *pszHelpFile,
-        VARIANT varID,
-        LONG *pidTopic);
+                     IAccessible *This,
+                     BSTR *pszHelpFile,
+                     VARIANT varID,
+                     LONG *pidTopic);
 
     HRESULT (STDMETHODCALLTYPE *get_accKeyboardShortcut)(
-        IAccessible *This,
-        VARIANT varID,
-        BSTR *pszKeyboardShortcut);
+                     IAccessible *This,
+                     VARIANT varID,
+                     BSTR *pszKeyboardShortcut);
 
     HRESULT (STDMETHODCALLTYPE *get_accFocus)(
-        IAccessible *This,
-        VARIANT *pvarID);
+                     IAccessible *This,
+                     VARIANT *pvarID);
 
     HRESULT (STDMETHODCALLTYPE *get_accSelection)(
-        IAccessible *This,
-        VARIANT *pvarID);
+                     IAccessible *This,
+                     VARIANT *pvarID);
 
     HRESULT (STDMETHODCALLTYPE *get_accDefaultAction)(
-        IAccessible *This,
-        VARIANT varID,
-        BSTR *pszDefaultAction);
+                     IAccessible *This,
+                     VARIANT varID,
+                     BSTR *pszDefaultAction);
 
     HRESULT (STDMETHODCALLTYPE *accSelect)(
-        IAccessible *This,
-        LONG flagsSelect,
-        VARIANT varID);
+                     IAccessible *This,
+                     LONG flagsSelect,
+                     VARIANT varID);
 
     HRESULT (STDMETHODCALLTYPE *accLocation)(
-        IAccessible *This,
-        LONG *pxLeft,
-        LONG *pyTop,
-        LONG *pcxWidth,
-        LONG *pcyHeight,
-        VARIANT varID);
+                     IAccessible *This,
+                     LONG *pxLeft,
+                     LONG *pyTop,
+                     LONG *pcxWidth,
+                     LONG *pcyHeight,
+                     VARIANT varID);
 
     HRESULT (STDMETHODCALLTYPE *accNavigate)(
-        IAccessible *This,
-        LONG navDir,
-        VARIANT varStart,
-        VARIANT *pvarEnd);
+                     IAccessible *This,
+                     LONG navDir,
+                     VARIANT varStart,
+                     VARIANT *pvarEnd);
 
     HRESULT (STDMETHODCALLTYPE *accHitTest)(
-        IAccessible *This,
-        LONG xLeft,
-        LONG yTop,
-        VARIANT *pvarID);
+                     IAccessible *This,
+                     LONG xLeft,
+                     LONG yTop,
+                     VARIANT *pvarID);
 
     HRESULT (STDMETHODCALLTYPE *accDoDefaultAction)(
-        IAccessible *This,
-        VARIANT varID);
+                     IAccessible *This,
+                     VARIANT varID);
 
     HRESULT (STDMETHODCALLTYPE *put_accName)(
-        IAccessible *This,
-        VARIANT varID,
-        BSTR pszName);
+                     IAccessible *This,
+                     VARIANT varID,
+                     BSTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *put_accValue)(
-        IAccessible *This,
-        VARIANT varID,
-        BSTR pszValue);
+                     IAccessible *This,
+                     VARIANT varID,
+                     BSTR pszValue);
 
     END_INTERFACE
 } IAccessibleVtbl;
@@ -722,10 +722,10 @@ static FORCEINLINE HRESULT IAccessible_put_accValue(IAccessible* This,VARIANT va
 #else
   typedef struct IAccessibleHandlerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAccessibleHandler *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAccessibleHandler *This);
-      ULONG (WINAPI *Release)(IAccessibleHandler *This);
-      HRESULT (WINAPI *AccessibleObjectFromID)(IAccessibleHandler *This,LONG hwnd,LONG lObjectID,LPACCESSIBLE *pIAccessible);
+                   HRESULT (WINAPI *QueryInterface)(IAccessibleHandler *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAccessibleHandler *This);
+                   ULONG (WINAPI *Release)(IAccessibleHandler *This);
+                   HRESULT (WINAPI *AccessibleObjectFromID)(IAccessibleHandler *This,LONG hwnd,LONG lObjectID,LPACCESSIBLE *pIAccessible);
     END_INTERFACE
   } IAccessibleHandlerVtbl;
   struct IAccessibleHandler {
@@ -762,10 +762,10 @@ static FORCEINLINE HRESULT IAccessible_put_accValue(IAccessible* This,VARIANT va
 #else
   typedef struct IAccIdentityVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAccIdentity *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAccIdentity *This);
-      ULONG (WINAPI *Release)(IAccIdentity *This);
-      HRESULT (WINAPI *GetIdentityString)(IAccIdentity *This,DWORD dwIDChild,BYTE **ppIDString,DWORD *pdwIDStringLen);
+                   HRESULT (WINAPI *QueryInterface)(IAccIdentity *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAccIdentity *This);
+                   ULONG (WINAPI *Release)(IAccIdentity *This);
+                   HRESULT (WINAPI *GetIdentityString)(IAccIdentity *This,DWORD dwIDChild,BYTE **ppIDString,DWORD *pdwIDStringLen);
     END_INTERFACE
   } IAccIdentityVtbl;
   struct IAccIdentity {
@@ -793,10 +793,10 @@ static FORCEINLINE HRESULT IAccessible_put_accValue(IAccessible* This,VARIANT va
 #else
   typedef struct IAccPropServerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAccPropServer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAccPropServer *This);
-      ULONG (WINAPI *Release)(IAccPropServer *This);
-      HRESULT (WINAPI *GetPropValue)(IAccPropServer *This,const BYTE *pIDString,DWORD dwIDStringLen,MSAAPROPID idProp,VARIANT *pvarValue,WINBOOL *pfHasProp);
+                   HRESULT (WINAPI *QueryInterface)(IAccPropServer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAccPropServer *This);
+                   ULONG (WINAPI *Release)(IAccPropServer *This);
+                   HRESULT (WINAPI *GetPropValue)(IAccPropServer *This,const BYTE *pIDString,DWORD dwIDStringLen,MSAAPROPID idProp,VARIANT *pvarValue,WINBOOL *pfHasProp);
     END_INTERFACE
   } IAccPropServerVtbl;
   struct IAccPropServer {
@@ -838,24 +838,24 @@ static FORCEINLINE HRESULT IAccessible_put_accValue(IAccessible* This,VARIANT va
 #else
   typedef struct IAccPropServicesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAccPropServices *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAccPropServices *This);
-      ULONG (WINAPI *Release)(IAccPropServices *This);
-      HRESULT (WINAPI *SetPropValue)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,MSAAPROPID idProp,VARIANT var);
-      HRESULT (WINAPI *SetPropServer)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,const MSAAPROPID *paProps,int cProps,IAccPropServer *pServer,AnnoScope annoScope);
-      HRESULT (WINAPI *ClearProps)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,const MSAAPROPID *paProps,int cProps);
-      HRESULT (WINAPI *SetHwndProp)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,MSAAPROPID idProp,VARIANT var);
-      HRESULT (WINAPI *SetHwndPropStr)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,MSAAPROPID idProp,LPCWSTR str);
-      HRESULT (WINAPI *SetHwndPropServer)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,const MSAAPROPID *paProps,int cProps,IAccPropServer *pServer,AnnoScope annoScope);
-      HRESULT (WINAPI *ClearHwndProps)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,const MSAAPROPID *paProps,int cProps);
-      HRESULT (WINAPI *ComposeHwndIdentityString)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,BYTE **ppIDString,DWORD *pdwIDStringLen);
-      HRESULT (WINAPI *DecomposeHwndIdentityString)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,HWND *phwnd,DWORD *pidObject,DWORD *pidChild);
-      HRESULT (WINAPI *SetHmenuProp)(IAccPropServices *This,HMENU hmenu,DWORD idChild,MSAAPROPID idProp,VARIANT var);
-      HRESULT (WINAPI *SetHmenuPropStr)(IAccPropServices *This,HMENU hmenu,DWORD idChild,MSAAPROPID idProp,LPCWSTR str);
-      HRESULT (WINAPI *SetHmenuPropServer)(IAccPropServices *This,HMENU hmenu,DWORD idChild,const MSAAPROPID *paProps,int cProps,IAccPropServer *pServer,AnnoScope annoScope);
-      HRESULT (WINAPI *ClearHmenuProps)(IAccPropServices *This,HMENU hmenu,DWORD idChild,const MSAAPROPID *paProps,int cProps);
-      HRESULT (WINAPI *ComposeHmenuIdentityString)(IAccPropServices *This,HMENU hmenu,DWORD idChild,BYTE **ppIDString,DWORD *pdwIDStringLen);
-      HRESULT (WINAPI *DecomposeHmenuIdentityString)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,HMENU *phmenu,DWORD *pidChild);
+                   HRESULT (WINAPI *QueryInterface)(IAccPropServices *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAccPropServices *This);
+                   ULONG (WINAPI *Release)(IAccPropServices *This);
+                   HRESULT (WINAPI *SetPropValue)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,MSAAPROPID idProp,VARIANT var);
+                   HRESULT (WINAPI *SetPropServer)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,const MSAAPROPID *paProps,int cProps,IAccPropServer *pServer,AnnoScope annoScope);
+                   HRESULT (WINAPI *ClearProps)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,const MSAAPROPID *paProps,int cProps);
+                   HRESULT (WINAPI *SetHwndProp)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,MSAAPROPID idProp,VARIANT var);
+                   HRESULT (WINAPI *SetHwndPropStr)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,MSAAPROPID idProp,LPCWSTR str);
+                   HRESULT (WINAPI *SetHwndPropServer)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,const MSAAPROPID *paProps,int cProps,IAccPropServer *pServer,AnnoScope annoScope);
+                   HRESULT (WINAPI *ClearHwndProps)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,const MSAAPROPID *paProps,int cProps);
+                   HRESULT (WINAPI *ComposeHwndIdentityString)(IAccPropServices *This,HWND hwnd,DWORD idObject,DWORD idChild,BYTE **ppIDString,DWORD *pdwIDStringLen);
+                   HRESULT (WINAPI *DecomposeHwndIdentityString)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,HWND *phwnd,DWORD *pidObject,DWORD *pidChild);
+                   HRESULT (WINAPI *SetHmenuProp)(IAccPropServices *This,HMENU hmenu,DWORD idChild,MSAAPROPID idProp,VARIANT var);
+                   HRESULT (WINAPI *SetHmenuPropStr)(IAccPropServices *This,HMENU hmenu,DWORD idChild,MSAAPROPID idProp,LPCWSTR str);
+                   HRESULT (WINAPI *SetHmenuPropServer)(IAccPropServices *This,HMENU hmenu,DWORD idChild,const MSAAPROPID *paProps,int cProps,IAccPropServer *pServer,AnnoScope annoScope);
+                   HRESULT (WINAPI *ClearHmenuProps)(IAccPropServices *This,HMENU hmenu,DWORD idChild,const MSAAPROPID *paProps,int cProps);
+                   HRESULT (WINAPI *ComposeHmenuIdentityString)(IAccPropServices *This,HMENU hmenu,DWORD idChild,BYTE **ppIDString,DWORD *pdwIDStringLen);
+                   HRESULT (WINAPI *DecomposeHmenuIdentityString)(IAccPropServices *This,const BYTE *pIDString,DWORD dwIDStringLen,HMENU *phmenu,DWORD *pidChild);
     END_INTERFACE
   } IAccPropServicesVtbl;
   struct IAccPropServices {

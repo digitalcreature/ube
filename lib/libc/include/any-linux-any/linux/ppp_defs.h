@@ -123,8 +123,8 @@ struct compstat {
     __u32	inc_packets;	/* incompressible packets */
 
     /* the compression ratio is defined as in_count / bytes_out */
-    __u32       in_count;	/* Bytes received */
-    __u32       bytes_out;	/* Bytes transmitted */
+    __u32                    in_count;	/* Bytes received */
+    __u32                    bytes_out;	/* Bytes transmitted */
 
     double	ratio;		/* not computed in kernel. */
 };

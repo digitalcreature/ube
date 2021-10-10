@@ -45,16 +45,16 @@ struct ktermios {
 };
 
 /* c_cc characters */
-#define VINTR 	         0
-#define VQUIT 	         1
-#define VERASE 	         2
-#define VKILL	         3
-#define VEOF	         4
-#define VMIN	         5
-#define VEOL	         6
-#define VTIME	         7
-#define VEOL2	         8
-#define VSWTC	         9
+#define VINTR 	                      0
+#define VQUIT 	                      1
+#define VERASE 	                      2
+#define VKILL	                      3
+#define VEOF	                      4
+#define VMIN	                      5
+#define VEOL	                      6
+#define VTIME	                      7
+#define VEOL2	                      8
+#define VSWTC	                      9
 #define VWERASE 	10
 #define VREPRINT	11
 #define VSUSP 		12

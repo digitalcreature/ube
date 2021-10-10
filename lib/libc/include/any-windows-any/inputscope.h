@@ -142,21 +142,21 @@ MIDL_INTERFACE("fde1eaee-6924-4cdf-91e7-da38cff5559d")
 ITfInputScope : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetInputScopes(
-        InputScope **pprgInputScopes,
-        UINT *pcCount) = 0;
+                     InputScope **pprgInputScopes,
+                     UINT *pcCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPhrase(
-        BSTR **ppbstrPhrases,
-        UINT *pcCount) = 0;
+                     BSTR **ppbstrPhrases,
+                     UINT *pcCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRegularExpression(
-        BSTR *pbstrRegExp) = 0;
+                     BSTR *pbstrRegExp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSRGS(
-        BSTR *pbstrSRGS) = 0;
+                     BSTR *pbstrSRGS) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXML(
-        BSTR *pbstrXML) = 0;
+                     BSTR *pbstrXML) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -168,38 +168,38 @@ typedef struct ITfInputScopeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfInputScope *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfInputScope *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfInputScope *This);
+                     ITfInputScope *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfInputScope *This);
+                     ITfInputScope *This);
 
     /*** ITfInputScope methods ***/
     HRESULT (STDMETHODCALLTYPE *GetInputScopes)(
-        ITfInputScope *This,
-        InputScope **pprgInputScopes,
-        UINT *pcCount);
+                     ITfInputScope *This,
+                     InputScope **pprgInputScopes,
+                     UINT *pcCount);
 
     HRESULT (STDMETHODCALLTYPE *GetPhrase)(
-        ITfInputScope *This,
-        BSTR **ppbstrPhrases,
-        UINT *pcCount);
+                     ITfInputScope *This,
+                     BSTR **ppbstrPhrases,
+                     UINT *pcCount);
 
     HRESULT (STDMETHODCALLTYPE *GetRegularExpression)(
-        ITfInputScope *This,
-        BSTR *pbstrRegExp);
+                     ITfInputScope *This,
+                     BSTR *pbstrRegExp);
 
     HRESULT (STDMETHODCALLTYPE *GetSRGS)(
-        ITfInputScope *This,
-        BSTR *pbstrSRGS);
+                     ITfInputScope *This,
+                     BSTR *pbstrSRGS);
 
     HRESULT (STDMETHODCALLTYPE *GetXML)(
-        ITfInputScope *This,
-        BSTR *pbstrXML);
+                     ITfInputScope *This,
+                     BSTR *pbstrXML);
 
     END_INTERFACE
 } ITfInputScopeVtbl;
@@ -267,7 +267,7 @@ MIDL_INTERFACE("5731eaa0-6bc2-4681-a532-92fbb74d7c41")
 ITfInputScope2 : public ITfInputScope
 {
     virtual HRESULT STDMETHODCALLTYPE EnumWordList(
-        IEnumString **ppEnumString) = 0;
+                     IEnumString **ppEnumString) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -279,43 +279,43 @@ typedef struct ITfInputScope2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfInputScope2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfInputScope2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfInputScope2 *This);
+                     ITfInputScope2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfInputScope2 *This);
+                     ITfInputScope2 *This);
 
     /*** ITfInputScope methods ***/
     HRESULT (STDMETHODCALLTYPE *GetInputScopes)(
-        ITfInputScope2 *This,
-        InputScope **pprgInputScopes,
-        UINT *pcCount);
+                     ITfInputScope2 *This,
+                     InputScope **pprgInputScopes,
+                     UINT *pcCount);
 
     HRESULT (STDMETHODCALLTYPE *GetPhrase)(
-        ITfInputScope2 *This,
-        BSTR **ppbstrPhrases,
-        UINT *pcCount);
+                     ITfInputScope2 *This,
+                     BSTR **ppbstrPhrases,
+                     UINT *pcCount);
 
     HRESULT (STDMETHODCALLTYPE *GetRegularExpression)(
-        ITfInputScope2 *This,
-        BSTR *pbstrRegExp);
+                     ITfInputScope2 *This,
+                     BSTR *pbstrRegExp);
 
     HRESULT (STDMETHODCALLTYPE *GetSRGS)(
-        ITfInputScope2 *This,
-        BSTR *pbstrSRGS);
+                     ITfInputScope2 *This,
+                     BSTR *pbstrSRGS);
 
     HRESULT (STDMETHODCALLTYPE *GetXML)(
-        ITfInputScope2 *This,
-        BSTR *pbstrXML);
+                     ITfInputScope2 *This,
+                     BSTR *pbstrXML);
 
     /*** ITfInputScope2 methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumWordList)(
-        ITfInputScope2 *This,
-        IEnumString **ppEnumString);
+                     ITfInputScope2 *This,
+                     IEnumString **ppEnumString);
 
     END_INTERFACE
 } ITfInputScope2Vtbl;
@@ -380,10 +380,10 @@ static FORCEINLINE HRESULT ITfInputScope2_EnumWordList(ITfInputScope2* This,IEnu
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

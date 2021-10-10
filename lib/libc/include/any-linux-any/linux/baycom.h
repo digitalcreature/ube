@@ -31,7 +31,7 @@ struct baycom_ioctl {
 /*
  * ioctl values change for baycom
  */
-#define BAYCOMCTL_GETDEBUG       0x92
+#define BAYCOMCTL_GETDEBUG                    0x92
 
 /* -------------------------------------------------------------------- */
 

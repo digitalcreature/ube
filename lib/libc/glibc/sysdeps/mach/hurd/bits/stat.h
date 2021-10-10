@@ -59,11 +59,11 @@ struct stat
 
 #ifdef __USE_XOPEN2K8
     /* Nanosecond resolution timestamps are stored in a format
-       equivalent to 'struct timespec'.  This is the type used
-       whenever possible but the Unix namespace rules do not allow the
-       identifier 'timespec' to appear in the <sys/stat.h> header.
-       Therefore we have to handle the use of this header in strictly
-       standard-compliant sources special.  */
+                    equivalent to 'struct timespec'.  This is the type used
+                    whenever possible but the Unix namespace rules do not allow the
+                    identifier 'timespec' to appear in the <sys/stat.h> header.
+                    Therefore we have to handle the use of this header in strictly
+                    standard-compliant sources special.  */
     struct timespec st_atim;		/* Time of last access.  */
     struct timespec st_mtim;		/* Time of last modification.  */
     struct timespec st_ctim;		/* Time of last status change.  */
@@ -123,11 +123,11 @@ struct stat64
 
 #ifdef __USE_XOPEN2K8
     /* Nanosecond resolution timestamps are stored in a format
-       equivalent to 'struct timespec'.  This is the type used
-       whenever possible but the Unix namespace rules do not allow the
-       identifier 'timespec' to appear in the <sys/stat.h> header.
-       Therefore we have to handle the use of this header in strictly
-       standard-compliant sources special.  */
+                    equivalent to 'struct timespec'.  This is the type used
+                    whenever possible but the Unix namespace rules do not allow the
+                    identifier 'timespec' to appear in the <sys/stat.h> header.
+                    Therefore we have to handle the use of this header in strictly
+                    standard-compliant sources special.  */
     struct timespec st_atim;		/* Time of last access.  */
     struct timespec st_mtim;		/* Time of last modification.  */
     struct timespec st_ctim;		/* Time of last status change.  */
@@ -198,7 +198,7 @@ struct stat64
    users are treated as "others" for purposes of access control.  */
 #define S_IUSEUNK	000000400000
 /* Mask of protection bits for unknown users (no effective IDs at all).  */
-#define S_IUNKNOWN      000007000000
+#define S_IUNKNOWN                   000007000000
 /* Shift S_IREAD, S_IWRITE, S_IEXEC left this many bits to produce the
    protection bits for unknown users.  */
 #define S_IUNKSHIFT	12

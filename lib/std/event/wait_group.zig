@@ -25,72 +25,72 @@ pub fn WaitGroupGeneric(comptime counter_size: u16) type {
     const CounterType = std.meta.Int(.unsigned, counter_size);
 
     const global_event_loop = Loop.instance orelse
-        @compileError("std.event.WaitGroup currently only works with event-based I/O");
+                     @compileError("std.event.WaitGroup currently only works with event-based I/O");
 
     return struct {
-        counter: CounterType = 0,
-        max_counter: CounterType = std.math.maxInt(CounterType),
-        mutex: std.Mutex = .{},
-        waiters: ?*Waiter = null,
-        const Waiter = struct {
-            next: ?*Waiter,
-            tail: *Waiter,
-            node: Loop.NextTickNode,
-        };
+                     counter: CounterType = 0,
+                     max_counter: CounterType = std.math.maxInt(CounterType),
+                     mutex: std.Mutex = .{},
+                     waiters: ?*Waiter = null,
+                     const Waiter = struct {
+                                      next: ?*Waiter,
+                                      tail: *Waiter,
+                                      node: Loop.NextTickNode,
+                     };
 
-        const Self = @This();
-        pub fn begin(self: *Self, count: CounterType) error{Overflow}!void {
-            const held = self.mutex.acquire();
-            defer held.release();
+                     const Self = @This();
+                     pub fn begin(self: *Self, count: CounterType) error{Overflow}!void {
+                                      const held = self.mutex.acquire();
+                                      defer held.release();
 
-            const new_counter = try std.math.add(CounterType, self.counter, count);
-            if (new_counter > self.max_counter) return error.Overflow;
-            self.counter = new_counter;
-        }
+                                      const new_counter = try std.math.add(CounterType, self.counter, count);
+                                      if (new_counter > self.max_counter) return error.Overflow;
+                                      self.counter = new_counter;
+                     }
 
-        pub fn finish(self: *Self, count: CounterType) void {
-            var waiters = blk: {
-                const held = self.mutex.acquire();
-                defer held.release();
-                self.counter = std.math.sub(CounterType, self.counter, count) catch unreachable;
-                if (self.counter == 0) {
-                    const temp = self.waiters;
-                    self.waiters = null;
-                    break :blk temp;
-                }
-                break :blk null;
-            };
+                     pub fn finish(self: *Self, count: CounterType) void {
+                                      var waiters = blk: {
+                                          const held = self.mutex.acquire();
+                                          defer held.release();
+                                          self.counter = std.math.sub(CounterType, self.counter, count) catch unreachable;
+                                          if (self.counter == 0) {
+                                                           const temp = self.waiters;
+                                                           self.waiters = null;
+                                                           break :blk temp;
+                                          }
+                                          break :blk null;
+                                      };
 
-            // We don't need to hold the lock to reschedule any potential waiter.
-            while (waiters) |w| {
-                const temp_w = w;
-                waiters = w.next;
-                global_event_loop.onNextTick(&temp_w.node);
-            }
-        }
+                                      // We don't need to hold the lock to reschedule any potential waiter.
+                                      while (waiters) |w| {
+                                          const temp_w = w;
+                                          waiters = w.next;
+                                          global_event_loop.onNextTick(&temp_w.node);
+                                      }
+                     }
 
-        pub fn wait(self: *Self) void {
-            const held = self.mutex.acquire();
+                     pub fn wait(self: *Self) void {
+                                      const held = self.mutex.acquire();
 
-            if (self.counter == 0) {
-                held.release();
-                return;
-            }
+                                      if (self.counter == 0) {
+                                          held.release();
+                                          return;
+                                      }
 
-            var self_waiter: Waiter = undefined;
-            self_waiter.node.data = @frame();
-            if (self.waiters) |head| {
-                head.tail.next = &self_waiter;
-                head.tail = &self_waiter;
-            } else {
-                self.waiters = &self_waiter;
-                self_waiter.tail = &self_waiter;
-                self_waiter.next = null;
-            }
-            suspend {
-                held.release();
-            }
-        }
+                                      var self_waiter: Waiter = undefined;
+                                      self_waiter.node.data = @frame();
+                                      if (self.waiters) |head| {
+                                          head.tail.next = &self_waiter;
+                                          head.tail = &self_waiter;
+                                      } else {
+                                          self.waiters = &self_waiter;
+                                          self_waiter.tail = &self_waiter;
+                                          self_waiter.next = null;
+                                      }
+                                      suspend {
+                                          held.release();
+                                      }
+                     }
     };
 }
 

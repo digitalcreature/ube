@@ -682,16 +682,16 @@ extern "C" {
 #else
   typedef struct IComponentDataVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IComponentData *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IComponentData *This);
-      ULONG (WINAPI *Release)(IComponentData *This);
-      HRESULT (WINAPI *Initialize)(IComponentData *This,LPUNKNOWN pUnknown);
-      HRESULT (WINAPI *CreateComponent)(IComponentData *This,LPCOMPONENT *ppComponent);
-      HRESULT (WINAPI *Notify)(IComponentData *This,LPDATAOBJECT lpDataObject,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
-      HRESULT (WINAPI *Destroy)(IComponentData *This);
-      HRESULT (WINAPI *QueryDataObject)(IComponentData *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDATAOBJECT *ppDataObject);
-      HRESULT (WINAPI *GetDisplayInfo)(IComponentData *This,SCOPEDATAITEM *pScopeDataItem);
-      HRESULT (WINAPI *CompareObjects)(IComponentData *This,LPDATAOBJECT lpDataObjectA,LPDATAOBJECT lpDataObjectB);
+                   HRESULT (WINAPI *QueryInterface)(IComponentData *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IComponentData *This);
+                   ULONG (WINAPI *Release)(IComponentData *This);
+                   HRESULT (WINAPI *Initialize)(IComponentData *This,LPUNKNOWN pUnknown);
+                   HRESULT (WINAPI *CreateComponent)(IComponentData *This,LPCOMPONENT *ppComponent);
+                   HRESULT (WINAPI *Notify)(IComponentData *This,LPDATAOBJECT lpDataObject,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
+                   HRESULT (WINAPI *Destroy)(IComponentData *This);
+                   HRESULT (WINAPI *QueryDataObject)(IComponentData *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDATAOBJECT *ppDataObject);
+                   HRESULT (WINAPI *GetDisplayInfo)(IComponentData *This,SCOPEDATAITEM *pScopeDataItem);
+                   HRESULT (WINAPI *CompareObjects)(IComponentData *This,LPDATAOBJECT lpDataObjectA,LPDATAOBJECT lpDataObjectB);
     END_INTERFACE
   } IComponentDataVtbl;
   struct IComponentData {
@@ -743,16 +743,16 @@ extern "C" {
 #else
   typedef struct IComponentVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IComponent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IComponent *This);
-      ULONG (WINAPI *Release)(IComponent *This);
-      HRESULT (WINAPI *Initialize)(IComponent *This,LPCONSOLE lpConsole);
-      HRESULT (WINAPI *Notify)(IComponent *This,LPDATAOBJECT lpDataObject,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
-      HRESULT (WINAPI *Destroy)(IComponent *This,MMC_COOKIE cookie);
-      HRESULT (WINAPI *QueryDataObject)(IComponent *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDATAOBJECT *ppDataObject);
-      HRESULT (WINAPI *GetResultViewType)(IComponent *This,MMC_COOKIE cookie,LPOLESTR *ppViewType,__LONG32 *pViewOptions);
-      HRESULT (WINAPI *GetDisplayInfo)(IComponent *This,RESULTDATAITEM *pResultDataItem);
-      HRESULT (WINAPI *CompareObjects)(IComponent *This,LPDATAOBJECT lpDataObjectA,LPDATAOBJECT lpDataObjectB);
+                   HRESULT (WINAPI *QueryInterface)(IComponent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IComponent *This);
+                   ULONG (WINAPI *Release)(IComponent *This);
+                   HRESULT (WINAPI *Initialize)(IComponent *This,LPCONSOLE lpConsole);
+                   HRESULT (WINAPI *Notify)(IComponent *This,LPDATAOBJECT lpDataObject,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
+                   HRESULT (WINAPI *Destroy)(IComponent *This,MMC_COOKIE cookie);
+                   HRESULT (WINAPI *QueryDataObject)(IComponent *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDATAOBJECT *ppDataObject);
+                   HRESULT (WINAPI *GetResultViewType)(IComponent *This,MMC_COOKIE cookie,LPOLESTR *ppViewType,__LONG32 *pViewOptions);
+                   HRESULT (WINAPI *GetDisplayInfo)(IComponent *This,RESULTDATAITEM *pResultDataItem);
+                   HRESULT (WINAPI *CompareObjects)(IComponent *This,LPDATAOBJECT lpDataObjectA,LPDATAOBJECT lpDataObjectB);
     END_INTERFACE
   } IComponentVtbl;
   struct IComponent {
@@ -798,10 +798,10 @@ extern "C" {
 #else
   typedef struct IResultDataCompareVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResultDataCompare *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResultDataCompare *This);
-      ULONG (WINAPI *Release)(IResultDataCompare *This);
-      HRESULT (WINAPI *Compare)(IResultDataCompare *This,LPARAM lUserParam,MMC_COOKIE cookieA,MMC_COOKIE cookieB,int *pnResult);
+                   HRESULT (WINAPI *QueryInterface)(IResultDataCompare *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResultDataCompare *This);
+                   ULONG (WINAPI *Release)(IResultDataCompare *This);
+                   HRESULT (WINAPI *Compare)(IResultDataCompare *This,LPARAM lUserParam,MMC_COOKIE cookieA,MMC_COOKIE cookieB,int *pnResult);
     END_INTERFACE
   } IResultDataCompareVtbl;
   struct IResultDataCompare {
@@ -831,12 +831,12 @@ extern "C" {
 #else
   typedef struct IResultOwnerDataVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResultOwnerData *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResultOwnerData *This);
-      ULONG (WINAPI *Release)(IResultOwnerData *This);
-      HRESULT (WINAPI *FindItem)(IResultOwnerData *This,LPRESULTFINDINFO pFindInfo,int *pnFoundIndex);
-      HRESULT (WINAPI *CacheHint)(IResultOwnerData *This,int nStartIndex,int nEndIndex);
-      HRESULT (WINAPI *SortItems)(IResultOwnerData *This,int nColumn,DWORD dwSortOptions,LPARAM lUserParam);
+                   HRESULT (WINAPI *QueryInterface)(IResultOwnerData *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResultOwnerData *This);
+                   ULONG (WINAPI *Release)(IResultOwnerData *This);
+                   HRESULT (WINAPI *FindItem)(IResultOwnerData *This,LPRESULTFINDINFO pFindInfo,int *pnFoundIndex);
+                   HRESULT (WINAPI *CacheHint)(IResultOwnerData *This,int nStartIndex,int nEndIndex);
+                   HRESULT (WINAPI *SortItems)(IResultOwnerData *This,int nColumn,DWORD dwSortOptions,LPARAM lUserParam);
     END_INTERFACE
   } IResultOwnerDataVtbl;
   struct IResultOwnerData {
@@ -880,20 +880,20 @@ extern "C" {
 #else
   typedef struct IConsoleVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IConsole *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IConsole *This);
-      ULONG (WINAPI *Release)(IConsole *This);
-      HRESULT (WINAPI *SetHeader)(IConsole *This,LPHEADERCTRL pHeader);
-      HRESULT (WINAPI *SetToolbar)(IConsole *This,LPTOOLBAR pToolbar);
-      HRESULT (WINAPI *QueryResultView)(IConsole *This,LPUNKNOWN *pUnknown);
-      HRESULT (WINAPI *QueryScopeImageList)(IConsole *This,LPIMAGELIST *ppImageList);
-      HRESULT (WINAPI *QueryResultImageList)(IConsole *This,LPIMAGELIST *ppImageList);
-      HRESULT (WINAPI *UpdateAllViews)(IConsole *This,LPDATAOBJECT lpDataObject,LPARAM data,LONG_PTR hint);
-      HRESULT (WINAPI *MessageBox)(IConsole *This,LPCWSTR lpszText,LPCWSTR lpszTitle,UINT fuStyle,int *piRetval);
-      HRESULT (WINAPI *QueryConsoleVerb)(IConsole *This,LPCONSOLEVERB *ppConsoleVerb);
-      HRESULT (WINAPI *SelectScopeItem)(IConsole *This,HSCOPEITEM hScopeItem);
-      HRESULT (WINAPI *GetMainWindow)(IConsole *This,HWND *phwnd);
-      HRESULT (WINAPI *NewWindow)(IConsole *This,HSCOPEITEM hScopeItem,unsigned __LONG32 lOptions);
+                   HRESULT (WINAPI *QueryInterface)(IConsole *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IConsole *This);
+                   ULONG (WINAPI *Release)(IConsole *This);
+                   HRESULT (WINAPI *SetHeader)(IConsole *This,LPHEADERCTRL pHeader);
+                   HRESULT (WINAPI *SetToolbar)(IConsole *This,LPTOOLBAR pToolbar);
+                   HRESULT (WINAPI *QueryResultView)(IConsole *This,LPUNKNOWN *pUnknown);
+                   HRESULT (WINAPI *QueryScopeImageList)(IConsole *This,LPIMAGELIST *ppImageList);
+                   HRESULT (WINAPI *QueryResultImageList)(IConsole *This,LPIMAGELIST *ppImageList);
+                   HRESULT (WINAPI *UpdateAllViews)(IConsole *This,LPDATAOBJECT lpDataObject,LPARAM data,LONG_PTR hint);
+                   HRESULT (WINAPI *MessageBox)(IConsole *This,LPCWSTR lpszText,LPCWSTR lpszTitle,UINT fuStyle,int *piRetval);
+                   HRESULT (WINAPI *QueryConsoleVerb)(IConsole *This,LPCONSOLEVERB *ppConsoleVerb);
+                   HRESULT (WINAPI *SelectScopeItem)(IConsole *This,HSCOPEITEM hScopeItem);
+                   HRESULT (WINAPI *GetMainWindow)(IConsole *This,HWND *phwnd);
+                   HRESULT (WINAPI *NewWindow)(IConsole *This,HSCOPEITEM hScopeItem,unsigned __LONG32 lOptions);
     END_INTERFACE
   } IConsoleVtbl;
   struct IConsole {
@@ -960,15 +960,15 @@ extern "C" {
 #else
   typedef struct IHeaderCtrlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IHeaderCtrl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IHeaderCtrl *This);
-      ULONG (WINAPI *Release)(IHeaderCtrl *This);
-      HRESULT (WINAPI *InsertColumn)(IHeaderCtrl *This,int nCol,LPCWSTR title,int nFormat,int nWidth);
-      HRESULT (WINAPI *DeleteColumn)(IHeaderCtrl *This,int nCol);
-      HRESULT (WINAPI *SetColumnText)(IHeaderCtrl *This,int nCol,LPCWSTR title);
-      HRESULT (WINAPI *GetColumnText)(IHeaderCtrl *This,int nCol,LPOLESTR *pText);
-      HRESULT (WINAPI *SetColumnWidth)(IHeaderCtrl *This,int nCol,int nWidth);
-      HRESULT (WINAPI *GetColumnWidth)(IHeaderCtrl *This,int nCol,int *pWidth);
+                   HRESULT (WINAPI *QueryInterface)(IHeaderCtrl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IHeaderCtrl *This);
+                   ULONG (WINAPI *Release)(IHeaderCtrl *This);
+                   HRESULT (WINAPI *InsertColumn)(IHeaderCtrl *This,int nCol,LPCWSTR title,int nFormat,int nWidth);
+                   HRESULT (WINAPI *DeleteColumn)(IHeaderCtrl *This,int nCol);
+                   HRESULT (WINAPI *SetColumnText)(IHeaderCtrl *This,int nCol,LPCWSTR title);
+                   HRESULT (WINAPI *GetColumnText)(IHeaderCtrl *This,int nCol,LPOLESTR *pText);
+                   HRESULT (WINAPI *SetColumnWidth)(IHeaderCtrl *This,int nCol,int nWidth);
+                   HRESULT (WINAPI *GetColumnWidth)(IHeaderCtrl *This,int nCol,int *pWidth);
     END_INTERFACE
   } IHeaderCtrlVtbl;
   struct IHeaderCtrl {
@@ -1038,10 +1038,10 @@ extern "C" {
 #else
   typedef struct IContextMenuCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IContextMenuCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IContextMenuCallback *This);
-      ULONG (WINAPI *Release)(IContextMenuCallback *This);
-      HRESULT (WINAPI *AddItem)(IContextMenuCallback *This,CONTEXTMENUITEM *pItem);
+                   HRESULT (WINAPI *QueryInterface)(IContextMenuCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IContextMenuCallback *This);
+                   ULONG (WINAPI *Release)(IContextMenuCallback *This);
+                   HRESULT (WINAPI *AddItem)(IContextMenuCallback *This,CONTEXTMENUITEM *pItem);
     END_INTERFACE
   } IContextMenuCallbackVtbl;
   struct IContextMenuCallback {
@@ -1072,14 +1072,14 @@ extern "C" {
 #else
   typedef struct IContextMenuProviderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IContextMenuProvider *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IContextMenuProvider *This);
-      ULONG (WINAPI *Release)(IContextMenuProvider *This);
-      HRESULT (WINAPI *AddItem)(IContextMenuProvider *This,CONTEXTMENUITEM *pItem);
-      HRESULT (WINAPI *EmptyMenuList)(IContextMenuProvider *This);
-      HRESULT (WINAPI *AddPrimaryExtensionItems)(IContextMenuProvider *This,LPUNKNOWN piExtension,LPDATAOBJECT piDataObject);
-      HRESULT (WINAPI *AddThirdPartyExtensionItems)(IContextMenuProvider *This,LPDATAOBJECT piDataObject);
-      HRESULT (WINAPI *ShowContextMenu)(IContextMenuProvider *This,HWND hwndParent,__LONG32 xPos,__LONG32 yPos,__LONG32 *plSelected);
+                   HRESULT (WINAPI *QueryInterface)(IContextMenuProvider *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IContextMenuProvider *This);
+                   ULONG (WINAPI *Release)(IContextMenuProvider *This);
+                   HRESULT (WINAPI *AddItem)(IContextMenuProvider *This,CONTEXTMENUITEM *pItem);
+                   HRESULT (WINAPI *EmptyMenuList)(IContextMenuProvider *This);
+                   HRESULT (WINAPI *AddPrimaryExtensionItems)(IContextMenuProvider *This,LPUNKNOWN piExtension,LPDATAOBJECT piDataObject);
+                   HRESULT (WINAPI *AddThirdPartyExtensionItems)(IContextMenuProvider *This,LPDATAOBJECT piDataObject);
+                   HRESULT (WINAPI *ShowContextMenu)(IContextMenuProvider *This,HWND hwndParent,__LONG32 xPos,__LONG32 yPos,__LONG32 *plSelected);
     END_INTERFACE
   } IContextMenuProviderVtbl;
   struct IContextMenuProvider {
@@ -1118,11 +1118,11 @@ extern "C" {
 #else
   typedef struct IExtendContextMenuVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IExtendContextMenu *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IExtendContextMenu *This);
-      ULONG (WINAPI *Release)(IExtendContextMenu *This);
-      HRESULT (WINAPI *AddMenuItems)(IExtendContextMenu *This,LPDATAOBJECT piDataObject,LPCONTEXTMENUCALLBACK piCallback,__LONG32 *pInsertionAllowed);
-      HRESULT (WINAPI *Command)(IExtendContextMenu *This,__LONG32 lCommandID,LPDATAOBJECT piDataObject);
+                   HRESULT (WINAPI *QueryInterface)(IExtendContextMenu *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IExtendContextMenu *This);
+                   ULONG (WINAPI *Release)(IExtendContextMenu *This);
+                   HRESULT (WINAPI *AddMenuItems)(IExtendContextMenu *This,LPDATAOBJECT piDataObject,LPCONTEXTMENUCALLBACK piCallback,__LONG32 *pInsertionAllowed);
+                   HRESULT (WINAPI *Command)(IExtendContextMenu *This,__LONG32 lCommandID,LPDATAOBJECT piDataObject);
     END_INTERFACE
   } IExtendContextMenuVtbl;
   struct IExtendContextMenu {
@@ -1164,11 +1164,11 @@ extern "C" {
 #else
   typedef struct IImageListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IImageList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IImageList *This);
-      ULONG (WINAPI *Release)(IImageList *This);
-      HRESULT (WINAPI *ImageListSetIcon)(IImageList *This,LONG_PTR *pIcon,__LONG32 nLoc);
-      HRESULT (WINAPI *ImageListSetStrip)(IImageList *This,LONG_PTR *pBMapSm,LONG_PTR *pBMapLg,__LONG32 nStartLoc,COLORREF cMask);
+                   HRESULT (WINAPI *QueryInterface)(IImageList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IImageList *This);
+                   ULONG (WINAPI *Release)(IImageList *This);
+                   HRESULT (WINAPI *ImageListSetIcon)(IImageList *This,LONG_PTR *pIcon,__LONG32 nLoc);
+                   HRESULT (WINAPI *ImageListSetStrip)(IImageList *This,LONG_PTR *pBMapSm,LONG_PTR *pBMapLg,__LONG32 nStartLoc,COLORREF cMask);
     END_INTERFACE
   } IImageListVtbl;
   struct IImageList {
@@ -1213,24 +1213,24 @@ extern "C" {
 #else
   typedef struct IResultDataVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResultData *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResultData *This);
-      ULONG (WINAPI *Release)(IResultData *This);
-      HRESULT (WINAPI *InsertItem)(IResultData *This,LPRESULTDATAITEM item);
-      HRESULT (WINAPI *DeleteItem)(IResultData *This,HRESULTITEM itemID,int nCol);
-      HRESULT (WINAPI *FindItemByLParam)(IResultData *This,LPARAM lParam,HRESULTITEM *pItemID);
-      HRESULT (WINAPI *DeleteAllRsltItems)(IResultData *This);
-      HRESULT (WINAPI *SetItem)(IResultData *This,LPRESULTDATAITEM item);
-      HRESULT (WINAPI *GetItem)(IResultData *This,LPRESULTDATAITEM item);
-      HRESULT (WINAPI *GetNextItem)(IResultData *This,LPRESULTDATAITEM item);
-      HRESULT (WINAPI *ModifyItemState)(IResultData *This,int nIndex,HRESULTITEM itemID,UINT uAdd,UINT uRemove);
-      HRESULT (WINAPI *ModifyViewStyle)(IResultData *This,MMC_RESULT_VIEW_STYLE add,MMC_RESULT_VIEW_STYLE remove);
-      HRESULT (WINAPI *SetViewMode)(IResultData *This,__LONG32 lViewMode);
-      HRESULT (WINAPI *GetViewMode)(IResultData *This,__LONG32 *lViewMode);
-      HRESULT (WINAPI *UpdateItem)(IResultData *This,HRESULTITEM itemID);
-      HRESULT (WINAPI *Sort)(IResultData *This,int nColumn,DWORD dwSortOptions,LPARAM lUserParam);
-      HRESULT (WINAPI *SetDescBarText)(IResultData *This,LPOLESTR DescText);
-      HRESULT (WINAPI *SetItemCount)(IResultData *This,int nItemCount,DWORD dwOptions);
+                   HRESULT (WINAPI *QueryInterface)(IResultData *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResultData *This);
+                   ULONG (WINAPI *Release)(IResultData *This);
+                   HRESULT (WINAPI *InsertItem)(IResultData *This,LPRESULTDATAITEM item);
+                   HRESULT (WINAPI *DeleteItem)(IResultData *This,HRESULTITEM itemID,int nCol);
+                   HRESULT (WINAPI *FindItemByLParam)(IResultData *This,LPARAM lParam,HRESULTITEM *pItemID);
+                   HRESULT (WINAPI *DeleteAllRsltItems)(IResultData *This);
+                   HRESULT (WINAPI *SetItem)(IResultData *This,LPRESULTDATAITEM item);
+                   HRESULT (WINAPI *GetItem)(IResultData *This,LPRESULTDATAITEM item);
+                   HRESULT (WINAPI *GetNextItem)(IResultData *This,LPRESULTDATAITEM item);
+                   HRESULT (WINAPI *ModifyItemState)(IResultData *This,int nIndex,HRESULTITEM itemID,UINT uAdd,UINT uRemove);
+                   HRESULT (WINAPI *ModifyViewStyle)(IResultData *This,MMC_RESULT_VIEW_STYLE add,MMC_RESULT_VIEW_STYLE remove);
+                   HRESULT (WINAPI *SetViewMode)(IResultData *This,__LONG32 lViewMode);
+                   HRESULT (WINAPI *GetViewMode)(IResultData *This,__LONG32 *lViewMode);
+                   HRESULT (WINAPI *UpdateItem)(IResultData *This,HRESULTITEM itemID);
+                   HRESULT (WINAPI *Sort)(IResultData *This,int nColumn,DWORD dwSortOptions,LPARAM lUserParam);
+                   HRESULT (WINAPI *SetDescBarText)(IResultData *This,LPOLESTR DescText);
+                   HRESULT (WINAPI *SetItemCount)(IResultData *This,int nItemCount,DWORD dwOptions);
     END_INTERFACE
   } IResultDataVtbl;
   struct IResultData {
@@ -1306,16 +1306,16 @@ extern "C" {
 #else
   typedef struct IConsoleNameSpaceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IConsoleNameSpace *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IConsoleNameSpace *This);
-      ULONG (WINAPI *Release)(IConsoleNameSpace *This);
-      HRESULT (WINAPI *InsertItem)(IConsoleNameSpace *This,LPSCOPEDATAITEM item);
-      HRESULT (WINAPI *DeleteItem)(IConsoleNameSpace *This,HSCOPEITEM hItem,__LONG32 fDeleteThis);
-      HRESULT (WINAPI *SetItem)(IConsoleNameSpace *This,LPSCOPEDATAITEM item);
-      HRESULT (WINAPI *GetItem)(IConsoleNameSpace *This,LPSCOPEDATAITEM item);
-      HRESULT (WINAPI *GetChildItem)(IConsoleNameSpace *This,HSCOPEITEM item,HSCOPEITEM *pItemChild,MMC_COOKIE *pCookie);
-      HRESULT (WINAPI *GetNextItem)(IConsoleNameSpace *This,HSCOPEITEM item,HSCOPEITEM *pItemNext,MMC_COOKIE *pCookie);
-      HRESULT (WINAPI *GetParentItem)(IConsoleNameSpace *This,HSCOPEITEM item,HSCOPEITEM *pItemParent,MMC_COOKIE *pCookie);
+                   HRESULT (WINAPI *QueryInterface)(IConsoleNameSpace *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IConsoleNameSpace *This);
+                   ULONG (WINAPI *Release)(IConsoleNameSpace *This);
+                   HRESULT (WINAPI *InsertItem)(IConsoleNameSpace *This,LPSCOPEDATAITEM item);
+                   HRESULT (WINAPI *DeleteItem)(IConsoleNameSpace *This,HSCOPEITEM hItem,__LONG32 fDeleteThis);
+                   HRESULT (WINAPI *SetItem)(IConsoleNameSpace *This,LPSCOPEDATAITEM item);
+                   HRESULT (WINAPI *GetItem)(IConsoleNameSpace *This,LPSCOPEDATAITEM item);
+                   HRESULT (WINAPI *GetChildItem)(IConsoleNameSpace *This,HSCOPEITEM item,HSCOPEITEM *pItemChild,MMC_COOKIE *pCookie);
+                   HRESULT (WINAPI *GetNextItem)(IConsoleNameSpace *This,HSCOPEITEM item,HSCOPEITEM *pItemNext,MMC_COOKIE *pCookie);
+                   HRESULT (WINAPI *GetParentItem)(IConsoleNameSpace *This,HSCOPEITEM item,HSCOPEITEM *pItemParent,MMC_COOKIE *pCookie);
     END_INTERFACE
   } IConsoleNameSpaceVtbl;
   struct IConsoleNameSpace {
@@ -1362,18 +1362,18 @@ extern "C" {
 #else
   typedef struct IConsoleNameSpace2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IConsoleNameSpace2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IConsoleNameSpace2 *This);
-      ULONG (WINAPI *Release)(IConsoleNameSpace2 *This);
-      HRESULT (WINAPI *InsertItem)(IConsoleNameSpace2 *This,LPSCOPEDATAITEM item);
-      HRESULT (WINAPI *DeleteItem)(IConsoleNameSpace2 *This,HSCOPEITEM hItem,__LONG32 fDeleteThis);
-      HRESULT (WINAPI *SetItem)(IConsoleNameSpace2 *This,LPSCOPEDATAITEM item);
-      HRESULT (WINAPI *GetItem)(IConsoleNameSpace2 *This,LPSCOPEDATAITEM item);
-      HRESULT (WINAPI *GetChildItem)(IConsoleNameSpace2 *This,HSCOPEITEM item,HSCOPEITEM *pItemChild,MMC_COOKIE *pCookie);
-      HRESULT (WINAPI *GetNextItem)(IConsoleNameSpace2 *This,HSCOPEITEM item,HSCOPEITEM *pItemNext,MMC_COOKIE *pCookie);
-      HRESULT (WINAPI *GetParentItem)(IConsoleNameSpace2 *This,HSCOPEITEM item,HSCOPEITEM *pItemParent,MMC_COOKIE *pCookie);
-      HRESULT (WINAPI *Expand)(IConsoleNameSpace2 *This,HSCOPEITEM hItem);
-      HRESULT (WINAPI *AddExtension)(IConsoleNameSpace2 *This,HSCOPEITEM hItem,LPCLSID lpClsid);
+                   HRESULT (WINAPI *QueryInterface)(IConsoleNameSpace2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IConsoleNameSpace2 *This);
+                   ULONG (WINAPI *Release)(IConsoleNameSpace2 *This);
+                   HRESULT (WINAPI *InsertItem)(IConsoleNameSpace2 *This,LPSCOPEDATAITEM item);
+                   HRESULT (WINAPI *DeleteItem)(IConsoleNameSpace2 *This,HSCOPEITEM hItem,__LONG32 fDeleteThis);
+                   HRESULT (WINAPI *SetItem)(IConsoleNameSpace2 *This,LPSCOPEDATAITEM item);
+                   HRESULT (WINAPI *GetItem)(IConsoleNameSpace2 *This,LPSCOPEDATAITEM item);
+                   HRESULT (WINAPI *GetChildItem)(IConsoleNameSpace2 *This,HSCOPEITEM item,HSCOPEITEM *pItemChild,MMC_COOKIE *pCookie);
+                   HRESULT (WINAPI *GetNextItem)(IConsoleNameSpace2 *This,HSCOPEITEM item,HSCOPEITEM *pItemNext,MMC_COOKIE *pCookie);
+                   HRESULT (WINAPI *GetParentItem)(IConsoleNameSpace2 *This,HSCOPEITEM item,HSCOPEITEM *pItemParent,MMC_COOKIE *pCookie);
+                   HRESULT (WINAPI *Expand)(IConsoleNameSpace2 *This,HSCOPEITEM hItem);
+                   HRESULT (WINAPI *AddExtension)(IConsoleNameSpace2 *This,HSCOPEITEM hItem,LPCLSID lpClsid);
     END_INTERFACE
   } IConsoleNameSpace2Vtbl;
   struct IConsoleNameSpace2 {
@@ -1416,11 +1416,11 @@ extern "C" {
 #else
   typedef struct IPropertySheetCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPropertySheetCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPropertySheetCallback *This);
-      ULONG (WINAPI *Release)(IPropertySheetCallback *This);
-      HRESULT (WINAPI *AddPage)(IPropertySheetCallback *This,HPROPSHEETPAGE hPage);
-      HRESULT (WINAPI *RemovePage)(IPropertySheetCallback *This,HPROPSHEETPAGE hPage);
+                   HRESULT (WINAPI *QueryInterface)(IPropertySheetCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPropertySheetCallback *This);
+                   ULONG (WINAPI *Release)(IPropertySheetCallback *This);
+                   HRESULT (WINAPI *AddPage)(IPropertySheetCallback *This,HPROPSHEETPAGE hPage);
+                   HRESULT (WINAPI *RemovePage)(IPropertySheetCallback *This,HPROPSHEETPAGE hPage);
     END_INTERFACE
   } IPropertySheetCallbackVtbl;
   struct IPropertySheetCallback {
@@ -1455,14 +1455,14 @@ extern "C" {
 #else
   typedef struct IPropertySheetProviderVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPropertySheetProvider *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPropertySheetProvider *This);
-      ULONG (WINAPI *Release)(IPropertySheetProvider *This);
-      HRESULT (WINAPI *CreatePropertySheet)(IPropertySheetProvider *This,LPCWSTR title,boolean type,MMC_COOKIE cookie,LPDATAOBJECT pIDataObjectm,DWORD dwOptions);
-      HRESULT (WINAPI *FindPropertySheet)(IPropertySheetProvider *This,MMC_COOKIE cookie,LPCOMPONENT lpComponent,LPDATAOBJECT lpDataObject);
-      HRESULT (WINAPI *AddPrimaryPages)(IPropertySheetProvider *This,LPUNKNOWN lpUnknown,WINBOOL bCreateHandle,HWND hNotifyWindow,WINBOOL bScopePane);
-      HRESULT (WINAPI *AddExtensionPages)(IPropertySheetProvider *This);
-      HRESULT (WINAPI *Show)(IPropertySheetProvider *This,LONG_PTR window,int page);
+                   HRESULT (WINAPI *QueryInterface)(IPropertySheetProvider *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPropertySheetProvider *This);
+                   ULONG (WINAPI *Release)(IPropertySheetProvider *This);
+                   HRESULT (WINAPI *CreatePropertySheet)(IPropertySheetProvider *This,LPCWSTR title,boolean type,MMC_COOKIE cookie,LPDATAOBJECT pIDataObjectm,DWORD dwOptions);
+                   HRESULT (WINAPI *FindPropertySheet)(IPropertySheetProvider *This,MMC_COOKIE cookie,LPCOMPONENT lpComponent,LPDATAOBJECT lpDataObject);
+                   HRESULT (WINAPI *AddPrimaryPages)(IPropertySheetProvider *This,LPUNKNOWN lpUnknown,WINBOOL bCreateHandle,HWND hNotifyWindow,WINBOOL bScopePane);
+                   HRESULT (WINAPI *AddExtensionPages)(IPropertySheetProvider *This);
+                   HRESULT (WINAPI *Show)(IPropertySheetProvider *This,LONG_PTR window,int page);
     END_INTERFACE
   } IPropertySheetProviderVtbl;
   struct IPropertySheetProvider {
@@ -1503,11 +1503,11 @@ extern "C" {
 #else
   typedef struct IExtendPropertySheetVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IExtendPropertySheet *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IExtendPropertySheet *This);
-      ULONG (WINAPI *Release)(IExtendPropertySheet *This);
-      HRESULT (WINAPI *CreatePropertyPages)(IExtendPropertySheet *This,LPPROPERTYSHEETCALLBACK lpProvider,LONG_PTR handle,LPDATAOBJECT lpIDataObject);
-      HRESULT (WINAPI *QueryPagesFor)(IExtendPropertySheet *This,LPDATAOBJECT lpDataObject);
+                   HRESULT (WINAPI *QueryInterface)(IExtendPropertySheet *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IExtendPropertySheet *This);
+                   ULONG (WINAPI *Release)(IExtendPropertySheet *This);
+                   HRESULT (WINAPI *CreatePropertyPages)(IExtendPropertySheet *This,LPPROPERTYSHEETCALLBACK lpProvider,LONG_PTR handle,LPDATAOBJECT lpIDataObject);
+                   HRESULT (WINAPI *QueryPagesFor)(IExtendPropertySheet *This,LPDATAOBJECT lpDataObject);
     END_INTERFACE
   } IExtendPropertySheetVtbl;
   struct IExtendPropertySheet {
@@ -1540,12 +1540,12 @@ extern "C" {
 #else
   typedef struct IControlbarVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IControlbar *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IControlbar *This);
-      ULONG (WINAPI *Release)(IControlbar *This);
-      HRESULT (WINAPI *Create)(IControlbar *This,MMC_CONTROL_TYPE nType,LPEXTENDCONTROLBAR pExtendControlbar,LPUNKNOWN *ppUnknown);
-      HRESULT (WINAPI *Attach)(IControlbar *This,MMC_CONTROL_TYPE nType,LPUNKNOWN lpUnknown);
-      HRESULT (WINAPI *Detach)(IControlbar *This,LPUNKNOWN lpUnknown);
+                   HRESULT (WINAPI *QueryInterface)(IControlbar *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IControlbar *This);
+                   ULONG (WINAPI *Release)(IControlbar *This);
+                   HRESULT (WINAPI *Create)(IControlbar *This,MMC_CONTROL_TYPE nType,LPEXTENDCONTROLBAR pExtendControlbar,LPUNKNOWN *ppUnknown);
+                   HRESULT (WINAPI *Attach)(IControlbar *This,MMC_CONTROL_TYPE nType,LPUNKNOWN lpUnknown);
+                   HRESULT (WINAPI *Detach)(IControlbar *This,LPUNKNOWN lpUnknown);
     END_INTERFACE
   } IControlbarVtbl;
   struct IControlbar {
@@ -1580,11 +1580,11 @@ extern "C" {
 #else
   typedef struct IExtendControlbarVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IExtendControlbar *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IExtendControlbar *This);
-      ULONG (WINAPI *Release)(IExtendControlbar *This);
-      HRESULT (WINAPI *SetControlbar)(IExtendControlbar *This,LPCONTROLBAR pControlbar);
-      HRESULT (WINAPI *ControlbarNotify)(IExtendControlbar *This,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
+                   HRESULT (WINAPI *QueryInterface)(IExtendControlbar *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IExtendControlbar *This);
+                   ULONG (WINAPI *Release)(IExtendControlbar *This);
+                   HRESULT (WINAPI *SetControlbar)(IExtendControlbar *This,LPCONTROLBAR pControlbar);
+                   HRESULT (WINAPI *ControlbarNotify)(IExtendControlbar *This,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
     END_INTERFACE
   } IExtendControlbarVtbl;
   struct IExtendControlbar {
@@ -1620,15 +1620,15 @@ extern "C" {
 #else
   typedef struct IToolbarVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IToolbar *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IToolbar *This);
-      ULONG (WINAPI *Release)(IToolbar *This);
-      HRESULT (WINAPI *AddBitmap)(IToolbar *This,int nImages,HBITMAP hbmp,int cxSize,int cySize,COLORREF crMask);
-      HRESULT (WINAPI *AddButtons)(IToolbar *This,int nButtons,LPMMCBUTTON lpButtons);
-      HRESULT (WINAPI *InsertButton)(IToolbar *This,int nIndex,LPMMCBUTTON lpButton);
-      HRESULT (WINAPI *DeleteButton)(IToolbar *This,int nIndex);
-      HRESULT (WINAPI *GetButtonState)(IToolbar *This,int idCommand,MMC_BUTTON_STATE nState,WINBOOL *pState);
-      HRESULT (WINAPI *SetButtonState)(IToolbar *This,int idCommand,MMC_BUTTON_STATE nState,WINBOOL bState);
+                   HRESULT (WINAPI *QueryInterface)(IToolbar *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IToolbar *This);
+                   ULONG (WINAPI *Release)(IToolbar *This);
+                   HRESULT (WINAPI *AddBitmap)(IToolbar *This,int nImages,HBITMAP hbmp,int cxSize,int cySize,COLORREF crMask);
+                   HRESULT (WINAPI *AddButtons)(IToolbar *This,int nButtons,LPMMCBUTTON lpButtons);
+                   HRESULT (WINAPI *InsertButton)(IToolbar *This,int nIndex,LPMMCBUTTON lpButton);
+                   HRESULT (WINAPI *DeleteButton)(IToolbar *This,int nIndex);
+                   HRESULT (WINAPI *GetButtonState)(IToolbar *This,int idCommand,MMC_BUTTON_STATE nState,WINBOOL *pState);
+                   HRESULT (WINAPI *SetButtonState)(IToolbar *This,int idCommand,MMC_BUTTON_STATE nState,WINBOOL bState);
     END_INTERFACE
   } IToolbarVtbl;
   struct IToolbar {
@@ -1674,13 +1674,13 @@ extern "C" {
 #else
   typedef struct IConsoleVerbVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IConsoleVerb *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IConsoleVerb *This);
-      ULONG (WINAPI *Release)(IConsoleVerb *This);
-      HRESULT (WINAPI *GetVerbState)(IConsoleVerb *This,MMC_CONSOLE_VERB eCmdID,MMC_BUTTON_STATE nState,WINBOOL *pState);
-      HRESULT (WINAPI *SetVerbState)(IConsoleVerb *This,MMC_CONSOLE_VERB eCmdID,MMC_BUTTON_STATE nState,WINBOOL bState);
-      HRESULT (WINAPI *SetDefaultVerb)(IConsoleVerb *This,MMC_CONSOLE_VERB eCmdID);
-      HRESULT (WINAPI *GetDefaultVerb)(IConsoleVerb *This,MMC_CONSOLE_VERB *peCmdID);
+                   HRESULT (WINAPI *QueryInterface)(IConsoleVerb *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IConsoleVerb *This);
+                   ULONG (WINAPI *Release)(IConsoleVerb *This);
+                   HRESULT (WINAPI *GetVerbState)(IConsoleVerb *This,MMC_CONSOLE_VERB eCmdID,MMC_BUTTON_STATE nState,WINBOOL *pState);
+                   HRESULT (WINAPI *SetVerbState)(IConsoleVerb *This,MMC_CONSOLE_VERB eCmdID,MMC_BUTTON_STATE nState,WINBOOL bState);
+                   HRESULT (WINAPI *SetDefaultVerb)(IConsoleVerb *This,MMC_CONSOLE_VERB eCmdID);
+                   HRESULT (WINAPI *GetDefaultVerb)(IConsoleVerb *This,MMC_CONSOLE_VERB *peCmdID);
     END_INTERFACE
   } IConsoleVerbVtbl;
   struct IConsoleVerb {
@@ -1721,14 +1721,14 @@ extern "C" {
 #else
   typedef struct ISnapinAboutVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISnapinAbout *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISnapinAbout *This);
-      ULONG (WINAPI *Release)(ISnapinAbout *This);
-      HRESULT (WINAPI *GetSnapinDescription)(ISnapinAbout *This,LPOLESTR *lpDescription);
-      HRESULT (WINAPI *GetProvider)(ISnapinAbout *This,LPOLESTR *lpName);
-      HRESULT (WINAPI *GetSnapinVersion)(ISnapinAbout *This,LPOLESTR *lpVersion);
-      HRESULT (WINAPI *GetSnapinImage)(ISnapinAbout *This,HICON *hAppIcon);
-      HRESULT (WINAPI *GetStaticFolderImage)(ISnapinAbout *This,HBITMAP *hSmallImage,HBITMAP *hSmallImageOpen,HBITMAP *hLargeImage,COLORREF *cMask);
+                   HRESULT (WINAPI *QueryInterface)(ISnapinAbout *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISnapinAbout *This);
+                   ULONG (WINAPI *Release)(ISnapinAbout *This);
+                   HRESULT (WINAPI *GetSnapinDescription)(ISnapinAbout *This,LPOLESTR *lpDescription);
+                   HRESULT (WINAPI *GetProvider)(ISnapinAbout *This,LPOLESTR *lpName);
+                   HRESULT (WINAPI *GetSnapinVersion)(ISnapinAbout *This,LPOLESTR *lpVersion);
+                   HRESULT (WINAPI *GetSnapinImage)(ISnapinAbout *This,HICON *hAppIcon);
+                   HRESULT (WINAPI *GetStaticFolderImage)(ISnapinAbout *This,HBITMAP *hSmallImage,HBITMAP *hSmallImageOpen,HBITMAP *hLargeImage,COLORREF *cMask);
     END_INTERFACE
   } ISnapinAboutVtbl;
   struct ISnapinAbout {
@@ -1770,12 +1770,12 @@ extern "C" {
 #else
   typedef struct IMenuButtonVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMenuButton *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMenuButton *This);
-      ULONG (WINAPI *Release)(IMenuButton *This);
-      HRESULT (WINAPI *AddButton)(IMenuButton *This,int idCommand,LPOLESTR lpButtonText,LPOLESTR lpTooltipText);
-      HRESULT (WINAPI *SetButton)(IMenuButton *This,int idCommand,LPOLESTR lpButtonText,LPOLESTR lpTooltipText);
-      HRESULT (WINAPI *SetButtonState)(IMenuButton *This,int idCommand,MMC_BUTTON_STATE nState,WINBOOL bState);
+                   HRESULT (WINAPI *QueryInterface)(IMenuButton *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMenuButton *This);
+                   ULONG (WINAPI *Release)(IMenuButton *This);
+                   HRESULT (WINAPI *AddButton)(IMenuButton *This,int idCommand,LPOLESTR lpButtonText,LPOLESTR lpTooltipText);
+                   HRESULT (WINAPI *SetButton)(IMenuButton *This,int idCommand,LPOLESTR lpButtonText,LPOLESTR lpTooltipText);
+                   HRESULT (WINAPI *SetButtonState)(IMenuButton *This,int idCommand,MMC_BUTTON_STATE nState,WINBOOL bState);
     END_INTERFACE
   } IMenuButtonVtbl;
   struct IMenuButton {
@@ -1809,10 +1809,10 @@ extern "C" {
 #else
   typedef struct ISnapinHelpVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISnapinHelp *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISnapinHelp *This);
-      ULONG (WINAPI *Release)(ISnapinHelp *This);
-      HRESULT (WINAPI *GetHelpTopic)(ISnapinHelp *This,LPOLESTR *lpCompiledHelpFile);
+                   HRESULT (WINAPI *QueryInterface)(ISnapinHelp *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISnapinHelp *This);
+                   ULONG (WINAPI *Release)(ISnapinHelp *This);
+                   HRESULT (WINAPI *GetHelpTopic)(ISnapinHelp *This,LPOLESTR *lpCompiledHelpFile);
     END_INTERFACE
   } ISnapinHelpVtbl;
   struct ISnapinHelp {
@@ -1843,12 +1843,12 @@ extern "C" {
 #else
   typedef struct IExtendPropertySheet2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IExtendPropertySheet2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IExtendPropertySheet2 *This);
-      ULONG (WINAPI *Release)(IExtendPropertySheet2 *This);
-      HRESULT (WINAPI *CreatePropertyPages)(IExtendPropertySheet2 *This,LPPROPERTYSHEETCALLBACK lpProvider,LONG_PTR handle,LPDATAOBJECT lpIDataObject);
-      HRESULT (WINAPI *QueryPagesFor)(IExtendPropertySheet2 *This,LPDATAOBJECT lpDataObject);
-      HRESULT (WINAPI *GetWatermarks)(IExtendPropertySheet2 *This,LPDATAOBJECT lpIDataObject,HBITMAP *lphWatermark,HBITMAP *lphHeader,HPALETTE *lphPalette,WINBOOL *bStretch);
+                   HRESULT (WINAPI *QueryInterface)(IExtendPropertySheet2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IExtendPropertySheet2 *This);
+                   ULONG (WINAPI *Release)(IExtendPropertySheet2 *This);
+                   HRESULT (WINAPI *CreatePropertyPages)(IExtendPropertySheet2 *This,LPPROPERTYSHEETCALLBACK lpProvider,LONG_PTR handle,LPDATAOBJECT lpIDataObject);
+                   HRESULT (WINAPI *QueryPagesFor)(IExtendPropertySheet2 *This,LPDATAOBJECT lpDataObject);
+                   HRESULT (WINAPI *GetWatermarks)(IExtendPropertySheet2 *This,LPDATAOBJECT lpIDataObject,HBITMAP *lphWatermark,HBITMAP *lphHeader,HPALETTE *lphPalette,WINBOOL *bStretch);
     END_INTERFACE
   } IExtendPropertySheet2Vtbl;
   struct IExtendPropertySheet2 {
@@ -1880,18 +1880,18 @@ extern "C" {
 #else
   typedef struct IHeaderCtrl2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IHeaderCtrl2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IHeaderCtrl2 *This);
-      ULONG (WINAPI *Release)(IHeaderCtrl2 *This);
-      HRESULT (WINAPI *InsertColumn)(IHeaderCtrl2 *This,int nCol,LPCWSTR title,int nFormat,int nWidth);
-      HRESULT (WINAPI *DeleteColumn)(IHeaderCtrl2 *This,int nCol);
-      HRESULT (WINAPI *SetColumnText)(IHeaderCtrl2 *This,int nCol,LPCWSTR title);
-      HRESULT (WINAPI *GetColumnText)(IHeaderCtrl2 *This,int nCol,LPOLESTR *pText);
-      HRESULT (WINAPI *SetColumnWidth)(IHeaderCtrl2 *This,int nCol,int nWidth);
-      HRESULT (WINAPI *GetColumnWidth)(IHeaderCtrl2 *This,int nCol,int *pWidth);
-      HRESULT (WINAPI *SetChangeTimeOut)(IHeaderCtrl2 *This,unsigned __LONG32 uTimeout);
-      HRESULT (WINAPI *SetColumnFilter)(IHeaderCtrl2 *This,UINT nColumn,DWORD dwType,MMC_FILTERDATA *pFilterData);
-      HRESULT (WINAPI *GetColumnFilter)(IHeaderCtrl2 *This,UINT nColumn,LPDWORD pdwType,MMC_FILTERDATA *pFilterData);
+                   HRESULT (WINAPI *QueryInterface)(IHeaderCtrl2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IHeaderCtrl2 *This);
+                   ULONG (WINAPI *Release)(IHeaderCtrl2 *This);
+                   HRESULT (WINAPI *InsertColumn)(IHeaderCtrl2 *This,int nCol,LPCWSTR title,int nFormat,int nWidth);
+                   HRESULT (WINAPI *DeleteColumn)(IHeaderCtrl2 *This,int nCol);
+                   HRESULT (WINAPI *SetColumnText)(IHeaderCtrl2 *This,int nCol,LPCWSTR title);
+                   HRESULT (WINAPI *GetColumnText)(IHeaderCtrl2 *This,int nCol,LPOLESTR *pText);
+                   HRESULT (WINAPI *SetColumnWidth)(IHeaderCtrl2 *This,int nCol,int nWidth);
+                   HRESULT (WINAPI *GetColumnWidth)(IHeaderCtrl2 *This,int nCol,int *pWidth);
+                   HRESULT (WINAPI *SetChangeTimeOut)(IHeaderCtrl2 *This,unsigned __LONG32 uTimeout);
+                   HRESULT (WINAPI *SetColumnFilter)(IHeaderCtrl2 *This,UINT nColumn,DWORD dwType,MMC_FILTERDATA *pFilterData);
+                   HRESULT (WINAPI *GetColumnFilter)(IHeaderCtrl2 *This,UINT nColumn,LPDWORD pdwType,MMC_FILTERDATA *pFilterData);
     END_INTERFACE
   } IHeaderCtrl2Vtbl;
   struct IHeaderCtrl2 {
@@ -1931,11 +1931,11 @@ extern "C" {
 #else
   typedef struct ISnapinHelp2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISnapinHelp2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISnapinHelp2 *This);
-      ULONG (WINAPI *Release)(ISnapinHelp2 *This);
-      HRESULT (WINAPI *GetHelpTopic)(ISnapinHelp2 *This,LPOLESTR *lpCompiledHelpFile);
-      HRESULT (WINAPI *GetLinkedTopics)(ISnapinHelp2 *This,LPOLESTR *lpCompiledHelpFiles);
+                   HRESULT (WINAPI *QueryInterface)(ISnapinHelp2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISnapinHelp2 *This);
+                   ULONG (WINAPI *Release)(ISnapinHelp2 *This);
+                   HRESULT (WINAPI *GetHelpTopic)(ISnapinHelp2 *This,LPOLESTR *lpCompiledHelpFile);
+                   HRESULT (WINAPI *GetLinkedTopics)(ISnapinHelp2 *This,LPOLESTR *lpCompiledHelpFiles);
     END_INTERFACE
   } ISnapinHelp2Vtbl;
   struct ISnapinHelp2 {
@@ -1972,8 +1972,8 @@ extern "C" {
   typedef struct _MMC_TASK_DISPLAY_OBJECT {
     MMC_TASK_DISPLAY_TYPE eDisplayType;
     __C89_NAMELESS union {
-      MMC_TASK_DISPLAY_BITMAP uBitmap;
-      MMC_TASK_DISPLAY_SYMBOL uSymbol;
+                   MMC_TASK_DISPLAY_BITMAP uBitmap;
+                   MMC_TASK_DISPLAY_SYMBOL uSymbol;
     };
   } MMC_TASK_DISPLAY_OBJECT;
 
@@ -1987,9 +1987,9 @@ extern "C" {
     LPOLESTR szHelpString;
     MMC_ACTION_TYPE eActionType;
     __C89_NAMELESS union {
-      LONG_PTR nCommandID;
-      LPOLESTR szActionURL;
-      LPOLESTR szScript;
+                   LONG_PTR nCommandID;
+                   LPOLESTR szActionURL;
+                   LPOLESTR szScript;
     };
   } MMC_TASK;
 
@@ -2018,13 +2018,13 @@ extern "C" {
 #else
   typedef struct IEnumTASKVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumTASK *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumTASK *This);
-      ULONG (WINAPI *Release)(IEnumTASK *This);
-      HRESULT (WINAPI *Next)(IEnumTASK *This,ULONG celt,MMC_TASK *rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumTASK *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumTASK *This);
-      HRESULT (WINAPI *Clone)(IEnumTASK *This,IEnumTASK **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumTASK *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumTASK *This);
+                   ULONG (WINAPI *Release)(IEnumTASK *This);
+                   HRESULT (WINAPI *Next)(IEnumTASK *This,ULONG celt,MMC_TASK *rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumTASK *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumTASK *This);
+                   HRESULT (WINAPI *Clone)(IEnumTASK *This,IEnumTASK **ppenum);
     END_INTERFACE
   } IEnumTASKVtbl;
   struct IEnumTASK {
@@ -2066,15 +2066,15 @@ extern "C" {
 #else
   typedef struct IExtendTaskPadVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IExtendTaskPad *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IExtendTaskPad *This);
-      ULONG (WINAPI *Release)(IExtendTaskPad *This);
-      HRESULT (WINAPI *TaskNotify)(IExtendTaskPad *This,IDataObject *pdo,VARIANT *arg,VARIANT *param);
-      HRESULT (WINAPI *EnumTasks)(IExtendTaskPad *This,IDataObject *pdo,LPOLESTR szTaskGroup,IEnumTASK **ppEnumTASK);
-      HRESULT (WINAPI *GetTitle)(IExtendTaskPad *This,LPOLESTR pszGroup,LPOLESTR *pszTitle);
-      HRESULT (WINAPI *GetDescriptiveText)(IExtendTaskPad *This,LPOLESTR pszGroup,LPOLESTR *pszDescriptiveText);
-      HRESULT (WINAPI *GetBackground)(IExtendTaskPad *This,LPOLESTR pszGroup,MMC_TASK_DISPLAY_OBJECT *pTDO);
-      HRESULT (WINAPI *GetListPadInfo)(IExtendTaskPad *This,LPOLESTR pszGroup,MMC_LISTPAD_INFO *lpListPadInfo);
+                   HRESULT (WINAPI *QueryInterface)(IExtendTaskPad *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IExtendTaskPad *This);
+                   ULONG (WINAPI *Release)(IExtendTaskPad *This);
+                   HRESULT (WINAPI *TaskNotify)(IExtendTaskPad *This,IDataObject *pdo,VARIANT *arg,VARIANT *param);
+                   HRESULT (WINAPI *EnumTasks)(IExtendTaskPad *This,IDataObject *pdo,LPOLESTR szTaskGroup,IEnumTASK **ppEnumTASK);
+                   HRESULT (WINAPI *GetTitle)(IExtendTaskPad *This,LPOLESTR pszGroup,LPOLESTR *pszTitle);
+                   HRESULT (WINAPI *GetDescriptiveText)(IExtendTaskPad *This,LPOLESTR pszGroup,LPOLESTR *pszDescriptiveText);
+                   HRESULT (WINAPI *GetBackground)(IExtendTaskPad *This,LPOLESTR pszGroup,MMC_TASK_DISPLAY_OBJECT *pTDO);
+                   HRESULT (WINAPI *GetListPadInfo)(IExtendTaskPad *This,LPOLESTR pszGroup,MMC_LISTPAD_INFO *lpListPadInfo);
     END_INTERFACE
   } IExtendTaskPadVtbl;
   struct IExtendTaskPad {
@@ -2119,23 +2119,23 @@ extern "C" {
 #else
   typedef struct IConsole2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IConsole2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IConsole2 *This);
-      ULONG (WINAPI *Release)(IConsole2 *This);
-      HRESULT (WINAPI *SetHeader)(IConsole2 *This,LPHEADERCTRL pHeader);
-      HRESULT (WINAPI *SetToolbar)(IConsole2 *This,LPTOOLBAR pToolbar);
-      HRESULT (WINAPI *QueryResultView)(IConsole2 *This,LPUNKNOWN *pUnknown);
-      HRESULT (WINAPI *QueryScopeImageList)(IConsole2 *This,LPIMAGELIST *ppImageList);
-      HRESULT (WINAPI *QueryResultImageList)(IConsole2 *This,LPIMAGELIST *ppImageList);
-      HRESULT (WINAPI *UpdateAllViews)(IConsole2 *This,LPDATAOBJECT lpDataObject,LPARAM data,LONG_PTR hint);
-      HRESULT (WINAPI *MessageBox)(IConsole2 *This,LPCWSTR lpszText,LPCWSTR lpszTitle,UINT fuStyle,int *piRetval);
-      HRESULT (WINAPI *QueryConsoleVerb)(IConsole2 *This,LPCONSOLEVERB *ppConsoleVerb);
-      HRESULT (WINAPI *SelectScopeItem)(IConsole2 *This,HSCOPEITEM hScopeItem);
-      HRESULT (WINAPI *GetMainWindow)(IConsole2 *This,HWND *phwnd);
-      HRESULT (WINAPI *NewWindow)(IConsole2 *This,HSCOPEITEM hScopeItem,unsigned __LONG32 lOptions);
-      HRESULT (WINAPI *Expand)(IConsole2 *This,HSCOPEITEM hItem,WINBOOL bExpand);
-      HRESULT (WINAPI *IsTaskpadViewPreferred)(IConsole2 *This);
-      HRESULT (WINAPI *SetStatusText)(IConsole2 *This,LPOLESTR pszStatusText);
+                   HRESULT (WINAPI *QueryInterface)(IConsole2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IConsole2 *This);
+                   ULONG (WINAPI *Release)(IConsole2 *This);
+                   HRESULT (WINAPI *SetHeader)(IConsole2 *This,LPHEADERCTRL pHeader);
+                   HRESULT (WINAPI *SetToolbar)(IConsole2 *This,LPTOOLBAR pToolbar);
+                   HRESULT (WINAPI *QueryResultView)(IConsole2 *This,LPUNKNOWN *pUnknown);
+                   HRESULT (WINAPI *QueryScopeImageList)(IConsole2 *This,LPIMAGELIST *ppImageList);
+                   HRESULT (WINAPI *QueryResultImageList)(IConsole2 *This,LPIMAGELIST *ppImageList);
+                   HRESULT (WINAPI *UpdateAllViews)(IConsole2 *This,LPDATAOBJECT lpDataObject,LPARAM data,LONG_PTR hint);
+                   HRESULT (WINAPI *MessageBox)(IConsole2 *This,LPCWSTR lpszText,LPCWSTR lpszTitle,UINT fuStyle,int *piRetval);
+                   HRESULT (WINAPI *QueryConsoleVerb)(IConsole2 *This,LPCONSOLEVERB *ppConsoleVerb);
+                   HRESULT (WINAPI *SelectScopeItem)(IConsole2 *This,HSCOPEITEM hScopeItem);
+                   HRESULT (WINAPI *GetMainWindow)(IConsole2 *This,HWND *phwnd);
+                   HRESULT (WINAPI *NewWindow)(IConsole2 *This,HSCOPEITEM hScopeItem,unsigned __LONG32 lOptions);
+                   HRESULT (WINAPI *Expand)(IConsole2 *This,HSCOPEITEM hItem,WINBOOL bExpand);
+                   HRESULT (WINAPI *IsTaskpadViewPreferred)(IConsole2 *This);
+                   HRESULT (WINAPI *SetStatusText)(IConsole2 *This,LPOLESTR pszStatusText);
     END_INTERFACE
   } IConsole2Vtbl;
   struct IConsole2 {
@@ -2180,10 +2180,10 @@ extern "C" {
 #else
   typedef struct IDisplayHelpVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDisplayHelp *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDisplayHelp *This);
-      ULONG (WINAPI *Release)(IDisplayHelp *This);
-      HRESULT (WINAPI *ShowTopic)(IDisplayHelp *This,LPOLESTR pszHelpTopic);
+                   HRESULT (WINAPI *QueryInterface)(IDisplayHelp *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDisplayHelp *This);
+                   ULONG (WINAPI *Release)(IDisplayHelp *This);
+                   HRESULT (WINAPI *ShowTopic)(IDisplayHelp *This,LPOLESTR pszHelpTopic);
     END_INTERFACE
   } IDisplayHelpVtbl;
   struct IDisplayHelp {
@@ -2213,12 +2213,12 @@ extern "C" {
 #else
   typedef struct IRequiredExtensionsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRequiredExtensions *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRequiredExtensions *This);
-      ULONG (WINAPI *Release)(IRequiredExtensions *This);
-      HRESULT (WINAPI *EnableAllExtensions)(IRequiredExtensions *This);
-      HRESULT (WINAPI *GetFirstExtension)(IRequiredExtensions *This,LPCLSID pExtCLSID);
-      HRESULT (WINAPI *GetNextExtension)(IRequiredExtensions *This,LPCLSID pExtCLSID);
+                   HRESULT (WINAPI *QueryInterface)(IRequiredExtensions *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRequiredExtensions *This);
+                   ULONG (WINAPI *Release)(IRequiredExtensions *This);
+                   HRESULT (WINAPI *EnableAllExtensions)(IRequiredExtensions *This);
+                   HRESULT (WINAPI *GetFirstExtension)(IRequiredExtensions *This,LPCLSID pExtCLSID);
+                   HRESULT (WINAPI *GetNextExtension)(IRequiredExtensions *This,LPCLSID pExtCLSID);
     END_INTERFACE
   } IRequiredExtensionsVtbl;
   struct IRequiredExtensions {
@@ -2258,16 +2258,16 @@ extern "C" {
 #else
   typedef struct IStringTableVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IStringTable *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IStringTable *This);
-      ULONG (WINAPI *Release)(IStringTable *This);
-      HRESULT (WINAPI *AddString)(IStringTable *This,LPCOLESTR pszAdd,MMC_STRING_ID *pStringID);
-      HRESULT (WINAPI *GetString)(IStringTable *This,MMC_STRING_ID StringID,ULONG cchBuffer,LPOLESTR lpBuffer,ULONG *pcchOut);
-      HRESULT (WINAPI *GetStringLength)(IStringTable *This,MMC_STRING_ID StringID,ULONG *pcchString);
-      HRESULT (WINAPI *DeleteString)(IStringTable *This,MMC_STRING_ID StringID);
-      HRESULT (WINAPI *DeleteAllStrings)(IStringTable *This);
-      HRESULT (WINAPI *FindString)(IStringTable *This,LPCOLESTR pszFind,MMC_STRING_ID *pStringID);
-      HRESULT (WINAPI *Enumerate)(IStringTable *This,IEnumString **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IStringTable *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IStringTable *This);
+                   ULONG (WINAPI *Release)(IStringTable *This);
+                   HRESULT (WINAPI *AddString)(IStringTable *This,LPCOLESTR pszAdd,MMC_STRING_ID *pStringID);
+                   HRESULT (WINAPI *GetString)(IStringTable *This,MMC_STRING_ID StringID,ULONG cchBuffer,LPOLESTR lpBuffer,ULONG *pcchOut);
+                   HRESULT (WINAPI *GetStringLength)(IStringTable *This,MMC_STRING_ID StringID,ULONG *pcchString);
+                   HRESULT (WINAPI *DeleteString)(IStringTable *This,MMC_STRING_ID StringID);
+                   HRESULT (WINAPI *DeleteAllStrings)(IStringTable *This);
+                   HRESULT (WINAPI *FindString)(IStringTable *This,LPCOLESTR pszFind,MMC_STRING_ID *pStringID);
+                   HRESULT (WINAPI *Enumerate)(IStringTable *This,IEnumString **ppEnum);
     END_INTERFACE
   } IStringTableVtbl;
   struct IStringTable {
@@ -2347,13 +2347,13 @@ extern "C" {
 #else
   typedef struct IColumnDataVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IColumnData *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IColumnData *This);
-      ULONG (WINAPI *Release)(IColumnData *This);
-      HRESULT (WINAPI *SetColumnConfigData)(IColumnData *This,SColumnSetID *pColID,MMC_COLUMN_SET_DATA *pColSetData);
-      HRESULT (WINAPI *GetColumnConfigData)(IColumnData *This,SColumnSetID *pColID,MMC_COLUMN_SET_DATA **ppColSetData);
-      HRESULT (WINAPI *SetColumnSortData)(IColumnData *This,SColumnSetID *pColID,MMC_SORT_SET_DATA *pColSortData);
-      HRESULT (WINAPI *GetColumnSortData)(IColumnData *This,SColumnSetID *pColID,MMC_SORT_SET_DATA **ppColSortData);
+                   HRESULT (WINAPI *QueryInterface)(IColumnData *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IColumnData *This);
+                   ULONG (WINAPI *Release)(IColumnData *This);
+                   HRESULT (WINAPI *SetColumnConfigData)(IColumnData *This,SColumnSetID *pColID,MMC_COLUMN_SET_DATA *pColSetData);
+                   HRESULT (WINAPI *GetColumnConfigData)(IColumnData *This,SColumnSetID *pColID,MMC_COLUMN_SET_DATA **ppColSetData);
+                   HRESULT (WINAPI *SetColumnSortData)(IColumnData *This,SColumnSetID *pColID,MMC_SORT_SET_DATA *pColSortData);
+                   HRESULT (WINAPI *GetColumnSortData)(IColumnData *This,SColumnSetID *pColID,MMC_SORT_SET_DATA **ppColSortData);
     END_INTERFACE
   } IColumnDataVtbl;
   struct IColumnData {
@@ -2398,13 +2398,13 @@ extern "C" {
 #else
   typedef struct IMessageViewVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMessageView *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMessageView *This);
-      ULONG (WINAPI *Release)(IMessageView *This);
-      HRESULT (WINAPI *SetTitleText)(IMessageView *This,LPCOLESTR pszTitleText);
-      HRESULT (WINAPI *SetBodyText)(IMessageView *This,LPCOLESTR pszBodyText);
-      HRESULT (WINAPI *SetIcon)(IMessageView *This,IconIdentifier id);
-      HRESULT (WINAPI *Clear)(IMessageView *This);
+                   HRESULT (WINAPI *QueryInterface)(IMessageView *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMessageView *This);
+                   ULONG (WINAPI *Release)(IMessageView *This);
+                   HRESULT (WINAPI *SetTitleText)(IMessageView *This,LPCOLESTR pszTitleText);
+                   HRESULT (WINAPI *SetBodyText)(IMessageView *This,LPCOLESTR pszBodyText);
+                   HRESULT (WINAPI *SetIcon)(IMessageView *This,IconIdentifier id);
+                   HRESULT (WINAPI *Clear)(IMessageView *This);
     END_INTERFACE
   } IMessageViewVtbl;
   struct IMessageView {
@@ -2461,10 +2461,10 @@ extern "C" {
 #else
   typedef struct IResultDataCompareExVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResultDataCompareEx *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResultDataCompareEx *This);
-      ULONG (WINAPI *Release)(IResultDataCompareEx *This);
-      HRESULT (WINAPI *Compare)(IResultDataCompareEx *This,RDCOMPARE *prdc,int *pnResult);
+                   HRESULT (WINAPI *QueryInterface)(IResultDataCompareEx *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResultDataCompareEx *This);
+                   ULONG (WINAPI *Release)(IResultDataCompareEx *This);
+                   HRESULT (WINAPI *Compare)(IResultDataCompareEx *This,RDCOMPARE *prdc,int *pnResult);
     END_INTERFACE
   } IResultDataCompareExVtbl;
   struct IResultDataCompareEx {
@@ -2507,15 +2507,15 @@ extern "C" {
     MMC_VIEW_TYPE eViewType;
     DWORD dwMiscOptions;
     __C89_NAMELESS union {
-      DWORD dwListOptions;
-      __C89_NAMELESS struct {
+                   DWORD dwListOptions;
+                   __C89_NAMELESS struct {
 	DWORD dwHTMLOptions;
 	LPOLESTR pstrURL;
-      };
-      __C89_NAMELESS struct {
+                   };
+                   __C89_NAMELESS struct {
 	DWORD dwOCXOptions;
 	LPUNKNOWN pUnkControl;
-      };
+                   };
     };
   } RESULT_VIEW_TYPE_INFO;
 
@@ -2562,17 +2562,17 @@ extern "C" {
 #else
   typedef struct IComponentData2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IComponentData2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IComponentData2 *This);
-      ULONG (WINAPI *Release)(IComponentData2 *This);
-      HRESULT (WINAPI *Initialize)(IComponentData2 *This,LPUNKNOWN pUnknown);
-      HRESULT (WINAPI *CreateComponent)(IComponentData2 *This,LPCOMPONENT *ppComponent);
-      HRESULT (WINAPI *Notify)(IComponentData2 *This,LPDATAOBJECT lpDataObject,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
-      HRESULT (WINAPI *Destroy)(IComponentData2 *This);
-      HRESULT (WINAPI *QueryDataObject)(IComponentData2 *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDATAOBJECT *ppDataObject);
-      HRESULT (WINAPI *GetDisplayInfo)(IComponentData2 *This,SCOPEDATAITEM *pScopeDataItem);
-      HRESULT (WINAPI *CompareObjects)(IComponentData2 *This,LPDATAOBJECT lpDataObjectA,LPDATAOBJECT lpDataObjectB);
-      HRESULT (WINAPI *QueryDispatch)(IComponentData2 *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDISPATCH *ppDispatch);
+                   HRESULT (WINAPI *QueryInterface)(IComponentData2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IComponentData2 *This);
+                   ULONG (WINAPI *Release)(IComponentData2 *This);
+                   HRESULT (WINAPI *Initialize)(IComponentData2 *This,LPUNKNOWN pUnknown);
+                   HRESULT (WINAPI *CreateComponent)(IComponentData2 *This,LPCOMPONENT *ppComponent);
+                   HRESULT (WINAPI *Notify)(IComponentData2 *This,LPDATAOBJECT lpDataObject,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
+                   HRESULT (WINAPI *Destroy)(IComponentData2 *This);
+                   HRESULT (WINAPI *QueryDataObject)(IComponentData2 *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDATAOBJECT *ppDataObject);
+                   HRESULT (WINAPI *GetDisplayInfo)(IComponentData2 *This,SCOPEDATAITEM *pScopeDataItem);
+                   HRESULT (WINAPI *CompareObjects)(IComponentData2 *This,LPDATAOBJECT lpDataObjectA,LPDATAOBJECT lpDataObjectB);
+                   HRESULT (WINAPI *QueryDispatch)(IComponentData2 *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDISPATCH *ppDispatch);
     END_INTERFACE
   } IComponentData2Vtbl;
   struct IComponentData2 {
@@ -2609,19 +2609,19 @@ extern "C" {
 #else
   typedef struct IComponent2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IComponent2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IComponent2 *This);
-      ULONG (WINAPI *Release)(IComponent2 *This);
-      HRESULT (WINAPI *Initialize)(IComponent2 *This,LPCONSOLE lpConsole);
-      HRESULT (WINAPI *Notify)(IComponent2 *This,LPDATAOBJECT lpDataObject,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
-      HRESULT (WINAPI *Destroy)(IComponent2 *This,MMC_COOKIE cookie);
-      HRESULT (WINAPI *QueryDataObject)(IComponent2 *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDATAOBJECT *ppDataObject);
-      HRESULT (WINAPI *GetResultViewType)(IComponent2 *This,MMC_COOKIE cookie,LPOLESTR *ppViewType,__LONG32 *pViewOptions);
-      HRESULT (WINAPI *GetDisplayInfo)(IComponent2 *This,RESULTDATAITEM *pResultDataItem);
-      HRESULT (WINAPI *CompareObjects)(IComponent2 *This,LPDATAOBJECT lpDataObjectA,LPDATAOBJECT lpDataObjectB);
-      HRESULT (WINAPI *QueryDispatch)(IComponent2 *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDISPATCH *ppDispatch);
-      HRESULT (WINAPI *GetResultViewType2)(IComponent2 *This,MMC_COOKIE cookie,PRESULT_VIEW_TYPE_INFO pResultViewType);
-      HRESULT (WINAPI *RestoreResultView)(IComponent2 *This,MMC_COOKIE cookie,PRESULT_VIEW_TYPE_INFO pResultViewType);
+                   HRESULT (WINAPI *QueryInterface)(IComponent2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IComponent2 *This);
+                   ULONG (WINAPI *Release)(IComponent2 *This);
+                   HRESULT (WINAPI *Initialize)(IComponent2 *This,LPCONSOLE lpConsole);
+                   HRESULT (WINAPI *Notify)(IComponent2 *This,LPDATAOBJECT lpDataObject,MMC_NOTIFY_TYPE event,LPARAM arg,LPARAM param);
+                   HRESULT (WINAPI *Destroy)(IComponent2 *This,MMC_COOKIE cookie);
+                   HRESULT (WINAPI *QueryDataObject)(IComponent2 *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDATAOBJECT *ppDataObject);
+                   HRESULT (WINAPI *GetResultViewType)(IComponent2 *This,MMC_COOKIE cookie,LPOLESTR *ppViewType,__LONG32 *pViewOptions);
+                   HRESULT (WINAPI *GetDisplayInfo)(IComponent2 *This,RESULTDATAITEM *pResultDataItem);
+                   HRESULT (WINAPI *CompareObjects)(IComponent2 *This,LPDATAOBJECT lpDataObjectA,LPDATAOBJECT lpDataObjectB);
+                   HRESULT (WINAPI *QueryDispatch)(IComponent2 *This,MMC_COOKIE cookie,DATA_OBJECT_TYPES type,LPDISPATCH *ppDispatch);
+                   HRESULT (WINAPI *GetResultViewType2)(IComponent2 *This,MMC_COOKIE cookie,PRESULT_VIEW_TYPE_INFO pResultViewType);
+                   HRESULT (WINAPI *RestoreResultView)(IComponent2 *This,MMC_COOKIE cookie,PRESULT_VIEW_TYPE_INFO pResultViewType);
     END_INTERFACE
   } IComponent2Vtbl;
   struct IComponent2 {
@@ -2662,10 +2662,10 @@ extern "C" {
 #else
   typedef struct IContextMenuCallback2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IContextMenuCallback2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IContextMenuCallback2 *This);
-      ULONG (WINAPI *Release)(IContextMenuCallback2 *This);
-      HRESULT (WINAPI *AddItem)(IContextMenuCallback2 *This,CONTEXTMENUITEM2 *pItem);
+                   HRESULT (WINAPI *QueryInterface)(IContextMenuCallback2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IContextMenuCallback2 *This);
+                   ULONG (WINAPI *Release)(IContextMenuCallback2 *This);
+                   HRESULT (WINAPI *AddItem)(IContextMenuCallback2 *This,CONTEXTMENUITEM2 *pItem);
     END_INTERFACE
   } IContextMenuCallback2Vtbl;
   struct IContextMenuCallback2 {
@@ -2693,10 +2693,10 @@ extern "C" {
 #else
   typedef struct IMMCVersionInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMMCVersionInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMMCVersionInfo *This);
-      ULONG (WINAPI *Release)(IMMCVersionInfo *This);
-      HRESULT (WINAPI *GetMMCVersion)(IMMCVersionInfo *This,__LONG32 *pVersionMajor,__LONG32 *pVersionMinor);
+                   HRESULT (WINAPI *QueryInterface)(IMMCVersionInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMMCVersionInfo *This);
+                   ULONG (WINAPI *Release)(IMMCVersionInfo *This);
+                   HRESULT (WINAPI *GetMMCVersion)(IMMCVersionInfo *This,__LONG32 *pVersionMajor,__LONG32 *pVersionMinor);
     END_INTERFACE
   } IMMCVersionInfoVtbl;
   struct IMMCVersionInfo {
@@ -2737,10 +2737,10 @@ extern "C" {
 #else
   typedef struct IExtendViewVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IExtendView *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IExtendView *This);
-      ULONG (WINAPI *Release)(IExtendView *This);
-      HRESULT (WINAPI *GetViews)(IExtendView *This,LPDATAOBJECT pDataObject,LPVIEWEXTENSIONCALLBACK pViewExtensionCallback);
+                   HRESULT (WINAPI *QueryInterface)(IExtendView *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IExtendView *This);
+                   ULONG (WINAPI *Release)(IExtendView *This);
+                   HRESULT (WINAPI *GetViews)(IExtendView *This,LPDATAOBJECT pDataObject,LPVIEWEXTENSIONCALLBACK pViewExtensionCallback);
     END_INTERFACE
   } IExtendViewVtbl;
   struct IExtendView {
@@ -2768,10 +2768,10 @@ extern "C" {
 #else
   typedef struct IViewExtensionCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IViewExtensionCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IViewExtensionCallback *This);
-      ULONG (WINAPI *Release)(IViewExtensionCallback *This);
-      HRESULT (WINAPI *AddView)(IViewExtensionCallback *This,PMMC_EXT_VIEW_DATA pExtViewData);
+                   HRESULT (WINAPI *QueryInterface)(IViewExtensionCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IViewExtensionCallback *This);
+                   ULONG (WINAPI *Release)(IViewExtensionCallback *This);
+                   HRESULT (WINAPI *AddView)(IViewExtensionCallback *This,PMMC_EXT_VIEW_DATA pExtViewData);
     END_INTERFACE
   } IViewExtensionCallbackVtbl;
   struct IViewExtensionCallback {
@@ -2800,11 +2800,11 @@ extern "C" {
 #else
   typedef struct IConsolePowerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IConsolePower *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IConsolePower *This);
-      ULONG (WINAPI *Release)(IConsolePower *This);
-      HRESULT (WINAPI *SetExecutionState)(IConsolePower *This,DWORD dwAdd,DWORD dwRemove);
-      HRESULT (WINAPI *ResetIdleTimer)(IConsolePower *This,DWORD dwFlags);
+                   HRESULT (WINAPI *QueryInterface)(IConsolePower *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IConsolePower *This);
+                   ULONG (WINAPI *Release)(IConsolePower *This);
+                   HRESULT (WINAPI *SetExecutionState)(IConsolePower *This,DWORD dwAdd,DWORD dwRemove);
+                   HRESULT (WINAPI *ResetIdleTimer)(IConsolePower *This,DWORD dwFlags);
     END_INTERFACE
   } IConsolePowerVtbl;
   struct IConsolePower {
@@ -2835,10 +2835,10 @@ extern "C" {
 #else
   typedef struct IConsolePowerSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IConsolePowerSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IConsolePowerSink *This);
-      ULONG (WINAPI *Release)(IConsolePowerSink *This);
-      HRESULT (WINAPI *OnPowerBroadcast)(IConsolePowerSink *This,UINT nEvent,LPARAM lParam,LRESULT *plReturn);
+                   HRESULT (WINAPI *QueryInterface)(IConsolePowerSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IConsolePowerSink *This);
+                   ULONG (WINAPI *Release)(IConsolePowerSink *This);
+                   HRESULT (WINAPI *OnPowerBroadcast)(IConsolePowerSink *This,UINT nEvent,LPARAM lParam,LRESULT *plReturn);
     END_INTERFACE
   } IConsolePowerSinkVtbl;
   struct IConsolePowerSink {
@@ -2866,10 +2866,10 @@ extern "C" {
 #else
   typedef struct INodePropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(INodeProperties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(INodeProperties *This);
-      ULONG (WINAPI *Release)(INodeProperties *This);
-      HRESULT (WINAPI *GetProperty)(INodeProperties *This,LPDATAOBJECT pDataObject,BSTR szPropertyName,PBSTR pbstrProperty);
+                   HRESULT (WINAPI *QueryInterface)(INodeProperties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(INodeProperties *This);
+                   ULONG (WINAPI *Release)(INodeProperties *This);
+                   HRESULT (WINAPI *GetProperty)(INodeProperties *This,LPDATAOBJECT pDataObject,BSTR szPropertyName,PBSTR pbstrProperty);
     END_INTERFACE
   } INodePropertiesVtbl;
   struct INodeProperties {
@@ -2897,24 +2897,24 @@ extern "C" {
 #else
   typedef struct IConsole3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IConsole3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IConsole3 *This);
-      ULONG (WINAPI *Release)(IConsole3 *This);
-      HRESULT (WINAPI *SetHeader)(IConsole3 *This,LPHEADERCTRL pHeader);
-      HRESULT (WINAPI *SetToolbar)(IConsole3 *This,LPTOOLBAR pToolbar);
-      HRESULT (WINAPI *QueryResultView)(IConsole3 *This,LPUNKNOWN *pUnknown);
-      HRESULT (WINAPI *QueryScopeImageList)(IConsole3 *This,LPIMAGELIST *ppImageList);
-      HRESULT (WINAPI *QueryResultImageList)(IConsole3 *This,LPIMAGELIST *ppImageList);
-      HRESULT (WINAPI *UpdateAllViews)(IConsole3 *This,LPDATAOBJECT lpDataObject,LPARAM data,LONG_PTR hint);
-      HRESULT (WINAPI *MessageBox)(IConsole3 *This,LPCWSTR lpszText,LPCWSTR lpszTitle,UINT fuStyle,int *piRetval);
-      HRESULT (WINAPI *QueryConsoleVerb)(IConsole3 *This,LPCONSOLEVERB *ppConsoleVerb);
-      HRESULT (WINAPI *SelectScopeItem)(IConsole3 *This,HSCOPEITEM hScopeItem);
-      HRESULT (WINAPI *GetMainWindow)(IConsole3 *This,HWND *phwnd);
-      HRESULT (WINAPI *NewWindow)(IConsole3 *This,HSCOPEITEM hScopeItem,unsigned __LONG32 lOptions);
-      HRESULT (WINAPI *Expand)(IConsole3 *This,HSCOPEITEM hItem,WINBOOL bExpand);
-      HRESULT (WINAPI *IsTaskpadViewPreferred)(IConsole3 *This);
-      HRESULT (WINAPI *SetStatusText)(IConsole3 *This,LPOLESTR pszStatusText);
-      HRESULT (WINAPI *RenameScopeItem)(IConsole3 *This,HSCOPEITEM hScopeItem);
+                   HRESULT (WINAPI *QueryInterface)(IConsole3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IConsole3 *This);
+                   ULONG (WINAPI *Release)(IConsole3 *This);
+                   HRESULT (WINAPI *SetHeader)(IConsole3 *This,LPHEADERCTRL pHeader);
+                   HRESULT (WINAPI *SetToolbar)(IConsole3 *This,LPTOOLBAR pToolbar);
+                   HRESULT (WINAPI *QueryResultView)(IConsole3 *This,LPUNKNOWN *pUnknown);
+                   HRESULT (WINAPI *QueryScopeImageList)(IConsole3 *This,LPIMAGELIST *ppImageList);
+                   HRESULT (WINAPI *QueryResultImageList)(IConsole3 *This,LPIMAGELIST *ppImageList);
+                   HRESULT (WINAPI *UpdateAllViews)(IConsole3 *This,LPDATAOBJECT lpDataObject,LPARAM data,LONG_PTR hint);
+                   HRESULT (WINAPI *MessageBox)(IConsole3 *This,LPCWSTR lpszText,LPCWSTR lpszTitle,UINT fuStyle,int *piRetval);
+                   HRESULT (WINAPI *QueryConsoleVerb)(IConsole3 *This,LPCONSOLEVERB *ppConsoleVerb);
+                   HRESULT (WINAPI *SelectScopeItem)(IConsole3 *This,HSCOPEITEM hScopeItem);
+                   HRESULT (WINAPI *GetMainWindow)(IConsole3 *This,HWND *phwnd);
+                   HRESULT (WINAPI *NewWindow)(IConsole3 *This,HSCOPEITEM hScopeItem,unsigned __LONG32 lOptions);
+                   HRESULT (WINAPI *Expand)(IConsole3 *This,HSCOPEITEM hItem,WINBOOL bExpand);
+                   HRESULT (WINAPI *IsTaskpadViewPreferred)(IConsole3 *This);
+                   HRESULT (WINAPI *SetStatusText)(IConsole3 *This,LPOLESTR pszStatusText);
+                   HRESULT (WINAPI *RenameScopeItem)(IConsole3 *This,HSCOPEITEM hScopeItem);
     END_INTERFACE
   } IConsole3Vtbl;
   struct IConsole3 {
@@ -2956,25 +2956,25 @@ extern "C" {
 #else
   typedef struct IResultData2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResultData2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResultData2 *This);
-      ULONG (WINAPI *Release)(IResultData2 *This);
-      HRESULT (WINAPI *InsertItem)(IResultData2 *This,LPRESULTDATAITEM item);
-      HRESULT (WINAPI *DeleteItem)(IResultData2 *This,HRESULTITEM itemID,int nCol);
-      HRESULT (WINAPI *FindItemByLParam)(IResultData2 *This,LPARAM lParam,HRESULTITEM *pItemID);
-      HRESULT (WINAPI *DeleteAllRsltItems)(IResultData2 *This);
-      HRESULT (WINAPI *SetItem)(IResultData2 *This,LPRESULTDATAITEM item);
-      HRESULT (WINAPI *GetItem)(IResultData2 *This,LPRESULTDATAITEM item);
-      HRESULT (WINAPI *GetNextItem)(IResultData2 *This,LPRESULTDATAITEM item);
-      HRESULT (WINAPI *ModifyItemState)(IResultData2 *This,int nIndex,HRESULTITEM itemID,UINT uAdd,UINT uRemove);
-      HRESULT (WINAPI *ModifyViewStyle)(IResultData2 *This,MMC_RESULT_VIEW_STYLE add,MMC_RESULT_VIEW_STYLE remove);
-      HRESULT (WINAPI *SetViewMode)(IResultData2 *This,__LONG32 lViewMode);
-      HRESULT (WINAPI *GetViewMode)(IResultData2 *This,__LONG32 *lViewMode);
-      HRESULT (WINAPI *UpdateItem)(IResultData2 *This,HRESULTITEM itemID);
-      HRESULT (WINAPI *Sort)(IResultData2 *This,int nColumn,DWORD dwSortOptions,LPARAM lUserParam);
-      HRESULT (WINAPI *SetDescBarText)(IResultData2 *This,LPOLESTR DescText);
-      HRESULT (WINAPI *SetItemCount)(IResultData2 *This,int nItemCount,DWORD dwOptions);
-      HRESULT (WINAPI *RenameResultItem)(IResultData2 *This,HRESULTITEM itemID);
+                   HRESULT (WINAPI *QueryInterface)(IResultData2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResultData2 *This);
+                   ULONG (WINAPI *Release)(IResultData2 *This);
+                   HRESULT (WINAPI *InsertItem)(IResultData2 *This,LPRESULTDATAITEM item);
+                   HRESULT (WINAPI *DeleteItem)(IResultData2 *This,HRESULTITEM itemID,int nCol);
+                   HRESULT (WINAPI *FindItemByLParam)(IResultData2 *This,LPARAM lParam,HRESULTITEM *pItemID);
+                   HRESULT (WINAPI *DeleteAllRsltItems)(IResultData2 *This);
+                   HRESULT (WINAPI *SetItem)(IResultData2 *This,LPRESULTDATAITEM item);
+                   HRESULT (WINAPI *GetItem)(IResultData2 *This,LPRESULTDATAITEM item);
+                   HRESULT (WINAPI *GetNextItem)(IResultData2 *This,LPRESULTDATAITEM item);
+                   HRESULT (WINAPI *ModifyItemState)(IResultData2 *This,int nIndex,HRESULTITEM itemID,UINT uAdd,UINT uRemove);
+                   HRESULT (WINAPI *ModifyViewStyle)(IResultData2 *This,MMC_RESULT_VIEW_STYLE add,MMC_RESULT_VIEW_STYLE remove);
+                   HRESULT (WINAPI *SetViewMode)(IResultData2 *This,__LONG32 lViewMode);
+                   HRESULT (WINAPI *GetViewMode)(IResultData2 *This,__LONG32 *lViewMode);
+                   HRESULT (WINAPI *UpdateItem)(IResultData2 *This,HRESULTITEM itemID);
+                   HRESULT (WINAPI *Sort)(IResultData2 *This,int nColumn,DWORD dwSortOptions,LPARAM lUserParam);
+                   HRESULT (WINAPI *SetDescBarText)(IResultData2 *This,LPOLESTR DescText);
+                   HRESULT (WINAPI *SetItemCount)(IResultData2 *This,int nItemCount,DWORD dwOptions);
+                   HRESULT (WINAPI *RenameResultItem)(IResultData2 *This,HRESULTITEM itemID);
     END_INTERFACE
   } IResultData2Vtbl;
   struct IResultData2 {

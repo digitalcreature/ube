@@ -12,15 +12,15 @@ extern "C" {
 typedef struct _CPTABLEINFO
 {
    USHORT  CodePage;
-   USHORT  MaximumCharacterSize;       /* 1 = SBCS, 2 = DBCS */
-   USHORT  DefaultChar;                /* Default MultiByte Character for the CP->Unicode conversion */
-   USHORT  UniDefaultChar;             /* Default Unicode Character for the CP->Unicode conversion */
-   USHORT  TransDefaultChar;           /* Default MultiByte Character for the Unicode->CP conversion */
-   USHORT  TransUniDefaultChar;        /* Default Unicode Character for the Unicode->CP conversion */
+   USHORT  MaximumCharacterSize;                    /* 1 = SBCS, 2 = DBCS */
+   USHORT  DefaultChar;                                          /* Default MultiByte Character for the CP->Unicode conversion */
+   USHORT  UniDefaultChar;                                       /* Default Unicode Character for the CP->Unicode conversion */
+   USHORT  TransDefaultChar;                        /* Default MultiByte Character for the Unicode->CP conversion */
+   USHORT  TransUniDefaultChar;                     /* Default Unicode Character for the Unicode->CP conversion */
    USHORT  DBCSCodePage;
    UCHAR LeadByte[MAXIMUM_LEADBYTES];
-   PUSHORT MultiByteTable;             /* Table for CP->Unicode conversion */
-   PVOID WideCharTable;                /* Table for Unicode->CP conversion */
+   PUSHORT MultiByteTable;                                       /* Table for CP->Unicode conversion */
+   PVOID WideCharTable;                                          /* Table for Unicode->CP conversion */
    PUSHORT DBCSRanges;
    PUSHORT DBCSOffsets;
 } CPTABLEINFO, *PCPTABLEINFO;

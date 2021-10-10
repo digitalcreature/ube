@@ -74,11 +74,11 @@ extern "C" {
   typedef struct _PDH_FMT_COUNTERVALUE {
     DWORD CStatus;
     __C89_NAMELESS union {
-      LONG longValue;
-      double doubleValue;
-      LONGLONG largeValue;
-      LPCSTR AnsiStringValue;
-      LPCWSTR WideStringValue;
+                   LONG longValue;
+                   double doubleValue;
+                   LONGLONG largeValue;
+                   LPCSTR AnsiStringValue;
+                   LPCWSTR WideStringValue;
     };
   } PDH_FMT_COUNTERVALUE,*PPDH_FMT_COUNTERVALUE;
 
@@ -143,16 +143,16 @@ extern "C" {
     DWORD_PTR dwQueryUserData;
     LPSTR szFullPath;
     __C89_NAMELESS union {
-      PDH_DATA_ITEM_PATH_ELEMENTS_A DataItemPath;
-      PDH_COUNTER_PATH_ELEMENTS_A CounterPath;
-      __C89_NAMELESS struct {
+                   PDH_DATA_ITEM_PATH_ELEMENTS_A DataItemPath;
+                   PDH_COUNTER_PATH_ELEMENTS_A CounterPath;
+                   __C89_NAMELESS struct {
 	LPSTR szMachineName;
 	LPSTR szObjectName;
 	LPSTR szInstanceName;
 	LPSTR szParentInstance;
 	DWORD dwInstanceIndex;
 	LPSTR szCounterName;
-      };
+                   };
     };
     LPSTR szExplainText;
     DWORD DataBuffer[1];
@@ -169,16 +169,16 @@ extern "C" {
     DWORD_PTR dwQueryUserData;
     LPWSTR szFullPath;
     __C89_NAMELESS union {
-      PDH_DATA_ITEM_PATH_ELEMENTS_W DataItemPath;
-      PDH_COUNTER_PATH_ELEMENTS_W CounterPath;
-      __C89_NAMELESS struct {
+                   PDH_DATA_ITEM_PATH_ELEMENTS_W DataItemPath;
+                   PDH_COUNTER_PATH_ELEMENTS_W CounterPath;
+                   __C89_NAMELESS struct {
 	LPWSTR szMachineName;
 	LPWSTR szObjectName;
 	LPWSTR szInstanceName;
 	LPWSTR szParentInstance;
 	DWORD dwInstanceIndex;
 	LPWSTR szCounterName;
-      };
+                   };
     };
     LPWSTR szExplainText;
     DWORD DataBuffer[1];
@@ -207,7 +207,7 @@ extern "C" {
     DWORD dwFileType;
     DWORD dwReserved;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	DWORD PdlAutoNameInterval;
 	DWORD PdlAutoNameUnits;
 	LPSTR PdlCommandFilename;
@@ -216,8 +216,8 @@ extern "C" {
 	DWORD PdlSampleInterval;
 	FILETIME PdlLogStartTime;
 	FILETIME PdlLogEndTime;
-      };
-      __C89_NAMELESS struct {
+                   };
+                   __C89_NAMELESS struct {
 	DWORD TlNumberOfBuffers;
 	DWORD TlMinimumBuffers;
 	DWORD TlMaximumBuffers;
@@ -228,7 +228,7 @@ extern "C" {
 	DWORD TlBuffersWritten;
 	DWORD TlLogHandle;
 	LPSTR TlLogFileName;
-      };
+                   };
     };
   } PDH_LOG_SERVICE_QUERY_INFO_A,*PPDH_LOG_SERVICE_QUERY_INFO_A;
 
@@ -242,7 +242,7 @@ extern "C" {
     DWORD dwFileType;
     DWORD dwReserved;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	DWORD PdlAutoNameInterval;
 	DWORD PdlAutoNameUnits;
 	LPWSTR PdlCommandFilename;
@@ -251,8 +251,8 @@ extern "C" {
 	DWORD PdlSampleInterval;
 	FILETIME PdlLogStartTime;
 	FILETIME PdlLogEndTime;
-      };
-      __C89_NAMELESS struct {
+                   };
+                   __C89_NAMELESS struct {
 	DWORD TlNumberOfBuffers;
 	DWORD TlMinimumBuffers;
 	DWORD TlMaximumBuffers;
@@ -263,7 +263,7 @@ extern "C" {
 	DWORD TlBuffersWritten;
 	DWORD TlLogHandle;
 	LPWSTR TlLogFileName;
-      };
+                   };
     };
   } PDH_LOG_SERVICE_QUERY_INFO_W,*PPDH_LOG_SERVICE_QUERY_INFO_W;
 

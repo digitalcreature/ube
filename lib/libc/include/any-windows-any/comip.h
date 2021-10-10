@@ -71,8 +71,8 @@ public:
   explicit _com_ptr_t(_com_ptr_t *p) : m_pInterface(NULL) {
     if(!p) { _com_issue_error(E_POINTER); }
     else {
-      m_pInterface = p->m_pInterface;
-      AddRef();
+                   m_pInterface = p->m_pInterface;
+                   AddRef();
     }
   }
   _com_ptr_t() throw() : m_pInterface(NULL) { }
@@ -117,10 +117,10 @@ public:
   }
   _com_ptr_t &operator=(Interface *pInterface) throw() {
     if(m_pInterface!=pInterface) {
-      Interface *pOldInterface = m_pInterface;
-      m_pInterface = pInterface;
-      _AddRef();
-      if(pOldInterface!=NULL) pOldInterface->Release();
+                   Interface *pOldInterface = m_pInterface;
+                   m_pInterface = pInterface;
+                   _AddRef();
+                   if(pOldInterface!=NULL) pOldInterface->Release();
     }
     return *this;
   }
@@ -147,8 +147,8 @@ public:
     _Release();
     m_pInterface = pInterface;
     if(fAddRef) {
-      if(!pInterface) { _com_issue_error(E_POINTER); }
-      else pInterface->AddRef();
+                   if(!pInterface) { _com_issue_error(E_POINTER); }
+                   else pInterface->AddRef();
     }
   }
   Interface *Detach() throw() {
@@ -209,8 +209,8 @@ public:
   void Release() {
     if(!m_pInterface) { _com_issue_error(E_POINTER); }
     else {
-      m_pInterface->Release();
-      m_pInterface = NULL;
+                   m_pInterface->Release();
+                   m_pInterface = NULL;
     }
   }
   void AddRef() {
@@ -223,13 +223,13 @@ public:
     HRESULT hr;
     _Release();
     if(dwClsContext & (CLSCTX_LOCAL_SERVER | CLSCTX_REMOTE_SERVER)) {
-      IUnknown *pIUnknown;
-      hr = CoCreateInstance(rclsid,pOuter,dwClsContext,__uuidof(IUnknown),reinterpret_cast<void**>(&pIUnknown));
-      if(SUCCEEDED(hr)) {
+                   IUnknown *pIUnknown;
+                   hr = CoCreateInstance(rclsid,pOuter,dwClsContext,__uuidof(IUnknown),reinterpret_cast<void**>(&pIUnknown));
+                   if(SUCCEEDED(hr)) {
 	hr = OleRun(pIUnknown);
 	if(SUCCEEDED(hr)) hr = pIUnknown->QueryInterface(GetIID(),reinterpret_cast<void**>(&m_pInterface));
 	pIUnknown->Release();
-      }
+                   }
     } else hr = CoCreateInstance(rclsid,pOuter,dwClsContext,GetIID(),reinterpret_cast<void**>(&m_pInterface));
     if(FAILED(hr)) m_pInterface = NULL;
     return hr;
@@ -252,8 +252,8 @@ public:
     clsidStringW = static_cast<LPWSTR>(_malloca(destSize*sizeof(WCHAR)));
     if(!clsidStringW) return E_OUTOFMEMORY;
     if(MultiByteToWideChar(CP_ACP,0,clsidStringA,size,clsidStringW,destSize)==0) {
-      _freea(clsidStringW);
-      return HRESULT_FROM_WIN32(GetLastError());
+                   _freea(clsidStringW);
+                   return HRESULT_FROM_WIN32(GetLastError());
     }
     HRESULT hr=CreateInstance(clsidStringW,pOuter,dwClsContext);
     _freea(clsidStringW);
@@ -264,8 +264,8 @@ public:
     IUnknown *pIUnknown;
     HRESULT hr = ::GetActiveObject(rclsid,NULL,&pIUnknown);
     if(SUCCEEDED(hr)) {
-      hr = pIUnknown->QueryInterface(GetIID(),reinterpret_cast<void**>(&m_pInterface));
-      pIUnknown->Release();
+                   hr = pIUnknown->QueryInterface(GetIID(),reinterpret_cast<void**>(&m_pInterface));
+                   pIUnknown->Release();
     }
     if(FAILED(hr)) m_pInterface = NULL;
     return hr;
@@ -285,9 +285,9 @@ public:
     int destSize = MultiByteToWideChar(CP_ACP,0,clsidStringA,size,NULL,0);
     LPWSTR clsidStringW;
     try {
-      clsidStringW = static_cast<LPWSTR>(_alloca(destSize*sizeof(WCHAR)));
+                   clsidStringW = static_cast<LPWSTR>(_alloca(destSize*sizeof(WCHAR)));
     } catch (...) {
-      clsidStringW = NULL;
+                   clsidStringW = NULL;
     }
     if(!clsidStringW) return E_OUTOFMEMORY;
     if(MultiByteToWideChar(CP_ACP,0,clsidStringA,size,clsidStringW,destSize)==0) return HRESULT_FROM_WIN32(GetLastError());
@@ -309,30 +309,30 @@ private:
   template<typename _InterfacePtr> HRESULT _QueryInterface(_InterfacePtr p) throw() {
     HRESULT hr;
     if(p!=NULL) {
-      Interface *pInterface;
-      hr = p->QueryInterface(GetIID(),reinterpret_cast<void**>(&pInterface));
-      Attach(SUCCEEDED(hr)? pInterface: NULL);
+                   Interface *pInterface;
+                   hr = p->QueryInterface(GetIID(),reinterpret_cast<void**>(&pInterface));
+                   Attach(SUCCEEDED(hr)? pInterface: NULL);
     } else {
-      operator=(static_cast<Interface*>(NULL));
-      hr = E_NOINTERFACE;
+                   operator=(static_cast<Interface*>(NULL));
+                   hr = E_NOINTERFACE;
     }
     return hr;
   }
   template<typename _InterfacePtr> int _CompareUnknown(_InterfacePtr p) {
     IUnknown *pu1,*pu2;
     if(m_pInterface!=NULL) {
-      HRESULT hr = m_pInterface->QueryInterface(__uuidof(IUnknown),reinterpret_cast<void**>(&pu1));
-      if(FAILED(hr)) {
+                   HRESULT hr = m_pInterface->QueryInterface(__uuidof(IUnknown),reinterpret_cast<void**>(&pu1));
+                   if(FAILED(hr)) {
 	_com_issue_error(hr);
 	pu1 = NULL;
-      } else pu1->Release();
+                   } else pu1->Release();
     } else pu1 = NULL;
     if(p!=NULL) {
-      HRESULT hr = p->QueryInterface(__uuidof(IUnknown),reinterpret_cast<void**>(&pu2));
-      if(FAILED(hr)) {
+                   HRESULT hr = p->QueryInterface(__uuidof(IUnknown),reinterpret_cast<void**>(&pu2));
+                   if(FAILED(hr)) {
 	_com_issue_error(hr);
 	pu2 = NULL;
-      } else pu2->Release();
+                   } else pu2->Release();
     } else pu2 = NULL;
     return pu1 - pu2;
   }
@@ -344,9 +344,9 @@ private:
     HRESULT hr = VariantChangeType(&varDest,const_cast<VARIANT*>(static_cast<const VARIANT*>(&varSrc)),0,VT_DISPATCH);
     if(SUCCEEDED(hr)) hr = _QueryInterface(V_DISPATCH(&varSrc));
     if(hr==E_NOINTERFACE) {
-      VariantInit(&varDest);
-      hr = VariantChangeType(&varDest,const_cast<VARIANT*>(static_cast<const VARIANT*>(&varSrc)),0,VT_UNKNOWN);
-      if(SUCCEEDED(hr)) hr = _QueryInterface(V_UNKNOWN(&varSrc));
+                   VariantInit(&varDest);
+                   hr = VariantChangeType(&varDest,const_cast<VARIANT*>(static_cast<const VARIANT*>(&varSrc)),0,VT_UNKNOWN);
+                   if(SUCCEEDED(hr)) hr = _QueryInterface(V_UNKNOWN(&varSrc));
     }
     VariantClear(&varDest);
     return hr;

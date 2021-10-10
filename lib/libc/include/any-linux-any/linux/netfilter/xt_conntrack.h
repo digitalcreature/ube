@@ -19,14 +19,14 @@
 
 /* flags, invflags: */
 enum {
-	XT_CONNTRACK_STATE        = 1 << 0,
-	XT_CONNTRACK_PROTO        = 1 << 1,
-	XT_CONNTRACK_ORIGSRC      = 1 << 2,
-	XT_CONNTRACK_ORIGDST      = 1 << 3,
-	XT_CONNTRACK_REPLSRC      = 1 << 4,
-	XT_CONNTRACK_REPLDST      = 1 << 5,
-	XT_CONNTRACK_STATUS       = 1 << 6,
-	XT_CONNTRACK_EXPIRES      = 1 << 7,
+	XT_CONNTRACK_STATE                     = 1 << 0,
+	XT_CONNTRACK_PROTO                     = 1 << 1,
+	XT_CONNTRACK_ORIGSRC                   = 1 << 2,
+	XT_CONNTRACK_ORIGDST                   = 1 << 3,
+	XT_CONNTRACK_REPLSRC                   = 1 << 4,
+	XT_CONNTRACK_REPLDST                   = 1 << 5,
+	XT_CONNTRACK_STATUS                    = 1 << 6,
+	XT_CONNTRACK_EXPIRES                   = 1 << 7,
 	XT_CONNTRACK_ORIGSRC_PORT = 1 << 8,
 	XT_CONNTRACK_ORIGDST_PORT = 1 << 9,
 	XT_CONNTRACK_REPLSRC_PORT = 1 << 10,

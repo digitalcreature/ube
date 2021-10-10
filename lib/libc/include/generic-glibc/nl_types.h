@@ -44,7 +44,7 @@ extern nl_catd catopen (const char *__cat_name, int __flag) __nonnull ((1));
 /* Return translation with NUMBER in SET of CATALOG; if not found
    return STRING.  */
 extern char *catgets (nl_catd __catalog, int __set, int __number,
-		      const char *__string) __THROW __nonnull ((1));
+		                   const char *__string) __THROW __nonnull ((1));
 
 /* Close message CATALOG.  */
 extern int catclose (nl_catd __catalog) __THROW __nonnull ((1));

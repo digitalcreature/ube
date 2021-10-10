@@ -64,7 +64,7 @@ typedef struct siginfo {
 			__kernel_timer_t _tid;	/* timer id */
 			int _overrun;		/* overrun count */
 			sigval_t _sigval;	/* same as below */
-			int _sys_private;       /* not to be passed to user */
+			int _sys_private;                    /* not to be passed to user */
 		} _timer;
 
 		/* POSIX.1b signals */
@@ -96,7 +96,7 @@ typedef struct siginfo {
 #endif
 
 #define __ADDR_BND_PKEY_PAD  (__alignof__(void *) < sizeof(short) ? \
-			      sizeof(short) : __alignof__(void *))
+			                   sizeof(short) : __alignof__(void *))
 			union {
 				/*
 				 * used when si_code=BUS_MCEERR_AR or

@@ -79,43 +79,43 @@
 #elif __BUILDMACHINE_LEN__ == 20
 #define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "     "
 #elif __BUILDMACHINE_LEN__ == 19
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "      "
-#elif __BUILDMACHINE_LEN__ == 18
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "       "
-#elif __BUILDMACHINE_LEN__ == 17
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "        "
-#elif __BUILDMACHINE_LEN__ == 16
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "         "
-#elif __BUILDMACHINE_LEN__ == 15
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "          "
-#elif __BUILDMACHINE_LEN__ == 14
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "           "
-#elif __BUILDMACHINE_LEN__ == 13
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "            "
-#elif __BUILDMACHINE_LEN__ == 12
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "             "
-#elif __BUILDMACHINE_LEN__ == 11
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "              "
-#elif __BUILDMACHINE_LEN__ == 10
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "               "
-#elif __BUILDMACHINE_LEN__ == 9
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                "
-#elif __BUILDMACHINE_LEN__ == 8
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                 "
-#elif __BUILDMACHINE_LEN__ == 7
-#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                  "
-#elif __BUILDMACHINE_LEN__ == 6
 #define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                   "
-#elif __BUILDMACHINE_LEN__ == 5
+#elif __BUILDMACHINE_LEN__ == 18
 #define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                    "
-#elif __BUILDMACHINE_LEN__ == 4
+#elif __BUILDMACHINE_LEN__ == 17
 #define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                     "
-#elif __BUILDMACHINE_LEN__ == 3
+#elif __BUILDMACHINE_LEN__ == 16
 #define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                      "
-#elif __BUILDMACHINE_LEN__ == 2
+#elif __BUILDMACHINE_LEN__ == 15
 #define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                       "
-#elif __BUILDMACHINE_LEN__ == 1
+#elif __BUILDMACHINE_LEN__ == 14
 #define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                        "
+#elif __BUILDMACHINE_LEN__ == 13
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                      "
+#elif __BUILDMACHINE_LEN__ == 12
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                       "
+#elif __BUILDMACHINE_LEN__ == 11
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                        "
+#elif __BUILDMACHINE_LEN__ == 10
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                         "
+#elif __BUILDMACHINE_LEN__ == 9
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                          "
+#elif __BUILDMACHINE_LEN__ == 8
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                           "
+#elif __BUILDMACHINE_LEN__ == 7
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                                         "
+#elif __BUILDMACHINE_LEN__ == 6
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                                          "
+#elif __BUILDMACHINE_LEN__ == 5
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                                           "
+#elif __BUILDMACHINE_LEN__ == 4
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                                            "
+#elif __BUILDMACHINE_LEN__ == 3
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                                             "
+#elif __BUILDMACHINE_LEN__ == 2
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                                              "
+#elif __BUILDMACHINE_LEN__ == 1
+#define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG "                                                                            "
 #else
 #define BUILD_MACHINE_TAG_PADDED BUILD_MACHINE_TAG
 #endif
@@ -162,42 +162,42 @@ FILESUBTYPE VER_FILESUBTYPE
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK VER_VERSION_UNICODE_LANG
-        BEGIN
-            VALUE "CompanyName",VER_COMPANYNAME_STR
-            VALUE "FileDescription",VER_FILEDESCRIPTION_STR EXPORT_TAG
-            VALUE "FileVersion",VER_FILEVERSION_STR BUILD_MACHINE_TAG_PADDED
-            VALUE "InternalName",VER_INTERNALNAME_STR
-            VALUE "LegalCopyright",VER_LEGALCOPYRIGHT_STR
-            VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR
-            VALUE "ProductName",VER_PRODUCTNAME_STR
-            VALUE "ProductVersion",VER_PRODUCTVERSION_STR
+                     BLOCK VER_VERSION_UNICODE_LANG
+                     BEGIN
+                                      VALUE "CompanyName",VER_COMPANYNAME_STR
+                                      VALUE "FileDescription",VER_FILEDESCRIPTION_STR EXPORT_TAG
+                                      VALUE "FileVersion",VER_FILEVERSION_STR BUILD_MACHINE_TAG_PADDED
+                                      VALUE "InternalName",VER_INTERNALNAME_STR
+                                      VALUE "LegalCopyright",VER_LEGALCOPYRIGHT_STR
+                                      VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR
+                                      VALUE "ProductName",VER_PRODUCTNAME_STR
+                                      VALUE "ProductVersion",VER_PRODUCTVERSION_STR
 #ifdef VER_OLESELFREGISTER
-            VALUE "OleSelfRegister","\0"
+                                      VALUE "OleSelfRegister","\0"
 #endif
-        END
+                     END
 
 #ifdef VER_ANSICP
 	BLOCK VER_VERSION_ANSI_LANG
-        BEGIN
-            VALUE "CompanyName",VER_COMPANYNAME_STR
-            VALUE "FileDescription",VER_FILEDESCRIPTION_STR EXPORT_TAG
-            VALUE "FileVersion",VER_FILEVERSION_STR
-            VALUE "InternalName",VER_INTERNALNAME_STR
-            VALUE "LegalCopyright",VER_LEGALCOPYRIGHT_STR
-            VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR
-            VALUE "ProductName",VER_PRODUCTNAME_STR
-            VALUE "ProductVersion",VER_PRODUCTVERSION_STR
+                     BEGIN
+                                      VALUE "CompanyName",VER_COMPANYNAME_STR
+                                      VALUE "FileDescription",VER_FILEDESCRIPTION_STR EXPORT_TAG
+                                      VALUE "FileVersion",VER_FILEVERSION_STR
+                                      VALUE "InternalName",VER_INTERNALNAME_STR
+                                      VALUE "LegalCopyright",VER_LEGALCOPYRIGHT_STR
+                                      VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR
+                                      VALUE "ProductName",VER_PRODUCTNAME_STR
+                                      VALUE "ProductVersion",VER_PRODUCTVERSION_STR
 #ifdef VER_OLESELFREGISTER
-            VALUE "OleSelfRegister","\0"
+                                      VALUE "OleSelfRegister","\0"
 #endif
-        END
+                     END
 #endif
     END
 
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation",VER_VERSION_TRANSLATION
+                     VALUE "Translation",VER_VERSION_TRANSLATION
     END
 END
 #endif

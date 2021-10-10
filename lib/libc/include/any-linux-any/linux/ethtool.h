@@ -6,8 +6,8 @@
  * Copyright 2001 Jeff Garzik <jgarzik@pobox.com>
  * Portions Copyright 2001 Sun Microsystems (thockin@sun.com)
  * Portions Copyright 2002 Intel (eli.kupermann@intel.com,
- *                                christopher.leech@intel.com,
- *                                scott.feldman@intel.com)
+ *                                                                                                 christopher.leech@intel.com,
+ *                                                                                                 scott.feldman@intel.com)
  * Portions Copyright (C) Sun Microsystems 2008
  */
 
@@ -1073,8 +1073,8 @@ struct ethtool_rx_ntuple_flow_spec {
 		__u8					hdata[72];
 	} h_u, m_u;
 
-	__u16	        vlan_tag;
-	__u16	        vlan_tag_mask;
+	__u16	                     vlan_tag;
+	__u16	                     vlan_tag_mask;
 	__u64		data;
 	__u64		data_mask;
 
@@ -1111,9 +1111,9 @@ struct ethtool_flash {
  * 	%ETHTOOL_SET_DUMP
  * @version: FW version of the dump, filled in by driver
  * @flag: driver dependent flag for dump setting, filled in by driver during
- *        get and filled in by ethtool for set operation.
- *        flag must be initialized by macro ETH_FW_DUMP_DISABLE value when
- *        firmware dump is disabled.
+ *                     get and filled in by ethtool for set operation.
+ *                     flag must be initialized by macro ETH_FW_DUMP_DISABLE value when
+ *                     firmware dump is disabled.
  * @len: length of dump data, used as the length of the user buffer on entry to
  * 	 %ETHTOOL_GET_DUMP_DATA and this is returned as dump length by driver
  * 	 for %ETHTOOL_GET_DUMP_FLAG command
@@ -1221,13 +1221,13 @@ struct ethtool_ts_info {
  *	changeable (not present in %ETHTOOL_GFEATURES' features[].available)
  *	those bits were ignored.
  *   %ETHTOOL_F_WISH - some or all changes requested were recorded but the
- *      resulting state of bits masked by .valid is not equal to .requested.
- *      Probably there are other device-specific constraints on some features
- *      in the set. When %ETHTOOL_F_UNSUPPORTED is set, .valid is considered
- *      here as though ignored bits were cleared.
+ *                   resulting state of bits masked by .valid is not equal to .requested.
+ *                   Probably there are other device-specific constraints on some features
+ *                   in the set. When %ETHTOOL_F_UNSUPPORTED is set, .valid is considered
+ *                   here as though ignored bits were cleared.
  *   %ETHTOOL_F_COMPAT - some or all changes requested were made by calling
- *      compatibility functions. Requested offload state cannot be properly
- *      managed by kernel.
+ *                   compatibility functions. Requested offload state cannot be properly
+ *                   managed by kernel.
  *
  * Meaning of bits in the masks are obtained by %ETHTOOL_GSSET_INFO (number of
  * bits in the arrays - always multiple of 32) and %ETHTOOL_GSTRINGS commands
@@ -1241,8 +1241,8 @@ enum ethtool_sfeatures_retval_bits {
 };
 
 #define ETHTOOL_F_UNSUPPORTED   (1 << ETHTOOL_F_UNSUPPORTED__BIT)
-#define ETHTOOL_F_WISH          (1 << ETHTOOL_F_WISH__BIT)
-#define ETHTOOL_F_COMPAT        (1 << ETHTOOL_F_COMPAT__BIT)
+#define ETHTOOL_F_WISH                       (1 << ETHTOOL_F_WISH__BIT)
+#define ETHTOOL_F_COMPAT                     (1 << ETHTOOL_F_COMPAT__BIT)
 
 #define MAX_NUM_QUEUE		4096
 
@@ -1623,7 +1623,7 @@ static __inline__ int ethtool_validate_duplex(__u8 duplex)
 #define ETH_TP_MDI_INVALID	0x00 /* status: unknown; control: unsupported */
 #define ETH_TP_MDI		0x01 /* status: MDI;     control: force MDI */
 #define ETH_TP_MDI_X		0x02 /* status: MDI-X;   control: force MDI-X */
-#define ETH_TP_MDI_AUTO		0x03 /*                  control: auto-select */
+#define ETH_TP_MDI_AUTO		0x03 /*                                                         control: auto-select */
 
 /* Wake-On-Lan options. */
 #define WAKE_PHY		(1 << 0)

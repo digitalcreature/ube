@@ -43,11 +43,11 @@ extern "C" {
 #else
   typedef struct ISimpleDataConverterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISimpleDataConverter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISimpleDataConverter *This);
-      ULONG (WINAPI *Release)(ISimpleDataConverter *This);
-      HRESULT (WINAPI *ConvertData)(ISimpleDataConverter *This,VARIANT varSrc,__LONG32 vtDest,IUnknown *pUnknownElement,VARIANT *pvarDest);
-      HRESULT (WINAPI *CanConvertData)(ISimpleDataConverter *This,__LONG32 vt1,__LONG32 vt2);
+                   HRESULT (WINAPI *QueryInterface)(ISimpleDataConverter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISimpleDataConverter *This);
+                   ULONG (WINAPI *Release)(ISimpleDataConverter *This);
+                   HRESULT (WINAPI *ConvertData)(ISimpleDataConverter *This,VARIANT varSrc,__LONG32 vtDest,IUnknown *pUnknownElement,VARIANT *pvarDest);
+                   HRESULT (WINAPI *CanConvertData)(ISimpleDataConverter *This,__LONG32 vt1,__LONG32 vt2);
     END_INTERFACE
   } ISimpleDataConverterVtbl;
   struct ISimpleDataConverter {

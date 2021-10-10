@@ -18,83 +18,83 @@ pub const Adler32 = struct {
     adler: u32,
 
     pub fn init() Adler32 {
-        return Adler32{ .adler = 1 };
+                     return Adler32{ .adler = 1 };
     }
 
     // This fast variant is taken from zlib. It reduces the required modulos and unrolls longer
     // buffer inputs and should be much quicker.
     pub fn update(self: *Adler32, input: []const u8) void {
-        var s1 = self.adler & 0xffff;
-        var s2 = (self.adler >> 16) & 0xffff;
+                     var s1 = self.adler & 0xffff;
+                     var s2 = (self.adler >> 16) & 0xffff;
 
-        if (input.len == 1) {
-            s1 +%= input[0];
-            if (s1 >= base) {
-                s1 -= base;
-            }
-            s2 +%= s1;
-            if (s2 >= base) {
-                s2 -= base;
-            }
-        } else if (input.len < 16) {
-            for (input) |b| {
-                s1 +%= b;
-                s2 +%= s1;
-            }
-            if (s1 >= base) {
-                s1 -= base;
-            }
+                     if (input.len == 1) {
+                                      s1 +%= input[0];
+                                      if (s1 >= base) {
+                                          s1 -= base;
+                                      }
+                                      s2 +%= s1;
+                                      if (s2 >= base) {
+                                          s2 -= base;
+                                      }
+                     } else if (input.len < 16) {
+                                      for (input) |b| {
+                                          s1 +%= b;
+                                          s2 +%= s1;
+                                      }
+                                      if (s1 >= base) {
+                                          s1 -= base;
+                                      }
 
-            s2 %= base;
-        } else {
-            const n = nmax / 16; // note: 16 | nmax
+                                      s2 %= base;
+                     } else {
+                                      const n = nmax / 16; // note: 16 | nmax
 
-            var i: usize = 0;
+                                      var i: usize = 0;
 
-            while (i + nmax <= input.len) {
-                var rounds: usize = 0;
-                while (rounds < n) : (rounds += 1) {
-                    comptime var j: usize = 0;
-                    inline while (j < 16) : (j += 1) {
-                        s1 +%= input[i + j];
-                        s2 +%= s1;
-                    }
-                    i += 16;
-                }
+                                      while (i + nmax <= input.len) {
+                                          var rounds: usize = 0;
+                                          while (rounds < n) : (rounds += 1) {
+                                                           comptime var j: usize = 0;
+                                                           inline while (j < 16) : (j += 1) {
+                                                                            s1 +%= input[i + j];
+                                                                            s2 +%= s1;
+                                                           }
+                                                           i += 16;
+                                          }
 
-                s1 %= base;
-                s2 %= base;
-            }
+                                          s1 %= base;
+                                          s2 %= base;
+                                      }
 
-            if (i < input.len) {
-                while (i + 16 <= input.len) : (i += 16) {
-                    comptime var j: usize = 0;
-                    inline while (j < 16) : (j += 1) {
-                        s1 +%= input[i + j];
-                        s2 +%= s1;
-                    }
-                }
-                while (i < input.len) : (i += 1) {
-                    s1 +%= input[i];
-                    s2 +%= s1;
-                }
+                                      if (i < input.len) {
+                                          while (i + 16 <= input.len) : (i += 16) {
+                                                           comptime var j: usize = 0;
+                                                           inline while (j < 16) : (j += 1) {
+                                                                            s1 +%= input[i + j];
+                                                                            s2 +%= s1;
+                                                           }
+                                          }
+                                          while (i < input.len) : (i += 1) {
+                                                           s1 +%= input[i];
+                                                           s2 +%= s1;
+                                          }
 
-                s1 %= base;
-                s2 %= base;
-            }
-        }
+                                          s1 %= base;
+                                          s2 %= base;
+                                      }
+                     }
 
-        self.adler = s1 | (s2 << 16);
+                     self.adler = s1 | (s2 << 16);
     }
 
     pub fn final(self: *Adler32) u32 {
-        return self.adler;
+                     return self.adler;
     }
 
     pub fn hash(input: []const u8) u32 {
-        var c = Adler32.init();
-        c.update(input);
-        return c.final();
+                     var c = Adler32.init();
+                     c.update(input);
+                     return c.final();
     }
 };
 
@@ -118,15 +118,15 @@ test "adler32 very long" {
 
 test "adler32 very long with variation" {
     const long = comptime blk: {
-        @setEvalBranchQuota(7000);
-        var result: [6000]u8 = undefined;
+                     @setEvalBranchQuota(7000);
+                     var result: [6000]u8 = undefined;
 
-        var i: usize = 0;
-        while (i < result.len) : (i += 1) {
-            result[i] = @truncate(u8, i);
-        }
+                     var i: usize = 0;
+                     while (i < result.len) : (i += 1) {
+                                      result[i] = @truncate(u8, i);
+                     }
 
-        break :blk result;
+                     break :blk result;
     };
 
     testing.expectEqual(@as(u32, 0x5af38d6e), std.hash.Adler32.hash(long[0..]));

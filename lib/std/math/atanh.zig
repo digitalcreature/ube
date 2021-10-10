@@ -23,9 +23,9 @@ const maxInt = std.math.maxInt;
 pub fn atanh(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => atanh_32(x),
-        f64 => atanh_64(x),
-        else => @compileError("atanh not implemented for " ++ @typeName(T)),
+                     f32 => atanh_32(x),
+                     f64 => atanh_64(x),
+                     else => @compileError("atanh not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -38,22 +38,22 @@ fn atanh_32(x: f32) f32 {
     var y = @bitCast(f32, i); // |x|
 
     if (y == 1.0) {
-        return math.copysign(f32, math.inf(f32), x);
+                     return math.copysign(f32, math.inf(f32), x);
     }
 
     if (u < 0x3F800000 - (1 << 23)) {
-        if (u < 0x3F800000 - (32 << 23)) {
-            // underflow
-            if (u < (1 << 23)) {
-                math.doNotOptimizeAway(y * y);
-            }
-        }
-        // |x| < 0.5
-        else {
-            y = 0.5 * math.log1p(2 * y + 2 * y * y / (1 - y));
-        }
+                     if (u < 0x3F800000 - (32 << 23)) {
+                                      // underflow
+                                      if (u < (1 << 23)) {
+                                          math.doNotOptimizeAway(y * y);
+                                      }
+                     }
+                     // |x| < 0.5
+                     else {
+                                      y = 0.5 * math.log1p(2 * y + 2 * y * y / (1 - y));
+                     }
     } else {
-        y = 0.5 * math.log1p(2 * (y / (1 - y)));
+                     y = 0.5 * math.log1p(2 * (y / (1 - y)));
     }
 
     return if (s != 0) -y else y;
@@ -67,22 +67,22 @@ fn atanh_64(x: f64) f64 {
     var y = @bitCast(f64, u & (maxInt(u64) >> 1)); // |x|
 
     if (y == 1.0) {
-        return math.copysign(f64, math.inf(f64), x);
+                     return math.copysign(f64, math.inf(f64), x);
     }
 
     if (e < 0x3FF - 1) {
-        if (e < 0x3FF - 32) {
-            // underflow
-            if (e == 0) {
-                math.doNotOptimizeAway(@floatCast(f32, y));
-            }
-        }
-        // |x| < 0.5
-        else {
-            y = 0.5 * math.log1p(2 * y + 2 * y * y / (1 - y));
-        }
+                     if (e < 0x3FF - 32) {
+                                      // underflow
+                                      if (e == 0) {
+                                          math.doNotOptimizeAway(@floatCast(f32, y));
+                                      }
+                     }
+                     // |x| < 0.5
+                     else {
+                                      y = 0.5 * math.log1p(2 * y + 2 * y * y / (1 - y));
+                     }
     } else {
-        y = 0.5 * math.log1p(2 * (y / (1 - y)));
+                     y = 0.5 * math.log1p(2 * (y / (1 - y)));
     }
 
     return if (s != 0) -y else y;

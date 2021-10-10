@@ -185,24 +185,24 @@ MIDL_INTERFACE("75d8f3ee-3e5a-43b4-a15a-bcf6887460c0")
 IWSDXMLContext : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddNamespace(
-        LPCWSTR pszUri,
-        LPCWSTR pszSuggestedPrefix,
-        WSDXML_NAMESPACE **ppNamespace) = 0;
+                     LPCWSTR pszUri,
+                     LPCWSTR pszSuggestedPrefix,
+                     WSDXML_NAMESPACE **ppNamespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddNameToNamespace(
-        LPCWSTR pszUri,
-        LPCWSTR pszName,
-        WSDXML_NAME **ppName) = 0;
+                     LPCWSTR pszUri,
+                     LPCWSTR pszName,
+                     WSDXML_NAME **ppName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNamespaces(
-        const PCWSDXML_NAMESPACE *pNamespaces,
-        WORD wNamespacesCount,
-        BYTE bLayerNumber) = 0;
+                     const PCWSDXML_NAMESPACE *pNamespaces,
+                     WORD wNamespacesCount,
+                     BYTE bLayerNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTypes(
-        const PCWSDXML_TYPE *pTypes,
-        DWORD dwTypesCount,
-        BYTE bLayerNumber) = 0;
+                     const PCWSDXML_TYPE *pTypes,
+                     DWORD dwTypesCount,
+                     BYTE bLayerNumber) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -214,40 +214,40 @@ typedef struct IWSDXMLContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDXMLContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDXMLContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDXMLContext *This);
+                     IWSDXMLContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDXMLContext *This);
+                     IWSDXMLContext *This);
 
     /*** IWSDXMLContext methods ***/
     HRESULT (STDMETHODCALLTYPE *AddNamespace)(
-        IWSDXMLContext *This,
-        LPCWSTR pszUri,
-        LPCWSTR pszSuggestedPrefix,
-        WSDXML_NAMESPACE **ppNamespace);
+                     IWSDXMLContext *This,
+                     LPCWSTR pszUri,
+                     LPCWSTR pszSuggestedPrefix,
+                     WSDXML_NAMESPACE **ppNamespace);
 
     HRESULT (STDMETHODCALLTYPE *AddNameToNamespace)(
-        IWSDXMLContext *This,
-        LPCWSTR pszUri,
-        LPCWSTR pszName,
-        WSDXML_NAME **ppName);
+                     IWSDXMLContext *This,
+                     LPCWSTR pszUri,
+                     LPCWSTR pszName,
+                     WSDXML_NAME **ppName);
 
     HRESULT (STDMETHODCALLTYPE *SetNamespaces)(
-        IWSDXMLContext *This,
-        const PCWSDXML_NAMESPACE *pNamespaces,
-        WORD wNamespacesCount,
-        BYTE bLayerNumber);
+                     IWSDXMLContext *This,
+                     const PCWSDXML_NAMESPACE *pNamespaces,
+                     WORD wNamespacesCount,
+                     BYTE bLayerNumber);
 
     HRESULT (STDMETHODCALLTYPE *SetTypes)(
-        IWSDXMLContext *This,
-        const PCWSDXML_TYPE *pTypes,
-        DWORD dwTypesCount,
-        BYTE bLayerNumber);
+                     IWSDXMLContext *This,
+                     const PCWSDXML_TYPE *pTypes,
+                     DWORD dwTypesCount,
+                     BYTE bLayerNumber);
 
     END_INTERFACE
 } IWSDXMLContextVtbl;

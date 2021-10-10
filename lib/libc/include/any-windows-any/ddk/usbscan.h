@@ -31,10 +31,10 @@ extern "C" {
 #pragma pack(push,8)
 
 #ifndef MAX_NUM_PIPES
-#define MAX_NUM_PIPES                     8
+#define MAX_NUM_PIPES                                                            8
 #endif
 
-#define BULKIN_FLAG                       0x80
+#define BULKIN_FLAG                                                              0x80
 
 typedef struct _DRV_VERSION {
   OUT ULONG major;
@@ -112,8 +112,8 @@ typedef struct _USBSCAN_TIMEOUT {
 } USBSCAN_TIMEOUT, *PUSBSCAN_TIMEOUT;
 #endif
 
-#define FILE_DEVICE_USB_SCAN              0x8000
-#define IOCTL_INDEX                       0x0800
+#define FILE_DEVICE_USB_SCAN                                        0x8000
+#define IOCTL_INDEX                                                              0x0800
 
 #define IOCTL_GET_VERSION \
   CTL_CODE(FILE_DEVICE_USB_SCAN, IOCTL_INDEX + 0, METHOD_BUFFERED,FILE_ANY_ACCESS)

@@ -341,26 +341,26 @@ MIDL_INTERFACE("fd501041-8ebe-11ce-8183-00aa00577da2")
 IBDA_NetworkProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PutSignalSource(
-        ULONG ulSignalSource) = 0;
+                     ULONG ulSignalSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignalSource(
-        ULONG *pulSignalSource) = 0;
+                     ULONG *pulSignalSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNetworkType(
-        GUID *pguidNetworkType) = 0;
+                     GUID *pguidNetworkType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutTuningSpace(
-        REFGUID guidTuningSpace) = 0;
+                     REFGUID guidTuningSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTuningSpace(
-        GUID *pguidTuingSpace) = 0;
+                     GUID *pguidTuingSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterDeviceFilter(
-        IUnknown *pUnkFilterControl,
-        ULONG *ppvRegisitrationContext) = 0;
+                     IUnknown *pUnkFilterControl,
+                     ULONG *ppvRegisitrationContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnRegisterDeviceFilter(
-        ULONG pvRegistrationContext) = 0;
+                     ULONG pvRegistrationContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -372,45 +372,45 @@ typedef struct IBDA_NetworkProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_NetworkProvider* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_NetworkProvider* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_NetworkProvider* This);
+                     IBDA_NetworkProvider* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_NetworkProvider* This);
+                     IBDA_NetworkProvider* This);
 
     /*** IBDA_NetworkProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *PutSignalSource)(
-        IBDA_NetworkProvider* This,
-        ULONG ulSignalSource);
+                     IBDA_NetworkProvider* This,
+                     ULONG ulSignalSource);
 
     HRESULT (STDMETHODCALLTYPE *GetSignalSource)(
-        IBDA_NetworkProvider* This,
-        ULONG *pulSignalSource);
+                     IBDA_NetworkProvider* This,
+                     ULONG *pulSignalSource);
 
     HRESULT (STDMETHODCALLTYPE *GetNetworkType)(
-        IBDA_NetworkProvider* This,
-        GUID *pguidNetworkType);
+                     IBDA_NetworkProvider* This,
+                     GUID *pguidNetworkType);
 
     HRESULT (STDMETHODCALLTYPE *PutTuningSpace)(
-        IBDA_NetworkProvider* This,
-        REFGUID guidTuningSpace);
+                     IBDA_NetworkProvider* This,
+                     REFGUID guidTuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *GetTuningSpace)(
-        IBDA_NetworkProvider* This,
-        GUID *pguidTuingSpace);
+                     IBDA_NetworkProvider* This,
+                     GUID *pguidTuingSpace);
 
     HRESULT (STDMETHODCALLTYPE *RegisterDeviceFilter)(
-        IBDA_NetworkProvider* This,
-        IUnknown *pUnkFilterControl,
-        ULONG *ppvRegisitrationContext);
+                     IBDA_NetworkProvider* This,
+                     IUnknown *pUnkFilterControl,
+                     ULONG *ppvRegisitrationContext);
 
     HRESULT (STDMETHODCALLTYPE *UnRegisterDeviceFilter)(
-        IBDA_NetworkProvider* This,
-        ULONG pvRegistrationContext);
+                     IBDA_NetworkProvider* This,
+                     ULONG pvRegistrationContext);
 
     END_INTERFACE
 } IBDA_NetworkProviderVtbl;
@@ -542,21 +542,21 @@ MIDL_INTERFACE("71985f43-1ca1-11d3-9cc8-00c04f7971e0")
 IBDA_EthernetFilter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetMulticastListSize(
-        ULONG *pulcbAddresses) = 0;
+                     ULONG *pulcbAddresses) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutMulticastList(
-        ULONG ulcbAddresses,
-        BYTE pAddressList[]) = 0;
+                     ULONG ulcbAddresses,
+                     BYTE pAddressList[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMulticastList(
-        ULONG *pulcbAddresses,
-        BYTE pAddressList[]) = 0;
+                     ULONG *pulcbAddresses,
+                     BYTE pAddressList[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutMulticastMode(
-        ULONG ulModeMask) = 0;
+                     ULONG ulModeMask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMulticastMode(
-        ULONG *pulModeMask) = 0;
+                     ULONG *pulModeMask) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -568,38 +568,38 @@ typedef struct IBDA_EthernetFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_EthernetFilter* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_EthernetFilter* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_EthernetFilter* This);
+                     IBDA_EthernetFilter* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_EthernetFilter* This);
+                     IBDA_EthernetFilter* This);
 
     /*** IBDA_EthernetFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMulticastListSize)(
-        IBDA_EthernetFilter* This,
-        ULONG *pulcbAddresses);
+                     IBDA_EthernetFilter* This,
+                     ULONG *pulcbAddresses);
 
     HRESULT (STDMETHODCALLTYPE *PutMulticastList)(
-        IBDA_EthernetFilter* This,
-        ULONG ulcbAddresses,
-        BYTE pAddressList[]);
+                     IBDA_EthernetFilter* This,
+                     ULONG ulcbAddresses,
+                     BYTE pAddressList[]);
 
     HRESULT (STDMETHODCALLTYPE *GetMulticastList)(
-        IBDA_EthernetFilter* This,
-        ULONG *pulcbAddresses,
-        BYTE pAddressList[]);
+                     IBDA_EthernetFilter* This,
+                     ULONG *pulcbAddresses,
+                     BYTE pAddressList[]);
 
     HRESULT (STDMETHODCALLTYPE *PutMulticastMode)(
-        IBDA_EthernetFilter* This,
-        ULONG ulModeMask);
+                     IBDA_EthernetFilter* This,
+                     ULONG ulModeMask);
 
     HRESULT (STDMETHODCALLTYPE *GetMulticastMode)(
-        IBDA_EthernetFilter* This,
-        ULONG *pulModeMask);
+                     IBDA_EthernetFilter* This,
+                     ULONG *pulModeMask);
 
     END_INTERFACE
 } IBDA_EthernetFilterVtbl;
@@ -708,21 +708,21 @@ MIDL_INTERFACE("71985f44-1ca1-11d3-9cc8-00c04f7971e0")
 IBDA_IPV4Filter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetMulticastListSize(
-        ULONG *pulcbAddresses) = 0;
+                     ULONG *pulcbAddresses) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutMulticastList(
-        ULONG ulcbAddresses,
-        BYTE pAddressList[]) = 0;
+                     ULONG ulcbAddresses,
+                     BYTE pAddressList[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMulticastList(
-        ULONG *pulcbAddresses,
-        BYTE pAddressList[]) = 0;
+                     ULONG *pulcbAddresses,
+                     BYTE pAddressList[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutMulticastMode(
-        ULONG ulModeMask) = 0;
+                     ULONG ulModeMask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMulticastMode(
-        ULONG *pulModeMask) = 0;
+                     ULONG *pulModeMask) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -734,38 +734,38 @@ typedef struct IBDA_IPV4FilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_IPV4Filter* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_IPV4Filter* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_IPV4Filter* This);
+                     IBDA_IPV4Filter* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_IPV4Filter* This);
+                     IBDA_IPV4Filter* This);
 
     /*** IBDA_IPV4Filter methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMulticastListSize)(
-        IBDA_IPV4Filter* This,
-        ULONG *pulcbAddresses);
+                     IBDA_IPV4Filter* This,
+                     ULONG *pulcbAddresses);
 
     HRESULT (STDMETHODCALLTYPE *PutMulticastList)(
-        IBDA_IPV4Filter* This,
-        ULONG ulcbAddresses,
-        BYTE pAddressList[]);
+                     IBDA_IPV4Filter* This,
+                     ULONG ulcbAddresses,
+                     BYTE pAddressList[]);
 
     HRESULT (STDMETHODCALLTYPE *GetMulticastList)(
-        IBDA_IPV4Filter* This,
-        ULONG *pulcbAddresses,
-        BYTE pAddressList[]);
+                     IBDA_IPV4Filter* This,
+                     ULONG *pulcbAddresses,
+                     BYTE pAddressList[]);
 
     HRESULT (STDMETHODCALLTYPE *PutMulticastMode)(
-        IBDA_IPV4Filter* This,
-        ULONG ulModeMask);
+                     IBDA_IPV4Filter* This,
+                     ULONG ulModeMask);
 
     HRESULT (STDMETHODCALLTYPE *GetMulticastMode)(
-        IBDA_IPV4Filter* This,
-        ULONG *pulModeMask);
+                     IBDA_IPV4Filter* This,
+                     ULONG *pulModeMask);
 
     END_INTERFACE
 } IBDA_IPV4FilterVtbl;
@@ -874,21 +874,21 @@ MIDL_INTERFACE("e1785a74-2a23-4fb3-9245-a8f88017ef33")
 IBDA_IPV6Filter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetMulticastListSize(
-        ULONG *pulcbAddresses) = 0;
+                     ULONG *pulcbAddresses) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutMulticastList(
-        ULONG ulcbAddresses,
-        BYTE pAddressList[]) = 0;
+                     ULONG ulcbAddresses,
+                     BYTE pAddressList[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMulticastList(
-        ULONG *pulcbAddresses,
-        BYTE pAddressList[]) = 0;
+                     ULONG *pulcbAddresses,
+                     BYTE pAddressList[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutMulticastMode(
-        ULONG ulModeMask) = 0;
+                     ULONG ulModeMask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMulticastMode(
-        ULONG *pulModeMask) = 0;
+                     ULONG *pulModeMask) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -900,38 +900,38 @@ typedef struct IBDA_IPV6FilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_IPV6Filter* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_IPV6Filter* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_IPV6Filter* This);
+                     IBDA_IPV6Filter* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_IPV6Filter* This);
+                     IBDA_IPV6Filter* This);
 
     /*** IBDA_IPV6Filter methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMulticastListSize)(
-        IBDA_IPV6Filter* This,
-        ULONG *pulcbAddresses);
+                     IBDA_IPV6Filter* This,
+                     ULONG *pulcbAddresses);
 
     HRESULT (STDMETHODCALLTYPE *PutMulticastList)(
-        IBDA_IPV6Filter* This,
-        ULONG ulcbAddresses,
-        BYTE pAddressList[]);
+                     IBDA_IPV6Filter* This,
+                     ULONG ulcbAddresses,
+                     BYTE pAddressList[]);
 
     HRESULT (STDMETHODCALLTYPE *GetMulticastList)(
-        IBDA_IPV6Filter* This,
-        ULONG *pulcbAddresses,
-        BYTE pAddressList[]);
+                     IBDA_IPV6Filter* This,
+                     ULONG *pulcbAddresses,
+                     BYTE pAddressList[]);
 
     HRESULT (STDMETHODCALLTYPE *PutMulticastMode)(
-        IBDA_IPV6Filter* This,
-        ULONG ulModeMask);
+                     IBDA_IPV6Filter* This,
+                     ULONG ulModeMask);
 
     HRESULT (STDMETHODCALLTYPE *GetMulticastMode)(
-        IBDA_IPV6Filter* This,
-        ULONG *pulModeMask);
+                     IBDA_IPV6Filter* This,
+                     ULONG *pulModeMask);
 
     END_INTERFACE
 } IBDA_IPV6FilterVtbl;
@@ -1040,16 +1040,16 @@ MIDL_INTERFACE("fd0a5af3-b41d-11d2-9c95-00c04f7971e0")
 IBDA_DeviceControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartChanges(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CheckChanges(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitChanges(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetChangeState(
-        ULONG *pState) = 0;
+                     ULONG *pState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1061,29 +1061,29 @@ typedef struct IBDA_DeviceControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DeviceControl* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DeviceControl* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DeviceControl* This);
+                     IBDA_DeviceControl* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DeviceControl* This);
+                     IBDA_DeviceControl* This);
 
     /*** IBDA_DeviceControl methods ***/
     HRESULT (STDMETHODCALLTYPE *StartChanges)(
-        IBDA_DeviceControl* This);
+                     IBDA_DeviceControl* This);
 
     HRESULT (STDMETHODCALLTYPE *CheckChanges)(
-        IBDA_DeviceControl* This);
+                     IBDA_DeviceControl* This);
 
     HRESULT (STDMETHODCALLTYPE *CommitChanges)(
-        IBDA_DeviceControl* This);
+                     IBDA_DeviceControl* This);
 
     HRESULT (STDMETHODCALLTYPE *GetChangeState)(
-        IBDA_DeviceControl* This,
-        ULONG *pState);
+                     IBDA_DeviceControl* This,
+                     ULONG *pState);
 
     END_INTERFACE
 } IBDA_DeviceControlVtbl;
@@ -1175,13 +1175,13 @@ MIDL_INTERFACE("0ded49d5-a8b7-4d5d-97a1-12b0c195874d")
 IBDA_PinControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPinID(
-        ULONG *pulPinID) = 0;
+                     ULONG *pulPinID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPinType(
-        ULONG *pulPinType) = 0;
+                     ULONG *pulPinType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegistrationContext(
-        ULONG *pulRegistrationCtx) = 0;
+                     ULONG *pulRegistrationCtx) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1193,28 +1193,28 @@ typedef struct IBDA_PinControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_PinControl* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_PinControl* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_PinControl* This);
+                     IBDA_PinControl* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_PinControl* This);
+                     IBDA_PinControl* This);
 
     /*** IBDA_PinControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPinID)(
-        IBDA_PinControl* This,
-        ULONG *pulPinID);
+                     IBDA_PinControl* This,
+                     ULONG *pulPinID);
 
     HRESULT (STDMETHODCALLTYPE *GetPinType)(
-        IBDA_PinControl* This,
-        ULONG *pulPinType);
+                     IBDA_PinControl* This,
+                     ULONG *pulPinType);
 
     HRESULT (STDMETHODCALLTYPE *RegistrationContext)(
-        IBDA_PinControl* This,
-        ULONG *pulRegistrationCtx);
+                     IBDA_PinControl* This,
+                     ULONG *pulRegistrationCtx);
 
     END_INTERFACE
 } IBDA_PinControlVtbl;
@@ -1297,22 +1297,22 @@ MIDL_INTERFACE("d2f1644b-b409-11d2-bc69-00a0c9ee9e16")
 IBDA_SignalProperties : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PutNetworkType(
-        REFGUID guidNetworkType) = 0;
+                     REFGUID guidNetworkType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNetworkType(
-        GUID *pguidNetworkType) = 0;
+                     GUID *pguidNetworkType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutSignalSource(
-        ULONG ulSignalSource) = 0;
+                     ULONG ulSignalSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignalSource(
-        ULONG *pulSignalSource) = 0;
+                     ULONG *pulSignalSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutTuningSpace(
-        REFGUID guidTuningSpace) = 0;
+                     REFGUID guidTuningSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTuningSpace(
-        GUID *pguidTuingSpace) = 0;
+                     GUID *pguidTuingSpace) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1324,40 +1324,40 @@ typedef struct IBDA_SignalPropertiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_SignalProperties* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_SignalProperties* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_SignalProperties* This);
+                     IBDA_SignalProperties* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_SignalProperties* This);
+                     IBDA_SignalProperties* This);
 
     /*** IBDA_SignalProperties methods ***/
     HRESULT (STDMETHODCALLTYPE *PutNetworkType)(
-        IBDA_SignalProperties* This,
-        REFGUID guidNetworkType);
+                     IBDA_SignalProperties* This,
+                     REFGUID guidNetworkType);
 
     HRESULT (STDMETHODCALLTYPE *GetNetworkType)(
-        IBDA_SignalProperties* This,
-        GUID *pguidNetworkType);
+                     IBDA_SignalProperties* This,
+                     GUID *pguidNetworkType);
 
     HRESULT (STDMETHODCALLTYPE *PutSignalSource)(
-        IBDA_SignalProperties* This,
-        ULONG ulSignalSource);
+                     IBDA_SignalProperties* This,
+                     ULONG ulSignalSource);
 
     HRESULT (STDMETHODCALLTYPE *GetSignalSource)(
-        IBDA_SignalProperties* This,
-        ULONG *pulSignalSource);
+                     IBDA_SignalProperties* This,
+                     ULONG *pulSignalSource);
 
     HRESULT (STDMETHODCALLTYPE *PutTuningSpace)(
-        IBDA_SignalProperties* This,
-        REFGUID guidTuningSpace);
+                     IBDA_SignalProperties* This,
+                     REFGUID guidTuningSpace);
 
     HRESULT (STDMETHODCALLTYPE *GetTuningSpace)(
-        IBDA_SignalProperties* This,
-        GUID *pguidTuingSpace);
+                     IBDA_SignalProperties* This,
+                     GUID *pguidTuingSpace);
 
     END_INTERFACE
 } IBDA_SignalPropertiesVtbl;
@@ -1476,34 +1476,34 @@ MIDL_INTERFACE("1347d106-cf3a-428a-a5cb-ac0d9a2a4338")
 IBDA_SignalStatistics : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE put_SignalStrength(
-        LONG lDbStrength) = 0;
+                     LONG lDbStrength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SignalStrength(
-        LONG *plDbStrength) = 0;
+                     LONG *plDbStrength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SignalQuality(
-        LONG lPercentQuality) = 0;
+                     LONG lPercentQuality) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SignalQuality(
-        LONG *plPercentQuality) = 0;
+                     LONG *plPercentQuality) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SignalPresent(
-        BOOLEAN fPresent) = 0;
+                     BOOLEAN fPresent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SignalPresent(
-        BOOLEAN *pfPresent) = 0;
+                     BOOLEAN *pfPresent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SignalLocked(
-        BOOLEAN fLocked) = 0;
+                     BOOLEAN fLocked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SignalLocked(
-        BOOLEAN *pfLocked) = 0;
+                     BOOLEAN *pfLocked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SampleTime(
-        LONG lmsSampleTime) = 0;
+                     LONG lmsSampleTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SampleTime(
-        LONG *plmsSampleTime) = 0;
+                     LONG *plmsSampleTime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1515,56 +1515,56 @@ typedef struct IBDA_SignalStatisticsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_SignalStatistics* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_SignalStatistics* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_SignalStatistics* This);
+                     IBDA_SignalStatistics* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_SignalStatistics* This);
+                     IBDA_SignalStatistics* This);
 
     /*** IBDA_SignalStatistics methods ***/
     HRESULT (STDMETHODCALLTYPE *put_SignalStrength)(
-        IBDA_SignalStatistics* This,
-        LONG lDbStrength);
+                     IBDA_SignalStatistics* This,
+                     LONG lDbStrength);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalStrength)(
-        IBDA_SignalStatistics* This,
-        LONG *plDbStrength);
+                     IBDA_SignalStatistics* This,
+                     LONG *plDbStrength);
 
     HRESULT (STDMETHODCALLTYPE *put_SignalQuality)(
-        IBDA_SignalStatistics* This,
-        LONG lPercentQuality);
+                     IBDA_SignalStatistics* This,
+                     LONG lPercentQuality);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalQuality)(
-        IBDA_SignalStatistics* This,
-        LONG *plPercentQuality);
+                     IBDA_SignalStatistics* This,
+                     LONG *plPercentQuality);
 
     HRESULT (STDMETHODCALLTYPE *put_SignalPresent)(
-        IBDA_SignalStatistics* This,
-        BOOLEAN fPresent);
+                     IBDA_SignalStatistics* This,
+                     BOOLEAN fPresent);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalPresent)(
-        IBDA_SignalStatistics* This,
-        BOOLEAN *pfPresent);
+                     IBDA_SignalStatistics* This,
+                     BOOLEAN *pfPresent);
 
     HRESULT (STDMETHODCALLTYPE *put_SignalLocked)(
-        IBDA_SignalStatistics* This,
-        BOOLEAN fLocked);
+                     IBDA_SignalStatistics* This,
+                     BOOLEAN fLocked);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalLocked)(
-        IBDA_SignalStatistics* This,
-        BOOLEAN *pfLocked);
+                     IBDA_SignalStatistics* This,
+                     BOOLEAN *pfLocked);
 
     HRESULT (STDMETHODCALLTYPE *put_SampleTime)(
-        IBDA_SignalStatistics* This,
-        LONG lmsSampleTime);
+                     IBDA_SignalStatistics* This,
+                     LONG lmsSampleTime);
 
     HRESULT (STDMETHODCALLTYPE *get_SampleTime)(
-        IBDA_SignalStatistics* This,
-        LONG *plmsSampleTime);
+                     IBDA_SignalStatistics* This,
+                     LONG *plmsSampleTime);
 
     END_INTERFACE
 } IBDA_SignalStatisticsVtbl;
@@ -1731,55 +1731,55 @@ MIDL_INTERFACE("79b56888-7fea-4690-b45d-38fd3c7849be")
 IBDA_Topology : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetNodeTypes(
-        ULONG *pulcNodeTypes,
-        ULONG ulcNodeTypesMax,
-        ULONG rgulNodeTypes[]) = 0;
+                     ULONG *pulcNodeTypes,
+                     ULONG ulcNodeTypesMax,
+                     ULONG rgulNodeTypes[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNodeDescriptors(
-        ULONG *ulcNodeDescriptors,
-        ULONG ulcNodeDescriptorsMax,
-        BDANODE_DESCRIPTOR rgNodeDescriptors[]) = 0;
+                     ULONG *ulcNodeDescriptors,
+                     ULONG ulcNodeDescriptorsMax,
+                     BDANODE_DESCRIPTOR rgNodeDescriptors[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNodeInterfaces(
-        ULONG ulNodeType,
-        ULONG *pulcInterfaces,
-        ULONG ulcInterfacesMax,
-        GUID rgguidInterfaces[]) = 0;
+                     ULONG ulNodeType,
+                     ULONG *pulcInterfaces,
+                     ULONG ulcInterfacesMax,
+                     GUID rgguidInterfaces[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPinTypes(
-        ULONG *pulcPinTypes,
-        ULONG ulcPinTypesMax,
-        ULONG rgulPinTypes[]) = 0;
+                     ULONG *pulcPinTypes,
+                     ULONG ulcPinTypesMax,
+                     ULONG rgulPinTypes[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTemplateConnections(
-        ULONG *pulcConnections,
-        ULONG ulcConnectionsMax,
-        BDA_TEMPLATE_CONNECTION rgConnections[]) = 0;
+                     ULONG *pulcConnections,
+                     ULONG ulcConnectionsMax,
+                     BDA_TEMPLATE_CONNECTION rgConnections[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePin(
-        ULONG ulPinType,
-        ULONG *pulPinId) = 0;
+                     ULONG ulPinType,
+                     ULONG *pulPinId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeletePin(
-        ULONG ulPinId) = 0;
+                     ULONG ulPinId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaType(
-        ULONG ulPinId,
-        AM_MEDIA_TYPE *pMediaType) = 0;
+                     ULONG ulPinId,
+                     AM_MEDIA_TYPE *pMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMedium(
-        ULONG ulPinId,
-        REGPINMEDIUM *pMedium) = 0;
+                     ULONG ulPinId,
+                     REGPINMEDIUM *pMedium) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTopology(
-        ULONG ulInputPinId,
-        ULONG ulOutputPinId) = 0;
+                     ULONG ulInputPinId,
+                     ULONG ulOutputPinId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetControlNode(
-        ULONG ulInputPinId,
-        ULONG ulOutputPinId,
-        ULONG ulNodeType,
-        IUnknown **ppControlNode) = 0;
+                     ULONG ulInputPinId,
+                     ULONG ulOutputPinId,
+                     ULONG ulNodeType,
+                     IUnknown **ppControlNode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1791,78 +1791,78 @@ typedef struct IBDA_TopologyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_Topology* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_Topology* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_Topology* This);
+                     IBDA_Topology* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_Topology* This);
+                     IBDA_Topology* This);
 
     /*** IBDA_Topology methods ***/
     HRESULT (STDMETHODCALLTYPE *GetNodeTypes)(
-        IBDA_Topology* This,
-        ULONG *pulcNodeTypes,
-        ULONG ulcNodeTypesMax,
-        ULONG rgulNodeTypes[]);
+                     IBDA_Topology* This,
+                     ULONG *pulcNodeTypes,
+                     ULONG ulcNodeTypesMax,
+                     ULONG rgulNodeTypes[]);
 
     HRESULT (STDMETHODCALLTYPE *GetNodeDescriptors)(
-        IBDA_Topology* This,
-        ULONG *ulcNodeDescriptors,
-        ULONG ulcNodeDescriptorsMax,
-        BDANODE_DESCRIPTOR rgNodeDescriptors[]);
+                     IBDA_Topology* This,
+                     ULONG *ulcNodeDescriptors,
+                     ULONG ulcNodeDescriptorsMax,
+                     BDANODE_DESCRIPTOR rgNodeDescriptors[]);
 
     HRESULT (STDMETHODCALLTYPE *GetNodeInterfaces)(
-        IBDA_Topology* This,
-        ULONG ulNodeType,
-        ULONG *pulcInterfaces,
-        ULONG ulcInterfacesMax,
-        GUID rgguidInterfaces[]);
+                     IBDA_Topology* This,
+                     ULONG ulNodeType,
+                     ULONG *pulcInterfaces,
+                     ULONG ulcInterfacesMax,
+                     GUID rgguidInterfaces[]);
 
     HRESULT (STDMETHODCALLTYPE *GetPinTypes)(
-        IBDA_Topology* This,
-        ULONG *pulcPinTypes,
-        ULONG ulcPinTypesMax,
-        ULONG rgulPinTypes[]);
+                     IBDA_Topology* This,
+                     ULONG *pulcPinTypes,
+                     ULONG ulcPinTypesMax,
+                     ULONG rgulPinTypes[]);
 
     HRESULT (STDMETHODCALLTYPE *GetTemplateConnections)(
-        IBDA_Topology* This,
-        ULONG *pulcConnections,
-        ULONG ulcConnectionsMax,
-        BDA_TEMPLATE_CONNECTION rgConnections[]);
+                     IBDA_Topology* This,
+                     ULONG *pulcConnections,
+                     ULONG ulcConnectionsMax,
+                     BDA_TEMPLATE_CONNECTION rgConnections[]);
 
     HRESULT (STDMETHODCALLTYPE *CreatePin)(
-        IBDA_Topology* This,
-        ULONG ulPinType,
-        ULONG *pulPinId);
+                     IBDA_Topology* This,
+                     ULONG ulPinType,
+                     ULONG *pulPinId);
 
     HRESULT (STDMETHODCALLTYPE *DeletePin)(
-        IBDA_Topology* This,
-        ULONG ulPinId);
+                     IBDA_Topology* This,
+                     ULONG ulPinId);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaType)(
-        IBDA_Topology* This,
-        ULONG ulPinId,
-        AM_MEDIA_TYPE *pMediaType);
+                     IBDA_Topology* This,
+                     ULONG ulPinId,
+                     AM_MEDIA_TYPE *pMediaType);
 
     HRESULT (STDMETHODCALLTYPE *SetMedium)(
-        IBDA_Topology* This,
-        ULONG ulPinId,
-        REGPINMEDIUM *pMedium);
+                     IBDA_Topology* This,
+                     ULONG ulPinId,
+                     REGPINMEDIUM *pMedium);
 
     HRESULT (STDMETHODCALLTYPE *CreateTopology)(
-        IBDA_Topology* This,
-        ULONG ulInputPinId,
-        ULONG ulOutputPinId);
+                     IBDA_Topology* This,
+                     ULONG ulInputPinId,
+                     ULONG ulOutputPinId);
 
     HRESULT (STDMETHODCALLTYPE *GetControlNode)(
-        IBDA_Topology* This,
-        ULONG ulInputPinId,
-        ULONG ulOutputPinId,
-        ULONG ulNodeType,
-        IUnknown **ppControlNode);
+                     IBDA_Topology* This,
+                     ULONG ulInputPinId,
+                     ULONG ulOutputPinId,
+                     ULONG ulNodeType,
+                     IUnknown **ppControlNode);
 
     END_INTERFACE
 } IBDA_TopologyVtbl;
@@ -2059,10 +2059,10 @@ MIDL_INTERFACE("71985f46-1ca1-11d3-9cc8-00c04f7971e0")
 IBDA_VoidTransform : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2074,22 +2074,22 @@ typedef struct IBDA_VoidTransformVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_VoidTransform* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_VoidTransform* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_VoidTransform* This);
+                     IBDA_VoidTransform* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_VoidTransform* This);
+                     IBDA_VoidTransform* This);
 
     /*** IBDA_VoidTransform methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IBDA_VoidTransform* This);
+                     IBDA_VoidTransform* This);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IBDA_VoidTransform* This);
+                     IBDA_VoidTransform* This);
 
     END_INTERFACE
 } IBDA_VoidTransformVtbl;
@@ -2158,10 +2158,10 @@ MIDL_INTERFACE("ddf15b0d-bd25-11d2-9ca0-00c04f7971e0")
 IBDA_NullTransform : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Start(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2173,22 +2173,22 @@ typedef struct IBDA_NullTransformVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_NullTransform* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_NullTransform* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_NullTransform* This);
+                     IBDA_NullTransform* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_NullTransform* This);
+                     IBDA_NullTransform* This);
 
     /*** IBDA_NullTransform methods ***/
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IBDA_NullTransform* This);
+                     IBDA_NullTransform* This);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IBDA_NullTransform* This);
+                     IBDA_NullTransform* This);
 
     END_INTERFACE
 } IBDA_NullTransformVtbl;
@@ -2257,40 +2257,40 @@ MIDL_INTERFACE("71985f47-1ca1-11d3-9cc8-00c04f7971e0")
 IBDA_FrequencyFilter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE put_Autotune(
-        ULONG ulTransponder) = 0;
+                     ULONG ulTransponder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Autotune(
-        ULONG *pulTransponder) = 0;
+                     ULONG *pulTransponder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Frequency(
-        ULONG ulFrequency) = 0;
+                     ULONG ulFrequency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Frequency(
-        ULONG *pulFrequency) = 0;
+                     ULONG *pulFrequency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Polarity(
-        Polarisation Polarity) = 0;
+                     Polarisation Polarity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Polarity(
-        Polarisation *pPolarity) = 0;
+                     Polarisation *pPolarity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Range(
-        ULONG ulRange) = 0;
+                     ULONG ulRange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Range(
-        ULONG *pulRange) = 0;
+                     ULONG *pulRange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Bandwidth(
-        ULONG ulBandwidth) = 0;
+                     ULONG ulBandwidth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Bandwidth(
-        ULONG *pulBandwidth) = 0;
+                     ULONG *pulBandwidth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FrequencyMultiplier(
-        ULONG ulMultiplier) = 0;
+                     ULONG ulMultiplier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FrequencyMultiplier(
-        ULONG *pulMultiplier) = 0;
+                     ULONG *pulMultiplier) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2302,64 +2302,64 @@ typedef struct IBDA_FrequencyFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_FrequencyFilter* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_FrequencyFilter* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_FrequencyFilter* This);
+                     IBDA_FrequencyFilter* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_FrequencyFilter* This);
+                     IBDA_FrequencyFilter* This);
 
     /*** IBDA_FrequencyFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Autotune)(
-        IBDA_FrequencyFilter* This,
-        ULONG ulTransponder);
+                     IBDA_FrequencyFilter* This,
+                     ULONG ulTransponder);
 
     HRESULT (STDMETHODCALLTYPE *get_Autotune)(
-        IBDA_FrequencyFilter* This,
-        ULONG *pulTransponder);
+                     IBDA_FrequencyFilter* This,
+                     ULONG *pulTransponder);
 
     HRESULT (STDMETHODCALLTYPE *put_Frequency)(
-        IBDA_FrequencyFilter* This,
-        ULONG ulFrequency);
+                     IBDA_FrequencyFilter* This,
+                     ULONG ulFrequency);
 
     HRESULT (STDMETHODCALLTYPE *get_Frequency)(
-        IBDA_FrequencyFilter* This,
-        ULONG *pulFrequency);
+                     IBDA_FrequencyFilter* This,
+                     ULONG *pulFrequency);
 
     HRESULT (STDMETHODCALLTYPE *put_Polarity)(
-        IBDA_FrequencyFilter* This,
-        Polarisation Polarity);
+                     IBDA_FrequencyFilter* This,
+                     Polarisation Polarity);
 
     HRESULT (STDMETHODCALLTYPE *get_Polarity)(
-        IBDA_FrequencyFilter* This,
-        Polarisation *pPolarity);
+                     IBDA_FrequencyFilter* This,
+                     Polarisation *pPolarity);
 
     HRESULT (STDMETHODCALLTYPE *put_Range)(
-        IBDA_FrequencyFilter* This,
-        ULONG ulRange);
+                     IBDA_FrequencyFilter* This,
+                     ULONG ulRange);
 
     HRESULT (STDMETHODCALLTYPE *get_Range)(
-        IBDA_FrequencyFilter* This,
-        ULONG *pulRange);
+                     IBDA_FrequencyFilter* This,
+                     ULONG *pulRange);
 
     HRESULT (STDMETHODCALLTYPE *put_Bandwidth)(
-        IBDA_FrequencyFilter* This,
-        ULONG ulBandwidth);
+                     IBDA_FrequencyFilter* This,
+                     ULONG ulBandwidth);
 
     HRESULT (STDMETHODCALLTYPE *get_Bandwidth)(
-        IBDA_FrequencyFilter* This,
-        ULONG *pulBandwidth);
+                     IBDA_FrequencyFilter* This,
+                     ULONG *pulBandwidth);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMultiplier)(
-        IBDA_FrequencyFilter* This,
-        ULONG ulMultiplier);
+                     IBDA_FrequencyFilter* This,
+                     ULONG ulMultiplier);
 
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMultiplier)(
-        IBDA_FrequencyFilter* This,
-        ULONG *pulMultiplier);
+                     IBDA_FrequencyFilter* This,
+                     ULONG *pulMultiplier);
 
     END_INTERFACE
 } IBDA_FrequencyFilterVtbl;
@@ -2550,22 +2550,22 @@ MIDL_INTERFACE("992cf102-49f9-4719-a664-c4f23e2408f4")
 IBDA_LNBInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE put_LocalOscilatorFrequencyLowBand(
-        ULONG ulLOFLow) = 0;
+                     ULONG ulLOFLow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalOscilatorFrequencyLowBand(
-        ULONG *pulLOFLow) = 0;
+                     ULONG *pulLOFLow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LocalOscilatorFrequencyHighBand(
-        ULONG ulLOFHigh) = 0;
+                     ULONG ulLOFHigh) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LocalOscilatorFrequencyHighBand(
-        ULONG *pulLOFHigh) = 0;
+                     ULONG *pulLOFHigh) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_HighLowSwitchFrequency(
-        ULONG ulSwitchFrequency) = 0;
+                     ULONG ulSwitchFrequency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HighLowSwitchFrequency(
-        ULONG *pulSwitchFrequency) = 0;
+                     ULONG *pulSwitchFrequency) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2577,40 +2577,40 @@ typedef struct IBDA_LNBInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_LNBInfo* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_LNBInfo* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_LNBInfo* This);
+                     IBDA_LNBInfo* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_LNBInfo* This);
+                     IBDA_LNBInfo* This);
 
     /*** IBDA_LNBInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *put_LocalOscilatorFrequencyLowBand)(
-        IBDA_LNBInfo* This,
-        ULONG ulLOFLow);
+                     IBDA_LNBInfo* This,
+                     ULONG ulLOFLow);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalOscilatorFrequencyLowBand)(
-        IBDA_LNBInfo* This,
-        ULONG *pulLOFLow);
+                     IBDA_LNBInfo* This,
+                     ULONG *pulLOFLow);
 
     HRESULT (STDMETHODCALLTYPE *put_LocalOscilatorFrequencyHighBand)(
-        IBDA_LNBInfo* This,
-        ULONG ulLOFHigh);
+                     IBDA_LNBInfo* This,
+                     ULONG ulLOFHigh);
 
     HRESULT (STDMETHODCALLTYPE *get_LocalOscilatorFrequencyHighBand)(
-        IBDA_LNBInfo* This,
-        ULONG *pulLOFHigh);
+                     IBDA_LNBInfo* This,
+                     ULONG *pulLOFHigh);
 
     HRESULT (STDMETHODCALLTYPE *put_HighLowSwitchFrequency)(
-        IBDA_LNBInfo* This,
-        ULONG ulSwitchFrequency);
+                     IBDA_LNBInfo* This,
+                     ULONG ulSwitchFrequency);
 
     HRESULT (STDMETHODCALLTYPE *get_HighLowSwitchFrequency)(
-        IBDA_LNBInfo* This,
-        ULONG *pulSwitchFrequency);
+                     IBDA_LNBInfo* This,
+                     ULONG *pulSwitchFrequency);
 
     END_INTERFACE
 } IBDA_LNBInfoVtbl;
@@ -2729,26 +2729,26 @@ MIDL_INTERFACE("f84e2ab0-3c6b-45e3-a0fc-8669d4b81f11")
 IBDA_DiseqCommand : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE put_EnableDiseqCommands(
-        BOOLEAN bEnable) = 0;
+                     BOOLEAN bEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DiseqLNBSource(
-        ULONG ulLNBSource) = 0;
+                     ULONG ulLNBSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DiseqUseToneBurst(
-        BOOLEAN bUseToneBurst) = 0;
+                     BOOLEAN bUseToneBurst) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DiseqRepeats(
-        ULONG ulRepeats) = 0;
+                     ULONG ulRepeats) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DiseqSendCommand(
-        ULONG ulRequestId,
-        ULONG ulcbCommandLen,
-        BYTE *pbCommand) = 0;
+                     ULONG ulRequestId,
+                     ULONG ulcbCommandLen,
+                     BYTE *pbCommand) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DiseqResponse(
-        ULONG ulRequestId,
-        ULONG *pulcbResponseLen,
-        BYTE pbResponse[]) = 0;
+                     ULONG ulRequestId,
+                     ULONG *pulcbResponseLen,
+                     BYTE pbResponse[]) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2760,44 +2760,44 @@ typedef struct IBDA_DiseqCommandVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DiseqCommand* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DiseqCommand* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DiseqCommand* This);
+                     IBDA_DiseqCommand* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DiseqCommand* This);
+                     IBDA_DiseqCommand* This);
 
     /*** IBDA_DiseqCommand methods ***/
     HRESULT (STDMETHODCALLTYPE *put_EnableDiseqCommands)(
-        IBDA_DiseqCommand* This,
-        BOOLEAN bEnable);
+                     IBDA_DiseqCommand* This,
+                     BOOLEAN bEnable);
 
     HRESULT (STDMETHODCALLTYPE *put_DiseqLNBSource)(
-        IBDA_DiseqCommand* This,
-        ULONG ulLNBSource);
+                     IBDA_DiseqCommand* This,
+                     ULONG ulLNBSource);
 
     HRESULT (STDMETHODCALLTYPE *put_DiseqUseToneBurst)(
-        IBDA_DiseqCommand* This,
-        BOOLEAN bUseToneBurst);
+                     IBDA_DiseqCommand* This,
+                     BOOLEAN bUseToneBurst);
 
     HRESULT (STDMETHODCALLTYPE *put_DiseqRepeats)(
-        IBDA_DiseqCommand* This,
-        ULONG ulRepeats);
+                     IBDA_DiseqCommand* This,
+                     ULONG ulRepeats);
 
     HRESULT (STDMETHODCALLTYPE *put_DiseqSendCommand)(
-        IBDA_DiseqCommand* This,
-        ULONG ulRequestId,
-        ULONG ulcbCommandLen,
-        BYTE *pbCommand);
+                     IBDA_DiseqCommand* This,
+                     ULONG ulRequestId,
+                     ULONG ulcbCommandLen,
+                     BYTE *pbCommand);
 
     HRESULT (STDMETHODCALLTYPE *get_DiseqResponse)(
-        IBDA_DiseqCommand* This,
-        ULONG ulRequestId,
-        ULONG *pulcbResponseLen,
-        BYTE pbResponse[]);
+                     IBDA_DiseqCommand* This,
+                     ULONG ulRequestId,
+                     ULONG *pulcbResponseLen,
+                     BYTE pbResponse[]);
 
     END_INTERFACE
 } IBDA_DiseqCommandVtbl;
@@ -2920,7 +2920,7 @@ MIDL_INTERFACE("ddf15b12-bd25-11d2-9ca0-00c04f7971e0")
 IBDA_AutoDemodulate : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE put_AutoDemodulate(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2932,19 +2932,19 @@ typedef struct IBDA_AutoDemodulateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_AutoDemodulate* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_AutoDemodulate* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_AutoDemodulate* This);
+                     IBDA_AutoDemodulate* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_AutoDemodulate* This);
+                     IBDA_AutoDemodulate* This);
 
     /*** IBDA_AutoDemodulate methods ***/
     HRESULT (STDMETHODCALLTYPE *put_AutoDemodulate)(
-        IBDA_AutoDemodulate* This);
+                     IBDA_AutoDemodulate* This);
 
     END_INTERFACE
 } IBDA_AutoDemodulateVtbl;
@@ -3002,17 +3002,17 @@ MIDL_INTERFACE("34518d13-1182-48e6-b28f-b24987787326")
 IBDA_AutoDemodulateEx : public IBDA_AutoDemodulate
 {
     virtual HRESULT STDMETHODCALLTYPE get_SupportedDeviceNodeTypes(
-        ULONG ulcDeviceNodeTypesMax,
-        ULONG *pulcDeviceNodeTypes,
-        GUID *pguidDeviceNodeTypes) = 0;
+                     ULONG ulcDeviceNodeTypesMax,
+                     ULONG *pulcDeviceNodeTypes,
+                     GUID *pguidDeviceNodeTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SupportedVideoFormats(
-        ULONG *pulAMTunerModeType,
-        ULONG *pulAnalogVideoStandard) = 0;
+                     ULONG *pulAMTunerModeType,
+                     ULONG *pulAnalogVideoStandard) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AuxInputCount(
-        ULONG *pulCompositeCount,
-        ULONG *pulSvideoCount) = 0;
+                     ULONG *pulCompositeCount,
+                     ULONG *pulSvideoCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3024,36 +3024,36 @@ typedef struct IBDA_AutoDemodulateExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_AutoDemodulateEx* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_AutoDemodulateEx* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_AutoDemodulateEx* This);
+                     IBDA_AutoDemodulateEx* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_AutoDemodulateEx* This);
+                     IBDA_AutoDemodulateEx* This);
 
     /*** IBDA_AutoDemodulate methods ***/
     HRESULT (STDMETHODCALLTYPE *put_AutoDemodulate)(
-        IBDA_AutoDemodulateEx* This);
+                     IBDA_AutoDemodulateEx* This);
 
     /*** IBDA_AutoDemodulateEx methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SupportedDeviceNodeTypes)(
-        IBDA_AutoDemodulateEx* This,
-        ULONG ulcDeviceNodeTypesMax,
-        ULONG *pulcDeviceNodeTypes,
-        GUID *pguidDeviceNodeTypes);
+                     IBDA_AutoDemodulateEx* This,
+                     ULONG ulcDeviceNodeTypesMax,
+                     ULONG *pulcDeviceNodeTypes,
+                     GUID *pguidDeviceNodeTypes);
 
     HRESULT (STDMETHODCALLTYPE *get_SupportedVideoFormats)(
-        IBDA_AutoDemodulateEx* This,
-        ULONG *pulAMTunerModeType,
-        ULONG *pulAnalogVideoStandard);
+                     IBDA_AutoDemodulateEx* This,
+                     ULONG *pulAMTunerModeType,
+                     ULONG *pulAnalogVideoStandard);
 
     HRESULT (STDMETHODCALLTYPE *get_AuxInputCount)(
-        IBDA_AutoDemodulateEx* This,
-        ULONG *pulCompositeCount,
-        ULONG *pulSvideoCount);
+                     IBDA_AutoDemodulateEx* This,
+                     ULONG *pulCompositeCount,
+                     ULONG *pulSvideoCount);
 
     END_INTERFACE
 } IBDA_AutoDemodulateExVtbl;
@@ -3146,46 +3146,46 @@ MIDL_INTERFACE("ef30f379-985b-4d10-b640-a79d5e04e1e0")
 IBDA_DigitalDemodulator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE put_ModulationType(
-        ModulationType *pModulationType) = 0;
+                     ModulationType *pModulationType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ModulationType(
-        ModulationType *pModulationType) = 0;
+                     ModulationType *pModulationType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_InnerFECMethod(
-        FECMethod *pFECMethod) = 0;
+                     FECMethod *pFECMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InnerFECMethod(
-        FECMethod *pFECMethod) = 0;
+                     FECMethod *pFECMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_InnerFECRate(
-        BinaryConvolutionCodeRate *pFECRate) = 0;
+                     BinaryConvolutionCodeRate *pFECRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InnerFECRate(
-        BinaryConvolutionCodeRate *pFECRate) = 0;
+                     BinaryConvolutionCodeRate *pFECRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OuterFECMethod(
-        FECMethod *pFECMethod) = 0;
+                     FECMethod *pFECMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OuterFECMethod(
-        FECMethod *pFECMethod) = 0;
+                     FECMethod *pFECMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OuterFECRate(
-        BinaryConvolutionCodeRate *pFECRate) = 0;
+                     BinaryConvolutionCodeRate *pFECRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OuterFECRate(
-        BinaryConvolutionCodeRate *pFECRate) = 0;
+                     BinaryConvolutionCodeRate *pFECRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SymbolRate(
-        ULONG *pSymbolRate) = 0;
+                     ULONG *pSymbolRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SymbolRate(
-        ULONG *pSymbolRate) = 0;
+                     ULONG *pSymbolRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SpectralInversion(
-        SpectralInversion *pSpectralInversion) = 0;
+                     SpectralInversion *pSpectralInversion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SpectralInversion(
-        SpectralInversion *pSpectralInversion) = 0;
+                     SpectralInversion *pSpectralInversion) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3197,72 +3197,72 @@ typedef struct IBDA_DigitalDemodulatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DigitalDemodulator* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DigitalDemodulator* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DigitalDemodulator* This);
+                     IBDA_DigitalDemodulator* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DigitalDemodulator* This);
+                     IBDA_DigitalDemodulator* This);
 
     /*** IBDA_DigitalDemodulator methods ***/
     HRESULT (STDMETHODCALLTYPE *put_ModulationType)(
-        IBDA_DigitalDemodulator* This,
-        ModulationType *pModulationType);
+                     IBDA_DigitalDemodulator* This,
+                     ModulationType *pModulationType);
 
     HRESULT (STDMETHODCALLTYPE *get_ModulationType)(
-        IBDA_DigitalDemodulator* This,
-        ModulationType *pModulationType);
+                     IBDA_DigitalDemodulator* This,
+                     ModulationType *pModulationType);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECMethod)(
-        IBDA_DigitalDemodulator* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECMethod)(
-        IBDA_DigitalDemodulator* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IBDA_DigitalDemodulator* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IBDA_DigitalDemodulator* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECMethod)(
-        IBDA_DigitalDemodulator* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECMethod)(
-        IBDA_DigitalDemodulator* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IBDA_DigitalDemodulator* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IBDA_DigitalDemodulator* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IBDA_DigitalDemodulator* This,
-        ULONG *pSymbolRate);
+                     IBDA_DigitalDemodulator* This,
+                     ULONG *pSymbolRate);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IBDA_DigitalDemodulator* This,
-        ULONG *pSymbolRate);
+                     IBDA_DigitalDemodulator* This,
+                     ULONG *pSymbolRate);
 
     HRESULT (STDMETHODCALLTYPE *put_SpectralInversion)(
-        IBDA_DigitalDemodulator* This,
-        SpectralInversion *pSpectralInversion);
+                     IBDA_DigitalDemodulator* This,
+                     SpectralInversion *pSpectralInversion);
 
     HRESULT (STDMETHODCALLTYPE *get_SpectralInversion)(
-        IBDA_DigitalDemodulator* This,
-        SpectralInversion *pSpectralInversion);
+                     IBDA_DigitalDemodulator* This,
+                     SpectralInversion *pSpectralInversion);
 
     END_INTERFACE
 } IBDA_DigitalDemodulatorVtbl;
@@ -3477,28 +3477,28 @@ MIDL_INTERFACE("525ed3ee-5cf3-4e1e-9a06-5368a84f9a6e")
 IBDA_DigitalDemodulator2 : public IBDA_DigitalDemodulator
 {
     virtual HRESULT STDMETHODCALLTYPE put_GuardInterval(
-        GuardInterval *pGuardInterval) = 0;
+                     GuardInterval *pGuardInterval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_GuardInterval(
-        GuardInterval *pGuardInterval) = 0;
+                     GuardInterval *pGuardInterval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TransmissionMode(
-        TransmissionMode *pTransmissionMode) = 0;
+                     TransmissionMode *pTransmissionMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TransmissionMode(
-        TransmissionMode *pTransmissionMode) = 0;
+                     TransmissionMode *pTransmissionMode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RollOff(
-        RollOff *pRollOff) = 0;
+                     RollOff *pRollOff) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RollOff(
-        RollOff *pRollOff) = 0;
+                     RollOff *pRollOff) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Pilot(
-        Pilot *pPilot) = 0;
+                     Pilot *pPilot) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Pilot(
-        Pilot *pPilot) = 0;
+                     Pilot *pPilot) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3510,105 +3510,105 @@ typedef struct IBDA_DigitalDemodulator2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DigitalDemodulator2* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DigitalDemodulator2* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DigitalDemodulator2* This);
+                     IBDA_DigitalDemodulator2* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DigitalDemodulator2* This);
+                     IBDA_DigitalDemodulator2* This);
 
     /*** IBDA_DigitalDemodulator methods ***/
     HRESULT (STDMETHODCALLTYPE *put_ModulationType)(
-        IBDA_DigitalDemodulator2* This,
-        ModulationType *pModulationType);
+                     IBDA_DigitalDemodulator2* This,
+                     ModulationType *pModulationType);
 
     HRESULT (STDMETHODCALLTYPE *get_ModulationType)(
-        IBDA_DigitalDemodulator2* This,
-        ModulationType *pModulationType);
+                     IBDA_DigitalDemodulator2* This,
+                     ModulationType *pModulationType);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECMethod)(
-        IBDA_DigitalDemodulator2* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator2* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECMethod)(
-        IBDA_DigitalDemodulator2* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator2* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IBDA_DigitalDemodulator2* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator2* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IBDA_DigitalDemodulator2* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator2* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECMethod)(
-        IBDA_DigitalDemodulator2* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator2* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECMethod)(
-        IBDA_DigitalDemodulator2* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator2* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IBDA_DigitalDemodulator2* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator2* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IBDA_DigitalDemodulator2* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator2* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IBDA_DigitalDemodulator2* This,
-        ULONG *pSymbolRate);
+                     IBDA_DigitalDemodulator2* This,
+                     ULONG *pSymbolRate);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IBDA_DigitalDemodulator2* This,
-        ULONG *pSymbolRate);
+                     IBDA_DigitalDemodulator2* This,
+                     ULONG *pSymbolRate);
 
     HRESULT (STDMETHODCALLTYPE *put_SpectralInversion)(
-        IBDA_DigitalDemodulator2* This,
-        SpectralInversion *pSpectralInversion);
+                     IBDA_DigitalDemodulator2* This,
+                     SpectralInversion *pSpectralInversion);
 
     HRESULT (STDMETHODCALLTYPE *get_SpectralInversion)(
-        IBDA_DigitalDemodulator2* This,
-        SpectralInversion *pSpectralInversion);
+                     IBDA_DigitalDemodulator2* This,
+                     SpectralInversion *pSpectralInversion);
 
     /*** IBDA_DigitalDemodulator2 methods ***/
     HRESULT (STDMETHODCALLTYPE *put_GuardInterval)(
-        IBDA_DigitalDemodulator2* This,
-        GuardInterval *pGuardInterval);
+                     IBDA_DigitalDemodulator2* This,
+                     GuardInterval *pGuardInterval);
 
     HRESULT (STDMETHODCALLTYPE *get_GuardInterval)(
-        IBDA_DigitalDemodulator2* This,
-        GuardInterval *pGuardInterval);
+                     IBDA_DigitalDemodulator2* This,
+                     GuardInterval *pGuardInterval);
 
     HRESULT (STDMETHODCALLTYPE *put_TransmissionMode)(
-        IBDA_DigitalDemodulator2* This,
-        TransmissionMode *pTransmissionMode);
+                     IBDA_DigitalDemodulator2* This,
+                     TransmissionMode *pTransmissionMode);
 
     HRESULT (STDMETHODCALLTYPE *get_TransmissionMode)(
-        IBDA_DigitalDemodulator2* This,
-        TransmissionMode *pTransmissionMode);
+                     IBDA_DigitalDemodulator2* This,
+                     TransmissionMode *pTransmissionMode);
 
     HRESULT (STDMETHODCALLTYPE *put_RollOff)(
-        IBDA_DigitalDemodulator2* This,
-        RollOff *pRollOff);
+                     IBDA_DigitalDemodulator2* This,
+                     RollOff *pRollOff);
 
     HRESULT (STDMETHODCALLTYPE *get_RollOff)(
-        IBDA_DigitalDemodulator2* This,
-        RollOff *pRollOff);
+                     IBDA_DigitalDemodulator2* This,
+                     RollOff *pRollOff);
 
     HRESULT (STDMETHODCALLTYPE *put_Pilot)(
-        IBDA_DigitalDemodulator2* This,
-        Pilot *pPilot);
+                     IBDA_DigitalDemodulator2* This,
+                     Pilot *pPilot);
 
     HRESULT (STDMETHODCALLTYPE *get_Pilot)(
-        IBDA_DigitalDemodulator2* This,
-        Pilot *pPilot);
+                     IBDA_DigitalDemodulator2* This,
+                     Pilot *pPilot);
 
     END_INTERFACE
 } IBDA_DigitalDemodulator2Vtbl;
@@ -3809,16 +3809,16 @@ MIDL_INTERFACE("13f19604-7d32-4359-93a2-a05205d90ac9")
 IBDA_DigitalDemodulator3 : public IBDA_DigitalDemodulator2
 {
     virtual HRESULT STDMETHODCALLTYPE put_SignalTimeouts(
-        BDA_SIGNAL_TIMEOUTS *pSignalTimeouts) = 0;
+                     BDA_SIGNAL_TIMEOUTS *pSignalTimeouts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SignalTimeouts(
-        BDA_SIGNAL_TIMEOUTS *pSignalTimeouts) = 0;
+                     BDA_SIGNAL_TIMEOUTS *pSignalTimeouts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PLPNumber(
-        ULONG *pPLPNumber) = 0;
+                     ULONG *pPLPNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PLPNumber(
-        ULONG *pPLPNumber) = 0;
+                     ULONG *pPLPNumber) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3830,122 +3830,122 @@ typedef struct IBDA_DigitalDemodulator3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DigitalDemodulator3* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DigitalDemodulator3* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DigitalDemodulator3* This);
+                     IBDA_DigitalDemodulator3* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DigitalDemodulator3* This);
+                     IBDA_DigitalDemodulator3* This);
 
     /*** IBDA_DigitalDemodulator methods ***/
     HRESULT (STDMETHODCALLTYPE *put_ModulationType)(
-        IBDA_DigitalDemodulator3* This,
-        ModulationType *pModulationType);
+                     IBDA_DigitalDemodulator3* This,
+                     ModulationType *pModulationType);
 
     HRESULT (STDMETHODCALLTYPE *get_ModulationType)(
-        IBDA_DigitalDemodulator3* This,
-        ModulationType *pModulationType);
+                     IBDA_DigitalDemodulator3* This,
+                     ModulationType *pModulationType);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECMethod)(
-        IBDA_DigitalDemodulator3* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator3* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECMethod)(
-        IBDA_DigitalDemodulator3* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator3* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *put_InnerFECRate)(
-        IBDA_DigitalDemodulator3* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator3* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *get_InnerFECRate)(
-        IBDA_DigitalDemodulator3* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator3* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECMethod)(
-        IBDA_DigitalDemodulator3* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator3* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECMethod)(
-        IBDA_DigitalDemodulator3* This,
-        FECMethod *pFECMethod);
+                     IBDA_DigitalDemodulator3* This,
+                     FECMethod *pFECMethod);
 
     HRESULT (STDMETHODCALLTYPE *put_OuterFECRate)(
-        IBDA_DigitalDemodulator3* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator3* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *get_OuterFECRate)(
-        IBDA_DigitalDemodulator3* This,
-        BinaryConvolutionCodeRate *pFECRate);
+                     IBDA_DigitalDemodulator3* This,
+                     BinaryConvolutionCodeRate *pFECRate);
 
     HRESULT (STDMETHODCALLTYPE *put_SymbolRate)(
-        IBDA_DigitalDemodulator3* This,
-        ULONG *pSymbolRate);
+                     IBDA_DigitalDemodulator3* This,
+                     ULONG *pSymbolRate);
 
     HRESULT (STDMETHODCALLTYPE *get_SymbolRate)(
-        IBDA_DigitalDemodulator3* This,
-        ULONG *pSymbolRate);
+                     IBDA_DigitalDemodulator3* This,
+                     ULONG *pSymbolRate);
 
     HRESULT (STDMETHODCALLTYPE *put_SpectralInversion)(
-        IBDA_DigitalDemodulator3* This,
-        SpectralInversion *pSpectralInversion);
+                     IBDA_DigitalDemodulator3* This,
+                     SpectralInversion *pSpectralInversion);
 
     HRESULT (STDMETHODCALLTYPE *get_SpectralInversion)(
-        IBDA_DigitalDemodulator3* This,
-        SpectralInversion *pSpectralInversion);
+                     IBDA_DigitalDemodulator3* This,
+                     SpectralInversion *pSpectralInversion);
 
     /*** IBDA_DigitalDemodulator2 methods ***/
     HRESULT (STDMETHODCALLTYPE *put_GuardInterval)(
-        IBDA_DigitalDemodulator3* This,
-        GuardInterval *pGuardInterval);
+                     IBDA_DigitalDemodulator3* This,
+                     GuardInterval *pGuardInterval);
 
     HRESULT (STDMETHODCALLTYPE *get_GuardInterval)(
-        IBDA_DigitalDemodulator3* This,
-        GuardInterval *pGuardInterval);
+                     IBDA_DigitalDemodulator3* This,
+                     GuardInterval *pGuardInterval);
 
     HRESULT (STDMETHODCALLTYPE *put_TransmissionMode)(
-        IBDA_DigitalDemodulator3* This,
-        TransmissionMode *pTransmissionMode);
+                     IBDA_DigitalDemodulator3* This,
+                     TransmissionMode *pTransmissionMode);
 
     HRESULT (STDMETHODCALLTYPE *get_TransmissionMode)(
-        IBDA_DigitalDemodulator3* This,
-        TransmissionMode *pTransmissionMode);
+                     IBDA_DigitalDemodulator3* This,
+                     TransmissionMode *pTransmissionMode);
 
     HRESULT (STDMETHODCALLTYPE *put_RollOff)(
-        IBDA_DigitalDemodulator3* This,
-        RollOff *pRollOff);
+                     IBDA_DigitalDemodulator3* This,
+                     RollOff *pRollOff);
 
     HRESULT (STDMETHODCALLTYPE *get_RollOff)(
-        IBDA_DigitalDemodulator3* This,
-        RollOff *pRollOff);
+                     IBDA_DigitalDemodulator3* This,
+                     RollOff *pRollOff);
 
     HRESULT (STDMETHODCALLTYPE *put_Pilot)(
-        IBDA_DigitalDemodulator3* This,
-        Pilot *pPilot);
+                     IBDA_DigitalDemodulator3* This,
+                     Pilot *pPilot);
 
     HRESULT (STDMETHODCALLTYPE *get_Pilot)(
-        IBDA_DigitalDemodulator3* This,
-        Pilot *pPilot);
+                     IBDA_DigitalDemodulator3* This,
+                     Pilot *pPilot);
 
     /*** IBDA_DigitalDemodulator3 methods ***/
     HRESULT (STDMETHODCALLTYPE *put_SignalTimeouts)(
-        IBDA_DigitalDemodulator3* This,
-        BDA_SIGNAL_TIMEOUTS *pSignalTimeouts);
+                     IBDA_DigitalDemodulator3* This,
+                     BDA_SIGNAL_TIMEOUTS *pSignalTimeouts);
 
     HRESULT (STDMETHODCALLTYPE *get_SignalTimeouts)(
-        IBDA_DigitalDemodulator3* This,
-        BDA_SIGNAL_TIMEOUTS *pSignalTimeouts);
+                     IBDA_DigitalDemodulator3* This,
+                     BDA_SIGNAL_TIMEOUTS *pSignalTimeouts);
 
     HRESULT (STDMETHODCALLTYPE *put_PLPNumber)(
-        IBDA_DigitalDemodulator3* This,
-        ULONG *pPLPNumber);
+                     IBDA_DigitalDemodulator3* This,
+                     ULONG *pPLPNumber);
 
     HRESULT (STDMETHODCALLTYPE *get_PLPNumber)(
-        IBDA_DigitalDemodulator3* This,
-        ULONG *pPLPNumber);
+                     IBDA_DigitalDemodulator3* This,
+                     ULONG *pPLPNumber);
 
     END_INTERFACE
 } IBDA_DigitalDemodulator3Vtbl;
@@ -4132,10 +4132,10 @@ MIDL_INTERFACE("4b2bd7ea-8347-467b-8dbf-62f784929cc3")
 ICCSubStreamFiltering : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_SubstreamTypes(
-        LONG *pTypes) = 0;
+                     LONG *pTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SubstreamTypes(
-        LONG Types) = 0;
+                     LONG Types) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4147,24 +4147,24 @@ typedef struct ICCSubStreamFilteringVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICCSubStreamFiltering* This,
-        REFIID riid,
-        void **ppvObject);
+                     ICCSubStreamFiltering* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICCSubStreamFiltering* This);
+                     ICCSubStreamFiltering* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICCSubStreamFiltering* This);
+                     ICCSubStreamFiltering* This);
 
     /*** ICCSubStreamFiltering methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SubstreamTypes)(
-        ICCSubStreamFiltering* This,
-        LONG *pTypes);
+                     ICCSubStreamFiltering* This,
+                     LONG *pTypes);
 
     HRESULT (STDMETHODCALLTYPE *put_SubstreamTypes)(
-        ICCSubStreamFiltering* This,
-        LONG Types);
+                     ICCSubStreamFiltering* This,
+                     LONG Types);
 
     END_INTERFACE
 } ICCSubStreamFilteringVtbl;
@@ -4235,12 +4235,12 @@ MIDL_INTERFACE("3f4dc8e2-4050-11d3-8f4b-00c04f7971e2")
 IBDA_IPSinkControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetMulticastList(
-        ULONG *pulcbSize,
-        BYTE **pbBuffer) = 0;
+                     ULONG *pulcbSize,
+                     BYTE **pbBuffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAdapterIPAddress(
-        ULONG *pulcbSize,
-        BYTE **pbBuffer) = 0;
+                     ULONG *pulcbSize,
+                     BYTE **pbBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4252,26 +4252,26 @@ typedef struct IBDA_IPSinkControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_IPSinkControl* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_IPSinkControl* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_IPSinkControl* This);
+                     IBDA_IPSinkControl* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_IPSinkControl* This);
+                     IBDA_IPSinkControl* This);
 
     /*** IBDA_IPSinkControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMulticastList)(
-        IBDA_IPSinkControl* This,
-        ULONG *pulcbSize,
-        BYTE **pbBuffer);
+                     IBDA_IPSinkControl* This,
+                     ULONG *pulcbSize,
+                     BYTE **pbBuffer);
 
     HRESULT (STDMETHODCALLTYPE *GetAdapterIPAddress)(
-        IBDA_IPSinkControl* This,
-        ULONG *pulcbSize,
-        BYTE **pbBuffer);
+                     IBDA_IPSinkControl* This,
+                     ULONG *pulcbSize,
+                     BYTE **pbBuffer);
 
     END_INTERFACE
 } IBDA_IPSinkControlVtbl;
@@ -4344,14 +4344,14 @@ MIDL_INTERFACE("a750108f-492e-4d51-95f7-649b23ff7ad7")
 IBDA_IPSinkInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_MulticastList(
-        ULONG *pulcbAddresses,
-        BYTE **ppbAddressList) = 0;
+                     ULONG *pulcbAddresses,
+                     BYTE **ppbAddressList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AdapterIPAddress(
-        BSTR *pbstrBuffer) = 0;
+                     BSTR *pbstrBuffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AdapterDescription(
-        BSTR *pbstrBuffer) = 0;
+                     BSTR *pbstrBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4363,29 +4363,29 @@ typedef struct IBDA_IPSinkInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_IPSinkInfo* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_IPSinkInfo* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_IPSinkInfo* This);
+                     IBDA_IPSinkInfo* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_IPSinkInfo* This);
+                     IBDA_IPSinkInfo* This);
 
     /*** IBDA_IPSinkInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MulticastList)(
-        IBDA_IPSinkInfo* This,
-        ULONG *pulcbAddresses,
-        BYTE **ppbAddressList);
+                     IBDA_IPSinkInfo* This,
+                     ULONG *pulcbAddresses,
+                     BYTE **ppbAddressList);
 
     HRESULT (STDMETHODCALLTYPE *get_AdapterIPAddress)(
-        IBDA_IPSinkInfo* This,
-        BSTR *pbstrBuffer);
+                     IBDA_IPSinkInfo* This,
+                     BSTR *pbstrBuffer);
 
     HRESULT (STDMETHODCALLTYPE *get_AdapterDescription)(
-        IBDA_IPSinkInfo* This,
-        BSTR *pbstrBuffer);
+                     IBDA_IPSinkInfo* This,
+                     BSTR *pbstrBuffer);
 
     END_INTERFACE
 } IBDA_IPSinkInfoVtbl;
@@ -4469,18 +4469,18 @@ MIDL_INTERFACE("afb6c2a2-2c41-11d3-8a60-0000f81e0e4a")
 IEnumPIDMap : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cRequest,
-        PID_MAP *pPIDMap,
-        ULONG *pcReceived) = 0;
+                     ULONG cRequest,
+                     PID_MAP *pPIDMap,
+                     ULONG *pcReceived) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cRecords) = 0;
+                     ULONG cRecords) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumPIDMap **ppIEnumPIDMap) = 0;
+                     IEnumPIDMap **ppIEnumPIDMap) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4492,33 +4492,33 @@ typedef struct IEnumPIDMapVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumPIDMap* This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumPIDMap* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumPIDMap* This);
+                     IEnumPIDMap* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumPIDMap* This);
+                     IEnumPIDMap* This);
 
     /*** IEnumPIDMap methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumPIDMap* This,
-        ULONG cRequest,
-        PID_MAP *pPIDMap,
-        ULONG *pcReceived);
+                     IEnumPIDMap* This,
+                     ULONG cRequest,
+                     PID_MAP *pPIDMap,
+                     ULONG *pcReceived);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumPIDMap* This,
-        ULONG cRecords);
+                     IEnumPIDMap* This,
+                     ULONG cRecords);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumPIDMap* This);
+                     IEnumPIDMap* This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumPIDMap* This,
-        IEnumPIDMap **ppIEnumPIDMap);
+                     IEnumPIDMap* This,
+                     IEnumPIDMap **ppIEnumPIDMap);
 
     END_INTERFACE
 } IEnumPIDMapVtbl;
@@ -4614,16 +4614,16 @@ MIDL_INTERFACE("afb6c2a1-2c41-11d3-8a60-0000f81e0e4a")
 IMPEG2PIDMap : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MapPID(
-        ULONG culPID,
-        ULONG *pulPID,
-        MEDIA_SAMPLE_CONTENT MediaSampleContent) = 0;
+                     ULONG culPID,
+                     ULONG *pulPID,
+                     MEDIA_SAMPLE_CONTENT MediaSampleContent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnmapPID(
-        ULONG culPID,
-        ULONG *pulPID) = 0;
+                     ULONG culPID,
+                     ULONG *pulPID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumPIDMap(
-        IEnumPIDMap **pIEnumPIDMap) = 0;
+                     IEnumPIDMap **pIEnumPIDMap) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4635,31 +4635,31 @@ typedef struct IMPEG2PIDMapVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMPEG2PIDMap* This,
-        REFIID riid,
-        void **ppvObject);
+                     IMPEG2PIDMap* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMPEG2PIDMap* This);
+                     IMPEG2PIDMap* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMPEG2PIDMap* This);
+                     IMPEG2PIDMap* This);
 
     /*** IMPEG2PIDMap methods ***/
     HRESULT (STDMETHODCALLTYPE *MapPID)(
-        IMPEG2PIDMap* This,
-        ULONG culPID,
-        ULONG *pulPID,
-        MEDIA_SAMPLE_CONTENT MediaSampleContent);
+                     IMPEG2PIDMap* This,
+                     ULONG culPID,
+                     ULONG *pulPID,
+                     MEDIA_SAMPLE_CONTENT MediaSampleContent);
 
     HRESULT (STDMETHODCALLTYPE *UnmapPID)(
-        IMPEG2PIDMap* This,
-        ULONG culPID,
-        ULONG *pulPID);
+                     IMPEG2PIDMap* This,
+                     ULONG culPID,
+                     ULONG *pulPID);
 
     HRESULT (STDMETHODCALLTYPE *EnumPIDMap)(
-        IMPEG2PIDMap* This,
-        IEnumPIDMap **pIEnumPIDMap);
+                     IMPEG2PIDMap* This,
+                     IEnumPIDMap **pIEnumPIDMap);
 
     END_INTERFACE
 } IMPEG2PIDMapVtbl;
@@ -4745,27 +4745,27 @@ MIDL_INTERFACE("06fb45c1-693c-4ea7-b79f-7a6a54d8def2")
 IFrequencyMap : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_FrequencyMapping(
-        ULONG *ulCount,
-        ULONG **ppulList) = 0;
+                     ULONG *ulCount,
+                     ULONG **ppulList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FrequencyMapping(
-        ULONG ulCount,
-        ULONG pList[]) = 0;
+                     ULONG ulCount,
+                     ULONG pList[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CountryCode(
-        ULONG *pulCountryCode) = 0;
+                     ULONG *pulCountryCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CountryCode(
-        ULONG ulCountryCode) = 0;
+                     ULONG ulCountryCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DefaultFrequencyMapping(
-        ULONG ulCountryCode,
-        ULONG *pulCount,
-        ULONG **ppulList) = 0;
+                     ULONG ulCountryCode,
+                     ULONG *pulCount,
+                     ULONG **ppulList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CountryCodeList(
-        ULONG *pulCount,
-        ULONG **ppulList) = 0;
+                     ULONG *pulCount,
+                     ULONG **ppulList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4777,45 +4777,45 @@ typedef struct IFrequencyMapVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFrequencyMap* This,
-        REFIID riid,
-        void **ppvObject);
+                     IFrequencyMap* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFrequencyMap* This);
+                     IFrequencyMap* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFrequencyMap* This);
+                     IFrequencyMap* This);
 
     /*** IFrequencyMap methods ***/
     HRESULT (STDMETHODCALLTYPE *get_FrequencyMapping)(
-        IFrequencyMap* This,
-        ULONG *ulCount,
-        ULONG **ppulList);
+                     IFrequencyMap* This,
+                     ULONG *ulCount,
+                     ULONG **ppulList);
 
     HRESULT (STDMETHODCALLTYPE *put_FrequencyMapping)(
-        IFrequencyMap* This,
-        ULONG ulCount,
-        ULONG pList[]);
+                     IFrequencyMap* This,
+                     ULONG ulCount,
+                     ULONG pList[]);
 
     HRESULT (STDMETHODCALLTYPE *get_CountryCode)(
-        IFrequencyMap* This,
-        ULONG *pulCountryCode);
+                     IFrequencyMap* This,
+                     ULONG *pulCountryCode);
 
     HRESULT (STDMETHODCALLTYPE *put_CountryCode)(
-        IFrequencyMap* This,
-        ULONG ulCountryCode);
+                     IFrequencyMap* This,
+                     ULONG ulCountryCode);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultFrequencyMapping)(
-        IFrequencyMap* This,
-        ULONG ulCountryCode,
-        ULONG *pulCount,
-        ULONG **ppulList);
+                     IFrequencyMap* This,
+                     ULONG ulCountryCode,
+                     ULONG *pulCount,
+                     ULONG **ppulList);
 
     HRESULT (STDMETHODCALLTYPE *get_CountryCodeList)(
-        IFrequencyMap* This,
-        ULONG *pulCount,
-        ULONG **ppulList);
+                     IFrequencyMap* This,
+                     ULONG *pulCount,
+                     ULONG **ppulList);
 
     END_INTERFACE
 } IFrequencyMapVtbl;
@@ -4939,8 +4939,8 @@ MIDL_INTERFACE("d806973d-3ebe-46de-8fbb-6358fe784208")
 IBDA_EasMessage : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_EasMessage(
-        ULONG ulEventID,
-        IUnknown **ppEASObject) = 0;
+                     ULONG ulEventID,
+                     IUnknown **ppEASObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4952,21 +4952,21 @@ typedef struct IBDA_EasMessageVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_EasMessage* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_EasMessage* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_EasMessage* This);
+                     IBDA_EasMessage* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_EasMessage* This);
+                     IBDA_EasMessage* This);
 
     /*** IBDA_EasMessage methods ***/
     HRESULT (STDMETHODCALLTYPE *get_EasMessage)(
-        IBDA_EasMessage* This,
-        ULONG ulEventID,
-        IUnknown **ppEASObject);
+                     IBDA_EasMessage* This,
+                     ULONG ulEventID,
+                     IUnknown **ppEASObject);
 
     END_INTERFACE
 } IBDA_EasMessageVtbl;
@@ -5026,7 +5026,7 @@ MIDL_INTERFACE("8e882535-5f86-47ab-86cf-c281a72a0549")
 IBDA_TransportStreamInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_PatTableTickCount(
-        ULONG *pPatTickCount) = 0;
+                     ULONG *pPatTickCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5038,20 +5038,20 @@ typedef struct IBDA_TransportStreamInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_TransportStreamInfo* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_TransportStreamInfo* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_TransportStreamInfo* This);
+                     IBDA_TransportStreamInfo* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_TransportStreamInfo* This);
+                     IBDA_TransportStreamInfo* This);
 
     /*** IBDA_TransportStreamInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *get_PatTableTickCount)(
-        IBDA_TransportStreamInfo* This,
-        ULONG *pPatTickCount);
+                     IBDA_TransportStreamInfo* This,
+                     ULONG *pPatTickCount);
 
     END_INTERFACE
 } IBDA_TransportStreamInfoVtbl;
@@ -5110,48 +5110,48 @@ MIDL_INTERFACE("cd51f1e0-7be9-4123-8482-a2a796c0a6b0")
 IBDA_ConditionalAccess : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_SmartCardStatus(
-        SmartCardStatusType *pCardStatus,
-        SmartCardAssociationType *pCardAssociation,
-        BSTR *pbstrCardError,
-        VARIANT_BOOL *pfOOBLocked) = 0;
+                     SmartCardStatusType *pCardStatus,
+                     SmartCardAssociationType *pCardAssociation,
+                     BSTR *pbstrCardError,
+                     VARIANT_BOOL *pfOOBLocked) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SmartCardInfo(
-        BSTR *pbstrCardName,
-        BSTR *pbstrCardManufacturer,
-        VARIANT_BOOL *pfDaylightSavings,
-        BYTE *pbyRatingRegion,
-        LONG *plTimeZoneOffsetMinutes,
-        BSTR *pbstrLanguage,
-        EALocationCodeType *pEALocationCode) = 0;
+                     BSTR *pbstrCardName,
+                     BSTR *pbstrCardManufacturer,
+                     VARIANT_BOOL *pfDaylightSavings,
+                     BYTE *pbyRatingRegion,
+                     LONG *plTimeZoneOffsetMinutes,
+                     BSTR *pbstrLanguage,
+                     EALocationCodeType *pEALocationCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SmartCardApplications(
-        ULONG *pulcApplications,
-        ULONG ulcApplicationsMax,
-        SmartCardApplication rgApplications[]) = 0;
+                     ULONG *pulcApplications,
+                     ULONG ulcApplicationsMax,
+                     SmartCardApplication rgApplications[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Entitlement(
-        USHORT usVirtualChannel,
-        EntitlementType *pEntitlement) = 0;
+                     USHORT usVirtualChannel,
+                     EntitlementType *pEntitlement) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TuneByChannel(
-        USHORT usVirtualChannel) = 0;
+                     USHORT usVirtualChannel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProgram(
-        USHORT usProgramNumber) = 0;
+                     USHORT usProgramNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddProgram(
-        USHORT usProgramNumber) = 0;
+                     USHORT usProgramNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveProgram(
-        USHORT usProgramNumber) = 0;
+                     USHORT usProgramNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetModuleUI(
-        BYTE byDialogNumber,
-        BSTR *pbstrURL) = 0;
+                     BYTE byDialogNumber,
+                     BSTR *pbstrURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InformUIClosed(
-        BYTE byDialogNumber,
-        UICloseReasonType CloseReason) = 0;
+                     BYTE byDialogNumber,
+                     UICloseReasonType CloseReason) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5163,70 +5163,70 @@ typedef struct IBDA_ConditionalAccessVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_ConditionalAccess* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_ConditionalAccess* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_ConditionalAccess* This);
+                     IBDA_ConditionalAccess* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_ConditionalAccess* This);
+                     IBDA_ConditionalAccess* This);
 
     /*** IBDA_ConditionalAccess methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SmartCardStatus)(
-        IBDA_ConditionalAccess* This,
-        SmartCardStatusType *pCardStatus,
-        SmartCardAssociationType *pCardAssociation,
-        BSTR *pbstrCardError,
-        VARIANT_BOOL *pfOOBLocked);
+                     IBDA_ConditionalAccess* This,
+                     SmartCardStatusType *pCardStatus,
+                     SmartCardAssociationType *pCardAssociation,
+                     BSTR *pbstrCardError,
+                     VARIANT_BOOL *pfOOBLocked);
 
     HRESULT (STDMETHODCALLTYPE *get_SmartCardInfo)(
-        IBDA_ConditionalAccess* This,
-        BSTR *pbstrCardName,
-        BSTR *pbstrCardManufacturer,
-        VARIANT_BOOL *pfDaylightSavings,
-        BYTE *pbyRatingRegion,
-        LONG *plTimeZoneOffsetMinutes,
-        BSTR *pbstrLanguage,
-        EALocationCodeType *pEALocationCode);
+                     IBDA_ConditionalAccess* This,
+                     BSTR *pbstrCardName,
+                     BSTR *pbstrCardManufacturer,
+                     VARIANT_BOOL *pfDaylightSavings,
+                     BYTE *pbyRatingRegion,
+                     LONG *plTimeZoneOffsetMinutes,
+                     BSTR *pbstrLanguage,
+                     EALocationCodeType *pEALocationCode);
 
     HRESULT (STDMETHODCALLTYPE *get_SmartCardApplications)(
-        IBDA_ConditionalAccess* This,
-        ULONG *pulcApplications,
-        ULONG ulcApplicationsMax,
-        SmartCardApplication rgApplications[]);
+                     IBDA_ConditionalAccess* This,
+                     ULONG *pulcApplications,
+                     ULONG ulcApplicationsMax,
+                     SmartCardApplication rgApplications[]);
 
     HRESULT (STDMETHODCALLTYPE *get_Entitlement)(
-        IBDA_ConditionalAccess* This,
-        USHORT usVirtualChannel,
-        EntitlementType *pEntitlement);
+                     IBDA_ConditionalAccess* This,
+                     USHORT usVirtualChannel,
+                     EntitlementType *pEntitlement);
 
     HRESULT (STDMETHODCALLTYPE *TuneByChannel)(
-        IBDA_ConditionalAccess* This,
-        USHORT usVirtualChannel);
+                     IBDA_ConditionalAccess* This,
+                     USHORT usVirtualChannel);
 
     HRESULT (STDMETHODCALLTYPE *SetProgram)(
-        IBDA_ConditionalAccess* This,
-        USHORT usProgramNumber);
+                     IBDA_ConditionalAccess* This,
+                     USHORT usProgramNumber);
 
     HRESULT (STDMETHODCALLTYPE *AddProgram)(
-        IBDA_ConditionalAccess* This,
-        USHORT usProgramNumber);
+                     IBDA_ConditionalAccess* This,
+                     USHORT usProgramNumber);
 
     HRESULT (STDMETHODCALLTYPE *RemoveProgram)(
-        IBDA_ConditionalAccess* This,
-        USHORT usProgramNumber);
+                     IBDA_ConditionalAccess* This,
+                     USHORT usProgramNumber);
 
     HRESULT (STDMETHODCALLTYPE *GetModuleUI)(
-        IBDA_ConditionalAccess* This,
-        BYTE byDialogNumber,
-        BSTR *pbstrURL);
+                     IBDA_ConditionalAccess* This,
+                     BYTE byDialogNumber,
+                     BSTR *pbstrURL);
 
     HRESULT (STDMETHODCALLTYPE *InformUIClosed)(
-        IBDA_ConditionalAccess* This,
-        BYTE byDialogNumber,
-        UICloseReasonType CloseReason);
+                     IBDA_ConditionalAccess* This,
+                     BYTE byDialogNumber,
+                     UICloseReasonType CloseReason);
 
     END_INTERFACE
 } IBDA_ConditionalAccessVtbl;
@@ -5416,27 +5416,27 @@ typedef struct IBDA_DiagnosticPropertiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DiagnosticProperties* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DiagnosticProperties* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DiagnosticProperties* This);
+                     IBDA_DiagnosticProperties* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DiagnosticProperties* This);
+                     IBDA_DiagnosticProperties* This);
 
     /*** IPropertyBag methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IBDA_DiagnosticProperties* This,
-        LPCOLESTR pszPropName,
-        VARIANT *pVar,
-        IErrorLog *pErrorLog);
+                     IBDA_DiagnosticProperties* This,
+                     LPCOLESTR pszPropName,
+                     VARIANT *pVar,
+                     IErrorLog *pErrorLog);
 
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IBDA_DiagnosticProperties* This,
-        LPCOLESTR pszPropName,
-        VARIANT *pVar);
+                     IBDA_DiagnosticProperties* This,
+                     LPCOLESTR pszPropName,
+                     VARIANT *pVar);
 
     END_INTERFACE
 } IBDA_DiagnosticPropertiesVtbl;
@@ -5491,11 +5491,11 @@ MIDL_INTERFACE("f98d88b0-1992-4cd6-a6d9-b9afab99330d")
 IBDA_DRM : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDRMPairingStatus(
-        DWORD *pdwStatus,
-        HRESULT *phError) = 0;
+                     DWORD *pdwStatus,
+                     HRESULT *phError) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PerformDRMPairing(
-        WINBOOL fSync) = 0;
+                     WINBOOL fSync) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5507,25 +5507,25 @@ typedef struct IBDA_DRMVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DRM* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DRM* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DRM* This);
+                     IBDA_DRM* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DRM* This);
+                     IBDA_DRM* This);
 
     /*** IBDA_DRM methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDRMPairingStatus)(
-        IBDA_DRM* This,
-        DWORD *pdwStatus,
-        HRESULT *phError);
+                     IBDA_DRM* This,
+                     DWORD *pdwStatus,
+                     HRESULT *phError);
 
     HRESULT (STDMETHODCALLTYPE *PerformDRMPairing)(
-        IBDA_DRM* This,
-        WINBOOL fSync);
+                     IBDA_DRM* This,
+                     WINBOOL fSync);
 
     END_INTERFACE
 } IBDA_DRMVtbl;
@@ -5597,20 +5597,20 @@ MIDL_INTERFACE("7f0b3150-7b81-4ad4-98e3-7e9097094301")
 IBDA_NameValueService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetValueNameByIndex(
-        ULONG ulIndex,
-        BSTR *pbstrName) = 0;
+                     ULONG ulIndex,
+                     BSTR *pbstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        BSTR bstrName,
-        BSTR bstrLanguage,
-        BSTR *pbstrValue) = 0;
+                     BSTR bstrName,
+                     BSTR bstrLanguage,
+                     BSTR *pbstrValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValue(
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        BSTR bstrName,
-        BSTR bstrValue,
-        ULONG ulReserved) = 0;
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     BSTR bstrName,
+                     BSTR bstrValue,
+                     ULONG ulReserved) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5622,35 +5622,35 @@ typedef struct IBDA_NameValueServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_NameValueService* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_NameValueService* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_NameValueService* This);
+                     IBDA_NameValueService* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_NameValueService* This);
+                     IBDA_NameValueService* This);
 
     /*** IBDA_NameValueService methods ***/
     HRESULT (STDMETHODCALLTYPE *GetValueNameByIndex)(
-        IBDA_NameValueService* This,
-        ULONG ulIndex,
-        BSTR *pbstrName);
+                     IBDA_NameValueService* This,
+                     ULONG ulIndex,
+                     BSTR *pbstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IBDA_NameValueService* This,
-        BSTR bstrName,
-        BSTR bstrLanguage,
-        BSTR *pbstrValue);
+                     IBDA_NameValueService* This,
+                     BSTR bstrName,
+                     BSTR bstrLanguage,
+                     BSTR *pbstrValue);
 
     HRESULT (STDMETHODCALLTYPE *SetValue)(
-        IBDA_NameValueService* This,
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        BSTR bstrName,
-        BSTR bstrValue,
-        ULONG ulReserved);
+                     IBDA_NameValueService* This,
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     BSTR bstrName,
+                     BSTR bstrValue,
+                     ULONG ulReserved);
 
     END_INTERFACE
 } IBDA_NameValueServiceVtbl;
@@ -5740,31 +5740,31 @@ MIDL_INTERFACE("497c3418-23cb-44ba-bb62-769f506fcea7")
 IBDA_ConditionalAccessEx : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CheckEntitlementToken(
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        BDA_CONDITIONALACCESS_REQUESTTYPE RequestType,
-        ULONG ulcbEntitlementTokenLen,
-        BYTE *pbEntitlementToken,
-        ULONG *pulDescrambleStatus) = 0;
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     BDA_CONDITIONALACCESS_REQUESTTYPE RequestType,
+                     ULONG ulcbEntitlementTokenLen,
+                     BYTE *pbEntitlementToken,
+                     ULONG *pulDescrambleStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCaptureToken(
-        ULONG ulcbCaptureTokenLen,
-        BYTE *pbCaptureToken) = 0;
+                     ULONG ulcbCaptureTokenLen,
+                     BYTE *pbCaptureToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenBroadcastMmi(
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        ULONG EventId) = 0;
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     ULONG EventId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CloseMmiDialog(
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        ULONG ulDialogNumber,
-        BDA_CONDITIONALACCESS_MMICLOSEREASON ReasonCode,
-        ULONG *pulSessionResult) = 0;
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     ULONG ulDialogNumber,
+                     BDA_CONDITIONALACCESS_MMICLOSEREASON ReasonCode,
+                     ULONG *pulSessionResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDialogRequestNumber(
-        ULONG *pulDialogRequestNumber) = 0;
+                     ULONG *pulDialogRequestNumber) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5776,48 +5776,48 @@ typedef struct IBDA_ConditionalAccessExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_ConditionalAccessEx* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_ConditionalAccessEx* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_ConditionalAccessEx* This);
+                     IBDA_ConditionalAccessEx* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_ConditionalAccessEx* This);
+                     IBDA_ConditionalAccessEx* This);
 
     /*** IBDA_ConditionalAccessEx methods ***/
     HRESULT (STDMETHODCALLTYPE *CheckEntitlementToken)(
-        IBDA_ConditionalAccessEx* This,
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        BDA_CONDITIONALACCESS_REQUESTTYPE RequestType,
-        ULONG ulcbEntitlementTokenLen,
-        BYTE *pbEntitlementToken,
-        ULONG *pulDescrambleStatus);
+                     IBDA_ConditionalAccessEx* This,
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     BDA_CONDITIONALACCESS_REQUESTTYPE RequestType,
+                     ULONG ulcbEntitlementTokenLen,
+                     BYTE *pbEntitlementToken,
+                     ULONG *pulDescrambleStatus);
 
     HRESULT (STDMETHODCALLTYPE *SetCaptureToken)(
-        IBDA_ConditionalAccessEx* This,
-        ULONG ulcbCaptureTokenLen,
-        BYTE *pbCaptureToken);
+                     IBDA_ConditionalAccessEx* This,
+                     ULONG ulcbCaptureTokenLen,
+                     BYTE *pbCaptureToken);
 
     HRESULT (STDMETHODCALLTYPE *OpenBroadcastMmi)(
-        IBDA_ConditionalAccessEx* This,
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        ULONG EventId);
+                     IBDA_ConditionalAccessEx* This,
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     ULONG EventId);
 
     HRESULT (STDMETHODCALLTYPE *CloseMmiDialog)(
-        IBDA_ConditionalAccessEx* This,
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        ULONG ulDialogNumber,
-        BDA_CONDITIONALACCESS_MMICLOSEREASON ReasonCode,
-        ULONG *pulSessionResult);
+                     IBDA_ConditionalAccessEx* This,
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     ULONG ulDialogNumber,
+                     BDA_CONDITIONALACCESS_MMICLOSEREASON ReasonCode,
+                     ULONG *pulSessionResult);
 
     HRESULT (STDMETHODCALLTYPE *CreateDialogRequestNumber)(
-        IBDA_ConditionalAccessEx* This,
-        ULONG *pulDialogRequestNumber);
+                     IBDA_ConditionalAccessEx* This,
+                     ULONG *pulDialogRequestNumber);
 
     END_INTERFACE
 } IBDA_ConditionalAccessExVtbl;
@@ -5936,9 +5936,9 @@ MIDL_INTERFACE("5e68c627-16c2-4e6c-b1e2-d00170cdaa0f")
 IBDA_ISDBConditionalAccess : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetIsdbCasRequest(
-        ULONG ulRequestId,
-        ULONG ulcbRequestBufferLen,
-        BYTE *pbRequestBuffer) = 0;
+                     ULONG ulRequestId,
+                     ULONG ulcbRequestBufferLen,
+                     BYTE *pbRequestBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5950,22 +5950,22 @@ typedef struct IBDA_ISDBConditionalAccessVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_ISDBConditionalAccess* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_ISDBConditionalAccess* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_ISDBConditionalAccess* This);
+                     IBDA_ISDBConditionalAccess* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_ISDBConditionalAccess* This);
+                     IBDA_ISDBConditionalAccess* This);
 
     /*** IBDA_ISDBConditionalAccess methods ***/
     HRESULT (STDMETHODCALLTYPE *SetIsdbCasRequest)(
-        IBDA_ISDBConditionalAccess* This,
-        ULONG ulRequestId,
-        ULONG ulcbRequestBufferLen,
-        BYTE *pbRequestBuffer);
+                     IBDA_ISDBConditionalAccess* This,
+                     ULONG ulRequestId,
+                     ULONG ulcbRequestBufferLen,
+                     BYTE *pbRequestBuffer);
 
     END_INTERFACE
 } IBDA_ISDBConditionalAccessVtbl;
@@ -6026,8 +6026,8 @@ MIDL_INTERFACE("207c413f-00dc-4c61-bad6-6fee1ff07064")
 IBDA_EventingService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CompleteEvent(
-        ULONG ulEventID,
-        ULONG ulEventResult) = 0;
+                     ULONG ulEventID,
+                     ULONG ulEventResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6039,21 +6039,21 @@ typedef struct IBDA_EventingServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_EventingService* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_EventingService* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_EventingService* This);
+                     IBDA_EventingService* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_EventingService* This);
+                     IBDA_EventingService* This);
 
     /*** IBDA_EventingService methods ***/
     HRESULT (STDMETHODCALLTYPE *CompleteEvent)(
-        IBDA_EventingService* This,
-        ULONG ulEventID,
-        ULONG ulEventResult);
+                     IBDA_EventingService* This,
+                     ULONG ulEventID,
+                     ULONG ulEventResult);
 
     END_INTERFACE
 } IBDA_EventingServiceVtbl;
@@ -6113,15 +6113,15 @@ MIDL_INTERFACE("7def4c09-6e66-4567-a819-f0e17f4a81ab")
 IBDA_AUX : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryCapabilities(
-        DWORD *pdwNumAuxInputsBSTR) = 0;
+                     DWORD *pdwNumAuxInputsBSTR) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCapability(
-        DWORD dwIndex,
-        DWORD *dwInputID,
-        GUID *pConnectorType,
-        DWORD *ConnTypeNum,
-        DWORD *NumVideoStds,
-        ULONGLONG *AnalogStds) = 0;
+                     DWORD dwIndex,
+                     DWORD *dwInputID,
+                     GUID *pConnectorType,
+                     DWORD *ConnTypeNum,
+                     DWORD *NumVideoStds,
+                     ULONGLONG *AnalogStds) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6133,29 +6133,29 @@ typedef struct IBDA_AUXVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_AUX* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_AUX* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_AUX* This);
+                     IBDA_AUX* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_AUX* This);
+                     IBDA_AUX* This);
 
     /*** IBDA_AUX methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryCapabilities)(
-        IBDA_AUX* This,
-        DWORD *pdwNumAuxInputsBSTR);
+                     IBDA_AUX* This,
+                     DWORD *pdwNumAuxInputsBSTR);
 
     HRESULT (STDMETHODCALLTYPE *EnumCapability)(
-        IBDA_AUX* This,
-        DWORD dwIndex,
-        DWORD *dwInputID,
-        GUID *pConnectorType,
-        DWORD *ConnTypeNum,
-        DWORD *NumVideoStds,
-        ULONGLONG *AnalogStds);
+                     IBDA_AUX* This,
+                     DWORD dwIndex,
+                     DWORD *dwInputID,
+                     GUID *pConnectorType,
+                     DWORD *ConnTypeNum,
+                     DWORD *NumVideoStds,
+                     ULONGLONG *AnalogStds);
 
     END_INTERFACE
 } IBDA_AUXVtbl;
@@ -6231,56 +6231,56 @@ MIDL_INTERFACE("3a8bad59-59fe-4559-a0ba-396cfaa98ae3")
 IBDA_Encoder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryCapabilities(
-        DWORD *NumAudioFmts,
-        DWORD *NumVideoFmts) = 0;
+                     DWORD *NumAudioFmts,
+                     DWORD *NumVideoFmts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumAudioCapability(
-        DWORD FmtIndex,
-        DWORD *MethodID,
-        DWORD *AlgorithmType,
-        DWORD *SamplingRate,
-        DWORD *BitDepth,
-        DWORD *NumChannels) = 0;
+                     DWORD FmtIndex,
+                     DWORD *MethodID,
+                     DWORD *AlgorithmType,
+                     DWORD *SamplingRate,
+                     DWORD *BitDepth,
+                     DWORD *NumChannels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumVideoCapability(
-        DWORD FmtIndex,
-        DWORD *MethodID,
-        DWORD *AlgorithmType,
-        DWORD *VerticalSize,
-        DWORD *HorizontalSize,
-        DWORD *AspectRatio,
-        DWORD *FrameRateCode,
-        DWORD *ProgressiveSequence) = 0;
+                     DWORD FmtIndex,
+                     DWORD *MethodID,
+                     DWORD *AlgorithmType,
+                     DWORD *VerticalSize,
+                     DWORD *HorizontalSize,
+                     DWORD *AspectRatio,
+                     DWORD *FrameRateCode,
+                     DWORD *ProgressiveSequence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetParameters(
-        DWORD AudioBitrateMode,
-        DWORD AudioBitrate,
-        DWORD AudioMethodID,
-        DWORD AudioProgram,
-        DWORD VideoBitrateMode,
-        DWORD VideoBitrate,
-        DWORD VideoMethodID) = 0;
+                     DWORD AudioBitrateMode,
+                     DWORD AudioBitrate,
+                     DWORD AudioMethodID,
+                     DWORD AudioProgram,
+                     DWORD VideoBitrateMode,
+                     DWORD VideoBitrate,
+                     DWORD VideoMethodID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        DWORD *AudioBitrateMax,
-        DWORD *AudioBitrateMin,
-        DWORD *AudioBitrateMode,
-        DWORD *AudioBitrateStepping,
-        DWORD *AudioBitrate,
-        DWORD *AudioMethodID,
-        DWORD *AvailableAudioPrograms,
-        DWORD *AudioProgram,
-        DWORD *VideoBitrateMax,
-        DWORD *VideoBitrateMin,
-        DWORD *VideoBitrateMode,
-        DWORD *VideoBitrate,
-        DWORD *VideoBitrateStepping,
-        DWORD *VideoMethodID,
-        DWORD *SignalSourceID,
-        ULONGLONG *SignalFormat,
-        WINBOOL *SignalLock,
-        LONG *SignalLevel,
-        DWORD *SignalToNoiseRatio) = 0;
+                     DWORD *AudioBitrateMax,
+                     DWORD *AudioBitrateMin,
+                     DWORD *AudioBitrateMode,
+                     DWORD *AudioBitrateStepping,
+                     DWORD *AudioBitrate,
+                     DWORD *AudioMethodID,
+                     DWORD *AvailableAudioPrograms,
+                     DWORD *AudioProgram,
+                     DWORD *VideoBitrateMax,
+                     DWORD *VideoBitrateMin,
+                     DWORD *VideoBitrateMode,
+                     DWORD *VideoBitrate,
+                     DWORD *VideoBitrateStepping,
+                     DWORD *VideoMethodID,
+                     DWORD *SignalSourceID,
+                     ULONGLONG *SignalFormat,
+                     WINBOOL *SignalLock,
+                     LONG *SignalLevel,
+                     DWORD *SignalToNoiseRatio) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6292,73 +6292,73 @@ typedef struct IBDA_EncoderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_Encoder* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_Encoder* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_Encoder* This);
+                     IBDA_Encoder* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_Encoder* This);
+                     IBDA_Encoder* This);
 
     /*** IBDA_Encoder methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryCapabilities)(
-        IBDA_Encoder* This,
-        DWORD *NumAudioFmts,
-        DWORD *NumVideoFmts);
+                     IBDA_Encoder* This,
+                     DWORD *NumAudioFmts,
+                     DWORD *NumVideoFmts);
 
     HRESULT (STDMETHODCALLTYPE *EnumAudioCapability)(
-        IBDA_Encoder* This,
-        DWORD FmtIndex,
-        DWORD *MethodID,
-        DWORD *AlgorithmType,
-        DWORD *SamplingRate,
-        DWORD *BitDepth,
-        DWORD *NumChannels);
+                     IBDA_Encoder* This,
+                     DWORD FmtIndex,
+                     DWORD *MethodID,
+                     DWORD *AlgorithmType,
+                     DWORD *SamplingRate,
+                     DWORD *BitDepth,
+                     DWORD *NumChannels);
 
     HRESULT (STDMETHODCALLTYPE *EnumVideoCapability)(
-        IBDA_Encoder* This,
-        DWORD FmtIndex,
-        DWORD *MethodID,
-        DWORD *AlgorithmType,
-        DWORD *VerticalSize,
-        DWORD *HorizontalSize,
-        DWORD *AspectRatio,
-        DWORD *FrameRateCode,
-        DWORD *ProgressiveSequence);
+                     IBDA_Encoder* This,
+                     DWORD FmtIndex,
+                     DWORD *MethodID,
+                     DWORD *AlgorithmType,
+                     DWORD *VerticalSize,
+                     DWORD *HorizontalSize,
+                     DWORD *AspectRatio,
+                     DWORD *FrameRateCode,
+                     DWORD *ProgressiveSequence);
 
     HRESULT (STDMETHODCALLTYPE *SetParameters)(
-        IBDA_Encoder* This,
-        DWORD AudioBitrateMode,
-        DWORD AudioBitrate,
-        DWORD AudioMethodID,
-        DWORD AudioProgram,
-        DWORD VideoBitrateMode,
-        DWORD VideoBitrate,
-        DWORD VideoMethodID);
+                     IBDA_Encoder* This,
+                     DWORD AudioBitrateMode,
+                     DWORD AudioBitrate,
+                     DWORD AudioMethodID,
+                     DWORD AudioProgram,
+                     DWORD VideoBitrateMode,
+                     DWORD VideoBitrate,
+                     DWORD VideoMethodID);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IBDA_Encoder* This,
-        DWORD *AudioBitrateMax,
-        DWORD *AudioBitrateMin,
-        DWORD *AudioBitrateMode,
-        DWORD *AudioBitrateStepping,
-        DWORD *AudioBitrate,
-        DWORD *AudioMethodID,
-        DWORD *AvailableAudioPrograms,
-        DWORD *AudioProgram,
-        DWORD *VideoBitrateMax,
-        DWORD *VideoBitrateMin,
-        DWORD *VideoBitrateMode,
-        DWORD *VideoBitrate,
-        DWORD *VideoBitrateStepping,
-        DWORD *VideoMethodID,
-        DWORD *SignalSourceID,
-        ULONGLONG *SignalFormat,
-        WINBOOL *SignalLock,
-        LONG *SignalLevel,
-        DWORD *SignalToNoiseRatio);
+                     IBDA_Encoder* This,
+                     DWORD *AudioBitrateMax,
+                     DWORD *AudioBitrateMin,
+                     DWORD *AudioBitrateMode,
+                     DWORD *AudioBitrateStepping,
+                     DWORD *AudioBitrate,
+                     DWORD *AudioMethodID,
+                     DWORD *AvailableAudioPrograms,
+                     DWORD *AudioProgram,
+                     DWORD *VideoBitrateMax,
+                     DWORD *VideoBitrateMin,
+                     DWORD *VideoBitrateMode,
+                     DWORD *VideoBitrate,
+                     DWORD *VideoBitrateStepping,
+                     DWORD *VideoMethodID,
+                     DWORD *SignalSourceID,
+                     ULONGLONG *SignalFormat,
+                     WINBOOL *SignalLock,
+                     LONG *SignalLevel,
+                     DWORD *SignalToNoiseRatio);
 
     END_INTERFACE
 } IBDA_EncoderVtbl;
@@ -6502,36 +6502,36 @@ MIDL_INTERFACE("138adc7e-58ae-437f-b0b4-c9fe19d5b4ac")
 IBDA_FDC : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        DWORD *CurrentBitrate,
-        WINBOOL *CarrierLock,
-        DWORD *CurrentFrequency,
-        WINBOOL *CurrentSpectrumInversion,
-        BSTR *CurrentPIDList,
-        BSTR *CurrentTIDList,
-        WINBOOL *Overflow) = 0;
+                     DWORD *CurrentBitrate,
+                     WINBOOL *CarrierLock,
+                     DWORD *CurrentFrequency,
+                     WINBOOL *CurrentSpectrumInversion,
+                     BSTR *CurrentPIDList,
+                     BSTR *CurrentTIDList,
+                     WINBOOL *Overflow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestTables(
-        BSTR TableIDs) = 0;
+                     BSTR TableIDs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPid(
-        BSTR PidsToAdd,
-        DWORD *RemainingFilterEntries) = 0;
+                     BSTR PidsToAdd,
+                     DWORD *RemainingFilterEntries) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemovePid(
-        BSTR PidsToRemove) = 0;
+                     BSTR PidsToRemove) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddTid(
-        BSTR TidsToAdd,
-        BSTR *CurrentTidList) = 0;
+                     BSTR TidsToAdd,
+                     BSTR *CurrentTidList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveTid(
-        BSTR TidsToRemove) = 0;
+                     BSTR TidsToRemove) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTableSection(
-        DWORD *Pid,
-        DWORD MaxBufferSize,
-        DWORD *ActualSize,
-        BYTE *SecBuffer) = 0;
+                     DWORD *Pid,
+                     DWORD MaxBufferSize,
+                     DWORD *ActualSize,
+                     BYTE *SecBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6543,55 +6543,55 @@ typedef struct IBDA_FDCVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_FDC* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_FDC* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_FDC* This);
+                     IBDA_FDC* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_FDC* This);
+                     IBDA_FDC* This);
 
     /*** IBDA_FDC methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IBDA_FDC* This,
-        DWORD *CurrentBitrate,
-        WINBOOL *CarrierLock,
-        DWORD *CurrentFrequency,
-        WINBOOL *CurrentSpectrumInversion,
-        BSTR *CurrentPIDList,
-        BSTR *CurrentTIDList,
-        WINBOOL *Overflow);
+                     IBDA_FDC* This,
+                     DWORD *CurrentBitrate,
+                     WINBOOL *CarrierLock,
+                     DWORD *CurrentFrequency,
+                     WINBOOL *CurrentSpectrumInversion,
+                     BSTR *CurrentPIDList,
+                     BSTR *CurrentTIDList,
+                     WINBOOL *Overflow);
 
     HRESULT (STDMETHODCALLTYPE *RequestTables)(
-        IBDA_FDC* This,
-        BSTR TableIDs);
+                     IBDA_FDC* This,
+                     BSTR TableIDs);
 
     HRESULT (STDMETHODCALLTYPE *AddPid)(
-        IBDA_FDC* This,
-        BSTR PidsToAdd,
-        DWORD *RemainingFilterEntries);
+                     IBDA_FDC* This,
+                     BSTR PidsToAdd,
+                     DWORD *RemainingFilterEntries);
 
     HRESULT (STDMETHODCALLTYPE *RemovePid)(
-        IBDA_FDC* This,
-        BSTR PidsToRemove);
+                     IBDA_FDC* This,
+                     BSTR PidsToRemove);
 
     HRESULT (STDMETHODCALLTYPE *AddTid)(
-        IBDA_FDC* This,
-        BSTR TidsToAdd,
-        BSTR *CurrentTidList);
+                     IBDA_FDC* This,
+                     BSTR TidsToAdd,
+                     BSTR *CurrentTidList);
 
     HRESULT (STDMETHODCALLTYPE *RemoveTid)(
-        IBDA_FDC* This,
-        BSTR TidsToRemove);
+                     IBDA_FDC* This,
+                     BSTR TidsToRemove);
 
     HRESULT (STDMETHODCALLTYPE *GetTableSection)(
-        IBDA_FDC* This,
-        DWORD *Pid,
-        DWORD MaxBufferSize,
-        DWORD *ActualSize,
-        BYTE *SecBuffer);
+                     IBDA_FDC* This,
+                     DWORD *Pid,
+                     DWORD MaxBufferSize,
+                     DWORD *ActualSize,
+                     BYTE *SecBuffer);
 
     END_INTERFACE
 } IBDA_FDCVtbl;
@@ -6733,27 +6733,27 @@ MIDL_INTERFACE("c0afcb73-23e7-4bc6-bafa-fdc167b4719f")
 IBDA_GuideDataDeliveryService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetGuideDataType(
-        GUID *pguidDataType) = 0;
+                     GUID *pguidDataType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGuideData(
-        ULONG *pulcbBufferLen,
-        BYTE *pbBuffer,
-        ULONG *pulGuideDataPercentageProgress) = 0;
+                     ULONG *pulcbBufferLen,
+                     BYTE *pbBuffer,
+                     ULONG *pulGuideDataPercentageProgress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestGuideDataUpdate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTuneXmlFromServiceIdx(
-        ULONG64 ul64ServiceIdx,
-        BSTR *pbstrTuneXml) = 0;
+                     ULONG64 ul64ServiceIdx,
+                     BSTR *pbstrTuneXml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetServices(
-        ULONG *pulcbBufferLen,
-        BYTE *pbBuffer) = 0;
+                     ULONG *pulcbBufferLen,
+                     BYTE *pbBuffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetServiceInfoFromTuneXml(
-        BSTR bstrTuneXml,
-        BSTR *pbstrServiceDescription) = 0;
+                     BSTR bstrTuneXml,
+                     BSTR *pbstrServiceDescription) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6765,44 +6765,44 @@ typedef struct IBDA_GuideDataDeliveryServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_GuideDataDeliveryService* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_GuideDataDeliveryService* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_GuideDataDeliveryService* This);
+                     IBDA_GuideDataDeliveryService* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_GuideDataDeliveryService* This);
+                     IBDA_GuideDataDeliveryService* This);
 
     /*** IBDA_GuideDataDeliveryService methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGuideDataType)(
-        IBDA_GuideDataDeliveryService* This,
-        GUID *pguidDataType);
+                     IBDA_GuideDataDeliveryService* This,
+                     GUID *pguidDataType);
 
     HRESULT (STDMETHODCALLTYPE *GetGuideData)(
-        IBDA_GuideDataDeliveryService* This,
-        ULONG *pulcbBufferLen,
-        BYTE *pbBuffer,
-        ULONG *pulGuideDataPercentageProgress);
+                     IBDA_GuideDataDeliveryService* This,
+                     ULONG *pulcbBufferLen,
+                     BYTE *pbBuffer,
+                     ULONG *pulGuideDataPercentageProgress);
 
     HRESULT (STDMETHODCALLTYPE *RequestGuideDataUpdate)(
-        IBDA_GuideDataDeliveryService* This);
+                     IBDA_GuideDataDeliveryService* This);
 
     HRESULT (STDMETHODCALLTYPE *GetTuneXmlFromServiceIdx)(
-        IBDA_GuideDataDeliveryService* This,
-        ULONG64 ul64ServiceIdx,
-        BSTR *pbstrTuneXml);
+                     IBDA_GuideDataDeliveryService* This,
+                     ULONG64 ul64ServiceIdx,
+                     BSTR *pbstrTuneXml);
 
     HRESULT (STDMETHODCALLTYPE *GetServices)(
-        IBDA_GuideDataDeliveryService* This,
-        ULONG *pulcbBufferLen,
-        BYTE *pbBuffer);
+                     IBDA_GuideDataDeliveryService* This,
+                     ULONG *pulcbBufferLen,
+                     BYTE *pbBuffer);
 
     HRESULT (STDMETHODCALLTYPE *GetServiceInfoFromTuneXml)(
-        IBDA_GuideDataDeliveryService* This,
-        BSTR bstrTuneXml,
-        BSTR *pbstrServiceDescription);
+                     IBDA_GuideDataDeliveryService* This,
+                     BSTR bstrTuneXml,
+                     BSTR *pbstrServiceDescription);
 
     END_INTERFACE
 } IBDA_GuideDataDeliveryServiceVtbl;
@@ -6925,11 +6925,11 @@ MIDL_INTERFACE("bff6b5bb-b0ae-484c-9dca-73528fb0b46e")
 IBDA_DRMService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetDRM(
-        GUID *puuidNewDrm) = 0;
+                     GUID *puuidNewDrm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDRMStatus(
-        BSTR *pbstrDrmUuidList,
-        GUID *DrmUuid) = 0;
+                     BSTR *pbstrDrmUuidList,
+                     GUID *DrmUuid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6941,25 +6941,25 @@ typedef struct IBDA_DRMServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DRMService* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DRMService* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DRMService* This);
+                     IBDA_DRMService* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DRMService* This);
+                     IBDA_DRMService* This);
 
     /*** IBDA_DRMService methods ***/
     HRESULT (STDMETHODCALLTYPE *SetDRM)(
-        IBDA_DRMService* This,
-        GUID *puuidNewDrm);
+                     IBDA_DRMService* This,
+                     GUID *puuidNewDrm);
 
     HRESULT (STDMETHODCALLTYPE *GetDRMStatus)(
-        IBDA_DRMService* This,
-        BSTR *pbstrDrmUuidList,
-        GUID *DrmUuid);
+                     IBDA_DRMService* This,
+                     BSTR *pbstrDrmUuidList,
+                     GUID *DrmUuid);
 
     END_INTERFACE
 } IBDA_DRMServiceVtbl;
@@ -7031,50 +7031,50 @@ MIDL_INTERFACE("4be6fa3d-07cd-4139-8b80-8c18ba3aec88")
 IBDA_WMDRMSession : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        ULONG *MaxCaptureToken,
-        ULONG *MaxStreamingPid,
-        ULONG *MaxLicense,
-        ULONG *MinSecurityLevel,
-        ULONG *RevInfoSequenceNumber,
-        ULONGLONG *RevInfoIssuedTime,
-        ULONG *RevInfoTTL,
-        ULONG *RevListVersion,
-        ULONG *ulState) = 0;
+                     ULONG *MaxCaptureToken,
+                     ULONG *MaxStreamingPid,
+                     ULONG *MaxLicense,
+                     ULONG *MinSecurityLevel,
+                     ULONG *RevInfoSequenceNumber,
+                     ULONGLONG *RevInfoIssuedTime,
+                     ULONG *RevInfoTTL,
+                     ULONG *RevListVersion,
+                     ULONG *ulState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRevInfo(
-        ULONG ulRevInfoLen,
-        BYTE *pbRevInfo) = 0;
+                     ULONG ulRevInfoLen,
+                     BYTE *pbRevInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCrl(
-        ULONG ulCrlLen,
-        BYTE *pbCrlLen) = 0;
+                     ULONG ulCrlLen,
+                     BYTE *pbCrlLen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TransactMessage(
-        ULONG ulcbRequest,
-        BYTE *pbRequest,
-        ULONG *pulcbResponse,
-        BYTE *pbResponse) = 0;
+                     ULONG ulcbRequest,
+                     BYTE *pbRequest,
+                     ULONG *pulcbResponse,
+                     BYTE *pbResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLicense(
-        GUID *uuidKey,
-        ULONG *pulPackageLen,
-        BYTE *pbPackage) = 0;
+                     GUID *uuidKey,
+                     ULONG *pulPackageLen,
+                     BYTE *pbPackage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReissueLicense(
-        GUID *uuidKey) = 0;
+                     GUID *uuidKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenewLicense(
-        ULONG ulInXmrLicenseLen,
-        BYTE *pbInXmrLicense,
-        ULONG ulEntitlementTokenLen,
-        BYTE *pbEntitlementToken,
-        ULONG *pulDescrambleStatus,
-        ULONG *pulOutXmrLicenseLen,
-        BYTE *pbOutXmrLicense) = 0;
+                     ULONG ulInXmrLicenseLen,
+                     BYTE *pbInXmrLicense,
+                     ULONG ulEntitlementTokenLen,
+                     BYTE *pbEntitlementToken,
+                     ULONG *pulDescrambleStatus,
+                     ULONG *pulOutXmrLicenseLen,
+                     BYTE *pbOutXmrLicense) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetKeyInfo(
-        ULONG *pulKeyInfoLen,
-        BYTE *pbKeyInfo) = 0;
+                     ULONG *pulKeyInfoLen,
+                     BYTE *pbKeyInfo) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7086,70 +7086,70 @@ typedef struct IBDA_WMDRMSessionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_WMDRMSession* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_WMDRMSession* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_WMDRMSession* This);
+                     IBDA_WMDRMSession* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_WMDRMSession* This);
+                     IBDA_WMDRMSession* This);
 
     /*** IBDA_WMDRMSession methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        IBDA_WMDRMSession* This,
-        ULONG *MaxCaptureToken,
-        ULONG *MaxStreamingPid,
-        ULONG *MaxLicense,
-        ULONG *MinSecurityLevel,
-        ULONG *RevInfoSequenceNumber,
-        ULONGLONG *RevInfoIssuedTime,
-        ULONG *RevInfoTTL,
-        ULONG *RevListVersion,
-        ULONG *ulState);
+                     IBDA_WMDRMSession* This,
+                     ULONG *MaxCaptureToken,
+                     ULONG *MaxStreamingPid,
+                     ULONG *MaxLicense,
+                     ULONG *MinSecurityLevel,
+                     ULONG *RevInfoSequenceNumber,
+                     ULONGLONG *RevInfoIssuedTime,
+                     ULONG *RevInfoTTL,
+                     ULONG *RevListVersion,
+                     ULONG *ulState);
 
     HRESULT (STDMETHODCALLTYPE *SetRevInfo)(
-        IBDA_WMDRMSession* This,
-        ULONG ulRevInfoLen,
-        BYTE *pbRevInfo);
+                     IBDA_WMDRMSession* This,
+                     ULONG ulRevInfoLen,
+                     BYTE *pbRevInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetCrl)(
-        IBDA_WMDRMSession* This,
-        ULONG ulCrlLen,
-        BYTE *pbCrlLen);
+                     IBDA_WMDRMSession* This,
+                     ULONG ulCrlLen,
+                     BYTE *pbCrlLen);
 
     HRESULT (STDMETHODCALLTYPE *TransactMessage)(
-        IBDA_WMDRMSession* This,
-        ULONG ulcbRequest,
-        BYTE *pbRequest,
-        ULONG *pulcbResponse,
-        BYTE *pbResponse);
+                     IBDA_WMDRMSession* This,
+                     ULONG ulcbRequest,
+                     BYTE *pbRequest,
+                     ULONG *pulcbResponse,
+                     BYTE *pbResponse);
 
     HRESULT (STDMETHODCALLTYPE *GetLicense)(
-        IBDA_WMDRMSession* This,
-        GUID *uuidKey,
-        ULONG *pulPackageLen,
-        BYTE *pbPackage);
+                     IBDA_WMDRMSession* This,
+                     GUID *uuidKey,
+                     ULONG *pulPackageLen,
+                     BYTE *pbPackage);
 
     HRESULT (STDMETHODCALLTYPE *ReissueLicense)(
-        IBDA_WMDRMSession* This,
-        GUID *uuidKey);
+                     IBDA_WMDRMSession* This,
+                     GUID *uuidKey);
 
     HRESULT (STDMETHODCALLTYPE *RenewLicense)(
-        IBDA_WMDRMSession* This,
-        ULONG ulInXmrLicenseLen,
-        BYTE *pbInXmrLicense,
-        ULONG ulEntitlementTokenLen,
-        BYTE *pbEntitlementToken,
-        ULONG *pulDescrambleStatus,
-        ULONG *pulOutXmrLicenseLen,
-        BYTE *pbOutXmrLicense);
+                     IBDA_WMDRMSession* This,
+                     ULONG ulInXmrLicenseLen,
+                     BYTE *pbInXmrLicense,
+                     ULONG ulEntitlementTokenLen,
+                     BYTE *pbEntitlementToken,
+                     ULONG *pulDescrambleStatus,
+                     ULONG *pulOutXmrLicenseLen,
+                     BYTE *pbOutXmrLicense);
 
     HRESULT (STDMETHODCALLTYPE *GetKeyInfo)(
-        IBDA_WMDRMSession* This,
-        ULONG *pulKeyInfoLen,
-        BYTE *pbKeyInfo);
+                     IBDA_WMDRMSession* This,
+                     ULONG *pulKeyInfoLen,
+                     BYTE *pbKeyInfo);
 
     END_INTERFACE
 } IBDA_WMDRMSessionVtbl;
@@ -7314,32 +7314,32 @@ MIDL_INTERFACE("86d979cf-a8a7-4f94-b5fb-14c0aca68fe6")
 IBDA_WMDRMTuner : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PurchaseEntitlement(
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        ULONG ulPurchaseTokenLen,
-        BYTE *pbPurchaseToken,
-        ULONG *pulDescrambleStatus,
-        ULONG *pulCaptureTokenLen,
-        BYTE *pbCaptureToken) = 0;
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     ULONG ulPurchaseTokenLen,
+                     BYTE *pbPurchaseToken,
+                     ULONG *pulDescrambleStatus,
+                     ULONG *pulCaptureTokenLen,
+                     BYTE *pbCaptureToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CancelCaptureToken(
-        ULONG ulCaptureTokenLen,
-        BYTE *pbCaptureToken) = 0;
+                     ULONG ulCaptureTokenLen,
+                     BYTE *pbCaptureToken) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPidProtection(
-        ULONG ulPid,
-        GUID *uuidKey) = 0;
+                     ULONG ulPid,
+                     GUID *uuidKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPidProtection(
-        ULONG pulPid,
-        GUID *uuidKey) = 0;
+                     ULONG pulPid,
+                     GUID *uuidKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSyncValue(
-        ULONG ulSyncValue) = 0;
+                     ULONG ulSyncValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStartCodeProfile(
-        ULONG *pulStartCodeProfileLen,
-        BYTE *pbStartCodeProfile) = 0;
+                     ULONG *pulStartCodeProfileLen,
+                     BYTE *pbStartCodeProfile) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7351,50 +7351,50 @@ typedef struct IBDA_WMDRMTunerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_WMDRMTuner* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_WMDRMTuner* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_WMDRMTuner* This);
+                     IBDA_WMDRMTuner* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_WMDRMTuner* This);
+                     IBDA_WMDRMTuner* This);
 
     /*** IBDA_WMDRMTuner methods ***/
     HRESULT (STDMETHODCALLTYPE *PurchaseEntitlement)(
-        IBDA_WMDRMTuner* This,
-        ULONG ulDialogRequest,
-        BSTR bstrLanguage,
-        ULONG ulPurchaseTokenLen,
-        BYTE *pbPurchaseToken,
-        ULONG *pulDescrambleStatus,
-        ULONG *pulCaptureTokenLen,
-        BYTE *pbCaptureToken);
+                     IBDA_WMDRMTuner* This,
+                     ULONG ulDialogRequest,
+                     BSTR bstrLanguage,
+                     ULONG ulPurchaseTokenLen,
+                     BYTE *pbPurchaseToken,
+                     ULONG *pulDescrambleStatus,
+                     ULONG *pulCaptureTokenLen,
+                     BYTE *pbCaptureToken);
 
     HRESULT (STDMETHODCALLTYPE *CancelCaptureToken)(
-        IBDA_WMDRMTuner* This,
-        ULONG ulCaptureTokenLen,
-        BYTE *pbCaptureToken);
+                     IBDA_WMDRMTuner* This,
+                     ULONG ulCaptureTokenLen,
+                     BYTE *pbCaptureToken);
 
     HRESULT (STDMETHODCALLTYPE *SetPidProtection)(
-        IBDA_WMDRMTuner* This,
-        ULONG ulPid,
-        GUID *uuidKey);
+                     IBDA_WMDRMTuner* This,
+                     ULONG ulPid,
+                     GUID *uuidKey);
 
     HRESULT (STDMETHODCALLTYPE *GetPidProtection)(
-        IBDA_WMDRMTuner* This,
-        ULONG pulPid,
-        GUID *uuidKey);
+                     IBDA_WMDRMTuner* This,
+                     ULONG pulPid,
+                     GUID *uuidKey);
 
     HRESULT (STDMETHODCALLTYPE *SetSyncValue)(
-        IBDA_WMDRMTuner* This,
-        ULONG ulSyncValue);
+                     IBDA_WMDRMTuner* This,
+                     ULONG ulSyncValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStartCodeProfile)(
-        IBDA_WMDRMTuner* This,
-        ULONG *pulStartCodeProfileLen,
-        BYTE *pbStartCodeProfile);
+                     IBDA_WMDRMTuner* This,
+                     ULONG *pulStartCodeProfileLen,
+                     BYTE *pbStartCodeProfile);
 
     END_INTERFACE
 } IBDA_WMDRMTunerVtbl;
@@ -7523,14 +7523,14 @@ MIDL_INTERFACE("1f9bc2a5-44a3-4c52-aab1-0bbce5a1381d")
 IBDA_DRIDRMService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetDRM(
-        BSTR bstrNewDrm) = 0;
+                     BSTR bstrNewDrm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDRMStatus(
-        BSTR *pbstrDrmUuidList,
-        GUID *DrmUuid) = 0;
+                     BSTR *pbstrDrmUuidList,
+                     GUID *DrmUuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPairingStatus(
-        BDA_DrmPairingError *penumPairingStatus) = 0;
+                     BDA_DrmPairingError *penumPairingStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7542,29 +7542,29 @@ typedef struct IBDA_DRIDRMServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DRIDRMService* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DRIDRMService* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DRIDRMService* This);
+                     IBDA_DRIDRMService* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DRIDRMService* This);
+                     IBDA_DRIDRMService* This);
 
     /*** IBDA_DRIDRMService methods ***/
     HRESULT (STDMETHODCALLTYPE *SetDRM)(
-        IBDA_DRIDRMService* This,
-        BSTR bstrNewDrm);
+                     IBDA_DRIDRMService* This,
+                     BSTR bstrNewDrm);
 
     HRESULT (STDMETHODCALLTYPE *GetDRMStatus)(
-        IBDA_DRIDRMService* This,
-        BSTR *pbstrDrmUuidList,
-        GUID *DrmUuid);
+                     IBDA_DRIDRMService* This,
+                     BSTR *pbstrDrmUuidList,
+                     GUID *DrmUuid);
 
     HRESULT (STDMETHODCALLTYPE *GetPairingStatus)(
-        IBDA_DRIDRMService* This,
-        BDA_DrmPairingError *penumPairingStatus);
+                     IBDA_DRIDRMService* This,
+                     BDA_DrmPairingError *penumPairingStatus);
 
     END_INTERFACE
 } IBDA_DRIDRMServiceVtbl;
@@ -7648,35 +7648,35 @@ MIDL_INTERFACE("05c690f8-56db-4bb2-b053-79c12098bb26")
 IBDA_DRIWMDRMSession : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AcknowledgeLicense(
-        HRESULT hrLicenseAck) = 0;
+                     HRESULT hrLicenseAck) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessLicenseChallenge(
-        DWORD dwcbLicenseMessage,
-        BYTE *pbLicenseMessage,
-        DWORD *pdwcbLicenseResponse,
-        BYTE **ppbLicenseResponse) = 0;
+                     DWORD dwcbLicenseMessage,
+                     BYTE *pbLicenseMessage,
+                     DWORD *pdwcbLicenseResponse,
+                     BYTE **ppbLicenseResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessRegistrationChallenge(
-        DWORD dwcbRegistrationMessage,
-        BYTE *pbRegistrationMessage,
-        DWORD *pdwcbRegistrationResponse,
-        BYTE **ppbRegistrationResponse) = 0;
+                     DWORD dwcbRegistrationMessage,
+                     BYTE *pbRegistrationMessage,
+                     DWORD *pdwcbRegistrationResponse,
+                     BYTE **ppbRegistrationResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRevInfo(
-        DWORD dwRevInfoLen,
-        BYTE *pbRevInfo,
-        DWORD *pdwResponse) = 0;
+                     DWORD dwRevInfoLen,
+                     BYTE *pbRevInfo,
+                     DWORD *pdwResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCrl(
-        DWORD dwCrlLen,
-        BYTE *pbCrlLen,
-        DWORD *pdwResponse) = 0;
+                     DWORD dwCrlLen,
+                     BYTE *pbCrlLen,
+                     DWORD *pdwResponse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHMSAssociationData(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastCardeaError(
-        DWORD *pdwError) = 0;
+                     DWORD *pdwError) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7688,53 +7688,53 @@ typedef struct IBDA_DRIWMDRMSessionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_DRIWMDRMSession* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_DRIWMDRMSession* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_DRIWMDRMSession* This);
+                     IBDA_DRIWMDRMSession* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_DRIWMDRMSession* This);
+                     IBDA_DRIWMDRMSession* This);
 
     /*** IBDA_DRIWMDRMSession methods ***/
     HRESULT (STDMETHODCALLTYPE *AcknowledgeLicense)(
-        IBDA_DRIWMDRMSession* This,
-        HRESULT hrLicenseAck);
+                     IBDA_DRIWMDRMSession* This,
+                     HRESULT hrLicenseAck);
 
     HRESULT (STDMETHODCALLTYPE *ProcessLicenseChallenge)(
-        IBDA_DRIWMDRMSession* This,
-        DWORD dwcbLicenseMessage,
-        BYTE *pbLicenseMessage,
-        DWORD *pdwcbLicenseResponse,
-        BYTE **ppbLicenseResponse);
+                     IBDA_DRIWMDRMSession* This,
+                     DWORD dwcbLicenseMessage,
+                     BYTE *pbLicenseMessage,
+                     DWORD *pdwcbLicenseResponse,
+                     BYTE **ppbLicenseResponse);
 
     HRESULT (STDMETHODCALLTYPE *ProcessRegistrationChallenge)(
-        IBDA_DRIWMDRMSession* This,
-        DWORD dwcbRegistrationMessage,
-        BYTE *pbRegistrationMessage,
-        DWORD *pdwcbRegistrationResponse,
-        BYTE **ppbRegistrationResponse);
+                     IBDA_DRIWMDRMSession* This,
+                     DWORD dwcbRegistrationMessage,
+                     BYTE *pbRegistrationMessage,
+                     DWORD *pdwcbRegistrationResponse,
+                     BYTE **ppbRegistrationResponse);
 
     HRESULT (STDMETHODCALLTYPE *SetRevInfo)(
-        IBDA_DRIWMDRMSession* This,
-        DWORD dwRevInfoLen,
-        BYTE *pbRevInfo,
-        DWORD *pdwResponse);
+                     IBDA_DRIWMDRMSession* This,
+                     DWORD dwRevInfoLen,
+                     BYTE *pbRevInfo,
+                     DWORD *pdwResponse);
 
     HRESULT (STDMETHODCALLTYPE *SetCrl)(
-        IBDA_DRIWMDRMSession* This,
-        DWORD dwCrlLen,
-        BYTE *pbCrlLen,
-        DWORD *pdwResponse);
+                     IBDA_DRIWMDRMSession* This,
+                     DWORD dwCrlLen,
+                     BYTE *pbCrlLen,
+                     DWORD *pdwResponse);
 
     HRESULT (STDMETHODCALLTYPE *GetHMSAssociationData)(
-        IBDA_DRIWMDRMSession* This);
+                     IBDA_DRIWMDRMSession* This);
 
     HRESULT (STDMETHODCALLTYPE *GetLastCardeaError)(
-        IBDA_DRIWMDRMSession* This,
-        DWORD *pdwError);
+                     IBDA_DRIWMDRMSession* This,
+                     DWORD *pdwError);
 
     END_INTERFACE
 } IBDA_DRIWMDRMSessionVtbl;
@@ -7874,12 +7874,12 @@ MIDL_INTERFACE("942aafec-4c05-4c74-b8eb-8706c2a4943f")
 IBDA_MUX : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetPidList(
-        ULONG ulPidListCount,
-        BDA_MUX_PIDLISTITEM *pbPidListBuffer) = 0;
+                     ULONG ulPidListCount,
+                     BDA_MUX_PIDLISTITEM *pbPidListBuffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPidList(
-        ULONG *pulPidListCount,
-        BDA_MUX_PIDLISTITEM *pbPidListBuffer) = 0;
+                     ULONG *pulPidListCount,
+                     BDA_MUX_PIDLISTITEM *pbPidListBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7891,26 +7891,26 @@ typedef struct IBDA_MUXVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_MUX* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_MUX* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_MUX* This);
+                     IBDA_MUX* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_MUX* This);
+                     IBDA_MUX* This);
 
     /*** IBDA_MUX methods ***/
     HRESULT (STDMETHODCALLTYPE *SetPidList)(
-        IBDA_MUX* This,
-        ULONG ulPidListCount,
-        BDA_MUX_PIDLISTITEM *pbPidListBuffer);
+                     IBDA_MUX* This,
+                     ULONG ulPidListCount,
+                     BDA_MUX_PIDLISTITEM *pbPidListBuffer);
 
     HRESULT (STDMETHODCALLTYPE *GetPidList)(
-        IBDA_MUX* This,
-        ULONG *pulPidListCount,
-        BDA_MUX_PIDLISTITEM *pbPidListBuffer);
+                     IBDA_MUX* This,
+                     ULONG *pulPidListCount,
+                     BDA_MUX_PIDLISTITEM *pbPidListBuffer);
 
     END_INTERFACE
 } IBDA_MUXVtbl;
@@ -7983,11 +7983,11 @@ MIDL_INTERFACE("1dcfafe9-b45e-41b3-bb2a-561eb129ae98")
 IBDA_TransportStreamSelector : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetTSID(
-        USHORT usTSID) = 0;
+                     USHORT usTSID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTSInformation(
-        ULONG *pulTSInformationBufferLen,
-        BYTE *pbTSInformationBuffer) = 0;
+                     ULONG *pulTSInformationBufferLen,
+                     BYTE *pbTSInformationBuffer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7999,25 +7999,25 @@ typedef struct IBDA_TransportStreamSelectorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_TransportStreamSelector* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_TransportStreamSelector* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_TransportStreamSelector* This);
+                     IBDA_TransportStreamSelector* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_TransportStreamSelector* This);
+                     IBDA_TransportStreamSelector* This);
 
     /*** IBDA_TransportStreamSelector methods ***/
     HRESULT (STDMETHODCALLTYPE *SetTSID)(
-        IBDA_TransportStreamSelector* This,
-        USHORT usTSID);
+                     IBDA_TransportStreamSelector* This,
+                     USHORT usTSID);
 
     HRESULT (STDMETHODCALLTYPE *GetTSInformation)(
-        IBDA_TransportStreamSelector* This,
-        ULONG *pulTSInformationBufferLen,
-        BYTE *pbTSInformationBuffer);
+                     IBDA_TransportStreamSelector* This,
+                     ULONG *pulTSInformationBufferLen,
+                     BYTE *pbTSInformationBuffer);
 
     END_INTERFACE
 } IBDA_TransportStreamSelectorVtbl;
@@ -8089,13 +8089,13 @@ MIDL_INTERFACE("53b14189-e478-4b7a-a1ff-506db4b99dfe")
 IBDA_UserActivityService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetCurrentTunerUseReason(
-        DWORD dwUseReason) = 0;
+                     DWORD dwUseReason) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserActivityInterval(
-        DWORD *pdwActivityInterval) = 0;
+                     DWORD *pdwActivityInterval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UserActivityDetected(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8107,27 +8107,27 @@ typedef struct IBDA_UserActivityServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IBDA_UserActivityService* This,
-        REFIID riid,
-        void **ppvObject);
+                     IBDA_UserActivityService* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IBDA_UserActivityService* This);
+                     IBDA_UserActivityService* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IBDA_UserActivityService* This);
+                     IBDA_UserActivityService* This);
 
     /*** IBDA_UserActivityService methods ***/
     HRESULT (STDMETHODCALLTYPE *SetCurrentTunerUseReason)(
-        IBDA_UserActivityService* This,
-        DWORD dwUseReason);
+                     IBDA_UserActivityService* This,
+                     DWORD dwUseReason);
 
     HRESULT (STDMETHODCALLTYPE *GetUserActivityInterval)(
-        IBDA_UserActivityService* This,
-        DWORD *pdwActivityInterval);
+                     IBDA_UserActivityService* This,
+                     DWORD *pdwActivityInterval);
 
     HRESULT (STDMETHODCALLTYPE *UserActivityDetected)(
-        IBDA_UserActivityService* This);
+                     IBDA_UserActivityService* This);
 
     END_INTERFACE
 } IBDA_UserActivityServiceVtbl;
@@ -8228,10 +8228,10 @@ DEFINE_GUID(CLSID_PBDA_AUX_DATA_TYPE, 0xfd456373, 0x3323, 0x4090, 0xad, 0xca, 0x
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

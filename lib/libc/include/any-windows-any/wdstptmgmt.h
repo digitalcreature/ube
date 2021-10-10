@@ -725,16 +725,16 @@ MIDL_INTERFACE("46ad894b-0bab-47dc-84b2-7b553f1d8f80")
 IWdsTransportCacheable : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Dirty(
-        VARIANT_BOOL *pbDirty) = 0;
+                     VARIANT_BOOL *pbDirty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Discard(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Refresh(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Commit(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -746,59 +746,59 @@ typedef struct IWdsTransportCacheableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportCacheable *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportCacheable *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportCacheable *This);
+                     IWdsTransportCacheable *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportCacheable *This);
+                     IWdsTransportCacheable *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportCacheable *This,
-        UINT *pctinfo);
+                     IWdsTransportCacheable *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportCacheable *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportCacheable *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportCacheable *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportCacheable *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportCacheable *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportCacheable *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportCacheable methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Dirty)(
-        IWdsTransportCacheable *This,
-        VARIANT_BOOL *pbDirty);
+                     IWdsTransportCacheable *This,
+                     VARIANT_BOOL *pbDirty);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        IWdsTransportCacheable *This);
+                     IWdsTransportCacheable *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportCacheable *This);
+                     IWdsTransportCacheable *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWdsTransportCacheable *This);
+                     IWdsTransportCacheable *This);
 
     END_INTERFACE
 } IWdsTransportCacheableVtbl;
@@ -881,14 +881,14 @@ MIDL_INTERFACE("b8ba4b1a-2ff4-43ab-996c-b2b10a91a6eb")
 IWdsTransportCollection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        ULONG *pulCount) = 0;
+                     ULONG *pulCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        ULONG ulIndex,
-        IDispatch **ppVal) = 0;
+                     ULONG ulIndex,
+                     IDispatch **ppVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **ppVal) = 0;
+                     IUnknown **ppVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -900,59 +900,59 @@ typedef struct IWdsTransportCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportCollection *This);
+                     IWdsTransportCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportCollection *This);
+                     IWdsTransportCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportCollection *This,
-        UINT *pctinfo);
+                     IWdsTransportCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IWdsTransportCollection *This,
-        ULONG *pulCount);
+                     IWdsTransportCollection *This,
+                     ULONG *pulCount);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IWdsTransportCollection *This,
-        ULONG ulIndex,
-        IDispatch **ppVal);
+                     IWdsTransportCollection *This,
+                     ULONG ulIndex,
+                     IDispatch **ppVal);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IWdsTransportCollection *This,
-        IUnknown **ppVal);
+                     IWdsTransportCollection *This,
+                     IUnknown **ppVal);
 
     END_INTERFACE
 } IWdsTransportCollectionVtbl;
@@ -1031,32 +1031,32 @@ MIDL_INTERFACE("84cc4779-42dd-4792-891e-1321d6d74b44")
 IWdsTransportConfigurationManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_ServicePolicy(
-        IWdsTransportServicePolicy **ppWdsTransportServicePolicy) = 0;
+                     IWdsTransportServicePolicy **ppWdsTransportServicePolicy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DiagnosticsPolicy(
-        IWdsTransportDiagnosticsPolicy **ppWdsTransportDiagnosticsPolicy) = 0;
+                     IWdsTransportDiagnosticsPolicy **ppWdsTransportDiagnosticsPolicy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_WdsTransportServicesRunning(
-        VARIANT_BOOL bRealtimeStatus,
-        VARIANT_BOOL *pbServicesRunning) = 0;
+                     VARIANT_BOOL bRealtimeStatus,
+                     VARIANT_BOOL *pbServicesRunning) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableWdsTransportServices(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisableWdsTransportServices(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartWdsTransportServices(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopWdsTransportServices(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RestartWdsTransportServices(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyWdsTransportServices(
-        WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification) = 0;
+                     WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1068,78 +1068,78 @@ typedef struct IWdsTransportConfigurationManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportConfigurationManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportConfigurationManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportConfigurationManager *This);
+                     IWdsTransportConfigurationManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportConfigurationManager *This);
+                     IWdsTransportConfigurationManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportConfigurationManager *This,
-        UINT *pctinfo);
+                     IWdsTransportConfigurationManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportConfigurationManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportConfigurationManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportConfigurationManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportConfigurationManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportConfigurationManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportConfigurationManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportConfigurationManager methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ServicePolicy)(
-        IWdsTransportConfigurationManager *This,
-        IWdsTransportServicePolicy **ppWdsTransportServicePolicy);
+                     IWdsTransportConfigurationManager *This,
+                     IWdsTransportServicePolicy **ppWdsTransportServicePolicy);
 
     HRESULT (STDMETHODCALLTYPE *get_DiagnosticsPolicy)(
-        IWdsTransportConfigurationManager *This,
-        IWdsTransportDiagnosticsPolicy **ppWdsTransportDiagnosticsPolicy);
+                     IWdsTransportConfigurationManager *This,
+                     IWdsTransportDiagnosticsPolicy **ppWdsTransportDiagnosticsPolicy);
 
     HRESULT (STDMETHODCALLTYPE *get_WdsTransportServicesRunning)(
-        IWdsTransportConfigurationManager *This,
-        VARIANT_BOOL bRealtimeStatus,
-        VARIANT_BOOL *pbServicesRunning);
+                     IWdsTransportConfigurationManager *This,
+                     VARIANT_BOOL bRealtimeStatus,
+                     VARIANT_BOOL *pbServicesRunning);
 
     HRESULT (STDMETHODCALLTYPE *EnableWdsTransportServices)(
-        IWdsTransportConfigurationManager *This);
+                     IWdsTransportConfigurationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *DisableWdsTransportServices)(
-        IWdsTransportConfigurationManager *This);
+                     IWdsTransportConfigurationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *StartWdsTransportServices)(
-        IWdsTransportConfigurationManager *This);
+                     IWdsTransportConfigurationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *StopWdsTransportServices)(
-        IWdsTransportConfigurationManager *This);
+                     IWdsTransportConfigurationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *RestartWdsTransportServices)(
-        IWdsTransportConfigurationManager *This);
+                     IWdsTransportConfigurationManager *This);
 
     HRESULT (STDMETHODCALLTYPE *NotifyWdsTransportServices)(
-        IWdsTransportConfigurationManager *This,
-        WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification);
+                     IWdsTransportConfigurationManager *This,
+                     WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification);
 
     END_INTERFACE
 } IWdsTransportConfigurationManagerVtbl;
@@ -1242,16 +1242,16 @@ MIDL_INTERFACE("13b33efc-7856-4f61-9a59-8de67b6b87b6")
 IWdsTransportDiagnosticsPolicy : public IWdsTransportCacheable
 {
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *pbEnabled) = 0;
+                     VARIANT_BOOL *pbEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL bEnabled) = 0;
+                     VARIANT_BOOL bEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Components(
-        ULONG *pulComponents) = 0;
+                     ULONG *pulComponents) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Components(
-        ULONG ulComponents) = 0;
+                     ULONG ulComponents) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1263,76 +1263,76 @@ typedef struct IWdsTransportDiagnosticsPolicyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportDiagnosticsPolicy *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportDiagnosticsPolicy *This);
+                     IWdsTransportDiagnosticsPolicy *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportDiagnosticsPolicy *This);
+                     IWdsTransportDiagnosticsPolicy *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportDiagnosticsPolicy *This,
-        UINT *pctinfo);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportDiagnosticsPolicy *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportDiagnosticsPolicy *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportDiagnosticsPolicy *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportCacheable methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Dirty)(
-        IWdsTransportDiagnosticsPolicy *This,
-        VARIANT_BOOL *pbDirty);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     VARIANT_BOOL *pbDirty);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        IWdsTransportDiagnosticsPolicy *This);
+                     IWdsTransportDiagnosticsPolicy *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportDiagnosticsPolicy *This);
+                     IWdsTransportDiagnosticsPolicy *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWdsTransportDiagnosticsPolicy *This);
+                     IWdsTransportDiagnosticsPolicy *This);
 
     /*** IWdsTransportDiagnosticsPolicy methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        IWdsTransportDiagnosticsPolicy *This,
-        VARIANT_BOOL *pbEnabled);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     VARIANT_BOOL *pbEnabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        IWdsTransportDiagnosticsPolicy *This,
-        VARIANT_BOOL bEnabled);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     VARIANT_BOOL bEnabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Components)(
-        IWdsTransportDiagnosticsPolicy *This,
-        ULONG *pulComponents);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     ULONG *pulComponents);
 
     HRESULT (STDMETHODCALLTYPE *put_Components)(
-        IWdsTransportDiagnosticsPolicy *This,
-        ULONG ulComponents);
+                     IWdsTransportDiagnosticsPolicy *This,
+                     ULONG ulComponents);
 
     END_INTERFACE
 } IWdsTransportDiagnosticsPolicyVtbl;
@@ -1433,7 +1433,7 @@ MIDL_INTERFACE("d0d85caf-a153-4f1d-a9dd-96f431c50717")
 IWdsTransportConfigurationManager2 : public IWdsTransportConfigurationManager
 {
     virtual HRESULT STDMETHODCALLTYPE get_MulticastSessionPolicy(
-        IWdsTransportMulticastSessionPolicy **ppWdsTransportMulticastSessionPolicy) = 0;
+                     IWdsTransportMulticastSessionPolicy **ppWdsTransportMulticastSessionPolicy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1445,83 +1445,83 @@ typedef struct IWdsTransportConfigurationManager2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportConfigurationManager2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportConfigurationManager2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportConfigurationManager2 *This);
+                     IWdsTransportConfigurationManager2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportConfigurationManager2 *This);
+                     IWdsTransportConfigurationManager2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportConfigurationManager2 *This,
-        UINT *pctinfo);
+                     IWdsTransportConfigurationManager2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportConfigurationManager2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportConfigurationManager2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportConfigurationManager2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportConfigurationManager2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportConfigurationManager2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportConfigurationManager2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportConfigurationManager methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ServicePolicy)(
-        IWdsTransportConfigurationManager2 *This,
-        IWdsTransportServicePolicy **ppWdsTransportServicePolicy);
+                     IWdsTransportConfigurationManager2 *This,
+                     IWdsTransportServicePolicy **ppWdsTransportServicePolicy);
 
     HRESULT (STDMETHODCALLTYPE *get_DiagnosticsPolicy)(
-        IWdsTransportConfigurationManager2 *This,
-        IWdsTransportDiagnosticsPolicy **ppWdsTransportDiagnosticsPolicy);
+                     IWdsTransportConfigurationManager2 *This,
+                     IWdsTransportDiagnosticsPolicy **ppWdsTransportDiagnosticsPolicy);
 
     HRESULT (STDMETHODCALLTYPE *get_WdsTransportServicesRunning)(
-        IWdsTransportConfigurationManager2 *This,
-        VARIANT_BOOL bRealtimeStatus,
-        VARIANT_BOOL *pbServicesRunning);
+                     IWdsTransportConfigurationManager2 *This,
+                     VARIANT_BOOL bRealtimeStatus,
+                     VARIANT_BOOL *pbServicesRunning);
 
     HRESULT (STDMETHODCALLTYPE *EnableWdsTransportServices)(
-        IWdsTransportConfigurationManager2 *This);
+                     IWdsTransportConfigurationManager2 *This);
 
     HRESULT (STDMETHODCALLTYPE *DisableWdsTransportServices)(
-        IWdsTransportConfigurationManager2 *This);
+                     IWdsTransportConfigurationManager2 *This);
 
     HRESULT (STDMETHODCALLTYPE *StartWdsTransportServices)(
-        IWdsTransportConfigurationManager2 *This);
+                     IWdsTransportConfigurationManager2 *This);
 
     HRESULT (STDMETHODCALLTYPE *StopWdsTransportServices)(
-        IWdsTransportConfigurationManager2 *This);
+                     IWdsTransportConfigurationManager2 *This);
 
     HRESULT (STDMETHODCALLTYPE *RestartWdsTransportServices)(
-        IWdsTransportConfigurationManager2 *This);
+                     IWdsTransportConfigurationManager2 *This);
 
     HRESULT (STDMETHODCALLTYPE *NotifyWdsTransportServices)(
-        IWdsTransportConfigurationManager2 *This,
-        WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification);
+                     IWdsTransportConfigurationManager2 *This,
+                     WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification);
 
     /*** IWdsTransportConfigurationManager2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MulticastSessionPolicy)(
-        IWdsTransportConfigurationManager2 *This,
-        IWdsTransportMulticastSessionPolicy **ppWdsTransportMulticastSessionPolicy);
+                     IWdsTransportConfigurationManager2 *This,
+                     IWdsTransportMulticastSessionPolicy **ppWdsTransportMulticastSessionPolicy);
 
     END_INTERFACE
 } IWdsTransportConfigurationManager2Vtbl;
@@ -1630,8 +1630,8 @@ MIDL_INTERFACE("5b0d35f5-1b13-4afd-b878-6526dc340b5d")
 IWdsTransportManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetWdsTransportServer(
-        BSTR bszServerName,
-        IWdsTransportServer **ppWdsTransportServer) = 0;
+                     BSTR bszServerName,
+                     IWdsTransportServer **ppWdsTransportServer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1643,51 +1643,51 @@ typedef struct IWdsTransportManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportManager *This);
+                     IWdsTransportManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportManager *This);
+                     IWdsTransportManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportManager *This,
-        UINT *pctinfo);
+                     IWdsTransportManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportManager methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWdsTransportServer)(
-        IWdsTransportManager *This,
-        BSTR bszServerName,
-        IWdsTransportServer **ppWdsTransportServer);
+                     IWdsTransportManager *This,
+                     BSTR bszServerName,
+                     IWdsTransportServer **ppWdsTransportServer);
 
     END_INTERFACE
 } IWdsTransportManagerVtbl;
@@ -1758,67 +1758,67 @@ MIDL_INTERFACE("fa561f57-fbef-4ed3-b056-127cb1b33b84")
 IWdsTransportNamespace : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        WDSTRANSPORT_NAMESPACE_TYPE *pType) = 0;
+                     WDSTRANSPORT_NAMESPACE_TYPE *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        ULONG *pulId) = 0;
+                     ULONG *pulId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *pbszName) = 0;
+                     BSTR *pbszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR bszName) = 0;
+                     BSTR bszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FriendlyName(
-        BSTR *pbszFriendlyName) = 0;
+                     BSTR *pbszFriendlyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FriendlyName(
-        BSTR bszFriendlyName) = 0;
+                     BSTR bszFriendlyName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Description(
-        BSTR *pbszDescription) = 0;
+                     BSTR *pbszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Description(
-        BSTR bszDescription) = 0;
+                     BSTR bszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ContentProvider(
-        BSTR *pbszContentProvider) = 0;
+                     BSTR *pbszContentProvider) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ContentProvider(
-        BSTR bszContentProvider) = 0;
+                     BSTR bszContentProvider) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Configuration(
-        BSTR *pbszConfiguration) = 0;
+                     BSTR *pbszConfiguration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Configuration(
-        BSTR bszConfiguration) = 0;
+                     BSTR bszConfiguration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Registered(
-        VARIANT_BOOL *pbRegistered) = 0;
+                     VARIANT_BOOL *pbRegistered) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Tombstoned(
-        VARIANT_BOOL *pbTombstoned) = 0;
+                     VARIANT_BOOL *pbTombstoned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TombstoneTime(
-        DATE *pTombstoneTime) = 0;
+                     DATE *pTombstoneTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TransmissionStarted(
-        VARIANT_BOOL *pbTransmissionStarted) = 0;
+                     VARIANT_BOOL *pbTransmissionStarted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Register(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Deregister(
-        VARIANT_BOOL bTerminateSessions) = 0;
+                     VARIANT_BOOL bTerminateSessions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IWdsTransportNamespace **ppWdsTransportNamespaceClone) = 0;
+                     IWdsTransportNamespace **ppWdsTransportNamespaceClone) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Refresh(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RetrieveContents(
-        IWdsTransportCollection **ppWdsTransportContents) = 0;
+                     IWdsTransportCollection **ppWdsTransportContents) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1830,128 +1830,128 @@ typedef struct IWdsTransportNamespaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportNamespace *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportNamespace *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportNamespace *This);
+                     IWdsTransportNamespace *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportNamespace *This);
+                     IWdsTransportNamespace *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportNamespace *This,
-        UINT *pctinfo);
+                     IWdsTransportNamespace *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportNamespace *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportNamespace *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportNamespace *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportNamespace *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportNamespace *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportNamespace *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportNamespace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IWdsTransportNamespace *This,
-        WDSTRANSPORT_NAMESPACE_TYPE *pType);
+                     IWdsTransportNamespace *This,
+                     WDSTRANSPORT_NAMESPACE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IWdsTransportNamespace *This,
-        ULONG *pulId);
+                     IWdsTransportNamespace *This,
+                     ULONG *pulId);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportNamespace *This,
-        BSTR *pbszName);
+                     IWdsTransportNamespace *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IWdsTransportNamespace *This,
-        BSTR bszName);
+                     IWdsTransportNamespace *This,
+                     BSTR bszName);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IWdsTransportNamespace *This,
-        BSTR *pbszFriendlyName);
+                     IWdsTransportNamespace *This,
+                     BSTR *pbszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IWdsTransportNamespace *This,
-        BSTR bszFriendlyName);
+                     IWdsTransportNamespace *This,
+                     BSTR bszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IWdsTransportNamespace *This,
-        BSTR *pbszDescription);
+                     IWdsTransportNamespace *This,
+                     BSTR *pbszDescription);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IWdsTransportNamespace *This,
-        BSTR bszDescription);
+                     IWdsTransportNamespace *This,
+                     BSTR bszDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_ContentProvider)(
-        IWdsTransportNamespace *This,
-        BSTR *pbszContentProvider);
+                     IWdsTransportNamespace *This,
+                     BSTR *pbszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *put_ContentProvider)(
-        IWdsTransportNamespace *This,
-        BSTR bszContentProvider);
+                     IWdsTransportNamespace *This,
+                     BSTR bszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *get_Configuration)(
-        IWdsTransportNamespace *This,
-        BSTR *pbszConfiguration);
+                     IWdsTransportNamespace *This,
+                     BSTR *pbszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *put_Configuration)(
-        IWdsTransportNamespace *This,
-        BSTR bszConfiguration);
+                     IWdsTransportNamespace *This,
+                     BSTR bszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *get_Registered)(
-        IWdsTransportNamespace *This,
-        VARIANT_BOOL *pbRegistered);
+                     IWdsTransportNamespace *This,
+                     VARIANT_BOOL *pbRegistered);
 
     HRESULT (STDMETHODCALLTYPE *get_Tombstoned)(
-        IWdsTransportNamespace *This,
-        VARIANT_BOOL *pbTombstoned);
+                     IWdsTransportNamespace *This,
+                     VARIANT_BOOL *pbTombstoned);
 
     HRESULT (STDMETHODCALLTYPE *get_TombstoneTime)(
-        IWdsTransportNamespace *This,
-        DATE *pTombstoneTime);
+                     IWdsTransportNamespace *This,
+                     DATE *pTombstoneTime);
 
     HRESULT (STDMETHODCALLTYPE *get_TransmissionStarted)(
-        IWdsTransportNamespace *This,
-        VARIANT_BOOL *pbTransmissionStarted);
+                     IWdsTransportNamespace *This,
+                     VARIANT_BOOL *pbTransmissionStarted);
 
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IWdsTransportNamespace *This);
+                     IWdsTransportNamespace *This);
 
     HRESULT (STDMETHODCALLTYPE *Deregister)(
-        IWdsTransportNamespace *This,
-        VARIANT_BOOL bTerminateSessions);
+                     IWdsTransportNamespace *This,
+                     VARIANT_BOOL bTerminateSessions);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IWdsTransportNamespace *This,
-        IWdsTransportNamespace **ppWdsTransportNamespaceClone);
+                     IWdsTransportNamespace *This,
+                     IWdsTransportNamespace **ppWdsTransportNamespaceClone);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportNamespace *This);
+                     IWdsTransportNamespace *This);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveContents)(
-        IWdsTransportNamespace *This,
-        IWdsTransportCollection **ppWdsTransportContents);
+                     IWdsTransportNamespace *This,
+                     IWdsTransportCollection **ppWdsTransportContents);
 
     END_INTERFACE
 } IWdsTransportNamespaceVtbl;
@@ -2111,128 +2111,128 @@ typedef struct IWdsTransportNamespaceAutoCastVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportNamespaceAutoCast *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportNamespaceAutoCast *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportNamespaceAutoCast *This);
+                     IWdsTransportNamespaceAutoCast *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportNamespaceAutoCast *This);
+                     IWdsTransportNamespaceAutoCast *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportNamespaceAutoCast *This,
-        UINT *pctinfo);
+                     IWdsTransportNamespaceAutoCast *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportNamespaceAutoCast *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportNamespaceAutoCast *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportNamespaceAutoCast *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportNamespaceAutoCast *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportNamespaceAutoCast *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportNamespaceAutoCast *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportNamespace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IWdsTransportNamespaceAutoCast *This,
-        WDSTRANSPORT_NAMESPACE_TYPE *pType);
+                     IWdsTransportNamespaceAutoCast *This,
+                     WDSTRANSPORT_NAMESPACE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IWdsTransportNamespaceAutoCast *This,
-        ULONG *pulId);
+                     IWdsTransportNamespaceAutoCast *This,
+                     ULONG *pulId);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR *pbszName);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR bszName);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR bszName);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR *pbszFriendlyName);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR *pbszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR bszFriendlyName);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR bszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR *pbszDescription);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR *pbszDescription);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR bszDescription);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR bszDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_ContentProvider)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR *pbszContentProvider);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR *pbszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *put_ContentProvider)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR bszContentProvider);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR bszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *get_Configuration)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR *pbszConfiguration);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR *pbszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *put_Configuration)(
-        IWdsTransportNamespaceAutoCast *This,
-        BSTR bszConfiguration);
+                     IWdsTransportNamespaceAutoCast *This,
+                     BSTR bszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *get_Registered)(
-        IWdsTransportNamespaceAutoCast *This,
-        VARIANT_BOOL *pbRegistered);
+                     IWdsTransportNamespaceAutoCast *This,
+                     VARIANT_BOOL *pbRegistered);
 
     HRESULT (STDMETHODCALLTYPE *get_Tombstoned)(
-        IWdsTransportNamespaceAutoCast *This,
-        VARIANT_BOOL *pbTombstoned);
+                     IWdsTransportNamespaceAutoCast *This,
+                     VARIANT_BOOL *pbTombstoned);
 
     HRESULT (STDMETHODCALLTYPE *get_TombstoneTime)(
-        IWdsTransportNamespaceAutoCast *This,
-        DATE *pTombstoneTime);
+                     IWdsTransportNamespaceAutoCast *This,
+                     DATE *pTombstoneTime);
 
     HRESULT (STDMETHODCALLTYPE *get_TransmissionStarted)(
-        IWdsTransportNamespaceAutoCast *This,
-        VARIANT_BOOL *pbTransmissionStarted);
+                     IWdsTransportNamespaceAutoCast *This,
+                     VARIANT_BOOL *pbTransmissionStarted);
 
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IWdsTransportNamespaceAutoCast *This);
+                     IWdsTransportNamespaceAutoCast *This);
 
     HRESULT (STDMETHODCALLTYPE *Deregister)(
-        IWdsTransportNamespaceAutoCast *This,
-        VARIANT_BOOL bTerminateSessions);
+                     IWdsTransportNamespaceAutoCast *This,
+                     VARIANT_BOOL bTerminateSessions);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IWdsTransportNamespaceAutoCast *This,
-        IWdsTransportNamespace **ppWdsTransportNamespaceClone);
+                     IWdsTransportNamespaceAutoCast *This,
+                     IWdsTransportNamespace **ppWdsTransportNamespaceClone);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportNamespaceAutoCast *This);
+                     IWdsTransportNamespaceAutoCast *This);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveContents)(
-        IWdsTransportNamespaceAutoCast *This,
-        IWdsTransportCollection **ppWdsTransportContents);
+                     IWdsTransportNamespaceAutoCast *This,
+                     IWdsTransportCollection **ppWdsTransportContents);
 
     END_INTERFACE
 } IWdsTransportNamespaceAutoCastVtbl;
@@ -2383,7 +2383,7 @@ MIDL_INTERFACE("3840cecf-d76c-416e-a4cc-31c741d2874b")
 IWdsTransportNamespaceScheduledCast : public IWdsTransportNamespace
 {
     virtual HRESULT STDMETHODCALLTYPE StartTransmission(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2395,132 +2395,132 @@ typedef struct IWdsTransportNamespaceScheduledCastVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportNamespaceScheduledCast *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportNamespaceScheduledCast *This);
+                     IWdsTransportNamespaceScheduledCast *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportNamespaceScheduledCast *This);
+                     IWdsTransportNamespaceScheduledCast *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportNamespaceScheduledCast *This,
-        UINT *pctinfo);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportNamespaceScheduledCast *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportNamespaceScheduledCast *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportNamespaceScheduledCast *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportNamespace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IWdsTransportNamespaceScheduledCast *This,
-        WDSTRANSPORT_NAMESPACE_TYPE *pType);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     WDSTRANSPORT_NAMESPACE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IWdsTransportNamespaceScheduledCast *This,
-        ULONG *pulId);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     ULONG *pulId);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR *pbszName);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR bszName);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR bszName);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR *pbszFriendlyName);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR *pbszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR bszFriendlyName);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR bszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR *pbszDescription);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR *pbszDescription);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR bszDescription);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR bszDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_ContentProvider)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR *pbszContentProvider);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR *pbszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *put_ContentProvider)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR bszContentProvider);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR bszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *get_Configuration)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR *pbszConfiguration);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR *pbszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *put_Configuration)(
-        IWdsTransportNamespaceScheduledCast *This,
-        BSTR bszConfiguration);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     BSTR bszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *get_Registered)(
-        IWdsTransportNamespaceScheduledCast *This,
-        VARIANT_BOOL *pbRegistered);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     VARIANT_BOOL *pbRegistered);
 
     HRESULT (STDMETHODCALLTYPE *get_Tombstoned)(
-        IWdsTransportNamespaceScheduledCast *This,
-        VARIANT_BOOL *pbTombstoned);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     VARIANT_BOOL *pbTombstoned);
 
     HRESULT (STDMETHODCALLTYPE *get_TombstoneTime)(
-        IWdsTransportNamespaceScheduledCast *This,
-        DATE *pTombstoneTime);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     DATE *pTombstoneTime);
 
     HRESULT (STDMETHODCALLTYPE *get_TransmissionStarted)(
-        IWdsTransportNamespaceScheduledCast *This,
-        VARIANT_BOOL *pbTransmissionStarted);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     VARIANT_BOOL *pbTransmissionStarted);
 
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IWdsTransportNamespaceScheduledCast *This);
+                     IWdsTransportNamespaceScheduledCast *This);
 
     HRESULT (STDMETHODCALLTYPE *Deregister)(
-        IWdsTransportNamespaceScheduledCast *This,
-        VARIANT_BOOL bTerminateSessions);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     VARIANT_BOOL bTerminateSessions);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IWdsTransportNamespaceScheduledCast *This,
-        IWdsTransportNamespace **ppWdsTransportNamespaceClone);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     IWdsTransportNamespace **ppWdsTransportNamespaceClone);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportNamespaceScheduledCast *This);
+                     IWdsTransportNamespaceScheduledCast *This);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveContents)(
-        IWdsTransportNamespaceScheduledCast *This,
-        IWdsTransportCollection **ppWdsTransportContents);
+                     IWdsTransportNamespaceScheduledCast *This,
+                     IWdsTransportCollection **ppWdsTransportContents);
 
     /*** IWdsTransportNamespaceScheduledCast methods ***/
     HRESULT (STDMETHODCALLTYPE *StartTransmission)(
-        IWdsTransportNamespaceScheduledCast *This);
+                     IWdsTransportNamespaceScheduledCast *This);
 
     END_INTERFACE
 } IWdsTransportNamespaceScheduledCastVtbl;
@@ -2686,132 +2686,132 @@ typedef struct IWdsTransportNamespaceScheduledCastManualStartVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportNamespaceScheduledCastManualStart *This);
+                     IWdsTransportNamespaceScheduledCastManualStart *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportNamespaceScheduledCastManualStart *This);
+                     IWdsTransportNamespaceScheduledCastManualStart *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        UINT *pctinfo);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportNamespace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        WDSTRANSPORT_NAMESPACE_TYPE *pType);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     WDSTRANSPORT_NAMESPACE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        ULONG *pulId);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     ULONG *pulId);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR *pbszName);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR bszName);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR bszName);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR *pbszFriendlyName);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR *pbszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR bszFriendlyName);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR bszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR *pbszDescription);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR *pbszDescription);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR bszDescription);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR bszDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_ContentProvider)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR *pbszContentProvider);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR *pbszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *put_ContentProvider)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR bszContentProvider);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR bszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *get_Configuration)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR *pbszConfiguration);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR *pbszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *put_Configuration)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        BSTR bszConfiguration);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     BSTR bszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *get_Registered)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        VARIANT_BOOL *pbRegistered);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     VARIANT_BOOL *pbRegistered);
 
     HRESULT (STDMETHODCALLTYPE *get_Tombstoned)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        VARIANT_BOOL *pbTombstoned);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     VARIANT_BOOL *pbTombstoned);
 
     HRESULT (STDMETHODCALLTYPE *get_TombstoneTime)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        DATE *pTombstoneTime);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     DATE *pTombstoneTime);
 
     HRESULT (STDMETHODCALLTYPE *get_TransmissionStarted)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        VARIANT_BOOL *pbTransmissionStarted);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     VARIANT_BOOL *pbTransmissionStarted);
 
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IWdsTransportNamespaceScheduledCastManualStart *This);
+                     IWdsTransportNamespaceScheduledCastManualStart *This);
 
     HRESULT (STDMETHODCALLTYPE *Deregister)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        VARIANT_BOOL bTerminateSessions);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     VARIANT_BOOL bTerminateSessions);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        IWdsTransportNamespace **ppWdsTransportNamespaceClone);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     IWdsTransportNamespace **ppWdsTransportNamespaceClone);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportNamespaceScheduledCastManualStart *This);
+                     IWdsTransportNamespaceScheduledCastManualStart *This);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveContents)(
-        IWdsTransportNamespaceScheduledCastManualStart *This,
-        IWdsTransportCollection **ppWdsTransportContents);
+                     IWdsTransportNamespaceScheduledCastManualStart *This,
+                     IWdsTransportCollection **ppWdsTransportContents);
 
     /*** IWdsTransportNamespaceScheduledCast methods ***/
     HRESULT (STDMETHODCALLTYPE *StartTransmission)(
-        IWdsTransportNamespaceScheduledCastManualStart *This);
+                     IWdsTransportNamespaceScheduledCastManualStart *This);
 
     END_INTERFACE
 } IWdsTransportNamespaceScheduledCastManualStartVtbl;
@@ -2968,16 +2968,16 @@ MIDL_INTERFACE("d606af3d-ea9c-4219-961e-7491d618d9b9")
 IWdsTransportNamespaceScheduledCastAutoStart : public IWdsTransportNamespaceScheduledCast
 {
     virtual HRESULT STDMETHODCALLTYPE get_MinimumClients(
-        ULONG *pulMinimumClients) = 0;
+                     ULONG *pulMinimumClients) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MinimumClients(
-        ULONG ulMinimumClients) = 0;
+                     ULONG ulMinimumClients) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StartTime(
-        DATE *pStartTime) = 0;
+                     DATE *pStartTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StartTime(
-        DATE StartTime) = 0;
+                     DATE StartTime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2989,149 +2989,149 @@ typedef struct IWdsTransportNamespaceScheduledCastAutoStartVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        UINT *pctinfo);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportNamespace methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        WDSTRANSPORT_NAMESPACE_TYPE *pType);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     WDSTRANSPORT_NAMESPACE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        ULONG *pulId);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     ULONG *pulId);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR *pbszName);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR bszName);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR bszName);
 
     HRESULT (STDMETHODCALLTYPE *get_FriendlyName)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR *pbszFriendlyName);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR *pbszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *put_FriendlyName)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR bszFriendlyName);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR bszFriendlyName);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR *pbszDescription);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR *pbszDescription);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR bszDescription);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR bszDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_ContentProvider)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR *pbszContentProvider);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR *pbszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *put_ContentProvider)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR bszContentProvider);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR bszContentProvider);
 
     HRESULT (STDMETHODCALLTYPE *get_Configuration)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR *pbszConfiguration);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR *pbszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *put_Configuration)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        BSTR bszConfiguration);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     BSTR bszConfiguration);
 
     HRESULT (STDMETHODCALLTYPE *get_Registered)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        VARIANT_BOOL *pbRegistered);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     VARIANT_BOOL *pbRegistered);
 
     HRESULT (STDMETHODCALLTYPE *get_Tombstoned)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        VARIANT_BOOL *pbTombstoned);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     VARIANT_BOOL *pbTombstoned);
 
     HRESULT (STDMETHODCALLTYPE *get_TombstoneTime)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        DATE *pTombstoneTime);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     DATE *pTombstoneTime);
 
     HRESULT (STDMETHODCALLTYPE *get_TransmissionStarted)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        VARIANT_BOOL *pbTransmissionStarted);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     VARIANT_BOOL *pbTransmissionStarted);
 
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This);
 
     HRESULT (STDMETHODCALLTYPE *Deregister)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        VARIANT_BOOL bTerminateSessions);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     VARIANT_BOOL bTerminateSessions);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        IWdsTransportNamespace **ppWdsTransportNamespaceClone);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     IWdsTransportNamespace **ppWdsTransportNamespaceClone);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveContents)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        IWdsTransportCollection **ppWdsTransportContents);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     IWdsTransportCollection **ppWdsTransportContents);
 
     /*** IWdsTransportNamespaceScheduledCast methods ***/
     HRESULT (STDMETHODCALLTYPE *StartTransmission)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This);
 
     /*** IWdsTransportNamespaceScheduledCastAutoStart methods ***/
     HRESULT (STDMETHODCALLTYPE *get_MinimumClients)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        ULONG *pulMinimumClients);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     ULONG *pulMinimumClients);
 
     HRESULT (STDMETHODCALLTYPE *put_MinimumClients)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        ULONG ulMinimumClients);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     ULONG ulMinimumClients);
 
     HRESULT (STDMETHODCALLTYPE *get_StartTime)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        DATE *pStartTime);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     DATE *pStartTime);
 
     HRESULT (STDMETHODCALLTYPE *put_StartTime)(
-        IWdsTransportNamespaceScheduledCastAutoStart *This,
-        DATE StartTime);
+                     IWdsTransportNamespaceScheduledCastAutoStart *This,
+                     DATE StartTime);
 
     END_INTERFACE
 } IWdsTransportNamespaceScheduledCastAutoStartVtbl;
@@ -3306,21 +3306,21 @@ MIDL_INTERFACE("3e22d9f6-3777-4d98-83e1-f98696717ba3")
 IWdsTransportNamespaceManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE CreateNamespace(
-        WDSTRANSPORT_NAMESPACE_TYPE NamespaceType,
-        BSTR bszNamespaceName,
-        BSTR bszContentProvider,
-        BSTR bszConfiguration,
-        IWdsTransportNamespace **ppWdsTransportNamespace) = 0;
+                     WDSTRANSPORT_NAMESPACE_TYPE NamespaceType,
+                     BSTR bszNamespaceName,
+                     BSTR bszContentProvider,
+                     BSTR bszConfiguration,
+                     IWdsTransportNamespace **ppWdsTransportNamespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RetrieveNamespace(
-        BSTR bszNamespaceName,
-        IWdsTransportNamespace **ppWdsTransportNamespace) = 0;
+                     BSTR bszNamespaceName,
+                     IWdsTransportNamespace **ppWdsTransportNamespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RetrieveNamespaces(
-        BSTR bszContentProvider,
-        BSTR bszNamespaceName,
-        VARIANT_BOOL bIncludeTombstones,
-        IWdsTransportCollection **ppWdsTransportNamespaces) = 0;
+                     BSTR bszContentProvider,
+                     BSTR bszNamespaceName,
+                     VARIANT_BOOL bIncludeTombstones,
+                     IWdsTransportCollection **ppWdsTransportNamespaces) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3332,66 +3332,66 @@ typedef struct IWdsTransportNamespaceManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportNamespaceManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportNamespaceManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportNamespaceManager *This);
+                     IWdsTransportNamespaceManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportNamespaceManager *This);
+                     IWdsTransportNamespaceManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportNamespaceManager *This,
-        UINT *pctinfo);
+                     IWdsTransportNamespaceManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportNamespaceManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportNamespaceManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportNamespaceManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportNamespaceManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportNamespaceManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportNamespaceManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportNamespaceManager methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateNamespace)(
-        IWdsTransportNamespaceManager *This,
-        WDSTRANSPORT_NAMESPACE_TYPE NamespaceType,
-        BSTR bszNamespaceName,
-        BSTR bszContentProvider,
-        BSTR bszConfiguration,
-        IWdsTransportNamespace **ppWdsTransportNamespace);
+                     IWdsTransportNamespaceManager *This,
+                     WDSTRANSPORT_NAMESPACE_TYPE NamespaceType,
+                     BSTR bszNamespaceName,
+                     BSTR bszContentProvider,
+                     BSTR bszConfiguration,
+                     IWdsTransportNamespace **ppWdsTransportNamespace);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveNamespace)(
-        IWdsTransportNamespaceManager *This,
-        BSTR bszNamespaceName,
-        IWdsTransportNamespace **ppWdsTransportNamespace);
+                     IWdsTransportNamespaceManager *This,
+                     BSTR bszNamespaceName,
+                     IWdsTransportNamespace **ppWdsTransportNamespace);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveNamespaces)(
-        IWdsTransportNamespaceManager *This,
-        BSTR bszContentProvider,
-        BSTR bszNamespaceName,
-        VARIANT_BOOL bIncludeTombstones,
-        IWdsTransportCollection **ppWdsTransportNamespaces);
+                     IWdsTransportNamespaceManager *This,
+                     BSTR bszContentProvider,
+                     BSTR bszNamespaceName,
+                     VARIANT_BOOL bIncludeTombstones,
+                     IWdsTransportCollection **ppWdsTransportNamespaces);
 
     END_INTERFACE
 } IWdsTransportNamespaceManagerVtbl;
@@ -3470,20 +3470,20 @@ MIDL_INTERFACE("09ccd093-830d-4344-a30a-73ae8e8fca90")
 IWdsTransportServer : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *pbszName) = 0;
+                     BSTR *pbszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SetupManager(
-        IWdsTransportSetupManager **ppWdsTransportSetupManager) = 0;
+                     IWdsTransportSetupManager **ppWdsTransportSetupManager) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ConfigurationManager(
-        IWdsTransportConfigurationManager **ppWdsTransportConfigurationManager) = 0;
+                     IWdsTransportConfigurationManager **ppWdsTransportConfigurationManager) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NamespaceManager(
-        IWdsTransportNamespaceManager **ppWdsTransportNamespaceManager) = 0;
+                     IWdsTransportNamespaceManager **ppWdsTransportNamespaceManager) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisconnectClient(
-        ULONG ulClientId,
-        WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) = 0;
+                     ULONG ulClientId,
+                     WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3495,67 +3495,67 @@ typedef struct IWdsTransportServerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportServer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportServer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportServer *This);
+                     IWdsTransportServer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportServer *This);
+                     IWdsTransportServer *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportServer *This,
-        UINT *pctinfo);
+                     IWdsTransportServer *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportServer *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportServer *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportServer *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportServer *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportServer *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportServer *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportServer methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportServer *This,
-        BSTR *pbszName);
+                     IWdsTransportServer *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *get_SetupManager)(
-        IWdsTransportServer *This,
-        IWdsTransportSetupManager **ppWdsTransportSetupManager);
+                     IWdsTransportServer *This,
+                     IWdsTransportSetupManager **ppWdsTransportSetupManager);
 
     HRESULT (STDMETHODCALLTYPE *get_ConfigurationManager)(
-        IWdsTransportServer *This,
-        IWdsTransportConfigurationManager **ppWdsTransportConfigurationManager);
+                     IWdsTransportServer *This,
+                     IWdsTransportConfigurationManager **ppWdsTransportConfigurationManager);
 
     HRESULT (STDMETHODCALLTYPE *get_NamespaceManager)(
-        IWdsTransportServer *This,
-        IWdsTransportNamespaceManager **ppWdsTransportNamespaceManager);
+                     IWdsTransportServer *This,
+                     IWdsTransportNamespaceManager **ppWdsTransportNamespaceManager);
 
     HRESULT (STDMETHODCALLTYPE *DisconnectClient)(
-        IWdsTransportServer *This,
-        ULONG ulClientId,
-        WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType);
+                     IWdsTransportServer *This,
+                     ULONG ulClientId,
+                     WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType);
 
     END_INTERFACE
 } IWdsTransportServerVtbl;
@@ -3642,7 +3642,7 @@ MIDL_INTERFACE("256e999f-6df4-4538-81b9-857b9ab8fb47")
 IWdsTransportServer2 : public IWdsTransportServer
 {
     virtual HRESULT STDMETHODCALLTYPE get_TftpManager(
-        IWdsTransportTftpManager **ppWdsTransportTftpManager) = 0;
+                     IWdsTransportTftpManager **ppWdsTransportTftpManager) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3654,72 +3654,72 @@ typedef struct IWdsTransportServer2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportServer2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportServer2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportServer2 *This);
+                     IWdsTransportServer2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportServer2 *This);
+                     IWdsTransportServer2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportServer2 *This,
-        UINT *pctinfo);
+                     IWdsTransportServer2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportServer2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportServer2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportServer2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportServer2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportServer2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportServer2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportServer methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportServer2 *This,
-        BSTR *pbszName);
+                     IWdsTransportServer2 *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *get_SetupManager)(
-        IWdsTransportServer2 *This,
-        IWdsTransportSetupManager **ppWdsTransportSetupManager);
+                     IWdsTransportServer2 *This,
+                     IWdsTransportSetupManager **ppWdsTransportSetupManager);
 
     HRESULT (STDMETHODCALLTYPE *get_ConfigurationManager)(
-        IWdsTransportServer2 *This,
-        IWdsTransportConfigurationManager **ppWdsTransportConfigurationManager);
+                     IWdsTransportServer2 *This,
+                     IWdsTransportConfigurationManager **ppWdsTransportConfigurationManager);
 
     HRESULT (STDMETHODCALLTYPE *get_NamespaceManager)(
-        IWdsTransportServer2 *This,
-        IWdsTransportNamespaceManager **ppWdsTransportNamespaceManager);
+                     IWdsTransportServer2 *This,
+                     IWdsTransportNamespaceManager **ppWdsTransportNamespaceManager);
 
     HRESULT (STDMETHODCALLTYPE *DisconnectClient)(
-        IWdsTransportServer2 *This,
-        ULONG ulClientId,
-        WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType);
+                     IWdsTransportServer2 *This,
+                     ULONG ulClientId,
+                     WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType);
 
     /*** IWdsTransportServer2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TftpManager)(
-        IWdsTransportServer2 *This,
-        IWdsTransportTftpManager **ppWdsTransportTftpManager);
+                     IWdsTransportServer2 *This,
+                     IWdsTransportTftpManager **ppWdsTransportTftpManager);
 
     END_INTERFACE
 } IWdsTransportServer2Vtbl;
@@ -3812,46 +3812,46 @@ MIDL_INTERFACE("b9468578-9f2b-48cc-b27a-a60799c2750c")
 IWdsTransportServicePolicy : public IWdsTransportCacheable
 {
     virtual HRESULT STDMETHODCALLTYPE get_IpAddressSource(
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE *pSourceType) = 0;
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE *pSourceType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IpAddressSource(
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType) = 0;
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StartIpAddress(
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR *pbszStartIpAddress) = 0;
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR *pbszStartIpAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StartIpAddress(
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR bszStartIpAddress) = 0;
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR bszStartIpAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EndIpAddress(
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR *pbszEndIpAddress) = 0;
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR *pbszEndIpAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EndIpAddress(
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR bszEndIpAddress) = 0;
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR bszEndIpAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StartPort(
-        ULONG *pulStartPort) = 0;
+                     ULONG *pulStartPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StartPort(
-        ULONG ulStartPort) = 0;
+                     ULONG ulStartPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EndPort(
-        ULONG *pulEndPort) = 0;
+                     ULONG *pulEndPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EndPort(
-        ULONG ulEndPort) = 0;
+                     ULONG ulEndPort) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NetworkProfile(
-        WDSTRANSPORT_NETWORK_PROFILE_TYPE *pProfileType) = 0;
+                     WDSTRANSPORT_NETWORK_PROFILE_TYPE *pProfileType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NetworkProfile(
-        WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType) = 0;
+                     WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3863,114 +3863,114 @@ typedef struct IWdsTransportServicePolicyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportServicePolicy *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportServicePolicy *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportServicePolicy *This);
+                     IWdsTransportServicePolicy *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportServicePolicy *This);
+                     IWdsTransportServicePolicy *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportServicePolicy *This,
-        UINT *pctinfo);
+                     IWdsTransportServicePolicy *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportServicePolicy *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportServicePolicy *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportServicePolicy *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportServicePolicy *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportServicePolicy *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportServicePolicy *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportCacheable methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Dirty)(
-        IWdsTransportServicePolicy *This,
-        VARIANT_BOOL *pbDirty);
+                     IWdsTransportServicePolicy *This,
+                     VARIANT_BOOL *pbDirty);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        IWdsTransportServicePolicy *This);
+                     IWdsTransportServicePolicy *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportServicePolicy *This);
+                     IWdsTransportServicePolicy *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWdsTransportServicePolicy *This);
+                     IWdsTransportServicePolicy *This);
 
     /*** IWdsTransportServicePolicy methods ***/
     HRESULT (STDMETHODCALLTYPE *get_IpAddressSource)(
-        IWdsTransportServicePolicy *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE *pSourceType);
+                     IWdsTransportServicePolicy *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE *pSourceType);
 
     HRESULT (STDMETHODCALLTYPE *put_IpAddressSource)(
-        IWdsTransportServicePolicy *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType);
+                     IWdsTransportServicePolicy *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType);
 
     HRESULT (STDMETHODCALLTYPE *get_StartIpAddress)(
-        IWdsTransportServicePolicy *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR *pbszStartIpAddress);
+                     IWdsTransportServicePolicy *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR *pbszStartIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *put_StartIpAddress)(
-        IWdsTransportServicePolicy *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR bszStartIpAddress);
+                     IWdsTransportServicePolicy *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR bszStartIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *get_EndIpAddress)(
-        IWdsTransportServicePolicy *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR *pbszEndIpAddress);
+                     IWdsTransportServicePolicy *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR *pbszEndIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *put_EndIpAddress)(
-        IWdsTransportServicePolicy *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR bszEndIpAddress);
+                     IWdsTransportServicePolicy *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR bszEndIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *get_StartPort)(
-        IWdsTransportServicePolicy *This,
-        ULONG *pulStartPort);
+                     IWdsTransportServicePolicy *This,
+                     ULONG *pulStartPort);
 
     HRESULT (STDMETHODCALLTYPE *put_StartPort)(
-        IWdsTransportServicePolicy *This,
-        ULONG ulStartPort);
+                     IWdsTransportServicePolicy *This,
+                     ULONG ulStartPort);
 
     HRESULT (STDMETHODCALLTYPE *get_EndPort)(
-        IWdsTransportServicePolicy *This,
-        ULONG *pulEndPort);
+                     IWdsTransportServicePolicy *This,
+                     ULONG *pulEndPort);
 
     HRESULT (STDMETHODCALLTYPE *put_EndPort)(
-        IWdsTransportServicePolicy *This,
-        ULONG ulEndPort);
+                     IWdsTransportServicePolicy *This,
+                     ULONG ulEndPort);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkProfile)(
-        IWdsTransportServicePolicy *This,
-        WDSTRANSPORT_NETWORK_PROFILE_TYPE *pProfileType);
+                     IWdsTransportServicePolicy *This,
+                     WDSTRANSPORT_NETWORK_PROFILE_TYPE *pProfileType);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkProfile)(
-        IWdsTransportServicePolicy *This,
-        WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType);
+                     IWdsTransportServicePolicy *This,
+                     WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType);
 
     END_INTERFACE
 } IWdsTransportServicePolicyVtbl;
@@ -4103,22 +4103,22 @@ MIDL_INTERFACE("65c19e5c-aa7e-4b91-8944-91e0e5572797")
 IWdsTransportServicePolicy2 : public IWdsTransportServicePolicy
 {
     virtual HRESULT STDMETHODCALLTYPE get_UdpPortPolicy(
-        WDSTRANSPORT_UDP_PORT_POLICY *pUdpPortPolicy) = 0;
+                     WDSTRANSPORT_UDP_PORT_POLICY *pUdpPortPolicy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UdpPortPolicy(
-        WDSTRANSPORT_UDP_PORT_POLICY UdpPortPolicy) = 0;
+                     WDSTRANSPORT_UDP_PORT_POLICY UdpPortPolicy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TftpMaximumBlockSize(
-        ULONG *pulTftpMaximumBlockSize) = 0;
+                     ULONG *pulTftpMaximumBlockSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_TftpMaximumBlockSize(
-        ULONG ulTftpMaximumBlockSize) = 0;
+                     ULONG ulTftpMaximumBlockSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EnableTftpVariableWindowExtension(
-        VARIANT_BOOL *pbEnableTftpVariableWindowExtension) = 0;
+                     VARIANT_BOOL *pbEnableTftpVariableWindowExtension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EnableTftpVariableWindowExtension(
-        VARIANT_BOOL bEnableTftpVariableWindowExtension) = 0;
+                     VARIANT_BOOL bEnableTftpVariableWindowExtension) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4130,139 +4130,139 @@ typedef struct IWdsTransportServicePolicy2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportServicePolicy2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportServicePolicy2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportServicePolicy2 *This);
+                     IWdsTransportServicePolicy2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportServicePolicy2 *This);
+                     IWdsTransportServicePolicy2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportServicePolicy2 *This,
-        UINT *pctinfo);
+                     IWdsTransportServicePolicy2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportServicePolicy2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportServicePolicy2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportServicePolicy2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportServicePolicy2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportServicePolicy2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportServicePolicy2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportCacheable methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Dirty)(
-        IWdsTransportServicePolicy2 *This,
-        VARIANT_BOOL *pbDirty);
+                     IWdsTransportServicePolicy2 *This,
+                     VARIANT_BOOL *pbDirty);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        IWdsTransportServicePolicy2 *This);
+                     IWdsTransportServicePolicy2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportServicePolicy2 *This);
+                     IWdsTransportServicePolicy2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWdsTransportServicePolicy2 *This);
+                     IWdsTransportServicePolicy2 *This);
 
     /*** IWdsTransportServicePolicy methods ***/
     HRESULT (STDMETHODCALLTYPE *get_IpAddressSource)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE *pSourceType);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE *pSourceType);
 
     HRESULT (STDMETHODCALLTYPE *put_IpAddressSource)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType);
 
     HRESULT (STDMETHODCALLTYPE *get_StartIpAddress)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR *pbszStartIpAddress);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR *pbszStartIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *put_StartIpAddress)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR bszStartIpAddress);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR bszStartIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *get_EndIpAddress)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR *pbszEndIpAddress);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR *pbszEndIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *put_EndIpAddress)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
-        BSTR bszEndIpAddress);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_IP_ADDRESS_TYPE AddressType,
+                     BSTR bszEndIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *get_StartPort)(
-        IWdsTransportServicePolicy2 *This,
-        ULONG *pulStartPort);
+                     IWdsTransportServicePolicy2 *This,
+                     ULONG *pulStartPort);
 
     HRESULT (STDMETHODCALLTYPE *put_StartPort)(
-        IWdsTransportServicePolicy2 *This,
-        ULONG ulStartPort);
+                     IWdsTransportServicePolicy2 *This,
+                     ULONG ulStartPort);
 
     HRESULT (STDMETHODCALLTYPE *get_EndPort)(
-        IWdsTransportServicePolicy2 *This,
-        ULONG *pulEndPort);
+                     IWdsTransportServicePolicy2 *This,
+                     ULONG *pulEndPort);
 
     HRESULT (STDMETHODCALLTYPE *put_EndPort)(
-        IWdsTransportServicePolicy2 *This,
-        ULONG ulEndPort);
+                     IWdsTransportServicePolicy2 *This,
+                     ULONG ulEndPort);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkProfile)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_NETWORK_PROFILE_TYPE *pProfileType);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_NETWORK_PROFILE_TYPE *pProfileType);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkProfile)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType);
 
     /*** IWdsTransportServicePolicy2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_UdpPortPolicy)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_UDP_PORT_POLICY *pUdpPortPolicy);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_UDP_PORT_POLICY *pUdpPortPolicy);
 
     HRESULT (STDMETHODCALLTYPE *put_UdpPortPolicy)(
-        IWdsTransportServicePolicy2 *This,
-        WDSTRANSPORT_UDP_PORT_POLICY UdpPortPolicy);
+                     IWdsTransportServicePolicy2 *This,
+                     WDSTRANSPORT_UDP_PORT_POLICY UdpPortPolicy);
 
     HRESULT (STDMETHODCALLTYPE *get_TftpMaximumBlockSize)(
-        IWdsTransportServicePolicy2 *This,
-        ULONG *pulTftpMaximumBlockSize);
+                     IWdsTransportServicePolicy2 *This,
+                     ULONG *pulTftpMaximumBlockSize);
 
     HRESULT (STDMETHODCALLTYPE *put_TftpMaximumBlockSize)(
-        IWdsTransportServicePolicy2 *This,
-        ULONG ulTftpMaximumBlockSize);
+                     IWdsTransportServicePolicy2 *This,
+                     ULONG ulTftpMaximumBlockSize);
 
     HRESULT (STDMETHODCALLTYPE *get_EnableTftpVariableWindowExtension)(
-        IWdsTransportServicePolicy2 *This,
-        VARIANT_BOOL *pbEnableTftpVariableWindowExtension);
+                     IWdsTransportServicePolicy2 *This,
+                     VARIANT_BOOL *pbEnableTftpVariableWindowExtension);
 
     HRESULT (STDMETHODCALLTYPE *put_EnableTftpVariableWindowExtension)(
-        IWdsTransportServicePolicy2 *This,
-        VARIANT_BOOL bEnableTftpVariableWindowExtension);
+                     IWdsTransportServicePolicy2 *This,
+                     VARIANT_BOOL bEnableTftpVariableWindowExtension);
 
     END_INTERFACE
 } IWdsTransportServicePolicy2Vtbl;
@@ -4421,22 +4421,22 @@ MIDL_INTERFACE("f7238425-efa8-40a4-aef9-c98d969c0b75")
 IWdsTransportSetupManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Version(
-        ULONGLONG *pullVersion) = 0;
+                     ULONGLONG *pullVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InstalledFeatures(
-        ULONG *pulInstalledFeatures) = 0;
+                     ULONG *pulInstalledFeatures) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Protocols(
-        ULONG *pulProtocols) = 0;
+                     ULONG *pulProtocols) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterContentProvider(
-        BSTR bszName,
-        BSTR bszDescription,
-        BSTR bszFilePath,
-        BSTR bszInitializationRoutine) = 0;
+                     BSTR bszName,
+                     BSTR bszDescription,
+                     BSTR bszFilePath,
+                     BSTR bszInitializationRoutine) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeregisterContentProvider(
-        BSTR bszName) = 0;
+                     BSTR bszName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4448,69 +4448,69 @@ typedef struct IWdsTransportSetupManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportSetupManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportSetupManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportSetupManager *This);
+                     IWdsTransportSetupManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportSetupManager *This);
+                     IWdsTransportSetupManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportSetupManager *This,
-        UINT *pctinfo);
+                     IWdsTransportSetupManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportSetupManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportSetupManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportSetupManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportSetupManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportSetupManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportSetupManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportSetupManager methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Version)(
-        IWdsTransportSetupManager *This,
-        ULONGLONG *pullVersion);
+                     IWdsTransportSetupManager *This,
+                     ULONGLONG *pullVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_InstalledFeatures)(
-        IWdsTransportSetupManager *This,
-        ULONG *pulInstalledFeatures);
+                     IWdsTransportSetupManager *This,
+                     ULONG *pulInstalledFeatures);
 
     HRESULT (STDMETHODCALLTYPE *get_Protocols)(
-        IWdsTransportSetupManager *This,
-        ULONG *pulProtocols);
+                     IWdsTransportSetupManager *This,
+                     ULONG *pulProtocols);
 
     HRESULT (STDMETHODCALLTYPE *RegisterContentProvider)(
-        IWdsTransportSetupManager *This,
-        BSTR bszName,
-        BSTR bszDescription,
-        BSTR bszFilePath,
-        BSTR bszInitializationRoutine);
+                     IWdsTransportSetupManager *This,
+                     BSTR bszName,
+                     BSTR bszDescription,
+                     BSTR bszFilePath,
+                     BSTR bszInitializationRoutine);
 
     HRESULT (STDMETHODCALLTYPE *DeregisterContentProvider)(
-        IWdsTransportSetupManager *This,
-        BSTR bszName);
+                     IWdsTransportSetupManager *This,
+                     BSTR bszName);
 
     END_INTERFACE
 } IWdsTransportSetupManagerVtbl;
@@ -4597,10 +4597,10 @@ MIDL_INTERFACE("02be79da-7e9e-4366-8b6e-2aa9a91be47f")
 IWdsTransportSetupManager2 : public IWdsTransportSetupManager
 {
     virtual HRESULT STDMETHODCALLTYPE get_TftpCapabilities(
-        ULONG *pulTftpCapabilities) = 0;
+                     ULONG *pulTftpCapabilities) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ContentProviders(
-        IWdsTransportCollection **ppProviderCollection) = 0;
+                     IWdsTransportCollection **ppProviderCollection) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4612,78 +4612,78 @@ typedef struct IWdsTransportSetupManager2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportSetupManager2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportSetupManager2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportSetupManager2 *This);
+                     IWdsTransportSetupManager2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportSetupManager2 *This);
+                     IWdsTransportSetupManager2 *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportSetupManager2 *This,
-        UINT *pctinfo);
+                     IWdsTransportSetupManager2 *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportSetupManager2 *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportSetupManager2 *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportSetupManager2 *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportSetupManager2 *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportSetupManager2 *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportSetupManager2 *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportSetupManager methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Version)(
-        IWdsTransportSetupManager2 *This,
-        ULONGLONG *pullVersion);
+                     IWdsTransportSetupManager2 *This,
+                     ULONGLONG *pullVersion);
 
     HRESULT (STDMETHODCALLTYPE *get_InstalledFeatures)(
-        IWdsTransportSetupManager2 *This,
-        ULONG *pulInstalledFeatures);
+                     IWdsTransportSetupManager2 *This,
+                     ULONG *pulInstalledFeatures);
 
     HRESULT (STDMETHODCALLTYPE *get_Protocols)(
-        IWdsTransportSetupManager2 *This,
-        ULONG *pulProtocols);
+                     IWdsTransportSetupManager2 *This,
+                     ULONG *pulProtocols);
 
     HRESULT (STDMETHODCALLTYPE *RegisterContentProvider)(
-        IWdsTransportSetupManager2 *This,
-        BSTR bszName,
-        BSTR bszDescription,
-        BSTR bszFilePath,
-        BSTR bszInitializationRoutine);
+                     IWdsTransportSetupManager2 *This,
+                     BSTR bszName,
+                     BSTR bszDescription,
+                     BSTR bszFilePath,
+                     BSTR bszInitializationRoutine);
 
     HRESULT (STDMETHODCALLTYPE *DeregisterContentProvider)(
-        IWdsTransportSetupManager2 *This,
-        BSTR bszName);
+                     IWdsTransportSetupManager2 *This,
+                     BSTR bszName);
 
     /*** IWdsTransportSetupManager2 methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TftpCapabilities)(
-        IWdsTransportSetupManager2 *This,
-        ULONG *pulTftpCapabilities);
+                     IWdsTransportSetupManager2 *This,
+                     ULONG *pulTftpCapabilities);
 
     HRESULT (STDMETHODCALLTYPE *get_ContentProviders)(
-        IWdsTransportSetupManager2 *This,
-        IWdsTransportCollection **ppProviderCollection);
+                     IWdsTransportSetupManager2 *This,
+                     IWdsTransportCollection **ppProviderCollection);
 
     END_INTERFACE
 } IWdsTransportSetupManager2Vtbl;
@@ -4780,7 +4780,7 @@ MIDL_INTERFACE("1327a7c8-ae8a-4fb3-8150-136227c37e9a")
 IWdsTransportTftpManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE RetrieveTftpClients(
-        IWdsTransportCollection **ppWdsTransportTftpClients) = 0;
+                     IWdsTransportCollection **ppWdsTransportTftpClients) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4792,50 +4792,50 @@ typedef struct IWdsTransportTftpManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportTftpManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportTftpManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportTftpManager *This);
+                     IWdsTransportTftpManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportTftpManager *This);
+                     IWdsTransportTftpManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportTftpManager *This,
-        UINT *pctinfo);
+                     IWdsTransportTftpManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportTftpManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportTftpManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportTftpManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportTftpManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportTftpManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportTftpManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportTftpManager methods ***/
     HRESULT (STDMETHODCALLTYPE *RetrieveTftpClients)(
-        IWdsTransportTftpManager *This,
-        IWdsTransportCollection **ppWdsTransportTftpClients);
+                     IWdsTransportTftpManager *This,
+                     IWdsTransportCollection **ppWdsTransportTftpClients);
 
     END_INTERFACE
 } IWdsTransportTftpManagerVtbl;
@@ -4906,28 +4906,28 @@ MIDL_INTERFACE("4e5753cf-68ec-4504-a951-4a003266606b")
 IWdsTransportMulticastSessionPolicy : public IWdsTransportCacheable
 {
     virtual HRESULT STDMETHODCALLTYPE get_SlowClientHandling(
-        WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE *pSlowClientHandling) = 0;
+                     WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE *pSlowClientHandling) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SlowClientHandling(
-        WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE SlowClientHandling) = 0;
+                     WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE SlowClientHandling) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AutoDisconnectThreshold(
-        ULONG *pulThreshold) = 0;
+                     ULONG *pulThreshold) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AutoDisconnectThreshold(
-        ULONG ulThreshold) = 0;
+                     ULONG ulThreshold) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MultistreamStreamCount(
-        ULONG *pulStreamCount) = 0;
+                     ULONG *pulStreamCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MultistreamStreamCount(
-        ULONG ulStreamCount) = 0;
+                     ULONG ulStreamCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SlowClientFallback(
-        VARIANT_BOOL *pbClientFallback) = 0;
+                     VARIANT_BOOL *pbClientFallback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SlowClientFallback(
-        VARIANT_BOOL bClientFallback) = 0;
+                     VARIANT_BOOL bClientFallback) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4939,92 +4939,92 @@ typedef struct IWdsTransportMulticastSessionPolicyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportMulticastSessionPolicy *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportMulticastSessionPolicy *This);
+                     IWdsTransportMulticastSessionPolicy *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportMulticastSessionPolicy *This);
+                     IWdsTransportMulticastSessionPolicy *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportMulticastSessionPolicy *This,
-        UINT *pctinfo);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportMulticastSessionPolicy *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportMulticastSessionPolicy *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportMulticastSessionPolicy *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportCacheable methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Dirty)(
-        IWdsTransportMulticastSessionPolicy *This,
-        VARIANT_BOOL *pbDirty);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     VARIANT_BOOL *pbDirty);
 
     HRESULT (STDMETHODCALLTYPE *Discard)(
-        IWdsTransportMulticastSessionPolicy *This);
+                     IWdsTransportMulticastSessionPolicy *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IWdsTransportMulticastSessionPolicy *This);
+                     IWdsTransportMulticastSessionPolicy *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IWdsTransportMulticastSessionPolicy *This);
+                     IWdsTransportMulticastSessionPolicy *This);
 
     /*** IWdsTransportMulticastSessionPolicy methods ***/
     HRESULT (STDMETHODCALLTYPE *get_SlowClientHandling)(
-        IWdsTransportMulticastSessionPolicy *This,
-        WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE *pSlowClientHandling);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE *pSlowClientHandling);
 
     HRESULT (STDMETHODCALLTYPE *put_SlowClientHandling)(
-        IWdsTransportMulticastSessionPolicy *This,
-        WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE SlowClientHandling);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE SlowClientHandling);
 
     HRESULT (STDMETHODCALLTYPE *get_AutoDisconnectThreshold)(
-        IWdsTransportMulticastSessionPolicy *This,
-        ULONG *pulThreshold);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     ULONG *pulThreshold);
 
     HRESULT (STDMETHODCALLTYPE *put_AutoDisconnectThreshold)(
-        IWdsTransportMulticastSessionPolicy *This,
-        ULONG ulThreshold);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     ULONG ulThreshold);
 
     HRESULT (STDMETHODCALLTYPE *get_MultistreamStreamCount)(
-        IWdsTransportMulticastSessionPolicy *This,
-        ULONG *pulStreamCount);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     ULONG *pulStreamCount);
 
     HRESULT (STDMETHODCALLTYPE *put_MultistreamStreamCount)(
-        IWdsTransportMulticastSessionPolicy *This,
-        ULONG ulStreamCount);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     ULONG ulStreamCount);
 
     HRESULT (STDMETHODCALLTYPE *get_SlowClientFallback)(
-        IWdsTransportMulticastSessionPolicy *This,
-        VARIANT_BOOL *pbClientFallback);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     VARIANT_BOOL *pbClientFallback);
 
     HRESULT (STDMETHODCALLTYPE *put_SlowClientFallback)(
-        IWdsTransportMulticastSessionPolicy *This,
-        VARIANT_BOOL bClientFallback);
+                     IWdsTransportMulticastSessionPolicy *This,
+                     VARIANT_BOOL bClientFallback);
 
     END_INTERFACE
 } IWdsTransportMulticastSessionPolicyVtbl;
@@ -5141,19 +5141,19 @@ MIDL_INTERFACE("d405d711-0296-4ab4-a860-ac7d32e65798")
 IWdsTransportContent : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Namespace(
-        IWdsTransportNamespace **ppWdsTransportNamespace) = 0;
+                     IWdsTransportNamespace **ppWdsTransportNamespace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        ULONG *pulId) = 0;
+                     ULONG *pulId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *pbszName) = 0;
+                     BSTR *pbszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RetrieveSessions(
-        IWdsTransportCollection **ppWdsTransportSessions) = 0;
+                     IWdsTransportCollection **ppWdsTransportSessions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Terminate(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5165,65 +5165,65 @@ typedef struct IWdsTransportContentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportContent *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportContent *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportContent *This);
+                     IWdsTransportContent *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportContent *This);
+                     IWdsTransportContent *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportContent *This,
-        UINT *pctinfo);
+                     IWdsTransportContent *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportContent *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportContent *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportContent *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportContent *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportContent *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportContent *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportContent methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Namespace)(
-        IWdsTransportContent *This,
-        IWdsTransportNamespace **ppWdsTransportNamespace);
+                     IWdsTransportContent *This,
+                     IWdsTransportNamespace **ppWdsTransportNamespace);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IWdsTransportContent *This,
-        ULONG *pulId);
+                     IWdsTransportContent *This,
+                     ULONG *pulId);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportContent *This,
-        BSTR *pbszName);
+                     IWdsTransportContent *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveSessions)(
-        IWdsTransportContent *This,
-        IWdsTransportCollection **ppWdsTransportSessions);
+                     IWdsTransportContent *This,
+                     IWdsTransportCollection **ppWdsTransportSessions);
 
     HRESULT (STDMETHODCALLTYPE *Terminate)(
-        IWdsTransportContent *This);
+                     IWdsTransportContent *This);
 
     END_INTERFACE
 } IWdsTransportContentVtbl;
@@ -5310,28 +5310,28 @@ MIDL_INTERFACE("f4efea88-65b1-4f30-a4b9-2793987796fb")
 IWdsTransportSession : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Content(
-        IWdsTransportContent **ppWdsTransportContent) = 0;
+                     IWdsTransportContent **ppWdsTransportContent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        ULONG *pulId) = 0;
+                     ULONG *pulId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NetworkInterfaceName(
-        BSTR *pbszNetworkInterfaceName) = 0;
+                     BSTR *pbszNetworkInterfaceName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NetworkInterfaceAddress(
-        BSTR *pbszNetworkInterfaceAddress) = 0;
+                     BSTR *pbszNetworkInterfaceAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TransferRate(
-        ULONG *pulTransferRate) = 0;
+                     ULONG *pulTransferRate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MasterClientId(
-        ULONG *pulMasterClientId) = 0;
+                     ULONG *pulMasterClientId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RetrieveClients(
-        IWdsTransportCollection **ppWdsTransportClients) = 0;
+                     IWdsTransportCollection **ppWdsTransportClients) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Terminate(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5343,77 +5343,77 @@ typedef struct IWdsTransportSessionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportSession *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportSession *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportSession *This);
+                     IWdsTransportSession *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportSession *This);
+                     IWdsTransportSession *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportSession *This,
-        UINT *pctinfo);
+                     IWdsTransportSession *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportSession *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportSession *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportSession *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportSession *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportSession *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportSession *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportSession methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Content)(
-        IWdsTransportSession *This,
-        IWdsTransportContent **ppWdsTransportContent);
+                     IWdsTransportSession *This,
+                     IWdsTransportContent **ppWdsTransportContent);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IWdsTransportSession *This,
-        ULONG *pulId);
+                     IWdsTransportSession *This,
+                     ULONG *pulId);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkInterfaceName)(
-        IWdsTransportSession *This,
-        BSTR *pbszNetworkInterfaceName);
+                     IWdsTransportSession *This,
+                     BSTR *pbszNetworkInterfaceName);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkInterfaceAddress)(
-        IWdsTransportSession *This,
-        BSTR *pbszNetworkInterfaceAddress);
+                     IWdsTransportSession *This,
+                     BSTR *pbszNetworkInterfaceAddress);
 
     HRESULT (STDMETHODCALLTYPE *get_TransferRate)(
-        IWdsTransportSession *This,
-        ULONG *pulTransferRate);
+                     IWdsTransportSession *This,
+                     ULONG *pulTransferRate);
 
     HRESULT (STDMETHODCALLTYPE *get_MasterClientId)(
-        IWdsTransportSession *This,
-        ULONG *pulMasterClientId);
+                     IWdsTransportSession *This,
+                     ULONG *pulMasterClientId);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveClients)(
-        IWdsTransportSession *This,
-        IWdsTransportCollection **ppWdsTransportClients);
+                     IWdsTransportSession *This,
+                     IWdsTransportCollection **ppWdsTransportClients);
 
     HRESULT (STDMETHODCALLTYPE *Terminate)(
-        IWdsTransportSession *This);
+                     IWdsTransportSession *This);
 
     END_INTERFACE
 } IWdsTransportSessionVtbl;
@@ -5512,40 +5512,40 @@ MIDL_INTERFACE("b5dbc93a-cabe-46ca-837f-3e44e93c6545")
 IWdsTransportClient : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Session(
-        IWdsTransportSession **ppWdsTransportSession) = 0;
+                     IWdsTransportSession **ppWdsTransportSession) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        ULONG *pulId) = 0;
+                     ULONG *pulId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *pbszName) = 0;
+                     BSTR *pbszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MacAddress(
-        BSTR *pbszMacAddress) = 0;
+                     BSTR *pbszMacAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IpAddress(
-        BSTR *pbszIpAddress) = 0;
+                     BSTR *pbszIpAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PercentCompletion(
-        ULONG *pulPercentCompletion) = 0;
+                     ULONG *pulPercentCompletion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_JoinDuration(
-        ULONG *pulJoinDuration) = 0;
+                     ULONG *pulJoinDuration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CpuUtilization(
-        ULONG *pulCpuUtilization) = 0;
+                     ULONG *pulCpuUtilization) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MemoryUtilization(
-        ULONG *pulMemoryUtilization) = 0;
+                     ULONG *pulMemoryUtilization) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NetworkUtilization(
-        ULONG *pulNetworkUtilization) = 0;
+                     ULONG *pulNetworkUtilization) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UserIdentity(
-        BSTR *pbszUserIdentity) = 0;
+                     BSTR *pbszUserIdentity) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Disconnect(
-        WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) = 0;
+                     WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5557,94 +5557,94 @@ typedef struct IWdsTransportClientVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportClient *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportClient *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportClient *This);
+                     IWdsTransportClient *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportClient *This);
+                     IWdsTransportClient *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportClient *This,
-        UINT *pctinfo);
+                     IWdsTransportClient *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportClient *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportClient *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportClient *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportClient *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportClient *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportClient *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportClient methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Session)(
-        IWdsTransportClient *This,
-        IWdsTransportSession **ppWdsTransportSession);
+                     IWdsTransportClient *This,
+                     IWdsTransportSession **ppWdsTransportSession);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IWdsTransportClient *This,
-        ULONG *pulId);
+                     IWdsTransportClient *This,
+                     ULONG *pulId);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportClient *This,
-        BSTR *pbszName);
+                     IWdsTransportClient *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *get_MacAddress)(
-        IWdsTransportClient *This,
-        BSTR *pbszMacAddress);
+                     IWdsTransportClient *This,
+                     BSTR *pbszMacAddress);
 
     HRESULT (STDMETHODCALLTYPE *get_IpAddress)(
-        IWdsTransportClient *This,
-        BSTR *pbszIpAddress);
+                     IWdsTransportClient *This,
+                     BSTR *pbszIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *get_PercentCompletion)(
-        IWdsTransportClient *This,
-        ULONG *pulPercentCompletion);
+                     IWdsTransportClient *This,
+                     ULONG *pulPercentCompletion);
 
     HRESULT (STDMETHODCALLTYPE *get_JoinDuration)(
-        IWdsTransportClient *This,
-        ULONG *pulJoinDuration);
+                     IWdsTransportClient *This,
+                     ULONG *pulJoinDuration);
 
     HRESULT (STDMETHODCALLTYPE *get_CpuUtilization)(
-        IWdsTransportClient *This,
-        ULONG *pulCpuUtilization);
+                     IWdsTransportClient *This,
+                     ULONG *pulCpuUtilization);
 
     HRESULT (STDMETHODCALLTYPE *get_MemoryUtilization)(
-        IWdsTransportClient *This,
-        ULONG *pulMemoryUtilization);
+                     IWdsTransportClient *This,
+                     ULONG *pulMemoryUtilization);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkUtilization)(
-        IWdsTransportClient *This,
-        ULONG *pulNetworkUtilization);
+                     IWdsTransportClient *This,
+                     ULONG *pulNetworkUtilization);
 
     HRESULT (STDMETHODCALLTYPE *get_UserIdentity)(
-        IWdsTransportClient *This,
-        BSTR *pbszUserIdentity);
+                     IWdsTransportClient *This,
+                     BSTR *pbszUserIdentity);
 
     HRESULT (STDMETHODCALLTYPE *Disconnect)(
-        IWdsTransportClient *This,
-        WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType);
+                     IWdsTransportClient *This,
+                     WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType);
 
     END_INTERFACE
 } IWdsTransportClientVtbl;
@@ -5759,25 +5759,25 @@ MIDL_INTERFACE("b022d3ae-884d-4d85-b146-53320e76ef62")
 IWdsTransportTftpClient : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_FileName(
-        BSTR *pbszFileName) = 0;
+                     BSTR *pbszFileName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IpAddress(
-        BSTR *pbszIpAddress) = 0;
+                     BSTR *pbszIpAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Timeout(
-        ULONG *pulTimeout) = 0;
+                     ULONG *pulTimeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentFileOffset(
-        ULONG64 *pul64CurrentOffset) = 0;
+                     ULONG64 *pul64CurrentOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FileSize(
-        ULONG64 *pul64FileSize) = 0;
+                     ULONG64 *pul64FileSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BlockSize(
-        ULONG *pulBlockSize) = 0;
+                     ULONG *pulBlockSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_WindowSize(
-        ULONG *pulWindowSize) = 0;
+                     ULONG *pulWindowSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5789,74 +5789,74 @@ typedef struct IWdsTransportTftpClientVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportTftpClient *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportTftpClient *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportTftpClient *This);
+                     IWdsTransportTftpClient *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportTftpClient *This);
+                     IWdsTransportTftpClient *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportTftpClient *This,
-        UINT *pctinfo);
+                     IWdsTransportTftpClient *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportTftpClient *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportTftpClient *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportTftpClient *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportTftpClient *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportTftpClient *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportTftpClient *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportTftpClient methods ***/
     HRESULT (STDMETHODCALLTYPE *get_FileName)(
-        IWdsTransportTftpClient *This,
-        BSTR *pbszFileName);
+                     IWdsTransportTftpClient *This,
+                     BSTR *pbszFileName);
 
     HRESULT (STDMETHODCALLTYPE *get_IpAddress)(
-        IWdsTransportTftpClient *This,
-        BSTR *pbszIpAddress);
+                     IWdsTransportTftpClient *This,
+                     BSTR *pbszIpAddress);
 
     HRESULT (STDMETHODCALLTYPE *get_Timeout)(
-        IWdsTransportTftpClient *This,
-        ULONG *pulTimeout);
+                     IWdsTransportTftpClient *This,
+                     ULONG *pulTimeout);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentFileOffset)(
-        IWdsTransportTftpClient *This,
-        ULONG64 *pul64CurrentOffset);
+                     IWdsTransportTftpClient *This,
+                     ULONG64 *pul64CurrentOffset);
 
     HRESULT (STDMETHODCALLTYPE *get_FileSize)(
-        IWdsTransportTftpClient *This,
-        ULONG64 *pul64FileSize);
+                     IWdsTransportTftpClient *This,
+                     ULONG64 *pul64FileSize);
 
     HRESULT (STDMETHODCALLTYPE *get_BlockSize)(
-        IWdsTransportTftpClient *This,
-        ULONG *pulBlockSize);
+                     IWdsTransportTftpClient *This,
+                     ULONG *pulBlockSize);
 
     HRESULT (STDMETHODCALLTYPE *get_WindowSize)(
-        IWdsTransportTftpClient *This,
-        ULONG *pulWindowSize);
+                     IWdsTransportTftpClient *This,
+                     ULONG *pulWindowSize);
 
     END_INTERFACE
 } IWdsTransportTftpClientVtbl;
@@ -5951,16 +5951,16 @@ MIDL_INTERFACE("b9489f24-f219-4acf-aad7-265c7c08a6ae")
 IWdsTransportContentProvider : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *pbszName) = 0;
+                     BSTR *pbszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Description(
-        BSTR *pbszDescription) = 0;
+                     BSTR *pbszDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FilePath(
-        BSTR *pbszFilePath) = 0;
+                     BSTR *pbszFilePath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InitializationRoutine(
-        BSTR *pbszInitializationRoutine) = 0;
+                     BSTR *pbszInitializationRoutine) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5972,62 +5972,62 @@ typedef struct IWdsTransportContentProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWdsTransportContentProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWdsTransportContentProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWdsTransportContentProvider *This);
+                     IWdsTransportContentProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWdsTransportContentProvider *This);
+                     IWdsTransportContentProvider *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWdsTransportContentProvider *This,
-        UINT *pctinfo);
+                     IWdsTransportContentProvider *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWdsTransportContentProvider *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWdsTransportContentProvider *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWdsTransportContentProvider *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWdsTransportContentProvider *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWdsTransportContentProvider *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWdsTransportContentProvider *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWdsTransportContentProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IWdsTransportContentProvider *This,
-        BSTR *pbszName);
+                     IWdsTransportContentProvider *This,
+                     BSTR *pbszName);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IWdsTransportContentProvider *This,
-        BSTR *pbszDescription);
+                     IWdsTransportContentProvider *This,
+                     BSTR *pbszDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_FilePath)(
-        IWdsTransportContentProvider *This,
-        BSTR *pbszFilePath);
+                     IWdsTransportContentProvider *This,
+                     BSTR *pbszFilePath);
 
     HRESULT (STDMETHODCALLTYPE *get_InitializationRoutine)(
-        IWdsTransportContentProvider *This,
-        BSTR *pbszInitializationRoutine);
+                     IWdsTransportContentProvider *This,
+                     BSTR *pbszInitializationRoutine);
 
     END_INTERFACE
 } IWdsTransportContentProviderVtbl;
@@ -6377,10 +6377,10 @@ __CRT_UUID_DECL(WdsTransportContentProvider, 0xe0be741f, 0x5a75, 0x4eb9, 0x8a,0x
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

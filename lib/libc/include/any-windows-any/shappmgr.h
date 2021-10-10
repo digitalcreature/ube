@@ -122,14 +122,14 @@ extern "C" {
 #else
   typedef struct IShellAppVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IShellApp *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IShellApp *This);
-      ULONG (WINAPI *Release)(IShellApp *This);
-      HRESULT (WINAPI *GetAppInfo)(IShellApp *This,PAPPINFODATA pai);
-      HRESULT (WINAPI *GetPossibleActions)(IShellApp *This,DWORD *pdwActions);
-      HRESULT (WINAPI *GetSlowAppInfo)(IShellApp *This,PSLOWAPPINFO psaid);
-      HRESULT (WINAPI *GetCachedSlowAppInfo)(IShellApp *This,PSLOWAPPINFO psaid);
-      HRESULT (WINAPI *IsInstalled)(IShellApp *This);
+                   HRESULT (WINAPI *QueryInterface)(IShellApp *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IShellApp *This);
+                   ULONG (WINAPI *Release)(IShellApp *This);
+                   HRESULT (WINAPI *GetAppInfo)(IShellApp *This,PAPPINFODATA pai);
+                   HRESULT (WINAPI *GetPossibleActions)(IShellApp *This,DWORD *pdwActions);
+                   HRESULT (WINAPI *GetSlowAppInfo)(IShellApp *This,PSLOWAPPINFO psaid);
+                   HRESULT (WINAPI *GetCachedSlowAppInfo)(IShellApp *This,PSLOWAPPINFO psaid);
+                   HRESULT (WINAPI *IsInstalled)(IShellApp *This);
     END_INTERFACE
   } IShellAppVtbl;
   struct IShellApp {
@@ -187,17 +187,17 @@ extern "C" {
 #else
   typedef struct IPublishedAppVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPublishedApp *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPublishedApp *This);
-      ULONG (WINAPI *Release)(IPublishedApp *This);
-      HRESULT (WINAPI *GetAppInfo)(IPublishedApp *This,PAPPINFODATA pai);
-      HRESULT (WINAPI *GetPossibleActions)(IPublishedApp *This,DWORD *pdwActions);
-      HRESULT (WINAPI *GetSlowAppInfo)(IPublishedApp *This,PSLOWAPPINFO psaid);
-      HRESULT (WINAPI *GetCachedSlowAppInfo)(IPublishedApp *This,PSLOWAPPINFO psaid);
-      HRESULT (WINAPI *IsInstalled)(IPublishedApp *This);
-      HRESULT (WINAPI *Install)(IPublishedApp *This,LPSYSTEMTIME pstInstall);
-      HRESULT (WINAPI *GetPublishedAppInfo)(IPublishedApp *This,PPUBAPPINFO ppai);
-      HRESULT (WINAPI *Unschedule)(IPublishedApp *This);
+                   HRESULT (WINAPI *QueryInterface)(IPublishedApp *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPublishedApp *This);
+                   ULONG (WINAPI *Release)(IPublishedApp *This);
+                   HRESULT (WINAPI *GetAppInfo)(IPublishedApp *This,PAPPINFODATA pai);
+                   HRESULT (WINAPI *GetPossibleActions)(IPublishedApp *This,DWORD *pdwActions);
+                   HRESULT (WINAPI *GetSlowAppInfo)(IPublishedApp *This,PSLOWAPPINFO psaid);
+                   HRESULT (WINAPI *GetCachedSlowAppInfo)(IPublishedApp *This,PSLOWAPPINFO psaid);
+                   HRESULT (WINAPI *IsInstalled)(IPublishedApp *This);
+                   HRESULT (WINAPI *Install)(IPublishedApp *This,LPSYSTEMTIME pstInstall);
+                   HRESULT (WINAPI *GetPublishedAppInfo)(IPublishedApp *This,PPUBAPPINFO ppai);
+                   HRESULT (WINAPI *Unschedule)(IPublishedApp *This);
     END_INTERFACE
   } IPublishedAppVtbl;
   struct IPublishedApp {
@@ -237,11 +237,11 @@ extern "C" {
 #else
   typedef struct IEnumPublishedAppsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumPublishedApps *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumPublishedApps *This);
-      ULONG (WINAPI *Release)(IEnumPublishedApps *This);
-      HRESULT (WINAPI *Next)(IEnumPublishedApps *This,IPublishedApp **pia);
-      HRESULT (WINAPI *Reset)(IEnumPublishedApps *This);
+                   HRESULT (WINAPI *QueryInterface)(IEnumPublishedApps *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumPublishedApps *This);
+                   ULONG (WINAPI *Release)(IEnumPublishedApps *This);
+                   HRESULT (WINAPI *Next)(IEnumPublishedApps *This,IPublishedApp **pia);
+                   HRESULT (WINAPI *Reset)(IEnumPublishedApps *This);
     END_INTERFACE
   } IEnumPublishedAppsVtbl;
   struct IEnumPublishedApps {
@@ -275,13 +275,13 @@ extern "C" {
 #else
   typedef struct IAppPublisherVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IAppPublisher *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IAppPublisher *This);
-      ULONG (WINAPI *Release)(IAppPublisher *This);
-      HRESULT (WINAPI *GetNumberOfCategories)(IAppPublisher *This,DWORD *pdwCat);
-      HRESULT (WINAPI *GetCategories)(IAppPublisher *This,APPCATEGORYINFOLIST *pAppCategoryList);
-      HRESULT (WINAPI *GetNumberOfApps)(IAppPublisher *This,DWORD *pdwApps);
-      HRESULT (WINAPI *EnumApps)(IAppPublisher *This,GUID *pAppCategoryId,IEnumPublishedApps **ppepa);
+                   HRESULT (WINAPI *QueryInterface)(IAppPublisher *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IAppPublisher *This);
+                   ULONG (WINAPI *Release)(IAppPublisher *This);
+                   HRESULT (WINAPI *GetNumberOfCategories)(IAppPublisher *This,DWORD *pdwCat);
+                   HRESULT (WINAPI *GetCategories)(IAppPublisher *This,APPCATEGORYINFOLIST *pAppCategoryList);
+                   HRESULT (WINAPI *GetNumberOfApps)(IAppPublisher *This,DWORD *pdwApps);
+                   HRESULT (WINAPI *EnumApps)(IAppPublisher *This,GUID *pAppCategoryId,IEnumPublishedApps **ppepa);
     END_INTERFACE
   } IAppPublisherVtbl;
   struct IAppPublisher {

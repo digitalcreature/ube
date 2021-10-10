@@ -6,7 +6,7 @@
  *
  *  Copyright IBM Corp. 2001, 2006
  *  Author(s): Robert Burroughs
- *	       Eric Rossman (edrossma@us.ibm.com)
+ *	                    Eric Rossman (edrossma@us.ibm.com)
  *
  *  Hotplug & misc device support: Jochen Roehrig (roehrig@de.ibm.com)
  */
@@ -79,10 +79,10 @@ struct ica_rsa_modexpo_crt {
  *	    key block
  */
 struct CPRBX {
-	unsigned short	cprb_len;	/* CPRB length	      220	 */
+	unsigned short	cprb_len;	/* CPRB length	                   220	 */
 	unsigned char	cprb_ver_id;	/* CPRB version id.   0x02	 */
 	unsigned char	pad_000[3];	/* Alignment pad bytes		 */
-	unsigned char	func_id[2];	/* function id	      0x5432	 */
+	unsigned char	func_id[2];	/* function id	                   0x5432	 */
 	unsigned char	cprb_flags[4];	/* Flags			 */
 	unsigned int	req_parml;	/* request parameter buffer len	 */
 	unsigned int	req_datal;	/* request data buffer		 */

@@ -204,9 +204,9 @@ public:
   friend std::ostream& operator<< (std::ostream &os,const Is32vec4 &a)
   {
     os << "[3]:" << _MM_4DW(3,a)
-      << " [2]:" << _MM_4DW(2,a)
-      << " [1]:" << _MM_4DW(1,a)
-      << " [0]:" << _MM_4DW(0,a);
+                   << " [2]:" << _MM_4DW(2,a)
+                   << " [1]:" << _MM_4DW(1,a)
+                   << " [0]:" << _MM_4DW(0,a);
     return os;
   }
 #endif
@@ -268,9 +268,9 @@ public:
   friend std::ostream& operator<< (std::ostream &os,const Iu32vec4 &a)
   {
     os << "[3]:" << _MM_4UDW(3,a)
-      << " [2]:" << _MM_4UDW(2,a)
-      << " [1]:" << _MM_4UDW(1,a)
-      << " [0]:" << _MM_4UDW(0,a);
+                   << " [2]:" << _MM_4UDW(2,a)
+                   << " [1]:" << _MM_4UDW(1,a)
+                   << " [0]:" << _MM_4UDW(0,a);
     return os;
   }
 #endif
@@ -368,13 +368,13 @@ public:
   friend std::ostream& operator<< (std::ostream &os,const Is16vec8 &a)
   {
     os << "[7]:" << _MM_8W(7,a)
-      << " [6]:" << _MM_8W(6,a)
-      << " [5]:" << _MM_8W(5,a)
-      << " [4]:" << _MM_8W(4,a)
-      << " [3]:" << _MM_8W(3,a)
-      << " [2]:" << _MM_8W(2,a)
-      << " [1]:" << _MM_8W(1,a)
-      << " [0]:" << _MM_8W(0,a);
+                   << " [6]:" << _MM_8W(6,a)
+                   << " [5]:" << _MM_8W(5,a)
+                   << " [4]:" << _MM_8W(4,a)
+                   << " [3]:" << _MM_8W(3,a)
+                   << " [2]:" << _MM_8W(2,a)
+                   << " [1]:" << _MM_8W(1,a)
+                   << " [0]:" << _MM_8W(0,a);
     return os;
   }
 #endif
@@ -452,13 +452,13 @@ public:
   friend std::ostream& operator << (std::ostream &os,const Iu16vec8 &a)
   {
     os << "[7]:" << unsigned short(_MM_8UW(7,a))
-      << " [6]:" << unsigned short(_MM_8UW(6,a))
-      << " [5]:" << unsigned short(_MM_8UW(5,a))
-      << " [4]:" << unsigned short(_MM_8UW(4,a))
-      << " [3]:" << unsigned short(_MM_8UW(3,a))
-      << " [2]:" << unsigned short(_MM_8UW(2,a))
-      << " [1]:" << unsigned short(_MM_8UW(1,a))
-      << " [0]:" << unsigned short(_MM_8UW(0,a));
+                   << " [6]:" << unsigned short(_MM_8UW(6,a))
+                   << " [5]:" << unsigned short(_MM_8UW(5,a))
+                   << " [4]:" << unsigned short(_MM_8UW(4,a))
+                   << " [3]:" << unsigned short(_MM_8UW(3,a))
+                   << " [2]:" << unsigned short(_MM_8UW(2,a))
+                   << " [1]:" << unsigned short(_MM_8UW(1,a))
+                   << " [0]:" << unsigned short(_MM_8UW(0,a));
     return os;
   }
 #endif
@@ -533,21 +533,21 @@ public:
   friend std::ostream& operator << (std::ostream &os,const Is8vec16 &a)
   {
     os << "[15]:" << short(_MM_16B(15,a))
-      << " [14]:" << short(_MM_16B(14,a))
-      << " [13]:" << short(_MM_16B(13,a))
-      << " [12]:" << short(_MM_16B(12,a))
-      << " [11]:" << short(_MM_16B(11,a))
-      << " [10]:" << short(_MM_16B(10,a))
-      << " [9]:" << short(_MM_16B(9,a))
-      << " [8]:" << short(_MM_16B(8,a))
-      << " [7]:" << short(_MM_16B(7,a))
-      << " [6]:" << short(_MM_16B(6,a))
-      << " [5]:" << short(_MM_16B(5,a))
-      << " [4]:" << short(_MM_16B(4,a))
-      << " [3]:" << short(_MM_16B(3,a))
-      << " [2]:" << short(_MM_16B(2,a))
-      << " [1]:" << short(_MM_16B(1,a))
-      << " [0]:" << short(_MM_16B(0,a));
+                   << " [14]:" << short(_MM_16B(14,a))
+                   << " [13]:" << short(_MM_16B(13,a))
+                   << " [12]:" << short(_MM_16B(12,a))
+                   << " [11]:" << short(_MM_16B(11,a))
+                   << " [10]:" << short(_MM_16B(10,a))
+                   << " [9]:" << short(_MM_16B(9,a))
+                   << " [8]:" << short(_MM_16B(8,a))
+                   << " [7]:" << short(_MM_16B(7,a))
+                   << " [6]:" << short(_MM_16B(6,a))
+                   << " [5]:" << short(_MM_16B(5,a))
+                   << " [4]:" << short(_MM_16B(4,a))
+                   << " [3]:" << short(_MM_16B(3,a))
+                   << " [2]:" << short(_MM_16B(2,a))
+                   << " [1]:" << short(_MM_16B(1,a))
+                   << " [0]:" << short(_MM_16B(0,a));
     return os;
   }
 #endif
@@ -597,21 +597,21 @@ public:
   friend std::ostream& operator << (std::ostream &os,const Iu8vec16 &a)
   {
     os << "[15]:" << unsigned short(_MM_16UB(15,a))
-      << " [14]:" << unsigned short(_MM_16UB(14,a))
-      << " [13]:" << unsigned short(_MM_16UB(13,a))
-      << " [12]:" << unsigned short(_MM_16UB(12,a))
-      << " [11]:" << unsigned short(_MM_16UB(11,a))
-      << " [10]:" << unsigned short(_MM_16UB(10,a))
-      << " [9]:" << unsigned short(_MM_16UB(9,a))
-      << " [8]:" << unsigned short(_MM_16UB(8,a))
-      << " [7]:" << unsigned short(_MM_16UB(7,a))
-      << " [6]:" << unsigned short(_MM_16UB(6,a))
-      << " [5]:" << unsigned short(_MM_16UB(5,a))
-      << " [4]:" << unsigned short(_MM_16UB(4,a))
-      << " [3]:" << unsigned short(_MM_16UB(3,a))
-      << " [2]:" << unsigned short(_MM_16UB(2,a))
-      << " [1]:" << unsigned short(_MM_16UB(1,a))
-      << " [0]:" << unsigned short(_MM_16UB(0,a));
+                   << " [14]:" << unsigned short(_MM_16UB(14,a))
+                   << " [13]:" << unsigned short(_MM_16UB(13,a))
+                   << " [12]:" << unsigned short(_MM_16UB(12,a))
+                   << " [11]:" << unsigned short(_MM_16UB(11,a))
+                   << " [10]:" << unsigned short(_MM_16UB(10,a))
+                   << " [9]:" << unsigned short(_MM_16UB(9,a))
+                   << " [8]:" << unsigned short(_MM_16UB(8,a))
+                   << " [7]:" << unsigned short(_MM_16UB(7,a))
+                   << " [6]:" << unsigned short(_MM_16UB(6,a))
+                   << " [5]:" << unsigned short(_MM_16UB(5,a))
+                   << " [4]:" << unsigned short(_MM_16UB(4,a))
+                   << " [3]:" << unsigned short(_MM_16UB(3,a))
+                   << " [2]:" << unsigned short(_MM_16UB(2,a))
+                   << " [1]:" << unsigned short(_MM_16UB(1,a))
+                   << " [0]:" << unsigned short(_MM_16UB(0,a));
     return os;
   }
 #endif
@@ -798,7 +798,7 @@ public:
   friend std::ostream & operator<<(std::ostream & os,const F64vec2 &a) {
     double *dp = (double*)&a;
     os << " [1]:" << *(dp+1)
-      << " [0]:" << *dp;
+                   << " [0]:" << *dp;
     return os;
   }
 #endif

@@ -417,9 +417,9 @@ typedef unsigned __LONG32 error_status_t;
     void *(__RPC_API *pfnAllocate)(size_t);
     void (__RPC_API *pfnFree)(void *);
     union {
-      handle_t *pAutoHandle;
-      handle_t *pPrimitiveHandle;
-      PGENERIC_BINDING_INFO pGenericBindingInfo;
+                   handle_t *pAutoHandle;
+                   handle_t *pPrimitiveHandle;
+                   PGENERIC_BINDING_INFO pGenericBindingInfo;
     } IMPLICIT_HANDLE_INFO;
     const NDR_RUNDOWN *apfnNdrRundownRoutines;
     const GENERIC_BINDING_ROUTINE_PAIR *aGenericBindingRoutinePairs;
@@ -506,14 +506,14 @@ typedef unsigned __LONG32 error_status_t;
   typedef struct _FULL_PTR_XLAT_TABLES {
 
     struct {
-      void **XlatTable;
-      unsigned char *StateTable;
-      unsigned __LONG32 NumberOfEntries;
+                   void **XlatTable;
+                   unsigned char *StateTable;
+                   unsigned __LONG32 NumberOfEntries;
     } RefIdToPointer;
     struct {
-      PFULL_PTR_TO_REFID_ELEMENT *XlatTable;
-      unsigned __LONG32 NumberOfBuckets;
-      unsigned __LONG32 HashMask;
+                   PFULL_PTR_TO_REFID_ELEMENT *XlatTable;
+                   unsigned __LONG32 NumberOfBuckets;
+                   unsigned __LONG32 HashMask;
     } PointerToRefId;
     unsigned __LONG32 NextRefId;
     XLAT_SIDE XlatSide;
@@ -772,7 +772,7 @@ typedef unsigned __LONG32 error_status_t;
   typedef struct _NDR_USER_MARSHAL_INFO {
     unsigned __LONG32 InformationLevel;
     __C89_NAMELESS union {
-      NDR_USER_MARSHAL_INFO_LEVEL1 Level1;
+                   NDR_USER_MARSHAL_INFO_LEVEL1 Level1;
     };
   } NDR_USER_MARSHAL_INFO;
 

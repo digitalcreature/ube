@@ -166,15 +166,15 @@ extern "C" {
 
   typedef struct {
     BYTE
-      bCla,bIns,bP1,bP2,bP3;
+                   bCla,bIns,bP1,bP2,bP3;
   } SCARD_T0_COMMAND,*LPSCARD_T0_COMMAND;
 
   typedef struct {
     SCARD_IO_REQUEST ioRequest;
     BYTE bSw1,bSw2;
     __C89_NAMELESS union {
-      SCARD_T0_COMMAND CmdBytes;
-      BYTE rgbHeader[5];
+                   SCARD_T0_COMMAND CmdBytes;
+                   BYTE rgbHeader[5];
     };
   } SCARD_T0_REQUEST;
 

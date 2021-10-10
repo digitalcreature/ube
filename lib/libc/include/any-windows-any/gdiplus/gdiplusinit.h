@@ -34,8 +34,8 @@ typedef struct GdiplusStartupInput {
 
 	#ifdef __cplusplus
 	GdiplusStartupInput(DebugEventProc debugEventCallback = NULL,
-	                    BOOL suppressBackgroundThread = FALSE,
-	                    BOOL suppressExternalCodecs = FALSE):
+	                                                           BOOL suppressBackgroundThread = FALSE,
+	                                                           BOOL suppressExternalCodecs = FALSE):
 		GdiplusVersion(1),
 		DebugEventCallback(debugEventCallback),
 		SuppressBackgroundThread(suppressBackgroundThread),

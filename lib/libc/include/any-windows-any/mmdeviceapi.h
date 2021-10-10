@@ -153,23 +153,23 @@ MIDL_INTERFACE("7991eec9-7e89-4d85-8390-6c703cec60c0")
 IMMNotificationClient : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnDeviceStateChanged(
-        LPCWSTR pwstrDeviceId,
-        DWORD dwNewState) = 0;
+                     LPCWSTR pwstrDeviceId,
+                     DWORD dwNewState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDeviceAdded(
-        LPCWSTR pwstrDeviceId) = 0;
+                     LPCWSTR pwstrDeviceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDeviceRemoved(
-        LPCWSTR pwstrDeviceId) = 0;
+                     LPCWSTR pwstrDeviceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDefaultDeviceChanged(
-        EDataFlow flow,
-        ERole role,
-        LPCWSTR pwstrDeviceId) = 0;
+                     EDataFlow flow,
+                     ERole role,
+                     LPCWSTR pwstrDeviceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPropertyValueChanged(
-        LPCWSTR pwstrDeviceId,
-        const PROPERTYKEY key) = 0;
+                     LPCWSTR pwstrDeviceId,
+                     const PROPERTYKEY key) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -181,40 +181,40 @@ typedef struct IMMNotificationClientVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMMNotificationClient *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMMNotificationClient *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMMNotificationClient *This);
+                     IMMNotificationClient *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMMNotificationClient *This);
+                     IMMNotificationClient *This);
 
     /*** IMMNotificationClient methods ***/
     HRESULT (STDMETHODCALLTYPE *OnDeviceStateChanged)(
-        IMMNotificationClient *This,
-        LPCWSTR pwstrDeviceId,
-        DWORD dwNewState);
+                     IMMNotificationClient *This,
+                     LPCWSTR pwstrDeviceId,
+                     DWORD dwNewState);
 
     HRESULT (STDMETHODCALLTYPE *OnDeviceAdded)(
-        IMMNotificationClient *This,
-        LPCWSTR pwstrDeviceId);
+                     IMMNotificationClient *This,
+                     LPCWSTR pwstrDeviceId);
 
     HRESULT (STDMETHODCALLTYPE *OnDeviceRemoved)(
-        IMMNotificationClient *This,
-        LPCWSTR pwstrDeviceId);
+                     IMMNotificationClient *This,
+                     LPCWSTR pwstrDeviceId);
 
     HRESULT (STDMETHODCALLTYPE *OnDefaultDeviceChanged)(
-        IMMNotificationClient *This,
-        EDataFlow flow,
-        ERole role,
-        LPCWSTR pwstrDeviceId);
+                     IMMNotificationClient *This,
+                     EDataFlow flow,
+                     ERole role,
+                     LPCWSTR pwstrDeviceId);
 
     HRESULT (STDMETHODCALLTYPE *OnPropertyValueChanged)(
-        IMMNotificationClient *This,
-        LPCWSTR pwstrDeviceId,
-        const PROPERTYKEY key);
+                     IMMNotificationClient *This,
+                     LPCWSTR pwstrDeviceId,
+                     const PROPERTYKEY key);
 
     END_INTERFACE
 } IMMNotificationClientVtbl;
@@ -282,20 +282,20 @@ MIDL_INTERFACE("d666063f-1587-4e43-81f1-b948e807363f")
 IMMDevice : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Activate(
-        REFIID iid,
-        DWORD dwClsCtx,
-        PROPVARIANT *pActivationParams,
-        void **ppv) = 0;
+                     REFIID iid,
+                     DWORD dwClsCtx,
+                     PROPVARIANT *pActivationParams,
+                     void **ppv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenPropertyStore(
-        DWORD stgmAccess,
-        IPropertyStore **ppProperties) = 0;
+                     DWORD stgmAccess,
+                     IPropertyStore **ppProperties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetId(
-        LPWSTR *ppstrId) = 0;
+                     LPWSTR *ppstrId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        DWORD *pdwState) = 0;
+                     DWORD *pdwState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -307,36 +307,36 @@ typedef struct IMMDeviceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMMDevice *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMMDevice *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMMDevice *This);
+                     IMMDevice *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMMDevice *This);
+                     IMMDevice *This);
 
     /*** IMMDevice methods ***/
     HRESULT (STDMETHODCALLTYPE *Activate)(
-        IMMDevice *This,
-        REFIID iid,
-        DWORD dwClsCtx,
-        PROPVARIANT *pActivationParams,
-        void **ppv);
+                     IMMDevice *This,
+                     REFIID iid,
+                     DWORD dwClsCtx,
+                     PROPVARIANT *pActivationParams,
+                     void **ppv);
 
     HRESULT (STDMETHODCALLTYPE *OpenPropertyStore)(
-        IMMDevice *This,
-        DWORD stgmAccess,
-        IPropertyStore **ppProperties);
+                     IMMDevice *This,
+                     DWORD stgmAccess,
+                     IPropertyStore **ppProperties);
 
     HRESULT (STDMETHODCALLTYPE *GetId)(
-        IMMDevice *This,
-        LPWSTR *ppstrId);
+                     IMMDevice *This,
+                     LPWSTR *ppstrId);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IMMDevice *This,
-        DWORD *pdwState);
+                     IMMDevice *This,
+                     DWORD *pdwState);
 
     END_INTERFACE
 } IMMDeviceVtbl;
@@ -400,11 +400,11 @@ MIDL_INTERFACE("0bd7a1be-7a1a-44db-8397-cc5392387b5e")
 IMMDeviceCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT *pcDevices) = 0;
+                     UINT *pcDevices) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        UINT nDevice,
-        IMMDevice **ppdevice) = 0;
+                     UINT nDevice,
+                     IMMDevice **ppdevice) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -416,25 +416,25 @@ typedef struct IMMDeviceCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMMDeviceCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMMDeviceCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMMDeviceCollection *This);
+                     IMMDeviceCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMMDeviceCollection *This);
+                     IMMDeviceCollection *This);
 
     /*** IMMDeviceCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IMMDeviceCollection *This,
-        UINT *pcDevices);
+                     IMMDeviceCollection *This,
+                     UINT *pcDevices);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IMMDeviceCollection *This,
-        UINT nDevice,
-        IMMDevice **ppdevice);
+                     IMMDeviceCollection *This,
+                     UINT nDevice,
+                     IMMDevice **ppdevice);
 
     END_INTERFACE
 } IMMDeviceCollectionVtbl;
@@ -490,7 +490,7 @@ MIDL_INTERFACE("1be09788-6894-4089-8586-9a2a6c265ac5")
 IMMEndpoint : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDataFlow(
-        EDataFlow *pDataFlow) = 0;
+                     EDataFlow *pDataFlow) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -502,20 +502,20 @@ typedef struct IMMEndpointVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMMEndpoint *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMMEndpoint *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMMEndpoint *This);
+                     IMMEndpoint *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMMEndpoint *This);
+                     IMMEndpoint *This);
 
     /*** IMMEndpoint methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDataFlow)(
-        IMMEndpoint *This,
-        EDataFlow *pDataFlow);
+                     IMMEndpoint *This,
+                     EDataFlow *pDataFlow);
 
     END_INTERFACE
 } IMMEndpointVtbl;
@@ -567,24 +567,24 @@ MIDL_INTERFACE("a95664d2-9614-4f35-a746-de8db63617e6")
 IMMDeviceEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnumAudioEndpoints(
-        EDataFlow dataFlow,
-        DWORD dwStateMask,
-        IMMDeviceCollection **ppDevices) = 0;
+                     EDataFlow dataFlow,
+                     DWORD dwStateMask,
+                     IMMDeviceCollection **ppDevices) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultAudioEndpoint(
-        EDataFlow dataFlow,
-        ERole role,
-        IMMDevice **ppEndpoint) = 0;
+                     EDataFlow dataFlow,
+                     ERole role,
+                     IMMDevice **ppEndpoint) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDevice(
-        LPCWSTR pwstrId,
-        IMMDevice **ppDevice) = 0;
+                     LPCWSTR pwstrId,
+                     IMMDevice **ppDevice) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterEndpointNotificationCallback(
-        IMMNotificationClient *pClient) = 0;
+                     IMMNotificationClient *pClient) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterEndpointNotificationCallback(
-        IMMNotificationClient *pClient) = 0;
+                     IMMNotificationClient *pClient) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -596,41 +596,41 @@ typedef struct IMMDeviceEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMMDeviceEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMMDeviceEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMMDeviceEnumerator *This);
+                     IMMDeviceEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMMDeviceEnumerator *This);
+                     IMMDeviceEnumerator *This);
 
     /*** IMMDeviceEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumAudioEndpoints)(
-        IMMDeviceEnumerator *This,
-        EDataFlow dataFlow,
-        DWORD dwStateMask,
-        IMMDeviceCollection **ppDevices);
+                     IMMDeviceEnumerator *This,
+                     EDataFlow dataFlow,
+                     DWORD dwStateMask,
+                     IMMDeviceCollection **ppDevices);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultAudioEndpoint)(
-        IMMDeviceEnumerator *This,
-        EDataFlow dataFlow,
-        ERole role,
-        IMMDevice **ppEndpoint);
+                     IMMDeviceEnumerator *This,
+                     EDataFlow dataFlow,
+                     ERole role,
+                     IMMDevice **ppEndpoint);
 
     HRESULT (STDMETHODCALLTYPE *GetDevice)(
-        IMMDeviceEnumerator *This,
-        LPCWSTR pwstrId,
-        IMMDevice **ppDevice);
+                     IMMDeviceEnumerator *This,
+                     LPCWSTR pwstrId,
+                     IMMDevice **ppDevice);
 
     HRESULT (STDMETHODCALLTYPE *RegisterEndpointNotificationCallback)(
-        IMMDeviceEnumerator *This,
-        IMMNotificationClient *pClient);
+                     IMMDeviceEnumerator *This,
+                     IMMNotificationClient *pClient);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterEndpointNotificationCallback)(
-        IMMDeviceEnumerator *This,
-        IMMNotificationClient *pClient);
+                     IMMDeviceEnumerator *This,
+                     IMMNotificationClient *pClient);
 
     END_INTERFACE
 } IMMDeviceEnumeratorVtbl;
@@ -698,10 +698,10 @@ MIDL_INTERFACE("3b0d0ea4-d0a9-4b0e-935b-09516746fac0")
 IMMDeviceActivator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Activate(
-        REFIID iid,
-        IMMDevice *pDevice,
-        PROPVARIANT *pActivationParams,
-        void **ppv) = 0;
+                     REFIID iid,
+                     IMMDevice *pDevice,
+                     PROPVARIANT *pActivationParams,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -713,23 +713,23 @@ typedef struct IMMDeviceActivatorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMMDeviceActivator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMMDeviceActivator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMMDeviceActivator *This);
+                     IMMDeviceActivator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMMDeviceActivator *This);
+                     IMMDeviceActivator *This);
 
     /*** IMMDeviceActivator methods ***/
     HRESULT (STDMETHODCALLTYPE *Activate)(
-        IMMDeviceActivator *This,
-        REFIID iid,
-        IMMDevice *pDevice,
-        PROPVARIANT *pActivationParams,
-        void **ppv);
+                     IMMDeviceActivator *This,
+                     REFIID iid,
+                     IMMDevice *pDevice,
+                     PROPVARIANT *pActivationParams,
+                     void **ppv);
 
     END_INTERFACE
 } IMMDeviceActivatorVtbl;

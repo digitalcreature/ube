@@ -234,20 +234,20 @@ extern "C" {
 #else
   typedef struct IMSIMHostVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSIMHost *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSIMHost *This);
-      ULONG (WINAPI *Release)(IMSIMHost *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSIMHost *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSIMHost *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSIMHost *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSIMHost *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *CreateContext)(IMSIMHost *This,VARIANT Profile,VARIANT Flags,IDispatch **ppInterface);
-      HRESULT (WINAPI *ShowOptions)(IMSIMHost *This);
-      HRESULT (WINAPI *get_Profiles)(IMSIMHost *This,IDispatch **pProfile);
-      HRESULT (WINAPI *HostWindow)(IMSIMHost *This,BSTR bstrControl,__LONG32 lStyle,VARIANT_BOOL fShowOnTaskbar,IDispatch **ppMSIMWnd);
-      HRESULT (WINAPI *CreateProfile)(IMSIMHost *This,BSTR bstrProfile,IDispatch **ppProfile);
-      HRESULT (WINAPI *PopupMessage)(IMSIMHost *This,BSTR bstrMessage,__LONG32 nTimeout,VARIANT_BOOL fClick,__LONG32 *plCookie);
-      HRESULT (WINAPI *HostWindowEx)(IMSIMHost *This,BSTR bstrControl,__LONG32 lStyle,__LONG32 lExStyle,IStream *pStream,IMSIMWindow **ppMSIMWindow,IUnknown **ppUnk,REFIID iidAdvise,IUnknown *punkSink);
+                   HRESULT (WINAPI *QueryInterface)(IMSIMHost *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSIMHost *This);
+                   ULONG (WINAPI *Release)(IMSIMHost *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSIMHost *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSIMHost *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSIMHost *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSIMHost *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *CreateContext)(IMSIMHost *This,VARIANT Profile,VARIANT Flags,IDispatch **ppInterface);
+                   HRESULT (WINAPI *ShowOptions)(IMSIMHost *This);
+                   HRESULT (WINAPI *get_Profiles)(IMSIMHost *This,IDispatch **pProfile);
+                   HRESULT (WINAPI *HostWindow)(IMSIMHost *This,BSTR bstrControl,__LONG32 lStyle,VARIANT_BOOL fShowOnTaskbar,IDispatch **ppMSIMWnd);
+                   HRESULT (WINAPI *CreateProfile)(IMSIMHost *This,BSTR bstrProfile,IDispatch **ppProfile);
+                   HRESULT (WINAPI *PopupMessage)(IMSIMHost *This,BSTR bstrMessage,__LONG32 nTimeout,VARIANT_BOOL fClick,__LONG32 *plCookie);
+                   HRESULT (WINAPI *HostWindowEx)(IMSIMHost *This,BSTR bstrControl,__LONG32 lStyle,__LONG32 lExStyle,IStream *pStream,IMSIMWindow **ppMSIMWindow,IUnknown **ppUnk,REFIID iidAdvise,IUnknown *punkSink);
     END_INTERFACE
   } IMSIMHostVtbl;
   struct IMSIMHost {
@@ -295,13 +295,13 @@ extern "C" {
 #else
   typedef struct DMSIMHostEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DMSIMHostEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DMSIMHostEvents *This);
-      ULONG (WINAPI *Release)(DMSIMHostEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(DMSIMHostEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(DMSIMHostEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(DMSIMHostEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(DMSIMHostEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(DMSIMHostEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DMSIMHostEvents *This);
+                   ULONG (WINAPI *Release)(DMSIMHostEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(DMSIMHostEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(DMSIMHostEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(DMSIMHostEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(DMSIMHostEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } DMSIMHostEventsVtbl;
   struct DMSIMHostEvents {
@@ -344,27 +344,27 @@ extern "C" {
 #else
   typedef struct IMSIMWindowVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSIMWindow *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSIMWindow *This);
-      ULONG (WINAPI *Release)(IMSIMWindow *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSIMWindow *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSIMWindow *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSIMWindow *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSIMWindow *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Object)(IMSIMWindow *This,IDispatch **ppDisp);
-      HRESULT (WINAPI *Move)(IMSIMWindow *This,__LONG32 nX,__LONG32 nY,__LONG32 nWidth,__LONG32 nHeight);
-      HRESULT (WINAPI *Focus)(IMSIMWindow *This);
-      HRESULT (WINAPI *Show)(IMSIMWindow *This);
-      HRESULT (WINAPI *Hide)(IMSIMWindow *This);
-      HRESULT (WINAPI *get_Title)(IMSIMWindow *This,BSTR *pVal);
-      HRESULT (WINAPI *put_Title)(IMSIMWindow *This,BSTR newVal);
-      HRESULT (WINAPI *Close)(IMSIMWindow *This);
-      HRESULT (WINAPI *get_HasFocus)(IMSIMWindow *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_IsVisible)(IMSIMWindow *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *GetPosition)(IMSIMWindow *This,VARIANT *pvarX,VARIANT *pvarY,VARIANT *pvarWidth,VARIANT *pvarHeight);
-      HRESULT (WINAPI *get_TopMost)(IMSIMWindow *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_TopMost)(IMSIMWindow *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_Window)(IMSIMWindow *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *QueryInterface)(IMSIMWindow *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSIMWindow *This);
+                   ULONG (WINAPI *Release)(IMSIMWindow *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSIMWindow *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSIMWindow *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSIMWindow *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSIMWindow *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Object)(IMSIMWindow *This,IDispatch **ppDisp);
+                   HRESULT (WINAPI *Move)(IMSIMWindow *This,__LONG32 nX,__LONG32 nY,__LONG32 nWidth,__LONG32 nHeight);
+                   HRESULT (WINAPI *Focus)(IMSIMWindow *This);
+                   HRESULT (WINAPI *Show)(IMSIMWindow *This);
+                   HRESULT (WINAPI *Hide)(IMSIMWindow *This);
+                   HRESULT (WINAPI *get_Title)(IMSIMWindow *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_Title)(IMSIMWindow *This,BSTR newVal);
+                   HRESULT (WINAPI *Close)(IMSIMWindow *This);
+                   HRESULT (WINAPI *get_HasFocus)(IMSIMWindow *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_IsVisible)(IMSIMWindow *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *GetPosition)(IMSIMWindow *This,VARIANT *pvarX,VARIANT *pvarY,VARIANT *pvarWidth,VARIANT *pvarHeight);
+                   HRESULT (WINAPI *get_TopMost)(IMSIMWindow *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_TopMost)(IMSIMWindow *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_Window)(IMSIMWindow *This,__LONG32 *pVal);
     END_INTERFACE
   } IMSIMWindowVtbl;
   struct IMSIMWindow {
@@ -433,13 +433,13 @@ extern "C" {
 #else
   typedef struct DMSIMWindowEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DMSIMWindowEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DMSIMWindowEvents *This);
-      ULONG (WINAPI *Release)(DMSIMWindowEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(DMSIMWindowEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(DMSIMWindowEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(DMSIMWindowEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(DMSIMWindowEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(DMSIMWindowEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DMSIMWindowEvents *This);
+                   ULONG (WINAPI *Release)(DMSIMWindowEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(DMSIMWindowEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(DMSIMWindowEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(DMSIMWindowEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(DMSIMWindowEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } DMSIMWindowEventsVtbl;
   struct DMSIMWindowEvents {
@@ -487,33 +487,33 @@ extern "C" {
 #else
   typedef struct IIMServiceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIMService *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIMService *This);
-      ULONG (WINAPI *Release)(IIMService *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IIMService *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IIMService *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IIMService *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IIMService *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Server)(IIMService *This,BSTR *pbstrName);
-      HRESULT (WINAPI *get_IMAddress)(IIMService *This,BSTR *pbstrName);
-      HRESULT (WINAPI *put_FriendlyName)(IIMService *This,BSTR bstrName);
-      HRESULT (WINAPI *get_FriendlyName)(IIMService *This,BSTR *pbstrName);
-      HRESULT (WINAPI *Logoff)(IIMService *This);
-      HRESULT (WINAPI *FindContact)(IIMService *This,BSTR bstrFirstName,BSTR bstrLastName,BSTR bstrAlias,BSTR bstrCity,BSTR bstrState,BSTR bstrCountry,LONG *plCookie);
-      HRESULT (WINAPI *Logon)(IIMService *This,VARIANT varParameter);
-      HRESULT (WINAPI *CreateContact)(IIMService *This,BSTR bstrAlias,IDispatch **ppContact);
-      HRESULT (WINAPI *SetLocalState)(IIMService *This,__LONG32 lState,BSTR bstrDescription,VARIANT varData);
-      HRESULT (WINAPI *GetLocalState)(IIMService *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
-      HRESULT (WINAPI *CreateIMSession)(IIMService *This,VARIANT varIMContact,IDispatch **ppIMSession);
-      HRESULT (WINAPI *get_IMSessions)(IIMService *This,IDispatch **ppIMSessions);
-      HRESULT (WINAPI *NewList)(IIMService *This,BSTR bstrListName,__LONG32 bfProperties,IDispatch **ppList);
-      HRESULT (WINAPI *List)(IIMService *This,BSTR bstrListName,IDispatch **ppList);
-      HRESULT (WINAPI *RemoveList)(IIMService *This,BSTR bstrListName);
-      HRESULT (WINAPI *SendNetMeetingInvite)(IIMService *This,VARIANT varContact,__LONG32 lInviteCookie,__LONG32 *plSendCookie);
-      HRESULT (WINAPI *SendNetMeetingAccept)(IIMService *This,VARIANT varContact,__LONG32 lInviteCookie,__LONG32 lInviteType,__LONG32 *plSendCookie);
-      HRESULT (WINAPI *SendNetMeetingCancel)(IIMService *This,VARIANT varContact,__LONG32 lInviteCookie,__LONG32 hrReason,__LONG32 *plSendCookie);
-      HRESULT (WINAPI *get_BlockByDefault)(IIMService *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_BlockByDefault)(IIMService *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *QueryInterface)(IIMService *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIMService *This);
+                   ULONG (WINAPI *Release)(IIMService *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IIMService *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IIMService *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IIMService *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IIMService *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Server)(IIMService *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *get_IMAddress)(IIMService *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *put_FriendlyName)(IIMService *This,BSTR bstrName);
+                   HRESULT (WINAPI *get_FriendlyName)(IIMService *This,BSTR *pbstrName);
+                   HRESULT (WINAPI *Logoff)(IIMService *This);
+                   HRESULT (WINAPI *FindContact)(IIMService *This,BSTR bstrFirstName,BSTR bstrLastName,BSTR bstrAlias,BSTR bstrCity,BSTR bstrState,BSTR bstrCountry,LONG *plCookie);
+                   HRESULT (WINAPI *Logon)(IIMService *This,VARIANT varParameter);
+                   HRESULT (WINAPI *CreateContact)(IIMService *This,BSTR bstrAlias,IDispatch **ppContact);
+                   HRESULT (WINAPI *SetLocalState)(IIMService *This,__LONG32 lState,BSTR bstrDescription,VARIANT varData);
+                   HRESULT (WINAPI *GetLocalState)(IIMService *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
+                   HRESULT (WINAPI *CreateIMSession)(IIMService *This,VARIANT varIMContact,IDispatch **ppIMSession);
+                   HRESULT (WINAPI *get_IMSessions)(IIMService *This,IDispatch **ppIMSessions);
+                   HRESULT (WINAPI *NewList)(IIMService *This,BSTR bstrListName,__LONG32 bfProperties,IDispatch **ppList);
+                   HRESULT (WINAPI *List)(IIMService *This,BSTR bstrListName,IDispatch **ppList);
+                   HRESULT (WINAPI *RemoveList)(IIMService *This,BSTR bstrListName);
+                   HRESULT (WINAPI *SendNetMeetingInvite)(IIMService *This,VARIANT varContact,__LONG32 lInviteCookie,__LONG32 *plSendCookie);
+                   HRESULT (WINAPI *SendNetMeetingAccept)(IIMService *This,VARIANT varContact,__LONG32 lInviteCookie,__LONG32 lInviteType,__LONG32 *plSendCookie);
+                   HRESULT (WINAPI *SendNetMeetingCancel)(IIMService *This,VARIANT varContact,__LONG32 lInviteCookie,__LONG32 hrReason,__LONG32 *plSendCookie);
+                   HRESULT (WINAPI *get_BlockByDefault)(IIMService *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_BlockByDefault)(IIMService *This,VARIANT_BOOL newVal);
     END_INTERFACE
   } IIMServiceVtbl;
   struct IIMService {
@@ -600,13 +600,13 @@ extern "C" {
 #else
   typedef struct DIMServiceEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DIMServiceEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DIMServiceEvents *This);
-      ULONG (WINAPI *Release)(DIMServiceEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(DIMServiceEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(DIMServiceEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(DIMServiceEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(DIMServiceEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(DIMServiceEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DIMServiceEvents *This);
+                   ULONG (WINAPI *Release)(DIMServiceEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(DIMServiceEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(DIMServiceEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(DIMServiceEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(DIMServiceEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } DIMServiceEventsVtbl;
   struct DIMServiceEvents {
@@ -641,20 +641,20 @@ extern "C" {
 #else
   typedef struct IIMContactVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIMContact *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIMContact *This);
-      ULONG (WINAPI *Release)(IIMContact *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IIMContact *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IIMContact *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IIMContact *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IIMContact *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_FriendlyName)(IIMContact *This,BSTR bstrFriendlyName);
-      HRESULT (WINAPI *get_FriendlyName)(IIMContact *This,BSTR *pbstrFriendlyName);
-      HRESULT (WINAPI *get_EmailAddress)(IIMContact *This,BSTR *pbstrEmailAddress);
-      HRESULT (WINAPI *get_State)(IIMContact *This,IM_STATE *pmState);
-      HRESULT (WINAPI *get_LogonName)(IIMContact *This,BSTR *pbstrLogonName);
-      HRESULT (WINAPI *SendText)(IIMContact *This,BSTR bstrMsgHeader,BSTR bstrMsgText,IM_MSG_TYPE MsgType,LONG *plCookie);
-      HRESULT (WINAPI *get_Service)(IIMContact *This,IDispatch **ppService);
+                   HRESULT (WINAPI *QueryInterface)(IIMContact *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIMContact *This);
+                   ULONG (WINAPI *Release)(IIMContact *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IIMContact *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IIMContact *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IIMContact *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IIMContact *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_FriendlyName)(IIMContact *This,BSTR bstrFriendlyName);
+                   HRESULT (WINAPI *get_FriendlyName)(IIMContact *This,BSTR *pbstrFriendlyName);
+                   HRESULT (WINAPI *get_EmailAddress)(IIMContact *This,BSTR *pbstrEmailAddress);
+                   HRESULT (WINAPI *get_State)(IIMContact *This,IM_STATE *pmState);
+                   HRESULT (WINAPI *get_LogonName)(IIMContact *This,BSTR *pbstrLogonName);
+                   HRESULT (WINAPI *SendText)(IIMContact *This,BSTR bstrMsgHeader,BSTR bstrMsgText,IM_MSG_TYPE MsgType,LONG *plCookie);
+                   HRESULT (WINAPI *get_Service)(IIMContact *This,IDispatch **ppService);
     END_INTERFACE
   } IIMContactVtbl;
   struct IIMContact {
@@ -712,22 +712,22 @@ extern "C" {
 #else
   typedef struct IIMContactsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIMContacts *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIMContacts *This);
-      ULONG (WINAPI *Release)(IIMContacts *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IIMContacts *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IIMContacts *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IIMContacts *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IIMContacts *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Item)(IIMContacts *This,VARIANT varItem,IDispatch **ppContact);
-      HRESULT (WINAPI *get_Count)(IIMContacts *This,__LONG32 *pVal);
-      HRESULT (WINAPI *Add)(IIMContacts *This,IDispatch *pContact);
-      HRESULT (WINAPI *Remove)(IIMContacts *This,IDispatch *pContact);
-      HRESULT (WINAPI *get_Name)(IIMContacts *This,BSTR *pVal);
-      HRESULT (WINAPI *put_Name)(IIMContacts *This,BSTR newVal);
-      HRESULT (WINAPI *get_Properties)(IIMContacts *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_Cookie)(IIMContacts *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get__NewEnum)(IIMContacts *This,IUnknown **ppVal);
+                   HRESULT (WINAPI *QueryInterface)(IIMContacts *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIMContacts *This);
+                   ULONG (WINAPI *Release)(IIMContacts *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IIMContacts *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IIMContacts *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IIMContacts *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IIMContacts *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Item)(IIMContacts *This,VARIANT varItem,IDispatch **ppContact);
+                   HRESULT (WINAPI *get_Count)(IIMContacts *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *Add)(IIMContacts *This,IDispatch *pContact);
+                   HRESULT (WINAPI *Remove)(IIMContacts *This,IDispatch *pContact);
+                   HRESULT (WINAPI *get_Name)(IIMContacts *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_Name)(IIMContacts *This,BSTR newVal);
+                   HRESULT (WINAPI *get_Properties)(IIMContacts *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_Cookie)(IIMContacts *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get__NewEnum)(IIMContacts *This,IUnknown **ppVal);
     END_INTERFACE
   } IIMContactsVtbl;
   struct IIMContacts {
@@ -789,20 +789,20 @@ extern "C" {
 #else
   typedef struct IIMSessionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIMSession *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIMSession *This);
-      ULONG (WINAPI *Release)(IIMSession *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IIMSession *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IIMSession *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IIMSession *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IIMSession *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Members)(IIMSession *This,IDispatch **ppMembers);
-      HRESULT (WINAPI *get_State)(IIMSession *This,IM_SSTATE *psState);
-      HRESULT (WINAPI *get_Service)(IIMSession *This,IDispatch **ppService);
-      HRESULT (WINAPI *get_Invitees)(IIMSession *This,IDispatch **ppInvitees);
-      HRESULT (WINAPI *LeaveSession)(IIMSession *This);
-      HRESULT (WINAPI *InviteContact)(IIMSession *This,VARIANT vContact);
-      HRESULT (WINAPI *SendText)(IIMSession *This,BSTR bstrMsgHeader,BSTR bstrMsgText,IM_MSG_TYPE MsgType,LONG *plCookie);
+                   HRESULT (WINAPI *QueryInterface)(IIMSession *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIMSession *This);
+                   ULONG (WINAPI *Release)(IIMSession *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IIMSession *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IIMSession *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IIMSession *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IIMSession *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Members)(IIMSession *This,IDispatch **ppMembers);
+                   HRESULT (WINAPI *get_State)(IIMSession *This,IM_SSTATE *psState);
+                   HRESULT (WINAPI *get_Service)(IIMSession *This,IDispatch **ppService);
+                   HRESULT (WINAPI *get_Invitees)(IIMSession *This,IDispatch **ppInvitees);
+                   HRESULT (WINAPI *LeaveSession)(IIMSession *This);
+                   HRESULT (WINAPI *InviteContact)(IIMSession *This,VARIANT vContact);
+                   HRESULT (WINAPI *SendText)(IIMSession *This,BSTR bstrMsgHeader,BSTR bstrMsgText,IM_MSG_TYPE MsgType,LONG *plCookie);
     END_INTERFACE
   } IIMSessionVtbl;
   struct IIMSession {
@@ -854,16 +854,16 @@ extern "C" {
 #else
   typedef struct IIMSessionsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIMSessions *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIMSessions *This);
-      ULONG (WINAPI *Release)(IIMSessions *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IIMSessions *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IIMSessions *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IIMSessions *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IIMSessions *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(IIMSessions *This,__LONG32 *pcSessions);
-      HRESULT (WINAPI *Item)(IIMSessions *This,__LONG32 Index,IDispatch **ppIMSession);
-      HRESULT (WINAPI *get__NewEnum)(IIMSessions *This,IUnknown **ppUnknown);
+                   HRESULT (WINAPI *QueryInterface)(IIMSessions *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIMSessions *This);
+                   ULONG (WINAPI *Release)(IIMSessions *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IIMSessions *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IIMSessions *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IIMSessions *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IIMSessions *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(IIMSessions *This,__LONG32 *pcSessions);
+                   HRESULT (WINAPI *Item)(IIMSessions *This,__LONG32 Index,IDispatch **ppIMSession);
+                   HRESULT (WINAPI *get__NewEnum)(IIMSessions *This,IUnknown **ppUnknown);
     END_INTERFACE
   } IIMSessionsVtbl;
   struct IIMSessions {

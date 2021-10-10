@@ -28,10 +28,10 @@
 extern "C" {
 #endif
 
-#define DD_CHANGER_DEVICE_NAME            "\\Device\\Changer"
-#define DD_CHANGER_DEVICE_NAME_U          L"\\Device\\Changer"
+#define DD_CHANGER_DEVICE_NAME                                      "\\Device\\Changer"
+#define DD_CHANGER_DEVICE_NAME_U                       L"\\Device\\Changer"
 
-#define IOCTL_CHANGER_BASE                FILE_DEVICE_CHANGER
+#define IOCTL_CHANGER_BASE                                          FILE_DEVICE_CHANGER
 
 #define IOCTL_CHANGER_EXCHANGE_MEDIUM \
   CTL_CODE(IOCTL_CHANGER_BASE, 0x0008, METHOD_BUFFERED, FILE_READ_ACCESS)
@@ -66,114 +66,114 @@ extern "C" {
 #define IOCTL_CHANGER_SET_POSITION \
   CTL_CODE(IOCTL_CHANGER_BASE, 0x0007, METHOD_BUFFERED, FILE_READ_ACCESS)
 
-#define MAX_VOLUME_ID_SIZE                36
-#define MAX_VOLUME_TEMPLATE_SIZE          40
+#define MAX_VOLUME_ID_SIZE                                          36
+#define MAX_VOLUME_TEMPLATE_SIZE                       40
 
-#define VENDOR_ID_LENGTH                  8
-#define PRODUCT_ID_LENGTH                 16
-#define REVISION_LENGTH                   4
-#define SERIAL_NUMBER_LENGTH              32
+#define VENDOR_ID_LENGTH                                                         8
+#define PRODUCT_ID_LENGTH                                           16
+#define REVISION_LENGTH                                                          4
+#define SERIAL_NUMBER_LENGTH                                        32
 
 /* GET_CHANGER_PARAMETERS.Features0 constants */
 #define CHANGER_BAR_CODE_SCANNER_INSTALLED  0x00000001
 #define CHANGER_INIT_ELEM_STAT_WITH_RANGE   0x00000002
-#define CHANGER_CLOSE_IEPORT                0x00000004
-#define CHANGER_OPEN_IEPORT                 0x00000008
-#define CHANGER_STATUS_NON_VOLATILE         0x00000010
-#define CHANGER_EXCHANGE_MEDIA              0x00000020
-#define CHANGER_CLEANER_SLOT                0x00000040
-#define CHANGER_LOCK_UNLOCK                 0x00000080
-#define CHANGER_CARTRIDGE_MAGAZINE          0x00000100
-#define CHANGER_MEDIUM_FLIP                 0x00000200
-#define CHANGER_POSITION_TO_ELEMENT         0x00000400
-#define CHANGER_REPORT_IEPORT_STATE         0x00000800
-#define CHANGER_STORAGE_DRIVE               0x00001000
-#define CHANGER_STORAGE_IEPORT              0x00002000
-#define CHANGER_STORAGE_SLOT                0x00004000
-#define CHANGER_STORAGE_TRANSPORT           0x00008000
+#define CHANGER_CLOSE_IEPORT                                          0x00000004
+#define CHANGER_OPEN_IEPORT                                           0x00000008
+#define CHANGER_STATUS_NON_VOLATILE                      0x00000010
+#define CHANGER_EXCHANGE_MEDIA                                        0x00000020
+#define CHANGER_CLEANER_SLOT                                          0x00000040
+#define CHANGER_LOCK_UNLOCK                                           0x00000080
+#define CHANGER_CARTRIDGE_MAGAZINE                       0x00000100
+#define CHANGER_MEDIUM_FLIP                                           0x00000200
+#define CHANGER_POSITION_TO_ELEMENT                      0x00000400
+#define CHANGER_REPORT_IEPORT_STATE                      0x00000800
+#define CHANGER_STORAGE_DRIVE                                         0x00001000
+#define CHANGER_STORAGE_IEPORT                                        0x00002000
+#define CHANGER_STORAGE_SLOT                                          0x00004000
+#define CHANGER_STORAGE_TRANSPORT                        0x00008000
 #define CHANGER_DRIVE_CLEANING_REQUIRED     0x00010000
 #define CHANGER_PREDISMOUNT_EJECT_REQUIRED  0x00020000
 #define CHANGER_CLEANER_ACCESS_NOT_VALID    0x00040000
 #define CHANGER_PREMOUNT_EJECT_REQUIRED     0x00080000
-#define CHANGER_VOLUME_IDENTIFICATION       0x00100000
-#define CHANGER_VOLUME_SEARCH               0x00200000
-#define CHANGER_VOLUME_ASSERT               0x00400000
-#define CHANGER_VOLUME_REPLACE              0x00800000
-#define CHANGER_VOLUME_UNDEFINE             0x01000000
-#define CHANGER_SERIAL_NUMBER_VALID         0x04000000
+#define CHANGER_VOLUME_IDENTIFICATION                    0x00100000
+#define CHANGER_VOLUME_SEARCH                                         0x00200000
+#define CHANGER_VOLUME_ASSERT                                         0x00400000
+#define CHANGER_VOLUME_REPLACE                                        0x00800000
+#define CHANGER_VOLUME_UNDEFINE                                       0x01000000
+#define CHANGER_SERIAL_NUMBER_VALID                      0x04000000
 #define CHANGER_DEVICE_REINITIALIZE_CAPABLE 0x08000000
-#define CHANGER_KEYPAD_ENABLE_DISABLE       0x10000000
+#define CHANGER_KEYPAD_ENABLE_DISABLE                    0x10000000
 #define CHANGER_DRIVE_EMPTY_ON_DOOR_ACCESS  0x20000000
-#define CHANGER_RESERVED_BIT                0x80000000
+#define CHANGER_RESERVED_BIT                                          0x80000000
 
 /* GET_CHANGER_PARAMETERS.Features1 constants */
 #define CHANGER_PREDISMOUNT_ALIGN_TO_SLOT   0x80000001
 #define CHANGER_PREDISMOUNT_ALIGN_TO_DRIVE  0x80000002
-#define CHANGER_CLEANER_AUTODISMOUNT        0x80000004
-#define CHANGER_TRUE_EXCHANGE_CAPABLE       0x80000008
-#define CHANGER_SLOTS_USE_TRAYS             0x80000010
+#define CHANGER_CLEANER_AUTODISMOUNT                     0x80000004
+#define CHANGER_TRUE_EXCHANGE_CAPABLE                    0x80000008
+#define CHANGER_SLOTS_USE_TRAYS                                       0x80000010
 #define CHANGER_RTN_MEDIA_TO_ORIGINAL_ADDR  0x80000020
 #define CHANGER_CLEANER_OPS_NOT_SUPPORTED   0x80000040
 #define CHANGER_IEPORT_USER_CONTROL_OPEN    0x80000080
 #define CHANGER_IEPORT_USER_CONTROL_CLOSE   0x80000100
-#define CHANGER_MOVE_EXTENDS_IEPORT         0x80000200
-#define CHANGER_MOVE_RETRACTS_IEPORT        0x80000400
+#define CHANGER_MOVE_EXTENDS_IEPORT                      0x80000200
+#define CHANGER_MOVE_RETRACTS_IEPORT                     0x80000400
 
 /* GET_CHANGER_PARAMETERS.MoveFrom,ExchangeFrom,PositionCapabilities constants */
-#define CHANGER_TO_TRANSPORT              0x01
-#define CHANGER_TO_SLOT                   0x02
-#define CHANGER_TO_IEPORT                 0x04
-#define CHANGER_TO_DRIVE                  0x08
+#define CHANGER_TO_TRANSPORT                                        0x01
+#define CHANGER_TO_SLOT                                                          0x02
+#define CHANGER_TO_IEPORT                                           0x04
+#define CHANGER_TO_DRIVE                                                         0x08
 
 /* GET_CHANGER_PARAMETERS.LockUnlockCapabilities constants */
-#define LOCK_UNLOCK_IEPORT                0x01
-#define LOCK_UNLOCK_DOOR                  0x02
-#define LOCK_UNLOCK_KEYPAD                0x04
+#define LOCK_UNLOCK_IEPORT                                          0x01
+#define LOCK_UNLOCK_DOOR                                                         0x02
+#define LOCK_UNLOCK_KEYPAD                                          0x04
 
 /* CHANGER_SET_ACCESS.Control constants */
-#define LOCK_ELEMENT                      0
-#define UNLOCK_ELEMENT                    1
-#define EXTEND_IEPORT                     2
-#define RETRACT_IEPORT                    3
+#define LOCK_ELEMENT                                                             0
+#define UNLOCK_ELEMENT                                                           1
+#define EXTEND_IEPORT                                                            2
+#define RETRACT_IEPORT                                                           3
 
 /* CHANGER_ELEMENT_STATUS(_EX).Flags constants */
-#define ELEMENT_STATUS_FULL               0x00000001
-#define ELEMENT_STATUS_IMPEXP             0x00000002
-#define ELEMENT_STATUS_EXCEPT             0x00000004
-#define ELEMENT_STATUS_ACCESS             0x00000008
-#define ELEMENT_STATUS_EXENAB             0x00000010
-#define ELEMENT_STATUS_INENAB             0x00000020
-#define ELEMENT_STATUS_PRODUCT_DATA       0x00000040
-#define ELEMENT_STATUS_LUN_VALID          0x00001000
-#define ELEMENT_STATUS_ID_VALID           0x00002000
-#define ELEMENT_STATUS_NOT_BUS            0x00008000
-#define ELEMENT_STATUS_INVERT             0x00400000
-#define ELEMENT_STATUS_SVALID             0x00800000
-#define ELEMENT_STATUS_PVOLTAG            0x10000000
-#define ELEMENT_STATUS_AVOLTAG            0x20000000
+#define ELEMENT_STATUS_FULL                                         0x00000001
+#define ELEMENT_STATUS_IMPEXP                                       0x00000002
+#define ELEMENT_STATUS_EXCEPT                                       0x00000004
+#define ELEMENT_STATUS_ACCESS                                       0x00000008
+#define ELEMENT_STATUS_EXENAB                                       0x00000010
+#define ELEMENT_STATUS_INENAB                                       0x00000020
+#define ELEMENT_STATUS_PRODUCT_DATA                    0x00000040
+#define ELEMENT_STATUS_LUN_VALID                       0x00001000
+#define ELEMENT_STATUS_ID_VALID                        0x00002000
+#define ELEMENT_STATUS_NOT_BUS                                      0x00008000
+#define ELEMENT_STATUS_INVERT                                       0x00400000
+#define ELEMENT_STATUS_SVALID                                       0x00800000
+#define ELEMENT_STATUS_PVOLTAG                                      0x10000000
+#define ELEMENT_STATUS_AVOLTAG                                      0x20000000
 
 /* CHANGER_ELEMENT_STATUS(_EX).ExceptionCode constants */
-#define ERROR_LABEL_UNREADABLE            0x00000001
-#define ERROR_LABEL_QUESTIONABLE          0x00000002
-#define ERROR_SLOT_NOT_PRESENT            0x00000004
-#define ERROR_DRIVE_NOT_INSTALLED         0x00000008
-#define ERROR_TRAY_MALFUNCTION            0x00000010
-#define ERROR_INIT_STATUS_NEEDED          0x00000011
-#define ERROR_UNHANDLED_ERROR             0xFFFFFFFF
+#define ERROR_LABEL_UNREADABLE                                      0x00000001
+#define ERROR_LABEL_QUESTIONABLE                       0x00000002
+#define ERROR_SLOT_NOT_PRESENT                                      0x00000004
+#define ERROR_DRIVE_NOT_INSTALLED                      0x00000008
+#define ERROR_TRAY_MALFUNCTION                                      0x00000010
+#define ERROR_INIT_STATUS_NEEDED                       0x00000011
+#define ERROR_UNHANDLED_ERROR                                       0xFFFFFFFF
 
 /* CHANGER_SEND_VOLUME_TAG_INFORMATION.ActionCode constants */
-#define SEARCH_ALL                        0x0
-#define SEARCH_PRIMARY                    0x1
-#define SEARCH_ALTERNATE                  0x2
-#define SEARCH_ALL_NO_SEQ                 0x4
-#define SEARCH_PRI_NO_SEQ                 0x5
-#define SEARCH_ALT_NO_SEQ                 0x6
-#define ASSERT_PRIMARY                    0x8
-#define ASSERT_ALTERNATE                  0x9
-#define REPLACE_PRIMARY                   0xA
-#define REPLACE_ALTERNATE                 0xB
-#define UNDEFINE_PRIMARY                  0xC
-#define UNDEFINE_ALTERNATE                0xD
+#define SEARCH_ALL                                                                            0x0
+#define SEARCH_PRIMARY                                                           0x1
+#define SEARCH_ALTERNATE                                                         0x2
+#define SEARCH_ALL_NO_SEQ                                           0x4
+#define SEARCH_PRI_NO_SEQ                                           0x5
+#define SEARCH_ALT_NO_SEQ                                           0x6
+#define ASSERT_PRIMARY                                                           0x8
+#define ASSERT_ALTERNATE                                                         0x9
+#define REPLACE_PRIMARY                                                          0xA
+#define REPLACE_ALTERNATE                                           0xB
+#define UNDEFINE_PRIMARY                                                         0xC
+#define UNDEFINE_ALTERNATE                                          0xD
 
 typedef enum _ELEMENT_TYPE {
   AllElements,

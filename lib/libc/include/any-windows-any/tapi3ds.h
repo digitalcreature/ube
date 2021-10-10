@@ -59,11 +59,11 @@ extern "C" {
 #else
   typedef struct ITAMMediaFormatVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAMMediaFormat *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAMMediaFormat *This);
-      ULONG (WINAPI *Release)(ITAMMediaFormat *This);
-      HRESULT (WINAPI *get_MediaFormat)(ITAMMediaFormat *This,AM_MEDIA_TYPE **ppmt);
-      HRESULT (WINAPI *put_MediaFormat)(ITAMMediaFormat *This,const AM_MEDIA_TYPE *pmt);
+                   HRESULT (WINAPI *QueryInterface)(ITAMMediaFormat *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAMMediaFormat *This);
+                   ULONG (WINAPI *Release)(ITAMMediaFormat *This);
+                   HRESULT (WINAPI *get_MediaFormat)(ITAMMediaFormat *This,AM_MEDIA_TYPE **ppmt);
+                   HRESULT (WINAPI *put_MediaFormat)(ITAMMediaFormat *This,const AM_MEDIA_TYPE *pmt);
     END_INTERFACE
   } ITAMMediaFormatVtbl;
   struct ITAMMediaFormat {
@@ -99,15 +99,15 @@ extern "C" {
 #else
   typedef struct ITAllocatorPropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAllocatorProperties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAllocatorProperties *This);
-      ULONG (WINAPI *Release)(ITAllocatorProperties *This);
-      HRESULT (WINAPI *SetAllocatorProperties)(ITAllocatorProperties *This,ALLOCATOR_PROPERTIES *pAllocProperties);
-      HRESULT (WINAPI *GetAllocatorProperties)(ITAllocatorProperties *This,ALLOCATOR_PROPERTIES *pAllocProperties);
-      HRESULT (WINAPI *SetAllocateBuffers)(ITAllocatorProperties *This,WINBOOL bAllocBuffers);
-      HRESULT (WINAPI *GetAllocateBuffers)(ITAllocatorProperties *This,WINBOOL *pbAllocBuffers);
-      HRESULT (WINAPI *SetBufferSize)(ITAllocatorProperties *This,DWORD BufferSize);
-      HRESULT (WINAPI *GetBufferSize)(ITAllocatorProperties *This,DWORD *pBufferSize);
+                   HRESULT (WINAPI *QueryInterface)(ITAllocatorProperties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAllocatorProperties *This);
+                   ULONG (WINAPI *Release)(ITAllocatorProperties *This);
+                   HRESULT (WINAPI *SetAllocatorProperties)(ITAllocatorProperties *This,ALLOCATOR_PROPERTIES *pAllocProperties);
+                   HRESULT (WINAPI *GetAllocatorProperties)(ITAllocatorProperties *This,ALLOCATOR_PROPERTIES *pAllocProperties);
+                   HRESULT (WINAPI *SetAllocateBuffers)(ITAllocatorProperties *This,WINBOOL bAllocBuffers);
+                   HRESULT (WINAPI *GetAllocateBuffers)(ITAllocatorProperties *This,WINBOOL *pbAllocBuffers);
+                   HRESULT (WINAPI *SetBufferSize)(ITAllocatorProperties *This,DWORD BufferSize);
+                   HRESULT (WINAPI *GetBufferSize)(ITAllocatorProperties *This,DWORD *pBufferSize);
     END_INTERFACE
   } ITAllocatorPropertiesVtbl;
   struct ITAllocatorProperties {

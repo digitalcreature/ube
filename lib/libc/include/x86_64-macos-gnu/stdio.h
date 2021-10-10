@@ -157,7 +157,7 @@ int	 fputc(int, FILE *);
 int	 fputs(const char * __restrict, FILE * __restrict) __DARWIN_ALIAS(fputs);
 size_t	 fread(void * __restrict __ptr, size_t __size, size_t __nitems, FILE * __restrict __stream);
 FILE	*freopen(const char * __restrict, const char * __restrict,
-                 FILE * __restrict) __DARWIN_ALIAS(freopen);
+                                           FILE * __restrict) __DARWIN_ALIAS(freopen);
 int	 fscanf(FILE * __restrict, const char * __restrict, ...) __scanflike(2, 3);
 int	 fseek(FILE *, long, int);
 int	 fsetpos(FILE *, const fpos_t *);
@@ -382,10 +382,10 @@ FILE	*zopen(const char *, const char *, int);
  * Stdio function-access interface.
  */
 FILE	*funopen(const void *,
-                 int (* _Nullable)(void *, char *, int),
-                 int (* _Nullable)(void *, const char *, int),
-                 fpos_t (* _Nullable)(void *, fpos_t, int),
-                 int (* _Nullable)(void *));
+                                           int (* _Nullable)(void *, char *, int),
+                                           int (* _Nullable)(void *, const char *, int),
+                                           fpos_t (* _Nullable)(void *, fpos_t, int),
+                                           int (* _Nullable)(void *));
 __END_DECLS
 #define	fropen(cookie, fn) funopen(cookie, fn, 0, 0, 0)
 #define	fwopen(cookie, fn) funopen(cookie, 0, fn, 0, 0)

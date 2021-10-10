@@ -252,13 +252,13 @@ public:
 #else
   typedef struct IEnumPStoreItemsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumPStoreItems *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumPStoreItems *This);
-      ULONG (WINAPI *Release)(IEnumPStoreItems *This);
-      HRESULT (WINAPI *Next)(IEnumPStoreItems *This,DWORD celt,LPWSTR *rgelt,DWORD *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumPStoreItems *This,DWORD celt);
-      HRESULT (WINAPI *Reset)(IEnumPStoreItems *This);
-      HRESULT (WINAPI *Clone)(IEnumPStoreItems *This,IEnumPStoreItems **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumPStoreItems *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumPStoreItems *This);
+                   ULONG (WINAPI *Release)(IEnumPStoreItems *This);
+                   HRESULT (WINAPI *Next)(IEnumPStoreItems *This,DWORD celt,LPWSTR *rgelt,DWORD *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumPStoreItems *This,DWORD celt);
+                   HRESULT (WINAPI *Reset)(IEnumPStoreItems *This);
+                   HRESULT (WINAPI *Clone)(IEnumPStoreItems *This,IEnumPStoreItems **ppenum);
     END_INTERFACE
   } IEnumPStoreItemsVtbl;
   struct IEnumPStoreItems {
@@ -298,13 +298,13 @@ public:
 #else
   typedef struct IEnumPStoreTypesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumPStoreTypes *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumPStoreTypes *This);
-      ULONG (WINAPI *Release)(IEnumPStoreTypes *This);
-      HRESULT (WINAPI *Next)(IEnumPStoreTypes *This,DWORD celt,GUID *rgelt,DWORD *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumPStoreTypes *This,DWORD celt);
-      HRESULT (WINAPI *Reset)(IEnumPStoreTypes *This);
-      HRESULT (WINAPI *Clone)(IEnumPStoreTypes *This,IEnumPStoreTypes **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumPStoreTypes *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumPStoreTypes *This);
+                   ULONG (WINAPI *Release)(IEnumPStoreTypes *This);
+                   HRESULT (WINAPI *Next)(IEnumPStoreTypes *This,DWORD celt,GUID *rgelt,DWORD *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumPStoreTypes *This,DWORD celt);
+                   HRESULT (WINAPI *Reset)(IEnumPStoreTypes *This);
+                   HRESULT (WINAPI *Clone)(IEnumPStoreTypes *This,IEnumPStoreTypes **ppenum);
     END_INTERFACE
   } IEnumPStoreTypesVtbl;
   struct IEnumPStoreTypes {
@@ -359,28 +359,28 @@ public:
 #else
   typedef struct IPStoreVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPStore *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPStore *This);
-      ULONG (WINAPI *Release)(IPStore *This);
-      HRESULT (WINAPI *GetInfo)(IPStore *This,PPST_PROVIDERINFO *ppProperties);
-      HRESULT (WINAPI *GetProvParam)(IPStore *This,DWORD dwParam,DWORD *pcbData,BYTE **ppbData,DWORD dwFlags);
-      HRESULT (WINAPI *SetProvParam)(IPStore *This,DWORD dwParam,DWORD cbData,BYTE *pbData,DWORD dwFlags);
-      HRESULT (WINAPI *CreateType)(IPStore *This,PST_KEY Key,const GUID *pType,PPST_TYPEINFO pInfo,DWORD dwFlags);
-      HRESULT (WINAPI *GetTypeInfo)(IPStore *This,PST_KEY Key,const GUID *pType,PPST_TYPEINFO *ppInfo,DWORD dwFlags);
-      HRESULT (WINAPI *DeleteType)(IPStore *This,PST_KEY Key,const GUID *pType,DWORD dwFlags);
-      HRESULT (WINAPI *CreateSubtype)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,PPST_TYPEINFO pInfo,PPST_ACCESSRULESET pRules,DWORD dwFlags);
-      HRESULT (WINAPI *GetSubtypeInfo)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,PPST_TYPEINFO *ppInfo,DWORD dwFlags);
-      HRESULT (WINAPI *DeleteSubtype)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,DWORD dwFlags);
-      HRESULT (WINAPI *ReadAccessRuleset)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,PPST_ACCESSRULESET *ppRules,DWORD dwFlags);
-      HRESULT (WINAPI *WriteAccessRuleset)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,PPST_ACCESSRULESET pRules,DWORD dwFlags);
-      HRESULT (WINAPI *EnumTypes)(IPStore *This,PST_KEY Key,DWORD dwFlags,IEnumPStoreTypes **ppenum);
-      HRESULT (WINAPI *EnumSubtypes)(IPStore *This,PST_KEY Key,const GUID *pType,DWORD dwFlags,IEnumPStoreTypes **ppenum);
-      HRESULT (WINAPI *DeleteItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,PPST_PROMPTINFO pPromptInfo,DWORD dwFlags);
-      HRESULT (WINAPI *ReadItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,DWORD *pcbData,BYTE **ppbData,PPST_PROMPTINFO pPromptInfo,DWORD dwFlags);
-      HRESULT (WINAPI *WriteItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,DWORD cbData,BYTE *pbData,PPST_PROMPTINFO pPromptInfo,DWORD dwDefaultConfirmationStyle,DWORD dwFlags);
-      HRESULT (WINAPI *OpenItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,PST_ACCESSMODE ModeFlags,PPST_PROMPTINFO pPromptInfo,DWORD dwFlags);
-      HRESULT (WINAPI *CloseItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,DWORD dwFlags);
-      HRESULT (WINAPI *EnumItems)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,DWORD dwFlags,IEnumPStoreItems **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IPStore *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPStore *This);
+                   ULONG (WINAPI *Release)(IPStore *This);
+                   HRESULT (WINAPI *GetInfo)(IPStore *This,PPST_PROVIDERINFO *ppProperties);
+                   HRESULT (WINAPI *GetProvParam)(IPStore *This,DWORD dwParam,DWORD *pcbData,BYTE **ppbData,DWORD dwFlags);
+                   HRESULT (WINAPI *SetProvParam)(IPStore *This,DWORD dwParam,DWORD cbData,BYTE *pbData,DWORD dwFlags);
+                   HRESULT (WINAPI *CreateType)(IPStore *This,PST_KEY Key,const GUID *pType,PPST_TYPEINFO pInfo,DWORD dwFlags);
+                   HRESULT (WINAPI *GetTypeInfo)(IPStore *This,PST_KEY Key,const GUID *pType,PPST_TYPEINFO *ppInfo,DWORD dwFlags);
+                   HRESULT (WINAPI *DeleteType)(IPStore *This,PST_KEY Key,const GUID *pType,DWORD dwFlags);
+                   HRESULT (WINAPI *CreateSubtype)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,PPST_TYPEINFO pInfo,PPST_ACCESSRULESET pRules,DWORD dwFlags);
+                   HRESULT (WINAPI *GetSubtypeInfo)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,PPST_TYPEINFO *ppInfo,DWORD dwFlags);
+                   HRESULT (WINAPI *DeleteSubtype)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,DWORD dwFlags);
+                   HRESULT (WINAPI *ReadAccessRuleset)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,PPST_ACCESSRULESET *ppRules,DWORD dwFlags);
+                   HRESULT (WINAPI *WriteAccessRuleset)(IPStore *This,PST_KEY Key,const GUID *pType,const GUID *pSubtype,PPST_ACCESSRULESET pRules,DWORD dwFlags);
+                   HRESULT (WINAPI *EnumTypes)(IPStore *This,PST_KEY Key,DWORD dwFlags,IEnumPStoreTypes **ppenum);
+                   HRESULT (WINAPI *EnumSubtypes)(IPStore *This,PST_KEY Key,const GUID *pType,DWORD dwFlags,IEnumPStoreTypes **ppenum);
+                   HRESULT (WINAPI *DeleteItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,PPST_PROMPTINFO pPromptInfo,DWORD dwFlags);
+                   HRESULT (WINAPI *ReadItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,DWORD *pcbData,BYTE **ppbData,PPST_PROMPTINFO pPromptInfo,DWORD dwFlags);
+                   HRESULT (WINAPI *WriteItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,DWORD cbData,BYTE *pbData,PPST_PROMPTINFO pPromptInfo,DWORD dwDefaultConfirmationStyle,DWORD dwFlags);
+                   HRESULT (WINAPI *OpenItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,PST_ACCESSMODE ModeFlags,PPST_PROMPTINFO pPromptInfo,DWORD dwFlags);
+                   HRESULT (WINAPI *CloseItem)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,LPCWSTR szItemName,DWORD dwFlags);
+                   HRESULT (WINAPI *EnumItems)(IPStore *This,PST_KEY Key,const GUID *pItemType,const GUID *pItemSubtype,DWORD dwFlags,IEnumPStoreItems **ppenum);
     END_INTERFACE
   } IPStoreVtbl;
   struct IPStore {
@@ -465,13 +465,13 @@ public:
 #else
   typedef struct IEnumPStoreProvidersVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumPStoreProviders *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumPStoreProviders *This);
-      ULONG (WINAPI *Release)(IEnumPStoreProviders *This);
-      HRESULT (WINAPI *Next)(IEnumPStoreProviders *This,DWORD celt,PST_PROVIDERINFO **rgelt,DWORD *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumPStoreProviders *This,DWORD celt);
-      HRESULT (WINAPI *Reset)(IEnumPStoreProviders *This);
-      HRESULT (WINAPI *Clone)(IEnumPStoreProviders *This,IEnumPStoreProviders **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumPStoreProviders *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumPStoreProviders *This);
+                   ULONG (WINAPI *Release)(IEnumPStoreProviders *This);
+                   HRESULT (WINAPI *Next)(IEnumPStoreProviders *This,DWORD celt,PST_PROVIDERINFO **rgelt,DWORD *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumPStoreProviders *This,DWORD celt);
+                   HRESULT (WINAPI *Reset)(IEnumPStoreProviders *This);
+                   HRESULT (WINAPI *Clone)(IEnumPStoreProviders *This,IEnumPStoreProviders **ppenum);
     END_INTERFACE
   } IEnumPStoreProvidersVtbl;
   struct IEnumPStoreProviders {

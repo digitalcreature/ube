@@ -212,13 +212,13 @@ typedef struct _STORAGE_READ_CAPACITY {
 
 typedef DWORD DEVICE_DATA_MANAGEMENT_SET_ACTION;
 typedef struct _DEVICE_MANAGE_DATA_SET_ATTRIBUTES {
-  DWORD                             Size;
+  DWORD                                                                                 Size;
   DEVICE_DATA_MANAGEMENT_SET_ACTION Action;
-  DWORD                             Flags;
-  DWORD                             ParameterBlockOffset;
-  DWORD                             ParameterBlockLength;
-  DWORD                             DataSetRangesOffset;
-  DWORD                             DataSetRangesLength;
+  DWORD                                                                                 Flags;
+  DWORD                                                                                 ParameterBlockOffset;
+  DWORD                                                                                 ParameterBlockLength;
+  DWORD                                                                                 DataSetRangesOffset;
+  DWORD                                                                                 DataSetRangesLength;
 } DEVICE_MANAGE_DATA_SET_ATTRIBUTES, *PDEVICE_MANAGE_DATA_SET_ATTRIBUTES;
 
 typedef struct _DEVICE_DATA_SET_RANGE {
@@ -364,33 +364,33 @@ typedef struct _DEVICE_DATA_SET_RANGE {
 #define MEDIA_CURRENTLY_MOUNTED 0x80000000
 
   typedef enum _STORAGE_BUS_TYPE {
-    BusTypeUnknown             = 0x00,
-    BusTypeScsi                = 0x1,
-    BusTypeAtapi               = 0x2,
-    BusTypeAta                 = 0x3,
-    BusType1394                = 0x4,
-    BusTypeSsa                 = 0x5,
-    BusTypeFibre               = 0x6,
-    BusTypeUsb                 = 0x7,
-    BusTypeRAID                = 0x8,
+    BusTypeUnknown                                       = 0x00,
+    BusTypeScsi                                          = 0x1,
+    BusTypeAtapi                                         = 0x2,
+    BusTypeAta                                           = 0x3,
+    BusType1394                                          = 0x4,
+    BusTypeSsa                                           = 0x5,
+    BusTypeFibre                                         = 0x6,
+    BusTypeUsb                                           = 0x7,
+    BusTypeRAID                                          = 0x8,
 #if (_WIN32_WINNT >= 0x0600)
-    BusTypeiScsi               = 0x9,
-    BusTypeSas                 = 0xA,
-    BusTypeSata                = 0xB,
-    BusTypeSd                  = 0xC,
-    BusTypeMmc                 = 0xD,
+    BusTypeiScsi                                         = 0x9,
+    BusTypeSas                                           = 0xA,
+    BusTypeSata                                          = 0xB,
+    BusTypeSd                                                         = 0xC,
+    BusTypeMmc                                           = 0xD,
 #endif /*(_WIN32_WINNT >= 0x0600)*/
 #if (_WIN32_WINNT >= 0x0601)
-    BusTypeVirtual             = 0xE,
+    BusTypeVirtual                                       = 0xE,
     BusTypeFileBackedVirtual   = 0xF,
 #endif /*(_WIN32_WINNT >= 0x0601)*/
     BusTypeMax,
-    BusTypeMaxReserved         = 0x7F 
+    BusTypeMaxReserved                      = 0x7F 
   } STORAGE_BUS_TYPE, *PSTORAGE_BUS_TYPE;
 
   typedef struct _DEVICE_MEDIA_INFO {
     union {
-      struct {
+                   struct {
 	LARGE_INTEGER Cylinders;
 	STORAGE_MEDIA_TYPE MediaType;
 	DWORD TracksPerCylinder;
@@ -398,8 +398,8 @@ typedef struct _DEVICE_DATA_SET_RANGE {
 	DWORD BytesPerSector;
 	DWORD NumberMediaSides;
 	DWORD MediaCharacteristics;
-      } DiskInfo;
-      struct {
+                   } DiskInfo;
+                   struct {
 	LARGE_INTEGER Cylinders;
 	STORAGE_MEDIA_TYPE MediaType;
 	DWORD TracksPerCylinder;
@@ -407,8 +407,8 @@ typedef struct _DEVICE_DATA_SET_RANGE {
 	DWORD BytesPerSector;
 	DWORD NumberMediaSides;
 	DWORD MediaCharacteristics;
-      } RemovableDiskInfo;
-      struct {
+                   } RemovableDiskInfo;
+                   struct {
 	STORAGE_MEDIA_TYPE MediaType;
 	DWORD MediaCharacteristics;
 	DWORD CurrentBlockSize;
@@ -419,7 +419,7 @@ typedef struct _DEVICE_DATA_SET_RANGE {
 	    BYTE DensityCode;
 	  } ScsiInformation;
 	} BusSpecificData;
-      } TapeInfo;
+                   } TapeInfo;
     } DeviceSpecific;
   } DEVICE_MEDIA_INFO,*PDEVICE_MEDIA_INFO;
 
@@ -718,8 +718,8 @@ typedef struct _DISK_DETECTION_INFO {
   DETECTION_TYPE DetectionType;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      DISK_INT13_INFO Int13;
-      DISK_EX_INT13_INFO ExInt13;
+                   DISK_INT13_INFO Int13;
+                   DISK_EX_INT13_INFO ExInt13;
     } DUMMYSTRUCTNAME;
   } DUMMYUNIONNAME;
 } DISK_DETECTION_INFO,*PDISK_DETECTION_INFO;
@@ -729,11 +729,11 @@ typedef struct _DISK_PARTITION_INFO {
   PARTITION_STYLE PartitionStyle;
   __C89_NAMELESS union {
     struct {
-      DWORD Signature;
-      DWORD CheckSum;
+                   DWORD Signature;
+                   DWORD CheckSum;
     } Mbr;
     struct {
-      GUID DiskId;
+                   GUID DiskId;
     } Gpt;
   } DUMMYUNIONNAME;
 } DISK_PARTITION_INFO,*PDISK_PARTITION_INFO;
@@ -766,13 +766,13 @@ typedef struct _DISK_CACHE_INFORMATION {
   BOOLEAN PrefetchScalar;
   __C89_NAMELESS union {
     struct {
-      WORD Minimum;
-      WORD Maximum;
-      WORD MaximumBlocks;
+                   WORD Minimum;
+                   WORD Maximum;
+                   WORD MaximumBlocks;
     } ScalarPrefetch;
     struct {
-      WORD Minimum;
-      WORD Maximum;
+                   WORD Minimum;
+                   WORD Maximum;
     } BlockPrefetch;
   } DUMMYUNIONNAME;
 } DISK_CACHE_INFORMATION,*PDISK_CACHE_INFORMATION;
@@ -1676,9 +1676,9 @@ typedef struct _FILE_OBJECTID_BUFFER {
   BYTE ObjectId[16];
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      BYTE BirthVolumeId[16];
-      BYTE BirthObjectId[16];
-      BYTE DomainId[16];
+                   BYTE BirthVolumeId[16];
+                   BYTE BirthObjectId[16];
+                   BYTE DomainId[16];
     } DUMMYSTRUCTNAME;
     BYTE ExtendedInfo[48];
   } DUMMYUNIONNAME;
@@ -1760,44 +1760,44 @@ typedef struct _STORAGE_DESCRIPTOR_HEADER {
 } STORAGE_DESCRIPTOR_HEADER, *PSTORAGE_DESCRIPTOR_HEADER;
 
 typedef enum _STORAGE_PROPERTY_ID {
-  StorageDeviceProperty              = 0,
-  StorageAdapterProperty             = 1,
-  StorageDeviceIdProperty            = 2,
-  StorageDeviceUniqueIdProperty      = 3,
+  StorageDeviceProperty                                        = 0,
+  StorageAdapterProperty                                       = 1,
+  StorageDeviceIdProperty                                      = 2,
+  StorageDeviceUniqueIdProperty                   = 3,
   StorageDeviceWriteCacheProperty    = 4,
-  StorageMiniportProperty            = 5,
+  StorageMiniportProperty                                      = 5,
   StorageAccessAlignmentProperty     = 6,
   StorageDeviceSeekPenaltyProperty   = 7,
-  StorageDeviceTrimProperty          = 8 
+  StorageDeviceTrimProperty                       = 8 
 } STORAGE_PROPERTY_ID, *PSTORAGE_PROPERTY_ID;
 
 typedef enum _STORAGE_QUERY_TYPE {
   PropertyStandardQuery     = 0,
-  PropertyExistsQuery       = 1,
-  PropertyMaskQuery         = 2,
+  PropertyExistsQuery                    = 1,
+  PropertyMaskQuery                      = 2,
   PropertyQueryMaxDefined   = 3 
 } STORAGE_QUERY_TYPE, *PSTORAGE_QUERY_TYPE;
 
 typedef struct _STORAGE_PROPERTY_QUERY {
   STORAGE_PROPERTY_ID PropertyId;
   STORAGE_QUERY_TYPE  QueryType;
-  BYTE                AdditionalParameters[1];
+  BYTE                                          AdditionalParameters[1];
 } STORAGE_PROPERTY_QUERY, *PSTORAGE_PROPERTY_QUERY;
 
 typedef struct _STORAGE_DEVICE_DESCRIPTOR {
-  DWORD            Version;
-  DWORD            Size;
-  BYTE             DeviceType;
-  BYTE             DeviceTypeModifier;
-  BOOLEAN          RemovableMedia;
-  BOOLEAN          CommandQueueing;
-  DWORD            VendorIdOffset;
-  DWORD            ProductIdOffset;
-  DWORD            ProductRevisionOffset;
-  DWORD            SerialNumberOffset;
+  DWORD                                      Version;
+  DWORD                                      Size;
+  BYTE                                       DeviceType;
+  BYTE                                       DeviceTypeModifier;
+  BOOLEAN                       RemovableMedia;
+  BOOLEAN                       CommandQueueing;
+  DWORD                                      VendorIdOffset;
+  DWORD                                      ProductIdOffset;
+  DWORD                                      ProductRevisionOffset;
+  DWORD                                      SerialNumberOffset;
   STORAGE_BUS_TYPE BusType;
-  DWORD            RawPropertiesLength;
-  BYTE             RawDeviceProperties[1];
+  DWORD                                      RawPropertiesLength;
+  BYTE                                       RawDeviceProperties[1];
 } STORAGE_DEVICE_DESCRIPTOR, *PSTORAGE_DEVICE_DESCRIPTOR;
 
 typedef struct _STORAGE_ADAPTER_DESCRIPTOR {
@@ -1885,23 +1885,23 @@ typedef struct _FILE_QUERY_SPARING_BUFFER {
 typedef struct _FILE_QUERY_ON_DISK_VOL_INFO_BUFFER {
   LARGE_INTEGER DirectoryCount;
   LARGE_INTEGER FileCount;
-  WORD          FsFormatMajVersion;
-  WORD          FsFormatMinVersion;
-  WCHAR         FsFormatName[12];
+  WORD                       FsFormatMajVersion;
+  WORD                       FsFormatMinVersion;
+  WCHAR                      FsFormatName[12];
   LARGE_INTEGER FormatTime;
   LARGE_INTEGER LastUpdateTime;
-  WCHAR         CopyrightInfo[34];
-  WCHAR         AbstractInfo[34];
-  WCHAR         FormattingImplementationInfo[34];
-  WCHAR         LastModifyingImplementationInfo[34];
+  WCHAR                      CopyrightInfo[34];
+  WCHAR                      AbstractInfo[34];
+  WCHAR                      FormattingImplementationInfo[34];
+  WCHAR                      LastModifyingImplementationInfo[34];
 } FILE_QUERY_ON_DISK_VOL_INFO_BUFFER, *PFILE_QUERY_ON_DISK_VOL_INFO_BUFFER;
 
-#define SET_REPAIR_ENABLED                          0x00000001
-#define SET_REPAIR_VOLUME_BITMAP_SCAN               0x00000002
-#define SET_REPAIR_DELETE_CROSSLINK                 0x00000004
-#define SET_REPAIR_WARN_ABOUT_DATA_LOSS             0x00000008
+#define SET_REPAIR_ENABLED                                                                              0x00000001
+#define SET_REPAIR_VOLUME_BITMAP_SCAN                                         0x00000002
+#define SET_REPAIR_DELETE_CROSSLINK                                           0x00000004
+#define SET_REPAIR_WARN_ABOUT_DATA_LOSS                                       0x00000008
 #define SET_REPAIR_DISABLED_AND_BUGCHECK_ON_CORRUPT 0x00000010
-#define SET_REPAIR_VALID_MASK                       0x0000001F
+#define SET_REPAIR_VALID_MASK                                                              0x0000001F
 
 typedef enum _SHRINK_VOLUME_REQUEST_TYPES {
   ShrinkPrepare,
@@ -1911,8 +1911,8 @@ typedef enum _SHRINK_VOLUME_REQUEST_TYPES {
 
 typedef struct _SHRINK_VOLUME_INFORMATION {
   SHRINK_VOLUME_REQUEST_TYPES ShrinkRequestType;
-  DWORDLONG                   Flags;
-  LONGLONG                    NewNumberOfSectors;
+  DWORDLONG                                                          Flags;
+  LONGLONG                                                           NewNumberOfSectors;
 } SHRINK_VOLUME_INFORMATION, *PSHRINK_VOLUME_INFORMATION;
 
 #define TXFS_RM_FLAG_LOGGING_MODE 0x00000001
@@ -1936,28 +1936,28 @@ typedef struct _SHRINK_VOLUME_INFORMATION {
 #define TXFS_LOGGING_MODE_SIMPLE 1
 #define TXFS_LOGGING_MODE_FULL 2
 
-#define TXFS_TRANSACTION_STATE_NONE      0
+#define TXFS_TRANSACTION_STATE_NONE                   0
 #define TXFS_TRANSACTION_STATE_ACTIVE    1
 #define TXFS_TRANSACTION_STATE_PREPARED  2
 #define TXFS_TRANSACTION_STATE_NOTACTIVE 3
 
-#define TXFS_MODIFY_RM_VALID_FLAGS (TXFS_RM_FLAG_LOGGING_MODE                        | \
-                                    TXFS_RM_FLAG_RENAME_RM                           | \
-                                    TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX             | \
-                                    TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN             | \
-                                    TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS | \
-                                    TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT        | \
-                                    TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE          | \
-                                    TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX          | \
-                                    TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN          | \
-                                    TXFS_RM_FLAG_SHRINK_LOG                          | \
-                                    TXFS_RM_FLAG_GROW_LOG                            | \
-                                    TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE                | \
-                                    TXFS_RM_FLAG_PRESERVE_CHANGES                    | \
-                                    TXFS_RM_FLAG_RESET_RM_AT_NEXT_START              | \
-                                    TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START       | \
-                                    TXFS_RM_FLAG_PREFER_CONSISTENCY                  | \
-                                    TXFS_RM_FLAG_PREFER_AVAILABILITY)
+#define TXFS_MODIFY_RM_VALID_FLAGS (TXFS_RM_FLAG_LOGGING_MODE                                                                            | \
+                                                                                                                  TXFS_RM_FLAG_RENAME_RM                                                                               | \
+                                                                                                                  TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX                                       | \
+                                                                                                                  TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN                                       | \
+                                                                                                                  TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS | \
+                                                                                                                  TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT                     | \
+                                                                                                                  TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE                       | \
+                                                                                                                  TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX                       | \
+                                                                                                                  TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN                       | \
+                                                                                                                  TXFS_RM_FLAG_SHRINK_LOG                                                                              | \
+                                                                                                                  TXFS_RM_FLAG_GROW_LOG                                                                                | \
+                                                                                                                  TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE                                          | \
+                                                                                                                  TXFS_RM_FLAG_PRESERVE_CHANGES                                                           | \
+                                                                                                                  TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                                        | \
+                                                                                                                  TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START                    | \
+                                                                                                                  TXFS_RM_FLAG_PREFER_CONSISTENCY                                                         | \
+                                                                                                                  TXFS_RM_FLAG_PREFER_AVAILABILITY)
 
 typedef struct _TXFS_MODIFY_RM {
   ULONG     Flags;
@@ -1975,32 +1975,32 @@ typedef struct _TXFS_MODIFY_RM {
 #define TXFS_RM_STATE_ACTIVE 3
 #define TXFS_RM_STATE_SHUTTING_DOWN 4
 
-#define TXFS_QUERY_RM_INFORMATION_VALID_FLAGS                           \
-                (TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS   |   \
-                 TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT          |   \
-                 TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX            |   \
-                 TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN            |   \
-                 TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                |   \
-                 TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START         |   \
-                 TXFS_RM_FLAG_PREFER_CONSISTENCY                    |   \
-                 TXFS_RM_FLAG_PREFER_AVAILABILITY)
+#define TXFS_QUERY_RM_INFORMATION_VALID_FLAGS                                                                               \
+                                          (TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS   |   \
+                                           TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT                       |   \
+                                           TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX                                      |   \
+                                           TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN                                      |   \
+                                           TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                                          |   \
+                                           TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START                      |   \
+                                           TXFS_RM_FLAG_PREFER_CONSISTENCY                                                           |   \
+                                           TXFS_RM_FLAG_PREFER_AVAILABILITY)
 
 typedef struct _TXFS_QUERY_RM_INFORMATION {
-  ULONG         BytesRequired;
+  ULONG                      BytesRequired;
   ULONGLONG     TailLsn;
   ULONGLONG     CurrentLsn;
   ULONGLONG     ArchiveTailLsn;
   ULONGLONG     LogContainerSize;
   LARGE_INTEGER HighestVirtualClock;
-  ULONG         LogContainerCount;
-  ULONG         LogContainerCountMax;
-  ULONG         LogContainerCountMin;
-  ULONG         LogGrowthIncrement;
-  ULONG         LogAutoShrinkPercentage;
-  ULONG         Flags;
-  USHORT        LoggingMode;
-  USHORT        Reserved;
-  ULONG         RmState;
+  ULONG                      LogContainerCount;
+  ULONG                      LogContainerCountMax;
+  ULONG                      LogContainerCountMin;
+  ULONG                      LogGrowthIncrement;
+  ULONG                      LogAutoShrinkPercentage;
+  ULONG                      Flags;
+  USHORT                     LoggingMode;
+  USHORT                     Reserved;
+  ULONG                      RmState;
   ULONGLONG     LogCapacity;
   ULONGLONG     LogFree;
   ULONGLONG     TopsSize;
@@ -2010,22 +2010,22 @@ typedef struct _TXFS_QUERY_RM_INFORMATION {
   ULONGLONG     TwoPCCount;
   ULONGLONG     NumberLogFileFull;
   ULONGLONG     OldestTransactionAge;
-  GUID          RMName;
-  ULONG         TmLogPathOffset;
+  GUID                       RMName;
+  ULONG                      TmLogPathOffset;
 } TXFS_QUERY_RM_INFORMATION, *PTXFS_QUERY_RM_INFORMATION;
 
 #define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN 0x01
 #define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK 0x02
 
-#define TXFS_ROLLFORWARD_REDO_VALID_FLAGS                               \
-                (TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN |         \
-                 TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK)
+#define TXFS_ROLLFORWARD_REDO_VALID_FLAGS                                                                                                \
+                                          (TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN |                      \
+                                           TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK)
 
 typedef struct _TXFS_ROLLFORWARD_REDO_INFORMATION {
   LARGE_INTEGER LastVirtualClock;
   ULONGLONG     LastRedoLsn;
   ULONGLONG     HighestRecoveryLsn;
-  ULONG         Flags;
+  ULONG                      Flags;
 } TXFS_ROLLFORWARD_REDO_INFORMATION, *PTXFS_ROLLFORWARD_REDO_INFORMATION;
 
 #define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX 0x00000001
@@ -2042,19 +2042,19 @@ typedef struct _TXFS_ROLLFORWARD_REDO_INFORMATION {
 #define TXFS_START_RM_FLAG_PREFER_CONSISTENCY 0x00001000
 #define TXFS_START_RM_FLAG_PREFER_AVAILABILITY 0x00002000
 
-#define TXFS_START_RM_VALID_FLAGS                                           \
-                (TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX             |   \
-                 TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN             |   \
-                 TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE                  |   \
-                 TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS |   \
-                 TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT        |   \
-                 TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE          |   \
-                 TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT                 |   \
-                 TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX          |   \
-                 TXFS_START_RM_FLAG_LOGGING_MODE                        |   \
-                 TXFS_START_RM_FLAG_PRESERVE_CHANGES                    |   \
-                 TXFS_START_RM_FLAG_PREFER_CONSISTENCY                  |   \
-                 TXFS_START_RM_FLAG_PREFER_AVAILABILITY)
+#define TXFS_START_RM_VALID_FLAGS                                                                                                                                      \
+                                          (TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX                                       |   \
+                                           TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN                                       |   \
+                                           TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE                                                         |   \
+                                           TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS |   \
+                                           TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT                     |   \
+                                           TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE                       |   \
+                                           TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT                                           |   \
+                                           TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX                       |   \
+                                           TXFS_START_RM_FLAG_LOGGING_MODE                                                                            |   \
+                                           TXFS_START_RM_FLAG_PRESERVE_CHANGES                                                           |   \
+                                           TXFS_START_RM_FLAG_PREFER_CONSISTENCY                                                         |   \
+                                           TXFS_START_RM_FLAG_PREFER_AVAILABILITY)
 
 typedef struct _TXFS_START_RM_INFORMATION {
   ULONG     Flags;
@@ -2076,7 +2076,7 @@ typedef struct _TXFS_GET_METADATA_INFO_OUT {
     LONGLONG LowPart;
     LONGLONG HighPart;
   } TxfFileId;
-  GUID      LockingTransaction;
+  GUID                   LockingTransaction;
   ULONGLONG LastLsn;
   ULONG     TransactionState;
 } TXFS_GET_METADATA_INFO_OUT, *PTXFS_GET_METADATA_INFO_OUT;
@@ -2095,7 +2095,7 @@ typedef struct _TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY {
 } TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY, *PTXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY;
 
 typedef struct _TXFS_LIST_TRANSACTION_LOCKED_FILES {
-  GUID      KtmTransaction;
+  GUID                   KtmTransaction;
   ULONGLONG NumberOfFiles;
   ULONGLONG BufferSizeRequired;
   ULONGLONG Offset;
@@ -2159,40 +2159,40 @@ typedef struct _TXFS_TRANSACTION_ACTIVE_INFO {
 } TXFS_TRANSACTION_ACTIVE_INFO, *PTXFS_TRANSACTION_ACTIVE_INFO;
 
 typedef enum _WRITE_CACHE_TYPE {
-  WriteCacheTypeUnknown        = 0,
-  WriteCacheTypeNone           = 1,
-  WriteCacheTypeWriteBack      = 2,
+  WriteCacheTypeUnknown                     = 0,
+  WriteCacheTypeNone                        = 1,
+  WriteCacheTypeWriteBack                   = 2,
   WriteCacheTypeWriteThrough   = 3 
 } WRITE_CACHE_TYPE;
 
 typedef enum _WRITE_CACHE_ENABLE {
   WriteCacheEnableUnknown   = 0,
-  WriteCacheDisabled        = 1,
-  WriteCacheEnabled         = 2 
+  WriteCacheDisabled                     = 1,
+  WriteCacheEnabled                      = 2 
 } WRITE_CACHE_ENABLE;
 
 typedef enum _WRITE_CACHE_CHANGE {
   WriteCacheChangeUnknown   = 0,
   WriteCacheNotChangeable   = 1,
-  WriteCacheChangeable      = 2 
+  WriteCacheChangeable                   = 2 
 } WRITE_CACHE_CHANGE;
 
 typedef enum _WRITE_THROUGH {
-  WriteThroughUnknown        = 0,
+  WriteThroughUnknown                     = 0,
   WriteThroughNotSupported   = 1,
-  WriteThroughSupported      = 2 
+  WriteThroughSupported                   = 2 
 } WRITE_THROUGH;
 
 typedef struct _STORAGE_WRITE_CACHE_PROPERTY {
-  DWORD              Version;
-  DWORD              Size;
+  DWORD                                        Version;
+  DWORD                                        Size;
   WRITE_CACHE_TYPE   WriteCacheType;
   WRITE_CACHE_ENABLE WriteCacheEnabled;
   WRITE_CACHE_CHANGE WriteCacheChangeable;
-  WRITE_THROUGH      WriteThroughSupported;
-  BOOLEAN            FlushCacheSupported;
-  BOOLEAN            UserDefinedPowerProtection;
-  BOOLEAN            NVCacheEnabled;
+  WRITE_THROUGH                   WriteThroughSupported;
+  BOOLEAN                                      FlushCacheSupported;
+  BOOLEAN                                      UserDefinedPowerProtection;
+  BOOLEAN                                      NVCacheEnabled;
 } STORAGE_WRITE_CACHE_PROPERTY, *PSTORAGE_WRITE_CACHE_PROPERTY;
 
 typedef enum _STORAGE_PORT_CODE_SET {
@@ -2202,11 +2202,11 @@ typedef enum _STORAGE_PORT_CODE_SET {
 } STORAGE_PORT_CODE_SET, *PSTORAGE_PORT_CODE_SET;
 
 typedef struct _STORAGE_MINIPORT_DESCRIPTOR {
-  DWORD                 Version;
-  DWORD                 Size;
+  DWORD                                           Version;
+  DWORD                                           Size;
   STORAGE_PORT_CODE_SET Portdriver;
-  BOOLEAN               LUNResetSupported;
-  BOOLEAN               TargetResetSupported;
+  BOOLEAN                                         LUNResetSupported;
+  BOOLEAN                                         TargetResetSupported;
 } STORAGE_MINIPORT_DESCRIPTOR, *PSTORAGE_MINIPORT_DESCRIPTOR;
 
 typedef struct _STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR {
@@ -2241,13 +2241,13 @@ typedef struct _REQUEST_OPLOCK_INPUT_BUFFER {
 } REQUEST_OPLOCK_INPUT_BUFFER, *PREQUEST_OPLOCK_INPUT_BUFFER;
 
 typedef struct _REQUEST_OPLOCK_OUTPUT_BUFFER {
-  WORD        StructureVersion;
-  WORD        StructureLength;
-  DWORD       OriginalOplockLevel;
-  DWORD       NewOplockLevel;
-  DWORD       Flags;
+  WORD                     StructureVersion;
+  WORD                     StructureLength;
+  DWORD                    OriginalOplockLevel;
+  DWORD                    NewOplockLevel;
+  DWORD                    Flags;
   ACCESS_MASK AccessMode;
-  WORD        ShareMode;
+  WORD                     ShareMode;
 } REQUEST_OPLOCK_OUTPUT_BUFFER, *PREQUEST_OPLOCK_OUTPUT_BUFFER;
 
 typedef struct _BOOT_AREA_INFO {
@@ -2275,8 +2275,8 @@ typedef struct _FILE_SYSTEM_RECOGNITION_STRUCTURE {
 } FILE_SYSTEM_RECOGNITION_STRUCTURE;
 
 typedef struct _LOOKUP_STREAM_FROM_CLUSTER_INPUT {
-  DWORD         Flags;
-  DWORD         NumberOfClusters;
+  DWORD                      Flags;
+  DWORD                      NumberOfClusters;
   LARGE_INTEGER Cluster[1];
 } LOOKUP_STREAM_FROM_CLUSTER_INPUT, *PLOOKUP_STREAM_FROM_CLUSTER_INPUT;
 
@@ -2287,11 +2287,11 @@ typedef struct _LOOKUP_STREAM_FROM_CLUSTER_OUTPUT {
 } LOOKUP_STREAM_FROM_CLUSTER_OUTPUT, *PLOOKUP_STREAM_FROM_CLUSTER_OUTPUT;
 
 typedef struct _LOOKUP_STREAM_FROM_CLUSTER_ENTRY {
-  DWORD         OffsetToNext;
-  DWORD         Flags;
+  DWORD                      OffsetToNext;
+  DWORD                      Flags;
   LARGE_INTEGER Reserved;
   LARGE_INTEGER Cluster;
-  WCHAR         FileName[1];
+  WCHAR                      FileName[1];
 } LOOKUP_STREAM_FROM_CLUSTER_ENTRY, *PLOOKUP_STREAM_FROM_CLUSTER_ENTRY;
 
 #define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK 0xff000000
@@ -2330,16 +2330,16 @@ typedef struct _LOOKUP_STREAM_FROM_CLUSTER_ENTRY {
 
 #define IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS CTL_CODE(IOCTL_VOLUME_BASE,0,METHOD_BUFFERED,FILE_ANY_ACCESS)
 #define IOCTL_VOLUME_SUPPORTS_ONLINE_OFFLINE CTL_CODE(IOCTL_VOLUME_BASE,1,METHOD_BUFFERED,FILE_ANY_ACCESS)
-#define IOCTL_VOLUME_ONLINE                  CTL_CODE(IOCTL_VOLUME_BASE,2,METHOD_BUFFERED,FILE_READ_ACCESS | FILE_WRITE_ACCESS)
-#define IOCTL_VOLUME_OFFLINE                 CTL_CODE(IOCTL_VOLUME_BASE,3,METHOD_BUFFERED,FILE_READ_ACCESS | FILE_WRITE_ACCESS)
-#define IOCTL_VOLUME_IS_OFFLINE              CTL_CODE(IOCTL_VOLUME_BASE,4,METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define IOCTL_VOLUME_IS_IO_CAPABLE           CTL_CODE(IOCTL_VOLUME_BASE,5,METHOD_BUFFERED,FILE_ANY_ACCESS)
-#define IOCTL_VOLUME_QUERY_FAILOVER_SET      CTL_CODE(IOCTL_VOLUME_BASE,6,METHOD_BUFFERED,FILE_ANY_ACCESS)
+#define IOCTL_VOLUME_ONLINE                                                         CTL_CODE(IOCTL_VOLUME_BASE,2,METHOD_BUFFERED,FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_VOLUME_OFFLINE                                           CTL_CODE(IOCTL_VOLUME_BASE,3,METHOD_BUFFERED,FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_VOLUME_IS_OFFLINE                                        CTL_CODE(IOCTL_VOLUME_BASE,4,METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_VOLUME_IS_IO_CAPABLE                        CTL_CODE(IOCTL_VOLUME_BASE,5,METHOD_BUFFERED,FILE_ANY_ACCESS)
+#define IOCTL_VOLUME_QUERY_FAILOVER_SET                   CTL_CODE(IOCTL_VOLUME_BASE,6,METHOD_BUFFERED,FILE_ANY_ACCESS)
 #define IOCTL_VOLUME_QUERY_VOLUME_NUMBER     CTL_CODE(IOCTL_VOLUME_BASE,7,METHOD_BUFFERED,FILE_ANY_ACCESS)
 #define IOCTL_VOLUME_LOGICAL_TO_PHYSICAL     CTL_CODE(IOCTL_VOLUME_BASE,8,METHOD_BUFFERED,FILE_ANY_ACCESS)
 #define IOCTL_VOLUME_PHYSICAL_TO_LOGICAL     CTL_CODE(IOCTL_VOLUME_BASE,9,METHOD_BUFFERED,FILE_ANY_ACCESS)
-#define IOCTL_VOLUME_IS_CLUSTERED            CTL_CODE(IOCTL_VOLUME_BASE,12,METHOD_BUFFERED,FILE_ANY_ACCESS)
-#define IOCTL_VOLUME_GET_GPT_ATTRIBUTES      CTL_CODE(IOCTL_VOLUME_BASE,14,METHOD_BUFFERED,FILE_ANY_ACCESS)
+#define IOCTL_VOLUME_IS_CLUSTERED                                      CTL_CODE(IOCTL_VOLUME_BASE,12,METHOD_BUFFERED,FILE_ANY_ACCESS)
+#define IOCTL_VOLUME_GET_GPT_ATTRIBUTES                   CTL_CODE(IOCTL_VOLUME_BASE,14,METHOD_BUFFERED,FILE_ANY_ACCESS)
 
 typedef struct _DISK_EXTENT {
   DWORD DiskNumber;

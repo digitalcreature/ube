@@ -147,9 +147,9 @@ struct sockaddr_vm {
 	unsigned int svm_port;
 	unsigned int svm_cid;
 	unsigned char svm_zero[sizeof(struct sockaddr) -
-			       sizeof(sa_family_t) -
-			       sizeof(unsigned short) -
-			       sizeof(unsigned int) - sizeof(unsigned int)];
+			                    sizeof(sa_family_t) -
+			                    sizeof(unsigned short) -
+			                    sizeof(unsigned int) - sizeof(unsigned int)];
 };
 
 #define IOCTL_VM_SOCKETS_GET_LOCAL_CID		_IO(7, 0xb9)

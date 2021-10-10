@@ -31,9 +31,9 @@
  */
 
 typedef struct display_struct {
-        char cntrl;
-        char message1[8];
-        char message2[8];
+                     char cntrl;
+                     char message1[8];
+                     char message2[8];
 } display_struct;
 
 /*

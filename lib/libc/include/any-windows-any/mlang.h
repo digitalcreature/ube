@@ -169,14 +169,14 @@ extern "C"{
 #else
   typedef struct IMLangStringBufWVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangStringBufW *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangStringBufW *This);
-      ULONG (WINAPI *Release)(IMLangStringBufW *This);
-      HRESULT (WINAPI *GetStatus)(IMLangStringBufW *This,__LONG32 *plFlags,__LONG32 *pcchBuf);
-      HRESULT (WINAPI *LockBuf)(IMLangStringBufW *This,__LONG32 cchOffset,__LONG32 cchMaxLock,WCHAR **ppszBuf,__LONG32 *pcchBuf);
-      HRESULT (WINAPI *UnlockBuf)(IMLangStringBufW *This,const WCHAR *pszBuf,__LONG32 cchOffset,__LONG32 cchWrite);
-      HRESULT (WINAPI *Insert)(IMLangStringBufW *This,__LONG32 cchOffset,__LONG32 cchMaxInsert,__LONG32 *pcchActual);
-      HRESULT (WINAPI *Delete)(IMLangStringBufW *This,__LONG32 cchOffset,__LONG32 cchDelete);
+                   HRESULT (WINAPI *QueryInterface)(IMLangStringBufW *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangStringBufW *This);
+                   ULONG (WINAPI *Release)(IMLangStringBufW *This);
+                   HRESULT (WINAPI *GetStatus)(IMLangStringBufW *This,__LONG32 *plFlags,__LONG32 *pcchBuf);
+                   HRESULT (WINAPI *LockBuf)(IMLangStringBufW *This,__LONG32 cchOffset,__LONG32 cchMaxLock,WCHAR **ppszBuf,__LONG32 *pcchBuf);
+                   HRESULT (WINAPI *UnlockBuf)(IMLangStringBufW *This,const WCHAR *pszBuf,__LONG32 cchOffset,__LONG32 cchWrite);
+                   HRESULT (WINAPI *Insert)(IMLangStringBufW *This,__LONG32 cchOffset,__LONG32 cchMaxInsert,__LONG32 *pcchActual);
+                   HRESULT (WINAPI *Delete)(IMLangStringBufW *This,__LONG32 cchOffset,__LONG32 cchDelete);
     END_INTERFACE
   } IMLangStringBufWVtbl;
   struct IMLangStringBufW {
@@ -220,14 +220,14 @@ extern "C"{
 #else
   typedef struct IMLangStringBufAVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangStringBufA *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangStringBufA *This);
-      ULONG (WINAPI *Release)(IMLangStringBufA *This);
-      HRESULT (WINAPI *GetStatus)(IMLangStringBufA *This,__LONG32 *plFlags,__LONG32 *pcchBuf);
-      HRESULT (WINAPI *LockBuf)(IMLangStringBufA *This,__LONG32 cchOffset,__LONG32 cchMaxLock,CHAR **ppszBuf,__LONG32 *pcchBuf);
-      HRESULT (WINAPI *UnlockBuf)(IMLangStringBufA *This,const CHAR *pszBuf,__LONG32 cchOffset,__LONG32 cchWrite);
-      HRESULT (WINAPI *Insert)(IMLangStringBufA *This,__LONG32 cchOffset,__LONG32 cchMaxInsert,__LONG32 *pcchActual);
-      HRESULT (WINAPI *Delete)(IMLangStringBufA *This,__LONG32 cchOffset,__LONG32 cchDelete);
+                   HRESULT (WINAPI *QueryInterface)(IMLangStringBufA *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangStringBufA *This);
+                   ULONG (WINAPI *Release)(IMLangStringBufA *This);
+                   HRESULT (WINAPI *GetStatus)(IMLangStringBufA *This,__LONG32 *plFlags,__LONG32 *pcchBuf);
+                   HRESULT (WINAPI *LockBuf)(IMLangStringBufA *This,__LONG32 cchOffset,__LONG32 cchMaxLock,CHAR **ppszBuf,__LONG32 *pcchBuf);
+                   HRESULT (WINAPI *UnlockBuf)(IMLangStringBufA *This,const CHAR *pszBuf,__LONG32 cchOffset,__LONG32 cchWrite);
+                   HRESULT (WINAPI *Insert)(IMLangStringBufA *This,__LONG32 cchOffset,__LONG32 cchMaxInsert,__LONG32 *pcchActual);
+                   HRESULT (WINAPI *Delete)(IMLangStringBufA *This,__LONG32 cchOffset,__LONG32 cchDelete);
     END_INTERFACE
   } IMLangStringBufAVtbl;
   struct IMLangStringBufA {
@@ -270,13 +270,13 @@ extern "C"{
 #else
   typedef struct IMLangStringVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangString *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangString *This);
-      ULONG (WINAPI *Release)(IMLangString *This);
-      HRESULT (WINAPI *Sync)(IMLangString *This,WINBOOL fNoAccess);
-      HRESULT (WINAPI *GetLength)(IMLangString *This,__LONG32 *plLen);
-      HRESULT (WINAPI *SetMLStr)(IMLangString *This,__LONG32 lDestPos,__LONG32 lDestLen,IUnknown *pSrcMLStr,__LONG32 lSrcPos,__LONG32 lSrcLen);
-      HRESULT (WINAPI *GetMLStr)(IMLangString *This,__LONG32 lSrcPos,__LONG32 lSrcLen,IUnknown *pUnkOuter,DWORD dwClsContext,const IID *piid,IUnknown **ppDestMLStr,__LONG32 *plDestPos,__LONG32 *plDestLen);
+                   HRESULT (WINAPI *QueryInterface)(IMLangString *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangString *This);
+                   ULONG (WINAPI *Release)(IMLangString *This);
+                   HRESULT (WINAPI *Sync)(IMLangString *This,WINBOOL fNoAccess);
+                   HRESULT (WINAPI *GetLength)(IMLangString *This,__LONG32 *plLen);
+                   HRESULT (WINAPI *SetMLStr)(IMLangString *This,__LONG32 lDestPos,__LONG32 lDestLen,IUnknown *pSrcMLStr,__LONG32 lSrcPos,__LONG32 lSrcLen);
+                   HRESULT (WINAPI *GetMLStr)(IMLangString *This,__LONG32 lSrcPos,__LONG32 lSrcLen,IUnknown *pUnkOuter,DWORD dwClsContext,const IID *piid,IUnknown **ppDestMLStr,__LONG32 *plDestPos,__LONG32 *plDestLen);
     END_INTERFACE
   } IMLangStringVtbl;
   struct IMLangString {
@@ -320,21 +320,21 @@ extern "C"{
 #else
   typedef struct IMLangStringWStrVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangStringWStr *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangStringWStr *This);
-      ULONG (WINAPI *Release)(IMLangStringWStr *This);
-      HRESULT (WINAPI *Sync)(IMLangStringWStr *This,WINBOOL fNoAccess);
-      HRESULT (WINAPI *GetLength)(IMLangStringWStr *This,__LONG32 *plLen);
-      HRESULT (WINAPI *SetMLStr)(IMLangStringWStr *This,__LONG32 lDestPos,__LONG32 lDestLen,IUnknown *pSrcMLStr,__LONG32 lSrcPos,__LONG32 lSrcLen);
-      HRESULT (WINAPI *GetMLStr)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,IUnknown *pUnkOuter,DWORD dwClsContext,const IID *piid,IUnknown **ppDestMLStr,__LONG32 *plDestPos,__LONG32 *plDestLen);
-      HRESULT (WINAPI *SetWStr)(IMLangStringWStr *This,__LONG32 lDestPos,__LONG32 lDestLen,const WCHAR *pszSrc,__LONG32 cchSrc,__LONG32 *pcchActual,__LONG32 *plActualLen);
-      HRESULT (WINAPI *SetStrBufW)(IMLangStringWStr *This,__LONG32 lDestPos,__LONG32 lDestLen,IMLangStringBufW *pSrcBuf,__LONG32 *pcchActual,__LONG32 *plActualLen);
-      HRESULT (WINAPI *GetWStr)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,WCHAR *pszDest,__LONG32 cchDest,__LONG32 *pcchActual,__LONG32 *plActualLen);
-      HRESULT (WINAPI *GetStrBufW)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcMaxLen,IMLangStringBufW **ppDestBuf,__LONG32 *plDestLen);
-      HRESULT (WINAPI *LockWStr)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,__LONG32 lFlags,__LONG32 cchRequest,WCHAR **ppszDest,__LONG32 *pcchDest,__LONG32 *plDestLen);
-      HRESULT (WINAPI *UnlockWStr)(IMLangStringWStr *This,const WCHAR *pszSrc,__LONG32 cchSrc,__LONG32 *pcchActual,__LONG32 *plActualLen);
-      HRESULT (WINAPI *SetLocale)(IMLangStringWStr *This,__LONG32 lDestPos,__LONG32 lDestLen,LCID locale);
-      HRESULT (WINAPI *GetLocale)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcMaxLen,LCID *plocale,__LONG32 *plLocalePos,__LONG32 *plLocaleLen);
+                   HRESULT (WINAPI *QueryInterface)(IMLangStringWStr *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangStringWStr *This);
+                   ULONG (WINAPI *Release)(IMLangStringWStr *This);
+                   HRESULT (WINAPI *Sync)(IMLangStringWStr *This,WINBOOL fNoAccess);
+                   HRESULT (WINAPI *GetLength)(IMLangStringWStr *This,__LONG32 *plLen);
+                   HRESULT (WINAPI *SetMLStr)(IMLangStringWStr *This,__LONG32 lDestPos,__LONG32 lDestLen,IUnknown *pSrcMLStr,__LONG32 lSrcPos,__LONG32 lSrcLen);
+                   HRESULT (WINAPI *GetMLStr)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,IUnknown *pUnkOuter,DWORD dwClsContext,const IID *piid,IUnknown **ppDestMLStr,__LONG32 *plDestPos,__LONG32 *plDestLen);
+                   HRESULT (WINAPI *SetWStr)(IMLangStringWStr *This,__LONG32 lDestPos,__LONG32 lDestLen,const WCHAR *pszSrc,__LONG32 cchSrc,__LONG32 *pcchActual,__LONG32 *plActualLen);
+                   HRESULT (WINAPI *SetStrBufW)(IMLangStringWStr *This,__LONG32 lDestPos,__LONG32 lDestLen,IMLangStringBufW *pSrcBuf,__LONG32 *pcchActual,__LONG32 *plActualLen);
+                   HRESULT (WINAPI *GetWStr)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,WCHAR *pszDest,__LONG32 cchDest,__LONG32 *pcchActual,__LONG32 *plActualLen);
+                   HRESULT (WINAPI *GetStrBufW)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcMaxLen,IMLangStringBufW **ppDestBuf,__LONG32 *plDestLen);
+                   HRESULT (WINAPI *LockWStr)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,__LONG32 lFlags,__LONG32 cchRequest,WCHAR **ppszDest,__LONG32 *pcchDest,__LONG32 *plDestLen);
+                   HRESULT (WINAPI *UnlockWStr)(IMLangStringWStr *This,const WCHAR *pszSrc,__LONG32 cchSrc,__LONG32 *pcchActual,__LONG32 *plActualLen);
+                   HRESULT (WINAPI *SetLocale)(IMLangStringWStr *This,__LONG32 lDestPos,__LONG32 lDestLen,LCID locale);
+                   HRESULT (WINAPI *GetLocale)(IMLangStringWStr *This,__LONG32 lSrcPos,__LONG32 lSrcMaxLen,LCID *plocale,__LONG32 *plLocalePos,__LONG32 *plLocaleLen);
     END_INTERFACE
   } IMLangStringWStrVtbl;
   struct IMLangStringWStr {
@@ -394,21 +394,21 @@ extern "C"{
 #else
   typedef struct IMLangStringAStrVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangStringAStr *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangStringAStr *This);
-      ULONG (WINAPI *Release)(IMLangStringAStr *This);
-      HRESULT (WINAPI *Sync)(IMLangStringAStr *This,WINBOOL fNoAccess);
-      HRESULT (WINAPI *GetLength)(IMLangStringAStr *This,__LONG32 *plLen);
-      HRESULT (WINAPI *SetMLStr)(IMLangStringAStr *This,__LONG32 lDestPos,__LONG32 lDestLen,IUnknown *pSrcMLStr,__LONG32 lSrcPos,__LONG32 lSrcLen);
-      HRESULT (WINAPI *GetMLStr)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,IUnknown *pUnkOuter,DWORD dwClsContext,const IID *piid,IUnknown **ppDestMLStr,__LONG32 *plDestPos,__LONG32 *plDestLen);
-      HRESULT (WINAPI *SetAStr)(IMLangStringAStr *This,__LONG32 lDestPos,__LONG32 lDestLen,UINT uCodePage,const CHAR *pszSrc,__LONG32 cchSrc,__LONG32 *pcchActual,__LONG32 *plActualLen);
-      HRESULT (WINAPI *SetStrBufA)(IMLangStringAStr *This,__LONG32 lDestPos,__LONG32 lDestLen,UINT uCodePage,IMLangStringBufA *pSrcBuf,__LONG32 *pcchActual,__LONG32 *plActualLen);
-      HRESULT (WINAPI *GetAStr)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,UINT uCodePageIn,UINT *puCodePageOut,CHAR *pszDest,__LONG32 cchDest,__LONG32 *pcchActual,__LONG32 *plActualLen);
-      HRESULT (WINAPI *GetStrBufA)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcMaxLen,UINT *puDestCodePage,IMLangStringBufA **ppDestBuf,__LONG32 *plDestLen);
-      HRESULT (WINAPI *LockAStr)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,__LONG32 lFlags,UINT uCodePageIn,__LONG32 cchRequest,UINT *puCodePageOut,CHAR **ppszDest,__LONG32 *pcchDest,__LONG32 *plDestLen);
-      HRESULT (WINAPI *UnlockAStr)(IMLangStringAStr *This,const CHAR *pszSrc,__LONG32 cchSrc,__LONG32 *pcchActual,__LONG32 *plActualLen);
-      HRESULT (WINAPI *SetLocale)(IMLangStringAStr *This,__LONG32 lDestPos,__LONG32 lDestLen,LCID locale);
-      HRESULT (WINAPI *GetLocale)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcMaxLen,LCID *plocale,__LONG32 *plLocalePos,__LONG32 *plLocaleLen);
+                   HRESULT (WINAPI *QueryInterface)(IMLangStringAStr *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangStringAStr *This);
+                   ULONG (WINAPI *Release)(IMLangStringAStr *This);
+                   HRESULT (WINAPI *Sync)(IMLangStringAStr *This,WINBOOL fNoAccess);
+                   HRESULT (WINAPI *GetLength)(IMLangStringAStr *This,__LONG32 *plLen);
+                   HRESULT (WINAPI *SetMLStr)(IMLangStringAStr *This,__LONG32 lDestPos,__LONG32 lDestLen,IUnknown *pSrcMLStr,__LONG32 lSrcPos,__LONG32 lSrcLen);
+                   HRESULT (WINAPI *GetMLStr)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,IUnknown *pUnkOuter,DWORD dwClsContext,const IID *piid,IUnknown **ppDestMLStr,__LONG32 *plDestPos,__LONG32 *plDestLen);
+                   HRESULT (WINAPI *SetAStr)(IMLangStringAStr *This,__LONG32 lDestPos,__LONG32 lDestLen,UINT uCodePage,const CHAR *pszSrc,__LONG32 cchSrc,__LONG32 *pcchActual,__LONG32 *plActualLen);
+                   HRESULT (WINAPI *SetStrBufA)(IMLangStringAStr *This,__LONG32 lDestPos,__LONG32 lDestLen,UINT uCodePage,IMLangStringBufA *pSrcBuf,__LONG32 *pcchActual,__LONG32 *plActualLen);
+                   HRESULT (WINAPI *GetAStr)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,UINT uCodePageIn,UINT *puCodePageOut,CHAR *pszDest,__LONG32 cchDest,__LONG32 *pcchActual,__LONG32 *plActualLen);
+                   HRESULT (WINAPI *GetStrBufA)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcMaxLen,UINT *puDestCodePage,IMLangStringBufA **ppDestBuf,__LONG32 *plDestLen);
+                   HRESULT (WINAPI *LockAStr)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcLen,__LONG32 lFlags,UINT uCodePageIn,__LONG32 cchRequest,UINT *puCodePageOut,CHAR **ppszDest,__LONG32 *pcchDest,__LONG32 *plDestLen);
+                   HRESULT (WINAPI *UnlockAStr)(IMLangStringAStr *This,const CHAR *pszSrc,__LONG32 cchSrc,__LONG32 *pcchActual,__LONG32 *plActualLen);
+                   HRESULT (WINAPI *SetLocale)(IMLangStringAStr *This,__LONG32 lDestPos,__LONG32 lDestLen,LCID locale);
+                   HRESULT (WINAPI *GetLocale)(IMLangStringAStr *This,__LONG32 lSrcPos,__LONG32 lSrcMaxLen,LCID *plocale,__LONG32 *plLocalePos,__LONG32 *plLocaleLen);
     END_INTERFACE
   } IMLangStringAStrVtbl;
   struct IMLangStringAStr {
@@ -468,12 +468,12 @@ extern "C"{
 #else
   typedef struct IMLangLineBreakConsoleVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangLineBreakConsole *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangLineBreakConsole *This);
-      ULONG (WINAPI *Release)(IMLangLineBreakConsole *This);
-      HRESULT (WINAPI *BreakLineML)(IMLangLineBreakConsole *This,IMLangString *pSrcMLStr,__LONG32 lSrcPos,__LONG32 lSrcLen,__LONG32 cMinColumns,__LONG32 cMaxColumns,__LONG32 *plLineLen,__LONG32 *plSkipLen);
-      HRESULT (WINAPI *BreakLineW)(IMLangLineBreakConsole *This,LCID locale,const WCHAR *pszSrc,__LONG32 cchSrc,__LONG32 cMaxColumns,__LONG32 *pcchLine,__LONG32 *pcchSkip);
-      HRESULT (WINAPI *BreakLineA)(IMLangLineBreakConsole *This,LCID locale,UINT uCodePage,const CHAR *pszSrc,__LONG32 cchSrc,__LONG32 cMaxColumns,__LONG32 *pcchLine,__LONG32 *pcchSkip);
+                   HRESULT (WINAPI *QueryInterface)(IMLangLineBreakConsole *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangLineBreakConsole *This);
+                   ULONG (WINAPI *Release)(IMLangLineBreakConsole *This);
+                   HRESULT (WINAPI *BreakLineML)(IMLangLineBreakConsole *This,IMLangString *pSrcMLStr,__LONG32 lSrcPos,__LONG32 lSrcLen,__LONG32 cMinColumns,__LONG32 cMaxColumns,__LONG32 *plLineLen,__LONG32 *plSkipLen);
+                   HRESULT (WINAPI *BreakLineW)(IMLangLineBreakConsole *This,LCID locale,const WCHAR *pszSrc,__LONG32 cchSrc,__LONG32 cMaxColumns,__LONG32 *pcchLine,__LONG32 *pcchSkip);
+                   HRESULT (WINAPI *BreakLineA)(IMLangLineBreakConsole *This,LCID locale,UINT uCodePage,const CHAR *pszSrc,__LONG32 cchSrc,__LONG32 cMaxColumns,__LONG32 *pcchLine,__LONG32 *pcchSkip);
     END_INTERFACE
   } IMLangLineBreakConsoleVtbl;
   struct IMLangLineBreakConsole {
@@ -544,13 +544,13 @@ extern "C"{
 #else
   typedef struct IEnumCodePageVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumCodePage *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumCodePage *This);
-      ULONG (WINAPI *Release)(IEnumCodePage *This);
-      HRESULT (WINAPI *Clone)(IEnumCodePage *This,IEnumCodePage **ppEnum);
-      HRESULT (WINAPI *Next)(IEnumCodePage *This,ULONG celt,PMIMECPINFO rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumCodePage *This);
-      HRESULT (WINAPI *Skip)(IEnumCodePage *This,ULONG celt);
+                   HRESULT (WINAPI *QueryInterface)(IEnumCodePage *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumCodePage *This);
+                   ULONG (WINAPI *Release)(IEnumCodePage *This);
+                   HRESULT (WINAPI *Clone)(IEnumCodePage *This,IEnumCodePage **ppEnum);
+                   HRESULT (WINAPI *Next)(IEnumCodePage *This,ULONG celt,PMIMECPINFO rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumCodePage *This);
+                   HRESULT (WINAPI *Skip)(IEnumCodePage *This,ULONG celt);
     END_INTERFACE
   } IEnumCodePageVtbl;
   struct IEnumCodePage {
@@ -602,13 +602,13 @@ extern "C"{
 #else
   typedef struct IEnumRfc1766Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumRfc1766 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumRfc1766 *This);
-      ULONG (WINAPI *Release)(IEnumRfc1766 *This);
-      HRESULT (WINAPI *Clone)(IEnumRfc1766 *This,IEnumRfc1766 **ppEnum);
-      HRESULT (WINAPI *Next)(IEnumRfc1766 *This,ULONG celt,PRFC1766INFO rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumRfc1766 *This);
-      HRESULT (WINAPI *Skip)(IEnumRfc1766 *This,ULONG celt);
+                   HRESULT (WINAPI *QueryInterface)(IEnumRfc1766 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumRfc1766 *This);
+                   ULONG (WINAPI *Release)(IEnumRfc1766 *This);
+                   HRESULT (WINAPI *Clone)(IEnumRfc1766 *This,IEnumRfc1766 **ppEnum);
+                   HRESULT (WINAPI *Next)(IEnumRfc1766 *This,ULONG celt,PRFC1766INFO rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumRfc1766 *This);
+                   HRESULT (WINAPI *Skip)(IEnumRfc1766 *This,ULONG celt);
     END_INTERFACE
   } IEnumRfc1766Vtbl;
   struct IEnumRfc1766 {
@@ -678,13 +678,13 @@ extern "C"{
 #else
   typedef struct IEnumScriptVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumScript *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumScript *This);
-      ULONG (WINAPI *Release)(IEnumScript *This);
-      HRESULT (WINAPI *Clone)(IEnumScript *This,IEnumScript **ppEnum);
-      HRESULT (WINAPI *Next)(IEnumScript *This,ULONG celt,PSCRIPTINFO rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumScript *This);
-      HRESULT (WINAPI *Skip)(IEnumScript *This,ULONG celt);
+                   HRESULT (WINAPI *QueryInterface)(IEnumScript *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumScript *This);
+                   ULONG (WINAPI *Release)(IEnumScript *This);
+                   HRESULT (WINAPI *Clone)(IEnumScript *This,IEnumScript **ppEnum);
+                   HRESULT (WINAPI *Next)(IEnumScript *This,ULONG celt,PSCRIPTINFO rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumScript *This);
+                   HRESULT (WINAPI *Skip)(IEnumScript *This,ULONG celt);
     END_INTERFACE
   } IEnumScriptVtbl;
   struct IEnumScript {
@@ -739,16 +739,16 @@ extern "C"{
 #else
   typedef struct IMLangConvertCharsetVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangConvertCharset *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangConvertCharset *This);
-      ULONG (WINAPI *Release)(IMLangConvertCharset *This);
-      HRESULT (WINAPI *Initialize)(IMLangConvertCharset *This,UINT uiSrcCodePage,UINT uiDstCodePage,DWORD dwProperty);
-      HRESULT (WINAPI *GetSourceCodePage)(IMLangConvertCharset *This,UINT *puiSrcCodePage);
-      HRESULT (WINAPI *GetDestinationCodePage)(IMLangConvertCharset *This,UINT *puiDstCodePage);
-      HRESULT (WINAPI *GetProperty)(IMLangConvertCharset *This,DWORD *pdwProperty);
-      HRESULT (WINAPI *DoConversion)(IMLangConvertCharset *This,BYTE *pSrcStr,UINT *pcSrcSize,BYTE *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *DoConversionToUnicode)(IMLangConvertCharset *This,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *DoConversionFromUnicode)(IMLangConvertCharset *This,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *QueryInterface)(IMLangConvertCharset *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangConvertCharset *This);
+                   ULONG (WINAPI *Release)(IMLangConvertCharset *This);
+                   HRESULT (WINAPI *Initialize)(IMLangConvertCharset *This,UINT uiSrcCodePage,UINT uiDstCodePage,DWORD dwProperty);
+                   HRESULT (WINAPI *GetSourceCodePage)(IMLangConvertCharset *This,UINT *puiSrcCodePage);
+                   HRESULT (WINAPI *GetDestinationCodePage)(IMLangConvertCharset *This,UINT *puiDstCodePage);
+                   HRESULT (WINAPI *GetProperty)(IMLangConvertCharset *This,DWORD *pdwProperty);
+                   HRESULT (WINAPI *DoConversion)(IMLangConvertCharset *This,BYTE *pSrcStr,UINT *pcSrcSize,BYTE *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *DoConversionToUnicode)(IMLangConvertCharset *This,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *DoConversionFromUnicode)(IMLangConvertCharset *This,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize);
     END_INTERFACE
   } IMLangConvertCharsetVtbl;
   struct IMLangConvertCharset {
@@ -815,24 +815,24 @@ extern "C"{
 #else
   typedef struct IMultiLanguageVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMultiLanguage *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMultiLanguage *This);
-      ULONG (WINAPI *Release)(IMultiLanguage *This);
-      HRESULT (WINAPI *GetNumberOfCodePageInfo)(IMultiLanguage *This,UINT *pcCodePage);
-      HRESULT (WINAPI *GetCodePageInfo)(IMultiLanguage *This,UINT uiCodePage,PMIMECPINFO pCodePageInfo);
-      HRESULT (WINAPI *GetFamilyCodePage)(IMultiLanguage *This,UINT uiCodePage,UINT *puiFamilyCodePage);
-      HRESULT (WINAPI *EnumCodePages)(IMultiLanguage *This,DWORD grfFlags,IEnumCodePage **ppEnumCodePage);
-      HRESULT (WINAPI *GetCharsetInfo)(IMultiLanguage *This,BSTR Charset,PMIMECSETINFO pCharsetInfo);
-      HRESULT (WINAPI *IsConvertible)(IMultiLanguage *This,DWORD dwSrcEncoding,DWORD dwDstEncoding);
-      HRESULT (WINAPI *ConvertString)(IMultiLanguage *This,DWORD *pdwMode,DWORD dwSrcEncoding,DWORD dwDstEncoding,BYTE *pSrcStr,UINT *pcSrcSize,BYTE *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringToUnicode)(IMultiLanguage *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringFromUnicode)(IMultiLanguage *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringReset)(IMultiLanguage *This);
-      HRESULT (WINAPI *GetRfc1766FromLcid)(IMultiLanguage *This,LCID Locale,BSTR *pbstrRfc1766);
-      HRESULT (WINAPI *GetLcidFromRfc1766)(IMultiLanguage *This,LCID *pLocale,BSTR bstrRfc1766);
-      HRESULT (WINAPI *EnumRfc1766)(IMultiLanguage *This,IEnumRfc1766 **ppEnumRfc1766);
-      HRESULT (WINAPI *GetRfc1766Info)(IMultiLanguage *This,LCID Locale,PRFC1766INFO pRfc1766Info);
-      HRESULT (WINAPI *CreateConvertCharset)(IMultiLanguage *This,UINT uiSrcCodePage,UINT uiDstCodePage,DWORD dwProperty,IMLangConvertCharset **ppMLangConvertCharset);
+                   HRESULT (WINAPI *QueryInterface)(IMultiLanguage *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMultiLanguage *This);
+                   ULONG (WINAPI *Release)(IMultiLanguage *This);
+                   HRESULT (WINAPI *GetNumberOfCodePageInfo)(IMultiLanguage *This,UINT *pcCodePage);
+                   HRESULT (WINAPI *GetCodePageInfo)(IMultiLanguage *This,UINT uiCodePage,PMIMECPINFO pCodePageInfo);
+                   HRESULT (WINAPI *GetFamilyCodePage)(IMultiLanguage *This,UINT uiCodePage,UINT *puiFamilyCodePage);
+                   HRESULT (WINAPI *EnumCodePages)(IMultiLanguage *This,DWORD grfFlags,IEnumCodePage **ppEnumCodePage);
+                   HRESULT (WINAPI *GetCharsetInfo)(IMultiLanguage *This,BSTR Charset,PMIMECSETINFO pCharsetInfo);
+                   HRESULT (WINAPI *IsConvertible)(IMultiLanguage *This,DWORD dwSrcEncoding,DWORD dwDstEncoding);
+                   HRESULT (WINAPI *ConvertString)(IMultiLanguage *This,DWORD *pdwMode,DWORD dwSrcEncoding,DWORD dwDstEncoding,BYTE *pSrcStr,UINT *pcSrcSize,BYTE *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringToUnicode)(IMultiLanguage *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringFromUnicode)(IMultiLanguage *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringReset)(IMultiLanguage *This);
+                   HRESULT (WINAPI *GetRfc1766FromLcid)(IMultiLanguage *This,LCID Locale,BSTR *pbstrRfc1766);
+                   HRESULT (WINAPI *GetLcidFromRfc1766)(IMultiLanguage *This,LCID *pLocale,BSTR bstrRfc1766);
+                   HRESULT (WINAPI *EnumRfc1766)(IMultiLanguage *This,IEnumRfc1766 **ppEnumRfc1766);
+                   HRESULT (WINAPI *GetRfc1766Info)(IMultiLanguage *This,LCID Locale,PRFC1766INFO pRfc1766Info);
+                   HRESULT (WINAPI *CreateConvertCharset)(IMultiLanguage *This,UINT uiSrcCodePage,UINT uiDstCodePage,DWORD dwProperty,IMLangConvertCharset **ppMLangConvertCharset);
     END_INTERFACE
   } IMultiLanguageVtbl;
   struct IMultiLanguage {
@@ -955,36 +955,36 @@ extern "C"{
 #else
   typedef struct IMultiLanguage2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMultiLanguage2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMultiLanguage2 *This);
-      ULONG (WINAPI *Release)(IMultiLanguage2 *This);
-      HRESULT (WINAPI *GetNumberOfCodePageInfo)(IMultiLanguage2 *This,UINT *pcCodePage);
-      HRESULT (WINAPI *GetCodePageInfo)(IMultiLanguage2 *This,UINT uiCodePage,LANGID LangId,PMIMECPINFO pCodePageInfo);
-      HRESULT (WINAPI *GetFamilyCodePage)(IMultiLanguage2 *This,UINT uiCodePage,UINT *puiFamilyCodePage);
-      HRESULT (WINAPI *EnumCodePages)(IMultiLanguage2 *This,DWORD grfFlags,LANGID LangId,IEnumCodePage **ppEnumCodePage);
-      HRESULT (WINAPI *GetCharsetInfo)(IMultiLanguage2 *This,BSTR Charset,PMIMECSETINFO pCharsetInfo);
-      HRESULT (WINAPI *IsConvertible)(IMultiLanguage2 *This,DWORD dwSrcEncoding,DWORD dwDstEncoding);
-      HRESULT (WINAPI *ConvertString)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwSrcEncoding,DWORD dwDstEncoding,BYTE *pSrcStr,UINT *pcSrcSize,BYTE *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringToUnicode)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringFromUnicode)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringReset)(IMultiLanguage2 *This);
-      HRESULT (WINAPI *GetRfc1766FromLcid)(IMultiLanguage2 *This,LCID Locale,BSTR *pbstrRfc1766);
-      HRESULT (WINAPI *GetLcidFromRfc1766)(IMultiLanguage2 *This,LCID *pLocale,BSTR bstrRfc1766);
-      HRESULT (WINAPI *EnumRfc1766)(IMultiLanguage2 *This,LANGID LangId,IEnumRfc1766 **ppEnumRfc1766);
-      HRESULT (WINAPI *GetRfc1766Info)(IMultiLanguage2 *This,LCID Locale,LANGID LangId,PRFC1766INFO pRfc1766Info);
-      HRESULT (WINAPI *CreateConvertCharset)(IMultiLanguage2 *This,UINT uiSrcCodePage,UINT uiDstCodePage,DWORD dwProperty,IMLangConvertCharset **ppMLangConvertCharset);
-      HRESULT (WINAPI *ConvertStringInIStream)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwFlag,WCHAR *lpFallBack,DWORD dwSrcEncoding,DWORD dwDstEncoding,IStream *pstmIn,IStream *pstmOut);
-      HRESULT (WINAPI *ConvertStringToUnicodeEx)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize,DWORD dwFlag,WCHAR *lpFallBack);
-      HRESULT (WINAPI *ConvertStringFromUnicodeEx)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize,DWORD dwFlag,WCHAR *lpFallBack);
-      HRESULT (WINAPI *DetectCodepageInIStream)(IMultiLanguage2 *This,DWORD dwFlag,DWORD dwPrefWinCodePage,IStream *pstmIn,DetectEncodingInfo *lpEncoding,INT *pnScores);
-      HRESULT (WINAPI *DetectInputCodepage)(IMultiLanguage2 *This,DWORD dwFlag,DWORD dwPrefWinCodePage,CHAR *pSrcStr,INT *pcSrcSize,DetectEncodingInfo *lpEncoding,INT *pnScores);
-      HRESULT (WINAPI *ValidateCodePage)(IMultiLanguage2 *This,UINT uiCodePage,HWND hwnd);
-      HRESULT (WINAPI *GetCodePageDescription)(IMultiLanguage2 *This,UINT uiCodePage,LCID lcid,LPWSTR lpWideCharStr,int cchWideChar);
-      HRESULT (WINAPI *IsCodePageInstallable)(IMultiLanguage2 *This,UINT uiCodePage);
-      HRESULT (WINAPI *SetMimeDBSource)(IMultiLanguage2 *This,MIMECONTF dwSource);
-      HRESULT (WINAPI *GetNumberOfScripts)(IMultiLanguage2 *This,UINT *pnScripts);
-      HRESULT (WINAPI *EnumScripts)(IMultiLanguage2 *This,DWORD dwFlags,LANGID LangId,IEnumScript **ppEnumScript);
-      HRESULT (WINAPI *ValidateCodePageEx)(IMultiLanguage2 *This,UINT uiCodePage,HWND hwnd,DWORD dwfIODControl);
+                   HRESULT (WINAPI *QueryInterface)(IMultiLanguage2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMultiLanguage2 *This);
+                   ULONG (WINAPI *Release)(IMultiLanguage2 *This);
+                   HRESULT (WINAPI *GetNumberOfCodePageInfo)(IMultiLanguage2 *This,UINT *pcCodePage);
+                   HRESULT (WINAPI *GetCodePageInfo)(IMultiLanguage2 *This,UINT uiCodePage,LANGID LangId,PMIMECPINFO pCodePageInfo);
+                   HRESULT (WINAPI *GetFamilyCodePage)(IMultiLanguage2 *This,UINT uiCodePage,UINT *puiFamilyCodePage);
+                   HRESULT (WINAPI *EnumCodePages)(IMultiLanguage2 *This,DWORD grfFlags,LANGID LangId,IEnumCodePage **ppEnumCodePage);
+                   HRESULT (WINAPI *GetCharsetInfo)(IMultiLanguage2 *This,BSTR Charset,PMIMECSETINFO pCharsetInfo);
+                   HRESULT (WINAPI *IsConvertible)(IMultiLanguage2 *This,DWORD dwSrcEncoding,DWORD dwDstEncoding);
+                   HRESULT (WINAPI *ConvertString)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwSrcEncoding,DWORD dwDstEncoding,BYTE *pSrcStr,UINT *pcSrcSize,BYTE *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringToUnicode)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringFromUnicode)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringReset)(IMultiLanguage2 *This);
+                   HRESULT (WINAPI *GetRfc1766FromLcid)(IMultiLanguage2 *This,LCID Locale,BSTR *pbstrRfc1766);
+                   HRESULT (WINAPI *GetLcidFromRfc1766)(IMultiLanguage2 *This,LCID *pLocale,BSTR bstrRfc1766);
+                   HRESULT (WINAPI *EnumRfc1766)(IMultiLanguage2 *This,LANGID LangId,IEnumRfc1766 **ppEnumRfc1766);
+                   HRESULT (WINAPI *GetRfc1766Info)(IMultiLanguage2 *This,LCID Locale,LANGID LangId,PRFC1766INFO pRfc1766Info);
+                   HRESULT (WINAPI *CreateConvertCharset)(IMultiLanguage2 *This,UINT uiSrcCodePage,UINT uiDstCodePage,DWORD dwProperty,IMLangConvertCharset **ppMLangConvertCharset);
+                   HRESULT (WINAPI *ConvertStringInIStream)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwFlag,WCHAR *lpFallBack,DWORD dwSrcEncoding,DWORD dwDstEncoding,IStream *pstmIn,IStream *pstmOut);
+                   HRESULT (WINAPI *ConvertStringToUnicodeEx)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize,DWORD dwFlag,WCHAR *lpFallBack);
+                   HRESULT (WINAPI *ConvertStringFromUnicodeEx)(IMultiLanguage2 *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize,DWORD dwFlag,WCHAR *lpFallBack);
+                   HRESULT (WINAPI *DetectCodepageInIStream)(IMultiLanguage2 *This,DWORD dwFlag,DWORD dwPrefWinCodePage,IStream *pstmIn,DetectEncodingInfo *lpEncoding,INT *pnScores);
+                   HRESULT (WINAPI *DetectInputCodepage)(IMultiLanguage2 *This,DWORD dwFlag,DWORD dwPrefWinCodePage,CHAR *pSrcStr,INT *pcSrcSize,DetectEncodingInfo *lpEncoding,INT *pnScores);
+                   HRESULT (WINAPI *ValidateCodePage)(IMultiLanguage2 *This,UINT uiCodePage,HWND hwnd);
+                   HRESULT (WINAPI *GetCodePageDescription)(IMultiLanguage2 *This,UINT uiCodePage,LCID lcid,LPWSTR lpWideCharStr,int cchWideChar);
+                   HRESULT (WINAPI *IsCodePageInstallable)(IMultiLanguage2 *This,UINT uiCodePage);
+                   HRESULT (WINAPI *SetMimeDBSource)(IMultiLanguage2 *This,MIMECONTF dwSource);
+                   HRESULT (WINAPI *GetNumberOfScripts)(IMultiLanguage2 *This,UINT *pnScripts);
+                   HRESULT (WINAPI *EnumScripts)(IMultiLanguage2 *This,DWORD dwFlags,LANGID LangId,IEnumScript **ppEnumScript);
+                   HRESULT (WINAPI *ValidateCodePageEx)(IMultiLanguage2 *This,UINT uiCodePage,HWND hwnd,DWORD dwfIODControl);
     END_INTERFACE
   } IMultiLanguage2Vtbl;
   struct IMultiLanguage2 {
@@ -1095,13 +1095,13 @@ extern "C"{
 #else
   typedef struct IMLangCodePagesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangCodePages *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangCodePages *This);
-      ULONG (WINAPI *Release)(IMLangCodePages *This);
-      HRESULT (WINAPI *GetCharCodePages)(IMLangCodePages *This,WCHAR chSrc,DWORD *pdwCodePages);
-      HRESULT (WINAPI *GetStrCodePages)(IMLangCodePages *This,const WCHAR *pszSrc,__LONG32 cchSrc,DWORD dwPriorityCodePages,DWORD *pdwCodePages,__LONG32 *pcchCodePages);
-      HRESULT (WINAPI *CodePageToCodePages)(IMLangCodePages *This,UINT uCodePage,DWORD *pdwCodePages);
-      HRESULT (WINAPI *CodePagesToCodePage)(IMLangCodePages *This,DWORD dwCodePages,UINT uDefaultCodePage,UINT *puCodePage);
+                   HRESULT (WINAPI *QueryInterface)(IMLangCodePages *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangCodePages *This);
+                   ULONG (WINAPI *Release)(IMLangCodePages *This);
+                   HRESULT (WINAPI *GetCharCodePages)(IMLangCodePages *This,WCHAR chSrc,DWORD *pdwCodePages);
+                   HRESULT (WINAPI *GetStrCodePages)(IMLangCodePages *This,const WCHAR *pszSrc,__LONG32 cchSrc,DWORD dwPriorityCodePages,DWORD *pdwCodePages,__LONG32 *pcchCodePages);
+                   HRESULT (WINAPI *CodePageToCodePages)(IMLangCodePages *This,UINT uCodePage,DWORD *pdwCodePages);
+                   HRESULT (WINAPI *CodePagesToCodePage)(IMLangCodePages *This,DWORD dwCodePages,UINT uDefaultCodePage,UINT *puCodePage);
     END_INTERFACE
   } IMLangCodePagesVtbl;
   struct IMLangCodePages {
@@ -1143,17 +1143,17 @@ extern "C"{
 #else
   typedef struct IMLangFontLinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangFontLink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangFontLink *This);
-      ULONG (WINAPI *Release)(IMLangFontLink *This);
-      HRESULT (WINAPI *GetCharCodePages)(IMLangFontLink *This,WCHAR chSrc,DWORD *pdwCodePages);
-      HRESULT (WINAPI *GetStrCodePages)(IMLangFontLink *This,const WCHAR *pszSrc,__LONG32 cchSrc,DWORD dwPriorityCodePages,DWORD *pdwCodePages,__LONG32 *pcchCodePages);
-      HRESULT (WINAPI *CodePageToCodePages)(IMLangFontLink *This,UINT uCodePage,DWORD *pdwCodePages);
-      HRESULT (WINAPI *CodePagesToCodePage)(IMLangFontLink *This,DWORD dwCodePages,UINT uDefaultCodePage,UINT *puCodePage);
-      HRESULT (WINAPI *GetFontCodePages)(IMLangFontLink *This,HDC hDC,HFONT hFont,DWORD *pdwCodePages);
-      HRESULT (WINAPI *MapFont)(IMLangFontLink *This,HDC hDC,DWORD dwCodePages,HFONT hSrcFont,HFONT *phDestFont);
-      HRESULT (WINAPI *ReleaseFont)(IMLangFontLink *This,HFONT hFont);
-      HRESULT (WINAPI *ResetFontMapping)(IMLangFontLink *This);
+                   HRESULT (WINAPI *QueryInterface)(IMLangFontLink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangFontLink *This);
+                   ULONG (WINAPI *Release)(IMLangFontLink *This);
+                   HRESULT (WINAPI *GetCharCodePages)(IMLangFontLink *This,WCHAR chSrc,DWORD *pdwCodePages);
+                   HRESULT (WINAPI *GetStrCodePages)(IMLangFontLink *This,const WCHAR *pszSrc,__LONG32 cchSrc,DWORD dwPriorityCodePages,DWORD *pdwCodePages,__LONG32 *pcchCodePages);
+                   HRESULT (WINAPI *CodePageToCodePages)(IMLangFontLink *This,UINT uCodePage,DWORD *pdwCodePages);
+                   HRESULT (WINAPI *CodePagesToCodePage)(IMLangFontLink *This,DWORD dwCodePages,UINT uDefaultCodePage,UINT *puCodePage);
+                   HRESULT (WINAPI *GetFontCodePages)(IMLangFontLink *This,HDC hDC,HFONT hFont,DWORD *pdwCodePages);
+                   HRESULT (WINAPI *MapFont)(IMLangFontLink *This,HDC hDC,DWORD dwCodePages,HFONT hSrcFont,HFONT *phDestFont);
+                   HRESULT (WINAPI *ReleaseFont)(IMLangFontLink *This,HFONT hFont);
+                   HRESULT (WINAPI *ResetFontMapping)(IMLangFontLink *This);
     END_INTERFACE
   } IMLangFontLinkVtbl;
   struct IMLangFontLink {
@@ -1207,20 +1207,20 @@ extern "C"{
 #else
   typedef struct IMLangFontLink2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMLangFontLink2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMLangFontLink2 *This);
-      ULONG (WINAPI *Release)(IMLangFontLink2 *This);
-      HRESULT (WINAPI *GetCharCodePages)(IMLangFontLink2 *This,WCHAR chSrc,DWORD *pdwCodePages);
-      HRESULT (WINAPI *GetStrCodePages)(IMLangFontLink2 *This,const WCHAR *pszSrc,__LONG32 cchSrc,DWORD dwPriorityCodePages,DWORD *pdwCodePages,__LONG32 *pcchCodePages);
-      HRESULT (WINAPI *CodePageToCodePages)(IMLangFontLink2 *This,UINT uCodePage,DWORD *pdwCodePages);
-      HRESULT (WINAPI *CodePagesToCodePage)(IMLangFontLink2 *This,DWORD dwCodePages,UINT uDefaultCodePage,UINT *puCodePage);
-      HRESULT (WINAPI *GetFontCodePages)(IMLangFontLink2 *This,HDC hDC,HFONT hFont,DWORD *pdwCodePages);
-      HRESULT (WINAPI *ReleaseFont)(IMLangFontLink2 *This,HFONT hFont);
-      HRESULT (WINAPI *ResetFontMapping)(IMLangFontLink2 *This);
-      HRESULT (WINAPI *MapFont)(IMLangFontLink2 *This,HDC hDC,DWORD dwCodePages,WCHAR chSrc,HFONT *pFont);
-      HRESULT (WINAPI *GetFontUnicodeRanges)(IMLangFontLink2 *This,HDC hDC,UINT *puiRanges,UNICODERANGE *pUranges);
-      HRESULT (WINAPI *GetScriptFontInfo)(IMLangFontLink2 *This,SCRIPT_ID sid,DWORD dwFlags,UINT *puiFonts,SCRIPTFONTINFO *pScriptFont);
-      HRESULT (WINAPI *CodePageToScriptID)(IMLangFontLink2 *This,UINT uiCodePage,SCRIPT_ID *pSid);
+                   HRESULT (WINAPI *QueryInterface)(IMLangFontLink2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMLangFontLink2 *This);
+                   ULONG (WINAPI *Release)(IMLangFontLink2 *This);
+                   HRESULT (WINAPI *GetCharCodePages)(IMLangFontLink2 *This,WCHAR chSrc,DWORD *pdwCodePages);
+                   HRESULT (WINAPI *GetStrCodePages)(IMLangFontLink2 *This,const WCHAR *pszSrc,__LONG32 cchSrc,DWORD dwPriorityCodePages,DWORD *pdwCodePages,__LONG32 *pcchCodePages);
+                   HRESULT (WINAPI *CodePageToCodePages)(IMLangFontLink2 *This,UINT uCodePage,DWORD *pdwCodePages);
+                   HRESULT (WINAPI *CodePagesToCodePage)(IMLangFontLink2 *This,DWORD dwCodePages,UINT uDefaultCodePage,UINT *puCodePage);
+                   HRESULT (WINAPI *GetFontCodePages)(IMLangFontLink2 *This,HDC hDC,HFONT hFont,DWORD *pdwCodePages);
+                   HRESULT (WINAPI *ReleaseFont)(IMLangFontLink2 *This,HFONT hFont);
+                   HRESULT (WINAPI *ResetFontMapping)(IMLangFontLink2 *This);
+                   HRESULT (WINAPI *MapFont)(IMLangFontLink2 *This,HDC hDC,DWORD dwCodePages,WCHAR chSrc,HFONT *pFont);
+                   HRESULT (WINAPI *GetFontUnicodeRanges)(IMLangFontLink2 *This,HDC hDC,UINT *puiRanges,UNICODERANGE *pUranges);
+                   HRESULT (WINAPI *GetScriptFontInfo)(IMLangFontLink2 *This,SCRIPT_ID sid,DWORD dwFlags,UINT *puiFonts,SCRIPTFONTINFO *pScriptFont);
+                   HRESULT (WINAPI *CodePageToScriptID)(IMLangFontLink2 *This,UINT uiCodePage,SCRIPT_ID *pSid);
     END_INTERFACE
   } IMLangFontLink2Vtbl;
   struct IMLangFontLink2 {
@@ -1273,38 +1273,38 @@ extern "C"{
 #else
   typedef struct IMultiLanguage3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMultiLanguage3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMultiLanguage3 *This);
-      ULONG (WINAPI *Release)(IMultiLanguage3 *This);
-      HRESULT (WINAPI *GetNumberOfCodePageInfo)(IMultiLanguage3 *This,UINT *pcCodePage);
-      HRESULT (WINAPI *GetCodePageInfo)(IMultiLanguage3 *This,UINT uiCodePage,LANGID LangId,PMIMECPINFO pCodePageInfo);
-      HRESULT (WINAPI *GetFamilyCodePage)(IMultiLanguage3 *This,UINT uiCodePage,UINT *puiFamilyCodePage);
-      HRESULT (WINAPI *EnumCodePages)(IMultiLanguage3 *This,DWORD grfFlags,LANGID LangId,IEnumCodePage **ppEnumCodePage);
-      HRESULT (WINAPI *GetCharsetInfo)(IMultiLanguage3 *This,BSTR Charset,PMIMECSETINFO pCharsetInfo);
-      HRESULT (WINAPI *IsConvertible)(IMultiLanguage3 *This,DWORD dwSrcEncoding,DWORD dwDstEncoding);
-      HRESULT (WINAPI *ConvertString)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwSrcEncoding,DWORD dwDstEncoding,BYTE *pSrcStr,UINT *pcSrcSize,BYTE *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringToUnicode)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringFromUnicode)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize);
-      HRESULT (WINAPI *ConvertStringReset)(IMultiLanguage3 *This);
-      HRESULT (WINAPI *GetRfc1766FromLcid)(IMultiLanguage3 *This,LCID Locale,BSTR *pbstrRfc1766);
-      HRESULT (WINAPI *GetLcidFromRfc1766)(IMultiLanguage3 *This,LCID *pLocale,BSTR bstrRfc1766);
-      HRESULT (WINAPI *EnumRfc1766)(IMultiLanguage3 *This,LANGID LangId,IEnumRfc1766 **ppEnumRfc1766);
-      HRESULT (WINAPI *GetRfc1766Info)(IMultiLanguage3 *This,LCID Locale,LANGID LangId,PRFC1766INFO pRfc1766Info);
-      HRESULT (WINAPI *CreateConvertCharset)(IMultiLanguage3 *This,UINT uiSrcCodePage,UINT uiDstCodePage,DWORD dwProperty,IMLangConvertCharset **ppMLangConvertCharset);
-      HRESULT (WINAPI *ConvertStringInIStream)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwFlag,WCHAR *lpFallBack,DWORD dwSrcEncoding,DWORD dwDstEncoding,IStream *pstmIn,IStream *pstmOut);
-      HRESULT (WINAPI *ConvertStringToUnicodeEx)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize,DWORD dwFlag,WCHAR *lpFallBack);
-      HRESULT (WINAPI *ConvertStringFromUnicodeEx)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize,DWORD dwFlag,WCHAR *lpFallBack);
-      HRESULT (WINAPI *DetectCodepageInIStream)(IMultiLanguage3 *This,DWORD dwFlag,DWORD dwPrefWinCodePage,IStream *pstmIn,DetectEncodingInfo *lpEncoding,INT *pnScores);
-      HRESULT (WINAPI *DetectInputCodepage)(IMultiLanguage3 *This,DWORD dwFlag,DWORD dwPrefWinCodePage,CHAR *pSrcStr,INT *pcSrcSize,DetectEncodingInfo *lpEncoding,INT *pnScores);
-      HRESULT (WINAPI *ValidateCodePage)(IMultiLanguage3 *This,UINT uiCodePage,HWND hwnd);
-      HRESULT (WINAPI *GetCodePageDescription)(IMultiLanguage3 *This,UINT uiCodePage,LCID lcid,LPWSTR lpWideCharStr,int cchWideChar);
-      HRESULT (WINAPI *IsCodePageInstallable)(IMultiLanguage3 *This,UINT uiCodePage);
-      HRESULT (WINAPI *SetMimeDBSource)(IMultiLanguage3 *This,MIMECONTF dwSource);
-      HRESULT (WINAPI *GetNumberOfScripts)(IMultiLanguage3 *This,UINT *pnScripts);
-      HRESULT (WINAPI *EnumScripts)(IMultiLanguage3 *This,DWORD dwFlags,LANGID LangId,IEnumScript **ppEnumScript);
-      HRESULT (WINAPI *ValidateCodePageEx)(IMultiLanguage3 *This,UINT uiCodePage,HWND hwnd,DWORD dwfIODControl);
-      HRESULT (WINAPI *DetectOutboundCodePage)(IMultiLanguage3 *This,DWORD dwFlags,LPCWSTR lpWideCharStr,UINT cchWideChar,UINT *puiPreferredCodePages,UINT nPreferredCodePages,UINT *puiDetectedCodePages,UINT *pnDetectedCodePages,WCHAR *lpSpecialChar);
-      HRESULT (WINAPI *DetectOutboundCodePageInIStream)(IMultiLanguage3 *This,DWORD dwFlags,IStream *pStrIn,UINT *puiPreferredCodePages,UINT nPreferredCodePages,UINT *puiDetectedCodePages,UINT *pnDetectedCodePages,WCHAR *lpSpecialChar);
+                   HRESULT (WINAPI *QueryInterface)(IMultiLanguage3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMultiLanguage3 *This);
+                   ULONG (WINAPI *Release)(IMultiLanguage3 *This);
+                   HRESULT (WINAPI *GetNumberOfCodePageInfo)(IMultiLanguage3 *This,UINT *pcCodePage);
+                   HRESULT (WINAPI *GetCodePageInfo)(IMultiLanguage3 *This,UINT uiCodePage,LANGID LangId,PMIMECPINFO pCodePageInfo);
+                   HRESULT (WINAPI *GetFamilyCodePage)(IMultiLanguage3 *This,UINT uiCodePage,UINT *puiFamilyCodePage);
+                   HRESULT (WINAPI *EnumCodePages)(IMultiLanguage3 *This,DWORD grfFlags,LANGID LangId,IEnumCodePage **ppEnumCodePage);
+                   HRESULT (WINAPI *GetCharsetInfo)(IMultiLanguage3 *This,BSTR Charset,PMIMECSETINFO pCharsetInfo);
+                   HRESULT (WINAPI *IsConvertible)(IMultiLanguage3 *This,DWORD dwSrcEncoding,DWORD dwDstEncoding);
+                   HRESULT (WINAPI *ConvertString)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwSrcEncoding,DWORD dwDstEncoding,BYTE *pSrcStr,UINT *pcSrcSize,BYTE *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringToUnicode)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringFromUnicode)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize);
+                   HRESULT (WINAPI *ConvertStringReset)(IMultiLanguage3 *This);
+                   HRESULT (WINAPI *GetRfc1766FromLcid)(IMultiLanguage3 *This,LCID Locale,BSTR *pbstrRfc1766);
+                   HRESULT (WINAPI *GetLcidFromRfc1766)(IMultiLanguage3 *This,LCID *pLocale,BSTR bstrRfc1766);
+                   HRESULT (WINAPI *EnumRfc1766)(IMultiLanguage3 *This,LANGID LangId,IEnumRfc1766 **ppEnumRfc1766);
+                   HRESULT (WINAPI *GetRfc1766Info)(IMultiLanguage3 *This,LCID Locale,LANGID LangId,PRFC1766INFO pRfc1766Info);
+                   HRESULT (WINAPI *CreateConvertCharset)(IMultiLanguage3 *This,UINT uiSrcCodePage,UINT uiDstCodePage,DWORD dwProperty,IMLangConvertCharset **ppMLangConvertCharset);
+                   HRESULT (WINAPI *ConvertStringInIStream)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwFlag,WCHAR *lpFallBack,DWORD dwSrcEncoding,DWORD dwDstEncoding,IStream *pstmIn,IStream *pstmOut);
+                   HRESULT (WINAPI *ConvertStringToUnicodeEx)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwEncoding,CHAR *pSrcStr,UINT *pcSrcSize,WCHAR *pDstStr,UINT *pcDstSize,DWORD dwFlag,WCHAR *lpFallBack);
+                   HRESULT (WINAPI *ConvertStringFromUnicodeEx)(IMultiLanguage3 *This,DWORD *pdwMode,DWORD dwEncoding,WCHAR *pSrcStr,UINT *pcSrcSize,CHAR *pDstStr,UINT *pcDstSize,DWORD dwFlag,WCHAR *lpFallBack);
+                   HRESULT (WINAPI *DetectCodepageInIStream)(IMultiLanguage3 *This,DWORD dwFlag,DWORD dwPrefWinCodePage,IStream *pstmIn,DetectEncodingInfo *lpEncoding,INT *pnScores);
+                   HRESULT (WINAPI *DetectInputCodepage)(IMultiLanguage3 *This,DWORD dwFlag,DWORD dwPrefWinCodePage,CHAR *pSrcStr,INT *pcSrcSize,DetectEncodingInfo *lpEncoding,INT *pnScores);
+                   HRESULT (WINAPI *ValidateCodePage)(IMultiLanguage3 *This,UINT uiCodePage,HWND hwnd);
+                   HRESULT (WINAPI *GetCodePageDescription)(IMultiLanguage3 *This,UINT uiCodePage,LCID lcid,LPWSTR lpWideCharStr,int cchWideChar);
+                   HRESULT (WINAPI *IsCodePageInstallable)(IMultiLanguage3 *This,UINT uiCodePage);
+                   HRESULT (WINAPI *SetMimeDBSource)(IMultiLanguage3 *This,MIMECONTF dwSource);
+                   HRESULT (WINAPI *GetNumberOfScripts)(IMultiLanguage3 *This,UINT *pnScripts);
+                   HRESULT (WINAPI *EnumScripts)(IMultiLanguage3 *This,DWORD dwFlags,LANGID LangId,IEnumScript **ppEnumScript);
+                   HRESULT (WINAPI *ValidateCodePageEx)(IMultiLanguage3 *This,UINT uiCodePage,HWND hwnd,DWORD dwfIODControl);
+                   HRESULT (WINAPI *DetectOutboundCodePage)(IMultiLanguage3 *This,DWORD dwFlags,LPCWSTR lpWideCharStr,UINT cchWideChar,UINT *puiPreferredCodePages,UINT nPreferredCodePages,UINT *puiDetectedCodePages,UINT *pnDetectedCodePages,WCHAR *lpSpecialChar);
+                   HRESULT (WINAPI *DetectOutboundCodePageInIStream)(IMultiLanguage3 *This,DWORD dwFlags,IStream *pStrIn,UINT *puiPreferredCodePages,UINT nPreferredCodePages,UINT *puiDetectedCodePages,UINT *pnDetectedCodePages,WCHAR *lpSpecialChar);
     END_INTERFACE
   } IMultiLanguage3Vtbl;
   struct IMultiLanguage3 {

@@ -244,12 +244,12 @@ extern "C"{
 #else
   typedef struct ISnapinPropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISnapinProperties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISnapinProperties *This);
-      ULONG (WINAPI *Release)(ISnapinProperties *This);
-      HRESULT (WINAPI *Initialize)(ISnapinProperties *This,Properties *pProperties);
-      HRESULT (WINAPI *QueryPropertyNames)(ISnapinProperties *This,ISnapinPropertiesCallback *pCallback);
-      HRESULT (WINAPI *PropertiesChanged)(ISnapinProperties *This,__LONG32 cProperties,MMC_SNAPIN_PROPERTY *pProperties);
+                   HRESULT (WINAPI *QueryInterface)(ISnapinProperties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISnapinProperties *This);
+                   ULONG (WINAPI *Release)(ISnapinProperties *This);
+                   HRESULT (WINAPI *Initialize)(ISnapinProperties *This,Properties *pProperties);
+                   HRESULT (WINAPI *QueryPropertyNames)(ISnapinProperties *This,ISnapinPropertiesCallback *pCallback);
+                   HRESULT (WINAPI *PropertiesChanged)(ISnapinProperties *This,__LONG32 cProperties,MMC_SNAPIN_PROPERTY *pProperties);
     END_INTERFACE
   } ISnapinPropertiesVtbl;
   struct ISnapinProperties {
@@ -290,10 +290,10 @@ extern "C"{
 #else
   typedef struct ISnapinPropertiesCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISnapinPropertiesCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISnapinPropertiesCallback *This);
-      ULONG (WINAPI *Release)(ISnapinPropertiesCallback *This);
-      HRESULT (WINAPI *AddPropertyName)(ISnapinPropertiesCallback *This,LPCOLESTR pszPropName,DWORD dwFlags);
+                   HRESULT (WINAPI *QueryInterface)(ISnapinPropertiesCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISnapinPropertiesCallback *This);
+                   ULONG (WINAPI *Release)(ISnapinPropertiesCallback *This);
+                   HRESULT (WINAPI *AddPropertyName)(ISnapinPropertiesCallback *This,LPCOLESTR pszPropName,DWORD dwFlags);
     END_INTERFACE
   } ISnapinPropertiesCallbackVtbl;
   struct ISnapinPropertiesCallback {
@@ -366,25 +366,25 @@ extern "C"{
 #else
   typedef struct _ApplicationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(_Application *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(_Application *This);
-      ULONG (WINAPI *Release)(_Application *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(_Application *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(_Application *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(_Application *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(_Application *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      void (WINAPI *Help)(_Application *This);
-      void (WINAPI *Quit)(_Application *This);
-      HRESULT (WINAPI *get_Document)(_Application *This,PPDOCUMENT Document);
-      HRESULT (WINAPI *Load)(_Application *This,BSTR Filename);
-      HRESULT (WINAPI *get_Frame)(_Application *This,PPFRAME Frame);
-      HRESULT (WINAPI *get_Visible)(_Application *This,PBOOL Visible);
-      HRESULT (WINAPI *Show)(_Application *This);
-      HRESULT (WINAPI *Hide)(_Application *This);
-      HRESULT (WINAPI *get_UserControl)(_Application *This,PBOOL UserControl);
-      HRESULT (WINAPI *put_UserControl)(_Application *This,WINBOOL UserControl);
-      HRESULT (WINAPI *get_VersionMajor)(_Application *This,PLONG VersionMajor);
-      HRESULT (WINAPI *get_VersionMinor)(_Application *This,PLONG VersionMinor);
+                   HRESULT (WINAPI *QueryInterface)(_Application *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(_Application *This);
+                   ULONG (WINAPI *Release)(_Application *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(_Application *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(_Application *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(_Application *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(_Application *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   void (WINAPI *Help)(_Application *This);
+                   void (WINAPI *Quit)(_Application *This);
+                   HRESULT (WINAPI *get_Document)(_Application *This,PPDOCUMENT Document);
+                   HRESULT (WINAPI *Load)(_Application *This,BSTR Filename);
+                   HRESULT (WINAPI *get_Frame)(_Application *This,PPFRAME Frame);
+                   HRESULT (WINAPI *get_Visible)(_Application *This,PBOOL Visible);
+                   HRESULT (WINAPI *Show)(_Application *This);
+                   HRESULT (WINAPI *Hide)(_Application *This);
+                   HRESULT (WINAPI *get_UserControl)(_Application *This,PBOOL UserControl);
+                   HRESULT (WINAPI *put_UserControl)(_Application *This,WINBOOL UserControl);
+                   HRESULT (WINAPI *get_VersionMajor)(_Application *This,PLONG VersionMajor);
+                   HRESULT (WINAPI *get_VersionMinor)(_Application *This,PLONG VersionMinor);
     END_INTERFACE
   } _ApplicationVtbl;
   struct _Application {
@@ -460,25 +460,25 @@ extern "C"{
 #else
   typedef struct _AppEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(_AppEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(_AppEvents *This);
-      ULONG (WINAPI *Release)(_AppEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(_AppEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(_AppEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(_AppEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(_AppEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *OnQuit)(_AppEvents *This,PAPPLICATION Application);
-      HRESULT (WINAPI *OnDocumentOpen)(_AppEvents *This,PDOCUMENT Document,WINBOOL New);
-      HRESULT (WINAPI *OnDocumentClose)(_AppEvents *This,PDOCUMENT Document);
-      HRESULT (WINAPI *OnSnapInAdded)(_AppEvents *This,PDOCUMENT Document,PSNAPIN SnapIn);
-      HRESULT (WINAPI *OnSnapInRemoved)(_AppEvents *This,PDOCUMENT Document,PSNAPIN SnapIn);
-      HRESULT (WINAPI *OnNewView)(_AppEvents *This,PVIEW View);
-      HRESULT (WINAPI *OnViewClose)(_AppEvents *This,PVIEW View);
-      HRESULT (WINAPI *OnViewChange)(_AppEvents *This,PVIEW View,PNODE NewOwnerNode);
-      HRESULT (WINAPI *OnSelectionChange)(_AppEvents *This,PVIEW View,PNODES NewNodes);
-      HRESULT (WINAPI *OnContextMenuExecuted)(_AppEvents *This,PMENUITEM MenuItem);
-      HRESULT (WINAPI *OnToolbarButtonClicked)(_AppEvents *This);
-      HRESULT (WINAPI *OnListUpdated)(_AppEvents *This,PVIEW View);
+                   HRESULT (WINAPI *QueryInterface)(_AppEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(_AppEvents *This);
+                   ULONG (WINAPI *Release)(_AppEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(_AppEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(_AppEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(_AppEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(_AppEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *OnQuit)(_AppEvents *This,PAPPLICATION Application);
+                   HRESULT (WINAPI *OnDocumentOpen)(_AppEvents *This,PDOCUMENT Document,WINBOOL New);
+                   HRESULT (WINAPI *OnDocumentClose)(_AppEvents *This,PDOCUMENT Document);
+                   HRESULT (WINAPI *OnSnapInAdded)(_AppEvents *This,PDOCUMENT Document,PSNAPIN SnapIn);
+                   HRESULT (WINAPI *OnSnapInRemoved)(_AppEvents *This,PDOCUMENT Document,PSNAPIN SnapIn);
+                   HRESULT (WINAPI *OnNewView)(_AppEvents *This,PVIEW View);
+                   HRESULT (WINAPI *OnViewClose)(_AppEvents *This,PVIEW View);
+                   HRESULT (WINAPI *OnViewChange)(_AppEvents *This,PVIEW View,PNODE NewOwnerNode);
+                   HRESULT (WINAPI *OnSelectionChange)(_AppEvents *This,PVIEW View,PNODES NewNodes);
+                   HRESULT (WINAPI *OnContextMenuExecuted)(_AppEvents *This,PMENUITEM MenuItem);
+                   HRESULT (WINAPI *OnToolbarButtonClicked)(_AppEvents *This);
+                   HRESULT (WINAPI *OnListUpdated)(_AppEvents *This,PVIEW View);
     END_INTERFACE
   } _AppEventsVtbl;
   struct _AppEvents {
@@ -541,13 +541,13 @@ extern "C"{
 #else
   typedef struct AppEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AppEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AppEvents *This);
-      ULONG (WINAPI *Release)(AppEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(AppEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(AppEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(AppEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(AppEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(AppEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AppEvents *This);
+                   ULONG (WINAPI *Release)(AppEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(AppEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(AppEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(AppEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(AppEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } AppEventsVtbl;
   struct AppEvents {
@@ -581,15 +581,15 @@ extern "C"{
 #else
   typedef struct _EventConnectorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(_EventConnector *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(_EventConnector *This);
-      ULONG (WINAPI *Release)(_EventConnector *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(_EventConnector *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(_EventConnector *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(_EventConnector *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(_EventConnector *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *ConnectTo)(_EventConnector *This,PAPPLICATION Application);
-      HRESULT (WINAPI *Disconnect)(_EventConnector *This);
+                   HRESULT (WINAPI *QueryInterface)(_EventConnector *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(_EventConnector *This);
+                   ULONG (WINAPI *Release)(_EventConnector *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(_EventConnector *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(_EventConnector *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(_EventConnector *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(_EventConnector *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *ConnectTo)(_EventConnector *This,PAPPLICATION Application);
+                   HRESULT (WINAPI *Disconnect)(_EventConnector *This);
     END_INTERFACE
   } _EventConnectorVtbl;
   struct _EventConnector {
@@ -639,24 +639,24 @@ extern "C"{
 #else
   typedef struct FrameVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Frame *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Frame *This);
-      ULONG (WINAPI *Release)(Frame *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Frame *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Frame *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Frame *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Frame *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Maximize)(Frame *This);
-      HRESULT (WINAPI *Minimize)(Frame *This);
-      HRESULT (WINAPI *Restore)(Frame *This);
-      HRESULT (WINAPI *get_Top)(Frame *This,PINT Top);
-      HRESULT (WINAPI *put_Top)(Frame *This,int top);
-      HRESULT (WINAPI *get_Bottom)(Frame *This,PINT Bottom);
-      HRESULT (WINAPI *put_Bottom)(Frame *This,int bottom);
-      HRESULT (WINAPI *get_Left)(Frame *This,PINT Left);
-      HRESULT (WINAPI *put_Left)(Frame *This,int left);
-      HRESULT (WINAPI *get_Right)(Frame *This,PINT Right);
-      HRESULT (WINAPI *put_Right)(Frame *This,int right);
+                   HRESULT (WINAPI *QueryInterface)(Frame *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Frame *This);
+                   ULONG (WINAPI *Release)(Frame *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Frame *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Frame *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Frame *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Frame *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Maximize)(Frame *This);
+                   HRESULT (WINAPI *Minimize)(Frame *This);
+                   HRESULT (WINAPI *Restore)(Frame *This);
+                   HRESULT (WINAPI *get_Top)(Frame *This,PINT Top);
+                   HRESULT (WINAPI *put_Top)(Frame *This,int top);
+                   HRESULT (WINAPI *get_Bottom)(Frame *This,PINT Bottom);
+                   HRESULT (WINAPI *put_Bottom)(Frame *This,int bottom);
+                   HRESULT (WINAPI *get_Left)(Frame *This,PINT Left);
+                   HRESULT (WINAPI *put_Left)(Frame *This,int left);
+                   HRESULT (WINAPI *get_Right)(Frame *This,PINT Right);
+                   HRESULT (WINAPI *put_Right)(Frame *This,int right);
     END_INTERFACE
   } FrameVtbl;
   struct Frame {
@@ -722,18 +722,18 @@ extern "C"{
 #else
   typedef struct NodeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Node *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Node *This);
-      ULONG (WINAPI *Release)(Node *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Node *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Node *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Node *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Node *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(Node *This,PBSTR Name);
-      HRESULT (WINAPI *get_Property)(Node *This,BSTR PropertyName,PBSTR PropertyValue);
-      HRESULT (WINAPI *get_Bookmark)(Node *This,PBSTR Bookmark);
-      HRESULT (WINAPI *IsScopeNode)(Node *This,PBOOL IsScopeNode);
-      HRESULT (WINAPI *get_Nodetype)(Node *This,PBSTR Nodetype);
+                   HRESULT (WINAPI *QueryInterface)(Node *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Node *This);
+                   ULONG (WINAPI *Release)(Node *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Node *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Node *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Node *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Node *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(Node *This,PBSTR Name);
+                   HRESULT (WINAPI *get_Property)(Node *This,BSTR PropertyName,PBSTR PropertyValue);
+                   HRESULT (WINAPI *get_Bookmark)(Node *This,PBSTR Bookmark);
+                   HRESULT (WINAPI *IsScopeNode)(Node *This,PBOOL IsScopeNode);
+                   HRESULT (WINAPI *get_Nodetype)(Node *This,PBSTR Nodetype);
     END_INTERFACE
   } NodeVtbl;
   struct Node {
@@ -781,18 +781,18 @@ extern "C"{
 #else
   typedef struct ScopeNamespaceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ScopeNamespace *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ScopeNamespace *This);
-      ULONG (WINAPI *Release)(ScopeNamespace *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ScopeNamespace *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ScopeNamespace *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ScopeNamespace *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ScopeNamespace *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetParent)(ScopeNamespace *This,PNODE Node,PPNODE Parent);
-      HRESULT (WINAPI *GetChild)(ScopeNamespace *This,PNODE Node,PPNODE Child);
-      HRESULT (WINAPI *GetNext)(ScopeNamespace *This,PNODE Node,PPNODE Next);
-      HRESULT (WINAPI *GetRoot)(ScopeNamespace *This,PPNODE Root);
-      HRESULT (WINAPI *Expand)(ScopeNamespace *This,PNODE Node);
+                   HRESULT (WINAPI *QueryInterface)(ScopeNamespace *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ScopeNamespace *This);
+                   ULONG (WINAPI *Release)(ScopeNamespace *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ScopeNamespace *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ScopeNamespace *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ScopeNamespace *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ScopeNamespace *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetParent)(ScopeNamespace *This,PNODE Node,PPNODE Parent);
+                   HRESULT (WINAPI *GetChild)(ScopeNamespace *This,PNODE Node,PPNODE Child);
+                   HRESULT (WINAPI *GetNext)(ScopeNamespace *This,PNODE Node,PPNODE Next);
+                   HRESULT (WINAPI *GetRoot)(ScopeNamespace *This,PPNODE Root);
+                   HRESULT (WINAPI *Expand)(ScopeNamespace *This,PNODE Node);
     END_INTERFACE
   } ScopeNamespaceVtbl;
   struct ScopeNamespace {
@@ -851,29 +851,29 @@ extern "C"{
 #else
   typedef struct DocumentVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Document *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Document *This);
-      ULONG (WINAPI *Release)(Document *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Document *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Document *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Document *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Document *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Save)(Document *This);
-      HRESULT (WINAPI *SaveAs)(Document *This,BSTR Filename);
-      HRESULT (WINAPI *Close)(Document *This,WINBOOL SaveChanges);
-      HRESULT (WINAPI *get_Views)(Document *This,PPVIEWS Views);
-      HRESULT (WINAPI *get_SnapIns)(Document *This,PPSNAPINS SnapIns);
-      HRESULT (WINAPI *get_ActiveView)(Document *This,PPVIEW View);
-      HRESULT (WINAPI *get_Name)(Document *This,PBSTR Name);
-      HRESULT (WINAPI *put_Name)(Document *This,BSTR Name);
-      HRESULT (WINAPI *get_Location)(Document *This,PBSTR Location);
-      HRESULT (WINAPI *get_IsSaved)(Document *This,PBOOL IsSaved);
-      HRESULT (WINAPI *get_Mode)(Document *This,PDOCUMENTMODE Mode);
-      HRESULT (WINAPI *put_Mode)(Document *This,DOCUMENTMODE Mode);
-      HRESULT (WINAPI *get_RootNode)(Document *This,PPNODE Node);
-      HRESULT (WINAPI *get_ScopeNamespace)(Document *This,PPSCOPENAMESPACE ScopeNamespace);
-      HRESULT (WINAPI *CreateProperties)(Document *This,PPPROPERTIES Properties);
-      HRESULT (WINAPI *get_Application)(Document *This,PPAPPLICATION Application);
+                   HRESULT (WINAPI *QueryInterface)(Document *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Document *This);
+                   ULONG (WINAPI *Release)(Document *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Document *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Document *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Document *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Document *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Save)(Document *This);
+                   HRESULT (WINAPI *SaveAs)(Document *This,BSTR Filename);
+                   HRESULT (WINAPI *Close)(Document *This,WINBOOL SaveChanges);
+                   HRESULT (WINAPI *get_Views)(Document *This,PPVIEWS Views);
+                   HRESULT (WINAPI *get_SnapIns)(Document *This,PPSNAPINS SnapIns);
+                   HRESULT (WINAPI *get_ActiveView)(Document *This,PPVIEW View);
+                   HRESULT (WINAPI *get_Name)(Document *This,PBSTR Name);
+                   HRESULT (WINAPI *put_Name)(Document *This,BSTR Name);
+                   HRESULT (WINAPI *get_Location)(Document *This,PBSTR Location);
+                   HRESULT (WINAPI *get_IsSaved)(Document *This,PBOOL IsSaved);
+                   HRESULT (WINAPI *get_Mode)(Document *This,PDOCUMENTMODE Mode);
+                   HRESULT (WINAPI *put_Mode)(Document *This,DOCUMENTMODE Mode);
+                   HRESULT (WINAPI *get_RootNode)(Document *This,PPNODE Node);
+                   HRESULT (WINAPI *get_ScopeNamespace)(Document *This,PPSCOPENAMESPACE ScopeNamespace);
+                   HRESULT (WINAPI *CreateProperties)(Document *This,PPPROPERTIES Properties);
+                   HRESULT (WINAPI *get_Application)(Document *This,PPAPPLICATION Application);
     END_INTERFACE
   } DocumentVtbl;
   struct Document {
@@ -956,20 +956,20 @@ extern "C"{
 #else
   typedef struct SnapInVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(SnapIn *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(SnapIn *This);
-      ULONG (WINAPI *Release)(SnapIn *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(SnapIn *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(SnapIn *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(SnapIn *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(SnapIn *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(SnapIn *This,PBSTR Name);
-      HRESULT (WINAPI *get_Vendor)(SnapIn *This,PBSTR Vendor);
-      HRESULT (WINAPI *get_Version)(SnapIn *This,PBSTR Version);
-      HRESULT (WINAPI *get_Extensions)(SnapIn *This,PPEXTENSIONS Extensions);
-      HRESULT (WINAPI *get_SnapinCLSID)(SnapIn *This,PBSTR SnapinCLSID);
-      HRESULT (WINAPI *get_Properties)(SnapIn *This,PPPROPERTIES Properties);
-      HRESULT (WINAPI *EnableAllExtensions)(SnapIn *This,WINBOOL Enable);
+                   HRESULT (WINAPI *QueryInterface)(SnapIn *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(SnapIn *This);
+                   ULONG (WINAPI *Release)(SnapIn *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(SnapIn *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(SnapIn *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(SnapIn *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(SnapIn *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(SnapIn *This,PBSTR Name);
+                   HRESULT (WINAPI *get_Vendor)(SnapIn *This,PBSTR Vendor);
+                   HRESULT (WINAPI *get_Version)(SnapIn *This,PBSTR Version);
+                   HRESULT (WINAPI *get_Extensions)(SnapIn *This,PPEXTENSIONS Extensions);
+                   HRESULT (WINAPI *get_SnapinCLSID)(SnapIn *This,PBSTR SnapinCLSID);
+                   HRESULT (WINAPI *get_Properties)(SnapIn *This,PPPROPERTIES Properties);
+                   HRESULT (WINAPI *EnableAllExtensions)(SnapIn *This,WINBOOL Enable);
     END_INTERFACE
   } SnapInVtbl;
   struct SnapIn {
@@ -1023,18 +1023,18 @@ extern "C"{
 #else
   typedef struct SnapInsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(SnapIns *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(SnapIns *This);
-      ULONG (WINAPI *Release)(SnapIns *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(SnapIns *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(SnapIns *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(SnapIns *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(SnapIns *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(SnapIns *This,IUnknown **retval);
-      HRESULT (WINAPI *Item)(SnapIns *This,__LONG32 Index,PPSNAPIN SnapIn);
-      HRESULT (WINAPI *get_Count)(SnapIns *This,PLONG Count);
-      HRESULT (WINAPI *Add)(SnapIns *This,BSTR SnapinNameOrCLSID,VARIANT ParentSnapin,VARIANT Properties,PPSNAPIN SnapIn);
-      HRESULT (WINAPI *Remove)(SnapIns *This,PSNAPIN SnapIn);
+                   HRESULT (WINAPI *QueryInterface)(SnapIns *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(SnapIns *This);
+                   ULONG (WINAPI *Release)(SnapIns *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(SnapIns *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(SnapIns *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(SnapIns *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(SnapIns *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(SnapIns *This,IUnknown **retval);
+                   HRESULT (WINAPI *Item)(SnapIns *This,__LONG32 Index,PPSNAPIN SnapIn);
+                   HRESULT (WINAPI *get_Count)(SnapIns *This,PLONG Count);
+                   HRESULT (WINAPI *Add)(SnapIns *This,BSTR SnapinNameOrCLSID,VARIANT ParentSnapin,VARIANT Properties,PPSNAPIN SnapIn);
+                   HRESULT (WINAPI *Remove)(SnapIns *This,PSNAPIN SnapIn);
     END_INTERFACE
   } SnapInsVtbl;
   struct SnapIns {
@@ -1084,20 +1084,20 @@ extern "C"{
 #else
   typedef struct ExtensionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Extension *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Extension *This);
-      ULONG (WINAPI *Release)(Extension *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Extension *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Extension *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Extension *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Extension *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(Extension *This,PBSTR Name);
-      HRESULT (WINAPI *get_Vendor)(Extension *This,PBSTR Vendor);
-      HRESULT (WINAPI *get_Version)(Extension *This,PBSTR Version);
-      HRESULT (WINAPI *get_Extensions)(Extension *This,PPEXTENSIONS Extensions);
-      HRESULT (WINAPI *get_SnapinCLSID)(Extension *This,PBSTR SnapinCLSID);
-      HRESULT (WINAPI *EnableAllExtensions)(Extension *This,WINBOOL Enable);
-      HRESULT (WINAPI *Enable)(Extension *This,WINBOOL Enable);
+                   HRESULT (WINAPI *QueryInterface)(Extension *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Extension *This);
+                   ULONG (WINAPI *Release)(Extension *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Extension *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Extension *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Extension *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Extension *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(Extension *This,PBSTR Name);
+                   HRESULT (WINAPI *get_Vendor)(Extension *This,PBSTR Vendor);
+                   HRESULT (WINAPI *get_Version)(Extension *This,PBSTR Version);
+                   HRESULT (WINAPI *get_Extensions)(Extension *This,PPEXTENSIONS Extensions);
+                   HRESULT (WINAPI *get_SnapinCLSID)(Extension *This,PBSTR SnapinCLSID);
+                   HRESULT (WINAPI *EnableAllExtensions)(Extension *This,WINBOOL Enable);
+                   HRESULT (WINAPI *Enable)(Extension *This,WINBOOL Enable);
     END_INTERFACE
   } ExtensionVtbl;
   struct Extension {
@@ -1149,16 +1149,16 @@ extern "C"{
 #else
   typedef struct ExtensionsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Extensions *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Extensions *This);
-      ULONG (WINAPI *Release)(Extensions *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Extensions *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Extensions *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Extensions *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Extensions *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(Extensions *This,IUnknown **retval);
-      HRESULT (WINAPI *Item)(Extensions *This,__LONG32 Index,PPEXTENSION Extension);
-      HRESULT (WINAPI *get_Count)(Extensions *This,PLONG Count);
+                   HRESULT (WINAPI *QueryInterface)(Extensions *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Extensions *This);
+                   ULONG (WINAPI *Release)(Extensions *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Extensions *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Extensions *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Extensions *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Extensions *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(Extensions *This,IUnknown **retval);
+                   HRESULT (WINAPI *Item)(Extensions *This,__LONG32 Index,PPEXTENSION Extension);
+                   HRESULT (WINAPI *get_Count)(Extensions *This,PLONG Count);
     END_INTERFACE
   } ExtensionsVtbl;
   struct Extensions {
@@ -1198,16 +1198,16 @@ extern "C"{
 #else
   typedef struct ColumnsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Columns *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Columns *This);
-      ULONG (WINAPI *Release)(Columns *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Columns *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Columns *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Columns *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Columns *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Item)(Columns *This,__LONG32 Index,PPCOLUMN Column);
-      HRESULT (WINAPI *get_Count)(Columns *This,PLONG Count);
-      HRESULT (WINAPI *get__NewEnum)(Columns *This,IUnknown **retval);
+                   HRESULT (WINAPI *QueryInterface)(Columns *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Columns *This);
+                   ULONG (WINAPI *Release)(Columns *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Columns *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Columns *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Columns *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Columns *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Item)(Columns *This,__LONG32 Index,PPCOLUMN Column);
+                   HRESULT (WINAPI *get_Count)(Columns *This,PLONG Count);
+                   HRESULT (WINAPI *get__NewEnum)(Columns *This,IUnknown **retval);
     END_INTERFACE
   } ColumnsVtbl;
   struct Columns {
@@ -1259,22 +1259,22 @@ extern "C"{
 #else
   typedef struct ColumnVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Column *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Column *This);
-      ULONG (WINAPI *Release)(Column *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Column *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Column *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Column *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Column *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Name)(Column *This,BSTR *Name);
-      HRESULT (WINAPI *get_Width)(Column *This,PLONG Width);
-      HRESULT (WINAPI *put_Width)(Column *This,__LONG32 Width);
-      HRESULT (WINAPI *get_DisplayPosition)(Column *This,PLONG DisplayPosition);
-      HRESULT (WINAPI *put_DisplayPosition)(Column *This,__LONG32 Index);
-      HRESULT (WINAPI *get_Hidden)(Column *This,PBOOL Hidden);
-      HRESULT (WINAPI *put_Hidden)(Column *This,WINBOOL Hidden);
-      HRESULT (WINAPI *SetAsSortColumn)(Column *This,COLUMNSORTORDER SortOrder);
-      HRESULT (WINAPI *IsSortColumn)(Column *This,PBOOL IsSortColumn);
+                   HRESULT (WINAPI *QueryInterface)(Column *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Column *This);
+                   ULONG (WINAPI *Release)(Column *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Column *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Column *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Column *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Column *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Name)(Column *This,BSTR *Name);
+                   HRESULT (WINAPI *get_Width)(Column *This,PLONG Width);
+                   HRESULT (WINAPI *put_Width)(Column *This,__LONG32 Width);
+                   HRESULT (WINAPI *get_DisplayPosition)(Column *This,PLONG DisplayPosition);
+                   HRESULT (WINAPI *put_DisplayPosition)(Column *This,__LONG32 Index);
+                   HRESULT (WINAPI *get_Hidden)(Column *This,PBOOL Hidden);
+                   HRESULT (WINAPI *put_Hidden)(Column *This,WINBOOL Hidden);
+                   HRESULT (WINAPI *SetAsSortColumn)(Column *This,COLUMNSORTORDER SortOrder);
+                   HRESULT (WINAPI *IsSortColumn)(Column *This,PBOOL IsSortColumn);
     END_INTERFACE
   } ColumnVtbl;
   struct Column {
@@ -1333,17 +1333,17 @@ extern "C"{
 #else
   typedef struct ViewsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Views *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Views *This);
-      ULONG (WINAPI *Release)(Views *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Views *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Views *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Views *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Views *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Item)(Views *This,__LONG32 Index,PPVIEW View);
-      HRESULT (WINAPI *get_Count)(Views *This,PLONG Count);
-      HRESULT (WINAPI *Add)(Views *This,PNODE Node,VIEWOPTIONS viewOptions);
-      HRESULT (WINAPI *get__NewEnum)(Views *This,IUnknown **retval);
+                   HRESULT (WINAPI *QueryInterface)(Views *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Views *This);
+                   ULONG (WINAPI *Release)(Views *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Views *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Views *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Views *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Views *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Item)(Views *This,__LONG32 Index,PPVIEW View);
+                   HRESULT (WINAPI *get_Count)(Views *This,PLONG Count);
+                   HRESULT (WINAPI *Add)(Views *This,PNODE Node,VIEWOPTIONS viewOptions);
+                   HRESULT (WINAPI *get__NewEnum)(Views *This,IUnknown **retval);
     END_INTERFACE
   } ViewsVtbl;
   struct Views {
@@ -1425,55 +1425,55 @@ extern "C"{
 #else
   typedef struct ViewVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(View *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(View *This);
-      ULONG (WINAPI *Release)(View *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(View *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(View *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(View *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(View *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ActiveScopeNode)(View *This,PPNODE Node);
-      HRESULT (WINAPI *put_ActiveScopeNode)(View *This,PNODE Node);
-      HRESULT (WINAPI *get_Selection)(View *This,PPNODES Nodes);
-      HRESULT (WINAPI *get_ListItems)(View *This,PPNODES Nodes);
-      HRESULT (WINAPI *SnapinScopeObject)(View *This,VARIANT ScopeNode,PPDISPATCH ScopeNodeObject);
-      HRESULT (WINAPI *SnapinSelectionObject)(View *This,PPDISPATCH SelectionObject);
-      HRESULT (WINAPI *Is)(View *This,PVIEW View,VARIANT_BOOL *TheSame);
-      HRESULT (WINAPI *get_Document)(View *This,PPDOCUMENT Document);
-      HRESULT (WINAPI *SelectAll)(View *This);
-      HRESULT (WINAPI *Select)(View *This,PNODE Node);
-      HRESULT (WINAPI *Deselect)(View *This,PNODE Node);
-      HRESULT (WINAPI *IsSelected)(View *This,PNODE Node,PBOOL IsSelected);
-      HRESULT (WINAPI *DisplayScopeNodePropertySheet)(View *This,VARIANT ScopeNode);
-      HRESULT (WINAPI *DisplaySelectionPropertySheet)(View *This);
-      HRESULT (WINAPI *CopyScopeNode)(View *This,VARIANT ScopeNode);
-      HRESULT (WINAPI *CopySelection)(View *This);
-      HRESULT (WINAPI *DeleteScopeNode)(View *This,VARIANT ScopeNode);
-      HRESULT (WINAPI *DeleteSelection)(View *This);
-      HRESULT (WINAPI *RenameScopeNode)(View *This,BSTR NewName,VARIANT ScopeNode);
-      HRESULT (WINAPI *RenameSelectedItem)(View *This,BSTR NewName);
-      HRESULT (WINAPI *get_ScopeNodeContextMenu)(View *This,VARIANT ScopeNode,PPCONTEXTMENU ContextMenu);
-      HRESULT (WINAPI *get_SelectionContextMenu)(View *This,PPCONTEXTMENU ContextMenu);
-      HRESULT (WINAPI *RefreshScopeNode)(View *This,VARIANT ScopeNode);
-      HRESULT (WINAPI *RefreshSelection)(View *This);
-      HRESULT (WINAPI *ExecuteSelectionMenuItem)(View *This,BSTR MenuItemPath);
-      HRESULT (WINAPI *ExecuteScopeNodeMenuItem)(View *This,BSTR MenuItemPath,VARIANT ScopeNode);
-      HRESULT (WINAPI *ExecuteShellCommand)(View *This,BSTR Command,BSTR Directory,BSTR Parameters,BSTR WindowState);
-      HRESULT (WINAPI *get_Frame)(View *This,PPFRAME Frame);
-      HRESULT (WINAPI *Close)(View *This);
-      HRESULT (WINAPI *get_ScopeTreeVisible)(View *This,PBOOL Visible);
-      HRESULT (WINAPI *put_ScopeTreeVisible)(View *This,WINBOOL Visible);
-      HRESULT (WINAPI *Back)(View *This);
-      HRESULT (WINAPI *Forward)(View *This);
-      HRESULT (WINAPI *put_StatusBarText)(View *This,BSTR StatusBarText);
-      HRESULT (WINAPI *get_Memento)(View *This,PBSTR Memento);
-      HRESULT (WINAPI *ViewMemento)(View *This,BSTR Memento);
-      HRESULT (WINAPI *get_Columns)(View *This,PPCOLUMNS Columns);
-      HRESULT (WINAPI *get_CellContents)(View *This,PNODE Node,__LONG32 Column,PBSTR CellContents);
-      HRESULT (WINAPI *ExportList)(View *This,BSTR File,EXPORTLISTOPTIONS exportoptions);
-      HRESULT (WINAPI *get_ListViewMode)(View *This,PLISTVIEWMODE Mode);
-      HRESULT (WINAPI *put_ListViewMode)(View *This,LISTVIEWMODE mode);
-      HRESULT (WINAPI *get_ControlObject)(View *This,PPDISPATCH Control);
+                   HRESULT (WINAPI *QueryInterface)(View *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(View *This);
+                   ULONG (WINAPI *Release)(View *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(View *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(View *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(View *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(View *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ActiveScopeNode)(View *This,PPNODE Node);
+                   HRESULT (WINAPI *put_ActiveScopeNode)(View *This,PNODE Node);
+                   HRESULT (WINAPI *get_Selection)(View *This,PPNODES Nodes);
+                   HRESULT (WINAPI *get_ListItems)(View *This,PPNODES Nodes);
+                   HRESULT (WINAPI *SnapinScopeObject)(View *This,VARIANT ScopeNode,PPDISPATCH ScopeNodeObject);
+                   HRESULT (WINAPI *SnapinSelectionObject)(View *This,PPDISPATCH SelectionObject);
+                   HRESULT (WINAPI *Is)(View *This,PVIEW View,VARIANT_BOOL *TheSame);
+                   HRESULT (WINAPI *get_Document)(View *This,PPDOCUMENT Document);
+                   HRESULT (WINAPI *SelectAll)(View *This);
+                   HRESULT (WINAPI *Select)(View *This,PNODE Node);
+                   HRESULT (WINAPI *Deselect)(View *This,PNODE Node);
+                   HRESULT (WINAPI *IsSelected)(View *This,PNODE Node,PBOOL IsSelected);
+                   HRESULT (WINAPI *DisplayScopeNodePropertySheet)(View *This,VARIANT ScopeNode);
+                   HRESULT (WINAPI *DisplaySelectionPropertySheet)(View *This);
+                   HRESULT (WINAPI *CopyScopeNode)(View *This,VARIANT ScopeNode);
+                   HRESULT (WINAPI *CopySelection)(View *This);
+                   HRESULT (WINAPI *DeleteScopeNode)(View *This,VARIANT ScopeNode);
+                   HRESULT (WINAPI *DeleteSelection)(View *This);
+                   HRESULT (WINAPI *RenameScopeNode)(View *This,BSTR NewName,VARIANT ScopeNode);
+                   HRESULT (WINAPI *RenameSelectedItem)(View *This,BSTR NewName);
+                   HRESULT (WINAPI *get_ScopeNodeContextMenu)(View *This,VARIANT ScopeNode,PPCONTEXTMENU ContextMenu);
+                   HRESULT (WINAPI *get_SelectionContextMenu)(View *This,PPCONTEXTMENU ContextMenu);
+                   HRESULT (WINAPI *RefreshScopeNode)(View *This,VARIANT ScopeNode);
+                   HRESULT (WINAPI *RefreshSelection)(View *This);
+                   HRESULT (WINAPI *ExecuteSelectionMenuItem)(View *This,BSTR MenuItemPath);
+                   HRESULT (WINAPI *ExecuteScopeNodeMenuItem)(View *This,BSTR MenuItemPath,VARIANT ScopeNode);
+                   HRESULT (WINAPI *ExecuteShellCommand)(View *This,BSTR Command,BSTR Directory,BSTR Parameters,BSTR WindowState);
+                   HRESULT (WINAPI *get_Frame)(View *This,PPFRAME Frame);
+                   HRESULT (WINAPI *Close)(View *This);
+                   HRESULT (WINAPI *get_ScopeTreeVisible)(View *This,PBOOL Visible);
+                   HRESULT (WINAPI *put_ScopeTreeVisible)(View *This,WINBOOL Visible);
+                   HRESULT (WINAPI *Back)(View *This);
+                   HRESULT (WINAPI *Forward)(View *This);
+                   HRESULT (WINAPI *put_StatusBarText)(View *This,BSTR StatusBarText);
+                   HRESULT (WINAPI *get_Memento)(View *This,PBSTR Memento);
+                   HRESULT (WINAPI *ViewMemento)(View *This,BSTR Memento);
+                   HRESULT (WINAPI *get_Columns)(View *This,PPCOLUMNS Columns);
+                   HRESULT (WINAPI *get_CellContents)(View *This,PNODE Node,__LONG32 Column,PBSTR CellContents);
+                   HRESULT (WINAPI *ExportList)(View *This,BSTR File,EXPORTLISTOPTIONS exportoptions);
+                   HRESULT (WINAPI *get_ListViewMode)(View *This,PLISTVIEWMODE Mode);
+                   HRESULT (WINAPI *put_ListViewMode)(View *This,LISTVIEWMODE mode);
+                   HRESULT (WINAPI *get_ControlObject)(View *This,PPDISPATCH Control);
     END_INTERFACE
   } ViewVtbl;
   struct View {
@@ -1630,16 +1630,16 @@ extern "C"{
 #else
   typedef struct NodesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Nodes *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Nodes *This);
-      ULONG (WINAPI *Release)(Nodes *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Nodes *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Nodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Nodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Nodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(Nodes *This,IUnknown **retval);
-      HRESULT (WINAPI *Item)(Nodes *This,__LONG32 Index,PPNODE Node);
-      HRESULT (WINAPI *get_Count)(Nodes *This,PLONG Count);
+                   HRESULT (WINAPI *QueryInterface)(Nodes *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Nodes *This);
+                   ULONG (WINAPI *Release)(Nodes *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Nodes *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Nodes *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Nodes *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Nodes *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(Nodes *This,IUnknown **retval);
+                   HRESULT (WINAPI *Item)(Nodes *This,__LONG32 Index,PPNODE Node);
+                   HRESULT (WINAPI *get_Count)(Nodes *This,PLONG Count);
     END_INTERFACE
   } NodesVtbl;
   struct Nodes {
@@ -1679,16 +1679,16 @@ extern "C"{
 #else
   typedef struct ContextMenuVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ContextMenu *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ContextMenu *This);
-      ULONG (WINAPI *Release)(ContextMenu *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ContextMenu *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ContextMenu *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ContextMenu *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ContextMenu *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(ContextMenu *This,IUnknown **retval);
-      HRESULT (WINAPI *get_Item)(ContextMenu *This,VARIANT IndexOrPath,PPMENUITEM MenuItem);
-      HRESULT (WINAPI *get_Count)(ContextMenu *This,PLONG Count);
+                   HRESULT (WINAPI *QueryInterface)(ContextMenu *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ContextMenu *This);
+                   ULONG (WINAPI *Release)(ContextMenu *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ContextMenu *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ContextMenu *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ContextMenu *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ContextMenu *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(ContextMenu *This,IUnknown **retval);
+                   HRESULT (WINAPI *get_Item)(ContextMenu *This,VARIANT IndexOrPath,PPMENUITEM MenuItem);
+                   HRESULT (WINAPI *get_Count)(ContextMenu *This,PLONG Count);
     END_INTERFACE
   } ContextMenuVtbl;
   struct ContextMenu {
@@ -1731,19 +1731,19 @@ extern "C"{
 #else
   typedef struct MenuItemVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(MenuItem *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(MenuItem *This);
-      ULONG (WINAPI *Release)(MenuItem *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(MenuItem *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(MenuItem *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(MenuItem *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(MenuItem *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DisplayName)(MenuItem *This,PBSTR DisplayName);
-      HRESULT (WINAPI *get_LanguageIndependentName)(MenuItem *This,PBSTR LanguageIndependentName);
-      HRESULT (WINAPI *get_Path)(MenuItem *This,PBSTR Path);
-      HRESULT (WINAPI *get_LanguageIndependentPath)(MenuItem *This,PBSTR LanguageIndependentPath);
-      HRESULT (WINAPI *Execute)(MenuItem *This);
-      HRESULT (WINAPI *get_Enabled)(MenuItem *This,PBOOL Enabled);
+                   HRESULT (WINAPI *QueryInterface)(MenuItem *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(MenuItem *This);
+                   ULONG (WINAPI *Release)(MenuItem *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(MenuItem *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(MenuItem *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(MenuItem *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(MenuItem *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DisplayName)(MenuItem *This,PBSTR DisplayName);
+                   HRESULT (WINAPI *get_LanguageIndependentName)(MenuItem *This,PBSTR LanguageIndependentName);
+                   HRESULT (WINAPI *get_Path)(MenuItem *This,PBSTR Path);
+                   HRESULT (WINAPI *get_LanguageIndependentPath)(MenuItem *This,PBSTR LanguageIndependentPath);
+                   HRESULT (WINAPI *Execute)(MenuItem *This);
+                   HRESULT (WINAPI *get_Enabled)(MenuItem *This,PBOOL Enabled);
     END_INTERFACE
   } MenuItemVtbl;
   struct MenuItem {
@@ -1793,17 +1793,17 @@ extern "C"{
 #else
   typedef struct PropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Properties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Properties *This);
-      ULONG (WINAPI *Release)(Properties *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Properties *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Properties *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Properties *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Properties *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get__NewEnum)(Properties *This,IUnknown **retval);
-      HRESULT (WINAPI *Item)(Properties *This,BSTR Name,PPPROPERTY Property);
-      HRESULT (WINAPI *get_Count)(Properties *This,PLONG Count);
-      HRESULT (WINAPI *Remove)(Properties *This,BSTR Name);
+                   HRESULT (WINAPI *QueryInterface)(Properties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Properties *This);
+                   ULONG (WINAPI *Release)(Properties *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Properties *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Properties *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Properties *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Properties *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get__NewEnum)(Properties *This,IUnknown **retval);
+                   HRESULT (WINAPI *Item)(Properties *This,BSTR Name,PPPROPERTY Property);
+                   HRESULT (WINAPI *get_Count)(Properties *This,PLONG Count);
+                   HRESULT (WINAPI *Remove)(Properties *This,BSTR Name);
     END_INTERFACE
   } PropertiesVtbl;
   struct Properties {
@@ -1846,16 +1846,16 @@ extern "C"{
 #else
   typedef struct PropertyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(Property *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(Property *This);
-      ULONG (WINAPI *Release)(Property *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(Property *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(Property *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(Property *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(Property *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Value)(Property *This,PVARIANT Value);
-      HRESULT (WINAPI *put_Value)(Property *This,VARIANT Value);
-      HRESULT (WINAPI *get_Name)(Property *This,PBSTR Name);
+                   HRESULT (WINAPI *QueryInterface)(Property *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(Property *This);
+                   ULONG (WINAPI *Release)(Property *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(Property *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(Property *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(Property *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(Property *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Value)(Property *This,PVARIANT Value);
+                   HRESULT (WINAPI *put_Value)(Property *This,VARIANT Value);
+                   HRESULT (WINAPI *get_Name)(Property *This,PBSTR Name);
     END_INTERFACE
   } PropertyVtbl;
   struct Property {

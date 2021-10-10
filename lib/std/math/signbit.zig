@@ -11,10 +11,10 @@ const expect = std.testing.expect;
 pub fn signbit(x: anytype) bool {
     const T = @TypeOf(x);
     return switch (T) {
-        f16 => signbit16(x),
-        f32 => signbit32(x),
-        f64 => signbit64(x),
-        else => @compileError("signbit not implemented for " ++ @typeName(T)),
+                     f16 => signbit16(x),
+                     f32 => signbit32(x),
+                     f64 => signbit64(x),
+                     else => @compileError("signbit not implemented for " ++ @typeName(T)),
     };
 }
 

@@ -5,11 +5,11 @@
 
 /* Indicate the register numbers for a number of the specific
    debug registers.  Registers 0-3 contain the addresses we wish to trap on */
-#define DR_FIRSTADDR 0        /* u_debugreg[DR_FIRSTADDR] */
-#define DR_LASTADDR 3         /* u_debugreg[DR_LASTADDR]  */
+#define DR_FIRSTADDR 0                     /* u_debugreg[DR_FIRSTADDR] */
+#define DR_LASTADDR 3                      /* u_debugreg[DR_LASTADDR]  */
 
-#define DR_STATUS 6           /* u_debugreg[DR_STATUS]     */
-#define DR_CONTROL 7          /* u_debugreg[DR_CONTROL] */
+#define DR_STATUS 6                        /* u_debugreg[DR_STATUS]     */
+#define DR_CONTROL 7                       /* u_debugreg[DR_CONTROL] */
 
 /* Define a few things for the status register.  We can use this to determine
    which debugging register was responsible for the trap.  The other bits
@@ -54,9 +54,9 @@
 
 #define DR_LOCAL_ENABLE_SHIFT 0    /* Extra shift to the local enable bit */
 #define DR_GLOBAL_ENABLE_SHIFT 1   /* Extra shift to the global enable bit */
-#define DR_LOCAL_ENABLE (0x1)      /* Local enable for reg 0 */
+#define DR_LOCAL_ENABLE (0x1)                   /* Local enable for reg 0 */
 #define DR_GLOBAL_ENABLE (0x2)     /* Global enable for reg 0 */
-#define DR_ENABLE_SIZE 2           /* 2 enable bits per register */
+#define DR_ENABLE_SIZE 2                        /* 2 enable bits per register */
 
 #define DR_LOCAL_ENABLE_MASK (0x55)  /* Set  local bits for all 4 regs */
 #define DR_GLOBAL_ENABLE_MASK (0xAA) /* Set global bits for all 4 regs */

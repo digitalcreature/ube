@@ -136,7 +136,7 @@ union i2c_smbus_data {
 	__u8 byte;
 	__u16 word;
 	__u8 block[I2C_SMBUS_BLOCK_MAX + 2]; /* block[0] is used for length */
-			       /* and one more for user-space compatibility */
+			                    /* and one more for user-space compatibility */
 };
 
 /* i2c_smbus_xfer read or write markers */

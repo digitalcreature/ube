@@ -15,9 +15,9 @@ struct termios {
 #define VQUIT     1
 #define VERASE    2
 #define VKILL     3
-#define VEOF      4
-#define VMIN      5
-#define VEOL      6
+#define VEOF                   4
+#define VMIN                   5
+#define VEOL                   6
 #define VTIME     7
 #define VEOL2     8
 #define VSWTC     9
@@ -81,9 +81,9 @@ struct termios {
 #define VT0    0000000
 #define VT1    0200000
 
-#define B0       0000000
-#define B50      0000001
-#define B75      0000002
+#define B0                    0000000
+#define B50                   0000001
+#define B75                   0000002
 #define B110     0000003
 #define B134     0000004
 #define B150     0000005

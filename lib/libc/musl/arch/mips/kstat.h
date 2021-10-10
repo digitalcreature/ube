@@ -18,5 +18,5 @@ struct kstat {
 	blksize_t st_blksize;
 	long __st_padding3;
 	blkcnt_t st_blocks;
-        long __st_padding4[14];
+                     long __st_padding4[14];
 };

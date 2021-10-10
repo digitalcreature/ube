@@ -30,46 +30,46 @@ pub fn hashPointer(hasher: anytype, key: anytype, comptime strat: HashStrategy) 
     const info = @typeInfo(@TypeOf(key));
 
     switch (info.Pointer.size) {
-        .One => switch (strat) {
-            .Shallow => hash(hasher, @ptrToInt(key), .Shallow),
-            .Deep => hash(hasher, key.*, .Shallow),
-            .DeepRecursive => hash(hasher, key.*, .DeepRecursive),
-        },
+                     .One => switch (strat) {
+                                      .Shallow => hash(hasher, @ptrToInt(key), .Shallow),
+                                      .Deep => hash(hasher, key.*, .Shallow),
+                                      .DeepRecursive => hash(hasher, key.*, .DeepRecursive),
+                     },
 
-        .Slice => switch (strat) {
-            .Shallow => {
-                hashPointer(hasher, key.ptr, .Shallow);
-                hash(hasher, key.len, .Shallow);
-            },
-            .Deep => hashArray(hasher, key, .Shallow),
-            .DeepRecursive => hashArray(hasher, key, .DeepRecursive),
-        },
+                     .Slice => switch (strat) {
+                                      .Shallow => {
+                                          hashPointer(hasher, key.ptr, .Shallow);
+                                          hash(hasher, key.len, .Shallow);
+                                      },
+                                      .Deep => hashArray(hasher, key, .Shallow),
+                                      .DeepRecursive => hashArray(hasher, key, .DeepRecursive),
+                     },
 
-        .Many,
-        .C,
-        => switch (strat) {
-            .Shallow => hash(hasher, @ptrToInt(key), .Shallow),
-            else => @compileError(
-                \\ unknown-length pointers and C pointers cannot be hashed deeply.
-                \\ Consider providing your own hash function.
-            ),
-        },
+                     .Many,
+                     .C,
+                     => switch (strat) {
+                                      .Shallow => hash(hasher, @ptrToInt(key), .Shallow),
+                                      else => @compileError(
+                                          \\ unknown-length pointers and C pointers cannot be hashed deeply.
+                                          \\ Consider providing your own hash function.
+                                      ),
+                     },
     }
 }
 
 /// Helper function to hash a set of contiguous objects, from an array or slice.
 pub fn hashArray(hasher: anytype, key: anytype, comptime strat: HashStrategy) void {
     switch (strat) {
-        .Shallow => {
-            for (key) |element| {
-                hash(hasher, element, .Shallow);
-            }
-        },
-        else => {
-            for (key) |element| {
-                hash(hasher, element, strat);
-            }
-        },
+                     .Shallow => {
+                                      for (key) |element| {
+                                          hash(hasher, element, .Shallow);
+                                      }
+                     },
+                     else => {
+                                      for (key) |element| {
+                                          hash(hasher, element, strat);
+                                      }
+                     },
     }
 }
 
@@ -79,84 +79,84 @@ pub fn hash(hasher: anytype, key: anytype, comptime strat: HashStrategy) void {
     const Key = @TypeOf(key);
 
     if (strat == .Shallow and comptime meta.trait.hasUniqueRepresentation(Key)) {
-        @call(.{ .modifier = .always_inline }, hasher.update, .{mem.asBytes(&key)});
-        return;
+                     @call(.{ .modifier = .always_inline }, hasher.update, .{mem.asBytes(&key)});
+                     return;
     }
 
     switch (@typeInfo(Key)) {
-        .NoReturn,
-        .Opaque,
-        .Undefined,
-        .Void,
-        .Null,
-        .ComptimeFloat,
-        .ComptimeInt,
-        .Type,
-        .EnumLiteral,
-        .Frame,
-        .Float,
-        => @compileError("cannot hash this type"),
+                     .NoReturn,
+                     .Opaque,
+                     .Undefined,
+                     .Void,
+                     .Null,
+                     .ComptimeFloat,
+                     .ComptimeInt,
+                     .Type,
+                     .EnumLiteral,
+                     .Frame,
+                     .Float,
+                     => @compileError("cannot hash this type"),
 
-        // Help the optimizer see that hashing an int is easy by inlining!
-        // TODO Check if the situation is better after #561 is resolved.
-        .Int => @call(.{ .modifier = .always_inline }, hasher.update, .{std.mem.asBytes(&key)}),
+                     // Help the optimizer see that hashing an int is easy by inlining!
+                     // TODO Check if the situation is better after #561 is resolved.
+                     .Int => @call(.{ .modifier = .always_inline }, hasher.update, .{std.mem.asBytes(&key)}),
 
-        .Bool => hash(hasher, @boolToInt(key), strat),
-        .Enum => hash(hasher, @enumToInt(key), strat),
-        .ErrorSet => hash(hasher, @errorToInt(key), strat),
-        .AnyFrame, .BoundFn, .Fn => hash(hasher, @ptrToInt(key), strat),
+                     .Bool => hash(hasher, @boolToInt(key), strat),
+                     .Enum => hash(hasher, @enumToInt(key), strat),
+                     .ErrorSet => hash(hasher, @errorToInt(key), strat),
+                     .AnyFrame, .BoundFn, .Fn => hash(hasher, @ptrToInt(key), strat),
 
-        .Pointer => @call(.{ .modifier = .always_inline }, hashPointer, .{ hasher, key, strat }),
+                     .Pointer => @call(.{ .modifier = .always_inline }, hashPointer, .{ hasher, key, strat }),
 
-        .Optional => if (key) |k| hash(hasher, k, strat),
+                     .Optional => if (key) |k| hash(hasher, k, strat),
 
-        .Array => hashArray(hasher, key, strat),
+                     .Array => hashArray(hasher, key, strat),
 
-        .Vector => |info| {
-            if (std.meta.bitCount(info.child) % 8 == 0) {
-                // If there's no unused bits in the child type, we can just hash
-                // this as an array of bytes.
-                hasher.update(mem.asBytes(&key));
-            } else {
-                // Otherwise, hash every element.
-                comptime var i = 0;
-                inline while (i < info.len) : (i += 1) {
-                    hash(hasher, key[i], strat);
-                }
-            }
-        },
+                     .Vector => |info| {
+                                      if (std.meta.bitCount(info.child) % 8 == 0) {
+                                          // If there's no unused bits in the child type, we can just hash
+                                          // this as an array of bytes.
+                                          hasher.update(mem.asBytes(&key));
+                                      } else {
+                                          // Otherwise, hash every element.
+                                          comptime var i = 0;
+                                          inline while (i < info.len) : (i += 1) {
+                                                           hash(hasher, key[i], strat);
+                                          }
+                                      }
+                     },
 
-        .Struct => |info| {
-            inline for (info.fields) |field| {
-                // We reuse the hash of the previous field as the seed for the
-                // next one so that they're dependant.
-                hash(hasher, @field(key, field.name), strat);
-            }
-        },
+                     .Struct => |info| {
+                                      inline for (info.fields) |field| {
+                                          // We reuse the hash of the previous field as the seed for the
+                                          // next one so that they're dependant.
+                                          hash(hasher, @field(key, field.name), strat);
+                                      }
+                     },
 
-        .Union => |info| {
-            if (info.tag_type) |tag_type| {
-                const tag = meta.activeTag(key);
-                const s = hash(hasher, tag, strat);
-                inline for (info.fields) |field| {
-                    if (@field(tag_type, field.name) == tag) {
-                        hash(hasher, @field(key, field.name), strat);
-                        // TODO use a labelled break when it does not crash the compiler. cf #2908
-                        // break :blk;
-                        return;
-                    }
-                }
-                unreachable;
-            } else @compileError("cannot hash untagged union type: " ++ @typeName(Key) ++ ", provide your own hash function");
-        },
+                     .Union => |info| {
+                                      if (info.tag_type) |tag_type| {
+                                          const tag = meta.activeTag(key);
+                                          const s = hash(hasher, tag, strat);
+                                          inline for (info.fields) |field| {
+                                                           if (@field(tag_type, field.name) == tag) {
+                                                                            hash(hasher, @field(key, field.name), strat);
+                                                                            // TODO use a labelled break when it does not crash the compiler. cf #2908
+                                                                            // break :blk;
+                                                                            return;
+                                                           }
+                                          }
+                                          unreachable;
+                                      } else @compileError("cannot hash untagged union type: " ++ @typeName(Key) ++ ", provide your own hash function");
+                     },
 
-        .ErrorUnion => blk: {
-            const payload = key catch |err| {
-                hash(hasher, err, strat);
-                break :blk;
-            };
-            hash(hasher, payload, strat);
-        },
+                     .ErrorUnion => blk: {
+                                      const payload = key catch |err| {
+                                          hash(hasher, err, strat);
+                                          break :blk;
+                                      };
+                                      hash(hasher, payload, strat);
+                     },
     }
 }
 
@@ -166,15 +166,15 @@ pub fn hash(hasher: anytype, key: anytype, comptime strat: HashStrategy) void {
 pub fn autoHash(hasher: anytype, key: anytype) void {
     const Key = @TypeOf(key);
     if (comptime meta.trait.isSlice(Key)) {
-        comptime assert(@hasDecl(std, "StringHashMap")); // detect when the following message needs updated
-        const extra_help = if (Key == []const u8)
-            " Consider std.StringHashMap for hashing the contents of []const u8."
-        else
-            "";
+                     comptime assert(@hasDecl(std, "StringHashMap")); // detect when the following message needs updated
+                     const extra_help = if (Key == []const u8)
+                                      " Consider std.StringHashMap for hashing the contents of []const u8."
+                     else
+                                      "";
 
-        @compileError("std.auto_hash.autoHash does not allow slices (here " ++ @typeName(Key) ++
-            ") because the intent is unclear. Consider using std.auto_hash.hash or providing your own hash function instead." ++
-            extra_help);
+                     @compileError("std.auto_hash.autoHash does not allow slices (here " ++ @typeName(Key) ++
+                                      ") because the intent is unclear. Consider using std.auto_hash.hash or providing your own hash function instead." ++
+                                      extra_help);
     }
 
     hash(hasher, key, .Shallow);
@@ -267,17 +267,17 @@ test "hash slice deep" {
 
 test "hash struct deep" {
     const Foo = struct {
-        a: u32,
-        b: u16,
-        c: *bool,
+                     a: u32,
+                     b: u16,
+                     c: *bool,
 
-        const Self = @This();
+                     const Self = @This();
 
-        pub fn init(allocator: *mem.Allocator, a_: u32, b_: u16, c_: bool) !Self {
-            const ptr = try allocator.create(bool);
-            ptr.* = c_;
-            return Self{ .a = a_, .b = b_, .c = ptr };
-        }
+                     pub fn init(allocator: *mem.Allocator, a_: u32, b_: u16, c_: bool) !Self {
+                                      const ptr = try allocator.create(bool);
+                                      ptr.* = c_;
+                                      return Self{ .a = a_, .b = b_, .c = ptr };
+                     }
     };
 
     const allocator = std.testing.allocator;
@@ -324,9 +324,9 @@ test "testHash array" {
 
 test "testHash struct" {
     const Foo = struct {
-        a: u32 = 1,
-        b: u32 = 2,
-        c: u32 = 3,
+                     a: u32 = 1,
+                     b: u32 = 2,
+                     c: u32 = 3,
     };
     const f = Foo{};
     const h = testHash(f);
@@ -339,9 +339,9 @@ test "testHash struct" {
 
 test "testHash union" {
     const Foo = union(enum) {
-        A: u32,
-        B: bool,
-        C: u32,
+                     A: u32,
+                     B: bool,
+                     C: u32,
     };
 
     const a = Foo{ .A = 18 };
@@ -373,9 +373,9 @@ test "testHash vector" {
 test "testHash error union" {
     const Errors = error{Test};
     const Foo = struct {
-        a: u32 = 1,
-        b: u32 = 2,
-        c: u32 = 3,
+                     a: u32 = 1,
+                     b: u32 = 2,
+                     c: u32 = 3,
     };
     const f = Foo{};
     const g: Errors!Foo = Errors.Test;

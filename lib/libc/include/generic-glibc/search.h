@@ -104,7 +104,7 @@ struct hsearch_data
 /* Reentrant versions which can handle multiple hashing tables at the
    same time.  */
 extern int hsearch_r (ENTRY __item, ACTION __action, ENTRY **__retval,
-		      struct hsearch_data *__htab) __THROW;
+		                   struct hsearch_data *__htab) __THROW;
 extern int hcreate_r (size_t __nel, struct hsearch_data *__htab) __THROW;
 extern void hdestroy_r (struct hsearch_data *__htab) __THROW;
 #endif
@@ -127,7 +127,7 @@ VISIT;
 /* Search for an entry matching the given KEY in the tree pointed to
    by *ROOTP and insert a new element if not found.  */
 extern void *tsearch (const void *__key, void **__rootp,
-		      __compar_fn_t __compar);
+		                   __compar_fn_t __compar);
 
 /* Search for an entry matching the given KEY in the tree pointed to
    by *ROOTP.  If no matching entry is available return NULL.  */
@@ -136,13 +136,13 @@ extern void *tfind (const void *__key, void *const *__rootp,
 
 /* Remove the element matching KEY from the tree pointed to by *ROOTP.  */
 extern void *tdelete (const void *__restrict __key,
-		      void **__restrict __rootp,
-		      __compar_fn_t __compar);
+		                   void **__restrict __rootp,
+		                   __compar_fn_t __compar);
 
 #ifndef __ACTION_FN_T
 # define __ACTION_FN_T
 typedef void (*__action_fn_t) (const void *__nodep, VISIT __value,
-			       int __level);
+			                    int __level);
 #endif
 
 /* Walk through the whole tree and call the ACTION callback for every node
@@ -154,7 +154,7 @@ extern void twalk (const void *__root, __action_fn_t __action);
    level.  */
 extern void twalk_r (const void *__root,
 		     void (*) (const void *__nodep, VISIT __value,
-			       void *__closure),
+			                    void *__closure),
 		     void *__closure);
 
 /* Callback type for function to free a tree node.  If the keys are atomic
@@ -174,7 +174,7 @@ extern void *lfind (const void *__key, const void *__base,
 /* Perform linear search for KEY by comparing by COMPAR function in
    array [BASE,BASE+NMEMB*SIZE) and insert entry if not found.  */
 extern void *lsearch (const void *__key, void *__base,
-		      size_t *__nmemb, size_t __size, __compar_fn_t __compar);
+		                   size_t *__nmemb, size_t __size, __compar_fn_t __compar);
 
 __END_DECLS
 

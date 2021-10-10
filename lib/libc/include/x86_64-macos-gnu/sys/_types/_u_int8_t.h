@@ -27,5 +27,5 @@
  */
 #ifndef _U_INT8_T
 #define _U_INT8_T
-typedef unsigned char           u_int8_t;
+typedef unsigned char                        u_int8_t;
 #endif /* _U_INT8_T */

@@ -9,7 +9,7 @@
  *
  * Device number stuff:
  *    get_whole_disk()		(given the device number of a partition,
- *                               find the device number of the encompassing disk)
+ *                                                                                                find the device number of the encompassing disk)
  *    get_all_partitions()	(given the device number of a disk, return the
  *				 device numbers of all its known partitions)
  *
@@ -28,14 +28,14 @@
 
 #include <linux/ioctl.h>
 
-#define BLKPG      _IO(0x12,105)
+#define BLKPG                   _IO(0x12,105)
 
 /* The argument structure */
 struct blkpg_ioctl_arg {
-        int op;
-        int flags;
-        int datalen;
-        void *data;
+                     int op;
+                     int flags;
+                     int datalen;
+                     void *data;
 };
 
 /* The subfunctions (for the op field) */

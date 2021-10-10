@@ -109,8 +109,8 @@ MIDL_INTERFACE("b5bee9f9-eeda-41fe-96f7-f45e14990fb0")
 IWSDDeviceHostNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetService(
-        LPCWSTR pszServiceId,
-        IUnknown **ppService) = 0;
+                     LPCWSTR pszServiceId,
+                     IUnknown **ppService) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -122,21 +122,21 @@ typedef struct IWSDDeviceHostNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDDeviceHostNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDDeviceHostNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDDeviceHostNotify *This);
+                     IWSDDeviceHostNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDDeviceHostNotify *This);
+                     IWSDDeviceHostNotify *This);
 
     /*** IWSDDeviceHostNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *GetService)(
-        IWSDDeviceHostNotify *This,
-        LPCWSTR pszServiceId,
-        IUnknown **ppService);
+                     IWSDDeviceHostNotify *This,
+                     LPCWSTR pszServiceId,
+                     IUnknown **ppService);
 
     END_INTERFACE
 } IWSDDeviceHostNotifyVtbl;
@@ -188,14 +188,14 @@ MIDL_INTERFACE("94974cf4-0cab-460d-a3f6-7a0ad623c0e6")
 IWSDServiceMessaging : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SendResponse(
-        void *pBody,
-        WSD_OPERATION *pOperation,
-        IWSDMessageParameters *pMessageParameters) = 0;
+                     void *pBody,
+                     WSD_OPERATION *pOperation,
+                     IWSDMessageParameters *pMessageParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FaultRequest(
-        WSD_SOAP_HEADER *pRequestHeader,
-        IWSDMessageParameters *pMessageParameters,
-        WSD_SOAP_FAULT *pFault) = 0;
+                     WSD_SOAP_HEADER *pRequestHeader,
+                     IWSDMessageParameters *pMessageParameters,
+                     WSD_SOAP_FAULT *pFault) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -207,28 +207,28 @@ typedef struct IWSDServiceMessagingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDServiceMessaging *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDServiceMessaging *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDServiceMessaging *This);
+                     IWSDServiceMessaging *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDServiceMessaging *This);
+                     IWSDServiceMessaging *This);
 
     /*** IWSDServiceMessaging methods ***/
     HRESULT (STDMETHODCALLTYPE *SendResponse)(
-        IWSDServiceMessaging *This,
-        void *pBody,
-        WSD_OPERATION *pOperation,
-        IWSDMessageParameters *pMessageParameters);
+                     IWSDServiceMessaging *This,
+                     void *pBody,
+                     WSD_OPERATION *pOperation,
+                     IWSDMessageParameters *pMessageParameters);
 
     HRESULT (STDMETHODCALLTYPE *FaultRequest)(
-        IWSDServiceMessaging *This,
-        WSD_SOAP_HEADER *pRequestHeader,
-        IWSDMessageParameters *pMessageParameters,
-        WSD_SOAP_FAULT *pFault);
+                     IWSDServiceMessaging *This,
+                     WSD_SOAP_HEADER *pRequestHeader,
+                     IWSDMessageParameters *pMessageParameters,
+                     WSD_SOAP_FAULT *pFault);
 
     END_INTERFACE
 } IWSDServiceMessagingVtbl;
@@ -284,57 +284,57 @@ MIDL_INTERFACE("917fe891-3d13-4138-9809-934c8abeb12c")
 IWSDDeviceHost : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Init(
-        LPCWSTR pszLocalId,
-        IWSDXMLContext *pContext,
-        IWSDAddress **ppHostAddresses,
-        DWORD dwHostAddressCount) = 0;
+                     LPCWSTR pszLocalId,
+                     IWSDXMLContext *pContext,
+                     IWSDAddress **ppHostAddresses,
+                     DWORD dwHostAddressCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Start(
-        ULONGLONG ullInstanceId,
-        const WSD_URI_LIST *pScopeList,
-        IWSDDeviceHostNotify *pNotificationSink) = 0;
+                     ULONGLONG ullInstanceId,
+                     const WSD_URI_LIST *pScopeList,
+                     IWSDDeviceHostNotify *pNotificationSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Terminate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterPortType(
-        const WSD_PORT_TYPE *pPortType) = 0;
+                     const WSD_PORT_TYPE *pPortType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMetadata(
-        const WSD_THIS_MODEL_METADATA *pThisModelMetadata,
-        const WSD_THIS_DEVICE_METADATA *pThisDeviceMetadata,
-        const WSD_HOST_METADATA *pHostMetadata,
-        const WSD_METADATA_SECTION_LIST *pCustomMetadata) = 0;
+                     const WSD_THIS_MODEL_METADATA *pThisModelMetadata,
+                     const WSD_THIS_DEVICE_METADATA *pThisDeviceMetadata,
+                     const WSD_HOST_METADATA *pHostMetadata,
+                     const WSD_METADATA_SECTION_LIST *pCustomMetadata) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterService(
-        LPCWSTR pszServiceId,
-        IUnknown *pService) = 0;
+                     LPCWSTR pszServiceId,
+                     IUnknown *pService) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RetireService(
-        LPCWSTR pszServiceId) = 0;
+                     LPCWSTR pszServiceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddDynamicService(
-        LPCWSTR pszServiceId,
-        LPCWSTR pszEndpointAddress,
-        const WSD_PORT_TYPE *pPortType,
-        const WSDXML_NAME *pPortName,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pService) = 0;
+                     LPCWSTR pszServiceId,
+                     LPCWSTR pszEndpointAddress,
+                     const WSD_PORT_TYPE *pPortType,
+                     const WSDXML_NAME *pPortName,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pService) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveDynamicService(
-        LPCWSTR pszServiceId) = 0;
+                     LPCWSTR pszServiceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetServiceDiscoverable(
-        LPCWSTR pszServiceId,
-        WINBOOL fDiscoverable) = 0;
+                     LPCWSTR pszServiceId,
+                     WINBOOL fDiscoverable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SignalEvent(
-        LPCWSTR pszServiceId,
-        const void *pBody,
-        const WSD_OPERATION *pOperation) = 0;
+                     LPCWSTR pszServiceId,
+                     const void *pBody,
+                     const WSD_OPERATION *pOperation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -346,79 +346,79 @@ typedef struct IWSDDeviceHostVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDDeviceHost *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDDeviceHost *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDDeviceHost *This);
+                     IWSDDeviceHost *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDDeviceHost *This);
+                     IWSDDeviceHost *This);
 
     /*** IWSDDeviceHost methods ***/
     HRESULT (STDMETHODCALLTYPE *Init)(
-        IWSDDeviceHost *This,
-        LPCWSTR pszLocalId,
-        IWSDXMLContext *pContext,
-        IWSDAddress **ppHostAddresses,
-        DWORD dwHostAddressCount);
+                     IWSDDeviceHost *This,
+                     LPCWSTR pszLocalId,
+                     IWSDXMLContext *pContext,
+                     IWSDAddress **ppHostAddresses,
+                     DWORD dwHostAddressCount);
 
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IWSDDeviceHost *This,
-        ULONGLONG ullInstanceId,
-        const WSD_URI_LIST *pScopeList,
-        IWSDDeviceHostNotify *pNotificationSink);
+                     IWSDDeviceHost *This,
+                     ULONGLONG ullInstanceId,
+                     const WSD_URI_LIST *pScopeList,
+                     IWSDDeviceHostNotify *pNotificationSink);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IWSDDeviceHost *This);
+                     IWSDDeviceHost *This);
 
     HRESULT (STDMETHODCALLTYPE *Terminate)(
-        IWSDDeviceHost *This);
+                     IWSDDeviceHost *This);
 
     HRESULT (STDMETHODCALLTYPE *RegisterPortType)(
-        IWSDDeviceHost *This,
-        const WSD_PORT_TYPE *pPortType);
+                     IWSDDeviceHost *This,
+                     const WSD_PORT_TYPE *pPortType);
 
     HRESULT (STDMETHODCALLTYPE *SetMetadata)(
-        IWSDDeviceHost *This,
-        const WSD_THIS_MODEL_METADATA *pThisModelMetadata,
-        const WSD_THIS_DEVICE_METADATA *pThisDeviceMetadata,
-        const WSD_HOST_METADATA *pHostMetadata,
-        const WSD_METADATA_SECTION_LIST *pCustomMetadata);
+                     IWSDDeviceHost *This,
+                     const WSD_THIS_MODEL_METADATA *pThisModelMetadata,
+                     const WSD_THIS_DEVICE_METADATA *pThisDeviceMetadata,
+                     const WSD_HOST_METADATA *pHostMetadata,
+                     const WSD_METADATA_SECTION_LIST *pCustomMetadata);
 
     HRESULT (STDMETHODCALLTYPE *RegisterService)(
-        IWSDDeviceHost *This,
-        LPCWSTR pszServiceId,
-        IUnknown *pService);
+                     IWSDDeviceHost *This,
+                     LPCWSTR pszServiceId,
+                     IUnknown *pService);
 
     HRESULT (STDMETHODCALLTYPE *RetireService)(
-        IWSDDeviceHost *This,
-        LPCWSTR pszServiceId);
+                     IWSDDeviceHost *This,
+                     LPCWSTR pszServiceId);
 
     HRESULT (STDMETHODCALLTYPE *AddDynamicService)(
-        IWSDDeviceHost *This,
-        LPCWSTR pszServiceId,
-        LPCWSTR pszEndpointAddress,
-        const WSD_PORT_TYPE *pPortType,
-        const WSDXML_NAME *pPortName,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pService);
+                     IWSDDeviceHost *This,
+                     LPCWSTR pszServiceId,
+                     LPCWSTR pszEndpointAddress,
+                     const WSD_PORT_TYPE *pPortType,
+                     const WSDXML_NAME *pPortName,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pService);
 
     HRESULT (STDMETHODCALLTYPE *RemoveDynamicService)(
-        IWSDDeviceHost *This,
-        LPCWSTR pszServiceId);
+                     IWSDDeviceHost *This,
+                     LPCWSTR pszServiceId);
 
     HRESULT (STDMETHODCALLTYPE *SetServiceDiscoverable)(
-        IWSDDeviceHost *This,
-        LPCWSTR pszServiceId,
-        WINBOOL fDiscoverable);
+                     IWSDDeviceHost *This,
+                     LPCWSTR pszServiceId,
+                     WINBOOL fDiscoverable);
 
     HRESULT (STDMETHODCALLTYPE *SignalEvent)(
-        IWSDDeviceHost *This,
-        LPCWSTR pszServiceId,
-        const void *pBody,
-        const WSD_OPERATION *pOperation);
+                     IWSDDeviceHost *This,
+                     LPCWSTR pszServiceId,
+                     const void *pBody,
+                     const WSD_OPERATION *pOperation);
 
     END_INTERFACE
 } IWSDDeviceHostVtbl;

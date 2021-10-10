@@ -41,7 +41,7 @@ __device__ inline void *operator new(__SIZE_TYPE__ size) {
   return ::malloc(size);
 }
 __device__ inline void *operator new(__SIZE_TYPE__ size,
-                                     const std::nothrow_t &) CUDA_NOEXCEPT {
+                                                                                                                   const std::nothrow_t &) CUDA_NOEXCEPT {
   return ::operator new(size);
 }
 
@@ -49,7 +49,7 @@ __device__ inline void *operator new[](__SIZE_TYPE__ size) {
   return ::operator new(size);
 }
 __device__ inline void *operator new[](__SIZE_TYPE__ size,
-                                       const std::nothrow_t &) {
+                                                                                                                     const std::nothrow_t &) {
   return ::operator new(size);
 }
 
@@ -59,7 +59,7 @@ __device__ inline void operator delete(void* ptr) CUDA_NOEXCEPT {
   }
 }
 __device__ inline void operator delete(void *ptr,
-                                       const std::nothrow_t &) CUDA_NOEXCEPT {
+                                                                                                                     const std::nothrow_t &) CUDA_NOEXCEPT {
   ::operator delete(ptr);
 }
 
@@ -67,18 +67,18 @@ __device__ inline void operator delete[](void* ptr) CUDA_NOEXCEPT {
   ::operator delete(ptr);
 }
 __device__ inline void operator delete[](void *ptr,
-                                         const std::nothrow_t &) CUDA_NOEXCEPT {
+                                                                                                                       const std::nothrow_t &) CUDA_NOEXCEPT {
   ::operator delete(ptr);
 }
 
 // Sized delete, C++14 only.
 #if __cplusplus >= 201402L
 __device__ inline void operator delete(void *ptr,
-                                       __SIZE_TYPE__ size) CUDA_NOEXCEPT {
+                                                                                                                     __SIZE_TYPE__ size) CUDA_NOEXCEPT {
   ::operator delete(ptr);
 }
 __device__ inline void operator delete[](void *ptr,
-                                         __SIZE_TYPE__ size) CUDA_NOEXCEPT {
+                                                                                                                       __SIZE_TYPE__ size) CUDA_NOEXCEPT {
   ::operator delete(ptr);
 }
 #endif

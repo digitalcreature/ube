@@ -103,18 +103,18 @@ extern "C"{
 #else
   typedef struct IMcastScopeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMcastScope *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMcastScope *This);
-      ULONG (WINAPI *Release)(IMcastScope *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMcastScope *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMcastScope *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMcastScope *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMcastScope *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ScopeID)(IMcastScope *This,__LONG32 *pID);
-      HRESULT (WINAPI *get_ServerID)(IMcastScope *This,__LONG32 *pID);
-      HRESULT (WINAPI *get_InterfaceID)(IMcastScope *This,__LONG32 *pID);
-      HRESULT (WINAPI *get_ScopeDescription)(IMcastScope *This,BSTR *ppDescription);
-      HRESULT (WINAPI *get_TTL)(IMcastScope *This,__LONG32 *pTTL);
+                   HRESULT (WINAPI *QueryInterface)(IMcastScope *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMcastScope *This);
+                   ULONG (WINAPI *Release)(IMcastScope *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMcastScope *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMcastScope *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMcastScope *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMcastScope *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ScopeID)(IMcastScope *This,__LONG32 *pID);
+                   HRESULT (WINAPI *get_ServerID)(IMcastScope *This,__LONG32 *pID);
+                   HRESULT (WINAPI *get_InterfaceID)(IMcastScope *This,__LONG32 *pID);
+                   HRESULT (WINAPI *get_ScopeDescription)(IMcastScope *This,BSTR *ppDescription);
+                   HRESULT (WINAPI *get_TTL)(IMcastScope *This,__LONG32 *pTTL);
     END_INTERFACE
   } IMcastScopeVtbl;
   struct IMcastScope {
@@ -167,23 +167,23 @@ extern "C"{
 #else
   typedef struct IMcastLeaseInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMcastLeaseInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMcastLeaseInfo *This);
-      ULONG (WINAPI *Release)(IMcastLeaseInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMcastLeaseInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMcastLeaseInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMcastLeaseInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMcastLeaseInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_RequestID)(IMcastLeaseInfo *This,BSTR *ppRequestID);
-      HRESULT (WINAPI *get_LeaseStartTime)(IMcastLeaseInfo *This,DATE *pTime);
-      HRESULT (WINAPI *put_LeaseStartTime)(IMcastLeaseInfo *This,DATE time);
-      HRESULT (WINAPI *get_LeaseStopTime)(IMcastLeaseInfo *This,DATE *pTime);
-      HRESULT (WINAPI *put_LeaseStopTime)(IMcastLeaseInfo *This,DATE time);
-      HRESULT (WINAPI *get_AddressCount)(IMcastLeaseInfo *This,__LONG32 *pCount);
-      HRESULT (WINAPI *get_ServerAddress)(IMcastLeaseInfo *This,BSTR *ppAddress);
-      HRESULT (WINAPI *get_TTL)(IMcastLeaseInfo *This,__LONG32 *pTTL);
-      HRESULT (WINAPI *get_Addresses)(IMcastLeaseInfo *This,VARIANT *pVariant);
-      HRESULT (WINAPI *EnumerateAddresses)(IMcastLeaseInfo *This,IEnumBstr **ppEnumAddresses);
+                   HRESULT (WINAPI *QueryInterface)(IMcastLeaseInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMcastLeaseInfo *This);
+                   ULONG (WINAPI *Release)(IMcastLeaseInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMcastLeaseInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMcastLeaseInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMcastLeaseInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMcastLeaseInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_RequestID)(IMcastLeaseInfo *This,BSTR *ppRequestID);
+                   HRESULT (WINAPI *get_LeaseStartTime)(IMcastLeaseInfo *This,DATE *pTime);
+                   HRESULT (WINAPI *put_LeaseStartTime)(IMcastLeaseInfo *This,DATE time);
+                   HRESULT (WINAPI *get_LeaseStopTime)(IMcastLeaseInfo *This,DATE *pTime);
+                   HRESULT (WINAPI *put_LeaseStopTime)(IMcastLeaseInfo *This,DATE time);
+                   HRESULT (WINAPI *get_AddressCount)(IMcastLeaseInfo *This,__LONG32 *pCount);
+                   HRESULT (WINAPI *get_ServerAddress)(IMcastLeaseInfo *This,BSTR *ppAddress);
+                   HRESULT (WINAPI *get_TTL)(IMcastLeaseInfo *This,__LONG32 *pTTL);
+                   HRESULT (WINAPI *get_Addresses)(IMcastLeaseInfo *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *EnumerateAddresses)(IMcastLeaseInfo *This,IEnumBstr **ppEnumAddresses);
     END_INTERFACE
   } IMcastLeaseInfoVtbl;
   struct IMcastLeaseInfo {
@@ -245,13 +245,13 @@ extern "C"{
 #else
   typedef struct IEnumMcastScopeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumMcastScope *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumMcastScope *This);
-      ULONG (WINAPI *Release)(IEnumMcastScope *This);
-      HRESULT (WINAPI *Next)(IEnumMcastScope *This,ULONG celt,IMcastScope **ppScopes,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumMcastScope *This);
-      HRESULT (WINAPI *Skip)(IEnumMcastScope *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumMcastScope *This,IEnumMcastScope **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumMcastScope *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumMcastScope *This);
+                   ULONG (WINAPI *Release)(IEnumMcastScope *This);
+                   HRESULT (WINAPI *Next)(IEnumMcastScope *This,ULONG celt,IMcastScope **ppScopes,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumMcastScope *This);
+                   HRESULT (WINAPI *Skip)(IEnumMcastScope *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumMcastScope *This,IEnumMcastScope **ppEnum);
     END_INTERFACE
   } IEnumMcastScopeVtbl;
   struct IEnumMcastScope {
@@ -294,20 +294,20 @@ extern "C"{
 #else
   typedef struct IMcastAddressAllocationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMcastAddressAllocation *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMcastAddressAllocation *This);
-      ULONG (WINAPI *Release)(IMcastAddressAllocation *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMcastAddressAllocation *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMcastAddressAllocation *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMcastAddressAllocation *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMcastAddressAllocation *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Scopes)(IMcastAddressAllocation *This,VARIANT *pVariant);
-      HRESULT (WINAPI *EnumerateScopes)(IMcastAddressAllocation *This,IEnumMcastScope **ppEnumMcastScope);
-      HRESULT (WINAPI *RequestAddress)(IMcastAddressAllocation *This,IMcastScope *pScope,DATE LeaseStartTime,DATE LeaseStopTime,__LONG32 NumAddresses,IMcastLeaseInfo **ppLeaseResponse);
-      HRESULT (WINAPI *RenewAddress)(IMcastAddressAllocation *This,__LONG32 lReserved,IMcastLeaseInfo *pRenewRequest,IMcastLeaseInfo **ppRenewResponse);
-      HRESULT (WINAPI *ReleaseAddress)(IMcastAddressAllocation *This,IMcastLeaseInfo *pReleaseRequest);
-      HRESULT (WINAPI *CreateLeaseInfo)(IMcastAddressAllocation *This,DATE LeaseStartTime,DATE LeaseStopTime,DWORD dwNumAddresses,LPWSTR *ppAddresses,LPWSTR pRequestID,LPWSTR pServerAddress,IMcastLeaseInfo **ppReleaseRequest);
-      HRESULT (WINAPI *CreateLeaseInfoFromVariant)(IMcastAddressAllocation *This,DATE LeaseStartTime,DATE LeaseStopTime,VARIANT vAddresses,BSTR pRequestID,BSTR pServerAddress,IMcastLeaseInfo **ppReleaseRequest);
+                   HRESULT (WINAPI *QueryInterface)(IMcastAddressAllocation *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMcastAddressAllocation *This);
+                   ULONG (WINAPI *Release)(IMcastAddressAllocation *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMcastAddressAllocation *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMcastAddressAllocation *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMcastAddressAllocation *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMcastAddressAllocation *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Scopes)(IMcastAddressAllocation *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *EnumerateScopes)(IMcastAddressAllocation *This,IEnumMcastScope **ppEnumMcastScope);
+                   HRESULT (WINAPI *RequestAddress)(IMcastAddressAllocation *This,IMcastScope *pScope,DATE LeaseStartTime,DATE LeaseStopTime,__LONG32 NumAddresses,IMcastLeaseInfo **ppLeaseResponse);
+                   HRESULT (WINAPI *RenewAddress)(IMcastAddressAllocation *This,__LONG32 lReserved,IMcastLeaseInfo *pRenewRequest,IMcastLeaseInfo **ppRenewResponse);
+                   HRESULT (WINAPI *ReleaseAddress)(IMcastAddressAllocation *This,IMcastLeaseInfo *pReleaseRequest);
+                   HRESULT (WINAPI *CreateLeaseInfo)(IMcastAddressAllocation *This,DATE LeaseStartTime,DATE LeaseStopTime,DWORD dwNumAddresses,LPWSTR *ppAddresses,LPWSTR pRequestID,LPWSTR pServerAddress,IMcastLeaseInfo **ppReleaseRequest);
+                   HRESULT (WINAPI *CreateLeaseInfoFromVariant)(IMcastAddressAllocation *This,DATE LeaseStartTime,DATE LeaseStopTime,VARIANT vAddresses,BSTR pRequestID,BSTR pServerAddress,IMcastLeaseInfo **ppReleaseRequest);
     END_INTERFACE
   } IMcastAddressAllocationVtbl;
   struct IMcastAddressAllocation {

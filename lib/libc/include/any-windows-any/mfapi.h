@@ -743,26 +743,26 @@ extern "C" {
   inline UINT32 MFGetAttributeUINT32 (IMFAttributes *pattr, REFGUID guid, UINT32 udef) {
     UINT32 r;
     if (FAILED (pattr->GetUINT32 (guid, &r)))
-      r = udef;
+                   r = udef;
     return r;
   }
   inline UINT64 MFGetAttributeUINT64 (IMFAttributes *pattr, REFGUID guid, UINT64 udef) {
     UINT64 r;
     if (FAILED (pattr->GetUINT64 (guid, &r)))
-      r = udef;
+                   r = udef;
     return r;
   }
   inline double MFGetAttributeDouble (IMFAttributes *pattr, REFGUID guid, double fdef) {
     double r;
     if (FAILED (pattr->GetDouble (guid, &r)))
-      r = fdef;
+                   r = fdef;
     return r;
   }
   inline HRESULT MFGetAttribute2UINT32asUINT64 (IMFAttributes *pattr, REFGUID guid, UINT32 *puh, UINT32 *pul) {
     UINT64 up;
     HRESULT hr = pattr->GetUINT64 (guid, &up);
     if (!FAILED (hr))
-      Unpack2UINT32AsUINT64 (up, puh, pul);
+                   Unpack2UINT32AsUINT64 (up, puh, pul);
     return hr;
   }
   inline HRESULT MFSetAttribute2UINT32asUINT64 (IMFAttributes *pattr, REFGUID guid, UINT32 uh, UINT32 ul) {
@@ -780,19 +780,19 @@ extern "C" {
     *ppsz = NULL;
     hr = pattr->GetStringLength (guid, &length);
     if (SUCCEEDED (hr))
-      hr = UIntAdd (length, 1, &length);
+                   hr = UIntAdd (length, 1, &length);
     if (SUCCEEDED (hr)) {
-      size_t cb;
-      hr = SizeTMult (length, sizeof (WCHAR), &cb);
-      if (SUCCEEDED (hr) && !(psz = PWSTR (CoTaskMemAlloc (cb))))
+                   size_t cb;
+                   hr = SizeTMult (length, sizeof (WCHAR), &cb);
+                   if (SUCCEEDED (hr) && !(psz = PWSTR (CoTaskMemAlloc (cb))))
 	hr = E_OUTOFMEMORY;
     }
     if (SUCCEEDED (hr))
-      hr = pattr->GetString (guid, psz, length, &length);
+                   hr = pattr->GetString (guid, psz, length, &length);
     if (SUCCEEDED (hr))
-      *ppsz = psz;
+                   *ppsz = psz;
     else
-      CoTaskMemFree (psz);
+                   CoTaskMemFree (psz);
     return hr;
   }
 #endif

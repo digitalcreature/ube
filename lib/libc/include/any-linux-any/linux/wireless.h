@@ -763,7 +763,7 @@ struct iw_scan_req {
 	__u8		scan_type; /* IW_SCAN_TYPE_{ACTIVE,PASSIVE} */
 	__u8		essid_len;
 	__u8		num_channels; /* num entries in channel_list;
-				       * 0 = scan all allowed channels */
+				                    * 0 = scan all allowed channels */
 	__u8		flags; /* reserved as padding; use zero, this may
 				* be used in the future for adding flags
 				* to request different scan behavior */
@@ -825,8 +825,8 @@ struct iw_encode_ext {
 	__u8		tx_seq[IW_ENCODE_SEQ_MAX_SIZE]; /* LSB first */
 	__u8		rx_seq[IW_ENCODE_SEQ_MAX_SIZE]; /* LSB first */
 	struct sockaddr	addr; /* ff:ff:ff:ff:ff:ff for broadcast/multicast
-			       * (group) keys or unicast address for
-			       * individual keys */
+			                    * (group) keys or unicast address for
+			                    * individual keys */
 	__u16		alg; /* IW_ENCODE_ALG_* */
 	__u16		key_len;
 	__u8		key[0];

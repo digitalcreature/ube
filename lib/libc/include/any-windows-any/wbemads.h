@@ -89,13 +89,13 @@ MIDL_INTERFACE("adc1f06e-5c7e-11d2-8b74-00104b2afb41")
 IWMIExtension : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_WMIObjectPath(
-        BSTR *strWMIObjectPath) = 0;
+                     BSTR *strWMIObjectPath) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWMIObject(
-        ISWbemObject **objWMIObject) = 0;
+                     ISWbemObject **objWMIObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWMIServices(
-        ISWbemServices **objWMIServices) = 0;
+                     ISWbemServices **objWMIServices) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -107,58 +107,58 @@ typedef struct IWMIExtensionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWMIExtension *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWMIExtension *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWMIExtension *This);
+                     IWMIExtension *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWMIExtension *This);
+                     IWMIExtension *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IWMIExtension *This,
-        UINT *pctinfo);
+                     IWMIExtension *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IWMIExtension *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IWMIExtension *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IWMIExtension *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IWMIExtension *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IWMIExtension *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IWMIExtension *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IWMIExtension methods ***/
     HRESULT (STDMETHODCALLTYPE *get_WMIObjectPath)(
-        IWMIExtension *This,
-        BSTR *strWMIObjectPath);
+                     IWMIExtension *This,
+                     BSTR *strWMIObjectPath);
 
     HRESULT (STDMETHODCALLTYPE *GetWMIObject)(
-        IWMIExtension *This,
-        ISWbemObject **objWMIObject);
+                     IWMIExtension *This,
+                     ISWbemObject **objWMIObject);
 
     HRESULT (STDMETHODCALLTYPE *GetWMIServices)(
-        IWMIExtension *This,
-        ISWbemServices **objWMIServices);
+                     IWMIExtension *This,
+                     ISWbemServices **objWMIServices);
 
     END_INTERFACE
 } IWMIExtensionVtbl;
@@ -227,10 +227,10 @@ static FORCEINLINE HRESULT IWMIExtension_GetWMIServices(IWMIExtension* This,ISWb
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

@@ -26,16 +26,16 @@
 #define ETH_P_IEEEPUP	0x0a00
 #define ETH_P_IEEEPUPAT	0x0a01
 #define ETH_P_BATMAN	0x4305
-#define ETH_P_DEC       0x6000
+#define ETH_P_DEC                    0x6000
 #define ETH_P_DNA_DL    0x6001
 #define ETH_P_DNA_RC    0x6002
 #define ETH_P_DNA_RT    0x6003
-#define ETH_P_LAT       0x6004
-#define ETH_P_DIAG      0x6005
-#define ETH_P_CUST      0x6006
-#define ETH_P_SCA       0x6007
+#define ETH_P_LAT                    0x6004
+#define ETH_P_DIAG                   0x6005
+#define ETH_P_CUST                   0x6006
+#define ETH_P_SCA                    0x6007
 #define ETH_P_TEB	0x6558
-#define ETH_P_RARP      0x8035
+#define ETH_P_RARP                   0x8035
 #define ETH_P_ATALK	0x809B
 #define ETH_P_AARP	0x80F3
 #define ETH_P_8021Q	0x8100
@@ -142,6 +142,6 @@ do { \
 	(enaddr)[5] = ((uint8_t *)ipaddr)[3]; \
 } while(0)
 
-#define __UAPI_DEF_ETHHDR       0
+#define __UAPI_DEF_ETHHDR                    0
 
 #endif

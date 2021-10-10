@@ -13608,67 +13608,67 @@ ulong __ovld atomic_exchange_explicit(volatile atomic_ulong *object, ulong desir
 
 bool __ovld atomic_compare_exchange_strong(volatile atomic_int *object, int *expected, int desired);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_int *object, int *expected,
-                                                                                 int desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          int desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_int *object, int *expected,
-                                                                                 int desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          int desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_strong(volatile atomic_uint *object, uint *expected, uint desired);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_uint *object, uint *expected,
-                                                                                 uint desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          uint desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_uint *object, uint *expected,
-                                                                                 uint desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          uint desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_weak(volatile atomic_int *object, int *expected, int desired);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_int *object, int *expected,
-                                                                                 int desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          int desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_int *object, int *expected,
-                                                                                 int desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          int desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_weak(volatile atomic_uint *object, uint *expected, uint desired);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_uint *object, uint *expected,
-                                                                                 uint desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          uint desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_uint *object, uint *expected,
-                                                                                 uint desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          uint desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_strong(volatile atomic_float *object, float *expected, float desired);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_float *object, float *expected,
-                                                                                 float desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          float desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_float *object, float *expected,
-                                                                                 float desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          float desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_weak(volatile atomic_float *object, float *expected, float desired);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_float *object, float *expected,
-                                                                                 float desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          float desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_float *object, float *expected,
-                                                                                 float desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          float desired, memory_order success, memory_order failure, memory_scope scope);
 #if defined(cl_khr_int64_base_atomics) && defined(cl_khr_int64_extended_atomics)
 #ifdef cl_khr_fp64
 bool __ovld atomic_compare_exchange_strong(volatile atomic_double *object, double *expected, double desired);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_double *object, double *expected,
-                                                                                 double desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          double desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_double *object, double *expected,
-                                                                                 double desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          double desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_weak(volatile atomic_double *object, double *expected, double desired);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_double *object, double *expected,
-                                                                                 double desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          double desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_double *object, double *expected,
-                                                                                 double desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          double desired, memory_order success, memory_order failure, memory_scope scope);
 #endif //cl_khr_fp64
 bool __ovld atomic_compare_exchange_strong(volatile atomic_long *object, long *expected, long desired);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_long *object, long *expected,
-                                                                                 long desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          long desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_long *object, long *expected,
-                                                                                 long desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          long desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_weak(volatile atomic_long *object, long *expected, long desired);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_long *object, long *expected,
-                                                                                 long desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          long desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_long *object, long *expected,
-                                                                                 long desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          long desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_strong(volatile atomic_ulong *object, ulong *expected, ulong desired);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_ulong *object, ulong *expected,
-                                                                                 ulong desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          ulong desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_strong_explicit(volatile atomic_ulong *object, ulong *expected,
-                                                                                 ulong desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          ulong desired, memory_order success, memory_order failure, memory_scope scope);
 bool __ovld atomic_compare_exchange_weak(volatile atomic_ulong *object, ulong *expected, ulong desired);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_ulong *object, ulong *expected,
-                                                                                 ulong desired, memory_order success, memory_order failure);
+                                                                                                                                                                                                                                                          ulong desired, memory_order success, memory_order failure);
 bool __ovld atomic_compare_exchange_weak_explicit(volatile atomic_ulong *object, ulong *expected,
-                                                                                 ulong desired, memory_order success, memory_order failure, memory_scope scope);
+                                                                                                                                                                                                                                                          ulong desired, memory_order success, memory_order failure, memory_scope scope);
 #endif
 
 // atomic_flag_test_and_set() and atomic_flag_clear()
@@ -16277,162 +16277,162 @@ double  __ovld __conv intel_sub_group_shuffle_xor( double x, uint c );
 #endif //cl_intel_subgroups
 
 #if defined(cl_intel_subgroups_short)
-short       __ovld __conv intel_sub_group_broadcast( short  x, uint sub_group_local_id );
-short2      __ovld __conv intel_sub_group_broadcast( short2 x, uint sub_group_local_id );
-short3      __ovld __conv intel_sub_group_broadcast( short3 x, uint sub_group_local_id );
-short4      __ovld __conv intel_sub_group_broadcast( short4 x, uint sub_group_local_id );
-short8      __ovld __conv intel_sub_group_broadcast( short8 x, uint sub_group_local_id );
+short                    __ovld __conv intel_sub_group_broadcast( short  x, uint sub_group_local_id );
+short2                   __ovld __conv intel_sub_group_broadcast( short2 x, uint sub_group_local_id );
+short3                   __ovld __conv intel_sub_group_broadcast( short3 x, uint sub_group_local_id );
+short4                   __ovld __conv intel_sub_group_broadcast( short4 x, uint sub_group_local_id );
+short8                   __ovld __conv intel_sub_group_broadcast( short8 x, uint sub_group_local_id );
 
-ushort      __ovld __conv intel_sub_group_broadcast( ushort  x, uint sub_group_local_id );
+ushort                   __ovld __conv intel_sub_group_broadcast( ushort  x, uint sub_group_local_id );
 ushort2     __ovld __conv intel_sub_group_broadcast( ushort2 x, uint sub_group_local_id );
 ushort3     __ovld __conv intel_sub_group_broadcast( ushort3 x, uint sub_group_local_id );
 ushort4     __ovld __conv intel_sub_group_broadcast( ushort4 x, uint sub_group_local_id );
 ushort8     __ovld __conv intel_sub_group_broadcast( ushort8 x, uint sub_group_local_id );
 
-short       __ovld __conv intel_sub_group_shuffle( short   x, uint c );
-short2      __ovld __conv intel_sub_group_shuffle( short2  x, uint c );
-short3      __ovld __conv intel_sub_group_shuffle( short3  x, uint c );
-short4      __ovld __conv intel_sub_group_shuffle( short4  x, uint c );
-short8      __ovld __conv intel_sub_group_shuffle( short8  x, uint c );
+short                    __ovld __conv intel_sub_group_shuffle( short   x, uint c );
+short2                   __ovld __conv intel_sub_group_shuffle( short2  x, uint c );
+short3                   __ovld __conv intel_sub_group_shuffle( short3  x, uint c );
+short4                   __ovld __conv intel_sub_group_shuffle( short4  x, uint c );
+short8                   __ovld __conv intel_sub_group_shuffle( short8  x, uint c );
 short16     __ovld __conv intel_sub_group_shuffle( short16 x, uint c);
 
-ushort      __ovld __conv intel_sub_group_shuffle( ushort   x, uint c );
+ushort                   __ovld __conv intel_sub_group_shuffle( ushort   x, uint c );
 ushort2     __ovld __conv intel_sub_group_shuffle( ushort2  x, uint c );
 ushort3     __ovld __conv intel_sub_group_shuffle( ushort3  x, uint c );
 ushort4     __ovld __conv intel_sub_group_shuffle( ushort4  x, uint c );
 ushort8     __ovld __conv intel_sub_group_shuffle( ushort8  x, uint c );
 ushort16    __ovld __conv intel_sub_group_shuffle( ushort16 x, uint c );
 
-short       __ovld __conv intel_sub_group_shuffle_down( short   cur, short   next, uint c );
-short2      __ovld __conv intel_sub_group_shuffle_down( short2  cur, short2  next, uint c );
-short3      __ovld __conv intel_sub_group_shuffle_down( short3  cur, short3  next, uint c );
-short4      __ovld __conv intel_sub_group_shuffle_down( short4  cur, short4  next, uint c );
-short8      __ovld __conv intel_sub_group_shuffle_down( short8  cur, short8  next, uint c );
+short                    __ovld __conv intel_sub_group_shuffle_down( short   cur, short   next, uint c );
+short2                   __ovld __conv intel_sub_group_shuffle_down( short2  cur, short2  next, uint c );
+short3                   __ovld __conv intel_sub_group_shuffle_down( short3  cur, short3  next, uint c );
+short4                   __ovld __conv intel_sub_group_shuffle_down( short4  cur, short4  next, uint c );
+short8                   __ovld __conv intel_sub_group_shuffle_down( short8  cur, short8  next, uint c );
 short16     __ovld __conv intel_sub_group_shuffle_down( short16 cur, short16 next, uint c );
 
-ushort      __ovld __conv intel_sub_group_shuffle_down( ushort   cur, ushort   next, uint c );
+ushort                   __ovld __conv intel_sub_group_shuffle_down( ushort   cur, ushort   next, uint c );
 ushort2     __ovld __conv intel_sub_group_shuffle_down( ushort2  cur, ushort2  next, uint c );
 ushort3     __ovld __conv intel_sub_group_shuffle_down( ushort3  cur, ushort3  next, uint c );
 ushort4     __ovld __conv intel_sub_group_shuffle_down( ushort4  cur, ushort4  next, uint c );
 ushort8     __ovld __conv intel_sub_group_shuffle_down( ushort8  cur, ushort8  next, uint c );
 ushort16    __ovld __conv intel_sub_group_shuffle_down( ushort16 cur, ushort16 next, uint c );
 
-short       __ovld __conv intel_sub_group_shuffle_up( short   cur, short   next, uint c );
-short2      __ovld __conv intel_sub_group_shuffle_up( short2  cur, short2  next, uint c );
-short3      __ovld __conv intel_sub_group_shuffle_up( short3  cur, short3  next, uint c );
-short4      __ovld __conv intel_sub_group_shuffle_up( short4  cur, short4  next, uint c );
-short8      __ovld __conv intel_sub_group_shuffle_up( short8  cur, short8  next, uint c );
+short                    __ovld __conv intel_sub_group_shuffle_up( short   cur, short   next, uint c );
+short2                   __ovld __conv intel_sub_group_shuffle_up( short2  cur, short2  next, uint c );
+short3                   __ovld __conv intel_sub_group_shuffle_up( short3  cur, short3  next, uint c );
+short4                   __ovld __conv intel_sub_group_shuffle_up( short4  cur, short4  next, uint c );
+short8                   __ovld __conv intel_sub_group_shuffle_up( short8  cur, short8  next, uint c );
 short16     __ovld __conv intel_sub_group_shuffle_up( short16 cur, short16 next, uint c );
 
-ushort      __ovld __conv intel_sub_group_shuffle_up( ushort   cur, ushort   next, uint c );
+ushort                   __ovld __conv intel_sub_group_shuffle_up( ushort   cur, ushort   next, uint c );
 ushort2     __ovld __conv intel_sub_group_shuffle_up( ushort2  cur, ushort2  next, uint c );
 ushort3     __ovld __conv intel_sub_group_shuffle_up( ushort3  cur, ushort3  next, uint c );
 ushort4     __ovld __conv intel_sub_group_shuffle_up( ushort4  cur, ushort4  next, uint c );
 ushort8     __ovld __conv intel_sub_group_shuffle_up( ushort8  cur, ushort8  next, uint c );
 ushort16    __ovld __conv intel_sub_group_shuffle_up( ushort16 cur, ushort16 next, uint c );
 
-short       __ovld __conv intel_sub_group_shuffle_xor( short   x, uint c );
-short2      __ovld __conv intel_sub_group_shuffle_xor( short2  x, uint c );
-short3      __ovld __conv intel_sub_group_shuffle_xor( short3  x, uint c );
-short4      __ovld __conv intel_sub_group_shuffle_xor( short4  x, uint c );
-short8      __ovld __conv intel_sub_group_shuffle_xor( short8  x, uint c );
+short                    __ovld __conv intel_sub_group_shuffle_xor( short   x, uint c );
+short2                   __ovld __conv intel_sub_group_shuffle_xor( short2  x, uint c );
+short3                   __ovld __conv intel_sub_group_shuffle_xor( short3  x, uint c );
+short4                   __ovld __conv intel_sub_group_shuffle_xor( short4  x, uint c );
+short8                   __ovld __conv intel_sub_group_shuffle_xor( short8  x, uint c );
 short16     __ovld __conv intel_sub_group_shuffle_xor( short16 x, uint c );
 
-ushort      __ovld __conv intel_sub_group_shuffle_xor( ushort   x, uint c );
+ushort                   __ovld __conv intel_sub_group_shuffle_xor( ushort   x, uint c );
 ushort2     __ovld __conv intel_sub_group_shuffle_xor( ushort2  x, uint c );
 ushort3     __ovld __conv intel_sub_group_shuffle_xor( ushort3  x, uint c );
 ushort4     __ovld __conv intel_sub_group_shuffle_xor( ushort4  x, uint c );
 ushort8     __ovld __conv intel_sub_group_shuffle_xor( ushort8  x, uint c );
 ushort16    __ovld __conv intel_sub_group_shuffle_xor( ushort16 x, uint c );
 
-short       __ovld __conv intel_sub_group_reduce_add( short   x );
-ushort      __ovld __conv intel_sub_group_reduce_add( ushort  x );
-short       __ovld __conv intel_sub_group_reduce_min( short   x );
-ushort      __ovld __conv intel_sub_group_reduce_min( ushort  x );
-short       __ovld __conv intel_sub_group_reduce_max( short   x );
-ushort      __ovld __conv intel_sub_group_reduce_max( ushort  x );
+short                    __ovld __conv intel_sub_group_reduce_add( short   x );
+ushort                   __ovld __conv intel_sub_group_reduce_add( ushort  x );
+short                    __ovld __conv intel_sub_group_reduce_min( short   x );
+ushort                   __ovld __conv intel_sub_group_reduce_min( ushort  x );
+short                    __ovld __conv intel_sub_group_reduce_max( short   x );
+ushort                   __ovld __conv intel_sub_group_reduce_max( ushort  x );
 
-short       __ovld __conv intel_sub_group_scan_exclusive_add( short   x );
-ushort      __ovld __conv intel_sub_group_scan_exclusive_add( ushort  x );
-short       __ovld __conv intel_sub_group_scan_exclusive_min( short   x );
-ushort      __ovld __conv intel_sub_group_scan_exclusive_min( ushort  x );
-short       __ovld __conv intel_sub_group_scan_exclusive_max( short   x );
-ushort      __ovld __conv intel_sub_group_scan_exclusive_max( ushort  x );
+short                    __ovld __conv intel_sub_group_scan_exclusive_add( short   x );
+ushort                   __ovld __conv intel_sub_group_scan_exclusive_add( ushort  x );
+short                    __ovld __conv intel_sub_group_scan_exclusive_min( short   x );
+ushort                   __ovld __conv intel_sub_group_scan_exclusive_min( ushort  x );
+short                    __ovld __conv intel_sub_group_scan_exclusive_max( short   x );
+ushort                   __ovld __conv intel_sub_group_scan_exclusive_max( ushort  x );
 
-short       __ovld __conv intel_sub_group_scan_inclusive_add( short   x );
-ushort      __ovld __conv intel_sub_group_scan_inclusive_add( ushort  x );
-short       __ovld __conv intel_sub_group_scan_inclusive_min( short   x );
-ushort      __ovld __conv intel_sub_group_scan_inclusive_min( ushort  x );
-short       __ovld __conv intel_sub_group_scan_inclusive_max( short   x );
-ushort      __ovld __conv intel_sub_group_scan_inclusive_max( ushort  x );
+short                    __ovld __conv intel_sub_group_scan_inclusive_add( short   x );
+ushort                   __ovld __conv intel_sub_group_scan_inclusive_add( ushort  x );
+short                    __ovld __conv intel_sub_group_scan_inclusive_min( short   x );
+ushort                   __ovld __conv intel_sub_group_scan_inclusive_min( ushort  x );
+short                    __ovld __conv intel_sub_group_scan_inclusive_max( short   x );
+ushort                   __ovld __conv intel_sub_group_scan_inclusive_max( ushort  x );
 
-uint       __ovld __conv intel_sub_group_block_read_ui( read_only image2d_t image, int2 byte_coord );
-uint2      __ovld __conv intel_sub_group_block_read_ui2( read_only image2d_t image, int2 byte_coord );
-uint4      __ovld __conv intel_sub_group_block_read_ui4( read_only image2d_t image, int2 byte_coord );
-uint8      __ovld __conv intel_sub_group_block_read_ui8( read_only image2d_t image, int2 byte_coord );
-
-#if defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
-uint       __ovld __conv intel_sub_group_block_read_ui( read_write image2d_t image, int2 byte_coord );
-uint2      __ovld __conv intel_sub_group_block_read_ui2( read_write image2d_t image, int2 byte_coord );
-uint4      __ovld __conv intel_sub_group_block_read_ui4( read_write image2d_t image, int2 byte_coord );
-uint8      __ovld __conv intel_sub_group_block_read_ui8( read_write image2d_t image, int2 byte_coord );
-#endif // defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
-
-uint       __ovld __conv intel_sub_group_block_read_ui( const __global uint* p );
-uint2      __ovld __conv intel_sub_group_block_read_ui2( const __global uint* p );
-uint4      __ovld __conv intel_sub_group_block_read_ui4( const __global uint* p );
-uint8      __ovld __conv intel_sub_group_block_read_ui8( const __global uint* p );
-
-void       __ovld __conv intel_sub_group_block_write_ui( read_only image2d_t image, int2 byte_coord, uint data );
-void       __ovld __conv intel_sub_group_block_write_ui2( read_only image2d_t image, int2 byte_coord, uint2 data );
-void       __ovld __conv intel_sub_group_block_write_ui4( read_only image2d_t image, int2 byte_coord, uint4 data );
-void       __ovld __conv intel_sub_group_block_write_ui8( read_only image2d_t image, int2 byte_coord, uint8 data );
+uint                    __ovld __conv intel_sub_group_block_read_ui( read_only image2d_t image, int2 byte_coord );
+uint2                   __ovld __conv intel_sub_group_block_read_ui2( read_only image2d_t image, int2 byte_coord );
+uint4                   __ovld __conv intel_sub_group_block_read_ui4( read_only image2d_t image, int2 byte_coord );
+uint8                   __ovld __conv intel_sub_group_block_read_ui8( read_only image2d_t image, int2 byte_coord );
 
 #if defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
-void       __ovld __conv intel_sub_group_block_write_ui( read_write image2d_t image, int2 byte_coord, uint data );
-void       __ovld __conv intel_sub_group_block_write_ui2( read_write image2d_t image, int2 byte_coord, uint2 data );
-void       __ovld __conv intel_sub_group_block_write_ui4( read_write image2d_t image, int2 byte_coord, uint4 data );
-void       __ovld __conv intel_sub_group_block_write_ui8( read_write image2d_t image, int2 byte_coord, uint8 data );
+uint                    __ovld __conv intel_sub_group_block_read_ui( read_write image2d_t image, int2 byte_coord );
+uint2                   __ovld __conv intel_sub_group_block_read_ui2( read_write image2d_t image, int2 byte_coord );
+uint4                   __ovld __conv intel_sub_group_block_read_ui4( read_write image2d_t image, int2 byte_coord );
+uint8                   __ovld __conv intel_sub_group_block_read_ui8( read_write image2d_t image, int2 byte_coord );
 #endif // defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
 
-void       __ovld __conv intel_sub_group_block_write_ui( __global uint* p, uint data );
-void       __ovld __conv intel_sub_group_block_write_ui2( __global uint* p, uint2 data );
-void       __ovld __conv intel_sub_group_block_write_ui4( __global uint* p, uint4 data );
-void       __ovld __conv intel_sub_group_block_write_ui8( __global uint* p, uint8 data );
+uint                    __ovld __conv intel_sub_group_block_read_ui( const __global uint* p );
+uint2                   __ovld __conv intel_sub_group_block_read_ui2( const __global uint* p );
+uint4                   __ovld __conv intel_sub_group_block_read_ui4( const __global uint* p );
+uint8                   __ovld __conv intel_sub_group_block_read_ui8( const __global uint* p );
 
-ushort      __ovld __conv intel_sub_group_block_read_us( read_only image2d_t image, int2 coord );
+void                    __ovld __conv intel_sub_group_block_write_ui( read_only image2d_t image, int2 byte_coord, uint data );
+void                    __ovld __conv intel_sub_group_block_write_ui2( read_only image2d_t image, int2 byte_coord, uint2 data );
+void                    __ovld __conv intel_sub_group_block_write_ui4( read_only image2d_t image, int2 byte_coord, uint4 data );
+void                    __ovld __conv intel_sub_group_block_write_ui8( read_only image2d_t image, int2 byte_coord, uint8 data );
+
+#if defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
+void                    __ovld __conv intel_sub_group_block_write_ui( read_write image2d_t image, int2 byte_coord, uint data );
+void                    __ovld __conv intel_sub_group_block_write_ui2( read_write image2d_t image, int2 byte_coord, uint2 data );
+void                    __ovld __conv intel_sub_group_block_write_ui4( read_write image2d_t image, int2 byte_coord, uint4 data );
+void                    __ovld __conv intel_sub_group_block_write_ui8( read_write image2d_t image, int2 byte_coord, uint8 data );
+#endif // defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
+
+void                    __ovld __conv intel_sub_group_block_write_ui( __global uint* p, uint data );
+void                    __ovld __conv intel_sub_group_block_write_ui2( __global uint* p, uint2 data );
+void                    __ovld __conv intel_sub_group_block_write_ui4( __global uint* p, uint4 data );
+void                    __ovld __conv intel_sub_group_block_write_ui8( __global uint* p, uint8 data );
+
+ushort                   __ovld __conv intel_sub_group_block_read_us( read_only image2d_t image, int2 coord );
 ushort2     __ovld __conv intel_sub_group_block_read_us2( read_only image2d_t image, int2 coord );
 ushort4     __ovld __conv intel_sub_group_block_read_us4( read_only image2d_t image, int2 coord );
 ushort8     __ovld __conv intel_sub_group_block_read_us8( read_only image2d_t image, int2 coord );
 
 #if defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
-ushort      __ovld __conv intel_sub_group_block_read_us(read_write image2d_t image, int2 coord);
+ushort                   __ovld __conv intel_sub_group_block_read_us(read_write image2d_t image, int2 coord);
 ushort2     __ovld __conv intel_sub_group_block_read_us2(read_write image2d_t image, int2 coord);
 ushort4     __ovld __conv intel_sub_group_block_read_us4(read_write image2d_t image, int2 coord);
 ushort8     __ovld __conv intel_sub_group_block_read_us8(read_write image2d_t image, int2 coord);
 #endif // defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
 
-ushort      __ovld __conv intel_sub_group_block_read_us(  const __global ushort* p );
+ushort                   __ovld __conv intel_sub_group_block_read_us(  const __global ushort* p );
 ushort2     __ovld __conv intel_sub_group_block_read_us2( const __global ushort* p );
 ushort4     __ovld __conv intel_sub_group_block_read_us4( const __global ushort* p );
 ushort8     __ovld __conv intel_sub_group_block_read_us8( const __global ushort* p );
 
-void        __ovld __conv intel_sub_group_block_write_us(write_only image2d_t image, int2 coord, ushort  data);
-void        __ovld __conv intel_sub_group_block_write_us2(write_only image2d_t image, int2 coord, ushort2 data);
-void        __ovld __conv intel_sub_group_block_write_us4(write_only image2d_t image, int2 coord, ushort4 data);
-void        __ovld __conv intel_sub_group_block_write_us8(write_only image2d_t image, int2 coord, ushort8 data);
+void                     __ovld __conv intel_sub_group_block_write_us(write_only image2d_t image, int2 coord, ushort  data);
+void                     __ovld __conv intel_sub_group_block_write_us2(write_only image2d_t image, int2 coord, ushort2 data);
+void                     __ovld __conv intel_sub_group_block_write_us4(write_only image2d_t image, int2 coord, ushort4 data);
+void                     __ovld __conv intel_sub_group_block_write_us8(write_only image2d_t image, int2 coord, ushort8 data);
 
 #if defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
-void        __ovld __conv intel_sub_group_block_write_us(read_write image2d_t image, int2 coord, ushort  data);
-void        __ovld __conv intel_sub_group_block_write_us2(read_write image2d_t image, int2 coord, ushort2 data);
-void        __ovld __conv intel_sub_group_block_write_us4(read_write image2d_t image, int2 coord, ushort4 data);
-void        __ovld __conv intel_sub_group_block_write_us8(read_write image2d_t image, int2 coord, ushort8 data);
+void                     __ovld __conv intel_sub_group_block_write_us(read_write image2d_t image, int2 coord, ushort  data);
+void                     __ovld __conv intel_sub_group_block_write_us2(read_write image2d_t image, int2 coord, ushort2 data);
+void                     __ovld __conv intel_sub_group_block_write_us4(read_write image2d_t image, int2 coord, ushort4 data);
+void                     __ovld __conv intel_sub_group_block_write_us8(read_write image2d_t image, int2 coord, ushort8 data);
 #endif // defined(__OPENCL_CPP_VERSION__) || (__OPENCL_C_VERSION__ >= CL_VERSION_2_0)
 
-void        __ovld __conv intel_sub_group_block_write_us(  __global ushort* p, ushort  data );
-void        __ovld __conv intel_sub_group_block_write_us2( __global ushort* p, ushort2 data );
-void        __ovld __conv intel_sub_group_block_write_us4( __global ushort* p, ushort4 data );
-void        __ovld __conv intel_sub_group_block_write_us8( __global ushort* p, ushort8 data );
+void                     __ovld __conv intel_sub_group_block_write_us(  __global ushort* p, ushort  data );
+void                     __ovld __conv intel_sub_group_block_write_us2( __global ushort* p, ushort2 data );
+void                     __ovld __conv intel_sub_group_block_write_us4( __global ushort* p, ushort4 data );
+void                     __ovld __conv intel_sub_group_block_write_us8( __global ushort* p, ushort8 data );
 #endif // cl_intel_subgroups_short
 
 #ifdef cl_intel_device_side_avc_motion_estimation
@@ -16535,8 +16535,8 @@ intel_sub_group_avc_ime_set_weighted_sad(
     uint packed_sad_weights, intel_sub_group_avc_ime_payload_t payload);
 
 __attribute__((deprecated("If you use the latest Intel driver, please use "
-                          "intel_sub_group_avc_ime_ref_window_size instead",
-                          "intel_sub_group_avc_ime_ref_window_size")))
+                                                                              "intel_sub_group_avc_ime_ref_window_size instead",
+                                                                              "intel_sub_group_avc_ime_ref_window_size")))
 ushort2 __ovld
 intel_sub_group_ime_ref_window_size(uchar search_window_config, char dual_ref);
 ushort2 __ovld intel_sub_group_avc_ime_ref_window_size(

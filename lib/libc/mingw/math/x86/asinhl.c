@@ -25,7 +25,7 @@ long double asinhl(long double x)
   /* Use log1p to avoid cancellation with small x. Put
      x * x in denom, so overflow is harmless. 
      asinh(x) = log1p (x + sqrt (x * x + 1.0) - 1.0)
-              = log1p (x + x * x / (sqrt (x * x + 1.0) + 1.0))  */
+                                        = log1p (x + x * x / (sqrt (x * x + 1.0) + 1.0))  */
 
   z = __fast_log1pl (z + z * z / (__fast_sqrtl (z * z + 1.0L) + 1.0L));
 

@@ -100,16 +100,16 @@ struct tcf_t {
 };
 
 struct tc_cnt {
-	int                   refcnt;
-	int                   bindcnt;
+	int                                                          refcnt;
+	int                                                          bindcnt;
 };
 
 #define tc_gen \
-	__u32                 index; \
-	__u32                 capab; \
-	int                   action; \
-	int                   refcnt; \
-	int                   bindcnt
+	__u32                                           index; \
+	__u32                                           capab; \
+	int                                                          action; \
+	int                                                          refcnt; \
+	int                                                          bindcnt
 
 enum {
 	TCA_POLICE_UNSPEC,
@@ -501,9 +501,9 @@ enum {
 
 enum {
 	TCA_FLOWER_KEY_ENC_OPT_GENEVE_UNSPEC,
-	TCA_FLOWER_KEY_ENC_OPT_GENEVE_CLASS,            /* u16 */
-	TCA_FLOWER_KEY_ENC_OPT_GENEVE_TYPE,             /* u8 */
-	TCA_FLOWER_KEY_ENC_OPT_GENEVE_DATA,             /* 4 to 128 bytes */
+	TCA_FLOWER_KEY_ENC_OPT_GENEVE_CLASS,                                      /* u16 */
+	TCA_FLOWER_KEY_ENC_OPT_GENEVE_TYPE,                                       /* u8 */
+	TCA_FLOWER_KEY_ENC_OPT_GENEVE_DATA,                                       /* 4 to 128 bytes */
 
 	__TCA_FLOWER_KEY_ENC_OPT_GENEVE_MAX,
 };
@@ -550,17 +550,17 @@ struct tcf_ematch_hdr {
 	__u16		pad; /* currently unused */
 };
 
-/*  0                   1
+/*  0                                                          1
  *  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 
  * +-----------------------+-+-+---+
- * |         Unused        |S|I| R |
+ * |                      Unused                     |S|I| R |
  * +-----------------------+-+-+---+
  *
  * R(2) ::= relation to next ematch
- *          where: 0 0 END (last ematch)
- *                 0 1 AND
- *                 1 0 OR
- *                 1 1 Unused (invalid)
+ *                       where: 0 0 END (last ematch)
+ *                                           0 1 AND
+ *                                           1 0 OR
+ *                                           1 1 Unused (invalid)
  * I(1) ::= invert result
  * S(1) ::= simple payload
  */

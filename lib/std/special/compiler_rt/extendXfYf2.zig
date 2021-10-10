@@ -73,32 +73,32 @@ fn extendXfYf2(comptime dst_t: type, comptime src_t: type, a: std.meta.Int(.unsi
     var absResult: dst_rep_t = undefined;
 
     if (aAbs -% srcMinNormal < srcInfinity - srcMinNormal) {
-        // a is a normal number.
-        // Extend to the destination type by shifting the significand and
-        // exponent into the proper position and rebiasing the exponent.
-        absResult = @as(dst_rep_t, aAbs) << (dstSigBits - srcSigBits);
-        absResult += (dstExpBias - srcExpBias) << dstSigBits;
+                     // a is a normal number.
+                     // Extend to the destination type by shifting the significand and
+                     // exponent into the proper position and rebiasing the exponent.
+                     absResult = @as(dst_rep_t, aAbs) << (dstSigBits - srcSigBits);
+                     absResult += (dstExpBias - srcExpBias) << dstSigBits;
     } else if (aAbs >= srcInfinity) {
-        // a is NaN or infinity.
-        // Conjure the result by beginning with infinity, then setting the qNaN
-        // bit (if needed) and right-aligning the rest of the trailing NaN
-        // payload field.
-        absResult = dstInfExp << dstSigBits;
-        absResult |= @as(dst_rep_t, aAbs & srcQNaN) << (dstSigBits - srcSigBits);
-        absResult |= @as(dst_rep_t, aAbs & srcNaNCode) << (dstSigBits - srcSigBits);
+                     // a is NaN or infinity.
+                     // Conjure the result by beginning with infinity, then setting the qNaN
+                     // bit (if needed) and right-aligning the rest of the trailing NaN
+                     // payload field.
+                     absResult = dstInfExp << dstSigBits;
+                     absResult |= @as(dst_rep_t, aAbs & srcQNaN) << (dstSigBits - srcSigBits);
+                     absResult |= @as(dst_rep_t, aAbs & srcNaNCode) << (dstSigBits - srcSigBits);
     } else if (aAbs != 0) {
-        // a is denormal.
-        // renormalize the significand and clear the leading bit, then insert
-        // the correct adjusted exponent in the destination type.
-        const scale: u32 = @clz(src_rep_t, aAbs) -
-            @clz(src_rep_t, @as(src_rep_t, srcMinNormal));
-        absResult = @as(dst_rep_t, aAbs) << @intCast(DstShift, dstSigBits - srcSigBits + scale);
-        absResult ^= dstMinNormal;
-        const resultExponent: u32 = dstExpBias - srcExpBias - scale + 1;
-        absResult |= @intCast(dst_rep_t, resultExponent) << dstSigBits;
+                     // a is denormal.
+                     // renormalize the significand and clear the leading bit, then insert
+                     // the correct adjusted exponent in the destination type.
+                     const scale: u32 = @clz(src_rep_t, aAbs) -
+                                      @clz(src_rep_t, @as(src_rep_t, srcMinNormal));
+                     absResult = @as(dst_rep_t, aAbs) << @intCast(DstShift, dstSigBits - srcSigBits + scale);
+                     absResult ^= dstMinNormal;
+                     const resultExponent: u32 = dstExpBias - srcExpBias - scale + 1;
+                     absResult |= @intCast(dst_rep_t, resultExponent) << dstSigBits;
     } else {
-        // a is zero.
-        absResult = 0;
+                     // a is zero.
+                     absResult = 0;
     }
 
     // Apply the signbit to (dst_t)abs(a).

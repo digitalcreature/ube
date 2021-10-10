@@ -9,7 +9,7 @@
   by Wu Yongwei: http://sourceforge.net/mailarchive/message.php?msg_id=3847075
 
   I hereby place this implementation in the public domain.
-               -- Steven G. Johnson (stevenj@alum.mit.edu)
+                                         -- Steven G. Johnson (stevenj@alum.mit.edu)
 */
 
 #include <stdlib.h>
@@ -26,9 +26,9 @@ void *__mingw_aligned_offset_malloc (size_t, size_t, size_t);
 #define CP(p) ((char *) p)
 
 #define PTR_ALIGN(p0, alignment, offset)				\
-            ((void *) (((UI(p0) + (alignment + sizeof(void*)) + offset)	\
+                                      ((void *) (((UI(p0) + (alignment + sizeof(void*)) + offset)	\
 			& (~UI(alignment - 1)))				\
-		       - offset))
+		                    - offset))
 
 /* Pointer must sometimes be aligned; assume sizeof(void*) is a power of two. */
 #define ORIG_PTR(p) (*(((void **) (UI(p) & (~UI(sizeof(void*) - 1)))) - 1))
@@ -40,8 +40,8 @@ __mingw_aligned_offset_malloc (size_t size, size_t alignment, size_t offset)
 
   if (NOT_POWER_OF_TWO (alignment))
     {
-      errno = EINVAL;
-      return ((void *) 0);
+                   errno = EINVAL;
+                   return ((void *) 0);
     }
   if (size == 0)
     return ((void *) 0);
@@ -86,8 +86,8 @@ __mingw_aligned_offset_realloc (void *memblock, size_t size,
     goto bad;
   if (size == 0)
     {
-      __mingw_aligned_free (memblock);
-      return ((void *) 0);
+                   __mingw_aligned_free (memblock);
+                   return ((void *) 0);
     }
   if (alignment < sizeof (void *))
     alignment = sizeof (void *);

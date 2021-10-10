@@ -22,24 +22,24 @@ struct icmp6hdr {
 			__be16		sequence;
 		} u_echo;
 
-                struct icmpv6_nd_advt {
+                                          struct icmpv6_nd_advt {
 #if defined(__LITTLE_ENDIAN_BITFIELD)
-                        __u32		reserved:5,
-                        		override:1,
-                        		solicited:1,
-                        		router:1,
+                                                                            __u32		reserved:5,
+                                                                            		override:1,
+                                                                            		solicited:1,
+                                                                            		router:1,
 					reserved2:24;
 #elif defined(__BIG_ENDIAN_BITFIELD)
-                        __u32		router:1,
+                                                                            __u32		router:1,
 					solicited:1,
-                        		override:1,
-                        		reserved:29;
+                                                                            		override:1,
+                                                                            		reserved:29;
 #else
 #error	"Please fix <asm/byteorder.h>"
 #endif						
-                } u_nd_advt;
+                                          } u_nd_advt;
 
-                struct icmpv6_nd_ra {
+                                          struct icmpv6_nd_ra {
 			__u8		hop_limit;
 #if defined(__LITTLE_ENDIAN_BITFIELD)
 			__u8		reserved:3,
@@ -58,7 +58,7 @@ struct icmp6hdr {
 #error	"Please fix <asm/byteorder.h>"
 #endif
 			__be16		rt_lifetime;
-                } u_nd_ra;
+                                          } u_nd_ra;
 
 	} icmp6_dataun;
 
@@ -95,7 +95,7 @@ struct icmp6hdr {
 #define ICMPV6_ECHO_REQUEST		128
 #define ICMPV6_ECHO_REPLY		129
 #define ICMPV6_MGM_QUERY		130
-#define ICMPV6_MGM_REPORT       	131
+#define ICMPV6_MGM_REPORT                    	131
 #define ICMPV6_MGM_REDUCTION    	132
 
 #define ICMPV6_NI_QUERY			139

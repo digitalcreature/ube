@@ -84,14 +84,14 @@ _mm_alignr_epi8 (__m128i __A, __m128i __B, const unsigned int __count)
   if (__builtin_constant_p (__count) && __count < 16)
     {
 #ifdef __LITTLE_ENDIAN__
-      __A = (__m128i) vec_reve ((__v16qu) __A);
-      __B = (__m128i) vec_reve ((__v16qu) __B);
+                   __A = (__m128i) vec_reve ((__v16qu) __A);
+                   __B = (__m128i) vec_reve ((__v16qu) __B);
 #endif
-      __A = (__m128i) vec_sld ((__v16qu) __B, (__v16qu) __A, __count);
+                   __A = (__m128i) vec_sld ((__v16qu) __B, (__v16qu) __A, __count);
 #ifdef __LITTLE_ENDIAN__
-      __A = (__m128i) vec_reve ((__v16qu) __A);
+                   __A = (__m128i) vec_reve ((__v16qu) __A);
 #endif
-      return __A;
+                   return __A;
     }
 
   if (__count == 0)
@@ -99,12 +99,12 @@ _mm_alignr_epi8 (__m128i __A, __m128i __B, const unsigned int __count)
 
   if (__count >= 16)
     {
-      if (__count >= 32)
+                   if (__count >= 32)
 	{
 	  const __v16qu zero = { 0 };
 	  return (__m128i) zero;
 	}
-      else
+                   else
 	{
 	  const __v16qu __shift =
 	    vec_splats ((unsigned char) ((__count - 16) * 8));
@@ -117,17 +117,17 @@ _mm_alignr_epi8 (__m128i __A, __m128i __B, const unsigned int __count)
     }
   else
     {
-      const __v16qu __shiftA =
+                   const __v16qu __shiftA =
 	vec_splats ((unsigned char) ((16 - __count) * 8));
-      const __v16qu __shiftB = vec_splats ((unsigned char) (__count * 8));
+                   const __v16qu __shiftB = vec_splats ((unsigned char) (__count * 8));
 #ifdef __LITTLE_ENDIAN__
-      __A = (__m128i) vec_slo ((__v16qu) __A, __shiftA);
-      __B = (__m128i) vec_sro ((__v16qu) __B, __shiftB);
+                   __A = (__m128i) vec_slo ((__v16qu) __A, __shiftA);
+                   __B = (__m128i) vec_sro ((__v16qu) __B, __shiftB);
 #else
-      __A = (__m128i) vec_sro ((__v16qu) __A, __shiftA);
-      __B = (__m128i) vec_slo ((__v16qu) __B, __shiftB);
+                   __A = (__m128i) vec_sro ((__v16qu) __A, __shiftA);
+                   __B = (__m128i) vec_slo ((__v16qu) __B, __shiftB);
 #endif
-      return (__m128i) vec_or ((__v16qu) __A, (__v16qu) __B);
+                   return (__m128i) vec_or ((__v16qu) __A, (__v16qu) __B);
     }
 }
 
@@ -137,20 +137,20 @@ _mm_alignr_pi8 (__m64 __A, __m64 __B, unsigned int __count)
 {
   if (__count < 16)
     {
-      __v2du __C = { __B, __A };
+                   __v2du __C = { __B, __A };
 #ifdef __LITTLE_ENDIAN__
-      const __v4su __shift = { __count << 3, 0, 0, 0 };
-      __C = (__v2du) vec_sro ((__v16qu) __C, (__v16qu) __shift);
+                   const __v4su __shift = { __count << 3, 0, 0, 0 };
+                   __C = (__v2du) vec_sro ((__v16qu) __C, (__v16qu) __shift);
 #else
-      const __v4su __shift = { 0, 0, 0, __count << 3 };
-      __C = (__v2du) vec_slo ((__v16qu) __C, (__v16qu) __shift);
+                   const __v4su __shift = { 0, 0, 0, __count << 3 };
+                   __C = (__v2du) vec_slo ((__v16qu) __C, (__v16qu) __shift);
 #endif
-      return (__m64) __C[0];
+                   return (__m64) __C[0];
     }
   else
     {
-      const __m64 __zero = { 0 };
-      return __zero;
+                   const __m64 __zero = { 0 };
+                   return __zero;
     }
 }
 

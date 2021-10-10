@@ -26,11 +26,11 @@
 # define ASM_SIZE_DIRECTIVE(name) .size name,.-name
 
 /* Define an entry point visible from C.  */
-# define ENTRY(name)                          \
-  .globl C_SYMBOL_NAME(name);                 \
-  .type C_SYMBOL_NAME(name),@function;        \
-  .align ALIGNARG(2);                         \
-  C_LABEL(name)                               \
+# define ENTRY(name)                                                                              \
+  .globl C_SYMBOL_NAME(name);                                           \
+  .type C_SYMBOL_NAME(name),@function;                     \
+  .align ALIGNARG(2);                                                                             \
+  C_LABEL(name)                                                                                                \
   CALL_MCOUNT
 
 # undef END
@@ -41,33 +41,33 @@
 # ifdef  PROF
 /* The mcount code relies on a normal frame pointer being on the stack
    to locate our caller, so push one just for its benefit.  */
-#  define CALL_MCOUNT                         \
-   addik r1,r1,-4;                            \
-   swi r15,r1,0;                              \
-   brlid r15,JUMPTARGET(mcount);              \
-   nop;                                       \
-   lwi r15,r1,0;                              \
+#  define CALL_MCOUNT                                                                             \
+   addik r1,r1,-4;                                                                                \
+   swi r15,r1,0;                                                                                               \
+   brlid r15,JUMPTARGET(mcount);                                        \
+   nop;                                                                                                                     \
+   lwi r15,r1,0;                                                                                               \
    addik r1,r1,4;
 # else
-#  define CALL_MCOUNT        /* Do nothing.  */
+#  define CALL_MCOUNT                     /* Do nothing.  */
 # endif
 
 /* Since C identifiers are not normally prefixed with an underscore
    on this system, the asm identifier `syscall_error' intrudes on the
    C name space.  Make sure we use an innocuous name.  */
 # define syscall_error   __syscall_error
-# define mcount      _mcount
+# define mcount                   _mcount
 
 # define PSEUDO(name, syscall_name, args)     \
-  .globl syscall_error;                       \
-  ENTRY (name)                                \
+  .globl syscall_error;                                                              \
+  ENTRY (name)                                                                                                 \
     DO_CALL (syscall_name, args);
 
-# define ret                                  \
+# define ret                                                                                                   \
   rtsd r15,8; nop;
 
 # undef PSEUDO_END
-# define PSEUDO_END(name)                     \
+# define PSEUDO_END(name)                                                            \
   END (name)
 
 # undef JUMPTARGET

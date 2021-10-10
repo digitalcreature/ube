@@ -6,8 +6,8 @@
 #include <stdarg.h>
 
 int __mingw_asprintf(char ** __restrict__ ret,
-                     const char * __restrict__ format,
-                     ...) {
+                                                            const char * __restrict__ format,
+                                                            ...) {
   va_list ap;
   int len;
   va_start(ap,format);

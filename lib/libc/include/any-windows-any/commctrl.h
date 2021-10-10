@@ -3573,8 +3573,8 @@ extern "C" {
     HTREEITEM hParent;
     HTREEITEM hInsertAfter;
     __C89_NAMELESS union {
-      TVITEMEXA itemex;
-      TV_ITEMA item;
+                   TVITEMEXA itemex;
+                   TV_ITEMA item;
     } DUMMYUNIONNAME;
   } TVINSERTSTRUCTA,*LPTVINSERTSTRUCTA;
 
@@ -3582,8 +3582,8 @@ extern "C" {
     HTREEITEM hParent;
     HTREEITEM hInsertAfter;
     __C89_NAMELESS union {
-      TVITEMEXW itemex;
-      TV_ITEMW item;
+                   TVITEMEXW itemex;
+                   TV_ITEMW item;
     } DUMMYUNIONNAME;
   } TVINSERTSTRUCTW,*LPTVINSERTSTRUCTW;
 
@@ -5266,8 +5266,8 @@ typedef struct tagTVDISPINFOEXW {
     TASKDIALOG_COMMON_BUTTON_FLAGS dwCommonButtons;
     PCWSTR pszWindowTitle;
     __C89_NAMELESS union {
-      HICON hMainIcon;
-      PCWSTR pszMainIcon;
+                   HICON hMainIcon;
+                   PCWSTR pszMainIcon;
     } DUMMYUNIONNAME;
     PCWSTR pszMainInstruction;
     PCWSTR pszContent;
@@ -5282,8 +5282,8 @@ typedef struct tagTVDISPINFOEXW {
     PCWSTR pszExpandedControlText;
     PCWSTR pszCollapsedControlText;
     __C89_NAMELESS union {
-      HICON hFooterIcon;
-      PCWSTR pszFooterIcon;
+                   HICON hFooterIcon;
+                   PCWSTR pszFooterIcon;
     } DUMMYUNIONNAME2;
     PCWSTR pszFooter;
     PFTASKDIALOGCALLBACK pfCallback;

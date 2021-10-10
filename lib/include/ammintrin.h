@@ -41,7 +41,7 @@
 ///    extracted from the source operand.
 #define _mm_extracti_si64(x, len, idx) \
   ((__m128i)__builtin_ia32_extrqi((__v2di)(__m128i)(x), \
-                                  (char)(len), (char)(idx)))
+                                                                                                   (char)(len), (char)(idx)))
 
 /// Extracts the specified bits from the lower 64 bits of the 128-bit
 ///    integer vector operand at the index and of the length specified by
@@ -103,8 +103,8 @@ _mm_extract_si64(__m128i __x, __m128i __y)
 ///    are undefined.
 #define _mm_inserti_si64(x, y, len, idx) \
   ((__m128i)__builtin_ia32_insertqi((__v2di)(__m128i)(x), \
-                                    (__v2di)(__m128i)(y), \
-                                    (char)(len), (char)(idx)))
+                                                                                                                  (__v2di)(__m128i)(y), \
+                                                                                                                  (char)(len), (char)(idx)))
 
 /// Inserts bits of a specified length from the source integer vector
 ///    \a __y into the lower 64 bits of the destination integer vector \a __x

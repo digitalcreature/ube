@@ -40,15 +40,15 @@ typedef struct ptsreq {
 } ptsreq_t;
 
 #define	CM_IOC_MAGIC		'c'
-#define	CM_IOC_MAXNR	        255
+#define	CM_IOC_MAXNR	                     255
 
 #define	CM_IOCGSTATUS		_IOR (CM_IOC_MAGIC, 0, unsigned char *)
 #define	CM_IOCGATR		_IOWR(CM_IOC_MAGIC, 1, atreq_t *)
 #define	CM_IOCSPTS		_IOW (CM_IOC_MAGIC, 2, ptsreq_t *)
 #define	CM_IOCSRDR		_IO  (CM_IOC_MAGIC, 3)
-#define CM_IOCARDOFF            _IO  (CM_IOC_MAGIC, 4)
+#define CM_IOCARDOFF                                      _IO  (CM_IOC_MAGIC, 4)
 
-#define CM_IOSDBGLVL            _IOW(CM_IOC_MAGIC, 250, int*)
+#define CM_IOSDBGLVL                                      _IOW(CM_IOC_MAGIC, 250, int*)
 
 /* card and device states */
 #define	CM_CARD_INSERTED		0x01

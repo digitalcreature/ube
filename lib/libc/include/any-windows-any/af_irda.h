@@ -139,13 +139,13 @@ typedef struct _WINDOWS_IAS_SET {
   union {
     LONG irdaAttribInt;
     struct {
-      u_short Len;
-      u_char OctetSeq[IAS_MAX_OCTET_STRING];
+                   u_short Len;
+                   u_char OctetSeq[IAS_MAX_OCTET_STRING];
     } irdaAttribOctetSeq;
     struct {
-      u_char Len;
-      u_char CharSet;
-      u_char UsrStr[IAS_MAX_USER_STRING];
+                   u_char Len;
+                   u_char CharSet;
+                   u_char UsrStr[IAS_MAX_USER_STRING];
     } irdaAttribUsrStr;
   } irdaAttribute;
 } WINDOWS_IAS_SET,*PWINDOWS_IAS_SET,*LPWINDOWS_IAS_SET;
@@ -158,13 +158,13 @@ typedef struct _WINDOWS_IAS_QUERY {
   union {
     LONG irdaAttribInt;
     struct {
-      u_long Len;
-      u_char OctetSeq[IAS_MAX_OCTET_STRING];
+                   u_long Len;
+                   u_char OctetSeq[IAS_MAX_OCTET_STRING];
     } irdaAttribOctetSeq;
     struct {
-      u_long Len;
-      u_long CharSet;
-      u_char UsrStr[IAS_MAX_USER_STRING];
+                   u_long Len;
+                   u_long CharSet;
+                   u_char UsrStr[IAS_MAX_USER_STRING];
     } irdaAttribUsrStr;
   } irdaAttribute;
 } WINDOWS_IAS_QUERY,*PWINDOWS_IAS_QUERY,*LPWINDOWS_IAS_QUERY;
@@ -176,15 +176,15 @@ typedef struct _WCE_IAS_SET {
   union {
     int irdaAttribInt;
     struct {
-      int Len;
-      u_char OctetSeq[1];
-      u_char Reserved[3];
+                   int Len;
+                   u_char OctetSeq[1];
+                   u_char Reserved[3];
     } irdaAttribOctetSeq;
     struct {
-      int Len;
-      u_char CharSet;
-      u_char UsrStr[1];
-      u_char Reserved[2];
+                   int Len;
+                   u_char CharSet;
+                   u_char UsrStr[1];
+                   u_char Reserved[2];
     } irdaAttribUsrStr;
   } irdaAttribute;
 } WCE_IAS_SET,*PWCE_IAS_SET;
@@ -197,15 +197,15 @@ typedef struct _WCE_IAS_QUERY {
   union {
     int irdaAttribInt;
     struct {
-      int Len;
-      u_char OctetSeq[1];
-      u_char Reserved[3];
+                   int Len;
+                   u_char OctetSeq[1];
+                   u_char Reserved[3];
     } irdaAttribOctetSeq;
     struct {
-      int Len;
-      u_char CharSet;
-      u_char UsrStr[1];
-      u_char Reserved[2];
+                   int Len;
+                   u_char CharSet;
+                   u_char UsrStr[1];
+                   u_char Reserved[2];
     } irdaAttribUsrStr;
   } irdaAttribute;
 } WCE_IAS_QUERY,*PWCE_IAS_QUERY;

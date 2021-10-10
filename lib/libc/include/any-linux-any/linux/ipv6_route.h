@@ -6,9 +6,9 @@
  *	Pedro Roque		<roque@di.fc.ul.pt>	
  *
  *	This program is free software; you can redistribute it and/or
- *      modify it under the terms of the GNU General Public License
- *      as published by the Free Software Foundation; either version
- *      2 of the License, or (at your option) any later version.
+ *                   modify it under the terms of the GNU General Public License
+ *                   as published by the Free Software Foundation; either version
+ *                   2 of the License, or (at your option) any later version.
  */
 
 #ifndef _LINUX_IPV6_ROUTE_H
@@ -49,7 +49,7 @@ struct in6_rtmsg {
 	__u16			rtmsg_src_len;
 	__u32			rtmsg_metric;
 	unsigned long		rtmsg_info;
-        __u32			rtmsg_flags;
+                     __u32			rtmsg_flags;
 	int			rtmsg_ifindex;
 };
 

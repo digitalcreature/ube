@@ -26,7 +26,7 @@ typedef struct sigevent
     int sigev_notify;
 
     union
-      {
+                   {
 	int _pad[__SIGEV_PAD_SIZE];
 
 	/* When SIGEV_SIGNAL and SIGEV_THREAD_ID set, LWP ID of the
@@ -38,7 +38,7 @@ typedef struct sigevent
 	    void (*_function) (__sigval_t);	/* Function to start.  */
 	    pthread_attr_t *_attribute;		/* Thread attributes.  */
 	  } _sigev_thread;
-      } _sigev_un;
+                   } _sigev_un;
   } sigevent_t;
 
 /* POSIX names to access some of the members.  */

@@ -77,11 +77,11 @@ MIDL_INTERFACE("dcdaa858-895a-4a22-a5eb-67bda506096d")
 IAudioFormatEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFormat(
-        UINT32 index,
-        WAVEFORMATEX **format) = 0;
+                     UINT32 index,
+                     WAVEFORMATEX **format) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -93,25 +93,25 @@ typedef struct IAudioFormatEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioFormatEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioFormatEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioFormatEnumerator *This);
+                     IAudioFormatEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioFormatEnumerator *This);
+                     IAudioFormatEnumerator *This);
 
     /*** IAudioFormatEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IAudioFormatEnumerator *This,
-        UINT32 *count);
+                     IAudioFormatEnumerator *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        IAudioFormatEnumerator *This,
-        UINT32 index,
-        WAVEFORMATEX **format);
+                     IAudioFormatEnumerator *This,
+                     UINT32 index,
+                     WAVEFORMATEX **format);
 
     END_INTERFACE
 } IAudioFormatEnumeratorVtbl;
@@ -167,35 +167,35 @@ MIDL_INTERFACE("bbf8e066-aaaa-49be-9a4d-fd2a858ea27f")
 ISpatialAudioClient : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStaticObjectPosition(
-        AudioObjectType type,
-        float *x,
-        float *y,
-        float *z) = 0;
+                     AudioObjectType type,
+                     float *x,
+                     float *y,
+                     float *z) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNativeStaticObjectTypeMask(
-        AudioObjectType *mask) = 0;
+                     AudioObjectType *mask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxDynamicObjectCount(
-        UINT32 *value) = 0;
+                     UINT32 *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSupportedAudioObjectFormatEnumerator(
-        IAudioFormatEnumerator **enumerator) = 0;
+                     IAudioFormatEnumerator **enumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxFrameCount(
-        const WAVEFORMATEX *format,
-        UINT32 *count) = 0;
+                     const WAVEFORMATEX *format,
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsAudioObjectFormatSupported(
-        const WAVEFORMATEX *format) = 0;
+                     const WAVEFORMATEX *format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSpatialAudioStreamAvailable(
-        REFIID stream_uuid,
-        const PROPVARIANT *info) = 0;
+                     REFIID stream_uuid,
+                     const PROPVARIANT *info) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActivateSpatialAudioStream(
-        const PROPVARIANT *params,
-        REFIID riid,
-        void **stream) = 0;
+                     const PROPVARIANT *params,
+                     REFIID riid,
+                     void **stream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -207,55 +207,55 @@ typedef struct ISpatialAudioClientVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISpatialAudioClient *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISpatialAudioClient *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISpatialAudioClient *This);
+                     ISpatialAudioClient *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISpatialAudioClient *This);
+                     ISpatialAudioClient *This);
 
     /*** ISpatialAudioClient methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStaticObjectPosition)(
-        ISpatialAudioClient *This,
-        AudioObjectType type,
-        float *x,
-        float *y,
-        float *z);
+                     ISpatialAudioClient *This,
+                     AudioObjectType type,
+                     float *x,
+                     float *y,
+                     float *z);
 
     HRESULT (STDMETHODCALLTYPE *GetNativeStaticObjectTypeMask)(
-        ISpatialAudioClient *This,
-        AudioObjectType *mask);
+                     ISpatialAudioClient *This,
+                     AudioObjectType *mask);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxDynamicObjectCount)(
-        ISpatialAudioClient *This,
-        UINT32 *value);
+                     ISpatialAudioClient *This,
+                     UINT32 *value);
 
     HRESULT (STDMETHODCALLTYPE *GetSupportedAudioObjectFormatEnumerator)(
-        ISpatialAudioClient *This,
-        IAudioFormatEnumerator **enumerator);
+                     ISpatialAudioClient *This,
+                     IAudioFormatEnumerator **enumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxFrameCount)(
-        ISpatialAudioClient *This,
-        const WAVEFORMATEX *format,
-        UINT32 *count);
+                     ISpatialAudioClient *This,
+                     const WAVEFORMATEX *format,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *IsAudioObjectFormatSupported)(
-        ISpatialAudioClient *This,
-        const WAVEFORMATEX *format);
+                     ISpatialAudioClient *This,
+                     const WAVEFORMATEX *format);
 
     HRESULT (STDMETHODCALLTYPE *IsSpatialAudioStreamAvailable)(
-        ISpatialAudioClient *This,
-        REFIID stream_uuid,
-        const PROPVARIANT *info);
+                     ISpatialAudioClient *This,
+                     REFIID stream_uuid,
+                     const PROPVARIANT *info);
 
     HRESULT (STDMETHODCALLTYPE *ActivateSpatialAudioStream)(
-        ISpatialAudioClient *This,
-        const PROPVARIANT *params,
-        REFIID riid,
-        void **stream);
+                     ISpatialAudioClient *This,
+                     const PROPVARIANT *params,
+                     REFIID riid,
+                     void **stream);
 
     END_INTERFACE
 } ISpatialAudioClientVtbl;

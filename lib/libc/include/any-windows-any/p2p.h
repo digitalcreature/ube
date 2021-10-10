@@ -220,12 +220,12 @@ extern "C" {
   typedef struct peer_graph_event_data_tag {
     PEER_GRAPH_EVENT_TYPE eventType;
     __C89_NAMELESS union {
-      PEER_GRAPH_STATUS_FLAGS dwStatus;
-      PEER_EVENT_INCOMING_DATA incomingData;
-      PEER_EVENT_RECORD_CHANGE_DATA recordChangeData;
-      PEER_EVENT_CONNECTION_CHANGE_DATA connectionChangeData;
-      PEER_EVENT_NODE_CHANGE_DATA nodeChangeData;
-      PEER_EVENT_SYNCHRONIZED_DATA synchronizedData;
+                   PEER_GRAPH_STATUS_FLAGS dwStatus;
+                   PEER_EVENT_INCOMING_DATA incomingData;
+                   PEER_EVENT_RECORD_CHANGE_DATA recordChangeData;
+                   PEER_EVENT_CONNECTION_CHANGE_DATA connectionChangeData;
+                   PEER_EVENT_NODE_CHANGE_DATA nodeChangeData;
+                   PEER_EVENT_SYNCHRONIZED_DATA synchronizedData;
     };
   } PEER_GRAPH_EVENT_DATA,*PPEER_GRAPH_EVENT_DATA;
 
@@ -432,26 +432,26 @@ extern "C" {
   typedef struct peer_group_event_data_tag {
     PEER_GROUP_EVENT_TYPE eventType;
     [switch_is (eventType)] union {
-      [case (PEER_GROUP_EVENT_STATUS_CHANGED)] PEER_GROUP_STATUS dwStatus;
-      [case (PEER_GROUP_EVENT_PROPERTY_CHANGED)] ;
-      [case (PEER_GROUP_EVENT_RECORD_CHANGED)] PEER_EVENT_RECORD_CHANGE_DATA recordChangeData;
-      [case (PEER_GROUP_EVENT_NEIGHBOR_CONNECTION, PEER_GROUP_EVENT_DIRECT_CONNECTION)] PEER_EVENT_CONNECTION_CHANGE_DATA connectionChangeData;
-      [case (PEER_GROUP_EVENT_INCOMING_DATA)] PEER_EVENT_INCOMING_DATA incomingData;
-      [case (PEER_GROUP_EVENT_MEMBER_CHANGED)] PEER_EVENT_MEMBER_CHANGE_DATA memberChangeData;
-      [case (PEER_GROUP_EVENT_CONNECTION_FAILED)] HRESULT hrConnectionFailedReason;
-      [default] ;
+                   [case (PEER_GROUP_EVENT_STATUS_CHANGED)] PEER_GROUP_STATUS dwStatus;
+                   [case (PEER_GROUP_EVENT_PROPERTY_CHANGED)] ;
+                   [case (PEER_GROUP_EVENT_RECORD_CHANGED)] PEER_EVENT_RECORD_CHANGE_DATA recordChangeData;
+                   [case (PEER_GROUP_EVENT_NEIGHBOR_CONNECTION, PEER_GROUP_EVENT_DIRECT_CONNECTION)] PEER_EVENT_CONNECTION_CHANGE_DATA connectionChangeData;
+                   [case (PEER_GROUP_EVENT_INCOMING_DATA)] PEER_EVENT_INCOMING_DATA incomingData;
+                   [case (PEER_GROUP_EVENT_MEMBER_CHANGED)] PEER_EVENT_MEMBER_CHANGE_DATA memberChangeData;
+                   [case (PEER_GROUP_EVENT_CONNECTION_FAILED)] HRESULT hrConnectionFailedReason;
+                   [default] ;
     };
   } PEER_GROUP_EVENT_DATA,*PPEER_GROUP_EVENT_DATA;
 #else
   typedef struct peer_group_event_data_tag {
     PEER_GROUP_EVENT_TYPE eventType;
     __C89_NAMELESS union {
-      PEER_GROUP_STATUS dwStatus;
-      PEER_EVENT_INCOMING_DATA incomingData;
-      PEER_EVENT_RECORD_CHANGE_DATA recordChangeData;
-      PEER_EVENT_CONNECTION_CHANGE_DATA connectionChangeData;
-      PEER_EVENT_MEMBER_CHANGE_DATA memberChangeData;
-      HRESULT hrConnectionFailedReason;
+                   PEER_GROUP_STATUS dwStatus;
+                   PEER_EVENT_INCOMING_DATA incomingData;
+                   PEER_EVENT_RECORD_CHANGE_DATA recordChangeData;
+                   PEER_EVENT_CONNECTION_CHANGE_DATA connectionChangeData;
+                   PEER_EVENT_MEMBER_CHANGE_DATA memberChangeData;
+                   HRESULT hrConnectionFailedReason;
     };
   } PEER_GROUP_EVENT_DATA,*PPEER_GROUP_EVENT_DATA;
 #endif
@@ -767,27 +767,27 @@ extern "C" {
     PEER_COLLAB_EVENT_TYPE eventType;
     [switch_is (eventType)]
     union {
-      [case (PEER_EVENT_WATCHLIST_CHANGED)] PEER_EVENT_WATCHLIST_CHANGED_DATA watchListChangedData;
-      [case (PEER_EVENT_ENDPOINT_PRESENCE_CHANGED, PEER_EVENT_MY_PRESENCE_CHANGED)] PEER_EVENT_PRESENCE_CHANGED_DATA presenceChangedData;
-      [case (PEER_EVENT_ENDPOINT_APPLICATION_CHANGED, PEER_EVENT_MY_APPLICATION_CHANGED)] PEER_EVENT_APPLICATION_CHANGED_DATA applicationChangedData;
-      [case (PEER_EVENT_ENDPOINT_OBJECT_CHANGED, PEER_EVENT_MY_OBJECT_CHANGED)] PEER_EVENT_OBJECT_CHANGED_DATA objectChangedData;
-      [case (PEER_EVENT_ENDPOINT_CHANGED, PEER_EVENT_MY_ENDPOINT_CHANGED)] PEER_EVENT_ENDPOINT_CHANGED_DATA endpointChangedData;
-      [case (PEER_EVENT_PEOPLE_NEAR_ME_CHANGED)] PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA peopleNearMeChangedData;
-      [case (PEER_EVENT_REQUEST_STATUS_CHANGED)] PEER_EVENT_REQUEST_STATUS_CHANGED_DATA requestStatusChangedData;
-      [default] ;
+                   [case (PEER_EVENT_WATCHLIST_CHANGED)] PEER_EVENT_WATCHLIST_CHANGED_DATA watchListChangedData;
+                   [case (PEER_EVENT_ENDPOINT_PRESENCE_CHANGED, PEER_EVENT_MY_PRESENCE_CHANGED)] PEER_EVENT_PRESENCE_CHANGED_DATA presenceChangedData;
+                   [case (PEER_EVENT_ENDPOINT_APPLICATION_CHANGED, PEER_EVENT_MY_APPLICATION_CHANGED)] PEER_EVENT_APPLICATION_CHANGED_DATA applicationChangedData;
+                   [case (PEER_EVENT_ENDPOINT_OBJECT_CHANGED, PEER_EVENT_MY_OBJECT_CHANGED)] PEER_EVENT_OBJECT_CHANGED_DATA objectChangedData;
+                   [case (PEER_EVENT_ENDPOINT_CHANGED, PEER_EVENT_MY_ENDPOINT_CHANGED)] PEER_EVENT_ENDPOINT_CHANGED_DATA endpointChangedData;
+                   [case (PEER_EVENT_PEOPLE_NEAR_ME_CHANGED)] PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA peopleNearMeChangedData;
+                   [case (PEER_EVENT_REQUEST_STATUS_CHANGED)] PEER_EVENT_REQUEST_STATUS_CHANGED_DATA requestStatusChangedData;
+                   [default] ;
     };
   } PEER_COLLAB_EVENT_DATA,*PPEER_COLLAB_EVENT_DATA;
 #else
   typedef struct peer_collab_event_data_tag {
     PEER_COLLAB_EVENT_TYPE eventType;
     __C89_NAMELESS union {
-      PEER_EVENT_WATCHLIST_CHANGED_DATA watchListChangedData;
-      PEER_EVENT_PRESENCE_CHANGED_DATA presenceChangedData;
-      PEER_EVENT_APPLICATION_CHANGED_DATA applicationChangedData;
-      PEER_EVENT_OBJECT_CHANGED_DATA objectChangedData;
-      PEER_EVENT_ENDPOINT_CHANGED_DATA endpointChangedData;
-      PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA peopleNearMeChangedData;
-      PEER_EVENT_REQUEST_STATUS_CHANGED_DATA requestStatusChangedData;
+                   PEER_EVENT_WATCHLIST_CHANGED_DATA watchListChangedData;
+                   PEER_EVENT_PRESENCE_CHANGED_DATA presenceChangedData;
+                   PEER_EVENT_APPLICATION_CHANGED_DATA applicationChangedData;
+                   PEER_EVENT_OBJECT_CHANGED_DATA objectChangedData;
+                   PEER_EVENT_ENDPOINT_CHANGED_DATA endpointChangedData;
+                   PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA peopleNearMeChangedData;
+                   PEER_EVENT_REQUEST_STATUS_CHANGED_DATA requestStatusChangedData;
     };
   } PEER_COLLAB_EVENT_DATA,*PPEER_COLLAB_EVENT_DATA;
 

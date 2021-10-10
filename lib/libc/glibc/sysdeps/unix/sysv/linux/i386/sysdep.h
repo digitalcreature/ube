@@ -70,26 +70,26 @@
 #define SYSCALL_ERROR_LABEL __syscall_error
 
 #undef	PSEUDO
-#define	PSEUDO(name, syscall_name, args)				      \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
-    cmpl $-4095, %eax;							      \
+#define	PSEUDO(name, syscall_name, args)				                   \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
+    cmpl $-4095, %eax;							                   \
     jae SYSCALL_ERROR_LABEL
 
 #undef	PSEUDO_END
-#define	PSEUDO_END(name)						      \
-  SYSCALL_ERROR_HANDLER							      \
+#define	PSEUDO_END(name)						                   \
+  SYSCALL_ERROR_HANDLER							                   \
   END (name)
 
 #undef	PSEUDO_NOERRNO
-#define	PSEUDO_NOERRNO(name, syscall_name, args)			      \
-  .text;								      \
-  ENTRY (name)								      \
+#define	PSEUDO_NOERRNO(name, syscall_name, args)			                   \
+  .text;								                   \
+  ENTRY (name)								                   \
     DO_CALL (syscall_name, args)
 
 #undef	PSEUDO_END_NOERRNO
-#define	PSEUDO_END_NOERRNO(name)					      \
+#define	PSEUDO_END_NOERRNO(name)					                   \
   END (name)
 
 #define ret_NOERRNO ret
@@ -97,9 +97,9 @@
 /* The function has to return the error code.  */
 #undef	PSEUDO_ERRVAL
 #define	PSEUDO_ERRVAL(name, syscall_name, args) \
-  .text;								      \
-  ENTRY (name)								      \
-    DO_CALL (syscall_name, args);					      \
+  .text;								                   \
+  ENTRY (name)								                   \
+    DO_CALL (syscall_name, args);					                   \
     negl %eax
 
 #undef	PSEUDO_END_ERRVAL
@@ -169,11 +169,11 @@
    other processors though.  */
 
 #undef	DO_CALL
-#define DO_CALL(syscall_name, args)			      		      \
-    PUSHARGS_##args							      \
-    DOARGS_##args							      \
-    movl $SYS_ify (syscall_name), %eax;					      \
-    ENTER_KERNEL							      \
+#define DO_CALL(syscall_name, args)			                   		                   \
+    PUSHARGS_##args							                   \
+    DOARGS_##args							                   \
+    movl $SYS_ify (syscall_name), %eax;					                   \
+    ENTER_KERNEL							                   \
     POPARGS_##args
 
 #define PUSHARGS_0	/* No arguments to push.  */
@@ -285,20 +285,20 @@ struct libc_do_syscall_args
 #undef INLINE_SYSCALL
 #if IS_IN (libc)
 # define INLINE_SYSCALL(name, nr, args...) \
-  ({									      \
-    unsigned int resultvar = INTERNAL_SYSCALL (name, , nr, args);	      \
-    __glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (resultvar, ))		      \
-    ? __syscall_error (-INTERNAL_SYSCALL_ERRNO (resultvar, ))		      \
+  ({									                   \
+    unsigned int resultvar = INTERNAL_SYSCALL (name, , nr, args);	                   \
+    __glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (resultvar, ))		                   \
+    ? __syscall_error (-INTERNAL_SYSCALL_ERRNO (resultvar, ))		                   \
     : (int) resultvar; })
 #else
 # define INLINE_SYSCALL(name, nr, args...) \
-  ({									      \
-    unsigned int resultvar = INTERNAL_SYSCALL (name, , nr, args);	      \
-    if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (resultvar, )))	      \
-      {									      \
-	__set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, ));		      \
-	resultvar = 0xffffffff;						      \
-      }									      \
+  ({									                   \
+    unsigned int resultvar = INTERNAL_SYSCALL (name, , nr, args);	                   \
+    if (__glibc_unlikely (INTERNAL_SYSCALL_ERROR_P (resultvar, )))	                   \
+                   {									                   \
+	__set_errno (INTERNAL_SYSCALL_ERRNO (resultvar, ));		                   \
+	resultvar = 0xffffffff;						                   \
+                   }									                   \
     (int) resultvar; })
 #endif
 
@@ -316,7 +316,7 @@ struct libc_do_syscall_args
 # define HAVE_CLOCK_GETTIME_VSYSCALL    "__vdso_clock_gettime"
 # define HAVE_CLOCK_GETTIME64_VSYSCALL  "__vdso_clock_gettime64"
 # define HAVE_GETTIMEOFDAY_VSYSCALL     "__vdso_gettimeofday"
-# define HAVE_TIME_VSYSCALL             "__vdso_time"
+# define HAVE_TIME_VSYSCALL                                       "__vdso_time"
 # define HAVE_CLOCK_GETRES_VSYSCALL     "__vdso_clock_getres"
 
 /* Define a macro which expands inline into the wrapper code for a system
@@ -349,9 +349,9 @@ struct libc_do_syscall_args
 				 arg4, arg5, arg6)			\
   struct libc_do_syscall_args _xv =					\
     {									\
-      (int) (arg1),							\
-      (int) (arg5),							\
-      (int) (arg6)							\
+                   (int) (arg1),							\
+                   (int) (arg5),							\
+                   (int) (arg6)							\
     };									\
     asm volatile (							\
     "movl %1, %%eax\n\t"						\
@@ -361,9 +361,9 @@ struct libc_do_syscall_args
     : "memory", "cc")
 #endif /* GCC 5  */
 #define INTERNAL_SYSCALL(name, err, nr, args...) \
-  ({									      \
-    register unsigned int resultvar;					      \
-    INTERNAL_SYSCALL_MAIN_##nr (name, err, args);			      \
+  ({									                   \
+    register unsigned int resultvar;					                   \
+    INTERNAL_SYSCALL_MAIN_##nr (name, err, args);			                   \
     (int) resultvar; })
 #if I386_USE_SYSENTER
 # ifdef OPTIMIZE_FOR_GCC_5
@@ -374,7 +374,7 @@ struct libc_do_syscall_args
     "call *%%gs:%P2"							\
     : "=a" (resultvar)							\
     : "a" (__NR_##name), "i" (offsetof (tcbhead_t, sysinfo))		\
-      ASMARGS_##nr(args) : "memory", "cc")
+                   ASMARGS_##nr(args) : "memory", "cc")
 #   define INTERNAL_SYSCALL_NCS(name, err, nr, args...) \
   ({									\
     register unsigned int resultvar;					\
@@ -383,7 +383,7 @@ struct libc_do_syscall_args
     "call *%%gs:%P2"							\
     : "=a" (resultvar)							\
     : "a" (name), "i" (offsetof (tcbhead_t, sysinfo))			\
-      ASMARGS_##nr(args) : "memory", "cc");				\
+                   ASMARGS_##nr(args) : "memory", "cc");				\
     (int) resultvar; })
 #  else
 #   define INTERNAL_SYSCALL_MAIN_INLINE(name, err, nr, args...) \
@@ -405,47 +405,47 @@ struct libc_do_syscall_args
 # else /* GCC 5  */
 #  ifdef PIC
 #   define INTERNAL_SYSCALL_MAIN_INLINE(name, err, nr, args...) \
-    EXTRAVAR_##nr							      \
-    asm volatile (							      \
-    LOADARGS_##nr							      \
-    "movl %1, %%eax\n\t"						      \
-    "call *%%gs:%P2\n\t"						      \
-    RESTOREARGS_##nr							      \
-    : "=a" (resultvar)							      \
-    : "i" (__NR_##name), "i" (offsetof (tcbhead_t, sysinfo))		      \
-      ASMFMT_##nr(args) : "memory", "cc")
+    EXTRAVAR_##nr							                   \
+    asm volatile (							                   \
+    LOADARGS_##nr							                   \
+    "movl %1, %%eax\n\t"						                   \
+    "call *%%gs:%P2\n\t"						                   \
+    RESTOREARGS_##nr							                   \
+    : "=a" (resultvar)							                   \
+    : "i" (__NR_##name), "i" (offsetof (tcbhead_t, sysinfo))		                   \
+                   ASMFMT_##nr(args) : "memory", "cc")
 #   define INTERNAL_SYSCALL_NCS(name, err, nr, args...) \
-  ({									      \
-    register unsigned int resultvar;					      \
-    EXTRAVAR_##nr							      \
-    asm volatile (							      \
-    LOADARGS_##nr							      \
-    "call *%%gs:%P2\n\t"						      \
-    RESTOREARGS_##nr							      \
-    : "=a" (resultvar)							      \
-    : "0" (name), "i" (offsetof (tcbhead_t, sysinfo))			      \
-      ASMFMT_##nr(args) : "memory", "cc");				      \
+  ({									                   \
+    register unsigned int resultvar;					                   \
+    EXTRAVAR_##nr							                   \
+    asm volatile (							                   \
+    LOADARGS_##nr							                   \
+    "call *%%gs:%P2\n\t"						                   \
+    RESTOREARGS_##nr							                   \
+    : "=a" (resultvar)							                   \
+    : "0" (name), "i" (offsetof (tcbhead_t, sysinfo))			                   \
+                   ASMFMT_##nr(args) : "memory", "cc");				                   \
     (int) resultvar; })
 #  else
 #   define INTERNAL_SYSCALL_MAIN_INLINE(name, err, nr, args...) \
-    EXTRAVAR_##nr							      \
-    asm volatile (							      \
-    LOADARGS_##nr							      \
-    "movl %1, %%eax\n\t"						      \
-    "call *_dl_sysinfo\n\t"						      \
-    RESTOREARGS_##nr							      \
-    : "=a" (resultvar)							      \
+    EXTRAVAR_##nr							                   \
+    asm volatile (							                   \
+    LOADARGS_##nr							                   \
+    "movl %1, %%eax\n\t"						                   \
+    "call *_dl_sysinfo\n\t"						                   \
+    RESTOREARGS_##nr							                   \
+    : "=a" (resultvar)							                   \
     : "i" (__NR_##name) ASMFMT_##nr(args) : "memory", "cc")
 #   define INTERNAL_SYSCALL_NCS(name, err, nr, args...) \
-  ({									      \
-    register unsigned int resultvar;					      \
-    EXTRAVAR_##nr							      \
-    asm volatile (							      \
-    LOADARGS_##nr							      \
-    "call *_dl_sysinfo\n\t"						      \
-    RESTOREARGS_##nr							      \
-    : "=a" (resultvar)							      \
-    : "0" (name) ASMFMT_##nr(args) : "memory", "cc");			      \
+  ({									                   \
+    register unsigned int resultvar;					                   \
+    EXTRAVAR_##nr							                   \
+    asm volatile (							                   \
+    LOADARGS_##nr							                   \
+    "call *_dl_sysinfo\n\t"						                   \
+    RESTOREARGS_##nr							                   \
+    : "=a" (resultvar)							                   \
+    : "0" (name) ASMFMT_##nr(args) : "memory", "cc");			                   \
     (int) resultvar; })
 #  endif
 # endif /* GCC 5  */
@@ -468,24 +468,24 @@ struct libc_do_syscall_args
     (int) resultvar; })
 # else /* GCC 5  */
 #  define INTERNAL_SYSCALL_MAIN_INLINE(name, err, nr, args...) \
-    EXTRAVAR_##nr							      \
-    asm volatile (							      \
-    LOADARGS_##nr							      \
-    "movl %1, %%eax\n\t"						      \
-    "int $0x80\n\t"							      \
-    RESTOREARGS_##nr							      \
-    : "=a" (resultvar)							      \
+    EXTRAVAR_##nr							                   \
+    asm volatile (							                   \
+    LOADARGS_##nr							                   \
+    "movl %1, %%eax\n\t"						                   \
+    "int $0x80\n\t"							                   \
+    RESTOREARGS_##nr							                   \
+    : "=a" (resultvar)							                   \
     : "i" (__NR_##name) ASMFMT_##nr(args) : "memory", "cc")
 #  define INTERNAL_SYSCALL_NCS(name, err, nr, args...) \
-  ({									      \
-    register unsigned int resultvar;					      \
-    EXTRAVAR_##nr							      \
-    asm volatile (							      \
-    LOADARGS_##nr							      \
-    "int $0x80\n\t"							      \
-    RESTOREARGS_##nr							      \
-    : "=a" (resultvar)							      \
-    : "0" (name) ASMFMT_##nr(args) : "memory", "cc");			      \
+  ({									                   \
+    register unsigned int resultvar;					                   \
+    EXTRAVAR_##nr							                   \
+    asm volatile (							                   \
+    LOADARGS_##nr							                   \
+    "int $0x80\n\t"							                   \
+    RESTOREARGS_##nr							                   \
+    : "=a" (resultvar)							                   \
+    : "0" (name) ASMFMT_##nr(args) : "memory", "cc");			                   \
     (int) resultvar; })
 # endif /* GCC 5  */
 #endif
@@ -506,13 +506,13 @@ struct libc_do_syscall_args
 #  define LOADARGS_1 \
     "bpushl .L__X'%k3, %k3\n\t"
 #  define LOADARGS_5 \
-    "movl %%ebx, %4\n\t"						      \
+    "movl %%ebx, %4\n\t"						                   \
     "movl %3, %%ebx\n\t"
 # else
 #  define LOADARGS_1 \
     "bpushl .L__X'%k2, %k2\n\t"
 #  define LOADARGS_5 \
-    "movl %%ebx, %3\n\t"						      \
+    "movl %%ebx, %3\n\t"						                   \
     "movl %2, %%ebx\n\t"
 # endif
 # define LOADARGS_2	LOADARGS_1
@@ -620,15 +620,15 @@ struct libc_do_syscall_args
 
 /* Consistency check for position-independent code.  */
 #if defined __PIC__ && !defined OPTIMIZE_FOR_GCC_5
-# define check_consistency()						      \
-  ({ int __res;								      \
-     __asm__ __volatile__						      \
-       (LOAD_PIC_REG_STR (cx) ";"					      \
-	"subl %%ebx, %%ecx;"						      \
-	"je 1f;"							      \
-	"ud2;"								      \
-	"1:\n"								      \
-	: "=c" (__res));						      \
+# define check_consistency()						                   \
+  ({ int __res;								                   \
+     __asm__ __volatile__						                   \
+                    (LOAD_PIC_REG_STR (cx) ";"					                   \
+	"subl %%ebx, %%ecx;"						                   \
+	"je 1f;"							                   \
+	"ud2;"								                   \
+	"1:\n"								                   \
+	: "=c" (__res));						                   \
      __res; })
 #endif
 
@@ -642,23 +642,23 @@ struct libc_do_syscall_args
    is too complicated here since we have no PC-relative addressing mode.  */
 #else
 # ifdef __ASSEMBLER__
-#  define PTR_MANGLE(reg)	xorl %gs:POINTER_GUARD, reg;		      \
+#  define PTR_MANGLE(reg)	xorl %gs:POINTER_GUARD, reg;		                   \
 				roll $9, reg
-#  define PTR_DEMANGLE(reg)	rorl $9, reg;				      \
+#  define PTR_DEMANGLE(reg)	rorl $9, reg;				                   \
 				xorl %gs:POINTER_GUARD, reg
 # else
-#  define PTR_MANGLE(var)	asm ("xorl %%gs:%c2, %0\n"		      \
-				     "roll $9, %0"			      \
-				     : "=r" (var)			      \
-				     : "0" (var),			      \
-				       "i" (offsetof (tcbhead_t,	      \
-						      pointer_guard)))
-#  define PTR_DEMANGLE(var)	asm ("rorl $9, %0\n"			      \
-				     "xorl %%gs:%c2, %0"		      \
-				     : "=r" (var)			      \
-				     : "0" (var),			      \
-				       "i" (offsetof (tcbhead_t,	      \
-						      pointer_guard)))
+#  define PTR_MANGLE(var)	asm ("xorl %%gs:%c2, %0\n"		                   \
+				     "roll $9, %0"			                   \
+				     : "=r" (var)			                   \
+				     : "0" (var),			                   \
+				                    "i" (offsetof (tcbhead_t,	                   \
+						                   pointer_guard)))
+#  define PTR_DEMANGLE(var)	asm ("rorl $9, %0\n"			                   \
+				     "xorl %%gs:%c2, %0"		                   \
+				     : "=r" (var)			                   \
+				     : "0" (var),			                   \
+				                    "i" (offsetof (tcbhead_t,	                   \
+						                   pointer_guard)))
 # endif
 #endif
 

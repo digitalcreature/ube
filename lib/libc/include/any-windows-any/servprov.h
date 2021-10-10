@@ -87,9 +87,9 @@ MIDL_INTERFACE("6d5140c1-7436-11ce-8034-00aa006009fa")
 IServiceProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryService(
-        REFGUID guidService,
-        REFIID riid,
-        void **ppvObject) = 0;
+                     REFGUID guidService,
+                     REFIID riid,
+                     void **ppvObject) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -101,22 +101,22 @@ typedef struct IServiceProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IServiceProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IServiceProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IServiceProvider *This);
+                     IServiceProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IServiceProvider *This);
+                     IServiceProvider *This);
 
     /*** IServiceProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryService)(
-        IServiceProvider *This,
-        REFGUID guidService,
-        REFIID riid,
-        void **ppvObject);
+                     IServiceProvider *This,
+                     REFGUID guidService,
+                     REFIID riid,
+                     void **ppvObject);
 
     END_INTERFACE
 } IServiceProviderVtbl;

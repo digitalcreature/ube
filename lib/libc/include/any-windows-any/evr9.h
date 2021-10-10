@@ -15,11 +15,11 @@ extern "C" {
 typedef enum _evr9_tag_MFVideoAlphaBitmapFlags {
   MFVideoAlphaBitmap_EntireDDS     = 0x00000001,
   MFVideoAlphaBitmap_SrcColorKey   = 0x00000002,
-  MFVideoAlphaBitmap_SrcRect       = 0x00000004,
-  MFVideoAlphaBitmap_DestRect      = 0x00000008,
+  MFVideoAlphaBitmap_SrcRect                    = 0x00000004,
+  MFVideoAlphaBitmap_DestRect                   = 0x00000008,
   MFVideoAlphaBitmap_FilterMode    = 0x00000010,
-  MFVideoAlphaBitmap_Alpha         = 0x00000020,
-  MFVideoAlphaBitmap_BitMask       = 0x0000003f 
+  MFVideoAlphaBitmap_Alpha                      = 0x00000020,
+  MFVideoAlphaBitmap_BitMask                    = 0x0000003f 
 } MFVideoAlphaBitmapFlags;
 
 #ifdef __cplusplus

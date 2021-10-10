@@ -30,7 +30,7 @@
 #include <linux/types.h>
 
 enum virtio_input_config_select {
-	VIRTIO_INPUT_CFG_UNSET      = 0x00,
+	VIRTIO_INPUT_CFG_UNSET                   = 0x00,
 	VIRTIO_INPUT_CFG_ID_NAME    = 0x01,
 	VIRTIO_INPUT_CFG_ID_SERIAL  = 0x02,
 	VIRTIO_INPUT_CFG_ID_DEVIDS  = 0x03,

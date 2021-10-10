@@ -30,25 +30,25 @@ namespace std {
   };
 
   to_chars_result to_chars(char* first, char* last, see below value,
-                           int base = 10);
+                                                                               int base = 10);
 
   to_chars_result to_chars(char* first, char* last, float value);
   to_chars_result to_chars(char* first, char* last, double value);
   to_chars_result to_chars(char* first, char* last, long double value);
 
   to_chars_result to_chars(char* first, char* last, float value,
-                           chars_format fmt);
+                                                                               chars_format fmt);
   to_chars_result to_chars(char* first, char* last, double value,
-                           chars_format fmt);
+                                                                               chars_format fmt);
   to_chars_result to_chars(char* first, char* last, long double value,
-                           chars_format fmt);
+                                                                               chars_format fmt);
 
   to_chars_result to_chars(char* first, char* last, float value,
-                           chars_format fmt, int precision);
+                                                                               chars_format fmt, int precision);
   to_chars_result to_chars(char* first, char* last, double value,
-                           chars_format fmt, int precision);
+                                                                               chars_format fmt, int precision);
   to_chars_result to_chars(char* first, char* last, long double value,
-                           chars_format fmt, int precision);
+                                                                               chars_format fmt, int precision);
 
   // 23.20.3, primitive numerical input conversion
   struct from_chars_result {
@@ -57,17 +57,17 @@ namespace std {
   };
 
   from_chars_result from_chars(const char* first, const char* last,
-                               see below& value, int base = 10);
+                                                                                                see below& value, int base = 10);
 
   from_chars_result from_chars(const char* first, const char* last,
-                               float& value,
-                               chars_format fmt = chars_format::general);
+                                                                                                float& value,
+                                                                                                chars_format fmt = chars_format::general);
   from_chars_result from_chars(const char* first, const char* last,
-                               double& value,
-                               chars_format fmt = chars_format::general);
+                                                                                                double& value,
+                                                                                                chars_format fmt = chars_format::general);
   from_chars_result from_chars(const char* first, const char* last,
-                               long double& value,
-                               chars_format fmt = chars_format::general);
+                                                                                                long double& value,
+                                                                                                chars_format fmt = chars_format::general);
 
 } // namespace std
 
@@ -149,8 +149,8 @@ static _LIBCPP_CONSTEXPR uint64_t __pow10_64[] = {
 };
 
 static _LIBCPP_CONSTEXPR uint32_t __pow10_32[] = {
-    UINT32_C(0),          UINT32_C(10),       UINT32_C(100),
-    UINT32_C(1000),       UINT32_C(10000),    UINT32_C(100000),
+    UINT32_C(0),                       UINT32_C(10),                    UINT32_C(100),
+    UINT32_C(1000),                    UINT32_C(10000),    UINT32_C(100000),
     UINT32_C(1000000),    UINT32_C(10000000), UINT32_C(100000000),
     UINT32_C(1000000000),
 };
@@ -163,15 +163,15 @@ struct _LIBCPP_HIDDEN __traits_base
 #if !defined(_LIBCPP_COMPILER_MSVC)
     static _LIBCPP_INLINE_VISIBILITY int __width(_Tp __v)
     {
-        auto __t = (64 - __builtin_clzll(__v | 1)) * 1233 >> 12;
-        return __t - (__v < __pow10_64[__t]) + 1;
+                     auto __t = (64 - __builtin_clzll(__v | 1)) * 1233 >> 12;
+                     return __t - (__v < __pow10_64[__t]) + 1;
     }
 #endif
 
     _LIBCPP_AVAILABILITY_TO_CHARS
     static _LIBCPP_INLINE_VISIBILITY char* __convert(_Tp __v, char* __p)
     {
-        return __u64toa(__v, __p);
+                     return __u64toa(__v, __p);
     }
 
     static _LIBCPP_INLINE_VISIBILITY decltype(__pow10_64)& __pow() { return __pow10_64; }
@@ -186,15 +186,15 @@ struct _LIBCPP_HIDDEN
 #if !defined(_LIBCPP_COMPILER_MSVC)
     static _LIBCPP_INLINE_VISIBILITY int __width(_Tp __v)
     {
-        auto __t = (32 - __builtin_clz(__v | 1)) * 1233 >> 12;
-        return __t - (__v < __pow10_32[__t]) + 1;
+                     auto __t = (32 - __builtin_clz(__v | 1)) * 1233 >> 12;
+                     return __t - (__v < __pow10_32[__t]) + 1;
     }
 #endif
 
     _LIBCPP_AVAILABILITY_TO_CHARS
     static _LIBCPP_INLINE_VISIBILITY char* __convert(_Tp __v, char* __p)
     {
-        return __u32toa(__v, __p);
+                     return __u32toa(__v, __p);
     }
 
     static _LIBCPP_INLINE_VISIBILITY decltype(__pow10_32)& __pow() { return __pow10_32; }
@@ -250,30 +250,30 @@ struct _LIBCPP_HIDDEN __traits : __traits_base<_Tp>
     static _LIBCPP_INLINE_VISIBILITY char const*
     __read(char const* __p, char const* __ep, type& __a, type& __b)
     {
-        type __cprod[digits];
-        int __j = digits - 1;
-        int __i = digits;
-        do
-        {
-            if (!('0' <= *__p && *__p <= '9'))
-                break;
-            __cprod[--__i] = *__p++ - '0';
-        } while (__p != __ep && __i != 0);
+                     type __cprod[digits];
+                     int __j = digits - 1;
+                     int __i = digits;
+                     do
+                     {
+                                      if (!('0' <= *__p && *__p <= '9'))
+                                          break;
+                                      __cprod[--__i] = *__p++ - '0';
+                     } while (__p != __ep && __i != 0);
 
-        __a = __inner_product(__cprod + __i + 1, __cprod + __j, __pow() + 1,
-                              __cprod[__i]);
-        if (__mul_overflowed(__cprod[__j], __pow()[__j - __i], __b))
-            --__p;
-        return __p;
+                     __a = __inner_product(__cprod + __i + 1, __cprod + __j, __pow() + 1,
+                                                                                               __cprod[__i]);
+                     if (__mul_overflowed(__cprod[__j], __pow()[__j - __i], __b))
+                                      --__p;
+                     return __p;
     }
 
     template <typename _It1, typename _It2, class _Up>
     static _LIBCPP_INLINE_VISIBILITY _Up
     __inner_product(_It1 __first1, _It1 __last1, _It2 __first2, _Up __init)
     {
-        for (; __first1 < __last1; ++__first1, ++__first2)
-            __init = __init + *__first1 * *__first2;
-        return __init;
+                     for (; __first1 < __last1; ++__first1, ++__first2)
+                                      __init = __init + *__first1 * *__first2;
+                     return __init;
     }
 };
 
@@ -302,8 +302,8 @@ __to_chars_itoa(char* __first, char* __last, _Tp __value, true_type)
     auto __x = __to_unsigned(__value);
     if (__value < 0 && __first != __last)
     {
-        *__first++ = '-';
-        __x = __complement(__x);
+                     *__first++ = '-';
+                     __x = __complement(__x);
     }
 
     return __to_chars_itoa(__first, __last, __x, false_type());
@@ -319,24 +319,24 @@ __to_chars_itoa(char* __first, char* __last, _Tp __value, false_type)
 
 #if !defined(_LIBCPP_COMPILER_MSVC)
     if (__tx::digits <= __diff || __tx::__width(__value) <= __diff)
-        return {__tx::__convert(__value, __first), errc(0)};
+                     return {__tx::__convert(__value, __first), errc(0)};
     else
-        return {__last, errc::value_too_large};
+                     return {__last, errc::value_too_large};
 #else
     if (__tx::digits <= __diff)
-        return {__tx::__convert(__value, __first), {}};
+                     return {__tx::__convert(__value, __first), {}};
     else
     {
-        char __buf[__tx::digits];
-        auto __p = __tx::__convert(__value, __buf);
-        auto __len = __p - __buf;
-        if (__len <= __diff)
-        {
-            memcpy(__first, __buf, __len);
-            return {__first + __len, {}};
-        }
-        else
-            return {__last, errc::value_too_large};
+                     char __buf[__tx::digits];
+                     auto __p = __tx::__convert(__value, __buf);
+                     auto __len = __p - __buf;
+                     if (__len <= __diff)
+                     {
+                                      memcpy(__first, __buf, __len);
+                                      return {__first + __len, {}};
+                     }
+                     else
+                                      return {__last, errc::value_too_large};
     }
 #endif
 }
@@ -345,13 +345,13 @@ template <typename _Tp>
 _LIBCPP_AVAILABILITY_TO_CHARS
 inline _LIBCPP_INLINE_VISIBILITY to_chars_result
 __to_chars_integral(char* __first, char* __last, _Tp __value, int __base,
-                    true_type)
+                                                           true_type)
 {
     auto __x = __to_unsigned(__value);
     if (__value < 0 && __first != __last)
     {
-        *__first++ = '-';
-        __x = __complement(__x);
+                     *__first++ = '-';
+                     __x = __complement(__x);
     }
 
     return __to_chars_integral(__first, __last, __x, __base, false_type());
@@ -361,28 +361,28 @@ template <typename _Tp>
 _LIBCPP_AVAILABILITY_TO_CHARS
 inline _LIBCPP_INLINE_VISIBILITY to_chars_result
 __to_chars_integral(char* __first, char* __last, _Tp __value, int __base,
-                    false_type)
+                                                           false_type)
 {
     if (__base == 10)
-        return __to_chars_itoa(__first, __last, __value, false_type());
+                     return __to_chars_itoa(__first, __last, __value, false_type());
 
     auto __p = __last;
     while (__p != __first)
     {
-        auto __c = __value % __base;
-        __value /= __base;
-        *--__p = "0123456789abcdefghijklmnopqrstuvwxyz"[__c];
-        if (__value == 0)
-            break;
+                     auto __c = __value % __base;
+                     __value /= __base;
+                     *--__p = "0123456789abcdefghijklmnopqrstuvwxyz"[__c];
+                     if (__value == 0)
+                                      break;
     }
 
     auto __len = __last - __p;
     if (__value != 0 || !__len)
-        return {__last, errc::value_too_large};
+                     return {__last, errc::value_too_large};
     else
     {
-        memmove(__first, __p, __len);
-        return {__first + __len, {}};
+                     memmove(__first, __p, __len);
+                     return {__first + __len, {}};
     }
 }
 
@@ -401,7 +401,7 @@ to_chars(char* __first, char* __last, _Tp __value, int __base)
 {
     _LIBCPP_ASSERT(2 <= __base && __base <= 36, "base not in [2, 36]");
     return __to_chars_integral(__first, __last, __value, __base,
-                               is_signed<_Tp>());
+                                                                                                is_signed<_Tp>());
 }
 
 template <typename _It, typename _Tp, typename _Fn, typename... _Ts>
@@ -416,29 +416,29 @@ __sign_combinator(_It __first, _It __last, _Tp& __value, _Fn __f, _Ts... __args)
     switch (__r.ec)
     {
     case errc::invalid_argument:
-        return {__first, __r.ec};
+                     return {__first, __r.ec};
     case errc::result_out_of_range:
-        return __r;
+                     return __r;
     default:
-        break;
+                     break;
     }
 
     if (__neg)
     {
-        if (__x <= __complement(__to_unsigned(__tl::min())))
-        {
-            __x = __complement(__x);
-            memcpy(&__value, &__x, sizeof(__x));
-            return __r;
-        }
+                     if (__x <= __complement(__to_unsigned(__tl::min())))
+                     {
+                                      __x = __complement(__x);
+                                      memcpy(&__value, &__x, sizeof(__x));
+                                      return __r;
+                     }
     }
     else
     {
-        if (__x <= (__tl::max)())
-        {
-            __value = __x;
-            return __r;
-        }
+                     if (__x <= (__tl::max)())
+                     {
+                                      __value = __x;
+                                      return __r;
+                     }
     }
 
     return {__r.ptr, errc::result_out_of_range};
@@ -464,47 +464,47 @@ inline _LIBCPP_INLINE_VISIBILITY __in_pattern_result
 __in_pattern(_Tp __c, int __base)
 {
     if (__base <= 10)
-        return {'0' <= __c && __c < '0' + __base, __c - '0'};
+                     return {'0' <= __c && __c < '0' + __base, __c - '0'};
     else if (__in_pattern(__c))
-        return {true, __c - '0'};
+                     return {true, __c - '0'};
     else if ('a' <= __c && __c < 'a' + __base - 10)
-        return {true, __c - 'a' + 10};
+                     return {true, __c - 'a' + 10};
     else
-        return {'A' <= __c && __c < 'A' + __base - 10, __c - 'A' + 10};
+                     return {'A' <= __c && __c < 'A' + __base - 10, __c - 'A' + 10};
 }
 
 template <typename _It, typename _Tp, typename _Fn, typename... _Ts>
 inline _LIBCPP_INLINE_VISIBILITY from_chars_result
 __subject_seq_combinator(_It __first, _It __last, _Tp& __value, _Fn __f,
-                         _Ts... __args)
+                                                                             _Ts... __args)
 {
     auto __find_non_zero = [](_It __first, _It __last) {
-        for (; __first != __last; ++__first)
-            if (*__first != '0')
-                break;
-        return __first;
+                     for (; __first != __last; ++__first)
+                                      if (*__first != '0')
+                                          break;
+                     return __first;
     };
 
     auto __p = __find_non_zero(__first, __last);
     if (__p == __last || !__in_pattern(*__p, __args...))
     {
-        if (__p == __first)
-            return {__first, errc::invalid_argument};
-        else
-        {
-            __value = 0;
-            return {__p, {}};
-        }
+                     if (__p == __first)
+                                      return {__first, errc::invalid_argument};
+                     else
+                     {
+                                      __value = 0;
+                                      return {__p, {}};
+                     }
     }
 
     auto __r = __f(__p, __last, __value, __args...);
     if (__r.ec == errc::result_out_of_range)
     {
-        for (; __r.ptr != __last; ++__r.ptr)
-        {
-            if (!__in_pattern(*__r.ptr, __args...))
-                break;
-        }
+                     for (; __r.ptr != __last; ++__r.ptr)
+                     {
+                                      if (!__in_pattern(*__r.ptr, __args...))
+                                          break;
+                     }
     }
 
     return __r;
@@ -518,22 +518,22 @@ __from_chars_atoi(const char* __first, const char* __last, _Tp& __value)
     using __output_type = typename __tx::type;
 
     return __subject_seq_combinator(
-        __first, __last, __value,
-        [](const char* __first, const char* __last,
-           _Tp& __value) -> from_chars_result {
-            __output_type __a, __b;
-            auto __p = __tx::__read(__first, __last, __a, __b);
-            if (__p == __last || !__in_pattern(*__p))
-            {
-                __output_type __m = (numeric_limits<_Tp>::max)();
-                if (__m >= __a && __m - __a >= __b)
-                {
-                    __value = __a + __b;
-                    return {__p, {}};
-                }
-            }
-            return {__p, errc::result_out_of_range};
-        });
+                     __first, __last, __value,
+                     [](const char* __first, const char* __last,
+                        _Tp& __value) -> from_chars_result {
+                                      __output_type __a, __b;
+                                      auto __p = __tx::__read(__first, __last, __a, __b);
+                                      if (__p == __last || !__in_pattern(*__p))
+                                      {
+                                          __output_type __m = (numeric_limits<_Tp>::max)();
+                                          if (__m >= __a && __m - __a >= __b)
+                                          {
+                                                           __value = __a + __b;
+                                                           return {__p, {}};
+                                          }
+                                      }
+                                      return {__p, errc::result_out_of_range};
+                     });
 }
 
 template <typename _Tp, typename enable_if<is_signed<_Tp>::value, int>::type = 0>
@@ -547,58 +547,58 @@ __from_chars_atoi(const char* __first, const char* __last, _Tp& __value)
 template <typename _Tp, typename enable_if<is_unsigned<_Tp>::value, int>::type = 0>
 inline _LIBCPP_INLINE_VISIBILITY from_chars_result
 __from_chars_integral(const char* __first, const char* __last, _Tp& __value,
-                      int __base)
+                                                             int __base)
 {
     if (__base == 10)
-        return __from_chars_atoi(__first, __last, __value);
+                     return __from_chars_atoi(__first, __last, __value);
 
     return __subject_seq_combinator(
-        __first, __last, __value,
-        [](const char* __p, const char* __last, _Tp& __value,
-           int __base) -> from_chars_result {
-            using __tl = numeric_limits<_Tp>;
-            auto __digits = __tl::digits / log2f(float(__base));
-            _Tp __a = __in_pattern(*__p++, __base).__val, __b = 0;
+                     __first, __last, __value,
+                     [](const char* __p, const char* __last, _Tp& __value,
+                        int __base) -> from_chars_result {
+                                      using __tl = numeric_limits<_Tp>;
+                                      auto __digits = __tl::digits / log2f(float(__base));
+                                      _Tp __a = __in_pattern(*__p++, __base).__val, __b = 0;
 
-            for (int __i = 1; __p != __last; ++__i, ++__p)
-            {
-                if (auto __c = __in_pattern(*__p, __base))
-                {
-                    if (__i < __digits - 1)
-                        __a = __a * __base + __c.__val;
-                    else
-                    {
-                        if (!__itoa::__mul_overflowed(__a, __base, __a))
-                            ++__p;
-                        __b = __c.__val;
-                        break;
-                    }
-                }
-                else
-                    break;
-            }
+                                      for (int __i = 1; __p != __last; ++__i, ++__p)
+                                      {
+                                          if (auto __c = __in_pattern(*__p, __base))
+                                          {
+                                                           if (__i < __digits - 1)
+                                                                            __a = __a * __base + __c.__val;
+                                                           else
+                                                           {
+                                                                            if (!__itoa::__mul_overflowed(__a, __base, __a))
+                                                                                ++__p;
+                                                                            __b = __c.__val;
+                                                                            break;
+                                                           }
+                                          }
+                                          else
+                                                           break;
+                                      }
 
-            if (__p == __last || !__in_pattern(*__p, __base))
-            {
-                if ((__tl::max)() - __a >= __b)
-                {
-                    __value = __a + __b;
-                    return {__p, {}};
-                }
-            }
-            return {__p, errc::result_out_of_range};
-        },
-        __base);
+                                      if (__p == __last || !__in_pattern(*__p, __base))
+                                      {
+                                          if ((__tl::max)() - __a >= __b)
+                                          {
+                                                           __value = __a + __b;
+                                                           return {__p, {}};
+                                          }
+                                      }
+                                      return {__p, errc::result_out_of_range};
+                     },
+                     __base);
 }
 
 template <typename _Tp, typename enable_if<is_signed<_Tp>::value, int>::type = 0>
 inline _LIBCPP_INLINE_VISIBILITY from_chars_result
 __from_chars_integral(const char* __first, const char* __last, _Tp& __value,
-                      int __base)
+                                                             int __base)
 {
     using __t = decltype(__to_unsigned(__value));
     return __sign_combinator(__first, __last, __value,
-                             __from_chars_integral<__t>, __base);
+                                                                                 __from_chars_integral<__t>, __base);
 }
 
 template <typename _Tp, typename enable_if<is_integral<_Tp>::value, int>::type = 0>

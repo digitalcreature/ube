@@ -17,77 +17,77 @@ module std [system] {
   module depr [extern_c] {
     // <assert.h> provided by C library.
     module ctype_h {
-      header "ctype.h"
-      export *
+                   header "ctype.h"
+                   export *
     }
     module errno_h {
-      header "errno.h"
-      export *
+                   header "errno.h"
+                   export *
     }
     module fenv_h {
-      header "fenv.h"
-      export *
+                   header "fenv.h"
+                   export *
     }
     // <float.h> provided by compiler or C library.
     module inttypes_h {
-      header "inttypes.h"
-      export stdint_h
-      export *
+                   header "inttypes.h"
+                   export stdint_h
+                   export *
     }
     // <iso646.h> provided by compiler.
     // <limits.h> provided by compiler or C library.
     module locale_h {
-      header "locale.h"
-      export *
+                   header "locale.h"
+                   export *
     }
     module math_h {
-      header "math.h"
-      export *
+                   header "math.h"
+                   export *
     }
     module setjmp_h {
-      header "setjmp.h"
-      export *
+                   header "setjmp.h"
+                   export *
     }
     // FIXME: <stdalign.h> is missing.
     // <signal.h> provided by C library.
     // <stdarg.h> provided by compiler.
     // <stdbool.h> provided by compiler.
     module stddef_h {
-      // <stddef.h>'s __need_* macros require textual inclusion.
-      textual header "stddef.h"
+                   // <stddef.h>'s __need_* macros require textual inclusion.
+                   textual header "stddef.h"
     }
     module stdint_h {
-      header "stdint.h"
-      export *
-      // FIXME: This module only exists on OS X and for some reason the
-      // wildcard above doesn't export it.
-      export Darwin.C.stdint
+                   header "stdint.h"
+                   export *
+                   // FIXME: This module only exists on OS X and for some reason the
+                   // wildcard above doesn't export it.
+                   export Darwin.C.stdint
     }
     module stdio_h {
-      // <stdio.h>'s __need_* macros require textual inclusion.
-      textual header "stdio.h"
-      export *
-      export Darwin.C.stdio
+                   // <stdio.h>'s __need_* macros require textual inclusion.
+                   textual header "stdio.h"
+                   export *
+                   export Darwin.C.stdio
     }
     module stdlib_h {
-      // <stdlib.h>'s __need_* macros require textual inclusion.
-      textual header "stdlib.h"
-      export *
+                   // <stdlib.h>'s __need_* macros require textual inclusion.
+                   textual header "stdlib.h"
+                   export *
     }
     module string_h {
-      header "string.h"
-      export *
+                   header "string.h"
+                   export *
     }
     // FIXME: <uchar.h> is missing.
     // <time.h> provided by C library.
     module wchar_h {
-      // <wchar.h>'s __need_* macros require textual inclusion.
-      textual header "wchar.h"
-      export *
+                   // <wchar.h>'s __need_* macros require textual inclusion.
+                   textual header "wchar.h"
+                   export *
     }
     module wctype_h {
-      header "wctype.h"
-      export *
+                   header "wctype.h"
+                   export *
     }
   }
 
@@ -108,108 +108,108 @@ module std [system] {
   // C compatibility headers.
   module compat {
     module cassert {
-      // <cassert>'s use of NDEBUG requires textual inclusion.
-      textual header "cassert"
+                   // <cassert>'s use of NDEBUG requires textual inclusion.
+                   textual header "cassert"
     }
     module ccomplex {
-      header "ccomplex"
-      export complex
-      export *
+                   header "ccomplex"
+                   export complex
+                   export *
     }
     module cctype {
-      header "cctype"
-      export *
+                   header "cctype"
+                   export *
     }
     module cerrno {
-      header "cerrno"
-      export *
+                   header "cerrno"
+                   export *
     }
     module cfenv {
-      header "cfenv"
-      export *
+                   header "cfenv"
+                   export *
     }
     module cfloat {
-      header "cfloat"
-      export *
+                   header "cfloat"
+                   export *
     }
     module cinttypes {
-      header "cinttypes"
-      export cstdint
-      export *
+                   header "cinttypes"
+                   export cstdint
+                   export *
     }
     module ciso646 {
-      header "ciso646"
-      export *
+                   header "ciso646"
+                   export *
     }
     module climits {
-      header "climits"
-      export *
+                   header "climits"
+                   export *
     }
     module clocale {
-      header "clocale"
-      export *
+                   header "clocale"
+                   export *
     }
     module cmath {
-      header "cmath"
-      export *
+                   header "cmath"
+                   export *
     }
     module csetjmp {
-      header "csetjmp"
-      export *
+                   header "csetjmp"
+                   export *
     }
     module csignal {
-      header "csignal"
-      export *
+                   header "csignal"
+                   export *
     }
     // FIXME: <cstdalign> is missing.
     module cstdarg {
-      header "cstdarg"
-      export *
+                   header "cstdarg"
+                   export *
     }
     module cstdbool {
-      header "cstdbool"
-      export *
+                   header "cstdbool"
+                   export *
     }
     module cstddef {
-      header "cstddef"
-      export *
+                   header "cstddef"
+                   export *
     }
     module cstdint {
-      header "cstdint"
-      export depr.stdint_h
-      export *
+                   header "cstdint"
+                   export depr.stdint_h
+                   export *
     }
     module cstdio {
-      header "cstdio"
-      export *
+                   header "cstdio"
+                   export *
     }
     module cstdlib {
-      header "cstdlib"
-      export *
+                   header "cstdlib"
+                   export *
     }
     module cstring {
-      header "cstring"
-      export *
+                   header "cstring"
+                   export *
     }
     module ctgmath {
-      header "ctgmath"
-      export ccomplex
-      export cmath
-      export *
+                   header "ctgmath"
+                   export ccomplex
+                   export cmath
+                   export *
     }
     module ctime {
-      header "ctime"
-      export *
+                   header "ctime"
+                   export *
     }
     // FIXME: <cuchar> is missing.
     module cwchar {
-      header "cwchar"
-      export depr.stdio_h
-      export *
+                   header "cwchar"
+                   export depr.stdio_h
+                   export *
     }
     module cwctype {
-      header "cwctype"
-      export *
+                   header "cwctype"
+                   export *
     }
   }
 
@@ -542,94 +542,94 @@ module std [system] {
     requires cplusplus11
 
     module algorithm {
-      header "experimental/algorithm"
-      export *
+                   header "experimental/algorithm"
+                   export *
     }
      module coroutine {
-      requires coroutines
-      header "experimental/coroutine"
-      export *
+                   requires coroutines
+                   header "experimental/coroutine"
+                   export *
     }
     module deque {
-      header "experimental/deque"
-      export *
+                   header "experimental/deque"
+                   export *
     }
     module filesystem {
-      header "experimental/filesystem"
-      export *
+                   header "experimental/filesystem"
+                   export *
     }
     module forward_list {
-      header "experimental/forward_list"
-      export *
+                   header "experimental/forward_list"
+                   export *
     }
     module functional {
-      header "experimental/functional"
-      export *
+                   header "experimental/functional"
+                   export *
     }
     module iterator {
-      header "experimental/iterator"
-      export *
+                   header "experimental/iterator"
+                   export *
     }
     module list {
-      header "experimental/list"
-      export *
+                   header "experimental/list"
+                   export *
     }
     module map {
-      header "experimental/map"
-      export *
+                   header "experimental/map"
+                   export *
     }
     module memory_resource {
-      header "experimental/memory_resource"
-      export *
+                   header "experimental/memory_resource"
+                   export *
     }
     module propagate_const {
-      header "experimental/propagate_const"
-      export *
+                   header "experimental/propagate_const"
+                   export *
     }
     module regex {
-      header "experimental/regex"
-      export *
+                   header "experimental/regex"
+                   export *
     }
     module simd {
-      header "experimental/simd"
-      export *
+                   header "experimental/simd"
+                   export *
     }
     module set {
-      header "experimental/set"
-      export *
+                   header "experimental/set"
+                   export *
     }
     module span {
-      header "span"
-      export *
+                   header "span"
+                   export *
     }
     module string {
-      header "experimental/string"
-      export *
+                   header "experimental/string"
+                   export *
     }
     module type_traits {
-      header "experimental/type_traits"
-      export *
+                   header "experimental/type_traits"
+                   export *
     }
     module unordered_map {
-      header "experimental/unordered_map"
-      export *
+                   header "experimental/unordered_map"
+                   export *
     }
     module unordered_set {
-      header "experimental/unordered_set"
-      export *
+                   header "experimental/unordered_set"
+                   export *
     }
     module utility {
-      header "experimental/utility"
-      export *
+                   header "experimental/utility"
+                   export *
     }
     module vector {
-      header "experimental/vector"
-      export *
+                   header "experimental/vector"
+                   export *
     }
     // FIXME these should be private
     module __memory {
-      header "experimental/__memory"
-      export *
+                   header "experimental/__memory"
+                   export *
     }
   } // end experimental
 }

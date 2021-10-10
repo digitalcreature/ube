@@ -111,7 +111,7 @@ _mm_tzcnt_64(unsigned long long __X)
 
 #undef __RELAXED_FN_ATTRS
 
-#if !(defined(_MSC_VER) || defined(__SCE__)) || __has_feature(modules) ||      \
+#if !(defined(_MSC_VER) || defined(__SCE__)) || __has_feature(modules) ||                   \
     defined(__BMI__)
 
 /* Define the default attributes for the functions in this file. */
@@ -120,11 +120,11 @@ _mm_tzcnt_64(unsigned long long __X)
 #define _andn_u32(a, b)   (__andn_u32((a), (b)))
 
 /* _bextr_u32 != __bextr_u32 */
-#define _blsi_u32(a)      (__blsi_u32((a)))
+#define _blsi_u32(a)                   (__blsi_u32((a)))
 
 #define _blsmsk_u32(a)    (__blsmsk_u32((a)))
 
-#define _blsr_u32(a)      (__blsr_u32((a)))
+#define _blsr_u32(a)                   (__blsr_u32((a)))
 
 /// Performs a bitwise AND of the second operand with the one's
 ///    complement of the first operand.
@@ -271,11 +271,11 @@ __blsr_u32(unsigned int __X)
 #define _andn_u64(a, b)   (__andn_u64((a), (b)))
 
 /* _bextr_u64 != __bextr_u64 */
-#define _blsi_u64(a)      (__blsi_u64((a)))
+#define _blsi_u64(a)                   (__blsi_u64((a)))
 
 #define _blsmsk_u64(a)    (__blsmsk_u64((a)))
 
-#define _blsr_u64(a)      (__blsr_u64((a)))
+#define _blsr_u64(a)                   (__blsr_u64((a)))
 
 /// Performs a bitwise AND of the second operand with the one's
 ///    complement of the first operand.
@@ -422,6 +422,6 @@ __blsr_u64(unsigned long long __X)
 #undef __DEFAULT_FN_ATTRS
 
 #endif /* !(defined(_MSC_VER) || defined(__SCE__)) || __has_feature(modules)   \
-          || defined(__BMI__) */
+                       || defined(__BMI__) */
 
 #endif /* __BMIINTRIN_H */

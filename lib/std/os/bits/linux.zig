@@ -202,48 +202,48 @@ pub const WNOWAIT = 0x1000000;
 
 pub usingnamespace if (is_mips)
     struct {
-        pub const SA_NOCLDSTOP = 1;
-        pub const SA_NOCLDWAIT = 0x10000;
-        pub const SA_SIGINFO = 8;
-        pub const SA_RESTART = 0x10000000;
-        pub const SA_RESETHAND = 0x80000000;
-        pub const SA_ONSTACK = 0x08000000;
-        pub const SA_NODEFER = 0x40000000;
-        pub const SA_RESTORER = 0x04000000;
+                     pub const SA_NOCLDSTOP = 1;
+                     pub const SA_NOCLDWAIT = 0x10000;
+                     pub const SA_SIGINFO = 8;
+                     pub const SA_RESTART = 0x10000000;
+                     pub const SA_RESETHAND = 0x80000000;
+                     pub const SA_ONSTACK = 0x08000000;
+                     pub const SA_NODEFER = 0x40000000;
+                     pub const SA_RESTORER = 0x04000000;
 
-        pub const SIG_BLOCK = 1;
-        pub const SIG_UNBLOCK = 2;
-        pub const SIG_SETMASK = 3;
+                     pub const SIG_BLOCK = 1;
+                     pub const SIG_UNBLOCK = 2;
+                     pub const SIG_SETMASK = 3;
     }
 else if (is_sparc)
     struct {
-        pub const SA_NOCLDSTOP = 0x8;
-        pub const SA_NOCLDWAIT = 0x100;
-        pub const SA_SIGINFO = 0x200;
-        pub const SA_RESTART = 0x2;
-        pub const SA_RESETHAND = 0x4;
-        pub const SA_ONSTACK = 0x1;
-        pub const SA_NODEFER = 0x20;
-        pub const SA_RESTORER = 0x04000000;
+                     pub const SA_NOCLDSTOP = 0x8;
+                     pub const SA_NOCLDWAIT = 0x100;
+                     pub const SA_SIGINFO = 0x200;
+                     pub const SA_RESTART = 0x2;
+                     pub const SA_RESETHAND = 0x4;
+                     pub const SA_ONSTACK = 0x1;
+                     pub const SA_NODEFER = 0x20;
+                     pub const SA_RESTORER = 0x04000000;
 
-        pub const SIG_BLOCK = 1;
-        pub const SIG_UNBLOCK = 2;
-        pub const SIG_SETMASK = 4;
+                     pub const SIG_BLOCK = 1;
+                     pub const SIG_UNBLOCK = 2;
+                     pub const SIG_SETMASK = 4;
     }
 else
     struct {
-        pub const SA_NOCLDSTOP = 1;
-        pub const SA_NOCLDWAIT = 2;
-        pub const SA_SIGINFO = 4;
-        pub const SA_RESTART = 0x10000000;
-        pub const SA_RESETHAND = 0x80000000;
-        pub const SA_ONSTACK = 0x08000000;
-        pub const SA_NODEFER = 0x40000000;
-        pub const SA_RESTORER = 0x04000000;
+                     pub const SA_NOCLDSTOP = 1;
+                     pub const SA_NOCLDWAIT = 2;
+                     pub const SA_SIGINFO = 4;
+                     pub const SA_RESTART = 0x10000000;
+                     pub const SA_RESETHAND = 0x80000000;
+                     pub const SA_ONSTACK = 0x08000000;
+                     pub const SA_NODEFER = 0x40000000;
+                     pub const SA_RESTORER = 0x04000000;
 
-        pub const SIG_BLOCK = 0;
-        pub const SIG_UNBLOCK = 1;
-        pub const SIG_SETMASK = 2;
+                     pub const SIG_BLOCK = 0;
+                     pub const SIG_UNBLOCK = 1;
+                     pub const SIG_SETMASK = 2;
     };
 
 pub const SIGHUP = 1;
@@ -420,33 +420,33 @@ pub const AF_MAX = PF_MAX;
 
 pub usingnamespace if (!is_mips)
     struct {
-        pub const SO_DEBUG = 1;
-        pub const SO_REUSEADDR = 2;
-        pub const SO_TYPE = 3;
-        pub const SO_ERROR = 4;
-        pub const SO_DONTROUTE = 5;
-        pub const SO_BROADCAST = 6;
-        pub const SO_SNDBUF = 7;
-        pub const SO_RCVBUF = 8;
-        pub const SO_KEEPALIVE = 9;
-        pub const SO_OOBINLINE = 10;
-        pub const SO_NO_CHECK = 11;
-        pub const SO_PRIORITY = 12;
-        pub const SO_LINGER = 13;
-        pub const SO_BSDCOMPAT = 14;
-        pub const SO_REUSEPORT = 15;
-        pub const SO_PASSCRED = 16;
-        pub const SO_PEERCRED = 17;
-        pub const SO_RCVLOWAT = 18;
-        pub const SO_SNDLOWAT = 19;
-        pub const SO_RCVTIMEO = 20;
-        pub const SO_SNDTIMEO = 21;
-        pub const SO_ACCEPTCONN = 30;
-        pub const SO_PEERSEC = 31;
-        pub const SO_SNDBUFFORCE = 32;
-        pub const SO_RCVBUFFORCE = 33;
-        pub const SO_PROTOCOL = 38;
-        pub const SO_DOMAIN = 39;
+                     pub const SO_DEBUG = 1;
+                     pub const SO_REUSEADDR = 2;
+                     pub const SO_TYPE = 3;
+                     pub const SO_ERROR = 4;
+                     pub const SO_DONTROUTE = 5;
+                     pub const SO_BROADCAST = 6;
+                     pub const SO_SNDBUF = 7;
+                     pub const SO_RCVBUF = 8;
+                     pub const SO_KEEPALIVE = 9;
+                     pub const SO_OOBINLINE = 10;
+                     pub const SO_NO_CHECK = 11;
+                     pub const SO_PRIORITY = 12;
+                     pub const SO_LINGER = 13;
+                     pub const SO_BSDCOMPAT = 14;
+                     pub const SO_REUSEPORT = 15;
+                     pub const SO_PASSCRED = 16;
+                     pub const SO_PEERCRED = 17;
+                     pub const SO_RCVLOWAT = 18;
+                     pub const SO_SNDLOWAT = 19;
+                     pub const SO_RCVTIMEO = 20;
+                     pub const SO_SNDTIMEO = 21;
+                     pub const SO_ACCEPTCONN = 30;
+                     pub const SO_PEERSEC = 31;
+                     pub const SO_SNDBUFFORCE = 32;
+                     pub const SO_RCVBUFFORCE = 33;
+                     pub const SO_PROTOCOL = 38;
+                     pub const SO_DOMAIN = 39;
     }
 else
     struct {};
@@ -866,17 +866,17 @@ pub const app_mask: sigset_t = [2]u32{ 0xfffffffc, 0x7fffffff } ++ [_]u32{0xffff
 
 pub const k_sigaction = if (is_mips)
     extern struct {
-        flags: usize,
-        sigaction: ?fn (i32, *siginfo_t, ?*c_void) callconv(.C) void,
-        mask: [4]u32,
-        restorer: fn () callconv(.C) void,
+                     flags: usize,
+                     sigaction: ?fn (i32, *siginfo_t, ?*c_void) callconv(.C) void,
+                     mask: [4]u32,
+                     restorer: fn () callconv(.C) void,
     }
 else
     extern struct {
-        sigaction: ?fn (i32, *siginfo_t, ?*c_void) callconv(.C) void,
-        flags: usize,
-        restorer: fn () callconv(.C) void,
-        mask: [2]u32,
+                     sigaction: ?fn (i32, *siginfo_t, ?*c_void) callconv(.C) void,
+                     flags: usize,
+                     restorer: fn () callconv(.C) void,
+                     mask: [2]u32,
     };
 
 /// Renamed from `sigaction` to `Sigaction` to avoid conflict with the syscall.
@@ -972,12 +972,12 @@ pub const epoll_data = extern union {
 // 32bit counterpart
 pub const epoll_event = switch (builtin.arch) {
     .x86_64 => packed struct {
-        events: u32,
-        data: epoll_data,
+                     events: u32,
+                     data: epoll_data,
     },
     else => extern struct {
-        events: u32,
-        data: epoll_data,
+                     events: u32,
+                     data: epoll_data,
     },
 };
 
@@ -1011,8 +1011,8 @@ pub const vfs_cap_data = extern struct {
     //all of these are mandated as little endian
     //when on disk.
     const Data = struct {
-        permitted: u32,
-        inheritable: u32,
+                     permitted: u32,
+                     inheritable: u32,
     };
 
     magic_etc: u32,
@@ -1103,7 +1103,7 @@ pub const dirent64 = extern struct {
     d_name: u8, // field address is the address of first byte of name https://github.com/ziglang/zig/issues/173
 
     pub fn reclen(self: dirent64) u16 {
-        return self.d_reclen;
+                     return self.d_reclen;
     }
 };
 
@@ -1121,7 +1121,7 @@ pub const cpu_count_t = std.meta.Int(.unsigned, std.math.log2(CPU_SETSIZE * 8));
 pub fn CPU_COUNT(set: cpu_set_t) cpu_count_t {
     var sum: cpu_count_t = 0;
     for (set) |x| {
-        sum += @popCount(usize, x);
+                     sum += @popCount(usize, x);
     }
     return sum;
 }
@@ -1155,15 +1155,15 @@ pub const SS_AUTODISARM = 1 << 31;
 pub const stack_t = if (is_mips)
     // IRIX compatible stack_t
     extern struct {
-        ss_sp: [*]u8,
-        ss_size: usize,
-        ss_flags: i32,
+                     ss_sp: [*]u8,
+                     ss_size: usize,
+                     ss_flags: i32,
     }
 else
     extern struct {
-        ss_sp: [*]u8,
-        ss_flags: i32,
-        ss_size: usize,
+                     ss_sp: [*]u8,
+                     ss_flags: i32,
+                     ss_size: usize,
     };
 
 pub const sigval = extern union {
@@ -1174,60 +1174,60 @@ pub const sigval = extern union {
 const siginfo_fields_union = extern union {
     pad: [128 - 2 * @sizeOf(c_int) - @sizeOf(c_long)]u8,
     common: extern struct {
-        first: extern union {
-            piduid: extern struct {
-                pid: pid_t,
-                uid: uid_t,
-            },
-            timer: extern struct {
-                timerid: i32,
-                overrun: i32,
-            },
-        },
-        second: extern union {
-            value: sigval,
-            sigchld: extern struct {
-                status: i32,
-                utime: clock_t,
-                stime: clock_t,
-            },
-        },
+                     first: extern union {
+                                      piduid: extern struct {
+                                          pid: pid_t,
+                                          uid: uid_t,
+                                      },
+                                      timer: extern struct {
+                                          timerid: i32,
+                                          overrun: i32,
+                                      },
+                     },
+                     second: extern union {
+                                      value: sigval,
+                                      sigchld: extern struct {
+                                          status: i32,
+                                          utime: clock_t,
+                                          stime: clock_t,
+                                      },
+                     },
     },
     sigfault: extern struct {
-        addr: *c_void,
-        addr_lsb: i16,
-        first: extern union {
-            addr_bnd: extern struct {
-                lower: *c_void,
-                upper: *c_void,
-            },
-            pkey: u32,
-        },
+                     addr: *c_void,
+                     addr_lsb: i16,
+                     first: extern union {
+                                      addr_bnd: extern struct {
+                                          lower: *c_void,
+                                          upper: *c_void,
+                                      },
+                                      pkey: u32,
+                     },
     },
     sigpoll: extern struct {
-        band: isize,
-        fd: i32,
+                     band: isize,
+                     fd: i32,
     },
     sigsys: extern struct {
-        call_addr: *c_void,
-        syscall: i32,
-        arch: u32,
+                     call_addr: *c_void,
+                     syscall: i32,
+                     arch: u32,
     },
 };
 
 pub const siginfo_t = if (is_mips)
     extern struct {
-        signo: i32,
-        code: i32,
-        errno: i32,
-        fields: siginfo_fields_union,
+                     signo: i32,
+                     code: i32,
+                     errno: i32,
+                     fields: siginfo_fields_union,
     }
 else
     extern struct {
-        signo: i32,
-        errno: i32,
-        code: i32,
-        fields: siginfo_fields_union,
+                     signo: i32,
+                     errno: i32,
+                     code: i32,
+                     fields: siginfo_fields_union,
     };
 
 pub const io_uring_params = extern struct {
@@ -1908,21 +1908,21 @@ pub const ifmap = extern struct {
 
 pub const ifreq = extern struct {
     ifrn: extern union {
-        name: [IFNAMESIZE]u8,
+                     name: [IFNAMESIZE]u8,
     },
     ifru: extern union {
-        addr: sockaddr,
-        dstaddr: sockaddr,
-        broadaddr: sockaddr,
-        netmask: sockaddr,
-        hwaddr: sockaddr,
-        flags: i16,
-        ivalue: i32,
-        mtu: i32,
-        map: ifmap,
-        slave: [IFNAMESIZE - 1:0]u8,
-        newname: [IFNAMESIZE - 1:0]u8,
-        data: ?[*]u8,
+                     addr: sockaddr,
+                     dstaddr: sockaddr,
+                     broadaddr: sockaddr,
+                     netmask: sockaddr,
+                     hwaddr: sockaddr,
+                     flags: i16,
+                     ivalue: i32,
+                     mtu: i32,
+                     map: ifmap,
+                     slave: [IFNAMESIZE - 1:0]u8,
+                     newname: [IFNAMESIZE - 1:0]u8,
+                     data: ?[*]u8,
     },
 };
 

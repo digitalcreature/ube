@@ -75,7 +75,7 @@ extern "C" {
   typedef struct {
     RsvpObjHdr sess_header;
     union {
-      Session_IPv4 sess_ipv4;
+                   Session_IPv4 sess_ipv4;
     } sess_u;
   } RSVP_SESSION;
 
@@ -94,7 +94,7 @@ extern "C" {
   typedef struct {
     RsvpObjHdr hop_header;
     union {
-      Rsvp_Hop_IPv4 hop_ipv4;
+                   Rsvp_Hop_IPv4 hop_ipv4;
     } hop_u;
   } RSVP_HOP;
 
@@ -140,8 +140,8 @@ extern "C" {
   typedef struct {
     RsvpObjHdr filt_header;
     union {
-      Filter_Spec_IPv4 filt_ipv4;
-      Filter_Spec_IPv4GPI filt_ipv4gpi;
+                   Filter_Spec_IPv4 filt_ipv4;
+                   Filter_Spec_IPv4GPI filt_ipv4gpi;
     } filt_u;
   } FILTER_SPEC;
 
@@ -162,7 +162,7 @@ extern "C" {
   typedef struct {
     RsvpObjHdr scopl_header;
     union {
-      Scope_list_ipv4 scopl_ipv4;
+                   Scope_list_ipv4 scopl_ipv4;
     } scope_u;
   } RSVP_SCOPE;
 
@@ -192,7 +192,7 @@ extern "C" {
   typedef struct {
     RsvpObjHdr errs_header;
     union {
-      Error_Spec_IPv4 errs_ipv4;
+                   Error_Spec_IPv4 errs_ipv4;
     } errs_u;
   } ERROR_SPEC;
 
@@ -308,8 +308,8 @@ extern "C" {
   typedef struct {
     IntServMainHdr st_mh;
     union {
-      GenTspec gen_stspec;
-      QualTspec qual_stspec;
+                   GenTspec gen_stspec;
+                   QualTspec qual_stspec;
     } tspec_u;
   } IntServTspecBody;
 
@@ -370,9 +370,9 @@ extern "C" {
   typedef struct {
     IntServMainHdr spec_mh;
     union {
-      CtrlLoadFlowspec CL_spec;
-      GuarFlowSpec G_spec;
-      QualAppFlowSpec Q_spec;
+                   CtrlLoadFlowspec CL_spec;
+                   GuarFlowSpec G_spec;
+                   QualAppFlowSpec Q_spec;
     } spec_u;
   } IntServFlowSpec;
 
@@ -389,12 +389,12 @@ extern "C" {
 
   typedef struct flow_desc {
     union {
-      SENDER_TSPEC *stspec;
-      IS_FLOWSPEC *isflow;
+                   SENDER_TSPEC *stspec;
+                   IS_FLOWSPEC *isflow;
     } u1;
     union {
-      SENDER_TEMPLATE *stemp;
-      FILTER_SPEC *fspec;
+                   SENDER_TEMPLATE *stemp;
+                   FILTER_SPEC *fspec;
     } u2;
   } FLOW_DESC;
 

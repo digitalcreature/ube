@@ -573,14 +573,14 @@ extern "C" {
 #else
   typedef struct IMSMQQueryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQuery *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQuery *This);
-      ULONG (WINAPI *Release)(IMSMQQuery *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQuery *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQuery *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQuery *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQuery *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *LookupQueue)(IMSMQQuery *This,VARIANT *QueueGuid,VARIANT *ServiceTypeGuid,VARIANT *Label,VARIANT *CreateTime,VARIANT *ModifyTime,VARIANT *RelServiceType,VARIANT *RelLabel,VARIANT *RelCreateTime,VARIANT *RelModifyTime,IMSMQQueueInfos **ppqinfos);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQuery *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQuery *This);
+                   ULONG (WINAPI *Release)(IMSMQQuery *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQuery *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQuery *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQuery *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQuery *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *LookupQueue)(IMSMQQuery *This,VARIANT *QueueGuid,VARIANT *ServiceTypeGuid,VARIANT *Label,VARIANT *CreateTime,VARIANT *ModifyTime,VARIANT *RelServiceType,VARIANT *RelLabel,VARIANT *RelCreateTime,VARIANT *RelModifyTime,IMSMQQueueInfos **ppqinfos);
     END_INTERFACE
   } IMSMQQueryVtbl;
   struct IMSMQQuery {
@@ -641,43 +641,43 @@ extern "C" {
 #else
   typedef struct IMSMQQueueInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueueInfo *This);
-      ULONG (WINAPI *Release)(IMSMQQueueInfo *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfo *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueueInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_QueueGuid)(IMSMQQueueInfo *This,BSTR *pbstrGuidQueue);
-      HRESULT (WINAPI *get_ServiceTypeGuid)(IMSMQQueueInfo *This,BSTR *pbstrGuidServiceType);
-      HRESULT (WINAPI *put_ServiceTypeGuid)(IMSMQQueueInfo *This,BSTR bstrGuidServiceType);
-      HRESULT (WINAPI *get_Label)(IMSMQQueueInfo *This,BSTR *pbstrLabel);
-      HRESULT (WINAPI *put_Label)(IMSMQQueueInfo *This,BSTR bstrLabel);
-      HRESULT (WINAPI *get_PathName)(IMSMQQueueInfo *This,BSTR *pbstrPathName);
-      HRESULT (WINAPI *put_PathName)(IMSMQQueueInfo *This,BSTR bstrPathName);
-      HRESULT (WINAPI *get_FormatName)(IMSMQQueueInfo *This,BSTR *pbstrFormatName);
-      HRESULT (WINAPI *put_FormatName)(IMSMQQueueInfo *This,BSTR bstrFormatName);
-      HRESULT (WINAPI *get_IsTransactional)(IMSMQQueueInfo *This,Boolean *pisTransactional);
-      HRESULT (WINAPI *get_PrivLevel)(IMSMQQueueInfo *This,__LONG32 *plPrivLevel);
-      HRESULT (WINAPI *put_PrivLevel)(IMSMQQueueInfo *This,__LONG32 lPrivLevel);
-      HRESULT (WINAPI *get_Journal)(IMSMQQueueInfo *This,__LONG32 *plJournal);
-      HRESULT (WINAPI *put_Journal)(IMSMQQueueInfo *This,__LONG32 lJournal);
-      HRESULT (WINAPI *get_Quota)(IMSMQQueueInfo *This,__LONG32 *plQuota);
-      HRESULT (WINAPI *put_Quota)(IMSMQQueueInfo *This,__LONG32 lQuota);
-      HRESULT (WINAPI *get_BasePriority)(IMSMQQueueInfo *This,__LONG32 *plBasePriority);
-      HRESULT (WINAPI *put_BasePriority)(IMSMQQueueInfo *This,__LONG32 lBasePriority);
-      HRESULT (WINAPI *get_CreateTime)(IMSMQQueueInfo *This,VARIANT *pvarCreateTime);
-      HRESULT (WINAPI *get_ModifyTime)(IMSMQQueueInfo *This,VARIANT *pvarModifyTime);
-      HRESULT (WINAPI *get_Authenticate)(IMSMQQueueInfo *This,__LONG32 *plAuthenticate);
-      HRESULT (WINAPI *put_Authenticate)(IMSMQQueueInfo *This,__LONG32 lAuthenticate);
-      HRESULT (WINAPI *get_JournalQuota)(IMSMQQueueInfo *This,__LONG32 *plJournalQuota);
-      HRESULT (WINAPI *put_JournalQuota)(IMSMQQueueInfo *This,__LONG32 lJournalQuota);
-      HRESULT (WINAPI *get_IsWorldReadable)(IMSMQQueueInfo *This,Boolean *pisWorldReadable);
-      HRESULT (WINAPI *Create)(IMSMQQueueInfo *This,VARIANT *IsTransactional,VARIANT *IsWorldReadable);
-      HRESULT (WINAPI *Delete)(IMSMQQueueInfo *This);
-      HRESULT (WINAPI *Open)(IMSMQQueueInfo *This,__LONG32 Access,__LONG32 ShareMode,IMSMQQueue **ppq);
-      HRESULT (WINAPI *Refresh)(IMSMQQueueInfo *This);
-      HRESULT (WINAPI *Update)(IMSMQQueueInfo *This);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueueInfo *This);
+                   ULONG (WINAPI *Release)(IMSMQQueueInfo *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfo *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfo *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfo *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueueInfo *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_QueueGuid)(IMSMQQueueInfo *This,BSTR *pbstrGuidQueue);
+                   HRESULT (WINAPI *get_ServiceTypeGuid)(IMSMQQueueInfo *This,BSTR *pbstrGuidServiceType);
+                   HRESULT (WINAPI *put_ServiceTypeGuid)(IMSMQQueueInfo *This,BSTR bstrGuidServiceType);
+                   HRESULT (WINAPI *get_Label)(IMSMQQueueInfo *This,BSTR *pbstrLabel);
+                   HRESULT (WINAPI *put_Label)(IMSMQQueueInfo *This,BSTR bstrLabel);
+                   HRESULT (WINAPI *get_PathName)(IMSMQQueueInfo *This,BSTR *pbstrPathName);
+                   HRESULT (WINAPI *put_PathName)(IMSMQQueueInfo *This,BSTR bstrPathName);
+                   HRESULT (WINAPI *get_FormatName)(IMSMQQueueInfo *This,BSTR *pbstrFormatName);
+                   HRESULT (WINAPI *put_FormatName)(IMSMQQueueInfo *This,BSTR bstrFormatName);
+                   HRESULT (WINAPI *get_IsTransactional)(IMSMQQueueInfo *This,Boolean *pisTransactional);
+                   HRESULT (WINAPI *get_PrivLevel)(IMSMQQueueInfo *This,__LONG32 *plPrivLevel);
+                   HRESULT (WINAPI *put_PrivLevel)(IMSMQQueueInfo *This,__LONG32 lPrivLevel);
+                   HRESULT (WINAPI *get_Journal)(IMSMQQueueInfo *This,__LONG32 *plJournal);
+                   HRESULT (WINAPI *put_Journal)(IMSMQQueueInfo *This,__LONG32 lJournal);
+                   HRESULT (WINAPI *get_Quota)(IMSMQQueueInfo *This,__LONG32 *plQuota);
+                   HRESULT (WINAPI *put_Quota)(IMSMQQueueInfo *This,__LONG32 lQuota);
+                   HRESULT (WINAPI *get_BasePriority)(IMSMQQueueInfo *This,__LONG32 *plBasePriority);
+                   HRESULT (WINAPI *put_BasePriority)(IMSMQQueueInfo *This,__LONG32 lBasePriority);
+                   HRESULT (WINAPI *get_CreateTime)(IMSMQQueueInfo *This,VARIANT *pvarCreateTime);
+                   HRESULT (WINAPI *get_ModifyTime)(IMSMQQueueInfo *This,VARIANT *pvarModifyTime);
+                   HRESULT (WINAPI *get_Authenticate)(IMSMQQueueInfo *This,__LONG32 *plAuthenticate);
+                   HRESULT (WINAPI *put_Authenticate)(IMSMQQueueInfo *This,__LONG32 lAuthenticate);
+                   HRESULT (WINAPI *get_JournalQuota)(IMSMQQueueInfo *This,__LONG32 *plJournalQuota);
+                   HRESULT (WINAPI *put_JournalQuota)(IMSMQQueueInfo *This,__LONG32 lJournalQuota);
+                   HRESULT (WINAPI *get_IsWorldReadable)(IMSMQQueueInfo *This,Boolean *pisWorldReadable);
+                   HRESULT (WINAPI *Create)(IMSMQQueueInfo *This,VARIANT *IsTransactional,VARIANT *IsWorldReadable);
+                   HRESULT (WINAPI *Delete)(IMSMQQueueInfo *This);
+                   HRESULT (WINAPI *Open)(IMSMQQueueInfo *This,__LONG32 Access,__LONG32 ShareMode,IMSMQQueue **ppq);
+                   HRESULT (WINAPI *Refresh)(IMSMQQueueInfo *This);
+                   HRESULT (WINAPI *Update)(IMSMQQueueInfo *This);
     END_INTERFACE
   } IMSMQQueueInfoVtbl;
   struct IMSMQQueueInfo {
@@ -829,47 +829,47 @@ extern "C" {
 #else
   typedef struct IMSMQQueueInfo2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfo2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueueInfo2 *This);
-      ULONG (WINAPI *Release)(IMSMQQueueInfo2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfo2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfo2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfo2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueueInfo2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_QueueGuid)(IMSMQQueueInfo2 *This,BSTR *pbstrGuidQueue);
-      HRESULT (WINAPI *get_ServiceTypeGuid)(IMSMQQueueInfo2 *This,BSTR *pbstrGuidServiceType);
-      HRESULT (WINAPI *put_ServiceTypeGuid)(IMSMQQueueInfo2 *This,BSTR bstrGuidServiceType);
-      HRESULT (WINAPI *get_Label)(IMSMQQueueInfo2 *This,BSTR *pbstrLabel);
-      HRESULT (WINAPI *put_Label)(IMSMQQueueInfo2 *This,BSTR bstrLabel);
-      HRESULT (WINAPI *get_PathName)(IMSMQQueueInfo2 *This,BSTR *pbstrPathName);
-      HRESULT (WINAPI *put_PathName)(IMSMQQueueInfo2 *This,BSTR bstrPathName);
-      HRESULT (WINAPI *get_FormatName)(IMSMQQueueInfo2 *This,BSTR *pbstrFormatName);
-      HRESULT (WINAPI *put_FormatName)(IMSMQQueueInfo2 *This,BSTR bstrFormatName);
-      HRESULT (WINAPI *get_IsTransactional)(IMSMQQueueInfo2 *This,Boolean *pisTransactional);
-      HRESULT (WINAPI *get_PrivLevel)(IMSMQQueueInfo2 *This,__LONG32 *plPrivLevel);
-      HRESULT (WINAPI *put_PrivLevel)(IMSMQQueueInfo2 *This,__LONG32 lPrivLevel);
-      HRESULT (WINAPI *get_Journal)(IMSMQQueueInfo2 *This,__LONG32 *plJournal);
-      HRESULT (WINAPI *put_Journal)(IMSMQQueueInfo2 *This,__LONG32 lJournal);
-      HRESULT (WINAPI *get_Quota)(IMSMQQueueInfo2 *This,__LONG32 *plQuota);
-      HRESULT (WINAPI *put_Quota)(IMSMQQueueInfo2 *This,__LONG32 lQuota);
-      HRESULT (WINAPI *get_BasePriority)(IMSMQQueueInfo2 *This,__LONG32 *plBasePriority);
-      HRESULT (WINAPI *put_BasePriority)(IMSMQQueueInfo2 *This,__LONG32 lBasePriority);
-      HRESULT (WINAPI *get_CreateTime)(IMSMQQueueInfo2 *This,VARIANT *pvarCreateTime);
-      HRESULT (WINAPI *get_ModifyTime)(IMSMQQueueInfo2 *This,VARIANT *pvarModifyTime);
-      HRESULT (WINAPI *get_Authenticate)(IMSMQQueueInfo2 *This,__LONG32 *plAuthenticate);
-      HRESULT (WINAPI *put_Authenticate)(IMSMQQueueInfo2 *This,__LONG32 lAuthenticate);
-      HRESULT (WINAPI *get_JournalQuota)(IMSMQQueueInfo2 *This,__LONG32 *plJournalQuota);
-      HRESULT (WINAPI *put_JournalQuota)(IMSMQQueueInfo2 *This,__LONG32 lJournalQuota);
-      HRESULT (WINAPI *get_IsWorldReadable)(IMSMQQueueInfo2 *This,Boolean *pisWorldReadable);
-      HRESULT (WINAPI *Create)(IMSMQQueueInfo2 *This,VARIANT *IsTransactional,VARIANT *IsWorldReadable);
-      HRESULT (WINAPI *Delete)(IMSMQQueueInfo2 *This);
-      HRESULT (WINAPI *Open)(IMSMQQueueInfo2 *This,__LONG32 Access,__LONG32 ShareMode,IMSMQQueue2 **ppq);
-      HRESULT (WINAPI *Refresh)(IMSMQQueueInfo2 *This);
-      HRESULT (WINAPI *Update)(IMSMQQueueInfo2 *This);
-      HRESULT (WINAPI *get_PathNameDNS)(IMSMQQueueInfo2 *This,BSTR *pbstrPathNameDNS);
-      HRESULT (WINAPI *get_Properties)(IMSMQQueueInfo2 *This,IDispatch **ppcolProperties);
-      HRESULT (WINAPI *get_Security)(IMSMQQueueInfo2 *This,VARIANT *pvarSecurity);
-      HRESULT (WINAPI *put_Security)(IMSMQQueueInfo2 *This,VARIANT varSecurity);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfo2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueueInfo2 *This);
+                   ULONG (WINAPI *Release)(IMSMQQueueInfo2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfo2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfo2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfo2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueueInfo2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_QueueGuid)(IMSMQQueueInfo2 *This,BSTR *pbstrGuidQueue);
+                   HRESULT (WINAPI *get_ServiceTypeGuid)(IMSMQQueueInfo2 *This,BSTR *pbstrGuidServiceType);
+                   HRESULT (WINAPI *put_ServiceTypeGuid)(IMSMQQueueInfo2 *This,BSTR bstrGuidServiceType);
+                   HRESULT (WINAPI *get_Label)(IMSMQQueueInfo2 *This,BSTR *pbstrLabel);
+                   HRESULT (WINAPI *put_Label)(IMSMQQueueInfo2 *This,BSTR bstrLabel);
+                   HRESULT (WINAPI *get_PathName)(IMSMQQueueInfo2 *This,BSTR *pbstrPathName);
+                   HRESULT (WINAPI *put_PathName)(IMSMQQueueInfo2 *This,BSTR bstrPathName);
+                   HRESULT (WINAPI *get_FormatName)(IMSMQQueueInfo2 *This,BSTR *pbstrFormatName);
+                   HRESULT (WINAPI *put_FormatName)(IMSMQQueueInfo2 *This,BSTR bstrFormatName);
+                   HRESULT (WINAPI *get_IsTransactional)(IMSMQQueueInfo2 *This,Boolean *pisTransactional);
+                   HRESULT (WINAPI *get_PrivLevel)(IMSMQQueueInfo2 *This,__LONG32 *plPrivLevel);
+                   HRESULT (WINAPI *put_PrivLevel)(IMSMQQueueInfo2 *This,__LONG32 lPrivLevel);
+                   HRESULT (WINAPI *get_Journal)(IMSMQQueueInfo2 *This,__LONG32 *plJournal);
+                   HRESULT (WINAPI *put_Journal)(IMSMQQueueInfo2 *This,__LONG32 lJournal);
+                   HRESULT (WINAPI *get_Quota)(IMSMQQueueInfo2 *This,__LONG32 *plQuota);
+                   HRESULT (WINAPI *put_Quota)(IMSMQQueueInfo2 *This,__LONG32 lQuota);
+                   HRESULT (WINAPI *get_BasePriority)(IMSMQQueueInfo2 *This,__LONG32 *plBasePriority);
+                   HRESULT (WINAPI *put_BasePriority)(IMSMQQueueInfo2 *This,__LONG32 lBasePriority);
+                   HRESULT (WINAPI *get_CreateTime)(IMSMQQueueInfo2 *This,VARIANT *pvarCreateTime);
+                   HRESULT (WINAPI *get_ModifyTime)(IMSMQQueueInfo2 *This,VARIANT *pvarModifyTime);
+                   HRESULT (WINAPI *get_Authenticate)(IMSMQQueueInfo2 *This,__LONG32 *plAuthenticate);
+                   HRESULT (WINAPI *put_Authenticate)(IMSMQQueueInfo2 *This,__LONG32 lAuthenticate);
+                   HRESULT (WINAPI *get_JournalQuota)(IMSMQQueueInfo2 *This,__LONG32 *plJournalQuota);
+                   HRESULT (WINAPI *put_JournalQuota)(IMSMQQueueInfo2 *This,__LONG32 lJournalQuota);
+                   HRESULT (WINAPI *get_IsWorldReadable)(IMSMQQueueInfo2 *This,Boolean *pisWorldReadable);
+                   HRESULT (WINAPI *Create)(IMSMQQueueInfo2 *This,VARIANT *IsTransactional,VARIANT *IsWorldReadable);
+                   HRESULT (WINAPI *Delete)(IMSMQQueueInfo2 *This);
+                   HRESULT (WINAPI *Open)(IMSMQQueueInfo2 *This,__LONG32 Access,__LONG32 ShareMode,IMSMQQueue2 **ppq);
+                   HRESULT (WINAPI *Refresh)(IMSMQQueueInfo2 *This);
+                   HRESULT (WINAPI *Update)(IMSMQQueueInfo2 *This);
+                   HRESULT (WINAPI *get_PathNameDNS)(IMSMQQueueInfo2 *This,BSTR *pbstrPathNameDNS);
+                   HRESULT (WINAPI *get_Properties)(IMSMQQueueInfo2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *get_Security)(IMSMQQueueInfo2 *This,VARIANT *pvarSecurity);
+                   HRESULT (WINAPI *put_Security)(IMSMQQueueInfo2 *This,VARIANT varSecurity);
     END_INTERFACE
   } IMSMQQueueInfo2Vtbl;
   struct IMSMQQueueInfo2 {
@@ -1038,52 +1038,52 @@ extern "C" {
 #else
   typedef struct IMSMQQueueInfo3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfo3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueueInfo3 *This);
-      ULONG (WINAPI *Release)(IMSMQQueueInfo3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfo3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfo3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfo3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueueInfo3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_QueueGuid)(IMSMQQueueInfo3 *This,BSTR *pbstrGuidQueue);
-      HRESULT (WINAPI *get_ServiceTypeGuid)(IMSMQQueueInfo3 *This,BSTR *pbstrGuidServiceType);
-      HRESULT (WINAPI *put_ServiceTypeGuid)(IMSMQQueueInfo3 *This,BSTR bstrGuidServiceType);
-      HRESULT (WINAPI *get_Label)(IMSMQQueueInfo3 *This,BSTR *pbstrLabel);
-      HRESULT (WINAPI *put_Label)(IMSMQQueueInfo3 *This,BSTR bstrLabel);
-      HRESULT (WINAPI *get_PathName)(IMSMQQueueInfo3 *This,BSTR *pbstrPathName);
-      HRESULT (WINAPI *put_PathName)(IMSMQQueueInfo3 *This,BSTR bstrPathName);
-      HRESULT (WINAPI *get_FormatName)(IMSMQQueueInfo3 *This,BSTR *pbstrFormatName);
-      HRESULT (WINAPI *put_FormatName)(IMSMQQueueInfo3 *This,BSTR bstrFormatName);
-      HRESULT (WINAPI *get_IsTransactional)(IMSMQQueueInfo3 *This,Boolean *pisTransactional);
-      HRESULT (WINAPI *get_PrivLevel)(IMSMQQueueInfo3 *This,__LONG32 *plPrivLevel);
-      HRESULT (WINAPI *put_PrivLevel)(IMSMQQueueInfo3 *This,__LONG32 lPrivLevel);
-      HRESULT (WINAPI *get_Journal)(IMSMQQueueInfo3 *This,__LONG32 *plJournal);
-      HRESULT (WINAPI *put_Journal)(IMSMQQueueInfo3 *This,__LONG32 lJournal);
-      HRESULT (WINAPI *get_Quota)(IMSMQQueueInfo3 *This,__LONG32 *plQuota);
-      HRESULT (WINAPI *put_Quota)(IMSMQQueueInfo3 *This,__LONG32 lQuota);
-      HRESULT (WINAPI *get_BasePriority)(IMSMQQueueInfo3 *This,__LONG32 *plBasePriority);
-      HRESULT (WINAPI *put_BasePriority)(IMSMQQueueInfo3 *This,__LONG32 lBasePriority);
-      HRESULT (WINAPI *get_CreateTime)(IMSMQQueueInfo3 *This,VARIANT *pvarCreateTime);
-      HRESULT (WINAPI *get_ModifyTime)(IMSMQQueueInfo3 *This,VARIANT *pvarModifyTime);
-      HRESULT (WINAPI *get_Authenticate)(IMSMQQueueInfo3 *This,__LONG32 *plAuthenticate);
-      HRESULT (WINAPI *put_Authenticate)(IMSMQQueueInfo3 *This,__LONG32 lAuthenticate);
-      HRESULT (WINAPI *get_JournalQuota)(IMSMQQueueInfo3 *This,__LONG32 *plJournalQuota);
-      HRESULT (WINAPI *put_JournalQuota)(IMSMQQueueInfo3 *This,__LONG32 lJournalQuota);
-      HRESULT (WINAPI *get_IsWorldReadable)(IMSMQQueueInfo3 *This,Boolean *pisWorldReadable);
-      HRESULT (WINAPI *Create)(IMSMQQueueInfo3 *This,VARIANT *IsTransactional,VARIANT *IsWorldReadable);
-      HRESULT (WINAPI *Delete)(IMSMQQueueInfo3 *This);
-      HRESULT (WINAPI *Open)(IMSMQQueueInfo3 *This,__LONG32 Access,__LONG32 ShareMode,IMSMQQueue3 **ppq);
-      HRESULT (WINAPI *Refresh)(IMSMQQueueInfo3 *This);
-      HRESULT (WINAPI *Update)(IMSMQQueueInfo3 *This);
-      HRESULT (WINAPI *get_PathNameDNS)(IMSMQQueueInfo3 *This,BSTR *pbstrPathNameDNS);
-      HRESULT (WINAPI *get_Properties)(IMSMQQueueInfo3 *This,IDispatch **ppcolProperties);
-      HRESULT (WINAPI *get_Security)(IMSMQQueueInfo3 *This,VARIANT *pvarSecurity);
-      HRESULT (WINAPI *put_Security)(IMSMQQueueInfo3 *This,VARIANT varSecurity);
-      HRESULT (WINAPI *get_IsTransactional2)(IMSMQQueueInfo3 *This,VARIANT_BOOL *pisTransactional);
-      HRESULT (WINAPI *get_IsWorldReadable2)(IMSMQQueueInfo3 *This,VARIANT_BOOL *pisWorldReadable);
-      HRESULT (WINAPI *get_MulticastAddress)(IMSMQQueueInfo3 *This,BSTR *pbstrMulticastAddress);
-      HRESULT (WINAPI *put_MulticastAddress)(IMSMQQueueInfo3 *This,BSTR bstrMulticastAddress);
-      HRESULT (WINAPI *get_ADsPath)(IMSMQQueueInfo3 *This,BSTR *pbstrADsPath);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfo3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueueInfo3 *This);
+                   ULONG (WINAPI *Release)(IMSMQQueueInfo3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfo3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfo3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfo3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueueInfo3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_QueueGuid)(IMSMQQueueInfo3 *This,BSTR *pbstrGuidQueue);
+                   HRESULT (WINAPI *get_ServiceTypeGuid)(IMSMQQueueInfo3 *This,BSTR *pbstrGuidServiceType);
+                   HRESULT (WINAPI *put_ServiceTypeGuid)(IMSMQQueueInfo3 *This,BSTR bstrGuidServiceType);
+                   HRESULT (WINAPI *get_Label)(IMSMQQueueInfo3 *This,BSTR *pbstrLabel);
+                   HRESULT (WINAPI *put_Label)(IMSMQQueueInfo3 *This,BSTR bstrLabel);
+                   HRESULT (WINAPI *get_PathName)(IMSMQQueueInfo3 *This,BSTR *pbstrPathName);
+                   HRESULT (WINAPI *put_PathName)(IMSMQQueueInfo3 *This,BSTR bstrPathName);
+                   HRESULT (WINAPI *get_FormatName)(IMSMQQueueInfo3 *This,BSTR *pbstrFormatName);
+                   HRESULT (WINAPI *put_FormatName)(IMSMQQueueInfo3 *This,BSTR bstrFormatName);
+                   HRESULT (WINAPI *get_IsTransactional)(IMSMQQueueInfo3 *This,Boolean *pisTransactional);
+                   HRESULT (WINAPI *get_PrivLevel)(IMSMQQueueInfo3 *This,__LONG32 *plPrivLevel);
+                   HRESULT (WINAPI *put_PrivLevel)(IMSMQQueueInfo3 *This,__LONG32 lPrivLevel);
+                   HRESULT (WINAPI *get_Journal)(IMSMQQueueInfo3 *This,__LONG32 *plJournal);
+                   HRESULT (WINAPI *put_Journal)(IMSMQQueueInfo3 *This,__LONG32 lJournal);
+                   HRESULT (WINAPI *get_Quota)(IMSMQQueueInfo3 *This,__LONG32 *plQuota);
+                   HRESULT (WINAPI *put_Quota)(IMSMQQueueInfo3 *This,__LONG32 lQuota);
+                   HRESULT (WINAPI *get_BasePriority)(IMSMQQueueInfo3 *This,__LONG32 *plBasePriority);
+                   HRESULT (WINAPI *put_BasePriority)(IMSMQQueueInfo3 *This,__LONG32 lBasePriority);
+                   HRESULT (WINAPI *get_CreateTime)(IMSMQQueueInfo3 *This,VARIANT *pvarCreateTime);
+                   HRESULT (WINAPI *get_ModifyTime)(IMSMQQueueInfo3 *This,VARIANT *pvarModifyTime);
+                   HRESULT (WINAPI *get_Authenticate)(IMSMQQueueInfo3 *This,__LONG32 *plAuthenticate);
+                   HRESULT (WINAPI *put_Authenticate)(IMSMQQueueInfo3 *This,__LONG32 lAuthenticate);
+                   HRESULT (WINAPI *get_JournalQuota)(IMSMQQueueInfo3 *This,__LONG32 *plJournalQuota);
+                   HRESULT (WINAPI *put_JournalQuota)(IMSMQQueueInfo3 *This,__LONG32 lJournalQuota);
+                   HRESULT (WINAPI *get_IsWorldReadable)(IMSMQQueueInfo3 *This,Boolean *pisWorldReadable);
+                   HRESULT (WINAPI *Create)(IMSMQQueueInfo3 *This,VARIANT *IsTransactional,VARIANT *IsWorldReadable);
+                   HRESULT (WINAPI *Delete)(IMSMQQueueInfo3 *This);
+                   HRESULT (WINAPI *Open)(IMSMQQueueInfo3 *This,__LONG32 Access,__LONG32 ShareMode,IMSMQQueue3 **ppq);
+                   HRESULT (WINAPI *Refresh)(IMSMQQueueInfo3 *This);
+                   HRESULT (WINAPI *Update)(IMSMQQueueInfo3 *This);
+                   HRESULT (WINAPI *get_PathNameDNS)(IMSMQQueueInfo3 *This,BSTR *pbstrPathNameDNS);
+                   HRESULT (WINAPI *get_Properties)(IMSMQQueueInfo3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *get_Security)(IMSMQQueueInfo3 *This,VARIANT *pvarSecurity);
+                   HRESULT (WINAPI *put_Security)(IMSMQQueueInfo3 *This,VARIANT varSecurity);
+                   HRESULT (WINAPI *get_IsTransactional2)(IMSMQQueueInfo3 *This,VARIANT_BOOL *pisTransactional);
+                   HRESULT (WINAPI *get_IsWorldReadable2)(IMSMQQueueInfo3 *This,VARIANT_BOOL *pisWorldReadable);
+                   HRESULT (WINAPI *get_MulticastAddress)(IMSMQQueueInfo3 *This,BSTR *pbstrMulticastAddress);
+                   HRESULT (WINAPI *put_MulticastAddress)(IMSMQQueueInfo3 *This,BSTR bstrMulticastAddress);
+                   HRESULT (WINAPI *get_ADsPath)(IMSMQQueueInfo3 *This,BSTR *pbstrADsPath);
     END_INTERFACE
   } IMSMQQueueInfo3Vtbl;
   struct IMSMQQueueInfo3 {
@@ -1241,26 +1241,26 @@ extern "C" {
 #else
   typedef struct IMSMQQueueVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueue *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueue *This);
-      ULONG (WINAPI *Release)(IMSMQQueue *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueue *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Access)(IMSMQQueue *This,__LONG32 *plAccess);
-      HRESULT (WINAPI *get_ShareMode)(IMSMQQueue *This,__LONG32 *plShareMode);
-      HRESULT (WINAPI *get_QueueInfo)(IMSMQQueue *This,IMSMQQueueInfo **ppqinfo);
-      HRESULT (WINAPI *get_Handle)(IMSMQQueue *This,__LONG32 *plHandle);
-      HRESULT (WINAPI *get_IsOpen)(IMSMQQueue *This,Boolean *pisOpen);
-      HRESULT (WINAPI *Close)(IMSMQQueue *This);
-      HRESULT (WINAPI *Receive)(IMSMQQueue *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *Peek)(IMSMQQueue *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *EnableNotification)(IMSMQQueue *This,IMSMQEvent *Event,VARIANT *Cursor,VARIANT *ReceiveTimeout);
-      HRESULT (WINAPI *Reset)(IMSMQQueue *This);
-      HRESULT (WINAPI *ReceiveCurrent)(IMSMQQueue *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *PeekNext)(IMSMQQueue *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *PeekCurrent)(IMSMQQueue *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueue *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueue *This);
+                   ULONG (WINAPI *Release)(IMSMQQueue *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueue *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Access)(IMSMQQueue *This,__LONG32 *plAccess);
+                   HRESULT (WINAPI *get_ShareMode)(IMSMQQueue *This,__LONG32 *plShareMode);
+                   HRESULT (WINAPI *get_QueueInfo)(IMSMQQueue *This,IMSMQQueueInfo **ppqinfo);
+                   HRESULT (WINAPI *get_Handle)(IMSMQQueue *This,__LONG32 *plHandle);
+                   HRESULT (WINAPI *get_IsOpen)(IMSMQQueue *This,Boolean *pisOpen);
+                   HRESULT (WINAPI *Close)(IMSMQQueue *This);
+                   HRESULT (WINAPI *Receive)(IMSMQQueue *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *Peek)(IMSMQQueue *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *EnableNotification)(IMSMQQueue *This,IMSMQEvent *Event,VARIANT *Cursor,VARIANT *ReceiveTimeout);
+                   HRESULT (WINAPI *Reset)(IMSMQQueue *This);
+                   HRESULT (WINAPI *ReceiveCurrent)(IMSMQQueue *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *PeekNext)(IMSMQQueue *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *PeekCurrent)(IMSMQQueue *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
     END_INTERFACE
   } IMSMQQueueVtbl;
   struct IMSMQQueue {
@@ -1346,32 +1346,32 @@ extern "C" {
 #else
   typedef struct IMSMQQueue2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueue2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueue2 *This);
-      ULONG (WINAPI *Release)(IMSMQQueue2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueue2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueue2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueue2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueue2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Access)(IMSMQQueue2 *This,__LONG32 *plAccess);
-      HRESULT (WINAPI *get_ShareMode)(IMSMQQueue2 *This,__LONG32 *plShareMode);
-      HRESULT (WINAPI *get_QueueInfo)(IMSMQQueue2 *This,IMSMQQueueInfo2 **ppqinfo);
-      HRESULT (WINAPI *get_Handle)(IMSMQQueue2 *This,__LONG32 *plHandle);
-      HRESULT (WINAPI *get_IsOpen)(IMSMQQueue2 *This,Boolean *pisOpen);
-      HRESULT (WINAPI *Close)(IMSMQQueue2 *This);
-      HRESULT (WINAPI *Receive_v1)(IMSMQQueue2 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *Peek_v1)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *EnableNotification)(IMSMQQueue2 *This,IMSMQEvent2 *Event,VARIANT *Cursor,VARIANT *ReceiveTimeout);
-      HRESULT (WINAPI *Reset)(IMSMQQueue2 *This);
-      HRESULT (WINAPI *ReceiveCurrent_v1)(IMSMQQueue2 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *PeekNext_v1)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *PeekCurrent_v1)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *Receive)(IMSMQQueue2 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
-      HRESULT (WINAPI *Peek)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
-      HRESULT (WINAPI *ReceiveCurrent)(IMSMQQueue2 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
-      HRESULT (WINAPI *PeekNext)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
-      HRESULT (WINAPI *PeekCurrent)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
-      HRESULT (WINAPI *get_Properties)(IMSMQQueue2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueue2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueue2 *This);
+                   ULONG (WINAPI *Release)(IMSMQQueue2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueue2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueue2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueue2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueue2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Access)(IMSMQQueue2 *This,__LONG32 *plAccess);
+                   HRESULT (WINAPI *get_ShareMode)(IMSMQQueue2 *This,__LONG32 *plShareMode);
+                   HRESULT (WINAPI *get_QueueInfo)(IMSMQQueue2 *This,IMSMQQueueInfo2 **ppqinfo);
+                   HRESULT (WINAPI *get_Handle)(IMSMQQueue2 *This,__LONG32 *plHandle);
+                   HRESULT (WINAPI *get_IsOpen)(IMSMQQueue2 *This,Boolean *pisOpen);
+                   HRESULT (WINAPI *Close)(IMSMQQueue2 *This);
+                   HRESULT (WINAPI *Receive_v1)(IMSMQQueue2 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *Peek_v1)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *EnableNotification)(IMSMQQueue2 *This,IMSMQEvent2 *Event,VARIANT *Cursor,VARIANT *ReceiveTimeout);
+                   HRESULT (WINAPI *Reset)(IMSMQQueue2 *This);
+                   HRESULT (WINAPI *ReceiveCurrent_v1)(IMSMQQueue2 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *PeekNext_v1)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *PeekCurrent_v1)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *Receive)(IMSMQQueue2 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
+                   HRESULT (WINAPI *Peek)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
+                   HRESULT (WINAPI *ReceiveCurrent)(IMSMQQueue2 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
+                   HRESULT (WINAPI *PeekNext)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
+                   HRESULT (WINAPI *PeekCurrent)(IMSMQQueue2 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage2 **ppmsg);
+                   HRESULT (WINAPI *get_Properties)(IMSMQQueue2 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQQueue2Vtbl;
   struct IMSMQQueue2 {
@@ -1505,62 +1505,62 @@ extern "C" {
 #else
   typedef struct IMSMQMessageVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQMessage *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQMessage *This);
-      ULONG (WINAPI *Release)(IMSMQMessage *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQMessage *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQMessage *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQMessage *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQMessage *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Class)(IMSMQMessage *This,__LONG32 *plClass);
-      HRESULT (WINAPI *get_PrivLevel)(IMSMQMessage *This,__LONG32 *plPrivLevel);
-      HRESULT (WINAPI *put_PrivLevel)(IMSMQMessage *This,__LONG32 lPrivLevel);
-      HRESULT (WINAPI *get_AuthLevel)(IMSMQMessage *This,__LONG32 *plAuthLevel);
-      HRESULT (WINAPI *put_AuthLevel)(IMSMQMessage *This,__LONG32 lAuthLevel);
-      HRESULT (WINAPI *get_IsAuthenticated)(IMSMQMessage *This,Boolean *pisAuthenticated);
-      HRESULT (WINAPI *get_Delivery)(IMSMQMessage *This,__LONG32 *plDelivery);
-      HRESULT (WINAPI *put_Delivery)(IMSMQMessage *This,__LONG32 lDelivery);
-      HRESULT (WINAPI *get_Trace)(IMSMQMessage *This,__LONG32 *plTrace);
-      HRESULT (WINAPI *put_Trace)(IMSMQMessage *This,__LONG32 lTrace);
-      HRESULT (WINAPI *get_Priority)(IMSMQMessage *This,__LONG32 *plPriority);
-      HRESULT (WINAPI *put_Priority)(IMSMQMessage *This,__LONG32 lPriority);
-      HRESULT (WINAPI *get_Journal)(IMSMQMessage *This,__LONG32 *plJournal);
-      HRESULT (WINAPI *put_Journal)(IMSMQMessage *This,__LONG32 lJournal);
-      HRESULT (WINAPI *get_ResponseQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo **ppqinfoResponse);
-      HRESULT (WINAPI *putref_ResponseQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo *pqinfoResponse);
-      HRESULT (WINAPI *get_AppSpecific)(IMSMQMessage *This,__LONG32 *plAppSpecific);
-      HRESULT (WINAPI *put_AppSpecific)(IMSMQMessage *This,__LONG32 lAppSpecific);
-      HRESULT (WINAPI *get_SourceMachineGuid)(IMSMQMessage *This,BSTR *pbstrGuidSrcMachine);
-      HRESULT (WINAPI *get_BodyLength)(IMSMQMessage *This,__LONG32 *pcbBody);
-      HRESULT (WINAPI *get_Body)(IMSMQMessage *This,VARIANT *pvarBody);
-      HRESULT (WINAPI *put_Body)(IMSMQMessage *This,VARIANT varBody);
-      HRESULT (WINAPI *get_AdminQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo **ppqinfoAdmin);
-      HRESULT (WINAPI *putref_AdminQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo *pqinfoAdmin);
-      HRESULT (WINAPI *get_Id)(IMSMQMessage *This,VARIANT *pvarMsgId);
-      HRESULT (WINAPI *get_CorrelationId)(IMSMQMessage *This,VARIANT *pvarMsgId);
-      HRESULT (WINAPI *put_CorrelationId)(IMSMQMessage *This,VARIANT varMsgId);
-      HRESULT (WINAPI *get_Ack)(IMSMQMessage *This,__LONG32 *plAck);
-      HRESULT (WINAPI *put_Ack)(IMSMQMessage *This,__LONG32 lAck);
-      HRESULT (WINAPI *get_Label)(IMSMQMessage *This,BSTR *pbstrLabel);
-      HRESULT (WINAPI *put_Label)(IMSMQMessage *This,BSTR bstrLabel);
-      HRESULT (WINAPI *get_MaxTimeToReachQueue)(IMSMQMessage *This,__LONG32 *plMaxTimeToReachQueue);
-      HRESULT (WINAPI *put_MaxTimeToReachQueue)(IMSMQMessage *This,__LONG32 lMaxTimeToReachQueue);
-      HRESULT (WINAPI *get_MaxTimeToReceive)(IMSMQMessage *This,__LONG32 *plMaxTimeToReceive);
-      HRESULT (WINAPI *put_MaxTimeToReceive)(IMSMQMessage *This,__LONG32 lMaxTimeToReceive);
-      HRESULT (WINAPI *get_HashAlgorithm)(IMSMQMessage *This,__LONG32 *plHashAlg);
-      HRESULT (WINAPI *put_HashAlgorithm)(IMSMQMessage *This,__LONG32 lHashAlg);
-      HRESULT (WINAPI *get_EncryptAlgorithm)(IMSMQMessage *This,__LONG32 *plEncryptAlg);
-      HRESULT (WINAPI *put_EncryptAlgorithm)(IMSMQMessage *This,__LONG32 lEncryptAlg);
-      HRESULT (WINAPI *get_SentTime)(IMSMQMessage *This,VARIANT *pvarSentTime);
-      HRESULT (WINAPI *get_ArrivedTime)(IMSMQMessage *This,VARIANT *plArrivedTime);
-      HRESULT (WINAPI *get_DestinationQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo **ppqinfoDest);
-      HRESULT (WINAPI *get_SenderCertificate)(IMSMQMessage *This,VARIANT *pvarSenderCert);
-      HRESULT (WINAPI *put_SenderCertificate)(IMSMQMessage *This,VARIANT varSenderCert);
-      HRESULT (WINAPI *get_SenderId)(IMSMQMessage *This,VARIANT *pvarSenderId);
-      HRESULT (WINAPI *get_SenderIdType)(IMSMQMessage *This,__LONG32 *plSenderIdType);
-      HRESULT (WINAPI *put_SenderIdType)(IMSMQMessage *This,__LONG32 lSenderIdType);
-      HRESULT (WINAPI *Send)(IMSMQMessage *This,IMSMQQueue *DestinationQueue,VARIANT *Transaction);
-      HRESULT (WINAPI *AttachCurrentSecurityContext)(IMSMQMessage *This);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQMessage *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQMessage *This);
+                   ULONG (WINAPI *Release)(IMSMQMessage *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQMessage *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQMessage *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQMessage *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQMessage *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Class)(IMSMQMessage *This,__LONG32 *plClass);
+                   HRESULT (WINAPI *get_PrivLevel)(IMSMQMessage *This,__LONG32 *plPrivLevel);
+                   HRESULT (WINAPI *put_PrivLevel)(IMSMQMessage *This,__LONG32 lPrivLevel);
+                   HRESULT (WINAPI *get_AuthLevel)(IMSMQMessage *This,__LONG32 *plAuthLevel);
+                   HRESULT (WINAPI *put_AuthLevel)(IMSMQMessage *This,__LONG32 lAuthLevel);
+                   HRESULT (WINAPI *get_IsAuthenticated)(IMSMQMessage *This,Boolean *pisAuthenticated);
+                   HRESULT (WINAPI *get_Delivery)(IMSMQMessage *This,__LONG32 *plDelivery);
+                   HRESULT (WINAPI *put_Delivery)(IMSMQMessage *This,__LONG32 lDelivery);
+                   HRESULT (WINAPI *get_Trace)(IMSMQMessage *This,__LONG32 *plTrace);
+                   HRESULT (WINAPI *put_Trace)(IMSMQMessage *This,__LONG32 lTrace);
+                   HRESULT (WINAPI *get_Priority)(IMSMQMessage *This,__LONG32 *plPriority);
+                   HRESULT (WINAPI *put_Priority)(IMSMQMessage *This,__LONG32 lPriority);
+                   HRESULT (WINAPI *get_Journal)(IMSMQMessage *This,__LONG32 *plJournal);
+                   HRESULT (WINAPI *put_Journal)(IMSMQMessage *This,__LONG32 lJournal);
+                   HRESULT (WINAPI *get_ResponseQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo **ppqinfoResponse);
+                   HRESULT (WINAPI *putref_ResponseQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo *pqinfoResponse);
+                   HRESULT (WINAPI *get_AppSpecific)(IMSMQMessage *This,__LONG32 *plAppSpecific);
+                   HRESULT (WINAPI *put_AppSpecific)(IMSMQMessage *This,__LONG32 lAppSpecific);
+                   HRESULT (WINAPI *get_SourceMachineGuid)(IMSMQMessage *This,BSTR *pbstrGuidSrcMachine);
+                   HRESULT (WINAPI *get_BodyLength)(IMSMQMessage *This,__LONG32 *pcbBody);
+                   HRESULT (WINAPI *get_Body)(IMSMQMessage *This,VARIANT *pvarBody);
+                   HRESULT (WINAPI *put_Body)(IMSMQMessage *This,VARIANT varBody);
+                   HRESULT (WINAPI *get_AdminQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo **ppqinfoAdmin);
+                   HRESULT (WINAPI *putref_AdminQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo *pqinfoAdmin);
+                   HRESULT (WINAPI *get_Id)(IMSMQMessage *This,VARIANT *pvarMsgId);
+                   HRESULT (WINAPI *get_CorrelationId)(IMSMQMessage *This,VARIANT *pvarMsgId);
+                   HRESULT (WINAPI *put_CorrelationId)(IMSMQMessage *This,VARIANT varMsgId);
+                   HRESULT (WINAPI *get_Ack)(IMSMQMessage *This,__LONG32 *plAck);
+                   HRESULT (WINAPI *put_Ack)(IMSMQMessage *This,__LONG32 lAck);
+                   HRESULT (WINAPI *get_Label)(IMSMQMessage *This,BSTR *pbstrLabel);
+                   HRESULT (WINAPI *put_Label)(IMSMQMessage *This,BSTR bstrLabel);
+                   HRESULT (WINAPI *get_MaxTimeToReachQueue)(IMSMQMessage *This,__LONG32 *plMaxTimeToReachQueue);
+                   HRESULT (WINAPI *put_MaxTimeToReachQueue)(IMSMQMessage *This,__LONG32 lMaxTimeToReachQueue);
+                   HRESULT (WINAPI *get_MaxTimeToReceive)(IMSMQMessage *This,__LONG32 *plMaxTimeToReceive);
+                   HRESULT (WINAPI *put_MaxTimeToReceive)(IMSMQMessage *This,__LONG32 lMaxTimeToReceive);
+                   HRESULT (WINAPI *get_HashAlgorithm)(IMSMQMessage *This,__LONG32 *plHashAlg);
+                   HRESULT (WINAPI *put_HashAlgorithm)(IMSMQMessage *This,__LONG32 lHashAlg);
+                   HRESULT (WINAPI *get_EncryptAlgorithm)(IMSMQMessage *This,__LONG32 *plEncryptAlg);
+                   HRESULT (WINAPI *put_EncryptAlgorithm)(IMSMQMessage *This,__LONG32 lEncryptAlg);
+                   HRESULT (WINAPI *get_SentTime)(IMSMQMessage *This,VARIANT *pvarSentTime);
+                   HRESULT (WINAPI *get_ArrivedTime)(IMSMQMessage *This,VARIANT *plArrivedTime);
+                   HRESULT (WINAPI *get_DestinationQueueInfo)(IMSMQMessage *This,IMSMQQueueInfo **ppqinfoDest);
+                   HRESULT (WINAPI *get_SenderCertificate)(IMSMQMessage *This,VARIANT *pvarSenderCert);
+                   HRESULT (WINAPI *put_SenderCertificate)(IMSMQMessage *This,VARIANT varSenderCert);
+                   HRESULT (WINAPI *get_SenderId)(IMSMQMessage *This,VARIANT *pvarSenderId);
+                   HRESULT (WINAPI *get_SenderIdType)(IMSMQMessage *This,__LONG32 *plSenderIdType);
+                   HRESULT (WINAPI *put_SenderIdType)(IMSMQMessage *This,__LONG32 lSenderIdType);
+                   HRESULT (WINAPI *Send)(IMSMQMessage *This,IMSMQQueue *DestinationQueue,VARIANT *Transaction);
+                   HRESULT (WINAPI *AttachCurrentSecurityContext)(IMSMQMessage *This);
     END_INTERFACE
   } IMSMQMessageVtbl;
   struct IMSMQMessage {
@@ -1737,15 +1737,15 @@ extern "C" {
 #else
   typedef struct IMSMQQueueInfosVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfos *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueueInfos *This);
-      ULONG (WINAPI *Release)(IMSMQQueueInfos *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfos *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfos *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfos *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueueInfos *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Reset)(IMSMQQueueInfos *This);
-      HRESULT (WINAPI *Next)(IMSMQQueueInfos *This,IMSMQQueueInfo **ppqinfoNext);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfos *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueueInfos *This);
+                   ULONG (WINAPI *Release)(IMSMQQueueInfos *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfos *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfos *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfos *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueueInfos *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Reset)(IMSMQQueueInfos *This);
+                   HRESULT (WINAPI *Next)(IMSMQQueueInfos *This,IMSMQQueueInfo **ppqinfoNext);
     END_INTERFACE
   } IMSMQQueueInfosVtbl;
   struct IMSMQQueueInfos {
@@ -1782,16 +1782,16 @@ extern "C" {
 #else
   typedef struct IMSMQQueueInfos2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfos2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueueInfos2 *This);
-      ULONG (WINAPI *Release)(IMSMQQueueInfos2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfos2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfos2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfos2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueueInfos2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Reset)(IMSMQQueueInfos2 *This);
-      HRESULT (WINAPI *Next)(IMSMQQueueInfos2 *This,IMSMQQueueInfo2 **ppqinfoNext);
-      HRESULT (WINAPI *get_Properties)(IMSMQQueueInfos2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfos2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueueInfos2 *This);
+                   ULONG (WINAPI *Release)(IMSMQQueueInfos2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfos2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfos2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfos2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueueInfos2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Reset)(IMSMQQueueInfos2 *This);
+                   HRESULT (WINAPI *Next)(IMSMQQueueInfos2 *This,IMSMQQueueInfo2 **ppqinfoNext);
+                   HRESULT (WINAPI *get_Properties)(IMSMQQueueInfos2 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQQueueInfos2Vtbl;
   struct IMSMQQueueInfos2 {
@@ -1831,16 +1831,16 @@ extern "C" {
 #else
   typedef struct IMSMQQueueInfos3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfos3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueueInfos3 *This);
-      ULONG (WINAPI *Release)(IMSMQQueueInfos3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfos3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfos3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfos3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueueInfos3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Reset)(IMSMQQueueInfos3 *This);
-      HRESULT (WINAPI *Next)(IMSMQQueueInfos3 *This,IMSMQQueueInfo3 **ppqinfoNext);
-      HRESULT (WINAPI *get_Properties)(IMSMQQueueInfos3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueueInfos3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueueInfos3 *This);
+                   ULONG (WINAPI *Release)(IMSMQQueueInfos3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueInfos3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueInfos3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueInfos3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueueInfos3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Reset)(IMSMQQueueInfos3 *This);
+                   HRESULT (WINAPI *Next)(IMSMQQueueInfos3 *This,IMSMQQueueInfo3 **ppqinfoNext);
+                   HRESULT (WINAPI *get_Properties)(IMSMQQueueInfos3 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQQueueInfos3Vtbl;
   struct IMSMQQueueInfos3 {
@@ -1876,13 +1876,13 @@ extern "C" {
 #else
   typedef struct IMSMQEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQEvent *This);
-      ULONG (WINAPI *Release)(IMSMQEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQEvent *This);
+                   ULONG (WINAPI *Release)(IMSMQEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } IMSMQEventVtbl;
   struct IMSMQEvent {
@@ -1911,14 +1911,14 @@ extern "C" {
 #else
   typedef struct IMSMQEvent2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQEvent2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQEvent2 *This);
-      ULONG (WINAPI *Release)(IMSMQEvent2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQEvent2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Properties)(IMSMQEvent2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQEvent2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQEvent2 *This);
+                   ULONG (WINAPI *Release)(IMSMQEvent2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQEvent2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQEvent2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQEvent2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQEvent2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Properties)(IMSMQEvent2 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQEvent2Vtbl;
   struct IMSMQEvent2 {
@@ -1948,14 +1948,14 @@ extern "C" {
 #else
   typedef struct IMSMQEvent3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQEvent3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQEvent3 *This);
-      ULONG (WINAPI *Release)(IMSMQEvent3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQEvent3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQEvent3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQEvent3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQEvent3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Properties)(IMSMQEvent3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQEvent3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQEvent3 *This);
+                   ULONG (WINAPI *Release)(IMSMQEvent3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQEvent3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQEvent3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQEvent3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQEvent3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Properties)(IMSMQEvent3 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQEvent3Vtbl;
   struct IMSMQEvent3 {
@@ -1987,16 +1987,16 @@ extern "C" {
 #else
   typedef struct IMSMQTransactionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQTransaction *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQTransaction *This);
-      ULONG (WINAPI *Release)(IMSMQTransaction *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransaction *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQTransaction *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransaction *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQTransaction *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Transaction)(IMSMQTransaction *This,__LONG32 *plTransaction);
-      HRESULT (WINAPI *Commit)(IMSMQTransaction *This,VARIANT *fRetaining,VARIANT *grfTC,VARIANT *grfRM);
-      HRESULT (WINAPI *Abort)(IMSMQTransaction *This,VARIANT *fRetaining,VARIANT *fAsync);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQTransaction *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQTransaction *This);
+                   ULONG (WINAPI *Release)(IMSMQTransaction *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransaction *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQTransaction *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransaction *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQTransaction *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Transaction)(IMSMQTransaction *This,__LONG32 *plTransaction);
+                   HRESULT (WINAPI *Commit)(IMSMQTransaction *This,VARIANT *fRetaining,VARIANT *grfTC,VARIANT *grfRM);
+                   HRESULT (WINAPI *Abort)(IMSMQTransaction *This,VARIANT *fRetaining,VARIANT *fAsync);
     END_INTERFACE
   } IMSMQTransactionVtbl;
   struct IMSMQTransaction {
@@ -2035,14 +2035,14 @@ extern "C" {
 #else
   typedef struct IMSMQCoordinatedTransactionDispenserVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQCoordinatedTransactionDispenser *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQCoordinatedTransactionDispenser *This);
-      ULONG (WINAPI *Release)(IMSMQCoordinatedTransactionDispenser *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQCoordinatedTransactionDispenser *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQCoordinatedTransactionDispenser *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQCoordinatedTransactionDispenser *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQCoordinatedTransactionDispenser *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *BeginTransaction)(IMSMQCoordinatedTransactionDispenser *This,IMSMQTransaction **ptransaction);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQCoordinatedTransactionDispenser *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQCoordinatedTransactionDispenser *This);
+                   ULONG (WINAPI *Release)(IMSMQCoordinatedTransactionDispenser *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQCoordinatedTransactionDispenser *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQCoordinatedTransactionDispenser *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQCoordinatedTransactionDispenser *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQCoordinatedTransactionDispenser *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *BeginTransaction)(IMSMQCoordinatedTransactionDispenser *This,IMSMQTransaction **ptransaction);
     END_INTERFACE
   } IMSMQCoordinatedTransactionDispenserVtbl;
   struct IMSMQCoordinatedTransactionDispenser {
@@ -2074,14 +2074,14 @@ extern "C" {
 #else
   typedef struct IMSMQTransactionDispenserVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQTransactionDispenser *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQTransactionDispenser *This);
-      ULONG (WINAPI *Release)(IMSMQTransactionDispenser *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransactionDispenser *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQTransactionDispenser *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransactionDispenser *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQTransactionDispenser *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *BeginTransaction)(IMSMQTransactionDispenser *This,IMSMQTransaction **ptransaction);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQTransactionDispenser *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQTransactionDispenser *This);
+                   ULONG (WINAPI *Release)(IMSMQTransactionDispenser *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransactionDispenser *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQTransactionDispenser *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransactionDispenser *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQTransactionDispenser *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *BeginTransaction)(IMSMQTransactionDispenser *This,IMSMQTransaction **ptransaction);
     END_INTERFACE
   } IMSMQTransactionDispenserVtbl;
   struct IMSMQTransactionDispenser {
@@ -2114,15 +2114,15 @@ extern "C" {
 #else
   typedef struct IMSMQQuery2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQuery2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQuery2 *This);
-      ULONG (WINAPI *Release)(IMSMQQuery2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQuery2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQuery2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQuery2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQuery2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *LookupQueue)(IMSMQQuery2 *This,VARIANT *QueueGuid,VARIANT *ServiceTypeGuid,VARIANT *Label,VARIANT *CreateTime,VARIANT *ModifyTime,VARIANT *RelServiceType,VARIANT *RelLabel,VARIANT *RelCreateTime,VARIANT *RelModifyTime,IMSMQQueueInfos2 **ppqinfos);
-      HRESULT (WINAPI *get_Properties)(IMSMQQuery2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQuery2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQuery2 *This);
+                   ULONG (WINAPI *Release)(IMSMQQuery2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQuery2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQuery2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQuery2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQuery2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *LookupQueue)(IMSMQQuery2 *This,VARIANT *QueueGuid,VARIANT *ServiceTypeGuid,VARIANT *Label,VARIANT *CreateTime,VARIANT *ModifyTime,VARIANT *RelServiceType,VARIANT *RelLabel,VARIANT *RelCreateTime,VARIANT *RelModifyTime,IMSMQQueueInfos2 **ppqinfos);
+                   HRESULT (WINAPI *get_Properties)(IMSMQQuery2 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQQuery2Vtbl;
   struct IMSMQQuery2 {
@@ -2159,16 +2159,16 @@ extern "C" {
 #else
   typedef struct IMSMQQuery3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQuery3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQuery3 *This);
-      ULONG (WINAPI *Release)(IMSMQQuery3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQuery3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQuery3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQuery3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQuery3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *LookupQueue_v2)(IMSMQQuery3 *This,VARIANT *QueueGuid,VARIANT *ServiceTypeGuid,VARIANT *Label,VARIANT *CreateTime,VARIANT *ModifyTime,VARIANT *RelServiceType,VARIANT *RelLabel,VARIANT *RelCreateTime,VARIANT *RelModifyTime,IMSMQQueueInfos3 **ppqinfos);
-      HRESULT (WINAPI *get_Properties)(IMSMQQuery3 *This,IDispatch **ppcolProperties);
-      HRESULT (WINAPI *LookupQueue)(IMSMQQuery3 *This,VARIANT *QueueGuid,VARIANT *ServiceTypeGuid,VARIANT *Label,VARIANT *CreateTime,VARIANT *ModifyTime,VARIANT *RelServiceType,VARIANT *RelLabel,VARIANT *RelCreateTime,VARIANT *RelModifyTime,VARIANT *MulticastAddress,VARIANT *RelMulticastAddress,IMSMQQueueInfos3 **ppqinfos);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQuery3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQuery3 *This);
+                   ULONG (WINAPI *Release)(IMSMQQuery3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQuery3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQuery3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQuery3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQuery3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *LookupQueue_v2)(IMSMQQuery3 *This,VARIANT *QueueGuid,VARIANT *ServiceTypeGuid,VARIANT *Label,VARIANT *CreateTime,VARIANT *ModifyTime,VARIANT *RelServiceType,VARIANT *RelLabel,VARIANT *RelCreateTime,VARIANT *RelModifyTime,IMSMQQueueInfos3 **ppqinfos);
+                   HRESULT (WINAPI *get_Properties)(IMSMQQuery3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *LookupQueue)(IMSMQQuery3 *This,VARIANT *QueueGuid,VARIANT *ServiceTypeGuid,VARIANT *Label,VARIANT *CreateTime,VARIANT *ModifyTime,VARIANT *RelServiceType,VARIANT *RelLabel,VARIANT *RelCreateTime,VARIANT *RelModifyTime,VARIANT *MulticastAddress,VARIANT *RelMulticastAddress,IMSMQQueueInfos3 **ppqinfos);
     END_INTERFACE
   } IMSMQQuery3Vtbl;
   struct IMSMQQuery3 {
@@ -2285,88 +2285,88 @@ extern "C" {
 #else
   typedef struct IMSMQMessage2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQMessage2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQMessage2 *This);
-      ULONG (WINAPI *Release)(IMSMQMessage2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQMessage2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQMessage2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQMessage2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQMessage2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Class)(IMSMQMessage2 *This,__LONG32 *plClass);
-      HRESULT (WINAPI *get_PrivLevel)(IMSMQMessage2 *This,__LONG32 *plPrivLevel);
-      HRESULT (WINAPI *put_PrivLevel)(IMSMQMessage2 *This,__LONG32 lPrivLevel);
-      HRESULT (WINAPI *get_AuthLevel)(IMSMQMessage2 *This,__LONG32 *plAuthLevel);
-      HRESULT (WINAPI *put_AuthLevel)(IMSMQMessage2 *This,__LONG32 lAuthLevel);
-      HRESULT (WINAPI *get_IsAuthenticated)(IMSMQMessage2 *This,Boolean *pisAuthenticated);
-      HRESULT (WINAPI *get_Delivery)(IMSMQMessage2 *This,__LONG32 *plDelivery);
-      HRESULT (WINAPI *put_Delivery)(IMSMQMessage2 *This,__LONG32 lDelivery);
-      HRESULT (WINAPI *get_Trace)(IMSMQMessage2 *This,__LONG32 *plTrace);
-      HRESULT (WINAPI *put_Trace)(IMSMQMessage2 *This,__LONG32 lTrace);
-      HRESULT (WINAPI *get_Priority)(IMSMQMessage2 *This,__LONG32 *plPriority);
-      HRESULT (WINAPI *put_Priority)(IMSMQMessage2 *This,__LONG32 lPriority);
-      HRESULT (WINAPI *get_Journal)(IMSMQMessage2 *This,__LONG32 *plJournal);
-      HRESULT (WINAPI *put_Journal)(IMSMQMessage2 *This,__LONG32 lJournal);
-      HRESULT (WINAPI *get_ResponseQueueInfo_v1)(IMSMQMessage2 *This,IMSMQQueueInfo **ppqinfoResponse);
-      HRESULT (WINAPI *putref_ResponseQueueInfo_v1)(IMSMQMessage2 *This,IMSMQQueueInfo *pqinfoResponse);
-      HRESULT (WINAPI *get_AppSpecific)(IMSMQMessage2 *This,__LONG32 *plAppSpecific);
-      HRESULT (WINAPI *put_AppSpecific)(IMSMQMessage2 *This,__LONG32 lAppSpecific);
-      HRESULT (WINAPI *get_SourceMachineGuid)(IMSMQMessage2 *This,BSTR *pbstrGuidSrcMachine);
-      HRESULT (WINAPI *get_BodyLength)(IMSMQMessage2 *This,__LONG32 *pcbBody);
-      HRESULT (WINAPI *get_Body)(IMSMQMessage2 *This,VARIANT *pvarBody);
-      HRESULT (WINAPI *put_Body)(IMSMQMessage2 *This,VARIANT varBody);
-      HRESULT (WINAPI *get_AdminQueueInfo_v1)(IMSMQMessage2 *This,IMSMQQueueInfo **ppqinfoAdmin);
-      HRESULT (WINAPI *putref_AdminQueueInfo_v1)(IMSMQMessage2 *This,IMSMQQueueInfo *pqinfoAdmin);
-      HRESULT (WINAPI *get_Id)(IMSMQMessage2 *This,VARIANT *pvarMsgId);
-      HRESULT (WINAPI *get_CorrelationId)(IMSMQMessage2 *This,VARIANT *pvarMsgId);
-      HRESULT (WINAPI *put_CorrelationId)(IMSMQMessage2 *This,VARIANT varMsgId);
-      HRESULT (WINAPI *get_Ack)(IMSMQMessage2 *This,__LONG32 *plAck);
-      HRESULT (WINAPI *put_Ack)(IMSMQMessage2 *This,__LONG32 lAck);
-      HRESULT (WINAPI *get_Label)(IMSMQMessage2 *This,BSTR *pbstrLabel);
-      HRESULT (WINAPI *put_Label)(IMSMQMessage2 *This,BSTR bstrLabel);
-      HRESULT (WINAPI *get_MaxTimeToReachQueue)(IMSMQMessage2 *This,__LONG32 *plMaxTimeToReachQueue);
-      HRESULT (WINAPI *put_MaxTimeToReachQueue)(IMSMQMessage2 *This,__LONG32 lMaxTimeToReachQueue);
-      HRESULT (WINAPI *get_MaxTimeToReceive)(IMSMQMessage2 *This,__LONG32 *plMaxTimeToReceive);
-      HRESULT (WINAPI *put_MaxTimeToReceive)(IMSMQMessage2 *This,__LONG32 lMaxTimeToReceive);
-      HRESULT (WINAPI *get_HashAlgorithm)(IMSMQMessage2 *This,__LONG32 *plHashAlg);
-      HRESULT (WINAPI *put_HashAlgorithm)(IMSMQMessage2 *This,__LONG32 lHashAlg);
-      HRESULT (WINAPI *get_EncryptAlgorithm)(IMSMQMessage2 *This,__LONG32 *plEncryptAlg);
-      HRESULT (WINAPI *put_EncryptAlgorithm)(IMSMQMessage2 *This,__LONG32 lEncryptAlg);
-      HRESULT (WINAPI *get_SentTime)(IMSMQMessage2 *This,VARIANT *pvarSentTime);
-      HRESULT (WINAPI *get_ArrivedTime)(IMSMQMessage2 *This,VARIANT *plArrivedTime);
-      HRESULT (WINAPI *get_DestinationQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 **ppqinfoDest);
-      HRESULT (WINAPI *get_SenderCertificate)(IMSMQMessage2 *This,VARIANT *pvarSenderCert);
-      HRESULT (WINAPI *put_SenderCertificate)(IMSMQMessage2 *This,VARIANT varSenderCert);
-      HRESULT (WINAPI *get_SenderId)(IMSMQMessage2 *This,VARIANT *pvarSenderId);
-      HRESULT (WINAPI *get_SenderIdType)(IMSMQMessage2 *This,__LONG32 *plSenderIdType);
-      HRESULT (WINAPI *put_SenderIdType)(IMSMQMessage2 *This,__LONG32 lSenderIdType);
-      HRESULT (WINAPI *Send)(IMSMQMessage2 *This,IMSMQQueue2 *DestinationQueue,VARIANT *Transaction);
-      HRESULT (WINAPI *AttachCurrentSecurityContext)(IMSMQMessage2 *This);
-      HRESULT (WINAPI *get_SenderVersion)(IMSMQMessage2 *This,__LONG32 *plSenderVersion);
-      HRESULT (WINAPI *get_Extension)(IMSMQMessage2 *This,VARIANT *pvarExtension);
-      HRESULT (WINAPI *put_Extension)(IMSMQMessage2 *This,VARIANT varExtension);
-      HRESULT (WINAPI *get_ConnectorTypeGuid)(IMSMQMessage2 *This,BSTR *pbstrGuidConnectorType);
-      HRESULT (WINAPI *put_ConnectorTypeGuid)(IMSMQMessage2 *This,BSTR bstrGuidConnectorType);
-      HRESULT (WINAPI *get_TransactionStatusQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 **ppqinfoXactStatus);
-      HRESULT (WINAPI *get_DestinationSymmetricKey)(IMSMQMessage2 *This,VARIANT *pvarDestSymmKey);
-      HRESULT (WINAPI *put_DestinationSymmetricKey)(IMSMQMessage2 *This,VARIANT varDestSymmKey);
-      HRESULT (WINAPI *get_Signature)(IMSMQMessage2 *This,VARIANT *pvarSignature);
-      HRESULT (WINAPI *put_Signature)(IMSMQMessage2 *This,VARIANT varSignature);
-      HRESULT (WINAPI *get_AuthenticationProviderType)(IMSMQMessage2 *This,__LONG32 *plAuthProvType);
-      HRESULT (WINAPI *put_AuthenticationProviderType)(IMSMQMessage2 *This,__LONG32 lAuthProvType);
-      HRESULT (WINAPI *get_AuthenticationProviderName)(IMSMQMessage2 *This,BSTR *pbstrAuthProvName);
-      HRESULT (WINAPI *put_AuthenticationProviderName)(IMSMQMessage2 *This,BSTR bstrAuthProvName);
-      HRESULT (WINAPI *put_SenderId)(IMSMQMessage2 *This,VARIANT varSenderId);
-      HRESULT (WINAPI *get_MsgClass)(IMSMQMessage2 *This,__LONG32 *plMsgClass);
-      HRESULT (WINAPI *put_MsgClass)(IMSMQMessage2 *This,__LONG32 lMsgClass);
-      HRESULT (WINAPI *get_Properties)(IMSMQMessage2 *This,IDispatch **ppcolProperties);
-      HRESULT (WINAPI *get_TransactionId)(IMSMQMessage2 *This,VARIANT *pvarXactId);
-      HRESULT (WINAPI *get_IsFirstInTransaction)(IMSMQMessage2 *This,Boolean *pisFirstInXact);
-      HRESULT (WINAPI *get_IsLastInTransaction)(IMSMQMessage2 *This,Boolean *pisLastInXact);
-      HRESULT (WINAPI *get_ResponseQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 **ppqinfoResponse);
-      HRESULT (WINAPI *putref_ResponseQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 *pqinfoResponse);
-      HRESULT (WINAPI *get_AdminQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 **ppqinfoAdmin);
-      HRESULT (WINAPI *putref_AdminQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 *pqinfoAdmin);
-      HRESULT (WINAPI *get_ReceivedAuthenticationLevel)(IMSMQMessage2 *This,short *psReceivedAuthenticationLevel);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQMessage2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQMessage2 *This);
+                   ULONG (WINAPI *Release)(IMSMQMessage2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQMessage2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQMessage2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQMessage2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQMessage2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Class)(IMSMQMessage2 *This,__LONG32 *plClass);
+                   HRESULT (WINAPI *get_PrivLevel)(IMSMQMessage2 *This,__LONG32 *plPrivLevel);
+                   HRESULT (WINAPI *put_PrivLevel)(IMSMQMessage2 *This,__LONG32 lPrivLevel);
+                   HRESULT (WINAPI *get_AuthLevel)(IMSMQMessage2 *This,__LONG32 *plAuthLevel);
+                   HRESULT (WINAPI *put_AuthLevel)(IMSMQMessage2 *This,__LONG32 lAuthLevel);
+                   HRESULT (WINAPI *get_IsAuthenticated)(IMSMQMessage2 *This,Boolean *pisAuthenticated);
+                   HRESULT (WINAPI *get_Delivery)(IMSMQMessage2 *This,__LONG32 *plDelivery);
+                   HRESULT (WINAPI *put_Delivery)(IMSMQMessage2 *This,__LONG32 lDelivery);
+                   HRESULT (WINAPI *get_Trace)(IMSMQMessage2 *This,__LONG32 *plTrace);
+                   HRESULT (WINAPI *put_Trace)(IMSMQMessage2 *This,__LONG32 lTrace);
+                   HRESULT (WINAPI *get_Priority)(IMSMQMessage2 *This,__LONG32 *plPriority);
+                   HRESULT (WINAPI *put_Priority)(IMSMQMessage2 *This,__LONG32 lPriority);
+                   HRESULT (WINAPI *get_Journal)(IMSMQMessage2 *This,__LONG32 *plJournal);
+                   HRESULT (WINAPI *put_Journal)(IMSMQMessage2 *This,__LONG32 lJournal);
+                   HRESULT (WINAPI *get_ResponseQueueInfo_v1)(IMSMQMessage2 *This,IMSMQQueueInfo **ppqinfoResponse);
+                   HRESULT (WINAPI *putref_ResponseQueueInfo_v1)(IMSMQMessage2 *This,IMSMQQueueInfo *pqinfoResponse);
+                   HRESULT (WINAPI *get_AppSpecific)(IMSMQMessage2 *This,__LONG32 *plAppSpecific);
+                   HRESULT (WINAPI *put_AppSpecific)(IMSMQMessage2 *This,__LONG32 lAppSpecific);
+                   HRESULT (WINAPI *get_SourceMachineGuid)(IMSMQMessage2 *This,BSTR *pbstrGuidSrcMachine);
+                   HRESULT (WINAPI *get_BodyLength)(IMSMQMessage2 *This,__LONG32 *pcbBody);
+                   HRESULT (WINAPI *get_Body)(IMSMQMessage2 *This,VARIANT *pvarBody);
+                   HRESULT (WINAPI *put_Body)(IMSMQMessage2 *This,VARIANT varBody);
+                   HRESULT (WINAPI *get_AdminQueueInfo_v1)(IMSMQMessage2 *This,IMSMQQueueInfo **ppqinfoAdmin);
+                   HRESULT (WINAPI *putref_AdminQueueInfo_v1)(IMSMQMessage2 *This,IMSMQQueueInfo *pqinfoAdmin);
+                   HRESULT (WINAPI *get_Id)(IMSMQMessage2 *This,VARIANT *pvarMsgId);
+                   HRESULT (WINAPI *get_CorrelationId)(IMSMQMessage2 *This,VARIANT *pvarMsgId);
+                   HRESULT (WINAPI *put_CorrelationId)(IMSMQMessage2 *This,VARIANT varMsgId);
+                   HRESULT (WINAPI *get_Ack)(IMSMQMessage2 *This,__LONG32 *plAck);
+                   HRESULT (WINAPI *put_Ack)(IMSMQMessage2 *This,__LONG32 lAck);
+                   HRESULT (WINAPI *get_Label)(IMSMQMessage2 *This,BSTR *pbstrLabel);
+                   HRESULT (WINAPI *put_Label)(IMSMQMessage2 *This,BSTR bstrLabel);
+                   HRESULT (WINAPI *get_MaxTimeToReachQueue)(IMSMQMessage2 *This,__LONG32 *plMaxTimeToReachQueue);
+                   HRESULT (WINAPI *put_MaxTimeToReachQueue)(IMSMQMessage2 *This,__LONG32 lMaxTimeToReachQueue);
+                   HRESULT (WINAPI *get_MaxTimeToReceive)(IMSMQMessage2 *This,__LONG32 *plMaxTimeToReceive);
+                   HRESULT (WINAPI *put_MaxTimeToReceive)(IMSMQMessage2 *This,__LONG32 lMaxTimeToReceive);
+                   HRESULT (WINAPI *get_HashAlgorithm)(IMSMQMessage2 *This,__LONG32 *plHashAlg);
+                   HRESULT (WINAPI *put_HashAlgorithm)(IMSMQMessage2 *This,__LONG32 lHashAlg);
+                   HRESULT (WINAPI *get_EncryptAlgorithm)(IMSMQMessage2 *This,__LONG32 *plEncryptAlg);
+                   HRESULT (WINAPI *put_EncryptAlgorithm)(IMSMQMessage2 *This,__LONG32 lEncryptAlg);
+                   HRESULT (WINAPI *get_SentTime)(IMSMQMessage2 *This,VARIANT *pvarSentTime);
+                   HRESULT (WINAPI *get_ArrivedTime)(IMSMQMessage2 *This,VARIANT *plArrivedTime);
+                   HRESULT (WINAPI *get_DestinationQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 **ppqinfoDest);
+                   HRESULT (WINAPI *get_SenderCertificate)(IMSMQMessage2 *This,VARIANT *pvarSenderCert);
+                   HRESULT (WINAPI *put_SenderCertificate)(IMSMQMessage2 *This,VARIANT varSenderCert);
+                   HRESULT (WINAPI *get_SenderId)(IMSMQMessage2 *This,VARIANT *pvarSenderId);
+                   HRESULT (WINAPI *get_SenderIdType)(IMSMQMessage2 *This,__LONG32 *plSenderIdType);
+                   HRESULT (WINAPI *put_SenderIdType)(IMSMQMessage2 *This,__LONG32 lSenderIdType);
+                   HRESULT (WINAPI *Send)(IMSMQMessage2 *This,IMSMQQueue2 *DestinationQueue,VARIANT *Transaction);
+                   HRESULT (WINAPI *AttachCurrentSecurityContext)(IMSMQMessage2 *This);
+                   HRESULT (WINAPI *get_SenderVersion)(IMSMQMessage2 *This,__LONG32 *plSenderVersion);
+                   HRESULT (WINAPI *get_Extension)(IMSMQMessage2 *This,VARIANT *pvarExtension);
+                   HRESULT (WINAPI *put_Extension)(IMSMQMessage2 *This,VARIANT varExtension);
+                   HRESULT (WINAPI *get_ConnectorTypeGuid)(IMSMQMessage2 *This,BSTR *pbstrGuidConnectorType);
+                   HRESULT (WINAPI *put_ConnectorTypeGuid)(IMSMQMessage2 *This,BSTR bstrGuidConnectorType);
+                   HRESULT (WINAPI *get_TransactionStatusQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 **ppqinfoXactStatus);
+                   HRESULT (WINAPI *get_DestinationSymmetricKey)(IMSMQMessage2 *This,VARIANT *pvarDestSymmKey);
+                   HRESULT (WINAPI *put_DestinationSymmetricKey)(IMSMQMessage2 *This,VARIANT varDestSymmKey);
+                   HRESULT (WINAPI *get_Signature)(IMSMQMessage2 *This,VARIANT *pvarSignature);
+                   HRESULT (WINAPI *put_Signature)(IMSMQMessage2 *This,VARIANT varSignature);
+                   HRESULT (WINAPI *get_AuthenticationProviderType)(IMSMQMessage2 *This,__LONG32 *plAuthProvType);
+                   HRESULT (WINAPI *put_AuthenticationProviderType)(IMSMQMessage2 *This,__LONG32 lAuthProvType);
+                   HRESULT (WINAPI *get_AuthenticationProviderName)(IMSMQMessage2 *This,BSTR *pbstrAuthProvName);
+                   HRESULT (WINAPI *put_AuthenticationProviderName)(IMSMQMessage2 *This,BSTR bstrAuthProvName);
+                   HRESULT (WINAPI *put_SenderId)(IMSMQMessage2 *This,VARIANT varSenderId);
+                   HRESULT (WINAPI *get_MsgClass)(IMSMQMessage2 *This,__LONG32 *plMsgClass);
+                   HRESULT (WINAPI *put_MsgClass)(IMSMQMessage2 *This,__LONG32 lMsgClass);
+                   HRESULT (WINAPI *get_Properties)(IMSMQMessage2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *get_TransactionId)(IMSMQMessage2 *This,VARIANT *pvarXactId);
+                   HRESULT (WINAPI *get_IsFirstInTransaction)(IMSMQMessage2 *This,Boolean *pisFirstInXact);
+                   HRESULT (WINAPI *get_IsLastInTransaction)(IMSMQMessage2 *This,Boolean *pisLastInXact);
+                   HRESULT (WINAPI *get_ResponseQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 **ppqinfoResponse);
+                   HRESULT (WINAPI *putref_ResponseQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 *pqinfoResponse);
+                   HRESULT (WINAPI *get_AdminQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 **ppqinfoAdmin);
+                   HRESULT (WINAPI *putref_AdminQueueInfo)(IMSMQMessage2 *This,IMSMQQueueInfo2 *pqinfoAdmin);
+                   HRESULT (WINAPI *get_ReceivedAuthenticationLevel)(IMSMQMessage2 *This,short *psReceivedAuthenticationLevel);
     END_INTERFACE
   } IMSMQMessage2Vtbl;
   struct IMSMQMessage2 {
@@ -2710,104 +2710,104 @@ extern "C" {
 #else
   typedef struct IMSMQMessage3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQMessage3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQMessage3 *This);
-      ULONG (WINAPI *Release)(IMSMQMessage3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQMessage3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQMessage3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQMessage3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQMessage3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Class)(IMSMQMessage3 *This,__LONG32 *plClass);
-      HRESULT (WINAPI *get_PrivLevel)(IMSMQMessage3 *This,__LONG32 *plPrivLevel);
-      HRESULT (WINAPI *put_PrivLevel)(IMSMQMessage3 *This,__LONG32 lPrivLevel);
-      HRESULT (WINAPI *get_AuthLevel)(IMSMQMessage3 *This,__LONG32 *plAuthLevel);
-      HRESULT (WINAPI *put_AuthLevel)(IMSMQMessage3 *This,__LONG32 lAuthLevel);
-      HRESULT (WINAPI *get_IsAuthenticated)(IMSMQMessage3 *This,Boolean *pisAuthenticated);
-      HRESULT (WINAPI *get_Delivery)(IMSMQMessage3 *This,__LONG32 *plDelivery);
-      HRESULT (WINAPI *put_Delivery)(IMSMQMessage3 *This,__LONG32 lDelivery);
-      HRESULT (WINAPI *get_Trace)(IMSMQMessage3 *This,__LONG32 *plTrace);
-      HRESULT (WINAPI *put_Trace)(IMSMQMessage3 *This,__LONG32 lTrace);
-      HRESULT (WINAPI *get_Priority)(IMSMQMessage3 *This,__LONG32 *plPriority);
-      HRESULT (WINAPI *put_Priority)(IMSMQMessage3 *This,__LONG32 lPriority);
-      HRESULT (WINAPI *get_Journal)(IMSMQMessage3 *This,__LONG32 *plJournal);
-      HRESULT (WINAPI *put_Journal)(IMSMQMessage3 *This,__LONG32 lJournal);
-      HRESULT (WINAPI *get_ResponseQueueInfo_v1)(IMSMQMessage3 *This,IMSMQQueueInfo **ppqinfoResponse);
-      HRESULT (WINAPI *putref_ResponseQueueInfo_v1)(IMSMQMessage3 *This,IMSMQQueueInfo *pqinfoResponse);
-      HRESULT (WINAPI *get_AppSpecific)(IMSMQMessage3 *This,__LONG32 *plAppSpecific);
-      HRESULT (WINAPI *put_AppSpecific)(IMSMQMessage3 *This,__LONG32 lAppSpecific);
-      HRESULT (WINAPI *get_SourceMachineGuid)(IMSMQMessage3 *This,BSTR *pbstrGuidSrcMachine);
-      HRESULT (WINAPI *get_BodyLength)(IMSMQMessage3 *This,__LONG32 *pcbBody);
-      HRESULT (WINAPI *get_Body)(IMSMQMessage3 *This,VARIANT *pvarBody);
-      HRESULT (WINAPI *put_Body)(IMSMQMessage3 *This,VARIANT varBody);
-      HRESULT (WINAPI *get_AdminQueueInfo_v1)(IMSMQMessage3 *This,IMSMQQueueInfo **ppqinfoAdmin);
-      HRESULT (WINAPI *putref_AdminQueueInfo_v1)(IMSMQMessage3 *This,IMSMQQueueInfo *pqinfoAdmin);
-      HRESULT (WINAPI *get_Id)(IMSMQMessage3 *This,VARIANT *pvarMsgId);
-      HRESULT (WINAPI *get_CorrelationId)(IMSMQMessage3 *This,VARIANT *pvarMsgId);
-      HRESULT (WINAPI *put_CorrelationId)(IMSMQMessage3 *This,VARIANT varMsgId);
-      HRESULT (WINAPI *get_Ack)(IMSMQMessage3 *This,__LONG32 *plAck);
-      HRESULT (WINAPI *put_Ack)(IMSMQMessage3 *This,__LONG32 lAck);
-      HRESULT (WINAPI *get_Label)(IMSMQMessage3 *This,BSTR *pbstrLabel);
-      HRESULT (WINAPI *put_Label)(IMSMQMessage3 *This,BSTR bstrLabel);
-      HRESULT (WINAPI *get_MaxTimeToReachQueue)(IMSMQMessage3 *This,__LONG32 *plMaxTimeToReachQueue);
-      HRESULT (WINAPI *put_MaxTimeToReachQueue)(IMSMQMessage3 *This,__LONG32 lMaxTimeToReachQueue);
-      HRESULT (WINAPI *get_MaxTimeToReceive)(IMSMQMessage3 *This,__LONG32 *plMaxTimeToReceive);
-      HRESULT (WINAPI *put_MaxTimeToReceive)(IMSMQMessage3 *This,__LONG32 lMaxTimeToReceive);
-      HRESULT (WINAPI *get_HashAlgorithm)(IMSMQMessage3 *This,__LONG32 *plHashAlg);
-      HRESULT (WINAPI *put_HashAlgorithm)(IMSMQMessage3 *This,__LONG32 lHashAlg);
-      HRESULT (WINAPI *get_EncryptAlgorithm)(IMSMQMessage3 *This,__LONG32 *plEncryptAlg);
-      HRESULT (WINAPI *put_EncryptAlgorithm)(IMSMQMessage3 *This,__LONG32 lEncryptAlg);
-      HRESULT (WINAPI *get_SentTime)(IMSMQMessage3 *This,VARIANT *pvarSentTime);
-      HRESULT (WINAPI *get_ArrivedTime)(IMSMQMessage3 *This,VARIANT *plArrivedTime);
-      HRESULT (WINAPI *get_DestinationQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 **ppqinfoDest);
-      HRESULT (WINAPI *get_SenderCertificate)(IMSMQMessage3 *This,VARIANT *pvarSenderCert);
-      HRESULT (WINAPI *put_SenderCertificate)(IMSMQMessage3 *This,VARIANT varSenderCert);
-      HRESULT (WINAPI *get_SenderId)(IMSMQMessage3 *This,VARIANT *pvarSenderId);
-      HRESULT (WINAPI *get_SenderIdType)(IMSMQMessage3 *This,__LONG32 *plSenderIdType);
-      HRESULT (WINAPI *put_SenderIdType)(IMSMQMessage3 *This,__LONG32 lSenderIdType);
-      HRESULT (WINAPI *Send)(IMSMQMessage3 *This,IDispatch *DestinationQueue,VARIANT *Transaction);
-      HRESULT (WINAPI *AttachCurrentSecurityContext)(IMSMQMessage3 *This);
-      HRESULT (WINAPI *get_SenderVersion)(IMSMQMessage3 *This,__LONG32 *plSenderVersion);
-      HRESULT (WINAPI *get_Extension)(IMSMQMessage3 *This,VARIANT *pvarExtension);
-      HRESULT (WINAPI *put_Extension)(IMSMQMessage3 *This,VARIANT varExtension);
-      HRESULT (WINAPI *get_ConnectorTypeGuid)(IMSMQMessage3 *This,BSTR *pbstrGuidConnectorType);
-      HRESULT (WINAPI *put_ConnectorTypeGuid)(IMSMQMessage3 *This,BSTR bstrGuidConnectorType);
-      HRESULT (WINAPI *get_TransactionStatusQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 **ppqinfoXactStatus);
-      HRESULT (WINAPI *get_DestinationSymmetricKey)(IMSMQMessage3 *This,VARIANT *pvarDestSymmKey);
-      HRESULT (WINAPI *put_DestinationSymmetricKey)(IMSMQMessage3 *This,VARIANT varDestSymmKey);
-      HRESULT (WINAPI *get_Signature)(IMSMQMessage3 *This,VARIANT *pvarSignature);
-      HRESULT (WINAPI *put_Signature)(IMSMQMessage3 *This,VARIANT varSignature);
-      HRESULT (WINAPI *get_AuthenticationProviderType)(IMSMQMessage3 *This,__LONG32 *plAuthProvType);
-      HRESULT (WINAPI *put_AuthenticationProviderType)(IMSMQMessage3 *This,__LONG32 lAuthProvType);
-      HRESULT (WINAPI *get_AuthenticationProviderName)(IMSMQMessage3 *This,BSTR *pbstrAuthProvName);
-      HRESULT (WINAPI *put_AuthenticationProviderName)(IMSMQMessage3 *This,BSTR bstrAuthProvName);
-      HRESULT (WINAPI *put_SenderId)(IMSMQMessage3 *This,VARIANT varSenderId);
-      HRESULT (WINAPI *get_MsgClass)(IMSMQMessage3 *This,__LONG32 *plMsgClass);
-      HRESULT (WINAPI *put_MsgClass)(IMSMQMessage3 *This,__LONG32 lMsgClass);
-      HRESULT (WINAPI *get_Properties)(IMSMQMessage3 *This,IDispatch **ppcolProperties);
-      HRESULT (WINAPI *get_TransactionId)(IMSMQMessage3 *This,VARIANT *pvarXactId);
-      HRESULT (WINAPI *get_IsFirstInTransaction)(IMSMQMessage3 *This,Boolean *pisFirstInXact);
-      HRESULT (WINAPI *get_IsLastInTransaction)(IMSMQMessage3 *This,Boolean *pisLastInXact);
-      HRESULT (WINAPI *get_ResponseQueueInfo_v2)(IMSMQMessage3 *This,IMSMQQueueInfo2 **ppqinfoResponse);
-      HRESULT (WINAPI *putref_ResponseQueueInfo_v2)(IMSMQMessage3 *This,IMSMQQueueInfo2 *pqinfoResponse);
-      HRESULT (WINAPI *get_AdminQueueInfo_v2)(IMSMQMessage3 *This,IMSMQQueueInfo2 **ppqinfoAdmin);
-      HRESULT (WINAPI *putref_AdminQueueInfo_v2)(IMSMQMessage3 *This,IMSMQQueueInfo2 *pqinfoAdmin);
-      HRESULT (WINAPI *get_ReceivedAuthenticationLevel)(IMSMQMessage3 *This,short *psReceivedAuthenticationLevel);
-      HRESULT (WINAPI *get_ResponseQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 **ppqinfoResponse);
-      HRESULT (WINAPI *putref_ResponseQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 *pqinfoResponse);
-      HRESULT (WINAPI *get_AdminQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 **ppqinfoAdmin);
-      HRESULT (WINAPI *putref_AdminQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 *pqinfoAdmin);
-      HRESULT (WINAPI *get_ResponseDestination)(IMSMQMessage3 *This,IDispatch **ppdestResponse);
-      HRESULT (WINAPI *putref_ResponseDestination)(IMSMQMessage3 *This,IDispatch *pdestResponse);
-      HRESULT (WINAPI *get_Destination)(IMSMQMessage3 *This,IDispatch **ppdestDestination);
-      HRESULT (WINAPI *get_LookupId)(IMSMQMessage3 *This,VARIANT *pvarLookupId);
-      HRESULT (WINAPI *get_IsAuthenticated2)(IMSMQMessage3 *This,VARIANT_BOOL *pisAuthenticated);
-      HRESULT (WINAPI *get_IsFirstInTransaction2)(IMSMQMessage3 *This,VARIANT_BOOL *pisFirstInXact);
-      HRESULT (WINAPI *get_IsLastInTransaction2)(IMSMQMessage3 *This,VARIANT_BOOL *pisLastInXact);
-      HRESULT (WINAPI *AttachCurrentSecurityContext2)(IMSMQMessage3 *This);
-      HRESULT (WINAPI *get_SoapEnvelope)(IMSMQMessage3 *This,BSTR *pbstrSoapEnvelope);
-      HRESULT (WINAPI *get_CompoundMessage)(IMSMQMessage3 *This,VARIANT *pvarCompoundMessage);
-      HRESULT (WINAPI *put_SoapHeader)(IMSMQMessage3 *This,BSTR bstrSoapHeader);
-      HRESULT (WINAPI *put_SoapBody)(IMSMQMessage3 *This,BSTR bstrSoapBody);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQMessage3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQMessage3 *This);
+                   ULONG (WINAPI *Release)(IMSMQMessage3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQMessage3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQMessage3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQMessage3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQMessage3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Class)(IMSMQMessage3 *This,__LONG32 *plClass);
+                   HRESULT (WINAPI *get_PrivLevel)(IMSMQMessage3 *This,__LONG32 *plPrivLevel);
+                   HRESULT (WINAPI *put_PrivLevel)(IMSMQMessage3 *This,__LONG32 lPrivLevel);
+                   HRESULT (WINAPI *get_AuthLevel)(IMSMQMessage3 *This,__LONG32 *plAuthLevel);
+                   HRESULT (WINAPI *put_AuthLevel)(IMSMQMessage3 *This,__LONG32 lAuthLevel);
+                   HRESULT (WINAPI *get_IsAuthenticated)(IMSMQMessage3 *This,Boolean *pisAuthenticated);
+                   HRESULT (WINAPI *get_Delivery)(IMSMQMessage3 *This,__LONG32 *plDelivery);
+                   HRESULT (WINAPI *put_Delivery)(IMSMQMessage3 *This,__LONG32 lDelivery);
+                   HRESULT (WINAPI *get_Trace)(IMSMQMessage3 *This,__LONG32 *plTrace);
+                   HRESULT (WINAPI *put_Trace)(IMSMQMessage3 *This,__LONG32 lTrace);
+                   HRESULT (WINAPI *get_Priority)(IMSMQMessage3 *This,__LONG32 *plPriority);
+                   HRESULT (WINAPI *put_Priority)(IMSMQMessage3 *This,__LONG32 lPriority);
+                   HRESULT (WINAPI *get_Journal)(IMSMQMessage3 *This,__LONG32 *plJournal);
+                   HRESULT (WINAPI *put_Journal)(IMSMQMessage3 *This,__LONG32 lJournal);
+                   HRESULT (WINAPI *get_ResponseQueueInfo_v1)(IMSMQMessage3 *This,IMSMQQueueInfo **ppqinfoResponse);
+                   HRESULT (WINAPI *putref_ResponseQueueInfo_v1)(IMSMQMessage3 *This,IMSMQQueueInfo *pqinfoResponse);
+                   HRESULT (WINAPI *get_AppSpecific)(IMSMQMessage3 *This,__LONG32 *plAppSpecific);
+                   HRESULT (WINAPI *put_AppSpecific)(IMSMQMessage3 *This,__LONG32 lAppSpecific);
+                   HRESULT (WINAPI *get_SourceMachineGuid)(IMSMQMessage3 *This,BSTR *pbstrGuidSrcMachine);
+                   HRESULT (WINAPI *get_BodyLength)(IMSMQMessage3 *This,__LONG32 *pcbBody);
+                   HRESULT (WINAPI *get_Body)(IMSMQMessage3 *This,VARIANT *pvarBody);
+                   HRESULT (WINAPI *put_Body)(IMSMQMessage3 *This,VARIANT varBody);
+                   HRESULT (WINAPI *get_AdminQueueInfo_v1)(IMSMQMessage3 *This,IMSMQQueueInfo **ppqinfoAdmin);
+                   HRESULT (WINAPI *putref_AdminQueueInfo_v1)(IMSMQMessage3 *This,IMSMQQueueInfo *pqinfoAdmin);
+                   HRESULT (WINAPI *get_Id)(IMSMQMessage3 *This,VARIANT *pvarMsgId);
+                   HRESULT (WINAPI *get_CorrelationId)(IMSMQMessage3 *This,VARIANT *pvarMsgId);
+                   HRESULT (WINAPI *put_CorrelationId)(IMSMQMessage3 *This,VARIANT varMsgId);
+                   HRESULT (WINAPI *get_Ack)(IMSMQMessage3 *This,__LONG32 *plAck);
+                   HRESULT (WINAPI *put_Ack)(IMSMQMessage3 *This,__LONG32 lAck);
+                   HRESULT (WINAPI *get_Label)(IMSMQMessage3 *This,BSTR *pbstrLabel);
+                   HRESULT (WINAPI *put_Label)(IMSMQMessage3 *This,BSTR bstrLabel);
+                   HRESULT (WINAPI *get_MaxTimeToReachQueue)(IMSMQMessage3 *This,__LONG32 *plMaxTimeToReachQueue);
+                   HRESULT (WINAPI *put_MaxTimeToReachQueue)(IMSMQMessage3 *This,__LONG32 lMaxTimeToReachQueue);
+                   HRESULT (WINAPI *get_MaxTimeToReceive)(IMSMQMessage3 *This,__LONG32 *plMaxTimeToReceive);
+                   HRESULT (WINAPI *put_MaxTimeToReceive)(IMSMQMessage3 *This,__LONG32 lMaxTimeToReceive);
+                   HRESULT (WINAPI *get_HashAlgorithm)(IMSMQMessage3 *This,__LONG32 *plHashAlg);
+                   HRESULT (WINAPI *put_HashAlgorithm)(IMSMQMessage3 *This,__LONG32 lHashAlg);
+                   HRESULT (WINAPI *get_EncryptAlgorithm)(IMSMQMessage3 *This,__LONG32 *plEncryptAlg);
+                   HRESULT (WINAPI *put_EncryptAlgorithm)(IMSMQMessage3 *This,__LONG32 lEncryptAlg);
+                   HRESULT (WINAPI *get_SentTime)(IMSMQMessage3 *This,VARIANT *pvarSentTime);
+                   HRESULT (WINAPI *get_ArrivedTime)(IMSMQMessage3 *This,VARIANT *plArrivedTime);
+                   HRESULT (WINAPI *get_DestinationQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 **ppqinfoDest);
+                   HRESULT (WINAPI *get_SenderCertificate)(IMSMQMessage3 *This,VARIANT *pvarSenderCert);
+                   HRESULT (WINAPI *put_SenderCertificate)(IMSMQMessage3 *This,VARIANT varSenderCert);
+                   HRESULT (WINAPI *get_SenderId)(IMSMQMessage3 *This,VARIANT *pvarSenderId);
+                   HRESULT (WINAPI *get_SenderIdType)(IMSMQMessage3 *This,__LONG32 *plSenderIdType);
+                   HRESULT (WINAPI *put_SenderIdType)(IMSMQMessage3 *This,__LONG32 lSenderIdType);
+                   HRESULT (WINAPI *Send)(IMSMQMessage3 *This,IDispatch *DestinationQueue,VARIANT *Transaction);
+                   HRESULT (WINAPI *AttachCurrentSecurityContext)(IMSMQMessage3 *This);
+                   HRESULT (WINAPI *get_SenderVersion)(IMSMQMessage3 *This,__LONG32 *plSenderVersion);
+                   HRESULT (WINAPI *get_Extension)(IMSMQMessage3 *This,VARIANT *pvarExtension);
+                   HRESULT (WINAPI *put_Extension)(IMSMQMessage3 *This,VARIANT varExtension);
+                   HRESULT (WINAPI *get_ConnectorTypeGuid)(IMSMQMessage3 *This,BSTR *pbstrGuidConnectorType);
+                   HRESULT (WINAPI *put_ConnectorTypeGuid)(IMSMQMessage3 *This,BSTR bstrGuidConnectorType);
+                   HRESULT (WINAPI *get_TransactionStatusQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 **ppqinfoXactStatus);
+                   HRESULT (WINAPI *get_DestinationSymmetricKey)(IMSMQMessage3 *This,VARIANT *pvarDestSymmKey);
+                   HRESULT (WINAPI *put_DestinationSymmetricKey)(IMSMQMessage3 *This,VARIANT varDestSymmKey);
+                   HRESULT (WINAPI *get_Signature)(IMSMQMessage3 *This,VARIANT *pvarSignature);
+                   HRESULT (WINAPI *put_Signature)(IMSMQMessage3 *This,VARIANT varSignature);
+                   HRESULT (WINAPI *get_AuthenticationProviderType)(IMSMQMessage3 *This,__LONG32 *plAuthProvType);
+                   HRESULT (WINAPI *put_AuthenticationProviderType)(IMSMQMessage3 *This,__LONG32 lAuthProvType);
+                   HRESULT (WINAPI *get_AuthenticationProviderName)(IMSMQMessage3 *This,BSTR *pbstrAuthProvName);
+                   HRESULT (WINAPI *put_AuthenticationProviderName)(IMSMQMessage3 *This,BSTR bstrAuthProvName);
+                   HRESULT (WINAPI *put_SenderId)(IMSMQMessage3 *This,VARIANT varSenderId);
+                   HRESULT (WINAPI *get_MsgClass)(IMSMQMessage3 *This,__LONG32 *plMsgClass);
+                   HRESULT (WINAPI *put_MsgClass)(IMSMQMessage3 *This,__LONG32 lMsgClass);
+                   HRESULT (WINAPI *get_Properties)(IMSMQMessage3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *get_TransactionId)(IMSMQMessage3 *This,VARIANT *pvarXactId);
+                   HRESULT (WINAPI *get_IsFirstInTransaction)(IMSMQMessage3 *This,Boolean *pisFirstInXact);
+                   HRESULT (WINAPI *get_IsLastInTransaction)(IMSMQMessage3 *This,Boolean *pisLastInXact);
+                   HRESULT (WINAPI *get_ResponseQueueInfo_v2)(IMSMQMessage3 *This,IMSMQQueueInfo2 **ppqinfoResponse);
+                   HRESULT (WINAPI *putref_ResponseQueueInfo_v2)(IMSMQMessage3 *This,IMSMQQueueInfo2 *pqinfoResponse);
+                   HRESULT (WINAPI *get_AdminQueueInfo_v2)(IMSMQMessage3 *This,IMSMQQueueInfo2 **ppqinfoAdmin);
+                   HRESULT (WINAPI *putref_AdminQueueInfo_v2)(IMSMQMessage3 *This,IMSMQQueueInfo2 *pqinfoAdmin);
+                   HRESULT (WINAPI *get_ReceivedAuthenticationLevel)(IMSMQMessage3 *This,short *psReceivedAuthenticationLevel);
+                   HRESULT (WINAPI *get_ResponseQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 **ppqinfoResponse);
+                   HRESULT (WINAPI *putref_ResponseQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 *pqinfoResponse);
+                   HRESULT (WINAPI *get_AdminQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 **ppqinfoAdmin);
+                   HRESULT (WINAPI *putref_AdminQueueInfo)(IMSMQMessage3 *This,IMSMQQueueInfo3 *pqinfoAdmin);
+                   HRESULT (WINAPI *get_ResponseDestination)(IMSMQMessage3 *This,IDispatch **ppdestResponse);
+                   HRESULT (WINAPI *putref_ResponseDestination)(IMSMQMessage3 *This,IDispatch *pdestResponse);
+                   HRESULT (WINAPI *get_Destination)(IMSMQMessage3 *This,IDispatch **ppdestDestination);
+                   HRESULT (WINAPI *get_LookupId)(IMSMQMessage3 *This,VARIANT *pvarLookupId);
+                   HRESULT (WINAPI *get_IsAuthenticated2)(IMSMQMessage3 *This,VARIANT_BOOL *pisAuthenticated);
+                   HRESULT (WINAPI *get_IsFirstInTransaction2)(IMSMQMessage3 *This,VARIANT_BOOL *pisFirstInXact);
+                   HRESULT (WINAPI *get_IsLastInTransaction2)(IMSMQMessage3 *This,VARIANT_BOOL *pisLastInXact);
+                   HRESULT (WINAPI *AttachCurrentSecurityContext2)(IMSMQMessage3 *This);
+                   HRESULT (WINAPI *get_SoapEnvelope)(IMSMQMessage3 *This,BSTR *pbstrSoapEnvelope);
+                   HRESULT (WINAPI *get_CompoundMessage)(IMSMQMessage3 *This,VARIANT *pvarCompoundMessage);
+                   HRESULT (WINAPI *put_SoapHeader)(IMSMQMessage3 *This,BSTR bstrSoapHeader);
+                   HRESULT (WINAPI *put_SoapBody)(IMSMQMessage3 *This,BSTR bstrSoapBody);
     END_INTERFACE
   } IMSMQMessage3Vtbl;
   struct IMSMQMessage3 {
@@ -3145,45 +3145,45 @@ extern "C" {
 #else
   typedef struct IMSMQQueue3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueue3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueue3 *This);
-      ULONG (WINAPI *Release)(IMSMQQueue3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueue3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueue3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueue3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueue3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Access)(IMSMQQueue3 *This,__LONG32 *plAccess);
-      HRESULT (WINAPI *get_ShareMode)(IMSMQQueue3 *This,__LONG32 *plShareMode);
-      HRESULT (WINAPI *get_QueueInfo)(IMSMQQueue3 *This,IMSMQQueueInfo3 **ppqinfo);
-      HRESULT (WINAPI *get_Handle)(IMSMQQueue3 *This,__LONG32 *plHandle);
-      HRESULT (WINAPI *get_IsOpen)(IMSMQQueue3 *This,Boolean *pisOpen);
-      HRESULT (WINAPI *Close)(IMSMQQueue3 *This);
-      HRESULT (WINAPI *Receive_v1)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *Peek_v1)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *EnableNotification)(IMSMQQueue3 *This,IMSMQEvent3 *Event,VARIANT *Cursor,VARIANT *ReceiveTimeout);
-      HRESULT (WINAPI *Reset)(IMSMQQueue3 *This);
-      HRESULT (WINAPI *ReceiveCurrent_v1)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *PeekNext_v1)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *PeekCurrent_v1)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
-      HRESULT (WINAPI *Receive)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *Peek)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *ReceiveCurrent)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *PeekNext)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *PeekCurrent)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *get_Properties)(IMSMQQueue3 *This,IDispatch **ppcolProperties);
-      HRESULT (WINAPI *get_Handle2)(IMSMQQueue3 *This,VARIANT *pvarHandle);
-      HRESULT (WINAPI *ReceiveByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *ReceiveNextByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *ReceivePreviousByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *ReceiveFirstByLookupId)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *ReceiveLastByLookupId)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *PeekByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *PeekNextByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *PeekPreviousByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *PeekFirstByLookupId)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *PeekLastByLookupId)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
-      HRESULT (WINAPI *Purge)(IMSMQQueue3 *This);
-      HRESULT (WINAPI *get_IsOpen2)(IMSMQQueue3 *This,VARIANT_BOOL *pisOpen);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueue3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueue3 *This);
+                   ULONG (WINAPI *Release)(IMSMQQueue3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueue3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueue3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueue3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueue3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Access)(IMSMQQueue3 *This,__LONG32 *plAccess);
+                   HRESULT (WINAPI *get_ShareMode)(IMSMQQueue3 *This,__LONG32 *plShareMode);
+                   HRESULT (WINAPI *get_QueueInfo)(IMSMQQueue3 *This,IMSMQQueueInfo3 **ppqinfo);
+                   HRESULT (WINAPI *get_Handle)(IMSMQQueue3 *This,__LONG32 *plHandle);
+                   HRESULT (WINAPI *get_IsOpen)(IMSMQQueue3 *This,Boolean *pisOpen);
+                   HRESULT (WINAPI *Close)(IMSMQQueue3 *This);
+                   HRESULT (WINAPI *Receive_v1)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *Peek_v1)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *EnableNotification)(IMSMQQueue3 *This,IMSMQEvent3 *Event,VARIANT *Cursor,VARIANT *ReceiveTimeout);
+                   HRESULT (WINAPI *Reset)(IMSMQQueue3 *This);
+                   HRESULT (WINAPI *ReceiveCurrent_v1)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *PeekNext_v1)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *PeekCurrent_v1)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,IMSMQMessage **ppmsg);
+                   HRESULT (WINAPI *Receive)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *Peek)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *ReceiveCurrent)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *PeekNext)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *PeekCurrent)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *ReceiveTimeout,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *get_Properties)(IMSMQQueue3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *get_Handle2)(IMSMQQueue3 *This,VARIANT *pvarHandle);
+                   HRESULT (WINAPI *ReceiveByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *ReceiveNextByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *ReceivePreviousByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *ReceiveFirstByLookupId)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *ReceiveLastByLookupId)(IMSMQQueue3 *This,VARIANT *Transaction,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *PeekByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *PeekNextByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *PeekPreviousByLookupId)(IMSMQQueue3 *This,VARIANT LookupId,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *PeekFirstByLookupId)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *PeekLastByLookupId)(IMSMQQueue3 *This,VARIANT *WantDestinationQueue,VARIANT *WantBody,VARIANT *WantConnectorType,IMSMQMessage3 **ppmsg);
+                   HRESULT (WINAPI *Purge)(IMSMQQueue3 *This);
+                   HRESULT (WINAPI *get_IsOpen2)(IMSMQQueue3 *This,VARIANT_BOOL *pisOpen);
     END_INTERFACE
   } IMSMQQueue3Vtbl;
   struct IMSMQQueue3 {
@@ -3315,16 +3315,16 @@ extern "C" {
 #else
   typedef struct IMSMQPrivateEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQPrivateEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQPrivateEvent *This);
-      ULONG (WINAPI *Release)(IMSMQPrivateEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQPrivateEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQPrivateEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQPrivateEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQPrivateEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Hwnd)(IMSMQPrivateEvent *This,__LONG32 *phwnd);
-      HRESULT (WINAPI *FireArrivedEvent)(IMSMQPrivateEvent *This,IMSMQQueue *pq,__LONG32 msgcursor);
-      HRESULT (WINAPI *FireArrivedErrorEvent)(IMSMQPrivateEvent *This,IMSMQQueue *pq,HRESULT hrStatus,__LONG32 msgcursor);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQPrivateEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQPrivateEvent *This);
+                   ULONG (WINAPI *Release)(IMSMQPrivateEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQPrivateEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQPrivateEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQPrivateEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQPrivateEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Hwnd)(IMSMQPrivateEvent *This,__LONG32 *phwnd);
+                   HRESULT (WINAPI *FireArrivedEvent)(IMSMQPrivateEvent *This,IMSMQQueue *pq,__LONG32 msgcursor);
+                   HRESULT (WINAPI *FireArrivedErrorEvent)(IMSMQPrivateEvent *This,IMSMQQueue *pq,HRESULT hrStatus,__LONG32 msgcursor);
     END_INTERFACE
   } IMSMQPrivateEventVtbl;
   struct IMSMQPrivateEvent {
@@ -3360,13 +3360,13 @@ extern "C" {
 #else
   typedef struct _DMSMQEventEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(_DMSMQEventEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(_DMSMQEventEvents *This);
-      ULONG (WINAPI *Release)(_DMSMQEventEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(_DMSMQEventEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(_DMSMQEventEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(_DMSMQEventEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(_DMSMQEventEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(_DMSMQEventEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(_DMSMQEventEvents *This);
+                   ULONG (WINAPI *Release)(_DMSMQEventEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(_DMSMQEventEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(_DMSMQEventEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(_DMSMQEventEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(_DMSMQEventEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } _DMSMQEventEventsVtbl;
   struct _DMSMQEventEvents {
@@ -3409,18 +3409,18 @@ extern "C" {
 #else
   typedef struct IMSMQTransaction2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQTransaction2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQTransaction2 *This);
-      ULONG (WINAPI *Release)(IMSMQTransaction2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransaction2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQTransaction2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransaction2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQTransaction2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Transaction)(IMSMQTransaction2 *This,__LONG32 *plTransaction);
-      HRESULT (WINAPI *Commit)(IMSMQTransaction2 *This,VARIANT *fRetaining,VARIANT *grfTC,VARIANT *grfRM);
-      HRESULT (WINAPI *Abort)(IMSMQTransaction2 *This,VARIANT *fRetaining,VARIANT *fAsync);
-      HRESULT (WINAPI *InitNew)(IMSMQTransaction2 *This,VARIANT varTransaction);
-      HRESULT (WINAPI *get_Properties)(IMSMQTransaction2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQTransaction2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQTransaction2 *This);
+                   ULONG (WINAPI *Release)(IMSMQTransaction2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransaction2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQTransaction2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransaction2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQTransaction2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Transaction)(IMSMQTransaction2 *This,__LONG32 *plTransaction);
+                   HRESULT (WINAPI *Commit)(IMSMQTransaction2 *This,VARIANT *fRetaining,VARIANT *grfTC,VARIANT *grfRM);
+                   HRESULT (WINAPI *Abort)(IMSMQTransaction2 *This,VARIANT *fRetaining,VARIANT *fAsync);
+                   HRESULT (WINAPI *InitNew)(IMSMQTransaction2 *This,VARIANT varTransaction);
+                   HRESULT (WINAPI *get_Properties)(IMSMQTransaction2 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQTransaction2Vtbl;
   struct IMSMQTransaction2 {
@@ -3458,19 +3458,19 @@ extern "C" {
 #else
   typedef struct IMSMQTransaction3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQTransaction3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQTransaction3 *This);
-      ULONG (WINAPI *Release)(IMSMQTransaction3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransaction3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQTransaction3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransaction3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQTransaction3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Transaction)(IMSMQTransaction3 *This,__LONG32 *plTransaction);
-      HRESULT (WINAPI *Commit)(IMSMQTransaction3 *This,VARIANT *fRetaining,VARIANT *grfTC,VARIANT *grfRM);
-      HRESULT (WINAPI *Abort)(IMSMQTransaction3 *This,VARIANT *fRetaining,VARIANT *fAsync);
-      HRESULT (WINAPI *InitNew)(IMSMQTransaction3 *This,VARIANT varTransaction);
-      HRESULT (WINAPI *get_Properties)(IMSMQTransaction3 *This,IDispatch **ppcolProperties);
-      HRESULT (WINAPI *get_ITransaction)(IMSMQTransaction3 *This,VARIANT *pvarITransaction);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQTransaction3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQTransaction3 *This);
+                   ULONG (WINAPI *Release)(IMSMQTransaction3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransaction3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQTransaction3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransaction3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQTransaction3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Transaction)(IMSMQTransaction3 *This,__LONG32 *plTransaction);
+                   HRESULT (WINAPI *Commit)(IMSMQTransaction3 *This,VARIANT *fRetaining,VARIANT *grfTC,VARIANT *grfRM);
+                   HRESULT (WINAPI *Abort)(IMSMQTransaction3 *This,VARIANT *fRetaining,VARIANT *fAsync);
+                   HRESULT (WINAPI *InitNew)(IMSMQTransaction3 *This,VARIANT varTransaction);
+                   HRESULT (WINAPI *get_Properties)(IMSMQTransaction3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *get_ITransaction)(IMSMQTransaction3 *This,VARIANT *pvarITransaction);
     END_INTERFACE
   } IMSMQTransaction3Vtbl;
   struct IMSMQTransaction3 {
@@ -3513,15 +3513,15 @@ extern "C" {
 #else
   typedef struct IMSMQCoordinatedTransactionDispenser2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQCoordinatedTransactionDispenser2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQCoordinatedTransactionDispenser2 *This);
-      ULONG (WINAPI *Release)(IMSMQCoordinatedTransactionDispenser2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQCoordinatedTransactionDispenser2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQCoordinatedTransactionDispenser2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQCoordinatedTransactionDispenser2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQCoordinatedTransactionDispenser2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *BeginTransaction)(IMSMQCoordinatedTransactionDispenser2 *This,IMSMQTransaction2 **ptransaction);
-      HRESULT (WINAPI *get_Properties)(IMSMQCoordinatedTransactionDispenser2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQCoordinatedTransactionDispenser2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQCoordinatedTransactionDispenser2 *This);
+                   ULONG (WINAPI *Release)(IMSMQCoordinatedTransactionDispenser2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQCoordinatedTransactionDispenser2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQCoordinatedTransactionDispenser2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQCoordinatedTransactionDispenser2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQCoordinatedTransactionDispenser2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *BeginTransaction)(IMSMQCoordinatedTransactionDispenser2 *This,IMSMQTransaction2 **ptransaction);
+                   HRESULT (WINAPI *get_Properties)(IMSMQCoordinatedTransactionDispenser2 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQCoordinatedTransactionDispenser2Vtbl;
   struct IMSMQCoordinatedTransactionDispenser2 {
@@ -3557,15 +3557,15 @@ extern "C" {
 #else
   typedef struct IMSMQCoordinatedTransactionDispenser3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQCoordinatedTransactionDispenser3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQCoordinatedTransactionDispenser3 *This);
-      ULONG (WINAPI *Release)(IMSMQCoordinatedTransactionDispenser3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQCoordinatedTransactionDispenser3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQCoordinatedTransactionDispenser3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQCoordinatedTransactionDispenser3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQCoordinatedTransactionDispenser3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *BeginTransaction)(IMSMQCoordinatedTransactionDispenser3 *This,IMSMQTransaction3 **ptransaction);
-      HRESULT (WINAPI *get_Properties)(IMSMQCoordinatedTransactionDispenser3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQCoordinatedTransactionDispenser3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQCoordinatedTransactionDispenser3 *This);
+                   ULONG (WINAPI *Release)(IMSMQCoordinatedTransactionDispenser3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQCoordinatedTransactionDispenser3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQCoordinatedTransactionDispenser3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQCoordinatedTransactionDispenser3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQCoordinatedTransactionDispenser3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *BeginTransaction)(IMSMQCoordinatedTransactionDispenser3 *This,IMSMQTransaction3 **ptransaction);
+                   HRESULT (WINAPI *get_Properties)(IMSMQCoordinatedTransactionDispenser3 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQCoordinatedTransactionDispenser3Vtbl;
   struct IMSMQCoordinatedTransactionDispenser3 {
@@ -3606,15 +3606,15 @@ extern "C" {
 #else
   typedef struct IMSMQTransactionDispenser2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQTransactionDispenser2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQTransactionDispenser2 *This);
-      ULONG (WINAPI *Release)(IMSMQTransactionDispenser2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransactionDispenser2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQTransactionDispenser2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransactionDispenser2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQTransactionDispenser2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *BeginTransaction)(IMSMQTransactionDispenser2 *This,IMSMQTransaction2 **ptransaction);
-      HRESULT (WINAPI *get_Properties)(IMSMQTransactionDispenser2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQTransactionDispenser2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQTransactionDispenser2 *This);
+                   ULONG (WINAPI *Release)(IMSMQTransactionDispenser2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransactionDispenser2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQTransactionDispenser2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransactionDispenser2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQTransactionDispenser2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *BeginTransaction)(IMSMQTransactionDispenser2 *This,IMSMQTransaction2 **ptransaction);
+                   HRESULT (WINAPI *get_Properties)(IMSMQTransactionDispenser2 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQTransactionDispenser2Vtbl;
   struct IMSMQTransactionDispenser2 {
@@ -3650,15 +3650,15 @@ extern "C" {
 #else
   typedef struct IMSMQTransactionDispenser3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQTransactionDispenser3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQTransactionDispenser3 *This);
-      ULONG (WINAPI *Release)(IMSMQTransactionDispenser3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransactionDispenser3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQTransactionDispenser3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransactionDispenser3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQTransactionDispenser3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *BeginTransaction)(IMSMQTransactionDispenser3 *This,IMSMQTransaction3 **ptransaction);
-      HRESULT (WINAPI *get_Properties)(IMSMQTransactionDispenser3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQTransactionDispenser3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQTransactionDispenser3 *This);
+                   ULONG (WINAPI *Release)(IMSMQTransactionDispenser3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQTransactionDispenser3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQTransactionDispenser3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQTransactionDispenser3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQTransactionDispenser3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *BeginTransaction)(IMSMQTransactionDispenser3 *This,IMSMQTransaction3 **ptransaction);
+                   HRESULT (WINAPI *get_Properties)(IMSMQTransactionDispenser3 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQTransactionDispenser3Vtbl;
   struct IMSMQTransactionDispenser3 {
@@ -3698,14 +3698,14 @@ extern "C" {
 #else
   typedef struct IMSMQApplicationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQApplication *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQApplication *This);
-      ULONG (WINAPI *Release)(IMSMQApplication *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQApplication *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQApplication *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQApplication *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQApplication *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *MachineIdOfMachineName)(IMSMQApplication *This,BSTR MachineName,BSTR *pbstrGuid);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQApplication *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQApplication *This);
+                   ULONG (WINAPI *Release)(IMSMQApplication *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQApplication *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQApplication *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQApplication *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQApplication *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *MachineIdOfMachineName)(IMSMQApplication *This,BSTR MachineName,BSTR *pbstrGuid);
     END_INTERFACE
   } IMSMQApplicationVtbl;
   struct IMSMQApplication {
@@ -3743,21 +3743,21 @@ extern "C" {
 #else
   typedef struct IMSMQApplication2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQApplication2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQApplication2 *This);
-      ULONG (WINAPI *Release)(IMSMQApplication2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQApplication2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQApplication2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQApplication2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQApplication2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *MachineIdOfMachineName)(IMSMQApplication2 *This,BSTR MachineName,BSTR *pbstrGuid);
-      HRESULT (WINAPI *RegisterCertificate)(IMSMQApplication2 *This,VARIANT *Flags,VARIANT *ExternalCertificate);
-      HRESULT (WINAPI *MachineNameOfMachineId)(IMSMQApplication2 *This,BSTR bstrGuid,BSTR *pbstrMachineName);
-      HRESULT (WINAPI *get_MSMQVersionMajor)(IMSMQApplication2 *This,short *psMSMQVersionMajor);
-      HRESULT (WINAPI *get_MSMQVersionMinor)(IMSMQApplication2 *This,short *psMSMQVersionMinor);
-      HRESULT (WINAPI *get_MSMQVersionBuild)(IMSMQApplication2 *This,short *psMSMQVersionBuild);
-      HRESULT (WINAPI *get_IsDsEnabled)(IMSMQApplication2 *This,VARIANT_BOOL *pfIsDsEnabled);
-      HRESULT (WINAPI *get_Properties)(IMSMQApplication2 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQApplication2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQApplication2 *This);
+                   ULONG (WINAPI *Release)(IMSMQApplication2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQApplication2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQApplication2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQApplication2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQApplication2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *MachineIdOfMachineName)(IMSMQApplication2 *This,BSTR MachineName,BSTR *pbstrGuid);
+                   HRESULT (WINAPI *RegisterCertificate)(IMSMQApplication2 *This,VARIANT *Flags,VARIANT *ExternalCertificate);
+                   HRESULT (WINAPI *MachineNameOfMachineId)(IMSMQApplication2 *This,BSTR bstrGuid,BSTR *pbstrMachineName);
+                   HRESULT (WINAPI *get_MSMQVersionMajor)(IMSMQApplication2 *This,short *psMSMQVersionMajor);
+                   HRESULT (WINAPI *get_MSMQVersionMinor)(IMSMQApplication2 *This,short *psMSMQVersionMinor);
+                   HRESULT (WINAPI *get_MSMQVersionBuild)(IMSMQApplication2 *This,short *psMSMQVersionBuild);
+                   HRESULT (WINAPI *get_IsDsEnabled)(IMSMQApplication2 *This,VARIANT_BOOL *pfIsDsEnabled);
+                   HRESULT (WINAPI *get_Properties)(IMSMQApplication2 *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQApplication2Vtbl;
   struct IMSMQApplication2 {
@@ -3817,31 +3817,31 @@ extern "C" {
 #else
   typedef struct IMSMQApplication3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQApplication3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQApplication3 *This);
-      ULONG (WINAPI *Release)(IMSMQApplication3 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQApplication3 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQApplication3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQApplication3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQApplication3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *MachineIdOfMachineName)(IMSMQApplication3 *This,BSTR MachineName,BSTR *pbstrGuid);
-      HRESULT (WINAPI *RegisterCertificate)(IMSMQApplication3 *This,VARIANT *Flags,VARIANT *ExternalCertificate);
-      HRESULT (WINAPI *MachineNameOfMachineId)(IMSMQApplication3 *This,BSTR bstrGuid,BSTR *pbstrMachineName);
-      HRESULT (WINAPI *get_MSMQVersionMajor)(IMSMQApplication3 *This,short *psMSMQVersionMajor);
-      HRESULT (WINAPI *get_MSMQVersionMinor)(IMSMQApplication3 *This,short *psMSMQVersionMinor);
-      HRESULT (WINAPI *get_MSMQVersionBuild)(IMSMQApplication3 *This,short *psMSMQVersionBuild);
-      HRESULT (WINAPI *get_IsDsEnabled)(IMSMQApplication3 *This,VARIANT_BOOL *pfIsDsEnabled);
-      HRESULT (WINAPI *get_Properties)(IMSMQApplication3 *This,IDispatch **ppcolProperties);
-      HRESULT (WINAPI *get_ActiveQueues)(IMSMQApplication3 *This,VARIANT *pvActiveQueues);
-      HRESULT (WINAPI *get_PrivateQueues)(IMSMQApplication3 *This,VARIANT *pvPrivateQueues);
-      HRESULT (WINAPI *get_DirectoryServiceServer)(IMSMQApplication3 *This,BSTR *pbstrDirectoryServiceServer);
-      HRESULT (WINAPI *get_IsConnected)(IMSMQApplication3 *This,VARIANT_BOOL *pfIsConnected);
-      HRESULT (WINAPI *get_BytesInAllQueues)(IMSMQApplication3 *This,VARIANT *pvBytesInAllQueues);
-      HRESULT (WINAPI *put_Machine)(IMSMQApplication3 *This,BSTR bstrMachine);
-      HRESULT (WINAPI *get_Machine)(IMSMQApplication3 *This,BSTR *pbstrMachine);
-      HRESULT (WINAPI *Connect)(IMSMQApplication3 *This);
-      HRESULT (WINAPI *Disconnect)(IMSMQApplication3 *This);
-      HRESULT (WINAPI *Tidy)(IMSMQApplication3 *This);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQApplication3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQApplication3 *This);
+                   ULONG (WINAPI *Release)(IMSMQApplication3 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQApplication3 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQApplication3 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQApplication3 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQApplication3 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *MachineIdOfMachineName)(IMSMQApplication3 *This,BSTR MachineName,BSTR *pbstrGuid);
+                   HRESULT (WINAPI *RegisterCertificate)(IMSMQApplication3 *This,VARIANT *Flags,VARIANT *ExternalCertificate);
+                   HRESULT (WINAPI *MachineNameOfMachineId)(IMSMQApplication3 *This,BSTR bstrGuid,BSTR *pbstrMachineName);
+                   HRESULT (WINAPI *get_MSMQVersionMajor)(IMSMQApplication3 *This,short *psMSMQVersionMajor);
+                   HRESULT (WINAPI *get_MSMQVersionMinor)(IMSMQApplication3 *This,short *psMSMQVersionMinor);
+                   HRESULT (WINAPI *get_MSMQVersionBuild)(IMSMQApplication3 *This,short *psMSMQVersionBuild);
+                   HRESULT (WINAPI *get_IsDsEnabled)(IMSMQApplication3 *This,VARIANT_BOOL *pfIsDsEnabled);
+                   HRESULT (WINAPI *get_Properties)(IMSMQApplication3 *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *get_ActiveQueues)(IMSMQApplication3 *This,VARIANT *pvActiveQueues);
+                   HRESULT (WINAPI *get_PrivateQueues)(IMSMQApplication3 *This,VARIANT *pvPrivateQueues);
+                   HRESULT (WINAPI *get_DirectoryServiceServer)(IMSMQApplication3 *This,BSTR *pbstrDirectoryServiceServer);
+                   HRESULT (WINAPI *get_IsConnected)(IMSMQApplication3 *This,VARIANT_BOOL *pfIsConnected);
+                   HRESULT (WINAPI *get_BytesInAllQueues)(IMSMQApplication3 *This,VARIANT *pvBytesInAllQueues);
+                   HRESULT (WINAPI *put_Machine)(IMSMQApplication3 *This,BSTR bstrMachine);
+                   HRESULT (WINAPI *get_Machine)(IMSMQApplication3 *This,BSTR *pbstrMachine);
+                   HRESULT (WINAPI *Connect)(IMSMQApplication3 *This);
+                   HRESULT (WINAPI *Disconnect)(IMSMQApplication3 *This);
+                   HRESULT (WINAPI *Tidy)(IMSMQApplication3 *This);
     END_INTERFACE
   } IMSMQApplication3Vtbl;
   struct IMSMQApplication3 {
@@ -3926,27 +3926,27 @@ extern "C" {
 #else
   typedef struct IMSMQDestinationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQDestination *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQDestination *This);
-      ULONG (WINAPI *Release)(IMSMQDestination *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQDestination *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQDestination *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQDestination *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQDestination *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Open)(IMSMQDestination *This);
-      HRESULT (WINAPI *Close)(IMSMQDestination *This);
-      HRESULT (WINAPI *get_IsOpen)(IMSMQDestination *This,VARIANT_BOOL *pfIsOpen);
-      HRESULT (WINAPI *get_IADs)(IMSMQDestination *This,IDispatch **ppIADs);
-      HRESULT (WINAPI *putref_IADs)(IMSMQDestination *This,IDispatch *pIADs);
-      HRESULT (WINAPI *get_ADsPath)(IMSMQDestination *This,BSTR *pbstrADsPath);
-      HRESULT (WINAPI *put_ADsPath)(IMSMQDestination *This,BSTR bstrADsPath);
-      HRESULT (WINAPI *get_PathName)(IMSMQDestination *This,BSTR *pbstrPathName);
-      HRESULT (WINAPI *put_PathName)(IMSMQDestination *This,BSTR bstrPathName);
-      HRESULT (WINAPI *get_FormatName)(IMSMQDestination *This,BSTR *pbstrFormatName);
-      HRESULT (WINAPI *put_FormatName)(IMSMQDestination *This,BSTR bstrFormatName);
-      HRESULT (WINAPI *get_Destinations)(IMSMQDestination *This,IDispatch **ppDestinations);
-      HRESULT (WINAPI *putref_Destinations)(IMSMQDestination *This,IDispatch *pDestinations);
-      HRESULT (WINAPI *get_Properties)(IMSMQDestination *This,IDispatch **ppcolProperties);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQDestination *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQDestination *This);
+                   ULONG (WINAPI *Release)(IMSMQDestination *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQDestination *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQDestination *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQDestination *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQDestination *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Open)(IMSMQDestination *This);
+                   HRESULT (WINAPI *Close)(IMSMQDestination *This);
+                   HRESULT (WINAPI *get_IsOpen)(IMSMQDestination *This,VARIANT_BOOL *pfIsOpen);
+                   HRESULT (WINAPI *get_IADs)(IMSMQDestination *This,IDispatch **ppIADs);
+                   HRESULT (WINAPI *putref_IADs)(IMSMQDestination *This,IDispatch *pIADs);
+                   HRESULT (WINAPI *get_ADsPath)(IMSMQDestination *This,BSTR *pbstrADsPath);
+                   HRESULT (WINAPI *put_ADsPath)(IMSMQDestination *This,BSTR bstrADsPath);
+                   HRESULT (WINAPI *get_PathName)(IMSMQDestination *This,BSTR *pbstrPathName);
+                   HRESULT (WINAPI *put_PathName)(IMSMQDestination *This,BSTR bstrPathName);
+                   HRESULT (WINAPI *get_FormatName)(IMSMQDestination *This,BSTR *pbstrFormatName);
+                   HRESULT (WINAPI *put_FormatName)(IMSMQDestination *This,BSTR bstrFormatName);
+                   HRESULT (WINAPI *get_Destinations)(IMSMQDestination *This,IDispatch **ppDestinations);
+                   HRESULT (WINAPI *putref_Destinations)(IMSMQDestination *This,IDispatch *pDestinations);
+                   HRESULT (WINAPI *get_Properties)(IMSMQDestination *This,IDispatch **ppcolProperties);
     END_INTERFACE
   } IMSMQDestinationVtbl;
   struct IMSMQDestination {
@@ -4018,15 +4018,15 @@ extern "C" {
 #else
   typedef struct IMSMQPrivateDestinationVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQPrivateDestination *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQPrivateDestination *This);
-      ULONG (WINAPI *Release)(IMSMQPrivateDestination *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQPrivateDestination *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQPrivateDestination *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQPrivateDestination *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQPrivateDestination *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Handle)(IMSMQPrivateDestination *This,VARIANT *pvarHandle);
-      HRESULT (WINAPI *put_Handle)(IMSMQPrivateDestination *This,VARIANT varHandle);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQPrivateDestination *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQPrivateDestination *This);
+                   ULONG (WINAPI *Release)(IMSMQPrivateDestination *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQPrivateDestination *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQPrivateDestination *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQPrivateDestination *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQPrivateDestination *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Handle)(IMSMQPrivateDestination *This,VARIANT *pvarHandle);
+                   HRESULT (WINAPI *put_Handle)(IMSMQPrivateDestination *This,VARIANT varHandle);
     END_INTERFACE
   } IMSMQPrivateDestinationVtbl;
   struct IMSMQPrivateDestination {
@@ -4068,16 +4068,16 @@ extern "C" {
 #else
   typedef struct IMSMQCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQCollection *This);
-      ULONG (WINAPI *Release)(IMSMQCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Item)(IMSMQCollection *This,VARIANT *Index,VARIANT *pvarRet);
-      HRESULT (WINAPI *get_Count)(IMSMQCollection *This,__LONG32 *pCount);
-      HRESULT (WINAPI *_NewEnum)(IMSMQCollection *This,IUnknown **ppunk);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQCollection *This);
+                   ULONG (WINAPI *Release)(IMSMQCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Item)(IMSMQCollection *This,VARIANT *Index,VARIANT *pvarRet);
+                   HRESULT (WINAPI *get_Count)(IMSMQCollection *This,__LONG32 *pCount);
+                   HRESULT (WINAPI *_NewEnum)(IMSMQCollection *This,IUnknown **ppunk);
     END_INTERFACE
   } IMSMQCollectionVtbl;
   struct IMSMQCollection {
@@ -4128,22 +4128,22 @@ extern "C" {
 #else
   typedef struct IMSMQManagementVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQManagement *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQManagement *This);
-      ULONG (WINAPI *Release)(IMSMQManagement *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQManagement *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQManagement *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQManagement *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQManagement *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Init)(IMSMQManagement *This,VARIANT *Machine,VARIANT *Pathname,VARIANT *FormatName);
-      HRESULT (WINAPI *get_FormatName)(IMSMQManagement *This,BSTR *pbstrFormatName);
-      HRESULT (WINAPI *get_Machine)(IMSMQManagement *This,BSTR *pbstrMachine);
-      HRESULT (WINAPI *get_MessageCount)(IMSMQManagement *This,__LONG32 *plMessageCount);
-      HRESULT (WINAPI *get_ForeignStatus)(IMSMQManagement *This,__LONG32 *plForeignStatus);
-      HRESULT (WINAPI *get_QueueType)(IMSMQManagement *This,__LONG32 *plQueueType);
-      HRESULT (WINAPI *get_IsLocal)(IMSMQManagement *This,VARIANT_BOOL *pfIsLocal);
-      HRESULT (WINAPI *get_TransactionalStatus)(IMSMQManagement *This,__LONG32 *plTransactionalStatus);
-      HRESULT (WINAPI *get_BytesInQueue)(IMSMQManagement *This,VARIANT *pvBytesInQueue);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQManagement *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQManagement *This);
+                   ULONG (WINAPI *Release)(IMSMQManagement *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQManagement *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQManagement *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQManagement *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQManagement *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Init)(IMSMQManagement *This,VARIANT *Machine,VARIANT *Pathname,VARIANT *FormatName);
+                   HRESULT (WINAPI *get_FormatName)(IMSMQManagement *This,BSTR *pbstrFormatName);
+                   HRESULT (WINAPI *get_Machine)(IMSMQManagement *This,BSTR *pbstrMachine);
+                   HRESULT (WINAPI *get_MessageCount)(IMSMQManagement *This,__LONG32 *plMessageCount);
+                   HRESULT (WINAPI *get_ForeignStatus)(IMSMQManagement *This,__LONG32 *plForeignStatus);
+                   HRESULT (WINAPI *get_QueueType)(IMSMQManagement *This,__LONG32 *plQueueType);
+                   HRESULT (WINAPI *get_IsLocal)(IMSMQManagement *This,VARIANT_BOOL *pfIsLocal);
+                   HRESULT (WINAPI *get_TransactionalStatus)(IMSMQManagement *This,__LONG32 *plTransactionalStatus);
+                   HRESULT (WINAPI *get_BytesInQueue)(IMSMQManagement *This,VARIANT *pvBytesInQueue);
     END_INTERFACE
   } IMSMQManagementVtbl;
   struct IMSMQManagement {
@@ -4209,28 +4209,28 @@ extern "C" {
 #else
   typedef struct IMSMQOutgoingQueueManagementVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQOutgoingQueueManagement *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQOutgoingQueueManagement *This);
-      ULONG (WINAPI *Release)(IMSMQOutgoingQueueManagement *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQOutgoingQueueManagement *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQOutgoingQueueManagement *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQOutgoingQueueManagement *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQOutgoingQueueManagement *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Init)(IMSMQOutgoingQueueManagement *This,VARIANT *Machine,VARIANT *Pathname,VARIANT *FormatName);
-      HRESULT (WINAPI *get_FormatName)(IMSMQOutgoingQueueManagement *This,BSTR *pbstrFormatName);
-      HRESULT (WINAPI *get_Machine)(IMSMQOutgoingQueueManagement *This,BSTR *pbstrMachine);
-      HRESULT (WINAPI *get_MessageCount)(IMSMQOutgoingQueueManagement *This,__LONG32 *plMessageCount);
-      HRESULT (WINAPI *get_ForeignStatus)(IMSMQOutgoingQueueManagement *This,__LONG32 *plForeignStatus);
-      HRESULT (WINAPI *get_QueueType)(IMSMQOutgoingQueueManagement *This,__LONG32 *plQueueType);
-      HRESULT (WINAPI *get_IsLocal)(IMSMQOutgoingQueueManagement *This,VARIANT_BOOL *pfIsLocal);
-      HRESULT (WINAPI *get_TransactionalStatus)(IMSMQOutgoingQueueManagement *This,__LONG32 *plTransactionalStatus);
-      HRESULT (WINAPI *get_BytesInQueue)(IMSMQOutgoingQueueManagement *This,VARIANT *pvBytesInQueue);
-      HRESULT (WINAPI *get_State)(IMSMQOutgoingQueueManagement *This,__LONG32 *plState);
-      HRESULT (WINAPI *get_NextHops)(IMSMQOutgoingQueueManagement *This,VARIANT *pvNextHops);
-      HRESULT (WINAPI *EodGetSendInfo)(IMSMQOutgoingQueueManagement *This,IMSMQCollection **ppCollection);
-      HRESULT (WINAPI *Resume)(IMSMQOutgoingQueueManagement *This);
-      HRESULT (WINAPI *Pause)(IMSMQOutgoingQueueManagement *This);
-      HRESULT (WINAPI *EodResend)(IMSMQOutgoingQueueManagement *This);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQOutgoingQueueManagement *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQOutgoingQueueManagement *This);
+                   ULONG (WINAPI *Release)(IMSMQOutgoingQueueManagement *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQOutgoingQueueManagement *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQOutgoingQueueManagement *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQOutgoingQueueManagement *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQOutgoingQueueManagement *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Init)(IMSMQOutgoingQueueManagement *This,VARIANT *Machine,VARIANT *Pathname,VARIANT *FormatName);
+                   HRESULT (WINAPI *get_FormatName)(IMSMQOutgoingQueueManagement *This,BSTR *pbstrFormatName);
+                   HRESULT (WINAPI *get_Machine)(IMSMQOutgoingQueueManagement *This,BSTR *pbstrMachine);
+                   HRESULT (WINAPI *get_MessageCount)(IMSMQOutgoingQueueManagement *This,__LONG32 *plMessageCount);
+                   HRESULT (WINAPI *get_ForeignStatus)(IMSMQOutgoingQueueManagement *This,__LONG32 *plForeignStatus);
+                   HRESULT (WINAPI *get_QueueType)(IMSMQOutgoingQueueManagement *This,__LONG32 *plQueueType);
+                   HRESULT (WINAPI *get_IsLocal)(IMSMQOutgoingQueueManagement *This,VARIANT_BOOL *pfIsLocal);
+                   HRESULT (WINAPI *get_TransactionalStatus)(IMSMQOutgoingQueueManagement *This,__LONG32 *plTransactionalStatus);
+                   HRESULT (WINAPI *get_BytesInQueue)(IMSMQOutgoingQueueManagement *This,VARIANT *pvBytesInQueue);
+                   HRESULT (WINAPI *get_State)(IMSMQOutgoingQueueManagement *This,__LONG32 *plState);
+                   HRESULT (WINAPI *get_NextHops)(IMSMQOutgoingQueueManagement *This,VARIANT *pvNextHops);
+                   HRESULT (WINAPI *EodGetSendInfo)(IMSMQOutgoingQueueManagement *This,IMSMQCollection **ppCollection);
+                   HRESULT (WINAPI *Resume)(IMSMQOutgoingQueueManagement *This);
+                   HRESULT (WINAPI *Pause)(IMSMQOutgoingQueueManagement *This);
+                   HRESULT (WINAPI *EodResend)(IMSMQOutgoingQueueManagement *This);
     END_INTERFACE
   } IMSMQOutgoingQueueManagementVtbl;
   struct IMSMQOutgoingQueueManagement {
@@ -4293,25 +4293,25 @@ extern "C" {
 #else
   typedef struct IMSMQQueueManagementVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSMQQueueManagement *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSMQQueueManagement *This);
-      ULONG (WINAPI *Release)(IMSMQQueueManagement *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueManagement *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueManagement *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueManagement *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSMQQueueManagement *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Init)(IMSMQQueueManagement *This,VARIANT *Machine,VARIANT *Pathname,VARIANT *FormatName);
-      HRESULT (WINAPI *get_FormatName)(IMSMQQueueManagement *This,BSTR *pbstrFormatName);
-      HRESULT (WINAPI *get_Machine)(IMSMQQueueManagement *This,BSTR *pbstrMachine);
-      HRESULT (WINAPI *get_MessageCount)(IMSMQQueueManagement *This,__LONG32 *plMessageCount);
-      HRESULT (WINAPI *get_ForeignStatus)(IMSMQQueueManagement *This,__LONG32 *plForeignStatus);
-      HRESULT (WINAPI *get_QueueType)(IMSMQQueueManagement *This,__LONG32 *plQueueType);
-      HRESULT (WINAPI *get_IsLocal)(IMSMQQueueManagement *This,VARIANT_BOOL *pfIsLocal);
-      HRESULT (WINAPI *get_TransactionalStatus)(IMSMQQueueManagement *This,__LONG32 *plTransactionalStatus);
-      HRESULT (WINAPI *get_BytesInQueue)(IMSMQQueueManagement *This,VARIANT *pvBytesInQueue);
-      HRESULT (WINAPI *get_JournalMessageCount)(IMSMQQueueManagement *This,__LONG32 *plJournalMessageCount);
-      HRESULT (WINAPI *get_BytesInJournal)(IMSMQQueueManagement *This,VARIANT *pvBytesInJournal);
-      HRESULT (WINAPI *EodGetReceiveInfo)(IMSMQQueueManagement *This,VARIANT *pvCollection);
+                   HRESULT (WINAPI *QueryInterface)(IMSMQQueueManagement *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSMQQueueManagement *This);
+                   ULONG (WINAPI *Release)(IMSMQQueueManagement *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSMQQueueManagement *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSMQQueueManagement *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSMQQueueManagement *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSMQQueueManagement *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Init)(IMSMQQueueManagement *This,VARIANT *Machine,VARIANT *Pathname,VARIANT *FormatName);
+                   HRESULT (WINAPI *get_FormatName)(IMSMQQueueManagement *This,BSTR *pbstrFormatName);
+                   HRESULT (WINAPI *get_Machine)(IMSMQQueueManagement *This,BSTR *pbstrMachine);
+                   HRESULT (WINAPI *get_MessageCount)(IMSMQQueueManagement *This,__LONG32 *plMessageCount);
+                   HRESULT (WINAPI *get_ForeignStatus)(IMSMQQueueManagement *This,__LONG32 *plForeignStatus);
+                   HRESULT (WINAPI *get_QueueType)(IMSMQQueueManagement *This,__LONG32 *plQueueType);
+                   HRESULT (WINAPI *get_IsLocal)(IMSMQQueueManagement *This,VARIANT_BOOL *pfIsLocal);
+                   HRESULT (WINAPI *get_TransactionalStatus)(IMSMQQueueManagement *This,__LONG32 *plTransactionalStatus);
+                   HRESULT (WINAPI *get_BytesInQueue)(IMSMQQueueManagement *This,VARIANT *pvBytesInQueue);
+                   HRESULT (WINAPI *get_JournalMessageCount)(IMSMQQueueManagement *This,__LONG32 *plJournalMessageCount);
+                   HRESULT (WINAPI *get_BytesInJournal)(IMSMQQueueManagement *This,VARIANT *pvBytesInJournal);
+                   HRESULT (WINAPI *EodGetReceiveInfo)(IMSMQQueueManagement *This,VARIANT *pvCollection);
     END_INTERFACE
   } IMSMQQueueManagementVtbl;
   struct IMSMQQueueManagement {

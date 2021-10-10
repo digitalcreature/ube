@@ -47,16 +47,16 @@ typedef DWORD FOURCC;
  */
 #define DMUS_DEFAULT_SIZE_OFFSETTABLE 0x1
 
-#define DMUS_DOWNLOADINFO_INSTRUMENT       0x1
-#define DMUS_DOWNLOADINFO_WAVE             0x2
-#define DMUS_DOWNLOADINFO_INSTRUMENT2      0x3
+#define DMUS_DOWNLOADINFO_INSTRUMENT                    0x1
+#define DMUS_DOWNLOADINFO_WAVE                                       0x2
+#define DMUS_DOWNLOADINFO_INSTRUMENT2                   0x3
 #define DMUS_DOWNLOADINFO_WAVEARTICULATION 0x4
 #define DMUS_DOWNLOADINFO_STREAMINGWAVE    0x5
-#define DMUS_DOWNLOADINFO_ONESHOTWAVE      0x6
+#define DMUS_DOWNLOADINFO_ONESHOTWAVE                   0x6
 
 #define DMUS_INSTRUMENT_GM_INSTRUMENT 0x1
 
-#define DMUS_MIN_DATA_SIZE 0x4       
+#define DMUS_MIN_DATA_SIZE 0x4                    
 
 /*****************************************************************************
  * Structures
@@ -65,21 +65,21 @@ typedef DWORD FOURCC;
 typedef struct _DMUS_DOWNLOADINFO   DMUS_DOWNLOADINFO,   *LPDMUS_DOWNLOADINFO;
 typedef struct _DMUS_OFFSETTABLE    DMUS_OFFSETTABLE,    *LPDMUS_OFFSETTABLE;
 typedef struct _DMUS_INSTRUMENT     DMUS_INSTRUMENT,     *LPDMUS_INSTRUMENT;
-typedef struct _DMUS_REGION         DMUS_REGION,         *LPDMUS_REGION;
-typedef struct _DMUS_LFOPARAMS      DMUS_LFOPARAMS,      *LPDMUS_LFOPARAMS;
-typedef struct _DMUS_VEGPARAMS      DMUS_VEGPARAMS,      *LPDMUS_VEGPARAMS;
-typedef struct _DMUS_PEGPARAMS      DMUS_PEGPARAMS,      *LPDMUS_PEGPARAMS;
-typedef struct _DMUS_MSCPARAMS      DMUS_MSCPARAMS,      *LPDMUS_MSCPARAMS;
+typedef struct _DMUS_REGION                      DMUS_REGION,                      *LPDMUS_REGION;
+typedef struct _DMUS_LFOPARAMS                   DMUS_LFOPARAMS,                   *LPDMUS_LFOPARAMS;
+typedef struct _DMUS_VEGPARAMS                   DMUS_VEGPARAMS,                   *LPDMUS_VEGPARAMS;
+typedef struct _DMUS_PEGPARAMS                   DMUS_PEGPARAMS,                   *LPDMUS_PEGPARAMS;
+typedef struct _DMUS_MSCPARAMS                   DMUS_MSCPARAMS,                   *LPDMUS_MSCPARAMS;
 typedef struct _DMUS_ARTICPARAMS    DMUS_ARTICPARAMS,    *LPDMUS_ARTICPARAMS;
 typedef struct _DMUS_ARTICULATION   DMUS_ARTICULATION,   *LPDMUS_ARTICULATION;
 typedef struct _DMUS_ARTICULATION2  DMUS_ARTICULATION2,  *LPDMUS_ARTICULATION2;
 typedef struct _DMUS_EXTENSIONCHUNK DMUS_EXTENSIONCHUNK, *LPDMUS_EXTENSIONCHUNK;
-typedef struct _DMUS_COPYRIGHT      DMUS_COPYRIGHT,      *LPDMUS_COPYRIGHT;
-typedef struct _DMUS_WAVEDATA       DMUS_WAVEDATA,       *LPDMUS_WAVEDATA;
-typedef struct _DMUS_WAVE           DMUS_WAVE,           *LPDMUS_WAVE;
-typedef struct _DMUS_NOTERANGE      DMUS_NOTERANGE,      *LPDMUS_NOTERANGE;
-typedef struct _DMUS_WAVEARTDL      DMUS_WAVEARTDL,      *LPDMUS_WAVEARTDL;
-typedef struct _DMUS_WAVEDL         DMUS_WAVEDL,         *LPDMUS_WAVEDL;
+typedef struct _DMUS_COPYRIGHT                   DMUS_COPYRIGHT,                   *LPDMUS_COPYRIGHT;
+typedef struct _DMUS_WAVEDATA                    DMUS_WAVEDATA,                    *LPDMUS_WAVEDATA;
+typedef struct _DMUS_WAVE                        DMUS_WAVE,                        *LPDMUS_WAVE;
+typedef struct _DMUS_NOTERANGE                   DMUS_NOTERANGE,                   *LPDMUS_NOTERANGE;
+typedef struct _DMUS_WAVEARTDL                   DMUS_WAVEARTDL,                   *LPDMUS_WAVEARTDL;
+typedef struct _DMUS_WAVEDL                      DMUS_WAVEDL,                      *LPDMUS_WAVEDL;
 
 /* actual structures */
 struct _DMUS_DOWNLOADINFO {
@@ -95,11 +95,11 @@ struct _DMUS_OFFSETTABLE {
 
 struct _DMUS_INSTRUMENT {
 	ULONG ulPatch;
-	ULONG ulFirstRegionIdx;             
+	ULONG ulFirstRegionIdx;                                       
 	ULONG ulGlobalArtIdx;
 	ULONG ulFirstExtCkIdx;
 	ULONG ulCopyrightIdx;
-	ULONG ulFlags;                        
+	ULONG ulFlags;                                                                            
 };
 
 struct _DMUS_REGION {
@@ -170,7 +170,7 @@ struct _DMUS_ARTICULATION2 {
 struct _DMUS_EXTENSIONCHUNK {
 	ULONG  cbSize;
 	ULONG  ulNextExtCkIdx;
-	FOURCC ExtCkID;                                      
+	FOURCC ExtCkID;                                                                                                                    
 	BYTE   byExtCk[DMUS_MIN_DATA_SIZE];
 };
 
@@ -185,9 +185,9 @@ struct _DMUS_WAVEDATA {
 };
 
 struct _DMUS_WAVE {
-	ULONG        ulFirstExtCkIdx;
-	ULONG        ulCopyrightIdx;
-	ULONG        ulWaveDataIdx;
+	ULONG                     ulFirstExtCkIdx;
+	ULONG                     ulCopyrightIdx;
+	ULONG                     ulWaveDataIdx;
 	WAVEFORMATEX WaveformatEx;
 };
 

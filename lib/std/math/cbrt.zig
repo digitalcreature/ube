@@ -22,9 +22,9 @@ const expect = std.testing.expect;
 pub fn cbrt(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => cbrt32(x),
-        f64 => cbrt64(x),
-        else => @compileError("cbrt not implemented for " ++ @typeName(T)),
+                     f32 => cbrt32(x),
+                     f64 => cbrt64(x),
+                     else => @compileError("cbrt not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -37,20 +37,20 @@ fn cbrt32(x: f32) f32 {
 
     // cbrt(nan, inf) = itself
     if (hx >= 0x7F800000) {
-        return x + x;
+                     return x + x;
     }
 
     // cbrt to ~5bits
     if (hx < 0x00800000) {
-        // cbrt(+-0) = itself
-        if (hx == 0) {
-            return x;
-        }
-        u = @bitCast(u32, x * 0x1.0p24);
-        hx = u & 0x7FFFFFFF;
-        hx = hx / 3 + B2;
+                     // cbrt(+-0) = itself
+                     if (hx == 0) {
+                                      return x;
+                     }
+                     u = @bitCast(u32, x * 0x1.0p24);
+                     hx = u & 0x7FFFFFFF;
+                     hx = hx / 3 + B2;
     } else {
-        hx = hx / 3 + B1;
+                     hx = hx / 3 + B1;
     }
 
     u &= 0x80000000;
@@ -84,21 +84,21 @@ fn cbrt64(x: f64) f64 {
 
     // cbrt(nan, inf) = itself
     if (hx >= 0x7FF00000) {
-        return x + x;
+                     return x + x;
     }
 
     // cbrt to ~5bits
     if (hx < 0x00100000) {
-        u = @bitCast(u64, x * 0x1.0p54);
-        hx = @intCast(u32, u >> 32) & 0x7FFFFFFF;
+                     u = @bitCast(u64, x * 0x1.0p54);
+                     hx = @intCast(u32, u >> 32) & 0x7FFFFFFF;
 
-        // cbrt(0) is itself
-        if (hx == 0) {
-            return 0;
-        }
-        hx = hx / 3 + B2;
+                     // cbrt(0) is itself
+                     if (hx == 0) {
+                                      return 0;
+                     }
+                     hx = hx / 3 + B2;
     } else {
-        hx = hx / 3 + B1;
+                     hx = hx / 3 + B1;
     }
 
     u &= 1 << 63;

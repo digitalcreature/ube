@@ -29,7 +29,7 @@
 extern "C" {
 #endif
 
-#define IOCTL_DVD_BASE                    FILE_DEVICE_DVD
+#define IOCTL_DVD_BASE                                                           FILE_DEVICE_DVD
 
 #define IOCTL_STORAGE_SET_READ_AHEAD \
   CTL_CODE(IOCTL_STORAGE_BASE, 0x0100, METHOD_BUFFERED, FILE_READ_ACCESS)
@@ -145,31 +145,31 @@ typedef struct _DVD_COPY_PROTECT_KEY {
 	UCHAR  KeyData[0];
 } DVD_COPY_PROTECT_KEY, *PDVD_COPY_PROTECT_KEY;
 
-#define DVD_CHALLENGE_KEY_LENGTH          (12 + sizeof(DVD_COPY_PROTECT_KEY))
-#define DVD_BUS_KEY_LENGTH                (8 + sizeof(DVD_COPY_PROTECT_KEY))
-#define DVD_TITLE_KEY_LENGTH              (8 + sizeof(DVD_COPY_PROTECT_KEY))
-#define DVD_DISK_KEY_LENGTH               (2048 + sizeof(DVD_COPY_PROTECT_KEY))
-#define DVD_RPC_KEY_LENGTH                (sizeof(DVD_RPC_KEY) + sizeof(DVD_COPY_PROTECT_KEY))
-#define DVD_SET_RPC_KEY_LENGTH            (sizeof(DVD_SET_RPC_KEY) + sizeof(DVD_COPY_PROTECT_KEY))
-#define DVD_ASF_LENGTH                    (sizeof(DVD_ASF) + sizeof(DVD_COPY_PROTECT_KEY))
+#define DVD_CHALLENGE_KEY_LENGTH                       (12 + sizeof(DVD_COPY_PROTECT_KEY))
+#define DVD_BUS_KEY_LENGTH                                          (8 + sizeof(DVD_COPY_PROTECT_KEY))
+#define DVD_TITLE_KEY_LENGTH                                        (8 + sizeof(DVD_COPY_PROTECT_KEY))
+#define DVD_DISK_KEY_LENGTH                                         (2048 + sizeof(DVD_COPY_PROTECT_KEY))
+#define DVD_RPC_KEY_LENGTH                                          (sizeof(DVD_RPC_KEY) + sizeof(DVD_COPY_PROTECT_KEY))
+#define DVD_SET_RPC_KEY_LENGTH                                      (sizeof(DVD_SET_RPC_KEY) + sizeof(DVD_COPY_PROTECT_KEY))
+#define DVD_ASF_LENGTH                                                           (sizeof(DVD_ASF) + sizeof(DVD_COPY_PROTECT_KEY))
 
-#define DVD_END_ALL_SESSIONS              ((DVD_SESSION_ID) 0xffffffff)
+#define DVD_END_ALL_SESSIONS                                        ((DVD_SESSION_ID) 0xffffffff)
 
 
-#define DVD_CGMS_RESERVED_MASK            0x00000078
+#define DVD_CGMS_RESERVED_MASK                                      0x00000078
 
-#define DVD_CGMS_COPY_PROTECT_MASK        0x00000018
-#define DVD_CGMS_COPY_PERMITTED           0x00000000
-#define DVD_CGMS_COPY_ONCE                0x00000010
-#define DVD_CGMS_NO_COPY                  0x00000018
+#define DVD_CGMS_COPY_PROTECT_MASK                     0x00000018
+#define DVD_CGMS_COPY_PERMITTED                        0x00000000
+#define DVD_CGMS_COPY_ONCE                                          0x00000010
+#define DVD_CGMS_NO_COPY                                                         0x00000018
 
-#define DVD_COPYRIGHT_MASK                0x00000040
-#define DVD_NOT_COPYRIGHTED               0x00000000
-#define DVD_COPYRIGHTED                   0x00000040
+#define DVD_COPYRIGHT_MASK                                          0x00000040
+#define DVD_NOT_COPYRIGHTED                                         0x00000000
+#define DVD_COPYRIGHTED                                                          0x00000040
 
-#define DVD_SECTOR_PROTECT_MASK           0x00000020
-#define DVD_SECTOR_NOT_PROTECTED          0x00000000
-#define DVD_SECTOR_PROTECTED              0x00000020
+#define DVD_SECTOR_PROTECT_MASK                        0x00000020
+#define DVD_SECTOR_NOT_PROTECTED                       0x00000000
+#define DVD_SECTOR_PROTECTED                                        0x00000020
 
 
 typedef struct _DVD_BCA_DESCRIPTOR {

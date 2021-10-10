@@ -24,10 +24,10 @@ static _locale_t __cdecl init_func(int category, const char *locale)
     _locale_t (__cdecl *func)(int, const char *) = NULL;
 
     if (msvcrt)
-        func = (void*)GetProcAddress(msvcrt, "_create_locale");
+                     func = (void*)GetProcAddress(msvcrt, "_create_locale");
 
     if (!func)
-        func = null_func;
+                     func = null_func;
 
     return (__MINGW_IMP_SYMBOL(_create_locale) = func)(category, locale);
 }

@@ -66,7 +66,7 @@ typedef struct __ucontext {
 	int uc_pad[7];
 	mcontext_t *uc_regs;
 	sigset_t uc_sigmask;
-        int             uc_pad2[3];
+                     int                                       uc_pad2[3];
 	mcontext_t uc_mcontext;
 } ucontext_t;
 

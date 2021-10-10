@@ -332,14 +332,14 @@ typedef VOID( CALLBACK * PFN_SC_NOTIFY_CALLBACK ) (
 );
 
 typedef struct _SERVICE_CONTROL_STATUS_REASON_PARAMSA {
-  DWORD                  dwReason;
-  LPSTR                  pszComment;
+  DWORD                                                         dwReason;
+  LPSTR                                                         pszComment;
   SERVICE_STATUS_PROCESS ServiceStatus;
 } SERVICE_CONTROL_STATUS_REASON_PARAMSA, *PSERVICE_CONTROL_STATUS_REASON_PARAMSA;
 
 typedef struct _SERVICE_CONTROL_STATUS_REASON_PARAMSW {
-  DWORD                  dwReason;
-  LPWSTR                 pszComment;
+  DWORD                                                         dwReason;
+  LPWSTR                                           pszComment;
   SERVICE_STATUS_PROCESS ServiceStatus;
 } SERVICE_CONTROL_STATUS_REASON_PARAMSW, *PSERVICE_CONTROL_STATUS_REASON_PARAMSW;
 
@@ -382,23 +382,23 @@ __MINGW_TYPEDEF_AW(PSERVICE_CONTROL_STATUS_REASON_PARAMS)
 #define SERVICE_STOP_REASON_MINOR_WMI 0x00000012
 
 typedef struct _SERVICE_NOTIFYA {
-  DWORD                  dwVersion;
+  DWORD                                                         dwVersion;
   PFN_SC_NOTIFY_CALLBACK pfnNotifyCallback;
-  PVOID                  pContext;
-  DWORD                  dwNotificationStatus;
+  PVOID                                                         pContext;
+  DWORD                                                         dwNotificationStatus;
   SERVICE_STATUS_PROCESS ServiceStatus;
-  DWORD                  dwNotificationTriggered;
-  LPSTR                  pszServiceNames;
+  DWORD                                                         dwNotificationTriggered;
+  LPSTR                                                         pszServiceNames;
 } SERVICE_NOTIFYA, *PSERVICE_NOTIFYA;
 
 typedef struct _SERVICE_NOTIFYW {
-  DWORD                  dwVersion;
+  DWORD                                                         dwVersion;
   PFN_SC_NOTIFY_CALLBACK pfnNotifyCallback;
-  PVOID                  pContext;
-  DWORD                  dwNotificationStatus;
+  PVOID                                                         pContext;
+  DWORD                                                         dwNotificationStatus;
   SERVICE_STATUS_PROCESS ServiceStatus;
-  DWORD                  dwNotificationTriggered;
-  LPWSTR                 pszServiceNames;
+  DWORD                                                         dwNotificationTriggered;
+  LPWSTR                                           pszServiceNames;
 } SERVICE_NOTIFYW, *PSERVICE_NOTIFYW;
 
 __MINGW_TYPEDEF_AW(SERVICE_NOTIFY)

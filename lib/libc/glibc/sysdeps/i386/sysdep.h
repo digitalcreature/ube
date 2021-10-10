@@ -51,27 +51,27 @@
 #define CALL_MCOUNT		/* Do nothing.  */
 #endif
 
-#define	PSEUDO(name, syscall_name, args)				      \
-  .globl syscall_error;							      \
-lose: SYSCALL_PIC_SETUP							      \
-  jmp JUMPTARGET(syscall_error);					      \
-  ENTRY (name)								      \
-  DO_CALL (syscall_name, args);						      \
+#define	PSEUDO(name, syscall_name, args)				                   \
+  .globl syscall_error;							                   \
+lose: SYSCALL_PIC_SETUP							                   \
+  jmp JUMPTARGET(syscall_error);					                   \
+  ENTRY (name)								                   \
+  DO_CALL (syscall_name, args);						                   \
   jb lose
 
 # define SETUP_PIC_REG(reg) \
-  .ifndef GET_PC_THUNK(reg);						      \
-  .section .gnu.linkonce.t.GET_PC_THUNK(reg),"ax",@progbits;		      \
-  .globl GET_PC_THUNK(reg);						      \
-  .hidden GET_PC_THUNK(reg);						      \
-  .p2align 4;								      \
-  .type GET_PC_THUNK(reg),@function;					      \
-GET_PC_THUNK(reg):							      \
-  movl (%esp), %e##reg;							      \
-  ret;									      \
-  .size GET_PC_THUNK(reg), . - GET_PC_THUNK(reg);			      \
-  .previous;								      \
-  .endif;								      \
+  .ifndef GET_PC_THUNK(reg);						                   \
+  .section .gnu.linkonce.t.GET_PC_THUNK(reg),"ax",@progbits;		                   \
+  .globl GET_PC_THUNK(reg);						                   \
+  .hidden GET_PC_THUNK(reg);						                   \
+  .p2align 4;								                   \
+  .type GET_PC_THUNK(reg),@function;					                   \
+GET_PC_THUNK(reg):							                   \
+  movl (%esp), %e##reg;							                   \
+  ret;									                   \
+  .size GET_PC_THUNK(reg), . - GET_PC_THUNK(reg);			                   \
+  .previous;								                   \
+  .endif;								                   \
   call GET_PC_THUNK(reg)
 
 # define LOAD_PIC_REG(reg) \
@@ -81,11 +81,11 @@ GET_PC_THUNK(reg):							      \
 #ifdef PIC
 #define JUMPTARGET(name)	name##@PLT
 #define SYSCALL_PIC_SETUP \
-    pushl %ebx;								      \
-    cfi_adjust_cfa_offset (4);						      \
-    call 0f;								      \
-0:  popl %ebx;								      \
-    cfi_adjust_cfa_offset (-4);						      \
+    pushl %ebx;								                   \
+    cfi_adjust_cfa_offset (4);						                   \
+    call 0f;								                   \
+0:  popl %ebx;								                   \
+    cfi_adjust_cfa_offset (-4);						                   \
     addl $_GLOBAL_OFFSET_TABLE_+[.-0b], %ebx;
 
 #else

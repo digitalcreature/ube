@@ -139,62 +139,62 @@ MIDL_INTERFACE("83cf873a-f6da-4bc8-823f-bacfd55dc430")
 IMFTopologyNode : public IMFAttributes
 {
     virtual HRESULT STDMETHODCALLTYPE SetObject(
-        IUnknown *pObject) = 0;
+                     IUnknown *pObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObject(
-        IUnknown **ppObject) = 0;
+                     IUnknown **ppObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNodeType(
-        MF_TOPOLOGY_TYPE *pType) = 0;
+                     MF_TOPOLOGY_TYPE *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTopoNodeID(
-        TOPOID *pID) = 0;
+                     TOPOID *pID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTopoNodeID(
-        TOPOID ullTopoID) = 0;
+                     TOPOID ullTopoID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputCount(
-        DWORD *pcInputs) = 0;
+                     DWORD *pcInputs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputCount(
-        DWORD *pcOutputs) = 0;
+                     DWORD *pcOutputs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConnectOutput(
-        DWORD dwOutputIndex,
-        IMFTopologyNode *pDownstreamNode,
-        DWORD dwInputIndexOnDownstreamNode) = 0;
+                     DWORD dwOutputIndex,
+                     IMFTopologyNode *pDownstreamNode,
+                     DWORD dwInputIndexOnDownstreamNode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DisconnectOutput(
-        DWORD dwOutputIndex) = 0;
+                     DWORD dwOutputIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInput(
-        DWORD dwInputIndex,
-        IMFTopologyNode **ppUpstreamNode,
-        DWORD *pdwOutputIndexOnUpstreamNode) = 0;
+                     DWORD dwInputIndex,
+                     IMFTopologyNode **ppUpstreamNode,
+                     DWORD *pdwOutputIndexOnUpstreamNode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutput(
-        DWORD dwOutputIndex,
-        IMFTopologyNode **ppDownstreamNode,
-        DWORD *pdwInputIndexOnDownstreamNode) = 0;
+                     DWORD dwOutputIndex,
+                     IMFTopologyNode **ppDownstreamNode,
+                     DWORD *pdwInputIndexOnDownstreamNode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputPrefType(
-        DWORD dwOutputIndex,
-        IMFMediaType *pType) = 0;
+                     DWORD dwOutputIndex,
+                     IMFMediaType *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputPrefType(
-        DWORD dwOutputIndex,
-        IMFMediaType **ppType) = 0;
+                     DWORD dwOutputIndex,
+                     IMFMediaType **ppType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInputPrefType(
-        DWORD dwInputIndex,
-        IMFMediaType *pType) = 0;
+                     DWORD dwInputIndex,
+                     IMFMediaType *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInputPrefType(
-        DWORD dwInputIndex,
-        IMFMediaType **ppType) = 0;
+                     DWORD dwInputIndex,
+                     IMFMediaType **ppType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CloneFrom(
-        IMFTopologyNode *pNode) = 0;
+                     IMFTopologyNode *pNode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -206,243 +206,243 @@ typedef struct IMFTopologyNodeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFTopologyNode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFTopologyNode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFTopologyNode *This);
+                     IMFTopologyNode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFTopologyNode *This);
+                     IMFTopologyNode *This);
 
     /*** IMFAttributes methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        PROPVARIANT *pValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetItemType)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        MF_ATTRIBUTE_TYPE *pType);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     MF_ATTRIBUTE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *CompareItem)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value,
-        WINBOOL *pbResult);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        IMFTopologyNode *This,
-        IMFAttributes *pTheirs,
-        MF_ATTRIBUTES_MATCH_TYPE MatchType,
-        WINBOOL *pbResult);
+                     IMFTopologyNode *This,
+                     IMFAttributes *pTheirs,
+                     MF_ATTRIBUTES_MATCH_TYPE MatchType,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT32)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        UINT32 *punValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     UINT32 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT64)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        UINT64 *punValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     UINT64 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDouble)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        double *pfValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     double *pfValue);
 
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        GUID *pguidValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     GUID *pguidValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringLength)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        UINT32 *pcchLength);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetString)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        LPWSTR pwszValue,
-        UINT32 cchBufSize,
-        UINT32 *pcchLength);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     LPWSTR pwszValue,
+                     UINT32 cchBufSize,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedString)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        LPWSTR *ppwszValue,
-        UINT32 *pcchLength);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     LPWSTR *ppwszValue,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetBlobSize)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        UINT32 *pcbBlobSize);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetBlob)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        UINT8 *pBuf,
-        UINT32 cbBufSize,
-        UINT32 *pcbBlobSize);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     UINT8 *pBuf,
+                     UINT32 cbBufSize,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedBlob)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        UINT8 **ppBuf,
-        UINT32 *pcbSize);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     UINT8 **ppBuf,
+                     UINT32 *pcbSize);
 
     HRESULT (STDMETHODCALLTYPE *GetUnknown)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        REFIID riid,
-        LPVOID *ppv);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     REFIID riid,
+                     LPVOID *ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetItem)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value);
 
     HRESULT (STDMETHODCALLTYPE *DeleteItem)(
-        IMFTopologyNode *This,
-        REFGUID guidKey);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAllItems)(
-        IMFTopologyNode *This);
+                     IMFTopologyNode *This);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT32)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        UINT32 unValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     UINT32 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT64)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        UINT64 unValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     UINT64 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDouble)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        double fValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     double fValue);
 
     HRESULT (STDMETHODCALLTYPE *SetGUID)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        REFGUID guidValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     REFGUID guidValue);
 
     HRESULT (STDMETHODCALLTYPE *SetString)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        LPCWSTR wszValue);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     LPCWSTR wszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetBlob)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        const UINT8 *pBuf,
-        UINT32 cbBufSize);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     const UINT8 *pBuf,
+                     UINT32 cbBufSize);
 
     HRESULT (STDMETHODCALLTYPE *SetUnknown)(
-        IMFTopologyNode *This,
-        REFGUID guidKey,
-        IUnknown *pUnknown);
+                     IMFTopologyNode *This,
+                     REFGUID guidKey,
+                     IUnknown *pUnknown);
 
     HRESULT (STDMETHODCALLTYPE *LockStore)(
-        IMFTopologyNode *This);
+                     IMFTopologyNode *This);
 
     HRESULT (STDMETHODCALLTYPE *UnlockStore)(
-        IMFTopologyNode *This);
+                     IMFTopologyNode *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IMFTopologyNode *This,
-        UINT32 *pcItems);
+                     IMFTopologyNode *This,
+                     UINT32 *pcItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemByIndex)(
-        IMFTopologyNode *This,
-        UINT32 unIndex,
-        GUID *pguidKey,
-        PROPVARIANT *pValue);
+                     IMFTopologyNode *This,
+                     UINT32 unIndex,
+                     GUID *pguidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *CopyAllItems)(
-        IMFTopologyNode *This,
-        IMFAttributes *pDest);
+                     IMFTopologyNode *This,
+                     IMFAttributes *pDest);
 
     /*** IMFTopologyNode methods ***/
     HRESULT (STDMETHODCALLTYPE *SetObject)(
-        IMFTopologyNode *This,
-        IUnknown *pObject);
+                     IMFTopologyNode *This,
+                     IUnknown *pObject);
 
     HRESULT (STDMETHODCALLTYPE *GetObject)(
-        IMFTopologyNode *This,
-        IUnknown **ppObject);
+                     IMFTopologyNode *This,
+                     IUnknown **ppObject);
 
     HRESULT (STDMETHODCALLTYPE *GetNodeType)(
-        IMFTopologyNode *This,
-        MF_TOPOLOGY_TYPE *pType);
+                     IMFTopologyNode *This,
+                     MF_TOPOLOGY_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetTopoNodeID)(
-        IMFTopologyNode *This,
-        TOPOID *pID);
+                     IMFTopologyNode *This,
+                     TOPOID *pID);
 
     HRESULT (STDMETHODCALLTYPE *SetTopoNodeID)(
-        IMFTopologyNode *This,
-        TOPOID ullTopoID);
+                     IMFTopologyNode *This,
+                     TOPOID ullTopoID);
 
     HRESULT (STDMETHODCALLTYPE *GetInputCount)(
-        IMFTopologyNode *This,
-        DWORD *pcInputs);
+                     IMFTopologyNode *This,
+                     DWORD *pcInputs);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputCount)(
-        IMFTopologyNode *This,
-        DWORD *pcOutputs);
+                     IMFTopologyNode *This,
+                     DWORD *pcOutputs);
 
     HRESULT (STDMETHODCALLTYPE *ConnectOutput)(
-        IMFTopologyNode *This,
-        DWORD dwOutputIndex,
-        IMFTopologyNode *pDownstreamNode,
-        DWORD dwInputIndexOnDownstreamNode);
+                     IMFTopologyNode *This,
+                     DWORD dwOutputIndex,
+                     IMFTopologyNode *pDownstreamNode,
+                     DWORD dwInputIndexOnDownstreamNode);
 
     HRESULT (STDMETHODCALLTYPE *DisconnectOutput)(
-        IMFTopologyNode *This,
-        DWORD dwOutputIndex);
+                     IMFTopologyNode *This,
+                     DWORD dwOutputIndex);
 
     HRESULT (STDMETHODCALLTYPE *GetInput)(
-        IMFTopologyNode *This,
-        DWORD dwInputIndex,
-        IMFTopologyNode **ppUpstreamNode,
-        DWORD *pdwOutputIndexOnUpstreamNode);
+                     IMFTopologyNode *This,
+                     DWORD dwInputIndex,
+                     IMFTopologyNode **ppUpstreamNode,
+                     DWORD *pdwOutputIndexOnUpstreamNode);
 
     HRESULT (STDMETHODCALLTYPE *GetOutput)(
-        IMFTopologyNode *This,
-        DWORD dwOutputIndex,
-        IMFTopologyNode **ppDownstreamNode,
-        DWORD *pdwInputIndexOnDownstreamNode);
+                     IMFTopologyNode *This,
+                     DWORD dwOutputIndex,
+                     IMFTopologyNode **ppDownstreamNode,
+                     DWORD *pdwInputIndexOnDownstreamNode);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputPrefType)(
-        IMFTopologyNode *This,
-        DWORD dwOutputIndex,
-        IMFMediaType *pType);
+                     IMFTopologyNode *This,
+                     DWORD dwOutputIndex,
+                     IMFMediaType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputPrefType)(
-        IMFTopologyNode *This,
-        DWORD dwOutputIndex,
-        IMFMediaType **ppType);
+                     IMFTopologyNode *This,
+                     DWORD dwOutputIndex,
+                     IMFMediaType **ppType);
 
     HRESULT (STDMETHODCALLTYPE *SetInputPrefType)(
-        IMFTopologyNode *This,
-        DWORD dwInputIndex,
-        IMFMediaType *pType);
+                     IMFTopologyNode *This,
+                     DWORD dwInputIndex,
+                     IMFMediaType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetInputPrefType)(
-        IMFTopologyNode *This,
-        DWORD dwInputIndex,
-        IMFMediaType **ppType);
+                     IMFTopologyNode *This,
+                     DWORD dwInputIndex,
+                     IMFMediaType **ppType);
 
     HRESULT (STDMETHODCALLTYPE *CloneFrom)(
-        IMFTopologyNode *This,
-        IMFTopologyNode *pNode);
+                     IMFTopologyNode *This,
+                     IMFTopologyNode *pNode);
 
     END_INTERFACE
 } IMFTopologyNodeVtbl;
@@ -714,36 +714,36 @@ MIDL_INTERFACE("83cf873a-f6da-4bc8-823f-bacfd55dc433")
 IMFTopology : public IMFAttributes
 {
     virtual HRESULT STDMETHODCALLTYPE GetTopologyID(
-        TOPOID *pID) = 0;
+                     TOPOID *pID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddNode(
-        IMFTopologyNode *pNode) = 0;
+                     IMFTopologyNode *pNode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveNode(
-        IMFTopologyNode *pNode) = 0;
+                     IMFTopologyNode *pNode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNodeCount(
-        WORD *pwNodes) = 0;
+                     WORD *pwNodes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNode(
-        WORD wIndex,
-        IMFTopologyNode **ppNode) = 0;
+                     WORD wIndex,
+                     IMFTopologyNode **ppNode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CloneFrom(
-        IMFTopology *pTopology) = 0;
+                     IMFTopology *pTopology) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNodeByID(
-        TOPOID qwTopoNodeID,
-        IMFTopologyNode **ppNode) = 0;
+                     TOPOID qwTopoNodeID,
+                     IMFTopologyNode **ppNode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSourceNodeCollection(
-        IMFCollection **ppCollection) = 0;
+                     IMFCollection **ppCollection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputNodeCollection(
-        IMFCollection **ppCollection) = 0;
+                     IMFCollection **ppCollection) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -755,210 +755,210 @@ typedef struct IMFTopologyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFTopology *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFTopology *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFTopology *This);
+                     IMFTopology *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFTopology *This);
+                     IMFTopology *This);
 
     /*** IMFAttributes methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        PROPVARIANT *pValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetItemType)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        MF_ATTRIBUTE_TYPE *pType);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     MF_ATTRIBUTE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *CompareItem)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value,
-        WINBOOL *pbResult);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        IMFTopology *This,
-        IMFAttributes *pTheirs,
-        MF_ATTRIBUTES_MATCH_TYPE MatchType,
-        WINBOOL *pbResult);
+                     IMFTopology *This,
+                     IMFAttributes *pTheirs,
+                     MF_ATTRIBUTES_MATCH_TYPE MatchType,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT32)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        UINT32 *punValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     UINT32 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT64)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        UINT64 *punValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     UINT64 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDouble)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        double *pfValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     double *pfValue);
 
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        GUID *pguidValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     GUID *pguidValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringLength)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        UINT32 *pcchLength);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetString)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        LPWSTR pwszValue,
-        UINT32 cchBufSize,
-        UINT32 *pcchLength);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     LPWSTR pwszValue,
+                     UINT32 cchBufSize,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedString)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        LPWSTR *ppwszValue,
-        UINT32 *pcchLength);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     LPWSTR *ppwszValue,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetBlobSize)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        UINT32 *pcbBlobSize);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetBlob)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        UINT8 *pBuf,
-        UINT32 cbBufSize,
-        UINT32 *pcbBlobSize);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     UINT8 *pBuf,
+                     UINT32 cbBufSize,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedBlob)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        UINT8 **ppBuf,
-        UINT32 *pcbSize);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     UINT8 **ppBuf,
+                     UINT32 *pcbSize);
 
     HRESULT (STDMETHODCALLTYPE *GetUnknown)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        REFIID riid,
-        LPVOID *ppv);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     REFIID riid,
+                     LPVOID *ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetItem)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value);
 
     HRESULT (STDMETHODCALLTYPE *DeleteItem)(
-        IMFTopology *This,
-        REFGUID guidKey);
+                     IMFTopology *This,
+                     REFGUID guidKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAllItems)(
-        IMFTopology *This);
+                     IMFTopology *This);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT32)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        UINT32 unValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     UINT32 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT64)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        UINT64 unValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     UINT64 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDouble)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        double fValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     double fValue);
 
     HRESULT (STDMETHODCALLTYPE *SetGUID)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        REFGUID guidValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     REFGUID guidValue);
 
     HRESULT (STDMETHODCALLTYPE *SetString)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        LPCWSTR wszValue);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     LPCWSTR wszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetBlob)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        const UINT8 *pBuf,
-        UINT32 cbBufSize);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     const UINT8 *pBuf,
+                     UINT32 cbBufSize);
 
     HRESULT (STDMETHODCALLTYPE *SetUnknown)(
-        IMFTopology *This,
-        REFGUID guidKey,
-        IUnknown *pUnknown);
+                     IMFTopology *This,
+                     REFGUID guidKey,
+                     IUnknown *pUnknown);
 
     HRESULT (STDMETHODCALLTYPE *LockStore)(
-        IMFTopology *This);
+                     IMFTopology *This);
 
     HRESULT (STDMETHODCALLTYPE *UnlockStore)(
-        IMFTopology *This);
+                     IMFTopology *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IMFTopology *This,
-        UINT32 *pcItems);
+                     IMFTopology *This,
+                     UINT32 *pcItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemByIndex)(
-        IMFTopology *This,
-        UINT32 unIndex,
-        GUID *pguidKey,
-        PROPVARIANT *pValue);
+                     IMFTopology *This,
+                     UINT32 unIndex,
+                     GUID *pguidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *CopyAllItems)(
-        IMFTopology *This,
-        IMFAttributes *pDest);
+                     IMFTopology *This,
+                     IMFAttributes *pDest);
 
     /*** IMFTopology methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTopologyID)(
-        IMFTopology *This,
-        TOPOID *pID);
+                     IMFTopology *This,
+                     TOPOID *pID);
 
     HRESULT (STDMETHODCALLTYPE *AddNode)(
-        IMFTopology *This,
-        IMFTopologyNode *pNode);
+                     IMFTopology *This,
+                     IMFTopologyNode *pNode);
 
     HRESULT (STDMETHODCALLTYPE *RemoveNode)(
-        IMFTopology *This,
-        IMFTopologyNode *pNode);
+                     IMFTopology *This,
+                     IMFTopologyNode *pNode);
 
     HRESULT (STDMETHODCALLTYPE *GetNodeCount)(
-        IMFTopology *This,
-        WORD *pwNodes);
+                     IMFTopology *This,
+                     WORD *pwNodes);
 
     HRESULT (STDMETHODCALLTYPE *GetNode)(
-        IMFTopology *This,
-        WORD wIndex,
-        IMFTopologyNode **ppNode);
+                     IMFTopology *This,
+                     WORD wIndex,
+                     IMFTopologyNode **ppNode);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IMFTopology *This);
+                     IMFTopology *This);
 
     HRESULT (STDMETHODCALLTYPE *CloneFrom)(
-        IMFTopology *This,
-        IMFTopology *pTopology);
+                     IMFTopology *This,
+                     IMFTopology *pTopology);
 
     HRESULT (STDMETHODCALLTYPE *GetNodeByID)(
-        IMFTopology *This,
-        TOPOID qwTopoNodeID,
-        IMFTopologyNode **ppNode);
+                     IMFTopology *This,
+                     TOPOID qwTopoNodeID,
+                     IMFTopologyNode **ppNode);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceNodeCollection)(
-        IMFTopology *This,
-        IMFCollection **ppCollection);
+                     IMFTopology *This,
+                     IMFCollection **ppCollection);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputNodeCollection)(
-        IMFTopology *This,
-        IMFCollection **ppCollection);
+                     IMFTopology *This,
+                     IMFCollection **ppCollection);
 
     END_INTERFACE
 } IMFTopologyVtbl;
@@ -1184,22 +1184,22 @@ MIDL_INTERFACE("2eb1e945-18b8-4139-9b1a-d5d584818530")
 IMFClock : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClockCharacteristics(
-        DWORD *pdwCharacteristics) = 0;
+                     DWORD *pdwCharacteristics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCorrelatedTime(
-        DWORD dwReserved,
-        LONGLONG *pllClockTime,
-        MFTIME *phnsSystemTime) = 0;
+                     DWORD dwReserved,
+                     LONGLONG *pllClockTime,
+                     MFTIME *phnsSystemTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContinuityKey(
-        DWORD *pdwContinuityKey) = 0;
+                     DWORD *pdwContinuityKey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        DWORD dwReserved,
-        MFCLOCK_STATE *peClockState) = 0;
+                     DWORD dwReserved,
+                     MFCLOCK_STATE *peClockState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperties(
-        MFCLOCK_PROPERTIES *pClockProperties) = 0;
+                     MFCLOCK_PROPERTIES *pClockProperties) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1211,39 +1211,39 @@ typedef struct IMFClockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFClock *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFClock *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFClock *This);
+                     IMFClock *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFClock *This);
+                     IMFClock *This);
 
     /*** IMFClock methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClockCharacteristics)(
-        IMFClock *This,
-        DWORD *pdwCharacteristics);
+                     IMFClock *This,
+                     DWORD *pdwCharacteristics);
 
     HRESULT (STDMETHODCALLTYPE *GetCorrelatedTime)(
-        IMFClock *This,
-        DWORD dwReserved,
-        LONGLONG *pllClockTime,
-        MFTIME *phnsSystemTime);
+                     IMFClock *This,
+                     DWORD dwReserved,
+                     LONGLONG *pllClockTime,
+                     MFTIME *phnsSystemTime);
 
     HRESULT (STDMETHODCALLTYPE *GetContinuityKey)(
-        IMFClock *This,
-        DWORD *pdwContinuityKey);
+                     IMFClock *This,
+                     DWORD *pdwContinuityKey);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IMFClock *This,
-        DWORD dwReserved,
-        MFCLOCK_STATE *peClockState);
+                     IMFClock *This,
+                     DWORD dwReserved,
+                     MFCLOCK_STATE *peClockState);
 
     HRESULT (STDMETHODCALLTYPE *GetProperties)(
-        IMFClock *This,
-        MFCLOCK_PROPERTIES *pClockProperties);
+                     IMFClock *This,
+                     MFCLOCK_PROPERTIES *pClockProperties);
 
     END_INTERFACE
 } IMFClockVtbl;
@@ -1328,38 +1328,38 @@ MIDL_INTERFACE("90377834-21d0-4dee-8214-ba2e3e6c1127")
 IMFMediaSession : public IMFMediaEventGenerator
 {
     virtual HRESULT STDMETHODCALLTYPE SetTopology(
-        DWORD dwSetTopologyFlags,
-        IMFTopology *pTopology) = 0;
+                     DWORD dwSetTopologyFlags,
+                     IMFTopology *pTopology) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearTopologies(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Start(
-        const GUID *pguidTimeFormat,
-        const PROPVARIANT *pvarStartPosition) = 0;
+                     const GUID *pguidTimeFormat,
+                     const PROPVARIANT *pvarStartPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shutdown(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClock(
-        IMFClock **ppClock) = 0;
+                     IMFClock **ppClock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSessionCapabilities(
-        DWORD *pdwCaps) = 0;
+                     DWORD *pdwCaps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFullTopology(
-        DWORD dwGetFullTopologyFlags,
-        TOPOID TopoId,
-        IMFTopology **ppFullTopology) = 0;
+                     DWORD dwGetFullTopologyFlags,
+                     TOPOID TopoId,
+                     IMFTopology **ppFullTopology) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1371,78 +1371,78 @@ typedef struct IMFMediaSessionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFMediaSession *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFMediaSession *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFMediaSession *This);
+                     IMFMediaSession *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFMediaSession *This);
+                     IMFMediaSession *This);
 
     /*** IMFMediaEventGenerator methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEvent)(
-        IMFMediaSession *This,
-        DWORD dwFlags,
-        IMFMediaEvent **ppEvent);
+                     IMFMediaSession *This,
+                     DWORD dwFlags,
+                     IMFMediaEvent **ppEvent);
 
     HRESULT (STDMETHODCALLTYPE *BeginGetEvent)(
-        IMFMediaSession *This,
-        IMFAsyncCallback *pCallback,
-        IUnknown *punkState);
+                     IMFMediaSession *This,
+                     IMFAsyncCallback *pCallback,
+                     IUnknown *punkState);
 
     HRESULT (STDMETHODCALLTYPE *EndGetEvent)(
-        IMFMediaSession *This,
-        IMFAsyncResult *pResult,
-        IMFMediaEvent **ppEvent);
+                     IMFMediaSession *This,
+                     IMFAsyncResult *pResult,
+                     IMFMediaEvent **ppEvent);
 
     HRESULT (STDMETHODCALLTYPE *QueueEvent)(
-        IMFMediaSession *This,
-        MediaEventType met,
-        REFGUID guidExtendedType,
-        HRESULT hrStatus,
-        const PROPVARIANT *pvValue);
+                     IMFMediaSession *This,
+                     MediaEventType met,
+                     REFGUID guidExtendedType,
+                     HRESULT hrStatus,
+                     const PROPVARIANT *pvValue);
 
     /*** IMFMediaSession methods ***/
     HRESULT (STDMETHODCALLTYPE *SetTopology)(
-        IMFMediaSession *This,
-        DWORD dwSetTopologyFlags,
-        IMFTopology *pTopology);
+                     IMFMediaSession *This,
+                     DWORD dwSetTopologyFlags,
+                     IMFTopology *pTopology);
 
     HRESULT (STDMETHODCALLTYPE *ClearTopologies)(
-        IMFMediaSession *This);
+                     IMFMediaSession *This);
 
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IMFMediaSession *This,
-        const GUID *pguidTimeFormat,
-        const PROPVARIANT *pvarStartPosition);
+                     IMFMediaSession *This,
+                     const GUID *pguidTimeFormat,
+                     const PROPVARIANT *pvarStartPosition);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IMFMediaSession *This);
+                     IMFMediaSession *This);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IMFMediaSession *This);
+                     IMFMediaSession *This);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IMFMediaSession *This);
+                     IMFMediaSession *This);
 
     HRESULT (STDMETHODCALLTYPE *Shutdown)(
-        IMFMediaSession *This);
+                     IMFMediaSession *This);
 
     HRESULT (STDMETHODCALLTYPE *GetClock)(
-        IMFMediaSession *This,
-        IMFClock **ppClock);
+                     IMFMediaSession *This,
+                     IMFClock **ppClock);
 
     HRESULT (STDMETHODCALLTYPE *GetSessionCapabilities)(
-        IMFMediaSession *This,
-        DWORD *pdwCaps);
+                     IMFMediaSession *This,
+                     DWORD *pdwCaps);
 
     HRESULT (STDMETHODCALLTYPE *GetFullTopology)(
-        IMFMediaSession *This,
-        DWORD dwGetFullTopologyFlags,
-        TOPOID TopoId,
-        IMFTopology **ppFullTopology);
+                     IMFMediaSession *This,
+                     DWORD dwGetFullTopologyFlags,
+                     TOPOID TopoId,
+                     IMFTopology **ppFullTopology);
 
     END_INTERFACE
 } IMFMediaSessionVtbl;
@@ -1548,24 +1548,24 @@ MIDL_INTERFACE("e93dcf6c-4b07-4e1e-8123-aa16ed6eadf5")
 IMFMediaTypeHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsMediaTypeSupported(
-        IMFMediaType *pMediaType,
-        IMFMediaType **ppMediaType) = 0;
+                     IMFMediaType *pMediaType,
+                     IMFMediaType **ppMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaTypeCount(
-        DWORD *pdwTypeCount) = 0;
+                     DWORD *pdwTypeCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaTypeByIndex(
-        DWORD dwIndex,
-        IMFMediaType **ppType) = 0;
+                     DWORD dwIndex,
+                     IMFMediaType **ppType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCurrentMediaType(
-        IMFMediaType *pMediaType) = 0;
+                     IMFMediaType *pMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentMediaType(
-        IMFMediaType **ppMediaType) = 0;
+                     IMFMediaType **ppMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMajorType(
-        GUID *pguidMajorType) = 0;
+                     GUID *pguidMajorType) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1577,42 +1577,42 @@ typedef struct IMFMediaTypeHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFMediaTypeHandler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFMediaTypeHandler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFMediaTypeHandler *This);
+                     IMFMediaTypeHandler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFMediaTypeHandler *This);
+                     IMFMediaTypeHandler *This);
 
     /*** IMFMediaTypeHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *IsMediaTypeSupported)(
-        IMFMediaTypeHandler *This,
-        IMFMediaType *pMediaType,
-        IMFMediaType **ppMediaType);
+                     IMFMediaTypeHandler *This,
+                     IMFMediaType *pMediaType,
+                     IMFMediaType **ppMediaType);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaTypeCount)(
-        IMFMediaTypeHandler *This,
-        DWORD *pdwTypeCount);
+                     IMFMediaTypeHandler *This,
+                     DWORD *pdwTypeCount);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaTypeByIndex)(
-        IMFMediaTypeHandler *This,
-        DWORD dwIndex,
-        IMFMediaType **ppType);
+                     IMFMediaTypeHandler *This,
+                     DWORD dwIndex,
+                     IMFMediaType **ppType);
 
     HRESULT (STDMETHODCALLTYPE *SetCurrentMediaType)(
-        IMFMediaTypeHandler *This,
-        IMFMediaType *pMediaType);
+                     IMFMediaTypeHandler *This,
+                     IMFMediaType *pMediaType);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentMediaType)(
-        IMFMediaTypeHandler *This,
-        IMFMediaType **ppMediaType);
+                     IMFMediaTypeHandler *This,
+                     IMFMediaType **ppMediaType);
 
     HRESULT (STDMETHODCALLTYPE *GetMajorType)(
-        IMFMediaTypeHandler *This,
-        GUID *pguidMajorType);
+                     IMFMediaTypeHandler *This,
+                     GUID *pguidMajorType);
 
     END_INTERFACE
 } IMFMediaTypeHandlerVtbl;
@@ -1700,10 +1700,10 @@ MIDL_INTERFACE("56c03d9c-9dbb-45f5-ab4b-d80f47c05938")
 IMFStreamDescriptor : public IMFAttributes
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamIdentifier(
-        DWORD *pdwStreamIdentifier) = 0;
+                     DWORD *pdwStreamIdentifier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaTypeHandler(
-        IMFMediaTypeHandler **ppMediaTypeHandler) = 0;
+                     IMFMediaTypeHandler **ppMediaTypeHandler) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1715,177 +1715,177 @@ typedef struct IMFStreamDescriptorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFStreamDescriptor *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFStreamDescriptor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFStreamDescriptor *This);
+                     IMFStreamDescriptor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFStreamDescriptor *This);
+                     IMFStreamDescriptor *This);
 
     /*** IMFAttributes methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        PROPVARIANT *pValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetItemType)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        MF_ATTRIBUTE_TYPE *pType);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     MF_ATTRIBUTE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *CompareItem)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value,
-        WINBOOL *pbResult);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        IMFStreamDescriptor *This,
-        IMFAttributes *pTheirs,
-        MF_ATTRIBUTES_MATCH_TYPE MatchType,
-        WINBOOL *pbResult);
+                     IMFStreamDescriptor *This,
+                     IMFAttributes *pTheirs,
+                     MF_ATTRIBUTES_MATCH_TYPE MatchType,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT32)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        UINT32 *punValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     UINT32 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT64)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        UINT64 *punValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     UINT64 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDouble)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        double *pfValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     double *pfValue);
 
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        GUID *pguidValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     GUID *pguidValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringLength)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        UINT32 *pcchLength);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetString)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        LPWSTR pwszValue,
-        UINT32 cchBufSize,
-        UINT32 *pcchLength);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     LPWSTR pwszValue,
+                     UINT32 cchBufSize,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedString)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        LPWSTR *ppwszValue,
-        UINT32 *pcchLength);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     LPWSTR *ppwszValue,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetBlobSize)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        UINT32 *pcbBlobSize);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetBlob)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        UINT8 *pBuf,
-        UINT32 cbBufSize,
-        UINT32 *pcbBlobSize);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     UINT8 *pBuf,
+                     UINT32 cbBufSize,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedBlob)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        UINT8 **ppBuf,
-        UINT32 *pcbSize);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     UINT8 **ppBuf,
+                     UINT32 *pcbSize);
 
     HRESULT (STDMETHODCALLTYPE *GetUnknown)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        REFIID riid,
-        LPVOID *ppv);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     REFIID riid,
+                     LPVOID *ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetItem)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value);
 
     HRESULT (STDMETHODCALLTYPE *DeleteItem)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAllItems)(
-        IMFStreamDescriptor *This);
+                     IMFStreamDescriptor *This);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT32)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        UINT32 unValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     UINT32 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT64)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        UINT64 unValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     UINT64 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDouble)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        double fValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     double fValue);
 
     HRESULT (STDMETHODCALLTYPE *SetGUID)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        REFGUID guidValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     REFGUID guidValue);
 
     HRESULT (STDMETHODCALLTYPE *SetString)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        LPCWSTR wszValue);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     LPCWSTR wszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetBlob)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        const UINT8 *pBuf,
-        UINT32 cbBufSize);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     const UINT8 *pBuf,
+                     UINT32 cbBufSize);
 
     HRESULT (STDMETHODCALLTYPE *SetUnknown)(
-        IMFStreamDescriptor *This,
-        REFGUID guidKey,
-        IUnknown *pUnknown);
+                     IMFStreamDescriptor *This,
+                     REFGUID guidKey,
+                     IUnknown *pUnknown);
 
     HRESULT (STDMETHODCALLTYPE *LockStore)(
-        IMFStreamDescriptor *This);
+                     IMFStreamDescriptor *This);
 
     HRESULT (STDMETHODCALLTYPE *UnlockStore)(
-        IMFStreamDescriptor *This);
+                     IMFStreamDescriptor *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IMFStreamDescriptor *This,
-        UINT32 *pcItems);
+                     IMFStreamDescriptor *This,
+                     UINT32 *pcItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemByIndex)(
-        IMFStreamDescriptor *This,
-        UINT32 unIndex,
-        GUID *pguidKey,
-        PROPVARIANT *pValue);
+                     IMFStreamDescriptor *This,
+                     UINT32 unIndex,
+                     GUID *pguidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *CopyAllItems)(
-        IMFStreamDescriptor *This,
-        IMFAttributes *pDest);
+                     IMFStreamDescriptor *This,
+                     IMFAttributes *pDest);
 
     /*** IMFStreamDescriptor methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamIdentifier)(
-        IMFStreamDescriptor *This,
-        DWORD *pdwStreamIdentifier);
+                     IMFStreamDescriptor *This,
+                     DWORD *pdwStreamIdentifier);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaTypeHandler)(
-        IMFStreamDescriptor *This,
-        IMFMediaTypeHandler **ppMediaTypeHandler);
+                     IMFStreamDescriptor *This,
+                     IMFMediaTypeHandler **ppMediaTypeHandler);
 
     END_INTERFACE
 } IMFStreamDescriptorVtbl;
@@ -2063,21 +2063,21 @@ MIDL_INTERFACE("03cb2711-24d7-4db6-a17f-f3a7a479a536")
 IMFPresentationDescriptor : public IMFAttributes
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamDescriptorCount(
-        DWORD *pdwDescriptorCount) = 0;
+                     DWORD *pdwDescriptorCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamDescriptorByIndex(
-        DWORD dwIndex,
-        WINBOOL *pfSelected,
-        IMFStreamDescriptor **ppDescriptor) = 0;
+                     DWORD dwIndex,
+                     WINBOOL *pfSelected,
+                     IMFStreamDescriptor **ppDescriptor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectStream(
-        DWORD dwDescriptorIndex) = 0;
+                     DWORD dwDescriptorIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeselectStream(
-        DWORD dwDescriptorIndex) = 0;
+                     DWORD dwDescriptorIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IMFPresentationDescriptor **ppPresentationDescriptor) = 0;
+                     IMFPresentationDescriptor **ppPresentationDescriptor) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2089,191 +2089,191 @@ typedef struct IMFPresentationDescriptorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFPresentationDescriptor *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFPresentationDescriptor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFPresentationDescriptor *This);
+                     IMFPresentationDescriptor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFPresentationDescriptor *This);
+                     IMFPresentationDescriptor *This);
 
     /*** IMFAttributes methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        PROPVARIANT *pValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetItemType)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        MF_ATTRIBUTE_TYPE *pType);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     MF_ATTRIBUTE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *CompareItem)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value,
-        WINBOOL *pbResult);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        IMFPresentationDescriptor *This,
-        IMFAttributes *pTheirs,
-        MF_ATTRIBUTES_MATCH_TYPE MatchType,
-        WINBOOL *pbResult);
+                     IMFPresentationDescriptor *This,
+                     IMFAttributes *pTheirs,
+                     MF_ATTRIBUTES_MATCH_TYPE MatchType,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT32)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        UINT32 *punValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     UINT32 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT64)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        UINT64 *punValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     UINT64 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDouble)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        double *pfValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     double *pfValue);
 
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        GUID *pguidValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     GUID *pguidValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringLength)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        UINT32 *pcchLength);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetString)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        LPWSTR pwszValue,
-        UINT32 cchBufSize,
-        UINT32 *pcchLength);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     LPWSTR pwszValue,
+                     UINT32 cchBufSize,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedString)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        LPWSTR *ppwszValue,
-        UINT32 *pcchLength);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     LPWSTR *ppwszValue,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetBlobSize)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        UINT32 *pcbBlobSize);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetBlob)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        UINT8 *pBuf,
-        UINT32 cbBufSize,
-        UINT32 *pcbBlobSize);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     UINT8 *pBuf,
+                     UINT32 cbBufSize,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedBlob)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        UINT8 **ppBuf,
-        UINT32 *pcbSize);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     UINT8 **ppBuf,
+                     UINT32 *pcbSize);
 
     HRESULT (STDMETHODCALLTYPE *GetUnknown)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        REFIID riid,
-        LPVOID *ppv);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     REFIID riid,
+                     LPVOID *ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetItem)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value);
 
     HRESULT (STDMETHODCALLTYPE *DeleteItem)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAllItems)(
-        IMFPresentationDescriptor *This);
+                     IMFPresentationDescriptor *This);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT32)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        UINT32 unValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     UINT32 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT64)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        UINT64 unValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     UINT64 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDouble)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        double fValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     double fValue);
 
     HRESULT (STDMETHODCALLTYPE *SetGUID)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        REFGUID guidValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     REFGUID guidValue);
 
     HRESULT (STDMETHODCALLTYPE *SetString)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        LPCWSTR wszValue);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     LPCWSTR wszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetBlob)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        const UINT8 *pBuf,
-        UINT32 cbBufSize);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     const UINT8 *pBuf,
+                     UINT32 cbBufSize);
 
     HRESULT (STDMETHODCALLTYPE *SetUnknown)(
-        IMFPresentationDescriptor *This,
-        REFGUID guidKey,
-        IUnknown *pUnknown);
+                     IMFPresentationDescriptor *This,
+                     REFGUID guidKey,
+                     IUnknown *pUnknown);
 
     HRESULT (STDMETHODCALLTYPE *LockStore)(
-        IMFPresentationDescriptor *This);
+                     IMFPresentationDescriptor *This);
 
     HRESULT (STDMETHODCALLTYPE *UnlockStore)(
-        IMFPresentationDescriptor *This);
+                     IMFPresentationDescriptor *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IMFPresentationDescriptor *This,
-        UINT32 *pcItems);
+                     IMFPresentationDescriptor *This,
+                     UINT32 *pcItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemByIndex)(
-        IMFPresentationDescriptor *This,
-        UINT32 unIndex,
-        GUID *pguidKey,
-        PROPVARIANT *pValue);
+                     IMFPresentationDescriptor *This,
+                     UINT32 unIndex,
+                     GUID *pguidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *CopyAllItems)(
-        IMFPresentationDescriptor *This,
-        IMFAttributes *pDest);
+                     IMFPresentationDescriptor *This,
+                     IMFAttributes *pDest);
 
     /*** IMFPresentationDescriptor methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamDescriptorCount)(
-        IMFPresentationDescriptor *This,
-        DWORD *pdwDescriptorCount);
+                     IMFPresentationDescriptor *This,
+                     DWORD *pdwDescriptorCount);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamDescriptorByIndex)(
-        IMFPresentationDescriptor *This,
-        DWORD dwIndex,
-        WINBOOL *pfSelected,
-        IMFStreamDescriptor **ppDescriptor);
+                     IMFPresentationDescriptor *This,
+                     DWORD dwIndex,
+                     WINBOOL *pfSelected,
+                     IMFStreamDescriptor **ppDescriptor);
 
     HRESULT (STDMETHODCALLTYPE *SelectStream)(
-        IMFPresentationDescriptor *This,
-        DWORD dwDescriptorIndex);
+                     IMFPresentationDescriptor *This,
+                     DWORD dwDescriptorIndex);
 
     HRESULT (STDMETHODCALLTYPE *DeselectStream)(
-        IMFPresentationDescriptor *This,
-        DWORD dwDescriptorIndex);
+                     IMFPresentationDescriptor *This,
+                     DWORD dwDescriptorIndex);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMFPresentationDescriptor *This,
-        IMFPresentationDescriptor **ppPresentationDescriptor);
+                     IMFPresentationDescriptor *This,
+                     IMFPresentationDescriptor **ppPresentationDescriptor);
 
     END_INTERFACE
 } IMFPresentationDescriptorVtbl;
@@ -2463,24 +2463,24 @@ MIDL_INTERFACE("279a808d-aec7-40c8-9c6b-a6b492c78a66")
 IMFMediaSource : public IMFMediaEventGenerator
 {
     virtual HRESULT STDMETHODCALLTYPE GetCharacteristics(
-        DWORD *pdwCharacteristics) = 0;
+                     DWORD *pdwCharacteristics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePresentationDescriptor(
-        IMFPresentationDescriptor **ppPresentationDescriptor) = 0;
+                     IMFPresentationDescriptor **ppPresentationDescriptor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Start(
-        IMFPresentationDescriptor *pPresentationDescriptor,
-        const GUID *pguidTimeFormat,
-        const PROPVARIANT *pvarStartPosition) = 0;
+                     IMFPresentationDescriptor *pPresentationDescriptor,
+                     const GUID *pguidTimeFormat,
+                     const PROPVARIANT *pvarStartPosition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shutdown(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2492,62 +2492,62 @@ typedef struct IMFMediaSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFMediaSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFMediaSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFMediaSource *This);
+                     IMFMediaSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFMediaSource *This);
+                     IMFMediaSource *This);
 
     /*** IMFMediaEventGenerator methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEvent)(
-        IMFMediaSource *This,
-        DWORD dwFlags,
-        IMFMediaEvent **ppEvent);
+                     IMFMediaSource *This,
+                     DWORD dwFlags,
+                     IMFMediaEvent **ppEvent);
 
     HRESULT (STDMETHODCALLTYPE *BeginGetEvent)(
-        IMFMediaSource *This,
-        IMFAsyncCallback *pCallback,
-        IUnknown *punkState);
+                     IMFMediaSource *This,
+                     IMFAsyncCallback *pCallback,
+                     IUnknown *punkState);
 
     HRESULT (STDMETHODCALLTYPE *EndGetEvent)(
-        IMFMediaSource *This,
-        IMFAsyncResult *pResult,
-        IMFMediaEvent **ppEvent);
+                     IMFMediaSource *This,
+                     IMFAsyncResult *pResult,
+                     IMFMediaEvent **ppEvent);
 
     HRESULT (STDMETHODCALLTYPE *QueueEvent)(
-        IMFMediaSource *This,
-        MediaEventType met,
-        REFGUID guidExtendedType,
-        HRESULT hrStatus,
-        const PROPVARIANT *pvValue);
+                     IMFMediaSource *This,
+                     MediaEventType met,
+                     REFGUID guidExtendedType,
+                     HRESULT hrStatus,
+                     const PROPVARIANT *pvValue);
 
     /*** IMFMediaSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCharacteristics)(
-        IMFMediaSource *This,
-        DWORD *pdwCharacteristics);
+                     IMFMediaSource *This,
+                     DWORD *pdwCharacteristics);
 
     HRESULT (STDMETHODCALLTYPE *CreatePresentationDescriptor)(
-        IMFMediaSource *This,
-        IMFPresentationDescriptor **ppPresentationDescriptor);
+                     IMFMediaSource *This,
+                     IMFPresentationDescriptor **ppPresentationDescriptor);
 
     HRESULT (STDMETHODCALLTYPE *Start)(
-        IMFMediaSource *This,
-        IMFPresentationDescriptor *pPresentationDescriptor,
-        const GUID *pguidTimeFormat,
-        const PROPVARIANT *pvarStartPosition);
+                     IMFMediaSource *This,
+                     IMFPresentationDescriptor *pPresentationDescriptor,
+                     const GUID *pguidTimeFormat,
+                     const PROPVARIANT *pvarStartPosition);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IMFMediaSource *This);
+                     IMFMediaSource *This);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IMFMediaSource *This);
+                     IMFMediaSource *This);
 
     HRESULT (STDMETHODCALLTYPE *Shutdown)(
-        IMFMediaSource *This);
+                     IMFMediaSource *This);
 
     END_INTERFACE
 } IMFMediaSourceVtbl;
@@ -2669,13 +2669,13 @@ MIDL_INTERFACE("6d66d782-1d4f-4db7-8c63-cb8c77f1ef5e")
 IMFByteStreamBuffering : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetBufferingParams(
-        MFBYTESTREAM_BUFFERING_PARAMS *pParams) = 0;
+                     MFBYTESTREAM_BUFFERING_PARAMS *pParams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableBuffering(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopBuffering(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2687,27 +2687,27 @@ typedef struct IMFByteStreamBufferingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFByteStreamBuffering *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFByteStreamBuffering *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFByteStreamBuffering *This);
+                     IMFByteStreamBuffering *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFByteStreamBuffering *This);
+                     IMFByteStreamBuffering *This);
 
     /*** IMFByteStreamBuffering methods ***/
     HRESULT (STDMETHODCALLTYPE *SetBufferingParams)(
-        IMFByteStreamBuffering *This,
-        MFBYTESTREAM_BUFFERING_PARAMS *pParams);
+                     IMFByteStreamBuffering *This,
+                     MFBYTESTREAM_BUFFERING_PARAMS *pParams);
 
     HRESULT (STDMETHODCALLTYPE *EnableBuffering)(
-        IMFByteStreamBuffering *This,
-        WINBOOL fEnable);
+                     IMFByteStreamBuffering *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *StopBuffering)(
-        IMFByteStreamBuffering *This);
+                     IMFByteStreamBuffering *This);
 
     END_INTERFACE
 } IMFByteStreamBufferingVtbl;
@@ -2767,21 +2767,21 @@ MIDL_INTERFACE("f6696e82-74f7-4f3d-a178-8a5e09c3659f")
 IMFClockStateSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnClockStart(
-        MFTIME hnsSystemTime,
-        LONGLONG llClockStartOffset) = 0;
+                     MFTIME hnsSystemTime,
+                     LONGLONG llClockStartOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnClockStop(
-        MFTIME hnsSystemTime) = 0;
+                     MFTIME hnsSystemTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnClockPause(
-        MFTIME hnsSystemTime) = 0;
+                     MFTIME hnsSystemTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnClockRestart(
-        MFTIME hnsSystemTime) = 0;
+                     MFTIME hnsSystemTime) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnClockSetRate(
-        MFTIME hnsSystemTime,
-        float flRate) = 0;
+                     MFTIME hnsSystemTime,
+                     float flRate) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2793,38 +2793,38 @@ typedef struct IMFClockStateSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFClockStateSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFClockStateSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFClockStateSink *This);
+                     IMFClockStateSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFClockStateSink *This);
+                     IMFClockStateSink *This);
 
     /*** IMFClockStateSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnClockStart)(
-        IMFClockStateSink *This,
-        MFTIME hnsSystemTime,
-        LONGLONG llClockStartOffset);
+                     IMFClockStateSink *This,
+                     MFTIME hnsSystemTime,
+                     LONGLONG llClockStartOffset);
 
     HRESULT (STDMETHODCALLTYPE *OnClockStop)(
-        IMFClockStateSink *This,
-        MFTIME hnsSystemTime);
+                     IMFClockStateSink *This,
+                     MFTIME hnsSystemTime);
 
     HRESULT (STDMETHODCALLTYPE *OnClockPause)(
-        IMFClockStateSink *This,
-        MFTIME hnsSystemTime);
+                     IMFClockStateSink *This,
+                     MFTIME hnsSystemTime);
 
     HRESULT (STDMETHODCALLTYPE *OnClockRestart)(
-        IMFClockStateSink *This,
-        MFTIME hnsSystemTime);
+                     IMFClockStateSink *This,
+                     MFTIME hnsSystemTime);
 
     HRESULT (STDMETHODCALLTYPE *OnClockSetRate)(
-        IMFClockStateSink *This,
-        MFTIME hnsSystemTime,
-        float flRate);
+                     IMFClockStateSink *This,
+                     MFTIME hnsSystemTime,
+                     float flRate);
 
     END_INTERFACE
 } IMFClockStateSinkVtbl;
@@ -3114,11 +3114,11 @@ typedef struct _MFNetCredentialManagerGetParam {
     LPCWSTR pszPackage;
     LONG nRetries;
 } MFNetCredentialManagerGetParam;
-#define MEDIASINK_FIXED_STREAMS                 0x00000001
-#define MEDIASINK_CANNOT_MATCH_CLOCK            0x00000002
-#define MEDIASINK_RATELESS                      0x00000004
-#define MEDIASINK_CLOCK_REQUIRED                0x00000008
-#define MEDIASINK_CAN_PREROLL                   0x00000010
+#define MEDIASINK_FIXED_STREAMS                                           0x00000001
+#define MEDIASINK_CANNOT_MATCH_CLOCK                                      0x00000002
+#define MEDIASINK_RATELESS                                                             0x00000004
+#define MEDIASINK_CLOCK_REQUIRED                                          0x00000008
+#define MEDIASINK_CAN_PREROLL                                                          0x00000010
 #define MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE   0x00000020
 enum {
     MF_RESOLUTION_MEDIASOURCE = 0x1,
@@ -3339,14 +3339,14 @@ EXTERN_GUID(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE, 0xc60ac5fe,0x252a,0x478f,0xa0,0x
 EXTERN_GUID(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_GUID, 0x8ac3587a,0x4ae7,0x42d8,0x99,0xe0,0x0a,0x60,0x13,0xee,0xf9,0x0f);
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER LPSAFEARRAY_UserSize     (ULONG *, ULONG, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserMarshal  (ULONG *, unsigned char *, LPSAFEARRAY *);
 unsigned char * __RPC_USER LPSAFEARRAY_UserUnmarshal(ULONG *, unsigned char *, LPSAFEARRAY *);
-void            __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
+void                                      __RPC_USER LPSAFEARRAY_UserFree     (ULONG *, LPSAFEARRAY *);
 
 /* End additional prototypes */
 

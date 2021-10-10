@@ -28,5 +28,5 @@
 #ifndef _UID_T
 #define _UID_T
 #include <sys/_types.h> /* __darwin_uid_t */
-typedef __darwin_uid_t        uid_t;
+typedef __darwin_uid_t                     uid_t;
 #endif  /* _UID_T */

@@ -544,7 +544,7 @@ extern "C" {
 #define TF_E_STACKFULL MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0501)
 #define TF_E_DISCONNECTED    MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0504)
 #define TF_E_ALREADY_EXISTS  MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0506)
-#define TF_E_NOLOCK          MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0201)
+#define TF_E_NOLOCK                       MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0201)
 HRESULT WINAPI TF_CreateThreadMgr(ITfThreadMgr **pptim);
 HRESULT WINAPI TF_GetThreadMgr(ITfThreadMgr **pptim);
 HRESULT WINAPI TF_CreateInputProcessorProfiles(ITfInputProcessorProfiles **ppipr);
@@ -577,16 +577,16 @@ EXTERN_C const GUID GUID_TFCAT_DISPLAYATTRIBUTEPROVIDER;
 typedef DWORD TfEditCookie;
 typedef DWORD TfClientId;
 typedef DWORD TfGuidAtom;
-#define TF_MOD_ALT                   0x0001
-#define TF_MOD_CONTROL               0x0002
-#define TF_MOD_SHIFT                 0x0004
-#define TF_MOD_RALT                  0x0008
-#define TF_MOD_RCONTROL              0x0010
-#define TF_MOD_RSHIFT                0x0020
-#define TF_MOD_LALT                  0x0040
-#define TF_MOD_LCONTROL              0x0080
-#define TF_MOD_LSHIFT                0x0100
-#define TF_MOD_ON_KEYUP              0x0200
+#define TF_MOD_ALT                                                          0x0001
+#define TF_MOD_CONTROL                                         0x0002
+#define TF_MOD_SHIFT                                           0x0004
+#define TF_MOD_RALT                                                         0x0008
+#define TF_MOD_RCONTROL                                        0x0010
+#define TF_MOD_RSHIFT                                          0x0020
+#define TF_MOD_LALT                                                         0x0040
+#define TF_MOD_LCONTROL                                        0x0080
+#define TF_MOD_LSHIFT                                          0x0100
+#define TF_MOD_ON_KEYUP                                        0x0200
 #define TF_MOD_IGNORE_ALL_MODIFIER   0x0400
 #define TF_PROFILETYPE_INPUTPROCESSOR  0x0001
 #define TF_PROFILETYPE_KEYBOARDLAYOUT  0x0002
@@ -741,15 +741,15 @@ MIDL_INTERFACE("101d6610-0990-11d3-8df0-00105a2799b5")
 ITfFunctionProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        GUID *guid) = 0;
+                     GUID *guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        BSTR *desc) = 0;
+                     BSTR *desc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFunction(
-        REFGUID guid,
-        REFIID riid,
-        IUnknown **func) = 0;
+                     REFGUID guid,
+                     REFIID riid,
+                     IUnknown **func) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -761,30 +761,30 @@ typedef struct ITfFunctionProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfFunctionProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfFunctionProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfFunctionProvider *This);
+                     ITfFunctionProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfFunctionProvider *This);
+                     ITfFunctionProvider *This);
 
     /*** ITfFunctionProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        ITfFunctionProvider *This,
-        GUID *guid);
+                     ITfFunctionProvider *This,
+                     GUID *guid);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        ITfFunctionProvider *This,
-        BSTR *desc);
+                     ITfFunctionProvider *This,
+                     BSTR *desc);
 
     HRESULT (STDMETHODCALLTYPE *GetFunction)(
-        ITfFunctionProvider *This,
-        REFGUID guid,
-        REFIID riid,
-        IUnknown **func);
+                     ITfFunctionProvider *This,
+                     REFGUID guid,
+                     REFIID riid,
+                     IUnknown **func);
 
     END_INTERFACE
 } ITfFunctionProviderVtbl;
@@ -844,18 +844,18 @@ MIDL_INTERFACE("e4b24db0-0990-11d3-8df0-00105a2799b5")
 IEnumTfFunctionProviders : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfFunctionProviders **ret) = 0;
+                     IEnumTfFunctionProviders **ret) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG count,
-        ITfFunctionProvider **prov,
-        ULONG *fetched) = 0;
+                     ULONG count,
+                     ITfFunctionProvider **prov,
+                     ULONG *fetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG count) = 0;
+                     ULONG count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -867,33 +867,33 @@ typedef struct IEnumTfFunctionProvidersVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfFunctionProviders *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfFunctionProviders *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfFunctionProviders *This);
+                     IEnumTfFunctionProviders *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfFunctionProviders *This);
+                     IEnumTfFunctionProviders *This);
 
     /*** IEnumTfFunctionProviders methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfFunctionProviders *This,
-        IEnumTfFunctionProviders **ret);
+                     IEnumTfFunctionProviders *This,
+                     IEnumTfFunctionProviders **ret);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfFunctionProviders *This,
-        ULONG count,
-        ITfFunctionProvider **prov,
-        ULONG *fetched);
+                     IEnumTfFunctionProviders *This,
+                     ULONG count,
+                     ITfFunctionProvider **prov,
+                     ULONG *fetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfFunctionProviders *This);
+                     IEnumTfFunctionProviders *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfFunctionProviders *This,
-        ULONG count);
+                     IEnumTfFunctionProviders *This,
+                     ULONG count);
 
     END_INTERFACE
 } IEnumTfFunctionProvidersVtbl;
@@ -957,40 +957,40 @@ MIDL_INTERFACE("aa80e801-2021-11d2-93e0-0060b067b86e")
 ITfThreadMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Activate(
-        TfClientId *ptid) = 0;
+                     TfClientId *ptid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Deactivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateDocumentMgr(
-        ITfDocumentMgr **ppdim) = 0;
+                     ITfDocumentMgr **ppdim) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumDocumentMgrs(
-        IEnumTfDocumentMgrs **ppEnum) = 0;
+                     IEnumTfDocumentMgrs **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFocus(
-        ITfDocumentMgr **ppdimFocus) = 0;
+                     ITfDocumentMgr **ppdimFocus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFocus(
-        ITfDocumentMgr *pdimFocus) = 0;
+                     ITfDocumentMgr *pdimFocus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AssociateFocus(
-        HWND hwnd,
-        ITfDocumentMgr *pdimNew,
-        ITfDocumentMgr **ppdimPrev) = 0;
+                     HWND hwnd,
+                     ITfDocumentMgr *pdimNew,
+                     ITfDocumentMgr **ppdimPrev) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsThreadFocus(
-        WINBOOL *pfThreadFocus) = 0;
+                     WINBOOL *pfThreadFocus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFunctionProvider(
-        REFCLSID clsid,
-        ITfFunctionProvider **ppFuncProv) = 0;
+                     REFCLSID clsid,
+                     ITfFunctionProvider **ppFuncProv) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumFunctionProviders(
-        IEnumTfFunctionProviders **ppEnum) = 0;
+                     IEnumTfFunctionProviders **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlobalCompartment(
-        ITfCompartmentMgr **ppCompMgr) = 0;
+                     ITfCompartmentMgr **ppCompMgr) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1002,62 +1002,62 @@ typedef struct ITfThreadMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfThreadMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfThreadMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfThreadMgr *This);
+                     ITfThreadMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfThreadMgr *This);
+                     ITfThreadMgr *This);
 
     /*** ITfThreadMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *Activate)(
-        ITfThreadMgr *This,
-        TfClientId *ptid);
+                     ITfThreadMgr *This,
+                     TfClientId *ptid);
 
     HRESULT (STDMETHODCALLTYPE *Deactivate)(
-        ITfThreadMgr *This);
+                     ITfThreadMgr *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateDocumentMgr)(
-        ITfThreadMgr *This,
-        ITfDocumentMgr **ppdim);
+                     ITfThreadMgr *This,
+                     ITfDocumentMgr **ppdim);
 
     HRESULT (STDMETHODCALLTYPE *EnumDocumentMgrs)(
-        ITfThreadMgr *This,
-        IEnumTfDocumentMgrs **ppEnum);
+                     ITfThreadMgr *This,
+                     IEnumTfDocumentMgrs **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetFocus)(
-        ITfThreadMgr *This,
-        ITfDocumentMgr **ppdimFocus);
+                     ITfThreadMgr *This,
+                     ITfDocumentMgr **ppdimFocus);
 
     HRESULT (STDMETHODCALLTYPE *SetFocus)(
-        ITfThreadMgr *This,
-        ITfDocumentMgr *pdimFocus);
+                     ITfThreadMgr *This,
+                     ITfDocumentMgr *pdimFocus);
 
     HRESULT (STDMETHODCALLTYPE *AssociateFocus)(
-        ITfThreadMgr *This,
-        HWND hwnd,
-        ITfDocumentMgr *pdimNew,
-        ITfDocumentMgr **ppdimPrev);
+                     ITfThreadMgr *This,
+                     HWND hwnd,
+                     ITfDocumentMgr *pdimNew,
+                     ITfDocumentMgr **ppdimPrev);
 
     HRESULT (STDMETHODCALLTYPE *IsThreadFocus)(
-        ITfThreadMgr *This,
-        WINBOOL *pfThreadFocus);
+                     ITfThreadMgr *This,
+                     WINBOOL *pfThreadFocus);
 
     HRESULT (STDMETHODCALLTYPE *GetFunctionProvider)(
-        ITfThreadMgr *This,
-        REFCLSID clsid,
-        ITfFunctionProvider **ppFuncProv);
+                     ITfThreadMgr *This,
+                     REFCLSID clsid,
+                     ITfFunctionProvider **ppFuncProv);
 
     HRESULT (STDMETHODCALLTYPE *EnumFunctionProviders)(
-        ITfThreadMgr *This,
-        IEnumTfFunctionProviders **ppEnum);
+                     ITfThreadMgr *This,
+                     IEnumTfFunctionProviders **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetGlobalCompartment)(
-        ITfThreadMgr *This,
-        ITfCompartmentMgr **ppCompMgr);
+                     ITfThreadMgr *This,
+                     ITfCompartmentMgr **ppCompMgr);
 
     END_INTERFACE
 } ITfThreadMgrVtbl;
@@ -1149,11 +1149,11 @@ MIDL_INTERFACE("3e90ade3-7594-4cb0-bb58-69628f5f458c")
 ITfThreadMgrEx : public ITfThreadMgr
 {
     virtual HRESULT STDMETHODCALLTYPE ActivateEx(
-        TfClientId *id,
-        DWORD flags) = 0;
+                     TfClientId *id,
+                     DWORD flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActiveFlags(
-        DWORD *flags) = 0;
+                     DWORD *flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1165,72 +1165,72 @@ typedef struct ITfThreadMgrExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfThreadMgrEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfThreadMgrEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfThreadMgrEx *This);
+                     ITfThreadMgrEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfThreadMgrEx *This);
+                     ITfThreadMgrEx *This);
 
     /*** ITfThreadMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *Activate)(
-        ITfThreadMgrEx *This,
-        TfClientId *ptid);
+                     ITfThreadMgrEx *This,
+                     TfClientId *ptid);
 
     HRESULT (STDMETHODCALLTYPE *Deactivate)(
-        ITfThreadMgrEx *This);
+                     ITfThreadMgrEx *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateDocumentMgr)(
-        ITfThreadMgrEx *This,
-        ITfDocumentMgr **ppdim);
+                     ITfThreadMgrEx *This,
+                     ITfDocumentMgr **ppdim);
 
     HRESULT (STDMETHODCALLTYPE *EnumDocumentMgrs)(
-        ITfThreadMgrEx *This,
-        IEnumTfDocumentMgrs **ppEnum);
+                     ITfThreadMgrEx *This,
+                     IEnumTfDocumentMgrs **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetFocus)(
-        ITfThreadMgrEx *This,
-        ITfDocumentMgr **ppdimFocus);
+                     ITfThreadMgrEx *This,
+                     ITfDocumentMgr **ppdimFocus);
 
     HRESULT (STDMETHODCALLTYPE *SetFocus)(
-        ITfThreadMgrEx *This,
-        ITfDocumentMgr *pdimFocus);
+                     ITfThreadMgrEx *This,
+                     ITfDocumentMgr *pdimFocus);
 
     HRESULT (STDMETHODCALLTYPE *AssociateFocus)(
-        ITfThreadMgrEx *This,
-        HWND hwnd,
-        ITfDocumentMgr *pdimNew,
-        ITfDocumentMgr **ppdimPrev);
+                     ITfThreadMgrEx *This,
+                     HWND hwnd,
+                     ITfDocumentMgr *pdimNew,
+                     ITfDocumentMgr **ppdimPrev);
 
     HRESULT (STDMETHODCALLTYPE *IsThreadFocus)(
-        ITfThreadMgrEx *This,
-        WINBOOL *pfThreadFocus);
+                     ITfThreadMgrEx *This,
+                     WINBOOL *pfThreadFocus);
 
     HRESULT (STDMETHODCALLTYPE *GetFunctionProvider)(
-        ITfThreadMgrEx *This,
-        REFCLSID clsid,
-        ITfFunctionProvider **ppFuncProv);
+                     ITfThreadMgrEx *This,
+                     REFCLSID clsid,
+                     ITfFunctionProvider **ppFuncProv);
 
     HRESULT (STDMETHODCALLTYPE *EnumFunctionProviders)(
-        ITfThreadMgrEx *This,
-        IEnumTfFunctionProviders **ppEnum);
+                     ITfThreadMgrEx *This,
+                     IEnumTfFunctionProviders **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetGlobalCompartment)(
-        ITfThreadMgrEx *This,
-        ITfCompartmentMgr **ppCompMgr);
+                     ITfThreadMgrEx *This,
+                     ITfCompartmentMgr **ppCompMgr);
 
     /*** ITfThreadMgrEx methods ***/
     HRESULT (STDMETHODCALLTYPE *ActivateEx)(
-        ITfThreadMgrEx *This,
-        TfClientId *id,
-        DWORD flags);
+                     ITfThreadMgrEx *This,
+                     TfClientId *id,
+                     DWORD flags);
 
     HRESULT (STDMETHODCALLTYPE *GetActiveFlags)(
-        ITfThreadMgrEx *This,
-        DWORD *flags);
+                     ITfThreadMgrEx *This,
+                     DWORD *flags);
 
     END_INTERFACE
 } ITfThreadMgrExVtbl;
@@ -1332,10 +1332,10 @@ MIDL_INTERFACE("d7540241-f9a1-4364-befc-dbcd2c4395b7")
 ITfCompositionView : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetOwnerClsid(
-        CLSID *pclsid) = 0;
+                     CLSID *pclsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRange(
-        ITfRange **ppRange) = 0;
+                     ITfRange **ppRange) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1347,24 +1347,24 @@ typedef struct ITfCompositionViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfCompositionView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfCompositionView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfCompositionView *This);
+                     ITfCompositionView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfCompositionView *This);
+                     ITfCompositionView *This);
 
     /*** ITfCompositionView methods ***/
     HRESULT (STDMETHODCALLTYPE *GetOwnerClsid)(
-        ITfCompositionView *This,
-        CLSID *pclsid);
+                     ITfCompositionView *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetRange)(
-        ITfCompositionView *This,
-        ITfRange **ppRange);
+                     ITfCompositionView *This,
+                     ITfRange **ppRange);
 
     END_INTERFACE
 } ITfCompositionViewVtbl;
@@ -1422,26 +1422,26 @@ MIDL_INTERFACE("aa80e7f4-2021-11d2-93e0-0060b067b86e")
 ITfDocumentMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateContext(
-        TfClientId tidOwner,
-        DWORD dwFlags,
-        IUnknown *punk,
-        ITfContext **ppic,
-        TfEditCookie *pecTextStore) = 0;
+                     TfClientId tidOwner,
+                     DWORD dwFlags,
+                     IUnknown *punk,
+                     ITfContext **ppic,
+                     TfEditCookie *pecTextStore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Push(
-        ITfContext *pic) = 0;
+                     ITfContext *pic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pop(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTop(
-        ITfContext **ppic) = 0;
+                     ITfContext **ppic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBase(
-        ITfContext **ppic) = 0;
+                     ITfContext **ppic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumContexts(
-        IEnumTfContexts **ppEnum) = 0;
+                     IEnumTfContexts **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1453,44 +1453,44 @@ typedef struct ITfDocumentMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfDocumentMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfDocumentMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfDocumentMgr *This);
+                     ITfDocumentMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfDocumentMgr *This);
+                     ITfDocumentMgr *This);
 
     /*** ITfDocumentMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateContext)(
-        ITfDocumentMgr *This,
-        TfClientId tidOwner,
-        DWORD dwFlags,
-        IUnknown *punk,
-        ITfContext **ppic,
-        TfEditCookie *pecTextStore);
+                     ITfDocumentMgr *This,
+                     TfClientId tidOwner,
+                     DWORD dwFlags,
+                     IUnknown *punk,
+                     ITfContext **ppic,
+                     TfEditCookie *pecTextStore);
 
     HRESULT (STDMETHODCALLTYPE *Push)(
-        ITfDocumentMgr *This,
-        ITfContext *pic);
+                     ITfDocumentMgr *This,
+                     ITfContext *pic);
 
     HRESULT (STDMETHODCALLTYPE *Pop)(
-        ITfDocumentMgr *This,
-        DWORD dwFlags);
+                     ITfDocumentMgr *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetTop)(
-        ITfDocumentMgr *This,
-        ITfContext **ppic);
+                     ITfDocumentMgr *This,
+                     ITfContext **ppic);
 
     HRESULT (STDMETHODCALLTYPE *GetBase)(
-        ITfDocumentMgr *This,
-        ITfContext **ppic);
+                     ITfDocumentMgr *This,
+                     ITfContext **ppic);
 
     HRESULT (STDMETHODCALLTYPE *EnumContexts)(
-        ITfDocumentMgr *This,
-        IEnumTfContexts **ppEnum);
+                     ITfDocumentMgr *This,
+                     IEnumTfContexts **ppEnum);
 
     END_INTERFACE
 } ITfDocumentMgrVtbl;
@@ -1562,22 +1562,22 @@ MIDL_INTERFACE("2433bf8e-0f9b-435c-ba2c-180611978c30")
 ITfContextView : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRangeFromPoint(
-        TfEditCookie cookie,
-        const POINT *pt,
-        DWORD flags,
-        ITfRange **range) = 0;
+                     TfEditCookie cookie,
+                     const POINT *pt,
+                     DWORD flags,
+                     ITfRange **range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTextExt(
-        TfEditCookie cookie,
-        ITfRange *range,
-        RECT *rect,
-        WINBOOL *clipped) = 0;
+                     TfEditCookie cookie,
+                     ITfRange *range,
+                     RECT *rect,
+                     WINBOOL *clipped) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScreenExt(
-        RECT *rect) = 0;
+                     RECT *rect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWnd(
-        HWND *hwnd) = 0;
+                     HWND *hwnd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1589,38 +1589,38 @@ typedef struct ITfContextViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfContextView *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfContextView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfContextView *This);
+                     ITfContextView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfContextView *This);
+                     ITfContextView *This);
 
     /*** ITfContextView methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRangeFromPoint)(
-        ITfContextView *This,
-        TfEditCookie cookie,
-        const POINT *pt,
-        DWORD flags,
-        ITfRange **range);
+                     ITfContextView *This,
+                     TfEditCookie cookie,
+                     const POINT *pt,
+                     DWORD flags,
+                     ITfRange **range);
 
     HRESULT (STDMETHODCALLTYPE *GetTextExt)(
-        ITfContextView *This,
-        TfEditCookie cookie,
-        ITfRange *range,
-        RECT *rect,
-        WINBOOL *clipped);
+                     ITfContextView *This,
+                     TfEditCookie cookie,
+                     ITfRange *range,
+                     RECT *rect,
+                     WINBOOL *clipped);
 
     HRESULT (STDMETHODCALLTYPE *GetScreenExt)(
-        ITfContextView *This,
-        RECT *rect);
+                     ITfContextView *This,
+                     RECT *rect);
 
     HRESULT (STDMETHODCALLTYPE *GetWnd)(
-        ITfContextView *This,
-        HWND *hwnd);
+                     ITfContextView *This,
+                     HWND *hwnd);
 
     END_INTERFACE
 } ITfContextViewVtbl;
@@ -1684,18 +1684,18 @@ MIDL_INTERFACE("f0c0f8dd-cf38-44e1-bb0f-68cf0d551c78")
 IEnumTfContextViews : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfContextViews **ret) = 0;
+                     IEnumTfContextViews **ret) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG count,
-        ITfContextView **views,
-        ULONG *fetched) = 0;
+                     ULONG count,
+                     ITfContextView **views,
+                     ULONG *fetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG count) = 0;
+                     ULONG count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1707,33 +1707,33 @@ typedef struct IEnumTfContextViewsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfContextViews *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfContextViews *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfContextViews *This);
+                     IEnumTfContextViews *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfContextViews *This);
+                     IEnumTfContextViews *This);
 
     /*** IEnumTfContextViews methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfContextViews *This,
-        IEnumTfContextViews **ret);
+                     IEnumTfContextViews *This,
+                     IEnumTfContextViews **ret);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfContextViews *This,
-        ULONG count,
-        ITfContextView **views,
-        ULONG *fetched);
+                     IEnumTfContextViews *This,
+                     ULONG count,
+                     ITfContextView **views,
+                     ULONG *fetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfContextViews *This);
+                     IEnumTfContextViews *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfContextViews *This,
-        ULONG count);
+                     IEnumTfContextViews *This,
+                     ULONG count);
 
     END_INTERFACE
 } IEnumTfContextViewsVtbl;
@@ -1797,18 +1797,18 @@ MIDL_INTERFACE("19188cb0-aca9-11d2-afc5-00105a2799b5")
 IEnumTfProperties : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfProperties **ret) = 0;
+                     IEnumTfProperties **ret) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG count,
-        ITfProperty **props,
-        ULONG *fetched) = 0;
+                     ULONG count,
+                     ITfProperty **props,
+                     ULONG *fetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG count) = 0;
+                     ULONG count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1820,33 +1820,33 @@ typedef struct IEnumTfPropertiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfProperties *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfProperties *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfProperties *This);
+                     IEnumTfProperties *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfProperties *This);
+                     IEnumTfProperties *This);
 
     /*** IEnumTfProperties methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfProperties *This,
-        IEnumTfProperties **ret);
+                     IEnumTfProperties *This,
+                     IEnumTfProperties **ret);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfProperties *This,
-        ULONG count,
-        ITfProperty **props,
-        ULONG *fetched);
+                     IEnumTfProperties *This,
+                     ULONG count,
+                     ITfProperty **props,
+                     ULONG *fetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfProperties *This);
+                     IEnumTfProperties *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfProperties *This,
-        ULONG count);
+                     IEnumTfProperties *This,
+                     ULONG count);
 
     END_INTERFACE
 } IEnumTfPropertiesVtbl;
@@ -1910,8 +1910,8 @@ MIDL_INTERFACE("463a506d-6992-49d2-9b88-93d55e70bb16")
 ITfRangeBackup : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Restore(
-        TfEditCookie cookie,
-        ITfRange *range) = 0;
+                     TfEditCookie cookie,
+                     ITfRange *range) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1923,21 +1923,21 @@ typedef struct ITfRangeBackupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfRangeBackup *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfRangeBackup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfRangeBackup *This);
+                     ITfRangeBackup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfRangeBackup *This);
+                     ITfRangeBackup *This);
 
     /*** ITfRangeBackup methods ***/
     HRESULT (STDMETHODCALLTYPE *Restore)(
-        ITfRangeBackup *This,
-        TfEditCookie cookie,
-        ITfRange *range);
+                     ITfRangeBackup *This,
+                     TfEditCookie cookie,
+                     ITfRange *range);
 
     END_INTERFACE
 } ITfRangeBackupVtbl;
@@ -1989,24 +1989,24 @@ MIDL_INTERFACE("aa80e901-2021-11d2-93e0-0060b067b86e")
 ITextStoreACPServices : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Serialize(
-        ITfProperty *prop,
-        ITfRange *range,
-        TF_PERSISTENT_PROPERTY_HEADER_ACP *header,
-        IStream *stream) = 0;
+                     ITfProperty *prop,
+                     ITfRange *range,
+                     TF_PERSISTENT_PROPERTY_HEADER_ACP *header,
+                     IStream *stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unserialize(
-        ITfProperty *prop,
-        const TF_PERSISTENT_PROPERTY_HEADER_ACP *header,
-        IStream *stream,
-        ITfPersistentPropertyLoaderACP *loader) = 0;
+                     ITfProperty *prop,
+                     const TF_PERSISTENT_PROPERTY_HEADER_ACP *header,
+                     IStream *stream,
+                     ITfPersistentPropertyLoaderACP *loader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ForceLoadProperty(
-        ITfProperty *prop) = 0;
+                     ITfProperty *prop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRange(
-        LONG start,
-        LONG end,
-        ITfRangeACP **range) = 0;
+                     LONG start,
+                     LONG end,
+                     ITfRangeACP **range) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2018,40 +2018,40 @@ typedef struct ITextStoreACPServicesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITextStoreACPServices *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITextStoreACPServices *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITextStoreACPServices *This);
+                     ITextStoreACPServices *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITextStoreACPServices *This);
+                     ITextStoreACPServices *This);
 
     /*** ITextStoreACPServices methods ***/
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        ITextStoreACPServices *This,
-        ITfProperty *prop,
-        ITfRange *range,
-        TF_PERSISTENT_PROPERTY_HEADER_ACP *header,
-        IStream *stream);
+                     ITextStoreACPServices *This,
+                     ITfProperty *prop,
+                     ITfRange *range,
+                     TF_PERSISTENT_PROPERTY_HEADER_ACP *header,
+                     IStream *stream);
 
     HRESULT (STDMETHODCALLTYPE *Unserialize)(
-        ITextStoreACPServices *This,
-        ITfProperty *prop,
-        const TF_PERSISTENT_PROPERTY_HEADER_ACP *header,
-        IStream *stream,
-        ITfPersistentPropertyLoaderACP *loader);
+                     ITextStoreACPServices *This,
+                     ITfProperty *prop,
+                     const TF_PERSISTENT_PROPERTY_HEADER_ACP *header,
+                     IStream *stream,
+                     ITfPersistentPropertyLoaderACP *loader);
 
     HRESULT (STDMETHODCALLTYPE *ForceLoadProperty)(
-        ITextStoreACPServices *This,
-        ITfProperty *prop);
+                     ITextStoreACPServices *This,
+                     ITfProperty *prop);
 
     HRESULT (STDMETHODCALLTYPE *CreateRange)(
-        ITextStoreACPServices *This,
-        LONG start,
-        LONG end,
-        ITfRangeACP **range);
+                     ITextStoreACPServices *This,
+                     LONG start,
+                     LONG end,
+                     ITfRangeACP **range);
 
     END_INTERFACE
 } ITextStoreACPServicesVtbl;
@@ -2151,69 +2151,69 @@ MIDL_INTERFACE("aa80e7fd-2021-11d2-93e0-0060b067b86e")
 ITfContext : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RequestEditSession(
-        TfClientId tid,
-        ITfEditSession *pes,
-        DWORD dwFlags,
-        HRESULT *phrSession) = 0;
+                     TfClientId tid,
+                     ITfEditSession *pes,
+                     DWORD dwFlags,
+                     HRESULT *phrSession) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InWriteSession(
-        TfClientId tid,
-        WINBOOL *pfWriteSession) = 0;
+                     TfClientId tid,
+                     WINBOOL *pfWriteSession) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelection(
-        TfEditCookie ec,
-        ULONG ulIndex,
-        ULONG ulCount,
-        TF_SELECTION *pSelection,
-        ULONG *pcFetched) = 0;
+                     TfEditCookie ec,
+                     ULONG ulIndex,
+                     ULONG ulCount,
+                     TF_SELECTION *pSelection,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSelection(
-        TfEditCookie ec,
-        ULONG ulCount,
-        const TF_SELECTION *pSelection) = 0;
+                     TfEditCookie ec,
+                     ULONG ulCount,
+                     const TF_SELECTION *pSelection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStart(
-        TfEditCookie ec,
-        ITfRange **ppStart) = 0;
+                     TfEditCookie ec,
+                     ITfRange **ppStart) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEnd(
-        TfEditCookie ec,
-        ITfRange **ppEnd) = 0;
+                     TfEditCookie ec,
+                     ITfRange **ppEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActiveView(
-        ITfContextView **ppView) = 0;
+                     ITfContextView **ppView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumViews(
-        IEnumTfContextViews **ppEnum) = 0;
+                     IEnumTfContextViews **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        TF_STATUS *pdcs) = 0;
+                     TF_STATUS *pdcs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        REFGUID guidProp,
-        ITfProperty **ppProp) = 0;
+                     REFGUID guidProp,
+                     ITfProperty **ppProp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAppProperty(
-        REFGUID guidProp,
-        ITfReadOnlyProperty **ppProp) = 0;
+                     REFGUID guidProp,
+                     ITfReadOnlyProperty **ppProp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TrackProperties(
-        const GUID **prgProp,
-        ULONG cProp,
-        const GUID **prgAppProp,
-        ULONG cAppProp,
-        ITfReadOnlyProperty **ppProperty) = 0;
+                     const GUID **prgProp,
+                     ULONG cProp,
+                     const GUID **prgAppProp,
+                     ULONG cAppProp,
+                     ITfReadOnlyProperty **ppProperty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumProperties(
-        IEnumTfProperties **ppEnum) = 0;
+                     IEnumTfProperties **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDocumentMgr(
-        ITfDocumentMgr **ppDm) = 0;
+                     ITfDocumentMgr **ppDm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRangeBackup(
-        TfEditCookie ec,
-        ITfRange *pRange,
-        ITfRangeBackup **ppBackup) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     ITfRangeBackup **ppBackup) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2225,96 +2225,96 @@ typedef struct ITfContextVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfContext *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfContext *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfContext *This);
+                     ITfContext *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfContext *This);
+                     ITfContext *This);
 
     /*** ITfContext methods ***/
     HRESULT (STDMETHODCALLTYPE *RequestEditSession)(
-        ITfContext *This,
-        TfClientId tid,
-        ITfEditSession *pes,
-        DWORD dwFlags,
-        HRESULT *phrSession);
+                     ITfContext *This,
+                     TfClientId tid,
+                     ITfEditSession *pes,
+                     DWORD dwFlags,
+                     HRESULT *phrSession);
 
     HRESULT (STDMETHODCALLTYPE *InWriteSession)(
-        ITfContext *This,
-        TfClientId tid,
-        WINBOOL *pfWriteSession);
+                     ITfContext *This,
+                     TfClientId tid,
+                     WINBOOL *pfWriteSession);
 
     HRESULT (STDMETHODCALLTYPE *GetSelection)(
-        ITfContext *This,
-        TfEditCookie ec,
-        ULONG ulIndex,
-        ULONG ulCount,
-        TF_SELECTION *pSelection,
-        ULONG *pcFetched);
+                     ITfContext *This,
+                     TfEditCookie ec,
+                     ULONG ulIndex,
+                     ULONG ulCount,
+                     TF_SELECTION *pSelection,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *SetSelection)(
-        ITfContext *This,
-        TfEditCookie ec,
-        ULONG ulCount,
-        const TF_SELECTION *pSelection);
+                     ITfContext *This,
+                     TfEditCookie ec,
+                     ULONG ulCount,
+                     const TF_SELECTION *pSelection);
 
     HRESULT (STDMETHODCALLTYPE *GetStart)(
-        ITfContext *This,
-        TfEditCookie ec,
-        ITfRange **ppStart);
+                     ITfContext *This,
+                     TfEditCookie ec,
+                     ITfRange **ppStart);
 
     HRESULT (STDMETHODCALLTYPE *GetEnd)(
-        ITfContext *This,
-        TfEditCookie ec,
-        ITfRange **ppEnd);
+                     ITfContext *This,
+                     TfEditCookie ec,
+                     ITfRange **ppEnd);
 
     HRESULT (STDMETHODCALLTYPE *GetActiveView)(
-        ITfContext *This,
-        ITfContextView **ppView);
+                     ITfContext *This,
+                     ITfContextView **ppView);
 
     HRESULT (STDMETHODCALLTYPE *EnumViews)(
-        ITfContext *This,
-        IEnumTfContextViews **ppEnum);
+                     ITfContext *This,
+                     IEnumTfContextViews **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        ITfContext *This,
-        TF_STATUS *pdcs);
+                     ITfContext *This,
+                     TF_STATUS *pdcs);
 
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        ITfContext *This,
-        REFGUID guidProp,
-        ITfProperty **ppProp);
+                     ITfContext *This,
+                     REFGUID guidProp,
+                     ITfProperty **ppProp);
 
     HRESULT (STDMETHODCALLTYPE *GetAppProperty)(
-        ITfContext *This,
-        REFGUID guidProp,
-        ITfReadOnlyProperty **ppProp);
+                     ITfContext *This,
+                     REFGUID guidProp,
+                     ITfReadOnlyProperty **ppProp);
 
     HRESULT (STDMETHODCALLTYPE *TrackProperties)(
-        ITfContext *This,
-        const GUID **prgProp,
-        ULONG cProp,
-        const GUID **prgAppProp,
-        ULONG cAppProp,
-        ITfReadOnlyProperty **ppProperty);
+                     ITfContext *This,
+                     const GUID **prgProp,
+                     ULONG cProp,
+                     const GUID **prgAppProp,
+                     ULONG cAppProp,
+                     ITfReadOnlyProperty **ppProperty);
 
     HRESULT (STDMETHODCALLTYPE *EnumProperties)(
-        ITfContext *This,
-        IEnumTfProperties **ppEnum);
+                     ITfContext *This,
+                     IEnumTfProperties **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentMgr)(
-        ITfContext *This,
-        ITfDocumentMgr **ppDm);
+                     ITfContext *This,
+                     ITfDocumentMgr **ppDm);
 
     HRESULT (STDMETHODCALLTYPE *CreateRangeBackup)(
-        ITfContext *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        ITfRangeBackup **ppBackup);
+                     ITfContext *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     ITfRangeBackup **ppBackup);
 
     END_INTERFACE
 } ITfContextVtbl;
@@ -2424,12 +2424,12 @@ MIDL_INTERFACE("4ea48a35-60ae-446f-8fd6-e6a8d82459f7")
 ITfSource : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AdviseSink(
-        REFIID riid,
-        IUnknown *punk,
-        DWORD *pdwCookie) = 0;
+                     REFIID riid,
+                     IUnknown *punk,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnadviseSink(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2441,26 +2441,26 @@ typedef struct ITfSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfSource *This);
+                     ITfSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfSource *This);
+                     ITfSource *This);
 
     /*** ITfSource methods ***/
     HRESULT (STDMETHODCALLTYPE *AdviseSink)(
-        ITfSource *This,
-        REFIID riid,
-        IUnknown *punk,
-        DWORD *pdwCookie);
+                     ITfSource *This,
+                     REFIID riid,
+                     IUnknown *punk,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *UnadviseSink)(
-        ITfSource *This,
-        DWORD dwCookie);
+                     ITfSource *This,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } ITfSourceVtbl;
@@ -2516,93 +2516,93 @@ MIDL_INTERFACE("1f02b6c5-7842-4ee6-8a0b-9a24183a95ca")
 ITfInputProcessorProfiles : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Register(
-        REFCLSID rclsid) = 0;
+                     REFCLSID rclsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unregister(
-        REFCLSID rclsid) = 0;
+                     REFCLSID rclsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddLanguageProfile(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        const WCHAR *pchDesc,
-        ULONG cchDesc,
-        const WCHAR *pchIconFile,
-        ULONG cchFile,
-        ULONG uIconIndex) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     const WCHAR *pchDesc,
+                     ULONG cchDesc,
+                     const WCHAR *pchIconFile,
+                     ULONG cchFile,
+                     ULONG uIconIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveLanguageProfile(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumInputProcessorInfo(
-        IEnumGUID **ppEnum) = 0;
+                     IEnumGUID **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultLanguageProfile(
-        LANGID langid,
-        REFGUID catid,
-        CLSID *pclsid,
-        GUID *pguidProfile) = 0;
+                     LANGID langid,
+                     REFGUID catid,
+                     CLSID *pclsid,
+                     GUID *pguidProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultLanguageProfile(
-        LANGID langid,
-        REFCLSID rclsid,
-        REFGUID guidProfiles) = 0;
+                     LANGID langid,
+                     REFCLSID rclsid,
+                     REFGUID guidProfiles) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActivateLanguageProfile(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfiles) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfiles) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActiveLanguageProfile(
-        REFCLSID rclsid,
-        LANGID *plangid,
-        GUID *pguidProfile) = 0;
+                     REFCLSID rclsid,
+                     LANGID *plangid,
+                     GUID *pguidProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguageProfileDescription(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        BSTR *pbstrProfile) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     BSTR *pbstrProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentLanguage(
-        LANGID *plangid) = 0;
+                     LANGID *plangid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ChangeCurrentLanguage(
-        LANGID langid) = 0;
+                     LANGID langid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguageList(
-        LANGID **ppLangId,
-        ULONG *pulCount) = 0;
+                     LANGID **ppLangId,
+                     ULONG *pulCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumLanguageProfiles(
-        LANGID langid,
-        IEnumTfLanguageProfiles **ppEnum) = 0;
+                     LANGID langid,
+                     IEnumTfLanguageProfiles **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableLanguageProfile(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        WINBOOL fEnable) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     WINBOOL fEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEnabledLanguageProfile(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        WINBOOL *pfEnable) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     WINBOOL *pfEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableLanguageProfileByDefault(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        WINBOOL fEnable) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     WINBOOL fEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubstituteKeyboardLayout(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        HKL hKL) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     HKL hKL) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2614,123 +2614,123 @@ typedef struct ITfInputProcessorProfilesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfInputProcessorProfiles *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfInputProcessorProfiles *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfInputProcessorProfiles *This);
+                     ITfInputProcessorProfiles *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfInputProcessorProfiles *This);
+                     ITfInputProcessorProfiles *This);
 
     /*** ITfInputProcessorProfiles methods ***/
     HRESULT (STDMETHODCALLTYPE *Register)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid);
 
     HRESULT (STDMETHODCALLTYPE *Unregister)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid);
 
     HRESULT (STDMETHODCALLTYPE *AddLanguageProfile)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        const WCHAR *pchDesc,
-        ULONG cchDesc,
-        const WCHAR *pchIconFile,
-        ULONG cchFile,
-        ULONG uIconIndex);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     const WCHAR *pchDesc,
+                     ULONG cchDesc,
+                     const WCHAR *pchIconFile,
+                     ULONG cchFile,
+                     ULONG uIconIndex);
 
     HRESULT (STDMETHODCALLTYPE *RemoveLanguageProfile)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile);
 
     HRESULT (STDMETHODCALLTYPE *EnumInputProcessorInfo)(
-        ITfInputProcessorProfiles *This,
-        IEnumGUID **ppEnum);
+                     ITfInputProcessorProfiles *This,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultLanguageProfile)(
-        ITfInputProcessorProfiles *This,
-        LANGID langid,
-        REFGUID catid,
-        CLSID *pclsid,
-        GUID *pguidProfile);
+                     ITfInputProcessorProfiles *This,
+                     LANGID langid,
+                     REFGUID catid,
+                     CLSID *pclsid,
+                     GUID *pguidProfile);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultLanguageProfile)(
-        ITfInputProcessorProfiles *This,
-        LANGID langid,
-        REFCLSID rclsid,
-        REFGUID guidProfiles);
+                     ITfInputProcessorProfiles *This,
+                     LANGID langid,
+                     REFCLSID rclsid,
+                     REFGUID guidProfiles);
 
     HRESULT (STDMETHODCALLTYPE *ActivateLanguageProfile)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfiles);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfiles);
 
     HRESULT (STDMETHODCALLTYPE *GetActiveLanguageProfile)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID *plangid,
-        GUID *pguidProfile);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID *plangid,
+                     GUID *pguidProfile);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguageProfileDescription)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        BSTR *pbstrProfile);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     BSTR *pbstrProfile);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentLanguage)(
-        ITfInputProcessorProfiles *This,
-        LANGID *plangid);
+                     ITfInputProcessorProfiles *This,
+                     LANGID *plangid);
 
     HRESULT (STDMETHODCALLTYPE *ChangeCurrentLanguage)(
-        ITfInputProcessorProfiles *This,
-        LANGID langid);
+                     ITfInputProcessorProfiles *This,
+                     LANGID langid);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguageList)(
-        ITfInputProcessorProfiles *This,
-        LANGID **ppLangId,
-        ULONG *pulCount);
+                     ITfInputProcessorProfiles *This,
+                     LANGID **ppLangId,
+                     ULONG *pulCount);
 
     HRESULT (STDMETHODCALLTYPE *EnumLanguageProfiles)(
-        ITfInputProcessorProfiles *This,
-        LANGID langid,
-        IEnumTfLanguageProfiles **ppEnum);
+                     ITfInputProcessorProfiles *This,
+                     LANGID langid,
+                     IEnumTfLanguageProfiles **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnableLanguageProfile)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        WINBOOL fEnable);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *IsEnabledLanguageProfile)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        WINBOOL *pfEnable);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     WINBOOL *pfEnable);
 
     HRESULT (STDMETHODCALLTYPE *EnableLanguageProfileByDefault)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        WINBOOL fEnable);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *SubstituteKeyboardLayout)(
-        ITfInputProcessorProfiles *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        HKL hKL);
+                     ITfInputProcessorProfiles *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     HKL hKL);
 
     END_INTERFACE
 } ITfInputProcessorProfilesVtbl;
@@ -2861,18 +2861,18 @@ MIDL_INTERFACE("71c6e74d-0f28-11d8-a82a-00065b84435c")
 IEnumTfInputProcessorProfiles : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfInputProcessorProfiles **ppEnum) = 0;
+                     IEnumTfInputProcessorProfiles **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG ulCount,
-        TF_INPUTPROCESSORPROFILE *pProfile,
-        ULONG *pcFetch) = 0;
+                     ULONG ulCount,
+                     TF_INPUTPROCESSORPROFILE *pProfile,
+                     ULONG *pcFetch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG ulCount) = 0;
+                     ULONG ulCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2884,33 +2884,33 @@ typedef struct IEnumTfInputProcessorProfilesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfInputProcessorProfiles *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfInputProcessorProfiles *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfInputProcessorProfiles *This);
+                     IEnumTfInputProcessorProfiles *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfInputProcessorProfiles *This);
+                     IEnumTfInputProcessorProfiles *This);
 
     /*** IEnumTfInputProcessorProfiles methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfInputProcessorProfiles *This,
-        IEnumTfInputProcessorProfiles **ppEnum);
+                     IEnumTfInputProcessorProfiles *This,
+                     IEnumTfInputProcessorProfiles **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfInputProcessorProfiles *This,
-        ULONG ulCount,
-        TF_INPUTPROCESSORPROFILE *pProfile,
-        ULONG *pcFetch);
+                     IEnumTfInputProcessorProfiles *This,
+                     ULONG ulCount,
+                     TF_INPUTPROCESSORPROFILE *pProfile,
+                     ULONG *pcFetch);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfInputProcessorProfiles *This);
+                     IEnumTfInputProcessorProfiles *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfInputProcessorProfiles *This,
-        ULONG ulCount);
+                     IEnumTfInputProcessorProfiles *This,
+                     ULONG ulCount);
 
     END_INTERFACE
 } IEnumTfInputProcessorProfilesVtbl;
@@ -2974,60 +2974,60 @@ MIDL_INTERFACE("71c6e74c-0f28-11d8-a82a-00065b84435c")
 ITfInputProcessorProfileMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ActivateProfile(
-        DWORD dwProfileType,
-        LANGID langid,
-        REFCLSID clsid,
-        REFGUID guidProfile,
-        HKL hkl,
-        DWORD dwFlags) = 0;
+                     DWORD dwProfileType,
+                     LANGID langid,
+                     REFCLSID clsid,
+                     REFGUID guidProfile,
+                     HKL hkl,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeactivateProfile(
-        DWORD dwProfileType,
-        LANGID langid,
-        REFCLSID clsid,
-        REFGUID guidProfile,
-        HKL hkl,
-        DWORD dwFlags) = 0;
+                     DWORD dwProfileType,
+                     LANGID langid,
+                     REFCLSID clsid,
+                     REFGUID guidProfile,
+                     HKL hkl,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProfile(
-        DWORD dwProfileType,
-        LANGID langid,
-        REFCLSID clsid,
-        REFGUID guidProfile,
-        HKL hkl,
-        TF_INPUTPROCESSORPROFILE *pProfile) = 0;
+                     DWORD dwProfileType,
+                     LANGID langid,
+                     REFCLSID clsid,
+                     REFGUID guidProfile,
+                     HKL hkl,
+                     TF_INPUTPROCESSORPROFILE *pProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumProfiles(
-        LANGID langid,
-        IEnumTfInputProcessorProfiles **ppEnum) = 0;
+                     LANGID langid,
+                     IEnumTfInputProcessorProfiles **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReleaseInputProcessor(
-        REFCLSID rclsid,
-        DWORD dwFlags) = 0;
+                     REFCLSID rclsid,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterProfile(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        const WCHAR *pchDesc,
-        ULONG cchDesc,
-        const WCHAR *pchIconFile,
-        ULONG cchFile,
-        ULONG uIconIndex,
-        HKL hklsubstitute,
-        DWORD dwPreferredLayout,
-        WINBOOL bEnabledByDefault,
-        DWORD dwFlags) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     const WCHAR *pchDesc,
+                     ULONG cchDesc,
+                     const WCHAR *pchIconFile,
+                     ULONG cchFile,
+                     ULONG uIconIndex,
+                     HKL hklsubstitute,
+                     DWORD dwPreferredLayout,
+                     WINBOOL bEnabledByDefault,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterProfile(
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        DWORD dwFlags) = 0;
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActiveProfile(
-        REFGUID catid,
-        TF_INPUTPROCESSORPROFILE *pProfile) = 0;
+                     REFGUID catid,
+                     TF_INPUTPROCESSORPROFILE *pProfile) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3039,80 +3039,80 @@ typedef struct ITfInputProcessorProfileMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfInputProcessorProfileMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfInputProcessorProfileMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfInputProcessorProfileMgr *This);
+                     ITfInputProcessorProfileMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfInputProcessorProfileMgr *This);
+                     ITfInputProcessorProfileMgr *This);
 
     /*** ITfInputProcessorProfileMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *ActivateProfile)(
-        ITfInputProcessorProfileMgr *This,
-        DWORD dwProfileType,
-        LANGID langid,
-        REFCLSID clsid,
-        REFGUID guidProfile,
-        HKL hkl,
-        DWORD dwFlags);
+                     ITfInputProcessorProfileMgr *This,
+                     DWORD dwProfileType,
+                     LANGID langid,
+                     REFCLSID clsid,
+                     REFGUID guidProfile,
+                     HKL hkl,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *DeactivateProfile)(
-        ITfInputProcessorProfileMgr *This,
-        DWORD dwProfileType,
-        LANGID langid,
-        REFCLSID clsid,
-        REFGUID guidProfile,
-        HKL hkl,
-        DWORD dwFlags);
+                     ITfInputProcessorProfileMgr *This,
+                     DWORD dwProfileType,
+                     LANGID langid,
+                     REFCLSID clsid,
+                     REFGUID guidProfile,
+                     HKL hkl,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetProfile)(
-        ITfInputProcessorProfileMgr *This,
-        DWORD dwProfileType,
-        LANGID langid,
-        REFCLSID clsid,
-        REFGUID guidProfile,
-        HKL hkl,
-        TF_INPUTPROCESSORPROFILE *pProfile);
+                     ITfInputProcessorProfileMgr *This,
+                     DWORD dwProfileType,
+                     LANGID langid,
+                     REFCLSID clsid,
+                     REFGUID guidProfile,
+                     HKL hkl,
+                     TF_INPUTPROCESSORPROFILE *pProfile);
 
     HRESULT (STDMETHODCALLTYPE *EnumProfiles)(
-        ITfInputProcessorProfileMgr *This,
-        LANGID langid,
-        IEnumTfInputProcessorProfiles **ppEnum);
+                     ITfInputProcessorProfileMgr *This,
+                     LANGID langid,
+                     IEnumTfInputProcessorProfiles **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *ReleaseInputProcessor)(
-        ITfInputProcessorProfileMgr *This,
-        REFCLSID rclsid,
-        DWORD dwFlags);
+                     ITfInputProcessorProfileMgr *This,
+                     REFCLSID rclsid,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *RegisterProfile)(
-        ITfInputProcessorProfileMgr *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        const WCHAR *pchDesc,
-        ULONG cchDesc,
-        const WCHAR *pchIconFile,
-        ULONG cchFile,
-        ULONG uIconIndex,
-        HKL hklsubstitute,
-        DWORD dwPreferredLayout,
-        WINBOOL bEnabledByDefault,
-        DWORD dwFlags);
+                     ITfInputProcessorProfileMgr *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     const WCHAR *pchDesc,
+                     ULONG cchDesc,
+                     const WCHAR *pchIconFile,
+                     ULONG cchFile,
+                     ULONG uIconIndex,
+                     HKL hklsubstitute,
+                     DWORD dwPreferredLayout,
+                     WINBOOL bEnabledByDefault,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterProfile)(
-        ITfInputProcessorProfileMgr *This,
-        REFCLSID rclsid,
-        LANGID langid,
-        REFGUID guidProfile,
-        DWORD dwFlags);
+                     ITfInputProcessorProfileMgr *This,
+                     REFCLSID rclsid,
+                     LANGID langid,
+                     REFGUID guidProfile,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetActiveProfile)(
-        ITfInputProcessorProfileMgr *This,
-        REFGUID catid,
-        TF_INPUTPROCESSORPROFILE *pProfile);
+                     ITfInputProcessorProfileMgr *This,
+                     REFGUID catid,
+                     TF_INPUTPROCESSORPROFILE *pProfile);
 
     END_INTERFACE
 } ITfInputProcessorProfileMgrVtbl;
@@ -3195,8 +3195,8 @@ typedef enum __WIDL_msctf_generated_name_00000015 {
 typedef struct TF_DA_COLOR {
     TF_DA_COLORTYPE type;
     __C89_NAMELESS union {
-        int nIndex;
-        COLORREF cr;
+                     int nIndex;
+                     COLORREF cr;
     } __C89_NAMELESSUNIONNAME;
 } TF_DA_COLOR;
 typedef enum __WIDL_msctf_generated_name_00000016 {
@@ -3228,19 +3228,19 @@ MIDL_INTERFACE("70528852-2f26-4aea-8c96-215150578932")
 ITfDisplayAttributeInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetGUID(
-        GUID *pguid) = 0;
+                     GUID *pguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        BSTR *pbstrDesc) = 0;
+                     BSTR *pbstrDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAttributeInfo(
-        TF_DISPLAYATTRIBUTE *pda) = 0;
+                     TF_DISPLAYATTRIBUTE *pda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAttributeInfo(
-        const TF_DISPLAYATTRIBUTE *pda) = 0;
+                     const TF_DISPLAYATTRIBUTE *pda) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3252,35 +3252,35 @@ typedef struct ITfDisplayAttributeInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfDisplayAttributeInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfDisplayAttributeInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfDisplayAttributeInfo *This);
+                     ITfDisplayAttributeInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfDisplayAttributeInfo *This);
+                     ITfDisplayAttributeInfo *This);
 
     /*** ITfDisplayAttributeInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        ITfDisplayAttributeInfo *This,
-        GUID *pguid);
+                     ITfDisplayAttributeInfo *This,
+                     GUID *pguid);
 
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        ITfDisplayAttributeInfo *This,
-        BSTR *pbstrDesc);
+                     ITfDisplayAttributeInfo *This,
+                     BSTR *pbstrDesc);
 
     HRESULT (STDMETHODCALLTYPE *GetAttributeInfo)(
-        ITfDisplayAttributeInfo *This,
-        TF_DISPLAYATTRIBUTE *pda);
+                     ITfDisplayAttributeInfo *This,
+                     TF_DISPLAYATTRIBUTE *pda);
 
     HRESULT (STDMETHODCALLTYPE *SetAttributeInfo)(
-        ITfDisplayAttributeInfo *This,
-        const TF_DISPLAYATTRIBUTE *pda);
+                     ITfDisplayAttributeInfo *This,
+                     const TF_DISPLAYATTRIBUTE *pda);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        ITfDisplayAttributeInfo *This);
+                     ITfDisplayAttributeInfo *This);
 
     END_INTERFACE
 } ITfDisplayAttributeInfoVtbl;
@@ -3348,18 +3348,18 @@ MIDL_INTERFACE("7cef04d7-cb75-4e80-a7ab-5f5bc7d332de")
 IEnumTfDisplayAttributeInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfDisplayAttributeInfo **ppEnum) = 0;
+                     IEnumTfDisplayAttributeInfo **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG ulCount,
-        ITfDisplayAttributeInfo **rgInfo,
-        ULONG *pcFetched) = 0;
+                     ULONG ulCount,
+                     ITfDisplayAttributeInfo **rgInfo,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG ulCount) = 0;
+                     ULONG ulCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3371,33 +3371,33 @@ typedef struct IEnumTfDisplayAttributeInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfDisplayAttributeInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfDisplayAttributeInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfDisplayAttributeInfo *This);
+                     IEnumTfDisplayAttributeInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfDisplayAttributeInfo *This);
+                     IEnumTfDisplayAttributeInfo *This);
 
     /*** IEnumTfDisplayAttributeInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfDisplayAttributeInfo *This,
-        IEnumTfDisplayAttributeInfo **ppEnum);
+                     IEnumTfDisplayAttributeInfo *This,
+                     IEnumTfDisplayAttributeInfo **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfDisplayAttributeInfo *This,
-        ULONG ulCount,
-        ITfDisplayAttributeInfo **rgInfo,
-        ULONG *pcFetched);
+                     IEnumTfDisplayAttributeInfo *This,
+                     ULONG ulCount,
+                     ITfDisplayAttributeInfo **rgInfo,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfDisplayAttributeInfo *This);
+                     IEnumTfDisplayAttributeInfo *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfDisplayAttributeInfo *This,
-        ULONG ulCount);
+                     IEnumTfDisplayAttributeInfo *This,
+                     ULONG ulCount);
 
     END_INTERFACE
 } IEnumTfDisplayAttributeInfoVtbl;
@@ -3461,15 +3461,15 @@ MIDL_INTERFACE("8ded7393-5db1-475c-9e71-a39111b0ff67")
 ITfDisplayAttributeMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnUpdateInfo(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumDisplayAttributeInfo(
-        IEnumTfDisplayAttributeInfo **ppEnum) = 0;
+                     IEnumTfDisplayAttributeInfo **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDisplayAttributeInfo(
-        REFGUID guid,
-        ITfDisplayAttributeInfo **ppInfo,
-        CLSID *pclsidOwner) = 0;
+                     REFGUID guid,
+                     ITfDisplayAttributeInfo **ppInfo,
+                     CLSID *pclsidOwner) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3481,29 +3481,29 @@ typedef struct ITfDisplayAttributeMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfDisplayAttributeMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfDisplayAttributeMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfDisplayAttributeMgr *This);
+                     ITfDisplayAttributeMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfDisplayAttributeMgr *This);
+                     ITfDisplayAttributeMgr *This);
 
     /*** ITfDisplayAttributeMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *OnUpdateInfo)(
-        ITfDisplayAttributeMgr *This);
+                     ITfDisplayAttributeMgr *This);
 
     HRESULT (STDMETHODCALLTYPE *EnumDisplayAttributeInfo)(
-        ITfDisplayAttributeMgr *This,
-        IEnumTfDisplayAttributeInfo **ppEnum);
+                     ITfDisplayAttributeMgr *This,
+                     IEnumTfDisplayAttributeInfo **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *GetDisplayAttributeInfo)(
-        ITfDisplayAttributeMgr *This,
-        REFGUID guid,
-        ITfDisplayAttributeInfo **ppInfo,
-        CLSID *pclsidOwner);
+                     ITfDisplayAttributeMgr *This,
+                     REFGUID guid,
+                     ITfDisplayAttributeInfo **ppInfo,
+                     CLSID *pclsidOwner);
 
     END_INTERFACE
 } ITfDisplayAttributeMgrVtbl;
@@ -3563,68 +3563,68 @@ MIDL_INTERFACE("c3acefb5-f69d-4905-938f-fcadcf4be830")
 ITfCategoryMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterCategory(
-        REFCLSID rclsid,
-        REFGUID rcatid,
-        REFGUID rguid) = 0;
+                     REFCLSID rclsid,
+                     REFGUID rcatid,
+                     REFGUID rguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterCategory(
-        REFCLSID rclsid,
-        REFGUID rcatid,
-        REFGUID rguid) = 0;
+                     REFCLSID rclsid,
+                     REFGUID rcatid,
+                     REFGUID rguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCategoriesInItem(
-        REFGUID rguid,
-        IEnumGUID **ppEnum) = 0;
+                     REFGUID rguid,
+                     IEnumGUID **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumItemsInCategory(
-        REFGUID rcatid,
-        IEnumGUID **ppEnum) = 0;
+                     REFGUID rcatid,
+                     IEnumGUID **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindClosestCategory(
-        REFGUID rguid,
-        GUID *pcatid,
-        const GUID **ppcatidList,
-        ULONG ulCount) = 0;
+                     REFGUID rguid,
+                     GUID *pcatid,
+                     const GUID **ppcatidList,
+                     ULONG ulCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterGUIDDescription(
-        REFCLSID rclsid,
-        REFGUID rguid,
-        const WCHAR *pchDesc,
-        ULONG cch) = 0;
+                     REFCLSID rclsid,
+                     REFGUID rguid,
+                     const WCHAR *pchDesc,
+                     ULONG cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterGUIDDescription(
-        REFCLSID rclsid,
-        REFGUID rguid) = 0;
+                     REFCLSID rclsid,
+                     REFGUID rguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGUIDDescription(
-        REFGUID rguid,
-        BSTR *pbstrDesc) = 0;
+                     REFGUID rguid,
+                     BSTR *pbstrDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterGUIDDWORD(
-        REFCLSID rclsid,
-        REFGUID rguid,
-        DWORD dw) = 0;
+                     REFCLSID rclsid,
+                     REFGUID rguid,
+                     DWORD dw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterGUIDDWORD(
-        REFCLSID rclsid,
-        REFGUID rguid) = 0;
+                     REFCLSID rclsid,
+                     REFGUID rguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGUIDDWORD(
-        REFGUID rguid,
-        DWORD *pdw) = 0;
+                     REFGUID rguid,
+                     DWORD *pdw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterGUID(
-        REFGUID rguid,
-        TfGuidAtom *pguidatom) = 0;
+                     REFGUID rguid,
+                     TfGuidAtom *pguidatom) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGUID(
-        TfGuidAtom guidatom,
-        GUID *pguid) = 0;
+                     TfGuidAtom guidatom,
+                     GUID *pguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEqualTfGuidAtom(
-        TfGuidAtom guidatom,
-        REFGUID rguid,
-        WINBOOL *pfEqual) = 0;
+                     TfGuidAtom guidatom,
+                     REFGUID rguid,
+                     WINBOOL *pfEqual) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3636,94 +3636,94 @@ typedef struct ITfCategoryMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfCategoryMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfCategoryMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfCategoryMgr *This);
+                     ITfCategoryMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfCategoryMgr *This);
+                     ITfCategoryMgr *This);
 
     /*** ITfCategoryMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterCategory)(
-        ITfCategoryMgr *This,
-        REFCLSID rclsid,
-        REFGUID rcatid,
-        REFGUID rguid);
+                     ITfCategoryMgr *This,
+                     REFCLSID rclsid,
+                     REFGUID rcatid,
+                     REFGUID rguid);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterCategory)(
-        ITfCategoryMgr *This,
-        REFCLSID rclsid,
-        REFGUID rcatid,
-        REFGUID rguid);
+                     ITfCategoryMgr *This,
+                     REFCLSID rclsid,
+                     REFGUID rcatid,
+                     REFGUID rguid);
 
     HRESULT (STDMETHODCALLTYPE *EnumCategoriesInItem)(
-        ITfCategoryMgr *This,
-        REFGUID rguid,
-        IEnumGUID **ppEnum);
+                     ITfCategoryMgr *This,
+                     REFGUID rguid,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *EnumItemsInCategory)(
-        ITfCategoryMgr *This,
-        REFGUID rcatid,
-        IEnumGUID **ppEnum);
+                     ITfCategoryMgr *This,
+                     REFGUID rcatid,
+                     IEnumGUID **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *FindClosestCategory)(
-        ITfCategoryMgr *This,
-        REFGUID rguid,
-        GUID *pcatid,
-        const GUID **ppcatidList,
-        ULONG ulCount);
+                     ITfCategoryMgr *This,
+                     REFGUID rguid,
+                     GUID *pcatid,
+                     const GUID **ppcatidList,
+                     ULONG ulCount);
 
     HRESULT (STDMETHODCALLTYPE *RegisterGUIDDescription)(
-        ITfCategoryMgr *This,
-        REFCLSID rclsid,
-        REFGUID rguid,
-        const WCHAR *pchDesc,
-        ULONG cch);
+                     ITfCategoryMgr *This,
+                     REFCLSID rclsid,
+                     REFGUID rguid,
+                     const WCHAR *pchDesc,
+                     ULONG cch);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterGUIDDescription)(
-        ITfCategoryMgr *This,
-        REFCLSID rclsid,
-        REFGUID rguid);
+                     ITfCategoryMgr *This,
+                     REFCLSID rclsid,
+                     REFGUID rguid);
 
     HRESULT (STDMETHODCALLTYPE *GetGUIDDescription)(
-        ITfCategoryMgr *This,
-        REFGUID rguid,
-        BSTR *pbstrDesc);
+                     ITfCategoryMgr *This,
+                     REFGUID rguid,
+                     BSTR *pbstrDesc);
 
     HRESULT (STDMETHODCALLTYPE *RegisterGUIDDWORD)(
-        ITfCategoryMgr *This,
-        REFCLSID rclsid,
-        REFGUID rguid,
-        DWORD dw);
+                     ITfCategoryMgr *This,
+                     REFCLSID rclsid,
+                     REFGUID rguid,
+                     DWORD dw);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterGUIDDWORD)(
-        ITfCategoryMgr *This,
-        REFCLSID rclsid,
-        REFGUID rguid);
+                     ITfCategoryMgr *This,
+                     REFCLSID rclsid,
+                     REFGUID rguid);
 
     HRESULT (STDMETHODCALLTYPE *GetGUIDDWORD)(
-        ITfCategoryMgr *This,
-        REFGUID rguid,
-        DWORD *pdw);
+                     ITfCategoryMgr *This,
+                     REFGUID rguid,
+                     DWORD *pdw);
 
     HRESULT (STDMETHODCALLTYPE *RegisterGUID)(
-        ITfCategoryMgr *This,
-        REFGUID rguid,
-        TfGuidAtom *pguidatom);
+                     ITfCategoryMgr *This,
+                     REFGUID rguid,
+                     TfGuidAtom *pguidatom);
 
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        ITfCategoryMgr *This,
-        TfGuidAtom guidatom,
-        GUID *pguid);
+                     ITfCategoryMgr *This,
+                     TfGuidAtom guidatom,
+                     GUID *pguid);
 
     HRESULT (STDMETHODCALLTYPE *IsEqualTfGuidAtom)(
-        ITfCategoryMgr *This,
-        TfGuidAtom guidatom,
-        REFGUID rguid,
-        WINBOOL *pfEqual);
+                     ITfCategoryMgr *This,
+                     TfGuidAtom guidatom,
+                     REFGUID rguid,
+                     WINBOOL *pfEqual);
 
     END_INTERFACE
 } ITfCategoryMgrVtbl;
@@ -3827,18 +3827,18 @@ MIDL_INTERFACE("f99d3f40-8e32-11d2-bf46-00105a2799b5")
 IEnumTfRanges : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfRanges **ppEnum) = 0;
+                     IEnumTfRanges **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG ulCount,
-        ITfRange **ppRange,
-        ULONG *pcFetched) = 0;
+                     ULONG ulCount,
+                     ITfRange **ppRange,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG ulCount) = 0;
+                     ULONG ulCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3850,33 +3850,33 @@ typedef struct IEnumTfRangesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfRanges *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfRanges *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfRanges *This);
+                     IEnumTfRanges *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfRanges *This);
+                     IEnumTfRanges *This);
 
     /*** IEnumTfRanges methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfRanges *This,
-        IEnumTfRanges **ppEnum);
+                     IEnumTfRanges *This,
+                     IEnumTfRanges **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfRanges *This,
-        ULONG ulCount,
-        ITfRange **ppRange,
-        ULONG *pcFetched);
+                     IEnumTfRanges *This,
+                     ULONG ulCount,
+                     ITfRange **ppRange,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfRanges *This);
+                     IEnumTfRanges *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfRanges *This,
-        ULONG ulCount);
+                     IEnumTfRanges *This,
+                     ULONG ulCount);
 
     END_INTERFACE
 } IEnumTfRangesVtbl;
@@ -3942,13 +3942,13 @@ MIDL_INTERFACE("42d4d099-7c1a-4a89-b836-6c6f22160df0")
 ITfEditRecord : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSelectionStatus(
-        WINBOOL *changed) = 0;
+                     WINBOOL *changed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTextAndPropertyUpdates(
-        DWORD flags,
-        const GUID **props,
-        ULONG count,
-        IEnumTfRanges **ret) = 0;
+                     DWORD flags,
+                     const GUID **props,
+                     ULONG count,
+                     IEnumTfRanges **ret) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3960,27 +3960,27 @@ typedef struct ITfEditRecordVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfEditRecord *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfEditRecord *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfEditRecord *This);
+                     ITfEditRecord *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfEditRecord *This);
+                     ITfEditRecord *This);
 
     /*** ITfEditRecord methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSelectionStatus)(
-        ITfEditRecord *This,
-        WINBOOL *changed);
+                     ITfEditRecord *This,
+                     WINBOOL *changed);
 
     HRESULT (STDMETHODCALLTYPE *GetTextAndPropertyUpdates)(
-        ITfEditRecord *This,
-        DWORD flags,
-        const GUID **props,
-        ULONG count,
-        IEnumTfRanges **ret);
+                     ITfEditRecord *This,
+                     DWORD flags,
+                     const GUID **props,
+                     ULONG count,
+                     IEnumTfRanges **ret);
 
     END_INTERFACE
 } ITfEditRecordVtbl;
@@ -4036,9 +4036,9 @@ MIDL_INTERFACE("8127d409-ccd3-4683-967a-b43d5b482bf7")
 ITfTextEditSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnEndEdit(
-        ITfContext *pic,
-        TfEditCookie ecReadOnly,
-        ITfEditRecord *pEditRecord) = 0;
+                     ITfContext *pic,
+                     TfEditCookie ecReadOnly,
+                     ITfEditRecord *pEditRecord) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4050,22 +4050,22 @@ typedef struct ITfTextEditSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfTextEditSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfTextEditSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfTextEditSink *This);
+                     ITfTextEditSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfTextEditSink *This);
+                     ITfTextEditSink *This);
 
     /*** ITfTextEditSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnEndEdit)(
-        ITfTextEditSink *This,
-        ITfContext *pic,
-        TfEditCookie ecReadOnly,
-        ITfEditRecord *pEditRecord);
+                     ITfTextEditSink *This,
+                     ITfContext *pic,
+                     TfEditCookie ecReadOnly,
+                     ITfEditRecord *pEditRecord);
 
     END_INTERFACE
 } ITfTextEditSinkVtbl;
@@ -4117,15 +4117,15 @@ MIDL_INTERFACE("5f20aa40-b57a-4f34-96ab-3576f377cc79")
 ITfContextOwnerCompositionSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnStartComposition(
-        ITfCompositionView *pComposition,
-        WINBOOL *pfOk) = 0;
+                     ITfCompositionView *pComposition,
+                     WINBOOL *pfOk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnUpdateComposition(
-        ITfCompositionView *pComposition,
-        ITfRange *pRangeNew) = 0;
+                     ITfCompositionView *pComposition,
+                     ITfRange *pRangeNew) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnEndComposition(
-        ITfCompositionView *pComposition) = 0;
+                     ITfCompositionView *pComposition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4137,30 +4137,30 @@ typedef struct ITfContextOwnerCompositionSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfContextOwnerCompositionSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfContextOwnerCompositionSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfContextOwnerCompositionSink *This);
+                     ITfContextOwnerCompositionSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfContextOwnerCompositionSink *This);
+                     ITfContextOwnerCompositionSink *This);
 
     /*** ITfContextOwnerCompositionSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnStartComposition)(
-        ITfContextOwnerCompositionSink *This,
-        ITfCompositionView *pComposition,
-        WINBOOL *pfOk);
+                     ITfContextOwnerCompositionSink *This,
+                     ITfCompositionView *pComposition,
+                     WINBOOL *pfOk);
 
     HRESULT (STDMETHODCALLTYPE *OnUpdateComposition)(
-        ITfContextOwnerCompositionSink *This,
-        ITfCompositionView *pComposition,
-        ITfRange *pRangeNew);
+                     ITfContextOwnerCompositionSink *This,
+                     ITfCompositionView *pComposition,
+                     ITfRange *pRangeNew);
 
     HRESULT (STDMETHODCALLTYPE *OnEndComposition)(
-        ITfContextOwnerCompositionSink *This,
-        ITfCompositionView *pComposition);
+                     ITfContextOwnerCompositionSink *This,
+                     ITfCompositionView *pComposition);
 
     END_INTERFACE
 } ITfContextOwnerCompositionSinkVtbl;
@@ -4220,9 +4220,9 @@ MIDL_INTERFACE("b246cb75-a93e-4652-bf8c-b3fe0cfd7e57")
 ITfActiveLanguageProfileNotifySink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnActivated(
-        REFCLSID clsid,
-        REFGUID guidProfile,
-        WINBOOL fActivated) = 0;
+                     REFCLSID clsid,
+                     REFGUID guidProfile,
+                     WINBOOL fActivated) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4234,22 +4234,22 @@ typedef struct ITfActiveLanguageProfileNotifySinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfActiveLanguageProfileNotifySink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfActiveLanguageProfileNotifySink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfActiveLanguageProfileNotifySink *This);
+                     ITfActiveLanguageProfileNotifySink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfActiveLanguageProfileNotifySink *This);
+                     ITfActiveLanguageProfileNotifySink *This);
 
     /*** ITfActiveLanguageProfileNotifySink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnActivated)(
-        ITfActiveLanguageProfileNotifySink *This,
-        REFCLSID clsid,
-        REFGUID guidProfile,
-        WINBOOL fActivated);
+                     ITfActiveLanguageProfileNotifySink *This,
+                     REFCLSID clsid,
+                     REFGUID guidProfile,
+                     WINBOOL fActivated);
 
     END_INTERFACE
 } ITfActiveLanguageProfileNotifySinkVtbl;
@@ -4301,18 +4301,18 @@ MIDL_INTERFACE("3d61bf11-ac5f-42c8-a4cb-931bcc28c744")
 IEnumTfLanguageProfiles : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfLanguageProfiles **ppEnum) = 0;
+                     IEnumTfLanguageProfiles **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG ulCount,
-        TF_LANGUAGEPROFILE *pProfile,
-        ULONG *pcFetch) = 0;
+                     ULONG ulCount,
+                     TF_LANGUAGEPROFILE *pProfile,
+                     ULONG *pcFetch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG ulCount) = 0;
+                     ULONG ulCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4324,33 +4324,33 @@ typedef struct IEnumTfLanguageProfilesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfLanguageProfiles *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfLanguageProfiles *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfLanguageProfiles *This);
+                     IEnumTfLanguageProfiles *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfLanguageProfiles *This);
+                     IEnumTfLanguageProfiles *This);
 
     /*** IEnumTfLanguageProfiles methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfLanguageProfiles *This,
-        IEnumTfLanguageProfiles **ppEnum);
+                     IEnumTfLanguageProfiles *This,
+                     IEnumTfLanguageProfiles **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfLanguageProfiles *This,
-        ULONG ulCount,
-        TF_LANGUAGEPROFILE *pProfile,
-        ULONG *pcFetch);
+                     IEnumTfLanguageProfiles *This,
+                     ULONG ulCount,
+                     TF_LANGUAGEPROFILE *pProfile,
+                     ULONG *pcFetch);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfLanguageProfiles *This);
+                     IEnumTfLanguageProfiles *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfLanguageProfiles *This,
-        ULONG ulCount);
+                     IEnumTfLanguageProfiles *This,
+                     ULONG ulCount);
 
     END_INTERFACE
 } IEnumTfLanguageProfilesVtbl;
@@ -4414,11 +4414,11 @@ MIDL_INTERFACE("aa80e7f7-2021-11d2-93e0-0060b067b86e")
 ITfTextInputProcessor : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Activate(
-        ITfThreadMgr *ptim,
-        TfClientId tid) = 0;
+                     ITfThreadMgr *ptim,
+                     TfClientId tid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Deactivate(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4430,24 +4430,24 @@ typedef struct ITfTextInputProcessorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfTextInputProcessor *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfTextInputProcessor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfTextInputProcessor *This);
+                     ITfTextInputProcessor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfTextInputProcessor *This);
+                     ITfTextInputProcessor *This);
 
     /*** ITfTextInputProcessor methods ***/
     HRESULT (STDMETHODCALLTYPE *Activate)(
-        ITfTextInputProcessor *This,
-        ITfThreadMgr *ptim,
-        TfClientId tid);
+                     ITfTextInputProcessor *This,
+                     ITfThreadMgr *ptim,
+                     TfClientId tid);
 
     HRESULT (STDMETHODCALLTYPE *Deactivate)(
-        ITfTextInputProcessor *This);
+                     ITfTextInputProcessor *This);
 
     END_INTERFACE
 } ITfTextInputProcessorVtbl;
@@ -4503,20 +4503,20 @@ MIDL_INTERFACE("aa80e80e-2021-11d2-93e0-0060b067b86e")
 ITfThreadMgrEventSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnInitDocumentMgr(
-        ITfDocumentMgr *pdim) = 0;
+                     ITfDocumentMgr *pdim) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnUninitDocumentMgr(
-        ITfDocumentMgr *pdim) = 0;
+                     ITfDocumentMgr *pdim) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnSetFocus(
-        ITfDocumentMgr *pdimFocus,
-        ITfDocumentMgr *pdimPrevFocus) = 0;
+                     ITfDocumentMgr *pdimFocus,
+                     ITfDocumentMgr *pdimPrevFocus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPushContext(
-        ITfContext *pic) = 0;
+                     ITfContext *pic) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPopContext(
-        ITfContext *pic) = 0;
+                     ITfContext *pic) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4528,37 +4528,37 @@ typedef struct ITfThreadMgrEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfThreadMgrEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfThreadMgrEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfThreadMgrEventSink *This);
+                     ITfThreadMgrEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfThreadMgrEventSink *This);
+                     ITfThreadMgrEventSink *This);
 
     /*** ITfThreadMgrEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnInitDocumentMgr)(
-        ITfThreadMgrEventSink *This,
-        ITfDocumentMgr *pdim);
+                     ITfThreadMgrEventSink *This,
+                     ITfDocumentMgr *pdim);
 
     HRESULT (STDMETHODCALLTYPE *OnUninitDocumentMgr)(
-        ITfThreadMgrEventSink *This,
-        ITfDocumentMgr *pdim);
+                     ITfThreadMgrEventSink *This,
+                     ITfDocumentMgr *pdim);
 
     HRESULT (STDMETHODCALLTYPE *OnSetFocus)(
-        ITfThreadMgrEventSink *This,
-        ITfDocumentMgr *pdimFocus,
-        ITfDocumentMgr *pdimPrevFocus);
+                     ITfThreadMgrEventSink *This,
+                     ITfDocumentMgr *pdimFocus,
+                     ITfDocumentMgr *pdimPrevFocus);
 
     HRESULT (STDMETHODCALLTYPE *OnPushContext)(
-        ITfThreadMgrEventSink *This,
-        ITfContext *pic);
+                     ITfThreadMgrEventSink *This,
+                     ITfContext *pic);
 
     HRESULT (STDMETHODCALLTYPE *OnPopContext)(
-        ITfThreadMgrEventSink *This,
-        ITfContext *pic);
+                     ITfThreadMgrEventSink *This,
+                     ITfContext *pic);
 
     END_INTERFACE
 } ITfThreadMgrEventSinkVtbl;
@@ -4626,70 +4626,70 @@ MIDL_INTERFACE("aa80e7f0-2021-11d2-93e0-0060b067b86e")
 ITfKeystrokeMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AdviseKeyEventSink(
-        TfClientId tid,
-        ITfKeyEventSink *pSink,
-        WINBOOL fForeground) = 0;
+                     TfClientId tid,
+                     ITfKeyEventSink *pSink,
+                     WINBOOL fForeground) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnadviseKeyEventSink(
-        TfClientId tid) = 0;
+                     TfClientId tid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetForeground(
-        CLSID *pclsid) = 0;
+                     CLSID *pclsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TestKeyDown(
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten) = 0;
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TestKeyUp(
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten) = 0;
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE KeyDown(
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten) = 0;
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE KeyUp(
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten) = 0;
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreservedKey(
-        ITfContext *pic,
-        const TF_PRESERVEDKEY *pprekey,
-        GUID *pguid) = 0;
+                     ITfContext *pic,
+                     const TF_PRESERVEDKEY *pprekey,
+                     GUID *pguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPreservedKey(
-        REFGUID rguid,
-        const TF_PRESERVEDKEY *pprekey,
-        WINBOOL *pfRegistered) = 0;
+                     REFGUID rguid,
+                     const TF_PRESERVEDKEY *pprekey,
+                     WINBOOL *pfRegistered) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PreserveKey(
-        TfClientId tid,
-        REFGUID rguid,
-        const TF_PRESERVEDKEY *prekey,
-        const WCHAR *pchDesc,
-        ULONG cchDesc) = 0;
+                     TfClientId tid,
+                     REFGUID rguid,
+                     const TF_PRESERVEDKEY *prekey,
+                     const WCHAR *pchDesc,
+                     ULONG cchDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnpreserveKey(
-        REFGUID rguid,
-        const TF_PRESERVEDKEY *pprekey) = 0;
+                     REFGUID rguid,
+                     const TF_PRESERVEDKEY *pprekey) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPreservedKeyDescription(
-        REFGUID rguid,
-        const WCHAR *pchDesc,
-        ULONG cchDesc) = 0;
+                     REFGUID rguid,
+                     const WCHAR *pchDesc,
+                     ULONG cchDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPreservedKeyDescription(
-        REFGUID rguid,
-        BSTR *pbstrDesc) = 0;
+                     REFGUID rguid,
+                     BSTR *pbstrDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SimulatePreservedKey(
-        ITfContext *pic,
-        REFGUID rguid,
-        WINBOOL *pfEaten) = 0;
+                     ITfContext *pic,
+                     REFGUID rguid,
+                     WINBOOL *pfEaten) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4701,96 +4701,96 @@ typedef struct ITfKeystrokeMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfKeystrokeMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfKeystrokeMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfKeystrokeMgr *This);
+                     ITfKeystrokeMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfKeystrokeMgr *This);
+                     ITfKeystrokeMgr *This);
 
     /*** ITfKeystrokeMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *AdviseKeyEventSink)(
-        ITfKeystrokeMgr *This,
-        TfClientId tid,
-        ITfKeyEventSink *pSink,
-        WINBOOL fForeground);
+                     ITfKeystrokeMgr *This,
+                     TfClientId tid,
+                     ITfKeyEventSink *pSink,
+                     WINBOOL fForeground);
 
     HRESULT (STDMETHODCALLTYPE *UnadviseKeyEventSink)(
-        ITfKeystrokeMgr *This,
-        TfClientId tid);
+                     ITfKeystrokeMgr *This,
+                     TfClientId tid);
 
     HRESULT (STDMETHODCALLTYPE *GetForeground)(
-        ITfKeystrokeMgr *This,
-        CLSID *pclsid);
+                     ITfKeystrokeMgr *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *TestKeyDown)(
-        ITfKeystrokeMgr *This,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten);
+                     ITfKeystrokeMgr *This,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten);
 
     HRESULT (STDMETHODCALLTYPE *TestKeyUp)(
-        ITfKeystrokeMgr *This,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten);
+                     ITfKeystrokeMgr *This,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten);
 
     HRESULT (STDMETHODCALLTYPE *KeyDown)(
-        ITfKeystrokeMgr *This,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten);
+                     ITfKeystrokeMgr *This,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten);
 
     HRESULT (STDMETHODCALLTYPE *KeyUp)(
-        ITfKeystrokeMgr *This,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten);
+                     ITfKeystrokeMgr *This,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten);
 
     HRESULT (STDMETHODCALLTYPE *GetPreservedKey)(
-        ITfKeystrokeMgr *This,
-        ITfContext *pic,
-        const TF_PRESERVEDKEY *pprekey,
-        GUID *pguid);
+                     ITfKeystrokeMgr *This,
+                     ITfContext *pic,
+                     const TF_PRESERVEDKEY *pprekey,
+                     GUID *pguid);
 
     HRESULT (STDMETHODCALLTYPE *IsPreservedKey)(
-        ITfKeystrokeMgr *This,
-        REFGUID rguid,
-        const TF_PRESERVEDKEY *pprekey,
-        WINBOOL *pfRegistered);
+                     ITfKeystrokeMgr *This,
+                     REFGUID rguid,
+                     const TF_PRESERVEDKEY *pprekey,
+                     WINBOOL *pfRegistered);
 
     HRESULT (STDMETHODCALLTYPE *PreserveKey)(
-        ITfKeystrokeMgr *This,
-        TfClientId tid,
-        REFGUID rguid,
-        const TF_PRESERVEDKEY *prekey,
-        const WCHAR *pchDesc,
-        ULONG cchDesc);
+                     ITfKeystrokeMgr *This,
+                     TfClientId tid,
+                     REFGUID rguid,
+                     const TF_PRESERVEDKEY *prekey,
+                     const WCHAR *pchDesc,
+                     ULONG cchDesc);
 
     HRESULT (STDMETHODCALLTYPE *UnpreserveKey)(
-        ITfKeystrokeMgr *This,
-        REFGUID rguid,
-        const TF_PRESERVEDKEY *pprekey);
+                     ITfKeystrokeMgr *This,
+                     REFGUID rguid,
+                     const TF_PRESERVEDKEY *pprekey);
 
     HRESULT (STDMETHODCALLTYPE *SetPreservedKeyDescription)(
-        ITfKeystrokeMgr *This,
-        REFGUID rguid,
-        const WCHAR *pchDesc,
-        ULONG cchDesc);
+                     ITfKeystrokeMgr *This,
+                     REFGUID rguid,
+                     const WCHAR *pchDesc,
+                     ULONG cchDesc);
 
     HRESULT (STDMETHODCALLTYPE *GetPreservedKeyDescription)(
-        ITfKeystrokeMgr *This,
-        REFGUID rguid,
-        BSTR *pbstrDesc);
+                     ITfKeystrokeMgr *This,
+                     REFGUID rguid,
+                     BSTR *pbstrDesc);
 
     HRESULT (STDMETHODCALLTYPE *SimulatePreservedKey)(
-        ITfKeystrokeMgr *This,
-        ITfContext *pic,
-        REFGUID rguid,
-        WINBOOL *pfEaten);
+                     ITfKeystrokeMgr *This,
+                     ITfContext *pic,
+                     REFGUID rguid,
+                     WINBOOL *pfEaten);
 
     END_INTERFACE
 } ITfKeystrokeMgrVtbl;
@@ -4894,36 +4894,36 @@ MIDL_INTERFACE("aa80e7f5-2021-11d2-93e0-0060b067b86e")
 ITfKeyEventSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnSetFocus(
-        WINBOOL fForeground) = 0;
+                     WINBOOL fForeground) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnTestKeyDown(
-        ITfContext *pic,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten) = 0;
+                     ITfContext *pic,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnTestKeyUp(
-        ITfContext *pic,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten) = 0;
+                     ITfContext *pic,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnKeyDown(
-        ITfContext *pic,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten) = 0;
+                     ITfContext *pic,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnKeyUp(
-        ITfContext *pic,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten) = 0;
+                     ITfContext *pic,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPreservedKey(
-        ITfContext *pic,
-        REFGUID rguid,
-        WINBOOL *pfEaten) = 0;
+                     ITfContext *pic,
+                     REFGUID rguid,
+                     WINBOOL *pfEaten) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4935,54 +4935,54 @@ typedef struct ITfKeyEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfKeyEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfKeyEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfKeyEventSink *This);
+                     ITfKeyEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfKeyEventSink *This);
+                     ITfKeyEventSink *This);
 
     /*** ITfKeyEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnSetFocus)(
-        ITfKeyEventSink *This,
-        WINBOOL fForeground);
+                     ITfKeyEventSink *This,
+                     WINBOOL fForeground);
 
     HRESULT (STDMETHODCALLTYPE *OnTestKeyDown)(
-        ITfKeyEventSink *This,
-        ITfContext *pic,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten);
+                     ITfKeyEventSink *This,
+                     ITfContext *pic,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten);
 
     HRESULT (STDMETHODCALLTYPE *OnTestKeyUp)(
-        ITfKeyEventSink *This,
-        ITfContext *pic,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten);
+                     ITfKeyEventSink *This,
+                     ITfContext *pic,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten);
 
     HRESULT (STDMETHODCALLTYPE *OnKeyDown)(
-        ITfKeyEventSink *This,
-        ITfContext *pic,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten);
+                     ITfKeyEventSink *This,
+                     ITfContext *pic,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten);
 
     HRESULT (STDMETHODCALLTYPE *OnKeyUp)(
-        ITfKeyEventSink *This,
-        ITfContext *pic,
-        WPARAM wParam,
-        LPARAM lParam,
-        WINBOOL *pfEaten);
+                     ITfKeyEventSink *This,
+                     ITfContext *pic,
+                     WPARAM wParam,
+                     LPARAM lParam,
+                     WINBOOL *pfEaten);
 
     HRESULT (STDMETHODCALLTYPE *OnPreservedKey)(
-        ITfKeyEventSink *This,
-        ITfContext *pic,
-        REFGUID rguid,
-        WINBOOL *pfEaten);
+                     ITfKeyEventSink *This,
+                     ITfContext *pic,
+                     REFGUID rguid,
+                     WINBOOL *pfEaten);
 
     END_INTERFACE
 } ITfKeyEventSinkVtbl;
@@ -5054,12 +5054,12 @@ MIDL_INTERFACE("1cd4c13b-1c36-4191-a70a-7f3e611f367d")
 ITfKeyTraceEventSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnKeyTraceDown(
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnKeyTraceUp(
-        WPARAM wParam,
-        LPARAM lParam) = 0;
+                     WPARAM wParam,
+                     LPARAM lParam) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5071,26 +5071,26 @@ typedef struct ITfKeyTraceEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfKeyTraceEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfKeyTraceEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfKeyTraceEventSink *This);
+                     ITfKeyTraceEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfKeyTraceEventSink *This);
+                     ITfKeyTraceEventSink *This);
 
     /*** ITfKeyTraceEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnKeyTraceDown)(
-        ITfKeyTraceEventSink *This,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ITfKeyTraceEventSink *This,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     HRESULT (STDMETHODCALLTYPE *OnKeyTraceUp)(
-        ITfKeyTraceEventSink *This,
-        WPARAM wParam,
-        LPARAM lParam);
+                     ITfKeyTraceEventSink *This,
+                     WPARAM wParam,
+                     LPARAM lParam);
 
     END_INTERFACE
 } ITfKeyTraceEventSinkVtbl;
@@ -5146,14 +5146,14 @@ MIDL_INTERFACE("ea1ea136-19df-11d7-a6d2-00065b84435c")
 ITfUIElementSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BeginUIElement(
-        DWORD id,
-        WINBOOL *show) = 0;
+                     DWORD id,
+                     WINBOOL *show) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateUIElement(
-        DWORD id) = 0;
+                     DWORD id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndUIElement(
-        DWORD id) = 0;
+                     DWORD id) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5165,29 +5165,29 @@ typedef struct ITfUIElementSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfUIElementSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfUIElementSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfUIElementSink *This);
+                     ITfUIElementSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfUIElementSink *This);
+                     ITfUIElementSink *This);
 
     /*** ITfUIElementSink methods ***/
     HRESULT (STDMETHODCALLTYPE *BeginUIElement)(
-        ITfUIElementSink *This,
-        DWORD id,
-        WINBOOL *show);
+                     ITfUIElementSink *This,
+                     DWORD id,
+                     WINBOOL *show);
 
     HRESULT (STDMETHODCALLTYPE *UpdateUIElement)(
-        ITfUIElementSink *This,
-        DWORD id);
+                     ITfUIElementSink *This,
+                     DWORD id);
 
     HRESULT (STDMETHODCALLTYPE *EndUIElement)(
-        ITfUIElementSink *This,
-        DWORD id);
+                     ITfUIElementSink *This,
+                     DWORD id);
 
     END_INTERFACE
 } ITfUIElementSinkVtbl;
@@ -5247,34 +5247,34 @@ MIDL_INTERFACE("8f1b8ad8-0b6b-4874-90c5-bd76011e8f7c")
 ITfMessagePump : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PeekMessageA(
-        LPMSG pMsg,
-        HWND hwnd,
-        UINT wMsgFilterMin,
-        UINT wMsgFilterMax,
-        UINT wRemoveMsg,
-        WINBOOL *pfResult) = 0;
+                     LPMSG pMsg,
+                     HWND hwnd,
+                     UINT wMsgFilterMin,
+                     UINT wMsgFilterMax,
+                     UINT wRemoveMsg,
+                     WINBOOL *pfResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMessageA(
-        LPMSG pMsg,
-        HWND hwnd,
-        UINT wMsgFilterMin,
-        UINT wMsgFilterMax,
-        WINBOOL *pfResult) = 0;
+                     LPMSG pMsg,
+                     HWND hwnd,
+                     UINT wMsgFilterMin,
+                     UINT wMsgFilterMax,
+                     WINBOOL *pfResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PeekMessageW(
-        LPMSG pMsg,
-        HWND hwnd,
-        UINT wMsgFilterMin,
-        UINT wMsgFilterMax,
-        UINT wRemoveMsg,
-        WINBOOL *pfResult) = 0;
+                     LPMSG pMsg,
+                     HWND hwnd,
+                     UINT wMsgFilterMin,
+                     UINT wMsgFilterMax,
+                     UINT wRemoveMsg,
+                     WINBOOL *pfResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMessageW(
-        LPMSG pMsg,
-        HWND hwnd,
-        UINT wMsgFilterMin,
-        UINT wMsgFilterMax,
-        WINBOOL *pfResult) = 0;
+                     LPMSG pMsg,
+                     HWND hwnd,
+                     UINT wMsgFilterMin,
+                     UINT wMsgFilterMax,
+                     WINBOOL *pfResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5286,50 +5286,50 @@ typedef struct ITfMessagePumpVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfMessagePump *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfMessagePump *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfMessagePump *This);
+                     ITfMessagePump *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfMessagePump *This);
+                     ITfMessagePump *This);
 
     /*** ITfMessagePump methods ***/
     HRESULT (STDMETHODCALLTYPE *PeekMessageA)(
-        ITfMessagePump *This,
-        LPMSG pMsg,
-        HWND hwnd,
-        UINT wMsgFilterMin,
-        UINT wMsgFilterMax,
-        UINT wRemoveMsg,
-        WINBOOL *pfResult);
+                     ITfMessagePump *This,
+                     LPMSG pMsg,
+                     HWND hwnd,
+                     UINT wMsgFilterMin,
+                     UINT wMsgFilterMax,
+                     UINT wRemoveMsg,
+                     WINBOOL *pfResult);
 
     HRESULT (STDMETHODCALLTYPE *GetMessageA)(
-        ITfMessagePump *This,
-        LPMSG pMsg,
-        HWND hwnd,
-        UINT wMsgFilterMin,
-        UINT wMsgFilterMax,
-        WINBOOL *pfResult);
+                     ITfMessagePump *This,
+                     LPMSG pMsg,
+                     HWND hwnd,
+                     UINT wMsgFilterMin,
+                     UINT wMsgFilterMax,
+                     WINBOOL *pfResult);
 
     HRESULT (STDMETHODCALLTYPE *PeekMessageW)(
-        ITfMessagePump *This,
-        LPMSG pMsg,
-        HWND hwnd,
-        UINT wMsgFilterMin,
-        UINT wMsgFilterMax,
-        UINT wRemoveMsg,
-        WINBOOL *pfResult);
+                     ITfMessagePump *This,
+                     LPMSG pMsg,
+                     HWND hwnd,
+                     UINT wMsgFilterMin,
+                     UINT wMsgFilterMax,
+                     UINT wRemoveMsg,
+                     WINBOOL *pfResult);
 
     HRESULT (STDMETHODCALLTYPE *GetMessageW)(
-        ITfMessagePump *This,
-        LPMSG pMsg,
-        HWND hwnd,
-        UINT wMsgFilterMin,
-        UINT wMsgFilterMax,
-        WINBOOL *pfResult);
+                     ITfMessagePump *This,
+                     LPMSG pMsg,
+                     HWND hwnd,
+                     UINT wMsgFilterMin,
+                     UINT wMsgFilterMax,
+                     WINBOOL *pfResult);
 
     END_INTERFACE
 } ITfMessagePumpVtbl;
@@ -5393,8 +5393,8 @@ MIDL_INTERFACE("d60a7b49-1b9f-4be2-b702-47e9dc05dec3")
 ITfClientId : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetClientId(
-        REFCLSID rclsid,
-        TfClientId *ptid) = 0;
+                     REFCLSID rclsid,
+                     TfClientId *ptid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5406,21 +5406,21 @@ typedef struct ITfClientIdVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfClientId *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfClientId *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfClientId *This);
+                     ITfClientId *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfClientId *This);
+                     ITfClientId *This);
 
     /*** ITfClientId methods ***/
     HRESULT (STDMETHODCALLTYPE *GetClientId)(
-        ITfClientId *This,
-        REFCLSID rclsid,
-        TfClientId *ptid);
+                     ITfClientId *This,
+                     REFCLSID rclsid,
+                     TfClientId *ptid);
 
     END_INTERFACE
 } ITfClientIdVtbl;
@@ -5472,11 +5472,11 @@ MIDL_INTERFACE("43c9fe15-f494-4c17-9de2-b8a4ac350aa8")
 ITfLanguageProfileNotifySink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnLanguageChange(
-        LANGID langid,
-        WINBOOL *pfAccept) = 0;
+                     LANGID langid,
+                     WINBOOL *pfAccept) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnLanguageChanged(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5488,24 +5488,24 @@ typedef struct ITfLanguageProfileNotifySinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfLanguageProfileNotifySink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfLanguageProfileNotifySink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfLanguageProfileNotifySink *This);
+                     ITfLanguageProfileNotifySink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfLanguageProfileNotifySink *This);
+                     ITfLanguageProfileNotifySink *This);
 
     /*** ITfLanguageProfileNotifySink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnLanguageChange)(
-        ITfLanguageProfileNotifySink *This,
-        LANGID langid,
-        WINBOOL *pfAccept);
+                     ITfLanguageProfileNotifySink *This,
+                     LANGID langid,
+                     WINBOOL *pfAccept);
 
     HRESULT (STDMETHODCALLTYPE *OnLanguageChanged)(
-        ITfLanguageProfileNotifySink *This);
+                     ITfLanguageProfileNotifySink *This);
 
     END_INTERFACE
 } ITfLanguageProfileNotifySinkVtbl;
@@ -5561,7 +5561,7 @@ MIDL_INTERFACE("aa80e803-2021-11d2-93e0-0060b067b86e")
 ITfEditSession : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DoEditSession(
-        TfEditCookie ec) = 0;
+                     TfEditCookie ec) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5573,20 +5573,20 @@ typedef struct ITfEditSessionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfEditSession *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfEditSession *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfEditSession *This);
+                     ITfEditSession *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfEditSession *This);
+                     ITfEditSession *This);
 
     /*** ITfEditSession methods ***/
     HRESULT (STDMETHODCALLTYPE *DoEditSession)(
-        ITfEditSession *This,
-        TfEditCookie ec);
+                     ITfEditSession *This,
+                     TfEditCookie ec);
 
     END_INTERFACE
 } ITfEditSessionVtbl;
@@ -5663,116 +5663,116 @@ MIDL_INTERFACE("aa80e7ff-2021-11d2-93e0-0060b067b86e")
 ITfRange : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetText(
-        TfEditCookie ec,
-        DWORD dwFlags,
-        WCHAR *pchText,
-        ULONG cchMax,
-        ULONG *pcch) = 0;
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     WCHAR *pchText,
+                     ULONG cchMax,
+                     ULONG *pcch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetText(
-        TfEditCookie ec,
-        DWORD dwFlags,
-        const WCHAR *pchText,
-        LONG cch) = 0;
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     const WCHAR *pchText,
+                     LONG cch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFormattedText(
-        TfEditCookie ec,
-        IDataObject **ppDataObject) = 0;
+                     TfEditCookie ec,
+                     IDataObject **ppDataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEmbedded(
-        TfEditCookie ec,
-        REFGUID rguidService,
-        REFIID riid,
-        IUnknown **ppunk) = 0;
+                     TfEditCookie ec,
+                     REFGUID rguidService,
+                     REFIID riid,
+                     IUnknown **ppunk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertEmbedded(
-        TfEditCookie ec,
-        DWORD dwFlags,
-        IDataObject *pDataObject) = 0;
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     IDataObject *pDataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShiftStart(
-        TfEditCookie ec,
-        LONG cchReq,
-        LONG *pcch,
-        const TF_HALTCOND *pHalt) = 0;
+                     TfEditCookie ec,
+                     LONG cchReq,
+                     LONG *pcch,
+                     const TF_HALTCOND *pHalt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShiftEnd(
-        TfEditCookie ec,
-        LONG cchReq,
-        LONG *pcch,
-        const TF_HALTCOND *pHalt) = 0;
+                     TfEditCookie ec,
+                     LONG cchReq,
+                     LONG *pcch,
+                     const TF_HALTCOND *pHalt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShiftStartToRange(
-        TfEditCookie ec,
-        ITfRange *pRange,
-        TfAnchor aPos) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     TfAnchor aPos) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShiftEndToRange(
-        TfEditCookie ec,
-        ITfRange *pRange,
-        TfAnchor aPos) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     TfAnchor aPos) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShiftStartRegion(
-        TfEditCookie ec,
-        TfShiftDir dir,
-        WINBOOL *pfNoRegion) = 0;
+                     TfEditCookie ec,
+                     TfShiftDir dir,
+                     WINBOOL *pfNoRegion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShiftEndRegion(
-        TfEditCookie ec,
-        TfShiftDir dir,
-        WINBOOL *pfNoRegion) = 0;
+                     TfEditCookie ec,
+                     TfShiftDir dir,
+                     WINBOOL *pfNoRegion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEmpty(
-        TfEditCookie ec,
-        WINBOOL *pfEmpty) = 0;
+                     TfEditCookie ec,
+                     WINBOOL *pfEmpty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Collapse(
-        TfEditCookie ec,
-        TfAnchor aPos) = 0;
+                     TfEditCookie ec,
+                     TfAnchor aPos) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEqualStart(
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        WINBOOL *pfEqual) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     WINBOOL *pfEqual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsEqualEnd(
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        WINBOOL *pfEqual) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     WINBOOL *pfEqual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompareStart(
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        LONG *plResult) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     LONG *plResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompareEnd(
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        LONG *plResult) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     LONG *plResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AdjustForInsert(
-        TfEditCookie ec,
-        ULONG cchInsert,
-        WINBOOL *pfInsertOk) = 0;
+                     TfEditCookie ec,
+                     ULONG cchInsert,
+                     WINBOOL *pfInsertOk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGravity(
-        TfGravity *pgStart,
-        TfGravity *pgEnd) = 0;
+                     TfGravity *pgStart,
+                     TfGravity *pgEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGravity(
-        TfEditCookie ec,
-        TfGravity gStart,
-        TfGravity gEnd) = 0;
+                     TfEditCookie ec,
+                     TfGravity gStart,
+                     TfGravity gEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        ITfRange **ppClone) = 0;
+                     ITfRange **ppClone) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContext(
-        ITfContext **ppContext) = 0;
+                     ITfContext **ppContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5784,150 +5784,150 @@ typedef struct ITfRangeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfRange *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfRange *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfRange *This);
+                     ITfRange *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfRange *This);
+                     ITfRange *This);
 
     /*** ITfRange methods ***/
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ITfRange *This,
-        TfEditCookie ec,
-        DWORD dwFlags,
-        WCHAR *pchText,
-        ULONG cchMax,
-        ULONG *pcch);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     WCHAR *pchText,
+                     ULONG cchMax,
+                     ULONG *pcch);
 
     HRESULT (STDMETHODCALLTYPE *SetText)(
-        ITfRange *This,
-        TfEditCookie ec,
-        DWORD dwFlags,
-        const WCHAR *pchText,
-        LONG cch);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     const WCHAR *pchText,
+                     LONG cch);
 
     HRESULT (STDMETHODCALLTYPE *GetFormattedText)(
-        ITfRange *This,
-        TfEditCookie ec,
-        IDataObject **ppDataObject);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     IDataObject **ppDataObject);
 
     HRESULT (STDMETHODCALLTYPE *GetEmbedded)(
-        ITfRange *This,
-        TfEditCookie ec,
-        REFGUID rguidService,
-        REFIID riid,
-        IUnknown **ppunk);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     REFGUID rguidService,
+                     REFIID riid,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *InsertEmbedded)(
-        ITfRange *This,
-        TfEditCookie ec,
-        DWORD dwFlags,
-        IDataObject *pDataObject);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     IDataObject *pDataObject);
 
     HRESULT (STDMETHODCALLTYPE *ShiftStart)(
-        ITfRange *This,
-        TfEditCookie ec,
-        LONG cchReq,
-        LONG *pcch,
-        const TF_HALTCOND *pHalt);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     LONG cchReq,
+                     LONG *pcch,
+                     const TF_HALTCOND *pHalt);
 
     HRESULT (STDMETHODCALLTYPE *ShiftEnd)(
-        ITfRange *This,
-        TfEditCookie ec,
-        LONG cchReq,
-        LONG *pcch,
-        const TF_HALTCOND *pHalt);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     LONG cchReq,
+                     LONG *pcch,
+                     const TF_HALTCOND *pHalt);
 
     HRESULT (STDMETHODCALLTYPE *ShiftStartToRange)(
-        ITfRange *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        TfAnchor aPos);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     TfAnchor aPos);
 
     HRESULT (STDMETHODCALLTYPE *ShiftEndToRange)(
-        ITfRange *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        TfAnchor aPos);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     TfAnchor aPos);
 
     HRESULT (STDMETHODCALLTYPE *ShiftStartRegion)(
-        ITfRange *This,
-        TfEditCookie ec,
-        TfShiftDir dir,
-        WINBOOL *pfNoRegion);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     TfShiftDir dir,
+                     WINBOOL *pfNoRegion);
 
     HRESULT (STDMETHODCALLTYPE *ShiftEndRegion)(
-        ITfRange *This,
-        TfEditCookie ec,
-        TfShiftDir dir,
-        WINBOOL *pfNoRegion);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     TfShiftDir dir,
+                     WINBOOL *pfNoRegion);
 
     HRESULT (STDMETHODCALLTYPE *IsEmpty)(
-        ITfRange *This,
-        TfEditCookie ec,
-        WINBOOL *pfEmpty);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     WINBOOL *pfEmpty);
 
     HRESULT (STDMETHODCALLTYPE *Collapse)(
-        ITfRange *This,
-        TfEditCookie ec,
-        TfAnchor aPos);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     TfAnchor aPos);
 
     HRESULT (STDMETHODCALLTYPE *IsEqualStart)(
-        ITfRange *This,
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        WINBOOL *pfEqual);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     WINBOOL *pfEqual);
 
     HRESULT (STDMETHODCALLTYPE *IsEqualEnd)(
-        ITfRange *This,
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        WINBOOL *pfEqual);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     WINBOOL *pfEqual);
 
     HRESULT (STDMETHODCALLTYPE *CompareStart)(
-        ITfRange *This,
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        LONG *plResult);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     LONG *plResult);
 
     HRESULT (STDMETHODCALLTYPE *CompareEnd)(
-        ITfRange *This,
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        LONG *plResult);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     LONG *plResult);
 
     HRESULT (STDMETHODCALLTYPE *AdjustForInsert)(
-        ITfRange *This,
-        TfEditCookie ec,
-        ULONG cchInsert,
-        WINBOOL *pfInsertOk);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     ULONG cchInsert,
+                     WINBOOL *pfInsertOk);
 
     HRESULT (STDMETHODCALLTYPE *GetGravity)(
-        ITfRange *This,
-        TfGravity *pgStart,
-        TfGravity *pgEnd);
+                     ITfRange *This,
+                     TfGravity *pgStart,
+                     TfGravity *pgEnd);
 
     HRESULT (STDMETHODCALLTYPE *SetGravity)(
-        ITfRange *This,
-        TfEditCookie ec,
-        TfGravity gStart,
-        TfGravity gEnd);
+                     ITfRange *This,
+                     TfEditCookie ec,
+                     TfGravity gStart,
+                     TfGravity gEnd);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ITfRange *This,
-        ITfRange **ppClone);
+                     ITfRange *This,
+                     ITfRange **ppClone);
 
     HRESULT (STDMETHODCALLTYPE *GetContext)(
-        ITfRange *This,
-        ITfContext **ppContext);
+                     ITfRange *This,
+                     ITfContext **ppContext);
 
     END_INTERFACE
 } ITfRangeVtbl;
@@ -6063,12 +6063,12 @@ MIDL_INTERFACE("057a6296-029b-4154-b79a-0d461d4ea94c")
 ITfRangeACP : public ITfRange
 {
     virtual HRESULT STDMETHODCALLTYPE GetExtent(
-        LONG *pacpAnchor,
-        LONG *pcch) = 0;
+                     LONG *pacpAnchor,
+                     LONG *pcch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetExtent(
-        LONG acpAnchor,
-        LONG cch) = 0;
+                     LONG acpAnchor,
+                     LONG cch) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6080,161 +6080,161 @@ typedef struct ITfRangeACPVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfRangeACP *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfRangeACP *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfRangeACP *This);
+                     ITfRangeACP *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfRangeACP *This);
+                     ITfRangeACP *This);
 
     /*** ITfRange methods ***/
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        DWORD dwFlags,
-        WCHAR *pchText,
-        ULONG cchMax,
-        ULONG *pcch);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     WCHAR *pchText,
+                     ULONG cchMax,
+                     ULONG *pcch);
 
     HRESULT (STDMETHODCALLTYPE *SetText)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        DWORD dwFlags,
-        const WCHAR *pchText,
-        LONG cch);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     const WCHAR *pchText,
+                     LONG cch);
 
     HRESULT (STDMETHODCALLTYPE *GetFormattedText)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        IDataObject **ppDataObject);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     IDataObject **ppDataObject);
 
     HRESULT (STDMETHODCALLTYPE *GetEmbedded)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        REFGUID rguidService,
-        REFIID riid,
-        IUnknown **ppunk);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     REFGUID rguidService,
+                     REFIID riid,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *InsertEmbedded)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        DWORD dwFlags,
-        IDataObject *pDataObject);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     IDataObject *pDataObject);
 
     HRESULT (STDMETHODCALLTYPE *ShiftStart)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        LONG cchReq,
-        LONG *pcch,
-        const TF_HALTCOND *pHalt);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     LONG cchReq,
+                     LONG *pcch,
+                     const TF_HALTCOND *pHalt);
 
     HRESULT (STDMETHODCALLTYPE *ShiftEnd)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        LONG cchReq,
-        LONG *pcch,
-        const TF_HALTCOND *pHalt);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     LONG cchReq,
+                     LONG *pcch,
+                     const TF_HALTCOND *pHalt);
 
     HRESULT (STDMETHODCALLTYPE *ShiftStartToRange)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        TfAnchor aPos);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     TfAnchor aPos);
 
     HRESULT (STDMETHODCALLTYPE *ShiftEndToRange)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        TfAnchor aPos);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     TfAnchor aPos);
 
     HRESULT (STDMETHODCALLTYPE *ShiftStartRegion)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        TfShiftDir dir,
-        WINBOOL *pfNoRegion);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     TfShiftDir dir,
+                     WINBOOL *pfNoRegion);
 
     HRESULT (STDMETHODCALLTYPE *ShiftEndRegion)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        TfShiftDir dir,
-        WINBOOL *pfNoRegion);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     TfShiftDir dir,
+                     WINBOOL *pfNoRegion);
 
     HRESULT (STDMETHODCALLTYPE *IsEmpty)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        WINBOOL *pfEmpty);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     WINBOOL *pfEmpty);
 
     HRESULT (STDMETHODCALLTYPE *Collapse)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        TfAnchor aPos);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     TfAnchor aPos);
 
     HRESULT (STDMETHODCALLTYPE *IsEqualStart)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        WINBOOL *pfEqual);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     WINBOOL *pfEqual);
 
     HRESULT (STDMETHODCALLTYPE *IsEqualEnd)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        WINBOOL *pfEqual);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     WINBOOL *pfEqual);
 
     HRESULT (STDMETHODCALLTYPE *CompareStart)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        LONG *plResult);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     LONG *plResult);
 
     HRESULT (STDMETHODCALLTYPE *CompareEnd)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        ITfRange *pWith,
-        TfAnchor aPos,
-        LONG *plResult);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     ITfRange *pWith,
+                     TfAnchor aPos,
+                     LONG *plResult);
 
     HRESULT (STDMETHODCALLTYPE *AdjustForInsert)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        ULONG cchInsert,
-        WINBOOL *pfInsertOk);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     ULONG cchInsert,
+                     WINBOOL *pfInsertOk);
 
     HRESULT (STDMETHODCALLTYPE *GetGravity)(
-        ITfRangeACP *This,
-        TfGravity *pgStart,
-        TfGravity *pgEnd);
+                     ITfRangeACP *This,
+                     TfGravity *pgStart,
+                     TfGravity *pgEnd);
 
     HRESULT (STDMETHODCALLTYPE *SetGravity)(
-        ITfRangeACP *This,
-        TfEditCookie ec,
-        TfGravity gStart,
-        TfGravity gEnd);
+                     ITfRangeACP *This,
+                     TfEditCookie ec,
+                     TfGravity gStart,
+                     TfGravity gEnd);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ITfRangeACP *This,
-        ITfRange **ppClone);
+                     ITfRangeACP *This,
+                     ITfRange **ppClone);
 
     HRESULT (STDMETHODCALLTYPE *GetContext)(
-        ITfRangeACP *This,
-        ITfContext **ppContext);
+                     ITfRangeACP *This,
+                     ITfContext **ppContext);
 
     /*** ITfRangeACP methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExtent)(
-        ITfRangeACP *This,
-        LONG *pacpAnchor,
-        LONG *pcch);
+                     ITfRangeACP *This,
+                     LONG *pacpAnchor,
+                     LONG *pcch);
 
     HRESULT (STDMETHODCALLTYPE *SetExtent)(
-        ITfRangeACP *This,
-        LONG acpAnchor,
-        LONG cch);
+                     ITfRangeACP *This,
+                     LONG acpAnchor,
+                     LONG cch);
 
     END_INTERFACE
 } ITfRangeACPVtbl;
@@ -6386,17 +6386,17 @@ MIDL_INTERFACE("55ce16ba-3014-41c1-9ceb-fade1446ac6c")
 ITfInsertAtSelection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE InsertTextAtSelection(
-        TfEditCookie ec,
-        DWORD dwFlags,
-        const WCHAR *pchText,
-        LONG cch,
-        ITfRange **ppRange) = 0;
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     const WCHAR *pchText,
+                     LONG cch,
+                     ITfRange **ppRange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertEmbeddedAtSelection(
-        TfEditCookie ec,
-        DWORD dwFlags,
-        IDataObject *pDataObject,
-        ITfRange **ppRange) = 0;
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     IDataObject *pDataObject,
+                     ITfRange **ppRange) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6408,31 +6408,31 @@ typedef struct ITfInsertAtSelectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfInsertAtSelection *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfInsertAtSelection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfInsertAtSelection *This);
+                     ITfInsertAtSelection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfInsertAtSelection *This);
+                     ITfInsertAtSelection *This);
 
     /*** ITfInsertAtSelection methods ***/
     HRESULT (STDMETHODCALLTYPE *InsertTextAtSelection)(
-        ITfInsertAtSelection *This,
-        TfEditCookie ec,
-        DWORD dwFlags,
-        const WCHAR *pchText,
-        LONG cch,
-        ITfRange **ppRange);
+                     ITfInsertAtSelection *This,
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     const WCHAR *pchText,
+                     LONG cch,
+                     ITfRange **ppRange);
 
     HRESULT (STDMETHODCALLTYPE *InsertEmbeddedAtSelection)(
-        ITfInsertAtSelection *This,
-        TfEditCookie ec,
-        DWORD dwFlags,
-        IDataObject *pDataObject,
-        ITfRange **ppRange);
+                     ITfInsertAtSelection *This,
+                     TfEditCookie ec,
+                     DWORD dwFlags,
+                     IDataObject *pDataObject,
+                     ITfRange **ppRange);
 
     END_INTERFACE
 } ITfInsertAtSelectionVtbl;
@@ -6490,37 +6490,37 @@ MIDL_INTERFACE("6834b120-88cb-11d2-bf45-00105a2799b5")
 ITfPropertyStore : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        GUID *pguid) = 0;
+                     GUID *pguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataType(
-        DWORD *pdwReserved) = 0;
+                     DWORD *pdwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetData(
-        VARIANT *pvarValue) = 0;
+                     VARIANT *pvarValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnTextUpdated(
-        DWORD dwFlags,
-        ITfRange *pRangeNew,
-        WINBOOL *pfAccept) = 0;
+                     DWORD dwFlags,
+                     ITfRange *pRangeNew,
+                     WINBOOL *pfAccept) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shrink(
-        ITfRange *pRangeNew,
-        WINBOOL *pfFree) = 0;
+                     ITfRange *pRangeNew,
+                     WINBOOL *pfFree) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Divide(
-        ITfRange *pRangeThis,
-        ITfRange *pRangeNew,
-        ITfPropertyStore **ppPropStore) = 0;
+                     ITfRange *pRangeThis,
+                     ITfRange *pRangeNew,
+                     ITfPropertyStore **ppPropStore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        ITfPropertyStore **pPropStore) = 0;
+                     ITfPropertyStore **pPropStore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyRangeCreator(
-        CLSID *pclsid) = 0;
+                     CLSID *pclsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Serialize(
-        IStream *pStream,
-        ULONG *pcb) = 0;
+                     IStream *pStream,
+                     ULONG *pcb) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6532,58 +6532,58 @@ typedef struct ITfPropertyStoreVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfPropertyStore *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfPropertyStore *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfPropertyStore *This);
+                     ITfPropertyStore *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfPropertyStore *This);
+                     ITfPropertyStore *This);
 
     /*** ITfPropertyStore methods ***/
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        ITfPropertyStore *This,
-        GUID *pguid);
+                     ITfPropertyStore *This,
+                     GUID *pguid);
 
     HRESULT (STDMETHODCALLTYPE *GetDataType)(
-        ITfPropertyStore *This,
-        DWORD *pdwReserved);
+                     ITfPropertyStore *This,
+                     DWORD *pdwReserved);
 
     HRESULT (STDMETHODCALLTYPE *GetData)(
-        ITfPropertyStore *This,
-        VARIANT *pvarValue);
+                     ITfPropertyStore *This,
+                     VARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *OnTextUpdated)(
-        ITfPropertyStore *This,
-        DWORD dwFlags,
-        ITfRange *pRangeNew,
-        WINBOOL *pfAccept);
+                     ITfPropertyStore *This,
+                     DWORD dwFlags,
+                     ITfRange *pRangeNew,
+                     WINBOOL *pfAccept);
 
     HRESULT (STDMETHODCALLTYPE *Shrink)(
-        ITfPropertyStore *This,
-        ITfRange *pRangeNew,
-        WINBOOL *pfFree);
+                     ITfPropertyStore *This,
+                     ITfRange *pRangeNew,
+                     WINBOOL *pfFree);
 
     HRESULT (STDMETHODCALLTYPE *Divide)(
-        ITfPropertyStore *This,
-        ITfRange *pRangeThis,
-        ITfRange *pRangeNew,
-        ITfPropertyStore **ppPropStore);
+                     ITfPropertyStore *This,
+                     ITfRange *pRangeThis,
+                     ITfRange *pRangeNew,
+                     ITfPropertyStore **ppPropStore);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        ITfPropertyStore *This,
-        ITfPropertyStore **pPropStore);
+                     ITfPropertyStore *This,
+                     ITfPropertyStore **pPropStore);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyRangeCreator)(
-        ITfPropertyStore *This,
-        CLSID *pclsid);
+                     ITfPropertyStore *This,
+                     CLSID *pclsid);
 
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        ITfPropertyStore *This,
-        IStream *pStream,
-        ULONG *pcb);
+                     ITfPropertyStore *This,
+                     IStream *pStream,
+                     ULONG *pcb);
 
     END_INTERFACE
 } ITfPropertyStoreVtbl;
@@ -6667,18 +6667,18 @@ MIDL_INTERFACE("5efd22ba-7838-46cb-88e2-cadb14124f8f")
 IEnumITfCompositionView : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumITfCompositionView **ppEnum) = 0;
+                     IEnumITfCompositionView **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG ulCount,
-        ITfCompositionView **rgCompositionView,
-        ULONG *pcFetched) = 0;
+                     ULONG ulCount,
+                     ITfCompositionView **rgCompositionView,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG ulCount) = 0;
+                     ULONG ulCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6690,33 +6690,33 @@ typedef struct IEnumITfCompositionViewVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumITfCompositionView *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumITfCompositionView *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumITfCompositionView *This);
+                     IEnumITfCompositionView *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumITfCompositionView *This);
+                     IEnumITfCompositionView *This);
 
     /*** IEnumITfCompositionView methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumITfCompositionView *This,
-        IEnumITfCompositionView **ppEnum);
+                     IEnumITfCompositionView *This,
+                     IEnumITfCompositionView **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumITfCompositionView *This,
-        ULONG ulCount,
-        ITfCompositionView **rgCompositionView,
-        ULONG *pcFetched);
+                     IEnumITfCompositionView *This,
+                     ULONG ulCount,
+                     ITfCompositionView **rgCompositionView,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumITfCompositionView *This);
+                     IEnumITfCompositionView *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumITfCompositionView *This,
-        ULONG ulCount);
+                     IEnumITfCompositionView *This,
+                     ULONG ulCount);
 
     END_INTERFACE
 } IEnumITfCompositionViewVtbl;
@@ -6780,18 +6780,18 @@ MIDL_INTERFACE("20168d64-5a8f-4a5a-b7bd-cfa29f4d0fd9")
 ITfComposition : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRange(
-        ITfRange **ppRange) = 0;
+                     ITfRange **ppRange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShiftStart(
-        TfEditCookie ecWrite,
-        ITfRange *pNewStart) = 0;
+                     TfEditCookie ecWrite,
+                     ITfRange *pNewStart) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShiftEnd(
-        TfEditCookie ecWrite,
-        ITfRange *pNewEnd) = 0;
+                     TfEditCookie ecWrite,
+                     ITfRange *pNewEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndComposition(
-        TfEditCookie ecWrite) = 0;
+                     TfEditCookie ecWrite) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6803,34 +6803,34 @@ typedef struct ITfCompositionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfComposition *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfComposition *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfComposition *This);
+                     ITfComposition *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfComposition *This);
+                     ITfComposition *This);
 
     /*** ITfComposition methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRange)(
-        ITfComposition *This,
-        ITfRange **ppRange);
+                     ITfComposition *This,
+                     ITfRange **ppRange);
 
     HRESULT (STDMETHODCALLTYPE *ShiftStart)(
-        ITfComposition *This,
-        TfEditCookie ecWrite,
-        ITfRange *pNewStart);
+                     ITfComposition *This,
+                     TfEditCookie ecWrite,
+                     ITfRange *pNewStart);
 
     HRESULT (STDMETHODCALLTYPE *ShiftEnd)(
-        ITfComposition *This,
-        TfEditCookie ecWrite,
-        ITfRange *pNewEnd);
+                     ITfComposition *This,
+                     TfEditCookie ecWrite,
+                     ITfRange *pNewEnd);
 
     HRESULT (STDMETHODCALLTYPE *EndComposition)(
-        ITfComposition *This,
-        TfEditCookie ecWrite);
+                     ITfComposition *This,
+                     TfEditCookie ecWrite);
 
     END_INTERFACE
 } ITfCompositionVtbl;
@@ -6894,8 +6894,8 @@ MIDL_INTERFACE("a781718c-579a-4b15-a280-32b8577acc5e")
 ITfCompositionSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnCompositionTerminated(
-        TfEditCookie ecWrite,
-        ITfComposition *pComposition) = 0;
+                     TfEditCookie ecWrite,
+                     ITfComposition *pComposition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -6907,21 +6907,21 @@ typedef struct ITfCompositionSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfCompositionSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfCompositionSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfCompositionSink *This);
+                     ITfCompositionSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfCompositionSink *This);
+                     ITfCompositionSink *This);
 
     /*** ITfCompositionSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnCompositionTerminated)(
-        ITfCompositionSink *This,
-        TfEditCookie ecWrite,
-        ITfComposition *pComposition);
+                     ITfCompositionSink *This,
+                     TfEditCookie ecWrite,
+                     ITfComposition *pComposition);
 
     END_INTERFACE
 } ITfCompositionSinkVtbl;
@@ -6973,24 +6973,24 @@ MIDL_INTERFACE("d40c8aae-ac92-4fc7-9a11-0ee0e23aa39b")
 ITfContextComposition : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartComposition(
-        TfEditCookie ecWrite,
-        ITfRange *pCompositionRange,
-        ITfCompositionSink *pSink,
-        ITfComposition **ppComposition) = 0;
+                     TfEditCookie ecWrite,
+                     ITfRange *pCompositionRange,
+                     ITfCompositionSink *pSink,
+                     ITfComposition **ppComposition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCompositions(
-        IEnumITfCompositionView **ppEnum) = 0;
+                     IEnumITfCompositionView **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindComposition(
-        TfEditCookie ecRead,
-        ITfRange *pTestRange,
-        IEnumITfCompositionView **ppEnum) = 0;
+                     TfEditCookie ecRead,
+                     ITfRange *pTestRange,
+                     IEnumITfCompositionView **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TakeOwnership(
-        TfEditCookie ecWrite,
-        ITfCompositionView *pComposition,
-        ITfCompositionSink *pSink,
-        ITfComposition **ppComposition) = 0;
+                     TfEditCookie ecWrite,
+                     ITfCompositionView *pComposition,
+                     ITfCompositionSink *pSink,
+                     ITfComposition **ppComposition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7002,40 +7002,40 @@ typedef struct ITfContextCompositionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfContextComposition *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfContextComposition *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfContextComposition *This);
+                     ITfContextComposition *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfContextComposition *This);
+                     ITfContextComposition *This);
 
     /*** ITfContextComposition methods ***/
     HRESULT (STDMETHODCALLTYPE *StartComposition)(
-        ITfContextComposition *This,
-        TfEditCookie ecWrite,
-        ITfRange *pCompositionRange,
-        ITfCompositionSink *pSink,
-        ITfComposition **ppComposition);
+                     ITfContextComposition *This,
+                     TfEditCookie ecWrite,
+                     ITfRange *pCompositionRange,
+                     ITfCompositionSink *pSink,
+                     ITfComposition **ppComposition);
 
     HRESULT (STDMETHODCALLTYPE *EnumCompositions)(
-        ITfContextComposition *This,
-        IEnumITfCompositionView **ppEnum);
+                     ITfContextComposition *This,
+                     IEnumITfCompositionView **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *FindComposition)(
-        ITfContextComposition *This,
-        TfEditCookie ecRead,
-        ITfRange *pTestRange,
-        IEnumITfCompositionView **ppEnum);
+                     ITfContextComposition *This,
+                     TfEditCookie ecRead,
+                     ITfRange *pTestRange,
+                     IEnumITfCompositionView **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *TakeOwnership)(
-        ITfContextComposition *This,
-        TfEditCookie ecWrite,
-        ITfCompositionView *pComposition,
-        ITfCompositionSink *pSink,
-        ITfComposition **ppComposition);
+                     ITfContextComposition *This,
+                     TfEditCookie ecWrite,
+                     ITfCompositionView *pComposition,
+                     ITfCompositionSink *pSink,
+                     ITfComposition **ppComposition);
 
     END_INTERFACE
 } ITfContextCompositionVtbl;
@@ -7099,7 +7099,7 @@ MIDL_INTERFACE("86462810-593b-4916-9764-19c08e9ce110")
 ITfContextOwnerCompositionServices : public ITfContextComposition
 {
     virtual HRESULT STDMETHODCALLTYPE TerminateComposition(
-        ITfCompositionView *pComposition) = 0;
+                     ITfCompositionView *pComposition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7111,45 +7111,45 @@ typedef struct ITfContextOwnerCompositionServicesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfContextOwnerCompositionServices *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfContextOwnerCompositionServices *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfContextOwnerCompositionServices *This);
+                     ITfContextOwnerCompositionServices *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfContextOwnerCompositionServices *This);
+                     ITfContextOwnerCompositionServices *This);
 
     /*** ITfContextComposition methods ***/
     HRESULT (STDMETHODCALLTYPE *StartComposition)(
-        ITfContextOwnerCompositionServices *This,
-        TfEditCookie ecWrite,
-        ITfRange *pCompositionRange,
-        ITfCompositionSink *pSink,
-        ITfComposition **ppComposition);
+                     ITfContextOwnerCompositionServices *This,
+                     TfEditCookie ecWrite,
+                     ITfRange *pCompositionRange,
+                     ITfCompositionSink *pSink,
+                     ITfComposition **ppComposition);
 
     HRESULT (STDMETHODCALLTYPE *EnumCompositions)(
-        ITfContextOwnerCompositionServices *This,
-        IEnumITfCompositionView **ppEnum);
+                     ITfContextOwnerCompositionServices *This,
+                     IEnumITfCompositionView **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *FindComposition)(
-        ITfContextOwnerCompositionServices *This,
-        TfEditCookie ecRead,
-        ITfRange *pTestRange,
-        IEnumITfCompositionView **ppEnum);
+                     ITfContextOwnerCompositionServices *This,
+                     TfEditCookie ecRead,
+                     ITfRange *pTestRange,
+                     IEnumITfCompositionView **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *TakeOwnership)(
-        ITfContextOwnerCompositionServices *This,
-        TfEditCookie ecWrite,
-        ITfCompositionView *pComposition,
-        ITfCompositionSink *pSink,
-        ITfComposition **ppComposition);
+                     ITfContextOwnerCompositionServices *This,
+                     TfEditCookie ecWrite,
+                     ITfCompositionView *pComposition,
+                     ITfCompositionSink *pSink,
+                     ITfComposition **ppComposition);
 
     /*** ITfContextOwnerCompositionServices methods ***/
     HRESULT (STDMETHODCALLTYPE *TerminateComposition)(
-        ITfContextOwnerCompositionServices *This,
-        ITfCompositionView *pComposition);
+                     ITfContextOwnerCompositionServices *This,
+                     ITfCompositionView *pComposition);
 
     END_INTERFACE
 } ITfContextOwnerCompositionServicesVtbl;
@@ -7219,8 +7219,8 @@ MIDL_INTERFACE("4ef89150-0807-11d3-8df0-00105a2799b5")
 ITfPersistentPropertyLoaderACP : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE LoadProperty(
-        const TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
-        IStream **ppStream) = 0;
+                     const TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
+                     IStream **ppStream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7232,21 +7232,21 @@ typedef struct ITfPersistentPropertyLoaderACPVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfPersistentPropertyLoaderACP *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfPersistentPropertyLoaderACP *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfPersistentPropertyLoaderACP *This);
+                     ITfPersistentPropertyLoaderACP *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfPersistentPropertyLoaderACP *This);
+                     ITfPersistentPropertyLoaderACP *This);
 
     /*** ITfPersistentPropertyLoaderACP methods ***/
     HRESULT (STDMETHODCALLTYPE *LoadProperty)(
-        ITfPersistentPropertyLoaderACP *This,
-        const TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
-        IStream **ppStream);
+                     ITfPersistentPropertyLoaderACP *This,
+                     const TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
+                     IStream **ppStream);
 
     END_INTERFACE
 } ITfPersistentPropertyLoaderACPVtbl;
@@ -7298,33 +7298,33 @@ MIDL_INTERFACE("b23eb630-3e1c-11d3-a745-0050040ab407")
 ITfContextOwnerServices : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnLayoutChange(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStatusChange(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnAttributeChange(
-        REFGUID rguidAttribute) = 0;
+                     REFGUID rguidAttribute) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Serialize(
-        ITfProperty *pProp,
-        ITfRange *pRange,
-        TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
-        IStream *pStream) = 0;
+                     ITfProperty *pProp,
+                     ITfRange *pRange,
+                     TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
+                     IStream *pStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unserialize(
-        ITfProperty *pProp,
-        const TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
-        IStream *pStream,
-        ITfPersistentPropertyLoaderACP *pLoader) = 0;
+                     ITfProperty *pProp,
+                     const TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
+                     IStream *pStream,
+                     ITfPersistentPropertyLoaderACP *pLoader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ForceLoadProperty(
-        ITfProperty *pProp) = 0;
+                     ITfProperty *pProp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRange(
-        LONG acpStart,
-        LONG acpEnd,
-        ITfRangeACP **ppRange) = 0;
+                     LONG acpStart,
+                     LONG acpEnd,
+                     ITfRangeACP **ppRange) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7336,51 +7336,51 @@ typedef struct ITfContextOwnerServicesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfContextOwnerServices *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfContextOwnerServices *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfContextOwnerServices *This);
+                     ITfContextOwnerServices *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfContextOwnerServices *This);
+                     ITfContextOwnerServices *This);
 
     /*** ITfContextOwnerServices methods ***/
     HRESULT (STDMETHODCALLTYPE *OnLayoutChange)(
-        ITfContextOwnerServices *This);
+                     ITfContextOwnerServices *This);
 
     HRESULT (STDMETHODCALLTYPE *OnStatusChange)(
-        ITfContextOwnerServices *This,
-        DWORD dwFlags);
+                     ITfContextOwnerServices *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *OnAttributeChange)(
-        ITfContextOwnerServices *This,
-        REFGUID rguidAttribute);
+                     ITfContextOwnerServices *This,
+                     REFGUID rguidAttribute);
 
     HRESULT (STDMETHODCALLTYPE *Serialize)(
-        ITfContextOwnerServices *This,
-        ITfProperty *pProp,
-        ITfRange *pRange,
-        TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
-        IStream *pStream);
+                     ITfContextOwnerServices *This,
+                     ITfProperty *pProp,
+                     ITfRange *pRange,
+                     TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
+                     IStream *pStream);
 
     HRESULT (STDMETHODCALLTYPE *Unserialize)(
-        ITfContextOwnerServices *This,
-        ITfProperty *pProp,
-        const TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
-        IStream *pStream,
-        ITfPersistentPropertyLoaderACP *pLoader);
+                     ITfContextOwnerServices *This,
+                     ITfProperty *pProp,
+                     const TF_PERSISTENT_PROPERTY_HEADER_ACP *pHdr,
+                     IStream *pStream,
+                     ITfPersistentPropertyLoaderACP *pLoader);
 
     HRESULT (STDMETHODCALLTYPE *ForceLoadProperty)(
-        ITfContextOwnerServices *This,
-        ITfProperty *pProp);
+                     ITfContextOwnerServices *This,
+                     ITfProperty *pProp);
 
     HRESULT (STDMETHODCALLTYPE *CreateRange)(
-        ITfContextOwnerServices *This,
-        LONG acpStart,
-        LONG acpEnd,
-        ITfRangeACP **ppRange);
+                     ITfContextOwnerServices *This,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     ITfRangeACP **ppRange);
 
     END_INTERFACE
 } ITfContextOwnerServicesVtbl;
@@ -7456,20 +7456,20 @@ MIDL_INTERFACE("17d49a3d-f8b8-4b2f-b254-52319dd64c53")
 ITfReadOnlyProperty : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        GUID *pguid) = 0;
+                     GUID *pguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumRanges(
-        TfEditCookie ec,
-        IEnumTfRanges **ppEnum,
-        ITfRange *pTargetRange) = 0;
+                     TfEditCookie ec,
+                     IEnumTfRanges **ppEnum,
+                     ITfRange *pTargetRange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        TfEditCookie ec,
-        ITfRange *pRange,
-        VARIANT *pvarValue) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     VARIANT *pvarValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContext(
-        ITfContext **ppContext) = 0;
+                     ITfContext **ppContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7481,36 +7481,36 @@ typedef struct ITfReadOnlyPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfReadOnlyProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfReadOnlyProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfReadOnlyProperty *This);
+                     ITfReadOnlyProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfReadOnlyProperty *This);
+                     ITfReadOnlyProperty *This);
 
     /*** ITfReadOnlyProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        ITfReadOnlyProperty *This,
-        GUID *pguid);
+                     ITfReadOnlyProperty *This,
+                     GUID *pguid);
 
     HRESULT (STDMETHODCALLTYPE *EnumRanges)(
-        ITfReadOnlyProperty *This,
-        TfEditCookie ec,
-        IEnumTfRanges **ppEnum,
-        ITfRange *pTargetRange);
+                     ITfReadOnlyProperty *This,
+                     TfEditCookie ec,
+                     IEnumTfRanges **ppEnum,
+                     ITfRange *pTargetRange);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        ITfReadOnlyProperty *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        VARIANT *pvarValue);
+                     ITfReadOnlyProperty *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     VARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *GetContext)(
-        ITfReadOnlyProperty *This,
-        ITfContext **ppContext);
+                     ITfReadOnlyProperty *This,
+                     ITfContext **ppContext);
 
     END_INTERFACE
 } ITfReadOnlyPropertyVtbl;
@@ -7574,24 +7574,24 @@ MIDL_INTERFACE("e2449660-9542-11d2-bf46-00105a2799b5")
 ITfProperty : public ITfReadOnlyProperty
 {
     virtual HRESULT STDMETHODCALLTYPE FindRange(
-        TfEditCookie ec,
-        ITfRange *pRange,
-        ITfRange **ppRange,
-        TfAnchor aPos) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     ITfRange **ppRange,
+                     TfAnchor aPos) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValueStore(
-        TfEditCookie ec,
-        ITfRange *pRange,
-        ITfPropertyStore *pPropStore) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     ITfPropertyStore *pPropStore) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValue(
-        TfEditCookie ec,
-        ITfRange *pRange,
-        const VARIANT *pvarValue) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     const VARIANT *pvarValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        TfEditCookie ec,
-        ITfRange *pRange) = 0;
+                     TfEditCookie ec,
+                     ITfRange *pRange) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7603,61 +7603,61 @@ typedef struct ITfPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfProperty *This);
+                     ITfProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfProperty *This);
+                     ITfProperty *This);
 
     /*** ITfReadOnlyProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        ITfProperty *This,
-        GUID *pguid);
+                     ITfProperty *This,
+                     GUID *pguid);
 
     HRESULT (STDMETHODCALLTYPE *EnumRanges)(
-        ITfProperty *This,
-        TfEditCookie ec,
-        IEnumTfRanges **ppEnum,
-        ITfRange *pTargetRange);
+                     ITfProperty *This,
+                     TfEditCookie ec,
+                     IEnumTfRanges **ppEnum,
+                     ITfRange *pTargetRange);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        ITfProperty *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        VARIANT *pvarValue);
+                     ITfProperty *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     VARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *GetContext)(
-        ITfProperty *This,
-        ITfContext **ppContext);
+                     ITfProperty *This,
+                     ITfContext **ppContext);
 
     /*** ITfProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *FindRange)(
-        ITfProperty *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        ITfRange **ppRange,
-        TfAnchor aPos);
+                     ITfProperty *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     ITfRange **ppRange,
+                     TfAnchor aPos);
 
     HRESULT (STDMETHODCALLTYPE *SetValueStore)(
-        ITfProperty *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        ITfPropertyStore *pPropStore);
+                     ITfProperty *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     ITfPropertyStore *pPropStore);
 
     HRESULT (STDMETHODCALLTYPE *SetValue)(
-        ITfProperty *This,
-        TfEditCookie ec,
-        ITfRange *pRange,
-        const VARIANT *pvarValue);
+                     ITfProperty *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange,
+                     const VARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        ITfProperty *This,
-        TfEditCookie ec,
-        ITfRange *pRange);
+                     ITfProperty *This,
+                     TfEditCookie ec,
+                     ITfRange *pRange);
 
     END_INTERFACE
 } ITfPropertyVtbl;
@@ -7739,11 +7739,11 @@ MIDL_INTERFACE("bb08f7a9-607a-4384-8623-056892b64371")
 ITfCompartment : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetValue(
-        TfClientId tid,
-        const VARIANT *pvarValue) = 0;
+                     TfClientId tid,
+                     const VARIANT *pvarValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        VARIANT *pvarValue) = 0;
+                     VARIANT *pvarValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7755,25 +7755,25 @@ typedef struct ITfCompartmentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfCompartment *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfCompartment *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfCompartment *This);
+                     ITfCompartment *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfCompartment *This);
+                     ITfCompartment *This);
 
     /*** ITfCompartment methods ***/
     HRESULT (STDMETHODCALLTYPE *SetValue)(
-        ITfCompartment *This,
-        TfClientId tid,
-        const VARIANT *pvarValue);
+                     ITfCompartment *This,
+                     TfClientId tid,
+                     const VARIANT *pvarValue);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        ITfCompartment *This,
-        VARIANT *pvarValue);
+                     ITfCompartment *This,
+                     VARIANT *pvarValue);
 
     END_INTERFACE
 } ITfCompartmentVtbl;
@@ -7829,15 +7829,15 @@ MIDL_INTERFACE("7dcf57ac-18ad-438b-824d-979bffb74b7c")
 ITfCompartmentMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCompartment(
-        REFGUID rguid,
-        ITfCompartment **ppcomp) = 0;
+                     REFGUID rguid,
+                     ITfCompartment **ppcomp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClearCompartment(
-        TfClientId tid,
-        REFGUID rguid) = 0;
+                     TfClientId tid,
+                     REFGUID rguid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCompartments(
-        IEnumGUID **ppEnum) = 0;
+                     IEnumGUID **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7849,30 +7849,30 @@ typedef struct ITfCompartmentMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfCompartmentMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfCompartmentMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfCompartmentMgr *This);
+                     ITfCompartmentMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfCompartmentMgr *This);
+                     ITfCompartmentMgr *This);
 
     /*** ITfCompartmentMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCompartment)(
-        ITfCompartmentMgr *This,
-        REFGUID rguid,
-        ITfCompartment **ppcomp);
+                     ITfCompartmentMgr *This,
+                     REFGUID rguid,
+                     ITfCompartment **ppcomp);
 
     HRESULT (STDMETHODCALLTYPE *ClearCompartment)(
-        ITfCompartmentMgr *This,
-        TfClientId tid,
-        REFGUID rguid);
+                     ITfCompartmentMgr *This,
+                     TfClientId tid,
+                     REFGUID rguid);
 
     HRESULT (STDMETHODCALLTYPE *EnumCompartments)(
-        ITfCompartmentMgr *This,
-        IEnumGUID **ppEnum);
+                     ITfCompartmentMgr *This,
+                     IEnumGUID **ppEnum);
 
     END_INTERFACE
 } ITfCompartmentMgrVtbl;
@@ -7932,7 +7932,7 @@ MIDL_INTERFACE("743abd5f-f26d-48df-8cc5-238492419b64")
 ITfCompartmentEventSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnChange(
-        REFGUID rguid) = 0;
+                     REFGUID rguid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -7944,20 +7944,20 @@ typedef struct ITfCompartmentEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfCompartmentEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfCompartmentEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfCompartmentEventSink *This);
+                     ITfCompartmentEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfCompartmentEventSink *This);
+                     ITfCompartmentEventSink *This);
 
     /*** ITfCompartmentEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnChange)(
-        ITfCompartmentEventSink *This,
-        REFGUID rguid);
+                     ITfCompartmentEventSink *This,
+                     REFGUID rguid);
 
     END_INTERFACE
 } ITfCompartmentEventSinkVtbl;
@@ -8009,18 +8009,18 @@ MIDL_INTERFACE("8f1a7ea6-1654-4502-a86e-b2902344d507")
 IEnumTfContexts : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfContexts **ppEnum) = 0;
+                     IEnumTfContexts **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG ulCount,
-        ITfContext **rgContext,
-        ULONG *pcFetched) = 0;
+                     ULONG ulCount,
+                     ITfContext **rgContext,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG ulCount) = 0;
+                     ULONG ulCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8032,33 +8032,33 @@ typedef struct IEnumTfContextsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfContexts *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfContexts *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfContexts *This);
+                     IEnumTfContexts *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfContexts *This);
+                     IEnumTfContexts *This);
 
     /*** IEnumTfContexts methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfContexts *This,
-        IEnumTfContexts **ppEnum);
+                     IEnumTfContexts *This,
+                     IEnumTfContexts **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfContexts *This,
-        ULONG ulCount,
-        ITfContext **rgContext,
-        ULONG *pcFetched);
+                     IEnumTfContexts *This,
+                     ULONG ulCount,
+                     ITfContext **rgContext,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfContexts *This);
+                     IEnumTfContexts *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfContexts *This,
-        ULONG ulCount);
+                     IEnumTfContexts *This,
+                     ULONG ulCount);
 
     END_INTERFACE
 } IEnumTfContextsVtbl;
@@ -8122,18 +8122,18 @@ MIDL_INTERFACE("aa80e808-2021-11d2-93e0-0060b067b86e")
 IEnumTfDocumentMgrs : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfDocumentMgrs **ppEnum) = 0;
+                     IEnumTfDocumentMgrs **ppEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG ulCount,
-        ITfDocumentMgr **rgDocumentMgr,
-        ULONG *pcFetched) = 0;
+                     ULONG ulCount,
+                     ITfDocumentMgr **rgDocumentMgr,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG ulCount) = 0;
+                     ULONG ulCount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8145,33 +8145,33 @@ typedef struct IEnumTfDocumentMgrsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfDocumentMgrs *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfDocumentMgrs *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfDocumentMgrs *This);
+                     IEnumTfDocumentMgrs *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfDocumentMgrs *This);
+                     IEnumTfDocumentMgrs *This);
 
     /*** IEnumTfDocumentMgrs methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfDocumentMgrs *This,
-        IEnumTfDocumentMgrs **ppEnum);
+                     IEnumTfDocumentMgrs *This,
+                     IEnumTfDocumentMgrs **ppEnum);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfDocumentMgrs *This,
-        ULONG ulCount,
-        ITfDocumentMgr **rgDocumentMgr,
-        ULONG *pcFetched);
+                     IEnumTfDocumentMgrs *This,
+                     ULONG ulCount,
+                     ITfDocumentMgr **rgDocumentMgr,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfDocumentMgrs *This);
+                     IEnumTfDocumentMgrs *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfDocumentMgrs *This,
-        ULONG ulCount);
+                     IEnumTfDocumentMgrs *This,
+                     ULONG ulCount);
 
     END_INTERFACE
 } IEnumTfDocumentMgrsVtbl;
@@ -8235,16 +8235,16 @@ MIDL_INTERFACE("ea1ea137-19df-11d7-a6d2-00065b84435c")
 ITfUIElement : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDescription(
-        BSTR *description) = 0;
+                     BSTR *description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGUID(
-        GUID *guid) = 0;
+                     GUID *guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Show(
-        WINBOOL show) = 0;
+                     WINBOOL show) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsShown(
-        WINBOOL *show) = 0;
+                     WINBOOL *show) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8256,32 +8256,32 @@ typedef struct ITfUIElementVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfUIElement *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfUIElement *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfUIElement *This);
+                     ITfUIElement *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfUIElement *This);
+                     ITfUIElement *This);
 
     /*** ITfUIElement methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDescription)(
-        ITfUIElement *This,
-        BSTR *description);
+                     ITfUIElement *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        ITfUIElement *This,
-        GUID *guid);
+                     ITfUIElement *This,
+                     GUID *guid);
 
     HRESULT (STDMETHODCALLTYPE *Show)(
-        ITfUIElement *This,
-        WINBOOL show);
+                     ITfUIElement *This,
+                     WINBOOL show);
 
     HRESULT (STDMETHODCALLTYPE *IsShown)(
-        ITfUIElement *This,
-        WINBOOL *show);
+                     ITfUIElement *This,
+                     WINBOOL *show);
 
     END_INTERFACE
 } ITfUIElementVtbl;
@@ -8345,18 +8345,18 @@ MIDL_INTERFACE("887aa91e-acba-4931-84da-3c5208cf543f")
 IEnumTfUIElements : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTfUIElements **enum_elements) = 0;
+                     IEnumTfUIElements **enum_elements) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG count,
-        ITfUIElement **element,
-        ULONG fetched) = 0;
+                     ULONG count,
+                     ITfUIElement **element,
+                     ULONG fetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG count) = 0;
+                     ULONG count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8368,33 +8368,33 @@ typedef struct IEnumTfUIElementsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTfUIElements *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTfUIElements *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTfUIElements *This);
+                     IEnumTfUIElements *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTfUIElements *This);
+                     IEnumTfUIElements *This);
 
     /*** IEnumTfUIElements methods ***/
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTfUIElements *This,
-        IEnumTfUIElements **enum_elements);
+                     IEnumTfUIElements *This,
+                     IEnumTfUIElements **enum_elements);
 
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTfUIElements *This,
-        ULONG count,
-        ITfUIElement **element,
-        ULONG fetched);
+                     IEnumTfUIElements *This,
+                     ULONG count,
+                     ITfUIElement **element,
+                     ULONG fetched);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTfUIElements *This);
+                     IEnumTfUIElements *This);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTfUIElements *This,
-        ULONG count);
+                     IEnumTfUIElements *This,
+                     ULONG count);
 
     END_INTERFACE
 } IEnumTfUIElementsVtbl;
@@ -8458,22 +8458,22 @@ MIDL_INTERFACE("ea1ea135-19df-11d7-a6d2-00065b84435c")
 ITfUIElementMgr : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE BeginUIElement(
-        ITfUIElement *element,
-        WINBOOL *show,
-        DWORD *id) = 0;
+                     ITfUIElement *element,
+                     WINBOOL *show,
+                     DWORD *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateUIElement(
-        DWORD id) = 0;
+                     DWORD id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndUIElement(
-        DWORD id) = 0;
+                     DWORD id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUIElement(
-        DWORD id,
-        ITfUIElement **element) = 0;
+                     DWORD id,
+                     ITfUIElement **element) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumUIElements(
-        IEnumTfUIElements **enum_elements) = 0;
+                     IEnumTfUIElements **enum_elements) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8485,39 +8485,39 @@ typedef struct ITfUIElementMgrVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfUIElementMgr *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfUIElementMgr *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfUIElementMgr *This);
+                     ITfUIElementMgr *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfUIElementMgr *This);
+                     ITfUIElementMgr *This);
 
     /*** ITfUIElementMgr methods ***/
     HRESULT (STDMETHODCALLTYPE *BeginUIElement)(
-        ITfUIElementMgr *This,
-        ITfUIElement *element,
-        WINBOOL *show,
-        DWORD *id);
+                     ITfUIElementMgr *This,
+                     ITfUIElement *element,
+                     WINBOOL *show,
+                     DWORD *id);
 
     HRESULT (STDMETHODCALLTYPE *UpdateUIElement)(
-        ITfUIElementMgr *This,
-        DWORD id);
+                     ITfUIElementMgr *This,
+                     DWORD id);
 
     HRESULT (STDMETHODCALLTYPE *EndUIElement)(
-        ITfUIElementMgr *This,
-        DWORD id);
+                     ITfUIElementMgr *This,
+                     DWORD id);
 
     HRESULT (STDMETHODCALLTYPE *GetUIElement)(
-        ITfUIElementMgr *This,
-        DWORD id,
-        ITfUIElement **element);
+                     ITfUIElementMgr *This,
+                     DWORD id,
+                     ITfUIElement **element);
 
     HRESULT (STDMETHODCALLTYPE *EnumUIElements)(
-        ITfUIElementMgr *This,
-        IEnumTfUIElements **enum_elements);
+                     ITfUIElementMgr *This,
+                     IEnumTfUIElements **enum_elements);
 
     END_INTERFACE
 } ITfUIElementMgrVtbl;
@@ -8585,13 +8585,13 @@ MIDL_INTERFACE("73131f9c-56a9-49dd-b0ee-d046633f7528")
 ITfSourceSingle : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AdviseSingleSink(
-        TfClientId tid,
-        REFIID riid,
-        IUnknown *punk) = 0;
+                     TfClientId tid,
+                     REFIID riid,
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnadviseSingleSink(
-        TfClientId tid,
-        REFIID riid) = 0;
+                     TfClientId tid,
+                     REFIID riid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8603,27 +8603,27 @@ typedef struct ITfSourceSingleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfSourceSingle *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfSourceSingle *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfSourceSingle *This);
+                     ITfSourceSingle *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfSourceSingle *This);
+                     ITfSourceSingle *This);
 
     /*** ITfSourceSingle methods ***/
     HRESULT (STDMETHODCALLTYPE *AdviseSingleSink)(
-        ITfSourceSingle *This,
-        TfClientId tid,
-        REFIID riid,
-        IUnknown *punk);
+                     ITfSourceSingle *This,
+                     TfClientId tid,
+                     REFIID riid,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *UnadviseSingleSink)(
-        ITfSourceSingle *This,
-        TfClientId tid,
-        REFIID riid);
+                     ITfSourceSingle *This,
+                     TfClientId tid,
+                     REFIID riid);
 
     END_INTERFACE
 } ITfSourceSingleVtbl;
@@ -8679,10 +8679,10 @@ MIDL_INTERFACE("c0f1db0c-3a20-405c-a303-96b6010a885f")
 ITfThreadFocusSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnSetThreadFocus(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnKillThreadFocus(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8694,22 +8694,22 @@ typedef struct ITfThreadFocusSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfThreadFocusSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfThreadFocusSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfThreadFocusSink *This);
+                     ITfThreadFocusSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfThreadFocusSink *This);
+                     ITfThreadFocusSink *This);
 
     /*** ITfThreadFocusSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnSetThreadFocus)(
-        ITfThreadFocusSink *This);
+                     ITfThreadFocusSink *This);
 
     HRESULT (STDMETHODCALLTYPE *OnKillThreadFocus)(
-        ITfThreadFocusSink *This);
+                     ITfThreadFocusSink *This);
 
     END_INTERFACE
 } ITfThreadFocusSinkVtbl;
@@ -8765,13 +8765,13 @@ MIDL_INTERFACE("71c6e74e-0f28-11d8-a82a-00065b84435c")
 ITfInputProcessorProfileActivationSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnActivated(
-        DWORD dwProfileType,
-        LANGID langid,
-        REFCLSID clsid,
-        REFGUID catid,
-        REFGUID guidProfile,
-        HKL hkl,
-        DWORD dwFlags) = 0;
+                     DWORD dwProfileType,
+                     LANGID langid,
+                     REFCLSID clsid,
+                     REFGUID catid,
+                     REFGUID guidProfile,
+                     HKL hkl,
+                     DWORD dwFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8783,26 +8783,26 @@ typedef struct ITfInputProcessorProfileActivationSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfInputProcessorProfileActivationSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfInputProcessorProfileActivationSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfInputProcessorProfileActivationSink *This);
+                     ITfInputProcessorProfileActivationSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfInputProcessorProfileActivationSink *This);
+                     ITfInputProcessorProfileActivationSink *This);
 
     /*** ITfInputProcessorProfileActivationSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnActivated)(
-        ITfInputProcessorProfileActivationSink *This,
-        DWORD dwProfileType,
-        LANGID langid,
-        REFCLSID clsid,
-        REFGUID catid,
-        REFGUID guidProfile,
-        HKL hkl,
-        DWORD dwFlags);
+                     ITfInputProcessorProfileActivationSink *This,
+                     DWORD dwProfileType,
+                     LANGID langid,
+                     REFCLSID clsid,
+                     REFGUID catid,
+                     REFGUID guidProfile,
+                     HKL hkl,
+                     DWORD dwFlags);
 
     END_INTERFACE
 } ITfInputProcessorProfileActivationSinkVtbl;
@@ -8854,10 +8854,10 @@ MIDL_INTERFACE("a1adaaa2-3a24-449d-ac96-5183e7f5c217")
 ITfMouseSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnMouseEvent(
-        ULONG uEdge,
-        ULONG uQuadrant,
-        DWORD dwBtnStatus,
-        WINBOOL *pfEaten) = 0;
+                     ULONG uEdge,
+                     ULONG uQuadrant,
+                     DWORD dwBtnStatus,
+                     WINBOOL *pfEaten) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8869,23 +8869,23 @@ typedef struct ITfMouseSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfMouseSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfMouseSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfMouseSink *This);
+                     ITfMouseSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfMouseSink *This);
+                     ITfMouseSink *This);
 
     /*** ITfMouseSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnMouseEvent)(
-        ITfMouseSink *This,
-        ULONG uEdge,
-        ULONG uQuadrant,
-        DWORD dwBtnStatus,
-        WINBOOL *pfEaten);
+                     ITfMouseSink *This,
+                     ULONG uEdge,
+                     ULONG uQuadrant,
+                     DWORD dwBtnStatus,
+                     WINBOOL *pfEaten);
 
     END_INTERFACE
 } ITfMouseSinkVtbl;
@@ -8937,12 +8937,12 @@ MIDL_INTERFACE("09d146cd-a544-4132-925b-7afa8ef322d0")
 ITfMouseTracker : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AdviseMouseSink(
-        ITfRange *range,
-        ITfMouseSink *pSink,
-        DWORD *pdwCookie) = 0;
+                     ITfRange *range,
+                     ITfMouseSink *pSink,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnadviseMouseSink(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -8954,26 +8954,26 @@ typedef struct ITfMouseTrackerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfMouseTracker *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfMouseTracker *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfMouseTracker *This);
+                     ITfMouseTracker *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfMouseTracker *This);
+                     ITfMouseTracker *This);
 
     /*** ITfMouseTracker methods ***/
     HRESULT (STDMETHODCALLTYPE *AdviseMouseSink)(
-        ITfMouseTracker *This,
-        ITfRange *range,
-        ITfMouseSink *pSink,
-        DWORD *pdwCookie);
+                     ITfMouseTracker *This,
+                     ITfRange *range,
+                     ITfMouseSink *pSink,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *UnadviseMouseSink)(
-        ITfMouseTracker *This,
-        DWORD dwCookie);
+                     ITfMouseTracker *This,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } ITfMouseTrackerVtbl;
@@ -9029,12 +9029,12 @@ MIDL_INTERFACE("3bdd78e2-c16e-47fd-b883-ce6facc1a208")
 ITfMouseTrackerACP : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AdviseMouseSink(
-        ITfRangeACP *range,
-        ITfMouseSink *pSink,
-        DWORD *pdwCookie) = 0;
+                     ITfRangeACP *range,
+                     ITfMouseSink *pSink,
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnadviseMouseSink(
-        DWORD dwCookie) = 0;
+                     DWORD dwCookie) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9046,26 +9046,26 @@ typedef struct ITfMouseTrackerACPVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfMouseTrackerACP *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfMouseTrackerACP *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfMouseTrackerACP *This);
+                     ITfMouseTrackerACP *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfMouseTrackerACP *This);
+                     ITfMouseTrackerACP *This);
 
     /*** ITfMouseTrackerACP methods ***/
     HRESULT (STDMETHODCALLTYPE *AdviseMouseSink)(
-        ITfMouseTrackerACP *This,
-        ITfRangeACP *range,
-        ITfMouseSink *pSink,
-        DWORD *pdwCookie);
+                     ITfMouseTrackerACP *This,
+                     ITfRangeACP *range,
+                     ITfMouseSink *pSink,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *UnadviseMouseSink)(
-        ITfMouseTrackerACP *This,
-        DWORD dwCookie);
+                     ITfMouseTrackerACP *This,
+                     DWORD dwCookie);
 
     END_INTERFACE
 } ITfMouseTrackerACPVtbl;
@@ -9121,11 +9121,11 @@ MIDL_INTERFACE("a615096f-1c57-4813-8a15-55ee6e5a839c")
 ITfTransitoryExtensionSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnTransitoryExtensionUpdated(
-        ITfContext *pic,
-        TfEditCookie ecReadOnly,
-        ITfRange *pResultRange,
-        ITfRange *pCompositionRange,
-        WINBOOL *pfDeleteResultRange) = 0;
+                     ITfContext *pic,
+                     TfEditCookie ecReadOnly,
+                     ITfRange *pResultRange,
+                     ITfRange *pCompositionRange,
+                     WINBOOL *pfDeleteResultRange) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -9137,24 +9137,24 @@ typedef struct ITfTransitoryExtensionSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITfTransitoryExtensionSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITfTransitoryExtensionSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITfTransitoryExtensionSink *This);
+                     ITfTransitoryExtensionSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITfTransitoryExtensionSink *This);
+                     ITfTransitoryExtensionSink *This);
 
     /*** ITfTransitoryExtensionSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnTransitoryExtensionUpdated)(
-        ITfTransitoryExtensionSink *This,
-        ITfContext *pic,
-        TfEditCookie ecReadOnly,
-        ITfRange *pResultRange,
-        ITfRange *pCompositionRange,
-        WINBOOL *pfDeleteResultRange);
+                     ITfTransitoryExtensionSink *This,
+                     ITfContext *pic,
+                     TfEditCookie ecReadOnly,
+                     ITfRange *pResultRange,
+                     ITfRange *pCompositionRange,
+                     WINBOOL *pfDeleteResultRange);
 
     END_INTERFACE
 } ITfTransitoryExtensionSinkVtbl;
@@ -9196,18 +9196,18 @@ static FORCEINLINE HRESULT ITfTransitoryExtensionSink_OnTransitoryExtensionUpdat
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

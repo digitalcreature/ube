@@ -25,15 +25,15 @@ const maxInt = std.math.maxInt;
 pub fn cosh(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => cosh32(x),
-        f64 => cosh64(x),
-        else => @compileError("cosh not implemented for " ++ @typeName(T)),
+                     f32 => cosh32(x),
+                     f64 => cosh64(x),
+                     else => @compileError("cosh not implemented for " ++ @typeName(T)),
     };
 }
 
 // cosh(x) = (exp(x) + 1 / exp(x)) / 2
-//         = 1 + 0.5 * (exp(x) - 1) * (exp(x) - 1) / exp(x)
-//         = 1 + (x * x) / 2 + o(x^4)
+//                      = 1 + 0.5 * (exp(x) - 1) * (exp(x) - 1) / exp(x)
+//                      = 1 + (x * x) / 2 + o(x^4)
 fn cosh32(x: f32) f32 {
     const u = @bitCast(u32, x);
     const ux = u & 0x7FFFFFFF;
@@ -41,18 +41,18 @@ fn cosh32(x: f32) f32 {
 
     // |x| < log(2)
     if (ux < 0x3F317217) {
-        if (ux < 0x3F800000 - (12 << 23)) {
-            math.raiseOverflow();
-            return 1.0;
-        }
-        const t = math.expm1(ax);
-        return 1 + t * t / (2 * (1 + t));
+                     if (ux < 0x3F800000 - (12 << 23)) {
+                                      math.raiseOverflow();
+                                      return 1.0;
+                     }
+                     const t = math.expm1(ax);
+                     return 1 + t * t / (2 * (1 + t));
     }
 
     // |x| < log(FLT_MAX)
     if (ux < 0x42B17217) {
-        const t = math.exp(ax);
-        return 0.5 * (t + 1 / t);
+                     const t = math.exp(ax);
+                     return 0.5 * (t + 1 / t);
     }
 
     // |x| > log(FLT_MAX) or nan
@@ -66,26 +66,26 @@ fn cosh64(x: f64) f64 {
 
     // TODO: Shouldn't need this explicit check.
     if (x == 0.0) {
-        return 1.0;
+                     return 1.0;
     }
 
     // |x| < log(2)
     if (w < 0x3FE62E42) {
-        if (w < 0x3FF00000 - (26 << 20)) {
-            if (x != 0) {
-                math.raiseInexact();
-            }
-            return 1.0;
-        }
-        const t = math.expm1(ax);
-        return 1 + t * t / (2 * (1 + t));
+                     if (w < 0x3FF00000 - (26 << 20)) {
+                                      if (x != 0) {
+                                          math.raiseInexact();
+                                      }
+                                      return 1.0;
+                     }
+                     const t = math.expm1(ax);
+                     return 1 + t * t / (2 * (1 + t));
     }
 
     // |x| < log(DBL_MAX)
     if (w < 0x40862E42) {
-        const t = math.exp(ax);
-        // NOTE: If x > log(0x1p26) then 1/t is not required.
-        return 0.5 * (t + 1 / t);
+                     const t = math.exp(ax);
+                     // NOTE: If x > log(0x1p26) then 1/t is not required.
+                     return 0.5 * (t + 1 / t);
     }
 
     // |x| > log(CBL_MAX) or nan

@@ -4,8 +4,8 @@
 
 #include <linux/types.h>
 
-#define XT_SCTP_SRC_PORTS	        0x01
-#define XT_SCTP_DEST_PORTS	        0x02
+#define XT_SCTP_SRC_PORTS	                     0x01
+#define XT_SCTP_DEST_PORTS	                     0x02
 #define XT_SCTP_CHUNK_TYPES		0x04
 
 #define XT_SCTP_VALID_FLAGS		0x07

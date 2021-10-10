@@ -122,13 +122,13 @@ extern "C" {
 #else
   typedef struct ITransactionResourceAsyncVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionResourceAsync *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionResourceAsync *This);
-      ULONG (WINAPI *Release)(ITransactionResourceAsync *This);
-      HRESULT (WINAPI *PrepareRequest)(ITransactionResourceAsync *This,WINBOOL fRetaining,DWORD grfRM,WINBOOL fWantMoniker,WINBOOL fSinglePhase);
-      HRESULT (WINAPI *CommitRequest)(ITransactionResourceAsync *This,DWORD grfRM,XACTUOW *pNewUOW);
-      HRESULT (WINAPI *AbortRequest)(ITransactionResourceAsync *This,BOID *pboidReason,WINBOOL fRetaining,XACTUOW *pNewUOW);
-      HRESULT (WINAPI *TMDown)(ITransactionResourceAsync *This);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionResourceAsync *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionResourceAsync *This);
+                   ULONG (WINAPI *Release)(ITransactionResourceAsync *This);
+                   HRESULT (WINAPI *PrepareRequest)(ITransactionResourceAsync *This,WINBOOL fRetaining,DWORD grfRM,WINBOOL fWantMoniker,WINBOOL fSinglePhase);
+                   HRESULT (WINAPI *CommitRequest)(ITransactionResourceAsync *This,DWORD grfRM,XACTUOW *pNewUOW);
+                   HRESULT (WINAPI *AbortRequest)(ITransactionResourceAsync *This,BOID *pboidReason,WINBOOL fRetaining,XACTUOW *pNewUOW);
+                   HRESULT (WINAPI *TMDown)(ITransactionResourceAsync *This);
     END_INTERFACE
   } ITransactionResourceAsyncVtbl;
   struct ITransactionResourceAsync {
@@ -166,11 +166,11 @@ extern "C" {
 #else
   typedef struct ITransactionLastResourceAsyncVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionLastResourceAsync *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionLastResourceAsync *This);
-      ULONG (WINAPI *Release)(ITransactionLastResourceAsync *This);
-      HRESULT (WINAPI *DelegateCommit)(ITransactionLastResourceAsync *This,DWORD grfRM);
-      HRESULT (WINAPI *ForgetRequest)(ITransactionLastResourceAsync *This,XACTUOW *pNewUOW);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionLastResourceAsync *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionLastResourceAsync *This);
+                   ULONG (WINAPI *Release)(ITransactionLastResourceAsync *This);
+                   HRESULT (WINAPI *DelegateCommit)(ITransactionLastResourceAsync *This,DWORD grfRM);
+                   HRESULT (WINAPI *ForgetRequest)(ITransactionLastResourceAsync *This,XACTUOW *pNewUOW);
     END_INTERFACE
   } ITransactionLastResourceAsyncVtbl;
   struct ITransactionLastResourceAsync {
@@ -204,13 +204,13 @@ extern "C" {
 #else
   typedef struct ITransactionResourceVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionResource *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionResource *This);
-      ULONG (WINAPI *Release)(ITransactionResource *This);
-      HRESULT (WINAPI *PrepareRequest)(ITransactionResource *This,WINBOOL fRetaining,DWORD grfRM,WINBOOL fWantMoniker,WINBOOL fSinglePhase);
-      HRESULT (WINAPI *CommitRequest)(ITransactionResource *This,DWORD grfRM,XACTUOW *pNewUOW);
-      HRESULT (WINAPI *AbortRequest)(ITransactionResource *This,BOID *pboidReason,WINBOOL fRetaining,XACTUOW *pNewUOW);
-      HRESULT (WINAPI *TMDown)(ITransactionResource *This);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionResource *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionResource *This);
+                   ULONG (WINAPI *Release)(ITransactionResource *This);
+                   HRESULT (WINAPI *PrepareRequest)(ITransactionResource *This,WINBOOL fRetaining,DWORD grfRM,WINBOOL fWantMoniker,WINBOOL fSinglePhase);
+                   HRESULT (WINAPI *CommitRequest)(ITransactionResource *This,DWORD grfRM,XACTUOW *pNewUOW);
+                   HRESULT (WINAPI *AbortRequest)(ITransactionResource *This,BOID *pboidReason,WINBOOL fRetaining,XACTUOW *pNewUOW);
+                   HRESULT (WINAPI *TMDown)(ITransactionResource *This);
     END_INTERFACE
   } ITransactionResourceVtbl;
   struct ITransactionResource {
@@ -249,12 +249,12 @@ extern "C" {
 #else
   typedef struct ITransactionEnlistmentAsyncVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionEnlistmentAsync *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionEnlistmentAsync *This);
-      ULONG (WINAPI *Release)(ITransactionEnlistmentAsync *This);
-      HRESULT (WINAPI *PrepareRequestDone)(ITransactionEnlistmentAsync *This,HRESULT hr,IMoniker *pmk,BOID *pboidReason);
-      HRESULT (WINAPI *CommitRequestDone)(ITransactionEnlistmentAsync *This,HRESULT hr);
-      HRESULT (WINAPI *AbortRequestDone)(ITransactionEnlistmentAsync *This,HRESULT hr);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionEnlistmentAsync *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionEnlistmentAsync *This);
+                   ULONG (WINAPI *Release)(ITransactionEnlistmentAsync *This);
+                   HRESULT (WINAPI *PrepareRequestDone)(ITransactionEnlistmentAsync *This,HRESULT hr,IMoniker *pmk,BOID *pboidReason);
+                   HRESULT (WINAPI *CommitRequestDone)(ITransactionEnlistmentAsync *This,HRESULT hr);
+                   HRESULT (WINAPI *AbortRequestDone)(ITransactionEnlistmentAsync *This,HRESULT hr);
     END_INTERFACE
   } ITransactionEnlistmentAsyncVtbl;
   struct ITransactionEnlistmentAsync {
@@ -288,10 +288,10 @@ extern "C" {
 #else
   typedef struct ITransactionLastEnlistmentAsyncVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionLastEnlistmentAsync *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionLastEnlistmentAsync *This);
-      ULONG (WINAPI *Release)(ITransactionLastEnlistmentAsync *This);
-      HRESULT (WINAPI *TransactionOutcome)(ITransactionLastEnlistmentAsync *This,XACTSTAT XactStat,BOID *pboidReason);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionLastEnlistmentAsync *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionLastEnlistmentAsync *This);
+                   ULONG (WINAPI *Release)(ITransactionLastEnlistmentAsync *This);
+                   HRESULT (WINAPI *TransactionOutcome)(ITransactionLastEnlistmentAsync *This,XACTSTAT XactStat,BOID *pboidReason);
     END_INTERFACE
   } ITransactionLastEnlistmentAsyncVtbl;
   struct ITransactionLastEnlistmentAsync {
@@ -320,11 +320,11 @@ extern "C" {
 #else
   typedef struct ITransactionExportFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionExportFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionExportFactory *This);
-      ULONG (WINAPI *Release)(ITransactionExportFactory *This);
-      HRESULT (WINAPI *GetRemoteClassId)(ITransactionExportFactory *This,CLSID *pclsid);
-      HRESULT (WINAPI *Create)(ITransactionExportFactory *This,ULONG cbWhereabouts,byte *rgbWhereabouts,ITransactionExport **ppExport);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionExportFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionExportFactory *This);
+                   ULONG (WINAPI *Release)(ITransactionExportFactory *This);
+                   HRESULT (WINAPI *GetRemoteClassId)(ITransactionExportFactory *This,CLSID *pclsid);
+                   HRESULT (WINAPI *Create)(ITransactionExportFactory *This,ULONG cbWhereabouts,byte *rgbWhereabouts,ITransactionExport **ppExport);
     END_INTERFACE
   } ITransactionExportFactoryVtbl;
   struct ITransactionExportFactory {
@@ -356,11 +356,11 @@ extern "C" {
 #else
   typedef struct ITransactionImportWhereaboutsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionImportWhereabouts *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionImportWhereabouts *This);
-      ULONG (WINAPI *Release)(ITransactionImportWhereabouts *This);
-      HRESULT (WINAPI *GetWhereaboutsSize)(ITransactionImportWhereabouts *This,ULONG *pcbWhereabouts);
-      HRESULT (WINAPI *GetWhereabouts)(ITransactionImportWhereabouts *This,ULONG cbWhereabouts,byte *rgbWhereabouts,ULONG *pcbUsed);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionImportWhereabouts *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionImportWhereabouts *This);
+                   ULONG (WINAPI *Release)(ITransactionImportWhereabouts *This);
+                   HRESULT (WINAPI *GetWhereaboutsSize)(ITransactionImportWhereabouts *This,ULONG *pcbWhereabouts);
+                   HRESULT (WINAPI *GetWhereabouts)(ITransactionImportWhereabouts *This,ULONG cbWhereabouts,byte *rgbWhereabouts,ULONG *pcbUsed);
     END_INTERFACE
   } ITransactionImportWhereaboutsVtbl;
   struct ITransactionImportWhereabouts {
@@ -392,11 +392,11 @@ extern "C" {
 #else
   typedef struct ITransactionExportVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionExport *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionExport *This);
-      ULONG (WINAPI *Release)(ITransactionExport *This);
-      HRESULT (WINAPI *Export)(ITransactionExport *This,IUnknown *punkTransaction,ULONG *pcbTransactionCookie);
-      HRESULT (WINAPI *GetTransactionCookie)(ITransactionExport *This,IUnknown *punkTransaction,ULONG cbTransactionCookie,byte *rgbTransactionCookie,ULONG *pcbUsed);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionExport *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionExport *This);
+                   ULONG (WINAPI *Release)(ITransactionExport *This);
+                   HRESULT (WINAPI *Export)(ITransactionExport *This,IUnknown *punkTransaction,ULONG *pcbTransactionCookie);
+                   HRESULT (WINAPI *GetTransactionCookie)(ITransactionExport *This,IUnknown *punkTransaction,ULONG cbTransactionCookie,byte *rgbTransactionCookie,ULONG *pcbUsed);
     END_INTERFACE
   } ITransactionExportVtbl;
   struct ITransactionExport {
@@ -427,10 +427,10 @@ extern "C" {
 #else
   typedef struct ITransactionImportVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionImport *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionImport *This);
-      ULONG (WINAPI *Release)(ITransactionImport *This);
-      HRESULT (WINAPI *Import)(ITransactionImport *This,ULONG cbTransactionCookie,byte *rgbTransactionCookie,IID *piid,void **ppvTransaction);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionImport *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionImport *This);
+                   ULONG (WINAPI *Release)(ITransactionImport *This);
+                   HRESULT (WINAPI *Import)(ITransactionImport *This,ULONG cbTransactionCookie,byte *rgbTransactionCookie,IID *piid,void **ppvTransaction);
     END_INTERFACE
   } ITransactionImportVtbl;
   struct ITransactionImport {
@@ -459,11 +459,11 @@ extern "C" {
 #else
   typedef struct ITipTransactionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITipTransaction *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITipTransaction *This);
-      ULONG (WINAPI *Release)(ITipTransaction *This);
-      HRESULT (WINAPI *Push)(ITipTransaction *This,char *i_pszRemoteTmUrl,char **o_ppszRemoteTxUrl);
-      HRESULT (WINAPI *GetTransactionUrl)(ITipTransaction *This,char **o_ppszLocalTxUrl);
+                   HRESULT (WINAPI *QueryInterface)(ITipTransaction *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITipTransaction *This);
+                   ULONG (WINAPI *Release)(ITipTransaction *This);
+                   HRESULT (WINAPI *Push)(ITipTransaction *This,char *i_pszRemoteTmUrl,char **o_ppszRemoteTxUrl);
+                   HRESULT (WINAPI *GetTransactionUrl)(ITipTransaction *This,char **o_ppszLocalTxUrl);
     END_INTERFACE
   } ITipTransactionVtbl;
   struct ITipTransaction {
@@ -496,12 +496,12 @@ extern "C" {
 #else
   typedef struct ITipHelperVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITipHelper *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITipHelper *This);
-      ULONG (WINAPI *Release)(ITipHelper *This);
-      HRESULT (WINAPI *Pull)(ITipHelper *This,char *i_pszTxUrl,ITransaction **o_ppITransaction);
-      HRESULT (WINAPI *PullAsync)(ITipHelper *This,char *i_pszTxUrl,ITipPullSink *i_pTipPullSink,ITransaction **o_ppITransaction);
-      HRESULT (WINAPI *GetLocalTmUrl)(ITipHelper *This,char **o_ppszLocalTmUrl);
+                   HRESULT (WINAPI *QueryInterface)(ITipHelper *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITipHelper *This);
+                   ULONG (WINAPI *Release)(ITipHelper *This);
+                   HRESULT (WINAPI *Pull)(ITipHelper *This,char *i_pszTxUrl,ITransaction **o_ppITransaction);
+                   HRESULT (WINAPI *PullAsync)(ITipHelper *This,char *i_pszTxUrl,ITipPullSink *i_pTipPullSink,ITransaction **o_ppITransaction);
+                   HRESULT (WINAPI *GetLocalTmUrl)(ITipHelper *This,char **o_ppszLocalTmUrl);
     END_INTERFACE
   } ITipHelperVtbl;
   struct ITipHelper {
@@ -535,10 +535,10 @@ extern "C" {
 #else
   typedef struct ITipPullSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITipPullSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITipPullSink *This);
-      ULONG (WINAPI *Release)(ITipPullSink *This);
-      HRESULT (WINAPI *PullComplete)(ITipPullSink *This,HRESULT i_hrPull);
+                   HRESULT (WINAPI *QueryInterface)(ITipPullSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITipPullSink *This);
+                   ULONG (WINAPI *Release)(ITipPullSink *This);
+                   HRESULT (WINAPI *PullComplete)(ITipPullSink *This,HRESULT i_hrPull);
     END_INTERFACE
   } ITipPullSinkVtbl;
   struct ITipPullSink {
@@ -578,22 +578,22 @@ extern "C" {
 #else
   typedef struct IDtcNetworkAccessConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcNetworkAccessConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcNetworkAccessConfig *This);
-      ULONG (WINAPI *Release)(IDtcNetworkAccessConfig *This);
-      HRESULT (WINAPI *GetAnyNetworkAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbAnyNetworkAccess);
-      HRESULT (WINAPI *SetAnyNetworkAccess)(IDtcNetworkAccessConfig *This,WINBOOL bAnyNetworkAccess);
-      HRESULT (WINAPI *GetNetworkAdministrationAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbNetworkAdministrationAccess);
-      HRESULT (WINAPI *SetNetworkAdministrationAccess)(IDtcNetworkAccessConfig *This,WINBOOL bNetworkAdministrationAccess);
-      HRESULT (WINAPI *GetNetworkTransactionAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbNetworkTransactionAccess);
-      HRESULT (WINAPI *SetNetworkTransactionAccess)(IDtcNetworkAccessConfig *This,WINBOOL bNetworkTransactionAccess);
-      HRESULT (WINAPI *GetNetworkClientAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbNetworkClientAccess);
-      HRESULT (WINAPI *SetNetworkClientAccess)(IDtcNetworkAccessConfig *This,WINBOOL bNetworkClientAccess);
-      HRESULT (WINAPI *GetNetworkTIPAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbNetworkTIPAccess);
-      HRESULT (WINAPI *SetNetworkTIPAccess)(IDtcNetworkAccessConfig *This,WINBOOL bNetworkTIPAccess);
-      HRESULT (WINAPI *GetXAAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbXAAccess);
-      HRESULT (WINAPI *SetXAAccess)(IDtcNetworkAccessConfig *This,WINBOOL bXAAccess);
-      HRESULT (WINAPI *RestartDtcService)(IDtcNetworkAccessConfig *This);
+                   HRESULT (WINAPI *QueryInterface)(IDtcNetworkAccessConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcNetworkAccessConfig *This);
+                   ULONG (WINAPI *Release)(IDtcNetworkAccessConfig *This);
+                   HRESULT (WINAPI *GetAnyNetworkAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbAnyNetworkAccess);
+                   HRESULT (WINAPI *SetAnyNetworkAccess)(IDtcNetworkAccessConfig *This,WINBOOL bAnyNetworkAccess);
+                   HRESULT (WINAPI *GetNetworkAdministrationAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbNetworkAdministrationAccess);
+                   HRESULT (WINAPI *SetNetworkAdministrationAccess)(IDtcNetworkAccessConfig *This,WINBOOL bNetworkAdministrationAccess);
+                   HRESULT (WINAPI *GetNetworkTransactionAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbNetworkTransactionAccess);
+                   HRESULT (WINAPI *SetNetworkTransactionAccess)(IDtcNetworkAccessConfig *This,WINBOOL bNetworkTransactionAccess);
+                   HRESULT (WINAPI *GetNetworkClientAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbNetworkClientAccess);
+                   HRESULT (WINAPI *SetNetworkClientAccess)(IDtcNetworkAccessConfig *This,WINBOOL bNetworkClientAccess);
+                   HRESULT (WINAPI *GetNetworkTIPAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbNetworkTIPAccess);
+                   HRESULT (WINAPI *SetNetworkTIPAccess)(IDtcNetworkAccessConfig *This,WINBOOL bNetworkTIPAccess);
+                   HRESULT (WINAPI *GetXAAccess)(IDtcNetworkAccessConfig *This,WINBOOL *pbXAAccess);
+                   HRESULT (WINAPI *SetXAAccess)(IDtcNetworkAccessConfig *This,WINBOOL bXAAccess);
+                   HRESULT (WINAPI *RestartDtcService)(IDtcNetworkAccessConfig *This);
     END_INTERFACE
   } IDtcNetworkAccessConfigVtbl;
   struct IDtcNetworkAccessConfig {
@@ -669,28 +669,28 @@ extern "C" {
 #else
   typedef struct IDtcNetworkAccessConfig2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcNetworkAccessConfig2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcNetworkAccessConfig2 *This);
-      ULONG (WINAPI *Release)(IDtcNetworkAccessConfig2 *This);
-      HRESULT (WINAPI *GetAnyNetworkAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbAnyNetworkAccess);
-      HRESULT (WINAPI *SetAnyNetworkAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bAnyNetworkAccess);
-      HRESULT (WINAPI *GetNetworkAdministrationAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbNetworkAdministrationAccess);
-      HRESULT (WINAPI *SetNetworkAdministrationAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bNetworkAdministrationAccess);
-      HRESULT (WINAPI *GetNetworkTransactionAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbNetworkTransactionAccess);
-      HRESULT (WINAPI *SetNetworkTransactionAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bNetworkTransactionAccess);
-      HRESULT (WINAPI *GetNetworkClientAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbNetworkClientAccess);
-      HRESULT (WINAPI *SetNetworkClientAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bNetworkClientAccess);
-      HRESULT (WINAPI *GetNetworkTIPAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbNetworkTIPAccess);
-      HRESULT (WINAPI *SetNetworkTIPAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bNetworkTIPAccess);
-      HRESULT (WINAPI *GetXAAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbXAAccess);
-      HRESULT (WINAPI *SetXAAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bXAAccess);
-      HRESULT (WINAPI *RestartDtcService)(IDtcNetworkAccessConfig2 *This);
-      HRESULT (WINAPI *GetNetworkInboundAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbInbound);
-      HRESULT (WINAPI *GetNetworkOutboundAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbOutbound);
-      HRESULT (WINAPI *SetNetworkInboundAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bInbound);
-      HRESULT (WINAPI *SetNetworkOutboundAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bOutbound);
-      HRESULT (WINAPI *GetAuthenticationLevel)(IDtcNetworkAccessConfig2 *This,AUTHENTICATION_LEVEL *pAuthLevel);
-      HRESULT (WINAPI *SetAuthenticationLevel)(IDtcNetworkAccessConfig2 *This,AUTHENTICATION_LEVEL AuthLevel);
+                   HRESULT (WINAPI *QueryInterface)(IDtcNetworkAccessConfig2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcNetworkAccessConfig2 *This);
+                   ULONG (WINAPI *Release)(IDtcNetworkAccessConfig2 *This);
+                   HRESULT (WINAPI *GetAnyNetworkAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbAnyNetworkAccess);
+                   HRESULT (WINAPI *SetAnyNetworkAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bAnyNetworkAccess);
+                   HRESULT (WINAPI *GetNetworkAdministrationAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbNetworkAdministrationAccess);
+                   HRESULT (WINAPI *SetNetworkAdministrationAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bNetworkAdministrationAccess);
+                   HRESULT (WINAPI *GetNetworkTransactionAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbNetworkTransactionAccess);
+                   HRESULT (WINAPI *SetNetworkTransactionAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bNetworkTransactionAccess);
+                   HRESULT (WINAPI *GetNetworkClientAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbNetworkClientAccess);
+                   HRESULT (WINAPI *SetNetworkClientAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bNetworkClientAccess);
+                   HRESULT (WINAPI *GetNetworkTIPAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbNetworkTIPAccess);
+                   HRESULT (WINAPI *SetNetworkTIPAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bNetworkTIPAccess);
+                   HRESULT (WINAPI *GetXAAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbXAAccess);
+                   HRESULT (WINAPI *SetXAAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bXAAccess);
+                   HRESULT (WINAPI *RestartDtcService)(IDtcNetworkAccessConfig2 *This);
+                   HRESULT (WINAPI *GetNetworkInboundAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbInbound);
+                   HRESULT (WINAPI *GetNetworkOutboundAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL *pbOutbound);
+                   HRESULT (WINAPI *SetNetworkInboundAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bInbound);
+                   HRESULT (WINAPI *SetNetworkOutboundAccess)(IDtcNetworkAccessConfig2 *This,WINBOOL bOutbound);
+                   HRESULT (WINAPI *GetAuthenticationLevel)(IDtcNetworkAccessConfig2 *This,AUTHENTICATION_LEVEL *pAuthLevel);
+                   HRESULT (WINAPI *SetAuthenticationLevel)(IDtcNetworkAccessConfig2 *This,AUTHENTICATION_LEVEL AuthLevel);
     END_INTERFACE
   } IDtcNetworkAccessConfig2Vtbl;
   struct IDtcNetworkAccessConfig2 {

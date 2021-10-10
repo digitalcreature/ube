@@ -101,10 +101,10 @@ MIDL_INTERFACE("7ebfdd87-ad18-11d3-a4c5-00c04f72d6b8")
 ITravelLogEntry : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetTitle(
-        LPWSTR *ppszTitle) = 0;
+                     LPWSTR *ppszTitle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetURL(
-        LPWSTR *ppszURL) = 0;
+                     LPWSTR *ppszURL) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -116,24 +116,24 @@ typedef struct ITravelLogEntryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITravelLogEntry *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITravelLogEntry *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITravelLogEntry *This);
+                     ITravelLogEntry *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITravelLogEntry *This);
+                     ITravelLogEntry *This);
 
     /*** ITravelLogEntry methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTitle)(
-        ITravelLogEntry *This,
-        LPWSTR *ppszTitle);
+                     ITravelLogEntry *This,
+                     LPWSTR *ppszTitle);
 
     HRESULT (STDMETHODCALLTYPE *GetURL)(
-        ITravelLogEntry *This,
-        LPWSTR *ppszURL);
+                     ITravelLogEntry *This,
+                     LPWSTR *ppszURL);
 
     END_INTERFACE
 } ITravelLogEntryVtbl;
@@ -189,16 +189,16 @@ MIDL_INTERFACE("241c033e-e659-43da-aa4d-4086dbc4758d")
 ITravelLogClient : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FindWindowByIndex(
-        DWORD dwID,
-        IUnknown **ppunk) = 0;
+                     DWORD dwID,
+                     IUnknown **ppunk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWindowData(
-        IStream *pStream,
-        LPWINDOWDATA pWinData) = 0;
+                     IStream *pStream,
+                     LPWINDOWDATA pWinData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadHistoryPosition(
-        LPWSTR pszUrlLocation,
-        DWORD dwPosition) = 0;
+                     LPWSTR pszUrlLocation,
+                     DWORD dwPosition) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -210,31 +210,31 @@ typedef struct ITravelLogClientVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITravelLogClient *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITravelLogClient *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITravelLogClient *This);
+                     ITravelLogClient *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITravelLogClient *This);
+                     ITravelLogClient *This);
 
     /*** ITravelLogClient methods ***/
     HRESULT (STDMETHODCALLTYPE *FindWindowByIndex)(
-        ITravelLogClient *This,
-        DWORD dwID,
-        IUnknown **ppunk);
+                     ITravelLogClient *This,
+                     DWORD dwID,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *GetWindowData)(
-        ITravelLogClient *This,
-        IStream *pStream,
-        LPWINDOWDATA pWinData);
+                     ITravelLogClient *This,
+                     IStream *pStream,
+                     LPWINDOWDATA pWinData);
 
     HRESULT (STDMETHODCALLTYPE *LoadHistoryPosition)(
-        ITravelLogClient *This,
-        LPWSTR pszUrlLocation,
-        DWORD dwPosition);
+                     ITravelLogClient *This,
+                     LPWSTR pszUrlLocation,
+                     DWORD dwPosition);
 
     END_INTERFACE
 } ITravelLogClientVtbl;
@@ -294,18 +294,18 @@ MIDL_INTERFACE("7ebfdd85-ad18-11d3-a4c5-00c04f72d6b8")
 IEnumTravelLogEntry : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG cElt,
-        ITravelLogEntry **rgElt,
-        ULONG *pcEltFetched) = 0;
+                     ULONG cElt,
+                     ITravelLogEntry **rgElt,
+                     ULONG *pcEltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG cElt) = 0;
+                     ULONG cElt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumTravelLogEntry **ppEnum) = 0;
+                     IEnumTravelLogEntry **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -317,33 +317,33 @@ typedef struct IEnumTravelLogEntryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumTravelLogEntry *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumTravelLogEntry *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumTravelLogEntry *This);
+                     IEnumTravelLogEntry *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumTravelLogEntry *This);
+                     IEnumTravelLogEntry *This);
 
     /*** IEnumTravelLogEntry methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumTravelLogEntry *This,
-        ULONG cElt,
-        ITravelLogEntry **rgElt,
-        ULONG *pcEltFetched);
+                     IEnumTravelLogEntry *This,
+                     ULONG cElt,
+                     ITravelLogEntry **rgElt,
+                     ULONG *pcEltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumTravelLogEntry *This,
-        ULONG cElt);
+                     IEnumTravelLogEntry *This,
+                     ULONG cElt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumTravelLogEntry *This);
+                     IEnumTravelLogEntry *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumTravelLogEntry *This,
-        IEnumTravelLogEntry **ppEnum);
+                     IEnumTravelLogEntry *This,
+                     IEnumTravelLogEntry **ppEnum);
 
     END_INTERFACE
 } IEnumTravelLogEntryVtbl;
@@ -407,34 +407,34 @@ MIDL_INTERFACE("7ebfdd80-ad18-11d3-a4c5-00c04f72d6b8")
 ITravelLogStg : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateEntry(
-        LPCWSTR pszUrl,
-        LPCWSTR pszTitle,
-        ITravelLogEntry *ptleRelativeTo,
-        WINBOOL fPrepend,
-        ITravelLogEntry **pptle) = 0;
+                     LPCWSTR pszUrl,
+                     LPCWSTR pszTitle,
+                     ITravelLogEntry *ptleRelativeTo,
+                     WINBOOL fPrepend,
+                     ITravelLogEntry **pptle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TravelTo(
-        ITravelLogEntry *ptle) = 0;
+                     ITravelLogEntry *ptle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumEntries(
-        TLENUMF flags,
-        IEnumTravelLogEntry **ppenum) = 0;
+                     TLENUMF flags,
+                     IEnumTravelLogEntry **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindEntries(
-        TLENUMF flags,
-        LPCWSTR pszUrl,
-        IEnumTravelLogEntry **ppenum) = 0;
+                     TLENUMF flags,
+                     LPCWSTR pszUrl,
+                     IEnumTravelLogEntry **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        TLENUMF flags,
-        DWORD *pcEntries) = 0;
+                     TLENUMF flags,
+                     DWORD *pcEntries) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveEntry(
-        ITravelLogEntry *ptle) = 0;
+                     ITravelLogEntry *ptle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRelativeEntry(
-        int iOffset,
-        ITravelLogEntry **ptle) = 0;
+                     int iOffset,
+                     ITravelLogEntry **ptle) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -446,53 +446,53 @@ typedef struct ITravelLogStgVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITravelLogStg *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITravelLogStg *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITravelLogStg *This);
+                     ITravelLogStg *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITravelLogStg *This);
+                     ITravelLogStg *This);
 
     /*** ITravelLogStg methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateEntry)(
-        ITravelLogStg *This,
-        LPCWSTR pszUrl,
-        LPCWSTR pszTitle,
-        ITravelLogEntry *ptleRelativeTo,
-        WINBOOL fPrepend,
-        ITravelLogEntry **pptle);
+                     ITravelLogStg *This,
+                     LPCWSTR pszUrl,
+                     LPCWSTR pszTitle,
+                     ITravelLogEntry *ptleRelativeTo,
+                     WINBOOL fPrepend,
+                     ITravelLogEntry **pptle);
 
     HRESULT (STDMETHODCALLTYPE *TravelTo)(
-        ITravelLogStg *This,
-        ITravelLogEntry *ptle);
+                     ITravelLogStg *This,
+                     ITravelLogEntry *ptle);
 
     HRESULT (STDMETHODCALLTYPE *EnumEntries)(
-        ITravelLogStg *This,
-        TLENUMF flags,
-        IEnumTravelLogEntry **ppenum);
+                     ITravelLogStg *This,
+                     TLENUMF flags,
+                     IEnumTravelLogEntry **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *FindEntries)(
-        ITravelLogStg *This,
-        TLENUMF flags,
-        LPCWSTR pszUrl,
-        IEnumTravelLogEntry **ppenum);
+                     ITravelLogStg *This,
+                     TLENUMF flags,
+                     LPCWSTR pszUrl,
+                     IEnumTravelLogEntry **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        ITravelLogStg *This,
-        TLENUMF flags,
-        DWORD *pcEntries);
+                     ITravelLogStg *This,
+                     TLENUMF flags,
+                     DWORD *pcEntries);
 
     HRESULT (STDMETHODCALLTYPE *RemoveEntry)(
-        ITravelLogStg *This,
-        ITravelLogEntry *ptle);
+                     ITravelLogStg *This,
+                     ITravelLogEntry *ptle);
 
     HRESULT (STDMETHODCALLTYPE *GetRelativeEntry)(
-        ITravelLogStg *This,
-        int iOffset,
-        ITravelLogEntry **ptle);
+                     ITravelLogStg *This,
+                     int iOffset,
+                     ITravelLogEntry **ptle);
 
     END_INTERFACE
 } ITravelLogStgVtbl;
@@ -559,10 +559,10 @@ static FORCEINLINE HRESULT ITravelLogStg_GetRelativeEntry(ITravelLogStg* This,in
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER PIDLIST_ABSOLUTE_UserSize     (ULONG *, ULONG, PIDLIST_ABSOLUTE *);
+ULONG                        __RPC_USER PIDLIST_ABSOLUTE_UserSize     (ULONG *, ULONG, PIDLIST_ABSOLUTE *);
 unsigned char * __RPC_USER PIDLIST_ABSOLUTE_UserMarshal  (ULONG *, unsigned char *, PIDLIST_ABSOLUTE *);
 unsigned char * __RPC_USER PIDLIST_ABSOLUTE_UserUnmarshal(ULONG *, unsigned char *, PIDLIST_ABSOLUTE *);
-void            __RPC_USER PIDLIST_ABSOLUTE_UserFree     (ULONG *, PIDLIST_ABSOLUTE *);
+void                                      __RPC_USER PIDLIST_ABSOLUTE_UserFree     (ULONG *, PIDLIST_ABSOLUTE *);
 
 /* End additional prototypes */
 

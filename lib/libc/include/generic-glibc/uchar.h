@@ -16,7 +16,7 @@
    <https://www.gnu.org/licenses/>.  */
 
 /*
- *      ISO C11 Standard: 7.28
+ *                   ISO C11 Standard: 7.28
  *	Unicode utilities	<uchar.h>
  */
 

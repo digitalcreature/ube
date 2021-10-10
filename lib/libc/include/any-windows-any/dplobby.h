@@ -88,14 +88,14 @@ DEFINE_GUID(DPLPROPERTY_PlayerScore, 0x48784000, 0xd219, 0x11d0, 0xba, 0x39, 0x0
 
 typedef struct tagDPLDATA_PLAYERGUID
 {
-        GUID    guidPlayer;
-        DWORD   dwPlayerFlags;
+                     GUID    guidPlayer;
+                     DWORD   dwPlayerFlags;
 } DPLDATA_PLAYERGUID, *LPDPLDATA_PLAYERGUID;
 
 typedef struct tagDPLDATA_PLAYERSCORE
 {
-        DWORD   dwScoreCount;
-        LONG    Score[1];
+                     DWORD   dwScoreCount;
+                     LONG    Score[1];
 } DPLDATA_PLAYERSCORE, *LPDPLDATA_PLAYERSCORE;
 
 
@@ -110,21 +110,21 @@ typedef struct tagDPLDATA_PLAYERSCORE
  */
 
 /* DPLobby1 definition required for backwards compatibility */
-#define DPLMSG_SYSTEM                                   0x00000001
-#define DPLMSG_STANDARD                                 0x00000002
-#define DPLAD_SYSTEM          DPLMSG_SYSTEM
+#define DPLMSG_SYSTEM                                                                                                    0x00000001
+#define DPLMSG_STANDARD                                                                                                  0x00000002
+#define DPLAD_SYSTEM                       DPLMSG_SYSTEM
 
 
 /* System messages  - dwType field for messages */
 #define DPLSYS_CONNECTIONSETTINGSREAD   0x00000001
-#define DPLSYS_DPLAYCONNECTFAILED       0x00000002
+#define DPLSYS_DPLAYCONNECTFAILED                    0x00000002
 #define DPLSYS_DPLAYCONNECTSUCCEEDED    0x00000003
-#define DPLSYS_APPTERMINATED            0x00000004
-#define DPLSYS_SETPROPERTY              0x00000005
-#define DPLSYS_SETPROPERTYRESPONSE      0x00000006
-#define DPLSYS_GETPROPERTY              0x00000007
-#define DPLSYS_GETPROPERTYRESPONSE      0x00000008
-#define DPLSYS_NEWSESSIONHOST           0x00000009
+#define DPLSYS_APPTERMINATED                                      0x00000004
+#define DPLSYS_SETPROPERTY                                        0x00000005
+#define DPLSYS_SETPROPERTYRESPONSE                   0x00000006
+#define DPLSYS_GETPROPERTY                                        0x00000007
+#define DPLSYS_GETPROPERTYRESPONSE                   0x00000008
+#define DPLSYS_NEWSESSIONHOST                        0x00000009
 #define DPLSYS_NEWCONNECTIONSETTINGS    0x0000000A
 
 
@@ -132,64 +132,64 @@ typedef struct tagDPLDATA_PLAYERSCORE
 /* Used to identify the message type */
 typedef struct tagDPLMSG_GENERIC
 {
-    DWORD       dwType;         /* Message type */
+    DWORD                    dwType;                      /* Message type */
 } DPLMSG_GENERIC, *LPDPLMSG_GENERIC;
 
 /* Generic format for system messages - see above */
 typedef struct tagDPLMSG_SYSTEMMESSAGE
 {
-    DWORD       dwType;         /* Message type */
-    GUID        guidInstance;   /* Instance GUID of the dplay session the message corresponds to */
+    DWORD                    dwType;                      /* Message type */
+    GUID                     guidInstance;   /* Instance GUID of the dplay session the message corresponds to */
 } DPLMSG_SYSTEMMESSAGE, *LPDPLMSG_SYSTEMMESSAGE;
 
 /* Generic message to set a property - see property GUIDs above */
 typedef struct tagDPLMSG_SETPROPERTY
 {
-        DWORD   dwType;              /* Message type */
-        DWORD   dwRequestID;         /* Request ID (DPL_NOCONFIRMATION if no confirmation desired) */
-        GUID    guidPlayer;          /* Player GUID */
-        GUID    guidPropertyTag;     /* Property GUID */
-        DWORD   dwDataSize;          /* Size of data */
-        DWORD   dwPropertyData[1];   /* Buffer containing data */
+                     DWORD   dwType;                                        /* Message type */
+                     DWORD   dwRequestID;                      /* Request ID (DPL_NOCONFIRMATION if no confirmation desired) */
+                     GUID    guidPlayer;                       /* Player GUID */
+                     GUID    guidPropertyTag;     /* Property GUID */
+                     DWORD   dwDataSize;                       /* Size of data */
+                     DWORD   dwPropertyData[1];   /* Buffer containing data */
 } DPLMSG_SETPROPERTY, *LPDPLMSG_SETPROPERTY;
 
-#define DPL_NOCONFIRMATION      0
+#define DPL_NOCONFIRMATION                   0
 
 /* Reply to DPLMSG_SETPROPERTY */
 typedef struct tagDPLMSG_SETPROPERTYRESPONSE
 {
-        DWORD   dwType;              /* Message type */
-        DWORD   dwRequestID;         /* Request ID */
-        GUID    guidPlayer;          /* Player GUID */
-        GUID    guidPropertyTag;     /* Property GUID */
-        HRESULT hr;                  /* Return Code */
+                     DWORD   dwType;                                        /* Message type */
+                     DWORD   dwRequestID;                      /* Request ID */
+                     GUID    guidPlayer;                       /* Player GUID */
+                     GUID    guidPropertyTag;     /* Property GUID */
+                     HRESULT hr;                                                         /* Return Code */
 } DPLMSG_SETPROPERTYRESPONSE, *LPDPLMSG_SETPROPERTYRESPONSE;
 
 /* Request to get the present value of a property */
 typedef struct tagDPLMSG_GETPROPERTY
 {
-        DWORD   dwType;           /* Message type */
-        DWORD   dwRequestID;      /* Request ID */
-        GUID    guidPlayer;       /* Player GUID */
-        GUID    guidPropertyTag;  /* Property GUID */
+                     DWORD   dwType;                        /* Message type */
+                     DWORD   dwRequestID;                   /* Request ID */
+                     GUID    guidPlayer;                    /* Player GUID */
+                     GUID    guidPropertyTag;  /* Property GUID */
 } DPLMSG_GETPROPERTY, *LPDPLMSG_GETPROPERTY;
 
 /* Response to a request to get the present value of a property */
 typedef struct tagDPLMSG_GETPROPERTYRESPONSE
 {
-        DWORD   dwType;              /* Message type */
-        DWORD   dwRequestID;         /* Request ID */
-        GUID    guidPlayer;          /* Player GUID */
-        GUID    guidPropertyTag;     /* Property GUID */
-        HRESULT hr;                  /* Return Code */
-        DWORD   dwDataSize;          /* Size of data */
-        DWORD   dwPropertyData[1];   /* Buffer containing data */
+                     DWORD   dwType;                                        /* Message type */
+                     DWORD   dwRequestID;                      /* Request ID */
+                     GUID    guidPlayer;                       /* Player GUID */
+                     GUID    guidPropertyTag;     /* Property GUID */
+                     HRESULT hr;                                                         /* Return Code */
+                     DWORD   dwDataSize;                       /* Size of data */
+                     DWORD   dwPropertyData[1];   /* Buffer containing data */
 } DPLMSG_GETPROPERTYRESPONSE, *LPDPLMSG_GETPROPERTYRESPONSE;
 
 /* Standard message in response to a session host migration to a new client */
 typedef struct tagDPLMSG_NEWSESSIONHOST
 {
-    DWORD   dwType;        /* Message type */
+    DWORD   dwType;                     /* Message type */
     GUID    guidInstance;  /* GUID Instance of the session */
 } DPLMSG_NEWSESSIONHOST, *LPDPLMSG_NEWSESSIONHOST;
 
@@ -251,27 +251,27 @@ DEFINE_GUID(DPAID_ComPort, 0xf2f0ce00, 0xe0af, 0x11cf, 0x9c, 0x4e, 0x0, 0xa0, 0x
 /* Header block for address data elements */
 typedef struct tagDPADDRESS
 {
-    GUID                guidDataType;
-    DWORD               dwDataSize;
+    GUID                                          guidDataType;
+    DWORD                                         dwDataSize;
 } DPADDRESS, *LPDPADDRESS;
 
 
 /* Used for specification of a communication port. Baud rate, stop bits and
  * parity bits can be found in winbase.h. These are flow control constants only.
  */
-#define DPCPA_NOFLOW        0           /* no flow control */
-#define DPCPA_XONXOFFFLOW   1           /* software flow control */
-#define DPCPA_RTSFLOW       2           /* hardware flow control with RTS */
-#define DPCPA_DTRFLOW       3           /* hardware flow control with DTR */
-#define DPCPA_RTSDTRFLOW    4           /* hardware flow control with RTS and DTR */
+#define DPCPA_NOFLOW                     0                        /* no flow control */
+#define DPCPA_XONXOFFFLOW   1                        /* software flow control */
+#define DPCPA_RTSFLOW                    2                        /* hardware flow control with RTS */
+#define DPCPA_DTRFLOW                    3                        /* hardware flow control with DTR */
+#define DPCPA_RTSDTRFLOW    4                        /* hardware flow control with RTS and DTR */
 
 typedef struct tagDPCOMPORTADDRESS
 {
-    DWORD   dwComPort;                  /* COM port to use (1-4) */
-    DWORD   dwBaudRate;                 /* baud rate (100-256k) */
-    DWORD   dwStopBits;                 /* no. stop bits (1-2) */
-    DWORD   dwParity;                   /* parity (none, odd, even, mark) */
-    DWORD   dwFlowControl;              /* flow control (none, xon/xoff, rts, dtr) */
+    DWORD   dwComPort;                                                         /* COM port to use (1-4) */
+    DWORD   dwBaudRate;                                           /* baud rate (100-256k) */
+    DWORD   dwStopBits;                                           /* no. stop bits (1-2) */
+    DWORD   dwParity;                                                          /* parity (none, odd, even, mark) */
+    DWORD   dwFlowControl;                                        /* flow control (none, xon/xoff, rts, dtr) */
 } DPCOMPORTADDRESS, *LPDPCOMPORTADDRESS;
 
 
@@ -282,13 +282,13 @@ typedef struct tagDPCOMPORTADDRESS
 
 typedef struct tagDPLAPPINFO
 {
-    DWORD       dwSize;
-    GUID        guidApplication;
+    DWORD                    dwSize;
+    GUID                     guidApplication;
 
     union
     {
-        LPSTR   lpszAppNameA;
-        LPWSTR  lpszAppName;
+                     LPSTR   lpszAppNameA;
+                     LPWSTR  lpszAppName;
     } DUMMYUNIONNAME;
 
 } DPLAPPINFO, *LPDPLAPPINFO;
@@ -304,43 +304,43 @@ typedef const DPCOMPOUNDADDRESSELEMENT *LPCDPCOMPOUNDADDRESSELEMENT;
 
 typedef struct tagDPAPPLICATIONDESC
 {
-    DWORD       dwSize;
-    DWORD       dwFlags;
+    DWORD                    dwSize;
+    DWORD                    dwFlags;
 
     union
     {
-        LPSTR       lpszApplicationNameA;
-        LPWSTR      lpszApplicationName;
+                     LPSTR                    lpszApplicationNameA;
+                     LPWSTR                   lpszApplicationName;
     } DUMMYUNIONNAME1;
 
-    GUID        guidApplication;
+    GUID                     guidApplication;
 
     union
     {
-        LPSTR       lpszFilenameA;
-        LPWSTR      lpszFilename;
+                     LPSTR                    lpszFilenameA;
+                     LPWSTR                   lpszFilename;
     } DUMMYUNIONNAME2;
 
     union
     {
-        LPSTR       lpszCommandLineA;
-        LPWSTR      lpszCommandLine;
+                     LPSTR                    lpszCommandLineA;
+                     LPWSTR                   lpszCommandLine;
     } DUMMYUNIONNAME3;
 
     union
     {
-        LPSTR       lpszPathA;
-        LPWSTR      lpszPath;
+                     LPSTR                    lpszPathA;
+                     LPWSTR                   lpszPath;
     } DUMMYUNIONNAME4;
 
     union
     {
-        LPSTR       lpszCurrentDirectoryA;
-        LPWSTR      lpszCurrentDirectory;
+                     LPSTR                    lpszCurrentDirectoryA;
+                     LPWSTR                   lpszCurrentDirectory;
     } DUMMYUNIONNAME5;
 
-    LPSTR       lpszDescriptionA;
-    LPWSTR      lpszDescriptionW;
+    LPSTR                    lpszDescriptionA;
+    LPWSTR                   lpszDescriptionW;
 
 } DPAPPLICATIONDESC, *LPDPAPPLICATIONDESC;
 
@@ -352,20 +352,20 @@ extern HRESULT WINAPI DirectPlayLobbyCreateA(LPGUID, LPDIRECTPLAYLOBBYA*, IUnkno
 
 
 typedef WINBOOL (CALLBACK *LPDPENUMADDRESSCALLBACK)(
-    REFGUID         guidDataType,
-    DWORD           dwDataSize,
-    LPCVOID         lpData,
-    LPVOID          lpContext );
+    REFGUID                      guidDataType,
+    DWORD                        dwDataSize,
+    LPCVOID                      lpData,
+    LPVOID                       lpContext );
 
 typedef WINBOOL (CALLBACK *LPDPLENUMADDRESSTYPESCALLBACK)(
-    REFGUID         guidDataType,
-    LPVOID          lpContext,
-    DWORD           dwFlags );
+    REFGUID                      guidDataType,
+    LPVOID                       lpContext,
+    DWORD                        dwFlags );
 
 typedef WINBOOL (CALLBACK *LPDPLENUMLOCALAPPLICATIONSCALLBACK)(
     LPCDPLAPPINFO   lpAppInfo,
-    LPVOID          lpContext,
-    DWORD           dwFlags );
+    LPVOID                       lpContext,
+    DWORD                        dwFlags );
 
 /*****************************************************************************
  * IDirectPlayLobby and IDirectPlayLobbyA interface
@@ -453,56 +453,56 @@ DECLARE_INTERFACE_(IDirectPlayLobby3,IDirectPlayLobby2)
 
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
-#define IDirectPlayLobby_QueryInterface(p,a,b)              (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectPlayLobby_AddRef(p)                          (p)->lpVtbl->AddRef(p)
-#define IDirectPlayLobby_Release(p)                         (p)->lpVtbl->Release(p)
+#define IDirectPlayLobby_QueryInterface(p,a,b)                                        (p)->lpVtbl->QueryInterface(p,a,b)
+#define IDirectPlayLobby_AddRef(p)                                                                              (p)->lpVtbl->AddRef(p)
+#define IDirectPlayLobby_Release(p)                                                                             (p)->lpVtbl->Release(p)
 /*** IDirectPlayLobby methods ***/
-#define IDirectPlayLobby_Connect(p,a,b,c)                   (p)->lpVtbl->Connect(p,a,b,c)
-#define IDirectPlayLobby_CreateAddress(p,a,b,c,d,e,f)       (p)->lpVtbl->CreateAddress(p,a,b,c,d,e,f)
-#define IDirectPlayLobby_EnumAddress(p,a,b,c,d)             (p)->lpVtbl->EnumAddress(p,a,b,c,d)
-#define IDirectPlayLobby_EnumAddressTypes(p,a,b,c,d)        (p)->lpVtbl->EnumAddressTypes(p,a,b,c,d)
+#define IDirectPlayLobby_Connect(p,a,b,c)                                                          (p)->lpVtbl->Connect(p,a,b,c)
+#define IDirectPlayLobby_CreateAddress(p,a,b,c,d,e,f)                    (p)->lpVtbl->CreateAddress(p,a,b,c,d,e,f)
+#define IDirectPlayLobby_EnumAddress(p,a,b,c,d)                                       (p)->lpVtbl->EnumAddress(p,a,b,c,d)
+#define IDirectPlayLobby_EnumAddressTypes(p,a,b,c,d)                     (p)->lpVtbl->EnumAddressTypes(p,a,b,c,d)
 #define IDirectPlayLobby_EnumLocalApplications(p,a,b,c)     (p)->lpVtbl->EnumLocalApplications(p,a,b,c)
 #define IDirectPlayLobby_GetConnectionSettings(p,a,b,c)     (p)->lpVtbl->GetConnectionSettings(p,a,b,c)
 #define IDirectPlayLobby_ReceiveLobbyMessage(p,a,b,c,d,e)   (p)->lpVtbl->ReceiveLobbyMessage(p,a,b,c,d,e)
-#define IDirectPlayLobby_RunApplication(p,a,b,c,d)          (p)->lpVtbl->RunApplication(p,a,b,c,d)
-#define IDirectPlayLobby_SendLobbyMessage(p,a,b,c,d)        (p)->lpVtbl->SendLobbyMessage(p,a,b,c,d)
+#define IDirectPlayLobby_RunApplication(p,a,b,c,d)                       (p)->lpVtbl->RunApplication(p,a,b,c,d)
+#define IDirectPlayLobby_SendLobbyMessage(p,a,b,c,d)                     (p)->lpVtbl->SendLobbyMessage(p,a,b,c,d)
 #define IDirectPlayLobby_SetConnectionSettings(p,a,b,c)     (p)->lpVtbl->SetConnectionSettings(p,a,b,c)
-#define IDirectPlayLobby_SetLobbyMessageEvent(p,a,b,c)      (p)->lpVtbl->SetLobbyMessageEvent(p,a,b,c)
+#define IDirectPlayLobby_SetLobbyMessageEvent(p,a,b,c)                   (p)->lpVtbl->SetLobbyMessageEvent(p,a,b,c)
 /*** IDirectPlayLobby2 methods ***/
 #define IDirectPlayLobby_CreateCompoundAddress(p,a,b,c,d)   (p)->lpVtbl->CreateCompoundAddress(p,a,b,c,d)
 /*** IDirectPlayLobby3 methods ***/
-#define IDirectPlayLobby_ConnectEx(p,a,b,c,d)               (p)->lpVtbl->ConnectEx(p,a,b,c,d)
-#define IDirectPlayLobby_RegisterApplication(p,a,b)         (p)->lpVtbl->RegisterApplication(p,a,b)
-#define IDirectPlayLobby_UnregisterApplication(p,a,b)       (p)->lpVtbl->UnregisterApplication(p,a,b)
+#define IDirectPlayLobby_ConnectEx(p,a,b,c,d)                                         (p)->lpVtbl->ConnectEx(p,a,b,c,d)
+#define IDirectPlayLobby_RegisterApplication(p,a,b)                      (p)->lpVtbl->RegisterApplication(p,a,b)
+#define IDirectPlayLobby_UnregisterApplication(p,a,b)                    (p)->lpVtbl->UnregisterApplication(p,a,b)
 #define IDirectPlayLobby_WaitForConnectionSettings(p,a)     (p)->lpVtbl->WaitForConnectionSettings(p,a)
 #else
 /*** IUnknown methods ***/
-#define IDirectPlayLobby_QueryInterface(p,a,b)              (p)->QueryInterface(a,b)
-#define IDirectPlayLobby_AddRef(p)                          (p)->AddRef()
-#define IDirectPlayLobby_Release(p)                         (p)->Release()
+#define IDirectPlayLobby_QueryInterface(p,a,b)                                        (p)->QueryInterface(a,b)
+#define IDirectPlayLobby_AddRef(p)                                                                              (p)->AddRef()
+#define IDirectPlayLobby_Release(p)                                                                             (p)->Release()
 /*** IDirectPlayLobby methods ***/
-#define IDirectPlayLobby_Connect(p,a,b,c)                   (p)->Connect(a,b,c)
-#define IDirectPlayLobby_CreateAddress(p,a,b,c,d,e,f)       (p)->CreateAddress(a,b,c,d,e,f)
-#define IDirectPlayLobby_EnumAddress(p,a,b,c,d)             (p)->EnumAddress(a,b,c,d)
-#define IDirectPlayLobby_EnumAddressTypes(p,a,b,c,d)        (p)->EnumAddressTypes(a,b,c,d)
+#define IDirectPlayLobby_Connect(p,a,b,c)                                                          (p)->Connect(a,b,c)
+#define IDirectPlayLobby_CreateAddress(p,a,b,c,d,e,f)                    (p)->CreateAddress(a,b,c,d,e,f)
+#define IDirectPlayLobby_EnumAddress(p,a,b,c,d)                                       (p)->EnumAddress(a,b,c,d)
+#define IDirectPlayLobby_EnumAddressTypes(p,a,b,c,d)                     (p)->EnumAddressTypes(a,b,c,d)
 #define IDirectPlayLobby_EnumLocalApplications(p,a,b,c)     (p)->EnumLocalApplications(a,b,c)
 #define IDirectPlayLobby_GetConnectionSettings(p,a,b,c)     (p)->GetConnectionSettings(a,b,c)
 #define IDirectPlayLobby_ReceiveLobbyMessage(p,a,b,c,d,e)   (p)->ReceiveLobbyMessage(a,b,c,d,e)
-#define IDirectPlayLobby_RunApplication(p,a,b,c,d)          (p)->RunApplication(a,b,c,d)
-#define IDirectPlayLobby_SendLobbyMessage(p,a,b,c,d)        (p)->SendLobbyMessage(a,b,c,d)
+#define IDirectPlayLobby_RunApplication(p,a,b,c,d)                       (p)->RunApplication(a,b,c,d)
+#define IDirectPlayLobby_SendLobbyMessage(p,a,b,c,d)                     (p)->SendLobbyMessage(a,b,c,d)
 #define IDirectPlayLobby_SetConnectionSettings(p,a,b,c)     (p)->SetConnectionSettings(a,b,c)
-#define IDirectPlayLobby_SetLobbyMessageEvent(p,a,b,c)      (p)->SetLobbyMessageEvent(a,b,c)
+#define IDirectPlayLobby_SetLobbyMessageEvent(p,a,b,c)                   (p)->SetLobbyMessageEvent(a,b,c)
 /*** IDirectPlayLobby2 methods ***/
 #define IDirectPlayLobby_CreateCompoundAddress(p,a,b,c,d)   (p)->CreateCompoundAddress(a,b,c,d)
 /*** IDirectPlayLobby3 methods ***/
-#define IDirectPlayLobby_ConnectEx(p,a,b,c,d)               (p)->ConnectEx(a,b,c,d)
-#define IDirectPlayLobby_RegisterApplication(p,a,b)         (p)->RegisterApplication(a,b)
-#define IDirectPlayLobby_UnregisterApplication(p,a,b)       (p)->UnregisterApplication(a,b)
+#define IDirectPlayLobby_ConnectEx(p,a,b,c,d)                                         (p)->ConnectEx(a,b,c,d)
+#define IDirectPlayLobby_RegisterApplication(p,a,b)                      (p)->RegisterApplication(a,b)
+#define IDirectPlayLobby_UnregisterApplication(p,a,b)                    (p)->UnregisterApplication(a,b)
 #define IDirectPlayLobby_WaitForConnectionSettings(p,a)     (p)->WaitForConnectionSettings(a)
 #endif
 
 /* Used for WaitForConnectionSettings */
-#define DPLWAIT_CANCEL                  0x00000001
+#define DPLWAIT_CANCEL                                                         0x00000001
 
 #ifdef __cplusplus
 } /* extern "C" */

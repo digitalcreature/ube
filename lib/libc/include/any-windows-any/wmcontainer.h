@@ -272,29 +272,29 @@ MIDL_INTERFACE("b1dca5cd-d5da-4451-8e9e-db5c59914ead")
 IMFASFContentInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetHeaderSize(
-        IMFMediaBuffer *pIStartOfContent,
-        QWORD *cbHeaderSize) = 0;
+                     IMFMediaBuffer *pIStartOfContent,
+                     QWORD *cbHeaderSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ParseHeader(
-        IMFMediaBuffer *pIHeaderBuffer,
-        QWORD cbOffsetWithinHeader) = 0;
+                     IMFMediaBuffer *pIHeaderBuffer,
+                     QWORD cbOffsetWithinHeader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GenerateHeader(
-        IMFMediaBuffer *pIHeader,
-        DWORD *pcbHeader) = 0;
+                     IMFMediaBuffer *pIHeader,
+                     DWORD *pcbHeader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProfile(
-        IMFASFProfile **ppIProfile) = 0;
+                     IMFASFProfile **ppIProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProfile(
-        IMFASFProfile *pIProfile) = 0;
+                     IMFASFProfile *pIProfile) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GeneratePresentationDescriptor(
-        IMFPresentationDescriptor **ppIPresentationDescriptor) = 0;
+                     IMFPresentationDescriptor **ppIPresentationDescriptor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEncodingConfigurationPropertyStore(
-        WORD wStreamNumber,
-        IPropertyStore **ppIStore) = 0;
+                     WORD wStreamNumber,
+                     IPropertyStore **ppIStore) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -306,48 +306,48 @@ typedef struct IMFASFContentInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFContentInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFContentInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFContentInfo *This);
+                     IMFASFContentInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFContentInfo *This);
+                     IMFASFContentInfo *This);
 
     /*** IMFASFContentInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetHeaderSize)(
-        IMFASFContentInfo *This,
-        IMFMediaBuffer *pIStartOfContent,
-        QWORD *cbHeaderSize);
+                     IMFASFContentInfo *This,
+                     IMFMediaBuffer *pIStartOfContent,
+                     QWORD *cbHeaderSize);
 
     HRESULT (STDMETHODCALLTYPE *ParseHeader)(
-        IMFASFContentInfo *This,
-        IMFMediaBuffer *pIHeaderBuffer,
-        QWORD cbOffsetWithinHeader);
+                     IMFASFContentInfo *This,
+                     IMFMediaBuffer *pIHeaderBuffer,
+                     QWORD cbOffsetWithinHeader);
 
     HRESULT (STDMETHODCALLTYPE *GenerateHeader)(
-        IMFASFContentInfo *This,
-        IMFMediaBuffer *pIHeader,
-        DWORD *pcbHeader);
+                     IMFASFContentInfo *This,
+                     IMFMediaBuffer *pIHeader,
+                     DWORD *pcbHeader);
 
     HRESULT (STDMETHODCALLTYPE *GetProfile)(
-        IMFASFContentInfo *This,
-        IMFASFProfile **ppIProfile);
+                     IMFASFContentInfo *This,
+                     IMFASFProfile **ppIProfile);
 
     HRESULT (STDMETHODCALLTYPE *SetProfile)(
-        IMFASFContentInfo *This,
-        IMFASFProfile *pIProfile);
+                     IMFASFContentInfo *This,
+                     IMFASFProfile *pIProfile);
 
     HRESULT (STDMETHODCALLTYPE *GeneratePresentationDescriptor)(
-        IMFASFContentInfo *This,
-        IMFPresentationDescriptor **ppIPresentationDescriptor);
+                     IMFASFContentInfo *This,
+                     IMFPresentationDescriptor **ppIPresentationDescriptor);
 
     HRESULT (STDMETHODCALLTYPE *GetEncodingConfigurationPropertyStore)(
-        IMFASFContentInfo *This,
-        WORD wStreamNumber,
-        IPropertyStore **ppIStore);
+                     IMFASFContentInfo *This,
+                     WORD wStreamNumber,
+                     IPropertyStore **ppIStore);
 
     END_INTERFACE
 } IMFASFContentInfoVtbl;
@@ -423,35 +423,35 @@ MIDL_INTERFACE("12558291-e399-11d5-bc2a-00b0d0f3f4ab")
 IMFASFMutualExclusion : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        GUID *pguidType) = 0;
+                     GUID *pguidType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetType(
-        REFGUID guidType) = 0;
+                     REFGUID guidType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRecordCount(
-        DWORD *pdwRecordCount) = 0;
+                     DWORD *pdwRecordCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamsForRecord(
-        DWORD dwRecordNumber,
-        WORD *pwStreamNumArray,
-        DWORD *pcStreams) = 0;
+                     DWORD dwRecordNumber,
+                     WORD *pwStreamNumArray,
+                     DWORD *pcStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddStreamForRecord(
-        DWORD dwRecordNumber,
-        WORD wStreamNumber) = 0;
+                     DWORD dwRecordNumber,
+                     WORD wStreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStreamFromRecord(
-        DWORD dwRecordNumber,
-        WORD wStreamNumber) = 0;
+                     DWORD dwRecordNumber,
+                     WORD wStreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveRecord(
-        DWORD dwRecordNumber) = 0;
+                     DWORD dwRecordNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddRecord(
-        DWORD *pdwRecordNumber) = 0;
+                     DWORD *pdwRecordNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IMFASFMutualExclusion **ppIMutex) = 0;
+                     IMFASFMutualExclusion **ppIMutex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -463,56 +463,56 @@ typedef struct IMFASFMutualExclusionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFMutualExclusion *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFMutualExclusion *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFMutualExclusion *This);
+                     IMFASFMutualExclusion *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFMutualExclusion *This);
+                     IMFASFMutualExclusion *This);
 
     /*** IMFASFMutualExclusion methods ***/
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IMFASFMutualExclusion *This,
-        GUID *pguidType);
+                     IMFASFMutualExclusion *This,
+                     GUID *pguidType);
 
     HRESULT (STDMETHODCALLTYPE *SetType)(
-        IMFASFMutualExclusion *This,
-        REFGUID guidType);
+                     IMFASFMutualExclusion *This,
+                     REFGUID guidType);
 
     HRESULT (STDMETHODCALLTYPE *GetRecordCount)(
-        IMFASFMutualExclusion *This,
-        DWORD *pdwRecordCount);
+                     IMFASFMutualExclusion *This,
+                     DWORD *pdwRecordCount);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamsForRecord)(
-        IMFASFMutualExclusion *This,
-        DWORD dwRecordNumber,
-        WORD *pwStreamNumArray,
-        DWORD *pcStreams);
+                     IMFASFMutualExclusion *This,
+                     DWORD dwRecordNumber,
+                     WORD *pwStreamNumArray,
+                     DWORD *pcStreams);
 
     HRESULT (STDMETHODCALLTYPE *AddStreamForRecord)(
-        IMFASFMutualExclusion *This,
-        DWORD dwRecordNumber,
-        WORD wStreamNumber);
+                     IMFASFMutualExclusion *This,
+                     DWORD dwRecordNumber,
+                     WORD wStreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStreamFromRecord)(
-        IMFASFMutualExclusion *This,
-        DWORD dwRecordNumber,
-        WORD wStreamNumber);
+                     IMFASFMutualExclusion *This,
+                     DWORD dwRecordNumber,
+                     WORD wStreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *RemoveRecord)(
-        IMFASFMutualExclusion *This,
-        DWORD dwRecordNumber);
+                     IMFASFMutualExclusion *This,
+                     DWORD dwRecordNumber);
 
     HRESULT (STDMETHODCALLTYPE *AddRecord)(
-        IMFASFMutualExclusion *This,
-        DWORD *pdwRecordNumber);
+                     IMFASFMutualExclusion *This,
+                     DWORD *pdwRecordNumber);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMFASFMutualExclusion *This,
-        IMFASFMutualExclusion **ppIMutex);
+                     IMFASFMutualExclusion *This,
+                     IMFASFMutualExclusion **ppIMutex);
 
     END_INTERFACE
 } IMFASFMutualExclusionVtbl;
@@ -596,22 +596,22 @@ MIDL_INTERFACE("699bdc27-bbaf-49ff-8e38-9c39c9b5e088")
 IMFASFStreamPrioritization : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamCount(
-        DWORD *pdwStreamCount) = 0;
+                     DWORD *pdwStreamCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        DWORD dwStreamIndex,
-        WORD *pwStreamNumber,
-        WORD *pwStreamFlags) = 0;
+                     DWORD dwStreamIndex,
+                     WORD *pwStreamNumber,
+                     WORD *pwStreamFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddStream(
-        WORD wStreamNumber,
-        WORD wStreamFlags) = 0;
+                     WORD wStreamNumber,
+                     WORD wStreamFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStream(
-        DWORD dwStreamIndex) = 0;
+                     DWORD dwStreamIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IMFASFStreamPrioritization **ppIStreamPrioritization) = 0;
+                     IMFASFStreamPrioritization **ppIStreamPrioritization) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -623,39 +623,39 @@ typedef struct IMFASFStreamPrioritizationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFStreamPrioritization *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFStreamPrioritization *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFStreamPrioritization *This);
+                     IMFASFStreamPrioritization *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFStreamPrioritization *This);
+                     IMFASFStreamPrioritization *This);
 
     /*** IMFASFStreamPrioritization methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamCount)(
-        IMFASFStreamPrioritization *This,
-        DWORD *pdwStreamCount);
+                     IMFASFStreamPrioritization *This,
+                     DWORD *pdwStreamCount);
 
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IMFASFStreamPrioritization *This,
-        DWORD dwStreamIndex,
-        WORD *pwStreamNumber,
-        WORD *pwStreamFlags);
+                     IMFASFStreamPrioritization *This,
+                     DWORD dwStreamIndex,
+                     WORD *pwStreamNumber,
+                     WORD *pwStreamFlags);
 
     HRESULT (STDMETHODCALLTYPE *AddStream)(
-        IMFASFStreamPrioritization *This,
-        WORD wStreamNumber,
-        WORD wStreamFlags);
+                     IMFASFStreamPrioritization *This,
+                     WORD wStreamNumber,
+                     WORD wStreamFlags);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStream)(
-        IMFASFStreamPrioritization *This,
-        DWORD dwStreamIndex);
+                     IMFASFStreamPrioritization *This,
+                     DWORD dwStreamIndex);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMFASFStreamPrioritization *This,
-        IMFASFStreamPrioritization **ppIStreamPrioritization);
+                     IMFASFStreamPrioritization *This,
+                     IMFASFStreamPrioritization **ppIStreamPrioritization);
 
     END_INTERFACE
 } IMFASFStreamPrioritizationVtbl;
@@ -723,37 +723,37 @@ MIDL_INTERFACE("12558295-e399-11d5-bc2a-00b0d0f3f4ab")
 IMFASFSplitter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IMFASFContentInfo *pIContentInfo) = 0;
+                     IMFASFContentInfo *pIContentInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlags(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectStreams(
-        WORD *pwStreamNumbers,
-        WORD wNumStreams) = 0;
+                     WORD *pwStreamNumbers,
+                     WORD wNumStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelectedStreams(
-        WORD *pwStreamNumbers,
-        WORD *pwNumStreams) = 0;
+                     WORD *pwStreamNumbers,
+                     WORD *pwNumStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ParseData(
-        IMFMediaBuffer *pIBuffer,
-        DWORD cbBufferOffset,
-        DWORD cbLength) = 0;
+                     IMFMediaBuffer *pIBuffer,
+                     DWORD cbBufferOffset,
+                     DWORD cbLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNextSample(
-        DWORD *pdwStatusFlags,
-        WORD *pwStreamNumber,
-        IMFSample **ppISample) = 0;
+                     DWORD *pdwStatusFlags,
+                     WORD *pwStreamNumber,
+                     IMFSample **ppISample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Flush(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastSendTime(
-        DWORD *pdwLastSendTime) = 0;
+                     DWORD *pdwLastSendTime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -765,57 +765,57 @@ typedef struct IMFASFSplitterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFSplitter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFSplitter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFSplitter *This);
+                     IMFASFSplitter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFSplitter *This);
+                     IMFASFSplitter *This);
 
     /*** IMFASFSplitter methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IMFASFSplitter *This,
-        IMFASFContentInfo *pIContentInfo);
+                     IMFASFSplitter *This,
+                     IMFASFContentInfo *pIContentInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IMFASFSplitter *This,
-        DWORD dwFlags);
+                     IMFASFSplitter *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        IMFASFSplitter *This,
-        DWORD *pdwFlags);
+                     IMFASFSplitter *This,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *SelectStreams)(
-        IMFASFSplitter *This,
-        WORD *pwStreamNumbers,
-        WORD wNumStreams);
+                     IMFASFSplitter *This,
+                     WORD *pwStreamNumbers,
+                     WORD wNumStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetSelectedStreams)(
-        IMFASFSplitter *This,
-        WORD *pwStreamNumbers,
-        WORD *pwNumStreams);
+                     IMFASFSplitter *This,
+                     WORD *pwStreamNumbers,
+                     WORD *pwNumStreams);
 
     HRESULT (STDMETHODCALLTYPE *ParseData)(
-        IMFASFSplitter *This,
-        IMFMediaBuffer *pIBuffer,
-        DWORD cbBufferOffset,
-        DWORD cbLength);
+                     IMFASFSplitter *This,
+                     IMFMediaBuffer *pIBuffer,
+                     DWORD cbBufferOffset,
+                     DWORD cbLength);
 
     HRESULT (STDMETHODCALLTYPE *GetNextSample)(
-        IMFASFSplitter *This,
-        DWORD *pdwStatusFlags,
-        WORD *pwStreamNumber,
-        IMFSample **ppISample);
+                     IMFASFSplitter *This,
+                     DWORD *pdwStatusFlags,
+                     WORD *pwStreamNumber,
+                     IMFSample **ppISample);
 
     HRESULT (STDMETHODCALLTYPE *Flush)(
-        IMFASFSplitter *This);
+                     IMFASFSplitter *This);
 
     HRESULT (STDMETHODCALLTYPE *GetLastSendTime)(
-        IMFASFSplitter *This,
-        DWORD *pdwLastSendTime);
+                     IMFASFSplitter *This,
+                     DWORD *pdwLastSendTime);
 
     END_INTERFACE
 } IMFASFSplitterVtbl;
@@ -899,35 +899,35 @@ MIDL_INTERFACE("57bdd80a-9b38-4838-b737-c58f670d7d4f")
 IMFASFMultiplexer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IMFASFContentInfo *pIContentInfo) = 0;
+                     IMFASFContentInfo *pIContentInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlags(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessSample(
-        WORD wStreamNumber,
-        IMFSample *pISample,
-        LONGLONG hnsTimestampAdjust) = 0;
+                     WORD wStreamNumber,
+                     IMFSample *pISample,
+                     LONGLONG hnsTimestampAdjust) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNextPacket(
-        DWORD *pdwStatusFlags,
-        IMFSample **ppIPacket) = 0;
+                     DWORD *pdwStatusFlags,
+                     IMFSample **ppIPacket) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Flush(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE End(
-        IMFASFContentInfo *pIContentInfo) = 0;
+                     IMFASFContentInfo *pIContentInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatistics(
-        WORD wStreamNumber,
-        ASF_MUX_STATISTICS *pMuxStats) = 0;
+                     WORD wStreamNumber,
+                     ASF_MUX_STATISTICS *pMuxStats) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSyncTolerance(
-        DWORD msSyncTolerance) = 0;
+                     DWORD msSyncTolerance) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -939,55 +939,55 @@ typedef struct IMFASFMultiplexerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFMultiplexer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFMultiplexer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFMultiplexer *This);
+                     IMFASFMultiplexer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFMultiplexer *This);
+                     IMFASFMultiplexer *This);
 
     /*** IMFASFMultiplexer methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IMFASFMultiplexer *This,
-        IMFASFContentInfo *pIContentInfo);
+                     IMFASFMultiplexer *This,
+                     IMFASFContentInfo *pIContentInfo);
 
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IMFASFMultiplexer *This,
-        DWORD dwFlags);
+                     IMFASFMultiplexer *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        IMFASFMultiplexer *This,
-        DWORD *pdwFlags);
+                     IMFASFMultiplexer *This,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *ProcessSample)(
-        IMFASFMultiplexer *This,
-        WORD wStreamNumber,
-        IMFSample *pISample,
-        LONGLONG hnsTimestampAdjust);
+                     IMFASFMultiplexer *This,
+                     WORD wStreamNumber,
+                     IMFSample *pISample,
+                     LONGLONG hnsTimestampAdjust);
 
     HRESULT (STDMETHODCALLTYPE *GetNextPacket)(
-        IMFASFMultiplexer *This,
-        DWORD *pdwStatusFlags,
-        IMFSample **ppIPacket);
+                     IMFASFMultiplexer *This,
+                     DWORD *pdwStatusFlags,
+                     IMFSample **ppIPacket);
 
     HRESULT (STDMETHODCALLTYPE *Flush)(
-        IMFASFMultiplexer *This);
+                     IMFASFMultiplexer *This);
 
     HRESULT (STDMETHODCALLTYPE *End)(
-        IMFASFMultiplexer *This,
-        IMFASFContentInfo *pIContentInfo);
+                     IMFASFMultiplexer *This,
+                     IMFASFContentInfo *pIContentInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetStatistics)(
-        IMFASFMultiplexer *This,
-        WORD wStreamNumber,
-        ASF_MUX_STATISTICS *pMuxStats);
+                     IMFASFMultiplexer *This,
+                     WORD wStreamNumber,
+                     ASF_MUX_STATISTICS *pMuxStats);
 
     HRESULT (STDMETHODCALLTYPE *SetSyncTolerance)(
-        IMFASFMultiplexer *This,
-        DWORD msSyncTolerance);
+                     IMFASFMultiplexer *This,
+                     DWORD msSyncTolerance);
 
     END_INTERFACE
 } IMFASFMultiplexerVtbl;
@@ -1071,55 +1071,55 @@ MIDL_INTERFACE("53590f48-dc3b-4297-813f-787761ad7b3e")
 IMFASFIndexer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlags(
-        DWORD *pdwFlags) = 0;
+                     DWORD *pdwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        IMFASFContentInfo *pIContentInfo) = 0;
+                     IMFASFContentInfo *pIContentInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIndexPosition(
-        IMFASFContentInfo *pIContentInfo,
-        QWORD *pcbIndexOffset) = 0;
+                     IMFASFContentInfo *pIContentInfo,
+                     QWORD *pcbIndexOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIndexByteStreams(
-        IMFByteStream **ppIByteStreams,
-        DWORD cByteStreams) = 0;
+                     IMFByteStream **ppIByteStreams,
+                     DWORD cByteStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIndexByteStreamCount(
-        DWORD *pcByteStreams) = 0;
+                     DWORD *pcByteStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIndexStatus(
-        ASF_INDEX_IDENTIFIER *pIndexIdentifier,
-        WINBOOL *pfIsIndexed,
-        BYTE *pbIndexDescriptor,
-        DWORD *pcbIndexDescriptor) = 0;
+                     ASF_INDEX_IDENTIFIER *pIndexIdentifier,
+                     WINBOOL *pfIsIndexed,
+                     BYTE *pbIndexDescriptor,
+                     DWORD *pcbIndexDescriptor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIndexStatus(
-        BYTE *pbIndexDescriptor,
-        DWORD cbIndexDescriptor,
-        WINBOOL fGenerateIndex) = 0;
+                     BYTE *pbIndexDescriptor,
+                     DWORD cbIndexDescriptor,
+                     WINBOOL fGenerateIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSeekPositionForValue(
-        const PROPVARIANT *pvarValue,
-        ASF_INDEX_IDENTIFIER *pIndexIdentifier,
-        QWORD *pcbOffsetWithinData,
-        MFTIME *phnsApproxTime,
-        DWORD *pdwPayloadNumberOfStreamWithinPacket) = 0;
+                     const PROPVARIANT *pvarValue,
+                     ASF_INDEX_IDENTIFIER *pIndexIdentifier,
+                     QWORD *pcbOffsetWithinData,
+                     MFTIME *phnsApproxTime,
+                     DWORD *pdwPayloadNumberOfStreamWithinPacket) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GenerateIndexEntries(
-        IMFSample *pIASFPacketSample) = 0;
+                     IMFSample *pIASFPacketSample) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitIndex(
-        IMFASFContentInfo *pIContentInfo) = 0;
+                     IMFASFContentInfo *pIContentInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIndexWriteSpace(
-        QWORD *pcbIndexWriteSpace) = 0;
+                     QWORD *pcbIndexWriteSpace) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCompletedIndex(
-        IMFMediaBuffer *pIIndexBuffer,
-        QWORD cbOffsetWithinIndex) = 0;
+                     IMFMediaBuffer *pIIndexBuffer,
+                     QWORD cbOffsetWithinIndex) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1131,80 +1131,80 @@ typedef struct IMFASFIndexerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFIndexer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFIndexer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFIndexer *This);
+                     IMFASFIndexer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFIndexer *This);
+                     IMFASFIndexer *This);
 
     /*** IMFASFIndexer methods ***/
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IMFASFIndexer *This,
-        DWORD dwFlags);
+                     IMFASFIndexer *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        IMFASFIndexer *This,
-        DWORD *pdwFlags);
+                     IMFASFIndexer *This,
+                     DWORD *pdwFlags);
 
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IMFASFIndexer *This,
-        IMFASFContentInfo *pIContentInfo);
+                     IMFASFIndexer *This,
+                     IMFASFContentInfo *pIContentInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIndexPosition)(
-        IMFASFIndexer *This,
-        IMFASFContentInfo *pIContentInfo,
-        QWORD *pcbIndexOffset);
+                     IMFASFIndexer *This,
+                     IMFASFContentInfo *pIContentInfo,
+                     QWORD *pcbIndexOffset);
 
     HRESULT (STDMETHODCALLTYPE *SetIndexByteStreams)(
-        IMFASFIndexer *This,
-        IMFByteStream **ppIByteStreams,
-        DWORD cByteStreams);
+                     IMFASFIndexer *This,
+                     IMFByteStream **ppIByteStreams,
+                     DWORD cByteStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetIndexByteStreamCount)(
-        IMFASFIndexer *This,
-        DWORD *pcByteStreams);
+                     IMFASFIndexer *This,
+                     DWORD *pcByteStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetIndexStatus)(
-        IMFASFIndexer *This,
-        ASF_INDEX_IDENTIFIER *pIndexIdentifier,
-        WINBOOL *pfIsIndexed,
-        BYTE *pbIndexDescriptor,
-        DWORD *pcbIndexDescriptor);
+                     IMFASFIndexer *This,
+                     ASF_INDEX_IDENTIFIER *pIndexIdentifier,
+                     WINBOOL *pfIsIndexed,
+                     BYTE *pbIndexDescriptor,
+                     DWORD *pcbIndexDescriptor);
 
     HRESULT (STDMETHODCALLTYPE *SetIndexStatus)(
-        IMFASFIndexer *This,
-        BYTE *pbIndexDescriptor,
-        DWORD cbIndexDescriptor,
-        WINBOOL fGenerateIndex);
+                     IMFASFIndexer *This,
+                     BYTE *pbIndexDescriptor,
+                     DWORD cbIndexDescriptor,
+                     WINBOOL fGenerateIndex);
 
     HRESULT (STDMETHODCALLTYPE *GetSeekPositionForValue)(
-        IMFASFIndexer *This,
-        const PROPVARIANT *pvarValue,
-        ASF_INDEX_IDENTIFIER *pIndexIdentifier,
-        QWORD *pcbOffsetWithinData,
-        MFTIME *phnsApproxTime,
-        DWORD *pdwPayloadNumberOfStreamWithinPacket);
+                     IMFASFIndexer *This,
+                     const PROPVARIANT *pvarValue,
+                     ASF_INDEX_IDENTIFIER *pIndexIdentifier,
+                     QWORD *pcbOffsetWithinData,
+                     MFTIME *phnsApproxTime,
+                     DWORD *pdwPayloadNumberOfStreamWithinPacket);
 
     HRESULT (STDMETHODCALLTYPE *GenerateIndexEntries)(
-        IMFASFIndexer *This,
-        IMFSample *pIASFPacketSample);
+                     IMFASFIndexer *This,
+                     IMFSample *pIASFPacketSample);
 
     HRESULT (STDMETHODCALLTYPE *CommitIndex)(
-        IMFASFIndexer *This,
-        IMFASFContentInfo *pIContentInfo);
+                     IMFASFIndexer *This,
+                     IMFASFContentInfo *pIContentInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIndexWriteSpace)(
-        IMFASFIndexer *This,
-        QWORD *pcbIndexWriteSpace);
+                     IMFASFIndexer *This,
+                     QWORD *pcbIndexWriteSpace);
 
     HRESULT (STDMETHODCALLTYPE *GetCompletedIndex)(
-        IMFASFIndexer *This,
-        IMFMediaBuffer *pIIndexBuffer,
-        QWORD cbOffsetWithinIndex);
+                     IMFASFIndexer *This,
+                     IMFMediaBuffer *pIIndexBuffer,
+                     QWORD cbOffsetWithinIndex);
 
     END_INTERFACE
 } IMFASFIndexerVtbl;
@@ -1304,60 +1304,60 @@ MIDL_INTERFACE("d01bad4a-4fa0-4a60-9349-c27e62da9d41")
 IMFASFStreamSelector : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamCount(
-        DWORD *pcStreams) = 0;
+                     DWORD *pcStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputCount(
-        DWORD *pcOutputs) = 0;
+                     DWORD *pcOutputs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputStreamCount(
-        DWORD dwOutputNum,
-        DWORD *pcStreams) = 0;
+                     DWORD dwOutputNum,
+                     DWORD *pcStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputStreamNumbers(
-        DWORD dwOutputNum,
-        WORD *rgwStreamNumbers) = 0;
+                     DWORD dwOutputNum,
+                     WORD *rgwStreamNumbers) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputFromStream(
-        WORD wStreamNum,
-        DWORD *pdwOutput) = 0;
+                     WORD wStreamNum,
+                     DWORD *pdwOutput) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputOverride(
-        DWORD dwOutputNum,
-        ASF_SELECTION_STATUS *pSelection) = 0;
+                     DWORD dwOutputNum,
+                     ASF_SELECTION_STATUS *pSelection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputOverride(
-        DWORD dwOutputNum,
-        ASF_SELECTION_STATUS Selection) = 0;
+                     DWORD dwOutputNum,
+                     ASF_SELECTION_STATUS Selection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputMutexCount(
-        DWORD dwOutputNum,
-        DWORD *pcMutexes) = 0;
+                     DWORD dwOutputNum,
+                     DWORD *pcMutexes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputMutex(
-        DWORD dwOutputNum,
-        DWORD dwMutexNum,
-        IUnknown **ppMutex) = 0;
+                     DWORD dwOutputNum,
+                     DWORD dwMutexNum,
+                     IUnknown **ppMutex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputMutexSelection(
-        DWORD dwOutputNum,
-        DWORD dwMutexNum,
-        WORD wSelectedRecord) = 0;
+                     DWORD dwOutputNum,
+                     DWORD dwMutexNum,
+                     WORD wSelectedRecord) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBandwidthStepCount(
-        DWORD *pcStepCount) = 0;
+                     DWORD *pcStepCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBandwidthStep(
-        DWORD dwStepNum,
-        DWORD *pdwBitrate,
-        WORD *rgwStreamNumbers,
-        ASF_SELECTION_STATUS *rgSelections) = 0;
+                     DWORD dwStepNum,
+                     DWORD *pdwBitrate,
+                     WORD *rgwStreamNumbers,
+                     ASF_SELECTION_STATUS *rgSelections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BitrateToStepNumber(
-        DWORD dwBitrate,
-        DWORD *pdwStepNum) = 0;
+                     DWORD dwBitrate,
+                     DWORD *pdwStepNum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStreamSelectorFlags(
-        DWORD dwStreamSelectorFlags) = 0;
+                     DWORD dwStreamSelectorFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1369,86 +1369,86 @@ typedef struct IMFASFStreamSelectorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFStreamSelector *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFStreamSelector *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFStreamSelector *This);
+                     IMFASFStreamSelector *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFStreamSelector *This);
+                     IMFASFStreamSelector *This);
 
     /*** IMFASFStreamSelector methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamCount)(
-        IMFASFStreamSelector *This,
-        DWORD *pcStreams);
+                     IMFASFStreamSelector *This,
+                     DWORD *pcStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputCount)(
-        IMFASFStreamSelector *This,
-        DWORD *pcOutputs);
+                     IMFASFStreamSelector *This,
+                     DWORD *pcOutputs);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputStreamCount)(
-        IMFASFStreamSelector *This,
-        DWORD dwOutputNum,
-        DWORD *pcStreams);
+                     IMFASFStreamSelector *This,
+                     DWORD dwOutputNum,
+                     DWORD *pcStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputStreamNumbers)(
-        IMFASFStreamSelector *This,
-        DWORD dwOutputNum,
-        WORD *rgwStreamNumbers);
+                     IMFASFStreamSelector *This,
+                     DWORD dwOutputNum,
+                     WORD *rgwStreamNumbers);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputFromStream)(
-        IMFASFStreamSelector *This,
-        WORD wStreamNum,
-        DWORD *pdwOutput);
+                     IMFASFStreamSelector *This,
+                     WORD wStreamNum,
+                     DWORD *pdwOutput);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputOverride)(
-        IMFASFStreamSelector *This,
-        DWORD dwOutputNum,
-        ASF_SELECTION_STATUS *pSelection);
+                     IMFASFStreamSelector *This,
+                     DWORD dwOutputNum,
+                     ASF_SELECTION_STATUS *pSelection);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputOverride)(
-        IMFASFStreamSelector *This,
-        DWORD dwOutputNum,
-        ASF_SELECTION_STATUS Selection);
+                     IMFASFStreamSelector *This,
+                     DWORD dwOutputNum,
+                     ASF_SELECTION_STATUS Selection);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputMutexCount)(
-        IMFASFStreamSelector *This,
-        DWORD dwOutputNum,
-        DWORD *pcMutexes);
+                     IMFASFStreamSelector *This,
+                     DWORD dwOutputNum,
+                     DWORD *pcMutexes);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputMutex)(
-        IMFASFStreamSelector *This,
-        DWORD dwOutputNum,
-        DWORD dwMutexNum,
-        IUnknown **ppMutex);
+                     IMFASFStreamSelector *This,
+                     DWORD dwOutputNum,
+                     DWORD dwMutexNum,
+                     IUnknown **ppMutex);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputMutexSelection)(
-        IMFASFStreamSelector *This,
-        DWORD dwOutputNum,
-        DWORD dwMutexNum,
-        WORD wSelectedRecord);
+                     IMFASFStreamSelector *This,
+                     DWORD dwOutputNum,
+                     DWORD dwMutexNum,
+                     WORD wSelectedRecord);
 
     HRESULT (STDMETHODCALLTYPE *GetBandwidthStepCount)(
-        IMFASFStreamSelector *This,
-        DWORD *pcStepCount);
+                     IMFASFStreamSelector *This,
+                     DWORD *pcStepCount);
 
     HRESULT (STDMETHODCALLTYPE *GetBandwidthStep)(
-        IMFASFStreamSelector *This,
-        DWORD dwStepNum,
-        DWORD *pdwBitrate,
-        WORD *rgwStreamNumbers,
-        ASF_SELECTION_STATUS *rgSelections);
+                     IMFASFStreamSelector *This,
+                     DWORD dwStepNum,
+                     DWORD *pdwBitrate,
+                     WORD *rgwStreamNumbers,
+                     ASF_SELECTION_STATUS *rgSelections);
 
     HRESULT (STDMETHODCALLTYPE *BitrateToStepNumber)(
-        IMFASFStreamSelector *This,
-        DWORD dwBitrate,
-        DWORD *pdwStepNum);
+                     IMFASFStreamSelector *This,
+                     DWORD dwBitrate,
+                     DWORD *pdwStepNum);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamSelectorFlags)(
-        IMFASFStreamSelector *This,
-        DWORD dwStreamSelectorFlags);
+                     IMFASFStreamSelector *This,
+                     DWORD dwStreamSelectorFlags);
 
     END_INTERFACE
 } IMFASFStreamSelectorVtbl;
@@ -1553,15 +1553,15 @@ MIDL_INTERFACE("3d1ff0ea-679a-4190-8d46-7fa69e8c7e15")
 IMFDRMNetHelper : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ProcessLicenseRequest(
-        BYTE *pLicenseRequest,
-        DWORD cbLicenseRequest,
-        BYTE **ppLicenseResponse,
-        DWORD *pcbLicenseResponse,
-        BSTR *pbstrKID) = 0;
+                     BYTE *pLicenseRequest,
+                     DWORD cbLicenseRequest,
+                     BYTE **ppLicenseResponse,
+                     DWORD *pcbLicenseResponse,
+                     BSTR *pbstrKID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetChainedLicenseResponse(
-        BYTE **ppLicenseResponse,
-        DWORD *pcbLicenseResponse) = 0;
+                     BYTE **ppLicenseResponse,
+                     DWORD *pcbLicenseResponse) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1573,29 +1573,29 @@ typedef struct IMFDRMNetHelperVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFDRMNetHelper *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFDRMNetHelper *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFDRMNetHelper *This);
+                     IMFDRMNetHelper *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFDRMNetHelper *This);
+                     IMFDRMNetHelper *This);
 
     /*** IMFDRMNetHelper methods ***/
     HRESULT (STDMETHODCALLTYPE *ProcessLicenseRequest)(
-        IMFDRMNetHelper *This,
-        BYTE *pLicenseRequest,
-        DWORD cbLicenseRequest,
-        BYTE **ppLicenseResponse,
-        DWORD *pcbLicenseResponse,
-        BSTR *pbstrKID);
+                     IMFDRMNetHelper *This,
+                     BYTE *pLicenseRequest,
+                     DWORD cbLicenseRequest,
+                     BYTE **ppLicenseResponse,
+                     DWORD *pcbLicenseResponse,
+                     BSTR *pbstrKID);
 
     HRESULT (STDMETHODCALLTYPE *GetChainedLicenseResponse)(
-        IMFDRMNetHelper *This,
-        BYTE **ppLicenseResponse,
-        DWORD *pcbLicenseResponse);
+                     IMFDRMNetHelper *This,
+                     BYTE **ppLicenseResponse,
+                     DWORD *pcbLicenseResponse);
 
     END_INTERFACE
 } IMFDRMNetHelperVtbl;
@@ -1652,57 +1652,57 @@ MIDL_INTERFACE("d267bf6a-028b-4e0d-903d-43f0ef82d0d4")
 IMFASFProfile : public IMFAttributes
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamCount(
-        DWORD *pcStreams) = 0;
+                     DWORD *pcStreams) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStream(
-        DWORD dwStreamIndex,
-        WORD *pwStreamNumber,
-        IMFASFStreamConfig **ppIStream) = 0;
+                     DWORD dwStreamIndex,
+                     WORD *pwStreamNumber,
+                     IMFASFStreamConfig **ppIStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamByNumber(
-        WORD wStreamNumber,
-        IMFASFStreamConfig **ppIStream) = 0;
+                     WORD wStreamNumber,
+                     IMFASFStreamConfig **ppIStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStream(
-        IMFASFStreamConfig *pIStream) = 0;
+                     IMFASFStreamConfig *pIStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStream(
-        WORD wStreamNumber) = 0;
+                     WORD wStreamNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStream(
-        IMFMediaType *pIMediaType,
-        IMFASFStreamConfig **ppIStream) = 0;
+                     IMFMediaType *pIMediaType,
+                     IMFASFStreamConfig **ppIStream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMutualExclusionCount(
-        DWORD *pcMutexs) = 0;
+                     DWORD *pcMutexs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMutualExclusion(
-        DWORD dwMutexIndex,
-        IMFASFMutualExclusion **ppIMutex) = 0;
+                     DWORD dwMutexIndex,
+                     IMFASFMutualExclusion **ppIMutex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddMutualExclusion(
-        IMFASFMutualExclusion *pIMutex) = 0;
+                     IMFASFMutualExclusion *pIMutex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveMutualExclusion(
-        DWORD dwMutexIndex) = 0;
+                     DWORD dwMutexIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMutualExclusion(
-        IMFASFMutualExclusion **ppIMutex) = 0;
+                     IMFASFMutualExclusion **ppIMutex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStreamPrioritization(
-        IMFASFStreamPrioritization **ppIStreamPrioritization) = 0;
+                     IMFASFStreamPrioritization **ppIStreamPrioritization) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddStreamPrioritization(
-        IMFASFStreamPrioritization *pIStreamPrioritization) = 0;
+                     IMFASFStreamPrioritization *pIStreamPrioritization) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStreamPrioritization(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStreamPrioritization(
-        IMFASFStreamPrioritization **ppIStreamPrioritization) = 0;
+                     IMFASFStreamPrioritization **ppIStreamPrioritization) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IMFASFProfile **ppIProfile) = 0;
+                     IMFASFProfile **ppIProfile) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1714,237 +1714,237 @@ typedef struct IMFASFProfileVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFProfile *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFProfile *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFProfile *This);
+                     IMFASFProfile *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFProfile *This);
+                     IMFASFProfile *This);
 
     /*** IMFAttributes methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        PROPVARIANT *pValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetItemType)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        MF_ATTRIBUTE_TYPE *pType);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     MF_ATTRIBUTE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *CompareItem)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value,
-        WINBOOL *pbResult);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        IMFASFProfile *This,
-        IMFAttributes *pTheirs,
-        MF_ATTRIBUTES_MATCH_TYPE MatchType,
-        WINBOOL *pbResult);
+                     IMFASFProfile *This,
+                     IMFAttributes *pTheirs,
+                     MF_ATTRIBUTES_MATCH_TYPE MatchType,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT32)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        UINT32 *punValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     UINT32 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT64)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        UINT64 *punValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     UINT64 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDouble)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        double *pfValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     double *pfValue);
 
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        GUID *pguidValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     GUID *pguidValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringLength)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        UINT32 *pcchLength);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetString)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        LPWSTR pwszValue,
-        UINT32 cchBufSize,
-        UINT32 *pcchLength);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     LPWSTR pwszValue,
+                     UINT32 cchBufSize,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedString)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        LPWSTR *ppwszValue,
-        UINT32 *pcchLength);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     LPWSTR *ppwszValue,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetBlobSize)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        UINT32 *pcbBlobSize);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetBlob)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        UINT8 *pBuf,
-        UINT32 cbBufSize,
-        UINT32 *pcbBlobSize);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     UINT8 *pBuf,
+                     UINT32 cbBufSize,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedBlob)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        UINT8 **ppBuf,
-        UINT32 *pcbSize);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     UINT8 **ppBuf,
+                     UINT32 *pcbSize);
 
     HRESULT (STDMETHODCALLTYPE *GetUnknown)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        REFIID riid,
-        LPVOID *ppv);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     REFIID riid,
+                     LPVOID *ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetItem)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value);
 
     HRESULT (STDMETHODCALLTYPE *DeleteItem)(
-        IMFASFProfile *This,
-        REFGUID guidKey);
+                     IMFASFProfile *This,
+                     REFGUID guidKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAllItems)(
-        IMFASFProfile *This);
+                     IMFASFProfile *This);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT32)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        UINT32 unValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     UINT32 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT64)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        UINT64 unValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     UINT64 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDouble)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        double fValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     double fValue);
 
     HRESULT (STDMETHODCALLTYPE *SetGUID)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        REFGUID guidValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     REFGUID guidValue);
 
     HRESULT (STDMETHODCALLTYPE *SetString)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        LPCWSTR wszValue);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     LPCWSTR wszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetBlob)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        const UINT8 *pBuf,
-        UINT32 cbBufSize);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     const UINT8 *pBuf,
+                     UINT32 cbBufSize);
 
     HRESULT (STDMETHODCALLTYPE *SetUnknown)(
-        IMFASFProfile *This,
-        REFGUID guidKey,
-        IUnknown *pUnknown);
+                     IMFASFProfile *This,
+                     REFGUID guidKey,
+                     IUnknown *pUnknown);
 
     HRESULT (STDMETHODCALLTYPE *LockStore)(
-        IMFASFProfile *This);
+                     IMFASFProfile *This);
 
     HRESULT (STDMETHODCALLTYPE *UnlockStore)(
-        IMFASFProfile *This);
+                     IMFASFProfile *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IMFASFProfile *This,
-        UINT32 *pcItems);
+                     IMFASFProfile *This,
+                     UINT32 *pcItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemByIndex)(
-        IMFASFProfile *This,
-        UINT32 unIndex,
-        GUID *pguidKey,
-        PROPVARIANT *pValue);
+                     IMFASFProfile *This,
+                     UINT32 unIndex,
+                     GUID *pguidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *CopyAllItems)(
-        IMFASFProfile *This,
-        IMFAttributes *pDest);
+                     IMFASFProfile *This,
+                     IMFAttributes *pDest);
 
     /*** IMFASFProfile methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamCount)(
-        IMFASFProfile *This,
-        DWORD *pcStreams);
+                     IMFASFProfile *This,
+                     DWORD *pcStreams);
 
     HRESULT (STDMETHODCALLTYPE *GetStream)(
-        IMFASFProfile *This,
-        DWORD dwStreamIndex,
-        WORD *pwStreamNumber,
-        IMFASFStreamConfig **ppIStream);
+                     IMFASFProfile *This,
+                     DWORD dwStreamIndex,
+                     WORD *pwStreamNumber,
+                     IMFASFStreamConfig **ppIStream);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamByNumber)(
-        IMFASFProfile *This,
-        WORD wStreamNumber,
-        IMFASFStreamConfig **ppIStream);
+                     IMFASFProfile *This,
+                     WORD wStreamNumber,
+                     IMFASFStreamConfig **ppIStream);
 
     HRESULT (STDMETHODCALLTYPE *SetStream)(
-        IMFASFProfile *This,
-        IMFASFStreamConfig *pIStream);
+                     IMFASFProfile *This,
+                     IMFASFStreamConfig *pIStream);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStream)(
-        IMFASFProfile *This,
-        WORD wStreamNumber);
+                     IMFASFProfile *This,
+                     WORD wStreamNumber);
 
     HRESULT (STDMETHODCALLTYPE *CreateStream)(
-        IMFASFProfile *This,
-        IMFMediaType *pIMediaType,
-        IMFASFStreamConfig **ppIStream);
+                     IMFASFProfile *This,
+                     IMFMediaType *pIMediaType,
+                     IMFASFStreamConfig **ppIStream);
 
     HRESULT (STDMETHODCALLTYPE *GetMutualExclusionCount)(
-        IMFASFProfile *This,
-        DWORD *pcMutexs);
+                     IMFASFProfile *This,
+                     DWORD *pcMutexs);
 
     HRESULT (STDMETHODCALLTYPE *GetMutualExclusion)(
-        IMFASFProfile *This,
-        DWORD dwMutexIndex,
-        IMFASFMutualExclusion **ppIMutex);
+                     IMFASFProfile *This,
+                     DWORD dwMutexIndex,
+                     IMFASFMutualExclusion **ppIMutex);
 
     HRESULT (STDMETHODCALLTYPE *AddMutualExclusion)(
-        IMFASFProfile *This,
-        IMFASFMutualExclusion *pIMutex);
+                     IMFASFProfile *This,
+                     IMFASFMutualExclusion *pIMutex);
 
     HRESULT (STDMETHODCALLTYPE *RemoveMutualExclusion)(
-        IMFASFProfile *This,
-        DWORD dwMutexIndex);
+                     IMFASFProfile *This,
+                     DWORD dwMutexIndex);
 
     HRESULT (STDMETHODCALLTYPE *CreateMutualExclusion)(
-        IMFASFProfile *This,
-        IMFASFMutualExclusion **ppIMutex);
+                     IMFASFProfile *This,
+                     IMFASFMutualExclusion **ppIMutex);
 
     HRESULT (STDMETHODCALLTYPE *GetStreamPrioritization)(
-        IMFASFProfile *This,
-        IMFASFStreamPrioritization **ppIStreamPrioritization);
+                     IMFASFProfile *This,
+                     IMFASFStreamPrioritization **ppIStreamPrioritization);
 
     HRESULT (STDMETHODCALLTYPE *AddStreamPrioritization)(
-        IMFASFProfile *This,
-        IMFASFStreamPrioritization *pIStreamPrioritization);
+                     IMFASFProfile *This,
+                     IMFASFStreamPrioritization *pIStreamPrioritization);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStreamPrioritization)(
-        IMFASFProfile *This);
+                     IMFASFProfile *This);
 
     HRESULT (STDMETHODCALLTYPE *CreateStreamPrioritization)(
-        IMFASFProfile *This,
-        IMFASFStreamPrioritization **ppIStreamPrioritization);
+                     IMFASFProfile *This,
+                     IMFASFStreamPrioritization **ppIStreamPrioritization);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMFASFProfile *This,
-        IMFASFProfile **ppIProfile);
+                     IMFASFProfile *This,
+                     IMFASFProfile **ppIProfile);
 
     END_INTERFACE
 } IMFASFProfileVtbl;
@@ -2178,41 +2178,41 @@ MIDL_INTERFACE("9e8ae8d2-dbbd-4200-9aca-06e6df484913")
 IMFASFStreamConfig : public IMFAttributes
 {
     virtual HRESULT STDMETHODCALLTYPE GetStreamType(
-        GUID *pguidStreamType) = 0;
+                     GUID *pguidStreamType) = 0;
 
     virtual WORD STDMETHODCALLTYPE GetStreamNumber(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStreamNumber(
-        WORD wStreamNum) = 0;
+                     WORD wStreamNum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMediaType(
-        IMFMediaType **ppIMediaType) = 0;
+                     IMFMediaType **ppIMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMediaType(
-        IMFMediaType *pIMediaType) = 0;
+                     IMFMediaType *pIMediaType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPayloadExtensionCount(
-        WORD *pcPayloadExtensions) = 0;
+                     WORD *pcPayloadExtensions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPayloadExtension(
-        WORD wPayloadExtensionNumber,
-        GUID *pguidExtensionSystemID,
-        WORD *pcbExtensionDataSize,
-        BYTE *pbExtensionSystemInfo,
-        DWORD *pcbExtensionSystemInfo) = 0;
+                     WORD wPayloadExtensionNumber,
+                     GUID *pguidExtensionSystemID,
+                     WORD *pcbExtensionDataSize,
+                     BYTE *pbExtensionSystemInfo,
+                     DWORD *pcbExtensionSystemInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddPayloadExtension(
-        GUID guidExtensionSystemID,
-        WORD cbExtensionDataSize,
-        BYTE *pbExtensionSystemInfo,
-        DWORD cbExtensionSystemInfo) = 0;
+                     GUID guidExtensionSystemID,
+                     WORD cbExtensionDataSize,
+                     BYTE *pbExtensionSystemInfo,
+                     DWORD cbExtensionSystemInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAllPayloadExtensions(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IMFASFStreamConfig **ppIStreamConfig) = 0;
+                     IMFASFStreamConfig **ppIStreamConfig) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2224,214 +2224,214 @@ typedef struct IMFASFStreamConfigVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IMFASFStreamConfig *This,
-        REFIID riid,
-        void **ppvObject);
+                     IMFASFStreamConfig *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IMFASFStreamConfig *This);
+                     IMFASFStreamConfig *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IMFASFStreamConfig *This);
+                     IMFASFStreamConfig *This);
 
     /*** IMFAttributes methods ***/
     HRESULT (STDMETHODCALLTYPE *GetItem)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        PROPVARIANT *pValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *GetItemType)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        MF_ATTRIBUTE_TYPE *pType);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     MF_ATTRIBUTE_TYPE *pType);
 
     HRESULT (STDMETHODCALLTYPE *CompareItem)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value,
-        WINBOOL *pbResult);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *Compare)(
-        IMFASFStreamConfig *This,
-        IMFAttributes *pTheirs,
-        MF_ATTRIBUTES_MATCH_TYPE MatchType,
-        WINBOOL *pbResult);
+                     IMFASFStreamConfig *This,
+                     IMFAttributes *pTheirs,
+                     MF_ATTRIBUTES_MATCH_TYPE MatchType,
+                     WINBOOL *pbResult);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT32)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        UINT32 *punValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     UINT32 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetUINT64)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        UINT64 *punValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     UINT64 *punValue);
 
     HRESULT (STDMETHODCALLTYPE *GetDouble)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        double *pfValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     double *pfValue);
 
     HRESULT (STDMETHODCALLTYPE *GetGUID)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        GUID *pguidValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     GUID *pguidValue);
 
     HRESULT (STDMETHODCALLTYPE *GetStringLength)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        UINT32 *pcchLength);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetString)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        LPWSTR pwszValue,
-        UINT32 cchBufSize,
-        UINT32 *pcchLength);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     LPWSTR pwszValue,
+                     UINT32 cchBufSize,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedString)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        LPWSTR *ppwszValue,
-        UINT32 *pcchLength);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     LPWSTR *ppwszValue,
+                     UINT32 *pcchLength);
 
     HRESULT (STDMETHODCALLTYPE *GetBlobSize)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        UINT32 *pcbBlobSize);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetBlob)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        UINT8 *pBuf,
-        UINT32 cbBufSize,
-        UINT32 *pcbBlobSize);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     UINT8 *pBuf,
+                     UINT32 cbBufSize,
+                     UINT32 *pcbBlobSize);
 
     HRESULT (STDMETHODCALLTYPE *GetAllocatedBlob)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        UINT8 **ppBuf,
-        UINT32 *pcbSize);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     UINT8 **ppBuf,
+                     UINT32 *pcbSize);
 
     HRESULT (STDMETHODCALLTYPE *GetUnknown)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        REFIID riid,
-        LPVOID *ppv);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     REFIID riid,
+                     LPVOID *ppv);
 
     HRESULT (STDMETHODCALLTYPE *SetItem)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        REFPROPVARIANT Value);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     REFPROPVARIANT Value);
 
     HRESULT (STDMETHODCALLTYPE *DeleteItem)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey);
 
     HRESULT (STDMETHODCALLTYPE *DeleteAllItems)(
-        IMFASFStreamConfig *This);
+                     IMFASFStreamConfig *This);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT32)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        UINT32 unValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     UINT32 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetUINT64)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        UINT64 unValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     UINT64 unValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDouble)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        double fValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     double fValue);
 
     HRESULT (STDMETHODCALLTYPE *SetGUID)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        REFGUID guidValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     REFGUID guidValue);
 
     HRESULT (STDMETHODCALLTYPE *SetString)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        LPCWSTR wszValue);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     LPCWSTR wszValue);
 
     HRESULT (STDMETHODCALLTYPE *SetBlob)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        const UINT8 *pBuf,
-        UINT32 cbBufSize);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     const UINT8 *pBuf,
+                     UINT32 cbBufSize);
 
     HRESULT (STDMETHODCALLTYPE *SetUnknown)(
-        IMFASFStreamConfig *This,
-        REFGUID guidKey,
-        IUnknown *pUnknown);
+                     IMFASFStreamConfig *This,
+                     REFGUID guidKey,
+                     IUnknown *pUnknown);
 
     HRESULT (STDMETHODCALLTYPE *LockStore)(
-        IMFASFStreamConfig *This);
+                     IMFASFStreamConfig *This);
 
     HRESULT (STDMETHODCALLTYPE *UnlockStore)(
-        IMFASFStreamConfig *This);
+                     IMFASFStreamConfig *This);
 
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IMFASFStreamConfig *This,
-        UINT32 *pcItems);
+                     IMFASFStreamConfig *This,
+                     UINT32 *pcItems);
 
     HRESULT (STDMETHODCALLTYPE *GetItemByIndex)(
-        IMFASFStreamConfig *This,
-        UINT32 unIndex,
-        GUID *pguidKey,
-        PROPVARIANT *pValue);
+                     IMFASFStreamConfig *This,
+                     UINT32 unIndex,
+                     GUID *pguidKey,
+                     PROPVARIANT *pValue);
 
     HRESULT (STDMETHODCALLTYPE *CopyAllItems)(
-        IMFASFStreamConfig *This,
-        IMFAttributes *pDest);
+                     IMFASFStreamConfig *This,
+                     IMFAttributes *pDest);
 
     /*** IMFASFStreamConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *GetStreamType)(
-        IMFASFStreamConfig *This,
-        GUID *pguidStreamType);
+                     IMFASFStreamConfig *This,
+                     GUID *pguidStreamType);
 
     WORD (STDMETHODCALLTYPE *GetStreamNumber)(
-        IMFASFStreamConfig *This);
+                     IMFASFStreamConfig *This);
 
     HRESULT (STDMETHODCALLTYPE *SetStreamNumber)(
-        IMFASFStreamConfig *This,
-        WORD wStreamNum);
+                     IMFASFStreamConfig *This,
+                     WORD wStreamNum);
 
     HRESULT (STDMETHODCALLTYPE *GetMediaType)(
-        IMFASFStreamConfig *This,
-        IMFMediaType **ppIMediaType);
+                     IMFASFStreamConfig *This,
+                     IMFMediaType **ppIMediaType);
 
     HRESULT (STDMETHODCALLTYPE *SetMediaType)(
-        IMFASFStreamConfig *This,
-        IMFMediaType *pIMediaType);
+                     IMFASFStreamConfig *This,
+                     IMFMediaType *pIMediaType);
 
     HRESULT (STDMETHODCALLTYPE *GetPayloadExtensionCount)(
-        IMFASFStreamConfig *This,
-        WORD *pcPayloadExtensions);
+                     IMFASFStreamConfig *This,
+                     WORD *pcPayloadExtensions);
 
     HRESULT (STDMETHODCALLTYPE *GetPayloadExtension)(
-        IMFASFStreamConfig *This,
-        WORD wPayloadExtensionNumber,
-        GUID *pguidExtensionSystemID,
-        WORD *pcbExtensionDataSize,
-        BYTE *pbExtensionSystemInfo,
-        DWORD *pcbExtensionSystemInfo);
+                     IMFASFStreamConfig *This,
+                     WORD wPayloadExtensionNumber,
+                     GUID *pguidExtensionSystemID,
+                     WORD *pcbExtensionDataSize,
+                     BYTE *pbExtensionSystemInfo,
+                     DWORD *pcbExtensionSystemInfo);
 
     HRESULT (STDMETHODCALLTYPE *AddPayloadExtension)(
-        IMFASFStreamConfig *This,
-        GUID guidExtensionSystemID,
-        WORD cbExtensionDataSize,
-        BYTE *pbExtensionSystemInfo,
-        DWORD cbExtensionSystemInfo);
+                     IMFASFStreamConfig *This,
+                     GUID guidExtensionSystemID,
+                     WORD cbExtensionDataSize,
+                     BYTE *pbExtensionSystemInfo,
+                     DWORD cbExtensionSystemInfo);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAllPayloadExtensions)(
-        IMFASFStreamConfig *This);
+                     IMFASFStreamConfig *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IMFASFStreamConfig *This,
-        IMFASFStreamConfig **ppIStreamConfig);
+                     IMFASFStreamConfig *This,
+                     IMFASFStreamConfig **ppIStreamConfig);
 
     END_INTERFACE
 } IMFASFStreamConfigVtbl;
@@ -2653,10 +2653,10 @@ HRESULT STDMETHODCALLTYPE MFCreateWMAEncoderActivate(IMFMediaType *pMediaType, I
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

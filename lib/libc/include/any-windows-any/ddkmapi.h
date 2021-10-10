@@ -297,10 +297,10 @@ typedef struct _DDSETSKIPFIELD {
 DXAPI
 DWORD PASCAL
 DxApi(IN DWORD dwFunctionNum,
-      IN LPVOID lpvInBuffer,
-      IN DWORD cbInBuffer,
-      OUT LPVOID lpvOutBuffer,
-      OUT DWORD cbOutBuffer);
+                   IN LPVOID lpvInBuffer,
+                   IN DWORD cbInBuffer,
+                   OUT LPVOID lpvOutBuffer,
+                   OUT DWORD cbOutBuffer);
 
 
 #endif /* __DDKMAPI_INCLUDED__ */

@@ -1,4 +1,4 @@
-#define __NR_restart_syscall      0
+#define __NR_restart_syscall                   0
 #define __NR_exit		  1
 #define __NR_fork		  2
 #define __NR_read		  3
@@ -170,7 +170,7 @@
 #define __NR_nfsservctl		169
 #define __NR_setresgid		170
 #define __NR_getresgid		171
-#define __NR_prctl              172
+#define __NR_prctl                                        172
 #define __NR_rt_sigreturn	173
 #define __NR_rt_sigaction	174
 #define __NR_rt_sigprocmask	175
@@ -427,7 +427,7 @@
 #define __NR_pidfd_open		434
 #define __NR_clone3		435
 
-#define SYS_restart_syscall      0
+#define SYS_restart_syscall                   0
 #define SYS_exit		  1
 #define SYS_fork		  2
 #define SYS_read		  3
@@ -599,7 +599,7 @@
 #define SYS_nfsservctl		169
 #define SYS_setresgid		170
 #define SYS_getresgid		171
-#define SYS_prctl              172
+#define SYS_prctl                                        172
 #define SYS_rt_sigreturn	173
 #define SYS_rt_sigaction	174
 #define SYS_rt_sigprocmask	175

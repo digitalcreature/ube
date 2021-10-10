@@ -93,16 +93,16 @@ MIDL_INTERFACE("1b8efec4-3019-4c27-964e-367202156906")
 IPrintDocumentPackageTarget : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetPackageTargetTypes(
-        UINT32 *targetCount,
-        GUID **targetTypes) = 0;
+                     UINT32 *targetCount,
+                     GUID **targetTypes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPackageTarget(
-        REFGUID guidTargetType,
-        REFIID riid,
-        void **ppvTarget) = 0;
+                     REFGUID guidTargetType,
+                     REFIID riid,
+                     void **ppvTarget) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -114,30 +114,30 @@ typedef struct IPrintDocumentPackageTargetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPrintDocumentPackageTarget *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPrintDocumentPackageTarget *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPrintDocumentPackageTarget *This);
+                     IPrintDocumentPackageTarget *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPrintDocumentPackageTarget *This);
+                     IPrintDocumentPackageTarget *This);
 
     /*** IPrintDocumentPackageTarget methods ***/
     HRESULT (STDMETHODCALLTYPE *GetPackageTargetTypes)(
-        IPrintDocumentPackageTarget *This,
-        UINT32 *targetCount,
-        GUID **targetTypes);
+                     IPrintDocumentPackageTarget *This,
+                     UINT32 *targetCount,
+                     GUID **targetTypes);
 
     HRESULT (STDMETHODCALLTYPE *GetPackageTarget)(
-        IPrintDocumentPackageTarget *This,
-        REFGUID guidTargetType,
-        REFIID riid,
-        void **ppvTarget);
+                     IPrintDocumentPackageTarget *This,
+                     REFGUID guidTargetType,
+                     REFIID riid,
+                     void **ppvTarget);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IPrintDocumentPackageTarget *This);
+                     IPrintDocumentPackageTarget *This);
 
     END_INTERFACE
 } IPrintDocumentPackageTargetVtbl;
@@ -214,7 +214,7 @@ MIDL_INTERFACE("ed90c8ad-5c34-4d05-a1ec-0e8a9b3ad7af")
 IPrintDocumentPackageStatusEvent : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE PackageStatusUpdated(
-        PrintDocumentPackageStatus *packageStatus) = 0;
+                     PrintDocumentPackageStatus *packageStatus) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -226,50 +226,50 @@ typedef struct IPrintDocumentPackageStatusEventVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPrintDocumentPackageStatusEvent *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPrintDocumentPackageStatusEvent *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPrintDocumentPackageStatusEvent *This);
+                     IPrintDocumentPackageStatusEvent *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPrintDocumentPackageStatusEvent *This);
+                     IPrintDocumentPackageStatusEvent *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IPrintDocumentPackageStatusEvent *This,
-        UINT *pctinfo);
+                     IPrintDocumentPackageStatusEvent *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IPrintDocumentPackageStatusEvent *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IPrintDocumentPackageStatusEvent *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IPrintDocumentPackageStatusEvent *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IPrintDocumentPackageStatusEvent *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IPrintDocumentPackageStatusEvent *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IPrintDocumentPackageStatusEvent *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IPrintDocumentPackageStatusEvent methods ***/
     HRESULT (STDMETHODCALLTYPE *PackageStatusUpdated)(
-        IPrintDocumentPackageStatusEvent *This,
-        PrintDocumentPackageStatus *packageStatus);
+                     IPrintDocumentPackageStatusEvent *This,
+                     PrintDocumentPackageStatus *packageStatus);
 
     END_INTERFACE
 } IPrintDocumentPackageStatusEventVtbl;
@@ -339,11 +339,11 @@ MIDL_INTERFACE("d2959bf7-b31b-4a3d-9600-712eb1335ba4")
 IPrintDocumentPackageTargetFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateDocumentPackageTargetForPrintJob(
-        LPCWSTR printerName,
-        LPCWSTR jobName,
-        IStream *jobOutputStream,
-        IStream *jobPrintTicketStream,
-        IPrintDocumentPackageTarget **docPackageTarget) = 0;
+                     LPCWSTR printerName,
+                     LPCWSTR jobName,
+                     IStream *jobOutputStream,
+                     IStream *jobPrintTicketStream,
+                     IPrintDocumentPackageTarget **docPackageTarget) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -355,24 +355,24 @@ typedef struct IPrintDocumentPackageTargetFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPrintDocumentPackageTargetFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPrintDocumentPackageTargetFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPrintDocumentPackageTargetFactory *This);
+                     IPrintDocumentPackageTargetFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPrintDocumentPackageTargetFactory *This);
+                     IPrintDocumentPackageTargetFactory *This);
 
     /*** IPrintDocumentPackageTargetFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateDocumentPackageTargetForPrintJob)(
-        IPrintDocumentPackageTargetFactory *This,
-        LPCWSTR printerName,
-        LPCWSTR jobName,
-        IStream *jobOutputStream,
-        IStream *jobPrintTicketStream,
-        IPrintDocumentPackageTarget **docPackageTarget);
+                     IPrintDocumentPackageTargetFactory *This,
+                     LPCWSTR printerName,
+                     LPCWSTR jobName,
+                     IStream *jobOutputStream,
+                     IStream *jobPrintTicketStream,
+                     IPrintDocumentPackageTarget **docPackageTarget);
 
     END_INTERFACE
 } IPrintDocumentPackageTargetFactoryVtbl;

@@ -71,117 +71,117 @@ typedef struct IDWriteFontFace IDWriteFontFace;
 
 typedef enum D2D1_ANTIALIAS_MODE {
   D2D1_ANTIALIAS_MODE_PER_PRIMITIVE   = 0,
-  D2D1_ANTIALIAS_MODE_ALIASED         = 1,
+  D2D1_ANTIALIAS_MODE_ALIASED                      = 1,
   D2D1_ANTIALIAS_MODE_FORCE_DWORD     = 0xffffffff
 } D2D1_ANTIALIAS_MODE;
 
 typedef enum D2D1_ARC_SIZE {
-  D2D1_ARC_SIZE_SMALL       = 0,
-  D2D1_ARC_SIZE_LARGE       = 1,
+  D2D1_ARC_SIZE_SMALL                    = 0,
+  D2D1_ARC_SIZE_LARGE                    = 1,
   D2D1_ARC_SIZE_FORCE_DWORD = 0xffffffff
 } D2D1_ARC_SIZE;
 
 enum {
     D2D1_INTERPOLATION_MODE_DEFINITION_NEAREST_NEIGHBOR    = 0,
-    D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR              = 1,
-    D2D1_INTERPOLATION_MODE_DEFINITION_CUBIC               = 2,
+    D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR                                        = 1,
+    D2D1_INTERPOLATION_MODE_DEFINITION_CUBIC                                         = 2,
     D2D1_INTERPOLATION_MODE_DEFINITION_MULTI_SAMPLE_LINEAR = 3,
-    D2D1_INTERPOLATION_MODE_DEFINITION_ANISOTROPIC         = 4,
+    D2D1_INTERPOLATION_MODE_DEFINITION_ANISOTROPIC                      = 4,
     D2D1_INTERPOLATION_MODE_DEFINITION_HIGH_QUALITY_CUBIC  = 5,
-    D2D1_INTERPOLATION_MODE_DEFINITION_FANT                = 6,
-    D2D1_INTERPOLATION_MODE_DEFINITION_MIPMAP_LINEAR       = 7
+    D2D1_INTERPOLATION_MODE_DEFINITION_FANT                                          = 6,
+    D2D1_INTERPOLATION_MODE_DEFINITION_MIPMAP_LINEAR                    = 7
 };
 
 typedef enum D2D1_BITMAP_INTERPOLATION_MODE {
   D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR   = 0,
-  D2D1_BITMAP_INTERPOLATION_MODE_LINEAR             = 1,
-  D2D1_BITMAP_INTERPOLATION_MODE_FORCE_DWORD        = 0xffffffff
+  D2D1_BITMAP_INTERPOLATION_MODE_LINEAR                                       = 1,
+  D2D1_BITMAP_INTERPOLATION_MODE_FORCE_DWORD                     = 0xffffffff
 } D2D1_BITMAP_INTERPOLATION_MODE;
 
 typedef enum D2D1_CAP_STYLE {
-  D2D1_CAP_STYLE_FLAT        = 0,
-  D2D1_CAP_STYLE_SQUARE      = 1,
-  D2D1_CAP_STYLE_ROUND       = 2,
+  D2D1_CAP_STYLE_FLAT                     = 0,
+  D2D1_CAP_STYLE_SQUARE                   = 1,
+  D2D1_CAP_STYLE_ROUND                    = 2,
   D2D1_CAP_STYLE_TRIANGLE    = 3,
   D2D1_CAP_STYLE_FORCE_DWORD = 0xffffffff
 } D2D1_CAP_STYLE;
 
 typedef enum D2D1_COMBINE_MODE {
-  D2D1_COMBINE_MODE_UNION       = 0,
+  D2D1_COMBINE_MODE_UNION                    = 0,
   D2D1_COMBINE_MODE_INTERSECT   = 1,
-  D2D1_COMBINE_MODE_XOR         = 2,
+  D2D1_COMBINE_MODE_XOR                      = 2,
   D2D1_COMBINE_MODE_EXCLUDE     = 3,
   D2D1_COMBINE_MODE_FORCE_DWORD = 0xffffffff
 } D2D1_COMBINE_MODE;
 
 typedef enum D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS {
-  D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE             = 0x00000000,
+  D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE                                       = 0x00000000,
   D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_GDI_COMPATIBLE   = 0x00000001,
-  D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_FORCE_DWORD      = 0xffffffff
+  D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_FORCE_DWORD                   = 0xffffffff
 } D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS;
 
 typedef enum D2D1_DASH_STYLE {
-  D2D1_DASH_STYLE_SOLID          = 0,
-  D2D1_DASH_STYLE_DASH           = 1,
-  D2D1_DASH_STYLE_DOT            = 2,
-  D2D1_DASH_STYLE_DASH_DOT       = 3,
+  D2D1_DASH_STYLE_SOLID                       = 0,
+  D2D1_DASH_STYLE_DASH                        = 1,
+  D2D1_DASH_STYLE_DOT                                      = 2,
+  D2D1_DASH_STYLE_DASH_DOT                    = 3,
   D2D1_DASH_STYLE_DASH_DOT_DOT   = 4,
-  D2D1_DASH_STYLE_CUSTOM         = 5,
+  D2D1_DASH_STYLE_CUSTOM                      = 5,
   D2D1_DASH_STYLE_FORCE_DWORD    = 0xffffffff
 } D2D1_DASH_STYLE;
 
 typedef enum D2D1_DC_INITIALIZE_MODE {
-  D2D1_DC_INITIALIZE_MODE_COPY        = 0,
-  D2D1_DC_INITIALIZE_MODE_CLEAR       = 1,
+  D2D1_DC_INITIALIZE_MODE_COPY                     = 0,
+  D2D1_DC_INITIALIZE_MODE_CLEAR                    = 1,
   D2D1_DC_INITIALIZE_MODE_FORCE_DWORD = 0xffffffff
 } D2D1_DC_INITIALIZE_MODE;
 
 typedef enum D2D1_DEBUG_LEVEL {
-  D2D1_DEBUG_LEVEL_NONE          = 0,
-  D2D1_DEBUG_LEVEL_ERROR         = 1,
-  D2D1_DEBUG_LEVEL_WARNING       = 2,
+  D2D1_DEBUG_LEVEL_NONE                       = 0,
+  D2D1_DEBUG_LEVEL_ERROR                      = 1,
+  D2D1_DEBUG_LEVEL_WARNING                    = 2,
   D2D1_DEBUG_LEVEL_INFORMATION   = 3,
   D2D1_DEBUG_LEVEL_FORCE_DWORD   = 0xffffffff
 } D2D1_DEBUG_LEVEL;
 
 typedef enum D2D1_DRAW_TEXT_OPTIONS {
-  D2D1_DRAW_TEXT_OPTIONS_NO_SNAP                       = 0x00000001,
-  D2D1_DRAW_TEXT_OPTIONS_CLIP                          = 0x00000002,
-  D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT             = 0x00000004,
+  D2D1_DRAW_TEXT_OPTIONS_NO_SNAP                                                              = 0x00000001,
+  D2D1_DRAW_TEXT_OPTIONS_CLIP                                                                              = 0x00000002,
+  D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT                                       = 0x00000004,
   D2D1_DRAW_TEXT_OPTIONS_DISABLE_COLOR_BITMAP_SNAPPING = 0x00000008,
-  D2D1_DRAW_TEXT_OPTIONS_NONE                          = 0x00000000,
-  D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD                   = 0xffffffff
+  D2D1_DRAW_TEXT_OPTIONS_NONE                                                                              = 0x00000000,
+  D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD                                                          = 0xffffffff
 } D2D1_DRAW_TEXT_OPTIONS;
 
 typedef enum D2D1_EXTEND_MODE {
-  D2D1_EXTEND_MODE_CLAMP       = 0,
-  D2D1_EXTEND_MODE_WRAP        = 1,
-  D2D1_EXTEND_MODE_MIRROR      = 2,
+  D2D1_EXTEND_MODE_CLAMP                    = 0,
+  D2D1_EXTEND_MODE_WRAP                     = 1,
+  D2D1_EXTEND_MODE_MIRROR                   = 2,
   D2D1_EXTEND_MODE_FORCE_DWORD = 0xffffffff
 } D2D1_EXTEND_MODE;
 
 typedef enum D2D1_FACTORY_TYPE {
   D2D1_FACTORY_TYPE_SINGLE_THREADED   = 0,
   D2D1_FACTORY_TYPE_MULTI_THREADED    = 1,
-  D2D1_FACTORY_TYPE_FORCE_DWORD       = 0xffffffff
+  D2D1_FACTORY_TYPE_FORCE_DWORD                    = 0xffffffff
 } D2D1_FACTORY_TYPE;
 
 typedef enum D2D1_FEATURE_LEVEL {
   D2D1_FEATURE_LEVEL_DEFAULT     = 0,
-  D2D1_FEATURE_LEVEL_9           = D3D10_FEATURE_LEVEL_9_1,
-  D2D1_FEATURE_LEVEL_10          = D3D10_FEATURE_LEVEL_10_0,
+  D2D1_FEATURE_LEVEL_9                        = D3D10_FEATURE_LEVEL_9_1,
+  D2D1_FEATURE_LEVEL_10                       = D3D10_FEATURE_LEVEL_10_0,
   D2D1_FEATURE_LEVEL_FORCE_DWORD = 0xffffffff
 } D2D1_FEATURE_LEVEL;
 
 typedef enum D2D1_FIGURE_BEGIN {
-  D2D1_FIGURE_BEGIN_FILLED      = 0,
-  D2D1_FIGURE_BEGIN_HOLLOW      = 1,
+  D2D1_FIGURE_BEGIN_FILLED                   = 0,
+  D2D1_FIGURE_BEGIN_HOLLOW                   = 1,
   D2D1_FIGURE_BEGIN_FORCE_DWORD = 0xffffffff
 } D2D1_FIGURE_BEGIN;
 
 typedef enum D2D1_FIGURE_END {
-  D2D1_FIGURE_END_OPEN        = 0,
-  D2D1_FIGURE_END_CLOSED      = 1,
+  D2D1_FIGURE_END_OPEN                     = 0,
+  D2D1_FIGURE_END_CLOSED                   = 1,
   D2D1_FIGURE_END_FORCE_DWORD = 0xffffffff
 } D2D1_FIGURE_END;
 
@@ -192,59 +192,59 @@ typedef enum D2D1_FILL_MODE {
 } D2D1_FILL_MODE;
 
 typedef enum D2D1_GAMMA {
-  D2D1_GAMMA_2_2         = 0,
-  D2D1_GAMMA_1_0         = 1,
+  D2D1_GAMMA_2_2                      = 0,
+  D2D1_GAMMA_1_0                      = 1,
   D2D1_GAMMA_FORCE_DWORD = 0xffffffff
 } D2D1_GAMMA;
 
 typedef enum D2D1_GEOMETRY_RELATION {
-  D2D1_GEOMETRY_RELATION_UNKNOWN        = 0,
-  D2D1_GEOMETRY_RELATION_DISJOINT       = 1,
+  D2D1_GEOMETRY_RELATION_UNKNOWN                     = 0,
+  D2D1_GEOMETRY_RELATION_DISJOINT                    = 1,
   D2D1_GEOMETRY_RELATION_IS_CONTAINED   = 2,
-  D2D1_GEOMETRY_RELATION_CONTAINS       = 3,
-  D2D1_GEOMETRY_RELATION_OVERLAP        = 4,
+  D2D1_GEOMETRY_RELATION_CONTAINS                    = 3,
+  D2D1_GEOMETRY_RELATION_OVERLAP                     = 4,
   D2D1_GEOMETRY_RELATION_FORCE_DWORD    = 0xffffffff
 } D2D1_GEOMETRY_RELATION;
 
 typedef enum D2D1_GEOMETRY_SIMPLIFICATION_OPTION {
   D2D1_GEOMETRY_SIMPLIFICATION_OPTION_CUBICS_AND_LINES   = 0,
-  D2D1_GEOMETRY_SIMPLIFICATION_OPTION_LINES              = 1,
-  D2D1_GEOMETRY_SIMPLIFICATION_OPTION_FORCE_DWORD        = 0xffffffff
+  D2D1_GEOMETRY_SIMPLIFICATION_OPTION_LINES                                        = 1,
+  D2D1_GEOMETRY_SIMPLIFICATION_OPTION_FORCE_DWORD                     = 0xffffffff
 } D2D1_GEOMETRY_SIMPLIFICATION_OPTION;
 
 typedef enum D2D1_LAYER_OPTIONS {
-  D2D1_LAYER_OPTIONS_NONE                       = 0x00000000,
+  D2D1_LAYER_OPTIONS_NONE                                                              = 0x00000000,
   D2D1_LAYER_OPTIONS_INITIALIZE_FOR_CLEARTYPE   = 0x00000001,
-  D2D1_LAYER_OPTIONS_FORCE_DWORD                = 0xffffffff
+  D2D1_LAYER_OPTIONS_FORCE_DWORD                                          = 0xffffffff
 } D2D1_LAYER_OPTIONS;
 
 typedef enum D2D1_LINE_JOIN {
-  D2D1_LINE_JOIN_MITER            = 0,
-  D2D1_LINE_JOIN_BEVEL            = 1,
-  D2D1_LINE_JOIN_ROUND            = 2,
+  D2D1_LINE_JOIN_MITER                                      = 0,
+  D2D1_LINE_JOIN_BEVEL                                      = 1,
+  D2D1_LINE_JOIN_ROUND                                      = 2,
   D2D1_LINE_JOIN_MITER_OR_BEVEL   = 3,
-  D2D1_LINE_JOIN_FORCE_DWORD      = 0xffffffff
+  D2D1_LINE_JOIN_FORCE_DWORD                   = 0xffffffff
 } D2D1_LINE_JOIN;
 
 typedef enum D2D1_OPACITY_MASK_CONTENT {
-  D2D1_OPACITY_MASK_CONTENT_GRAPHICS              = 0,
-  D2D1_OPACITY_MASK_CONTENT_TEXT_NATURAL          = 1,
+  D2D1_OPACITY_MASK_CONTENT_GRAPHICS                                        = 0,
+  D2D1_OPACITY_MASK_CONTENT_TEXT_NATURAL                       = 1,
   D2D1_OPACITY_MASK_CONTENT_TEXT_GDI_COMPATIBLE   = 2,
-  D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD           = 0xffffffff
+  D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD                        = 0xffffffff
 } D2D1_OPACITY_MASK_CONTENT;
 
 typedef enum D2D1_PATH_SEGMENT {
-  D2D1_PATH_SEGMENT_NONE                    = 0x00000000,
-  D2D1_PATH_SEGMENT_FORCE_UNSTROKED         = 0x00000001,
+  D2D1_PATH_SEGMENT_NONE                                                           = 0x00000000,
+  D2D1_PATH_SEGMENT_FORCE_UNSTROKED                      = 0x00000001,
   D2D1_PATH_SEGMENT_FORCE_ROUND_LINE_JOIN   = 0x00000002,
-  D2D1_PATH_SEGMENT_FORCE_DWORD             = 0xffffffff
+  D2D1_PATH_SEGMENT_FORCE_DWORD                                       = 0xffffffff
 } D2D1_PATH_SEGMENT;
 
 typedef enum D2D1_PRESENT_OPTIONS {
-  D2D1_PRESENT_OPTIONS_NONE              = 0x00000000,
+  D2D1_PRESENT_OPTIONS_NONE                                        = 0x00000000,
   D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS   = 0x00000001,
-  D2D1_PRESENT_OPTIONS_IMMEDIATELY       = 0x00000002,
-  D2D1_PRESENT_OPTIONS_FORCE_DWORD       = 0xffffffff
+  D2D1_PRESENT_OPTIONS_IMMEDIATELY                    = 0x00000002,
+  D2D1_PRESENT_OPTIONS_FORCE_DWORD                    = 0xffffffff
 } D2D1_PRESENT_OPTIONS;
 
 typedef enum D2D1_RENDER_TARGET_TYPE {
@@ -255,16 +255,16 @@ typedef enum D2D1_RENDER_TARGET_TYPE {
 } D2D1_RENDER_TARGET_TYPE;
 
 typedef enum D2D1_RENDER_TARGET_USAGE {
-  D2D1_RENDER_TARGET_USAGE_NONE                    = 0x00000000,
+  D2D1_RENDER_TARGET_USAGE_NONE                                                           = 0x00000000,
   D2D1_RENDER_TARGET_USAGE_FORCE_BITMAP_REMOTING   = 0x00000001,
-  D2D1_RENDER_TARGET_USAGE_GDI_COMPATIBLE          = 0x00000002,
-  D2D1_RENDER_TARGET_USAGE_FORCE_DWORD             = 0xffffffff
+  D2D1_RENDER_TARGET_USAGE_GDI_COMPATIBLE                       = 0x00000002,
+  D2D1_RENDER_TARGET_USAGE_FORCE_DWORD                                       = 0xffffffff
 } D2D1_RENDER_TARGET_USAGE;
 
 typedef enum D2D1_SWEEP_DIRECTION {
   D2D1_SWEEP_DIRECTION_COUNTER_CLOCKWISE   = 0,
-  D2D1_SWEEP_DIRECTION_CLOCKWISE           = 1,
-  D2D1_SWEEP_DIRECTION_FORCE_DWORD         = 0xffffffff
+  D2D1_SWEEP_DIRECTION_CLOCKWISE                        = 1,
+  D2D1_SWEEP_DIRECTION_FORCE_DWORD                      = 0xffffffff
 } D2D1_SWEEP_DIRECTION;
 
 typedef enum D2D1_TEXT_ANTIALIAS_MODE {
@@ -276,7 +276,7 @@ typedef enum D2D1_TEXT_ANTIALIAS_MODE {
 } D2D1_TEXT_ANTIALIAS_MODE;
 
 typedef enum D2D1_WINDOW_STATE {
-  D2D1_WINDOW_STATE_NONE        = 0x00000000,
+  D2D1_WINDOW_STATE_NONE                     = 0x00000000,
   D2D1_WINDOW_STATE_OCCLUDED    = 0x00000001,
   D2D1_WINDOW_STATE_FORCE_DWORD = 0xffffffff
 } D2D1_WINDOW_STATE;
@@ -350,11 +350,11 @@ typedef D2D_RECT_U D2D1_RECT_U;
 typedef D2D_COLOR_F D2D1_COLOR_F;
 
 struct D2D1_ARC_SEGMENT {
-  D2D1_POINT_2F        point;
-  D2D1_SIZE_F          size;
-  FLOAT                rotationAngle;
+  D2D1_POINT_2F                     point;
+  D2D1_SIZE_F                       size;
+  FLOAT                                          rotationAngle;
   D2D1_SWEEP_DIRECTION sweepDirection;
-  D2D1_ARC_SIZE        arcSize;
+  D2D1_ARC_SIZE                     arcSize;
 };
 
 struct D2D1_BEZIER_SEGMENT {
@@ -364,34 +364,34 @@ struct D2D1_BEZIER_SEGMENT {
 };
 
 struct D2D1_BITMAP_BRUSH_PROPERTIES {
-  D2D1_EXTEND_MODE               extendModeX;
-  D2D1_EXTEND_MODE               extendModeY;
+  D2D1_EXTEND_MODE                                         extendModeX;
+  D2D1_EXTEND_MODE                                         extendModeY;
   D2D1_BITMAP_INTERPOLATION_MODE interpolationMode;
 };
 
 struct D2D1_BITMAP_PROPERTIES {
   D2D1_PIXEL_FORMAT pixelFormat;
-  FLOAT             dpiX;
-  FLOAT             dpiY;
+  FLOAT                                       dpiX;
+  FLOAT                                       dpiY;
 };
 
 struct D2D1_BRUSH_PROPERTIES {
-  FLOAT             opacity;
+  FLOAT                                       opacity;
   D2D1_MATRIX_3X2_F transform;
 };
 
 struct D2D1_DRAWING_STATE_DESCRIPTION {
-  D2D1_ANTIALIAS_MODE      antialiasMode;
+  D2D1_ANTIALIAS_MODE                   antialiasMode;
   D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode;
-  D2D1_TAG                 tag1;
-  D2D1_TAG                 tag2;
-  D2D1_MATRIX_3X2_F        transform;
+  D2D1_TAG                                           tag1;
+  D2D1_TAG                                           tag2;
+  D2D1_MATRIX_3X2_F                     transform;
 };
 
 struct D2D1_ELLIPSE {
   D2D1_POINT_2F point;
-  FLOAT         radiusX;
-  FLOAT         radiusY;
+  FLOAT                      radiusX;
+  FLOAT                      radiusY;
 };
 
 struct D2D1_FACTORY_OPTIONS {
@@ -399,23 +399,23 @@ struct D2D1_FACTORY_OPTIONS {
 };
 
 struct D2D1_GRADIENT_STOP {
-  FLOAT        position;
+  FLOAT                     position;
   D2D1_COLOR_F color;
 };
 
 struct D2D1_HWND_RENDER_TARGET_PROPERTIES {
-  HWND                 hwnd;
-  D2D1_SIZE_U          pixelSize;
+  HWND                                           hwnd;
+  D2D1_SIZE_U                       pixelSize;
   D2D1_PRESENT_OPTIONS presentOptions;
 };
 
 struct D2D1_LAYER_PARAMETERS {
-  D2D1_RECT_F         contentBounds;
-  ID2D1Geometry       *geometricMask;
+  D2D1_RECT_F                      contentBounds;
+  ID2D1Geometry                    *geometricMask;
   D2D1_ANTIALIAS_MODE maskAntialiasMode;
   D2D1_MATRIX_3X2_F   maskTransform;
-  FLOAT               opacity;
-  ID2D1Brush          *opacityBrush;
+  FLOAT                                         opacity;
+  ID2D1Brush                       *opacityBrush;
   D2D1_LAYER_OPTIONS  layerOptions;
 };
 
@@ -432,23 +432,23 @@ struct D2D1_QUADRATIC_BEZIER_SEGMENT {
 struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES {
   D2D1_POINT_2F center;
   D2D1_POINT_2F gradientOriginOffset;
-  FLOAT         radiusX;
-  FLOAT         radiusY;
+  FLOAT                      radiusX;
+  FLOAT                      radiusY;
 };
 
 struct D2D1_RENDER_TARGET_PROPERTIES {
   D2D1_RENDER_TARGET_TYPE  type;
-  D2D1_PIXEL_FORMAT        pixelFormat;
-  FLOAT                    dpiX;
-  FLOAT                    dpiY;
+  D2D1_PIXEL_FORMAT                     pixelFormat;
+  FLOAT                                                           dpiX;
+  FLOAT                                                           dpiY;
   D2D1_RENDER_TARGET_USAGE usage;
-  D2D1_FEATURE_LEVEL       minLevel;
+  D2D1_FEATURE_LEVEL                    minLevel;
 };
 
 struct D2D1_ROUNDED_RECT {
   D2D1_RECT_F rect;
-  FLOAT       radiusX;
-  FLOAT       radiusY;
+  FLOAT                    radiusX;
+  FLOAT                    radiusY;
 };
 
 struct D2D1_STROKE_STYLE_PROPERTIES {
@@ -456,9 +456,9 @@ struct D2D1_STROKE_STYLE_PROPERTIES {
   D2D1_CAP_STYLE  endCap;
   D2D1_CAP_STYLE  dashCap;
   D2D1_LINE_JOIN  lineJoin;
-  FLOAT           miterLimit;
+  FLOAT                        miterLimit;
   D2D1_DASH_STYLE dashStyle;
-  FLOAT           dashOffset;
+  FLOAT                        dashOffset;
 };
 
 struct D2D1_TRIANGLE {
@@ -511,7 +511,7 @@ interface ID2D1Brush : public ID2D1Resource {
     STDMETHOD_(void, GetTransform)(D2D1_MATRIX_3X2_F *transform) const PURE;
 
     void SetTransform(const D2D1_MATRIX_3X2_F &transform) {
-        SetTransform(&transform);
+                     SetTransform(&transform);
     }
 };
 
@@ -574,9 +574,9 @@ interface ID2D1Bitmap : public ID2D1Image {
 #else
     virtual D2D1_SIZE_F* STDMETHODCALLTYPE GetSize(D2D1_SIZE_F*) const = 0;
     D2D1_SIZE_F STDMETHODCALLTYPE GetSize() const {
-        D2D1_SIZE_F __ret;
-        GetSize(&__ret);
-        return __ret;
+                     D2D1_SIZE_F __ret;
+                     GetSize(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -585,9 +585,9 @@ interface ID2D1Bitmap : public ID2D1Image {
 #else
     virtual D2D1_SIZE_U* STDMETHODCALLTYPE GetPixelSize(D2D1_SIZE_U*) const = 0;
     D2D1_SIZE_U STDMETHODCALLTYPE GetPixelSize() const {
-        D2D1_SIZE_U __ret;
-        GetPixelSize(&__ret);
-        return __ret;
+                     D2D1_SIZE_U __ret;
+                     GetPixelSize(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -596,9 +596,9 @@ interface ID2D1Bitmap : public ID2D1Image {
 #else
     virtual D2D1_PIXEL_FORMAT* STDMETHODCALLTYPE GetPixelFormat(D2D1_PIXEL_FORMAT*) const = 0;
     D2D1_PIXEL_FORMAT STDMETHODCALLTYPE GetPixelFormat() const {
-        D2D1_PIXEL_FORMAT __ret;
-        GetPixelFormat(&__ret);
-        return __ret;
+                     D2D1_PIXEL_FORMAT __ret;
+                     GetPixelFormat(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -750,9 +750,9 @@ interface ID2D1RenderTarget : public ID2D1Resource {
 #else
     virtual D2D1_PIXEL_FORMAT* STDMETHODCALLTYPE GetPixelFormat(D2D1_PIXEL_FORMAT*) const = 0;
     D2D1_PIXEL_FORMAT STDMETHODCALLTYPE GetPixelFormat() const {
-        D2D1_PIXEL_FORMAT __ret;
-        GetPixelFormat(&__ret);
-        return __ret;
+                     D2D1_PIXEL_FORMAT __ret;
+                     GetPixelFormat(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -764,9 +764,9 @@ interface ID2D1RenderTarget : public ID2D1Resource {
 #else
     virtual D2D1_SIZE_F* STDMETHODCALLTYPE GetSize(D2D1_SIZE_F*) const = 0;
     D2D1_SIZE_F STDMETHODCALLTYPE GetSize() const {
-        D2D1_SIZE_F __ret;
-        GetSize(&__ret);
-        return __ret;
+                     D2D1_SIZE_F __ret;
+                     GetSize(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -775,9 +775,9 @@ interface ID2D1RenderTarget : public ID2D1Resource {
 #else
     virtual D2D1_SIZE_U* STDMETHODCALLTYPE GetPixelSize(D2D1_SIZE_U*) const = 0;
     D2D1_SIZE_U STDMETHODCALLTYPE GetPixelSize() const {
-        D2D1_SIZE_U __ret;
-        GetPixelSize(&__ret);
-        return __ret;
+                     D2D1_SIZE_U __ret;
+                     GetPixelSize(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -785,147 +785,147 @@ interface ID2D1RenderTarget : public ID2D1Resource {
     STDMETHOD_(BOOL, IsSupported)(const D2D1_RENDER_TARGET_PROPERTIES *renderTargetProperties) const PURE;
 
     HRESULT CreateBitmap(D2D1_SIZE_U size, const void *srcData, UINT32 pitch, const D2D1_BITMAP_PROPERTIES &bitmapProperties, ID2D1Bitmap **bitmap) {
-        return CreateBitmap(size, srcData, pitch, &bitmapProperties, bitmap);
+                     return CreateBitmap(size, srcData, pitch, &bitmapProperties, bitmap);
     }
 
     HRESULT CreateBitmap(D2D1_SIZE_U size, const D2D1_BITMAP_PROPERTIES &bitmapProperties, ID2D1Bitmap **bitmap) {
-        return CreateBitmap(size, NULL, 0, &bitmapProperties, bitmap);
+                     return CreateBitmap(size, NULL, 0, &bitmapProperties, bitmap);
     }
 
     HRESULT CreateBitmapFromWicBitmap(IWICBitmapSource *wicBitmapSource, const D2D1_BITMAP_PROPERTIES &bitmapProperties, ID2D1Bitmap **bitmap) {
-        return CreateBitmapFromWicBitmap(wicBitmapSource, &bitmapProperties, bitmap);
+                     return CreateBitmapFromWicBitmap(wicBitmapSource, &bitmapProperties, bitmap);
     }
 
     HRESULT CreateBitmapFromWicBitmap(IWICBitmapSource *wicBitmapSource, ID2D1Bitmap **bitmap) {
-        return CreateBitmapFromWicBitmap(wicBitmapSource, NULL, bitmap);
+                     return CreateBitmapFromWicBitmap(wicBitmapSource, NULL, bitmap);
     }
 
     HRESULT CreateBitmapBrush(ID2D1Bitmap *bitmap, ID2D1BitmapBrush **bitmapBrush) {
-        return CreateBitmapBrush(bitmap, NULL, NULL, bitmapBrush);
+                     return CreateBitmapBrush(bitmap, NULL, NULL, bitmapBrush);
     }
 
     HRESULT CreateBitmapBrush(ID2D1Bitmap *bitmap, const D2D1_BITMAP_BRUSH_PROPERTIES &bitmapBrushProperties, ID2D1BitmapBrush **bitmapBrush) {
-        return CreateBitmapBrush(bitmap, &bitmapBrushProperties, NULL, bitmapBrush);
+                     return CreateBitmapBrush(bitmap, &bitmapBrushProperties, NULL, bitmapBrush);
     }
 
     HRESULT CreateBitmapBrush(ID2D1Bitmap *bitmap, const D2D1_BITMAP_BRUSH_PROPERTIES &bitmapBrushProperties, const D2D1_BRUSH_PROPERTIES &brushProperties, ID2D1BitmapBrush **bitmapBrush) {
-        return CreateBitmapBrush(bitmap, &bitmapBrushProperties, &brushProperties, bitmapBrush);
+                     return CreateBitmapBrush(bitmap, &bitmapBrushProperties, &brushProperties, bitmapBrush);
     }
 
     HRESULT CreateSolidColorBrush(const D2D1_COLOR_F &color, ID2D1SolidColorBrush **solidColorBrush) {
-        return CreateSolidColorBrush(&color, NULL, solidColorBrush);
+                     return CreateSolidColorBrush(&color, NULL, solidColorBrush);
     }
 
     HRESULT CreateSolidColorBrush(const D2D1_COLOR_F &color, const D2D1_BRUSH_PROPERTIES &brushProperties, ID2D1SolidColorBrush **solidColorBrush) {
-        return CreateSolidColorBrush(&color, &brushProperties, solidColorBrush);
+                     return CreateSolidColorBrush(&color, &brushProperties, solidColorBrush);
     }
 
     HRESULT CreateGradientStopCollection(const D2D1_GRADIENT_STOP *gradientStops, UINT gradientStopsCount, ID2D1GradientStopCollection **gradientStopCollection) {
-        return CreateGradientStopCollection(gradientStops, gradientStopsCount, D2D1_GAMMA_2_2, D2D1_EXTEND_MODE_CLAMP, gradientStopCollection);
+                     return CreateGradientStopCollection(gradientStops, gradientStopsCount, D2D1_GAMMA_2_2, D2D1_EXTEND_MODE_CLAMP, gradientStopCollection);
     }
 
     HRESULT CreateLinearGradientBrush(const D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES &linearGradientBrushProperties, ID2D1GradientStopCollection *gradientStopCollection, ID2D1LinearGradientBrush **linearGradientBrush) {
-        return CreateLinearGradientBrush(&linearGradientBrushProperties, NULL, gradientStopCollection, linearGradientBrush);
+                     return CreateLinearGradientBrush(&linearGradientBrushProperties, NULL, gradientStopCollection, linearGradientBrush);
     }
 
     HRESULT CreateLinearGradientBrush(const D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES &linearGradientBrushProperties, const D2D1_BRUSH_PROPERTIES &brushProperties, ID2D1GradientStopCollection *gradientStopCollection, ID2D1LinearGradientBrush **linearGradientBrush) {
-        return CreateLinearGradientBrush(&linearGradientBrushProperties, &brushProperties, gradientStopCollection, linearGradientBrush);
+                     return CreateLinearGradientBrush(&linearGradientBrushProperties, &brushProperties, gradientStopCollection, linearGradientBrush);
     }
 
     HRESULT CreateRadialGradientBrush(const D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES &radialGradientBrushProperties, ID2D1GradientStopCollection *gradientStopCollection, ID2D1RadialGradientBrush **radialGradientBrush) {
-        return CreateRadialGradientBrush(&radialGradientBrushProperties, NULL, gradientStopCollection, radialGradientBrush);
+                     return CreateRadialGradientBrush(&radialGradientBrushProperties, NULL, gradientStopCollection, radialGradientBrush);
     }
 
     HRESULT CreateRadialGradientBrush(const D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES &radialGradientBrushProperties, const D2D1_BRUSH_PROPERTIES &brushProperties, ID2D1GradientStopCollection *gradientStopCollection, ID2D1RadialGradientBrush **radialGradientBrush) {
-        return CreateRadialGradientBrush(&radialGradientBrushProperties, &brushProperties, gradientStopCollection, radialGradientBrush);
+                     return CreateRadialGradientBrush(&radialGradientBrushProperties, &brushProperties, gradientStopCollection, radialGradientBrush);
     }
 
     HRESULT CreateCompatibleRenderTarget(ID2D1BitmapRenderTarget **bitmapRenderTarget) {
-        return CreateCompatibleRenderTarget(NULL, NULL, NULL, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE, bitmapRenderTarget);
+                     return CreateCompatibleRenderTarget(NULL, NULL, NULL, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE, bitmapRenderTarget);
     }
 
     HRESULT CreateCompatibleRenderTarget(D2D1_SIZE_F desiredSize, ID2D1BitmapRenderTarget **bitmapRenderTarget) {
-        return CreateCompatibleRenderTarget(&desiredSize, NULL, NULL, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE, bitmapRenderTarget);
+                     return CreateCompatibleRenderTarget(&desiredSize, NULL, NULL, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE, bitmapRenderTarget);
     }
 
     HRESULT CreateCompatibleRenderTarget(D2D1_SIZE_F desiredSize, D2D1_SIZE_U desiredPixelSize, ID2D1BitmapRenderTarget **bitmapRenderTarget){
-        return CreateCompatibleRenderTarget(&desiredSize, &desiredPixelSize, NULL, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE, bitmapRenderTarget);
+                     return CreateCompatibleRenderTarget(&desiredSize, &desiredPixelSize, NULL, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE, bitmapRenderTarget);
     }
 
     HRESULT CreateCompatibleRenderTarget(D2D1_SIZE_F desiredSize, D2D1_SIZE_U desiredPixelSize, D2D1_PIXEL_FORMAT desiredFormat, ID2D1BitmapRenderTarget **bitmapRenderTarget) {
-        return CreateCompatibleRenderTarget(&desiredSize, &desiredPixelSize, &desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE, bitmapRenderTarget);
+                     return CreateCompatibleRenderTarget(&desiredSize, &desiredPixelSize, &desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE, bitmapRenderTarget);
     }
 
     HRESULT CreateCompatibleRenderTarget(D2D1_SIZE_F desiredSize, D2D1_SIZE_U desiredPixelSize, D2D1_PIXEL_FORMAT desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, ID2D1BitmapRenderTarget **bitmapRenderTarget) {
-        return CreateCompatibleRenderTarget(&desiredSize, &desiredPixelSize, &desiredFormat, options, bitmapRenderTarget);
+                     return CreateCompatibleRenderTarget(&desiredSize, &desiredPixelSize, &desiredFormat, options, bitmapRenderTarget);
     }
 
     HRESULT CreateLayer(D2D1_SIZE_F size, ID2D1Layer **layer) {
-        return CreateLayer(&size, layer);
+                     return CreateLayer(&size, layer);
     }
 
     HRESULT CreateLayer(ID2D1Layer **layer) {
-        return CreateLayer(NULL, layer);
+                     return CreateLayer(NULL, layer);
     }
 
     void DrawRectangle(const D2D1_RECT_F &rect, ID2D1Brush *brush, FLOAT strokeWidth = 1.0f, ID2D1StrokeStyle *strokeStyle = NULL) {
-        DrawRectangle(&rect, brush, strokeWidth, strokeStyle);
+                     DrawRectangle(&rect, brush, strokeWidth, strokeStyle);
     }
 
     void FillRectangle(const D2D1_RECT_F &rect, ID2D1Brush *brush) {
-        FillRectangle(&rect, brush);
+                     FillRectangle(&rect, brush);
     }
 
     void DrawRoundedRectangle(const D2D1_ROUNDED_RECT &roundedRect, ID2D1Brush *brush, FLOAT strokeWidth = 1.0f, ID2D1StrokeStyle *strokeStyle = NULL) {
-        DrawRoundedRectangle(&roundedRect, brush, strokeWidth, strokeStyle);
+                     DrawRoundedRectangle(&roundedRect, brush, strokeWidth, strokeStyle);
     }
 
     void FillRoundedRectangle(const D2D1_ROUNDED_RECT &roundedRect, ID2D1Brush *brush) {
-        FillRoundedRectangle(&roundedRect, brush);
+                     FillRoundedRectangle(&roundedRect, brush);
     }
 
     void DrawEllipse(const D2D1_ELLIPSE &ellipse, ID2D1Brush *brush, FLOAT strokeWidth = 1.0f, ID2D1StrokeStyle *strokeStyle = NULL) {
-        DrawEllipse(&ellipse, brush, strokeWidth, strokeStyle);
+                     DrawEllipse(&ellipse, brush, strokeWidth, strokeStyle);
     }
 
     void FillEllipse(const D2D1_ELLIPSE &ellipse, ID2D1Brush *brush) {
-        FillEllipse(&ellipse, brush);
+                     FillEllipse(&ellipse, brush);
     }
 
     void FillOpacityMask(ID2D1Bitmap *opacityMask, ID2D1Brush *brush, D2D1_OPACITY_MASK_CONTENT content, const D2D1_RECT_F &destinationRectangle, const D2D1_RECT_F &sourceRectangle) {
-        FillOpacityMask(opacityMask, brush, content, &destinationRectangle, &sourceRectangle);
+                     FillOpacityMask(opacityMask, brush, content, &destinationRectangle, &sourceRectangle);
     }
 
     void DrawBitmap(ID2D1Bitmap *bitmap, const D2D1_RECT_F &destinationRectangle, FLOAT opacity = 1.0f, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, const D2D1_RECT_F *sourceRectangle = NULL) {
-        DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, sourceRectangle);
+                     DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, sourceRectangle);
     }
 
     void DrawBitmap(ID2D1Bitmap *bitmap, const D2D1_RECT_F &destinationRectangle, FLOAT opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, const D2D1_RECT_F &sourceRectangle) {
-        DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, &sourceRectangle);
+                     DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, &sourceRectangle);
     }
 
     void SetTransform(const D2D1_MATRIX_3X2_F &transform) {
-        SetTransform(&transform);
+                     SetTransform(&transform);
     }
 
     void PushLayer(const D2D1_LAYER_PARAMETERS &layerParameters, ID2D1Layer *layer) {
-        PushLayer(&layerParameters, layer);
+                     PushLayer(&layerParameters, layer);
     }
 
     void PushAxisAlignedClip(const D2D1_RECT_F &clipRect, D2D1_ANTIALIAS_MODE antialiasMode) {
-        return PushAxisAlignedClip(&clipRect, antialiasMode);
+                     return PushAxisAlignedClip(&clipRect, antialiasMode);
     }
 
     void Clear(const D2D1_COLOR_F &clearColor) {
-        return Clear(&clearColor);
+                     return Clear(&clearColor);
     }
 
     void DrawText(const WCHAR *string, UINT stringLength, IDWriteTextFormat *textFormat, const D2D1_RECT_F &layoutRect, ID2D1Brush *defaultForegroundBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL) {
-        return DrawText(string, stringLength, textFormat, &layoutRect, defaultForegroundBrush, options, measuringMode);
+                     return DrawText(string, stringLength, textFormat, &layoutRect, defaultForegroundBrush, options, measuringMode);
     }
 
     BOOL IsSupported(const D2D1_RENDER_TARGET_PROPERTIES &renderTargetProperties) const {
-        return IsSupported(&renderTargetProperties);
+                     return IsSupported(&renderTargetProperties);
     }
 };
 
@@ -1073,151 +1073,151 @@ interface ID2D1Geometry : public ID2D1Resource {
     STDMETHOD(Widen)(FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F *worldTransform, FLOAT flatteningTolerance, ID2D1SimplifiedGeometrySink *geometrySink) const PURE;
 
     HRESULT GetBounds(const D2D1_MATRIX_3X2_F &worldTransform, D2D1_RECT_F *bounds) const {
-        return GetBounds(&worldTransform, bounds);
+                     return GetBounds(&worldTransform, bounds);
     }
 
     HRESULT GetWidenedBounds(FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, D2D1_RECT_F *bounds) const {
-        return GetWidenedBounds(strokeWidth, strokeStyle, &worldTransform, flatteningTolerance, bounds);
+                     return GetWidenedBounds(strokeWidth, strokeStyle, &worldTransform, flatteningTolerance, bounds);
     }
 
     HRESULT GetWidenedBounds(FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F *worldTransform, D2D1_RECT_F *bounds) const {
-        return GetWidenedBounds(strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, bounds);
+                     return GetWidenedBounds(strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, bounds);
     }
 
     HRESULT GetWidenedBounds(FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F &worldTransform, D2D1_RECT_F *bounds) const {
-        return GetWidenedBounds(strokeWidth, strokeStyle, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, bounds);
+                     return GetWidenedBounds(strokeWidth, strokeStyle, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, bounds);
     }
 
     HRESULT StrokeContainsPoint(D2D1_POINT_2F point, FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, BOOL *contains) const {
-        return StrokeContainsPoint(point, strokeWidth, strokeStyle, &worldTransform, flatteningTolerance, contains);
+                     return StrokeContainsPoint(point, strokeWidth, strokeStyle, &worldTransform, flatteningTolerance, contains);
     }
 
     HRESULT StrokeContainsPoint(D2D1_POINT_2F point, FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F *worldTransform, BOOL *contains) const {
-        return StrokeContainsPoint(point, strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
+                     return StrokeContainsPoint(point, strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
     }
 
     HRESULT StrokeContainsPoint(D2D1_POINT_2F point, FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F &worldTransform, BOOL *contains) const {
-        return StrokeContainsPoint(point, strokeWidth, strokeStyle, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
+                     return StrokeContainsPoint(point, strokeWidth, strokeStyle, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
     }
 
     HRESULT FillContainsPoint(D2D1_POINT_2F point, const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, BOOL *contains) const {
-        return FillContainsPoint(point, &worldTransform, flatteningTolerance, contains);
+                     return FillContainsPoint(point, &worldTransform, flatteningTolerance, contains);
     }
 
     HRESULT FillContainsPoint(D2D1_POINT_2F point, const D2D1_MATRIX_3X2_F *worldTransform, BOOL *contains) const {
-        return FillContainsPoint(point, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
+                     return FillContainsPoint(point, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
     }
 
     HRESULT FillContainsPoint(D2D1_POINT_2F point, const D2D1_MATRIX_3X2_F &worldTransform, BOOL *contains) const {
-        return FillContainsPoint(point, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
+                     return FillContainsPoint(point, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
     }
 
     HRESULT CompareWithGeometry(ID2D1Geometry *inputGeometry, const D2D1_MATRIX_3X2_F &inputGeometryTransform, FLOAT flatteningTolerance, D2D1_GEOMETRY_RELATION *relation) const {
-        return CompareWithGeometry(inputGeometry, &inputGeometryTransform, flatteningTolerance, relation);
+                     return CompareWithGeometry(inputGeometry, &inputGeometryTransform, flatteningTolerance, relation);
     }
 
     HRESULT CompareWithGeometry(ID2D1Geometry *inputGeometry, const D2D1_MATRIX_3X2_F *inputGeometryTransform, D2D1_GEOMETRY_RELATION *relation) const {
-        return CompareWithGeometry(inputGeometry, inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, relation);
+                     return CompareWithGeometry(inputGeometry, inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, relation);
     }
 
     HRESULT CompareWithGeometry(ID2D1Geometry *inputGeometry, const D2D1_MATRIX_3X2_F &inputGeometryTransform, D2D1_GEOMETRY_RELATION *relation) const {
-        return CompareWithGeometry(inputGeometry, &inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, relation);
+                     return CompareWithGeometry(inputGeometry, &inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, relation);
     }
 
     HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Simplify(simplificationOption, &worldTransform, flatteningTolerance, geometrySink);
+                     return Simplify(simplificationOption, &worldTransform, flatteningTolerance, geometrySink);
     }
 
     HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, const D2D1_MATRIX_3X2_F *worldTransform, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Simplify(simplificationOption, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+                     return Simplify(simplificationOption, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
     }
 
     HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, const D2D1_MATRIX_3X2_F &worldTransform, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Simplify(simplificationOption, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+                     return Simplify(simplificationOption, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
     }
 
     HRESULT Tessellate(const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, ID2D1TessellationSink *tessellationSink) const {
-        return Tessellate(&worldTransform, flatteningTolerance, tessellationSink);
+                     return Tessellate(&worldTransform, flatteningTolerance, tessellationSink);
     }
 
     HRESULT Tessellate(const D2D1_MATRIX_3X2_F *worldTransform, ID2D1TessellationSink *tessellationSink) const {
-        return Tessellate(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, tessellationSink);
+                     return Tessellate(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, tessellationSink);
     }
 
     HRESULT Tessellate(const D2D1_MATRIX_3X2_F &worldTransform, ID2D1TessellationSink *tessellationSink) const {
-        return Tessellate(&worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, tessellationSink);
+                     return Tessellate(&worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, tessellationSink);
     }
 
     HRESULT CombineWithGeometry(ID2D1Geometry *inputGeometry, D2D1_COMBINE_MODE combineMode, const D2D1_MATRIX_3X2_F &inputGeometryTransform, FLOAT flatteningTolerance, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return CombineWithGeometry(inputGeometry, combineMode, &inputGeometryTransform, flatteningTolerance, geometrySink);
+                     return CombineWithGeometry(inputGeometry, combineMode, &inputGeometryTransform, flatteningTolerance, geometrySink);
     }
 
     HRESULT CombineWithGeometry(ID2D1Geometry *inputGeometry, D2D1_COMBINE_MODE combineMode, CONST D2D1_MATRIX_3X2_F *inputGeometryTransform, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return CombineWithGeometry(inputGeometry, combineMode, inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+                     return CombineWithGeometry(inputGeometry, combineMode, inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
     }
 
     HRESULT CombineWithGeometry(ID2D1Geometry *inputGeometry, D2D1_COMBINE_MODE combineMode, const D2D1_MATRIX_3X2_F &inputGeometryTransform, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return CombineWithGeometry(inputGeometry, combineMode, &inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+                     return CombineWithGeometry(inputGeometry, combineMode, &inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
     }
 
     HRESULT Outline(const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Outline(&worldTransform, flatteningTolerance, geometrySink);
+                     return Outline(&worldTransform, flatteningTolerance, geometrySink);
     }
 
     HRESULT Outline(const D2D1_MATRIX_3X2_F *worldTransform, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Outline(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+                     return Outline(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
     }
 
     HRESULT Outline(const D2D1_MATRIX_3X2_F &worldTransform, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Outline(&worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+                     return Outline(&worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
     }
 
     HRESULT ComputeArea(const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, FLOAT *area) const {
-        return ComputeArea(&worldTransform, flatteningTolerance, area);
+                     return ComputeArea(&worldTransform, flatteningTolerance, area);
     }
 
     HRESULT ComputeArea(const D2D1_MATRIX_3X2_F *worldTransform, FLOAT *area) const {
-        return ComputeArea(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, area);
+                     return ComputeArea(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, area);
     }
 
     HRESULT ComputeArea(const D2D1_MATRIX_3X2_F &worldTransform, FLOAT *area) const {
-        return ComputeArea(&worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, area);
+                     return ComputeArea(&worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, area);
     }
 
     HRESULT ComputeLength(const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, FLOAT *length) const {
-        return ComputeLength(&worldTransform, flatteningTolerance, length);
+                     return ComputeLength(&worldTransform, flatteningTolerance, length);
     }
 
     HRESULT ComputeLength(const D2D1_MATRIX_3X2_F *worldTransform, FLOAT *length) const {
-        return ComputeLength(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, length);
+                     return ComputeLength(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, length);
     }
 
     HRESULT  ComputeLength(const D2D1_MATRIX_3X2_F &worldTransform, FLOAT *length) const {
-        return ComputeLength(&worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, length);
+                     return ComputeLength(&worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, length);
     }
 
     HRESULT ComputePointAtLength(FLOAT length, const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, D2D1_POINT_2F *point, D2D1_POINT_2F *unitTangentVector) const {
-        return ComputePointAtLength(length, &worldTransform, flatteningTolerance, point, unitTangentVector);
+                     return ComputePointAtLength(length, &worldTransform, flatteningTolerance, point, unitTangentVector);
     }
 
     HRESULT ComputePointAtLength(FLOAT length, const D2D1_MATRIX_3X2_F *worldTransform, D2D1_POINT_2F *point, D2D1_POINT_2F *unitTangentVector) const {
-        return ComputePointAtLength(length, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, point, unitTangentVector);
+                     return ComputePointAtLength(length, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, point, unitTangentVector);
     }
 
     HRESULT ComputePointAtLength(FLOAT length, const D2D1_MATRIX_3X2_F &worldTransform, D2D1_POINT_2F *point, D2D1_POINT_2F *unitTangentVector) const {
-        return ComputePointAtLength(length, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, point, unitTangentVector);
+                     return ComputePointAtLength(length, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, point, unitTangentVector);
     }
 
     HRESULT Widen(FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F &worldTransform, FLOAT flatteningTolerance, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Widen(strokeWidth, strokeStyle, &worldTransform, flatteningTolerance, geometrySink);
+                     return Widen(strokeWidth, strokeStyle, &worldTransform, flatteningTolerance, geometrySink);
     }
 
     HRESULT Widen(FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F *worldTransform, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Widen(strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+                     return Widen(strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
     }
 
     HRESULT Widen(FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle, const D2D1_MATRIX_3X2_F &worldTransform, ID2D1SimplifiedGeometrySink *geometrySink) const {
-        return Widen(strokeWidth, strokeStyle, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+                     return Widen(strokeWidth, strokeStyle, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
     }
 };
 
@@ -1439,7 +1439,7 @@ interface ID2D1DrawingStateBlock : public ID2D1Resource {
     STDMETHOD_(void, GetTextRenderingParams)(IDWriteRenderingParams **textRenderingParams) const PURE;
 
     void SetDescription(const D2D1_DRAWING_STATE_DESCRIPTION &stateDescription) {
-        SetDescription(&stateDescription);
+                     SetDescription(&stateDescription);
     }
 };
 
@@ -1576,43 +1576,43 @@ interface ID2D1Factory : public IUnknown {
     STDMETHOD(CreateDCRenderTarget)(const D2D1_RENDER_TARGET_PROPERTIES *renderTargetProperties, ID2D1DCRenderTarget **dcRenderTarget) PURE;
 
     HRESULT CreateRectangleGeometry(const D2D1_RECT_F &rectangle, ID2D1RectangleGeometry **rectangleGeometry) {
-        return CreateRectangleGeometry(&rectangle, rectangleGeometry);
+                     return CreateRectangleGeometry(&rectangle, rectangleGeometry);
     }
 
     HRESULT CreateRoundedRectangleGeometry(const D2D1_ROUNDED_RECT &roundedRectangle, ID2D1RoundedRectangleGeometry **roundedRectangleGeometry) {
-        return CreateRoundedRectangleGeometry(&roundedRectangle, roundedRectangleGeometry);
+                     return CreateRoundedRectangleGeometry(&roundedRectangle, roundedRectangleGeometry);
     }
 
     HRESULT CreateEllipseGeometry(const D2D1_ELLIPSE &ellipse, ID2D1EllipseGeometry **ellipseGeometry) {
-        return CreateEllipseGeometry(&ellipse, ellipseGeometry);
+                     return CreateEllipseGeometry(&ellipse, ellipseGeometry);
     }
 
     HRESULT CreateTransformedGeometry(ID2D1Geometry *sourceGeometry, const D2D1_MATRIX_3X2_F &transform, ID2D1TransformedGeometry **transformedGeometry) {
-        return CreateTransformedGeometry(sourceGeometry, &transform, transformedGeometry);
+                     return CreateTransformedGeometry(sourceGeometry, &transform, transformedGeometry);
     }
 
     HRESULT CreateStrokeStyle(const D2D1_STROKE_STYLE_PROPERTIES &strokeStyleProperties, const FLOAT *dashes, UINT dashesCount, ID2D1StrokeStyle **strokeStyle) {
-        return CreateStrokeStyle(&strokeStyleProperties, dashes, dashesCount, strokeStyle);
+                     return CreateStrokeStyle(&strokeStyleProperties, dashes, dashesCount, strokeStyle);
     }
 
     HRESULT CreateDrawingStateBlock(const D2D1_DRAWING_STATE_DESCRIPTION &drawingStateDescription, ID2D1DrawingStateBlock **drawingStateBlock) {
-        return CreateDrawingStateBlock(&drawingStateDescription, NULL, drawingStateBlock);
+                     return CreateDrawingStateBlock(&drawingStateDescription, NULL, drawingStateBlock);
     }
 
     HRESULT CreateDrawingStateBlock(ID2D1DrawingStateBlock **drawingStateBlock) {
-        return CreateDrawingStateBlock(NULL, NULL, drawingStateBlock);
+                     return CreateDrawingStateBlock(NULL, NULL, drawingStateBlock);
     }
 
     HRESULT CreateWicBitmapRenderTarget(IWICBitmap *target, const D2D1_RENDER_TARGET_PROPERTIES &renderTargetProperties, ID2D1RenderTarget **renderTarget) {
-        return CreateWicBitmapRenderTarget(target, &renderTargetProperties, renderTarget);
+                     return CreateWicBitmapRenderTarget(target, &renderTargetProperties, renderTarget);
     }
 
     HRESULT CreateHwndRenderTarget(const D2D1_RENDER_TARGET_PROPERTIES &renderTargetProperties, const D2D1_HWND_RENDER_TARGET_PROPERTIES &hwndRenderTargetProperties, ID2D1HwndRenderTarget **hwndRenderTarget) {
-        return CreateHwndRenderTarget(&renderTargetProperties, &hwndRenderTargetProperties, hwndRenderTarget);
+                     return CreateHwndRenderTarget(&renderTargetProperties, &hwndRenderTargetProperties, hwndRenderTarget);
     }
 
     HRESULT CreateDxgiSurfaceRenderTarget(IDXGISurface *dxgiSurface, const D2D1_RENDER_TARGET_PROPERTIES &renderTargetProperties, ID2D1RenderTarget **renderTarget) {
-        return CreateDxgiSurfaceRenderTarget(dxgiSurface, &renderTargetProperties, renderTarget);
+                     return CreateDxgiSurfaceRenderTarget(dxgiSurface, &renderTargetProperties, renderTarget);
     }
 };
 
@@ -1750,15 +1750,15 @@ interface ID2D1GeometrySink : public ID2D1SimplifiedGeometrySink {
     STDMETHOD_(void, AddArc)(const D2D1_ARC_SEGMENT *arc) PURE;
 
     void AddBezier(const D2D1_BEZIER_SEGMENT &bezier) {
-        AddBezier(&bezier);
+                     AddBezier(&bezier);
     }
 
     void AddQuadraticBezier(const D2D1_QUADRATIC_BEZIER_SEGMENT &bezier) {
-        AddQuadraticBezier(&bezier);
+                     AddQuadraticBezier(&bezier);
     }
 
     void  AddArc(const D2D1_ARC_SEGMENT &arc) {
-        AddArc(&arc);
+                     AddArc(&arc);
     }
 };
 
@@ -1841,7 +1841,7 @@ interface ID2D1HwndRenderTarget : public ID2D1RenderTarget {
     STDMETHOD_(HWND, GetHwnd)() const PURE;
 
     HRESULT Resize(const D2D1_SIZE_U &pixelSize) {
-        return Resize(&pixelSize);
+                     return Resize(&pixelSize);
     }
 };
 
@@ -1934,9 +1934,9 @@ interface ID2D1Layer : public ID2D1Resource {
 #else
     virtual D2D1_SIZE_F* STDMETHODCALLTYPE GetSize(D2D1_SIZE_F*) const = 0;
     D2D1_SIZE_F STDMETHODCALLTYPE GetSize() const {
-        D2D1_SIZE_F __ret;
-        GetSize(&__ret);
-        return __ret;
+                     D2D1_SIZE_F __ret;
+                     GetSize(&__ret);
+                     return __ret;
     }
 #endif
 };
@@ -1974,9 +1974,9 @@ interface ID2D1LinearGradientBrush : public ID2D1Brush {
 #else
     virtual D2D1_POINT_2F* STDMETHODCALLTYPE GetStartPoint(D2D1_POINT_2F*) const = 0;
     D2D1_POINT_2F STDMETHODCALLTYPE GetStartPoint() const {
-        D2D1_POINT_2F __ret;
-        GetStartPoint(&__ret);
-        return __ret;
+                     D2D1_POINT_2F __ret;
+                     GetStartPoint(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -1985,9 +1985,9 @@ interface ID2D1LinearGradientBrush : public ID2D1Brush {
 #else
     virtual D2D1_POINT_2F* STDMETHODCALLTYPE GetEndPoint(D2D1_POINT_2F*) const = 0;
     D2D1_POINT_2F STDMETHODCALLTYPE GetEndPoint() const {
-        D2D1_POINT_2F __ret;
-        GetEndPoint(&__ret);
-        return __ret;
+                     D2D1_POINT_2F __ret;
+                     GetEndPoint(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -2120,9 +2120,9 @@ interface ID2D1RadialGradientBrush : public ID2D1Brush {
     virtual D2D1_POINT_2F* STDMETHODCALLTYPE GetCenter(D2D1_POINT_2F *__ret) const = 0;
     D2D1_POINT_2F STDMETHODCALLTYPE GetCenter() const
     {
-        D2D1_POINT_2F __ret;
-        GetCenter(&__ret);
-        return __ret;
+                     D2D1_POINT_2F __ret;
+                     GetCenter(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -2132,9 +2132,9 @@ interface ID2D1RadialGradientBrush : public ID2D1Brush {
     virtual D2D1_POINT_2F* STDMETHODCALLTYPE GetGradientOriginOffset(D2D1_POINT_2F *__ret) const = 0;
     D2D1_POINT_2F STDMETHODCALLTYPE GetGradientOriginOffset() const
     {
-        D2D1_POINT_2F __ret;
-        GetGradientOriginOffset(&__ret);
-        return __ret;
+                     D2D1_POINT_2F __ret;
+                     GetGradientOriginOffset(&__ret);
+                     return __ret;
     }
 #endif
 
@@ -2277,14 +2277,14 @@ interface ID2D1SolidColorBrush : public ID2D1Brush {
 #else
     virtual D2D1_COLOR_F* STDMETHODCALLTYPE GetColor(D2D1_COLOR_F*) const = 0;
     D2D1_COLOR_F STDMETHODCALLTYPE GetColor() const {
-        D2D1_COLOR_F __ret;
-        GetColor(&__ret);
-        return __ret;
+                     D2D1_COLOR_F __ret;
+                     GetColor(&__ret);
+                     return __ret;
     }
 #endif
 
     void SetColor(const D2D1_COLOR_F &color) {
-        SetColor(&color);
+                     SetColor(&color);
     }
 };
 

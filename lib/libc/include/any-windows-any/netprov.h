@@ -84,11 +84,11 @@ extern "C"{
 #else
   typedef struct IProvisioningDomainVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IProvisioningDomain *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IProvisioningDomain *This);
-      ULONG (WINAPI *Release)(IProvisioningDomain *This);
-      HRESULT (WINAPI *Add)(IProvisioningDomain *This,LPCWSTR pszwPathToFolder);
-      HRESULT (WINAPI *Query)(IProvisioningDomain *This,LPCWSTR pszwDomain,LPCWSTR pszwLanguage,LPCWSTR pszwXPathQuery,IXMLDOMNodeList **Nodes);
+                   HRESULT (WINAPI *QueryInterface)(IProvisioningDomain *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IProvisioningDomain *This);
+                   ULONG (WINAPI *Release)(IProvisioningDomain *This);
+                   HRESULT (WINAPI *Add)(IProvisioningDomain *This,LPCWSTR pszwPathToFolder);
+                   HRESULT (WINAPI *Query)(IProvisioningDomain *This,LPCWSTR pszwDomain,LPCWSTR pszwLanguage,LPCWSTR pszwXPathQuery,IXMLDOMNodeList **Nodes);
     END_INTERFACE
   } IProvisioningDomainVtbl;
   struct IProvisioningDomain {
@@ -160,10 +160,10 @@ extern "C"{
 #else
   typedef struct IProvisioningProfileWirelessVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IProvisioningProfileWireless *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IProvisioningProfileWireless *This);
-      ULONG (WINAPI *Release)(IProvisioningProfileWireless *This);
-      HRESULT (WINAPI *CreateProfile)(IProvisioningProfileWireless *This,BSTR bstrXMLWirelessConfigProfile,BSTR bstrXMLConnectionConfigProfile,GUID *pAdapterInstanceGuid,ULONG *pulStatus);
+                   HRESULT (WINAPI *QueryInterface)(IProvisioningProfileWireless *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IProvisioningProfileWireless *This);
+                   ULONG (WINAPI *Release)(IProvisioningProfileWireless *This);
+                   HRESULT (WINAPI *CreateProfile)(IProvisioningProfileWireless *This,BSTR bstrXMLWirelessConfigProfile,BSTR bstrXMLConnectionConfigProfile,GUID *pAdapterInstanceGuid,ULONG *pulStatus);
     END_INTERFACE
   } IProvisioningProfileWirelessVtbl;
   struct IProvisioningProfileWireless {
@@ -195,10 +195,10 @@ extern "C"{
 #else
   typedef struct IFlashConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IFlashConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IFlashConfig *This);
-      ULONG (WINAPI *Release)(IFlashConfig *This);
-      HRESULT (WINAPI *RunWizard)(IFlashConfig *This,HWND hwndParent,FLASHCONFIG_FLAGS eFlags);
+                   HRESULT (WINAPI *QueryInterface)(IFlashConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IFlashConfig *This);
+                   ULONG (WINAPI *Release)(IFlashConfig *This);
+                   HRESULT (WINAPI *RunWizard)(IFlashConfig *This,HWND hwndParent,FLASHCONFIG_FLAGS eFlags);
     END_INTERFACE
   } IFlashConfigVtbl;
   struct IFlashConfig {

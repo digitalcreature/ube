@@ -19,8 +19,8 @@
  * Constants used by DLM interface.
  */
 
-#define DLM_LOCKSPACE_LEN       64
-#define DLM_RESNAME_MAXLEN      64
+#define DLM_LOCKSPACE_LEN                    64
+#define DLM_RESNAME_MAXLEN                   64
 
 
 /*

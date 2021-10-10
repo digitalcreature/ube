@@ -51,7 +51,7 @@ public:
   }
   WINBOOL Add(T &t) {
     if(m_nSize==m_nAllocSize) {
-      if(!Grow()) return FALSE;
+                   if(!Grow()) return FALSE;
     }
     m_nSize++;
     SetAtIndex(m_nSize - 1,t);
@@ -64,16 +64,16 @@ public:
   }
   WINBOOL RemoveAt(int nIndex) {
     if(nIndex!=(m_nSize - 1))
-      memmove((void*)&m_aT[nIndex],(void*)&m_aT[nIndex + 1],(m_nSize - (nIndex + 1))*sizeof(T));
+                   memmove((void*)&m_aT[nIndex],(void*)&m_aT[nIndex + 1],(m_nSize - (nIndex + 1))*sizeof(T));
     m_nSize--;
     return TRUE;
   }
   void RemoveAll() {
     if(m_nAllocSize > 0) {
-      free(m_aT);
-      m_aT = NULL;
-      m_nSize = 0;
-      m_nAllocSize = 0;
+                   free(m_aT);
+                   m_aT = NULL;
+                   m_nSize = 0;
+                   m_nAllocSize = 0;
     }
   }
   T &operator[] (int nIndex) const {
@@ -87,7 +87,7 @@ public:
   }
   int Find(T &t) const {
     for(int i = 0;i < m_nSize;i++) {
-      if(m_aT[i]==t) return i;
+                   if(m_aT[i]==t) return i;
     }
     return -1;
   }
@@ -167,11 +167,11 @@ public:
     IUnknown *pUnk = NULL;
     HRESULT hr = QueryInterface(riid,(void**)&pUnk);
     if(SUCCEEDED(hr)) {
-      pUnk->Release();
-      pUnk = NULL;
-      s_CritSection.Lock();
-      m_dwSafety = (dwEnabledOptions & dwOptionSetMask) | (m_dwSafety & ~dwOptionSetMask);
-      s_CritSection.Unlock();
+                   pUnk->Release();
+                   pUnk = NULL;
+                   s_CritSection.Lock();
+                   m_dwSafety = (dwEnabledOptions & dwOptionSetMask) | (m_dwSafety & ~dwOptionSetMask);
+                   s_CritSection.Unlock();
     }
     return hr;
   }
@@ -182,12 +182,12 @@ public:
     IUnknown *pUnk = NULL;
     HRESULT hr = QueryInterface(riid,(void**)&pUnk);
     if(SUCCEEDED(hr)) {
-      pUnk->Release();
-      pUnk = NULL;
-      *pdwSupportedOptions = SUPPORTED_SAFETY_OPTIONS;
-      s_CritSection.Lock();
-      *pdwEnabledOptions = m_dwSafety;
-      s_CritSection.Unlock();
+                   pUnk->Release();
+                   pUnk = NULL;
+                   *pdwSupportedOptions = SUPPORTED_SAFETY_OPTIONS;
+                   s_CritSection.Lock();
+                   *pdwEnabledOptions = m_dwSafety;
+                   s_CritSection.Unlock();
     }
     return hr;
   }

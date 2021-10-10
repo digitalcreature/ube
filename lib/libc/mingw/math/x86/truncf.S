@@ -5,14 +5,14 @@
  */
 #include <_mingw_mac.h>
 
-        .file "truncf.S"
-        .text
-        .p2align 4,,15
-        .globl __MINGW_USYMBOL(truncf)
-        .def    __MINGW_USYMBOL(truncf);  .scl    2;      .type   32;     .endef
+                     .file "truncf.S"
+                     .text
+                     .p2align 4,,15
+                     .globl __MINGW_USYMBOL(truncf)
+                     .def    __MINGW_USYMBOL(truncf);  .scl    2;                   .type   32;     .endef
 
 #ifdef __x86_64__
-        .seh_proc __MINGW_USYMBOL(truncf)
+                     .seh_proc __MINGW_USYMBOL(truncf)
 #endif
 __MINGW_USYMBOL(truncf):
 #if defined(_AMD64_) || defined(__x86_64__)
@@ -56,16 +56,16 @@ __MINGW_USYMBOL(truncf):
 	ret
 	.seh_endproc
 #elif defined(_X86_) || defined(__i386__)
-        flds    4(%esp)
-        subl    $8, %esp
-        fstcw   (%esp)
-        /* FE_TOWARDZERO */
-        movzwl (%esp), %eax
-        orb    $0xc, %ah
-        movw    %ax, 4(%esp)
-        fldcw   4(%esp)
-        frndint
-        fldcw   (%esp)
-        addl    $8, %esp
-        ret
+                     flds    4(%esp)
+                     subl    $8, %esp
+                     fstcw   (%esp)
+                     /* FE_TOWARDZERO */
+                     movzwl (%esp), %eax
+                     orb    $0xc, %ah
+                     movw    %ax, 4(%esp)
+                     fldcw   4(%esp)
+                     frndint
+                     fldcw   (%esp)
+                     addl    $8, %esp
+                     ret
 #endif

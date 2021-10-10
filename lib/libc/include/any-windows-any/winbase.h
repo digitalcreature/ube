@@ -766,8 +766,8 @@ extern "C" {
     LONG i, j = *Target;
 
     do {
-      i = j;
-      j = InterlockedCompareExchange (Target, i &Set, i);
+                   i = j;
+                   j = InterlockedCompareExchange (Target, i &Set, i);
     } while (i != j);
     return j;
   }
@@ -780,8 +780,8 @@ extern "C" {
     LONG i, j = *Target;
 
     do {
-      i = j;
-      j = InterlockedCompareExchange (Target, i | Set, i);
+                   i = j;
+                   j = InterlockedCompareExchange (Target, i | Set, i);
     } while (i != j);
     return j;
   }
@@ -794,8 +794,8 @@ extern "C" {
     LONG i, j = *Target;
 
     do {
-      i = j;
-      j = InterlockedCompareExchange (Target, i ^ Set, i);
+                   i = j;
+                   j = InterlockedCompareExchange (Target, i ^ Set, i);
     } while (i != j);
     return j;
   }
@@ -808,7 +808,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Destination;
+                   Old = *Destination;
     } while (InterlockedCompareExchange64 (Destination, Old &Value, Old) != Old);
     return Old;
   }
@@ -821,7 +821,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Destination;
+                   Old = *Destination;
     } while (InterlockedCompareExchange64 (Destination, Old | Value, Old) != Old);
     return Old;
   }
@@ -834,7 +834,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Destination;
+                   Old = *Destination;
     } while (InterlockedCompareExchange64 (Destination, Old ^ Value, Old) != Old);
     return Old;
   }
@@ -982,7 +982,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Destination;
+                   Old = *Destination;
     } while (InterlockedCompareExchange64 (Destination, Old &Value, Old) != Old);
     return Old;
   }
@@ -993,7 +993,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Destination;
+                   Old = *Destination;
     } while (InterlockedCompareExchange64 (Destination, Old | Value, Old) != Old);
     return Old;
   }
@@ -1004,7 +1004,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Destination;
+                   Old = *Destination;
     } while (InterlockedCompareExchange64 (Destination, Old ^ Value, Old) != Old);
     return Old;
   }
@@ -1015,7 +1015,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Addend;
+                   Old = *Addend;
     } while (InterlockedCompareExchange64 (Addend, Old + 1, Old) != Old);
     return Old + 1;
   }
@@ -1026,7 +1026,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Addend;
+                   Old = *Addend;
     } while (InterlockedCompareExchange64 (Addend, Old - 1, Old) != Old);
     return Old - 1;
   }
@@ -1037,7 +1037,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Target;
+                   Old = *Target;
     } while (InterlockedCompareExchange64 (Target, Value, Old) != Old);
     return Old;
   }
@@ -1048,7 +1048,7 @@ extern "C" {
     LONGLONG Old;
 
     do {
-      Old = *Addend;
+                   Old = *Addend;
     } while (InterlockedCompareExchange64 (Addend, Old + Value, Old) != Old);
     return Old;
   }
@@ -2069,7 +2069,7 @@ extern "C" {
     COPYFILE2_MESSAGE_TYPE Type;
     DWORD dwPadding;
     union {
-      struct {
+                   struct {
     DWORD dwStreamNumber;
     DWORD dwReserved;
     HANDLE hSourceFile;
@@ -2078,8 +2078,8 @@ extern "C" {
     ULARGE_INTEGER uliChunkSize;
     ULARGE_INTEGER uliStreamSize;
     ULARGE_INTEGER uliTotalFileSize;
-      } ChunkStarted;
-      struct {
+                   } ChunkStarted;
+                   struct {
     DWORD dwStreamNumber;
     DWORD dwFlags;
     HANDLE hSourceFile;
@@ -2090,16 +2090,16 @@ extern "C" {
     ULARGE_INTEGER uliStreamBytesTransferred;
     ULARGE_INTEGER uliTotalFileSize;
     ULARGE_INTEGER uliTotalBytesTransferred;
-      } ChunkFinished;
-      struct {
+                   } ChunkFinished;
+                   struct {
     DWORD dwStreamNumber;
     DWORD dwReserved;
     HANDLE hSourceFile;
     HANDLE hDestinationFile;
     ULARGE_INTEGER uliStreamSize;
     ULARGE_INTEGER uliTotalFileSize;
-      } StreamStarted;
-      struct {
+                   } StreamStarted;
+                   struct {
     DWORD dwStreamNumber;
     DWORD dwReserved;
     HANDLE hSourceFile;
@@ -2108,11 +2108,11 @@ extern "C" {
     ULARGE_INTEGER uliStreamBytesTransferred;
     ULARGE_INTEGER uliTotalFileSize;
     ULARGE_INTEGER uliTotalBytesTransferred;
-      } StreamFinished;
-      struct {
+                   } StreamFinished;
+                   struct {
     DWORD dwReserved;
-      } PollContinue;
-      struct {
+                   } PollContinue;
+                   struct {
     COPYFILE2_COPY_PHASE CopyPhase;
     DWORD dwStreamNumber;
     HRESULT hrFailure;
@@ -2122,7 +2122,7 @@ extern "C" {
     ULARGE_INTEGER uliStreamBytesTransferred;
     ULARGE_INTEGER uliTotalFileSize;
     ULARGE_INTEGER uliTotalBytesTransferred;
-      } Error;
+                   } Error;
     } Info;
   } COPYFILE2_MESSAGE;
 
@@ -2992,24 +2992,24 @@ extern "C" {
     USHORT Reserved;
     ULONG Flags;
     struct {
-      ULONG Reserved[8];
+                   ULONG Reserved[8];
     } GenericReserved;
 #if _WIN32_WINNT < 0x0602
     struct {
-      ULONG Reserved[16];
+                   ULONG Reserved[16];
     } ProtocolSpecificReserved;
 #else
     union {
-      struct {
+                   struct {
     struct {
-      ULONG Capabilities;
+                   ULONG Capabilities;
     } Server;
     struct {
-      ULONG Capabilities;
-      ULONG CachingFlags;
+                   ULONG Capabilities;
+                   ULONG CachingFlags;
     } Share;
-      } Smb2;
-      ULONG Reserved[16];
+                   } Smb2;
+                   ULONG Reserved[16];
     } ProtocolSpecific;
 #endif
   } FILE_REMOTE_PROTOCOL_INFO,*PFILE_REMOTE_PROTOCOL_INFO;
@@ -3029,10 +3029,10 @@ extern "C" {
     DWORD dwSize;
     FILE_ID_TYPE Type;
     __C89_NAMELESS union {
-      LARGE_INTEGER FileId;
-      GUID ObjectId;
+                   LARGE_INTEGER FileId;
+                   GUID ObjectId;
 #if _WIN32_WINNT >= 0x0602
-      FILE_ID_128 ExtendedFileId;
+                   FILE_ID_128 ExtendedFileId;
 #endif
     } DUMMYUNIONNAME;
   } FILE_ID_DESCRIPTOR,*LPFILE_ID_DESCRIPTOR;

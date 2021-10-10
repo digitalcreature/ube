@@ -339,7 +339,7 @@ extern "C" {
     STDMETHOD_(ULONG,AddRef)(THIS) PURE;
     STDMETHOD_(ULONG,Release)(THIS) PURE;
     STDMETHOD(AttachKernel)(THIS_
-      ULONG Flags,PCSTR ConnectOptions) PURE;
+                   ULONG Flags,PCSTR ConnectOptions) PURE;
     STDMETHOD(GetKernelConnectionOptions)(THIS_ PSTR Buffer,ULONG BufferSize,PULONG OptionsSize) PURE;
     STDMETHOD(SetKernelConnectionOptions)(THIS_ PCSTR Options) PURE;
     STDMETHOD(StartProcessServer)(THIS_ ULONG Flags,PCSTR Options,PVOID Reserved) PURE;
@@ -665,33 +665,33 @@ extern "C" {
 
   typedef struct _DEBUG_VALUE {
     __C89_NAMELESS union {
-      UCHAR I8;
-      USHORT I16;
-      ULONG I32;
-      __C89_NAMELESS struct {
+                   UCHAR I8;
+                   USHORT I16;
+                   ULONG I32;
+                   __C89_NAMELESS struct {
 	ULONG64 I64;
 	WINBOOL Nat;
-      };
-      float F32;
-      double F64;
-      UCHAR F80Bytes[10];
-      UCHAR F82Bytes[11];
-      UCHAR F128Bytes[16];
-      UCHAR VI8[16];
-      USHORT VI16[8];
-      ULONG VI32[4];
-      ULONG64 VI64[2];
-      float VF32[4];
-      double VF64[2];
-      struct {
+                   };
+                   float F32;
+                   double F64;
+                   UCHAR F80Bytes[10];
+                   UCHAR F82Bytes[11];
+                   UCHAR F128Bytes[16];
+                   UCHAR VI8[16];
+                   USHORT VI16[8];
+                   ULONG VI32[4];
+                   ULONG64 VI64[2];
+                   float VF32[4];
+                   double VF64[2];
+                   struct {
 	ULONG LowPart;
 	ULONG HighPart;
-      } I64Parts32;
-      struct {
+                   } I64Parts32;
+                   struct {
 	ULONG64 LowPart;
 	LONG64 HighPart;
-      } F128Parts64;
-      UCHAR RawBytes[24];
+                   } F128Parts64;
+                   UCHAR RawBytes[24];
     };
     ULONG TailOfRawBytes;
     ULONG Type;
@@ -1308,7 +1308,7 @@ extern "C" {
     STDMETHOD(WriteBusData)(THIS_ ULONG BusDataType,ULONG BusNumber,ULONG SlotNumber,ULONG Offset,PVOID Buffer,ULONG BufferSize,PULONG BytesWritten) PURE;
     STDMETHOD(CheckLowMemory)(THIS) PURE;
     STDMETHOD(ReadDebuggerData)(THIS_
-      ULONG Index,PVOID Buffer,ULONG BufferSize,PULONG DataSize) PURE;
+                   ULONG Index,PVOID Buffer,ULONG BufferSize,PULONG DataSize) PURE;
     STDMETHOD(ReadProcessorSystemData)(THIS_ ULONG Processor,ULONG Index,PVOID Buffer,ULONG BufferSize,PULONG DataSize) PURE;
     STDMETHOD(VirtualToPhysical)(THIS_ ULONG64 Virtual,PULONG64 Physical) PURE;
     STDMETHOD(GetVirtualTranslationPhysicalOffsets)(THIS_ ULONG64 Virtual,PULONG64 Offsets,ULONG OffsetsSize,PULONG Levels) PURE;
@@ -1854,9 +1854,9 @@ public:
   STDMETHOD(QueryInterface)(THIS_ REFIID InterfaceId,PVOID *Interface) {
     *Interface = NULL;
     if(IsEqualIID(InterfaceId,IID_IUnknown) || IsEqualIID(InterfaceId,IID_IDebugEventCallbacks)) {
-      *Interface = (IDebugEventCallbacks *)this;
-      AddRef();
-      return S_OK;
+                   *Interface = (IDebugEventCallbacks *)this;
+                   AddRef();
+                   return S_OK;
     } else return E_NOINTERFACE;
   }
   STDMETHOD(Breakpoint)(THIS_ PDEBUG_BREAKPOINT Bp) { return DEBUG_STATUS_NO_CHANGE; }

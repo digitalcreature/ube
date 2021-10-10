@@ -15,17 +15,17 @@
 _CRTIMP void __cdecl _lock(int locknum);
 _CRTIMP void __cdecl _unlock(int locknum);
 #define _STREAM_LOCKS   16
-#define _IOLOCKED       0x8000
+#define _IOLOCKED                    0x8000
 
 
 /***
 * _lock_file - Lock a FILE
 *
 *Purpose:
-*       Assert the lock for a stdio-level file
+*                    Assert the lock for a stdio-level file
 *
 *Entry:
-*       pf = __piob[] entry (pointer to a FILE or _FILEX)
+*                    pf = __piob[] entry (pointer to a FILE or _FILEX)
 *
 *Exit:
 *
@@ -41,20 +41,20 @@ void __cdecl _lock_file( FILE *pf )
      */
     if ( (pf >= __acrt_iob_func(0)) && (pf <= __acrt_iob_func(_IOB_ENTRIES-1)) )
     {
-        /*
-         * FILE lies in _iob[] so the lock lies in _locktable[].
-         */
-        _lock( _STREAM_LOCKS + (int)(pf - __acrt_iob_func(0)) );
-        /* We set _IOLOCKED to indicate we locked the stream */
-        pf->_flag |= _IOLOCKED;
+                     /*
+                      * FILE lies in _iob[] so the lock lies in _locktable[].
+                      */
+                     _lock( _STREAM_LOCKS + (int)(pf - __acrt_iob_func(0)) );
+                     /* We set _IOLOCKED to indicate we locked the stream */
+                     pf->_flag |= _IOLOCKED;
     }
     else
-        /*
-         * Not part of _iob[]. Therefore, *pf is a _FILEX and the
-         * lock field of the struct is an initialized critical
-         * section.
-         */
-        EnterCriticalSection( &(((_FILEX *)pf)->lock) );
+                     /*
+                      * Not part of _iob[]. Therefore, *pf is a _FILEX and the
+                      * lock field of the struct is an initialized critical
+                      * section.
+                      */
+                     EnterCriticalSection( &(((_FILEX *)pf)->lock) );
 }
 
 void *__MINGW_IMP_SYMBOL(_lock_file) = _lock_file;
@@ -64,10 +64,10 @@ void *__MINGW_IMP_SYMBOL(_lock_file) = _lock_file;
 * _unlock_file - Unlock a FILE
 *
 *Purpose:
-*       Release the lock for a stdio-level file
+*                    Release the lock for a stdio-level file
 *
 *Entry:
-*       pf = __piob[] entry (pointer to a FILE or _FILEX)
+*                    pf = __piob[] entry (pointer to a FILE or _FILEX)
 *
 *Exit:
 *
@@ -83,20 +83,20 @@ void __cdecl _unlock_file( FILE *pf )
      */
     if ( (pf >= __acrt_iob_func(0)) && (pf <= __acrt_iob_func(_IOB_ENTRIES-1)) )
     {
-        /*
-         * FILE lies in _iob[] so the lock lies in _locktable[].
-         * We reset _IOLOCKED to indicate we unlock the stream.
-         */
-        pf->_flag &= ~_IOLOCKED;
-        _unlock( _STREAM_LOCKS + (int)(pf - __acrt_iob_func(0)) );
+                     /*
+                      * FILE lies in _iob[] so the lock lies in _locktable[].
+                      * We reset _IOLOCKED to indicate we unlock the stream.
+                      */
+                     pf->_flag &= ~_IOLOCKED;
+                     _unlock( _STREAM_LOCKS + (int)(pf - __acrt_iob_func(0)) );
     }
     else
-        /*
-         * Not part of _iob[]. Therefore, *pf is a _FILEX and the
-         * lock field of the struct is an initialized critical
-         * section.
-         */
-        LeaveCriticalSection( &(((_FILEX *)pf)->lock) );
+                     /*
+                      * Not part of _iob[]. Therefore, *pf is a _FILEX and the
+                      * lock field of the struct is an initialized critical
+                      * section.
+                      */
+                     LeaveCriticalSection( &(((_FILEX *)pf)->lock) );
 }
 
 void *__MINGW_IMP_SYMBOL(_unlock_file) = _unlock_file;

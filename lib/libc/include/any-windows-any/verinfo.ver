@@ -14,32 +14,32 @@ FILESUBTYPE VERSIONSUBTYPE
 BEGIN
    BLOCK "StringFileInfo"
    BEGIN
-       BLOCK "040904E4"
-       BEGIN
-           VALUE "CompanyName",VERSIONCOMPANYNAME
-           VALUE "FileDescription",VERSIONDESCRIPTION
-           VALUE "FileVersion",VERSIONSTR
-           VALUE "InternalName",VERSIONNAME
-           VALUE "LegalCopyright",VERSIONCOPYRIGHT
-           VALUE "OriginalFilename",VERSIONNAME
-           VALUE "ProductName",VERSIONPRODUCTNAME
-           VALUE "ProductVersion",VERSIONSTR
-       END
-       BLOCK "041104E4"
-       BEGIN
-           VALUE "CompanyName",VERSIONCOMPANYNAME
-           VALUE "FileDescription",VERSIONDESCRIPTION
-           VALUE "FileVersion",VERSIONSTR
-           VALUE "InternalName",VERSIONNAME
-           VALUE "LegalCopyright",VERSIONCOPYRIGHT
-           VALUE "OriginalFilename",VERSIONNAME
-           VALUE "ProductName",VERSIONPRODUCTNAME
-           VALUE "ProductVersion",VERSIONSTR
-       END
+                    BLOCK "040904E4"
+                    BEGIN
+                        VALUE "CompanyName",VERSIONCOMPANYNAME
+                        VALUE "FileDescription",VERSIONDESCRIPTION
+                        VALUE "FileVersion",VERSIONSTR
+                        VALUE "InternalName",VERSIONNAME
+                        VALUE "LegalCopyright",VERSIONCOPYRIGHT
+                        VALUE "OriginalFilename",VERSIONNAME
+                        VALUE "ProductName",VERSIONPRODUCTNAME
+                        VALUE "ProductVersion",VERSIONSTR
+                    END
+                    BLOCK "041104E4"
+                    BEGIN
+                        VALUE "CompanyName",VERSIONCOMPANYNAME
+                        VALUE "FileDescription",VERSIONDESCRIPTION
+                        VALUE "FileVersion",VERSIONSTR
+                        VALUE "InternalName",VERSIONNAME
+                        VALUE "LegalCopyright",VERSIONCOPYRIGHT
+                        VALUE "OriginalFilename",VERSIONNAME
+                        VALUE "ProductName",VERSIONPRODUCTNAME
+                        VALUE "ProductVersion",VERSIONSTR
+                    END
    END
    BLOCK "VarFileInfo"
    BEGIN
 
-       VALUE "Translation",0x409,0x4E4,0x411,0x4E4
+                    VALUE "Translation",0x409,0x4E4,0x411,0x4E4
    END
 END

@@ -32,18 +32,18 @@ tsearch (const void * __restrict__ vkey,		/* key to be located */
   n = rootp;
   while (*n != NULL)
     {
-      /* Knuth's T1: */
-      int r;
+                   /* Knuth's T1: */
+                   int r;
 
-      if ((r = (*compar)(vkey, ((*n)->key))) == 0)	/* T2: */
+                   if ((r = (*compar)(vkey, ((*n)->key))) == 0)	/* T2: */
 	return *n;		/* we found it! */
 
-      n = (r < 0) ?
+                   n = (r < 0) ?
 	  &(*rootp)->llink :		/* T3: follow left branch */
 	  &(*rootp)->rlink;		/* T4: follow right branch */
-      if (*n == NULL)
-        break;
-      rootp = n;
+                   if (*n == NULL)
+                     break;
+                   rootp = n;
     }
 
   q = malloc(sizeof(node_t));		/* T5: key not found */

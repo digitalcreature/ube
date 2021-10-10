@@ -151,9 +151,9 @@ typedef struct {
   FORMPROPSPECIALTYPE nSpecialType;
   union {
     struct {
-      MAPINAMEID nmidIdx;
-      ULONG cfpevAvailable;
-      LPMAPIFORMPROPENUMVAL pfpevAvailable;
+                   MAPINAMEID nmidIdx;
+                   ULONG cfpevAvailable;
+                   LPMAPIFORMPROPENUMVAL pfpevAvailable;
     } s1;
   } u;
 } SMAPIFormProp,*LPMAPIFORMPROP;

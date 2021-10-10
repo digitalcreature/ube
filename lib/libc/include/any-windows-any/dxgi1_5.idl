@@ -44,7 +44,7 @@ typedef enum _DXGI_RECLAIM_RESOURCE_RESULTS
 
 typedef enum DXGI_FEATURE
 {
-       DXGI_FEATURE_PRESENT_ALLOW_TEARING = 0x0,
+                    DXGI_FEATURE_PRESENT_ALLOW_TEARING = 0x0,
 } DXGI_FEATURE;
 
 typedef struct DXGI_HDR_METADATA_HDR10
@@ -73,11 +73,11 @@ typedef struct DXGI_HDR_METADATA_HDR10PLUS
 interface IDXGIOutput5 : IDXGIOutput4
 {
     HRESULT DuplicateOutput1(
-        [in] IUnknown *device,
-        [in] UINT flags,
-        [in] UINT format_count,
-        [in] const DXGI_FORMAT *formats,
-        [out] IDXGIOutputDuplication **duplication
+                     [in] IUnknown *device,
+                     [in] UINT flags,
+                     [in] UINT format_count,
+                     [in] const DXGI_FORMAT *formats,
+                     [out] IDXGIOutputDuplication **duplication
     );
 }
 
@@ -90,9 +90,9 @@ interface IDXGIOutput5 : IDXGIOutput4
 interface IDXGISwapChain4 : IDXGISwapChain3
 {
     HRESULT SetHDRMetaData(
-        [in] DXGI_HDR_METADATA_TYPE type,
-        [in] UINT size,
-        [in] void *metadata
+                     [in] DXGI_HDR_METADATA_TYPE type,
+                     [in] UINT size,
+                     [in] void *metadata
     );
 }
 
@@ -105,15 +105,15 @@ interface IDXGISwapChain4 : IDXGISwapChain3
 interface IDXGIDevice4 : IDXGIDevice3
 {
     HRESULT OfferResources1(
-        [in] UINT resource_count,
-        [in] IDXGIResource *const *resources,
-        [in] DXGI_OFFER_RESOURCE_PRIORITY priority,
-        [in] UINT flags
+                     [in] UINT resource_count,
+                     [in] IDXGIResource *const *resources,
+                     [in] DXGI_OFFER_RESOURCE_PRIORITY priority,
+                     [in] UINT flags
     );
     HRESULT ReclaimResources1(
-        [in] UINT resource_count,
-        [in] IDXGIResource *const *resources,
-        [out] DXGI_RECLAIM_RESOURCE_RESULTS *results
+                     [in] UINT resource_count,
+                     [in] IDXGIResource *const *resources,
+                     [out] DXGI_RECLAIM_RESOURCE_RESULTS *results
     );
 }
 
@@ -126,8 +126,8 @@ interface IDXGIDevice4 : IDXGIDevice3
 interface IDXGIFactory5 : IDXGIFactory4
 {
     HRESULT CheckFeatureSupport(
-        DXGI_FEATURE feature,
-        [in, out] void *support_data,
-        UINT support_data_size
+                     DXGI_FEATURE feature,
+                     [in, out] void *support_data,
+                     UINT support_data_size
     );
 }

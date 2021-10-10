@@ -34,21 +34,21 @@ struct __pthread_mutex_s
   short __spins;
   short __elision;
   __pthread_list_t __list;
-# define __PTHREAD_MUTEX_HAVE_PREV      1
+# define __PTHREAD_MUTEX_HAVE_PREV                   1
 #else
   unsigned int __nusers;
   __extension__ union
   {
     struct
     {
-      short __espins;
-      short __elision;
+                   short __espins;
+                   short __elision;
 # define __spins __elision_data.__espins
 # define __elision __elision_data.__elision
     } __elision_data;
     __pthread_slist_t __list;
   };
-# define __PTHREAD_MUTEX_HAVE_PREV      0
+# define __PTHREAD_MUTEX_HAVE_PREV                   0
 #endif
 };
 

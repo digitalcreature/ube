@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
 /*
    md_u.h : user <=> kernel API between Linux raidtools and RAID drivers
-          Copyright (C) 1998 Ingo Molnar
+                       Copyright (C) 1998 Ingo Molnar
 	  
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -21,8 +21,8 @@
  * Different minor versions are only downward compatible.
  * Different patchlevel versions are downward and upward compatible.
  */
-#define MD_MAJOR_VERSION                0
-#define MD_MINOR_VERSION                90
+#define MD_MAJOR_VERSION                                          0
+#define MD_MINOR_VERSION                                          90
 /*
  * MD_PATCHLEVEL_VERSION indicates kernel functionality.
  * >=1 means different superblock formats are selectable using SET_ARRAY_INFO
@@ -32,7 +32,7 @@
  * >=3 means that bitmap superblock version 4 is supported, which uses
  *     little-ending representation rather than host-endian
  */
-#define MD_PATCHLEVEL_VERSION           3
+#define MD_PATCHLEVEL_VERSION                        3
 
 /* ioctls */
 
@@ -92,18 +92,18 @@ typedef struct mdu_array_info_s {
 	/*
 	 * Generic state information
 	 */
-	unsigned int utime;	/*  0 Superblock update time		      */
-	int state;		/*  1 State bits (clean, ...)		      */
-	int active_disks;	/*  2 Number of currently active disks	      */
-	int working_disks;	/*  3 Number of working disks		      */
-	int failed_disks;	/*  4 Number of failed disks		      */
-	int spare_disks;	/*  5 Number of spare disks		      */
+	unsigned int utime;	/*  0 Superblock update time		                   */
+	int state;		/*  1 State bits (clean, ...)		                   */
+	int active_disks;	/*  2 Number of currently active disks	                   */
+	int working_disks;	/*  3 Number of working disks		                   */
+	int failed_disks;	/*  4 Number of failed disks		                   */
+	int spare_disks;	/*  5 Number of spare disks		                   */
 
 	/*
 	 * Personality information
 	 */
-	int layout;		/*  0 the array's physical layout	      */
-	int chunk_size;	/*  1 chunk size in bytes		      */
+	int layout;		/*  0 the array's physical layout	                   */
+	int chunk_size;	/*  1 chunk size in bytes		                   */
 
 } mdu_array_info_t;
 

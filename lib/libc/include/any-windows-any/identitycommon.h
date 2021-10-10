@@ -8,7 +8,7 @@
 #if (_WIN32_WINNT >= 0x0601)
 
 typedef enum _IDENTITY_TYPE {
-  IDENTITIES_ALL       = 0,
+  IDENTITIES_ALL                    = 0,
   IDENTITIES_ME_ONLY   = 0x1 
 } IDENTITY_TYPE;
 

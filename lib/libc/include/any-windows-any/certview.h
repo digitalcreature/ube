@@ -135,23 +135,23 @@ extern "C"{
 #else
   typedef struct IEnumCERTVIEWCOLUMNVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumCERTVIEWCOLUMN *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumCERTVIEWCOLUMN *This);
-      ULONG (WINAPI *Release)(IEnumCERTVIEWCOLUMN *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IEnumCERTVIEWCOLUMN *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IEnumCERTVIEWCOLUMN *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IEnumCERTVIEWCOLUMN *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IEnumCERTVIEWCOLUMN *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Next)(IEnumCERTVIEWCOLUMN *This,LONG *pIndex);
-      HRESULT (WINAPI *GetName)(IEnumCERTVIEWCOLUMN *This,BSTR *pstrOut);
-      HRESULT (WINAPI *GetDisplayName)(IEnumCERTVIEWCOLUMN *This,BSTR *pstrOut);
-      HRESULT (WINAPI *GetType)(IEnumCERTVIEWCOLUMN *This,LONG *pType);
-      HRESULT (WINAPI *IsIndexed)(IEnumCERTVIEWCOLUMN *This,LONG *pIndexed);
-      HRESULT (WINAPI *GetMaxLength)(IEnumCERTVIEWCOLUMN *This,LONG *pMaxLength);
-      HRESULT (WINAPI *GetValue)(IEnumCERTVIEWCOLUMN *This,LONG Flags,VARIANT *pvarValue);
-      HRESULT (WINAPI *Skip)(IEnumCERTVIEWCOLUMN *This,LONG celt);
-      HRESULT (WINAPI *Reset)(IEnumCERTVIEWCOLUMN *This);
-      HRESULT (WINAPI *Clone)(IEnumCERTVIEWCOLUMN *This,IEnumCERTVIEWCOLUMN **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumCERTVIEWCOLUMN *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumCERTVIEWCOLUMN *This);
+                   ULONG (WINAPI *Release)(IEnumCERTVIEWCOLUMN *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IEnumCERTVIEWCOLUMN *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IEnumCERTVIEWCOLUMN *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IEnumCERTVIEWCOLUMN *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IEnumCERTVIEWCOLUMN *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Next)(IEnumCERTVIEWCOLUMN *This,LONG *pIndex);
+                   HRESULT (WINAPI *GetName)(IEnumCERTVIEWCOLUMN *This,BSTR *pstrOut);
+                   HRESULT (WINAPI *GetDisplayName)(IEnumCERTVIEWCOLUMN *This,BSTR *pstrOut);
+                   HRESULT (WINAPI *GetType)(IEnumCERTVIEWCOLUMN *This,LONG *pType);
+                   HRESULT (WINAPI *IsIndexed)(IEnumCERTVIEWCOLUMN *This,LONG *pIndexed);
+                   HRESULT (WINAPI *GetMaxLength)(IEnumCERTVIEWCOLUMN *This,LONG *pMaxLength);
+                   HRESULT (WINAPI *GetValue)(IEnumCERTVIEWCOLUMN *This,LONG Flags,VARIANT *pvarValue);
+                   HRESULT (WINAPI *Skip)(IEnumCERTVIEWCOLUMN *This,LONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumCERTVIEWCOLUMN *This);
+                   HRESULT (WINAPI *Clone)(IEnumCERTVIEWCOLUMN *This,IEnumCERTVIEWCOLUMN **ppenum);
     END_INTERFACE
   } IEnumCERTVIEWCOLUMNVtbl;
   struct IEnumCERTVIEWCOLUMN {
@@ -215,19 +215,19 @@ extern "C"{
 #else
   typedef struct IEnumCERTVIEWATTRIBUTEVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumCERTVIEWATTRIBUTE *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumCERTVIEWATTRIBUTE *This);
-      ULONG (WINAPI *Release)(IEnumCERTVIEWATTRIBUTE *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IEnumCERTVIEWATTRIBUTE *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IEnumCERTVIEWATTRIBUTE *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IEnumCERTVIEWATTRIBUTE *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IEnumCERTVIEWATTRIBUTE *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Next)(IEnumCERTVIEWATTRIBUTE *This,LONG *pIndex);
-      HRESULT (WINAPI *GetName)(IEnumCERTVIEWATTRIBUTE *This,BSTR *pstrOut);
-      HRESULT (WINAPI *GetValue)(IEnumCERTVIEWATTRIBUTE *This,BSTR *pstrOut);
-      HRESULT (WINAPI *Skip)(IEnumCERTVIEWATTRIBUTE *This,LONG celt);
-      HRESULT (WINAPI *Reset)(IEnumCERTVIEWATTRIBUTE *This);
-      HRESULT (WINAPI *Clone)(IEnumCERTVIEWATTRIBUTE *This,IEnumCERTVIEWATTRIBUTE **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumCERTVIEWATTRIBUTE *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumCERTVIEWATTRIBUTE *This);
+                   ULONG (WINAPI *Release)(IEnumCERTVIEWATTRIBUTE *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IEnumCERTVIEWATTRIBUTE *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IEnumCERTVIEWATTRIBUTE *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IEnumCERTVIEWATTRIBUTE *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IEnumCERTVIEWATTRIBUTE *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Next)(IEnumCERTVIEWATTRIBUTE *This,LONG *pIndex);
+                   HRESULT (WINAPI *GetName)(IEnumCERTVIEWATTRIBUTE *This,BSTR *pstrOut);
+                   HRESULT (WINAPI *GetValue)(IEnumCERTVIEWATTRIBUTE *This,BSTR *pstrOut);
+                   HRESULT (WINAPI *Skip)(IEnumCERTVIEWATTRIBUTE *This,LONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumCERTVIEWATTRIBUTE *This);
+                   HRESULT (WINAPI *Clone)(IEnumCERTVIEWATTRIBUTE *This,IEnumCERTVIEWATTRIBUTE **ppenum);
     END_INTERFACE
   } IEnumCERTVIEWATTRIBUTEVtbl;
   struct IEnumCERTVIEWATTRIBUTE {
@@ -280,20 +280,20 @@ extern "C"{
 #else
   typedef struct IEnumCERTVIEWEXTENSIONVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumCERTVIEWEXTENSION *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumCERTVIEWEXTENSION *This);
-      ULONG (WINAPI *Release)(IEnumCERTVIEWEXTENSION *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IEnumCERTVIEWEXTENSION *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IEnumCERTVIEWEXTENSION *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IEnumCERTVIEWEXTENSION *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IEnumCERTVIEWEXTENSION *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Next)(IEnumCERTVIEWEXTENSION *This,LONG *pIndex);
-      HRESULT (WINAPI *GetName)(IEnumCERTVIEWEXTENSION *This,BSTR *pstrOut);
-      HRESULT (WINAPI *GetFlags)(IEnumCERTVIEWEXTENSION *This,LONG *pFlags);
-      HRESULT (WINAPI *GetValue)(IEnumCERTVIEWEXTENSION *This,LONG Type,LONG Flags,VARIANT *pvarValue);
-      HRESULT (WINAPI *Skip)(IEnumCERTVIEWEXTENSION *This,LONG celt);
-      HRESULT (WINAPI *Reset)(IEnumCERTVIEWEXTENSION *This);
-      HRESULT (WINAPI *Clone)(IEnumCERTVIEWEXTENSION *This,IEnumCERTVIEWEXTENSION **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumCERTVIEWEXTENSION *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumCERTVIEWEXTENSION *This);
+                   ULONG (WINAPI *Release)(IEnumCERTVIEWEXTENSION *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IEnumCERTVIEWEXTENSION *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IEnumCERTVIEWEXTENSION *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IEnumCERTVIEWEXTENSION *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IEnumCERTVIEWEXTENSION *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Next)(IEnumCERTVIEWEXTENSION *This,LONG *pIndex);
+                   HRESULT (WINAPI *GetName)(IEnumCERTVIEWEXTENSION *This,BSTR *pstrOut);
+                   HRESULT (WINAPI *GetFlags)(IEnumCERTVIEWEXTENSION *This,LONG *pFlags);
+                   HRESULT (WINAPI *GetValue)(IEnumCERTVIEWEXTENSION *This,LONG Type,LONG Flags,VARIANT *pvarValue);
+                   HRESULT (WINAPI *Skip)(IEnumCERTVIEWEXTENSION *This,LONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumCERTVIEWEXTENSION *This);
+                   HRESULT (WINAPI *Clone)(IEnumCERTVIEWEXTENSION *This,IEnumCERTVIEWEXTENSION **ppenum);
     END_INTERFACE
   } IEnumCERTVIEWEXTENSIONVtbl;
   struct IEnumCERTVIEWEXTENSION {
@@ -350,21 +350,21 @@ extern "C"{
 #else
   typedef struct IEnumCERTVIEWROWVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumCERTVIEWROW *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumCERTVIEWROW *This);
-      ULONG (WINAPI *Release)(IEnumCERTVIEWROW *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IEnumCERTVIEWROW *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IEnumCERTVIEWROW *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IEnumCERTVIEWROW *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IEnumCERTVIEWROW *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Next)(IEnumCERTVIEWROW *This,LONG *pIndex);
-      HRESULT (WINAPI *EnumCertViewColumn)(IEnumCERTVIEWROW *This,IEnumCERTVIEWCOLUMN **ppenum);
-      HRESULT (WINAPI *EnumCertViewAttribute)(IEnumCERTVIEWROW *This,LONG Flags,IEnumCERTVIEWATTRIBUTE **ppenum);
-      HRESULT (WINAPI *EnumCertViewExtension)(IEnumCERTVIEWROW *This,LONG Flags,IEnumCERTVIEWEXTENSION **ppenum);
-      HRESULT (WINAPI *Skip)(IEnumCERTVIEWROW *This,LONG celt);
-      HRESULT (WINAPI *Reset)(IEnumCERTVIEWROW *This);
-      HRESULT (WINAPI *Clone)(IEnumCERTVIEWROW *This,IEnumCERTVIEWROW **ppenum);
-      HRESULT (WINAPI *GetMaxIndex)(IEnumCERTVIEWROW *This,LONG *pIndex);
+                   HRESULT (WINAPI *QueryInterface)(IEnumCERTVIEWROW *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumCERTVIEWROW *This);
+                   ULONG (WINAPI *Release)(IEnumCERTVIEWROW *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IEnumCERTVIEWROW *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IEnumCERTVIEWROW *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IEnumCERTVIEWROW *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IEnumCERTVIEWROW *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Next)(IEnumCERTVIEWROW *This,LONG *pIndex);
+                   HRESULT (WINAPI *EnumCertViewColumn)(IEnumCERTVIEWROW *This,IEnumCERTVIEWCOLUMN **ppenum);
+                   HRESULT (WINAPI *EnumCertViewAttribute)(IEnumCERTVIEWROW *This,LONG Flags,IEnumCERTVIEWATTRIBUTE **ppenum);
+                   HRESULT (WINAPI *EnumCertViewExtension)(IEnumCERTVIEWROW *This,LONG Flags,IEnumCERTVIEWEXTENSION **ppenum);
+                   HRESULT (WINAPI *Skip)(IEnumCERTVIEWROW *This,LONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumCERTVIEWROW *This);
+                   HRESULT (WINAPI *Clone)(IEnumCERTVIEWROW *This,IEnumCERTVIEWROW **ppenum);
+                   HRESULT (WINAPI *GetMaxIndex)(IEnumCERTVIEWROW *This,LONG *pIndex);
     END_INTERFACE
   } IEnumCERTVIEWROWVtbl;
   struct IEnumCERTVIEWROW {
@@ -424,21 +424,21 @@ extern "C"{
 #else
   typedef struct ICertViewVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertView *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertView *This);
-      ULONG (WINAPI *Release)(ICertView *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertView *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertView *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertView *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertView *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *OpenConnection)(ICertView *This,const BSTR strConfig);
-      HRESULT (WINAPI *EnumCertViewColumn)(ICertView *This,LONG fResultColumn,IEnumCERTVIEWCOLUMN **ppenum);
-      HRESULT (WINAPI *GetColumnCount)(ICertView *This,LONG fResultColumn,LONG *pcColumn);
-      HRESULT (WINAPI *GetColumnIndex)(ICertView *This,LONG fResultColumn,const BSTR strColumnName,LONG *pColumnIndex);
-      HRESULT (WINAPI *SetResultColumnCount)(ICertView *This,LONG cResultColumn);
-      HRESULT (WINAPI *SetResultColumn)(ICertView *This,LONG ColumnIndex);
-      HRESULT (WINAPI *SetRestriction)(ICertView *This,LONG ColumnIndex,LONG SeekOperator,LONG SortOrder,const VARIANT *pvarValue);
-      HRESULT (WINAPI *OpenView)(ICertView *This,IEnumCERTVIEWROW **ppenum);
+                   HRESULT (WINAPI *QueryInterface)(ICertView *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertView *This);
+                   ULONG (WINAPI *Release)(ICertView *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertView *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertView *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertView *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertView *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *OpenConnection)(ICertView *This,const BSTR strConfig);
+                   HRESULT (WINAPI *EnumCertViewColumn)(ICertView *This,LONG fResultColumn,IEnumCERTVIEWCOLUMN **ppenum);
+                   HRESULT (WINAPI *GetColumnCount)(ICertView *This,LONG fResultColumn,LONG *pcColumn);
+                   HRESULT (WINAPI *GetColumnIndex)(ICertView *This,LONG fResultColumn,const BSTR strColumnName,LONG *pColumnIndex);
+                   HRESULT (WINAPI *SetResultColumnCount)(ICertView *This,LONG cResultColumn);
+                   HRESULT (WINAPI *SetResultColumn)(ICertView *This,LONG ColumnIndex);
+                   HRESULT (WINAPI *SetRestriction)(ICertView *This,LONG ColumnIndex,LONG SeekOperator,LONG SortOrder,const VARIANT *pvarValue);
+                   HRESULT (WINAPI *OpenView)(ICertView *This,IEnumCERTVIEWROW **ppenum);
     END_INTERFACE
   } ICertViewVtbl;
   struct ICertView {
@@ -491,22 +491,22 @@ extern "C"{
 #else
   typedef struct ICertView2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertView2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertView2 *This);
-      ULONG (WINAPI *Release)(ICertView2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertView2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertView2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertView2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertView2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *OpenConnection)(ICertView2 *This,const BSTR strConfig);
-      HRESULT (WINAPI *EnumCertViewColumn)(ICertView2 *This,LONG fResultColumn,IEnumCERTVIEWCOLUMN **ppenum);
-      HRESULT (WINAPI *GetColumnCount)(ICertView2 *This,LONG fResultColumn,LONG *pcColumn);
-      HRESULT (WINAPI *GetColumnIndex)(ICertView2 *This,LONG fResultColumn,const BSTR strColumnName,LONG *pColumnIndex);
-      HRESULT (WINAPI *SetResultColumnCount)(ICertView2 *This,LONG cResultColumn);
-      HRESULT (WINAPI *SetResultColumn)(ICertView2 *This,LONG ColumnIndex);
-      HRESULT (WINAPI *SetRestriction)(ICertView2 *This,LONG ColumnIndex,LONG SeekOperator,LONG SortOrder,const VARIANT *pvarValue);
-      HRESULT (WINAPI *OpenView)(ICertView2 *This,IEnumCERTVIEWROW **ppenum);
-      HRESULT (WINAPI *SetTable)(ICertView2 *This,LONG Table);
+                   HRESULT (WINAPI *QueryInterface)(ICertView2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertView2 *This);
+                   ULONG (WINAPI *Release)(ICertView2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertView2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertView2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertView2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertView2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *OpenConnection)(ICertView2 *This,const BSTR strConfig);
+                   HRESULT (WINAPI *EnumCertViewColumn)(ICertView2 *This,LONG fResultColumn,IEnumCERTVIEWCOLUMN **ppenum);
+                   HRESULT (WINAPI *GetColumnCount)(ICertView2 *This,LONG fResultColumn,LONG *pcColumn);
+                   HRESULT (WINAPI *GetColumnIndex)(ICertView2 *This,LONG fResultColumn,const BSTR strColumnName,LONG *pColumnIndex);
+                   HRESULT (WINAPI *SetResultColumnCount)(ICertView2 *This,LONG cResultColumn);
+                   HRESULT (WINAPI *SetResultColumn)(ICertView2 *This,LONG ColumnIndex);
+                   HRESULT (WINAPI *SetRestriction)(ICertView2 *This,LONG ColumnIndex,LONG SeekOperator,LONG SortOrder,const VARIANT *pvarValue);
+                   HRESULT (WINAPI *OpenView)(ICertView2 *This,IEnumCERTVIEWROW **ppenum);
+                   HRESULT (WINAPI *SetTable)(ICertView2 *This,LONG Table);
     END_INTERFACE
   } ICertView2Vtbl;
   struct ICertView2 {

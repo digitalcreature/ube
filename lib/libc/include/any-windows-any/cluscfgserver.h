@@ -334,18 +334,18 @@ extern "C"{
 #else
   typedef struct IClusCfgNodeInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgNodeInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgNodeInfo *This);
-      ULONG (WINAPI *Release)(IClusCfgNodeInfo *This);
-      HRESULT (WINAPI *GetName)(IClusCfgNodeInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *SetName)(IClusCfgNodeInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *IsMemberOfCluster)(IClusCfgNodeInfo *This);
-      HRESULT (WINAPI *GetClusterConfigInfo)(IClusCfgNodeInfo *This,IClusCfgClusterInfo **ppClusCfgClusterInfoOut);
-      HRESULT (WINAPI *GetOSVersion)(IClusCfgNodeInfo *This,DWORD *pdwMajorVersionOut,DWORD *pdwMinorVersionOut,WORD *pwSuiteMaskOut,BYTE *pbProductTypeOut,BSTR *pbstrCSDVersionOut);
-      HRESULT (WINAPI *GetClusterVersion)(IClusCfgNodeInfo *This,DWORD *pdwNodeHighestVersion,DWORD *pdwNodeLowestVersion);
-      HRESULT (WINAPI *GetDriveLetterMappings)(IClusCfgNodeInfo *This,SDriveLetterMapping *pdlmDriveLetterUsageOut);
-      HRESULT (WINAPI *GetMaxNodeCount)(IClusCfgNodeInfo *This,DWORD *pcMaxNodesOut);
-      HRESULT (WINAPI *GetProcessorInfo)(IClusCfgNodeInfo *This,WORD *pwProcessorArchitectureOut,WORD *pwProcessorLevelOut);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgNodeInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgNodeInfo *This);
+                   ULONG (WINAPI *Release)(IClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *GetName)(IClusCfgNodeInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *SetName)(IClusCfgNodeInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *IsMemberOfCluster)(IClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *GetClusterConfigInfo)(IClusCfgNodeInfo *This,IClusCfgClusterInfo **ppClusCfgClusterInfoOut);
+                   HRESULT (WINAPI *GetOSVersion)(IClusCfgNodeInfo *This,DWORD *pdwMajorVersionOut,DWORD *pdwMinorVersionOut,WORD *pwSuiteMaskOut,BYTE *pbProductTypeOut,BSTR *pbstrCSDVersionOut);
+                   HRESULT (WINAPI *GetClusterVersion)(IClusCfgNodeInfo *This,DWORD *pdwNodeHighestVersion,DWORD *pdwNodeLowestVersion);
+                   HRESULT (WINAPI *GetDriveLetterMappings)(IClusCfgNodeInfo *This,SDriveLetterMapping *pdlmDriveLetterUsageOut);
+                   HRESULT (WINAPI *GetMaxNodeCount)(IClusCfgNodeInfo *This,DWORD *pcMaxNodesOut);
+                   HRESULT (WINAPI *GetProcessorInfo)(IClusCfgNodeInfo *This,WORD *pwProcessorArchitectureOut,WORD *pwProcessorLevelOut);
     END_INTERFACE
   } IClusCfgNodeInfoVtbl;
   struct IClusCfgNodeInfo {
@@ -414,27 +414,27 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgNodeInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgNodeInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgNodeInfo *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgNodeInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgNodeInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Begin_IsMemberOfCluster)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Finish_IsMemberOfCluster)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Begin_GetClusterConfigInfo)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Finish_GetClusterConfigInfo)(AsyncIClusCfgNodeInfo *This,IClusCfgClusterInfo **ppClusCfgClusterInfoOut);
-      HRESULT (WINAPI *Begin_GetOSVersion)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Finish_GetOSVersion)(AsyncIClusCfgNodeInfo *This,DWORD *pdwMajorVersionOut,DWORD *pdwMinorVersionOut,WORD *pwSuiteMaskOut,BYTE *pbProductTypeOut,BSTR *pbstrCSDVersionOut);
-      HRESULT (WINAPI *Begin_GetClusterVersion)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Finish_GetClusterVersion)(AsyncIClusCfgNodeInfo *This,DWORD *pdwNodeHighestVersion,DWORD *pdwNodeLowestVersion);
-      HRESULT (WINAPI *Begin_GetDriveLetterMappings)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Finish_GetDriveLetterMappings)(AsyncIClusCfgNodeInfo *This,SDriveLetterMapping *pdlmDriveLetterUsageOut);
-      HRESULT (WINAPI *Begin_GetMaxNodeCount)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Finish_GetMaxNodeCount)(AsyncIClusCfgNodeInfo *This,DWORD *pcMaxNodesOut);
-      HRESULT (WINAPI *Begin_GetProcessorInfo)(AsyncIClusCfgNodeInfo *This);
-      HRESULT (WINAPI *Finish_GetProcessorInfo)(AsyncIClusCfgNodeInfo *This,WORD *pwProcessorArchitectureOut,WORD *pwProcessorLevelOut);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgNodeInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgNodeInfo *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgNodeInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgNodeInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Begin_IsMemberOfCluster)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Finish_IsMemberOfCluster)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Begin_GetClusterConfigInfo)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Finish_GetClusterConfigInfo)(AsyncIClusCfgNodeInfo *This,IClusCfgClusterInfo **ppClusCfgClusterInfoOut);
+                   HRESULT (WINAPI *Begin_GetOSVersion)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Finish_GetOSVersion)(AsyncIClusCfgNodeInfo *This,DWORD *pdwMajorVersionOut,DWORD *pdwMinorVersionOut,WORD *pwSuiteMaskOut,BYTE *pbProductTypeOut,BSTR *pbstrCSDVersionOut);
+                   HRESULT (WINAPI *Begin_GetClusterVersion)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Finish_GetClusterVersion)(AsyncIClusCfgNodeInfo *This,DWORD *pdwNodeHighestVersion,DWORD *pdwNodeLowestVersion);
+                   HRESULT (WINAPI *Begin_GetDriveLetterMappings)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Finish_GetDriveLetterMappings)(AsyncIClusCfgNodeInfo *This,SDriveLetterMapping *pdlmDriveLetterUsageOut);
+                   HRESULT (WINAPI *Begin_GetMaxNodeCount)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Finish_GetMaxNodeCount)(AsyncIClusCfgNodeInfo *This,DWORD *pcMaxNodesOut);
+                   HRESULT (WINAPI *Begin_GetProcessorInfo)(AsyncIClusCfgNodeInfo *This);
+                   HRESULT (WINAPI *Finish_GetProcessorInfo)(AsyncIClusCfgNodeInfo *This,WORD *pwProcessorArchitectureOut,WORD *pwProcessorLevelOut);
     END_INTERFACE
   } AsyncIClusCfgNodeInfoVtbl;
   struct AsyncIClusCfgNodeInfo {
@@ -517,14 +517,14 @@ extern "C"{
 #else
   typedef struct IEnumClusCfgManagedResourcesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumClusCfgManagedResources *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumClusCfgManagedResources *This);
-      ULONG (WINAPI *Release)(IEnumClusCfgManagedResources *This);
-      HRESULT (WINAPI *Next)(IEnumClusCfgManagedResources *This,ULONG cNumberRequestedIn,IClusCfgManagedResourceInfo **rgpManagedResourceInfoOut,ULONG *pcNumberFetchedOut);
-      HRESULT (WINAPI *Reset)(IEnumClusCfgManagedResources *This);
-      HRESULT (WINAPI *Skip)(IEnumClusCfgManagedResources *This,ULONG cNumberToSkip);
-      HRESULT (WINAPI *Clone)(IEnumClusCfgManagedResources *This,IEnumClusCfgManagedResources **ppEnumManagedResourcesOut);
-      HRESULT (WINAPI *Count)(IEnumClusCfgManagedResources *This,DWORD *pnCountOut);
+                   HRESULT (WINAPI *QueryInterface)(IEnumClusCfgManagedResources *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumClusCfgManagedResources *This);
+                   ULONG (WINAPI *Release)(IEnumClusCfgManagedResources *This);
+                   HRESULT (WINAPI *Next)(IEnumClusCfgManagedResources *This,ULONG cNumberRequestedIn,IClusCfgManagedResourceInfo **rgpManagedResourceInfoOut,ULONG *pcNumberFetchedOut);
+                   HRESULT (WINAPI *Reset)(IEnumClusCfgManagedResources *This);
+                   HRESULT (WINAPI *Skip)(IEnumClusCfgManagedResources *This,ULONG cNumberToSkip);
+                   HRESULT (WINAPI *Clone)(IEnumClusCfgManagedResources *This,IEnumClusCfgManagedResources **ppEnumManagedResourcesOut);
+                   HRESULT (WINAPI *Count)(IEnumClusCfgManagedResources *This,DWORD *pnCountOut);
     END_INTERFACE
   } IEnumClusCfgManagedResourcesVtbl;
   struct IEnumClusCfgManagedResources {
@@ -573,19 +573,19 @@ extern "C"{
 #else
   typedef struct AsyncIEnumClusCfgManagedResourcesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIEnumClusCfgManagedResources *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIEnumClusCfgManagedResources *This);
-      ULONG (WINAPI *Release)(AsyncIEnumClusCfgManagedResources *This);
-      HRESULT (WINAPI *Begin_Next)(AsyncIEnumClusCfgManagedResources *This,ULONG cNumberRequestedIn);
-      HRESULT (WINAPI *Finish_Next)(AsyncIEnumClusCfgManagedResources *This,IClusCfgManagedResourceInfo **rgpManagedResourceInfoOut,ULONG *pcNumberFetchedOut);
-      HRESULT (WINAPI *Begin_Reset)(AsyncIEnumClusCfgManagedResources *This);
-      HRESULT (WINAPI *Finish_Reset)(AsyncIEnumClusCfgManagedResources *This);
-      HRESULT (WINAPI *Begin_Skip)(AsyncIEnumClusCfgManagedResources *This,ULONG cNumberToSkip);
-      HRESULT (WINAPI *Finish_Skip)(AsyncIEnumClusCfgManagedResources *This);
-      HRESULT (WINAPI *Begin_Clone)(AsyncIEnumClusCfgManagedResources *This);
-      HRESULT (WINAPI *Finish_Clone)(AsyncIEnumClusCfgManagedResources *This,IEnumClusCfgManagedResources **ppEnumManagedResourcesOut);
-      HRESULT (WINAPI *Begin_Count)(AsyncIEnumClusCfgManagedResources *This);
-      HRESULT (WINAPI *Finish_Count)(AsyncIEnumClusCfgManagedResources *This,DWORD *pnCountOut);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIEnumClusCfgManagedResources *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIEnumClusCfgManagedResources *This);
+                   ULONG (WINAPI *Release)(AsyncIEnumClusCfgManagedResources *This);
+                   HRESULT (WINAPI *Begin_Next)(AsyncIEnumClusCfgManagedResources *This,ULONG cNumberRequestedIn);
+                   HRESULT (WINAPI *Finish_Next)(AsyncIEnumClusCfgManagedResources *This,IClusCfgManagedResourceInfo **rgpManagedResourceInfoOut,ULONG *pcNumberFetchedOut);
+                   HRESULT (WINAPI *Begin_Reset)(AsyncIEnumClusCfgManagedResources *This);
+                   HRESULT (WINAPI *Finish_Reset)(AsyncIEnumClusCfgManagedResources *This);
+                   HRESULT (WINAPI *Begin_Skip)(AsyncIEnumClusCfgManagedResources *This,ULONG cNumberToSkip);
+                   HRESULT (WINAPI *Finish_Skip)(AsyncIEnumClusCfgManagedResources *This);
+                   HRESULT (WINAPI *Begin_Clone)(AsyncIEnumClusCfgManagedResources *This);
+                   HRESULT (WINAPI *Finish_Clone)(AsyncIEnumClusCfgManagedResources *This,IEnumClusCfgManagedResources **ppEnumManagedResourcesOut);
+                   HRESULT (WINAPI *Begin_Count)(AsyncIEnumClusCfgManagedResources *This);
+                   HRESULT (WINAPI *Finish_Count)(AsyncIEnumClusCfgManagedResources *This,DWORD *pnCountOut);
     END_INTERFACE
   } AsyncIEnumClusCfgManagedResourcesVtbl;
   struct AsyncIEnumClusCfgManagedResources {
@@ -644,14 +644,14 @@ extern "C"{
 #else
   typedef struct IEnumClusCfgNetworksVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumClusCfgNetworks *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumClusCfgNetworks *This);
-      ULONG (WINAPI *Release)(IEnumClusCfgNetworks *This);
-      HRESULT (WINAPI *Next)(IEnumClusCfgNetworks *This,ULONG cNumberRequestedIn,IClusCfgNetworkInfo **rgpNetworkInfoOut,ULONG *pcNumberFetchedOut);
-      HRESULT (WINAPI *Skip)(IEnumClusCfgNetworks *This,ULONG cNumberToSkipIn);
-      HRESULT (WINAPI *Reset)(IEnumClusCfgNetworks *This);
-      HRESULT (WINAPI *Clone)(IEnumClusCfgNetworks *This,IEnumClusCfgNetworks **ppEnumNetworksOut);
-      HRESULT (WINAPI *Count)(IEnumClusCfgNetworks *This,DWORD *pnCountOut);
+                   HRESULT (WINAPI *QueryInterface)(IEnumClusCfgNetworks *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumClusCfgNetworks *This);
+                   ULONG (WINAPI *Release)(IEnumClusCfgNetworks *This);
+                   HRESULT (WINAPI *Next)(IEnumClusCfgNetworks *This,ULONG cNumberRequestedIn,IClusCfgNetworkInfo **rgpNetworkInfoOut,ULONG *pcNumberFetchedOut);
+                   HRESULT (WINAPI *Skip)(IEnumClusCfgNetworks *This,ULONG cNumberToSkipIn);
+                   HRESULT (WINAPI *Reset)(IEnumClusCfgNetworks *This);
+                   HRESULT (WINAPI *Clone)(IEnumClusCfgNetworks *This,IEnumClusCfgNetworks **ppEnumNetworksOut);
+                   HRESULT (WINAPI *Count)(IEnumClusCfgNetworks *This,DWORD *pnCountOut);
     END_INTERFACE
   } IEnumClusCfgNetworksVtbl;
   struct IEnumClusCfgNetworks {
@@ -700,19 +700,19 @@ extern "C"{
 #else
   typedef struct AsyncIEnumClusCfgNetworksVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIEnumClusCfgNetworks *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIEnumClusCfgNetworks *This);
-      ULONG (WINAPI *Release)(AsyncIEnumClusCfgNetworks *This);
-      HRESULT (WINAPI *Begin_Next)(AsyncIEnumClusCfgNetworks *This,ULONG cNumberRequestedIn);
-      HRESULT (WINAPI *Finish_Next)(AsyncIEnumClusCfgNetworks *This,IClusCfgNetworkInfo **rgpNetworkInfoOut,ULONG *pcNumberFetchedOut);
-      HRESULT (WINAPI *Begin_Skip)(AsyncIEnumClusCfgNetworks *This,ULONG cNumberToSkipIn);
-      HRESULT (WINAPI *Finish_Skip)(AsyncIEnumClusCfgNetworks *This);
-      HRESULT (WINAPI *Begin_Reset)(AsyncIEnumClusCfgNetworks *This);
-      HRESULT (WINAPI *Finish_Reset)(AsyncIEnumClusCfgNetworks *This);
-      HRESULT (WINAPI *Begin_Clone)(AsyncIEnumClusCfgNetworks *This);
-      HRESULT (WINAPI *Finish_Clone)(AsyncIEnumClusCfgNetworks *This,IEnumClusCfgNetworks **ppEnumNetworksOut);
-      HRESULT (WINAPI *Begin_Count)(AsyncIEnumClusCfgNetworks *This);
-      HRESULT (WINAPI *Finish_Count)(AsyncIEnumClusCfgNetworks *This,DWORD *pnCountOut);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIEnumClusCfgNetworks *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIEnumClusCfgNetworks *This);
+                   ULONG (WINAPI *Release)(AsyncIEnumClusCfgNetworks *This);
+                   HRESULT (WINAPI *Begin_Next)(AsyncIEnumClusCfgNetworks *This,ULONG cNumberRequestedIn);
+                   HRESULT (WINAPI *Finish_Next)(AsyncIEnumClusCfgNetworks *This,IClusCfgNetworkInfo **rgpNetworkInfoOut,ULONG *pcNumberFetchedOut);
+                   HRESULT (WINAPI *Begin_Skip)(AsyncIEnumClusCfgNetworks *This,ULONG cNumberToSkipIn);
+                   HRESULT (WINAPI *Finish_Skip)(AsyncIEnumClusCfgNetworks *This);
+                   HRESULT (WINAPI *Begin_Reset)(AsyncIEnumClusCfgNetworks *This);
+                   HRESULT (WINAPI *Finish_Reset)(AsyncIEnumClusCfgNetworks *This);
+                   HRESULT (WINAPI *Begin_Clone)(AsyncIEnumClusCfgNetworks *This);
+                   HRESULT (WINAPI *Finish_Clone)(AsyncIEnumClusCfgNetworks *This,IEnumClusCfgNetworks **ppEnumNetworksOut);
+                   HRESULT (WINAPI *Begin_Count)(AsyncIEnumClusCfgNetworks *This);
+                   HRESULT (WINAPI *Finish_Count)(AsyncIEnumClusCfgNetworks *This,DWORD *pnCountOut);
     END_INTERFACE
   } AsyncIEnumClusCfgNetworksVtbl;
   struct AsyncIEnumClusCfgNetworks {
@@ -779,22 +779,22 @@ extern "C"{
 #else
   typedef struct IClusCfgManagedResourceInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgManagedResourceInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgManagedResourceInfo *This);
-      ULONG (WINAPI *Release)(IClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *GetUID)(IClusCfgManagedResourceInfo *This,BSTR *pbstrUIDOut);
-      HRESULT (WINAPI *GetName)(IClusCfgManagedResourceInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *SetName)(IClusCfgManagedResourceInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *IsManaged)(IClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *SetManaged)(IClusCfgManagedResourceInfo *This,WINBOOL fIsManagedIn);
-      HRESULT (WINAPI *IsQuorumResource)(IClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *SetQuorumResource)(IClusCfgManagedResourceInfo *This,WINBOOL fIsQuorumResourceIn);
-      HRESULT (WINAPI *IsQuorumCapable)(IClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *SetQuorumCapable)(IClusCfgManagedResourceInfo *This,WINBOOL fIsQuorumCapableIn);
-      HRESULT (WINAPI *GetDriveLetterMappings)(IClusCfgManagedResourceInfo *This,SDriveLetterMapping *pdlmDriveLetterMappingOut);
-      HRESULT (WINAPI *SetDriveLetterMappings)(IClusCfgManagedResourceInfo *This,SDriveLetterMapping dlmDriveLetterMappingIn);
-      HRESULT (WINAPI *IsManagedByDefault)(IClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *SetManagedByDefault)(IClusCfgManagedResourceInfo *This,WINBOOL fIsManagedByDefaultIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgManagedResourceInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgManagedResourceInfo *This);
+                   ULONG (WINAPI *Release)(IClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *GetUID)(IClusCfgManagedResourceInfo *This,BSTR *pbstrUIDOut);
+                   HRESULT (WINAPI *GetName)(IClusCfgManagedResourceInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *SetName)(IClusCfgManagedResourceInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *IsManaged)(IClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *SetManaged)(IClusCfgManagedResourceInfo *This,WINBOOL fIsManagedIn);
+                   HRESULT (WINAPI *IsQuorumResource)(IClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *SetQuorumResource)(IClusCfgManagedResourceInfo *This,WINBOOL fIsQuorumResourceIn);
+                   HRESULT (WINAPI *IsQuorumCapable)(IClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *SetQuorumCapable)(IClusCfgManagedResourceInfo *This,WINBOOL fIsQuorumCapableIn);
+                   HRESULT (WINAPI *GetDriveLetterMappings)(IClusCfgManagedResourceInfo *This,SDriveLetterMapping *pdlmDriveLetterMappingOut);
+                   HRESULT (WINAPI *SetDriveLetterMappings)(IClusCfgManagedResourceInfo *This,SDriveLetterMapping dlmDriveLetterMappingIn);
+                   HRESULT (WINAPI *IsManagedByDefault)(IClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *SetManagedByDefault)(IClusCfgManagedResourceInfo *This,WINBOOL fIsManagedByDefaultIn);
     END_INTERFACE
   } IClusCfgManagedResourceInfoVtbl;
   struct IClusCfgManagedResourceInfo {
@@ -883,35 +883,35 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgManagedResourceInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgManagedResourceInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgManagedResourceInfo *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_GetUID)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Finish_GetUID)(AsyncIClusCfgManagedResourceInfo *This,BSTR *pbstrUIDOut);
-      HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgManagedResourceInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgManagedResourceInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_IsManaged)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Finish_IsManaged)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_SetManaged)(AsyncIClusCfgManagedResourceInfo *This,WINBOOL fIsManagedIn);
-      HRESULT (WINAPI *Finish_SetManaged)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_IsQuorumResource)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Finish_IsQuorumResource)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_SetQuorumResource)(AsyncIClusCfgManagedResourceInfo *This,WINBOOL fIsQuorumResourceIn);
-      HRESULT (WINAPI *Finish_SetQuorumResource)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_IsQuorumCapable)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Finish_IsQuorumCapable)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_SetQuorumCapable)(AsyncIClusCfgManagedResourceInfo *This,WINBOOL fIsQuorumCapableIn);
-      HRESULT (WINAPI *Finish_SetQuorumCapable)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_GetDriveLetterMappings)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Finish_GetDriveLetterMappings)(AsyncIClusCfgManagedResourceInfo *This,SDriveLetterMapping *pdlmDriveLetterMappingOut);
-      HRESULT (WINAPI *Begin_SetDriveLetterMappings)(AsyncIClusCfgManagedResourceInfo *This,SDriveLetterMapping dlmDriveLetterMappingIn);
-      HRESULT (WINAPI *Finish_SetDriveLetterMappings)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_IsManagedByDefault)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Finish_IsManagedByDefault)(AsyncIClusCfgManagedResourceInfo *This);
-      HRESULT (WINAPI *Begin_SetManagedByDefault)(AsyncIClusCfgManagedResourceInfo *This,WINBOOL fIsManagedByDefaultIn);
-      HRESULT (WINAPI *Finish_SetManagedByDefault)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgManagedResourceInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgManagedResourceInfo *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_GetUID)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Finish_GetUID)(AsyncIClusCfgManagedResourceInfo *This,BSTR *pbstrUIDOut);
+                   HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgManagedResourceInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgManagedResourceInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_IsManaged)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Finish_IsManaged)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_SetManaged)(AsyncIClusCfgManagedResourceInfo *This,WINBOOL fIsManagedIn);
+                   HRESULT (WINAPI *Finish_SetManaged)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_IsQuorumResource)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Finish_IsQuorumResource)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_SetQuorumResource)(AsyncIClusCfgManagedResourceInfo *This,WINBOOL fIsQuorumResourceIn);
+                   HRESULT (WINAPI *Finish_SetQuorumResource)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_IsQuorumCapable)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Finish_IsQuorumCapable)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_SetQuorumCapable)(AsyncIClusCfgManagedResourceInfo *This,WINBOOL fIsQuorumCapableIn);
+                   HRESULT (WINAPI *Finish_SetQuorumCapable)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_GetDriveLetterMappings)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Finish_GetDriveLetterMappings)(AsyncIClusCfgManagedResourceInfo *This,SDriveLetterMapping *pdlmDriveLetterMappingOut);
+                   HRESULT (WINAPI *Begin_SetDriveLetterMappings)(AsyncIClusCfgManagedResourceInfo *This,SDriveLetterMapping dlmDriveLetterMappingIn);
+                   HRESULT (WINAPI *Finish_SetDriveLetterMappings)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_IsManagedByDefault)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Finish_IsManagedByDefault)(AsyncIClusCfgManagedResourceInfo *This);
+                   HRESULT (WINAPI *Begin_SetManagedByDefault)(AsyncIClusCfgManagedResourceInfo *This,WINBOOL fIsManagedByDefaultIn);
+                   HRESULT (WINAPI *Finish_SetManagedByDefault)(AsyncIClusCfgManagedResourceInfo *This);
     END_INTERFACE
   } AsyncIClusCfgManagedResourceInfoVtbl;
   struct AsyncIClusCfgManagedResourceInfo {
@@ -1018,14 +1018,14 @@ extern "C"{
 #else
   typedef struct IEnumClusCfgPartitionsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumClusCfgPartitions *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumClusCfgPartitions *This);
-      ULONG (WINAPI *Release)(IEnumClusCfgPartitions *This);
-      HRESULT (WINAPI *Next)(IEnumClusCfgPartitions *This,ULONG cNumberRequestedIn,IClusCfgPartitionInfo **rgpPartitionInfoOut,ULONG *pcNumberFetchedOut);
-      HRESULT (WINAPI *Reset)(IEnumClusCfgPartitions *This);
-      HRESULT (WINAPI *Skip)(IEnumClusCfgPartitions *This,ULONG cNumberToSkip);
-      HRESULT (WINAPI *Clone)(IEnumClusCfgPartitions *This,IEnumClusCfgPartitions **ppEnumPartitions);
-      HRESULT (WINAPI *Count)(IEnumClusCfgPartitions *This,DWORD *pnCountOut);
+                   HRESULT (WINAPI *QueryInterface)(IEnumClusCfgPartitions *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumClusCfgPartitions *This);
+                   ULONG (WINAPI *Release)(IEnumClusCfgPartitions *This);
+                   HRESULT (WINAPI *Next)(IEnumClusCfgPartitions *This,ULONG cNumberRequestedIn,IClusCfgPartitionInfo **rgpPartitionInfoOut,ULONG *pcNumberFetchedOut);
+                   HRESULT (WINAPI *Reset)(IEnumClusCfgPartitions *This);
+                   HRESULT (WINAPI *Skip)(IEnumClusCfgPartitions *This,ULONG cNumberToSkip);
+                   HRESULT (WINAPI *Clone)(IEnumClusCfgPartitions *This,IEnumClusCfgPartitions **ppEnumPartitions);
+                   HRESULT (WINAPI *Count)(IEnumClusCfgPartitions *This,DWORD *pnCountOut);
     END_INTERFACE
   } IEnumClusCfgPartitionsVtbl;
   struct IEnumClusCfgPartitions {
@@ -1074,19 +1074,19 @@ extern "C"{
 #else
   typedef struct AsyncIEnumClusCfgPartitionsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIEnumClusCfgPartitions *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIEnumClusCfgPartitions *This);
-      ULONG (WINAPI *Release)(AsyncIEnumClusCfgPartitions *This);
-      HRESULT (WINAPI *Begin_Next)(AsyncIEnumClusCfgPartitions *This,ULONG cNumberRequestedIn);
-      HRESULT (WINAPI *Finish_Next)(AsyncIEnumClusCfgPartitions *This,IClusCfgPartitionInfo **rgpPartitionInfoOut,ULONG *pcNumberFetchedOut);
-      HRESULT (WINAPI *Begin_Reset)(AsyncIEnumClusCfgPartitions *This);
-      HRESULT (WINAPI *Finish_Reset)(AsyncIEnumClusCfgPartitions *This);
-      HRESULT (WINAPI *Begin_Skip)(AsyncIEnumClusCfgPartitions *This,ULONG cNumberToSkip);
-      HRESULT (WINAPI *Finish_Skip)(AsyncIEnumClusCfgPartitions *This);
-      HRESULT (WINAPI *Begin_Clone)(AsyncIEnumClusCfgPartitions *This);
-      HRESULT (WINAPI *Finish_Clone)(AsyncIEnumClusCfgPartitions *This,IEnumClusCfgPartitions **ppEnumPartitions);
-      HRESULT (WINAPI *Begin_Count)(AsyncIEnumClusCfgPartitions *This);
-      HRESULT (WINAPI *Finish_Count)(AsyncIEnumClusCfgPartitions *This,DWORD *pnCountOut);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIEnumClusCfgPartitions *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIEnumClusCfgPartitions *This);
+                   ULONG (WINAPI *Release)(AsyncIEnumClusCfgPartitions *This);
+                   HRESULT (WINAPI *Begin_Next)(AsyncIEnumClusCfgPartitions *This,ULONG cNumberRequestedIn);
+                   HRESULT (WINAPI *Finish_Next)(AsyncIEnumClusCfgPartitions *This,IClusCfgPartitionInfo **rgpPartitionInfoOut,ULONG *pcNumberFetchedOut);
+                   HRESULT (WINAPI *Begin_Reset)(AsyncIEnumClusCfgPartitions *This);
+                   HRESULT (WINAPI *Finish_Reset)(AsyncIEnumClusCfgPartitions *This);
+                   HRESULT (WINAPI *Begin_Skip)(AsyncIEnumClusCfgPartitions *This,ULONG cNumberToSkip);
+                   HRESULT (WINAPI *Finish_Skip)(AsyncIEnumClusCfgPartitions *This);
+                   HRESULT (WINAPI *Begin_Clone)(AsyncIEnumClusCfgPartitions *This);
+                   HRESULT (WINAPI *Finish_Clone)(AsyncIEnumClusCfgPartitions *This,IEnumClusCfgPartitions **ppEnumPartitions);
+                   HRESULT (WINAPI *Begin_Count)(AsyncIEnumClusCfgPartitions *This);
+                   HRESULT (WINAPI *Finish_Count)(AsyncIEnumClusCfgPartitions *This,DWORD *pnCountOut);
     END_INTERFACE
   } AsyncIEnumClusCfgPartitionsVtbl;
   struct AsyncIEnumClusCfgPartitions {
@@ -1148,17 +1148,17 @@ extern "C"{
 #else
   typedef struct IClusCfgPartitionInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgPartitionInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgPartitionInfo *This);
-      ULONG (WINAPI *Release)(IClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *GetUID)(IClusCfgPartitionInfo *This,BSTR *pbstrUIDOut);
-      HRESULT (WINAPI *GetName)(IClusCfgPartitionInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *SetName)(IClusCfgPartitionInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *GetDescription)(IClusCfgPartitionInfo *This,BSTR *pbstrDescriptionOut);
-      HRESULT (WINAPI *SetDescription)(IClusCfgPartitionInfo *This,LPCWSTR pcszDescriptionIn);
-      HRESULT (WINAPI *GetDriveLetterMappings)(IClusCfgPartitionInfo *This,SDriveLetterMapping *pdlmDriveLetterUsageOut);
-      HRESULT (WINAPI *SetDriveLetterMappings)(IClusCfgPartitionInfo *This,SDriveLetterMapping dlmDriveLetterMappingIn);
-      HRESULT (WINAPI *GetSize)(IClusCfgPartitionInfo *This,ULONG *pcMegaBytes);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgPartitionInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgPartitionInfo *This);
+                   ULONG (WINAPI *Release)(IClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *GetUID)(IClusCfgPartitionInfo *This,BSTR *pbstrUIDOut);
+                   HRESULT (WINAPI *GetName)(IClusCfgPartitionInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *SetName)(IClusCfgPartitionInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *GetDescription)(IClusCfgPartitionInfo *This,BSTR *pbstrDescriptionOut);
+                   HRESULT (WINAPI *SetDescription)(IClusCfgPartitionInfo *This,LPCWSTR pcszDescriptionIn);
+                   HRESULT (WINAPI *GetDriveLetterMappings)(IClusCfgPartitionInfo *This,SDriveLetterMapping *pdlmDriveLetterUsageOut);
+                   HRESULT (WINAPI *SetDriveLetterMappings)(IClusCfgPartitionInfo *This,SDriveLetterMapping dlmDriveLetterMappingIn);
+                   HRESULT (WINAPI *GetSize)(IClusCfgPartitionInfo *This,ULONG *pcMegaBytes);
     END_INTERFACE
   } IClusCfgPartitionInfoVtbl;
   struct IClusCfgPartitionInfo {
@@ -1222,25 +1222,25 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgPartitionInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgPartitionInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgPartitionInfo *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Begin_GetUID)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Finish_GetUID)(AsyncIClusCfgPartitionInfo *This,BSTR *pbstrUIDOut);
-      HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgPartitionInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgPartitionInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Begin_GetDescription)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Finish_GetDescription)(AsyncIClusCfgPartitionInfo *This,BSTR *pbstrDescriptionOut);
-      HRESULT (WINAPI *Begin_SetDescription)(AsyncIClusCfgPartitionInfo *This,LPCWSTR pcszDescriptionIn);
-      HRESULT (WINAPI *Finish_SetDescription)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Begin_GetDriveLetterMappings)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Finish_GetDriveLetterMappings)(AsyncIClusCfgPartitionInfo *This,SDriveLetterMapping *pdlmDriveLetterUsageOut);
-      HRESULT (WINAPI *Begin_SetDriveLetterMappings)(AsyncIClusCfgPartitionInfo *This,SDriveLetterMapping dlmDriveLetterMappingIn);
-      HRESULT (WINAPI *Finish_SetDriveLetterMappings)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Begin_GetSize)(AsyncIClusCfgPartitionInfo *This);
-      HRESULT (WINAPI *Finish_GetSize)(AsyncIClusCfgPartitionInfo *This,ULONG *pcMegaBytes);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgPartitionInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgPartitionInfo *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Begin_GetUID)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Finish_GetUID)(AsyncIClusCfgPartitionInfo *This,BSTR *pbstrUIDOut);
+                   HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgPartitionInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgPartitionInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Begin_GetDescription)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Finish_GetDescription)(AsyncIClusCfgPartitionInfo *This,BSTR *pbstrDescriptionOut);
+                   HRESULT (WINAPI *Begin_SetDescription)(AsyncIClusCfgPartitionInfo *This,LPCWSTR pcszDescriptionIn);
+                   HRESULT (WINAPI *Finish_SetDescription)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Begin_GetDriveLetterMappings)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Finish_GetDriveLetterMappings)(AsyncIClusCfgPartitionInfo *This,SDriveLetterMapping *pdlmDriveLetterUsageOut);
+                   HRESULT (WINAPI *Begin_SetDriveLetterMappings)(AsyncIClusCfgPartitionInfo *This,SDriveLetterMapping dlmDriveLetterMappingIn);
+                   HRESULT (WINAPI *Finish_SetDriveLetterMappings)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Begin_GetSize)(AsyncIClusCfgPartitionInfo *This);
+                   HRESULT (WINAPI *Finish_GetSize)(AsyncIClusCfgPartitionInfo *This,ULONG *pcMegaBytes);
     END_INTERFACE
   } AsyncIClusCfgPartitionInfoVtbl;
   struct AsyncIClusCfgPartitionInfo {
@@ -1317,14 +1317,14 @@ extern "C"{
 #else
   typedef struct IEnumClusCfgIPAddressesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumClusCfgIPAddresses *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumClusCfgIPAddresses *This);
-      ULONG (WINAPI *Release)(IEnumClusCfgIPAddresses *This);
-      HRESULT (WINAPI *Next)(IEnumClusCfgIPAddresses *This,ULONG cNumberRequestedIn,IClusCfgIPAddressInfo **rgpIPAddressInfoOut,ULONG *pcNumberFetchedOut);
-      HRESULT (WINAPI *Skip)(IEnumClusCfgIPAddresses *This,ULONG cNumberToSkipIn);
-      HRESULT (WINAPI *Reset)(IEnumClusCfgIPAddresses *This);
-      HRESULT (WINAPI *Clone)(IEnumClusCfgIPAddresses *This,IEnumClusCfgIPAddresses **ppEnumIPAddressesOut);
-      HRESULT (WINAPI *Count)(IEnumClusCfgIPAddresses *This,DWORD *pnCountOut);
+                   HRESULT (WINAPI *QueryInterface)(IEnumClusCfgIPAddresses *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumClusCfgIPAddresses *This);
+                   ULONG (WINAPI *Release)(IEnumClusCfgIPAddresses *This);
+                   HRESULT (WINAPI *Next)(IEnumClusCfgIPAddresses *This,ULONG cNumberRequestedIn,IClusCfgIPAddressInfo **rgpIPAddressInfoOut,ULONG *pcNumberFetchedOut);
+                   HRESULT (WINAPI *Skip)(IEnumClusCfgIPAddresses *This,ULONG cNumberToSkipIn);
+                   HRESULT (WINAPI *Reset)(IEnumClusCfgIPAddresses *This);
+                   HRESULT (WINAPI *Clone)(IEnumClusCfgIPAddresses *This,IEnumClusCfgIPAddresses **ppEnumIPAddressesOut);
+                   HRESULT (WINAPI *Count)(IEnumClusCfgIPAddresses *This,DWORD *pnCountOut);
     END_INTERFACE
   } IEnumClusCfgIPAddressesVtbl;
   struct IEnumClusCfgIPAddresses {
@@ -1373,19 +1373,19 @@ extern "C"{
 #else
   typedef struct AsyncIEnumClusCfgIPAddressesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIEnumClusCfgIPAddresses *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIEnumClusCfgIPAddresses *This);
-      ULONG (WINAPI *Release)(AsyncIEnumClusCfgIPAddresses *This);
-      HRESULT (WINAPI *Begin_Next)(AsyncIEnumClusCfgIPAddresses *This,ULONG cNumberRequestedIn);
-      HRESULT (WINAPI *Finish_Next)(AsyncIEnumClusCfgIPAddresses *This,IClusCfgIPAddressInfo **rgpIPAddressInfoOut,ULONG *pcNumberFetchedOut);
-      HRESULT (WINAPI *Begin_Skip)(AsyncIEnumClusCfgIPAddresses *This,ULONG cNumberToSkipIn);
-      HRESULT (WINAPI *Finish_Skip)(AsyncIEnumClusCfgIPAddresses *This);
-      HRESULT (WINAPI *Begin_Reset)(AsyncIEnumClusCfgIPAddresses *This);
-      HRESULT (WINAPI *Finish_Reset)(AsyncIEnumClusCfgIPAddresses *This);
-      HRESULT (WINAPI *Begin_Clone)(AsyncIEnumClusCfgIPAddresses *This);
-      HRESULT (WINAPI *Finish_Clone)(AsyncIEnumClusCfgIPAddresses *This,IEnumClusCfgIPAddresses **ppEnumIPAddressesOut);
-      HRESULT (WINAPI *Begin_Count)(AsyncIEnumClusCfgIPAddresses *This);
-      HRESULT (WINAPI *Finish_Count)(AsyncIEnumClusCfgIPAddresses *This,DWORD *pnCountOut);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIEnumClusCfgIPAddresses *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIEnumClusCfgIPAddresses *This);
+                   ULONG (WINAPI *Release)(AsyncIEnumClusCfgIPAddresses *This);
+                   HRESULT (WINAPI *Begin_Next)(AsyncIEnumClusCfgIPAddresses *This,ULONG cNumberRequestedIn);
+                   HRESULT (WINAPI *Finish_Next)(AsyncIEnumClusCfgIPAddresses *This,IClusCfgIPAddressInfo **rgpIPAddressInfoOut,ULONG *pcNumberFetchedOut);
+                   HRESULT (WINAPI *Begin_Skip)(AsyncIEnumClusCfgIPAddresses *This,ULONG cNumberToSkipIn);
+                   HRESULT (WINAPI *Finish_Skip)(AsyncIEnumClusCfgIPAddresses *This);
+                   HRESULT (WINAPI *Begin_Reset)(AsyncIEnumClusCfgIPAddresses *This);
+                   HRESULT (WINAPI *Finish_Reset)(AsyncIEnumClusCfgIPAddresses *This);
+                   HRESULT (WINAPI *Begin_Clone)(AsyncIEnumClusCfgIPAddresses *This);
+                   HRESULT (WINAPI *Finish_Clone)(AsyncIEnumClusCfgIPAddresses *This,IEnumClusCfgIPAddresses **ppEnumIPAddressesOut);
+                   HRESULT (WINAPI *Begin_Count)(AsyncIEnumClusCfgIPAddresses *This);
+                   HRESULT (WINAPI *Finish_Count)(AsyncIEnumClusCfgIPAddresses *This,DWORD *pnCountOut);
     END_INTERFACE
   } AsyncIEnumClusCfgIPAddressesVtbl;
   struct AsyncIEnumClusCfgIPAddresses {
@@ -1444,14 +1444,14 @@ extern "C"{
 #else
   typedef struct IClusCfgIPAddressInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgIPAddressInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgIPAddressInfo *This);
-      ULONG (WINAPI *Release)(IClusCfgIPAddressInfo *This);
-      HRESULT (WINAPI *GetUID)(IClusCfgIPAddressInfo *This,BSTR *pbstrUIDOut);
-      HRESULT (WINAPI *GetIPAddress)(IClusCfgIPAddressInfo *This,ULONG *pulDottedQuadOut);
-      HRESULT (WINAPI *SetIPAddress)(IClusCfgIPAddressInfo *This,ULONG ulDottedQuadIn);
-      HRESULT (WINAPI *GetSubnetMask)(IClusCfgIPAddressInfo *This,ULONG *pulDottedQuadOut);
-      HRESULT (WINAPI *SetSubnetMask)(IClusCfgIPAddressInfo *This,ULONG ulDottedQuadIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgIPAddressInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgIPAddressInfo *This);
+                   ULONG (WINAPI *Release)(IClusCfgIPAddressInfo *This);
+                   HRESULT (WINAPI *GetUID)(IClusCfgIPAddressInfo *This,BSTR *pbstrUIDOut);
+                   HRESULT (WINAPI *GetIPAddress)(IClusCfgIPAddressInfo *This,ULONG *pulDottedQuadOut);
+                   HRESULT (WINAPI *SetIPAddress)(IClusCfgIPAddressInfo *This,ULONG ulDottedQuadIn);
+                   HRESULT (WINAPI *GetSubnetMask)(IClusCfgIPAddressInfo *This,ULONG *pulDottedQuadOut);
+                   HRESULT (WINAPI *SetSubnetMask)(IClusCfgIPAddressInfo *This,ULONG ulDottedQuadIn);
     END_INTERFACE
   } IClusCfgIPAddressInfoVtbl;
   struct IClusCfgIPAddressInfo {
@@ -1500,19 +1500,19 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgIPAddressInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgIPAddressInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgIPAddressInfo *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgIPAddressInfo *This);
-      HRESULT (WINAPI *Begin_GetUID)(AsyncIClusCfgIPAddressInfo *This);
-      HRESULT (WINAPI *Finish_GetUID)(AsyncIClusCfgIPAddressInfo *This,BSTR *pbstrUIDOut);
-      HRESULT (WINAPI *Begin_GetIPAddress)(AsyncIClusCfgIPAddressInfo *This);
-      HRESULT (WINAPI *Finish_GetIPAddress)(AsyncIClusCfgIPAddressInfo *This,ULONG *pulDottedQuadOut);
-      HRESULT (WINAPI *Begin_SetIPAddress)(AsyncIClusCfgIPAddressInfo *This,ULONG ulDottedQuadIn);
-      HRESULT (WINAPI *Finish_SetIPAddress)(AsyncIClusCfgIPAddressInfo *This);
-      HRESULT (WINAPI *Begin_GetSubnetMask)(AsyncIClusCfgIPAddressInfo *This);
-      HRESULT (WINAPI *Finish_GetSubnetMask)(AsyncIClusCfgIPAddressInfo *This,ULONG *pulDottedQuadOut);
-      HRESULT (WINAPI *Begin_SetSubnetMask)(AsyncIClusCfgIPAddressInfo *This,ULONG ulDottedQuadIn);
-      HRESULT (WINAPI *Finish_SetSubnetMask)(AsyncIClusCfgIPAddressInfo *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgIPAddressInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgIPAddressInfo *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgIPAddressInfo *This);
+                   HRESULT (WINAPI *Begin_GetUID)(AsyncIClusCfgIPAddressInfo *This);
+                   HRESULT (WINAPI *Finish_GetUID)(AsyncIClusCfgIPAddressInfo *This,BSTR *pbstrUIDOut);
+                   HRESULT (WINAPI *Begin_GetIPAddress)(AsyncIClusCfgIPAddressInfo *This);
+                   HRESULT (WINAPI *Finish_GetIPAddress)(AsyncIClusCfgIPAddressInfo *This,ULONG *pulDottedQuadOut);
+                   HRESULT (WINAPI *Begin_SetIPAddress)(AsyncIClusCfgIPAddressInfo *This,ULONG ulDottedQuadIn);
+                   HRESULT (WINAPI *Finish_SetIPAddress)(AsyncIClusCfgIPAddressInfo *This);
+                   HRESULT (WINAPI *Begin_GetSubnetMask)(AsyncIClusCfgIPAddressInfo *This);
+                   HRESULT (WINAPI *Finish_GetSubnetMask)(AsyncIClusCfgIPAddressInfo *This,ULONG *pulDottedQuadOut);
+                   HRESULT (WINAPI *Begin_SetSubnetMask)(AsyncIClusCfgIPAddressInfo *This,ULONG ulDottedQuadIn);
+                   HRESULT (WINAPI *Finish_SetSubnetMask)(AsyncIClusCfgIPAddressInfo *This);
     END_INTERFACE
   } AsyncIClusCfgIPAddressInfoVtbl;
   struct AsyncIClusCfgIPAddressInfo {
@@ -1577,20 +1577,20 @@ extern "C"{
 #else
   typedef struct IClusCfgNetworkInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgNetworkInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgNetworkInfo *This);
-      ULONG (WINAPI *Release)(IClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *GetUID)(IClusCfgNetworkInfo *This,BSTR *pbstrUIDOut);
-      HRESULT (WINAPI *GetName)(IClusCfgNetworkInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *SetName)(IClusCfgNetworkInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *GetDescription)(IClusCfgNetworkInfo *This,BSTR *pbstrDescriptionOut);
-      HRESULT (WINAPI *SetDescription)(IClusCfgNetworkInfo *This,LPCWSTR pcszDescriptionIn);
-      HRESULT (WINAPI *GetPrimaryNetworkAddress)(IClusCfgNetworkInfo *This,IClusCfgIPAddressInfo **ppIPAddressOut);
-      HRESULT (WINAPI *SetPrimaryNetworkAddress)(IClusCfgNetworkInfo *This,IClusCfgIPAddressInfo *pIPAddressIn);
-      HRESULT (WINAPI *IsPublic)(IClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *SetPublic)(IClusCfgNetworkInfo *This,WINBOOL fIsPublicIn);
-      HRESULT (WINAPI *IsPrivate)(IClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *SetPrivate)(IClusCfgNetworkInfo *This,WINBOOL fIsPrivateIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgNetworkInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgNetworkInfo *This);
+                   ULONG (WINAPI *Release)(IClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *GetUID)(IClusCfgNetworkInfo *This,BSTR *pbstrUIDOut);
+                   HRESULT (WINAPI *GetName)(IClusCfgNetworkInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *SetName)(IClusCfgNetworkInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *GetDescription)(IClusCfgNetworkInfo *This,BSTR *pbstrDescriptionOut);
+                   HRESULT (WINAPI *SetDescription)(IClusCfgNetworkInfo *This,LPCWSTR pcszDescriptionIn);
+                   HRESULT (WINAPI *GetPrimaryNetworkAddress)(IClusCfgNetworkInfo *This,IClusCfgIPAddressInfo **ppIPAddressOut);
+                   HRESULT (WINAPI *SetPrimaryNetworkAddress)(IClusCfgNetworkInfo *This,IClusCfgIPAddressInfo *pIPAddressIn);
+                   HRESULT (WINAPI *IsPublic)(IClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *SetPublic)(IClusCfgNetworkInfo *This,WINBOOL fIsPublicIn);
+                   HRESULT (WINAPI *IsPrivate)(IClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *SetPrivate)(IClusCfgNetworkInfo *This,WINBOOL fIsPrivateIn);
     END_INTERFACE
   } IClusCfgNetworkInfoVtbl;
   struct IClusCfgNetworkInfo {
@@ -1669,31 +1669,31 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgNetworkInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgNetworkInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgNetworkInfo *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Begin_GetUID)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Finish_GetUID)(AsyncIClusCfgNetworkInfo *This,BSTR *pbstrUIDOut);
-      HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgNetworkInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgNetworkInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Begin_GetDescription)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Finish_GetDescription)(AsyncIClusCfgNetworkInfo *This,BSTR *pbstrDescriptionOut);
-      HRESULT (WINAPI *Begin_SetDescription)(AsyncIClusCfgNetworkInfo *This,LPCWSTR pcszDescriptionIn);
-      HRESULT (WINAPI *Finish_SetDescription)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Begin_GetPrimaryNetworkAddress)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Finish_GetPrimaryNetworkAddress)(AsyncIClusCfgNetworkInfo *This,IClusCfgIPAddressInfo **ppIPAddressOut);
-      HRESULT (WINAPI *Begin_SetPrimaryNetworkAddress)(AsyncIClusCfgNetworkInfo *This,IClusCfgIPAddressInfo *pIPAddressIn);
-      HRESULT (WINAPI *Finish_SetPrimaryNetworkAddress)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Begin_IsPublic)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Finish_IsPublic)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Begin_SetPublic)(AsyncIClusCfgNetworkInfo *This,WINBOOL fIsPublicIn);
-      HRESULT (WINAPI *Finish_SetPublic)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Begin_IsPrivate)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Finish_IsPrivate)(AsyncIClusCfgNetworkInfo *This);
-      HRESULT (WINAPI *Begin_SetPrivate)(AsyncIClusCfgNetworkInfo *This,WINBOOL fIsPrivateIn);
-      HRESULT (WINAPI *Finish_SetPrivate)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgNetworkInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgNetworkInfo *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Begin_GetUID)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Finish_GetUID)(AsyncIClusCfgNetworkInfo *This,BSTR *pbstrUIDOut);
+                   HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgNetworkInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgNetworkInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Begin_GetDescription)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Finish_GetDescription)(AsyncIClusCfgNetworkInfo *This,BSTR *pbstrDescriptionOut);
+                   HRESULT (WINAPI *Begin_SetDescription)(AsyncIClusCfgNetworkInfo *This,LPCWSTR pcszDescriptionIn);
+                   HRESULT (WINAPI *Finish_SetDescription)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Begin_GetPrimaryNetworkAddress)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Finish_GetPrimaryNetworkAddress)(AsyncIClusCfgNetworkInfo *This,IClusCfgIPAddressInfo **ppIPAddressOut);
+                   HRESULT (WINAPI *Begin_SetPrimaryNetworkAddress)(AsyncIClusCfgNetworkInfo *This,IClusCfgIPAddressInfo *pIPAddressIn);
+                   HRESULT (WINAPI *Finish_SetPrimaryNetworkAddress)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Begin_IsPublic)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Finish_IsPublic)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Begin_SetPublic)(AsyncIClusCfgNetworkInfo *This,WINBOOL fIsPublicIn);
+                   HRESULT (WINAPI *Finish_SetPublic)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Begin_IsPrivate)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Finish_IsPrivate)(AsyncIClusCfgNetworkInfo *This);
+                   HRESULT (WINAPI *Begin_SetPrivate)(AsyncIClusCfgNetworkInfo *This,WINBOOL fIsPrivateIn);
+                   HRESULT (WINAPI *Finish_SetPrivate)(AsyncIClusCfgNetworkInfo *This);
     END_INTERFACE
   } AsyncIClusCfgNetworkInfoVtbl;
   struct AsyncIClusCfgNetworkInfo {
@@ -1797,23 +1797,23 @@ extern "C"{
 #else
   typedef struct IClusCfgClusterInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgClusterInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgClusterInfo *This);
-      ULONG (WINAPI *Release)(IClusCfgClusterInfo *This);
-      HRESULT (WINAPI *SetCommitMode)(IClusCfgClusterInfo *This,ECommitMode ecmNewModeIn);
-      HRESULT (WINAPI *GetCommitMode)(IClusCfgClusterInfo *This,ECommitMode *pecmCurrentModeOut);
-      HRESULT (WINAPI *GetName)(IClusCfgClusterInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *SetName)(IClusCfgClusterInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *GetIPAddress)(IClusCfgClusterInfo *This,ULONG *pulDottedQuadOut);
-      HRESULT (WINAPI *SetIPAddress)(IClusCfgClusterInfo *This,ULONG ulDottedQuadIn);
-      HRESULT (WINAPI *GetSubnetMask)(IClusCfgClusterInfo *This,ULONG *pulDottedQuadOut);
-      HRESULT (WINAPI *SetSubnetMask)(IClusCfgClusterInfo *This,ULONG ulDottedQuadIn);
-      HRESULT (WINAPI *GetNetworkInfo)(IClusCfgClusterInfo *This,IClusCfgNetworkInfo **ppiccniOut);
-      HRESULT (WINAPI *SetNetworkInfo)(IClusCfgClusterInfo *This,IClusCfgNetworkInfo *piccniIn);
-      HRESULT (WINAPI *GetClusterServiceAccountCredentials)(IClusCfgClusterInfo *This,IClusCfgCredentials **ppicccCredentialsOut);
-      HRESULT (WINAPI *GetBindingString)(IClusCfgClusterInfo *This,BSTR *pbstrBindingStringOut);
-      HRESULT (WINAPI *SetBindingString)(IClusCfgClusterInfo *This,LPCWSTR pcszBindingStringIn);
-      HRESULT (WINAPI *GetMaxNodeCount)(IClusCfgClusterInfo *This,DWORD *pcMaxNodesOut);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgClusterInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgClusterInfo *This);
+                   ULONG (WINAPI *Release)(IClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *SetCommitMode)(IClusCfgClusterInfo *This,ECommitMode ecmNewModeIn);
+                   HRESULT (WINAPI *GetCommitMode)(IClusCfgClusterInfo *This,ECommitMode *pecmCurrentModeOut);
+                   HRESULT (WINAPI *GetName)(IClusCfgClusterInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *SetName)(IClusCfgClusterInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *GetIPAddress)(IClusCfgClusterInfo *This,ULONG *pulDottedQuadOut);
+                   HRESULT (WINAPI *SetIPAddress)(IClusCfgClusterInfo *This,ULONG ulDottedQuadIn);
+                   HRESULT (WINAPI *GetSubnetMask)(IClusCfgClusterInfo *This,ULONG *pulDottedQuadOut);
+                   HRESULT (WINAPI *SetSubnetMask)(IClusCfgClusterInfo *This,ULONG ulDottedQuadIn);
+                   HRESULT (WINAPI *GetNetworkInfo)(IClusCfgClusterInfo *This,IClusCfgNetworkInfo **ppiccniOut);
+                   HRESULT (WINAPI *SetNetworkInfo)(IClusCfgClusterInfo *This,IClusCfgNetworkInfo *piccniIn);
+                   HRESULT (WINAPI *GetClusterServiceAccountCredentials)(IClusCfgClusterInfo *This,IClusCfgCredentials **ppicccCredentialsOut);
+                   HRESULT (WINAPI *GetBindingString)(IClusCfgClusterInfo *This,BSTR *pbstrBindingStringOut);
+                   HRESULT (WINAPI *SetBindingString)(IClusCfgClusterInfo *This,LPCWSTR pcszBindingStringIn);
+                   HRESULT (WINAPI *GetMaxNodeCount)(IClusCfgClusterInfo *This,DWORD *pcMaxNodesOut);
     END_INTERFACE
   } IClusCfgClusterInfoVtbl;
   struct IClusCfgClusterInfo {
@@ -1907,37 +1907,37 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgClusterInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgClusterInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgClusterInfo *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Begin_SetCommitMode)(AsyncIClusCfgClusterInfo *This,ECommitMode ecmNewModeIn);
-      HRESULT (WINAPI *Finish_SetCommitMode)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Begin_GetCommitMode)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Finish_GetCommitMode)(AsyncIClusCfgClusterInfo *This,ECommitMode *pecmCurrentModeOut);
-      HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgClusterInfo *This,BSTR *pbstrNameOut);
-      HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgClusterInfo *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Begin_GetIPAddress)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Finish_GetIPAddress)(AsyncIClusCfgClusterInfo *This,ULONG *pulDottedQuadOut);
-      HRESULT (WINAPI *Begin_SetIPAddress)(AsyncIClusCfgClusterInfo *This,ULONG ulDottedQuadIn);
-      HRESULT (WINAPI *Finish_SetIPAddress)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Begin_GetSubnetMask)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Finish_GetSubnetMask)(AsyncIClusCfgClusterInfo *This,ULONG *pulDottedQuadOut);
-      HRESULT (WINAPI *Begin_SetSubnetMask)(AsyncIClusCfgClusterInfo *This,ULONG ulDottedQuadIn);
-      HRESULT (WINAPI *Finish_SetSubnetMask)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Begin_GetNetworkInfo)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Finish_GetNetworkInfo)(AsyncIClusCfgClusterInfo *This,IClusCfgNetworkInfo **ppiccniOut);
-      HRESULT (WINAPI *Begin_SetNetworkInfo)(AsyncIClusCfgClusterInfo *This,IClusCfgNetworkInfo *piccniIn);
-      HRESULT (WINAPI *Finish_SetNetworkInfo)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Begin_GetClusterServiceAccountCredentials)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Finish_GetClusterServiceAccountCredentials)(AsyncIClusCfgClusterInfo *This,IClusCfgCredentials **ppicccCredentialsOut);
-      HRESULT (WINAPI *Begin_GetBindingString)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Finish_GetBindingString)(AsyncIClusCfgClusterInfo *This,BSTR *pbstrBindingStringOut);
-      HRESULT (WINAPI *Begin_SetBindingString)(AsyncIClusCfgClusterInfo *This,LPCWSTR pcszBindingStringIn);
-      HRESULT (WINAPI *Finish_SetBindingString)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Begin_GetMaxNodeCount)(AsyncIClusCfgClusterInfo *This);
-      HRESULT (WINAPI *Finish_GetMaxNodeCount)(AsyncIClusCfgClusterInfo *This,DWORD *pcMaxNodesOut);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgClusterInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgClusterInfo *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Begin_SetCommitMode)(AsyncIClusCfgClusterInfo *This,ECommitMode ecmNewModeIn);
+                   HRESULT (WINAPI *Finish_SetCommitMode)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Begin_GetCommitMode)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Finish_GetCommitMode)(AsyncIClusCfgClusterInfo *This,ECommitMode *pecmCurrentModeOut);
+                   HRESULT (WINAPI *Begin_GetName)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Finish_GetName)(AsyncIClusCfgClusterInfo *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *Begin_SetName)(AsyncIClusCfgClusterInfo *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *Finish_SetName)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Begin_GetIPAddress)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Finish_GetIPAddress)(AsyncIClusCfgClusterInfo *This,ULONG *pulDottedQuadOut);
+                   HRESULT (WINAPI *Begin_SetIPAddress)(AsyncIClusCfgClusterInfo *This,ULONG ulDottedQuadIn);
+                   HRESULT (WINAPI *Finish_SetIPAddress)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Begin_GetSubnetMask)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Finish_GetSubnetMask)(AsyncIClusCfgClusterInfo *This,ULONG *pulDottedQuadOut);
+                   HRESULT (WINAPI *Begin_SetSubnetMask)(AsyncIClusCfgClusterInfo *This,ULONG ulDottedQuadIn);
+                   HRESULT (WINAPI *Finish_SetSubnetMask)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Begin_GetNetworkInfo)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Finish_GetNetworkInfo)(AsyncIClusCfgClusterInfo *This,IClusCfgNetworkInfo **ppiccniOut);
+                   HRESULT (WINAPI *Begin_SetNetworkInfo)(AsyncIClusCfgClusterInfo *This,IClusCfgNetworkInfo *piccniIn);
+                   HRESULT (WINAPI *Finish_SetNetworkInfo)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Begin_GetClusterServiceAccountCredentials)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Finish_GetClusterServiceAccountCredentials)(AsyncIClusCfgClusterInfo *This,IClusCfgCredentials **ppicccCredentialsOut);
+                   HRESULT (WINAPI *Begin_GetBindingString)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Finish_GetBindingString)(AsyncIClusCfgClusterInfo *This,BSTR *pbstrBindingStringOut);
+                   HRESULT (WINAPI *Begin_SetBindingString)(AsyncIClusCfgClusterInfo *This,LPCWSTR pcszBindingStringIn);
+                   HRESULT (WINAPI *Finish_SetBindingString)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Begin_GetMaxNodeCount)(AsyncIClusCfgClusterInfo *This);
+                   HRESULT (WINAPI *Finish_GetMaxNodeCount)(AsyncIClusCfgClusterInfo *This,DWORD *pcMaxNodesOut);
     END_INTERFACE
   } AsyncIClusCfgClusterInfoVtbl;
   struct AsyncIClusCfgClusterInfo {
@@ -2046,10 +2046,10 @@ extern "C"{
 #else
   typedef struct IClusCfgInitializeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgInitialize *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgInitialize *This);
-      ULONG (WINAPI *Release)(IClusCfgInitialize *This);
-      HRESULT (WINAPI *Initialize)(IClusCfgInitialize *This,IUnknown *punkCallbackIn,LCID lcidIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgInitialize *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgInitialize *This);
+                   ULONG (WINAPI *Release)(IClusCfgInitialize *This);
+                   HRESULT (WINAPI *Initialize)(IClusCfgInitialize *This,IUnknown *punkCallbackIn,LCID lcidIn);
     END_INTERFACE
   } IClusCfgInitializeVtbl;
   struct IClusCfgInitialize {
@@ -2078,11 +2078,11 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgInitializeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgInitialize *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgInitialize *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgInitialize *This);
-      HRESULT (WINAPI *Begin_Initialize)(AsyncIClusCfgInitialize *This,IUnknown *punkCallbackIn,LCID lcidIn);
-      HRESULT (WINAPI *Finish_Initialize)(AsyncIClusCfgInitialize *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgInitialize *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgInitialize *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgInitialize *This);
+                   HRESULT (WINAPI *Begin_Initialize)(AsyncIClusCfgInitialize *This,IUnknown *punkCallbackIn,LCID lcidIn);
+                   HRESULT (WINAPI *Finish_Initialize)(AsyncIClusCfgInitialize *This);
     END_INTERFACE
   } AsyncIClusCfgInitializeVtbl;
   struct AsyncIClusCfgInitialize {
@@ -2113,10 +2113,10 @@ extern "C"{
 #else
   typedef struct IClusCfgCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgCallback *This);
-      ULONG (WINAPI *Release)(IClusCfgCallback *This);
-      HRESULT (WINAPI *SendStatusReport)(IClusCfgCallback *This,LPCWSTR pcszNodeNameIn,CLSID clsidTaskMajorIn,CLSID clsidTaskMinorIn,ULONG ulMinIn,ULONG ulMaxIn,ULONG ulCurrentIn,HRESULT hrStatusIn,LPCWSTR pcszDescriptionIn,FILETIME *pftTimeIn,LPCWSTR pcszReferenceIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgCallback *This);
+                   ULONG (WINAPI *Release)(IClusCfgCallback *This);
+                   HRESULT (WINAPI *SendStatusReport)(IClusCfgCallback *This,LPCWSTR pcszNodeNameIn,CLSID clsidTaskMajorIn,CLSID clsidTaskMinorIn,ULONG ulMinIn,ULONG ulMaxIn,ULONG ulCurrentIn,HRESULT hrStatusIn,LPCWSTR pcszDescriptionIn,FILETIME *pftTimeIn,LPCWSTR pcszReferenceIn);
     END_INTERFACE
   } IClusCfgCallbackVtbl;
   struct IClusCfgCallback {
@@ -2145,11 +2145,11 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgCallback *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgCallback *This);
-      HRESULT (WINAPI *Begin_SendStatusReport)(AsyncIClusCfgCallback *This,LPCWSTR pcszNodeNameIn,CLSID clsidTaskMajorIn,CLSID clsidTaskMinorIn,ULONG ulMinIn,ULONG ulMaxIn,ULONG ulCurrentIn,HRESULT hrStatusIn,LPCWSTR pcszDescriptionIn,FILETIME *pftTimeIn,LPCWSTR pcszReferenceIn);
-      HRESULT (WINAPI *Finish_SendStatusReport)(AsyncIClusCfgCallback *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgCallback *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgCallback *This);
+                   HRESULT (WINAPI *Begin_SendStatusReport)(AsyncIClusCfgCallback *This,LPCWSTR pcszNodeNameIn,CLSID clsidTaskMajorIn,CLSID clsidTaskMinorIn,ULONG ulMinIn,ULONG ulMaxIn,ULONG ulCurrentIn,HRESULT hrStatusIn,LPCWSTR pcszDescriptionIn,FILETIME *pftTimeIn,LPCWSTR pcszReferenceIn);
+                   HRESULT (WINAPI *Finish_SendStatusReport)(AsyncIClusCfgCallback *This);
     END_INTERFACE
   } AsyncIClusCfgCallbackVtbl;
   struct AsyncIClusCfgCallback {
@@ -2185,16 +2185,16 @@ extern "C"{
 #else
   typedef struct IClusCfgCredentialsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgCredentials *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgCredentials *This);
-      ULONG (WINAPI *Release)(IClusCfgCredentials *This);
-      HRESULT (WINAPI *SetCredentials)(IClusCfgCredentials *This,LPCWSTR pcszUserIn,LPCWSTR pcszDomainIn,LPCWSTR pcszPasswordIn);
-      HRESULT (WINAPI *GetCredentials)(IClusCfgCredentials *This,BSTR *pbstrUserOut,BSTR *pbstrDomainOut,BSTR *pbstrPasswordOut);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgCredentials *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgCredentials *This);
+                   ULONG (WINAPI *Release)(IClusCfgCredentials *This);
+                   HRESULT (WINAPI *SetCredentials)(IClusCfgCredentials *This,LPCWSTR pcszUserIn,LPCWSTR pcszDomainIn,LPCWSTR pcszPasswordIn);
+                   HRESULT (WINAPI *GetCredentials)(IClusCfgCredentials *This,BSTR *pbstrUserOut,BSTR *pbstrDomainOut,BSTR *pbstrPasswordOut);
 
-      HRESULT (WINAPI *GetIdentity)(IClusCfgCredentials *This,BSTR *pbstrUserOut,BSTR *pbstrDomainOut);
-      HRESULT (WINAPI *GetPassword)(IClusCfgCredentials *This,BSTR *pbstrPasswordOut);
-      HRESULT (WINAPI *AssignTo)(IClusCfgCredentials *This,IClusCfgCredentials *picccDestIn);
-      HRESULT (WINAPI *AssignFrom)(IClusCfgCredentials *This,IClusCfgCredentials *picccSourceIn);
+                   HRESULT (WINAPI *GetIdentity)(IClusCfgCredentials *This,BSTR *pbstrUserOut,BSTR *pbstrDomainOut);
+                   HRESULT (WINAPI *GetPassword)(IClusCfgCredentials *This,BSTR *pbstrPasswordOut);
+                   HRESULT (WINAPI *AssignTo)(IClusCfgCredentials *This,IClusCfgCredentials *picccDestIn);
+                   HRESULT (WINAPI *AssignFrom)(IClusCfgCredentials *This,IClusCfgCredentials *picccSourceIn);
     END_INTERFACE
   } IClusCfgCredentialsVtbl;
   struct IClusCfgCredentials {
@@ -2248,21 +2248,21 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgCredentialsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgCredentials *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgCredentials *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgCredentials *This);
-      HRESULT (WINAPI *Begin_SetCredentials)(AsyncIClusCfgCredentials *This,LPCWSTR pcszUserIn,LPCWSTR pcszDomainIn,LPCWSTR pcszPasswordIn);
-      HRESULT (WINAPI *Finish_SetCredentials)(AsyncIClusCfgCredentials *This);
-      HRESULT (WINAPI *Begin_GetCredentials)(AsyncIClusCfgCredentials *This);
-      HRESULT (WINAPI *Finish_GetCredentials)(AsyncIClusCfgCredentials *This,BSTR *pbstrUserOut,BSTR *pbstrDomainOut,BSTR *pbstrPasswordOut);
-      HRESULT (WINAPI *Begin_GetIdentity)(AsyncIClusCfgCredentials *This);
-      HRESULT (WINAPI *Finish_GetIdentity)(AsyncIClusCfgCredentials *This,BSTR *pbstrUserOut,BSTR *pbstrDomainOut);
-      HRESULT (WINAPI *Begin_GetPassword)(AsyncIClusCfgCredentials *This);
-      HRESULT (WINAPI *Finish_GetPassword)(AsyncIClusCfgCredentials *This,BSTR *pbstrPasswordOut);
-      HRESULT (WINAPI *Begin_AssignTo)(AsyncIClusCfgCredentials *This,IClusCfgCredentials *picccDestIn);
-      HRESULT (WINAPI *Finish_AssignTo)(AsyncIClusCfgCredentials *This);
-      HRESULT (WINAPI *Begin_AssignFrom)(AsyncIClusCfgCredentials *This,IClusCfgCredentials *picccSourceIn);
-      HRESULT (WINAPI *Finish_AssignFrom)(AsyncIClusCfgCredentials *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgCredentials *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgCredentials *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgCredentials *This);
+                   HRESULT (WINAPI *Begin_SetCredentials)(AsyncIClusCfgCredentials *This,LPCWSTR pcszUserIn,LPCWSTR pcszDomainIn,LPCWSTR pcszPasswordIn);
+                   HRESULT (WINAPI *Finish_SetCredentials)(AsyncIClusCfgCredentials *This);
+                   HRESULT (WINAPI *Begin_GetCredentials)(AsyncIClusCfgCredentials *This);
+                   HRESULT (WINAPI *Finish_GetCredentials)(AsyncIClusCfgCredentials *This,BSTR *pbstrUserOut,BSTR *pbstrDomainOut,BSTR *pbstrPasswordOut);
+                   HRESULT (WINAPI *Begin_GetIdentity)(AsyncIClusCfgCredentials *This);
+                   HRESULT (WINAPI *Finish_GetIdentity)(AsyncIClusCfgCredentials *This,BSTR *pbstrUserOut,BSTR *pbstrDomainOut);
+                   HRESULT (WINAPI *Begin_GetPassword)(AsyncIClusCfgCredentials *This);
+                   HRESULT (WINAPI *Finish_GetPassword)(AsyncIClusCfgCredentials *This,BSTR *pbstrPasswordOut);
+                   HRESULT (WINAPI *Begin_AssignTo)(AsyncIClusCfgCredentials *This,IClusCfgCredentials *picccDestIn);
+                   HRESULT (WINAPI *Finish_AssignTo)(AsyncIClusCfgCredentials *This);
+                   HRESULT (WINAPI *Begin_AssignFrom)(AsyncIClusCfgCredentials *This,IClusCfgCredentials *picccSourceIn);
+                   HRESULT (WINAPI *Finish_AssignFrom)(AsyncIClusCfgCredentials *This);
     END_INTERFACE
   } AsyncIClusCfgCredentialsVtbl;
   struct AsyncIClusCfgCredentials {
@@ -2323,10 +2323,10 @@ extern "C"{
 #else
   typedef struct IClusCfgCapabilitiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgCapabilities *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgCapabilities *This);
-      ULONG (WINAPI *Release)(IClusCfgCapabilities *This);
-      HRESULT (WINAPI *CanNodeBeClustered)(IClusCfgCapabilities *This);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgCapabilities *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgCapabilities *This);
+                   ULONG (WINAPI *Release)(IClusCfgCapabilities *This);
+                   HRESULT (WINAPI *CanNodeBeClustered)(IClusCfgCapabilities *This);
     END_INTERFACE
   } IClusCfgCapabilitiesVtbl;
   struct IClusCfgCapabilities {
@@ -2357,13 +2357,13 @@ extern "C"{
 #else
   typedef struct IClusCfgManagedResourceCfgVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgManagedResourceCfg *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgManagedResourceCfg *This);
-      ULONG (WINAPI *Release)(IClusCfgManagedResourceCfg *This);
-      HRESULT (WINAPI *PreCreate)(IClusCfgManagedResourceCfg *This,IUnknown *punkServicesIn);
-      HRESULT (WINAPI *Create)(IClusCfgManagedResourceCfg *This,IUnknown *punkServicesIn);
-      HRESULT (WINAPI *PostCreate)(IClusCfgManagedResourceCfg *This,IUnknown *punkServicesIn);
-      HRESULT (WINAPI *Evict)(IClusCfgManagedResourceCfg *This,IUnknown *punkServicesIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgManagedResourceCfg *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgManagedResourceCfg *This);
+                   ULONG (WINAPI *Release)(IClusCfgManagedResourceCfg *This);
+                   HRESULT (WINAPI *PreCreate)(IClusCfgManagedResourceCfg *This,IUnknown *punkServicesIn);
+                   HRESULT (WINAPI *Create)(IClusCfgManagedResourceCfg *This,IUnknown *punkServicesIn);
+                   HRESULT (WINAPI *PostCreate)(IClusCfgManagedResourceCfg *This,IUnknown *punkServicesIn);
+                   HRESULT (WINAPI *Evict)(IClusCfgManagedResourceCfg *This,IUnknown *punkServicesIn);
     END_INTERFACE
   } IClusCfgManagedResourceCfgVtbl;
   struct IClusCfgManagedResourceCfg {
@@ -2402,12 +2402,12 @@ extern "C"{
 #else
   typedef struct IClusCfgResourcePreCreateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgResourcePreCreate *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgResourcePreCreate *This);
-      ULONG (WINAPI *Release)(IClusCfgResourcePreCreate *This);
-      HRESULT (WINAPI *SetDependency)(IClusCfgResourcePreCreate *This,LPCLSID pclsidDepResTypeIn,DWORD dfIn);
-      HRESULT (WINAPI *SetType)(IClusCfgResourcePreCreate *This,CLSID *pclsidIn);
-      HRESULT (WINAPI *SetClassType)(IClusCfgResourcePreCreate *This,CLSID *pclsidIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgResourcePreCreate *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgResourcePreCreate *This);
+                   ULONG (WINAPI *Release)(IClusCfgResourcePreCreate *This);
+                   HRESULT (WINAPI *SetDependency)(IClusCfgResourcePreCreate *This,LPCLSID pclsidDepResTypeIn,DWORD dfIn);
+                   HRESULT (WINAPI *SetType)(IClusCfgResourcePreCreate *This,CLSID *pclsidIn);
+                   HRESULT (WINAPI *SetClassType)(IClusCfgResourcePreCreate *This,CLSID *pclsidIn);
     END_INTERFACE
   } IClusCfgResourcePreCreateVtbl;
   struct IClusCfgResourcePreCreate {
@@ -2450,19 +2450,19 @@ extern "C"{
 #else
   typedef struct IClusCfgResourceCreateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgResourceCreate *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgResourceCreate *This);
-      ULONG (WINAPI *Release)(IClusCfgResourceCreate *This);
-      HRESULT (WINAPI *SetPropertyBinary)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const DWORD cbSizeIn,const BYTE *pbyteIn);
-      HRESULT (WINAPI *SetPropertyDWORD)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const DWORD dwDWORDIn);
-      HRESULT (WINAPI *SetPropertyString)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,LPCWSTR pcszStringIn);
-      HRESULT (WINAPI *SetPropertyExpandString)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,LPCWSTR pcszStringIn);
-      HRESULT (WINAPI *SetPropertyMultiString)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const DWORD cbMultiStringIn,LPCWSTR pcszMultiStringIn);
-      HRESULT (WINAPI *SetPropertyUnsignedLargeInt)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const ULARGE_INTEGER ulIntIn);
-      HRESULT (WINAPI *SetPropertyLong)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const LONG lLongIn);
-      HRESULT (WINAPI *SetPropertySecurityDescriptor)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const SECURITY_DESCRIPTOR *pcsdIn);
-      HRESULT (WINAPI *SetPropertyLargeInt)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const LARGE_INTEGER lIntIn);
-      HRESULT (WINAPI *SendResourceControl)(IClusCfgResourceCreate *This,DWORD dwControlCodeIn,LPVOID lpBufferIn,DWORD cbBufferSizeIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgResourceCreate *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgResourceCreate *This);
+                   ULONG (WINAPI *Release)(IClusCfgResourceCreate *This);
+                   HRESULT (WINAPI *SetPropertyBinary)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const DWORD cbSizeIn,const BYTE *pbyteIn);
+                   HRESULT (WINAPI *SetPropertyDWORD)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const DWORD dwDWORDIn);
+                   HRESULT (WINAPI *SetPropertyString)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,LPCWSTR pcszStringIn);
+                   HRESULT (WINAPI *SetPropertyExpandString)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,LPCWSTR pcszStringIn);
+                   HRESULT (WINAPI *SetPropertyMultiString)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const DWORD cbMultiStringIn,LPCWSTR pcszMultiStringIn);
+                   HRESULT (WINAPI *SetPropertyUnsignedLargeInt)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const ULARGE_INTEGER ulIntIn);
+                   HRESULT (WINAPI *SetPropertyLong)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const LONG lLongIn);
+                   HRESULT (WINAPI *SetPropertySecurityDescriptor)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const SECURITY_DESCRIPTOR *pcsdIn);
+                   HRESULT (WINAPI *SetPropertyLargeInt)(IClusCfgResourceCreate *This,LPCWSTR pcszNameIn,const LARGE_INTEGER lIntIn);
+                   HRESULT (WINAPI *SendResourceControl)(IClusCfgResourceCreate *This,DWORD dwControlCodeIn,LPVOID lpBufferIn,DWORD cbBufferSizeIn);
     END_INTERFACE
   } IClusCfgResourceCreateVtbl;
   struct IClusCfgResourceCreate {
@@ -2518,11 +2518,11 @@ extern "C"{
 #else
   typedef struct IClusCfgResourcePostCreateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgResourcePostCreate *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgResourcePostCreate *This);
-      ULONG (WINAPI *Release)(IClusCfgResourcePostCreate *This);
-      HRESULT (WINAPI *ChangeName)(IClusCfgResourcePostCreate *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *SendResourceControl)(IClusCfgResourcePostCreate *This,DWORD dwControlCodeIn,LPVOID lpBufferIn,DWORD cbBufferSizeIn,LPVOID lBufferInout,DWORD cbOutBufferSizeIn,LPDWORD lpcbBytesReturnedOut);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgResourcePostCreate *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgResourcePostCreate *This);
+                   ULONG (WINAPI *Release)(IClusCfgResourcePostCreate *This);
+                   HRESULT (WINAPI *ChangeName)(IClusCfgResourcePostCreate *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *SendResourceControl)(IClusCfgResourcePostCreate *This,DWORD dwControlCodeIn,LPVOID lpBufferIn,DWORD cbBufferSizeIn,LPVOID lBufferInout,DWORD cbOutBufferSizeIn,LPDWORD lpcbBytesReturnedOut);
     END_INTERFACE
   } IClusCfgResourcePostCreateVtbl;
   struct IClusCfgResourcePostCreate {
@@ -2554,11 +2554,11 @@ extern "C"{
 #else
   typedef struct IClusCfgGroupCfgVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgGroupCfg *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgGroupCfg *This);
-      ULONG (WINAPI *Release)(IClusCfgGroupCfg *This);
-      HRESULT (WINAPI *SetName)(IClusCfgGroupCfg *This,LPCWSTR pcszNameIn);
-      HRESULT (WINAPI *GetName)(IClusCfgGroupCfg *This,BSTR *pbstrNameOut);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgGroupCfg *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgGroupCfg *This);
+                   ULONG (WINAPI *Release)(IClusCfgGroupCfg *This);
+                   HRESULT (WINAPI *SetName)(IClusCfgGroupCfg *This,LPCWSTR pcszNameIn);
+                   HRESULT (WINAPI *GetName)(IClusCfgGroupCfg *This,BSTR *pbstrNameOut);
     END_INTERFACE
   } IClusCfgGroupCfgVtbl;
   struct IClusCfgGroupCfg {
@@ -2589,10 +2589,10 @@ extern "C"{
 #else
   typedef struct IClusCfgMemberSetChangeListenerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgMemberSetChangeListener *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgMemberSetChangeListener *This);
-      ULONG (WINAPI *Release)(IClusCfgMemberSetChangeListener *This);
-      HRESULT (WINAPI *Notify)(IClusCfgMemberSetChangeListener *This,IUnknown *punkClusterInfoIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgMemberSetChangeListener *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgMemberSetChangeListener *This);
+                   ULONG (WINAPI *Release)(IClusCfgMemberSetChangeListener *This);
+                   HRESULT (WINAPI *Notify)(IClusCfgMemberSetChangeListener *This,IUnknown *punkClusterInfoIn);
     END_INTERFACE
   } IClusCfgMemberSetChangeListenerVtbl;
   struct IClusCfgMemberSetChangeListener {
@@ -2621,11 +2621,11 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgMemberSetChangeListenerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgMemberSetChangeListener *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgMemberSetChangeListener *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgMemberSetChangeListener *This);
-      HRESULT (WINAPI *Begin_Notify)(AsyncIClusCfgMemberSetChangeListener *This,IUnknown *punkClusterInfoIn);
-      HRESULT (WINAPI *Finish_Notify)(AsyncIClusCfgMemberSetChangeListener *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgMemberSetChangeListener *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgMemberSetChangeListener *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgMemberSetChangeListener *This);
+                   HRESULT (WINAPI *Begin_Notify)(AsyncIClusCfgMemberSetChangeListener *This,IUnknown *punkClusterInfoIn);
+                   HRESULT (WINAPI *Finish_Notify)(AsyncIClusCfgMemberSetChangeListener *This);
     END_INTERFACE
   } AsyncIClusCfgMemberSetChangeListenerVtbl;
   struct AsyncIClusCfgMemberSetChangeListener {
@@ -2658,12 +2658,12 @@ extern "C"{
 #else
   typedef struct IClusCfgResourceTypeInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgResourceTypeInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgResourceTypeInfo *This);
-      ULONG (WINAPI *Release)(IClusCfgResourceTypeInfo *This);
-      HRESULT (WINAPI *CommitChanges)(IClusCfgResourceTypeInfo *This,IUnknown *punkClusterInfoIn,IUnknown *punkResTypeServicesIn);
-      HRESULT (WINAPI *GetTypeName)(IClusCfgResourceTypeInfo *This,BSTR *pbstrTypeNameOut);
-      HRESULT (WINAPI *GetTypeGUID)(IClusCfgResourceTypeInfo *This,GUID *pguidGUIDOut);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgResourceTypeInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgResourceTypeInfo *This);
+                   ULONG (WINAPI *Release)(IClusCfgResourceTypeInfo *This);
+                   HRESULT (WINAPI *CommitChanges)(IClusCfgResourceTypeInfo *This,IUnknown *punkClusterInfoIn,IUnknown *punkResTypeServicesIn);
+                   HRESULT (WINAPI *GetTypeName)(IClusCfgResourceTypeInfo *This,BSTR *pbstrTypeNameOut);
+                   HRESULT (WINAPI *GetTypeGUID)(IClusCfgResourceTypeInfo *This,GUID *pguidGUIDOut);
     END_INTERFACE
   } IClusCfgResourceTypeInfoVtbl;
   struct IClusCfgResourceTypeInfo {
@@ -2702,15 +2702,15 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgResourceTypeInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgResourceTypeInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgResourceTypeInfo *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgResourceTypeInfo *This);
-      HRESULT (WINAPI *Begin_CommitChanges)(AsyncIClusCfgResourceTypeInfo *This,IUnknown *punkClusterInfoIn,IUnknown *punkResTypeServicesIn);
-      HRESULT (WINAPI *Finish_CommitChanges)(AsyncIClusCfgResourceTypeInfo *This);
-      HRESULT (WINAPI *Begin_GetTypeName)(AsyncIClusCfgResourceTypeInfo *This);
-      HRESULT (WINAPI *Finish_GetTypeName)(AsyncIClusCfgResourceTypeInfo *This,BSTR *pbstrTypeNameOut);
-      HRESULT (WINAPI *Begin_GetTypeGUID)(AsyncIClusCfgResourceTypeInfo *This);
-      HRESULT (WINAPI *Finish_GetTypeGUID)(AsyncIClusCfgResourceTypeInfo *This,GUID *pguidGUIDOut);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgResourceTypeInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgResourceTypeInfo *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgResourceTypeInfo *This);
+                   HRESULT (WINAPI *Begin_CommitChanges)(AsyncIClusCfgResourceTypeInfo *This,IUnknown *punkClusterInfoIn,IUnknown *punkResTypeServicesIn);
+                   HRESULT (WINAPI *Finish_CommitChanges)(AsyncIClusCfgResourceTypeInfo *This);
+                   HRESULT (WINAPI *Begin_GetTypeName)(AsyncIClusCfgResourceTypeInfo *This);
+                   HRESULT (WINAPI *Finish_GetTypeName)(AsyncIClusCfgResourceTypeInfo *This,BSTR *pbstrTypeNameOut);
+                   HRESULT (WINAPI *Begin_GetTypeGUID)(AsyncIClusCfgResourceTypeInfo *This);
+                   HRESULT (WINAPI *Finish_GetTypeGUID)(AsyncIClusCfgResourceTypeInfo *This,GUID *pguidGUIDOut);
     END_INTERFACE
   } AsyncIClusCfgResourceTypeInfoVtbl;
   struct AsyncIClusCfgResourceTypeInfo {
@@ -2754,11 +2754,11 @@ extern "C"{
 #else
   typedef struct IClusCfgResourceTypeCreateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgResourceTypeCreate *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgResourceTypeCreate *This);
-      ULONG (WINAPI *Release)(IClusCfgResourceTypeCreate *This);
-      HRESULT (WINAPI *Create)(IClusCfgResourceTypeCreate *This,const WCHAR *pcszResTypeNameIn,const WCHAR *pcszResTypeDisplayNameIn,const WCHAR *pcszResDllNameIn,DWORD dwLooksAliveIntervalIn,DWORD dwIsAliveIntervalIn);
-      HRESULT (WINAPI *RegisterAdminExtensions)(IClusCfgResourceTypeCreate *This,const WCHAR *pcszResTypeNameIn,ULONG cExtClsidCountIn,const CLSID *rgclsidExtClsidsIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgResourceTypeCreate *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgResourceTypeCreate *This);
+                   ULONG (WINAPI *Release)(IClusCfgResourceTypeCreate *This);
+                   HRESULT (WINAPI *Create)(IClusCfgResourceTypeCreate *This,const WCHAR *pcszResTypeNameIn,const WCHAR *pcszResTypeDisplayNameIn,const WCHAR *pcszResDllNameIn,DWORD dwLooksAliveIntervalIn,DWORD dwIsAliveIntervalIn);
+                   HRESULT (WINAPI *RegisterAdminExtensions)(IClusCfgResourceTypeCreate *This,const WCHAR *pcszResTypeNameIn,ULONG cExtClsidCountIn,const CLSID *rgclsidExtClsidsIn);
     END_INTERFACE
   } IClusCfgResourceTypeCreateVtbl;
   struct IClusCfgResourceTypeCreate {
@@ -2792,13 +2792,13 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgResourceTypeCreateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgResourceTypeCreate *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgResourceTypeCreate *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgResourceTypeCreate *This);
-      HRESULT (WINAPI *Begin_Create)(AsyncIClusCfgResourceTypeCreate *This,const WCHAR *pcszResTypeNameIn,const WCHAR *pcszResTypeDisplayNameIn,const WCHAR *pcszResDllNameIn,DWORD dwLooksAliveIntervalIn,DWORD dwIsAliveIntervalIn);
-      HRESULT (WINAPI *Finish_Create)(AsyncIClusCfgResourceTypeCreate *This);
-      HRESULT (WINAPI *Begin_RegisterAdminExtensions)(AsyncIClusCfgResourceTypeCreate *This,const WCHAR *pcszResTypeNameIn,ULONG cExtClsidCountIn,const CLSID *rgclsidExtClsidsIn);
-      HRESULT (WINAPI *Finish_RegisterAdminExtensions)(AsyncIClusCfgResourceTypeCreate *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgResourceTypeCreate *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgResourceTypeCreate *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgResourceTypeCreate *This);
+                   HRESULT (WINAPI *Begin_Create)(AsyncIClusCfgResourceTypeCreate *This,const WCHAR *pcszResTypeNameIn,const WCHAR *pcszResTypeDisplayNameIn,const WCHAR *pcszResDllNameIn,DWORD dwLooksAliveIntervalIn,DWORD dwIsAliveIntervalIn);
+                   HRESULT (WINAPI *Finish_Create)(AsyncIClusCfgResourceTypeCreate *This);
+                   HRESULT (WINAPI *Begin_RegisterAdminExtensions)(AsyncIClusCfgResourceTypeCreate *This,const WCHAR *pcszResTypeNameIn,ULONG cExtClsidCountIn,const CLSID *rgclsidExtClsidsIn);
+                   HRESULT (WINAPI *Finish_RegisterAdminExtensions)(AsyncIClusCfgResourceTypeCreate *This);
     END_INTERFACE
   } AsyncIClusCfgResourceTypeCreateVtbl;
   struct AsyncIClusCfgResourceTypeCreate {
@@ -2836,11 +2836,11 @@ extern "C"{
 #else
   typedef struct IClusCfgEvictCleanupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgEvictCleanup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgEvictCleanup *This);
-      ULONG (WINAPI *Release)(IClusCfgEvictCleanup *This);
-      HRESULT (WINAPI *CleanupLocalNode)(IClusCfgEvictCleanup *This,DWORD dwDelayIn);
-      HRESULT (WINAPI *CleanupRemoteNode)(IClusCfgEvictCleanup *This,const WCHAR *pcszEvictedNodeNameIn,DWORD dwDelayIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgEvictCleanup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgEvictCleanup *This);
+                   ULONG (WINAPI *Release)(IClusCfgEvictCleanup *This);
+                   HRESULT (WINAPI *CleanupLocalNode)(IClusCfgEvictCleanup *This,DWORD dwDelayIn);
+                   HRESULT (WINAPI *CleanupRemoteNode)(IClusCfgEvictCleanup *This,const WCHAR *pcszEvictedNodeNameIn,DWORD dwDelayIn);
     END_INTERFACE
   } IClusCfgEvictCleanupVtbl;
   struct IClusCfgEvictCleanup {
@@ -2874,13 +2874,13 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgEvictCleanupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgEvictCleanup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgEvictCleanup *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgEvictCleanup *This);
-      HRESULT (WINAPI *Begin_CleanupLocalNode)(AsyncIClusCfgEvictCleanup *This,DWORD dwDelayIn);
-      HRESULT (WINAPI *Finish_CleanupLocalNode)(AsyncIClusCfgEvictCleanup *This);
-      HRESULT (WINAPI *Begin_CleanupRemoteNode)(AsyncIClusCfgEvictCleanup *This,const WCHAR *pcszEvictedNodeNameIn,DWORD dwDelayIn);
-      HRESULT (WINAPI *Finish_CleanupRemoteNode)(AsyncIClusCfgEvictCleanup *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgEvictCleanup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgEvictCleanup *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgEvictCleanup *This);
+                   HRESULT (WINAPI *Begin_CleanupLocalNode)(AsyncIClusCfgEvictCleanup *This,DWORD dwDelayIn);
+                   HRESULT (WINAPI *Finish_CleanupLocalNode)(AsyncIClusCfgEvictCleanup *This);
+                   HRESULT (WINAPI *Begin_CleanupRemoteNode)(AsyncIClusCfgEvictCleanup *This,const WCHAR *pcszEvictedNodeNameIn,DWORD dwDelayIn);
+                   HRESULT (WINAPI *Finish_CleanupRemoteNode)(AsyncIClusCfgEvictCleanup *This);
     END_INTERFACE
   } AsyncIClusCfgEvictCleanupVtbl;
   struct AsyncIClusCfgEvictCleanup {
@@ -2917,10 +2917,10 @@ extern "C"{
 #else
   typedef struct IClusCfgStartupListenerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgStartupListener *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgStartupListener *This);
-      ULONG (WINAPI *Release)(IClusCfgStartupListener *This);
-      HRESULT (WINAPI *Notify)(IClusCfgStartupListener *This,IUnknown *punkIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgStartupListener *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgStartupListener *This);
+                   ULONG (WINAPI *Release)(IClusCfgStartupListener *This);
+                   HRESULT (WINAPI *Notify)(IClusCfgStartupListener *This,IUnknown *punkIn);
     END_INTERFACE
   } IClusCfgStartupListenerVtbl;
   struct IClusCfgStartupListener {
@@ -2949,11 +2949,11 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgStartupListenerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgStartupListener *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgStartupListener *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgStartupListener *This);
-      HRESULT (WINAPI *Begin_Notify)(AsyncIClusCfgStartupListener *This,IUnknown *punkIn);
-      HRESULT (WINAPI *Finish_Notify)(AsyncIClusCfgStartupListener *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgStartupListener *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgStartupListener *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgStartupListener *This);
+                   HRESULT (WINAPI *Begin_Notify)(AsyncIClusCfgStartupListener *This,IUnknown *punkIn);
+                   HRESULT (WINAPI *Finish_Notify)(AsyncIClusCfgStartupListener *This);
     END_INTERFACE
   } AsyncIClusCfgStartupListenerVtbl;
   struct AsyncIClusCfgStartupListener {
@@ -2984,10 +2984,10 @@ extern "C"{
 #else
   typedef struct IClusCfgStartupNotifyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgStartupNotify *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgStartupNotify *This);
-      ULONG (WINAPI *Release)(IClusCfgStartupNotify *This);
-      HRESULT (WINAPI *SendNotifications)(IClusCfgStartupNotify *This);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgStartupNotify *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgStartupNotify *This);
+                   ULONG (WINAPI *Release)(IClusCfgStartupNotify *This);
+                   HRESULT (WINAPI *SendNotifications)(IClusCfgStartupNotify *This);
     END_INTERFACE
   } IClusCfgStartupNotifyVtbl;
   struct IClusCfgStartupNotify {
@@ -3016,11 +3016,11 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgStartupNotifyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgStartupNotify *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgStartupNotify *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgStartupNotify *This);
-      HRESULT (WINAPI *Begin_SendNotifications)(AsyncIClusCfgStartupNotify *This);
-      HRESULT (WINAPI *Finish_SendNotifications)(AsyncIClusCfgStartupNotify *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgStartupNotify *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgStartupNotify *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgStartupNotify *This);
+                   HRESULT (WINAPI *Begin_SendNotifications)(AsyncIClusCfgStartupNotify *This);
+                   HRESULT (WINAPI *Finish_SendNotifications)(AsyncIClusCfgStartupNotify *This);
     END_INTERFACE
   } AsyncIClusCfgStartupNotifyVtbl;
   struct AsyncIClusCfgStartupNotify {
@@ -3052,11 +3052,11 @@ extern "C"{
 #else
   typedef struct IClusCfgManagedResourceDataVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgManagedResourceData *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgManagedResourceData *This);
-      ULONG (WINAPI *Release)(IClusCfgManagedResourceData *This);
-      HRESULT (WINAPI *GetResourcePrivateData)(IClusCfgManagedResourceData *This,BYTE *pbBufferOut,DWORD *pcbBufferInout);
-      HRESULT (WINAPI *SetResourcePrivateData)(IClusCfgManagedResourceData *This,const BYTE *pcbBufferIn,DWORD cbBufferIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgManagedResourceData *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgManagedResourceData *This);
+                   ULONG (WINAPI *Release)(IClusCfgManagedResourceData *This);
+                   HRESULT (WINAPI *GetResourcePrivateData)(IClusCfgManagedResourceData *This,BYTE *pbBufferOut,DWORD *pcbBufferInout);
+                   HRESULT (WINAPI *SetResourcePrivateData)(IClusCfgManagedResourceData *This,const BYTE *pcbBufferIn,DWORD cbBufferIn);
     END_INTERFACE
   } IClusCfgManagedResourceDataVtbl;
   struct IClusCfgManagedResourceData {
@@ -3090,13 +3090,13 @@ extern "C"{
 #else
   typedef struct IClusCfgVerifyQuorumVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgVerifyQuorum *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgVerifyQuorum *This);
-      ULONG (WINAPI *Release)(IClusCfgVerifyQuorum *This);
-      HRESULT (WINAPI *PrepareToHostQuorumResource)(IClusCfgVerifyQuorum *This);
-      HRESULT (WINAPI *Cleanup)(IClusCfgVerifyQuorum *This,EClusCfgCleanupReason cccrReasonIn);
-      HRESULT (WINAPI *IsMultiNodeCapable)(IClusCfgVerifyQuorum *This);
-      HRESULT (WINAPI *SetMultiNodeCapable)(IClusCfgVerifyQuorum *This,WINBOOL fMultiNodeCapableIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgVerifyQuorum *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgVerifyQuorum *This);
+                   ULONG (WINAPI *Release)(IClusCfgVerifyQuorum *This);
+                   HRESULT (WINAPI *PrepareToHostQuorumResource)(IClusCfgVerifyQuorum *This);
+                   HRESULT (WINAPI *Cleanup)(IClusCfgVerifyQuorum *This,EClusCfgCleanupReason cccrReasonIn);
+                   HRESULT (WINAPI *IsMultiNodeCapable)(IClusCfgVerifyQuorum *This);
+                   HRESULT (WINAPI *SetMultiNodeCapable)(IClusCfgVerifyQuorum *This,WINBOOL fMultiNodeCapableIn);
     END_INTERFACE
   } IClusCfgVerifyQuorumVtbl;
   struct IClusCfgVerifyQuorum {
@@ -3133,10 +3133,10 @@ extern "C"{
 #else
   typedef struct IClusCfgEvictListenerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgEvictListener *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgEvictListener *This);
-      ULONG (WINAPI *Release)(IClusCfgEvictListener *This);
-      HRESULT (WINAPI *EvictNotify)(IClusCfgEvictListener *This,LPCWSTR pcszNodeNameIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgEvictListener *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgEvictListener *This);
+                   ULONG (WINAPI *Release)(IClusCfgEvictListener *This);
+                   HRESULT (WINAPI *EvictNotify)(IClusCfgEvictListener *This,LPCWSTR pcszNodeNameIn);
     END_INTERFACE
   } IClusCfgEvictListenerVtbl;
   struct IClusCfgEvictListener {
@@ -3165,11 +3165,11 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgEvictListenerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgEvictListener *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgEvictListener *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgEvictListener *This);
-      HRESULT (WINAPI *Begin_EvictNotify)(AsyncIClusCfgEvictListener *This,LPCWSTR pcszNodeNameIn);
-      HRESULT (WINAPI *Finish_EvictNotify)(AsyncIClusCfgEvictListener *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgEvictListener *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgEvictListener *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgEvictListener *This);
+                   HRESULT (WINAPI *Begin_EvictNotify)(AsyncIClusCfgEvictListener *This,LPCWSTR pcszNodeNameIn);
+                   HRESULT (WINAPI *Finish_EvictNotify)(AsyncIClusCfgEvictListener *This);
     END_INTERFACE
   } AsyncIClusCfgEvictListenerVtbl;
   struct AsyncIClusCfgEvictListener {
@@ -3200,10 +3200,10 @@ extern "C"{
 #else
   typedef struct IClusCfgEvictNotifyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IClusCfgEvictNotify *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IClusCfgEvictNotify *This);
-      ULONG (WINAPI *Release)(IClusCfgEvictNotify *This);
-      HRESULT (WINAPI *SendNotifications)(IClusCfgEvictNotify *This,LPCWSTR pcszNodeNameIn);
+                   HRESULT (WINAPI *QueryInterface)(IClusCfgEvictNotify *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IClusCfgEvictNotify *This);
+                   ULONG (WINAPI *Release)(IClusCfgEvictNotify *This);
+                   HRESULT (WINAPI *SendNotifications)(IClusCfgEvictNotify *This,LPCWSTR pcszNodeNameIn);
     END_INTERFACE
   } IClusCfgEvictNotifyVtbl;
   struct IClusCfgEvictNotify {
@@ -3232,11 +3232,11 @@ extern "C"{
 #else
   typedef struct AsyncIClusCfgEvictNotifyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgEvictNotify *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(AsyncIClusCfgEvictNotify *This);
-      ULONG (WINAPI *Release)(AsyncIClusCfgEvictNotify *This);
-      HRESULT (WINAPI *Begin_SendNotifications)(AsyncIClusCfgEvictNotify *This,LPCWSTR pcszNodeNameIn);
-      HRESULT (WINAPI *Finish_SendNotifications)(AsyncIClusCfgEvictNotify *This);
+                   HRESULT (WINAPI *QueryInterface)(AsyncIClusCfgEvictNotify *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(AsyncIClusCfgEvictNotify *This);
+                   ULONG (WINAPI *Release)(AsyncIClusCfgEvictNotify *This);
+                   HRESULT (WINAPI *Begin_SendNotifications)(AsyncIClusCfgEvictNotify *This,LPCWSTR pcszNodeNameIn);
+                   HRESULT (WINAPI *Finish_SendNotifications)(AsyncIClusCfgEvictNotify *This);
     END_INTERFACE
   } AsyncIClusCfgEvictNotifyVtbl;
   struct AsyncIClusCfgEvictNotify {

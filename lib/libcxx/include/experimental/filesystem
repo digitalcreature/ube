@@ -37,9 +37,9 @@
     operator>>(basic_istream<charT, traits>& is, path& p);
 
     template <class Source>
-      path u8path(const Source& source);
+                   path u8path(const Source& source);
     template <class InputIterator>
-      path u8path(InputIterator first, InputIterator last);
+                   path u8path(InputIterator first, InputIterator last);
 
     class filesystem_error;
     class directory_entry;
@@ -60,9 +60,9 @@
 
     struct space_info
     {
-      uintmax_t capacity;
-      uintmax_t free;
-      uintmax_t available;
+                   uintmax_t capacity;
+                   uintmax_t free;
+                   uintmax_t available;
     };
 
     enum class file_type;
@@ -85,17 +85,17 @@
     void copy(const path& from, const path& to, error_code& ec);
     void copy(const path& from, const path& to, copy_options options);
     void copy(const path& from, const path& to, copy_options options,
-                   error_code& ec);
+                                                          error_code& ec);
 
     bool copy_file(const path& from, const path& to);
     bool copy_file(const path& from, const path& to, error_code& ec);
     bool copy_file(const path& from, const path& to, copy_options option);
     bool copy_file(const path& from, const path& to, copy_options option,
-                           error_code& ec);
+                                                                               error_code& ec);
 
     void copy_symlink(const path& existing_symlink, const path& new_symlink);
     void copy_symlink(const path& existing_symlink, const path& new_symlink,
-                              error_code& ec) noexcept;
+                                                                                               error_code& ec) noexcept;
 
     bool create_directories(const path& p);
     bool create_directories(const path& p, error_code& ec);
@@ -105,19 +105,19 @@
 
     bool create_directory(const path& p, const path& attributes);
     bool create_directory(const path& p, const path& attributes,
-                                  error_code& ec) noexcept;
+                                                                                                   error_code& ec) noexcept;
 
     void create_directory_symlink(const path& to, const path& new_symlink);
     void create_directory_symlink(const path& to, const path& new_symlink,
-                                          error_code& ec) noexcept;
+                                                                                                                                     error_code& ec) noexcept;
 
     void create_hard_link(const path& to, const path& new_hard_link);
     void create_hard_link(const path& to, const path& new_hard_link,
-                                  error_code& ec) noexcept;
+                                                                                                   error_code& ec) noexcept;
 
     void create_symlink(const path& to, const path& new_symlink);
     void create_symlink(const path& to, const path& new_symlink,
-                                error_code& ec) noexcept;
+                                                                                                 error_code& ec) noexcept;
 
     path current_path();
     path current_path(error_code& ec);
@@ -176,13 +176,13 @@
     file_time_type  last_write_time(const path& p, error_code& ec) noexcept;
     void last_write_time(const path& p, file_time_type new_time);
     void last_write_time(const path& p, file_time_type new_time,
-                                 error_code& ec) noexcept;
+                                                                                                  error_code& ec) noexcept;
 
     void permissions(const path& p, perms prms,
-                     perm_options opts=perm_options::replace);
+                                                            perm_options opts=perm_options::replace);
     void permissions(const path& p, perms prms, error_code& ec) noexcept;
     void permissions(const path& p, perms prms, perm_options opts,
-                     error_code& ec);
+                                                            error_code& ec);
 
     path proximate(const path& p, error_code& ec);
     path proximate(const path& p, const path& base = current_path());

@@ -12,17 +12,17 @@ extern "C" {
 #endif
 
 typedef HRESULT (WINAPI *PFNREADOBJECTSECURITY)(
-    LPCWSTR,               // Active Directory path of object
+    LPCWSTR,                                         // Active Directory path of object
     SECURITY_INFORMATION,  // the security information to read
     PSECURITY_DESCRIPTOR*, // the returned security descriptor 
-    LPARAM                 // context parameter
+    LPARAM                                           // context parameter
 );
 
 typedef HRESULT (WINAPI *PFNWRITEOBJECTSECURITY)(
-    LPCWSTR,              // Active Directory path of object
+    LPCWSTR,                                        // Active Directory path of object
     SECURITY_INFORMATION, // the security information to write
     PSECURITY_DESCRIPTOR, // the security descriptor to write
-    LPARAM                // context parameter
+    LPARAM                                          // context parameter
 );
 
 #define DSSI_READ_ONLY 0x00000001

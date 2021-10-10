@@ -320,11 +320,11 @@ __DEVICE__ float tgammaf(float __a) { return __nv_tgammaf(__a); }
 __DEVICE__ double trunc(double __a) { return __nv_trunc(__a); }
 __DEVICE__ float truncf(float __a) { return __nv_truncf(__a); }
 __DEVICE__ unsigned long long ullmax(unsigned long long __a,
-                                     unsigned long long __b) {
+                                                                                                                   unsigned long long __b) {
   return __nv_ullmax(__a, __b);
 }
 __DEVICE__ unsigned long long ullmin(unsigned long long __a,
-                                     unsigned long long __b) {
+                                                                                                                   unsigned long long __b) {
   return __nv_ullmin(__a, __b);
 }
 __DEVICE__ unsigned int umax(unsigned int __a, unsigned int __b) {

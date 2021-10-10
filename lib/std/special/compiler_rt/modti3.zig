@@ -28,8 +28,8 @@ pub fn __modti3(a: i128, b: i128) callconv(.C) i128 {
 const v128 = @import("std").meta.Vector(2, u64);
 pub fn __modti3_windows_x86_64(a: v128, b: v128) callconv(.C) v128 {
     return @bitCast(v128, @call(.{ .modifier = .always_inline }, __modti3, .{
-        @bitCast(i128, a),
-        @bitCast(i128, b),
+                     @bitCast(i128, a),
+                     @bitCast(i128, b),
     }));
 }
 

@@ -109,7 +109,7 @@ DEFINE_GUID(GUID_CLASS_INPUT,0x4d1e55b2,0xf16f,0x11cf,0x88,0xcb,0x00,0x11,0x11,0
 #define IOCTL_GET_SYS_BUTTON_EVENT CTL_CODE(FILE_DEVICE_BATTERY,0x51,METHOD_BUFFERED,FILE_READ_ACCESS)
 
 #define IOCTL_GET_PROCESSOR_OBJ_INFO \
-        CTL_CODE(FILE_DEVICE_BATTERY,0x60,METHOD_BUFFERED,FILE_READ_ACCESS)
+                     CTL_CODE(FILE_DEVICE_BATTERY,0x60,METHOD_BUFFERED,FILE_READ_ACCESS)
 
 typedef enum {
   BatteryInformation, BatteryGranularityInformation, BatteryTemperature, BatteryEstimatedTime,
@@ -220,25 +220,25 @@ typedef struct _PCC_HEADER {
   UCHAR MinorVersion;
   union {
     __MINGW_EXTENSION struct {
-      ULONG SciDoorbell : 1;
-      ULONG Reserved : 31;
+                   ULONG SciDoorbell : 1;
+                   ULONG Reserved : 31;
     };
     ULONG AsULong;
   } SupportedFeatures;
   union {
     __MINGW_EXTENSION struct {
-      USHORT CommandCode : 8;
-      USHORT ReservedZ : 7;
-      USHORT SciDoorbell : 1;
+                   USHORT CommandCode : 8;
+                   USHORT ReservedZ : 7;
+                   USHORT SciDoorbell : 1;
     };
     USHORT AsUShort;
   } Command;
   union {
     __MINGW_EXTENSION struct {
-      USHORT CommandComplete : 1;
-      USHORT SciReceived : 1;
-      USHORT Error : 1;
-      USHORT Reserved : 13;
+                   USHORT CommandComplete : 1;
+                   USHORT SciReceived : 1;
+                   USHORT Error : 1;
+                   USHORT Reserved : 13;
     };
     USHORT AsUShort;
   } Status;
@@ -254,11 +254,11 @@ typedef struct _PCC_INPUT_BUFFER {
   UCHAR ControlEnabled;
   __MINGW_EXTENSION union {
     struct {
-      UCHAR ReservedZ[3];
+                   UCHAR ReservedZ[3];
     } GetAverageFrequency;
     struct {
-      UCHAR DesiredFrequency;
-      UCHAR ReservedZ[2];
+                   UCHAR DesiredFrequency;
+                   UCHAR ReservedZ[2];
     } SetDesiredFrequency;
   };
 } PCC_INPUT_BUFFER, *PPCC_INPUT_BUFFER;

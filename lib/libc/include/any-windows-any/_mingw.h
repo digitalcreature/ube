@@ -53,12 +53,12 @@ limitations in handling dllimport attribute.  */
 #  ifndef _CRTIMP
 #    undef __USE_CRTIMP
 #    if !defined (_CRTBLD) && !defined (_SYSCRT)
-#      define __USE_CRTIMP 1
+#                   define __USE_CRTIMP 1
 #    endif
 #    ifdef __USE_CRTIMP
-#      define _CRTIMP  __attribute__ ((__dllimport__))
+#                   define _CRTIMP  __attribute__ ((__dllimport__))
 #    else
-#      define _CRTIMP
+#                   define _CRTIMP
 #    endif
 #  endif
 #  define __DECLSPEC_SUPPORTED
@@ -128,12 +128,12 @@ limitations in handling dllimport attribute.  */
 # define __restrict_arr __restrict
 #else
 # ifdef __GNUC__
-#  define __restrict_arr        /* Not supported in old GCC.  */
+#  define __restrict_arr                     /* Not supported in old GCC.  */
 # else
 #  if defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L
-#   define __restrict_arr       restrict
+#   define __restrict_arr                    restrict
 #  else
-#   define __restrict_arr       /* Not supported.  */
+#   define __restrict_arr                    /* Not supported.  */
 #  endif
 # endif
 #endif
@@ -432,11 +432,11 @@ typedef int __int128 __attribute__ ((__mode__ (TI)));
 
 /* We are defining __USE_MINGW_ANSI_STDIO as 0 or 1 */
 #if !defined(__USE_MINGW_ANSI_STDIO)
-#define __USE_MINGW_ANSI_STDIO 0      /* was not defined so it should be 0 */
+#define __USE_MINGW_ANSI_STDIO 0                   /* was not defined so it should be 0 */
 #elif (__USE_MINGW_ANSI_STDIO + 0) != 0 || (1 - __USE_MINGW_ANSI_STDIO - 1) == 2
-#define __USE_MINGW_ANSI_STDIO 1      /* was defined as nonzero or empty so it should be 1 */
+#define __USE_MINGW_ANSI_STDIO 1                   /* was defined as nonzero or empty so it should be 1 */
 #else
-#define __USE_MINGW_ANSI_STDIO 0      /* was defined as (int)zero and non-empty so it should be 0 */
+#define __USE_MINGW_ANSI_STDIO 0                   /* was defined as (int)zero and non-empty so it should be 0 */
 #endif
 
 /* _dowildcard is an int that controls the globbing of the command line.
@@ -531,29 +531,29 @@ typedef int __int128 __attribute__ ((__mode__ (TI)));
 
 #if __cpp_constexpr >= 200704l && __cpp_inline_variables >= 201606L
 #define __CRT_UUID_DECL(type,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8)    \
-    extern "C++" {                                               \
-    template<> struct __mingw_uuidof_s<type> {                   \
-        static constexpr IID __uuid_inst = {                     \
-            l,w1,w2, {b1,b2,b3,b4,b5,b6,b7,b8}                   \
-        };                                                       \
-    };                                                           \
+    extern "C++" {                                                                                                                                          \
+    template<> struct __mingw_uuidof_s<type> {                                                          \
+                     static constexpr IID __uuid_inst = {                                                            \
+                                      l,w1,w2, {b1,b2,b3,b4,b5,b6,b7,b8}                                                          \
+                     };                                                                                                                                                                            \
+    };                                                                                                                                                                                \
     template<> constexpr const GUID &__mingw_uuidof<type>() {    \
-        return __mingw_uuidof_s<type>::__uuid_inst;              \
-    }                                                            \
+                     return __mingw_uuidof_s<type>::__uuid_inst;                                        \
+    }                                                                                                                                                                                              \
     template<> constexpr const GUID &__mingw_uuidof<type*>() {   \
-        return  __mingw_uuidof_s<type>::__uuid_inst;             \
-    }                                                            \
+                     return  __mingw_uuidof_s<type>::__uuid_inst;                                       \
+    }                                                                                                                                                                                              \
     }
 #else
-#define __CRT_UUID_DECL(type,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8)           \
-    extern "C++" {                                                      \
-    template<> inline const GUID &__mingw_uuidof<type>() {              \
-        static const IID __uuid_inst = {l,w1,w2, {b1,b2,b3,b4,b5,b6,b7,b8}}; \
-        return __uuid_inst;                                             \
-    }                                                                   \
-    template<> inline const GUID &__mingw_uuidof<type*>() {             \
-        return __mingw_uuidof<type>();                                  \
-    }                                                                   \
+#define __CRT_UUID_DECL(type,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8)                        \
+    extern "C++" {                                                                                                                                                                           \
+    template<> inline const GUID &__mingw_uuidof<type>() {                                        \
+                     static const IID __uuid_inst = {l,w1,w2, {b1,b2,b3,b4,b5,b6,b7,b8}}; \
+                     return __uuid_inst;                                                                                                                                        \
+    }                                                                                                                                                                                                                  \
+    template<> inline const GUID &__mingw_uuidof<type*>() {                                       \
+                     return __mingw_uuidof<type>();                                                                                                   \
+    }                                                                                                                                                                                                                  \
     }
 #endif
 

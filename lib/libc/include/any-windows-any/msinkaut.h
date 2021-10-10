@@ -455,13 +455,13 @@ MIDL_INTERFACE("db489209-b7c3-411d-90f6-1548cfff271e")
 IInkExtendedProperty : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Guid(
-        BSTR *Guid) = 0;
+                     BSTR *Guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Data(
-        VARIANT *Data) = 0;
+                     VARIANT *Data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Data(
-        VARIANT Data) = 0;
+                     VARIANT Data) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -473,58 +473,58 @@ typedef struct IInkExtendedPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkExtendedProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkExtendedProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkExtendedProperty *This);
+                     IInkExtendedProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkExtendedProperty *This);
+                     IInkExtendedProperty *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkExtendedProperty *This,
-        UINT *pctinfo);
+                     IInkExtendedProperty *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkExtendedProperty *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkExtendedProperty *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkExtendedProperty *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkExtendedProperty *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkExtendedProperty *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkExtendedProperty *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkExtendedProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Guid)(
-        IInkExtendedProperty *This,
-        BSTR *Guid);
+                     IInkExtendedProperty *This,
+                     BSTR *Guid);
 
     HRESULT (STDMETHODCALLTYPE *get_Data)(
-        IInkExtendedProperty *This,
-        VARIANT *Data);
+                     IInkExtendedProperty *This,
+                     VARIANT *Data);
 
     HRESULT (STDMETHODCALLTYPE *put_Data)(
-        IInkExtendedProperty *This,
-        VARIANT Data);
+                     IInkExtendedProperty *This,
+                     VARIANT Data);
 
     END_INTERFACE
 } IInkExtendedPropertyVtbl;
@@ -602,29 +602,29 @@ MIDL_INTERFACE("89f2a8be-95a9-4530-8b8f-88e971e3e25f")
 IInkExtendedProperties : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **_NewEnum) = 0;
+                     IUnknown **_NewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        VARIANT Identifier,
-        IInkExtendedProperty **Item) = 0;
+                     VARIANT Identifier,
+                     IInkExtendedProperty **Item) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        BSTR Guid,
-        VARIANT Data,
-        IInkExtendedProperty **InkExtendedProperty) = 0;
+                     BSTR Guid,
+                     VARIANT Data,
+                     IInkExtendedProperty **InkExtendedProperty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        VARIANT Identifier) = 0;
+                     VARIANT Identifier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoesPropertyExist(
-        BSTR Guid,
-        VARIANT_BOOL *DoesPropertyExist) = 0;
+                     BSTR Guid,
+                     VARIANT_BOOL *DoesPropertyExist) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -636,77 +636,77 @@ typedef struct IInkExtendedPropertiesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkExtendedProperties *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkExtendedProperties *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkExtendedProperties *This);
+                     IInkExtendedProperties *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkExtendedProperties *This);
+                     IInkExtendedProperties *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkExtendedProperties *This,
-        UINT *pctinfo);
+                     IInkExtendedProperties *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkExtendedProperties *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkExtendedProperties *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkExtendedProperties *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkExtendedProperties *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkExtendedProperties *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkExtendedProperties *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkExtendedProperties methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IInkExtendedProperties *This,
-        LONG *Count);
+                     IInkExtendedProperties *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IInkExtendedProperties *This,
-        IUnknown **_NewEnum);
+                     IInkExtendedProperties *This,
+                     IUnknown **_NewEnum);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IInkExtendedProperties *This,
-        VARIANT Identifier,
-        IInkExtendedProperty **Item);
+                     IInkExtendedProperties *This,
+                     VARIANT Identifier,
+                     IInkExtendedProperty **Item);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IInkExtendedProperties *This,
-        BSTR Guid,
-        VARIANT Data,
-        IInkExtendedProperty **InkExtendedProperty);
+                     IInkExtendedProperties *This,
+                     BSTR Guid,
+                     VARIANT Data,
+                     IInkExtendedProperty **InkExtendedProperty);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IInkExtendedProperties *This,
-        VARIANT Identifier);
+                     IInkExtendedProperties *This,
+                     VARIANT Identifier);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IInkExtendedProperties *This);
+                     IInkExtendedProperties *This);
 
     HRESULT (STDMETHODCALLTYPE *DoesPropertyExist)(
-        IInkExtendedProperties *This,
-        BSTR Guid,
-        VARIANT_BOOL *DoesPropertyExist);
+                     IInkExtendedProperties *This,
+                     BSTR Guid,
+                     VARIANT_BOOL *DoesPropertyExist);
 
     END_INTERFACE
 } IInkExtendedPropertiesVtbl;
@@ -800,64 +800,64 @@ MIDL_INTERFACE("bf519b75-0a15-4623-adc9-c00d436a8092")
 IInkDrawingAttributes : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Color(
-        LONG *CurrentColor) = 0;
+                     LONG *CurrentColor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Color(
-        LONG NewColor) = 0;
+                     LONG NewColor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Width(
-        float *CurrentWidth) = 0;
+                     float *CurrentWidth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Width(
-        float NewWidth) = 0;
+                     float NewWidth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Height(
-        float *CurrentHeight) = 0;
+                     float *CurrentHeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Height(
-        float NewHeight) = 0;
+                     float NewHeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FitToCurve(
-        VARIANT_BOOL *Flag) = 0;
+                     VARIANT_BOOL *Flag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FitToCurve(
-        VARIANT_BOOL Flag) = 0;
+                     VARIANT_BOOL Flag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IgnorePressure(
-        VARIANT_BOOL *Flag) = 0;
+                     VARIANT_BOOL *Flag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IgnorePressure(
-        VARIANT_BOOL Flag) = 0;
+                     VARIANT_BOOL Flag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AntiAliased(
-        VARIANT_BOOL *Flag) = 0;
+                     VARIANT_BOOL *Flag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AntiAliased(
-        VARIANT_BOOL Flag) = 0;
+                     VARIANT_BOOL Flag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Transparency(
-        LONG *CurrentTransparency) = 0;
+                     LONG *CurrentTransparency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Transparency(
-        LONG NewTransparency) = 0;
+                     LONG NewTransparency) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RasterOperation(
-        InkRasterOperation *CurrentRasterOperation) = 0;
+                     InkRasterOperation *CurrentRasterOperation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RasterOperation(
-        InkRasterOperation NewRasterOperation) = 0;
+                     InkRasterOperation NewRasterOperation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PenTip(
-        InkPenTip *CurrentPenTip) = 0;
+                     InkPenTip *CurrentPenTip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PenTip(
-        InkPenTip NewPenTip) = 0;
+                     InkPenTip NewPenTip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExtendedProperties(
-        IInkExtendedProperties **Properties) = 0;
+                     IInkExtendedProperties **Properties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IInkDrawingAttributes **DrawingAttributes) = 0;
+                     IInkDrawingAttributes **DrawingAttributes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -869,126 +869,126 @@ typedef struct IInkDrawingAttributesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkDrawingAttributes *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkDrawingAttributes *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkDrawingAttributes *This);
+                     IInkDrawingAttributes *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkDrawingAttributes *This);
+                     IInkDrawingAttributes *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkDrawingAttributes *This,
-        UINT *pctinfo);
+                     IInkDrawingAttributes *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkDrawingAttributes *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkDrawingAttributes *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkDrawingAttributes *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkDrawingAttributes *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkDrawingAttributes *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkDrawingAttributes *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkDrawingAttributes methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Color)(
-        IInkDrawingAttributes *This,
-        LONG *CurrentColor);
+                     IInkDrawingAttributes *This,
+                     LONG *CurrentColor);
 
     HRESULT (STDMETHODCALLTYPE *put_Color)(
-        IInkDrawingAttributes *This,
-        LONG NewColor);
+                     IInkDrawingAttributes *This,
+                     LONG NewColor);
 
     HRESULT (STDMETHODCALLTYPE *get_Width)(
-        IInkDrawingAttributes *This,
-        float *CurrentWidth);
+                     IInkDrawingAttributes *This,
+                     float *CurrentWidth);
 
     HRESULT (STDMETHODCALLTYPE *put_Width)(
-        IInkDrawingAttributes *This,
-        float NewWidth);
+                     IInkDrawingAttributes *This,
+                     float NewWidth);
 
     HRESULT (STDMETHODCALLTYPE *get_Height)(
-        IInkDrawingAttributes *This,
-        float *CurrentHeight);
+                     IInkDrawingAttributes *This,
+                     float *CurrentHeight);
 
     HRESULT (STDMETHODCALLTYPE *put_Height)(
-        IInkDrawingAttributes *This,
-        float NewHeight);
+                     IInkDrawingAttributes *This,
+                     float NewHeight);
 
     HRESULT (STDMETHODCALLTYPE *get_FitToCurve)(
-        IInkDrawingAttributes *This,
-        VARIANT_BOOL *Flag);
+                     IInkDrawingAttributes *This,
+                     VARIANT_BOOL *Flag);
 
     HRESULT (STDMETHODCALLTYPE *put_FitToCurve)(
-        IInkDrawingAttributes *This,
-        VARIANT_BOOL Flag);
+                     IInkDrawingAttributes *This,
+                     VARIANT_BOOL Flag);
 
     HRESULT (STDMETHODCALLTYPE *get_IgnorePressure)(
-        IInkDrawingAttributes *This,
-        VARIANT_BOOL *Flag);
+                     IInkDrawingAttributes *This,
+                     VARIANT_BOOL *Flag);
 
     HRESULT (STDMETHODCALLTYPE *put_IgnorePressure)(
-        IInkDrawingAttributes *This,
-        VARIANT_BOOL Flag);
+                     IInkDrawingAttributes *This,
+                     VARIANT_BOOL Flag);
 
     HRESULT (STDMETHODCALLTYPE *get_AntiAliased)(
-        IInkDrawingAttributes *This,
-        VARIANT_BOOL *Flag);
+                     IInkDrawingAttributes *This,
+                     VARIANT_BOOL *Flag);
 
     HRESULT (STDMETHODCALLTYPE *put_AntiAliased)(
-        IInkDrawingAttributes *This,
-        VARIANT_BOOL Flag);
+                     IInkDrawingAttributes *This,
+                     VARIANT_BOOL Flag);
 
     HRESULT (STDMETHODCALLTYPE *get_Transparency)(
-        IInkDrawingAttributes *This,
-        LONG *CurrentTransparency);
+                     IInkDrawingAttributes *This,
+                     LONG *CurrentTransparency);
 
     HRESULT (STDMETHODCALLTYPE *put_Transparency)(
-        IInkDrawingAttributes *This,
-        LONG NewTransparency);
+                     IInkDrawingAttributes *This,
+                     LONG NewTransparency);
 
     HRESULT (STDMETHODCALLTYPE *get_RasterOperation)(
-        IInkDrawingAttributes *This,
-        InkRasterOperation *CurrentRasterOperation);
+                     IInkDrawingAttributes *This,
+                     InkRasterOperation *CurrentRasterOperation);
 
     HRESULT (STDMETHODCALLTYPE *put_RasterOperation)(
-        IInkDrawingAttributes *This,
-        InkRasterOperation NewRasterOperation);
+                     IInkDrawingAttributes *This,
+                     InkRasterOperation NewRasterOperation);
 
     HRESULT (STDMETHODCALLTYPE *get_PenTip)(
-        IInkDrawingAttributes *This,
-        InkPenTip *CurrentPenTip);
+                     IInkDrawingAttributes *This,
+                     InkPenTip *CurrentPenTip);
 
     HRESULT (STDMETHODCALLTYPE *put_PenTip)(
-        IInkDrawingAttributes *This,
-        InkPenTip NewPenTip);
+                     IInkDrawingAttributes *This,
+                     InkPenTip NewPenTip);
 
     HRESULT (STDMETHODCALLTYPE *get_ExtendedProperties)(
-        IInkDrawingAttributes *This,
-        IInkExtendedProperties **Properties);
+                     IInkDrawingAttributes *This,
+                     IInkExtendedProperties **Properties);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IInkDrawingAttributes *This,
-        IInkDrawingAttributes **DrawingAttributes);
+                     IInkDrawingAttributes *This,
+                     IInkDrawingAttributes **DrawingAttributes);
 
     END_INTERFACE
 } IInkDrawingAttributesVtbl;
@@ -1134,46 +1134,46 @@ MIDL_INTERFACE("9794ff82-6071-4717-8a8b-6ac7c64a686e")
 IInkRectangle : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Top(
-        LONG *Units) = 0;
+                     LONG *Units) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Top(
-        LONG Units) = 0;
+                     LONG Units) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Left(
-        LONG *Units) = 0;
+                     LONG *Units) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Left(
-        LONG Units) = 0;
+                     LONG Units) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Bottom(
-        LONG *Units) = 0;
+                     LONG *Units) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Bottom(
-        LONG Units) = 0;
+                     LONG Units) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Right(
-        LONG *Units) = 0;
+                     LONG *Units) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Right(
-        LONG Units) = 0;
+                     LONG Units) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Data(
-        RECT *Rect) = 0;
+                     RECT *Rect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Data(
-        RECT Rect) = 0;
+                     RECT Rect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRectangle(
-        LONG *Top,
-        LONG *Left,
-        LONG *Bottom,
-        LONG *Right) = 0;
+                     LONG *Top,
+                     LONG *Left,
+                     LONG *Bottom,
+                     LONG *Right) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRectangle(
-        LONG Top,
-        LONG Left,
-        LONG Bottom,
-        LONG Right) = 0;
+                     LONG Top,
+                     LONG Left,
+                     LONG Bottom,
+                     LONG Right) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1185,100 +1185,100 @@ typedef struct IInkRectangleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkRectangle *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkRectangle *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkRectangle *This);
+                     IInkRectangle *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkRectangle *This);
+                     IInkRectangle *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkRectangle *This,
-        UINT *pctinfo);
+                     IInkRectangle *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkRectangle *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkRectangle *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkRectangle *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkRectangle *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkRectangle *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkRectangle *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkRectangle methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Top)(
-        IInkRectangle *This,
-        LONG *Units);
+                     IInkRectangle *This,
+                     LONG *Units);
 
     HRESULT (STDMETHODCALLTYPE *put_Top)(
-        IInkRectangle *This,
-        LONG Units);
+                     IInkRectangle *This,
+                     LONG Units);
 
     HRESULT (STDMETHODCALLTYPE *get_Left)(
-        IInkRectangle *This,
-        LONG *Units);
+                     IInkRectangle *This,
+                     LONG *Units);
 
     HRESULT (STDMETHODCALLTYPE *put_Left)(
-        IInkRectangle *This,
-        LONG Units);
+                     IInkRectangle *This,
+                     LONG Units);
 
     HRESULT (STDMETHODCALLTYPE *get_Bottom)(
-        IInkRectangle *This,
-        LONG *Units);
+                     IInkRectangle *This,
+                     LONG *Units);
 
     HRESULT (STDMETHODCALLTYPE *put_Bottom)(
-        IInkRectangle *This,
-        LONG Units);
+                     IInkRectangle *This,
+                     LONG Units);
 
     HRESULT (STDMETHODCALLTYPE *get_Right)(
-        IInkRectangle *This,
-        LONG *Units);
+                     IInkRectangle *This,
+                     LONG *Units);
 
     HRESULT (STDMETHODCALLTYPE *put_Right)(
-        IInkRectangle *This,
-        LONG Units);
+                     IInkRectangle *This,
+                     LONG Units);
 
     HRESULT (STDMETHODCALLTYPE *get_Data)(
-        IInkRectangle *This,
-        RECT *Rect);
+                     IInkRectangle *This,
+                     RECT *Rect);
 
     HRESULT (STDMETHODCALLTYPE *put_Data)(
-        IInkRectangle *This,
-        RECT Rect);
+                     IInkRectangle *This,
+                     RECT Rect);
 
     HRESULT (STDMETHODCALLTYPE *GetRectangle)(
-        IInkRectangle *This,
-        LONG *Top,
-        LONG *Left,
-        LONG *Bottom,
-        LONG *Right);
+                     IInkRectangle *This,
+                     LONG *Top,
+                     LONG *Left,
+                     LONG *Bottom,
+                     LONG *Right);
 
     HRESULT (STDMETHODCALLTYPE *SetRectangle)(
-        IInkRectangle *This,
-        LONG Top,
-        LONG Left,
-        LONG Bottom,
-        LONG Right);
+                     IInkRectangle *This,
+                     LONG Top,
+                     LONG Left,
+                     LONG Bottom,
+                     LONG Right);
 
     END_INTERFACE
 } IInkRectangleVtbl;
@@ -1392,27 +1392,27 @@ MIDL_INTERFACE("2de25eaa-6ef8-42d5-aee9-185bc81b912d")
 IInkTablet : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PlugAndPlayId(
-        BSTR *Id) = 0;
+                     BSTR *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MaximumInputRectangle(
-        IInkRectangle **Rectangle) = 0;
+                     IInkRectangle **Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HardwareCapabilities(
-        TabletHardwareCapabilities *Capabilities) = 0;
+                     TabletHardwareCapabilities *Capabilities) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsPacketPropertySupported(
-        BSTR packetPropertyName,
-        VARIANT_BOOL *Supported) = 0;
+                     BSTR packetPropertyName,
+                     VARIANT_BOOL *Supported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyMetrics(
-        BSTR propertyName,
-        LONG *Minimum,
-        LONG *Maximum,
-        TabletPropertyMetricUnit *Units,
-        float *Resolution) = 0;
+                     BSTR propertyName,
+                     LONG *Minimum,
+                     LONG *Maximum,
+                     TabletPropertyMetricUnit *Units,
+                     float *Resolution) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1424,75 +1424,75 @@ typedef struct IInkTabletVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkTablet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkTablet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkTablet *This);
+                     IInkTablet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkTablet *This);
+                     IInkTablet *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkTablet *This,
-        UINT *pctinfo);
+                     IInkTablet *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkTablet *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkTablet *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkTablet *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkTablet *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkTablet *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkTablet *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkTablet methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IInkTablet *This,
-        BSTR *Name);
+                     IInkTablet *This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *get_PlugAndPlayId)(
-        IInkTablet *This,
-        BSTR *Id);
+                     IInkTablet *This,
+                     BSTR *Id);
 
     HRESULT (STDMETHODCALLTYPE *get_MaximumInputRectangle)(
-        IInkTablet *This,
-        IInkRectangle **Rectangle);
+                     IInkTablet *This,
+                     IInkRectangle **Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *get_HardwareCapabilities)(
-        IInkTablet *This,
-        TabletHardwareCapabilities *Capabilities);
+                     IInkTablet *This,
+                     TabletHardwareCapabilities *Capabilities);
 
     HRESULT (STDMETHODCALLTYPE *IsPacketPropertySupported)(
-        IInkTablet *This,
-        BSTR packetPropertyName,
-        VARIANT_BOOL *Supported);
+                     IInkTablet *This,
+                     BSTR packetPropertyName,
+                     VARIANT_BOOL *Supported);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyMetrics)(
-        IInkTablet *This,
-        BSTR propertyName,
-        LONG *Minimum,
-        LONG *Maximum,
-        TabletPropertyMetricUnit *Units,
-        float *Resolution);
+                     IInkTablet *This,
+                     BSTR propertyName,
+                     LONG *Minimum,
+                     LONG *Maximum,
+                     TabletPropertyMetricUnit *Units,
+                     float *Resolution);
 
     END_INTERFACE
 } IInkTabletVtbl;
@@ -1582,13 +1582,13 @@ MIDL_INTERFACE("85ef9417-1d59-49b2-a13c-702c85430894")
 IInkCursorButton : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        BSTR *Id) = 0;
+                     BSTR *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_State(
-        InkCursorButtonState *CurrentState) = 0;
+                     InkCursorButtonState *CurrentState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1600,58 +1600,58 @@ typedef struct IInkCursorButtonVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkCursorButton *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkCursorButton *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkCursorButton *This);
+                     IInkCursorButton *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkCursorButton *This);
+                     IInkCursorButton *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkCursorButton *This,
-        UINT *pctinfo);
+                     IInkCursorButton *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkCursorButton *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkCursorButton *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkCursorButton *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkCursorButton *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkCursorButton *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkCursorButton *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkCursorButton methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IInkCursorButton *This,
-        BSTR *Name);
+                     IInkCursorButton *This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IInkCursorButton *This,
-        BSTR *Id);
+                     IInkCursorButton *This,
+                     BSTR *Id);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        IInkCursorButton *This,
-        InkCursorButtonState *CurrentState);
+                     IInkCursorButton *This,
+                     InkCursorButtonState *CurrentState);
 
     END_INTERFACE
 } IInkCursorButtonVtbl;
@@ -1729,14 +1729,14 @@ MIDL_INTERFACE("3671cc40-b624-4671-9fa0-db119d952d54")
 IInkCursorButtons : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **_NewEnum) = 0;
+                     IUnknown **_NewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        VARIANT Identifier,
-        IInkCursorButton **Button) = 0;
+                     VARIANT Identifier,
+                     IInkCursorButton **Button) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1748,59 +1748,59 @@ typedef struct IInkCursorButtonsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkCursorButtons *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkCursorButtons *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkCursorButtons *This);
+                     IInkCursorButtons *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkCursorButtons *This);
+                     IInkCursorButtons *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkCursorButtons *This,
-        UINT *pctinfo);
+                     IInkCursorButtons *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkCursorButtons *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkCursorButtons *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkCursorButtons *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkCursorButtons *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkCursorButtons *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkCursorButtons *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkCursorButtons methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IInkCursorButtons *This,
-        LONG *Count);
+                     IInkCursorButtons *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IInkCursorButtons *This,
-        IUnknown **_NewEnum);
+                     IInkCursorButtons *This,
+                     IUnknown **_NewEnum);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IInkCursorButtons *This,
-        VARIANT Identifier,
-        IInkCursorButton **Button);
+                     IInkCursorButtons *This,
+                     VARIANT Identifier,
+                     IInkCursorButton **Button);
 
     END_INTERFACE
 } IInkCursorButtonsVtbl;
@@ -1878,25 +1878,25 @@ MIDL_INTERFACE("ad30c630-40c5-4350-8405-9c71012fc558")
 IInkCursor : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *Name) = 0;
+                     BSTR *Name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        LONG *Id) = 0;
+                     LONG *Id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Inverted(
-        VARIANT_BOOL *Status) = 0;
+                     VARIANT_BOOL *Status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DrawingAttributes(
-        IInkDrawingAttributes **Attributes) = 0;
+                     IInkDrawingAttributes **Attributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_DrawingAttributes(
-        IInkDrawingAttributes *Attributes) = 0;
+                     IInkDrawingAttributes *Attributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Tablet(
-        IInkTablet **Tablet) = 0;
+                     IInkTablet **Tablet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Buttons(
-        IInkCursorButtons **Buttons) = 0;
+                     IInkCursorButtons **Buttons) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1908,74 +1908,74 @@ typedef struct IInkCursorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkCursor *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkCursor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkCursor *This);
+                     IInkCursor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkCursor *This);
+                     IInkCursor *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkCursor *This,
-        UINT *pctinfo);
+                     IInkCursor *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkCursor *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkCursor *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkCursor *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkCursor *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkCursor *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkCursor *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkCursor methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IInkCursor *This,
-        BSTR *Name);
+                     IInkCursor *This,
+                     BSTR *Name);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IInkCursor *This,
-        LONG *Id);
+                     IInkCursor *This,
+                     LONG *Id);
 
     HRESULT (STDMETHODCALLTYPE *get_Inverted)(
-        IInkCursor *This,
-        VARIANT_BOOL *Status);
+                     IInkCursor *This,
+                     VARIANT_BOOL *Status);
 
     HRESULT (STDMETHODCALLTYPE *get_DrawingAttributes)(
-        IInkCursor *This,
-        IInkDrawingAttributes **Attributes);
+                     IInkCursor *This,
+                     IInkDrawingAttributes **Attributes);
 
     HRESULT (STDMETHODCALLTYPE *putref_DrawingAttributes)(
-        IInkCursor *This,
-        IInkDrawingAttributes *Attributes);
+                     IInkCursor *This,
+                     IInkDrawingAttributes *Attributes);
 
     HRESULT (STDMETHODCALLTYPE *get_Tablet)(
-        IInkCursor *This,
-        IInkTablet **Tablet);
+                     IInkCursor *This,
+                     IInkTablet **Tablet);
 
     HRESULT (STDMETHODCALLTYPE *get_Buttons)(
-        IInkCursor *This,
-        IInkCursorButtons **Buttons);
+                     IInkCursor *This,
+                     IInkCursorButtons **Buttons);
 
     END_INTERFACE
 } IInkCursorVtbl;
@@ -2069,86 +2069,86 @@ MIDL_INTERFACE("615f1d43-8703-4565-88e2-8201d2ecd7b7")
 IInkTransform : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Translate(
-        float HorizontalComponent,
-        float VerticalComponent) = 0;
+                     float HorizontalComponent,
+                     float VerticalComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Rotate(
-        float Degrees,
-        float x = 0,
-        float y = 0) = 0;
+                     float Degrees,
+                     float x = 0,
+                     float y = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reflect(
-        VARIANT_BOOL Horizontally,
-        VARIANT_BOOL Vertically) = 0;
+                     VARIANT_BOOL Horizontally,
+                     VARIANT_BOOL Vertically) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shear(
-        float HorizontalComponent,
-        float VerticalComponent) = 0;
+                     float HorizontalComponent,
+                     float VerticalComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleTransform(
-        float HorizontalMultiplier,
-        float VerticalMultiplier) = 0;
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTransform(
-        float *eM11,
-        float *eM12,
-        float *eM21,
-        float *eM22,
-        float *eDx,
-        float *eDy) = 0;
+                     float *eM11,
+                     float *eM12,
+                     float *eM21,
+                     float *eM22,
+                     float *eDx,
+                     float *eDy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTransform(
-        float eM11,
-        float eM12,
-        float eM21,
-        float eM22,
-        float eDx,
-        float eDy) = 0;
+                     float eM11,
+                     float eM12,
+                     float eM21,
+                     float eM22,
+                     float eDx,
+                     float eDy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_eM11(
-        float *Value) = 0;
+                     float *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_eM11(
-        float Value) = 0;
+                     float Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_eM12(
-        float *Value) = 0;
+                     float *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_eM12(
-        float Value) = 0;
+                     float Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_eM21(
-        float *Value) = 0;
+                     float *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_eM21(
-        float Value) = 0;
+                     float Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_eM22(
-        float *Value) = 0;
+                     float *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_eM22(
-        float Value) = 0;
+                     float Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_eDx(
-        float *Value) = 0;
+                     float *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_eDx(
-        float Value) = 0;
+                     float Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_eDy(
-        float *Value) = 0;
+                     float *Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_eDy(
-        float Value) = 0;
+                     float Value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Data(
-        XFORM *XForm) = 0;
+                     XFORM *XForm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Data(
-        XFORM XForm) = 0;
+                     XFORM XForm) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2160,149 +2160,149 @@ typedef struct IInkTransformVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkTransform *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkTransform *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkTransform *This);
+                     IInkTransform *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkTransform *This);
+                     IInkTransform *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkTransform *This,
-        UINT *pctinfo);
+                     IInkTransform *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkTransform *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkTransform *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkTransform *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkTransform *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkTransform *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkTransform *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkTransform methods ***/
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IInkTransform *This);
+                     IInkTransform *This);
 
     HRESULT (STDMETHODCALLTYPE *Translate)(
-        IInkTransform *This,
-        float HorizontalComponent,
-        float VerticalComponent);
+                     IInkTransform *This,
+                     float HorizontalComponent,
+                     float VerticalComponent);
 
     HRESULT (STDMETHODCALLTYPE *Rotate)(
-        IInkTransform *This,
-        float Degrees,
-        float x,
-        float y);
+                     IInkTransform *This,
+                     float Degrees,
+                     float x,
+                     float y);
 
     HRESULT (STDMETHODCALLTYPE *Reflect)(
-        IInkTransform *This,
-        VARIANT_BOOL Horizontally,
-        VARIANT_BOOL Vertically);
+                     IInkTransform *This,
+                     VARIANT_BOOL Horizontally,
+                     VARIANT_BOOL Vertically);
 
     HRESULT (STDMETHODCALLTYPE *Shear)(
-        IInkTransform *This,
-        float HorizontalComponent,
-        float VerticalComponent);
+                     IInkTransform *This,
+                     float HorizontalComponent,
+                     float VerticalComponent);
 
     HRESULT (STDMETHODCALLTYPE *ScaleTransform)(
-        IInkTransform *This,
-        float HorizontalMultiplier,
-        float VerticalMultiplier);
+                     IInkTransform *This,
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier);
 
     HRESULT (STDMETHODCALLTYPE *GetTransform)(
-        IInkTransform *This,
-        float *eM11,
-        float *eM12,
-        float *eM21,
-        float *eM22,
-        float *eDx,
-        float *eDy);
+                     IInkTransform *This,
+                     float *eM11,
+                     float *eM12,
+                     float *eM21,
+                     float *eM22,
+                     float *eDx,
+                     float *eDy);
 
     HRESULT (STDMETHODCALLTYPE *SetTransform)(
-        IInkTransform *This,
-        float eM11,
-        float eM12,
-        float eM21,
-        float eM22,
-        float eDx,
-        float eDy);
+                     IInkTransform *This,
+                     float eM11,
+                     float eM12,
+                     float eM21,
+                     float eM22,
+                     float eDx,
+                     float eDy);
 
     HRESULT (STDMETHODCALLTYPE *get_eM11)(
-        IInkTransform *This,
-        float *Value);
+                     IInkTransform *This,
+                     float *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_eM11)(
-        IInkTransform *This,
-        float Value);
+                     IInkTransform *This,
+                     float Value);
 
     HRESULT (STDMETHODCALLTYPE *get_eM12)(
-        IInkTransform *This,
-        float *Value);
+                     IInkTransform *This,
+                     float *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_eM12)(
-        IInkTransform *This,
-        float Value);
+                     IInkTransform *This,
+                     float Value);
 
     HRESULT (STDMETHODCALLTYPE *get_eM21)(
-        IInkTransform *This,
-        float *Value);
+                     IInkTransform *This,
+                     float *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_eM21)(
-        IInkTransform *This,
-        float Value);
+                     IInkTransform *This,
+                     float Value);
 
     HRESULT (STDMETHODCALLTYPE *get_eM22)(
-        IInkTransform *This,
-        float *Value);
+                     IInkTransform *This,
+                     float *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_eM22)(
-        IInkTransform *This,
-        float Value);
+                     IInkTransform *This,
+                     float Value);
 
     HRESULT (STDMETHODCALLTYPE *get_eDx)(
-        IInkTransform *This,
-        float *Value);
+                     IInkTransform *This,
+                     float *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_eDx)(
-        IInkTransform *This,
-        float Value);
+                     IInkTransform *This,
+                     float Value);
 
     HRESULT (STDMETHODCALLTYPE *get_eDy)(
-        IInkTransform *This,
-        float *Value);
+                     IInkTransform *This,
+                     float *Value);
 
     HRESULT (STDMETHODCALLTYPE *put_eDy)(
-        IInkTransform *This,
-        float Value);
+                     IInkTransform *This,
+                     float Value);
 
     HRESULT (STDMETHODCALLTYPE *get_Data)(
-        IInkTransform *This,
-        XFORM *XForm);
+                     IInkTransform *This,
+                     XFORM *XForm);
 
     HRESULT (STDMETHODCALLTYPE *put_Data)(
-        IInkTransform *This,
-        XFORM XForm);
+                     IInkTransform *This,
+                     XFORM XForm);
 
     END_INTERFACE
 } IInkTransformVtbl;
@@ -2456,17 +2456,17 @@ MIDL_INTERFACE("286a167f-9f19-4c61-9d53-4f07be622b84")
 IInkRecognitionAlternates : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **_NewEnum) = 0;
+                     IUnknown **_NewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Strokes(
-        IInkStrokes **Strokes) = 0;
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        IInkRecognitionAlternate **InkRecoAlternate) = 0;
+                     LONG Index,
+                     IInkRecognitionAlternate **InkRecoAlternate) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2478,63 +2478,63 @@ typedef struct IInkRecognitionAlternatesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkRecognitionAlternates *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkRecognitionAlternates *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkRecognitionAlternates *This);
+                     IInkRecognitionAlternates *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkRecognitionAlternates *This);
+                     IInkRecognitionAlternates *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkRecognitionAlternates *This,
-        UINT *pctinfo);
+                     IInkRecognitionAlternates *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkRecognitionAlternates *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkRecognitionAlternates *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkRecognitionAlternates *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkRecognitionAlternates *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkRecognitionAlternates *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkRecognitionAlternates *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkRecognitionAlternates methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IInkRecognitionAlternates *This,
-        LONG *Count);
+                     IInkRecognitionAlternates *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IInkRecognitionAlternates *This,
-        IUnknown **_NewEnum);
+                     IInkRecognitionAlternates *This,
+                     IUnknown **_NewEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_Strokes)(
-        IInkRecognitionAlternates *This,
-        IInkStrokes **Strokes);
+                     IInkRecognitionAlternates *This,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IInkRecognitionAlternates *This,
-        LONG Index,
-        IInkRecognitionAlternate **InkRecoAlternate);
+                     IInkRecognitionAlternates *This,
+                     LONG Index,
+                     IInkRecognitionAlternate **InkRecoAlternate);
 
     END_INTERFACE
 } IInkRecognitionAlternatesVtbl;
@@ -2616,56 +2616,56 @@ MIDL_INTERFACE("b7e660ad-77e4-429b-adda-873780d1fc4a")
 IInkRecognitionAlternate : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_String(
-        BSTR *RecoString) = 0;
+                     BSTR *RecoString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Confidence(
-        InkRecognitionConfidence *Confidence) = 0;
+                     InkRecognitionConfidence *Confidence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Baseline(
-        VARIANT *Baseline) = 0;
+                     VARIANT *Baseline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Midline(
-        VARIANT *Midline) = 0;
+                     VARIANT *Midline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Ascender(
-        VARIANT *Ascender) = 0;
+                     VARIANT *Ascender) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Descender(
-        VARIANT *Descender) = 0;
+                     VARIANT *Descender) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LineNumber(
-        LONG *LineNumber) = 0;
+                     LONG *LineNumber) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Strokes(
-        IInkStrokes **Strokes) = 0;
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LineAlternates(
-        IInkRecognitionAlternates **LineAlternates) = 0;
+                     IInkRecognitionAlternates **LineAlternates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ConfidenceAlternates(
-        IInkRecognitionAlternates **ConfidenceAlternates) = 0;
+                     IInkRecognitionAlternates **ConfidenceAlternates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokesFromStrokeRanges(
-        IInkStrokes *Strokes,
-        IInkStrokes **GetStrokesFromStrokeRanges) = 0;
+                     IInkStrokes *Strokes,
+                     IInkStrokes **GetStrokesFromStrokeRanges) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrokesFromTextRange(
-        LONG *selectionStart,
-        LONG *selectionLength,
-        IInkStrokes **GetStrokesFromTextRange) = 0;
+                     LONG *selectionStart,
+                     LONG *selectionLength,
+                     IInkStrokes **GetStrokesFromTextRange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTextRangeFromStrokes(
-        IInkStrokes *Strokes,
-        LONG *selectionStart,
-        LONG *selectionLength) = 0;
+                     IInkStrokes *Strokes,
+                     LONG *selectionStart,
+                     LONG *selectionLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AlternatesWithConstantPropertyValues(
-        BSTR PropertyType,
-        IInkRecognitionAlternates **AlternatesWithConstantPropertyValues) = 0;
+                     BSTR PropertyType,
+                     IInkRecognitionAlternates **AlternatesWithConstantPropertyValues) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyValue(
-        BSTR PropertyType,
-        VARIANT *PropertyValue) = 0;
+                     BSTR PropertyType,
+                     VARIANT *PropertyValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2677,113 +2677,113 @@ typedef struct IInkRecognitionAlternateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkRecognitionAlternate *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkRecognitionAlternate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkRecognitionAlternate *This);
+                     IInkRecognitionAlternate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkRecognitionAlternate *This);
+                     IInkRecognitionAlternate *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkRecognitionAlternate *This,
-        UINT *pctinfo);
+                     IInkRecognitionAlternate *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkRecognitionAlternate *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkRecognitionAlternate *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkRecognitionAlternate *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkRecognitionAlternate *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkRecognitionAlternate *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkRecognitionAlternate *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkRecognitionAlternate methods ***/
     HRESULT (STDMETHODCALLTYPE *get_String)(
-        IInkRecognitionAlternate *This,
-        BSTR *RecoString);
+                     IInkRecognitionAlternate *This,
+                     BSTR *RecoString);
 
     HRESULT (STDMETHODCALLTYPE *get_Confidence)(
-        IInkRecognitionAlternate *This,
-        InkRecognitionConfidence *Confidence);
+                     IInkRecognitionAlternate *This,
+                     InkRecognitionConfidence *Confidence);
 
     HRESULT (STDMETHODCALLTYPE *get_Baseline)(
-        IInkRecognitionAlternate *This,
-        VARIANT *Baseline);
+                     IInkRecognitionAlternate *This,
+                     VARIANT *Baseline);
 
     HRESULT (STDMETHODCALLTYPE *get_Midline)(
-        IInkRecognitionAlternate *This,
-        VARIANT *Midline);
+                     IInkRecognitionAlternate *This,
+                     VARIANT *Midline);
 
     HRESULT (STDMETHODCALLTYPE *get_Ascender)(
-        IInkRecognitionAlternate *This,
-        VARIANT *Ascender);
+                     IInkRecognitionAlternate *This,
+                     VARIANT *Ascender);
 
     HRESULT (STDMETHODCALLTYPE *get_Descender)(
-        IInkRecognitionAlternate *This,
-        VARIANT *Descender);
+                     IInkRecognitionAlternate *This,
+                     VARIANT *Descender);
 
     HRESULT (STDMETHODCALLTYPE *get_LineNumber)(
-        IInkRecognitionAlternate *This,
-        LONG *LineNumber);
+                     IInkRecognitionAlternate *This,
+                     LONG *LineNumber);
 
     HRESULT (STDMETHODCALLTYPE *get_Strokes)(
-        IInkRecognitionAlternate *This,
-        IInkStrokes **Strokes);
+                     IInkRecognitionAlternate *This,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *get_LineAlternates)(
-        IInkRecognitionAlternate *This,
-        IInkRecognitionAlternates **LineAlternates);
+                     IInkRecognitionAlternate *This,
+                     IInkRecognitionAlternates **LineAlternates);
 
     HRESULT (STDMETHODCALLTYPE *get_ConfidenceAlternates)(
-        IInkRecognitionAlternate *This,
-        IInkRecognitionAlternates **ConfidenceAlternates);
+                     IInkRecognitionAlternate *This,
+                     IInkRecognitionAlternates **ConfidenceAlternates);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokesFromStrokeRanges)(
-        IInkRecognitionAlternate *This,
-        IInkStrokes *Strokes,
-        IInkStrokes **GetStrokesFromStrokeRanges);
+                     IInkRecognitionAlternate *This,
+                     IInkStrokes *Strokes,
+                     IInkStrokes **GetStrokesFromStrokeRanges);
 
     HRESULT (STDMETHODCALLTYPE *GetStrokesFromTextRange)(
-        IInkRecognitionAlternate *This,
-        LONG *selectionStart,
-        LONG *selectionLength,
-        IInkStrokes **GetStrokesFromTextRange);
+                     IInkRecognitionAlternate *This,
+                     LONG *selectionStart,
+                     LONG *selectionLength,
+                     IInkStrokes **GetStrokesFromTextRange);
 
     HRESULT (STDMETHODCALLTYPE *GetTextRangeFromStrokes)(
-        IInkRecognitionAlternate *This,
-        IInkStrokes *Strokes,
-        LONG *selectionStart,
-        LONG *selectionLength);
+                     IInkRecognitionAlternate *This,
+                     IInkStrokes *Strokes,
+                     LONG *selectionStart,
+                     LONG *selectionLength);
 
     HRESULT (STDMETHODCALLTYPE *AlternatesWithConstantPropertyValues)(
-        IInkRecognitionAlternate *This,
-        BSTR PropertyType,
-        IInkRecognitionAlternates **AlternatesWithConstantPropertyValues);
+                     IInkRecognitionAlternate *This,
+                     BSTR PropertyType,
+                     IInkRecognitionAlternates **AlternatesWithConstantPropertyValues);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyValue)(
-        IInkRecognitionAlternate *This,
-        BSTR PropertyType,
-        VARIANT *PropertyValue);
+                     IInkRecognitionAlternate *This,
+                     BSTR PropertyType,
+                     VARIANT *PropertyValue);
 
     END_INTERFACE
 } IInkRecognitionAlternateVtbl;
@@ -2909,28 +2909,28 @@ MIDL_INTERFACE("3bc129a8-86cd-45ad-bde8-e0d32d61c16d")
 IInkRecognitionResult : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_TopString(
-        BSTR *TopString) = 0;
+                     BSTR *TopString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TopAlternate(
-        IInkRecognitionAlternate **TopAlternate) = 0;
+                     IInkRecognitionAlternate **TopAlternate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TopConfidence(
-        InkRecognitionConfidence *TopConfidence) = 0;
+                     InkRecognitionConfidence *TopConfidence) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Strokes(
-        IInkStrokes **Strokes) = 0;
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AlternatesFromSelection(
-        LONG selectionStart,
-        LONG selectionLength,
-        LONG maximumAlternates,
-        IInkRecognitionAlternates **AlternatesFromSelection) = 0;
+                     LONG selectionStart,
+                     LONG selectionLength,
+                     LONG maximumAlternates,
+                     IInkRecognitionAlternates **AlternatesFromSelection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ModifyTopAlternate(
-        IInkRecognitionAlternate *Alternate) = 0;
+                     IInkRecognitionAlternate *Alternate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetResultOnStrokes(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2942,76 +2942,76 @@ typedef struct IInkRecognitionResultVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkRecognitionResult *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkRecognitionResult *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkRecognitionResult *This);
+                     IInkRecognitionResult *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkRecognitionResult *This);
+                     IInkRecognitionResult *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkRecognitionResult *This,
-        UINT *pctinfo);
+                     IInkRecognitionResult *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkRecognitionResult *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkRecognitionResult *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkRecognitionResult *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkRecognitionResult *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkRecognitionResult *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkRecognitionResult *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkRecognitionResult methods ***/
     HRESULT (STDMETHODCALLTYPE *get_TopString)(
-        IInkRecognitionResult *This,
-        BSTR *TopString);
+                     IInkRecognitionResult *This,
+                     BSTR *TopString);
 
     HRESULT (STDMETHODCALLTYPE *get_TopAlternate)(
-        IInkRecognitionResult *This,
-        IInkRecognitionAlternate **TopAlternate);
+                     IInkRecognitionResult *This,
+                     IInkRecognitionAlternate **TopAlternate);
 
     HRESULT (STDMETHODCALLTYPE *get_TopConfidence)(
-        IInkRecognitionResult *This,
-        InkRecognitionConfidence *TopConfidence);
+                     IInkRecognitionResult *This,
+                     InkRecognitionConfidence *TopConfidence);
 
     HRESULT (STDMETHODCALLTYPE *get_Strokes)(
-        IInkRecognitionResult *This,
-        IInkStrokes **Strokes);
+                     IInkRecognitionResult *This,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *AlternatesFromSelection)(
-        IInkRecognitionResult *This,
-        LONG selectionStart,
-        LONG selectionLength,
-        LONG maximumAlternates,
-        IInkRecognitionAlternates **AlternatesFromSelection);
+                     IInkRecognitionResult *This,
+                     LONG selectionStart,
+                     LONG selectionLength,
+                     LONG maximumAlternates,
+                     IInkRecognitionAlternates **AlternatesFromSelection);
 
     HRESULT (STDMETHODCALLTYPE *ModifyTopAlternate)(
-        IInkRecognitionResult *This,
-        IInkRecognitionAlternate *Alternate);
+                     IInkRecognitionResult *This,
+                     IInkRecognitionAlternate *Alternate);
 
     HRESULT (STDMETHODCALLTYPE *SetResultOnStrokes)(
-        IInkRecognitionResult *This);
+                     IInkRecognitionResult *This);
 
     END_INTERFACE
 } IInkRecognitionResultVtbl;
@@ -3105,138 +3105,138 @@ MIDL_INTERFACE("43242fea-91d1-4a72-963e-fbb91829cfa2")
 IInkStrokeDisp : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_ID(
-        LONG *ID) = 0;
+                     LONG *ID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BezierPoints(
-        VARIANT *Points) = 0;
+                     VARIANT *Points) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DrawingAttributes(
-        IInkDrawingAttributes **DrawAttrs) = 0;
+                     IInkDrawingAttributes **DrawAttrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_DrawingAttributes(
-        IInkDrawingAttributes *DrawAttrs) = 0;
+                     IInkDrawingAttributes *DrawAttrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Ink(
-        IInkDisp **Ink) = 0;
+                     IInkDisp **Ink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExtendedProperties(
-        IInkExtendedProperties **Properties) = 0;
+                     IInkExtendedProperties **Properties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PolylineCusps(
-        VARIANT *Cusps) = 0;
+                     VARIANT *Cusps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BezierCusps(
-        VARIANT *Cusps) = 0;
+                     VARIANT *Cusps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SelfIntersections(
-        VARIANT *Intersections) = 0;
+                     VARIANT *Intersections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PacketCount(
-        LONG *plCount) = 0;
+                     LONG *plCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PacketSize(
-        LONG *plSize) = 0;
+                     LONG *plSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PacketDescription(
-        VARIANT *PacketDescription) = 0;
+                     VARIANT *PacketDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Deleted(
-        VARIANT_BOOL *Deleted) = 0;
+                     VARIANT_BOOL *Deleted) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBoundingBox(
-        InkBoundingBoxMode BoundingBoxMode,
-        IInkRectangle **Rectangle) = 0;
+                     InkBoundingBoxMode BoundingBoxMode,
+                     IInkRectangle **Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindIntersections(
-        IInkStrokes *Strokes,
-        VARIANT *Intersections) = 0;
+                     IInkStrokes *Strokes,
+                     VARIANT *Intersections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRectangleIntersections(
-        IInkRectangle *Rectangle,
-        VARIANT *Intersections) = 0;
+                     IInkRectangle *Rectangle,
+                     VARIANT *Intersections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clip(
-        IInkRectangle *Rectangle) = 0;
+                     IInkRectangle *Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HitTestCircle(
-        LONG X,
-        LONG Y,
-        float Radius,
-        VARIANT_BOOL *Intersects) = 0;
+                     LONG X,
+                     LONG Y,
+                     float Radius,
+                     VARIANT_BOOL *Intersects) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NearestPoint(
-        LONG X,
-        LONG Y,
-        float *Distance,
-        float *Point) = 0;
+                     LONG X,
+                     LONG Y,
+                     float *Distance,
+                     float *Point) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Split(
-        float SplitAt,
-        IInkStrokeDisp **NewStroke) = 0;
+                     float SplitAt,
+                     IInkStrokeDisp **NewStroke) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPacketDescriptionPropertyMetrics(
-        BSTR PropertyName,
-        LONG *Minimum,
-        LONG *Maximum,
-        TabletPropertyMetricUnit *Units,
-        float *Resolution) = 0;
+                     BSTR PropertyName,
+                     LONG *Minimum,
+                     LONG *Maximum,
+                     TabletPropertyMetricUnit *Units,
+                     float *Resolution) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPoints(
-        LONG Index,
-        LONG Count,
-        VARIANT *Points) = 0;
+                     LONG Index,
+                     LONG Count,
+                     VARIANT *Points) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPoints(
-        VARIANT Points,
-        LONG Index,
-        LONG Count,
-        LONG *NumberOfPointsSet) = 0;
+                     VARIANT Points,
+                     LONG Index,
+                     LONG Count,
+                     LONG *NumberOfPointsSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPacketData(
-        LONG Index,
-        LONG Count,
-        VARIANT *PacketData) = 0;
+                     LONG Index,
+                     LONG Count,
+                     VARIANT *PacketData) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPacketValuesByProperty(
-        BSTR PropertyName,
-        LONG Index,
-        LONG Count,
-        VARIANT *PacketValues) = 0;
+                     BSTR PropertyName,
+                     LONG Index,
+                     LONG Count,
+                     VARIANT *PacketValues) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPacketValuesByProperty(
-        BSTR bstrPropertyName,
-        VARIANT PacketValues,
-        LONG Index,
-        LONG Count,
-        LONG *NumberOfPacketsSet) = 0;
+                     BSTR bstrPropertyName,
+                     VARIANT PacketValues,
+                     LONG Index,
+                     LONG Count,
+                     LONG *NumberOfPacketsSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlattenedBezierPoints(
-        LONG FittingError,
-        VARIANT *FlattenedBezierPoints) = 0;
+                     LONG FittingError,
+                     VARIANT *FlattenedBezierPoints) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Transform(
-        IInkTransform *Transform,
-        VARIANT_BOOL ApplyOnPenWidth = 0) = 0;
+                     IInkTransform *Transform,
+                     VARIANT_BOOL ApplyOnPenWidth = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleToRectangle(
-        IInkRectangle *Rectangle) = 0;
+                     IInkRectangle *Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Move(
-        float HorizontalComponent,
-        float VerticalComponent) = 0;
+                     float HorizontalComponent,
+                     float VerticalComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Rotate(
-        float Degrees,
-        float x = 0,
-        float y = 0) = 0;
+                     float Degrees,
+                     float x = 0,
+                     float y = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shear(
-        float HorizontalMultiplier,
-        float VerticalMultiplier) = 0;
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleTransform(
-        float HorizontalMultiplier,
-        float VerticalMultiplier) = 0;
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3248,213 +3248,213 @@ typedef struct IInkStrokeDispVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkStrokeDisp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkStrokeDisp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkStrokeDisp *This);
+                     IInkStrokeDisp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkStrokeDisp *This);
+                     IInkStrokeDisp *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkStrokeDisp *This,
-        UINT *pctinfo);
+                     IInkStrokeDisp *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkStrokeDisp *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkStrokeDisp *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkStrokeDisp *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkStrokeDisp *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkStrokeDisp *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkStrokeDisp *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkStrokeDisp methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ID)(
-        IInkStrokeDisp *This,
-        LONG *ID);
+                     IInkStrokeDisp *This,
+                     LONG *ID);
 
     HRESULT (STDMETHODCALLTYPE *get_BezierPoints)(
-        IInkStrokeDisp *This,
-        VARIANT *Points);
+                     IInkStrokeDisp *This,
+                     VARIANT *Points);
 
     HRESULT (STDMETHODCALLTYPE *get_DrawingAttributes)(
-        IInkStrokeDisp *This,
-        IInkDrawingAttributes **DrawAttrs);
+                     IInkStrokeDisp *This,
+                     IInkDrawingAttributes **DrawAttrs);
 
     HRESULT (STDMETHODCALLTYPE *putref_DrawingAttributes)(
-        IInkStrokeDisp *This,
-        IInkDrawingAttributes *DrawAttrs);
+                     IInkStrokeDisp *This,
+                     IInkDrawingAttributes *DrawAttrs);
 
     HRESULT (STDMETHODCALLTYPE *get_Ink)(
-        IInkStrokeDisp *This,
-        IInkDisp **Ink);
+                     IInkStrokeDisp *This,
+                     IInkDisp **Ink);
 
     HRESULT (STDMETHODCALLTYPE *get_ExtendedProperties)(
-        IInkStrokeDisp *This,
-        IInkExtendedProperties **Properties);
+                     IInkStrokeDisp *This,
+                     IInkExtendedProperties **Properties);
 
     HRESULT (STDMETHODCALLTYPE *get_PolylineCusps)(
-        IInkStrokeDisp *This,
-        VARIANT *Cusps);
+                     IInkStrokeDisp *This,
+                     VARIANT *Cusps);
 
     HRESULT (STDMETHODCALLTYPE *get_BezierCusps)(
-        IInkStrokeDisp *This,
-        VARIANT *Cusps);
+                     IInkStrokeDisp *This,
+                     VARIANT *Cusps);
 
     HRESULT (STDMETHODCALLTYPE *get_SelfIntersections)(
-        IInkStrokeDisp *This,
-        VARIANT *Intersections);
+                     IInkStrokeDisp *This,
+                     VARIANT *Intersections);
 
     HRESULT (STDMETHODCALLTYPE *get_PacketCount)(
-        IInkStrokeDisp *This,
-        LONG *plCount);
+                     IInkStrokeDisp *This,
+                     LONG *plCount);
 
     HRESULT (STDMETHODCALLTYPE *get_PacketSize)(
-        IInkStrokeDisp *This,
-        LONG *plSize);
+                     IInkStrokeDisp *This,
+                     LONG *plSize);
 
     HRESULT (STDMETHODCALLTYPE *get_PacketDescription)(
-        IInkStrokeDisp *This,
-        VARIANT *PacketDescription);
+                     IInkStrokeDisp *This,
+                     VARIANT *PacketDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_Deleted)(
-        IInkStrokeDisp *This,
-        VARIANT_BOOL *Deleted);
+                     IInkStrokeDisp *This,
+                     VARIANT_BOOL *Deleted);
 
     HRESULT (STDMETHODCALLTYPE *GetBoundingBox)(
-        IInkStrokeDisp *This,
-        InkBoundingBoxMode BoundingBoxMode,
-        IInkRectangle **Rectangle);
+                     IInkStrokeDisp *This,
+                     InkBoundingBoxMode BoundingBoxMode,
+                     IInkRectangle **Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *FindIntersections)(
-        IInkStrokeDisp *This,
-        IInkStrokes *Strokes,
-        VARIANT *Intersections);
+                     IInkStrokeDisp *This,
+                     IInkStrokes *Strokes,
+                     VARIANT *Intersections);
 
     HRESULT (STDMETHODCALLTYPE *GetRectangleIntersections)(
-        IInkStrokeDisp *This,
-        IInkRectangle *Rectangle,
-        VARIANT *Intersections);
+                     IInkStrokeDisp *This,
+                     IInkRectangle *Rectangle,
+                     VARIANT *Intersections);
 
     HRESULT (STDMETHODCALLTYPE *Clip)(
-        IInkStrokeDisp *This,
-        IInkRectangle *Rectangle);
+                     IInkStrokeDisp *This,
+                     IInkRectangle *Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *HitTestCircle)(
-        IInkStrokeDisp *This,
-        LONG X,
-        LONG Y,
-        float Radius,
-        VARIANT_BOOL *Intersects);
+                     IInkStrokeDisp *This,
+                     LONG X,
+                     LONG Y,
+                     float Radius,
+                     VARIANT_BOOL *Intersects);
 
     HRESULT (STDMETHODCALLTYPE *NearestPoint)(
-        IInkStrokeDisp *This,
-        LONG X,
-        LONG Y,
-        float *Distance,
-        float *Point);
+                     IInkStrokeDisp *This,
+                     LONG X,
+                     LONG Y,
+                     float *Distance,
+                     float *Point);
 
     HRESULT (STDMETHODCALLTYPE *Split)(
-        IInkStrokeDisp *This,
-        float SplitAt,
-        IInkStrokeDisp **NewStroke);
+                     IInkStrokeDisp *This,
+                     float SplitAt,
+                     IInkStrokeDisp **NewStroke);
 
     HRESULT (STDMETHODCALLTYPE *GetPacketDescriptionPropertyMetrics)(
-        IInkStrokeDisp *This,
-        BSTR PropertyName,
-        LONG *Minimum,
-        LONG *Maximum,
-        TabletPropertyMetricUnit *Units,
-        float *Resolution);
+                     IInkStrokeDisp *This,
+                     BSTR PropertyName,
+                     LONG *Minimum,
+                     LONG *Maximum,
+                     TabletPropertyMetricUnit *Units,
+                     float *Resolution);
 
     HRESULT (STDMETHODCALLTYPE *GetPoints)(
-        IInkStrokeDisp *This,
-        LONG Index,
-        LONG Count,
-        VARIANT *Points);
+                     IInkStrokeDisp *This,
+                     LONG Index,
+                     LONG Count,
+                     VARIANT *Points);
 
     HRESULT (STDMETHODCALLTYPE *SetPoints)(
-        IInkStrokeDisp *This,
-        VARIANT Points,
-        LONG Index,
-        LONG Count,
-        LONG *NumberOfPointsSet);
+                     IInkStrokeDisp *This,
+                     VARIANT Points,
+                     LONG Index,
+                     LONG Count,
+                     LONG *NumberOfPointsSet);
 
     HRESULT (STDMETHODCALLTYPE *GetPacketData)(
-        IInkStrokeDisp *This,
-        LONG Index,
-        LONG Count,
-        VARIANT *PacketData);
+                     IInkStrokeDisp *This,
+                     LONG Index,
+                     LONG Count,
+                     VARIANT *PacketData);
 
     HRESULT (STDMETHODCALLTYPE *GetPacketValuesByProperty)(
-        IInkStrokeDisp *This,
-        BSTR PropertyName,
-        LONG Index,
-        LONG Count,
-        VARIANT *PacketValues);
+                     IInkStrokeDisp *This,
+                     BSTR PropertyName,
+                     LONG Index,
+                     LONG Count,
+                     VARIANT *PacketValues);
 
     HRESULT (STDMETHODCALLTYPE *SetPacketValuesByProperty)(
-        IInkStrokeDisp *This,
-        BSTR bstrPropertyName,
-        VARIANT PacketValues,
-        LONG Index,
-        LONG Count,
-        LONG *NumberOfPacketsSet);
+                     IInkStrokeDisp *This,
+                     BSTR bstrPropertyName,
+                     VARIANT PacketValues,
+                     LONG Index,
+                     LONG Count,
+                     LONG *NumberOfPacketsSet);
 
     HRESULT (STDMETHODCALLTYPE *GetFlattenedBezierPoints)(
-        IInkStrokeDisp *This,
-        LONG FittingError,
-        VARIANT *FlattenedBezierPoints);
+                     IInkStrokeDisp *This,
+                     LONG FittingError,
+                     VARIANT *FlattenedBezierPoints);
 
     HRESULT (STDMETHODCALLTYPE *Transform)(
-        IInkStrokeDisp *This,
-        IInkTransform *Transform,
-        VARIANT_BOOL ApplyOnPenWidth);
+                     IInkStrokeDisp *This,
+                     IInkTransform *Transform,
+                     VARIANT_BOOL ApplyOnPenWidth);
 
     HRESULT (STDMETHODCALLTYPE *ScaleToRectangle)(
-        IInkStrokeDisp *This,
-        IInkRectangle *Rectangle);
+                     IInkStrokeDisp *This,
+                     IInkRectangle *Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *Move)(
-        IInkStrokeDisp *This,
-        float HorizontalComponent,
-        float VerticalComponent);
+                     IInkStrokeDisp *This,
+                     float HorizontalComponent,
+                     float VerticalComponent);
 
     HRESULT (STDMETHODCALLTYPE *Rotate)(
-        IInkStrokeDisp *This,
-        float Degrees,
-        float x,
-        float y);
+                     IInkStrokeDisp *This,
+                     float Degrees,
+                     float x,
+                     float y);
 
     HRESULT (STDMETHODCALLTYPE *Shear)(
-        IInkStrokeDisp *This,
-        float HorizontalMultiplier,
-        float VerticalMultiplier);
+                     IInkStrokeDisp *This,
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier);
 
     HRESULT (STDMETHODCALLTYPE *ScaleTransform)(
-        IInkStrokeDisp *This,
-        float HorizontalMultiplier,
-        float VerticalMultiplier);
+                     IInkStrokeDisp *This,
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier);
 
     END_INTERFACE
 } IInkStrokeDispVtbl;
@@ -3652,24 +3652,24 @@ MIDL_INTERFACE("7e23a88f-c30e-420f-9bdb-28902543f0c1")
 IInkCustomStrokes : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **_NewEnum) = 0;
+                     IUnknown **_NewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        VARIANT Identifier,
-        IInkStrokes **Strokes) = 0;
+                     VARIANT Identifier,
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        BSTR Name,
-        IInkStrokes *Strokes) = 0;
+                     BSTR Name,
+                     IInkStrokes *Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        VARIANT Identifier) = 0;
+                     VARIANT Identifier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3681,71 +3681,71 @@ typedef struct IInkCustomStrokesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkCustomStrokes *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkCustomStrokes *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkCustomStrokes *This);
+                     IInkCustomStrokes *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkCustomStrokes *This);
+                     IInkCustomStrokes *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkCustomStrokes *This,
-        UINT *pctinfo);
+                     IInkCustomStrokes *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkCustomStrokes *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkCustomStrokes *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkCustomStrokes *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkCustomStrokes *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkCustomStrokes *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkCustomStrokes *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkCustomStrokes methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IInkCustomStrokes *This,
-        LONG *Count);
+                     IInkCustomStrokes *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IInkCustomStrokes *This,
-        IUnknown **_NewEnum);
+                     IInkCustomStrokes *This,
+                     IUnknown **_NewEnum);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IInkCustomStrokes *This,
-        VARIANT Identifier,
-        IInkStrokes **Strokes);
+                     IInkCustomStrokes *This,
+                     VARIANT Identifier,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IInkCustomStrokes *This,
-        BSTR Name,
-        IInkStrokes *Strokes);
+                     IInkCustomStrokes *This,
+                     BSTR Name,
+                     IInkStrokes *Strokes);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IInkCustomStrokes *This,
-        VARIANT Identifier);
+                     IInkCustomStrokes *This,
+                     VARIANT Identifier);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IInkCustomStrokes *This);
+                     IInkCustomStrokes *This);
 
     END_INTERFACE
 } IInkCustomStrokesVtbl;
@@ -3835,112 +3835,112 @@ MIDL_INTERFACE("9d398fa0-c4e2-4fcd-9973-975caaf47ea6")
 IInkDisp : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Strokes(
-        IInkStrokes **Strokes) = 0;
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExtendedProperties(
-        IInkExtendedProperties **Properties) = 0;
+                     IInkExtendedProperties **Properties) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Dirty(
-        VARIANT_BOOL *Dirty) = 0;
+                     VARIANT_BOOL *Dirty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Dirty(
-        VARIANT_BOOL Dirty) = 0;
+                     VARIANT_BOOL Dirty) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CustomStrokes(
-        IInkCustomStrokes **ppunkInkCustomStrokes) = 0;
+                     IInkCustomStrokes **ppunkInkCustomStrokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBoundingBox(
-        InkBoundingBoxMode BoundingBoxMode,
-        IInkRectangle **Rectangle) = 0;
+                     InkBoundingBoxMode BoundingBoxMode,
+                     IInkRectangle **Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteStrokes(
-        IInkStrokes *Strokes = 0) = 0;
+                     IInkStrokes *Strokes = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteStroke(
-        IInkStrokeDisp *Stroke) = 0;
+                     IInkStrokeDisp *Stroke) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExtractStrokes(
-        IInkStrokes *Strokes,
-        InkExtractFlags ExtractFlags,
-        IInkDisp **ExtractedInk) = 0;
+                     IInkStrokes *Strokes,
+                     InkExtractFlags ExtractFlags,
+                     IInkDisp **ExtractedInk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExtractWithRectangle(
-        IInkRectangle *Rectangle,
-        InkExtractFlags extractFlags,
-        IInkDisp **ExtractedInk) = 0;
+                     IInkRectangle *Rectangle,
+                     InkExtractFlags extractFlags,
+                     IInkDisp **ExtractedInk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clip(
-        IInkRectangle *Rectangle) = 0;
+                     IInkRectangle *Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IInkDisp **NewInk) = 0;
+                     IInkDisp **NewInk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HitTestCircle(
-        LONG X,
-        LONG Y,
-        float radius,
-        IInkStrokes **Strokes) = 0;
+                     LONG X,
+                     LONG Y,
+                     float radius,
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HitTestWithRectangle(
-        IInkRectangle *SelectionRectangle,
-        float IntersectPercent,
-        IInkStrokes **Strokes) = 0;
+                     IInkRectangle *SelectionRectangle,
+                     float IntersectPercent,
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HitTestWithLasso(
-        VARIANT Points,
-        float IntersectPercent,
-        VARIANT *LassoPoints,
-        IInkStrokes **Strokes) = 0;
+                     VARIANT Points,
+                     float IntersectPercent,
+                     VARIANT *LassoPoints,
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NearestPoint(
-        LONG X,
-        LONG Y,
-        float *PointOnStroke,
-        float *DistanceFromPacket,
-        IInkStrokeDisp **Stroke) = 0;
+                     LONG X,
+                     LONG Y,
+                     float *PointOnStroke,
+                     float *DistanceFromPacket,
+                     IInkStrokeDisp **Stroke) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStrokes(
-        VARIANT StrokeIds,
-        IInkStrokes **Strokes) = 0;
+                     VARIANT StrokeIds,
+                     IInkStrokes **Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddStrokesAtRectangle(
-        IInkStrokes *SourceStrokes,
-        IInkRectangle *TargetRectangle) = 0;
+                     IInkStrokes *SourceStrokes,
+                     IInkRectangle *TargetRectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Save(
-        InkPersistenceFormat PersistenceFormat,
-        InkPersistenceCompressionMode CompressionMode,
-        VARIANT *Data) = 0;
+                     InkPersistenceFormat PersistenceFormat,
+                     InkPersistenceCompressionMode CompressionMode,
+                     VARIANT *Data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Load(
-        VARIANT Data) = 0;
+                     VARIANT Data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateStroke(
-        VARIANT PacketData,
-        VARIANT PacketDescription,
-        IInkStrokeDisp **Stroke) = 0;
+                     VARIANT PacketData,
+                     VARIANT PacketDescription,
+                     IInkStrokeDisp **Stroke) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClipboardCopyWithRectangle(
-        IInkRectangle *Rectangle,
-        InkClipboardFormats ClipboardFormats,
-        InkClipboardModes ClipboardModes,
-        IDataObject **DataObject) = 0;
+                     IInkRectangle *Rectangle,
+                     InkClipboardFormats ClipboardFormats,
+                     InkClipboardModes ClipboardModes,
+                     IDataObject **DataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClipboardCopy(
-        IInkStrokes *strokes,
-        InkClipboardFormats ClipboardFormats,
-        InkClipboardModes ClipboardModes,
-        IDataObject **DataObject) = 0;
+                     IInkStrokes *strokes,
+                     InkClipboardFormats ClipboardFormats,
+                     InkClipboardModes ClipboardModes,
+                     IDataObject **DataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CanPaste(
-        IDataObject *DataObject,
-        VARIANT_BOOL *CanPaste) = 0;
+                     IDataObject *DataObject,
+                     VARIANT_BOOL *CanPaste) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ClipboardPaste(
-        LONG x,
-        LONG y,
-        IDataObject *DataObject,
-        IInkStrokes **Strokes) = 0;
+                     LONG x,
+                     LONG y,
+                     IDataObject *DataObject,
+                     IInkStrokes **Strokes) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3952,179 +3952,179 @@ typedef struct IInkDispVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkDisp *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkDisp *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkDisp *This);
+                     IInkDisp *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkDisp *This);
+                     IInkDisp *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkDisp *This,
-        UINT *pctinfo);
+                     IInkDisp *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkDisp *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkDisp *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkDisp *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkDisp *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkDisp *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkDisp *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkDisp methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Strokes)(
-        IInkDisp *This,
-        IInkStrokes **Strokes);
+                     IInkDisp *This,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *get_ExtendedProperties)(
-        IInkDisp *This,
-        IInkExtendedProperties **Properties);
+                     IInkDisp *This,
+                     IInkExtendedProperties **Properties);
 
     HRESULT (STDMETHODCALLTYPE *get_Dirty)(
-        IInkDisp *This,
-        VARIANT_BOOL *Dirty);
+                     IInkDisp *This,
+                     VARIANT_BOOL *Dirty);
 
     HRESULT (STDMETHODCALLTYPE *put_Dirty)(
-        IInkDisp *This,
-        VARIANT_BOOL Dirty);
+                     IInkDisp *This,
+                     VARIANT_BOOL Dirty);
 
     HRESULT (STDMETHODCALLTYPE *get_CustomStrokes)(
-        IInkDisp *This,
-        IInkCustomStrokes **ppunkInkCustomStrokes);
+                     IInkDisp *This,
+                     IInkCustomStrokes **ppunkInkCustomStrokes);
 
     HRESULT (STDMETHODCALLTYPE *GetBoundingBox)(
-        IInkDisp *This,
-        InkBoundingBoxMode BoundingBoxMode,
-        IInkRectangle **Rectangle);
+                     IInkDisp *This,
+                     InkBoundingBoxMode BoundingBoxMode,
+                     IInkRectangle **Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *DeleteStrokes)(
-        IInkDisp *This,
-        IInkStrokes *Strokes);
+                     IInkDisp *This,
+                     IInkStrokes *Strokes);
 
     HRESULT (STDMETHODCALLTYPE *DeleteStroke)(
-        IInkDisp *This,
-        IInkStrokeDisp *Stroke);
+                     IInkDisp *This,
+                     IInkStrokeDisp *Stroke);
 
     HRESULT (STDMETHODCALLTYPE *ExtractStrokes)(
-        IInkDisp *This,
-        IInkStrokes *Strokes,
-        InkExtractFlags ExtractFlags,
-        IInkDisp **ExtractedInk);
+                     IInkDisp *This,
+                     IInkStrokes *Strokes,
+                     InkExtractFlags ExtractFlags,
+                     IInkDisp **ExtractedInk);
 
     HRESULT (STDMETHODCALLTYPE *ExtractWithRectangle)(
-        IInkDisp *This,
-        IInkRectangle *Rectangle,
-        InkExtractFlags extractFlags,
-        IInkDisp **ExtractedInk);
+                     IInkDisp *This,
+                     IInkRectangle *Rectangle,
+                     InkExtractFlags extractFlags,
+                     IInkDisp **ExtractedInk);
 
     HRESULT (STDMETHODCALLTYPE *Clip)(
-        IInkDisp *This,
-        IInkRectangle *Rectangle);
+                     IInkDisp *This,
+                     IInkRectangle *Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IInkDisp *This,
-        IInkDisp **NewInk);
+                     IInkDisp *This,
+                     IInkDisp **NewInk);
 
     HRESULT (STDMETHODCALLTYPE *HitTestCircle)(
-        IInkDisp *This,
-        LONG X,
-        LONG Y,
-        float radius,
-        IInkStrokes **Strokes);
+                     IInkDisp *This,
+                     LONG X,
+                     LONG Y,
+                     float radius,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *HitTestWithRectangle)(
-        IInkDisp *This,
-        IInkRectangle *SelectionRectangle,
-        float IntersectPercent,
-        IInkStrokes **Strokes);
+                     IInkDisp *This,
+                     IInkRectangle *SelectionRectangle,
+                     float IntersectPercent,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *HitTestWithLasso)(
-        IInkDisp *This,
-        VARIANT Points,
-        float IntersectPercent,
-        VARIANT *LassoPoints,
-        IInkStrokes **Strokes);
+                     IInkDisp *This,
+                     VARIANT Points,
+                     float IntersectPercent,
+                     VARIANT *LassoPoints,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *NearestPoint)(
-        IInkDisp *This,
-        LONG X,
-        LONG Y,
-        float *PointOnStroke,
-        float *DistanceFromPacket,
-        IInkStrokeDisp **Stroke);
+                     IInkDisp *This,
+                     LONG X,
+                     LONG Y,
+                     float *PointOnStroke,
+                     float *DistanceFromPacket,
+                     IInkStrokeDisp **Stroke);
 
     HRESULT (STDMETHODCALLTYPE *CreateStrokes)(
-        IInkDisp *This,
-        VARIANT StrokeIds,
-        IInkStrokes **Strokes);
+                     IInkDisp *This,
+                     VARIANT StrokeIds,
+                     IInkStrokes **Strokes);
 
     HRESULT (STDMETHODCALLTYPE *AddStrokesAtRectangle)(
-        IInkDisp *This,
-        IInkStrokes *SourceStrokes,
-        IInkRectangle *TargetRectangle);
+                     IInkDisp *This,
+                     IInkStrokes *SourceStrokes,
+                     IInkRectangle *TargetRectangle);
 
     HRESULT (STDMETHODCALLTYPE *Save)(
-        IInkDisp *This,
-        InkPersistenceFormat PersistenceFormat,
-        InkPersistenceCompressionMode CompressionMode,
-        VARIANT *Data);
+                     IInkDisp *This,
+                     InkPersistenceFormat PersistenceFormat,
+                     InkPersistenceCompressionMode CompressionMode,
+                     VARIANT *Data);
 
     HRESULT (STDMETHODCALLTYPE *Load)(
-        IInkDisp *This,
-        VARIANT Data);
+                     IInkDisp *This,
+                     VARIANT Data);
 
     HRESULT (STDMETHODCALLTYPE *CreateStroke)(
-        IInkDisp *This,
-        VARIANT PacketData,
-        VARIANT PacketDescription,
-        IInkStrokeDisp **Stroke);
+                     IInkDisp *This,
+                     VARIANT PacketData,
+                     VARIANT PacketDescription,
+                     IInkStrokeDisp **Stroke);
 
     HRESULT (STDMETHODCALLTYPE *ClipboardCopyWithRectangle)(
-        IInkDisp *This,
-        IInkRectangle *Rectangle,
-        InkClipboardFormats ClipboardFormats,
-        InkClipboardModes ClipboardModes,
-        IDataObject **DataObject);
+                     IInkDisp *This,
+                     IInkRectangle *Rectangle,
+                     InkClipboardFormats ClipboardFormats,
+                     InkClipboardModes ClipboardModes,
+                     IDataObject **DataObject);
 
     HRESULT (STDMETHODCALLTYPE *ClipboardCopy)(
-        IInkDisp *This,
-        IInkStrokes *strokes,
-        InkClipboardFormats ClipboardFormats,
-        InkClipboardModes ClipboardModes,
-        IDataObject **DataObject);
+                     IInkDisp *This,
+                     IInkStrokes *strokes,
+                     InkClipboardFormats ClipboardFormats,
+                     InkClipboardModes ClipboardModes,
+                     IDataObject **DataObject);
 
     HRESULT (STDMETHODCALLTYPE *CanPaste)(
-        IInkDisp *This,
-        IDataObject *DataObject,
-        VARIANT_BOOL *CanPaste);
+                     IInkDisp *This,
+                     IDataObject *DataObject,
+                     VARIANT_BOOL *CanPaste);
 
     HRESULT (STDMETHODCALLTYPE *ClipboardPaste)(
-        IInkDisp *This,
-        LONG x,
-        LONG y,
-        IDataObject *DataObject,
-        IInkStrokes **Strokes);
+                     IInkDisp *This,
+                     LONG x,
+                     LONG y,
+                     IDataObject *DataObject,
+                     IInkStrokes **Strokes);
 
     END_INTERFACE
 } IInkDispVtbl;
@@ -4290,72 +4290,72 @@ MIDL_INTERFACE("f1f4c9d8-590a-4963-b3ae-1935671bb6f3")
 IInkStrokes : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **_NewEnum) = 0;
+                     IUnknown **_NewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Ink(
-        IInkDisp **Ink) = 0;
+                     IInkDisp **Ink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RecognitionResult(
-        IInkRecognitionResult **RecognitionResult) = 0;
+                     IInkRecognitionResult **RecognitionResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ToString(
-        BSTR *ToString) = 0;
+                     BSTR *ToString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        IInkStrokeDisp **Stroke) = 0;
+                     LONG Index,
+                     IInkStrokeDisp **Stroke) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IInkStrokeDisp *InkStroke) = 0;
+                     IInkStrokeDisp *InkStroke) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddStrokes(
-        IInkStrokes *InkStrokes) = 0;
+                     IInkStrokes *InkStrokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        IInkStrokeDisp *InkStroke) = 0;
+                     IInkStrokeDisp *InkStroke) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveStrokes(
-        IInkStrokes *InkStrokes) = 0;
+                     IInkStrokes *InkStrokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ModifyDrawingAttributes(
-        IInkDrawingAttributes *DrawAttrs) = 0;
+                     IInkDrawingAttributes *DrawAttrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBoundingBox(
-        InkBoundingBoxMode BoundingBoxMode,
-        IInkRectangle **BoundingBox) = 0;
+                     InkBoundingBoxMode BoundingBoxMode,
+                     IInkRectangle **BoundingBox) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Transform(
-        IInkTransform *Transform,
-        VARIANT_BOOL ApplyOnPenWidth = 0) = 0;
+                     IInkTransform *Transform,
+                     VARIANT_BOOL ApplyOnPenWidth = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleToRectangle(
-        IInkRectangle *Rectangle) = 0;
+                     IInkRectangle *Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Move(
-        float HorizontalComponent,
-        float VerticalComponent) = 0;
+                     float HorizontalComponent,
+                     float VerticalComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Rotate(
-        float Degrees,
-        float x = 0,
-        float y = 0) = 0;
+                     float Degrees,
+                     float x = 0,
+                     float y = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shear(
-        float HorizontalMultiplier,
-        float VerticalMultiplier) = 0;
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleTransform(
-        float HorizontalMultiplier,
-        float VerticalMultiplier) = 0;
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clip(
-        IInkRectangle *Rectangle) = 0;
+                     IInkRectangle *Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveRecognitionResult(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4367,133 +4367,133 @@ typedef struct IInkStrokesVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkStrokes *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkStrokes *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkStrokes *This);
+                     IInkStrokes *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkStrokes *This);
+                     IInkStrokes *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkStrokes *This,
-        UINT *pctinfo);
+                     IInkStrokes *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkStrokes *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkStrokes *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkStrokes *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkStrokes *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkStrokes *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkStrokes *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkStrokes methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IInkStrokes *This,
-        LONG *Count);
+                     IInkStrokes *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IInkStrokes *This,
-        IUnknown **_NewEnum);
+                     IInkStrokes *This,
+                     IUnknown **_NewEnum);
 
     HRESULT (STDMETHODCALLTYPE *get_Ink)(
-        IInkStrokes *This,
-        IInkDisp **Ink);
+                     IInkStrokes *This,
+                     IInkDisp **Ink);
 
     HRESULT (STDMETHODCALLTYPE *get_RecognitionResult)(
-        IInkStrokes *This,
-        IInkRecognitionResult **RecognitionResult);
+                     IInkStrokes *This,
+                     IInkRecognitionResult **RecognitionResult);
 
     HRESULT (STDMETHODCALLTYPE *ToString)(
-        IInkStrokes *This,
-        BSTR *ToString);
+                     IInkStrokes *This,
+                     BSTR *ToString);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IInkStrokes *This,
-        LONG Index,
-        IInkStrokeDisp **Stroke);
+                     IInkStrokes *This,
+                     LONG Index,
+                     IInkStrokeDisp **Stroke);
 
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IInkStrokes *This,
-        IInkStrokeDisp *InkStroke);
+                     IInkStrokes *This,
+                     IInkStrokeDisp *InkStroke);
 
     HRESULT (STDMETHODCALLTYPE *AddStrokes)(
-        IInkStrokes *This,
-        IInkStrokes *InkStrokes);
+                     IInkStrokes *This,
+                     IInkStrokes *InkStrokes);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IInkStrokes *This,
-        IInkStrokeDisp *InkStroke);
+                     IInkStrokes *This,
+                     IInkStrokeDisp *InkStroke);
 
     HRESULT (STDMETHODCALLTYPE *RemoveStrokes)(
-        IInkStrokes *This,
-        IInkStrokes *InkStrokes);
+                     IInkStrokes *This,
+                     IInkStrokes *InkStrokes);
 
     HRESULT (STDMETHODCALLTYPE *ModifyDrawingAttributes)(
-        IInkStrokes *This,
-        IInkDrawingAttributes *DrawAttrs);
+                     IInkStrokes *This,
+                     IInkDrawingAttributes *DrawAttrs);
 
     HRESULT (STDMETHODCALLTYPE *GetBoundingBox)(
-        IInkStrokes *This,
-        InkBoundingBoxMode BoundingBoxMode,
-        IInkRectangle **BoundingBox);
+                     IInkStrokes *This,
+                     InkBoundingBoxMode BoundingBoxMode,
+                     IInkRectangle **BoundingBox);
 
     HRESULT (STDMETHODCALLTYPE *Transform)(
-        IInkStrokes *This,
-        IInkTransform *Transform,
-        VARIANT_BOOL ApplyOnPenWidth);
+                     IInkStrokes *This,
+                     IInkTransform *Transform,
+                     VARIANT_BOOL ApplyOnPenWidth);
 
     HRESULT (STDMETHODCALLTYPE *ScaleToRectangle)(
-        IInkStrokes *This,
-        IInkRectangle *Rectangle);
+                     IInkStrokes *This,
+                     IInkRectangle *Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *Move)(
-        IInkStrokes *This,
-        float HorizontalComponent,
-        float VerticalComponent);
+                     IInkStrokes *This,
+                     float HorizontalComponent,
+                     float VerticalComponent);
 
     HRESULT (STDMETHODCALLTYPE *Rotate)(
-        IInkStrokes *This,
-        float Degrees,
-        float x,
-        float y);
+                     IInkStrokes *This,
+                     float Degrees,
+                     float x,
+                     float y);
 
     HRESULT (STDMETHODCALLTYPE *Shear)(
-        IInkStrokes *This,
-        float HorizontalMultiplier,
-        float VerticalMultiplier);
+                     IInkStrokes *This,
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier);
 
     HRESULT (STDMETHODCALLTYPE *ScaleTransform)(
-        IInkStrokes *This,
-        float HorizontalMultiplier,
-        float VerticalMultiplier);
+                     IInkStrokes *This,
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier);
 
     HRESULT (STDMETHODCALLTYPE *Clip)(
-        IInkStrokes *This,
-        IInkRectangle *Rectangle);
+                     IInkStrokes *This,
+                     IInkRectangle *Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *RemoveRecognitionResult)(
-        IInkStrokes *This);
+                     IInkStrokes *This);
 
     END_INTERFACE
 } IInkStrokesVtbl;
@@ -4639,66 +4639,66 @@ MIDL_INTERFACE("e6257a9c-b511-4f4c-a8b0-a7dbc9506b83")
 IInkRenderer : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetViewTransform(
-        IInkTransform *ViewTransform) = 0;
+                     IInkTransform *ViewTransform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetViewTransform(
-        IInkTransform *ViewTransform) = 0;
+                     IInkTransform *ViewTransform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObjectTransform(
-        IInkTransform *ObjectTransform) = 0;
+                     IInkTransform *ObjectTransform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetObjectTransform(
-        IInkTransform *ObjectTransform) = 0;
+                     IInkTransform *ObjectTransform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Draw(
-        LONG_PTR hDC,
-        IInkStrokes *Strokes) = 0;
+                     LONG_PTR hDC,
+                     IInkStrokes *Strokes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DrawStroke(
-        LONG_PTR hDC,
-        IInkStrokeDisp *Stroke,
-        IInkDrawingAttributes *DrawingAttributes = 0) = 0;
+                     LONG_PTR hDC,
+                     IInkStrokeDisp *Stroke,
+                     IInkDrawingAttributes *DrawingAttributes = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PixelToInkSpace(
-        LONG_PTR hDC,
-        LONG *x,
-        LONG *y) = 0;
+                     LONG_PTR hDC,
+                     LONG *x,
+                     LONG *y) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InkSpaceToPixel(
-        LONG_PTR hdcDisplay,
-        LONG *x,
-        LONG *y) = 0;
+                     LONG_PTR hdcDisplay,
+                     LONG *x,
+                     LONG *y) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PixelToInkSpaceFromPoints(
-        LONG_PTR hDC,
-        VARIANT *Points) = 0;
+                     LONG_PTR hDC,
+                     VARIANT *Points) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InkSpaceToPixelFromPoints(
-        LONG_PTR hDC,
-        VARIANT *Points) = 0;
+                     LONG_PTR hDC,
+                     VARIANT *Points) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Measure(
-        IInkStrokes *Strokes,
-        IInkRectangle **Rectangle) = 0;
+                     IInkStrokes *Strokes,
+                     IInkRectangle **Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MeasureStroke(
-        IInkStrokeDisp *Stroke,
-        IInkDrawingAttributes *DrawingAttributes,
-        IInkRectangle **Rectangle) = 0;
+                     IInkStrokeDisp *Stroke,
+                     IInkDrawingAttributes *DrawingAttributes,
+                     IInkRectangle **Rectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Move(
-        float HorizontalComponent,
-        float VerticalComponent) = 0;
+                     float HorizontalComponent,
+                     float VerticalComponent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Rotate(
-        float Degrees,
-        float x = 0,
-        float y = 0) = 0;
+                     float Degrees,
+                     float x = 0,
+                     float y = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScaleTransform(
-        float HorizontalMultiplier,
-        float VerticalMultiplier,
-        VARIANT_BOOL ApplyOnPenWidth = -1) = 0;
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier,
+                     VARIANT_BOOL ApplyOnPenWidth = -1) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4710,123 +4710,123 @@ typedef struct IInkRendererVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkRenderer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkRenderer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkRenderer *This);
+                     IInkRenderer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkRenderer *This);
+                     IInkRenderer *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkRenderer *This,
-        UINT *pctinfo);
+                     IInkRenderer *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkRenderer *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkRenderer *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkRenderer *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkRenderer *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkRenderer *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkRenderer *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkRenderer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetViewTransform)(
-        IInkRenderer *This,
-        IInkTransform *ViewTransform);
+                     IInkRenderer *This,
+                     IInkTransform *ViewTransform);
 
     HRESULT (STDMETHODCALLTYPE *SetViewTransform)(
-        IInkRenderer *This,
-        IInkTransform *ViewTransform);
+                     IInkRenderer *This,
+                     IInkTransform *ViewTransform);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectTransform)(
-        IInkRenderer *This,
-        IInkTransform *ObjectTransform);
+                     IInkRenderer *This,
+                     IInkTransform *ObjectTransform);
 
     HRESULT (STDMETHODCALLTYPE *SetObjectTransform)(
-        IInkRenderer *This,
-        IInkTransform *ObjectTransform);
+                     IInkRenderer *This,
+                     IInkTransform *ObjectTransform);
 
     HRESULT (STDMETHODCALLTYPE *Draw)(
-        IInkRenderer *This,
-        LONG_PTR hDC,
-        IInkStrokes *Strokes);
+                     IInkRenderer *This,
+                     LONG_PTR hDC,
+                     IInkStrokes *Strokes);
 
     HRESULT (STDMETHODCALLTYPE *DrawStroke)(
-        IInkRenderer *This,
-        LONG_PTR hDC,
-        IInkStrokeDisp *Stroke,
-        IInkDrawingAttributes *DrawingAttributes);
+                     IInkRenderer *This,
+                     LONG_PTR hDC,
+                     IInkStrokeDisp *Stroke,
+                     IInkDrawingAttributes *DrawingAttributes);
 
     HRESULT (STDMETHODCALLTYPE *PixelToInkSpace)(
-        IInkRenderer *This,
-        LONG_PTR hDC,
-        LONG *x,
-        LONG *y);
+                     IInkRenderer *This,
+                     LONG_PTR hDC,
+                     LONG *x,
+                     LONG *y);
 
     HRESULT (STDMETHODCALLTYPE *InkSpaceToPixel)(
-        IInkRenderer *This,
-        LONG_PTR hdcDisplay,
-        LONG *x,
-        LONG *y);
+                     IInkRenderer *This,
+                     LONG_PTR hdcDisplay,
+                     LONG *x,
+                     LONG *y);
 
     HRESULT (STDMETHODCALLTYPE *PixelToInkSpaceFromPoints)(
-        IInkRenderer *This,
-        LONG_PTR hDC,
-        VARIANT *Points);
+                     IInkRenderer *This,
+                     LONG_PTR hDC,
+                     VARIANT *Points);
 
     HRESULT (STDMETHODCALLTYPE *InkSpaceToPixelFromPoints)(
-        IInkRenderer *This,
-        LONG_PTR hDC,
-        VARIANT *Points);
+                     IInkRenderer *This,
+                     LONG_PTR hDC,
+                     VARIANT *Points);
 
     HRESULT (STDMETHODCALLTYPE *Measure)(
-        IInkRenderer *This,
-        IInkStrokes *Strokes,
-        IInkRectangle **Rectangle);
+                     IInkRenderer *This,
+                     IInkStrokes *Strokes,
+                     IInkRectangle **Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *MeasureStroke)(
-        IInkRenderer *This,
-        IInkStrokeDisp *Stroke,
-        IInkDrawingAttributes *DrawingAttributes,
-        IInkRectangle **Rectangle);
+                     IInkRenderer *This,
+                     IInkStrokeDisp *Stroke,
+                     IInkDrawingAttributes *DrawingAttributes,
+                     IInkRectangle **Rectangle);
 
     HRESULT (STDMETHODCALLTYPE *Move)(
-        IInkRenderer *This,
-        float HorizontalComponent,
-        float VerticalComponent);
+                     IInkRenderer *This,
+                     float HorizontalComponent,
+                     float VerticalComponent);
 
     HRESULT (STDMETHODCALLTYPE *Rotate)(
-        IInkRenderer *This,
-        float Degrees,
-        float x,
-        float y);
+                     IInkRenderer *This,
+                     float Degrees,
+                     float x,
+                     float y);
 
     HRESULT (STDMETHODCALLTYPE *ScaleTransform)(
-        IInkRenderer *This,
-        float HorizontalMultiplier,
-        float VerticalMultiplier,
-        VARIANT_BOOL ApplyOnPenWidth);
+                     IInkRenderer *This,
+                     float HorizontalMultiplier,
+                     float VerticalMultiplier,
+                     VARIANT_BOOL ApplyOnPenWidth);
 
     END_INTERFACE
 } IInkRendererVtbl;
@@ -4952,14 +4952,14 @@ MIDL_INTERFACE("a248c1ac-c698-4e06-9e5c-d57f77c7e647")
 IInkCursors : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *Count) = 0;
+                     LONG *Count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **_NewEnum) = 0;
+                     IUnknown **_NewEnum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Item(
-        LONG Index,
-        IInkCursor **Cursor) = 0;
+                     LONG Index,
+                     IInkCursor **Cursor) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4971,59 +4971,59 @@ typedef struct IInkCursorsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkCursors *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkCursors *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkCursors *This);
+                     IInkCursors *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkCursors *This);
+                     IInkCursors *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkCursors *This,
-        UINT *pctinfo);
+                     IInkCursors *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkCursors *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkCursors *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkCursors *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkCursors *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkCursors *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkCursors *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkCursors methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IInkCursors *This,
-        LONG *Count);
+                     IInkCursors *This,
+                     LONG *Count);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IInkCursors *This,
-        IUnknown **_NewEnum);
+                     IInkCursors *This,
+                     IUnknown **_NewEnum);
 
     HRESULT (STDMETHODCALLTYPE *Item)(
-        IInkCursors *This,
-        LONG Index,
-        IInkCursor **Cursor);
+                     IInkCursors *This,
+                     LONG Index,
+                     IInkCursor **Cursor);
 
     END_INTERFACE
 } IInkCursorsVtbl;
@@ -5101,128 +5101,128 @@ MIDL_INTERFACE("f0f060b5-8b1f-4a7c-89ec-880692588a4f")
 IInkCollector : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_hWnd(
-        LONG_PTR *CurrentWindow) = 0;
+                     LONG_PTR *CurrentWindow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_hWnd(
-        LONG_PTR NewWindow) = 0;
+                     LONG_PTR NewWindow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *Collecting) = 0;
+                     VARIANT_BOOL *Collecting) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL Collecting) = 0;
+                     VARIANT_BOOL Collecting) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DefaultDrawingAttributes(
-        IInkDrawingAttributes **CurrentAttributes) = 0;
+                     IInkDrawingAttributes **CurrentAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_DefaultDrawingAttributes(
-        IInkDrawingAttributes *NewAttributes) = 0;
+                     IInkDrawingAttributes *NewAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Renderer(
-        IInkRenderer **CurrentInkRenderer) = 0;
+                     IInkRenderer **CurrentInkRenderer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_Renderer(
-        IInkRenderer *NewInkRenderer) = 0;
+                     IInkRenderer *NewInkRenderer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Ink(
-        IInkDisp **Ink) = 0;
+                     IInkDisp **Ink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_Ink(
-        IInkDisp *NewInk) = 0;
+                     IInkDisp *NewInk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AutoRedraw(
-        VARIANT_BOOL *AutoRedraw) = 0;
+                     VARIANT_BOOL *AutoRedraw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AutoRedraw(
-        VARIANT_BOOL AutoRedraw) = 0;
+                     VARIANT_BOOL AutoRedraw) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CollectingInk(
-        VARIANT_BOOL *Collecting) = 0;
+                     VARIANT_BOOL *Collecting) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CollectionMode(
-        InkCollectionMode *Mode) = 0;
+                     InkCollectionMode *Mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_CollectionMode(
-        InkCollectionMode Mode) = 0;
+                     InkCollectionMode Mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DynamicRendering(
-        VARIANT_BOOL *Enabled) = 0;
+                     VARIANT_BOOL *Enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DynamicRendering(
-        VARIANT_BOOL Enabled) = 0;
+                     VARIANT_BOOL Enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DesiredPacketDescription(
-        VARIANT *PacketGuids) = 0;
+                     VARIANT *PacketGuids) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DesiredPacketDescription(
-        VARIANT PacketGuids) = 0;
+                     VARIANT PacketGuids) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MouseIcon(
-        IPictureDisp **MouseIcon) = 0;
+                     IPictureDisp **MouseIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MouseIcon(
-        IPictureDisp *MouseIcon) = 0;
+                     IPictureDisp *MouseIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE putref_MouseIcon(
-        IPictureDisp *MouseIcon) = 0;
+                     IPictureDisp *MouseIcon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MousePointer(
-        InkMousePointer *MousePointer) = 0;
+                     InkMousePointer *MousePointer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MousePointer(
-        InkMousePointer MousePointer) = 0;
+                     InkMousePointer MousePointer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Cursors(
-        IInkCursors **Cursors) = 0;
+                     IInkCursors **Cursors) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MarginX(
-        LONG *MarginX) = 0;
+                     LONG *MarginX) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MarginX(
-        LONG MarginX) = 0;
+                     LONG MarginX) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MarginY(
-        LONG *MarginY) = 0;
+                     LONG *MarginY) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MarginY(
-        LONG MarginY) = 0;
+                     LONG MarginY) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Tablet(
-        IInkTablet **SingleTablet) = 0;
+                     IInkTablet **SingleTablet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SupportHighContrastInk(
-        VARIANT_BOOL *Support) = 0;
+                     VARIANT_BOOL *Support) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SupportHighContrastInk(
-        VARIANT_BOOL Support) = 0;
+                     VARIANT_BOOL Support) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGestureStatus(
-        InkApplicationGesture Gesture,
-        VARIANT_BOOL Listen) = 0;
+                     InkApplicationGesture Gesture,
+                     VARIANT_BOOL Listen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGestureStatus(
-        InkApplicationGesture Gesture,
-        VARIANT_BOOL *Listening) = 0;
+                     InkApplicationGesture Gesture,
+                     VARIANT_BOOL *Listening) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWindowInputRectangle(
-        IInkRectangle **WindowInputRectangle) = 0;
+                     IInkRectangle **WindowInputRectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetWindowInputRectangle(
-        IInkRectangle *WindowInputRectangle) = 0;
+                     IInkRectangle *WindowInputRectangle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAllTabletsMode(
-        VARIANT_BOOL UseMouseForInput = -1) = 0;
+                     VARIANT_BOOL UseMouseForInput = -1) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSingleTabletIntegratedMode(
-        IInkTablet *Tablet) = 0;
+                     IInkTablet *Tablet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEventInterest(
-        InkCollectorEventInterest EventId,
-        VARIANT_BOOL *Listen) = 0;
+                     InkCollectorEventInterest EventId,
+                     VARIANT_BOOL *Listen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEventInterest(
-        InkCollectorEventInterest EventId,
-        VARIANT_BOOL Listen) = 0;
+                     InkCollectorEventInterest EventId,
+                     VARIANT_BOOL Listen) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5234,210 +5234,210 @@ typedef struct IInkCollectorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInkCollector *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInkCollector *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInkCollector *This);
+                     IInkCollector *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInkCollector *This);
+                     IInkCollector *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IInkCollector *This,
-        UINT *pctinfo);
+                     IInkCollector *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IInkCollector *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IInkCollector *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IInkCollector *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IInkCollector *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IInkCollector *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IInkCollector *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IInkCollector methods ***/
     HRESULT (STDMETHODCALLTYPE *get_hWnd)(
-        IInkCollector *This,
-        LONG_PTR *CurrentWindow);
+                     IInkCollector *This,
+                     LONG_PTR *CurrentWindow);
 
     HRESULT (STDMETHODCALLTYPE *put_hWnd)(
-        IInkCollector *This,
-        LONG_PTR NewWindow);
+                     IInkCollector *This,
+                     LONG_PTR NewWindow);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        IInkCollector *This,
-        VARIANT_BOOL *Collecting);
+                     IInkCollector *This,
+                     VARIANT_BOOL *Collecting);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        IInkCollector *This,
-        VARIANT_BOOL Collecting);
+                     IInkCollector *This,
+                     VARIANT_BOOL Collecting);
 
     HRESULT (STDMETHODCALLTYPE *get_DefaultDrawingAttributes)(
-        IInkCollector *This,
-        IInkDrawingAttributes **CurrentAttributes);
+                     IInkCollector *This,
+                     IInkDrawingAttributes **CurrentAttributes);
 
     HRESULT (STDMETHODCALLTYPE *putref_DefaultDrawingAttributes)(
-        IInkCollector *This,
-        IInkDrawingAttributes *NewAttributes);
+                     IInkCollector *This,
+                     IInkDrawingAttributes *NewAttributes);
 
     HRESULT (STDMETHODCALLTYPE *get_Renderer)(
-        IInkCollector *This,
-        IInkRenderer **CurrentInkRenderer);
+                     IInkCollector *This,
+                     IInkRenderer **CurrentInkRenderer);
 
     HRESULT (STDMETHODCALLTYPE *putref_Renderer)(
-        IInkCollector *This,
-        IInkRenderer *NewInkRenderer);
+                     IInkCollector *This,
+                     IInkRenderer *NewInkRenderer);
 
     HRESULT (STDMETHODCALLTYPE *get_Ink)(
-        IInkCollector *This,
-        IInkDisp **Ink);
+                     IInkCollector *This,
+                     IInkDisp **Ink);
 
     HRESULT (STDMETHODCALLTYPE *putref_Ink)(
-        IInkCollector *This,
-        IInkDisp *NewInk);
+                     IInkCollector *This,
+                     IInkDisp *NewInk);
 
     HRESULT (STDMETHODCALLTYPE *get_AutoRedraw)(
-        IInkCollector *This,
-        VARIANT_BOOL *AutoRedraw);
+                     IInkCollector *This,
+                     VARIANT_BOOL *AutoRedraw);
 
     HRESULT (STDMETHODCALLTYPE *put_AutoRedraw)(
-        IInkCollector *This,
-        VARIANT_BOOL AutoRedraw);
+                     IInkCollector *This,
+                     VARIANT_BOOL AutoRedraw);
 
     HRESULT (STDMETHODCALLTYPE *get_CollectingInk)(
-        IInkCollector *This,
-        VARIANT_BOOL *Collecting);
+                     IInkCollector *This,
+                     VARIANT_BOOL *Collecting);
 
     HRESULT (STDMETHODCALLTYPE *get_CollectionMode)(
-        IInkCollector *This,
-        InkCollectionMode *Mode);
+                     IInkCollector *This,
+                     InkCollectionMode *Mode);
 
     HRESULT (STDMETHODCALLTYPE *put_CollectionMode)(
-        IInkCollector *This,
-        InkCollectionMode Mode);
+                     IInkCollector *This,
+                     InkCollectionMode Mode);
 
     HRESULT (STDMETHODCALLTYPE *get_DynamicRendering)(
-        IInkCollector *This,
-        VARIANT_BOOL *Enabled);
+                     IInkCollector *This,
+                     VARIANT_BOOL *Enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_DynamicRendering)(
-        IInkCollector *This,
-        VARIANT_BOOL Enabled);
+                     IInkCollector *This,
+                     VARIANT_BOOL Enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_DesiredPacketDescription)(
-        IInkCollector *This,
-        VARIANT *PacketGuids);
+                     IInkCollector *This,
+                     VARIANT *PacketGuids);
 
     HRESULT (STDMETHODCALLTYPE *put_DesiredPacketDescription)(
-        IInkCollector *This,
-        VARIANT PacketGuids);
+                     IInkCollector *This,
+                     VARIANT PacketGuids);
 
     HRESULT (STDMETHODCALLTYPE *get_MouseIcon)(
-        IInkCollector *This,
-        IPictureDisp **MouseIcon);
+                     IInkCollector *This,
+                     IPictureDisp **MouseIcon);
 
     HRESULT (STDMETHODCALLTYPE *put_MouseIcon)(
-        IInkCollector *This,
-        IPictureDisp *MouseIcon);
+                     IInkCollector *This,
+                     IPictureDisp *MouseIcon);
 
     HRESULT (STDMETHODCALLTYPE *putref_MouseIcon)(
-        IInkCollector *This,
-        IPictureDisp *MouseIcon);
+                     IInkCollector *This,
+                     IPictureDisp *MouseIcon);
 
     HRESULT (STDMETHODCALLTYPE *get_MousePointer)(
-        IInkCollector *This,
-        InkMousePointer *MousePointer);
+                     IInkCollector *This,
+                     InkMousePointer *MousePointer);
 
     HRESULT (STDMETHODCALLTYPE *put_MousePointer)(
-        IInkCollector *This,
-        InkMousePointer MousePointer);
+                     IInkCollector *This,
+                     InkMousePointer MousePointer);
 
     HRESULT (STDMETHODCALLTYPE *get_Cursors)(
-        IInkCollector *This,
-        IInkCursors **Cursors);
+                     IInkCollector *This,
+                     IInkCursors **Cursors);
 
     HRESULT (STDMETHODCALLTYPE *get_MarginX)(
-        IInkCollector *This,
-        LONG *MarginX);
+                     IInkCollector *This,
+                     LONG *MarginX);
 
     HRESULT (STDMETHODCALLTYPE *put_MarginX)(
-        IInkCollector *This,
-        LONG MarginX);
+                     IInkCollector *This,
+                     LONG MarginX);
 
     HRESULT (STDMETHODCALLTYPE *get_MarginY)(
-        IInkCollector *This,
-        LONG *MarginY);
+                     IInkCollector *This,
+                     LONG *MarginY);
 
     HRESULT (STDMETHODCALLTYPE *put_MarginY)(
-        IInkCollector *This,
-        LONG MarginY);
+                     IInkCollector *This,
+                     LONG MarginY);
 
     HRESULT (STDMETHODCALLTYPE *get_Tablet)(
-        IInkCollector *This,
-        IInkTablet **SingleTablet);
+                     IInkCollector *This,
+                     IInkTablet **SingleTablet);
 
     HRESULT (STDMETHODCALLTYPE *get_SupportHighContrastInk)(
-        IInkCollector *This,
-        VARIANT_BOOL *Support);
+                     IInkCollector *This,
+                     VARIANT_BOOL *Support);
 
     HRESULT (STDMETHODCALLTYPE *put_SupportHighContrastInk)(
-        IInkCollector *This,
-        VARIANT_BOOL Support);
+                     IInkCollector *This,
+                     VARIANT_BOOL Support);
 
     HRESULT (STDMETHODCALLTYPE *SetGestureStatus)(
-        IInkCollector *This,
-        InkApplicationGesture Gesture,
-        VARIANT_BOOL Listen);
+                     IInkCollector *This,
+                     InkApplicationGesture Gesture,
+                     VARIANT_BOOL Listen);
 
     HRESULT (STDMETHODCALLTYPE *GetGestureStatus)(
-        IInkCollector *This,
-        InkApplicationGesture Gesture,
-        VARIANT_BOOL *Listening);
+                     IInkCollector *This,
+                     InkApplicationGesture Gesture,
+                     VARIANT_BOOL *Listening);
 
     HRESULT (STDMETHODCALLTYPE *GetWindowInputRectangle)(
-        IInkCollector *This,
-        IInkRectangle **WindowInputRectangle);
+                     IInkCollector *This,
+                     IInkRectangle **WindowInputRectangle);
 
     HRESULT (STDMETHODCALLTYPE *SetWindowInputRectangle)(
-        IInkCollector *This,
-        IInkRectangle *WindowInputRectangle);
+                     IInkCollector *This,
+                     IInkRectangle *WindowInputRectangle);
 
     HRESULT (STDMETHODCALLTYPE *SetAllTabletsMode)(
-        IInkCollector *This,
-        VARIANT_BOOL UseMouseForInput);
+                     IInkCollector *This,
+                     VARIANT_BOOL UseMouseForInput);
 
     HRESULT (STDMETHODCALLTYPE *SetSingleTabletIntegratedMode)(
-        IInkCollector *This,
-        IInkTablet *Tablet);
+                     IInkCollector *This,
+                     IInkTablet *Tablet);
 
     HRESULT (STDMETHODCALLTYPE *GetEventInterest)(
-        IInkCollector *This,
-        InkCollectorEventInterest EventId,
-        VARIANT_BOOL *Listen);
+                     IInkCollector *This,
+                     InkCollectorEventInterest EventId,
+                     VARIANT_BOOL *Listen);
 
     HRESULT (STDMETHODCALLTYPE *SetEventInterest)(
-        IInkCollector *This,
-        InkCollectorEventInterest EventId,
-        VARIANT_BOOL Listen);
+                     IInkCollector *This,
+                     InkCollectorEventInterest EventId,
+                     VARIANT_BOOL Listen);
 
     END_INTERFACE
 } IInkCollectorVtbl;
@@ -5672,45 +5672,45 @@ typedef struct _IInkCollectorEventsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        _IInkCollectorEvents *This,
-        REFIID riid,
-        void **ppvObject);
+                     _IInkCollectorEvents *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        _IInkCollectorEvents *This);
+                     _IInkCollectorEvents *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        _IInkCollectorEvents *This);
+                     _IInkCollectorEvents *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        _IInkCollectorEvents *This,
-        UINT *pctinfo);
+                     _IInkCollectorEvents *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        _IInkCollectorEvents *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     _IInkCollectorEvents *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        _IInkCollectorEvents *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     _IInkCollectorEvents *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        _IInkCollectorEvents *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     _IInkCollectorEvents *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     END_INTERFACE
 } _IInkCollectorEventsVtbl;
@@ -5776,14 +5776,14 @@ __CRT_UUID_DECL(InkCollector, 0x43fb1553, 0xad74, 0x4ee8, 0x88,0xe4, 0x3e,0x6d,0
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

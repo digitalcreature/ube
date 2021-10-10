@@ -47,8 +47,8 @@ MIDL_INTERFACE("52d6f586-9f0f-4824-8fc8-e32ca04930c2")
 IDMOWrapperFilter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Init(
-        REFCLSID clsidDMO,
-        REFCLSID catDMO) = 0;
+                     REFCLSID clsidDMO,
+                     REFCLSID catDMO) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -60,21 +60,21 @@ typedef struct IDMOWrapperFilterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDMOWrapperFilter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDMOWrapperFilter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDMOWrapperFilter *This);
+                     IDMOWrapperFilter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDMOWrapperFilter *This);
+                     IDMOWrapperFilter *This);
 
     /*** IDMOWrapperFilter methods ***/
     HRESULT (STDMETHODCALLTYPE *Init)(
-        IDMOWrapperFilter *This,
-        REFCLSID clsidDMO,
-        REFCLSID catDMO);
+                     IDMOWrapperFilter *This,
+                     REFCLSID clsidDMO,
+                     REFCLSID catDMO);
 
     END_INTERFACE
 } IDMOWrapperFilterVtbl;

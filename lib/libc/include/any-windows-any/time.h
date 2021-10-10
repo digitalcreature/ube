@@ -247,8 +247,8 @@ static __inline time_t __CRTDECL _mkgmtime(struct tm *_Tm) { return _mkgmtime64(
 #ifdef _UCRT
 #define __MINGW_ATTRIB_DEPRECATED_UCRT \
     __MINGW_ATTRIB_DEPRECATED_MSG( \
-        "Only provided for source compatibility; this variable might " \
-        "not always be accurate when linking to UCRT.")
+                     "Only provided for source compatibility; this variable might " \
+                     "not always be accurate when linking to UCRT.")
 #else
 #define __MINGW_ATTRIB_DEPRECATED_UCRT
 #endif

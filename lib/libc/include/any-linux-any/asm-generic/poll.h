@@ -26,7 +26,7 @@
 #define POLLREMOVE	0x1000
 #endif
 #ifndef POLLRDHUP
-#define POLLRDHUP       0x2000
+#define POLLRDHUP                    0x2000
 #endif
 
 #define POLLFREE	(__poll_t)0x4000	/* currently only for epoll */

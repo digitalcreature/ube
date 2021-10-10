@@ -25,10 +25,10 @@ int __fpclassify (double _x)
     l = hlp.lh.low | (h & 0xfffff);
     h &= 0x7ff00000;
     if ((h | l) == 0)
-      return FP_ZERO;
+                   return FP_ZERO;
     if (!h)
-      return FP_SUBNORMAL;
+                   return FP_SUBNORMAL;
     if (h == 0x7ff00000)
-      return (l ? FP_NAN : FP_INFINITE);
+                   return (l ? FP_NAN : FP_INFINITE);
     return FP_NORMAL;
 }

@@ -195,9 +195,9 @@ struct gfs2_rgrp {
 	/* The following 3 fields are duplicated from gfs2_rindex to reduce
 	   reliance on the rindex */
 	__be64 rg_data0;     /* First data location */
-	__be32 rg_data;      /* Number of data blocks in rgrp */
+	__be32 rg_data;                   /* Number of data blocks in rgrp */
 	__be32 rg_bitbytes;  /* Number of bytes in data bitmaps */
-	__be32 rg_crc;       /* crc32 of the structure with this field 0 */
+	__be32 rg_crc;                    /* crc32 of the structure with this field 0 */
 
 	__u8 rg_reserved[60]; /* Several fields from gfs1 now reserved */
 };
@@ -274,7 +274,7 @@ struct gfs2_dinode {
 	__be32 di_minor;	/* device minor number */
 
 	/* This section varies from gfs1. Padding added to align with
-         * remainder of dinode
+                      * remainder of dinode
 	 */
 	__be64 di_goal_meta;	/* rgrp to alloc from next */
 	__be64 di_goal_data;	/* data block goal */
@@ -525,11 +525,11 @@ struct gfs2_quota_change {
 };
 
 struct gfs2_quota_lvb {
-        __be32 qb_magic;
-        __u32 __pad;
-        __be64 qb_limit;      /* Hard limit of # blocks to alloc */
-        __be64 qb_warn;       /* Warn user when alloc is above this # */
-        __be64 qb_value;       /* Current # blocks allocated */
+                     __be32 qb_magic;
+                     __u32 __pad;
+                     __be64 qb_limit;                   /* Hard limit of # blocks to alloc */
+                     __be64 qb_warn;                    /* Warn user when alloc is above this # */
+                     __be64 qb_value;                    /* Current # blocks allocated */
 };
 
 #endif /* __GFS2_ONDISK_DOT_H__ */

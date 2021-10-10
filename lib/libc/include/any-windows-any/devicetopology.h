@@ -290,12 +290,12 @@ typedef struct __WIDL_devicetopology_generated_name_00000020 {
 typedef KSDATAFORMAT *PKSDATAFORMAT;
 typedef struct __WIDL_devicetopology_generated_name_00000021 {
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            GUID Set;
-            ULONG Id;
-            ULONG Flags;
-        } __C89_NAMELESSSTRUCTNAME;
-        LONGLONG Alignment;
+                     __C89_NAMELESS struct {
+                                      GUID Set;
+                                      ULONG Id;
+                                      ULONG Flags;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     LONGLONG Alignment;
     } __C89_NAMELESSUNIONNAME;
 } KSIDENTIFIER;
 typedef KSIDENTIFIER KSPROPERTY;
@@ -411,25 +411,25 @@ MIDL_INTERFACE("28f54685-06fd-11d2-b27a-00a0c9223196")
 IKsControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE KsProperty(
-        PKSPROPERTY Property,
-        ULONG PropertyLength,
-        void *PropertyData,
-        ULONG DataLength,
-        ULONG *BytesReturned) = 0;
+                     PKSPROPERTY Property,
+                     ULONG PropertyLength,
+                     void *PropertyData,
+                     ULONG DataLength,
+                     ULONG *BytesReturned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE KsMethod(
-        PKSMETHOD Method,
-        ULONG MethodLength,
-        void *MethodData,
-        ULONG DataLength,
-        ULONG *BytesReturned) = 0;
+                     PKSMETHOD Method,
+                     ULONG MethodLength,
+                     void *MethodData,
+                     ULONG DataLength,
+                     ULONG *BytesReturned) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE KsEvent(
-        PKSEVENT Event,
-        ULONG EventLength,
-        void *EventData,
-        ULONG DataLength,
-        ULONG *BytesReturned) = 0;
+                     PKSEVENT Event,
+                     ULONG EventLength,
+                     void *EventData,
+                     ULONG DataLength,
+                     ULONG *BytesReturned) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -441,40 +441,40 @@ typedef struct IKsControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKsControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IKsControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKsControl *This);
+                     IKsControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKsControl *This);
+                     IKsControl *This);
 
     /*** IKsControl methods ***/
     HRESULT (STDMETHODCALLTYPE *KsProperty)(
-        IKsControl *This,
-        PKSPROPERTY Property,
-        ULONG PropertyLength,
-        void *PropertyData,
-        ULONG DataLength,
-        ULONG *BytesReturned);
+                     IKsControl *This,
+                     PKSPROPERTY Property,
+                     ULONG PropertyLength,
+                     void *PropertyData,
+                     ULONG DataLength,
+                     ULONG *BytesReturned);
 
     HRESULT (STDMETHODCALLTYPE *KsMethod)(
-        IKsControl *This,
-        PKSMETHOD Method,
-        ULONG MethodLength,
-        void *MethodData,
-        ULONG DataLength,
-        ULONG *BytesReturned);
+                     IKsControl *This,
+                     PKSMETHOD Method,
+                     ULONG MethodLength,
+                     void *MethodData,
+                     ULONG DataLength,
+                     ULONG *BytesReturned);
 
     HRESULT (STDMETHODCALLTYPE *KsEvent)(
-        IKsControl *This,
-        PKSEVENT Event,
-        ULONG EventLength,
-        void *EventData,
-        ULONG DataLength,
-        ULONG *BytesReturned);
+                     IKsControl *This,
+                     PKSEVENT Event,
+                     ULONG EventLength,
+                     void *EventData,
+                     ULONG DataLength,
+                     ULONG *BytesReturned);
 
     END_INTERFACE
 } IKsControlVtbl;
@@ -534,31 +534,31 @@ MIDL_INTERFACE("c2f8e001-f205-4bc9-99bc-c13b1e048ccb")
 IPerChannelDbLevel : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetChannelCount(
-        UINT *pcChannels) = 0;
+                     UINT *pcChannels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLevelRange(
-        UINT nChannel,
-        float *pfMinLevelDB,
-        float *pfMaxLevelDB,
-        float *pfStepping) = 0;
+                     UINT nChannel,
+                     float *pfMinLevelDB,
+                     float *pfMaxLevelDB,
+                     float *pfStepping) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLevel(
-        UINT nChannel,
-        float *pfLevelDB) = 0;
+                     UINT nChannel,
+                     float *pfLevelDB) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLevel(
-        UINT nChannel,
-        float fLevelDB,
-        LPCGUID pguidEventContext) = 0;
+                     UINT nChannel,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLevelUniform(
-        float fLevelDB,
-        LPCGUID pguidEventContext) = 0;
+                     float fLevelDB,
+                     LPCGUID pguidEventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLevelAllChannels(
-        float *aLevelsDB,
-        ULONG cChannels,
-        LPCGUID pguidEventContext) = 0;
+                     float *aLevelsDB,
+                     ULONG cChannels,
+                     LPCGUID pguidEventContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -570,49 +570,49 @@ typedef struct IPerChannelDbLevelVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPerChannelDbLevel *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPerChannelDbLevel *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPerChannelDbLevel *This);
+                     IPerChannelDbLevel *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPerChannelDbLevel *This);
+                     IPerChannelDbLevel *This);
 
     /*** IPerChannelDbLevel methods ***/
     HRESULT (STDMETHODCALLTYPE *GetChannelCount)(
-        IPerChannelDbLevel *This,
-        UINT *pcChannels);
+                     IPerChannelDbLevel *This,
+                     UINT *pcChannels);
 
     HRESULT (STDMETHODCALLTYPE *GetLevelRange)(
-        IPerChannelDbLevel *This,
-        UINT nChannel,
-        float *pfMinLevelDB,
-        float *pfMaxLevelDB,
-        float *pfStepping);
+                     IPerChannelDbLevel *This,
+                     UINT nChannel,
+                     float *pfMinLevelDB,
+                     float *pfMaxLevelDB,
+                     float *pfStepping);
 
     HRESULT (STDMETHODCALLTYPE *GetLevel)(
-        IPerChannelDbLevel *This,
-        UINT nChannel,
-        float *pfLevelDB);
+                     IPerChannelDbLevel *This,
+                     UINT nChannel,
+                     float *pfLevelDB);
 
     HRESULT (STDMETHODCALLTYPE *SetLevel)(
-        IPerChannelDbLevel *This,
-        UINT nChannel,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IPerChannelDbLevel *This,
+                     UINT nChannel,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelUniform)(
-        IPerChannelDbLevel *This,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IPerChannelDbLevel *This,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelAllChannels)(
-        IPerChannelDbLevel *This,
-        float *aLevelsDB,
-        ULONG cChannels,
-        LPCGUID pguidEventContext);
+                     IPerChannelDbLevel *This,
+                     float *aLevelsDB,
+                     ULONG cChannels,
+                     LPCGUID pguidEventContext);
 
     END_INTERFACE
 } IPerChannelDbLevelVtbl;
@@ -693,49 +693,49 @@ typedef struct IAudioVolumeLevelVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioVolumeLevel *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioVolumeLevel *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioVolumeLevel *This);
+                     IAudioVolumeLevel *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioVolumeLevel *This);
+                     IAudioVolumeLevel *This);
 
     /*** IPerChannelDbLevel methods ***/
     HRESULT (STDMETHODCALLTYPE *GetChannelCount)(
-        IAudioVolumeLevel *This,
-        UINT *pcChannels);
+                     IAudioVolumeLevel *This,
+                     UINT *pcChannels);
 
     HRESULT (STDMETHODCALLTYPE *GetLevelRange)(
-        IAudioVolumeLevel *This,
-        UINT nChannel,
-        float *pfMinLevelDB,
-        float *pfMaxLevelDB,
-        float *pfStepping);
+                     IAudioVolumeLevel *This,
+                     UINT nChannel,
+                     float *pfMinLevelDB,
+                     float *pfMaxLevelDB,
+                     float *pfStepping);
 
     HRESULT (STDMETHODCALLTYPE *GetLevel)(
-        IAudioVolumeLevel *This,
-        UINT nChannel,
-        float *pfLevelDB);
+                     IAudioVolumeLevel *This,
+                     UINT nChannel,
+                     float *pfLevelDB);
 
     HRESULT (STDMETHODCALLTYPE *SetLevel)(
-        IAudioVolumeLevel *This,
-        UINT nChannel,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IAudioVolumeLevel *This,
+                     UINT nChannel,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelUniform)(
-        IAudioVolumeLevel *This,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IAudioVolumeLevel *This,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelAllChannels)(
-        IAudioVolumeLevel *This,
-        float *aLevelsDB,
-        ULONG cChannels,
-        LPCGUID pguidEventContext);
+                     IAudioVolumeLevel *This,
+                     float *aLevelsDB,
+                     ULONG cChannels,
+                     LPCGUID pguidEventContext);
 
     END_INTERFACE
 } IAudioVolumeLevelVtbl;
@@ -807,12 +807,12 @@ MIDL_INTERFACE("bb11c46f-ec28-493c-b88a-5db88062ce98")
 IAudioChannelConfig : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetChannelConfig(
-        DWORD dwConfig,
-        LPCGUID pguidEventContext) = 0;
+                     DWORD dwConfig,
+                     LPCGUID pguidEventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetChannelConfig(
-        DWORD dwConfig,
-        DWORD *pdwConfig) = 0;
+                     DWORD dwConfig,
+                     DWORD *pdwConfig) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -824,26 +824,26 @@ typedef struct IAudioChannelConfigVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioChannelConfig *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioChannelConfig *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioChannelConfig *This);
+                     IAudioChannelConfig *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioChannelConfig *This);
+                     IAudioChannelConfig *This);
 
     /*** IAudioChannelConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *SetChannelConfig)(
-        IAudioChannelConfig *This,
-        DWORD dwConfig,
-        LPCGUID pguidEventContext);
+                     IAudioChannelConfig *This,
+                     DWORD dwConfig,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *GetChannelConfig)(
-        IAudioChannelConfig *This,
-        DWORD dwConfig,
-        DWORD *pdwConfig);
+                     IAudioChannelConfig *This,
+                     DWORD dwConfig,
+                     DWORD *pdwConfig);
 
     END_INTERFACE
 } IAudioChannelConfigVtbl;
@@ -899,11 +899,11 @@ MIDL_INTERFACE("7d8b1437-dd53-4350-9c1b-1ee2890bf938")
 IAudioLoudness : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetEnabled(
-        WINBOOL *pbEnabled) = 0;
+                     WINBOOL *pbEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEnabled(
-        WINBOOL bEnabled,
-        LPCGUID pguidEventContext) = 0;
+                     WINBOOL bEnabled,
+                     LPCGUID pguidEventContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -915,25 +915,25 @@ typedef struct IAudioLoudnessVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioLoudness *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioLoudness *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioLoudness *This);
+                     IAudioLoudness *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioLoudness *This);
+                     IAudioLoudness *This);
 
     /*** IAudioLoudness methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEnabled)(
-        IAudioLoudness *This,
-        WINBOOL *pbEnabled);
+                     IAudioLoudness *This,
+                     WINBOOL *pbEnabled);
 
     HRESULT (STDMETHODCALLTYPE *SetEnabled)(
-        IAudioLoudness *This,
-        WINBOOL bEnabled,
-        LPCGUID pguidEventContext);
+                     IAudioLoudness *This,
+                     WINBOOL bEnabled,
+                     LPCGUID pguidEventContext);
 
     END_INTERFACE
 } IAudioLoudnessVtbl;
@@ -989,11 +989,11 @@ MIDL_INTERFACE("4f03dc02-5e6e-4653-8f72-a030c123d598")
 IAudioInputSelector : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSelection(
-        UINT *pnIdSelected) = 0;
+                     UINT *pnIdSelected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSelection(
-        UINT nIdSelect,
-        LPCGUID pguidEventContext) = 0;
+                     UINT nIdSelect,
+                     LPCGUID pguidEventContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1005,25 +1005,25 @@ typedef struct IAudioInputSelectorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioInputSelector *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioInputSelector *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioInputSelector *This);
+                     IAudioInputSelector *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioInputSelector *This);
+                     IAudioInputSelector *This);
 
     /*** IAudioInputSelector methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSelection)(
-        IAudioInputSelector *This,
-        UINT *pnIdSelected);
+                     IAudioInputSelector *This,
+                     UINT *pnIdSelected);
 
     HRESULT (STDMETHODCALLTYPE *SetSelection)(
-        IAudioInputSelector *This,
-        UINT nIdSelect,
-        LPCGUID pguidEventContext);
+                     IAudioInputSelector *This,
+                     UINT nIdSelect,
+                     LPCGUID pguidEventContext);
 
     END_INTERFACE
 } IAudioInputSelectorVtbl;
@@ -1079,11 +1079,11 @@ MIDL_INTERFACE("bb515f69-94a7-429e-8b9c-271b3f11a3ab")
 IAudioOutputSelector : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSelection(
-        UINT *pnIdSelected) = 0;
+                     UINT *pnIdSelected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSelection(
-        UINT nIdSelect,
-        LPCGUID pguidEventContext) = 0;
+                     UINT nIdSelect,
+                     LPCGUID pguidEventContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1095,25 +1095,25 @@ typedef struct IAudioOutputSelectorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioOutputSelector *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioOutputSelector *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioOutputSelector *This);
+                     IAudioOutputSelector *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioOutputSelector *This);
+                     IAudioOutputSelector *This);
 
     /*** IAudioOutputSelector methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSelection)(
-        IAudioOutputSelector *This,
-        UINT *pnIdSelected);
+                     IAudioOutputSelector *This,
+                     UINT *pnIdSelected);
 
     HRESULT (STDMETHODCALLTYPE *SetSelection)(
-        IAudioOutputSelector *This,
-        UINT nIdSelect,
-        LPCGUID pguidEventContext);
+                     IAudioOutputSelector *This,
+                     UINT nIdSelect,
+                     LPCGUID pguidEventContext);
 
     END_INTERFACE
 } IAudioOutputSelectorVtbl;
@@ -1169,11 +1169,11 @@ MIDL_INTERFACE("df45aeea-b74a-4b6b-afad-2366b6aa012e")
 IAudioMute : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetMute(
-        WINBOOL bMute,
-        LPCGUID pguidEventContext) = 0;
+                     WINBOOL bMute,
+                     LPCGUID pguidEventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMute(
-        WINBOOL *pbMute) = 0;
+                     WINBOOL *pbMute) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1185,25 +1185,25 @@ typedef struct IAudioMuteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioMute *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioMute *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioMute *This);
+                     IAudioMute *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioMute *This);
+                     IAudioMute *This);
 
     /*** IAudioMute methods ***/
     HRESULT (STDMETHODCALLTYPE *SetMute)(
-        IAudioMute *This,
-        WINBOOL bMute,
-        LPCGUID pguidEventContext);
+                     IAudioMute *This,
+                     WINBOOL bMute,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *GetMute)(
-        IAudioMute *This,
-        WINBOOL *pbMute);
+                     IAudioMute *This,
+                     WINBOOL *pbMute);
 
     END_INTERFACE
 } IAudioMuteVtbl;
@@ -1268,49 +1268,49 @@ typedef struct IAudioBassVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioBass *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioBass *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioBass *This);
+                     IAudioBass *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioBass *This);
+                     IAudioBass *This);
 
     /*** IPerChannelDbLevel methods ***/
     HRESULT (STDMETHODCALLTYPE *GetChannelCount)(
-        IAudioBass *This,
-        UINT *pcChannels);
+                     IAudioBass *This,
+                     UINT *pcChannels);
 
     HRESULT (STDMETHODCALLTYPE *GetLevelRange)(
-        IAudioBass *This,
-        UINT nChannel,
-        float *pfMinLevelDB,
-        float *pfMaxLevelDB,
-        float *pfStepping);
+                     IAudioBass *This,
+                     UINT nChannel,
+                     float *pfMinLevelDB,
+                     float *pfMaxLevelDB,
+                     float *pfStepping);
 
     HRESULT (STDMETHODCALLTYPE *GetLevel)(
-        IAudioBass *This,
-        UINT nChannel,
-        float *pfLevelDB);
+                     IAudioBass *This,
+                     UINT nChannel,
+                     float *pfLevelDB);
 
     HRESULT (STDMETHODCALLTYPE *SetLevel)(
-        IAudioBass *This,
-        UINT nChannel,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IAudioBass *This,
+                     UINT nChannel,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelUniform)(
-        IAudioBass *This,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IAudioBass *This,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelAllChannels)(
-        IAudioBass *This,
-        float *aLevelsDB,
-        ULONG cChannels,
-        LPCGUID pguidEventContext);
+                     IAudioBass *This,
+                     float *aLevelsDB,
+                     ULONG cChannels,
+                     LPCGUID pguidEventContext);
 
     END_INTERFACE
 } IAudioBassVtbl;
@@ -1391,49 +1391,49 @@ typedef struct IAudioMidRangeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioMidRange *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioMidRange *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioMidRange *This);
+                     IAudioMidRange *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioMidRange *This);
+                     IAudioMidRange *This);
 
     /*** IPerChannelDbLevel methods ***/
     HRESULT (STDMETHODCALLTYPE *GetChannelCount)(
-        IAudioMidRange *This,
-        UINT *pcChannels);
+                     IAudioMidRange *This,
+                     UINT *pcChannels);
 
     HRESULT (STDMETHODCALLTYPE *GetLevelRange)(
-        IAudioMidRange *This,
-        UINT nChannel,
-        float *pfMinLevelDB,
-        float *pfMaxLevelDB,
-        float *pfStepping);
+                     IAudioMidRange *This,
+                     UINT nChannel,
+                     float *pfMinLevelDB,
+                     float *pfMaxLevelDB,
+                     float *pfStepping);
 
     HRESULT (STDMETHODCALLTYPE *GetLevel)(
-        IAudioMidRange *This,
-        UINT nChannel,
-        float *pfLevelDB);
+                     IAudioMidRange *This,
+                     UINT nChannel,
+                     float *pfLevelDB);
 
     HRESULT (STDMETHODCALLTYPE *SetLevel)(
-        IAudioMidRange *This,
-        UINT nChannel,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IAudioMidRange *This,
+                     UINT nChannel,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelUniform)(
-        IAudioMidRange *This,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IAudioMidRange *This,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelAllChannels)(
-        IAudioMidRange *This,
-        float *aLevelsDB,
-        ULONG cChannels,
-        LPCGUID pguidEventContext);
+                     IAudioMidRange *This,
+                     float *aLevelsDB,
+                     ULONG cChannels,
+                     LPCGUID pguidEventContext);
 
     END_INTERFACE
 } IAudioMidRangeVtbl;
@@ -1514,49 +1514,49 @@ typedef struct IAudioTrebleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioTreble *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioTreble *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioTreble *This);
+                     IAudioTreble *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioTreble *This);
+                     IAudioTreble *This);
 
     /*** IPerChannelDbLevel methods ***/
     HRESULT (STDMETHODCALLTYPE *GetChannelCount)(
-        IAudioTreble *This,
-        UINT *pcChannels);
+                     IAudioTreble *This,
+                     UINT *pcChannels);
 
     HRESULT (STDMETHODCALLTYPE *GetLevelRange)(
-        IAudioTreble *This,
-        UINT nChannel,
-        float *pfMinLevelDB,
-        float *pfMaxLevelDB,
-        float *pfStepping);
+                     IAudioTreble *This,
+                     UINT nChannel,
+                     float *pfMinLevelDB,
+                     float *pfMaxLevelDB,
+                     float *pfStepping);
 
     HRESULT (STDMETHODCALLTYPE *GetLevel)(
-        IAudioTreble *This,
-        UINT nChannel,
-        float *pfLevelDB);
+                     IAudioTreble *This,
+                     UINT nChannel,
+                     float *pfLevelDB);
 
     HRESULT (STDMETHODCALLTYPE *SetLevel)(
-        IAudioTreble *This,
-        UINT nChannel,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IAudioTreble *This,
+                     UINT nChannel,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelUniform)(
-        IAudioTreble *This,
-        float fLevelDB,
-        LPCGUID pguidEventContext);
+                     IAudioTreble *This,
+                     float fLevelDB,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *SetLevelAllChannels)(
-        IAudioTreble *This,
-        float *aLevelsDB,
-        ULONG cChannels,
-        LPCGUID pguidEventContext);
+                     IAudioTreble *This,
+                     float *aLevelsDB,
+                     ULONG cChannels,
+                     LPCGUID pguidEventContext);
 
     END_INTERFACE
 } IAudioTrebleVtbl;
@@ -1628,11 +1628,11 @@ MIDL_INTERFACE("85401fd4-6de4-4b9d-9869-2d6753a82f3c")
 IAudioAutoGainControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetEnabled(
-        WINBOOL bEnabled,
-        LPCGUID pguidEventContext) = 0;
+                     WINBOOL bEnabled,
+                     LPCGUID pguidEventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMute(
-        WINBOOL *pbEnabled) = 0;
+                     WINBOOL *pbEnabled) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1644,25 +1644,25 @@ typedef struct IAudioAutoGainControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioAutoGainControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioAutoGainControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioAutoGainControl *This);
+                     IAudioAutoGainControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioAutoGainControl *This);
+                     IAudioAutoGainControl *This);
 
     /*** IAudioAutoGainControl methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEnabled)(
-        IAudioAutoGainControl *This,
-        WINBOOL bEnabled,
-        LPCGUID pguidEventContext);
+                     IAudioAutoGainControl *This,
+                     WINBOOL bEnabled,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *GetMute)(
-        IAudioAutoGainControl *This,
-        WINBOOL *pbEnabled);
+                     IAudioAutoGainControl *This,
+                     WINBOOL *pbEnabled);
 
     END_INTERFACE
 } IAudioAutoGainControlVtbl;
@@ -1718,11 +1718,11 @@ MIDL_INTERFACE("dd79923c-0599-45e0-b8b6-c8df7db6e796")
 IAudioPeakMeter : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetChannelCount(
-        UINT *pcChannels) = 0;
+                     UINT *pcChannels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLevel(
-        UINT nChannel,
-        float *pfLevel) = 0;
+                     UINT nChannel,
+                     float *pfLevel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1734,25 +1734,25 @@ typedef struct IAudioPeakMeterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAudioPeakMeter *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAudioPeakMeter *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAudioPeakMeter *This);
+                     IAudioPeakMeter *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAudioPeakMeter *This);
+                     IAudioPeakMeter *This);
 
     /*** IAudioPeakMeter methods ***/
     HRESULT (STDMETHODCALLTYPE *GetChannelCount)(
-        IAudioPeakMeter *This,
-        UINT *pcChannels);
+                     IAudioPeakMeter *This,
+                     UINT *pcChannels);
 
     HRESULT (STDMETHODCALLTYPE *GetLevel)(
-        IAudioPeakMeter *This,
-        UINT nChannel,
-        float *pfLevel);
+                     IAudioPeakMeter *This,
+                     UINT nChannel,
+                     float *pfLevel);
 
     END_INTERFACE
 } IAudioPeakMeterVtbl;
@@ -1808,21 +1808,21 @@ MIDL_INTERFACE("3b22bcbf-2586-4af0-8583-205d391b807c")
 IDeviceSpecificProperty : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        VARTYPE *pVType) = 0;
+                     VARTYPE *pVType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetValue(
-        VARTYPE *pvType,
-        DWORD *pcbValue) = 0;
+                     VARTYPE *pvType,
+                     DWORD *pcbValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetValue(
-        void *pvValue,
-        DWORD cbValue,
-        LPCGUID pguidEventContext) = 0;
+                     void *pvValue,
+                     DWORD cbValue,
+                     LPCGUID pguidEventContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Get4BRange(
-        LONG *plMin,
-        LONG *plMax,
-        LONG *plStepping) = 0;
+                     LONG *plMin,
+                     LONG *plMax,
+                     LONG *plStepping) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1834,37 +1834,37 @@ typedef struct IDeviceSpecificPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDeviceSpecificProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDeviceSpecificProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDeviceSpecificProperty *This);
+                     IDeviceSpecificProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDeviceSpecificProperty *This);
+                     IDeviceSpecificProperty *This);
 
     /*** IDeviceSpecificProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IDeviceSpecificProperty *This,
-        VARTYPE *pVType);
+                     IDeviceSpecificProperty *This,
+                     VARTYPE *pVType);
 
     HRESULT (STDMETHODCALLTYPE *GetValue)(
-        IDeviceSpecificProperty *This,
-        VARTYPE *pvType,
-        DWORD *pcbValue);
+                     IDeviceSpecificProperty *This,
+                     VARTYPE *pvType,
+                     DWORD *pcbValue);
 
     HRESULT (STDMETHODCALLTYPE *SetValue)(
-        IDeviceSpecificProperty *This,
-        void *pvValue,
-        DWORD cbValue,
-        LPCGUID pguidEventContext);
+                     IDeviceSpecificProperty *This,
+                     void *pvValue,
+                     DWORD cbValue,
+                     LPCGUID pguidEventContext);
 
     HRESULT (STDMETHODCALLTYPE *Get4BRange)(
-        IDeviceSpecificProperty *This,
-        LONG *plMin,
-        LONG *plMax,
-        LONG *plStepping);
+                     IDeviceSpecificProperty *This,
+                     LONG *plMin,
+                     LONG *plMax,
+                     LONG *plStepping);
 
     END_INTERFACE
 } IDeviceSpecificPropertyVtbl;
@@ -1928,12 +1928,12 @@ MIDL_INTERFACE("3cb4a69d-bb6f-4d2b-95b7-452d2c155db5")
 IKsFormatSupport : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsFormatSupported(
-        PKSDATAFORMAT pKsFormat,
-        DWORD cbFormat,
-        WINBOOL *pbSupported) = 0;
+                     PKSDATAFORMAT pKsFormat,
+                     DWORD cbFormat,
+                     WINBOOL *pbSupported) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDevicePreferredFormat(
-        PKSDATAFORMAT *ppKsFormat) = 0;
+                     PKSDATAFORMAT *ppKsFormat) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1945,26 +1945,26 @@ typedef struct IKsFormatSupportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKsFormatSupport *This,
-        REFIID riid,
-        void **ppvObject);
+                     IKsFormatSupport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKsFormatSupport *This);
+                     IKsFormatSupport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKsFormatSupport *This);
+                     IKsFormatSupport *This);
 
     /*** IKsFormatSupport methods ***/
     HRESULT (STDMETHODCALLTYPE *IsFormatSupported)(
-        IKsFormatSupport *This,
-        PKSDATAFORMAT pKsFormat,
-        DWORD cbFormat,
-        WINBOOL *pbSupported);
+                     IKsFormatSupport *This,
+                     PKSDATAFORMAT pKsFormat,
+                     DWORD cbFormat,
+                     WINBOOL *pbSupported);
 
     HRESULT (STDMETHODCALLTYPE *GetDevicePreferredFormat)(
-        IKsFormatSupport *This,
-        PKSDATAFORMAT *ppKsFormat);
+                     IKsFormatSupport *This,
+                     PKSDATAFORMAT *ppKsFormat);
 
     END_INTERFACE
 } IKsFormatSupportVtbl;
@@ -2020,11 +2020,11 @@ MIDL_INTERFACE("4509f757-2d46-4637-8e62-ce7db944f57b")
 IKsJackDescription : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetJackCount(
-        UINT *pcJacks) = 0;
+                     UINT *pcJacks) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetJackDescription(
-        UINT nJack,
-        KSJACK_DESCRIPTION *pDescription) = 0;
+                     UINT nJack,
+                     KSJACK_DESCRIPTION *pDescription) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2036,25 +2036,25 @@ typedef struct IKsJackDescriptionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKsJackDescription *This,
-        REFIID riid,
-        void **ppvObject);
+                     IKsJackDescription *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKsJackDescription *This);
+                     IKsJackDescription *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKsJackDescription *This);
+                     IKsJackDescription *This);
 
     /*** IKsJackDescription methods ***/
     HRESULT (STDMETHODCALLTYPE *GetJackCount)(
-        IKsJackDescription *This,
-        UINT *pcJacks);
+                     IKsJackDescription *This,
+                     UINT *pcJacks);
 
     HRESULT (STDMETHODCALLTYPE *GetJackDescription)(
-        IKsJackDescription *This,
-        UINT nJack,
-        KSJACK_DESCRIPTION *pDescription);
+                     IKsJackDescription *This,
+                     UINT nJack,
+                     KSJACK_DESCRIPTION *pDescription);
 
     END_INTERFACE
 } IKsJackDescriptionVtbl;
@@ -2110,11 +2110,11 @@ MIDL_INTERFACE("478f3a9b-e0c9-4827-9228-6f5505ffe76a")
 IKsJackDescription2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetJackCount(
-        UINT *pcJacks) = 0;
+                     UINT *pcJacks) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetJackDescription2(
-        UINT nJack,
-        KSJACK_DESCRIPTION2 *pDescription2) = 0;
+                     UINT nJack,
+                     KSJACK_DESCRIPTION2 *pDescription2) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2126,25 +2126,25 @@ typedef struct IKsJackDescription2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKsJackDescription2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IKsJackDescription2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKsJackDescription2 *This);
+                     IKsJackDescription2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKsJackDescription2 *This);
+                     IKsJackDescription2 *This);
 
     /*** IKsJackDescription2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetJackCount)(
-        IKsJackDescription2 *This,
-        UINT *pcJacks);
+                     IKsJackDescription2 *This,
+                     UINT *pcJacks);
 
     HRESULT (STDMETHODCALLTYPE *GetJackDescription2)(
-        IKsJackDescription2 *This,
-        UINT nJack,
-        KSJACK_DESCRIPTION2 *pDescription2);
+                     IKsJackDescription2 *This,
+                     UINT nJack,
+                     KSJACK_DESCRIPTION2 *pDescription2);
 
     END_INTERFACE
 } IKsJackDescription2Vtbl;
@@ -2200,7 +2200,7 @@ MIDL_INTERFACE("d9bd72ed-290f-4581-9ff3-61027a8fe532")
 IKsJackSinkInformation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetJackSinkInformation(
-        KSJACK_SINK_INFORMATION *pJackSinkInformation) = 0;
+                     KSJACK_SINK_INFORMATION *pJackSinkInformation) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2212,20 +2212,20 @@ typedef struct IKsJackSinkInformationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IKsJackSinkInformation *This,
-        REFIID riid,
-        void **ppvObject);
+                     IKsJackSinkInformation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IKsJackSinkInformation *This);
+                     IKsJackSinkInformation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IKsJackSinkInformation *This);
+                     IKsJackSinkInformation *This);
 
     /*** IKsJackSinkInformation methods ***/
     HRESULT (STDMETHODCALLTYPE *GetJackSinkInformation)(
-        IKsJackSinkInformation *This,
-        KSJACK_SINK_INFORMATION *pJackSinkInformation);
+                     IKsJackSinkInformation *This,
+                     KSJACK_SINK_INFORMATION *pJackSinkInformation);
 
     END_INTERFACE
 } IKsJackSinkInformationVtbl;
@@ -2277,11 +2277,11 @@ MIDL_INTERFACE("6daa848c-5eb0-45cc-aea5-998a2cda1ffb")
 IPartsList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT *pCount) = 0;
+                     UINT *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPart(
-        UINT nIndex,
-        IPart **ppPart) = 0;
+                     UINT nIndex,
+                     IPart **ppPart) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2293,25 +2293,25 @@ typedef struct IPartsListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPartsList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPartsList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPartsList *This);
+                     IPartsList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPartsList *This);
+                     IPartsList *This);
 
     /*** IPartsList methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IPartsList *This,
-        UINT *pCount);
+                     IPartsList *This,
+                     UINT *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetPart)(
-        IPartsList *This,
-        UINT nIndex,
-        IPart **ppPart);
+                     IPartsList *This,
+                     UINT nIndex,
+                     IPart **ppPart);
 
     END_INTERFACE
 } IPartsListVtbl;
@@ -2367,47 +2367,47 @@ MIDL_INTERFACE("ae2de0e4-5bca-4f2d-aa46-5d13f8fdb3a9")
 IPart : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        LPWSTR *ppwstrName) = 0;
+                     LPWSTR *ppwstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocalId(
-        UINT *pnId) = 0;
+                     UINT *pnId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlobalId(
-        LPWSTR *ppwstrGlobalId) = 0;
+                     LPWSTR *ppwstrGlobalId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPartType(
-        PartType *pPartType) = 0;
+                     PartType *pPartType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubType(
-        GUID *pSubType) = 0;
+                     GUID *pSubType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetControlInterfaceCount(
-        UINT *pCount) = 0;
+                     UINT *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetControlInterface(
-        UINT nIndex,
-        IControlInterface **ppInterfaceDesc) = 0;
+                     UINT nIndex,
+                     IControlInterface **ppInterfaceDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumPartsIncoming(
-        IPartsList **ppParts) = 0;
+                     IPartsList **ppParts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumPartsOutgoing(
-        IPartsList **ppParts) = 0;
+                     IPartsList **ppParts) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTopologyObjects(
-        IDeviceTopology **ppTopology) = 0;
+                     IDeviceTopology **ppTopology) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Activate(
-        DWORD dwClsContext,
-        REFIID refiid,
-        void **ppvObject) = 0;
+                     DWORD dwClsContext,
+                     REFIID refiid,
+                     void **ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterControlChangeCallback(
-        REFGUID riid,
-        IControlChangeNotify *pNotify) = 0;
+                     REFGUID riid,
+                     IControlChangeNotify *pNotify) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterControlChangeCallback(
-        IControlChangeNotify *pNotify) = 0;
+                     IControlChangeNotify *pNotify) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2419,72 +2419,72 @@ typedef struct IPartVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPart *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPart *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPart *This);
+                     IPart *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPart *This);
+                     IPart *This);
 
     /*** IPart methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IPart *This,
-        LPWSTR *ppwstrName);
+                     IPart *This,
+                     LPWSTR *ppwstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetLocalId)(
-        IPart *This,
-        UINT *pnId);
+                     IPart *This,
+                     UINT *pnId);
 
     HRESULT (STDMETHODCALLTYPE *GetGlobalId)(
-        IPart *This,
-        LPWSTR *ppwstrGlobalId);
+                     IPart *This,
+                     LPWSTR *ppwstrGlobalId);
 
     HRESULT (STDMETHODCALLTYPE *GetPartType)(
-        IPart *This,
-        PartType *pPartType);
+                     IPart *This,
+                     PartType *pPartType);
 
     HRESULT (STDMETHODCALLTYPE *GetSubType)(
-        IPart *This,
-        GUID *pSubType);
+                     IPart *This,
+                     GUID *pSubType);
 
     HRESULT (STDMETHODCALLTYPE *GetControlInterfaceCount)(
-        IPart *This,
-        UINT *pCount);
+                     IPart *This,
+                     UINT *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetControlInterface)(
-        IPart *This,
-        UINT nIndex,
-        IControlInterface **ppInterfaceDesc);
+                     IPart *This,
+                     UINT nIndex,
+                     IControlInterface **ppInterfaceDesc);
 
     HRESULT (STDMETHODCALLTYPE *EnumPartsIncoming)(
-        IPart *This,
-        IPartsList **ppParts);
+                     IPart *This,
+                     IPartsList **ppParts);
 
     HRESULT (STDMETHODCALLTYPE *EnumPartsOutgoing)(
-        IPart *This,
-        IPartsList **ppParts);
+                     IPart *This,
+                     IPartsList **ppParts);
 
     HRESULT (STDMETHODCALLTYPE *GetTopologyObjects)(
-        IPart *This,
-        IDeviceTopology **ppTopology);
+                     IPart *This,
+                     IDeviceTopology **ppTopology);
 
     HRESULT (STDMETHODCALLTYPE *Activate)(
-        IPart *This,
-        DWORD dwClsContext,
-        REFIID refiid,
-        void **ppvObject);
+                     IPart *This,
+                     DWORD dwClsContext,
+                     REFIID refiid,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *RegisterControlChangeCallback)(
-        IPart *This,
-        REFGUID riid,
-        IControlChangeNotify *pNotify);
+                     IPart *This,
+                     REFGUID riid,
+                     IControlChangeNotify *pNotify);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterControlChangeCallback)(
-        IPart *This,
-        IControlChangeNotify *pNotify);
+                     IPart *This,
+                     IControlChangeNotify *pNotify);
 
     END_INTERFACE
 } IPartVtbl;
@@ -2584,28 +2584,28 @@ MIDL_INTERFACE("9c2c4058-23f5-41de-877a-df3af236a09e")
 IConnector : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetType(
-        ConnectorType *pType) = 0;
+                     ConnectorType *pType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDataFlow(
-        DataFlow *pFlow) = 0;
+                     DataFlow *pFlow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConnectTo(
-        IConnector *pConnectTo) = 0;
+                     IConnector *pConnectTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Disconnect(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsConnected(
-        WINBOOL *pbConnected) = 0;
+                     WINBOOL *pbConnected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectedTo(
-        IConnector **ppConTo) = 0;
+                     IConnector **ppConTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnectorIdConnectedTo(
-        LPWSTR *ppwstrConnectorId) = 0;
+                     LPWSTR *ppwstrConnectorId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceIdConnectedTo(
-        LPWSTR *ppwstrDeviceId) = 0;
+                     LPWSTR *ppwstrDeviceId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2617,47 +2617,47 @@ typedef struct IConnectorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IConnector *This,
-        REFIID riid,
-        void **ppvObject);
+                     IConnector *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IConnector *This);
+                     IConnector *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IConnector *This);
+                     IConnector *This);
 
     /*** IConnector methods ***/
     HRESULT (STDMETHODCALLTYPE *GetType)(
-        IConnector *This,
-        ConnectorType *pType);
+                     IConnector *This,
+                     ConnectorType *pType);
 
     HRESULT (STDMETHODCALLTYPE *GetDataFlow)(
-        IConnector *This,
-        DataFlow *pFlow);
+                     IConnector *This,
+                     DataFlow *pFlow);
 
     HRESULT (STDMETHODCALLTYPE *ConnectTo)(
-        IConnector *This,
-        IConnector *pConnectTo);
+                     IConnector *This,
+                     IConnector *pConnectTo);
 
     HRESULT (STDMETHODCALLTYPE *Disconnect)(
-        IConnector *This);
+                     IConnector *This);
 
     HRESULT (STDMETHODCALLTYPE *IsConnected)(
-        IConnector *This,
-        WINBOOL *pbConnected);
+                     IConnector *This,
+                     WINBOOL *pbConnected);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectedTo)(
-        IConnector *This,
-        IConnector **ppConTo);
+                     IConnector *This,
+                     IConnector **ppConTo);
 
     HRESULT (STDMETHODCALLTYPE *GetConnectorIdConnectedTo)(
-        IConnector *This,
-        LPWSTR *ppwstrConnectorId);
+                     IConnector *This,
+                     LPWSTR *ppwstrConnectorId);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceIdConnectedTo)(
-        IConnector *This,
-        LPWSTR *ppwstrDeviceId);
+                     IConnector *This,
+                     LPWSTR *ppwstrDeviceId);
 
     END_INTERFACE
 } IConnectorVtbl;
@@ -2746,15 +2746,15 @@ typedef struct ISubUnitVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISubUnit *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISubUnit *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISubUnit *This);
+                     ISubUnit *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISubUnit *This);
+                     ISubUnit *This);
 
     END_INTERFACE
 } ISubUnitVtbl;
@@ -2800,10 +2800,10 @@ MIDL_INTERFACE("45d37c3f-5140-444a-ae24-400789f3cbf3")
 IControlInterface : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        LPWSTR *ppwstrName) = 0;
+                     LPWSTR *ppwstrName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIID(
-        GUID *pIID) = 0;
+                     GUID *pIID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2815,24 +2815,24 @@ typedef struct IControlInterfaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IControlInterface *This,
-        REFIID riid,
-        void **ppvObject);
+                     IControlInterface *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IControlInterface *This);
+                     IControlInterface *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IControlInterface *This);
+                     IControlInterface *This);
 
     /*** IControlInterface methods ***/
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IControlInterface *This,
-        LPWSTR *ppwstrName);
+                     IControlInterface *This,
+                     LPWSTR *ppwstrName);
 
     HRESULT (STDMETHODCALLTYPE *GetIID)(
-        IControlInterface *This,
-        GUID *pIID);
+                     IControlInterface *This,
+                     GUID *pIID);
 
     END_INTERFACE
 } IControlInterfaceVtbl;
@@ -2888,8 +2888,8 @@ MIDL_INTERFACE("a09513ed-c709-4d21-bd7b-5f34c47f3947")
 IControlChangeNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnNotify(
-        DWORD dwSenderProcessId,
-        LPCGUID ppguidEventContext) = 0;
+                     DWORD dwSenderProcessId,
+                     LPCGUID ppguidEventContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2901,21 +2901,21 @@ typedef struct IControlChangeNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IControlChangeNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IControlChangeNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IControlChangeNotify *This);
+                     IControlChangeNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IControlChangeNotify *This);
+                     IControlChangeNotify *This);
 
     /*** IControlChangeNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *OnNotify)(
-        IControlChangeNotify *This,
-        DWORD dwSenderProcessId,
-        LPCGUID ppguidEventContext);
+                     IControlChangeNotify *This,
+                     DWORD dwSenderProcessId,
+                     LPCGUID ppguidEventContext);
 
     END_INTERFACE
 } IControlChangeNotifyVtbl;
@@ -2967,31 +2967,31 @@ MIDL_INTERFACE("2a07407e-6497-4a18-9787-32f79bd0d98f")
 IDeviceTopology : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetConnectorCount(
-        UINT *pCount) = 0;
+                     UINT *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConnector(
-        UINT nIndex,
-        IConnector **ppConnector) = 0;
+                     UINT nIndex,
+                     IConnector **ppConnector) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubunitCount(
-        UINT *pCount) = 0;
+                     UINT *pCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubunit(
-        UINT nIndex,
-        ISubUnit **ppConnector) = 0;
+                     UINT nIndex,
+                     ISubUnit **ppConnector) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPartById(
-        UINT nId,
-        IPart **ppPart) = 0;
+                     UINT nId,
+                     IPart **ppPart) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceId(
-        LPWSTR *ppwstrDeviceId) = 0;
+                     LPWSTR *ppwstrDeviceId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignalPath(
-        IPart *pIPartFrom,
-        IPart *pIPartTo,
-        WINBOOL bRejectMixedPaths,
-        IPartsList **ppParts) = 0;
+                     IPart *pIPartFrom,
+                     IPart *pIPartTo,
+                     WINBOOL bRejectMixedPaths,
+                     IPartsList **ppParts) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3003,50 +3003,50 @@ typedef struct IDeviceTopologyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDeviceTopology *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDeviceTopology *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDeviceTopology *This);
+                     IDeviceTopology *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDeviceTopology *This);
+                     IDeviceTopology *This);
 
     /*** IDeviceTopology methods ***/
     HRESULT (STDMETHODCALLTYPE *GetConnectorCount)(
-        IDeviceTopology *This,
-        UINT *pCount);
+                     IDeviceTopology *This,
+                     UINT *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetConnector)(
-        IDeviceTopology *This,
-        UINT nIndex,
-        IConnector **ppConnector);
+                     IDeviceTopology *This,
+                     UINT nIndex,
+                     IConnector **ppConnector);
 
     HRESULT (STDMETHODCALLTYPE *GetSubunitCount)(
-        IDeviceTopology *This,
-        UINT *pCount);
+                     IDeviceTopology *This,
+                     UINT *pCount);
 
     HRESULT (STDMETHODCALLTYPE *GetSubunit)(
-        IDeviceTopology *This,
-        UINT nIndex,
-        ISubUnit **ppConnector);
+                     IDeviceTopology *This,
+                     UINT nIndex,
+                     ISubUnit **ppConnector);
 
     HRESULT (STDMETHODCALLTYPE *GetPartById)(
-        IDeviceTopology *This,
-        UINT nId,
-        IPart **ppPart);
+                     IDeviceTopology *This,
+                     UINT nId,
+                     IPart **ppPart);
 
     HRESULT (STDMETHODCALLTYPE *GetDeviceId)(
-        IDeviceTopology *This,
-        LPWSTR *ppwstrDeviceId);
+                     IDeviceTopology *This,
+                     LPWSTR *ppwstrDeviceId);
 
     HRESULT (STDMETHODCALLTYPE *GetSignalPath)(
-        IDeviceTopology *This,
-        IPart *pIPartFrom,
-        IPart *pIPartTo,
-        WINBOOL bRejectMixedPaths,
-        IPartsList **ppParts);
+                     IDeviceTopology *This,
+                     IPart *pIPartFrom,
+                     IPart *pIPartTo,
+                     WINBOOL bRejectMixedPaths,
+                     IPartsList **ppParts);
 
     END_INTERFACE
 } IDeviceTopologyVtbl;

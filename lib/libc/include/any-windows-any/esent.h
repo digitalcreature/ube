@@ -777,8 +777,8 @@ typedef JET_API_PTR JET_LS;
 typedef JET_API_PTR JET_OSSNAPID;
 typedef const char *  JET_PCSTR; /*__nullterminated*/
 typedef const WCHAR * JET_PCWSTR;/*__nullterminated*/
-typedef char *  JET_PSTR;        /*__nullterminated*/
-typedef WCHAR * JET_PWSTR;       /*__nullterminated*/
+typedef char *  JET_PSTR;                     /*__nullterminated*/
+typedef WCHAR * JET_PWSTR;                    /*__nullterminated*/
 typedef JET_API_PTR JET_SESID;
 typedef JET_API_PTR JET_TABLEID;
 
@@ -812,8 +812,8 @@ typedef struct _JET_BKLOGTIME {
   __C89_NAMELESS union {
     char bFiller2;
     __C89_NAMELESS struct {
-      unsigned char fOSSnapshot  :1;
-      unsigned char fReserved  :7;
+                   unsigned char fOSSnapshot  :1;
+                   unsigned char fReserved  :7;
     };
   };
 } JET_BKLOGTIME;
@@ -956,7 +956,7 @@ typedef struct tagCONVERT_A {
   __C89_NAMELESS union {
     unsigned __LONG32 fFlags;
     __C89_NAMELESS struct {
-      unsigned __LONG32 fSchemaChangesOnly  :1;
+                   unsigned __LONG32 fSchemaChangesOnly  :1;
     };
   };
 } JET_CONVERT_A;
@@ -966,7 +966,7 @@ typedef struct tagCONVERT_W {
   __C89_NAMELESS union {
     unsigned __LONG32 fFlags;
     __C89_NAMELESS struct {
-      unsigned __LONG32 fSchemaChangesOnly  :1;
+                   unsigned __LONG32 fSchemaChangesOnly  :1;
     };
   };
 } JET_CONVERT_W;
@@ -1013,8 +1013,8 @@ typedef struct _JET_DBINFOUPGRADE {
   __C89_NAMELESS union {
     unsigned __LONG32 ulFlags;
     __C89_NAMELESS struct {
-      unsigned __LONG32 fUpgradable  :1;
-      unsigned __LONG32 fAlreadyUpgraded  :1;
+                   unsigned __LONG32 fUpgradable  :1;
+                   unsigned __LONG32 fAlreadyUpgraded  :1;
     };
   };
 } JET_DBINFOUPGRADE;
@@ -1031,12 +1031,12 @@ typedef struct _JET_ENUMCOLUMN {
   JET_ERR err;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      unsigned __LONG32 cEnumColumnValue;
-      JET_ENUMCOLUMNVALUE rgEnumColumnValue;
+                   unsigned __LONG32 cEnumColumnValue;
+                   JET_ENUMCOLUMNVALUE rgEnumColumnValue;
     };
     __C89_NAMELESS struct {
-      unsigned __LONG32 cbData;
-      void *pvData;
+                   unsigned __LONG32 cbData;
+                   void *pvData;
     };
   } DUMMYNIONNAME1;
 } JET_ENUMCOLUMN;

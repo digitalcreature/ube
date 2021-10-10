@@ -42,10 +42,10 @@ typedef struct _DMUS_EVENTHEADER DMUS_EVENTHEADER, *LPDMUS_EVENTHEADER;
 /* actual structure*/ 
 #include <pshpack4.h>
 struct _DMUS_EVENTHEADER {
-    DWORD           cbEvent;
-    DWORD           dwChannelGroup;
+    DWORD                        cbEvent;
+    DWORD                        dwChannelGroup;
     REFERENCE_TIME  rtDelta;
-    DWORD           dwFlags;
+    DWORD                        dwFlags;
 };
 #include <poppack.h>
 

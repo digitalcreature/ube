@@ -129,8 +129,8 @@ extern struct group *getgrnam (const char *__name);
 
 # ifdef __USE_GNU
 extern int getgrent_r (struct group *__restrict __resultbuf,
-		       char *__restrict __buffer, size_t __buflen,
-		       struct group **__restrict __result);
+		                    char *__restrict __buffer, size_t __buflen,
+		                    struct group **__restrict __result);
 # endif
 
 /* Search for an entry with a matching group ID.
@@ -138,17 +138,17 @@ extern int getgrent_r (struct group *__restrict __resultbuf,
    This function is a possible cancellation point and therefore not
    marked with __THROW.  */
 extern int getgrgid_r (__gid_t __gid, struct group *__restrict __resultbuf,
-		       char *__restrict __buffer, size_t __buflen,
-		       struct group **__restrict __result);
+		                    char *__restrict __buffer, size_t __buflen,
+		                    struct group **__restrict __result);
 
 /* Search for an entry with a matching group name.
 
    This function is a possible cancellation point and therefore not
    marked with __THROW.  */
 extern int getgrnam_r (const char *__restrict __name,
-		       struct group *__restrict __resultbuf,
-		       char *__restrict __buffer, size_t __buflen,
-		       struct group **__restrict __result);
+		                    struct group *__restrict __resultbuf,
+		                    char *__restrict __buffer, size_t __buflen,
+		                    struct group **__restrict __result);
 
 # ifdef	__USE_MISC
 /* Read a group entry from STREAM.  This function is not standardized

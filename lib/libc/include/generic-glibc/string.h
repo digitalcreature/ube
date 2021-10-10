@@ -52,7 +52,7 @@ extern void *memmove (void *__dest, const void *__src, size_t __n)
    or NULL if C was not found in the first N bytes of SRC.  */
 #if defined __USE_MISC || defined __USE_XOPEN || __GLIBC_USE (ISOC2X)
 extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
-		      int __c, size_t __n)
+		                   int __c, size_t __n)
     __THROW __nonnull ((1, 2)) __attr_access ((__write_only__, 1, 4));
 #endif /* Misc || X/Open.  */
 
@@ -69,9 +69,9 @@ extern int memcmp (const void *__s1, const void *__s2, size_t __n)
 extern "C++"
 {
 extern void *memchr (void *__s, int __c, size_t __n)
-      __THROW __asm ("memchr") __attribute_pure__ __nonnull ((1));
+                   __THROW __asm ("memchr") __attribute_pure__ __nonnull ((1));
 extern const void *memchr (const void *__s, int __c, size_t __n)
-      __THROW __asm ("memchr") __attribute_pure__ __nonnull ((1));
+                   __THROW __asm ("memchr") __attribute_pure__ __nonnull ((1));
 
 # ifdef __OPTIMIZE__
 __extern_always_inline void *
@@ -89,7 +89,7 @@ memchr (const void *__s, int __c, size_t __n) __THROW
 }
 #else
 extern void *memchr (const void *__s, int __c, size_t __n)
-      __THROW __attribute_pure__ __nonnull ((1));
+                   __THROW __attribute_pure__ __nonnull ((1));
 #endif
 
 #ifdef __USE_GNU
@@ -108,15 +108,15 @@ extern void *rawmemchr (const void *__s, int __c)
 /* Search N bytes of S for the final occurrence of C.  */
 # ifdef __CORRECT_ISO_CPP_STRING_H_PROTO
 extern "C++" void *memrchr (void *__s, int __c, size_t __n)
-      __THROW __asm ("memrchr") __attribute_pure__ __nonnull ((1))
-      __attr_access ((__read_only__, 1, 3));
+                   __THROW __asm ("memrchr") __attribute_pure__ __nonnull ((1))
+                   __attr_access ((__read_only__, 1, 3));
 extern "C++" const void *memrchr (const void *__s, int __c, size_t __n)
-      __THROW __asm ("memrchr") __attribute_pure__ __nonnull ((1))
-      __attr_access ((__read_only__, 1, 3));
+                   __THROW __asm ("memrchr") __attribute_pure__ __nonnull ((1))
+                   __attr_access ((__read_only__, 1, 3));
 # else
 extern void *memrchr (const void *__s, int __c, size_t __n)
-      __THROW __attribute_pure__ __nonnull ((1))
-      __attr_access ((__read_only__, 1, 3));
+                   __THROW __attribute_pure__ __nonnull ((1))
+                   __attr_access ((__read_only__, 1, 3));
 # endif
 #endif
 
@@ -126,7 +126,7 @@ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
      __THROW __nonnull ((1, 2));
 /* Copy no more than N characters of SRC to DEST.  */
 extern char *strncpy (char *__restrict __dest,
-		      const char *__restrict __src, size_t __n)
+		                   const char *__restrict __src, size_t __n)
      __THROW __nonnull ((1, 2));
 
 /* Append SRC onto DEST.  */
@@ -134,7 +134,7 @@ extern char *strcat (char *__restrict __dest, const char *__restrict __src)
      __THROW __nonnull ((1, 2));
 /* Append no more than N characters from SRC onto DEST.  */
 extern char *strncat (char *__restrict __dest, const char *__restrict __src,
-		      size_t __n) __THROW __nonnull ((1, 2));
+		                   size_t __n) __THROW __nonnull ((1, 2));
 
 /* Compare S1 and S2.  */
 extern int strcmp (const char *__s1, const char *__s2)
@@ -148,7 +148,7 @@ extern int strcoll (const char *__s1, const char *__s2)
      __THROW __attribute_pure__ __nonnull ((1, 2));
 /* Put a transformation of SRC into no more than N bytes of DEST.  */
 extern size_t strxfrm (char *__restrict __dest,
-		       const char *__restrict __src, size_t __n)
+		                    const char *__restrict __src, size_t __n)
     __THROW __nonnull ((2)) __attr_access ((__write_only__, 1, 3));
 
 #ifdef __USE_XOPEN2K8
@@ -182,24 +182,24 @@ extern char *strndup (const char *__string, size_t __n)
 
 #if defined __USE_GNU && defined __GNUC__
 /* Duplicate S, returning an identical alloca'd string.  */
-# define strdupa(s)							      \
-  (__extension__							      \
-    ({									      \
-      const char *__old = (s);						      \
-      size_t __len = strlen (__old) + 1;				      \
-      char *__new = (char *) __builtin_alloca (__len);			      \
-      (char *) memcpy (__new, __old, __len);				      \
+# define strdupa(s)							                   \
+  (__extension__							                   \
+    ({									                   \
+                   const char *__old = (s);						                   \
+                   size_t __len = strlen (__old) + 1;				                   \
+                   char *__new = (char *) __builtin_alloca (__len);			                   \
+                   (char *) memcpy (__new, __old, __len);				                   \
     }))
 
 /* Return an alloca'd copy of at most N bytes of string.  */
-# define strndupa(s, n)							      \
-  (__extension__							      \
-    ({									      \
-      const char *__old = (s);						      \
-      size_t __len = strnlen (__old, (n));				      \
-      char *__new = (char *) __builtin_alloca (__len + 1);		      \
-      __new[__len] = '\0';						      \
-      (char *) memcpy (__new, __old, __len);				      \
+# define strndupa(s, n)							                   \
+  (__extension__							                   \
+    ({									                   \
+                   const char *__old = (s);						                   \
+                   size_t __len = strnlen (__old, (n));				                   \
+                   char *__new = (char *) __builtin_alloca (__len + 1);		                   \
+                   __new[__len] = '\0';						                   \
+                   (char *) memcpy (__new, __old, __len);				                   \
     }))
 #endif
 
@@ -348,7 +348,7 @@ extern char *__strtok_r (char *__restrict __s,
      __THROW __nonnull ((2, 3));
 #ifdef __USE_POSIX
 extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
-		       char **__restrict __save_ptr)
+		                    char **__restrict __save_ptr)
      __THROW __nonnull ((2, 3));
 #endif
 
@@ -382,7 +382,7 @@ extern void *__mempcpy (void *__restrict __dest,
 			const void *__restrict __src, size_t __n)
      __THROW __nonnull ((1, 2));
 extern void *mempcpy (void *__restrict __dest,
-		      const void *__restrict __src, size_t __n)
+		                   const void *__restrict __src, size_t __n)
      __THROW __nonnull ((1, 2));
 #endif
 
@@ -481,7 +481,7 @@ extern char *__stpncpy (char *__restrict __dest,
 			const char *__restrict __src, size_t __n)
      __THROW __nonnull ((1, 2));
 extern char *stpncpy (char *__restrict __dest,
-		      const char *__restrict __src, size_t __n)
+		                   const char *__restrict __src, size_t __n)
      __THROW __nonnull ((1, 2));
 #endif
 

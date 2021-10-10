@@ -162,9 +162,9 @@ long _InterlockedAddLargeStatistic(__int64 volatile *_Addend, long _Value);
 unsigned char _interlockedbittestandreset(long volatile *, long);
 unsigned char _interlockedbittestandset(long volatile *, long);
 void *_InterlockedCompareExchangePointer_HLEAcquire(void *volatile *, void *,
-                                                    void *);
+                                                                                                                                                            void *);
 void *_InterlockedCompareExchangePointer_HLERelease(void *volatile *, void *,
-                                                    void *);
+                                                                                                                                                            void *);
 long _InterlockedExchangeAdd_HLEAcquire(long volatile *, long);
 long _InterlockedExchangeAdd_HLERelease(long volatile *, long);
 __int64 _InterlockedExchangeAdd64_HLEAcquire(__int64 volatile *, __int64);
@@ -213,11 +213,11 @@ static __inline__
 unsigned __int64 __readgsqword(unsigned long);
 unsigned short __readgsword(unsigned long);
 unsigned __int64 __shiftleft128(unsigned __int64 _LowPart,
-                                unsigned __int64 _HighPart,
-                                unsigned char _Shift);
+                                                                                                 unsigned __int64 _HighPart,
+                                                                                                 unsigned char _Shift);
 unsigned __int64 __shiftright128(unsigned __int64 _LowPart,
-                                 unsigned __int64 _HighPart,
-                                 unsigned char _Shift);
+                                                                                                  unsigned __int64 _HighPart,
+                                                                                                  unsigned char _Shift);
 static __inline__
 void __stosq(unsigned __int64 *, unsigned __int64, size_t);
 unsigned char __vmx_on(unsigned __int64 *);
@@ -242,21 +242,21 @@ char _InterlockedAnd8_np(char volatile *_Value, char _Mask);
 unsigned char _interlockedbittestandreset64(__int64 volatile *, __int64);
 unsigned char _interlockedbittestandset64(__int64 volatile *, __int64);
 long _InterlockedCompareExchange_np(long volatile *_Destination, long _Exchange,
-                                    long _Comparand);
+                                                                                                                  long _Comparand);
 unsigned char _InterlockedCompareExchange128(__int64 volatile *_Destination,
-                                             __int64 _ExchangeHigh,
-                                             __int64 _ExchangeLow,
-                                             __int64 *_CompareandResult);
+                                                                                                                                        __int64 _ExchangeHigh,
+                                                                                                                                        __int64 _ExchangeLow,
+                                                                                                                                        __int64 *_CompareandResult);
 unsigned char _InterlockedCompareExchange128_np(__int64 volatile *_Destination,
-                                                __int64 _ExchangeHigh,
-                                                __int64 _ExchangeLow,
-                                                __int64 *_ComparandResult);
+                                                                                                                                                        __int64 _ExchangeHigh,
+                                                                                                                                                        __int64 _ExchangeLow,
+                                                                                                                                                        __int64 *_ComparandResult);
 short _InterlockedCompareExchange16_np(short volatile *_Destination,
-                                       short _Exchange, short _Comparand);
+                                                                                                                     short _Exchange, short _Comparand);
 __int64 _InterlockedCompareExchange64_np(__int64 volatile *_Destination,
-                                         __int64 _Exchange, __int64 _Comparand);
+                                                                                                                       __int64 _Exchange, __int64 _Comparand);
 void *_InterlockedCompareExchangePointer_np(void *volatile *_Destination,
-                                            void *_Exchange, void *_Comparand);
+                                                                                                                                       void *_Exchange, void *_Comparand);
 long _InterlockedOr_np(long volatile *_Value, long _Mask);
 short _InterlockedOr16_np(short volatile *_Value, short _Mask);
 __int64 _InterlockedOr64_np(__int64 volatile *_Value, __int64 _Mask);
@@ -277,8 +277,8 @@ static __inline__
 __int64 _mul128(__int64, __int64, __int64*);
 static __inline__
 unsigned __int64 _umul128(unsigned __int64,
-                          unsigned __int64,
-                          unsigned __int64*);
+                                                                              unsigned __int64,
+                                                                              unsigned __int64*);
 
 #endif /* __x86_64__ */
 
@@ -378,17 +378,17 @@ __int64 _InterlockedAnd64_rel(__int64 volatile *_Value, __int64 _Mask);
 \*----------------------------------------------------------------------------*/
 #if defined(__arm__) || defined(__aarch64__)
 unsigned char _interlockedbittestandset_acq(long volatile *_BitBase,
-                                            long _BitPos);
+                                                                                                                                       long _BitPos);
 unsigned char _interlockedbittestandset_nf(long volatile *_BitBase,
-                                           long _BitPos);
+                                                                                                                                      long _BitPos);
 unsigned char _interlockedbittestandset_rel(long volatile *_BitBase,
-                                            long _BitPos);
+                                                                                                                                       long _BitPos);
 unsigned char _interlockedbittestandreset_acq(long volatile *_BitBase,
-                                              long _BitPos);
+                                                                                                                                         long _BitPos);
 unsigned char _interlockedbittestandreset_nf(long volatile *_BitBase,
-                                             long _BitPos);
+                                                                                                                                        long _BitPos);
 unsigned char _interlockedbittestandreset_rel(long volatile *_BitBase,
-                                              long _BitPos);
+                                                                                                                                         long _BitPos);
 #endif
 /*----------------------------------------------------------------------------*\
 |* Interlocked Or
@@ -446,29 +446,29 @@ __int64 _InterlockedExchange64_rel(__int64 volatile *_Target, __int64 _Value);
 \*----------------------------------------------------------------------------*/
 #if defined(__arm__) || defined(__aarch64__)
 char _InterlockedCompareExchange8_acq(char volatile *_Destination,
-                             char _Exchange, char _Comparand);
+                                                                                 char _Exchange, char _Comparand);
 char _InterlockedCompareExchange8_nf(char volatile *_Destination,
-                             char _Exchange, char _Comparand);
+                                                                                 char _Exchange, char _Comparand);
 char _InterlockedCompareExchange8_rel(char volatile *_Destination,
-                             char _Exchange, char _Comparand);
+                                                                                 char _Exchange, char _Comparand);
 short _InterlockedCompareExchange16_acq(short volatile *_Destination,
-                              short _Exchange, short _Comparand);
+                                                                                               short _Exchange, short _Comparand);
 short _InterlockedCompareExchange16_nf(short volatile *_Destination,
-                              short _Exchange, short _Comparand);
+                                                                                               short _Exchange, short _Comparand);
 short _InterlockedCompareExchange16_rel(short volatile *_Destination,
-                              short _Exchange, short _Comparand);
+                                                                                               short _Exchange, short _Comparand);
 long _InterlockedCompareExchange_acq(long volatile *_Destination,
-                              long _Exchange, long _Comparand);
+                                                                                               long _Exchange, long _Comparand);
 long _InterlockedCompareExchange_nf(long volatile *_Destination,
-                              long _Exchange, long _Comparand);
+                                                                                               long _Exchange, long _Comparand);
 long _InterlockedCompareExchange_rel(long volatile *_Destination,
-                              long _Exchange, long _Comparand);
+                                                                                               long _Exchange, long _Comparand);
 __int64 _InterlockedCompareExchange64_acq(__int64 volatile *_Destination,
-                              __int64 _Exchange, __int64 _Comparand);
+                                                                                               __int64 _Exchange, __int64 _Comparand);
 __int64 _InterlockedCompareExchange64_nf(__int64 volatile *_Destination,
-                              __int64 _Exchange, __int64 _Comparand);
+                                                                                               __int64 _Exchange, __int64 _Comparand);
 __int64 _InterlockedCompareExchange64_rel(__int64 volatile *_Destination,
-                              __int64 _Exchange, __int64 _Comparand);
+                                                                                               __int64 _Exchange, __int64 _Comparand);
 #endif
 
 /*----------------------------------------------------------------------------*\
@@ -478,39 +478,39 @@ __int64 _InterlockedCompareExchange64_rel(__int64 volatile *_Destination,
 static __inline__ void __DEFAULT_FN_ATTRS
 __movsb(unsigned char *__dst, unsigned char const *__src, size_t __n) {
   __asm__ __volatile__("rep movsb" : "+D"(__dst), "+S"(__src), "+c"(__n)
-                       : : "memory");
+                                                              : : "memory");
 }
 static __inline__ void __DEFAULT_FN_ATTRS
 __movsd(unsigned long *__dst, unsigned long const *__src, size_t __n) {
   __asm__ __volatile__("rep movsl" : "+D"(__dst), "+S"(__src), "+c"(__n)
-                       : : "memory");
+                                                              : : "memory");
 }
 static __inline__ void __DEFAULT_FN_ATTRS
 __movsw(unsigned short *__dst, unsigned short const *__src, size_t __n) {
   __asm__ __volatile__("rep movsw" : "+D"(__dst), "+S"(__src), "+c"(__n)
-                       : : "memory");
+                                                              : : "memory");
 }
 static __inline__ void __DEFAULT_FN_ATTRS
 __stosd(unsigned long *__dst, unsigned long __x, size_t __n) {
   __asm__ __volatile__("rep stosl" : "+D"(__dst), "+c"(__n) : "a"(__x)
-                       : "memory");
+                                                              : "memory");
 }
 static __inline__ void __DEFAULT_FN_ATTRS
 __stosw(unsigned short *__dst, unsigned short __x, size_t __n) {
   __asm__ __volatile__("rep stosw" : "+D"(__dst), "+c"(__n) : "a"(__x)
-                       : "memory");
+                                                              : "memory");
 }
 #endif
 #ifdef __x86_64__
 static __inline__ void __DEFAULT_FN_ATTRS
 __movsq(unsigned long long *__dst, unsigned long long const *__src, size_t __n) {
   __asm__ __volatile__("rep movsq" : "+D"(__dst), "+S"(__src), "+c"(__n)
-                       : : "memory");
+                                                              : : "memory");
 }
 static __inline__ void __DEFAULT_FN_ATTRS
 __stosq(unsigned __int64 *__dst, unsigned __int64 __x, size_t __n) {
   __asm__ __volatile__("rep stosq" : "+D"(__dst), "+c"(__n) : "a"(__x)
-                       : "memory");
+                                                              : "memory");
 }
 #endif
 
@@ -521,12 +521,12 @@ __stosq(unsigned __int64 *__dst, unsigned __int64 __x, size_t __n) {
 static __inline__ void __DEFAULT_FN_ATTRS
 __cpuid(int __info[4], int __level) {
   __asm__ ("cpuid" : "=a"(__info[0]), "=b" (__info[1]), "=c"(__info[2]), "=d"(__info[3])
-                   : "a"(__level), "c"(0));
+                                                          : "a"(__level), "c"(0));
 }
 static __inline__ void __DEFAULT_FN_ATTRS
 __cpuidex(int __info[4], int __level, int __ecx) {
   __asm__ ("cpuid" : "=a"(__info[0]), "=b" (__info[1]), "=c"(__info[2]), "=d"(__info[3])
-                   : "a"(__level), "c"(__ecx));
+                                                          : "a"(__level), "c"(__ecx));
 }
 static __inline__ void __DEFAULT_FN_ATTRS
 __halt(void) {

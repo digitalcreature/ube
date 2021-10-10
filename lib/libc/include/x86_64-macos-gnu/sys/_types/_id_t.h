@@ -28,5 +28,5 @@
 #ifndef _ID_T
 #define _ID_T
 #include <sys/_types.h> /* __darwin_id_t */
-typedef __darwin_id_t   id_t;           /* can hold pid_t, gid_t, or uid_t */
+typedef __darwin_id_t   id_t;                        /* can hold pid_t, gid_t, or uid_t */
 #endif /* _ID_T */

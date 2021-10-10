@@ -697,7 +697,7 @@ typedef struct _SYMSRV_INDEX_INFOW {
   WINBOOL IMAGEAPI EnumerateLoadedModulesW64(HANDLE hProcess,PENUMLOADED_MODULES_CALLBACKW64 EnumLoadedModulesCallback,PVOID UserContext);
 
 #ifdef DBGHELP_TRANSLATE_TCHAR
-    #define EnumerateLoadedModules64      EnumerateLoadedModulesW64
+    #define EnumerateLoadedModules64                   EnumerateLoadedModulesW64
 #endif
 
 #ifdef _IMAGEHLP64
@@ -1100,8 +1100,8 @@ typedef struct _SYMSRV_INDEX_INFOW {
     RVA StreamDirectoryRva;
     ULONG32 CheckSum;
     __C89_NAMELESS union {
-      ULONG32 Reserved;
-      ULONG32 TimeDateStamp;
+                   ULONG32 Reserved;
+                   ULONG32 TimeDateStamp;
     };
     ULONG64 Flags;
   } MINIDUMP_HEADER,*PMINIDUMP_HEADER;
@@ -1155,13 +1155,13 @@ typedef struct _SYMSRV_INDEX_INFOW {
 
   typedef union _CPU_INFORMATION {
     struct {
-      ULONG32 VendorId[3];
-      ULONG32 VersionInformation;
-      ULONG32 FeatureInformation;
-      ULONG32 AMDExtendedCpuFeatures;
+                   ULONG32 VendorId[3];
+                   ULONG32 VersionInformation;
+                   ULONG32 FeatureInformation;
+                   ULONG32 AMDExtendedCpuFeatures;
     } X86CpuInfo;
     struct {
-      ULONG64 ProcessorFeatures[2];
+                   ULONG64 ProcessorFeatures[2];
     } OtherCpuInfo;
   } CPU_INFORMATION,*PCPU_INFORMATION;
 
@@ -1170,11 +1170,11 @@ typedef struct _SYMSRV_INDEX_INFOW {
     USHORT ProcessorLevel;
     USHORT ProcessorRevision;
     __C89_NAMELESS union {
-      USHORT Reserved0;
-      __C89_NAMELESS struct {
+                   USHORT Reserved0;
+                   __C89_NAMELESS struct {
 	UCHAR NumberOfProcessors;
 	UCHAR ProductType;
-      };
+                   };
     };
     ULONG32 MajorVersion;
     ULONG32 MinorVersion;
@@ -1182,11 +1182,11 @@ typedef struct _SYMSRV_INDEX_INFOW {
     ULONG32 PlatformId;
     RVA CSDVersionRva;
     __C89_NAMELESS union {
-      ULONG32 Reserved1;
-      __C89_NAMELESS struct {
+                   ULONG32 Reserved1;
+                   __C89_NAMELESS struct {
 	USHORT SuiteMask;
 	USHORT Reserved2;
-      };
+                   };
     };
     CPU_INFORMATION Cpu;
   } MINIDUMP_SYSTEM_INFO,*PMINIDUMP_SYSTEM_INFO;
@@ -1404,13 +1404,13 @@ typedef struct _SYMSRV_INDEX_INFOW {
   } MINIDUMP_INCLUDE_THREAD_CALLBACK,*PMINIDUMP_INCLUDE_THREAD_CALLBACK;
 
   typedef enum _THREAD_WRITE_FLAGS {
-    ThreadWriteThread              = 0x0001,
-    ThreadWriteStack               = 0x0002,
-    ThreadWriteContext             = 0x0004,
-    ThreadWriteBackingStore        = 0x0008,
+    ThreadWriteThread                                        = 0x0001,
+    ThreadWriteStack                                         = 0x0002,
+    ThreadWriteContext                                       = 0x0004,
+    ThreadWriteBackingStore                     = 0x0008,
     ThreadWriteInstructionWindow   = 0x0010,
-    ThreadWriteThreadData          = 0x0020,
-    ThreadWriteThreadInfo          = 0x0040
+    ThreadWriteThreadData                       = 0x0020,
+    ThreadWriteThreadInfo                       = 0x0040
   } THREAD_WRITE_FLAGS;
 
   typedef struct _MINIDUMP_MODULE_CALLBACK {
@@ -1431,13 +1431,13 @@ typedef struct _SYMSRV_INDEX_INFOW {
   } MINIDUMP_INCLUDE_MODULE_CALLBACK,*PMINIDUMP_INCLUDE_MODULE_CALLBACK;
 
   typedef enum _MODULE_WRITE_FLAGS {
-    ModuleWriteModule          = 0x0001,
-    ModuleWriteDataSeg         = 0x0002,
-    ModuleWriteMiscRecord      = 0x0004,
-    ModuleWriteCvRecord        = 0x0008,
+    ModuleWriteModule                       = 0x0001,
+    ModuleWriteDataSeg                      = 0x0002,
+    ModuleWriteMiscRecord                   = 0x0004,
+    ModuleWriteCvRecord                     = 0x0008,
     ModuleReferencedByMemory   = 0x0010,
-    ModuleWriteTlsData         = 0x0020,
-    ModuleWriteCodeSegs        = 0x0040
+    ModuleWriteTlsData                      = 0x0020,
+    ModuleWriteCodeSegs                     = 0x0040
   } MODULE_WRITE_FLAGS;
 
   typedef enum _MINIDUMP_SECONDARY_FLAGS {
@@ -1449,11 +1449,11 @@ typedef struct _SYMSRV_INDEX_INFOW {
     HANDLE ProcessHandle;
     ULONG CallbackType;
     __C89_NAMELESS union {
-      MINIDUMP_THREAD_CALLBACK Thread;
-      MINIDUMP_THREAD_EX_CALLBACK ThreadEx;
-      MINIDUMP_MODULE_CALLBACK Module;
-      MINIDUMP_INCLUDE_THREAD_CALLBACK IncludeThread;
-      MINIDUMP_INCLUDE_MODULE_CALLBACK IncludeModule;
+                   MINIDUMP_THREAD_CALLBACK Thread;
+                   MINIDUMP_THREAD_EX_CALLBACK ThreadEx;
+                   MINIDUMP_MODULE_CALLBACK Module;
+                   MINIDUMP_INCLUDE_THREAD_CALLBACK IncludeThread;
+                   MINIDUMP_INCLUDE_MODULE_CALLBACK IncludeModule;
     };
   } MINIDUMP_CALLBACK_INPUT,*PMINIDUMP_CALLBACK_INPUT;
 
@@ -1491,47 +1491,47 @@ typedef struct _MINIDUMP_MEMORY_INFO_LIST {
 
   typedef struct _MINIDUMP_CALLBACK_OUTPUT {
     __C89_NAMELESS union {
-      ULONG ModuleWriteFlags;
-      ULONG ThreadWriteFlags;
-      ULONG SecondaryFlags;
-      __C89_NAMELESS struct {
+                   ULONG ModuleWriteFlags;
+                   ULONG ThreadWriteFlags;
+                   ULONG SecondaryFlags;
+                   __C89_NAMELESS struct {
 	ULONG64 MemoryBase;
 	ULONG MemorySize;
-      };
-      __C89_NAMELESS struct {
+                   };
+                   __C89_NAMELESS struct {
 	WINBOOL CheckCancel;
 	WINBOOL Cancel;
-      };
-      HANDLE Handle;
+                   };
+                   HANDLE Handle;
     };
     __C89_NAMELESS struct {
-      MINIDUMP_MEMORY_INFO VmRegion;
-      WINBOOL Continue;
+                   MINIDUMP_MEMORY_INFO VmRegion;
+                   WINBOOL Continue;
     };
     HRESULT Status;
   } MINIDUMP_CALLBACK_OUTPUT, *PMINIDUMP_CALLBACK_OUTPUT;
 
   typedef enum _MINIDUMP_TYPE {
-    MiniDumpNormal                           = 0x00000000,
-    MiniDumpWithDataSegs                     = 0x00000001,
-    MiniDumpWithFullMemory                   = 0x00000002,
-    MiniDumpWithHandleData                   = 0x00000004,
-    MiniDumpFilterMemory                     = 0x00000008,
-    MiniDumpScanMemory                       = 0x00000010,
-    MiniDumpWithUnloadedModules              = 0x00000020,
+    MiniDumpNormal                                                                               = 0x00000000,
+    MiniDumpWithDataSegs                                                            = 0x00000001,
+    MiniDumpWithFullMemory                                                          = 0x00000002,
+    MiniDumpWithHandleData                                                          = 0x00000004,
+    MiniDumpFilterMemory                                                            = 0x00000008,
+    MiniDumpScanMemory                                                              = 0x00000010,
+    MiniDumpWithUnloadedModules                                        = 0x00000020,
     MiniDumpWithIndirectlyReferencedMemory   = 0x00000040,
-    MiniDumpFilterModulePaths                = 0x00000080,
-    MiniDumpWithProcessThreadData            = 0x00000100,
-    MiniDumpWithPrivateReadWriteMemory       = 0x00000200,
-    MiniDumpWithoutOptionalData              = 0x00000400,
-    MiniDumpWithFullMemoryInfo               = 0x00000800,
-    MiniDumpWithThreadInfo                   = 0x00001000,
-    MiniDumpWithCodeSegs                     = 0x00002000,
-    MiniDumpWithoutAuxiliaryState            = 0x00004000,
-    MiniDumpWithFullAuxiliaryState           = 0x00008000,
-    MiniDumpWithPrivateWriteCopyMemory       = 0x00010000,
-    MiniDumpIgnoreInaccessibleMemory         = 0x00020000,
-    MiniDumpWithTokenInformation             = 0x00040000
+    MiniDumpFilterModulePaths                                          = 0x00000080,
+    MiniDumpWithProcessThreadData                                      = 0x00000100,
+    MiniDumpWithPrivateReadWriteMemory                    = 0x00000200,
+    MiniDumpWithoutOptionalData                                        = 0x00000400,
+    MiniDumpWithFullMemoryInfo                                         = 0x00000800,
+    MiniDumpWithThreadInfo                                                          = 0x00001000,
+    MiniDumpWithCodeSegs                                                            = 0x00002000,
+    MiniDumpWithoutAuxiliaryState                                      = 0x00004000,
+    MiniDumpWithFullAuxiliaryState                        = 0x00008000,
+    MiniDumpWithPrivateWriteCopyMemory                    = 0x00010000,
+    MiniDumpIgnoreInaccessibleMemory                      = 0x00020000,
+    MiniDumpWithTokenInformation                                       = 0x00040000
   } MINIDUMP_TYPE;
 
 #define MINIDUMP_THREAD_INFO_ERROR_THREAD    0x00000001

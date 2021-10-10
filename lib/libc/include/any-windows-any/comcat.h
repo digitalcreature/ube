@@ -155,18 +155,18 @@ MIDL_INTERFACE("0002e000-0000-0000-c000-000000000046")
 IEnumGUID : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        GUID *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     GUID *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumGUID **ppenum) = 0;
+                     IEnumGUID **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -178,33 +178,33 @@ typedef struct IEnumGUIDVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumGUID *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumGUID *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumGUID *This);
+                     IEnumGUID *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumGUID *This);
+                     IEnumGUID *This);
 
     /*** IEnumGUID methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumGUID *This,
-        ULONG celt,
-        GUID *rgelt,
-        ULONG *pceltFetched);
+                     IEnumGUID *This,
+                     ULONG celt,
+                     GUID *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumGUID *This,
-        ULONG celt);
+                     IEnumGUID *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumGUID *This);
+                     IEnumGUID *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumGUID *This,
-        IEnumGUID **ppenum);
+                     IEnumGUID *This,
+                     IEnumGUID **ppenum);
 
     END_INTERFACE
 } IEnumGUIDVtbl;
@@ -303,18 +303,18 @@ MIDL_INTERFACE("0002e011-0000-0000-c000-000000000046")
 IEnumCATEGORYINFO : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        CATEGORYINFO *rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     CATEGORYINFO *rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumCATEGORYINFO **ppenum) = 0;
+                     IEnumCATEGORYINFO **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -326,33 +326,33 @@ typedef struct IEnumCATEGORYINFOVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumCATEGORYINFO *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumCATEGORYINFO *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumCATEGORYINFO *This);
+                     IEnumCATEGORYINFO *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumCATEGORYINFO *This);
+                     IEnumCATEGORYINFO *This);
 
     /*** IEnumCATEGORYINFO methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumCATEGORYINFO *This,
-        ULONG celt,
-        CATEGORYINFO *rgelt,
-        ULONG *pceltFetched);
+                     IEnumCATEGORYINFO *This,
+                     ULONG celt,
+                     CATEGORYINFO *rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumCATEGORYINFO *This,
-        ULONG celt);
+                     IEnumCATEGORYINFO *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumCATEGORYINFO *This);
+                     IEnumCATEGORYINFO *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumCATEGORYINFO *This,
-        IEnumCATEGORYINFO **ppenum);
+                     IEnumCATEGORYINFO *This,
+                     IEnumCATEGORYINFO **ppenum);
 
     END_INTERFACE
 } IEnumCATEGORYINFOVtbl;
@@ -422,32 +422,32 @@ MIDL_INTERFACE("0002e012-0000-0000-c000-000000000046")
 ICatRegister : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE RegisterCategories(
-        ULONG cCategories,
-        CATEGORYINFO rgCategoryInfo[]) = 0;
+                     ULONG cCategories,
+                     CATEGORYINFO rgCategoryInfo[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnRegisterCategories(
-        ULONG cCategories,
-        CATID rgcatid[]) = 0;
+                     ULONG cCategories,
+                     CATID rgcatid[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterClassImplCategories(
-        REFCLSID rclsid,
-        ULONG cCategories,
-        CATID rgcatid[]) = 0;
+                     REFCLSID rclsid,
+                     ULONG cCategories,
+                     CATID rgcatid[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnRegisterClassImplCategories(
-        REFCLSID rclsid,
-        ULONG cCategories,
-        CATID rgcatid[]) = 0;
+                     REFCLSID rclsid,
+                     ULONG cCategories,
+                     CATID rgcatid[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterClassReqCategories(
-        REFCLSID rclsid,
-        ULONG cCategories,
-        CATID rgcatid[]) = 0;
+                     REFCLSID rclsid,
+                     ULONG cCategories,
+                     CATID rgcatid[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnRegisterClassReqCategories(
-        REFCLSID rclsid,
-        ULONG cCategories,
-        CATID rgcatid[]) = 0;
+                     REFCLSID rclsid,
+                     ULONG cCategories,
+                     CATID rgcatid[]) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -459,50 +459,50 @@ typedef struct ICatRegisterVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICatRegister *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICatRegister *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICatRegister *This);
+                     ICatRegister *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICatRegister *This);
+                     ICatRegister *This);
 
     /*** ICatRegister methods ***/
     HRESULT (STDMETHODCALLTYPE *RegisterCategories)(
-        ICatRegister *This,
-        ULONG cCategories,
-        CATEGORYINFO rgCategoryInfo[]);
+                     ICatRegister *This,
+                     ULONG cCategories,
+                     CATEGORYINFO rgCategoryInfo[]);
 
     HRESULT (STDMETHODCALLTYPE *UnRegisterCategories)(
-        ICatRegister *This,
-        ULONG cCategories,
-        CATID rgcatid[]);
+                     ICatRegister *This,
+                     ULONG cCategories,
+                     CATID rgcatid[]);
 
     HRESULT (STDMETHODCALLTYPE *RegisterClassImplCategories)(
-        ICatRegister *This,
-        REFCLSID rclsid,
-        ULONG cCategories,
-        CATID rgcatid[]);
+                     ICatRegister *This,
+                     REFCLSID rclsid,
+                     ULONG cCategories,
+                     CATID rgcatid[]);
 
     HRESULT (STDMETHODCALLTYPE *UnRegisterClassImplCategories)(
-        ICatRegister *This,
-        REFCLSID rclsid,
-        ULONG cCategories,
-        CATID rgcatid[]);
+                     ICatRegister *This,
+                     REFCLSID rclsid,
+                     ULONG cCategories,
+                     CATID rgcatid[]);
 
     HRESULT (STDMETHODCALLTYPE *RegisterClassReqCategories)(
-        ICatRegister *This,
-        REFCLSID rclsid,
-        ULONG cCategories,
-        CATID rgcatid[]);
+                     ICatRegister *This,
+                     REFCLSID rclsid,
+                     ULONG cCategories,
+                     CATID rgcatid[]);
 
     HRESULT (STDMETHODCALLTYPE *UnRegisterClassReqCategories)(
-        ICatRegister *This,
-        REFCLSID rclsid,
-        ULONG cCategories,
-        CATID rgcatid[]);
+                     ICatRegister *This,
+                     REFCLSID rclsid,
+                     ULONG cCategories,
+                     CATID rgcatid[]);
 
     END_INTERFACE
 } ICatRegisterVtbl;
@@ -580,35 +580,35 @@ MIDL_INTERFACE("0002e013-0000-0000-c000-000000000046")
 ICatInformation : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE EnumCategories(
-        LCID lcid,
-        IEnumCATEGORYINFO **ppenumCategoryInfo) = 0;
+                     LCID lcid,
+                     IEnumCATEGORYINFO **ppenumCategoryInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCategoryDesc(
-        REFCATID rcatid,
-        LCID lcid,
-        LPWSTR *pszDesc) = 0;
+                     REFCATID rcatid,
+                     LCID lcid,
+                     LPWSTR *pszDesc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumClassesOfCategories(
-        ULONG cImplemented,
-        const CATID rgcatidImpl[],
-        ULONG cRequired,
-        const CATID rgcatidReq[],
-        IEnumGUID **ppenumClsid) = 0;
+                     ULONG cImplemented,
+                     const CATID rgcatidImpl[],
+                     ULONG cRequired,
+                     const CATID rgcatidReq[],
+                     IEnumGUID **ppenumClsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsClassOfCategories(
-        REFCLSID rclsid,
-        ULONG cImplemented,
-        const CATID rgcatidImpl[],
-        ULONG cRequired,
-        const CATID rgcatidReq[]) = 0;
+                     REFCLSID rclsid,
+                     ULONG cImplemented,
+                     const CATID rgcatidImpl[],
+                     ULONG cRequired,
+                     const CATID rgcatidReq[]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumImplCategoriesOfClass(
-        REFCLSID rclsid,
-        IEnumGUID **ppenumCatid) = 0;
+                     REFCLSID rclsid,
+                     IEnumGUID **ppenumCatid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumReqCategoriesOfClass(
-        REFCLSID rclsid,
-        IEnumGUID **ppenumCatid) = 0;
+                     REFCLSID rclsid,
+                     IEnumGUID **ppenumCatid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -620,53 +620,53 @@ typedef struct ICatInformationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ICatInformation *This,
-        REFIID riid,
-        void **ppvObject);
+                     ICatInformation *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ICatInformation *This);
+                     ICatInformation *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ICatInformation *This);
+                     ICatInformation *This);
 
     /*** ICatInformation methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumCategories)(
-        ICatInformation *This,
-        LCID lcid,
-        IEnumCATEGORYINFO **ppenumCategoryInfo);
+                     ICatInformation *This,
+                     LCID lcid,
+                     IEnumCATEGORYINFO **ppenumCategoryInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetCategoryDesc)(
-        ICatInformation *This,
-        REFCATID rcatid,
-        LCID lcid,
-        LPWSTR *pszDesc);
+                     ICatInformation *This,
+                     REFCATID rcatid,
+                     LCID lcid,
+                     LPWSTR *pszDesc);
 
     HRESULT (STDMETHODCALLTYPE *EnumClassesOfCategories)(
-        ICatInformation *This,
-        ULONG cImplemented,
-        const CATID rgcatidImpl[],
-        ULONG cRequired,
-        const CATID rgcatidReq[],
-        IEnumGUID **ppenumClsid);
+                     ICatInformation *This,
+                     ULONG cImplemented,
+                     const CATID rgcatidImpl[],
+                     ULONG cRequired,
+                     const CATID rgcatidReq[],
+                     IEnumGUID **ppenumClsid);
 
     HRESULT (STDMETHODCALLTYPE *IsClassOfCategories)(
-        ICatInformation *This,
-        REFCLSID rclsid,
-        ULONG cImplemented,
-        const CATID rgcatidImpl[],
-        ULONG cRequired,
-        const CATID rgcatidReq[]);
+                     ICatInformation *This,
+                     REFCLSID rclsid,
+                     ULONG cImplemented,
+                     const CATID rgcatidImpl[],
+                     ULONG cRequired,
+                     const CATID rgcatidReq[]);
 
     HRESULT (STDMETHODCALLTYPE *EnumImplCategoriesOfClass)(
-        ICatInformation *This,
-        REFCLSID rclsid,
-        IEnumGUID **ppenumCatid);
+                     ICatInformation *This,
+                     REFCLSID rclsid,
+                     IEnumGUID **ppenumCatid);
 
     HRESULT (STDMETHODCALLTYPE *EnumReqCategoriesOfClass)(
-        ICatInformation *This,
-        REFCLSID rclsid,
-        IEnumGUID **ppenumCatid);
+                     ICatInformation *This,
+                     REFCLSID rclsid,
+                     IEnumGUID **ppenumCatid);
 
     END_INTERFACE
 } ICatInformationVtbl;

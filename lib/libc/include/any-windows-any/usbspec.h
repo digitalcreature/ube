@@ -38,15 +38,15 @@ typedef struct _USB_DEFAULT_PIPE_SETUP_PACKET {
   UCHAR bRequest;
   union _wValue {
     __C89_NAMELESS struct {
-      UCHAR LowByte;
-      UCHAR HiByte;
+                   UCHAR LowByte;
+                   UCHAR HiByte;
     };
     USHORT W;
   } wValue;
   union _wIndex {
     __C89_NAMELESS struct {
-      UCHAR LowByte;
-      UCHAR HiByte;
+                   UCHAR LowByte;
+                   UCHAR HiByte;
     };
     USHORT W;
   } wIndex;
@@ -246,15 +246,15 @@ typedef struct _USB_DEVICE_CAPABILITY_USB20_EXTENSION_DESCRIPTOR {
   union {
     ULONG AsUlong;
     __C89_NAMELESS struct {
-      ULONG Reserved:1;
-      ULONG LPMCapable:1;
-      ULONG BESLAndAlternateHIRDSupported:1;
-      ULONG BaselineBESLValid:1;
-      ULONG DeepBESLValid:1;
-      ULONG Reserved1:3;
-      ULONG BaselineBESL:4;
-      ULONG DeepBESL:4;
-      ULONG Reserved2:16;
+                   ULONG Reserved:1;
+                   ULONG LPMCapable:1;
+                   ULONG BESLAndAlternateHIRDSupported:1;
+                   ULONG BaselineBESLValid:1;
+                   ULONG DeepBESLValid:1;
+                   ULONG Reserved1:3;
+                   ULONG BaselineBESL:4;
+                   ULONG DeepBESL:4;
+                   ULONG Reserved2:16;
     };
   } bmAttributes;
 } USB_DEVICE_CAPABILITY_USB20_EXTENSION_DESCRIPTOR,*PUSB_DEVICE_CAPABILITY_USB20_EXTENSION_DESCRIPTOR;
@@ -269,20 +269,20 @@ typedef struct _USB_DEVICE_CAPABILITY_POWER_DELIVERY_DESCRIPTOR {
   union {
     ULONG AsUlong;
     __C89_NAMELESS struct {
-      ULONG Reserved1:1;
-      ULONG BatteryCharging:1;
-      ULONG USBPowerDelivery:1;
-      ULONG Provider:1;
-      ULONG Consumer:1;
-      ULONG ChargingPolicy:1;
-      ULONG TypeCCurrent:1;
-      ULONG Reserved2:1;
-      ULONG ACSupply:1;
-      ULONG Battery:1;
-      ULONG Other:1;
-      ULONG NumBatteries:3;
-      ULONG UsesVbus:1;
-      ULONG Reserved3:17;
+                   ULONG Reserved1:1;
+                   ULONG BatteryCharging:1;
+                   ULONG USBPowerDelivery:1;
+                   ULONG Provider:1;
+                   ULONG Consumer:1;
+                   ULONG ChargingPolicy:1;
+                   ULONG TypeCCurrent:1;
+                   ULONG Reserved2:1;
+                   ULONG ACSupply:1;
+                   ULONG Battery:1;
+                   ULONG Other:1;
+                   ULONG NumBatteries:3;
+                   ULONG UsesVbus:1;
+                   ULONG Reserved3:17;
     };
   } bmAttributes;
   USHORT bmProviderPorts;
@@ -300,10 +300,10 @@ typedef struct _USB_DEVICE_CAPABILITY_PD_CONSUMER_PORT_DESCRIPTOR {
   union {
     USHORT AsUshort;
     __C89_NAMELESS struct {
-        USHORT BatteryCharging:1;
-        USHORT USBPowerDelivery:1;
-        USHORT USBTypeCCurrent:1;
-        USHORT Reserved:13;
+                     USHORT BatteryCharging:1;
+                     USHORT USBPowerDelivery:1;
+                     USHORT USBTypeCCurrent:1;
+                     USHORT Reserved:13;
     };
   } bmCapabilities;
   USHORT wMinVoltage;
@@ -380,18 +380,18 @@ typedef struct _USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_USB_DESCRIPTOR {
   union {
     ULONG AsUlong;
     __C89_NAMELESS struct {
-      ULONG SublinkSpeedAttrCount:5;
-      ULONG SublinkSpeedIDCount:4;
-      ULONG Reserved:23;
+                   ULONG SublinkSpeedAttrCount:5;
+                   ULONG SublinkSpeedIDCount:4;
+                   ULONG Reserved:23;
     };
   } bmAttributes;
   union {
     USHORT AsUshort;
     __C89_NAMELESS struct {
-      USHORT SublinkSpeedAttrID:4;
-      USHORT Reserved:4;
-      USHORT MinRxLaneCount:4;
-      USHORT MinTxLaneCount:4;
+                   USHORT SublinkSpeedAttrID:4;
+                   USHORT Reserved:4;
+                   USHORT MinRxLaneCount:4;
+                   USHORT MinTxLaneCount:4;
     };
   } wFunctionalitySupport;
   USHORT wReserved;
@@ -425,9 +425,9 @@ typedef struct _USB_DEVICE_CAPABILITY_BILLBOARD_DESCRIPTOR {
   union {
     USHORT AsUshort;
     __C89_NAMELESS struct {
-      USHORT VConnPowerNeededForFullFunctionality:3;
-      USHORT Reserved:12;
-      USHORT NoVconnPowerRequired:1;
+                   USHORT VConnPowerNeededForFullFunctionality:3;
+                   USHORT Reserved:12;
+                   USHORT NoVconnPowerRequired:1;
     };
   } VconnPower;
   UCHAR bmConfigured[32];
@@ -564,13 +564,13 @@ typedef struct _USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR {
   union {
     UCHAR AsUchar;
     struct {
-      UCHAR MaxStreams:5;
-      UCHAR Reserved1:3;
+                   UCHAR MaxStreams:5;
+                   UCHAR Reserved1:3;
     } Bulk;
     struct {
-      UCHAR Mult:2;
-      UCHAR Reserved2:5;
-      UCHAR SspCompanion:1;
+                   UCHAR Mult:2;
+                   UCHAR Reserved2:5;
+                   UCHAR SspCompanion:1;
     } Isochronous;
   } bmAttributes;
   USHORT wBytesPerInterval;

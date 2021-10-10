@@ -93,7 +93,7 @@ typedef struct _WER_DUMP_CUSTOM_OPTIONS {
 
 typedef struct _WER_EXCEPTION_INFORMATION {
   PEXCEPTION_POINTERS pExceptionPointers;
-  WINBOOL             bClientPointers;
+  WINBOOL                                       bClientPointers;
 } WER_EXCEPTION_INFORMATION, *PWER_EXCEPTION_INFORMATION;
 
 typedef struct _WER_REPORT_INFORMATION {
@@ -126,12 +126,12 @@ HRESULT WINAPI WerUnregisterMemoryBlock(PVOID pvAddress);
 
 #if (_WIN32_WINNT >= 0x0601)
 typedef struct _WER_RUNTIME_EXCEPTION_INFORMATION {
-  DWORD            dwSize;
-  HANDLE           hProcess;
-  HANDLE           hThread;
+  DWORD                                      dwSize;
+  HANDLE                        hProcess;
+  HANDLE                        hThread;
   EXCEPTION_RECORD exceptionRecord;
-  CONTEXT          context;
-  PCWSTR           pwszReportId;
+  CONTEXT                       context;
+  PCWSTR                        pwszReportId;
 } WER_RUNTIME_EXCEPTION_INFORMATION, *PWER_RUNTIME_EXCEPTION_INFORMATION;
 
 typedef HRESULT (WINAPI *PFN_WER_RUNTIME_EXCEPTION_EVENT)(

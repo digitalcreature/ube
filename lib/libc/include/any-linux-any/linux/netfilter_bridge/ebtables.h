@@ -198,88 +198,88 @@ ebt_get_target(struct ebt_entry *e)
 }
 
 /* {g,s}etsockopt numbers */
-#define EBT_BASE_CTL            128
+#define EBT_BASE_CTL                                      128
 
-#define EBT_SO_SET_ENTRIES      (EBT_BASE_CTL)
+#define EBT_SO_SET_ENTRIES                   (EBT_BASE_CTL)
 #define EBT_SO_SET_COUNTERS     (EBT_SO_SET_ENTRIES+1)
-#define EBT_SO_SET_MAX          (EBT_SO_SET_COUNTERS+1)
+#define EBT_SO_SET_MAX                       (EBT_SO_SET_COUNTERS+1)
 
-#define EBT_SO_GET_INFO         (EBT_BASE_CTL)
-#define EBT_SO_GET_ENTRIES      (EBT_SO_GET_INFO+1)
+#define EBT_SO_GET_INFO                      (EBT_BASE_CTL)
+#define EBT_SO_GET_ENTRIES                   (EBT_SO_GET_INFO+1)
 #define EBT_SO_GET_INIT_INFO    (EBT_SO_GET_ENTRIES+1)
 #define EBT_SO_GET_INIT_ENTRIES (EBT_SO_GET_INIT_INFO+1)
-#define EBT_SO_GET_MAX          (EBT_SO_GET_INIT_ENTRIES+1)
+#define EBT_SO_GET_MAX                       (EBT_SO_GET_INIT_ENTRIES+1)
 
 
 /* blatently stolen from ip_tables.h
  * fn returns 0 to continue iteration */
-#define EBT_MATCH_ITERATE(e, fn, args...)                   \
-({                                                          \
-	unsigned int __i;                                   \
-	int __ret = 0;                                      \
-	struct ebt_entry_match *__match;                    \
-	                                                    \
-	for (__i = sizeof(struct ebt_entry);                \
-	     __i < (e)->watchers_offset;                    \
-	     __i += __match->match_size +                   \
-	     sizeof(struct ebt_entry_match)) {              \
-		__match = (void *)(e) + __i;                \
-		                                            \
-		__ret = fn(__match , ## args);              \
-		if (__ret != 0)                             \
-			break;                              \
-	}                                                   \
-	if (__ret == 0) {                                   \
-		if (__i != (e)->watchers_offset)            \
-			__ret = -EINVAL;                    \
-	}                                                   \
-	__ret;                                              \
+#define EBT_MATCH_ITERATE(e, fn, args...)                                                          \
+({                                                                                                                                                                               \
+	unsigned int __i;                                                                                                    \
+	int __ret = 0;                                                                                                                    \
+	struct ebt_entry_match *__match;                                                           \
+	                                                                                                                                                            \
+	for (__i = sizeof(struct ebt_entry);                                          \
+	     __i < (e)->watchers_offset;                                                           \
+	     __i += __match->match_size +                                                          \
+	     sizeof(struct ebt_entry_match)) {                                        \
+		__match = (void *)(e) + __i;                                          \
+		                                                                                                                                       \
+		__ret = fn(__match , ## args);                                        \
+		if (__ret != 0)                                                                                 \
+			break;                                                                                               \
+	}                                                                                                                                                           \
+	if (__ret == 0) {                                                                                                    \
+		if (__i != (e)->watchers_offset)                                      \
+			__ret = -EINVAL;                                                           \
+	}                                                                                                                                                           \
+	__ret;                                                                                                                                         \
 })
 
-#define EBT_WATCHER_ITERATE(e, fn, args...)                 \
-({                                                          \
-	unsigned int __i;                                   \
-	int __ret = 0;                                      \
-	struct ebt_entry_watcher *__watcher;                \
-	                                                    \
-	for (__i = e->watchers_offset;                      \
-	     __i < (e)->target_offset;                      \
-	     __i += __watcher->watcher_size +               \
-	     sizeof(struct ebt_entry_watcher)) {            \
-		__watcher = (void *)(e) + __i;              \
-		                                            \
-		__ret = fn(__watcher , ## args);            \
-		if (__ret != 0)                             \
-			break;                              \
-	}                                                   \
-	if (__ret == 0) {                                   \
-		if (__i != (e)->target_offset)              \
-			__ret = -EINVAL;                    \
-	}                                                   \
-	__ret;                                              \
+#define EBT_WATCHER_ITERATE(e, fn, args...)                                           \
+({                                                                                                                                                                               \
+	unsigned int __i;                                                                                                    \
+	int __ret = 0;                                                                                                                    \
+	struct ebt_entry_watcher *__watcher;                                          \
+	                                                                                                                                                            \
+	for (__i = e->watchers_offset;                                                             \
+	     __i < (e)->target_offset;                                                             \
+	     __i += __watcher->watcher_size +                                         \
+	     sizeof(struct ebt_entry_watcher)) {                                      \
+		__watcher = (void *)(e) + __i;                                        \
+		                                                                                                                                       \
+		__ret = fn(__watcher , ## args);                                      \
+		if (__ret != 0)                                                                                 \
+			break;                                                                                               \
+	}                                                                                                                                                           \
+	if (__ret == 0) {                                                                                                    \
+		if (__i != (e)->target_offset)                                        \
+			__ret = -EINVAL;                                                           \
+	}                                                                                                                                                           \
+	__ret;                                                                                                                                         \
 })
 
-#define EBT_ENTRY_ITERATE(entries, size, fn, args...)       \
-({                                                          \
-	unsigned int __i;                                   \
-	int __ret = 0;                                      \
-	struct ebt_entry *__entry;                          \
-	                                                    \
-	for (__i = 0; __i < (size);) {                      \
-		__entry = (void *)(entries) + __i;          \
-		__ret = fn(__entry , ## args);              \
-		if (__ret != 0)                             \
-			break;                              \
-		if (__entry->bitmask != 0)                  \
-			__i += __entry->next_offset;        \
-		else                                        \
+#define EBT_ENTRY_ITERATE(entries, size, fn, args...)                    \
+({                                                                                                                                                                               \
+	unsigned int __i;                                                                                                    \
+	int __ret = 0;                                                                                                                    \
+	struct ebt_entry *__entry;                                                                              \
+	                                                                                                                                                            \
+	for (__i = 0; __i < (size);) {                                                             \
+		__entry = (void *)(entries) + __i;                       \
+		__ret = fn(__entry , ## args);                                        \
+		if (__ret != 0)                                                                                 \
+			break;                                                                                               \
+		if (__entry->bitmask != 0)                                                         \
+			__i += __entry->next_offset;                     \
+		else                                                                                                                      \
 			__i += sizeof(struct ebt_entries);  \
-	}                                                   \
-	if (__ret == 0) {                                   \
-		if (__i != (size))                          \
-			__ret = -EINVAL;                    \
-	}                                                   \
-	__ret;                                              \
+	}                                                                                                                                                           \
+	if (__ret == 0) {                                                                                                    \
+		if (__i != (size))                                                                              \
+			__ret = -EINVAL;                                                           \
+	}                                                                                                                                                           \
+	__ret;                                                                                                                                         \
 })
 
 #endif /* __LINUX_BRIDGE_EFF_H */

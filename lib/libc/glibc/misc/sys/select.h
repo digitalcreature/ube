@@ -59,7 +59,7 @@ typedef long int __fd_mask;
 typedef struct
   {
     /* XPG4.2 requires this member name.  Otherwise avoid the name
-       from the global namespace.  */
+                    from the global namespace.  */
 #ifdef __USE_XOPEN
     __fd_mask fds_bits[__FD_SETSIZE / __NFDBITS];
 # define __FDS_BITS(set) ((set)->fds_bits)

@@ -148,12 +148,12 @@ MIDL_INTERFACE("fcafe424-fef5-481a-bd9f-33ce0574256f")
 IWSDScopeMatchingRule : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetScopeRule(
-        LPCWSTR *ppszScopeMatchingRule) = 0;
+                     LPCWSTR *ppszScopeMatchingRule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchScopes(
-        LPCWSTR pszScope1,
-        LPCWSTR pszScope2,
-        WINBOOL *pfMatch) = 0;
+                     LPCWSTR pszScope1,
+                     LPCWSTR pszScope2,
+                     WINBOOL *pfMatch) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -165,26 +165,26 @@ typedef struct IWSDScopeMatchingRuleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDScopeMatchingRule *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDScopeMatchingRule *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDScopeMatchingRule *This);
+                     IWSDScopeMatchingRule *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDScopeMatchingRule *This);
+                     IWSDScopeMatchingRule *This);
 
     /*** IWSDScopeMatchingRule methods ***/
     HRESULT (STDMETHODCALLTYPE *GetScopeRule)(
-        IWSDScopeMatchingRule *This,
-        LPCWSTR *ppszScopeMatchingRule);
+                     IWSDScopeMatchingRule *This,
+                     LPCWSTR *ppszScopeMatchingRule);
 
     HRESULT (STDMETHODCALLTYPE *MatchScopes)(
-        IWSDScopeMatchingRule *This,
-        LPCWSTR pszScope1,
-        LPCWSTR pszScope2,
-        WINBOOL *pfMatch);
+                     IWSDScopeMatchingRule *This,
+                     LPCWSTR pszScope1,
+                     LPCWSTR pszScope2,
+                     WINBOOL *pfMatch);
 
     END_INTERFACE
 } IWSDScopeMatchingRuleVtbl;
@@ -240,17 +240,17 @@ MIDL_INTERFACE("73ee3ced-b6e6-4329-a546-3e8ad46563d2")
 IWSDiscoveryProviderNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Add(
-        IWSDiscoveredService *pService) = 0;
+                     IWSDiscoveredService *pService) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        IWSDiscoveredService *pService) = 0;
+                     IWSDiscoveredService *pService) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SearchFailed(
-        HRESULT hr,
-        LPCWSTR pszTag) = 0;
+                     HRESULT hr,
+                     LPCWSTR pszTag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SearchComplete(
-        LPCWSTR pszTag) = 0;
+                     LPCWSTR pszTag) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -262,33 +262,33 @@ typedef struct IWSDiscoveryProviderNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDiscoveryProviderNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDiscoveryProviderNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDiscoveryProviderNotify *This);
+                     IWSDiscoveryProviderNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDiscoveryProviderNotify *This);
+                     IWSDiscoveryProviderNotify *This);
 
     /*** IWSDiscoveryProviderNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *Add)(
-        IWSDiscoveryProviderNotify *This,
-        IWSDiscoveredService *pService);
+                     IWSDiscoveryProviderNotify *This,
+                     IWSDiscoveredService *pService);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IWSDiscoveryProviderNotify *This,
-        IWSDiscoveredService *pService);
+                     IWSDiscoveryProviderNotify *This,
+                     IWSDiscoveredService *pService);
 
     HRESULT (STDMETHODCALLTYPE *SearchFailed)(
-        IWSDiscoveryProviderNotify *This,
-        HRESULT hr,
-        LPCWSTR pszTag);
+                     IWSDiscoveryProviderNotify *This,
+                     HRESULT hr,
+                     LPCWSTR pszTag);
 
     HRESULT (STDMETHODCALLTYPE *SearchComplete)(
-        IWSDiscoveryProviderNotify *This,
-        LPCWSTR pszTag);
+                     IWSDiscoveryProviderNotify *This,
+                     LPCWSTR pszTag);
 
     END_INTERFACE
 } IWSDiscoveryProviderNotifyVtbl;
@@ -352,30 +352,30 @@ MIDL_INTERFACE("8ffc8e55-f0eb-480f-88b7-b435dd281d45")
 IWSDiscoveryProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAddressFamily(
-        DWORD dwAddressFamily) = 0;
+                     DWORD dwAddressFamily) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Attach(
-        IWSDiscoveryProviderNotify *pSink) = 0;
+                     IWSDiscoveryProviderNotify *pSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Detach(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SearchById(
-        LPCWSTR pszId,
-        LPCWSTR pszTag) = 0;
+                     LPCWSTR pszId,
+                     LPCWSTR pszTag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SearchByAddress(
-        LPCWSTR pszAddress,
-        LPCWSTR pszTag) = 0;
+                     LPCWSTR pszAddress,
+                     LPCWSTR pszTag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SearchByType(
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        LPCWSTR pszMatchBy,
-        LPCWSTR pszTag) = 0;
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     LPCWSTR pszMatchBy,
+                     LPCWSTR pszTag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXMLContext(
-        IWSDXMLContext **ppContext) = 0;
+                     IWSDXMLContext **ppContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -387,48 +387,48 @@ typedef struct IWSDiscoveryProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDiscoveryProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDiscoveryProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDiscoveryProvider *This);
+                     IWSDiscoveryProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDiscoveryProvider *This);
+                     IWSDiscoveryProvider *This);
 
     /*** IWSDiscoveryProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAddressFamily)(
-        IWSDiscoveryProvider *This,
-        DWORD dwAddressFamily);
+                     IWSDiscoveryProvider *This,
+                     DWORD dwAddressFamily);
 
     HRESULT (STDMETHODCALLTYPE *Attach)(
-        IWSDiscoveryProvider *This,
-        IWSDiscoveryProviderNotify *pSink);
+                     IWSDiscoveryProvider *This,
+                     IWSDiscoveryProviderNotify *pSink);
 
     HRESULT (STDMETHODCALLTYPE *Detach)(
-        IWSDiscoveryProvider *This);
+                     IWSDiscoveryProvider *This);
 
     HRESULT (STDMETHODCALLTYPE *SearchById)(
-        IWSDiscoveryProvider *This,
-        LPCWSTR pszId,
-        LPCWSTR pszTag);
+                     IWSDiscoveryProvider *This,
+                     LPCWSTR pszId,
+                     LPCWSTR pszTag);
 
     HRESULT (STDMETHODCALLTYPE *SearchByAddress)(
-        IWSDiscoveryProvider *This,
-        LPCWSTR pszAddress,
-        LPCWSTR pszTag);
+                     IWSDiscoveryProvider *This,
+                     LPCWSTR pszAddress,
+                     LPCWSTR pszTag);
 
     HRESULT (STDMETHODCALLTYPE *SearchByType)(
-        IWSDiscoveryProvider *This,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        LPCWSTR pszMatchBy,
-        LPCWSTR pszTag);
+                     IWSDiscoveryProvider *This,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     LPCWSTR pszMatchBy,
+                     LPCWSTR pszTag);
 
     HRESULT (STDMETHODCALLTYPE *GetXMLContext)(
-        IWSDiscoveryProvider *This,
-        IWSDXMLContext **ppContext);
+                     IWSDiscoveryProvider *This,
+                     IWSDXMLContext **ppContext);
 
     END_INTERFACE
 } IWSDiscoveryProviderVtbl;
@@ -504,38 +504,38 @@ MIDL_INTERFACE("4bad8a3b-b374-4420-9632-aac945b374aa")
 IWSDiscoveredService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetEndpointReference(
-        WSD_ENDPOINT_REFERENCE **ppEndpointReference) = 0;
+                     WSD_ENDPOINT_REFERENCE **ppEndpointReference) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTypes(
-        WSD_NAME_LIST **ppTypesList) = 0;
+                     WSD_NAME_LIST **ppTypesList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScopes(
-        WSD_URI_LIST **ppScopesList) = 0;
+                     WSD_URI_LIST **ppScopesList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXAddrs(
-        WSD_URI_LIST **ppXAddrsList) = 0;
+                     WSD_URI_LIST **ppXAddrsList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetadataVersion(
-        ULONGLONG *pullMetadataVersion) = 0;
+                     ULONGLONG *pullMetadataVersion) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExtendedDiscoXML(
-        WSDXML_ELEMENT **ppHeaderAny,
-        WSDXML_ELEMENT **ppBodyAny) = 0;
+                     WSDXML_ELEMENT **ppHeaderAny,
+                     WSDXML_ELEMENT **ppBodyAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetProbeResolveTag(
-        LPCWSTR *ppszTag) = 0;
+                     LPCWSTR *ppszTag) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRemoteTransportAddress(
-        LPCWSTR *ppszRemoteTransportAddress) = 0;
+                     LPCWSTR *ppszRemoteTransportAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocalTransportAddress(
-        LPCWSTR *ppszLocalTransportAddress) = 0;
+                     LPCWSTR *ppszLocalTransportAddress) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocalInterfaceGUID(
-        GUID *pGuid) = 0;
+                     GUID *pGuid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInstanceId(
-        ULONGLONG *pullInstanceId) = 0;
+                     ULONGLONG *pullInstanceId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -547,61 +547,61 @@ typedef struct IWSDiscoveredServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDiscoveredService *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDiscoveredService *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDiscoveredService *This);
+                     IWSDiscoveredService *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDiscoveredService *This);
+                     IWSDiscoveredService *This);
 
     /*** IWSDiscoveredService methods ***/
     HRESULT (STDMETHODCALLTYPE *GetEndpointReference)(
-        IWSDiscoveredService *This,
-        WSD_ENDPOINT_REFERENCE **ppEndpointReference);
+                     IWSDiscoveredService *This,
+                     WSD_ENDPOINT_REFERENCE **ppEndpointReference);
 
     HRESULT (STDMETHODCALLTYPE *GetTypes)(
-        IWSDiscoveredService *This,
-        WSD_NAME_LIST **ppTypesList);
+                     IWSDiscoveredService *This,
+                     WSD_NAME_LIST **ppTypesList);
 
     HRESULT (STDMETHODCALLTYPE *GetScopes)(
-        IWSDiscoveredService *This,
-        WSD_URI_LIST **ppScopesList);
+                     IWSDiscoveredService *This,
+                     WSD_URI_LIST **ppScopesList);
 
     HRESULT (STDMETHODCALLTYPE *GetXAddrs)(
-        IWSDiscoveredService *This,
-        WSD_URI_LIST **ppXAddrsList);
+                     IWSDiscoveredService *This,
+                     WSD_URI_LIST **ppXAddrsList);
 
     HRESULT (STDMETHODCALLTYPE *GetMetadataVersion)(
-        IWSDiscoveredService *This,
-        ULONGLONG *pullMetadataVersion);
+                     IWSDiscoveredService *This,
+                     ULONGLONG *pullMetadataVersion);
 
     HRESULT (STDMETHODCALLTYPE *GetExtendedDiscoXML)(
-        IWSDiscoveredService *This,
-        WSDXML_ELEMENT **ppHeaderAny,
-        WSDXML_ELEMENT **ppBodyAny);
+                     IWSDiscoveredService *This,
+                     WSDXML_ELEMENT **ppHeaderAny,
+                     WSDXML_ELEMENT **ppBodyAny);
 
     HRESULT (STDMETHODCALLTYPE *GetProbeResolveTag)(
-        IWSDiscoveredService *This,
-        LPCWSTR *ppszTag);
+                     IWSDiscoveredService *This,
+                     LPCWSTR *ppszTag);
 
     HRESULT (STDMETHODCALLTYPE *GetRemoteTransportAddress)(
-        IWSDiscoveredService *This,
-        LPCWSTR *ppszRemoteTransportAddress);
+                     IWSDiscoveredService *This,
+                     LPCWSTR *ppszRemoteTransportAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetLocalTransportAddress)(
-        IWSDiscoveredService *This,
-        LPCWSTR *ppszLocalTransportAddress);
+                     IWSDiscoveredService *This,
+                     LPCWSTR *ppszLocalTransportAddress);
 
     HRESULT (STDMETHODCALLTYPE *GetLocalInterfaceGUID)(
-        IWSDiscoveredService *This,
-        GUID *pGuid);
+                     IWSDiscoveredService *This,
+                     GUID *pGuid);
 
     HRESULT (STDMETHODCALLTYPE *GetInstanceId)(
-        IWSDiscoveredService *This,
-        ULONGLONG *pullInstanceId);
+                     IWSDiscoveredService *This,
+                     ULONGLONG *pullInstanceId);
 
     END_INTERFACE
 } IWSDiscoveredServiceVtbl;
@@ -693,12 +693,12 @@ MIDL_INTERFACE("e67651b0-337a-4b3c-9758-733388568251")
 IWSDiscoveryPublisherNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ProbeHandler(
-        const WSD_SOAP_MESSAGE *pSoap,
-        IWSDMessageParameters *pMessageParameters) = 0;
+                     const WSD_SOAP_MESSAGE *pSoap,
+                     IWSDMessageParameters *pMessageParameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResolveHandler(
-        const WSD_SOAP_MESSAGE *pSoap,
-        IWSDMessageParameters *pMessageParameters) = 0;
+                     const WSD_SOAP_MESSAGE *pSoap,
+                     IWSDMessageParameters *pMessageParameters) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -710,26 +710,26 @@ typedef struct IWSDiscoveryPublisherNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDiscoveryPublisherNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDiscoveryPublisherNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDiscoveryPublisherNotify *This);
+                     IWSDiscoveryPublisherNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDiscoveryPublisherNotify *This);
+                     IWSDiscoveryPublisherNotify *This);
 
     /*** IWSDiscoveryPublisherNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *ProbeHandler)(
-        IWSDiscoveryPublisherNotify *This,
-        const WSD_SOAP_MESSAGE *pSoap,
-        IWSDMessageParameters *pMessageParameters);
+                     IWSDiscoveryPublisherNotify *This,
+                     const WSD_SOAP_MESSAGE *pSoap,
+                     IWSDMessageParameters *pMessageParameters);
 
     HRESULT (STDMETHODCALLTYPE *ResolveHandler)(
-        IWSDiscoveryPublisherNotify *This,
-        const WSD_SOAP_MESSAGE *pSoap,
-        IWSDMessageParameters *pMessageParameters);
+                     IWSDiscoveryPublisherNotify *This,
+                     const WSD_SOAP_MESSAGE *pSoap,
+                     IWSDMessageParameters *pMessageParameters);
 
     END_INTERFACE
 } IWSDiscoveryPublisherNotifyVtbl;
@@ -785,112 +785,112 @@ MIDL_INTERFACE("ae01e1a8-3ff9-4148-8116-057cc616fe13")
 IWSDiscoveryPublisher : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetAddressFamily(
-        DWORD dwAddressFamily) = 0;
+                     DWORD dwAddressFamily) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterNotificationSink(
-        IWSDiscoveryPublisherNotify *pSink) = 0;
+                     IWSDiscoveryPublisherNotify *pSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnRegisterNotificationSink(
-        IWSDiscoveryPublisherNotify *pSink) = 0;
+                     IWSDiscoveryPublisherNotify *pSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Publish(
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList) = 0;
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnPublish(
-        LPCWSTR pszId,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSDXML_ELEMENT *pAny) = 0;
+                     LPCWSTR pszId,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSDXML_ELEMENT *pAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchProbe(
-        const WSD_SOAP_MESSAGE *pProbeMessage,
-        IWSDMessageParameters *pMessageParameters,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList) = 0;
+                     const WSD_SOAP_MESSAGE *pProbeMessage,
+                     IWSDMessageParameters *pMessageParameters,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchResolve(
-        const WSD_SOAP_MESSAGE *pResolveMessage,
-        IWSDMessageParameters *pMessageParameters,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList) = 0;
+                     const WSD_SOAP_MESSAGE *pResolveMessage,
+                     IWSDMessageParameters *pMessageParameters,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PublishEx(
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList,
-        const WSDXML_ELEMENT *pHeaderAny,
-        const WSDXML_ELEMENT *pReferenceParameterAny,
-        const WSDXML_ELEMENT *pPolicyAny,
-        const WSDXML_ELEMENT *pEndpointReferenceAny,
-        const WSDXML_ELEMENT *pAny) = 0;
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList,
+                     const WSDXML_ELEMENT *pHeaderAny,
+                     const WSDXML_ELEMENT *pReferenceParameterAny,
+                     const WSDXML_ELEMENT *pPolicyAny,
+                     const WSDXML_ELEMENT *pEndpointReferenceAny,
+                     const WSDXML_ELEMENT *pAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchProbeEx(
-        const WSD_SOAP_MESSAGE *pProbeMessage,
-        IWSDMessageParameters *pMessageParameters,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList,
-        const WSDXML_ELEMENT *pHeaderAny,
-        const WSDXML_ELEMENT *pReferenceParameterAny,
-        const WSDXML_ELEMENT *pPolicyAny,
-        const WSDXML_ELEMENT *pEndpointReferenceAny,
-        const WSDXML_ELEMENT *pAny) = 0;
+                     const WSD_SOAP_MESSAGE *pProbeMessage,
+                     IWSDMessageParameters *pMessageParameters,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList,
+                     const WSDXML_ELEMENT *pHeaderAny,
+                     const WSDXML_ELEMENT *pReferenceParameterAny,
+                     const WSDXML_ELEMENT *pPolicyAny,
+                     const WSDXML_ELEMENT *pEndpointReferenceAny,
+                     const WSDXML_ELEMENT *pAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MatchResolveEx(
-        const WSD_SOAP_MESSAGE *pResolveMessage,
-        IWSDMessageParameters *pMessageParameters,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList,
-        const WSDXML_ELEMENT *pHeaderAny,
-        const WSDXML_ELEMENT *pReferenceParameterAny,
-        const WSDXML_ELEMENT *pPolicyAny,
-        const WSDXML_ELEMENT *pEndpointReferenceAny,
-        const WSDXML_ELEMENT *pAny) = 0;
+                     const WSD_SOAP_MESSAGE *pResolveMessage,
+                     IWSDMessageParameters *pMessageParameters,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList,
+                     const WSDXML_ELEMENT *pHeaderAny,
+                     const WSDXML_ELEMENT *pReferenceParameterAny,
+                     const WSDXML_ELEMENT *pPolicyAny,
+                     const WSDXML_ELEMENT *pEndpointReferenceAny,
+                     const WSDXML_ELEMENT *pAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterScopeMatchingRule(
-        IWSDScopeMatchingRule *pScopeMatchingRule) = 0;
+                     IWSDScopeMatchingRule *pScopeMatchingRule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnRegisterScopeMatchingRule(
-        IWSDScopeMatchingRule *pScopeMatchingRule) = 0;
+                     IWSDScopeMatchingRule *pScopeMatchingRule) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetXMLContext(
-        IWSDXMLContext **ppContext) = 0;
+                     IWSDXMLContext **ppContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -902,137 +902,137 @@ typedef struct IWSDiscoveryPublisherVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDiscoveryPublisher *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDiscoveryPublisher *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDiscoveryPublisher *This);
+                     IWSDiscoveryPublisher *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDiscoveryPublisher *This);
+                     IWSDiscoveryPublisher *This);
 
     /*** IWSDiscoveryPublisher methods ***/
     HRESULT (STDMETHODCALLTYPE *SetAddressFamily)(
-        IWSDiscoveryPublisher *This,
-        DWORD dwAddressFamily);
+                     IWSDiscoveryPublisher *This,
+                     DWORD dwAddressFamily);
 
     HRESULT (STDMETHODCALLTYPE *RegisterNotificationSink)(
-        IWSDiscoveryPublisher *This,
-        IWSDiscoveryPublisherNotify *pSink);
+                     IWSDiscoveryPublisher *This,
+                     IWSDiscoveryPublisherNotify *pSink);
 
     HRESULT (STDMETHODCALLTYPE *UnRegisterNotificationSink)(
-        IWSDiscoveryPublisher *This,
-        IWSDiscoveryPublisherNotify *pSink);
+                     IWSDiscoveryPublisher *This,
+                     IWSDiscoveryPublisherNotify *pSink);
 
     HRESULT (STDMETHODCALLTYPE *Publish)(
-        IWSDiscoveryPublisher *This,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList);
+                     IWSDiscoveryPublisher *This,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList);
 
     HRESULT (STDMETHODCALLTYPE *UnPublish)(
-        IWSDiscoveryPublisher *This,
-        LPCWSTR pszId,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSDXML_ELEMENT *pAny);
+                     IWSDiscoveryPublisher *This,
+                     LPCWSTR pszId,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSDXML_ELEMENT *pAny);
 
     HRESULT (STDMETHODCALLTYPE *MatchProbe)(
-        IWSDiscoveryPublisher *This,
-        const WSD_SOAP_MESSAGE *pProbeMessage,
-        IWSDMessageParameters *pMessageParameters,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList);
+                     IWSDiscoveryPublisher *This,
+                     const WSD_SOAP_MESSAGE *pProbeMessage,
+                     IWSDMessageParameters *pMessageParameters,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList);
 
     HRESULT (STDMETHODCALLTYPE *MatchResolve)(
-        IWSDiscoveryPublisher *This,
-        const WSD_SOAP_MESSAGE *pResolveMessage,
-        IWSDMessageParameters *pMessageParameters,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList);
+                     IWSDiscoveryPublisher *This,
+                     const WSD_SOAP_MESSAGE *pResolveMessage,
+                     IWSDMessageParameters *pMessageParameters,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList);
 
     HRESULT (STDMETHODCALLTYPE *PublishEx)(
-        IWSDiscoveryPublisher *This,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList,
-        const WSDXML_ELEMENT *pHeaderAny,
-        const WSDXML_ELEMENT *pReferenceParameterAny,
-        const WSDXML_ELEMENT *pPolicyAny,
-        const WSDXML_ELEMENT *pEndpointReferenceAny,
-        const WSDXML_ELEMENT *pAny);
+                     IWSDiscoveryPublisher *This,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList,
+                     const WSDXML_ELEMENT *pHeaderAny,
+                     const WSDXML_ELEMENT *pReferenceParameterAny,
+                     const WSDXML_ELEMENT *pPolicyAny,
+                     const WSDXML_ELEMENT *pEndpointReferenceAny,
+                     const WSDXML_ELEMENT *pAny);
 
     HRESULT (STDMETHODCALLTYPE *MatchProbeEx)(
-        IWSDiscoveryPublisher *This,
-        const WSD_SOAP_MESSAGE *pProbeMessage,
-        IWSDMessageParameters *pMessageParameters,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList,
-        const WSDXML_ELEMENT *pHeaderAny,
-        const WSDXML_ELEMENT *pReferenceParameterAny,
-        const WSDXML_ELEMENT *pPolicyAny,
-        const WSDXML_ELEMENT *pEndpointReferenceAny,
-        const WSDXML_ELEMENT *pAny);
+                     IWSDiscoveryPublisher *This,
+                     const WSD_SOAP_MESSAGE *pProbeMessage,
+                     IWSDMessageParameters *pMessageParameters,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList,
+                     const WSDXML_ELEMENT *pHeaderAny,
+                     const WSDXML_ELEMENT *pReferenceParameterAny,
+                     const WSDXML_ELEMENT *pPolicyAny,
+                     const WSDXML_ELEMENT *pEndpointReferenceAny,
+                     const WSDXML_ELEMENT *pAny);
 
     HRESULT (STDMETHODCALLTYPE *MatchResolveEx)(
-        IWSDiscoveryPublisher *This,
-        const WSD_SOAP_MESSAGE *pResolveMessage,
-        IWSDMessageParameters *pMessageParameters,
-        LPCWSTR pszId,
-        ULONGLONG ullMetadataVersion,
-        ULONGLONG ullInstanceId,
-        ULONGLONG ullMessageNumber,
-        LPCWSTR pszSessionId,
-        const WSD_NAME_LIST *pTypesList,
-        const WSD_URI_LIST *pScopesList,
-        const WSD_URI_LIST *pXAddrsList,
-        const WSDXML_ELEMENT *pHeaderAny,
-        const WSDXML_ELEMENT *pReferenceParameterAny,
-        const WSDXML_ELEMENT *pPolicyAny,
-        const WSDXML_ELEMENT *pEndpointReferenceAny,
-        const WSDXML_ELEMENT *pAny);
+                     IWSDiscoveryPublisher *This,
+                     const WSD_SOAP_MESSAGE *pResolveMessage,
+                     IWSDMessageParameters *pMessageParameters,
+                     LPCWSTR pszId,
+                     ULONGLONG ullMetadataVersion,
+                     ULONGLONG ullInstanceId,
+                     ULONGLONG ullMessageNumber,
+                     LPCWSTR pszSessionId,
+                     const WSD_NAME_LIST *pTypesList,
+                     const WSD_URI_LIST *pScopesList,
+                     const WSD_URI_LIST *pXAddrsList,
+                     const WSDXML_ELEMENT *pHeaderAny,
+                     const WSDXML_ELEMENT *pReferenceParameterAny,
+                     const WSDXML_ELEMENT *pPolicyAny,
+                     const WSDXML_ELEMENT *pEndpointReferenceAny,
+                     const WSDXML_ELEMENT *pAny);
 
     HRESULT (STDMETHODCALLTYPE *RegisterScopeMatchingRule)(
-        IWSDiscoveryPublisher *This,
-        IWSDScopeMatchingRule *pScopeMatchingRule);
+                     IWSDiscoveryPublisher *This,
+                     IWSDScopeMatchingRule *pScopeMatchingRule);
 
     HRESULT (STDMETHODCALLTYPE *UnRegisterScopeMatchingRule)(
-        IWSDiscoveryPublisher *This,
-        IWSDScopeMatchingRule *pScopeMatchingRule);
+                     IWSDiscoveryPublisher *This,
+                     IWSDScopeMatchingRule *pScopeMatchingRule);
 
     HRESULT (STDMETHODCALLTYPE *GetXMLContext)(
-        IWSDiscoveryPublisher *This,
-        IWSDXMLContext **ppContext);
+                     IWSDiscoveryPublisher *This,
+                     IWSDXMLContext **ppContext);
 
     END_INTERFACE
 } IWSDiscoveryPublisherVtbl;

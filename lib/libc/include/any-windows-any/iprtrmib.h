@@ -187,7 +187,7 @@ typedef struct _MIB_UDPROW_OWNER_MODULE {
   LARGE_INTEGER liCreateTimestamp;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      DWORD SpecificPortBind : 1;
+                   DWORD SpecificPortBind : 1;
     };
     DWORD dwFlags;
   };
@@ -209,7 +209,7 @@ typedef struct _MIB_UDP6ROW_OWNER_MODULE {
   LARGE_INTEGER liCreateTimestamp;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      DWORD SpecificPortBind : 1;
+                   DWORD SpecificPortBind : 1;
     };
     DWORD dwFlags;
   };

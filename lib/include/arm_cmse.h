@@ -17,7 +17,7 @@
 #define CMSE_MPU_READWRITE 1 /* checks if readwrite_ok field is set */
 #define CMSE_AU_NONSECURE  2 /* checks if permissions have secure field unset */
 #define CMSE_MPU_UNPRIV    4 /* sets T flag on TT insrtuction */
-#define CMSE_MPU_READ      8 /* checks if read_ok field is set */
+#define CMSE_MPU_READ                   8 /* checks if read_ok field is set */
 #define CMSE_MPU_NONSECURE 16 /* sets A flag, checks if secure field unset */
 #define CMSE_NONSECURE (CMSE_AU_NONSECURE | CMSE_MPU_NONSECURE)
 
@@ -199,9 +199,9 @@ cmse_nonsecure_caller(void) {
   return !((uintptr_t)__builtin_return_address(0) & 1);
 }
 
-#define cmse_nsfptr_create(p)                                                  \
-  __builtin_bit_cast(__typeof__(p),                                            \
-                     (__builtin_bit_cast(uintptr_t, p) & ~(uintptr_t)1))
+#define cmse_nsfptr_create(p)                                                                                                                                                          \
+  __builtin_bit_cast(__typeof__(p),                                                                                                                                       \
+                                                            (__builtin_bit_cast(uintptr_t, p) & ~(uintptr_t)1))
 
 #define cmse_is_nsfptr(p) ((__builtin_bit_cast(uintptr_t, p) & 1) == 0)
 

@@ -17,11 +17,11 @@ extern "C" {
 #if WINAPI_FAMILY_PARTITION (WINAPI_PARTITION_APP)
   typedef struct _SYSTEM_INFO {
     __C89_NAMELESS union {
-      DWORD dwOemId;
-      __C89_NAMELESS struct {
+                   DWORD dwOemId;
+                   __C89_NAMELESS struct {
 	WORD wProcessorArchitecture;
 	WORD wReserved;
-      } DUMMYSTRUCTNAME;
+                   } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
     DWORD dwPageSize;
     LPVOID lpMinimumApplicationAddress;

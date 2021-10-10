@@ -38,20 +38,20 @@ typedef HRESULT (CALLBACK *PD2D1_EFFECT_FACTORY)(IUnknown**);
 typedef D2D_RECT_L D2D1_RECT_L;
 
 typedef enum D2D1_PROPERTY_TYPE {
-    D2D1_PROPERTY_TYPE_UNKNOWN       = 0,
-    D2D1_PROPERTY_TYPE_STRING        = 1,
-    D2D1_PROPERTY_TYPE_BOOL          = 2,
-    D2D1_PROPERTY_TYPE_UINT32        = 3,
-    D2D1_PROPERTY_TYPE_INT32         = 4,
-    D2D1_PROPERTY_TYPE_FLOAT         = 5,
-    D2D1_PROPERTY_TYPE_VECTOR2       = 6,
-    D2D1_PROPERTY_TYPE_VECTOR3       = 7,
-    D2D1_PROPERTY_TYPE_VECTOR4       = 8,
-    D2D1_PROPERTY_TYPE_BLOB          = 9,
-    D2D1_PROPERTY_TYPE_IUNKNOWN      = 10,
-    D2D1_PROPERTY_TYPE_ENUM          = 11,
-    D2D1_PROPERTY_TYPE_ARRAY         = 12,
-    D2D1_PROPERTY_TYPE_CLSID         = 13,
+    D2D1_PROPERTY_TYPE_UNKNOWN                    = 0,
+    D2D1_PROPERTY_TYPE_STRING                     = 1,
+    D2D1_PROPERTY_TYPE_BOOL                       = 2,
+    D2D1_PROPERTY_TYPE_UINT32                     = 3,
+    D2D1_PROPERTY_TYPE_INT32                      = 4,
+    D2D1_PROPERTY_TYPE_FLOAT                      = 5,
+    D2D1_PROPERTY_TYPE_VECTOR2                    = 6,
+    D2D1_PROPERTY_TYPE_VECTOR3                    = 7,
+    D2D1_PROPERTY_TYPE_VECTOR4                    = 8,
+    D2D1_PROPERTY_TYPE_BLOB                       = 9,
+    D2D1_PROPERTY_TYPE_IUNKNOWN                   = 10,
+    D2D1_PROPERTY_TYPE_ENUM                       = 11,
+    D2D1_PROPERTY_TYPE_ARRAY                      = 12,
+    D2D1_PROPERTY_TYPE_CLSID                      = 13,
     D2D1_PROPERTY_TYPE_MATRIX_3X2    = 14,
     D2D1_PROPERTY_TYPE_MATRIX_4X3    = 15,
     D2D1_PROPERTY_TYPE_MATRIX_4X4    = 16,
@@ -62,14 +62,14 @@ typedef enum D2D1_PROPERTY_TYPE {
 
 typedef enum D2D1_CHANNEL_DEPTH {
     D2D1_CHANNEL_DEPTH_DEFAULT = 0,
-    D2D1_CHANNEL_DEPTH_1       = 1,
-    D2D1_CHANNEL_DEPTH_4       = 4,
+    D2D1_CHANNEL_DEPTH_1                    = 1,
+    D2D1_CHANNEL_DEPTH_4                    = 4,
     D2D1_CHANNEL_DEPTH_FORCE_DWORD = 0xffffffff
 } D2D1_CHANNEL_DEPTH;
 
 typedef enum D2D1_BUFFER_PRECISION {
-    D2D1_BUFFER_PRECISION_UNKNOWN         = 0,
-    D2D1_BUFFER_PRECISION_8BPC_UNORM      = 1,
+    D2D1_BUFFER_PRECISION_UNKNOWN                      = 0,
+    D2D1_BUFFER_PRECISION_8BPC_UNORM                   = 1,
     D2D1_BUFFER_PRECISION_8BPC_UNORM_SRGB = 2,
     D2D1_BUFFER_PRECISION_16BPC_UNORM     = 3,
     D2D1_BUFFER_PRECISION_16BPC_FLOAT     = 4,
@@ -85,7 +85,7 @@ typedef enum D2D1_COLOR_SPACE {
 } D2D1_COLOR_SPACE;
 
 typedef enum D2D1_DEVICE_CONTEXT_OPTIONS {
-    D2D1_DEVICE_CONTEXT_OPTIONS_NONE                               = 0,
+    D2D1_DEVICE_CONTEXT_OPTIONS_NONE                                                                                                = 0,
     D2D1_DEVICE_CONTEXT_OPTIONS_ENABLE_MULTITHREADED_OPTIMIZATIONS = 1,
     D2D1_DEVICE_CONTEXT_OPTIONS_FORCE_DWORD = 0xffffffff
 } D2D1_DEVICE_CONTEXT_OPTIONS;
@@ -93,10 +93,10 @@ typedef enum D2D1_DEVICE_CONTEXT_OPTIONS {
 DEFINE_ENUM_FLAG_OPERATORS(D2D1_DEVICE_CONTEXT_OPTIONS);
 
 typedef enum D2D1_BITMAP_OPTIONS {
-    D2D1_BITMAP_OPTIONS_NONE           = 0x00000000,
-    D2D1_BITMAP_OPTIONS_TARGET         = 0x00000001,
+    D2D1_BITMAP_OPTIONS_NONE                        = 0x00000000,
+    D2D1_BITMAP_OPTIONS_TARGET                      = 0x00000001,
     D2D1_BITMAP_OPTIONS_CANNOT_DRAW    = 0x00000002,
-    D2D1_BITMAP_OPTIONS_CPU_READ       = 0x00000004,
+    D2D1_BITMAP_OPTIONS_CPU_READ                    = 0x00000004,
     D2D1_BITMAP_OPTIONS_GDI_COMPATIBLE = 0x00000008,
     D2D1_BITMAP_OPTIONS_FORCE_DWORD = 0xffffffff
 } D2D1_BITMAP_OPTIONS;
@@ -114,43 +114,43 @@ typedef enum D2D1_MAP_OPTIONS {
 DEFINE_ENUM_FLAG_OPERATORS(D2D1_MAP_OPTIONS);
 
 typedef enum D2D1_COLOR_INTERPOLATION_MODE {
-    D2D1_COLOR_INTERPOLATION_MODE_STRAIGHT      = 0,
+    D2D1_COLOR_INTERPOLATION_MODE_STRAIGHT                   = 0,
     D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED = 1,
     D2D1_COLOR_INTERPOLATION_MODE_FORCE_DWORD = 0xffffffff
 } D2D1_COLOR_INTERPOLATION_MODE;
 
 typedef enum D2D1_INTERPOLATION_MODE {
     D2D1_INTERPOLATION_MODE_NEAREST_NEIGHBOR    = D2D1_INTERPOLATION_MODE_DEFINITION_NEAREST_NEIGHBOR,
-    D2D1_INTERPOLATION_MODE_LINEAR              = D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR,
-    D2D1_INTERPOLATION_MODE_CUBIC               = D2D1_INTERPOLATION_MODE_DEFINITION_CUBIC,
+    D2D1_INTERPOLATION_MODE_LINEAR                                        = D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR,
+    D2D1_INTERPOLATION_MODE_CUBIC                                         = D2D1_INTERPOLATION_MODE_DEFINITION_CUBIC,
     D2D1_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR = D2D1_INTERPOLATION_MODE_DEFINITION_MULTI_SAMPLE_LINEAR,
-    D2D1_INTERPOLATION_MODE_ANISOTROPIC         = D2D1_INTERPOLATION_MODE_DEFINITION_ANISOTROPIC,
+    D2D1_INTERPOLATION_MODE_ANISOTROPIC                      = D2D1_INTERPOLATION_MODE_DEFINITION_ANISOTROPIC,
     D2D1_INTERPOLATION_MODE_HIGH_QUALITY_CUBIC  = D2D1_INTERPOLATION_MODE_DEFINITION_HIGH_QUALITY_CUBIC,
     D2D1_INTERPOLATION_MODE_FORCE_DWORD = 0xffffffff
 } D2D1_INTERPOLATION_MODE;
 
 typedef enum D2D1_COMPOSITE_MODE {
-    D2D1_COMPOSITE_MODE_SOURCE_OVER         = 0,
+    D2D1_COMPOSITE_MODE_SOURCE_OVER                      = 0,
     D2D1_COMPOSITE_MODE_DESTINATION_OVER    = 1,
-    D2D1_COMPOSITE_MODE_SOURCE_IN           = 2,
-    D2D1_COMPOSITE_MODE_DESTINATION_IN      = 3,
-    D2D1_COMPOSITE_MODE_SOURCE_OUT          = 4,
+    D2D1_COMPOSITE_MODE_SOURCE_IN                        = 2,
+    D2D1_COMPOSITE_MODE_DESTINATION_IN                   = 3,
+    D2D1_COMPOSITE_MODE_SOURCE_OUT                       = 4,
     D2D1_COMPOSITE_MODE_DESTINATION_OUT     = 5,
-    D2D1_COMPOSITE_MODE_SOURCE_ATOP         = 6,
+    D2D1_COMPOSITE_MODE_SOURCE_ATOP                      = 6,
     D2D1_COMPOSITE_MODE_DESTINATION_ATOP    = 7,
-    D2D1_COMPOSITE_MODE_XOR                 = 8,
-    D2D1_COMPOSITE_MODE_PLUS                = 9,
-    D2D1_COMPOSITE_MODE_SOURCE_COPY         = 10,
+    D2D1_COMPOSITE_MODE_XOR                                           = 8,
+    D2D1_COMPOSITE_MODE_PLUS                                          = 9,
+    D2D1_COMPOSITE_MODE_SOURCE_COPY                      = 10,
     D2D1_COMPOSITE_MODE_BOUNDED_SOURCE_COPY = 11,
-    D2D1_COMPOSITE_MODE_MASK_INVERT         = 12,
+    D2D1_COMPOSITE_MODE_MASK_INVERT                      = 12,
     D2D1_COMPOSITE_MODE_FORCE_DWORD = 0xffffffff
 } D2D1_COMPOSITE_MODE;
 
 typedef enum D2D1_PRIMITIVE_BLEND {
     D2D1_PRIMITIVE_BLEND_SOURCE_OVER = 0,
-    D2D1_PRIMITIVE_BLEND_COPY        = 1,
-    D2D1_PRIMITIVE_BLEND_MIN         = 2,
-    D2D1_PRIMITIVE_BLEND_ADD         = 3,
+    D2D1_PRIMITIVE_BLEND_COPY                     = 1,
+    D2D1_PRIMITIVE_BLEND_MIN                      = 2,
+    D2D1_PRIMITIVE_BLEND_ADD                      = 3,
     D2D1_PRIMITIVE_BLEND_FORCE_DWORD = 0xffffffff
 } D2D1_PRIMITIVE_BLEND;
 
@@ -161,9 +161,9 @@ typedef enum D2D1_UNIT_MODE {
 } D2D1_UNIT_MODE;
 
 typedef enum D2D1_LAYER_OPTIONS1 {
-    D2D1_LAYER_OPTIONS1_NONE                       = 0,
+    D2D1_LAYER_OPTIONS1_NONE                                                              = 0,
     D2D1_LAYER_OPTIONS1_INITIALIZE_FROM_BACKGROUND = 1,
-    D2D1_LAYER_OPTIONS1_IGNORE_ALPHA               = 2,
+    D2D1_LAYER_OPTIONS1_IGNORE_ALPHA                                         = 2,
     D2D1_LAYER_OPTIONS1_FORCE_DWORD = 0xffffffff
 } D2D1_LAYER_OPTIONS1;
 
@@ -289,88 +289,88 @@ interface ID2D1Properties : public IUnknown
     STDMETHOD(GetSubProperties)(UINT32 index, ID2D1Properties **subProperties) CONST PURE;
 
     HRESULT SetValueByName(PCWSTR name, CONST BYTE *data, UINT32 dataSize) {
-        return SetValueByName(name, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
+                     return SetValueByName(name, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
 
     HRESULT SetValue(UINT32 index, CONST BYTE *data, UINT32 dataSize) {
-        return SetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
+                     return SetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
 
     HRESULT GetValueByName(PCWSTR name, BYTE *data, UINT32 dataSize) CONST {
-        return GetValueByName(name, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
+                     return GetValueByName(name, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
 
     HRESULT GetValue(UINT32 index, BYTE *data, UINT32 dataSize) CONST {
-        return GetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
+                     return GetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
 
     template<typename T>
     HRESULT GetValueByName(PCWSTR propertyName, T *value) const {
-        return GetValueByName(propertyName, reinterpret_cast<BYTE*>(value), sizeof(*value));
+                     return GetValueByName(propertyName, reinterpret_cast<BYTE*>(value), sizeof(*value));
     }
 
     template<typename T>
     T GetValueByName(PCWSTR propertyName) const {
-        T ret;
-        GetValueByName(propertyName, reinterpret_cast<BYTE*>(&ret), sizeof(ret));
-        return ret;
+                     T ret;
+                     GetValueByName(propertyName, reinterpret_cast<BYTE*>(&ret), sizeof(ret));
+                     return ret;
     }
 
     template<typename T>
     HRESULT SetValueByName(PCWSTR propertyName, const T &value) {
-        return SetValueByName(propertyName, reinterpret_cast<const BYTE*>(&value), sizeof(value));
+                     return SetValueByName(propertyName, reinterpret_cast<const BYTE*>(&value), sizeof(value));
     }
 
     template<typename T>
     HRESULT GetValue(T index, BYTE *data, UINT32 dataSize) CONST {
-        return GetValue(static_cast<UINT32>(index), data, dataSize);
+                     return GetValue(static_cast<UINT32>(index), data, dataSize);
     }
 
     template<typename T, typename U>
     HRESULT GetValue(U index, T *value) const {
-        return GetValue(static_cast<UINT32>(index), reinterpret_cast<BYTE*>(value), sizeof(*value));
+                     return GetValue(static_cast<UINT32>(index), reinterpret_cast<BYTE*>(value), sizeof(*value));
     }
 
     template<typename T, typename U>
     T GetValue(U index) const {
-        T ret;
-        GetValue(static_cast<UINT32>(index), reinterpret_cast<BYTE*>(&ret), sizeof(ret));
-        return ret;
+                     T ret;
+                     GetValue(static_cast<UINT32>(index), reinterpret_cast<BYTE*>(&ret), sizeof(ret));
+                     return ret;
     }
 
     template<typename T>
     HRESULT SetValue(T index, CONST BYTE *data, UINT32 dataSize) {
-        return SetValue(static_cast<UINT32>(index), data, dataSize);
+                     return SetValue(static_cast<UINT32>(index), data, dataSize);
     }
 
     template<typename T, typename U>
     HRESULT SetValue(U index, const T &value) {
-        return SetValue(static_cast<UINT32>(index), reinterpret_cast<const BYTE*>(&value), sizeof(value));
+                     return SetValue(static_cast<UINT32>(index), reinterpret_cast<const BYTE*>(&value), sizeof(value));
     }
 
     template<typename T>
     HRESULT GetPropertyName(T index, PWSTR name, UINT32 nameCount) CONST {
-        return GetPropertyName(static_cast<UINT32>(index), name, nameCount);
+                     return GetPropertyName(static_cast<UINT32>(index), name, nameCount);
     }
 
     template<typename T>
     UINT32 GetPropertyNameLength(T index) CONST {
-        return GetPropertyNameLength(static_cast<UINT32>(index));
+                     return GetPropertyNameLength(static_cast<UINT32>(index));
     }
 
     template<typename T>
     D2D1_PROPERTY_TYPE GetType(T index) CONST {
-        return GetType(static_cast<UINT32>(index));
+                     return GetType(static_cast<UINT32>(index));
     }
 
     template<typename T>
     UINT32 GetValueSize(T index) CONST {
-        return GetValueSize(static_cast<UINT32>(index));
+                     return GetValueSize(static_cast<UINT32>(index));
     }
 
     template<typename T>
     HRESULT GetSubProperties(T index, ID2D1Properties **subProperties) CONST {
-        return GetSubProperties(static_cast<UINT32>(index), subProperties);
+                     return GetSubProperties(static_cast<UINT32>(index), subProperties);
     }
 };
 
@@ -451,21 +451,21 @@ interface ID2D1CommandSink : public IUnknown
     STDMETHOD(SetUnitMode)(D2D1_UNIT_MODE unitMode) PURE;
     STDMETHOD(Clear)(CONST D2D1_COLOR_F *color) PURE;
     STDMETHOD(DrawGlyphRun)(D2D1_POINT_2F baselineOrigin, CONST DWRITE_GLYPH_RUN *glyphRun,
-            CONST DWRITE_GLYPH_RUN_DESCRIPTION *glyphRunDescription, ID2D1Brush *foregroundBrush,
-            DWRITE_MEASURING_MODE measuringMode) PURE;
+                                      CONST DWRITE_GLYPH_RUN_DESCRIPTION *glyphRunDescription, ID2D1Brush *foregroundBrush,
+                                      DWRITE_MEASURING_MODE measuringMode) PURE;
     STDMETHOD(DrawLine)(D2D1_POINT_2F point0, D2D1_POINT_2F point1, ID2D1Brush *brush, FLOAT strokeWidth,
-            ID2D1StrokeStyle *strokeStyle) PURE;
+                                      ID2D1StrokeStyle *strokeStyle) PURE;
     STDMETHOD(DrawGeometry)(ID2D1Geometry *geometry, ID2D1Brush *brush, FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle) PURE;
     STDMETHOD(DrawRectangle)(CONST D2D1_RECT_F *rect, ID2D1Brush *brush, FLOAT strokeWidth, ID2D1StrokeStyle *strokeStyle) PURE;
     STDMETHOD(DrawBitmap)(ID2D1Bitmap *bitmap, CONST D2D1_RECT_F *destinationRectangle, FLOAT opacity,
-            D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F *sourceRectangle,
-            CONST D2D1_MATRIX_4X4_F *perspectiveTransform) PURE;
+                                      D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F *sourceRectangle,
+                                      CONST D2D1_MATRIX_4X4_F *perspectiveTransform) PURE;
     STDMETHOD(DrawImage)(ID2D1Image *image, CONST D2D1_POINT_2F *targetOffset, CONST D2D1_RECT_F *imageRectangle,
-            D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) PURE;
+                                      D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) PURE;
     STDMETHOD(DrawGdiMetafile)(ID2D1GdiMetafile *gdiMetafile, CONST D2D1_POINT_2F *targetOffset) PURE;
     STDMETHOD(FillMesh)(ID2D1Mesh *mesh, ID2D1Brush *brush) PURE;
     STDMETHOD(FillOpacityMask)(ID2D1Bitmap *opacityMask, ID2D1Brush *brush, CONST D2D1_RECT_F *destinationRectangle,
-            CONST D2D1_RECT_F *sourceRectangle) PURE;
+                                      CONST D2D1_RECT_F *sourceRectangle) PURE;
     STDMETHOD(FillGeometry)(ID2D1Geometry *geometry, ID2D1Brush *brush, ID2D1Brush *opacityBrush) PURE;
     STDMETHOD(FillRectangle)(CONST D2D1_RECT_F *rect, ID2D1Brush *brush) PURE;
     STDMETHOD(PushAxisAlignedClip)(CONST D2D1_RECT_F *clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PURE;
@@ -505,7 +505,7 @@ __CRT_UUID_DECL(ID2D1CommandList, 0xb4f34a19,0x2383,0x4d76,0x94,0xf6,0xec,0x34,0
 interface ID2D1PrintControl : public IUnknown
 {
     STDMETHOD(AddPage)(ID2D1CommandList *commandList, D2D_SIZE_F pageSize, IStream *pagePrintTicketStream,
-            D2D1_TAG *tag1 = NULL, D2D1_TAG *tag2 = NULL) PURE;
+                                      D2D1_TAG *tag1 = NULL, D2D1_TAG *tag2 = NULL) PURE;
     STDMETHOD(Close)() PURE;
 };
 
@@ -529,12 +529,12 @@ interface ID2D1Effect : public ID2D1Properties
     STDMETHOD_(void, GetOutput)(ID2D1Image **outputImage) CONST PURE;
 
     void SetInputEffect(UINT32 index, ID2D1Effect *inputEffect, BOOL invalidate=TRUE) {
-        ID2D1Image *output = NULL;
-        if(inputEffect)
-            inputEffect->GetOutput(&output);
-        SetInput(index, output, invalidate);
-        if(output)
-            output->Release();
+                     ID2D1Image *output = NULL;
+                     if(inputEffect)
+                                      inputEffect->GetOutput(&output);
+                     SetInput(index, output, invalidate);
+                     if(output)
+                                      output->Release();
     }
 };
 
@@ -672,33 +672,33 @@ __CRT_UUID_DECL(ID2D1ColorContext, 0x1c4820bb,0x5771,0x4518,0xa5,0x81,0x2f,0xe4,
 interface ID2D1DeviceContext : public ID2D1RenderTarget
 {
     STDMETHOD(CreateBitmap)(D2D1_SIZE_U size, CONST void *sourceData, UINT32 pitch,
-            CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties, ID2D1Bitmap1 **bitmap) PURE;
+                                      CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties, ID2D1Bitmap1 **bitmap) PURE;
     using ID2D1RenderTarget::CreateBitmap;
 
     STDMETHOD(CreateBitmapFromWicBitmap)(IWICBitmapSource *wicBitmapSource,
-            CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties, ID2D1Bitmap1 **bitmap) PURE;
+                                      CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties, ID2D1Bitmap1 **bitmap) PURE;
     using ID2D1RenderTarget::CreateBitmapFromWicBitmap;
 
     STDMETHOD(CreateColorContext)(D2D1_COLOR_SPACE space, CONST BYTE *profile, UINT32 profileSize,
-            ID2D1ColorContext **colorContext) PURE;
+                                      ID2D1ColorContext **colorContext) PURE;
     STDMETHOD(CreateColorContextFromFilename)(PCWSTR filename, ID2D1ColorContext **colorContext) PURE;
     STDMETHOD(CreateColorContextFromWicColorContext)(IWICColorContext *wicColorContext, ID2D1ColorContext **colorContext) PURE;
     STDMETHOD(CreateBitmapFromDxgiSurface)(IDXGISurface *surface, CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties,
-            ID2D1Bitmap1 **bitmap) PURE;
+                                      ID2D1Bitmap1 **bitmap) PURE;
     STDMETHOD(CreateEffect)(REFCLSID effectId, ID2D1Effect **effect) PURE;
 
     STDMETHOD(CreateGradientStopCollection)(CONST D2D1_GRADIENT_STOP *straightAlphaGradientStops,
-        UINT32 straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace,
-        D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision,
-        D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode,
-        ID2D1GradientStopCollection1 **gradientStopCollection1) PURE;
+                     UINT32 straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace,
+                     D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision,
+                     D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode,
+                     ID2D1GradientStopCollection1 **gradientStopCollection1) PURE;
     using ID2D1RenderTarget::CreateGradientStopCollection;
 
     STDMETHOD(CreateImageBrush)(ID2D1Image *image, CONST D2D1_IMAGE_BRUSH_PROPERTIES *imageBrushProperties,
-            CONST D2D1_BRUSH_PROPERTIES *brushProperties, ID2D1ImageBrush **imageBrush) PURE;
+                                      CONST D2D1_BRUSH_PROPERTIES *brushProperties, ID2D1ImageBrush **imageBrush) PURE;
 
     STDMETHOD(CreateBitmapBrush)(ID2D1Bitmap *bitmap, CONST D2D1_BITMAP_BRUSH_PROPERTIES1 *bitmapBrushProperties,
-            CONST D2D1_BRUSH_PROPERTIES *brushProperties, ID2D1BitmapBrush1 **bitmapBrush) PURE;
+                                      CONST D2D1_BRUSH_PROPERTIES *brushProperties, ID2D1BitmapBrush1 **bitmapBrush) PURE;
     using ID2D1RenderTarget::CreateBitmapBrush;
 
     STDMETHOD(CreateCommandList)(ID2D1CommandList **commandList) PURE;
@@ -707,7 +707,7 @@ interface ID2D1DeviceContext : public ID2D1RenderTarget
     STDMETHOD(GetImageLocalBounds)(ID2D1Image *image, D2D1_RECT_F *localBounds) CONST PURE;
     STDMETHOD(GetImageWorldBounds)(ID2D1Image *image, D2D1_RECT_F *worldBounds) CONST PURE;
     STDMETHOD(GetGlyphRunWorldBounds)(D2D1_POINT_2F baselineOrigin, CONST DWRITE_GLYPH_RUN *glyphRun,
-            DWRITE_MEASURING_MODE measuringMode, D2D1_RECT_F *bounds) CONST PURE;
+                                      DWRITE_MEASURING_MODE measuringMode, D2D1_RECT_F *bounds) CONST PURE;
     STDMETHOD_(void, GetDevice)(ID2D1Device **device) CONST PURE;
     STDMETHOD_(void, SetTarget)(ID2D1Image *image) PURE;
     STDMETHOD_(void, GetTarget)(ID2D1Image **image) CONST PURE;
@@ -719,18 +719,18 @@ interface ID2D1DeviceContext : public ID2D1RenderTarget
     STDMETHOD_(D2D1_UNIT_MODE, GetUnitMode)() CONST PURE;
 
     STDMETHOD_(void, DrawGlyphRun)(D2D1_POINT_2F baselineOrigin, CONST DWRITE_GLYPH_RUN *glyphRun,
-            CONST DWRITE_GLYPH_RUN_DESCRIPTION *glyphRunDescription, ID2D1Brush *foregroundBrush,
-            DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL) PURE;
+                                      CONST DWRITE_GLYPH_RUN_DESCRIPTION *glyphRunDescription, ID2D1Brush *foregroundBrush,
+                                      DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL) PURE;
     using ID2D1RenderTarget::DrawGlyphRun;
 
     STDMETHOD_(void, DrawImage)(ID2D1Image *image, CONST D2D1_POINT_2F *targetOffset = NULL,
-            CONST D2D1_RECT_F *imageRectangle = NULL, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
-            D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) PURE;
+                                      CONST D2D1_RECT_F *imageRectangle = NULL, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
+                                      D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) PURE;
     STDMETHOD_(void, DrawGdiMetafile)(ID2D1GdiMetafile *gdiMetafile, CONST D2D1_POINT_2F *targetOffset = NULL) PURE;
 
     STDMETHOD_(void, DrawBitmap)(ID2D1Bitmap *bitmap, CONST D2D1_RECT_F *destinationRectangle, FLOAT opacity,
-            D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F *sourceRectangle = NULL,
-            CONST D2D1_MATRIX_4X4_F *perspectiveTransform = NULL) PURE;
+                                      D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F *sourceRectangle = NULL,
+                                      CONST D2D1_MATRIX_4X4_F *perspectiveTransform = NULL) PURE;
     using ID2D1RenderTarget::DrawBitmap;
 
     STDMETHOD_(void, PushLayer)(CONST D2D1_LAYER_PARAMETERS1 *layerParameters, ID2D1Layer *layer) PURE;
@@ -740,136 +740,136 @@ interface ID2D1DeviceContext : public ID2D1RenderTarget
     STDMETHOD(GetEffectInvalidRectangleCount)(ID2D1Effect *effect, UINT32 *rectangleCount) PURE;
     STDMETHOD(GetEffectInvalidRectangles)(ID2D1Effect *effect, D2D1_RECT_F *rectangles, UINT32 rectanglesCount) PURE;
     STDMETHOD(GetEffectRequiredInputRectangles)(ID2D1Effect *renderEffect, CONST D2D1_RECT_F *renderImageRectangle,
-            CONST D2D1_EFFECT_INPUT_DESCRIPTION *inputDescriptions, D2D1_RECT_F *requiredInputRects, UINT32 inputCount) PURE;
+                                      CONST D2D1_EFFECT_INPUT_DESCRIPTION *inputDescriptions, D2D1_RECT_F *requiredInputRects, UINT32 inputCount) PURE;
 
     STDMETHOD_(void, FillOpacityMask)(ID2D1Bitmap *opacityMask, ID2D1Brush *brush, CONST D2D1_RECT_F *destinationRectangle = NULL,
-            CONST D2D1_RECT_F *sourceRectangle = NULL) PURE;
+                                      CONST D2D1_RECT_F *sourceRectangle = NULL) PURE;
     using ID2D1RenderTarget::FillOpacityMask;
 
     HRESULT CreateBitmap(D2D1_SIZE_U size, CONST void *sourceData, UINT32 pitch, CONST D2D1_BITMAP_PROPERTIES1 &bitmapProperties,
-            ID2D1Bitmap1 **bitmap) {
-        return CreateBitmap(size, sourceData, pitch, &bitmapProperties, bitmap);
+                                      ID2D1Bitmap1 **bitmap) {
+                     return CreateBitmap(size, sourceData, pitch, &bitmapProperties, bitmap);
     }
 
     HRESULT CreateBitmapFromWicBitmap(IWICBitmapSource *wicBitmapSource, CONST D2D1_BITMAP_PROPERTIES1 &bitmapProperties,
-            ID2D1Bitmap1 **bitmap) {
-        return CreateBitmapFromWicBitmap(wicBitmapSource, &bitmapProperties, bitmap);
+                                      ID2D1Bitmap1 **bitmap) {
+                     return CreateBitmapFromWicBitmap(wicBitmapSource, &bitmapProperties, bitmap);
     }
 
     HRESULT CreateBitmapFromWicBitmap(IWICBitmapSource *wicBitmapSource, ID2D1Bitmap1 **bitmap) {
-        return CreateBitmapFromWicBitmap(wicBitmapSource, NULL, bitmap);
+                     return CreateBitmapFromWicBitmap(wicBitmapSource, NULL, bitmap);
     }
 
     HRESULT CreateBitmapFromDxgiSurface(IDXGISurface *surface, CONST D2D1_BITMAP_PROPERTIES1 &bitmapProperties,
-        ID2D1Bitmap1 **bitmap) {
-        return CreateBitmapFromDxgiSurface(surface, &bitmapProperties, bitmap);
+                     ID2D1Bitmap1 **bitmap) {
+                     return CreateBitmapFromDxgiSurface(surface, &bitmapProperties, bitmap);
     }
 
     HRESULT CreateImageBrush(ID2D1Image *image, CONST D2D1_IMAGE_BRUSH_PROPERTIES &imageBrushProperties,
-        CONST D2D1_BRUSH_PROPERTIES &brushProperties, ID2D1ImageBrush **imageBrush) {
-        return CreateImageBrush(image, &imageBrushProperties, &brushProperties, imageBrush);
+                     CONST D2D1_BRUSH_PROPERTIES &brushProperties, ID2D1ImageBrush **imageBrush) {
+                     return CreateImageBrush(image, &imageBrushProperties, &brushProperties, imageBrush);
     }
 
     HRESULT CreateImageBrush(ID2D1Image *image, CONST D2D1_IMAGE_BRUSH_PROPERTIES &imageBrushProperties,
-        ID2D1ImageBrush **imageBrush) {
-        return CreateImageBrush(image,&imageBrushProperties, NULL, imageBrush);
+                     ID2D1ImageBrush **imageBrush) {
+                     return CreateImageBrush(image,&imageBrushProperties, NULL, imageBrush);
     }
 
     HRESULT CreateBitmapBrush(ID2D1Bitmap *bitmap, ID2D1BitmapBrush1 **bitmapBrush) {
-        return CreateBitmapBrush(bitmap, NULL, NULL, bitmapBrush);
+                     return CreateBitmapBrush(bitmap, NULL, NULL, bitmapBrush);
     }
 
     HRESULT CreateBitmapBrush(ID2D1Bitmap *bitmap, CONST D2D1_BITMAP_BRUSH_PROPERTIES1 &bitmapBrushProperties,
-            ID2D1BitmapBrush1 **bitmapBrush) {
-        return CreateBitmapBrush(bitmap, &bitmapBrushProperties, NULL, bitmapBrush);
+                                      ID2D1BitmapBrush1 **bitmapBrush) {
+                     return CreateBitmapBrush(bitmap, &bitmapBrushProperties, NULL, bitmapBrush);
     }
 
     HRESULT CreateBitmapBrush(ID2D1Bitmap *bitmap, CONST D2D1_BITMAP_BRUSH_PROPERTIES1 &bitmapBrushProperties,
-            CONST D2D1_BRUSH_PROPERTIES &brushProperties, ID2D1BitmapBrush1 **bitmapBrush) {
-        return CreateBitmapBrush(bitmap, &bitmapBrushProperties, &brushProperties, bitmapBrush);
+                                      CONST D2D1_BRUSH_PROPERTIES &brushProperties, ID2D1BitmapBrush1 **bitmapBrush) {
+                     return CreateBitmapBrush(bitmap, &bitmapBrushProperties, &brushProperties, bitmapBrush);
     }
 
     void DrawImage(ID2D1Effect *effect, CONST D2D1_POINT_2F *targetOffset = NULL, CONST D2D1_RECT_F *imageRectangle = NULL,
-            D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
-            D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
-        ID2D1Image *output = NULL;
-        effect->GetOutput(&output);
-        DrawImage(output, targetOffset, imageRectangle, interpolationMode, compositeMode);
-        output->Release();
+                                      D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
+                                      D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
+                     ID2D1Image *output = NULL;
+                     effect->GetOutput(&output);
+                     DrawImage(output, targetOffset, imageRectangle, interpolationMode, compositeMode);
+                     output->Release();
     }
 
     void DrawImage(ID2D1Image *image, D2D1_INTERPOLATION_MODE interpolationMode,
-            D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
-        DrawImage(image, NULL, NULL, interpolationMode, compositeMode);
+                                      D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
+                     DrawImage(image, NULL, NULL, interpolationMode, compositeMode);
     }
 
     void DrawImage(ID2D1Effect *effect, D2D1_INTERPOLATION_MODE interpolationMode,
-            D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
-        DrawImage(effect, NULL, NULL, interpolationMode, compositeMode);
+                                      D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
+                     DrawImage(effect, NULL, NULL, interpolationMode, compositeMode);
     }
 
     void DrawImage(ID2D1Image *image, D2D1_POINT_2F targetOffset,
-            D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
-            D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
-        DrawImage(image, &targetOffset, NULL, interpolationMode, compositeMode);
+                                      D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
+                                      D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
+                     DrawImage(image, &targetOffset, NULL, interpolationMode, compositeMode);
     }
 
     void DrawImage(ID2D1Effect *effect, D2D1_POINT_2F targetOffset,
-            D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
-            D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
-        DrawImage(effect, &targetOffset, NULL, interpolationMode, compositeMode);
+                                      D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
+                                      D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
+                     DrawImage(effect, &targetOffset, NULL, interpolationMode, compositeMode);
     }
 
     void DrawImage(ID2D1Image *image, D2D1_POINT_2F targetOffset, CONST D2D1_RECT_F &imageRectangle,
-            D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
-            D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
-        DrawImage(image, &targetOffset, &imageRectangle, interpolationMode, compositeMode);
+                                      D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
+                                      D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
+                     DrawImage(image, &targetOffset, &imageRectangle, interpolationMode, compositeMode);
     }
 
     void DrawImage(ID2D1Effect *effect, D2D1_POINT_2F targetOffset, CONST D2D1_RECT_F &imageRectangle,
-            D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
-            D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
-        DrawImage(effect, &targetOffset, &imageRectangle, interpolationMode, compositeMode);
+                                      D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR,
+                                      D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER) {
+                     DrawImage(effect, &targetOffset, &imageRectangle, interpolationMode, compositeMode);
     }
 
     void PushLayer(CONST D2D1_LAYER_PARAMETERS1 &layerParameters, ID2D1Layer *layer) {
-        PushLayer(&layerParameters, layer);
+                     PushLayer(&layerParameters, layer);
     }
 
     void DrawGdiMetafile(ID2D1GdiMetafile *gdiMetafile, D2D1_POINT_2F targetOffset) {
-        DrawGdiMetafile(gdiMetafile, &targetOffset);
+                     DrawGdiMetafile(gdiMetafile, &targetOffset);
     }
 
     void DrawBitmap(ID2D1Bitmap *bitmap, CONST D2D1_RECT_F &destinationRectangle, FLOAT opacity,
-            D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F *sourceRectangle = NULL,
-            CONST D2D1_MATRIX_4X4_F *perspectiveTransform = NULL) {
-        DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
+                                      D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F *sourceRectangle = NULL,
+                                      CONST D2D1_MATRIX_4X4_F *perspectiveTransform = NULL) {
+                     DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
     }
 
     void DrawBitmap(ID2D1Bitmap *bitmap, CONST D2D1_RECT_F &destinationRectangle, FLOAT opacity,
-            D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F &sourceRectangle,
-            CONST D2D1_MATRIX_4X4_F *perspectiveTransform = NULL) {
-        DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, &sourceRectangle, perspectiveTransform);
+                                      D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F &sourceRectangle,
+                                      CONST D2D1_MATRIX_4X4_F *perspectiveTransform = NULL) {
+                     DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, &sourceRectangle, perspectiveTransform);
     }
 
     void DrawBitmap(ID2D1Bitmap *bitmap, CONST D2D1_RECT_F &destinationRectangle, FLOAT opacity,
-            D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F &sourceRectangle,
-            CONST D2D1_MATRIX_4X4_F &perspectiveTransform) {
-        DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, &sourceRectangle, &perspectiveTransform);
+                                      D2D1_INTERPOLATION_MODE interpolationMode, CONST D2D1_RECT_F &sourceRectangle,
+                                      CONST D2D1_MATRIX_4X4_F &perspectiveTransform) {
+                     DrawBitmap(bitmap, &destinationRectangle, opacity, interpolationMode, &sourceRectangle, &perspectiveTransform);
     }
 
     void FillOpacityMask(ID2D1Bitmap *opacityMask, ID2D1Brush *brush, CONST D2D1_RECT_F &destinationRectangle,
-            CONST D2D1_RECT_F *sourceRectangle = NULL) {
-        FillOpacityMask(opacityMask, brush, &destinationRectangle, sourceRectangle);
+                                      CONST D2D1_RECT_F *sourceRectangle = NULL) {
+                     FillOpacityMask(opacityMask, brush, &destinationRectangle, sourceRectangle);
     }
 
     void FillOpacityMask(ID2D1Bitmap *opacityMask, ID2D1Brush *brush, CONST D2D1_RECT_F &destinationRectangle,
-            CONST D2D1_RECT_F &sourceRectangle) {
-        FillOpacityMask(opacityMask, brush, &destinationRectangle, &sourceRectangle);
+                                      CONST D2D1_RECT_F &sourceRectangle) {
+                     FillOpacityMask(opacityMask, brush, &destinationRectangle, &sourceRectangle);
     }
 
     void SetRenderingControls(CONST D2D1_RENDERING_CONTROLS &renderingControls) {
-        return SetRenderingControls(&renderingControls);
+                     return SetRenderingControls(&renderingControls);
     }
 };
 
@@ -882,119 +882,119 @@ typedef struct ID2D1DeviceContextVtbl {
     struct ID2D1RenderTargetVtbl Base;
 
     STDMETHOD(CreateBitmap)(ID2D1DeviceContext *This, D2D1_SIZE_U size,
-        CONST void *sourceData, UINT32 pitch,
-        CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties,
-        ID2D1Bitmap1 **bitmap) PURE;
+                     CONST void *sourceData, UINT32 pitch,
+                     CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties,
+                     ID2D1Bitmap1 **bitmap) PURE;
 
     STDMETHOD(CreateBitmapFromWicBitmap)(ID2D1DeviceContext *This,
-        IWICBitmapSource *wicBitmapSource,
-        CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties,
-        ID2D1Bitmap1 **bitmap) PURE;
+                     IWICBitmapSource *wicBitmapSource,
+                     CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties,
+                     ID2D1Bitmap1 **bitmap) PURE;
 
     STDMETHOD(CreateColorContext)(ID2D1DeviceContext *This,
-        D2D1_COLOR_SPACE space, CONST BYTE *profile, UINT32 profileSize,
-        ID2D1ColorContext **colorContext) PURE;
+                     D2D1_COLOR_SPACE space, CONST BYTE *profile, UINT32 profileSize,
+                     ID2D1ColorContext **colorContext) PURE;
     STDMETHOD(CreateColorContextFromFilename)(ID2D1DeviceContext *This,
-        PCWSTR filename, ID2D1ColorContext **colorContext) PURE;
+                     PCWSTR filename, ID2D1ColorContext **colorContext) PURE;
     STDMETHOD(CreateColorContextFromWicColorContext)(ID2D1DeviceContext *This,
-        IWICColorContext *wicColorContext,
-        ID2D1ColorContext **colorContext) PURE;
+                     IWICColorContext *wicColorContext,
+                     ID2D1ColorContext **colorContext) PURE;
     STDMETHOD(CreateBitmapFromDxgiSurface)(ID2D1DeviceContext *This,
-        IDXGISurface *surface, CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties,
-        ID2D1Bitmap1 **bitmap) PURE;
+                     IDXGISurface *surface, CONST D2D1_BITMAP_PROPERTIES1 *bitmapProperties,
+                     ID2D1Bitmap1 **bitmap) PURE;
     STDMETHOD(CreateEffect)(ID2D1DeviceContext *This, REFCLSID effectId,
-        ID2D1Effect **effect) PURE;
+                     ID2D1Effect **effect) PURE;
 
     STDMETHOD(CreateGradientStopCollection)(ID2D1DeviceContext *This,
-        CONST D2D1_GRADIENT_STOP *straightAlphaGradientStops,
-        UINT32 straightAlphaGradientStopsCount,
-        D2D1_COLOR_SPACE preInterpolationSpace,
-        D2D1_COLOR_SPACE postInterpolationSpace,
-        D2D1_BUFFER_PRECISION bufferPrecision,
-        D2D1_EXTEND_MODE extendMode,
-        D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode,
-        ID2D1GradientStopCollection1 **gradientStopCollection1) PURE;
+                     CONST D2D1_GRADIENT_STOP *straightAlphaGradientStops,
+                     UINT32 straightAlphaGradientStopsCount,
+                     D2D1_COLOR_SPACE preInterpolationSpace,
+                     D2D1_COLOR_SPACE postInterpolationSpace,
+                     D2D1_BUFFER_PRECISION bufferPrecision,
+                     D2D1_EXTEND_MODE extendMode,
+                     D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode,
+                     ID2D1GradientStopCollection1 **gradientStopCollection1) PURE;
 
     STDMETHOD(CreateImageBrush)(ID2D1DeviceContext *This,
-        struct ID2D1Image *image,
-        CONST D2D1_IMAGE_BRUSH_PROPERTIES *imageBrushProperties,
-        CONST D2D1_BRUSH_PROPERTIES *brushProperties,
-        ID2D1ImageBrush **imageBrush) PURE;
+                     struct ID2D1Image *image,
+                     CONST D2D1_IMAGE_BRUSH_PROPERTIES *imageBrushProperties,
+                     CONST D2D1_BRUSH_PROPERTIES *brushProperties,
+                     ID2D1ImageBrush **imageBrush) PURE;
 
     STDMETHOD(CreateBitmapBrush)(ID2D1DeviceContext *This, ID2D1Bitmap *bitmap,
-        CONST D2D1_BITMAP_BRUSH_PROPERTIES1 *bitmapBrushProperties,
-        CONST D2D1_BRUSH_PROPERTIES *brushProperties,
-        ID2D1BitmapBrush1 **bitmapBrush) PURE;
+                     CONST D2D1_BITMAP_BRUSH_PROPERTIES1 *bitmapBrushProperties,
+                     CONST D2D1_BRUSH_PROPERTIES *brushProperties,
+                     ID2D1BitmapBrush1 **bitmapBrush) PURE;
 
     STDMETHOD(CreateCommandList)(ID2D1DeviceContext *This,
-        ID2D1CommandList **commandList) PURE;
+                     ID2D1CommandList **commandList) PURE;
     STDMETHOD_(BOOL, IsDxgiFormatSupported)(ID2D1DeviceContext *This,
-        DXGI_FORMAT format) PURE;
+                     DXGI_FORMAT format) PURE;
     STDMETHOD_(BOOL, IsBufferPrecisionSupported)(ID2D1DeviceContext *This,
-        D2D1_BUFFER_PRECISION bufferPrecision) PURE;
+                     D2D1_BUFFER_PRECISION bufferPrecision) PURE;
     STDMETHOD(GetImageLocalBounds)(ID2D1DeviceContext *This,
-        struct ID2D1Image *image, D2D1_RECT_F *localBounds) PURE;
+                     struct ID2D1Image *image, D2D1_RECT_F *localBounds) PURE;
     STDMETHOD(GetImageWorldBounds)(ID2D1DeviceContext *This,
-        struct ID2D1Image *image, D2D1_RECT_F *worldBounds) PURE;
+                     struct ID2D1Image *image, D2D1_RECT_F *worldBounds) PURE;
     STDMETHOD(GetGlyphRunWorldBounds)(ID2D1DeviceContext *This,
-        D2D1_POINT_2F baselineOrigin, CONST DWRITE_GLYPH_RUN *glyphRun,
-        DWRITE_MEASURING_MODE measuringMode, D2D1_RECT_F *bounds) PURE;
+                     D2D1_POINT_2F baselineOrigin, CONST DWRITE_GLYPH_RUN *glyphRun,
+                     DWRITE_MEASURING_MODE measuringMode, D2D1_RECT_F *bounds) PURE;
     STDMETHOD_(void, GetDevice)(ID2D1DeviceContext *This,
-        ID2D1Device **device) PURE;
+                     ID2D1Device **device) PURE;
     STDMETHOD_(void, SetTarget)(ID2D1DeviceContext *This,
-        struct ID2D1Image *image) PURE;
+                     struct ID2D1Image *image) PURE;
     STDMETHOD_(void, GetTarget)(ID2D1DeviceContext *This,
-        struct ID2D1Image **image) PURE;
+                     struct ID2D1Image **image) PURE;
     STDMETHOD_(void, SetRenderingControls)(ID2D1DeviceContext *This,
-        CONST D2D1_RENDERING_CONTROLS *renderingControls) PURE;
+                     CONST D2D1_RENDERING_CONTROLS *renderingControls) PURE;
     STDMETHOD_(void, GetRenderingControls)(ID2D1DeviceContext *This,
-        D2D1_RENDERING_CONTROLS *renderingControls) PURE;
+                     D2D1_RENDERING_CONTROLS *renderingControls) PURE;
     STDMETHOD_(void, SetPrimitiveBlend)(ID2D1DeviceContext *This,
-        D2D1_PRIMITIVE_BLEND primitiveBlend) PURE;
+                     D2D1_PRIMITIVE_BLEND primitiveBlend) PURE;
     STDMETHOD_(D2D1_PRIMITIVE_BLEND, GetPrimitiveBlend)(ID2D1DeviceContext *This) PURE;
     STDMETHOD_(void, SetUnitMode)(ID2D1DeviceContext *This,
-        D2D1_UNIT_MODE unitMode) PURE;
+                     D2D1_UNIT_MODE unitMode) PURE;
     STDMETHOD_(D2D1_UNIT_MODE, GetUnitMode)(ID2D1DeviceContext *This) PURE;
 
     STDMETHOD_(void, DrawGlyphRun)(ID2D1DeviceContext *This,
-        D2D1_POINT_2F baselineOrigin, CONST DWRITE_GLYPH_RUN *glyphRun,
-        CONST DWRITE_GLYPH_RUN_DESCRIPTION *glyphRunDescription,
-        ID2D1Brush *foregroundBrush, DWRITE_MEASURING_MODE measuringMode) PURE;
+                     D2D1_POINT_2F baselineOrigin, CONST DWRITE_GLYPH_RUN *glyphRun,
+                     CONST DWRITE_GLYPH_RUN_DESCRIPTION *glyphRunDescription,
+                     ID2D1Brush *foregroundBrush, DWRITE_MEASURING_MODE measuringMode) PURE;
 
     STDMETHOD_(void, DrawImage)(ID2D1DeviceContext *This,
-        struct ID2D1Image *image, CONST D2D1_POINT_2F *targetOffset,
-        CONST D2D1_RECT_F *imageRectangle,
-        D2D1_INTERPOLATION_MODE interpolationMode,
-        D2D1_COMPOSITE_MODE compositeMode) PURE;
+                     struct ID2D1Image *image, CONST D2D1_POINT_2F *targetOffset,
+                     CONST D2D1_RECT_F *imageRectangle,
+                     D2D1_INTERPOLATION_MODE interpolationMode,
+                     D2D1_COMPOSITE_MODE compositeMode) PURE;
     STDMETHOD_(void, DrawGdiMetafile)(ID2D1DeviceContext *This,
-        ID2D1GdiMetafile *gdiMetafile, CONST D2D1_POINT_2F *targetOffset) PURE;
+                     ID2D1GdiMetafile *gdiMetafile, CONST D2D1_POINT_2F *targetOffset) PURE;
 
     STDMETHOD_(void, DrawBitmap)(ID2D1DeviceContext *This,
-        ID2D1Bitmap *bitmap, CONST D2D1_RECT_F *destinationRectangle,
-        FLOAT opacity, D2D1_INTERPOLATION_MODE interpolationMode,
-        CONST D2D1_RECT_F *sourceRectangle,
-        CONST D2D1_MATRIX_4X4_F *perspectiveTransform) PURE;
+                     ID2D1Bitmap *bitmap, CONST D2D1_RECT_F *destinationRectangle,
+                     FLOAT opacity, D2D1_INTERPOLATION_MODE interpolationMode,
+                     CONST D2D1_RECT_F *sourceRectangle,
+                     CONST D2D1_MATRIX_4X4_F *perspectiveTransform) PURE;
 
     STDMETHOD_(void, PushLayer)(ID2D1DeviceContext *This,
-        CONST D2D1_LAYER_PARAMETERS1 *layerParameters, ID2D1Layer *layer) PURE;
+                     CONST D2D1_LAYER_PARAMETERS1 *layerParameters, ID2D1Layer *layer) PURE;
 
     STDMETHOD(InvalidateEffectInputRectangle)(ID2D1DeviceContext *This,
-        ID2D1Effect *effect, UINT32 input,
-        CONST D2D1_RECT_F *inputRectangle) PURE;
+                     ID2D1Effect *effect, UINT32 input,
+                     CONST D2D1_RECT_F *inputRectangle) PURE;
     STDMETHOD(GetEffectInvalidRectangleCount)(ID2D1DeviceContext *This,
-        ID2D1Effect *effect, UINT32 *rectangleCount) PURE;
+                     ID2D1Effect *effect, UINT32 *rectangleCount) PURE;
     STDMETHOD(GetEffectInvalidRectangles)(ID2D1DeviceContext *This,
-        ID2D1Effect *effect, D2D1_RECT_F *rectangles,
-        UINT32 rectanglesCount) PURE;
+                     ID2D1Effect *effect, D2D1_RECT_F *rectangles,
+                     UINT32 rectanglesCount) PURE;
     STDMETHOD(GetEffectRequiredInputRectangles)(ID2D1DeviceContext *This,
-        ID2D1Effect *renderEffect, CONST D2D1_RECT_F *renderImageRectangle,
-        CONST D2D1_EFFECT_INPUT_DESCRIPTION *inputDescriptions,
-        D2D1_RECT_F *requiredInputRects, UINT32 inputCount) PURE;
+                     ID2D1Effect *renderEffect, CONST D2D1_RECT_F *renderImageRectangle,
+                     CONST D2D1_EFFECT_INPUT_DESCRIPTION *inputDescriptions,
+                     D2D1_RECT_F *requiredInputRects, UINT32 inputCount) PURE;
 
     STDMETHOD_(void, FillOpacityMask)(ID2D1DeviceContext *This,
-        ID2D1Bitmap *opacityMask, ID2D1Brush *brush,
-        CONST D2D1_RECT_F *destinationRectangle,
-        CONST D2D1_RECT_F *sourceRectangle) PURE;
+                     ID2D1Bitmap *opacityMask, ID2D1Brush *brush,
+                     CONST D2D1_RECT_F *destinationRectangle,
+                     CONST D2D1_RECT_F *sourceRectangle) PURE;
 }
 ID2D1DeviceContextVtbl;
 
@@ -1013,14 +1013,14 @@ interface ID2D1Device : public ID2D1Resource
 {
     STDMETHOD(CreateDeviceContext)(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext **deviceContext) PURE;
     STDMETHOD(CreatePrintControl)(IWICImagingFactory *wicFactory, IPrintDocumentPackageTarget *documentTarget,
-            CONST D2D1_PRINT_CONTROL_PROPERTIES *printControlProperties, ID2D1PrintControl **printControl) PURE;
+                                      CONST D2D1_PRINT_CONTROL_PROPERTIES *printControlProperties, ID2D1PrintControl **printControl) PURE;
     STDMETHOD_(void, SetMaximumTextureMemory)(UINT64 maximumInBytes) PURE;
     STDMETHOD_(UINT64, GetMaximumTextureMemory)() CONST PURE;
     STDMETHOD_(void, ClearResources)(UINT32 millisecondsSinceUse = 0) PURE;
 
     HRESULT CreatePrintControl(IWICImagingFactory *wicFactory, IPrintDocumentPackageTarget *documentTarget,
-            CONST D2D1_PRINT_CONTROL_PROPERTIES &printControlProperties, ID2D1PrintControl **printControl) {
-        return CreatePrintControl(wicFactory, documentTarget, &printControlProperties, printControl);
+                                      CONST D2D1_PRINT_CONTROL_PROPERTIES &printControlProperties, ID2D1PrintControl **printControl) {
+                     return CreatePrintControl(wicFactory, documentTarget, &printControlProperties, printControl);
     }
 };
 
@@ -1032,18 +1032,18 @@ typedef struct ID2D1DeviceVtbl {
     struct ID2D1ResourceVtbl Base;
 
     STDMETHOD(CreateDeviceContext)(ID2D1Device *This,
-        D2D1_DEVICE_CONTEXT_OPTIONS options,
-        ID2D1DeviceContext **deviceContext) PURE;
+                     D2D1_DEVICE_CONTEXT_OPTIONS options,
+                     ID2D1DeviceContext **deviceContext) PURE;
     STDMETHOD(CreatePrintControl)(ID2D1Device *This,
-        IWICImagingFactory *wicFactory,
-        IPrintDocumentPackageTarget *documentTarget,
-        CONST D2D1_PRINT_CONTROL_PROPERTIES *printControlProperties,
-        ID2D1PrintControl **printControl) PURE;
+                     IWICImagingFactory *wicFactory,
+                     IPrintDocumentPackageTarget *documentTarget,
+                     CONST D2D1_PRINT_CONTROL_PROPERTIES *printControlProperties,
+                     ID2D1PrintControl **printControl) PURE;
     STDMETHOD_(void, SetMaximumTextureMemory)(ID2D1Device *This,
-        UINT64 maximumInBytes) PURE;
+                     UINT64 maximumInBytes) PURE;
     STDMETHOD_(UINT64, GetMaximumTextureMemory)(ID2D1Device *This) PURE;
     STDMETHOD_(void, ClearResources)(ID2D1Device *This,
-        UINT32 millisecondsSinceUse) PURE;
+                     UINT32 millisecondsSinceUse) PURE;
 }
 ID2D1DeviceVtbl;
 
@@ -1082,23 +1082,23 @@ __CRT_UUID_DECL(ID2D1DrawingStateBlock1, 0x689f1f85,0xc72e,0x4e33,0x8f,0x19,0x85
 interface ID2D1PathGeometry1 : public ID2D1PathGeometry
 {
     STDMETHOD(ComputePointAndSegmentAtLength)(FLOAT length, UINT32 startSegment, CONST D2D1_MATRIX_3X2_F *worldTransform,
-            FLOAT flatteningTolerance, D2D1_POINT_DESCRIPTION *pointDescription) CONST PURE;
+                                      FLOAT flatteningTolerance, D2D1_POINT_DESCRIPTION *pointDescription) CONST PURE;
 
     HRESULT ComputePointAndSegmentAtLength(FLOAT length, UINT32 startSegment, CONST D2D1_MATRIX_3X2_F &worldTransform,
-            FLOAT flatteningTolerance, D2D1_POINT_DESCRIPTION *pointDescription) CONST {
-        return ComputePointAndSegmentAtLength(length, startSegment, &worldTransform, flatteningTolerance, pointDescription);
+                                      FLOAT flatteningTolerance, D2D1_POINT_DESCRIPTION *pointDescription) CONST {
+                     return ComputePointAndSegmentAtLength(length, startSegment, &worldTransform, flatteningTolerance, pointDescription);
     }
 
     HRESULT ComputePointAndSegmentAtLength(FLOAT length, UINT32 startSegment, CONST D2D1_MATRIX_3X2_F *worldTransform,
-            D2D1_POINT_DESCRIPTION *pointDescription) CONST {
-        return ComputePointAndSegmentAtLength(length, startSegment, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE,
-                                              pointDescription);
+                                      D2D1_POINT_DESCRIPTION *pointDescription) CONST {
+                     return ComputePointAndSegmentAtLength(length, startSegment, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE,
+                                                                                                                                         pointDescription);
     }
 
     HRESULT ComputePointAndSegmentAtLength(FLOAT length, UINT32 startSegment, CONST D2D1_MATRIX_3X2_F &worldTransform,
-            D2D1_POINT_DESCRIPTION *pointDescription) CONST {
-        return ComputePointAndSegmentAtLength(length, startSegment, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE,
-                                              pointDescription);
+                                      D2D1_POINT_DESCRIPTION *pointDescription) CONST {
+                     return ComputePointAndSegmentAtLength(length, startSegment, &worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE,
+                                                                                                                                         pointDescription);
     }
 };
 
@@ -1119,38 +1119,38 @@ interface ID2D1Factory1 : public ID2D1Factory
     STDMETHOD(CreateDevice)(IDXGIDevice *dxgiDevice, ID2D1Device **d2dDevice) PURE;
 
     STDMETHOD(CreateStrokeStyle)(CONST D2D1_STROKE_STYLE_PROPERTIES1 *strokeStyleProperties,
-            CONST FLOAT *dashes, UINT32 dashesCount, ID2D1StrokeStyle1 **strokeStyle) PURE;
+                                      CONST FLOAT *dashes, UINT32 dashesCount, ID2D1StrokeStyle1 **strokeStyle) PURE;
     using ID2D1Factory::CreateStrokeStyle;
 
     STDMETHOD(CreatePathGeometry)(ID2D1PathGeometry1 **pathGeometry) PURE;
     using ID2D1Factory::CreatePathGeometry;
 
     STDMETHOD(CreateDrawingStateBlock)(CONST D2D1_DRAWING_STATE_DESCRIPTION1 *drawingStateDescription,
-            IDWriteRenderingParams *textRenderingParams, ID2D1DrawingStateBlock1 **drawingStateBlock) PURE;
+                                      IDWriteRenderingParams *textRenderingParams, ID2D1DrawingStateBlock1 **drawingStateBlock) PURE;
     using ID2D1Factory::CreateDrawingStateBlock;
 
     STDMETHOD(CreateGdiMetafile)(IStream *metafileStream, ID2D1GdiMetafile **metafile) PURE;
     STDMETHOD(RegisterEffectFromStream)(REFCLSID classId, IStream *propertyXml, CONST D2D1_PROPERTY_BINDING *bindings,
-            UINT32 bindingsCount, CONST PD2D1_EFFECT_FACTORY effectFactory) PURE;
+                                      UINT32 bindingsCount, CONST PD2D1_EFFECT_FACTORY effectFactory) PURE;
     STDMETHOD(RegisterEffectFromString)(REFCLSID classId, PCWSTR propertyXml, CONST D2D1_PROPERTY_BINDING *bindings,
-            UINT32 bindingsCount, CONST PD2D1_EFFECT_FACTORY effectFactory) PURE;
+                                      UINT32 bindingsCount, CONST PD2D1_EFFECT_FACTORY effectFactory) PURE;
     STDMETHOD(UnregisterEffect)(REFCLSID classId) PURE;
     STDMETHOD(GetRegisteredEffects)(CLSID *effects, UINT32 effectsCount, UINT32 *effectsReturned,
-            UINT32 *effectsRegistered) CONST PURE;
+                                      UINT32 *effectsRegistered) CONST PURE;
     STDMETHOD(GetEffectProperties)(REFCLSID effectId, ID2D1Properties **properties) CONST PURE;
 
     HRESULT CreateStrokeStyle(CONST D2D1_STROKE_STYLE_PROPERTIES1 &strokeStyleProperties, CONST FLOAT *dashes,
-            UINT32 dashesCount, ID2D1StrokeStyle1 **strokeStyle) {
-        return CreateStrokeStyle(&strokeStyleProperties, dashes, dashesCount, strokeStyle);
+                                      UINT32 dashesCount, ID2D1StrokeStyle1 **strokeStyle) {
+                     return CreateStrokeStyle(&strokeStyleProperties, dashes, dashesCount, strokeStyle);
     }
 
     HRESULT CreateDrawingStateBlock(CONST D2D1_DRAWING_STATE_DESCRIPTION1 &drawingStateDescription,
-            ID2D1DrawingStateBlock1 **drawingStateBlock) {
-        return CreateDrawingStateBlock(&drawingStateDescription, NULL, drawingStateBlock);
+                                      ID2D1DrawingStateBlock1 **drawingStateBlock) {
+                     return CreateDrawingStateBlock(&drawingStateDescription, NULL, drawingStateBlock);
     }
 
     HRESULT CreateDrawingStateBlock(ID2D1DrawingStateBlock1 **drawingStateBlock) {
-        return CreateDrawingStateBlock(NULL, NULL, drawingStateBlock);
+                     return CreateDrawingStateBlock(NULL, NULL, drawingStateBlock);
     }
 };
 
@@ -1162,33 +1162,33 @@ typedef struct ID2D1Factory1Vtbl {
     ID2D1FactoryVtbl Base;
 
     STDMETHOD(CreateDevice)(ID2D1Factory1 *This, IDXGIDevice *dxgiDevice,
-            ID2D1Device **d2dDevice) PURE;
+                                      ID2D1Device **d2dDevice) PURE;
     STDMETHOD(CreateStrokeStyle)(ID2D1Factory1 *This,
-            CONST D2D1_STROKE_STYLE_PROPERTIES1 *strokeStyleProperties,
-            CONST FLOAT *dashes, UINT32 dashesCount,
-            ID2D1StrokeStyle1 **strokeStyle) PURE;
+                                      CONST D2D1_STROKE_STYLE_PROPERTIES1 *strokeStyleProperties,
+                                      CONST FLOAT *dashes, UINT32 dashesCount,
+                                      ID2D1StrokeStyle1 **strokeStyle) PURE;
     STDMETHOD(CreatePathGeometry)(ID2D1Factory1 *This,
-            ID2D1PathGeometry1 **pathGeometry) PURE;
+                                      ID2D1PathGeometry1 **pathGeometry) PURE;
     STDMETHOD(CreateDrawingStateBlock)(ID2D1Factory1 *This,
-            CONST D2D1_DRAWING_STATE_DESCRIPTION1 *drawingStateDescription,
-            IDWriteRenderingParams *textRenderingParams,
-            ID2D1DrawingStateBlock1 **drawingStateBlock) PURE;
+                                      CONST D2D1_DRAWING_STATE_DESCRIPTION1 *drawingStateDescription,
+                                      IDWriteRenderingParams *textRenderingParams,
+                                      ID2D1DrawingStateBlock1 **drawingStateBlock) PURE;
     STDMETHOD(CreateGdiMetafile)(ID2D1Factory1 *This, IStream *metafileStream,
-            ID2D1GdiMetafile **metafile) PURE;
+                                      ID2D1GdiMetafile **metafile) PURE;
     STDMETHOD(RegisterEffectFromStream)(ID2D1Factory1 *This, REFCLSID classId,
-            IStream *propertyXml, CONST D2D1_PROPERTY_BINDING *bindings,
-            UINT32 bindingsCount,
-            CONST PD2D1_EFFECT_FACTORY effectFactory) PURE;
+                                      IStream *propertyXml, CONST D2D1_PROPERTY_BINDING *bindings,
+                                      UINT32 bindingsCount,
+                                      CONST PD2D1_EFFECT_FACTORY effectFactory) PURE;
     STDMETHOD(RegisterEffectFromString)(ID2D1Factory1 *This,
-            REFCLSID classId, PCWSTR propertyXml,
-            CONST D2D1_PROPERTY_BINDING *bindings, UINT32 bindingsCount,
-            CONST PD2D1_EFFECT_FACTORY effectFactory) PURE;
+                                      REFCLSID classId, PCWSTR propertyXml,
+                                      CONST D2D1_PROPERTY_BINDING *bindings, UINT32 bindingsCount,
+                                      CONST PD2D1_EFFECT_FACTORY effectFactory) PURE;
     STDMETHOD(UnregisterEffect)(ID2D1Factory1 *This, REFCLSID classId) PURE;
     STDMETHOD(GetRegisteredEffects)(ID2D1Factory1 *This, CLSID *effects,
-            UINT32 effectsCount, UINT32 *effectsReturned,
-            UINT32 *effectsRegistered) PURE;
+                                      UINT32 effectsCount, UINT32 *effectsReturned,
+                                      UINT32 *effectsRegistered) PURE;
     STDMETHOD(GetEffectProperties)(ID2D1Factory1 *This, REFCLSID effectId,
-            ID2D1Properties **properties) PURE;
+                                      ID2D1Properties **properties) PURE;
 } ID2D1Factory1Vtbl;
 
 interface ID2D1Factory1 {

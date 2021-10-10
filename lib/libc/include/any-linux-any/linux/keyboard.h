@@ -448,15 +448,15 @@
 #define NR_LOCK		9
 
 #define K_BRL_BLANK     K(KT_BRL, 0)
-#define K_BRL_DOT1      K(KT_BRL, 1)
-#define K_BRL_DOT2      K(KT_BRL, 2)
-#define K_BRL_DOT3      K(KT_BRL, 3)
-#define K_BRL_DOT4      K(KT_BRL, 4)
-#define K_BRL_DOT5      K(KT_BRL, 5)
-#define K_BRL_DOT6      K(KT_BRL, 6)
-#define K_BRL_DOT7      K(KT_BRL, 7)
-#define K_BRL_DOT8      K(KT_BRL, 8)
-#define K_BRL_DOT9      K(KT_BRL, 9)
+#define K_BRL_DOT1                   K(KT_BRL, 1)
+#define K_BRL_DOT2                   K(KT_BRL, 2)
+#define K_BRL_DOT3                   K(KT_BRL, 3)
+#define K_BRL_DOT4                   K(KT_BRL, 4)
+#define K_BRL_DOT5                   K(KT_BRL, 5)
+#define K_BRL_DOT6                   K(KT_BRL, 6)
+#define K_BRL_DOT7                   K(KT_BRL, 7)
+#define K_BRL_DOT8                   K(KT_BRL, 8)
+#define K_BRL_DOT9                   K(KT_BRL, 9)
 #define K_BRL_DOT10     K(KT_BRL, 10)
 
 #define NR_BRL		11

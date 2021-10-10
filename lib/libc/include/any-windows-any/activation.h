@@ -46,7 +46,7 @@ MIDL_INTERFACE("00000035-0000-0000-c000-000000000046")
 IActivationFactory : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE ActivateInstance(
-        IInspectable **instance) = 0;
+                     IInspectable **instance) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -58,34 +58,34 @@ typedef struct IActivationFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActivationFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActivationFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActivationFactory *This);
+                     IActivationFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActivationFactory *This);
+                     IActivationFactory *This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IActivationFactory *This,
-        ULONG *iidCount,
-        IID **iids);
+                     IActivationFactory *This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IActivationFactory *This,
-        HSTRING *className);
+                     IActivationFactory *This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IActivationFactory *This,
-        TrustLevel *trustLevel);
+                     IActivationFactory *This,
+                     TrustLevel *trustLevel);
 
     /*** IActivationFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *ActivateInstance)(
-        IActivationFactory *This,
-        IInspectable **instance);
+                     IActivationFactory *This,
+                     IInspectable **instance);
 
     END_INTERFACE
 } IActivationFactoryVtbl;

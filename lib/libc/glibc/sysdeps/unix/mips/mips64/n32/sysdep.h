@@ -25,39 +25,39 @@
    backwards into the previous fn.  */
 #ifdef __PIC__
 #define PSEUDO(name, syscall_name, args) \
-  .align 2;								      \
-  .set nomips16;							      \
-  cfi_startproc;							      \
-  99:;									      \
-  .set noat;								      \
-  .cpsetup t9, $1, name;						      \
-  cfi_register (gp, $1);						      \
-  .set at;								      \
-  la t9,__syscall_error;						      \
-  .cpreturn;								      \
-  cfi_restore (gp);							      \
-  jr t9;								      \
-  cfi_endproc;								      \
-  ENTRY(name)								      \
-  li v0, SYS_ify(syscall_name);						      \
-  syscall;								      \
-  bne a3, zero, 99b;							      \
+  .align 2;								                   \
+  .set nomips16;							                   \
+  cfi_startproc;							                   \
+  99:;									                   \
+  .set noat;								                   \
+  .cpsetup t9, $1, name;						                   \
+  cfi_register (gp, $1);						                   \
+  .set at;								                   \
+  la t9,__syscall_error;						                   \
+  .cpreturn;								                   \
+  cfi_restore (gp);							                   \
+  jr t9;								                   \
+  cfi_endproc;								                   \
+  ENTRY(name)								                   \
+  li v0, SYS_ify(syscall_name);						                   \
+  syscall;								                   \
+  bne a3, zero, 99b;							                   \
 L(syse1):
 #else
 #define PSEUDO(name, syscall_name, args) \
-  .set noreorder;							      \
-  .align 2;								      \
-  .set nomips16;							      \
-  cfi_startproc;							      \
-  99: j __syscall_error;						      \
-  nop;                                                                        \
-  cfi_endproc;								      \
-  ENTRY(name)								      \
-  .set noreorder;							      \
-  li v0, SYS_ify(syscall_name);						      \
-  syscall;								      \
-  .set reorder;								      \
-  bne a3, zero, 99b;							      \
+  .set noreorder;							                   \
+  .align 2;								                   \
+  .set nomips16;							                   \
+  cfi_startproc;							                   \
+  99: j __syscall_error;						                   \
+  nop;                                                                                                                                                                                                                                    \
+  cfi_endproc;								                   \
+  ENTRY(name)								                   \
+  .set noreorder;							                   \
+  li v0, SYS_ify(syscall_name);						                   \
+  syscall;								                   \
+  .set reorder;								                   \
+  bne a3, zero, 99b;							                   \
 L(syse1):
 #endif
 

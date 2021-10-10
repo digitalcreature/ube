@@ -18,27 +18,27 @@ const TypeInfo = builtin.TypeInfo;
 pub fn tagName(v: anytype) []const u8 {
     const T = @TypeOf(v);
     switch (@typeInfo(T)) {
-        .ErrorSet => return @errorName(v),
-        else => return @tagName(v),
+                     .ErrorSet => return @errorName(v),
+                     else => return @tagName(v),
     }
 }
 
 test "std.meta.tagName" {
     const E1 = enum {
-        A,
-        B,
+                     A,
+                     B,
     };
     const E2 = enum(u8) {
-        C = 33,
-        D,
+                     C = 33,
+                     D,
     };
     const U1 = union(enum) {
-        G: u8,
-        H: u16,
+                     G: u8,
+                     H: u16,
     };
     const U2 = union(E2) {
-        C: u8,
-        D: u16,
+                     C: u8,
+                     D: u16,
     };
 
     var u1g = U1{ .G = 0 };
@@ -66,36 +66,36 @@ pub fn stringToEnum(comptime T: type, str: []const u8) ?T {
     // - https://github.com/ziglang/zig/issues/4055
     // - https://github.com/ziglang/zig/issues/3863
     if (@typeInfo(T).Enum.fields.len <= 100) {
-        const kvs = comptime build_kvs: {
-            // In order to generate an array of structs that play nice with anonymous
-            // list literals, we need to give them "0" and "1" field names.
-            // TODO https://github.com/ziglang/zig/issues/4335
-            const EnumKV = struct {
-                @"0": []const u8,
-                @"1": T,
-            };
-            var kvs_array: [@typeInfo(T).Enum.fields.len]EnumKV = undefined;
-            inline for (@typeInfo(T).Enum.fields) |enumField, i| {
-                kvs_array[i] = .{ .@"0" = enumField.name, .@"1" = @field(T, enumField.name) };
-            }
-            break :build_kvs kvs_array[0..];
-        };
-        const map = std.ComptimeStringMap(T, kvs);
-        return map.get(str);
+                     const kvs = comptime build_kvs: {
+                                      // In order to generate an array of structs that play nice with anonymous
+                                      // list literals, we need to give them "0" and "1" field names.
+                                      // TODO https://github.com/ziglang/zig/issues/4335
+                                      const EnumKV = struct {
+                                          @"0": []const u8,
+                                          @"1": T,
+                                      };
+                                      var kvs_array: [@typeInfo(T).Enum.fields.len]EnumKV = undefined;
+                                      inline for (@typeInfo(T).Enum.fields) |enumField, i| {
+                                          kvs_array[i] = .{ .@"0" = enumField.name, .@"1" = @field(T, enumField.name) };
+                                      }
+                                      break :build_kvs kvs_array[0..];
+                     };
+                     const map = std.ComptimeStringMap(T, kvs);
+                     return map.get(str);
     } else {
-        inline for (@typeInfo(T).Enum.fields) |enumField| {
-            if (mem.eql(u8, str, enumField.name)) {
-                return @field(T, enumField.name);
-            }
-        }
-        return null;
+                     inline for (@typeInfo(T).Enum.fields) |enumField| {
+                                      if (mem.eql(u8, str, enumField.name)) {
+                                          return @field(T, enumField.name);
+                                      }
+                     }
+                     return null;
     }
 }
 
 test "std.meta.stringToEnum" {
     const E1 = enum {
-        A,
-        B,
+                     A,
+                     B,
     };
     testing.expect(E1.A == stringToEnum(E1, "A").?);
     testing.expect(E1.B == stringToEnum(E1, "B").?);
@@ -104,10 +104,10 @@ test "std.meta.stringToEnum" {
 
 pub fn bitCount(comptime T: type) comptime_int {
     return switch (@typeInfo(T)) {
-        .Bool => 1,
-        .Int => |info| info.bits,
-        .Float => |info| info.bits,
-        else => @compileError("Expected bool, int or float type, found '" ++ @typeName(T) ++ "'"),
+                     .Bool => 1,
+                     .Int => |info| info.bits,
+                     .Float => |info| info.bits,
+                     else => @compileError("Expected bool, int or float type, found '" ++ @typeName(T) ++ "'"),
     };
 }
 
@@ -132,11 +132,11 @@ test "std.meta.alignment" {
 
 pub fn Child(comptime T: type) type {
     return switch (@typeInfo(T)) {
-        .Array => |info| info.child,
-        .Vector => |info| info.child,
-        .Pointer => |info| info.child,
-        .Optional => |info| info.child,
-        else => @compileError("Expected pointer, optional, array or vector type, found '" ++ @typeName(T) ++ "'"),
+                     .Array => |info| info.child,
+                     .Vector => |info| info.child,
+                     .Pointer => |info| info.child,
+                     .Optional => |info| info.child,
+                     else => @compileError("Expected pointer, optional, array or vector type, found '" ++ @typeName(T) ++ "'"),
     };
 }
 
@@ -151,17 +151,17 @@ test "std.meta.Child" {
 /// Given a "memory span" type, returns the "element type".
 pub fn Elem(comptime T: type) type {
     switch (@typeInfo(T)) {
-        .Array => |info| return info.child,
-        .Vector => |info| return info.child,
-        .Pointer => |info| switch (info.size) {
-            .One => switch (@typeInfo(info.child)) {
-                .Array => |array_info| return array_info.child,
-                .Vector => |vector_info| return vector_info.child,
-                else => {},
-            },
-            .Many, .C, .Slice => return info.child,
-        },
-        else => {},
+                     .Array => |info| return info.child,
+                     .Vector => |info| return info.child,
+                     .Pointer => |info| switch (info.size) {
+                                      .One => switch (@typeInfo(info.child)) {
+                                          .Array => |array_info| return array_info.child,
+                                          .Vector => |vector_info| return vector_info.child,
+                                          else => {},
+                                      },
+                                      .Many, .C, .Slice => return info.child,
+                     },
+                     else => {},
     }
     @compileError("Expected pointer, slice, array or vector type, found '" ++ @typeName(T) ++ "'");
 }
@@ -180,18 +180,18 @@ test "std.meta.Elem" {
 /// Types which cannot possibly have a sentinel will be a compile error.
 pub fn sentinel(comptime T: type) ?Elem(T) {
     switch (@typeInfo(T)) {
-        .Array => |info| return info.sentinel,
-        .Pointer => |info| {
-            switch (info.size) {
-                .Many, .Slice => return info.sentinel,
-                .One => switch (@typeInfo(info.child)) {
-                    .Array => |array_info| return array_info.sentinel,
-                    else => {},
-                },
-                else => {},
-            }
-        },
-        else => {},
+                     .Array => |info| return info.sentinel,
+                     .Pointer => |info| {
+                                      switch (info.size) {
+                                          .Many, .Slice => return info.sentinel,
+                                          .One => switch (@typeInfo(info.child)) {
+                                                           .Array => |array_info| return array_info.sentinel,
+                                                           else => {},
+                                          },
+                                          else => {},
+                                      }
+                     },
+                     else => {},
     }
     @compileError("type '" ++ @typeName(T) ++ "' cannot possibly have a sentinel");
 }
@@ -215,34 +215,34 @@ fn testSentinel() void {
 
 pub fn containerLayout(comptime T: type) TypeInfo.ContainerLayout {
     return switch (@typeInfo(T)) {
-        .Struct => |info| info.layout,
-        .Enum => |info| info.layout,
-        .Union => |info| info.layout,
-        else => @compileError("Expected struct, enum or union type, found '" ++ @typeName(T) ++ "'"),
+                     .Struct => |info| info.layout,
+                     .Enum => |info| info.layout,
+                     .Union => |info| info.layout,
+                     else => @compileError("Expected struct, enum or union type, found '" ++ @typeName(T) ++ "'"),
     };
 }
 
 test "std.meta.containerLayout" {
     const E1 = enum {
-        A,
+                     A,
     };
     const E2 = packed enum {
-        A,
+                     A,
     };
     const E3 = extern enum {
-        A,
+                     A,
     };
     const S1 = struct {};
     const S2 = packed struct {};
     const S3 = extern struct {};
     const U1 = union {
-        a: u8,
+                     a: u8,
     };
     const U2 = packed union {
-        a: u8,
+                     a: u8,
     };
     const U3 = extern union {
-        a: u8,
+                     a: u8,
     };
 
     testing.expect(containerLayout(E1) == .Auto);
@@ -258,44 +258,44 @@ test "std.meta.containerLayout" {
 
 pub fn declarations(comptime T: type) []const TypeInfo.Declaration {
     return switch (@typeInfo(T)) {
-        .Struct => |info| info.decls,
-        .Enum => |info| info.decls,
-        .Union => |info| info.decls,
-        else => @compileError("Expected struct, enum or union type, found '" ++ @typeName(T) ++ "'"),
+                     .Struct => |info| info.decls,
+                     .Enum => |info| info.decls,
+                     .Union => |info| info.decls,
+                     else => @compileError("Expected struct, enum or union type, found '" ++ @typeName(T) ++ "'"),
     };
 }
 
 test "std.meta.declarations" {
     const E1 = enum {
-        A,
+                     A,
 
-        fn a() void {}
+                     fn a() void {}
     };
     const S1 = struct {
-        fn a() void {}
+                     fn a() void {}
     };
     const U1 = union {
-        a: u8,
+                     a: u8,
 
-        fn a() void {}
+                     fn a() void {}
     };
 
     const decls = comptime [_][]const TypeInfo.Declaration{
-        declarations(E1),
-        declarations(S1),
-        declarations(U1),
+                     declarations(E1),
+                     declarations(S1),
+                     declarations(U1),
     };
 
     inline for (decls) |decl| {
-        testing.expect(decl.len == 1);
-        testing.expect(comptime mem.eql(u8, decl[0].name, "a"));
+                     testing.expect(decl.len == 1);
+                     testing.expect(comptime mem.eql(u8, decl[0].name, "a"));
     }
 }
 
 pub fn declarationInfo(comptime T: type, comptime decl_name: []const u8) TypeInfo.Declaration {
     inline for (comptime declarations(T)) |decl| {
-        if (comptime mem.eql(u8, decl.name, decl_name))
-            return decl;
+                     if (comptime mem.eql(u8, decl.name, decl_name))
+                                      return decl;
     }
 
     @compileError("'" ++ @typeName(T) ++ "' has no declaration '" ++ decl_name ++ "'");
@@ -303,28 +303,28 @@ pub fn declarationInfo(comptime T: type, comptime decl_name: []const u8) TypeInf
 
 test "std.meta.declarationInfo" {
     const E1 = enum {
-        A,
+                     A,
 
-        fn a() void {}
+                     fn a() void {}
     };
     const S1 = struct {
-        fn a() void {}
+                     fn a() void {}
     };
     const U1 = union {
-        a: u8,
+                     a: u8,
 
-        fn a() void {}
+                     fn a() void {}
     };
 
     const infos = comptime [_]TypeInfo.Declaration{
-        declarationInfo(E1, "a"),
-        declarationInfo(S1, "a"),
-        declarationInfo(U1, "a"),
+                     declarationInfo(E1, "a"),
+                     declarationInfo(S1, "a"),
+                     declarationInfo(U1, "a"),
     };
 
     inline for (infos) |info| {
-        testing.expect(comptime mem.eql(u8, info.name, "a"));
-        testing.expect(!info.is_pub);
+                     testing.expect(comptime mem.eql(u8, info.name, "a"));
+                     testing.expect(!info.is_pub);
     }
 }
 
@@ -336,24 +336,24 @@ pub fn fields(comptime T: type) switch (@typeInfo(T)) {
     else => @compileError("Expected struct, union, error set or enum type, found '" ++ @typeName(T) ++ "'"),
 } {
     return switch (@typeInfo(T)) {
-        .Struct => |info| info.fields,
-        .Union => |info| info.fields,
-        .Enum => |info| info.fields,
-        .ErrorSet => |errors| errors.?, // must be non global error set
-        else => @compileError("Expected struct, union, error set or enum type, found '" ++ @typeName(T) ++ "'"),
+                     .Struct => |info| info.fields,
+                     .Union => |info| info.fields,
+                     .Enum => |info| info.fields,
+                     .ErrorSet => |errors| errors.?, // must be non global error set
+                     else => @compileError("Expected struct, union, error set or enum type, found '" ++ @typeName(T) ++ "'"),
     };
 }
 
 test "std.meta.fields" {
     const E1 = enum {
-        A,
+                     A,
     };
     const E2 = error{A};
     const S1 = struct {
-        a: u8,
+                     a: u8,
     };
     const U1 = union {
-        a: u8,
+                     a: u8,
     };
 
     const e1f = comptime fields(E1);
@@ -381,8 +381,8 @@ pub fn fieldInfo(comptime T: type, comptime field_name: []const u8) switch (@typ
     else => @compileError("Expected struct, union, error set or enum type, found '" ++ @typeName(T) ++ "'"),
 } {
     inline for (comptime fields(T)) |field| {
-        if (comptime mem.eql(u8, field.name, field_name))
-            return field;
+                     if (comptime mem.eql(u8, field.name, field_name))
+                                      return field;
     }
 
     @compileError("'" ++ @typeName(T) ++ "' has no field '" ++ field_name ++ "'");
@@ -390,14 +390,14 @@ pub fn fieldInfo(comptime T: type, comptime field_name: []const u8) switch (@typ
 
 test "std.meta.fieldInfo" {
     const E1 = enum {
-        A,
+                     A,
     };
     const E2 = error{A};
     const S1 = struct {
-        a: u8,
+                     a: u8,
     };
     const U1 = union {
-        a: u8,
+                     a: u8,
     };
 
     const e1f = comptime fieldInfo(E1, "A");
@@ -415,20 +415,20 @@ test "std.meta.fieldInfo" {
 
 pub fn TagType(comptime T: type) type {
     return switch (@typeInfo(T)) {
-        .Enum => |info| info.tag_type,
-        .Union => |info| if (info.tag_type) |Tag| Tag else null,
-        else => @compileError("expected enum or union type, found '" ++ @typeName(T) ++ "'"),
+                     .Enum => |info| info.tag_type,
+                     .Union => |info| if (info.tag_type) |Tag| Tag else null,
+                     else => @compileError("expected enum or union type, found '" ++ @typeName(T) ++ "'"),
     };
 }
 
 test "std.meta.TagType" {
     const E = enum(u8) {
-        C = 33,
-        D,
+                     C = 33,
+                     D,
     };
     const U = union(E) {
-        C: u8,
-        D: u16,
+                     C: u8,
+                     D: u16,
     };
 
     testing.expect(TagType(E) == u8);
@@ -443,13 +443,13 @@ pub fn activeTag(u: anytype) @TagType(@TypeOf(u)) {
 
 test "std.meta.activeTag" {
     const UE = enum {
-        Int,
-        Float,
+                     Int,
+                     Float,
     };
 
     const U = union(UE) {
-        Int: u32,
-        Float: f32,
+                     Int: u32,
+                     Float: f32,
     };
 
     var u = U{ .Int = 32 };
@@ -468,8 +468,8 @@ pub fn TagPayloadType(comptime U: type, tag: @TagType(U)) type {
     const tag_info = @typeInfo(@TagType(U)).Enum;
 
     inline for (info.fields) |field_info| {
-        if (comptime mem.eql(u8, field_info.name, @tagName(tag)))
-            return field_info.field_type;
+                     if (comptime mem.eql(u8, field_info.name, @tagName(tag)))
+                                      return field_info.field_type;
     }
 
     unreachable;
@@ -477,10 +477,10 @@ pub fn TagPayloadType(comptime U: type, tag: @TagType(U)) type {
 
 test "std.meta.TagPayloadType" {
     const Event = union(enum) {
-        Moved: struct {
-            from: i32,
-            to: i32,
-        },
+                     Moved: struct {
+                                      from: i32,
+                                      to: i32,
+                     },
     };
     const MovedEvent = TagPayloadType(Event, Event.Moved);
     var e: Event = undefined;
@@ -493,91 +493,91 @@ pub fn eql(a: anytype, b: @TypeOf(a)) bool {
     const T = @TypeOf(a);
 
     switch (@typeInfo(T)) {
-        .Struct => |info| {
-            inline for (info.fields) |field_info| {
-                if (!eql(@field(a, field_info.name), @field(b, field_info.name))) return false;
-            }
-            return true;
-        },
-        .ErrorUnion => {
-            if (a) |a_p| {
-                if (b) |b_p| return eql(a_p, b_p) else |_| return false;
-            } else |a_e| {
-                if (b) |_| return false else |b_e| return a_e == b_e;
-            }
-        },
-        .Union => |info| {
-            if (info.tag_type) |Tag| {
-                const tag_a = activeTag(a);
-                const tag_b = activeTag(b);
-                if (tag_a != tag_b) return false;
+                     .Struct => |info| {
+                                      inline for (info.fields) |field_info| {
+                                          if (!eql(@field(a, field_info.name), @field(b, field_info.name))) return false;
+                                      }
+                                      return true;
+                     },
+                     .ErrorUnion => {
+                                      if (a) |a_p| {
+                                          if (b) |b_p| return eql(a_p, b_p) else |_| return false;
+                                      } else |a_e| {
+                                          if (b) |_| return false else |b_e| return a_e == b_e;
+                                      }
+                     },
+                     .Union => |info| {
+                                      if (info.tag_type) |Tag| {
+                                          const tag_a = activeTag(a);
+                                          const tag_b = activeTag(b);
+                                          if (tag_a != tag_b) return false;
 
-                inline for (info.fields) |field_info| {
-                    if (@field(Tag, field_info.name) == tag_a) {
-                        return eql(@field(a, field_info.name), @field(b, field_info.name));
-                    }
-                }
-                return false;
-            }
+                                          inline for (info.fields) |field_info| {
+                                                           if (@field(Tag, field_info.name) == tag_a) {
+                                                                            return eql(@field(a, field_info.name), @field(b, field_info.name));
+                                                           }
+                                          }
+                                          return false;
+                                      }
 
-            @compileError("cannot compare untagged union type " ++ @typeName(T));
-        },
-        .Array => {
-            if (a.len != b.len) return false;
-            for (a) |e, i|
-                if (!eql(e, b[i])) return false;
-            return true;
-        },
-        .Vector => |info| {
-            var i: usize = 0;
-            while (i < info.len) : (i += 1) {
-                if (!eql(a[i], b[i])) return false;
-            }
-            return true;
-        },
-        .Pointer => |info| {
-            return switch (info.size) {
-                .One, .Many, .C => a == b,
-                .Slice => a.ptr == b.ptr and a.len == b.len,
-            };
-        },
-        .Optional => {
-            if (a == null and b == null) return true;
-            if (a == null or b == null) return false;
-            return eql(a.?, b.?);
-        },
-        else => return a == b,
+                                      @compileError("cannot compare untagged union type " ++ @typeName(T));
+                     },
+                     .Array => {
+                                      if (a.len != b.len) return false;
+                                      for (a) |e, i|
+                                          if (!eql(e, b[i])) return false;
+                                      return true;
+                     },
+                     .Vector => |info| {
+                                      var i: usize = 0;
+                                      while (i < info.len) : (i += 1) {
+                                          if (!eql(a[i], b[i])) return false;
+                                      }
+                                      return true;
+                     },
+                     .Pointer => |info| {
+                                      return switch (info.size) {
+                                          .One, .Many, .C => a == b,
+                                          .Slice => a.ptr == b.ptr and a.len == b.len,
+                                      };
+                     },
+                     .Optional => {
+                                      if (a == null and b == null) return true;
+                                      if (a == null or b == null) return false;
+                                      return eql(a.?, b.?);
+                     },
+                     else => return a == b,
     }
 }
 
 test "std.meta.eql" {
     const S = struct {
-        a: u32,
-        b: f64,
-        c: [5]u8,
+                     a: u32,
+                     b: f64,
+                     c: [5]u8,
     };
 
     const U = union(enum) {
-        s: S,
-        f: ?f32,
+                     s: S,
+                     f: ?f32,
     };
 
     const s_1 = S{
-        .a = 134,
-        .b = 123.3,
-        .c = "12345".*,
+                     .a = 134,
+                     .b = 123.3,
+                     .c = "12345".*,
     };
 
     const s_2 = S{
-        .a = 1,
-        .b = 123.3,
-        .c = "54321".*,
+                     .a = 1,
+                     .b = 123.3,
+                     .c = "54321".*,
     };
 
     var s_3 = S{
-        .a = 134,
-        .b = 123.3,
-        .c = "12345".*,
+                     .a = 134,
+                     .b = 123.3,
+                     .c = "12345".*,
     };
 
     const u_1 = U{ .f = 24 };
@@ -599,10 +599,10 @@ test "std.meta.eql" {
     testing.expect(!eql(a1[0..], a2[0..]));
 
     const EU = struct {
-        fn tst(err: bool) !u8 {
-            if (err) return error.Error;
-            return @as(u8, 5);
-        }
+                     fn tst(err: bool) !u8 {
+                                      if (err) return error.Error;
+                                      return @as(u8, 5);
+                     }
     };
 
     testing.expect(eql(EU.tst(true), EU.tst(true)));
@@ -619,11 +619,11 @@ test "std.meta.eql" {
 
 test "intToEnum with error return" {
     const E1 = enum {
-        A,
+                     A,
     };
     const E2 = enum {
-        A,
-        B,
+                     A,
+                     B,
     };
 
     var zero: u8 = 0;
@@ -637,10 +637,10 @@ pub const IntToEnumError = error{InvalidEnumTag};
 
 pub fn intToEnum(comptime Tag: type, tag_int: anytype) IntToEnumError!Tag {
     inline for (@typeInfo(Tag).Enum.fields) |f| {
-        const this_tag_value = @field(Tag, f.name);
-        if (tag_int == @enumToInt(this_tag_value)) {
-            return this_tag_value;
-        }
+                     const this_tag_value = @field(Tag, f.name);
+                     if (tag_int == @enumToInt(this_tag_value)) {
+                                      return this_tag_value;
+                     }
     }
     return error.InvalidEnumTag;
 }
@@ -649,8 +649,8 @@ pub fn intToEnum(comptime Tag: type, tag_int: anytype) IntToEnumError!Tag {
 /// Returns `null` if the field is not found.
 pub fn fieldIndex(comptime T: type, comptime name: []const u8) ?comptime_int {
     inline for (fields(T)) |field, i| {
-        if (mem.eql(u8, field.name, name))
-            return i;
+                     if (mem.eql(u8, field.name, name))
+                                      return i;
     }
     return null;
 }
@@ -660,18 +660,18 @@ pub const refAllDecls = @compileError("refAllDecls has been moved from std.meta 
 /// Returns a slice of pointers to public declarations of a namespace.
 pub fn declList(comptime Namespace: type, comptime Decl: type) []const *const Decl {
     const S = struct {
-        fn declNameLessThan(context: void, lhs: *const Decl, rhs: *const Decl) bool {
-            return mem.lessThan(u8, lhs.name, rhs.name);
-        }
+                     fn declNameLessThan(context: void, lhs: *const Decl, rhs: *const Decl) bool {
+                                      return mem.lessThan(u8, lhs.name, rhs.name);
+                     }
     };
     comptime {
-        const decls = declarations(Namespace);
-        var array: [decls.len]*const Decl = undefined;
-        for (decls) |decl, i| {
-            array[i] = &@field(Namespace, decl.name);
-        }
-        std.sort.sort(*const Decl, &array, {}, S.declNameLessThan);
-        return &array;
+                     const decls = declarations(Namespace);
+                     var array: [decls.len]*const Decl = undefined;
+                     for (decls) |decl, i| {
+                                      array[i] = &@field(Namespace, decl.name);
+                     }
+                     std.sort.sort(*const Decl, &array, {}, S.declNameLessThan);
+                     return &array;
     }
 }
 
@@ -685,19 +685,19 @@ pub const Signedness = enum {
 
 pub fn Int(comptime signedness: Signedness, comptime bit_count: u16) type {
     return @Type(TypeInfo{
-        .Int = .{
-            .is_signed = signedness == .signed,
-            .bits = bit_count,
-        },
+                     .Int = .{
+                                      .is_signed = signedness == .signed,
+                                      .bits = bit_count,
+                     },
     });
 }
 
 pub fn Vector(comptime len: u32, comptime child: type) type {
     return @Type(TypeInfo{
-        .Vector = .{
-            .len = len,
-            .child = child,
-        },
+                     .Vector = .{
+                                      .len = len,
+                                      .child = child,
+                     },
     });
 }
 
@@ -706,75 +706,75 @@ pub fn Vector(comptime len: u32, comptime child: type) type {
 pub fn cast(comptime DestType: type, target: anytype) DestType {
     const TargetType = @TypeOf(target);
     switch (@typeInfo(DestType)) {
-        .Pointer => |dest_ptr| {
-            switch (@typeInfo(TargetType)) {
-                .Int, .ComptimeInt => {
-                    return @intToPtr(DestType, target);
-                },
-                .Pointer => |ptr| {
-                    return @ptrCast(DestType, @alignCast(dest_ptr.alignment, target));
-                },
-                .Optional => |opt| {
-                    if (@typeInfo(opt.child) == .Pointer) {
-                        return @ptrCast(DestType, @alignCast(dest_ptr.alignment, target));
-                    }
-                },
-                else => {},
-            }
-        },
-        .Optional => |dest_opt| {
-            if (@typeInfo(dest_opt.child) == .Pointer) {
-                const dest_ptr = @typeInfo(dest_opt.child).Pointer;
-                switch (@typeInfo(TargetType)) {
-                    .Int, .ComptimeInt => {
-                        return @intToPtr(DestType, target);
-                    },
-                    .Pointer => {
-                        return @ptrCast(DestType, @alignCast(dest_ptr.alignment, target));
-                    },
-                    .Optional => |target_opt| {
-                        if (@typeInfo(target_opt.child) == .Pointer) {
-                            return @ptrCast(DestType, @alignCast(dest_ptr.alignment, target));
-                        }
-                    },
-                    else => {},
-                }
-            }
-        },
-        .Enum => {
-            if (@typeInfo(TargetType) == .Int or @typeInfo(TargetType) == .ComptimeInt) {
-                return @intToEnum(DestType, target);
-            }
-        },
-        .Int, .ComptimeInt => {
-            switch (@typeInfo(TargetType)) {
-                .Pointer => {
-                    return @intCast(DestType, @ptrToInt(target));
-                },
-                .Optional => |opt| {
-                    if (@typeInfo(opt.child) == .Pointer) {
-                        return @intCast(DestType, @ptrToInt(target));
-                    }
-                },
-                .Enum => {
-                    return @intCast(DestType, @enumToInt(target));
-                },
-                .Int, .ComptimeInt => {
-                    return @intCast(DestType, target);
-                },
-                else => {},
-            }
-        },
-        else => {},
+                     .Pointer => |dest_ptr| {
+                                      switch (@typeInfo(TargetType)) {
+                                          .Int, .ComptimeInt => {
+                                                           return @intToPtr(DestType, target);
+                                          },
+                                          .Pointer => |ptr| {
+                                                           return @ptrCast(DestType, @alignCast(dest_ptr.alignment, target));
+                                          },
+                                          .Optional => |opt| {
+                                                           if (@typeInfo(opt.child) == .Pointer) {
+                                                                            return @ptrCast(DestType, @alignCast(dest_ptr.alignment, target));
+                                                           }
+                                          },
+                                          else => {},
+                                      }
+                     },
+                     .Optional => |dest_opt| {
+                                      if (@typeInfo(dest_opt.child) == .Pointer) {
+                                          const dest_ptr = @typeInfo(dest_opt.child).Pointer;
+                                          switch (@typeInfo(TargetType)) {
+                                                           .Int, .ComptimeInt => {
+                                                                            return @intToPtr(DestType, target);
+                                                           },
+                                                           .Pointer => {
+                                                                            return @ptrCast(DestType, @alignCast(dest_ptr.alignment, target));
+                                                           },
+                                                           .Optional => |target_opt| {
+                                                                            if (@typeInfo(target_opt.child) == .Pointer) {
+                                                                                return @ptrCast(DestType, @alignCast(dest_ptr.alignment, target));
+                                                                            }
+                                                           },
+                                                           else => {},
+                                          }
+                                      }
+                     },
+                     .Enum => {
+                                      if (@typeInfo(TargetType) == .Int or @typeInfo(TargetType) == .ComptimeInt) {
+                                          return @intToEnum(DestType, target);
+                                      }
+                     },
+                     .Int, .ComptimeInt => {
+                                      switch (@typeInfo(TargetType)) {
+                                          .Pointer => {
+                                                           return @intCast(DestType, @ptrToInt(target));
+                                          },
+                                          .Optional => |opt| {
+                                                           if (@typeInfo(opt.child) == .Pointer) {
+                                                                            return @intCast(DestType, @ptrToInt(target));
+                                                           }
+                                          },
+                                          .Enum => {
+                                                           return @intCast(DestType, @enumToInt(target));
+                                          },
+                                          .Int, .ComptimeInt => {
+                                                           return @intCast(DestType, target);
+                                          },
+                                          else => {},
+                                      }
+                     },
+                     else => {},
     }
     return @as(DestType, target);
 }
 
 test "std.meta.cast" {
     const E = enum(u2) {
-        Zero,
-        One,
-        Two,
+                     Zero,
+                     One,
+                     Two,
     };
 
     var i = @as(i64, 10);
@@ -799,18 +799,18 @@ test "std.meta.cast" {
 /// This is for translate-c and is not intended for general use.
 pub fn sizeof(target: anytype) usize {
     switch (@typeInfo(@TypeOf(target))) {
-        .Type => return @sizeOf(target),
-        .Float, .Int, .Struct, .Union, .Enum => return @sizeOf(@TypeOf(target)),
-        .ComptimeFloat => return @sizeOf(f64), // TODO c_double #3999
-        .ComptimeInt => {
-            // TODO to get the correct result we have to translate
-            // `1073741824 * 4` as `int(1073741824) *% int(4)` since
-            // sizeof(1073741824 * 4) != sizeof(4294967296).
+                     .Type => return @sizeOf(target),
+                     .Float, .Int, .Struct, .Union, .Enum => return @sizeOf(@TypeOf(target)),
+                     .ComptimeFloat => return @sizeOf(f64), // TODO c_double #3999
+                     .ComptimeInt => {
+                                      // TODO to get the correct result we have to translate
+                                      // `1073741824 * 4` as `int(1073741824) *% int(4)` since
+                                      // sizeof(1073741824 * 4) != sizeof(4294967296).
 
-            // TODO test if target fits in int, long or long long
-            return @sizeOf(c_int);
-        },
-        else => @compileError("TODO implement std.meta.sizeof for type " ++ @typeName(@TypeOf(target))),
+                                      // TODO test if target fits in int, long or long long
+                                      return @sizeOf(c_int);
+                     },
+                     else => @compileError("TODO implement std.meta.sizeof for type " ++ @typeName(@TypeOf(target))),
     }
 }
 
@@ -836,35 +836,35 @@ test "sizeof" {
 pub fn ArgsTuple(comptime Function: type) type {
     const info = @typeInfo(Function);
     if (info != .Fn)
-        @compileError("ArgsTuple expects a function type");
+                     @compileError("ArgsTuple expects a function type");
 
     const function_info = info.Fn;
     if (function_info.is_generic)
-        @compileError("Cannot create ArgsTuple for generic function");
+                     @compileError("Cannot create ArgsTuple for generic function");
     if (function_info.is_var_args)
-        @compileError("Cannot create ArgsTuple for variadic function");
+                     @compileError("Cannot create ArgsTuple for variadic function");
 
     var argument_field_list: [function_info.args.len]std.builtin.TypeInfo.StructField = undefined;
     inline for (function_info.args) |arg, i| {
-        const T = arg.arg_type.?;
-        @setEvalBranchQuota(10_000);
-        var num_buf: [128]u8 = undefined;
-        argument_field_list[i] = std.builtin.TypeInfo.StructField{
-            .name = std.fmt.bufPrint(&num_buf, "{d}", .{i}) catch unreachable,
-            .field_type = T,
-            .default_value = @as(?T, null),
-            .is_comptime = false,
-            .alignment = if (@sizeOf(T) > 0) @alignOf(T) else 0,
-        };
+                     const T = arg.arg_type.?;
+                     @setEvalBranchQuota(10_000);
+                     var num_buf: [128]u8 = undefined;
+                     argument_field_list[i] = std.builtin.TypeInfo.StructField{
+                                      .name = std.fmt.bufPrint(&num_buf, "{d}", .{i}) catch unreachable,
+                                      .field_type = T,
+                                      .default_value = @as(?T, null),
+                                      .is_comptime = false,
+                                      .alignment = if (@sizeOf(T) > 0) @alignOf(T) else 0,
+                     };
     }
 
     return @Type(std.builtin.TypeInfo{
-        .Struct = std.builtin.TypeInfo.Struct{
-            .is_tuple = true,
-            .layout = .Auto,
-            .decls = &[_]std.builtin.TypeInfo.Declaration{},
-            .fields = &argument_field_list,
-        },
+                     .Struct = std.builtin.TypeInfo.Struct{
+                                      .is_tuple = true,
+                                      .layout = .Auto,
+                                      .decls = &[_]std.builtin.TypeInfo.Declaration{},
+                                      .fields = &argument_field_list,
+                     },
     });
 }
 
@@ -878,49 +878,49 @@ pub fn ArgsTuple(comptime Function: type) type {
 pub fn Tuple(comptime types: []const type) type {
     var tuple_fields: [types.len]std.builtin.TypeInfo.StructField = undefined;
     inline for (types) |T, i| {
-        @setEvalBranchQuota(10_000);
-        var num_buf: [128]u8 = undefined;
-        tuple_fields[i] = std.builtin.TypeInfo.StructField{
-            .name = std.fmt.bufPrint(&num_buf, "{d}", .{i}) catch unreachable,
-            .field_type = T,
-            .default_value = @as(?T, null),
-            .is_comptime = false,
-            .alignment = if (@sizeOf(T) > 0) @alignOf(T) else 0,
-        };
+                     @setEvalBranchQuota(10_000);
+                     var num_buf: [128]u8 = undefined;
+                     tuple_fields[i] = std.builtin.TypeInfo.StructField{
+                                      .name = std.fmt.bufPrint(&num_buf, "{d}", .{i}) catch unreachable,
+                                      .field_type = T,
+                                      .default_value = @as(?T, null),
+                                      .is_comptime = false,
+                                      .alignment = if (@sizeOf(T) > 0) @alignOf(T) else 0,
+                     };
     }
 
     return @Type(std.builtin.TypeInfo{
-        .Struct = std.builtin.TypeInfo.Struct{
-            .is_tuple = true,
-            .layout = .Auto,
-            .decls = &[_]std.builtin.TypeInfo.Declaration{},
-            .fields = &tuple_fields,
-        },
+                     .Struct = std.builtin.TypeInfo.Struct{
+                                      .is_tuple = true,
+                                      .layout = .Auto,
+                                      .decls = &[_]std.builtin.TypeInfo.Declaration{},
+                                      .fields = &tuple_fields,
+                     },
     });
 }
 
 const TupleTester = struct {
     fn assertTypeEqual(comptime Expected: type, comptime Actual: type) void {
-        if (Expected != Actual)
-            @compileError("Expected type " ++ @typeName(Expected) ++ ", but got type " ++ @typeName(Actual));
+                     if (Expected != Actual)
+                                      @compileError("Expected type " ++ @typeName(Expected) ++ ", but got type " ++ @typeName(Actual));
     }
 
     fn assertTuple(comptime expected: anytype, comptime Actual: type) void {
-        const info = @typeInfo(Actual);
-        if (info != .Struct)
-            @compileError("Expected struct type");
-        if (!info.Struct.is_tuple)
-            @compileError("Struct type must be a tuple type");
+                     const info = @typeInfo(Actual);
+                     if (info != .Struct)
+                                      @compileError("Expected struct type");
+                     if (!info.Struct.is_tuple)
+                                      @compileError("Struct type must be a tuple type");
 
-        const fields_list = std.meta.fields(Actual);
-        if (expected.len != fields_list.len)
-            @compileError("Argument count mismatch");
+                     const fields_list = std.meta.fields(Actual);
+                     if (expected.len != fields_list.len)
+                                      @compileError("Argument count mismatch");
 
-        inline for (fields_list) |fld, i| {
-            if (expected[i] != fld.field_type) {
-                @compileError("Field " ++ fld.name ++ " expected to be type " ++ @typeName(expected[i]) ++ ", but was type " ++ @typeName(fld.field_type));
-            }
-        }
+                     inline for (fields_list) |fld, i| {
+                                      if (expected[i] != fld.field_type) {
+                                          @compileError("Field " ++ fld.name ++ " expected to be type " ++ @typeName(expected[i]) ++ ", but was type " ++ @typeName(fld.field_type));
+                                      }
+                     }
     }
 };
 

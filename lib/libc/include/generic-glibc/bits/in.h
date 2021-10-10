@@ -44,14 +44,14 @@
 /* Options for use with `getsockopt' and `setsockopt' at the IP level.
    The first word in the comment at the right is the data type used;
    "bool" means a boolean value stored in an `int'.  */
-#define        IP_OPTIONS      4       /* ip_opts; IP per-packet options.  */
-#define        IP_HDRINCL      3       /* int; Header is included with data.  */
-#define        IP_TOS          1       /* int; IP type of service and precedence.  */
-#define        IP_TTL          2       /* int; IP time to live.  */
-#define        IP_RECVOPTS     6       /* bool; Receive all IP options w/datagram.  */
+#define                     IP_OPTIONS                   4                    /* ip_opts; IP per-packet options.  */
+#define                     IP_HDRINCL                   3                    /* int; Header is included with data.  */
+#define                     IP_TOS                       1                    /* int; IP type of service and precedence.  */
+#define                     IP_TTL                       2                    /* int; IP time to live.  */
+#define                     IP_RECVOPTS     6                    /* bool; Receive all IP options w/datagram.  */
 /* For BSD compatibility.  */
-#define        IP_RECVRETOPTS  IP_RETOPTS       /* bool; Receive IP options for response.  */
-#define        IP_RETOPTS      7       /* ip_opts; Set/get IP per-packet options.  */
+#define                     IP_RECVRETOPTS  IP_RETOPTS                    /* bool; Receive IP options for response.  */
+#define                     IP_RETOPTS                   7                    /* ip_opts; Set/get IP per-packet options.  */
 #define IP_MULTICAST_IF 32	/* in_addr; set/get IP multicast i/f */
 #define IP_MULTICAST_TTL 33	/* unsigned char; set/get IP multicast ttl */
 #define IP_MULTICAST_LOOP 34	/* bool; set/get IP multicast loopback */
@@ -94,10 +94,10 @@
 #define IP_MULTICAST_ALL 49	/* bool */
 
 /* TProxy original addresses */
-#define IP_ORIGDSTADDR       20
+#define IP_ORIGDSTADDR                    20
 #define IP_RECVORIGDSTADDR   IP_ORIGDSTADDR
 
-#define IP_MINTTL       21
+#define IP_MINTTL                    21
 #define IP_NODEFRAG     22
 #define IP_CHECKSUM     23
 #define IP_BIND_ADDRESS_NO_PORT 24
@@ -111,7 +111,7 @@
 /* Always use interface mtu (ignores dst pmtu) but don't set DF flag.
    Also incoming ICMP frag_needed notifications will be ignored on
    this socket to prevent accepting spoofed ones.  */
-#define IP_PMTUDISC_INTERFACE           4
+#define IP_PMTUDISC_INTERFACE                        4
 /* Like IP_PMTUDISC_INTERFACE but allow packets to be fragmented.  */
 #define IP_PMTUDISC_OMIT		5
 
@@ -131,9 +131,9 @@
 /* To select the IP level.  */
 #define SOL_IP	0
 
-#define IP_DEFAULT_MULTICAST_TTL        1
-#define IP_DEFAULT_MULTICAST_LOOP       1
-#define IP_MAX_MEMBERSHIPS              20
+#define IP_DEFAULT_MULTICAST_TTL                     1
+#define IP_DEFAULT_MULTICAST_LOOP                    1
+#define IP_MAX_MEMBERSHIPS                                        20
 
 #ifdef __USE_MISC
 /* Structure used to describe IP options for IP_OPTIONS and IP_RETOPTS.
@@ -249,8 +249,8 @@ struct in_pktinfo
 #define IPV6_PMTUDISC_OMIT	5	/* See IP_PMTUDISC_OMIT.  */
 
 /* Socket level values for IPv6.  */
-#define SOL_IPV6        41
-#define SOL_ICMPV6      58
+#define SOL_IPV6                     41
+#define SOL_ICMPV6                   58
 
 /* Routing header options for IPv6.  */
 #define IPV6_RTHDR_LOOSE	0	/* Hop doesn't need to be neighbour. */

@@ -16,7 +16,7 @@
    <https://www.gnu.org/licenses/>.  */
 
 #ifndef _MCHECK_H
-#define _MCHECK_H       1
+#define _MCHECK_H                    1
 
 #include <features.h>
 
@@ -26,11 +26,11 @@ __BEGIN_DECLS
    `mcheck' enables detection of.  */
 enum mcheck_status
 {
-  MCHECK_DISABLED = -1,         /* Consistency checking is not turned on.  */
-  MCHECK_OK,                    /* Block is fine.  */
-  MCHECK_FREE,                  /* Block freed twice.  */
-  MCHECK_HEAD,                  /* Memory before the block was clobbered.  */
-  MCHECK_TAIL                   /* Memory after the block was clobbered.  */
+  MCHECK_DISABLED = -1,                      /* Consistency checking is not turned on.  */
+  MCHECK_OK,                                                           /* Block is fine.  */
+  MCHECK_FREE,                                                         /* Block freed twice.  */
+  MCHECK_HEAD,                                                         /* Memory before the block was clobbered.  */
+  MCHECK_TAIL                                                          /* Memory after the block was clobbered.  */
 };
 
 

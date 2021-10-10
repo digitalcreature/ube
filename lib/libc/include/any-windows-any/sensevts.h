@@ -85,18 +85,18 @@ extern "C"{
 #else
   typedef struct ISensNetworkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISensNetwork *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISensNetwork *This);
-      ULONG (WINAPI *Release)(ISensNetwork *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISensNetwork *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISensNetwork *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISensNetwork *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISensNetwork *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *ConnectionMade)(ISensNetwork *This,BSTR bstrConnection,ULONG ulType,LPSENS_QOCINFO lpQOCInfo);
-      HRESULT (WINAPI *ConnectionMadeNoQOCInfo)(ISensNetwork *This,BSTR bstrConnection,ULONG ulType);
-      HRESULT (WINAPI *ConnectionLost)(ISensNetwork *This,BSTR bstrConnection,ULONG ulType);
-      HRESULT (WINAPI *DestinationReachable)(ISensNetwork *This,BSTR bstrDestination,BSTR bstrConnection,ULONG ulType,LPSENS_QOCINFO lpQOCInfo);
-      HRESULT (WINAPI *DestinationReachableNoQOCInfo)(ISensNetwork *This,BSTR bstrDestination,BSTR bstrConnection,ULONG ulType);
+                   HRESULT (WINAPI *QueryInterface)(ISensNetwork *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISensNetwork *This);
+                   ULONG (WINAPI *Release)(ISensNetwork *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISensNetwork *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISensNetwork *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISensNetwork *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISensNetwork *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *ConnectionMade)(ISensNetwork *This,BSTR bstrConnection,ULONG ulType,LPSENS_QOCINFO lpQOCInfo);
+                   HRESULT (WINAPI *ConnectionMadeNoQOCInfo)(ISensNetwork *This,BSTR bstrConnection,ULONG ulType);
+                   HRESULT (WINAPI *ConnectionLost)(ISensNetwork *This,BSTR bstrConnection,ULONG ulType);
+                   HRESULT (WINAPI *DestinationReachable)(ISensNetwork *This,BSTR bstrDestination,BSTR bstrConnection,ULONG ulType,LPSENS_QOCINFO lpQOCInfo);
+                   HRESULT (WINAPI *DestinationReachableNoQOCInfo)(ISensNetwork *This,BSTR bstrDestination,BSTR bstrConnection,ULONG ulType);
     END_INTERFACE
   } ISensNetworkVtbl;
   struct ISensNetwork {
@@ -142,16 +142,16 @@ extern "C"{
 #else
   typedef struct ISensOnNowVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISensOnNow *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISensOnNow *This);
-      ULONG (WINAPI *Release)(ISensOnNow *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISensOnNow *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISensOnNow *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISensOnNow *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISensOnNow *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *OnACPower)(ISensOnNow *This);
-      HRESULT (WINAPI *OnBatteryPower)(ISensOnNow *This,DWORD dwBatteryLifePercent);
-      HRESULT (WINAPI *BatteryLow)(ISensOnNow *This,DWORD dwBatteryLifePercent);
+                   HRESULT (WINAPI *QueryInterface)(ISensOnNow *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISensOnNow *This);
+                   ULONG (WINAPI *Release)(ISensOnNow *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISensOnNow *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISensOnNow *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISensOnNow *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISensOnNow *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *OnACPower)(ISensOnNow *This);
+                   HRESULT (WINAPI *OnBatteryPower)(ISensOnNow *This,DWORD dwBatteryLifePercent);
+                   HRESULT (WINAPI *BatteryLow)(ISensOnNow *This,DWORD dwBatteryLifePercent);
     END_INTERFACE
   } ISensOnNowVtbl;
   struct ISensOnNow {
@@ -195,20 +195,20 @@ extern "C"{
 #else
   typedef struct ISensLogonVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISensLogon *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISensLogon *This);
-      ULONG (WINAPI *Release)(ISensLogon *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISensLogon *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISensLogon *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISensLogon *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISensLogon *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Logon)(ISensLogon *This,BSTR bstrUserName);
-      HRESULT (WINAPI *Logoff)(ISensLogon *This,BSTR bstrUserName);
-      HRESULT (WINAPI *StartShell)(ISensLogon *This,BSTR bstrUserName);
-      HRESULT (WINAPI *DisplayLock)(ISensLogon *This,BSTR bstrUserName);
-      HRESULT (WINAPI *DisplayUnlock)(ISensLogon *This,BSTR bstrUserName);
-      HRESULT (WINAPI *StartScreenSaver)(ISensLogon *This,BSTR bstrUserName);
-      HRESULT (WINAPI *StopScreenSaver)(ISensLogon *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *QueryInterface)(ISensLogon *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISensLogon *This);
+                   ULONG (WINAPI *Release)(ISensLogon *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISensLogon *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISensLogon *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISensLogon *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISensLogon *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Logon)(ISensLogon *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *Logoff)(ISensLogon *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *StartShell)(ISensLogon *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *DisplayLock)(ISensLogon *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *DisplayUnlock)(ISensLogon *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *StartScreenSaver)(ISensLogon *This,BSTR bstrUserName);
+                   HRESULT (WINAPI *StopScreenSaver)(ISensLogon *This,BSTR bstrUserName);
     END_INTERFACE
   } ISensLogonVtbl;
   struct ISensLogon {
@@ -262,18 +262,18 @@ extern "C"{
 #else
   typedef struct ISensLogon2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISensLogon2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISensLogon2 *This);
-      ULONG (WINAPI *Release)(ISensLogon2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISensLogon2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISensLogon2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISensLogon2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISensLogon2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Logon)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
-      HRESULT (WINAPI *Logoff)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
-      HRESULT (WINAPI *SessionDisconnect)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
-      HRESULT (WINAPI *SessionReconnect)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
-      HRESULT (WINAPI *PostShell)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
+                   HRESULT (WINAPI *QueryInterface)(ISensLogon2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISensLogon2 *This);
+                   ULONG (WINAPI *Release)(ISensLogon2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISensLogon2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISensLogon2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISensLogon2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISensLogon2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Logon)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
+                   HRESULT (WINAPI *Logoff)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
+                   HRESULT (WINAPI *SessionDisconnect)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
+                   HRESULT (WINAPI *SessionReconnect)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
+                   HRESULT (WINAPI *PostShell)(ISensLogon2 *This,BSTR bstrUserName,DWORD dwSessionId);
     END_INTERFACE
   } ISensLogon2Vtbl;
   struct ISensLogon2 {

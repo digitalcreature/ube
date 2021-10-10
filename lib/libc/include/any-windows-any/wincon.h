@@ -35,8 +35,8 @@ extern "C" {
     WORD wVirtualKeyCode;
     WORD wVirtualScanCode;
     union {
-      WCHAR UnicodeChar;
-      CHAR AsciiChar;
+                   WCHAR UnicodeChar;
+                   CHAR AsciiChar;
     } uChar;
     DWORD dwControlKeyState;
   } KEY_EVENT_RECORD,*PKEY_EVENT_RECORD;
@@ -94,11 +94,11 @@ extern "C" {
   typedef struct _INPUT_RECORD {
     WORD EventType;
     union {
-      KEY_EVENT_RECORD KeyEvent;
-      MOUSE_EVENT_RECORD MouseEvent;
-      WINDOW_BUFFER_SIZE_RECORD WindowBufferSizeEvent;
-      MENU_EVENT_RECORD MenuEvent;
-      FOCUS_EVENT_RECORD FocusEvent;
+                   KEY_EVENT_RECORD KeyEvent;
+                   MOUSE_EVENT_RECORD MouseEvent;
+                   WINDOW_BUFFER_SIZE_RECORD WindowBufferSizeEvent;
+                   MENU_EVENT_RECORD MenuEvent;
+                   FOCUS_EVENT_RECORD FocusEvent;
     } Event;
   } INPUT_RECORD,*PINPUT_RECORD;
 
@@ -110,8 +110,8 @@ extern "C" {
 
   typedef struct _CHAR_INFO {
     union {
-      WCHAR UnicodeChar;
-      CHAR AsciiChar;
+                   WCHAR UnicodeChar;
+                   CHAR AsciiChar;
     } Char;
     WORD Attributes;
   } CHAR_INFO,*PCHAR_INFO;
@@ -344,13 +344,13 @@ typedef struct _CONSOLE_READCONSOLE_CONTROL {
 } CONSOLE_READCONSOLE_CONTROL, *PCONSOLE_READCONSOLE_CONTROL;
 
 typedef struct _CONSOLE_SCREEN_BUFFER_INFOEX {
-  ULONG      cbSize;
-  COORD      dwSize;
-  COORD      dwCursorPosition;
-  WORD       wAttributes;
+  ULONG                   cbSize;
+  COORD                   dwSize;
+  COORD                   dwCursorPosition;
+  WORD                    wAttributes;
   SMALL_RECT srWindow;
-  COORD      dwMaximumWindowSize;
-  WORD       wPopupAttributes;
+  COORD                   dwMaximumWindowSize;
+  WORD                    wPopupAttributes;
   WINBOOL    bFullscreenSupported;
   COLORREF   ColorTable[16];
 } CONSOLE_SCREEN_BUFFER_INFOEX, *PCONSOLE_SCREEN_BUFFER_INFOEX;

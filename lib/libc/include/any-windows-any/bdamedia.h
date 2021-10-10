@@ -353,22 +353,22 @@ typedef enum tagChannelChangeSpanningEvent_State {
 
 typedef struct _ChannelChangeInfo {
   ChannelChangeSpanningEvent_State state;
-  ULONGLONG                        TimeStamp;
+  ULONGLONG                                                                            TimeStamp;
 } ChannelChangeInfo;
 
 typedef struct _ChannelInfo {
   LONG lFrequency;
   __C89_NAMELESS union {
      struct {
-      LONG lONID;
-      LONG lTSID;
-      LONG lSID;
+                   LONG lONID;
+                   LONG lTSID;
+                   LONG lSID;
     } DVB;
     struct {
-      LONG lProgNumber;
+                   LONG lProgNumber;
     } DC;
     struct {
-      LONG lProgNumber;
+                   LONG lProgNumber;
     } ATSC;
   } ;
 } ChannelInfo;
@@ -379,8 +379,8 @@ typedef enum _PBDAParentalControlPolicy {
 } PBDAParentalControlPolicy;
 
 typedef enum _SignalAndServiceStatusSpanningEvent_State {
-  SignalAndServiceStatusSpanningEvent_Clear           = 0,
-  SignalAndServiceStatusSpanningEvent_NoTVSignal      = 1,
+  SignalAndServiceStatusSpanningEvent_Clear                        = 0,
+  SignalAndServiceStatusSpanningEvent_NoTVSignal                   = 1,
   SignalAndServiceStatusSpanningEvent_ServiceOffAir   = 2 
 } SignalAndServiceStatusSpanningEvent_State;
 

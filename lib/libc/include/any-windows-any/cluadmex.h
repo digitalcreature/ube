@@ -143,13 +143,13 @@ extern "C"{
 #else
   typedef struct IGetClusterUIInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetClusterUIInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetClusterUIInfo *This);
-      ULONG (WINAPI *Release)(IGetClusterUIInfo *This);
-      HRESULT (WINAPI *GetClusterName)(IGetClusterUIInfo *This,BSTR lpszName,LONG *pcchName);
-      LCID (WINAPI *GetLocale)(IGetClusterUIInfo *This);
-      HFONT (WINAPI *GetFont)(IGetClusterUIInfo *This);
-      HICON (WINAPI *GetIcon)(IGetClusterUIInfo *This);
+                   HRESULT (WINAPI *QueryInterface)(IGetClusterUIInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetClusterUIInfo *This);
+                   ULONG (WINAPI *Release)(IGetClusterUIInfo *This);
+                   HRESULT (WINAPI *GetClusterName)(IGetClusterUIInfo *This,BSTR lpszName,LONG *pcchName);
+                   LCID (WINAPI *GetLocale)(IGetClusterUIInfo *This);
+                   HFONT (WINAPI *GetFont)(IGetClusterUIInfo *This);
+                   HICON (WINAPI *GetIcon)(IGetClusterUIInfo *This);
     END_INTERFACE
   } IGetClusterUIInfoVtbl;
   struct IGetClusterUIInfo {
@@ -188,12 +188,12 @@ extern "C"{
 #else
   typedef struct IGetClusterDataInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetClusterDataInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetClusterDataInfo *This);
-      ULONG (WINAPI *Release)(IGetClusterDataInfo *This);
-      HRESULT (WINAPI *GetClusterName)(IGetClusterDataInfo *This,BSTR lpszName,LONG *pcchName);
-      HCLUSTER (WINAPI *GetClusterHandle)(IGetClusterDataInfo *This);
-      LONG (WINAPI *GetObjectCount)(IGetClusterDataInfo *This);
+                   HRESULT (WINAPI *QueryInterface)(IGetClusterDataInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetClusterDataInfo *This);
+                   ULONG (WINAPI *Release)(IGetClusterDataInfo *This);
+                   HRESULT (WINAPI *GetClusterName)(IGetClusterDataInfo *This,BSTR lpszName,LONG *pcchName);
+                   HCLUSTER (WINAPI *GetClusterHandle)(IGetClusterDataInfo *This);
+                   LONG (WINAPI *GetObjectCount)(IGetClusterDataInfo *This);
     END_INTERFACE
   } IGetClusterDataInfoVtbl;
   struct IGetClusterDataInfo {
@@ -228,11 +228,11 @@ extern "C"{
 #else
   typedef struct IGetClusterObjectInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetClusterObjectInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetClusterObjectInfo *This);
-      ULONG (WINAPI *Release)(IGetClusterObjectInfo *This);
-      HRESULT (WINAPI *GetObjectName)(IGetClusterObjectInfo *This,LONG lObjIndex,BSTR lpszName,LONG *pcchName);
-      CLUADMEX_OBJECT_TYPE (WINAPI *GetObjectType)(IGetClusterObjectInfo *This,LONG lObjIndex);
+                   HRESULT (WINAPI *QueryInterface)(IGetClusterObjectInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetClusterObjectInfo *This);
+                   ULONG (WINAPI *Release)(IGetClusterObjectInfo *This);
+                   HRESULT (WINAPI *GetObjectName)(IGetClusterObjectInfo *This,LONG lObjIndex,BSTR lpszName,LONG *pcchName);
+                   CLUADMEX_OBJECT_TYPE (WINAPI *GetObjectType)(IGetClusterObjectInfo *This,LONG lObjIndex);
     END_INTERFACE
   } IGetClusterObjectInfoVtbl;
   struct IGetClusterObjectInfo {
@@ -263,10 +263,10 @@ extern "C"{
 #else
   typedef struct IGetClusterNodeInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetClusterNodeInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetClusterNodeInfo *This);
-      ULONG (WINAPI *Release)(IGetClusterNodeInfo *This);
-      HNODE (WINAPI *GetNodeHandle)(IGetClusterNodeInfo *This,LONG lObjIndex);
+                   HRESULT (WINAPI *QueryInterface)(IGetClusterNodeInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetClusterNodeInfo *This);
+                   ULONG (WINAPI *Release)(IGetClusterNodeInfo *This);
+                   HNODE (WINAPI *GetNodeHandle)(IGetClusterNodeInfo *This,LONG lObjIndex);
     END_INTERFACE
   } IGetClusterNodeInfoVtbl;
   struct IGetClusterNodeInfo {
@@ -294,10 +294,10 @@ extern "C"{
 #else
   typedef struct IGetClusterGroupInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetClusterGroupInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetClusterGroupInfo *This);
-      ULONG (WINAPI *Release)(IGetClusterGroupInfo *This);
-      HGROUP (WINAPI *GetGroupHandle)(IGetClusterGroupInfo *This,LONG lObjIndex);
+                   HRESULT (WINAPI *QueryInterface)(IGetClusterGroupInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetClusterGroupInfo *This);
+                   ULONG (WINAPI *Release)(IGetClusterGroupInfo *This);
+                   HGROUP (WINAPI *GetGroupHandle)(IGetClusterGroupInfo *This,LONG lObjIndex);
     END_INTERFACE
   } IGetClusterGroupInfoVtbl;
   struct IGetClusterGroupInfo {
@@ -327,12 +327,12 @@ extern "C"{
 #else
   typedef struct IGetClusterResourceInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetClusterResourceInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetClusterResourceInfo *This);
-      ULONG (WINAPI *Release)(IGetClusterResourceInfo *This);
-      HRESOURCE (WINAPI *GetResourceHandle)(IGetClusterResourceInfo *This,LONG lObjIndex);
-      HRESULT (WINAPI *GetResourceTypeName)(IGetClusterResourceInfo *This,LONG lObjIndex,BSTR lpszResTypeName,LONG *pcchResTypeName);
-      WINBOOL (WINAPI *GetResourceNetworkName)(IGetClusterResourceInfo *This,LONG lObjIndex,BSTR lpszNetName,ULONG *pcchNetName);
+                   HRESULT (WINAPI *QueryInterface)(IGetClusterResourceInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetClusterResourceInfo *This);
+                   ULONG (WINAPI *Release)(IGetClusterResourceInfo *This);
+                   HRESOURCE (WINAPI *GetResourceHandle)(IGetClusterResourceInfo *This,LONG lObjIndex);
+                   HRESULT (WINAPI *GetResourceTypeName)(IGetClusterResourceInfo *This,LONG lObjIndex,BSTR lpszResTypeName,LONG *pcchResTypeName);
+                   WINBOOL (WINAPI *GetResourceNetworkName)(IGetClusterResourceInfo *This,LONG lObjIndex,BSTR lpszNetName,ULONG *pcchNetName);
     END_INTERFACE
   } IGetClusterResourceInfoVtbl;
   struct IGetClusterResourceInfo {
@@ -366,10 +366,10 @@ extern "C"{
 #else
   typedef struct IGetClusterNetworkInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetClusterNetworkInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetClusterNetworkInfo *This);
-      ULONG (WINAPI *Release)(IGetClusterNetworkInfo *This);
-      HNETWORK (WINAPI *GetNetworkHandle)(IGetClusterNetworkInfo *This,LONG lObjIndex);
+                   HRESULT (WINAPI *QueryInterface)(IGetClusterNetworkInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetClusterNetworkInfo *This);
+                   ULONG (WINAPI *Release)(IGetClusterNetworkInfo *This);
+                   HNETWORK (WINAPI *GetNetworkHandle)(IGetClusterNetworkInfo *This,LONG lObjIndex);
     END_INTERFACE
   } IGetClusterNetworkInfoVtbl;
   struct IGetClusterNetworkInfo {
@@ -397,10 +397,10 @@ extern "C"{
 #else
   typedef struct IGetClusterNetInterfaceInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetClusterNetInterfaceInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetClusterNetInterfaceInfo *This);
-      ULONG (WINAPI *Release)(IGetClusterNetInterfaceInfo *This);
-      HNETINTERFACE (WINAPI *GetNetInterfaceHandle)(IGetClusterNetInterfaceInfo *This,LONG lObjIndex);
+                   HRESULT (WINAPI *QueryInterface)(IGetClusterNetInterfaceInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetClusterNetInterfaceInfo *This);
+                   ULONG (WINAPI *Release)(IGetClusterNetInterfaceInfo *This);
+                   HNETINTERFACE (WINAPI *GetNetInterfaceHandle)(IGetClusterNetInterfaceInfo *This,LONG lObjIndex);
     END_INTERFACE
   } IGetClusterNetInterfaceInfoVtbl;
   struct IGetClusterNetInterfaceInfo {
@@ -428,10 +428,10 @@ extern "C"{
 #else
   typedef struct IWCPropertySheetCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWCPropertySheetCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWCPropertySheetCallback *This);
-      ULONG (WINAPI *Release)(IWCPropertySheetCallback *This);
-      HRESULT (WINAPI *AddPropertySheetPage)(IWCPropertySheetCallback *This,LONG *hpage);
+                   HRESULT (WINAPI *QueryInterface)(IWCPropertySheetCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWCPropertySheetCallback *This);
+                   ULONG (WINAPI *Release)(IWCPropertySheetCallback *This);
+                   HRESULT (WINAPI *AddPropertySheetPage)(IWCPropertySheetCallback *This,LONG *hpage);
     END_INTERFACE
   } IWCPropertySheetCallbackVtbl;
   struct IWCPropertySheetCallback {
@@ -459,10 +459,10 @@ extern "C"{
 #else
   typedef struct IWEExtendPropertySheetVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWEExtendPropertySheet *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWEExtendPropertySheet *This);
-      ULONG (WINAPI *Release)(IWEExtendPropertySheet *This);
-      HRESULT (WINAPI *CreatePropertySheetPages)(IWEExtendPropertySheet *This,IUnknown *piData,IWCPropertySheetCallback *piCallback);
+                   HRESULT (WINAPI *QueryInterface)(IWEExtendPropertySheet *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWEExtendPropertySheet *This);
+                   ULONG (WINAPI *Release)(IWEExtendPropertySheet *This);
+                   HRESULT (WINAPI *CreatePropertySheetPages)(IWEExtendPropertySheet *This,IUnknown *piData,IWCPropertySheetCallback *piCallback);
     END_INTERFACE
   } IWEExtendPropertySheetVtbl;
   struct IWEExtendPropertySheet {
@@ -491,11 +491,11 @@ extern "C"{
 #else
   typedef struct IWCWizardCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWCWizardCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWCWizardCallback *This);
-      ULONG (WINAPI *Release)(IWCWizardCallback *This);
-      HRESULT (WINAPI *AddWizardPage)(IWCWizardCallback *This,LONG *hpage);
-      HRESULT (WINAPI *EnableNext)(IWCWizardCallback *This,LONG *hpage,WINBOOL bEnable);
+                   HRESULT (WINAPI *QueryInterface)(IWCWizardCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWCWizardCallback *This);
+                   ULONG (WINAPI *Release)(IWCWizardCallback *This);
+                   HRESULT (WINAPI *AddWizardPage)(IWCWizardCallback *This,LONG *hpage);
+                   HRESULT (WINAPI *EnableNext)(IWCWizardCallback *This,LONG *hpage,WINBOOL bEnable);
     END_INTERFACE
   } IWCWizardCallbackVtbl;
   struct IWCWizardCallback {
@@ -526,10 +526,10 @@ extern "C"{
 #else
   typedef struct IWEExtendWizardVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWEExtendWizard *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWEExtendWizard *This);
-      ULONG (WINAPI *Release)(IWEExtendWizard *This);
-      HRESULT (WINAPI *CreateWizardPages)(IWEExtendWizard *This,IUnknown *piData,IWCWizardCallback *piCallback);
+                   HRESULT (WINAPI *QueryInterface)(IWEExtendWizard *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWEExtendWizard *This);
+                   ULONG (WINAPI *Release)(IWEExtendWizard *This);
+                   HRESULT (WINAPI *CreateWizardPages)(IWEExtendWizard *This,IUnknown *piData,IWCWizardCallback *piCallback);
     END_INTERFACE
   } IWEExtendWizardVtbl;
   struct IWEExtendWizard {
@@ -557,10 +557,10 @@ extern "C"{
 #else
   typedef struct IWCContextMenuCallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWCContextMenuCallback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWCContextMenuCallback *This);
-      ULONG (WINAPI *Release)(IWCContextMenuCallback *This);
-      HRESULT (WINAPI *AddExtensionMenuItem)(IWCContextMenuCallback *This,BSTR lpszName,BSTR lpszStatusBarText,ULONG nCommandID,ULONG nSubmenuCommandID,ULONG uFlags);
+                   HRESULT (WINAPI *QueryInterface)(IWCContextMenuCallback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWCContextMenuCallback *This);
+                   ULONG (WINAPI *Release)(IWCContextMenuCallback *This);
+                   HRESULT (WINAPI *AddExtensionMenuItem)(IWCContextMenuCallback *This,BSTR lpszName,BSTR lpszStatusBarText,ULONG nCommandID,ULONG nSubmenuCommandID,ULONG uFlags);
     END_INTERFACE
   } IWCContextMenuCallbackVtbl;
   struct IWCContextMenuCallback {
@@ -588,10 +588,10 @@ extern "C"{
 #else
   typedef struct IWEExtendContextMenuVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWEExtendContextMenu *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWEExtendContextMenu *This);
-      ULONG (WINAPI *Release)(IWEExtendContextMenu *This);
-      HRESULT (WINAPI *AddContextMenuItems)(IWEExtendContextMenu *This,IUnknown *piData,IWCContextMenuCallback *piCallback);
+                   HRESULT (WINAPI *QueryInterface)(IWEExtendContextMenu *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWEExtendContextMenu *This);
+                   ULONG (WINAPI *Release)(IWEExtendContextMenu *This);
+                   HRESULT (WINAPI *AddContextMenuItems)(IWEExtendContextMenu *This,IUnknown *piData,IWCContextMenuCallback *piCallback);
     END_INTERFACE
   } IWEExtendContextMenuVtbl;
   struct IWEExtendContextMenu {
@@ -619,10 +619,10 @@ extern "C"{
 #else
   typedef struct IWEInvokeCommandVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWEInvokeCommand *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWEInvokeCommand *This);
-      ULONG (WINAPI *Release)(IWEInvokeCommand *This);
-      HRESULT (WINAPI *InvokeCommand)(IWEInvokeCommand *This,ULONG nCommandID,IUnknown *piData);
+                   HRESULT (WINAPI *QueryInterface)(IWEInvokeCommand *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWEInvokeCommand *This);
+                   ULONG (WINAPI *Release)(IWEInvokeCommand *This);
+                   HRESULT (WINAPI *InvokeCommand)(IWEInvokeCommand *This,ULONG nCommandID,IUnknown *piData);
     END_INTERFACE
   } IWEInvokeCommandVtbl;
   struct IWEInvokeCommand {
@@ -651,11 +651,11 @@ extern "C"{
 #else
   typedef struct IWCWizard97CallbackVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWCWizard97Callback *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWCWizard97Callback *This);
-      ULONG (WINAPI *Release)(IWCWizard97Callback *This);
-      HRESULT (WINAPI *AddWizard97Page)(IWCWizard97Callback *This,LONG *hpage);
-      HRESULT (WINAPI *EnableNext)(IWCWizard97Callback *This,LONG *hpage,WINBOOL bEnable);
+                   HRESULT (WINAPI *QueryInterface)(IWCWizard97Callback *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWCWizard97Callback *This);
+                   ULONG (WINAPI *Release)(IWCWizard97Callback *This);
+                   HRESULT (WINAPI *AddWizard97Page)(IWCWizard97Callback *This,LONG *hpage);
+                   HRESULT (WINAPI *EnableNext)(IWCWizard97Callback *This,LONG *hpage,WINBOOL bEnable);
     END_INTERFACE
   } IWCWizard97CallbackVtbl;
   struct IWCWizard97Callback {
@@ -686,10 +686,10 @@ extern "C"{
 #else
   typedef struct IWEExtendWizard97Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IWEExtendWizard97 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IWEExtendWizard97 *This);
-      ULONG (WINAPI *Release)(IWEExtendWizard97 *This);
-      HRESULT (WINAPI *CreateWizard97Pages)(IWEExtendWizard97 *This,IUnknown *piData,IWCWizard97Callback *piCallback);
+                   HRESULT (WINAPI *QueryInterface)(IWEExtendWizard97 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IWEExtendWizard97 *This);
+                   ULONG (WINAPI *Release)(IWEExtendWizard97 *This);
+                   HRESULT (WINAPI *CreateWizard97Pages)(IWEExtendWizard97 *This,IUnknown *piData,IWCWizard97Callback *piCallback);
     END_INTERFACE
   } IWEExtendWizard97Vtbl;
   struct IWEExtendWizard97 {

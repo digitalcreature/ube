@@ -166,8 +166,8 @@ struct sigcontext
   __uint64_t cr2;
   __extension__ union
     {
-      struct _fpstate * fpstate;
-      __uint64_t __fpstate_word;
+                   struct _fpstate * fpstate;
+                   __uint64_t __fpstate_word;
     };
   __uint64_t __reserved1 [8];
 };

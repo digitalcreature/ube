@@ -109,9 +109,9 @@ struct virtio_gpu_cursor_pos {
 struct virtio_gpu_update_cursor {
 	struct virtio_gpu_ctrl_hdr hdr;
 	struct virtio_gpu_cursor_pos pos;  /* update & move */
-	__le32 resource_id;           /* update only */
-	__le32 hot_x;                 /* update only */
-	__le32 hot_y;                 /* update only */
+	__le32 resource_id;                        /* update only */
+	__le32 hot_x;                                           /* update only */
+	__le32 hot_y;                                           /* update only */
 	__le32 padding;
 };
 

@@ -77,11 +77,11 @@ enum
 
 # define __SOCKADDR_ONETYPE(type) struct type *__restrict __##type##__;
 typedef union { __SOCKADDR_ALLTYPES
-	      } __SOCKADDR_ARG __attribute__ ((__transparent_union__));
+	                   } __SOCKADDR_ARG __attribute__ ((__transparent_union__));
 # undef __SOCKADDR_ONETYPE
 # define __SOCKADDR_ONETYPE(type) const struct type *__restrict __##type##__;
 typedef union { __SOCKADDR_ALLTYPES
-	      } __CONST_SOCKADDR_ARG __attribute__ ((__transparent_union__));
+	                   } __CONST_SOCKADDR_ARG __attribute__ ((__transparent_union__));
 # undef __SOCKADDR_ONETYPE
 #endif
 
@@ -106,7 +106,7 @@ extern int socket (int __domain, int __type, int __protocol) __THROW;
    descriptors for them in FDS[0] and FDS[1].  If PROTOCOL is zero,
    one will be chosen automatically.  Returns 0 on success, -1 for errors.  */
 extern int socketpair (int __domain, int __type, int __protocol,
-		       int __fds[2]) __THROW;
+		                    int __fds[2]) __THROW;
 
 /* Give the socket FD the local address ADDR (which is LEN bytes long).  */
 extern int bind (int __fd, __CONST_SOCKADDR_ARG __addr, socklen_t __len)
@@ -150,8 +150,8 @@ extern ssize_t recv (int __fd, void *__buf, size_t __n, int __flags);
    This function is a cancellation point and therefore not marked with
    __THROW.  */
 extern ssize_t sendto (int __fd, const void *__buf, size_t __n,
-		       int __flags, __CONST_SOCKADDR_ARG __addr,
-		       socklen_t __addr_len);
+		                    int __flags, __CONST_SOCKADDR_ARG __addr,
+		                    socklen_t __addr_len);
 
 /* Read N bytes into BUF through socket FD.
    If ADDR is not NULL, fill in *ADDR_LEN bytes of it with tha address of
@@ -206,14 +206,14 @@ extern int recvmmsg (int __fd, struct mmsghdr *__vmessages,
    into OPTVAL (which is *OPTLEN bytes long), and set *OPTLEN to the value's
    actual length.  Returns 0 on success, -1 for errors.  */
 extern int getsockopt (int __fd, int __level, int __optname,
-		       void *__restrict __optval,
-		       socklen_t *__restrict __optlen) __THROW;
+		                    void *__restrict __optval,
+		                    socklen_t *__restrict __optlen) __THROW;
 
 /* Set socket FD's option OPTNAME at protocol level LEVEL
    to *OPTVAL (which is OPTLEN bytes long).
    Returns 0 on success, -1 for errors.  */
 extern int setsockopt (int __fd, int __level, int __optname,
-		       const void *__optval, socklen_t __optlen) __THROW;
+		                    const void *__optval, socklen_t __optlen) __THROW;
 
 
 /* Prepare to accept connections on socket FD.

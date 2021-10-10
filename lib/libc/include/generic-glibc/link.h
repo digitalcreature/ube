@@ -46,19 +46,19 @@ struct r_debug
     struct link_map *r_map;	/* Head of the chain of loaded objects.  */
 
     /* This is the address of a function internal to the run-time linker,
-       that will always be called when the linker begins to map in a
-       library or unmap it, and again when the mapping change is complete.
-       The debugger can set a breakpoint at this address if it wants to
-       notice shared object mapping changes.  */
+                    that will always be called when the linker begins to map in a
+                    library or unmap it, and again when the mapping change is complete.
+                    The debugger can set a breakpoint at this address if it wants to
+                    notice shared object mapping changes.  */
     ElfW(Addr) r_brk;
     enum
-      {
+                   {
 	/* This state value describes the mapping change taking place when
 	   the `r_brk' address is called.  */
 	RT_CONSISTENT,		/* Mapping change is complete.  */
 	RT_ADD,			/* Beginning to add a new object.  */
 	RT_DELETE		/* Beginning to remove an object mapping.  */
-      } r_state;
+                   } r_state;
 
     ElfW(Addr) r_ldbase;	/* Base address the linker is loaded at.  */
   };
@@ -70,7 +70,7 @@ extern struct r_debug _r_debug;
    of whatever module refers to `_DYNAMIC'.  So, to find its own
    `struct r_debug', a program could do:
      for (dyn = _DYNAMIC; dyn->d_tag != DT_NULL; ++dyn)
-       if (dyn->d_tag == DT_DEBUG)
+                    if (dyn->d_tag == DT_DEBUG)
 	 r_debug = (struct r_debug *) dyn->d_un.d_ptr;
    */
 extern ElfW(Dyn) _DYNAMIC[];
@@ -84,7 +84,7 @@ extern ElfW(Dyn) _DYNAMIC[];
 struct link_map
   {
     /* These first few members are part of the protocol with the debugger.
-       This is the same format used in SVR4.  */
+                    This is the same format used in SVR4.  */
 
     ElfW(Addr) l_addr;		/* Difference between the address in the ELF
 				   file and the addresses in memory.  */
@@ -143,9 +143,9 @@ struct dl_phdr_info
     ElfW(Half) dlpi_phnum;
 
     /* Note: Following members were introduced after the first
-       version of this structure was available.  Check the SIZE
-       argument passed to the dl_iterate_phdr callback to determine
-       whether or not each later member is available.  */
+                    version of this structure was available.  Check the SIZE
+                    argument passed to the dl_iterate_phdr callback to determine
+                    whether or not each later member is available.  */
 
     /* Incremented when a new object may have been added.  */
     __extension__ unsigned long long int dlpi_adds;
@@ -153,19 +153,19 @@ struct dl_phdr_info
     __extension__ unsigned long long int dlpi_subs;
 
     /* If there is a PT_TLS segment, its module ID as used in
-       TLS relocations, else zero.  */
+                    TLS relocations, else zero.  */
     size_t dlpi_tls_modid;
 
     /* The address of the calling thread's instance of this module's
-       PT_TLS segment, if it has one and it has been allocated
-       in the calling thread, otherwise a null pointer.  */
+                    PT_TLS segment, if it has one and it has been allocated
+                    in the calling thread, otherwise a null pointer.  */
     void *dlpi_tls_data;
   };
 
 __BEGIN_DECLS
 
 extern int dl_iterate_phdr (int (*__callback) (struct dl_phdr_info *,
-					       size_t, void *),
+					                    size_t, void *),
 			    void *__data);
 
 
@@ -180,11 +180,11 @@ extern unsigned int la_objopen (struct link_map *__map, Lmid_t __lmid,
 				uintptr_t *__cookie);
 extern void la_preinit (uintptr_t *__cookie);
 extern uintptr_t la_symbind32 (Elf32_Sym *__sym, unsigned int __ndx,
-			       uintptr_t *__refcook, uintptr_t *__defcook,
-			       unsigned int *__flags, const char *__symname);
+			                    uintptr_t *__refcook, uintptr_t *__defcook,
+			                    unsigned int *__flags, const char *__symname);
 extern uintptr_t la_symbind64 (Elf64_Sym *__sym, unsigned int __ndx,
-			       uintptr_t *__refcook, uintptr_t *__defcook,
-			       unsigned int *__flags, const char *__symname);
+			                    uintptr_t *__refcook, uintptr_t *__defcook,
+			                    unsigned int *__flags, const char *__symname);
 extern unsigned int la_objclose (uintptr_t *__cookie);
 
 __END_DECLS

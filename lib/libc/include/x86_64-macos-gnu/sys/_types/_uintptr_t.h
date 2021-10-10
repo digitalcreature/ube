@@ -27,5 +27,5 @@
  */
 #ifndef _UINTPTR_T
 #define _UINTPTR_T
-typedef unsigned long           uintptr_t;
+typedef unsigned long                        uintptr_t;
 #endif /* _UINTPTR_T */

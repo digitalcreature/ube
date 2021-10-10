@@ -71,16 +71,16 @@ extern "C"{
 #else
   typedef struct ICertExitVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertExit *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertExit *This);
-      ULONG (WINAPI *Release)(ICertExit *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertExit *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertExit *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertExit *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertExit *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Initialize)(ICertExit *This,const BSTR strConfig,LONG *pEventMask);
-      HRESULT (WINAPI *Notify)(ICertExit *This,LONG ExitEvent,LONG Context);
-      HRESULT (WINAPI *GetDescription)(ICertExit *This,BSTR *pstrDescription);
+                   HRESULT (WINAPI *QueryInterface)(ICertExit *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertExit *This);
+                   ULONG (WINAPI *Release)(ICertExit *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertExit *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertExit *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertExit *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertExit *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Initialize)(ICertExit *This,const BSTR strConfig,LONG *pEventMask);
+                   HRESULT (WINAPI *Notify)(ICertExit *This,LONG ExitEvent,LONG Context);
+                   HRESULT (WINAPI *GetDescription)(ICertExit *This,BSTR *pstrDescription);
     END_INTERFACE
   } ICertExitVtbl;
   struct ICertExit {
@@ -118,17 +118,17 @@ extern "C"{
 #else
   typedef struct ICertExit2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ICertExit2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ICertExit2 *This);
-      ULONG (WINAPI *Release)(ICertExit2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ICertExit2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ICertExit2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ICertExit2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ICertExit2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Initialize)(ICertExit2 *This,const BSTR strConfig,LONG *pEventMask);
-      HRESULT (WINAPI *Notify)(ICertExit2 *This,LONG ExitEvent,LONG Context);
-      HRESULT (WINAPI *GetDescription)(ICertExit2 *This,BSTR *pstrDescription);
-      HRESULT (WINAPI *GetManageModule)(ICertExit2 *This,ICertManageModule **ppManageModule);
+                   HRESULT (WINAPI *QueryInterface)(ICertExit2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ICertExit2 *This);
+                   ULONG (WINAPI *Release)(ICertExit2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ICertExit2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ICertExit2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ICertExit2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ICertExit2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Initialize)(ICertExit2 *This,const BSTR strConfig,LONG *pEventMask);
+                   HRESULT (WINAPI *Notify)(ICertExit2 *This,LONG ExitEvent,LONG Context);
+                   HRESULT (WINAPI *GetDescription)(ICertExit2 *This,BSTR *pstrDescription);
+                   HRESULT (WINAPI *GetManageModule)(ICertExit2 *This,ICertManageModule **ppManageModule);
     END_INTERFACE
   } ICertExit2Vtbl;
   struct ICertExit2 {

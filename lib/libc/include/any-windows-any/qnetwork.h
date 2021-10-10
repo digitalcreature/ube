@@ -56,43 +56,43 @@ MIDL_INTERFACE("fa2aa8f4-8b62-11d0-a520-000000000000")
 IAMMediaContent : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_AuthorName(
-        BSTR *pbstrAuthorName) = 0;
+                     BSTR *pbstrAuthorName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Title(
-        BSTR *pbstrTitle) = 0;
+                     BSTR *pbstrTitle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Rating(
-        BSTR *pbstrRating) = 0;
+                     BSTR *pbstrRating) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Description(
-        BSTR *pbstrDescription) = 0;
+                     BSTR *pbstrDescription) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Copyright(
-        BSTR *pbstrCopyright) = 0;
+                     BSTR *pbstrCopyright) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BaseURL(
-        BSTR *pbstrBaseURL) = 0;
+                     BSTR *pbstrBaseURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LogoURL(
-        BSTR *pbstrLogoURL) = 0;
+                     BSTR *pbstrLogoURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LogoIconURL(
-        BSTR *pbstrLogoURL) = 0;
+                     BSTR *pbstrLogoURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_WatermarkURL(
-        BSTR *pbstrWatermarkURL) = 0;
+                     BSTR *pbstrWatermarkURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MoreInfoURL(
-        BSTR *pbstrMoreInfoURL) = 0;
+                     BSTR *pbstrMoreInfoURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MoreInfoBannerImage(
-        BSTR *pbstrMoreInfoBannerImage) = 0;
+                     BSTR *pbstrMoreInfoBannerImage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MoreInfoBannerURL(
-        BSTR *pbstrMoreInfoBannerURL) = 0;
+                     BSTR *pbstrMoreInfoBannerURL) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MoreInfoText(
-        BSTR *pbstrMoreInfoText) = 0;
+                     BSTR *pbstrMoreInfoText) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -104,98 +104,98 @@ typedef struct IAMMediaContentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMMediaContent *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMMediaContent *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMMediaContent *This);
+                     IAMMediaContent *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMMediaContent *This);
+                     IAMMediaContent *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAMMediaContent *This,
-        UINT *pctinfo);
+                     IAMMediaContent *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAMMediaContent *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAMMediaContent *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAMMediaContent *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAMMediaContent *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAMMediaContent *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAMMediaContent *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IAMMediaContent methods ***/
     HRESULT (STDMETHODCALLTYPE *get_AuthorName)(
-        IAMMediaContent *This,
-        BSTR *pbstrAuthorName);
+                     IAMMediaContent *This,
+                     BSTR *pbstrAuthorName);
 
     HRESULT (STDMETHODCALLTYPE *get_Title)(
-        IAMMediaContent *This,
-        BSTR *pbstrTitle);
+                     IAMMediaContent *This,
+                     BSTR *pbstrTitle);
 
     HRESULT (STDMETHODCALLTYPE *get_Rating)(
-        IAMMediaContent *This,
-        BSTR *pbstrRating);
+                     IAMMediaContent *This,
+                     BSTR *pbstrRating);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IAMMediaContent *This,
-        BSTR *pbstrDescription);
+                     IAMMediaContent *This,
+                     BSTR *pbstrDescription);
 
     HRESULT (STDMETHODCALLTYPE *get_Copyright)(
-        IAMMediaContent *This,
-        BSTR *pbstrCopyright);
+                     IAMMediaContent *This,
+                     BSTR *pbstrCopyright);
 
     HRESULT (STDMETHODCALLTYPE *get_BaseURL)(
-        IAMMediaContent *This,
-        BSTR *pbstrBaseURL);
+                     IAMMediaContent *This,
+                     BSTR *pbstrBaseURL);
 
     HRESULT (STDMETHODCALLTYPE *get_LogoURL)(
-        IAMMediaContent *This,
-        BSTR *pbstrLogoURL);
+                     IAMMediaContent *This,
+                     BSTR *pbstrLogoURL);
 
     HRESULT (STDMETHODCALLTYPE *get_LogoIconURL)(
-        IAMMediaContent *This,
-        BSTR *pbstrLogoURL);
+                     IAMMediaContent *This,
+                     BSTR *pbstrLogoURL);
 
     HRESULT (STDMETHODCALLTYPE *get_WatermarkURL)(
-        IAMMediaContent *This,
-        BSTR *pbstrWatermarkURL);
+                     IAMMediaContent *This,
+                     BSTR *pbstrWatermarkURL);
 
     HRESULT (STDMETHODCALLTYPE *get_MoreInfoURL)(
-        IAMMediaContent *This,
-        BSTR *pbstrMoreInfoURL);
+                     IAMMediaContent *This,
+                     BSTR *pbstrMoreInfoURL);
 
     HRESULT (STDMETHODCALLTYPE *get_MoreInfoBannerImage)(
-        IAMMediaContent *This,
-        BSTR *pbstrMoreInfoBannerImage);
+                     IAMMediaContent *This,
+                     BSTR *pbstrMoreInfoBannerImage);
 
     HRESULT (STDMETHODCALLTYPE *get_MoreInfoBannerURL)(
-        IAMMediaContent *This,
-        BSTR *pbstrMoreInfoBannerURL);
+                     IAMMediaContent *This,
+                     BSTR *pbstrMoreInfoBannerURL);
 
     HRESULT (STDMETHODCALLTYPE *get_MoreInfoText)(
-        IAMMediaContent *This,
-        BSTR *pbstrMoreInfoText);
+                     IAMMediaContent *This,
+                     BSTR *pbstrMoreInfoText);
 
     END_INTERFACE
 } IAMMediaContentVtbl;
@@ -313,25 +313,25 @@ MIDL_INTERFACE("fa2aa8f3-8b62-11d0-a520-000000000000")
 IAMNetworkStatus : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_ReceivedPackets(
-        LONG *pReceivedPackets) = 0;
+                     LONG *pReceivedPackets) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RecoveredPackets(
-        LONG *pRecoveredPackets) = 0;
+                     LONG *pRecoveredPackets) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LostPackets(
-        LONG *pLostPackets) = 0;
+                     LONG *pLostPackets) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ReceptionQuality(
-        LONG *pReceptionQuality) = 0;
+                     LONG *pReceptionQuality) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BufferingCount(
-        LONG *pBufferingCount) = 0;
+                     LONG *pBufferingCount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IsBroadcast(
-        VARIANT_BOOL *pIsBroadcast) = 0;
+                     VARIANT_BOOL *pIsBroadcast) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_BufferingProgress(
-        LONG *pBufferingProgress) = 0;
+                     LONG *pBufferingProgress) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -343,74 +343,74 @@ typedef struct IAMNetworkStatusVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAMNetworkStatus *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAMNetworkStatus *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAMNetworkStatus *This);
+                     IAMNetworkStatus *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAMNetworkStatus *This);
+                     IAMNetworkStatus *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAMNetworkStatus *This,
-        UINT *pctinfo);
+                     IAMNetworkStatus *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAMNetworkStatus *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAMNetworkStatus *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAMNetworkStatus *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAMNetworkStatus *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAMNetworkStatus *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAMNetworkStatus *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IAMNetworkStatus methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ReceivedPackets)(
-        IAMNetworkStatus *This,
-        LONG *pReceivedPackets);
+                     IAMNetworkStatus *This,
+                     LONG *pReceivedPackets);
 
     HRESULT (STDMETHODCALLTYPE *get_RecoveredPackets)(
-        IAMNetworkStatus *This,
-        LONG *pRecoveredPackets);
+                     IAMNetworkStatus *This,
+                     LONG *pRecoveredPackets);
 
     HRESULT (STDMETHODCALLTYPE *get_LostPackets)(
-        IAMNetworkStatus *This,
-        LONG *pLostPackets);
+                     IAMNetworkStatus *This,
+                     LONG *pLostPackets);
 
     HRESULT (STDMETHODCALLTYPE *get_ReceptionQuality)(
-        IAMNetworkStatus *This,
-        LONG *pReceptionQuality);
+                     IAMNetworkStatus *This,
+                     LONG *pReceptionQuality);
 
     HRESULT (STDMETHODCALLTYPE *get_BufferingCount)(
-        IAMNetworkStatus *This,
-        LONG *pBufferingCount);
+                     IAMNetworkStatus *This,
+                     LONG *pBufferingCount);
 
     HRESULT (STDMETHODCALLTYPE *get_IsBroadcast)(
-        IAMNetworkStatus *This,
-        VARIANT_BOOL *pIsBroadcast);
+                     IAMNetworkStatus *This,
+                     VARIANT_BOOL *pIsBroadcast);
 
     HRESULT (STDMETHODCALLTYPE *get_BufferingProgress)(
-        IAMNetworkStatus *This,
-        LONG *pBufferingProgress);
+                     IAMNetworkStatus *This,
+                     LONG *pBufferingProgress);
 
     END_INTERFACE
 } IAMNetworkStatusVtbl;
@@ -494,10 +494,10 @@ static FORCEINLINE HRESULT IAMNetworkStatus_get_BufferingProgress(IAMNetworkStat
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

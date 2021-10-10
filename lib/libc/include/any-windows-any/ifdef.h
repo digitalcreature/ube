@@ -24,7 +24,7 @@ typedef NET_IFINDEX IF_INDEX, *PIF_INDEX;
 typedef GUID NET_IF_NETWORK_GUID;
 
 typedef enum _IF_OPER_STATUS {
-  IfOperStatusUp               = 1,
+  IfOperStatusUp                                         = 1,
   IfOperStatusDown,
   IfOperStatusTesting,
   IfOperStatusUnknown,
@@ -34,7 +34,7 @@ typedef enum _IF_OPER_STATUS {
 } IF_OPER_STATUS;
 
 typedef enum _NET_IF_OPER_STATUS {
-  NET_IF_OPER_STATUS_UP                = 1,
+  NET_IF_OPER_STATUS_UP                                          = 1,
   NET_IF_OPER_STATUS_DOWN,
   NET_IF_OPER_STATUS_TESTING,
   NET_IF_OPER_STATUS_UNKNOWN,
@@ -44,7 +44,7 @@ typedef enum _NET_IF_OPER_STATUS {
 } NET_IF_OPER_STATUS, *PNET_IF_OPER_STATUS;
 
 typedef enum _NET_IF_ADMIN_STATUS {
-  NET_IF_ADMIN_STATUS_UP        = 1,
+  NET_IF_ADMIN_STATUS_UP                     = 1,
   NET_IF_ADMIN_STATUS_DOWN,
   NET_IF_ADMIN_STATUS_TESTING 
 } NET_IF_ADMIN_STATUS, *PNET_IF_ADMIN_STATUS;
@@ -56,7 +56,7 @@ typedef enum _NET_IF_MEDIA_CONNECT_STATE {
 } NET_IF_MEDIA_CONNECT_STATE, *PNET_IF_MEDIA_CONNECT_STATE;
 
 typedef enum _NET_IF_ACCESS_TYPE {
-  NET_IF_ACCESS_LOOPBACK               = 1,
+  NET_IF_ACCESS_LOOPBACK                                         = 1,
   NET_IF_ACCESS_BROADCAST,
   NET_IF_ACCESS_POINT_TO_POINT,
   NET_IF_ACCESS_POINT_TO_MULTI_POINT,
@@ -84,10 +84,10 @@ typedef enum _NET_IF_MEDIA_DUPLEX_STATE {
 } NET_IF_MEDIA_DUPLEX_STATE, *PNET_IF_MEDIA_DUPLEX_STATE;
 
 typedef enum _TUNNEL_TYPE {
-  TUNNEL_TYPE_NONE      = 0,
+  TUNNEL_TYPE_NONE                   = 0,
   TUNNEL_TYPE_OTHER     = 1,
   TUNNEL_TYPE_DIRECT    = 2,
-  TUNNEL_TYPE_6TO4      = 11,
+  TUNNEL_TYPE_6TO4                   = 11,
   TUNNEL_TYPE_ISATAP    = 13,
   TUNNEL_TYPE_TEREDO    = 14,
   TUNNEL_TYPE_IPHTTPS   = 15

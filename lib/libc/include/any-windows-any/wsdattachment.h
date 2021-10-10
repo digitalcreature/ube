@@ -104,15 +104,15 @@ typedef struct IWSDAttachmentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDAttachment *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDAttachment *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDAttachment *This);
+                     IWSDAttachment *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDAttachment *This);
+                     IWSDAttachment *This);
 
     END_INTERFACE
 } IWSDAttachmentVtbl;
@@ -159,12 +159,12 @@ MIDL_INTERFACE("5bd6ca65-233c-4fb8-9f7a-2641619655c9")
 IWSDInboundAttachment : public IWSDAttachment
 {
     virtual HRESULT STDMETHODCALLTYPE Read(
-        BYTE *pBuffer,
-        DWORD dwBytesToRead,
-        LPDWORD pdwNumberOfBytesRead) = 0;
+                     BYTE *pBuffer,
+                     DWORD dwBytesToRead,
+                     LPDWORD pdwNumberOfBytesRead) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -176,25 +176,25 @@ typedef struct IWSDInboundAttachmentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDInboundAttachment *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDInboundAttachment *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDInboundAttachment *This);
+                     IWSDInboundAttachment *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDInboundAttachment *This);
+                     IWSDInboundAttachment *This);
 
     /*** IWSDInboundAttachment methods ***/
     HRESULT (STDMETHODCALLTYPE *Read)(
-        IWSDInboundAttachment *This,
-        BYTE *pBuffer,
-        DWORD dwBytesToRead,
-        LPDWORD pdwNumberOfBytesRead);
+                     IWSDInboundAttachment *This,
+                     BYTE *pBuffer,
+                     DWORD dwBytesToRead,
+                     LPDWORD pdwNumberOfBytesRead);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IWSDInboundAttachment *This);
+                     IWSDInboundAttachment *This);
 
     END_INTERFACE
 } IWSDInboundAttachmentVtbl;
@@ -251,15 +251,15 @@ MIDL_INTERFACE("aa302f8d-5a22-4ba5-b392-aa8486f4c15d")
 IWSDOutboundAttachment : public IWSDAttachment
 {
     virtual HRESULT STDMETHODCALLTYPE Write(
-        const BYTE *pBuffer,
-        DWORD dwBytesToWrite,
-        LPDWORD pdwNumberOfBytesWritten) = 0;
+                     const BYTE *pBuffer,
+                     DWORD dwBytesToWrite,
+                     LPDWORD pdwNumberOfBytesWritten) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Abort(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -271,28 +271,28 @@ typedef struct IWSDOutboundAttachmentVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDOutboundAttachment *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDOutboundAttachment *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDOutboundAttachment *This);
+                     IWSDOutboundAttachment *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDOutboundAttachment *This);
+                     IWSDOutboundAttachment *This);
 
     /*** IWSDOutboundAttachment methods ***/
     HRESULT (STDMETHODCALLTYPE *Write)(
-        IWSDOutboundAttachment *This,
-        const BYTE *pBuffer,
-        DWORD dwBytesToWrite,
-        LPDWORD pdwNumberOfBytesWritten);
+                     IWSDOutboundAttachment *This,
+                     const BYTE *pBuffer,
+                     DWORD dwBytesToWrite,
+                     LPDWORD pdwNumberOfBytesWritten);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IWSDOutboundAttachment *This);
+                     IWSDOutboundAttachment *This);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IWSDOutboundAttachment *This);
+                     IWSDOutboundAttachment *This);
 
     END_INTERFACE
 } IWSDOutboundAttachmentVtbl;

@@ -1315,7 +1315,7 @@ static __inline__ __m128d __DEFAULT_FN_ATTRS
 _mm_cvtps_pd(__m128 __a)
 {
   return (__m128d) __builtin_convertvector(
-      __builtin_shufflevector((__v4sf)__a, (__v4sf)__a, 0, 1), __v2df);
+                   __builtin_shufflevector((__v4sf)__a, (__v4sf)__a, 0, 1), __v2df);
 }
 
 /// Converts the lower two integer elements of a 128-bit vector of
@@ -1338,7 +1338,7 @@ static __inline__ __m128d __DEFAULT_FN_ATTRS
 _mm_cvtepi32_pd(__m128i __a)
 {
   return (__m128d) __builtin_convertvector(
-      __builtin_shufflevector((__v4si)__a, (__v4si)__a, 0, 1), __v2df);
+                   __builtin_shufflevector((__v4si)__a, (__v4si)__a, 0, 1), __v2df);
 }
 
 /// Converts the two double-precision floating-point elements of a
@@ -1603,7 +1603,7 @@ _mm_load1_pd(double const *__dp)
   return __extension__ (__m128d){ __u, __u };
 }
 
-#define        _mm_load_pd1(dp)        _mm_load1_pd(dp)
+#define                     _mm_load_pd1(dp)                     _mm_load1_pd(dp)
 
 /// Loads two double-precision values, in reverse order, from an aligned
 ///    memory location into a 128-bit vector of [2 x double].
@@ -4357,7 +4357,7 @@ _mm_packus_epi16(__m128i __a, __m128i __b)
 ///    integer vector parameter and the remaining bits are assigned zeros.
 #define _mm_extract_epi16(a, imm) \
   (int)(unsigned short)__builtin_ia32_vec_ext_v8hi((__v8hi)(__m128i)(a), \
-                                                   (int)(imm))
+                                                                                                                                                           (int)(imm))
 
 /// Constructs a 128-bit integer vector by first making a copy of the
 ///    128-bit integer vector parameter, and then inserting the lower 16 bits
@@ -4381,7 +4381,7 @@ _mm_packus_epi16(__m128i __a, __m128i __b)
 /// \returns A 128-bit integer vector containing the constructed values.
 #define _mm_insert_epi16(a, b, imm) \
   (__m128i)__builtin_ia32_vec_set_v8hi((__v8hi)(__m128i)(a), (int)(b), \
-                                       (int)(imm))
+                                                                                                                     (int)(imm))
 
 /// Copies the values of the most significant bits from each 8-bit
 ///    element in a 128-bit integer vector of [16 x i8] to create a 16-bit mask
@@ -4845,7 +4845,7 @@ _mm_movemask_pd(__m128d __a)
 /// \returns A 128-bit vector of [2 x double] containing the shuffled values.
 #define _mm_shuffle_pd(a, b, i) \
   (__m128d)__builtin_ia32_shufpd((__v2df)(__m128d)(a), (__v2df)(__m128d)(b), \
-                                 (int)(i))
+                                                                                                  (int)(i))
 
 /// Casts a 128-bit floating-point vector of [2 x double] into a 128-bit
 ///    floating-point vector of [4 x float].

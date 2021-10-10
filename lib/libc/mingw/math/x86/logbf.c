@@ -21,17 +21,17 @@ logbf (float x)
     hlp.x = x;
     v = hlp.val & 0x7fffffff;  /* high |x| */
     if (!v)
-      return (float)-1.0 / fabsf (x);
+                   return (float)-1.0 / fabsf (x);
     if (v >= 0x7f800000)
-      return x * x;
+                   return x * x;
     if ((v >>= 23) == 0)
-      return -127.0 - (__builtin_clzl(hlp.val & 0x7fffff) - 9);
+                   return -127.0 - (__builtin_clzl(hlp.val & 0x7fffff) - 9);
     return (float) (v - 127);
 #else
   float res = 0.0F;
   asm volatile (
-       "fxtract\n\t"
-       "fstp	%%st" : "=t" (res) : "0" (x));
+                    "fxtract\n\t"
+                    "fstp	%%st" : "=t" (res) : "0" (x));
   return res;
 #endif
 }

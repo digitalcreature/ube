@@ -105,19 +105,19 @@ extern "C"{
 #else
   typedef struct ITParticipantVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITParticipant *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITParticipant *This);
-      ULONG (WINAPI *Release)(ITParticipant *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITParticipant *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITParticipant *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITParticipant *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITParticipant *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ParticipantTypedInfo)(ITParticipant *This,PARTICIPANT_TYPED_INFO InfoType,BSTR *ppInfo);
-      HRESULT (WINAPI *get_MediaTypes)(ITParticipant *This,__LONG32 *plMediaType);
-      HRESULT (WINAPI *put_Status)(ITParticipant *This,ITStream *pITStream,VARIANT_BOOL fEnable);
-      HRESULT (WINAPI *get_Status)(ITParticipant *This,ITStream *pITStream,VARIANT_BOOL *pStatus);
-      HRESULT (WINAPI *get_Streams)(ITParticipant *This,VARIANT *pVariant);
-      HRESULT (WINAPI *EnumerateStreams)(ITParticipant *This,IEnumStream **ppEnumStream);
+                   HRESULT (WINAPI *QueryInterface)(ITParticipant *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITParticipant *This);
+                   ULONG (WINAPI *Release)(ITParticipant *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITParticipant *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITParticipant *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITParticipant *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITParticipant *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ParticipantTypedInfo)(ITParticipant *This,PARTICIPANT_TYPED_INFO InfoType,BSTR *ppInfo);
+                   HRESULT (WINAPI *get_MediaTypes)(ITParticipant *This,__LONG32 *plMediaType);
+                   HRESULT (WINAPI *put_Status)(ITParticipant *This,ITStream *pITStream,VARIANT_BOOL fEnable);
+                   HRESULT (WINAPI *get_Status)(ITParticipant *This,ITStream *pITStream,VARIANT_BOOL *pStatus);
+                   HRESULT (WINAPI *get_Streams)(ITParticipant *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *EnumerateStreams)(ITParticipant *This,IEnumStream **ppEnumStream);
     END_INTERFACE
   } ITParticipantVtbl;
   struct ITParticipant {
@@ -207,8 +207,8 @@ extern "C"{
   typedef struct tagTAPI_STREAM_CONFIG_CAPS {
     StreamConfigCapsType CapsType;
     __C89_NAMELESS union {
-      TAPI_VIDEO_STREAM_CONFIG_CAPS VideoCap;
-      TAPI_AUDIO_STREAM_CONFIG_CAPS AudioCap;
+                   TAPI_VIDEO_STREAM_CONFIG_CAPS VideoCap;
+                   TAPI_AUDIO_STREAM_CONFIG_CAPS AudioCap;
     };
   } TAPI_STREAM_CONFIG_CAPS;
 
@@ -236,14 +236,14 @@ extern "C"{
 #else
   typedef struct ITFormatControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITFormatControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITFormatControl *This);
-      ULONG (WINAPI *Release)(ITFormatControl *This);
-      HRESULT (WINAPI *GetCurrentFormat)(ITFormatControl *This,AM_MEDIA_TYPE **ppMediaType);
-      HRESULT (WINAPI *ReleaseFormat)(ITFormatControl *This,AM_MEDIA_TYPE *pMediaType);
-      HRESULT (WINAPI *GetNumberOfCapabilities)(ITFormatControl *This,DWORD *pdwCount);
-      HRESULT (WINAPI *GetStreamCaps)(ITFormatControl *This,DWORD dwIndex,AM_MEDIA_TYPE **ppMediaType,TAPI_STREAM_CONFIG_CAPS *pStreamConfigCaps,WINBOOL *pfEnabled);
-      HRESULT (WINAPI *ReOrderCapabilities)(ITFormatControl *This,DWORD *pdwIndices,WINBOOL *pfEnabled,WINBOOL *pfPublicize,DWORD dwNumIndices);
+                   HRESULT (WINAPI *QueryInterface)(ITFormatControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITFormatControl *This);
+                   ULONG (WINAPI *Release)(ITFormatControl *This);
+                   HRESULT (WINAPI *GetCurrentFormat)(ITFormatControl *This,AM_MEDIA_TYPE **ppMediaType);
+                   HRESULT (WINAPI *ReleaseFormat)(ITFormatControl *This,AM_MEDIA_TYPE *pMediaType);
+                   HRESULT (WINAPI *GetNumberOfCapabilities)(ITFormatControl *This,DWORD *pdwCount);
+                   HRESULT (WINAPI *GetStreamCaps)(ITFormatControl *This,DWORD dwIndex,AM_MEDIA_TYPE **ppMediaType,TAPI_STREAM_CONFIG_CAPS *pStreamConfigCaps,WINBOOL *pfEnabled);
+                   HRESULT (WINAPI *ReOrderCapabilities)(ITFormatControl *This,DWORD *pdwIndices,WINBOOL *pfEnabled,WINBOOL *pfPublicize,DWORD dwNumIndices);
     END_INTERFACE
   } ITFormatControlVtbl;
   struct ITFormatControl {
@@ -293,12 +293,12 @@ extern "C"{
 #else
   typedef struct ITStreamQualityControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITStreamQualityControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITStreamQualityControl *This);
-      ULONG (WINAPI *Release)(ITStreamQualityControl *This);
-      HRESULT (WINAPI *GetRange)(ITStreamQualityControl *This,StreamQualityProperty Property,__LONG32 *plMin,__LONG32 *plMax,__LONG32 *plSteppingDelta,__LONG32 *plDefault,TAPIControlFlags *plFlags);
-      HRESULT (WINAPI *Get)(ITStreamQualityControl *This,StreamQualityProperty Property,__LONG32 *plValue,TAPIControlFlags *plFlags);
-      HRESULT (WINAPI *Set)(ITStreamQualityControl *This,StreamQualityProperty Property,__LONG32 lValue,TAPIControlFlags lFlags);
+                   HRESULT (WINAPI *QueryInterface)(ITStreamQualityControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITStreamQualityControl *This);
+                   ULONG (WINAPI *Release)(ITStreamQualityControl *This);
+                   HRESULT (WINAPI *GetRange)(ITStreamQualityControl *This,StreamQualityProperty Property,__LONG32 *plMin,__LONG32 *plMax,__LONG32 *plSteppingDelta,__LONG32 *plDefault,TAPIControlFlags *plFlags);
+                   HRESULT (WINAPI *Get)(ITStreamQualityControl *This,StreamQualityProperty Property,__LONG32 *plValue,TAPIControlFlags *plFlags);
+                   HRESULT (WINAPI *Set)(ITStreamQualityControl *This,StreamQualityProperty Property,__LONG32 lValue,TAPIControlFlags lFlags);
     END_INTERFACE
   } ITStreamQualityControlVtbl;
   struct ITStreamQualityControl {
@@ -343,12 +343,12 @@ extern "C"{
 #else
   typedef struct ITCallQualityControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITCallQualityControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITCallQualityControl *This);
-      ULONG (WINAPI *Release)(ITCallQualityControl *This);
-      HRESULT (WINAPI *GetRange)(ITCallQualityControl *This,CallQualityProperty Property,__LONG32 *plMin,__LONG32 *plMax,__LONG32 *plSteppingDelta,__LONG32 *plDefault,TAPIControlFlags *plFlags);
-      HRESULT (WINAPI *Get)(ITCallQualityControl *This,CallQualityProperty Property,__LONG32 *plValue,TAPIControlFlags *plFlags);
-      HRESULT (WINAPI *Set)(ITCallQualityControl *This,CallQualityProperty Property,__LONG32 lValue,TAPIControlFlags lFlags);
+                   HRESULT (WINAPI *QueryInterface)(ITCallQualityControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITCallQualityControl *This);
+                   ULONG (WINAPI *Release)(ITCallQualityControl *This);
+                   HRESULT (WINAPI *GetRange)(ITCallQualityControl *This,CallQualityProperty Property,__LONG32 *plMin,__LONG32 *plMax,__LONG32 *plSteppingDelta,__LONG32 *plDefault,TAPIControlFlags *plFlags);
+                   HRESULT (WINAPI *Get)(ITCallQualityControl *This,CallQualityProperty Property,__LONG32 *plValue,TAPIControlFlags *plFlags);
+                   HRESULT (WINAPI *Set)(ITCallQualityControl *This,CallQualityProperty Property,__LONG32 lValue,TAPIControlFlags lFlags);
     END_INTERFACE
   } ITCallQualityControlVtbl;
   struct ITCallQualityControl {
@@ -392,12 +392,12 @@ extern "C"{
 #else
   typedef struct ITAudioDeviceControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAudioDeviceControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAudioDeviceControl *This);
-      ULONG (WINAPI *Release)(ITAudioDeviceControl *This);
-      HRESULT (WINAPI *GetRange)(ITAudioDeviceControl *This,AudioDeviceProperty Property,__LONG32 *plMin,__LONG32 *plMax,__LONG32 *plSteppingDelta,__LONG32 *plDefault,TAPIControlFlags *plFlags);
-      HRESULT (WINAPI *Get)(ITAudioDeviceControl *This,AudioDeviceProperty Property,__LONG32 *plValue,TAPIControlFlags *plFlags);
-      HRESULT (WINAPI *Set)(ITAudioDeviceControl *This,AudioDeviceProperty Property,__LONG32 lValue,TAPIControlFlags lFlags);
+                   HRESULT (WINAPI *QueryInterface)(ITAudioDeviceControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAudioDeviceControl *This);
+                   ULONG (WINAPI *Release)(ITAudioDeviceControl *This);
+                   HRESULT (WINAPI *GetRange)(ITAudioDeviceControl *This,AudioDeviceProperty Property,__LONG32 *plMin,__LONG32 *plMax,__LONG32 *plSteppingDelta,__LONG32 *plDefault,TAPIControlFlags *plFlags);
+                   HRESULT (WINAPI *Get)(ITAudioDeviceControl *This,AudioDeviceProperty Property,__LONG32 *plValue,TAPIControlFlags *plFlags);
+                   HRESULT (WINAPI *Set)(ITAudioDeviceControl *This,AudioDeviceProperty Property,__LONG32 lValue,TAPIControlFlags lFlags);
     END_INTERFACE
   } ITAudioDeviceControlVtbl;
   struct ITAudioDeviceControl {
@@ -442,12 +442,12 @@ extern "C"{
 #else
   typedef struct ITAudioSettingsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAudioSettings *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAudioSettings *This);
-      ULONG (WINAPI *Release)(ITAudioSettings *This);
-      HRESULT (WINAPI *GetRange)(ITAudioSettings *This,AudioSettingsProperty Property,__LONG32 *plMin,__LONG32 *plMax,__LONG32 *plSteppingDelta,__LONG32 *plDefault,TAPIControlFlags *plFlags);
-      HRESULT (WINAPI *Get)(ITAudioSettings *This,AudioSettingsProperty Property,__LONG32 *plValue,TAPIControlFlags *plFlags);
-      HRESULT (WINAPI *Set)(ITAudioSettings *This,AudioSettingsProperty Property,__LONG32 lValue,TAPIControlFlags lFlags);
+                   HRESULT (WINAPI *QueryInterface)(ITAudioSettings *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAudioSettings *This);
+                   ULONG (WINAPI *Release)(ITAudioSettings *This);
+                   HRESULT (WINAPI *GetRange)(ITAudioSettings *This,AudioSettingsProperty Property,__LONG32 *plMin,__LONG32 *plMax,__LONG32 *plSteppingDelta,__LONG32 *plDefault,TAPIControlFlags *plFlags);
+                   HRESULT (WINAPI *Get)(ITAudioSettings *This,AudioSettingsProperty Property,__LONG32 *plValue,TAPIControlFlags *plFlags);
+                   HRESULT (WINAPI *Set)(ITAudioSettings *This,AudioSettingsProperty Property,__LONG32 lValue,TAPIControlFlags lFlags);
     END_INTERFACE
   } ITAudioSettingsVtbl;
   struct ITAudioSettings {
@@ -481,14 +481,14 @@ extern "C"{
 #else
   typedef struct ITQOSApplicationIDVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITQOSApplicationID *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITQOSApplicationID *This);
-      ULONG (WINAPI *Release)(ITQOSApplicationID *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITQOSApplicationID *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITQOSApplicationID *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITQOSApplicationID *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITQOSApplicationID *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetQOSApplicationID)(ITQOSApplicationID *This,BSTR pApplicationID,BSTR pApplicationGUID,BSTR pSubIDs);
+                   HRESULT (WINAPI *QueryInterface)(ITQOSApplicationID *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITQOSApplicationID *This);
+                   ULONG (WINAPI *Release)(ITQOSApplicationID *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITQOSApplicationID *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITQOSApplicationID *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITQOSApplicationID *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITQOSApplicationID *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetQOSApplicationID)(ITQOSApplicationID *This,BSTR pApplicationID,BSTR pApplicationGUID,BSTR pSubIDs);
     END_INTERFACE
   } ITQOSApplicationIDVtbl;
   struct ITQOSApplicationID {

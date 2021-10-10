@@ -141,17 +141,17 @@ extern "C" {
 #else
   typedef struct ITConferenceBlobVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITConferenceBlob *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITConferenceBlob *This);
-      ULONG (WINAPI *Release)(ITConferenceBlob *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITConferenceBlob *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITConferenceBlob *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITConferenceBlob *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITConferenceBlob *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Init)(ITConferenceBlob *This,BSTR pName,BLOB_CHARACTER_SET CharacterSet,BSTR pBlob);
-      HRESULT (WINAPI *get_CharacterSet)(ITConferenceBlob *This,BLOB_CHARACTER_SET *pCharacterSet);
-      HRESULT (WINAPI *get_ConferenceBlob)(ITConferenceBlob *This,BSTR *ppBlob);
-      HRESULT (WINAPI *SetConferenceBlob)(ITConferenceBlob *This,BLOB_CHARACTER_SET CharacterSet,BSTR pBlob);
+                   HRESULT (WINAPI *QueryInterface)(ITConferenceBlob *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITConferenceBlob *This);
+                   ULONG (WINAPI *Release)(ITConferenceBlob *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITConferenceBlob *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITConferenceBlob *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITConferenceBlob *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITConferenceBlob *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Init)(ITConferenceBlob *This,BSTR pName,BLOB_CHARACTER_SET CharacterSet,BSTR pBlob);
+                   HRESULT (WINAPI *get_CharacterSet)(ITConferenceBlob *This,BLOB_CHARACTER_SET *pCharacterSet);
+                   HRESULT (WINAPI *get_ConferenceBlob)(ITConferenceBlob *This,BSTR *ppBlob);
+                   HRESULT (WINAPI *SetConferenceBlob)(ITConferenceBlob *This,BLOB_CHARACTER_SET CharacterSet,BSTR pBlob);
     END_INTERFACE
   } ITConferenceBlobVtbl;
   struct ITConferenceBlob {
@@ -202,24 +202,24 @@ extern "C" {
 #else
   typedef struct ITMediaVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITMedia *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITMedia *This);
-      ULONG (WINAPI *Release)(ITMedia *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITMedia *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITMedia *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITMedia *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITMedia *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_MediaName)(ITMedia *This,BSTR *ppMediaName);
-      HRESULT (WINAPI *put_MediaName)(ITMedia *This,BSTR pMediaName);
-      HRESULT (WINAPI *get_StartPort)(ITMedia *This,LONG *pStartPort);
-      HRESULT (WINAPI *get_NumPorts)(ITMedia *This,LONG *pNumPorts);
-      HRESULT (WINAPI *get_TransportProtocol)(ITMedia *This,BSTR *ppProtocol);
-      HRESULT (WINAPI *put_TransportProtocol)(ITMedia *This,BSTR pProtocol);
-      HRESULT (WINAPI *get_FormatCodes)(ITMedia *This,VARIANT *pVal);
-      HRESULT (WINAPI *put_FormatCodes)(ITMedia *This,VARIANT NewVal);
-      HRESULT (WINAPI *get_MediaTitle)(ITMedia *This,BSTR *ppMediaTitle);
-      HRESULT (WINAPI *put_MediaTitle)(ITMedia *This,BSTR pMediaTitle);
-      HRESULT (WINAPI *SetPortInfo)(ITMedia *This,LONG StartPort,LONG NumPorts);
+                   HRESULT (WINAPI *QueryInterface)(ITMedia *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITMedia *This);
+                   ULONG (WINAPI *Release)(ITMedia *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITMedia *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITMedia *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITMedia *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITMedia *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_MediaName)(ITMedia *This,BSTR *ppMediaName);
+                   HRESULT (WINAPI *put_MediaName)(ITMedia *This,BSTR pMediaName);
+                   HRESULT (WINAPI *get_StartPort)(ITMedia *This,LONG *pStartPort);
+                   HRESULT (WINAPI *get_NumPorts)(ITMedia *This,LONG *pNumPorts);
+                   HRESULT (WINAPI *get_TransportProtocol)(ITMedia *This,BSTR *ppProtocol);
+                   HRESULT (WINAPI *put_TransportProtocol)(ITMedia *This,BSTR pProtocol);
+                   HRESULT (WINAPI *get_FormatCodes)(ITMedia *This,VARIANT *pVal);
+                   HRESULT (WINAPI *put_FormatCodes)(ITMedia *This,VARIANT NewVal);
+                   HRESULT (WINAPI *get_MediaTitle)(ITMedia *This,BSTR *ppMediaTitle);
+                   HRESULT (WINAPI *put_MediaTitle)(ITMedia *This,BSTR pMediaTitle);
+                   HRESULT (WINAPI *SetPortInfo)(ITMedia *This,LONG StartPort,LONG NumPorts);
     END_INTERFACE
   } ITMediaVtbl;
   struct ITMedia {
@@ -284,13 +284,13 @@ extern "C" {
 #else
   typedef struct IEnumMediaVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumMedia *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumMedia *This);
-      ULONG (WINAPI *Release)(IEnumMedia *This);
-      HRESULT (WINAPI *Next)(IEnumMedia *This,ULONG celt,ITMedia **pVal,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumMedia *This);
-      HRESULT (WINAPI *Skip)(IEnumMedia *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumMedia *This,IEnumMedia **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumMedia *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumMedia *This);
+                   ULONG (WINAPI *Release)(IEnumMedia *This);
+                   HRESULT (WINAPI *Next)(IEnumMedia *This,ULONG celt,ITMedia **pVal,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumMedia *This);
+                   HRESULT (WINAPI *Skip)(IEnumMedia *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumMedia *This,IEnumMedia **ppEnum);
     END_INTERFACE
   } IEnumMediaVtbl;
   struct IEnumMedia {
@@ -332,19 +332,19 @@ extern "C" {
 #else
   typedef struct ITMediaCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITMediaCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITMediaCollection *This);
-      ULONG (WINAPI *Release)(ITMediaCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITMediaCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITMediaCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITMediaCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITMediaCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ITMediaCollection *This,LONG *pVal);
-      HRESULT (WINAPI *get_Item)(ITMediaCollection *This,LONG Index,ITMedia **pVal);
-      HRESULT (WINAPI *get__NewEnum)(ITMediaCollection *This,IUnknown **pVal);
-      HRESULT (WINAPI *get_EnumerationIf)(ITMediaCollection *This,IEnumMedia **pVal);
-      HRESULT (WINAPI *Create)(ITMediaCollection *This,LONG Index,ITMedia **ppMedia);
-      HRESULT (WINAPI *Delete)(ITMediaCollection *This,LONG Index);
+                   HRESULT (WINAPI *QueryInterface)(ITMediaCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITMediaCollection *This);
+                   ULONG (WINAPI *Release)(ITMediaCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITMediaCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITMediaCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITMediaCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITMediaCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ITMediaCollection *This,LONG *pVal);
+                   HRESULT (WINAPI *get_Item)(ITMediaCollection *This,LONG Index,ITMedia **pVal);
+                   HRESULT (WINAPI *get__NewEnum)(ITMediaCollection *This,IUnknown **pVal);
+                   HRESULT (WINAPI *get_EnumerationIf)(ITMediaCollection *This,IEnumMedia **pVal);
+                   HRESULT (WINAPI *Create)(ITMediaCollection *This,LONG Index,ITMedia **ppMedia);
+                   HRESULT (WINAPI *Delete)(ITMediaCollection *This,LONG Index);
     END_INTERFACE
   } ITMediaCollectionVtbl;
   struct ITMediaCollection {
@@ -394,17 +394,17 @@ extern "C" {
 #else
   typedef struct ITTimeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITTime *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITTime *This);
-      ULONG (WINAPI *Release)(ITTime *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITTime *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITTime *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITTime *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITTime *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_StartTime)(ITTime *This,DOUBLE *pTime);
-      HRESULT (WINAPI *put_StartTime)(ITTime *This,DOUBLE Time);
-      HRESULT (WINAPI *get_StopTime)(ITTime *This,DOUBLE *pTime);
-      HRESULT (WINAPI *put_StopTime)(ITTime *This,DOUBLE Time);
+                   HRESULT (WINAPI *QueryInterface)(ITTime *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITTime *This);
+                   ULONG (WINAPI *Release)(ITTime *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITTime *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITTime *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITTime *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITTime *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_StartTime)(ITTime *This,DOUBLE *pTime);
+                   HRESULT (WINAPI *put_StartTime)(ITTime *This,DOUBLE Time);
+                   HRESULT (WINAPI *get_StopTime)(ITTime *This,DOUBLE *pTime);
+                   HRESULT (WINAPI *put_StopTime)(ITTime *This,DOUBLE Time);
     END_INTERFACE
   } ITTimeVtbl;
   struct ITTime {
@@ -448,13 +448,13 @@ extern "C" {
 #else
   typedef struct IEnumTimeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumTime *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumTime *This);
-      ULONG (WINAPI *Release)(IEnumTime *This);
-      HRESULT (WINAPI *Next)(IEnumTime *This,ULONG celt,ITTime **pVal,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumTime *This);
-      HRESULT (WINAPI *Skip)(IEnumTime *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumTime *This,IEnumTime **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumTime *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumTime *This);
+                   ULONG (WINAPI *Release)(IEnumTime *This);
+                   HRESULT (WINAPI *Next)(IEnumTime *This,ULONG celt,ITTime **pVal,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumTime *This);
+                   HRESULT (WINAPI *Skip)(IEnumTime *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumTime *This,IEnumTime **ppEnum);
     END_INTERFACE
   } IEnumTimeVtbl;
   struct IEnumTime {
@@ -496,19 +496,19 @@ extern "C" {
 #else
   typedef struct ITTimeCollectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITTimeCollection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITTimeCollection *This);
-      ULONG (WINAPI *Release)(ITTimeCollection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITTimeCollection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITTimeCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITTimeCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITTimeCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ITTimeCollection *This,LONG *pVal);
-      HRESULT (WINAPI *get_Item)(ITTimeCollection *This,LONG Index,ITTime **pVal);
-      HRESULT (WINAPI *get__NewEnum)(ITTimeCollection *This,IUnknown **pVal);
-      HRESULT (WINAPI *get_EnumerationIf)(ITTimeCollection *This,IEnumTime **pVal);
-      HRESULT (WINAPI *Create)(ITTimeCollection *This,LONG Index,ITTime **ppTime);
-      HRESULT (WINAPI *Delete)(ITTimeCollection *This,LONG Index);
+                   HRESULT (WINAPI *QueryInterface)(ITTimeCollection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITTimeCollection *This);
+                   ULONG (WINAPI *Release)(ITTimeCollection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITTimeCollection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITTimeCollection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITTimeCollection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITTimeCollection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ITTimeCollection *This,LONG *pVal);
+                   HRESULT (WINAPI *get_Item)(ITTimeCollection *This,LONG Index,ITTime **pVal);
+                   HRESULT (WINAPI *get__NewEnum)(ITTimeCollection *This,IUnknown **pVal);
+                   HRESULT (WINAPI *get_EnumerationIf)(ITTimeCollection *This,IEnumTime **pVal);
+                   HRESULT (WINAPI *Create)(ITTimeCollection *This,LONG Index,ITTime **ppTime);
+                   HRESULT (WINAPI *Delete)(ITTimeCollection *This,LONG Index);
     END_INTERFACE
   } ITTimeCollectionVtbl;
   struct ITTimeCollection {
@@ -575,34 +575,34 @@ extern "C" {
 #else
   typedef struct ITSdpVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITSdp *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITSdp *This);
-      ULONG (WINAPI *Release)(ITSdp *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITSdp *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITSdp *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITSdp *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITSdp *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_IsValid)(ITSdp *This,VARIANT_BOOL *pfIsValid);
-      HRESULT (WINAPI *get_ProtocolVersion)(ITSdp *This,unsigned char *pProtocolVersion);
-      HRESULT (WINAPI *get_SessionId)(ITSdp *This,DOUBLE *pSessionId);
-      HRESULT (WINAPI *get_SessionVersion)(ITSdp *This,DOUBLE *pSessionVersion);
-      HRESULT (WINAPI *put_SessionVersion)(ITSdp *This,DOUBLE SessionVersion);
-      HRESULT (WINAPI *get_MachineAddress)(ITSdp *This,BSTR *ppMachineAddress);
-      HRESULT (WINAPI *put_MachineAddress)(ITSdp *This,BSTR pMachineAddress);
-      HRESULT (WINAPI *get_Name)(ITSdp *This,BSTR *ppName);
-      HRESULT (WINAPI *put_Name)(ITSdp *This,BSTR pName);
-      HRESULT (WINAPI *get_Description)(ITSdp *This,BSTR *ppDescription);
-      HRESULT (WINAPI *put_Description)(ITSdp *This,BSTR pDescription);
-      HRESULT (WINAPI *get_Url)(ITSdp *This,BSTR *ppUrl);
-      HRESULT (WINAPI *put_Url)(ITSdp *This,BSTR pUrl);
-      HRESULT (WINAPI *GetEmailNames)(ITSdp *This,VARIANT *pAddresses,VARIANT *pNames);
-      HRESULT (WINAPI *SetEmailNames)(ITSdp *This,VARIANT Addresses,VARIANT Names);
-      HRESULT (WINAPI *GetPhoneNumbers)(ITSdp *This,VARIANT *pNumbers,VARIANT *pNames);
-      HRESULT (WINAPI *SetPhoneNumbers)(ITSdp *This,VARIANT Numbers,VARIANT Names);
-      HRESULT (WINAPI *get_Originator)(ITSdp *This,BSTR *ppOriginator);
-      HRESULT (WINAPI *put_Originator)(ITSdp *This,BSTR pOriginator);
-      HRESULT (WINAPI *get_MediaCollection)(ITSdp *This,ITMediaCollection **ppMediaCollection);
-      HRESULT (WINAPI *get_TimeCollection)(ITSdp *This,ITTimeCollection **ppTimeCollection);
+                   HRESULT (WINAPI *QueryInterface)(ITSdp *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITSdp *This);
+                   ULONG (WINAPI *Release)(ITSdp *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITSdp *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITSdp *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITSdp *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITSdp *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_IsValid)(ITSdp *This,VARIANT_BOOL *pfIsValid);
+                   HRESULT (WINAPI *get_ProtocolVersion)(ITSdp *This,unsigned char *pProtocolVersion);
+                   HRESULT (WINAPI *get_SessionId)(ITSdp *This,DOUBLE *pSessionId);
+                   HRESULT (WINAPI *get_SessionVersion)(ITSdp *This,DOUBLE *pSessionVersion);
+                   HRESULT (WINAPI *put_SessionVersion)(ITSdp *This,DOUBLE SessionVersion);
+                   HRESULT (WINAPI *get_MachineAddress)(ITSdp *This,BSTR *ppMachineAddress);
+                   HRESULT (WINAPI *put_MachineAddress)(ITSdp *This,BSTR pMachineAddress);
+                   HRESULT (WINAPI *get_Name)(ITSdp *This,BSTR *ppName);
+                   HRESULT (WINAPI *put_Name)(ITSdp *This,BSTR pName);
+                   HRESULT (WINAPI *get_Description)(ITSdp *This,BSTR *ppDescription);
+                   HRESULT (WINAPI *put_Description)(ITSdp *This,BSTR pDescription);
+                   HRESULT (WINAPI *get_Url)(ITSdp *This,BSTR *ppUrl);
+                   HRESULT (WINAPI *put_Url)(ITSdp *This,BSTR pUrl);
+                   HRESULT (WINAPI *GetEmailNames)(ITSdp *This,VARIANT *pAddresses,VARIANT *pNames);
+                   HRESULT (WINAPI *SetEmailNames)(ITSdp *This,VARIANT Addresses,VARIANT Names);
+                   HRESULT (WINAPI *GetPhoneNumbers)(ITSdp *This,VARIANT *pNumbers,VARIANT *pNames);
+                   HRESULT (WINAPI *SetPhoneNumbers)(ITSdp *This,VARIANT Numbers,VARIANT Names);
+                   HRESULT (WINAPI *get_Originator)(ITSdp *This,BSTR *ppOriginator);
+                   HRESULT (WINAPI *put_Originator)(ITSdp *This,BSTR pOriginator);
+                   HRESULT (WINAPI *get_MediaCollection)(ITSdp *This,ITMediaCollection **ppMediaCollection);
+                   HRESULT (WINAPI *get_TimeCollection)(ITSdp *This,ITTimeCollection **ppTimeCollection);
     END_INTERFACE
   } ITSdpVtbl;
   struct ITSdp {
@@ -706,26 +706,26 @@ extern "C" {
 #else
   typedef struct ITConnectionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITConnection *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITConnection *This);
-      ULONG (WINAPI *Release)(ITConnection *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITConnection *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITConnection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITConnection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITConnection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_NetworkType)(ITConnection *This,BSTR *ppNetworkType);
-      HRESULT (WINAPI *put_NetworkType)(ITConnection *This,BSTR pNetworkType);
-      HRESULT (WINAPI *get_AddressType)(ITConnection *This,BSTR *ppAddressType);
-      HRESULT (WINAPI *put_AddressType)(ITConnection *This,BSTR pAddressType);
-      HRESULT (WINAPI *get_StartAddress)(ITConnection *This,BSTR *ppStartAddress);
-      HRESULT (WINAPI *get_NumAddresses)(ITConnection *This,LONG *pNumAddresses);
-      HRESULT (WINAPI *get_Ttl)(ITConnection *This,unsigned char *pTtl);
-      HRESULT (WINAPI *get_BandwidthModifier)(ITConnection *This,BSTR *ppModifier);
-      HRESULT (WINAPI *get_Bandwidth)(ITConnection *This,DOUBLE *pBandwidth);
-      HRESULT (WINAPI *SetAddressInfo)(ITConnection *This,BSTR pStartAddress,LONG NumAddresses,unsigned char Ttl);
-      HRESULT (WINAPI *SetBandwidthInfo)(ITConnection *This,BSTR pModifier,DOUBLE Bandwidth);
-      HRESULT (WINAPI *SetEncryptionKey)(ITConnection *This,BSTR pKeyType,BSTR *ppKeyData);
-      HRESULT (WINAPI *GetEncryptionKey)(ITConnection *This,BSTR *ppKeyType,VARIANT_BOOL *pfValidKeyData,BSTR *ppKeyData);
+                   HRESULT (WINAPI *QueryInterface)(ITConnection *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITConnection *This);
+                   ULONG (WINAPI *Release)(ITConnection *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITConnection *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITConnection *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITConnection *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITConnection *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_NetworkType)(ITConnection *This,BSTR *ppNetworkType);
+                   HRESULT (WINAPI *put_NetworkType)(ITConnection *This,BSTR pNetworkType);
+                   HRESULT (WINAPI *get_AddressType)(ITConnection *This,BSTR *ppAddressType);
+                   HRESULT (WINAPI *put_AddressType)(ITConnection *This,BSTR pAddressType);
+                   HRESULT (WINAPI *get_StartAddress)(ITConnection *This,BSTR *ppStartAddress);
+                   HRESULT (WINAPI *get_NumAddresses)(ITConnection *This,LONG *pNumAddresses);
+                   HRESULT (WINAPI *get_Ttl)(ITConnection *This,unsigned char *pTtl);
+                   HRESULT (WINAPI *get_BandwidthModifier)(ITConnection *This,BSTR *ppModifier);
+                   HRESULT (WINAPI *get_Bandwidth)(ITConnection *This,DOUBLE *pBandwidth);
+                   HRESULT (WINAPI *SetAddressInfo)(ITConnection *This,BSTR pStartAddress,LONG NumAddresses,unsigned char Ttl);
+                   HRESULT (WINAPI *SetBandwidthInfo)(ITConnection *This,BSTR pModifier,DOUBLE Bandwidth);
+                   HRESULT (WINAPI *SetEncryptionKey)(ITConnection *This,BSTR pKeyType,BSTR *ppKeyData);
+                   HRESULT (WINAPI *GetEncryptionKey)(ITConnection *This,BSTR *ppKeyType,VARIANT_BOOL *pfValidKeyData,BSTR *ppKeyData);
     END_INTERFACE
   } ITConnectionVtbl;
   struct ITConnection {
@@ -798,19 +798,19 @@ extern "C" {
 #else
   typedef struct ITAttributeListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAttributeList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAttributeList *This);
-      ULONG (WINAPI *Release)(ITAttributeList *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITAttributeList *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITAttributeList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITAttributeList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITAttributeList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Count)(ITAttributeList *This,LONG *pVal);
-      HRESULT (WINAPI *get_Item)(ITAttributeList *This,LONG Index,BSTR *pVal);
-      HRESULT (WINAPI *Add)(ITAttributeList *This,LONG Index,BSTR pAttribute);
-      HRESULT (WINAPI *Delete)(ITAttributeList *This,LONG Index);
-      HRESULT (WINAPI *get_AttributeList)(ITAttributeList *This,VARIANT *pVal);
-      HRESULT (WINAPI *put_AttributeList)(ITAttributeList *This,VARIANT newVal);
+                   HRESULT (WINAPI *QueryInterface)(ITAttributeList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAttributeList *This);
+                   ULONG (WINAPI *Release)(ITAttributeList *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITAttributeList *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITAttributeList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITAttributeList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITAttributeList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Count)(ITAttributeList *This,LONG *pVal);
+                   HRESULT (WINAPI *get_Item)(ITAttributeList *This,LONG Index,BSTR *pVal);
+                   HRESULT (WINAPI *Add)(ITAttributeList *This,LONG Index,BSTR pAttribute);
+                   HRESULT (WINAPI *Delete)(ITAttributeList *This,LONG Index);
+                   HRESULT (WINAPI *get_AttributeList)(ITAttributeList *This,VARIANT *pVal);
+                   HRESULT (WINAPI *put_AttributeList)(ITAttributeList *This,VARIANT newVal);
     END_INTERFACE
   } ITAttributeListVtbl;
   struct ITAttributeList {

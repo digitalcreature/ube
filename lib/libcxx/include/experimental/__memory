@@ -34,7 +34,7 @@ template <class _Tp, class _Alloc>
 struct __lfts_uses_allocator<_Tp, _Alloc, false, true>
   : public integral_constant<bool
     , is_convertible<_Alloc, typename _Tp::allocator_type>::value
-      || is_same<erased_type, typename _Tp::allocator_type>::value
+                   || is_same<erased_type, typename _Tp::allocator_type>::value
     >
 {};
 
@@ -48,17 +48,17 @@ template <class _Tp, class _Alloc, class ..._Args>
 struct __lfts_uses_alloc_ctor_imp<true, _Tp, _Alloc, _Args...>
 {
     static const bool __ic_first
-        = is_constructible<_Tp, allocator_arg_t, _Alloc, _Args...>::value;
+                     = is_constructible<_Tp, allocator_arg_t, _Alloc, _Args...>::value;
 
     static const bool __ic_second =
-        conditional<
-            __ic_first,
-            false_type,
-            is_constructible<_Tp, _Args..., _Alloc>
-        >::type::value;
+                     conditional<
+                                      __ic_first,
+                                      false_type,
+                                      is_constructible<_Tp, _Args..., _Alloc>
+                     >::type::value;
 
     static_assert(__ic_first || __ic_second,
-                  "Request for uses allocator construction is ill-formed");
+                                                         "Request for uses allocator construction is ill-formed");
 
     static const int value = __ic_first ? 1 : 2;
 };
@@ -66,10 +66,10 @@ struct __lfts_uses_alloc_ctor_imp<true, _Tp, _Alloc, _Args...>
 template <class _Tp, class _Alloc, class ..._Args>
 struct __lfts_uses_alloc_ctor
   : integral_constant<int,
-        __lfts_uses_alloc_ctor_imp<
-            __lfts_uses_allocator<_Tp, _Alloc>::value
-          , _Tp, _Alloc, _Args...
-        >::value
+                     __lfts_uses_alloc_ctor_imp<
+                                      __lfts_uses_allocator<_Tp, _Alloc>::value
+                       , _Tp, _Alloc, _Args...
+                     >::value
     >
 {};
 
@@ -79,9 +79,9 @@ void __lfts_user_alloc_construct(
     _Tp * __store, const _Alloc & __a, _Args &&... __args)
 {
     _VSTD::__user_alloc_construct_impl(
-        typename __lfts_uses_alloc_ctor<_Tp, _Alloc, _Args...>::type()
-       , __store, __a, _VSTD::forward<_Args>(__args)...
-       );
+                     typename __lfts_uses_alloc_ctor<_Tp, _Alloc, _Args...>::type()
+                    , __store, __a, _VSTD::forward<_Args>(__args)...
+                    );
 }
 
 _LIBCPP_END_NAMESPACE_LFTS

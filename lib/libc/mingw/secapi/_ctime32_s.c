@@ -40,7 +40,7 @@ _int_ctime32_s (char *d, size_t dn, const __time32_t *pt)
 
   if (!d || !dn)
      {
-        errno = EINVAL;
+                     errno = EINVAL;
 	return EINVAL;
      }
   d[0] = 0;

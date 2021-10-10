@@ -46,12 +46,12 @@ typedef struct La_i86_retval
 __BEGIN_DECLS
 
 extern Elf32_Addr la_i86_gnu_pltenter (Elf32_Sym *__sym, unsigned int __ndx,
-				       uintptr_t *__refcook,
-				       uintptr_t *__defcook,
-				       La_i86_regs *__regs,
-				       unsigned int *__flags,
-				       const char *__symname,
-				       long int *__framesizep);
+				                    uintptr_t *__refcook,
+				                    uintptr_t *__defcook,
+				                    La_i86_regs *__regs,
+				                    unsigned int *__flags,
+				                    const char *__symname,
+				                    long int *__framesizep);
 extern unsigned int la_i86_gnu_pltexit (Elf32_Sym *__sym, unsigned int __ndx,
 					uintptr_t *__refcook,
 					uintptr_t *__defcook,
@@ -139,13 +139,13 @@ extern unsigned int la_x86_64_gnu_pltexit (Elf64_Sym *__sym,
 					   const char *__symname);
 
 extern Elf32_Addr la_x32_gnu_pltenter (Elf32_Sym *__sym,
-				       unsigned int __ndx,
-				       uintptr_t *__refcook,
-				       uintptr_t *__defcook,
-				       La_x32_regs *__regs,
-				       unsigned int *__flags,
-				       const char *__symname,
-				       long int *__framesizep);
+				                    unsigned int __ndx,
+				                    uintptr_t *__refcook,
+				                    uintptr_t *__defcook,
+				                    La_x32_regs *__regs,
+				                    unsigned int *__flags,
+				                    const char *__symname,
+				                    long int *__framesizep);
 extern unsigned int la_x32_gnu_pltexit (Elf32_Sym *__sym,
 					unsigned int __ndx,
 					uintptr_t *__refcook,

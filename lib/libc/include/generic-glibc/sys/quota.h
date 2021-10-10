@@ -84,8 +84,8 @@
 #define QUOTAFILENAME "quota"
 #define QUOTAGROUP "staff"
 
-#define NR_DQHASH 43          /* Just an arbitrary number any suggestions ? */
-#define NR_DQUOTS 256         /* Number of quotas active at one time */
+#define NR_DQHASH 43                       /* Just an arbitrary number any suggestions ? */
+#define NR_DQUOTS 256                      /* Number of quotas active at one time */
 
 /* Old name for struct if_dqblk.  */
 struct dqblk
@@ -114,7 +114,7 @@ struct dqblk
 #define	dq_btime	dq_dqb.dqb_btime
 #define	dq_itime	dq_dqb.dqb_itime
 
-#define dqoff(UID)      ((__loff_t)((UID) * sizeof (struct dqblk)))
+#define dqoff(UID)                   ((__loff_t)((UID) * sizeof (struct dqblk)))
 
 /* Old name for struct if_dqinfo.  */
 struct dqinfo

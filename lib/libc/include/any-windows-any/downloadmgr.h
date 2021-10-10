@@ -49,14 +49,14 @@ MIDL_INTERFACE("988934a4-064b-11d3-bb80-00104b35e7f9")
 IDownloadManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Download(
-        IMoniker *pmk,
-        IBindCtx *pbc,
-        DWORD dwBindVerb,
-        LONG grfBINDF,
-        BINDINFO *pBindInfo,
-        LPCOLESTR pszHeaders,
-        LPCOLESTR pszRedir,
-        UINT uiCP) = 0;
+                     IMoniker *pmk,
+                     IBindCtx *pbc,
+                     DWORD dwBindVerb,
+                     LONG grfBINDF,
+                     BINDINFO *pBindInfo,
+                     LPCOLESTR pszHeaders,
+                     LPCOLESTR pszRedir,
+                     UINT uiCP) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -68,27 +68,27 @@ typedef struct IDownloadManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDownloadManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDownloadManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDownloadManager *This);
+                     IDownloadManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDownloadManager *This);
+                     IDownloadManager *This);
 
     /*** IDownloadManager methods ***/
     HRESULT (STDMETHODCALLTYPE *Download)(
-        IDownloadManager *This,
-        IMoniker *pmk,
-        IBindCtx *pbc,
-        DWORD dwBindVerb,
-        LONG grfBINDF,
-        BINDINFO *pBindInfo,
-        LPCOLESTR pszHeaders,
-        LPCOLESTR pszRedir,
-        UINT uiCP);
+                     IDownloadManager *This,
+                     IMoniker *pmk,
+                     IBindCtx *pbc,
+                     DWORD dwBindVerb,
+                     LONG grfBINDF,
+                     BINDINFO *pBindInfo,
+                     LPCOLESTR pszHeaders,
+                     LPCOLESTR pszRedir,
+                     UINT uiCP);
 
     END_INTERFACE
 } IDownloadManagerVtbl;

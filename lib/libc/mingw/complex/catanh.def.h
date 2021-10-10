@@ -12,21 +12,21 @@
  modification, are permitted provided that the following conditions are met:
 
    1. Redistributions in source code must retain the accompanying copyright
-      notice, this list of conditions, and the following disclaimer.
+                   notice, this list of conditions, and the following disclaimer.
    2. Redistributions in binary form must reproduce the accompanying
-      copyright notice, this list of conditions, and the following disclaimer
-      in the documentation and/or other materials provided with the
-      distribution.
+                   copyright notice, this list of conditions, and the following disclaimer
+                   in the documentation and/or other materials provided with the
+                   distribution.
    3. Names of the copyright holders must not be used to endorse or promote
-      products derived from this software without prior written permission
-      from the copyright holders.
+                   products derived from this software without prior written permission
+                   from the copyright holders.
    4. The right to distribute this software or to use it for any purpose does
-      not give you the right to use Servicemarks (sm) or Trademarks (tm) of
-      the copyright holders.  Use of them is covered by separate agreement
-      with the copyright holders.
+                   not give you the right to use Servicemarks (sm) or Trademarks (tm) of
+                   the copyright holders.  Use of them is covered by separate agreement
+                   with the copyright holders.
    5. If any files are modified, you must cause the modified files to carry
-      prominent notices stating that you changed the files and the date of
-      any change.
+                   prominent notices stating that you changed the files and the date of
+                   any change.
 
  Disclaimer
 
@@ -54,17 +54,17 @@ __FLT_ABI(catanh) (__FLT_TYPE __complex__ z)
   {
     if (i_class == FP_INFINITE)
     {
-      __real__ ret = __FLT_ABI(copysign) (__FLT_CST(0.0), __real__ z);
-      __imag__ ret = __FLT_ABI(copysign) (__FLT_PI_2, __imag__ z);
-      return ret;
+                   __real__ ret = __FLT_ABI(copysign) (__FLT_CST(0.0), __real__ z);
+                   __imag__ ret = __FLT_ABI(copysign) (__FLT_PI_2, __imag__ z);
+                   return ret;
     }
 
     if (r_class == FP_INFINITE || r_class == FP_ZERO)
     {
-      __real__ ret = __FLT_ABI(copysign) (__FLT_CST(0.0), __real__ z);
-      __imag__ ret = ((i_class != FP_NAN && i_class != FP_INFINITE)
-        ? __FLT_ABI(copysign) (__FLT_PI_2, __imag__ z) : __FLT_NAN);
-      return ret;
+                   __real__ ret = __FLT_ABI(copysign) (__FLT_CST(0.0), __real__ z);
+                   __imag__ ret = ((i_class != FP_NAN && i_class != FP_INFINITE)
+                     ? __FLT_ABI(copysign) (__FLT_PI_2, __imag__ z) : __FLT_NAN);
+                   return ret;
     }
 
     __real__ ret = __FLT_NAN;

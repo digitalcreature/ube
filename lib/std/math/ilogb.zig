@@ -24,9 +24,9 @@ const minInt = std.math.minInt;
 pub fn ilogb(x: anytype) i32 {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => ilogb32(x),
-        f64 => ilogb64(x),
-        else => @compileError("ilogb not implemented for " ++ @typeName(T)),
+                     f32 => ilogb32(x),
+                     f64 => ilogb64(x),
+                     else => @compileError("ilogb not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -40,31 +40,31 @@ fn ilogb32(x: f32) i32 {
 
     // TODO: We should be able to merge this with the lower check.
     if (math.isNan(x)) {
-        return maxInt(i32);
+                     return maxInt(i32);
     }
 
     if (e == 0) {
-        u <<= 9;
-        if (u == 0) {
-            math.raiseInvalid();
-            return fp_ilogb0;
-        }
+                     u <<= 9;
+                     if (u == 0) {
+                                      math.raiseInvalid();
+                                      return fp_ilogb0;
+                     }
 
-        // subnormal
-        e = -0x7F;
-        while (u >> 31 == 0) : (u <<= 1) {
-            e -= 1;
-        }
-        return e;
+                     // subnormal
+                     e = -0x7F;
+                     while (u >> 31 == 0) : (u <<= 1) {
+                                      e -= 1;
+                     }
+                     return e;
     }
 
     if (e == 0xFF) {
-        math.raiseInvalid();
-        if (u << 9 != 0) {
-            return fp_ilogbnan;
-        } else {
-            return maxInt(i32);
-        }
+                     math.raiseInvalid();
+                     if (u << 9 != 0) {
+                                      return fp_ilogbnan;
+                     } else {
+                                      return maxInt(i32);
+                     }
     }
 
     return e - 0x7F;
@@ -75,31 +75,31 @@ fn ilogb64(x: f64) i32 {
     var e = @intCast(i32, (u >> 52) & 0x7FF);
 
     if (math.isNan(x)) {
-        return maxInt(i32);
+                     return maxInt(i32);
     }
 
     if (e == 0) {
-        u <<= 12;
-        if (u == 0) {
-            math.raiseInvalid();
-            return fp_ilogb0;
-        }
+                     u <<= 12;
+                     if (u == 0) {
+                                      math.raiseInvalid();
+                                      return fp_ilogb0;
+                     }
 
-        // subnormal
-        e = -0x3FF;
-        while (u >> 63 == 0) : (u <<= 1) {
-            e -= 1;
-        }
-        return e;
+                     // subnormal
+                     e = -0x3FF;
+                     while (u >> 63 == 0) : (u <<= 1) {
+                                      e -= 1;
+                     }
+                     return e;
     }
 
     if (e == 0x7FF) {
-        math.raiseInvalid();
-        if (u << 12 != 0) {
-            return fp_ilogbnan;
-        } else {
-            return maxInt(i32);
-        }
+                     math.raiseInvalid();
+                     if (u << 12 != 0) {
+                                      return fp_ilogbnan;
+                     } else {
+                                      return maxInt(i32);
+                     }
     }
 
     return e - 0x3FF;

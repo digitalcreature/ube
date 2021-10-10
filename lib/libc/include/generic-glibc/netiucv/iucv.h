@@ -35,7 +35,7 @@ struct sockaddr_iucv
 
 __END_DECLS
 
-#define SOL_IUCV        277			/* IUCV level */
+#define SOL_IUCV                     277			/* IUCV level */
 
 /* IUCV socket options (SOL_IUCV) */
 #define SO_IPRMDATA_MSG	0x0080			/* Send/recv IPRM_DATA msgs */

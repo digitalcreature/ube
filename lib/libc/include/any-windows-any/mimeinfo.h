@@ -56,10 +56,10 @@ extern "C" {
 #else
   typedef struct IMimeInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMimeInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMimeInfo *This);
-      ULONG (WINAPI *Release)(IMimeInfo *This);
-      HRESULT (WINAPI *GetMimeCLSIDMapping)(IMimeInfo *This,UINT *pcTypes,LPCSTR **ppszTypes,CLSID **ppclsID);
+                   HRESULT (WINAPI *QueryInterface)(IMimeInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMimeInfo *This);
+                   ULONG (WINAPI *Release)(IMimeInfo *This);
+                   HRESULT (WINAPI *GetMimeCLSIDMapping)(IMimeInfo *This,UINT *pcTypes,LPCSTR **ppszTypes,CLSID **ppclsID);
     END_INTERFACE
   } IMimeInfoVtbl;
   struct IMimeInfo {

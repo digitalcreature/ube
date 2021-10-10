@@ -438,8 +438,8 @@ typedef struct tagDVD_KaraokeAttributes {
 } DVD_KaraokeAttributes;
 typedef struct tagDVD_TitleMainAttributes {
     union {
-        DVD_TITLE_APPMODE AppMode;
-        DVD_HMSF_TIMECODE TitleLength;
+                     DVD_TITLE_APPMODE AppMode;
+                     DVD_HMSF_TIMECODE TitleLength;
     } DUMMYUNIONNAME;
     DVD_VideoAttributes VideoAttributes;
     ULONG ulNumberOfAudioStreams;
@@ -456,7 +456,7 @@ typedef struct tagDVD_MenuAttributes {
     WINBOOL fSubpicturePresent;
     DVD_SubpictureAttributes SubpictureAttributes;
 } DVD_MenuAttributes;
-#define DVD_TITLE_MENU           0x000
+#define DVD_TITLE_MENU                        0x000
 #define DVD_STREAM_DATA_VMGM     0x400
 #define DVD_STREAM_DATA_VTSM     0x401
 #define DVD_STREAM_DATA_CURRENT  0x800
@@ -520,114 +520,114 @@ MIDL_INTERFACE("a70efe61-e2a3-11d0-a9be-00aa0061be93")
 IDvdControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE TitlePlay(
-        ULONG title) = 0;
+                     ULONG title) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ChapterPlay(
-        ULONG title,
-        ULONG chapter) = 0;
+                     ULONG title,
+                     ULONG chapter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TimePlay(
-        ULONG title,
-        ULONG time) = 0;
+                     ULONG title,
+                     ULONG time) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopForResume(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GoUp(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TimeSearch(
-        ULONG time) = 0;
+                     ULONG time) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ChapterSearch(
-        ULONG chapter) = 0;
+                     ULONG chapter) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PrevPGSearch(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TopPGSearch(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NextPGSearch(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ForwardScan(
-        double speed) = 0;
+                     double speed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BackwardScan(
-        double speed) = 0;
+                     double speed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MenuCall(
-        DVD_MENU_ID id) = 0;
+                     DVD_MENU_ID id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpperButtonSelect(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LowerButtonSelect(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LeftButtonSelect(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RightButtonSelect(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ButtonActivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ButtonSelectActivate(
-        ULONG button) = 0;
+                     ULONG button) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StillOff(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PauseOn(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PauseOff(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MenuLanguageSelect(
-        LCID language) = 0;
+                     LCID language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AudioStreamChange(
-        ULONG audio) = 0;
+                     ULONG audio) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubpictureStreamChange(
-        ULONG subpicture,
-        WINBOOL enable) = 0;
+                     ULONG subpicture,
+                     WINBOOL enable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AngleChange(
-        ULONG angle) = 0;
+                     ULONG angle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ParentalLevelSelect(
-        ULONG level) = 0;
+                     ULONG level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ParentalCountrySelect(
-        WORD country) = 0;
+                     WORD country) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE KaraokeAudioPresentationModeChange(
-        ULONG mode) = 0;
+                     ULONG mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE VideoModePreference(
-        ULONG mode) = 0;
+                     ULONG mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRoot(
-        const WCHAR *path) = 0;
+                     const WCHAR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MouseActivate(
-        POINT point) = 0;
+                     POINT point) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE MouseSelect(
-        POINT point) = 0;
+                     POINT point) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ChapterPlayAutoStop(
-        ULONG title,
-        ULONG chapter,
-        ULONG count) = 0;
+                     ULONG title,
+                     ULONG chapter,
+                     ULONG count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -639,147 +639,147 @@ typedef struct IDvdControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDvdControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDvdControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     /*** IDvdControl methods ***/
     HRESULT (STDMETHODCALLTYPE *TitlePlay)(
-        IDvdControl *This,
-        ULONG title);
+                     IDvdControl *This,
+                     ULONG title);
 
     HRESULT (STDMETHODCALLTYPE *ChapterPlay)(
-        IDvdControl *This,
-        ULONG title,
-        ULONG chapter);
+                     IDvdControl *This,
+                     ULONG title,
+                     ULONG chapter);
 
     HRESULT (STDMETHODCALLTYPE *TimePlay)(
-        IDvdControl *This,
-        ULONG title,
-        ULONG time);
+                     IDvdControl *This,
+                     ULONG title,
+                     ULONG time);
 
     HRESULT (STDMETHODCALLTYPE *StopForResume)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *GoUp)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *TimeSearch)(
-        IDvdControl *This,
-        ULONG time);
+                     IDvdControl *This,
+                     ULONG time);
 
     HRESULT (STDMETHODCALLTYPE *ChapterSearch)(
-        IDvdControl *This,
-        ULONG chapter);
+                     IDvdControl *This,
+                     ULONG chapter);
 
     HRESULT (STDMETHODCALLTYPE *PrevPGSearch)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *TopPGSearch)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *NextPGSearch)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *ForwardScan)(
-        IDvdControl *This,
-        double speed);
+                     IDvdControl *This,
+                     double speed);
 
     HRESULT (STDMETHODCALLTYPE *BackwardScan)(
-        IDvdControl *This,
-        double speed);
+                     IDvdControl *This,
+                     double speed);
 
     HRESULT (STDMETHODCALLTYPE *MenuCall)(
-        IDvdControl *This,
-        DVD_MENU_ID id);
+                     IDvdControl *This,
+                     DVD_MENU_ID id);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *UpperButtonSelect)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *LowerButtonSelect)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *LeftButtonSelect)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *RightButtonSelect)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *ButtonActivate)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *ButtonSelectActivate)(
-        IDvdControl *This,
-        ULONG button);
+                     IDvdControl *This,
+                     ULONG button);
 
     HRESULT (STDMETHODCALLTYPE *StillOff)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *PauseOn)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *PauseOff)(
-        IDvdControl *This);
+                     IDvdControl *This);
 
     HRESULT (STDMETHODCALLTYPE *MenuLanguageSelect)(
-        IDvdControl *This,
-        LCID language);
+                     IDvdControl *This,
+                     LCID language);
 
     HRESULT (STDMETHODCALLTYPE *AudioStreamChange)(
-        IDvdControl *This,
-        ULONG audio);
+                     IDvdControl *This,
+                     ULONG audio);
 
     HRESULT (STDMETHODCALLTYPE *SubpictureStreamChange)(
-        IDvdControl *This,
-        ULONG subpicture,
-        WINBOOL enable);
+                     IDvdControl *This,
+                     ULONG subpicture,
+                     WINBOOL enable);
 
     HRESULT (STDMETHODCALLTYPE *AngleChange)(
-        IDvdControl *This,
-        ULONG angle);
+                     IDvdControl *This,
+                     ULONG angle);
 
     HRESULT (STDMETHODCALLTYPE *ParentalLevelSelect)(
-        IDvdControl *This,
-        ULONG level);
+                     IDvdControl *This,
+                     ULONG level);
 
     HRESULT (STDMETHODCALLTYPE *ParentalCountrySelect)(
-        IDvdControl *This,
-        WORD country);
+                     IDvdControl *This,
+                     WORD country);
 
     HRESULT (STDMETHODCALLTYPE *KaraokeAudioPresentationModeChange)(
-        IDvdControl *This,
-        ULONG mode);
+                     IDvdControl *This,
+                     ULONG mode);
 
     HRESULT (STDMETHODCALLTYPE *VideoModePreference)(
-        IDvdControl *This,
-        ULONG mode);
+                     IDvdControl *This,
+                     ULONG mode);
 
     HRESULT (STDMETHODCALLTYPE *SetRoot)(
-        IDvdControl *This,
-        const WCHAR *path);
+                     IDvdControl *This,
+                     const WCHAR *path);
 
     HRESULT (STDMETHODCALLTYPE *MouseActivate)(
-        IDvdControl *This,
-        POINT point);
+                     IDvdControl *This,
+                     POINT point);
 
     HRESULT (STDMETHODCALLTYPE *MouseSelect)(
-        IDvdControl *This,
-        POINT point);
+                     IDvdControl *This,
+                     POINT point);
 
     HRESULT (STDMETHODCALLTYPE *ChapterPlayAutoStop)(
-        IDvdControl *This,
-        ULONG title,
-        ULONG chapter,
-        ULONG count);
+                     IDvdControl *This,
+                     ULONG title,
+                     ULONG chapter,
+                     ULONG count);
 
     END_INTERFACE
 } IDvdControlVtbl;
@@ -967,91 +967,91 @@ MIDL_INTERFACE("a70efe60-e2a3-11d0-a9be-00aa0061be93")
 IDvdInfo : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCurrentDomain(
-        DVD_DOMAIN *domain) = 0;
+                     DVD_DOMAIN *domain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentLocation(
-        DVD_PLAYBACK_LOCATION *location) = 0;
+                     DVD_PLAYBACK_LOCATION *location) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTotalTitleTime(
-        ULONG *time) = 0;
+                     ULONG *time) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentButton(
-        ULONG *count,
-        ULONG *current) = 0;
+                     ULONG *count,
+                     ULONG *current) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentAngle(
-        ULONG *count,
-        ULONG *current) = 0;
+                     ULONG *count,
+                     ULONG *current) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentAudio(
-        ULONG *count,
-        ULONG *current) = 0;
+                     ULONG *count,
+                     ULONG *current) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentSubpicture(
-        ULONG *count,
-        ULONG *current,
-        WINBOOL *enable) = 0;
+                     ULONG *count,
+                     ULONG *current,
+                     WINBOOL *enable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentUOPS(
-        VALID_UOP_SOMTHING_OR_OTHER *uops) = 0;
+                     VALID_UOP_SOMTHING_OR_OTHER *uops) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAllSPRMs(
-        SPRMARRAY *regs) = 0;
+                     SPRMARRAY *regs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAllGPRMs(
-        GPRMARRAY *regs) = 0;
+                     GPRMARRAY *regs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAudioLanguage(
-        ULONG stream,
-        LCID *language) = 0;
+                     ULONG stream,
+                     LCID *language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubpictureLanguage(
-        ULONG stream,
-        LCID *language) = 0;
+                     ULONG stream,
+                     LCID *language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTitleAttributes(
-        ULONG title,
-        DVD_ATR *attr) = 0;
+                     ULONG title,
+                     DVD_ATR *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVMGAttributes(
-        DVD_ATR *attr) = 0;
+                     DVD_ATR *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentVideoAttributes(
-        DVD_VideoATR *attr) = 0;
+                     DVD_VideoATR *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentAudioAttributes(
-        DVD_AudioATR *attr) = 0;
+                     DVD_AudioATR *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentSubpictureAttributes(
-        DVD_SubpictureATR *attr) = 0;
+                     DVD_SubpictureATR *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentVolumeInfo(
-        ULONG *volume_count,
-        ULONG *current,
-        DVD_DISC_SIDE *side,
-        ULONG *title_count) = 0;
+                     ULONG *volume_count,
+                     ULONG *current,
+                     DVD_DISC_SIDE *side,
+                     ULONG *title_count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDVDTextInfo(
-        BYTE *text_manager,
-        ULONG size,
-        ULONG *ret_size) = 0;
+                     BYTE *text_manager,
+                     ULONG size,
+                     ULONG *ret_size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPlayerParentalLevel(
-        ULONG *level,
-        ULONG *country_code) = 0;
+                     ULONG *level,
+                     ULONG *country_code) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfChapters(
-        ULONG title,
-        ULONG *count) = 0;
+                     ULONG title,
+                     ULONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTitleParentalLevels(
-        ULONG title,
-        ULONG *levels) = 0;
+                     ULONG title,
+                     ULONG *levels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRoot(
-        char *path,
-        ULONG size,
-        ULONG *ret_size) = 0;
+                     char *path,
+                     ULONG size,
+                     ULONG *ret_size) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1063,126 +1063,126 @@ typedef struct IDvdInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDvdInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDvdInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDvdInfo *This);
+                     IDvdInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDvdInfo *This);
+                     IDvdInfo *This);
 
     /*** IDvdInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurrentDomain)(
-        IDvdInfo *This,
-        DVD_DOMAIN *domain);
+                     IDvdInfo *This,
+                     DVD_DOMAIN *domain);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentLocation)(
-        IDvdInfo *This,
-        DVD_PLAYBACK_LOCATION *location);
+                     IDvdInfo *This,
+                     DVD_PLAYBACK_LOCATION *location);
 
     HRESULT (STDMETHODCALLTYPE *GetTotalTitleTime)(
-        IDvdInfo *This,
-        ULONG *time);
+                     IDvdInfo *This,
+                     ULONG *time);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentButton)(
-        IDvdInfo *This,
-        ULONG *count,
-        ULONG *current);
+                     IDvdInfo *This,
+                     ULONG *count,
+                     ULONG *current);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentAngle)(
-        IDvdInfo *This,
-        ULONG *count,
-        ULONG *current);
+                     IDvdInfo *This,
+                     ULONG *count,
+                     ULONG *current);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentAudio)(
-        IDvdInfo *This,
-        ULONG *count,
-        ULONG *current);
+                     IDvdInfo *This,
+                     ULONG *count,
+                     ULONG *current);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSubpicture)(
-        IDvdInfo *This,
-        ULONG *count,
-        ULONG *current,
-        WINBOOL *enable);
+                     IDvdInfo *This,
+                     ULONG *count,
+                     ULONG *current,
+                     WINBOOL *enable);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentUOPS)(
-        IDvdInfo *This,
-        VALID_UOP_SOMTHING_OR_OTHER *uops);
+                     IDvdInfo *This,
+                     VALID_UOP_SOMTHING_OR_OTHER *uops);
 
     HRESULT (STDMETHODCALLTYPE *GetAllSPRMs)(
-        IDvdInfo *This,
-        SPRMARRAY *regs);
+                     IDvdInfo *This,
+                     SPRMARRAY *regs);
 
     HRESULT (STDMETHODCALLTYPE *GetAllGPRMs)(
-        IDvdInfo *This,
-        GPRMARRAY *regs);
+                     IDvdInfo *This,
+                     GPRMARRAY *regs);
 
     HRESULT (STDMETHODCALLTYPE *GetAudioLanguage)(
-        IDvdInfo *This,
-        ULONG stream,
-        LCID *language);
+                     IDvdInfo *This,
+                     ULONG stream,
+                     LCID *language);
 
     HRESULT (STDMETHODCALLTYPE *GetSubpictureLanguage)(
-        IDvdInfo *This,
-        ULONG stream,
-        LCID *language);
+                     IDvdInfo *This,
+                     ULONG stream,
+                     LCID *language);
 
     HRESULT (STDMETHODCALLTYPE *GetTitleAttributes)(
-        IDvdInfo *This,
-        ULONG title,
-        DVD_ATR *attr);
+                     IDvdInfo *This,
+                     ULONG title,
+                     DVD_ATR *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetVMGAttributes)(
-        IDvdInfo *This,
-        DVD_ATR *attr);
+                     IDvdInfo *This,
+                     DVD_ATR *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentVideoAttributes)(
-        IDvdInfo *This,
-        DVD_VideoATR *attr);
+                     IDvdInfo *This,
+                     DVD_VideoATR *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentAudioAttributes)(
-        IDvdInfo *This,
-        DVD_AudioATR *attr);
+                     IDvdInfo *This,
+                     DVD_AudioATR *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSubpictureAttributes)(
-        IDvdInfo *This,
-        DVD_SubpictureATR *attr);
+                     IDvdInfo *This,
+                     DVD_SubpictureATR *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentVolumeInfo)(
-        IDvdInfo *This,
-        ULONG *volume_count,
-        ULONG *current,
-        DVD_DISC_SIDE *side,
-        ULONG *title_count);
+                     IDvdInfo *This,
+                     ULONG *volume_count,
+                     ULONG *current,
+                     DVD_DISC_SIDE *side,
+                     ULONG *title_count);
 
     HRESULT (STDMETHODCALLTYPE *GetDVDTextInfo)(
-        IDvdInfo *This,
-        BYTE *text_manager,
-        ULONG size,
-        ULONG *ret_size);
+                     IDvdInfo *This,
+                     BYTE *text_manager,
+                     ULONG size,
+                     ULONG *ret_size);
 
     HRESULT (STDMETHODCALLTYPE *GetPlayerParentalLevel)(
-        IDvdInfo *This,
-        ULONG *level,
-        ULONG *country_code);
+                     IDvdInfo *This,
+                     ULONG *level,
+                     ULONG *country_code);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfChapters)(
-        IDvdInfo *This,
-        ULONG title,
-        ULONG *count);
+                     IDvdInfo *This,
+                     ULONG title,
+                     ULONG *count);
 
     HRESULT (STDMETHODCALLTYPE *GetTitleParentalLevels)(
-        IDvdInfo *This,
-        ULONG title,
-        ULONG *levels);
+                     IDvdInfo *This,
+                     ULONG title,
+                     ULONG *levels);
 
     HRESULT (STDMETHODCALLTYPE *GetRoot)(
-        IDvdInfo *This,
-        char *path,
-        ULONG size,
-        ULONG *ret_size);
+                     IDvdInfo *This,
+                     char *path,
+                     ULONG size,
+                     ULONG *ret_size);
 
     END_INTERFACE
 } IDvdInfoVtbl;
@@ -1322,10 +1322,10 @@ MIDL_INTERFACE("5a4a97e4-94ee-4a55-9751-74b5643aa27d")
 IDvdCmd : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE WaitForStart(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitForEnd(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1337,22 +1337,22 @@ typedef struct IDvdCmdVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDvdCmd *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDvdCmd *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDvdCmd *This);
+                     IDvdCmd *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDvdCmd *This);
+                     IDvdCmd *This);
 
     /*** IDvdCmd methods ***/
     HRESULT (STDMETHODCALLTYPE *WaitForStart)(
-        IDvdCmd *This);
+                     IDvdCmd *This);
 
     HRESULT (STDMETHODCALLTYPE *WaitForEnd)(
-        IDvdCmd *This);
+                     IDvdCmd *This);
 
     END_INTERFACE
 } IDvdCmdVtbl;
@@ -1408,10 +1408,10 @@ MIDL_INTERFACE("86303d6d-1c4a-4087-ab42-f711167048ef")
 IDvdState : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetDiscID(
-        ULONGLONG *id) = 0;
+                     ULONGLONG *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParentalLevel(
-        ULONG *level) = 0;
+                     ULONG *level) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1423,24 +1423,24 @@ typedef struct IDvdStateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDvdState *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDvdState *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDvdState *This);
+                     IDvdState *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDvdState *This);
+                     IDvdState *This);
 
     /*** IDvdState methods ***/
     HRESULT (STDMETHODCALLTYPE *GetDiscID)(
-        IDvdState *This,
-        ULONGLONG *id);
+                     IDvdState *This,
+                     ULONGLONG *id);
 
     HRESULT (STDMETHODCALLTYPE *GetParentalLevel)(
-        IDvdState *This,
-        ULONG *level);
+                     IDvdState *This,
+                     ULONG *level);
 
     END_INTERFACE
 } IDvdStateVtbl;
@@ -1496,171 +1496,171 @@ MIDL_INTERFACE("33bc7430-eec0-11d2-8201-00a0c9d74842")
 IDvdControl2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PlayTitle(
-        ULONG title,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG title,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayChapterInTitle(
-        ULONG title,
-        ULONG chapter,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG title,
+                     ULONG chapter,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayTimeInTitle(
-        ULONG title,
-        DVD_HMSF_TIMECODE *time,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG title,
+                     DVD_HMSF_TIMECODE *time,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReturnFromSubmenu(
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayAtTime(
-        DVD_HMSF_TIMECODE *time,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     DVD_HMSF_TIMECODE *time,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayChapter(
-        ULONG chapter,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG chapter,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayPrevChapter(
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReplayChapter(
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayNextChapter(
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayForwards(
-        double speed,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     double speed,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayBackwards(
-        double speed,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     double speed,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowMenu(
-        DVD_MENU_ID id,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     DVD_MENU_ID id,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resume(
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectRelativeButton(
-        DVD_RELATIVE_BUTTON button) = 0;
+                     DVD_RELATIVE_BUTTON button) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActivateButton(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectButton(
-        ULONG button) = 0;
+                     ULONG button) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectAndActivateButton(
-        ULONG button) = 0;
+                     ULONG button) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StillOff(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Pause(
-        WINBOOL enable) = 0;
+                     WINBOOL enable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectAudioStream(
-        ULONG stream,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG stream,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectSubpictureStream(
-        ULONG stream,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG stream,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSubpictureState(
-        WINBOOL enable,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     WINBOOL enable,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectAngle(
-        ULONG angle,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG angle,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectParentalLevel(
-        ULONG level) = 0;
+                     ULONG level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectParentalCountry(
-        BYTE country[2]) = 0;
+                     BYTE country[2]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectKaraokeAudioPresentationMode(
-        ULONG mode) = 0;
+                     ULONG mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectVideoModePreference(
-        ULONG mode) = 0;
+                     ULONG mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDVDDirectory(
-        const WCHAR *path) = 0;
+                     const WCHAR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActivateAtPosition(
-        POINT point) = 0;
+                     POINT point) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectAtPosition(
-        POINT point) = 0;
+                     POINT point) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayChaptersAutoStop(
-        ULONG title,
-        ULONG chapter,
-        ULONG count,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG title,
+                     ULONG chapter,
+                     ULONG count,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AcceptParentalLevelChange(
-        WINBOOL accept) = 0;
+                     WINBOOL accept) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOption(
-        DVD_OPTION_FLAG flag,
-        WINBOOL option) = 0;
+                     DVD_OPTION_FLAG flag,
+                     WINBOOL option) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetState(
-        IDvdState *state,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     IDvdState *state,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PlayPeriodInTitleAutoStop(
-        ULONG title,
-        DVD_HMSF_TIMECODE *start_time,
-        DVD_HMSF_TIMECODE *end_time,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG title,
+                     DVD_HMSF_TIMECODE *start_time,
+                     DVD_HMSF_TIMECODE *end_time,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGRPM(
-        ULONG index,
-        WORD value,
-        DWORD flags,
-        IDvdCmd **cmd) = 0;
+                     ULONG index,
+                     WORD value,
+                     DWORD flags,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectDefaultMenuLanguage(
-        LCID language) = 0;
+                     LCID language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectDefaultAudioLanguage(
-        LCID language,
-        DVD_AUDIO_LANG_EXT extension) = 0;
+                     LCID language,
+                     DVD_AUDIO_LANG_EXT extension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectDefaultSubpictureLanguage(
-        LCID language,
-        DVD_SUBPICTURE_LANG_EXT extension) = 0;
+                     LCID language,
+                     DVD_SUBPICTURE_LANG_EXT extension) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1672,220 +1672,220 @@ typedef struct IDvdControl2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDvdControl2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDvdControl2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDvdControl2 *This);
+                     IDvdControl2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDvdControl2 *This);
+                     IDvdControl2 *This);
 
     /*** IDvdControl2 methods ***/
     HRESULT (STDMETHODCALLTYPE *PlayTitle)(
-        IDvdControl2 *This,
-        ULONG title,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG title,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayChapterInTitle)(
-        IDvdControl2 *This,
-        ULONG title,
-        ULONG chapter,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG title,
+                     ULONG chapter,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayTimeInTitle)(
-        IDvdControl2 *This,
-        ULONG title,
-        DVD_HMSF_TIMECODE *time,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG title,
+                     DVD_HMSF_TIMECODE *time,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IDvdControl2 *This);
+                     IDvdControl2 *This);
 
     HRESULT (STDMETHODCALLTYPE *ReturnFromSubmenu)(
-        IDvdControl2 *This,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayAtTime)(
-        IDvdControl2 *This,
-        DVD_HMSF_TIMECODE *time,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     DVD_HMSF_TIMECODE *time,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayChapter)(
-        IDvdControl2 *This,
-        ULONG chapter,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG chapter,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayPrevChapter)(
-        IDvdControl2 *This,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *ReplayChapter)(
-        IDvdControl2 *This,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayNextChapter)(
-        IDvdControl2 *This,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayForwards)(
-        IDvdControl2 *This,
-        double speed,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     double speed,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayBackwards)(
-        IDvdControl2 *This,
-        double speed,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     double speed,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *ShowMenu)(
-        IDvdControl2 *This,
-        DVD_MENU_ID id,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     DVD_MENU_ID id,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *Resume)(
-        IDvdControl2 *This,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *SelectRelativeButton)(
-        IDvdControl2 *This,
-        DVD_RELATIVE_BUTTON button);
+                     IDvdControl2 *This,
+                     DVD_RELATIVE_BUTTON button);
 
     HRESULT (STDMETHODCALLTYPE *ActivateButton)(
-        IDvdControl2 *This);
+                     IDvdControl2 *This);
 
     HRESULT (STDMETHODCALLTYPE *SelectButton)(
-        IDvdControl2 *This,
-        ULONG button);
+                     IDvdControl2 *This,
+                     ULONG button);
 
     HRESULT (STDMETHODCALLTYPE *SelectAndActivateButton)(
-        IDvdControl2 *This,
-        ULONG button);
+                     IDvdControl2 *This,
+                     ULONG button);
 
     HRESULT (STDMETHODCALLTYPE *StillOff)(
-        IDvdControl2 *This);
+                     IDvdControl2 *This);
 
     HRESULT (STDMETHODCALLTYPE *Pause)(
-        IDvdControl2 *This,
-        WINBOOL enable);
+                     IDvdControl2 *This,
+                     WINBOOL enable);
 
     HRESULT (STDMETHODCALLTYPE *SelectAudioStream)(
-        IDvdControl2 *This,
-        ULONG stream,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG stream,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *SelectSubpictureStream)(
-        IDvdControl2 *This,
-        ULONG stream,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG stream,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *SetSubpictureState)(
-        IDvdControl2 *This,
-        WINBOOL enable,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     WINBOOL enable,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *SelectAngle)(
-        IDvdControl2 *This,
-        ULONG angle,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG angle,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *SelectParentalLevel)(
-        IDvdControl2 *This,
-        ULONG level);
+                     IDvdControl2 *This,
+                     ULONG level);
 
     HRESULT (STDMETHODCALLTYPE *SelectParentalCountry)(
-        IDvdControl2 *This,
-        BYTE country[2]);
+                     IDvdControl2 *This,
+                     BYTE country[2]);
 
     HRESULT (STDMETHODCALLTYPE *SelectKaraokeAudioPresentationMode)(
-        IDvdControl2 *This,
-        ULONG mode);
+                     IDvdControl2 *This,
+                     ULONG mode);
 
     HRESULT (STDMETHODCALLTYPE *SelectVideoModePreference)(
-        IDvdControl2 *This,
-        ULONG mode);
+                     IDvdControl2 *This,
+                     ULONG mode);
 
     HRESULT (STDMETHODCALLTYPE *SetDVDDirectory)(
-        IDvdControl2 *This,
-        const WCHAR *path);
+                     IDvdControl2 *This,
+                     const WCHAR *path);
 
     HRESULT (STDMETHODCALLTYPE *ActivateAtPosition)(
-        IDvdControl2 *This,
-        POINT point);
+                     IDvdControl2 *This,
+                     POINT point);
 
     HRESULT (STDMETHODCALLTYPE *SelectAtPosition)(
-        IDvdControl2 *This,
-        POINT point);
+                     IDvdControl2 *This,
+                     POINT point);
 
     HRESULT (STDMETHODCALLTYPE *PlayChaptersAutoStop)(
-        IDvdControl2 *This,
-        ULONG title,
-        ULONG chapter,
-        ULONG count,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG title,
+                     ULONG chapter,
+                     ULONG count,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *AcceptParentalLevelChange)(
-        IDvdControl2 *This,
-        WINBOOL accept);
+                     IDvdControl2 *This,
+                     WINBOOL accept);
 
     HRESULT (STDMETHODCALLTYPE *SetOption)(
-        IDvdControl2 *This,
-        DVD_OPTION_FLAG flag,
-        WINBOOL option);
+                     IDvdControl2 *This,
+                     DVD_OPTION_FLAG flag,
+                     WINBOOL option);
 
     HRESULT (STDMETHODCALLTYPE *SetState)(
-        IDvdControl2 *This,
-        IDvdState *state,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     IDvdState *state,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *PlayPeriodInTitleAutoStop)(
-        IDvdControl2 *This,
-        ULONG title,
-        DVD_HMSF_TIMECODE *start_time,
-        DVD_HMSF_TIMECODE *end_time,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG title,
+                     DVD_HMSF_TIMECODE *start_time,
+                     DVD_HMSF_TIMECODE *end_time,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *SetGRPM)(
-        IDvdControl2 *This,
-        ULONG index,
-        WORD value,
-        DWORD flags,
-        IDvdCmd **cmd);
+                     IDvdControl2 *This,
+                     ULONG index,
+                     WORD value,
+                     DWORD flags,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *SelectDefaultMenuLanguage)(
-        IDvdControl2 *This,
-        LCID language);
+                     IDvdControl2 *This,
+                     LCID language);
 
     HRESULT (STDMETHODCALLTYPE *SelectDefaultAudioLanguage)(
-        IDvdControl2 *This,
-        LCID language,
-        DVD_AUDIO_LANG_EXT extension);
+                     IDvdControl2 *This,
+                     LCID language,
+                     DVD_AUDIO_LANG_EXT extension);
 
     HRESULT (STDMETHODCALLTYPE *SelectDefaultSubpictureLanguage)(
-        IDvdControl2 *This,
-        LCID language,
-        DVD_SUBPICTURE_LANG_EXT extension);
+                     IDvdControl2 *This,
+                     LCID language,
+                     DVD_SUBPICTURE_LANG_EXT extension);
 
     END_INTERFACE
 } IDvdControl2Vtbl;
@@ -2093,165 +2093,165 @@ MIDL_INTERFACE("34151510-eec0-11d2-8201-00a0c9d74842")
 IDvdInfo2 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCurrentDomain(
-        DVD_DOMAIN *domain) = 0;
+                     DVD_DOMAIN *domain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentLocation(
-        DVD_PLAYBACK_LOCATION2 *location) = 0;
+                     DVD_PLAYBACK_LOCATION2 *location) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTotalTitleTime(
-        DVD_HMSF_TIMECODE *time,
-        ULONG *flags) = 0;
+                     DVD_HMSF_TIMECODE *time,
+                     ULONG *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentButton(
-        ULONG *count,
-        ULONG *current) = 0;
+                     ULONG *count,
+                     ULONG *current) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentAngle(
-        ULONG *count,
-        ULONG *current) = 0;
+                     ULONG *count,
+                     ULONG *current) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentAudio(
-        ULONG *count,
-        ULONG *current) = 0;
+                     ULONG *count,
+                     ULONG *current) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentSubpicture(
-        ULONG *count,
-        ULONG *current,
-        WINBOOL *enable) = 0;
+                     ULONG *count,
+                     ULONG *current,
+                     WINBOOL *enable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentUOPS(
-        ULONG *uops) = 0;
+                     ULONG *uops) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAllSPRMs(
-        SPRMARRAY *regs) = 0;
+                     SPRMARRAY *regs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAllGPRMs(
-        GPRMARRAY *regs) = 0;
+                     GPRMARRAY *regs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAudioLanguage(
-        ULONG stream,
-        LCID *language) = 0;
+                     ULONG stream,
+                     LCID *language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubpictureLanguage(
-        ULONG stream,
-        LCID *language) = 0;
+                     ULONG stream,
+                     LCID *language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTitleAttributes(
-        ULONG index,
-        DVD_MenuAttributes *menu,
-        DVD_TitleAttributes *title) = 0;
+                     ULONG index,
+                     DVD_MenuAttributes *menu,
+                     DVD_TitleAttributes *title) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVMGAttributes(
-        DVD_MenuAttributes *attr) = 0;
+                     DVD_MenuAttributes *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVideoAttributes(
-        DVD_VideoAttributes *attr) = 0;
+                     DVD_VideoAttributes *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAudioAttributes(
-        ULONG stream,
-        DVD_AudioAttributes *attr) = 0;
+                     ULONG stream,
+                     DVD_AudioAttributes *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetKaraokeAttributes(
-        ULONG stream,
-        DVD_KaraokeAttributes *attr) = 0;
+                     ULONG stream,
+                     DVD_KaraokeAttributes *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSubpictureAttributes(
-        ULONG stream,
-        DVD_SubpictureAttributes *attr) = 0;
+                     ULONG stream,
+                     DVD_SubpictureAttributes *attr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentVolumeInfo(
-        ULONG *volume_count,
-        ULONG *current,
-        DVD_DISC_SIDE *side,
-        ULONG *title_count) = 0;
+                     ULONG *volume_count,
+                     ULONG *current,
+                     DVD_DISC_SIDE *side,
+                     ULONG *title_count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDVDTextNumberOfLanguages(
-        ULONG *count) = 0;
+                     ULONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDVDTextLanguageInfo(
-        ULONG index,
-        ULONG *string_count,
-        LCID *language,
-        enum DVD_TextCharSet *character_set) = 0;
+                     ULONG index,
+                     ULONG *string_count,
+                     LCID *language,
+                     enum DVD_TextCharSet *character_set) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDVDTextStringAsNative(
-        ULONG lang_index,
-        ULONG string_index,
-        BYTE *string,
-        ULONG size,
-        ULONG *ret_size,
-        enum DVD_TextStringType *type) = 0;
+                     ULONG lang_index,
+                     ULONG string_index,
+                     BYTE *string,
+                     ULONG size,
+                     ULONG *ret_size,
+                     enum DVD_TextStringType *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDVDTextStringAsUnicode(
-        ULONG lang_index,
-        ULONG string_index,
-        WCHAR *string,
-        ULONG size,
-        ULONG *ret_size,
-        enum DVD_TextStringType *type) = 0;
+                     ULONG lang_index,
+                     ULONG string_index,
+                     WCHAR *string,
+                     ULONG size,
+                     ULONG *ret_size,
+                     enum DVD_TextStringType *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPlayerParentalLevel(
-        ULONG *level,
-        BYTE country_code[2]) = 0;
+                     ULONG *level,
+                     BYTE country_code[2]) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfChapters(
-        ULONG title,
-        ULONG *count) = 0;
+                     ULONG title,
+                     ULONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTitleParentalLevels(
-        ULONG title,
-        ULONG *levels) = 0;
+                     ULONG title,
+                     ULONG *levels) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDVDDirectory(
-        WCHAR *path,
-        ULONG size,
-        ULONG *ret_size) = 0;
+                     WCHAR *path,
+                     ULONG size,
+                     ULONG *ret_size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsAudioStreamEnabled(
-        ULONG stream,
-        WINBOOL *enable) = 0;
+                     ULONG stream,
+                     WINBOOL *enable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDiscID(
-        const WCHAR *path,
-        ULONGLONG *id) = 0;
+                     const WCHAR *path,
+                     ULONGLONG *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetState(
-        IDvdState **state) = 0;
+                     IDvdState **state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMenuLanguages(
-        LCID *languages,
-        ULONG count,
-        ULONG *ret_count) = 0;
+                     LCID *languages,
+                     ULONG count,
+                     ULONG *ret_count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetButtonAtPosition(
-        POINT point,
-        ULONG *button) = 0;
+                     POINT point,
+                     ULONG *button) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCmdFromEvent(
-        LONG_PTR param,
-        IDvdCmd **cmd) = 0;
+                     LONG_PTR param,
+                     IDvdCmd **cmd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultMenuLanguage(
-        LCID *language) = 0;
+                     LCID *language) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultAudioLanguage(
-        LCID *language,
-        DVD_AUDIO_LANG_EXT *extension) = 0;
+                     LCID *language,
+                     DVD_AUDIO_LANG_EXT *extension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SelectDefaultSubpictureLanguage(
-        LCID *language,
-        DVD_SUBPICTURE_LANG_EXT *extension) = 0;
+                     LCID *language,
+                     DVD_SUBPICTURE_LANG_EXT *extension) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDecoderCaps(
-        DVD_DECODER_CAPS *caps) = 0;
+                     DVD_DECODER_CAPS *caps) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetButtonRect(
-        ULONG button,
-        RECT *rect) = 0;
+                     ULONG button,
+                     RECT *rect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsSubpictureStreamEnabled(
-        ULONG stream,
-        WINBOOL *enable) = 0;
+                     ULONG stream,
+                     WINBOOL *enable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2263,216 +2263,216 @@ typedef struct IDvdInfo2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDvdInfo2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDvdInfo2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDvdInfo2 *This);
+                     IDvdInfo2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDvdInfo2 *This);
+                     IDvdInfo2 *This);
 
     /*** IDvdInfo2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCurrentDomain)(
-        IDvdInfo2 *This,
-        DVD_DOMAIN *domain);
+                     IDvdInfo2 *This,
+                     DVD_DOMAIN *domain);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentLocation)(
-        IDvdInfo2 *This,
-        DVD_PLAYBACK_LOCATION2 *location);
+                     IDvdInfo2 *This,
+                     DVD_PLAYBACK_LOCATION2 *location);
 
     HRESULT (STDMETHODCALLTYPE *GetTotalTitleTime)(
-        IDvdInfo2 *This,
-        DVD_HMSF_TIMECODE *time,
-        ULONG *flags);
+                     IDvdInfo2 *This,
+                     DVD_HMSF_TIMECODE *time,
+                     ULONG *flags);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentButton)(
-        IDvdInfo2 *This,
-        ULONG *count,
-        ULONG *current);
+                     IDvdInfo2 *This,
+                     ULONG *count,
+                     ULONG *current);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentAngle)(
-        IDvdInfo2 *This,
-        ULONG *count,
-        ULONG *current);
+                     IDvdInfo2 *This,
+                     ULONG *count,
+                     ULONG *current);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentAudio)(
-        IDvdInfo2 *This,
-        ULONG *count,
-        ULONG *current);
+                     IDvdInfo2 *This,
+                     ULONG *count,
+                     ULONG *current);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentSubpicture)(
-        IDvdInfo2 *This,
-        ULONG *count,
-        ULONG *current,
-        WINBOOL *enable);
+                     IDvdInfo2 *This,
+                     ULONG *count,
+                     ULONG *current,
+                     WINBOOL *enable);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentUOPS)(
-        IDvdInfo2 *This,
-        ULONG *uops);
+                     IDvdInfo2 *This,
+                     ULONG *uops);
 
     HRESULT (STDMETHODCALLTYPE *GetAllSPRMs)(
-        IDvdInfo2 *This,
-        SPRMARRAY *regs);
+                     IDvdInfo2 *This,
+                     SPRMARRAY *regs);
 
     HRESULT (STDMETHODCALLTYPE *GetAllGPRMs)(
-        IDvdInfo2 *This,
-        GPRMARRAY *regs);
+                     IDvdInfo2 *This,
+                     GPRMARRAY *regs);
 
     HRESULT (STDMETHODCALLTYPE *GetAudioLanguage)(
-        IDvdInfo2 *This,
-        ULONG stream,
-        LCID *language);
+                     IDvdInfo2 *This,
+                     ULONG stream,
+                     LCID *language);
 
     HRESULT (STDMETHODCALLTYPE *GetSubpictureLanguage)(
-        IDvdInfo2 *This,
-        ULONG stream,
-        LCID *language);
+                     IDvdInfo2 *This,
+                     ULONG stream,
+                     LCID *language);
 
     HRESULT (STDMETHODCALLTYPE *GetTitleAttributes)(
-        IDvdInfo2 *This,
-        ULONG index,
-        DVD_MenuAttributes *menu,
-        DVD_TitleAttributes *title);
+                     IDvdInfo2 *This,
+                     ULONG index,
+                     DVD_MenuAttributes *menu,
+                     DVD_TitleAttributes *title);
 
     HRESULT (STDMETHODCALLTYPE *GetVMGAttributes)(
-        IDvdInfo2 *This,
-        DVD_MenuAttributes *attr);
+                     IDvdInfo2 *This,
+                     DVD_MenuAttributes *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetVideoAttributes)(
-        IDvdInfo2 *This,
-        DVD_VideoAttributes *attr);
+                     IDvdInfo2 *This,
+                     DVD_VideoAttributes *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetAudioAttributes)(
-        IDvdInfo2 *This,
-        ULONG stream,
-        DVD_AudioAttributes *attr);
+                     IDvdInfo2 *This,
+                     ULONG stream,
+                     DVD_AudioAttributes *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetKaraokeAttributes)(
-        IDvdInfo2 *This,
-        ULONG stream,
-        DVD_KaraokeAttributes *attr);
+                     IDvdInfo2 *This,
+                     ULONG stream,
+                     DVD_KaraokeAttributes *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetSubpictureAttributes)(
-        IDvdInfo2 *This,
-        ULONG stream,
-        DVD_SubpictureAttributes *attr);
+                     IDvdInfo2 *This,
+                     ULONG stream,
+                     DVD_SubpictureAttributes *attr);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentVolumeInfo)(
-        IDvdInfo2 *This,
-        ULONG *volume_count,
-        ULONG *current,
-        DVD_DISC_SIDE *side,
-        ULONG *title_count);
+                     IDvdInfo2 *This,
+                     ULONG *volume_count,
+                     ULONG *current,
+                     DVD_DISC_SIDE *side,
+                     ULONG *title_count);
 
     HRESULT (STDMETHODCALLTYPE *GetDVDTextNumberOfLanguages)(
-        IDvdInfo2 *This,
-        ULONG *count);
+                     IDvdInfo2 *This,
+                     ULONG *count);
 
     HRESULT (STDMETHODCALLTYPE *GetDVDTextLanguageInfo)(
-        IDvdInfo2 *This,
-        ULONG index,
-        ULONG *string_count,
-        LCID *language,
-        enum DVD_TextCharSet *character_set);
+                     IDvdInfo2 *This,
+                     ULONG index,
+                     ULONG *string_count,
+                     LCID *language,
+                     enum DVD_TextCharSet *character_set);
 
     HRESULT (STDMETHODCALLTYPE *GetDVDTextStringAsNative)(
-        IDvdInfo2 *This,
-        ULONG lang_index,
-        ULONG string_index,
-        BYTE *string,
-        ULONG size,
-        ULONG *ret_size,
-        enum DVD_TextStringType *type);
+                     IDvdInfo2 *This,
+                     ULONG lang_index,
+                     ULONG string_index,
+                     BYTE *string,
+                     ULONG size,
+                     ULONG *ret_size,
+                     enum DVD_TextStringType *type);
 
     HRESULT (STDMETHODCALLTYPE *GetDVDTextStringAsUnicode)(
-        IDvdInfo2 *This,
-        ULONG lang_index,
-        ULONG string_index,
-        WCHAR *string,
-        ULONG size,
-        ULONG *ret_size,
-        enum DVD_TextStringType *type);
+                     IDvdInfo2 *This,
+                     ULONG lang_index,
+                     ULONG string_index,
+                     WCHAR *string,
+                     ULONG size,
+                     ULONG *ret_size,
+                     enum DVD_TextStringType *type);
 
     HRESULT (STDMETHODCALLTYPE *GetPlayerParentalLevel)(
-        IDvdInfo2 *This,
-        ULONG *level,
-        BYTE country_code[2]);
+                     IDvdInfo2 *This,
+                     ULONG *level,
+                     BYTE country_code[2]);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfChapters)(
-        IDvdInfo2 *This,
-        ULONG title,
-        ULONG *count);
+                     IDvdInfo2 *This,
+                     ULONG title,
+                     ULONG *count);
 
     HRESULT (STDMETHODCALLTYPE *GetTitleParentalLevels)(
-        IDvdInfo2 *This,
-        ULONG title,
-        ULONG *levels);
+                     IDvdInfo2 *This,
+                     ULONG title,
+                     ULONG *levels);
 
     HRESULT (STDMETHODCALLTYPE *GetDVDDirectory)(
-        IDvdInfo2 *This,
-        WCHAR *path,
-        ULONG size,
-        ULONG *ret_size);
+                     IDvdInfo2 *This,
+                     WCHAR *path,
+                     ULONG size,
+                     ULONG *ret_size);
 
     HRESULT (STDMETHODCALLTYPE *IsAudioStreamEnabled)(
-        IDvdInfo2 *This,
-        ULONG stream,
-        WINBOOL *enable);
+                     IDvdInfo2 *This,
+                     ULONG stream,
+                     WINBOOL *enable);
 
     HRESULT (STDMETHODCALLTYPE *GetDiscID)(
-        IDvdInfo2 *This,
-        const WCHAR *path,
-        ULONGLONG *id);
+                     IDvdInfo2 *This,
+                     const WCHAR *path,
+                     ULONGLONG *id);
 
     HRESULT (STDMETHODCALLTYPE *GetState)(
-        IDvdInfo2 *This,
-        IDvdState **state);
+                     IDvdInfo2 *This,
+                     IDvdState **state);
 
     HRESULT (STDMETHODCALLTYPE *GetMenuLanguages)(
-        IDvdInfo2 *This,
-        LCID *languages,
-        ULONG count,
-        ULONG *ret_count);
+                     IDvdInfo2 *This,
+                     LCID *languages,
+                     ULONG count,
+                     ULONG *ret_count);
 
     HRESULT (STDMETHODCALLTYPE *GetButtonAtPosition)(
-        IDvdInfo2 *This,
-        POINT point,
-        ULONG *button);
+                     IDvdInfo2 *This,
+                     POINT point,
+                     ULONG *button);
 
     HRESULT (STDMETHODCALLTYPE *GetCmdFromEvent)(
-        IDvdInfo2 *This,
-        LONG_PTR param,
-        IDvdCmd **cmd);
+                     IDvdInfo2 *This,
+                     LONG_PTR param,
+                     IDvdCmd **cmd);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultMenuLanguage)(
-        IDvdInfo2 *This,
-        LCID *language);
+                     IDvdInfo2 *This,
+                     LCID *language);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultAudioLanguage)(
-        IDvdInfo2 *This,
-        LCID *language,
-        DVD_AUDIO_LANG_EXT *extension);
+                     IDvdInfo2 *This,
+                     LCID *language,
+                     DVD_AUDIO_LANG_EXT *extension);
 
     HRESULT (STDMETHODCALLTYPE *SelectDefaultSubpictureLanguage)(
-        IDvdInfo2 *This,
-        LCID *language,
-        DVD_SUBPICTURE_LANG_EXT *extension);
+                     IDvdInfo2 *This,
+                     LCID *language,
+                     DVD_SUBPICTURE_LANG_EXT *extension);
 
     HRESULT (STDMETHODCALLTYPE *GetDecoderCaps)(
-        IDvdInfo2 *This,
-        DVD_DECODER_CAPS *caps);
+                     IDvdInfo2 *This,
+                     DVD_DECODER_CAPS *caps);
 
     HRESULT (STDMETHODCALLTYPE *GetButtonRect)(
-        IDvdInfo2 *This,
-        ULONG button,
-        RECT *rect);
+                     IDvdInfo2 *This,
+                     ULONG button,
+                     RECT *rect);
 
     HRESULT (STDMETHODCALLTYPE *IsSubpictureStreamEnabled)(
-        IDvdInfo2 *This,
-        ULONG stream,
-        WINBOOL *enable);
+                     IDvdInfo2 *This,
+                     ULONG stream,
+                     WINBOOL *enable);
 
     END_INTERFACE
 } IDvdInfo2Vtbl;
@@ -2676,16 +2676,16 @@ MIDL_INTERFACE("fcc152b6-f372-11d0-8e00-00c04fd7c08b")
 IDvdGraphBuilder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetFiltergraph(
-        IGraphBuilder **graph) = 0;
+                     IGraphBuilder **graph) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDvdInterface(
-        REFIID iid,
-        void **out) = 0;
+                     REFIID iid,
+                     void **out) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenderDvdVideoVolume(
-        const WCHAR *path,
-        DWORD flags,
-        AM_DVD_RENDERSTATUS *status) = 0;
+                     const WCHAR *path,
+                     DWORD flags,
+                     AM_DVD_RENDERSTATUS *status) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2697,31 +2697,31 @@ typedef struct IDvdGraphBuilderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDvdGraphBuilder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDvdGraphBuilder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDvdGraphBuilder *This);
+                     IDvdGraphBuilder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDvdGraphBuilder *This);
+                     IDvdGraphBuilder *This);
 
     /*** IDvdGraphBuilder methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFiltergraph)(
-        IDvdGraphBuilder *This,
-        IGraphBuilder **graph);
+                     IDvdGraphBuilder *This,
+                     IGraphBuilder **graph);
 
     HRESULT (STDMETHODCALLTYPE *GetDvdInterface)(
-        IDvdGraphBuilder *This,
-        REFIID iid,
-        void **out);
+                     IDvdGraphBuilder *This,
+                     REFIID iid,
+                     void **out);
 
     HRESULT (STDMETHODCALLTYPE *RenderDvdVideoVolume)(
-        IDvdGraphBuilder *This,
-        const WCHAR *path,
-        DWORD flags,
-        AM_DVD_RENDERSTATUS *status);
+                     IDvdGraphBuilder *This,
+                     const WCHAR *path,
+                     DWORD flags,
+                     AM_DVD_RENDERSTATUS *status);
 
     END_INTERFACE
 } IDvdGraphBuilderVtbl;

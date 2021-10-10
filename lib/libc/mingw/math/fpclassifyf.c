@@ -14,11 +14,11 @@ int __fpclassifyf (float _x)
     hlp.x = _x;
     hlp.val &= 0x7fffffff;
     if (hlp.val == 0)
-      return FP_ZERO;
+                   return FP_ZERO;
     if (hlp.val < 0x800000)
-      return FP_SUBNORMAL;
+                   return FP_SUBNORMAL;
     if (hlp.val >= 0x7f800000)
-      return (hlp.val > 0x7f800000 ? FP_NAN : FP_INFINITE);
+                   return (hlp.val > 0x7f800000 ? FP_NAN : FP_INFINITE);
     return FP_NORMAL;
 #elif defined(__i386__) || defined(_X86_)
   unsigned short sw;

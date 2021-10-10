@@ -108,19 +108,19 @@ MIDL_INTERFACE("00000036-0000-0000-c000-000000000046")
 IAsyncInfo : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        unsigned int *id) = 0;
+                     unsigned int *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Status(
-        AsyncStatus *status) = 0;
+                     AsyncStatus *status) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ErrorCode(
-        HRESULT *errorCode) = 0;
+                     HRESULT *errorCode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -132,48 +132,48 @@ typedef struct IAsyncInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAsyncInfo* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAsyncInfo* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAsyncInfo* This);
+                     IAsyncInfo* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAsyncInfo* This);
+                     IAsyncInfo* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IAsyncInfo* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IAsyncInfo* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IAsyncInfo* This,
-        HSTRING *className);
+                     IAsyncInfo* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IAsyncInfo* This,
-        TrustLevel *trustLevel);
+                     IAsyncInfo* This,
+                     TrustLevel *trustLevel);
 
     /*** IAsyncInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IAsyncInfo* This,
-        unsigned int *id);
+                     IAsyncInfo* This,
+                     unsigned int *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Status)(
-        IAsyncInfo* This,
-        AsyncStatus *status);
+                     IAsyncInfo* This,
+                     AsyncStatus *status);
 
     HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
-        IAsyncInfo* This,
-        HRESULT *errorCode);
+                     IAsyncInfo* This,
+                     HRESULT *errorCode);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IAsyncInfo* This);
+                     IAsyncInfo* This);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IAsyncInfo* This);
+                     IAsyncInfo* This);
 
     END_INTERFACE
 } IAsyncInfoVtbl;
@@ -292,13 +292,13 @@ MIDL_INTERFACE("5a648006-843a-4da9-865b-9d26e5dfad7b")
 IASyncAction : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE put_Completed(
-        AsyncActionCompletedHandler *handler) = 0;
+                     AsyncActionCompletedHandler *handler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Completed(
-        AsyncActionCompletedHandler **handler) = 0;
+                     AsyncActionCompletedHandler **handler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetResults(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -310,41 +310,41 @@ typedef struct IASyncActionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IASyncAction* This,
-        REFIID riid,
-        void **ppvObject);
+                     IASyncAction* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IASyncAction* This);
+                     IASyncAction* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IASyncAction* This);
+                     IASyncAction* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IASyncAction* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IASyncAction* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IASyncAction* This,
-        HSTRING *className);
+                     IASyncAction* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IASyncAction* This,
-        TrustLevel *trustLevel);
+                     IASyncAction* This,
+                     TrustLevel *trustLevel);
 
     /*** IASyncAction methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Completed)(
-        IASyncAction* This,
-        AsyncActionCompletedHandler *handler);
+                     IASyncAction* This,
+                     AsyncActionCompletedHandler *handler);
 
     HRESULT (STDMETHODCALLTYPE *get_Completed)(
-        IASyncAction* This,
-        AsyncActionCompletedHandler **handler);
+                     IASyncAction* This,
+                     AsyncActionCompletedHandler **handler);
 
     HRESULT (STDMETHODCALLTYPE *GetResults)(
-        IASyncAction* This);
+                     IASyncAction* This);
 
     END_INTERFACE
 } IASyncActionVtbl;
@@ -440,8 +440,8 @@ MIDL_INTERFACE("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")
 AsyncActionCompletedHandler : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Invoke(
-        IInspectable *asyncAction,
-        AsyncStatus status) = 0;
+                     IInspectable *asyncAction,
+                     AsyncStatus status) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -453,21 +453,21 @@ typedef struct AsyncActionCompletedHandlerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncActionCompletedHandler* This,
-        REFIID riid,
-        void **ppvObject);
+                     AsyncActionCompletedHandler* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncActionCompletedHandler* This);
+                     AsyncActionCompletedHandler* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncActionCompletedHandler* This);
+                     AsyncActionCompletedHandler* This);
 
     /*** AsyncActionCompletedHandler methods ***/
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        AsyncActionCompletedHandler* This,
-        IInspectable *asyncAction,
-        AsyncStatus status);
+                     AsyncActionCompletedHandler* This,
+                     IInspectable *asyncAction,
+                     AsyncStatus status);
 
     END_INTERFACE
 } AsyncActionCompletedHandlerVtbl;
@@ -527,13 +527,13 @@ MIDL_INTERFACE("9fc2b0bb-e446-44e2-aa61-9cab8f636af2")
 IAsyncOperation : public IAsyncInfo
 {
     virtual HRESULT STDMETHODCALLTYPE put_Completed(
-        AsyncActionCompletedHandler *handler) = 0;
+                     AsyncActionCompletedHandler *handler) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Completed(
-        AsyncActionCompletedHandler **handler) = 0;
+                     AsyncActionCompletedHandler **handler) = 0;
 
     virtual IInspectable * STDMETHODCALLTYPE GetResults(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -545,60 +545,60 @@ typedef struct IAsyncOperationVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAsyncOperation* This,
-        REFIID riid,
-        void **ppvObject);
+                     IAsyncOperation* This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAsyncOperation* This);
+                     IAsyncOperation* This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAsyncOperation* This);
+                     IAsyncOperation* This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IAsyncOperation* This,
-        ULONG *iidCount,
-        IID **iids);
+                     IAsyncOperation* This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IAsyncOperation* This,
-        HSTRING *className);
+                     IAsyncOperation* This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IAsyncOperation* This,
-        TrustLevel *trustLevel);
+                     IAsyncOperation* This,
+                     TrustLevel *trustLevel);
 
     /*** IAsyncInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IAsyncOperation* This,
-        unsigned int *id);
+                     IAsyncOperation* This,
+                     unsigned int *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Status)(
-        IAsyncOperation* This,
-        AsyncStatus *status);
+                     IAsyncOperation* This,
+                     AsyncStatus *status);
 
     HRESULT (STDMETHODCALLTYPE *get_ErrorCode)(
-        IAsyncOperation* This,
-        HRESULT *errorCode);
+                     IAsyncOperation* This,
+                     HRESULT *errorCode);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IAsyncOperation* This);
+                     IAsyncOperation* This);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IAsyncOperation* This);
+                     IAsyncOperation* This);
 
     /*** IAsyncOperation methods ***/
     HRESULT (STDMETHODCALLTYPE *put_Completed)(
-        IAsyncOperation* This,
-        AsyncActionCompletedHandler *handler);
+                     IAsyncOperation* This,
+                     AsyncActionCompletedHandler *handler);
 
     HRESULT (STDMETHODCALLTYPE *get_Completed)(
-        IAsyncOperation* This,
-        AsyncActionCompletedHandler **handler);
+                     IAsyncOperation* This,
+                     AsyncActionCompletedHandler **handler);
 
     IInspectable * (STDMETHODCALLTYPE *GetResults)(
-        IAsyncOperation* This);
+                     IAsyncOperation* This);
 
     END_INTERFACE
 } IAsyncOperationVtbl;

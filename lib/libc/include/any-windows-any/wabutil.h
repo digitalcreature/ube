@@ -25,8 +25,8 @@ extern "C" {
 #define INTERFACE ITableData
   DECLARE_MAPI_INTERFACE_(ITableData,IUnknown) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_ITABLEDATA_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_ITABLEDATA_METHODS(PURE)
   };
 
   STDAPI_(SCODE) CreateTable(LPCIID lpInterface,ALLOCATEBUFFER *lpAllocateBuffer,ALLOCATEMORE *lpAllocateMore,FREEBUFFER *lpFreeBuffer,LPVOID lpvReserved,ULONG ulTableType,ULONG ulPropTagIndexColumn,LPSPropTagArray lpSPropTagArrayColumns,LPTABLEDATA *lppTableData);
@@ -39,9 +39,9 @@ extern "C" {
 #define INTERFACE IPropData
   DECLARE_MAPI_INTERFACE_(IPropData,IMAPIProp) {
     BEGIN_INTERFACE
-      MAPI_IUNKNOWN_METHODS(PURE)
-      MAPI_IMAPIPROP_METHODS(PURE)
-      MAPI_IPROPDATA_METHODS(PURE)
+                   MAPI_IUNKNOWN_METHODS(PURE)
+                   MAPI_IMAPIPROP_METHODS(PURE)
+                   MAPI_IPROPDATA_METHODS(PURE)
   };
 
   DECLARE_MAPI_INTERFACE_PTR(IPropData,LPPROPDATA);
@@ -134,19 +134,19 @@ extern "C" {
     LPTSTR lpszFilter;
     ULONG ulItemID;
     union {
-      LPVOID lpv;
-      LPDTBLLABEL lplabel;
-      LPDTBLEDIT lpedit;
-      LPDTBLLBX lplbx;
-      LPDTBLCOMBOBOX lpcombobox;
-      LPDTBLDDLBX lpddlbx;
-      LPDTBLCHECKBOX lpcheckbox;
-      LPDTBLGROUPBOX lpgroupbox;
-      LPDTBLBUTTON lpbutton;
-      LPDTBLRADIOBUTTON lpradiobutton;
-      LPDTBLMVLISTBOX lpmvlbx;
-      LPDTBLMVDDLBX lpmvddlbx;
-      LPDTBLPAGE lppage;
+                   LPVOID lpv;
+                   LPDTBLLABEL lplabel;
+                   LPDTBLEDIT lpedit;
+                   LPDTBLLBX lplbx;
+                   LPDTBLCOMBOBOX lpcombobox;
+                   LPDTBLDDLBX lpddlbx;
+                   LPDTBLCHECKBOX lpcheckbox;
+                   LPDTBLGROUPBOX lpgroupbox;
+                   LPDTBLBUTTON lpbutton;
+                   LPDTBLRADIOBUTTON lpradiobutton;
+                   LPDTBLMVLISTBOX lpmvlbx;
+                   LPDTBLMVDDLBX lpmvddlbx;
+                   LPDTBLPAGE lppage;
     } ctl;
   } DTCTL,*LPDTCTL;
 
@@ -154,8 +154,8 @@ extern "C" {
     ULONG cctl;
     LPTSTR lpszResourceName;
     __C89_NAMELESS union {
-      LPTSTR lpszComponent;
-      ULONG ulItemID;
+                   LPTSTR lpszComponent;
+                   ULONG ulItemID;
     };
     LPDTCTL lpctl;
   } DTPAGE,*LPDTPAGE;

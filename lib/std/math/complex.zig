@@ -31,79 +31,79 @@ pub const tan = @import("complex/tan.zig").tan;
 /// A complex number consisting of a real an imaginary part. T must be a floating-point value.
 pub fn Complex(comptime T: type) type {
     return struct {
-        const Self = @This();
+                     const Self = @This();
 
-        /// Real part.
-        re: T,
+                     /// Real part.
+                     re: T,
 
-        /// Imaginary part.
-        im: T,
+                     /// Imaginary part.
+                     im: T,
 
-        /// Create a new Complex number from the given real and imaginary parts.
-        pub fn new(re: T, im: T) Self {
-            return Self{
-                .re = re,
-                .im = im,
-            };
-        }
+                     /// Create a new Complex number from the given real and imaginary parts.
+                     pub fn new(re: T, im: T) Self {
+                                      return Self{
+                                          .re = re,
+                                          .im = im,
+                                      };
+                     }
 
-        /// Returns the sum of two complex numbers.
-        pub fn add(self: Self, other: Self) Self {
-            return Self{
-                .re = self.re + other.re,
-                .im = self.im + other.im,
-            };
-        }
+                     /// Returns the sum of two complex numbers.
+                     pub fn add(self: Self, other: Self) Self {
+                                      return Self{
+                                          .re = self.re + other.re,
+                                          .im = self.im + other.im,
+                                      };
+                     }
 
-        /// Returns the subtraction of two complex numbers.
-        pub fn sub(self: Self, other: Self) Self {
-            return Self{
-                .re = self.re - other.re,
-                .im = self.im - other.im,
-            };
-        }
+                     /// Returns the subtraction of two complex numbers.
+                     pub fn sub(self: Self, other: Self) Self {
+                                      return Self{
+                                          .re = self.re - other.re,
+                                          .im = self.im - other.im,
+                                      };
+                     }
 
-        /// Returns the product of two complex numbers.
-        pub fn mul(self: Self, other: Self) Self {
-            return Self{
-                .re = self.re * other.re - self.im * other.im,
-                .im = self.im * other.re + self.re * other.im,
-            };
-        }
+                     /// Returns the product of two complex numbers.
+                     pub fn mul(self: Self, other: Self) Self {
+                                      return Self{
+                                          .re = self.re * other.re - self.im * other.im,
+                                          .im = self.im * other.re + self.re * other.im,
+                                      };
+                     }
 
-        /// Returns the quotient of two complex numbers.
-        pub fn div(self: Self, other: Self) Self {
-            const re_num = self.re * other.re + self.im * other.im;
-            const im_num = self.im * other.re - self.re * other.im;
-            const den = other.re * other.re + other.im * other.im;
+                     /// Returns the quotient of two complex numbers.
+                     pub fn div(self: Self, other: Self) Self {
+                                      const re_num = self.re * other.re + self.im * other.im;
+                                      const im_num = self.im * other.re - self.re * other.im;
+                                      const den = other.re * other.re + other.im * other.im;
 
-            return Self{
-                .re = re_num / den,
-                .im = im_num / den,
-            };
-        }
+                                      return Self{
+                                          .re = re_num / den,
+                                          .im = im_num / den,
+                                      };
+                     }
 
-        /// Returns the complex conjugate of a number.
-        pub fn conjugate(self: Self) Self {
-            return Self{
-                .re = self.re,
-                .im = -self.im,
-            };
-        }
+                     /// Returns the complex conjugate of a number.
+                     pub fn conjugate(self: Self) Self {
+                                      return Self{
+                                          .re = self.re,
+                                          .im = -self.im,
+                                      };
+                     }
 
-        /// Returns the reciprocal of a complex number.
-        pub fn reciprocal(self: Self) Self {
-            const m = self.re * self.re + self.im * self.im;
-            return Self{
-                .re = self.re / m,
-                .im = -self.im / m,
-            };
-        }
+                     /// Returns the reciprocal of a complex number.
+                     pub fn reciprocal(self: Self) Self {
+                                      const m = self.re * self.re + self.im * self.im;
+                                      return Self{
+                                          .re = self.re / m,
+                                          .im = -self.im / m,
+                                      };
+                     }
 
-        /// Returns the magnitude of a complex number.
-        pub fn magnitude(self: Self) T {
-            return math.sqrt(self.re * self.re + self.im * self.im);
-        }
+                     /// Returns the magnitude of a complex number.
+                     pub fn magnitude(self: Self) T {
+                                      return math.sqrt(self.re * self.re + self.im * self.im);
+                     }
     };
 }
 
@@ -139,7 +139,7 @@ test "complex.div" {
     const c = a.div(b);
 
     testing.expect(math.approxEqAbs(f32, c.re, @as(f32, 31) / 53, epsilon) and
-        math.approxEqAbs(f32, c.im, @as(f32, -29) / 53, epsilon));
+                     math.approxEqAbs(f32, c.im, @as(f32, -29) / 53, epsilon));
 }
 
 test "complex.conjugate" {
@@ -154,7 +154,7 @@ test "complex.reciprocal" {
     const c = a.reciprocal();
 
     testing.expect(math.approxEqAbs(f32, c.re, @as(f32, 5) / 34, epsilon) and
-        math.approxEqAbs(f32, c.im, @as(f32, -3) / 34, epsilon));
+                     math.approxEqAbs(f32, c.im, @as(f32, -3) / 34, epsilon));
 }
 
 test "complex.magnitude" {

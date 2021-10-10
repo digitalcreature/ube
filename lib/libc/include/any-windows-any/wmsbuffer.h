@@ -46,20 +46,20 @@ MIDL_INTERFACE("e1cd3524-03d7-11d2-9eed-006097d2d7cf")
 INSSBuffer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetLength(
-        DWORD *pdwLength) = 0;
+                     DWORD *pdwLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLength(
-        DWORD dwLength) = 0;
+                     DWORD dwLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMaxLength(
-        DWORD *pdwLength) = 0;
+                     DWORD *pdwLength) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBuffer(
-        BYTE **ppdwBuffer) = 0;
+                     BYTE **ppdwBuffer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBufferAndLength(
-        BYTE **ppdwBuffer,
-        DWORD *pdwLength) = 0;
+                     BYTE **ppdwBuffer,
+                     DWORD *pdwLength) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -71,37 +71,37 @@ typedef struct INSSBufferVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INSSBuffer *This,
-        REFIID riid,
-        void **ppvObject);
+                     INSSBuffer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INSSBuffer *This);
+                     INSSBuffer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INSSBuffer *This);
+                     INSSBuffer *This);
 
     /*** INSSBuffer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetLength)(
-        INSSBuffer *This,
-        DWORD *pdwLength);
+                     INSSBuffer *This,
+                     DWORD *pdwLength);
 
     HRESULT (STDMETHODCALLTYPE *SetLength)(
-        INSSBuffer *This,
-        DWORD dwLength);
+                     INSSBuffer *This,
+                     DWORD dwLength);
 
     HRESULT (STDMETHODCALLTYPE *GetMaxLength)(
-        INSSBuffer *This,
-        DWORD *pdwLength);
+                     INSSBuffer *This,
+                     DWORD *pdwLength);
 
     HRESULT (STDMETHODCALLTYPE *GetBuffer)(
-        INSSBuffer *This,
-        BYTE **ppdwBuffer);
+                     INSSBuffer *This,
+                     BYTE **ppdwBuffer);
 
     HRESULT (STDMETHODCALLTYPE *GetBufferAndLength)(
-        INSSBuffer *This,
-        BYTE **ppdwBuffer,
-        DWORD *pdwLength);
+                     INSSBuffer *This,
+                     BYTE **ppdwBuffer,
+                     DWORD *pdwLength);
 
     END_INTERFACE
 } INSSBufferVtbl;

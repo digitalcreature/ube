@@ -46,12 +46,12 @@ extern "C" {
 #define WIN32KAPI DECLSPEC_ADDRSAFE
 #endif
 
-#define DDI_DRIVER_VERSION_NT4            0x00020000
-#define DDI_DRIVER_VERSION_SP3            0x00020003
-#define DDI_DRIVER_VERSION_NT5            0x00030000
-#define DDI_DRIVER_VERSION_NT5_01         0x00030100
+#define DDI_DRIVER_VERSION_NT4                                      0x00020000
+#define DDI_DRIVER_VERSION_SP3                                      0x00020003
+#define DDI_DRIVER_VERSION_NT5                                      0x00030000
+#define DDI_DRIVER_VERSION_NT5_01                      0x00030100
 
-#define GDI_DRIVER_VERSION                0x4000
+#define GDI_DRIVER_VERSION                                          0x4000
 
 #ifdef _X86_
 
@@ -92,36 +92,36 @@ DECLARE_HANDLE(HDRVOBJ);
 typedef struct _ENG_EVENT *PEVENT;
 #endif
 
-#define OPENGL_CMD                        4352
-#define OPENGL_GETINFO                    4353
-#define WNDOBJ_SETUP                      4354
+#define OPENGL_CMD                                                                            4352
+#define OPENGL_GETINFO                                                           4353
+#define WNDOBJ_SETUP                                                             4354
 
-#define FD_ERROR                          0xFFFFFFFF
-#define DDI_ERROR                         0xFFFFFFFF
+#define FD_ERROR                                                                              0xFFFFFFFF
+#define DDI_ERROR                                                                             0xFFFFFFFF
 
-#define HFF_INVALID                       ((HFF) 0)
-#define HFC_INVALID                       ((HFC) 0)
-#define HGLYPH_INVALID                    ((HGLYPH) -1)
+#define HFF_INVALID                                                              ((HFF) 0)
+#define HFC_INVALID                                                              ((HFC) 0)
+#define HGLYPH_INVALID                                                           ((HGLYPH) -1)
 
-#define FP_ALTERNATEMODE                  1
-#define FP_WINDINGMODE                    2
+#define FP_ALTERNATEMODE                                                         1
+#define FP_WINDINGMODE                                                           2
 
-#define DN_ACCELERATION_LEVEL             1
-#define DN_DEVICE_ORIGIN                  2
-#define DN_SLEEP_MODE                     3
-#define DN_DRAWING_BEGIN                  4
+#define DN_ACCELERATION_LEVEL                                       1
+#define DN_DEVICE_ORIGIN                                                         2
+#define DN_SLEEP_MODE                                                            3
+#define DN_DRAWING_BEGIN                                                         4
 
-#define DCR_SOLID                         0
-#define DCR_DRIVER                        1
-#define DCR_HALFTONE                      2
+#define DCR_SOLID                                                                             0
+#define DCR_DRIVER                                                                            1
+#define DCR_HALFTONE                                                             2
 
-#define GX_IDENTITY                       0
-#define GX_OFFSET                         1
-#define GX_SCALE                          2
-#define GX_GENERAL                        3
+#define GX_IDENTITY                                                              0
+#define GX_OFFSET                                                                             1
+#define GX_SCALE                                                                              2
+#define GX_GENERAL                                                                            3
 
-#define LTOFX(x)        ((x) << 4)
-#define FXTOL(x)        ((x) >> 4)
+#define LTOFX(x)                     ((x) << 4)
+#define FXTOL(x)                     ((x) >> 4)
 #define FXTOLFLOOR(x)   ((x) >> 4)
 #define FXTOLCEILING(x) ((x + 0x0F) >> 4)
 #define FXTOLROUND(x)   ((((x) >> 3) + 1) >> 1)
@@ -160,7 +160,7 @@ typedef struct _BLENDOBJ {
 
 /* BRUSHOBJ.flColorType */
 #define BR_DEVICE_ICM    0x01
-#define BR_HOST_ICM      0x02
+#define BR_HOST_ICM                   0x02
 #define BR_CMYKCOLOR     0x04
 #define BR_ORIGCOLOR     0x08
 
@@ -190,21 +190,21 @@ typedef struct _CLIPLINE {
 } CLIPLINE, *PCLIPLINE;
 
 /* CLIPOBJ.iDComplexity constants */
-#define DC_TRIVIAL                        0
-#define DC_RECT                           1
-#define DC_COMPLEX                        3
+#define DC_TRIVIAL                                                                            0
+#define DC_RECT                                                                               1
+#define DC_COMPLEX                                                                            3
 
 /* CLIPOBJ.iFComplexity constants */
-#define FC_RECT                           1
-#define FC_RECT4                          2
-#define FC_COMPLEX                        3
+#define FC_RECT                                                                               1
+#define FC_RECT4                                                                              2
+#define FC_COMPLEX                                                                            3
 
 /* CLIPOBJ.iMode constants */
-#define TC_RECTANGLES                     0
-#define TC_PATHOBJ                        2
+#define TC_RECTANGLES                                                            0
+#define TC_PATHOBJ                                                                            2
 
 /* CLIPOBJ.fjOptions constants */
-#define OC_BANK_CLIP                      1
+#define OC_BANK_CLIP                                                             1
 
 typedef struct _CLIPOBJ {
   ULONG  iUniq;
@@ -235,8 +235,8 @@ typedef struct _COLORINFO {
 } COLORINFO, *PCOLORINFO;
 
 /* DEVHTADJDATA.DeviceFlags constants */
-#define DEVHTADJF_COLOR_DEVICE            0x00000001
-#define DEVHTADJF_ADDITIVE_DEVICE         0x00000002
+#define DEVHTADJF_COLOR_DEVICE                                      0x00000001
+#define DEVHTADJF_ADDITIVE_DEVICE                      0x00000002
 
 typedef struct _DEVHTINFO {
   DWORD  HTFlags;
@@ -254,60 +254,60 @@ typedef struct _DEVHTADJDATA {
 } DEVHTADJDATA, *PDEVHTADJDATA;
 
 /* DEVINFO.flGraphicsCaps flags */
-#define GCAPS_BEZIERS           0x00000001
+#define GCAPS_BEZIERS                        0x00000001
 #define GCAPS_GEOMETRICWIDE     0x00000002
 #define GCAPS_ALTERNATEFILL     0x00000004
-#define GCAPS_WINDINGFILL       0x00000008
-#define GCAPS_HALFTONE          0x00000010
-#define GCAPS_COLOR_DITHER      0x00000020
-#define GCAPS_HORIZSTRIKE       0x00000040
-#define GCAPS_VERTSTRIKE        0x00000080
-#define GCAPS_OPAQUERECT        0x00000100
-#define GCAPS_VECTORFONT        0x00000200
-#define GCAPS_MONO_DITHER       0x00000400
-#define GCAPS_ASYNCCHANGE       0x00000800
-#define GCAPS_ASYNCMOVE         0x00001000
-#define GCAPS_DONTJOURNAL       0x00002000
-#define GCAPS_DIRECTDRAW        0x00004000
+#define GCAPS_WINDINGFILL                    0x00000008
+#define GCAPS_HALFTONE                       0x00000010
+#define GCAPS_COLOR_DITHER                   0x00000020
+#define GCAPS_HORIZSTRIKE                    0x00000040
+#define GCAPS_VERTSTRIKE                     0x00000080
+#define GCAPS_OPAQUERECT                     0x00000100
+#define GCAPS_VECTORFONT                     0x00000200
+#define GCAPS_MONO_DITHER                    0x00000400
+#define GCAPS_ASYNCCHANGE                    0x00000800
+#define GCAPS_ASYNCMOVE                      0x00001000
+#define GCAPS_DONTJOURNAL                    0x00002000
+#define GCAPS_DIRECTDRAW                     0x00004000
 #define GCAPS_ARBRUSHOPAQUE     0x00008000
-#define GCAPS_PANNING           0x00010000
-#define GCAPS_HIGHRESTEXT       0x00040000
-#define GCAPS_PALMANAGED        0x00080000
+#define GCAPS_PANNING                        0x00010000
+#define GCAPS_HIGHRESTEXT                    0x00040000
+#define GCAPS_PALMANAGED                     0x00080000
 #define GCAPS_DITHERONREALIZE   0x00200000
 #define GCAPS_NO64BITMEMACCESS  0x00400000
-#define GCAPS_FORCEDITHER       0x00800000
-#define GCAPS_GRAY16            0x01000000
-#define GCAPS_ICM               0x02000000
-#define GCAPS_CMYKCOLOR         0x04000000
-#define GCAPS_LAYERED           0x08000000
-#define GCAPS_ARBRUSHTEXT       0x10000000
+#define GCAPS_FORCEDITHER                    0x00800000
+#define GCAPS_GRAY16                                      0x01000000
+#define GCAPS_ICM                                         0x02000000
+#define GCAPS_CMYKCOLOR                      0x04000000
+#define GCAPS_LAYERED                        0x08000000
+#define GCAPS_ARBRUSHTEXT                    0x10000000
 #define GCAPS_SCREENPRECISION   0x20000000
 #define GCAPS_FONT_RASTERIZER   0x40000000
-#define GCAPS_NUP               0x80000000
+#define GCAPS_NUP                                         0x80000000
 
 /* DEVINFO.iDitherFormat constants */
-#define BMF_1BPP       __MSABI_LONG(1)
-#define BMF_4BPP       __MSABI_LONG(2)
-#define BMF_8BPP       __MSABI_LONG(3)
-#define BMF_16BPP      __MSABI_LONG(4)
-#define BMF_24BPP      __MSABI_LONG(5)
-#define BMF_32BPP      __MSABI_LONG(6)
-#define BMF_4RLE       __MSABI_LONG(7)
-#define BMF_8RLE       __MSABI_LONG(8)
-#define BMF_JPEG       __MSABI_LONG(9)
-#define BMF_PNG       __MSABI_LONG(10)
+#define BMF_1BPP                    __MSABI_LONG(1)
+#define BMF_4BPP                    __MSABI_LONG(2)
+#define BMF_8BPP                    __MSABI_LONG(3)
+#define BMF_16BPP                   __MSABI_LONG(4)
+#define BMF_24BPP                   __MSABI_LONG(5)
+#define BMF_32BPP                   __MSABI_LONG(6)
+#define BMF_4RLE                    __MSABI_LONG(7)
+#define BMF_8RLE                    __MSABI_LONG(8)
+#define BMF_JPEG                    __MSABI_LONG(9)
+#define BMF_PNG                    __MSABI_LONG(10)
 
 /* DEVINFO.flGraphicsCaps2 flags */
-#define GCAPS2_JPEGSRC          0x00000001
-#define GCAPS2_xxxx             0x00000002
-#define GCAPS2_PNGSRC           0x00000008
+#define GCAPS2_JPEGSRC                       0x00000001
+#define GCAPS2_xxxx                                       0x00000002
+#define GCAPS2_PNGSRC                        0x00000008
 #define GCAPS2_CHANGEGAMMARAMP  0x00000010
-#define GCAPS2_ALPHACURSOR      0x00000020
-#define GCAPS2_SYNCFLUSH        0x00000040
-#define GCAPS2_SYNCTIMER        0x00000080
+#define GCAPS2_ALPHACURSOR                   0x00000020
+#define GCAPS2_SYNCFLUSH                     0x00000040
+#define GCAPS2_SYNCTIMER                     0x00000080
 #define GCAPS2_ICD_MULTIMON     0x00000100
-#define GCAPS2_MOUSETRAILS      0x00000200
-#define GCAPS2_RESERVED1        0x00000400
+#define GCAPS2_MOUSETRAILS                   0x00000200
+#define GCAPS2_RESERVED1                     0x00000400
 
 typedef struct _DEVINFO {
   FLONG  flGraphicsCaps;
@@ -336,100 +336,100 @@ typedef struct _DRIVEROBJ {
 } DRIVEROBJ;
 
 /* DRVFN.iFunc constants */
-#define INDEX_DrvEnablePDEV               __MSABI_LONG(0)
-#define INDEX_DrvCompletePDEV             __MSABI_LONG(1)
-#define INDEX_DrvDisablePDEV              __MSABI_LONG(2)
-#define INDEX_DrvEnableSurface            __MSABI_LONG(3)
-#define INDEX_DrvDisableSurface           __MSABI_LONG(4)
-#define INDEX_DrvAssertMode               __MSABI_LONG(5)
-#define INDEX_DrvOffset                   __MSABI_LONG(6)
-#define INDEX_DrvResetPDEV                __MSABI_LONG(7)
-#define INDEX_DrvDisableDriver            __MSABI_LONG(8)
-#define INDEX_DrvUnknown1                 __MSABI_LONG(9)
-#define INDEX_DrvCreateDeviceBitmap       __MSABI_LONG(10)
-#define INDEX_DrvDeleteDeviceBitmap       __MSABI_LONG(11)
-#define INDEX_DrvRealizeBrush             __MSABI_LONG(12)
-#define INDEX_DrvDitherColor              __MSABI_LONG(13)
-#define INDEX_DrvStrokePath               __MSABI_LONG(14)
-#define INDEX_DrvFillPath                 __MSABI_LONG(15)
-#define INDEX_DrvStrokeAndFillPath        __MSABI_LONG(16)
-#define INDEX_DrvPaint                    __MSABI_LONG(17)
-#define INDEX_DrvBitBlt                   __MSABI_LONG(18)
-#define INDEX_DrvCopyBits                 __MSABI_LONG(19)
-#define INDEX_DrvStretchBlt               __MSABI_LONG(20)
-#define INDEX_DrvUnknown2                 __MSABI_LONG(21)
-#define INDEX_DrvSetPalette               __MSABI_LONG(22)
-#define INDEX_DrvTextOut                  __MSABI_LONG(23)
-#define INDEX_DrvEscape                   __MSABI_LONG(24)
-#define INDEX_DrvDrawEscape               __MSABI_LONG(25)
-#define INDEX_DrvQueryFont                __MSABI_LONG(26)
-#define INDEX_DrvQueryFontTree            __MSABI_LONG(27)
-#define INDEX_DrvQueryFontData            __MSABI_LONG(28)
-#define INDEX_DrvSetPointerShape          __MSABI_LONG(29)
-#define INDEX_DrvMovePointer              __MSABI_LONG(30)
-#define INDEX_DrvLineTo                   __MSABI_LONG(31)
-#define INDEX_DrvSendPage                 __MSABI_LONG(32)
-#define INDEX_DrvStartPage                __MSABI_LONG(33)
-#define INDEX_DrvEndDoc                   __MSABI_LONG(34)
-#define INDEX_DrvStartDoc                 __MSABI_LONG(35)
-#define INDEX_DrvUnknown3                 __MSABI_LONG(36)
-#define INDEX_DrvGetGlyphMode             __MSABI_LONG(37)
-#define INDEX_DrvSynchronize              __MSABI_LONG(38)
-#define INDEX_DrvUnknown4                 __MSABI_LONG(39)
-#define INDEX_DrvSaveScreenBits           __MSABI_LONG(40)
-#define INDEX_DrvGetModes                 __MSABI_LONG(41)
-#define INDEX_DrvFree                     __MSABI_LONG(42)
-#define INDEX_DrvDestroyFont              __MSABI_LONG(43)
-#define INDEX_DrvQueryFontCaps            __MSABI_LONG(44)
-#define INDEX_DrvLoadFontFile             __MSABI_LONG(45)
-#define INDEX_DrvUnloadFontFile           __MSABI_LONG(46)
-#define INDEX_DrvFontManagement           __MSABI_LONG(47)
-#define INDEX_DrvQueryTrueTypeTable       __MSABI_LONG(48)
+#define INDEX_DrvEnablePDEV                                         __MSABI_LONG(0)
+#define INDEX_DrvCompletePDEV                                       __MSABI_LONG(1)
+#define INDEX_DrvDisablePDEV                                        __MSABI_LONG(2)
+#define INDEX_DrvEnableSurface                                      __MSABI_LONG(3)
+#define INDEX_DrvDisableSurface                        __MSABI_LONG(4)
+#define INDEX_DrvAssertMode                                         __MSABI_LONG(5)
+#define INDEX_DrvOffset                                                          __MSABI_LONG(6)
+#define INDEX_DrvResetPDEV                                          __MSABI_LONG(7)
+#define INDEX_DrvDisableDriver                                      __MSABI_LONG(8)
+#define INDEX_DrvUnknown1                                           __MSABI_LONG(9)
+#define INDEX_DrvCreateDeviceBitmap                    __MSABI_LONG(10)
+#define INDEX_DrvDeleteDeviceBitmap                    __MSABI_LONG(11)
+#define INDEX_DrvRealizeBrush                                       __MSABI_LONG(12)
+#define INDEX_DrvDitherColor                                        __MSABI_LONG(13)
+#define INDEX_DrvStrokePath                                         __MSABI_LONG(14)
+#define INDEX_DrvFillPath                                           __MSABI_LONG(15)
+#define INDEX_DrvStrokeAndFillPath                     __MSABI_LONG(16)
+#define INDEX_DrvPaint                                                           __MSABI_LONG(17)
+#define INDEX_DrvBitBlt                                                          __MSABI_LONG(18)
+#define INDEX_DrvCopyBits                                           __MSABI_LONG(19)
+#define INDEX_DrvStretchBlt                                         __MSABI_LONG(20)
+#define INDEX_DrvUnknown2                                           __MSABI_LONG(21)
+#define INDEX_DrvSetPalette                                         __MSABI_LONG(22)
+#define INDEX_DrvTextOut                                                         __MSABI_LONG(23)
+#define INDEX_DrvEscape                                                          __MSABI_LONG(24)
+#define INDEX_DrvDrawEscape                                         __MSABI_LONG(25)
+#define INDEX_DrvQueryFont                                          __MSABI_LONG(26)
+#define INDEX_DrvQueryFontTree                                      __MSABI_LONG(27)
+#define INDEX_DrvQueryFontData                                      __MSABI_LONG(28)
+#define INDEX_DrvSetPointerShape                       __MSABI_LONG(29)
+#define INDEX_DrvMovePointer                                        __MSABI_LONG(30)
+#define INDEX_DrvLineTo                                                          __MSABI_LONG(31)
+#define INDEX_DrvSendPage                                           __MSABI_LONG(32)
+#define INDEX_DrvStartPage                                          __MSABI_LONG(33)
+#define INDEX_DrvEndDoc                                                          __MSABI_LONG(34)
+#define INDEX_DrvStartDoc                                           __MSABI_LONG(35)
+#define INDEX_DrvUnknown3                                           __MSABI_LONG(36)
+#define INDEX_DrvGetGlyphMode                                       __MSABI_LONG(37)
+#define INDEX_DrvSynchronize                                        __MSABI_LONG(38)
+#define INDEX_DrvUnknown4                                           __MSABI_LONG(39)
+#define INDEX_DrvSaveScreenBits                        __MSABI_LONG(40)
+#define INDEX_DrvGetModes                                           __MSABI_LONG(41)
+#define INDEX_DrvFree                                                            __MSABI_LONG(42)
+#define INDEX_DrvDestroyFont                                        __MSABI_LONG(43)
+#define INDEX_DrvQueryFontCaps                                      __MSABI_LONG(44)
+#define INDEX_DrvLoadFontFile                                       __MSABI_LONG(45)
+#define INDEX_DrvUnloadFontFile                        __MSABI_LONG(46)
+#define INDEX_DrvFontManagement                        __MSABI_LONG(47)
+#define INDEX_DrvQueryTrueTypeTable                    __MSABI_LONG(48)
 #define INDEX_DrvQueryTrueTypeOutline     __MSABI_LONG(49)
-#define INDEX_DrvGetTrueTypeFile          __MSABI_LONG(50)
-#define INDEX_DrvQueryFontFile            __MSABI_LONG(51)
-#define INDEX_DrvMovePanning              __MSABI_LONG(52)
-#define INDEX_DrvQueryAdvanceWidths       __MSABI_LONG(53)
-#define INDEX_DrvSetPixelFormat           __MSABI_LONG(54)
-#define INDEX_DrvDescribePixelFormat      __MSABI_LONG(55)
-#define INDEX_DrvSwapBuffers              __MSABI_LONG(56)
-#define INDEX_DrvStartBanding             __MSABI_LONG(57)
-#define INDEX_DrvNextBand                 __MSABI_LONG(58)
-#define INDEX_DrvGetDirectDrawInfo        __MSABI_LONG(59)
-#define INDEX_DrvEnableDirectDraw         __MSABI_LONG(60)
-#define INDEX_DrvDisableDirectDraw        __MSABI_LONG(61)
-#define INDEX_DrvQuerySpoolType           __MSABI_LONG(62)
-#define INDEX_DrvUnknown5                 __MSABI_LONG(63)
+#define INDEX_DrvGetTrueTypeFile                       __MSABI_LONG(50)
+#define INDEX_DrvQueryFontFile                                      __MSABI_LONG(51)
+#define INDEX_DrvMovePanning                                        __MSABI_LONG(52)
+#define INDEX_DrvQueryAdvanceWidths                    __MSABI_LONG(53)
+#define INDEX_DrvSetPixelFormat                        __MSABI_LONG(54)
+#define INDEX_DrvDescribePixelFormat                   __MSABI_LONG(55)
+#define INDEX_DrvSwapBuffers                                        __MSABI_LONG(56)
+#define INDEX_DrvStartBanding                                       __MSABI_LONG(57)
+#define INDEX_DrvNextBand                                           __MSABI_LONG(58)
+#define INDEX_DrvGetDirectDrawInfo                     __MSABI_LONG(59)
+#define INDEX_DrvEnableDirectDraw                      __MSABI_LONG(60)
+#define INDEX_DrvDisableDirectDraw                     __MSABI_LONG(61)
+#define INDEX_DrvQuerySpoolType                        __MSABI_LONG(62)
+#define INDEX_DrvUnknown5                                           __MSABI_LONG(63)
 #define INDEX_DrvIcmCreateColorTransform  __MSABI_LONG(64)
 #define INDEX_DrvIcmDeleteColorTransform  __MSABI_LONG(65)
-#define INDEX_DrvIcmCheckBitmapBits       __MSABI_LONG(66)
+#define INDEX_DrvIcmCheckBitmapBits                    __MSABI_LONG(66)
 #define INDEX_DrvIcmSetDeviceGammaRamp    __MSABI_LONG(67)
-#define INDEX_DrvGradientFill             __MSABI_LONG(68)
-#define INDEX_DrvStretchBltROP            __MSABI_LONG(69)
-#define INDEX_DrvPlgBlt                   __MSABI_LONG(70)
-#define INDEX_DrvAlphaBlend               __MSABI_LONG(71)
-#define INDEX_DrvSynthesizeFont           __MSABI_LONG(72)
+#define INDEX_DrvGradientFill                                       __MSABI_LONG(68)
+#define INDEX_DrvStretchBltROP                                      __MSABI_LONG(69)
+#define INDEX_DrvPlgBlt                                                          __MSABI_LONG(70)
+#define INDEX_DrvAlphaBlend                                         __MSABI_LONG(71)
+#define INDEX_DrvSynthesizeFont                        __MSABI_LONG(72)
 #define INDEX_DrvGetSynthesizedFontFiles  __MSABI_LONG(73)
-#define INDEX_DrvTransparentBlt           __MSABI_LONG(74)
-#define INDEX_DrvQueryPerBandInfo         __MSABI_LONG(75)
-#define INDEX_DrvQueryDeviceSupport       __MSABI_LONG(76)
-#define INDEX_DrvReserved1                __MSABI_LONG(77)
-#define INDEX_DrvReserved2                __MSABI_LONG(78)
-#define INDEX_DrvReserved3                __MSABI_LONG(79)
-#define INDEX_DrvReserved4                __MSABI_LONG(80)
-#define INDEX_DrvReserved5                __MSABI_LONG(81)
-#define INDEX_DrvReserved6                __MSABI_LONG(82)
-#define INDEX_DrvReserved7                __MSABI_LONG(83)
-#define INDEX_DrvReserved8                __MSABI_LONG(84)
-#define INDEX_DrvDeriveSurface            __MSABI_LONG(85)
-#define INDEX_DrvQueryGlyphAttrs          __MSABI_LONG(86)
-#define INDEX_DrvNotify                   __MSABI_LONG(87)
-#define INDEX_DrvSynchronizeSurface       __MSABI_LONG(88)
-#define INDEX_DrvResetDevice              __MSABI_LONG(89)
-#define INDEX_DrvReserved9                __MSABI_LONG(90)
-#define INDEX_DrvReserved10               __MSABI_LONG(91)
-#define INDEX_DrvReserved11               __MSABI_LONG(92)
-#define INDEX_LAST                        __MSABI_LONG(93)
+#define INDEX_DrvTransparentBlt                        __MSABI_LONG(74)
+#define INDEX_DrvQueryPerBandInfo                      __MSABI_LONG(75)
+#define INDEX_DrvQueryDeviceSupport                    __MSABI_LONG(76)
+#define INDEX_DrvReserved1                                          __MSABI_LONG(77)
+#define INDEX_DrvReserved2                                          __MSABI_LONG(78)
+#define INDEX_DrvReserved3                                          __MSABI_LONG(79)
+#define INDEX_DrvReserved4                                          __MSABI_LONG(80)
+#define INDEX_DrvReserved5                                          __MSABI_LONG(81)
+#define INDEX_DrvReserved6                                          __MSABI_LONG(82)
+#define INDEX_DrvReserved7                                          __MSABI_LONG(83)
+#define INDEX_DrvReserved8                                          __MSABI_LONG(84)
+#define INDEX_DrvDeriveSurface                                      __MSABI_LONG(85)
+#define INDEX_DrvQueryGlyphAttrs                       __MSABI_LONG(86)
+#define INDEX_DrvNotify                                                          __MSABI_LONG(87)
+#define INDEX_DrvSynchronizeSurface                    __MSABI_LONG(88)
+#define INDEX_DrvResetDevice                                        __MSABI_LONG(89)
+#define INDEX_DrvReserved9                                          __MSABI_LONG(90)
+#define INDEX_DrvReserved10                                         __MSABI_LONG(91)
+#define INDEX_DrvReserved11                                         __MSABI_LONG(92)
+#define INDEX_LAST                                                                            __MSABI_LONG(93)
 
 typedef struct _DRVFN {
   ULONG  iFunc;
@@ -437,10 +437,10 @@ typedef struct _DRVFN {
 } DRVFN, *PDRVFN;
 
 /* DRVENABLEDATA.iDriverVersion constants */
-#define DDI_DRIVER_VERSION_NT4            0x00020000
-#define DDI_DRIVER_VERSION_SP3            0x00020003
-#define DDI_DRIVER_VERSION_NT5            0x00030000
-#define DDI_DRIVER_VERSION_NT5_01         0x00030100
+#define DDI_DRIVER_VERSION_NT4                                      0x00020000
+#define DDI_DRIVER_VERSION_SP3                                      0x00020003
+#define DDI_DRIVER_VERSION_NT5                                      0x00030000
+#define DDI_DRIVER_VERSION_NT5_01                      0x00030100
 #define DDI_DRIVER_VERSION_NT5_01_SP1     0x00030101
 
 typedef struct _DRVENABLEDATA {
@@ -487,11 +487,11 @@ typedef struct _FD_XFORM {
 } FD_XFORM, *PFD_XFORM;
 
 /* FD_DEVICEMETRICS.flRealizedType constants */
-#define FDM_TYPE_BM_SIDE_CONST            0x00000001
+#define FDM_TYPE_BM_SIDE_CONST                                      0x00000001
 #define FDM_TYPE_MAXEXT_EQUAL_BM_SIDE     0x00000002
 #define FDM_TYPE_CHAR_INC_EQUAL_BM_BASE   0x00000004
-#define FDM_TYPE_ZERO_BEARINGS            0x00000008
-#define FDM_TYPE_CONST_BEARINGS           0x00000010
+#define FDM_TYPE_ZERO_BEARINGS                                      0x00000008
+#define FDM_TYPE_CONST_BEARINGS                        0x00000010
 
 typedef struct _FD_DEVICEMETRICS {
   FLONG  flRealizedType;
@@ -519,7 +519,7 @@ typedef struct _FD_DEVICEMETRICS {
 } FD_DEVICEMETRICS, *PFD_DEVICEMETRICS;
 
 /* FD_GLYPHATTR.iMode constants */
-#define FO_ATTR_MODE_ROTATE               1
+#define FO_ATTR_MODE_ROTATE                                         1
 
 typedef struct _FD_GLYPHATTR {
   ULONG  cjThis;
@@ -529,9 +529,9 @@ typedef struct _FD_GLYPHATTR {
 } FD_GLYPHATTR, *PFD_GLYPHATTR;
 
 /* FD_GLYPHSET.flAccel */
-#define GS_UNICODE_HANDLES                0x00000001
-#define GS_8BIT_HANDLES                   0x00000002
-#define GS_16BIT_HANDLES                  0x00000004
+#define GS_UNICODE_HANDLES                                          0x00000001
+#define GS_8BIT_HANDLES                                                          0x00000002
+#define GS_16BIT_HANDLES                                                         0x00000004
 
 typedef struct _WCRUN {
   WCHAR  wcLow;
@@ -573,13 +573,13 @@ typedef struct _FLOATOBJ_XFORM {
 } FLOATOBJ_XFORM, *PFLOATOBJ_XFORM, FAR *LPFLOATOBJ_XFORM;
 
 /* FONTDIFF.fsSelection */
-#define FM_SEL_ITALIC                     0x0001
-#define FM_SEL_UNDERSCORE                 0x0002
-#define FM_SEL_NEGATIVE                   0x0004
-#define FM_SEL_OUTLINED                   0x0008
-#define FM_SEL_STRIKEOUT                  0x0010
-#define FM_SEL_BOLD                       0x0020
-#define FM_SEL_REGULAR                    0x0040
+#define FM_SEL_ITALIC                                                            0x0001
+#define FM_SEL_UNDERSCORE                                           0x0002
+#define FM_SEL_NEGATIVE                                                          0x0004
+#define FM_SEL_OUTLINED                                                          0x0008
+#define FM_SEL_STRIKEOUT                                                         0x0010
+#define FM_SEL_BOLD                                                              0x0020
+#define FM_SEL_REGULAR                                                           0x0040
 
 typedef struct _FONTDIFF {
   BYTE  jReserved1;
@@ -600,8 +600,8 @@ typedef struct _FONTSIM {
 } FONTSIM;
 
 /* FONTINFO.flCaps constants */
-#define FO_DEVICE_FONT                    __MSABI_LONG(1)
-#define FO_OUTLINE_CAPABLE                __MSABI_LONG(2)
+#define FO_DEVICE_FONT                                                           __MSABI_LONG(1)
+#define FO_OUTLINE_CAPABLE                                          __MSABI_LONG(2)
 
 typedef struct _FONTINFO {
   ULONG  cjThis;
@@ -619,18 +619,18 @@ typedef struct _FONTINFO {
 #define FO_TYPE_TRUETYPE TRUETYPE_FONTTYPE
 #define FO_TYPE_OPENTYPE OPENTYPE_FONTTYPE
 
-#define FO_SIM_BOLD      0x00002000
+#define FO_SIM_BOLD                   0x00002000
 #define FO_SIM_ITALIC    0x00004000
 #define FO_EM_HEIGHT     0x00008000
-#define FO_GRAY16        0x00010000
-#define FO_NOGRAY16      0x00020000
-#define FO_NOHINTS       0x00040000
+#define FO_GRAY16                     0x00010000
+#define FO_NOGRAY16                   0x00020000
+#define FO_NOHINTS                    0x00040000
 #define FO_NO_CHOICE     0x00080000
-#define FO_CFF            0x00100000
+#define FO_CFF                                      0x00100000
 #define FO_POSTSCRIPT     0x00200000
 #define FO_MULTIPLEMASTER 0x00400000
-#define FO_VERT_FACE      0x00800000
-#define FO_DBCS_FONT      0X01000000
+#define FO_VERT_FACE                   0x00800000
+#define FO_DBCS_FONT                   0X01000000
 #define FO_NOCLEARTYPE    0x02000000
 #define FO_CLEARTYPE_X    0x10000000
 #define FO_CLEARTYPE_Y    0x20000000
@@ -655,101 +655,101 @@ typedef struct _GAMMARAMP {
 } GAMMARAMP, *PGAMMARAMP;
 
 /* GDIINFO.ulPrimaryOrder constants */
-#define PRIMARY_ORDER_ABC                 0
-#define PRIMARY_ORDER_ACB                 1
-#define PRIMARY_ORDER_BAC                 2
-#define PRIMARY_ORDER_BCA                 3
-#define PRIMARY_ORDER_CBA                 4
-#define PRIMARY_ORDER_CAB                 5
+#define PRIMARY_ORDER_ABC                                           0
+#define PRIMARY_ORDER_ACB                                           1
+#define PRIMARY_ORDER_BAC                                           2
+#define PRIMARY_ORDER_BCA                                           3
+#define PRIMARY_ORDER_CBA                                           4
+#define PRIMARY_ORDER_CAB                                           5
 
 /* GDIINFO.ulHTPatternSize constants */
-#define HT_PATSIZE_2x2                    0
-#define HT_PATSIZE_2x2_M                  1
-#define HT_PATSIZE_4x4                    2
-#define HT_PATSIZE_4x4_M                  3
-#define HT_PATSIZE_6x6                    4
-#define HT_PATSIZE_6x6_M                  5
-#define HT_PATSIZE_8x8                    6
-#define HT_PATSIZE_8x8_M                  7
-#define HT_PATSIZE_10x10                  8
-#define HT_PATSIZE_10x10_M                9
-#define HT_PATSIZE_12x12                  10
-#define HT_PATSIZE_12x12_M                11
-#define HT_PATSIZE_14x14                  12
-#define HT_PATSIZE_14x14_M                13
-#define HT_PATSIZE_16x16                  14
-#define HT_PATSIZE_16x16_M                15
-#define HT_PATSIZE_SUPERCELL              16
-#define HT_PATSIZE_SUPERCELL_M            17
-#define HT_PATSIZE_USER                   18
-#define HT_PATSIZE_MAX_INDEX              HT_PATSIZE_USER
-#define HT_PATSIZE_DEFAULT                HT_PATSIZE_SUPERCELL_M
-#define HT_USERPAT_CX_MIN                 4
-#define HT_USERPAT_CX_MAX                 256
-#define HT_USERPAT_CY_MIN                 4
-#define HT_USERPAT_CY_MAX                 256
+#define HT_PATSIZE_2x2                                                           0
+#define HT_PATSIZE_2x2_M                                                         1
+#define HT_PATSIZE_4x4                                                           2
+#define HT_PATSIZE_4x4_M                                                         3
+#define HT_PATSIZE_6x6                                                           4
+#define HT_PATSIZE_6x6_M                                                         5
+#define HT_PATSIZE_8x8                                                           6
+#define HT_PATSIZE_8x8_M                                                         7
+#define HT_PATSIZE_10x10                                                         8
+#define HT_PATSIZE_10x10_M                                          9
+#define HT_PATSIZE_12x12                                                         10
+#define HT_PATSIZE_12x12_M                                          11
+#define HT_PATSIZE_14x14                                                         12
+#define HT_PATSIZE_14x14_M                                          13
+#define HT_PATSIZE_16x16                                                         14
+#define HT_PATSIZE_16x16_M                                          15
+#define HT_PATSIZE_SUPERCELL                                        16
+#define HT_PATSIZE_SUPERCELL_M                                      17
+#define HT_PATSIZE_USER                                                          18
+#define HT_PATSIZE_MAX_INDEX                                        HT_PATSIZE_USER
+#define HT_PATSIZE_DEFAULT                                          HT_PATSIZE_SUPERCELL_M
+#define HT_USERPAT_CX_MIN                                           4
+#define HT_USERPAT_CX_MAX                                           256
+#define HT_USERPAT_CY_MIN                                           4
+#define HT_USERPAT_CY_MAX                                           256
 
 /* GDIINFO.ulHTOutputFormat constants */
-#define HT_FORMAT_1BPP                    0
-#define HT_FORMAT_4BPP                    2
-#define HT_FORMAT_4BPP_IRGB               3
-#define HT_FORMAT_8BPP                    4
-#define HT_FORMAT_16BPP                   5
-#define HT_FORMAT_24BPP                   6
-#define HT_FORMAT_32BPP                   7
+#define HT_FORMAT_1BPP                                                           0
+#define HT_FORMAT_4BPP                                                           2
+#define HT_FORMAT_4BPP_IRGB                                         3
+#define HT_FORMAT_8BPP                                                           4
+#define HT_FORMAT_16BPP                                                          5
+#define HT_FORMAT_24BPP                                                          6
+#define HT_FORMAT_32BPP                                                          7
 
 /* GDIINFO.flHTFlags */
-#define HT_FLAG_SQUARE_DEVICE_PEL         0x00000001
-#define HT_FLAG_HAS_BLACK_DYE             0x00000002
-#define HT_FLAG_ADDITIVE_PRIMS            0x00000004
-#define HT_FLAG_USE_8BPP_BITMASK          0x00000008
-#define HT_FLAG_INK_HIGH_ABSORPTION       0x00000010
+#define HT_FLAG_SQUARE_DEVICE_PEL                      0x00000001
+#define HT_FLAG_HAS_BLACK_DYE                                       0x00000002
+#define HT_FLAG_ADDITIVE_PRIMS                                      0x00000004
+#define HT_FLAG_USE_8BPP_BITMASK                       0x00000008
+#define HT_FLAG_INK_HIGH_ABSORPTION                    0x00000010
 #define HT_FLAG_INK_ABSORPTION_INDICES    0x00000060
-#define HT_FLAG_DO_DEVCLR_XFORM           0x00000080
-#define HT_FLAG_OUTPUT_CMY                0x00000100
-#define HT_FLAG_PRINT_DRAFT_MODE          0x00000200
+#define HT_FLAG_DO_DEVCLR_XFORM                        0x00000080
+#define HT_FLAG_OUTPUT_CMY                                          0x00000100
+#define HT_FLAG_PRINT_DRAFT_MODE                       0x00000200
 #define HT_FLAG_INVERT_8BPP_BITMASK_IDX   0x00000400
-#define HT_FLAG_8BPP_CMY332_MASK          0xFF000000
+#define HT_FLAG_8BPP_CMY332_MASK                       0xFF000000
 
-#define MAKE_CMYMASK_BYTE(c,m,y)          ((BYTE)(((BYTE)(c) & 0x07) << 5) \
-                                          |(BYTE)(((BYTE)(m) & 0x07) << 2) \
-                                          |(BYTE)((BYTE)(y) & 0x03))
+#define MAKE_CMYMASK_BYTE(c,m,y)                       ((BYTE)(((BYTE)(c) & 0x07) << 5) \
+                                                                                                                                     |(BYTE)(((BYTE)(m) & 0x07) << 2) \
+                                                                                                                                     |(BYTE)((BYTE)(y) & 0x03))
 
-#define MAKE_CMY332_MASK(c,m,y)           ((DWORD)(((DWORD)(c) & 0x07) << 29)\
-                                          |(DWORD)(((DWORD)(m) & 0x07) << 26)\
-                                          |(DWORD)(((DWORD)(y) & 0x03) << 24))
+#define MAKE_CMY332_MASK(c,m,y)                        ((DWORD)(((DWORD)(c) & 0x07) << 29)\
+                                                                                                                                     |(DWORD)(((DWORD)(m) & 0x07) << 26)\
+                                                                                                                                     |(DWORD)(((DWORD)(y) & 0x03) << 24))
 
 /* GDIINFO.flHTFlags constants */
-#define HT_FLAG_INK_ABSORPTION_IDX0       0x00000000
-#define HT_FLAG_INK_ABSORPTION_IDX1       0x00000020
-#define HT_FLAG_INK_ABSORPTION_IDX2       0x00000040
-#define HT_FLAG_INK_ABSORPTION_IDX3       0x00000060
+#define HT_FLAG_INK_ABSORPTION_IDX0                    0x00000000
+#define HT_FLAG_INK_ABSORPTION_IDX1                    0x00000020
+#define HT_FLAG_INK_ABSORPTION_IDX2                    0x00000040
+#define HT_FLAG_INK_ABSORPTION_IDX3                    0x00000060
 
 #define HT_FLAG_HIGHEST_INK_ABSORPTION    (HT_FLAG_INK_HIGH_ABSORPTION \
-                                          |HT_FLAG_INK_ABSORPTION_IDX3)
+                                                                                                                                     |HT_FLAG_INK_ABSORPTION_IDX3)
 #define HT_FLAG_HIGHER_INK_ABSORPTION     (HT_FLAG_INK_HIGH_ABSORPTION \
-                                          |HT_FLAG_INK_ABSORPTION_IDX2)
-#define HT_FLAG_HIGH_INK_ABSORPTION       (HT_FLAG_INK_HIGH_ABSORPTION \
-                                          |HT_FLAG_INK_ABSORPTION_IDX1)
+                                                                                                                                     |HT_FLAG_INK_ABSORPTION_IDX2)
+#define HT_FLAG_HIGH_INK_ABSORPTION                    (HT_FLAG_INK_HIGH_ABSORPTION \
+                                                                                                                                     |HT_FLAG_INK_ABSORPTION_IDX1)
 #define HT_FLAG_NORMAL_INK_ABSORPTION     HT_FLAG_INK_ABSORPTION_IDX0
-#define HT_FLAG_LOW_INK_ABSORPTION        HT_FLAG_INK_ABSORPTION_IDX1
-#define HT_FLAG_LOWER_INK_ABSORPTION      HT_FLAG_INK_ABSORPTION_IDX2
+#define HT_FLAG_LOW_INK_ABSORPTION                     HT_FLAG_INK_ABSORPTION_IDX1
+#define HT_FLAG_LOWER_INK_ABSORPTION                   HT_FLAG_INK_ABSORPTION_IDX2
 #define HT_FLAG_LOWEST_INK_ABSORPTION     HT_FLAG_INK_ABSORPTION_IDX3
 
-#define HT_BITMASKPALRGB                  (DWORD)'0BGR'
-#define HT_SET_BITMASKPAL2RGB(pPal)       (*((LPDWORD)(pPal)) = HT_BITMASKPALRGB)
-#define HT_IS_BITMASKPALRGB(pPal)         (*((LPDWORD)(pPal)) == (DWORD)0)
+#define HT_BITMASKPALRGB                                                         (DWORD)'0BGR'
+#define HT_SET_BITMASKPAL2RGB(pPal)                    (*((LPDWORD)(pPal)) = HT_BITMASKPALRGB)
+#define HT_IS_BITMASKPALRGB(pPal)                      (*((LPDWORD)(pPal)) == (DWORD)0)
 
 /* GDIINFO.ulPhysicalPixelCharacteristics constants */
-#define PPC_DEFAULT                       0x0
-#define PPC_UNDEFINED                     0x1
+#define PPC_DEFAULT                                                              0x0
+#define PPC_UNDEFINED                                                            0x1
 #define PPC_RGB_ORDER_VERTICAL_STRIPES    0x2
 #define PPC_BGR_ORDER_VERTICAL_STRIPES    0x3
 #define PPC_RGB_ORDER_HORIZONTAL_STRIPES  0x4
 #define PPC_BGR_ORDER_HORIZONTAL_STRIPES  0x5
 
-#define PPG_DEFAULT                       0
-#define PPG_SRGB                          1
+#define PPG_DEFAULT                                                              0
+#define PPG_SRGB                                                                              1
 
 typedef struct _GDIINFO {
   ULONG  ulVersion;
@@ -800,16 +800,16 @@ typedef struct _GDIINFO {
 } GDIINFO, *PGDIINFO;
 
 /* PATHDATA.flags constants */
-#define PD_BEGINSUBPATH                   0x00000001
-#define PD_ENDSUBPATH                     0x00000002
-#define PD_RESETSTYLE                     0x00000004
-#define PD_CLOSEFIGURE                    0x00000008
-#define PD_BEZIERS                        0x00000010
-#define PD_ALL                            (PD_BEGINSUBPATH \
-                                          |PD_ENDSUBPATH \
-                                          |PD_RESETSTYLE \
-                                          |PD_CLOSEFIGURE \
-                                          PD_BEZIERS)
+#define PD_BEGINSUBPATH                                                          0x00000001
+#define PD_ENDSUBPATH                                                            0x00000002
+#define PD_RESETSTYLE                                                            0x00000004
+#define PD_CLOSEFIGURE                                                           0x00000008
+#define PD_BEZIERS                                                                            0x00000010
+#define PD_ALL                                                                                (PD_BEGINSUBPATH \
+                                                                                                                                     |PD_ENDSUBPATH \
+                                                                                                                                     |PD_RESETSTYLE \
+                                                                                                                                     |PD_CLOSEFIGURE \
+                                                                                                                                     PD_BEZIERS)
 
 typedef struct _PATHDATA {
   FLONG  flags;
@@ -818,10 +818,10 @@ typedef struct _PATHDATA {
 } PATHDATA, *PPATHDATA;
 
 /* PATHOBJ.fl constants */
-#define PO_BEZIERS                        0x00000001
-#define PO_ELLIPSE                        0x00000002
-#define PO_ALL_INTEGERS                   0x00000004
-#define PO_ENUM_AS_INTEGERS               0x00000008
+#define PO_BEZIERS                                                                            0x00000001
+#define PO_ELLIPSE                                                                            0x00000002
+#define PO_ALL_INTEGERS                                                          0x00000004
+#define PO_ENUM_AS_INTEGERS                                         0x00000008
 
 typedef struct _PATHOBJ {
   FLONG  fl;
@@ -868,52 +868,52 @@ typedef struct _IFIEXTRA {
 
 /* IFIMETRICS constants */
 
-#define FM_VERSION_NUMBER                 0x0
+#define FM_VERSION_NUMBER                                           0x0
 
 /* IFIMETRICS.fsType constants */
-#define FM_TYPE_LICENSED                  0x2
-#define FM_READONLY_EMBED                 0x4
-#define FM_EDITABLE_EMBED                 0x8
-#define FM_NO_EMBEDDING                   FM_TYPE_LICENSED
+#define FM_TYPE_LICENSED                                                         0x2
+#define FM_READONLY_EMBED                                           0x4
+#define FM_EDITABLE_EMBED                                           0x8
+#define FM_NO_EMBEDDING                                                          FM_TYPE_LICENSED
 
 /* IFIMETRICS.flInfo constants */
-#define FM_INFO_TECH_TRUETYPE             0x00000001
-#define FM_INFO_TECH_BITMAP               0x00000002
-#define FM_INFO_TECH_STROKE               0x00000004
+#define FM_INFO_TECH_TRUETYPE                                       0x00000001
+#define FM_INFO_TECH_BITMAP                                         0x00000002
+#define FM_INFO_TECH_STROKE                                         0x00000004
 #define FM_INFO_TECH_OUTLINE_NOT_TRUETYPE 0x00000008
-#define FM_INFO_ARB_XFORMS                0x00000010
-#define FM_INFO_1BPP                      0x00000020
-#define FM_INFO_4BPP                      0x00000040
-#define FM_INFO_8BPP                      0x00000080
-#define FM_INFO_16BPP                     0x00000100
-#define FM_INFO_24BPP                     0x00000200
-#define FM_INFO_32BPP                     0x00000400
-#define FM_INFO_INTEGER_WIDTH             0x00000800
-#define FM_INFO_CONSTANT_WIDTH            0x00001000
-#define FM_INFO_NOT_CONTIGUOUS            0x00002000
-#define FM_INFO_TECH_MM                   0x00004000
-#define FM_INFO_RETURNS_OUTLINES          0x00008000
-#define FM_INFO_RETURNS_STROKES           0x00010000
-#define FM_INFO_RETURNS_BITMAPS           0x00020000
-#define FM_INFO_DSIG                      0x00040000
-#define FM_INFO_RIGHT_HANDED              0x00080000
-#define FM_INFO_INTEGRAL_SCALING          0x00100000
-#define FM_INFO_90DEGREE_ROTATIONS        0x00200000
+#define FM_INFO_ARB_XFORMS                                          0x00000010
+#define FM_INFO_1BPP                                                             0x00000020
+#define FM_INFO_4BPP                                                             0x00000040
+#define FM_INFO_8BPP                                                             0x00000080
+#define FM_INFO_16BPP                                                            0x00000100
+#define FM_INFO_24BPP                                                            0x00000200
+#define FM_INFO_32BPP                                                            0x00000400
+#define FM_INFO_INTEGER_WIDTH                                       0x00000800
+#define FM_INFO_CONSTANT_WIDTH                                      0x00001000
+#define FM_INFO_NOT_CONTIGUOUS                                      0x00002000
+#define FM_INFO_TECH_MM                                                          0x00004000
+#define FM_INFO_RETURNS_OUTLINES                       0x00008000
+#define FM_INFO_RETURNS_STROKES                        0x00010000
+#define FM_INFO_RETURNS_BITMAPS                        0x00020000
+#define FM_INFO_DSIG                                                             0x00040000
+#define FM_INFO_RIGHT_HANDED                                        0x00080000
+#define FM_INFO_INTEGRAL_SCALING                       0x00100000
+#define FM_INFO_90DEGREE_ROTATIONS                     0x00200000
 #define FM_INFO_OPTICALLY_FIXED_PITCH     0x00400000
-#define FM_INFO_DO_NOT_ENUMERATE          0x00800000
+#define FM_INFO_DO_NOT_ENUMERATE                       0x00800000
 #define FM_INFO_ISOTROPIC_SCALING_ONLY    0x01000000
 #define FM_INFO_ANISOTROPIC_SCALING_ONLY  0x02000000
-#define FM_INFO_TECH_CFF                  0x04000000
-#define FM_INFO_FAMILY_EQUIV              0x08000000
-#define FM_INFO_DBCS_FIXED_PITCH          0x10000000
-#define FM_INFO_NONNEGATIVE_AC            0x20000000
-#define FM_INFO_IGNORE_TC_RA_ABLE         0x40000000
-#define FM_INFO_TECH_TYPE1                0x80000000
+#define FM_INFO_TECH_CFF                                                         0x04000000
+#define FM_INFO_FAMILY_EQUIV                                        0x08000000
+#define FM_INFO_DBCS_FIXED_PITCH                       0x10000000
+#define FM_INFO_NONNEGATIVE_AC                                      0x20000000
+#define FM_INFO_IGNORE_TC_RA_ABLE                      0x40000000
+#define FM_INFO_TECH_TYPE1                                          0x80000000
 
-#define MAXCHARSETS                       16
+#define MAXCHARSETS                                                              16
 
 /* IFIMETRICS.ulPanoseCulture constants */
-#define  FM_PANOSE_CULTURE_LATIN          0x0
+#define  FM_PANOSE_CULTURE_LATIN                       0x0
 
 typedef struct _IFIMETRICS {
   ULONG  cjThis;
@@ -981,20 +981,20 @@ typedef struct _IFIMETRICS {
 } IFIMETRICS, *PIFIMETRICS;
 
 /* LINEATTRS.fl */
-#define LA_GEOMETRIC                      0x00000001
-#define LA_ALTERNATE                      0x00000002
-#define LA_STARTGAP                       0x00000004
-#define LA_STYLED                         0x00000008
+#define LA_GEOMETRIC                                                             0x00000001
+#define LA_ALTERNATE                                                             0x00000002
+#define LA_STARTGAP                                                              0x00000004
+#define LA_STYLED                                                                             0x00000008
 
 /* LINEATTRS.iJoin */
-#define JOIN_ROUND                        __MSABI_LONG(0)
-#define JOIN_BEVEL                        __MSABI_LONG(1)
-#define JOIN_MITER                        __MSABI_LONG(2)
+#define JOIN_ROUND                                                                            __MSABI_LONG(0)
+#define JOIN_BEVEL                                                                            __MSABI_LONG(1)
+#define JOIN_MITER                                                                            __MSABI_LONG(2)
 
 /* LINEATTRS.iEndCap */
-#define ENDCAP_ROUND                      __MSABI_LONG(0)
-#define ENDCAP_SQUARE                     __MSABI_LONG(1)
-#define ENDCAP_BUTT                       __MSABI_LONG(2)
+#define ENDCAP_ROUND                                                             __MSABI_LONG(0)
+#define ENDCAP_SQUARE                                                            __MSABI_LONG(1)
+#define ENDCAP_BUTT                                                              __MSABI_LONG(2)
 
 typedef struct _LINEATTRS {
   FLONG  fl;
@@ -1019,19 +1019,19 @@ typedef struct _PERBANDINFO {
 } PERBANDINFO, *PPERBANDINFO;
 
 /* STROBJ.flAccel constants */
-#define SO_FLAG_DEFAULT_PLACEMENT        0x00000001
-#define SO_HORIZONTAL                    0x00000002
-#define SO_VERTICAL                      0x00000004
-#define SO_REVERSED                      0x00000008
-#define SO_ZERO_BEARINGS                 0x00000010
-#define SO_CHAR_INC_EQUAL_BM_BASE        0x00000020
-#define SO_MAXEXT_EQUAL_BM_SIDE          0x00000040
+#define SO_FLAG_DEFAULT_PLACEMENT                     0x00000001
+#define SO_HORIZONTAL                                                           0x00000002
+#define SO_VERTICAL                                                             0x00000004
+#define SO_REVERSED                                                             0x00000008
+#define SO_ZERO_BEARINGS                                           0x00000010
+#define SO_CHAR_INC_EQUAL_BM_BASE                     0x00000020
+#define SO_MAXEXT_EQUAL_BM_SIDE                       0x00000040
 #define SO_DO_NOT_SUBSTITUTE_DEVICE_FONT 0x00000080
-#define SO_GLYPHINDEX_TEXTOUT            0x00000100
-#define SO_ESC_NOT_ORIENT                0x00000200
-#define SO_DXDY                          0x00000400
-#define SO_CHARACTER_EXTRA               0x00000800
-#define SO_BREAK_EXTRA                   0x00001000
+#define SO_GLYPHINDEX_TEXTOUT                                      0x00000100
+#define SO_ESC_NOT_ORIENT                                          0x00000200
+#define SO_DXDY                                                                              0x00000400
+#define SO_CHARACTER_EXTRA                                         0x00000800
+#define SO_BREAK_EXTRA                                                          0x00001000
 
 typedef struct _STROBJ {
   ULONG  cGlyphs;
@@ -1045,20 +1045,20 @@ typedef struct _STROBJ {
 
 
 /* SURFOBJ.iType constants */
-#define STYPE_BITMAP                      __MSABI_LONG(0)
-#define STYPE_DEVICE                      __MSABI_LONG(1)
-#define STYPE_DEVBITMAP                   __MSABI_LONG(3)
+#define STYPE_BITMAP                                                             __MSABI_LONG(0)
+#define STYPE_DEVICE                                                             __MSABI_LONG(1)
+#define STYPE_DEVBITMAP                                                          __MSABI_LONG(3)
 
 /* SURFOBJ.fjBitmap constants */
-#define BMF_TOPDOWN                       0x0001
-#define BMF_NOZEROINIT                    0x0002
-#define BMF_DONTCACHE                     0x0004
-#define BMF_USERMEM                       0x0008
-#define BMF_KMSECTION                     0x0010
-#define BMF_NOTSYSMEM                     0x0020
-#define BMF_WINDOW_BLT                    0x0040
-#define BMF_UMPDMEM                       0x0080
-#define BMF_RESERVED                      0xFF00
+#define BMF_TOPDOWN                                                              0x0001
+#define BMF_NOZEROINIT                                                           0x0002
+#define BMF_DONTCACHE                                                            0x0004
+#define BMF_USERMEM                                                              0x0008
+#define BMF_KMSECTION                                                            0x0010
+#define BMF_NOTSYSMEM                                                            0x0020
+#define BMF_WINDOW_BLT                                                           0x0040
+#define BMF_UMPDMEM                                                              0x0080
+#define BMF_RESERVED                                                             0xFF00
 
 typedef struct _SURFOBJ {
   DHSURF  dhsurf;
@@ -1103,12 +1103,12 @@ typedef struct _XFORMOBJ {
 } XFORMOBJ;
 
 /* XLATEOBJ.flXlate constants */
-#define XO_TRIVIAL                        0x00000001
-#define XO_TABLE                          0x00000002
-#define XO_TO_MONO                        0x00000004
-#define XO_FROM_CMYK                      0x00000008
-#define XO_DEVICE_ICM                     0x00000010
-#define XO_HOST_ICM                       0x00000020
+#define XO_TRIVIAL                                                                            0x00000001
+#define XO_TABLE                                                                              0x00000002
+#define XO_TO_MONO                                                                            0x00000004
+#define XO_FROM_CMYK                                                             0x00000008
+#define XO_DEVICE_ICM                                                            0x00000010
+#define XO_HOST_ICM                                                              0x00000020
 
 typedef struct _XLATEOBJ {
   ULONG  iUniq;
@@ -1120,15 +1120,15 @@ typedef struct _XLATEOBJ {
 } XLATEOBJ;
 
 /* WNDOBJCHANGEPROC.fl constants */
-#define WOC_RGN_CLIENT_DELTA              0x00000001
-#define WOC_RGN_CLIENT                    0x00000002
-#define WOC_RGN_SURFACE_DELTA             0x00000004
-#define WOC_RGN_SURFACE                   0x00000008
-#define WOC_CHANGED                       0x00000010
-#define WOC_DELETE                        0x00000020
-#define WOC_DRAWN                         0x00000040
-#define WOC_SPRITE_OVERLAP                0x00000080
-#define WOC_SPRITE_NO_OVERLAP             0x00000100
+#define WOC_RGN_CLIENT_DELTA                                        0x00000001
+#define WOC_RGN_CLIENT                                                           0x00000002
+#define WOC_RGN_SURFACE_DELTA                                       0x00000004
+#define WOC_RGN_SURFACE                                                          0x00000008
+#define WOC_CHANGED                                                              0x00000010
+#define WOC_DELETE                                                                            0x00000020
+#define WOC_DRAWN                                                                             0x00000040
+#define WOC_SPRITE_OVERLAP                                          0x00000080
+#define WOC_SPRITE_NO_OVERLAP                                       0x00000100
 
 typedef VOID (APIENTRY CALLBACK *WNDOBJCHANGEPROC)(
   WNDOBJ  *pwo,
@@ -1169,16 +1169,16 @@ CLIPOBJ_bEnum(
   ULONG  *pv);
 
 /* CLIPOBJ_cEnumStart.iType constants */
-#define CT_RECTANGLES                     __MSABI_LONG(0)
+#define CT_RECTANGLES                                                            __MSABI_LONG(0)
 
 /* CLIPOBJ_cEnumStart.iDirection constants */
-#define CD_RIGHTDOWN                      0x00000000
-#define CD_LEFTDOWN                       0x00000001
-#define CD_LEFTWARDS                      0x00000001
-#define CD_RIGHTUP                        0x00000002
-#define CD_UPWARDS                        0x00000002
-#define CD_LEFTUP                         0x00000003
-#define CD_ANY                            0x00000004
+#define CD_RIGHTDOWN                                                             0x00000000
+#define CD_LEFTDOWN                                                              0x00000001
+#define CD_LEFTWARDS                                                             0x00000001
+#define CD_RIGHTUP                                                                            0x00000002
+#define CD_UPWARDS                                                                            0x00000002
+#define CD_LEFTUP                                                                             0x00000003
+#define CD_ANY                                                                                0x00000004
 
 WIN32KAPI
 ULONG
@@ -1202,8 +1202,8 @@ APIENTRY
 EngAcquireSemaphore(
   HSEMAPHORE  hsem);
 
-#define FL_ZERO_MEMORY                    0x00000001
-#define FL_NONPAGED_MEMORY                0x00000002
+#define FL_ZERO_MEMORY                                                           0x00000001
+#define FL_NONPAGED_MEMORY                                          0x00000002
 
 WIN32KAPI
 PVOID
@@ -1241,24 +1241,24 @@ EngAlphaBlend(
   BLENDOBJ  *pBlendObj);
 
 /* EngAssociateSurface.flHooks constants */
-#define HOOK_BITBLT                       0x00000001
-#define HOOK_STRETCHBLT                   0x00000002
-#define HOOK_PLGBLT                       0x00000004
-#define HOOK_TEXTOUT                      0x00000008
-#define HOOK_PAINT                        0x00000010
-#define HOOK_STROKEPATH                   0x00000020
-#define HOOK_FILLPATH                     0x00000040
-#define HOOK_STROKEANDFILLPATH            0x00000080
-#define HOOK_LINETO                       0x00000100
-#define HOOK_COPYBITS                     0x00000400
-#define HOOK_MOVEPANNING                  0x00000800
-#define HOOK_SYNCHRONIZE                  0x00001000
-#define HOOK_STRETCHBLTROP                0x00002000
-#define HOOK_SYNCHRONIZEACCESS            0x00004000
-#define HOOK_TRANSPARENTBLT               0x00008000
-#define HOOK_ALPHABLEND                   0x00010000
-#define HOOK_GRADIENTFILL                 0x00020000
-#define HOOK_FLAGS                        0x0003b5ff
+#define HOOK_BITBLT                                                              0x00000001
+#define HOOK_STRETCHBLT                                                          0x00000002
+#define HOOK_PLGBLT                                                              0x00000004
+#define HOOK_TEXTOUT                                                             0x00000008
+#define HOOK_PAINT                                                                            0x00000010
+#define HOOK_STROKEPATH                                                          0x00000020
+#define HOOK_FILLPATH                                                            0x00000040
+#define HOOK_STROKEANDFILLPATH                                      0x00000080
+#define HOOK_LINETO                                                              0x00000100
+#define HOOK_COPYBITS                                                            0x00000400
+#define HOOK_MOVEPANNING                                                         0x00000800
+#define HOOK_SYNCHRONIZE                                                         0x00001000
+#define HOOK_STRETCHBLTROP                                          0x00002000
+#define HOOK_SYNCHRONIZEACCESS                                      0x00004000
+#define HOOK_TRANSPARENTBLT                                         0x00008000
+#define HOOK_ALPHABLEND                                                          0x00010000
+#define HOOK_GRADIENTFILL                                           0x00020000
+#define HOOK_FLAGS                                                                            0x0003b5ff
 
 WIN32KAPI
 WINBOOL
@@ -1305,8 +1305,8 @@ EngComputeGlyphSet(
   INT  cChars);
 
 /* EngControlSprites.fl constants */
-#define ECS_TEARDOWN                      0x00000001
-#define ECS_REDRAW                        0x00000002
+#define ECS_TEARDOWN                                                             0x00000001
+#define ECS_REDRAW                                                                            0x00000002
 
 WIN32KAPI
 WINBOOL
@@ -1375,11 +1375,11 @@ EngCreateEvent(
   PEVENT  *ppEvent);
 
 /* EngCreatePalette.iMode constants */
-#define PAL_INDEXED                       0x00000001
-#define PAL_BITFIELDS                     0x00000002
-#define PAL_RGB                           0x00000004
-#define PAL_BGR                           0x00000008
-#define PAL_CMYK                          0x00000010
+#define PAL_INDEXED                                                              0x00000001
+#define PAL_BITFIELDS                                                            0x00000002
+#define PAL_RGB                                                                               0x00000004
+#define PAL_BGR                                                                               0x00000008
+#define PAL_CMYK                                                                              0x00000010
 
 WIN32KAPI
 HPALETTE
@@ -1405,15 +1405,15 @@ EngCreateSemaphore(
   VOID);
 
 /* EngCreateWnd.fl constants */
-#define WO_RGN_CLIENT_DELTA               0x00000001
-#define WO_RGN_CLIENT                     0x00000002
-#define WO_RGN_SURFACE_DELTA              0x00000004
-#define WO_RGN_SURFACE                    0x00000008
-#define WO_RGN_UPDATE_ALL                 0x00000010
-#define WO_RGN_WINDOW                     0x00000020
-#define WO_DRAW_NOTIFY                    0x00000040
-#define WO_SPRITE_NOTIFY                  0x00000080
-#define WO_RGN_DESKTOP_COORD              0x00000100
+#define WO_RGN_CLIENT_DELTA                                         0x00000001
+#define WO_RGN_CLIENT                                                            0x00000002
+#define WO_RGN_SURFACE_DELTA                                        0x00000004
+#define WO_RGN_SURFACE                                                           0x00000008
+#define WO_RGN_UPDATE_ALL                                           0x00000010
+#define WO_RGN_WINDOW                                                            0x00000020
+#define WO_DRAW_NOTIFY                                                           0x00000040
+#define WO_SPRITE_NOTIFY                                                         0x00000080
+#define WO_RGN_DESKTOP_COORD                                        0x00000100
 
 WIN32KAPI
 WNDOBJ*
@@ -1577,8 +1577,8 @@ EngFntCacheAlloc(
   ULONG  ulSize);
 
 /* EngFntCacheFault.iFaultMode constants */
-#define ENG_FNT_CACHE_READ_FAULT          0x00000001
-#define ENG_FNT_CACHE_WRITE_FAULT         0x00000002
+#define ENG_FNT_CACHE_READ_FAULT                       0x00000001
+#define ENG_FNT_CACHE_WRITE_FAULT                      0x00000002
 
 WIN32KAPI
 VOID
@@ -1746,8 +1746,8 @@ EngGradientFill(
   ULONG  ulMode);
 
 /* EngHangNotification return values */
-#define EHN_RESTORED                      0x00000000
-#define EHN_ERROR                         0x00000001
+#define EHN_RESTORED                                                             0x00000000
+#define EHN_ERROR                                                                             0x00000001
 
 WIN32KAPI
 ULONG
@@ -1879,8 +1879,8 @@ EngMarkBandingSurface(
   HSURF  hsurf);
 
 /* EngModifySurface.flSurface constants */
-#define MS_NOTSYSTEMMEMORY                0x00000001
-#define MS_SHAREDACCESS                   0x00000002
+#define MS_NOTSYSTEMMEMORY                                          0x00000001
+#define MS_SHAREDACCESS                                                          0x00000002
 
 WIN32KAPI
 WINBOOL
@@ -2030,9 +2030,9 @@ typedef enum _ENG_SYSTEM_ATTRIBUTE {
   EngOptimumAvailableSystemMemory,
 } ENG_SYSTEM_ATTRIBUTE;
 
-#define QSA_MMX                           0x00000100
-#define QSA_SSE                           0x00002000
-#define QSA_3DNOW                         0x00004000
+#define QSA_MMX                                                                               0x00000100
+#define QSA_SSE                                                                               0x00002000
+#define QSA_3DNOW                                                                             0x00004000
 
 WIN32KAPI
 WINBOOL
@@ -2472,27 +2472,27 @@ FLOATOBJ_SubLong(
 
 #else
 
-#define FLOATOBJ_SetFloat(pf, f)        {*(pf) = (f);}
-#define FLOATOBJ_SetLong(pf, l)         {*(pf) = (FLOAT)(l);}
-#define FLOATOBJ_GetFloat(pf)           (*(PULONG)(pf))
-#define FLOATOBJ_GetLong(pf)            ((LONG)*(pf))
-#define FLOATOBJ_Add(pf, pf1)           {*(pf) += *(pf1);}
-#define FLOATOBJ_AddFloat(pf, f)        {*(pf) += (f);}
-#define FLOATOBJ_AddLong(pf, l)         {*(pf) += (l);}
-#define FLOATOBJ_Sub(pf, pf1)           {*(pf) -= *(pf1);}
-#define FLOATOBJ_SubFloat(pf, f)        {*(pf) -= (f);}
-#define FLOATOBJ_SubLong(pf, l)         {*(pf) -= (l);}
-#define FLOATOBJ_Mul(pf, pf1)           {*(pf) *= *(pf1);}
-#define FLOATOBJ_MulFloat(pf, f)        {*(pf) *= (f);}
-#define FLOATOBJ_MulLong(pf, l)         {*(pf) *= (l);}
-#define FLOATOBJ_Div(pf, pf1)           {*(pf) /= *(pf1);}
-#define FLOATOBJ_DivFloat(pf, f)        {*(pf) /= (f);}
-#define FLOATOBJ_DivLong(pf, l)         {*(pf) /= (l);}
-#define FLOATOBJ_Neg(pf)                {*(pf) = -(*(pf));}
-#define FLOATOBJ_Equal(pf, pf1)         (*(pf) == *(pf1))
+#define FLOATOBJ_SetFloat(pf, f)                     {*(pf) = (f);}
+#define FLOATOBJ_SetLong(pf, l)                      {*(pf) = (FLOAT)(l);}
+#define FLOATOBJ_GetFloat(pf)                        (*(PULONG)(pf))
+#define FLOATOBJ_GetLong(pf)                                      ((LONG)*(pf))
+#define FLOATOBJ_Add(pf, pf1)                        {*(pf) += *(pf1);}
+#define FLOATOBJ_AddFloat(pf, f)                     {*(pf) += (f);}
+#define FLOATOBJ_AddLong(pf, l)                      {*(pf) += (l);}
+#define FLOATOBJ_Sub(pf, pf1)                        {*(pf) -= *(pf1);}
+#define FLOATOBJ_SubFloat(pf, f)                     {*(pf) -= (f);}
+#define FLOATOBJ_SubLong(pf, l)                      {*(pf) -= (l);}
+#define FLOATOBJ_Mul(pf, pf1)                        {*(pf) *= *(pf1);}
+#define FLOATOBJ_MulFloat(pf, f)                     {*(pf) *= (f);}
+#define FLOATOBJ_MulLong(pf, l)                      {*(pf) *= (l);}
+#define FLOATOBJ_Div(pf, pf1)                        {*(pf) /= *(pf1);}
+#define FLOATOBJ_DivFloat(pf, f)                     {*(pf) /= (f);}
+#define FLOATOBJ_DivLong(pf, l)                      {*(pf) /= (l);}
+#define FLOATOBJ_Neg(pf)                                          {*(pf) = -(*(pf));}
+#define FLOATOBJ_Equal(pf, pf1)                      (*(pf) == *(pf1))
 #define FLOATOBJ_GreaterThan(pf, pf1)   (*(pf) > *(pf1))
-#define FLOATOBJ_LessThan(pf, pf1)      (*(pf) < *(pf1))
-#define FLOATOBJ_EqualLong(pf, l)       (*(pf) == (FLOAT)(l))
+#define FLOATOBJ_LessThan(pf, pf1)                   (*(pf) < *(pf1))
+#define FLOATOBJ_EqualLong(pf, l)                    (*(pf) == (FLOAT)(l))
 #define FLOATOBJ_GreaterThanLong(pf, l) (*(pf) > (FLOAT)(l))
 #define FLOATOBJ_LessThanLong(pf, l)    (*(pf) < (FLOAT)(l))
 
@@ -2759,10 +2759,10 @@ WNDOBJ_vSetConsumer(
   PVOID  pvConsumer);
 
 /* XFORMOBJ_bApplyXform.iMode constants */
-#define XF_LTOL                           __MSABI_LONG(0)
-#define XF_INV_LTOL                       __MSABI_LONG(1)
-#define XF_LTOFX                          __MSABI_LONG(2)
-#define XF_INV_FXTOL                      __MSABI_LONG(3)
+#define XF_LTOL                                                                               __MSABI_LONG(0)
+#define XF_INV_LTOL                                                              __MSABI_LONG(1)
+#define XF_LTOFX                                                                              __MSABI_LONG(2)
+#define XF_INV_FXTOL                                                             __MSABI_LONG(3)
 
 WIN32KAPI
 WINBOOL
@@ -2789,11 +2789,11 @@ XFORMOBJ_iGetXform(
   XFORML  *pxform);
 
 /* XLATEOBJ_cGetPalette.iPal constants */
-#define XO_SRCPALETTE                     1
-#define XO_DESTPALETTE                    2
-#define XO_DESTDCPALETTE                  3
-#define XO_SRCBITFIELDS                   4
-#define XO_DESTBITFIELDS                  5
+#define XO_SRCPALETTE                                                            1
+#define XO_DESTPALETTE                                                           2
+#define XO_DESTDCPALETTE                                                         3
+#define XO_SRCBITFIELDS                                                          4
+#define XO_DESTBITFIELDS                                                         5
 
 WIN32KAPI
 ULONG
@@ -2921,8 +2921,8 @@ APIENTRY
 DrvDisableSurface(
   DHPDEV  dhpdev);
 
-#define DM_DEFAULT                        0x00000001
-#define DM_MONOCHROME                     0x00000002
+#define DM_DEFAULT                                                                            0x00000001
+#define DM_MONOCHROME                                                            0x00000002
 
 ULONG
 APIENTRY
@@ -2970,7 +2970,7 @@ DrvEnableSurface(
   DHPDEV  dhpdev);
 
 /* DrvEndDoc.fl constants */
-#define ED_ABORTDOC                       0x00000001
+#define ED_ABORTDOC                                                              0x00000001
 
 WINBOOL
 APIENTRY
@@ -3017,9 +3017,9 @@ DrvFree(
   ULONG_PTR  id);
 
 /* DrvGetGlyphMode return values */
-#define FO_HGLYPHS                        __MSABI_LONG(0)
-#define FO_GLYPHBITS                      __MSABI_LONG(1)
-#define FO_PATHOBJ                        __MSABI_LONG(2)
+#define FO_HGLYPHS                                                                            __MSABI_LONG(0)
+#define FO_GLYPHBITS                                                             __MSABI_LONG(1)
+#define FO_PATHOBJ                                                                            __MSABI_LONG(2)
 
 ULONG
 APIENTRY
@@ -3082,8 +3082,8 @@ DrvIcmDeleteColorTransform(
   HANDLE  hcmXform);
 
 /* DrvIcmSetDeviceGammaRamp.iFormat constants */
-#define IGRF_RGB_256BYTES                 0x00000000
-#define IGRF_RGB_256WORDS                 0x00000001
+#define IGRF_RGB_256BYTES                                           0x00000000
+#define IGRF_RGB_256WORDS                                           0x00000001
 
 WINBOOL
 APIENTRY
@@ -3170,8 +3170,8 @@ DrvPlgBlt(
   ULONG  iMode);
 
 /* DrvQueryAdvanceWidths.iMode constants */
-#define QAW_GETWIDTHS                     0
-#define QAW_GETEASYWIDTHS                 1
+#define QAW_GETWIDTHS                                                            0
+#define QAW_GETEASYWIDTHS                                           1
 
 WINBOOL
 APIENTRY
@@ -3184,8 +3184,8 @@ DrvQueryAdvanceWidths(
   ULONG  cGlyphs);
 
 /* DrvQueryDeviceSupport.iType constants */
-#define QDS_CHECKJPEGFORMAT               0x00000000
-#define QDS_CHECKPNGFORMAT                0x00000001
+#define QDS_CHECKJPEGFORMAT                                         0x00000000
+#define QDS_CHECKPNGFORMAT                                          0x00000001
 
 WINBOOL
 APIENTRY
@@ -3200,7 +3200,7 @@ DrvQueryDeviceSupport(
   PVOID  pvOut);
 
 /* DrvQueryDriverInfo.dwMode constants */
-#define DRVQUERY_USERMODE                 0x00000001
+#define DRVQUERY_USERMODE                                           0x00000001
 
 WINBOOL
 APIENTRY
@@ -3219,9 +3219,9 @@ DrvQueryFont(
   ULONG_PTR  *pid);
 
 /* DrvQueryFontCaps.pulCaps constants */
-#define QC_OUTLINES                       0x00000001
-#define QC_1BIT                           0x00000002
-#define QC_4BIT                           0x00000004
+#define QC_OUTLINES                                                              0x00000001
+#define QC_1BIT                                                                               0x00000002
+#define QC_4BIT                                                                               0x00000004
 
 #define QC_FONTDRIVERCAPS (QC_OUTLINES | QC_1BIT | QC_4BIT)
 
@@ -3232,14 +3232,14 @@ DrvQueryFontCaps(
   ULONG  *pulCaps);
 
 /* DrvQueryFontData.iMode constants */
-#define QFD_GLYPHANDBITMAP                __MSABI_LONG(1)
-#define QFD_GLYPHANDOUTLINE               __MSABI_LONG(2)
-#define QFD_MAXEXTENTS                    __MSABI_LONG(3)
-#define QFD_TT_GLYPHANDBITMAP             __MSABI_LONG(4)
-#define QFD_TT_GRAY1_BITMAP               __MSABI_LONG(5)
-#define QFD_TT_GRAY2_BITMAP               __MSABI_LONG(6)
-#define QFD_TT_GRAY4_BITMAP               __MSABI_LONG(8)
-#define QFD_TT_GRAY8_BITMAP               __MSABI_LONG(9)
+#define QFD_GLYPHANDBITMAP                                          __MSABI_LONG(1)
+#define QFD_GLYPHANDOUTLINE                                         __MSABI_LONG(2)
+#define QFD_MAXEXTENTS                                                           __MSABI_LONG(3)
+#define QFD_TT_GLYPHANDBITMAP                                       __MSABI_LONG(4)
+#define QFD_TT_GRAY1_BITMAP                                         __MSABI_LONG(5)
+#define QFD_TT_GRAY2_BITMAP                                         __MSABI_LONG(6)
+#define QFD_TT_GRAY4_BITMAP                                         __MSABI_LONG(8)
+#define QFD_TT_GRAY8_BITMAP                                         __MSABI_LONG(9)
 
 #define QFD_TT_MONO_BITMAP QFD_TT_GRAY1_BITMAP
 
@@ -3255,8 +3255,8 @@ DrvQueryFontData(
   ULONG  cjSize);
 
 /* DrvQueryFontFile.ulMode constants */
-#define QFF_DESCRIPTION                   0x00000001
-#define QFF_NUMFACES                      0x00000002
+#define QFF_DESCRIPTION                                                          0x00000001
+#define QFF_NUMFACES                                                             0x00000002
 
 LONG
 APIENTRY
@@ -3267,10 +3267,10 @@ DrvQueryFontFile(
   ULONG  *pulBuf);
 
 /* DrvQueryFontTree.iMode constants */
-#define QFT_UNICODE                       __MSABI_LONG(0)
-#define QFT_LIGATURES                     __MSABI_LONG(1)
-#define QFT_KERNPAIRS                     __MSABI_LONG(2)
-#define QFT_GLYPHSET                      __MSABI_LONG(3)
+#define QFT_UNICODE                                                              __MSABI_LONG(0)
+#define QFT_LIGATURES                                                            __MSABI_LONG(1)
+#define QFT_KERNPAIRS                                                            __MSABI_LONG(2)
+#define QFT_GLYPHSET                                                             __MSABI_LONG(3)
 
 PVOID
 APIENTRY
@@ -3294,9 +3294,9 @@ DrvQueryPerBandInfo(
   PERBANDINFO  *pbi);
 
 /* DrvQueryTrueTypeOutline.bMetricsOnly constants */
-#define TTO_METRICS_ONLY                  0x00000001
-#define TTO_QUBICS                        0x00000002
-#define TTO_UNHINTED                      0x00000004
+#define TTO_METRICS_ONLY                                                         0x00000001
+#define TTO_QUBICS                                                                            0x00000002
+#define TTO_UNHINTED                                                             0x00000004
 
 LONG
 APIENTRY
@@ -3322,9 +3322,9 @@ DrvQueryTrueTypeTable(
   ULONG *pcjTable);
 
 /* DrvRealizeBrush.iHatch constants */
-#define RB_DITHERCOLOR                    __MSABI_LONG(0x80000000)
+#define RB_DITHERCOLOR                                                           __MSABI_LONG(0x80000000)
 
-#define HS_DDI_MAX                        6
+#define HS_DDI_MAX                                                                            6
 
 WINBOOL
 APIENTRY
@@ -3337,8 +3337,8 @@ DrvRealizeBrush(
   ULONG  iHatch);
 
 /* DrvResetDevice return values */
-#define DRD_SUCCESS                       0
-#define DRD_ERROR                         1
+#define DRD_SUCCESS                                                              0
+#define DRD_ERROR                                                                             1
 
 ULONG
 APIENTRY
@@ -3353,9 +3353,9 @@ DrvResetPDEV(
   DHPDEV  dhpdevNew);
 
 /* DrvSaveScreenBits.iMode constants */
-#define SS_SAVE                           0x00000000
-#define SS_RESTORE                        0x00000001
-#define SS_FREE                           0x00000002
+#define SS_SAVE                                                                               0x00000000
+#define SS_RESTORE                                                                            0x00000001
+#define SS_FREE                                                                               0x00000002
 
 ULONG_PTR
 APIENTRY
@@ -3387,20 +3387,20 @@ DrvSetPixelFormat(
   HWND  hwnd);
 
 /* DrvSetPointerShape return values */
-#define SPS_ERROR                         0x00000000
-#define SPS_DECLINE                       0x00000001
-#define SPS_ACCEPT_NOEXCLUDE              0x00000002
-#define SPS_ACCEPT_EXCLUDE                0x00000003
-#define SPS_ACCEPT_SYNCHRONOUS            0x00000004
+#define SPS_ERROR                                                                             0x00000000
+#define SPS_DECLINE                                                              0x00000001
+#define SPS_ACCEPT_NOEXCLUDE                                        0x00000002
+#define SPS_ACCEPT_EXCLUDE                                          0x00000003
+#define SPS_ACCEPT_SYNCHRONOUS                                      0x00000004
 
 /* DrvSetPointerShape.fl constants */
-#define SPS_CHANGE                        __MSABI_LONG(0x00000001)
-#define SPS_ASYNCCHANGE                   __MSABI_LONG(0x00000002)
-#define SPS_ANIMATESTART                  __MSABI_LONG(0x00000004)
-#define SPS_ANIMATEUPDATE                 __MSABI_LONG(0x00000008)
-#define SPS_ALPHA                         __MSABI_LONG(0x00000010)
-#define SPS_LENGTHMASK                    __MSABI_LONG(0x00000F00)
-#define SPS_FREQMASK                      __MSABI_LONG(0x000FF000)
+#define SPS_CHANGE                                                                            __MSABI_LONG(0x00000001)
+#define SPS_ASYNCCHANGE                                                          __MSABI_LONG(0x00000002)
+#define SPS_ANIMATESTART                                                         __MSABI_LONG(0x00000004)
+#define SPS_ANIMATEUPDATE                                           __MSABI_LONG(0x00000008)
+#define SPS_ALPHA                                                                             __MSABI_LONG(0x00000010)
+#define SPS_LENGTHMASK                                                           __MSABI_LONG(0x00000F00)
+#define SPS_FREQMASK                                                             __MSABI_LONG(0x000FF000)
 
 ULONG
 APIENTRY
@@ -3505,8 +3505,8 @@ DrvSynchronize(
   RECTL  *prcl);
 
 /* DrvSynchronizeSurface.fl constants */
-#define DSS_TIMER_EVENT                   0x00000001
-#define DSS_FLUSH_EVENT                   0x00000002
+#define DSS_TIMER_EVENT                                                          0x00000001
+#define DSS_FLUSH_EVENT                                                          0x00000002
 
 VOID
 APIENTRY

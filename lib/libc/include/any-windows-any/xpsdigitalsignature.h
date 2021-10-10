@@ -204,55 +204,55 @@ MIDL_INTERFACE("7718eae4-3215-49be-af5b-594fef7fcfa6")
 IXpsSigningOptions : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSignatureId(
-        LPWSTR *signatureId) = 0;
+                     LPWSTR *signatureId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignatureId(
-        LPCWSTR signatureId) = 0;
+                     LPCWSTR signatureId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureMethod(
-        LPWSTR *signatureMethod) = 0;
+                     LPWSTR *signatureMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignatureMethod(
-        LPCWSTR signatureMethod) = 0;
+                     LPCWSTR signatureMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDigestMethod(
-        LPWSTR *digestMethod) = 0;
+                     LPWSTR *digestMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDigestMethod(
-        LPCWSTR digestMethod) = 0;
+                     LPCWSTR digestMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignaturePartName(
-        IOpcPartUri **signaturePartName) = 0;
+                     IOpcPartUri **signaturePartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignaturePartName(
-        IOpcPartUri *signaturePartName) = 0;
+                     IOpcPartUri *signaturePartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPolicy(
-        XPS_SIGN_POLICY *policy) = 0;
+                     XPS_SIGN_POLICY *policy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPolicy(
-        XPS_SIGN_POLICY policy) = 0;
+                     XPS_SIGN_POLICY policy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSigningTimeFormat(
-        OPC_SIGNATURE_TIME_FORMAT *timeFormat) = 0;
+                     OPC_SIGNATURE_TIME_FORMAT *timeFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSigningTimeFormat(
-        OPC_SIGNATURE_TIME_FORMAT timeFormat) = 0;
+                     OPC_SIGNATURE_TIME_FORMAT timeFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCustomObjects(
-        IOpcSignatureCustomObjectSet **customObjectSet) = 0;
+                     IOpcSignatureCustomObjectSet **customObjectSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCustomReferences(
-        IOpcSignatureReferenceSet **customReferenceSet) = 0;
+                     IOpcSignatureReferenceSet **customReferenceSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCertificateSet(
-        IOpcCertificateSet **certificateSet) = 0;
+                     IOpcCertificateSet **certificateSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFlags(
-        XPS_SIGN_FLAGS *flags) = 0;
+                     XPS_SIGN_FLAGS *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFlags(
-        XPS_SIGN_FLAGS flags) = 0;
+                     XPS_SIGN_FLAGS flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -264,84 +264,84 @@ typedef struct IXpsSigningOptionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsSigningOptions *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsSigningOptions *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsSigningOptions *This);
+                     IXpsSigningOptions *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsSigningOptions *This);
+                     IXpsSigningOptions *This);
 
     /*** IXpsSigningOptions methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSignatureId)(
-        IXpsSigningOptions *This,
-        LPWSTR *signatureId);
+                     IXpsSigningOptions *This,
+                     LPWSTR *signatureId);
 
     HRESULT (STDMETHODCALLTYPE *SetSignatureId)(
-        IXpsSigningOptions *This,
-        LPCWSTR signatureId);
+                     IXpsSigningOptions *This,
+                     LPCWSTR signatureId);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureMethod)(
-        IXpsSigningOptions *This,
-        LPWSTR *signatureMethod);
+                     IXpsSigningOptions *This,
+                     LPWSTR *signatureMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetSignatureMethod)(
-        IXpsSigningOptions *This,
-        LPCWSTR signatureMethod);
+                     IXpsSigningOptions *This,
+                     LPCWSTR signatureMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetDigestMethod)(
-        IXpsSigningOptions *This,
-        LPWSTR *digestMethod);
+                     IXpsSigningOptions *This,
+                     LPWSTR *digestMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetDigestMethod)(
-        IXpsSigningOptions *This,
-        LPCWSTR digestMethod);
+                     IXpsSigningOptions *This,
+                     LPCWSTR digestMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetSignaturePartName)(
-        IXpsSigningOptions *This,
-        IOpcPartUri **signaturePartName);
+                     IXpsSigningOptions *This,
+                     IOpcPartUri **signaturePartName);
 
     HRESULT (STDMETHODCALLTYPE *SetSignaturePartName)(
-        IXpsSigningOptions *This,
-        IOpcPartUri *signaturePartName);
+                     IXpsSigningOptions *This,
+                     IOpcPartUri *signaturePartName);
 
     HRESULT (STDMETHODCALLTYPE *GetPolicy)(
-        IXpsSigningOptions *This,
-        XPS_SIGN_POLICY *policy);
+                     IXpsSigningOptions *This,
+                     XPS_SIGN_POLICY *policy);
 
     HRESULT (STDMETHODCALLTYPE *SetPolicy)(
-        IXpsSigningOptions *This,
-        XPS_SIGN_POLICY policy);
+                     IXpsSigningOptions *This,
+                     XPS_SIGN_POLICY policy);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningTimeFormat)(
-        IXpsSigningOptions *This,
-        OPC_SIGNATURE_TIME_FORMAT *timeFormat);
+                     IXpsSigningOptions *This,
+                     OPC_SIGNATURE_TIME_FORMAT *timeFormat);
 
     HRESULT (STDMETHODCALLTYPE *SetSigningTimeFormat)(
-        IXpsSigningOptions *This,
-        OPC_SIGNATURE_TIME_FORMAT timeFormat);
+                     IXpsSigningOptions *This,
+                     OPC_SIGNATURE_TIME_FORMAT timeFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetCustomObjects)(
-        IXpsSigningOptions *This,
-        IOpcSignatureCustomObjectSet **customObjectSet);
+                     IXpsSigningOptions *This,
+                     IOpcSignatureCustomObjectSet **customObjectSet);
 
     HRESULT (STDMETHODCALLTYPE *GetCustomReferences)(
-        IXpsSigningOptions *This,
-        IOpcSignatureReferenceSet **customReferenceSet);
+                     IXpsSigningOptions *This,
+                     IOpcSignatureReferenceSet **customReferenceSet);
 
     HRESULT (STDMETHODCALLTYPE *GetCertificateSet)(
-        IXpsSigningOptions *This,
-        IOpcCertificateSet **certificateSet);
+                     IXpsSigningOptions *This,
+                     IOpcCertificateSet **certificateSet);
 
     HRESULT (STDMETHODCALLTYPE *GetFlags)(
-        IXpsSigningOptions *This,
-        XPS_SIGN_FLAGS *flags);
+                     IXpsSigningOptions *This,
+                     XPS_SIGN_FLAGS *flags);
 
     HRESULT (STDMETHODCALLTYPE *SetFlags)(
-        IXpsSigningOptions *This,
-        XPS_SIGN_FLAGS flags);
+                     IXpsSigningOptions *This,
+                     XPS_SIGN_FLAGS flags);
 
     END_INTERFACE
 } IXpsSigningOptionsVtbl;
@@ -457,44 +457,44 @@ MIDL_INTERFACE("6ae4c93e-1ade-42fb-898b-3a5658284857")
 IXpsSignature : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSignatureId(
-        LPWSTR *sigId) = 0;
+                     LPWSTR *sigId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureValue(
-        UINT8 **signatureHashValue,
-        UINT32 *count) = 0;
+                     UINT8 **signatureHashValue,
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCertificateEnumerator(
-        IOpcCertificateEnumerator **certificateEnumerator) = 0;
+                     IOpcCertificateEnumerator **certificateEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSigningTime(
-        LPWSTR *sigDateTimeString) = 0;
+                     LPWSTR *sigDateTimeString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSigningTimeFormat(
-        OPC_SIGNATURE_TIME_FORMAT *timeFormat) = 0;
+                     OPC_SIGNATURE_TIME_FORMAT *timeFormat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignaturePartName(
-        IOpcPartUri **signaturePartName) = 0;
+                     IOpcPartUri **signaturePartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Verify(
-        const CERT_CONTEXT *x509Certificate,
-        XPS_SIGNATURE_STATUS *sigStatus) = 0;
+                     const CERT_CONTEXT *x509Certificate,
+                     XPS_SIGNATURE_STATUS *sigStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPolicy(
-        XPS_SIGN_POLICY *policy) = 0;
+                     XPS_SIGN_POLICY *policy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCustomObjectEnumerator(
-        IOpcSignatureCustomObjectEnumerator **customObjectEnumerator) = 0;
+                     IOpcSignatureCustomObjectEnumerator **customObjectEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCustomReferenceEnumerator(
-        IOpcSignatureReferenceEnumerator **customReferenceEnumerator) = 0;
+                     IOpcSignatureReferenceEnumerator **customReferenceEnumerator) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureXml(
-        UINT8 **signatureXml,
-        UINT32 *count) = 0;
+                     UINT8 **signatureXml,
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignatureXml(
-        const UINT8 *signatureXml,
-        UINT32 count) = 0;
+                     const UINT8 *signatureXml,
+                     UINT32 count) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -506,68 +506,68 @@ typedef struct IXpsSignatureVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsSignature *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsSignature *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsSignature *This);
+                     IXpsSignature *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsSignature *This);
+                     IXpsSignature *This);
 
     /*** IXpsSignature methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSignatureId)(
-        IXpsSignature *This,
-        LPWSTR *sigId);
+                     IXpsSignature *This,
+                     LPWSTR *sigId);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureValue)(
-        IXpsSignature *This,
-        UINT8 **signatureHashValue,
-        UINT32 *count);
+                     IXpsSignature *This,
+                     UINT8 **signatureHashValue,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetCertificateEnumerator)(
-        IXpsSignature *This,
-        IOpcCertificateEnumerator **certificateEnumerator);
+                     IXpsSignature *This,
+                     IOpcCertificateEnumerator **certificateEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningTime)(
-        IXpsSignature *This,
-        LPWSTR *sigDateTimeString);
+                     IXpsSignature *This,
+                     LPWSTR *sigDateTimeString);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningTimeFormat)(
-        IXpsSignature *This,
-        OPC_SIGNATURE_TIME_FORMAT *timeFormat);
+                     IXpsSignature *This,
+                     OPC_SIGNATURE_TIME_FORMAT *timeFormat);
 
     HRESULT (STDMETHODCALLTYPE *GetSignaturePartName)(
-        IXpsSignature *This,
-        IOpcPartUri **signaturePartName);
+                     IXpsSignature *This,
+                     IOpcPartUri **signaturePartName);
 
     HRESULT (STDMETHODCALLTYPE *Verify)(
-        IXpsSignature *This,
-        const CERT_CONTEXT *x509Certificate,
-        XPS_SIGNATURE_STATUS *sigStatus);
+                     IXpsSignature *This,
+                     const CERT_CONTEXT *x509Certificate,
+                     XPS_SIGNATURE_STATUS *sigStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetPolicy)(
-        IXpsSignature *This,
-        XPS_SIGN_POLICY *policy);
+                     IXpsSignature *This,
+                     XPS_SIGN_POLICY *policy);
 
     HRESULT (STDMETHODCALLTYPE *GetCustomObjectEnumerator)(
-        IXpsSignature *This,
-        IOpcSignatureCustomObjectEnumerator **customObjectEnumerator);
+                     IXpsSignature *This,
+                     IOpcSignatureCustomObjectEnumerator **customObjectEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetCustomReferenceEnumerator)(
-        IXpsSignature *This,
-        IOpcSignatureReferenceEnumerator **customReferenceEnumerator);
+                     IXpsSignature *This,
+                     IOpcSignatureReferenceEnumerator **customReferenceEnumerator);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureXml)(
-        IXpsSignature *This,
-        UINT8 **signatureXml,
-        UINT32 *count);
+                     IXpsSignature *This,
+                     UINT8 **signatureXml,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *SetSignatureXml)(
-        IXpsSignature *This,
-        const UINT8 *signatureXml,
-        UINT32 count);
+                     IXpsSignature *This,
+                     const UINT8 *signatureXml,
+                     UINT32 count);
 
     END_INTERFACE
 } IXpsSignatureVtbl;
@@ -663,20 +663,20 @@ MIDL_INTERFACE("151fac09-0b97-4ac6-a323-5e4297d4322b")
 IXpsSignatureBlock : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetRequests(
-        IXpsSignatureRequestCollection **requests) = 0;
+                     IXpsSignatureRequestCollection **requests) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPartName(
-        IOpcPartUri **partName) = 0;
+                     IOpcPartUri **partName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDocumentIndex(
-        UINT32 *fixedDocumentIndex) = 0;
+                     UINT32 *fixedDocumentIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDocumentName(
-        IOpcPartUri **fixedDocumentName) = 0;
+                     IOpcPartUri **fixedDocumentName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRequest(
-        LPCWSTR requestId,
-        IXpsSignatureRequest **signatureRequest) = 0;
+                     LPCWSTR requestId,
+                     IXpsSignatureRequest **signatureRequest) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -688,37 +688,37 @@ typedef struct IXpsSignatureBlockVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsSignatureBlock *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsSignatureBlock *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsSignatureBlock *This);
+                     IXpsSignatureBlock *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsSignatureBlock *This);
+                     IXpsSignatureBlock *This);
 
     /*** IXpsSignatureBlock methods ***/
     HRESULT (STDMETHODCALLTYPE *GetRequests)(
-        IXpsSignatureBlock *This,
-        IXpsSignatureRequestCollection **requests);
+                     IXpsSignatureBlock *This,
+                     IXpsSignatureRequestCollection **requests);
 
     HRESULT (STDMETHODCALLTYPE *GetPartName)(
-        IXpsSignatureBlock *This,
-        IOpcPartUri **partName);
+                     IXpsSignatureBlock *This,
+                     IOpcPartUri **partName);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentIndex)(
-        IXpsSignatureBlock *This,
-        UINT32 *fixedDocumentIndex);
+                     IXpsSignatureBlock *This,
+                     UINT32 *fixedDocumentIndex);
 
     HRESULT (STDMETHODCALLTYPE *GetDocumentName)(
-        IXpsSignatureBlock *This,
-        IOpcPartUri **fixedDocumentName);
+                     IXpsSignatureBlock *This,
+                     IOpcPartUri **fixedDocumentName);
 
     HRESULT (STDMETHODCALLTYPE *CreateRequest)(
-        IXpsSignatureBlock *This,
-        LPCWSTR requestId,
-        IXpsSignatureRequest **signatureRequest);
+                     IXpsSignatureBlock *This,
+                     LPCWSTR requestId,
+                     IXpsSignatureRequest **signatureRequest);
 
     END_INTERFACE
 } IXpsSignatureBlockVtbl;
@@ -786,14 +786,14 @@ MIDL_INTERFACE("23397050-fe99-467a-8dce-9237f074ffe4")
 IXpsSignatureBlockCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsSignatureBlock **signatureBlock) = 0;
+                     UINT32 index,
+                     IXpsSignatureBlock **signatureBlock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -805,29 +805,29 @@ typedef struct IXpsSignatureBlockCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsSignatureBlockCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsSignatureBlockCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsSignatureBlockCollection *This);
+                     IXpsSignatureBlockCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsSignatureBlockCollection *This);
+                     IXpsSignatureBlockCollection *This);
 
     /*** IXpsSignatureBlockCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsSignatureBlockCollection *This,
-        UINT32 *count);
+                     IXpsSignatureBlockCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsSignatureBlockCollection *This,
-        UINT32 index,
-        IXpsSignatureBlock **signatureBlock);
+                     IXpsSignatureBlockCollection *This,
+                     UINT32 index,
+                     IXpsSignatureBlock **signatureBlock);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsSignatureBlockCollection *This,
-        UINT32 index);
+                     IXpsSignatureBlockCollection *This,
+                     UINT32 index);
 
     END_INTERFACE
 } IXpsSignatureBlockCollectionVtbl;
@@ -887,14 +887,14 @@ MIDL_INTERFACE("a2d1d95d-add2-4dff-ab27-6b9c645ff322")
 IXpsSignatureCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsSignature **signature) = 0;
+                     UINT32 index,
+                     IXpsSignature **signature) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -906,29 +906,29 @@ typedef struct IXpsSignatureCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsSignatureCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsSignatureCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsSignatureCollection *This);
+                     IXpsSignatureCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsSignatureCollection *This);
+                     IXpsSignatureCollection *This);
 
     /*** IXpsSignatureCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsSignatureCollection *This,
-        UINT32 *count);
+                     IXpsSignatureCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsSignatureCollection *This,
-        UINT32 index,
-        IXpsSignature **signature);
+                     IXpsSignatureCollection *This,
+                     UINT32 index,
+                     IXpsSignature **signature);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsSignatureCollection *This,
-        UINT32 index);
+                     IXpsSignatureCollection *This,
+                     UINT32 index);
 
     END_INTERFACE
 } IXpsSignatureCollectionVtbl;
@@ -988,43 +988,43 @@ MIDL_INTERFACE("d3e8d338-fdc4-4afc-80b5-d532a1782ee1")
 IXpsSignatureManager : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE LoadPackageFile(
-        LPCWSTR fileName) = 0;
+                     LPCWSTR fileName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LoadPackageStream(
-        IStream *stream) = 0;
+                     IStream *stream) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Sign(
-        IXpsSigningOptions *signOptions,
-        const CERT_CONTEXT *x509Certificate,
-        IXpsSignature **signature) = 0;
+                     IXpsSigningOptions *signOptions,
+                     const CERT_CONTEXT *x509Certificate,
+                     IXpsSignature **signature) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureOriginPartName(
-        IOpcPartUri **signatureOriginPartName) = 0;
+                     IOpcPartUri **signatureOriginPartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignatureOriginPartName(
-        IOpcPartUri *signatureOriginPartName) = 0;
+                     IOpcPartUri *signatureOriginPartName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatures(
-        IXpsSignatureCollection **signatures) = 0;
+                     IXpsSignatureCollection **signatures) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddSignatureBlock(
-        IOpcPartUri *partName,
-        UINT32 fixedDocumentIndex,
-        IXpsSignatureBlock **signatureBlock) = 0;
+                     IOpcPartUri *partName,
+                     UINT32 fixedDocumentIndex,
+                     IXpsSignatureBlock **signatureBlock) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignatureBlocks(
-        IXpsSignatureBlockCollection **signatureBlocks) = 0;
+                     IXpsSignatureBlockCollection **signatureBlocks) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateSigningOptions(
-        IXpsSigningOptions **signingOptions) = 0;
+                     IXpsSigningOptions **signingOptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SavePackageToFile(
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes) = 0;
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SavePackageToStream(
-        IStream *stream) = 0;
+                     IStream *stream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1036,66 +1036,66 @@ typedef struct IXpsSignatureManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsSignatureManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsSignatureManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsSignatureManager *This);
+                     IXpsSignatureManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsSignatureManager *This);
+                     IXpsSignatureManager *This);
 
     /*** IXpsSignatureManager methods ***/
     HRESULT (STDMETHODCALLTYPE *LoadPackageFile)(
-        IXpsSignatureManager *This,
-        LPCWSTR fileName);
+                     IXpsSignatureManager *This,
+                     LPCWSTR fileName);
 
     HRESULT (STDMETHODCALLTYPE *LoadPackageStream)(
-        IXpsSignatureManager *This,
-        IStream *stream);
+                     IXpsSignatureManager *This,
+                     IStream *stream);
 
     HRESULT (STDMETHODCALLTYPE *Sign)(
-        IXpsSignatureManager *This,
-        IXpsSigningOptions *signOptions,
-        const CERT_CONTEXT *x509Certificate,
-        IXpsSignature **signature);
+                     IXpsSignatureManager *This,
+                     IXpsSigningOptions *signOptions,
+                     const CERT_CONTEXT *x509Certificate,
+                     IXpsSignature **signature);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureOriginPartName)(
-        IXpsSignatureManager *This,
-        IOpcPartUri **signatureOriginPartName);
+                     IXpsSignatureManager *This,
+                     IOpcPartUri **signatureOriginPartName);
 
     HRESULT (STDMETHODCALLTYPE *SetSignatureOriginPartName)(
-        IXpsSignatureManager *This,
-        IOpcPartUri *signatureOriginPartName);
+                     IXpsSignatureManager *This,
+                     IOpcPartUri *signatureOriginPartName);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatures)(
-        IXpsSignatureManager *This,
-        IXpsSignatureCollection **signatures);
+                     IXpsSignatureManager *This,
+                     IXpsSignatureCollection **signatures);
 
     HRESULT (STDMETHODCALLTYPE *AddSignatureBlock)(
-        IXpsSignatureManager *This,
-        IOpcPartUri *partName,
-        UINT32 fixedDocumentIndex,
-        IXpsSignatureBlock **signatureBlock);
+                     IXpsSignatureManager *This,
+                     IOpcPartUri *partName,
+                     UINT32 fixedDocumentIndex,
+                     IXpsSignatureBlock **signatureBlock);
 
     HRESULT (STDMETHODCALLTYPE *GetSignatureBlocks)(
-        IXpsSignatureManager *This,
-        IXpsSignatureBlockCollection **signatureBlocks);
+                     IXpsSignatureManager *This,
+                     IXpsSignatureBlockCollection **signatureBlocks);
 
     HRESULT (STDMETHODCALLTYPE *CreateSigningOptions)(
-        IXpsSignatureManager *This,
-        IXpsSigningOptions **signingOptions);
+                     IXpsSignatureManager *This,
+                     IXpsSigningOptions **signingOptions);
 
     HRESULT (STDMETHODCALLTYPE *SavePackageToFile)(
-        IXpsSignatureManager *This,
-        LPCWSTR fileName,
-        LPSECURITY_ATTRIBUTES securityAttributes,
-        DWORD flagsAndAttributes);
+                     IXpsSignatureManager *This,
+                     LPCWSTR fileName,
+                     LPSECURITY_ATTRIBUTES securityAttributes,
+                     DWORD flagsAndAttributes);
 
     HRESULT (STDMETHODCALLTYPE *SavePackageToStream)(
-        IXpsSignatureManager *This,
-        IStream *stream);
+                     IXpsSignatureManager *This,
+                     IStream *stream);
 
     END_INTERFACE
 } IXpsSignatureManagerVtbl;
@@ -1187,45 +1187,45 @@ MIDL_INTERFACE("ac58950b-7208-4b2d-b2c4-951083d3b8eb")
 IXpsSignatureRequest : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetIntent(
-        LPWSTR *intent) = 0;
+                     LPWSTR *intent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIntent(
-        LPCWSTR intent) = 0;
+                     LPCWSTR intent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRequestedSigner(
-        LPWSTR *signerName) = 0;
+                     LPWSTR *signerName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRequestedSigner(
-        LPCWSTR signerName) = 0;
+                     LPCWSTR signerName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRequestSignByDate(
-        LPWSTR *dateString) = 0;
+                     LPWSTR *dateString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetRequestSignByDate(
-        LPCWSTR dateString) = 0;
+                     LPCWSTR dateString) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSigningLocale(
-        LPWSTR *place) = 0;
+                     LPWSTR *place) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSigningLocale(
-        LPCWSTR place) = 0;
+                     LPCWSTR place) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSpotLocation(
-        INT32 *pageIndex,
-        IOpcPartUri **pagePartName,
-        float *x,
-        float *y) = 0;
+                     INT32 *pageIndex,
+                     IOpcPartUri **pagePartName,
+                     float *x,
+                     float *y) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSpotLocation(
-        INT32 pageIndex,
-        float x,
-        float y) = 0;
+                     INT32 pageIndex,
+                     float x,
+                     float y) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRequestId(
-        LPWSTR *requestId) = 0;
+                     LPWSTR *requestId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignature(
-        IXpsSignature **signature) = 0;
+                     IXpsSignature **signature) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1237,69 +1237,69 @@ typedef struct IXpsSignatureRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsSignatureRequest *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsSignatureRequest *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsSignatureRequest *This);
+                     IXpsSignatureRequest *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsSignatureRequest *This);
+                     IXpsSignatureRequest *This);
 
     /*** IXpsSignatureRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIntent)(
-        IXpsSignatureRequest *This,
-        LPWSTR *intent);
+                     IXpsSignatureRequest *This,
+                     LPWSTR *intent);
 
     HRESULT (STDMETHODCALLTYPE *SetIntent)(
-        IXpsSignatureRequest *This,
-        LPCWSTR intent);
+                     IXpsSignatureRequest *This,
+                     LPCWSTR intent);
 
     HRESULT (STDMETHODCALLTYPE *GetRequestedSigner)(
-        IXpsSignatureRequest *This,
-        LPWSTR *signerName);
+                     IXpsSignatureRequest *This,
+                     LPWSTR *signerName);
 
     HRESULT (STDMETHODCALLTYPE *SetRequestedSigner)(
-        IXpsSignatureRequest *This,
-        LPCWSTR signerName);
+                     IXpsSignatureRequest *This,
+                     LPCWSTR signerName);
 
     HRESULT (STDMETHODCALLTYPE *GetRequestSignByDate)(
-        IXpsSignatureRequest *This,
-        LPWSTR *dateString);
+                     IXpsSignatureRequest *This,
+                     LPWSTR *dateString);
 
     HRESULT (STDMETHODCALLTYPE *SetRequestSignByDate)(
-        IXpsSignatureRequest *This,
-        LPCWSTR dateString);
+                     IXpsSignatureRequest *This,
+                     LPCWSTR dateString);
 
     HRESULT (STDMETHODCALLTYPE *GetSigningLocale)(
-        IXpsSignatureRequest *This,
-        LPWSTR *place);
+                     IXpsSignatureRequest *This,
+                     LPWSTR *place);
 
     HRESULT (STDMETHODCALLTYPE *SetSigningLocale)(
-        IXpsSignatureRequest *This,
-        LPCWSTR place);
+                     IXpsSignatureRequest *This,
+                     LPCWSTR place);
 
     HRESULT (STDMETHODCALLTYPE *GetSpotLocation)(
-        IXpsSignatureRequest *This,
-        INT32 *pageIndex,
-        IOpcPartUri **pagePartName,
-        float *x,
-        float *y);
+                     IXpsSignatureRequest *This,
+                     INT32 *pageIndex,
+                     IOpcPartUri **pagePartName,
+                     float *x,
+                     float *y);
 
     HRESULT (STDMETHODCALLTYPE *SetSpotLocation)(
-        IXpsSignatureRequest *This,
-        INT32 pageIndex,
-        float x,
-        float y);
+                     IXpsSignatureRequest *This,
+                     INT32 pageIndex,
+                     float x,
+                     float y);
 
     HRESULT (STDMETHODCALLTYPE *GetRequestId)(
-        IXpsSignatureRequest *This,
-        LPWSTR *requestId);
+                     IXpsSignatureRequest *This,
+                     LPWSTR *requestId);
 
     HRESULT (STDMETHODCALLTYPE *GetSignature)(
-        IXpsSignatureRequest *This,
-        IXpsSignature **signature);
+                     IXpsSignatureRequest *This,
+                     IXpsSignature **signature);
 
     END_INTERFACE
 } IXpsSignatureRequestVtbl;
@@ -1395,14 +1395,14 @@ MIDL_INTERFACE("f0253e68-9f19-412e-9b4f-54d3b0ac6cd9")
 IXpsSignatureRequestCollection : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT32 *count) = 0;
+                     UINT32 *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT32 index,
-        IXpsSignatureRequest **signatureRequest) = 0;
+                     UINT32 index,
+                     IXpsSignatureRequest **signatureRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveAt(
-        UINT32 index) = 0;
+                     UINT32 index) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1414,29 +1414,29 @@ typedef struct IXpsSignatureRequestCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IXpsSignatureRequestCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IXpsSignatureRequestCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IXpsSignatureRequestCollection *This);
+                     IXpsSignatureRequestCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IXpsSignatureRequestCollection *This);
+                     IXpsSignatureRequestCollection *This);
 
     /*** IXpsSignatureRequestCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IXpsSignatureRequestCollection *This,
-        UINT32 *count);
+                     IXpsSignatureRequestCollection *This,
+                     UINT32 *count);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IXpsSignatureRequestCollection *This,
-        UINT32 index,
-        IXpsSignatureRequest **signatureRequest);
+                     IXpsSignatureRequestCollection *This,
+                     UINT32 index,
+                     IXpsSignatureRequest **signatureRequest);
 
     HRESULT (STDMETHODCALLTYPE *RemoveAt)(
-        IXpsSignatureRequestCollection *This,
-        UINT32 index);
+                     IXpsSignatureRequestCollection *This,
+                     UINT32 index);
 
     END_INTERFACE
 } IXpsSignatureRequestCollectionVtbl;

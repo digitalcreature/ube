@@ -37,13 +37,13 @@ typedef VOID (WDSCLIAPI *PFN_WdsCliTraceFunction)(
 
 typedef enum _WDS_LOG_LEVEL {
   WDS_LOG_LEVEL_DISABLED   = 0,
-  WDS_LOG_LEVEL_ERROR      = 1,
+  WDS_LOG_LEVEL_ERROR                   = 1,
   WDS_LOG_LEVEL_WARNING    = 2,
-  WDS_LOG_LEVEL_INFO       = 3 
+  WDS_LOG_LEVEL_INFO                    = 3 
 } WDS_LOG_LEVEL;
 
 typedef enum _WDS_LOG_TYPE_CLIENT {
-  WDS_LOG_TYPE_CLIENT_ERROR             = 1,
+  WDS_LOG_TYPE_CLIENT_ERROR                                       = 1,
   WDS_LOG_TYPE_CLIENT_STARTED,
   WDS_LOG_TYPE_CLIENT_FINISHED,
   WDS_LOG_TYPE_CLIENT_IMAGE_SELECTED,

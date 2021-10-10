@@ -18,30 +18,30 @@ pub const Fnv1a_128 = Fnv1a(u128, 0x1000000000000000000013b, 0x6c62272e07bb01426
 
 fn Fnv1a(comptime T: type, comptime prime: T, comptime offset: T) type {
     return struct {
-        const Self = @This();
+                     const Self = @This();
 
-        value: T,
+                     value: T,
 
-        pub fn init() Self {
-            return Self{ .value = offset };
-        }
+                     pub fn init() Self {
+                                      return Self{ .value = offset };
+                     }
 
-        pub fn update(self: *Self, input: []const u8) void {
-            for (input) |b| {
-                self.value ^= b;
-                self.value *%= prime;
-            }
-        }
+                     pub fn update(self: *Self, input: []const u8) void {
+                                      for (input) |b| {
+                                          self.value ^= b;
+                                          self.value *%= prime;
+                                      }
+                     }
 
-        pub fn final(self: *Self) T {
-            return self.value;
-        }
+                     pub fn final(self: *Self) T {
+                                      return self.value;
+                     }
 
-        pub fn hash(input: []const u8) T {
-            var c = Self.init();
-            c.update(input);
-            return c.final();
-        }
+                     pub fn hash(input: []const u8) T {
+                                      var c = Self.init();
+                                      c.update(input);
+                                      return c.final();
+                     }
     };
 }
 

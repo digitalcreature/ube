@@ -78,16 +78,16 @@ long double tanhl(long double x)
   {
     _SET_ERRNO (ERANGE);
     if (x > 0)
-      return (1.0L);
+                   return (1.0L);
     else
-      return (-1.0L);
+                   return (-1.0L);
   }
   if (z >= 0.625L)
   {
     s = expl(2.0*z);
     z =  1.0L  - 2.0/(s + 1.0L);
     if (x < 0)
-      z = -z;
+                   z = -z;
   }
   else
   {

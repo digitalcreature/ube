@@ -276,10 +276,10 @@ extern "C" {
 #else
   typedef struct IXATransLookupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IXATransLookup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IXATransLookup *This);
-      ULONG (WINAPI *Release)(IXATransLookup *This);
-      HRESULT (WINAPI *Lookup)(IXATransLookup *This,ITransaction **ppTransaction);
+                   HRESULT (WINAPI *QueryInterface)(IXATransLookup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IXATransLookup *This);
+                   ULONG (WINAPI *Release)(IXATransLookup *This);
+                   HRESULT (WINAPI *Lookup)(IXATransLookup *This,ITransaction **ppTransaction);
     END_INTERFACE
   } IXATransLookupVtbl;
   struct IXATransLookup {
@@ -307,10 +307,10 @@ extern "C" {
 #else
   typedef struct IXATransLookup2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IXATransLookup2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IXATransLookup2 *This);
-      ULONG (WINAPI *Release)(IXATransLookup2 *This);
-      HRESULT (WINAPI *Lookup)(IXATransLookup2 *This,XID *pXID,ITransaction **ppTransaction);
+                   HRESULT (WINAPI *QueryInterface)(IXATransLookup2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IXATransLookup2 *This);
+                   ULONG (WINAPI *Release)(IXATransLookup2 *This);
+                   HRESULT (WINAPI *Lookup)(IXATransLookup2 *This,XID *pXID,ITransaction **ppTransaction);
     END_INTERFACE
   } IXATransLookup2Vtbl;
   struct IXATransLookup2 {
@@ -338,10 +338,10 @@ extern "C" {
 #else
   typedef struct IResourceManagerSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResourceManagerSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResourceManagerSink *This);
-      ULONG (WINAPI *Release)(IResourceManagerSink *This);
-      HRESULT (WINAPI *TMDown)(IResourceManagerSink *This);
+                   HRESULT (WINAPI *QueryInterface)(IResourceManagerSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResourceManagerSink *This);
+                   ULONG (WINAPI *Release)(IResourceManagerSink *This);
+                   HRESULT (WINAPI *TMDown)(IResourceManagerSink *This);
     END_INTERFACE
   } IResourceManagerSinkVtbl;
   struct IResourceManagerSink {
@@ -371,13 +371,13 @@ extern "C" {
 #else
   typedef struct IResourceManagerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResourceManager *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResourceManager *This);
-      ULONG (WINAPI *Release)(IResourceManager *This);
-      HRESULT (WINAPI *Enlist)(IResourceManager *This,ITransaction *pTransaction,ITransactionResourceAsync *pRes,XACTUOW *pUOW,LONG *pisoLevel,ITransactionEnlistmentAsync **ppEnlist);
-      HRESULT (WINAPI *Reenlist)(IResourceManager *This,byte *pPrepInfo,ULONG cbPrepInfo,DWORD lTimeout,XACTSTAT *pXactStat);
-      HRESULT (WINAPI *ReenlistmentComplete)(IResourceManager *This);
-      HRESULT (WINAPI *GetDistributedTransactionManager)(IResourceManager *This,REFIID iid,void **ppvObject);
+                   HRESULT (WINAPI *QueryInterface)(IResourceManager *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResourceManager *This);
+                   ULONG (WINAPI *Release)(IResourceManager *This);
+                   HRESULT (WINAPI *Enlist)(IResourceManager *This,ITransaction *pTransaction,ITransactionResourceAsync *pRes,XACTUOW *pUOW,LONG *pisoLevel,ITransactionEnlistmentAsync **ppEnlist);
+                   HRESULT (WINAPI *Reenlist)(IResourceManager *This,byte *pPrepInfo,ULONG cbPrepInfo,DWORD lTimeout,XACTSTAT *pXactStat);
+                   HRESULT (WINAPI *ReenlistmentComplete)(IResourceManager *This);
+                   HRESULT (WINAPI *GetDistributedTransactionManager)(IResourceManager *This,REFIID iid,void **ppvObject);
     END_INTERFACE
   } IResourceManagerVtbl;
   struct IResourceManager {
@@ -415,11 +415,11 @@ extern "C" {
 #else
   typedef struct ILastResourceManagerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ILastResourceManager *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ILastResourceManager *This);
-      ULONG (WINAPI *Release)(ILastResourceManager *This);
-      HRESULT (WINAPI *TransactionCommitted)(ILastResourceManager *This,byte *pPrepInfo,ULONG cbPrepInfo);
-      HRESULT (WINAPI *RecoveryDone)(ILastResourceManager *This);
+                   HRESULT (WINAPI *QueryInterface)(ILastResourceManager *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ILastResourceManager *This);
+                   ULONG (WINAPI *Release)(ILastResourceManager *This);
+                   HRESULT (WINAPI *TransactionCommitted)(ILastResourceManager *This,byte *pPrepInfo,ULONG cbPrepInfo);
+                   HRESULT (WINAPI *RecoveryDone)(ILastResourceManager *This);
     END_INTERFACE
   } ILastResourceManagerVtbl;
   struct ILastResourceManager {
@@ -451,15 +451,15 @@ extern "C" {
 #else
   typedef struct IResourceManager2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResourceManager2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResourceManager2 *This);
-      ULONG (WINAPI *Release)(IResourceManager2 *This);
-      HRESULT (WINAPI *Enlist)(IResourceManager2 *This,ITransaction *pTransaction,ITransactionResourceAsync *pRes,XACTUOW *pUOW,LONG *pisoLevel,ITransactionEnlistmentAsync **ppEnlist);
-      HRESULT (WINAPI *Reenlist)(IResourceManager2 *This,byte *pPrepInfo,ULONG cbPrepInfo,DWORD lTimeout,XACTSTAT *pXactStat);
-      HRESULT (WINAPI *ReenlistmentComplete)(IResourceManager2 *This);
-      HRESULT (WINAPI *GetDistributedTransactionManager)(IResourceManager2 *This,REFIID iid,void **ppvObject);
-      HRESULT (WINAPI *Enlist2)(IResourceManager2 *This,ITransaction *pTransaction,ITransactionResourceAsync *pResAsync,XACTUOW *pUOW,LONG *pisoLevel,XID *pXid,ITransactionEnlistmentAsync **ppEnlist);
-      HRESULT (WINAPI *Reenlist2)(IResourceManager2 *This,XID *pXid,DWORD dwTimeout,XACTSTAT *pXactStat);
+                   HRESULT (WINAPI *QueryInterface)(IResourceManager2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResourceManager2 *This);
+                   ULONG (WINAPI *Release)(IResourceManager2 *This);
+                   HRESULT (WINAPI *Enlist)(IResourceManager2 *This,ITransaction *pTransaction,ITransactionResourceAsync *pRes,XACTUOW *pUOW,LONG *pisoLevel,ITransactionEnlistmentAsync **ppEnlist);
+                   HRESULT (WINAPI *Reenlist)(IResourceManager2 *This,byte *pPrepInfo,ULONG cbPrepInfo,DWORD lTimeout,XACTSTAT *pXactStat);
+                   HRESULT (WINAPI *ReenlistmentComplete)(IResourceManager2 *This);
+                   HRESULT (WINAPI *GetDistributedTransactionManager)(IResourceManager2 *This,REFIID iid,void **ppvObject);
+                   HRESULT (WINAPI *Enlist2)(IResourceManager2 *This,ITransaction *pTransaction,ITransactionResourceAsync *pResAsync,XACTUOW *pUOW,LONG *pisoLevel,XID *pXid,ITransactionEnlistmentAsync **ppEnlist);
+                   HRESULT (WINAPI *Reenlist2)(IResourceManager2 *This,XID *pXid,DWORD dwTimeout,XACTSTAT *pXactStat);
     END_INTERFACE
   } IResourceManager2Vtbl;
   struct IResourceManager2 {
@@ -495,11 +495,11 @@ extern "C" {
 #else
   typedef struct IXAConfigVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IXAConfig *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IXAConfig *This);
-      ULONG (WINAPI *Release)(IXAConfig *This);
-      HRESULT (WINAPI *Initialize)(IXAConfig *This,GUID clsidHelperDll);
-      HRESULT (WINAPI *Terminate)(IXAConfig *This);
+                   HRESULT (WINAPI *QueryInterface)(IXAConfig *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IXAConfig *This);
+                   ULONG (WINAPI *Release)(IXAConfig *This);
+                   HRESULT (WINAPI *Initialize)(IXAConfig *This,GUID clsidHelperDll);
+                   HRESULT (WINAPI *Terminate)(IXAConfig *This);
     END_INTERFACE
   } IXAConfigVtbl;
   struct IXAConfig {
@@ -531,11 +531,11 @@ extern "C" {
 #else
   typedef struct IRMHelperVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRMHelper *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRMHelper *This);
-      ULONG (WINAPI *Release)(IRMHelper *This);
-      HRESULT (WINAPI *RMCount)(IRMHelper *This,DWORD dwcTotalNumberOfRMs);
-      HRESULT (WINAPI *RMInfo)(IRMHelper *This,xa_switch_t *pXa_Switch,WINBOOL fCDeclCallingConv,char *pszOpenString,char *pszCloseString,GUID guidRMRecovery);
+                   HRESULT (WINAPI *QueryInterface)(IRMHelper *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRMHelper *This);
+                   ULONG (WINAPI *Release)(IRMHelper *This);
+                   HRESULT (WINAPI *RMCount)(IRMHelper *This,DWORD dwcTotalNumberOfRMs);
+                   HRESULT (WINAPI *RMInfo)(IRMHelper *This,xa_switch_t *pXa_Switch,WINBOOL fCDeclCallingConv,char *pszOpenString,char *pszCloseString,GUID guidRMRecovery);
     END_INTERFACE
   } IRMHelperVtbl;
   struct IRMHelper {
@@ -566,10 +566,10 @@ extern "C" {
 #else
   typedef struct IXAObtainRMInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IXAObtainRMInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IXAObtainRMInfo *This);
-      ULONG (WINAPI *Release)(IXAObtainRMInfo *This);
-      HRESULT (WINAPI *ObtainRMInfo)(IXAObtainRMInfo *This,IRMHelper *pIRMHelper);
+                   HRESULT (WINAPI *QueryInterface)(IXAObtainRMInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IXAObtainRMInfo *This);
+                   ULONG (WINAPI *Release)(IXAObtainRMInfo *This);
+                   HRESULT (WINAPI *ObtainRMInfo)(IXAObtainRMInfo *This,IRMHelper *pIRMHelper);
     END_INTERFACE
   } IXAObtainRMInfoVtbl;
   struct IXAObtainRMInfo {
@@ -597,10 +597,10 @@ extern "C" {
 #else
   typedef struct IResourceManagerFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResourceManagerFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResourceManagerFactory *This);
-      ULONG (WINAPI *Release)(IResourceManagerFactory *This);
-      HRESULT (WINAPI *Create)(IResourceManagerFactory *This,GUID *pguidRM,CHAR *pszRMName,IResourceManagerSink *pIResMgrSink,IResourceManager **ppResMgr);
+                   HRESULT (WINAPI *QueryInterface)(IResourceManagerFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResourceManagerFactory *This);
+                   ULONG (WINAPI *Release)(IResourceManagerFactory *This);
+                   HRESULT (WINAPI *Create)(IResourceManagerFactory *This,GUID *pguidRM,CHAR *pszRMName,IResourceManagerSink *pIResMgrSink,IResourceManager **ppResMgr);
     END_INTERFACE
   } IResourceManagerFactoryVtbl;
   struct IResourceManagerFactory {
@@ -628,11 +628,11 @@ extern "C" {
 #else
   typedef struct IResourceManagerFactory2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IResourceManagerFactory2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IResourceManagerFactory2 *This);
-      ULONG (WINAPI *Release)(IResourceManagerFactory2 *This);
-      HRESULT (WINAPI *Create)(IResourceManagerFactory2 *This,GUID *pguidRM,CHAR *pszRMName,IResourceManagerSink *pIResMgrSink,IResourceManager **ppResMgr);
-      HRESULT (WINAPI *CreateEx)(IResourceManagerFactory2 *This,GUID *pguidRM,CHAR *pszRMName,IResourceManagerSink *pIResMgrSink,REFIID riidRequested,void **ppvResMgr);
+                   HRESULT (WINAPI *QueryInterface)(IResourceManagerFactory2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IResourceManagerFactory2 *This);
+                   ULONG (WINAPI *Release)(IResourceManagerFactory2 *This);
+                   HRESULT (WINAPI *Create)(IResourceManagerFactory2 *This,GUID *pguidRM,CHAR *pszRMName,IResourceManagerSink *pIResMgrSink,IResourceManager **ppResMgr);
+                   HRESULT (WINAPI *CreateEx)(IResourceManagerFactory2 *This,GUID *pguidRM,CHAR *pszRMName,IResourceManagerSink *pIResMgrSink,REFIID riidRequested,void **ppvResMgr);
     END_INTERFACE
   } IResourceManagerFactory2Vtbl;
   struct IResourceManagerFactory2 {
@@ -662,11 +662,11 @@ extern "C" {
 #else
   typedef struct IPrepareInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPrepareInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPrepareInfo *This);
-      ULONG (WINAPI *Release)(IPrepareInfo *This);
-      HRESULT (WINAPI *GetPrepareInfoSize)(IPrepareInfo *This,ULONG *pcbPrepInfo);
-      HRESULT (WINAPI *GetPrepareInfo)(IPrepareInfo *This,byte *pPrepInfo);
+                   HRESULT (WINAPI *QueryInterface)(IPrepareInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPrepareInfo *This);
+                   ULONG (WINAPI *Release)(IPrepareInfo *This);
+                   HRESULT (WINAPI *GetPrepareInfoSize)(IPrepareInfo *This,ULONG *pcbPrepInfo);
+                   HRESULT (WINAPI *GetPrepareInfo)(IPrepareInfo *This,byte *pPrepInfo);
     END_INTERFACE
   } IPrepareInfoVtbl;
   struct IPrepareInfo {
@@ -698,11 +698,11 @@ extern "C" {
 #else
   typedef struct IPrepareInfo2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPrepareInfo2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPrepareInfo2 *This);
-      ULONG (WINAPI *Release)(IPrepareInfo2 *This);
-      HRESULT (WINAPI *GetPrepareInfoSize)(IPrepareInfo2 *This,ULONG *pcbPrepInfo);
-      HRESULT (WINAPI *GetPrepareInfo)(IPrepareInfo2 *This,ULONG cbPrepareInfo,byte *pPrepInfo);
+                   HRESULT (WINAPI *QueryInterface)(IPrepareInfo2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPrepareInfo2 *This);
+                   ULONG (WINAPI *Release)(IPrepareInfo2 *This);
+                   HRESULT (WINAPI *GetPrepareInfoSize)(IPrepareInfo2 *This,ULONG *pcbPrepInfo);
+                   HRESULT (WINAPI *GetPrepareInfo)(IPrepareInfo2 *This,ULONG cbPrepareInfo,byte *pPrepInfo);
     END_INTERFACE
   } IPrepareInfo2Vtbl;
   struct IPrepareInfo2 {
@@ -733,10 +733,10 @@ extern "C" {
 #else
   typedef struct IGetDispenserVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IGetDispenser *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IGetDispenser *This);
-      ULONG (WINAPI *Release)(IGetDispenser *This);
-      HRESULT (WINAPI *GetDispenser)(IGetDispenser *This,REFIID iid,void **ppvObject);
+                   HRESULT (WINAPI *QueryInterface)(IGetDispenser *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IGetDispenser *This);
+                   ULONG (WINAPI *Release)(IGetDispenser *This);
+                   HRESULT (WINAPI *GetDispenser)(IGetDispenser *This,REFIID iid,void **ppvObject);
     END_INTERFACE
   } IGetDispenserVtbl;
   struct IGetDispenser {
@@ -764,10 +764,10 @@ extern "C" {
 #else
   typedef struct ITransactionVoterBallotAsync2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionVoterBallotAsync2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionVoterBallotAsync2 *This);
-      ULONG (WINAPI *Release)(ITransactionVoterBallotAsync2 *This);
-      HRESULT (WINAPI *VoteRequestDone)(ITransactionVoterBallotAsync2 *This,HRESULT hr,BOID *pboidReason);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionVoterBallotAsync2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionVoterBallotAsync2 *This);
+                   ULONG (WINAPI *Release)(ITransactionVoterBallotAsync2 *This);
+                   HRESULT (WINAPI *VoteRequestDone)(ITransactionVoterBallotAsync2 *This,HRESULT hr,BOID *pboidReason);
     END_INTERFACE
   } ITransactionVoterBallotAsync2Vtbl;
   struct ITransactionVoterBallotAsync2 {
@@ -795,14 +795,14 @@ extern "C" {
 #else
   typedef struct ITransactionVoterNotifyAsync2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionVoterNotifyAsync2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionVoterNotifyAsync2 *This);
-      ULONG (WINAPI *Release)(ITransactionVoterNotifyAsync2 *This);
-      HRESULT (WINAPI *Committed)(ITransactionVoterNotifyAsync2 *This,WINBOOL fRetaining,XACTUOW *pNewUOW,HRESULT hr);
-      HRESULT (WINAPI *Aborted)(ITransactionVoterNotifyAsync2 *This,BOID *pboidReason,WINBOOL fRetaining,XACTUOW *pNewUOW,HRESULT hr);
-      HRESULT (WINAPI *HeuristicDecision)(ITransactionVoterNotifyAsync2 *This,DWORD dwDecision,BOID *pboidReason,HRESULT hr);
-      HRESULT (WINAPI *Indoubt)(ITransactionVoterNotifyAsync2 *This);
-      HRESULT (WINAPI *VoteRequest)(ITransactionVoterNotifyAsync2 *This);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionVoterNotifyAsync2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionVoterNotifyAsync2 *This);
+                   ULONG (WINAPI *Release)(ITransactionVoterNotifyAsync2 *This);
+                   HRESULT (WINAPI *Committed)(ITransactionVoterNotifyAsync2 *This,WINBOOL fRetaining,XACTUOW *pNewUOW,HRESULT hr);
+                   HRESULT (WINAPI *Aborted)(ITransactionVoterNotifyAsync2 *This,BOID *pboidReason,WINBOOL fRetaining,XACTUOW *pNewUOW,HRESULT hr);
+                   HRESULT (WINAPI *HeuristicDecision)(ITransactionVoterNotifyAsync2 *This,DWORD dwDecision,BOID *pboidReason,HRESULT hr);
+                   HRESULT (WINAPI *Indoubt)(ITransactionVoterNotifyAsync2 *This);
+                   HRESULT (WINAPI *VoteRequest)(ITransactionVoterNotifyAsync2 *This);
     END_INTERFACE
   } ITransactionVoterNotifyAsync2Vtbl;
   struct ITransactionVoterNotifyAsync2 {
@@ -834,10 +834,10 @@ extern "C" {
 #else
   typedef struct ITransactionVoterFactory2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionVoterFactory2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionVoterFactory2 *This);
-      ULONG (WINAPI *Release)(ITransactionVoterFactory2 *This);
-      HRESULT (WINAPI *Create)(ITransactionVoterFactory2 *This,ITransaction *pTransaction,ITransactionVoterNotifyAsync2 *pVoterNotify,ITransactionVoterBallotAsync2 **ppVoterBallot);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionVoterFactory2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionVoterFactory2 *This);
+                   ULONG (WINAPI *Release)(ITransactionVoterFactory2 *This);
+                   HRESULT (WINAPI *Create)(ITransactionVoterFactory2 *This,ITransaction *pTransaction,ITransactionVoterNotifyAsync2 *pVoterNotify,ITransactionVoterBallotAsync2 **ppVoterBallot);
     END_INTERFACE
   } ITransactionVoterFactory2Vtbl;
   struct ITransactionVoterFactory2 {
@@ -869,14 +869,14 @@ extern "C" {
 #else
   typedef struct ITransactionPhase0EnlistmentAsyncVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionPhase0EnlistmentAsync *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionPhase0EnlistmentAsync *This);
-      ULONG (WINAPI *Release)(ITransactionPhase0EnlistmentAsync *This);
-      HRESULT (WINAPI *Enable)(ITransactionPhase0EnlistmentAsync *This);
-      HRESULT (WINAPI *WaitForEnlistment)(ITransactionPhase0EnlistmentAsync *This);
-      HRESULT (WINAPI *Phase0Done)(ITransactionPhase0EnlistmentAsync *This);
-      HRESULT (WINAPI *Unenlist)(ITransactionPhase0EnlistmentAsync *This);
-      HRESULT (WINAPI *GetTransaction)(ITransactionPhase0EnlistmentAsync *This,ITransaction **ppITransaction);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionPhase0EnlistmentAsync *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionPhase0EnlistmentAsync *This);
+                   ULONG (WINAPI *Release)(ITransactionPhase0EnlistmentAsync *This);
+                   HRESULT (WINAPI *Enable)(ITransactionPhase0EnlistmentAsync *This);
+                   HRESULT (WINAPI *WaitForEnlistment)(ITransactionPhase0EnlistmentAsync *This);
+                   HRESULT (WINAPI *Phase0Done)(ITransactionPhase0EnlistmentAsync *This);
+                   HRESULT (WINAPI *Unenlist)(ITransactionPhase0EnlistmentAsync *This);
+                   HRESULT (WINAPI *GetTransaction)(ITransactionPhase0EnlistmentAsync *This,ITransaction **ppITransaction);
     END_INTERFACE
   } ITransactionPhase0EnlistmentAsyncVtbl;
   struct ITransactionPhase0EnlistmentAsync {
@@ -917,11 +917,11 @@ extern "C" {
 #else
   typedef struct ITransactionPhase0NotifyAsyncVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionPhase0NotifyAsync *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionPhase0NotifyAsync *This);
-      ULONG (WINAPI *Release)(ITransactionPhase0NotifyAsync *This);
-      HRESULT (WINAPI *Phase0Request)(ITransactionPhase0NotifyAsync *This,WINBOOL fAbortingHint);
-      HRESULT (WINAPI *EnlistCompleted)(ITransactionPhase0NotifyAsync *This,HRESULT status);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionPhase0NotifyAsync *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionPhase0NotifyAsync *This);
+                   ULONG (WINAPI *Release)(ITransactionPhase0NotifyAsync *This);
+                   HRESULT (WINAPI *Phase0Request)(ITransactionPhase0NotifyAsync *This,WINBOOL fAbortingHint);
+                   HRESULT (WINAPI *EnlistCompleted)(ITransactionPhase0NotifyAsync *This,HRESULT status);
     END_INTERFACE
   } ITransactionPhase0NotifyAsyncVtbl;
   struct ITransactionPhase0NotifyAsync {
@@ -952,10 +952,10 @@ extern "C" {
 #else
   typedef struct ITransactionPhase0FactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionPhase0Factory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionPhase0Factory *This);
-      ULONG (WINAPI *Release)(ITransactionPhase0Factory *This);
-      HRESULT (WINAPI *Create)(ITransactionPhase0Factory *This,ITransactionPhase0NotifyAsync *pPhase0Notify,ITransactionPhase0EnlistmentAsync **ppPhase0Enlistment);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionPhase0Factory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionPhase0Factory *This);
+                   ULONG (WINAPI *Release)(ITransactionPhase0Factory *This);
+                   HRESULT (WINAPI *Create)(ITransactionPhase0Factory *This,ITransactionPhase0NotifyAsync *pPhase0Notify,ITransactionPhase0EnlistmentAsync **ppPhase0Enlistment);
     END_INTERFACE
   } ITransactionPhase0FactoryVtbl;
   struct ITransactionPhase0Factory {
@@ -987,14 +987,14 @@ extern "C" {
 #else
   typedef struct ITransactionTransmitterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionTransmitter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionTransmitter *This);
-      ULONG (WINAPI *Release)(ITransactionTransmitter *This);
-      HRESULT (WINAPI *Set)(ITransactionTransmitter *This,ITransaction *pTransaction);
-      HRESULT (WINAPI *GetPropagationTokenSize)(ITransactionTransmitter *This,ULONG *pcbToken);
-      HRESULT (WINAPI *MarshalPropagationToken)(ITransactionTransmitter *This,ULONG cbToken,byte *rgbToken,ULONG *pcbUsed);
-      HRESULT (WINAPI *UnmarshalReturnToken)(ITransactionTransmitter *This,ULONG cbReturnToken,byte *rgbReturnToken);
-      HRESULT (WINAPI *Reset)(ITransactionTransmitter *This);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionTransmitter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionTransmitter *This);
+                   ULONG (WINAPI *Release)(ITransactionTransmitter *This);
+                   HRESULT (WINAPI *Set)(ITransactionTransmitter *This,ITransaction *pTransaction);
+                   HRESULT (WINAPI *GetPropagationTokenSize)(ITransactionTransmitter *This,ULONG *pcbToken);
+                   HRESULT (WINAPI *MarshalPropagationToken)(ITransactionTransmitter *This,ULONG cbToken,byte *rgbToken,ULONG *pcbUsed);
+                   HRESULT (WINAPI *UnmarshalReturnToken)(ITransactionTransmitter *This,ULONG cbReturnToken,byte *rgbReturnToken);
+                   HRESULT (WINAPI *Reset)(ITransactionTransmitter *This);
     END_INTERFACE
   } ITransactionTransmitterVtbl;
   struct ITransactionTransmitter {
@@ -1034,10 +1034,10 @@ extern "C" {
 #else
   typedef struct ITransactionTransmitterFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionTransmitterFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionTransmitterFactory *This);
-      ULONG (WINAPI *Release)(ITransactionTransmitterFactory *This);
-      HRESULT (WINAPI *Create)(ITransactionTransmitterFactory *This,ITransactionTransmitter **ppTransmitter);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionTransmitterFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionTransmitterFactory *This);
+                   ULONG (WINAPI *Release)(ITransactionTransmitterFactory *This);
+                   HRESULT (WINAPI *Create)(ITransactionTransmitterFactory *This,ITransactionTransmitter **ppTransmitter);
     END_INTERFACE
   } ITransactionTransmitterFactoryVtbl;
   struct ITransactionTransmitterFactory {
@@ -1068,13 +1068,13 @@ extern "C" {
 #else
   typedef struct ITransactionReceiverVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionReceiver *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionReceiver *This);
-      ULONG (WINAPI *Release)(ITransactionReceiver *This);
-      HRESULT (WINAPI *UnmarshalPropagationToken)(ITransactionReceiver *This,ULONG cbToken,byte *rgbToken,ITransaction **ppTransaction);
-      HRESULT (WINAPI *GetReturnTokenSize)(ITransactionReceiver *This,ULONG *pcbReturnToken);
-      HRESULT (WINAPI *MarshalReturnToken)(ITransactionReceiver *This,ULONG cbReturnToken,byte *rgbReturnToken,ULONG *pcbUsed);
-      HRESULT (WINAPI *Reset)(ITransactionReceiver *This);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionReceiver *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionReceiver *This);
+                   ULONG (WINAPI *Release)(ITransactionReceiver *This);
+                   HRESULT (WINAPI *UnmarshalPropagationToken)(ITransactionReceiver *This,ULONG cbToken,byte *rgbToken,ITransaction **ppTransaction);
+                   HRESULT (WINAPI *GetReturnTokenSize)(ITransactionReceiver *This,ULONG *pcbReturnToken);
+                   HRESULT (WINAPI *MarshalReturnToken)(ITransactionReceiver *This,ULONG cbReturnToken,byte *rgbReturnToken,ULONG *pcbUsed);
+                   HRESULT (WINAPI *Reset)(ITransactionReceiver *This);
     END_INTERFACE
   } ITransactionReceiverVtbl;
   struct ITransactionReceiver {
@@ -1111,10 +1111,10 @@ extern "C" {
 #else
   typedef struct ITransactionReceiverFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITransactionReceiverFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITransactionReceiverFactory *This);
-      ULONG (WINAPI *Release)(ITransactionReceiverFactory *This);
-      HRESULT (WINAPI *Create)(ITransactionReceiverFactory *This,ITransactionReceiver **ppReceiver);
+                   HRESULT (WINAPI *QueryInterface)(ITransactionReceiverFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITransactionReceiverFactory *This);
+                   ULONG (WINAPI *Release)(ITransactionReceiverFactory *This);
+                   HRESULT (WINAPI *Create)(ITransactionReceiverFactory *This,ITransactionReceiver **ppReceiver);
     END_INTERFACE
   } ITransactionReceiverFactoryVtbl;
   struct ITransactionReceiverFactory {
@@ -1149,11 +1149,11 @@ extern "C" {
 #else
   typedef struct IDtcLuConfigureVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuConfigure *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuConfigure *This);
-      ULONG (WINAPI *Release)(IDtcLuConfigure *This);
-      HRESULT (WINAPI *Add)(IDtcLuConfigure *This,byte *pucLuPair,DWORD cbLuPair);
-      HRESULT (WINAPI *Delete)(IDtcLuConfigure *This,byte *pucLuPair,DWORD cbLuPair);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuConfigure *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuConfigure *This);
+                   ULONG (WINAPI *Release)(IDtcLuConfigure *This);
+                   HRESULT (WINAPI *Add)(IDtcLuConfigure *This,byte *pucLuPair,DWORD cbLuPair);
+                   HRESULT (WINAPI *Delete)(IDtcLuConfigure *This,byte *pucLuPair,DWORD cbLuPair);
     END_INTERFACE
   } IDtcLuConfigureVtbl;
   struct IDtcLuConfigure {
@@ -1182,9 +1182,9 @@ extern "C" {
 #else
   typedef struct IDtcLuRecoveryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRecovery *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRecovery *This);
-      ULONG (WINAPI *Release)(IDtcLuRecovery *This);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRecovery *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRecovery *This);
+                   ULONG (WINAPI *Release)(IDtcLuRecovery *This);
     END_INTERFACE
   } IDtcLuRecoveryVtbl;
   struct IDtcLuRecovery {
@@ -1209,10 +1209,10 @@ extern "C" {
 #else
   typedef struct IDtcLuRecoveryFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRecoveryFactory *This);
-      ULONG (WINAPI *Release)(IDtcLuRecoveryFactory *This);
-      HRESULT (WINAPI *Create)(IDtcLuRecoveryFactory *This,byte *pucLuPair,DWORD cbLuPair,IDtcLuRecovery **ppRecovery);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRecoveryFactory *This);
+                   ULONG (WINAPI *Release)(IDtcLuRecoveryFactory *This);
+                   HRESULT (WINAPI *Create)(IDtcLuRecoveryFactory *This,byte *pucLuPair,DWORD cbLuPair,IDtcLuRecovery **ppRecovery);
     END_INTERFACE
   } IDtcLuRecoveryFactoryVtbl;
   struct IDtcLuRecoveryFactory {
@@ -1300,22 +1300,22 @@ extern "C" {
 #else
   typedef struct IDtcLuRecoveryInitiatedByDtcTransWorkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByDtcTransWork *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByDtcTransWork *This);
-      ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByDtcTransWork *This);
-      HRESULT (WINAPI *GetLogNameSizes)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DWORD *pcbOurLogName,DWORD *pcbRemoteLogName);
-      HRESULT (WINAPI *GetOurXln)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUXLN *pXln,unsigned char *pOurLogName,unsigned char *pRemoteLogName,DWORD *pdwProtocol);
-      HRESULT (WINAPI *HandleConfirmationFromOurXln)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUXLNCONFIRMATION Confirmation);
-      HRESULT (WINAPI *HandleTheirXlnResponse)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUXLN Xln,unsigned char *pRemoteLogName,DWORD cbRemoteLogName,DWORD dwProtocol,DTCLUXLNCONFIRMATION *pConfirmation);
-      HRESULT (WINAPI *HandleErrorFromOurXln)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUXLNERROR Error);
-      HRESULT (WINAPI *CheckForCompareStates)(IDtcLuRecoveryInitiatedByDtcTransWork *This,WINBOOL *fCompareStates);
-      HRESULT (WINAPI *GetOurTransIdSize)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DWORD *pcbOurTransId);
-      HRESULT (WINAPI *GetOurCompareStates)(IDtcLuRecoveryInitiatedByDtcTransWork *This,unsigned char *pOurTransId,DTCLUCOMPARESTATE *pCompareState);
-      HRESULT (WINAPI *HandleTheirCompareStatesResponse)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUCOMPARESTATE CompareState,DTCLUCOMPARESTATESCONFIRMATION *pConfirmation);
-      HRESULT (WINAPI *HandleErrorFromOurCompareStates)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUCOMPARESTATESERROR Error);
-      HRESULT (WINAPI *ConversationLost)(IDtcLuRecoveryInitiatedByDtcTransWork *This);
-      HRESULT (WINAPI *GetRecoverySeqNum)(IDtcLuRecoveryInitiatedByDtcTransWork *This,LONG *plRecoverySeqNum);
-      HRESULT (WINAPI *ObsoleteRecoverySeqNum)(IDtcLuRecoveryInitiatedByDtcTransWork *This,LONG lNewRecoverySeqNum);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByDtcTransWork *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByDtcTransWork *This);
+                   ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByDtcTransWork *This);
+                   HRESULT (WINAPI *GetLogNameSizes)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DWORD *pcbOurLogName,DWORD *pcbRemoteLogName);
+                   HRESULT (WINAPI *GetOurXln)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUXLN *pXln,unsigned char *pOurLogName,unsigned char *pRemoteLogName,DWORD *pdwProtocol);
+                   HRESULT (WINAPI *HandleConfirmationFromOurXln)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUXLNCONFIRMATION Confirmation);
+                   HRESULT (WINAPI *HandleTheirXlnResponse)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUXLN Xln,unsigned char *pRemoteLogName,DWORD cbRemoteLogName,DWORD dwProtocol,DTCLUXLNCONFIRMATION *pConfirmation);
+                   HRESULT (WINAPI *HandleErrorFromOurXln)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUXLNERROR Error);
+                   HRESULT (WINAPI *CheckForCompareStates)(IDtcLuRecoveryInitiatedByDtcTransWork *This,WINBOOL *fCompareStates);
+                   HRESULT (WINAPI *GetOurTransIdSize)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DWORD *pcbOurTransId);
+                   HRESULT (WINAPI *GetOurCompareStates)(IDtcLuRecoveryInitiatedByDtcTransWork *This,unsigned char *pOurTransId,DTCLUCOMPARESTATE *pCompareState);
+                   HRESULT (WINAPI *HandleTheirCompareStatesResponse)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUCOMPARESTATE CompareState,DTCLUCOMPARESTATESCONFIRMATION *pConfirmation);
+                   HRESULT (WINAPI *HandleErrorFromOurCompareStates)(IDtcLuRecoveryInitiatedByDtcTransWork *This,DTCLUCOMPARESTATESERROR Error);
+                   HRESULT (WINAPI *ConversationLost)(IDtcLuRecoveryInitiatedByDtcTransWork *This);
+                   HRESULT (WINAPI *GetRecoverySeqNum)(IDtcLuRecoveryInitiatedByDtcTransWork *This,LONG *plRecoverySeqNum);
+                   HRESULT (WINAPI *ObsoleteRecoverySeqNum)(IDtcLuRecoveryInitiatedByDtcTransWork *This,LONG lNewRecoverySeqNum);
     END_INTERFACE
   } IDtcLuRecoveryInitiatedByDtcTransWorkVtbl;
   struct IDtcLuRecoveryInitiatedByDtcTransWork {
@@ -1379,10 +1379,10 @@ extern "C" {
 #else
   typedef struct IDtcLuRecoveryInitiatedByDtcStatusWorkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByDtcStatusWork *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByDtcStatusWork *This);
-      ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByDtcStatusWork *This);
-      HRESULT (WINAPI *HandleCheckLuStatus)(IDtcLuRecoveryInitiatedByDtcStatusWork *This,LONG lRecoverySeqNum);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByDtcStatusWork *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByDtcStatusWork *This);
+                   ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByDtcStatusWork *This);
+                   HRESULT (WINAPI *HandleCheckLuStatus)(IDtcLuRecoveryInitiatedByDtcStatusWork *This,LONG lRecoverySeqNum);
     END_INTERFACE
   } IDtcLuRecoveryInitiatedByDtcStatusWorkVtbl;
   struct IDtcLuRecoveryInitiatedByDtcStatusWork {
@@ -1410,10 +1410,10 @@ extern "C" {
 #else
   typedef struct IDtcLuRecoveryInitiatedByDtcVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByDtc *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByDtc *This);
-      ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByDtc *This);
-      HRESULT (WINAPI *GetWork)(IDtcLuRecoveryInitiatedByDtc *This,DTCINITIATEDRECOVERYWORK *pWork,void **ppv);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByDtc *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByDtc *This);
+                   ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByDtc *This);
+                   HRESULT (WINAPI *GetWork)(IDtcLuRecoveryInitiatedByDtc *This,DTCINITIATEDRECOVERYWORK *pWork,void **ppv);
     END_INTERFACE
   } IDtcLuRecoveryInitiatedByDtcVtbl;
   struct IDtcLuRecoveryInitiatedByDtc {
@@ -1448,17 +1448,17 @@ extern "C" {
 #else
   typedef struct IDtcLuRecoveryInitiatedByLuWorkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByLuWork *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByLuWork *This);
-      ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByLuWork *This);
-      HRESULT (WINAPI *HandleTheirXln)(IDtcLuRecoveryInitiatedByLuWork *This,LONG lRecoverySeqNum,DTCLUXLN Xln,unsigned char *pRemoteLogName,DWORD cbRemoteLogName,unsigned char *pOurLogName,DWORD cbOurLogName,DWORD dwProtocol,DTCLUXLNRESPONSE *pResponse);
-      HRESULT (WINAPI *GetOurLogNameSize)(IDtcLuRecoveryInitiatedByLuWork *This,DWORD *pcbOurLogName);
-      HRESULT (WINAPI *GetOurXln)(IDtcLuRecoveryInitiatedByLuWork *This,DTCLUXLN *pXln,unsigned char *pOurLogName,DWORD *pdwProtocol);
-      HRESULT (WINAPI *HandleConfirmationOfOurXln)(IDtcLuRecoveryInitiatedByLuWork *This,DTCLUXLNCONFIRMATION Confirmation);
-      HRESULT (WINAPI *HandleTheirCompareStates)(IDtcLuRecoveryInitiatedByLuWork *This,unsigned char *pRemoteTransId,DWORD cbRemoteTransId,DTCLUCOMPARESTATE CompareState,DTCLUCOMPARESTATESRESPONSE *pResponse,DTCLUCOMPARESTATE *pCompareState);
-      HRESULT (WINAPI *HandleConfirmationOfOurCompareStates)(IDtcLuRecoveryInitiatedByLuWork *This,DTCLUCOMPARESTATESCONFIRMATION Confirmation);
-      HRESULT (WINAPI *HandleErrorFromOurCompareStates)(IDtcLuRecoveryInitiatedByLuWork *This,DTCLUCOMPARESTATESERROR Error);
-      HRESULT (WINAPI *ConversationLost)(IDtcLuRecoveryInitiatedByLuWork *This);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByLuWork *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByLuWork *This);
+                   ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByLuWork *This);
+                   HRESULT (WINAPI *HandleTheirXln)(IDtcLuRecoveryInitiatedByLuWork *This,LONG lRecoverySeqNum,DTCLUXLN Xln,unsigned char *pRemoteLogName,DWORD cbRemoteLogName,unsigned char *pOurLogName,DWORD cbOurLogName,DWORD dwProtocol,DTCLUXLNRESPONSE *pResponse);
+                   HRESULT (WINAPI *GetOurLogNameSize)(IDtcLuRecoveryInitiatedByLuWork *This,DWORD *pcbOurLogName);
+                   HRESULT (WINAPI *GetOurXln)(IDtcLuRecoveryInitiatedByLuWork *This,DTCLUXLN *pXln,unsigned char *pOurLogName,DWORD *pdwProtocol);
+                   HRESULT (WINAPI *HandleConfirmationOfOurXln)(IDtcLuRecoveryInitiatedByLuWork *This,DTCLUXLNCONFIRMATION Confirmation);
+                   HRESULT (WINAPI *HandleTheirCompareStates)(IDtcLuRecoveryInitiatedByLuWork *This,unsigned char *pRemoteTransId,DWORD cbRemoteTransId,DTCLUCOMPARESTATE CompareState,DTCLUCOMPARESTATESRESPONSE *pResponse,DTCLUCOMPARESTATE *pCompareState);
+                   HRESULT (WINAPI *HandleConfirmationOfOurCompareStates)(IDtcLuRecoveryInitiatedByLuWork *This,DTCLUCOMPARESTATESCONFIRMATION Confirmation);
+                   HRESULT (WINAPI *HandleErrorFromOurCompareStates)(IDtcLuRecoveryInitiatedByLuWork *This,DTCLUCOMPARESTATESERROR Error);
+                   HRESULT (WINAPI *ConversationLost)(IDtcLuRecoveryInitiatedByLuWork *This);
     END_INTERFACE
   } IDtcLuRecoveryInitiatedByLuWorkVtbl;
   struct IDtcLuRecoveryInitiatedByLuWork {
@@ -1507,10 +1507,10 @@ extern "C" {
 #else
   typedef struct IDtcLuRecoveryInitiatedByLuVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByLu *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByLu *This);
-      ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByLu *This);
-      HRESULT (WINAPI *GetObjectToHandleWorkFromLu)(IDtcLuRecoveryInitiatedByLu *This,IDtcLuRecoveryInitiatedByLuWork **ppWork);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRecoveryInitiatedByLu *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRecoveryInitiatedByLu *This);
+                   ULONG (WINAPI *Release)(IDtcLuRecoveryInitiatedByLu *This);
+                   HRESULT (WINAPI *GetObjectToHandleWorkFromLu)(IDtcLuRecoveryInitiatedByLu *This,IDtcLuRecoveryInitiatedByLuWork **ppWork);
     END_INTERFACE
   } IDtcLuRecoveryInitiatedByLuVtbl;
   struct IDtcLuRecoveryInitiatedByLu {
@@ -1543,15 +1543,15 @@ extern "C" {
 #else
   typedef struct IDtcLuRmEnlistmentVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRmEnlistment *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRmEnlistment *This);
-      ULONG (WINAPI *Release)(IDtcLuRmEnlistment *This);
-      HRESULT (WINAPI *Unplug)(IDtcLuRmEnlistment *This,WINBOOL fConversationLost);
-      HRESULT (WINAPI *BackedOut)(IDtcLuRmEnlistment *This);
-      HRESULT (WINAPI *BackOut)(IDtcLuRmEnlistment *This);
-      HRESULT (WINAPI *Committed)(IDtcLuRmEnlistment *This);
-      HRESULT (WINAPI *Forget)(IDtcLuRmEnlistment *This);
-      HRESULT (WINAPI *RequestCommit)(IDtcLuRmEnlistment *This);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRmEnlistment *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRmEnlistment *This);
+                   ULONG (WINAPI *Release)(IDtcLuRmEnlistment *This);
+                   HRESULT (WINAPI *Unplug)(IDtcLuRmEnlistment *This,WINBOOL fConversationLost);
+                   HRESULT (WINAPI *BackedOut)(IDtcLuRmEnlistment *This);
+                   HRESULT (WINAPI *BackOut)(IDtcLuRmEnlistment *This);
+                   HRESULT (WINAPI *Committed)(IDtcLuRmEnlistment *This);
+                   HRESULT (WINAPI *Forget)(IDtcLuRmEnlistment *This);
+                   HRESULT (WINAPI *RequestCommit)(IDtcLuRmEnlistment *This);
     END_INTERFACE
   } IDtcLuRmEnlistmentVtbl;
   struct IDtcLuRmEnlistment {
@@ -1602,18 +1602,18 @@ extern "C" {
 #else
   typedef struct IDtcLuRmEnlistmentSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRmEnlistmentSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRmEnlistmentSink *This);
-      ULONG (WINAPI *Release)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *AckUnplug)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *TmDown)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *SessionLost)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *BackedOut)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *BackOut)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *Committed)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *Forget)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *Prepare)(IDtcLuRmEnlistmentSink *This);
-      HRESULT (WINAPI *RequestCommit)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRmEnlistmentSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRmEnlistmentSink *This);
+                   ULONG (WINAPI *Release)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *AckUnplug)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *TmDown)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *SessionLost)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *BackedOut)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *BackOut)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *Committed)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *Forget)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *Prepare)(IDtcLuRmEnlistmentSink *This);
+                   HRESULT (WINAPI *RequestCommit)(IDtcLuRmEnlistmentSink *This);
     END_INTERFACE
   } IDtcLuRmEnlistmentSinkVtbl;
   struct IDtcLuRmEnlistmentSink {
@@ -1665,10 +1665,10 @@ extern "C" {
 #else
   typedef struct IDtcLuRmEnlistmentFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuRmEnlistmentFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuRmEnlistmentFactory *This);
-      ULONG (WINAPI *Release)(IDtcLuRmEnlistmentFactory *This);
-      HRESULT (WINAPI *Create)(IDtcLuRmEnlistmentFactory *This,unsigned char *pucLuPair,DWORD cbLuPair,ITransaction *pITransaction,unsigned char *pTransId,DWORD cbTransId,IDtcLuRmEnlistmentSink *pRmEnlistmentSink,IDtcLuRmEnlistment **ppRmEnlistment);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuRmEnlistmentFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuRmEnlistmentFactory *This);
+                   ULONG (WINAPI *Release)(IDtcLuRmEnlistmentFactory *This);
+                   HRESULT (WINAPI *Create)(IDtcLuRmEnlistmentFactory *This,unsigned char *pucLuPair,DWORD cbLuPair,ITransaction *pITransaction,unsigned char *pTransId,DWORD cbTransId,IDtcLuRmEnlistmentSink *pRmEnlistmentSink,IDtcLuRmEnlistment **ppRmEnlistment);
     END_INTERFACE
   } IDtcLuRmEnlistmentFactoryVtbl;
   struct IDtcLuRmEnlistmentFactory {
@@ -1702,16 +1702,16 @@ extern "C" {
 #else
   typedef struct IDtcLuSubordinateDtcVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuSubordinateDtc *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuSubordinateDtc *This);
-      ULONG (WINAPI *Release)(IDtcLuSubordinateDtc *This);
-      HRESULT (WINAPI *Unplug)(IDtcLuSubordinateDtc *This,WINBOOL fConversationLost);
-      HRESULT (WINAPI *BackedOut)(IDtcLuSubordinateDtc *This);
-      HRESULT (WINAPI *BackOut)(IDtcLuSubordinateDtc *This);
-      HRESULT (WINAPI *Committed)(IDtcLuSubordinateDtc *This);
-      HRESULT (WINAPI *Forget)(IDtcLuSubordinateDtc *This);
-      HRESULT (WINAPI *Prepare)(IDtcLuSubordinateDtc *This);
-      HRESULT (WINAPI *RequestCommit)(IDtcLuSubordinateDtc *This);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuSubordinateDtc *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuSubordinateDtc *This);
+                   ULONG (WINAPI *Release)(IDtcLuSubordinateDtc *This);
+                   HRESULT (WINAPI *Unplug)(IDtcLuSubordinateDtc *This,WINBOOL fConversationLost);
+                   HRESULT (WINAPI *BackedOut)(IDtcLuSubordinateDtc *This);
+                   HRESULT (WINAPI *BackOut)(IDtcLuSubordinateDtc *This);
+                   HRESULT (WINAPI *Committed)(IDtcLuSubordinateDtc *This);
+                   HRESULT (WINAPI *Forget)(IDtcLuSubordinateDtc *This);
+                   HRESULT (WINAPI *Prepare)(IDtcLuSubordinateDtc *This);
+                   HRESULT (WINAPI *RequestCommit)(IDtcLuSubordinateDtc *This);
     END_INTERFACE
   } IDtcLuSubordinateDtcVtbl;
   struct IDtcLuSubordinateDtc {
@@ -1764,17 +1764,17 @@ extern "C" {
 #else
   typedef struct IDtcLuSubordinateDtcSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuSubordinateDtcSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuSubordinateDtcSink *This);
-      ULONG (WINAPI *Release)(IDtcLuSubordinateDtcSink *This);
-      HRESULT (WINAPI *AckUnplug)(IDtcLuSubordinateDtcSink *This);
-      HRESULT (WINAPI *TmDown)(IDtcLuSubordinateDtcSink *This);
-      HRESULT (WINAPI *SessionLost)(IDtcLuSubordinateDtcSink *This);
-      HRESULT (WINAPI *BackedOut)(IDtcLuSubordinateDtcSink *This);
-      HRESULT (WINAPI *BackOut)(IDtcLuSubordinateDtcSink *This);
-      HRESULT (WINAPI *Committed)(IDtcLuSubordinateDtcSink *This);
-      HRESULT (WINAPI *Forget)(IDtcLuSubordinateDtcSink *This);
-      HRESULT (WINAPI *RequestCommit)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuSubordinateDtcSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuSubordinateDtcSink *This);
+                   ULONG (WINAPI *Release)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *AckUnplug)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *TmDown)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *SessionLost)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *BackedOut)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *BackOut)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *Committed)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *Forget)(IDtcLuSubordinateDtcSink *This);
+                   HRESULT (WINAPI *RequestCommit)(IDtcLuSubordinateDtcSink *This);
     END_INTERFACE
   } IDtcLuSubordinateDtcSinkVtbl;
   struct IDtcLuSubordinateDtcSink {
@@ -1823,10 +1823,10 @@ extern "C" {
 #else
   typedef struct IDtcLuSubordinateDtcFactoryVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDtcLuSubordinateDtcFactory *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDtcLuSubordinateDtcFactory *This);
-      ULONG (WINAPI *Release)(IDtcLuSubordinateDtcFactory *This);
-      HRESULT (WINAPI *Create)(IDtcLuSubordinateDtcFactory *This,unsigned char *pucLuPair,DWORD cbLuPair,IUnknown *punkTransactionOuter,ISOLEVEL isoLevel,ULONG isoFlags,ITransactionOptions *pOptions,ITransaction **ppTransaction,unsigned char *pTransId,DWORD cbTransId,IDtcLuSubordinateDtcSink *pSubordinateDtcSink,IDtcLuSubordinateDtc **ppSubordinateDtc);
+                   HRESULT (WINAPI *QueryInterface)(IDtcLuSubordinateDtcFactory *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDtcLuSubordinateDtcFactory *This);
+                   ULONG (WINAPI *Release)(IDtcLuSubordinateDtcFactory *This);
+                   HRESULT (WINAPI *Create)(IDtcLuSubordinateDtcFactory *This,unsigned char *pucLuPair,DWORD cbLuPair,IUnknown *punkTransactionOuter,ISOLEVEL isoLevel,ULONG isoFlags,ITransactionOptions *pOptions,ITransaction **ppTransaction,unsigned char *pTransId,DWORD cbTransId,IDtcLuSubordinateDtcSink *pSubordinateDtcSink,IDtcLuSubordinateDtc **ppSubordinateDtc);
     END_INTERFACE
   } IDtcLuSubordinateDtcFactoryVtbl;
   struct IDtcLuSubordinateDtcFactory {

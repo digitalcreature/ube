@@ -16,9 +16,9 @@ const assert = std.debug.assert;
 // The variant I has the following layout in memory:
 // -------------------------------------------------------
 // |   DTV   |     Zig     |   DTV   | Alignment |  TLS  |
-// | storage | thread data | pointer |           | block |
+// | storage | thread data | pointer |                        | block |
 // ------------------------^------------------------------
-//                         `-- The thread pointer register points here
+//                                                                             `-- The thread pointer register points here
 //
 // In this case we allocate additional space for our control structure that's
 // placed _before_ the DTV pointer together with the DTV.
@@ -32,7 +32,7 @@ const assert = std.debug.assert;
 // |  TLS  | TCB |     Zig     |   DTV   |
 // | block |     | thread data | storage |
 // --------^------------------------------
-//         `-- The thread pointer register points here
+//                      `-- The thread pointer register points here
 //
 // The structure of the TCB is not defined by the ABI so we reserve enough space
 // for a single pointer as some architectures such as i386 and x86_64 need a
@@ -115,71 +115,71 @@ pub var tls_image: TLSImage = undefined;
 
 pub fn setThreadPointer(addr: usize) void {
     switch (builtin.arch) {
-        .i386 => {
-            var user_desc = std.os.linux.user_desc{
-                .entry_number = tls_image.gdt_entry_number,
-                .base_addr = addr,
-                .limit = 0xfffff,
-                .seg_32bit = 1,
-                .contents = 0, // Data
-                .read_exec_only = 0,
-                .limit_in_pages = 1,
-                .seg_not_present = 0,
-                .useable = 1,
-            };
-            const rc = std.os.linux.syscall1(.set_thread_area, @ptrToInt(&user_desc));
-            assert(rc == 0);
+                     .i386 => {
+                                      var user_desc = std.os.linux.user_desc{
+                                          .entry_number = tls_image.gdt_entry_number,
+                                          .base_addr = addr,
+                                          .limit = 0xfffff,
+                                          .seg_32bit = 1,
+                                          .contents = 0, // Data
+                                          .read_exec_only = 0,
+                                          .limit_in_pages = 1,
+                                          .seg_not_present = 0,
+                                          .useable = 1,
+                                      };
+                                      const rc = std.os.linux.syscall1(.set_thread_area, @ptrToInt(&user_desc));
+                                      assert(rc == 0);
 
-            const gdt_entry_number = user_desc.entry_number;
-            // We have to keep track of our slot as it's also needed for clone()
-            tls_image.gdt_entry_number = gdt_entry_number;
-            // Update the %gs selector
-            asm volatile ("movl %[gs_val], %%gs"
-                :
-                : [gs_val] "r" (gdt_entry_number << 3 | 3)
-            );
-        },
-        .x86_64 => {
-            const rc = std.os.linux.syscall2(.arch_prctl, std.os.linux.ARCH_SET_FS, addr);
-            assert(rc == 0);
-        },
-        .aarch64 => {
-            asm volatile (
-                \\ msr tpidr_el0, %[addr]
-                :
-                : [addr] "r" (addr)
-            );
-        },
-        .arm => {
-            const rc = std.os.linux.syscall1(.set_tls, addr);
-            assert(rc == 0);
-        },
-        .riscv64 => {
-            asm volatile (
-                \\ mv tp, %[addr]
-                :
-                : [addr] "r" (addr)
-            );
-        },
-        .mips, .mipsel => {
-            const rc = std.os.linux.syscall1(.set_thread_area, addr);
-            assert(rc == 0);
-        },
-        .powerpc, .powerpc64, .powerpc64le => {
-            asm volatile (
-                \\ mr 13, %[addr]
-                :
-                : [addr] "r" (addr)
-            );
-        },
-        .sparcv9 => {
-            asm volatile (
-                \\ mov %[addr], %%g7
-                :
-                : [addr] "r" (addr)
-            );
-        },
-        else => @compileError("Unsupported architecture"),
+                                      const gdt_entry_number = user_desc.entry_number;
+                                      // We have to keep track of our slot as it's also needed for clone()
+                                      tls_image.gdt_entry_number = gdt_entry_number;
+                                      // Update the %gs selector
+                                      asm volatile ("movl %[gs_val], %%gs"
+                                          :
+                                          : [gs_val] "r" (gdt_entry_number << 3 | 3)
+                                      );
+                     },
+                     .x86_64 => {
+                                      const rc = std.os.linux.syscall2(.arch_prctl, std.os.linux.ARCH_SET_FS, addr);
+                                      assert(rc == 0);
+                     },
+                     .aarch64 => {
+                                      asm volatile (
+                                          \\ msr tpidr_el0, %[addr]
+                                          :
+                                          : [addr] "r" (addr)
+                                      );
+                     },
+                     .arm => {
+                                      const rc = std.os.linux.syscall1(.set_tls, addr);
+                                      assert(rc == 0);
+                     },
+                     .riscv64 => {
+                                      asm volatile (
+                                          \\ mv tp, %[addr]
+                                          :
+                                          : [addr] "r" (addr)
+                                      );
+                     },
+                     .mips, .mipsel => {
+                                      const rc = std.os.linux.syscall1(.set_thread_area, addr);
+                                      assert(rc == 0);
+                     },
+                     .powerpc, .powerpc64, .powerpc64le => {
+                                      asm volatile (
+                                          \\ mr 13, %[addr]
+                                          :
+                                          : [addr] "r" (addr)
+                                      );
+                     },
+                     .sparcv9 => {
+                                      asm volatile (
+                                          \\ mov %[addr], %%g7
+                                          :
+                                          : [addr] "r" (addr)
+                                      );
+                     },
+                     else => @compileError("Unsupported architecture"),
     }
 }
 
@@ -195,13 +195,13 @@ fn initTLS() void {
 
     var i: usize = 0;
     while (auxv[i].a_type != std.elf.AT_NULL) : (i += 1) {
-        switch (auxv[i].a_type) {
-            elf.AT_PHENT => at_phent = auxv[i].a_un.a_val,
-            elf.AT_PHNUM => at_phnum = auxv[i].a_un.a_val,
-            elf.AT_PHDR => at_phdr = auxv[i].a_un.a_val,
-            elf.AT_HWCAP => at_hwcap = auxv[i].a_un.a_val,
-            else => continue,
-        }
+                     switch (auxv[i].a_type) {
+                                      elf.AT_PHENT => at_phent = auxv[i].a_un.a_val,
+                                      elf.AT_PHNUM => at_phnum = auxv[i].a_un.a_val,
+                                      elf.AT_PHDR => at_phdr = auxv[i].a_un.a_val,
+                                      elf.AT_HWCAP => at_hwcap = auxv[i].a_un.a_val,
+                                      else => continue,
+                     }
     }
 
     // Sanity check
@@ -211,39 +211,39 @@ fn initTLS() void {
     const phdrs = (@intToPtr([*]elf.Phdr, at_phdr))[0..at_phnum];
 
     for (phdrs) |*phdr| {
-        switch (phdr.p_type) {
-            elf.PT_PHDR => img_base = at_phdr - phdr.p_vaddr,
-            elf.PT_TLS => tls_phdr = phdr,
-            else => {},
-        }
+                     switch (phdr.p_type) {
+                                      elf.PT_PHDR => img_base = at_phdr - phdr.p_vaddr,
+                                      elf.PT_TLS => tls_phdr = phdr,
+                                      else => {},
+                     }
     }
 
     // ARMv6 targets (and earlier) have no support for TLS in hardware
     // FIXME: Elide the check for targets >= ARMv7 when the target feature API
     // becomes less verbose (and more usable).
     if (comptime builtin.arch.isARM()) {
-        if (at_hwcap & std.os.linux.HWCAP_TLS == 0) {
-            // FIXME: Make __aeabi_read_tp call the kernel helper kuser_get_tls
-            // For the time being use a simple abort instead of a @panic call to
-            // keep the binary bloat under control.
-            std.os.abort();
-        }
+                     if (at_hwcap & std.os.linux.HWCAP_TLS == 0) {
+                                      // FIXME: Make __aeabi_read_tp call the kernel helper kuser_get_tls
+                                      // For the time being use a simple abort instead of a @panic call to
+                                      // keep the binary bloat under control.
+                                      std.os.abort();
+                     }
     }
 
     var tls_align_factor: usize = undefined;
     var tls_data: []const u8 = undefined;
     var tls_data_alloc_size: usize = undefined;
     if (tls_phdr) |phdr| {
-        // The effective size in memory is represented by p_memsz, the length of
-        // the data stored in the PT_TLS segment is p_filesz and may be less
-        // than the former
-        tls_align_factor = phdr.p_align;
-        tls_data = @intToPtr([*]u8, img_base + phdr.p_vaddr)[0..phdr.p_filesz];
-        tls_data_alloc_size = phdr.p_memsz;
+                     // The effective size in memory is represented by p_memsz, the length of
+                     // the data stored in the PT_TLS segment is p_filesz and may be less
+                     // than the former
+                     tls_align_factor = phdr.p_align;
+                     tls_data = @intToPtr([*]u8, img_base + phdr.p_vaddr)[0..phdr.p_filesz];
+                     tls_data_alloc_size = phdr.p_memsz;
     } else {
-        tls_align_factor = @alignOf(*usize);
-        tls_data = &[_]u8{};
-        tls_data_alloc_size = 0;
+                     tls_align_factor = @alignOf(*usize);
+                     tls_data = &[_]u8{};
+                     tls_data_alloc_size = 0;
     }
 
     // Offsets into the allocated TLS area
@@ -254,49 +254,49 @@ fn initTLS() void {
     // structures. All the offset calculated here assume a well-aligned base
     // address.
     const alloc_size = switch (tls_variant) {
-        .VariantI => blk: {
-            var l: usize = 0;
-            dtv_offset = l;
-            l += @sizeOf(DTV);
-            // Add some padding here so that the thread pointer (tcb_offset) is
-            // aligned to p_align and the CustomData structure can be found by
-            // simply subtracting its @sizeOf from the tp value
-            const delta = (l + @sizeOf(CustomData)) & (tls_align_factor - 1);
-            if (delta > 0)
-                l += tls_align_factor - delta;
-            l += @sizeOf(CustomData);
-            tcb_offset = l;
-            l += mem.alignForward(tls_tcb_size, tls_align_factor);
-            data_offset = l;
-            l += tls_data_alloc_size;
-            break :blk l;
-        },
-        .VariantII => blk: {
-            var l: usize = 0;
-            data_offset = l;
-            l += mem.alignForward(tls_data_alloc_size, tls_align_factor);
-            // The thread pointer is aligned to p_align
-            tcb_offset = l;
-            l += tls_tcb_size;
-            // The CustomData structure is right after the TCB with no padding
-            // in between so it can be easily found
-            l += @sizeOf(CustomData);
-            l = mem.alignForward(l, @alignOf(DTV));
-            dtv_offset = l;
-            l += @sizeOf(DTV);
-            break :blk l;
-        },
+                     .VariantI => blk: {
+                                      var l: usize = 0;
+                                      dtv_offset = l;
+                                      l += @sizeOf(DTV);
+                                      // Add some padding here so that the thread pointer (tcb_offset) is
+                                      // aligned to p_align and the CustomData structure can be found by
+                                      // simply subtracting its @sizeOf from the tp value
+                                      const delta = (l + @sizeOf(CustomData)) & (tls_align_factor - 1);
+                                      if (delta > 0)
+                                          l += tls_align_factor - delta;
+                                      l += @sizeOf(CustomData);
+                                      tcb_offset = l;
+                                      l += mem.alignForward(tls_tcb_size, tls_align_factor);
+                                      data_offset = l;
+                                      l += tls_data_alloc_size;
+                                      break :blk l;
+                     },
+                     .VariantII => blk: {
+                                      var l: usize = 0;
+                                      data_offset = l;
+                                      l += mem.alignForward(tls_data_alloc_size, tls_align_factor);
+                                      // The thread pointer is aligned to p_align
+                                      tcb_offset = l;
+                                      l += tls_tcb_size;
+                                      // The CustomData structure is right after the TCB with no padding
+                                      // in between so it can be easily found
+                                      l += @sizeOf(CustomData);
+                                      l = mem.alignForward(l, @alignOf(DTV));
+                                      dtv_offset = l;
+                                      l += @sizeOf(DTV);
+                                      break :blk l;
+                     },
     };
 
     tls_image = TLSImage{
-        .init_data = tls_data,
-        .alloc_size = alloc_size,
-        .alloc_align = tls_align_factor,
-        .tcb_offset = tcb_offset,
-        .dtv_offset = dtv_offset,
-        .data_offset = data_offset,
-        .data_size = tls_data_alloc_size,
-        .gdt_entry_number = @bitCast(usize, @as(isize, -1)),
+                     .init_data = tls_data,
+                     .alloc_size = alloc_size,
+                     .alloc_align = tls_align_factor,
+                     .tcb_offset = tcb_offset,
+                     .dtv_offset = dtv_offset,
+                     .data_offset = data_offset,
+                     .data_size = tls_data_alloc_size,
+                     .gdt_entry_number = @bitCast(usize, @as(isize, -1)),
     };
 }
 
@@ -316,15 +316,15 @@ pub fn prepareTLS(area: []u8) usize {
     // Prepare the TCB
     const tcb_ptr = alignPtrCast([*]u8, area.ptr + tls_image.tcb_offset);
     tcb_ptr.* = switch (tls_variant) {
-        .VariantI => area.ptr + tls_image.dtv_offset,
-        .VariantII => area.ptr + tls_image.tcb_offset,
+                     .VariantI => area.ptr + tls_image.dtv_offset,
+                     .VariantII => area.ptr + tls_image.tcb_offset,
     };
     // Copy the data
     mem.copy(u8, area[tls_image.data_offset..], tls_image.init_data);
 
     // Return the corrected (if needed) value for the tp register
     return @ptrToInt(area.ptr) + tls_tp_offset +
-        if (tls_tp_points_past_tcb) tls_image.data_offset else tls_image.tcb_offset;
+                     if (tls_tp_points_past_tcb) tls_image.data_offset else tls_image.tcb_offset;
 }
 
 var main_thread_tls_buffer: [256]u8 = undefined;
@@ -333,21 +333,21 @@ pub fn initStaticTLS() void {
     initTLS();
 
     const alloc_tls_area: []u8 = blk: {
-        const full_alloc_size = tls_image.alloc_size + tls_image.alloc_align - 1;
+                     const full_alloc_size = tls_image.alloc_size + tls_image.alloc_align - 1;
 
-        // Fast path for the common case where the TLS data is really small,
-        // avoid an allocation and use our local buffer
-        if (full_alloc_size < main_thread_tls_buffer.len)
-            break :blk main_thread_tls_buffer[0..];
+                     // Fast path for the common case where the TLS data is really small,
+                     // avoid an allocation and use our local buffer
+                     if (full_alloc_size < main_thread_tls_buffer.len)
+                                      break :blk main_thread_tls_buffer[0..];
 
-        break :blk os.mmap(
-            null,
-            full_alloc_size,
-            os.PROT_READ | os.PROT_WRITE,
-            os.MAP_PRIVATE | os.MAP_ANONYMOUS,
-            -1,
-            0,
-        ) catch os.abort();
+                     break :blk os.mmap(
+                                      null,
+                                      full_alloc_size,
+                                      os.PROT_READ | os.PROT_WRITE,
+                                      os.MAP_PRIVATE | os.MAP_ANONYMOUS,
+                                      -1,
+                                      0,
+                     ) catch os.abort();
     };
 
     // Make sure the slice is correctly aligned

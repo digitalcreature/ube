@@ -93,7 +93,7 @@ extern size_t strftime (char *__restrict __s, size_t __maxsize,
 /* Parse S according to FORMAT and store binary time information in TP.
    The return value is a pointer to the first unparsed character in S.  */
 extern char *strptime (const char *__restrict __s,
-		       const char *__restrict __fmt, struct tm *__tp)
+		                    const char *__restrict __fmt, struct tm *__tp)
      __THROW;
 #endif
 
@@ -131,7 +131,7 @@ extern struct tm *gmtime_r (const time_t *__restrict __timer,
 /* Return the `struct tm' representation of *TIMER in local time,
    using *TP to store the result.  */
 extern struct tm *localtime_r (const time_t *__restrict __timer,
-			       struct tm *__restrict __tp) __THROW;
+			                    struct tm *__restrict __tp) __THROW;
 #endif	/* POSIX || C2X */
 
 /* Return a string of the form "Day Mon dd hh:mm:ss yyyy\n"
@@ -151,7 +151,7 @@ extern char *asctime_r (const struct tm *__restrict __tp,
 
 /* Equivalent to `asctime_r (localtime_r (timer, *TMP*), buf)'.  */
 extern char *ctime_r (const time_t *__restrict __timer,
-		      char *__restrict __buf) __THROW;
+		                   char *__restrict __buf) __THROW;
 #endif	/* POSIX || C2X */
 
 
@@ -203,7 +203,7 @@ extern int dysize (int __year) __THROW  __attribute__ ((__const__));
    This function is a cancellation point and therefore not marked with
    __THROW.  */
 extern int nanosleep (const struct timespec *__requested_time,
-		      struct timespec *__remaining);
+		                   struct timespec *__remaining);
 
 
 /* Get resolution of clock CLOCK_ID.  */
@@ -295,7 +295,7 @@ extern struct tm *getdate (const char *__string);
    or due to the implementation it is a cancellation point and
    therefore not marked with __THROW.  */
 extern int getdate_r (const char *__restrict __string,
-		      struct tm *__restrict __resbufp);
+		                   struct tm *__restrict __resbufp);
 #endif
 
 __END_DECLS

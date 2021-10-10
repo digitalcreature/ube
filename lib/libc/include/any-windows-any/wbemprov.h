@@ -370,9 +370,9 @@ MIDL_INTERFACE("e246107b-b06e-11d0-ad61-00c04fd8fdff")
 IWbemUnboundObjectSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IndicateToConsumer(
-        IWbemClassObject *pLogicalConsumer,
-        LONG lNumObjects,
-        IWbemClassObject **apObjects) = 0;
+                     IWbemClassObject *pLogicalConsumer,
+                     LONG lNumObjects,
+                     IWbemClassObject **apObjects) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -384,22 +384,22 @@ typedef struct IWbemUnboundObjectSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemUnboundObjectSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemUnboundObjectSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemUnboundObjectSink *This);
+                     IWbemUnboundObjectSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemUnboundObjectSink *This);
+                     IWbemUnboundObjectSink *This);
 
     /*** IWbemUnboundObjectSink methods ***/
     HRESULT (STDMETHODCALLTYPE *IndicateToConsumer)(
-        IWbemUnboundObjectSink *This,
-        IWbemClassObject *pLogicalConsumer,
-        LONG lNumObjects,
-        IWbemClassObject **apObjects);
+                     IWbemUnboundObjectSink *This,
+                     IWbemClassObject *pLogicalConsumer,
+                     LONG lNumObjects,
+                     IWbemClassObject **apObjects);
 
     END_INTERFACE
 } IWbemUnboundObjectSinkVtbl;
@@ -451,20 +451,20 @@ MIDL_INTERFACE("ce61e841-65bc-11d0-b6bd-00aa003240c7")
 IWbemPropertyProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetProperty(
-        LONG lFlags,
-        const BSTR strLocale,
-        const BSTR strClassMapping,
-        const BSTR strInstMapping,
-        const BSTR strPropMapping,
-        VARIANT *pvValue) = 0;
+                     LONG lFlags,
+                     const BSTR strLocale,
+                     const BSTR strClassMapping,
+                     const BSTR strInstMapping,
+                     const BSTR strPropMapping,
+                     VARIANT *pvValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PutProperty(
-        LONG lFlags,
-        const BSTR strLocale,
-        const BSTR strClassMapping,
-        const BSTR strInstMapping,
-        const BSTR strPropMapping,
-        const VARIANT *pvValue) = 0;
+                     LONG lFlags,
+                     const BSTR strLocale,
+                     const BSTR strClassMapping,
+                     const BSTR strInstMapping,
+                     const BSTR strPropMapping,
+                     const VARIANT *pvValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -476,34 +476,34 @@ typedef struct IWbemPropertyProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemPropertyProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemPropertyProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemPropertyProvider *This);
+                     IWbemPropertyProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemPropertyProvider *This);
+                     IWbemPropertyProvider *This);
 
     /*** IWbemPropertyProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *GetProperty)(
-        IWbemPropertyProvider *This,
-        LONG lFlags,
-        const BSTR strLocale,
-        const BSTR strClassMapping,
-        const BSTR strInstMapping,
-        const BSTR strPropMapping,
-        VARIANT *pvValue);
+                     IWbemPropertyProvider *This,
+                     LONG lFlags,
+                     const BSTR strLocale,
+                     const BSTR strClassMapping,
+                     const BSTR strInstMapping,
+                     const BSTR strPropMapping,
+                     VARIANT *pvValue);
 
     HRESULT (STDMETHODCALLTYPE *PutProperty)(
-        IWbemPropertyProvider *This,
-        LONG lFlags,
-        const BSTR strLocale,
-        const BSTR strClassMapping,
-        const BSTR strInstMapping,
-        const BSTR strPropMapping,
-        const VARIANT *pvValue);
+                     IWbemPropertyProvider *This,
+                     LONG lFlags,
+                     const BSTR strLocale,
+                     const BSTR strClassMapping,
+                     const BSTR strInstMapping,
+                     const BSTR strPropMapping,
+                     const VARIANT *pvValue);
 
     END_INTERFACE
 } IWbemPropertyProviderVtbl;
@@ -559,8 +559,8 @@ MIDL_INTERFACE("e245105b-b06e-11d0-ad61-00c04fd8fdff")
 IWbemEventProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ProvideEvents(
-        IWbemObjectSink *pSink,
-        LONG lFlags) = 0;
+                     IWbemObjectSink *pSink,
+                     LONG lFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -572,21 +572,21 @@ typedef struct IWbemEventProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemEventProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemEventProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemEventProvider *This);
+                     IWbemEventProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemEventProvider *This);
+                     IWbemEventProvider *This);
 
     /*** IWbemEventProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *ProvideEvents)(
-        IWbemEventProvider *This,
-        IWbemObjectSink *pSink,
-        LONG lFlags);
+                     IWbemEventProvider *This,
+                     IWbemObjectSink *pSink,
+                     LONG lFlags);
 
     END_INTERFACE
 } IWbemEventProviderVtbl;
@@ -638,12 +638,12 @@ MIDL_INTERFACE("580acaf8-fa1c-11d0-ad72-00c04fd8fdff")
 IWbemEventProviderQuerySink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE NewQuery(
-        ULONG dwId,
-        WBEM_WSTR wszQueryLanguage,
-        WBEM_WSTR wszQuery) = 0;
+                     ULONG dwId,
+                     WBEM_WSTR wszQueryLanguage,
+                     WBEM_WSTR wszQuery) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CancelQuery(
-        ULONG dwId) = 0;
+                     ULONG dwId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -655,26 +655,26 @@ typedef struct IWbemEventProviderQuerySinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemEventProviderQuerySink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemEventProviderQuerySink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemEventProviderQuerySink *This);
+                     IWbemEventProviderQuerySink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemEventProviderQuerySink *This);
+                     IWbemEventProviderQuerySink *This);
 
     /*** IWbemEventProviderQuerySink methods ***/
     HRESULT (STDMETHODCALLTYPE *NewQuery)(
-        IWbemEventProviderQuerySink *This,
-        ULONG dwId,
-        WBEM_WSTR wszQueryLanguage,
-        WBEM_WSTR wszQuery);
+                     IWbemEventProviderQuerySink *This,
+                     ULONG dwId,
+                     WBEM_WSTR wszQueryLanguage,
+                     WBEM_WSTR wszQuery);
 
     HRESULT (STDMETHODCALLTYPE *CancelQuery)(
-        IWbemEventProviderQuerySink *This,
-        ULONG dwId);
+                     IWbemEventProviderQuerySink *This,
+                     ULONG dwId);
 
     END_INTERFACE
 } IWbemEventProviderQuerySinkVtbl;
@@ -730,10 +730,10 @@ MIDL_INTERFACE("631f7d96-d993-11d2-b339-00105a1f4aaf")
 IWbemEventProviderSecurity : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AccessCheck(
-        WBEM_CWSTR wszQueryLanguage,
-        WBEM_CWSTR wszQuery,
-        LONG lSidLength,
-        const BYTE *pSid) = 0;
+                     WBEM_CWSTR wszQueryLanguage,
+                     WBEM_CWSTR wszQuery,
+                     LONG lSidLength,
+                     const BYTE *pSid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -745,23 +745,23 @@ typedef struct IWbemEventProviderSecurityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemEventProviderSecurity *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemEventProviderSecurity *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemEventProviderSecurity *This);
+                     IWbemEventProviderSecurity *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemEventProviderSecurity *This);
+                     IWbemEventProviderSecurity *This);
 
     /*** IWbemEventProviderSecurity methods ***/
     HRESULT (STDMETHODCALLTYPE *AccessCheck)(
-        IWbemEventProviderSecurity *This,
-        WBEM_CWSTR wszQueryLanguage,
-        WBEM_CWSTR wszQuery,
-        LONG lSidLength,
-        const BYTE *pSid);
+                     IWbemEventProviderSecurity *This,
+                     WBEM_CWSTR wszQueryLanguage,
+                     WBEM_CWSTR wszQuery,
+                     LONG lSidLength,
+                     const BYTE *pSid);
 
     END_INTERFACE
 } IWbemEventProviderSecurityVtbl;
@@ -813,8 +813,8 @@ MIDL_INTERFACE("631f7d97-d993-11d2-b339-00105a1f4aaf")
 IWbemProviderIdentity : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetRegistrationObject(
-        LONG lFlags,
-        IWbemClassObject *pProvReg) = 0;
+                     LONG lFlags,
+                     IWbemClassObject *pProvReg) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -826,21 +826,21 @@ typedef struct IWbemProviderIdentityVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemProviderIdentity *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemProviderIdentity *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemProviderIdentity *This);
+                     IWbemProviderIdentity *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemProviderIdentity *This);
+                     IWbemProviderIdentity *This);
 
     /*** IWbemProviderIdentity methods ***/
     HRESULT (STDMETHODCALLTYPE *SetRegistrationObject)(
-        IWbemProviderIdentity *This,
-        LONG lFlags,
-        IWbemClassObject *pProvReg);
+                     IWbemProviderIdentity *This,
+                     LONG lFlags,
+                     IWbemClassObject *pProvReg);
 
     END_INTERFACE
 } IWbemProviderIdentityVtbl;
@@ -892,8 +892,8 @@ MIDL_INTERFACE("e246107a-b06e-11d0-ad61-00c04fd8fdff")
 IWbemEventConsumerProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FindConsumer(
-        IWbemClassObject *pLogicalConsumer,
-        IWbemUnboundObjectSink **ppConsumer) = 0;
+                     IWbemClassObject *pLogicalConsumer,
+                     IWbemUnboundObjectSink **ppConsumer) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -905,21 +905,21 @@ typedef struct IWbemEventConsumerProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemEventConsumerProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemEventConsumerProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemEventConsumerProvider *This);
+                     IWbemEventConsumerProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemEventConsumerProvider *This);
+                     IWbemEventConsumerProvider *This);
 
     /*** IWbemEventConsumerProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *FindConsumer)(
-        IWbemEventConsumerProvider *This,
-        IWbemClassObject *pLogicalConsumer,
-        IWbemUnboundObjectSink **ppConsumer);
+                     IWbemEventConsumerProvider *This,
+                     IWbemClassObject *pLogicalConsumer,
+                     IWbemUnboundObjectSink **ppConsumer);
 
     END_INTERFACE
 } IWbemEventConsumerProviderVtbl;
@@ -971,8 +971,8 @@ MIDL_INTERFACE("1be41571-91dd-11d1-aeb2-00c04fb68820")
 IWbemProviderInitSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetStatus(
-        LONG lStatus,
-        LONG lFlags) = 0;
+                     LONG lStatus,
+                     LONG lFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -984,21 +984,21 @@ typedef struct IWbemProviderInitSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemProviderInitSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemProviderInitSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemProviderInitSink *This);
+                     IWbemProviderInitSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemProviderInitSink *This);
+                     IWbemProviderInitSink *This);
 
     /*** IWbemProviderInitSink methods ***/
     HRESULT (STDMETHODCALLTYPE *SetStatus)(
-        IWbemProviderInitSink *This,
-        LONG lStatus,
-        LONG lFlags);
+                     IWbemProviderInitSink *This,
+                     LONG lStatus,
+                     LONG lFlags);
 
     END_INTERFACE
 } IWbemProviderInitSinkVtbl;
@@ -1050,13 +1050,13 @@ MIDL_INTERFACE("1be41572-91dd-11d1-aeb2-00c04fb68820")
 IWbemProviderInit : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        LPWSTR wszUser,
-        LONG lFlags,
-        LPWSTR wszNamespace,
-        LPWSTR wszLocale,
-        IWbemServices *pNamespace,
-        IWbemContext *pCtx,
-        IWbemProviderInitSink *pInitSink) = 0;
+                     LPWSTR wszUser,
+                     LONG lFlags,
+                     LPWSTR wszNamespace,
+                     LPWSTR wszLocale,
+                     IWbemServices *pNamespace,
+                     IWbemContext *pCtx,
+                     IWbemProviderInitSink *pInitSink) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1068,26 +1068,26 @@ typedef struct IWbemProviderInitVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemProviderInit *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemProviderInit *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemProviderInit *This);
+                     IWbemProviderInit *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemProviderInit *This);
+                     IWbemProviderInit *This);
 
     /*** IWbemProviderInit methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IWbemProviderInit *This,
-        LPWSTR wszUser,
-        LONG lFlags,
-        LPWSTR wszNamespace,
-        LPWSTR wszLocale,
-        IWbemServices *pNamespace,
-        IWbemContext *pCtx,
-        IWbemProviderInitSink *pInitSink);
+                     IWbemProviderInit *This,
+                     LPWSTR wszUser,
+                     LONG lFlags,
+                     LPWSTR wszNamespace,
+                     LPWSTR wszLocale,
+                     IWbemServices *pNamespace,
+                     IWbemContext *pCtx,
+                     IWbemProviderInitSink *pInitSink);
 
     END_INTERFACE
 } IWbemProviderInitVtbl;
@@ -1139,46 +1139,46 @@ MIDL_INTERFACE("49353c93-516b-11d1-aea6-00c04fb68820")
 IWbemHiPerfProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryInstances(
-        IWbemServices *pNamespace,
-        WCHAR *wszClass,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        IWbemObjectSink *pSink) = 0;
+                     IWbemServices *pNamespace,
+                     WCHAR *wszClass,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     IWbemObjectSink *pSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRefresher(
-        IWbemServices *pNamespace,
-        LONG lFlags,
-        IWbemRefresher **ppRefresher) = 0;
+                     IWbemServices *pNamespace,
+                     LONG lFlags,
+                     IWbemRefresher **ppRefresher) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRefreshableObject(
-        IWbemServices *pNamespace,
-        IWbemObjectAccess *pTemplate,
-        IWbemRefresher *pRefresher,
-        LONG lFlags,
-        IWbemContext *pContext,
-        IWbemObjectAccess **ppRefreshable,
-        LONG *plId) = 0;
+                     IWbemServices *pNamespace,
+                     IWbemObjectAccess *pTemplate,
+                     IWbemRefresher *pRefresher,
+                     LONG lFlags,
+                     IWbemContext *pContext,
+                     IWbemObjectAccess **ppRefreshable,
+                     LONG *plId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopRefreshing(
-        IWbemRefresher *pRefresher,
-        LONG lId,
-        LONG lFlags) = 0;
+                     IWbemRefresher *pRefresher,
+                     LONG lId,
+                     LONG lFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRefreshableEnum(
-        IWbemServices *pNamespace,
-        LPCWSTR wszClass,
-        IWbemRefresher *pRefresher,
-        LONG lFlags,
-        IWbemContext *pContext,
-        IWbemHiPerfEnum *pHiPerfEnum,
-        LONG *plId) = 0;
+                     IWbemServices *pNamespace,
+                     LPCWSTR wszClass,
+                     IWbemRefresher *pRefresher,
+                     LONG lFlags,
+                     IWbemContext *pContext,
+                     IWbemHiPerfEnum *pHiPerfEnum,
+                     LONG *plId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObjects(
-        IWbemServices *pNamespace,
-        LONG lNumObjects,
-        IWbemObjectAccess **apObj,
-        LONG lFlags,
-        IWbemContext *pContext) = 0;
+                     IWbemServices *pNamespace,
+                     LONG lNumObjects,
+                     IWbemObjectAccess **apObj,
+                     LONG lFlags,
+                     IWbemContext *pContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1190,64 +1190,64 @@ typedef struct IWbemHiPerfProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemHiPerfProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemHiPerfProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemHiPerfProvider *This);
+                     IWbemHiPerfProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemHiPerfProvider *This);
+                     IWbemHiPerfProvider *This);
 
     /*** IWbemHiPerfProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInstances)(
-        IWbemHiPerfProvider *This,
-        IWbemServices *pNamespace,
-        WCHAR *wszClass,
-        LONG lFlags,
-        IWbemContext *pCtx,
-        IWbemObjectSink *pSink);
+                     IWbemHiPerfProvider *This,
+                     IWbemServices *pNamespace,
+                     WCHAR *wszClass,
+                     LONG lFlags,
+                     IWbemContext *pCtx,
+                     IWbemObjectSink *pSink);
 
     HRESULT (STDMETHODCALLTYPE *CreateRefresher)(
-        IWbemHiPerfProvider *This,
-        IWbemServices *pNamespace,
-        LONG lFlags,
-        IWbemRefresher **ppRefresher);
+                     IWbemHiPerfProvider *This,
+                     IWbemServices *pNamespace,
+                     LONG lFlags,
+                     IWbemRefresher **ppRefresher);
 
     HRESULT (STDMETHODCALLTYPE *CreateRefreshableObject)(
-        IWbemHiPerfProvider *This,
-        IWbemServices *pNamespace,
-        IWbemObjectAccess *pTemplate,
-        IWbemRefresher *pRefresher,
-        LONG lFlags,
-        IWbemContext *pContext,
-        IWbemObjectAccess **ppRefreshable,
-        LONG *plId);
+                     IWbemHiPerfProvider *This,
+                     IWbemServices *pNamespace,
+                     IWbemObjectAccess *pTemplate,
+                     IWbemRefresher *pRefresher,
+                     LONG lFlags,
+                     IWbemContext *pContext,
+                     IWbemObjectAccess **ppRefreshable,
+                     LONG *plId);
 
     HRESULT (STDMETHODCALLTYPE *StopRefreshing)(
-        IWbemHiPerfProvider *This,
-        IWbemRefresher *pRefresher,
-        LONG lId,
-        LONG lFlags);
+                     IWbemHiPerfProvider *This,
+                     IWbemRefresher *pRefresher,
+                     LONG lId,
+                     LONG lFlags);
 
     HRESULT (STDMETHODCALLTYPE *CreateRefreshableEnum)(
-        IWbemHiPerfProvider *This,
-        IWbemServices *pNamespace,
-        LPCWSTR wszClass,
-        IWbemRefresher *pRefresher,
-        LONG lFlags,
-        IWbemContext *pContext,
-        IWbemHiPerfEnum *pHiPerfEnum,
-        LONG *plId);
+                     IWbemHiPerfProvider *This,
+                     IWbemServices *pNamespace,
+                     LPCWSTR wszClass,
+                     IWbemRefresher *pRefresher,
+                     LONG lFlags,
+                     IWbemContext *pContext,
+                     IWbemHiPerfEnum *pHiPerfEnum,
+                     LONG *plId);
 
     HRESULT (STDMETHODCALLTYPE *GetObjects)(
-        IWbemHiPerfProvider *This,
-        IWbemServices *pNamespace,
-        LONG lNumObjects,
-        IWbemObjectAccess **apObj,
-        LONG lFlags,
-        IWbemContext *pContext);
+                     IWbemHiPerfProvider *This,
+                     IWbemServices *pNamespace,
+                     LONG lNumObjects,
+                     IWbemObjectAccess **apObj,
+                     LONG lFlags,
+                     IWbemContext *pContext);
 
     END_INTERFACE
 } IWbemHiPerfProviderVtbl;
@@ -1319,16 +1319,16 @@ MIDL_INTERFACE("1005cbcf-e64f-4646-bcd3-3a089d8a84b4")
 IWbemDecoupledRegistrar : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Register(
-        LONG a_Flags,
-        IWbemContext *a_Context,
-        LPCWSTR a_User,
-        LPCWSTR a_Locale,
-        LPCWSTR a_Scope,
-        LPCWSTR a_Registration,
-        IUnknown *pIUnknown) = 0;
+                     LONG a_Flags,
+                     IWbemContext *a_Context,
+                     LPCWSTR a_User,
+                     LPCWSTR a_Locale,
+                     LPCWSTR a_Scope,
+                     LPCWSTR a_Registration,
+                     IUnknown *pIUnknown) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnRegister(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1340,29 +1340,29 @@ typedef struct IWbemDecoupledRegistrarVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemDecoupledRegistrar *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemDecoupledRegistrar *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemDecoupledRegistrar *This);
+                     IWbemDecoupledRegistrar *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemDecoupledRegistrar *This);
+                     IWbemDecoupledRegistrar *This);
 
     /*** IWbemDecoupledRegistrar methods ***/
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IWbemDecoupledRegistrar *This,
-        LONG a_Flags,
-        IWbemContext *a_Context,
-        LPCWSTR a_User,
-        LPCWSTR a_Locale,
-        LPCWSTR a_Scope,
-        LPCWSTR a_Registration,
-        IUnknown *pIUnknown);
+                     IWbemDecoupledRegistrar *This,
+                     LONG a_Flags,
+                     IWbemContext *a_Context,
+                     LPCWSTR a_User,
+                     LPCWSTR a_Locale,
+                     LPCWSTR a_Scope,
+                     LPCWSTR a_Registration,
+                     IUnknown *pIUnknown);
 
     HRESULT (STDMETHODCALLTYPE *UnRegister)(
-        IWbemDecoupledRegistrar *This);
+                     IWbemDecoupledRegistrar *This);
 
     END_INTERFACE
 } IWbemDecoupledRegistrarVtbl;
@@ -1418,14 +1418,14 @@ MIDL_INTERFACE("86336d20-ca11-4786-9ef1-bc8a946b42fc")
 IWbemDecoupledBasicEventProvider : public IWbemDecoupledRegistrar
 {
     virtual HRESULT STDMETHODCALLTYPE GetSink(
-        LONG a_Flags,
-        IWbemContext *a_Context,
-        IWbemObjectSink **a_Sink) = 0;
+                     LONG a_Flags,
+                     IWbemContext *a_Context,
+                     IWbemObjectSink **a_Sink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetService(
-        LONG a_Flags,
-        IWbemContext *a_Context,
-        IWbemServices **a_Service) = 0;
+                     LONG a_Flags,
+                     IWbemContext *a_Context,
+                     IWbemServices **a_Service) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1437,42 +1437,42 @@ typedef struct IWbemDecoupledBasicEventProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemDecoupledBasicEventProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemDecoupledBasicEventProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemDecoupledBasicEventProvider *This);
+                     IWbemDecoupledBasicEventProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemDecoupledBasicEventProvider *This);
+                     IWbemDecoupledBasicEventProvider *This);
 
     /*** IWbemDecoupledRegistrar methods ***/
     HRESULT (STDMETHODCALLTYPE *Register)(
-        IWbemDecoupledBasicEventProvider *This,
-        LONG a_Flags,
-        IWbemContext *a_Context,
-        LPCWSTR a_User,
-        LPCWSTR a_Locale,
-        LPCWSTR a_Scope,
-        LPCWSTR a_Registration,
-        IUnknown *pIUnknown);
+                     IWbemDecoupledBasicEventProvider *This,
+                     LONG a_Flags,
+                     IWbemContext *a_Context,
+                     LPCWSTR a_User,
+                     LPCWSTR a_Locale,
+                     LPCWSTR a_Scope,
+                     LPCWSTR a_Registration,
+                     IUnknown *pIUnknown);
 
     HRESULT (STDMETHODCALLTYPE *UnRegister)(
-        IWbemDecoupledBasicEventProvider *This);
+                     IWbemDecoupledBasicEventProvider *This);
 
     /*** IWbemDecoupledBasicEventProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSink)(
-        IWbemDecoupledBasicEventProvider *This,
-        LONG a_Flags,
-        IWbemContext *a_Context,
-        IWbemObjectSink **a_Sink);
+                     IWbemDecoupledBasicEventProvider *This,
+                     LONG a_Flags,
+                     IWbemContext *a_Context,
+                     IWbemObjectSink **a_Sink);
 
     HRESULT (STDMETHODCALLTYPE *GetService)(
-        IWbemDecoupledBasicEventProvider *This,
-        LONG a_Flags,
-        IWbemContext *a_Context,
-        IWbemServices **a_Service);
+                     IWbemDecoupledBasicEventProvider *This,
+                     LONG a_Flags,
+                     IWbemContext *a_Context,
+                     IWbemServices **a_Service);
 
     END_INTERFACE
 } IWbemDecoupledBasicEventProviderVtbl;
@@ -1538,22 +1538,22 @@ MIDL_INTERFACE("3ae0080a-7e3a-4366-bf89-0feedc931659")
 IWbemEventSink : public IWbemObjectSink
 {
     virtual HRESULT STDMETHODCALLTYPE SetSinkSecurity(
-        LONG lSDLength,
-        BYTE *pSD) = 0;
+                     LONG lSDLength,
+                     BYTE *pSD) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsActive(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRestrictedSink(
-        LONG lNumQueries,
-        const LPCWSTR *awszQueries,
-        IUnknown *pCallback,
-        IWbemEventSink **ppSink) = 0;
+                     LONG lNumQueries,
+                     const LPCWSTR *awszQueries,
+                     IUnknown *pCallback,
+                     IWbemEventSink **ppSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBatchingParameters(
-        LONG lFlags,
-        DWORD dwMaxBufferSize,
-        DWORD dwMaxSendLatency) = 0;
+                     LONG lFlags,
+                     DWORD dwMaxBufferSize,
+                     DWORD dwMaxSendLatency) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1565,50 +1565,50 @@ typedef struct IWbemEventSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWbemEventSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWbemEventSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWbemEventSink *This);
+                     IWbemEventSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWbemEventSink *This);
+                     IWbemEventSink *This);
 
     /*** IWbemObjectSink methods ***/
     HRESULT (STDMETHODCALLTYPE *Indicate)(
-        IWbemEventSink *This,
-        LONG lObjectCount,
-        IWbemClassObject **apObjArray);
+                     IWbemEventSink *This,
+                     LONG lObjectCount,
+                     IWbemClassObject **apObjArray);
 
     HRESULT (STDMETHODCALLTYPE *SetStatus)(
-        IWbemEventSink *This,
-        LONG lFlags,
-        HRESULT hResult,
-        BSTR strParam,
-        IWbemClassObject *pObjParam);
+                     IWbemEventSink *This,
+                     LONG lFlags,
+                     HRESULT hResult,
+                     BSTR strParam,
+                     IWbemClassObject *pObjParam);
 
     /*** IWbemEventSink methods ***/
     HRESULT (STDMETHODCALLTYPE *SetSinkSecurity)(
-        IWbemEventSink *This,
-        LONG lSDLength,
-        BYTE *pSD);
+                     IWbemEventSink *This,
+                     LONG lSDLength,
+                     BYTE *pSD);
 
     HRESULT (STDMETHODCALLTYPE *IsActive)(
-        IWbemEventSink *This);
+                     IWbemEventSink *This);
 
     HRESULT (STDMETHODCALLTYPE *GetRestrictedSink)(
-        IWbemEventSink *This,
-        LONG lNumQueries,
-        const LPCWSTR *awszQueries,
-        IUnknown *pCallback,
-        IWbemEventSink **ppSink);
+                     IWbemEventSink *This,
+                     LONG lNumQueries,
+                     const LPCWSTR *awszQueries,
+                     IUnknown *pCallback,
+                     IWbemEventSink **ppSink);
 
     HRESULT (STDMETHODCALLTYPE *SetBatchingParameters)(
-        IWbemEventSink *This,
-        LONG lFlags,
-        DWORD dwMaxBufferSize,
-        DWORD dwMaxSendLatency);
+                     IWbemEventSink *This,
+                     LONG lFlags,
+                     DWORD dwMaxBufferSize,
+                     DWORD dwMaxSendLatency);
 
     END_INTERFACE
 } IWbemEventSinkVtbl;
@@ -1673,14 +1673,14 @@ static FORCEINLINE HRESULT IWbemEventSink_SetBatchingParameters(IWbemEventSink* 
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

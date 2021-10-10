@@ -29,11 +29,11 @@ pub const IO_Uring = struct {
     /// see https://github.com/torvalds/linux/blob/v5.8/fs/io_uring.c#L8027-L8050.
     /// Matches the interface of io_uring_queue_init() in liburing.
     pub fn init(entries: u12, flags: u32) !IO_Uring {
-        var params = mem.zeroInit(io_uring_params, .{
-            .flags = flags,
-            .sq_thread_idle = 1000
-        });
-        return try IO_Uring.init_params(entries, &params);
+                     var params = mem.zeroInit(io_uring_params, .{
+                                      .flags = flags,
+                                      .sq_thread_idle = 1000
+                     });
+                     return try IO_Uring.init_params(entries, &params);
     }
 
     /// A powerful way to setup an io_uring, if you want to tweak io_uring_params such as submission
@@ -43,96 +43,96 @@ pub const IO_Uring = struct {
     /// Every other parameter belongs to the kernel and must be zeroed.
     /// Matches the interface of io_uring_queue_init_params() in liburing.
     pub fn init_params(entries: u12, p: *io_uring_params) !IO_Uring {
-        if (entries == 0) return error.EntriesZero;
-        if (!std.math.isPowerOfTwo(entries)) return error.EntriesNotPowerOfTwo;
+                     if (entries == 0) return error.EntriesZero;
+                     if (!std.math.isPowerOfTwo(entries)) return error.EntriesNotPowerOfTwo;
 
-        assert(p.sq_entries == 0);
-        assert(p.cq_entries == 0);
-        assert(p.features == 0);
-        assert(p.wq_fd == 0);
-        assert(p.resv[0] == 0);
-        assert(p.resv[1] == 0);
-        assert(p.resv[2] == 0);
+                     assert(p.sq_entries == 0);
+                     assert(p.cq_entries == 0);
+                     assert(p.features == 0);
+                     assert(p.wq_fd == 0);
+                     assert(p.resv[0] == 0);
+                     assert(p.resv[1] == 0);
+                     assert(p.resv[2] == 0);
 
-        const res = linux.io_uring_setup(entries, p);
-        switch (linux.getErrno(res)) {
-            0 => {},
-            linux.EFAULT => return error.ParamsOutsideAccessibleAddressSpace,
-            // The resv array contains non-zero data, p.flags contains an unsupported flag,
-            // entries out of bounds, IORING_SETUP_SQ_AFF was specified without IORING_SETUP_SQPOLL,
-            // or IORING_SETUP_CQSIZE was specified but io_uring_params.cq_entries was invalid:
-            linux.EINVAL => return error.ArgumentsInvalid,
-            linux.EMFILE => return error.ProcessFdQuotaExceeded,
-            linux.ENFILE => return error.SystemFdQuotaExceeded,
-            linux.ENOMEM => return error.SystemResources,
-            // IORING_SETUP_SQPOLL was specified but effective user ID lacks sufficient privileges,
-            // or a container seccomp policy prohibits io_uring syscalls:
-            linux.EPERM => return error.PermissionDenied,
-            linux.ENOSYS => return error.SystemOutdated,
-            else => |errno| return os.unexpectedErrno(errno)
-        }
-        const fd = @intCast(os.fd_t, res);
-        assert(fd >= 0);
-        errdefer os.close(fd);
+                     const res = linux.io_uring_setup(entries, p);
+                     switch (linux.getErrno(res)) {
+                                      0 => {},
+                                      linux.EFAULT => return error.ParamsOutsideAccessibleAddressSpace,
+                                      // The resv array contains non-zero data, p.flags contains an unsupported flag,
+                                      // entries out of bounds, IORING_SETUP_SQ_AFF was specified without IORING_SETUP_SQPOLL,
+                                      // or IORING_SETUP_CQSIZE was specified but io_uring_params.cq_entries was invalid:
+                                      linux.EINVAL => return error.ArgumentsInvalid,
+                                      linux.EMFILE => return error.ProcessFdQuotaExceeded,
+                                      linux.ENFILE => return error.SystemFdQuotaExceeded,
+                                      linux.ENOMEM => return error.SystemResources,
+                                      // IORING_SETUP_SQPOLL was specified but effective user ID lacks sufficient privileges,
+                                      // or a container seccomp policy prohibits io_uring syscalls:
+                                      linux.EPERM => return error.PermissionDenied,
+                                      linux.ENOSYS => return error.SystemOutdated,
+                                      else => |errno| return os.unexpectedErrno(errno)
+                     }
+                     const fd = @intCast(os.fd_t, res);
+                     assert(fd >= 0);
+                     errdefer os.close(fd);
 
-        // Kernel versions 5.4 and up use only one mmap() for the submission and completion queues.
-        // This is not an optional feature for us... if the kernel does it, we have to do it.
-        // The thinking on this by the kernel developers was that both the submission and the
-        // completion queue rings have sizes just over a power of two, but the submission queue ring
-        // is significantly smaller with u32 slots. By bundling both in a single mmap, the kernel
-        // gets the submission queue ring for free.
-        // See https://patchwork.kernel.org/patch/11115257 for the kernel patch.
-        // We do not support the double mmap() done before 5.4, because we want to keep the
-        // init/deinit mmap paths simple and because io_uring has had many bug fixes even since 5.4.
-        if ((p.features & linux.IORING_FEAT_SINGLE_MMAP) == 0) {
-            return error.SystemOutdated;
-        }
+                     // Kernel versions 5.4 and up use only one mmap() for the submission and completion queues.
+                     // This is not an optional feature for us... if the kernel does it, we have to do it.
+                     // The thinking on this by the kernel developers was that both the submission and the
+                     // completion queue rings have sizes just over a power of two, but the submission queue ring
+                     // is significantly smaller with u32 slots. By bundling both in a single mmap, the kernel
+                     // gets the submission queue ring for free.
+                     // See https://patchwork.kernel.org/patch/11115257 for the kernel patch.
+                     // We do not support the double mmap() done before 5.4, because we want to keep the
+                     // init/deinit mmap paths simple and because io_uring has had many bug fixes even since 5.4.
+                     if ((p.features & linux.IORING_FEAT_SINGLE_MMAP) == 0) {
+                                      return error.SystemOutdated;
+                     }
 
-        // Check that the kernel has actually set params and that "impossible is nothing".
-        assert(p.sq_entries != 0);
-        assert(p.cq_entries != 0);
-        assert(p.cq_entries >= p.sq_entries);
+                     // Check that the kernel has actually set params and that "impossible is nothing".
+                     assert(p.sq_entries != 0);
+                     assert(p.cq_entries != 0);
+                     assert(p.cq_entries >= p.sq_entries);
 
-        // From here on, we only need to read from params, so pass `p` by value as immutable.
-        // The completion queue shares the mmap with the submission queue, so pass `sq` there too.
-        var sq = try SubmissionQueue.init(fd, p.*);
-        errdefer sq.deinit();
-        var cq = try CompletionQueue.init(fd, p.*, sq);
-        errdefer cq.deinit();
+                     // From here on, we only need to read from params, so pass `p` by value as immutable.
+                     // The completion queue shares the mmap with the submission queue, so pass `sq` there too.
+                     var sq = try SubmissionQueue.init(fd, p.*);
+                     errdefer sq.deinit();
+                     var cq = try CompletionQueue.init(fd, p.*, sq);
+                     errdefer cq.deinit();
 
-        // Check that our starting state is as we expect.
-        assert(sq.head.* == 0);
-        assert(sq.tail.* == 0);
-        assert(sq.mask == p.sq_entries - 1);
-        // Allow flags.* to be non-zero, since the kernel may set IORING_SQ_NEED_WAKEUP at any time.
-        assert(sq.dropped.* == 0);
-        assert(sq.array.len == p.sq_entries);
-        assert(sq.sqes.len == p.sq_entries);
-        assert(sq.sqe_head == 0);
-        assert(sq.sqe_tail == 0);
+                     // Check that our starting state is as we expect.
+                     assert(sq.head.* == 0);
+                     assert(sq.tail.* == 0);
+                     assert(sq.mask == p.sq_entries - 1);
+                     // Allow flags.* to be non-zero, since the kernel may set IORING_SQ_NEED_WAKEUP at any time.
+                     assert(sq.dropped.* == 0);
+                     assert(sq.array.len == p.sq_entries);
+                     assert(sq.sqes.len == p.sq_entries);
+                     assert(sq.sqe_head == 0);
+                     assert(sq.sqe_tail == 0);
 
-        assert(cq.head.* == 0);
-        assert(cq.tail.* == 0);
-        assert(cq.mask == p.cq_entries - 1);
-        assert(cq.overflow.* == 0);
-        assert(cq.cqes.len == p.cq_entries);
+                     assert(cq.head.* == 0);
+                     assert(cq.tail.* == 0);
+                     assert(cq.mask == p.cq_entries - 1);
+                     assert(cq.overflow.* == 0);
+                     assert(cq.cqes.len == p.cq_entries);
 
-        return IO_Uring {
-            .fd = fd,
-            .sq = sq,
-            .cq = cq,
-            .flags = p.flags,
-            .features = p.features
-        };
+                     return IO_Uring {
+                                      .fd = fd,
+                                      .sq = sq,
+                                      .cq = cq,
+                                      .flags = p.flags,
+                                      .features = p.features
+                     };
     }
 
     pub fn deinit(self: *IO_Uring) void {
-        assert(self.fd >= 0);
-        // The mmaps depend on the fd, so the order of these calls is important:
-        self.cq.deinit();
-        self.sq.deinit();
-        os.close(self.fd);
-        self.fd = -1;
+                     assert(self.fd >= 0);
+                     // The mmaps depend on the fd, so the order of these calls is important:
+                     self.cq.deinit();
+                     self.sq.deinit();
+                     os.close(self.fd);
+                     self.fd = -1;
     }
 
     /// Returns a pointer to a vacant SQE, or an error if the submission queue is full.
@@ -143,14 +143,14 @@ pub const IO_Uring = struct {
     /// alternative. In Zig, we have first-class error handling... so let's use it.
     /// Matches the implementation of io_uring_get_sqe() in liburing.
     pub fn get_sqe(self: *IO_Uring) !*io_uring_sqe {
-        const head = @atomicLoad(u32, self.sq.head, .Acquire);
-        // Remember that these head and tail offsets wrap around every four billion operations.
-        // We must therefore use wrapping addition and subtraction to avoid a runtime crash.
-        const next = self.sq.sqe_tail +% 1;
-        if (next -% head > self.sq.sqes.len) return error.SubmissionQueueFull;
-        var sqe = &self.sq.sqes[self.sq.sqe_tail & self.sq.mask];
-        self.sq.sqe_tail = next;
-        return sqe;
+                     const head = @atomicLoad(u32, self.sq.head, .Acquire);
+                     // Remember that these head and tail offsets wrap around every four billion operations.
+                     // We must therefore use wrapping addition and subtraction to avoid a runtime crash.
+                     const next = self.sq.sqe_tail +% 1;
+                     if (next -% head > self.sq.sqes.len) return error.SubmissionQueueFull;
+                     var sqe = &self.sq.sqes[self.sq.sqe_tail & self.sq.mask];
+                     self.sq.sqe_tail = next;
+                     return sqe;
     }
 
     /// Submits the SQEs acquired via get_sqe() to the kernel. You can call this once after you have
@@ -158,58 +158,58 @@ pub const IO_Uring = struct {
     /// Returns the number of SQEs submitted.
     /// Matches the implementation of io_uring_submit() in liburing.
     pub fn submit(self: *IO_Uring) !u32 {
-        return self.submit_and_wait(0);
+                     return self.submit_and_wait(0);
     }
 
     /// Like submit(), but allows waiting for events as well.
     /// Returns the number of SQEs submitted.
     /// Matches the implementation of io_uring_submit_and_wait() in liburing.
     pub fn submit_and_wait(self: *IO_Uring, wait_nr: u32) !u32 {
-        var submitted = self.flush_sq();
-        var flags: u32 = 0;
-        if (self.sq_ring_needs_enter(submitted, &flags) or wait_nr > 0) {
-            if (wait_nr > 0 or (self.flags & linux.IORING_SETUP_IOPOLL) != 0) {
-                flags |= linux.IORING_ENTER_GETEVENTS;
-            }
-            return try self.enter(submitted, wait_nr, flags);
-        }
-        return submitted;
+                     var submitted = self.flush_sq();
+                     var flags: u32 = 0;
+                     if (self.sq_ring_needs_enter(submitted, &flags) or wait_nr > 0) {
+                                      if (wait_nr > 0 or (self.flags & linux.IORING_SETUP_IOPOLL) != 0) {
+                                          flags |= linux.IORING_ENTER_GETEVENTS;
+                                      }
+                                      return try self.enter(submitted, wait_nr, flags);
+                     }
+                     return submitted;
     }
 
     /// Tell the kernel we have submitted SQEs and/or want to wait for CQEs.
     /// Returns the number of SQEs submitted.
     pub fn enter(self: *IO_Uring, to_submit: u32, min_complete: u32, flags: u32) !u32 {
-        assert(self.fd >= 0);
-        const res = linux.io_uring_enter(self.fd, to_submit, min_complete, flags, null);
-        switch (linux.getErrno(res)) {
-            0 => {},
-            // The kernel was unable to allocate memory or ran out of resources for the request.
-            // The application should wait for some completions and try again:
-            linux.EAGAIN => return error.SystemResources,
-            // The SQE `fd` is invalid, or IOSQE_FIXED_FILE was set but no files were registered:
-            linux.EBADF => return error.FileDescriptorInvalid,
-            // The file descriptor is valid, but the ring is not in the right state.
-            // See io_uring_register(2) for how to enable the ring.
-            linux.EBADFD => return error.FileDescriptorInBadState,
-            // The application attempted to overcommit the number of requests it can have pending.
-            // The application should wait for some completions and try again:
-            linux.EBUSY => return error.CompletionQueueOvercommitted,
-            // The SQE is invalid, or valid but the ring was setup with IORING_SETUP_IOPOLL:
-            linux.EINVAL => return error.SubmissionQueueEntryInvalid,
-            // The buffer is outside the process' accessible address space, or IORING_OP_READ_FIXED
-            // or IORING_OP_WRITE_FIXED was specified but no buffers were registered, or the range
-            // described by `addr` and `len` is not within the buffer registered at `buf_index`:
-            linux.EFAULT => return error.BufferInvalid,
-            linux.ENXIO => return error.RingShuttingDown,
-            // The kernel believes our `self.fd` does not refer to an io_uring instance,
-            // or the opcode is valid but not supported by this kernel (more likely):
-            linux.EOPNOTSUPP => return error.OpcodeNotSupported,
-            // The operation was interrupted by a delivery of a signal before it could complete.
-            // This can happen while waiting for events with IORING_ENTER_GETEVENTS:
-            linux.EINTR => return error.SignalInterrupt,
-            else => |errno| return os.unexpectedErrno(errno)
-        }
-        return @intCast(u32, res);
+                     assert(self.fd >= 0);
+                     const res = linux.io_uring_enter(self.fd, to_submit, min_complete, flags, null);
+                     switch (linux.getErrno(res)) {
+                                      0 => {},
+                                      // The kernel was unable to allocate memory or ran out of resources for the request.
+                                      // The application should wait for some completions and try again:
+                                      linux.EAGAIN => return error.SystemResources,
+                                      // The SQE `fd` is invalid, or IOSQE_FIXED_FILE was set but no files were registered:
+                                      linux.EBADF => return error.FileDescriptorInvalid,
+                                      // The file descriptor is valid, but the ring is not in the right state.
+                                      // See io_uring_register(2) for how to enable the ring.
+                                      linux.EBADFD => return error.FileDescriptorInBadState,
+                                      // The application attempted to overcommit the number of requests it can have pending.
+                                      // The application should wait for some completions and try again:
+                                      linux.EBUSY => return error.CompletionQueueOvercommitted,
+                                      // The SQE is invalid, or valid but the ring was setup with IORING_SETUP_IOPOLL:
+                                      linux.EINVAL => return error.SubmissionQueueEntryInvalid,
+                                      // The buffer is outside the process' accessible address space, or IORING_OP_READ_FIXED
+                                      // or IORING_OP_WRITE_FIXED was specified but no buffers were registered, or the range
+                                      // described by `addr` and `len` is not within the buffer registered at `buf_index`:
+                                      linux.EFAULT => return error.BufferInvalid,
+                                      linux.ENXIO => return error.RingShuttingDown,
+                                      // The kernel believes our `self.fd` does not refer to an io_uring instance,
+                                      // or the opcode is valid but not supported by this kernel (more likely):
+                                      linux.EOPNOTSUPP => return error.OpcodeNotSupported,
+                                      // The operation was interrupted by a delivery of a signal before it could complete.
+                                      // This can happen while waiting for events with IORING_ENTER_GETEVENTS:
+                                      linux.EINTR => return error.SignalInterrupt,
+                                      else => |errno| return os.unexpectedErrno(errno)
+                     }
+                     return @intCast(u32, res);
     }
 
     /// Sync internal state with kernel ring state on the SQ side.
@@ -218,20 +218,20 @@ pub const IO_Uring = struct {
     /// The rationale is to suggest that an io_uring_enter() call is needed rather than not.
     /// Matches the implementation of __io_uring_flush_sq() in liburing.
     pub fn flush_sq(self: *IO_Uring) u32 {
-        if (self.sq.sqe_head != self.sq.sqe_tail) {
-            // Fill in SQEs that we have queued up, adding them to the kernel ring.
-            const to_submit = self.sq.sqe_tail -% self.sq.sqe_head;
-            var tail = self.sq.tail.*;
-            var i: usize = 0;
-            while (i < to_submit) : (i += 1) {
-                self.sq.array[tail & self.sq.mask] = self.sq.sqe_head & self.sq.mask;
-                tail +%= 1;
-                self.sq.sqe_head +%= 1;
-            }
-            // Ensure that the kernel can actually see the SQE updates when it sees the tail update.
-            @atomicStore(u32, self.sq.tail, tail, .Release);
-        }
-        return self.sq_ready();
+                     if (self.sq.sqe_head != self.sq.sqe_tail) {
+                                      // Fill in SQEs that we have queued up, adding them to the kernel ring.
+                                      const to_submit = self.sq.sqe_tail -% self.sq.sqe_head;
+                                      var tail = self.sq.tail.*;
+                                      var i: usize = 0;
+                                      while (i < to_submit) : (i += 1) {
+                                          self.sq.array[tail & self.sq.mask] = self.sq.sqe_head & self.sq.mask;
+                                          tail +%= 1;
+                                          self.sq.sqe_head +%= 1;
+                                      }
+                                      // Ensure that the kernel can actually see the SQE updates when it sees the tail update.
+                                      @atomicStore(u32, self.sq.tail, tail, .Release);
+                     }
+                     return self.sq_ready();
     }
 
     /// Returns true if we are not using an SQ thread (thus nobody submits but us),
@@ -239,13 +239,13 @@ pub const IO_Uring = struct {
     /// For the latter case, we set the SQ thread wakeup flag.
     /// Matches the implementation of sq_ring_needs_enter() in liburing.
     pub fn sq_ring_needs_enter(self: *IO_Uring, submitted: u32, flags: *u32) bool {
-        assert(flags.* == 0);
-        if ((self.flags & linux.IORING_SETUP_SQPOLL) == 0 and submitted > 0) return true;
-        if ((@atomicLoad(u32, self.sq.flags, .Unordered) & linux.IORING_SQ_NEED_WAKEUP) != 0) {
-            flags.* |= linux.IORING_ENTER_SQ_WAKEUP;
-            return true;
-        }
-        return false;
+                     assert(flags.* == 0);
+                     if ((self.flags & linux.IORING_SETUP_SQPOLL) == 0 and submitted > 0) return true;
+                     if ((@atomicLoad(u32, self.sq.flags, .Unordered) & linux.IORING_SQ_NEED_WAKEUP) != 0) {
+                                      flags.* |= linux.IORING_ENTER_SQ_WAKEUP;
+                                      return true;
+                     }
+                     return false;
     }
 
     /// Returns the number of flushed and unflushed SQEs pending in the submission queue.
@@ -253,16 +253,16 @@ pub const IO_Uring = struct {
     /// These are SQEs that the kernel is yet to consume.
     /// Matches the implementation of io_uring_sq_ready in liburing.
     pub fn sq_ready(self: *IO_Uring) u32 {
-        // Always use the shared ring state (i.e. head and not sqe_head) to avoid going out of sync,
-        // see https://github.com/axboe/liburing/issues/92.
-        return self.sq.sqe_tail -% @atomicLoad(u32, self.sq.head, .Acquire);
+                     // Always use the shared ring state (i.e. head and not sqe_head) to avoid going out of sync,
+                     // see https://github.com/axboe/liburing/issues/92.
+                     return self.sq.sqe_tail -% @atomicLoad(u32, self.sq.head, .Acquire);
     }
 
     /// Returns the number of CQEs in the completion queue, i.e. its length.
     /// These are CQEs that the application is yet to consume.
     /// Matches the implementation of io_uring_cq_ready in liburing.
     pub fn cq_ready(self: *IO_Uring) u32 {
-        return @atomicLoad(u32, self.cq.tail, .Acquire) -% self.cq.head.*;
+                     return @atomicLoad(u32, self.cq.tail, .Acquire) -% self.cq.head.*;
     }
 
     /// Copies as many CQEs as are ready, and that can fit into the destination `cqes` slice.
@@ -276,44 +276,44 @@ pub const IO_Uring = struct {
     /// See https://github.com/axboe/liburing/issues/103#issuecomment-686665007.
     /// Matches the implementation of io_uring_peek_batch_cqe() in liburing, but supports waiting.
     pub fn copy_cqes(self: *IO_Uring, cqes: []io_uring_cqe, wait_nr: u32) !u32 {
-        const count = self.copy_cqes_ready(cqes, wait_nr);
-        if (count > 0) return count;
-        if (self.cq_ring_needs_flush() or wait_nr > 0) {
-            _ = try self.enter(0, wait_nr, linux.IORING_ENTER_GETEVENTS);
-            return self.copy_cqes_ready(cqes, wait_nr);
-        }
-        return 0;
+                     const count = self.copy_cqes_ready(cqes, wait_nr);
+                     if (count > 0) return count;
+                     if (self.cq_ring_needs_flush() or wait_nr > 0) {
+                                      _ = try self.enter(0, wait_nr, linux.IORING_ENTER_GETEVENTS);
+                                      return self.copy_cqes_ready(cqes, wait_nr);
+                     }
+                     return 0;
     }
 
     fn copy_cqes_ready(self: *IO_Uring, cqes: []io_uring_cqe, wait_nr: u32) u32 {
-        const ready = self.cq_ready();
-        const count = std.math.min(cqes.len, ready);
-        var head = self.cq.head.*;
-        var tail = head +% count;
-        // TODO Optimize this by using 1 or 2 memcpy's (if the tail wraps) rather than a loop.
-        var i: usize = 0;
-        // Do not use "less-than" operator since head and tail may wrap:
-        while (head != tail) {
-            cqes[i] = self.cq.cqes[head & self.cq.mask]; // Copy struct by value.
-            head +%= 1;
-            i += 1;
-        }
-        self.cq_advance(count);
-        return count;
+                     const ready = self.cq_ready();
+                     const count = std.math.min(cqes.len, ready);
+                     var head = self.cq.head.*;
+                     var tail = head +% count;
+                     // TODO Optimize this by using 1 or 2 memcpy's (if the tail wraps) rather than a loop.
+                     var i: usize = 0;
+                     // Do not use "less-than" operator since head and tail may wrap:
+                     while (head != tail) {
+                                      cqes[i] = self.cq.cqes[head & self.cq.mask]; // Copy struct by value.
+                                      head +%= 1;
+                                      i += 1;
+                     }
+                     self.cq_advance(count);
+                     return count;
     }
 
     /// Returns a copy of an I/O completion, waiting for it if necessary, and advancing the CQ ring.
     /// A convenience method for `copy_cqes()` for when you don't need to batch or peek.
     pub fn copy_cqe(ring: *IO_Uring) !io_uring_cqe {
-        var cqes: [1]io_uring_cqe = undefined;
-        const count = try ring.copy_cqes(&cqes, 1);
-        assert(count == 1);
-        return cqes[0];
+                     var cqes: [1]io_uring_cqe = undefined;
+                     const count = try ring.copy_cqes(&cqes, 1);
+                     assert(count == 1);
+                     return cqes[0];
     }
 
     /// Matches the implementation of cq_ring_needs_flush() in liburing.
     pub fn cq_ring_needs_flush(self: *IO_Uring) bool {
-        return (@atomicLoad(u32, self.sq.flags, .Unordered) & linux.IORING_SQ_CQ_OVERFLOW) != 0;
+                     return (@atomicLoad(u32, self.sq.flags, .Unordered) & linux.IORING_SQ_CQ_OVERFLOW) != 0;
     }
 
     /// For advanced use cases only that implement custom completion queue methods.
@@ -322,16 +322,16 @@ pub const IO_Uring = struct {
     /// Not idempotent, calling more than once will result in other CQEs being lost.
     /// Matches the implementation of cqe_seen() in liburing.
     pub fn cqe_seen(self: *IO_Uring, cqe: *io_uring_cqe) void {
-        self.cq_advance(1);
+                     self.cq_advance(1);
     }
 
     /// For advanced use cases only that implement custom completion queue methods.
     /// Matches the implementation of cq_advance() in liburing.
     pub fn cq_advance(self: *IO_Uring, count: u32) void {
-        if (count > 0) {
-            // Ensure the kernel only sees the new head value after the CQEs have been read.
-            @atomicStore(u32, self.cq.head, self.cq.head.* +% count, .Release);
-        }
+                     if (count > 0) {
+                                      // Ensure the kernel only sees the new head value after the CQEs have been read.
+                                      @atomicStore(u32, self.cq.head, self.cq.head.* +% count, .Release);
+                     }
     }
 
     /// Queues (but does not submit) an SQE to perform an `fsync(2)`.
@@ -344,10 +344,10 @@ pub const IO_Uring = struct {
     /// You should preferably use `link_with_next_sqe()` on a write's SQE to link it with an fsync,
     /// or else insert a full write barrier using `drain_previous_sqes()` when queueing an fsync.
     pub fn fsync(self: *IO_Uring, user_data: u64, fd: os.fd_t, flags: u32) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_fsync(sqe, fd, flags);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_fsync(sqe, fd, flags);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform a no-op.
@@ -356,40 +356,40 @@ pub const IO_Uring = struct {
     /// For example, you could call `drain_previous_sqes()` on the returned SQE, to use the no-op to
     /// know when the ring is idle before acting on a kill signal.
     pub fn nop(self: *IO_Uring, user_data: u64) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_nop(sqe);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_nop(sqe);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform a `read(2)`.
     /// Returns a pointer to the SQE.
     pub fn read(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        buffer: []u8,
-        offset: u64
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     buffer: []u8,
+                     offset: u64
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_read(sqe, fd, buffer, offset);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_read(sqe, fd, buffer, offset);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform a `write(2)`.
     /// Returns a pointer to the SQE.
     pub fn write(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        buffer: []const u8,
-        offset: u64
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     buffer: []const u8,
+                     offset: u64
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_write(sqe, fd, buffer, offset);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_write(sqe, fd, buffer, offset);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform a `preadv()`.
@@ -397,16 +397,16 @@ pub const IO_Uring = struct {
     /// For example, if you want to do a `preadv2()` then set `rw_flags` on the returned SQE.
     /// See https://linux.die.net/man/2/preadv.
     pub fn readv(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        iovecs: []const os.iovec,
-        offset: u64
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     iovecs: []const os.iovec,
+                     offset: u64
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_readv(sqe, fd, iovecs, offset);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_readv(sqe, fd, iovecs, offset);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform a `pwritev()`.
@@ -414,102 +414,102 @@ pub const IO_Uring = struct {
     /// For example, if you want to do a `pwritev2()` then set `rw_flags` on the returned SQE.
     /// See https://linux.die.net/man/2/pwritev.
     pub fn writev(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        iovecs: []const os.iovec_const,
-        offset: u64
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     iovecs: []const os.iovec_const,
+                     offset: u64
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_writev(sqe, fd, iovecs, offset);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_writev(sqe, fd, iovecs, offset);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform an `accept4(2)` on a socket.
     /// Returns a pointer to the SQE.
     pub fn accept(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        addr: *os.sockaddr,
-        addrlen: *os.socklen_t,
-        flags: u32
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     addr: *os.sockaddr,
+                     addrlen: *os.socklen_t,
+                     flags: u32
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_accept(sqe, fd, addr, addrlen, flags);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_accept(sqe, fd, addr, addrlen, flags);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queue (but does not submit) an SQE to perform a `connect(2)` on a socket.
     /// Returns a pointer to the SQE.
     pub fn connect(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        addr: *const os.sockaddr,
-        addrlen: os.socklen_t
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     addr: *const os.sockaddr,
+                     addrlen: os.socklen_t
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_connect(sqe, fd, addr, addrlen);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_connect(sqe, fd, addr, addrlen);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform a `recv(2)`.
     /// Returns a pointer to the SQE.
     pub fn recv(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        buffer: []u8,
-        flags: u32
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     buffer: []u8,
+                     flags: u32
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_recv(sqe, fd, buffer, flags);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_recv(sqe, fd, buffer, flags);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform a `send(2)`.
     /// Returns a pointer to the SQE.
     pub fn send(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        buffer: []const u8,
-        flags: u32
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     buffer: []const u8,
+                     flags: u32
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_send(sqe, fd, buffer, flags);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_send(sqe, fd, buffer, flags);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform an `openat(2)`.
     /// Returns a pointer to the SQE.
     pub fn openat(
-        self: *IO_Uring,
-        user_data: u64,
-        fd: os.fd_t,
-        path: [*:0]const u8,
-        flags: u32,
-        mode: os.mode_t
+                     self: *IO_Uring,
+                     user_data: u64,
+                     fd: os.fd_t,
+                     path: [*:0]const u8,
+                     flags: u32,
+                     mode: os.mode_t
     ) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_openat(sqe, fd, path, flags, mode);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_openat(sqe, fd, path, flags, mode);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Queues (but does not submit) an SQE to perform a `close(2)`.
     /// Returns a pointer to the SQE.
     pub fn close(self: *IO_Uring, user_data: u64, fd: os.fd_t) !*io_uring_sqe {
-        const sqe = try self.get_sqe();
-        io_uring_prep_close(sqe, fd);
-        sqe.user_data = user_data;
-        return sqe;
+                     const sqe = try self.get_sqe();
+                     io_uring_prep_close(sqe, fd);
+                     sqe.user_data = user_data;
+                     return sqe;
     }
 
     /// Registers an array of file descriptors.
@@ -523,44 +523,44 @@ pub const IO_Uring = struct {
     /// Files are automatically unregistered by the kernel when the ring is torn down.
     /// An application need unregister only if it wants to register a new array of file descriptors.
     pub fn register_files(self: *IO_Uring, fds: []const os.fd_t) !void {
-        assert(self.fd >= 0);
-        comptime assert(@sizeOf(os.fd_t) == @sizeOf(c_int));
-        const res = linux.io_uring_register(
-            self.fd,
-            .REGISTER_FILES,
-            @ptrCast(*const c_void, fds.ptr),
-            @intCast(u32, fds.len)
-        );
-        switch (linux.getErrno(res)) {
-            0 => {},
-            // One or more fds in the array are invalid, or the kernel does not support sparse sets:
-            linux.EBADF => return error.FileDescriptorInvalid,
-            linux.EBUSY => return error.FilesAlreadyRegistered,
-            linux.EINVAL => return error.FilesEmpty,
-            // Adding `nr_args` file references would exceed the maximum allowed number of files the
-            // user is allowed to have according to the per-user RLIMIT_NOFILE resource limit and
-            // the CAP_SYS_RESOURCE capability is not set, or `nr_args` exceeds the maximum allowed
-            // for a fixed file set (older kernels have a limit of 1024 files vs 64K files):
-            linux.EMFILE => return error.UserFdQuotaExceeded,
-            // Insufficient kernel resources, or the caller had a non-zero RLIMIT_MEMLOCK soft
-            // resource limit but tried to lock more memory than the limit permitted (not enforced
-            // when the process is privileged with CAP_IPC_LOCK):
-            linux.ENOMEM => return error.SystemResources,
-            // Attempt to register files on a ring already registering files or being torn down:
-            linux.ENXIO => return error.RingShuttingDownOrAlreadyRegisteringFiles,
-            else => |errno| return os.unexpectedErrno(errno)
-        }
+                     assert(self.fd >= 0);
+                     comptime assert(@sizeOf(os.fd_t) == @sizeOf(c_int));
+                     const res = linux.io_uring_register(
+                                      self.fd,
+                                      .REGISTER_FILES,
+                                      @ptrCast(*const c_void, fds.ptr),
+                                      @intCast(u32, fds.len)
+                     );
+                     switch (linux.getErrno(res)) {
+                                      0 => {},
+                                      // One or more fds in the array are invalid, or the kernel does not support sparse sets:
+                                      linux.EBADF => return error.FileDescriptorInvalid,
+                                      linux.EBUSY => return error.FilesAlreadyRegistered,
+                                      linux.EINVAL => return error.FilesEmpty,
+                                      // Adding `nr_args` file references would exceed the maximum allowed number of files the
+                                      // user is allowed to have according to the per-user RLIMIT_NOFILE resource limit and
+                                      // the CAP_SYS_RESOURCE capability is not set, or `nr_args` exceeds the maximum allowed
+                                      // for a fixed file set (older kernels have a limit of 1024 files vs 64K files):
+                                      linux.EMFILE => return error.UserFdQuotaExceeded,
+                                      // Insufficient kernel resources, or the caller had a non-zero RLIMIT_MEMLOCK soft
+                                      // resource limit but tried to lock more memory than the limit permitted (not enforced
+                                      // when the process is privileged with CAP_IPC_LOCK):
+                                      linux.ENOMEM => return error.SystemResources,
+                                      // Attempt to register files on a ring already registering files or being torn down:
+                                      linux.ENXIO => return error.RingShuttingDownOrAlreadyRegisteringFiles,
+                                      else => |errno| return os.unexpectedErrno(errno)
+                     }
     }
 
     /// Unregisters all registered file descriptors previously associated with the ring.
     pub fn unregister_files(self: *IO_Uring) !void {
-        assert(self.fd >= 0);
-        const res = linux.io_uring_register(self.fd, .UNREGISTER_FILES, null, 0);
-        switch (linux.getErrno(res)) {
-            0 => {},
-            linux.ENXIO => return error.FilesNotRegistered,
-            else => |errno| return os.unexpectedErrno(errno)
-        }
+                     assert(self.fd >= 0);
+                     const res = linux.io_uring_register(self.fd, .UNREGISTER_FILES, null, 0);
+                     switch (linux.getErrno(res)) {
+                                      0 => {},
+                                      linux.ENXIO => return error.FilesNotRegistered,
+                                      else => |errno| return os.unexpectedErrno(errno)
+                     }
     }
 };
 
@@ -583,61 +583,61 @@ pub const SubmissionQueue = struct {
     sqe_tail: u32 = 0,
     
     pub fn init(fd: os.fd_t, p: io_uring_params) !SubmissionQueue {
-        assert(fd >= 0);
-        assert((p.features & linux.IORING_FEAT_SINGLE_MMAP) != 0);
-        const size = std.math.max(
-            p.sq_off.array + p.sq_entries * @sizeOf(u32),
-            p.cq_off.cqes + p.cq_entries * @sizeOf(io_uring_cqe)
-        );
-        const mmap = try os.mmap(
-            null,
-            size,
-            os.PROT_READ | os.PROT_WRITE,
-            os.MAP_SHARED | os.MAP_POPULATE,
-            fd,
-            linux.IORING_OFF_SQ_RING,
-        );
-        errdefer os.munmap(mmap);
-        assert(mmap.len == size);
+                     assert(fd >= 0);
+                     assert((p.features & linux.IORING_FEAT_SINGLE_MMAP) != 0);
+                     const size = std.math.max(
+                                      p.sq_off.array + p.sq_entries * @sizeOf(u32),
+                                      p.cq_off.cqes + p.cq_entries * @sizeOf(io_uring_cqe)
+                     );
+                     const mmap = try os.mmap(
+                                      null,
+                                      size,
+                                      os.PROT_READ | os.PROT_WRITE,
+                                      os.MAP_SHARED | os.MAP_POPULATE,
+                                      fd,
+                                      linux.IORING_OFF_SQ_RING,
+                     );
+                     errdefer os.munmap(mmap);
+                     assert(mmap.len == size);
 
-        // The motivation for the `sqes` and `array` indirection is to make it possible for the
-        // application to preallocate static io_uring_sqe entries and then replay them when needed.
-        const size_sqes = p.sq_entries * @sizeOf(io_uring_sqe);
-        const mmap_sqes = try os.mmap(
-            null,
-            size_sqes,
-            os.PROT_READ | os.PROT_WRITE,
-            os.MAP_SHARED | os.MAP_POPULATE,
-            fd,
-            linux.IORING_OFF_SQES,
-        );
-        errdefer os.munmap(mmap_sqes);
-        assert(mmap_sqes.len == size_sqes);
+                     // The motivation for the `sqes` and `array` indirection is to make it possible for the
+                     // application to preallocate static io_uring_sqe entries and then replay them when needed.
+                     const size_sqes = p.sq_entries * @sizeOf(io_uring_sqe);
+                     const mmap_sqes = try os.mmap(
+                                      null,
+                                      size_sqes,
+                                      os.PROT_READ | os.PROT_WRITE,
+                                      os.MAP_SHARED | os.MAP_POPULATE,
+                                      fd,
+                                      linux.IORING_OFF_SQES,
+                     );
+                     errdefer os.munmap(mmap_sqes);
+                     assert(mmap_sqes.len == size_sqes);
 
-        const array = @ptrCast([*]u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.array]));
-        const sqes = @ptrCast([*]io_uring_sqe, @alignCast(@alignOf(io_uring_sqe), &mmap_sqes[0]));
-        // We expect the kernel copies p.sq_entries to the u32 pointed to by p.sq_off.ring_entries,
-        // see https://github.com/torvalds/linux/blob/v5.8/fs/io_uring.c#L7843-L7844.
-        assert(
-            p.sq_entries ==
-            @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.ring_entries])).*
-        );
-        return SubmissionQueue {
-            .head = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.head])),
-            .tail = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.tail])),
-            .mask = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.ring_mask])).*,
-            .flags = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.flags])),
-            .dropped = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.dropped])),
-            .array = array[0..p.sq_entries],
-            .sqes = sqes[0..p.sq_entries],
-            .mmap = mmap,
-            .mmap_sqes = mmap_sqes
-        };
+                     const array = @ptrCast([*]u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.array]));
+                     const sqes = @ptrCast([*]io_uring_sqe, @alignCast(@alignOf(io_uring_sqe), &mmap_sqes[0]));
+                     // We expect the kernel copies p.sq_entries to the u32 pointed to by p.sq_off.ring_entries,
+                     // see https://github.com/torvalds/linux/blob/v5.8/fs/io_uring.c#L7843-L7844.
+                     assert(
+                                      p.sq_entries ==
+                                      @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.ring_entries])).*
+                     );
+                     return SubmissionQueue {
+                                      .head = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.head])),
+                                      .tail = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.tail])),
+                                      .mask = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.ring_mask])).*,
+                                      .flags = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.flags])),
+                                      .dropped = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.sq_off.dropped])),
+                                      .array = array[0..p.sq_entries],
+                                      .sqes = sqes[0..p.sq_entries],
+                                      .mmap = mmap,
+                                      .mmap_sqes = mmap_sqes
+                     };
     }
 
     pub fn deinit(self: *SubmissionQueue) void {
-        os.munmap(self.mmap_sqes);
-        os.munmap(self.mmap);
+                     os.munmap(self.mmap_sqes);
+                     os.munmap(self.mmap);
     }
 };
 
@@ -649,65 +649,65 @@ pub const CompletionQueue = struct {
     cqes: []io_uring_cqe,
 
     pub fn init(fd: os.fd_t, p: io_uring_params, sq: SubmissionQueue) !CompletionQueue {
-        assert(fd >= 0);
-        assert((p.features & linux.IORING_FEAT_SINGLE_MMAP) != 0);
-        const mmap = sq.mmap;
-        const cqes = @ptrCast(
-            [*]io_uring_cqe,
-            @alignCast(@alignOf(io_uring_cqe), &mmap[p.cq_off.cqes])
-        );
-        assert(
-            p.cq_entries ==
-            @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.ring_entries])).*
-        );
-        return CompletionQueue {
-            .head = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.head])),
-            .tail = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.tail])),
-            .mask = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.ring_mask])).*,
-            .overflow = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.overflow])),
-            .cqes = cqes[0..p.cq_entries]
-        };
+                     assert(fd >= 0);
+                     assert((p.features & linux.IORING_FEAT_SINGLE_MMAP) != 0);
+                     const mmap = sq.mmap;
+                     const cqes = @ptrCast(
+                                      [*]io_uring_cqe,
+                                      @alignCast(@alignOf(io_uring_cqe), &mmap[p.cq_off.cqes])
+                     );
+                     assert(
+                                      p.cq_entries ==
+                                      @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.ring_entries])).*
+                     );
+                     return CompletionQueue {
+                                      .head = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.head])),
+                                      .tail = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.tail])),
+                                      .mask = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.ring_mask])).*,
+                                      .overflow = @ptrCast(*u32, @alignCast(@alignOf(u32), &mmap[p.cq_off.overflow])),
+                                      .cqes = cqes[0..p.cq_entries]
+                     };
     }
 
     pub fn deinit(self: *CompletionQueue) void {
-        // A no-op since we now share the mmap with the submission queue.
-        // Here for symmetry with the submission queue, and for any future feature support.
+                     // A no-op since we now share the mmap with the submission queue.
+                     // Here for symmetry with the submission queue, and for any future feature support.
     }
 };
 
 pub fn io_uring_prep_nop(sqe: *io_uring_sqe) void {
     sqe.* = .{
-        .opcode = .NOP,
-        .flags = 0,
-        .ioprio = 0,
-        .fd = 0,
-        .off = 0,
-        .addr = 0,
-        .len = 0,
-        .rw_flags = 0,
-        .user_data = 0,
-        .buf_index = 0,
-        .personality = 0,
-        .splice_fd_in = 0,
-        .__pad2 = [2]u64{ 0, 0 }
+                     .opcode = .NOP,
+                     .flags = 0,
+                     .ioprio = 0,
+                     .fd = 0,
+                     .off = 0,
+                     .addr = 0,
+                     .len = 0,
+                     .rw_flags = 0,
+                     .user_data = 0,
+                     .buf_index = 0,
+                     .personality = 0,
+                     .splice_fd_in = 0,
+                     .__pad2 = [2]u64{ 0, 0 }
     };
 }
 
 pub fn io_uring_prep_fsync(sqe: *io_uring_sqe, fd: os.fd_t, flags: u32) void {
     sqe.* = .{
-        .opcode = .FSYNC,
-        .flags = 0,
-        .ioprio = 0,
-        .fd = fd,
-        .off = 0,
-        .addr = 0,
-        .len = 0,
-        .rw_flags = flags,
-        .user_data = 0,
-        .buf_index = 0,
-        .personality = 0,
-        .splice_fd_in = 0,
-        .__pad2 = [2]u64{ 0, 0 }
+                     .opcode = .FSYNC,
+                     .flags = 0,
+                     .ioprio = 0,
+                     .fd = fd,
+                     .off = 0,
+                     .addr = 0,
+                     .len = 0,
+                     .rw_flags = flags,
+                     .user_data = 0,
+                     .buf_index = 0,
+                     .personality = 0,
+                     .splice_fd_in = 0,
+                     .__pad2 = [2]u64{ 0, 0 }
     };
 }
 
@@ -720,19 +720,19 @@ pub fn io_uring_prep_rw(
     offset: u64
 ) void {
     sqe.* = .{
-        .opcode = op,
-        .flags = 0,
-        .ioprio = 0,
-        .fd = fd,
-        .off = offset,
-        .addr = @ptrToInt(addr),
-        .len = @intCast(u32, len),
-        .rw_flags = 0,
-        .user_data = 0,
-        .buf_index = 0,
-        .personality = 0,
-        .splice_fd_in = 0,
-        .__pad2 = [2]u64{ 0, 0 }
+                     .opcode = op,
+                     .flags = 0,
+                     .ioprio = 0,
+                     .fd = fd,
+                     .off = offset,
+                     .addr = @ptrToInt(addr),
+                     .len = @intCast(u32, len),
+                     .rw_flags = 0,
+                     .user_data = 0,
+                     .buf_index = 0,
+                     .personality = 0,
+                     .splice_fd_in = 0,
+                     .__pad2 = [2]u64{ 0, 0 }
     };
 }
 
@@ -808,19 +808,19 @@ pub fn io_uring_prep_openat(
 
 pub fn io_uring_prep_close(sqe: *io_uring_sqe, fd: os.fd_t) void {
     sqe.* = .{
-        .opcode = .CLOSE,
-        .flags = 0,
-        .ioprio = 0,
-        .fd = fd,
-        .off = 0,
-        .addr = 0,
-        .len = 0,
-        .rw_flags = 0,
-        .user_data = 0,
-        .buf_index = 0,
-        .personality = 0,
-        .splice_fd_in = 0,
-        .__pad2 = [2]u64{ 0, 0 }
+                     .opcode = .CLOSE,
+                     .flags = 0,
+                     .ioprio = 0,
+                     .fd = fd,
+                     .off = 0,
+                     .addr = 0,
+                     .len = 0,
+                     .rw_flags = 0,
+                     .user_data = 0,
+                     .buf_index = 0,
+                     .personality = 0,
+                     .splice_fd_in = 0,
+                     .__pad2 = [2]u64{ 0, 0 }
     };
 }
 
@@ -843,30 +843,30 @@ test "nop" {
     if (builtin.os.tag != .linux) return error.SkipZigTest;
 
     var ring = IO_Uring.init(1, 0) catch |err| switch (err) {
-        error.SystemOutdated => return error.SkipZigTest,
-        error.PermissionDenied => return error.SkipZigTest,
-        else => return err
+                     error.SystemOutdated => return error.SkipZigTest,
+                     error.PermissionDenied => return error.SkipZigTest,
+                     else => return err
     };
     defer {
-        ring.deinit();
-        testing.expectEqual(@as(os.fd_t, -1), ring.fd);
+                     ring.deinit();
+                     testing.expectEqual(@as(os.fd_t, -1), ring.fd);
     }
 
     const sqe = try ring.nop(0xaaaaaaaa);
     testing.expectEqual(io_uring_sqe {
-        .opcode = .NOP,
-        .flags = 0,
-        .ioprio = 0,
-        .fd = 0,
-        .off = 0,
-        .addr = 0,
-        .len = 0,
-        .rw_flags = 0,
-        .user_data = 0xaaaaaaaa,
-        .buf_index = 0,
-        .personality = 0,
-        .splice_fd_in = 0,
-        .__pad2 = [2]u64{ 0, 0 }
+                     .opcode = .NOP,
+                     .flags = 0,
+                     .ioprio = 0,
+                     .fd = 0,
+                     .off = 0,
+                     .addr = 0,
+                     .len = 0,
+                     .rw_flags = 0,
+                     .user_data = 0xaaaaaaaa,
+                     .buf_index = 0,
+                     .personality = 0,
+                     .splice_fd_in = 0,
+                     .__pad2 = [2]u64{ 0, 0 }
     }, sqe.*);
 
     testing.expectEqual(@as(u32, 0), ring.sq.sqe_head);
@@ -884,9 +884,9 @@ test "nop" {
     testing.expectEqual(@as(u32, 0), ring.sq_ready());
 
     testing.expectEqual(io_uring_cqe {
-        .user_data = 0xaaaaaaaa,
-        .res = 0,
-        .flags = 0
+                     .user_data = 0xaaaaaaaa,
+                     .res = 0,
+                     .flags = 0
     }, try ring.copy_cqe());
     testing.expectEqual(@as(u32, 1), ring.cq.head.*);
     testing.expectEqual(@as(u32, 0), ring.cq_ready());
@@ -895,9 +895,9 @@ test "nop" {
     sqe_barrier.flags |= linux.IOSQE_IO_DRAIN;
     testing.expectEqual(@as(u32, 1), try ring.submit());
     testing.expectEqual(io_uring_cqe {
-        .user_data = 0xbbbbbbbb,
-        .res = 0,
-        .flags = 0
+                     .user_data = 0xbbbbbbbb,
+                     .res = 0,
+                     .flags = 0
     }, try ring.copy_cqe());
     testing.expectEqual(@as(u32, 2), ring.sq.sqe_head);
     testing.expectEqual(@as(u32, 2), ring.sq.sqe_tail);
@@ -909,9 +909,9 @@ test "readv" {
     if (builtin.os.tag != .linux) return error.SkipZigTest;
 
     var ring = IO_Uring.init(1, 0) catch |err| switch (err) {
-        error.SystemOutdated => return error.SkipZigTest,
-        error.PermissionDenied => return error.SkipZigTest,
-        else => return err
+                     error.SystemOutdated => return error.SkipZigTest,
+                     error.PermissionDenied => return error.SkipZigTest,
+                     else => return err
     };
     defer ring.deinit();
 
@@ -938,9 +938,9 @@ test "readv" {
     testing.expectError(error.SubmissionQueueFull, ring.nop(0));
     testing.expectEqual(@as(u32, 1), try ring.submit());
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0xcccccccc,
-        .res = buffer.len,
-        .flags = 0,
+                     .user_data = 0xcccccccc,
+                     .res = buffer.len,
+                     .flags = 0,
     }, try ring.copy_cqe());
     testing.expectEqualSlices(u8, &([_]u8{0} ** buffer.len), buffer[0..]);
 
@@ -951,9 +951,9 @@ test "writev/fsync/readv" {
     if (builtin.os.tag != .linux) return error.SkipZigTest;
 
     var ring = IO_Uring.init(4, 0) catch |err| switch (err) {
-        error.SystemOutdated => return error.SkipZigTest,
-        error.PermissionDenied => return error.SkipZigTest,
-        else => return err
+                     error.SystemOutdated => return error.SkipZigTest,
+                     error.PermissionDenied => return error.SkipZigTest,
+                     else => return err
     };
     defer ring.deinit();
     
@@ -965,11 +965,11 @@ test "writev/fsync/readv" {
 
     const buffer_write = [_]u8{42} ** 128;
     const iovecs_write = [_]os.iovec_const {
-        os.iovec_const { .iov_base = &buffer_write, .iov_len = buffer_write.len }
+                     os.iovec_const { .iov_base = &buffer_write, .iov_len = buffer_write.len }
     };
     var buffer_read = [_]u8{0} ** 128;
     var iovecs_read = [_]os.iovec {
-        os.iovec { .iov_base = &buffer_read, .iov_len = buffer_read.len }
+                     os.iovec { .iov_base = &buffer_read, .iov_len = buffer_read.len }
     };
 
     const sqe_writev = try ring.writev(0xdddddddd, fd, iovecs_write[0..], 17);
@@ -992,23 +992,23 @@ test "writev/fsync/readv" {
     testing.expectEqual(@as(u32, 3), ring.cq_ready());
 
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0xdddddddd,
-        .res = buffer_write.len,
-        .flags = 0,
+                     .user_data = 0xdddddddd,
+                     .res = buffer_write.len,
+                     .flags = 0,
     }, try ring.copy_cqe());
     testing.expectEqual(@as(u32, 2), ring.cq_ready());
     
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0xeeeeeeee,
-        .res = 0,
-        .flags = 0,
+                     .user_data = 0xeeeeeeee,
+                     .res = 0,
+                     .flags = 0,
     }, try ring.copy_cqe());
     testing.expectEqual(@as(u32, 1), ring.cq_ready());
 
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0xffffffff,
-        .res = buffer_read.len,
-        .flags = 0,
+                     .user_data = 0xffffffff,
+                     .res = buffer_read.len,
+                     .flags = 0,
     }, try ring.copy_cqe());
     testing.expectEqual(@as(u32, 0), ring.cq_ready());
 
@@ -1019,9 +1019,9 @@ test "write/read" {
     if (builtin.os.tag != .linux) return error.SkipZigTest;
 
     var ring = IO_Uring.init(2, 0) catch |err| switch (err) {
-        error.SystemOutdated => return error.SkipZigTest,
-        error.PermissionDenied => return error.SkipZigTest,
-        else => return err
+                     error.SystemOutdated => return error.SkipZigTest,
+                     error.PermissionDenied => return error.SkipZigTest,
+                     else => return err
     };
     defer ring.deinit();
     
@@ -1049,14 +1049,14 @@ test "write/read" {
     if (cqe_write.res == -linux.EINVAL) return error.SkipZigTest;
     if (cqe_read.res == -linux.EINVAL) return error.SkipZigTest;
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0x11111111,
-        .res = buffer_write.len,
-        .flags = 0,
+                     .user_data = 0x11111111,
+                     .res = buffer_write.len,
+                     .flags = 0,
     }, cqe_write);
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0x22222222,
-        .res = buffer_read.len,
-        .flags = 0,
+                     .user_data = 0x22222222,
+                     .res = buffer_read.len,
+                     .flags = 0,
     }, cqe_read);
     testing.expectEqualSlices(u8, buffer_write[0..], buffer_read[0..]);
 }
@@ -1065,9 +1065,9 @@ test "openat" {
     if (builtin.os.tag != .linux) return error.SkipZigTest;
 
     var ring = IO_Uring.init(1, 0) catch |err| switch (err) {
-        error.SystemOutdated => return error.SkipZigTest,
-        error.PermissionDenied => return error.SkipZigTest,
-        else => return err
+                     error.SystemOutdated => return error.SkipZigTest,
+                     error.PermissionDenied => return error.SkipZigTest,
+                     else => return err
     };
     defer ring.deinit();
 
@@ -1078,19 +1078,19 @@ test "openat" {
     const mode: os.mode_t = 0o666;
     const sqe_openat = try ring.openat(0x33333333, linux.AT_FDCWD, path, flags, mode);
     testing.expectEqual(io_uring_sqe {
-        .opcode = .OPENAT,
-        .flags = 0,
-        .ioprio = 0,
-        .fd = linux.AT_FDCWD,
-        .off = 0,
-        .addr = @ptrToInt(path),
-        .len = mode,
-        .rw_flags = flags,
-        .user_data = 0x33333333,
-        .buf_index = 0,
-        .personality = 0,
-        .splice_fd_in = 0,
-        .__pad2 = [2]u64{ 0, 0 }
+                     .opcode = .OPENAT,
+                     .flags = 0,
+                     .ioprio = 0,
+                     .fd = linux.AT_FDCWD,
+                     .off = 0,
+                     .addr = @ptrToInt(path),
+                     .len = mode,
+                     .rw_flags = flags,
+                     .user_data = 0x33333333,
+                     .buf_index = 0,
+                     .personality = 0,
+                     .splice_fd_in = 0,
+                     .__pad2 = [2]u64{ 0, 0 }
     }, sqe_openat.*);
     testing.expectEqual(@as(u32, 1), try ring.submit());
 
@@ -1101,7 +1101,7 @@ test "openat" {
     // See https://lore.kernel.org/io-uring/20200207155039.12819-1-axboe@kernel.dk/T/
     // We use IORING_FEAT_RW_CUR_POS to know if we are pre-5.6 since that feature was added in 5.6.
     if (cqe_openat.res == -linux.EBADF and (ring.features & linux.IORING_FEAT_RW_CUR_POS) == 0) {
-        return error.SkipZigTest;
+                     return error.SkipZigTest;
     }
     if (cqe_openat.res <= 0) std.debug.print("\ncqe_openat.res={}\n", .{ cqe_openat.res });
     testing.expect(cqe_openat.res > 0);
@@ -1114,9 +1114,9 @@ test "close" {
     if (builtin.os.tag != .linux) return error.SkipZigTest;
     
     var ring = IO_Uring.init(1, 0) catch |err| switch (err) {
-        error.SystemOutdated => return error.SkipZigTest,
-        error.PermissionDenied => return error.SkipZigTest,
-        else => return err
+                     error.SystemOutdated => return error.SkipZigTest,
+                     error.PermissionDenied => return error.SkipZigTest,
+                     else => return err
     };
     defer ring.deinit();
     
@@ -1133,9 +1133,9 @@ test "close" {
     const cqe_close = try ring.copy_cqe();
     if (cqe_close.res == -linux.EINVAL) return error.SkipZigTest;
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0x44444444,
-        .res = 0,
-        .flags = 0,
+                     .user_data = 0x44444444,
+                     .res = 0,
+                     .flags = 0,
     }, cqe_close);
 }
 
@@ -1143,9 +1143,9 @@ test "accept/connect/send/recv" {
     if (builtin.os.tag != .linux) return error.SkipZigTest;
 
     var ring = IO_Uring.init(16, 0) catch |err| switch (err) {
-        error.SystemOutdated => return error.SkipZigTest,
-        error.PermissionDenied => return error.SkipZigTest,
-        else => return err
+                     error.SystemOutdated => return error.SkipZigTest,
+                     error.PermissionDenied => return error.SkipZigTest,
+                     else => return err
     };
     defer ring.deinit();
 
@@ -1177,10 +1177,10 @@ test "accept/connect/send/recv" {
 
     // The accept/connect CQEs may arrive in any order, the connect CQE will sometimes come first:
     if (cqe_accept.user_data == 0xcccccccc and cqe_connect.user_data == 0xaaaaaaaa) {
-        const a = cqe_accept;
-        const b = cqe_connect;
-        cqe_accept = b;
-        cqe_connect = a;
+                     const a = cqe_accept;
+                     const b = cqe_connect;
+                     cqe_accept = b;
+                     cqe_connect = a;
     }
 
     testing.expectEqual(@as(u64, 0xaaaaaaaa), cqe_accept.user_data);
@@ -1188,9 +1188,9 @@ test "accept/connect/send/recv" {
     testing.expect(cqe_accept.res > 0);
     testing.expectEqual(@as(u32, 0), cqe_accept.flags);
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0xcccccccc,
-        .res = 0,
-        .flags = 0,
+                     .user_data = 0xcccccccc,
+                     .res = 0,
+                     .flags = 0,
     }, cqe_connect);
 
     const send = try ring.send(0xeeeeeeee, client, buffer_send[0..], 0);
@@ -1201,17 +1201,17 @@ test "accept/connect/send/recv" {
     const cqe_send = try ring.copy_cqe();
     if (cqe_send.res == -linux.EINVAL) return error.SkipZigTest;
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0xeeeeeeee,
-        .res = buffer_send.len,
-        .flags = 0,
+                     .user_data = 0xeeeeeeee,
+                     .res = buffer_send.len,
+                     .flags = 0,
     }, cqe_send);
 
     const cqe_recv = try ring.copy_cqe();
     if (cqe_recv.res == -linux.EINVAL) return error.SkipZigTest;
     testing.expectEqual(linux.io_uring_cqe {
-        .user_data = 0xffffffff,
-        .res = buffer_recv.len,
-        .flags = 0,
+                     .user_data = 0xffffffff,
+                     .res = buffer_recv.len,
+                     .flags = 0,
     }, cqe_recv);
 
     testing.expectEqualSlices(u8, buffer_send[0..buffer_recv.len], buffer_recv[0..]);

@@ -33,7 +33,7 @@ struct __pthread_mutex_s
 #if _MIPS_SIM == _ABI64
   int __spins;
   __pthread_list_t __list;
-# define __PTHREAD_MUTEX_HAVE_PREV      1
+# define __PTHREAD_MUTEX_HAVE_PREV                   1
 #else
   unsigned int __nusers;
   __extension__ union
@@ -41,7 +41,7 @@ struct __pthread_mutex_s
     int __spins;
     __pthread_slist_t __list;
   };
-# define __PTHREAD_MUTEX_HAVE_PREV      0
+# define __PTHREAD_MUTEX_HAVE_PREV                   0
 #endif
 };
 

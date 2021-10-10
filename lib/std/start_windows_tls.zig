@@ -14,12 +14,12 @@ export var __xl_z: std.os.windows.PIMAGE_TLS_CALLBACK linksection(".CRT$XLZ") = 
 
 comptime {
     if (builtin.arch == .i386) {
-        // The __tls_array is the offset of the ThreadLocalStoragePointer field
-        // in the TEB block whose base address held in the %fs segment.
-        asm (
-            \\ .global __tls_array
-            \\ __tls_array = 0x2C
-        );
+                     // The __tls_array is the offset of the ThreadLocalStoragePointer field
+                     // in the TEB block whose base address held in the %fs segment.
+                     asm (
+                                      \\ .global __tls_array
+                                      \\ __tls_array = 0x2C
+                     );
     }
 }
 

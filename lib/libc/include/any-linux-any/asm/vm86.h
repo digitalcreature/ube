@@ -110,10 +110,10 @@ struct vm86_struct {
 
 struct vm86plus_info_struct {
 	unsigned long force_return_for_pic:1;
-	unsigned long vm86dbg_active:1;       /* for debugger */
+	unsigned long vm86dbg_active:1;                    /* for debugger */
 	unsigned long vm86dbg_TFpendig:1;     /* for debugger */
 	unsigned long unused:28;
-	unsigned long is_vm86pus:1;	      /* for vm86 internal use */
+	unsigned long is_vm86pus:1;	                   /* for vm86 internal use */
 	unsigned char vm86dbg_intxxtab[32];   /* for debugger */
 };
 struct vm86plus_struct {

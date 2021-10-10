@@ -38,11 +38,11 @@ extern "C" {
   typedef struct mmtime_tag {
     UINT wType;
     union {
-      DWORD ms;
-      DWORD sample;
-      DWORD cb;
-      DWORD ticks;
-      struct {
+                   DWORD ms;
+                   DWORD sample;
+                   DWORD cb;
+                   DWORD ticks;
+                   struct {
 	BYTE hour;
 	BYTE min;
 	BYTE sec;
@@ -50,10 +50,10 @@ extern "C" {
 	BYTE fps;
 	BYTE dummy;
 	BYTE pad[2];
-      } smpte;
-      struct {
+                   } smpte;
+                   struct {
 	DWORD songptrpos;
-      } midi;
+                   } midi;
     } u;
   } MMTIME,*PMMTIME,NEAR *NPMMTIME,*LPMMTIME;
 
@@ -1032,12 +1032,12 @@ extern "C" {
     CHAR szShortName[MIXER_SHORT_NAME_CHARS];
     CHAR szName[MIXER_LONG_NAME_CHARS];
     struct {
-      DWORD dwType;
-      DWORD dwDeviceID;
-      WORD wMid;
-      WORD wPid;
-      MMVERSION vDriverVersion;
-      CHAR szPname[MAXPNAMELEN];
+                   DWORD dwType;
+                   DWORD dwDeviceID;
+                   WORD wMid;
+                   WORD wPid;
+                   MMVERSION vDriverVersion;
+                   CHAR szPname[MAXPNAMELEN];
     } Target;
   } MIXERLINEA,*PMIXERLINEA,*LPMIXERLINEA;
 
@@ -1055,12 +1055,12 @@ extern "C" {
     WCHAR szShortName[MIXER_SHORT_NAME_CHARS];
     WCHAR szName[MIXER_LONG_NAME_CHARS];
     struct {
-      DWORD dwType;
-      DWORD dwDeviceID;
-      WORD wMid;
-      WORD wPid;
-      MMVERSION vDriverVersion;
-      WCHAR szPname[MAXPNAMELEN];
+                   DWORD dwType;
+                   DWORD dwDeviceID;
+                   WORD wMid;
+                   WORD wPid;
+                   MMVERSION vDriverVersion;
+                   WCHAR szPname[MAXPNAMELEN];
     } Target;
   } MIXERLINEW,*PMIXERLINEW,*LPMIXERLINEW;
 
@@ -1128,20 +1128,20 @@ extern "C" {
     CHAR szShortName[MIXER_SHORT_NAME_CHARS];
     CHAR szName[MIXER_LONG_NAME_CHARS];
     union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	LONG lMinimum;
 	LONG lMaximum;
-      } DUMMYSTRUCTNAME;
-      __C89_NAMELESS struct {
+                   } DUMMYSTRUCTNAME;
+                   __C89_NAMELESS struct {
 	DWORD dwMinimum;
 	DWORD dwMaximum;
-      } DUMMYSTRUCTNAME2;
-      DWORD dwReserved[6];
+                   } DUMMYSTRUCTNAME2;
+                   DWORD dwReserved[6];
     } Bounds;
     union {
-      DWORD cSteps;
-      DWORD cbCustomData;
-      DWORD dwReserved[6];
+                   DWORD cSteps;
+                   DWORD cbCustomData;
+                   DWORD dwReserved[6];
     } Metrics;
   } MIXERCONTROLA,*PMIXERCONTROLA,*LPMIXERCONTROLA;
 
@@ -1154,20 +1154,20 @@ extern "C" {
     WCHAR szShortName[MIXER_SHORT_NAME_CHARS];
     WCHAR szName[MIXER_LONG_NAME_CHARS];
     union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	LONG lMinimum;
 	LONG lMaximum;
-      } DUMMYSTRUCTNAME;
-      __C89_NAMELESS struct {
+                   } DUMMYSTRUCTNAME;
+                   __C89_NAMELESS struct {
 	DWORD dwMinimum;
 	DWORD dwMaximum;
-      } DUMMYSTRUCTNAME2;
-      DWORD dwReserved[6];
+                   } DUMMYSTRUCTNAME2;
+                   DWORD dwReserved[6];
     } Bounds;
     union {
-      DWORD cSteps;
-      DWORD cbCustomData;
-      DWORD dwReserved[6];
+                   DWORD cSteps;
+                   DWORD cbCustomData;
+                   DWORD dwReserved[6];
     } Metrics;
   } MIXERCONTROLW,*PMIXERCONTROLW,*LPMIXERCONTROLW;
 
@@ -1246,8 +1246,8 @@ extern "C" {
     DWORD cbStruct;
     DWORD dwLineID;
     __C89_NAMELESS union {
-      DWORD dwControlID;
-      DWORD dwControlType;
+                   DWORD dwControlID;
+                   DWORD dwControlType;
     } DUMMYUNIONNAME;
     DWORD cControls;
     DWORD cbmxctrl;
@@ -1258,8 +1258,8 @@ extern "C" {
     DWORD cbStruct;
     DWORD dwLineID;
     __C89_NAMELESS union {
-      DWORD dwControlID;
-      DWORD dwControlType;
+                   DWORD dwControlID;
+                   DWORD dwControlType;
     } DUMMYUNIONNAME;
     DWORD cControls;
     DWORD cbmxctrl;
@@ -1286,8 +1286,8 @@ extern "C" {
     DWORD dwControlID;
     DWORD cChannels;
     __C89_NAMELESS union {
-      HWND hwndOwner;
-      DWORD cMultipleItems;
+                   HWND hwndOwner;
+                   DWORD cMultipleItems;
     } DUMMYUNIONNAME;
     DWORD cbDetails;
     LPVOID paDetails;

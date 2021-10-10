@@ -20,7 +20,7 @@ template<class E>
 class initializer_list
 {
 public:
-    typedef E        value_type;
+    typedef E                     value_type;
     typedef const E& reference;
     typedef const E& const_reference;
     typedef size_t   size_type;
@@ -63,11 +63,11 @@ class _LIBCPP_TEMPLATE_VIS initializer_list
     _LIBCPP_INLINE_VISIBILITY
     _LIBCPP_CONSTEXPR_AFTER_CXX11
     initializer_list(const _Ep* __b, size_t __s) _NOEXCEPT
-        : __begin_(__b),
-          __size_(__s)
-        {}
+                     : __begin_(__b),
+                       __size_(__s)
+                     {}
 public:
-    typedef _Ep        value_type;
+    typedef _Ep                     value_type;
     typedef const _Ep& reference;
     typedef const _Ep& const_reference;
     typedef size_t    size_type;

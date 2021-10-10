@@ -9,16 +9,16 @@ const Log2Int = std.math.Log2Int;
 
 fn Dwords(comptime T: type, comptime signed_half: bool) type {
     return extern union {
-        pub const bits = @divExact(@typeInfo(T).Int.bits, 2);
-        pub const HalfTU = std.meta.Int(.unsigned, bits);
-        pub const HalfTS = std.meta.Int(.signed, bits);
-        pub const HalfT = if (signed_half) HalfTS else HalfTU;
+                     pub const bits = @divExact(@typeInfo(T).Int.bits, 2);
+                     pub const HalfTU = std.meta.Int(.unsigned, bits);
+                     pub const HalfTS = std.meta.Int(.signed, bits);
+                     pub const HalfT = if (signed_half) HalfTS else HalfTU;
 
-        all: T,
-        s: if (builtin.endian == .Little)
-            struct { low: HalfT, high: HalfT }
-        else
-            struct { high: HalfT, low: HalfT },
+                     all: T,
+                     s: if (builtin.endian == .Little)
+                                      struct { low: HalfT, high: HalfT }
+                     else
+                                      struct { high: HalfT, low: HalfT },
     };
 }
 
@@ -32,14 +32,14 @@ pub fn ashlXi3(comptime T: type, a: T, b: i32) T {
     var output: dwords = undefined;
 
     if (b >= dwords.bits) {
-        output.s.low = 0;
-        output.s.high = input.s.low << @intCast(S, b - dwords.bits);
+                     output.s.low = 0;
+                     output.s.high = input.s.low << @intCast(S, b - dwords.bits);
     } else if (b == 0) {
-        return a;
+                     return a;
     } else {
-        output.s.low = input.s.low << @intCast(S, b);
-        output.s.high = input.s.high << @intCast(S, b);
-        output.s.high |= input.s.low >> @intCast(S, dwords.bits - b);
+                     output.s.low = input.s.low << @intCast(S, b);
+                     output.s.high = input.s.high << @intCast(S, b);
+                     output.s.high |= input.s.low >> @intCast(S, dwords.bits - b);
     }
 
     return output.all;
@@ -55,18 +55,18 @@ pub fn ashrXi3(comptime T: type, a: T, b: i32) T {
     var output: dwords = undefined;
 
     if (b >= dwords.bits) {
-        output.s.high = input.s.high >> (dwords.bits - 1);
-        output.s.low = input.s.high >> @intCast(S, b - dwords.bits);
+                     output.s.high = input.s.high >> (dwords.bits - 1);
+                     output.s.low = input.s.high >> @intCast(S, b - dwords.bits);
     } else if (b == 0) {
-        return a;
+                     return a;
     } else {
-        output.s.high = input.s.high >> @intCast(S, b);
-        output.s.low = input.s.high << @intCast(S, dwords.bits - b);
-        // Avoid sign-extension here
-        output.s.low |= @bitCast(
-            dwords.HalfT,
-            @bitCast(dwords.HalfTU, input.s.low) >> @intCast(S, b),
-        );
+                     output.s.high = input.s.high >> @intCast(S, b);
+                     output.s.low = input.s.high << @intCast(S, dwords.bits - b);
+                     // Avoid sign-extension here
+                     output.s.low |= @bitCast(
+                                      dwords.HalfT,
+                                      @bitCast(dwords.HalfTU, input.s.low) >> @intCast(S, b),
+                     );
     }
 
     return output.all;
@@ -82,14 +82,14 @@ pub fn lshrXi3(comptime T: type, a: T, b: i32) T {
     var output: dwords = undefined;
 
     if (b >= dwords.bits) {
-        output.s.high = 0;
-        output.s.low = input.s.high >> @intCast(S, b - dwords.bits);
+                     output.s.high = 0;
+                     output.s.low = input.s.high >> @intCast(S, b - dwords.bits);
     } else if (b == 0) {
-        return a;
+                     return a;
     } else {
-        output.s.high = input.s.high >> @intCast(S, b);
-        output.s.low = input.s.high << @intCast(S, dwords.bits - b);
-        output.s.low |= input.s.low >> @intCast(S, b);
+                     output.s.high = input.s.high >> @intCast(S, b);
+                     output.s.low = input.s.high << @intCast(S, dwords.bits - b);
+                     output.s.low |= input.s.low >> @intCast(S, b);
     }
 
     return output.all;

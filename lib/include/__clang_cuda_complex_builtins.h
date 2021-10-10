@@ -63,7 +63,7 @@ extern "C" {
 #endif
 
 __DEVICE__ double _Complex __muldc3(double __a, double __b, double __c,
-                                    double __d) {
+                                                                                                                  double __d) {
   double __ac = __a * __c;
   double __bd = __b * __d;
   double __ad = __a * __d;
@@ -74,40 +74,40 @@ __DEVICE__ double _Complex __muldc3(double __a, double __b, double __c,
   if (_ISNANd(__real__(z)) && _ISNANd(__imag__(z))) {
     int __recalc = 0;
     if (_ISINFd(__a) || _ISINFd(__b)) {
-      __a = _COPYSIGNd(_ISINFd(__a) ? 1 : 0, __a);
-      __b = _COPYSIGNd(_ISINFd(__b) ? 1 : 0, __b);
-      if (_ISNANd(__c))
-        __c = _COPYSIGNd(0, __c);
-      if (_ISNANd(__d))
-        __d = _COPYSIGNd(0, __d);
-      __recalc = 1;
+                   __a = _COPYSIGNd(_ISINFd(__a) ? 1 : 0, __a);
+                   __b = _COPYSIGNd(_ISINFd(__b) ? 1 : 0, __b);
+                   if (_ISNANd(__c))
+                     __c = _COPYSIGNd(0, __c);
+                   if (_ISNANd(__d))
+                     __d = _COPYSIGNd(0, __d);
+                   __recalc = 1;
     }
     if (_ISINFd(__c) || _ISINFd(__d)) {
-      __c = _COPYSIGNd(_ISINFd(__c) ? 1 : 0, __c);
-      __d = _COPYSIGNd(_ISINFd(__d) ? 1 : 0, __d);
-      if (_ISNANd(__a))
-        __a = _COPYSIGNd(0, __a);
-      if (_ISNANd(__b))
-        __b = _COPYSIGNd(0, __b);
-      __recalc = 1;
+                   __c = _COPYSIGNd(_ISINFd(__c) ? 1 : 0, __c);
+                   __d = _COPYSIGNd(_ISINFd(__d) ? 1 : 0, __d);
+                   if (_ISNANd(__a))
+                     __a = _COPYSIGNd(0, __a);
+                   if (_ISNANd(__b))
+                     __b = _COPYSIGNd(0, __b);
+                   __recalc = 1;
     }
     if (!__recalc &&
-        (_ISINFd(__ac) || _ISINFd(__bd) || _ISINFd(__ad) || _ISINFd(__bc))) {
-      if (_ISNANd(__a))
-        __a = _COPYSIGNd(0, __a);
-      if (_ISNANd(__b))
-        __b = _COPYSIGNd(0, __b);
-      if (_ISNANd(__c))
-        __c = _COPYSIGNd(0, __c);
-      if (_ISNANd(__d))
-        __d = _COPYSIGNd(0, __d);
-      __recalc = 1;
+                     (_ISINFd(__ac) || _ISINFd(__bd) || _ISINFd(__ad) || _ISINFd(__bc))) {
+                   if (_ISNANd(__a))
+                     __a = _COPYSIGNd(0, __a);
+                   if (_ISNANd(__b))
+                     __b = _COPYSIGNd(0, __b);
+                   if (_ISNANd(__c))
+                     __c = _COPYSIGNd(0, __c);
+                   if (_ISNANd(__d))
+                     __d = _COPYSIGNd(0, __d);
+                   __recalc = 1;
     }
     if (__recalc) {
-      // Can't use std::numeric_limits<double>::infinity() -- that doesn't have
-      // a device overload (and isn't constexpr before C++11, naturally).
-      __real__(z) = __builtin_huge_val() * (__a * __c - __b * __d);
-      __imag__(z) = __builtin_huge_val() * (__a * __d + __b * __c);
+                   // Can't use std::numeric_limits<double>::infinity() -- that doesn't have
+                   // a device overload (and isn't constexpr before C++11, naturally).
+                   __real__(z) = __builtin_huge_val() * (__a * __c - __b * __d);
+                   __imag__(z) = __builtin_huge_val() * (__a * __d + __b * __c);
     }
   }
   return z;
@@ -124,45 +124,45 @@ __DEVICE__ float _Complex __mulsc3(float __a, float __b, float __c, float __d) {
   if (_ISNANf(__real__(z)) && _ISNANf(__imag__(z))) {
     int __recalc = 0;
     if (_ISINFf(__a) || _ISINFf(__b)) {
-      __a = _COPYSIGNf(_ISINFf(__a) ? 1 : 0, __a);
-      __b = _COPYSIGNf(_ISINFf(__b) ? 1 : 0, __b);
-      if (_ISNANf(__c))
-        __c = _COPYSIGNf(0, __c);
-      if (_ISNANf(__d))
-        __d = _COPYSIGNf(0, __d);
-      __recalc = 1;
+                   __a = _COPYSIGNf(_ISINFf(__a) ? 1 : 0, __a);
+                   __b = _COPYSIGNf(_ISINFf(__b) ? 1 : 0, __b);
+                   if (_ISNANf(__c))
+                     __c = _COPYSIGNf(0, __c);
+                   if (_ISNANf(__d))
+                     __d = _COPYSIGNf(0, __d);
+                   __recalc = 1;
     }
     if (_ISINFf(__c) || _ISINFf(__d)) {
-      __c = _COPYSIGNf(_ISINFf(__c) ? 1 : 0, __c);
-      __d = _COPYSIGNf(_ISINFf(__d) ? 1 : 0, __d);
-      if (_ISNANf(__a))
-        __a = _COPYSIGNf(0, __a);
-      if (_ISNANf(__b))
-        __b = _COPYSIGNf(0, __b);
-      __recalc = 1;
+                   __c = _COPYSIGNf(_ISINFf(__c) ? 1 : 0, __c);
+                   __d = _COPYSIGNf(_ISINFf(__d) ? 1 : 0, __d);
+                   if (_ISNANf(__a))
+                     __a = _COPYSIGNf(0, __a);
+                   if (_ISNANf(__b))
+                     __b = _COPYSIGNf(0, __b);
+                   __recalc = 1;
     }
     if (!__recalc &&
-        (_ISINFf(__ac) || _ISINFf(__bd) || _ISINFf(__ad) || _ISINFf(__bc))) {
-      if (_ISNANf(__a))
-        __a = _COPYSIGNf(0, __a);
-      if (_ISNANf(__b))
-        __b = _COPYSIGNf(0, __b);
-      if (_ISNANf(__c))
-        __c = _COPYSIGNf(0, __c);
-      if (_ISNANf(__d))
-        __d = _COPYSIGNf(0, __d);
-      __recalc = 1;
+                     (_ISINFf(__ac) || _ISINFf(__bd) || _ISINFf(__ad) || _ISINFf(__bc))) {
+                   if (_ISNANf(__a))
+                     __a = _COPYSIGNf(0, __a);
+                   if (_ISNANf(__b))
+                     __b = _COPYSIGNf(0, __b);
+                   if (_ISNANf(__c))
+                     __c = _COPYSIGNf(0, __c);
+                   if (_ISNANf(__d))
+                     __d = _COPYSIGNf(0, __d);
+                   __recalc = 1;
     }
     if (__recalc) {
-      __real__(z) = __builtin_huge_valf() * (__a * __c - __b * __d);
-      __imag__(z) = __builtin_huge_valf() * (__a * __d + __b * __c);
+                   __real__(z) = __builtin_huge_valf() * (__a * __c - __b * __d);
+                   __imag__(z) = __builtin_huge_valf() * (__a * __d + __b * __c);
     }
   }
   return z;
 }
 
 __DEVICE__ double _Complex __divdc3(double __a, double __b, double __c,
-                                    double __d) {
+                                                                                                                  double __d) {
   int __ilogbw = 0;
   // Can't use std::max, because that's defined in <algorithm>, and we don't
   // want to pull that in for every compile.  The CUDA headers define
@@ -179,20 +179,20 @@ __DEVICE__ double _Complex __divdc3(double __a, double __b, double __c,
   __imag__(z) = _SCALBNd((__b * __c - __a * __d) / __denom, -__ilogbw);
   if (_ISNANd(__real__(z)) && _ISNANd(__imag__(z))) {
     if ((__denom == 0.0) && (!_ISNANd(__a) || !_ISNANd(__b))) {
-      __real__(z) = _COPYSIGNd(__builtin_huge_val(), __c) * __a;
-      __imag__(z) = _COPYSIGNd(__builtin_huge_val(), __c) * __b;
+                   __real__(z) = _COPYSIGNd(__builtin_huge_val(), __c) * __a;
+                   __imag__(z) = _COPYSIGNd(__builtin_huge_val(), __c) * __b;
     } else if ((_ISINFd(__a) || _ISINFd(__b)) && _ISFINITEd(__c) &&
-               _ISFINITEd(__d)) {
-      __a = _COPYSIGNd(_ISINFd(__a) ? 1.0 : 0.0, __a);
-      __b = _COPYSIGNd(_ISINFd(__b) ? 1.0 : 0.0, __b);
-      __real__(z) = __builtin_huge_val() * (__a * __c + __b * __d);
-      __imag__(z) = __builtin_huge_val() * (__b * __c - __a * __d);
+                                         _ISFINITEd(__d)) {
+                   __a = _COPYSIGNd(_ISINFd(__a) ? 1.0 : 0.0, __a);
+                   __b = _COPYSIGNd(_ISINFd(__b) ? 1.0 : 0.0, __b);
+                   __real__(z) = __builtin_huge_val() * (__a * __c + __b * __d);
+                   __imag__(z) = __builtin_huge_val() * (__b * __c - __a * __d);
     } else if (_ISINFd(__logbw) && __logbw > 0.0 && _ISFINITEd(__a) &&
-               _ISFINITEd(__b)) {
-      __c = _COPYSIGNd(_ISINFd(__c) ? 1.0 : 0.0, __c);
-      __d = _COPYSIGNd(_ISINFd(__d) ? 1.0 : 0.0, __d);
-      __real__(z) = 0.0 * (__a * __c + __b * __d);
-      __imag__(z) = 0.0 * (__b * __c - __a * __d);
+                                         _ISFINITEd(__b)) {
+                   __c = _COPYSIGNd(_ISINFd(__c) ? 1.0 : 0.0, __c);
+                   __d = _COPYSIGNd(_ISINFd(__d) ? 1.0 : 0.0, __d);
+                   __real__(z) = 0.0 * (__a * __c + __b * __d);
+                   __imag__(z) = 0.0 * (__b * __c - __a * __d);
     }
   }
   return z;
@@ -212,20 +212,20 @@ __DEVICE__ float _Complex __divsc3(float __a, float __b, float __c, float __d) {
   __imag__(z) = _SCALBNf((__b * __c - __a * __d) / __denom, -__ilogbw);
   if (_ISNANf(__real__(z)) && _ISNANf(__imag__(z))) {
     if ((__denom == 0) && (!_ISNANf(__a) || !_ISNANf(__b))) {
-      __real__(z) = _COPYSIGNf(__builtin_huge_valf(), __c) * __a;
-      __imag__(z) = _COPYSIGNf(__builtin_huge_valf(), __c) * __b;
+                   __real__(z) = _COPYSIGNf(__builtin_huge_valf(), __c) * __a;
+                   __imag__(z) = _COPYSIGNf(__builtin_huge_valf(), __c) * __b;
     } else if ((_ISINFf(__a) || _ISINFf(__b)) && _ISFINITEf(__c) &&
-               _ISFINITEf(__d)) {
-      __a = _COPYSIGNf(_ISINFf(__a) ? 1 : 0, __a);
-      __b = _COPYSIGNf(_ISINFf(__b) ? 1 : 0, __b);
-      __real__(z) = __builtin_huge_valf() * (__a * __c + __b * __d);
-      __imag__(z) = __builtin_huge_valf() * (__b * __c - __a * __d);
+                                         _ISFINITEf(__d)) {
+                   __a = _COPYSIGNf(_ISINFf(__a) ? 1 : 0, __a);
+                   __b = _COPYSIGNf(_ISINFf(__b) ? 1 : 0, __b);
+                   __real__(z) = __builtin_huge_valf() * (__a * __c + __b * __d);
+                   __imag__(z) = __builtin_huge_valf() * (__b * __c - __a * __d);
     } else if (_ISINFf(__logbw) && __logbw > 0 && _ISFINITEf(__a) &&
-               _ISFINITEf(__b)) {
-      __c = _COPYSIGNf(_ISINFf(__c) ? 1 : 0, __c);
-      __d = _COPYSIGNf(_ISINFf(__d) ? 1 : 0, __d);
-      __real__(z) = 0 * (__a * __c + __b * __d);
-      __imag__(z) = 0 * (__b * __c - __a * __d);
+                                         _ISFINITEf(__b)) {
+                   __c = _COPYSIGNf(_ISINFf(__c) ? 1 : 0, __c);
+                   __d = _COPYSIGNf(_ISINFf(__d) ? 1 : 0, __d);
+                   __real__(z) = 0 * (__a * __c + __b * __d);
+                   __imag__(z) = 0 * (__b * __c - __a * __d);
     }
   }
   return z;

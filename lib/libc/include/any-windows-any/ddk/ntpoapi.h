@@ -140,9 +140,9 @@ typedef struct {
 #endif /* _PO_DDK_ */
 
 
-#define POWER_PERF_SCALE                  100
-#define PERF_LEVEL_TO_PERCENT(x)          (((x) * 1000) / (POWER_PERF_SCALE * 10))
-#define PERCENT_TO_PERF_LEVEL(x)          (((x) * POWER_PERF_SCALE * 10) / 1000)
+#define POWER_PERF_SCALE                                                         100
+#define PERF_LEVEL_TO_PERCENT(x)                       (((x) * 1000) / (POWER_PERF_SCALE * 10))
+#define PERCENT_TO_PERF_LEVEL(x)                       (((x) * POWER_PERF_SCALE * 10) / 1000)
 
 typedef struct _PROCESSOR_IDLE_TIMES {
 	ULONGLONG  StartTime;
@@ -167,7 +167,7 @@ typedef NTSTATUS
 (FASTCALL*PSET_PROCESSOR_THROTTLE2)(
   IN UCHAR  Throttle);
 
-#define MAX_IDLE_HANDLERS                 3
+#define MAX_IDLE_HANDLERS                                           3
 
 typedef struct _PROCESSOR_STATE_HANDLER {
 	UCHAR  ThrottleScale;
@@ -316,37 +316,37 @@ NTAPI
 NtRequestDeviceWakeup(
   IN HANDLE  Device);
 
-#define WINLOGON_LOCK_ON_SLEEP            0x00000001
+#define WINLOGON_LOCK_ON_SLEEP                                      0x00000001
 
 typedef struct {
-    BOOLEAN             PowerButtonPresent;
-    BOOLEAN             SleepButtonPresent;
-    BOOLEAN             LidPresent;
-    BOOLEAN             SystemS1;
-    BOOLEAN             SystemS2;
-    BOOLEAN             SystemS3;
-    BOOLEAN             SystemS4;
-    BOOLEAN             SystemS5;
-    BOOLEAN             HiberFilePresent;
-    BOOLEAN             FullWake;
-    BOOLEAN             VideoDimPresent;
-    BOOLEAN             ApmPresent;
-    BOOLEAN             UpsPresent;
-    BOOLEAN             ThermalControl;
-    BOOLEAN             ProcessorThrottle;
-    UCHAR               ProcessorMinThrottle;
+    BOOLEAN                                       PowerButtonPresent;
+    BOOLEAN                                       SleepButtonPresent;
+    BOOLEAN                                       LidPresent;
+    BOOLEAN                                       SystemS1;
+    BOOLEAN                                       SystemS2;
+    BOOLEAN                                       SystemS3;
+    BOOLEAN                                       SystemS4;
+    BOOLEAN                                       SystemS5;
+    BOOLEAN                                       HiberFilePresent;
+    BOOLEAN                                       FullWake;
+    BOOLEAN                                       VideoDimPresent;
+    BOOLEAN                                       ApmPresent;
+    BOOLEAN                                       UpsPresent;
+    BOOLEAN                                       ThermalControl;
+    BOOLEAN                                       ProcessorThrottle;
+    UCHAR                                         ProcessorMinThrottle;
 #if (NTDDI_VERSION < NTDDI_WINXP)
-    UCHAR               ProcessorThrottleScale;
-    UCHAR               spare2[4];
+    UCHAR                                         ProcessorThrottleScale;
+    UCHAR                                         spare2[4];
 #else
-    UCHAR               ProcessorMaxThrottle;
-    BOOLEAN             FastSystemS4;
-    UCHAR               spare2[3];
+    UCHAR                                         ProcessorMaxThrottle;
+    BOOLEAN                                       FastSystemS4;
+    UCHAR                                         spare2[3];
 #endif /* (NTDDI_VERSION < NTDDI_WINXP) */
-    BOOLEAN             DiskSpinDown;
-    UCHAR               spare3[8];
-    BOOLEAN             SystemBatteriesPresent;
-    BOOLEAN             BatteriesAreShortTerm;
+    BOOLEAN                                       DiskSpinDown;
+    UCHAR                                         spare3[8];
+    BOOLEAN                                       SystemBatteriesPresent;
+    BOOLEAN                                       BatteriesAreShortTerm;
     BATTERY_REPORTING_SCALE BatteryScale[3];
     SYSTEM_POWER_STATE  AcOnLineWake;
     SYSTEM_POWER_STATE  SoftLidWake;
@@ -356,17 +356,17 @@ typedef struct {
 } SYSTEM_POWER_CAPABILITIES, *PSYSTEM_POWER_CAPABILITIES;
 
 typedef struct {
-    BOOLEAN             AcOnLine;
-    BOOLEAN             BatteryPresent;
-    BOOLEAN             Charging;
-    BOOLEAN             Discharging;
-    BOOLEAN             Spare1[4];
-    ULONG               MaxCapacity;
-    ULONG               RemainingCapacity;
-    ULONG               Rate;
-    ULONG               EstimatedTime;
-    ULONG               DefaultAlert1;
-    ULONG               DefaultAlert2;
+    BOOLEAN                                       AcOnLine;
+    BOOLEAN                                       BatteryPresent;
+    BOOLEAN                                       Charging;
+    BOOLEAN                                       Discharging;
+    BOOLEAN                                       Spare1[4];
+    ULONG                                         MaxCapacity;
+    ULONG                                         RemainingCapacity;
+    ULONG                                         Rate;
+    ULONG                                         EstimatedTime;
+    ULONG                                         DefaultAlert1;
+    ULONG                                         DefaultAlert2;
 } SYSTEM_BATTERY_STATE, *PSYSTEM_BATTERY_STATE;
 
 typedef struct _PROCESSOR_POWER_INFORMATION {
@@ -385,21 +385,21 @@ typedef struct _POWER_ACTION_POLICY {
 } POWER_ACTION_POLICY, *PPOWER_ACTION_POLICY;
 
 /* POWER_ACTION_POLICY.Flags constants */
-#define POWER_ACTION_QUERY_ALLOWED        0x00000001
-#define POWER_ACTION_UI_ALLOWED           0x00000002
-#define POWER_ACTION_OVERRIDE_APPS        0x00000004
-#define POWER_ACTION_LIGHTEST_FIRST       0x10000000
-#define POWER_ACTION_LOCK_CONSOLE         0x20000000
-#define POWER_ACTION_DISABLE_WAKES        0x40000000
-#define POWER_ACTION_CRITICAL             0x80000000
+#define POWER_ACTION_QUERY_ALLOWED                     0x00000001
+#define POWER_ACTION_UI_ALLOWED                        0x00000002
+#define POWER_ACTION_OVERRIDE_APPS                     0x00000004
+#define POWER_ACTION_LIGHTEST_FIRST                    0x10000000
+#define POWER_ACTION_LOCK_CONSOLE                      0x20000000
+#define POWER_ACTION_DISABLE_WAKES                     0x40000000
+#define POWER_ACTION_CRITICAL                                       0x80000000
 
 /* POWER_ACTION_POLICY.EventCode constants */
-#define POWER_LEVEL_USER_NOTIFY_TEXT      0x00000001
+#define POWER_LEVEL_USER_NOTIFY_TEXT                   0x00000001
 #define POWER_LEVEL_USER_NOTIFY_SOUND     0x00000002
-#define POWER_LEVEL_USER_NOTIFY_EXEC      0x00000004
-#define POWER_USER_NOTIFY_BUTTON          0x00000008
-#define POWER_USER_NOTIFY_SHUTDOWN        0x00000010
-#define POWER_FORCE_TRIGGER_RESET         0x80000000
+#define POWER_LEVEL_USER_NOTIFY_EXEC                   0x00000004
+#define POWER_USER_NOTIFY_BUTTON                       0x00000008
+#define POWER_USER_NOTIFY_SHUTDOWN                     0x00000010
+#define POWER_FORCE_TRIGGER_RESET                      0x80000000
 
 #define DISCHARGE_POLICY_CRITICAL	0
 #define DISCHARGE_POLICY_LOW		1

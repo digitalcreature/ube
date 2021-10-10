@@ -58,7 +58,7 @@
 //   template <typename T>
 //   void __host__ __device__ complex<T> sin(const complex<T>& x) {
 //     return complex<T>(sin(x.real()) * cosh(x.imag()),
-//                       cos(x.real()), sinh(x.imag()));
+//                                                              cos(x.real()), sinh(x.imag()));
 //   }
 //
 // This is safe because when compiling for device, all function calls in

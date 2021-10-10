@@ -13,8 +13,8 @@
 
 struct tc_mirred {
 	tc_gen;
-	int                     eaction;   /* one of IN/EGRESS_MIRROR/REDIR */
-	__u32                   ifindex;  /* ifindex of egress port */
+	int                                                            eaction;   /* one of IN/EGRESS_MIRROR/REDIR */
+	__u32                                                          ifindex;  /* ifindex of egress port */
 };
 
 enum {

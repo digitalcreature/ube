@@ -121,9 +121,9 @@ typedef enum __ns_update_operation {
 } ns_update_operation;
 
 struct ns_tsig_key {
-        char name[NS_MAXDNAME], alg[NS_MAXDNAME];
-        unsigned char *data;
-        int len;
+                     char name[NS_MAXDNAME], alg[NS_MAXDNAME];
+                     unsigned char *data;
+                     int len;
 };
 typedef struct ns_tsig_key ns_tsig_key;
 
@@ -200,12 +200,12 @@ typedef enum __ns_type {
 } ns_type;
 
 #define	ns_t_qt_p(t) (ns_t_xfr_p(t) || (t) == ns_t_any || \
-		      (t) == ns_t_mailb || (t) == ns_t_maila)
+		                   (t) == ns_t_mailb || (t) == ns_t_maila)
 #define	ns_t_mrr_p(t) ((t) == ns_t_tsig || (t) == ns_t_opt)
 #define ns_t_rr_p(t) (!ns_t_qt_p(t) && !ns_t_mrr_p(t))
 #define ns_t_udp_p(t) ((t) != ns_t_axfr && (t) != ns_t_zxfr)
 #define ns_t_xfr_p(t) ((t) == ns_t_axfr || (t) == ns_t_ixfr || \
-		       (t) == ns_t_zxfr)
+		                    (t) == ns_t_zxfr)
 
 typedef enum __ns_class {
 	ns_c_invalid = 0,
@@ -263,16 +263,16 @@ typedef enum __ns_cert_types {
 				  NS_KEY_RESERVED11 )
 #define NS_KEY_RESERVED_BITMASK2 0xFFFF
 #define	NS_ALG_MD5RSA		1
-#define	NS_ALG_DH               2
-#define	NS_ALG_DSA              3
-#define	NS_ALG_DSS              NS_ALG_DSA
+#define	NS_ALG_DH                                         2
+#define	NS_ALG_DSA                                        3
+#define	NS_ALG_DSS                                        NS_ALG_DSA
 #define	NS_ALG_EXPIRE_ONLY	253
 #define	NS_ALG_PRIVATE_OID	254
 
-#define NS_KEY_PROT_TLS         1
-#define NS_KEY_PROT_EMAIL       2
-#define NS_KEY_PROT_DNSSEC      3
-#define NS_KEY_PROT_IPSEC       4
+#define NS_KEY_PROT_TLS                      1
+#define NS_KEY_PROT_EMAIL                    2
+#define NS_KEY_PROT_DNSSEC                   3
+#define NS_KEY_PROT_IPSEC                    4
 #define NS_KEY_PROT_ANY		255
 
 #define	NS_MD5RSA_MIN_BITS	 512
@@ -282,9 +282,9 @@ typedef enum __ns_cert_types {
 #define NS_MD5RSA_MIN_SIZE	((NS_MD5RSA_MIN_BITS+7)/8)
 #define NS_MD5RSA_MAX_SIZE	((NS_MD5RSA_MAX_BITS+7)/8)
 
-#define NS_DSA_SIG_SIZE         41
-#define NS_DSA_MIN_SIZE         213
-#define NS_DSA_MAX_BYTES        405
+#define NS_DSA_SIG_SIZE                      41
+#define NS_DSA_MIN_SIZE                      213
+#define NS_DSA_MAX_BYTES                     405
 
 #define	NS_SIG_TYPE	0
 #define	NS_SIG_ALG	2
@@ -300,7 +300,7 @@ typedef enum __ns_cert_types {
 #define	NS_NXT_BIT_ISSET(n,p) (p[(n)/NS_NXT_BITS] &   (0x80>>((n)%NS_NXT_BITS)))
 #define NS_NXT_MAX 127
 
-#define NS_OPT_DNSSEC_OK        0x8000U
+#define NS_OPT_DNSSEC_OK                     0x8000U
 #define NS_OPT_NSID		3
 
 #define NS_GET16(s, cp) (void)((s) = ns_get16(((cp)+=2)-2))

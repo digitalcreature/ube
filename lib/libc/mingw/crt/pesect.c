@@ -54,7 +54,7 @@ _FindPESection (PBYTE pImageBase, DWORD_PTR rva)
     iSection < pNTHeader->FileHeader.NumberOfSections;
     ++iSection,++pSection)
     {
-      if (rva >= pSection->VirtualAddress
+                   if (rva >= pSection->VirtualAddress
 	  && rva < pSection->VirtualAddress + pSection->Misc.VirtualSize)
 	return pSection;
     }
@@ -85,7 +85,7 @@ _FindPESectionByName (const char *pName)
     iSection < pNTHeader->FileHeader.NumberOfSections;
     ++iSection,++pSection)
     {
-      if (!strncmp ((char *) &pSection->Name[0], pName, IMAGE_SIZEOF_SHORT_NAME))
+                   if (!strncmp ((char *) &pSection->Name[0], pName, IMAGE_SIZEOF_SHORT_NAME))
 	return pSection;
     }
   return NULL;
@@ -144,12 +144,12 @@ _FindPESectionExec (size_t eNo)
     iSection < pNTHeader->FileHeader.NumberOfSections;
     ++iSection,++pSection)
     {
-      if ((pSection->Characteristics & IMAGE_SCN_MEM_EXECUTE) != 0)
-      {
+                   if ((pSection->Characteristics & IMAGE_SCN_MEM_EXECUTE) != 0)
+                   {
 	if (!eNo)
 	  return pSection;
 	--eNo;
-      }
+                   }
     }
   return NULL;
 }
@@ -209,21 +209,21 @@ __mingw_enum_import_library_names (int i)
 
   pSection = _FindPESection (pImageBase, importsStartRVA);
   if (!pSection)
-      return NULL;
+                   return NULL;
 
   importDesc = (PIMAGE_IMPORT_DESCRIPTOR) (pImageBase + importsStartRVA);
   if (!importDesc)
     return NULL;
-            
+                                      
   for (;;)
     {
-      if (importDesc->TimeDateStamp == 0 && importDesc->Name == 0)
-        break;
+                   if (importDesc->TimeDateStamp == 0 && importDesc->Name == 0)
+                     break;
 
-      if (i <= 0)
-       return (char *) (pImageBase + importDesc->Name);
-      --i;
-      importDesc++;
+                   if (i <= 0)
+                    return (char *) (pImageBase + importDesc->Name);
+                   --i;
+                   importDesc++;
     }
 
   return NULL;

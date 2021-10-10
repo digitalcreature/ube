@@ -331,14 +331,14 @@ struct kfd_ioctl_acquire_vm_args {
 /* Allocate memory for later SVM (shared virtual memory) mapping.
  *
  * @va_addr:     virtual address of the memory to be allocated
- *               all later mappings on all GPUs will use this address
- * @size:        size in bytes
- * @handle:      buffer handle returned to user mode, used to refer to
- *               this allocation for mapping, unmapping and freeing
+ *                                         all later mappings on all GPUs will use this address
+ * @size:                     size in bytes
+ * @handle:                   buffer handle returned to user mode, used to refer to
+ *                                         this allocation for mapping, unmapping and freeing
  * @mmap_offset: for CPU-mapping the allocation by mmapping a render node
- *               for userptrs this is overloaded to specify the CPU address
- * @gpu_id:      device identifier
- * @flags:       memory type and attributes. See KFD_IOC_ALLOC_MEM_FLAGS above
+ *                                         for userptrs this is overloaded to specify the CPU address
+ * @gpu_id:                   device identifier
+ * @flags:                    memory type and attributes. See KFD_IOC_ALLOC_MEM_FLAGS above
  */
 struct kfd_ioctl_alloc_memory_of_gpu_args {
 	__u64 va_addr;		/* to KFD */
@@ -359,10 +359,10 @@ struct kfd_ioctl_free_memory_of_gpu_args {
 
 /* Map memory to one or more GPUs
  *
- * @handle:                memory handle returned by alloc
+ * @handle:                                          memory handle returned by alloc
  * @device_ids_array_ptr:  array of gpu_ids (__u32 per device)
- * @n_devices:             number of devices in the array
- * @n_success:             number of devices mapped successfully
+ * @n_devices:                                       number of devices in the array
+ * @n_success:                                       number of devices mapped successfully
  *
  * @n_success returns information to the caller how many devices from
  * the start of the array have mapped the buffer successfully. It can
@@ -447,7 +447,7 @@ struct kfd_ioctl_unmap_memory_from_gpu_args {
 #define AMDKFD_IOC_SET_SCRATCH_BACKING_VA	\
 		AMDKFD_IOWR(0x11, struct kfd_ioctl_set_scratch_backing_va_args)
 
-#define AMDKFD_IOC_GET_TILE_CONFIG                                      \
+#define AMDKFD_IOC_GET_TILE_CONFIG                                                                                                                    \
 		AMDKFD_IOWR(0x12, struct kfd_ioctl_get_tile_config_args)
 
 #define AMDKFD_IOC_SET_TRAP_HANDLER		\

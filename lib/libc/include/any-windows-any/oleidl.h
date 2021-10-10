@@ -250,23 +250,23 @@ MIDL_INTERFACE("00000111-0000-0000-c000-000000000046")
 IOleAdviseHolder : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IAdviseSink *pAdvise,
-        DWORD *pdwConnection) = 0;
+                     IAdviseSink *pAdvise,
+                     DWORD *pdwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwConnection) = 0;
+                     DWORD dwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumAdvise(
-        IEnumSTATDATA **ppenumAdvise) = 0;
+                     IEnumSTATDATA **ppenumAdvise) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendOnRename(
-        IMoniker *pmk) = 0;
+                     IMoniker *pmk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendOnSave(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendOnClose(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -278,39 +278,39 @@ typedef struct IOleAdviseHolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleAdviseHolder *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleAdviseHolder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleAdviseHolder *This);
+                     IOleAdviseHolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleAdviseHolder *This);
+                     IOleAdviseHolder *This);
 
     /*** IOleAdviseHolder methods ***/
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IOleAdviseHolder *This,
-        IAdviseSink *pAdvise,
-        DWORD *pdwConnection);
+                     IOleAdviseHolder *This,
+                     IAdviseSink *pAdvise,
+                     DWORD *pdwConnection);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IOleAdviseHolder *This,
-        DWORD dwConnection);
+                     IOleAdviseHolder *This,
+                     DWORD dwConnection);
 
     HRESULT (STDMETHODCALLTYPE *EnumAdvise)(
-        IOleAdviseHolder *This,
-        IEnumSTATDATA **ppenumAdvise);
+                     IOleAdviseHolder *This,
+                     IEnumSTATDATA **ppenumAdvise);
 
     HRESULT (STDMETHODCALLTYPE *SendOnRename)(
-        IOleAdviseHolder *This,
-        IMoniker *pmk);
+                     IOleAdviseHolder *This,
+                     IMoniker *pmk);
 
     HRESULT (STDMETHODCALLTYPE *SendOnSave)(
-        IOleAdviseHolder *This);
+                     IOleAdviseHolder *This);
 
     HRESULT (STDMETHODCALLTYPE *SendOnClose)(
-        IOleAdviseHolder *This);
+                     IOleAdviseHolder *This);
 
     END_INTERFACE
 } IOleAdviseHolderVtbl;
@@ -387,23 +387,23 @@ MIDL_INTERFACE("0000011e-0000-0000-c000-000000000046")
 IOleCache : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Cache(
-        FORMATETC *pformatetc,
-        DWORD advf,
-        DWORD *pdwConnection) = 0;
+                     FORMATETC *pformatetc,
+                     DWORD advf,
+                     DWORD *pdwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Uncache(
-        DWORD dwConnection) = 0;
+                     DWORD dwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumCache(
-        IEnumSTATDATA **ppenumSTATDATA) = 0;
+                     IEnumSTATDATA **ppenumSTATDATA) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitCache(
-        IDataObject *pDataObject) = 0;
+                     IDataObject *pDataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetData(
-        FORMATETC *pformatetc,
-        STGMEDIUM *pmedium,
-        WINBOOL fRelease) = 0;
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pmedium,
+                     WINBOOL fRelease) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -415,40 +415,40 @@ typedef struct IOleCacheVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleCache *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleCache *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleCache *This);
+                     IOleCache *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleCache *This);
+                     IOleCache *This);
 
     /*** IOleCache methods ***/
     HRESULT (STDMETHODCALLTYPE *Cache)(
-        IOleCache *This,
-        FORMATETC *pformatetc,
-        DWORD advf,
-        DWORD *pdwConnection);
+                     IOleCache *This,
+                     FORMATETC *pformatetc,
+                     DWORD advf,
+                     DWORD *pdwConnection);
 
     HRESULT (STDMETHODCALLTYPE *Uncache)(
-        IOleCache *This,
-        DWORD dwConnection);
+                     IOleCache *This,
+                     DWORD dwConnection);
 
     HRESULT (STDMETHODCALLTYPE *EnumCache)(
-        IOleCache *This,
-        IEnumSTATDATA **ppenumSTATDATA);
+                     IOleCache *This,
+                     IEnumSTATDATA **ppenumSTATDATA);
 
     HRESULT (STDMETHODCALLTYPE *InitCache)(
-        IOleCache *This,
-        IDataObject *pDataObject);
+                     IOleCache *This,
+                     IDataObject *pDataObject);
 
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        IOleCache *This,
-        FORMATETC *pformatetc,
-        STGMEDIUM *pmedium,
-        WINBOOL fRelease);
+                     IOleCache *This,
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pmedium,
+                     WINBOOL fRelease);
 
     END_INTERFACE
 } IOleCacheVtbl;
@@ -543,12 +543,12 @@ MIDL_INTERFACE("00000128-0000-0000-c000-000000000046")
 IOleCache2 : public IOleCache
 {
     virtual HRESULT STDMETHODCALLTYPE UpdateCache(
-        LPDATAOBJECT pDataObject,
-        DWORD grfUpdf,
-        LPVOID pReserved) = 0;
+                     LPDATAOBJECT pDataObject,
+                     DWORD grfUpdf,
+                     LPVOID pReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DiscardCache(
-        DWORD dwDiscardOptions) = 0;
+                     DWORD dwDiscardOptions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -560,51 +560,51 @@ typedef struct IOleCache2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleCache2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleCache2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleCache2 *This);
+                     IOleCache2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleCache2 *This);
+                     IOleCache2 *This);
 
     /*** IOleCache methods ***/
     HRESULT (STDMETHODCALLTYPE *Cache)(
-        IOleCache2 *This,
-        FORMATETC *pformatetc,
-        DWORD advf,
-        DWORD *pdwConnection);
+                     IOleCache2 *This,
+                     FORMATETC *pformatetc,
+                     DWORD advf,
+                     DWORD *pdwConnection);
 
     HRESULT (STDMETHODCALLTYPE *Uncache)(
-        IOleCache2 *This,
-        DWORD dwConnection);
+                     IOleCache2 *This,
+                     DWORD dwConnection);
 
     HRESULT (STDMETHODCALLTYPE *EnumCache)(
-        IOleCache2 *This,
-        IEnumSTATDATA **ppenumSTATDATA);
+                     IOleCache2 *This,
+                     IEnumSTATDATA **ppenumSTATDATA);
 
     HRESULT (STDMETHODCALLTYPE *InitCache)(
-        IOleCache2 *This,
-        IDataObject *pDataObject);
+                     IOleCache2 *This,
+                     IDataObject *pDataObject);
 
     HRESULT (STDMETHODCALLTYPE *SetData)(
-        IOleCache2 *This,
-        FORMATETC *pformatetc,
-        STGMEDIUM *pmedium,
-        WINBOOL fRelease);
+                     IOleCache2 *This,
+                     FORMATETC *pformatetc,
+                     STGMEDIUM *pmedium,
+                     WINBOOL fRelease);
 
     /*** IOleCache2 methods ***/
     HRESULT (STDMETHODCALLTYPE *UpdateCache)(
-        IOleCache2 *This,
-        LPDATAOBJECT pDataObject,
-        DWORD grfUpdf,
-        LPVOID pReserved);
+                     IOleCache2 *This,
+                     LPDATAOBJECT pDataObject,
+                     DWORD grfUpdf,
+                     LPVOID pReserved);
 
     HRESULT (STDMETHODCALLTYPE *DiscardCache)(
-        IOleCache2 *This,
-        DWORD dwDiscardOptions);
+                     IOleCache2 *This,
+                     DWORD dwDiscardOptions);
 
     END_INTERFACE
 } IOleCache2Vtbl;
@@ -707,10 +707,10 @@ MIDL_INTERFACE("00000129-0000-0000-c000-000000000046")
 IOleCacheControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnRun(
-        LPDATAOBJECT pDataObject) = 0;
+                     LPDATAOBJECT pDataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStop(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -722,23 +722,23 @@ typedef struct IOleCacheControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleCacheControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleCacheControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleCacheControl *This);
+                     IOleCacheControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleCacheControl *This);
+                     IOleCacheControl *This);
 
     /*** IOleCacheControl methods ***/
     HRESULT (STDMETHODCALLTYPE *OnRun)(
-        IOleCacheControl *This,
-        LPDATAOBJECT pDataObject);
+                     IOleCacheControl *This,
+                     LPDATAOBJECT pDataObject);
 
     HRESULT (STDMETHODCALLTYPE *OnStop)(
-        IOleCacheControl *This);
+                     IOleCacheControl *This);
 
     END_INTERFACE
 } IOleCacheControlVtbl;
@@ -797,10 +797,10 @@ MIDL_INTERFACE("0000011a-0000-0000-c000-000000000046")
 IParseDisplayName : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseDisplayName(
-        IBindCtx *pbc,
-        LPOLESTR pszDisplayName,
-        ULONG *pchEaten,
-        IMoniker **ppmkOut) = 0;
+                     IBindCtx *pbc,
+                     LPOLESTR pszDisplayName,
+                     ULONG *pchEaten,
+                     IMoniker **ppmkOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -812,23 +812,23 @@ typedef struct IParseDisplayNameVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IParseDisplayName *This,
-        REFIID riid,
-        void **ppvObject);
+                     IParseDisplayName *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IParseDisplayName *This);
+                     IParseDisplayName *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IParseDisplayName *This);
+                     IParseDisplayName *This);
 
     /*** IParseDisplayName methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseDisplayName)(
-        IParseDisplayName *This,
-        IBindCtx *pbc,
-        LPOLESTR pszDisplayName,
-        ULONG *pchEaten,
-        IMoniker **ppmkOut);
+                     IParseDisplayName *This,
+                     IBindCtx *pbc,
+                     LPOLESTR pszDisplayName,
+                     ULONG *pchEaten,
+                     IMoniker **ppmkOut);
 
     END_INTERFACE
 } IParseDisplayNameVtbl;
@@ -883,11 +883,11 @@ MIDL_INTERFACE("0000011b-0000-0000-c000-000000000046")
 IOleContainer : public IParseDisplayName
 {
     virtual HRESULT STDMETHODCALLTYPE EnumObjects(
-        DWORD grfFlags,
-        IEnumUnknown **ppenum) = 0;
+                     DWORD grfFlags,
+                     IEnumUnknown **ppenum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE LockContainer(
-        WINBOOL fLock) = 0;
+                     WINBOOL fLock) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -899,33 +899,33 @@ typedef struct IOleContainerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleContainer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleContainer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleContainer *This);
+                     IOleContainer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleContainer *This);
+                     IOleContainer *This);
 
     /*** IParseDisplayName methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseDisplayName)(
-        IOleContainer *This,
-        IBindCtx *pbc,
-        LPOLESTR pszDisplayName,
-        ULONG *pchEaten,
-        IMoniker **ppmkOut);
+                     IOleContainer *This,
+                     IBindCtx *pbc,
+                     LPOLESTR pszDisplayName,
+                     ULONG *pchEaten,
+                     IMoniker **ppmkOut);
 
     /*** IOleContainer methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumObjects)(
-        IOleContainer *This,
-        DWORD grfFlags,
-        IEnumUnknown **ppenum);
+                     IOleContainer *This,
+                     DWORD grfFlags,
+                     IEnumUnknown **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *LockContainer)(
-        IOleContainer *This,
-        WINBOOL fLock);
+                     IOleContainer *This,
+                     WINBOOL fLock);
 
     END_INTERFACE
 } IOleContainerVtbl;
@@ -990,24 +990,24 @@ MIDL_INTERFACE("00000118-0000-0000-c000-000000000046")
 IOleClientSite : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SaveObject(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMoniker(
-        DWORD dwAssign,
-        DWORD dwWhichMoniker,
-        IMoniker **ppmk) = 0;
+                     DWORD dwAssign,
+                     DWORD dwWhichMoniker,
+                     IMoniker **ppmk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetContainer(
-        IOleContainer **ppContainer) = 0;
+                     IOleContainer **ppContainer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ShowObject(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnShowWindow(
-        WINBOOL fShow) = 0;
+                     WINBOOL fShow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestNewObjectLayout(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1019,39 +1019,39 @@ typedef struct IOleClientSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleClientSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleClientSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleClientSite *This);
+                     IOleClientSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleClientSite *This);
+                     IOleClientSite *This);
 
     /*** IOleClientSite methods ***/
     HRESULT (STDMETHODCALLTYPE *SaveObject)(
-        IOleClientSite *This);
+                     IOleClientSite *This);
 
     HRESULT (STDMETHODCALLTYPE *GetMoniker)(
-        IOleClientSite *This,
-        DWORD dwAssign,
-        DWORD dwWhichMoniker,
-        IMoniker **ppmk);
+                     IOleClientSite *This,
+                     DWORD dwAssign,
+                     DWORD dwWhichMoniker,
+                     IMoniker **ppmk);
 
     HRESULT (STDMETHODCALLTYPE *GetContainer)(
-        IOleClientSite *This,
-        IOleContainer **ppContainer);
+                     IOleClientSite *This,
+                     IOleContainer **ppContainer);
 
     HRESULT (STDMETHODCALLTYPE *ShowObject)(
-        IOleClientSite *This);
+                     IOleClientSite *This);
 
     HRESULT (STDMETHODCALLTYPE *OnShowWindow)(
-        IOleClientSite *This,
-        WINBOOL fShow);
+                     IOleClientSite *This,
+                     WINBOOL fShow);
 
     HRESULT (STDMETHODCALLTYPE *RequestNewObjectLayout)(
-        IOleClientSite *This);
+                     IOleClientSite *This);
 
     END_INTERFACE
 } IOleClientSiteVtbl;
@@ -1175,84 +1175,84 @@ MIDL_INTERFACE("00000112-0000-0000-c000-000000000046")
 IOleObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetClientSite(
-        IOleClientSite *pClientSite) = 0;
+                     IOleClientSite *pClientSite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClientSite(
-        IOleClientSite **ppClientSite) = 0;
+                     IOleClientSite **ppClientSite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetHostNames(
-        LPCOLESTR szContainerApp,
-        LPCOLESTR szContainerObj) = 0;
+                     LPCOLESTR szContainerApp,
+                     LPCOLESTR szContainerObj) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Close(
-        DWORD dwSaveOption) = 0;
+                     DWORD dwSaveOption) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMoniker(
-        DWORD dwWhichMoniker,
-        IMoniker *pmk) = 0;
+                     DWORD dwWhichMoniker,
+                     IMoniker *pmk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMoniker(
-        DWORD dwAssign,
-        DWORD dwWhichMoniker,
-        IMoniker **ppmk) = 0;
+                     DWORD dwAssign,
+                     DWORD dwWhichMoniker,
+                     IMoniker **ppmk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitFromData(
-        IDataObject *pDataObject,
-        WINBOOL fCreation,
-        DWORD dwReserved) = 0;
+                     IDataObject *pDataObject,
+                     WINBOOL fCreation,
+                     DWORD dwReserved) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClipboardData(
-        DWORD dwReserved,
-        IDataObject **ppDataObject) = 0;
+                     DWORD dwReserved,
+                     IDataObject **ppDataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DoVerb(
-        LONG iVerb,
-        LPMSG lpmsg,
-        IOleClientSite *pActiveSite,
-        LONG lindex,
-        HWND hwndParent,
-        LPCRECT lprcPosRect) = 0;
+                     LONG iVerb,
+                     LPMSG lpmsg,
+                     IOleClientSite *pActiveSite,
+                     LONG lindex,
+                     HWND hwndParent,
+                     LPCRECT lprcPosRect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumVerbs(
-        IEnumOLEVERB **ppEnumOleVerb) = 0;
+                     IEnumOLEVERB **ppEnumOleVerb) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Update(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsUpToDate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserClassID(
-        CLSID *pClsid) = 0;
+                     CLSID *pClsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserType(
-        DWORD dwFormOfType,
-        LPOLESTR *pszUserType) = 0;
+                     DWORD dwFormOfType,
+                     LPOLESTR *pszUserType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetExtent(
-        DWORD dwDrawAspect,
-        SIZEL *psizel) = 0;
+                     DWORD dwDrawAspect,
+                     SIZEL *psizel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetExtent(
-        DWORD dwDrawAspect,
-        SIZEL *psizel) = 0;
+                     DWORD dwDrawAspect,
+                     SIZEL *psizel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Advise(
-        IAdviseSink *pAdvSink,
-        DWORD *pdwConnection) = 0;
+                     IAdviseSink *pAdvSink,
+                     DWORD *pdwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unadvise(
-        DWORD dwConnection) = 0;
+                     DWORD dwConnection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumAdvise(
-        IEnumSTATDATA **ppenumAdvise) = 0;
+                     IEnumSTATDATA **ppenumAdvise) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMiscStatus(
-        DWORD dwAspect,
-        DWORD *pdwStatus) = 0;
+                     DWORD dwAspect,
+                     DWORD *pdwStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetColorScheme(
-        LOGPALETTE *pLogpal) = 0;
+                     LOGPALETTE *pLogpal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1264,115 +1264,115 @@ typedef struct IOleObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleObject *This);
+                     IOleObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleObject *This);
+                     IOleObject *This);
 
     /*** IOleObject methods ***/
     HRESULT (STDMETHODCALLTYPE *SetClientSite)(
-        IOleObject *This,
-        IOleClientSite *pClientSite);
+                     IOleObject *This,
+                     IOleClientSite *pClientSite);
 
     HRESULT (STDMETHODCALLTYPE *GetClientSite)(
-        IOleObject *This,
-        IOleClientSite **ppClientSite);
+                     IOleObject *This,
+                     IOleClientSite **ppClientSite);
 
     HRESULT (STDMETHODCALLTYPE *SetHostNames)(
-        IOleObject *This,
-        LPCOLESTR szContainerApp,
-        LPCOLESTR szContainerObj);
+                     IOleObject *This,
+                     LPCOLESTR szContainerApp,
+                     LPCOLESTR szContainerObj);
 
     HRESULT (STDMETHODCALLTYPE *Close)(
-        IOleObject *This,
-        DWORD dwSaveOption);
+                     IOleObject *This,
+                     DWORD dwSaveOption);
 
     HRESULT (STDMETHODCALLTYPE *SetMoniker)(
-        IOleObject *This,
-        DWORD dwWhichMoniker,
-        IMoniker *pmk);
+                     IOleObject *This,
+                     DWORD dwWhichMoniker,
+                     IMoniker *pmk);
 
     HRESULT (STDMETHODCALLTYPE *GetMoniker)(
-        IOleObject *This,
-        DWORD dwAssign,
-        DWORD dwWhichMoniker,
-        IMoniker **ppmk);
+                     IOleObject *This,
+                     DWORD dwAssign,
+                     DWORD dwWhichMoniker,
+                     IMoniker **ppmk);
 
     HRESULT (STDMETHODCALLTYPE *InitFromData)(
-        IOleObject *This,
-        IDataObject *pDataObject,
-        WINBOOL fCreation,
-        DWORD dwReserved);
+                     IOleObject *This,
+                     IDataObject *pDataObject,
+                     WINBOOL fCreation,
+                     DWORD dwReserved);
 
     HRESULT (STDMETHODCALLTYPE *GetClipboardData)(
-        IOleObject *This,
-        DWORD dwReserved,
-        IDataObject **ppDataObject);
+                     IOleObject *This,
+                     DWORD dwReserved,
+                     IDataObject **ppDataObject);
 
     HRESULT (STDMETHODCALLTYPE *DoVerb)(
-        IOleObject *This,
-        LONG iVerb,
-        LPMSG lpmsg,
-        IOleClientSite *pActiveSite,
-        LONG lindex,
-        HWND hwndParent,
-        LPCRECT lprcPosRect);
+                     IOleObject *This,
+                     LONG iVerb,
+                     LPMSG lpmsg,
+                     IOleClientSite *pActiveSite,
+                     LONG lindex,
+                     HWND hwndParent,
+                     LPCRECT lprcPosRect);
 
     HRESULT (STDMETHODCALLTYPE *EnumVerbs)(
-        IOleObject *This,
-        IEnumOLEVERB **ppEnumOleVerb);
+                     IOleObject *This,
+                     IEnumOLEVERB **ppEnumOleVerb);
 
     HRESULT (STDMETHODCALLTYPE *Update)(
-        IOleObject *This);
+                     IOleObject *This);
 
     HRESULT (STDMETHODCALLTYPE *IsUpToDate)(
-        IOleObject *This);
+                     IOleObject *This);
 
     HRESULT (STDMETHODCALLTYPE *GetUserClassID)(
-        IOleObject *This,
-        CLSID *pClsid);
+                     IOleObject *This,
+                     CLSID *pClsid);
 
     HRESULT (STDMETHODCALLTYPE *GetUserType)(
-        IOleObject *This,
-        DWORD dwFormOfType,
-        LPOLESTR *pszUserType);
+                     IOleObject *This,
+                     DWORD dwFormOfType,
+                     LPOLESTR *pszUserType);
 
     HRESULT (STDMETHODCALLTYPE *SetExtent)(
-        IOleObject *This,
-        DWORD dwDrawAspect,
-        SIZEL *psizel);
+                     IOleObject *This,
+                     DWORD dwDrawAspect,
+                     SIZEL *psizel);
 
     HRESULT (STDMETHODCALLTYPE *GetExtent)(
-        IOleObject *This,
-        DWORD dwDrawAspect,
-        SIZEL *psizel);
+                     IOleObject *This,
+                     DWORD dwDrawAspect,
+                     SIZEL *psizel);
 
     HRESULT (STDMETHODCALLTYPE *Advise)(
-        IOleObject *This,
-        IAdviseSink *pAdvSink,
-        DWORD *pdwConnection);
+                     IOleObject *This,
+                     IAdviseSink *pAdvSink,
+                     DWORD *pdwConnection);
 
     HRESULT (STDMETHODCALLTYPE *Unadvise)(
-        IOleObject *This,
-        DWORD dwConnection);
+                     IOleObject *This,
+                     DWORD dwConnection);
 
     HRESULT (STDMETHODCALLTYPE *EnumAdvise)(
-        IOleObject *This,
-        IEnumSTATDATA **ppenumAdvise);
+                     IOleObject *This,
+                     IEnumSTATDATA **ppenumAdvise);
 
     HRESULT (STDMETHODCALLTYPE *GetMiscStatus)(
-        IOleObject *This,
-        DWORD dwAspect,
-        DWORD *pdwStatus);
+                     IOleObject *This,
+                     DWORD dwAspect,
+                     DWORD *pdwStatus);
 
     HRESULT (STDMETHODCALLTYPE *SetColorScheme)(
-        IOleObject *This,
-        LOGPALETTE *pLogpal);
+                     IOleObject *This,
+                     LOGPALETTE *pLogpal);
 
     END_INTERFACE
 } IOleObjectVtbl;
@@ -1543,10 +1543,10 @@ MIDL_INTERFACE("00000114-0000-0000-c000-000000000046")
 IOleWindow : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetWindow(
-        HWND *phwnd) = 0;
+                     HWND *phwnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ContextSensitiveHelp(
-        WINBOOL fEnterMode) = 0;
+                     WINBOOL fEnterMode) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1558,24 +1558,24 @@ typedef struct IOleWindowVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleWindow *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleWindow *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleWindow *This);
+                     IOleWindow *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleWindow *This);
+                     IOleWindow *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleWindow *This,
-        HWND *phwnd);
+                     IOleWindow *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleWindow *This,
-        WINBOOL fEnterMode);
+                     IOleWindow *This,
+                     WINBOOL fEnterMode);
 
     END_INTERFACE
 } IOleWindowVtbl;
@@ -1646,39 +1646,39 @@ MIDL_INTERFACE("0000011d-0000-0000-c000-000000000046")
 IOleLink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetUpdateOptions(
-        DWORD dwUpdateOpt) = 0;
+                     DWORD dwUpdateOpt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUpdateOptions(
-        DWORD *pdwUpdateOpt) = 0;
+                     DWORD *pdwUpdateOpt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSourceMoniker(
-        IMoniker *pmk,
-        REFCLSID rclsid) = 0;
+                     IMoniker *pmk,
+                     REFCLSID rclsid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSourceMoniker(
-        IMoniker **ppmk) = 0;
+                     IMoniker **ppmk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSourceDisplayName(
-        LPCOLESTR pszStatusText) = 0;
+                     LPCOLESTR pszStatusText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSourceDisplayName(
-        LPOLESTR *ppszDisplayName) = 0;
+                     LPOLESTR *ppszDisplayName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BindToSource(
-        DWORD bindflags,
-        IBindCtx *pbc) = 0;
+                     DWORD bindflags,
+                     IBindCtx *pbc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BindIfRunning(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBoundSource(
-        IUnknown **ppunk) = 0;
+                     IUnknown **ppunk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnbindSource(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Update(
-        IBindCtx *pbc) = 0;
+                     IBindCtx *pbc) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1690,60 +1690,60 @@ typedef struct IOleLinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleLink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleLink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleLink *This);
+                     IOleLink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleLink *This);
+                     IOleLink *This);
 
     /*** IOleLink methods ***/
     HRESULT (STDMETHODCALLTYPE *SetUpdateOptions)(
-        IOleLink *This,
-        DWORD dwUpdateOpt);
+                     IOleLink *This,
+                     DWORD dwUpdateOpt);
 
     HRESULT (STDMETHODCALLTYPE *GetUpdateOptions)(
-        IOleLink *This,
-        DWORD *pdwUpdateOpt);
+                     IOleLink *This,
+                     DWORD *pdwUpdateOpt);
 
     HRESULT (STDMETHODCALLTYPE *SetSourceMoniker)(
-        IOleLink *This,
-        IMoniker *pmk,
-        REFCLSID rclsid);
+                     IOleLink *This,
+                     IMoniker *pmk,
+                     REFCLSID rclsid);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceMoniker)(
-        IOleLink *This,
-        IMoniker **ppmk);
+                     IOleLink *This,
+                     IMoniker **ppmk);
 
     HRESULT (STDMETHODCALLTYPE *SetSourceDisplayName)(
-        IOleLink *This,
-        LPCOLESTR pszStatusText);
+                     IOleLink *This,
+                     LPCOLESTR pszStatusText);
 
     HRESULT (STDMETHODCALLTYPE *GetSourceDisplayName)(
-        IOleLink *This,
-        LPOLESTR *ppszDisplayName);
+                     IOleLink *This,
+                     LPOLESTR *ppszDisplayName);
 
     HRESULT (STDMETHODCALLTYPE *BindToSource)(
-        IOleLink *This,
-        DWORD bindflags,
-        IBindCtx *pbc);
+                     IOleLink *This,
+                     DWORD bindflags,
+                     IBindCtx *pbc);
 
     HRESULT (STDMETHODCALLTYPE *BindIfRunning)(
-        IOleLink *This);
+                     IOleLink *This);
 
     HRESULT (STDMETHODCALLTYPE *GetBoundSource)(
-        IOleLink *This,
-        IUnknown **ppunk);
+                     IOleLink *This,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *UnbindSource)(
-        IOleLink *This);
+                     IOleLink *This);
 
     HRESULT (STDMETHODCALLTYPE *Update)(
-        IOleLink *This,
-        IBindCtx *pbc);
+                     IOleLink *This,
+                     IBindCtx *pbc);
 
     END_INTERFACE
 } IOleLinkVtbl;
@@ -1852,20 +1852,20 @@ MIDL_INTERFACE("0000011c-0000-0000-c000-000000000046")
 IOleItemContainer : public IOleContainer
 {
     virtual HRESULT STDMETHODCALLTYPE GetObject(
-        LPOLESTR pszItem,
-        DWORD dwSpeedNeeded,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppvObject) = 0;
+                     LPOLESTR pszItem,
+                     DWORD dwSpeedNeeded,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppvObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetObjectStorage(
-        LPOLESTR pszItem,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppvStorage) = 0;
+                     LPOLESTR pszItem,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppvStorage) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsRunning(
-        LPOLESTR pszItem) = 0;
+                     LPOLESTR pszItem) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1877,53 +1877,53 @@ typedef struct IOleItemContainerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleItemContainer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleItemContainer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleItemContainer *This);
+                     IOleItemContainer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleItemContainer *This);
+                     IOleItemContainer *This);
 
     /*** IParseDisplayName methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseDisplayName)(
-        IOleItemContainer *This,
-        IBindCtx *pbc,
-        LPOLESTR pszDisplayName,
-        ULONG *pchEaten,
-        IMoniker **ppmkOut);
+                     IOleItemContainer *This,
+                     IBindCtx *pbc,
+                     LPOLESTR pszDisplayName,
+                     ULONG *pchEaten,
+                     IMoniker **ppmkOut);
 
     /*** IOleContainer methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumObjects)(
-        IOleItemContainer *This,
-        DWORD grfFlags,
-        IEnumUnknown **ppenum);
+                     IOleItemContainer *This,
+                     DWORD grfFlags,
+                     IEnumUnknown **ppenum);
 
     HRESULT (STDMETHODCALLTYPE *LockContainer)(
-        IOleItemContainer *This,
-        WINBOOL fLock);
+                     IOleItemContainer *This,
+                     WINBOOL fLock);
 
     /*** IOleItemContainer methods ***/
     HRESULT (STDMETHODCALLTYPE *GetObject)(
-        IOleItemContainer *This,
-        LPOLESTR pszItem,
-        DWORD dwSpeedNeeded,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppvObject);
+                     IOleItemContainer *This,
+                     LPOLESTR pszItem,
+                     DWORD dwSpeedNeeded,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppvObject);
 
     HRESULT (STDMETHODCALLTYPE *GetObjectStorage)(
-        IOleItemContainer *This,
-        LPOLESTR pszItem,
-        IBindCtx *pbc,
-        REFIID riid,
-        void **ppvStorage);
+                     IOleItemContainer *This,
+                     LPOLESTR pszItem,
+                     IBindCtx *pbc,
+                     REFIID riid,
+                     void **ppvStorage);
 
     HRESULT (STDMETHODCALLTYPE *IsRunning)(
-        IOleItemContainer *This,
-        LPOLESTR pszItem);
+                     IOleItemContainer *This,
+                     LPOLESTR pszItem);
 
     END_INTERFACE
 } IOleItemContainerVtbl;
@@ -2005,17 +2005,17 @@ MIDL_INTERFACE("00000115-0000-0000-c000-000000000046")
 IOleInPlaceUIWindow : public IOleWindow
 {
     virtual HRESULT STDMETHODCALLTYPE GetBorder(
-        LPRECT lprectBorder) = 0;
+                     LPRECT lprectBorder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestBorderSpace(
-        LPCBORDERWIDTHS pborderwidths) = 0;
+                     LPCBORDERWIDTHS pborderwidths) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBorderSpace(
-        LPCBORDERWIDTHS pborderwidths) = 0;
+                     LPCBORDERWIDTHS pborderwidths) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetActiveObject(
-        IOleInPlaceActiveObject *pActiveObject,
-        LPCOLESTR pszObjName) = 0;
+                     IOleInPlaceActiveObject *pActiveObject,
+                     LPCOLESTR pszObjName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2027,42 +2027,42 @@ typedef struct IOleInPlaceUIWindowVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleInPlaceUIWindow *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleInPlaceUIWindow *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleInPlaceUIWindow *This);
+                     IOleInPlaceUIWindow *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleInPlaceUIWindow *This);
+                     IOleInPlaceUIWindow *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleInPlaceUIWindow *This,
-        HWND *phwnd);
+                     IOleInPlaceUIWindow *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleInPlaceUIWindow *This,
-        WINBOOL fEnterMode);
+                     IOleInPlaceUIWindow *This,
+                     WINBOOL fEnterMode);
 
     /*** IOleInPlaceUIWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBorder)(
-        IOleInPlaceUIWindow *This,
-        LPRECT lprectBorder);
+                     IOleInPlaceUIWindow *This,
+                     LPRECT lprectBorder);
 
     HRESULT (STDMETHODCALLTYPE *RequestBorderSpace)(
-        IOleInPlaceUIWindow *This,
-        LPCBORDERWIDTHS pborderwidths);
+                     IOleInPlaceUIWindow *This,
+                     LPCBORDERWIDTHS pborderwidths);
 
     HRESULT (STDMETHODCALLTYPE *SetBorderSpace)(
-        IOleInPlaceUIWindow *This,
-        LPCBORDERWIDTHS pborderwidths);
+                     IOleInPlaceUIWindow *This,
+                     LPCBORDERWIDTHS pborderwidths);
 
     HRESULT (STDMETHODCALLTYPE *SetActiveObject)(
-        IOleInPlaceUIWindow *This,
-        IOleInPlaceActiveObject *pActiveObject,
-        LPCOLESTR pszObjName);
+                     IOleInPlaceUIWindow *This,
+                     IOleInPlaceActiveObject *pActiveObject,
+                     LPCOLESTR pszObjName);
 
     END_INTERFACE
 } IOleInPlaceUIWindowVtbl;
@@ -2139,21 +2139,21 @@ MIDL_INTERFACE("00000117-0000-0000-c000-000000000046")
 IOleInPlaceActiveObject : public IOleWindow
 {
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        LPMSG lpmsg) = 0;
+                     LPMSG lpmsg) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFrameWindowActivate(
-        WINBOOL fActivate) = 0;
+                     WINBOOL fActivate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnDocWindowActivate(
-        WINBOOL fActivate) = 0;
+                     WINBOOL fActivate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ResizeBorder(
-        LPCRECT prcBorder,
-        IOleInPlaceUIWindow *pUIWindow,
-        WINBOOL fFrameWindow) = 0;
+                     LPCRECT prcBorder,
+                     IOleInPlaceUIWindow *pUIWindow,
+                     WINBOOL fFrameWindow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableModeless(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2165,47 +2165,47 @@ typedef struct IOleInPlaceActiveObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleInPlaceActiveObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleInPlaceActiveObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleInPlaceActiveObject *This);
+                     IOleInPlaceActiveObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleInPlaceActiveObject *This);
+                     IOleInPlaceActiveObject *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleInPlaceActiveObject *This,
-        HWND *phwnd);
+                     IOleInPlaceActiveObject *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleInPlaceActiveObject *This,
-        WINBOOL fEnterMode);
+                     IOleInPlaceActiveObject *This,
+                     WINBOOL fEnterMode);
 
     /*** IOleInPlaceActiveObject methods ***/
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IOleInPlaceActiveObject *This,
-        LPMSG lpmsg);
+                     IOleInPlaceActiveObject *This,
+                     LPMSG lpmsg);
 
     HRESULT (STDMETHODCALLTYPE *OnFrameWindowActivate)(
-        IOleInPlaceActiveObject *This,
-        WINBOOL fActivate);
+                     IOleInPlaceActiveObject *This,
+                     WINBOOL fActivate);
 
     HRESULT (STDMETHODCALLTYPE *OnDocWindowActivate)(
-        IOleInPlaceActiveObject *This,
-        WINBOOL fActivate);
+                     IOleInPlaceActiveObject *This,
+                     WINBOOL fActivate);
 
     HRESULT (STDMETHODCALLTYPE *ResizeBorder)(
-        IOleInPlaceActiveObject *This,
-        LPCRECT prcBorder,
-        IOleInPlaceUIWindow *pUIWindow,
-        WINBOOL fFrameWindow);
+                     IOleInPlaceActiveObject *This,
+                     LPCRECT prcBorder,
+                     IOleInPlaceUIWindow *pUIWindow,
+                     WINBOOL fFrameWindow);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IOleInPlaceActiveObject *This,
-        WINBOOL fEnable);
+                     IOleInPlaceActiveObject *This,
+                     WINBOOL fEnable);
 
     END_INTERFACE
 } IOleInPlaceActiveObjectVtbl;
@@ -2336,26 +2336,26 @@ MIDL_INTERFACE("00000116-0000-0000-c000-000000000046")
 IOleInPlaceFrame : public IOleInPlaceUIWindow
 {
     virtual HRESULT STDMETHODCALLTYPE InsertMenus(
-        HMENU hmenuShared,
-        LPOLEMENUGROUPWIDTHS lpMenuWidths) = 0;
+                     HMENU hmenuShared,
+                     LPOLEMENUGROUPWIDTHS lpMenuWidths) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMenu(
-        HMENU hmenuShared,
-        HOLEMENU holemenu,
-        HWND hwndActiveObject) = 0;
+                     HMENU hmenuShared,
+                     HOLEMENU holemenu,
+                     HWND hwndActiveObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveMenus(
-        HMENU hmenuShared) = 0;
+                     HMENU hmenuShared) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStatusText(
-        LPCOLESTR pszStatusText) = 0;
+                     LPCOLESTR pszStatusText) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnableModeless(
-        WINBOOL fEnable) = 0;
+                     WINBOOL fEnable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TranslateAccelerator(
-        LPMSG lpmsg,
-        WORD wID) = 0;
+                     LPMSG lpmsg,
+                     WORD wID) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2367,71 +2367,71 @@ typedef struct IOleInPlaceFrameVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleInPlaceFrame *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleInPlaceFrame *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleInPlaceFrame *This);
+                     IOleInPlaceFrame *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleInPlaceFrame *This);
+                     IOleInPlaceFrame *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleInPlaceFrame *This,
-        HWND *phwnd);
+                     IOleInPlaceFrame *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleInPlaceFrame *This,
-        WINBOOL fEnterMode);
+                     IOleInPlaceFrame *This,
+                     WINBOOL fEnterMode);
 
     /*** IOleInPlaceUIWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetBorder)(
-        IOleInPlaceFrame *This,
-        LPRECT lprectBorder);
+                     IOleInPlaceFrame *This,
+                     LPRECT lprectBorder);
 
     HRESULT (STDMETHODCALLTYPE *RequestBorderSpace)(
-        IOleInPlaceFrame *This,
-        LPCBORDERWIDTHS pborderwidths);
+                     IOleInPlaceFrame *This,
+                     LPCBORDERWIDTHS pborderwidths);
 
     HRESULT (STDMETHODCALLTYPE *SetBorderSpace)(
-        IOleInPlaceFrame *This,
-        LPCBORDERWIDTHS pborderwidths);
+                     IOleInPlaceFrame *This,
+                     LPCBORDERWIDTHS pborderwidths);
 
     HRESULT (STDMETHODCALLTYPE *SetActiveObject)(
-        IOleInPlaceFrame *This,
-        IOleInPlaceActiveObject *pActiveObject,
-        LPCOLESTR pszObjName);
+                     IOleInPlaceFrame *This,
+                     IOleInPlaceActiveObject *pActiveObject,
+                     LPCOLESTR pszObjName);
 
     /*** IOleInPlaceFrame methods ***/
     HRESULT (STDMETHODCALLTYPE *InsertMenus)(
-        IOleInPlaceFrame *This,
-        HMENU hmenuShared,
-        LPOLEMENUGROUPWIDTHS lpMenuWidths);
+                     IOleInPlaceFrame *This,
+                     HMENU hmenuShared,
+                     LPOLEMENUGROUPWIDTHS lpMenuWidths);
 
     HRESULT (STDMETHODCALLTYPE *SetMenu)(
-        IOleInPlaceFrame *This,
-        HMENU hmenuShared,
-        HOLEMENU holemenu,
-        HWND hwndActiveObject);
+                     IOleInPlaceFrame *This,
+                     HMENU hmenuShared,
+                     HOLEMENU holemenu,
+                     HWND hwndActiveObject);
 
     HRESULT (STDMETHODCALLTYPE *RemoveMenus)(
-        IOleInPlaceFrame *This,
-        HMENU hmenuShared);
+                     IOleInPlaceFrame *This,
+                     HMENU hmenuShared);
 
     HRESULT (STDMETHODCALLTYPE *SetStatusText)(
-        IOleInPlaceFrame *This,
-        LPCOLESTR pszStatusText);
+                     IOleInPlaceFrame *This,
+                     LPCOLESTR pszStatusText);
 
     HRESULT (STDMETHODCALLTYPE *EnableModeless)(
-        IOleInPlaceFrame *This,
-        WINBOOL fEnable);
+                     IOleInPlaceFrame *This,
+                     WINBOOL fEnable);
 
     HRESULT (STDMETHODCALLTYPE *TranslateAccelerator)(
-        IOleInPlaceFrame *This,
-        LPMSG lpmsg,
-        WORD wID);
+                     IOleInPlaceFrame *This,
+                     LPMSG lpmsg,
+                     WORD wID);
 
     END_INTERFACE
 } IOleInPlaceFrameVtbl;
@@ -2534,17 +2534,17 @@ MIDL_INTERFACE("00000113-0000-0000-c000-000000000046")
 IOleInPlaceObject : public IOleWindow
 {
     virtual HRESULT STDMETHODCALLTYPE InPlaceDeactivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UIDeactivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetObjectRects(
-        LPCRECT lprcPosRect,
-        LPCRECT lprcClipRect) = 0;
+                     LPCRECT lprcPosRect,
+                     LPCRECT lprcClipRect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ReactivateAndUndo(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2556,39 +2556,39 @@ typedef struct IOleInPlaceObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleInPlaceObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleInPlaceObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleInPlaceObject *This);
+                     IOleInPlaceObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleInPlaceObject *This);
+                     IOleInPlaceObject *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleInPlaceObject *This,
-        HWND *phwnd);
+                     IOleInPlaceObject *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleInPlaceObject *This,
-        WINBOOL fEnterMode);
+                     IOleInPlaceObject *This,
+                     WINBOOL fEnterMode);
 
     /*** IOleInPlaceObject methods ***/
     HRESULT (STDMETHODCALLTYPE *InPlaceDeactivate)(
-        IOleInPlaceObject *This);
+                     IOleInPlaceObject *This);
 
     HRESULT (STDMETHODCALLTYPE *UIDeactivate)(
-        IOleInPlaceObject *This);
+                     IOleInPlaceObject *This);
 
     HRESULT (STDMETHODCALLTYPE *SetObjectRects)(
-        IOleInPlaceObject *This,
-        LPCRECT lprcPosRect,
-        LPCRECT lprcClipRect);
+                     IOleInPlaceObject *This,
+                     LPCRECT lprcPosRect,
+                     LPCRECT lprcClipRect);
 
     HRESULT (STDMETHODCALLTYPE *ReactivateAndUndo)(
-        IOleInPlaceObject *This);
+                     IOleInPlaceObject *This);
 
     END_INTERFACE
 } IOleInPlaceObjectVtbl;
@@ -2665,38 +2665,38 @@ MIDL_INTERFACE("00000119-0000-0000-c000-000000000046")
 IOleInPlaceSite : public IOleWindow
 {
     virtual HRESULT STDMETHODCALLTYPE CanInPlaceActivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnInPlaceActivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnUIActivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWindowContext(
-        IOleInPlaceFrame **ppFrame,
-        IOleInPlaceUIWindow **ppDoc,
-        LPRECT lprcPosRect,
-        LPRECT lprcClipRect,
-        LPOLEINPLACEFRAMEINFO lpFrameInfo) = 0;
+                     IOleInPlaceFrame **ppFrame,
+                     IOleInPlaceUIWindow **ppDoc,
+                     LPRECT lprcPosRect,
+                     LPRECT lprcClipRect,
+                     LPOLEINPLACEFRAMEINFO lpFrameInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Scroll(
-        SIZE scrollExtant) = 0;
+                     SIZE scrollExtant) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnUIDeactivate(
-        WINBOOL fUndoable) = 0;
+                     WINBOOL fUndoable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnInPlaceDeactivate(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DiscardUndoState(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeactivateAndUndo(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnPosRectChange(
-        LPCRECT lprcPosRect) = 0;
+                     LPCRECT lprcPosRect) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2708,63 +2708,63 @@ typedef struct IOleInPlaceSiteVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOleInPlaceSite *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOleInPlaceSite *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOleInPlaceSite *This);
+                     IOleInPlaceSite *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOleInPlaceSite *This);
+                     IOleInPlaceSite *This);
 
     /*** IOleWindow methods ***/
     HRESULT (STDMETHODCALLTYPE *GetWindow)(
-        IOleInPlaceSite *This,
-        HWND *phwnd);
+                     IOleInPlaceSite *This,
+                     HWND *phwnd);
 
     HRESULT (STDMETHODCALLTYPE *ContextSensitiveHelp)(
-        IOleInPlaceSite *This,
-        WINBOOL fEnterMode);
+                     IOleInPlaceSite *This,
+                     WINBOOL fEnterMode);
 
     /*** IOleInPlaceSite methods ***/
     HRESULT (STDMETHODCALLTYPE *CanInPlaceActivate)(
-        IOleInPlaceSite *This);
+                     IOleInPlaceSite *This);
 
     HRESULT (STDMETHODCALLTYPE *OnInPlaceActivate)(
-        IOleInPlaceSite *This);
+                     IOleInPlaceSite *This);
 
     HRESULT (STDMETHODCALLTYPE *OnUIActivate)(
-        IOleInPlaceSite *This);
+                     IOleInPlaceSite *This);
 
     HRESULT (STDMETHODCALLTYPE *GetWindowContext)(
-        IOleInPlaceSite *This,
-        IOleInPlaceFrame **ppFrame,
-        IOleInPlaceUIWindow **ppDoc,
-        LPRECT lprcPosRect,
-        LPRECT lprcClipRect,
-        LPOLEINPLACEFRAMEINFO lpFrameInfo);
+                     IOleInPlaceSite *This,
+                     IOleInPlaceFrame **ppFrame,
+                     IOleInPlaceUIWindow **ppDoc,
+                     LPRECT lprcPosRect,
+                     LPRECT lprcClipRect,
+                     LPOLEINPLACEFRAMEINFO lpFrameInfo);
 
     HRESULT (STDMETHODCALLTYPE *Scroll)(
-        IOleInPlaceSite *This,
-        SIZE scrollExtant);
+                     IOleInPlaceSite *This,
+                     SIZE scrollExtant);
 
     HRESULT (STDMETHODCALLTYPE *OnUIDeactivate)(
-        IOleInPlaceSite *This,
-        WINBOOL fUndoable);
+                     IOleInPlaceSite *This,
+                     WINBOOL fUndoable);
 
     HRESULT (STDMETHODCALLTYPE *OnInPlaceDeactivate)(
-        IOleInPlaceSite *This);
+                     IOleInPlaceSite *This);
 
     HRESULT (STDMETHODCALLTYPE *DiscardUndoState)(
-        IOleInPlaceSite *This);
+                     IOleInPlaceSite *This);
 
     HRESULT (STDMETHODCALLTYPE *DeactivateAndUndo)(
-        IOleInPlaceSite *This);
+                     IOleInPlaceSite *This);
 
     HRESULT (STDMETHODCALLTYPE *OnPosRectChange)(
-        IOleInPlaceSite *This,
-        LPCRECT lprcPosRect);
+                     IOleInPlaceSite *This,
+                     LPCRECT lprcPosRect);
 
     END_INTERFACE
 } IOleInPlaceSiteVtbl;
@@ -2863,7 +2863,7 @@ MIDL_INTERFACE("0000012a-0000-0000-c000-000000000046")
 IContinue : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FContinue(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2875,19 +2875,19 @@ typedef struct IContinueVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IContinue *This,
-        REFIID riid,
-        void **ppvObject);
+                     IContinue *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IContinue *This);
+                     IContinue *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IContinue *This);
+                     IContinue *This);
 
     /*** IContinue methods ***/
     HRESULT (STDMETHODCALLTYPE *FContinue)(
-        IContinue *This);
+                     IContinue *This);
 
     END_INTERFACE
 } IContinueVtbl;
@@ -2942,43 +2942,43 @@ MIDL_INTERFACE("0000010d-0000-0000-c000-000000000046")
 IViewObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Draw(
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DVTARGETDEVICE *ptd,
-        HDC hdcTargetDev,
-        HDC hdcDraw,
-        LPCRECTL lprcBounds,
-        LPCRECTL lprcWBounds,
-        WINBOOL (STDMETHODCALLTYPE *pfnContinue)(ULONG_PTR dwContinue),
-        ULONG_PTR dwContinue) = 0;
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DVTARGETDEVICE *ptd,
+                     HDC hdcTargetDev,
+                     HDC hdcDraw,
+                     LPCRECTL lprcBounds,
+                     LPCRECTL lprcWBounds,
+                     WINBOOL (STDMETHODCALLTYPE *pfnContinue)(ULONG_PTR dwContinue),
+                     ULONG_PTR dwContinue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetColorSet(
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DVTARGETDEVICE *ptd,
-        HDC hicTargetDev,
-        LOGPALETTE **ppColorSet) = 0;
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DVTARGETDEVICE *ptd,
+                     HDC hicTargetDev,
+                     LOGPALETTE **ppColorSet) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Freeze(
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DWORD *pdwFreeze) = 0;
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DWORD *pdwFreeze) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unfreeze(
-        DWORD dwFreeze) = 0;
+                     DWORD dwFreeze) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetAdvise(
-        DWORD aspects,
-        DWORD advf,
-        IAdviseSink *pAdvSink) = 0;
+                     DWORD aspects,
+                     DWORD advf,
+                     IAdviseSink *pAdvSink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAdvise(
-        DWORD *pAspects,
-        DWORD *pAdvf,
-        IAdviseSink **ppAdvSink) = 0;
+                     DWORD *pAspects,
+                     DWORD *pAdvf,
+                     IAdviseSink **ppAdvSink) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2990,61 +2990,61 @@ typedef struct IViewObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IViewObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IViewObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IViewObject *This);
+                     IViewObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IViewObject *This);
+                     IViewObject *This);
 
     /*** IViewObject methods ***/
     HRESULT (STDMETHODCALLTYPE *Draw)(
-        IViewObject *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DVTARGETDEVICE *ptd,
-        HDC hdcTargetDev,
-        HDC hdcDraw,
-        LPCRECTL lprcBounds,
-        LPCRECTL lprcWBounds,
-        WINBOOL (STDMETHODCALLTYPE *pfnContinue)(ULONG_PTR dwContinue),
-        ULONG_PTR dwContinue);
+                     IViewObject *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DVTARGETDEVICE *ptd,
+                     HDC hdcTargetDev,
+                     HDC hdcDraw,
+                     LPCRECTL lprcBounds,
+                     LPCRECTL lprcWBounds,
+                     WINBOOL (STDMETHODCALLTYPE *pfnContinue)(ULONG_PTR dwContinue),
+                     ULONG_PTR dwContinue);
 
     HRESULT (STDMETHODCALLTYPE *GetColorSet)(
-        IViewObject *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DVTARGETDEVICE *ptd,
-        HDC hicTargetDev,
-        LOGPALETTE **ppColorSet);
+                     IViewObject *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DVTARGETDEVICE *ptd,
+                     HDC hicTargetDev,
+                     LOGPALETTE **ppColorSet);
 
     HRESULT (STDMETHODCALLTYPE *Freeze)(
-        IViewObject *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DWORD *pdwFreeze);
+                     IViewObject *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DWORD *pdwFreeze);
 
     HRESULT (STDMETHODCALLTYPE *Unfreeze)(
-        IViewObject *This,
-        DWORD dwFreeze);
+                     IViewObject *This,
+                     DWORD dwFreeze);
 
     HRESULT (STDMETHODCALLTYPE *SetAdvise)(
-        IViewObject *This,
-        DWORD aspects,
-        DWORD advf,
-        IAdviseSink *pAdvSink);
+                     IViewObject *This,
+                     DWORD aspects,
+                     DWORD advf,
+                     IAdviseSink *pAdvSink);
 
     HRESULT (STDMETHODCALLTYPE *GetAdvise)(
-        IViewObject *This,
-        DWORD *pAspects,
-        DWORD *pAdvf,
-        IAdviseSink **ppAdvSink);
+                     IViewObject *This,
+                     DWORD *pAspects,
+                     DWORD *pAdvf,
+                     IAdviseSink **ppAdvSink);
 
     END_INTERFACE
 } IViewObjectVtbl;
@@ -3230,10 +3230,10 @@ MIDL_INTERFACE("00000127-0000-0000-c000-000000000046")
 IViewObject2 : public IViewObject
 {
     virtual HRESULT STDMETHODCALLTYPE GetExtent(
-        DWORD dwDrawAspect,
-        LONG lindex,
-        DVTARGETDEVICE *ptd,
-        LPSIZEL lpsizel) = 0;
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     DVTARGETDEVICE *ptd,
+                     LPSIZEL lpsizel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3245,69 +3245,69 @@ typedef struct IViewObject2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IViewObject2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IViewObject2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IViewObject2 *This);
+                     IViewObject2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IViewObject2 *This);
+                     IViewObject2 *This);
 
     /*** IViewObject methods ***/
     HRESULT (STDMETHODCALLTYPE *Draw)(
-        IViewObject2 *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DVTARGETDEVICE *ptd,
-        HDC hdcTargetDev,
-        HDC hdcDraw,
-        LPCRECTL lprcBounds,
-        LPCRECTL lprcWBounds,
-        WINBOOL (STDMETHODCALLTYPE *pfnContinue)(ULONG_PTR dwContinue),
-        ULONG_PTR dwContinue);
+                     IViewObject2 *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DVTARGETDEVICE *ptd,
+                     HDC hdcTargetDev,
+                     HDC hdcDraw,
+                     LPCRECTL lprcBounds,
+                     LPCRECTL lprcWBounds,
+                     WINBOOL (STDMETHODCALLTYPE *pfnContinue)(ULONG_PTR dwContinue),
+                     ULONG_PTR dwContinue);
 
     HRESULT (STDMETHODCALLTYPE *GetColorSet)(
-        IViewObject2 *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DVTARGETDEVICE *ptd,
-        HDC hicTargetDev,
-        LOGPALETTE **ppColorSet);
+                     IViewObject2 *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DVTARGETDEVICE *ptd,
+                     HDC hicTargetDev,
+                     LOGPALETTE **ppColorSet);
 
     HRESULT (STDMETHODCALLTYPE *Freeze)(
-        IViewObject2 *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        void *pvAspect,
-        DWORD *pdwFreeze);
+                     IViewObject2 *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     void *pvAspect,
+                     DWORD *pdwFreeze);
 
     HRESULT (STDMETHODCALLTYPE *Unfreeze)(
-        IViewObject2 *This,
-        DWORD dwFreeze);
+                     IViewObject2 *This,
+                     DWORD dwFreeze);
 
     HRESULT (STDMETHODCALLTYPE *SetAdvise)(
-        IViewObject2 *This,
-        DWORD aspects,
-        DWORD advf,
-        IAdviseSink *pAdvSink);
+                     IViewObject2 *This,
+                     DWORD aspects,
+                     DWORD advf,
+                     IAdviseSink *pAdvSink);
 
     HRESULT (STDMETHODCALLTYPE *GetAdvise)(
-        IViewObject2 *This,
-        DWORD *pAspects,
-        DWORD *pAdvf,
-        IAdviseSink **ppAdvSink);
+                     IViewObject2 *This,
+                     DWORD *pAspects,
+                     DWORD *pAdvf,
+                     IAdviseSink **ppAdvSink);
 
     /*** IViewObject2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetExtent)(
-        IViewObject2 *This,
-        DWORD dwDrawAspect,
-        LONG lindex,
-        DVTARGETDEVICE *ptd,
-        LPSIZEL lpsizel);
+                     IViewObject2 *This,
+                     DWORD dwDrawAspect,
+                     LONG lindex,
+                     DVTARGETDEVICE *ptd,
+                     LPSIZEL lpsizel);
 
     END_INTERFACE
 } IViewObject2Vtbl;
@@ -3388,11 +3388,11 @@ MIDL_INTERFACE("00000121-0000-0000-c000-000000000046")
 IDropSource : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryContinueDrag(
-        WINBOOL fEscapePressed,
-        DWORD grfKeyState) = 0;
+                     WINBOOL fEscapePressed,
+                     DWORD grfKeyState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GiveFeedback(
-        DWORD dwEffect) = 0;
+                     DWORD dwEffect) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3404,25 +3404,25 @@ typedef struct IDropSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDropSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDropSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDropSource *This);
+                     IDropSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDropSource *This);
+                     IDropSource *This);
 
     /*** IDropSource methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryContinueDrag)(
-        IDropSource *This,
-        WINBOOL fEscapePressed,
-        DWORD grfKeyState);
+                     IDropSource *This,
+                     WINBOOL fEscapePressed,
+                     DWORD grfKeyState);
 
     HRESULT (STDMETHODCALLTYPE *GiveFeedback)(
-        IDropSource *This,
-        DWORD dwEffect);
+                     IDropSource *This,
+                     DWORD dwEffect);
 
     END_INTERFACE
 } IDropSourceVtbl;
@@ -3509,24 +3509,24 @@ MIDL_INTERFACE("00000122-0000-0000-c000-000000000046")
 IDropTarget : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DragEnter(
-        IDataObject *pDataObj,
-        DWORD grfKeyState,
-        POINTL pt,
-        DWORD *pdwEffect) = 0;
+                     IDataObject *pDataObj,
+                     DWORD grfKeyState,
+                     POINTL pt,
+                     DWORD *pdwEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DragOver(
-        DWORD grfKeyState,
-        POINTL pt,
-        DWORD *pdwEffect) = 0;
+                     DWORD grfKeyState,
+                     POINTL pt,
+                     DWORD *pdwEffect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DragLeave(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Drop(
-        IDataObject *pDataObj,
-        DWORD grfKeyState,
-        POINTL pt,
-        DWORD *pdwEffect) = 0;
+                     IDataObject *pDataObj,
+                     DWORD grfKeyState,
+                     POINTL pt,
+                     DWORD *pdwEffect) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3538,39 +3538,39 @@ typedef struct IDropTargetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDropTarget *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDropTarget *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDropTarget *This);
+                     IDropTarget *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDropTarget *This);
+                     IDropTarget *This);
 
     /*** IDropTarget methods ***/
     HRESULT (STDMETHODCALLTYPE *DragEnter)(
-        IDropTarget *This,
-        IDataObject *pDataObj,
-        DWORD grfKeyState,
-        POINTL pt,
-        DWORD *pdwEffect);
+                     IDropTarget *This,
+                     IDataObject *pDataObj,
+                     DWORD grfKeyState,
+                     POINTL pt,
+                     DWORD *pdwEffect);
 
     HRESULT (STDMETHODCALLTYPE *DragOver)(
-        IDropTarget *This,
-        DWORD grfKeyState,
-        POINTL pt,
-        DWORD *pdwEffect);
+                     IDropTarget *This,
+                     DWORD grfKeyState,
+                     POINTL pt,
+                     DWORD *pdwEffect);
 
     HRESULT (STDMETHODCALLTYPE *DragLeave)(
-        IDropTarget *This);
+                     IDropTarget *This);
 
     HRESULT (STDMETHODCALLTYPE *Drop)(
-        IDropTarget *This,
-        IDataObject *pDataObj,
-        DWORD grfKeyState,
-        POINTL pt,
-        DWORD *pdwEffect);
+                     IDropTarget *This,
+                     IDataObject *pDataObj,
+                     DWORD grfKeyState,
+                     POINTL pt,
+                     DWORD *pdwEffect);
 
     END_INTERFACE
 } IDropTargetVtbl;
@@ -3635,10 +3635,10 @@ MIDL_INTERFACE("0000012b-0000-0000-c000-000000000046")
 IDropSourceNotify : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DragEnterTarget(
-        HWND hwndTarget) = 0;
+                     HWND hwndTarget) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DragLeaveTarget(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3650,23 +3650,23 @@ typedef struct IDropSourceNotifyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDropSourceNotify *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDropSourceNotify *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDropSourceNotify *This);
+                     IDropSourceNotify *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDropSourceNotify *This);
+                     IDropSourceNotify *This);
 
     /*** IDropSourceNotify methods ***/
     HRESULT (STDMETHODCALLTYPE *DragEnterTarget)(
-        IDropSourceNotify *This,
-        HWND hwndTarget);
+                     IDropSourceNotify *This,
+                     HWND hwndTarget);
 
     HRESULT (STDMETHODCALLTYPE *DragLeaveTarget)(
-        IDropSourceNotify *This);
+                     IDropSourceNotify *This);
 
     END_INTERFACE
 } IDropSourceNotifyVtbl;
@@ -3740,18 +3740,18 @@ MIDL_INTERFACE("00000104-0000-0000-c000-000000000046")
 IEnumOLEVERB : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        LPOLEVERB rgelt,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     LPOLEVERB rgelt,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Skip(
-        ULONG celt) = 0;
+                     ULONG celt) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Reset(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clone(
-        IEnumOLEVERB **ppenum) = 0;
+                     IEnumOLEVERB **ppenum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3763,33 +3763,33 @@ typedef struct IEnumOLEVERBVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IEnumOLEVERB *This,
-        REFIID riid,
-        void **ppvObject);
+                     IEnumOLEVERB *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IEnumOLEVERB *This);
+                     IEnumOLEVERB *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IEnumOLEVERB *This);
+                     IEnumOLEVERB *This);
 
     /*** IEnumOLEVERB methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IEnumOLEVERB *This,
-        ULONG celt,
-        LPOLEVERB rgelt,
-        ULONG *pceltFetched);
+                     IEnumOLEVERB *This,
+                     ULONG celt,
+                     LPOLEVERB rgelt,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *Skip)(
-        IEnumOLEVERB *This,
-        ULONG celt);
+                     IEnumOLEVERB *This,
+                     ULONG celt);
 
     HRESULT (STDMETHODCALLTYPE *Reset)(
-        IEnumOLEVERB *This);
+                     IEnumOLEVERB *This);
 
     HRESULT (STDMETHODCALLTYPE *Clone)(
-        IEnumOLEVERB *This,
-        IEnumOLEVERB **ppenum);
+                     IEnumOLEVERB *This,
+                     IEnumOLEVERB **ppenum);
 
     END_INTERFACE
 } IEnumOLEVERBVtbl;
@@ -3864,34 +3864,34 @@ HRESULT __RPC_STUB IEnumOLEVERB_Next_Stub(
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
+ULONG                        __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserMarshal  (ULONG *, unsigned char *, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserUnmarshal(ULONG *, unsigned char *, CLIPFORMAT *);
-void            __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
-ULONG           __RPC_USER STGMEDIUM_UserSize     (ULONG *, ULONG, STGMEDIUM *);
+void                                      __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
+ULONG                        __RPC_USER STGMEDIUM_UserSize     (ULONG *, ULONG, STGMEDIUM *);
 unsigned char * __RPC_USER STGMEDIUM_UserMarshal  (ULONG *, unsigned char *, STGMEDIUM *);
 unsigned char * __RPC_USER STGMEDIUM_UserUnmarshal(ULONG *, unsigned char *, STGMEDIUM *);
-void            __RPC_USER STGMEDIUM_UserFree     (ULONG *, STGMEDIUM *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER STGMEDIUM_UserFree     (ULONG *, STGMEDIUM *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
-ULONG           __RPC_USER HMENU_UserSize     (ULONG *, ULONG, HMENU *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+ULONG                        __RPC_USER HMENU_UserSize     (ULONG *, ULONG, HMENU *);
 unsigned char * __RPC_USER HMENU_UserMarshal  (ULONG *, unsigned char *, HMENU *);
 unsigned char * __RPC_USER HMENU_UserUnmarshal(ULONG *, unsigned char *, HMENU *);
-void            __RPC_USER HMENU_UserFree     (ULONG *, HMENU *);
-ULONG           __RPC_USER HGLOBAL_UserSize     (ULONG *, ULONG, HGLOBAL *);
+void                                      __RPC_USER HMENU_UserFree     (ULONG *, HMENU *);
+ULONG                        __RPC_USER HGLOBAL_UserSize     (ULONG *, ULONG, HGLOBAL *);
 unsigned char * __RPC_USER HGLOBAL_UserMarshal  (ULONG *, unsigned char *, HGLOBAL *);
 unsigned char * __RPC_USER HGLOBAL_UserUnmarshal(ULONG *, unsigned char *, HGLOBAL *);
-void            __RPC_USER HGLOBAL_UserFree     (ULONG *, HGLOBAL *);
-ULONG           __RPC_USER HACCEL_UserSize     (ULONG *, ULONG, HACCEL *);
+void                                      __RPC_USER HGLOBAL_UserFree     (ULONG *, HGLOBAL *);
+ULONG                        __RPC_USER HACCEL_UserSize     (ULONG *, ULONG, HACCEL *);
 unsigned char * __RPC_USER HACCEL_UserMarshal  (ULONG *, unsigned char *, HACCEL *);
 unsigned char * __RPC_USER HACCEL_UserUnmarshal(ULONG *, unsigned char *, HACCEL *);
-void            __RPC_USER HACCEL_UserFree     (ULONG *, HACCEL *);
-ULONG           __RPC_USER HDC_UserSize     (ULONG *, ULONG, HDC *);
+void                                      __RPC_USER HACCEL_UserFree     (ULONG *, HACCEL *);
+ULONG                        __RPC_USER HDC_UserSize     (ULONG *, ULONG, HDC *);
 unsigned char * __RPC_USER HDC_UserMarshal  (ULONG *, unsigned char *, HDC *);
 unsigned char * __RPC_USER HDC_UserUnmarshal(ULONG *, unsigned char *, HDC *);
-void            __RPC_USER HDC_UserFree     (ULONG *, HDC *);
+void                                      __RPC_USER HDC_UserFree     (ULONG *, HDC *);
 
 /* End additional prototypes */
 

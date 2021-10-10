@@ -24,26 +24,26 @@ struct addrinfo {
 	struct addrinfo *ai_next;
 };
 
-#define AI_PASSIVE      0x01
+#define AI_PASSIVE                   0x01
 #define AI_CANONNAME    0x02
 #define AI_NUMERICHOST  0x04
 #define AI_V4MAPPED     0x08
-#define AI_ALL          0x10
+#define AI_ALL                       0x10
 #define AI_ADDRCONFIG   0x20
 #define AI_NUMERICSERV  0x400
 
 
 #define NI_NUMERICHOST  0x01
 #define NI_NUMERICSERV  0x02
-#define NI_NOFQDN       0x04
+#define NI_NOFQDN                    0x04
 #define NI_NAMEREQD     0x08
-#define NI_DGRAM        0x10
+#define NI_DGRAM                     0x10
 #define NI_NUMERICSCOPE 0x100
 
 #define EAI_BADFLAGS   -1
 #define EAI_NONAME     -2
-#define EAI_AGAIN      -3
-#define EAI_FAIL       -4
+#define EAI_AGAIN                   -3
+#define EAI_FAIL                    -4
 #define EAI_FAMILY     -6
 #define EAI_SOCKTYPE   -7
 #define EAI_SERVICE    -8
@@ -121,9 +121,9 @@ __attribute__((const))
 int *__h_errno_location(void);
 #define h_errno (*__h_errno_location())
 #define HOST_NOT_FOUND 1
-#define TRY_AGAIN      2
+#define TRY_AGAIN                   2
 #define NO_RECOVERY    3
-#define NO_DATA        4
+#define NO_DATA                     4
 #define NO_ADDRESS     NO_DATA
 #endif
 
@@ -142,7 +142,7 @@ int getservbyname_r(const char *, const char *, struct servent *, char *, size_t
 #define EAI_CANCELED   -101
 #define EAI_NOTCANCELED -102
 #define EAI_ALLDONE    -103
-#define EAI_INTR       -104
+#define EAI_INTR                    -104
 #define EAI_IDN_ENCODE -105
 #define NI_MAXHOST 255
 #define NI_MAXSERV 32

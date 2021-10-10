@@ -46,13 +46,13 @@ extern int setxattr (const char *__path, const char *__name,
    SIZE bytes long), not following symlinks for the last pathname component.
    Return 0 on success, -1 for errors.  */
 extern int lsetxattr (const char *__path, const char *__name,
-		      const void *__value, size_t __size, int __flags)
+		                   const void *__value, size_t __size, int __flags)
 	__THROW;
 
 /* Set the attribute NAME of the file descriptor FD to VALUE (which is SIZE
    bytes long).  Return 0 on success, -1 for errors.  */
 extern int fsetxattr (int __fd, const char *__name, const void *__value,
-		      size_t __size, int __flags) __THROW;
+		                   size_t __size, int __flags) __THROW;
 
 /* Get the attribute NAME of the file pointed to by PATH to VALUE (which is
    SIZE bytes long).  Return 0 on success, -1 for errors.  */

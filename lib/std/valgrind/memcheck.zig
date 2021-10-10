@@ -37,7 +37,7 @@ fn doMemCheckClientRequestStmt(request: MemCheckClientRequest, a1: usize, a2: us
 /// This returns -1 when run on Valgrind and 0 otherwise.
 pub fn makeMemNoAccess(qzz: []u8) i1 {
     return @intCast(i1, doMemCheckClientRequestExpr(0, // default return
-        .MakeMemNoAccess, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0));
+                     .MakeMemNoAccess, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0));
 }
 
 /// Similarly, mark memory at qzz.ptr as addressable but undefined
@@ -45,7 +45,7 @@ pub fn makeMemNoAccess(qzz: []u8) i1 {
 /// This returns -1 when run on Valgrind and 0 otherwise.
 pub fn makeMemUndefined(qzz: []u8) i1 {
     return @intCast(i1, doMemCheckClientRequestExpr(0, // default return
-        .MakeMemUndefined, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0));
+                     .MakeMemUndefined, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0));
 }
 
 /// Similarly, mark memory at qzz.ptr as addressable and defined
@@ -53,7 +53,7 @@ pub fn makeMemUndefined(qzz: []u8) i1 {
 pub fn makeMemDefined(qzz: []u8) i1 {
     // This returns -1 when run on Valgrind and 0 otherwise.
     return @intCast(i1, doMemCheckClientRequestExpr(0, // default return
-        .MakeMemDefined, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0));
+                     .MakeMemDefined, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0));
 }
 
 /// Similar to makeMemDefined except that addressability is
@@ -62,7 +62,7 @@ pub fn makeMemDefined(qzz: []u8) i1 {
 /// This returns -1 when run on Valgrind and 0 otherwise.
 pub fn makeMemDefinedIfAddressable(qzz: []u8) i1 {
     return @intCast(i1, doMemCheckClientRequestExpr(0, // default return
-        .MakeMemDefinedIfAddressable, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0));
+                     .MakeMemDefinedIfAddressable, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0));
 }
 
 /// Create a block-description handle.  The description is an ascii
@@ -71,14 +71,14 @@ pub fn makeMemDefinedIfAddressable(qzz: []u8) i1 {
 /// properties of the memory range.
 pub fn createBlock(qzz: []u8, desc: [*]u8) usize {
     return doMemCheckClientRequestExpr(0, // default return
-        .CreateBlock, @ptrToInt(qzz.ptr), qzz.len, @ptrToInt(desc), 0, 0);
+                     .CreateBlock, @ptrToInt(qzz.ptr), qzz.len, @ptrToInt(desc), 0, 0);
 }
 
 /// Discard a block-description-handle. Returns 1 for an
 /// invalid handle, 0 for a valid handle.
 pub fn discard(blkindex) bool {
     return doMemCheckClientRequestExpr(0, // default return
-        .Discard, 0, blkindex, 0, 0, 0) != 0;
+                     .Discard, 0, blkindex, 0, 0, 0) != 0;
 }
 
 /// Check that memory at qzz.ptr is addressable for qzz.len bytes.
@@ -132,61 +132,61 @@ const CountResult = struct {
 
 pub fn countLeaks() CountResult {
     var res: CountResult = .{
-        .leaked = 0,
-        .dubious = 0,
-        .reachable = 0,
-        .suppressed = 0,
+                     .leaked = 0,
+                     .dubious = 0,
+                     .reachable = 0,
+                     .suppressed = 0,
     };
     doMemCheckClientRequestStmt(
-        .CountLeaks,
-        @ptrToInt(&res.leaked),
-        @ptrToInt(&res.dubious),
-        @ptrToInt(&res.reachable),
-        @ptrToInt(&res.suppressed),
-        0,
+                     .CountLeaks,
+                     @ptrToInt(&res.leaked),
+                     @ptrToInt(&res.dubious),
+                     @ptrToInt(&res.reachable),
+                     @ptrToInt(&res.suppressed),
+                     0,
     );
     return res;
 }
 
 test "countLeaks" {
     testing.expectEqual(
-        @as(CountResult, .{
-            .leaked = 0,
-            .dubious = 0,
-            .reachable = 0,
-            .suppressed = 0,
-        }),
-        countLeaks(),
+                     @as(CountResult, .{
+                                      .leaked = 0,
+                                      .dubious = 0,
+                                      .reachable = 0,
+                                      .suppressed = 0,
+                     }),
+                     countLeaks(),
     );
 }
 
 pub fn countLeakBlocks() CountResult {
     var res: CountResult = .{
-        .leaked = 0,
-        .dubious = 0,
-        .reachable = 0,
-        .suppressed = 0,
+                     .leaked = 0,
+                     .dubious = 0,
+                     .reachable = 0,
+                     .suppressed = 0,
     };
     doMemCheckClientRequestStmt(
-        .CountLeakBlocks,
-        @ptrToInt(&res.leaked),
-        @ptrToInt(&res.dubious),
-        @ptrToInt(&res.reachable),
-        @ptrToInt(&res.suppressed),
-        0,
+                     .CountLeakBlocks,
+                     @ptrToInt(&res.leaked),
+                     @ptrToInt(&res.dubious),
+                     @ptrToInt(&res.reachable),
+                     @ptrToInt(&res.suppressed),
+                     0,
     );
     return res;
 }
 
 test "countLeakBlocks" {
     testing.expectEqual(
-        @as(CountResult, .{
-            .leaked = 0,
-            .dubious = 0,
-            .reachable = 0,
-            .suppressed = 0,
-        }),
-        countLeakBlocks(),
+                     @as(CountResult, .{
+                                      .leaked = 0,
+                                      .dubious = 0,
+                                      .reachable = 0,
+                                      .suppressed = 0,
+                     }),
+                     countLeakBlocks(),
     );
 }
 
@@ -220,10 +220,10 @@ pub fn setVbits(zzvbits: []u8, zza: []u8) u2 {
 /// specified address range.
 pub fn disableAddrErrorReportingInRange(qzz: []u8) usize {
     return doMemCheckClientRequestExpr(0, // default return
-        .DisableAddrErrorReportingInRange, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0);
+                     .DisableAddrErrorReportingInRange, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0);
 }
 
 pub fn enableAddrErrorReportingInRange(qzz: []u8) usize {
     return doMemCheckClientRequestExpr(0, // default return
-        .EnableAddrErrorReportingInRange, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0);
+                     .EnableAddrErrorReportingInRange, @ptrToInt(qzz.ptr), qzz.len, 0, 0, 0);
 }

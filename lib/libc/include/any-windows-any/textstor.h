@@ -42,18 +42,18 @@ interface ITextStoreACP;
 extern "C" {
 #endif
 
-#define TS_E_INVALIDPOS      MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0200)
-#define TS_E_NOLOCK          MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0201)
-#define TS_E_NOOBJECT        MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0202)
-#define TS_E_NOSERVICE       MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0203)
+#define TS_E_INVALIDPOS                   MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0200)
+#define TS_E_NOLOCK                       MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0201)
+#define TS_E_NOOBJECT                     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0202)
+#define TS_E_NOSERVICE                    MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0203)
 #define TS_E_NOINTERFACE     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0204)
 #define TS_E_NOSELECTION     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0205)
-#define TS_E_NOLAYOUT        MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0206)
+#define TS_E_NOLAYOUT                     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0206)
 #define TS_E_INVALIDPOINT    MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0207)
 #define TS_E_SYNCHRONOUS     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0208)
-#define TS_E_READONLY        MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0209)
-#define TS_E_FORMAT          MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x020a)
-#define TS_S_ASYNC           MAKE_HRESULT(SEVERITY_SUCCESS, FACILITY_ITF, 0x0300)
+#define TS_E_READONLY                     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0209)
+#define TS_E_FORMAT                       MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x020a)
+#define TS_S_ASYNC                        MAKE_HRESULT(SEVERITY_SUCCESS, FACILITY_ITF, 0x0300)
 #define TS_DEFAULT_SELECTION (~0)
 
 #define TS_SD_READONLY (0x1)
@@ -170,33 +170,33 @@ MIDL_INTERFACE("22d44c94-a419-4542-a272-ae26093ececf")
 ITextStoreACPSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE OnTextChange(
-        DWORD dwFlags,
-        const TS_TEXTCHANGE *pChange) = 0;
+                     DWORD dwFlags,
+                     const TS_TEXTCHANGE *pChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnSelectionChange(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnLayoutChange(
-        TsLayoutCode lcode,
-        TsViewCookie vcView) = 0;
+                     TsLayoutCode lcode,
+                     TsViewCookie vcView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStatusChange(
-        DWORD dwFlags) = 0;
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnAttrsChange(
-        LONG acpStart,
-        LONG acpEnd,
-        ULONG cAttrs,
-        const TS_ATTRID *paAttrs) = 0;
+                     LONG acpStart,
+                     LONG acpEnd,
+                     ULONG cAttrs,
+                     const TS_ATTRID *paAttrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnLockGranted(
-        DWORD dwLockFlags) = 0;
+                     DWORD dwLockFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnStartEditTransaction(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnEndEditTransaction(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -208,50 +208,50 @@ typedef struct ITextStoreACPSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITextStoreACPSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITextStoreACPSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITextStoreACPSink *This);
+                     ITextStoreACPSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITextStoreACPSink *This);
+                     ITextStoreACPSink *This);
 
     /*** ITextStoreACPSink methods ***/
     HRESULT (STDMETHODCALLTYPE *OnTextChange)(
-        ITextStoreACPSink *This,
-        DWORD dwFlags,
-        const TS_TEXTCHANGE *pChange);
+                     ITextStoreACPSink *This,
+                     DWORD dwFlags,
+                     const TS_TEXTCHANGE *pChange);
 
     HRESULT (STDMETHODCALLTYPE *OnSelectionChange)(
-        ITextStoreACPSink *This);
+                     ITextStoreACPSink *This);
 
     HRESULT (STDMETHODCALLTYPE *OnLayoutChange)(
-        ITextStoreACPSink *This,
-        TsLayoutCode lcode,
-        TsViewCookie vcView);
+                     ITextStoreACPSink *This,
+                     TsLayoutCode lcode,
+                     TsViewCookie vcView);
 
     HRESULT (STDMETHODCALLTYPE *OnStatusChange)(
-        ITextStoreACPSink *This,
-        DWORD dwFlags);
+                     ITextStoreACPSink *This,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *OnAttrsChange)(
-        ITextStoreACPSink *This,
-        LONG acpStart,
-        LONG acpEnd,
-        ULONG cAttrs,
-        const TS_ATTRID *paAttrs);
+                     ITextStoreACPSink *This,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     ULONG cAttrs,
+                     const TS_ATTRID *paAttrs);
 
     HRESULT (STDMETHODCALLTYPE *OnLockGranted)(
-        ITextStoreACPSink *This,
-        DWORD dwLockFlags);
+                     ITextStoreACPSink *This,
+                     DWORD dwLockFlags);
 
     HRESULT (STDMETHODCALLTYPE *OnStartEditTransaction)(
-        ITextStoreACPSink *This);
+                     ITextStoreACPSink *This);
 
     HRESULT (STDMETHODCALLTYPE *OnEndEditTransaction)(
-        ITextStoreACPSink *This);
+                     ITextStoreACPSink *This);
 
     END_INTERFACE
 } ITextStoreACPSinkVtbl;
@@ -331,152 +331,152 @@ MIDL_INTERFACE("28888fe3-c2a0-483a-a3ea-8cb1ce51ff3d")
 ITextStoreACP : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AdviseSink(
-        REFIID riid,
-        IUnknown *punk,
-        DWORD dwMask) = 0;
+                     REFIID riid,
+                     IUnknown *punk,
+                     DWORD dwMask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnadviseSink(
-        IUnknown *punk) = 0;
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestLock(
-        DWORD dwLockFlags,
-        HRESULT *phrSession) = 0;
+                     DWORD dwLockFlags,
+                     HRESULT *phrSession) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatus(
-        TS_STATUS *pdcs) = 0;
+                     TS_STATUS *pdcs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryInsert(
-        LONG acpTestStart,
-        LONG acpTestEnd,
-        ULONG cch,
-        LONG *pacpResultStart,
-        LONG *pacpResultEnd) = 0;
+                     LONG acpTestStart,
+                     LONG acpTestEnd,
+                     ULONG cch,
+                     LONG *pacpResultStart,
+                     LONG *pacpResultEnd) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSelection(
-        ULONG ulIndex,
-        ULONG ulCount,
-        TS_SELECTION_ACP *pSelection,
-        ULONG *pcFetched) = 0;
+                     ULONG ulIndex,
+                     ULONG ulCount,
+                     TS_SELECTION_ACP *pSelection,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSelection(
-        ULONG ulCount,
-        const TS_SELECTION_ACP *pSelection) = 0;
+                     ULONG ulCount,
+                     const TS_SELECTION_ACP *pSelection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetText(
-        LONG acpStart,
-        LONG acpEnd,
-        WCHAR *pchPlain,
-        ULONG cchPlainReq,
-        ULONG *pcchPlainRet,
-        TS_RUNINFO *prgRunInfo,
-        ULONG cRunInfoReq,
-        ULONG *pcRunInfoRet,
-        LONG *pacpNext) = 0;
+                     LONG acpStart,
+                     LONG acpEnd,
+                     WCHAR *pchPlain,
+                     ULONG cchPlainReq,
+                     ULONG *pcchPlainRet,
+                     TS_RUNINFO *prgRunInfo,
+                     ULONG cRunInfoReq,
+                     ULONG *pcRunInfoRet,
+                     LONG *pacpNext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetText(
-        DWORD dwFlags,
-        LONG acpStart,
-        LONG acpEnd,
-        const WCHAR *pchText,
-        ULONG cch,
-        TS_TEXTCHANGE *pChange) = 0;
+                     DWORD dwFlags,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     const WCHAR *pchText,
+                     ULONG cch,
+                     TS_TEXTCHANGE *pChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFormattedText(
-        LONG acpStart,
-        LONG acpEnd,
-        IDataObject **ppDataObject) = 0;
+                     LONG acpStart,
+                     LONG acpEnd,
+                     IDataObject **ppDataObject) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEmbedded(
-        LONG acpPos,
-        REFGUID rguidService,
-        REFIID riid,
-        IUnknown **ppunk) = 0;
+                     LONG acpPos,
+                     REFGUID rguidService,
+                     REFIID riid,
+                     IUnknown **ppunk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE QueryInsertEmbedded(
-        const GUID *pguidService,
-        const FORMATETC *pFormatEtc,
-        WINBOOL *pfInsertable) = 0;
+                     const GUID *pguidService,
+                     const FORMATETC *pFormatEtc,
+                     WINBOOL *pfInsertable) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertEmbedded(
-        DWORD dwFlags,
-        LONG acpStart,
-        LONG acpEnd,
-        IDataObject *pDataObject,
-        TS_TEXTCHANGE *pChange) = 0;
+                     DWORD dwFlags,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     IDataObject *pDataObject,
+                     TS_TEXTCHANGE *pChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertTextAtSelection(
-        DWORD dwFlags,
-        const WCHAR *pchText,
-        ULONG cch,
-        LONG *pacpStart,
-        LONG *pacpEnd,
-        TS_TEXTCHANGE *pChange) = 0;
+                     DWORD dwFlags,
+                     const WCHAR *pchText,
+                     ULONG cch,
+                     LONG *pacpStart,
+                     LONG *pacpEnd,
+                     TS_TEXTCHANGE *pChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InsertEmbeddedAtSelection(
-        DWORD dwFlags,
-        IDataObject *pDataObject,
-        LONG *pacpStart,
-        LONG *pacpEnd,
-        TS_TEXTCHANGE *pChange) = 0;
+                     DWORD dwFlags,
+                     IDataObject *pDataObject,
+                     LONG *pacpStart,
+                     LONG *pacpEnd,
+                     TS_TEXTCHANGE *pChange) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestSupportedAttrs(
-        DWORD dwFlags,
-        ULONG cFilterAttrs,
-        const TS_ATTRID *paFilterAttrs) = 0;
+                     DWORD dwFlags,
+                     ULONG cFilterAttrs,
+                     const TS_ATTRID *paFilterAttrs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestAttrsAtPosition(
-        LONG acpPos,
-        ULONG cFilterAttrs,
-        const TS_ATTRID *paFilterAttrs,
-        DWORD dwFlags) = 0;
+                     LONG acpPos,
+                     ULONG cFilterAttrs,
+                     const TS_ATTRID *paFilterAttrs,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RequestAttrsTransitioningAtPosition(
-        LONG acpPos,
-        ULONG cFilterAttrs,
-        const TS_ATTRID *paFilterAttrs,
-        DWORD dwFlags) = 0;
+                     LONG acpPos,
+                     ULONG cFilterAttrs,
+                     const TS_ATTRID *paFilterAttrs,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindNextAttrTransition(
-        LONG acpStart,
-        LONG acpHalt,
-        ULONG cFilterAttrs,
-        const TS_ATTRID *paFilterAttrs,
-        DWORD dwFlags,
-        LONG *pacpNext,
-        WINBOOL *pfFound,
-        LONG *plFoundOffset) = 0;
+                     LONG acpStart,
+                     LONG acpHalt,
+                     ULONG cFilterAttrs,
+                     const TS_ATTRID *paFilterAttrs,
+                     DWORD dwFlags,
+                     LONG *pacpNext,
+                     WINBOOL *pfFound,
+                     LONG *plFoundOffset) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RetrieveRequestedAttrs(
-        ULONG ulCount,
-        TS_ATTRVAL *paAttrVals,
-        ULONG *pcFetched) = 0;
+                     ULONG ulCount,
+                     TS_ATTRVAL *paAttrVals,
+                     ULONG *pcFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEndACP(
-        LONG *pacp) = 0;
+                     LONG *pacp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetActiveView(
-        TsViewCookie *pvcView) = 0;
+                     TsViewCookie *pvcView) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetACPFromPoint(
-        TsViewCookie vcView,
-        const POINT *ptScreen,
-        DWORD dwFlags,
-        LONG *pacp) = 0;
+                     TsViewCookie vcView,
+                     const POINT *ptScreen,
+                     DWORD dwFlags,
+                     LONG *pacp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTextExt(
-        TsViewCookie vcView,
-        LONG acpStart,
-        LONG acpEnd,
-        RECT *prc,
-        WINBOOL *pfClipped) = 0;
+                     TsViewCookie vcView,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     RECT *prc,
+                     WINBOOL *pfClipped) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScreenExt(
-        TsViewCookie vcView,
-        RECT *prc) = 0;
+                     TsViewCookie vcView,
+                     RECT *prc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetWnd(
-        TsViewCookie vcView,
-        HWND *phwnd) = 0;
+                     TsViewCookie vcView,
+                     HWND *phwnd) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -488,190 +488,190 @@ typedef struct ITextStoreACPVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITextStoreACP *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITextStoreACP *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITextStoreACP *This);
+                     ITextStoreACP *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITextStoreACP *This);
+                     ITextStoreACP *This);
 
     /*** ITextStoreACP methods ***/
     HRESULT (STDMETHODCALLTYPE *AdviseSink)(
-        ITextStoreACP *This,
-        REFIID riid,
-        IUnknown *punk,
-        DWORD dwMask);
+                     ITextStoreACP *This,
+                     REFIID riid,
+                     IUnknown *punk,
+                     DWORD dwMask);
 
     HRESULT (STDMETHODCALLTYPE *UnadviseSink)(
-        ITextStoreACP *This,
-        IUnknown *punk);
+                     ITextStoreACP *This,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *RequestLock)(
-        ITextStoreACP *This,
-        DWORD dwLockFlags,
-        HRESULT *phrSession);
+                     ITextStoreACP *This,
+                     DWORD dwLockFlags,
+                     HRESULT *phrSession);
 
     HRESULT (STDMETHODCALLTYPE *GetStatus)(
-        ITextStoreACP *This,
-        TS_STATUS *pdcs);
+                     ITextStoreACP *This,
+                     TS_STATUS *pdcs);
 
     HRESULT (STDMETHODCALLTYPE *QueryInsert)(
-        ITextStoreACP *This,
-        LONG acpTestStart,
-        LONG acpTestEnd,
-        ULONG cch,
-        LONG *pacpResultStart,
-        LONG *pacpResultEnd);
+                     ITextStoreACP *This,
+                     LONG acpTestStart,
+                     LONG acpTestEnd,
+                     ULONG cch,
+                     LONG *pacpResultStart,
+                     LONG *pacpResultEnd);
 
     HRESULT (STDMETHODCALLTYPE *GetSelection)(
-        ITextStoreACP *This,
-        ULONG ulIndex,
-        ULONG ulCount,
-        TS_SELECTION_ACP *pSelection,
-        ULONG *pcFetched);
+                     ITextStoreACP *This,
+                     ULONG ulIndex,
+                     ULONG ulCount,
+                     TS_SELECTION_ACP *pSelection,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *SetSelection)(
-        ITextStoreACP *This,
-        ULONG ulCount,
-        const TS_SELECTION_ACP *pSelection);
+                     ITextStoreACP *This,
+                     ULONG ulCount,
+                     const TS_SELECTION_ACP *pSelection);
 
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        ITextStoreACP *This,
-        LONG acpStart,
-        LONG acpEnd,
-        WCHAR *pchPlain,
-        ULONG cchPlainReq,
-        ULONG *pcchPlainRet,
-        TS_RUNINFO *prgRunInfo,
-        ULONG cRunInfoReq,
-        ULONG *pcRunInfoRet,
-        LONG *pacpNext);
+                     ITextStoreACP *This,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     WCHAR *pchPlain,
+                     ULONG cchPlainReq,
+                     ULONG *pcchPlainRet,
+                     TS_RUNINFO *prgRunInfo,
+                     ULONG cRunInfoReq,
+                     ULONG *pcRunInfoRet,
+                     LONG *pacpNext);
 
     HRESULT (STDMETHODCALLTYPE *SetText)(
-        ITextStoreACP *This,
-        DWORD dwFlags,
-        LONG acpStart,
-        LONG acpEnd,
-        const WCHAR *pchText,
-        ULONG cch,
-        TS_TEXTCHANGE *pChange);
+                     ITextStoreACP *This,
+                     DWORD dwFlags,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     const WCHAR *pchText,
+                     ULONG cch,
+                     TS_TEXTCHANGE *pChange);
 
     HRESULT (STDMETHODCALLTYPE *GetFormattedText)(
-        ITextStoreACP *This,
-        LONG acpStart,
-        LONG acpEnd,
-        IDataObject **ppDataObject);
+                     ITextStoreACP *This,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     IDataObject **ppDataObject);
 
     HRESULT (STDMETHODCALLTYPE *GetEmbedded)(
-        ITextStoreACP *This,
-        LONG acpPos,
-        REFGUID rguidService,
-        REFIID riid,
-        IUnknown **ppunk);
+                     ITextStoreACP *This,
+                     LONG acpPos,
+                     REFGUID rguidService,
+                     REFIID riid,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *QueryInsertEmbedded)(
-        ITextStoreACP *This,
-        const GUID *pguidService,
-        const FORMATETC *pFormatEtc,
-        WINBOOL *pfInsertable);
+                     ITextStoreACP *This,
+                     const GUID *pguidService,
+                     const FORMATETC *pFormatEtc,
+                     WINBOOL *pfInsertable);
 
     HRESULT (STDMETHODCALLTYPE *InsertEmbedded)(
-        ITextStoreACP *This,
-        DWORD dwFlags,
-        LONG acpStart,
-        LONG acpEnd,
-        IDataObject *pDataObject,
-        TS_TEXTCHANGE *pChange);
+                     ITextStoreACP *This,
+                     DWORD dwFlags,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     IDataObject *pDataObject,
+                     TS_TEXTCHANGE *pChange);
 
     HRESULT (STDMETHODCALLTYPE *InsertTextAtSelection)(
-        ITextStoreACP *This,
-        DWORD dwFlags,
-        const WCHAR *pchText,
-        ULONG cch,
-        LONG *pacpStart,
-        LONG *pacpEnd,
-        TS_TEXTCHANGE *pChange);
+                     ITextStoreACP *This,
+                     DWORD dwFlags,
+                     const WCHAR *pchText,
+                     ULONG cch,
+                     LONG *pacpStart,
+                     LONG *pacpEnd,
+                     TS_TEXTCHANGE *pChange);
 
     HRESULT (STDMETHODCALLTYPE *InsertEmbeddedAtSelection)(
-        ITextStoreACP *This,
-        DWORD dwFlags,
-        IDataObject *pDataObject,
-        LONG *pacpStart,
-        LONG *pacpEnd,
-        TS_TEXTCHANGE *pChange);
+                     ITextStoreACP *This,
+                     DWORD dwFlags,
+                     IDataObject *pDataObject,
+                     LONG *pacpStart,
+                     LONG *pacpEnd,
+                     TS_TEXTCHANGE *pChange);
 
     HRESULT (STDMETHODCALLTYPE *RequestSupportedAttrs)(
-        ITextStoreACP *This,
-        DWORD dwFlags,
-        ULONG cFilterAttrs,
-        const TS_ATTRID *paFilterAttrs);
+                     ITextStoreACP *This,
+                     DWORD dwFlags,
+                     ULONG cFilterAttrs,
+                     const TS_ATTRID *paFilterAttrs);
 
     HRESULT (STDMETHODCALLTYPE *RequestAttrsAtPosition)(
-        ITextStoreACP *This,
-        LONG acpPos,
-        ULONG cFilterAttrs,
-        const TS_ATTRID *paFilterAttrs,
-        DWORD dwFlags);
+                     ITextStoreACP *This,
+                     LONG acpPos,
+                     ULONG cFilterAttrs,
+                     const TS_ATTRID *paFilterAttrs,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *RequestAttrsTransitioningAtPosition)(
-        ITextStoreACP *This,
-        LONG acpPos,
-        ULONG cFilterAttrs,
-        const TS_ATTRID *paFilterAttrs,
-        DWORD dwFlags);
+                     ITextStoreACP *This,
+                     LONG acpPos,
+                     ULONG cFilterAttrs,
+                     const TS_ATTRID *paFilterAttrs,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *FindNextAttrTransition)(
-        ITextStoreACP *This,
-        LONG acpStart,
-        LONG acpHalt,
-        ULONG cFilterAttrs,
-        const TS_ATTRID *paFilterAttrs,
-        DWORD dwFlags,
-        LONG *pacpNext,
-        WINBOOL *pfFound,
-        LONG *plFoundOffset);
+                     ITextStoreACP *This,
+                     LONG acpStart,
+                     LONG acpHalt,
+                     ULONG cFilterAttrs,
+                     const TS_ATTRID *paFilterAttrs,
+                     DWORD dwFlags,
+                     LONG *pacpNext,
+                     WINBOOL *pfFound,
+                     LONG *plFoundOffset);
 
     HRESULT (STDMETHODCALLTYPE *RetrieveRequestedAttrs)(
-        ITextStoreACP *This,
-        ULONG ulCount,
-        TS_ATTRVAL *paAttrVals,
-        ULONG *pcFetched);
+                     ITextStoreACP *This,
+                     ULONG ulCount,
+                     TS_ATTRVAL *paAttrVals,
+                     ULONG *pcFetched);
 
     HRESULT (STDMETHODCALLTYPE *GetEndACP)(
-        ITextStoreACP *This,
-        LONG *pacp);
+                     ITextStoreACP *This,
+                     LONG *pacp);
 
     HRESULT (STDMETHODCALLTYPE *GetActiveView)(
-        ITextStoreACP *This,
-        TsViewCookie *pvcView);
+                     ITextStoreACP *This,
+                     TsViewCookie *pvcView);
 
     HRESULT (STDMETHODCALLTYPE *GetACPFromPoint)(
-        ITextStoreACP *This,
-        TsViewCookie vcView,
-        const POINT *ptScreen,
-        DWORD dwFlags,
-        LONG *pacp);
+                     ITextStoreACP *This,
+                     TsViewCookie vcView,
+                     const POINT *ptScreen,
+                     DWORD dwFlags,
+                     LONG *pacp);
 
     HRESULT (STDMETHODCALLTYPE *GetTextExt)(
-        ITextStoreACP *This,
-        TsViewCookie vcView,
-        LONG acpStart,
-        LONG acpEnd,
-        RECT *prc,
-        WINBOOL *pfClipped);
+                     ITextStoreACP *This,
+                     TsViewCookie vcView,
+                     LONG acpStart,
+                     LONG acpEnd,
+                     RECT *prc,
+                     WINBOOL *pfClipped);
 
     HRESULT (STDMETHODCALLTYPE *GetScreenExt)(
-        ITextStoreACP *This,
-        TsViewCookie vcView,
-        RECT *prc);
+                     ITextStoreACP *This,
+                     TsViewCookie vcView,
+                     RECT *prc);
 
     HRESULT (STDMETHODCALLTYPE *GetWnd)(
-        ITextStoreACP *This,
-        TsViewCookie vcView,
-        HWND *phwnd);
+                     ITextStoreACP *This,
+                     TsViewCookie vcView,
+                     HWND *phwnd);
 
     END_INTERFACE
 } ITextStoreACPVtbl;
@@ -813,18 +813,18 @@ static FORCEINLINE HRESULT ITextStoreACP_GetWnd(ITextStoreACP* This,TsViewCookie
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
+ULONG                        __RPC_USER CLIPFORMAT_UserSize     (ULONG *, ULONG, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserMarshal  (ULONG *, unsigned char *, CLIPFORMAT *);
 unsigned char * __RPC_USER CLIPFORMAT_UserUnmarshal(ULONG *, unsigned char *, CLIPFORMAT *);
-void            __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER CLIPFORMAT_UserFree     (ULONG *, CLIPFORMAT *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
 
 /* End additional prototypes */
 

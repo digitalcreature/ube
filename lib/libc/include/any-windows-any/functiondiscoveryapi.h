@@ -16,7 +16,7 @@ typedef DWORDLONG FDQUERYCONTEXT;
 typedef struct IFunctionInstance IFunctionInstance;
 
 typedef enum tagQueryUpdateAction {
-  QUA_ADD      = 0,
+  QUA_ADD                   = 0,
   QUA_REMOVE   = 1,
   QUA_CHANGE   = 2 
 } QueryUpdateAction;

@@ -162,15 +162,15 @@ float erff(float x)
 	    P = pa0+s*(pa1+s*(pa2+s*(pa3+s*(pa4+s*(pa5+s*pa6)))));
 	    Q = one+s*(qa1+s*(qa2+s*(qa3+s*(qa4+s*(qa5+s*qa6)))));
 	    if (hx >= 0)
-	      return erx + P/Q;
+	                   return erx + P/Q;
 	    else
-	      return -erx - P/Q;
+	                   return -erx - P/Q;
 	}
 	if (ix >= 0x40c00000) {		/* inf>|x|>=6 */
 	    if (hx >= 0)
-	      return one-tiny;
+	                   return one-tiny;
 	    else
-	      return tiny-one;
+	                   return tiny-one;
 	}
 	x = fabsf(x);
  	s = one/(x*x);
@@ -226,7 +226,7 @@ float erfcf(float x)
 	    P = pa0+s*(pa1+s*(pa2+s*(pa3+s*(pa4+s*(pa5+s*pa6)))));
 	    Q = one+s*(qa1+s*(qa2+s*(qa3+s*(qa4+s*(qa5+s*qa6)))));
 	    if (hx >= 0) {
-	        z  = one-erx; return z - P/Q; 
+	                     z  = one-erx; return z - P/Q; 
 	    } else {
 		z = erx+P/Q; return one+z;
 	    }
@@ -236,9 +236,9 @@ float erfcf(float x)
 	    x = fabsf(x);
  	    s = one/(x*x);
 	    if (ix< 0x4036DB6D) {	/* |x| < 1/.35 ~ 2.857143*/
-	        R = ra0+s*(ra1+s*(ra2+s*(ra3+s*(ra4+s*(
+	                     R = ra0+s*(ra1+s*(ra2+s*(ra3+s*(ra4+s*(
 				ra5+s*(ra6+s*ra7))))));
-	        S = one+s*(sa1+s*(sa2+s*(sa3+s*(sa4+s*(
+	                     S = one+s*(sa1+s*(sa2+s*(sa3+s*(sa4+s*(
 				sa5+s*(sa6+s*(sa7+s*sa8)))))));
 	    } else {			/* |x| >= 1/.35 ~ 2.857143 */
 		if (hx < 0 && ix >= 0x40c00000)
@@ -254,15 +254,15 @@ float erfcf(float x)
 	    r = __ieee754_expf(-z*z-(float)0.5625)*
 			__ieee754_expf((z-x)*(z+x)+R/S);
 	    if (hx > 0)
-	      return r/x;
+	                   return r/x;
 	    else
-	      return two-r/x;
+	                   return two-r/x;
 	} else {
 	    /* set range error */
-            errno = ERANGE;
+                                      errno = ERANGE;
 	    if (hx > 0)
-	      return tiny*tiny;
+	                   return tiny*tiny;
 	    else
-	      return two-tiny;
+	                   return two-tiny;
 	}
 }

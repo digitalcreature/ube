@@ -37,11 +37,11 @@ extern "C" {
 
   typedef struct _SUPPORT_FUNCTIONS {
     __C89_NAMELESS union {
-      ULONGLONG _Align8;
-      __C89_NAMELESS struct {
+                   ULONGLONG _Align8;
+                   __C89_NAMELESS struct {
 	DWORD dwVersion;
 	DWORD dwReserved;
-      };
+                   };
     };
     DWORD (WINAPI *DemandDialRequest)(DWORD ProtocolId,DWORD InterfaceIndex);
     DWORD (WINAPI *SetInterfaceReceiveType)(DWORD ProtocolId,DWORD InterfaceIndex,DWORD InterfaceReceiveType,WINBOOL bActivate);

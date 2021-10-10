@@ -62,7 +62,7 @@ typedef struct IDsCaptureDriverBuffer *PIDSCDRIVERBUFFER;
 
 typedef struct _DSDRIVERDESC
 {
-    DWORD      	dwFlags;
+    DWORD                   	dwFlags;
     CHAR	szDesc[256];
     CHAR	szDrvname[256];
     DWORD	dnDevNode;
@@ -153,14 +153,14 @@ DECLARE_INTERFACE_(IDsDriver,IUnknown)
 
 #if !defined (__cplusplus) || defined(CINTERFACE)
     /*** IUnknown methods ***/
-#define IDsDriver_QueryInterface(p,a,b)         (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDsDriver_AddRef(p)                     (p)->lpVtbl->AddRef(p)
-#define IDsDriver_Release(p)                    (p)->lpVtbl->Release(p)
+#define IDsDriver_QueryInterface(p,a,b)                      (p)->lpVtbl->QueryInterface(p,a,b)
+#define IDsDriver_AddRef(p)                                                            (p)->lpVtbl->AddRef(p)
+#define IDsDriver_Release(p)                                                           (p)->lpVtbl->Release(p)
     /*** IDsDriver methods ***/
-#define IDsDriver_GetDriverDesc(p,a)            (p)->lpVtbl->GetDriverDesc(p,a)
-#define IDsDriver_Open(p)                       (p)->lpVtbl->Open(p)
-#define IDsDriver_Close(p)                      (p)->lpVtbl->Close(p)
-#define IDsDriver_GetCaps(p,a)                  (p)->lpVtbl->GetCaps(p,a)
+#define IDsDriver_GetDriverDesc(p,a)                                      (p)->lpVtbl->GetDriverDesc(p,a)
+#define IDsDriver_Open(p)                                                              (p)->lpVtbl->Open(p)
+#define IDsDriver_Close(p)                                                             (p)->lpVtbl->Close(p)
+#define IDsDriver_GetCaps(p,a)                                                         (p)->lpVtbl->GetCaps(p,a)
 #define IDsDriver_CreateSoundBuffer(p,a,b,c,d,e,f) (p)->lpVtbl->CreateSoundBuffer(p,a,b,c,d,e,f)
 #define IDsDriver_DuplicateSoundBuffer(p,a,b)   (p)->lpVtbl->DuplicateSoundBuffer(p,a,b)
 #endif
@@ -191,18 +191,18 @@ DECLARE_INTERFACE_(IDsDriverBuffer,IUnknown)
 #if !defined (__cplusplus) || defined(CINTERFACE)
     /*** IUnknown methods ***/
 #define IDsDriverBuffer_QueryInterface(p,a,b)   (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDsDriverBuffer_AddRef(p)               (p)->lpVtbl->AddRef(p)
-#define IDsDriverBuffer_Release(p)              (p)->lpVtbl->Release(p)
+#define IDsDriverBuffer_AddRef(p)                                         (p)->lpVtbl->AddRef(p)
+#define IDsDriverBuffer_Release(p)                                        (p)->lpVtbl->Release(p)
     /*** IDsDriverBuffer methods ***/
 #define IDsDriverBuffer_Lock(p,a,b,c,d,e,f,g)   (p)->lpVtbl->Lock(p,a,b,c,d,e,f,g)
-#define IDsDriverBuffer_Unlock(p,a,b,c,d)       (p)->lpVtbl->Unlock(p,a,b,c,d)
-#define IDsDriverBuffer_SetFormat(p,a)          (p)->lpVtbl->SetFormat(p,a)
-#define IDsDriverBuffer_SetFrequency(p,a)       (p)->lpVtbl->SetFrequency(p,a)
-#define IDsDriverBuffer_SetVolumePan(p,a)       (p)->lpVtbl->SetVolumePan(p,a)
-#define IDsDriverBuffer_SetPosition(p,a)        (p)->lpVtbl->SetPosition(p,a)
-#define IDsDriverBuffer_GetPosition(p,a,b)      (p)->lpVtbl->GetPosition(p,a,b)
-#define IDsDriverBuffer_Play(p,a,b,c)           (p)->lpVtbl->Play(p,a,b,c)
-#define IDsDriverBuffer_Stop(p)                 (p)->lpVtbl->Stop(p)
+#define IDsDriverBuffer_Unlock(p,a,b,c,d)                    (p)->lpVtbl->Unlock(p,a,b,c,d)
+#define IDsDriverBuffer_SetFormat(p,a)                       (p)->lpVtbl->SetFormat(p,a)
+#define IDsDriverBuffer_SetFrequency(p,a)                    (p)->lpVtbl->SetFrequency(p,a)
+#define IDsDriverBuffer_SetVolumePan(p,a)                    (p)->lpVtbl->SetVolumePan(p,a)
+#define IDsDriverBuffer_SetPosition(p,a)                     (p)->lpVtbl->SetPosition(p,a)
+#define IDsDriverBuffer_GetPosition(p,a,b)                   (p)->lpVtbl->GetPosition(p,a,b)
+#define IDsDriverBuffer_Play(p,a,b,c)                        (p)->lpVtbl->Play(p,a,b,c)
+#define IDsDriverBuffer_Stop(p)                                           (p)->lpVtbl->Stop(p)
 #endif
 
 /*****************************************************************************
@@ -224,13 +224,13 @@ DECLARE_INTERFACE_(IDsDriverPropertySet,IUnknown)
 
 #if !defined (__cplusplus) || defined(CINTERFACE)
     /*** IUnknown methods ***/
-#define IDsDriverPropertySet_QueryInterface(p,a,b)      (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDsDriverPropertySet_AddRef(p)                  (p)->lpVtbl->AddRef(p)
-#define IDsDriverPropertySet_Release(p)                 (p)->lpVtbl->Release(p)
+#define IDsDriverPropertySet_QueryInterface(p,a,b)                   (p)->lpVtbl->QueryInterface(p,a,b)
+#define IDsDriverPropertySet_AddRef(p)                                                         (p)->lpVtbl->AddRef(p)
+#define IDsDriverPropertySet_Release(p)                                           (p)->lpVtbl->Release(p)
     /*** IDsDriverPropertySet methods ***/
-#define IDsDriverPropertySet_Get(p,a,b,c,d,e,f)         (p)->lpVtbl->Get(p,a,b,c,d,e,f)
-#define IDsDriverPropertySet_Set(p,a,b,c,d,e)           (p)->lpVtbl->Set(p,a,b,c,d,e)
-#define IDsDriverPropertySet_QuerySupport(p,a,b,c)      (p)->lpVtbl->QuerySupport(p,a,b,c)
+#define IDsDriverPropertySet_Get(p,a,b,c,d,e,f)                      (p)->lpVtbl->Get(p,a,b,c,d,e,f)
+#define IDsDriverPropertySet_Set(p,a,b,c,d,e)                        (p)->lpVtbl->Set(p,a,b,c,d,e)
+#define IDsDriverPropertySet_QuerySupport(p,a,b,c)                   (p)->lpVtbl->QuerySupport(p,a,b,c)
 #endif
 
 /* Defined property sets */
@@ -285,9 +285,9 @@ DECLARE_INTERFACE_(IDsDriverNotify,IUnknown)
 
 #if !defined (__cplusplus) || defined(CINTERFACE)
     /*** IUnknown methods ***/
-#define IDsDriverNotify_QueryInterface(p,a,b)           (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDsDriverNotify_AddRef(p)                       (p)->lpVtbl->AddRef(p)
-#define IDsDriverNotify_Release(p)                      (p)->lpVtbl->Release(p)
+#define IDsDriverNotify_QueryInterface(p,a,b)                        (p)->lpVtbl->QueryInterface(p,a,b)
+#define IDsDriverNotify_AddRef(p)                                                              (p)->lpVtbl->AddRef(p)
+#define IDsDriverNotify_Release(p)                                                             (p)->lpVtbl->Release(p)
     /*** IDsDriverNotify methods ***/
 #define IDsDriverNotify_SetNotificationPositions(p,a,b) (p)->lpVtbl->SetNotificationPositions(p,a,b)
 #endif
@@ -313,14 +313,14 @@ DECLARE_INTERFACE_(IDsCaptureDriver,IUnknown)
 
 #if !defined (__cplusplus) || defined(CINTERFACE)
     /*** IUnknown methods ***/
-#define IDsCaptureDriver_QueryInterface(p,a,b)          (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDsCaptureDriver_AddRef(p)                      (p)->lpVtbl->AddRef(p)
-#define IDsCaptureDriver_Release(p)                     (p)->lpVtbl->Release(p)
+#define IDsCaptureDriver_QueryInterface(p,a,b)                       (p)->lpVtbl->QueryInterface(p,a,b)
+#define IDsCaptureDriver_AddRef(p)                                                             (p)->lpVtbl->AddRef(p)
+#define IDsCaptureDriver_Release(p)                                                            (p)->lpVtbl->Release(p)
     /*** IDsCaptureDriver methods ***/
-#define IDsCaptureDriver_GetDriverDesc(p,a)             (p)->lpVtbl->GetDriverDesc(p,a)
-#define IDsCaptureDriver_Open(p)                        (p)->lpVtbl->Open(p)
-#define IDsCaptureDriver_Close(p)                       (p)->lpVtbl->Close(p)
-#define IDsCaptureDriver_GetCaps(p,a)                   (p)->lpVtbl->GetCaps(p,a)
+#define IDsCaptureDriver_GetDriverDesc(p,a)                                       (p)->lpVtbl->GetDriverDesc(p,a)
+#define IDsCaptureDriver_Open(p)                                                                            (p)->lpVtbl->Open(p)
+#define IDsCaptureDriver_Close(p)                                                              (p)->lpVtbl->Close(p)
+#define IDsCaptureDriver_GetCaps(p,a)                                                          (p)->lpVtbl->GetCaps(p,a)
 #define IDsCaptureDriver_CreateCaptureBuffer(p,a,b,c,d,e,f) (p)->lpVtbl->CreateCaptureBuffer(p,a,b,c,d,e,f)
 #endif
 
@@ -348,16 +348,16 @@ DECLARE_INTERFACE_(IDsCaptureDriverBuffer,IUnknown)
 #if !defined (__cplusplus) || defined(CINTERFACE)
     /*** IUnknown methods ***/
 #define IDsCaptureDriverBuffer_QueryInterface(p,a,b)    (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDsCaptureDriverBuffer_AddRef(p)                (p)->lpVtbl->AddRef(p)
-#define IDsCaptureDriverBuffer_Release(p)               (p)->lpVtbl->Release(p)
+#define IDsCaptureDriverBuffer_AddRef(p)                                          (p)->lpVtbl->AddRef(p)
+#define IDsCaptureDriverBuffer_Release(p)                                         (p)->lpVtbl->Release(p)
     /*** IDsCaptureDriverBuffer methods ***/
 #define IDsCaptureDriverBuffer_Lock(p,a,b,c,d,e,f,g)    (p)->lpVtbl->Lock(p,a,b,c,d,e,f,g)
-#define IDsCaptureDriverBuffer_Unlock(p,a,b,c,d)        (p)->lpVtbl->Unlock(p,a,b,c,d)
-#define IDsCaptureDriverBuffer_SetFormat(p,a)           (p)->lpVtbl->SetFormat(p,a)
-#define IDsCaptureDriverBuffer_GetPosition(p,a,b)       (p)->lpVtbl->GetPosition(p,a,b)
-#define IDsCaptureDriverBuffer_GetStatus(p,a)           (p)->lpVtbl->GetStatus(p,a)
-#define IDsCaptureDriverBuffer_Start(p,a)               (p)->lpVtbl->Start(p,a)
-#define IDsCaptureDriverBuffer_Stop(p)                  (p)->lpVtbl->Stop(p)
+#define IDsCaptureDriverBuffer_Unlock(p,a,b,c,d)                     (p)->lpVtbl->Unlock(p,a,b,c,d)
+#define IDsCaptureDriverBuffer_SetFormat(p,a)                        (p)->lpVtbl->SetFormat(p,a)
+#define IDsCaptureDriverBuffer_GetPosition(p,a,b)                    (p)->lpVtbl->GetPosition(p,a,b)
+#define IDsCaptureDriverBuffer_GetStatus(p,a)                        (p)->lpVtbl->GetStatus(p,a)
+#define IDsCaptureDriverBuffer_Start(p,a)                                         (p)->lpVtbl->Start(p,a)
+#define IDsCaptureDriverBuffer_Stop(p)                                                         (p)->lpVtbl->Stop(p)
 #endif
 
 #ifdef __cplusplus

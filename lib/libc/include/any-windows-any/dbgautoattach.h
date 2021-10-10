@@ -59,10 +59,10 @@ extern "C"{
 #else
   typedef struct IDebugAutoAttachVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDebugAutoAttach *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDebugAutoAttach *This);
-      ULONG (WINAPI *Release)(IDebugAutoAttach *This);
-      HRESULT (WINAPI *AutoAttach)(IDebugAutoAttach *This,REFGUID guidPort,DWORD dwPid,AUTOATTACH_PROGRAM_TYPE dwProgramType,DWORD dwProgramId,LPCWSTR pszSessionId);
+                   HRESULT (WINAPI *QueryInterface)(IDebugAutoAttach *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDebugAutoAttach *This);
+                   ULONG (WINAPI *Release)(IDebugAutoAttach *This);
+                   HRESULT (WINAPI *AutoAttach)(IDebugAutoAttach *This,REFGUID guidPort,DWORD dwPid,AUTOATTACH_PROGRAM_TYPE dwProgramType,DWORD dwProgramId,LPCWSTR pszSessionId);
     END_INTERFACE
   } IDebugAutoAttachVtbl;
   struct IDebugAutoAttach {

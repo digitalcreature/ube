@@ -6,7 +6,7 @@
 
 /*
  * WARNING: User-space programs should not #include <linux/atm.h> directly.
- *          Instead, #include <atm.h>
+ *                       Instead, #include <atm.h>
  */
 
 #ifndef _LINUX_ATM_H
@@ -69,7 +69,7 @@
 			    /* set CLP bit value - TODO */
 #define SO_CIRANGE	__SO_ENCODE(SOL_ATM,1,struct atm_cirange)
 			    /* connection identifier range; socket must be
-			       bound or connected */
+			                    bound or connected */
 #define SO_ATMQOS	__SO_ENCODE(SOL_ATM,2,struct atm_qos)
 			    /* Quality of Service setting */
 #define SO_ATMSAP	__SO_ENCODE(SOL_ATM,3,struct atm_sap)
@@ -140,21 +140,21 @@ struct atm_trafprm {
 	int		min_pcr;	/* minimum PCR in cells per second */
 	int		max_cdv;	/* maximum CDV in microseconds */
 	int		max_sdu;	/* maximum SDU in bytes */
-        /* extra params for ABR */
-        unsigned int 	icr;         	/* Initial Cell Rate (24-bit) */
-        unsigned int	tbe;		/* Transient Buffer Exposure (24-bit) */ 
-        unsigned int 	frtt : 24;	/* Fixed Round Trip Time (24-bit) */
-        unsigned int 	rif  : 4;       /* Rate Increment Factor (4-bit) */
-        unsigned int 	rdf  : 4;       /* Rate Decrease Factor (4-bit) */
-        unsigned int nrm_pres  :1;      /* nrm present bit */
-        unsigned int trm_pres  :1;     	/* rm present bit */
-        unsigned int adtf_pres :1;     	/* adtf present bit */
-        unsigned int cdf_pres  :1;    	/* cdf present bit*/
-        unsigned int nrm       :3;     	/* Max # of Cells for each forward RM cell (3-bit) */
-        unsigned int trm       :3;    	/* Time between forward RM cells (3-bit) */    
-	unsigned int adtf      :10;     /* ACR Decrease Time Factor (10-bit) */
-	unsigned int cdf       :3;      /* Cutoff Decrease Factor (3-bit) */
-        unsigned int spare     :9;      /* spare bits */ 
+                     /* extra params for ABR */
+                     unsigned int 	icr;                      	/* Initial Cell Rate (24-bit) */
+                     unsigned int	tbe;		/* Transient Buffer Exposure (24-bit) */ 
+                     unsigned int 	frtt : 24;	/* Fixed Round Trip Time (24-bit) */
+                     unsigned int 	rif  : 4;                    /* Rate Increment Factor (4-bit) */
+                     unsigned int 	rdf  : 4;                    /* Rate Decrease Factor (4-bit) */
+                     unsigned int nrm_pres  :1;                   /* nrm present bit */
+                     unsigned int trm_pres  :1;     	/* rm present bit */
+                     unsigned int adtf_pres :1;     	/* adtf present bit */
+                     unsigned int cdf_pres  :1;    	/* cdf present bit*/
+                     unsigned int nrm                    :3;     	/* Max # of Cells for each forward RM cell (3-bit) */
+                     unsigned int trm                    :3;    	/* Time between forward RM cells (3-bit) */    
+	unsigned int adtf                   :10;     /* ACR Decrease Time Factor (10-bit) */
+	unsigned int cdf                    :3;                   /* Cutoff Decrease Factor (3-bit) */
+                     unsigned int spare     :9;                   /* spare bits */ 
 };
 
 struct atm_qos {
@@ -206,8 +206,8 @@ struct sockaddr_atmpvc {
 struct sockaddr_atmsvc {
     unsigned short 	sas_family;	/* address family, AF_ATMSVC */
     struct {				/* SVC address */
-        unsigned char	prv[ATM_ESA_LEN];/* private ATM address */
-        char		pub[ATM_E164_LEN+1]; /* public address (E.164) */
+                     unsigned char	prv[ATM_ESA_LEN];/* private ATM address */
+                     char		pub[ATM_E164_LEN+1]; /* public address (E.164) */
     					/* unused addresses must be bzero'ed */
 	char		lij_type;	/* role in LIJ call; one of ATM_LIJ* */
 	__u32	lij_id;		/* LIJ call identifier */

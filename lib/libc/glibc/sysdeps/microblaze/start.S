@@ -38,24 +38,24 @@
     .type _start,@function
 _start:
     /* On entry the stack contains the following args:
-         r1+0 - argc
-         r1+4 - argv[0]
-         ...
-         r1+4*(argc-1) - argv[argc-1]
-         r1+4*argc - NULL
-         r1+4*argc + 4 - envp[0]
-         ...
-         NULL
+                      r1+0 - argc
+                      r1+4 - argv[0]
+                      ...
+                      r1+4*(argc-1) - argv[argc-1]
+                      r1+4*argc - NULL
+                      r1+4*argc + 4 - envp[0]
+                      ...
+                      NULL
     */
     addk    r3,r0,r0
     addk    r5,r1,r0
 1:
     addik   r5,r5,4
-    lw      r4,r5,r0
+    lw                   r4,r5,r0
     bneid   r4,1b
     addik   r3,r3,1
     addik   r6,r3,-1
-    sw      r6,r1,r0
+    sw                   r6,r1,r0
     addik   r7,r1,4
     addik   r1,r1,-24
 #ifdef SHARED

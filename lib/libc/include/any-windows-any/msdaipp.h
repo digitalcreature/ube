@@ -195,10 +195,10 @@ extern "C"{
 #else
   typedef struct ISynchronizeRowVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISynchronizeRow *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISynchronizeRow *This);
-      ULONG (WINAPI *Release)(ISynchronizeRow *This);
-      HRESULT (WINAPI *Synchronize)(ISynchronizeRow *This,MSDAIPP_SYNC_FLAGS dwFlags);
+                   HRESULT (WINAPI *QueryInterface)(ISynchronizeRow *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISynchronizeRow *This);
+                   ULONG (WINAPI *Release)(ISynchronizeRow *This);
+                   HRESULT (WINAPI *Synchronize)(ISynchronizeRow *This,MSDAIPP_SYNC_FLAGS dwFlags);
     END_INTERFACE
   } ISynchronizeRowVtbl;
   struct ISynchronizeRow {

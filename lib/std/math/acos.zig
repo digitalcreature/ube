@@ -20,9 +20,9 @@ const expect = std.testing.expect;
 pub fn acos(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => acos32(x),
-        f64 => acos64(x),
-        else => @compileError("acos not implemented for " ++ @typeName(T)),
+                     f32 => acos32(x),
+                     f64 => acos64(x),
+                     else => @compileError("acos not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -46,32 +46,32 @@ fn acos32(x: f32) f32 {
 
     // |x| >= 1 or nan
     if (ix >= 0x3F800000) {
-        if (ix == 0x3F800000) {
-            if (hx >> 31 != 0) {
-                return 2.0 * pio2_hi + 0x1.0p-120;
-            } else {
-                return 0.0;
-            }
-        } else {
-            return math.nan(f32);
-        }
+                     if (ix == 0x3F800000) {
+                                      if (hx >> 31 != 0) {
+                                          return 2.0 * pio2_hi + 0x1.0p-120;
+                                      } else {
+                                          return 0.0;
+                                      }
+                     } else {
+                                      return math.nan(f32);
+                     }
     }
 
     // |x| < 0.5
     if (ix < 0x3F000000) {
-        if (ix <= 0x32800000) { // |x| < 2^(-26)
-            return pio2_hi + 0x1.0p-120;
-        } else {
-            return pio2_hi - (x - (pio2_lo - x * r32(x * x)));
-        }
+                     if (ix <= 0x32800000) { // |x| < 2^(-26)
+                                      return pio2_hi + 0x1.0p-120;
+                     } else {
+                                      return pio2_hi - (x - (pio2_lo - x * r32(x * x)));
+                     }
     }
 
     // x < -0.5
     if (hx >> 31 != 0) {
-        const z = (1 + x) * 0.5;
-        const s = math.sqrt(z);
-        const w = r32(z) * s - pio2_lo;
-        return 2 * (pio2_hi - (s + w));
+                     const z = (1 + x) * 0.5;
+                     const s = math.sqrt(z);
+                     const w = r32(z) * s - pio2_lo;
+                     return 2 * (pio2_hi - (s + w));
     }
 
     // x > 0.5
@@ -111,36 +111,36 @@ fn acos64(x: f64) f64 {
 
     // |x| >= 1 or nan
     if (ix >= 0x3FF00000) {
-        const lx = @intCast(u32, ux & 0xFFFFFFFF);
+                     const lx = @intCast(u32, ux & 0xFFFFFFFF);
 
-        // acos(1) = 0, acos(-1) = pi
-        if ((ix - 0x3FF00000) | lx == 0) {
-            if (hx >> 31 != 0) {
-                return 2 * pio2_hi + 0x1.0p-120;
-            } else {
-                return 0;
-            }
-        }
+                     // acos(1) = 0, acos(-1) = pi
+                     if ((ix - 0x3FF00000) | lx == 0) {
+                                      if (hx >> 31 != 0) {
+                                          return 2 * pio2_hi + 0x1.0p-120;
+                                      } else {
+                                          return 0;
+                                      }
+                     }
 
-        return math.nan(f32);
+                     return math.nan(f32);
     }
 
     // |x| < 0.5
     if (ix < 0x3FE00000) {
-        // |x| < 2^(-57)
-        if (ix <= 0x3C600000) {
-            return pio2_hi + 0x1.0p-120;
-        } else {
-            return pio2_hi - (x - (pio2_lo - x * r64(x * x)));
-        }
+                     // |x| < 2^(-57)
+                     if (ix <= 0x3C600000) {
+                                      return pio2_hi + 0x1.0p-120;
+                     } else {
+                                      return pio2_hi - (x - (pio2_lo - x * r64(x * x)));
+                     }
     }
 
     // x < -0.5
     if (hx >> 31 != 0) {
-        const z = (1.0 + x) * 0.5;
-        const s = math.sqrt(z);
-        const w = r64(z) * s - pio2_lo;
-        return 2 * (pio2_hi - (s + w));
+                     const z = (1.0 + x) * 0.5;
+                     const s = math.sqrt(z);
+                     const w = r64(z) * s - pio2_lo;
+                     return 2 * (pio2_hi - (s + w));
     }
 
     // x > 0.5

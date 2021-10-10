@@ -21,7 +21,7 @@
 #ifdef __APPLE__
   #if __clang__
     #if __has_include(<Availability.h>)
-      #include <Availability.h>
+                   #include <Availability.h>
     #endif
   #elif __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ >= 1050
     #include <Availability.h>
@@ -34,9 +34,9 @@
   #else
     #include <AvailabilityMacros.h>
     #ifdef AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
-      #define LIBUNWIND_AVAIL AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
+                   #define LIBUNWIND_AVAIL AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
     #else
-      #define LIBUNWIND_AVAIL __attribute__((unavailable))
+                   #define LIBUNWIND_AVAIL __attribute__((unavailable))
     #endif
   #endif
 #else
@@ -45,17 +45,17 @@
 
 /* error codes */
 enum {
-  UNW_ESUCCESS      = 0,     /* no error */
-  UNW_EUNSPEC       = -6540, /* unspecified (general) error */
-  UNW_ENOMEM        = -6541, /* out of memory */
-  UNW_EBADREG       = -6542, /* bad register number */
+  UNW_ESUCCESS                   = 0,     /* no error */
+  UNW_EUNSPEC                    = -6540, /* unspecified (general) error */
+  UNW_ENOMEM                     = -6541, /* out of memory */
+  UNW_EBADREG                    = -6542, /* bad register number */
   UNW_EREADONLYREG  = -6543, /* attempt to write read-only register */
   UNW_ESTOPUNWIND   = -6544, /* stop unwinding */
   UNW_EINVALIDIP    = -6545, /* invalid IP */
   UNW_EBADFRAME     = -6546, /* bad frame */
-  UNW_EINVAL        = -6547, /* unsupported operation or bad value */
+  UNW_EINVAL                     = -6547, /* unsupported operation or bad value */
   UNW_EBADVERSION   = -6548, /* unwind info has unsupported version */
-  UNW_ENOINFO       = -6549  /* no unwind info found */
+  UNW_ENOINFO                    = -6549  /* no unwind info found */
 #if defined(_LIBUNWIND_TARGET_AARCH64) && !defined(_LIBUNWIND_IS_NATIVE_ONLY)
   , UNW_ECROSSRASIGNING = -6550 /* cross unwind with return address signing */
 #endif
@@ -82,17 +82,17 @@ typedef double unw_fpreg_t;
 #endif
 
 struct unw_proc_info_t {
-  unw_word_t  start_ip;         /* start address of function */
-  unw_word_t  end_ip;           /* address after end of function */
-  unw_word_t  lsda;             /* address of language specific data area, */
-                                /*  or zero if not used */
-  unw_word_t  handler;          /* personality routine, or zero if not used */
-  unw_word_t  gp;               /* not used */
-  unw_word_t  flags;            /* not used */
-  uint32_t    format;           /* compact unwind encoding, or zero if none */
+  unw_word_t  start_ip;                      /* start address of function */
+  unw_word_t  end_ip;                        /* address after end of function */
+  unw_word_t  lsda;                                       /* address of language specific data area, */
+                                                                                                 /*  or zero if not used */
+  unw_word_t  handler;                       /* personality routine, or zero if not used */
+  unw_word_t  gp;                                         /* not used */
+  unw_word_t  flags;                                      /* not used */
+  uint32_t    format;                        /* compact unwind encoding, or zero if none */
   uint32_t    unwind_info_size; /* size of DWARF unwind info, or zero if none */
-  unw_word_t  unwind_info;      /* address of DWARF unwind info, or zero */
-  unw_word_t  extra;            /* mach_header of mach-o image containing func */
+  unw_word_t  unwind_info;                   /* address of DWARF unwind info, or zero */
+  unw_word_t  extra;                                      /* mach_header of mach-o image containing func */
 };
 typedef struct unw_proc_info_t unw_proc_info_t;
 
@@ -120,7 +120,7 @@ extern int unw_get_proc_info(unw_cursor_t *, unw_proc_info_t *) LIBUNWIND_AVAIL;
 extern int unw_is_fpreg(unw_cursor_t *, unw_regnum_t) LIBUNWIND_AVAIL;
 extern int unw_is_signal_frame(unw_cursor_t *) LIBUNWIND_AVAIL;
 extern int unw_get_proc_name(unw_cursor_t *, char *, size_t, unw_word_t *) LIBUNWIND_AVAIL;
-//extern int       unw_get_save_loc(unw_cursor_t*, int, unw_save_loc_t*);
+//extern int                    unw_get_save_loc(unw_cursor_t*, int, unw_save_loc_t*);
 
 extern unw_addr_space_t unw_local_addr_space;
 
@@ -303,16 +303,16 @@ enum {
 
 // 64-bit ppc register numbers
 enum {
-  UNW_PPC64_R0      = 0,
-  UNW_PPC64_R1      = 1,
-  UNW_PPC64_R2      = 2,
-  UNW_PPC64_R3      = 3,
-  UNW_PPC64_R4      = 4,
-  UNW_PPC64_R5      = 5,
-  UNW_PPC64_R6      = 6,
-  UNW_PPC64_R7      = 7,
-  UNW_PPC64_R8      = 8,
-  UNW_PPC64_R9      = 9,
+  UNW_PPC64_R0                   = 0,
+  UNW_PPC64_R1                   = 1,
+  UNW_PPC64_R2                   = 2,
+  UNW_PPC64_R3                   = 3,
+  UNW_PPC64_R4                   = 4,
+  UNW_PPC64_R5                   = 5,
+  UNW_PPC64_R6                   = 6,
+  UNW_PPC64_R7                   = 7,
+  UNW_PPC64_R8                   = 8,
+  UNW_PPC64_R9                   = 9,
   UNW_PPC64_R10     = 10,
   UNW_PPC64_R11     = 11,
   UNW_PPC64_R12     = 12,
@@ -335,16 +335,16 @@ enum {
   UNW_PPC64_R29     = 29,
   UNW_PPC64_R30     = 30,
   UNW_PPC64_R31     = 31,
-  UNW_PPC64_F0      = 32,
-  UNW_PPC64_F1      = 33,
-  UNW_PPC64_F2      = 34,
-  UNW_PPC64_F3      = 35,
-  UNW_PPC64_F4      = 36,
-  UNW_PPC64_F5      = 37,
-  UNW_PPC64_F6      = 38,
-  UNW_PPC64_F7      = 39,
-  UNW_PPC64_F8      = 40,
-  UNW_PPC64_F9      = 41,
+  UNW_PPC64_F0                   = 32,
+  UNW_PPC64_F1                   = 33,
+  UNW_PPC64_F2                   = 34,
+  UNW_PPC64_F3                   = 35,
+  UNW_PPC64_F4                   = 36,
+  UNW_PPC64_F5                   = 37,
+  UNW_PPC64_F6                   = 38,
+  UNW_PPC64_F7                   = 39,
+  UNW_PPC64_F8                   = 40,
+  UNW_PPC64_F9                   = 41,
   UNW_PPC64_F10     = 42,
   UNW_PPC64_F11     = 43,
   UNW_PPC64_F12     = 44,
@@ -368,7 +368,7 @@ enum {
   UNW_PPC64_F30     = 62,
   UNW_PPC64_F31     = 63,
   // 64: reserved
-  UNW_PPC64_LR      = 65,
+  UNW_PPC64_LR                   = 65,
   UNW_PPC64_CTR     = 66,
   // 67: reserved
   UNW_PPC64_CR0     = 68,
@@ -380,16 +380,16 @@ enum {
   UNW_PPC64_CR6     = 74,
   UNW_PPC64_CR7     = 75,
   UNW_PPC64_XER     = 76,
-  UNW_PPC64_V0      = 77,
-  UNW_PPC64_V1      = 78,
-  UNW_PPC64_V2      = 79,
-  UNW_PPC64_V3      = 80,
-  UNW_PPC64_V4      = 81,
-  UNW_PPC64_V5      = 82,
-  UNW_PPC64_V6      = 83,
-  UNW_PPC64_V7      = 84,
-  UNW_PPC64_V8      = 85,
-  UNW_PPC64_V9      = 86,
+  UNW_PPC64_V0                   = 77,
+  UNW_PPC64_V1                   = 78,
+  UNW_PPC64_V2                   = 79,
+  UNW_PPC64_V3                   = 80,
+  UNW_PPC64_V4                   = 81,
+  UNW_PPC64_V5                   = 82,
+  UNW_PPC64_V6                   = 83,
+  UNW_PPC64_V7                   = 84,
+  UNW_PPC64_V8                   = 85,
+  UNW_PPC64_V9                   = 86,
   UNW_PPC64_V10     = 87,
   UNW_PPC64_V11     = 88,
   UNW_PPC64_V12     = 89,

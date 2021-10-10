@@ -23,7 +23,7 @@
  * enum blk_zone_type - Types of zones allowed in a zoned device.
  *
  * @BLK_ZONE_TYPE_CONVENTIONAL: The zone has no write pointer and can be writen
- *                              randomly. Zone reset has no effect on the zone.
+ *                                                                                               randomly. Zone reset has no effect on the zone.
  * @BLK_ZONE_TYPE_SEQWRITE_REQ: The zone must be written sequentially
  * @BLK_ZONE_TYPE_SEQWRITE_PREF: The zone can be written non-sequentially
  *
@@ -42,22 +42,22 @@ enum blk_zone_type {
  * @BLK_ZONE_COND_EMPTY: The zone is empty.
  * @BLK_ZONE_COND_IMP_OPEN: The zone is open, but not explicitly opened.
  * @BLK_ZONE_COND_EXP_OPEN: The zones was explicitly opened by an
- *                          OPEN ZONE command.
+ *                                                                              OPEN ZONE command.
  * @BLK_ZONE_COND_CLOSED: The zone was [explicitly] closed after writing.
  * @BLK_ZONE_COND_FULL: The zone is marked as full, possibly by a zone
- *                      FINISH ZONE command.
+ *                                                             FINISH ZONE command.
  * @BLK_ZONE_COND_READONLY: The zone is read-only.
  * @BLK_ZONE_COND_OFFLINE: The zone is offline (sectors cannot be read/written).
  *
  * The Zone Condition state machine in the ZBC/ZAC standards maps the above
  * deinitions as:
- *   - ZC1: Empty         | BLK_ZONE_EMPTY
+ *   - ZC1: Empty                      | BLK_ZONE_EMPTY
  *   - ZC2: Implicit Open | BLK_ZONE_COND_IMP_OPEN
  *   - ZC3: Explicit Open | BLK_ZONE_COND_EXP_OPEN
- *   - ZC4: Closed        | BLK_ZONE_CLOSED
- *   - ZC5: Full          | BLK_ZONE_FULL
+ *   - ZC4: Closed                     | BLK_ZONE_CLOSED
+ *   - ZC5: Full                       | BLK_ZONE_FULL
  *   - ZC6: Read Only     | BLK_ZONE_READONLY
- *   - ZC7: Offline       | BLK_ZONE_OFFLINE
+ *   - ZC7: Offline                    | BLK_ZONE_OFFLINE
  *
  * Conditions 0x5 to 0xC are reserved by the current ZBC/ZAC spec and should
  * be considered invalid.
@@ -82,7 +82,7 @@ enum blk_zone_cond {
  * @type: see enum blk_zone_type for possible values
  * @cond: see enum blk_zone_cond for possible values
  * @non_seq: Flag indicating that the zone is using non-sequential resources
- *           (for host-aware zoned block devices only).
+ *                        (for host-aware zoned block devices only).
  * @reset: Flag indicating that a zone reset is recommended.
  * @reserved: Padding to 64 B to match the ZBC/ZAC defined zone descriptor size.
  *
@@ -133,10 +133,10 @@ struct blk_zone_range {
  * Zoned block device ioctl's:
  *
  * @BLKREPORTZONE: Get zone information. Takes a zone report as argument.
- *                 The zone report will start from the zone containing the
- *                 sector specified in the report request structure.
+ *                                           The zone report will start from the zone containing the
+ *                                           sector specified in the report request structure.
  * @BLKRESETZONE: Reset the write pointer of the zones in the specified
- *                sector range. The sector range must be zone aligned.
+ *                                          sector range. The sector range must be zone aligned.
  */
 #define BLKREPORTZONE	_IOWR(0x12, 130, struct blk_zone_report)
 #define BLKRESETZONE	_IOW(0x12, 131, struct blk_zone_range)

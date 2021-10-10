@@ -25,11 +25,11 @@ extern char *__realpath_chk (const char *__restrict __name,
 			     size_t __resolvedlen) __THROW __wur;
 extern char *__REDIRECT_NTH (__realpath_alias,
 			     (const char *__restrict __name,
-			      char *__restrict __resolved), realpath) __wur;
+			                   char *__restrict __resolved), realpath) __wur;
 extern char *__REDIRECT_NTH (__realpath_chk_warn,
 			     (const char *__restrict __name,
-			      char *__restrict __resolved,
-			      size_t __resolvedlen), __realpath_chk) __wur
+			                   char *__restrict __resolved,
+			                   size_t __resolvedlen), __realpath_chk) __wur
      __warnattr ("second argument of realpath must be either NULL or at "
 		 "least PATH_MAX bytes long buffer");
 
@@ -39,10 +39,10 @@ __NTH (realpath (const char *__restrict __name, char *__restrict __resolved))
   if (__bos (__resolved) != (size_t) -1)
     {
 #if defined _LIBC_LIMITS_H_ && defined PATH_MAX
-      if (__bos (__resolved) < PATH_MAX)
+                   if (__bos (__resolved) < PATH_MAX)
 	return __realpath_chk_warn (__name, __resolved, __bos (__resolved));
 #endif
-      return __realpath_chk (__name, __resolved, __bos (__resolved));
+                   return __realpath_chk (__name, __resolved, __bos (__resolved));
     }
 
   return __realpath_alias (__name, __resolved);
@@ -53,7 +53,7 @@ extern int __ptsname_r_chk (int __fd, char *__buf, size_t __buflen,
 			    size_t __nreal) __THROW __nonnull ((2))
     __attr_access ((__write_only__, 2, 3));
 extern int __REDIRECT_NTH (__ptsname_r_alias, (int __fd, char *__buf,
-					       size_t __buflen), ptsname_r)
+					                    size_t __buflen), ptsname_r)
      __nonnull ((2)) __attr_access ((__write_only__, 2, 3));
 extern int __REDIRECT_NTH (__ptsname_r_chk_warn,
 			   (int __fd, char *__buf, size_t __buflen,
@@ -66,9 +66,9 @@ __NTH (ptsname_r (int __fd, char *__buf, size_t __buflen))
 {
   if (__bos (__buf) != (size_t) -1)
     {
-      if (!__builtin_constant_p (__buflen))
+                   if (!__builtin_constant_p (__buflen))
 	return __ptsname_r_chk (__fd, __buf, __buflen, __bos (__buf));
-      if (__buflen > __bos (__buf))
+                   if (__buflen > __bos (__buf))
 	return __ptsname_r_chk_warn (__fd, __buf, __buflen, __bos (__buf));
     }
   return __ptsname_r_alias (__fd, __buf, __buflen);
@@ -97,18 +97,18 @@ __NTH (wctomb (char *__s, wchar_t __wchar))
 
 
 extern size_t __mbstowcs_chk (wchar_t *__restrict __dst,
-			      const char *__restrict __src,
-			      size_t __len, size_t __dstlen) __THROW
+			                   const char *__restrict __src,
+			                   size_t __len, size_t __dstlen) __THROW
     __attr_access ((__write_only__, 1, 3)) __attr_access ((__read_only__, 2));
 extern size_t __REDIRECT_NTH (__mbstowcs_alias,
-			      (wchar_t *__restrict __dst,
-			       const char *__restrict __src,
-			       size_t __len), mbstowcs)
+			                   (wchar_t *__restrict __dst,
+			                    const char *__restrict __src,
+			                    size_t __len), mbstowcs)
     __attr_access ((__write_only__, 1, 3)) __attr_access ((__read_only__, 2));
 extern size_t __REDIRECT_NTH (__mbstowcs_chk_warn,
-			      (wchar_t *__restrict __dst,
-			       const char *__restrict __src,
-			       size_t __len, size_t __dstlen), __mbstowcs_chk)
+			                   (wchar_t *__restrict __dst,
+			                    const char *__restrict __src,
+			                    size_t __len, size_t __dstlen), __mbstowcs_chk)
      __warnattr ("mbstowcs called with dst buffer smaller than len "
 		 "* sizeof (wchar_t)");
 
@@ -118,11 +118,11 @@ __NTH (mbstowcs (wchar_t *__restrict __dst, const char *__restrict __src,
 {
   if (__bos (__dst) != (size_t) -1)
     {
-      if (!__builtin_constant_p (__len))
+                   if (!__builtin_constant_p (__len))
 	return __mbstowcs_chk (__dst, __src, __len,
-			       __bos (__dst) / sizeof (wchar_t));
+			                    __bos (__dst) / sizeof (wchar_t));
 
-      if (__len > __bos (__dst) / sizeof (wchar_t))
+                   if (__len > __bos (__dst) / sizeof (wchar_t))
 	return __mbstowcs_chk_warn (__dst, __src, __len,
 				     __bos (__dst) / sizeof (wchar_t));
     }
@@ -131,18 +131,18 @@ __NTH (mbstowcs (wchar_t *__restrict __dst, const char *__restrict __src,
 
 
 extern size_t __wcstombs_chk (char *__restrict __dst,
-			      const wchar_t *__restrict __src,
-			      size_t __len, size_t __dstlen) __THROW
+			                   const wchar_t *__restrict __src,
+			                   size_t __len, size_t __dstlen) __THROW
   __attr_access ((__write_only__, 1, 3)) __attr_access ((__read_only__, 2));
 extern size_t __REDIRECT_NTH (__wcstombs_alias,
-			      (char *__restrict __dst,
-			       const wchar_t *__restrict __src,
-			       size_t __len), wcstombs)
+			                   (char *__restrict __dst,
+			                    const wchar_t *__restrict __src,
+			                    size_t __len), wcstombs)
   __attr_access ((__write_only__, 1, 3)) __attr_access ((__read_only__, 2));
 extern size_t __REDIRECT_NTH (__wcstombs_chk_warn,
-			      (char *__restrict __dst,
-			       const wchar_t *__restrict __src,
-			       size_t __len, size_t __dstlen), __wcstombs_chk)
+			                   (char *__restrict __dst,
+			                    const wchar_t *__restrict __src,
+			                    size_t __len, size_t __dstlen), __wcstombs_chk)
      __warnattr ("wcstombs called with dst buffer smaller than len");
 
 __fortify_function size_t
@@ -151,9 +151,9 @@ __NTH (wcstombs (char *__restrict __dst, const wchar_t *__restrict __src,
 {
   if (__bos (__dst) != (size_t) -1)
     {
-      if (!__builtin_constant_p (__len))
+                   if (!__builtin_constant_p (__len))
 	return __wcstombs_chk (__dst, __src, __len, __bos (__dst));
-      if (__len > __bos (__dst))
+                   if (__len > __bos (__dst))
 	return __wcstombs_chk_warn (__dst, __src, __len, __bos (__dst));
     }
   return __wcstombs_alias (__dst, __src, __len);

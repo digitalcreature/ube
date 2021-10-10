@@ -445,8 +445,8 @@ const Slab = struct {
 
 fn slab(str: []const u8, exp: i32) Slab {
     return Slab{
-        .str = str,
-        .exp = exp,
+                     .str = str,
+                     .exp = exp,
     };
 }
 

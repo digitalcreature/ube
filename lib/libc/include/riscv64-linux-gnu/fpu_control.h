@@ -66,8 +66,8 @@ extern fpu_control_t __fpu_control;
 # define _FCLASS_ZERO     (_FCLASS_MZERO | _FCLASS_PZERO)
 # define _FCLASS_SUBNORM  (_FCLASS_MSUBNORM | _FCLASS_PSUBNORM)
 # define _FCLASS_NORM     (_FCLASS_MNORM | _FCLASS_PNORM)
-# define _FCLASS_INF      (_FCLASS_MINF | _FCLASS_PINF)
-# define _FCLASS_NAN      (_FCLASS_SNAN | _FCLASS_QNAN)
+# define _FCLASS_INF                   (_FCLASS_MINF | _FCLASS_PINF)
+# define _FCLASS_NAN                   (_FCLASS_SNAN | _FCLASS_QNAN)
 
 #endif /* __riscv_flen */
 

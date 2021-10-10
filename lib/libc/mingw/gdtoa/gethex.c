@@ -324,7 +324,7 @@ int gethex (const char **sp, FPI *fpi, Long *expo, Bigint **bp, int sign)
 			}
 			else if (b->wds > k
 			 || ((n = nbits & kmask) !=0
-			      && hi0bits(x[k-1]) < 32-n)) {
+			                   && hi0bits(x[k-1]) < 32-n)) {
 				rshift(b,1);
 				if (++e > fpi->emax)
 					goto ovfl;

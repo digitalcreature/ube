@@ -34,11 +34,11 @@ typedef enum _MP_Type {
 } MP_TYPE;
 
 typedef enum _MP_CURVE_TYPE {
-    MP_CURVE_JUMP       = 0x0001, 
+    MP_CURVE_JUMP                    = 0x0001, 
     MP_CURVE_LINEAR     = 0x0002, 
     MP_CURVE_SQUARE     = 0x0004, 
     MP_CURVE_INVSQUARE  = 0x0008, 
-    MP_CURVE_SINE       = 0x0010, 
+    MP_CURVE_SINE                    = 0x0010, 
 } MP_CURVE_TYPE;
 
 typedef struct _MP_PARAMINFO {
@@ -47,24 +47,24 @@ typedef struct _MP_PARAMINFO {
     MP_DATA    mpdMinValue;
     MP_DATA    mpdMaxValue;
     MP_DATA    mpdNeutralValue;
-    WCHAR      szUnitText[32];
-    WCHAR      szLabel[32]; 
+    WCHAR                   szUnitText[32];
+    WCHAR                   szLabel[32]; 
 } MP_PARAMINFO;
 
 typedef struct _MP_ENVELOPE_SEGMENT {
     REFERENCE_TIME   rtStart;
     REFERENCE_TIME   rtEnd;
-    MP_DATA          valStart;
-    MP_DATA          valEnd;
+    MP_DATA                       valStart;
+    MP_DATA                       valEnd;
     MP_CURVE_TYPE    iCurve;
-    MP_FLAGS         flags;
+    MP_FLAGS                      flags;
 } MP_ENVELOPE_SEGMENT;
 
-const MP_CAPS MP_CAPS_CURVE_JUMP        = MP_CURVE_JUMP;
-const MP_CAPS MP_CAPS_CURVE_LINEAR      = MP_CURVE_LINEAR;
-const MP_CAPS MP_CAPS_CURVE_SQUARE      = MP_CURVE_SQUARE;
+const MP_CAPS MP_CAPS_CURVE_JUMP                     = MP_CURVE_JUMP;
+const MP_CAPS MP_CAPS_CURVE_LINEAR                   = MP_CURVE_LINEAR;
+const MP_CAPS MP_CAPS_CURVE_SQUARE                   = MP_CURVE_SQUARE;
 const MP_CAPS MP_CAPS_CURVE_INVSQUARE   = MP_CURVE_INVSQUARE;
-const MP_CAPS MP_CAPS_CURVE_SINE        = MP_CURVE_SINE;
+const MP_CAPS MP_CAPS_CURVE_SINE                     = MP_CURVE_SINE;
 
 [
     object,
@@ -73,30 +73,30 @@ const MP_CAPS MP_CAPS_CURVE_SINE        = MP_CURVE_SINE;
 interface IMediaParams : IUnknown
 {
     HRESULT AddEnvelope(
-        DWORD dwParamIndex,
-        DWORD cPoints,
-        MP_ENVELOPE_SEGMENT *pEnvelope
+                     DWORD dwParamIndex,
+                     DWORD cPoints,
+                     MP_ENVELOPE_SEGMENT *pEnvelope
     );
 
     HRESULT FlushEnvelope(
-        DWORD dwParamIndex,
-        REFERENCE_TIME refTimeStart,
-        REFERENCE_TIME refTimeEnd
+                     DWORD dwParamIndex,
+                     REFERENCE_TIME refTimeStart,
+                     REFERENCE_TIME refTimeEnd
     );
 
     HRESULT GetParam(
-        DWORD dwParamIndex,
-        MP_DATA *pValue
+                     DWORD dwParamIndex,
+                     MP_DATA *pValue
     );
 
     HRESULT SetParam(
-        DWORD dwParamIndex,
-        MP_DATA value
+                     DWORD dwParamIndex,
+                     MP_DATA value
     );
 
     HRESULT SetTimeFormat(
-        GUID guidTimeFormat,
-        MP_TIMEDATA mpTimeData
+                     GUID guidTimeFormat,
+                     MP_TIMEDATA mpTimeData
     );
 }
 
@@ -107,30 +107,30 @@ interface IMediaParams : IUnknown
 interface IMediaParamInfo : IUnknown
 {
     HRESULT GetParamCount(
-        DWORD *pdwParams
+                     DWORD *pdwParams
     );
     
     HRESULT GetParamInfo(
-        DWORD dwParamIndex,
-        MP_PARAMINFO *pInfo
+                     DWORD dwParamIndex,
+                     MP_PARAMINFO *pInfo
     );
     
     HRESULT GetParamText(
-        DWORD dwParamIndex,
-        WCHAR **ppwchText
+                     DWORD dwParamIndex,
+                     WCHAR **ppwchText
     );   
    
     HRESULT GetNumTimeFormats(
-        DWORD *pdwNumTimeFormats
+                     DWORD *pdwNumTimeFormats
     );
  
     HRESULT GetSupportedTimeFormat(
-        DWORD dwFormatIndex,
-        GUID *pguidTimeFormat
+                     DWORD dwFormatIndex,
+                     GUID *pguidTimeFormat
     );
     
     HRESULT GetCurrentTimeFormat(
-        GUID *pguidTimeFormat,
-        MP_TIMEDATA *pTimeData
+                     GUID *pguidTimeFormat,
+                     MP_TIMEDATA *pTimeData
     );    
 }

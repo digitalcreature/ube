@@ -40,7 +40,7 @@ _int_ctime64_s (char *d, size_t dn, const __time64_t *pt)
 
   if (!d || !dn)
      {
-        errno = EINVAL;
+                     errno = EINVAL;
 	return EINVAL;
      }
   d[0] = 0;

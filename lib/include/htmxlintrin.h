@@ -138,9 +138,9 @@ __TM_nesting_depth (void* const __TM_buff)
 
   if (_HTM_STATE (__builtin_ttest ()) == _HTM_NONTRANSACTIONAL)
     {
-      texasrl = *_TEXASRL_PTR (__TM_buff);
-      if (!_TEXASR_FAILURE_SUMMARY (texasrl))
-        texasrl = 0;
+                   texasrl = *_TEXASRL_PTR (__TM_buff);
+                   if (!_TEXASR_FAILURE_SUMMARY (texasrl))
+                     texasrl = 0;
     }
   else
     texasrl = (texasrl_t) __builtin_get_texasr ();
@@ -275,8 +275,8 @@ __TM_is_named_user_abort (void* const __tdb_ptr, unsigned char* __code)
 
   if (tdb->abort_code >= _HTM_FIRST_USER_ABORT_CODE)
     {
-      *__code = tdb->abort_code - _HTM_FIRST_USER_ABORT_CODE;
-      return 1;
+                   *__code = tdb->abort_code - _HTM_FIRST_USER_ABORT_CODE;
+                   return 1;
     }
   return 0;
 }
@@ -288,7 +288,7 @@ __TM_is_illegal (void* const __tdb_ptr)
 
   return (tdb->format == 1
 	  && (tdb->abort_code == 4 /* unfiltered program interruption */
-	      || tdb->abort_code == 11 /* restricted instruction */));
+	                   || tdb->abort_code == 11 /* restricted instruction */));
 }
 
 static __inline long __attribute__((__always_inline__, __nodebug__))
@@ -298,7 +298,7 @@ __TM_is_footprint_exceeded (void* const __tdb_ptr)
 
   return (tdb->format == 1
 	  && (tdb->abort_code == 7 /* fetch overflow */
-	      || tdb->abort_code == 8 /* store overflow */));
+	                   || tdb->abort_code == 8 /* store overflow */));
 }
 
 static __inline long __attribute__((__always_inline__, __nodebug__))
@@ -316,7 +316,7 @@ __TM_is_conflict (void* const __tdb_ptr)
 
   return (tdb->format == 1
 	  && (tdb->abort_code == 9 /* fetch conflict */
-	      || tdb->abort_code == 10 /* store conflict */));
+	                   || tdb->abort_code == 10 /* store conflict */));
 }
 
 static __inline long __attribute__((__always_inline__, __nodebug__))

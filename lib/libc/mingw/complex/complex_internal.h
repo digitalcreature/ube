@@ -12,21 +12,21 @@
  modification, are permitted provided that the following conditions are met:
 
    1. Redistributions in source code must retain the accompanying copyright
-      notice, this list of conditions, and the following disclaimer.
+                   notice, this list of conditions, and the following disclaimer.
    2. Redistributions in binary form must reproduce the accompanying
-      copyright notice, this list of conditions, and the following disclaimer
-      in the documentation and/or other materials provided with the
-      distribution.
+                   copyright notice, this list of conditions, and the following disclaimer
+                   in the documentation and/or other materials provided with the
+                   distribution.
    3. Names of the copyright holders must not be used to endorse or promote
-      products derived from this software without prior written permission
-      from the copyright holders.
+                   products derived from this software without prior written permission
+                   from the copyright holders.
    4. The right to distribute this software or to use it for any purpose does
-      not give you the right to use Servicemarks (sm) or Trademarks (tm) of
-      the copyright holders.  Use of them is covered by separate agreement
-      with the copyright holders.
+                   not give you the right to use Servicemarks (sm) or Trademarks (tm) of
+                   the copyright holders.  Use of them is covered by separate agreement
+                   with the copyright holders.
    5. If any files are modified, you must cause the modified files to carry
-      prominent notices stating that you changed the files and the date of
-      any change.
+                   prominent notices stating that you changed the files and the date of
+                   any change.
 
  Disclaimer
 
@@ -119,10 +119,10 @@
 #define __FLT_RPT_DOMAIN(NAME, ARG1, ARG2, RSLT) \
 	errno = EDOM, \
 	__mingw_raise_matherr (_DOMAIN, __FLT_REPORT(NAME), (double) (ARG1), \
-			       (double) (ARG2), (double) (RSLT))
+			                    (double) (ARG2), (double) (RSLT))
 #define __FLT_RPT_ERANGE(NAME, ARG1, ARG2, RSLT, OVL) \
 	errno = ERANGE, \
-        __mingw_raise_matherr (((OVL) ? _OVERFLOW : _UNDERFLOW), \
-			       __FLT_REPORT(NAME), (double) (ARG1), \
-                               (double) (ARG2), (double) (RSLT))
+                     __mingw_raise_matherr (((OVL) ? _OVERFLOW : _UNDERFLOW), \
+			                    __FLT_REPORT(NAME), (double) (ARG1), \
+                                                                                                (double) (ARG2), (double) (RSLT))
 

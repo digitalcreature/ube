@@ -71,18 +71,18 @@ extern "C"{
 #else
   typedef struct IIisServiceControlVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIisServiceControl *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIisServiceControl *This);
-      ULONG (WINAPI *Release)(IIisServiceControl *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IIisServiceControl *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IIisServiceControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IIisServiceControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IIisServiceControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *Stop)(IIisServiceControl *This,DWORD dwTimeoutMsecs,DWORD dwForce);
-      HRESULT (WINAPI *Start)(IIisServiceControl *This,DWORD dwTimeoutMsecs);
-      HRESULT (WINAPI *Reboot)(IIisServiceControl *This,DWORD dwTimeouMsecs,DWORD dwForceAppsClosed);
-      HRESULT (WINAPI *Status)(IIisServiceControl *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize,DWORD *pdwNumServices);
-      HRESULT (WINAPI *Kill)(IIisServiceControl *This);
+                   HRESULT (WINAPI *QueryInterface)(IIisServiceControl *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIisServiceControl *This);
+                   ULONG (WINAPI *Release)(IIisServiceControl *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IIisServiceControl *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IIisServiceControl *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IIisServiceControl *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IIisServiceControl *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *Stop)(IIisServiceControl *This,DWORD dwTimeoutMsecs,DWORD dwForce);
+                   HRESULT (WINAPI *Start)(IIisServiceControl *This,DWORD dwTimeoutMsecs);
+                   HRESULT (WINAPI *Reboot)(IIisServiceControl *This,DWORD dwTimeouMsecs,DWORD dwForceAppsClosed);
+                   HRESULT (WINAPI *Status)(IIisServiceControl *This,DWORD dwBufferSize,unsigned char *pbBuffer,DWORD *pdwMDRequiredBufferSize,DWORD *pdwNumServices);
+                   HRESULT (WINAPI *Kill)(IIisServiceControl *This);
     END_INTERFACE
   } IIisServiceControlVtbl;
   struct IIisServiceControl {

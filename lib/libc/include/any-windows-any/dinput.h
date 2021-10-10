@@ -153,197 +153,197 @@ DECL_WINELIB_TYPE_AW(LPDIRECTINPUTDEVICE7)
 DECL_WINELIB_TYPE_AW(LPDIRECTINPUTDEVICE8)
 #endif /* DI8 */
 
-#define DI_OK                           S_OK
-#define DI_NOTATTACHED                  S_FALSE
-#define DI_BUFFEROVERFLOW               S_FALSE
-#define DI_PROPNOEFFECT                 S_FALSE
-#define DI_NOEFFECT                     S_FALSE
-#define DI_POLLEDDEVICE                 ((HRESULT)0x00000002L)
-#define DI_DOWNLOADSKIPPED              ((HRESULT)0x00000003L)
-#define DI_EFFECTRESTARTED              ((HRESULT)0x00000004L)
-#define DI_TRUNCATED                    ((HRESULT)0x00000008L)
-#define DI_SETTINGSNOTSAVED             ((HRESULT)0x0000000BL)
-#define DI_TRUNCATEDANDRESTARTED        ((HRESULT)0x0000000CL)
-#define DI_WRITEPROTECT                 ((HRESULT)0x00000013L)
+#define DI_OK                                                                               S_OK
+#define DI_NOTATTACHED                                                         S_FALSE
+#define DI_BUFFEROVERFLOW                                         S_FALSE
+#define DI_PROPNOEFFECT                                           S_FALSE
+#define DI_NOEFFECT                                                            S_FALSE
+#define DI_POLLEDDEVICE                                           ((HRESULT)0x00000002L)
+#define DI_DOWNLOADSKIPPED                                        ((HRESULT)0x00000003L)
+#define DI_EFFECTRESTARTED                                        ((HRESULT)0x00000004L)
+#define DI_TRUNCATED                                                           ((HRESULT)0x00000008L)
+#define DI_SETTINGSNOTSAVED                                       ((HRESULT)0x0000000BL)
+#define DI_TRUNCATEDANDRESTARTED                     ((HRESULT)0x0000000CL)
+#define DI_WRITEPROTECT                                           ((HRESULT)0x00000013L)
 
 #define DIERR_OLDDIRECTINPUTVERSION     \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_OLD_WIN_VERSION)
 #define DIERR_BETADIRECTINPUTVERSION    \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_RMODE_APP)
-#define DIERR_BADDRIVERVER              \
+#define DIERR_BADDRIVERVER                                        \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_BAD_DRIVER_LEVEL)
-#define DIERR_DEVICENOTREG              REGDB_E_CLASSNOTREG
-#define DIERR_NOTFOUND                  \
+#define DIERR_DEVICENOTREG                                        REGDB_E_CLASSNOTREG
+#define DIERR_NOTFOUND                                                         \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_FILE_NOT_FOUND)
-#define DIERR_OBJECTNOTFOUND            \
+#define DIERR_OBJECTNOTFOUND                                      \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_FILE_NOT_FOUND)
-#define DIERR_INVALIDPARAM              E_INVALIDARG
-#define DIERR_NOINTERFACE               E_NOINTERFACE
-#define DIERR_GENERIC                   E_FAIL
-#define DIERR_OUTOFMEMORY               E_OUTOFMEMORY
-#define DIERR_UNSUPPORTED               E_NOTIMPL
-#define DIERR_NOTINITIALIZED            \
+#define DIERR_INVALIDPARAM                                        E_INVALIDARG
+#define DIERR_NOINTERFACE                                         E_NOINTERFACE
+#define DIERR_GENERIC                                                          E_FAIL
+#define DIERR_OUTOFMEMORY                                         E_OUTOFMEMORY
+#define DIERR_UNSUPPORTED                                         E_NOTIMPL
+#define DIERR_NOTINITIALIZED                                      \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_NOT_READY)
-#define DIERR_ALREADYINITIALIZED        \
+#define DIERR_ALREADYINITIALIZED                     \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_ALREADY_INITIALIZED)
-#define DIERR_NOAGGREGATION             CLASS_E_NOAGGREGATION
-#define DIERR_OTHERAPPHASPRIO           E_ACCESSDENIED
-#define DIERR_INPUTLOST                 \
+#define DIERR_NOAGGREGATION                                       CLASS_E_NOAGGREGATION
+#define DIERR_OTHERAPPHASPRIO                        E_ACCESSDENIED
+#define DIERR_INPUTLOST                                           \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_READ_FAULT)
-#define DIERR_ACQUIRED                  \
+#define DIERR_ACQUIRED                                                         \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_BUSY)
-#define DIERR_NOTACQUIRED               \
+#define DIERR_NOTACQUIRED                                         \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_INVALID_ACCESS)
-#define DIERR_READONLY                  E_ACCESSDENIED
-#define DIERR_HANDLEEXISTS              E_ACCESSDENIED
+#define DIERR_READONLY                                                         E_ACCESSDENIED
+#define DIERR_HANDLEEXISTS                                        E_ACCESSDENIED
 #ifndef E_PENDING
-#define E_PENDING                       0x8000000AL
+#define E_PENDING                                                              0x8000000AL
 #endif
-#define DIERR_INSUFFICIENTPRIVS         0x80040200L
-#define DIERR_DEVICEFULL                0x80040201L
-#define DIERR_MOREDATA                  0x80040202L
-#define DIERR_NOTDOWNLOADED             0x80040203L
-#define DIERR_HASEFFECTS                0x80040204L
-#define DIERR_NOTEXCLUSIVEACQUIRED      0x80040205L
-#define DIERR_INCOMPLETEEFFECT          0x80040206L
-#define DIERR_NOTBUFFERED               0x80040207L
-#define DIERR_EFFECTPLAYING             0x80040208L
-#define DIERR_UNPLUGGED                 0x80040209L
-#define DIERR_REPORTFULL                0x8004020AL
-#define DIERR_MAPFILEFAIL               0x8004020BL
+#define DIERR_INSUFFICIENTPRIVS                      0x80040200L
+#define DIERR_DEVICEFULL                                          0x80040201L
+#define DIERR_MOREDATA                                                         0x80040202L
+#define DIERR_NOTDOWNLOADED                                       0x80040203L
+#define DIERR_HASEFFECTS                                          0x80040204L
+#define DIERR_NOTEXCLUSIVEACQUIRED                   0x80040205L
+#define DIERR_INCOMPLETEEFFECT                       0x80040206L
+#define DIERR_NOTBUFFERED                                         0x80040207L
+#define DIERR_EFFECTPLAYING                                       0x80040208L
+#define DIERR_UNPLUGGED                                           0x80040209L
+#define DIERR_REPORTFULL                                          0x8004020AL
+#define DIERR_MAPFILEFAIL                                         0x8004020BL
 
-#define DIENUM_STOP                     0
-#define DIENUM_CONTINUE                 1
+#define DIENUM_STOP                                                            0
+#define DIENUM_CONTINUE                                           1
 
-#define DIEDFL_ALLDEVICES               0x00000000
-#define DIEDFL_ATTACHEDONLY             0x00000001
-#define DIEDFL_FORCEFEEDBACK            0x00000100
-#define DIEDFL_INCLUDEALIASES           0x00010000
-#define DIEDFL_INCLUDEPHANTOMS          0x00020000
+#define DIEDFL_ALLDEVICES                                         0x00000000
+#define DIEDFL_ATTACHEDONLY                                       0x00000001
+#define DIEDFL_FORCEFEEDBACK                                      0x00000100
+#define DIEDFL_INCLUDEALIASES                        0x00010000
+#define DIEDFL_INCLUDEPHANTOMS                       0x00020000
 #define DIEDFL_INCLUDEHIDDEN		0x00040000
 
-#define DIDEVTYPE_DEVICE                1
-#define DIDEVTYPE_MOUSE                 2
-#define DIDEVTYPE_KEYBOARD              3
-#define DIDEVTYPE_JOYSTICK              4
-#define DIDEVTYPE_HID                   0x00010000
+#define DIDEVTYPE_DEVICE                                          1
+#define DIDEVTYPE_MOUSE                                           2
+#define DIDEVTYPE_KEYBOARD                                        3
+#define DIDEVTYPE_JOYSTICK                                        4
+#define DIDEVTYPE_HID                                                          0x00010000
 
-#define DI8DEVCLASS_ALL             0
-#define DI8DEVCLASS_DEVICE          1
-#define DI8DEVCLASS_POINTER         2
-#define DI8DEVCLASS_KEYBOARD        3
-#define DI8DEVCLASS_GAMECTRL        4
+#define DI8DEVCLASS_ALL                                       0
+#define DI8DEVCLASS_DEVICE                       1
+#define DI8DEVCLASS_POINTER                      2
+#define DI8DEVCLASS_KEYBOARD                     3
+#define DI8DEVCLASS_GAMECTRL                     4
 
-#define DI8DEVTYPE_DEVICE           0x11
-#define DI8DEVTYPE_MOUSE            0x12
-#define DI8DEVTYPE_KEYBOARD         0x13
-#define DI8DEVTYPE_JOYSTICK         0x14
-#define DI8DEVTYPE_GAMEPAD          0x15
-#define DI8DEVTYPE_DRIVING          0x16
-#define DI8DEVTYPE_FLIGHT           0x17
-#define DI8DEVTYPE_1STPERSON        0x18
-#define DI8DEVTYPE_DEVICECTRL       0x19
+#define DI8DEVTYPE_DEVICE                        0x11
+#define DI8DEVTYPE_MOUSE                                      0x12
+#define DI8DEVTYPE_KEYBOARD                      0x13
+#define DI8DEVTYPE_JOYSTICK                      0x14
+#define DI8DEVTYPE_GAMEPAD                       0x15
+#define DI8DEVTYPE_DRIVING                       0x16
+#define DI8DEVTYPE_FLIGHT                        0x17
+#define DI8DEVTYPE_1STPERSON                     0x18
+#define DI8DEVTYPE_DEVICECTRL                    0x19
 #define DI8DEVTYPE_SCREENPOINTER    0x1A
-#define DI8DEVTYPE_REMOTE           0x1B
+#define DI8DEVTYPE_REMOTE                        0x1B
 #define DI8DEVTYPE_SUPPLEMENTAL     0x1C
 	
-#define DIDEVTYPEMOUSE_UNKNOWN          1
-#define DIDEVTYPEMOUSE_TRADITIONAL      2
-#define DIDEVTYPEMOUSE_FINGERSTICK      3
-#define DIDEVTYPEMOUSE_TOUCHPAD         4
-#define DIDEVTYPEMOUSE_TRACKBALL        5
+#define DIDEVTYPEMOUSE_UNKNOWN                       1
+#define DIDEVTYPEMOUSE_TRADITIONAL                   2
+#define DIDEVTYPEMOUSE_FINGERSTICK                   3
+#define DIDEVTYPEMOUSE_TOUCHPAD                      4
+#define DIDEVTYPEMOUSE_TRACKBALL                     5
 
-#define DIDEVTYPEKEYBOARD_UNKNOWN       0
-#define DIDEVTYPEKEYBOARD_PCXT          1
-#define DIDEVTYPEKEYBOARD_OLIVETTI      2
-#define DIDEVTYPEKEYBOARD_PCAT          3
-#define DIDEVTYPEKEYBOARD_PCENH         4
+#define DIDEVTYPEKEYBOARD_UNKNOWN                    0
+#define DIDEVTYPEKEYBOARD_PCXT                       1
+#define DIDEVTYPEKEYBOARD_OLIVETTI                   2
+#define DIDEVTYPEKEYBOARD_PCAT                       3
+#define DIDEVTYPEKEYBOARD_PCENH                      4
 #define DIDEVTYPEKEYBOARD_NOKIA1050     5
 #define DIDEVTYPEKEYBOARD_NOKIA9140     6
-#define DIDEVTYPEKEYBOARD_NEC98         7
+#define DIDEVTYPEKEYBOARD_NEC98                      7
 #define DIDEVTYPEKEYBOARD_NEC98LAPTOP   8
-#define DIDEVTYPEKEYBOARD_NEC98106      9
+#define DIDEVTYPEKEYBOARD_NEC98106                   9
 #define DIDEVTYPEKEYBOARD_JAPAN106     10
-#define DIDEVTYPEKEYBOARD_JAPANAX      11
-#define DIDEVTYPEKEYBOARD_J3100        12
+#define DIDEVTYPEKEYBOARD_JAPANAX                   11
+#define DIDEVTYPEKEYBOARD_J3100                     12
 
-#define DIDEVTYPEJOYSTICK_UNKNOWN       1
+#define DIDEVTYPEJOYSTICK_UNKNOWN                    1
 #define DIDEVTYPEJOYSTICK_TRADITIONAL   2
 #define DIDEVTYPEJOYSTICK_FLIGHTSTICK   3
-#define DIDEVTYPEJOYSTICK_GAMEPAD       4
-#define DIDEVTYPEJOYSTICK_RUDDER        5
-#define DIDEVTYPEJOYSTICK_WHEEL         6
+#define DIDEVTYPEJOYSTICK_GAMEPAD                    4
+#define DIDEVTYPEJOYSTICK_RUDDER                     5
+#define DIDEVTYPEJOYSTICK_WHEEL                      6
 #define DIDEVTYPEJOYSTICK_HEADTRACKER   7
 
-#define DI8DEVTYPEMOUSE_UNKNOWN                     1
-#define DI8DEVTYPEMOUSE_TRADITIONAL                 2
-#define DI8DEVTYPEMOUSE_FINGERSTICK                 3
-#define DI8DEVTYPEMOUSE_TOUCHPAD                    4
-#define DI8DEVTYPEMOUSE_TRACKBALL                   5
-#define DI8DEVTYPEMOUSE_ABSOLUTE                    6
+#define DI8DEVTYPEMOUSE_UNKNOWN                                                            1
+#define DI8DEVTYPEMOUSE_TRADITIONAL                                           2
+#define DI8DEVTYPEMOUSE_FINGERSTICK                                           3
+#define DI8DEVTYPEMOUSE_TOUCHPAD                                                           4
+#define DI8DEVTYPEMOUSE_TRACKBALL                                                          5
+#define DI8DEVTYPEMOUSE_ABSOLUTE                                                           6
 
-#define DI8DEVTYPEKEYBOARD_UNKNOWN                  0
-#define DI8DEVTYPEKEYBOARD_PCXT                     1
-#define DI8DEVTYPEKEYBOARD_OLIVETTI                 2
-#define DI8DEVTYPEKEYBOARD_PCAT                     3
-#define DI8DEVTYPEKEYBOARD_PCENH                    4
-#define DI8DEVTYPEKEYBOARD_NOKIA1050                5
-#define DI8DEVTYPEKEYBOARD_NOKIA9140                6
-#define DI8DEVTYPEKEYBOARD_NEC98                    7
-#define DI8DEVTYPEKEYBOARD_NEC98LAPTOP              8
-#define DI8DEVTYPEKEYBOARD_NEC98106                 9
-#define DI8DEVTYPEKEYBOARD_JAPAN106                10
-#define DI8DEVTYPEKEYBOARD_JAPANAX                 11
-#define DI8DEVTYPEKEYBOARD_J3100                   12
+#define DI8DEVTYPEKEYBOARD_UNKNOWN                                                         0
+#define DI8DEVTYPEKEYBOARD_PCXT                                                            1
+#define DI8DEVTYPEKEYBOARD_OLIVETTI                                           2
+#define DI8DEVTYPEKEYBOARD_PCAT                                                            3
+#define DI8DEVTYPEKEYBOARD_PCENH                                                           4
+#define DI8DEVTYPEKEYBOARD_NOKIA1050                                          5
+#define DI8DEVTYPEKEYBOARD_NOKIA9140                                          6
+#define DI8DEVTYPEKEYBOARD_NEC98                                                           7
+#define DI8DEVTYPEKEYBOARD_NEC98LAPTOP                                        8
+#define DI8DEVTYPEKEYBOARD_NEC98106                                           9
+#define DI8DEVTYPEKEYBOARD_JAPAN106                                          10
+#define DI8DEVTYPEKEYBOARD_JAPANAX                                           11
+#define DI8DEVTYPEKEYBOARD_J3100                                                          12
 
-#define DI8DEVTYPE_LIMITEDGAMESUBTYPE               1
+#define DI8DEVTYPE_LIMITEDGAMESUBTYPE                                         1
 
-#define DI8DEVTYPEJOYSTICK_LIMITED                  DI8DEVTYPE_LIMITEDGAMESUBTYPE
-#define DI8DEVTYPEJOYSTICK_STANDARD                 2
+#define DI8DEVTYPEJOYSTICK_LIMITED                                                         DI8DEVTYPE_LIMITEDGAMESUBTYPE
+#define DI8DEVTYPEJOYSTICK_STANDARD                                           2
 
-#define DI8DEVTYPEGAMEPAD_LIMITED                   DI8DEVTYPE_LIMITEDGAMESUBTYPE
-#define DI8DEVTYPEGAMEPAD_STANDARD                  2
-#define DI8DEVTYPEGAMEPAD_TILT                      3
+#define DI8DEVTYPEGAMEPAD_LIMITED                                                          DI8DEVTYPE_LIMITEDGAMESUBTYPE
+#define DI8DEVTYPEGAMEPAD_STANDARD                                                         2
+#define DI8DEVTYPEGAMEPAD_TILT                                                             3
 
-#define DI8DEVTYPEDRIVING_LIMITED                   DI8DEVTYPE_LIMITEDGAMESUBTYPE
-#define DI8DEVTYPEDRIVING_COMBINEDPEDALS            2
-#define DI8DEVTYPEDRIVING_DUALPEDALS                3
-#define DI8DEVTYPEDRIVING_THREEPEDALS               4
-#define DI8DEVTYPEDRIVING_HANDHELD                  5
+#define DI8DEVTYPEDRIVING_LIMITED                                                          DI8DEVTYPE_LIMITEDGAMESUBTYPE
+#define DI8DEVTYPEDRIVING_COMBINEDPEDALS                                      2
+#define DI8DEVTYPEDRIVING_DUALPEDALS                                          3
+#define DI8DEVTYPEDRIVING_THREEPEDALS                                         4
+#define DI8DEVTYPEDRIVING_HANDHELD                                                         5
 
-#define DI8DEVTYPEFLIGHT_LIMITED                    DI8DEVTYPE_LIMITEDGAMESUBTYPE
-#define DI8DEVTYPEFLIGHT_STICK                      2
-#define DI8DEVTYPEFLIGHT_YOKE                       3
-#define DI8DEVTYPEFLIGHT_RC                         4
+#define DI8DEVTYPEFLIGHT_LIMITED                                                           DI8DEVTYPE_LIMITEDGAMESUBTYPE
+#define DI8DEVTYPEFLIGHT_STICK                                                             2
+#define DI8DEVTYPEFLIGHT_YOKE                                                              3
+#define DI8DEVTYPEFLIGHT_RC                                                                             4
 
-#define DI8DEVTYPE1STPERSON_LIMITED                 DI8DEVTYPE_LIMITEDGAMESUBTYPE
-#define DI8DEVTYPE1STPERSON_UNKNOWN                 2
-#define DI8DEVTYPE1STPERSON_SIXDOF                  3
-#define DI8DEVTYPE1STPERSON_SHOOTER                 4
+#define DI8DEVTYPE1STPERSON_LIMITED                                           DI8DEVTYPE_LIMITEDGAMESUBTYPE
+#define DI8DEVTYPE1STPERSON_UNKNOWN                                           2
+#define DI8DEVTYPE1STPERSON_SIXDOF                                                         3
+#define DI8DEVTYPE1STPERSON_SHOOTER                                           4
 
-#define DI8DEVTYPESCREENPTR_UNKNOWN                 2
-#define DI8DEVTYPESCREENPTR_LIGHTGUN                3
-#define DI8DEVTYPESCREENPTR_LIGHTPEN                4
-#define DI8DEVTYPESCREENPTR_TOUCH                   5
+#define DI8DEVTYPESCREENPTR_UNKNOWN                                           2
+#define DI8DEVTYPESCREENPTR_LIGHTGUN                                          3
+#define DI8DEVTYPESCREENPTR_LIGHTPEN                                          4
+#define DI8DEVTYPESCREENPTR_TOUCH                                                          5
 
-#define DI8DEVTYPEREMOTE_UNKNOWN                    2
+#define DI8DEVTYPEREMOTE_UNKNOWN                                                           2
 
-#define DI8DEVTYPEDEVICECTRL_UNKNOWN                2
-#define DI8DEVTYPEDEVICECTRL_COMMSSELECTION         3
+#define DI8DEVTYPEDEVICECTRL_UNKNOWN                                          2
+#define DI8DEVTYPEDEVICECTRL_COMMSSELECTION                      3
 #define DI8DEVTYPEDEVICECTRL_COMMSSELECTION_HARDWIRED 4
 
-#define DI8DEVTYPESUPPLEMENTAL_UNKNOWN              2
+#define DI8DEVTYPESUPPLEMENTAL_UNKNOWN                                        2
 #define DI8DEVTYPESUPPLEMENTAL_2NDHANDCONTROLLER    3
-#define DI8DEVTYPESUPPLEMENTAL_HEADTRACKER          4
-#define DI8DEVTYPESUPPLEMENTAL_HANDTRACKER          5
-#define DI8DEVTYPESUPPLEMENTAL_SHIFTSTICKGATE       6
-#define DI8DEVTYPESUPPLEMENTAL_SHIFTER              7
-#define DI8DEVTYPESUPPLEMENTAL_THROTTLE             8
-#define DI8DEVTYPESUPPLEMENTAL_SPLITTHROTTLE        9
-#define DI8DEVTYPESUPPLEMENTAL_COMBINEDPEDALS      10
-#define DI8DEVTYPESUPPLEMENTAL_DUALPEDALS          11
-#define DI8DEVTYPESUPPLEMENTAL_THREEPEDALS         12
-#define DI8DEVTYPESUPPLEMENTAL_RUDDERPEDALS        13
+#define DI8DEVTYPESUPPLEMENTAL_HEADTRACKER                       4
+#define DI8DEVTYPESUPPLEMENTAL_HANDTRACKER                       5
+#define DI8DEVTYPESUPPLEMENTAL_SHIFTSTICKGATE                    6
+#define DI8DEVTYPESUPPLEMENTAL_SHIFTER                                        7
+#define DI8DEVTYPESUPPLEMENTAL_THROTTLE                                       8
+#define DI8DEVTYPESUPPLEMENTAL_SPLITTHROTTLE                     9
+#define DI8DEVTYPESUPPLEMENTAL_COMBINEDPEDALS                   10
+#define DI8DEVTYPESUPPLEMENTAL_DUALPEDALS                       11
+#define DI8DEVTYPESUPPLEMENTAL_THREEPEDALS                      12
+#define DI8DEVTYPESUPPLEMENTAL_RUDDERPEDALS                     13
 	
 #define GET_DIDEVICE_TYPE(dwDevType)     LOBYTE(dwDevType)
 #define GET_DIDEVICE_SUBTYPE(dwDevType)  HIBYTE(dwDevType)
@@ -507,166 +507,166 @@ DECL_WINELIB_TYPE_AW(LPDIENUMDEVICEOBJECTSCALLBACK)
 typedef BOOL (CALLBACK *LPDIENUMCREATEDEFFECTOBJECTSCALLBACK)(LPDIRECTINPUTEFFECT, LPVOID);
 #endif
 
-#define DIK_ESCAPE          0x01
-#define DIK_1               0x02
-#define DIK_2               0x03
-#define DIK_3               0x04
-#define DIK_4               0x05
-#define DIK_5               0x06
-#define DIK_6               0x07
-#define DIK_7               0x08
-#define DIK_8               0x09
-#define DIK_9               0x0A
-#define DIK_0               0x0B
-#define DIK_MINUS           0x0C    /* - on main keyboard */
-#define DIK_EQUALS          0x0D
-#define DIK_BACK            0x0E    /* backspace */
-#define DIK_TAB             0x0F
-#define DIK_Q               0x10
-#define DIK_W               0x11
-#define DIK_E               0x12
-#define DIK_R               0x13
-#define DIK_T               0x14
-#define DIK_Y               0x15
-#define DIK_U               0x16
-#define DIK_I               0x17
-#define DIK_O               0x18
-#define DIK_P               0x19
-#define DIK_LBRACKET        0x1A
-#define DIK_RBRACKET        0x1B
-#define DIK_RETURN          0x1C    /* Enter on main keyboard */
-#define DIK_LCONTROL        0x1D
-#define DIK_A               0x1E
-#define DIK_S               0x1F
-#define DIK_D               0x20
-#define DIK_F               0x21
-#define DIK_G               0x22
-#define DIK_H               0x23
-#define DIK_J               0x24
-#define DIK_K               0x25
-#define DIK_L               0x26
-#define DIK_SEMICOLON       0x27
-#define DIK_APOSTROPHE      0x28
-#define DIK_GRAVE           0x29    /* accent grave */
-#define DIK_LSHIFT          0x2A
-#define DIK_BACKSLASH       0x2B
-#define DIK_Z               0x2C
-#define DIK_X               0x2D
-#define DIK_C               0x2E
-#define DIK_V               0x2F
-#define DIK_B               0x30
-#define DIK_N               0x31
-#define DIK_M               0x32
-#define DIK_COMMA           0x33
-#define DIK_PERIOD          0x34    /* . on main keyboard */
-#define DIK_SLASH           0x35    /* / on main keyboard */
-#define DIK_RSHIFT          0x36
-#define DIK_MULTIPLY        0x37    /* * on numeric keypad */
-#define DIK_LMENU           0x38    /* left Alt */
-#define DIK_SPACE           0x39
-#define DIK_CAPITAL         0x3A
-#define DIK_F1              0x3B
-#define DIK_F2              0x3C
-#define DIK_F3              0x3D
-#define DIK_F4              0x3E
-#define DIK_F5              0x3F
-#define DIK_F6              0x40
-#define DIK_F7              0x41
-#define DIK_F8              0x42
-#define DIK_F9              0x43
-#define DIK_F10             0x44
-#define DIK_NUMLOCK         0x45
-#define DIK_SCROLL          0x46    /* Scroll Lock */
-#define DIK_NUMPAD7         0x47
-#define DIK_NUMPAD8         0x48
-#define DIK_NUMPAD9         0x49
-#define DIK_SUBTRACT        0x4A    /* - on numeric keypad */
-#define DIK_NUMPAD4         0x4B
-#define DIK_NUMPAD5         0x4C
-#define DIK_NUMPAD6         0x4D
-#define DIK_ADD             0x4E    /* + on numeric keypad */
-#define DIK_NUMPAD1         0x4F
-#define DIK_NUMPAD2         0x50
-#define DIK_NUMPAD3         0x51
-#define DIK_NUMPAD0         0x52
-#define DIK_DECIMAL         0x53    /* . on numeric keypad */
-#define DIK_OEM_102         0x56    /* < > | on UK/Germany keyboards */
-#define DIK_F11             0x57
-#define DIK_F12             0x58
-#define DIK_F13             0x64    /*                     (NEC PC98) */
-#define DIK_F14             0x65    /*                     (NEC PC98) */
-#define DIK_F15             0x66    /*                     (NEC PC98) */
-#define DIK_KANA            0x70    /* (Japanese keyboard)            */
-#define DIK_ABNT_C1         0x73    /* / ? on Portugese (Brazilian) keyboards */
-#define DIK_CONVERT         0x79    /* (Japanese keyboard)            */
-#define DIK_NOCONVERT       0x7B    /* (Japanese keyboard)            */
-#define DIK_YEN             0x7D    /* (Japanese keyboard)            */
-#define DIK_ABNT_C2         0x7E    /* Numpad . on Portugese (Brazilian) keyboards */
+#define DIK_ESCAPE                       0x01
+#define DIK_1                                         0x02
+#define DIK_2                                         0x03
+#define DIK_3                                         0x04
+#define DIK_4                                         0x05
+#define DIK_5                                         0x06
+#define DIK_6                                         0x07
+#define DIK_7                                         0x08
+#define DIK_8                                         0x09
+#define DIK_9                                         0x0A
+#define DIK_0                                         0x0B
+#define DIK_MINUS                        0x0C    /* - on main keyboard */
+#define DIK_EQUALS                       0x0D
+#define DIK_BACK                                      0x0E    /* backspace */
+#define DIK_TAB                                       0x0F
+#define DIK_Q                                         0x10
+#define DIK_W                                         0x11
+#define DIK_E                                         0x12
+#define DIK_R                                         0x13
+#define DIK_T                                         0x14
+#define DIK_Y                                         0x15
+#define DIK_U                                         0x16
+#define DIK_I                                         0x17
+#define DIK_O                                         0x18
+#define DIK_P                                         0x19
+#define DIK_LBRACKET                     0x1A
+#define DIK_RBRACKET                     0x1B
+#define DIK_RETURN                       0x1C    /* Enter on main keyboard */
+#define DIK_LCONTROL                     0x1D
+#define DIK_A                                         0x1E
+#define DIK_S                                         0x1F
+#define DIK_D                                         0x20
+#define DIK_F                                         0x21
+#define DIK_G                                         0x22
+#define DIK_H                                         0x23
+#define DIK_J                                         0x24
+#define DIK_K                                         0x25
+#define DIK_L                                         0x26
+#define DIK_SEMICOLON                    0x27
+#define DIK_APOSTROPHE                   0x28
+#define DIK_GRAVE                        0x29    /* accent grave */
+#define DIK_LSHIFT                       0x2A
+#define DIK_BACKSLASH                    0x2B
+#define DIK_Z                                         0x2C
+#define DIK_X                                         0x2D
+#define DIK_C                                         0x2E
+#define DIK_V                                         0x2F
+#define DIK_B                                         0x30
+#define DIK_N                                         0x31
+#define DIK_M                                         0x32
+#define DIK_COMMA                        0x33
+#define DIK_PERIOD                       0x34    /* . on main keyboard */
+#define DIK_SLASH                        0x35    /* / on main keyboard */
+#define DIK_RSHIFT                       0x36
+#define DIK_MULTIPLY                     0x37    /* * on numeric keypad */
+#define DIK_LMENU                        0x38    /* left Alt */
+#define DIK_SPACE                        0x39
+#define DIK_CAPITAL                      0x3A
+#define DIK_F1                                        0x3B
+#define DIK_F2                                        0x3C
+#define DIK_F3                                        0x3D
+#define DIK_F4                                        0x3E
+#define DIK_F5                                        0x3F
+#define DIK_F6                                        0x40
+#define DIK_F7                                        0x41
+#define DIK_F8                                        0x42
+#define DIK_F9                                        0x43
+#define DIK_F10                                       0x44
+#define DIK_NUMLOCK                      0x45
+#define DIK_SCROLL                       0x46    /* Scroll Lock */
+#define DIK_NUMPAD7                      0x47
+#define DIK_NUMPAD8                      0x48
+#define DIK_NUMPAD9                      0x49
+#define DIK_SUBTRACT                     0x4A    /* - on numeric keypad */
+#define DIK_NUMPAD4                      0x4B
+#define DIK_NUMPAD5                      0x4C
+#define DIK_NUMPAD6                      0x4D
+#define DIK_ADD                                       0x4E    /* + on numeric keypad */
+#define DIK_NUMPAD1                      0x4F
+#define DIK_NUMPAD2                      0x50
+#define DIK_NUMPAD3                      0x51
+#define DIK_NUMPAD0                      0x52
+#define DIK_DECIMAL                      0x53    /* . on numeric keypad */
+#define DIK_OEM_102                      0x56    /* < > | on UK/Germany keyboards */
+#define DIK_F11                                       0x57
+#define DIK_F12                                       0x58
+#define DIK_F13                                       0x64    /*                                                            (NEC PC98) */
+#define DIK_F14                                       0x65    /*                                                            (NEC PC98) */
+#define DIK_F15                                       0x66    /*                                                            (NEC PC98) */
+#define DIK_KANA                                      0x70    /* (Japanese keyboard)                                      */
+#define DIK_ABNT_C1                      0x73    /* / ? on Portugese (Brazilian) keyboards */
+#define DIK_CONVERT                      0x79    /* (Japanese keyboard)                                      */
+#define DIK_NOCONVERT                    0x7B    /* (Japanese keyboard)                                      */
+#define DIK_YEN                                       0x7D    /* (Japanese keyboard)                                      */
+#define DIK_ABNT_C2                      0x7E    /* Numpad . on Portugese (Brazilian) keyboards */
 #define DIK_NUMPADEQUALS    0x8D    /* = on numeric keypad (NEC PC98) */
-#define DIK_CIRCUMFLEX      0x90    /* (Japanese keyboard)            */
-#define DIK_AT              0x91    /*                     (NEC PC98) */
-#define DIK_COLON           0x92    /*                     (NEC PC98) */
-#define DIK_UNDERLINE       0x93    /*                     (NEC PC98) */
-#define DIK_KANJI           0x94    /* (Japanese keyboard)            */
-#define DIK_STOP            0x95    /*                     (NEC PC98) */
-#define DIK_AX              0x96    /*                     (Japan AX) */
-#define DIK_UNLABELED       0x97    /*                        (J3100) */
-#define DIK_NEXTTRACK       0x99    /* Next Track */
+#define DIK_CIRCUMFLEX                   0x90    /* (Japanese keyboard)                                      */
+#define DIK_AT                                        0x91    /*                                                            (NEC PC98) */
+#define DIK_COLON                        0x92    /*                                                            (NEC PC98) */
+#define DIK_UNDERLINE                    0x93    /*                                                            (NEC PC98) */
+#define DIK_KANJI                        0x94    /* (Japanese keyboard)                                      */
+#define DIK_STOP                                      0x95    /*                                                            (NEC PC98) */
+#define DIK_AX                                        0x96    /*                                                            (Japan AX) */
+#define DIK_UNLABELED                    0x97    /*                                                                            (J3100) */
+#define DIK_NEXTTRACK                    0x99    /* Next Track */
 #define DIK_NUMPADENTER     0x9C    /* Enter on numeric keypad */
-#define DIK_RCONTROL        0x9D
+#define DIK_RCONTROL                     0x9D
 #define DIK_MUTE	    0xA0    /* Mute */
-#define DIK_CALCULATOR      0xA1    /* Calculator */
-#define DIK_PLAYPAUSE       0xA2    /* Play / Pause */
-#define DIK_MEDIASTOP       0xA4    /* Media Stop */
-#define DIK_VOLUMEDOWN      0xAE    /* Volume - */
-#define DIK_VOLUMEUP        0xB0    /* Volume + */
-#define DIK_WEBHOME         0xB2    /* Web home */
+#define DIK_CALCULATOR                   0xA1    /* Calculator */
+#define DIK_PLAYPAUSE                    0xA2    /* Play / Pause */
+#define DIK_MEDIASTOP                    0xA4    /* Media Stop */
+#define DIK_VOLUMEDOWN                   0xAE    /* Volume - */
+#define DIK_VOLUMEUP                     0xB0    /* Volume + */
+#define DIK_WEBHOME                      0xB2    /* Web home */
 #define DIK_NUMPADCOMMA     0xB3    /* , on numeric keypad (NEC PC98) */
-#define DIK_DIVIDE          0xB5    /* / on numeric keypad */
-#define DIK_SYSRQ           0xB7
-#define DIK_RMENU           0xB8    /* right Alt */
-#define DIK_PAUSE           0xC5    /* Pause */
-#define DIK_HOME            0xC7    /* Home on arrow keypad */
-#define DIK_UP              0xC8    /* UpArrow on arrow keypad */
-#define DIK_PRIOR           0xC9    /* PgUp on arrow keypad */
-#define DIK_LEFT            0xCB    /* LeftArrow on arrow keypad */
-#define DIK_RIGHT           0xCD    /* RightArrow on arrow keypad */
-#define DIK_END             0xCF    /* End on arrow keypad */
-#define DIK_DOWN            0xD0    /* DownArrow on arrow keypad */
-#define DIK_NEXT            0xD1    /* PgDn on arrow keypad */
-#define DIK_INSERT          0xD2    /* Insert on arrow keypad */
-#define DIK_DELETE          0xD3    /* Delete on arrow keypad */
-#define DIK_LWIN            0xDB    /* Left Windows key */
-#define DIK_RWIN            0xDC    /* Right Windows key */
-#define DIK_APPS            0xDD    /* AppMenu key */
-#define DIK_POWER           0xDE
-#define DIK_SLEEP           0xDF
-#define DIK_WAKE            0xE3    /* System Wake */
-#define DIK_WEBSEARCH       0xE5    /* Web Search */
+#define DIK_DIVIDE                       0xB5    /* / on numeric keypad */
+#define DIK_SYSRQ                        0xB7
+#define DIK_RMENU                        0xB8    /* right Alt */
+#define DIK_PAUSE                        0xC5    /* Pause */
+#define DIK_HOME                                      0xC7    /* Home on arrow keypad */
+#define DIK_UP                                        0xC8    /* UpArrow on arrow keypad */
+#define DIK_PRIOR                        0xC9    /* PgUp on arrow keypad */
+#define DIK_LEFT                                      0xCB    /* LeftArrow on arrow keypad */
+#define DIK_RIGHT                        0xCD    /* RightArrow on arrow keypad */
+#define DIK_END                                       0xCF    /* End on arrow keypad */
+#define DIK_DOWN                                      0xD0    /* DownArrow on arrow keypad */
+#define DIK_NEXT                                      0xD1    /* PgDn on arrow keypad */
+#define DIK_INSERT                       0xD2    /* Insert on arrow keypad */
+#define DIK_DELETE                       0xD3    /* Delete on arrow keypad */
+#define DIK_LWIN                                      0xDB    /* Left Windows key */
+#define DIK_RWIN                                      0xDC    /* Right Windows key */
+#define DIK_APPS                                      0xDD    /* AppMenu key */
+#define DIK_POWER                        0xDE
+#define DIK_SLEEP                        0xDF
+#define DIK_WAKE                                      0xE3    /* System Wake */
+#define DIK_WEBSEARCH                    0xE5    /* Web Search */
 #define DIK_WEBFAVORITES    0xE6    /* Web Favorites */
-#define DIK_WEBREFRESH      0xE7    /* Web Refresh */
-#define DIK_WEBSTOP         0xE8    /* Web Stop */
-#define DIK_WEBFORWARD      0xE9    /* Web Forward */
-#define DIK_WEBBACK         0xEA    /* Web Back */
-#define DIK_MYCOMPUTER      0xEB    /* My Computer */
-#define DIK_MAIL            0xEC    /* Mail */
+#define DIK_WEBREFRESH                   0xE7    /* Web Refresh */
+#define DIK_WEBSTOP                      0xE8    /* Web Stop */
+#define DIK_WEBFORWARD                   0xE9    /* Web Forward */
+#define DIK_WEBBACK                      0xEA    /* Web Back */
+#define DIK_MYCOMPUTER                   0xEB    /* My Computer */
+#define DIK_MAIL                                      0xEC    /* Mail */
 #define DIK_MEDIASELECT     0xED    /* Media Select */
 
-#define DIK_BACKSPACE       DIK_BACK            /* backspace */
-#define DIK_NUMPADSTAR      DIK_MULTIPLY        /* * on numeric keypad */
-#define DIK_LALT            DIK_LMENU           /* left Alt */
-#define DIK_CAPSLOCK        DIK_CAPITAL         /* CapsLock */
-#define DIK_NUMPADMINUS     DIK_SUBTRACT        /* - on numeric keypad */
-#define DIK_NUMPADPLUS      DIK_ADD             /* + on numeric keypad */
-#define DIK_NUMPADPERIOD    DIK_DECIMAL         /* . on numeric keypad */
-#define DIK_NUMPADSLASH     DIK_DIVIDE          /* / on numeric keypad */
-#define DIK_RALT            DIK_RMENU           /* right Alt */
-#define DIK_UPARROW         DIK_UP              /* UpArrow on arrow keypad */
-#define DIK_PGUP            DIK_PRIOR           /* PgUp on arrow keypad */
-#define DIK_LEFTARROW       DIK_LEFT            /* LeftArrow on arrow keypad */
-#define DIK_RIGHTARROW      DIK_RIGHT           /* RightArrow on arrow keypad */
-#define DIK_DOWNARROW       DIK_DOWN            /* DownArrow on arrow keypad */
-#define DIK_PGDN            DIK_NEXT            /* PgDn on arrow keypad */
+#define DIK_BACKSPACE                    DIK_BACK                                      /* backspace */
+#define DIK_NUMPADSTAR                   DIK_MULTIPLY                     /* * on numeric keypad */
+#define DIK_LALT                                      DIK_LMENU                        /* left Alt */
+#define DIK_CAPSLOCK                     DIK_CAPITAL                      /* CapsLock */
+#define DIK_NUMPADMINUS     DIK_SUBTRACT                     /* - on numeric keypad */
+#define DIK_NUMPADPLUS                   DIK_ADD                                       /* + on numeric keypad */
+#define DIK_NUMPADPERIOD    DIK_DECIMAL                      /* . on numeric keypad */
+#define DIK_NUMPADSLASH     DIK_DIVIDE                       /* / on numeric keypad */
+#define DIK_RALT                                      DIK_RMENU                        /* right Alt */
+#define DIK_UPARROW                      DIK_UP                                        /* UpArrow on arrow keypad */
+#define DIK_PGUP                                      DIK_PRIOR                        /* PgUp on arrow keypad */
+#define DIK_LEFTARROW                    DIK_LEFT                                      /* LeftArrow on arrow keypad */
+#define DIK_RIGHTARROW                   DIK_RIGHT                        /* RightArrow on arrow keypad */
+#define DIK_DOWNARROW                    DIK_DOWN                                      /* DownArrow on arrow keypad */
+#define DIK_PGDN                                      DIK_NEXT                                      /* PgDn on arrow keypad */
 
 #define DIDFT_ALL		0x00000000
 #define DIDFT_RELAXIS		0x00000001
@@ -811,8 +811,8 @@ typedef struct DIPROPGUIDANDPATH {
 typedef const DIPROPGUIDANDPATH *LPCDIPROPGUIDANDPATH;
 
 typedef struct DIPROPSTRING {
-        DIPROPHEADER diph;
-        WCHAR        wsz[MAX_PATH];
+                     DIPROPHEADER diph;
+                     WCHAR                     wsz[MAX_PATH];
 } DIPROPSTRING, *LPDIPROPSTRING;
 typedef const DIPROPSTRING *LPCDIPROPSTRING;
 #endif /* DI5a */
@@ -942,29 +942,29 @@ typedef struct DIDEVCAPS {
 #define DISCL_NONEXCLUSIVE	0x00000002
 #define DISCL_FOREGROUND	0x00000004
 #define DISCL_BACKGROUND	0x00000008
-#define DISCL_NOWINKEY          0x00000010
+#define DISCL_NOWINKEY                       0x00000010
 
 #if (DIRECTINPUT_VERSION >= 0x0500)
 /* Device FF flags */
-#define DISFFC_RESET            0x00000001
-#define DISFFC_STOPALL          0x00000002
-#define DISFFC_PAUSE            0x00000004
-#define DISFFC_CONTINUE         0x00000008
+#define DISFFC_RESET                                      0x00000001
+#define DISFFC_STOPALL                       0x00000002
+#define DISFFC_PAUSE                                      0x00000004
+#define DISFFC_CONTINUE                      0x00000008
 #define DISFFC_SETACTUATORSON   0x00000010
 #define DISFFC_SETACTUATORSOFF  0x00000020
 
-#define DIGFFS_EMPTY            0x00000001
-#define DIGFFS_STOPPED          0x00000002
-#define DIGFFS_PAUSED           0x00000004
-#define DIGFFS_ACTUATORSON      0x00000010
+#define DIGFFS_EMPTY                                      0x00000001
+#define DIGFFS_STOPPED                       0x00000002
+#define DIGFFS_PAUSED                        0x00000004
+#define DIGFFS_ACTUATORSON                   0x00000010
 #define DIGFFS_ACTUATORSOFF     0x00000020
-#define DIGFFS_POWERON          0x00000040
-#define DIGFFS_POWEROFF         0x00000080
+#define DIGFFS_POWERON                       0x00000040
+#define DIGFFS_POWEROFF                      0x00000080
 #define DIGFFS_SAFETYSWITCHON   0x00000100
 #define DIGFFS_SAFETYSWITCHOFF  0x00000200
 #define DIGFFS_USERFFSWITCHON   0x00000400
 #define DIGFFS_USERFFSWITCHOFF  0x00000800
-#define DIGFFS_DEVICELOST       0x80000000
+#define DIGFFS_DEVICELOST                    0x80000000
 
 /* Effect flags */
 #define DIEFT_ALL		0x00000000
@@ -984,38 +984,38 @@ typedef struct DIDEVCAPS {
 #define DIEFT_STARTDELAY	0x00008000
 #define DIEFT_GETTYPE(n)	LOBYTE(n)
 
-#define DIEFF_OBJECTIDS         0x00000001
+#define DIEFF_OBJECTIDS                      0x00000001
 #define DIEFF_OBJECTOFFSETS     0x00000002
-#define DIEFF_CARTESIAN         0x00000010
-#define DIEFF_POLAR             0x00000020
-#define DIEFF_SPHERICAL         0x00000040
+#define DIEFF_CARTESIAN                      0x00000010
+#define DIEFF_POLAR                                       0x00000020
+#define DIEFF_SPHERICAL                      0x00000040
 
-#define DIEP_DURATION           0x00000001
-#define DIEP_SAMPLEPERIOD       0x00000002
-#define DIEP_GAIN               0x00000004
-#define DIEP_TRIGGERBUTTON      0x00000008
+#define DIEP_DURATION                        0x00000001
+#define DIEP_SAMPLEPERIOD                    0x00000002
+#define DIEP_GAIN                                         0x00000004
+#define DIEP_TRIGGERBUTTON                   0x00000008
 #define DIEP_TRIGGERREPEATINTERVAL 0x00000010
-#define DIEP_AXES               0x00000020
-#define DIEP_DIRECTION          0x00000040
-#define DIEP_ENVELOPE           0x00000080
+#define DIEP_AXES                                         0x00000020
+#define DIEP_DIRECTION                       0x00000040
+#define DIEP_ENVELOPE                        0x00000080
 #define DIEP_TYPESPECIFICPARAMS 0x00000100
 #if(DIRECTINPUT_VERSION >= 0x0600)
-#define DIEP_STARTDELAY         0x00000200
-#define DIEP_ALLPARAMS_DX5      0x000001FF
-#define DIEP_ALLPARAMS          0x000003FF
+#define DIEP_STARTDELAY                      0x00000200
+#define DIEP_ALLPARAMS_DX5                   0x000001FF
+#define DIEP_ALLPARAMS                       0x000003FF
 #else
-#define DIEP_ALLPARAMS          0x000001FF
+#define DIEP_ALLPARAMS                       0x000001FF
 #endif /* DIRECTINPUT_VERSION >= 0x0600 */
-#define DIEP_START              0x20000000
-#define DIEP_NORESTART          0x40000000
-#define DIEP_NODOWNLOAD         0x80000000
-#define DIEB_NOTRIGGER          0xFFFFFFFF
+#define DIEP_START                                        0x20000000
+#define DIEP_NORESTART                       0x40000000
+#define DIEP_NODOWNLOAD                      0x80000000
+#define DIEB_NOTRIGGER                       0xFFFFFFFF
 
-#define DIES_SOLO               0x00000001
-#define DIES_NODOWNLOAD         0x80000000
+#define DIES_SOLO                                         0x00000001
+#define DIES_NODOWNLOAD                      0x80000000
 
-#define DIEGES_PLAYING          0x00000001
-#define DIEGES_EMULATED         0x00000002
+#define DIEGES_PLAYING                       0x00000001
+#define DIEGES_EMULATED                      0x00000002
 
 #define DI_DEGREES		100
 #define DI_FFNOMINALMAX		10000
@@ -1194,9 +1194,9 @@ typedef struct DIJOYSTATE2 {
 #define DIJOFS_RY		FIELD_OFFSET(DIJOYSTATE, lRy)
 #define DIJOFS_RZ		FIELD_OFFSET(DIJOYSTATE, lRz)
 #define DIJOFS_SLIDER(n)	(FIELD_OFFSET(DIJOYSTATE, rglSlider) + \
-                                                        (n) * sizeof(LONG))
+                                                                                                                                                                             (n) * sizeof(LONG))
 #define DIJOFS_POV(n)		(FIELD_OFFSET(DIJOYSTATE, rgdwPOV) + \
-                                                        (n) * sizeof(DWORD))
+                                                                                                                                                                             (n) * sizeof(DWORD))
 #define DIJOFS_BUTTON(n)	(FIELD_OFFSET(DIJOYSTATE, rgbButtons) + (n))
 #define DIJOFS_BUTTON0		DIJOFS_BUTTON(0)
 #define DIJOFS_BUTTON1		DIJOFS_BUTTON(1)
@@ -1235,10 +1235,10 @@ typedef struct DIJOYSTATE2 {
 /* DInput 7 structures, types */
 #if(DIRECTINPUT_VERSION >= 0x0700)
 typedef struct DIFILEEFFECT {
-  DWORD       dwSize;
-  GUID        GuidEffect;
+  DWORD                    dwSize;
+  GUID                     GuidEffect;
   LPCDIEFFECT lpDiEffect;
-  CHAR        szFriendlyName[MAX_PATH];
+  CHAR                     szFriendlyName[MAX_PATH];
 } DIFILEEFFECT, *LPDIFILEEFFECT;
 
 typedef const DIFILEEFFECT *LPCDIFILEEFFECT;
@@ -1497,35 +1497,35 @@ DECLARE_INTERFACE_(IDirectInputEffect,IUnknown)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInputEffect_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInputEffect_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInputEffect_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInputEffect_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInputEffect_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInputEffect methods ***/
 #define IDirectInputEffect_Initialize(p,a,b,c)    (p)->lpVtbl->Initialize(p,a,b,c)
 #define IDirectInputEffect_GetEffectGuid(p,a)     (p)->lpVtbl->GetEffectGuid(p,a)
 #define IDirectInputEffect_GetParameters(p,a,b)   (p)->lpVtbl->GetParameters(p,a,b)
 #define IDirectInputEffect_SetParameters(p,a,b)   (p)->lpVtbl->SetParameters(p,a,b)
-#define IDirectInputEffect_Start(p,a,b)           (p)->lpVtbl->Start(p,a,b)
-#define IDirectInputEffect_Stop(p)                (p)->lpVtbl->Stop(p)
+#define IDirectInputEffect_Start(p,a,b)                        (p)->lpVtbl->Start(p,a,b)
+#define IDirectInputEffect_Stop(p)                                          (p)->lpVtbl->Stop(p)
 #define IDirectInputEffect_GetEffectStatus(p,a)   (p)->lpVtbl->GetEffectStatus(p,a)
-#define IDirectInputEffect_Download(p)            (p)->lpVtbl->Download(p)
-#define IDirectInputEffect_Unload(p)              (p)->lpVtbl->Unload(p)
-#define IDirectInputEffect_Escape(p,a)            (p)->lpVtbl->Escape(p,a)
+#define IDirectInputEffect_Download(p)                                      (p)->lpVtbl->Download(p)
+#define IDirectInputEffect_Unload(p)                                        (p)->lpVtbl->Unload(p)
+#define IDirectInputEffect_Escape(p,a)                                      (p)->lpVtbl->Escape(p,a)
 #else
 /*** IUnknown methods ***/
 #define IDirectInputEffect_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInputEffect_AddRef(p)             (p)->AddRef()
-#define IDirectInputEffect_Release(p)            (p)->Release()
+#define IDirectInputEffect_AddRef(p)                                       (p)->AddRef()
+#define IDirectInputEffect_Release(p)                                      (p)->Release()
 /*** IDirectInputEffect methods ***/
 #define IDirectInputEffect_Initialize(p,a,b,c)    (p)->Initialize(a,b,c)
 #define IDirectInputEffect_GetEffectGuid(p,a)     (p)->GetEffectGuid(a)
 #define IDirectInputEffect_GetParameters(p,a,b)   (p)->GetParameters(a,b)
 #define IDirectInputEffect_SetParameters(p,a,b)   (p)->SetParameters(a,b)
-#define IDirectInputEffect_Start(p,a,b)           (p)->Start(a,b)
-#define IDirectInputEffect_Stop(p)                (p)->Stop()
+#define IDirectInputEffect_Start(p,a,b)                        (p)->Start(a,b)
+#define IDirectInputEffect_Stop(p)                                          (p)->Stop()
 #define IDirectInputEffect_GetEffectStatus(p,a)   (p)->GetEffectStatus(a)
-#define IDirectInputEffect_Download(p)            (p)->Download()
-#define IDirectInputEffect_Unload(p)              (p)->Unload()
-#define IDirectInputEffect_Escape(p,a)            (p)->Escape(a)
+#define IDirectInputEffect_Download(p)                                      (p)->Download()
+#define IDirectInputEffect_Unload(p)                                        (p)->Unload()
+#define IDirectInputEffect_Escape(p,a)                                      (p)->Escape(a)
 #endif
 
 #endif /* DI5 */
@@ -1592,45 +1592,45 @@ DECLARE_INTERFACE_(IDirectInputDeviceW,IUnknown)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInputDevice_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInputDevice_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInputDevice_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInputDevice_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInputDevice_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInputDevice methods ***/
-#define IDirectInputDevice_GetCapabilities(p,a)       (p)->lpVtbl->GetCapabilities(p,a)
-#define IDirectInputDevice_EnumObjects(p,a,b,c)       (p)->lpVtbl->EnumObjects(p,a,b,c)
-#define IDirectInputDevice_GetProperty(p,a,b)         (p)->lpVtbl->GetProperty(p,a,b)
-#define IDirectInputDevice_SetProperty(p,a,b)         (p)->lpVtbl->SetProperty(p,a,b)
-#define IDirectInputDevice_Acquire(p)                 (p)->lpVtbl->Acquire(p)
-#define IDirectInputDevice_Unacquire(p)               (p)->lpVtbl->Unacquire(p)
-#define IDirectInputDevice_GetDeviceState(p,a,b)      (p)->lpVtbl->GetDeviceState(p,a,b)
+#define IDirectInputDevice_GetCapabilities(p,a)                    (p)->lpVtbl->GetCapabilities(p,a)
+#define IDirectInputDevice_EnumObjects(p,a,b,c)                    (p)->lpVtbl->EnumObjects(p,a,b,c)
+#define IDirectInputDevice_GetProperty(p,a,b)                      (p)->lpVtbl->GetProperty(p,a,b)
+#define IDirectInputDevice_SetProperty(p,a,b)                      (p)->lpVtbl->SetProperty(p,a,b)
+#define IDirectInputDevice_Acquire(p)                                           (p)->lpVtbl->Acquire(p)
+#define IDirectInputDevice_Unacquire(p)                                         (p)->lpVtbl->Unacquire(p)
+#define IDirectInputDevice_GetDeviceState(p,a,b)                   (p)->lpVtbl->GetDeviceState(p,a,b)
 #define IDirectInputDevice_GetDeviceData(p,a,b,c,d)   (p)->lpVtbl->GetDeviceData(p,a,b,c,d)
-#define IDirectInputDevice_SetDataFormat(p,a)         (p)->lpVtbl->SetDataFormat(p,a)
+#define IDirectInputDevice_SetDataFormat(p,a)                      (p)->lpVtbl->SetDataFormat(p,a)
 #define IDirectInputDevice_SetEventNotification(p,a)  (p)->lpVtbl->SetEventNotification(p,a)
 #define IDirectInputDevice_SetCooperativeLevel(p,a,b) (p)->lpVtbl->SetCooperativeLevel(p,a,b)
 #define IDirectInputDevice_GetObjectInfo(p,a,b,c)     (p)->lpVtbl->GetObjectInfo(p,a,b,c)
-#define IDirectInputDevice_GetDeviceInfo(p,a)         (p)->lpVtbl->GetDeviceInfo(p,a)
+#define IDirectInputDevice_GetDeviceInfo(p,a)                      (p)->lpVtbl->GetDeviceInfo(p,a)
 #define IDirectInputDevice_RunControlPanel(p,a,b)     (p)->lpVtbl->RunControlPanel(p,a,b)
-#define IDirectInputDevice_Initialize(p,a,b,c)        (p)->lpVtbl->Initialize(p,a,b,c)
+#define IDirectInputDevice_Initialize(p,a,b,c)                     (p)->lpVtbl->Initialize(p,a,b,c)
 #else
 /*** IUnknown methods ***/
 #define IDirectInputDevice_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInputDevice_AddRef(p)             (p)->AddRef()
-#define IDirectInputDevice_Release(p)            (p)->Release()
+#define IDirectInputDevice_AddRef(p)                                       (p)->AddRef()
+#define IDirectInputDevice_Release(p)                                      (p)->Release()
 /*** IDirectInputDevice methods ***/
-#define IDirectInputDevice_GetCapabilities(p,a)       (p)->GetCapabilities(a)
-#define IDirectInputDevice_EnumObjects(p,a,b,c)       (p)->EnumObjects(a,b,c)
-#define IDirectInputDevice_GetProperty(p,a,b)         (p)->GetProperty(a,b)
-#define IDirectInputDevice_SetProperty(p,a,b)         (p)->SetProperty(a,b)
-#define IDirectInputDevice_Acquire(p)                 (p)->Acquire()
-#define IDirectInputDevice_Unacquire(p)               (p)->Unacquire()
-#define IDirectInputDevice_GetDeviceState(p,a,b)      (p)->GetDeviceState(a,b)
+#define IDirectInputDevice_GetCapabilities(p,a)                    (p)->GetCapabilities(a)
+#define IDirectInputDevice_EnumObjects(p,a,b,c)                    (p)->EnumObjects(a,b,c)
+#define IDirectInputDevice_GetProperty(p,a,b)                      (p)->GetProperty(a,b)
+#define IDirectInputDevice_SetProperty(p,a,b)                      (p)->SetProperty(a,b)
+#define IDirectInputDevice_Acquire(p)                                           (p)->Acquire()
+#define IDirectInputDevice_Unacquire(p)                                         (p)->Unacquire()
+#define IDirectInputDevice_GetDeviceState(p,a,b)                   (p)->GetDeviceState(a,b)
 #define IDirectInputDevice_GetDeviceData(p,a,b,c,d)   (p)->GetDeviceData(a,b,c,d)
-#define IDirectInputDevice_SetDataFormat(p,a)         (p)->SetDataFormat(a)
+#define IDirectInputDevice_SetDataFormat(p,a)                      (p)->SetDataFormat(a)
 #define IDirectInputDevice_SetEventNotification(p,a)  (p)->SetEventNotification(a)
 #define IDirectInputDevice_SetCooperativeLevel(p,a,b) (p)->SetCooperativeLevel(a,b)
 #define IDirectInputDevice_GetObjectInfo(p,a,b,c)     (p)->GetObjectInfo(a,b,c)
-#define IDirectInputDevice_GetDeviceInfo(p,a)         (p)->GetDeviceInfo(a)
+#define IDirectInputDevice_GetDeviceInfo(p,a)                      (p)->GetDeviceInfo(a)
 #define IDirectInputDevice_RunControlPanel(p,a,b)     (p)->RunControlPanel(a,b)
-#define IDirectInputDevice_Initialize(p,a,b,c)        (p)->Initialize(a,b,c)
+#define IDirectInputDevice_Initialize(p,a,b,c)                     (p)->Initialize(a,b,c)
 #endif
 
 
@@ -1716,65 +1716,65 @@ DECLARE_INTERFACE_(IDirectInputDevice2W,IDirectInputDeviceW)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInputDevice2_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInputDevice2_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInputDevice2_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInputDevice2_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInputDevice2_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInputDevice methods ***/
-#define IDirectInputDevice2_GetCapabilities(p,a)       (p)->lpVtbl->GetCapabilities(p,a)
-#define IDirectInputDevice2_EnumObjects(p,a,b,c)       (p)->lpVtbl->EnumObjects(p,a,b,c)
-#define IDirectInputDevice2_GetProperty(p,a,b)         (p)->lpVtbl->GetProperty(p,a,b)
-#define IDirectInputDevice2_SetProperty(p,a,b)         (p)->lpVtbl->SetProperty(p,a,b)
-#define IDirectInputDevice2_Acquire(p)                 (p)->lpVtbl->Acquire(p)
-#define IDirectInputDevice2_Unacquire(p)               (p)->lpVtbl->Unacquire(p)
-#define IDirectInputDevice2_GetDeviceState(p,a,b)      (p)->lpVtbl->GetDeviceState(p,a,b)
+#define IDirectInputDevice2_GetCapabilities(p,a)                    (p)->lpVtbl->GetCapabilities(p,a)
+#define IDirectInputDevice2_EnumObjects(p,a,b,c)                    (p)->lpVtbl->EnumObjects(p,a,b,c)
+#define IDirectInputDevice2_GetProperty(p,a,b)                      (p)->lpVtbl->GetProperty(p,a,b)
+#define IDirectInputDevice2_SetProperty(p,a,b)                      (p)->lpVtbl->SetProperty(p,a,b)
+#define IDirectInputDevice2_Acquire(p)                                           (p)->lpVtbl->Acquire(p)
+#define IDirectInputDevice2_Unacquire(p)                                         (p)->lpVtbl->Unacquire(p)
+#define IDirectInputDevice2_GetDeviceState(p,a,b)                   (p)->lpVtbl->GetDeviceState(p,a,b)
 #define IDirectInputDevice2_GetDeviceData(p,a,b,c,d)   (p)->lpVtbl->GetDeviceData(p,a,b,c,d)
-#define IDirectInputDevice2_SetDataFormat(p,a)         (p)->lpVtbl->SetDataFormat(p,a)
+#define IDirectInputDevice2_SetDataFormat(p,a)                      (p)->lpVtbl->SetDataFormat(p,a)
 #define IDirectInputDevice2_SetEventNotification(p,a)  (p)->lpVtbl->SetEventNotification(p,a)
 #define IDirectInputDevice2_SetCooperativeLevel(p,a,b) (p)->lpVtbl->SetCooperativeLevel(p,a,b)
 #define IDirectInputDevice2_GetObjectInfo(p,a,b,c)     (p)->lpVtbl->GetObjectInfo(p,a,b,c)
-#define IDirectInputDevice2_GetDeviceInfo(p,a)         (p)->lpVtbl->GetDeviceInfo(p,a)
+#define IDirectInputDevice2_GetDeviceInfo(p,a)                      (p)->lpVtbl->GetDeviceInfo(p,a)
 #define IDirectInputDevice2_RunControlPanel(p,a,b)     (p)->lpVtbl->RunControlPanel(p,a,b)
-#define IDirectInputDevice2_Initialize(p,a,b,c)        (p)->lpVtbl->Initialize(p,a,b,c)
+#define IDirectInputDevice2_Initialize(p,a,b,c)                     (p)->lpVtbl->Initialize(p,a,b,c)
 /*** IDirectInputDevice2 methods ***/
-#define IDirectInputDevice2_CreateEffect(p,a,b,c,d)           (p)->lpVtbl->CreateEffect(p,a,b,c,d)
-#define IDirectInputDevice2_EnumEffects(p,a,b,c)              (p)->lpVtbl->EnumEffects(p,a,b,c)
-#define IDirectInputDevice2_GetEffectInfo(p,a,b)              (p)->lpVtbl->GetEffectInfo(p,a,b)
-#define IDirectInputDevice2_GetForceFeedbackState(p,a)        (p)->lpVtbl->GetForceFeedbackState(p,a)
+#define IDirectInputDevice2_CreateEffect(p,a,b,c,d)                        (p)->lpVtbl->CreateEffect(p,a,b,c,d)
+#define IDirectInputDevice2_EnumEffects(p,a,b,c)                                        (p)->lpVtbl->EnumEffects(p,a,b,c)
+#define IDirectInputDevice2_GetEffectInfo(p,a,b)                                        (p)->lpVtbl->GetEffectInfo(p,a,b)
+#define IDirectInputDevice2_GetForceFeedbackState(p,a)                     (p)->lpVtbl->GetForceFeedbackState(p,a)
 #define IDirectInputDevice2_SendForceFeedbackCommand(p,a)     (p)->lpVtbl->SendForceFeedbackCommand(p,a)
 #define IDirectInputDevice2_EnumCreatedEffectObjects(p,a,b,c) (p)->lpVtbl->EnumCreatedEffectObjects(p,a,b,c)
-#define IDirectInputDevice2_Escape(p,a)                       (p)->lpVtbl->Escape(p,a)
-#define IDirectInputDevice2_Poll(p)                           (p)->lpVtbl->Poll(p)
-#define IDirectInputDevice2_SendDeviceData(p,a,b,c,d)         (p)->lpVtbl->SendDeviceData(p,a,b,c,d)
+#define IDirectInputDevice2_Escape(p,a)                                                              (p)->lpVtbl->Escape(p,a)
+#define IDirectInputDevice2_Poll(p)                                                                               (p)->lpVtbl->Poll(p)
+#define IDirectInputDevice2_SendDeviceData(p,a,b,c,d)                      (p)->lpVtbl->SendDeviceData(p,a,b,c,d)
 #else
 /*** IUnknown methods ***/
 #define IDirectInputDevice2_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInputDevice2_AddRef(p)             (p)->AddRef()
-#define IDirectInputDevice2_Release(p)            (p)->Release()
+#define IDirectInputDevice2_AddRef(p)                                       (p)->AddRef()
+#define IDirectInputDevice2_Release(p)                                      (p)->Release()
 /*** IDirectInputDevice methods ***/
-#define IDirectInputDevice2_GetCapabilities(p,a)       (p)->GetCapabilities(a)
-#define IDirectInputDevice2_EnumObjects(p,a,b,c)       (p)->EnumObjects(a,b,c)
-#define IDirectInputDevice2_GetProperty(p,a,b)         (p)->GetProperty(a,b)
-#define IDirectInputDevice2_SetProperty(p,a,b)         (p)->SetProperty(a,b)
-#define IDirectInputDevice2_Acquire(p)                 (p)->Acquire()
-#define IDirectInputDevice2_Unacquire(p)               (p)->Unacquire()
-#define IDirectInputDevice2_GetDeviceState(p,a,b)      (p)->GetDeviceState(a,b)
+#define IDirectInputDevice2_GetCapabilities(p,a)                    (p)->GetCapabilities(a)
+#define IDirectInputDevice2_EnumObjects(p,a,b,c)                    (p)->EnumObjects(a,b,c)
+#define IDirectInputDevice2_GetProperty(p,a,b)                      (p)->GetProperty(a,b)
+#define IDirectInputDevice2_SetProperty(p,a,b)                      (p)->SetProperty(a,b)
+#define IDirectInputDevice2_Acquire(p)                                           (p)->Acquire()
+#define IDirectInputDevice2_Unacquire(p)                                         (p)->Unacquire()
+#define IDirectInputDevice2_GetDeviceState(p,a,b)                   (p)->GetDeviceState(a,b)
 #define IDirectInputDevice2_GetDeviceData(p,a,b,c,d)   (p)->GetDeviceData(a,b,c,d)
-#define IDirectInputDevice2_SetDataFormat(p,a)         (p)->SetDataFormat(a)
+#define IDirectInputDevice2_SetDataFormat(p,a)                      (p)->SetDataFormat(a)
 #define IDirectInputDevice2_SetEventNotification(p,a)  (p)->SetEventNotification(a)
 #define IDirectInputDevice2_SetCooperativeLevel(p,a,b) (p)->SetCooperativeLevel(a,b)
 #define IDirectInputDevice2_GetObjectInfo(p,a,b,c)     (p)->GetObjectInfo(a,b,c)
-#define IDirectInputDevice2_GetDeviceInfo(p,a)         (p)->GetDeviceInfo(a)
+#define IDirectInputDevice2_GetDeviceInfo(p,a)                      (p)->GetDeviceInfo(a)
 #define IDirectInputDevice2_RunControlPanel(p,a,b)     (p)->RunControlPanel(a,b)
-#define IDirectInputDevice2_Initialize(p,a,b,c)        (p)->Initialize(a,b,c)
+#define IDirectInputDevice2_Initialize(p,a,b,c)                     (p)->Initialize(a,b,c)
 /*** IDirectInputDevice2 methods ***/
-#define IDirectInputDevice2_CreateEffect(p,a,b,c,d)           (p)->CreateEffect(a,b,c,d)
-#define IDirectInputDevice2_EnumEffects(p,a,b,c)              (p)->EnumEffects(a,b,c)
-#define IDirectInputDevice2_GetEffectInfo(p,a,b)              (p)->GetEffectInfo(a,b)
-#define IDirectInputDevice2_GetForceFeedbackState(p,a)        (p)->GetForceFeedbackState(a)
+#define IDirectInputDevice2_CreateEffect(p,a,b,c,d)                        (p)->CreateEffect(a,b,c,d)
+#define IDirectInputDevice2_EnumEffects(p,a,b,c)                                        (p)->EnumEffects(a,b,c)
+#define IDirectInputDevice2_GetEffectInfo(p,a,b)                                        (p)->GetEffectInfo(a,b)
+#define IDirectInputDevice2_GetForceFeedbackState(p,a)                     (p)->GetForceFeedbackState(a)
 #define IDirectInputDevice2_SendForceFeedbackCommand(p,a)     (p)->SendForceFeedbackCommand(a)
 #define IDirectInputDevice2_EnumCreatedEffectObjects(p,a,b,c) (p)->EnumCreatedEffectObjects(a,b,c)
-#define IDirectInputDevice2_Escape(p,a)                       (p)->Escape(a)
-#define IDirectInputDevice2_Poll(p)                           (p)->Poll()
-#define IDirectInputDevice2_SendDeviceData(p,a,b,c,d)         (p)->SendDeviceData(a,b,c,d)
+#define IDirectInputDevice2_Escape(p,a)                                                              (p)->Escape(a)
+#define IDirectInputDevice2_Poll(p)                                                                               (p)->Poll()
+#define IDirectInputDevice2_SendDeviceData(p,a,b,c,d)                      (p)->SendDeviceData(a,b,c,d)
 #endif
 #endif /* DI5 */
 
@@ -1866,68 +1866,68 @@ DECLARE_INTERFACE_(IDirectInputDevice7W,IDirectInputDevice2W)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInputDevice7_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInputDevice7_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInputDevice7_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInputDevice7_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInputDevice7_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInputDevice methods ***/
-#define IDirectInputDevice7_GetCapabilities(p,a)       (p)->lpVtbl->GetCapabilities(p,a)
-#define IDirectInputDevice7_EnumObjects(p,a,b,c)       (p)->lpVtbl->EnumObjects(p,a,b,c)
-#define IDirectInputDevice7_GetProperty(p,a,b)         (p)->lpVtbl->GetProperty(p,a,b)
-#define IDirectInputDevice7_SetProperty(p,a,b)         (p)->lpVtbl->SetProperty(p,a,b)
-#define IDirectInputDevice7_Acquire(p)                 (p)->lpVtbl->Acquire(p)
-#define IDirectInputDevice7_Unacquire(p)               (p)->lpVtbl->Unacquire(p)
-#define IDirectInputDevice7_GetDeviceState(p,a,b)      (p)->lpVtbl->GetDeviceState(p,a,b)
+#define IDirectInputDevice7_GetCapabilities(p,a)                    (p)->lpVtbl->GetCapabilities(p,a)
+#define IDirectInputDevice7_EnumObjects(p,a,b,c)                    (p)->lpVtbl->EnumObjects(p,a,b,c)
+#define IDirectInputDevice7_GetProperty(p,a,b)                      (p)->lpVtbl->GetProperty(p,a,b)
+#define IDirectInputDevice7_SetProperty(p,a,b)                      (p)->lpVtbl->SetProperty(p,a,b)
+#define IDirectInputDevice7_Acquire(p)                                           (p)->lpVtbl->Acquire(p)
+#define IDirectInputDevice7_Unacquire(p)                                         (p)->lpVtbl->Unacquire(p)
+#define IDirectInputDevice7_GetDeviceState(p,a,b)                   (p)->lpVtbl->GetDeviceState(p,a,b)
 #define IDirectInputDevice7_GetDeviceData(p,a,b,c,d)   (p)->lpVtbl->GetDeviceData(p,a,b,c,d)
-#define IDirectInputDevice7_SetDataFormat(p,a)         (p)->lpVtbl->SetDataFormat(p,a)
+#define IDirectInputDevice7_SetDataFormat(p,a)                      (p)->lpVtbl->SetDataFormat(p,a)
 #define IDirectInputDevice7_SetEventNotification(p,a)  (p)->lpVtbl->SetEventNotification(p,a)
 #define IDirectInputDevice7_SetCooperativeLevel(p,a,b) (p)->lpVtbl->SetCooperativeLevel(p,a,b)
 #define IDirectInputDevice7_GetObjectInfo(p,a,b,c)     (p)->lpVtbl->GetObjectInfo(p,a,b,c)
-#define IDirectInputDevice7_GetDeviceInfo(p,a)         (p)->lpVtbl->GetDeviceInfo(p,a)
+#define IDirectInputDevice7_GetDeviceInfo(p,a)                      (p)->lpVtbl->GetDeviceInfo(p,a)
 #define IDirectInputDevice7_RunControlPanel(p,a,b)     (p)->lpVtbl->RunControlPanel(p,a,b)
-#define IDirectInputDevice7_Initialize(p,a,b,c)        (p)->lpVtbl->Initialize(p,a,b,c)
+#define IDirectInputDevice7_Initialize(p,a,b,c)                     (p)->lpVtbl->Initialize(p,a,b,c)
 /*** IDirectInputDevice2 methods ***/
-#define IDirectInputDevice7_CreateEffect(p,a,b,c,d)           (p)->lpVtbl->CreateEffect(p,a,b,c,d)
-#define IDirectInputDevice7_EnumEffects(p,a,b,c)              (p)->lpVtbl->EnumEffects(p,a,b,c)
-#define IDirectInputDevice7_GetEffectInfo(p,a,b)              (p)->lpVtbl->GetEffectInfo(p,a,b)
-#define IDirectInputDevice7_GetForceFeedbackState(p,a)        (p)->lpVtbl->GetForceFeedbackState(p,a)
+#define IDirectInputDevice7_CreateEffect(p,a,b,c,d)                        (p)->lpVtbl->CreateEffect(p,a,b,c,d)
+#define IDirectInputDevice7_EnumEffects(p,a,b,c)                                        (p)->lpVtbl->EnumEffects(p,a,b,c)
+#define IDirectInputDevice7_GetEffectInfo(p,a,b)                                        (p)->lpVtbl->GetEffectInfo(p,a,b)
+#define IDirectInputDevice7_GetForceFeedbackState(p,a)                     (p)->lpVtbl->GetForceFeedbackState(p,a)
 #define IDirectInputDevice7_SendForceFeedbackCommand(p,a)     (p)->lpVtbl->SendForceFeedbackCommand(p,a)
 #define IDirectInputDevice7_EnumCreatedEffectObjects(p,a,b,c) (p)->lpVtbl->EnumCreatedEffectObjects(p,a,b,c)
-#define IDirectInputDevice7_Escape(p,a)                       (p)->lpVtbl->Escape(p,a)
-#define IDirectInputDevice7_Poll(p)                           (p)->lpVtbl->Poll(p)
-#define IDirectInputDevice7_SendDeviceData(p,a,b,c,d)         (p)->lpVtbl->SendDeviceData(p,a,b,c,d)
+#define IDirectInputDevice7_Escape(p,a)                                                              (p)->lpVtbl->Escape(p,a)
+#define IDirectInputDevice7_Poll(p)                                                                               (p)->lpVtbl->Poll(p)
+#define IDirectInputDevice7_SendDeviceData(p,a,b,c,d)                      (p)->lpVtbl->SendDeviceData(p,a,b,c,d)
 /*** IDirectInputDevice7 methods ***/
 #define IDirectInputDevice7_EnumEffectsInFile(p,a,b,c,d) (p)->lpVtbl->EnumEffectsInFile(p,a,b,c,d)
 #define IDirectInputDevice7_WriteEffectToFile(p,a,b,c,d) (p)->lpVtbl->WriteEffectToFile(p,a,b,c,d)
 #else
 /*** IUnknown methods ***/
 #define IDirectInputDevice7_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInputDevice7_AddRef(p)             (p)->AddRef()
-#define IDirectInputDevice7_Release(p)            (p)->Release()
+#define IDirectInputDevice7_AddRef(p)                                       (p)->AddRef()
+#define IDirectInputDevice7_Release(p)                                      (p)->Release()
 /*** IDirectInputDevice methods ***/
-#define IDirectInputDevice7_GetCapabilities(p,a)       (p)->GetCapabilities(a)
-#define IDirectInputDevice7_EnumObjects(p,a,b,c)       (p)->EnumObjects(a,b,c)
-#define IDirectInputDevice7_GetProperty(p,a,b)         (p)->GetProperty(a,b)
-#define IDirectInputDevice7_SetProperty(p,a,b)         (p)->SetProperty(a,b)
-#define IDirectInputDevice7_Acquire(p)                 (p)->Acquire()
-#define IDirectInputDevice7_Unacquire(p)               (p)->Unacquire()
-#define IDirectInputDevice7_GetDeviceState(p,a,b)      (p)->GetDeviceState(a,b)
+#define IDirectInputDevice7_GetCapabilities(p,a)                    (p)->GetCapabilities(a)
+#define IDirectInputDevice7_EnumObjects(p,a,b,c)                    (p)->EnumObjects(a,b,c)
+#define IDirectInputDevice7_GetProperty(p,a,b)                      (p)->GetProperty(a,b)
+#define IDirectInputDevice7_SetProperty(p,a,b)                      (p)->SetProperty(a,b)
+#define IDirectInputDevice7_Acquire(p)                                           (p)->Acquire()
+#define IDirectInputDevice7_Unacquire(p)                                         (p)->Unacquire()
+#define IDirectInputDevice7_GetDeviceState(p,a,b)                   (p)->GetDeviceState(a,b)
 #define IDirectInputDevice7_GetDeviceData(p,a,b,c,d)   (p)->GetDeviceData(a,b,c,d)
-#define IDirectInputDevice7_SetDataFormat(p,a)         (p)->SetDataFormat(a)
+#define IDirectInputDevice7_SetDataFormat(p,a)                      (p)->SetDataFormat(a)
 #define IDirectInputDevice7_SetEventNotification(p,a)  (p)->SetEventNotification(a)
 #define IDirectInputDevice7_SetCooperativeLevel(p,a,b) (p)->SetCooperativeLevel(a,b)
 #define IDirectInputDevice7_GetObjectInfo(p,a,b,c)     (p)->GetObjectInfo(a,b,c)
-#define IDirectInputDevice7_GetDeviceInfo(p,a)         (p)->GetDeviceInfo(a)
+#define IDirectInputDevice7_GetDeviceInfo(p,a)                      (p)->GetDeviceInfo(a)
 #define IDirectInputDevice7_RunControlPanel(p,a,b)     (p)->RunControlPanel(a,b)
-#define IDirectInputDevice7_Initialize(p,a,b,c)        (p)->Initialize(a,b,c)
+#define IDirectInputDevice7_Initialize(p,a,b,c)                     (p)->Initialize(a,b,c)
 /*** IDirectInputDevice2 methods ***/
-#define IDirectInputDevice7_CreateEffect(p,a,b,c,d)           (p)->CreateEffect(a,b,c,d)
-#define IDirectInputDevice7_EnumEffects(p,a,b,c)              (p)->EnumEffects(a,b,c)
-#define IDirectInputDevice7_GetEffectInfo(p,a,b)              (p)->GetEffectInfo(a,b)
-#define IDirectInputDevice7_GetForceFeedbackState(p,a)        (p)->GetForceFeedbackState(a)
+#define IDirectInputDevice7_CreateEffect(p,a,b,c,d)                        (p)->CreateEffect(a,b,c,d)
+#define IDirectInputDevice7_EnumEffects(p,a,b,c)                                        (p)->EnumEffects(a,b,c)
+#define IDirectInputDevice7_GetEffectInfo(p,a,b)                                        (p)->GetEffectInfo(a,b)
+#define IDirectInputDevice7_GetForceFeedbackState(p,a)                     (p)->GetForceFeedbackState(a)
 #define IDirectInputDevice7_SendForceFeedbackCommand(p,a)     (p)->SendForceFeedbackCommand(a)
 #define IDirectInputDevice7_EnumCreatedEffectObjects(p,a,b,c) (p)->EnumCreatedEffectObjects(a,b,c)
-#define IDirectInputDevice7_Escape(p,a)                       (p)->Escape(a)
-#define IDirectInputDevice7_Poll(p)                           (p)->Poll()
-#define IDirectInputDevice7_SendDeviceData(p,a,b,c,d)         (p)->SendDeviceData(a,b,c,d)
+#define IDirectInputDevice7_Escape(p,a)                                                              (p)->Escape(a)
+#define IDirectInputDevice7_Poll(p)                                                                               (p)->Poll()
+#define IDirectInputDevice7_SendDeviceData(p,a,b,c,d)                      (p)->SendDeviceData(a,b,c,d)
 /*** IDirectInputDevice7 methods ***/
 #define IDirectInputDevice7_EnumEffectsInFile(p,a,b,c,d) (p)->EnumEffectsInFile(a,b,c,d)
 #define IDirectInputDevice7_WriteEffectToFile(p,a,b,c,d) (p)->WriteEffectToFile(a,b,c,d)
@@ -2031,79 +2031,79 @@ DECLARE_INTERFACE_(IDirectInputDevice8W,IDirectInputDevice7W)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInputDevice8_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInputDevice8_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInputDevice8_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInputDevice8_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInputDevice8_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInputDevice methods ***/
-#define IDirectInputDevice8_GetCapabilities(p,a)       (p)->lpVtbl->GetCapabilities(p,a)
-#define IDirectInputDevice8_EnumObjects(p,a,b,c)       (p)->lpVtbl->EnumObjects(p,a,b,c)
-#define IDirectInputDevice8_GetProperty(p,a,b)         (p)->lpVtbl->GetProperty(p,a,b)
-#define IDirectInputDevice8_SetProperty(p,a,b)         (p)->lpVtbl->SetProperty(p,a,b)
-#define IDirectInputDevice8_Acquire(p)                 (p)->lpVtbl->Acquire(p)
-#define IDirectInputDevice8_Unacquire(p)               (p)->lpVtbl->Unacquire(p)
-#define IDirectInputDevice8_GetDeviceState(p,a,b)      (p)->lpVtbl->GetDeviceState(p,a,b)
+#define IDirectInputDevice8_GetCapabilities(p,a)                    (p)->lpVtbl->GetCapabilities(p,a)
+#define IDirectInputDevice8_EnumObjects(p,a,b,c)                    (p)->lpVtbl->EnumObjects(p,a,b,c)
+#define IDirectInputDevice8_GetProperty(p,a,b)                      (p)->lpVtbl->GetProperty(p,a,b)
+#define IDirectInputDevice8_SetProperty(p,a,b)                      (p)->lpVtbl->SetProperty(p,a,b)
+#define IDirectInputDevice8_Acquire(p)                                           (p)->lpVtbl->Acquire(p)
+#define IDirectInputDevice8_Unacquire(p)                                         (p)->lpVtbl->Unacquire(p)
+#define IDirectInputDevice8_GetDeviceState(p,a,b)                   (p)->lpVtbl->GetDeviceState(p,a,b)
 #define IDirectInputDevice8_GetDeviceData(p,a,b,c,d)   (p)->lpVtbl->GetDeviceData(p,a,b,c,d)
-#define IDirectInputDevice8_SetDataFormat(p,a)         (p)->lpVtbl->SetDataFormat(p,a)
+#define IDirectInputDevice8_SetDataFormat(p,a)                      (p)->lpVtbl->SetDataFormat(p,a)
 #define IDirectInputDevice8_SetEventNotification(p,a)  (p)->lpVtbl->SetEventNotification(p,a)
 #define IDirectInputDevice8_SetCooperativeLevel(p,a,b) (p)->lpVtbl->SetCooperativeLevel(p,a,b)
 #define IDirectInputDevice8_GetObjectInfo(p,a,b,c)     (p)->lpVtbl->GetObjectInfo(p,a,b,c)
-#define IDirectInputDevice8_GetDeviceInfo(p,a)         (p)->lpVtbl->GetDeviceInfo(p,a)
+#define IDirectInputDevice8_GetDeviceInfo(p,a)                      (p)->lpVtbl->GetDeviceInfo(p,a)
 #define IDirectInputDevice8_RunControlPanel(p,a,b)     (p)->lpVtbl->RunControlPanel(p,a,b)
-#define IDirectInputDevice8_Initialize(p,a,b,c)        (p)->lpVtbl->Initialize(p,a,b,c)
+#define IDirectInputDevice8_Initialize(p,a,b,c)                     (p)->lpVtbl->Initialize(p,a,b,c)
 /*** IDirectInputDevice2 methods ***/
-#define IDirectInputDevice8_CreateEffect(p,a,b,c,d)           (p)->lpVtbl->CreateEffect(p,a,b,c,d)
-#define IDirectInputDevice8_EnumEffects(p,a,b,c)              (p)->lpVtbl->EnumEffects(p,a,b,c)
-#define IDirectInputDevice8_GetEffectInfo(p,a,b)              (p)->lpVtbl->GetEffectInfo(p,a,b)
-#define IDirectInputDevice8_GetForceFeedbackState(p,a)        (p)->lpVtbl->GetForceFeedbackState(p,a)
+#define IDirectInputDevice8_CreateEffect(p,a,b,c,d)                        (p)->lpVtbl->CreateEffect(p,a,b,c,d)
+#define IDirectInputDevice8_EnumEffects(p,a,b,c)                                        (p)->lpVtbl->EnumEffects(p,a,b,c)
+#define IDirectInputDevice8_GetEffectInfo(p,a,b)                                        (p)->lpVtbl->GetEffectInfo(p,a,b)
+#define IDirectInputDevice8_GetForceFeedbackState(p,a)                     (p)->lpVtbl->GetForceFeedbackState(p,a)
 #define IDirectInputDevice8_SendForceFeedbackCommand(p,a)     (p)->lpVtbl->SendForceFeedbackCommand(p,a)
 #define IDirectInputDevice8_EnumCreatedEffectObjects(p,a,b,c) (p)->lpVtbl->EnumCreatedEffectObjects(p,a,b,c)
-#define IDirectInputDevice8_Escape(p,a)                       (p)->lpVtbl->Escape(p,a)
-#define IDirectInputDevice8_Poll(p)                           (p)->lpVtbl->Poll(p)
-#define IDirectInputDevice8_SendDeviceData(p,a,b,c,d)         (p)->lpVtbl->SendDeviceData(p,a,b,c,d)
+#define IDirectInputDevice8_Escape(p,a)                                                              (p)->lpVtbl->Escape(p,a)
+#define IDirectInputDevice8_Poll(p)                                                                               (p)->lpVtbl->Poll(p)
+#define IDirectInputDevice8_SendDeviceData(p,a,b,c,d)                      (p)->lpVtbl->SendDeviceData(p,a,b,c,d)
 /*** IDirectInputDevice7 methods ***/
 #define IDirectInputDevice8_EnumEffectsInFile(p,a,b,c,d) (p)->lpVtbl->EnumEffectsInFile(p,a,b,c,d)
 #define IDirectInputDevice8_WriteEffectToFile(p,a,b,c,d) (p)->lpVtbl->WriteEffectToFile(p,a,b,c,d)
 /*** IDirectInputDevice8 methods ***/
 #define IDirectInputDevice8_BuildActionMap(p,a,b,c) (p)->lpVtbl->BuildActionMap(p,a,b,c)
 #define IDirectInputDevice8_SetActionMap(p,a,b,c)   (p)->lpVtbl->SetActionMap(p,a,b,c)
-#define IDirectInputDevice8_GetImageInfo(p,a)       (p)->lpVtbl->GetImageInfo(p,a)
+#define IDirectInputDevice8_GetImageInfo(p,a)                    (p)->lpVtbl->GetImageInfo(p,a)
 #else
 /*** IUnknown methods ***/
 #define IDirectInputDevice8_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInputDevice8_AddRef(p)             (p)->AddRef()
-#define IDirectInputDevice8_Release(p)            (p)->Release()
+#define IDirectInputDevice8_AddRef(p)                                       (p)->AddRef()
+#define IDirectInputDevice8_Release(p)                                      (p)->Release()
 /*** IDirectInputDevice methods ***/
-#define IDirectInputDevice8_GetCapabilities(p,a)       (p)->GetCapabilities(a)
-#define IDirectInputDevice8_EnumObjects(p,a,b,c)       (p)->EnumObjects(a,b,c)
-#define IDirectInputDevice8_GetProperty(p,a,b)         (p)->GetProperty(a,b)
-#define IDirectInputDevice8_SetProperty(p,a,b)         (p)->SetProperty(a,b)
-#define IDirectInputDevice8_Acquire(p)                 (p)->Acquire()
-#define IDirectInputDevice8_Unacquire(p)               (p)->Unacquire()
-#define IDirectInputDevice8_GetDeviceState(p,a,b)      (p)->GetDeviceState(a,b)
+#define IDirectInputDevice8_GetCapabilities(p,a)                    (p)->GetCapabilities(a)
+#define IDirectInputDevice8_EnumObjects(p,a,b,c)                    (p)->EnumObjects(a,b,c)
+#define IDirectInputDevice8_GetProperty(p,a,b)                      (p)->GetProperty(a,b)
+#define IDirectInputDevice8_SetProperty(p,a,b)                      (p)->SetProperty(a,b)
+#define IDirectInputDevice8_Acquire(p)                                           (p)->Acquire()
+#define IDirectInputDevice8_Unacquire(p)                                         (p)->Unacquire()
+#define IDirectInputDevice8_GetDeviceState(p,a,b)                   (p)->GetDeviceState(a,b)
 #define IDirectInputDevice8_GetDeviceData(p,a,b,c,d)   (p)->GetDeviceData(a,b,c,d)
-#define IDirectInputDevice8_SetDataFormat(p,a)         (p)->SetDataFormat(a)
+#define IDirectInputDevice8_SetDataFormat(p,a)                      (p)->SetDataFormat(a)
 #define IDirectInputDevice8_SetEventNotification(p,a)  (p)->SetEventNotification(a)
 #define IDirectInputDevice8_SetCooperativeLevel(p,a,b) (p)->SetCooperativeLevel(a,b)
 #define IDirectInputDevice8_GetObjectInfo(p,a,b,c)     (p)->GetObjectInfo(a,b,c)
-#define IDirectInputDevice8_GetDeviceInfo(p,a)         (p)->GetDeviceInfo(a)
+#define IDirectInputDevice8_GetDeviceInfo(p,a)                      (p)->GetDeviceInfo(a)
 #define IDirectInputDevice8_RunControlPanel(p,a,b)     (p)->RunControlPanel(a,b)
-#define IDirectInputDevice8_Initialize(p,a,b,c)        (p)->Initialize(a,b,c)
+#define IDirectInputDevice8_Initialize(p,a,b,c)                     (p)->Initialize(a,b,c)
 /*** IDirectInputDevice2 methods ***/
-#define IDirectInputDevice8_CreateEffect(p,a,b,c,d)           (p)->CreateEffect(a,b,c,d)
-#define IDirectInputDevice8_EnumEffects(p,a,b,c)              (p)->EnumEffects(a,b,c)
-#define IDirectInputDevice8_GetEffectInfo(p,a,b)              (p)->GetEffectInfo(a,b)
-#define IDirectInputDevice8_GetForceFeedbackState(p,a)        (p)->GetForceFeedbackState(a)
+#define IDirectInputDevice8_CreateEffect(p,a,b,c,d)                        (p)->CreateEffect(a,b,c,d)
+#define IDirectInputDevice8_EnumEffects(p,a,b,c)                                        (p)->EnumEffects(a,b,c)
+#define IDirectInputDevice8_GetEffectInfo(p,a,b)                                        (p)->GetEffectInfo(a,b)
+#define IDirectInputDevice8_GetForceFeedbackState(p,a)                     (p)->GetForceFeedbackState(a)
 #define IDirectInputDevice8_SendForceFeedbackCommand(p,a)     (p)->SendForceFeedbackCommand(a)
 #define IDirectInputDevice8_EnumCreatedEffectObjects(p,a,b,c) (p)->EnumCreatedEffectObjects(a,b,c)
-#define IDirectInputDevice8_Escape(p,a)                       (p)->Escape(a)
-#define IDirectInputDevice8_Poll(p)                           (p)->Poll()
-#define IDirectInputDevice8_SendDeviceData(p,a,b,c,d)         (p)->SendDeviceData(a,b,c,d)
+#define IDirectInputDevice8_Escape(p,a)                                                              (p)->Escape(a)
+#define IDirectInputDevice8_Poll(p)                                                                               (p)->Poll()
+#define IDirectInputDevice8_SendDeviceData(p,a,b,c,d)                      (p)->SendDeviceData(a,b,c,d)
 /*** IDirectInputDevice7 methods ***/
 #define IDirectInputDevice8_EnumEffectsInFile(p,a,b,c,d) (p)->EnumEffectsInFile(a,b,c,d)
 #define IDirectInputDevice8_WriteEffectToFile(p,a,b,c,d) (p)->WriteEffectToFile(a,b,c,d)
 /*** IDirectInputDevice8 methods ***/
 #define IDirectInputDevice8_BuildActionMap(p,a,b,c) (p)->BuildActionMap(a,b,c)
 #define IDirectInputDevice8_SetActionMap(p,a,b,c)   (p)->SetActionMap(a,b,c)
-#define IDirectInputDevice8_GetImageInfo(p,a)       (p)->GetImageInfo(a)
+#define IDirectInputDevice8_GetImageInfo(p,a)                    (p)->GetImageInfo(a)
 #endif
 
 #endif /* DI8 */
@@ -2126,9 +2126,9 @@ typedef struct DIMOUSESTATE2 {
 } DIMOUSESTATE2;
 #endif /* DI7 */
 
-#define DIMOFS_X        FIELD_OFFSET(DIMOUSESTATE, lX)
-#define DIMOFS_Y        FIELD_OFFSET(DIMOUSESTATE, lY)
-#define DIMOFS_Z        FIELD_OFFSET(DIMOUSESTATE, lZ)
+#define DIMOFS_X                     FIELD_OFFSET(DIMOUSESTATE, lX)
+#define DIMOFS_Y                     FIELD_OFFSET(DIMOUSESTATE, lY)
+#define DIMOFS_Z                     FIELD_OFFSET(DIMOUSESTATE, lZ)
 #define DIMOFS_BUTTON0 (FIELD_OFFSET(DIMOUSESTATE, rgbButtons) + 0)
 #define DIMOFS_BUTTON1 (FIELD_OFFSET(DIMOUSESTATE, rgbButtons) + 1)
 #define DIMOFS_BUTTON2 (FIELD_OFFSET(DIMOUSESTATE, rgbButtons) + 2)
@@ -2197,25 +2197,25 @@ DECLARE_INTERFACE_(IDirectInputW,IUnknown)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInput_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInput_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInput_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInput_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInput_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInput methods ***/
 #define IDirectInput_CreateDevice(p,a,b,c)  (p)->lpVtbl->CreateDevice(p,a,b,c)
 #define IDirectInput_EnumDevices(p,a,b,c,d) (p)->lpVtbl->EnumDevices(p,a,b,c,d)
 #define IDirectInput_GetDeviceStatus(p,a)   (p)->lpVtbl->GetDeviceStatus(p,a)
 #define IDirectInput_RunControlPanel(p,a,b) (p)->lpVtbl->RunControlPanel(p,a,b)
-#define IDirectInput_Initialize(p,a,b)      (p)->lpVtbl->Initialize(p,a,b)
+#define IDirectInput_Initialize(p,a,b)                   (p)->lpVtbl->Initialize(p,a,b)
 #else
 /*** IUnknown methods ***/
 #define IDirectInput_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInput_AddRef(p)             (p)->AddRef()
-#define IDirectInput_Release(p)            (p)->Release()
+#define IDirectInput_AddRef(p)                                       (p)->AddRef()
+#define IDirectInput_Release(p)                                      (p)->Release()
 /*** IDirectInput methods ***/
 #define IDirectInput_CreateDevice(p,a,b,c)  (p)->CreateDevice(a,b,c)
 #define IDirectInput_EnumDevices(p,a,b,c,d) (p)->EnumDevices(a,b,c,d)
 #define IDirectInput_GetDeviceStatus(p,a)   (p)->GetDeviceStatus(a)
 #define IDirectInput_RunControlPanel(p,a,b) (p)->RunControlPanel(a,b)
-#define IDirectInput_Initialize(p,a,b)      (p)->Initialize(a,b)
+#define IDirectInput_Initialize(p,a,b)                   (p)->Initialize(a,b)
 #endif
 
 /*****************************************************************************
@@ -2263,27 +2263,27 @@ DECLARE_INTERFACE_(IDirectInput2W,IDirectInputW)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInput2_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInput2_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInput2_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInput2_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInput2_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInput methods ***/
 #define IDirectInput2_CreateDevice(p,a,b,c)  (p)->lpVtbl->CreateDevice(p,a,b,c)
 #define IDirectInput2_EnumDevices(p,a,b,c,d) (p)->lpVtbl->EnumDevices(p,a,b,c,d)
 #define IDirectInput2_GetDeviceStatus(p,a)   (p)->lpVtbl->GetDeviceStatus(p,a)
 #define IDirectInput2_RunControlPanel(p,a,b) (p)->lpVtbl->RunControlPanel(p,a,b)
-#define IDirectInput2_Initialize(p,a,b)      (p)->lpVtbl->Initialize(p,a,b)
+#define IDirectInput2_Initialize(p,a,b)                   (p)->lpVtbl->Initialize(p,a,b)
 /*** IDirectInput2 methods ***/
 #define IDirectInput2_FindDevice(p,a,b,c)    (p)->lpVtbl->FindDevice(p,a,b,c)
 #else
 /*** IUnknown methods ***/
 #define IDirectInput2_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInput2_AddRef(p)             (p)->AddRef()
-#define IDirectInput2_Release(p)            (p)->Release()
+#define IDirectInput2_AddRef(p)                                       (p)->AddRef()
+#define IDirectInput2_Release(p)                                      (p)->Release()
 /*** IDirectInput methods ***/
 #define IDirectInput2_CreateDevice(p,a,b,c)  (p)->CreateDevice(a,b,c)
 #define IDirectInput2_EnumDevices(p,a,b,c,d) (p)->EnumDevices(a,b,c,d)
 #define IDirectInput2_GetDeviceStatus(p,a)   (p)->GetDeviceStatus(a)
 #define IDirectInput2_RunControlPanel(p,a,b) (p)->RunControlPanel(a,b)
-#define IDirectInput2_Initialize(p,a,b)      (p)->Initialize(a,b)
+#define IDirectInput2_Initialize(p,a,b)                   (p)->Initialize(a,b)
 /*** IDirectInput2 methods ***/
 #define IDirectInput2_FindDevice(p,a,b,c)    (p)->FindDevice(a,b,c)
 #endif
@@ -2337,14 +2337,14 @@ DECLARE_INTERFACE_(IDirectInput7W,IDirectInput2W)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInput7_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInput7_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInput7_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInput7_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInput7_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInput methods ***/
 #define IDirectInput7_CreateDevice(p,a,b,c)  (p)->lpVtbl->CreateDevice(p,a,b,c)
 #define IDirectInput7_EnumDevices(p,a,b,c,d) (p)->lpVtbl->EnumDevices(p,a,b,c,d)
 #define IDirectInput7_GetDeviceStatus(p,a)   (p)->lpVtbl->GetDeviceStatus(p,a)
 #define IDirectInput7_RunControlPanel(p,a,b) (p)->lpVtbl->RunControlPanel(p,a,b)
-#define IDirectInput7_Initialize(p,a,b)      (p)->lpVtbl->Initialize(p,a,b)
+#define IDirectInput7_Initialize(p,a,b)                   (p)->lpVtbl->Initialize(p,a,b)
 /*** IDirectInput2 methods ***/
 #define IDirectInput7_FindDevice(p,a,b,c)    (p)->lpVtbl->FindDevice(p,a,b,c)
 /*** IDirectInput7 methods ***/
@@ -2352,14 +2352,14 @@ DECLARE_INTERFACE_(IDirectInput7W,IDirectInput2W)
 #else
 /*** IUnknown methods ***/
 #define IDirectInput7_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInput7_AddRef(p)             (p)->AddRef()
-#define IDirectInput7_Release(p)            (p)->Release()
+#define IDirectInput7_AddRef(p)                                       (p)->AddRef()
+#define IDirectInput7_Release(p)                                      (p)->Release()
 /*** IDirectInput methods ***/
 #define IDirectInput7_CreateDevice(p,a,b,c)  (p)->CreateDevice(a,b,c)
 #define IDirectInput7_EnumDevices(p,a,b,c,d) (p)->EnumDevices(a,b,c,d)
 #define IDirectInput7_GetDeviceStatus(p,a)   (p)->GetDeviceStatus(a)
 #define IDirectInput7_RunControlPanel(p,a,b) (p)->RunControlPanel(a,b)
-#define IDirectInput7_Initialize(p,a,b)      (p)->Initialize(a,b)
+#define IDirectInput7_Initialize(p,a,b)                   (p)->Initialize(a,b)
 /*** IDirectInput2 methods ***/
 #define IDirectInput7_FindDevice(p,a,b,c)    (p)->FindDevice(a,b,c)
 /*** IDirectInput7 methods ***/
@@ -2416,29 +2416,29 @@ DECLARE_INTERFACE_(IDirectInput8W,IUnknown)
 #if !defined(__cplusplus) || defined(CINTERFACE)
 /*** IUnknown methods ***/
 #define IDirectInput8_QueryInterface(p,a,b) (p)->lpVtbl->QueryInterface(p,a,b)
-#define IDirectInput8_AddRef(p)             (p)->lpVtbl->AddRef(p)
-#define IDirectInput8_Release(p)            (p)->lpVtbl->Release(p)
+#define IDirectInput8_AddRef(p)                                       (p)->lpVtbl->AddRef(p)
+#define IDirectInput8_Release(p)                                      (p)->lpVtbl->Release(p)
 /*** IDirectInput8 methods ***/
-#define IDirectInput8_CreateDevice(p,a,b,c)       (p)->lpVtbl->CreateDevice(p,a,b,c)
-#define IDirectInput8_EnumDevices(p,a,b,c,d)      (p)->lpVtbl->EnumDevices(p,a,b,c,d)
-#define IDirectInput8_GetDeviceStatus(p,a)        (p)->lpVtbl->GetDeviceStatus(p,a)
-#define IDirectInput8_RunControlPanel(p,a,b)      (p)->lpVtbl->RunControlPanel(p,a,b)
-#define IDirectInput8_Initialize(p,a,b)           (p)->lpVtbl->Initialize(p,a,b)
-#define IDirectInput8_FindDevice(p,a,b,c)         (p)->lpVtbl->FindDevice(p,a,b,c)
+#define IDirectInput8_CreateDevice(p,a,b,c)                    (p)->lpVtbl->CreateDevice(p,a,b,c)
+#define IDirectInput8_EnumDevices(p,a,b,c,d)                   (p)->lpVtbl->EnumDevices(p,a,b,c,d)
+#define IDirectInput8_GetDeviceStatus(p,a)                     (p)->lpVtbl->GetDeviceStatus(p,a)
+#define IDirectInput8_RunControlPanel(p,a,b)                   (p)->lpVtbl->RunControlPanel(p,a,b)
+#define IDirectInput8_Initialize(p,a,b)                        (p)->lpVtbl->Initialize(p,a,b)
+#define IDirectInput8_FindDevice(p,a,b,c)                      (p)->lpVtbl->FindDevice(p,a,b,c)
 #define IDirectInput8_EnumDevicesBySemantics(p,a,b,c,d,e) (p)->lpVtbl->EnumDevicesBySemantics(p,a,b,c,d,e)
 #define IDirectInput8_ConfigureDevices(p,a,b,c,d) (p)->lpVtbl->ConfigureDevices(p,a,b,c,d)
 #else
 /*** IUnknown methods ***/
 #define IDirectInput8_QueryInterface(p,a,b) (p)->QueryInterface(a,b)
-#define IDirectInput8_AddRef(p)             (p)->AddRef()
-#define IDirectInput8_Release(p)            (p)->Release()
+#define IDirectInput8_AddRef(p)                                       (p)->AddRef()
+#define IDirectInput8_Release(p)                                      (p)->Release()
 /*** IDirectInput8 methods ***/
-#define IDirectInput8_CreateDevice(p,a,b,c)       (p)->CreateDevice(a,b,c)
-#define IDirectInput8_EnumDevices(p,a,b,c,d)      (p)->EnumDevices(a,b,c,d)
-#define IDirectInput8_GetDeviceStatus(p,a)        (p)->GetDeviceStatus(a)
-#define IDirectInput8_RunControlPanel(p,a,b)      (p)->RunControlPanel(a,b)
-#define IDirectInput8_Initialize(p,a,b)           (p)->Initialize(a,b)
-#define IDirectInput8_FindDevice(p,a,b,c)         (p)->FindDevice(a,b,c)
+#define IDirectInput8_CreateDevice(p,a,b,c)                    (p)->CreateDevice(a,b,c)
+#define IDirectInput8_EnumDevices(p,a,b,c,d)                   (p)->EnumDevices(a,b,c,d)
+#define IDirectInput8_GetDeviceStatus(p,a)                     (p)->GetDeviceStatus(a)
+#define IDirectInput8_RunControlPanel(p,a,b)                   (p)->RunControlPanel(a,b)
+#define IDirectInput8_Initialize(p,a,b)                        (p)->Initialize(a,b)
+#define IDirectInput8_FindDevice(p,a,b,c)                      (p)->FindDevice(a,b,c)
 #define IDirectInput8_EnumDevicesBySemantics(p,a,b,c,d,e) (p)->EnumDevicesBySemantics(a,b,c,d,e)
 #define IDirectInput8_ConfigureDevices(p,a,b,c,d) (p)->ConfigureDevices(a,b,c,d)
 #endif
@@ -2464,244 +2464,244 @@ HRESULT WINAPI DirectInputCreateEx(HINSTANCE,DWORD,REFIID,LPVOID *,LPUNKNOWN);
 
 /* New DirectInput8 style keyboard constants */
 
-#define DIKEYBOARD_ESCAPE               (DIK_ESCAPE | 0x81000400)
-#define DIKEYBOARD_1                    (DIK_1 | 0x81000400)
-#define DIKEYBOARD_2                    (DIK_2 | 0x81000400)
-#define DIKEYBOARD_3                    (DIK_3 | 0x81000400)
-#define DIKEYBOARD_4                    (DIK_4 | 0x81000400)
-#define DIKEYBOARD_5                    (DIK_5 | 0x81000400)
-#define DIKEYBOARD_6                    (DIK_6 | 0x81000400)
-#define DIKEYBOARD_7                    (DIK_7 | 0x81000400)
-#define DIKEYBOARD_8                    (DIK_8 | 0x81000400)
-#define DIKEYBOARD_9                    (DIK_9 | 0x81000400)
-#define DIKEYBOARD_0                    (DIK_0 | 0x81000400)
-#define DIKEYBOARD_MINUS                (DIK_MINUS | 0x81000400)
-#define DIKEYBOARD_EQUALS               (DIK_EQUALS | 0x81000400)
-#define DIKEYBOARD_BACK                 (DIK_BACK | 0x81000400)
-#define DIKEYBOARD_TAB                  (DIK_TAB | 0x81000400)
-#define DIKEYBOARD_Q                    (DIK_Q | 0x81000400)
-#define DIKEYBOARD_W                    (DIK_W | 0x81000400)
-#define DIKEYBOARD_E                    (DIK_E | 0x81000400)
-#define DIKEYBOARD_R                    (DIK_R | 0x81000400)
-#define DIKEYBOARD_T                    (DIK_T | 0x81000400)
-#define DIKEYBOARD_Y                    (DIK_Y | 0x81000400)
-#define DIKEYBOARD_U                    (DIK_U | 0x81000400)
-#define DIKEYBOARD_I                    (DIK_I | 0x81000400)
-#define DIKEYBOARD_O                    (DIK_O | 0x81000400)
-#define DIKEYBOARD_P                    (DIK_P | 0x81000400)
-#define DIKEYBOARD_LBRACKET             (DIK_LBRACKET | 0x81000400)
-#define DIKEYBOARD_RBRACKET             (DIK_RBRACKET | 0x81000400)
-#define DIKEYBOARD_RETURN               (DIK_RETURN | 0x81000400)
-#define DIKEYBOARD_LCONTROL             (DIK_LCONTROL | 0x81000400)
-#define DIKEYBOARD_A                    (DIK_A | 0x81000400)
-#define DIKEYBOARD_S                    (DIK_S | 0x81000400)
-#define DIKEYBOARD_D                    (DIK_D | 0x81000400)
-#define DIKEYBOARD_F                    (DIK_F | 0x81000400)
-#define DIKEYBOARD_G                    (DIK_G | 0x81000400)
-#define DIKEYBOARD_H                    (DIK_H | 0x81000400)
-#define DIKEYBOARD_J                    (DIK_J | 0x81000400)
-#define DIKEYBOARD_K                    (DIK_K | 0x81000400)
-#define DIKEYBOARD_L                    (DIK_L | 0x81000400)
-#define DIKEYBOARD_SEMICOLON            (DIK_SEMICOLON | 0x81000400)
-#define DIKEYBOARD_APOSTROPHE           (DIK_APOSTROPHE | 0x81000400)
-#define DIKEYBOARD_GRAVE                (DIK_GRAVE | 0x81000400)
-#define DIKEYBOARD_LSHIFT               (DIK_LSHIFT | 0x81000400)
-#define DIKEYBOARD_BACKSLASH            (DIK_BACKSLASH | 0x81000400)
-#define DIKEYBOARD_Z                    (DIK_Z | 0x81000400)
-#define DIKEYBOARD_X                    (DIK_X | 0x81000400)
-#define DIKEYBOARD_C                    (DIK_C | 0x81000400)
-#define DIKEYBOARD_V                    (DIK_V | 0x81000400)
-#define DIKEYBOARD_B                    (DIK_B | 0x81000400)
-#define DIKEYBOARD_N                    (DIK_N | 0x81000400)
-#define DIKEYBOARD_M                    (DIK_M | 0x81000400)
-#define DIKEYBOARD_COMMA                (DIK_COMMA | 0x81000400)
-#define DIKEYBOARD_PERIOD               (DIK_PERIOD | 0x81000400)
-#define DIKEYBOARD_SLASH                (DIK_SLASH | 0x81000400)
-#define DIKEYBOARD_RSHIFT               (DIK_RSHIFT | 0x81000400)
-#define DIKEYBOARD_MULTIPLY             (DIK_MULTIPLY | 0x81000400)
-#define DIKEYBOARD_LMENU                (DIK_LMENU | 0x81000400)
-#define DIKEYBOARD_SPACE                (DIK_SPACE | 0x81000400)
-#define DIKEYBOARD_CAPITAL              (DIK_CAPITAL | 0x81000400)
-#define DIKEYBOARD_F1                   (DIK_F1 | 0x81000400)
-#define DIKEYBOARD_F2                   (DIK_F2 | 0x81000400)
-#define DIKEYBOARD_F3                   (DIK_F3 | 0x81000400)
-#define DIKEYBOARD_F4                   (DIK_F4 | 0x81000400)
-#define DIKEYBOARD_F5                   (DIK_F5 | 0x81000400)
-#define DIKEYBOARD_F6                   (DIK_F6 | 0x81000400)
-#define DIKEYBOARD_F7                   (DIK_F7 | 0x81000400)
-#define DIKEYBOARD_F8                   (DIK_F8 | 0x81000400)
-#define DIKEYBOARD_F9                   (DIK_F9 | 0x81000400)
-#define DIKEYBOARD_F10                  (DIK_F10 | 0x81000400)
-#define DIKEYBOARD_NUMLOCK              (DIK_NUMLOCK | 0x81000400)
-#define DIKEYBOARD_SCROLL               (DIK_SCROLL | 0x81000400)
-#define DIKEYBOARD_NUMPAD7              (DIK_NUMPAD7 | 0x81000400)
-#define DIKEYBOARD_NUMPAD8              (DIK_NUMPAD8 | 0x81000400)
-#define DIKEYBOARD_NUMPAD9              (DIK_NUMPAD9 | 0x81000400)
-#define DIKEYBOARD_SUBTRACT             (DIK_SUBTRACT | 0x81000400)
-#define DIKEYBOARD_NUMPAD4              (DIK_NUMPAD4 | 0x81000400)
-#define DIKEYBOARD_NUMPAD5              (DIK_NUMPAD5 | 0x81000400)
-#define DIKEYBOARD_NUMPAD6              (DIK_NUMPAD6 | 0x81000400)
-#define DIKEYBOARD_ADD                  (DIK_ADD | 0x81000400)
-#define DIKEYBOARD_NUMPAD1              (DIK_NUMPAD1 | 0x81000400)
-#define DIKEYBOARD_NUMPAD2              (DIK_NUMPAD2 | 0x81000400)
-#define DIKEYBOARD_NUMPAD3              (DIK_NUMPAD3 | 0x81000400)
-#define DIKEYBOARD_NUMPAD0              (DIK_NUMPAD0 | 0x81000400)
-#define DIKEYBOARD_DECIMAL              (DIK_DECIMAL | 0x81000400)
-#define DIKEYBOARD_F11                  (DIK_F11 | 0x81000400)
-#define DIKEYBOARD_F12                  (DIK_F12 | 0x81000400)
-#define DIKEYBOARD_F13                  (DIK_F13 | 0x81000400)
-#define DIKEYBOARD_F14                  (DIK_F14 | 0x81000400)
-#define DIKEYBOARD_F15                  (DIK_F15 | 0x81000400)
-#define DIKEYBOARD_KANA                 (DIK_KANA | 0x81000400)
-#define DIKEYBOARD_CONVERT              (DIK_CONVERT | 0x81000400)
-#define DIKEYBOARD_NOCONVERT            (DIK_NOCONVERT | 0x81000400)
-#define DIKEYBOARD_YEN                  (DIK_YEN | 0x81000400)
-#define DIKEYBOARD_NUMPADEQUALS         (DIK_NUMPADEQUALS | 0x81000400)
-#define DIKEYBOARD_CIRCUMFLEX           (DIK_CIRCUMFLEX | 0x81000400)
-#define DIKEYBOARD_AT                   (DIK_AT | 0x81000400)
-#define DIKEYBOARD_COLON                (DIK_COLON | 0x81000400)
-#define DIKEYBOARD_UNDERLINE            (DIK_UNDERLINE | 0x81000400)
-#define DIKEYBOARD_KANJI                (DIK_KANJI | 0x81000400)
-#define DIKEYBOARD_STOP                 (DIK_STOP | 0x81000400)
-#define DIKEYBOARD_AX                   (DIK_AX | 0x81000400)
-#define DIKEYBOARD_UNLABELED            (DIK_UNLABELED | 0x81000400)
-#define DIKEYBOARD_NUMPADENTER          (DIK_NUMPADENTER | 0x81000400)
-#define DIKEYBOARD_RCONTROL             (DIK_RCONTROL | 0x81000400)
-#define DIKEYBOARD_NUMPADCOMMA          (DIK_NUMPADCOMMA | 0x81000400)
-#define DIKEYBOARD_DIVIDE               (DIK_DIVIDE | 0x81000400)
-#define DIKEYBOARD_SYSRQ                (DIK_SYSRQ | 0x81000400)
-#define DIKEYBOARD_RMENU                (DIK_RMENU | 0x81000400)
-#define DIKEYBOARD_PAUSE                (DIK_PAUSE | 0x81000400)
-#define DIKEYBOARD_HOME                 (DIK_HOME | 0x81000400)
-#define DIKEYBOARD_UP                   (DIK_UP | 0x81000400)
-#define DIKEYBOARD_PRIOR                (DIK_PRIOR | 0x81000400)
-#define DIKEYBOARD_LEFT                 (DIK_LEFT | 0x81000400)
-#define DIKEYBOARD_RIGHT                (DIK_RIGHT | 0x81000400)
-#define DIKEYBOARD_END                  (DIK_END | 0x81000400)
-#define DIKEYBOARD_DOWN                 (DIK_DOWN | 0x81000400)
-#define DIKEYBOARD_NEXT                 (DIK_NEXT | 0x81000400)
-#define DIKEYBOARD_INSERT               (DIK_INSERT | 0x81000400)
-#define DIKEYBOARD_DELETE               (DIK_DELETE | 0x81000400)
-#define DIKEYBOARD_LWIN                 (DIK_LWIN | 0x81000400)
-#define DIKEYBOARD_RWIN                 (DIK_RWIN | 0x81000400)
-#define DIKEYBOARD_APPS                 (DIK_APPS | 0x81000400)
-#define DIKEYBOARD_POWER                (DIK_POWER | 0x81000400)
-#define DIKEYBOARD_SLEEP                (DIK_SLEEP | 0x81000400)
-#define DIKEYBOARD_BACKSPACE            (DIK_BACKSPACE | 0x81000400)
-#define DIKEYBOARD_NUMPADSTAR           (DIK_NUMPADSTAR | 0x81000400)
-#define DIKEYBOARD_LALT                 (DIK_LALT | 0x81000400)
-#define DIKEYBOARD_CAPSLOCK             (DIK_CAPSLOCK | 0x81000400)
-#define DIKEYBOARD_NUMPADMINUS          (DIK_NUMPADMINUS | 0x81000400)
-#define DIKEYBOARD_NUMPADPLUS           (DIK_NUMPADPLUS | 0x81000400)
-#define DIKEYBOARD_NUMPADPERIOD         (DIK_NUMPADPERIOD | 0x81000400)
-#define DIKEYBOARD_NUMPADSLASH          (DIK_NUMPADSLASH | 0x81000400)
-#define DIKEYBOARD_RALT                 (DIK_RALT | 0x81000400)
-#define DIKEYBOARD_UPARROW              (DIK_UPARROW | 0x81000400)
-#define DIKEYBOARD_PGUP                 (DIK_PGUP | 0x81000400)
-#define DIKEYBOARD_LEFTARROW            (DIK_LEFTARROW | 0x81000400)
-#define DIKEYBOARD_RIGHTARROW           (DIK_RIGHTARROW | 0x81000400)
-#define DIKEYBOARD_DOWNARROW            (DIK_DOWNARROW | 0x81000400)
-#define DIKEYBOARD_PGDN                 (DIK_PGDN | 0x81000400)
+#define DIKEYBOARD_ESCAPE                                         (DIK_ESCAPE | 0x81000400)
+#define DIKEYBOARD_1                                                           (DIK_1 | 0x81000400)
+#define DIKEYBOARD_2                                                           (DIK_2 | 0x81000400)
+#define DIKEYBOARD_3                                                           (DIK_3 | 0x81000400)
+#define DIKEYBOARD_4                                                           (DIK_4 | 0x81000400)
+#define DIKEYBOARD_5                                                           (DIK_5 | 0x81000400)
+#define DIKEYBOARD_6                                                           (DIK_6 | 0x81000400)
+#define DIKEYBOARD_7                                                           (DIK_7 | 0x81000400)
+#define DIKEYBOARD_8                                                           (DIK_8 | 0x81000400)
+#define DIKEYBOARD_9                                                           (DIK_9 | 0x81000400)
+#define DIKEYBOARD_0                                                           (DIK_0 | 0x81000400)
+#define DIKEYBOARD_MINUS                                          (DIK_MINUS | 0x81000400)
+#define DIKEYBOARD_EQUALS                                         (DIK_EQUALS | 0x81000400)
+#define DIKEYBOARD_BACK                                           (DIK_BACK | 0x81000400)
+#define DIKEYBOARD_TAB                                                         (DIK_TAB | 0x81000400)
+#define DIKEYBOARD_Q                                                           (DIK_Q | 0x81000400)
+#define DIKEYBOARD_W                                                           (DIK_W | 0x81000400)
+#define DIKEYBOARD_E                                                           (DIK_E | 0x81000400)
+#define DIKEYBOARD_R                                                           (DIK_R | 0x81000400)
+#define DIKEYBOARD_T                                                           (DIK_T | 0x81000400)
+#define DIKEYBOARD_Y                                                           (DIK_Y | 0x81000400)
+#define DIKEYBOARD_U                                                           (DIK_U | 0x81000400)
+#define DIKEYBOARD_I                                                           (DIK_I | 0x81000400)
+#define DIKEYBOARD_O                                                           (DIK_O | 0x81000400)
+#define DIKEYBOARD_P                                                           (DIK_P | 0x81000400)
+#define DIKEYBOARD_LBRACKET                                       (DIK_LBRACKET | 0x81000400)
+#define DIKEYBOARD_RBRACKET                                       (DIK_RBRACKET | 0x81000400)
+#define DIKEYBOARD_RETURN                                         (DIK_RETURN | 0x81000400)
+#define DIKEYBOARD_LCONTROL                                       (DIK_LCONTROL | 0x81000400)
+#define DIKEYBOARD_A                                                           (DIK_A | 0x81000400)
+#define DIKEYBOARD_S                                                           (DIK_S | 0x81000400)
+#define DIKEYBOARD_D                                                           (DIK_D | 0x81000400)
+#define DIKEYBOARD_F                                                           (DIK_F | 0x81000400)
+#define DIKEYBOARD_G                                                           (DIK_G | 0x81000400)
+#define DIKEYBOARD_H                                                           (DIK_H | 0x81000400)
+#define DIKEYBOARD_J                                                           (DIK_J | 0x81000400)
+#define DIKEYBOARD_K                                                           (DIK_K | 0x81000400)
+#define DIKEYBOARD_L                                                           (DIK_L | 0x81000400)
+#define DIKEYBOARD_SEMICOLON                                      (DIK_SEMICOLON | 0x81000400)
+#define DIKEYBOARD_APOSTROPHE                        (DIK_APOSTROPHE | 0x81000400)
+#define DIKEYBOARD_GRAVE                                          (DIK_GRAVE | 0x81000400)
+#define DIKEYBOARD_LSHIFT                                         (DIK_LSHIFT | 0x81000400)
+#define DIKEYBOARD_BACKSLASH                                      (DIK_BACKSLASH | 0x81000400)
+#define DIKEYBOARD_Z                                                           (DIK_Z | 0x81000400)
+#define DIKEYBOARD_X                                                           (DIK_X | 0x81000400)
+#define DIKEYBOARD_C                                                           (DIK_C | 0x81000400)
+#define DIKEYBOARD_V                                                           (DIK_V | 0x81000400)
+#define DIKEYBOARD_B                                                           (DIK_B | 0x81000400)
+#define DIKEYBOARD_N                                                           (DIK_N | 0x81000400)
+#define DIKEYBOARD_M                                                           (DIK_M | 0x81000400)
+#define DIKEYBOARD_COMMA                                          (DIK_COMMA | 0x81000400)
+#define DIKEYBOARD_PERIOD                                         (DIK_PERIOD | 0x81000400)
+#define DIKEYBOARD_SLASH                                          (DIK_SLASH | 0x81000400)
+#define DIKEYBOARD_RSHIFT                                         (DIK_RSHIFT | 0x81000400)
+#define DIKEYBOARD_MULTIPLY                                       (DIK_MULTIPLY | 0x81000400)
+#define DIKEYBOARD_LMENU                                          (DIK_LMENU | 0x81000400)
+#define DIKEYBOARD_SPACE                                          (DIK_SPACE | 0x81000400)
+#define DIKEYBOARD_CAPITAL                                        (DIK_CAPITAL | 0x81000400)
+#define DIKEYBOARD_F1                                                          (DIK_F1 | 0x81000400)
+#define DIKEYBOARD_F2                                                          (DIK_F2 | 0x81000400)
+#define DIKEYBOARD_F3                                                          (DIK_F3 | 0x81000400)
+#define DIKEYBOARD_F4                                                          (DIK_F4 | 0x81000400)
+#define DIKEYBOARD_F5                                                          (DIK_F5 | 0x81000400)
+#define DIKEYBOARD_F6                                                          (DIK_F6 | 0x81000400)
+#define DIKEYBOARD_F7                                                          (DIK_F7 | 0x81000400)
+#define DIKEYBOARD_F8                                                          (DIK_F8 | 0x81000400)
+#define DIKEYBOARD_F9                                                          (DIK_F9 | 0x81000400)
+#define DIKEYBOARD_F10                                                         (DIK_F10 | 0x81000400)
+#define DIKEYBOARD_NUMLOCK                                        (DIK_NUMLOCK | 0x81000400)
+#define DIKEYBOARD_SCROLL                                         (DIK_SCROLL | 0x81000400)
+#define DIKEYBOARD_NUMPAD7                                        (DIK_NUMPAD7 | 0x81000400)
+#define DIKEYBOARD_NUMPAD8                                        (DIK_NUMPAD8 | 0x81000400)
+#define DIKEYBOARD_NUMPAD9                                        (DIK_NUMPAD9 | 0x81000400)
+#define DIKEYBOARD_SUBTRACT                                       (DIK_SUBTRACT | 0x81000400)
+#define DIKEYBOARD_NUMPAD4                                        (DIK_NUMPAD4 | 0x81000400)
+#define DIKEYBOARD_NUMPAD5                                        (DIK_NUMPAD5 | 0x81000400)
+#define DIKEYBOARD_NUMPAD6                                        (DIK_NUMPAD6 | 0x81000400)
+#define DIKEYBOARD_ADD                                                         (DIK_ADD | 0x81000400)
+#define DIKEYBOARD_NUMPAD1                                        (DIK_NUMPAD1 | 0x81000400)
+#define DIKEYBOARD_NUMPAD2                                        (DIK_NUMPAD2 | 0x81000400)
+#define DIKEYBOARD_NUMPAD3                                        (DIK_NUMPAD3 | 0x81000400)
+#define DIKEYBOARD_NUMPAD0                                        (DIK_NUMPAD0 | 0x81000400)
+#define DIKEYBOARD_DECIMAL                                        (DIK_DECIMAL | 0x81000400)
+#define DIKEYBOARD_F11                                                         (DIK_F11 | 0x81000400)
+#define DIKEYBOARD_F12                                                         (DIK_F12 | 0x81000400)
+#define DIKEYBOARD_F13                                                         (DIK_F13 | 0x81000400)
+#define DIKEYBOARD_F14                                                         (DIK_F14 | 0x81000400)
+#define DIKEYBOARD_F15                                                         (DIK_F15 | 0x81000400)
+#define DIKEYBOARD_KANA                                           (DIK_KANA | 0x81000400)
+#define DIKEYBOARD_CONVERT                                        (DIK_CONVERT | 0x81000400)
+#define DIKEYBOARD_NOCONVERT                                      (DIK_NOCONVERT | 0x81000400)
+#define DIKEYBOARD_YEN                                                         (DIK_YEN | 0x81000400)
+#define DIKEYBOARD_NUMPADEQUALS                      (DIK_NUMPADEQUALS | 0x81000400)
+#define DIKEYBOARD_CIRCUMFLEX                        (DIK_CIRCUMFLEX | 0x81000400)
+#define DIKEYBOARD_AT                                                          (DIK_AT | 0x81000400)
+#define DIKEYBOARD_COLON                                          (DIK_COLON | 0x81000400)
+#define DIKEYBOARD_UNDERLINE                                      (DIK_UNDERLINE | 0x81000400)
+#define DIKEYBOARD_KANJI                                          (DIK_KANJI | 0x81000400)
+#define DIKEYBOARD_STOP                                           (DIK_STOP | 0x81000400)
+#define DIKEYBOARD_AX                                                          (DIK_AX | 0x81000400)
+#define DIKEYBOARD_UNLABELED                                      (DIK_UNLABELED | 0x81000400)
+#define DIKEYBOARD_NUMPADENTER                       (DIK_NUMPADENTER | 0x81000400)
+#define DIKEYBOARD_RCONTROL                                       (DIK_RCONTROL | 0x81000400)
+#define DIKEYBOARD_NUMPADCOMMA                       (DIK_NUMPADCOMMA | 0x81000400)
+#define DIKEYBOARD_DIVIDE                                         (DIK_DIVIDE | 0x81000400)
+#define DIKEYBOARD_SYSRQ                                          (DIK_SYSRQ | 0x81000400)
+#define DIKEYBOARD_RMENU                                          (DIK_RMENU | 0x81000400)
+#define DIKEYBOARD_PAUSE                                          (DIK_PAUSE | 0x81000400)
+#define DIKEYBOARD_HOME                                           (DIK_HOME | 0x81000400)
+#define DIKEYBOARD_UP                                                          (DIK_UP | 0x81000400)
+#define DIKEYBOARD_PRIOR                                          (DIK_PRIOR | 0x81000400)
+#define DIKEYBOARD_LEFT                                           (DIK_LEFT | 0x81000400)
+#define DIKEYBOARD_RIGHT                                          (DIK_RIGHT | 0x81000400)
+#define DIKEYBOARD_END                                                         (DIK_END | 0x81000400)
+#define DIKEYBOARD_DOWN                                           (DIK_DOWN | 0x81000400)
+#define DIKEYBOARD_NEXT                                           (DIK_NEXT | 0x81000400)
+#define DIKEYBOARD_INSERT                                         (DIK_INSERT | 0x81000400)
+#define DIKEYBOARD_DELETE                                         (DIK_DELETE | 0x81000400)
+#define DIKEYBOARD_LWIN                                           (DIK_LWIN | 0x81000400)
+#define DIKEYBOARD_RWIN                                           (DIK_RWIN | 0x81000400)
+#define DIKEYBOARD_APPS                                           (DIK_APPS | 0x81000400)
+#define DIKEYBOARD_POWER                                          (DIK_POWER | 0x81000400)
+#define DIKEYBOARD_SLEEP                                          (DIK_SLEEP | 0x81000400)
+#define DIKEYBOARD_BACKSPACE                                      (DIK_BACKSPACE | 0x81000400)
+#define DIKEYBOARD_NUMPADSTAR                        (DIK_NUMPADSTAR | 0x81000400)
+#define DIKEYBOARD_LALT                                           (DIK_LALT | 0x81000400)
+#define DIKEYBOARD_CAPSLOCK                                       (DIK_CAPSLOCK | 0x81000400)
+#define DIKEYBOARD_NUMPADMINUS                       (DIK_NUMPADMINUS | 0x81000400)
+#define DIKEYBOARD_NUMPADPLUS                        (DIK_NUMPADPLUS | 0x81000400)
+#define DIKEYBOARD_NUMPADPERIOD                      (DIK_NUMPADPERIOD | 0x81000400)
+#define DIKEYBOARD_NUMPADSLASH                       (DIK_NUMPADSLASH | 0x81000400)
+#define DIKEYBOARD_RALT                                           (DIK_RALT | 0x81000400)
+#define DIKEYBOARD_UPARROW                                        (DIK_UPARROW | 0x81000400)
+#define DIKEYBOARD_PGUP                                           (DIK_PGUP | 0x81000400)
+#define DIKEYBOARD_LEFTARROW                                      (DIK_LEFTARROW | 0x81000400)
+#define DIKEYBOARD_RIGHTARROW                        (DIK_RIGHTARROW | 0x81000400)
+#define DIKEYBOARD_DOWNARROW                                      (DIK_DOWNARROW | 0x81000400)
+#define DIKEYBOARD_PGDN                                           (DIK_PGDN | 0x81000400)
 
 /* New DirectInput8 mouse definitions */
 
-#define DIMOUSE_XAXISAB            (0x82000200 | DIMOFS_X)
-#define DIMOUSE_YAXISAB            (0x82000200 | DIMOFS_Y)
-#define DIMOUSE_XAXIS              (0x82000300 | DIMOFS_X)
-#define DIMOUSE_YAXIS              (0x82000300 | DIMOFS_Y)
-#define DIMOUSE_WHEEL              (0x82000300 | DIMOFS_Z)
-#define DIMOUSE_BUTTON0            (0x82000400 | DIMOFS_BUTTON0)
-#define DIMOUSE_BUTTON1            (0x82000400 | DIMOFS_BUTTON1)
-#define DIMOUSE_BUTTON2            (0x82000400 | DIMOFS_BUTTON2)
-#define DIMOUSE_BUTTON3            (0x82000400 | DIMOFS_BUTTON3)
-#define DIMOUSE_BUTTON4            (0x82000400 | DIMOFS_BUTTON4)
-#define DIMOUSE_BUTTON5            (0x82000400 | DIMOFS_BUTTON5)
-#define DIMOUSE_BUTTON6            (0x82000400 | DIMOFS_BUTTON6)
-#define DIMOUSE_BUTTON7            (0x82000400 | DIMOFS_BUTTON7)
+#define DIMOUSE_XAXISAB                                      (0x82000200 | DIMOFS_X)
+#define DIMOUSE_YAXISAB                                      (0x82000200 | DIMOFS_Y)
+#define DIMOUSE_XAXIS                                        (0x82000300 | DIMOFS_X)
+#define DIMOUSE_YAXIS                                        (0x82000300 | DIMOFS_Y)
+#define DIMOUSE_WHEEL                                        (0x82000300 | DIMOFS_Z)
+#define DIMOUSE_BUTTON0                                      (0x82000400 | DIMOFS_BUTTON0)
+#define DIMOUSE_BUTTON1                                      (0x82000400 | DIMOFS_BUTTON1)
+#define DIMOUSE_BUTTON2                                      (0x82000400 | DIMOFS_BUTTON2)
+#define DIMOUSE_BUTTON3                                      (0x82000400 | DIMOFS_BUTTON3)
+#define DIMOUSE_BUTTON4                                      (0x82000400 | DIMOFS_BUTTON4)
+#define DIMOUSE_BUTTON5                                      (0x82000400 | DIMOFS_BUTTON5)
+#define DIMOUSE_BUTTON6                                      (0x82000400 | DIMOFS_BUTTON6)
+#define DIMOUSE_BUTTON7                                      (0x82000400 | DIMOFS_BUTTON7)
 
 
-#define DIAXIS_ANY_X_1             0xFF00C201
-#define DIAXIS_ANY_X_2             0xFF00C202
-#define DIAXIS_ANY_Y_1             0xFF014201
-#define DIAXIS_ANY_Y_2             0xFF014202
-#define DIAXIS_ANY_Z_1             0xFF01C201
-#define DIAXIS_ANY_Z_2             0xFF01C202
-#define DIAXIS_ANY_R_1             0xFF024201
-#define DIAXIS_ANY_R_2             0xFF024202
-#define DIAXIS_ANY_U_1             0xFF02C201
-#define DIAXIS_ANY_U_2             0xFF02C202
-#define DIAXIS_ANY_V_1             0xFF034201
-#define DIAXIS_ANY_V_2             0xFF034202
-#define DIAXIS_ANY_A_1             0xFF03C201
-#define DIAXIS_ANY_A_2             0xFF03C202
-#define DIAXIS_ANY_B_1             0xFF044201
-#define DIAXIS_ANY_B_2             0xFF044202
-#define DIAXIS_ANY_C_1             0xFF04C201
-#define DIAXIS_ANY_C_2             0xFF04C202
-#define DIAXIS_ANY_S_1             0xFF054201
-#define DIAXIS_ANY_S_2             0xFF054202
-#define DIAXIS_ANY_1               0xFF004201
-#define DIAXIS_ANY_2               0xFF004202
-#define DIAXIS_ANY_3               0xFF004203
-#define DIAXIS_ANY_4               0xFF004204
-#define DIPOV_ANY_1                0xFF004601
-#define DIPOV_ANY_2                0xFF004602
-#define DIPOV_ANY_3                0xFF004603
-#define DIPOV_ANY_4                0xFF004604
+#define DIAXIS_ANY_X_1                                       0xFF00C201
+#define DIAXIS_ANY_X_2                                       0xFF00C202
+#define DIAXIS_ANY_Y_1                                       0xFF014201
+#define DIAXIS_ANY_Y_2                                       0xFF014202
+#define DIAXIS_ANY_Z_1                                       0xFF01C201
+#define DIAXIS_ANY_Z_2                                       0xFF01C202
+#define DIAXIS_ANY_R_1                                       0xFF024201
+#define DIAXIS_ANY_R_2                                       0xFF024202
+#define DIAXIS_ANY_U_1                                       0xFF02C201
+#define DIAXIS_ANY_U_2                                       0xFF02C202
+#define DIAXIS_ANY_V_1                                       0xFF034201
+#define DIAXIS_ANY_V_2                                       0xFF034202
+#define DIAXIS_ANY_A_1                                       0xFF03C201
+#define DIAXIS_ANY_A_2                                       0xFF03C202
+#define DIAXIS_ANY_B_1                                       0xFF044201
+#define DIAXIS_ANY_B_2                                       0xFF044202
+#define DIAXIS_ANY_C_1                                       0xFF04C201
+#define DIAXIS_ANY_C_2                                       0xFF04C202
+#define DIAXIS_ANY_S_1                                       0xFF054201
+#define DIAXIS_ANY_S_2                                       0xFF054202
+#define DIAXIS_ANY_1                                         0xFF004201
+#define DIAXIS_ANY_2                                         0xFF004202
+#define DIAXIS_ANY_3                                         0xFF004203
+#define DIAXIS_ANY_4                                         0xFF004204
+#define DIPOV_ANY_1                                          0xFF004601
+#define DIPOV_ANY_2                                          0xFF004602
+#define DIPOV_ANY_3                                          0xFF004603
+#define DIPOV_ANY_4                                          0xFF004604
 #define DIBUTTON_ANY(instance)     (0xFF004400 | (instance))
 
 
-#define DIVIRTUAL_FLYING_HELICOPTER        0x06000000
-#define DIBUTTON_FLYINGH_MENU              0x060004fd
-#define DIBUTTON_FLYINGH_FIRE              0x06001401
-#define DIBUTTON_FLYINGH_WEAPONS           0x06001402
-#define DIBUTTON_FLYINGH_TARGET            0x06001403
-#define DIBUTTON_FLYINGH_DEVICE            0x060044fe
-#define DIBUTTON_FLYINGH_PAUSE             0x060044fc
-#define DIHATSWITCH_FLYINGH_GLANCE         0x06004601
+#define DIVIRTUAL_FLYING_HELICOPTER                     0x06000000
+#define DIBUTTON_FLYINGH_MENU                                        0x060004fd
+#define DIBUTTON_FLYINGH_FIRE                                        0x06001401
+#define DIBUTTON_FLYINGH_WEAPONS                        0x06001402
+#define DIBUTTON_FLYINGH_TARGET                                      0x06001403
+#define DIBUTTON_FLYINGH_DEVICE                                      0x060044fe
+#define DIBUTTON_FLYINGH_PAUSE                                       0x060044fc
+#define DIHATSWITCH_FLYINGH_GLANCE                      0x06004601
 #define DIBUTTON_FLYINGH_FIRESECONDARY     0x06004c07
-#define DIBUTTON_FLYINGH_COUNTER           0x06005404
-#define DIBUTTON_FLYINGH_VIEW              0x06006405
-#define DIBUTTON_FLYINGH_GEAR              0x06006406
-#define DIAXIS_FLYINGH_BANK                0x06008a01
-#define DIAXIS_FLYINGH_PITCH               0x06010a02
-#define DIAXIS_FLYINGH_COLLECTIVE          0x06018a03
-#define DIAXIS_FLYINGH_TORQUE              0x06025a04
-#define DIAXIS_FLYINGH_THROTTLE            0x0603da05
-#define DIBUTTON_FLYINGH_FASTER_LINK       0x0603dce0
-#define DIBUTTON_FLYINGH_SLOWER_LINK       0x0603dce8
+#define DIBUTTON_FLYINGH_COUNTER                        0x06005404
+#define DIBUTTON_FLYINGH_VIEW                                        0x06006405
+#define DIBUTTON_FLYINGH_GEAR                                        0x06006406
+#define DIAXIS_FLYINGH_BANK                                          0x06008a01
+#define DIAXIS_FLYINGH_PITCH                                         0x06010a02
+#define DIAXIS_FLYINGH_COLLECTIVE                       0x06018a03
+#define DIAXIS_FLYINGH_TORQUE                                        0x06025a04
+#define DIAXIS_FLYINGH_THROTTLE                                      0x0603da05
+#define DIBUTTON_FLYINGH_FASTER_LINK                    0x0603dce0
+#define DIBUTTON_FLYINGH_SLOWER_LINK                    0x0603dce8
 #define DIBUTTON_FLYINGH_GLANCE_LEFT_LINK  0x0607c4e4
 #define DIBUTTON_FLYINGH_GLANCE_RIGHT_LINK 0x0607c4ec
 #define DIBUTTON_FLYINGH_GLANCE_UP_LINK    0x0607c4e0
 #define DIBUTTON_FLYINGH_GLANCE_DOWN_LINK  0x0607c4e8
 
-#define DIVIRTUAL_SPACESIM                  0x07000000
-#define DIBUTTON_SPACESIM_FIRE              0x07000401
-#define DIBUTTON_SPACESIM_WEAPONS           0x07000402
-#define DIBUTTON_SPACESIM_TARGET            0x07000403
-#define DIBUTTON_SPACESIM_MENU              0x070004fd
-#define DIBUTTON_SPACESIM_VIEW              0x07004404
-#define DIBUTTON_SPACESIM_DISPLAY           0x07004405
-#define DIBUTTON_SPACESIM_RAISE             0x07004406
-#define DIBUTTON_SPACESIM_LOWER             0x07004407
-#define DIBUTTON_SPACESIM_GEAR              0x07004408
+#define DIVIRTUAL_SPACESIM                                                         0x07000000
+#define DIBUTTON_SPACESIM_FIRE                                        0x07000401
+#define DIBUTTON_SPACESIM_WEAPONS                        0x07000402
+#define DIBUTTON_SPACESIM_TARGET                                      0x07000403
+#define DIBUTTON_SPACESIM_MENU                                        0x070004fd
+#define DIBUTTON_SPACESIM_VIEW                                        0x07004404
+#define DIBUTTON_SPACESIM_DISPLAY                        0x07004405
+#define DIBUTTON_SPACESIM_RAISE                                       0x07004406
+#define DIBUTTON_SPACESIM_LOWER                                       0x07004407
+#define DIBUTTON_SPACESIM_GEAR                                        0x07004408
 #define DIBUTTON_SPACESIM_FIRESECONDARY     0x07004409
-#define DIBUTTON_SPACESIM_PAUSE             0x070044fc
-#define DIBUTTON_SPACESIM_DEVICE            0x070044fe
-#define DIHATSWITCH_SPACESIM_GLANCE         0x07004601
-#define DIBUTTON_SPACESIM_LEFT_LINK         0x0700c4e4
-#define DIBUTTON_SPACESIM_RIGHT_LINK        0x0700c4ec
-#define DIAXIS_SPACESIM_LATERAL             0x07008201
-#define DIAXIS_SPACESIM_MOVE                0x07010202
-#define DIBUTTON_SPACESIM_FORWARD_LINK      0x070144e0
+#define DIBUTTON_SPACESIM_PAUSE                                       0x070044fc
+#define DIBUTTON_SPACESIM_DEVICE                                      0x070044fe
+#define DIHATSWITCH_SPACESIM_GLANCE                      0x07004601
+#define DIBUTTON_SPACESIM_LEFT_LINK                      0x0700c4e4
+#define DIBUTTON_SPACESIM_RIGHT_LINK                     0x0700c4ec
+#define DIAXIS_SPACESIM_LATERAL                                       0x07008201
+#define DIAXIS_SPACESIM_MOVE                                          0x07010202
+#define DIBUTTON_SPACESIM_FORWARD_LINK                   0x070144e0
 #define DIBUTTON_SPACESIM_BACKWARD_LINK     0x070144e8
-#define DIAXIS_SPACESIM_CLIMB               0x0701c204
-#define DIAXIS_SPACESIM_ROTATE              0x07024205
+#define DIAXIS_SPACESIM_CLIMB                                         0x0701c204
+#define DIAXIS_SPACESIM_ROTATE                                        0x07024205
 #define DIBUTTON_SPACESIM_TURN_LEFT_LINK    0x070244e4
 #define DIBUTTON_SPACESIM_TURN_RIGHT_LINK   0x070244ec
-#define DIAXIS_SPACESIM_THROTTLE            0x07038203
-#define DIBUTTON_SPACESIM_FASTER_LINK       0x0703c4e0
-#define DIBUTTON_SPACESIM_SLOWER_LINK       0x0703c4e8
+#define DIAXIS_SPACESIM_THROTTLE                                      0x07038203
+#define DIBUTTON_SPACESIM_FASTER_LINK                    0x0703c4e0
+#define DIBUTTON_SPACESIM_SLOWER_LINK                    0x0703c4e8
 #define DIBUTTON_SPACESIM_GLANCE_UP_LINK    0x0707c4e0
 #define DIBUTTON_SPACESIM_GLANCE_LEFT_LINK  0x0707c4e4
 #define DIBUTTON_SPACESIM_GLANCE_DOWN_LINK  0x0707c4e8

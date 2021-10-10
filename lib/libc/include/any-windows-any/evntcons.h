@@ -64,8 +64,8 @@ extern "C" {
     USHORT Reserved1;
     USHORT ExtType;
     __C89_NAMELESS struct {
-      USHORT Linkage : 1;
-      USHORT Reserved2 : 15;
+                   USHORT Linkage : 1;
+                   USHORT Reserved2 : 15;
     };
     USHORT DataSize;
     ULONGLONG DataPtr;
@@ -117,11 +117,11 @@ extern "C" {
     GUID ProviderId;
     EVENT_DESCRIPTOR EventDescriptor;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	ULONG KernelTime;
 	ULONG UserTime;
-      } DUMMYSTRUCTNAME;
-      ULONG64 ProcessorTime;
+                   } DUMMYSTRUCTNAME;
+                   ULONG64 ProcessorTime;
     } DUMMYUNIONNAME;
     GUID ActivityId;
   } EVENT_HEADER,*PEVENT_HEADER;

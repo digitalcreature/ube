@@ -30,14 +30,14 @@ inline HRESULT SpGetCategoryFromId(const WCHAR *category_id, ISpObjectTokenCateg
     HRESULT hres;
 
     hres = ::CoCreateInstance(CLSID_SpObjectTokenCategory, NULL, CLSCTX_ALL, __uuidof(ISpObjectTokenCategory),
-            (void**)&obj_token_cat);
+                                      (void**)&obj_token_cat);
     if(FAILED(hres))
-        return hres;
+                     return hres;
 
     hres = obj_token_cat->SetId(category_id, fCreateIfNotExist);
     if(FAILED(hres)) {
-        obj_token_cat->Release();
-        return hres;
+                     obj_token_cat->Release();
+                     return hres;
     }
 
     *ret = obj_token_cat;
@@ -50,8 +50,8 @@ inline HRESULT SpEnumTokens(const WCHAR *category_id, const WCHAR *req_attrs, co
 
     hres = SpGetCategoryFromId(category_id, &category);
     if(SUCCEEDED(hres)) {
-        hres = category->EnumTokens(req_attrs, opt_attrs, ret);
-        category->Release();
+                     hres = category->EnumTokens(req_attrs, opt_attrs, ret);
+                     category->Release();
     }
 
     return hres;
@@ -69,7 +69,7 @@ inline HRESULT SpGetDescription(ISpObjectToken *obj_token, WCHAR **description, 
     SpHexFromUlong(lang_id, language);
     hres = obj_token->GetStringValue(lang_id, description);
     if(hres == SPERR_NOT_FOUND)
-        hres = obj_token->GetStringValue(NULL, description);
+                     hres = obj_token->GetStringValue(NULL, description);
 
     return hres;
 }

@@ -8,13 +8,13 @@
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
+ *                    notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution.
+ *                    notice, this list of conditions and the following disclaimer in the
+ *                    documentation and/or other materials provided with the distribution.
  *     * Neither the name of Freescale Semiconductor nor the
- *       names of its contributors may be used to endorse or promote products
- *       derived from this software without specific prior written permission.
+ *                    names of its contributors may be used to endorse or promote products
+ *                    derived from this software without specific prior written permission.
  *
  *
  * ALTERNATIVELY, this software may be distributed under the terms of the
@@ -47,7 +47,7 @@
  * struct fsl_hv_ioctl_restart - restart a partition
  * @ret: return error code from the hypervisor
  * @partition: the ID of the partition to restart, or -1 for the
- *             calling partition
+ *                                       calling partition
  *
  * Used by FSL_HV_IOCTL_PARTITION_RESTART
  */
@@ -60,7 +60,7 @@ struct fsl_hv_ioctl_restart {
  * struct fsl_hv_ioctl_status - get a partition's status
  * @ret: return error code from the hypervisor
  * @partition: the ID of the partition to query, or -1 for the
- *             calling partition
+ *                                       calling partition
  * @status: The returned status of the partition
  *
  * Used by FSL_HV_IOCTL_PARTITION_GET_STATUS
@@ -97,7 +97,7 @@ struct fsl_hv_ioctl_start {
  * struct fsl_hv_ioctl_stop - stop a partition
  * @ret: return error code from the hypervisor
  * @partition: the ID of the partition to stop, or -1 for the calling
- *             partition
+ *                                       partition
  *
  * Used by FSL_HV_IOCTL_PARTITION_STOP
  */
@@ -110,16 +110,16 @@ struct fsl_hv_ioctl_stop {
  * struct fsl_hv_ioctl_memcpy - copy memory between partitions
  * @ret: return error code from the hypervisor
  * @source: the partition ID of the source partition, or -1 for this
- *          partition
+ *                       partition
  * @target: the partition ID of the target partition, or -1 for this
- *          partition
+ *                       partition
  * @reserved: reserved, must be set to 0
  * @local_addr: user-space virtual address of a buffer in the local
- *              partition
+ *                                        partition
  * @remote_addr: guest physical address of a buffer in the
- *           remote partition
+ *                        remote partition
  * @count: the number of bytes to copy.  Both the local and remote
- *         buffers must be at least 'count' bytes long
+ *                      buffers must be at least 'count' bytes long
  *
  * Used by FSL_HV_IOCTL_MEMCPY
  *
@@ -134,9 +134,9 @@ struct fsl_hv_ioctl_stop {
  * partitions or within the same partition, so either 'source' or
  * 'target' (but not both) must be -1.  In other words, either
  *
- *      source == local and target == remote
+ *                   source == local and target == remote
  * or
- *      source == remote and target == local
+ *                   source == remote and target == local
  */
 struct fsl_hv_ioctl_memcpy {
 	__u32 ret;

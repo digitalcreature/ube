@@ -39,54 +39,54 @@ void main() {
     vec3 pos = vec3(0.0);
     vec3 norm = vec3(0.0);
     switch (face) {
-        case 0: // x+
-            pos.x = 1;
-            pos.y = u;
-            pos.z = v;
-            norm.x = 1;
-            tex_coord.x = vy + u;
-            tex_coord.y = vz + v;
-            break;
-        case 1: // y+
-            pos.x = v;
-            pos.y = 1;
-            pos.z = u;
-            norm.y = 1;
-            tex_coord.x = vz + u;
-            tex_coord.y = vx + v;
-            break;
-        case 2: // z+
-            pos.x = u;
-            pos.y = v;
-            pos.z = 1;
-            norm.z = 1;
-            tex_coord.x = vx + u;
-            tex_coord.y = vy + v;
-            break;
-        case 3: // x-
-            pos.x = 0;
-            pos.y = v;
-            pos.z = u;
-            norm.x = -1;
-            tex_coord.x = vz + u;
-            tex_coord.y = vy + v;
-            break;
-        case 4: // y-
-            pos.x = u;
-            pos.y = 0;
-            pos.z = v;
-            norm.y = -1;
-            tex_coord.x = vx + u;
-            tex_coord.y = vz + v;
-            break;
-        case 5: // z-
-            pos.x = v;
-            pos.y = u;
-            pos.z = 0;
-            norm.z = -1;
-            tex_coord.x = vy + u;
-            tex_coord.y = vx + v;
-            break;
+                     case 0: // x+
+                                      pos.x = 1;
+                                      pos.y = u;
+                                      pos.z = v;
+                                      norm.x = 1;
+                                      tex_coord.x = vy + u;
+                                      tex_coord.y = vz + v;
+                                      break;
+                     case 1: // y+
+                                      pos.x = v;
+                                      pos.y = 1;
+                                      pos.z = u;
+                                      norm.y = 1;
+                                      tex_coord.x = vz + u;
+                                      tex_coord.y = vx + v;
+                                      break;
+                     case 2: // z+
+                                      pos.x = u;
+                                      pos.y = v;
+                                      pos.z = 1;
+                                      norm.z = 1;
+                                      tex_coord.x = vx + u;
+                                      tex_coord.y = vy + v;
+                                      break;
+                     case 3: // x-
+                                      pos.x = 0;
+                                      pos.y = v;
+                                      pos.z = u;
+                                      norm.x = -1;
+                                      tex_coord.x = vz + u;
+                                      tex_coord.y = vy + v;
+                                      break;
+                     case 4: // y-
+                                      pos.x = u;
+                                      pos.y = 0;
+                                      pos.z = v;
+                                      norm.y = -1;
+                                      tex_coord.x = vx + u;
+                                      tex_coord.y = vz + v;
+                                      break;
+                     case 5: // z-
+                                      pos.x = v;
+                                      pos.y = u;
+                                      pos.z = 0;
+                                      norm.z = -1;
+                                      tex_coord.x = vy + u;
+                                      tex_coord.y = vx + v;
+                                      break;
     }
     pos += vec3(vx, vy, vz);
     pos *= voxel_size;

@@ -36,7 +36,7 @@ int fesetround (int mode)
 #else
   unsigned short _cw;
   if ((mode & ~(FE_TONEAREST | FE_DOWNWARD | FE_UPWARD | FE_TOWARDZERO))
-      != 0)
+                   != 0)
     return -1;
   __asm__ volatile ("fnstcw %0;": "=m" (*&_cw));
   _cw &= ~0xc00;
@@ -45,12 +45,12 @@ int fesetround (int mode)
   
   if (__mingw_has_sse ())
     {
-      int mxcsr;
+                   int mxcsr;
 
-      __asm__ volatile ("stmxcsr %0" : "=m" (*&mxcsr));
-      mxcsr &= ~0x6000;
-      mxcsr |= mode << 3;
-      __asm__ volatile ("ldmxcsr %0" : : "m" (*&mxcsr));
+                   __asm__ volatile ("stmxcsr %0" : "=m" (*&mxcsr));
+                   mxcsr &= ~0x6000;
+                   mxcsr |= mode << 3;
+                   __asm__ volatile ("ldmxcsr %0" : : "m" (*&mxcsr));
     }
 #endif /* defined(_ARM_) || defined(__arm__) || defined(_ARM64_) || defined(__aarch64__) */
   return 0;

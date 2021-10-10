@@ -53,14 +53,14 @@ MIDL_INTERFACE("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")
 IInspectable : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetIids(
-        ULONG *iidCount,
-        IID **iids) = 0;
+                     ULONG *iidCount,
+                     IID **iids) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRuntimeClassName(
-        HSTRING *className) = 0;
+                     HSTRING *className) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTrustLevel(
-        TrustLevel *trustLevel) = 0;
+                     TrustLevel *trustLevel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -72,29 +72,29 @@ typedef struct IInspectableVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IInspectable *This,
-        REFIID riid,
-        void **ppvObject);
+                     IInspectable *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IInspectable *This);
+                     IInspectable *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IInspectable *This);
+                     IInspectable *This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IInspectable *This,
-        ULONG *iidCount,
-        IID **iids);
+                     IInspectable *This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IInspectable *This,
-        HSTRING *className);
+                     IInspectable *This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IInspectable *This,
-        TrustLevel *trustLevel);
+                     IInspectable *This,
+                     TrustLevel *trustLevel);
 
     END_INTERFACE
 } IInspectableVtbl;
@@ -155,10 +155,10 @@ extern "C++" {
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);
+ULONG                        __RPC_USER HSTRING_UserSize     (ULONG *, ULONG, HSTRING *);
 unsigned char * __RPC_USER HSTRING_UserMarshal  (ULONG *, unsigned char *, HSTRING *);
 unsigned char * __RPC_USER HSTRING_UserUnmarshal(ULONG *, unsigned char *, HSTRING *);
-void            __RPC_USER HSTRING_UserFree     (ULONG *, HSTRING *);
+void                                      __RPC_USER HSTRING_UserFree     (ULONG *, HSTRING *);
 
 /* End additional prototypes */
 

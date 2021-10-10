@@ -32,7 +32,7 @@ struct ppdev_frob_struct {
 	unsigned char mask;
 	unsigned char val;
 };
-#define PPFCONTROL      _IOW(PP_IOCTL, 0x8e, struct ppdev_frob_struct)
+#define PPFCONTROL                   _IOW(PP_IOCTL, 0x8e, struct ppdev_frob_struct)
 
 /* Read/write data */
 #define PPRDATA		_IOR(PP_IOCTL, 0x85, unsigned char)

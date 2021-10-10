@@ -639,7 +639,7 @@ unsigned long __cdecl _lrotr(unsigned long,int);
 
 #endif /* defined(__INTRIN_H_) || \
     (defined(_X86INTRIN_H_INCLUDED) && \
-       ((__MINGW_GCC_VERSION >= 40902) || defined(__LP64__))) */
+                    ((__MINGW_GCC_VERSION >= 40902) || defined(__LP64__))) */
 
   _CRTIMP void __cdecl _makepath(char *_Path,const char *_Drive,const char *_Dir,const char *_Filename,const char *_Ext);
   _onexit_t __cdecl _onexit(_onexit_t _Func);

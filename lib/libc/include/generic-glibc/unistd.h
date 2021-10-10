@@ -83,7 +83,7 @@ __BEGIN_DECLS
 
 /* If defined, the implementation supports the
    creation of locales with the localedef utility.  */
-#define _POSIX2_LOCALEDEF       __POSIX2_THIS_VERSION
+#define _POSIX2_LOCALEDEF                    __POSIX2_THIS_VERSION
 
 /* X/Open version number to which the library conforms.  It is selectable.  */
 #ifdef __USE_XOPEN2K8
@@ -376,7 +376,7 @@ extern ssize_t write (int __fd, const void *__buf, size_t __n) __wur
    This function is a cancellation point and therefore not marked with
    __THROW.  */
 extern ssize_t pread (int __fd, void *__buf, size_t __nbytes,
-		      __off_t __offset) __wur
+		                   __off_t __offset) __wur
     __attr_access ((__write_only__, 2, 3));
 
 /* Write N bytes of BUF to FD at the given position OFFSET without
@@ -385,7 +385,7 @@ extern ssize_t pread (int __fd, void *__buf, size_t __nbytes,
    This function is a cancellation point and therefore not marked with
    __THROW.  */
 extern ssize_t pwrite (int __fd, const void *__buf, size_t __n,
-		       __off_t __offset) __wur
+		                    __off_t __offset) __wur
     __attr_access ((__read_only__, 2, 3));
 
 # else
@@ -826,7 +826,7 @@ extern ssize_t readlink (const char *__restrict __path,
 #ifdef __USE_ATFILE
 /* Like symlink but a relative path in TO is interpreted relative to TOFD.  */
 extern int symlinkat (const char *__from, int __tofd,
-		      const char *__to) __THROW __nonnull ((1, 3)) __wur;
+		                   const char *__to) __THROW __nonnull ((1, 3)) __wur;
 
 /* Like readlink but a relative PATH is interpreted relative to FD.  */
 extern ssize_t readlinkat (int __fd, const char *__restrict __path,
@@ -1094,7 +1094,7 @@ extern int lockf (int __fd, int __cmd, __off_t __len) __wur;
 # else
 #  ifdef __REDIRECT
 extern int __REDIRECT (lockf, (int __fd, int __cmd, __off64_t __len),
-		       lockf64) __wur;
+		                    lockf64) __wur;
 #  else
 #   define lockf lockf64
 #  endif
@@ -1111,11 +1111,11 @@ extern int lockf64 (int __fd, int __cmd, __off64_t __len) __wur;
    set to EINTR.  */
 
 # define TEMP_FAILURE_RETRY(expression) \
-  (__extension__							      \
-    ({ long int __result;						      \
-       do __result = (long int) (expression);				      \
-       while (__result == -1L && errno == EINTR);			      \
-       __result; }))
+  (__extension__							                   \
+    ({ long int __result;						                   \
+                    do __result = (long int) (expression);				                   \
+                    while (__result == -1L && errno == EINTR);			                   \
+                    __result; }))
 
 /* Copy LENGTH bytes from INFD to OUTFD.  */
 ssize_t copy_file_range (int __infd, __off64_t *__pinoff,

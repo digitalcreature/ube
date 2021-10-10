@@ -206,39 +206,39 @@ struct SSVARIANT {
     DOUBLE dblFloatVal;
     CY cyMoneyVal;
     struct _NCharVal {
-      SHORT sActualLength;
-      SHORT sMaxLength;
-      WCHAR *pwchNCharVal;
-      BYTE rgbReserved[5];
-      DWORD dwReserved;
-      WCHAR *pwchReserved;
+                   SHORT sActualLength;
+                   SHORT sMaxLength;
+                   WCHAR *pwchNCharVal;
+                   BYTE rgbReserved[5];
+                   DWORD dwReserved;
+                   WCHAR *pwchReserved;
     } NCharVal;
     struct _CharVal {
-      SHORT sActualLength;
-      SHORT sMaxLength;
-      CHAR *pchCharVal;
-      BYTE rgbReserved[5];
-      DWORD dwReserved;
-      WCHAR *pwchReserved;
+                   SHORT sActualLength;
+                   SHORT sMaxLength;
+                   CHAR *pchCharVal;
+                   BYTE rgbReserved[5];
+                   DWORD dwReserved;
+                   WCHAR *pwchReserved;
     } CharVal;
     VARIANT_BOOL fBitVal;
     BYTE rgbGuidVal [16];
     DB_NUMERIC numNumericVal;
     struct _BinaryVal {
-      SHORT sActualLength;
-      SHORT sMaxLength;
-      BYTE *prgbBinaryVal;
-      DWORD dwReserved;
+                   SHORT sActualLength;
+                   SHORT sMaxLength;
+                   BYTE *prgbBinaryVal;
+                   DWORD dwReserved;
     } BinaryVal;
     DBTIMESTAMP tsDateTimeVal;
     struct _UnknownType {
-      DWORD dwActualLength;
-      BYTE rgMetadata [16];
-      BYTE *pUnknownData;
+                   DWORD dwActualLength;
+                   BYTE rgMetadata [16];
+                   BYTE *pUnknownData;
     } UnknownType;
     struct _BLOBType {
-      DBOBJECT dbobj;
-      IUnknown *pUnk;
+                   DBOBJECT dbobj;
+                   IUnknown *pUnk;
     } BLOBType;
   };
 };
@@ -328,10 +328,10 @@ extern "C" {
 #else
   typedef struct ISQLServerErrorInfoVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISQLServerErrorInfo *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISQLServerErrorInfo *This);
-      ULONG (WINAPI *Release)(ISQLServerErrorInfo *This);
-      HRESULT (WINAPI *GetErrorInfo)(ISQLServerErrorInfo *This,SSERRORINFO **ppErrorInfo,OLECHAR **ppStringsBuffer);
+                   HRESULT (WINAPI *QueryInterface)(ISQLServerErrorInfo *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISQLServerErrorInfo *This);
+                   ULONG (WINAPI *Release)(ISQLServerErrorInfo *This);
+                   HRESULT (WINAPI *GetErrorInfo)(ISQLServerErrorInfo *This,SSERRORINFO **ppErrorInfo,OLECHAR **ppStringsBuffer);
     END_INTERFACE
   } ISQLServerErrorInfoVtbl;
   struct ISQLServerErrorInfo {
@@ -368,11 +368,11 @@ extern "C" {
 #else
   typedef struct IRowsetFastLoadVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IRowsetFastLoad *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IRowsetFastLoad *This);
-      ULONG (WINAPI *Release)(IRowsetFastLoad *This);
-      HRESULT (WINAPI *InsertRow)(IRowsetFastLoad *This,HACCESSOR hAccessor,void *pData);
-      HRESULT (WINAPI *Commit)(IRowsetFastLoad *This,WINBOOL fDone);
+                   HRESULT (WINAPI *QueryInterface)(IRowsetFastLoad *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IRowsetFastLoad *This);
+                   ULONG (WINAPI *Release)(IRowsetFastLoad *This);
+                   HRESULT (WINAPI *InsertRow)(IRowsetFastLoad *This,HACCESSOR hAccessor,void *pData);
+                   HRESULT (WINAPI *Commit)(IRowsetFastLoad *This,WINBOOL fDone);
     END_INTERFACE
   } IRowsetFastLoadVtbl;
   struct IRowsetFastLoad {
@@ -413,11 +413,11 @@ extern "C" {
 #else
   typedef struct ISchemaLockVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISchemaLock *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISchemaLock *This);
-      ULONG (WINAPI *Release)(ISchemaLock *This);
-      HRESULT (WINAPI *GetSchemaLock)(ISchemaLock *This,DBID *pTableID,LOCKMODE lmMode,HANDLE *phLockHandle,ULONGLONG *pTableVersion);
-      HRESULT (WINAPI *ReleaseSchemaLock)(ISchemaLock *This,HANDLE hLockHandle);
+                   HRESULT (WINAPI *QueryInterface)(ISchemaLock *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISchemaLock *This);
+                   ULONG (WINAPI *Release)(ISchemaLock *This);
+                   HRESULT (WINAPI *GetSchemaLock)(ISchemaLock *This,DBID *pTableID,LOCKMODE lmMode,HANDLE *phLockHandle,ULONGLONG *pTableVersion);
+                   HRESULT (WINAPI *ReleaseSchemaLock)(ISchemaLock *This,HANDLE hLockHandle);
     END_INTERFACE
   } ISchemaLockVtbl;
   struct ISchemaLock {

@@ -88,11 +88,11 @@ extern "C" {
 #define TP_ELEMENT_EOP 4
     ULONG cLength;
     __C89_NAMELESS union {
-      __C89_NAMELESS struct {
+                   __C89_NAMELESS struct {
 	LARGE_INTEGER nFileOffset;
 	HANDLE hFile;
-      };
-      PVOID pBuffer;
+                   };
+                   PVOID pBuffer;
     };
   } TRANSMIT_PACKETS_ELEMENT,*PTRANSMIT_PACKETS_ELEMENT,*LPTRANSMIT_PACKETS_ELEMENT;
 
@@ -137,25 +137,25 @@ extern "C" {
 
   typedef struct _NLA_BLOB {
     struct {
-      NLA_BLOB_DATA_TYPE type;
-      DWORD dwSize;
-      DWORD nextOffset;
+                   NLA_BLOB_DATA_TYPE type;
+                   DWORD dwSize;
+                   DWORD nextOffset;
     } header;
     union {
-      CHAR rawData[1];
-      struct {
+                   CHAR rawData[1];
+                   struct {
 	DWORD dwType;
 	DWORD dwSpeed;
 	CHAR adapterName[1];
-      } interfaceData;
-      struct {
+                   } interfaceData;
+                   struct {
 	CHAR information[1];
-      } locationData;
-      struct {
+                   } locationData;
+                   struct {
 	NLA_CONNECTIVITY_TYPE type;
 	NLA_INTERNET internet;
-      } connectivity;
-      struct {
+                   } connectivity;
+                   struct {
 	struct {
 	  DWORD speed;
 	  DWORD type;
@@ -163,7 +163,7 @@ extern "C" {
 	  WCHAR machineName[256];
 	  WCHAR sharedAdapterName[256];
 	} remote;
-      } ICS;
+                   } ICS;
     } data;
   } NLA_BLOB,*PNLA_BLOB,*LPNLA_BLOB;
 

@@ -1,8 +1,8 @@
-// F32         - function available on all 32 bit architectures
-// F64         - function available on all 64 bit architectures
+// F32                      - function available on all 32 bit architectures
+// F64                      - function available on all 64 bit architectures
 // F_X86_ANY   - function available on i386 and x86_64
-// F_I386      - function available only on i386
-// F_X64       - function available only on x86_64
+// F_I386                   - function available only on i386
+// F_X64                    - function available only on x86_64
 // F_ARM32     - function available only on arm32
 // F_ARM64     - function available only on arm64
 // F_ARM_ANY   - function available on 32 and 64 bit arm

@@ -175,24 +175,24 @@ extern "C" {
 #else
   typedef struct _IUseIMBaseVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(_IUseIMBase *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(_IUseIMBase *This);
-      ULONG (WINAPI *Release)(_IUseIMBase *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(_IUseIMBase *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(_IUseIMBase *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(_IUseIMBase *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(_IUseIMBase *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetService)(_IUseIMBase *This,IDispatch *pService,IDispatch *pApp);
-      HRESULT (WINAPI *get_Service)(_IUseIMBase *This,short *pVal);
-      HRESULT (WINAPI *put_Service)(_IUseIMBase *This,short newVal);
-      HRESULT (WINAPI *get_HasService)(_IUseIMBase *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_AutoLogon)(_IUseIMBase *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_AutoLogon)(_IUseIMBase *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_LoggedOn)(_IUseIMBase *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *Logon)(_IUseIMBase *This,BSTR bstrAddress,BSTR bstrName,BSTR bstrPassword,BSTR bstrDomain);
-      HRESULT (WINAPI *Logoff)(_IUseIMBase *This);
-      HRESULT (WINAPI *GetLocalState)(_IUseIMBase *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
-      HRESULT (WINAPI *SetLocalState)(_IUseIMBase *This,__LONG32 lState,VARIANT varDescription,VARIANT varData);
+                   HRESULT (WINAPI *QueryInterface)(_IUseIMBase *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(_IUseIMBase *This);
+                   ULONG (WINAPI *Release)(_IUseIMBase *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(_IUseIMBase *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(_IUseIMBase *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(_IUseIMBase *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(_IUseIMBase *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetService)(_IUseIMBase *This,IDispatch *pService,IDispatch *pApp);
+                   HRESULT (WINAPI *get_Service)(_IUseIMBase *This,short *pVal);
+                   HRESULT (WINAPI *put_Service)(_IUseIMBase *This,short newVal);
+                   HRESULT (WINAPI *get_HasService)(_IUseIMBase *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_AutoLogon)(_IUseIMBase *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_AutoLogon)(_IUseIMBase *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_LoggedOn)(_IUseIMBase *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *Logon)(_IUseIMBase *This,BSTR bstrAddress,BSTR bstrName,BSTR bstrPassword,BSTR bstrDomain);
+                   HRESULT (WINAPI *Logoff)(_IUseIMBase *This);
+                   HRESULT (WINAPI *GetLocalState)(_IUseIMBase *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
+                   HRESULT (WINAPI *SetLocalState)(_IUseIMBase *This,__LONG32 lState,VARIANT varDescription,VARIANT varData);
     END_INTERFACE
   } _IUseIMBaseVtbl;
   struct _IUseIMBase {
@@ -291,62 +291,62 @@ extern "C" {
 #else
   typedef struct IMSIMContactViewVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSIMContactView *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSIMContactView *This);
-      ULONG (WINAPI *Release)(IMSIMContactView *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSIMContactView *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSIMContactView *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSIMContactView *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSIMContactView *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetService)(IMSIMContactView *This,IDispatch *pService,IDispatch *pApp);
-      HRESULT (WINAPI *get_Service)(IMSIMContactView *This,short *pVal);
-      HRESULT (WINAPI *put_Service)(IMSIMContactView *This,short newVal);
-      HRESULT (WINAPI *get_HasService)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_AutoLogon)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_AutoLogon)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_LoggedOn)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *Logon)(IMSIMContactView *This,BSTR bstrAddress,BSTR bstrName,BSTR bstrPassword,BSTR bstrDomain);
-      HRESULT (WINAPI *Logoff)(IMSIMContactView *This);
-      HRESULT (WINAPI *GetLocalState)(IMSIMContactView *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
-      HRESULT (WINAPI *SetLocalState)(IMSIMContactView *This,__LONG32 lState,VARIANT varDescription,VARIANT varData);
-      HRESULT (WINAPI *Add)(IMSIMContactView *This,VARIANT vUser);
-      HRESULT (WINAPI *Remove)(IMSIMContactView *This,VARIANT vUser);
-      HRESULT (WINAPI *get_List)(IMSIMContactView *This,VARIANT *pvarList);
-      HRESULT (WINAPI *put_List)(IMSIMContactView *This,VARIANT varList);
-      HRESULT (WINAPI *AddMenuItem)(IMSIMContactView *This,BSTR bstrItem,__LONG32 lPosition,__LONG32 *plCommand);
-      HRESULT (WINAPI *get_SelectedMenuOptions)(IMSIMContactView *This,__LONG32 *pVal);
-      HRESULT (WINAPI *IMSelected)(IMSIMContactView *This);
-      HRESULT (WINAPI *EMailSelected)(IMSIMContactView *This);
-      HRESULT (WINAPI *InviteSelected)(IMSIMContactView *This);
-      HRESULT (WINAPI *BlockSelected)(IMSIMContactView *This);
-      HRESULT (WINAPI *UnblockSelected)(IMSIMContactView *This);
-      HRESULT (WINAPI *get_ExtentWidth)(IMSIMContactView *This,__LONG32 *pX);
-      HRESULT (WINAPI *get_ExtentHeight)(IMSIMContactView *This,__LONG32 *pY);
-      HRESULT (WINAPI *get_HotTracking)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_HotTracking)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_AllowCollapse)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_AllowCollapse)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowSelectAlways)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowSelectAlways)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_OnlineRootLabel)(IMSIMContactView *This,BSTR *pbstrLabel);
-      HRESULT (WINAPI *put_OnlineRootLabel)(IMSIMContactView *This,BSTR bstrLabel);
-      HRESULT (WINAPI *get_OfflineRootLabel)(IMSIMContactView *This,BSTR *pbstrLabel);
-      HRESULT (WINAPI *put_OfflineRootLabel)(IMSIMContactView *This,BSTR bstrLabel);
-      HRESULT (WINAPI *get_Window)(IMSIMContactView *This,__LONG32 *pVal);
-      HRESULT (WINAPI *get_ShowLogonButton)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowLogonButton)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_OnlineCollapsed)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_OnlineCollapsed)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_OfflineCollapsed)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_OfflineCollapsed)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_Group)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_Group)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_FilterOffline)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_FilterOffline)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowIcons)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowIcons)(IMSIMContactView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_AcceptMessages)(IMSIMContactView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_AcceptMessages)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *QueryInterface)(IMSIMContactView *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSIMContactView *This);
+                   ULONG (WINAPI *Release)(IMSIMContactView *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSIMContactView *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSIMContactView *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSIMContactView *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSIMContactView *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetService)(IMSIMContactView *This,IDispatch *pService,IDispatch *pApp);
+                   HRESULT (WINAPI *get_Service)(IMSIMContactView *This,short *pVal);
+                   HRESULT (WINAPI *put_Service)(IMSIMContactView *This,short newVal);
+                   HRESULT (WINAPI *get_HasService)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_AutoLogon)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_AutoLogon)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_LoggedOn)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *Logon)(IMSIMContactView *This,BSTR bstrAddress,BSTR bstrName,BSTR bstrPassword,BSTR bstrDomain);
+                   HRESULT (WINAPI *Logoff)(IMSIMContactView *This);
+                   HRESULT (WINAPI *GetLocalState)(IMSIMContactView *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
+                   HRESULT (WINAPI *SetLocalState)(IMSIMContactView *This,__LONG32 lState,VARIANT varDescription,VARIANT varData);
+                   HRESULT (WINAPI *Add)(IMSIMContactView *This,VARIANT vUser);
+                   HRESULT (WINAPI *Remove)(IMSIMContactView *This,VARIANT vUser);
+                   HRESULT (WINAPI *get_List)(IMSIMContactView *This,VARIANT *pvarList);
+                   HRESULT (WINAPI *put_List)(IMSIMContactView *This,VARIANT varList);
+                   HRESULT (WINAPI *AddMenuItem)(IMSIMContactView *This,BSTR bstrItem,__LONG32 lPosition,__LONG32 *plCommand);
+                   HRESULT (WINAPI *get_SelectedMenuOptions)(IMSIMContactView *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *IMSelected)(IMSIMContactView *This);
+                   HRESULT (WINAPI *EMailSelected)(IMSIMContactView *This);
+                   HRESULT (WINAPI *InviteSelected)(IMSIMContactView *This);
+                   HRESULT (WINAPI *BlockSelected)(IMSIMContactView *This);
+                   HRESULT (WINAPI *UnblockSelected)(IMSIMContactView *This);
+                   HRESULT (WINAPI *get_ExtentWidth)(IMSIMContactView *This,__LONG32 *pX);
+                   HRESULT (WINAPI *get_ExtentHeight)(IMSIMContactView *This,__LONG32 *pY);
+                   HRESULT (WINAPI *get_HotTracking)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_HotTracking)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_AllowCollapse)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_AllowCollapse)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowSelectAlways)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowSelectAlways)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_OnlineRootLabel)(IMSIMContactView *This,BSTR *pbstrLabel);
+                   HRESULT (WINAPI *put_OnlineRootLabel)(IMSIMContactView *This,BSTR bstrLabel);
+                   HRESULT (WINAPI *get_OfflineRootLabel)(IMSIMContactView *This,BSTR *pbstrLabel);
+                   HRESULT (WINAPI *put_OfflineRootLabel)(IMSIMContactView *This,BSTR bstrLabel);
+                   HRESULT (WINAPI *get_Window)(IMSIMContactView *This,__LONG32 *pVal);
+                   HRESULT (WINAPI *get_ShowLogonButton)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowLogonButton)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_OnlineCollapsed)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_OnlineCollapsed)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_OfflineCollapsed)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_OfflineCollapsed)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_Group)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_Group)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_FilterOffline)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_FilterOffline)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowIcons)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowIcons)(IMSIMContactView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_AcceptMessages)(IMSIMContactView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_AcceptMessages)(IMSIMContactView *This,VARIANT_BOOL newVal);
     END_INTERFACE
   } IMSIMContactViewVtbl;
   struct IMSIMContactView {
@@ -498,13 +498,13 @@ extern "C" {
 #else
   typedef struct DMSIMContactViewEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DMSIMContactViewEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DMSIMContactViewEvents *This);
-      ULONG (WINAPI *Release)(DMSIMContactViewEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(DMSIMContactViewEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(DMSIMContactViewEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(DMSIMContactViewEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(DMSIMContactViewEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(DMSIMContactViewEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DMSIMContactViewEvents *This);
+                   ULONG (WINAPI *Release)(DMSIMContactViewEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(DMSIMContactViewEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(DMSIMContactViewEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(DMSIMContactViewEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(DMSIMContactViewEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } DMSIMContactViewEventsVtbl;
   struct DMSIMContactViewEvents {
@@ -563,55 +563,55 @@ extern "C" {
 #else
   typedef struct IMSIMMessageViewVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSIMMessageView *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSIMMessageView *This);
-      ULONG (WINAPI *Release)(IMSIMMessageView *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSIMMessageView *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSIMMessageView *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSIMMessageView *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSIMMessageView *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetService)(IMSIMMessageView *This,IDispatch *pService,IDispatch *pApp);
-      HRESULT (WINAPI *get_Service)(IMSIMMessageView *This,short *pVal);
-      HRESULT (WINAPI *put_Service)(IMSIMMessageView *This,short newVal);
-      HRESULT (WINAPI *get_HasService)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_AutoLogon)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_AutoLogon)(IMSIMMessageView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_LoggedOn)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *Logon)(IMSIMMessageView *This,BSTR bstrAddress,BSTR bstrName,BSTR bstrPassword,BSTR bstrDomain);
-      HRESULT (WINAPI *Logoff)(IMSIMMessageView *This);
-      HRESULT (WINAPI *GetLocalState)(IMSIMMessageView *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
-      HRESULT (WINAPI *SetLocalState)(IMSIMMessageView *This,__LONG32 lState,VARIANT varDescription,VARIANT varData);
-      HRESULT (WINAPI *get_Window)(IMSIMMessageView *This,__LONG32 *phwnd);
-      HRESULT (WINAPI *put_Appearance)(IMSIMMessageView *This,short appearance);
-      HRESULT (WINAPI *get_Appearance)(IMSIMMessageView *This,short *pappearance);
-      HRESULT (WINAPI *get_ShowParticipants)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowParticipants)(IMSIMMessageView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowMembers)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowMembers)(IMSIMMessageView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowAvailable)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowAvailable)(IMSIMMessageView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_AvailableList)(IMSIMMessageView *This,VARIANT *pVal);
-      HRESULT (WINAPI *put_AvailableList)(IMSIMMessageView *This,VARIANT newVal);
-      HRESULT (WINAPI *get_ShowMessageHistory)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowMessageHistory)(IMSIMMessageView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_ShowEdit)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_ShowEdit)(IMSIMMessageView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_HideStatus)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_HideStatus)(IMSIMMessageView *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_MessageHistory)(IMSIMMessageView *This,BSTR *pVal);
-      HRESULT (WINAPI *get_StatusText)(IMSIMMessageView *This,BSTR *pVal);
-      HRESULT (WINAPI *put_StatusText)(IMSIMMessageView *This,BSTR newVal);
-      HRESULT (WINAPI *get_MessageText)(IMSIMMessageView *This,BSTR *pVal);
-      HRESULT (WINAPI *put_MessageText)(IMSIMMessageView *This,BSTR newVal);
-      HRESULT (WINAPI *Invite)(IMSIMMessageView *This,VARIANT varContact);
-      HRESULT (WINAPI *EndSession)(IMSIMMessageView *This);
-      HRESULT (WINAPI *AddToAvailable)(IMSIMMessageView *This,VARIANT varContact);
-      HRESULT (WINAPI *RemoveFromAvailable)(IMSIMMessageView *This,VARIANT varContact);
-      HRESULT (WINAPI *InviteNetMeeting)(IMSIMMessageView *This);
-      HRESULT (WINAPI *NetMeetingInvite)(IMSIMMessageView *This,IDispatch *pIMSession,IDispatch *pContact,__LONG32 lInviteCookie);
-      HRESULT (WINAPI *get_SourceURL)(IMSIMMessageView *This,BSTR *pVal);
-      HRESULT (WINAPI *put_SourceURL)(IMSIMMessageView *This,BSTR newVal);
-      HRESULT (WINAPI *get_InSession)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *QueryInterface)(IMSIMMessageView *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSIMMessageView *This);
+                   ULONG (WINAPI *Release)(IMSIMMessageView *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSIMMessageView *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSIMMessageView *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSIMMessageView *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSIMMessageView *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetService)(IMSIMMessageView *This,IDispatch *pService,IDispatch *pApp);
+                   HRESULT (WINAPI *get_Service)(IMSIMMessageView *This,short *pVal);
+                   HRESULT (WINAPI *put_Service)(IMSIMMessageView *This,short newVal);
+                   HRESULT (WINAPI *get_HasService)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_AutoLogon)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_AutoLogon)(IMSIMMessageView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_LoggedOn)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *Logon)(IMSIMMessageView *This,BSTR bstrAddress,BSTR bstrName,BSTR bstrPassword,BSTR bstrDomain);
+                   HRESULT (WINAPI *Logoff)(IMSIMMessageView *This);
+                   HRESULT (WINAPI *GetLocalState)(IMSIMMessageView *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
+                   HRESULT (WINAPI *SetLocalState)(IMSIMMessageView *This,__LONG32 lState,VARIANT varDescription,VARIANT varData);
+                   HRESULT (WINAPI *get_Window)(IMSIMMessageView *This,__LONG32 *phwnd);
+                   HRESULT (WINAPI *put_Appearance)(IMSIMMessageView *This,short appearance);
+                   HRESULT (WINAPI *get_Appearance)(IMSIMMessageView *This,short *pappearance);
+                   HRESULT (WINAPI *get_ShowParticipants)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowParticipants)(IMSIMMessageView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowMembers)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowMembers)(IMSIMMessageView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowAvailable)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowAvailable)(IMSIMMessageView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_AvailableList)(IMSIMMessageView *This,VARIANT *pVal);
+                   HRESULT (WINAPI *put_AvailableList)(IMSIMMessageView *This,VARIANT newVal);
+                   HRESULT (WINAPI *get_ShowMessageHistory)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowMessageHistory)(IMSIMMessageView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_ShowEdit)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_ShowEdit)(IMSIMMessageView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_HideStatus)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_HideStatus)(IMSIMMessageView *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_MessageHistory)(IMSIMMessageView *This,BSTR *pVal);
+                   HRESULT (WINAPI *get_StatusText)(IMSIMMessageView *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_StatusText)(IMSIMMessageView *This,BSTR newVal);
+                   HRESULT (WINAPI *get_MessageText)(IMSIMMessageView *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_MessageText)(IMSIMMessageView *This,BSTR newVal);
+                   HRESULT (WINAPI *Invite)(IMSIMMessageView *This,VARIANT varContact);
+                   HRESULT (WINAPI *EndSession)(IMSIMMessageView *This);
+                   HRESULT (WINAPI *AddToAvailable)(IMSIMMessageView *This,VARIANT varContact);
+                   HRESULT (WINAPI *RemoveFromAvailable)(IMSIMMessageView *This,VARIANT varContact);
+                   HRESULT (WINAPI *InviteNetMeeting)(IMSIMMessageView *This);
+                   HRESULT (WINAPI *NetMeetingInvite)(IMSIMMessageView *This,IDispatch *pIMSession,IDispatch *pContact,__LONG32 lInviteCookie);
+                   HRESULT (WINAPI *get_SourceURL)(IMSIMMessageView *This,BSTR *pVal);
+                   HRESULT (WINAPI *put_SourceURL)(IMSIMMessageView *This,BSTR newVal);
+                   HRESULT (WINAPI *get_InSession)(IMSIMMessageView *This,VARIANT_BOOL *pVal);
     END_INTERFACE
   } IMSIMMessageViewVtbl;
   struct IMSIMMessageView {
@@ -742,13 +742,13 @@ extern "C" {
 #else
   typedef struct DMSIMMessageViewEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DMSIMMessageViewEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DMSIMMessageViewEvents *This);
-      ULONG (WINAPI *Release)(DMSIMMessageViewEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(DMSIMMessageViewEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(DMSIMMessageViewEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(DMSIMMessageViewEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(DMSIMMessageViewEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(DMSIMMessageViewEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DMSIMMessageViewEvents *This);
+                   ULONG (WINAPI *Release)(DMSIMMessageViewEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(DMSIMMessageViewEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(DMSIMMessageViewEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(DMSIMMessageViewEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(DMSIMMessageViewEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } DMSIMMessageViewEventsVtbl;
   struct DMSIMMessageViewEvents {
@@ -793,21 +793,21 @@ extern "C" {
 #else
   typedef struct IIMSafeContactVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IIMSafeContact *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IIMSafeContact *This);
-      ULONG (WINAPI *Release)(IIMSafeContact *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IIMSafeContact *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IIMSafeContact *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IIMSafeContact *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IIMSafeContact *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_LogonName)(IIMSafeContact *This,BSTR *pbstrLogonName);
-      HRESULT (WINAPI *get_FriendlyName)(IIMSafeContact *This,BSTR *pbstrFriendlyName);
-      HRESULT (WINAPI *get_EmailAddress)(IIMSafeContact *This,BSTR *pbstrEmailAddress);
-      HRESULT (WINAPI *get_State)(IIMSafeContact *This,__LONG32 *plState);
-      HRESULT (WINAPI *_SetBaseContact)(IIMSafeContact *This,IDispatch *pUnk);
-      HRESULT (WINAPI *LaunchInstantMessage)(IIMSafeContact *This);
-      HRESULT (WINAPI *LaunchEmail)(IIMSafeContact *This);
-      HRESULT (WINAPI *LaunchNetMeeting)(IIMSafeContact *This);
+                   HRESULT (WINAPI *QueryInterface)(IIMSafeContact *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IIMSafeContact *This);
+                   ULONG (WINAPI *Release)(IIMSafeContact *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IIMSafeContact *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IIMSafeContact *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IIMSafeContact *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IIMSafeContact *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_LogonName)(IIMSafeContact *This,BSTR *pbstrLogonName);
+                   HRESULT (WINAPI *get_FriendlyName)(IIMSafeContact *This,BSTR *pbstrFriendlyName);
+                   HRESULT (WINAPI *get_EmailAddress)(IIMSafeContact *This,BSTR *pbstrEmailAddress);
+                   HRESULT (WINAPI *get_State)(IIMSafeContact *This,__LONG32 *plState);
+                   HRESULT (WINAPI *_SetBaseContact)(IIMSafeContact *This,IDispatch *pUnk);
+                   HRESULT (WINAPI *LaunchInstantMessage)(IIMSafeContact *This);
+                   HRESULT (WINAPI *LaunchEmail)(IIMSafeContact *This);
+                   HRESULT (WINAPI *LaunchNetMeeting)(IIMSafeContact *This);
     END_INTERFACE
   } IIMSafeContactVtbl;
   struct IIMSafeContact {
@@ -875,40 +875,40 @@ extern "C" {
 #else
   typedef struct IMSIMContactListVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMSIMContactList *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMSIMContactList *This);
-      ULONG (WINAPI *Release)(IMSIMContactList *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMSIMContactList *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMSIMContactList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMSIMContactList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMSIMContactList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *SetService)(IMSIMContactList *This,IDispatch *pService,IDispatch *pApp);
-      HRESULT (WINAPI *get_Service)(IMSIMContactList *This,short *pVal);
-      HRESULT (WINAPI *put_Service)(IMSIMContactList *This,short newVal);
-      HRESULT (WINAPI *get_HasService)(IMSIMContactList *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *get_AutoLogon)(IMSIMContactList *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *put_AutoLogon)(IMSIMContactList *This,VARIANT_BOOL newVal);
-      HRESULT (WINAPI *get_LoggedOn)(IMSIMContactList *This,VARIANT_BOOL *pVal);
-      HRESULT (WINAPI *Logon)(IMSIMContactList *This,BSTR bstrAddress,BSTR bstrName,BSTR bstrPassword,BSTR bstrDomain);
-      HRESULT (WINAPI *Logoff)(IMSIMContactList *This);
-      HRESULT (WINAPI *GetLocalState)(IMSIMContactList *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
-      HRESULT (WINAPI *SetLocalState)(IMSIMContactList *This,__LONG32 lState,VARIANT varDescription,VARIANT varData);
-      HRESULT (WINAPI *get_List)(IMSIMContactList *This,VARIANT *pvarList);
-      HRESULT (WINAPI *put_List)(IMSIMContactList *This,VARIANT varList);
-      HRESULT (WINAPI *Add)(IMSIMContactList *This,VARIANT vUser);
-      HRESULT (WINAPI *Remove)(IMSIMContactList *This,VARIANT vUser);
-      HRESULT (WINAPI *get_SelectedMenuOptions)(IMSIMContactList *This,__LONG32 lRow,__LONG32 *pVal);
-      HRESULT (WINAPI *InstantMessage)(IMSIMContactList *This,__LONG32 lRow);
-      HRESULT (WINAPI *EMail)(IMSIMContactList *This,__LONG32 lRow);
-      HRESULT (WINAPI *Invite)(IMSIMContactList *This,__LONG32 lRow);
-      HRESULT (WINAPI *Block)(IMSIMContactList *This,__LONG32 lRow);
-      HRESULT (WINAPI *Unblock)(IMSIMContactList *This,__LONG32 lRow);
-      HRESULT (WINAPI *get_Count)(IMSIMContactList *This,__LONG32 *pnCount);
-      HRESULT (WINAPI *get_Item)(IMSIMContactList *This,VARIANT Var,VARIANT *pSafeContact);
-      HRESULT (WINAPI *get__NewEnum)(IMSIMContactList *This,IUnknown **ppunkEnum);
-      HRESULT (WINAPI *get_LocalState)(IMSIMContactList *This,__LONG32 *pnState);
-      HRESULT (WINAPI *put_LocalState)(IMSIMContactList *This,__LONG32 nState);
-      HRESULT (WINAPI *get_LocalLogonName)(IMSIMContactList *This,BSTR *pval);
+                   HRESULT (WINAPI *QueryInterface)(IMSIMContactList *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMSIMContactList *This);
+                   ULONG (WINAPI *Release)(IMSIMContactList *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMSIMContactList *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMSIMContactList *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMSIMContactList *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMSIMContactList *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *SetService)(IMSIMContactList *This,IDispatch *pService,IDispatch *pApp);
+                   HRESULT (WINAPI *get_Service)(IMSIMContactList *This,short *pVal);
+                   HRESULT (WINAPI *put_Service)(IMSIMContactList *This,short newVal);
+                   HRESULT (WINAPI *get_HasService)(IMSIMContactList *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *get_AutoLogon)(IMSIMContactList *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *put_AutoLogon)(IMSIMContactList *This,VARIANT_BOOL newVal);
+                   HRESULT (WINAPI *get_LoggedOn)(IMSIMContactList *This,VARIANT_BOOL *pVal);
+                   HRESULT (WINAPI *Logon)(IMSIMContactList *This,BSTR bstrAddress,BSTR bstrName,BSTR bstrPassword,BSTR bstrDomain);
+                   HRESULT (WINAPI *Logoff)(IMSIMContactList *This);
+                   HRESULT (WINAPI *GetLocalState)(IMSIMContactList *This,VARIANT *pvarState,VARIANT *pvarDescription,VARIANT *pvarData);
+                   HRESULT (WINAPI *SetLocalState)(IMSIMContactList *This,__LONG32 lState,VARIANT varDescription,VARIANT varData);
+                   HRESULT (WINAPI *get_List)(IMSIMContactList *This,VARIANT *pvarList);
+                   HRESULT (WINAPI *put_List)(IMSIMContactList *This,VARIANT varList);
+                   HRESULT (WINAPI *Add)(IMSIMContactList *This,VARIANT vUser);
+                   HRESULT (WINAPI *Remove)(IMSIMContactList *This,VARIANT vUser);
+                   HRESULT (WINAPI *get_SelectedMenuOptions)(IMSIMContactList *This,__LONG32 lRow,__LONG32 *pVal);
+                   HRESULT (WINAPI *InstantMessage)(IMSIMContactList *This,__LONG32 lRow);
+                   HRESULT (WINAPI *EMail)(IMSIMContactList *This,__LONG32 lRow);
+                   HRESULT (WINAPI *Invite)(IMSIMContactList *This,__LONG32 lRow);
+                   HRESULT (WINAPI *Block)(IMSIMContactList *This,__LONG32 lRow);
+                   HRESULT (WINAPI *Unblock)(IMSIMContactList *This,__LONG32 lRow);
+                   HRESULT (WINAPI *get_Count)(IMSIMContactList *This,__LONG32 *pnCount);
+                   HRESULT (WINAPI *get_Item)(IMSIMContactList *This,VARIANT Var,VARIANT *pSafeContact);
+                   HRESULT (WINAPI *get__NewEnum)(IMSIMContactList *This,IUnknown **ppunkEnum);
+                   HRESULT (WINAPI *get_LocalState)(IMSIMContactList *This,__LONG32 *pnState);
+                   HRESULT (WINAPI *put_LocalState)(IMSIMContactList *This,__LONG32 nState);
+                   HRESULT (WINAPI *get_LocalLogonName)(IMSIMContactList *This,BSTR *pval);
     END_INTERFACE
   } IMSIMContactListVtbl;
   struct IMSIMContactList {
@@ -994,13 +994,13 @@ extern "C" {
 #else
   typedef struct DIMContactListEventsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DIMContactListEvents *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DIMContactListEvents *This);
-      ULONG (WINAPI *Release)(DIMContactListEvents *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(DIMContactListEvents *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(DIMContactListEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(DIMContactListEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(DIMContactListEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(DIMContactListEvents *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DIMContactListEvents *This);
+                   ULONG (WINAPI *Release)(DIMContactListEvents *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(DIMContactListEvents *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(DIMContactListEvents *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(DIMContactListEvents *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(DIMContactListEvents *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } DIMContactListEventsVtbl;
   struct DIMContactListEvents {

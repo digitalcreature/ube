@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
 /*
- *      IP Virtual Server
- *      data structure and functionality definitions
+ *                   IP Virtual Server
+ *                   data structure and functionality definitions
  */
 
 #ifndef _IP_VS_H
@@ -16,7 +16,7 @@
 	version & 0xFF
 
 /*
- *      Virtual Service Flags
+ *                   Virtual Service Flags
  */
 #define IP_VS_SVC_F_PERSISTENT	0x0001		/* persistent port */
 #define IP_VS_SVC_F_HASHED	0x0002		/* hashed entry */
@@ -29,20 +29,20 @@
 #define IP_VS_SVC_F_SCHED_SH_PORT	IP_VS_SVC_F_SCHED2 /* SH use port */
 
 /*
- *      Destination Server Flags
+ *                   Destination Server Flags
  */
 #define IP_VS_DEST_F_AVAILABLE	0x0001		/* server is available */
 #define IP_VS_DEST_F_OVERLOAD	0x0002		/* server is overloaded */
 
 /*
- *      IPVS sync daemon states
+ *                   IPVS sync daemon states
  */
 #define IP_VS_STATE_NONE	0x0000		/* daemon is stopped */
 #define IP_VS_STATE_MASTER	0x0001		/* started as master */
 #define IP_VS_STATE_BACKUP	0x0002		/* started as backup */
 
 /*
- *      IPVS socket options
+ *                   IPVS socket options
  */
 #define IP_VS_BASE_CTL		(64+1024+64)		/* base */
 
@@ -60,7 +60,7 @@
 #define IP_VS_SO_SET_STARTDAEMON (IP_VS_BASE_CTL+11)
 #define IP_VS_SO_SET_STOPDAEMON (IP_VS_BASE_CTL+12)
 #define IP_VS_SO_SET_RESTORE    (IP_VS_BASE_CTL+13)
-#define IP_VS_SO_SET_SAVE       (IP_VS_BASE_CTL+14)
+#define IP_VS_SO_SET_SAVE                    (IP_VS_BASE_CTL+14)
 #define IP_VS_SO_SET_ZERO	(IP_VS_BASE_CTL+15)
 #define IP_VS_SO_SET_MAX	IP_VS_SO_SET_ZERO
 
@@ -76,8 +76,8 @@
 
 
 /*
- *      IPVS Connection Flags
- *      Only flags 0..15 are sent to backup server
+ *                   IPVS Connection Flags
+ *                   Only flags 0..15 are sent to backup server
  */
 #define IP_VS_CONN_F_FWD_MASK	0x0007		/* mask for the fwd methods */
 #define IP_VS_CONN_F_MASQ	0x0000		/* masquerading/NAT */
@@ -107,7 +107,7 @@
 
 /* Bits allowed to update in backup server */
 #define IP_VS_CONN_F_BACKUP_UPD_MASK (IP_VS_CONN_F_INACTIVE | \
-				      IP_VS_CONN_F_SEQ_MASK)
+				                   IP_VS_CONN_F_SEQ_MASK)
 
 /* Flags that are not sent to backup server start from bit 16 */
 #define IP_VS_CONN_F_NFCT	(1 << 16)	/* use netfilter conntrack */
@@ -162,11 +162,11 @@ struct ip_vs_dest_user {
  *	IPVS statistics object (for user space)
  */
 struct ip_vs_stats_user {
-	__u32                   conns;          /* connections scheduled */
-	__u32                   inpkts;         /* incoming packets */
-	__u32                   outpkts;        /* outgoing packets */
-	__u64                   inbytes;        /* incoming bytes */
-	__u64                   outbytes;       /* outgoing bytes */
+	__u32                                                          conns;                       /* connections scheduled */
+	__u32                                                          inpkts;                      /* incoming packets */
+	__u32                                                          outpkts;                     /* outgoing packets */
+	__u64                                                          inbytes;                     /* incoming bytes */
+	__u64                                                          outbytes;                    /* outgoing bytes */
 
 	__u32			cps;		/* current connection rate */
 	__u32			inpps;		/* current in packet rate */
@@ -199,7 +199,7 @@ struct ip_vs_service_entry {
 
 	/* service options */
 	char			sched_name[IP_VS_SCHEDNAME_MAXLEN];
-	unsigned int		flags;          /* virtual service flags */
+	unsigned int		flags;                       /* virtual service flags */
 	unsigned int		timeout;	/* persistent timeout */
 	__be32			netmask;	/* persistent netmask */
 

@@ -127,7 +127,7 @@ extern "C" {
   typedef struct _PROPSHEETPAGEA_V2 {
     PROPSHEETPAGEA_V1_FIELDS
 
-      LPCSTR pszHeaderTitle;
+                   LPCSTR pszHeaderTitle;
     LPCSTR pszHeaderSubTitle;
   } PROPSHEETPAGEA_V2,*LPPROPSHEETPAGEA_V2;
 
@@ -135,7 +135,7 @@ extern "C" {
 
   typedef struct _PROPSHEETPAGEA_V3 {
     PROPSHEETPAGEA_V1_FIELDS
-      LPCSTR pszHeaderTitle;
+                   LPCSTR pszHeaderTitle;
     LPCSTR pszHeaderSubTitle;
     HANDLE hActCtx;
   } PROPSHEETPAGEA_V3,*LPPROPSHEETPAGEA_V3;
@@ -150,7 +150,7 @@ extern "C" {
 
   typedef struct _PROPSHEETPAGEW_V2 {
     PROPSHEETPAGEW_V1_FIELDS
-      LPCWSTR pszHeaderTitle;
+                   LPCWSTR pszHeaderTitle;
     LPCWSTR pszHeaderSubTitle;
   } PROPSHEETPAGEW_V2,*LPPROPSHEETPAGEW_V2;
 
@@ -158,7 +158,7 @@ extern "C" {
 
   typedef struct _PROPSHEETPAGEW_V3 {
     PROPSHEETPAGEW_V1_FIELDS
-      LPCWSTR pszHeaderTitle;
+                   LPCWSTR pszHeaderTitle;
     LPCWSTR pszHeaderSubTitle;
     HANDLE hActCtx;
   } PROPSHEETPAGEW_V3,*LPPROPSHEETPAGEW_V3;
@@ -238,28 +238,28 @@ extern "C" {
     HWND hwndParent;
     HINSTANCE hInstance;
     __C89_NAMELESS union {
-      HICON hIcon;
-      LPCSTR pszIcon;
+                   HICON hIcon;
+                   LPCSTR pszIcon;
     } DUMMYUNIONNAME;
     LPCSTR pszCaption;
     UINT nPages;
     __C89_NAMELESS union {
-      UINT nStartPage;
-      LPCSTR pStartPage;
+                   UINT nStartPage;
+                   LPCSTR pStartPage;
     } DUMMYUNIONNAME2;
     __C89_NAMELESS union {
-      LPCPROPSHEETPAGEA ppsp;
-      HPROPSHEETPAGE *phpage;
+                   LPCPROPSHEETPAGEA ppsp;
+                   HPROPSHEETPAGE *phpage;
     } DUMMYUNIONNAME3;
     PFNPROPSHEETCALLBACK pfnCallback;
     __C89_NAMELESS union {
-      HBITMAP hbmWatermark;
-      LPCSTR pszbmWatermark;
+                   HBITMAP hbmWatermark;
+                   LPCSTR pszbmWatermark;
     } DUMMYUNIONNAME4;
     HPALETTE hplWatermark;
     __C89_NAMELESS union {
-      HBITMAP hbmHeader;
-      LPCSTR pszbmHeader;
+                   HBITMAP hbmHeader;
+                   LPCSTR pszbmHeader;
     } DUMMYUNIONNAME5;
   } PROPSHEETHEADERA,*LPPROPSHEETHEADERA;
 
@@ -271,28 +271,28 @@ extern "C" {
     HWND hwndParent;
     HINSTANCE hInstance;
     __C89_NAMELESS union {
-      HICON hIcon;
-      LPCWSTR pszIcon;
+                   HICON hIcon;
+                   LPCWSTR pszIcon;
     } DUMMYUNIONNAME;
     LPCWSTR pszCaption;
     UINT nPages;
     __C89_NAMELESS union {
-      UINT nStartPage;
-      LPCWSTR pStartPage;
+                   UINT nStartPage;
+                   LPCWSTR pStartPage;
     } DUMMYUNIONNAME2;
     __C89_NAMELESS union {
-      LPCPROPSHEETPAGEW ppsp;
-      HPROPSHEETPAGE *phpage;
+                   LPCPROPSHEETPAGEW ppsp;
+                   HPROPSHEETPAGE *phpage;
     } DUMMYUNIONNAME3;
     PFNPROPSHEETCALLBACK pfnCallback;
     __C89_NAMELESS union {
-      HBITMAP hbmWatermark;
-      LPCWSTR pszbmWatermark;
+                   HBITMAP hbmWatermark;
+                   LPCWSTR pszbmWatermark;
     } DUMMYUNIONNAME4;
     HPALETTE hplWatermark;
     __C89_NAMELESS union {
-      HBITMAP hbmHeader;
-      LPCWSTR pszbmHeader;
+                   HBITMAP hbmHeader;
+                   LPCWSTR pszbmHeader;
     } DUMMYUNIONNAME5;
   } PROPSHEETHEADERW,*LPPROPSHEETHEADERW;
 

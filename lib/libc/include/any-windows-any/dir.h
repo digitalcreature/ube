@@ -13,7 +13,7 @@
  *
  * Contributors:
  *  Created by Colin Peters <colin@bird.fu.is.saga-u.ac.jp>
- *             Mumit Khan <khan@xraylith.wisc.edu>
+ *                                       Mumit Khan <khan@xraylith.wisc.edu>
  *
  *  THIS SOFTWARE IS NOT COPYRIGHTED
  *

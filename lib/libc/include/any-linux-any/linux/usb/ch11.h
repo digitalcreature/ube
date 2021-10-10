@@ -81,9 +81,9 @@
 #define USB_PORT_FEAT_C_SUSPEND		18
 #define USB_PORT_FEAT_C_OVER_CURRENT	19
 #define USB_PORT_FEAT_C_RESET		20
-#define USB_PORT_FEAT_TEST              21
-#define USB_PORT_FEAT_INDICATOR         22
-#define USB_PORT_FEAT_C_PORT_L1         23
+#define USB_PORT_FEAT_TEST                                        21
+#define USB_PORT_FEAT_INDICATOR                      22
+#define USB_PORT_FEAT_C_PORT_L1                      23
 
 /*
  * Port feature selectors added by USB 3.0 spec.
@@ -131,9 +131,9 @@ struct usb_port_status {
 /* bits 6 to 7 are reserved */
 #define USB_PORT_STAT_POWER		0x0100
 #define USB_PORT_STAT_LOW_SPEED		0x0200
-#define USB_PORT_STAT_HIGH_SPEED        0x0400
-#define USB_PORT_STAT_TEST              0x0800
-#define USB_PORT_STAT_INDICATOR         0x1000
+#define USB_PORT_STAT_HIGH_SPEED                     0x0400
+#define USB_PORT_STAT_TEST                                        0x0800
+#define USB_PORT_STAT_INDICATOR                      0x1000
 /* bits 13 to 15 are reserved */
 
 /*
@@ -246,7 +246,7 @@ struct usb_hub_status {
 #define USB_DT_HUB			(USB_TYPE_CLASS | 0x09)
 #define USB_DT_SS_HUB			(USB_TYPE_CLASS | 0x0a)
 #define USB_DT_HUB_NONVAR_SIZE		7
-#define USB_DT_SS_HUB_SIZE              12
+#define USB_DT_SS_HUB_SIZE                                        12
 
 /*
  * Hub Device descriptor

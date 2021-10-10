@@ -21,15 +21,15 @@ extern "C" {
 // AIX 7.1 and higher has these definitions.  Definitions and stubs
 // are provied here as a temporary workaround on AIX 6.1.
 
-#define LC_COLLATE_MASK         1
-#define LC_CTYPE_MASK           2
-#define LC_MESSAGES_MASK        4
-#define LC_MONETARY_MASK        8
-#define LC_NUMERIC_MASK         16
-#define LC_TIME_MASK            32
-#define LC_ALL_MASK             (LC_COLLATE_MASK | LC_CTYPE_MASK | \
-                                 LC_MESSAGES_MASK | LC_MONETARY_MASK |\
-                                 LC_NUMERIC_MASK | LC_TIME_MASK)
+#define LC_COLLATE_MASK                      1
+#define LC_CTYPE_MASK                        2
+#define LC_MESSAGES_MASK                     4
+#define LC_MONETARY_MASK                     8
+#define LC_NUMERIC_MASK                      16
+#define LC_TIME_MASK                                      32
+#define LC_ALL_MASK                                       (LC_COLLATE_MASK | LC_CTYPE_MASK | \
+                                                                                                  LC_MESSAGES_MASK | LC_MONETARY_MASK |\
+                                                                                                  LC_NUMERIC_MASK | LC_TIME_MASK)
 
 typedef void* locale_t;
 

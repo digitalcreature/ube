@@ -19,7 +19,7 @@
  * KEXEC_FILE_UNLOAD : Unload already loaded kexec/kdump image.
  * KEXEC_FILE_ON_CRASH : Load/unload operation belongs to kdump image.
  * KEXEC_FILE_NO_INITRAMFS : No initramfs is being loaded. Ignore the initrd
- *                           fd field.
+ *                                                                               fd field.
  */
 #define KEXEC_FILE_UNLOAD	0x00000001
 #define KEXEC_FILE_ON_CRASH	0x00000002
@@ -37,7 +37,7 @@
 #define KEXEC_ARCH_IA_64   (50 << 16)
 #define KEXEC_ARCH_ARM     (40 << 16)
 #define KEXEC_ARCH_S390    (22 << 16)
-#define KEXEC_ARCH_SH      (42 << 16)
+#define KEXEC_ARCH_SH                   (42 << 16)
 #define KEXEC_ARCH_MIPS_LE (10 << 16)
 #define KEXEC_ARCH_MIPS    ( 8 << 16)
 #define KEXEC_ARCH_AARCH64 (183 << 16)

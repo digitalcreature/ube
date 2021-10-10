@@ -291,7 +291,7 @@ extern intmax_t imaxabs (intmax_t __n) __THROW __attribute__ ((__const__));
 
 /* Return the `imaxdiv_t' representation of the value of NUMER over DENOM. */
 extern imaxdiv_t imaxdiv (intmax_t __numer, intmax_t __denom)
-      __THROW __attribute__ ((__const__));
+                   __THROW __attribute__ ((__const__));
 
 /* Like `strtol' but convert to `intmax_t'.  */
 extern intmax_t strtoimax (const char *__restrict __nptr,

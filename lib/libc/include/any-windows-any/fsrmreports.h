@@ -185,33 +185,33 @@ MIDL_INTERFACE("d8cc81d9-46b8-4fa4-bfa5-4aa9dec9b638")
 IFsrmReport : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        FsrmReportType *reportType) = 0;
+                     FsrmReportType *reportType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Description(
-        BSTR *description) = 0;
+                     BSTR *description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Description(
-        BSTR description) = 0;
+                     BSTR description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastGeneratedFileNamePrefix(
-        BSTR *prefix) = 0;
+                     BSTR *prefix) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFilter(
-        FsrmReportFilter filter,
-        VARIANT *filterValue) = 0;
+                     FsrmReportFilter filter,
+                     VARIANT *filterValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFilter(
-        FsrmReportFilter filter,
-        VARIANT filterValue) = 0;
+                     FsrmReportFilter filter,
+                     VARIANT filterValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -223,83 +223,83 @@ typedef struct IFsrmReportVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmReport *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmReport *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmReport *This);
+                     IFsrmReport *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmReport *This);
+                     IFsrmReport *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmReport *This,
-        UINT *pctinfo);
+                     IFsrmReport *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmReport *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmReport *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmReport *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmReport *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmReport *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmReport *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmReport methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IFsrmReport *This,
-        FsrmReportType *reportType);
+                     IFsrmReport *This,
+                     FsrmReportType *reportType);
 
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmReport *This,
-        BSTR *name);
+                     IFsrmReport *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmReport *This,
-        BSTR name);
+                     IFsrmReport *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmReport *This,
-        BSTR *description);
+                     IFsrmReport *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmReport *This,
-        BSTR description);
+                     IFsrmReport *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *get_LastGeneratedFileNamePrefix)(
-        IFsrmReport *This,
-        BSTR *prefix);
+                     IFsrmReport *This,
+                     BSTR *prefix);
 
     HRESULT (STDMETHODCALLTYPE *GetFilter)(
-        IFsrmReport *This,
-        FsrmReportFilter filter,
-        VARIANT *filterValue);
+                     IFsrmReport *This,
+                     FsrmReportFilter filter,
+                     VARIANT *filterValue);
 
     HRESULT (STDMETHODCALLTYPE *SetFilter)(
-        IFsrmReport *This,
-        FsrmReportFilter filter,
-        VARIANT filterValue);
+                     IFsrmReport *This,
+                     FsrmReportFilter filter,
+                     VARIANT filterValue);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmReport *This);
+                     IFsrmReport *This);
 
     END_INTERFACE
 } IFsrmReportVtbl;
@@ -401,20 +401,20 @@ MIDL_INTERFACE("6879caf9-6617-4484-8719-71c3d8645f94")
 IFsrmReportScheduler : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE VerifyNamespaces(
-        VARIANT *namespacesSafeArray) = 0;
+                     VARIANT *namespacesSafeArray) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateScheduleTask(
-        BSTR taskName,
-        VARIANT *namespacesSafeArray,
-        BSTR serializedTask) = 0;
+                     BSTR taskName,
+                     VARIANT *namespacesSafeArray,
+                     BSTR serializedTask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ModifyScheduleTask(
-        BSTR taskName,
-        VARIANT *namespacesSafeArray,
-        BSTR serializedTask) = 0;
+                     BSTR taskName,
+                     VARIANT *namespacesSafeArray,
+                     BSTR serializedTask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteScheduleTask(
-        BSTR taskName) = 0;
+                     BSTR taskName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -426,66 +426,66 @@ typedef struct IFsrmReportSchedulerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmReportScheduler *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmReportScheduler *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmReportScheduler *This);
+                     IFsrmReportScheduler *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmReportScheduler *This);
+                     IFsrmReportScheduler *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmReportScheduler *This,
-        UINT *pctinfo);
+                     IFsrmReportScheduler *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmReportScheduler *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmReportScheduler *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmReportScheduler *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmReportScheduler *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmReportScheduler *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmReportScheduler *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmReportScheduler methods ***/
     HRESULT (STDMETHODCALLTYPE *VerifyNamespaces)(
-        IFsrmReportScheduler *This,
-        VARIANT *namespacesSafeArray);
+                     IFsrmReportScheduler *This,
+                     VARIANT *namespacesSafeArray);
 
     HRESULT (STDMETHODCALLTYPE *CreateScheduleTask)(
-        IFsrmReportScheduler *This,
-        BSTR taskName,
-        VARIANT *namespacesSafeArray,
-        BSTR serializedTask);
+                     IFsrmReportScheduler *This,
+                     BSTR taskName,
+                     VARIANT *namespacesSafeArray,
+                     BSTR serializedTask);
 
     HRESULT (STDMETHODCALLTYPE *ModifyScheduleTask)(
-        IFsrmReportScheduler *This,
-        BSTR taskName,
-        VARIANT *namespacesSafeArray,
-        BSTR serializedTask);
+                     IFsrmReportScheduler *This,
+                     BSTR taskName,
+                     VARIANT *namespacesSafeArray,
+                     BSTR serializedTask);
 
     HRESULT (STDMETHODCALLTYPE *DeleteScheduleTask)(
-        IFsrmReportScheduler *This,
-        BSTR taskName);
+                     IFsrmReportScheduler *This,
+                     BSTR taskName);
 
     END_INTERFACE
 } IFsrmReportSchedulerVtbl;
@@ -567,21 +567,21 @@ MIDL_INTERFACE("ee321ecb-d95e-48e9-907c-c7685a013235")
 IFsrmFileManagementJobManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_ActionVariables(
-        SAFEARRAY **variables) = 0;
+                     SAFEARRAY **variables) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ActionVariableDescriptions(
-        SAFEARRAY **descriptions) = 0;
+                     SAFEARRAY **descriptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumFileManagementJobs(
-        FsrmEnumOptions options,
-        IFsrmCollection **fileManagementJobs) = 0;
+                     FsrmEnumOptions options,
+                     IFsrmCollection **fileManagementJobs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFileManagementJob(
-        IFsrmFileManagementJob **fileManagementJob) = 0;
+                     IFsrmFileManagementJob **fileManagementJob) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileManagementJob(
-        BSTR name,
-        IFsrmFileManagementJob **fileManagementJob) = 0;
+                     BSTR name,
+                     IFsrmFileManagementJob **fileManagementJob) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -593,68 +593,68 @@ typedef struct IFsrmFileManagementJobManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileManagementJobManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileManagementJobManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileManagementJobManager *This);
+                     IFsrmFileManagementJobManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileManagementJobManager *This);
+                     IFsrmFileManagementJobManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileManagementJobManager *This,
-        UINT *pctinfo);
+                     IFsrmFileManagementJobManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileManagementJobManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileManagementJobManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileManagementJobManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileManagementJobManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileManagementJobManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileManagementJobManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmFileManagementJobManager methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ActionVariables)(
-        IFsrmFileManagementJobManager *This,
-        SAFEARRAY **variables);
+                     IFsrmFileManagementJobManager *This,
+                     SAFEARRAY **variables);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionVariableDescriptions)(
-        IFsrmFileManagementJobManager *This,
-        SAFEARRAY **descriptions);
+                     IFsrmFileManagementJobManager *This,
+                     SAFEARRAY **descriptions);
 
     HRESULT (STDMETHODCALLTYPE *EnumFileManagementJobs)(
-        IFsrmFileManagementJobManager *This,
-        FsrmEnumOptions options,
-        IFsrmCollection **fileManagementJobs);
+                     IFsrmFileManagementJobManager *This,
+                     FsrmEnumOptions options,
+                     IFsrmCollection **fileManagementJobs);
 
     HRESULT (STDMETHODCALLTYPE *CreateFileManagementJob)(
-        IFsrmFileManagementJobManager *This,
-        IFsrmFileManagementJob **fileManagementJob);
+                     IFsrmFileManagementJobManager *This,
+                     IFsrmFileManagementJob **fileManagementJob);
 
     HRESULT (STDMETHODCALLTYPE *GetFileManagementJob)(
-        IFsrmFileManagementJobManager *This,
-        BSTR name,
-        IFsrmFileManagementJob **fileManagementJob);
+                     IFsrmFileManagementJobManager *This,
+                     BSTR name,
+                     IFsrmFileManagementJob **fileManagementJob);
 
     END_INTERFACE
 } IFsrmFileManagementJobManagerVtbl;
@@ -740,25 +740,25 @@ MIDL_INTERFACE("326af66f-2ac0-4f68-bf8c-4759f054fa29")
 IFsrmPropertyCondition : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        FsrmPropertyConditionType *type) = 0;
+                     FsrmPropertyConditionType *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Type(
-        FsrmPropertyConditionType type) = 0;
+                     FsrmPropertyConditionType type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Value(
-        BSTR *value) = 0;
+                     BSTR *value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Value(
-        BSTR value) = 0;
+                     BSTR value) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -770,73 +770,73 @@ typedef struct IFsrmPropertyConditionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmPropertyCondition *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmPropertyCondition *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmPropertyCondition *This);
+                     IFsrmPropertyCondition *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmPropertyCondition *This);
+                     IFsrmPropertyCondition *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmPropertyCondition *This,
-        UINT *pctinfo);
+                     IFsrmPropertyCondition *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmPropertyCondition *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmPropertyCondition *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmPropertyCondition *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmPropertyCondition *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmPropertyCondition *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmPropertyCondition *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmPropertyCondition methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmPropertyCondition *This,
-        BSTR *name);
+                     IFsrmPropertyCondition *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmPropertyCondition *This,
-        BSTR name);
+                     IFsrmPropertyCondition *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IFsrmPropertyCondition *This,
-        FsrmPropertyConditionType *type);
+                     IFsrmPropertyCondition *This,
+                     FsrmPropertyConditionType *type);
 
     HRESULT (STDMETHODCALLTYPE *put_Type)(
-        IFsrmPropertyCondition *This,
-        FsrmPropertyConditionType type);
+                     IFsrmPropertyCondition *This,
+                     FsrmPropertyConditionType type);
 
     HRESULT (STDMETHODCALLTYPE *get_Value)(
-        IFsrmPropertyCondition *This,
-        BSTR *value);
+                     IFsrmPropertyCondition *This,
+                     BSTR *value);
 
     HRESULT (STDMETHODCALLTYPE *put_Value)(
-        IFsrmPropertyCondition *This,
-        BSTR value);
+                     IFsrmPropertyCondition *This,
+                     BSTR value);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmPropertyCondition *This);
+                     IFsrmPropertyCondition *This);
 
     END_INTERFACE
 } IFsrmPropertyConditionVtbl;
@@ -930,46 +930,46 @@ MIDL_INTERFACE("27b899fe-6ffa-4481-a184-d3daade8a02b")
 IFsrmReportManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE EnumReportJobs(
-        FsrmEnumOptions options,
-        IFsrmCollection **reportJobs) = 0;
+                     FsrmEnumOptions options,
+                     IFsrmCollection **reportJobs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateReportJob(
-        IFsrmReportJob **reportJob) = 0;
+                     IFsrmReportJob **reportJob) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetReportJob(
-        BSTR taskName,
-        IFsrmReportJob **reportJob) = 0;
+                     BSTR taskName,
+                     IFsrmReportJob **reportJob) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOutputDirectory(
-        FsrmReportGenerationContext context,
-        BSTR *path) = 0;
+                     FsrmReportGenerationContext context,
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOutputDirectory(
-        FsrmReportGenerationContext context,
-        BSTR path) = 0;
+                     FsrmReportGenerationContext context,
+                     BSTR path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsFilterValidForReportType(
-        FsrmReportType reportType,
-        FsrmReportFilter filter,
-        VARIANT_BOOL *valid) = 0;
+                     FsrmReportType reportType,
+                     FsrmReportFilter filter,
+                     VARIANT_BOOL *valid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDefaultFilter(
-        FsrmReportType reportType,
-        FsrmReportFilter filter,
-        VARIANT *filterValue) = 0;
+                     FsrmReportType reportType,
+                     FsrmReportFilter filter,
+                     VARIANT *filterValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDefaultFilter(
-        FsrmReportType reportType,
-        FsrmReportFilter filter,
-        VARIANT filterValue) = 0;
+                     FsrmReportType reportType,
+                     FsrmReportFilter filter,
+                     VARIANT filterValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetReportSizeLimit(
-        FsrmReportLimit limit,
-        VARIANT *limitValue) = 0;
+                     FsrmReportLimit limit,
+                     VARIANT *limitValue) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetReportSizeLimit(
-        FsrmReportLimit limit,
-        VARIANT limitValue) = 0;
+                     FsrmReportLimit limit,
+                     VARIANT limitValue) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -981,98 +981,98 @@ typedef struct IFsrmReportManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmReportManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmReportManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmReportManager *This);
+                     IFsrmReportManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmReportManager *This);
+                     IFsrmReportManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmReportManager *This,
-        UINT *pctinfo);
+                     IFsrmReportManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmReportManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmReportManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmReportManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmReportManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmReportManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmReportManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmReportManager methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumReportJobs)(
-        IFsrmReportManager *This,
-        FsrmEnumOptions options,
-        IFsrmCollection **reportJobs);
+                     IFsrmReportManager *This,
+                     FsrmEnumOptions options,
+                     IFsrmCollection **reportJobs);
 
     HRESULT (STDMETHODCALLTYPE *CreateReportJob)(
-        IFsrmReportManager *This,
-        IFsrmReportJob **reportJob);
+                     IFsrmReportManager *This,
+                     IFsrmReportJob **reportJob);
 
     HRESULT (STDMETHODCALLTYPE *GetReportJob)(
-        IFsrmReportManager *This,
-        BSTR taskName,
-        IFsrmReportJob **reportJob);
+                     IFsrmReportManager *This,
+                     BSTR taskName,
+                     IFsrmReportJob **reportJob);
 
     HRESULT (STDMETHODCALLTYPE *GetOutputDirectory)(
-        IFsrmReportManager *This,
-        FsrmReportGenerationContext context,
-        BSTR *path);
+                     IFsrmReportManager *This,
+                     FsrmReportGenerationContext context,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *SetOutputDirectory)(
-        IFsrmReportManager *This,
-        FsrmReportGenerationContext context,
-        BSTR path);
+                     IFsrmReportManager *This,
+                     FsrmReportGenerationContext context,
+                     BSTR path);
 
     HRESULT (STDMETHODCALLTYPE *IsFilterValidForReportType)(
-        IFsrmReportManager *This,
-        FsrmReportType reportType,
-        FsrmReportFilter filter,
-        VARIANT_BOOL *valid);
+                     IFsrmReportManager *This,
+                     FsrmReportType reportType,
+                     FsrmReportFilter filter,
+                     VARIANT_BOOL *valid);
 
     HRESULT (STDMETHODCALLTYPE *GetDefaultFilter)(
-        IFsrmReportManager *This,
-        FsrmReportType reportType,
-        FsrmReportFilter filter,
-        VARIANT *filterValue);
+                     IFsrmReportManager *This,
+                     FsrmReportType reportType,
+                     FsrmReportFilter filter,
+                     VARIANT *filterValue);
 
     HRESULT (STDMETHODCALLTYPE *SetDefaultFilter)(
-        IFsrmReportManager *This,
-        FsrmReportType reportType,
-        FsrmReportFilter filter,
-        VARIANT filterValue);
+                     IFsrmReportManager *This,
+                     FsrmReportType reportType,
+                     FsrmReportFilter filter,
+                     VARIANT filterValue);
 
     HRESULT (STDMETHODCALLTYPE *GetReportSizeLimit)(
-        IFsrmReportManager *This,
-        FsrmReportLimit limit,
-        VARIANT *limitValue);
+                     IFsrmReportManager *This,
+                     FsrmReportLimit limit,
+                     VARIANT *limitValue);
 
     HRESULT (STDMETHODCALLTYPE *SetReportSizeLimit)(
-        IFsrmReportManager *This,
-        FsrmReportLimit limit,
-        VARIANT limitValue);
+                     IFsrmReportManager *This,
+                     FsrmReportLimit limit,
+                     VARIANT limitValue);
 
     END_INTERFACE
 } IFsrmReportManagerVtbl;
@@ -1178,57 +1178,57 @@ MIDL_INTERFACE("38e87280-715c-4c7d-a280-ea1651a19fef")
 IFsrmReportJob : public IFsrmObject
 {
     virtual HRESULT STDMETHODCALLTYPE get_Task(
-        BSTR *taskName) = 0;
+                     BSTR *taskName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Task(
-        BSTR taskName) = 0;
+                     BSTR taskName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NamespaceRoots(
-        SAFEARRAY **namespaceRoots) = 0;
+                     SAFEARRAY **namespaceRoots) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NamespaceRoots(
-        SAFEARRAY *namespaceRoots) = 0;
+                     SAFEARRAY *namespaceRoots) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Formats(
-        SAFEARRAY **formats) = 0;
+                     SAFEARRAY **formats) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Formats(
-        SAFEARRAY *formats) = 0;
+                     SAFEARRAY *formats) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailTo(
-        BSTR *mailTo) = 0;
+                     BSTR *mailTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailTo(
-        BSTR mailTo) = 0;
+                     BSTR mailTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RunningStatus(
-        FsrmReportRunningStatus *runningStatus) = 0;
+                     FsrmReportRunningStatus *runningStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastRun(
-        DATE *lastRun) = 0;
+                     DATE *lastRun) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastError(
-        BSTR *lastError) = 0;
+                     BSTR *lastError) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastGeneratedInDirectory(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumReports(
-        IFsrmCollection **reports) = 0;
+                     IFsrmCollection **reports) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateReport(
-        FsrmReportType reportType,
-        IFsrmReport **report) = 0;
+                     FsrmReportType reportType,
+                     IFsrmReport **report) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Run(
-        FsrmReportGenerationContext context) = 0;
+                     FsrmReportGenerationContext context) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitForCompletion(
-        LONG waitSeconds,
-        VARIANT_BOOL *completed) = 0;
+                     LONG waitSeconds,
+                     VARIANT_BOOL *completed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1240,134 +1240,134 @@ typedef struct IFsrmReportJobVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmReportJob *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmReportJob *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmReportJob *This);
+                     IFsrmReportJob *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmReportJob *This);
+                     IFsrmReportJob *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmReportJob *This,
-        UINT *pctinfo);
+                     IFsrmReportJob *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmReportJob *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmReportJob *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmReportJob *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmReportJob *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmReportJob *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmReportJob *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmReportJob *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmReportJob *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmReportJob *This,
-        BSTR *description);
+                     IFsrmReportJob *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmReportJob *This,
-        BSTR description);
+                     IFsrmReportJob *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmReportJob *This);
+                     IFsrmReportJob *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmReportJob *This);
+                     IFsrmReportJob *This);
 
     /*** IFsrmReportJob methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Task)(
-        IFsrmReportJob *This,
-        BSTR *taskName);
+                     IFsrmReportJob *This,
+                     BSTR *taskName);
 
     HRESULT (STDMETHODCALLTYPE *put_Task)(
-        IFsrmReportJob *This,
-        BSTR taskName);
+                     IFsrmReportJob *This,
+                     BSTR taskName);
 
     HRESULT (STDMETHODCALLTYPE *get_NamespaceRoots)(
-        IFsrmReportJob *This,
-        SAFEARRAY **namespaceRoots);
+                     IFsrmReportJob *This,
+                     SAFEARRAY **namespaceRoots);
 
     HRESULT (STDMETHODCALLTYPE *put_NamespaceRoots)(
-        IFsrmReportJob *This,
-        SAFEARRAY *namespaceRoots);
+                     IFsrmReportJob *This,
+                     SAFEARRAY *namespaceRoots);
 
     HRESULT (STDMETHODCALLTYPE *get_Formats)(
-        IFsrmReportJob *This,
-        SAFEARRAY **formats);
+                     IFsrmReportJob *This,
+                     SAFEARRAY **formats);
 
     HRESULT (STDMETHODCALLTYPE *put_Formats)(
-        IFsrmReportJob *This,
-        SAFEARRAY *formats);
+                     IFsrmReportJob *This,
+                     SAFEARRAY *formats);
 
     HRESULT (STDMETHODCALLTYPE *get_MailTo)(
-        IFsrmReportJob *This,
-        BSTR *mailTo);
+                     IFsrmReportJob *This,
+                     BSTR *mailTo);
 
     HRESULT (STDMETHODCALLTYPE *put_MailTo)(
-        IFsrmReportJob *This,
-        BSTR mailTo);
+                     IFsrmReportJob *This,
+                     BSTR mailTo);
 
     HRESULT (STDMETHODCALLTYPE *get_RunningStatus)(
-        IFsrmReportJob *This,
-        FsrmReportRunningStatus *runningStatus);
+                     IFsrmReportJob *This,
+                     FsrmReportRunningStatus *runningStatus);
 
     HRESULT (STDMETHODCALLTYPE *get_LastRun)(
-        IFsrmReportJob *This,
-        DATE *lastRun);
+                     IFsrmReportJob *This,
+                     DATE *lastRun);
 
     HRESULT (STDMETHODCALLTYPE *get_LastError)(
-        IFsrmReportJob *This,
-        BSTR *lastError);
+                     IFsrmReportJob *This,
+                     BSTR *lastError);
 
     HRESULT (STDMETHODCALLTYPE *get_LastGeneratedInDirectory)(
-        IFsrmReportJob *This,
-        BSTR *path);
+                     IFsrmReportJob *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *EnumReports)(
-        IFsrmReportJob *This,
-        IFsrmCollection **reports);
+                     IFsrmReportJob *This,
+                     IFsrmCollection **reports);
 
     HRESULT (STDMETHODCALLTYPE *CreateReport)(
-        IFsrmReportJob *This,
-        FsrmReportType reportType,
-        IFsrmReport **report);
+                     IFsrmReportJob *This,
+                     FsrmReportType reportType,
+                     IFsrmReport **report);
 
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IFsrmReportJob *This,
-        FsrmReportGenerationContext context);
+                     IFsrmReportJob *This,
+                     FsrmReportGenerationContext context);
 
     HRESULT (STDMETHODCALLTYPE *WaitForCompletion)(
-        IFsrmReportJob *This,
-        LONG waitSeconds,
-        VARIANT_BOOL *completed);
+                     IFsrmReportJob *This,
+                     LONG waitSeconds,
+                     VARIANT_BOOL *completed);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IFsrmReportJob *This);
+                     IFsrmReportJob *This);
 
     END_INTERFACE
 } IFsrmReportJobVtbl;
@@ -1527,157 +1527,157 @@ MIDL_INTERFACE("0770687e-9f36-4d6f-8778-599d188461c9")
 IFsrmFileManagementJob : public IFsrmObject
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NamespaceRoots(
-        SAFEARRAY **namespaceRoots) = 0;
+                     SAFEARRAY **namespaceRoots) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NamespaceRoots(
-        SAFEARRAY *namespaceRoots) = 0;
+                     SAFEARRAY *namespaceRoots) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_OperationType(
-        FsrmFileManagementType *operationType) = 0;
+                     FsrmFileManagementType *operationType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OperationType(
-        FsrmFileManagementType operationType) = 0;
+                     FsrmFileManagementType operationType) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExpirationDirectory(
-        BSTR *expirationDirectory) = 0;
+                     BSTR *expirationDirectory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ExpirationDirectory(
-        BSTR expirationDirectory) = 0;
+                     BSTR expirationDirectory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CustomAction(
-        IFsrmActionCommand **action) = 0;
+                     IFsrmActionCommand **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Notifications(
-        SAFEARRAY **notifications) = 0;
+                     SAFEARRAY **notifications) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Logging(
-        LONG *loggingFlags) = 0;
+                     LONG *loggingFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Logging(
-        LONG loggingFlags) = 0;
+                     LONG loggingFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ReportEnabled(
-        VARIANT_BOOL *reportEnabled) = 0;
+                     VARIANT_BOOL *reportEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ReportEnabled(
-        VARIANT_BOOL reportEnabled) = 0;
+                     VARIANT_BOOL reportEnabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Formats(
-        SAFEARRAY **formats) = 0;
+                     SAFEARRAY **formats) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Formats(
-        SAFEARRAY *formats) = 0;
+                     SAFEARRAY *formats) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MailTo(
-        BSTR *mailTo) = 0;
+                     BSTR *mailTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MailTo(
-        BSTR mailTo) = 0;
+                     BSTR mailTo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DaysSinceFileCreated(
-        LONG *daysSinceCreation) = 0;
+                     LONG *daysSinceCreation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DaysSinceFileCreated(
-        LONG daysSinceCreation) = 0;
+                     LONG daysSinceCreation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DaysSinceFileLastAccessed(
-        LONG *daysSinceAccess) = 0;
+                     LONG *daysSinceAccess) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DaysSinceFileLastAccessed(
-        LONG daysSinceAccess) = 0;
+                     LONG daysSinceAccess) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DaysSinceFileLastModified(
-        LONG *daysSinceModify) = 0;
+                     LONG *daysSinceModify) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DaysSinceFileLastModified(
-        LONG daysSinceModify) = 0;
+                     LONG daysSinceModify) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PropertyConditions(
-        IFsrmCollection **propertyConditions) = 0;
+                     IFsrmCollection **propertyConditions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FromDate(
-        DATE *fromDate) = 0;
+                     DATE *fromDate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FromDate(
-        DATE fromDate) = 0;
+                     DATE fromDate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Task(
-        BSTR *taskName) = 0;
+                     BSTR *taskName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Task(
-        BSTR taskName) = 0;
+                     BSTR taskName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Parameters(
-        SAFEARRAY **parameters) = 0;
+                     SAFEARRAY **parameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Parameters(
-        SAFEARRAY *parameters) = 0;
+                     SAFEARRAY *parameters) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RunningStatus(
-        FsrmReportRunningStatus *runningStatus) = 0;
+                     FsrmReportRunningStatus *runningStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastError(
-        BSTR *lastError) = 0;
+                     BSTR *lastError) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastReportPathWithoutExtension(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastRun(
-        DATE *lastRun) = 0;
+                     DATE *lastRun) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FileNamePattern(
-        BSTR *fileNamePattern) = 0;
+                     BSTR *fileNamePattern) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FileNamePattern(
-        BSTR fileNamePattern) = 0;
+                     BSTR fileNamePattern) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Run(
-        FsrmReportGenerationContext context) = 0;
+                     FsrmReportGenerationContext context) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE WaitForCompletion(
-        LONG waitSeconds,
-        VARIANT_BOOL *completed) = 0;
+                     LONG waitSeconds,
+                     VARIANT_BOOL *completed) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Cancel(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddNotification(
-        LONG days) = 0;
+                     LONG days) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteNotification(
-        LONG days) = 0;
+                     LONG days) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ModifyNotification(
-        LONG days,
-        LONG newDays) = 0;
+                     LONG days,
+                     LONG newDays) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateNotificationAction(
-        LONG days,
-        FsrmActionType actionType,
-        IFsrmAction **action) = 0;
+                     LONG days,
+                     FsrmActionType actionType,
+                     IFsrmAction **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumNotificationActions(
-        LONG days,
-        IFsrmCollection **actions) = 0;
+                     LONG days,
+                     IFsrmCollection **actions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreatePropertyCondition(
-        BSTR name,
-        IFsrmPropertyCondition **propertyCondition) = 0;
+                     BSTR name,
+                     IFsrmPropertyCondition **propertyCondition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCustomAction(
-        IFsrmActionCommand **customAction) = 0;
+                     IFsrmActionCommand **customAction) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1689,266 +1689,266 @@ typedef struct IFsrmFileManagementJobVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileManagementJob *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileManagementJob *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileManagementJob *This);
+                     IFsrmFileManagementJob *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileManagementJob *This);
+                     IFsrmFileManagementJob *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileManagementJob *This,
-        UINT *pctinfo);
+                     IFsrmFileManagementJob *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileManagementJob *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileManagementJob *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileManagementJob *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileManagementJob *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileManagementJob *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileManagementJob *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmFileManagementJob *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmFileManagementJob *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmFileManagementJob *This,
-        BSTR *description);
+                     IFsrmFileManagementJob *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmFileManagementJob *This,
-        BSTR description);
+                     IFsrmFileManagementJob *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileManagementJob *This);
+                     IFsrmFileManagementJob *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmFileManagementJob *This);
+                     IFsrmFileManagementJob *This);
 
     /*** IFsrmFileManagementJob methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmFileManagementJob *This,
-        BSTR *name);
+                     IFsrmFileManagementJob *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmFileManagementJob *This,
-        BSTR name);
+                     IFsrmFileManagementJob *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_NamespaceRoots)(
-        IFsrmFileManagementJob *This,
-        SAFEARRAY **namespaceRoots);
+                     IFsrmFileManagementJob *This,
+                     SAFEARRAY **namespaceRoots);
 
     HRESULT (STDMETHODCALLTYPE *put_NamespaceRoots)(
-        IFsrmFileManagementJob *This,
-        SAFEARRAY *namespaceRoots);
+                     IFsrmFileManagementJob *This,
+                     SAFEARRAY *namespaceRoots);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        IFsrmFileManagementJob *This,
-        VARIANT_BOOL *enabled);
+                     IFsrmFileManagementJob *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        IFsrmFileManagementJob *This,
-        VARIANT_BOOL enabled);
+                     IFsrmFileManagementJob *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_OperationType)(
-        IFsrmFileManagementJob *This,
-        FsrmFileManagementType *operationType);
+                     IFsrmFileManagementJob *This,
+                     FsrmFileManagementType *operationType);
 
     HRESULT (STDMETHODCALLTYPE *put_OperationType)(
-        IFsrmFileManagementJob *This,
-        FsrmFileManagementType operationType);
+                     IFsrmFileManagementJob *This,
+                     FsrmFileManagementType operationType);
 
     HRESULT (STDMETHODCALLTYPE *get_ExpirationDirectory)(
-        IFsrmFileManagementJob *This,
-        BSTR *expirationDirectory);
+                     IFsrmFileManagementJob *This,
+                     BSTR *expirationDirectory);
 
     HRESULT (STDMETHODCALLTYPE *put_ExpirationDirectory)(
-        IFsrmFileManagementJob *This,
-        BSTR expirationDirectory);
+                     IFsrmFileManagementJob *This,
+                     BSTR expirationDirectory);
 
     HRESULT (STDMETHODCALLTYPE *get_CustomAction)(
-        IFsrmFileManagementJob *This,
-        IFsrmActionCommand **action);
+                     IFsrmFileManagementJob *This,
+                     IFsrmActionCommand **action);
 
     HRESULT (STDMETHODCALLTYPE *get_Notifications)(
-        IFsrmFileManagementJob *This,
-        SAFEARRAY **notifications);
+                     IFsrmFileManagementJob *This,
+                     SAFEARRAY **notifications);
 
     HRESULT (STDMETHODCALLTYPE *get_Logging)(
-        IFsrmFileManagementJob *This,
-        LONG *loggingFlags);
+                     IFsrmFileManagementJob *This,
+                     LONG *loggingFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_Logging)(
-        IFsrmFileManagementJob *This,
-        LONG loggingFlags);
+                     IFsrmFileManagementJob *This,
+                     LONG loggingFlags);
 
     HRESULT (STDMETHODCALLTYPE *get_ReportEnabled)(
-        IFsrmFileManagementJob *This,
-        VARIANT_BOOL *reportEnabled);
+                     IFsrmFileManagementJob *This,
+                     VARIANT_BOOL *reportEnabled);
 
     HRESULT (STDMETHODCALLTYPE *put_ReportEnabled)(
-        IFsrmFileManagementJob *This,
-        VARIANT_BOOL reportEnabled);
+                     IFsrmFileManagementJob *This,
+                     VARIANT_BOOL reportEnabled);
 
     HRESULT (STDMETHODCALLTYPE *get_Formats)(
-        IFsrmFileManagementJob *This,
-        SAFEARRAY **formats);
+                     IFsrmFileManagementJob *This,
+                     SAFEARRAY **formats);
 
     HRESULT (STDMETHODCALLTYPE *put_Formats)(
-        IFsrmFileManagementJob *This,
-        SAFEARRAY *formats);
+                     IFsrmFileManagementJob *This,
+                     SAFEARRAY *formats);
 
     HRESULT (STDMETHODCALLTYPE *get_MailTo)(
-        IFsrmFileManagementJob *This,
-        BSTR *mailTo);
+                     IFsrmFileManagementJob *This,
+                     BSTR *mailTo);
 
     HRESULT (STDMETHODCALLTYPE *put_MailTo)(
-        IFsrmFileManagementJob *This,
-        BSTR mailTo);
+                     IFsrmFileManagementJob *This,
+                     BSTR mailTo);
 
     HRESULT (STDMETHODCALLTYPE *get_DaysSinceFileCreated)(
-        IFsrmFileManagementJob *This,
-        LONG *daysSinceCreation);
+                     IFsrmFileManagementJob *This,
+                     LONG *daysSinceCreation);
 
     HRESULT (STDMETHODCALLTYPE *put_DaysSinceFileCreated)(
-        IFsrmFileManagementJob *This,
-        LONG daysSinceCreation);
+                     IFsrmFileManagementJob *This,
+                     LONG daysSinceCreation);
 
     HRESULT (STDMETHODCALLTYPE *get_DaysSinceFileLastAccessed)(
-        IFsrmFileManagementJob *This,
-        LONG *daysSinceAccess);
+                     IFsrmFileManagementJob *This,
+                     LONG *daysSinceAccess);
 
     HRESULT (STDMETHODCALLTYPE *put_DaysSinceFileLastAccessed)(
-        IFsrmFileManagementJob *This,
-        LONG daysSinceAccess);
+                     IFsrmFileManagementJob *This,
+                     LONG daysSinceAccess);
 
     HRESULT (STDMETHODCALLTYPE *get_DaysSinceFileLastModified)(
-        IFsrmFileManagementJob *This,
-        LONG *daysSinceModify);
+                     IFsrmFileManagementJob *This,
+                     LONG *daysSinceModify);
 
     HRESULT (STDMETHODCALLTYPE *put_DaysSinceFileLastModified)(
-        IFsrmFileManagementJob *This,
-        LONG daysSinceModify);
+                     IFsrmFileManagementJob *This,
+                     LONG daysSinceModify);
 
     HRESULT (STDMETHODCALLTYPE *get_PropertyConditions)(
-        IFsrmFileManagementJob *This,
-        IFsrmCollection **propertyConditions);
+                     IFsrmFileManagementJob *This,
+                     IFsrmCollection **propertyConditions);
 
     HRESULT (STDMETHODCALLTYPE *get_FromDate)(
-        IFsrmFileManagementJob *This,
-        DATE *fromDate);
+                     IFsrmFileManagementJob *This,
+                     DATE *fromDate);
 
     HRESULT (STDMETHODCALLTYPE *put_FromDate)(
-        IFsrmFileManagementJob *This,
-        DATE fromDate);
+                     IFsrmFileManagementJob *This,
+                     DATE fromDate);
 
     HRESULT (STDMETHODCALLTYPE *get_Task)(
-        IFsrmFileManagementJob *This,
-        BSTR *taskName);
+                     IFsrmFileManagementJob *This,
+                     BSTR *taskName);
 
     HRESULT (STDMETHODCALLTYPE *put_Task)(
-        IFsrmFileManagementJob *This,
-        BSTR taskName);
+                     IFsrmFileManagementJob *This,
+                     BSTR taskName);
 
     HRESULT (STDMETHODCALLTYPE *get_Parameters)(
-        IFsrmFileManagementJob *This,
-        SAFEARRAY **parameters);
+                     IFsrmFileManagementJob *This,
+                     SAFEARRAY **parameters);
 
     HRESULT (STDMETHODCALLTYPE *put_Parameters)(
-        IFsrmFileManagementJob *This,
-        SAFEARRAY *parameters);
+                     IFsrmFileManagementJob *This,
+                     SAFEARRAY *parameters);
 
     HRESULT (STDMETHODCALLTYPE *get_RunningStatus)(
-        IFsrmFileManagementJob *This,
-        FsrmReportRunningStatus *runningStatus);
+                     IFsrmFileManagementJob *This,
+                     FsrmReportRunningStatus *runningStatus);
 
     HRESULT (STDMETHODCALLTYPE *get_LastError)(
-        IFsrmFileManagementJob *This,
-        BSTR *lastError);
+                     IFsrmFileManagementJob *This,
+                     BSTR *lastError);
 
     HRESULT (STDMETHODCALLTYPE *get_LastReportPathWithoutExtension)(
-        IFsrmFileManagementJob *This,
-        BSTR *path);
+                     IFsrmFileManagementJob *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *get_LastRun)(
-        IFsrmFileManagementJob *This,
-        DATE *lastRun);
+                     IFsrmFileManagementJob *This,
+                     DATE *lastRun);
 
     HRESULT (STDMETHODCALLTYPE *get_FileNamePattern)(
-        IFsrmFileManagementJob *This,
-        BSTR *fileNamePattern);
+                     IFsrmFileManagementJob *This,
+                     BSTR *fileNamePattern);
 
     HRESULT (STDMETHODCALLTYPE *put_FileNamePattern)(
-        IFsrmFileManagementJob *This,
-        BSTR fileNamePattern);
+                     IFsrmFileManagementJob *This,
+                     BSTR fileNamePattern);
 
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IFsrmFileManagementJob *This,
-        FsrmReportGenerationContext context);
+                     IFsrmFileManagementJob *This,
+                     FsrmReportGenerationContext context);
 
     HRESULT (STDMETHODCALLTYPE *WaitForCompletion)(
-        IFsrmFileManagementJob *This,
-        LONG waitSeconds,
-        VARIANT_BOOL *completed);
+                     IFsrmFileManagementJob *This,
+                     LONG waitSeconds,
+                     VARIANT_BOOL *completed);
 
     HRESULT (STDMETHODCALLTYPE *Cancel)(
-        IFsrmFileManagementJob *This);
+                     IFsrmFileManagementJob *This);
 
     HRESULT (STDMETHODCALLTYPE *AddNotification)(
-        IFsrmFileManagementJob *This,
-        LONG days);
+                     IFsrmFileManagementJob *This,
+                     LONG days);
 
     HRESULT (STDMETHODCALLTYPE *DeleteNotification)(
-        IFsrmFileManagementJob *This,
-        LONG days);
+                     IFsrmFileManagementJob *This,
+                     LONG days);
 
     HRESULT (STDMETHODCALLTYPE *ModifyNotification)(
-        IFsrmFileManagementJob *This,
-        LONG days,
-        LONG newDays);
+                     IFsrmFileManagementJob *This,
+                     LONG days,
+                     LONG newDays);
 
     HRESULT (STDMETHODCALLTYPE *CreateNotificationAction)(
-        IFsrmFileManagementJob *This,
-        LONG days,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmFileManagementJob *This,
+                     LONG days,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumNotificationActions)(
-        IFsrmFileManagementJob *This,
-        LONG days,
-        IFsrmCollection **actions);
+                     IFsrmFileManagementJob *This,
+                     LONG days,
+                     IFsrmCollection **actions);
 
     HRESULT (STDMETHODCALLTYPE *CreatePropertyCondition)(
-        IFsrmFileManagementJob *This,
-        BSTR name,
-        IFsrmPropertyCondition **propertyCondition);
+                     IFsrmFileManagementJob *This,
+                     BSTR name,
+                     IFsrmPropertyCondition **propertyCondition);
 
     HRESULT (STDMETHODCALLTYPE *CreateCustomAction)(
-        IFsrmFileManagementJob *This,
-        IFsrmActionCommand **customAction);
+                     IFsrmFileManagementJob *This,
+                     IFsrmActionCommand **customAction);
 
     END_INTERFACE
 } IFsrmFileManagementJobVtbl;
@@ -2232,10 +2232,10 @@ MIDL_INTERFACE("70684ffc-691a-4a1a-b922-97752e138cc1")
 IFsrmFileCondition : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        FsrmFileConditionType *pVal) = 0;
+                     FsrmFileConditionType *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2247,53 +2247,53 @@ typedef struct IFsrmFileConditionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileCondition *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileCondition *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileCondition *This);
+                     IFsrmFileCondition *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileCondition *This);
+                     IFsrmFileCondition *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileCondition *This,
-        UINT *pctinfo);
+                     IFsrmFileCondition *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileCondition *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileCondition *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileCondition *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileCondition *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileCondition *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileCondition *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmFileCondition methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IFsrmFileCondition *This,
-        FsrmFileConditionType *pVal);
+                     IFsrmFileCondition *This,
+                     FsrmFileConditionType *pVal);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileCondition *This);
+                     IFsrmFileCondition *This);
 
     END_INTERFACE
 } IFsrmFileConditionVtbl;
@@ -2367,34 +2367,34 @@ MIDL_INTERFACE("81926775-b981-4479-988f-da171d627360")
 IFsrmFileConditionProperty : public IFsrmFileCondition
 {
     virtual HRESULT STDMETHODCALLTYPE get_PropertyName(
-        BSTR *pVal) = 0;
+                     BSTR *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PropertyName(
-        BSTR newVal) = 0;
+                     BSTR newVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_PropertyId(
-        FsrmFileSystemPropertyId *pVal) = 0;
+                     FsrmFileSystemPropertyId *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_PropertyId(
-        FsrmFileSystemPropertyId newVal) = 0;
+                     FsrmFileSystemPropertyId newVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Operator(
-        FsrmPropertyConditionType *pVal) = 0;
+                     FsrmPropertyConditionType *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Operator(
-        FsrmPropertyConditionType newVal) = 0;
+                     FsrmPropertyConditionType newVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ValueType(
-        FsrmPropertyValueType *pVal) = 0;
+                     FsrmPropertyValueType *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ValueType(
-        FsrmPropertyValueType newVal) = 0;
+                     FsrmPropertyValueType newVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Value(
-        VARIANT *pVal) = 0;
+                     VARIANT *pVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Value(
-        VARIANT newVal) = 0;
+                     VARIANT newVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2406,94 +2406,94 @@ typedef struct IFsrmFileConditionPropertyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileConditionProperty *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileConditionProperty *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileConditionProperty *This);
+                     IFsrmFileConditionProperty *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileConditionProperty *This);
+                     IFsrmFileConditionProperty *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileConditionProperty *This,
-        UINT *pctinfo);
+                     IFsrmFileConditionProperty *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileConditionProperty *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileConditionProperty *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileConditionProperty *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileConditionProperty *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileConditionProperty *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileConditionProperty *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmFileCondition methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IFsrmFileConditionProperty *This,
-        FsrmFileConditionType *pVal);
+                     IFsrmFileConditionProperty *This,
+                     FsrmFileConditionType *pVal);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileConditionProperty *This);
+                     IFsrmFileConditionProperty *This);
 
     /*** IFsrmFileConditionProperty methods ***/
     HRESULT (STDMETHODCALLTYPE *get_PropertyName)(
-        IFsrmFileConditionProperty *This,
-        BSTR *pVal);
+                     IFsrmFileConditionProperty *This,
+                     BSTR *pVal);
 
     HRESULT (STDMETHODCALLTYPE *put_PropertyName)(
-        IFsrmFileConditionProperty *This,
-        BSTR newVal);
+                     IFsrmFileConditionProperty *This,
+                     BSTR newVal);
 
     HRESULT (STDMETHODCALLTYPE *get_PropertyId)(
-        IFsrmFileConditionProperty *This,
-        FsrmFileSystemPropertyId *pVal);
+                     IFsrmFileConditionProperty *This,
+                     FsrmFileSystemPropertyId *pVal);
 
     HRESULT (STDMETHODCALLTYPE *put_PropertyId)(
-        IFsrmFileConditionProperty *This,
-        FsrmFileSystemPropertyId newVal);
+                     IFsrmFileConditionProperty *This,
+                     FsrmFileSystemPropertyId newVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Operator)(
-        IFsrmFileConditionProperty *This,
-        FsrmPropertyConditionType *pVal);
+                     IFsrmFileConditionProperty *This,
+                     FsrmPropertyConditionType *pVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Operator)(
-        IFsrmFileConditionProperty *This,
-        FsrmPropertyConditionType newVal);
+                     IFsrmFileConditionProperty *This,
+                     FsrmPropertyConditionType newVal);
 
     HRESULT (STDMETHODCALLTYPE *get_ValueType)(
-        IFsrmFileConditionProperty *This,
-        FsrmPropertyValueType *pVal);
+                     IFsrmFileConditionProperty *This,
+                     FsrmPropertyValueType *pVal);
 
     HRESULT (STDMETHODCALLTYPE *put_ValueType)(
-        IFsrmFileConditionProperty *This,
-        FsrmPropertyValueType newVal);
+                     IFsrmFileConditionProperty *This,
+                     FsrmPropertyValueType newVal);
 
     HRESULT (STDMETHODCALLTYPE *get_Value)(
-        IFsrmFileConditionProperty *This,
-        VARIANT *pVal);
+                     IFsrmFileConditionProperty *This,
+                     VARIANT *pVal);
 
     HRESULT (STDMETHODCALLTYPE *put_Value)(
-        IFsrmFileConditionProperty *This,
-        VARIANT newVal);
+                     IFsrmFileConditionProperty *This,
+                     VARIANT newVal);
 
     END_INTERFACE
 } IFsrmFileConditionPropertyVtbl;
@@ -2600,14 +2600,14 @@ static FORCEINLINE HRESULT IFsrmFileConditionProperty_put_Value(IFsrmFileConditi
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

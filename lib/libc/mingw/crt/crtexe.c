@@ -151,7 +151,7 @@ pre_c_init (void)
 #endif
   if (_MINGW_INSTALL_DEBUG_MATHERR == 1)
     {
-      __setusermatherr (_matherr);
+                   __setusermatherr (_matherr);
     }
 
   if (__globallocalestatus == -1)
@@ -244,37 +244,37 @@ __tmainCRTStartup (void)
     int nested = FALSE;
     while((lock_free = InterlockedCompareExchangePointer ((volatile PVOID *) &__native_startup_lock,
 							  fiberid, 0)) != 0)
-      {
+                   {
 	if (lock_free == fiberid)
 	  {
 	    nested = TRUE;
 	    break;
 	  }
 	Sleep(1000);
-      }
+                   }
     if (__native_startup_state == __initializing)
-      {
+                   {
 	_amsg_exit (31);
-      }
+                   }
     else if (__native_startup_state == __uninitialized)
-      {
+                   {
 	__native_startup_state = __initializing;
 	_initterm ((_PVFV *)(void *)__xi_a, (_PVFV *)(void *) __xi_z);
-      }
+                   }
     else
-      has_cctor = 1;
+                   has_cctor = 1;
 
     if (__native_startup_state == __initializing)
-      {
+                   {
 	_initterm (__xc_a, __xc_z);
 	__native_startup_state = __initialized;
-      }
+                   }
     _ASSERTE(__native_startup_state == __initialized);
     if (! nested)
-      (VOID)InterlockedExchangePointer ((volatile PVOID *) &__native_startup_lock, 0);
+                   (VOID)InterlockedExchangePointer ((volatile PVOID *) &__native_startup_lock, 0);
     
     if (__dyn_tls_init_callback != NULL)
-      __dyn_tls_init_callback (NULL, DLL_THREAD_ATTACH, NULL);
+                   __dyn_tls_init_callback (NULL, DLL_THREAD_ATTACH, NULL);
     
     _pei386_runtime_relocator ();
     __mingw_oldexcpt_handler = SetUnhandledExceptionFilter (_gnu_exception_handler);
@@ -294,17 +294,17 @@ __tmainCRTStartup (void)
 #endif
 
     if (lpszCommandLine)
-      {
+                   {
 	while (*lpszCommandLine > SPACECHAR || (*lpszCommandLine && inDoubleQuote))
 	  {
 	    if (*lpszCommandLine == DQUOTECHAR)
-	      inDoubleQuote = !inDoubleQuote;
+	                   inDoubleQuote = !inDoubleQuote;
 #ifdef _MBCS
 	    if (_ismbblead (*lpszCommandLine))
-	      {
+	                   {
 		if (lpszCommandLine[1])
 		  ++lpszCommandLine;
-	      }
+	                   }
 #endif
 	    ++lpszCommandLine;
 	  }
@@ -312,19 +312,19 @@ __tmainCRTStartup (void)
 	  lpszCommandLine++;
 
 	__mingw_winmain_lpCmdLine = lpszCommandLine;
-      }
+                   }
 
     if (mingw_app_type)
-      {
+                   {
 	__mingw_winmain_nShowCmd = StartupInfo.dwFlags & STARTF_USESHOWWINDOW ?
 				    StartupInfo.wShowWindow : SW_SHOWDEFAULT;
-      }
+                   }
     duplicate_ppstrings (argc, &argv);
     __main ();
 #ifdef WPRFLAG
     __winitenv = envp;
     /* C++ initialization.
-       gcc inserts this call automatically for a function called main, but not for wmain.  */
+                    gcc inserts this call automatically for a function called main, but not for wmain.  */
     mainret = wmain (argc, argv, envp);
 #else
 #if !defined(__arm__) && !defined(__aarch64__)
@@ -333,10 +333,10 @@ __tmainCRTStartup (void)
     mainret = main (argc, argv, envp);
 #endif
     if (!managedapp)
-      exit (mainret);
+                   exit (mainret);
 
     if (has_cctor == 0)
-      _cexit ();
+                   _cexit ();
   }
   return mainret;
 }
@@ -372,14 +372,14 @@ check_managed_app (void)
   switch (pNTHeader32->Magic)
     {
     case IMAGE_NT_OPTIONAL_HDR32_MAGIC:
-      if (pNTHeader32->NumberOfRvaAndSizes <= IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR)
+                   if (pNTHeader32->NumberOfRvaAndSizes <= IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR)
 	return 0;
-      return !! pNTHeader32->DataDirectory[IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR].VirtualAddress;
+                   return !! pNTHeader32->DataDirectory[IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR].VirtualAddress;
     case IMAGE_NT_OPTIONAL_HDR64_MAGIC:
-      pNTHeader64 = (PIMAGE_OPTIONAL_HEADER64)pNTHeader32;
-      if (pNTHeader64->NumberOfRvaAndSizes <= IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR)
+                   pNTHeader64 = (PIMAGE_OPTIONAL_HEADER64)pNTHeader32;
+                   if (pNTHeader64->NumberOfRvaAndSizes <= IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR)
 	return 0;
-      return !! pNTHeader64->DataDirectory[IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR].VirtualAddress;
+                   return !! pNTHeader64->DataDirectory[IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR].VirtualAddress;
     }
   return 0;
 }

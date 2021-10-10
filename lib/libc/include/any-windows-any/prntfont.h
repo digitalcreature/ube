@@ -27,7 +27,7 @@
 #define UNI_GLYPHSETDATA_VERSION_1_0	0x10000
 
 #define UFM_SOFT	1
-#define UFM_CART        2
+#define UFM_CART                     2
 #define UFM_SCALABLE    4
 
 #define DF_TYPE_HPINTELLIFONT	0
@@ -74,23 +74,23 @@
 #define UFF_FILE_MAGIC		'UFF1'
 #define UFF_VERSION_NUMBER	0x10001
 #define FONT_DIR_SORTED		1
-#define FONT_REC_SIG            'CERF'
+#define FONT_REC_SIG                                      'CERF'
 #define WINNT_INSTALLER_SIG     'IFTN'
 
-#define FONT_FL_UFM             0x0001
-#define FONT_FL_IFI             0x0002
-#define FONT_FL_SOFTFONT        0x0004
+#define FONT_FL_UFM                                       0x0001
+#define FONT_FL_IFI                                       0x0002
+#define FONT_FL_SOFTFONT                     0x0004
 #define FONT_FL_PERMANENT_SF    0x0008
-#define FONT_FL_DEVICEFONT      0x0010
+#define FONT_FL_DEVICEFONT                   0x0010
 #define FONT_FL_GLYPHSET_GTT    0x0020
 #define FONT_FL_GLYPHSET_RLE    0x0040
-#define FONT_FL_RESERVED        0x8000
+#define FONT_FL_RESERVED                     0x8000
 
-#define DATA_UFM_SIG        'MFUD'
-#define DATA_IFI_SIG        'IFID'
-#define DATA_GTT_SIG        'TTGD'
-#define DATA_CTT_SIG        'TTCD'
-#define DATA_VAR_SIG        'RAVD'
+#define DATA_UFM_SIG                     'MFUD'
+#define DATA_IFI_SIG                     'IFID'
+#define DATA_GTT_SIG                     'TTGD'
+#define DATA_CTT_SIG                     'TTCD'
+#define DATA_VAR_SIG                     'RAVD'
 
 #define FG_CANCHANGE	128
 #define WM_FI_FILENAME	900

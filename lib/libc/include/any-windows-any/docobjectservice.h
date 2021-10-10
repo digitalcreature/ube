@@ -64,45 +64,45 @@ MIDL_INTERFACE("3050f801-98b5-11cf-bb82-00aa00bdce0b")
 IDocObjectService : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE FireBeforeNavigate2(
-        IDispatch *pDispatch,
-        LPCWSTR lpszUrl,
-        DWORD dwFlags,
-        LPCWSTR lpszFrameName,
-        BYTE *pPostData,
-        DWORD cbPostData,
-        LPCWSTR lpszHeaders,
-        WINBOOL fPlayNavSound,
-        WINBOOL *pfCancel) = 0;
+                     IDispatch *pDispatch,
+                     LPCWSTR lpszUrl,
+                     DWORD dwFlags,
+                     LPCWSTR lpszFrameName,
+                     BYTE *pPostData,
+                     DWORD cbPostData,
+                     LPCWSTR lpszHeaders,
+                     WINBOOL fPlayNavSound,
+                     WINBOOL *pfCancel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FireNavigateComplete2(
-        IHTMLWindow2 *pHTMLWindow2,
-        DWORD dwFlags) = 0;
+                     IHTMLWindow2 *pHTMLWindow2,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FireDownloadBegin(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FireDownloadComplete(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FireDocumentComplete(
-        IHTMLWindow2 *pHTMLWindow,
-        DWORD dwFlags) = 0;
+                     IHTMLWindow2 *pHTMLWindow,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UpdateDesktopComponent(
-        IHTMLWindow2 *pHTMLWindow) = 0;
+                     IHTMLWindow2 *pHTMLWindow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPendingUrl(
-        BSTR *pbstrPendingUrl) = 0;
+                     BSTR *pbstrPendingUrl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ActiveElementChanged(
-        IHTMLElement *pHTMLElement) = 0;
+                     IHTMLElement *pHTMLElement) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUrlSearchComponent(
-        BSTR *pbstrSearch) = 0;
+                     BSTR *pbstrSearch) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsErrorUrl(
-        LPCWSTR lpszUrl,
-        WINBOOL *pfIsError) = 0;
+                     LPCWSTR lpszUrl,
+                     WINBOOL *pfIsError) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -114,65 +114,65 @@ typedef struct IDocObjectServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDocObjectService *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDocObjectService *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDocObjectService *This);
+                     IDocObjectService *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDocObjectService *This);
+                     IDocObjectService *This);
 
     /*** IDocObjectService methods ***/
     HRESULT (STDMETHODCALLTYPE *FireBeforeNavigate2)(
-        IDocObjectService *This,
-        IDispatch *pDispatch,
-        LPCWSTR lpszUrl,
-        DWORD dwFlags,
-        LPCWSTR lpszFrameName,
-        BYTE *pPostData,
-        DWORD cbPostData,
-        LPCWSTR lpszHeaders,
-        WINBOOL fPlayNavSound,
-        WINBOOL *pfCancel);
+                     IDocObjectService *This,
+                     IDispatch *pDispatch,
+                     LPCWSTR lpszUrl,
+                     DWORD dwFlags,
+                     LPCWSTR lpszFrameName,
+                     BYTE *pPostData,
+                     DWORD cbPostData,
+                     LPCWSTR lpszHeaders,
+                     WINBOOL fPlayNavSound,
+                     WINBOOL *pfCancel);
 
     HRESULT (STDMETHODCALLTYPE *FireNavigateComplete2)(
-        IDocObjectService *This,
-        IHTMLWindow2 *pHTMLWindow2,
-        DWORD dwFlags);
+                     IDocObjectService *This,
+                     IHTMLWindow2 *pHTMLWindow2,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *FireDownloadBegin)(
-        IDocObjectService *This);
+                     IDocObjectService *This);
 
     HRESULT (STDMETHODCALLTYPE *FireDownloadComplete)(
-        IDocObjectService *This);
+                     IDocObjectService *This);
 
     HRESULT (STDMETHODCALLTYPE *FireDocumentComplete)(
-        IDocObjectService *This,
-        IHTMLWindow2 *pHTMLWindow,
-        DWORD dwFlags);
+                     IDocObjectService *This,
+                     IHTMLWindow2 *pHTMLWindow,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *UpdateDesktopComponent)(
-        IDocObjectService *This,
-        IHTMLWindow2 *pHTMLWindow);
+                     IDocObjectService *This,
+                     IHTMLWindow2 *pHTMLWindow);
 
     HRESULT (STDMETHODCALLTYPE *GetPendingUrl)(
-        IDocObjectService *This,
-        BSTR *pbstrPendingUrl);
+                     IDocObjectService *This,
+                     BSTR *pbstrPendingUrl);
 
     HRESULT (STDMETHODCALLTYPE *ActiveElementChanged)(
-        IDocObjectService *This,
-        IHTMLElement *pHTMLElement);
+                     IDocObjectService *This,
+                     IHTMLElement *pHTMLElement);
 
     HRESULT (STDMETHODCALLTYPE *GetUrlSearchComponent)(
-        IDocObjectService *This,
-        BSTR *pbstrSearch);
+                     IDocObjectService *This,
+                     BSTR *pbstrSearch);
 
     HRESULT (STDMETHODCALLTYPE *IsErrorUrl)(
-        IDocObjectService *This,
-        LPCWSTR lpszUrl,
-        WINBOOL *pfIsError);
+                     IDocObjectService *This,
+                     LPCWSTR lpszUrl,
+                     WINBOOL *pfIsError);
 
     END_INTERFACE
 } IDocObjectServiceVtbl;
@@ -251,10 +251,10 @@ static FORCEINLINE HRESULT IDocObjectService_IsErrorUrl(IDocObjectService* This,
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

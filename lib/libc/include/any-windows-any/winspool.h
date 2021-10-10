@@ -1022,11 +1022,11 @@ extern "C" {
     DWORD Reserved;
     DWORD Id;
     union {
-      DWORD adwData[2];
-      struct {
+                   DWORD adwData[2];
+                   struct {
 	DWORD cbBuf;
 	LPVOID pBuf;
-      } Data;
+                   } Data;
     } NotifyData;
   } PRINTER_NOTIFY_INFO_DATA,*PPRINTER_NOTIFY_INFO_DATA,*LPPRINTER_NOTIFY_INFO_DATA;
 
@@ -1045,11 +1045,11 @@ extern "C" {
   typedef struct _BIDI_DATA{
     DWORD dwBidiType;
     union {
-      WINBOOL bData;
-      LONG iData;
-      LPWSTR sData;
-      FLOAT fData;
-      BINARY_CONTAINER biData;
+                   WINBOOL bData;
+                   LONG iData;
+                   LPWSTR sData;
+                   FLOAT fData;
+                   BINARY_CONTAINER biData;
     } u;
   } BIDI_DATA,*PBIDI_DATA,*LPBIDI_DATA;
 
@@ -1528,14 +1528,14 @@ HRESULT ReportJobProcessingProgress(
 );
 
 typedef struct _CORE_PRINTER_DRIVERA {
-  GUID      CoreDriverGUID;
+  GUID                   CoreDriverGUID;
   FILETIME  ftDriverDate;
   DWORDLONG dwlDriverVersion;
-  CHAR      szPackageID[MAX_PATH];
+  CHAR                   szPackageID[MAX_PATH];
 } CORE_PRINTER_DRIVERA, *PCORE_PRINTER_DRIVERA;
 
 typedef struct _CORE_PRINTER_DRIVERW {
-  GUID      CoreDriverGUID;
+  GUID                   CoreDriverGUID;
   FILETIME  ftDriverDate;
   DWORDLONG dwlDriverVersion;
   WCHAR     szPackageID[MAX_PATH];

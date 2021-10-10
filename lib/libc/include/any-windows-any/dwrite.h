@@ -743,19 +743,19 @@ MIDL_INTERFACE("6d4865fe-0ab8-4d91-8f62-5dd6be34a3e0")
 IDWriteFontFileStream : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ReadFileFragment(
-        const void **fragment_start,
-        UINT64 offset,
-        UINT64 fragment_size,
-        void **fragment_context) = 0;
+                     const void **fragment_start,
+                     UINT64 offset,
+                     UINT64 fragment_size,
+                     void **fragment_context) = 0;
 
     virtual void STDMETHODCALLTYPE ReleaseFileFragment(
-        void *fragment_context) = 0;
+                     void *fragment_context) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileSize(
-        UINT64 *size) = 0;
+                     UINT64 *size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastWriteTime(
-        UINT64 *last_writetime) = 0;
+                     UINT64 *last_writetime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -767,35 +767,35 @@ typedef struct IDWriteFontFileStreamVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontFileStream *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontFileStream *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontFileStream *This);
+                     IDWriteFontFileStream *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontFileStream *This);
+                     IDWriteFontFileStream *This);
 
     /*** IDWriteFontFileStream methods ***/
     HRESULT (STDMETHODCALLTYPE *ReadFileFragment)(
-        IDWriteFontFileStream *This,
-        const void **fragment_start,
-        UINT64 offset,
-        UINT64 fragment_size,
-        void **fragment_context);
+                     IDWriteFontFileStream *This,
+                     const void **fragment_start,
+                     UINT64 offset,
+                     UINT64 fragment_size,
+                     void **fragment_context);
 
     void (STDMETHODCALLTYPE *ReleaseFileFragment)(
-        IDWriteFontFileStream *This,
-        void *fragment_context);
+                     IDWriteFontFileStream *This,
+                     void *fragment_context);
 
     HRESULT (STDMETHODCALLTYPE *GetFileSize)(
-        IDWriteFontFileStream *This,
-        UINT64 *size);
+                     IDWriteFontFileStream *This,
+                     UINT64 *size);
 
     HRESULT (STDMETHODCALLTYPE *GetLastWriteTime)(
-        IDWriteFontFileStream *This,
-        UINT64 *last_writetime);
+                     IDWriteFontFileStream *This,
+                     UINT64 *last_writetime);
 
     END_INTERFACE
 } IDWriteFontFileStreamVtbl;
@@ -859,9 +859,9 @@ MIDL_INTERFACE("727cad4e-d6af-4c9e-8a08-d695b11caa49")
 IDWriteFontFileLoader : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateStreamFromKey(
-        const void *key,
-        UINT32 key_size,
-        IDWriteFontFileStream **stream) = 0;
+                     const void *key,
+                     UINT32 key_size,
+                     IDWriteFontFileStream **stream) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -873,22 +873,22 @@ typedef struct IDWriteFontFileLoaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontFileLoader *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontFileLoader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontFileLoader *This);
+                     IDWriteFontFileLoader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontFileLoader *This);
+                     IDWriteFontFileLoader *This);
 
     /*** IDWriteFontFileLoader methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateStreamFromKey)(
-        IDWriteFontFileLoader *This,
-        const void *key,
-        UINT32 key_size,
-        IDWriteFontFileStream **stream);
+                     IDWriteFontFileLoader *This,
+                     const void *key,
+                     UINT32 key_size,
+                     IDWriteFontFileStream **stream);
 
     END_INTERFACE
 } IDWriteFontFileLoaderVtbl;
@@ -940,20 +940,20 @@ MIDL_INTERFACE("b2d9f3ec-c9fe-4a11-a2ec-d86208f7c0a2")
 IDWriteLocalFontFileLoader : public IDWriteFontFileLoader
 {
     virtual HRESULT STDMETHODCALLTYPE GetFilePathLengthFromKey(
-        const void *key,
-        UINT32 key_size,
-        UINT32 *length) = 0;
+                     const void *key,
+                     UINT32 key_size,
+                     UINT32 *length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFilePathFromKey(
-        const void *key,
-        UINT32 key_size,
-        WCHAR *path,
-        UINT32 length) = 0;
+                     const void *key,
+                     UINT32 key_size,
+                     WCHAR *path,
+                     UINT32 length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLastWriteTimeFromKey(
-        const void *key,
-        UINT32 key_size,
-        FILETIME *writetime) = 0;
+                     const void *key,
+                     UINT32 key_size,
+                     FILETIME *writetime) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -965,42 +965,42 @@ typedef struct IDWriteLocalFontFileLoaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteLocalFontFileLoader *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteLocalFontFileLoader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteLocalFontFileLoader *This);
+                     IDWriteLocalFontFileLoader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteLocalFontFileLoader *This);
+                     IDWriteLocalFontFileLoader *This);
 
     /*** IDWriteFontFileLoader methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateStreamFromKey)(
-        IDWriteLocalFontFileLoader *This,
-        const void *key,
-        UINT32 key_size,
-        IDWriteFontFileStream **stream);
+                     IDWriteLocalFontFileLoader *This,
+                     const void *key,
+                     UINT32 key_size,
+                     IDWriteFontFileStream **stream);
 
     /*** IDWriteLocalFontFileLoader methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFilePathLengthFromKey)(
-        IDWriteLocalFontFileLoader *This,
-        const void *key,
-        UINT32 key_size,
-        UINT32 *length);
+                     IDWriteLocalFontFileLoader *This,
+                     const void *key,
+                     UINT32 key_size,
+                     UINT32 *length);
 
     HRESULT (STDMETHODCALLTYPE *GetFilePathFromKey)(
-        IDWriteLocalFontFileLoader *This,
-        const void *key,
-        UINT32 key_size,
-        WCHAR *path,
-        UINT32 length);
+                     IDWriteLocalFontFileLoader *This,
+                     const void *key,
+                     UINT32 key_size,
+                     WCHAR *path,
+                     UINT32 length);
 
     HRESULT (STDMETHODCALLTYPE *GetLastWriteTimeFromKey)(
-        IDWriteLocalFontFileLoader *This,
-        const void *key,
-        UINT32 key_size,
-        FILETIME *writetime);
+                     IDWriteLocalFontFileLoader *This,
+                     const void *key,
+                     UINT32 key_size,
+                     FILETIME *writetime);
 
     END_INTERFACE
 } IDWriteLocalFontFileLoaderVtbl;
@@ -1066,17 +1066,17 @@ MIDL_INTERFACE("739d886a-cef5-47dc-8769-1a8b41bebbb0")
 IDWriteFontFile : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetReferenceKey(
-        const void **key,
-        UINT32 *key_size) = 0;
+                     const void **key,
+                     UINT32 *key_size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLoader(
-        IDWriteFontFileLoader **loader) = 0;
+                     IDWriteFontFileLoader **loader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Analyze(
-        WINBOOL *is_supported_fonttype,
-        DWRITE_FONT_FILE_TYPE *file_type,
-        DWRITE_FONT_FACE_TYPE *face_type,
-        UINT32 *faces_num) = 0;
+                     WINBOOL *is_supported_fonttype,
+                     DWRITE_FONT_FILE_TYPE *file_type,
+                     DWRITE_FONT_FACE_TYPE *face_type,
+                     UINT32 *faces_num) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1088,32 +1088,32 @@ typedef struct IDWriteFontFileVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontFile *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontFile *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontFile *This);
+                     IDWriteFontFile *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontFile *This);
+                     IDWriteFontFile *This);
 
     /*** IDWriteFontFile methods ***/
     HRESULT (STDMETHODCALLTYPE *GetReferenceKey)(
-        IDWriteFontFile *This,
-        const void **key,
-        UINT32 *key_size);
+                     IDWriteFontFile *This,
+                     const void **key,
+                     UINT32 *key_size);
 
     HRESULT (STDMETHODCALLTYPE *GetLoader)(
-        IDWriteFontFile *This,
-        IDWriteFontFileLoader **loader);
+                     IDWriteFontFile *This,
+                     IDWriteFontFileLoader **loader);
 
     HRESULT (STDMETHODCALLTYPE *Analyze)(
-        IDWriteFontFile *This,
-        WINBOOL *is_supported_fonttype,
-        DWRITE_FONT_FILE_TYPE *file_type,
-        DWRITE_FONT_FACE_TYPE *face_type,
-        UINT32 *faces_num);
+                     IDWriteFontFile *This,
+                     WINBOOL *is_supported_fonttype,
+                     DWRITE_FONT_FILE_TYPE *file_type,
+                     DWRITE_FONT_FACE_TYPE *face_type,
+                     UINT32 *faces_num);
 
     END_INTERFACE
 } IDWriteFontFileVtbl;
@@ -1173,10 +1173,10 @@ MIDL_INTERFACE("72755049-5ff7-435d-8348-4be97cfa6c7c")
 IDWriteFontFileEnumerator : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE MoveNext(
-        WINBOOL *has_current_file) = 0;
+                     WINBOOL *has_current_file) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentFontFile(
-        IDWriteFontFile **font_file) = 0;
+                     IDWriteFontFile **font_file) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1188,24 +1188,24 @@ typedef struct IDWriteFontFileEnumeratorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontFileEnumerator *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontFileEnumerator *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontFileEnumerator *This);
+                     IDWriteFontFileEnumerator *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontFileEnumerator *This);
+                     IDWriteFontFileEnumerator *This);
 
     /*** IDWriteFontFileEnumerator methods ***/
     HRESULT (STDMETHODCALLTYPE *MoveNext)(
-        IDWriteFontFileEnumerator *This,
-        WINBOOL *has_current_file);
+                     IDWriteFontFileEnumerator *This,
+                     WINBOOL *has_current_file);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentFontFile)(
-        IDWriteFontFileEnumerator *This,
-        IDWriteFontFile **font_file);
+                     IDWriteFontFileEnumerator *This,
+                     IDWriteFontFile **font_file);
 
     END_INTERFACE
 } IDWriteFontFileEnumeratorVtbl;
@@ -1261,10 +1261,10 @@ MIDL_INTERFACE("cca920e4-52f0-492b-bfa8-29c72ee0a468")
 IDWriteFontCollectionLoader : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateEnumeratorFromKey(
-        IDWriteFactory *factory,
-        const void *key,
-        UINT32 key_size,
-        IDWriteFontFileEnumerator **enumerator) = 0;
+                     IDWriteFactory *factory,
+                     const void *key,
+                     UINT32 key_size,
+                     IDWriteFontFileEnumerator **enumerator) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1276,23 +1276,23 @@ typedef struct IDWriteFontCollectionLoaderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontCollectionLoader *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontCollectionLoader *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontCollectionLoader *This);
+                     IDWriteFontCollectionLoader *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontCollectionLoader *This);
+                     IDWriteFontCollectionLoader *This);
 
     /*** IDWriteFontCollectionLoader methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateEnumeratorFromKey)(
-        IDWriteFontCollectionLoader *This,
-        IDWriteFactory *factory,
-        const void *key,
-        UINT32 key_size,
-        IDWriteFontFileEnumerator **enumerator);
+                     IDWriteFontCollectionLoader *This,
+                     IDWriteFactory *factory,
+                     const void *key,
+                     UINT32 key_size,
+                     IDWriteFontFileEnumerator **enumerator);
 
     END_INTERFACE
 } IDWriteFontCollectionLoaderVtbl;
@@ -1344,30 +1344,30 @@ MIDL_INTERFACE("08256209-099a-4b34-b86d-c22b110e7771")
 IDWriteLocalizedStrings : public IUnknown
 {
     virtual UINT32 STDMETHODCALLTYPE GetCount(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindLocaleName(
-        const WCHAR *locale_name,
-        UINT32 *index,
-        WINBOOL *exists) = 0;
+                     const WCHAR *locale_name,
+                     UINT32 *index,
+                     WINBOOL *exists) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocaleNameLength(
-        UINT32 index,
-        UINT32 *length) = 0;
+                     UINT32 index,
+                     UINT32 *length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocaleName(
-        UINT32 index,
-        WCHAR *locale_name,
-        UINT32 size) = 0;
+                     UINT32 index,
+                     WCHAR *locale_name,
+                     UINT32 size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringLength(
-        UINT32 index,
-        UINT32 *length) = 0;
+                     UINT32 index,
+                     UINT32 *length) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetString(
-        UINT32 index,
-        WCHAR *buffer,
-        UINT32 size) = 0;
+                     UINT32 index,
+                     WCHAR *buffer,
+                     UINT32 size) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1379,47 +1379,47 @@ typedef struct IDWriteLocalizedStringsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteLocalizedStrings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteLocalizedStrings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteLocalizedStrings *This);
+                     IDWriteLocalizedStrings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteLocalizedStrings *This);
+                     IDWriteLocalizedStrings *This);
 
     /*** IDWriteLocalizedStrings methods ***/
     UINT32 (STDMETHODCALLTYPE *GetCount)(
-        IDWriteLocalizedStrings *This);
+                     IDWriteLocalizedStrings *This);
 
     HRESULT (STDMETHODCALLTYPE *FindLocaleName)(
-        IDWriteLocalizedStrings *This,
-        const WCHAR *locale_name,
-        UINT32 *index,
-        WINBOOL *exists);
+                     IDWriteLocalizedStrings *This,
+                     const WCHAR *locale_name,
+                     UINT32 *index,
+                     WINBOOL *exists);
 
     HRESULT (STDMETHODCALLTYPE *GetLocaleNameLength)(
-        IDWriteLocalizedStrings *This,
-        UINT32 index,
-        UINT32 *length);
+                     IDWriteLocalizedStrings *This,
+                     UINT32 index,
+                     UINT32 *length);
 
     HRESULT (STDMETHODCALLTYPE *GetLocaleName)(
-        IDWriteLocalizedStrings *This,
-        UINT32 index,
-        WCHAR *locale_name,
-        UINT32 size);
+                     IDWriteLocalizedStrings *This,
+                     UINT32 index,
+                     WCHAR *locale_name,
+                     UINT32 size);
 
     HRESULT (STDMETHODCALLTYPE *GetStringLength)(
-        IDWriteLocalizedStrings *This,
-        UINT32 index,
-        UINT32 *length);
+                     IDWriteLocalizedStrings *This,
+                     UINT32 index,
+                     UINT32 *length);
 
     HRESULT (STDMETHODCALLTYPE *GetString)(
-        IDWriteLocalizedStrings *This,
-        UINT32 index,
-        WCHAR *buffer,
-        UINT32 size);
+                     IDWriteLocalizedStrings *This,
+                     UINT32 index,
+                     WCHAR *buffer,
+                     UINT32 size);
 
     END_INTERFACE
 } IDWriteLocalizedStringsVtbl;
@@ -1491,19 +1491,19 @@ MIDL_INTERFACE("2f0da53a-2add-47cd-82ee-d9ec34688e75")
 IDWriteRenderingParams : public IUnknown
 {
     virtual FLOAT STDMETHODCALLTYPE GetGamma(
-        ) = 0;
+                     ) = 0;
 
     virtual FLOAT STDMETHODCALLTYPE GetEnhancedContrast(
-        ) = 0;
+                     ) = 0;
 
     virtual FLOAT STDMETHODCALLTYPE GetClearTypeLevel(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_PIXEL_GEOMETRY STDMETHODCALLTYPE GetPixelGeometry(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_RENDERING_MODE STDMETHODCALLTYPE GetRenderingMode(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1515,31 +1515,31 @@ typedef struct IDWriteRenderingParamsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteRenderingParams *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteRenderingParams *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteRenderingParams *This);
+                     IDWriteRenderingParams *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteRenderingParams *This);
+                     IDWriteRenderingParams *This);
 
     /*** IDWriteRenderingParams methods ***/
     FLOAT (STDMETHODCALLTYPE *GetGamma)(
-        IDWriteRenderingParams *This);
+                     IDWriteRenderingParams *This);
 
     FLOAT (STDMETHODCALLTYPE *GetEnhancedContrast)(
-        IDWriteRenderingParams *This);
+                     IDWriteRenderingParams *This);
 
     FLOAT (STDMETHODCALLTYPE *GetClearTypeLevel)(
-        IDWriteRenderingParams *This);
+                     IDWriteRenderingParams *This);
 
     DWRITE_PIXEL_GEOMETRY (STDMETHODCALLTYPE *GetPixelGeometry)(
-        IDWriteRenderingParams *This);
+                     IDWriteRenderingParams *This);
 
     DWRITE_RENDERING_MODE (STDMETHODCALLTYPE *GetRenderingMode)(
-        IDWriteRenderingParams *This);
+                     IDWriteRenderingParams *This);
 
     END_INTERFACE
 } IDWriteRenderingParamsVtbl;
@@ -1607,80 +1607,80 @@ MIDL_INTERFACE("5f49804d-7024-4d43-bfa9-d25984f53849")
 IDWriteFontFace : public IUnknown
 {
     virtual DWRITE_FONT_FACE_TYPE STDMETHODCALLTYPE GetType(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFiles(
-        UINT32 *number_of_files,
-        IDWriteFontFile **fontfiles) = 0;
+                     UINT32 *number_of_files,
+                     IDWriteFontFile **fontfiles) = 0;
 
     virtual UINT32 STDMETHODCALLTYPE GetIndex(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_FONT_SIMULATIONS STDMETHODCALLTYPE GetSimulations(
-        ) = 0;
+                     ) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE IsSymbolFont(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE GetMetrics(
-        DWRITE_FONT_METRICS *metrics) = 0;
+                     DWRITE_FONT_METRICS *metrics) = 0;
 
     virtual UINT16 STDMETHODCALLTYPE GetGlyphCount(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDesignGlyphMetrics(
-        const UINT16 *glyph_indices,
-        UINT32 glyph_count,
-        DWRITE_GLYPH_METRICS *metrics,
-        WINBOOL is_sideways = FALSE) = 0;
+                     const UINT16 *glyph_indices,
+                     UINT32 glyph_count,
+                     DWRITE_GLYPH_METRICS *metrics,
+                     WINBOOL is_sideways = FALSE) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphIndices(
-        const UINT32 *codepoints,
-        UINT32 count,
-        UINT16 *glyph_indices) = 0;
+                     const UINT32 *codepoints,
+                     UINT32 count,
+                     UINT16 *glyph_indices) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE TryGetFontTable(
-        UINT32 table_tag,
-        const void **table_data,
-        UINT32 *table_size,
-        void **context,
-        WINBOOL *exists) = 0;
+                     UINT32 table_tag,
+                     const void **table_data,
+                     UINT32 *table_size,
+                     void **context,
+                     WINBOOL *exists) = 0;
 
     virtual void STDMETHODCALLTYPE ReleaseFontTable(
-        void *table_context) = 0;
+                     void *table_context) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphRunOutline(
-        FLOAT emSize,
-        const UINT16 *glyph_indices,
-        const FLOAT *glyph_advances,
-        const DWRITE_GLYPH_OFFSET *glyph_offsets,
-        UINT32 glyph_count,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        IDWriteGeometrySink *geometrysink) = 0;
+                     FLOAT emSize,
+                     const UINT16 *glyph_indices,
+                     const FLOAT *glyph_advances,
+                     const DWRITE_GLYPH_OFFSET *glyph_offsets,
+                     UINT32 glyph_count,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     IDWriteGeometrySink *geometrysink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRecommendedRenderingMode(
-        FLOAT emSize,
-        FLOAT pixels_per_dip,
-        DWRITE_MEASURING_MODE mode,
-        IDWriteRenderingParams *params,
-        DWRITE_RENDERING_MODE *rendering_mode) = 0;
+                     FLOAT emSize,
+                     FLOAT pixels_per_dip,
+                     DWRITE_MEASURING_MODE mode,
+                     IDWriteRenderingParams *params,
+                     DWRITE_RENDERING_MODE *rendering_mode) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGdiCompatibleMetrics(
-        FLOAT emSize,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        DWRITE_FONT_METRICS *metrics) = 0;
+                     FLOAT emSize,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     DWRITE_FONT_METRICS *metrics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGdiCompatibleGlyphMetrics(
-        FLOAT emSize,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        WINBOOL use_gdi_natural,
-        const UINT16 *glyph_indices,
-        UINT32 glyph_count,
-        DWRITE_GLYPH_METRICS *metrics,
-        WINBOOL is_sideways = FALSE) = 0;
+                     FLOAT emSize,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     WINBOOL use_gdi_natural,
+                     const UINT16 *glyph_indices,
+                     UINT32 glyph_count,
+                     DWRITE_GLYPH_METRICS *metrics,
+                     WINBOOL is_sideways = FALSE) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1692,102 +1692,102 @@ typedef struct IDWriteFontFaceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontFace *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontFace *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontFace *This);
+                     IDWriteFontFace *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontFace *This);
+                     IDWriteFontFace *This);
 
     /*** IDWriteFontFace methods ***/
     DWRITE_FONT_FACE_TYPE (STDMETHODCALLTYPE *GetType)(
-        IDWriteFontFace *This);
+                     IDWriteFontFace *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFiles)(
-        IDWriteFontFace *This,
-        UINT32 *number_of_files,
-        IDWriteFontFile **fontfiles);
+                     IDWriteFontFace *This,
+                     UINT32 *number_of_files,
+                     IDWriteFontFile **fontfiles);
 
     UINT32 (STDMETHODCALLTYPE *GetIndex)(
-        IDWriteFontFace *This);
+                     IDWriteFontFace *This);
 
     DWRITE_FONT_SIMULATIONS (STDMETHODCALLTYPE *GetSimulations)(
-        IDWriteFontFace *This);
+                     IDWriteFontFace *This);
 
     WINBOOL (STDMETHODCALLTYPE *IsSymbolFont)(
-        IDWriteFontFace *This);
+                     IDWriteFontFace *This);
 
     void (STDMETHODCALLTYPE *GetMetrics)(
-        IDWriteFontFace *This,
-        DWRITE_FONT_METRICS *metrics);
+                     IDWriteFontFace *This,
+                     DWRITE_FONT_METRICS *metrics);
 
     UINT16 (STDMETHODCALLTYPE *GetGlyphCount)(
-        IDWriteFontFace *This);
+                     IDWriteFontFace *This);
 
     HRESULT (STDMETHODCALLTYPE *GetDesignGlyphMetrics)(
-        IDWriteFontFace *This,
-        const UINT16 *glyph_indices,
-        UINT32 glyph_count,
-        DWRITE_GLYPH_METRICS *metrics,
-        WINBOOL is_sideways);
+                     IDWriteFontFace *This,
+                     const UINT16 *glyph_indices,
+                     UINT32 glyph_count,
+                     DWRITE_GLYPH_METRICS *metrics,
+                     WINBOOL is_sideways);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphIndices)(
-        IDWriteFontFace *This,
-        const UINT32 *codepoints,
-        UINT32 count,
-        UINT16 *glyph_indices);
+                     IDWriteFontFace *This,
+                     const UINT32 *codepoints,
+                     UINT32 count,
+                     UINT16 *glyph_indices);
 
     HRESULT (STDMETHODCALLTYPE *TryGetFontTable)(
-        IDWriteFontFace *This,
-        UINT32 table_tag,
-        const void **table_data,
-        UINT32 *table_size,
-        void **context,
-        WINBOOL *exists);
+                     IDWriteFontFace *This,
+                     UINT32 table_tag,
+                     const void **table_data,
+                     UINT32 *table_size,
+                     void **context,
+                     WINBOOL *exists);
 
     void (STDMETHODCALLTYPE *ReleaseFontTable)(
-        IDWriteFontFace *This,
-        void *table_context);
+                     IDWriteFontFace *This,
+                     void *table_context);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphRunOutline)(
-        IDWriteFontFace *This,
-        FLOAT emSize,
-        const UINT16 *glyph_indices,
-        const FLOAT *glyph_advances,
-        const DWRITE_GLYPH_OFFSET *glyph_offsets,
-        UINT32 glyph_count,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        IDWriteGeometrySink *geometrysink);
+                     IDWriteFontFace *This,
+                     FLOAT emSize,
+                     const UINT16 *glyph_indices,
+                     const FLOAT *glyph_advances,
+                     const DWRITE_GLYPH_OFFSET *glyph_offsets,
+                     UINT32 glyph_count,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     IDWriteGeometrySink *geometrysink);
 
     HRESULT (STDMETHODCALLTYPE *GetRecommendedRenderingMode)(
-        IDWriteFontFace *This,
-        FLOAT emSize,
-        FLOAT pixels_per_dip,
-        DWRITE_MEASURING_MODE mode,
-        IDWriteRenderingParams *params,
-        DWRITE_RENDERING_MODE *rendering_mode);
+                     IDWriteFontFace *This,
+                     FLOAT emSize,
+                     FLOAT pixels_per_dip,
+                     DWRITE_MEASURING_MODE mode,
+                     IDWriteRenderingParams *params,
+                     DWRITE_RENDERING_MODE *rendering_mode);
 
     HRESULT (STDMETHODCALLTYPE *GetGdiCompatibleMetrics)(
-        IDWriteFontFace *This,
-        FLOAT emSize,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        DWRITE_FONT_METRICS *metrics);
+                     IDWriteFontFace *This,
+                     FLOAT emSize,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     DWRITE_FONT_METRICS *metrics);
 
     HRESULT (STDMETHODCALLTYPE *GetGdiCompatibleGlyphMetrics)(
-        IDWriteFontFace *This,
-        FLOAT emSize,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        WINBOOL use_gdi_natural,
-        const UINT16 *glyph_indices,
-        UINT32 glyph_count,
-        DWRITE_GLYPH_METRICS *metrics,
-        WINBOOL is_sideways);
+                     IDWriteFontFace *This,
+                     FLOAT emSize,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     WINBOOL use_gdi_natural,
+                     const UINT16 *glyph_indices,
+                     UINT32 glyph_count,
+                     DWRITE_GLYPH_METRICS *metrics,
+                     WINBOOL is_sideways);
 
     END_INTERFACE
 } IDWriteFontFaceVtbl;
@@ -1895,40 +1895,40 @@ MIDL_INTERFACE("acd16696-8c14-4f5d-877e-fe3fc1d32737")
 IDWriteFont : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetFontFamily(
-        IDWriteFontFamily **family) = 0;
+                     IDWriteFontFamily **family) = 0;
 
     virtual DWRITE_FONT_WEIGHT STDMETHODCALLTYPE GetWeight(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_FONT_STRETCH STDMETHODCALLTYPE GetStretch(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_FONT_STYLE STDMETHODCALLTYPE GetStyle(
-        ) = 0;
+                     ) = 0;
 
     virtual WINBOOL STDMETHODCALLTYPE IsSymbolFont(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFaceNames(
-        IDWriteLocalizedStrings **names) = 0;
+                     IDWriteLocalizedStrings **names) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInformationalStrings(
-        DWRITE_INFORMATIONAL_STRING_ID stringid,
-        IDWriteLocalizedStrings **strings,
-        WINBOOL *exists) = 0;
+                     DWRITE_INFORMATIONAL_STRING_ID stringid,
+                     IDWriteLocalizedStrings **strings,
+                     WINBOOL *exists) = 0;
 
     virtual DWRITE_FONT_SIMULATIONS STDMETHODCALLTYPE GetSimulations(
-        ) = 0;
+                     ) = 0;
 
     virtual void STDMETHODCALLTYPE GetMetrics(
-        DWRITE_FONT_METRICS *metrics) = 0;
+                     DWRITE_FONT_METRICS *metrics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasCharacter(
-        UINT32 value,
-        WINBOOL *exists) = 0;
+                     UINT32 value,
+                     WINBOOL *exists) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFontFace(
-        IDWriteFontFace **face) = 0;
+                     IDWriteFontFace **face) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1940,58 +1940,58 @@ typedef struct IDWriteFontVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFont *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFont *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFont *This);
+                     IDWriteFont *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFont *This);
+                     IDWriteFont *This);
 
     /*** IDWriteFont methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFontFamily)(
-        IDWriteFont *This,
-        IDWriteFontFamily **family);
+                     IDWriteFont *This,
+                     IDWriteFontFamily **family);
 
     DWRITE_FONT_WEIGHT (STDMETHODCALLTYPE *GetWeight)(
-        IDWriteFont *This);
+                     IDWriteFont *This);
 
     DWRITE_FONT_STRETCH (STDMETHODCALLTYPE *GetStretch)(
-        IDWriteFont *This);
+                     IDWriteFont *This);
 
     DWRITE_FONT_STYLE (STDMETHODCALLTYPE *GetStyle)(
-        IDWriteFont *This);
+                     IDWriteFont *This);
 
     WINBOOL (STDMETHODCALLTYPE *IsSymbolFont)(
-        IDWriteFont *This);
+                     IDWriteFont *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFaceNames)(
-        IDWriteFont *This,
-        IDWriteLocalizedStrings **names);
+                     IDWriteFont *This,
+                     IDWriteLocalizedStrings **names);
 
     HRESULT (STDMETHODCALLTYPE *GetInformationalStrings)(
-        IDWriteFont *This,
-        DWRITE_INFORMATIONAL_STRING_ID stringid,
-        IDWriteLocalizedStrings **strings,
-        WINBOOL *exists);
+                     IDWriteFont *This,
+                     DWRITE_INFORMATIONAL_STRING_ID stringid,
+                     IDWriteLocalizedStrings **strings,
+                     WINBOOL *exists);
 
     DWRITE_FONT_SIMULATIONS (STDMETHODCALLTYPE *GetSimulations)(
-        IDWriteFont *This);
+                     IDWriteFont *This);
 
     void (STDMETHODCALLTYPE *GetMetrics)(
-        IDWriteFont *This,
-        DWRITE_FONT_METRICS *metrics);
+                     IDWriteFont *This,
+                     DWRITE_FONT_METRICS *metrics);
 
     HRESULT (STDMETHODCALLTYPE *HasCharacter)(
-        IDWriteFont *This,
-        UINT32 value,
-        WINBOOL *exists);
+                     IDWriteFont *This,
+                     UINT32 value,
+                     WINBOOL *exists);
 
     HRESULT (STDMETHODCALLTYPE *CreateFontFace)(
-        IDWriteFont *This,
-        IDWriteFontFace **face);
+                     IDWriteFont *This,
+                     IDWriteFontFace **face);
 
     END_INTERFACE
 } IDWriteFontVtbl;
@@ -2083,14 +2083,14 @@ MIDL_INTERFACE("1a0d8438-1d97-4ec1-aef9-a2fb86ed6acb")
 IDWriteFontList : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetFontCollection(
-        IDWriteFontCollection **collection) = 0;
+                     IDWriteFontCollection **collection) = 0;
 
     virtual UINT32 STDMETHODCALLTYPE GetFontCount(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFont(
-        UINT32 index,
-        IDWriteFont **font) = 0;
+                     UINT32 index,
+                     IDWriteFont **font) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2102,28 +2102,28 @@ typedef struct IDWriteFontListVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontList *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontList *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontList *This);
+                     IDWriteFontList *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontList *This);
+                     IDWriteFontList *This);
 
     /*** IDWriteFontList methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFontCollection)(
-        IDWriteFontList *This,
-        IDWriteFontCollection **collection);
+                     IDWriteFontList *This,
+                     IDWriteFontCollection **collection);
 
     UINT32 (STDMETHODCALLTYPE *GetFontCount)(
-        IDWriteFontList *This);
+                     IDWriteFontList *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFont)(
-        IDWriteFontList *This,
-        UINT32 index,
-        IDWriteFont **font);
+                     IDWriteFontList *This,
+                     UINT32 index,
+                     IDWriteFont **font);
 
     END_INTERFACE
 } IDWriteFontListVtbl;
@@ -2183,19 +2183,19 @@ MIDL_INTERFACE("da20d8ef-812a-4c43-9802-62ec4abd7add")
 IDWriteFontFamily : public IDWriteFontList
 {
     virtual HRESULT STDMETHODCALLTYPE GetFamilyNames(
-        IDWriteLocalizedStrings **names) = 0;
+                     IDWriteLocalizedStrings **names) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFirstMatchingFont(
-        DWRITE_FONT_WEIGHT weight,
-        DWRITE_FONT_STRETCH stretch,
-        DWRITE_FONT_STYLE style,
-        IDWriteFont **font) = 0;
+                     DWRITE_FONT_WEIGHT weight,
+                     DWRITE_FONT_STRETCH stretch,
+                     DWRITE_FONT_STYLE style,
+                     IDWriteFont **font) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMatchingFonts(
-        DWRITE_FONT_WEIGHT weight,
-        DWRITE_FONT_STRETCH stretch,
-        DWRITE_FONT_STYLE style,
-        IDWriteFontList **fonts) = 0;
+                     DWRITE_FONT_WEIGHT weight,
+                     DWRITE_FONT_STRETCH stretch,
+                     DWRITE_FONT_STYLE style,
+                     IDWriteFontList **fonts) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2207,47 +2207,47 @@ typedef struct IDWriteFontFamilyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontFamily *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontFamily *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontFamily *This);
+                     IDWriteFontFamily *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontFamily *This);
+                     IDWriteFontFamily *This);
 
     /*** IDWriteFontList methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFontCollection)(
-        IDWriteFontFamily *This,
-        IDWriteFontCollection **collection);
+                     IDWriteFontFamily *This,
+                     IDWriteFontCollection **collection);
 
     UINT32 (STDMETHODCALLTYPE *GetFontCount)(
-        IDWriteFontFamily *This);
+                     IDWriteFontFamily *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFont)(
-        IDWriteFontFamily *This,
-        UINT32 index,
-        IDWriteFont **font);
+                     IDWriteFontFamily *This,
+                     UINT32 index,
+                     IDWriteFont **font);
 
     /*** IDWriteFontFamily methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFamilyNames)(
-        IDWriteFontFamily *This,
-        IDWriteLocalizedStrings **names);
+                     IDWriteFontFamily *This,
+                     IDWriteLocalizedStrings **names);
 
     HRESULT (STDMETHODCALLTYPE *GetFirstMatchingFont)(
-        IDWriteFontFamily *This,
-        DWRITE_FONT_WEIGHT weight,
-        DWRITE_FONT_STRETCH stretch,
-        DWRITE_FONT_STYLE style,
-        IDWriteFont **font);
+                     IDWriteFontFamily *This,
+                     DWRITE_FONT_WEIGHT weight,
+                     DWRITE_FONT_STRETCH stretch,
+                     DWRITE_FONT_STYLE style,
+                     IDWriteFont **font);
 
     HRESULT (STDMETHODCALLTYPE *GetMatchingFonts)(
-        IDWriteFontFamily *This,
-        DWRITE_FONT_WEIGHT weight,
-        DWRITE_FONT_STRETCH stretch,
-        DWRITE_FONT_STYLE style,
-        IDWriteFontList **fonts);
+                     IDWriteFontFamily *This,
+                     DWRITE_FONT_WEIGHT weight,
+                     DWRITE_FONT_STRETCH stretch,
+                     DWRITE_FONT_STYLE style,
+                     IDWriteFontList **fonts);
 
     END_INTERFACE
 } IDWriteFontFamilyVtbl;
@@ -2321,20 +2321,20 @@ MIDL_INTERFACE("a84cee02-3eea-4eee-a827-87c1a02a0fcc")
 IDWriteFontCollection : public IUnknown
 {
     virtual UINT32 STDMETHODCALLTYPE GetFontFamilyCount(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontFamily(
-        UINT32 index,
-        IDWriteFontFamily **family) = 0;
+                     UINT32 index,
+                     IDWriteFontFamily **family) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FindFamilyName(
-        const WCHAR *name,
-        UINT32 *index,
-        WINBOOL *exists) = 0;
+                     const WCHAR *name,
+                     UINT32 *index,
+                     WINBOOL *exists) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontFromFontFace(
-        IDWriteFontFace *face,
-        IDWriteFont **font) = 0;
+                     IDWriteFontFace *face,
+                     IDWriteFont **font) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2346,35 +2346,35 @@ typedef struct IDWriteFontCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFontCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFontCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFontCollection *This);
+                     IDWriteFontCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFontCollection *This);
+                     IDWriteFontCollection *This);
 
     /*** IDWriteFontCollection methods ***/
     UINT32 (STDMETHODCALLTYPE *GetFontFamilyCount)(
-        IDWriteFontCollection *This);
+                     IDWriteFontCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFontFamily)(
-        IDWriteFontCollection *This,
-        UINT32 index,
-        IDWriteFontFamily **family);
+                     IDWriteFontCollection *This,
+                     UINT32 index,
+                     IDWriteFontFamily **family);
 
     HRESULT (STDMETHODCALLTYPE *FindFamilyName)(
-        IDWriteFontCollection *This,
-        const WCHAR *name,
-        UINT32 *index,
-        WINBOOL *exists);
+                     IDWriteFontCollection *This,
+                     const WCHAR *name,
+                     UINT32 *index,
+                     WINBOOL *exists);
 
     HRESULT (STDMETHODCALLTYPE *GetFontFromFontFace)(
-        IDWriteFontCollection *This,
-        IDWriteFontFace *face,
-        IDWriteFont **font);
+                     IDWriteFontCollection *This,
+                     IDWriteFontFace *face,
+                     IDWriteFont **font);
 
     END_INTERFACE
 } IDWriteFontCollectionVtbl;
@@ -2438,16 +2438,16 @@ MIDL_INTERFACE("eaf3a2da-ecf4-4d24-b644-b34f6842024b")
 IDWritePixelSnapping : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE IsPixelSnappingDisabled(
-        void *client_drawingcontext,
-        WINBOOL *disabled) = 0;
+                     void *client_drawingcontext,
+                     WINBOOL *disabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentTransform(
-        void *client_drawingcontext,
-        DWRITE_MATRIX *transform) = 0;
+                     void *client_drawingcontext,
+                     DWRITE_MATRIX *transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPixelsPerDip(
-        void *client_drawingcontext,
-        FLOAT *pixels_per_dip) = 0;
+                     void *client_drawingcontext,
+                     FLOAT *pixels_per_dip) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2459,31 +2459,31 @@ typedef struct IDWritePixelSnappingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWritePixelSnapping *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWritePixelSnapping *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWritePixelSnapping *This);
+                     IDWritePixelSnapping *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWritePixelSnapping *This);
+                     IDWritePixelSnapping *This);
 
     /*** IDWritePixelSnapping methods ***/
     HRESULT (STDMETHODCALLTYPE *IsPixelSnappingDisabled)(
-        IDWritePixelSnapping *This,
-        void *client_drawingcontext,
-        WINBOOL *disabled);
+                     IDWritePixelSnapping *This,
+                     void *client_drawingcontext,
+                     WINBOOL *disabled);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentTransform)(
-        IDWritePixelSnapping *This,
-        void *client_drawingcontext,
-        DWRITE_MATRIX *transform);
+                     IDWritePixelSnapping *This,
+                     void *client_drawingcontext,
+                     DWRITE_MATRIX *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelsPerDip)(
-        IDWritePixelSnapping *This,
-        void *client_drawingcontext,
-        FLOAT *pixels_per_dip);
+                     IDWritePixelSnapping *This,
+                     void *client_drawingcontext,
+                     FLOAT *pixels_per_dip);
 
     END_INTERFACE
 } IDWritePixelSnappingVtbl;
@@ -2543,36 +2543,36 @@ MIDL_INTERFACE("ef8a8135-5cc6-45fe-8825-c5a0724eb819")
 IDWriteTextRenderer : public IDWritePixelSnapping
 {
     virtual HRESULT STDMETHODCALLTYPE DrawGlyphRun(
-        void *client_drawingcontext,
-        FLOAT baselineOriginX,
-        FLOAT baselineOriginY,
-        DWRITE_MEASURING_MODE mode,
-        const DWRITE_GLYPH_RUN *glyph_run,
-        const DWRITE_GLYPH_RUN_DESCRIPTION *run_descr,
-        IUnknown *drawing_effect) = 0;
+                     void *client_drawingcontext,
+                     FLOAT baselineOriginX,
+                     FLOAT baselineOriginY,
+                     DWRITE_MEASURING_MODE mode,
+                     const DWRITE_GLYPH_RUN *glyph_run,
+                     const DWRITE_GLYPH_RUN_DESCRIPTION *run_descr,
+                     IUnknown *drawing_effect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DrawUnderline(
-        void *client_drawingcontext,
-        FLOAT baselineOriginX,
-        FLOAT baselineOriginY,
-        const DWRITE_UNDERLINE *underline,
-        IUnknown *drawing_effect) = 0;
+                     void *client_drawingcontext,
+                     FLOAT baselineOriginX,
+                     FLOAT baselineOriginY,
+                     const DWRITE_UNDERLINE *underline,
+                     IUnknown *drawing_effect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DrawStrikethrough(
-        void *client_drawingcontext,
-        FLOAT baselineOriginX,
-        FLOAT baselineOriginY,
-        const DWRITE_STRIKETHROUGH *strikethrough,
-        IUnknown *drawing_effect) = 0;
+                     void *client_drawingcontext,
+                     FLOAT baselineOriginX,
+                     FLOAT baselineOriginY,
+                     const DWRITE_STRIKETHROUGH *strikethrough,
+                     IUnknown *drawing_effect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DrawInlineObject(
-        void *client_drawingcontext,
-        FLOAT originX,
-        FLOAT originY,
-        IDWriteInlineObject *object,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        IUnknown *drawing_effect) = 0;
+                     void *client_drawingcontext,
+                     FLOAT originX,
+                     FLOAT originY,
+                     IDWriteInlineObject *object,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     IUnknown *drawing_effect) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2584,68 +2584,68 @@ typedef struct IDWriteTextRendererVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteTextRenderer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteTextRenderer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteTextRenderer *This);
+                     IDWriteTextRenderer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteTextRenderer *This);
+                     IDWriteTextRenderer *This);
 
     /*** IDWritePixelSnapping methods ***/
     HRESULT (STDMETHODCALLTYPE *IsPixelSnappingDisabled)(
-        IDWriteTextRenderer *This,
-        void *client_drawingcontext,
-        WINBOOL *disabled);
+                     IDWriteTextRenderer *This,
+                     void *client_drawingcontext,
+                     WINBOOL *disabled);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentTransform)(
-        IDWriteTextRenderer *This,
-        void *client_drawingcontext,
-        DWRITE_MATRIX *transform);
+                     IDWriteTextRenderer *This,
+                     void *client_drawingcontext,
+                     DWRITE_MATRIX *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetPixelsPerDip)(
-        IDWriteTextRenderer *This,
-        void *client_drawingcontext,
-        FLOAT *pixels_per_dip);
+                     IDWriteTextRenderer *This,
+                     void *client_drawingcontext,
+                     FLOAT *pixels_per_dip);
 
     /*** IDWriteTextRenderer methods ***/
     HRESULT (STDMETHODCALLTYPE *DrawGlyphRun)(
-        IDWriteTextRenderer *This,
-        void *client_drawingcontext,
-        FLOAT baselineOriginX,
-        FLOAT baselineOriginY,
-        DWRITE_MEASURING_MODE mode,
-        const DWRITE_GLYPH_RUN *glyph_run,
-        const DWRITE_GLYPH_RUN_DESCRIPTION *run_descr,
-        IUnknown *drawing_effect);
+                     IDWriteTextRenderer *This,
+                     void *client_drawingcontext,
+                     FLOAT baselineOriginX,
+                     FLOAT baselineOriginY,
+                     DWRITE_MEASURING_MODE mode,
+                     const DWRITE_GLYPH_RUN *glyph_run,
+                     const DWRITE_GLYPH_RUN_DESCRIPTION *run_descr,
+                     IUnknown *drawing_effect);
 
     HRESULT (STDMETHODCALLTYPE *DrawUnderline)(
-        IDWriteTextRenderer *This,
-        void *client_drawingcontext,
-        FLOAT baselineOriginX,
-        FLOAT baselineOriginY,
-        const DWRITE_UNDERLINE *underline,
-        IUnknown *drawing_effect);
+                     IDWriteTextRenderer *This,
+                     void *client_drawingcontext,
+                     FLOAT baselineOriginX,
+                     FLOAT baselineOriginY,
+                     const DWRITE_UNDERLINE *underline,
+                     IUnknown *drawing_effect);
 
     HRESULT (STDMETHODCALLTYPE *DrawStrikethrough)(
-        IDWriteTextRenderer *This,
-        void *client_drawingcontext,
-        FLOAT baselineOriginX,
-        FLOAT baselineOriginY,
-        const DWRITE_STRIKETHROUGH *strikethrough,
-        IUnknown *drawing_effect);
+                     IDWriteTextRenderer *This,
+                     void *client_drawingcontext,
+                     FLOAT baselineOriginX,
+                     FLOAT baselineOriginY,
+                     const DWRITE_STRIKETHROUGH *strikethrough,
+                     IUnknown *drawing_effect);
 
     HRESULT (STDMETHODCALLTYPE *DrawInlineObject)(
-        IDWriteTextRenderer *This,
-        void *client_drawingcontext,
-        FLOAT originX,
-        FLOAT originY,
-        IDWriteInlineObject *object,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        IUnknown *drawing_effect);
+                     IDWriteTextRenderer *This,
+                     void *client_drawingcontext,
+                     FLOAT originX,
+                     FLOAT originY,
+                     IDWriteInlineObject *object,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     IUnknown *drawing_effect);
 
     END_INTERFACE
 } IDWriteTextRendererVtbl;
@@ -2723,23 +2723,23 @@ MIDL_INTERFACE("8339fde3-106f-47ab-8373-1c6295eb10b3")
 IDWriteInlineObject : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Draw(
-        void *client_drawingontext,
-        IDWriteTextRenderer *renderer,
-        FLOAT originX,
-        FLOAT originY,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        IUnknown *drawing_effect) = 0;
+                     void *client_drawingontext,
+                     IDWriteTextRenderer *renderer,
+                     FLOAT originX,
+                     FLOAT originY,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     IUnknown *drawing_effect) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetrics(
-        DWRITE_INLINE_OBJECT_METRICS *metrics) = 0;
+                     DWRITE_INLINE_OBJECT_METRICS *metrics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOverhangMetrics(
-        DWRITE_OVERHANG_METRICS *overhangs) = 0;
+                     DWRITE_OVERHANG_METRICS *overhangs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBreakConditions(
-        DWRITE_BREAK_CONDITION *condition_before,
-        DWRITE_BREAK_CONDITION *condition_after) = 0;
+                     DWRITE_BREAK_CONDITION *condition_before,
+                     DWRITE_BREAK_CONDITION *condition_after) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2751,39 +2751,39 @@ typedef struct IDWriteInlineObjectVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteInlineObject *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteInlineObject *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteInlineObject *This);
+                     IDWriteInlineObject *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteInlineObject *This);
+                     IDWriteInlineObject *This);
 
     /*** IDWriteInlineObject methods ***/
     HRESULT (STDMETHODCALLTYPE *Draw)(
-        IDWriteInlineObject *This,
-        void *client_drawingontext,
-        IDWriteTextRenderer *renderer,
-        FLOAT originX,
-        FLOAT originY,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        IUnknown *drawing_effect);
+                     IDWriteInlineObject *This,
+                     void *client_drawingontext,
+                     IDWriteTextRenderer *renderer,
+                     FLOAT originX,
+                     FLOAT originY,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     IUnknown *drawing_effect);
 
     HRESULT (STDMETHODCALLTYPE *GetMetrics)(
-        IDWriteInlineObject *This,
-        DWRITE_INLINE_OBJECT_METRICS *metrics);
+                     IDWriteInlineObject *This,
+                     DWRITE_INLINE_OBJECT_METRICS *metrics);
 
     HRESULT (STDMETHODCALLTYPE *GetOverhangMetrics)(
-        IDWriteInlineObject *This,
-        DWRITE_OVERHANG_METRICS *overhangs);
+                     IDWriteInlineObject *This,
+                     DWRITE_OVERHANG_METRICS *overhangs);
 
     HRESULT (STDMETHODCALLTYPE *GetBreakConditions)(
-        IDWriteInlineObject *This,
-        DWRITE_BREAK_CONDITION *condition_before,
-        DWRITE_BREAK_CONDITION *condition_after);
+                     IDWriteInlineObject *This,
+                     DWRITE_BREAK_CONDITION *condition_before,
+                     DWRITE_BREAK_CONDITION *condition_after);
 
     END_INTERFACE
 } IDWriteInlineObjectVtbl;
@@ -2847,87 +2847,87 @@ MIDL_INTERFACE("9c906818-31d7-4fd3-a151-7c5e225db55a")
 IDWriteTextFormat : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetTextAlignment(
-        DWRITE_TEXT_ALIGNMENT alignment) = 0;
+                     DWRITE_TEXT_ALIGNMENT alignment) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetParagraphAlignment(
-        DWRITE_PARAGRAPH_ALIGNMENT alignment) = 0;
+                     DWRITE_PARAGRAPH_ALIGNMENT alignment) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetWordWrapping(
-        DWRITE_WORD_WRAPPING wrapping) = 0;
+                     DWRITE_WORD_WRAPPING wrapping) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetReadingDirection(
-        DWRITE_READING_DIRECTION direction) = 0;
+                     DWRITE_READING_DIRECTION direction) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFlowDirection(
-        DWRITE_FLOW_DIRECTION direction) = 0;
+                     DWRITE_FLOW_DIRECTION direction) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetIncrementalTabStop(
-        FLOAT tabstop) = 0;
+                     FLOAT tabstop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTrimming(
-        const DWRITE_TRIMMING *trimming,
-        IDWriteInlineObject *trimming_sign) = 0;
+                     const DWRITE_TRIMMING *trimming,
+                     IDWriteInlineObject *trimming_sign) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLineSpacing(
-        DWRITE_LINE_SPACING_METHOD spacing,
-        FLOAT line_spacing,
-        FLOAT baseline) = 0;
+                     DWRITE_LINE_SPACING_METHOD spacing,
+                     FLOAT line_spacing,
+                     FLOAT baseline) = 0;
 
     virtual DWRITE_TEXT_ALIGNMENT STDMETHODCALLTYPE GetTextAlignment(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_PARAGRAPH_ALIGNMENT STDMETHODCALLTYPE GetParagraphAlignment(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_WORD_WRAPPING STDMETHODCALLTYPE GetWordWrapping(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_READING_DIRECTION STDMETHODCALLTYPE GetReadingDirection(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_FLOW_DIRECTION STDMETHODCALLTYPE GetFlowDirection(
-        ) = 0;
+                     ) = 0;
 
     virtual FLOAT STDMETHODCALLTYPE GetIncrementalTabStop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTrimming(
-        DWRITE_TRIMMING *options,
-        IDWriteInlineObject **trimming_sign) = 0;
+                     DWRITE_TRIMMING *options,
+                     IDWriteInlineObject **trimming_sign) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLineSpacing(
-        DWRITE_LINE_SPACING_METHOD *method,
-        FLOAT *spacing,
-        FLOAT *baseline) = 0;
+                     DWRITE_LINE_SPACING_METHOD *method,
+                     FLOAT *spacing,
+                     FLOAT *baseline) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontCollection(
-        IDWriteFontCollection **collection) = 0;
+                     IDWriteFontCollection **collection) = 0;
 
     virtual UINT32 STDMETHODCALLTYPE GetFontFamilyNameLength(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontFamilyName(
-        WCHAR *name,
-        UINT32 size) = 0;
+                     WCHAR *name,
+                     UINT32 size) = 0;
 
     virtual DWRITE_FONT_WEIGHT STDMETHODCALLTYPE GetFontWeight(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_FONT_STYLE STDMETHODCALLTYPE GetFontStyle(
-        ) = 0;
+                     ) = 0;
 
     virtual DWRITE_FONT_STRETCH STDMETHODCALLTYPE GetFontStretch(
-        ) = 0;
+                     ) = 0;
 
     virtual FLOAT STDMETHODCALLTYPE GetFontSize(
-        ) = 0;
+                     ) = 0;
 
     virtual UINT32 STDMETHODCALLTYPE GetLocaleNameLength(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocaleName(
-        WCHAR *name,
-        UINT32 size) = 0;
+                     WCHAR *name,
+                     UINT32 size) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2939,112 +2939,112 @@ typedef struct IDWriteTextFormatVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteTextFormat *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteTextFormat *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     /*** IDWriteTextFormat methods ***/
     HRESULT (STDMETHODCALLTYPE *SetTextAlignment)(
-        IDWriteTextFormat *This,
-        DWRITE_TEXT_ALIGNMENT alignment);
+                     IDWriteTextFormat *This,
+                     DWRITE_TEXT_ALIGNMENT alignment);
 
     HRESULT (STDMETHODCALLTYPE *SetParagraphAlignment)(
-        IDWriteTextFormat *This,
-        DWRITE_PARAGRAPH_ALIGNMENT alignment);
+                     IDWriteTextFormat *This,
+                     DWRITE_PARAGRAPH_ALIGNMENT alignment);
 
     HRESULT (STDMETHODCALLTYPE *SetWordWrapping)(
-        IDWriteTextFormat *This,
-        DWRITE_WORD_WRAPPING wrapping);
+                     IDWriteTextFormat *This,
+                     DWRITE_WORD_WRAPPING wrapping);
 
     HRESULT (STDMETHODCALLTYPE *SetReadingDirection)(
-        IDWriteTextFormat *This,
-        DWRITE_READING_DIRECTION direction);
+                     IDWriteTextFormat *This,
+                     DWRITE_READING_DIRECTION direction);
 
     HRESULT (STDMETHODCALLTYPE *SetFlowDirection)(
-        IDWriteTextFormat *This,
-        DWRITE_FLOW_DIRECTION direction);
+                     IDWriteTextFormat *This,
+                     DWRITE_FLOW_DIRECTION direction);
 
     HRESULT (STDMETHODCALLTYPE *SetIncrementalTabStop)(
-        IDWriteTextFormat *This,
-        FLOAT tabstop);
+                     IDWriteTextFormat *This,
+                     FLOAT tabstop);
 
     HRESULT (STDMETHODCALLTYPE *SetTrimming)(
-        IDWriteTextFormat *This,
-        const DWRITE_TRIMMING *trimming,
-        IDWriteInlineObject *trimming_sign);
+                     IDWriteTextFormat *This,
+                     const DWRITE_TRIMMING *trimming,
+                     IDWriteInlineObject *trimming_sign);
 
     HRESULT (STDMETHODCALLTYPE *SetLineSpacing)(
-        IDWriteTextFormat *This,
-        DWRITE_LINE_SPACING_METHOD spacing,
-        FLOAT line_spacing,
-        FLOAT baseline);
+                     IDWriteTextFormat *This,
+                     DWRITE_LINE_SPACING_METHOD spacing,
+                     FLOAT line_spacing,
+                     FLOAT baseline);
 
     DWRITE_TEXT_ALIGNMENT (STDMETHODCALLTYPE *GetTextAlignment)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     DWRITE_PARAGRAPH_ALIGNMENT (STDMETHODCALLTYPE *GetParagraphAlignment)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     DWRITE_WORD_WRAPPING (STDMETHODCALLTYPE *GetWordWrapping)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     DWRITE_READING_DIRECTION (STDMETHODCALLTYPE *GetReadingDirection)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     DWRITE_FLOW_DIRECTION (STDMETHODCALLTYPE *GetFlowDirection)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     FLOAT (STDMETHODCALLTYPE *GetIncrementalTabStop)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     HRESULT (STDMETHODCALLTYPE *GetTrimming)(
-        IDWriteTextFormat *This,
-        DWRITE_TRIMMING *options,
-        IDWriteInlineObject **trimming_sign);
+                     IDWriteTextFormat *This,
+                     DWRITE_TRIMMING *options,
+                     IDWriteInlineObject **trimming_sign);
 
     HRESULT (STDMETHODCALLTYPE *GetLineSpacing)(
-        IDWriteTextFormat *This,
-        DWRITE_LINE_SPACING_METHOD *method,
-        FLOAT *spacing,
-        FLOAT *baseline);
+                     IDWriteTextFormat *This,
+                     DWRITE_LINE_SPACING_METHOD *method,
+                     FLOAT *spacing,
+                     FLOAT *baseline);
 
     HRESULT (STDMETHODCALLTYPE *GetFontCollection)(
-        IDWriteTextFormat *This,
-        IDWriteFontCollection **collection);
+                     IDWriteTextFormat *This,
+                     IDWriteFontCollection **collection);
 
     UINT32 (STDMETHODCALLTYPE *GetFontFamilyNameLength)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFontFamilyName)(
-        IDWriteTextFormat *This,
-        WCHAR *name,
-        UINT32 size);
+                     IDWriteTextFormat *This,
+                     WCHAR *name,
+                     UINT32 size);
 
     DWRITE_FONT_WEIGHT (STDMETHODCALLTYPE *GetFontWeight)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     DWRITE_FONT_STYLE (STDMETHODCALLTYPE *GetFontStyle)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     DWRITE_FONT_STRETCH (STDMETHODCALLTYPE *GetFontStretch)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     FLOAT (STDMETHODCALLTYPE *GetFontSize)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     UINT32 (STDMETHODCALLTYPE *GetLocaleNameLength)(
-        IDWriteTextFormat *This);
+                     IDWriteTextFormat *This);
 
     HRESULT (STDMETHODCALLTYPE *GetLocaleName)(
-        IDWriteTextFormat *This,
-        WCHAR *name,
-        UINT32 size);
+                     IDWriteTextFormat *This,
+                     WCHAR *name,
+                     UINT32 size);
 
     END_INTERFACE
 } IDWriteTextFormatVtbl;
@@ -3192,14 +3192,14 @@ MIDL_INTERFACE("55f1112b-1dc2-4b3c-9541-f46894ed85b6")
 IDWriteTypography : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddFontFeature(
-        DWRITE_FONT_FEATURE feature) = 0;
+                     DWRITE_FONT_FEATURE feature) = 0;
 
     virtual UINT32 STDMETHODCALLTYPE GetFontFeatureCount(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontFeature(
-        UINT32 index,
-        DWRITE_FONT_FEATURE *feature) = 0;
+                     UINT32 index,
+                     DWRITE_FONT_FEATURE *feature) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3211,28 +3211,28 @@ typedef struct IDWriteTypographyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteTypography *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteTypography *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteTypography *This);
+                     IDWriteTypography *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteTypography *This);
+                     IDWriteTypography *This);
 
     /*** IDWriteTypography methods ***/
     HRESULT (STDMETHODCALLTYPE *AddFontFeature)(
-        IDWriteTypography *This,
-        DWRITE_FONT_FEATURE feature);
+                     IDWriteTypography *This,
+                     DWRITE_FONT_FEATURE feature);
 
     UINT32 (STDMETHODCALLTYPE *GetFontFeatureCount)(
-        IDWriteTypography *This);
+                     IDWriteTypography *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFontFeature)(
-        IDWriteTypography *This,
-        UINT32 index,
-        DWRITE_FONT_FEATURE *feature);
+                     IDWriteTypography *This,
+                     UINT32 index,
+                     DWRITE_FONT_FEATURE *feature);
 
     END_INTERFACE
 } IDWriteTypographyVtbl;
@@ -3292,35 +3292,35 @@ MIDL_INTERFACE("5e5a32a3-8dff-4773-9ff6-0696eab77267")
 IDWriteBitmapRenderTarget : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DrawGlyphRun(
-        FLOAT baselineOriginX,
-        FLOAT baselineOriginY,
-        DWRITE_MEASURING_MODE measuring_mode,
-        const DWRITE_GLYPH_RUN *glyph_run,
-        IDWriteRenderingParams *params,
-        COLORREF textColor,
-        RECT *blackbox_rect = 0) = 0;
+                     FLOAT baselineOriginX,
+                     FLOAT baselineOriginY,
+                     DWRITE_MEASURING_MODE measuring_mode,
+                     const DWRITE_GLYPH_RUN *glyph_run,
+                     IDWriteRenderingParams *params,
+                     COLORREF textColor,
+                     RECT *blackbox_rect = 0) = 0;
 
     virtual HDC STDMETHODCALLTYPE GetMemoryDC(
-        ) = 0;
+                     ) = 0;
 
     virtual FLOAT STDMETHODCALLTYPE GetPixelsPerDip(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetPixelsPerDip(
-        FLOAT pixels_per_dip) = 0;
+                     FLOAT pixels_per_dip) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCurrentTransform(
-        DWRITE_MATRIX *transform) = 0;
+                     DWRITE_MATRIX *transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCurrentTransform(
-        const DWRITE_MATRIX *transform) = 0;
+                     const DWRITE_MATRIX *transform) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSize(
-        SIZE *size) = 0;
+                     SIZE *size) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Resize(
-        UINT32 width,
-        UINT32 height) = 0;
+                     UINT32 width,
+                     UINT32 height) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3332,53 +3332,53 @@ typedef struct IDWriteBitmapRenderTargetVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteBitmapRenderTarget *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteBitmapRenderTarget *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteBitmapRenderTarget *This);
+                     IDWriteBitmapRenderTarget *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteBitmapRenderTarget *This);
+                     IDWriteBitmapRenderTarget *This);
 
     /*** IDWriteBitmapRenderTarget methods ***/
     HRESULT (STDMETHODCALLTYPE *DrawGlyphRun)(
-        IDWriteBitmapRenderTarget *This,
-        FLOAT baselineOriginX,
-        FLOAT baselineOriginY,
-        DWRITE_MEASURING_MODE measuring_mode,
-        const DWRITE_GLYPH_RUN *glyph_run,
-        IDWriteRenderingParams *params,
-        COLORREF textColor,
-        RECT *blackbox_rect);
+                     IDWriteBitmapRenderTarget *This,
+                     FLOAT baselineOriginX,
+                     FLOAT baselineOriginY,
+                     DWRITE_MEASURING_MODE measuring_mode,
+                     const DWRITE_GLYPH_RUN *glyph_run,
+                     IDWriteRenderingParams *params,
+                     COLORREF textColor,
+                     RECT *blackbox_rect);
 
     HDC (STDMETHODCALLTYPE *GetMemoryDC)(
-        IDWriteBitmapRenderTarget *This);
+                     IDWriteBitmapRenderTarget *This);
 
     FLOAT (STDMETHODCALLTYPE *GetPixelsPerDip)(
-        IDWriteBitmapRenderTarget *This);
+                     IDWriteBitmapRenderTarget *This);
 
     HRESULT (STDMETHODCALLTYPE *SetPixelsPerDip)(
-        IDWriteBitmapRenderTarget *This,
-        FLOAT pixels_per_dip);
+                     IDWriteBitmapRenderTarget *This,
+                     FLOAT pixels_per_dip);
 
     HRESULT (STDMETHODCALLTYPE *GetCurrentTransform)(
-        IDWriteBitmapRenderTarget *This,
-        DWRITE_MATRIX *transform);
+                     IDWriteBitmapRenderTarget *This,
+                     DWRITE_MATRIX *transform);
 
     HRESULT (STDMETHODCALLTYPE *SetCurrentTransform)(
-        IDWriteBitmapRenderTarget *This,
-        const DWRITE_MATRIX *transform);
+                     IDWriteBitmapRenderTarget *This,
+                     const DWRITE_MATRIX *transform);
 
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        IDWriteBitmapRenderTarget *This,
-        SIZE *size);
+                     IDWriteBitmapRenderTarget *This,
+                     SIZE *size);
 
     HRESULT (STDMETHODCALLTYPE *Resize)(
-        IDWriteBitmapRenderTarget *This,
-        UINT32 width,
-        UINT32 height);
+                     IDWriteBitmapRenderTarget *This,
+                     UINT32 width,
+                     UINT32 height);
 
     END_INTERFACE
 } IDWriteBitmapRenderTargetVtbl;
@@ -3478,27 +3478,27 @@ MIDL_INTERFACE("1edd9491-9853-4299-898f-6432983b6f3a")
 IDWriteGdiInterop : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE CreateFontFromLOGFONT(
-        const LOGFONTW *logfont,
-        IDWriteFont **font) = 0;
+                     const LOGFONTW *logfont,
+                     IDWriteFont **font) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertFontToLOGFONT(
-        IDWriteFont *font,
-        LOGFONTW *logfont,
-        WINBOOL *is_systemfont) = 0;
+                     IDWriteFont *font,
+                     LOGFONTW *logfont,
+                     WINBOOL *is_systemfont) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertFontFaceToLOGFONT(
-        IDWriteFontFace *font,
-        LOGFONTW *logfont) = 0;
+                     IDWriteFontFace *font,
+                     LOGFONTW *logfont) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFontFaceFromHdc(
-        HDC hdc,
-        IDWriteFontFace **fontface) = 0;
+                     HDC hdc,
+                     IDWriteFontFace **fontface) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateBitmapRenderTarget(
-        HDC hdc,
-        UINT32 width,
-        UINT32 height,
-        IDWriteBitmapRenderTarget **target) = 0;
+                     HDC hdc,
+                     UINT32 width,
+                     UINT32 height,
+                     IDWriteBitmapRenderTarget **target) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3510,44 +3510,44 @@ typedef struct IDWriteGdiInteropVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteGdiInterop *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteGdiInterop *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteGdiInterop *This);
+                     IDWriteGdiInterop *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteGdiInterop *This);
+                     IDWriteGdiInterop *This);
 
     /*** IDWriteGdiInterop methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateFontFromLOGFONT)(
-        IDWriteGdiInterop *This,
-        const LOGFONTW *logfont,
-        IDWriteFont **font);
+                     IDWriteGdiInterop *This,
+                     const LOGFONTW *logfont,
+                     IDWriteFont **font);
 
     HRESULT (STDMETHODCALLTYPE *ConvertFontToLOGFONT)(
-        IDWriteGdiInterop *This,
-        IDWriteFont *font,
-        LOGFONTW *logfont,
-        WINBOOL *is_systemfont);
+                     IDWriteGdiInterop *This,
+                     IDWriteFont *font,
+                     LOGFONTW *logfont,
+                     WINBOOL *is_systemfont);
 
     HRESULT (STDMETHODCALLTYPE *ConvertFontFaceToLOGFONT)(
-        IDWriteGdiInterop *This,
-        IDWriteFontFace *font,
-        LOGFONTW *logfont);
+                     IDWriteGdiInterop *This,
+                     IDWriteFontFace *font,
+                     LOGFONTW *logfont);
 
     HRESULT (STDMETHODCALLTYPE *CreateFontFaceFromHdc)(
-        IDWriteGdiInterop *This,
-        HDC hdc,
-        IDWriteFontFace **fontface);
+                     IDWriteGdiInterop *This,
+                     HDC hdc,
+                     IDWriteFontFace **fontface);
 
     HRESULT (STDMETHODCALLTYPE *CreateBitmapRenderTarget)(
-        IDWriteGdiInterop *This,
-        HDC hdc,
-        UINT32 width,
-        UINT32 height,
-        IDWriteBitmapRenderTarget **target);
+                     IDWriteGdiInterop *This,
+                     HDC hdc,
+                     UINT32 width,
+                     UINT32 height,
+                     IDWriteBitmapRenderTarget **target);
 
     END_INTERFACE
 } IDWriteGdiInteropVtbl;
@@ -3615,184 +3615,184 @@ MIDL_INTERFACE("53737037-6d14-410b-9bfe-0b182bb70961")
 IDWriteTextLayout : public IDWriteTextFormat
 {
     virtual HRESULT STDMETHODCALLTYPE SetMaxWidth(
-        FLOAT maxWidth) = 0;
+                     FLOAT maxWidth) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetMaxHeight(
-        FLOAT maxHeight) = 0;
+                     FLOAT maxHeight) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontCollection(
-        IDWriteFontCollection *collection,
-        DWRITE_TEXT_RANGE range) = 0;
+                     IDWriteFontCollection *collection,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontFamilyName(
-        const WCHAR *name,
-        DWRITE_TEXT_RANGE range) = 0;
+                     const WCHAR *name,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontWeight(
-        DWRITE_FONT_WEIGHT weight,
-        DWRITE_TEXT_RANGE range) = 0;
+                     DWRITE_FONT_WEIGHT weight,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontStyle(
-        DWRITE_FONT_STYLE style,
-        DWRITE_TEXT_RANGE range) = 0;
+                     DWRITE_FONT_STYLE style,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontStretch(
-        DWRITE_FONT_STRETCH stretch,
-        DWRITE_TEXT_RANGE range) = 0;
+                     DWRITE_FONT_STRETCH stretch,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetFontSize(
-        FLOAT size,
-        DWRITE_TEXT_RANGE range) = 0;
+                     FLOAT size,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUnderline(
-        WINBOOL underline,
-        DWRITE_TEXT_RANGE range) = 0;
+                     WINBOOL underline,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetStrikethrough(
-        WINBOOL strikethrough,
-        DWRITE_TEXT_RANGE range) = 0;
+                     WINBOOL strikethrough,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetDrawingEffect(
-        IUnknown *effect,
-        DWRITE_TEXT_RANGE range) = 0;
+                     IUnknown *effect,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetInlineObject(
-        IDWriteInlineObject *object,
-        DWRITE_TEXT_RANGE range) = 0;
+                     IDWriteInlineObject *object,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTypography(
-        IDWriteTypography *typography,
-        DWRITE_TEXT_RANGE range) = 0;
+                     IDWriteTypography *typography,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLocaleName(
-        const WCHAR *locale,
-        DWRITE_TEXT_RANGE range) = 0;
+                     const WCHAR *locale,
+                     DWRITE_TEXT_RANGE range) = 0;
 
     virtual FLOAT STDMETHODCALLTYPE GetMaxWidth(
-        ) = 0;
+                     ) = 0;
 
     virtual FLOAT STDMETHODCALLTYPE GetMaxHeight(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontCollection(
-        UINT32 pos,
-        IDWriteFontCollection **collection,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 pos,
+                     IDWriteFontCollection **collection,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontFamilyNameLength(
-        UINT32 pos,
-        UINT32 *len,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 pos,
+                     UINT32 *len,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontFamilyName(
-        UINT32 position,
-        WCHAR *name,
-        UINT32 name_size,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     WCHAR *name,
+                     UINT32 name_size,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontWeight(
-        UINT32 position,
-        DWRITE_FONT_WEIGHT *weight,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     DWRITE_FONT_WEIGHT *weight,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontStyle(
-        UINT32 currentPosition,
-        DWRITE_FONT_STYLE *style,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 currentPosition,
+                     DWRITE_FONT_STYLE *style,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontStretch(
-        UINT32 position,
-        DWRITE_FONT_STRETCH *stretch,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     DWRITE_FONT_STRETCH *stretch,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFontSize(
-        UINT32 position,
-        FLOAT *size,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     FLOAT *size,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUnderline(
-        UINT32 position,
-        WINBOOL *has_underline,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     WINBOOL *has_underline,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStrikethrough(
-        UINT32 position,
-        WINBOOL *has_strikethrough,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     WINBOOL *has_strikethrough,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDrawingEffect(
-        UINT32 position,
-        IUnknown **effect,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     IUnknown **effect,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInlineObject(
-        UINT32 position,
-        IDWriteInlineObject **object,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     IDWriteInlineObject **object,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTypography(
-        UINT32 position,
-        IDWriteTypography **typography,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     IDWriteTypography **typography,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocaleNameLength(
-        UINT32 position,
-        UINT32 *length,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     UINT32 *length,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocaleName(
-        UINT32 position,
-        WCHAR *name,
-        UINT32 name_size,
-        DWRITE_TEXT_RANGE *range = 0) = 0;
+                     UINT32 position,
+                     WCHAR *name,
+                     UINT32 name_size,
+                     DWRITE_TEXT_RANGE *range = 0) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Draw(
-        void *context,
-        IDWriteTextRenderer *renderer,
-        FLOAT originX,
-        FLOAT originY) = 0;
+                     void *context,
+                     IDWriteTextRenderer *renderer,
+                     FLOAT originX,
+                     FLOAT originY) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLineMetrics(
-        DWRITE_LINE_METRICS *metrics,
-        UINT32 max_count,
-        UINT32 *actual_count) = 0;
+                     DWRITE_LINE_METRICS *metrics,
+                     UINT32 max_count,
+                     UINT32 *actual_count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetMetrics(
-        DWRITE_TEXT_METRICS *metrics) = 0;
+                     DWRITE_TEXT_METRICS *metrics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOverhangMetrics(
-        DWRITE_OVERHANG_METRICS *overhangs) = 0;
+                     DWRITE_OVERHANG_METRICS *overhangs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetClusterMetrics(
-        DWRITE_CLUSTER_METRICS *metrics,
-        UINT32 max_count,
-        UINT32 *act_count) = 0;
+                     DWRITE_CLUSTER_METRICS *metrics,
+                     UINT32 max_count,
+                     UINT32 *act_count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DetermineMinWidth(
-        FLOAT *min_width) = 0;
+                     FLOAT *min_width) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HitTestPoint(
-        FLOAT pointX,
-        FLOAT pointY,
-        WINBOOL *is_trailinghit,
-        WINBOOL *is_inside,
-        DWRITE_HIT_TEST_METRICS *metrics) = 0;
+                     FLOAT pointX,
+                     FLOAT pointY,
+                     WINBOOL *is_trailinghit,
+                     WINBOOL *is_inside,
+                     DWRITE_HIT_TEST_METRICS *metrics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HitTestTextPosition(
-        UINT32 textPosition,
-        WINBOOL is_trailinghit,
-        FLOAT *pointX,
-        FLOAT *pointY,
-        DWRITE_HIT_TEST_METRICS *metrics) = 0;
+                     UINT32 textPosition,
+                     WINBOOL is_trailinghit,
+                     FLOAT *pointX,
+                     FLOAT *pointY,
+                     DWRITE_HIT_TEST_METRICS *metrics) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HitTestTextRange(
-        UINT32 textPosition,
-        UINT32 textLength,
-        FLOAT originX,
-        FLOAT originY,
-        DWRITE_HIT_TEST_METRICS *metrics,
-        UINT32 max_metricscount,
-        UINT32 *actual_metricscount) = 0;
+                     UINT32 textPosition,
+                     UINT32 textLength,
+                     FLOAT originX,
+                     FLOAT originY,
+                     DWRITE_HIT_TEST_METRICS *metrics,
+                     UINT32 max_metricscount,
+                     UINT32 *actual_metricscount) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3804,330 +3804,330 @@ typedef struct IDWriteTextLayoutVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteTextLayout *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteTextLayout *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     /*** IDWriteTextFormat methods ***/
     HRESULT (STDMETHODCALLTYPE *SetTextAlignment)(
-        IDWriteTextLayout *This,
-        DWRITE_TEXT_ALIGNMENT alignment);
+                     IDWriteTextLayout *This,
+                     DWRITE_TEXT_ALIGNMENT alignment);
 
     HRESULT (STDMETHODCALLTYPE *SetParagraphAlignment)(
-        IDWriteTextLayout *This,
-        DWRITE_PARAGRAPH_ALIGNMENT alignment);
+                     IDWriteTextLayout *This,
+                     DWRITE_PARAGRAPH_ALIGNMENT alignment);
 
     HRESULT (STDMETHODCALLTYPE *SetWordWrapping)(
-        IDWriteTextLayout *This,
-        DWRITE_WORD_WRAPPING wrapping);
+                     IDWriteTextLayout *This,
+                     DWRITE_WORD_WRAPPING wrapping);
 
     HRESULT (STDMETHODCALLTYPE *SetReadingDirection)(
-        IDWriteTextLayout *This,
-        DWRITE_READING_DIRECTION direction);
+                     IDWriteTextLayout *This,
+                     DWRITE_READING_DIRECTION direction);
 
     HRESULT (STDMETHODCALLTYPE *SetFlowDirection)(
-        IDWriteTextLayout *This,
-        DWRITE_FLOW_DIRECTION direction);
+                     IDWriteTextLayout *This,
+                     DWRITE_FLOW_DIRECTION direction);
 
     HRESULT (STDMETHODCALLTYPE *SetIncrementalTabStop)(
-        IDWriteTextLayout *This,
-        FLOAT tabstop);
+                     IDWriteTextLayout *This,
+                     FLOAT tabstop);
 
     HRESULT (STDMETHODCALLTYPE *SetTrimming)(
-        IDWriteTextLayout *This,
-        const DWRITE_TRIMMING *trimming,
-        IDWriteInlineObject *trimming_sign);
+                     IDWriteTextLayout *This,
+                     const DWRITE_TRIMMING *trimming,
+                     IDWriteInlineObject *trimming_sign);
 
     HRESULT (STDMETHODCALLTYPE *SetLineSpacing)(
-        IDWriteTextLayout *This,
-        DWRITE_LINE_SPACING_METHOD spacing,
-        FLOAT line_spacing,
-        FLOAT baseline);
+                     IDWriteTextLayout *This,
+                     DWRITE_LINE_SPACING_METHOD spacing,
+                     FLOAT line_spacing,
+                     FLOAT baseline);
 
     DWRITE_TEXT_ALIGNMENT (STDMETHODCALLTYPE *GetTextAlignment)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     DWRITE_PARAGRAPH_ALIGNMENT (STDMETHODCALLTYPE *GetParagraphAlignment)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     DWRITE_WORD_WRAPPING (STDMETHODCALLTYPE *GetWordWrapping)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     DWRITE_READING_DIRECTION (STDMETHODCALLTYPE *GetReadingDirection)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     DWRITE_FLOW_DIRECTION (STDMETHODCALLTYPE *GetFlowDirection)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     FLOAT (STDMETHODCALLTYPE *GetIncrementalTabStop)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     HRESULT (STDMETHODCALLTYPE *GetTrimming)(
-        IDWriteTextLayout *This,
-        DWRITE_TRIMMING *options,
-        IDWriteInlineObject **trimming_sign);
+                     IDWriteTextLayout *This,
+                     DWRITE_TRIMMING *options,
+                     IDWriteInlineObject **trimming_sign);
 
     HRESULT (STDMETHODCALLTYPE *GetLineSpacing)(
-        IDWriteTextLayout *This,
-        DWRITE_LINE_SPACING_METHOD *method,
-        FLOAT *spacing,
-        FLOAT *baseline);
+                     IDWriteTextLayout *This,
+                     DWRITE_LINE_SPACING_METHOD *method,
+                     FLOAT *spacing,
+                     FLOAT *baseline);
 
     HRESULT (STDMETHODCALLTYPE *GetFontCollection)(
-        IDWriteTextLayout *This,
-        IDWriteFontCollection **collection);
+                     IDWriteTextLayout *This,
+                     IDWriteFontCollection **collection);
 
     UINT32 (STDMETHODCALLTYPE *GetFontFamilyNameLength)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFontFamilyName)(
-        IDWriteTextLayout *This,
-        WCHAR *name,
-        UINT32 size);
+                     IDWriteTextLayout *This,
+                     WCHAR *name,
+                     UINT32 size);
 
     DWRITE_FONT_WEIGHT (STDMETHODCALLTYPE *GetFontWeight)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     DWRITE_FONT_STYLE (STDMETHODCALLTYPE *GetFontStyle)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     DWRITE_FONT_STRETCH (STDMETHODCALLTYPE *GetFontStretch)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     FLOAT (STDMETHODCALLTYPE *GetFontSize)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     UINT32 (STDMETHODCALLTYPE *GetLocaleNameLength)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     HRESULT (STDMETHODCALLTYPE *GetLocaleName)(
-        IDWriteTextLayout *This,
-        WCHAR *name,
-        UINT32 size);
+                     IDWriteTextLayout *This,
+                     WCHAR *name,
+                     UINT32 size);
 
     /*** IDWriteTextLayout methods ***/
     HRESULT (STDMETHODCALLTYPE *SetMaxWidth)(
-        IDWriteTextLayout *This,
-        FLOAT maxWidth);
+                     IDWriteTextLayout *This,
+                     FLOAT maxWidth);
 
     HRESULT (STDMETHODCALLTYPE *SetMaxHeight)(
-        IDWriteTextLayout *This,
-        FLOAT maxHeight);
+                     IDWriteTextLayout *This,
+                     FLOAT maxHeight);
 
     HRESULT (STDMETHODCALLTYPE *SetFontCollection)(
-        IDWriteTextLayout *This,
-        IDWriteFontCollection *collection,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     IDWriteFontCollection *collection,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetFontFamilyName)(
-        IDWriteTextLayout *This,
-        const WCHAR *name,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     const WCHAR *name,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetFontWeight)(
-        IDWriteTextLayout *This,
-        DWRITE_FONT_WEIGHT weight,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     DWRITE_FONT_WEIGHT weight,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetFontStyle)(
-        IDWriteTextLayout *This,
-        DWRITE_FONT_STYLE style,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     DWRITE_FONT_STYLE style,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetFontStretch)(
-        IDWriteTextLayout *This,
-        DWRITE_FONT_STRETCH stretch,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     DWRITE_FONT_STRETCH stretch,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetFontSize)(
-        IDWriteTextLayout *This,
-        FLOAT size,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     FLOAT size,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetUnderline)(
-        IDWriteTextLayout *This,
-        WINBOOL underline,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     WINBOOL underline,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetStrikethrough)(
-        IDWriteTextLayout *This,
-        WINBOOL strikethrough,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     WINBOOL strikethrough,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetDrawingEffect)(
-        IDWriteTextLayout *This,
-        IUnknown *effect,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     IUnknown *effect,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetInlineObject)(
-        IDWriteTextLayout *This,
-        IDWriteInlineObject *object,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     IDWriteInlineObject *object,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetTypography)(
-        IDWriteTextLayout *This,
-        IDWriteTypography *typography,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     IDWriteTypography *typography,
+                     DWRITE_TEXT_RANGE range);
 
     HRESULT (STDMETHODCALLTYPE *SetLocaleName)(
-        IDWriteTextLayout *This,
-        const WCHAR *locale,
-        DWRITE_TEXT_RANGE range);
+                     IDWriteTextLayout *This,
+                     const WCHAR *locale,
+                     DWRITE_TEXT_RANGE range);
 
     FLOAT (STDMETHODCALLTYPE *GetMaxWidth)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     FLOAT (STDMETHODCALLTYPE *GetMaxHeight)(
-        IDWriteTextLayout *This);
+                     IDWriteTextLayout *This);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetFontCollection)(
-        IDWriteTextLayout *This,
-        UINT32 pos,
-        IDWriteFontCollection **collection,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 pos,
+                     IDWriteFontCollection **collection,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetFontFamilyNameLength)(
-        IDWriteTextLayout *This,
-        UINT32 pos,
-        UINT32 *len,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 pos,
+                     UINT32 *len,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetFontFamilyName)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        WCHAR *name,
-        UINT32 name_size,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     WCHAR *name,
+                     UINT32 name_size,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetFontWeight)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        DWRITE_FONT_WEIGHT *weight,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     DWRITE_FONT_WEIGHT *weight,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetFontStyle)(
-        IDWriteTextLayout *This,
-        UINT32 currentPosition,
-        DWRITE_FONT_STYLE *style,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 currentPosition,
+                     DWRITE_FONT_STYLE *style,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetFontStretch)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        DWRITE_FONT_STRETCH *stretch,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     DWRITE_FONT_STRETCH *stretch,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetFontSize)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        FLOAT *size,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     FLOAT *size,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *GetUnderline)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        WINBOOL *has_underline,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     WINBOOL *has_underline,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *GetStrikethrough)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        WINBOOL *has_strikethrough,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     WINBOOL *has_strikethrough,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *GetDrawingEffect)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        IUnknown **effect,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     IUnknown **effect,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *GetInlineObject)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        IDWriteInlineObject **object,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     IDWriteInlineObject **object,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *GetTypography)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        IDWriteTypography **typography,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     IDWriteTypography **typography,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetLocaleNameLength)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        UINT32 *length,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     UINT32 *length,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *IDWriteTextLayout_GetLocaleName)(
-        IDWriteTextLayout *This,
-        UINT32 position,
-        WCHAR *name,
-        UINT32 name_size,
-        DWRITE_TEXT_RANGE *range);
+                     IDWriteTextLayout *This,
+                     UINT32 position,
+                     WCHAR *name,
+                     UINT32 name_size,
+                     DWRITE_TEXT_RANGE *range);
 
     HRESULT (STDMETHODCALLTYPE *Draw)(
-        IDWriteTextLayout *This,
-        void *context,
-        IDWriteTextRenderer *renderer,
-        FLOAT originX,
-        FLOAT originY);
+                     IDWriteTextLayout *This,
+                     void *context,
+                     IDWriteTextRenderer *renderer,
+                     FLOAT originX,
+                     FLOAT originY);
 
     HRESULT (STDMETHODCALLTYPE *GetLineMetrics)(
-        IDWriteTextLayout *This,
-        DWRITE_LINE_METRICS *metrics,
-        UINT32 max_count,
-        UINT32 *actual_count);
+                     IDWriteTextLayout *This,
+                     DWRITE_LINE_METRICS *metrics,
+                     UINT32 max_count,
+                     UINT32 *actual_count);
 
     HRESULT (STDMETHODCALLTYPE *GetMetrics)(
-        IDWriteTextLayout *This,
-        DWRITE_TEXT_METRICS *metrics);
+                     IDWriteTextLayout *This,
+                     DWRITE_TEXT_METRICS *metrics);
 
     HRESULT (STDMETHODCALLTYPE *GetOverhangMetrics)(
-        IDWriteTextLayout *This,
-        DWRITE_OVERHANG_METRICS *overhangs);
+                     IDWriteTextLayout *This,
+                     DWRITE_OVERHANG_METRICS *overhangs);
 
     HRESULT (STDMETHODCALLTYPE *GetClusterMetrics)(
-        IDWriteTextLayout *This,
-        DWRITE_CLUSTER_METRICS *metrics,
-        UINT32 max_count,
-        UINT32 *act_count);
+                     IDWriteTextLayout *This,
+                     DWRITE_CLUSTER_METRICS *metrics,
+                     UINT32 max_count,
+                     UINT32 *act_count);
 
     HRESULT (STDMETHODCALLTYPE *DetermineMinWidth)(
-        IDWriteTextLayout *This,
-        FLOAT *min_width);
+                     IDWriteTextLayout *This,
+                     FLOAT *min_width);
 
     HRESULT (STDMETHODCALLTYPE *HitTestPoint)(
-        IDWriteTextLayout *This,
-        FLOAT pointX,
-        FLOAT pointY,
-        WINBOOL *is_trailinghit,
-        WINBOOL *is_inside,
-        DWRITE_HIT_TEST_METRICS *metrics);
+                     IDWriteTextLayout *This,
+                     FLOAT pointX,
+                     FLOAT pointY,
+                     WINBOOL *is_trailinghit,
+                     WINBOOL *is_inside,
+                     DWRITE_HIT_TEST_METRICS *metrics);
 
     HRESULT (STDMETHODCALLTYPE *HitTestTextPosition)(
-        IDWriteTextLayout *This,
-        UINT32 textPosition,
-        WINBOOL is_trailinghit,
-        FLOAT *pointX,
-        FLOAT *pointY,
-        DWRITE_HIT_TEST_METRICS *metrics);
+                     IDWriteTextLayout *This,
+                     UINT32 textPosition,
+                     WINBOOL is_trailinghit,
+                     FLOAT *pointX,
+                     FLOAT *pointY,
+                     DWRITE_HIT_TEST_METRICS *metrics);
 
     HRESULT (STDMETHODCALLTYPE *HitTestTextRange)(
-        IDWriteTextLayout *This,
-        UINT32 textPosition,
-        UINT32 textLength,
-        FLOAT originX,
-        FLOAT originY,
-        DWRITE_HIT_TEST_METRICS *metrics,
-        UINT32 max_metricscount,
-        UINT32 *actual_metricscount);
+                     IDWriteTextLayout *This,
+                     UINT32 textPosition,
+                     UINT32 textLength,
+                     FLOAT originX,
+                     FLOAT originY,
+                     DWRITE_HIT_TEST_METRICS *metrics,
+                     UINT32 max_metricscount,
+                     UINT32 *actual_metricscount);
 
     END_INTERFACE
 } IDWriteTextLayoutVtbl;
@@ -4406,15 +4406,15 @@ typedef struct IDWriteNumberSubstitutionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteNumberSubstitution *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteNumberSubstitution *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteNumberSubstitution *This);
+                     IDWriteNumberSubstitution *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteNumberSubstitution *This);
+                     IDWriteNumberSubstitution *This);
 
     END_INTERFACE
 } IDWriteNumberSubstitutionVtbl;
@@ -4460,27 +4460,27 @@ MIDL_INTERFACE("688e1a58-5094-47c8-adc8-fbcea60ae92b")
 IDWriteTextAnalysisSource : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetTextAtPosition(
-        UINT32 position,
-        const WCHAR **text,
-        UINT32 *text_len) = 0;
+                     UINT32 position,
+                     const WCHAR **text,
+                     UINT32 *text_len) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTextBeforePosition(
-        UINT32 position,
-        const WCHAR **text,
-        UINT32 *text_len) = 0;
+                     UINT32 position,
+                     const WCHAR **text,
+                     UINT32 *text_len) = 0;
 
     virtual DWRITE_READING_DIRECTION STDMETHODCALLTYPE GetParagraphReadingDirection(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLocaleName(
-        UINT32 position,
-        UINT32 *text_len,
-        const WCHAR **locale) = 0;
+                     UINT32 position,
+                     UINT32 *text_len,
+                     const WCHAR **locale) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberSubstitution(
-        UINT32 position,
-        UINT32 *text_len,
-        IDWriteNumberSubstitution **substitution) = 0;
+                     UINT32 position,
+                     UINT32 *text_len,
+                     IDWriteNumberSubstitution **substitution) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4492,43 +4492,43 @@ typedef struct IDWriteTextAnalysisSourceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteTextAnalysisSource *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteTextAnalysisSource *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteTextAnalysisSource *This);
+                     IDWriteTextAnalysisSource *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteTextAnalysisSource *This);
+                     IDWriteTextAnalysisSource *This);
 
     /*** IDWriteTextAnalysisSource methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTextAtPosition)(
-        IDWriteTextAnalysisSource *This,
-        UINT32 position,
-        const WCHAR **text,
-        UINT32 *text_len);
+                     IDWriteTextAnalysisSource *This,
+                     UINT32 position,
+                     const WCHAR **text,
+                     UINT32 *text_len);
 
     HRESULT (STDMETHODCALLTYPE *GetTextBeforePosition)(
-        IDWriteTextAnalysisSource *This,
-        UINT32 position,
-        const WCHAR **text,
-        UINT32 *text_len);
+                     IDWriteTextAnalysisSource *This,
+                     UINT32 position,
+                     const WCHAR **text,
+                     UINT32 *text_len);
 
     DWRITE_READING_DIRECTION (STDMETHODCALLTYPE *GetParagraphReadingDirection)(
-        IDWriteTextAnalysisSource *This);
+                     IDWriteTextAnalysisSource *This);
 
     HRESULT (STDMETHODCALLTYPE *GetLocaleName)(
-        IDWriteTextAnalysisSource *This,
-        UINT32 position,
-        UINT32 *text_len,
-        const WCHAR **locale);
+                     IDWriteTextAnalysisSource *This,
+                     UINT32 position,
+                     UINT32 *text_len,
+                     const WCHAR **locale);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberSubstitution)(
-        IDWriteTextAnalysisSource *This,
-        UINT32 position,
-        UINT32 *text_len,
-        IDWriteNumberSubstitution **substitution);
+                     IDWriteTextAnalysisSource *This,
+                     UINT32 position,
+                     UINT32 *text_len,
+                     IDWriteNumberSubstitution **substitution);
 
     END_INTERFACE
 } IDWriteTextAnalysisSourceVtbl;
@@ -4596,25 +4596,25 @@ MIDL_INTERFACE("5810cd44-0ca0-4701-b3fa-bec5182ae4f6")
 IDWriteTextAnalysisSink : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetScriptAnalysis(
-        UINT32 position,
-        UINT32 length,
-        const DWRITE_SCRIPT_ANALYSIS *scriptanalysis) = 0;
+                     UINT32 position,
+                     UINT32 length,
+                     const DWRITE_SCRIPT_ANALYSIS *scriptanalysis) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetLineBreakpoints(
-        UINT32 position,
-        UINT32 length,
-        const DWRITE_LINE_BREAKPOINT *breakpoints) = 0;
+                     UINT32 position,
+                     UINT32 length,
+                     const DWRITE_LINE_BREAKPOINT *breakpoints) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBidiLevel(
-        UINT32 position,
-        UINT32 length,
-        UINT8 explicitLevel,
-        UINT8 resolvedLevel) = 0;
+                     UINT32 position,
+                     UINT32 length,
+                     UINT8 explicitLevel,
+                     UINT8 resolvedLevel) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetNumberSubstitution(
-        UINT32 position,
-        UINT32 length,
-        IDWriteNumberSubstitution *substitution) = 0;
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteNumberSubstitution *substitution) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4626,41 +4626,41 @@ typedef struct IDWriteTextAnalysisSinkVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteTextAnalysisSink *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteTextAnalysisSink *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteTextAnalysisSink *This);
+                     IDWriteTextAnalysisSink *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteTextAnalysisSink *This);
+                     IDWriteTextAnalysisSink *This);
 
     /*** IDWriteTextAnalysisSink methods ***/
     HRESULT (STDMETHODCALLTYPE *SetScriptAnalysis)(
-        IDWriteTextAnalysisSink *This,
-        UINT32 position,
-        UINT32 length,
-        const DWRITE_SCRIPT_ANALYSIS *scriptanalysis);
+                     IDWriteTextAnalysisSink *This,
+                     UINT32 position,
+                     UINT32 length,
+                     const DWRITE_SCRIPT_ANALYSIS *scriptanalysis);
 
     HRESULT (STDMETHODCALLTYPE *SetLineBreakpoints)(
-        IDWriteTextAnalysisSink *This,
-        UINT32 position,
-        UINT32 length,
-        const DWRITE_LINE_BREAKPOINT *breakpoints);
+                     IDWriteTextAnalysisSink *This,
+                     UINT32 position,
+                     UINT32 length,
+                     const DWRITE_LINE_BREAKPOINT *breakpoints);
 
     HRESULT (STDMETHODCALLTYPE *SetBidiLevel)(
-        IDWriteTextAnalysisSink *This,
-        UINT32 position,
-        UINT32 length,
-        UINT8 explicitLevel,
-        UINT8 resolvedLevel);
+                     IDWriteTextAnalysisSink *This,
+                     UINT32 position,
+                     UINT32 length,
+                     UINT8 explicitLevel,
+                     UINT8 resolvedLevel);
 
     HRESULT (STDMETHODCALLTYPE *SetNumberSubstitution)(
-        IDWriteTextAnalysisSink *This,
-        UINT32 position,
-        UINT32 length,
-        IDWriteNumberSubstitution *substitution);
+                     IDWriteTextAnalysisSink *This,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteNumberSubstitution *substitution);
 
     END_INTERFACE
 } IDWriteTextAnalysisSinkVtbl;
@@ -4724,90 +4724,90 @@ MIDL_INTERFACE("b7e6163e-7f46-43b4-84b3-e4e6249c365d")
 IDWriteTextAnalyzer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AnalyzeScript(
-        IDWriteTextAnalysisSource *source,
-        UINT32 position,
-        UINT32 length,
-        IDWriteTextAnalysisSink *sink) = 0;
+                     IDWriteTextAnalysisSource *source,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteTextAnalysisSink *sink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AnalyzeBidi(
-        IDWriteTextAnalysisSource *source,
-        UINT32 position,
-        UINT32 length,
-        IDWriteTextAnalysisSink *sink) = 0;
+                     IDWriteTextAnalysisSource *source,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteTextAnalysisSink *sink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AnalyzeNumberSubstitution(
-        IDWriteTextAnalysisSource *source,
-        UINT32 position,
-        UINT32 length,
-        IDWriteTextAnalysisSink *sink) = 0;
+                     IDWriteTextAnalysisSource *source,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteTextAnalysisSink *sink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AnalyzeLineBreakpoints(
-        IDWriteTextAnalysisSource *source,
-        UINT32 position,
-        UINT32 length,
-        IDWriteTextAnalysisSink *sink) = 0;
+                     IDWriteTextAnalysisSource *source,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteTextAnalysisSink *sink) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphs(
-        const WCHAR *text,
-        UINT32 length,
-        IDWriteFontFace *font_face,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        const DWRITE_SCRIPT_ANALYSIS *analysis,
-        const WCHAR *locale,
-        IDWriteNumberSubstitution *substitution,
-        const DWRITE_TYPOGRAPHIC_FEATURES **features,
-        const UINT32 *feature_range_len,
-        UINT32 feature_ranges,
-        UINT32 max_glyph_count,
-        UINT16 *clustermap,
-        DWRITE_SHAPING_TEXT_PROPERTIES *text_props,
-        UINT16 *glyph_indices,
-        DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
-        UINT32 *actual_glyph_count) = 0;
+                     const WCHAR *text,
+                     UINT32 length,
+                     IDWriteFontFace *font_face,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     const DWRITE_SCRIPT_ANALYSIS *analysis,
+                     const WCHAR *locale,
+                     IDWriteNumberSubstitution *substitution,
+                     const DWRITE_TYPOGRAPHIC_FEATURES **features,
+                     const UINT32 *feature_range_len,
+                     UINT32 feature_ranges,
+                     UINT32 max_glyph_count,
+                     UINT16 *clustermap,
+                     DWRITE_SHAPING_TEXT_PROPERTIES *text_props,
+                     UINT16 *glyph_indices,
+                     DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
+                     UINT32 *actual_glyph_count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGlyphPlacements(
-        const WCHAR *text,
-        const UINT16 *clustermap,
-        DWRITE_SHAPING_TEXT_PROPERTIES *props,
-        UINT32 text_len,
-        const UINT16 *glyph_indices,
-        const DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
-        UINT32 glyph_count,
-        IDWriteFontFace *font_face,
-        FLOAT fontEmSize,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        const DWRITE_SCRIPT_ANALYSIS *analysis,
-        const WCHAR *locale,
-        const DWRITE_TYPOGRAPHIC_FEATURES **features,
-        const UINT32 *feature_range_len,
-        UINT32 feature_ranges,
-        FLOAT *glyph_advances,
-        DWRITE_GLYPH_OFFSET *glyph_offsets) = 0;
+                     const WCHAR *text,
+                     const UINT16 *clustermap,
+                     DWRITE_SHAPING_TEXT_PROPERTIES *props,
+                     UINT32 text_len,
+                     const UINT16 *glyph_indices,
+                     const DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
+                     UINT32 glyph_count,
+                     IDWriteFontFace *font_face,
+                     FLOAT fontEmSize,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     const DWRITE_SCRIPT_ANALYSIS *analysis,
+                     const WCHAR *locale,
+                     const DWRITE_TYPOGRAPHIC_FEATURES **features,
+                     const UINT32 *feature_range_len,
+                     UINT32 feature_ranges,
+                     FLOAT *glyph_advances,
+                     DWRITE_GLYPH_OFFSET *glyph_offsets) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGdiCompatibleGlyphPlacements(
-        const WCHAR *text,
-        const UINT16 *clustermap,
-        DWRITE_SHAPING_TEXT_PROPERTIES *props,
-        UINT32 text_len,
-        const UINT16 *glyph_indices,
-        const DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
-        UINT32 glyph_count,
-        IDWriteFontFace *font_face,
-        FLOAT fontEmSize,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        WINBOOL use_gdi_natural,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        const DWRITE_SCRIPT_ANALYSIS *analysis,
-        const WCHAR *locale,
-        const DWRITE_TYPOGRAPHIC_FEATURES **features,
-        const UINT32 *feature_range_lengths,
-        UINT32 feature_ranges,
-        FLOAT *glyph_advances,
-        DWRITE_GLYPH_OFFSET *glyph_offsets) = 0;
+                     const WCHAR *text,
+                     const UINT16 *clustermap,
+                     DWRITE_SHAPING_TEXT_PROPERTIES *props,
+                     UINT32 text_len,
+                     const UINT16 *glyph_indices,
+                     const DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
+                     UINT32 glyph_count,
+                     IDWriteFontFace *font_face,
+                     FLOAT fontEmSize,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     WINBOOL use_gdi_natural,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     const DWRITE_SCRIPT_ANALYSIS *analysis,
+                     const WCHAR *locale,
+                     const DWRITE_TYPOGRAPHIC_FEATURES **features,
+                     const UINT32 *feature_range_lengths,
+                     UINT32 feature_ranges,
+                     FLOAT *glyph_advances,
+                     DWRITE_GLYPH_OFFSET *glyph_offsets) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4819,109 +4819,109 @@ typedef struct IDWriteTextAnalyzerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteTextAnalyzer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteTextAnalyzer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteTextAnalyzer *This);
+                     IDWriteTextAnalyzer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteTextAnalyzer *This);
+                     IDWriteTextAnalyzer *This);
 
     /*** IDWriteTextAnalyzer methods ***/
     HRESULT (STDMETHODCALLTYPE *AnalyzeScript)(
-        IDWriteTextAnalyzer *This,
-        IDWriteTextAnalysisSource *source,
-        UINT32 position,
-        UINT32 length,
-        IDWriteTextAnalysisSink *sink);
+                     IDWriteTextAnalyzer *This,
+                     IDWriteTextAnalysisSource *source,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteTextAnalysisSink *sink);
 
     HRESULT (STDMETHODCALLTYPE *AnalyzeBidi)(
-        IDWriteTextAnalyzer *This,
-        IDWriteTextAnalysisSource *source,
-        UINT32 position,
-        UINT32 length,
-        IDWriteTextAnalysisSink *sink);
+                     IDWriteTextAnalyzer *This,
+                     IDWriteTextAnalysisSource *source,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteTextAnalysisSink *sink);
 
     HRESULT (STDMETHODCALLTYPE *AnalyzeNumberSubstitution)(
-        IDWriteTextAnalyzer *This,
-        IDWriteTextAnalysisSource *source,
-        UINT32 position,
-        UINT32 length,
-        IDWriteTextAnalysisSink *sink);
+                     IDWriteTextAnalyzer *This,
+                     IDWriteTextAnalysisSource *source,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteTextAnalysisSink *sink);
 
     HRESULT (STDMETHODCALLTYPE *AnalyzeLineBreakpoints)(
-        IDWriteTextAnalyzer *This,
-        IDWriteTextAnalysisSource *source,
-        UINT32 position,
-        UINT32 length,
-        IDWriteTextAnalysisSink *sink);
+                     IDWriteTextAnalyzer *This,
+                     IDWriteTextAnalysisSource *source,
+                     UINT32 position,
+                     UINT32 length,
+                     IDWriteTextAnalysisSink *sink);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphs)(
-        IDWriteTextAnalyzer *This,
-        const WCHAR *text,
-        UINT32 length,
-        IDWriteFontFace *font_face,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        const DWRITE_SCRIPT_ANALYSIS *analysis,
-        const WCHAR *locale,
-        IDWriteNumberSubstitution *substitution,
-        const DWRITE_TYPOGRAPHIC_FEATURES **features,
-        const UINT32 *feature_range_len,
-        UINT32 feature_ranges,
-        UINT32 max_glyph_count,
-        UINT16 *clustermap,
-        DWRITE_SHAPING_TEXT_PROPERTIES *text_props,
-        UINT16 *glyph_indices,
-        DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
-        UINT32 *actual_glyph_count);
+                     IDWriteTextAnalyzer *This,
+                     const WCHAR *text,
+                     UINT32 length,
+                     IDWriteFontFace *font_face,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     const DWRITE_SCRIPT_ANALYSIS *analysis,
+                     const WCHAR *locale,
+                     IDWriteNumberSubstitution *substitution,
+                     const DWRITE_TYPOGRAPHIC_FEATURES **features,
+                     const UINT32 *feature_range_len,
+                     UINT32 feature_ranges,
+                     UINT32 max_glyph_count,
+                     UINT16 *clustermap,
+                     DWRITE_SHAPING_TEXT_PROPERTIES *text_props,
+                     UINT16 *glyph_indices,
+                     DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
+                     UINT32 *actual_glyph_count);
 
     HRESULT (STDMETHODCALLTYPE *GetGlyphPlacements)(
-        IDWriteTextAnalyzer *This,
-        const WCHAR *text,
-        const UINT16 *clustermap,
-        DWRITE_SHAPING_TEXT_PROPERTIES *props,
-        UINT32 text_len,
-        const UINT16 *glyph_indices,
-        const DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
-        UINT32 glyph_count,
-        IDWriteFontFace *font_face,
-        FLOAT fontEmSize,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        const DWRITE_SCRIPT_ANALYSIS *analysis,
-        const WCHAR *locale,
-        const DWRITE_TYPOGRAPHIC_FEATURES **features,
-        const UINT32 *feature_range_len,
-        UINT32 feature_ranges,
-        FLOAT *glyph_advances,
-        DWRITE_GLYPH_OFFSET *glyph_offsets);
+                     IDWriteTextAnalyzer *This,
+                     const WCHAR *text,
+                     const UINT16 *clustermap,
+                     DWRITE_SHAPING_TEXT_PROPERTIES *props,
+                     UINT32 text_len,
+                     const UINT16 *glyph_indices,
+                     const DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
+                     UINT32 glyph_count,
+                     IDWriteFontFace *font_face,
+                     FLOAT fontEmSize,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     const DWRITE_SCRIPT_ANALYSIS *analysis,
+                     const WCHAR *locale,
+                     const DWRITE_TYPOGRAPHIC_FEATURES **features,
+                     const UINT32 *feature_range_len,
+                     UINT32 feature_ranges,
+                     FLOAT *glyph_advances,
+                     DWRITE_GLYPH_OFFSET *glyph_offsets);
 
     HRESULT (STDMETHODCALLTYPE *GetGdiCompatibleGlyphPlacements)(
-        IDWriteTextAnalyzer *This,
-        const WCHAR *text,
-        const UINT16 *clustermap,
-        DWRITE_SHAPING_TEXT_PROPERTIES *props,
-        UINT32 text_len,
-        const UINT16 *glyph_indices,
-        const DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
-        UINT32 glyph_count,
-        IDWriteFontFace *font_face,
-        FLOAT fontEmSize,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        WINBOOL use_gdi_natural,
-        WINBOOL is_sideways,
-        WINBOOL is_rtl,
-        const DWRITE_SCRIPT_ANALYSIS *analysis,
-        const WCHAR *locale,
-        const DWRITE_TYPOGRAPHIC_FEATURES **features,
-        const UINT32 *feature_range_lengths,
-        UINT32 feature_ranges,
-        FLOAT *glyph_advances,
-        DWRITE_GLYPH_OFFSET *glyph_offsets);
+                     IDWriteTextAnalyzer *This,
+                     const WCHAR *text,
+                     const UINT16 *clustermap,
+                     DWRITE_SHAPING_TEXT_PROPERTIES *props,
+                     UINT32 text_len,
+                     const UINT16 *glyph_indices,
+                     const DWRITE_SHAPING_GLYPH_PROPERTIES *glyph_props,
+                     UINT32 glyph_count,
+                     IDWriteFontFace *font_face,
+                     FLOAT fontEmSize,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     WINBOOL use_gdi_natural,
+                     WINBOOL is_sideways,
+                     WINBOOL is_rtl,
+                     const DWRITE_SCRIPT_ANALYSIS *analysis,
+                     const WCHAR *locale,
+                     const DWRITE_TYPOGRAPHIC_FEATURES **features,
+                     const UINT32 *feature_range_lengths,
+                     UINT32 feature_ranges,
+                     FLOAT *glyph_advances,
+                     DWRITE_GLYPH_OFFSET *glyph_offsets);
 
     END_INTERFACE
 } IDWriteTextAnalyzerVtbl;
@@ -4997,20 +4997,20 @@ MIDL_INTERFACE("7d97dbf7-e085-42d4-81e3-6a883bded118")
 IDWriteGlyphRunAnalysis : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetAlphaTextureBounds(
-        DWRITE_TEXTURE_TYPE type,
-        RECT *bounds) = 0;
+                     DWRITE_TEXTURE_TYPE type,
+                     RECT *bounds) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAlphaTexture(
-        DWRITE_TEXTURE_TYPE type,
-        const RECT *bounds,
-        BYTE *alphaValues,
-        UINT32 bufferSize) = 0;
+                     DWRITE_TEXTURE_TYPE type,
+                     const RECT *bounds,
+                     BYTE *alphaValues,
+                     UINT32 bufferSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAlphaBlendParams(
-        IDWriteRenderingParams *renderingParams,
-        FLOAT *blendGamma,
-        FLOAT *blendEnhancedContrast,
-        FLOAT *blendClearTypeLevel) = 0;
+                     IDWriteRenderingParams *renderingParams,
+                     FLOAT *blendGamma,
+                     FLOAT *blendEnhancedContrast,
+                     FLOAT *blendClearTypeLevel) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5022,35 +5022,35 @@ typedef struct IDWriteGlyphRunAnalysisVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteGlyphRunAnalysis *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteGlyphRunAnalysis *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteGlyphRunAnalysis *This);
+                     IDWriteGlyphRunAnalysis *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteGlyphRunAnalysis *This);
+                     IDWriteGlyphRunAnalysis *This);
 
     /*** IDWriteGlyphRunAnalysis methods ***/
     HRESULT (STDMETHODCALLTYPE *GetAlphaTextureBounds)(
-        IDWriteGlyphRunAnalysis *This,
-        DWRITE_TEXTURE_TYPE type,
-        RECT *bounds);
+                     IDWriteGlyphRunAnalysis *This,
+                     DWRITE_TEXTURE_TYPE type,
+                     RECT *bounds);
 
     HRESULT (STDMETHODCALLTYPE *CreateAlphaTexture)(
-        IDWriteGlyphRunAnalysis *This,
-        DWRITE_TEXTURE_TYPE type,
-        const RECT *bounds,
-        BYTE *alphaValues,
-        UINT32 bufferSize);
+                     IDWriteGlyphRunAnalysis *This,
+                     DWRITE_TEXTURE_TYPE type,
+                     const RECT *bounds,
+                     BYTE *alphaValues,
+                     UINT32 bufferSize);
 
     HRESULT (STDMETHODCALLTYPE *GetAlphaBlendParams)(
-        IDWriteGlyphRunAnalysis *This,
-        IDWriteRenderingParams *renderingParams,
-        FLOAT *blendGamma,
-        FLOAT *blendEnhancedContrast,
-        FLOAT *blendClearTypeLevel);
+                     IDWriteGlyphRunAnalysis *This,
+                     IDWriteRenderingParams *renderingParams,
+                     FLOAT *blendGamma,
+                     FLOAT *blendEnhancedContrast,
+                     FLOAT *blendClearTypeLevel);
 
     END_INTERFACE
 } IDWriteGlyphRunAnalysisVtbl;
@@ -5110,118 +5110,118 @@ MIDL_INTERFACE("b859ee5a-d838-4b5b-a2e8-1adc7d93db48")
 IDWriteFactory : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSystemFontCollection(
-        IDWriteFontCollection **collection,
-        WINBOOL check_for_updates = FALSE) = 0;
+                     IDWriteFontCollection **collection,
+                     WINBOOL check_for_updates = FALSE) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCustomFontCollection(
-        IDWriteFontCollectionLoader *loader,
-        const void *key,
-        UINT32 key_size,
-        IDWriteFontCollection **collection) = 0;
+                     IDWriteFontCollectionLoader *loader,
+                     const void *key,
+                     UINT32 key_size,
+                     IDWriteFontCollection **collection) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterFontCollectionLoader(
-        IDWriteFontCollectionLoader *loader) = 0;
+                     IDWriteFontCollectionLoader *loader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterFontCollectionLoader(
-        IDWriteFontCollectionLoader *loader) = 0;
+                     IDWriteFontCollectionLoader *loader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFontFileReference(
-        const WCHAR *path,
-        const FILETIME *writetime,
-        IDWriteFontFile **font_file) = 0;
+                     const WCHAR *path,
+                     const FILETIME *writetime,
+                     IDWriteFontFile **font_file) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCustomFontFileReference(
-        const void *reference_key,
-        UINT32 key_size,
-        IDWriteFontFileLoader *loader,
-        IDWriteFontFile **font_file) = 0;
+                     const void *reference_key,
+                     UINT32 key_size,
+                     IDWriteFontFileLoader *loader,
+                     IDWriteFontFile **font_file) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFontFace(
-        DWRITE_FONT_FACE_TYPE facetype,
-        UINT32 files_number,
-        IDWriteFontFile *const *font_files,
-        UINT32 index,
-        DWRITE_FONT_SIMULATIONS sim_flags,
-        IDWriteFontFace **font_face) = 0;
+                     DWRITE_FONT_FACE_TYPE facetype,
+                     UINT32 files_number,
+                     IDWriteFontFile *const *font_files,
+                     UINT32 index,
+                     DWRITE_FONT_SIMULATIONS sim_flags,
+                     IDWriteFontFace **font_face) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateRenderingParams(
-        IDWriteRenderingParams **params) = 0;
+                     IDWriteRenderingParams **params) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateMonitorRenderingParams(
-        HMONITOR monitor,
-        IDWriteRenderingParams **params) = 0;
+                     HMONITOR monitor,
+                     IDWriteRenderingParams **params) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateCustomRenderingParams(
-        FLOAT gamma,
-        FLOAT enhancedContrast,
-        FLOAT cleartype_level,
-        DWRITE_PIXEL_GEOMETRY geometry,
-        DWRITE_RENDERING_MODE mode,
-        IDWriteRenderingParams **params) = 0;
+                     FLOAT gamma,
+                     FLOAT enhancedContrast,
+                     FLOAT cleartype_level,
+                     DWRITE_PIXEL_GEOMETRY geometry,
+                     DWRITE_RENDERING_MODE mode,
+                     IDWriteRenderingParams **params) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterFontFileLoader(
-        IDWriteFontFileLoader *loader) = 0;
+                     IDWriteFontFileLoader *loader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnregisterFontFileLoader(
-        IDWriteFontFileLoader *loader) = 0;
+                     IDWriteFontFileLoader *loader) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTextFormat(
-        const WCHAR *family_name,
-        IDWriteFontCollection *collection,
-        DWRITE_FONT_WEIGHT weight,
-        DWRITE_FONT_STYLE style,
-        DWRITE_FONT_STRETCH stretch,
-        FLOAT size,
-        const WCHAR *locale,
-        IDWriteTextFormat **format) = 0;
+                     const WCHAR *family_name,
+                     IDWriteFontCollection *collection,
+                     DWRITE_FONT_WEIGHT weight,
+                     DWRITE_FONT_STYLE style,
+                     DWRITE_FONT_STRETCH stretch,
+                     FLOAT size,
+                     const WCHAR *locale,
+                     IDWriteTextFormat **format) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTypography(
-        IDWriteTypography **typography) = 0;
+                     IDWriteTypography **typography) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetGdiInterop(
-        IDWriteGdiInterop **gdi_interop) = 0;
+                     IDWriteGdiInterop **gdi_interop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTextLayout(
-        const WCHAR *string,
-        UINT32 len,
-        IDWriteTextFormat *format,
-        FLOAT max_width,
-        FLOAT max_height,
-        IDWriteTextLayout **layout) = 0;
+                     const WCHAR *string,
+                     UINT32 len,
+                     IDWriteTextFormat *format,
+                     FLOAT max_width,
+                     FLOAT max_height,
+                     IDWriteTextLayout **layout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGdiCompatibleTextLayout(
-        const WCHAR *string,
-        UINT32 len,
-        IDWriteTextFormat *format,
-        FLOAT layout_width,
-        FLOAT layout_height,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        WINBOOL use_gdi_natural,
-        IDWriteTextLayout **layout) = 0;
+                     const WCHAR *string,
+                     UINT32 len,
+                     IDWriteTextFormat *format,
+                     FLOAT layout_width,
+                     FLOAT layout_height,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     WINBOOL use_gdi_natural,
+                     IDWriteTextLayout **layout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateEllipsisTrimmingSign(
-        IDWriteTextFormat *format,
-        IDWriteInlineObject **trimming_sign) = 0;
+                     IDWriteTextFormat *format,
+                     IDWriteInlineObject **trimming_sign) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateTextAnalyzer(
-        IDWriteTextAnalyzer **analyzer) = 0;
+                     IDWriteTextAnalyzer **analyzer) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateNumberSubstitution(
-        DWRITE_NUMBER_SUBSTITUTION_METHOD method,
-        const WCHAR *locale,
-        WINBOOL ignore_user_override,
-        IDWriteNumberSubstitution **substitution) = 0;
+                     DWRITE_NUMBER_SUBSTITUTION_METHOD method,
+                     const WCHAR *locale,
+                     WINBOOL ignore_user_override,
+                     IDWriteNumberSubstitution **substitution) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateGlyphRunAnalysis(
-        const DWRITE_GLYPH_RUN *glyph_run,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        DWRITE_RENDERING_MODE rendering_mode,
-        DWRITE_MEASURING_MODE measuring_mode,
-        FLOAT baseline_x,
-        FLOAT baseline_y,
-        IDWriteGlyphRunAnalysis **analysis) = 0;
+                     const DWRITE_GLYPH_RUN *glyph_run,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     DWRITE_RENDERING_MODE rendering_mode,
+                     DWRITE_MEASURING_MODE measuring_mode,
+                     FLOAT baseline_x,
+                     FLOAT baseline_y,
+                     IDWriteGlyphRunAnalysis **analysis) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5233,151 +5233,151 @@ typedef struct IDWriteFactoryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDWriteFactory *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDWriteFactory *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDWriteFactory *This);
+                     IDWriteFactory *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDWriteFactory *This);
+                     IDWriteFactory *This);
 
     /*** IDWriteFactory methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSystemFontCollection)(
-        IDWriteFactory *This,
-        IDWriteFontCollection **collection,
-        WINBOOL check_for_updates);
+                     IDWriteFactory *This,
+                     IDWriteFontCollection **collection,
+                     WINBOOL check_for_updates);
 
     HRESULT (STDMETHODCALLTYPE *CreateCustomFontCollection)(
-        IDWriteFactory *This,
-        IDWriteFontCollectionLoader *loader,
-        const void *key,
-        UINT32 key_size,
-        IDWriteFontCollection **collection);
+                     IDWriteFactory *This,
+                     IDWriteFontCollectionLoader *loader,
+                     const void *key,
+                     UINT32 key_size,
+                     IDWriteFontCollection **collection);
 
     HRESULT (STDMETHODCALLTYPE *RegisterFontCollectionLoader)(
-        IDWriteFactory *This,
-        IDWriteFontCollectionLoader *loader);
+                     IDWriteFactory *This,
+                     IDWriteFontCollectionLoader *loader);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterFontCollectionLoader)(
-        IDWriteFactory *This,
-        IDWriteFontCollectionLoader *loader);
+                     IDWriteFactory *This,
+                     IDWriteFontCollectionLoader *loader);
 
     HRESULT (STDMETHODCALLTYPE *CreateFontFileReference)(
-        IDWriteFactory *This,
-        const WCHAR *path,
-        const FILETIME *writetime,
-        IDWriteFontFile **font_file);
+                     IDWriteFactory *This,
+                     const WCHAR *path,
+                     const FILETIME *writetime,
+                     IDWriteFontFile **font_file);
 
     HRESULT (STDMETHODCALLTYPE *CreateCustomFontFileReference)(
-        IDWriteFactory *This,
-        const void *reference_key,
-        UINT32 key_size,
-        IDWriteFontFileLoader *loader,
-        IDWriteFontFile **font_file);
+                     IDWriteFactory *This,
+                     const void *reference_key,
+                     UINT32 key_size,
+                     IDWriteFontFileLoader *loader,
+                     IDWriteFontFile **font_file);
 
     HRESULT (STDMETHODCALLTYPE *CreateFontFace)(
-        IDWriteFactory *This,
-        DWRITE_FONT_FACE_TYPE facetype,
-        UINT32 files_number,
-        IDWriteFontFile *const *font_files,
-        UINT32 index,
-        DWRITE_FONT_SIMULATIONS sim_flags,
-        IDWriteFontFace **font_face);
+                     IDWriteFactory *This,
+                     DWRITE_FONT_FACE_TYPE facetype,
+                     UINT32 files_number,
+                     IDWriteFontFile *const *font_files,
+                     UINT32 index,
+                     DWRITE_FONT_SIMULATIONS sim_flags,
+                     IDWriteFontFace **font_face);
 
     HRESULT (STDMETHODCALLTYPE *CreateRenderingParams)(
-        IDWriteFactory *This,
-        IDWriteRenderingParams **params);
+                     IDWriteFactory *This,
+                     IDWriteRenderingParams **params);
 
     HRESULT (STDMETHODCALLTYPE *CreateMonitorRenderingParams)(
-        IDWriteFactory *This,
-        HMONITOR monitor,
-        IDWriteRenderingParams **params);
+                     IDWriteFactory *This,
+                     HMONITOR monitor,
+                     IDWriteRenderingParams **params);
 
     HRESULT (STDMETHODCALLTYPE *CreateCustomRenderingParams)(
-        IDWriteFactory *This,
-        FLOAT gamma,
-        FLOAT enhancedContrast,
-        FLOAT cleartype_level,
-        DWRITE_PIXEL_GEOMETRY geometry,
-        DWRITE_RENDERING_MODE mode,
-        IDWriteRenderingParams **params);
+                     IDWriteFactory *This,
+                     FLOAT gamma,
+                     FLOAT enhancedContrast,
+                     FLOAT cleartype_level,
+                     DWRITE_PIXEL_GEOMETRY geometry,
+                     DWRITE_RENDERING_MODE mode,
+                     IDWriteRenderingParams **params);
 
     HRESULT (STDMETHODCALLTYPE *RegisterFontFileLoader)(
-        IDWriteFactory *This,
-        IDWriteFontFileLoader *loader);
+                     IDWriteFactory *This,
+                     IDWriteFontFileLoader *loader);
 
     HRESULT (STDMETHODCALLTYPE *UnregisterFontFileLoader)(
-        IDWriteFactory *This,
-        IDWriteFontFileLoader *loader);
+                     IDWriteFactory *This,
+                     IDWriteFontFileLoader *loader);
 
     HRESULT (STDMETHODCALLTYPE *CreateTextFormat)(
-        IDWriteFactory *This,
-        const WCHAR *family_name,
-        IDWriteFontCollection *collection,
-        DWRITE_FONT_WEIGHT weight,
-        DWRITE_FONT_STYLE style,
-        DWRITE_FONT_STRETCH stretch,
-        FLOAT size,
-        const WCHAR *locale,
-        IDWriteTextFormat **format);
+                     IDWriteFactory *This,
+                     const WCHAR *family_name,
+                     IDWriteFontCollection *collection,
+                     DWRITE_FONT_WEIGHT weight,
+                     DWRITE_FONT_STYLE style,
+                     DWRITE_FONT_STRETCH stretch,
+                     FLOAT size,
+                     const WCHAR *locale,
+                     IDWriteTextFormat **format);
 
     HRESULT (STDMETHODCALLTYPE *CreateTypography)(
-        IDWriteFactory *This,
-        IDWriteTypography **typography);
+                     IDWriteFactory *This,
+                     IDWriteTypography **typography);
 
     HRESULT (STDMETHODCALLTYPE *GetGdiInterop)(
-        IDWriteFactory *This,
-        IDWriteGdiInterop **gdi_interop);
+                     IDWriteFactory *This,
+                     IDWriteGdiInterop **gdi_interop);
 
     HRESULT (STDMETHODCALLTYPE *CreateTextLayout)(
-        IDWriteFactory *This,
-        const WCHAR *string,
-        UINT32 len,
-        IDWriteTextFormat *format,
-        FLOAT max_width,
-        FLOAT max_height,
-        IDWriteTextLayout **layout);
+                     IDWriteFactory *This,
+                     const WCHAR *string,
+                     UINT32 len,
+                     IDWriteTextFormat *format,
+                     FLOAT max_width,
+                     FLOAT max_height,
+                     IDWriteTextLayout **layout);
 
     HRESULT (STDMETHODCALLTYPE *CreateGdiCompatibleTextLayout)(
-        IDWriteFactory *This,
-        const WCHAR *string,
-        UINT32 len,
-        IDWriteTextFormat *format,
-        FLOAT layout_width,
-        FLOAT layout_height,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        WINBOOL use_gdi_natural,
-        IDWriteTextLayout **layout);
+                     IDWriteFactory *This,
+                     const WCHAR *string,
+                     UINT32 len,
+                     IDWriteTextFormat *format,
+                     FLOAT layout_width,
+                     FLOAT layout_height,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     WINBOOL use_gdi_natural,
+                     IDWriteTextLayout **layout);
 
     HRESULT (STDMETHODCALLTYPE *CreateEllipsisTrimmingSign)(
-        IDWriteFactory *This,
-        IDWriteTextFormat *format,
-        IDWriteInlineObject **trimming_sign);
+                     IDWriteFactory *This,
+                     IDWriteTextFormat *format,
+                     IDWriteInlineObject **trimming_sign);
 
     HRESULT (STDMETHODCALLTYPE *CreateTextAnalyzer)(
-        IDWriteFactory *This,
-        IDWriteTextAnalyzer **analyzer);
+                     IDWriteFactory *This,
+                     IDWriteTextAnalyzer **analyzer);
 
     HRESULT (STDMETHODCALLTYPE *CreateNumberSubstitution)(
-        IDWriteFactory *This,
-        DWRITE_NUMBER_SUBSTITUTION_METHOD method,
-        const WCHAR *locale,
-        WINBOOL ignore_user_override,
-        IDWriteNumberSubstitution **substitution);
+                     IDWriteFactory *This,
+                     DWRITE_NUMBER_SUBSTITUTION_METHOD method,
+                     const WCHAR *locale,
+                     WINBOOL ignore_user_override,
+                     IDWriteNumberSubstitution **substitution);
 
     HRESULT (STDMETHODCALLTYPE *CreateGlyphRunAnalysis)(
-        IDWriteFactory *This,
-        const DWRITE_GLYPH_RUN *glyph_run,
-        FLOAT pixels_per_dip,
-        const DWRITE_MATRIX *transform,
-        DWRITE_RENDERING_MODE rendering_mode,
-        DWRITE_MEASURING_MODE measuring_mode,
-        FLOAT baseline_x,
-        FLOAT baseline_y,
-        IDWriteGlyphRunAnalysis **analysis);
+                     IDWriteFactory *This,
+                     const DWRITE_GLYPH_RUN *glyph_run,
+                     FLOAT pixels_per_dip,
+                     const DWRITE_MATRIX *transform,
+                     DWRITE_RENDERING_MODE rendering_mode,
+                     DWRITE_MEASURING_MODE measuring_mode,
+                     FLOAT baseline_x,
+                     FLOAT baseline_y,
+                     IDWriteGlyphRunAnalysis **analysis);
 
     END_INTERFACE
 } IDWriteFactoryVtbl;

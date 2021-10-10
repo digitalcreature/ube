@@ -56,13 +56,13 @@ extern "C" {
 #else
   typedef struct DataSourceObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(DataSourceObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(DataSourceObject *This);
-      ULONG (WINAPI *Release)(DataSourceObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(DataSourceObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(DataSourceObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(DataSourceObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(DataSourceObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *QueryInterface)(DataSourceObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(DataSourceObject *This);
+                   ULONG (WINAPI *Release)(DataSourceObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(DataSourceObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(DataSourceObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(DataSourceObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(DataSourceObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
     END_INTERFACE
   } DataSourceObjectVtbl;
   struct DataSourceObject {

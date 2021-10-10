@@ -21,166 +21,166 @@ const Salsa20VecImpl = struct {
     const BlockVec = [4]Lane;
 
     fn initContext(key: [8]u32, d: [4]u32) BlockVec {
-        const c = "expand 32-byte k";
-        const constant_le = comptime [4]u32{
-            mem.readIntLittle(u32, c[0..4]),
-            mem.readIntLittle(u32, c[4..8]),
-            mem.readIntLittle(u32, c[8..12]),
-            mem.readIntLittle(u32, c[12..16]),
-        };
-        return BlockVec{
-            Lane{ key[0], key[1], key[2], key[3] },
-            Lane{ key[4], key[5], key[6], key[7] },
-            Lane{ constant_le[0], constant_le[1], constant_le[2], constant_le[3] },
-            Lane{ d[0], d[1], d[2], d[3] },
-        };
+                     const c = "expand 32-byte k";
+                     const constant_le = comptime [4]u32{
+                                      mem.readIntLittle(u32, c[0..4]),
+                                      mem.readIntLittle(u32, c[4..8]),
+                                      mem.readIntLittle(u32, c[8..12]),
+                                      mem.readIntLittle(u32, c[12..16]),
+                     };
+                     return BlockVec{
+                                      Lane{ key[0], key[1], key[2], key[3] },
+                                      Lane{ key[4], key[5], key[6], key[7] },
+                                      Lane{ constant_le[0], constant_le[1], constant_le[2], constant_le[3] },
+                                      Lane{ d[0], d[1], d[2], d[3] },
+                     };
     }
 
     inline fn salsa20Core(x: *BlockVec, input: BlockVec, comptime feedback: bool) void {
-        const n1n2n3n0 = Lane{ input[3][1], input[3][2], input[3][3], input[3][0] };
-        const n1n2 = Half{ n1n2n3n0[0], n1n2n3n0[1] };
-        const n3n0 = Half{ n1n2n3n0[2], n1n2n3n0[3] };
-        const k0k1 = Half{ input[0][0], input[0][1] };
-        const k2k3 = Half{ input[0][2], input[0][3] };
-        const k4k5 = Half{ input[1][0], input[1][1] };
-        const k6k7 = Half{ input[1][2], input[1][3] };
-        const n0k0 = Half{ n3n0[1], k0k1[0] };
-        const k0n0 = Half{ n0k0[1], n0k0[0] };
-        const k4k5k0n0 = Lane{ k4k5[0], k4k5[1], k0n0[0], k0n0[1] };
-        const k1k6 = Half{ k0k1[1], k6k7[0] };
-        const k6k1 = Half{ k1k6[1], k1k6[0] };
-        const n1n2k6k1 = Lane{ n1n2[0], n1n2[1], k6k1[0], k6k1[1] };
-        const k7n3 = Half{ k6k7[1], n3n0[0] };
-        const n3k7 = Half{ k7n3[1], k7n3[0] };
-        const k2k3n3k7 = Lane{ k2k3[0], k2k3[1], n3k7[0], n3k7[1] };
+                     const n1n2n3n0 = Lane{ input[3][1], input[3][2], input[3][3], input[3][0] };
+                     const n1n2 = Half{ n1n2n3n0[0], n1n2n3n0[1] };
+                     const n3n0 = Half{ n1n2n3n0[2], n1n2n3n0[3] };
+                     const k0k1 = Half{ input[0][0], input[0][1] };
+                     const k2k3 = Half{ input[0][2], input[0][3] };
+                     const k4k5 = Half{ input[1][0], input[1][1] };
+                     const k6k7 = Half{ input[1][2], input[1][3] };
+                     const n0k0 = Half{ n3n0[1], k0k1[0] };
+                     const k0n0 = Half{ n0k0[1], n0k0[0] };
+                     const k4k5k0n0 = Lane{ k4k5[0], k4k5[1], k0n0[0], k0n0[1] };
+                     const k1k6 = Half{ k0k1[1], k6k7[0] };
+                     const k6k1 = Half{ k1k6[1], k1k6[0] };
+                     const n1n2k6k1 = Lane{ n1n2[0], n1n2[1], k6k1[0], k6k1[1] };
+                     const k7n3 = Half{ k6k7[1], n3n0[0] };
+                     const n3k7 = Half{ k7n3[1], k7n3[0] };
+                     const k2k3n3k7 = Lane{ k2k3[0], k2k3[1], n3k7[0], n3k7[1] };
 
-        var diag0 = input[2];
-        var diag1 = @shuffle(u32, k4k5k0n0, undefined, [_]i32{ 1, 2, 3, 0 });
-        var diag2 = @shuffle(u32, n1n2k6k1, undefined, [_]i32{ 1, 2, 3, 0 });
-        var diag3 = @shuffle(u32, k2k3n3k7, undefined, [_]i32{ 1, 2, 3, 0 });
+                     var diag0 = input[2];
+                     var diag1 = @shuffle(u32, k4k5k0n0, undefined, [_]i32{ 1, 2, 3, 0 });
+                     var diag2 = @shuffle(u32, n1n2k6k1, undefined, [_]i32{ 1, 2, 3, 0 });
+                     var diag3 = @shuffle(u32, k2k3n3k7, undefined, [_]i32{ 1, 2, 3, 0 });
 
-        const start0 = diag0;
-        const start1 = diag1;
-        const start2 = diag2;
-        const start3 = diag3;
+                     const start0 = diag0;
+                     const start1 = diag1;
+                     const start2 = diag2;
+                     const start3 = diag3;
 
-        var i: usize = 0;
-        while (i < 20) : (i += 2) {
-            var a0 = diag1 +% diag0;
-            diag3 ^= math.rotl(Lane, a0, 7);
-            var a1 = diag0 +% diag3;
-            diag2 ^= math.rotl(Lane, a1, 9);
-            var a2 = diag3 +% diag2;
-            diag1 ^= math.rotl(Lane, a2, 13);
-            var a3 = diag2 +% diag1;
-            diag0 ^= math.rotl(Lane, a3, 18);
+                     var i: usize = 0;
+                     while (i < 20) : (i += 2) {
+                                      var a0 = diag1 +% diag0;
+                                      diag3 ^= math.rotl(Lane, a0, 7);
+                                      var a1 = diag0 +% diag3;
+                                      diag2 ^= math.rotl(Lane, a1, 9);
+                                      var a2 = diag3 +% diag2;
+                                      diag1 ^= math.rotl(Lane, a2, 13);
+                                      var a3 = diag2 +% diag1;
+                                      diag0 ^= math.rotl(Lane, a3, 18);
 
-            var diag3_shift = @shuffle(u32, diag3, undefined, [_]i32{ 3, 0, 1, 2 });
-            var diag2_shift = @shuffle(u32, diag2, undefined, [_]i32{ 2, 3, 0, 1 });
-            var diag1_shift = @shuffle(u32, diag1, undefined, [_]i32{ 1, 2, 3, 0 });
-            diag3 = diag3_shift;
-            diag2 = diag2_shift;
-            diag1 = diag1_shift;
+                                      var diag3_shift = @shuffle(u32, diag3, undefined, [_]i32{ 3, 0, 1, 2 });
+                                      var diag2_shift = @shuffle(u32, diag2, undefined, [_]i32{ 2, 3, 0, 1 });
+                                      var diag1_shift = @shuffle(u32, diag1, undefined, [_]i32{ 1, 2, 3, 0 });
+                                      diag3 = diag3_shift;
+                                      diag2 = diag2_shift;
+                                      diag1 = diag1_shift;
 
-            a0 = diag3 +% diag0;
-            diag1 ^= math.rotl(Lane, a0, 7);
-            a1 = diag0 +% diag1;
-            diag2 ^= math.rotl(Lane, a1, 9);
-            a2 = diag1 +% diag2;
-            diag3 ^= math.rotl(Lane, a2, 13);
-            a3 = diag2 +% diag3;
-            diag0 ^= math.rotl(Lane, a3, 18);
+                                      a0 = diag3 +% diag0;
+                                      diag1 ^= math.rotl(Lane, a0, 7);
+                                      a1 = diag0 +% diag1;
+                                      diag2 ^= math.rotl(Lane, a1, 9);
+                                      a2 = diag1 +% diag2;
+                                      diag3 ^= math.rotl(Lane, a2, 13);
+                                      a3 = diag2 +% diag3;
+                                      diag0 ^= math.rotl(Lane, a3, 18);
 
-            diag1_shift = @shuffle(u32, diag1, undefined, [_]i32{ 3, 0, 1, 2 });
-            diag2_shift = @shuffle(u32, diag2, undefined, [_]i32{ 2, 3, 0, 1 });
-            diag3_shift = @shuffle(u32, diag3, undefined, [_]i32{ 1, 2, 3, 0 });
-            diag1 = diag1_shift;
-            diag2 = diag2_shift;
-            diag3 = diag3_shift;
-        }
+                                      diag1_shift = @shuffle(u32, diag1, undefined, [_]i32{ 3, 0, 1, 2 });
+                                      diag2_shift = @shuffle(u32, diag2, undefined, [_]i32{ 2, 3, 0, 1 });
+                                      diag3_shift = @shuffle(u32, diag3, undefined, [_]i32{ 1, 2, 3, 0 });
+                                      diag1 = diag1_shift;
+                                      diag2 = diag2_shift;
+                                      diag3 = diag3_shift;
+                     }
 
-        if (feedback) {
-            diag0 +%= start0;
-            diag1 +%= start1;
-            diag2 +%= start2;
-            diag3 +%= start3;
-        }
+                     if (feedback) {
+                                      diag0 +%= start0;
+                                      diag1 +%= start1;
+                                      diag2 +%= start2;
+                                      diag3 +%= start3;
+                     }
 
-        const x0x1x10x11 = Lane{ diag0[0], diag1[1], diag0[2], diag1[3] };
-        const x12x13x6x7 = Lane{ diag1[0], diag2[1], diag1[2], diag2[3] };
-        const x8x9x2x3 = Lane{ diag2[0], diag3[1], diag2[2], diag3[3] };
-        const x4x5x14x15 = Lane{ diag3[0], diag0[1], diag3[2], diag0[3] };
+                     const x0x1x10x11 = Lane{ diag0[0], diag1[1], diag0[2], diag1[3] };
+                     const x12x13x6x7 = Lane{ diag1[0], diag2[1], diag1[2], diag2[3] };
+                     const x8x9x2x3 = Lane{ diag2[0], diag3[1], diag2[2], diag3[3] };
+                     const x4x5x14x15 = Lane{ diag3[0], diag0[1], diag3[2], diag0[3] };
 
-        x[0] = Lane{ x0x1x10x11[0], x0x1x10x11[1], x8x9x2x3[2], x8x9x2x3[3] };
-        x[1] = Lane{ x4x5x14x15[0], x4x5x14x15[1], x12x13x6x7[2], x12x13x6x7[3] };
-        x[2] = Lane{ x8x9x2x3[0], x8x9x2x3[1], x0x1x10x11[2], x0x1x10x11[3] };
-        x[3] = Lane{ x12x13x6x7[0], x12x13x6x7[1], x4x5x14x15[2], x4x5x14x15[3] };
+                     x[0] = Lane{ x0x1x10x11[0], x0x1x10x11[1], x8x9x2x3[2], x8x9x2x3[3] };
+                     x[1] = Lane{ x4x5x14x15[0], x4x5x14x15[1], x12x13x6x7[2], x12x13x6x7[3] };
+                     x[2] = Lane{ x8x9x2x3[0], x8x9x2x3[1], x0x1x10x11[2], x0x1x10x11[3] };
+                     x[3] = Lane{ x12x13x6x7[0], x12x13x6x7[1], x4x5x14x15[2], x4x5x14x15[3] };
     }
 
     fn hashToBytes(out: *[64]u8, x: BlockVec) void {
-        var i: usize = 0;
-        while (i < 4) : (i += 1) {
-            mem.writeIntLittle(u32, out[16 * i + 0 ..][0..4], x[i][0]);
-            mem.writeIntLittle(u32, out[16 * i + 4 ..][0..4], x[i][1]);
-            mem.writeIntLittle(u32, out[16 * i + 8 ..][0..4], x[i][2]);
-            mem.writeIntLittle(u32, out[16 * i + 12 ..][0..4], x[i][3]);
-        }
+                     var i: usize = 0;
+                     while (i < 4) : (i += 1) {
+                                      mem.writeIntLittle(u32, out[16 * i + 0 ..][0..4], x[i][0]);
+                                      mem.writeIntLittle(u32, out[16 * i + 4 ..][0..4], x[i][1]);
+                                      mem.writeIntLittle(u32, out[16 * i + 8 ..][0..4], x[i][2]);
+                                      mem.writeIntLittle(u32, out[16 * i + 12 ..][0..4], x[i][3]);
+                     }
     }
 
     fn salsa20Xor(out: []u8, in: []const u8, key: [8]u32, d: [4]u32) void {
-        var ctx = initContext(key, d);
-        var x: BlockVec = undefined;
-        var buf: [64]u8 = undefined;
-        var i: usize = 0;
-        while (i + 64 <= in.len) : (i += 64) {
-            salsa20Core(x[0..], ctx, true);
-            hashToBytes(buf[0..], x);
-            var xout = out[i..];
-            const xin = in[i..];
-            var j: usize = 0;
-            while (j < 64) : (j += 1) {
-                xout[j] = xin[j];
-            }
-            j = 0;
-            while (j < 64) : (j += 1) {
-                xout[j] ^= buf[j];
-            }
-            ctx[2][0] +%= 1;
-            if (ctx[2][0] == 0) {
-                ctx[2][1] += 1;
-            }
-        }
-        if (i < in.len) {
-            salsa20Core(x[0..], ctx, true);
-            hashToBytes(buf[0..], x);
+                     var ctx = initContext(key, d);
+                     var x: BlockVec = undefined;
+                     var buf: [64]u8 = undefined;
+                     var i: usize = 0;
+                     while (i + 64 <= in.len) : (i += 64) {
+                                      salsa20Core(x[0..], ctx, true);
+                                      hashToBytes(buf[0..], x);
+                                      var xout = out[i..];
+                                      const xin = in[i..];
+                                      var j: usize = 0;
+                                      while (j < 64) : (j += 1) {
+                                          xout[j] = xin[j];
+                                      }
+                                      j = 0;
+                                      while (j < 64) : (j += 1) {
+                                          xout[j] ^= buf[j];
+                                      }
+                                      ctx[2][0] +%= 1;
+                                      if (ctx[2][0] == 0) {
+                                          ctx[2][1] += 1;
+                                      }
+                     }
+                     if (i < in.len) {
+                                      salsa20Core(x[0..], ctx, true);
+                                      hashToBytes(buf[0..], x);
 
-            var xout = out[i..];
-            const xin = in[i..];
-            var j: usize = 0;
-            while (j < in.len % 64) : (j += 1) {
-                xout[j] = xin[j] ^ buf[j];
-            }
-        }
+                                      var xout = out[i..];
+                                      const xin = in[i..];
+                                      var j: usize = 0;
+                                      while (j < in.len % 64) : (j += 1) {
+                                          xout[j] = xin[j] ^ buf[j];
+                                      }
+                     }
     }
 
     fn hsalsa20(input: [16]u8, key: [32]u8) [32]u8 {
-        var c: [4]u32 = undefined;
-        for (c) |_, i| {
-            c[i] = mem.readIntLittle(u32, input[4 * i ..][0..4]);
-        }
-        const ctx = initContext(keyToWords(key), c);
-        var x: BlockVec = undefined;
-        salsa20Core(x[0..], ctx, false);
-        var out: [32]u8 = undefined;
-        mem.writeIntLittle(u32, out[0..4], x[0][0]);
-        mem.writeIntLittle(u32, out[4..8], x[1][1]);
-        mem.writeIntLittle(u32, out[8..12], x[2][2]);
-        mem.writeIntLittle(u32, out[12..16], x[3][3]);
-        mem.writeIntLittle(u32, out[16..20], x[1][2]);
-        mem.writeIntLittle(u32, out[20..24], x[1][3]);
-        mem.writeIntLittle(u32, out[24..28], x[2][0]);
-        mem.writeIntLittle(u32, out[28..32], x[2][1]);
-        return out;
+                     var c: [4]u32 = undefined;
+                     for (c) |_, i| {
+                                      c[i] = mem.readIntLittle(u32, input[4 * i ..][0..4]);
+                     }
+                     const ctx = initContext(keyToWords(key), c);
+                     var x: BlockVec = undefined;
+                     salsa20Core(x[0..], ctx, false);
+                     var out: [32]u8 = undefined;
+                     mem.writeIntLittle(u32, out[0..4], x[0][0]);
+                     mem.writeIntLittle(u32, out[4..8], x[1][1]);
+                     mem.writeIntLittle(u32, out[8..12], x[2][2]);
+                     mem.writeIntLittle(u32, out[12..16], x[3][3]);
+                     mem.writeIntLittle(u32, out[16..20], x[1][2]);
+                     mem.writeIntLittle(u32, out[20..24], x[1][3]);
+                     mem.writeIntLittle(u32, out[24..28], x[2][0]);
+                     mem.writeIntLittle(u32, out[28..32], x[2][1]);
+                     return out;
     }
 };
 
@@ -188,120 +188,120 @@ const Salsa20NonVecImpl = struct {
     const BlockVec = [16]u32;
 
     fn initContext(key: [8]u32, d: [4]u32) BlockVec {
-        const c = "expand 32-byte k";
-        const constant_le = comptime [4]u32{
-            mem.readIntLittle(u32, c[0..4]),
-            mem.readIntLittle(u32, c[4..8]),
-            mem.readIntLittle(u32, c[8..12]),
-            mem.readIntLittle(u32, c[12..16]),
-        };
-        return BlockVec{
-            constant_le[0], key[0],         key[1],         key[2],
-            key[3],         constant_le[1], d[0],           d[1],
-            d[2],           d[3],           constant_le[2], key[4],
-            key[5],         key[6],         key[7],         constant_le[3],
-        };
+                     const c = "expand 32-byte k";
+                     const constant_le = comptime [4]u32{
+                                      mem.readIntLittle(u32, c[0..4]),
+                                      mem.readIntLittle(u32, c[4..8]),
+                                      mem.readIntLittle(u32, c[8..12]),
+                                      mem.readIntLittle(u32, c[12..16]),
+                     };
+                     return BlockVec{
+                                      constant_le[0], key[0],                      key[1],                      key[2],
+                                      key[3],                      constant_le[1], d[0],                        d[1],
+                                      d[2],                        d[3],                        constant_le[2], key[4],
+                                      key[5],                      key[6],                      key[7],                      constant_le[3],
+                     };
     }
 
     const QuarterRound = struct {
-        a: usize,
-        b: usize,
-        c: usize,
-        d: u6,
+                     a: usize,
+                     b: usize,
+                     c: usize,
+                     d: u6,
     };
 
     inline fn Rp(a: usize, b: usize, c: usize, d: u6) QuarterRound {
-        return QuarterRound{
-            .a = a,
-            .b = b,
-            .c = c,
-            .d = d,
-        };
+                     return QuarterRound{
+                                      .a = a,
+                                      .b = b,
+                                      .c = c,
+                                      .d = d,
+                     };
     }
 
     inline fn salsa20Core(x: *BlockVec, input: BlockVec, comptime feedback: bool) void {
-        const arx_steps = comptime [_]QuarterRound{
-            Rp(4, 0, 12, 7),   Rp(8, 4, 0, 9),    Rp(12, 8, 4, 13),   Rp(0, 12, 8, 18),
-            Rp(9, 5, 1, 7),    Rp(13, 9, 5, 9),   Rp(1, 13, 9, 13),   Rp(5, 1, 13, 18),
-            Rp(14, 10, 6, 7),  Rp(2, 14, 10, 9),  Rp(6, 2, 14, 13),   Rp(10, 6, 2, 18),
-            Rp(3, 15, 11, 7),  Rp(7, 3, 15, 9),   Rp(11, 7, 3, 13),   Rp(15, 11, 7, 18),
-            Rp(1, 0, 3, 7),    Rp(2, 1, 0, 9),    Rp(3, 2, 1, 13),    Rp(0, 3, 2, 18),
-            Rp(6, 5, 4, 7),    Rp(7, 6, 5, 9),    Rp(4, 7, 6, 13),    Rp(5, 4, 7, 18),
-            Rp(11, 10, 9, 7),  Rp(8, 11, 10, 9),  Rp(9, 8, 11, 13),   Rp(10, 9, 8, 18),
-            Rp(12, 15, 14, 7), Rp(13, 12, 15, 9), Rp(14, 13, 12, 13), Rp(15, 14, 13, 18),
-        };
-        x.* = input;
-        var j: usize = 0;
-        while (j < 20) : (j += 2) {
-            inline for (arx_steps) |r| {
-                x[r.a] ^= math.rotl(u32, x[r.b] +% x[r.c], r.d);
-            }
-        }
-        if (feedback) {
-            j = 0;
-            while (j < 16) : (j += 1) {
-                x[j] +%= input[j];
-            }
-        }
+                     const arx_steps = comptime [_]QuarterRound{
+                                      Rp(4, 0, 12, 7),   Rp(8, 4, 0, 9),    Rp(12, 8, 4, 13),   Rp(0, 12, 8, 18),
+                                      Rp(9, 5, 1, 7),    Rp(13, 9, 5, 9),   Rp(1, 13, 9, 13),   Rp(5, 1, 13, 18),
+                                      Rp(14, 10, 6, 7),  Rp(2, 14, 10, 9),  Rp(6, 2, 14, 13),   Rp(10, 6, 2, 18),
+                                      Rp(3, 15, 11, 7),  Rp(7, 3, 15, 9),   Rp(11, 7, 3, 13),   Rp(15, 11, 7, 18),
+                                      Rp(1, 0, 3, 7),    Rp(2, 1, 0, 9),    Rp(3, 2, 1, 13),    Rp(0, 3, 2, 18),
+                                      Rp(6, 5, 4, 7),    Rp(7, 6, 5, 9),    Rp(4, 7, 6, 13),    Rp(5, 4, 7, 18),
+                                      Rp(11, 10, 9, 7),  Rp(8, 11, 10, 9),  Rp(9, 8, 11, 13),   Rp(10, 9, 8, 18),
+                                      Rp(12, 15, 14, 7), Rp(13, 12, 15, 9), Rp(14, 13, 12, 13), Rp(15, 14, 13, 18),
+                     };
+                     x.* = input;
+                     var j: usize = 0;
+                     while (j < 20) : (j += 2) {
+                                      inline for (arx_steps) |r| {
+                                          x[r.a] ^= math.rotl(u32, x[r.b] +% x[r.c], r.d);
+                                      }
+                     }
+                     if (feedback) {
+                                      j = 0;
+                                      while (j < 16) : (j += 1) {
+                                          x[j] +%= input[j];
+                                      }
+                     }
     }
 
     fn hashToBytes(out: *[64]u8, x: BlockVec) void {
-        for (x) |w, i| {
-            mem.writeIntLittle(u32, out[i * 4 ..][0..4], w);
-        }
+                     for (x) |w, i| {
+                                      mem.writeIntLittle(u32, out[i * 4 ..][0..4], w);
+                     }
     }
 
     fn salsa20Xor(out: []u8, in: []const u8, key: [8]u32, d: [4]u32) void {
-        var ctx = initContext(key, d);
-        var x: BlockVec = undefined;
-        var buf: [64]u8 = undefined;
-        var i: usize = 0;
-        while (i + 64 <= in.len) : (i += 64) {
-            salsa20Core(x[0..], ctx, true);
-            hashToBytes(buf[0..], x);
-            var xout = out[i..];
-            const xin = in[i..];
-            var j: usize = 0;
-            while (j < 64) : (j += 1) {
-                xout[j] = xin[j];
-            }
-            j = 0;
-            while (j < 64) : (j += 1) {
-                xout[j] ^= buf[j];
-            }
-            ctx[9] += @boolToInt(@addWithOverflow(u32, ctx[8], 1, &ctx[8]));
-        }
-        if (i < in.len) {
-            salsa20Core(x[0..], ctx, true);
-            hashToBytes(buf[0..], x);
+                     var ctx = initContext(key, d);
+                     var x: BlockVec = undefined;
+                     var buf: [64]u8 = undefined;
+                     var i: usize = 0;
+                     while (i + 64 <= in.len) : (i += 64) {
+                                      salsa20Core(x[0..], ctx, true);
+                                      hashToBytes(buf[0..], x);
+                                      var xout = out[i..];
+                                      const xin = in[i..];
+                                      var j: usize = 0;
+                                      while (j < 64) : (j += 1) {
+                                          xout[j] = xin[j];
+                                      }
+                                      j = 0;
+                                      while (j < 64) : (j += 1) {
+                                          xout[j] ^= buf[j];
+                                      }
+                                      ctx[9] += @boolToInt(@addWithOverflow(u32, ctx[8], 1, &ctx[8]));
+                     }
+                     if (i < in.len) {
+                                      salsa20Core(x[0..], ctx, true);
+                                      hashToBytes(buf[0..], x);
 
-            var xout = out[i..];
-            const xin = in[i..];
-            var j: usize = 0;
-            while (j < in.len % 64) : (j += 1) {
-                xout[j] = xin[j] ^ buf[j];
-            }
-        }
+                                      var xout = out[i..];
+                                      const xin = in[i..];
+                                      var j: usize = 0;
+                                      while (j < in.len % 64) : (j += 1) {
+                                          xout[j] = xin[j] ^ buf[j];
+                                      }
+                     }
     }
 
     fn hsalsa20(input: [16]u8, key: [32]u8) [32]u8 {
-        var c: [4]u32 = undefined;
-        for (c) |_, i| {
-            c[i] = mem.readIntLittle(u32, input[4 * i ..][0..4]);
-        }
-        const ctx = initContext(keyToWords(key), c);
-        var x: BlockVec = undefined;
-        salsa20Core(x[0..], ctx, false);
-        var out: [32]u8 = undefined;
-        mem.writeIntLittle(u32, out[0..4], x[0]);
-        mem.writeIntLittle(u32, out[4..8], x[5]);
-        mem.writeIntLittle(u32, out[8..12], x[10]);
-        mem.writeIntLittle(u32, out[12..16], x[15]);
-        mem.writeIntLittle(u32, out[16..20], x[6]);
-        mem.writeIntLittle(u32, out[20..24], x[7]);
-        mem.writeIntLittle(u32, out[24..28], x[8]);
-        mem.writeIntLittle(u32, out[28..32], x[9]);
-        return out;
+                     var c: [4]u32 = undefined;
+                     for (c) |_, i| {
+                                      c[i] = mem.readIntLittle(u32, input[4 * i ..][0..4]);
+                     }
+                     const ctx = initContext(keyToWords(key), c);
+                     var x: BlockVec = undefined;
+                     salsa20Core(x[0..], ctx, false);
+                     var out: [32]u8 = undefined;
+                     mem.writeIntLittle(u32, out[0..4], x[0]);
+                     mem.writeIntLittle(u32, out[4..8], x[5]);
+                     mem.writeIntLittle(u32, out[8..12], x[10]);
+                     mem.writeIntLittle(u32, out[12..16], x[15]);
+                     mem.writeIntLittle(u32, out[16..20], x[6]);
+                     mem.writeIntLittle(u32, out[20..24], x[7]);
+                     mem.writeIntLittle(u32, out[24..28], x[8]);
+                     mem.writeIntLittle(u32, out[28..32], x[9]);
+                     return out;
     }
 };
 
@@ -311,15 +311,15 @@ fn keyToWords(key: [32]u8) [8]u32 {
     var k: [8]u32 = undefined;
     var i: usize = 0;
     while (i < 8) : (i += 1) {
-        k[i] = mem.readIntLittle(u32, key[i * 4 ..][0..4]);
+                     k[i] = mem.readIntLittle(u32, key[i * 4 ..][0..4]);
     }
     return k;
 }
 
 fn extend(key: [32]u8, nonce: [24]u8) struct { key: [32]u8, nonce: [8]u8 } {
     return .{
-        .key = Salsa20Impl.hsalsa20(nonce[0..16].*, key),
-        .nonce = nonce[16..24].*,
+                     .key = Salsa20Impl.hsalsa20(nonce[0..16].*, key),
+                     .nonce = nonce[16..24].*,
     };
 }
 
@@ -334,14 +334,14 @@ pub const Salsa20 = struct {
     /// WARNING: This function doesn't provide authenticated encryption.
     /// Using the AEAD or one of the `box` versions is usually preferred.
     pub fn xor(out: []u8, in: []const u8, counter: u64, key: [key_length]u8, nonce: [nonce_length]u8) void {
-        debug.assert(in.len == out.len);
+                     debug.assert(in.len == out.len);
 
-        var d: [4]u32 = undefined;
-        d[0] = mem.readIntLittle(u32, nonce[0..4]);
-        d[1] = mem.readIntLittle(u32, nonce[4..8]);
-        d[2] = @truncate(u32, counter);
-        d[3] = @truncate(u32, counter >> 32);
-        Salsa20Impl.salsa20Xor(out, in, keyToWords(key), d);
+                     var d: [4]u32 = undefined;
+                     d[0] = mem.readIntLittle(u32, nonce[0..4]);
+                     d[1] = mem.readIntLittle(u32, nonce[4..8]);
+                     d[2] = @truncate(u32, counter);
+                     d[3] = @truncate(u32, counter >> 32);
+                     Salsa20Impl.salsa20Xor(out, in, keyToWords(key), d);
     }
 };
 
@@ -356,8 +356,8 @@ pub const XSalsa20 = struct {
     /// WARNING: This function doesn't provide authenticated encryption.
     /// Using the AEAD or one of the `box` versions is usually preferred.
     pub fn xor(out: []u8, in: []const u8, counter: u64, key: [key_length]u8, nonce: [nonce_length]u8) void {
-        const extended = extend(key, nonce);
-        Salsa20.xor(out, in, counter, extended.key, extended.nonce);
+                     const extended = extend(key, nonce);
+                     Salsa20.xor(out, in, counter, extended.key, extended.nonce);
     }
 };
 
@@ -377,18 +377,18 @@ pub const XSalsa20Poly1305 = struct {
     /// npub: public nonce
     /// k: private key
     pub fn encrypt(c: []u8, tag: *[tag_length]u8, m: []const u8, ad: []const u8, npub: [nonce_length]u8, k: [key_length]u8) void {
-        debug.assert(c.len == m.len);
-        const extended = extend(k, npub);
-        var block0 = [_]u8{0} ** 64;
-        const mlen0 = math.min(32, m.len);
-        mem.copy(u8, block0[32..][0..mlen0], m[0..mlen0]);
-        Salsa20.xor(block0[0..], block0[0..], 0, extended.key, extended.nonce);
-        mem.copy(u8, c[0..mlen0], block0[32..][0..mlen0]);
-        Salsa20.xor(c[mlen0..], m[mlen0..], 1, extended.key, extended.nonce);
-        var mac = Poly1305.init(block0[0..32]);
-        mac.update(ad);
-        mac.update(c);
-        mac.final(tag);
+                     debug.assert(c.len == m.len);
+                     const extended = extend(k, npub);
+                     var block0 = [_]u8{0} ** 64;
+                     const mlen0 = math.min(32, m.len);
+                     mem.copy(u8, block0[32..][0..mlen0], m[0..mlen0]);
+                     Salsa20.xor(block0[0..], block0[0..], 0, extended.key, extended.nonce);
+                     mem.copy(u8, c[0..mlen0], block0[32..][0..mlen0]);
+                     Salsa20.xor(c[mlen0..], m[mlen0..], 1, extended.key, extended.nonce);
+                     var mac = Poly1305.init(block0[0..32]);
+                     mac.update(ad);
+                     mac.update(c);
+                     mac.final(tag);
     }
 
     /// m: message: output buffer should be of size c.len
@@ -398,27 +398,27 @@ pub const XSalsa20Poly1305 = struct {
     /// npub: public nonce
     /// k: private key
     pub fn decrypt(m: []u8, c: []const u8, tag: [tag_length]u8, ad: []const u8, npub: [nonce_length]u8, k: [key_length]u8) !void {
-        debug.assert(c.len == m.len);
-        const extended = extend(k, npub);
-        var block0 = [_]u8{0} ** 64;
-        const mlen0 = math.min(32, c.len);
-        mem.copy(u8, block0[32..][0..mlen0], c[0..mlen0]);
-        Salsa20.xor(block0[0..], block0[0..], 0, extended.key, extended.nonce);
-        var mac = Poly1305.init(block0[0..32]);
-        mac.update(ad);
-        mac.update(c);
-        var computedTag: [tag_length]u8 = undefined;
-        mac.final(&computedTag);
-        var acc: u8 = 0;
-        for (computedTag) |_, i| {
-            acc |= computedTag[i] ^ tag[i];
-        }
-        if (acc != 0) {
-            mem.secureZero(u8, &computedTag);
-            return error.AuthenticationFailed;
-        }
-        mem.copy(u8, m[0..mlen0], block0[32..][0..mlen0]);
-        Salsa20.xor(m[mlen0..], c[mlen0..], 1, extended.key, extended.nonce);
+                     debug.assert(c.len == m.len);
+                     const extended = extend(k, npub);
+                     var block0 = [_]u8{0} ** 64;
+                     const mlen0 = math.min(32, c.len);
+                     mem.copy(u8, block0[32..][0..mlen0], c[0..mlen0]);
+                     Salsa20.xor(block0[0..], block0[0..], 0, extended.key, extended.nonce);
+                     var mac = Poly1305.init(block0[0..32]);
+                     mac.update(ad);
+                     mac.update(c);
+                     var computedTag: [tag_length]u8 = undefined;
+                     mac.final(&computedTag);
+                     var acc: u8 = 0;
+                     for (computedTag) |_, i| {
+                                      acc |= computedTag[i] ^ tag[i];
+                     }
+                     if (acc != 0) {
+                                      mem.secureZero(u8, &computedTag);
+                                      return error.AuthenticationFailed;
+                     }
+                     mem.copy(u8, m[0..mlen0], block0[32..][0..mlen0]);
+                     Salsa20.xor(m[mlen0..], c[mlen0..], 1, extended.key, extended.nonce);
     }
 };
 
@@ -439,18 +439,18 @@ pub const SecretBox = struct {
     /// Encrypt and authenticate `m` using a nonce `npub` and a key `k`.
     /// `c` must be exactly `tag_length` longer than `m`, as it will store both the ciphertext and the authentication tag.
     pub fn seal(c: []u8, m: []const u8, npub: [nonce_length]u8, k: [key_length]u8) void {
-        debug.assert(c.len == tag_length + m.len);
-        XSalsa20Poly1305.encrypt(c[tag_length..], c[0..tag_length], m, "", npub, k);
+                     debug.assert(c.len == tag_length + m.len);
+                     XSalsa20Poly1305.encrypt(c[tag_length..], c[0..tag_length], m, "", npub, k);
     }
 
     /// Verify and decrypt `c` using a nonce `npub` and a key `k`.
     /// `m` must be exactly `tag_length` smaller than `c`, as `c` includes an authentication tag in addition to the encrypted message.
     pub fn open(m: []u8, c: []const u8, npub: [nonce_length]u8, k: [key_length]u8) !void {
-        if (c.len < tag_length) {
-            return error.AuthenticationFailed;
-        }
-        debug.assert(m.len == c.len - tag_length);
-        return XSalsa20Poly1305.decrypt(m, c[tag_length..], c[0..tag_length].*, "", npub, k);
+                     if (c.len < tag_length) {
+                                      return error.AuthenticationFailed;
+                     }
+                     debug.assert(m.len == c.len - tag_length);
+                     return XSalsa20Poly1305.decrypt(m, c[tag_length..], c[0..tag_length].*, "", npub, k);
     }
 };
 
@@ -481,21 +481,21 @@ pub const Box = struct {
 
     /// Compute a secret suitable for `secretbox` given a recipent's public key and a sender's secret key.
     pub fn createSharedSecret(public_key: [public_length]u8, secret_key: [secret_length]u8) ![shared_length]u8 {
-        const p = try X25519.scalarmult(secret_key, public_key);
-        const zero = [_]u8{0} ** 16;
-        return Salsa20Impl.hsalsa20(zero, p);
+                     const p = try X25519.scalarmult(secret_key, public_key);
+                     const zero = [_]u8{0} ** 16;
+                     return Salsa20Impl.hsalsa20(zero, p);
     }
 
     /// Encrypt and authenticate a message using a recipient's public key `public_key` and a sender's `secret_key`.
     pub fn seal(c: []u8, m: []const u8, npub: [nonce_length]u8, public_key: [public_length]u8, secret_key: [secret_length]u8) !void {
-        const shared_key = try createSharedSecret(public_key, secret_key);
-        return SecretBox.seal(c, m, npub, shared_key);
+                     const shared_key = try createSharedSecret(public_key, secret_key);
+                     return SecretBox.seal(c, m, npub, shared_key);
     }
 
     /// Verify and decrypt a message using a recipient's secret key `public_key` and a sender's `public_key`.
     pub fn open(m: []u8, c: []const u8, npub: [nonce_length]u8, public_key: [public_length]u8, secret_key: [secret_length]u8) !void {
-        const shared_key = try createSharedSecret(public_key, secret_key);
-        return SecretBox.open(m, c, npub, shared_key);
+                     const shared_key = try createSharedSecret(public_key, secret_key);
+                     return SecretBox.open(m, c, npub, shared_key);
     }
 };
 
@@ -516,34 +516,34 @@ pub const SealedBox = struct {
     pub const KeyPair = Box.KeyPair;
 
     fn createNonce(pk1: [public_length]u8, pk2: [public_length]u8) [Box.nonce_length]u8 {
-        var hasher = Blake2b(Box.nonce_length * 8).init(.{});
-        hasher.update(&pk1);
-        hasher.update(&pk2);
-        var nonce: [Box.nonce_length]u8 = undefined;
-        hasher.final(&nonce);
-        return nonce;
+                     var hasher = Blake2b(Box.nonce_length * 8).init(.{});
+                     hasher.update(&pk1);
+                     hasher.update(&pk2);
+                     var nonce: [Box.nonce_length]u8 = undefined;
+                     hasher.final(&nonce);
+                     return nonce;
     }
 
     /// Encrypt a message `m` for a recipient whose public key is `public_key`.
     /// `c` must be `seal_length` bytes larger than `m`, so that the required metadata can be added.
     pub fn seal(c: []u8, m: []const u8, public_key: [public_length]u8) !void {
-        debug.assert(c.len == m.len + seal_length);
-        var ekp = try KeyPair.create(null);
-        const nonce = createNonce(ekp.public_key, public_key);
-        mem.copy(u8, c[0..public_length], ekp.public_key[0..]);
-        try Box.seal(c[Box.public_length..], m, nonce, public_key, ekp.secret_key);
-        mem.secureZero(u8, ekp.secret_key[0..]);
+                     debug.assert(c.len == m.len + seal_length);
+                     var ekp = try KeyPair.create(null);
+                     const nonce = createNonce(ekp.public_key, public_key);
+                     mem.copy(u8, c[0..public_length], ekp.public_key[0..]);
+                     try Box.seal(c[Box.public_length..], m, nonce, public_key, ekp.secret_key);
+                     mem.secureZero(u8, ekp.secret_key[0..]);
     }
 
     /// Decrypt a message using a key pair.
     /// `m` must be exactly `seal_length` bytes smaller than `c`, as `c` also includes metadata.
     pub fn open(m: []u8, c: []const u8, keypair: KeyPair) !void {
-        if (c.len < seal_length) {
-            return error.AuthenticationFailed;
-        }
-        const epk = c[0..public_length];
-        const nonce = createNonce(epk.*, keypair.public_key);
-        return Box.open(m, c[public_length..], nonce, epk.*, keypair.secret_key);
+                     if (c.len < seal_length) {
+                                      return error.AuthenticationFailed;
+                     }
+                     const epk = c[0..public_length];
+                     const nonce = createNonce(epk.*, keypair.public_key);
+                     return Box.open(m, c[public_length..], nonce, epk.*, keypair.secret_key);
     }
 };
 

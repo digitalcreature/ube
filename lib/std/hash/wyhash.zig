@@ -45,89 +45,89 @@ const WyhashStateless = struct {
     msg_len: usize,
 
     pub fn init(seed: u64) WyhashStateless {
-        return WyhashStateless{
-            .seed = seed,
-            .msg_len = 0,
-        };
+                     return WyhashStateless{
+                                      .seed = seed,
+                                      .msg_len = 0,
+                     };
     }
 
     fn round(self: *WyhashStateless, b: []const u8) void {
-        std.debug.assert(b.len == 32);
+                     std.debug.assert(b.len == 32);
 
-        self.seed = mix0(
-            read_bytes(8, b[0..]),
-            read_bytes(8, b[8..]),
-            self.seed,
-        ) ^ mix1(
-            read_bytes(8, b[16..]),
-            read_bytes(8, b[24..]),
-            self.seed,
-        );
+                     self.seed = mix0(
+                                      read_bytes(8, b[0..]),
+                                      read_bytes(8, b[8..]),
+                                      self.seed,
+                     ) ^ mix1(
+                                      read_bytes(8, b[16..]),
+                                      read_bytes(8, b[24..]),
+                                      self.seed,
+                     );
     }
 
     pub fn update(self: *WyhashStateless, b: []const u8) void {
-        std.debug.assert(b.len % 32 == 0);
+                     std.debug.assert(b.len % 32 == 0);
 
-        var off: usize = 0;
-        while (off < b.len) : (off += 32) {
-            @call(.{ .modifier = .always_inline }, self.round, .{b[off .. off + 32]});
-        }
+                     var off: usize = 0;
+                     while (off < b.len) : (off += 32) {
+                                      @call(.{ .modifier = .always_inline }, self.round, .{b[off .. off + 32]});
+                     }
 
-        self.msg_len += b.len;
+                     self.msg_len += b.len;
     }
 
     pub fn final(self: *WyhashStateless, b: []const u8) u64 {
-        std.debug.assert(b.len < 32);
+                     std.debug.assert(b.len < 32);
 
-        const seed = self.seed;
-        const rem_len = @intCast(u5, b.len);
-        const rem_key = b[0..rem_len];
+                     const seed = self.seed;
+                     const rem_len = @intCast(u5, b.len);
+                     const rem_key = b[0..rem_len];
 
-        self.seed = switch (rem_len) {
-            0 => seed,
-            1 => mix0(read_bytes(1, rem_key), primes[4], seed),
-            2 => mix0(read_bytes(2, rem_key), primes[4], seed),
-            3 => mix0((read_bytes(2, rem_key) << 8) | read_bytes(1, rem_key[2..]), primes[4], seed),
-            4 => mix0(read_bytes(4, rem_key), primes[4], seed),
-            5 => mix0((read_bytes(4, rem_key) << 8) | read_bytes(1, rem_key[4..]), primes[4], seed),
-            6 => mix0((read_bytes(4, rem_key) << 16) | read_bytes(2, rem_key[4..]), primes[4], seed),
-            7 => mix0((read_bytes(4, rem_key) << 24) | (read_bytes(2, rem_key[4..]) << 8) | read_bytes(1, rem_key[6..]), primes[4], seed),
-            8 => mix0(read_8bytes_swapped(rem_key), primes[4], seed),
-            9 => mix0(read_8bytes_swapped(rem_key), read_bytes(1, rem_key[8..]), seed),
-            10 => mix0(read_8bytes_swapped(rem_key), read_bytes(2, rem_key[8..]), seed),
-            11 => mix0(read_8bytes_swapped(rem_key), (read_bytes(2, rem_key[8..]) << 8) | read_bytes(1, rem_key[10..]), seed),
-            12 => mix0(read_8bytes_swapped(rem_key), read_bytes(4, rem_key[8..]), seed),
-            13 => mix0(read_8bytes_swapped(rem_key), (read_bytes(4, rem_key[8..]) << 8) | read_bytes(1, rem_key[12..]), seed),
-            14 => mix0(read_8bytes_swapped(rem_key), (read_bytes(4, rem_key[8..]) << 16) | read_bytes(2, rem_key[12..]), seed),
-            15 => mix0(read_8bytes_swapped(rem_key), (read_bytes(4, rem_key[8..]) << 24) | (read_bytes(2, rem_key[12..]) << 8) | read_bytes(1, rem_key[14..]), seed),
-            16 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed),
-            17 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_bytes(1, rem_key[16..]), primes[4], seed),
-            18 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_bytes(2, rem_key[16..]), primes[4], seed),
-            19 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1((read_bytes(2, rem_key[16..]) << 8) | read_bytes(1, rem_key[18..]), primes[4], seed),
-            20 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_bytes(4, rem_key[16..]), primes[4], seed),
-            21 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1((read_bytes(4, rem_key[16..]) << 8) | read_bytes(1, rem_key[20..]), primes[4], seed),
-            22 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1((read_bytes(4, rem_key[16..]) << 16) | read_bytes(2, rem_key[20..]), primes[4], seed),
-            23 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1((read_bytes(4, rem_key[16..]) << 24) | (read_bytes(2, rem_key[20..]) << 8) | read_bytes(1, rem_key[22..]), primes[4], seed),
-            24 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), primes[4], seed),
-            25 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), read_bytes(1, rem_key[24..]), seed),
-            26 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), read_bytes(2, rem_key[24..]), seed),
-            27 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), (read_bytes(2, rem_key[24..]) << 8) | read_bytes(1, rem_key[26..]), seed),
-            28 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), read_bytes(4, rem_key[24..]), seed),
-            29 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), (read_bytes(4, rem_key[24..]) << 8) | read_bytes(1, rem_key[28..]), seed),
-            30 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), (read_bytes(4, rem_key[24..]) << 16) | read_bytes(2, rem_key[28..]), seed),
-            31 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), (read_bytes(4, rem_key[24..]) << 24) | (read_bytes(2, rem_key[28..]) << 8) | read_bytes(1, rem_key[30..]), seed),
-        };
+                     self.seed = switch (rem_len) {
+                                      0 => seed,
+                                      1 => mix0(read_bytes(1, rem_key), primes[4], seed),
+                                      2 => mix0(read_bytes(2, rem_key), primes[4], seed),
+                                      3 => mix0((read_bytes(2, rem_key) << 8) | read_bytes(1, rem_key[2..]), primes[4], seed),
+                                      4 => mix0(read_bytes(4, rem_key), primes[4], seed),
+                                      5 => mix0((read_bytes(4, rem_key) << 8) | read_bytes(1, rem_key[4..]), primes[4], seed),
+                                      6 => mix0((read_bytes(4, rem_key) << 16) | read_bytes(2, rem_key[4..]), primes[4], seed),
+                                      7 => mix0((read_bytes(4, rem_key) << 24) | (read_bytes(2, rem_key[4..]) << 8) | read_bytes(1, rem_key[6..]), primes[4], seed),
+                                      8 => mix0(read_8bytes_swapped(rem_key), primes[4], seed),
+                                      9 => mix0(read_8bytes_swapped(rem_key), read_bytes(1, rem_key[8..]), seed),
+                                      10 => mix0(read_8bytes_swapped(rem_key), read_bytes(2, rem_key[8..]), seed),
+                                      11 => mix0(read_8bytes_swapped(rem_key), (read_bytes(2, rem_key[8..]) << 8) | read_bytes(1, rem_key[10..]), seed),
+                                      12 => mix0(read_8bytes_swapped(rem_key), read_bytes(4, rem_key[8..]), seed),
+                                      13 => mix0(read_8bytes_swapped(rem_key), (read_bytes(4, rem_key[8..]) << 8) | read_bytes(1, rem_key[12..]), seed),
+                                      14 => mix0(read_8bytes_swapped(rem_key), (read_bytes(4, rem_key[8..]) << 16) | read_bytes(2, rem_key[12..]), seed),
+                                      15 => mix0(read_8bytes_swapped(rem_key), (read_bytes(4, rem_key[8..]) << 24) | (read_bytes(2, rem_key[12..]) << 8) | read_bytes(1, rem_key[14..]), seed),
+                                      16 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed),
+                                      17 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_bytes(1, rem_key[16..]), primes[4], seed),
+                                      18 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_bytes(2, rem_key[16..]), primes[4], seed),
+                                      19 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1((read_bytes(2, rem_key[16..]) << 8) | read_bytes(1, rem_key[18..]), primes[4], seed),
+                                      20 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_bytes(4, rem_key[16..]), primes[4], seed),
+                                      21 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1((read_bytes(4, rem_key[16..]) << 8) | read_bytes(1, rem_key[20..]), primes[4], seed),
+                                      22 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1((read_bytes(4, rem_key[16..]) << 16) | read_bytes(2, rem_key[20..]), primes[4], seed),
+                                      23 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1((read_bytes(4, rem_key[16..]) << 24) | (read_bytes(2, rem_key[20..]) << 8) | read_bytes(1, rem_key[22..]), primes[4], seed),
+                                      24 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), primes[4], seed),
+                                      25 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), read_bytes(1, rem_key[24..]), seed),
+                                      26 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), read_bytes(2, rem_key[24..]), seed),
+                                      27 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), (read_bytes(2, rem_key[24..]) << 8) | read_bytes(1, rem_key[26..]), seed),
+                                      28 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), read_bytes(4, rem_key[24..]), seed),
+                                      29 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), (read_bytes(4, rem_key[24..]) << 8) | read_bytes(1, rem_key[28..]), seed),
+                                      30 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), (read_bytes(4, rem_key[24..]) << 16) | read_bytes(2, rem_key[28..]), seed),
+                                      31 => mix0(read_8bytes_swapped(rem_key), read_8bytes_swapped(rem_key[8..]), seed) ^ mix1(read_8bytes_swapped(rem_key[16..]), (read_bytes(4, rem_key[24..]) << 24) | (read_bytes(2, rem_key[28..]) << 8) | read_bytes(1, rem_key[30..]), seed),
+                     };
 
-        self.msg_len += b.len;
-        return mum(self.seed ^ self.msg_len, primes[4]);
+                     self.msg_len += b.len;
+                     return mum(self.seed ^ self.msg_len, primes[4]);
     }
 
     pub fn hash(seed: u64, input: []const u8) u64 {
-        const aligned_len = input.len - (input.len % 32);
+                     const aligned_len = input.len - (input.len % 32);
 
-        var c = WyhashStateless.init(seed);
-        @call(.{ .modifier = .always_inline }, c.update, .{input[0..aligned_len]});
-        return @call(.{ .modifier = .always_inline }, c.final, .{input[aligned_len..]});
+                     var c = WyhashStateless.init(seed);
+                     @call(.{ .modifier = .always_inline }, c.update, .{input[0..aligned_len]});
+                     return @call(.{ .modifier = .always_inline }, c.final, .{input[aligned_len..]});
     }
 };
 
@@ -140,41 +140,41 @@ pub const Wyhash = struct {
     buf_len: usize,
 
     pub fn init(seed: u64) Wyhash {
-        return Wyhash{
-            .state = WyhashStateless.init(seed),
-            .buf = undefined,
-            .buf_len = 0,
-        };
+                     return Wyhash{
+                                      .state = WyhashStateless.init(seed),
+                                      .buf = undefined,
+                                      .buf_len = 0,
+                     };
     }
 
     pub fn update(self: *Wyhash, b: []const u8) void {
-        var off: usize = 0;
+                     var off: usize = 0;
 
-        if (self.buf_len != 0 and self.buf_len + b.len >= 32) {
-            off += 32 - self.buf_len;
-            mem.copy(u8, self.buf[self.buf_len..], b[0..off]);
-            self.state.update(self.buf[0..]);
-            self.buf_len = 0;
-        }
+                     if (self.buf_len != 0 and self.buf_len + b.len >= 32) {
+                                      off += 32 - self.buf_len;
+                                      mem.copy(u8, self.buf[self.buf_len..], b[0..off]);
+                                      self.state.update(self.buf[0..]);
+                                      self.buf_len = 0;
+                     }
 
-        const remain_len = b.len - off;
-        const aligned_len = remain_len - (remain_len % 32);
-        self.state.update(b[off .. off + aligned_len]);
+                     const remain_len = b.len - off;
+                     const aligned_len = remain_len - (remain_len % 32);
+                     self.state.update(b[off .. off + aligned_len]);
 
-        mem.copy(u8, self.buf[self.buf_len..], b[off + aligned_len ..]);
-        self.buf_len += @intCast(u8, b[off + aligned_len ..].len);
+                     mem.copy(u8, self.buf[self.buf_len..], b[off + aligned_len ..]);
+                     self.buf_len += @intCast(u8, b[off + aligned_len ..].len);
     }
 
     pub fn final(self: *Wyhash) u64 {
-        const seed = self.state.seed;
-        const rem_len = @intCast(u5, self.buf_len);
-        const rem_key = self.buf[0..self.buf_len];
+                     const seed = self.state.seed;
+                     const rem_len = @intCast(u5, self.buf_len);
+                     const rem_key = self.buf[0..self.buf_len];
 
-        return self.state.final(rem_key);
+                     return self.state.final(rem_key);
     }
 
     pub fn hash(seed: u64, input: []const u8) u64 {
-        return WyhashStateless.hash(seed, input);
+                     return WyhashStateless.hash(seed, input);
     }
 };
 
@@ -195,7 +195,7 @@ test "test vectors" {
 test "test vectors streaming" {
     var wh = Wyhash.init(5);
     for ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789") |e| {
-        wh.update(mem.asBytes(&e));
+                     wh.update(mem.asBytes(&e));
     }
     expectEqual(wh.final(), 0x602a1894d3bbfe7f);
 
@@ -207,7 +207,7 @@ test "test vectors streaming" {
     wh = Wyhash.init(6);
     var i: u32 = 0;
     while (i < count) : (i += 1) {
-        wh.update(pattern);
+                     wh.update(pattern);
     }
     expectEqual(wh.final(), result);
 }
@@ -215,22 +215,22 @@ test "test vectors streaming" {
 test "iterative non-divisible update" {
     var buf: [8192]u8 = undefined;
     for (buf) |*e, i| {
-        e.* = @truncate(u8, i);
+                     e.* = @truncate(u8, i);
     }
 
     const seed = 0x128dad08f;
 
     var end: usize = 32;
     while (end < buf.len) : (end += 32) {
-        const non_iterative_hash = Wyhash.hash(seed, buf[0..end]);
+                     const non_iterative_hash = Wyhash.hash(seed, buf[0..end]);
 
-        var wy = Wyhash.init(seed);
-        var i: usize = 0;
-        while (i < end) : (i += 33) {
-            wy.update(buf[i..std.math.min(i + 33, end)]);
-        }
-        const iterative_hash = wy.final();
+                     var wy = Wyhash.init(seed);
+                     var i: usize = 0;
+                     while (i < end) : (i += 33) {
+                                      wy.update(buf[i..std.math.min(i + 33, end)]);
+                     }
+                     const iterative_hash = wy.final();
 
-        std.testing.expectEqual(iterative_hash, non_iterative_hash);
+                     std.testing.expectEqual(iterative_hash, non_iterative_hash);
     }
 }

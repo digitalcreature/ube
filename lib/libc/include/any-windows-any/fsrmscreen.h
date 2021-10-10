@@ -223,24 +223,24 @@ MIDL_INTERFACE("426677d5-018c-485c-8a51-20b86d00bdc4")
 IFsrmFileGroupManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE CreateFileGroup(
-        IFsrmFileGroup **fileGroup) = 0;
+                     IFsrmFileGroup **fileGroup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileGroup(
-        BSTR name,
-        IFsrmFileGroup **fileGroup) = 0;
+                     BSTR name,
+                     IFsrmFileGroup **fileGroup) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumFileGroups(
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **fileGroups) = 0;
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **fileGroups) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExportFileGroups(
-        VARIANT *fileGroupNamesArray,
-        BSTR *serializedFileGroups) = 0;
+                     VARIANT *fileGroupNamesArray,
+                     BSTR *serializedFileGroups) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportFileGroups(
-        BSTR serializedFileGroups,
-        VARIANT *fileGroupNamesArray,
-        IFsrmCommittableCollection **fileGroups) = 0;
+                     BSTR serializedFileGroups,
+                     VARIANT *fileGroupNamesArray,
+                     IFsrmCommittableCollection **fileGroups) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -252,71 +252,71 @@ typedef struct IFsrmFileGroupManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileGroupManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileGroupManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileGroupManager *This);
+                     IFsrmFileGroupManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileGroupManager *This);
+                     IFsrmFileGroupManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileGroupManager *This,
-        UINT *pctinfo);
+                     IFsrmFileGroupManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileGroupManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileGroupManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileGroupManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileGroupManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileGroupManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileGroupManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmFileGroupManager methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateFileGroup)(
-        IFsrmFileGroupManager *This,
-        IFsrmFileGroup **fileGroup);
+                     IFsrmFileGroupManager *This,
+                     IFsrmFileGroup **fileGroup);
 
     HRESULT (STDMETHODCALLTYPE *GetFileGroup)(
-        IFsrmFileGroupManager *This,
-        BSTR name,
-        IFsrmFileGroup **fileGroup);
+                     IFsrmFileGroupManager *This,
+                     BSTR name,
+                     IFsrmFileGroup **fileGroup);
 
     HRESULT (STDMETHODCALLTYPE *EnumFileGroups)(
-        IFsrmFileGroupManager *This,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **fileGroups);
+                     IFsrmFileGroupManager *This,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **fileGroups);
 
     HRESULT (STDMETHODCALLTYPE *ExportFileGroups)(
-        IFsrmFileGroupManager *This,
-        VARIANT *fileGroupNamesArray,
-        BSTR *serializedFileGroups);
+                     IFsrmFileGroupManager *This,
+                     VARIANT *fileGroupNamesArray,
+                     BSTR *serializedFileGroups);
 
     HRESULT (STDMETHODCALLTYPE *ImportFileGroups)(
-        IFsrmFileGroupManager *This,
-        BSTR serializedFileGroups,
-        VARIANT *fileGroupNamesArray,
-        IFsrmCommittableCollection **fileGroups);
+                     IFsrmFileGroupManager *This,
+                     BSTR serializedFileGroups,
+                     VARIANT *fileGroupNamesArray,
+                     IFsrmCommittableCollection **fileGroups);
 
     END_INTERFACE
 } IFsrmFileGroupManagerVtbl;
@@ -402,39 +402,39 @@ MIDL_INTERFACE("ff4fa04e-5a94-4bda-a3a0-d5b4d3c52eba")
 IFsrmFileScreenManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_ActionVariables(
-        SAFEARRAY **variables) = 0;
+                     SAFEARRAY **variables) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ActionVariableDescriptions(
-        SAFEARRAY **descriptions) = 0;
+                     SAFEARRAY **descriptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFileScreen(
-        BSTR path,
-        IFsrmFileScreen **fileScreen) = 0;
+                     BSTR path,
+                     IFsrmFileScreen **fileScreen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileScreen(
-        BSTR path,
-        IFsrmFileScreen **fileScreen) = 0;
+                     BSTR path,
+                     IFsrmFileScreen **fileScreen) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumFileScreens(
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **fileScreens) = 0;
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **fileScreens) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFileScreenException(
-        BSTR path,
-        IFsrmFileScreenException **fileScreenException) = 0;
+                     BSTR path,
+                     IFsrmFileScreenException **fileScreenException) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFileScreenException(
-        BSTR path,
-        IFsrmFileScreenException **fileScreenException) = 0;
+                     BSTR path,
+                     IFsrmFileScreenException **fileScreenException) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumFileScreenExceptions(
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **fileScreenExceptions) = 0;
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **fileScreenExceptions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFileScreenCollection(
-        IFsrmCommittableCollection **collection) = 0;
+                     IFsrmCommittableCollection **collection) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -446,90 +446,90 @@ typedef struct IFsrmFileScreenManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileScreenManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileScreenManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileScreenManager *This);
+                     IFsrmFileScreenManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileScreenManager *This);
+                     IFsrmFileScreenManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileScreenManager *This,
-        UINT *pctinfo);
+                     IFsrmFileScreenManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileScreenManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileScreenManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileScreenManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileScreenManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileScreenManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileScreenManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmFileScreenManager methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ActionVariables)(
-        IFsrmFileScreenManager *This,
-        SAFEARRAY **variables);
+                     IFsrmFileScreenManager *This,
+                     SAFEARRAY **variables);
 
     HRESULT (STDMETHODCALLTYPE *get_ActionVariableDescriptions)(
-        IFsrmFileScreenManager *This,
-        SAFEARRAY **descriptions);
+                     IFsrmFileScreenManager *This,
+                     SAFEARRAY **descriptions);
 
     HRESULT (STDMETHODCALLTYPE *CreateFileScreen)(
-        IFsrmFileScreenManager *This,
-        BSTR path,
-        IFsrmFileScreen **fileScreen);
+                     IFsrmFileScreenManager *This,
+                     BSTR path,
+                     IFsrmFileScreen **fileScreen);
 
     HRESULT (STDMETHODCALLTYPE *GetFileScreen)(
-        IFsrmFileScreenManager *This,
-        BSTR path,
-        IFsrmFileScreen **fileScreen);
+                     IFsrmFileScreenManager *This,
+                     BSTR path,
+                     IFsrmFileScreen **fileScreen);
 
     HRESULT (STDMETHODCALLTYPE *EnumFileScreens)(
-        IFsrmFileScreenManager *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **fileScreens);
+                     IFsrmFileScreenManager *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **fileScreens);
 
     HRESULT (STDMETHODCALLTYPE *CreateFileScreenException)(
-        IFsrmFileScreenManager *This,
-        BSTR path,
-        IFsrmFileScreenException **fileScreenException);
+                     IFsrmFileScreenManager *This,
+                     BSTR path,
+                     IFsrmFileScreenException **fileScreenException);
 
     HRESULT (STDMETHODCALLTYPE *GetFileScreenException)(
-        IFsrmFileScreenManager *This,
-        BSTR path,
-        IFsrmFileScreenException **fileScreenException);
+                     IFsrmFileScreenManager *This,
+                     BSTR path,
+                     IFsrmFileScreenException **fileScreenException);
 
     HRESULT (STDMETHODCALLTYPE *EnumFileScreenExceptions)(
-        IFsrmFileScreenManager *This,
-        BSTR path,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **fileScreenExceptions);
+                     IFsrmFileScreenManager *This,
+                     BSTR path,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **fileScreenExceptions);
 
     HRESULT (STDMETHODCALLTYPE *CreateFileScreenCollection)(
-        IFsrmFileScreenManager *This,
-        IFsrmCommittableCollection **collection);
+                     IFsrmFileScreenManager *This,
+                     IFsrmCommittableCollection **collection);
 
     END_INTERFACE
 } IFsrmFileScreenManagerVtbl;
@@ -631,24 +631,24 @@ MIDL_INTERFACE("cfe36cba-1949-4e74-a14f-f1d580ceaf13")
 IFsrmFileScreenTemplateManager : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE CreateTemplate(
-        IFsrmFileScreenTemplate **fileScreenTemplate) = 0;
+                     IFsrmFileScreenTemplate **fileScreenTemplate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTemplate(
-        BSTR name,
-        IFsrmFileScreenTemplate **fileScreenTemplate) = 0;
+                     BSTR name,
+                     IFsrmFileScreenTemplate **fileScreenTemplate) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumTemplates(
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **fileScreenTemplates) = 0;
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **fileScreenTemplates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ExportTemplates(
-        VARIANT *fileScreenTemplateNamesArray,
-        BSTR *serializedFileScreenTemplates) = 0;
+                     VARIANT *fileScreenTemplateNamesArray,
+                     BSTR *serializedFileScreenTemplates) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ImportTemplates(
-        BSTR serializedFileScreenTemplates,
-        VARIANT *fileScreenTemplateNamesArray,
-        IFsrmCommittableCollection **fileScreenTemplates) = 0;
+                     BSTR serializedFileScreenTemplates,
+                     VARIANT *fileScreenTemplateNamesArray,
+                     IFsrmCommittableCollection **fileScreenTemplates) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -660,71 +660,71 @@ typedef struct IFsrmFileScreenTemplateManagerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileScreenTemplateManager *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileScreenTemplateManager *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileScreenTemplateManager *This);
+                     IFsrmFileScreenTemplateManager *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileScreenTemplateManager *This);
+                     IFsrmFileScreenTemplateManager *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileScreenTemplateManager *This,
-        UINT *pctinfo);
+                     IFsrmFileScreenTemplateManager *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileScreenTemplateManager *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileScreenTemplateManager *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileScreenTemplateManager *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileScreenTemplateManager *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileScreenTemplateManager *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileScreenTemplateManager *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmFileScreenTemplateManager methods ***/
     HRESULT (STDMETHODCALLTYPE *CreateTemplate)(
-        IFsrmFileScreenTemplateManager *This,
-        IFsrmFileScreenTemplate **fileScreenTemplate);
+                     IFsrmFileScreenTemplateManager *This,
+                     IFsrmFileScreenTemplate **fileScreenTemplate);
 
     HRESULT (STDMETHODCALLTYPE *GetTemplate)(
-        IFsrmFileScreenTemplateManager *This,
-        BSTR name,
-        IFsrmFileScreenTemplate **fileScreenTemplate);
+                     IFsrmFileScreenTemplateManager *This,
+                     BSTR name,
+                     IFsrmFileScreenTemplate **fileScreenTemplate);
 
     HRESULT (STDMETHODCALLTYPE *EnumTemplates)(
-        IFsrmFileScreenTemplateManager *This,
-        FsrmEnumOptions options,
-        IFsrmCommittableCollection **fileScreenTemplates);
+                     IFsrmFileScreenTemplateManager *This,
+                     FsrmEnumOptions options,
+                     IFsrmCommittableCollection **fileScreenTemplates);
 
     HRESULT (STDMETHODCALLTYPE *ExportTemplates)(
-        IFsrmFileScreenTemplateManager *This,
-        VARIANT *fileScreenTemplateNamesArray,
-        BSTR *serializedFileScreenTemplates);
+                     IFsrmFileScreenTemplateManager *This,
+                     VARIANT *fileScreenTemplateNamesArray,
+                     BSTR *serializedFileScreenTemplates);
 
     HRESULT (STDMETHODCALLTYPE *ImportTemplates)(
-        IFsrmFileScreenTemplateManager *This,
-        BSTR serializedFileScreenTemplates,
-        VARIANT *fileScreenTemplateNamesArray,
-        IFsrmCommittableCollection **fileScreenTemplates);
+                     IFsrmFileScreenTemplateManager *This,
+                     BSTR serializedFileScreenTemplates,
+                     VARIANT *fileScreenTemplateNamesArray,
+                     IFsrmCommittableCollection **fileScreenTemplates);
 
     END_INTERFACE
 } IFsrmFileScreenTemplateManagerVtbl;
@@ -810,22 +810,22 @@ MIDL_INTERFACE("8dd04909-0e34-4d55-afaa-89e1f1a1bbb9")
 IFsrmFileGroup : public IFsrmObject
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Members(
-        IFsrmMutableCollection **members) = 0;
+                     IFsrmMutableCollection **members) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Members(
-        IFsrmMutableCollection *members) = 0;
+                     IFsrmMutableCollection *members) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NonMembers(
-        IFsrmMutableCollection **nonMembers) = 0;
+                     IFsrmMutableCollection **nonMembers) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NonMembers(
-        IFsrmMutableCollection *nonMembers) = 0;
+                     IFsrmMutableCollection *nonMembers) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -837,89 +837,89 @@ typedef struct IFsrmFileGroupVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileGroup *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileGroup *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileGroup *This);
+                     IFsrmFileGroup *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileGroup *This);
+                     IFsrmFileGroup *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileGroup *This,
-        UINT *pctinfo);
+                     IFsrmFileGroup *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileGroup *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileGroup *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileGroup *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileGroup *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileGroup *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileGroup *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmFileGroup *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmFileGroup *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmFileGroup *This,
-        BSTR *description);
+                     IFsrmFileGroup *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmFileGroup *This,
-        BSTR description);
+                     IFsrmFileGroup *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileGroup *This);
+                     IFsrmFileGroup *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmFileGroup *This);
+                     IFsrmFileGroup *This);
 
     /*** IFsrmFileGroup methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmFileGroup *This,
-        BSTR *name);
+                     IFsrmFileGroup *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmFileGroup *This,
-        BSTR name);
+                     IFsrmFileGroup *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Members)(
-        IFsrmFileGroup *This,
-        IFsrmMutableCollection **members);
+                     IFsrmFileGroup *This,
+                     IFsrmMutableCollection **members);
 
     HRESULT (STDMETHODCALLTYPE *put_Members)(
-        IFsrmFileGroup *This,
-        IFsrmMutableCollection *members);
+                     IFsrmFileGroup *This,
+                     IFsrmMutableCollection *members);
 
     HRESULT (STDMETHODCALLTYPE *get_NonMembers)(
-        IFsrmFileGroup *This,
-        IFsrmMutableCollection **nonMembers);
+                     IFsrmFileGroup *This,
+                     IFsrmMutableCollection **nonMembers);
 
     HRESULT (STDMETHODCALLTYPE *put_NonMembers)(
-        IFsrmFileGroup *This,
-        IFsrmMutableCollection *nonMembers);
+                     IFsrmFileGroup *This,
+                     IFsrmMutableCollection *nonMembers);
 
     END_INTERFACE
 } IFsrmFileGroupVtbl;
@@ -1031,23 +1031,23 @@ MIDL_INTERFACE("f3637e80-5b22-4a2b-a637-bbb642b41cfc")
 IFsrmFileScreenBase : public IFsrmObject
 {
     virtual HRESULT STDMETHODCALLTYPE get_BlockedFileGroups(
-        IFsrmMutableCollection **blockList) = 0;
+                     IFsrmMutableCollection **blockList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_BlockedFileGroups(
-        IFsrmMutableCollection *blockList) = 0;
+                     IFsrmMutableCollection *blockList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_FileScreenFlags(
-        LONG *fileScreenFlags) = 0;
+                     LONG *fileScreenFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_FileScreenFlags(
-        LONG fileScreenFlags) = 0;
+                     LONG fileScreenFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateAction(
-        FsrmActionType actionType,
-        IFsrmAction **action) = 0;
+                     FsrmActionType actionType,
+                     IFsrmAction **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumActions(
-        IFsrmCollection **actions) = 0;
+                     IFsrmCollection **actions) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1059,90 +1059,90 @@ typedef struct IFsrmFileScreenBaseVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileScreenBase *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileScreenBase *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileScreenBase *This);
+                     IFsrmFileScreenBase *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileScreenBase *This);
+                     IFsrmFileScreenBase *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileScreenBase *This,
-        UINT *pctinfo);
+                     IFsrmFileScreenBase *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileScreenBase *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileScreenBase *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileScreenBase *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileScreenBase *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileScreenBase *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileScreenBase *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmFileScreenBase *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmFileScreenBase *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmFileScreenBase *This,
-        BSTR *description);
+                     IFsrmFileScreenBase *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmFileScreenBase *This,
-        BSTR description);
+                     IFsrmFileScreenBase *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileScreenBase *This);
+                     IFsrmFileScreenBase *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmFileScreenBase *This);
+                     IFsrmFileScreenBase *This);
 
     /*** IFsrmFileScreenBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_BlockedFileGroups)(
-        IFsrmFileScreenBase *This,
-        IFsrmMutableCollection **blockList);
+                     IFsrmFileScreenBase *This,
+                     IFsrmMutableCollection **blockList);
 
     HRESULT (STDMETHODCALLTYPE *put_BlockedFileGroups)(
-        IFsrmFileScreenBase *This,
-        IFsrmMutableCollection *blockList);
+                     IFsrmFileScreenBase *This,
+                     IFsrmMutableCollection *blockList);
 
     HRESULT (STDMETHODCALLTYPE *get_FileScreenFlags)(
-        IFsrmFileScreenBase *This,
-        LONG *fileScreenFlags);
+                     IFsrmFileScreenBase *This,
+                     LONG *fileScreenFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_FileScreenFlags)(
-        IFsrmFileScreenBase *This,
-        LONG fileScreenFlags);
+                     IFsrmFileScreenBase *This,
+                     LONG fileScreenFlags);
 
     HRESULT (STDMETHODCALLTYPE *CreateAction)(
-        IFsrmFileScreenBase *This,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmFileScreenBase *This,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumActions)(
-        IFsrmFileScreenBase *This,
-        IFsrmCollection **actions);
+                     IFsrmFileScreenBase *This,
+                     IFsrmCollection **actions);
 
     END_INTERFACE
 } IFsrmFileScreenBaseVtbl;
@@ -1254,13 +1254,13 @@ MIDL_INTERFACE("bee7ce02-df77-4515-9389-78f01c5afc1a")
 IFsrmFileScreenException : public IFsrmObject
 {
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowedFileGroups(
-        IFsrmMutableCollection **allowList) = 0;
+                     IFsrmMutableCollection **allowList) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowedFileGroups(
-        IFsrmMutableCollection *allowList) = 0;
+                     IFsrmMutableCollection *allowList) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1272,77 +1272,77 @@ typedef struct IFsrmFileScreenExceptionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileScreenException *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileScreenException *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileScreenException *This);
+                     IFsrmFileScreenException *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileScreenException *This);
+                     IFsrmFileScreenException *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileScreenException *This,
-        UINT *pctinfo);
+                     IFsrmFileScreenException *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileScreenException *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileScreenException *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileScreenException *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileScreenException *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileScreenException *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileScreenException *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmFileScreenException *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmFileScreenException *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmFileScreenException *This,
-        BSTR *description);
+                     IFsrmFileScreenException *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmFileScreenException *This,
-        BSTR description);
+                     IFsrmFileScreenException *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileScreenException *This);
+                     IFsrmFileScreenException *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmFileScreenException *This);
+                     IFsrmFileScreenException *This);
 
     /*** IFsrmFileScreenException methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IFsrmFileScreenException *This,
-        BSTR *path);
+                     IFsrmFileScreenException *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowedFileGroups)(
-        IFsrmFileScreenException *This,
-        IFsrmMutableCollection **allowList);
+                     IFsrmFileScreenException *This,
+                     IFsrmMutableCollection **allowList);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowedFileGroups)(
-        IFsrmFileScreenException *This,
-        IFsrmMutableCollection *allowList);
+                     IFsrmFileScreenException *This,
+                     IFsrmMutableCollection *allowList);
 
     END_INTERFACE
 } IFsrmFileScreenExceptionVtbl;
@@ -1442,22 +1442,22 @@ MIDL_INTERFACE("5f6325d3-ce88-4733-84c1-2d6aefc5ea07")
 IFsrmFileScreen : public IFsrmFileScreenBase
 {
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SourceTemplateName(
-        BSTR *fileScreenTemplateName) = 0;
+                     BSTR *fileScreenTemplateName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MatchesSourceTemplate(
-        VARIANT_BOOL *matches) = 0;
+                     VARIANT_BOOL *matches) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UserSid(
-        BSTR *userSid) = 0;
+                     BSTR *userSid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UserAccount(
-        BSTR *userAccount) = 0;
+                     BSTR *userAccount) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ApplyTemplate(
-        BSTR fileScreenTemplateName) = 0;
+                     BSTR fileScreenTemplateName) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1469,115 +1469,115 @@ typedef struct IFsrmFileScreenVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileScreen *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileScreen *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileScreen *This);
+                     IFsrmFileScreen *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileScreen *This);
+                     IFsrmFileScreen *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileScreen *This,
-        UINT *pctinfo);
+                     IFsrmFileScreen *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileScreen *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileScreen *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileScreen *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileScreen *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileScreen *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileScreen *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmFileScreen *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmFileScreen *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmFileScreen *This,
-        BSTR *description);
+                     IFsrmFileScreen *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmFileScreen *This,
-        BSTR description);
+                     IFsrmFileScreen *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileScreen *This);
+                     IFsrmFileScreen *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmFileScreen *This);
+                     IFsrmFileScreen *This);
 
     /*** IFsrmFileScreenBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_BlockedFileGroups)(
-        IFsrmFileScreen *This,
-        IFsrmMutableCollection **blockList);
+                     IFsrmFileScreen *This,
+                     IFsrmMutableCollection **blockList);
 
     HRESULT (STDMETHODCALLTYPE *put_BlockedFileGroups)(
-        IFsrmFileScreen *This,
-        IFsrmMutableCollection *blockList);
+                     IFsrmFileScreen *This,
+                     IFsrmMutableCollection *blockList);
 
     HRESULT (STDMETHODCALLTYPE *get_FileScreenFlags)(
-        IFsrmFileScreen *This,
-        LONG *fileScreenFlags);
+                     IFsrmFileScreen *This,
+                     LONG *fileScreenFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_FileScreenFlags)(
-        IFsrmFileScreen *This,
-        LONG fileScreenFlags);
+                     IFsrmFileScreen *This,
+                     LONG fileScreenFlags);
 
     HRESULT (STDMETHODCALLTYPE *CreateAction)(
-        IFsrmFileScreen *This,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmFileScreen *This,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumActions)(
-        IFsrmFileScreen *This,
-        IFsrmCollection **actions);
+                     IFsrmFileScreen *This,
+                     IFsrmCollection **actions);
 
     /*** IFsrmFileScreen methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IFsrmFileScreen *This,
-        BSTR *path);
+                     IFsrmFileScreen *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *get_SourceTemplateName)(
-        IFsrmFileScreen *This,
-        BSTR *fileScreenTemplateName);
+                     IFsrmFileScreen *This,
+                     BSTR *fileScreenTemplateName);
 
     HRESULT (STDMETHODCALLTYPE *get_MatchesSourceTemplate)(
-        IFsrmFileScreen *This,
-        VARIANT_BOOL *matches);
+                     IFsrmFileScreen *This,
+                     VARIANT_BOOL *matches);
 
     HRESULT (STDMETHODCALLTYPE *get_UserSid)(
-        IFsrmFileScreen *This,
-        BSTR *userSid);
+                     IFsrmFileScreen *This,
+                     BSTR *userSid);
 
     HRESULT (STDMETHODCALLTYPE *get_UserAccount)(
-        IFsrmFileScreen *This,
-        BSTR *userAccount);
+                     IFsrmFileScreen *This,
+                     BSTR *userAccount);
 
     HRESULT (STDMETHODCALLTYPE *ApplyTemplate)(
-        IFsrmFileScreen *This,
-        BSTR fileScreenTemplateName);
+                     IFsrmFileScreen *This,
+                     BSTR fileScreenTemplateName);
 
     END_INTERFACE
 } IFsrmFileScreenVtbl;
@@ -1715,10 +1715,10 @@ MIDL_INTERFACE("ad55f10b-5f11-4be7-94ef-d9ee2e470ded")
 IFsrmFileGroupImported : public IFsrmFileGroup
 {
     virtual HRESULT STDMETHODCALLTYPE get_OverwriteOnCommit(
-        VARIANT_BOOL *overwrite) = 0;
+                     VARIANT_BOOL *overwrite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OverwriteOnCommit(
-        VARIANT_BOOL overwrite) = 0;
+                     VARIANT_BOOL overwrite) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1730,98 +1730,98 @@ typedef struct IFsrmFileGroupImportedVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileGroupImported *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileGroupImported *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileGroupImported *This);
+                     IFsrmFileGroupImported *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileGroupImported *This);
+                     IFsrmFileGroupImported *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileGroupImported *This,
-        UINT *pctinfo);
+                     IFsrmFileGroupImported *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileGroupImported *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileGroupImported *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileGroupImported *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileGroupImported *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileGroupImported *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileGroupImported *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmFileGroupImported *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmFileGroupImported *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmFileGroupImported *This,
-        BSTR *description);
+                     IFsrmFileGroupImported *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmFileGroupImported *This,
-        BSTR description);
+                     IFsrmFileGroupImported *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileGroupImported *This);
+                     IFsrmFileGroupImported *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmFileGroupImported *This);
+                     IFsrmFileGroupImported *This);
 
     /*** IFsrmFileGroup methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmFileGroupImported *This,
-        BSTR *name);
+                     IFsrmFileGroupImported *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmFileGroupImported *This,
-        BSTR name);
+                     IFsrmFileGroupImported *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Members)(
-        IFsrmFileGroupImported *This,
-        IFsrmMutableCollection **members);
+                     IFsrmFileGroupImported *This,
+                     IFsrmMutableCollection **members);
 
     HRESULT (STDMETHODCALLTYPE *put_Members)(
-        IFsrmFileGroupImported *This,
-        IFsrmMutableCollection *members);
+                     IFsrmFileGroupImported *This,
+                     IFsrmMutableCollection *members);
 
     HRESULT (STDMETHODCALLTYPE *get_NonMembers)(
-        IFsrmFileGroupImported *This,
-        IFsrmMutableCollection **nonMembers);
+                     IFsrmFileGroupImported *This,
+                     IFsrmMutableCollection **nonMembers);
 
     HRESULT (STDMETHODCALLTYPE *put_NonMembers)(
-        IFsrmFileGroupImported *This,
-        IFsrmMutableCollection *nonMembers);
+                     IFsrmFileGroupImported *This,
+                     IFsrmMutableCollection *nonMembers);
 
     /*** IFsrmFileGroupImported methods ***/
     HRESULT (STDMETHODCALLTYPE *get_OverwriteOnCommit)(
-        IFsrmFileGroupImported *This,
-        VARIANT_BOOL *overwrite);
+                     IFsrmFileGroupImported *This,
+                     VARIANT_BOOL *overwrite);
 
     HRESULT (STDMETHODCALLTYPE *put_OverwriteOnCommit)(
-        IFsrmFileGroupImported *This,
-        VARIANT_BOOL overwrite);
+                     IFsrmFileGroupImported *This,
+                     VARIANT_BOOL overwrite);
 
     END_INTERFACE
 } IFsrmFileGroupImportedVtbl;
@@ -1943,18 +1943,18 @@ MIDL_INTERFACE("205bebf8-dd93-452a-95a6-32b566b35828")
 IFsrmFileScreenTemplate : public IFsrmFileScreenBase
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CopyTemplate(
-        BSTR fileScreenTemplateName) = 0;
+                     BSTR fileScreenTemplateName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CommitAndUpdateDerived(
-        FsrmCommitOptions commitOptions,
-        FsrmTemplateApplyOptions applyOptions,
-        IFsrmDerivedObjectsResult **derivedObjectsResult) = 0;
+                     FsrmCommitOptions commitOptions,
+                     FsrmTemplateApplyOptions applyOptions,
+                     IFsrmDerivedObjectsResult **derivedObjectsResult) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1966,109 +1966,109 @@ typedef struct IFsrmFileScreenTemplateVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileScreenTemplate *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileScreenTemplate *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileScreenTemplate *This);
+                     IFsrmFileScreenTemplate *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileScreenTemplate *This);
+                     IFsrmFileScreenTemplate *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileScreenTemplate *This,
-        UINT *pctinfo);
+                     IFsrmFileScreenTemplate *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileScreenTemplate *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileScreenTemplate *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileScreenTemplate *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileScreenTemplate *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileScreenTemplate *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileScreenTemplate *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmFileScreenTemplate *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmFileScreenTemplate *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmFileScreenTemplate *This,
-        BSTR *description);
+                     IFsrmFileScreenTemplate *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmFileScreenTemplate *This,
-        BSTR description);
+                     IFsrmFileScreenTemplate *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileScreenTemplate *This);
+                     IFsrmFileScreenTemplate *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmFileScreenTemplate *This);
+                     IFsrmFileScreenTemplate *This);
 
     /*** IFsrmFileScreenBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_BlockedFileGroups)(
-        IFsrmFileScreenTemplate *This,
-        IFsrmMutableCollection **blockList);
+                     IFsrmFileScreenTemplate *This,
+                     IFsrmMutableCollection **blockList);
 
     HRESULT (STDMETHODCALLTYPE *put_BlockedFileGroups)(
-        IFsrmFileScreenTemplate *This,
-        IFsrmMutableCollection *blockList);
+                     IFsrmFileScreenTemplate *This,
+                     IFsrmMutableCollection *blockList);
 
     HRESULT (STDMETHODCALLTYPE *get_FileScreenFlags)(
-        IFsrmFileScreenTemplate *This,
-        LONG *fileScreenFlags);
+                     IFsrmFileScreenTemplate *This,
+                     LONG *fileScreenFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_FileScreenFlags)(
-        IFsrmFileScreenTemplate *This,
-        LONG fileScreenFlags);
+                     IFsrmFileScreenTemplate *This,
+                     LONG fileScreenFlags);
 
     HRESULT (STDMETHODCALLTYPE *CreateAction)(
-        IFsrmFileScreenTemplate *This,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmFileScreenTemplate *This,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumActions)(
-        IFsrmFileScreenTemplate *This,
-        IFsrmCollection **actions);
+                     IFsrmFileScreenTemplate *This,
+                     IFsrmCollection **actions);
 
     /*** IFsrmFileScreenTemplate methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmFileScreenTemplate *This,
-        BSTR *name);
+                     IFsrmFileScreenTemplate *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmFileScreenTemplate *This,
-        BSTR name);
+                     IFsrmFileScreenTemplate *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *CopyTemplate)(
-        IFsrmFileScreenTemplate *This,
-        BSTR fileScreenTemplateName);
+                     IFsrmFileScreenTemplate *This,
+                     BSTR fileScreenTemplateName);
 
     HRESULT (STDMETHODCALLTYPE *CommitAndUpdateDerived)(
-        IFsrmFileScreenTemplate *This,
-        FsrmCommitOptions commitOptions,
-        FsrmTemplateApplyOptions applyOptions,
-        IFsrmDerivedObjectsResult **derivedObjectsResult);
+                     IFsrmFileScreenTemplate *This,
+                     FsrmCommitOptions commitOptions,
+                     FsrmTemplateApplyOptions applyOptions,
+                     IFsrmDerivedObjectsResult **derivedObjectsResult);
 
     END_INTERFACE
 } IFsrmFileScreenTemplateVtbl;
@@ -2198,10 +2198,10 @@ MIDL_INTERFACE("e1010359-3e5d-4ecd-9fe4-ef48622fdf30")
 IFsrmFileScreenTemplateImported : public IFsrmFileScreenTemplate
 {
     virtual HRESULT STDMETHODCALLTYPE get_OverwriteOnCommit(
-        VARIANT_BOOL *overwrite) = 0;
+                     VARIANT_BOOL *overwrite) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_OverwriteOnCommit(
-        VARIANT_BOOL overwrite) = 0;
+                     VARIANT_BOOL overwrite) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2213,118 +2213,118 @@ typedef struct IFsrmFileScreenTemplateImportedVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IFsrmFileScreenTemplateImported *This,
-        REFIID riid,
-        void **ppvObject);
+                     IFsrmFileScreenTemplateImported *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IFsrmFileScreenTemplateImported *This);
+                     IFsrmFileScreenTemplateImported *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IFsrmFileScreenTemplateImported *This);
+                     IFsrmFileScreenTemplateImported *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IFsrmFileScreenTemplateImported *This,
-        UINT *pctinfo);
+                     IFsrmFileScreenTemplateImported *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IFsrmFileScreenTemplateImported *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IFsrmFileScreenTemplateImported *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IFsrmFileScreenTemplateImported *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IFsrmFileScreenTemplateImported *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IFsrmFileScreenTemplateImported *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IFsrmFileScreenTemplateImported *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IFsrmObject methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IFsrmFileScreenTemplateImported *This,
-        FSRM_OBJECT_ID *id);
+                     IFsrmFileScreenTemplateImported *This,
+                     FSRM_OBJECT_ID *id);
 
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IFsrmFileScreenTemplateImported *This,
-        BSTR *description);
+                     IFsrmFileScreenTemplateImported *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IFsrmFileScreenTemplateImported *This,
-        BSTR description);
+                     IFsrmFileScreenTemplateImported *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IFsrmFileScreenTemplateImported *This);
+                     IFsrmFileScreenTemplateImported *This);
 
     HRESULT (STDMETHODCALLTYPE *Commit)(
-        IFsrmFileScreenTemplateImported *This);
+                     IFsrmFileScreenTemplateImported *This);
 
     /*** IFsrmFileScreenBase methods ***/
     HRESULT (STDMETHODCALLTYPE *get_BlockedFileGroups)(
-        IFsrmFileScreenTemplateImported *This,
-        IFsrmMutableCollection **blockList);
+                     IFsrmFileScreenTemplateImported *This,
+                     IFsrmMutableCollection **blockList);
 
     HRESULT (STDMETHODCALLTYPE *put_BlockedFileGroups)(
-        IFsrmFileScreenTemplateImported *This,
-        IFsrmMutableCollection *blockList);
+                     IFsrmFileScreenTemplateImported *This,
+                     IFsrmMutableCollection *blockList);
 
     HRESULT (STDMETHODCALLTYPE *get_FileScreenFlags)(
-        IFsrmFileScreenTemplateImported *This,
-        LONG *fileScreenFlags);
+                     IFsrmFileScreenTemplateImported *This,
+                     LONG *fileScreenFlags);
 
     HRESULT (STDMETHODCALLTYPE *put_FileScreenFlags)(
-        IFsrmFileScreenTemplateImported *This,
-        LONG fileScreenFlags);
+                     IFsrmFileScreenTemplateImported *This,
+                     LONG fileScreenFlags);
 
     HRESULT (STDMETHODCALLTYPE *CreateAction)(
-        IFsrmFileScreenTemplateImported *This,
-        FsrmActionType actionType,
-        IFsrmAction **action);
+                     IFsrmFileScreenTemplateImported *This,
+                     FsrmActionType actionType,
+                     IFsrmAction **action);
 
     HRESULT (STDMETHODCALLTYPE *EnumActions)(
-        IFsrmFileScreenTemplateImported *This,
-        IFsrmCollection **actions);
+                     IFsrmFileScreenTemplateImported *This,
+                     IFsrmCollection **actions);
 
     /*** IFsrmFileScreenTemplate methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IFsrmFileScreenTemplateImported *This,
-        BSTR *name);
+                     IFsrmFileScreenTemplateImported *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        IFsrmFileScreenTemplateImported *This,
-        BSTR name);
+                     IFsrmFileScreenTemplateImported *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *CopyTemplate)(
-        IFsrmFileScreenTemplateImported *This,
-        BSTR fileScreenTemplateName);
+                     IFsrmFileScreenTemplateImported *This,
+                     BSTR fileScreenTemplateName);
 
     HRESULT (STDMETHODCALLTYPE *CommitAndUpdateDerived)(
-        IFsrmFileScreenTemplateImported *This,
-        FsrmCommitOptions commitOptions,
-        FsrmTemplateApplyOptions applyOptions,
-        IFsrmDerivedObjectsResult **derivedObjectsResult);
+                     IFsrmFileScreenTemplateImported *This,
+                     FsrmCommitOptions commitOptions,
+                     FsrmTemplateApplyOptions applyOptions,
+                     IFsrmDerivedObjectsResult **derivedObjectsResult);
 
     /*** IFsrmFileScreenTemplateImported methods ***/
     HRESULT (STDMETHODCALLTYPE *get_OverwriteOnCommit)(
-        IFsrmFileScreenTemplateImported *This,
-        VARIANT_BOOL *overwrite);
+                     IFsrmFileScreenTemplateImported *This,
+                     VARIANT_BOOL *overwrite);
 
     HRESULT (STDMETHODCALLTYPE *put_OverwriteOnCommit)(
-        IFsrmFileScreenTemplateImported *This,
-        VARIANT_BOOL overwrite);
+                     IFsrmFileScreenTemplateImported *This,
+                     VARIANT_BOOL overwrite);
 
     END_INTERFACE
 } IFsrmFileScreenTemplateImportedVtbl;
@@ -2455,14 +2455,14 @@ static FORCEINLINE HRESULT IFsrmFileScreenTemplateImported_put_OverwriteOnCommit
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

@@ -21,31 +21,31 @@ extern "C" {
 #endif
 
 #if PSAPI_VERSION > 1
-#define EnumProcesses               K32EnumProcesses
-#define EnumProcessModules          K32EnumProcessModules
-#define EnumProcessModulesEx        K32EnumProcessModulesEx
-#define GetModuleBaseNameA          K32GetModuleBaseNameA
-#define GetModuleBaseNameW          K32GetModuleBaseNameW
-#define GetModuleFileNameExA        K32GetModuleFileNameExA
-#define GetModuleFileNameExW        K32GetModuleFileNameExW
-#define GetModuleInformation        K32GetModuleInformation
-#define EmptyWorkingSet             K32EmptyWorkingSet
-#define QueryWorkingSet             K32QueryWorkingSet
-#define QueryWorkingSetEx           K32QueryWorkingSetEx
+#define EnumProcesses                                         K32EnumProcesses
+#define EnumProcessModules                       K32EnumProcessModules
+#define EnumProcessModulesEx                     K32EnumProcessModulesEx
+#define GetModuleBaseNameA                       K32GetModuleBaseNameA
+#define GetModuleBaseNameW                       K32GetModuleBaseNameW
+#define GetModuleFileNameExA                     K32GetModuleFileNameExA
+#define GetModuleFileNameExW                     K32GetModuleFileNameExW
+#define GetModuleInformation                     K32GetModuleInformation
+#define EmptyWorkingSet                                       K32EmptyWorkingSet
+#define QueryWorkingSet                                       K32QueryWorkingSet
+#define QueryWorkingSetEx                        K32QueryWorkingSetEx
 #define InitializeProcessForWsWatch K32InitializeProcessForWsWatch
-#define GetWsChanges                K32GetWsChanges
-#define GetWsChangesEx              K32GetWsChangesEx
-#define GetMappedFileNameW          K32GetMappedFileNameW
-#define GetMappedFileNameA          K32GetMappedFileNameA
-#define EnumDeviceDrivers           K32EnumDeviceDrivers
+#define GetWsChanges                                          K32GetWsChanges
+#define GetWsChangesEx                                        K32GetWsChangesEx
+#define GetMappedFileNameW                       K32GetMappedFileNameW
+#define GetMappedFileNameA                       K32GetMappedFileNameA
+#define EnumDeviceDrivers                        K32EnumDeviceDrivers
 #define GetDeviceDriverBaseNameA    K32GetDeviceDriverBaseNameA
 #define GetDeviceDriverBaseNameW    K32GetDeviceDriverBaseNameW
 #define GetDeviceDriverFileNameA    K32GetDeviceDriverFileNameA
 #define GetDeviceDriverFileNameW    K32GetDeviceDriverFileNameW
-#define GetProcessMemoryInfo        K32GetProcessMemoryInfo
-#define GetPerformanceInfo          K32GetPerformanceInfo
-#define EnumPageFilesW              K32EnumPageFilesW
-#define EnumPageFilesA              K32EnumPageFilesA
+#define GetProcessMemoryInfo                     K32GetProcessMemoryInfo
+#define GetPerformanceInfo                       K32GetPerformanceInfo
+#define EnumPageFilesW                                        K32EnumPageFilesW
+#define EnumPageFilesA                                        K32EnumPageFilesA
 #define GetProcessImageFileNameA    K32GetProcessImageFileNameA
 #define GetProcessImageFileNameW    K32GetProcessImageFileNameW
 #endif
@@ -173,8 +173,8 @@ extern "C" {
   
 typedef struct _PSAPI_WS_WATCH_INFORMATION_EX {
   PSAPI_WS_WATCH_INFORMATION BasicInfo;
-  ULONG_PTR                  FaultingThreadId;
-  ULONG_PTR                  Flags;
+  ULONG_PTR                                                         FaultingThreadId;
+  ULONG_PTR                                                         Flags;
 } PSAPI_WS_WATCH_INFORMATION_EX, *PPSAPI_WS_WATCH_INFORMATION_EX;
 
 WINBOOL WINAPI GetWsChangesEx(
@@ -207,7 +207,7 @@ typedef union _PSAPI_WORKING_SET_BLOCK {
 } PSAPI_WORKING_SET_BLOCK, *PPSAPI_WORKING_SET_BLOCK;
 
 typedef struct _PSAPI_WORKING_SET_INFORMATION {
-  ULONG_PTR               NumberOfEntries;
+  ULONG_PTR                                         NumberOfEntries;
   PSAPI_WORKING_SET_BLOCK WorkingSetInfo[1];
 } PSAPI_WORKING_SET_INFORMATION, *PPSAPI_WORKING_SET_INFORMATION;
 
@@ -215,34 +215,34 @@ typedef union _PSAPI_WORKING_SET_EX_BLOCK {
   ULONG_PTR Flags;
   __C89_NAMELESS union {
     __C89_NAMELESS struct {
-      ULONG_PTR Valid : 1;
-      ULONG_PTR ShareCount : 3;
-      ULONG_PTR Win32Protection : 11;
-      ULONG_PTR Shared : 1;
-      ULONG_PTR Node : 6;
-      ULONG_PTR Locked : 1;
-      ULONG_PTR LargePage : 1;
-      ULONG_PTR Reserved : 7;
-      ULONG_PTR Bad : 1;
+                   ULONG_PTR Valid : 1;
+                   ULONG_PTR ShareCount : 3;
+                   ULONG_PTR Win32Protection : 11;
+                   ULONG_PTR Shared : 1;
+                   ULONG_PTR Node : 6;
+                   ULONG_PTR Locked : 1;
+                   ULONG_PTR LargePage : 1;
+                   ULONG_PTR Reserved : 7;
+                   ULONG_PTR Bad : 1;
 #ifdef _WIN64
-      ULONG_PTR ReservedUlong : 32;
+                   ULONG_PTR ReservedUlong : 32;
 #endif
     };
     struct {
-      ULONG_PTR Valid : 1;
-      ULONG_PTR Reserved0 : 14;
-      ULONG_PTR Shared : 1;
-      ULONG_PTR Reserved1 : 15;
-      ULONG_PTR Bad : 1;
+                   ULONG_PTR Valid : 1;
+                   ULONG_PTR Reserved0 : 14;
+                   ULONG_PTR Shared : 1;
+                   ULONG_PTR Reserved1 : 15;
+                   ULONG_PTR Bad : 1;
 #ifdef _WIN64
-      ULONG_PTR ReservedUlong : 32;
+                   ULONG_PTR ReservedUlong : 32;
 #endif
     } Invalid;
   };
 } PSAPI_WORKING_SET_EX_BLOCK, *PPSAPI_WORKING_SET_EX_BLOCK;
 
 typedef struct _PSAPI_WORKING_SET_EX_INFORMATION {
-  PVOID                      VirtualAddress;
+  PVOID                                                             VirtualAddress;
   PSAPI_WORKING_SET_EX_BLOCK VirtualAttributes;
 } PSAPI_WORKING_SET_EX_INFORMATION, *PPSAPI_WORKING_SET_EX_INFORMATION;
 

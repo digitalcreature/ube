@@ -17,14 +17,14 @@ static void __cdecl mingw_wassert(const wchar_t *_Message, const wchar_t *_File,
 
     if ((len = wcstombs(NULL, _Message, 0)) != (size_t)-1)
     {
-        message = malloc(len + 1);
-        wcstombs(message, _Message, len + 1);
+                     message = malloc(len + 1);
+                     wcstombs(message, _Message, len + 1);
     }
 
     if ((len = wcstombs(NULL, _File, 0)) != (size_t)-1)
     {
-        file = malloc(len + 1);
-        wcstombs(file, _File, len + 1);
+                     file = malloc(len + 1);
+                     wcstombs(file, _File, len + 1);
     }
 
     _assert(message, file, _Line);
@@ -43,7 +43,7 @@ static void __cdecl init_wassert(const wchar_t *message, const wchar_t *file, un
 
     func = (void*)GetProcAddress(__mingw_get_msvcrt_handle(), "_wassert");
     if(!func)
-        func = mingw_wassert;
+                     func = mingw_wassert;
 
     return (__MINGW_IMP_SYMBOL(_wassert) = func)(message, file, line);
 }

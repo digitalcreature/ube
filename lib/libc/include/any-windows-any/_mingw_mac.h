@@ -92,21 +92,21 @@
    /* MS does not prefix symbols by underscores for 64-bit.  */
 #  ifndef __MINGW_USE_UNDERSCORE_PREFIX
      /* As we have to support older gcc version, which are using underscores
-      as symbol prefix for x64, we have to check here for the user label
-      prefix defined by gcc. */
+                   as symbol prefix for x64, we have to check here for the user label
+                   prefix defined by gcc. */
 #    ifdef __USER_LABEL_PREFIX__
-#      pragma push_macro ("_")
-#      undef _
-#      define _ 1
-#      if (__USER_LABEL_PREFIX__ + 0) != 0
-#        define __MINGW_USE_UNDERSCORE_PREFIX 1
-#      else
-#        define __MINGW_USE_UNDERSCORE_PREFIX 0
-#      endif
-#      undef _
-#      pragma pop_macro ("_")
+#                   pragma push_macro ("_")
+#                   undef _
+#                   define _ 1
+#                   if (__USER_LABEL_PREFIX__ + 0) != 0
+#                     define __MINGW_USE_UNDERSCORE_PREFIX 1
+#                   else
+#                     define __MINGW_USE_UNDERSCORE_PREFIX 0
+#                   endif
+#                   undef _
+#                   pragma pop_macro ("_")
 #    else /* ! __USER_LABEL_PREFIX__ */
-#      define __MINGW_USE_UNDERSCORE_PREFIX 0
+#                   define __MINGW_USE_UNDERSCORE_PREFIX 0
 #    endif /* __USER_LABEL_PREFIX__ */
 #  endif
 #else /* ! ifndef _X86_ */
@@ -214,23 +214,23 @@
 
 #if __GNUC__
 #  define __MINGW_GCC_VERSION	(__GNUC__ * 10000 + \
-      __GNUC_MINOR__	* 100	+ \
-      __GNUC_PATCHLEVEL__)
+                   __GNUC_MINOR__	* 100	+ \
+                   __GNUC_PATCHLEVEL__)
 #else
 #  define __MINGW_GCC_VERSION 0
 #endif
 
 #if defined (__GNUC__) && defined (__GNUC_MINOR__)
 #  define __MINGW_GNUC_PREREQ(major, minor) \
-      (__GNUC__ > (major) \
-      || (__GNUC__ == (major) && __GNUC_MINOR__ >= (minor)))
+                   (__GNUC__ > (major) \
+                   || (__GNUC__ == (major) && __GNUC_MINOR__ >= (minor)))
 #else
 #  define __MINGW_GNUC_PREREQ(major, minor) 0
 #endif
 
 #if defined (_MSC_VER)
 #  define __MINGW_MSC_PREREQ(major, minor) \
-      (_MSC_VER >= (major * 100 + minor * 10))
+                   (_MSC_VER >= (major * 100 + minor * 10))
 #else
 #  define __MINGW_MSC_PREREQ(major, minor) 0
 #endif
@@ -238,10 +238,10 @@
 #ifdef __MINGW_MSVC_COMPAT_WARNINGS
 #  if __MINGW_GNUC_PREREQ (4, 5)
 #    define __MINGW_ATTRIB_DEPRECATED_STR(X) \
-       __attribute__ ((__deprecated__ (X)))
+                    __attribute__ ((__deprecated__ (X)))
 #  else
 #    define __MINGW_ATTRIB_DEPRECATED_STR(X) \
-       __MINGW_ATTRIB_DEPRECATED
+                    __MINGW_ATTRIB_DEPRECATED
 #  endif
 #else
 #  define __MINGW_ATTRIB_DEPRECATED_STR(X)
@@ -255,14 +255,14 @@
 
 #if !defined (_CRT_NONSTDC_NO_DEPRECATE)
 #  define __MINGW_ATTRIB_DEPRECATED_MSVC2005 \
-      __MINGW_ATTRIB_DEPRECATED_STR(__MINGW_MSVC2005_DEPREC_STR)
+                   __MINGW_ATTRIB_DEPRECATED_STR(__MINGW_MSVC2005_DEPREC_STR)
 #else
 #  define __MINGW_ATTRIB_DEPRECATED_MSVC2005
 #endif
 
 #if !defined (_CRT_SECURE_NO_WARNINGS) || (_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES == 0)
 #  define __MINGW_ATTRIB_DEPRECATED_SEC_WARN \
-      __MINGW_ATTRIB_DEPRECATED_STR(__MINGW_SEC_WARN_STR)
+                   __MINGW_ATTRIB_DEPRECATED_STR(__MINGW_SEC_WARN_STR)
 #else
 #  define __MINGW_ATTRIB_DEPRECATED_SEC_WARN
 #endif
@@ -287,7 +287,7 @@
 #  define __mingw_static_ovr static __mingw_ovr
 #elif defined (__GNUC__)
 #  define __mingw_ovr static \
-      __attribute__ ((__unused__)) __inline__ __cdecl
+                   __attribute__ ((__unused__)) __inline__ __cdecl
 #  define __mingw_static_ovr __mingw_ovr
 #else
 #  define __mingw_ovr static __cdecl
@@ -313,8 +313,8 @@
 
 #if __MINGW_FORTIFY_LEVEL > 0
    /* Calling an function with __attribute__((__warning__("...")))
-      from a system include __inline__ function does not print
-      a warning unless caller has __attribute__((__artificial__)). */
+                   from a system include __inline__ function does not print
+                   a warning unless caller has __attribute__((__artificial__)). */
 #  define __mingw_bos_declare \
      void __cdecl __chk_fail(void) __attribute__((__noreturn__)); \
      void __cdecl __mingw_chk_fail_warn(void) __MINGW_ASM_CALL(__chk_fail) \

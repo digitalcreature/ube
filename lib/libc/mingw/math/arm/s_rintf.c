@@ -38,10 +38,10 @@ rintf(float x)
 	    if(j0<0) {
 		if((i0&0x7fffffff)==0) return x;
 		STRICT_ASSIGN(float,w,TWO23[sx]+x);
-	        t =  w-TWO23[sx];
+	                     t =  w-TWO23[sx];
 		GET_FLOAT_WORD(i0,t);
 		SET_FLOAT_WORD(t,(i0&0x7fffffff)|(sx<<31));
-	        return t;
+	                     return t;
 	    }
 	    STRICT_ASSIGN(float,w,TWO23[sx]+x);
 	    return w-TWO23[sx];

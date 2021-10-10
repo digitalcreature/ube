@@ -29,8 +29,8 @@
 #define EEH_PE_STATE_UNAVAIL		5	/* Unavailable		*/
 
 /* EEH error types and functions */
-#define EEH_ERR_TYPE_32			0       /* 32-bits error	*/
-#define EEH_ERR_TYPE_64			1       /* 64-bits error	*/
+#define EEH_ERR_TYPE_32			0                    /* 32-bits error	*/
+#define EEH_ERR_TYPE_64			1                    /* 64-bits error	*/
 #define EEH_ERR_FUNC_MIN		0
 #define EEH_ERR_FUNC_LD_MEM_ADDR	0	/* Memory load	*/
 #define EEH_ERR_FUNC_LD_MEM_DATA	1

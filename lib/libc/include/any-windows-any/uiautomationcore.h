@@ -71,18 +71,18 @@ MIDL_INTERFACE("d6dd68d1-86fd-4332-8666-9abedea2d24c")
 IRawElementProviderSimple : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE get_ProviderOptions(
-        enum ProviderOptions *pRetVal) = 0;
+                     enum ProviderOptions *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPatternProvider(
-        PATTERNID patternId,
-        IUnknown **pRetVal) = 0;
+                     PATTERNID patternId,
+                     IUnknown **pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetPropertyValue(
-        PROPERTYID propertyId,
-        VARIANT *pRetVal) = 0;
+                     PROPERTYID propertyId,
+                     VARIANT *pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HostRawElementProvider(
-        IRawElementProviderSimple **pRetVal) = 0;
+                     IRawElementProviderSimple **pRetVal) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -94,34 +94,34 @@ typedef struct IRawElementProviderSimpleVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRawElementProviderSimple *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRawElementProviderSimple *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRawElementProviderSimple *This);
+                     IRawElementProviderSimple *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRawElementProviderSimple *This);
+                     IRawElementProviderSimple *This);
 
     /*** IRawElementProviderSimple methods ***/
     HRESULT (STDMETHODCALLTYPE *get_ProviderOptions)(
-        IRawElementProviderSimple *This,
-        enum ProviderOptions *pRetVal);
+                     IRawElementProviderSimple *This,
+                     enum ProviderOptions *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *GetPatternProvider)(
-        IRawElementProviderSimple *This,
-        PATTERNID patternId,
-        IUnknown **pRetVal);
+                     IRawElementProviderSimple *This,
+                     PATTERNID patternId,
+                     IUnknown **pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *GetPropertyValue)(
-        IRawElementProviderSimple *This,
-        PROPERTYID propertyId,
-        VARIANT *pRetVal);
+                     IRawElementProviderSimple *This,
+                     PROPERTYID propertyId,
+                     VARIANT *pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *get_HostRawElementProvider)(
-        IRawElementProviderSimple *This,
-        IRawElementProviderSimple **pRetVal);
+                     IRawElementProviderSimple *This,
+                     IRawElementProviderSimple **pRetVal);
 
     END_INTERFACE
 } IRawElementProviderSimpleVtbl;
@@ -185,19 +185,19 @@ MIDL_INTERFACE("f8b80ada-2c44-48d0-89be-5ff23c9cd875")
 IAccessibleEx : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetObjectForChild(
-        LONG idChild,
-        IAccessibleEx **pRetVal) = 0;
+                     LONG idChild,
+                     IAccessibleEx **pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIAccessiblePair(
-        IAccessible **ppAcc,
-        LONG *pidChild) = 0;
+                     IAccessible **ppAcc,
+                     LONG *pidChild) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRuntimeId(
-        SAFEARRAY **pRetVal) = 0;
+                     SAFEARRAY **pRetVal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ConvertReturnedElement(
-        IRawElementProviderSimple *pIn,
-        IAccessibleEx **ppRetValOut) = 0;
+                     IRawElementProviderSimple *pIn,
+                     IAccessibleEx **ppRetValOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -209,35 +209,35 @@ typedef struct IAccessibleExVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAccessibleEx *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAccessibleEx *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAccessibleEx *This);
+                     IAccessibleEx *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAccessibleEx *This);
+                     IAccessibleEx *This);
 
     /*** IAccessibleEx methods ***/
     HRESULT (STDMETHODCALLTYPE *GetObjectForChild)(
-        IAccessibleEx *This,
-        LONG idChild,
-        IAccessibleEx **pRetVal);
+                     IAccessibleEx *This,
+                     LONG idChild,
+                     IAccessibleEx **pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *GetIAccessiblePair)(
-        IAccessibleEx *This,
-        IAccessible **ppAcc,
-        LONG *pidChild);
+                     IAccessibleEx *This,
+                     IAccessible **ppAcc,
+                     LONG *pidChild);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeId)(
-        IAccessibleEx *This,
-        SAFEARRAY **pRetVal);
+                     IAccessibleEx *This,
+                     SAFEARRAY **pRetVal);
 
     HRESULT (STDMETHODCALLTYPE *ConvertReturnedElement)(
-        IAccessibleEx *This,
-        IRawElementProviderSimple *pIn,
-        IAccessibleEx **ppRetValOut);
+                     IAccessibleEx *This,
+                     IRawElementProviderSimple *pIn,
+                     IAccessibleEx **ppRetValOut);
 
     END_INTERFACE
 } IAccessibleExVtbl;
@@ -291,10 +291,10 @@ static FORCEINLINE HRESULT IAccessibleEx_ConvertReturnedElement(IAccessibleEx* T
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

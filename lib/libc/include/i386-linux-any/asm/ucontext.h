@@ -23,9 +23,9 @@
  *
  * if (saved SS is valid || UC_STRICT_RESTORE_SS is set ||
  *     saved CS is not 64-bit)
- *         new SS = saved SS  (will fail IRET and signal if invalid)
+ *                      new SS = saved SS  (will fail IRET and signal if invalid)
  * else
- *         new SS = a flat 32-bit data segment
+ *                      new SS = a flat 32-bit data segment
  *
  * This behavior serves three purposes:
  *

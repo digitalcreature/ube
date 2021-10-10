@@ -37,7 +37,7 @@ extern fpu_control_t __fpu_control;
 /* rounding control */
 # define _FPU_RC_NEAREST 0x00   /* RECOMMENDED */
 # define _FPU_RC_DOWN    0x03
-# define _FPU_RC_UP      0x02
+# define _FPU_RC_UP                   0x02
 # define _FPU_RC_ZERO    0x01
 
 # define _FPU_MASK_RC (_FPU_RC_NEAREST|_FPU_RC_DOWN|_FPU_RC_UP|_FPU_RC_ZERO)
@@ -75,8 +75,8 @@ typedef unsigned int fpu_control_t;
 # define _FPU_GET_RC_ISA300()						\
   ({union { double __d; unsigned long long __ll; } __u;			\
     __asm__ __volatile__(						\
-      ".machine push; .machine \"power9\"; mffsl %0; .machine pop" 	\
-      : "=f" (__u.__d));						\
+                   ".machine push; .machine \"power9\"; mffsl %0; .machine pop" 	\
+                   : "=f" (__u.__d));						\
     (fpu_control_t) (__u.__ll & _FPU_MASK_RC);				\
   })
 
@@ -86,8 +86,8 @@ typedef unsigned int fpu_control_t;
 #  define _FPU_GET_RC()							\
   ({fpu_control_t __rc;							\
     __rc = __glibc_likely (__builtin_cpu_supports ("arch_3_00"))	\
-      ? _FPU_GET_RC_ISA300 ()						\
-      : _FPU_GETCW (__rc) & _FPU_MASK_RC;				\
+                   ? _FPU_GET_RC_ISA300 ()						\
+                   : _FPU_GETCW (__rc) & _FPU_MASK_RC;				\
     __rc;								\
   })
 # else

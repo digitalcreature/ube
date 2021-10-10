@@ -49,7 +49,7 @@ typedef struct
 #endif
 
     union
-      {
+                   {
 	int _pad[__SI_PAD_SIZE];
 
 	 /* kill().  */
@@ -92,7 +92,7 @@ typedef struct
 	    __SI_SIGFAULT_ADDL
 	    short int si_addr_lsb;  /* Valid LSB of the reported address.  */
 	    union
-	      {
+	                   {
 		/* used when si_code=SEGV_BNDERR */
 		struct
 		  {
@@ -101,7 +101,7 @@ typedef struct
 		  } _addr_bnd;
 		/* used when si_code=SEGV_PKUERR */
 		__uint32_t _pkey;
-	      } _bounds;
+	                   } _bounds;
 	  } _sigfault;
 
 	/* SIGPOLL.  */
@@ -120,7 +120,7 @@ typedef struct
 	    unsigned int _arch; /* AUDIT_ARCH_* of syscall.  */
 	  } _sigsys;
 #endif
-      } _sifields;
+                   } _sifields;
   } siginfo_t __SI_ALIGNMENT;
 
 

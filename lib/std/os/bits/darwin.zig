@@ -97,24 +97,24 @@ pub const libc_stat = extern struct {
     qspare: [2]i64,
 
     pub fn atime(self: @This()) timespec {
-        return timespec{
-            .tv_sec = self.atimesec,
-            .tv_nsec = self.atimensec,
-        };
+                     return timespec{
+                                      .tv_sec = self.atimesec,
+                                      .tv_nsec = self.atimensec,
+                     };
     }
 
     pub fn mtime(self: @This()) timespec {
-        return timespec{
-            .tv_sec = self.mtimesec,
-            .tv_nsec = self.mtimensec,
-        };
+                     return timespec{
+                                      .tv_sec = self.mtimesec,
+                                      .tv_nsec = self.mtimensec,
+                     };
     }
 
     pub fn ctime(self: @This()) timespec {
-        return timespec{
-            .tv_sec = self.ctimesec,
-            .tv_nsec = self.ctimensec,
-        };
+                     return timespec{
+                                      .tv_sec = self.ctimesec,
+                                      .tv_nsec = self.ctimensec,
+                     };
     }
 };
 
@@ -142,7 +142,7 @@ pub const dirent = extern struct {
     d_name: u8, // field address is address of first byte of name
 
     pub fn reclen(self: dirent) u16 {
-        return self.d_reclen;
+                     return self.d_reclen;
     }
 };
 
@@ -611,7 +611,7 @@ pub const NOTE_RENAME = 0x00000020;
 /// vnode access was revoked
 pub const NOTE_REVOKE = 0x00000040;
 
-/// No specific vnode event: to test for EVFILT_READ      activation
+/// No specific vnode event: to test for EVFILT_READ                   activation
 pub const NOTE_NONE = 0x00000080;
 
 /// vnode was unlocked by flock(2)
@@ -629,7 +629,7 @@ pub const NOTE_EXEC = 0x20000000;
 /// shared with EVFILT_SIGNAL
 pub const NOTE_SIGNAL = 0x08000000;
 
-/// exit status to be returned, valid for child       process only
+/// exit status to be returned, valid for child                    process only
 pub const NOTE_EXITSTATUS = 0x04000000;
 
 /// provide details on reasons for exit
@@ -644,13 +644,13 @@ pub const NOTE_EXIT_DECRYPTFAIL = 0x00010000;
 pub const NOTE_EXIT_MEMORY = 0x00020000;
 pub const NOTE_EXIT_CSERROR = 0x00040000;
 
-/// will react on memory          pressure
+/// will react on memory                       pressure
 pub const NOTE_VM_PRESSURE = 0x80000000;
 
-/// will quit on memory       pressure, possibly after cleaning up dirty state
+/// will quit on memory                    pressure, possibly after cleaning up dirty state
 pub const NOTE_VM_PRESSURE_TERMINATE = 0x40000000;
 
-/// will quit immediately on      memory pressure
+/// will quit immediately on                   memory pressure
 pub const NOTE_VM_PRESSURE_SUDDEN_TERMINATE = 0x20000000;
 
 /// there was an error

@@ -10,30 +10,30 @@ const testing = std.testing;
 /// A Writer that counts how many bytes has been written to it.
 pub fn CountingWriter(comptime WriterType: type) type {
     return struct {
-        bytes_written: u64,
-        child_stream: WriterType,
+                     bytes_written: u64,
+                     child_stream: WriterType,
 
-        pub const Error = WriterType.Error;
-        pub const Writer = io.Writer(*Self, Error, write);
-        /// Deprecated: use `Writer`
-        pub const OutStream = Writer;
+                     pub const Error = WriterType.Error;
+                     pub const Writer = io.Writer(*Self, Error, write);
+                     /// Deprecated: use `Writer`
+                     pub const OutStream = Writer;
 
-        const Self = @This();
+                     const Self = @This();
 
-        pub fn write(self: *Self, bytes: []const u8) Error!usize {
-            const amt = try self.child_stream.write(bytes);
-            self.bytes_written += amt;
-            return amt;
-        }
+                     pub fn write(self: *Self, bytes: []const u8) Error!usize {
+                                      const amt = try self.child_stream.write(bytes);
+                                      self.bytes_written += amt;
+                                      return amt;
+                     }
 
-        pub fn writer(self: *Self) Writer {
-            return .{ .context = self };
-        }
+                     pub fn writer(self: *Self) Writer {
+                                      return .{ .context = self };
+                     }
 
-        /// Deprecated: use `writer`
-        pub fn outStream(self: *Self) OutStream {
-            return .{ .context = self };
-        }
+                     /// Deprecated: use `writer`
+                     pub fn outStream(self: *Self) OutStream {
+                                      return .{ .context = self };
+                     }
     };
 }
 

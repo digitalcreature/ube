@@ -184,8 +184,8 @@ struct  __rwindow
 
 typedef struct
   {
-    int            __ctx(wbcnt);
-    int           *__ctx(spbuf)[__SPARC_MAXREGWINDOW];
+    int                                      __ctx(wbcnt);
+    int                        *__ctx(spbuf)[__SPARC_MAXREGWINDOW];
     struct __rwindow __ctx(wbuf)[__SPARC_MAXREGWINDOW];
   } gwindows_t;
 
@@ -213,18 +213,18 @@ struct __fpq
 struct __fq
   {
     union				/* FPU inst/addr queue */
-      {
-        double __ctx(whole);
-        struct __fpq __ctx(fpq);
-      } __ctx(FQu);
+                   {
+                     double __ctx(whole);
+                     struct __fpq __ctx(fpq);
+                   } __ctx(FQu);
   };
 
 #ifdef __USE_MISC
-# define FPU_REGS_TYPE           unsigned
-# define FPU_DREGS_TYPE          unsigned long long
-# define V7_FPU_FSR_TYPE         unsigned
-# define V9_FPU_FSR_TYPE         unsigned long long
-# define V9_FPU_FPRS_TYPE        unsigned
+# define FPU_REGS_TYPE                        unsigned
+# define FPU_DREGS_TYPE                       unsigned long long
+# define V7_FPU_FSR_TYPE                      unsigned
+# define V9_FPU_FSR_TYPE                      unsigned long long
+# define V9_FPU_FPRS_TYPE                     unsigned
 #endif
 
 #if __WORDSIZE == 64
@@ -232,9 +232,9 @@ struct __fq
 typedef struct
   {
     union {				/* FPU floating point regs */
-      unsigned		__ctx(fpu_regs)[32];	/* 32 singles */
-      double            __ctx(fpu_dregs)[32];	/* 32 doubles */
-      long double	__ctx(fpu_qregs)[16];  /* 16 quads */
+                   unsigned		__ctx(fpu_regs)[32];	/* 32 singles */
+                   double                                      __ctx(fpu_dregs)[32];	/* 32 doubles */
+                   long double	__ctx(fpu_qregs)[16];  /* 16 quads */
     } __ctx(fpu_fr);
     struct __fq     *__ctx(fpu_q);		/* ptr to array of FQ entries */
     unsigned long   __ctx(fpu_fsr);		/* FPU status register */
@@ -248,11 +248,11 @@ typedef struct
 typedef struct
   {
     union {				/* FPU floating point regs */
-      __extension__ unsigned long long __ctx(fpu_regs)[32];	/* 32 singles */
-      double             __ctx(fpu_dregs)[16];	/* 16 doubles */
+                   __extension__ unsigned long long __ctx(fpu_regs)[32];	/* 32 singles */
+                   double                                       __ctx(fpu_dregs)[16];	/* 16 doubles */
     } __ctx(fpu_fr);
     struct __fq     *__ctx(fpu_q);		/* ptr to array of FQ entries */
-    unsigned        __ctx(fpu_fsr);		/* FPU status register */
+    unsigned                     __ctx(fpu_fsr);		/* FPU status register */
     unsigned char   __ctx(fpu_qcnt);		/* # of entries in saved FQ */
     unsigned char   __ctx(fpu_q_entrysize);	/* # of bytes per FQ entry */
     unsigned char   __ctx(fpu_en);		/* flag signifying fpu in use */
@@ -271,7 +271,7 @@ typedef struct
 typedef struct
   {
     unsigned int __ctx(xrs_id);		/* indicates xrs_ptr validity */
-    void *       __ctx(xrs_ptr);		/* ptr to extra reg state */
+    void *                    __ctx(xrs_ptr);		/* ptr to extra reg state */
   } xrs_t;
 
 #ifdef __USE_MISC
@@ -284,9 +284,9 @@ typedef struct
     gwindows_t  *__ctx(gwins);		/* POSSIBLE pointer to register
 					   windows */
     fpregset_t  __ctx(fpregs);		/* floating point register set */
-    xrs_t       __ctx(xrs);		/* POSSIBLE extra register state
+    xrs_t                    __ctx(xrs);		/* POSSIBLE extra register state
 					   association */
-    long        __glibc_reserved1[19];
+    long                     __glibc_reserved1[19];
   } mcontext_t;
 
 
@@ -296,8 +296,8 @@ typedef struct ucontext_t
     unsigned long   __ctx(uc_flags);
     struct ucontext_t *uc_link;
     sigset_t	    uc_sigmask;
-    stack_t         uc_stack;
-    mcontext_t      uc_mcontext;
+    stack_t                      uc_stack;
+    mcontext_t                   uc_mcontext;
   } ucontext_t;
 
 #endif /* __WORDSIZE == 32 */

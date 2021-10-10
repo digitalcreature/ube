@@ -53,12 +53,12 @@ struct vhost_iotlb_msg {
 	__u64 iova;
 	__u64 size;
 	__u64 uaddr;
-#define VHOST_ACCESS_RO      0x1
-#define VHOST_ACCESS_WO      0x2
-#define VHOST_ACCESS_RW      0x3
+#define VHOST_ACCESS_RO                   0x1
+#define VHOST_ACCESS_WO                   0x2
+#define VHOST_ACCESS_RW                   0x3
 	__u8 perm;
-#define VHOST_IOTLB_MISS           1
-#define VHOST_IOTLB_UPDATE         2
+#define VHOST_IOTLB_MISS                        1
+#define VHOST_IOTLB_UPDATE                      2
 #define VHOST_IOTLB_INVALIDATE     3
 #define VHOST_IOTLB_ACCESS_FAIL    4
 	__u8 type;
@@ -198,9 +198,9 @@ struct vhost_memory {
  * Used by QEMU userspace to ensure a consistent vhost-scsi ABI.
  *
  * ABI Rev 0: July 2012 version starting point for v3.6-rc merge candidate +
- *            RFC-v2 vhost-scsi userspace.  Add GET_ABI_VERSION ioctl usage
+ *                                      RFC-v2 vhost-scsi userspace.  Add GET_ABI_VERSION ioctl usage
  * ABI Rev 1: January 2013. Ignore vhost_tpgt filed in struct vhost_scsi_target.
- *            All the targets under vhost_wwpn can be seen and used by guset.
+ *                                      All the targets under vhost_wwpn can be seen and used by guset.
  */
 
 #define VHOST_SCSI_ABI_VERSION	1

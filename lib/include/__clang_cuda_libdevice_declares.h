@@ -354,18 +354,18 @@ __DEVICE__ float __nv_ull2float_rn(unsigned long long __a);
 __DEVICE__ float __nv_ull2float_ru(unsigned long long __a);
 __DEVICE__ float __nv_ull2float_rz(unsigned long long __a);
 __DEVICE__ unsigned long long __nv_ullmax(unsigned long long __a,
-                                          unsigned long long __b);
+                                                                                                                                     unsigned long long __b);
 __DEVICE__ unsigned long long __nv_ullmin(unsigned long long __a,
-                                          unsigned long long __b);
+                                                                                                                                     unsigned long long __b);
 __DEVICE__ unsigned int __nv_umax(unsigned int __a, unsigned int __b);
 __DEVICE__ unsigned int __nv_umin(unsigned int __a, unsigned int __b);
 __DEVICE__ unsigned int __nv_umul24(unsigned int __a, unsigned int __b);
 __DEVICE__ unsigned long long __nv_umul64hi(unsigned long long __a,
-                                            unsigned long long __b);
+                                                                                                                                       unsigned long long __b);
 __DEVICE__ unsigned int __nv_umulhi(unsigned int __a, unsigned int __b);
 __DEVICE__ unsigned int __nv_urhadd(unsigned int __a, unsigned int __b);
 __DEVICE__ unsigned int __nv_usad(unsigned int __a, unsigned int __b,
-                                  unsigned int __c);
+                                                                                                   unsigned int __c);
 #if CUDA_VERSION >= 9000 && CUDA_VERSION < 9020
 __DEVICE__ int __nv_vabs2(int __a);
 __DEVICE__ int __nv_vabs4(int __a);

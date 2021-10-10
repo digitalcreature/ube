@@ -112,8 +112,8 @@ extern "C" {
     DWORD dwMDDataType;
     DWORD dwMDDataLen;
     union {
-      DWORD_PTR dwMDDataOffset;
-      unsigned char *pbMDData;
+                   DWORD_PTR dwMDDataOffset;
+                   unsigned char *pbMDData;
     };
     DWORD dwMDDataTag;
   } METADATA_GETALL_INTERNAL_RECORD;

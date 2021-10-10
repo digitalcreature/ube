@@ -21,9 +21,9 @@ const expect = std.testing.expect;
 pub fn cos(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     return switch (T) {
-        f32 => cos_(f32, x),
-        f64 => cos_(f64, x),
-        else => @compileError("cos not implemented for " ++ @typeName(T)),
+                     f32 => cos_(f32, x),
+                     f64 => cos_(f64, x),
+                     else => @compileError("cos not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -53,7 +53,7 @@ fn cos_(comptime T: type, x_: T) T {
 
     var x = x_;
     if (math.isNan(x) or math.isInf(x)) {
-        return math.nan(T);
+                     return math.nan(T);
     }
 
     var sign = false;
@@ -63,26 +63,26 @@ fn cos_(comptime T: type, x_: T) T {
     var j = @floatToInt(I, y);
 
     if (j & 1 == 1) {
-        j += 1;
-        y += 1;
+                     j += 1;
+                     y += 1;
     }
 
     j &= 7;
     if (j > 3) {
-        j -= 4;
-        sign = !sign;
+                     j -= 4;
+                     sign = !sign;
     }
     if (j > 1) {
-        sign = !sign;
+                     sign = !sign;
     }
 
     const z = ((x - y * pi4a) - y * pi4b) - y * pi4c;
     const w = z * z;
 
     const r = if (j == 1 or j == 2)
-        z + z * w * (S5 + w * (S4 + w * (S3 + w * (S2 + w * (S1 + w * S0)))))
+                     z + z * w * (S5 + w * (S4 + w * (S3 + w * (S2 + w * (S1 + w * S0)))))
     else
-        1.0 - 0.5 * w + w * w * (C5 + w * (C4 + w * (C3 + w * (C2 + w * (C1 + w * C0)))));
+                     1.0 - 0.5 * w + w * w * (C5 + w * (C4 + w * (C3 + w * (C2 + w * (C1 + w * C0)))));
 
     return if (sign) -r else r;
 }

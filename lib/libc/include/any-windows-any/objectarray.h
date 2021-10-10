@@ -55,12 +55,12 @@ MIDL_INTERFACE("92ca9dcd-5622-4bba-a805-5e9f541bd8c9")
 IObjectArray : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCount(
-        UINT *pcObjects) = 0;
+                     UINT *pcObjects) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAt(
-        UINT uiIndex,
-        REFIID riid,
-        void **ppv) = 0;
+                     UINT uiIndex,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -72,26 +72,26 @@ typedef struct IObjectArrayVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectArray *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectArray *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectArray *This);
+                     IObjectArray *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectArray *This);
+                     IObjectArray *This);
 
     /*** IObjectArray methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IObjectArray *This,
-        UINT *pcObjects);
+                     IObjectArray *This,
+                     UINT *pcObjects);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IObjectArray *This,
-        UINT uiIndex,
-        REFIID riid,
-        void **ppv);
+                     IObjectArray *This,
+                     UINT uiIndex,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IObjectArrayVtbl;
@@ -147,16 +147,16 @@ MIDL_INTERFACE("5632b1a4-e38a-400a-928a-d4cd63230295")
 IObjectCollection : public IObjectArray
 {
     virtual HRESULT STDMETHODCALLTYPE AddObject(
-        IUnknown *punk) = 0;
+                     IUnknown *punk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddFromArray(
-        IObjectArray *poaSource) = 0;
+                     IObjectArray *poaSource) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveObjectAt(
-        UINT uiIndex) = 0;
+                     UINT uiIndex) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -168,42 +168,42 @@ typedef struct IObjectCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IObjectCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IObjectCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IObjectCollection *This);
+                     IObjectCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IObjectCollection *This);
+                     IObjectCollection *This);
 
     /*** IObjectArray methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCount)(
-        IObjectCollection *This,
-        UINT *pcObjects);
+                     IObjectCollection *This,
+                     UINT *pcObjects);
 
     HRESULT (STDMETHODCALLTYPE *GetAt)(
-        IObjectCollection *This,
-        UINT uiIndex,
-        REFIID riid,
-        void **ppv);
+                     IObjectCollection *This,
+                     UINT uiIndex,
+                     REFIID riid,
+                     void **ppv);
 
     /*** IObjectCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *AddObject)(
-        IObjectCollection *This,
-        IUnknown *punk);
+                     IObjectCollection *This,
+                     IUnknown *punk);
 
     HRESULT (STDMETHODCALLTYPE *AddFromArray)(
-        IObjectCollection *This,
-        IObjectArray *poaSource);
+                     IObjectCollection *This,
+                     IObjectArray *poaSource);
 
     HRESULT (STDMETHODCALLTYPE *RemoveObjectAt)(
-        IObjectCollection *This,
-        UINT uiIndex);
+                     IObjectCollection *This,
+                     UINT uiIndex);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IObjectCollection *This);
+                     IObjectCollection *This);
 
     END_INTERFACE
 } IObjectCollectionVtbl;

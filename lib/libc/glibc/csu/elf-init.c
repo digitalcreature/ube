@@ -75,7 +75,7 @@ __libc_csu_init (int argc, char **argv, char **envp)
     const size_t size = __preinit_array_end - __preinit_array_start;
     size_t i;
     for (i = 0; i < size; i++)
-      (*__preinit_array_start [i]) (argc, argv, envp);
+                   (*__preinit_array_start [i]) (argc, argv, envp);
   }
 #endif
 
@@ -85,7 +85,7 @@ __libc_csu_init (int argc, char **argv, char **envp)
 
   const size_t size = __init_array_end - __init_array_start;
   for (size_t i = 0; i < size; i++)
-      (*__init_array_start [i]) (argc, argv, envp);
+                   (*__init_array_start [i]) (argc, argv, envp);
 }
 
 /* This function should not be used anymore.  We run the executable's

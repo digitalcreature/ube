@@ -51,7 +51,7 @@ namespace std {
   // [concept.swappable], concept swappable
   namespace ranges {
     inline namespace unspecified {
-      inline constexpr unspecified swap = unspecified;
+                   inline constexpr unspecified swap = unspecified;
     }
   }
   template<class T>

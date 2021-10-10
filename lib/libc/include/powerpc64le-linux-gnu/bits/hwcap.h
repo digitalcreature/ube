@@ -56,13 +56,13 @@
 
 /* Feature definitions in AT_HWCAP2.  */
 #define PPC_FEATURE2_ARCH_2_07     0x80000000 /* ISA 2.07 */
-#define PPC_FEATURE2_HAS_HTM       0x40000000 /* Hardware Transactional
+#define PPC_FEATURE2_HAS_HTM                    0x40000000 /* Hardware Transactional
 						 Memory */
-#define PPC_FEATURE2_HAS_DSCR      0x20000000 /* Data Stream Control
+#define PPC_FEATURE2_HAS_DSCR                   0x20000000 /* Data Stream Control
 						 Register */
-#define PPC_FEATURE2_HAS_EBB       0x10000000 /* Event Base Branching */
-#define PPC_FEATURE2_HAS_ISEL      0x08000000 /* Integer Select */
-#define PPC_FEATURE2_HAS_TAR       0x04000000 /* Target Address Register */
+#define PPC_FEATURE2_HAS_EBB                    0x10000000 /* Event Base Branching */
+#define PPC_FEATURE2_HAS_ISEL                   0x08000000 /* Integer Select */
+#define PPC_FEATURE2_HAS_TAR                    0x04000000 /* Target Address Register */
 #define PPC_FEATURE2_HAS_VEC_CRYPTO  0x02000000  /* Target supports vector
 						    instruction.  */
 #define PPC_FEATURE2_HTM_NOSC	   0x01000000 /* Kernel aborts transaction

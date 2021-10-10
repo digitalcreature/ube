@@ -107,21 +107,21 @@ MIDL_INTERFACE("a6894f43-9cc7-44c9-a23f-19dbf36bad28")
 INapSystemHealthAgentBinding : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        SystemHealthEntityId id,
-        INapSystemHealthAgentCallback *callback) = 0;
+                     SystemHealthEntityId id,
+                     INapSystemHealthAgentCallback *callback) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Uninitialize(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifySoHChange(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSystemIsolationInfo(
-        IsolationInfo **isolationInfo,
-        WINBOOL *unknownConnections) = 0;
+                     IsolationInfo **isolationInfo,
+                     WINBOOL *unknownConnections) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FlushCache(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -133,35 +133,35 @@ typedef struct INapSystemHealthAgentBindingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSystemHealthAgentBinding *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSystemHealthAgentBinding *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSystemHealthAgentBinding *This);
+                     INapSystemHealthAgentBinding *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSystemHealthAgentBinding *This);
+                     INapSystemHealthAgentBinding *This);
 
     /*** INapSystemHealthAgentBinding methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INapSystemHealthAgentBinding *This,
-        SystemHealthEntityId id,
-        INapSystemHealthAgentCallback *callback);
+                     INapSystemHealthAgentBinding *This,
+                     SystemHealthEntityId id,
+                     INapSystemHealthAgentCallback *callback);
 
     HRESULT (STDMETHODCALLTYPE *Uninitialize)(
-        INapSystemHealthAgentBinding *This);
+                     INapSystemHealthAgentBinding *This);
 
     HRESULT (STDMETHODCALLTYPE *NotifySoHChange)(
-        INapSystemHealthAgentBinding *This);
+                     INapSystemHealthAgentBinding *This);
 
     HRESULT (STDMETHODCALLTYPE *GetSystemIsolationInfo)(
-        INapSystemHealthAgentBinding *This,
-        IsolationInfo **isolationInfo,
-        WINBOOL *unknownConnections);
+                     INapSystemHealthAgentBinding *This,
+                     IsolationInfo **isolationInfo,
+                     WINBOOL *unknownConnections);
 
     HRESULT (STDMETHODCALLTYPE *FlushCache)(
-        INapSystemHealthAgentBinding *This);
+                     INapSystemHealthAgentBinding *This);
 
     END_INTERFACE
 } INapSystemHealthAgentBindingVtbl;
@@ -229,8 +229,8 @@ MIDL_INTERFACE("1140c38e-5100-4ea1-8d43-87d326724028")
 INapSystemHealthAgentBinding2 : public INapSystemHealthAgentBinding
 {
     virtual HRESULT STDMETHODCALLTYPE GetSystemIsolationInfoEx(
-        IsolationInfoEx **isolationInfo,
-        WINBOOL *unknownConnections) = 0;
+                     IsolationInfoEx **isolationInfo,
+                     WINBOOL *unknownConnections) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -242,41 +242,41 @@ typedef struct INapSystemHealthAgentBinding2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSystemHealthAgentBinding2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSystemHealthAgentBinding2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSystemHealthAgentBinding2 *This);
+                     INapSystemHealthAgentBinding2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSystemHealthAgentBinding2 *This);
+                     INapSystemHealthAgentBinding2 *This);
 
     /*** INapSystemHealthAgentBinding methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        INapSystemHealthAgentBinding2 *This,
-        SystemHealthEntityId id,
-        INapSystemHealthAgentCallback *callback);
+                     INapSystemHealthAgentBinding2 *This,
+                     SystemHealthEntityId id,
+                     INapSystemHealthAgentCallback *callback);
 
     HRESULT (STDMETHODCALLTYPE *Uninitialize)(
-        INapSystemHealthAgentBinding2 *This);
+                     INapSystemHealthAgentBinding2 *This);
 
     HRESULT (STDMETHODCALLTYPE *NotifySoHChange)(
-        INapSystemHealthAgentBinding2 *This);
+                     INapSystemHealthAgentBinding2 *This);
 
     HRESULT (STDMETHODCALLTYPE *GetSystemIsolationInfo)(
-        INapSystemHealthAgentBinding2 *This,
-        IsolationInfo **isolationInfo,
-        WINBOOL *unknownConnections);
+                     INapSystemHealthAgentBinding2 *This,
+                     IsolationInfo **isolationInfo,
+                     WINBOOL *unknownConnections);
 
     HRESULT (STDMETHODCALLTYPE *FlushCache)(
-        INapSystemHealthAgentBinding2 *This);
+                     INapSystemHealthAgentBinding2 *This);
 
     /*** INapSystemHealthAgentBinding2 methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSystemIsolationInfoEx)(
-        INapSystemHealthAgentBinding2 *This,
-        IsolationInfoEx **isolationInfo,
-        WINBOOL *unknownConnections);
+                     INapSystemHealthAgentBinding2 *This,
+                     IsolationInfoEx **isolationInfo,
+                     WINBOOL *unknownConnections);
 
     END_INTERFACE
 } INapSystemHealthAgentBinding2Vtbl;
@@ -350,24 +350,24 @@ MIDL_INTERFACE("f1072a57-214f-4ee2-8377-14ef140cd9f3")
 INapSystemHealthAgentCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSoHRequest(
-        INapSystemHealthAgentRequest *request) = 0;
+                     INapSystemHealthAgentRequest *request) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessSoHResponse(
-        INapSystemHealthAgentRequest *request) = 0;
+                     INapSystemHealthAgentRequest *request) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifySystemIsolationStateChange(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFixupInfo(
-        FixupInfo **info) = 0;
+                     FixupInfo **info) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CompareSoHRequests(
-        const SoHRequest *lhs,
-        const SoHRequest *rhs,
-        WINBOOL *isEqual) = 0;
+                     const SoHRequest *lhs,
+                     const SoHRequest *rhs,
+                     WINBOOL *isEqual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NotifyOrphanedSoHRequest(
-        const CorrelationId *correlationId) = 0;
+                     const CorrelationId *correlationId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -379,41 +379,41 @@ typedef struct INapSystemHealthAgentCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSystemHealthAgentCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSystemHealthAgentCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSystemHealthAgentCallback *This);
+                     INapSystemHealthAgentCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSystemHealthAgentCallback *This);
+                     INapSystemHealthAgentCallback *This);
 
     /*** INapSystemHealthAgentCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSoHRequest)(
-        INapSystemHealthAgentCallback *This,
-        INapSystemHealthAgentRequest *request);
+                     INapSystemHealthAgentCallback *This,
+                     INapSystemHealthAgentRequest *request);
 
     HRESULT (STDMETHODCALLTYPE *ProcessSoHResponse)(
-        INapSystemHealthAgentCallback *This,
-        INapSystemHealthAgentRequest *request);
+                     INapSystemHealthAgentCallback *This,
+                     INapSystemHealthAgentRequest *request);
 
     HRESULT (STDMETHODCALLTYPE *NotifySystemIsolationStateChange)(
-        INapSystemHealthAgentCallback *This);
+                     INapSystemHealthAgentCallback *This);
 
     HRESULT (STDMETHODCALLTYPE *GetFixupInfo)(
-        INapSystemHealthAgentCallback *This,
-        FixupInfo **info);
+                     INapSystemHealthAgentCallback *This,
+                     FixupInfo **info);
 
     HRESULT (STDMETHODCALLTYPE *CompareSoHRequests)(
-        INapSystemHealthAgentCallback *This,
-        const SoHRequest *lhs,
-        const SoHRequest *rhs,
-        WINBOOL *isEqual);
+                     INapSystemHealthAgentCallback *This,
+                     const SoHRequest *lhs,
+                     const SoHRequest *rhs,
+                     WINBOOL *isEqual);
 
     HRESULT (STDMETHODCALLTYPE *NotifyOrphanedSoHRequest)(
-        INapSystemHealthAgentCallback *This,
-        const CorrelationId *correlationId);
+                     INapSystemHealthAgentCallback *This,
+                     const CorrelationId *correlationId);
 
     END_INTERFACE
 } INapSystemHealthAgentCallbackVtbl;
@@ -485,41 +485,41 @@ MIDL_INTERFACE("860d8fd9-0219-43ea-ae7f-59611f4cc16a")
 AsyncINapSystemHealthAgentCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Begin_GetSoHRequest(
-        INapSystemHealthAgentRequest *request) = 0;
+                     INapSystemHealthAgentRequest *request) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_GetSoHRequest(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_ProcessSoHResponse(
-        INapSystemHealthAgentRequest *request) = 0;
+                     INapSystemHealthAgentRequest *request) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_ProcessSoHResponse(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_NotifySystemIsolationStateChange(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_NotifySystemIsolationStateChange(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_GetFixupInfo(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_GetFixupInfo(
-        FixupInfo **info) = 0;
+                     FixupInfo **info) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_CompareSoHRequests(
-        const SoHRequest *lhs,
-        const SoHRequest *rhs) = 0;
+                     const SoHRequest *lhs,
+                     const SoHRequest *rhs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_CompareSoHRequests(
-        WINBOOL *isEqual) = 0;
+                     WINBOOL *isEqual) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Begin_NotifyOrphanedSoHRequest(
-        const CorrelationId *correlationId) = 0;
+                     const CorrelationId *correlationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Finish_NotifyOrphanedSoHRequest(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -531,59 +531,59 @@ typedef struct AsyncINapSystemHealthAgentCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        AsyncINapSystemHealthAgentCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     AsyncINapSystemHealthAgentCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        AsyncINapSystemHealthAgentCallback *This);
+                     AsyncINapSystemHealthAgentCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        AsyncINapSystemHealthAgentCallback *This);
+                     AsyncINapSystemHealthAgentCallback *This);
 
     /*** AsyncINapSystemHealthAgentCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *Begin_GetSoHRequest)(
-        AsyncINapSystemHealthAgentCallback *This,
-        INapSystemHealthAgentRequest *request);
+                     AsyncINapSystemHealthAgentCallback *This,
+                     INapSystemHealthAgentRequest *request);
 
     HRESULT (STDMETHODCALLTYPE *Finish_GetSoHRequest)(
-        AsyncINapSystemHealthAgentCallback *This);
+                     AsyncINapSystemHealthAgentCallback *This);
 
     HRESULT (STDMETHODCALLTYPE *Begin_ProcessSoHResponse)(
-        AsyncINapSystemHealthAgentCallback *This,
-        INapSystemHealthAgentRequest *request);
+                     AsyncINapSystemHealthAgentCallback *This,
+                     INapSystemHealthAgentRequest *request);
 
     HRESULT (STDMETHODCALLTYPE *Finish_ProcessSoHResponse)(
-        AsyncINapSystemHealthAgentCallback *This);
+                     AsyncINapSystemHealthAgentCallback *This);
 
     HRESULT (STDMETHODCALLTYPE *Begin_NotifySystemIsolationStateChange)(
-        AsyncINapSystemHealthAgentCallback *This);
+                     AsyncINapSystemHealthAgentCallback *This);
 
     HRESULT (STDMETHODCALLTYPE *Finish_NotifySystemIsolationStateChange)(
-        AsyncINapSystemHealthAgentCallback *This);
+                     AsyncINapSystemHealthAgentCallback *This);
 
     HRESULT (STDMETHODCALLTYPE *Begin_GetFixupInfo)(
-        AsyncINapSystemHealthAgentCallback *This);
+                     AsyncINapSystemHealthAgentCallback *This);
 
     HRESULT (STDMETHODCALLTYPE *Finish_GetFixupInfo)(
-        AsyncINapSystemHealthAgentCallback *This,
-        FixupInfo **info);
+                     AsyncINapSystemHealthAgentCallback *This,
+                     FixupInfo **info);
 
     HRESULT (STDMETHODCALLTYPE *Begin_CompareSoHRequests)(
-        AsyncINapSystemHealthAgentCallback *This,
-        const SoHRequest *lhs,
-        const SoHRequest *rhs);
+                     AsyncINapSystemHealthAgentCallback *This,
+                     const SoHRequest *lhs,
+                     const SoHRequest *rhs);
 
     HRESULT (STDMETHODCALLTYPE *Finish_CompareSoHRequests)(
-        AsyncINapSystemHealthAgentCallback *This,
-        WINBOOL *isEqual);
+                     AsyncINapSystemHealthAgentCallback *This,
+                     WINBOOL *isEqual);
 
     HRESULT (STDMETHODCALLTYPE *Begin_NotifyOrphanedSoHRequest)(
-        AsyncINapSystemHealthAgentCallback *This,
-        const CorrelationId *correlationId);
+                     AsyncINapSystemHealthAgentCallback *This,
+                     const CorrelationId *correlationId);
 
     HRESULT (STDMETHODCALLTYPE *Finish_NotifyOrphanedSoHRequest)(
-        AsyncINapSystemHealthAgentCallback *This);
+                     AsyncINapSystemHealthAgentCallback *This);
 
     END_INTERFACE
 } AsyncINapSystemHealthAgentCallbackVtbl;
@@ -679,24 +679,24 @@ MIDL_INTERFACE("5b360a69-212d-440d-b398-7eefd497853a")
 INapSystemHealthAgentRequest : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetCorrelationId(
-        CorrelationId *correlationId) = 0;
+                     CorrelationId *correlationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStringCorrelationId(
-        StringCorrelationId **correlationId) = 0;
+                     StringCorrelationId **correlationId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSoHRequest(
-        const SoHRequest *sohRequest,
-        WINBOOL cacheSohForLaterUse) = 0;
+                     const SoHRequest *sohRequest,
+                     WINBOOL cacheSohForLaterUse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSoHRequest(
-        SoHRequest **sohRequest) = 0;
+                     SoHRequest **sohRequest) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSoHResponse(
-        SoHResponse **sohResponse,
-        UINT8 *flags) = 0;
+                     SoHResponse **sohResponse,
+                     UINT8 *flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCacheSoHFlag(
-        WINBOOL *cacheSohForLaterUse) = 0;
+                     WINBOOL *cacheSohForLaterUse) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -708,42 +708,42 @@ typedef struct INapSystemHealthAgentRequestVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INapSystemHealthAgentRequest *This,
-        REFIID riid,
-        void **ppvObject);
+                     INapSystemHealthAgentRequest *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INapSystemHealthAgentRequest *This);
+                     INapSystemHealthAgentRequest *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INapSystemHealthAgentRequest *This);
+                     INapSystemHealthAgentRequest *This);
 
     /*** INapSystemHealthAgentRequest methods ***/
     HRESULT (STDMETHODCALLTYPE *GetCorrelationId)(
-        INapSystemHealthAgentRequest *This,
-        CorrelationId *correlationId);
+                     INapSystemHealthAgentRequest *This,
+                     CorrelationId *correlationId);
 
     HRESULT (STDMETHODCALLTYPE *GetStringCorrelationId)(
-        INapSystemHealthAgentRequest *This,
-        StringCorrelationId **correlationId);
+                     INapSystemHealthAgentRequest *This,
+                     StringCorrelationId **correlationId);
 
     HRESULT (STDMETHODCALLTYPE *SetSoHRequest)(
-        INapSystemHealthAgentRequest *This,
-        const SoHRequest *sohRequest,
-        WINBOOL cacheSohForLaterUse);
+                     INapSystemHealthAgentRequest *This,
+                     const SoHRequest *sohRequest,
+                     WINBOOL cacheSohForLaterUse);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHRequest)(
-        INapSystemHealthAgentRequest *This,
-        SoHRequest **sohRequest);
+                     INapSystemHealthAgentRequest *This,
+                     SoHRequest **sohRequest);
 
     HRESULT (STDMETHODCALLTYPE *GetSoHResponse)(
-        INapSystemHealthAgentRequest *This,
-        SoHResponse **sohResponse,
-        UINT8 *flags);
+                     INapSystemHealthAgentRequest *This,
+                     SoHResponse **sohResponse,
+                     UINT8 *flags);
 
     HRESULT (STDMETHODCALLTYPE *GetCacheSoHFlag)(
-        INapSystemHealthAgentRequest *This,
-        WINBOOL *cacheSohForLaterUse);
+                     INapSystemHealthAgentRequest *This,
+                     WINBOOL *cacheSohForLaterUse);
 
     END_INTERFACE
 } INapSystemHealthAgentRequestVtbl;

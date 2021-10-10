@@ -442,37 +442,37 @@ MIDL_INTERFACE("2faba4c7-4da9-4013-9697-20cc3fd40f85")
 ITaskService : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE GetFolder(
-        BSTR path,
-        ITaskFolder **folder) = 0;
+                     BSTR path,
+                     ITaskFolder **folder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRunningTasks(
-        LONG flags,
-        IRunningTaskCollection **tasks) = 0;
+                     LONG flags,
+                     IRunningTaskCollection **tasks) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE NewTask(
-        DWORD flags,
-        ITaskDefinition **definition) = 0;
+                     DWORD flags,
+                     ITaskDefinition **definition) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Connect(
-        VARIANT server,
-        VARIANT user,
-        VARIANT domain,
-        VARIANT password) = 0;
+                     VARIANT server,
+                     VARIANT user,
+                     VARIANT domain,
+                     VARIANT password) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Connected(
-        VARIANT_BOOL *connected) = 0;
+                     VARIANT_BOOL *connected) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_TargetServer(
-        BSTR *server) = 0;
+                     BSTR *server) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ConnectedUser(
-        BSTR *user) = 0;
+                     BSTR *user) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ConnectedDomain(
-        BSTR *domain) = 0;
+                     BSTR *domain) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_HighestVersion(
-        DWORD *version) = 0;
+                     DWORD *version) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -484,88 +484,88 @@ typedef struct ITaskServiceVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskService *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskService *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskService *This);
+                     ITaskService *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskService *This);
+                     ITaskService *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITaskService *This,
-        UINT *pctinfo);
+                     ITaskService *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITaskService *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITaskService *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITaskService *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITaskService *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITaskService *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITaskService *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITaskService methods ***/
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        ITaskService *This,
-        BSTR path,
-        ITaskFolder **folder);
+                     ITaskService *This,
+                     BSTR path,
+                     ITaskFolder **folder);
 
     HRESULT (STDMETHODCALLTYPE *GetRunningTasks)(
-        ITaskService *This,
-        LONG flags,
-        IRunningTaskCollection **tasks);
+                     ITaskService *This,
+                     LONG flags,
+                     IRunningTaskCollection **tasks);
 
     HRESULT (STDMETHODCALLTYPE *NewTask)(
-        ITaskService *This,
-        DWORD flags,
-        ITaskDefinition **definition);
+                     ITaskService *This,
+                     DWORD flags,
+                     ITaskDefinition **definition);
 
     HRESULT (STDMETHODCALLTYPE *Connect)(
-        ITaskService *This,
-        VARIANT server,
-        VARIANT user,
-        VARIANT domain,
-        VARIANT password);
+                     ITaskService *This,
+                     VARIANT server,
+                     VARIANT user,
+                     VARIANT domain,
+                     VARIANT password);
 
     HRESULT (STDMETHODCALLTYPE *get_Connected)(
-        ITaskService *This,
-        VARIANT_BOOL *connected);
+                     ITaskService *This,
+                     VARIANT_BOOL *connected);
 
     HRESULT (STDMETHODCALLTYPE *get_TargetServer)(
-        ITaskService *This,
-        BSTR *server);
+                     ITaskService *This,
+                     BSTR *server);
 
     HRESULT (STDMETHODCALLTYPE *get_ConnectedUser)(
-        ITaskService *This,
-        BSTR *user);
+                     ITaskService *This,
+                     BSTR *user);
 
     HRESULT (STDMETHODCALLTYPE *get_ConnectedDomain)(
-        ITaskService *This,
-        BSTR *domain);
+                     ITaskService *This,
+                     BSTR *domain);
 
     HRESULT (STDMETHODCALLTYPE *get_HighestVersion)(
-        ITaskService *This,
-        DWORD *version);
+                     ITaskService *This,
+                     DWORD *version);
 
     END_INTERFACE
 } ITaskServiceVtbl;
@@ -667,69 +667,69 @@ MIDL_INTERFACE("9c86f320-dee3-4dd1-b972-a303f26b061e")
 IRegisteredTask : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_State(
-        TASK_STATE *state) = 0;
+                     TASK_STATE *state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Run(
-        VARIANT params,
-        IRunningTask **task) = 0;
+                     VARIANT params,
+                     IRunningTask **task) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RunEx(
-        VARIANT params,
-        LONG flags,
-        LONG sessionID,
-        BSTR user,
-        IRunningTask **task) = 0;
+                     VARIANT params,
+                     LONG flags,
+                     LONG sessionID,
+                     BSTR user,
+                     IRunningTask **task) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInstances(
-        LONG flags,
-        IRunningTaskCollection **tasks) = 0;
+                     LONG flags,
+                     IRunningTaskCollection **tasks) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastRunTime(
-        DATE *date) = 0;
+                     DATE *date) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LastTaskResult(
-        LONG *result) = 0;
+                     LONG *result) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NumberOfMissedRuns(
-        LONG *runs) = 0;
+                     LONG *runs) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NextRunTime(
-        DATE *date) = 0;
+                     DATE *date) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Definition(
-        ITaskDefinition **task) = 0;
+                     ITaskDefinition **task) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Xml(
-        BSTR *xml) = 0;
+                     BSTR *xml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSecurityDescriptor(
-        LONG info,
-        BSTR *sddl) = 0;
+                     LONG info,
+                     BSTR *sddl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSecurityDescriptor(
-        BSTR sddl,
-        LONG flags) = 0;
+                     BSTR sddl,
+                     LONG flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        LONG flags) = 0;
+                     LONG flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRunTimes(
-        const LPSYSTEMTIME start,
-        const LPSYSTEMTIME end,
-        DWORD *count,
-        LPSYSTEMTIME *time) = 0;
+                     const LPSYSTEMTIME start,
+                     const LPSYSTEMTIME end,
+                     DWORD *count,
+                     LPSYSTEMTIME *time) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -741,129 +741,129 @@ typedef struct IRegisteredTaskVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRegisteredTask *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRegisteredTask *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRegisteredTask *This);
+                     IRegisteredTask *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRegisteredTask *This);
+                     IRegisteredTask *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IRegisteredTask *This,
-        UINT *pctinfo);
+                     IRegisteredTask *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IRegisteredTask *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IRegisteredTask *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IRegisteredTask *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IRegisteredTask *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IRegisteredTask *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IRegisteredTask *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IRegisteredTask methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IRegisteredTask *This,
-        BSTR *name);
+                     IRegisteredTask *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IRegisteredTask *This,
-        BSTR *path);
+                     IRegisteredTask *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        IRegisteredTask *This,
-        TASK_STATE *state);
+                     IRegisteredTask *This,
+                     TASK_STATE *state);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        IRegisteredTask *This,
-        VARIANT_BOOL *enabled);
+                     IRegisteredTask *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        IRegisteredTask *This,
-        VARIANT_BOOL enabled);
+                     IRegisteredTask *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *Run)(
-        IRegisteredTask *This,
-        VARIANT params,
-        IRunningTask **task);
+                     IRegisteredTask *This,
+                     VARIANT params,
+                     IRunningTask **task);
 
     HRESULT (STDMETHODCALLTYPE *RunEx)(
-        IRegisteredTask *This,
-        VARIANT params,
-        LONG flags,
-        LONG sessionID,
-        BSTR user,
-        IRunningTask **task);
+                     IRegisteredTask *This,
+                     VARIANT params,
+                     LONG flags,
+                     LONG sessionID,
+                     BSTR user,
+                     IRunningTask **task);
 
     HRESULT (STDMETHODCALLTYPE *GetInstances)(
-        IRegisteredTask *This,
-        LONG flags,
-        IRunningTaskCollection **tasks);
+                     IRegisteredTask *This,
+                     LONG flags,
+                     IRunningTaskCollection **tasks);
 
     HRESULT (STDMETHODCALLTYPE *get_LastRunTime)(
-        IRegisteredTask *This,
-        DATE *date);
+                     IRegisteredTask *This,
+                     DATE *date);
 
     HRESULT (STDMETHODCALLTYPE *get_LastTaskResult)(
-        IRegisteredTask *This,
-        LONG *result);
+                     IRegisteredTask *This,
+                     LONG *result);
 
     HRESULT (STDMETHODCALLTYPE *get_NumberOfMissedRuns)(
-        IRegisteredTask *This,
-        LONG *runs);
+                     IRegisteredTask *This,
+                     LONG *runs);
 
     HRESULT (STDMETHODCALLTYPE *get_NextRunTime)(
-        IRegisteredTask *This,
-        DATE *date);
+                     IRegisteredTask *This,
+                     DATE *date);
 
     HRESULT (STDMETHODCALLTYPE *get_Definition)(
-        IRegisteredTask *This,
-        ITaskDefinition **task);
+                     IRegisteredTask *This,
+                     ITaskDefinition **task);
 
     HRESULT (STDMETHODCALLTYPE *get_Xml)(
-        IRegisteredTask *This,
-        BSTR *xml);
+                     IRegisteredTask *This,
+                     BSTR *xml);
 
     HRESULT (STDMETHODCALLTYPE *GetSecurityDescriptor)(
-        IRegisteredTask *This,
-        LONG info,
-        BSTR *sddl);
+                     IRegisteredTask *This,
+                     LONG info,
+                     BSTR *sddl);
 
     HRESULT (STDMETHODCALLTYPE *SetSecurityDescriptor)(
-        IRegisteredTask *This,
-        BSTR sddl,
-        LONG flags);
+                     IRegisteredTask *This,
+                     BSTR sddl,
+                     LONG flags);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IRegisteredTask *This,
-        LONG flags);
+                     IRegisteredTask *This,
+                     LONG flags);
 
     HRESULT (STDMETHODCALLTYPE *GetRunTimes)(
-        IRegisteredTask *This,
-        const LPSYSTEMTIME start,
-        const LPSYSTEMTIME end,
-        DWORD *count,
-        LPSYSTEMTIME *time);
+                     IRegisteredTask *This,
+                     const LPSYSTEMTIME start,
+                     const LPSYSTEMTIME end,
+                     DWORD *count,
+                     LPSYSTEMTIME *time);
 
     END_INTERFACE
 } IRegisteredTaskVtbl;
@@ -1001,14 +1001,14 @@ MIDL_INTERFACE("86627eb4-42a7-41e4-a4d9-ac33a72f2d52")
 IRegisteredTaskCollection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        VARIANT index,
-        IRegisteredTask **task) = 0;
+                     VARIANT index,
+                     IRegisteredTask **task) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **penum) = 0;
+                     IUnknown **penum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1020,59 +1020,59 @@ typedef struct IRegisteredTaskCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRegisteredTaskCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRegisteredTaskCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRegisteredTaskCollection *This);
+                     IRegisteredTaskCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRegisteredTaskCollection *This);
+                     IRegisteredTaskCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IRegisteredTaskCollection *This,
-        UINT *pctinfo);
+                     IRegisteredTaskCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IRegisteredTaskCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IRegisteredTaskCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IRegisteredTaskCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IRegisteredTaskCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IRegisteredTaskCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IRegisteredTaskCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IRegisteredTaskCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IRegisteredTaskCollection *This,
-        LONG *count);
+                     IRegisteredTaskCollection *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IRegisteredTaskCollection *This,
-        VARIANT index,
-        IRegisteredTask **task);
+                     IRegisteredTaskCollection *This,
+                     VARIANT index,
+                     IRegisteredTask **task);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IRegisteredTaskCollection *This,
-        IUnknown **penum);
+                     IRegisteredTaskCollection *This,
+                     IUnknown **penum);
 
     END_INTERFACE
 } IRegisteredTaskCollectionVtbl;
@@ -1150,58 +1150,58 @@ MIDL_INTERFACE("416d8b73-cb41-4ea1-805c-9be9a5ac4a74")
 IRegistrationInfo : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Description(
-        BSTR *description) = 0;
+                     BSTR *description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Description(
-        BSTR description) = 0;
+                     BSTR description) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Author(
-        BSTR *author) = 0;
+                     BSTR *author) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Author(
-        BSTR author) = 0;
+                     BSTR author) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Version(
-        BSTR *version) = 0;
+                     BSTR *version) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Version(
-        BSTR version) = 0;
+                     BSTR version) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Date(
-        BSTR *date) = 0;
+                     BSTR *date) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Date(
-        BSTR date) = 0;
+                     BSTR date) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Documentation(
-        BSTR *doc) = 0;
+                     BSTR *doc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Documentation(
-        BSTR doc) = 0;
+                     BSTR doc) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_XmlText(
-        BSTR *xml) = 0;
+                     BSTR *xml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_XmlText(
-        BSTR xml) = 0;
+                     BSTR xml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_URI(
-        BSTR *uri) = 0;
+                     BSTR *uri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_URI(
-        BSTR uri) = 0;
+                     BSTR uri) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_SecurityDescriptor(
-        VARIANT *sddl) = 0;
+                     VARIANT *sddl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_SecurityDescriptor(
-        VARIANT sddl) = 0;
+                     VARIANT sddl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Source(
-        BSTR *source) = 0;
+                     BSTR *source) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Source(
-        BSTR source) = 0;
+                     BSTR source) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1213,118 +1213,118 @@ typedef struct IRegistrationInfoVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRegistrationInfo *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRegistrationInfo *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRegistrationInfo *This);
+                     IRegistrationInfo *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRegistrationInfo *This);
+                     IRegistrationInfo *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IRegistrationInfo *This,
-        UINT *pctinfo);
+                     IRegistrationInfo *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IRegistrationInfo *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IRegistrationInfo *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IRegistrationInfo *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IRegistrationInfo *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IRegistrationInfo *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IRegistrationInfo *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IRegistrationInfo methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Description)(
-        IRegistrationInfo *This,
-        BSTR *description);
+                     IRegistrationInfo *This,
+                     BSTR *description);
 
     HRESULT (STDMETHODCALLTYPE *put_Description)(
-        IRegistrationInfo *This,
-        BSTR description);
+                     IRegistrationInfo *This,
+                     BSTR description);
 
     HRESULT (STDMETHODCALLTYPE *get_Author)(
-        IRegistrationInfo *This,
-        BSTR *author);
+                     IRegistrationInfo *This,
+                     BSTR *author);
 
     HRESULT (STDMETHODCALLTYPE *put_Author)(
-        IRegistrationInfo *This,
-        BSTR author);
+                     IRegistrationInfo *This,
+                     BSTR author);
 
     HRESULT (STDMETHODCALLTYPE *get_Version)(
-        IRegistrationInfo *This,
-        BSTR *version);
+                     IRegistrationInfo *This,
+                     BSTR *version);
 
     HRESULT (STDMETHODCALLTYPE *put_Version)(
-        IRegistrationInfo *This,
-        BSTR version);
+                     IRegistrationInfo *This,
+                     BSTR version);
 
     HRESULT (STDMETHODCALLTYPE *get_Date)(
-        IRegistrationInfo *This,
-        BSTR *date);
+                     IRegistrationInfo *This,
+                     BSTR *date);
 
     HRESULT (STDMETHODCALLTYPE *put_Date)(
-        IRegistrationInfo *This,
-        BSTR date);
+                     IRegistrationInfo *This,
+                     BSTR date);
 
     HRESULT (STDMETHODCALLTYPE *get_Documentation)(
-        IRegistrationInfo *This,
-        BSTR *doc);
+                     IRegistrationInfo *This,
+                     BSTR *doc);
 
     HRESULT (STDMETHODCALLTYPE *put_Documentation)(
-        IRegistrationInfo *This,
-        BSTR doc);
+                     IRegistrationInfo *This,
+                     BSTR doc);
 
     HRESULT (STDMETHODCALLTYPE *get_XmlText)(
-        IRegistrationInfo *This,
-        BSTR *xml);
+                     IRegistrationInfo *This,
+                     BSTR *xml);
 
     HRESULT (STDMETHODCALLTYPE *put_XmlText)(
-        IRegistrationInfo *This,
-        BSTR xml);
+                     IRegistrationInfo *This,
+                     BSTR xml);
 
     HRESULT (STDMETHODCALLTYPE *get_URI)(
-        IRegistrationInfo *This,
-        BSTR *uri);
+                     IRegistrationInfo *This,
+                     BSTR *uri);
 
     HRESULT (STDMETHODCALLTYPE *put_URI)(
-        IRegistrationInfo *This,
-        BSTR uri);
+                     IRegistrationInfo *This,
+                     BSTR uri);
 
     HRESULT (STDMETHODCALLTYPE *get_SecurityDescriptor)(
-        IRegistrationInfo *This,
-        VARIANT *sddl);
+                     IRegistrationInfo *This,
+                     VARIANT *sddl);
 
     HRESULT (STDMETHODCALLTYPE *put_SecurityDescriptor)(
-        IRegistrationInfo *This,
-        VARIANT sddl);
+                     IRegistrationInfo *This,
+                     VARIANT sddl);
 
     HRESULT (STDMETHODCALLTYPE *get_Source)(
-        IRegistrationInfo *This,
-        BSTR *source);
+                     IRegistrationInfo *This,
+                     BSTR *source);
 
     HRESULT (STDMETHODCALLTYPE *put_Source)(
-        IRegistrationInfo *This,
-        BSTR source);
+                     IRegistrationInfo *This,
+                     BSTR source);
 
     END_INTERFACE
 } IRegistrationInfoVtbl;
@@ -1462,67 +1462,67 @@ MIDL_INTERFACE("8cfac062-a080-4c15-9a88-aa7c2af80dfc")
 ITaskFolder : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolder(
-        BSTR path,
-        ITaskFolder **folder) = 0;
+                     BSTR path,
+                     ITaskFolder **folder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFolders(
-        LONG flags,
-        ITaskFolderCollection **folders) = 0;
+                     LONG flags,
+                     ITaskFolderCollection **folders) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateFolder(
-        BSTR name,
-        VARIANT sddl,
-        ITaskFolder **folder) = 0;
+                     BSTR name,
+                     VARIANT sddl,
+                     ITaskFolder **folder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteFolder(
-        BSTR name,
-        LONG flags) = 0;
+                     BSTR name,
+                     LONG flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTask(
-        BSTR path,
-        IRegisteredTask **task) = 0;
+                     BSTR path,
+                     IRegisteredTask **task) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTasks(
-        LONG flags,
-        IRegisteredTaskCollection **tasks) = 0;
+                     LONG flags,
+                     IRegisteredTaskCollection **tasks) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteTask(
-        BSTR name,
-        LONG flags) = 0;
+                     BSTR name,
+                     LONG flags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterTask(
-        BSTR path,
-        BSTR xml,
-        LONG flags,
-        VARIANT user,
-        VARIANT password,
-        TASK_LOGON_TYPE logonType,
-        VARIANT sddl,
-        IRegisteredTask **task) = 0;
+                     BSTR path,
+                     BSTR xml,
+                     LONG flags,
+                     VARIANT user,
+                     VARIANT password,
+                     TASK_LOGON_TYPE logonType,
+                     VARIANT sddl,
+                     IRegisteredTask **task) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RegisterTaskDefinition(
-        BSTR path,
-        ITaskDefinition *definition,
-        LONG flags,
-        VARIANT user,
-        VARIANT password,
-        TASK_LOGON_TYPE logon,
-        VARIANT sddl,
-        IRegisteredTask **task) = 0;
+                     BSTR path,
+                     ITaskDefinition *definition,
+                     LONG flags,
+                     VARIANT user,
+                     VARIANT password,
+                     TASK_LOGON_TYPE logon,
+                     VARIANT sddl,
+                     IRegisteredTask **task) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSecurityDescriptor(
-        LONG info,
-        BSTR *sddl) = 0;
+                     LONG info,
+                     BSTR *sddl) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSecurityDescriptor(
-        BSTR sddl,
-        LONG flags) = 0;
+                     BSTR sddl,
+                     LONG flags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1534,122 +1534,122 @@ typedef struct ITaskFolderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskFolder *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskFolder *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskFolder *This);
+                     ITaskFolder *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskFolder *This);
+                     ITaskFolder *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITaskFolder *This,
-        UINT *pctinfo);
+                     ITaskFolder *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITaskFolder *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITaskFolder *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITaskFolder *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITaskFolder *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITaskFolder *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITaskFolder *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITaskFolder methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        ITaskFolder *This,
-        BSTR *name);
+                     ITaskFolder *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        ITaskFolder *This,
-        BSTR *path);
+                     ITaskFolder *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *GetFolder)(
-        ITaskFolder *This,
-        BSTR path,
-        ITaskFolder **folder);
+                     ITaskFolder *This,
+                     BSTR path,
+                     ITaskFolder **folder);
 
     HRESULT (STDMETHODCALLTYPE *GetFolders)(
-        ITaskFolder *This,
-        LONG flags,
-        ITaskFolderCollection **folders);
+                     ITaskFolder *This,
+                     LONG flags,
+                     ITaskFolderCollection **folders);
 
     HRESULT (STDMETHODCALLTYPE *CreateFolder)(
-        ITaskFolder *This,
-        BSTR name,
-        VARIANT sddl,
-        ITaskFolder **folder);
+                     ITaskFolder *This,
+                     BSTR name,
+                     VARIANT sddl,
+                     ITaskFolder **folder);
 
     HRESULT (STDMETHODCALLTYPE *DeleteFolder)(
-        ITaskFolder *This,
-        BSTR name,
-        LONG flags);
+                     ITaskFolder *This,
+                     BSTR name,
+                     LONG flags);
 
     HRESULT (STDMETHODCALLTYPE *GetTask)(
-        ITaskFolder *This,
-        BSTR path,
-        IRegisteredTask **task);
+                     ITaskFolder *This,
+                     BSTR path,
+                     IRegisteredTask **task);
 
     HRESULT (STDMETHODCALLTYPE *GetTasks)(
-        ITaskFolder *This,
-        LONG flags,
-        IRegisteredTaskCollection **tasks);
+                     ITaskFolder *This,
+                     LONG flags,
+                     IRegisteredTaskCollection **tasks);
 
     HRESULT (STDMETHODCALLTYPE *DeleteTask)(
-        ITaskFolder *This,
-        BSTR name,
-        LONG flags);
+                     ITaskFolder *This,
+                     BSTR name,
+                     LONG flags);
 
     HRESULT (STDMETHODCALLTYPE *RegisterTask)(
-        ITaskFolder *This,
-        BSTR path,
-        BSTR xml,
-        LONG flags,
-        VARIANT user,
-        VARIANT password,
-        TASK_LOGON_TYPE logonType,
-        VARIANT sddl,
-        IRegisteredTask **task);
+                     ITaskFolder *This,
+                     BSTR path,
+                     BSTR xml,
+                     LONG flags,
+                     VARIANT user,
+                     VARIANT password,
+                     TASK_LOGON_TYPE logonType,
+                     VARIANT sddl,
+                     IRegisteredTask **task);
 
     HRESULT (STDMETHODCALLTYPE *RegisterTaskDefinition)(
-        ITaskFolder *This,
-        BSTR path,
-        ITaskDefinition *definition,
-        LONG flags,
-        VARIANT user,
-        VARIANT password,
-        TASK_LOGON_TYPE logon,
-        VARIANT sddl,
-        IRegisteredTask **task);
+                     ITaskFolder *This,
+                     BSTR path,
+                     ITaskDefinition *definition,
+                     LONG flags,
+                     VARIANT user,
+                     VARIANT password,
+                     TASK_LOGON_TYPE logon,
+                     VARIANT sddl,
+                     IRegisteredTask **task);
 
     HRESULT (STDMETHODCALLTYPE *GetSecurityDescriptor)(
-        ITaskFolder *This,
-        LONG info,
-        BSTR *sddl);
+                     ITaskFolder *This,
+                     LONG info,
+                     BSTR *sddl);
 
     HRESULT (STDMETHODCALLTYPE *SetSecurityDescriptor)(
-        ITaskFolder *This,
-        BSTR sddl,
-        LONG flags);
+                     ITaskFolder *This,
+                     BSTR sddl,
+                     LONG flags);
 
     END_INTERFACE
 } ITaskFolderVtbl;
@@ -1767,14 +1767,14 @@ MIDL_INTERFACE("79184a66-8664-423f-97f1-637356a5d812")
 ITaskFolderCollection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        VARIANT index,
-        ITaskFolder **folder) = 0;
+                     VARIANT index,
+                     ITaskFolder **folder) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **penum) = 0;
+                     IUnknown **penum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1786,59 +1786,59 @@ typedef struct ITaskFolderCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskFolderCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskFolderCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskFolderCollection *This);
+                     ITaskFolderCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskFolderCollection *This);
+                     ITaskFolderCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITaskFolderCollection *This,
-        UINT *pctinfo);
+                     ITaskFolderCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITaskFolderCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITaskFolderCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITaskFolderCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITaskFolderCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITaskFolderCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITaskFolderCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITaskFolderCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ITaskFolderCollection *This,
-        LONG *count);
+                     ITaskFolderCollection *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        ITaskFolderCollection *This,
-        VARIANT index,
-        ITaskFolder **folder);
+                     ITaskFolderCollection *This,
+                     VARIANT index,
+                     ITaskFolder **folder);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ITaskFolderCollection *This,
-        IUnknown **penum);
+                     ITaskFolderCollection *This,
+                     IUnknown **penum);
 
     END_INTERFACE
 } ITaskFolderCollectionVtbl;
@@ -1916,46 +1916,46 @@ MIDL_INTERFACE("f5bc8fc5-536d-4f77-b852-fbc1356fdeb6")
 ITaskDefinition : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_RegistrationInfo(
-        IRegistrationInfo **info) = 0;
+                     IRegistrationInfo **info) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RegistrationInfo(
-        IRegistrationInfo *info) = 0;
+                     IRegistrationInfo *info) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Triggers(
-        ITriggerCollection **triggers) = 0;
+                     ITriggerCollection **triggers) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Triggers(
-        ITriggerCollection *triggers) = 0;
+                     ITriggerCollection *triggers) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Settings(
-        ITaskSettings **settings) = 0;
+                     ITaskSettings **settings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Settings(
-        ITaskSettings *settings) = 0;
+                     ITaskSettings *settings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Data(
-        BSTR *data) = 0;
+                     BSTR *data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Data(
-        BSTR data) = 0;
+                     BSTR data) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Principal(
-        IPrincipal **principal) = 0;
+                     IPrincipal **principal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Principal(
-        IPrincipal *principal) = 0;
+                     IPrincipal *principal) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Actions(
-        IActionCollection **actions) = 0;
+                     IActionCollection **actions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Actions(
-        IActionCollection *actions) = 0;
+                     IActionCollection *actions) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_XmlText(
-        BSTR *xml) = 0;
+                     BSTR *xml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_XmlText(
-        BSTR xml) = 0;
+                     BSTR xml) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1967,102 +1967,102 @@ typedef struct ITaskDefinitionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskDefinition *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskDefinition *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskDefinition *This);
+                     ITaskDefinition *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskDefinition *This);
+                     ITaskDefinition *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITaskDefinition *This,
-        UINT *pctinfo);
+                     ITaskDefinition *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITaskDefinition *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITaskDefinition *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITaskDefinition *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITaskDefinition *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITaskDefinition *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITaskDefinition *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITaskDefinition methods ***/
     HRESULT (STDMETHODCALLTYPE *get_RegistrationInfo)(
-        ITaskDefinition *This,
-        IRegistrationInfo **info);
+                     ITaskDefinition *This,
+                     IRegistrationInfo **info);
 
     HRESULT (STDMETHODCALLTYPE *put_RegistrationInfo)(
-        ITaskDefinition *This,
-        IRegistrationInfo *info);
+                     ITaskDefinition *This,
+                     IRegistrationInfo *info);
 
     HRESULT (STDMETHODCALLTYPE *get_Triggers)(
-        ITaskDefinition *This,
-        ITriggerCollection **triggers);
+                     ITaskDefinition *This,
+                     ITriggerCollection **triggers);
 
     HRESULT (STDMETHODCALLTYPE *put_Triggers)(
-        ITaskDefinition *This,
-        ITriggerCollection *triggers);
+                     ITaskDefinition *This,
+                     ITriggerCollection *triggers);
 
     HRESULT (STDMETHODCALLTYPE *get_Settings)(
-        ITaskDefinition *This,
-        ITaskSettings **settings);
+                     ITaskDefinition *This,
+                     ITaskSettings **settings);
 
     HRESULT (STDMETHODCALLTYPE *put_Settings)(
-        ITaskDefinition *This,
-        ITaskSettings *settings);
+                     ITaskDefinition *This,
+                     ITaskSettings *settings);
 
     HRESULT (STDMETHODCALLTYPE *get_Data)(
-        ITaskDefinition *This,
-        BSTR *data);
+                     ITaskDefinition *This,
+                     BSTR *data);
 
     HRESULT (STDMETHODCALLTYPE *put_Data)(
-        ITaskDefinition *This,
-        BSTR data);
+                     ITaskDefinition *This,
+                     BSTR data);
 
     HRESULT (STDMETHODCALLTYPE *get_Principal)(
-        ITaskDefinition *This,
-        IPrincipal **principal);
+                     ITaskDefinition *This,
+                     IPrincipal **principal);
 
     HRESULT (STDMETHODCALLTYPE *put_Principal)(
-        ITaskDefinition *This,
-        IPrincipal *principal);
+                     ITaskDefinition *This,
+                     IPrincipal *principal);
 
     HRESULT (STDMETHODCALLTYPE *get_Actions)(
-        ITaskDefinition *This,
-        IActionCollection **actions);
+                     ITaskDefinition *This,
+                     IActionCollection **actions);
 
     HRESULT (STDMETHODCALLTYPE *put_Actions)(
-        ITaskDefinition *This,
-        IActionCollection *actions);
+                     ITaskDefinition *This,
+                     IActionCollection *actions);
 
     HRESULT (STDMETHODCALLTYPE *get_XmlText)(
-        ITaskDefinition *This,
-        BSTR *xml);
+                     ITaskDefinition *This,
+                     BSTR *xml);
 
     HRESULT (STDMETHODCALLTYPE *put_XmlText)(
-        ITaskDefinition *This,
-        BSTR xml);
+                     ITaskDefinition *This,
+                     BSTR xml);
 
     END_INTERFACE
 } ITaskDefinitionVtbl;
@@ -2184,124 +2184,124 @@ MIDL_INTERFACE("8fd4711d-2d02-4c8c-87e3-eff699de127e")
 ITaskSettings : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_AllowDemandStart(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowDemandStart(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RestartInterval(
-        BSTR *interval) = 0;
+                     BSTR *interval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RestartInterval(
-        BSTR interval) = 0;
+                     BSTR interval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RestartCount(
-        INT *count) = 0;
+                     INT *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RestartCount(
-        INT count) = 0;
+                     INT count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_MultipleInstances(
-        TASK_INSTANCES_POLICY *policy) = 0;
+                     TASK_INSTANCES_POLICY *policy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_MultipleInstances(
-        TASK_INSTANCES_POLICY policy) = 0;
+                     TASK_INSTANCES_POLICY policy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StopIfGoingOnBatteries(
-        VARIANT_BOOL *stop) = 0;
+                     VARIANT_BOOL *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StopIfGoingOnBatteries(
-        VARIANT_BOOL stop) = 0;
+                     VARIANT_BOOL stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DisallowStartIfOnBatteries(
-        VARIANT_BOOL *disallow) = 0;
+                     VARIANT_BOOL *disallow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DisallowStartIfOnBatteries(
-        VARIANT_BOOL disallow) = 0;
+                     VARIANT_BOOL disallow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_AllowHardTerminate(
-        VARIANT_BOOL *allow) = 0;
+                     VARIANT_BOOL *allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_AllowHardTerminate(
-        VARIANT_BOOL allow) = 0;
+                     VARIANT_BOOL allow) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StartWhenAvailable(
-        VARIANT_BOOL *start) = 0;
+                     VARIANT_BOOL *start) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StartWhenAvailable(
-        VARIANT_BOOL start) = 0;
+                     VARIANT_BOOL start) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_XmlText(
-        BSTR *xml) = 0;
+                     BSTR *xml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_XmlText(
-        BSTR xml) = 0;
+                     BSTR xml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RunOnlyIfNetworkAvailable(
-        VARIANT_BOOL *run) = 0;
+                     VARIANT_BOOL *run) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RunOnlyIfNetworkAvailable(
-        VARIANT_BOOL run) = 0;
+                     VARIANT_BOOL run) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExecutionTimeLimit(
-        BSTR *limit) = 0;
+                     BSTR *limit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ExecutionTimeLimit(
-        BSTR limit) = 0;
+                     BSTR limit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DeleteExpiredTaskAfter(
-        BSTR *delay) = 0;
+                     BSTR *delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DeleteExpiredTaskAfter(
-        BSTR delay) = 0;
+                     BSTR delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Priority(
-        INT *priority) = 0;
+                     INT *priority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Priority(
-        INT priority) = 0;
+                     INT priority) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Compatibility(
-        TASK_COMPATIBILITY *level) = 0;
+                     TASK_COMPATIBILITY *level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Compatibility(
-        TASK_COMPATIBILITY level) = 0;
+                     TASK_COMPATIBILITY level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Hidden(
-        VARIANT_BOOL *hidden) = 0;
+                     VARIANT_BOOL *hidden) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Hidden(
-        VARIANT_BOOL hidden) = 0;
+                     VARIANT_BOOL hidden) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_IdleSettings(
-        IIdleSettings **settings) = 0;
+                     IIdleSettings **settings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IdleSettings(
-        IIdleSettings *settings) = 0;
+                     IIdleSettings *settings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RunOnlyIfIdle(
-        VARIANT_BOOL *run) = 0;
+                     VARIANT_BOOL *run) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RunOnlyIfIdle(
-        VARIANT_BOOL run) = 0;
+                     VARIANT_BOOL run) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_WakeToRun(
-        VARIANT_BOOL *wake) = 0;
+                     VARIANT_BOOL *wake) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_WakeToRun(
-        VARIANT_BOOL wake) = 0;
+                     VARIANT_BOOL wake) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_NetworkSettings(
-        INetworkSettings **settings) = 0;
+                     INetworkSettings **settings) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_NetworkSettings(
-        INetworkSettings *settings) = 0;
+                     INetworkSettings *settings) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2313,206 +2313,206 @@ typedef struct ITaskSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITaskSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITaskSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITaskSettings *This);
+                     ITaskSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITaskSettings *This);
+                     ITaskSettings *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITaskSettings *This,
-        UINT *pctinfo);
+                     ITaskSettings *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITaskSettings *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITaskSettings *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITaskSettings *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITaskSettings *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITaskSettings *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITaskSettings *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITaskSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *get_AllowDemandStart)(
-        ITaskSettings *This,
-        VARIANT_BOOL *allow);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowDemandStart)(
-        ITaskSettings *This,
-        VARIANT_BOOL allow);
+                     ITaskSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_RestartInterval)(
-        ITaskSettings *This,
-        BSTR *interval);
+                     ITaskSettings *This,
+                     BSTR *interval);
 
     HRESULT (STDMETHODCALLTYPE *put_RestartInterval)(
-        ITaskSettings *This,
-        BSTR interval);
+                     ITaskSettings *This,
+                     BSTR interval);
 
     HRESULT (STDMETHODCALLTYPE *get_RestartCount)(
-        ITaskSettings *This,
-        INT *count);
+                     ITaskSettings *This,
+                     INT *count);
 
     HRESULT (STDMETHODCALLTYPE *put_RestartCount)(
-        ITaskSettings *This,
-        INT count);
+                     ITaskSettings *This,
+                     INT count);
 
     HRESULT (STDMETHODCALLTYPE *get_MultipleInstances)(
-        ITaskSettings *This,
-        TASK_INSTANCES_POLICY *policy);
+                     ITaskSettings *This,
+                     TASK_INSTANCES_POLICY *policy);
 
     HRESULT (STDMETHODCALLTYPE *put_MultipleInstances)(
-        ITaskSettings *This,
-        TASK_INSTANCES_POLICY policy);
+                     ITaskSettings *This,
+                     TASK_INSTANCES_POLICY policy);
 
     HRESULT (STDMETHODCALLTYPE *get_StopIfGoingOnBatteries)(
-        ITaskSettings *This,
-        VARIANT_BOOL *stop);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *stop);
 
     HRESULT (STDMETHODCALLTYPE *put_StopIfGoingOnBatteries)(
-        ITaskSettings *This,
-        VARIANT_BOOL stop);
+                     ITaskSettings *This,
+                     VARIANT_BOOL stop);
 
     HRESULT (STDMETHODCALLTYPE *get_DisallowStartIfOnBatteries)(
-        ITaskSettings *This,
-        VARIANT_BOOL *disallow);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *disallow);
 
     HRESULT (STDMETHODCALLTYPE *put_DisallowStartIfOnBatteries)(
-        ITaskSettings *This,
-        VARIANT_BOOL disallow);
+                     ITaskSettings *This,
+                     VARIANT_BOOL disallow);
 
     HRESULT (STDMETHODCALLTYPE *get_AllowHardTerminate)(
-        ITaskSettings *This,
-        VARIANT_BOOL *allow);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *allow);
 
     HRESULT (STDMETHODCALLTYPE *put_AllowHardTerminate)(
-        ITaskSettings *This,
-        VARIANT_BOOL allow);
+                     ITaskSettings *This,
+                     VARIANT_BOOL allow);
 
     HRESULT (STDMETHODCALLTYPE *get_StartWhenAvailable)(
-        ITaskSettings *This,
-        VARIANT_BOOL *start);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *start);
 
     HRESULT (STDMETHODCALLTYPE *put_StartWhenAvailable)(
-        ITaskSettings *This,
-        VARIANT_BOOL start);
+                     ITaskSettings *This,
+                     VARIANT_BOOL start);
 
     HRESULT (STDMETHODCALLTYPE *get_XmlText)(
-        ITaskSettings *This,
-        BSTR *xml);
+                     ITaskSettings *This,
+                     BSTR *xml);
 
     HRESULT (STDMETHODCALLTYPE *put_XmlText)(
-        ITaskSettings *This,
-        BSTR xml);
+                     ITaskSettings *This,
+                     BSTR xml);
 
     HRESULT (STDMETHODCALLTYPE *get_RunOnlyIfNetworkAvailable)(
-        ITaskSettings *This,
-        VARIANT_BOOL *run);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *run);
 
     HRESULT (STDMETHODCALLTYPE *put_RunOnlyIfNetworkAvailable)(
-        ITaskSettings *This,
-        VARIANT_BOOL run);
+                     ITaskSettings *This,
+                     VARIANT_BOOL run);
 
     HRESULT (STDMETHODCALLTYPE *get_ExecutionTimeLimit)(
-        ITaskSettings *This,
-        BSTR *limit);
+                     ITaskSettings *This,
+                     BSTR *limit);
 
     HRESULT (STDMETHODCALLTYPE *put_ExecutionTimeLimit)(
-        ITaskSettings *This,
-        BSTR limit);
+                     ITaskSettings *This,
+                     BSTR limit);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        ITaskSettings *This,
-        VARIANT_BOOL *enabled);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        ITaskSettings *This,
-        VARIANT_BOOL enabled);
+                     ITaskSettings *This,
+                     VARIANT_BOOL enabled);
 
     HRESULT (STDMETHODCALLTYPE *get_DeleteExpiredTaskAfter)(
-        ITaskSettings *This,
-        BSTR *delay);
+                     ITaskSettings *This,
+                     BSTR *delay);
 
     HRESULT (STDMETHODCALLTYPE *put_DeleteExpiredTaskAfter)(
-        ITaskSettings *This,
-        BSTR delay);
+                     ITaskSettings *This,
+                     BSTR delay);
 
     HRESULT (STDMETHODCALLTYPE *get_Priority)(
-        ITaskSettings *This,
-        INT *priority);
+                     ITaskSettings *This,
+                     INT *priority);
 
     HRESULT (STDMETHODCALLTYPE *put_Priority)(
-        ITaskSettings *This,
-        INT priority);
+                     ITaskSettings *This,
+                     INT priority);
 
     HRESULT (STDMETHODCALLTYPE *get_Compatibility)(
-        ITaskSettings *This,
-        TASK_COMPATIBILITY *level);
+                     ITaskSettings *This,
+                     TASK_COMPATIBILITY *level);
 
     HRESULT (STDMETHODCALLTYPE *put_Compatibility)(
-        ITaskSettings *This,
-        TASK_COMPATIBILITY level);
+                     ITaskSettings *This,
+                     TASK_COMPATIBILITY level);
 
     HRESULT (STDMETHODCALLTYPE *get_Hidden)(
-        ITaskSettings *This,
-        VARIANT_BOOL *hidden);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *hidden);
 
     HRESULT (STDMETHODCALLTYPE *put_Hidden)(
-        ITaskSettings *This,
-        VARIANT_BOOL hidden);
+                     ITaskSettings *This,
+                     VARIANT_BOOL hidden);
 
     HRESULT (STDMETHODCALLTYPE *get_IdleSettings)(
-        ITaskSettings *This,
-        IIdleSettings **settings);
+                     ITaskSettings *This,
+                     IIdleSettings **settings);
 
     HRESULT (STDMETHODCALLTYPE *put_IdleSettings)(
-        ITaskSettings *This,
-        IIdleSettings *settings);
+                     ITaskSettings *This,
+                     IIdleSettings *settings);
 
     HRESULT (STDMETHODCALLTYPE *get_RunOnlyIfIdle)(
-        ITaskSettings *This,
-        VARIANT_BOOL *run);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *run);
 
     HRESULT (STDMETHODCALLTYPE *put_RunOnlyIfIdle)(
-        ITaskSettings *This,
-        VARIANT_BOOL run);
+                     ITaskSettings *This,
+                     VARIANT_BOOL run);
 
     HRESULT (STDMETHODCALLTYPE *get_WakeToRun)(
-        ITaskSettings *This,
-        VARIANT_BOOL *wake);
+                     ITaskSettings *This,
+                     VARIANT_BOOL *wake);
 
     HRESULT (STDMETHODCALLTYPE *put_WakeToRun)(
-        ITaskSettings *This,
-        VARIANT_BOOL wake);
+                     ITaskSettings *This,
+                     VARIANT_BOOL wake);
 
     HRESULT (STDMETHODCALLTYPE *get_NetworkSettings)(
-        ITaskSettings *This,
-        INetworkSettings **settings);
+                     ITaskSettings *This,
+                     INetworkSettings **settings);
 
     HRESULT (STDMETHODCALLTYPE *put_NetworkSettings)(
-        ITaskSettings *This,
-        INetworkSettings *settings);
+                     ITaskSettings *This,
+                     INetworkSettings *settings);
 
     END_INTERFACE
 } ITaskSettingsVtbl;
@@ -2738,28 +2738,28 @@ MIDL_INTERFACE("84594461-0053-4342-a8fd-088fabf11f32")
 IIdleSettings : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_IdleDuration(
-        BSTR *delay) = 0;
+                     BSTR *delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_IdleDuration(
-        BSTR delay) = 0;
+                     BSTR delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_WaitTimeout(
-        BSTR *timeout) = 0;
+                     BSTR *timeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_WaitTimeout(
-        BSTR timeout) = 0;
+                     BSTR timeout) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StopOnIdleEnd(
-        VARIANT_BOOL *stop) = 0;
+                     VARIANT_BOOL *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StopOnIdleEnd(
-        VARIANT_BOOL stop) = 0;
+                     VARIANT_BOOL stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RestartOnIdle(
-        VARIANT_BOOL *restart) = 0;
+                     VARIANT_BOOL *restart) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RestartOnIdle(
-        VARIANT_BOOL restart) = 0;
+                     VARIANT_BOOL restart) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2771,78 +2771,78 @@ typedef struct IIdleSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IIdleSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IIdleSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IIdleSettings *This);
+                     IIdleSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IIdleSettings *This);
+                     IIdleSettings *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IIdleSettings *This,
-        UINT *pctinfo);
+                     IIdleSettings *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IIdleSettings *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IIdleSettings *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IIdleSettings *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IIdleSettings *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IIdleSettings *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IIdleSettings *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IIdleSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *get_IdleDuration)(
-        IIdleSettings *This,
-        BSTR *delay);
+                     IIdleSettings *This,
+                     BSTR *delay);
 
     HRESULT (STDMETHODCALLTYPE *put_IdleDuration)(
-        IIdleSettings *This,
-        BSTR delay);
+                     IIdleSettings *This,
+                     BSTR delay);
 
     HRESULT (STDMETHODCALLTYPE *get_WaitTimeout)(
-        IIdleSettings *This,
-        BSTR *timeout);
+                     IIdleSettings *This,
+                     BSTR *timeout);
 
     HRESULT (STDMETHODCALLTYPE *put_WaitTimeout)(
-        IIdleSettings *This,
-        BSTR timeout);
+                     IIdleSettings *This,
+                     BSTR timeout);
 
     HRESULT (STDMETHODCALLTYPE *get_StopOnIdleEnd)(
-        IIdleSettings *This,
-        VARIANT_BOOL *stop);
+                     IIdleSettings *This,
+                     VARIANT_BOOL *stop);
 
     HRESULT (STDMETHODCALLTYPE *put_StopOnIdleEnd)(
-        IIdleSettings *This,
-        VARIANT_BOOL stop);
+                     IIdleSettings *This,
+                     VARIANT_BOOL stop);
 
     HRESULT (STDMETHODCALLTYPE *get_RestartOnIdle)(
-        IIdleSettings *This,
-        VARIANT_BOOL *restart);
+                     IIdleSettings *This,
+                     VARIANT_BOOL *restart);
 
     HRESULT (STDMETHODCALLTYPE *put_RestartOnIdle)(
-        IIdleSettings *This,
-        VARIANT_BOOL restart);
+                     IIdleSettings *This,
+                     VARIANT_BOOL restart);
 
     END_INTERFACE
 } IIdleSettingsVtbl;
@@ -2940,28 +2940,28 @@ MIDL_INTERFACE("653758fb-7b9a-4f1e-a471-beeb8e9b834e")
 IRunningTask : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_InstanceGuid(
-        BSTR *guid) = 0;
+                     BSTR *guid) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_State(
-        TASK_STATE *state) = 0;
+                     TASK_STATE *state) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_CurrentAction(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Stop(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Refresh(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EnginePID(
-        DWORD *pid) = 0;
+                     DWORD *pid) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -2973,76 +2973,76 @@ typedef struct IRunningTaskVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRunningTask *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRunningTask *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRunningTask *This);
+                     IRunningTask *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRunningTask *This);
+                     IRunningTask *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IRunningTask *This,
-        UINT *pctinfo);
+                     IRunningTask *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IRunningTask *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IRunningTask *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IRunningTask *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IRunningTask *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IRunningTask *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IRunningTask *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IRunningTask methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        IRunningTask *This,
-        BSTR *name);
+                     IRunningTask *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *get_InstanceGuid)(
-        IRunningTask *This,
-        BSTR *guid);
+                     IRunningTask *This,
+                     BSTR *guid);
 
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IRunningTask *This,
-        BSTR *path);
+                     IRunningTask *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *get_State)(
-        IRunningTask *This,
-        TASK_STATE *state);
+                     IRunningTask *This,
+                     TASK_STATE *state);
 
     HRESULT (STDMETHODCALLTYPE *get_CurrentAction)(
-        IRunningTask *This,
-        BSTR *name);
+                     IRunningTask *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *Stop)(
-        IRunningTask *This);
+                     IRunningTask *This);
 
     HRESULT (STDMETHODCALLTYPE *Refresh)(
-        IRunningTask *This);
+                     IRunningTask *This);
 
     HRESULT (STDMETHODCALLTYPE *get_EnginePID)(
-        IRunningTask *This,
-        DWORD *pid);
+                     IRunningTask *This,
+                     DWORD *pid);
 
     END_INTERFACE
 } IRunningTaskVtbl;
@@ -3140,14 +3140,14 @@ MIDL_INTERFACE("6a67614b-6828-4fec-aa54-6d52e8f1f2db")
 IRunningTaskCollection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        VARIANT index,
-        IRunningTask **task) = 0;
+                     VARIANT index,
+                     IRunningTask **task) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **penum) = 0;
+                     IUnknown **penum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3159,59 +3159,59 @@ typedef struct IRunningTaskCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRunningTaskCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRunningTaskCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRunningTaskCollection *This);
+                     IRunningTaskCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRunningTaskCollection *This);
+                     IRunningTaskCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IRunningTaskCollection *This,
-        UINT *pctinfo);
+                     IRunningTaskCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IRunningTaskCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IRunningTaskCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IRunningTaskCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IRunningTaskCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IRunningTaskCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IRunningTaskCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IRunningTaskCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IRunningTaskCollection *This,
-        LONG *count);
+                     IRunningTaskCollection *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IRunningTaskCollection *This,
-        VARIANT index,
-        IRunningTask **task);
+                     IRunningTaskCollection *This,
+                     VARIANT index,
+                     IRunningTask **task);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IRunningTaskCollection *This,
-        IUnknown **penum);
+                     IRunningTaskCollection *This,
+                     IUnknown **penum);
 
     END_INTERFACE
 } IRunningTaskCollectionVtbl;
@@ -3289,43 +3289,43 @@ MIDL_INTERFACE("09941815-ea89-4b5b-89e0-2a773801fac3")
 ITrigger : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        TASK_TRIGGER_TYPE2 *type) = 0;
+                     TASK_TRIGGER_TYPE2 *type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        BSTR *id) = 0;
+                     BSTR *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Id(
-        BSTR id) = 0;
+                     BSTR id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Repetition(
-        IRepetitionPattern **repeat) = 0;
+                     IRepetitionPattern **repeat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Repetition(
-        IRepetitionPattern *repeat) = 0;
+                     IRepetitionPattern *repeat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_ExecutionTimeLimit(
-        BSTR *limit) = 0;
+                     BSTR *limit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_ExecutionTimeLimit(
-        BSTR limit) = 0;
+                     BSTR limit) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StartBoundary(
-        BSTR *start) = 0;
+                     BSTR *start) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StartBoundary(
-        BSTR start) = 0;
+                     BSTR start) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_EndBoundary(
-        BSTR *end) = 0;
+                     BSTR *end) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_EndBoundary(
-        BSTR end) = 0;
+                     BSTR end) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Enabled(
-        VARIANT_BOOL *enabled) = 0;
+                     VARIANT_BOOL *enabled) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Enabled(
-        VARIANT_BOOL enabled) = 0;
+                     VARIANT_BOOL enabled) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3337,98 +3337,98 @@ typedef struct ITriggerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITrigger *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITrigger *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITrigger *This);
+                     ITrigger *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITrigger *This);
+                     ITrigger *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITrigger *This,
-        UINT *pctinfo);
+                     ITrigger *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITrigger *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITrigger *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITrigger *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITrigger *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITrigger *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITrigger *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITrigger methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        ITrigger *This,
-        TASK_TRIGGER_TYPE2 *type);
+                     ITrigger *This,
+                     TASK_TRIGGER_TYPE2 *type);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ITrigger *This,
-        BSTR *id);
+                     ITrigger *This,
+                     BSTR *id);
 
     HRESULT (STDMETHODCALLTYPE *put_Id)(
-        ITrigger *This,
-        BSTR id);
+                     ITrigger *This,
+                     BSTR id);
 
     HRESULT (STDMETHODCALLTYPE *get_Repetition)(
-        ITrigger *This,
-        IRepetitionPattern **repeat);
+                     ITrigger *This,
+                     IRepetitionPattern **repeat);
 
     HRESULT (STDMETHODCALLTYPE *put_Repetition)(
-        ITrigger *This,
-        IRepetitionPattern *repeat);
+                     ITrigger *This,
+                     IRepetitionPattern *repeat);
 
     HRESULT (STDMETHODCALLTYPE *get_ExecutionTimeLimit)(
-        ITrigger *This,
-        BSTR *limit);
+                     ITrigger *This,
+                     BSTR *limit);
 
     HRESULT (STDMETHODCALLTYPE *put_ExecutionTimeLimit)(
-        ITrigger *This,
-        BSTR limit);
+                     ITrigger *This,
+                     BSTR limit);
 
     HRESULT (STDMETHODCALLTYPE *get_StartBoundary)(
-        ITrigger *This,
-        BSTR *start);
+                     ITrigger *This,
+                     BSTR *start);
 
     HRESULT (STDMETHODCALLTYPE *put_StartBoundary)(
-        ITrigger *This,
-        BSTR start);
+                     ITrigger *This,
+                     BSTR start);
 
     HRESULT (STDMETHODCALLTYPE *get_EndBoundary)(
-        ITrigger *This,
-        BSTR *end);
+                     ITrigger *This,
+                     BSTR *end);
 
     HRESULT (STDMETHODCALLTYPE *put_EndBoundary)(
-        ITrigger *This,
-        BSTR end);
+                     ITrigger *This,
+                     BSTR end);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        ITrigger *This,
-        VARIANT_BOOL *enabled);
+                     ITrigger *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        ITrigger *This,
-        VARIANT_BOOL enabled);
+                     ITrigger *This,
+                     VARIANT_BOOL enabled);
 
     END_INTERFACE
 } ITriggerVtbl;
@@ -3546,16 +3546,16 @@ MIDL_INTERFACE("126c5cd8-b288-41d5-8dbf-e491446adc5c")
 IDailyTrigger : public ITrigger
 {
     virtual HRESULT STDMETHODCALLTYPE get_DaysInterval(
-        short *pDays) = 0;
+                     short *pDays) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DaysInterval(
-        short days) = 0;
+                     short days) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RandomDelay(
-        BSTR *pRandomDelay) = 0;
+                     BSTR *pRandomDelay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RandomDelay(
-        BSTR randomDelay) = 0;
+                     BSTR randomDelay) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3567,115 +3567,115 @@ typedef struct IDailyTriggerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDailyTrigger *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDailyTrigger *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDailyTrigger *This);
+                     IDailyTrigger *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDailyTrigger *This);
+                     IDailyTrigger *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IDailyTrigger *This,
-        UINT *pctinfo);
+                     IDailyTrigger *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDailyTrigger *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IDailyTrigger *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IDailyTrigger *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IDailyTrigger *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IDailyTrigger *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IDailyTrigger *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITrigger methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IDailyTrigger *This,
-        TASK_TRIGGER_TYPE2 *type);
+                     IDailyTrigger *This,
+                     TASK_TRIGGER_TYPE2 *type);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IDailyTrigger *This,
-        BSTR *id);
+                     IDailyTrigger *This,
+                     BSTR *id);
 
     HRESULT (STDMETHODCALLTYPE *put_Id)(
-        IDailyTrigger *This,
-        BSTR id);
+                     IDailyTrigger *This,
+                     BSTR id);
 
     HRESULT (STDMETHODCALLTYPE *get_Repetition)(
-        IDailyTrigger *This,
-        IRepetitionPattern **repeat);
+                     IDailyTrigger *This,
+                     IRepetitionPattern **repeat);
 
     HRESULT (STDMETHODCALLTYPE *put_Repetition)(
-        IDailyTrigger *This,
-        IRepetitionPattern *repeat);
+                     IDailyTrigger *This,
+                     IRepetitionPattern *repeat);
 
     HRESULT (STDMETHODCALLTYPE *get_ExecutionTimeLimit)(
-        IDailyTrigger *This,
-        BSTR *limit);
+                     IDailyTrigger *This,
+                     BSTR *limit);
 
     HRESULT (STDMETHODCALLTYPE *put_ExecutionTimeLimit)(
-        IDailyTrigger *This,
-        BSTR limit);
+                     IDailyTrigger *This,
+                     BSTR limit);
 
     HRESULT (STDMETHODCALLTYPE *get_StartBoundary)(
-        IDailyTrigger *This,
-        BSTR *start);
+                     IDailyTrigger *This,
+                     BSTR *start);
 
     HRESULT (STDMETHODCALLTYPE *put_StartBoundary)(
-        IDailyTrigger *This,
-        BSTR start);
+                     IDailyTrigger *This,
+                     BSTR start);
 
     HRESULT (STDMETHODCALLTYPE *get_EndBoundary)(
-        IDailyTrigger *This,
-        BSTR *end);
+                     IDailyTrigger *This,
+                     BSTR *end);
 
     HRESULT (STDMETHODCALLTYPE *put_EndBoundary)(
-        IDailyTrigger *This,
-        BSTR end);
+                     IDailyTrigger *This,
+                     BSTR end);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        IDailyTrigger *This,
-        VARIANT_BOOL *enabled);
+                     IDailyTrigger *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        IDailyTrigger *This,
-        VARIANT_BOOL enabled);
+                     IDailyTrigger *This,
+                     VARIANT_BOOL enabled);
 
     /*** IDailyTrigger methods ***/
     HRESULT (STDMETHODCALLTYPE *get_DaysInterval)(
-        IDailyTrigger *This,
-        short *pDays);
+                     IDailyTrigger *This,
+                     short *pDays);
 
     HRESULT (STDMETHODCALLTYPE *put_DaysInterval)(
-        IDailyTrigger *This,
-        short days);
+                     IDailyTrigger *This,
+                     short days);
 
     HRESULT (STDMETHODCALLTYPE *get_RandomDelay)(
-        IDailyTrigger *This,
-        BSTR *pRandomDelay);
+                     IDailyTrigger *This,
+                     BSTR *pRandomDelay);
 
     HRESULT (STDMETHODCALLTYPE *put_RandomDelay)(
-        IDailyTrigger *This,
-        BSTR randomDelay);
+                     IDailyTrigger *This,
+                     BSTR randomDelay);
 
     END_INTERFACE
 } IDailyTriggerVtbl;
@@ -3811,24 +3811,24 @@ MIDL_INTERFACE("85df5081-1b24-4f32-878a-d9d14df4cb77")
 ITriggerCollection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        LONG index,
-        ITrigger **trigger) = 0;
+                     LONG index,
+                     ITrigger **trigger) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **penum) = 0;
+                     IUnknown **penum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Create(
-        TASK_TRIGGER_TYPE2 type,
-        ITrigger **trigger) = 0;
+                     TASK_TRIGGER_TYPE2 type,
+                     ITrigger **trigger) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        VARIANT index) = 0;
+                     VARIANT index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -3840,71 +3840,71 @@ typedef struct ITriggerCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITriggerCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITriggerCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITriggerCollection *This);
+                     ITriggerCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITriggerCollection *This);
+                     ITriggerCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITriggerCollection *This,
-        UINT *pctinfo);
+                     ITriggerCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITriggerCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITriggerCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITriggerCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITriggerCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITriggerCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITriggerCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITriggerCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        ITriggerCollection *This,
-        LONG *count);
+                     ITriggerCollection *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        ITriggerCollection *This,
-        LONG index,
-        ITrigger **trigger);
+                     ITriggerCollection *This,
+                     LONG index,
+                     ITrigger **trigger);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        ITriggerCollection *This,
-        IUnknown **penum);
+                     ITriggerCollection *This,
+                     IUnknown **penum);
 
     HRESULT (STDMETHODCALLTYPE *Create)(
-        ITriggerCollection *This,
-        TASK_TRIGGER_TYPE2 type,
-        ITrigger **trigger);
+                     ITriggerCollection *This,
+                     TASK_TRIGGER_TYPE2 type,
+                     ITrigger **trigger);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        ITriggerCollection *This,
-        VARIANT index);
+                     ITriggerCollection *This,
+                     VARIANT index);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        ITriggerCollection *This);
+                     ITriggerCollection *This);
 
     END_INTERFACE
 } ITriggerCollectionVtbl;
@@ -3994,10 +3994,10 @@ MIDL_INTERFACE("b45747e0-eba7-4276-9f29-85c5bb300006")
 ITimeTrigger : public ITrigger
 {
     virtual HRESULT STDMETHODCALLTYPE get_RandomDelay(
-        BSTR *delay) = 0;
+                     BSTR *delay) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RandomDelay(
-        BSTR delay) = 0;
+                     BSTR delay) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4009,107 +4009,107 @@ typedef struct ITimeTriggerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ITimeTrigger *This,
-        REFIID riid,
-        void **ppvObject);
+                     ITimeTrigger *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ITimeTrigger *This);
+                     ITimeTrigger *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ITimeTrigger *This);
+                     ITimeTrigger *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        ITimeTrigger *This,
-        UINT *pctinfo);
+                     ITimeTrigger *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        ITimeTrigger *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     ITimeTrigger *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        ITimeTrigger *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     ITimeTrigger *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        ITimeTrigger *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     ITimeTrigger *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** ITrigger methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        ITimeTrigger *This,
-        TASK_TRIGGER_TYPE2 *type);
+                     ITimeTrigger *This,
+                     TASK_TRIGGER_TYPE2 *type);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        ITimeTrigger *This,
-        BSTR *id);
+                     ITimeTrigger *This,
+                     BSTR *id);
 
     HRESULT (STDMETHODCALLTYPE *put_Id)(
-        ITimeTrigger *This,
-        BSTR id);
+                     ITimeTrigger *This,
+                     BSTR id);
 
     HRESULT (STDMETHODCALLTYPE *get_Repetition)(
-        ITimeTrigger *This,
-        IRepetitionPattern **repeat);
+                     ITimeTrigger *This,
+                     IRepetitionPattern **repeat);
 
     HRESULT (STDMETHODCALLTYPE *put_Repetition)(
-        ITimeTrigger *This,
-        IRepetitionPattern *repeat);
+                     ITimeTrigger *This,
+                     IRepetitionPattern *repeat);
 
     HRESULT (STDMETHODCALLTYPE *get_ExecutionTimeLimit)(
-        ITimeTrigger *This,
-        BSTR *limit);
+                     ITimeTrigger *This,
+                     BSTR *limit);
 
     HRESULT (STDMETHODCALLTYPE *put_ExecutionTimeLimit)(
-        ITimeTrigger *This,
-        BSTR limit);
+                     ITimeTrigger *This,
+                     BSTR limit);
 
     HRESULT (STDMETHODCALLTYPE *get_StartBoundary)(
-        ITimeTrigger *This,
-        BSTR *start);
+                     ITimeTrigger *This,
+                     BSTR *start);
 
     HRESULT (STDMETHODCALLTYPE *put_StartBoundary)(
-        ITimeTrigger *This,
-        BSTR start);
+                     ITimeTrigger *This,
+                     BSTR start);
 
     HRESULT (STDMETHODCALLTYPE *get_EndBoundary)(
-        ITimeTrigger *This,
-        BSTR *end);
+                     ITimeTrigger *This,
+                     BSTR *end);
 
     HRESULT (STDMETHODCALLTYPE *put_EndBoundary)(
-        ITimeTrigger *This,
-        BSTR end);
+                     ITimeTrigger *This,
+                     BSTR end);
 
     HRESULT (STDMETHODCALLTYPE *get_Enabled)(
-        ITimeTrigger *This,
-        VARIANT_BOOL *enabled);
+                     ITimeTrigger *This,
+                     VARIANT_BOOL *enabled);
 
     HRESULT (STDMETHODCALLTYPE *put_Enabled)(
-        ITimeTrigger *This,
-        VARIANT_BOOL enabled);
+                     ITimeTrigger *This,
+                     VARIANT_BOOL enabled);
 
     /*** ITimeTrigger methods ***/
     HRESULT (STDMETHODCALLTYPE *get_RandomDelay)(
-        ITimeTrigger *This,
-        BSTR *delay);
+                     ITimeTrigger *This,
+                     BSTR *delay);
 
     HRESULT (STDMETHODCALLTYPE *put_RandomDelay)(
-        ITimeTrigger *This,
-        BSTR delay);
+                     ITimeTrigger *This,
+                     BSTR delay);
 
     END_INTERFACE
 } ITimeTriggerVtbl;
@@ -4237,22 +4237,22 @@ MIDL_INTERFACE("7fb9acf1-26be-400e-85b5-294b9c75dfd6")
 IRepetitionPattern : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Interval(
-        BSTR *interval) = 0;
+                     BSTR *interval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Interval(
-        BSTR interval) = 0;
+                     BSTR interval) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Duration(
-        BSTR *duration) = 0;
+                     BSTR *duration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Duration(
-        BSTR duration) = 0;
+                     BSTR duration) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_StopAtDurationEnd(
-        VARIANT_BOOL *stop) = 0;
+                     VARIANT_BOOL *stop) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_StopAtDurationEnd(
-        VARIANT_BOOL sop) = 0;
+                     VARIANT_BOOL sop) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4264,70 +4264,70 @@ typedef struct IRepetitionPatternVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IRepetitionPattern *This,
-        REFIID riid,
-        void **ppvObject);
+                     IRepetitionPattern *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IRepetitionPattern *This);
+                     IRepetitionPattern *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IRepetitionPattern *This);
+                     IRepetitionPattern *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IRepetitionPattern *This,
-        UINT *pctinfo);
+                     IRepetitionPattern *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IRepetitionPattern *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IRepetitionPattern *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IRepetitionPattern *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IRepetitionPattern *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IRepetitionPattern *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IRepetitionPattern *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IRepetitionPattern methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Interval)(
-        IRepetitionPattern *This,
-        BSTR *interval);
+                     IRepetitionPattern *This,
+                     BSTR *interval);
 
     HRESULT (STDMETHODCALLTYPE *put_Interval)(
-        IRepetitionPattern *This,
-        BSTR interval);
+                     IRepetitionPattern *This,
+                     BSTR interval);
 
     HRESULT (STDMETHODCALLTYPE *get_Duration)(
-        IRepetitionPattern *This,
-        BSTR *duration);
+                     IRepetitionPattern *This,
+                     BSTR *duration);
 
     HRESULT (STDMETHODCALLTYPE *put_Duration)(
-        IRepetitionPattern *This,
-        BSTR duration);
+                     IRepetitionPattern *This,
+                     BSTR duration);
 
     HRESULT (STDMETHODCALLTYPE *get_StopAtDurationEnd)(
-        IRepetitionPattern *This,
-        VARIANT_BOOL *stop);
+                     IRepetitionPattern *This,
+                     VARIANT_BOOL *stop);
 
     HRESULT (STDMETHODCALLTYPE *put_StopAtDurationEnd)(
-        IRepetitionPattern *This,
-        VARIANT_BOOL sop);
+                     IRepetitionPattern *This,
+                     VARIANT_BOOL sop);
 
     END_INTERFACE
 } IRepetitionPatternVtbl;
@@ -4417,13 +4417,13 @@ MIDL_INTERFACE("bae54997-48b1-4cbe-9965-d6be263ebea4")
 IAction : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        BSTR *id) = 0;
+                     BSTR *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Id(
-        BSTR id) = 0;
+                     BSTR id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Type(
-        TASK_ACTION_TYPE *type) = 0;
+                     TASK_ACTION_TYPE *type) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4435,58 +4435,58 @@ typedef struct IActionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IAction *This,
-        REFIID riid,
-        void **ppvObject);
+                     IAction *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IAction *This);
+                     IAction *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IAction *This);
+                     IAction *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IAction *This,
-        UINT *pctinfo);
+                     IAction *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IAction *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IAction *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IAction *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IAction *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IAction *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IAction *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IAction *This,
-        BSTR *id);
+                     IAction *This,
+                     BSTR *id);
 
     HRESULT (STDMETHODCALLTYPE *put_Id)(
-        IAction *This,
-        BSTR id);
+                     IAction *This,
+                     BSTR id);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IAction *This,
-        TASK_ACTION_TYPE *type);
+                     IAction *This,
+                     TASK_ACTION_TYPE *type);
 
     END_INTERFACE
 } IActionVtbl;
@@ -4564,36 +4564,36 @@ MIDL_INTERFACE("02820e19-7b98-4ed2-b2e8-fdccceff619b")
 IActionCollection : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Count(
-        LONG *count) = 0;
+                     LONG *count) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Item(
-        LONG index,
-        IAction **action) = 0;
+                     LONG index,
+                     IAction **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get__NewEnum(
-        IUnknown **penum) = 0;
+                     IUnknown **penum) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_XmlText(
-        BSTR *xml) = 0;
+                     BSTR *xml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_XmlText(
-        BSTR xml) = 0;
+                     BSTR xml) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Create(
-        TASK_ACTION_TYPE Type,
-        IAction **action) = 0;
+                     TASK_ACTION_TYPE Type,
+                     IAction **action) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Remove(
-        VARIANT index) = 0;
+                     VARIANT index) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Clear(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Context(
-        BSTR *ctx) = 0;
+                     BSTR *ctx) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Context(
-        BSTR ctx) = 0;
+                     BSTR ctx) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4605,87 +4605,87 @@ typedef struct IActionCollectionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActionCollection *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActionCollection *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActionCollection *This);
+                     IActionCollection *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActionCollection *This);
+                     IActionCollection *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IActionCollection *This,
-        UINT *pctinfo);
+                     IActionCollection *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IActionCollection *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IActionCollection *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IActionCollection *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IActionCollection *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IActionCollection *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IActionCollection *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IActionCollection methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Count)(
-        IActionCollection *This,
-        LONG *count);
+                     IActionCollection *This,
+                     LONG *count);
 
     HRESULT (STDMETHODCALLTYPE *get_Item)(
-        IActionCollection *This,
-        LONG index,
-        IAction **action);
+                     IActionCollection *This,
+                     LONG index,
+                     IAction **action);
 
     HRESULT (STDMETHODCALLTYPE *get__NewEnum)(
-        IActionCollection *This,
-        IUnknown **penum);
+                     IActionCollection *This,
+                     IUnknown **penum);
 
     HRESULT (STDMETHODCALLTYPE *get_XmlText)(
-        IActionCollection *This,
-        BSTR *xml);
+                     IActionCollection *This,
+                     BSTR *xml);
 
     HRESULT (STDMETHODCALLTYPE *put_XmlText)(
-        IActionCollection *This,
-        BSTR xml);
+                     IActionCollection *This,
+                     BSTR xml);
 
     HRESULT (STDMETHODCALLTYPE *Create)(
-        IActionCollection *This,
-        TASK_ACTION_TYPE Type,
-        IAction **action);
+                     IActionCollection *This,
+                     TASK_ACTION_TYPE Type,
+                     IAction **action);
 
     HRESULT (STDMETHODCALLTYPE *Remove)(
-        IActionCollection *This,
-        VARIANT index);
+                     IActionCollection *This,
+                     VARIANT index);
 
     HRESULT (STDMETHODCALLTYPE *Clear)(
-        IActionCollection *This);
+                     IActionCollection *This);
 
     HRESULT (STDMETHODCALLTYPE *get_Context)(
-        IActionCollection *This,
-        BSTR *ctx);
+                     IActionCollection *This,
+                     BSTR *ctx);
 
     HRESULT (STDMETHODCALLTYPE *put_Context)(
-        IActionCollection *This,
-        BSTR ctx);
+                     IActionCollection *This,
+                     BSTR ctx);
 
     END_INTERFACE
 } IActionCollectionVtbl;
@@ -4791,22 +4791,22 @@ MIDL_INTERFACE("4c3d624d-fd6b-49a3-b9b7-09cb3cd3f047")
 IExecAction : public IAction
 {
     virtual HRESULT STDMETHODCALLTYPE get_Path(
-        BSTR *path) = 0;
+                     BSTR *path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Path(
-        BSTR path) = 0;
+                     BSTR path) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Arguments(
-        BSTR *argument) = 0;
+                     BSTR *argument) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Arguments(
-        BSTR argument) = 0;
+                     BSTR argument) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_WorkingDirectory(
-        BSTR *directory) = 0;
+                     BSTR *directory) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_WorkingDirectory(
-        BSTR directory) = 0;
+                     BSTR directory) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -4818,83 +4818,83 @@ typedef struct IExecActionVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IExecAction *This,
-        REFIID riid,
-        void **ppvObject);
+                     IExecAction *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IExecAction *This);
+                     IExecAction *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IExecAction *This);
+                     IExecAction *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IExecAction *This,
-        UINT *pctinfo);
+                     IExecAction *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IExecAction *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IExecAction *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IExecAction *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IExecAction *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IExecAction *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IExecAction *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IExecAction *This,
-        BSTR *id);
+                     IExecAction *This,
+                     BSTR *id);
 
     HRESULT (STDMETHODCALLTYPE *put_Id)(
-        IExecAction *This,
-        BSTR id);
+                     IExecAction *This,
+                     BSTR id);
 
     HRESULT (STDMETHODCALLTYPE *get_Type)(
-        IExecAction *This,
-        TASK_ACTION_TYPE *type);
+                     IExecAction *This,
+                     TASK_ACTION_TYPE *type);
 
     /*** IExecAction methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Path)(
-        IExecAction *This,
-        BSTR *path);
+                     IExecAction *This,
+                     BSTR *path);
 
     HRESULT (STDMETHODCALLTYPE *put_Path)(
-        IExecAction *This,
-        BSTR path);
+                     IExecAction *This,
+                     BSTR path);
 
     HRESULT (STDMETHODCALLTYPE *get_Arguments)(
-        IExecAction *This,
-        BSTR *argument);
+                     IExecAction *This,
+                     BSTR *argument);
 
     HRESULT (STDMETHODCALLTYPE *put_Arguments)(
-        IExecAction *This,
-        BSTR argument);
+                     IExecAction *This,
+                     BSTR argument);
 
     HRESULT (STDMETHODCALLTYPE *get_WorkingDirectory)(
-        IExecAction *This,
-        BSTR *directory);
+                     IExecAction *This,
+                     BSTR *directory);
 
     HRESULT (STDMETHODCALLTYPE *put_WorkingDirectory)(
-        IExecAction *This,
-        BSTR directory);
+                     IExecAction *This,
+                     BSTR directory);
 
     END_INTERFACE
 } IExecActionVtbl;
@@ -4998,16 +4998,16 @@ MIDL_INTERFACE("9f7dea84-c30b-4245-80b6-00e9f646f1b4")
 INetworkSettings : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Name(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Name(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        BSTR *id) = 0;
+                     BSTR *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Id(
-        BSTR id) = 0;
+                     BSTR id) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5019,62 +5019,62 @@ typedef struct INetworkSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        INetworkSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     INetworkSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        INetworkSettings *This);
+                     INetworkSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        INetworkSettings *This);
+                     INetworkSettings *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        INetworkSettings *This,
-        UINT *pctinfo);
+                     INetworkSettings *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        INetworkSettings *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     INetworkSettings *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        INetworkSettings *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     INetworkSettings *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        INetworkSettings *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     INetworkSettings *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** INetworkSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Name)(
-        INetworkSettings *This,
-        BSTR *name);
+                     INetworkSettings *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_Name)(
-        INetworkSettings *This,
-        BSTR name);
+                     INetworkSettings *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        INetworkSettings *This,
-        BSTR *id);
+                     INetworkSettings *This,
+                     BSTR *id);
 
     HRESULT (STDMETHODCALLTYPE *put_Id)(
-        INetworkSettings *This,
-        BSTR id);
+                     INetworkSettings *This,
+                     BSTR id);
 
     END_INTERFACE
 } INetworkSettingsVtbl;
@@ -5156,40 +5156,40 @@ MIDL_INTERFACE("d98d51e5-c9b4-496a-a9c1-18980261cf0f")
 IPrincipal : public IDispatch
 {
     virtual HRESULT STDMETHODCALLTYPE get_Id(
-        BSTR *id) = 0;
+                     BSTR *id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_Id(
-        BSTR id) = 0;
+                     BSTR id) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_DisplayName(
-        BSTR *name) = 0;
+                     BSTR *name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_DisplayName(
-        BSTR name) = 0;
+                     BSTR name) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_UserId(
-        BSTR *user) = 0;
+                     BSTR *user) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_UserId(
-        BSTR user) = 0;
+                     BSTR user) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_LogonType(
-        TASK_LOGON_TYPE *logon) = 0;
+                     TASK_LOGON_TYPE *logon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_LogonType(
-        TASK_LOGON_TYPE logon) = 0;
+                     TASK_LOGON_TYPE logon) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_GroupId(
-        BSTR *group) = 0;
+                     BSTR *group) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_GroupId(
-        BSTR group) = 0;
+                     BSTR group) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE get_RunLevel(
-        TASK_RUNLEVEL_TYPE *level) = 0;
+                     TASK_RUNLEVEL_TYPE *level) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE put_RunLevel(
-        TASK_RUNLEVEL_TYPE level) = 0;
+                     TASK_RUNLEVEL_TYPE level) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -5201,94 +5201,94 @@ typedef struct IPrincipalVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IPrincipal *This,
-        REFIID riid,
-        void **ppvObject);
+                     IPrincipal *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IPrincipal *This);
+                     IPrincipal *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IPrincipal *This);
+                     IPrincipal *This);
 
     /*** IDispatch methods ***/
     HRESULT (STDMETHODCALLTYPE *GetTypeInfoCount)(
-        IPrincipal *This,
-        UINT *pctinfo);
+                     IPrincipal *This,
+                     UINT *pctinfo);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IPrincipal *This,
-        UINT iTInfo,
-        LCID lcid,
-        ITypeInfo **ppTInfo);
+                     IPrincipal *This,
+                     UINT iTInfo,
+                     LCID lcid,
+                     ITypeInfo **ppTInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetIDsOfNames)(
-        IPrincipal *This,
-        REFIID riid,
-        LPOLESTR *rgszNames,
-        UINT cNames,
-        LCID lcid,
-        DISPID *rgDispId);
+                     IPrincipal *This,
+                     REFIID riid,
+                     LPOLESTR *rgszNames,
+                     UINT cNames,
+                     LCID lcid,
+                     DISPID *rgDispId);
 
     HRESULT (STDMETHODCALLTYPE *Invoke)(
-        IPrincipal *This,
-        DISPID dispIdMember,
-        REFIID riid,
-        LCID lcid,
-        WORD wFlags,
-        DISPPARAMS *pDispParams,
-        VARIANT *pVarResult,
-        EXCEPINFO *pExcepInfo,
-        UINT *puArgErr);
+                     IPrincipal *This,
+                     DISPID dispIdMember,
+                     REFIID riid,
+                     LCID lcid,
+                     WORD wFlags,
+                     DISPPARAMS *pDispParams,
+                     VARIANT *pVarResult,
+                     EXCEPINFO *pExcepInfo,
+                     UINT *puArgErr);
 
     /*** IPrincipal methods ***/
     HRESULT (STDMETHODCALLTYPE *get_Id)(
-        IPrincipal *This,
-        BSTR *id);
+                     IPrincipal *This,
+                     BSTR *id);
 
     HRESULT (STDMETHODCALLTYPE *put_Id)(
-        IPrincipal *This,
-        BSTR id);
+                     IPrincipal *This,
+                     BSTR id);
 
     HRESULT (STDMETHODCALLTYPE *get_DisplayName)(
-        IPrincipal *This,
-        BSTR *name);
+                     IPrincipal *This,
+                     BSTR *name);
 
     HRESULT (STDMETHODCALLTYPE *put_DisplayName)(
-        IPrincipal *This,
-        BSTR name);
+                     IPrincipal *This,
+                     BSTR name);
 
     HRESULT (STDMETHODCALLTYPE *get_UserId)(
-        IPrincipal *This,
-        BSTR *user);
+                     IPrincipal *This,
+                     BSTR *user);
 
     HRESULT (STDMETHODCALLTYPE *put_UserId)(
-        IPrincipal *This,
-        BSTR user);
+                     IPrincipal *This,
+                     BSTR user);
 
     HRESULT (STDMETHODCALLTYPE *get_LogonType)(
-        IPrincipal *This,
-        TASK_LOGON_TYPE *logon);
+                     IPrincipal *This,
+                     TASK_LOGON_TYPE *logon);
 
     HRESULT (STDMETHODCALLTYPE *put_LogonType)(
-        IPrincipal *This,
-        TASK_LOGON_TYPE logon);
+                     IPrincipal *This,
+                     TASK_LOGON_TYPE logon);
 
     HRESULT (STDMETHODCALLTYPE *get_GroupId)(
-        IPrincipal *This,
-        BSTR *group);
+                     IPrincipal *This,
+                     BSTR *group);
 
     HRESULT (STDMETHODCALLTYPE *put_GroupId)(
-        IPrincipal *This,
-        BSTR group);
+                     IPrincipal *This,
+                     BSTR group);
 
     HRESULT (STDMETHODCALLTYPE *get_RunLevel)(
-        IPrincipal *This,
-        TASK_RUNLEVEL_TYPE *level);
+                     IPrincipal *This,
+                     TASK_RUNLEVEL_TYPE *level);
 
     HRESULT (STDMETHODCALLTYPE *put_RunLevel)(
-        IPrincipal *This,
-        TASK_RUNLEVEL_TYPE level);
+                     IPrincipal *This,
+                     TASK_RUNLEVEL_TYPE level);
 
     END_INTERFACE
 } IPrincipalVtbl;
@@ -5405,14 +5405,14 @@ __CRT_UUID_DECL(TaskScheduler, 0x0f87369f, 0xa4e5, 0x4cfc, 0xbd,0x3e, 0x73,0xe6,
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
-ULONG           __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+ULONG                        __RPC_USER VARIANT_UserSize     (ULONG *, ULONG, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserMarshal  (ULONG *, unsigned char *, VARIANT *);
 unsigned char * __RPC_USER VARIANT_UserUnmarshal(ULONG *, unsigned char *, VARIANT *);
-void            __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
+void                                      __RPC_USER VARIANT_UserFree     (ULONG *, VARIANT *);
 
 /* End additional prototypes */
 

@@ -116,17 +116,17 @@ extern "C"{
 #else
   typedef struct IISMimeTypeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IISMimeType *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IISMimeType *This);
-      ULONG (WINAPI *Release)(IISMimeType *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IISMimeType *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IISMimeType *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IISMimeType *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IISMimeType *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_MimeType)(IISMimeType *This,BSTR *retval);
-      HRESULT (WINAPI *put_MimeType)(IISMimeType *This,BSTR bstrMimeType);
-      HRESULT (WINAPI *get_Extension)(IISMimeType *This,BSTR *retval);
-      HRESULT (WINAPI *put_Extension)(IISMimeType *This,BSTR bstrExtension);
+                   HRESULT (WINAPI *QueryInterface)(IISMimeType *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IISMimeType *This);
+                   ULONG (WINAPI *Release)(IISMimeType *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IISMimeType *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IISMimeType *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IISMimeType *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IISMimeType *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_MimeType)(IISMimeType *This,BSTR *retval);
+                   HRESULT (WINAPI *put_MimeType)(IISMimeType *This,BSTR bstrMimeType);
+                   HRESULT (WINAPI *get_Extension)(IISMimeType *This,BSTR *retval);
+                   HRESULT (WINAPI *put_Extension)(IISMimeType *This,BSTR bstrExtension);
     END_INTERFACE
   } IISMimeTypeVtbl;
   struct IISMimeType {
@@ -181,23 +181,23 @@ extern "C"{
 #else
   typedef struct IISIPSecurityVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IISIPSecurity *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IISIPSecurity *This);
-      ULONG (WINAPI *Release)(IISIPSecurity *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IISIPSecurity *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IISIPSecurity *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IISIPSecurity *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IISIPSecurity *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_IPDeny)(IISIPSecurity *This,VARIANT *retval);
-      HRESULT (WINAPI *put_IPDeny)(IISIPSecurity *This,VARIANT vIPDeny);
-      HRESULT (WINAPI *get_IPGrant)(IISIPSecurity *This,VARIANT *retval);
-      HRESULT (WINAPI *put_IPGrant)(IISIPSecurity *This,VARIANT vIPGrant);
-      HRESULT (WINAPI *get_DomainDeny)(IISIPSecurity *This,VARIANT *retval);
-      HRESULT (WINAPI *put_DomainDeny)(IISIPSecurity *This,VARIANT vDomainDeny);
-      HRESULT (WINAPI *get_DomainGrant)(IISIPSecurity *This,VARIANT *retval);
-      HRESULT (WINAPI *put_DomainGrant)(IISIPSecurity *This,VARIANT vDomainGrant);
-      HRESULT (WINAPI *get_GrantByDefault)(IISIPSecurity *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_GrantByDefault)(IISIPSecurity *This,VARIANT_BOOL fGrantByDefault);
+                   HRESULT (WINAPI *QueryInterface)(IISIPSecurity *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IISIPSecurity *This);
+                   ULONG (WINAPI *Release)(IISIPSecurity *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IISIPSecurity *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IISIPSecurity *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IISIPSecurity *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IISIPSecurity *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_IPDeny)(IISIPSecurity *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_IPDeny)(IISIPSecurity *This,VARIANT vIPDeny);
+                   HRESULT (WINAPI *get_IPGrant)(IISIPSecurity *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_IPGrant)(IISIPSecurity *This,VARIANT vIPGrant);
+                   HRESULT (WINAPI *get_DomainDeny)(IISIPSecurity *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_DomainDeny)(IISIPSecurity *This,VARIANT vDomainDeny);
+                   HRESULT (WINAPI *get_DomainGrant)(IISIPSecurity *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_DomainGrant)(IISIPSecurity *This,VARIANT vDomainGrant);
+                   HRESULT (WINAPI *get_GrantByDefault)(IISIPSecurity *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_GrantByDefault)(IISIPSecurity *This,VARIANT_BOOL fGrantByDefault);
     END_INTERFACE
   } IISIPSecurityVtbl;
   struct IISIPSecurity {
@@ -271,15 +271,15 @@ extern "C"{
 #else
   typedef struct IISBaseObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IISBaseObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IISBaseObject *This);
-      ULONG (WINAPI *Release)(IISBaseObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IISBaseObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IISBaseObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IISBaseObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IISBaseObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetDataPaths)(IISBaseObject *This,BSTR bstrName,LONG lnAttribute,VARIANT *pvPaths);
-      HRESULT (WINAPI *GetPropertyAttribObj)(IISBaseObject *This,BSTR bstrName,IDispatch **ppObject);
+                   HRESULT (WINAPI *QueryInterface)(IISBaseObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IISBaseObject *This);
+                   ULONG (WINAPI *Release)(IISBaseObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IISBaseObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IISBaseObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IISBaseObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IISBaseObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetDataPaths)(IISBaseObject *This,BSTR bstrName,LONG lnAttribute,VARIANT *pvPaths);
+                   HRESULT (WINAPI *GetPropertyAttribObj)(IISBaseObject *This,BSTR bstrName,IDispatch **ppObject);
     END_INTERFACE
   } IISBaseObjectVtbl;
   struct IISBaseObject {
@@ -315,15 +315,15 @@ extern "C"{
 #else
   typedef struct IISSchemaObjectVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IISSchemaObject *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IISSchemaObject *This);
-      ULONG (WINAPI *Release)(IISSchemaObject *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IISSchemaObject *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IISSchemaObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IISSchemaObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IISSchemaObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetSchemaPropertyAttributes)(IISSchemaObject *This,BSTR bstrName,IDispatch **ppObject);
-      HRESULT (WINAPI *PutSchemaPropertyAttributes)(IISSchemaObject *This,IDispatch *pObject);
+                   HRESULT (WINAPI *QueryInterface)(IISSchemaObject *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IISSchemaObject *This);
+                   ULONG (WINAPI *Release)(IISSchemaObject *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IISSchemaObject *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IISSchemaObject *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IISSchemaObject *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IISSchemaObject *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetSchemaPropertyAttributes)(IISSchemaObject *This,BSTR bstrName,IDispatch **ppObject);
+                   HRESULT (WINAPI *PutSchemaPropertyAttributes)(IISSchemaObject *This,IDispatch *pObject);
     END_INTERFACE
   } IISSchemaObjectVtbl;
   struct IISSchemaObject {
@@ -374,30 +374,30 @@ extern "C"{
 #else
   typedef struct IISPropertyAttributeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IISPropertyAttribute *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IISPropertyAttribute *This);
-      ULONG (WINAPI *Release)(IISPropertyAttribute *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IISPropertyAttribute *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IISPropertyAttribute *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IISPropertyAttribute *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IISPropertyAttribute *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_PropName)(IISPropertyAttribute *This,BSTR *retval);
-      HRESULT (WINAPI *get_MetaId)(IISPropertyAttribute *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_MetaId)(IISPropertyAttribute *This,__LONG32 lnMetaId);
-      HRESULT (WINAPI *get_UserType)(IISPropertyAttribute *This,__LONG32 *retval);
-      HRESULT (WINAPI *put_UserType)(IISPropertyAttribute *This,__LONG32 lnUserType);
-      HRESULT (WINAPI *get_AllAttributes)(IISPropertyAttribute *This,__LONG32 *retval);
-      HRESULT (WINAPI *get_Inherit)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_Inherit)(IISPropertyAttribute *This,VARIANT_BOOL fInherit);
-      HRESULT (WINAPI *get_Secure)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_Secure)(IISPropertyAttribute *This,VARIANT_BOOL fSecure);
-      HRESULT (WINAPI *get_Reference)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_Reference)(IISPropertyAttribute *This,VARIANT_BOOL fReference);
-      HRESULT (WINAPI *get_Volatile)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *put_Volatile)(IISPropertyAttribute *This,VARIANT_BOOL fVolatile);
-      HRESULT (WINAPI *get_Isinherit)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
-      HRESULT (WINAPI *get_Default)(IISPropertyAttribute *This,VARIANT *retval);
-      HRESULT (WINAPI *put_Default)(IISPropertyAttribute *This,VARIANT vDefault);
+                   HRESULT (WINAPI *QueryInterface)(IISPropertyAttribute *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IISPropertyAttribute *This);
+                   ULONG (WINAPI *Release)(IISPropertyAttribute *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IISPropertyAttribute *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IISPropertyAttribute *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IISPropertyAttribute *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IISPropertyAttribute *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_PropName)(IISPropertyAttribute *This,BSTR *retval);
+                   HRESULT (WINAPI *get_MetaId)(IISPropertyAttribute *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_MetaId)(IISPropertyAttribute *This,__LONG32 lnMetaId);
+                   HRESULT (WINAPI *get_UserType)(IISPropertyAttribute *This,__LONG32 *retval);
+                   HRESULT (WINAPI *put_UserType)(IISPropertyAttribute *This,__LONG32 lnUserType);
+                   HRESULT (WINAPI *get_AllAttributes)(IISPropertyAttribute *This,__LONG32 *retval);
+                   HRESULT (WINAPI *get_Inherit)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_Inherit)(IISPropertyAttribute *This,VARIANT_BOOL fInherit);
+                   HRESULT (WINAPI *get_Secure)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_Secure)(IISPropertyAttribute *This,VARIANT_BOOL fSecure);
+                   HRESULT (WINAPI *get_Reference)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_Reference)(IISPropertyAttribute *This,VARIANT_BOOL fReference);
+                   HRESULT (WINAPI *get_Volatile)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *put_Volatile)(IISPropertyAttribute *This,VARIANT_BOOL fVolatile);
+                   HRESULT (WINAPI *get_Isinherit)(IISPropertyAttribute *This,VARIANT_BOOL *retval);
+                   HRESULT (WINAPI *get_Default)(IISPropertyAttribute *This,VARIANT *retval);
+                   HRESULT (WINAPI *put_Default)(IISPropertyAttribute *This,VARIANT vDefault);
     END_INTERFACE
   } IISPropertyAttributeVtbl;
   struct IISPropertyAttribute {

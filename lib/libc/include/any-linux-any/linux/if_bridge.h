@@ -159,16 +159,16 @@ struct bridge_vlan_xstats {
 /* Bridge multicast database attributes
  * [MDBA_MDB] = {
  *     [MDBA_MDB_ENTRY] = {
- *         [MDBA_MDB_ENTRY_INFO] {
+ *                      [MDBA_MDB_ENTRY_INFO] {
  *		struct br_mdb_entry
  *		[MDBA_MDB_EATTR attributes]
- *         }
+ *                      }
  *     }
  * }
  * [MDBA_ROUTER] = {
  *    [MDBA_ROUTER_PORT] = {
- *        u32 ifindex
- *        [MDBA_ROUTER_PATTR attributes]
+ *                     u32 ifindex
+ *                     [MDBA_ROUTER_PATTR attributes]
  *    }
  * }
  */

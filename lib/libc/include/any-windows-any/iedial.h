@@ -64,10 +64,10 @@ extern "C"{
 #else
   typedef struct IDialEventSinkVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDialEventSink *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDialEventSink *This);
-      ULONG (WINAPI *Release)(IDialEventSink *This);
-      HRESULT (WINAPI *OnEvent)(IDialEventSink *This,DWORD dwEvent,DWORD dwStatus);
+                   HRESULT (WINAPI *QueryInterface)(IDialEventSink *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDialEventSink *This);
+                   ULONG (WINAPI *Release)(IDialEventSink *This);
+                   HRESULT (WINAPI *OnEvent)(IDialEventSink *This,DWORD dwEvent,DWORD dwStatus);
     END_INTERFACE
   } IDialEventSinkVtbl;
   struct IDialEventSink {
@@ -101,16 +101,16 @@ extern "C"{
 #else
   typedef struct IDialEngineVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDialEngine *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDialEngine *This);
-      ULONG (WINAPI *Release)(IDialEngine *This);
-      HRESULT (WINAPI *Initialize)(IDialEngine *This,LPCWSTR pwzConnectoid,IDialEventSink *pIDES);
-      HRESULT (WINAPI *GetProperty)(IDialEngine *This,LPCWSTR pwzProperty,LPWSTR pwzValue,DWORD dwBufSize);
-      HRESULT (WINAPI *SetProperty)(IDialEngine *This,LPCWSTR pwzProperty,LPCWSTR pwzValue);
-      HRESULT (WINAPI *Dial)(IDialEngine *This);
-      HRESULT (WINAPI *HangUp)(IDialEngine *This);
-      HRESULT (WINAPI *GetConnectedState)(IDialEngine *This,DWORD *pdwState);
-      HRESULT (WINAPI *GetConnectHandle)(IDialEngine *This,DWORD_PTR *pdwHandle);
+                   HRESULT (WINAPI *QueryInterface)(IDialEngine *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDialEngine *This);
+                   ULONG (WINAPI *Release)(IDialEngine *This);
+                   HRESULT (WINAPI *Initialize)(IDialEngine *This,LPCWSTR pwzConnectoid,IDialEventSink *pIDES);
+                   HRESULT (WINAPI *GetProperty)(IDialEngine *This,LPCWSTR pwzProperty,LPWSTR pwzValue,DWORD dwBufSize);
+                   HRESULT (WINAPI *SetProperty)(IDialEngine *This,LPCWSTR pwzProperty,LPCWSTR pwzValue);
+                   HRESULT (WINAPI *Dial)(IDialEngine *This);
+                   HRESULT (WINAPI *HangUp)(IDialEngine *This);
+                   HRESULT (WINAPI *GetConnectedState)(IDialEngine *This,DWORD *pdwState);
+                   HRESULT (WINAPI *GetConnectHandle)(IDialEngine *This,DWORD_PTR *pdwHandle);
     END_INTERFACE
   } IDialEngineVtbl;
   struct IDialEngine {
@@ -157,11 +157,11 @@ extern "C"{
 #else
   typedef struct IDialBrandingVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDialBranding *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDialBranding *This);
-      ULONG (WINAPI *Release)(IDialBranding *This);
-      HRESULT (WINAPI *Initialize)(IDialBranding *This,LPCWSTR pwzConnectoid);
-      HRESULT (WINAPI *GetBitmap)(IDialBranding *This,DWORD dwIndex,HBITMAP *phBitmap);
+                   HRESULT (WINAPI *QueryInterface)(IDialBranding *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDialBranding *This);
+                   ULONG (WINAPI *Release)(IDialBranding *This);
+                   HRESULT (WINAPI *Initialize)(IDialBranding *This,LPCWSTR pwzConnectoid);
+                   HRESULT (WINAPI *GetBitmap)(IDialBranding *This,DWORD dwIndex,HBITMAP *phBitmap);
     END_INTERFACE
   } IDialBrandingVtbl;
   struct IDialBranding {

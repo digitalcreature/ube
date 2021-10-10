@@ -295,7 +295,7 @@ enum xfrm_attr_type_t {
 	XFRMA_POLICY_TYPE,	/* struct xfrm_userpolicy_type */
 	XFRMA_MIGRATE,
 	XFRMA_ALG_AEAD,		/* struct xfrm_algo_aead */
-	XFRMA_KMADDRESS,        /* struct xfrm_user_kmaddress */
+	XFRMA_KMADDRESS,                     /* struct xfrm_user_kmaddress */
 	XFRMA_ALG_AUTH_TRUNC,	/* struct xfrm_algo_auth */
 	XFRMA_MARK,		/* struct xfrm_mark */
 	XFRMA_TFCPAD,		/* __u32 */
@@ -315,8 +315,8 @@ enum xfrm_attr_type_t {
 };
 
 struct xfrm_mark {
-	__u32           v; /* value */
-	__u32           m; /* mask */
+	__u32                        v; /* value */
+	__u32                        m; /* mask */
 };
 
 enum xfrm_sadattr_type_t {
@@ -464,8 +464,8 @@ struct xfrm_user_report {
 /* Used by MIGRATE to pass addresses IKE should use to perform
  * SA negotiation with the peer */
 struct xfrm_user_kmaddress {
-	xfrm_address_t                  local;
-	xfrm_address_t                  remote;
+	xfrm_address_t                                                         local;
+	xfrm_address_t                                                         remote;
 	__u32				reserved;
 	__u16				family;
 };

@@ -97,10 +97,10 @@
  *	__etoe24( e, &f )		convert e type to IEEE single precision
  *	__etoe53( e, &d )		convert e type to IEEE double precision
  *	__etoe64( e, &d )		convert e type to IEEE long double precision
- *	__eisneg( e )             	1 if sign bit of e != 0, else 0
- *	__eisinf( e )             	1 if e has maximum exponent (non-IEEE)
+ *	__eisneg( e )                                       	1 if sign bit of e != 0, else 0
+ *	__eisinf( e )                                       	1 if e has maximum exponent (non-IEEE)
  *					or is infinite (IEEE)
- *	__eisnan( e )             	1 if e is a NaN
+ *	__eisnan( e )                                       	1 if e is a NaN
  *	__esqrt( a, b )			b = square root of a
  *
  *
@@ -195,7 +195,7 @@
 
 extern long double strtold (const char * __restrict__ s, char ** __restrict__ se);
 extern int __asctoe64(const char * __restrict__ ss,
-		      short unsigned int * __restrict__ y);
+		                   short unsigned int * __restrict__ y);
 extern void __emul(const short unsigned int *  a,
 		   const short unsigned int *  b,
 		   short unsigned int * c);
@@ -208,7 +208,7 @@ extern void __eaddm(const short unsigned int  *  __restrict__  x,
 extern void __esubm(const short unsigned int * __restrict__  x,
 		    short unsigned int *  __restrict__ y);
 extern void __emdnorm(short unsigned int *s, int lost, int subflg,
-		      int exp, int rcntrl, const int rndprc);
+		                   int exp, int rcntrl, const int rndprc);
 extern void __toe64(short unsigned int *  __restrict__  a,
 		    short unsigned int *  __restrict__  b);
 extern int __edivm(short unsigned int *  __restrict__  den,
@@ -227,8 +227,8 @@ extern void _IO_ldtostr(long double *x, char *string, int ndigs,
 			int flags, char fmt);
 
 extern void __eiremain(short unsigned int * __restrict__ den,
-		       short unsigned int *__restrict__ num,
-		       short unsigned int *__restrict__ equot);
+		                    short unsigned int *__restrict__ num,
+		                    short unsigned int *__restrict__ equot);
 extern void __efloor(short unsigned int *x, short unsigned int *y);
 extern void __eadd1(const short unsigned int * __restrict__ a,
 		    const short unsigned int * __restrict__ b,
@@ -248,7 +248,7 @@ static  __inline__ int __eisinf(const short unsigned int *x);
 static __inline__ int __eisnan(const short unsigned int *x);
 static __inline__ int __eiszero(const short unsigned int *a);
 static __inline__ void __emovz(register const short unsigned int * __restrict__ a,
-			       register short unsigned int * __restrict__ b);
+			                    register short unsigned int * __restrict__ b);
 static __inline__ void __eclear(register short unsigned int *x);
 static __inline__ void __ecleaz(register short unsigned int *xi);
 static __inline__ void __ecleazs(register short unsigned int *xi);
@@ -328,7 +328,7 @@ static __inline__ void __eclear(register short unsigned int *x)
  */
 
 static __inline__ void __emov(register const short unsigned int * __restrict__ a,
-			      register short unsigned int * __restrict__ b)
+			                   register short unsigned int * __restrict__ b)
 {
 	memcpy(b, a, NE * sizeof(unsigned short));
 }
@@ -445,7 +445,7 @@ static __inline__ void __ecleazs(register short unsigned int *xi)
 /* Move internal format number from a to b.
  */
 static __inline__ void __emovz(register const short unsigned int * __restrict__ a,
-			       register short unsigned int * __restrict__ b)
+			                    register short unsigned int * __restrict__ b)
 {
 	memcpy(b, a, (NI-1) * sizeof(unsigned short));
 	b[NI - 1] = 0;
@@ -528,7 +528,7 @@ __eiisinf (const unsigned short *x)
 ;		-1 if a < b
 */
 static __inline__ int __ecmpm(register const short unsigned int * __restrict__ a,
-			      register const short unsigned int * __restrict__ b)
+			                   register const short unsigned int * __restrict__ b)
 {
 	int i;
 

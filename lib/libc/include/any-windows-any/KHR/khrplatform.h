@@ -29,7 +29,7 @@
  * The master copy of khrplatform.h is maintained in the Khronos EGL
  * Registry repository at https://github.com/KhronosGroup/EGL-Registry
  * The last semantic modification to khrplatform.h was at commit ID:
- *      67a3e0864c2d75ea5287b9f3d2eb74a745936692
+ *                   67a3e0864c2d75ea5287b9f3d2eb74a745936692
  *
  * Adopters may modify this file to suit their platform. Adopters are
  * encouraged to submit platform specific modifications to the Khronos
@@ -43,33 +43,33 @@
  *    http://www.khronos.org/registry/implementers_guide.pdf
  *
  * This file should be included as
- *        #include <KHR/khrplatform.h>
+ *                     #include <KHR/khrplatform.h>
  * by Khronos client API header files that use its types and defines.
  *
  * The types in khrplatform.h should only be used to define API-specific types.
  *
  * Types defined in khrplatform.h:
- *    khronos_int8_t              signed   8  bit
- *    khronos_uint8_t             unsigned 8  bit
- *    khronos_int16_t             signed   16 bit
- *    khronos_uint16_t            unsigned 16 bit
- *    khronos_int32_t             signed   32 bit
- *    khronos_uint32_t            unsigned 32 bit
- *    khronos_int64_t             signed   64 bit
- *    khronos_uint64_t            unsigned 64 bit
- *    khronos_intptr_t            signed   same number of bits as a pointer
- *    khronos_uintptr_t           unsigned same number of bits as a pointer
- *    khronos_ssize_t             signed   size
- *    khronos_usize_t             unsigned size
- *    khronos_float_t             signed   32 bit floating point
- *    khronos_time_ns_t           unsigned 64 bit time in nanoseconds
+ *    khronos_int8_t                                        signed   8  bit
+ *    khronos_uint8_t                                       unsigned 8  bit
+ *    khronos_int16_t                                       signed   16 bit
+ *    khronos_uint16_t                                      unsigned 16 bit
+ *    khronos_int32_t                                       signed   32 bit
+ *    khronos_uint32_t                                      unsigned 32 bit
+ *    khronos_int64_t                                       signed   64 bit
+ *    khronos_uint64_t                                      unsigned 64 bit
+ *    khronos_intptr_t                                      signed   same number of bits as a pointer
+ *    khronos_uintptr_t                        unsigned same number of bits as a pointer
+ *    khronos_ssize_t                                       signed   size
+ *    khronos_usize_t                                       unsigned size
+ *    khronos_float_t                                       signed   32 bit floating point
+ *    khronos_time_ns_t                        unsigned 64 bit time in nanoseconds
  *    khronos_utime_nanoseconds_t unsigned time interval or absolute time in
- *                                         nanoseconds
+ *                                                                                                                       nanoseconds
  *    khronos_stime_nanoseconds_t signed time interval in nanoseconds
- *    khronos_boolean_enum_t      enumerated boolean type. This should
- *      only be used as a base type when a client API's boolean type is
- *      an enum. Client APIs which use an integer or other type for
- *      booleans cannot use this as the base type for their boolean.
+ *    khronos_boolean_enum_t                   enumerated boolean type. This should
+ *                   only be used as a base type when a client API's boolean type is
+ *                   an enum. Client APIs which use an integer or other type for
+ *                   booleans cannot use this as the base type for their boolean.
  *
  * Tokens defined in khrplatform.h:
  *
@@ -85,9 +85,9 @@
  *
  * These may be used in function prototypes as:
  *
- *      KHRONOS_APICALL void KHRONOS_APIENTRY funcname(
- *                                  int arg1,
- *                                  int arg2) KHRONOS_APIATTRIBUTES;
+ *                   KHRONOS_APICALL void KHRONOS_APIENTRY funcname(
+ *                                                                                                   int arg1,
+ *                                                                                                   int arg2) KHRONOS_APIATTRIBUTES;
  */
 
 #if defined(__SCITECH_SNAP__) && !defined(KHRONOS_STATIC)
@@ -147,10 +147,10 @@
  * Using <stdint.h>
  */
 #include <stdint.h>
-typedef int32_t                 khronos_int32_t;
-typedef uint32_t                khronos_uint32_t;
-typedef int64_t                 khronos_int64_t;
-typedef uint64_t                khronos_uint64_t;
+typedef int32_t                                           khronos_int32_t;
+typedef uint32_t                                          khronos_uint32_t;
+typedef int64_t                                           khronos_int64_t;
+typedef uint64_t                                          khronos_uint64_t;
 #define KHRONOS_SUPPORT_INT64   1
 #define KHRONOS_SUPPORT_FLOAT   1
 
@@ -160,10 +160,10 @@ typedef uint64_t                khronos_uint64_t;
  * Using <inttypes.h>
  */
 #include <inttypes.h>
-typedef int32_t                 khronos_int32_t;
-typedef uint32_t                khronos_uint32_t;
-typedef int64_t                 khronos_int64_t;
-typedef uint64_t                khronos_uint64_t;
+typedef int32_t                                           khronos_int32_t;
+typedef uint32_t                                          khronos_uint32_t;
+typedef int64_t                                           khronos_int64_t;
+typedef uint64_t                                          khronos_uint64_t;
 #define KHRONOS_SUPPORT_INT64   1
 #define KHRONOS_SUPPORT_FLOAT   1
 
@@ -172,10 +172,10 @@ typedef uint64_t                khronos_uint64_t;
 /*
  * Win32
  */
-typedef __int32                 khronos_int32_t;
-typedef unsigned __int32        khronos_uint32_t;
-typedef __int64                 khronos_int64_t;
-typedef unsigned __int64        khronos_uint64_t;
+typedef __int32                                           khronos_int32_t;
+typedef unsigned __int32                     khronos_uint32_t;
+typedef __int64                                           khronos_int64_t;
+typedef unsigned __int64                     khronos_uint64_t;
 #define KHRONOS_SUPPORT_INT64   1
 #define KHRONOS_SUPPORT_FLOAT   1
 
@@ -184,13 +184,13 @@ typedef unsigned __int64        khronos_uint64_t;
 /*
  * Sun or Digital
  */
-typedef int                     khronos_int32_t;
-typedef unsigned int            khronos_uint32_t;
+typedef int                                                            khronos_int32_t;
+typedef unsigned int                                      khronos_uint32_t;
 #if defined(__arch64__) || defined(_LP64)
-typedef long int                khronos_int64_t;
-typedef unsigned long int       khronos_uint64_t;
+typedef long int                                          khronos_int64_t;
+typedef unsigned long int                    khronos_uint64_t;
 #else
-typedef long long int           khronos_int64_t;
+typedef long long int                        khronos_int64_t;
 typedef unsigned long long int  khronos_uint64_t;
 #endif /* __arch64__ */
 #define KHRONOS_SUPPORT_INT64   1
@@ -201,8 +201,8 @@ typedef unsigned long long int  khronos_uint64_t;
 /*
  * Hypothetical platform with no float or int64 support
  */
-typedef int                     khronos_int32_t;
-typedef unsigned int            khronos_uint32_t;
+typedef int                                                            khronos_int32_t;
+typedef unsigned int                                      khronos_uint32_t;
 #define KHRONOS_SUPPORT_INT64   0
 #define KHRONOS_SUPPORT_FLOAT   0
 
@@ -212,10 +212,10 @@ typedef unsigned int            khronos_uint32_t;
  * Generic fallback
  */
 #include <stdint.h>
-typedef int32_t                 khronos_int32_t;
-typedef uint32_t                khronos_uint32_t;
-typedef int64_t                 khronos_int64_t;
-typedef uint64_t                khronos_uint64_t;
+typedef int32_t                                           khronos_int32_t;
+typedef uint32_t                                          khronos_uint32_t;
+typedef int64_t                                           khronos_int64_t;
+typedef uint64_t                                          khronos_uint64_t;
 #define KHRONOS_SUPPORT_INT64   1
 #define KHRONOS_SUPPORT_FLOAT   1
 
@@ -225,8 +225,8 @@ typedef uint64_t                khronos_uint64_t;
 /*
  * Types that are (so far) the same on all platforms
  */
-typedef signed   char          khronos_int8_t;
-typedef unsigned char          khronos_uint8_t;
+typedef signed   char                       khronos_int8_t;
+typedef unsigned char                       khronos_uint8_t;
 typedef signed   short int     khronos_int16_t;
 typedef unsigned short int     khronos_uint16_t;
 
@@ -251,7 +251,7 @@ typedef unsigned long  int     khronos_usize_t;
 /*
  * Float type
  */
-typedef          float         khronos_float_t;
+typedef                       float                      khronos_float_t;
 #endif
 
 #if KHRONOS_SUPPORT_INT64
@@ -264,8 +264,8 @@ typedef          float         khronos_float_t;
  * 64 bit value that wraps back to 0 every 584 years.  Time intervals
  * may be either signed or unsigned.
  */
-typedef khronos_uint64_t       khronos_utime_nanoseconds_t;
-typedef khronos_int64_t        khronos_stime_nanoseconds_t;
+typedef khronos_uint64_t                    khronos_utime_nanoseconds_t;
+typedef khronos_int64_t                     khronos_stime_nanoseconds_t;
 #endif
 
 /*

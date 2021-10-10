@@ -173,15 +173,15 @@ pub const libc_stat = extern struct {
     qspare1: i64,
     qspare2: i64,
     pub fn atime(self: @This()) timespec {
-        return self.atim;
+                     return self.atim;
     }
 
     pub fn mtime(self: @This()) timespec {
-        return self.mtim;
+                     return self.mtim;
     }
 
     pub fn ctime(self: @This()) timespec {
-        return self.ctim;
+                     return self.ctim;
     }
 };
 
@@ -336,7 +336,7 @@ pub const dirent = extern struct {
     d_name: [256]u8,
 
     pub fn reclen(self: dirent) u16 {
-        return (@byteOffsetOf(dirent, "d_name") + self.d_namlen + 1 + 7) & ~@as(u16, 7);
+                     return (@byteOffsetOf(dirent, "d_name") + self.d_namlen + 1 + 7) & ~@as(u16, 7);
     }
 };
 
@@ -531,8 +531,8 @@ pub const sigset_t = extern struct {
 pub const sig_atomic_t = c_int;
 pub const Sigaction = extern struct {
     __sigaction_u: extern union {
-        __sa_handler: ?fn (c_int) callconv(.C) void,
-        __sa_sigaction: ?fn (c_int, [*c]siginfo_t, ?*c_void) callconv(.C) void,
+                     __sa_handler: ?fn (c_int) callconv(.C) void,
+                     __sa_sigaction: ?fn (c_int, [*c]siginfo_t, ?*c_void) callconv(.C) void,
     },
     sa_flags: c_int,
     sa_mask: sigset_t,

@@ -217,7 +217,7 @@ STRSAFEAPI StringCbCopyExA(STRSAFE_LPSTR pszDest,size_t cbDest,STRSAFE_LPCSTR ps
   hr = StringCopyExWorkerA(pszDest,cbDest,cbDest,pszSrc,ppszDestEnd,&cchRemaining,dwFlags);
   if(SUCCEEDED(hr) || hr == STRSAFE_E_INSUFFICIENT_BUFFER) {
     if(pcbRemaining)
-      *pcbRemaining = (cchRemaining*sizeof(char)) + (cbDest % sizeof(char));
+                   *pcbRemaining = (cchRemaining*sizeof(char)) + (cbDest % sizeof(char));
   }
   return hr;
 }
@@ -231,7 +231,7 @@ STRSAFEAPI StringCbCopyExW(STRSAFE_LPWSTR pszDest,size_t cbDest,STRSAFE_LPCWSTR 
   hr = StringCopyExWorkerW(pszDest,cchDest,cbDest,pszSrc,ppszDestEnd,&cchRemaining,dwFlags);
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
     if(pcbRemaining)
-      *pcbRemaining = (cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t));
+                   *pcbRemaining = (cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t));
   }
   return hr;
 }
@@ -629,7 +629,7 @@ STRSAFEAPIV StringCbPrintfExA(STRSAFE_LPSTR pszDest,size_t cbDest,STRSAFE_LPSTR 
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
     if(pcbRemaining) {
-      *pcbRemaining = (cchRemaining*sizeof(char)) + (cbDest % sizeof(char));
+                   *pcbRemaining = (cchRemaining*sizeof(char)) + (cbDest % sizeof(char));
     }
   }
   return hr;
@@ -649,7 +649,7 @@ STRSAFEAPIV StringCbPrintfExW(STRSAFE_LPWSTR pszDest,size_t cbDest,STRSAFE_LPWST
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
     if(pcbRemaining) {
-      *pcbRemaining = (cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t));
+                   *pcbRemaining = (cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t));
     }
   }
   return hr;
@@ -700,7 +700,7 @@ STRSAFEAPI StringCbVPrintfExA(STRSAFE_LPSTR pszDest,size_t cbDest,STRSAFE_LPSTR 
   else hr = StringVPrintfExWorkerA(pszDest,cchDest,cbDest,ppszDestEnd,&cchRemaining,dwFlags,pszFormat,argList);
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
     if(pcbRemaining) {
-      *pcbRemaining = (cchRemaining*sizeof(char)) + (cbDest % sizeof(char));
+                   *pcbRemaining = (cchRemaining*sizeof(char)) + (cbDest % sizeof(char));
     }
   }
   return hr;
@@ -715,7 +715,7 @@ STRSAFEAPI StringCbVPrintfExW(STRSAFE_LPWSTR pszDest,size_t cbDest,STRSAFE_LPWST
   else hr = StringVPrintfExWorkerW(pszDest,cchDest,cbDest,ppszDestEnd,&cchRemaining,dwFlags,pszFormat,argList);
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
     if(pcbRemaining) {
-      *pcbRemaining = (cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t));
+                   *pcbRemaining = (cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t));
     }
   }
   return hr;
@@ -880,9 +880,9 @@ STRSAFEAPI StringCbLengthA(STRSAFE_LPCSTR psz,size_t cbMax,size_t *pcbLength) {
   else hr = StringLengthWorkerA(psz,cchMax,&cchLength);
   if(pcbLength) {
     if(SUCCEEDED(hr)) {
-      *pcbLength = cchLength*sizeof(char);
+                   *pcbLength = cchLength*sizeof(char);
     } else {
-      *pcbLength = 0;
+                   *pcbLength = 0;
     }
   }
   return hr;
@@ -897,9 +897,9 @@ STRSAFEAPI StringCbLengthW(STRSAFE_LPCWSTR psz,size_t cbMax,size_t *pcbLength) {
   else hr = StringLengthWorkerW(psz,cchMax,&cchLength);
   if(pcbLength) {
     if(SUCCEEDED(hr)) {
-      *pcbLength = cchLength*sizeof(wchar_t);
+                   *pcbLength = cchLength*sizeof(wchar_t);
     } else {
-      *pcbLength = 0;
+                   *pcbLength = 0;
     }
   }
   return hr;
@@ -910,12 +910,12 @@ STRSAFEAPI StringCopyWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,STRSAFE_LPCSTR
   if(cchDest==0) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     while(cchDest && (*pszSrc!='\0')) {
-      *pszDest++ = *pszSrc++;
-      cchDest--;
+                   *pszDest++ = *pszSrc++;
+                   cchDest--;
     }
     if(cchDest==0) {
-      pszDest--;
-      hr = STRSAFE_E_INSUFFICIENT_BUFFER;
+                   pszDest--;
+                   hr = STRSAFE_E_INSUFFICIENT_BUFFER;
     }
     *pszDest= '\0';
   }
@@ -927,12 +927,12 @@ STRSAFEAPI StringCopyWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,STRSAFE_LPCWS
   if(cchDest==0) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     while(cchDest && (*pszSrc!=L'\0')) {
-      *pszDest++ = *pszSrc++;
-      cchDest--;
+                   *pszDest++ = *pszSrc++;
+                   cchDest--;
     }
     if(cchDest==0) {
-      pszDest--;
-      hr = STRSAFE_E_INSUFFICIENT_BUFFER;
+                   pszDest--;
+                   hr = STRSAFE_E_INSUFFICIENT_BUFFER;
     }
     *pszDest= L'\0';
   }
@@ -946,20 +946,20 @@ STRSAFEAPI StringCopyExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDes
   if(dwFlags & (~STRSAFE_VALID_FLAGS)) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest!=0) || (cbDest!=0)) hr = STRSAFE_E_INVALID_PARAMETER;
-      }
-      if(!pszSrc) pszSrc = "";
+                   }
+                   if(!pszSrc) pszSrc = "";
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	pszDestEnd = pszDest;
 	cchRemaining = 0;
 	if(*pszSrc!='\0') {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else {
+                   } else {
 	pszDestEnd = pszDest;
 	cchRemaining = cchDest;
 	while(cchRemaining && (*pszSrc!='\0')) {
@@ -976,12 +976,12 @@ STRSAFEAPI StringCopyExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDes
 	  hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
 	*pszDestEnd = '\0';
-      }
+                   }
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -991,14 +991,14 @@ STRSAFEAPI StringCopyExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDes
 	  cchRemaining = 1;
 	  *pszDestEnd = '\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = '\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1015,20 +1015,20 @@ STRSAFEAPI StringCopyExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbDe
   if(dwFlags & (~STRSAFE_VALID_FLAGS)) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest!=0) || (cbDest!=0)) hr = STRSAFE_E_INVALID_PARAMETER;
-      }
-      if(!pszSrc) pszSrc = L"";
+                   }
+                   if(!pszSrc) pszSrc = L"";
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	pszDestEnd = pszDest;
 	cchRemaining = 0;
 	if(*pszSrc!=L'\0') {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else {
+                   } else {
 	pszDestEnd = pszDest;
 	cchRemaining = cchDest;
 	while(cchRemaining && (*pszSrc!=L'\0')) {
@@ -1045,12 +1045,12 @@ STRSAFEAPI StringCopyExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbDe
 	  hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
 	*pszDestEnd = L'\0';
-      }
+                   }
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1060,14 +1060,14 @@ STRSAFEAPI StringCopyExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbDe
 	  cchRemaining = 1;
 	  *pszDestEnd = L'\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = L'\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1082,13 +1082,13 @@ STRSAFEAPI StringCopyNWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,STRSAFE_LPCST
   if(cchDest==0) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     while(cchDest && cchSrc && (*pszSrc!='\0')) {
-      *pszDest++ = *pszSrc++;
-      cchDest--;
-      cchSrc--;
+                   *pszDest++ = *pszSrc++;
+                   cchDest--;
+                   cchSrc--;
     }
     if(cchDest==0) {
-      pszDest--;
-      hr = STRSAFE_E_INSUFFICIENT_BUFFER;
+                   pszDest--;
+                   hr = STRSAFE_E_INSUFFICIENT_BUFFER;
     }
     *pszDest= '\0';
   }
@@ -1100,13 +1100,13 @@ STRSAFEAPI StringCopyNWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,STRSAFE_LPCW
   if(cchDest==0) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     while(cchDest && cchToCopy && (*pszSrc!=L'\0')) {
-      *pszDest++ = *pszSrc++;
-      cchDest--;
-      cchToCopy--;
+                   *pszDest++ = *pszSrc++;
+                   cchDest--;
+                   cchToCopy--;
     }
     if(cchDest==0) {
-      pszDest--;
-      hr = STRSAFE_E_INSUFFICIENT_BUFFER;
+                   pszDest--;
+                   hr = STRSAFE_E_INSUFFICIENT_BUFFER;
     }
     *pszDest= L'\0';
   }
@@ -1121,20 +1121,20 @@ STRSAFEAPI StringCopyNExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDe
   else if(cchToCopy > STRSAFE_MAX_CCH) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest!=0) || (cbDest!=0)) hr = STRSAFE_E_INVALID_PARAMETER;
-      }
-      if(!pszSrc) pszSrc = "";
+                   }
+                   if(!pszSrc) pszSrc = "";
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	pszDestEnd = pszDest;
 	cchRemaining = 0;
 	if((cchToCopy!=0) && (*pszSrc!='\0')) {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else {
+                   } else {
 	pszDestEnd = pszDest;
 	cchRemaining = cchDest;
 	while(cchRemaining && cchToCopy && (*pszSrc!='\0')) {
@@ -1152,12 +1152,12 @@ STRSAFEAPI StringCopyNExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDe
 	  hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
 	*pszDestEnd = '\0';
-      }
+                   }
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1167,14 +1167,14 @@ STRSAFEAPI StringCopyNExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDe
 	  cchRemaining = 1;
 	  *pszDestEnd = '\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = '\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1192,20 +1192,20 @@ STRSAFEAPI StringCopyNExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbD
   else if(cchToCopy > STRSAFE_MAX_CCH) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest!=0) || (cbDest!=0)) hr = STRSAFE_E_INVALID_PARAMETER;
-      }
-      if(!pszSrc) pszSrc = L"";
+                   }
+                   if(!pszSrc) pszSrc = L"";
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	pszDestEnd = pszDest;
 	cchRemaining = 0;
 	if((cchToCopy!=0) && (*pszSrc!=L'\0')) {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else {
+                   } else {
 	pszDestEnd = pszDest;
 	cchRemaining = cchDest;
 	while(cchRemaining && cchToCopy && (*pszSrc!=L'\0')) {
@@ -1223,12 +1223,12 @@ STRSAFEAPI StringCopyNExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbD
 	  hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
 	*pszDestEnd = L'\0';
-      }
+                   }
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1238,14 +1238,14 @@ STRSAFEAPI StringCopyNExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbD
 	  cchRemaining = 1;
 	  *pszDestEnd = L'\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = L'\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1279,36 +1279,36 @@ STRSAFEAPI StringCatExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDest
   else {
     size_t cchDestLength;
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest==0) && (cbDest==0)) cchDestLength = 0;
 	else hr = STRSAFE_E_INVALID_PARAMETER;
-      } else {
+                   } else {
 	hr = StringLengthWorkerA(pszDest,cchDest,&cchDestLength);
 	if(SUCCEEDED(hr)) {
 	  pszDestEnd = pszDest + cchDestLength;
 	  cchRemaining = cchDest - cchDestLength;
 	}
-      }
-      if(!pszSrc) pszSrc = "";
+                   }
+                   if(!pszSrc) pszSrc = "";
     } else {
-      hr = StringLengthWorkerA(pszDest,cchDest,&cchDestLength);
-      if(SUCCEEDED(hr)) {
+                   hr = StringLengthWorkerA(pszDest,cchDest,&cchDestLength);
+                   if(SUCCEEDED(hr)) {
 	pszDestEnd = pszDest + cchDestLength;
 	cchRemaining = cchDest - cchDestLength;
-      }
+                   }
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	if(*pszSrc!='\0') {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else hr = StringCopyExWorkerA(pszDestEnd,cchRemaining,(cchRemaining*sizeof(char)) + (cbDest % sizeof(char)),pszSrc,&pszDestEnd,&cchRemaining,dwFlags & (~(STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE)));
+                   } else hr = StringCopyExWorkerA(pszDestEnd,cchRemaining,(cchRemaining*sizeof(char)) + (cbDest % sizeof(char)),pszSrc,&pszDestEnd,&cchRemaining,dwFlags & (~(STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE)));
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1318,14 +1318,14 @@ STRSAFEAPI StringCatExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDest
 	  cchRemaining = 1;
 	  *pszDestEnd = '\0';
 	}
-      }
-      if(dwFlags & STRSAFE_NULL_ON_FAILURE) {
+                   }
+                   if(dwFlags & STRSAFE_NULL_ON_FAILURE) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = '\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1343,36 +1343,36 @@ STRSAFEAPI StringCatExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbDes
   else {
     size_t cchDestLength;
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest==0) && (cbDest==0)) cchDestLength = 0;
 	else hr = STRSAFE_E_INVALID_PARAMETER;
-      } else {
+                   } else {
 	hr = StringLengthWorkerW(pszDest,cchDest,&cchDestLength);
 	if(SUCCEEDED(hr)) {
 	  pszDestEnd = pszDest + cchDestLength;
 	  cchRemaining = cchDest - cchDestLength;
 	}
-      }
-      if(!pszSrc) pszSrc = L"";
+                   }
+                   if(!pszSrc) pszSrc = L"";
     } else {
-      hr = StringLengthWorkerW(pszDest,cchDest,&cchDestLength);
-      if(SUCCEEDED(hr)) {
+                   hr = StringLengthWorkerW(pszDest,cchDest,&cchDestLength);
+                   if(SUCCEEDED(hr)) {
 	pszDestEnd = pszDest + cchDestLength;
 	cchRemaining = cchDest - cchDestLength;
-      }
+                   }
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	if(*pszSrc!=L'\0') {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else hr = StringCopyExWorkerW(pszDestEnd,cchRemaining,(cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t)),pszSrc,&pszDestEnd,&cchRemaining,dwFlags & (~(STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE)));
+                   } else hr = StringCopyExWorkerW(pszDestEnd,cchRemaining,(cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t)),pszSrc,&pszDestEnd,&cchRemaining,dwFlags & (~(STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE)));
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1382,14 +1382,14 @@ STRSAFEAPI StringCatExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbDes
 	  cchRemaining = 1;
 	  *pszDestEnd = L'\0';
 	}
-      }
-      if(dwFlags & STRSAFE_NULL_ON_FAILURE) {
+                   }
+                   if(dwFlags & STRSAFE_NULL_ON_FAILURE) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = L'\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1424,36 +1424,36 @@ STRSAFEAPI StringCatNExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDes
   else if(cchToAppend > STRSAFE_MAX_CCH) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest==0) && (cbDest==0)) cchDestLength = 0;
 	else hr = STRSAFE_E_INVALID_PARAMETER;
-      } else {
+                   } else {
 	hr = StringLengthWorkerA(pszDest,cchDest,&cchDestLength);
 	if(SUCCEEDED(hr)) {
 	  pszDestEnd = pszDest + cchDestLength;
 	  cchRemaining = cchDest - cchDestLength;
 	}
-      }
-      if(!pszSrc) pszSrc = "";
+                   }
+                   if(!pszSrc) pszSrc = "";
     } else {
-      hr = StringLengthWorkerA(pszDest,cchDest,&cchDestLength);
-      if(SUCCEEDED(hr)) {
+                   hr = StringLengthWorkerA(pszDest,cchDest,&cchDestLength);
+                   if(SUCCEEDED(hr)) {
 	pszDestEnd = pszDest + cchDestLength;
 	cchRemaining = cchDest - cchDestLength;
-      }
+                   }
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	if((cchToAppend!=0) && (*pszSrc!='\0')) {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else hr = StringCopyNExWorkerA(pszDestEnd,cchRemaining,(cchRemaining*sizeof(char)) + (cbDest % sizeof(char)),pszSrc,cchToAppend,&pszDestEnd,&cchRemaining,dwFlags & (~(STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE)));
+                   } else hr = StringCopyNExWorkerA(pszDestEnd,cchRemaining,(cchRemaining*sizeof(char)) + (cbDest % sizeof(char)),pszSrc,cchToAppend,&pszDestEnd,&cchRemaining,dwFlags & (~(STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE)));
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1463,14 +1463,14 @@ STRSAFEAPI StringCatNExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cbDes
 	  cchRemaining = 1;
 	  *pszDestEnd = '\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = '\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1489,36 +1489,36 @@ STRSAFEAPI StringCatNExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbDe
   else if(cchToAppend > STRSAFE_MAX_CCH) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest==0) && (cbDest==0)) cchDestLength = 0;
 	else hr = STRSAFE_E_INVALID_PARAMETER;
-      } else {
+                   } else {
 	hr = StringLengthWorkerW(pszDest,cchDest,&cchDestLength);
 	if(SUCCEEDED(hr)) {
 	  pszDestEnd = pszDest + cchDestLength;
 	  cchRemaining = cchDest - cchDestLength;
 	}
-      }
-      if(!pszSrc) pszSrc = L"";
+                   }
+                   if(!pszSrc) pszSrc = L"";
     } else {
-      hr = StringLengthWorkerW(pszDest,cchDest,&cchDestLength);
-      if(SUCCEEDED(hr)) {
+                   hr = StringLengthWorkerW(pszDest,cchDest,&cchDestLength);
+                   if(SUCCEEDED(hr)) {
 	pszDestEnd = pszDest + cchDestLength;
 	cchRemaining = cchDest - cchDestLength;
-      }
+                   }
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	if((cchToAppend!=0) && (*pszSrc!=L'\0')) {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else hr = StringCopyNExWorkerW(pszDestEnd,cchRemaining,(cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t)),pszSrc,cchToAppend,&pszDestEnd,&cchRemaining,dwFlags & (~(STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE)));
+                   } else hr = StringCopyNExWorkerW(pszDestEnd,cchRemaining,(cchRemaining*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t)),pszSrc,cchToAppend,&pszDestEnd,&cchRemaining,dwFlags & (~(STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE)));
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1528,14 +1528,14 @@ STRSAFEAPI StringCatNExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t cbDe
 	  cchRemaining = 1;
 	  *pszDestEnd = L'\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = L'\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1554,12 +1554,12 @@ STRSAFEAPI StringVPrintfWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,STRSAFE_LPC
     cchMax = cchDest - 1;
     iRet = _vsnprintf(pszDest,cchMax,pszFormat,argList);
     if((iRet < 0) || (((size_t)iRet) > cchMax)) {
-      pszDest += cchMax;
-      *pszDest = '\0';
-      hr = STRSAFE_E_INSUFFICIENT_BUFFER;
+                   pszDest += cchMax;
+                   *pszDest = '\0';
+                   hr = STRSAFE_E_INSUFFICIENT_BUFFER;
     } else if(((size_t)iRet)==cchMax) {
-      pszDest += cchMax;
-      *pszDest = '\0';
+                   pszDest += cchMax;
+                   *pszDest = '\0';
     }
   }
   return hr;
@@ -1574,12 +1574,12 @@ STRSAFEAPI StringVPrintfWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,STRSAFE_LP
     cchMax = cchDest - 1;
     iRet = _vsnwprintf(pszDest,cchMax,pszFormat,argList);
     if((iRet < 0) || (((size_t)iRet) > cchMax)) {
-      pszDest += cchMax;
-      *pszDest = L'\0';
-      hr = STRSAFE_E_INSUFFICIENT_BUFFER;
+                   pszDest += cchMax;
+                   *pszDest = L'\0';
+                   hr = STRSAFE_E_INSUFFICIENT_BUFFER;
     } else if(((size_t)iRet)==cchMax) {
-      pszDest += cchMax;
-      *pszDest = L'\0';
+                   pszDest += cchMax;
+                   *pszDest = L'\0';
     }
   }
   return hr;
@@ -1592,20 +1592,20 @@ STRSAFEAPI StringVPrintfExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cb
   if(dwFlags & (~STRSAFE_VALID_FLAGS)) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest!=0) || (cbDest!=0)) hr = STRSAFE_E_INVALID_PARAMETER;
-      }
-      if(!pszFormat) pszFormat = "";
+                   }
+                   if(!pszFormat) pszFormat = "";
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	pszDestEnd = pszDest;
 	cchRemaining = 0;
 	if(*pszFormat!='\0') {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else {
+                   } else {
 	int iRet;
 	size_t cchMax;
 	cchMax = cchDest - 1;
@@ -1626,12 +1626,12 @@ STRSAFEAPI StringVPrintfExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cb
 	    memset(pszDestEnd + 1,STRSAFE_GET_FILL_PATTERN(dwFlags),((cchRemaining - 1)*sizeof(char)) + (cbDest % sizeof(char)));
 	  }
 	}
-      }
+                   }
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1641,14 +1641,14 @@ STRSAFEAPI StringVPrintfExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size_t cb
 	  cchRemaining = 1;
 	  *pszDestEnd = '\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = '\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1665,20 +1665,20 @@ STRSAFEAPI StringVPrintfExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t c
   if(dwFlags & (~STRSAFE_VALID_FLAGS)) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest!=0) || (cbDest!=0)) hr = STRSAFE_E_INVALID_PARAMETER;
-      }
-      if(!pszFormat) pszFormat = L"";
+                   }
+                   if(!pszFormat) pszFormat = L"";
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest==0) {
+                   if(cchDest==0) {
 	pszDestEnd = pszDest;
 	cchRemaining = 0;
 	if(*pszFormat!=L'\0') {
 	  if(!pszDest) hr = STRSAFE_E_INVALID_PARAMETER;
 	  else hr = STRSAFE_E_INSUFFICIENT_BUFFER;
 	}
-      } else {
+                   } else {
 	int iRet;
 	size_t cchMax;
 	cchMax = cchDest - 1;
@@ -1699,12 +1699,12 @@ STRSAFEAPI StringVPrintfExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t c
 	    memset(pszDestEnd + 1,STRSAFE_GET_FILL_PATTERN(dwFlags),((cchRemaining - 1)*sizeof(wchar_t)) + (cbDest % sizeof(wchar_t)));
 	  }
 	}
-      }
+                   }
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1714,14 +1714,14 @@ STRSAFEAPI StringVPrintfExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,size_t c
 	  cchRemaining = 1;
 	  *pszDestEnd = L'\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = L'\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER)) {
@@ -1769,17 +1769,17 @@ STRSAFE_INLINE_API StringGetsExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size
   if(dwFlags & (~STRSAFE_VALID_FLAGS)) hr = STRSAFE_E_INVALID_PARAMETER;
   else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest!=0) || (cbDest!=0)) hr = STRSAFE_E_INVALID_PARAMETER;
-      }
+                   }
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest <= 1) {
+                   if(cchDest <= 1) {
 	pszDestEnd = pszDest;
 	cchRemaining = cchDest;
 	if(cchDest==1) *pszDestEnd = '\0';
 	hr = STRSAFE_E_INSUFFICIENT_BUFFER;
-      } else {
+                   } else {
 	pszDestEnd = pszDest;
 	cchRemaining = cchDest;
 	while(cchRemaining > 1) {
@@ -1801,12 +1801,12 @@ STRSAFE_INLINE_API StringGetsExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size
 	  }
 	}
 	*pszDestEnd = '\0';
-      }
+                   }
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1816,14 +1816,14 @@ STRSAFE_INLINE_API StringGetsExWorkerA(STRSAFE_LPSTR pszDest,size_t cchDest,size
 	  cchRemaining = 1;
 	  *pszDestEnd = '\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = '\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER) || (hr==STRSAFE_E_END_OF_FILE)) {
@@ -1841,17 +1841,17 @@ STRSAFE_INLINE_API StringGetsExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,siz
     hr = STRSAFE_E_INVALID_PARAMETER;
   } else {
     if(dwFlags & STRSAFE_IGNORE_NULLS) {
-      if(!pszDest) {
+                   if(!pszDest) {
 	if((cchDest!=0) || (cbDest!=0)) hr = STRSAFE_E_INVALID_PARAMETER;
-      }
+                   }
     }
     if(SUCCEEDED(hr)) {
-      if(cchDest <= 1) {
+                   if(cchDest <= 1) {
 	pszDestEnd = pszDest;
 	cchRemaining = cchDest;
 	if(cchDest==1) *pszDestEnd = L'\0';
 	hr = STRSAFE_E_INSUFFICIENT_BUFFER;
-      } else {
+                   } else {
 	pszDestEnd = pszDest;
 	cchRemaining = cchDest;
 	while(cchRemaining > 1) {
@@ -1871,12 +1871,12 @@ STRSAFE_INLINE_API StringGetsExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,siz
 	  }
 	}
 	*pszDestEnd = L'\0';
-      }
+                   }
     }
   }
   if(FAILED(hr)) {
     if(pszDest) {
-      if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
+                   if(dwFlags & STRSAFE_FILL_ON_FAILURE) {
 	memset(pszDest,STRSAFE_GET_FILL_PATTERN(dwFlags),cbDest);
 	if(STRSAFE_GET_FILL_PATTERN(dwFlags)==0) {
 	  pszDestEnd = pszDest;
@@ -1886,14 +1886,14 @@ STRSAFE_INLINE_API StringGetsExWorkerW(STRSAFE_LPWSTR pszDest,size_t cchDest,siz
 	  cchRemaining = 1;
 	  *pszDestEnd = L'\0';
 	}
-      }
-      if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
+                   }
+                   if(dwFlags & (STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)) {
 	if(cchDest > 0) {
 	  pszDestEnd = pszDest;
 	  cchRemaining = cchDest;
 	  *pszDestEnd = L'\0';
 	}
-      }
+                   }
     }
   }
   if(SUCCEEDED(hr) || (hr==STRSAFE_E_INSUFFICIENT_BUFFER) || (hr==STRSAFE_E_END_OF_FILE)) {

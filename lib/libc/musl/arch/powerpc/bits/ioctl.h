@@ -111,10 +111,10 @@
 #define TIOCMIWAIT	0x545C
 #define TIOCGICOUNT	0x545D
 
-#define FIOSETOWN       0x8901
-#define SIOCSPGRP       0x8902
-#define FIOGETOWN       0x8903
-#define SIOCGPGRP       0x8904
-#define SIOCATMARK      0x8905
-#define SIOCGSTAMP      _IOR(0x89, 6, char[16])
+#define FIOSETOWN                    0x8901
+#define SIOCSPGRP                    0x8902
+#define FIOGETOWN                    0x8903
+#define SIOCGPGRP                    0x8904
+#define SIOCATMARK                   0x8905
+#define SIOCGSTAMP                   _IOR(0x89, 6, char[16])
 #define SIOCGSTAMPNS    _IOR(0x89, 7, char[16])

@@ -28,12 +28,12 @@
 extern "C" {
 #endif
 
-#define SO_MAX_RDMA_SIZE                  0x700D
-#define SO_RDMA_THRESHOLD_SIZE            0x700E
+#define SO_MAX_RDMA_SIZE                                                         0x700D
+#define SO_RDMA_THRESHOLD_SIZE                                      0x700E
 
-#define MEM_READ                          1
-#define MEM_WRITE                         2
-#define MEM_READWRITE                     3
+#define MEM_READ                                                                              1
+#define MEM_WRITE                                                                             2
+#define MEM_READWRITE                                                            3
 
 #define WSAID_REGISTERMEMORY \
   {0xC0B422F5, 0xF58C, 0x11d1, {0xAD, 0x6C, 0x00, 0xC0, 0x4F, 0xA3, 0x4A, 0x2D}}

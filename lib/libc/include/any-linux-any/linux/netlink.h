@@ -38,7 +38,7 @@ struct sockaddr_nl {
 	__kernel_sa_family_t	nl_family;	/* AF_NETLINK	*/
 	unsigned short	nl_pad;		/* zero		*/
 	__u32		nl_pid;		/* port ID	*/
-       	__u32		nl_groups;	/* multicast groups mask */
+                    	__u32		nl_groups;	/* multicast groups mask */
 };
 
 struct nlmsghdr {
@@ -197,21 +197,21 @@ enum {
 /*
  *  <------- NLA_HDRLEN ------> <-- NLA_ALIGN(payload)-->
  * +---------------------+- - -+- - - - - - - - - -+- - -+
- * |        Header       | Pad |     Payload       | Pad |
- * |   (struct nlattr)   | ing |                   | ing |
+ * |                     Header                    | Pad |     Payload                    | Pad |
+ * |   (struct nlattr)   | ing |                                                          | ing |
  * +---------------------+- - -+- - - - - - - - - -+- - -+
  *  <-------------- nlattr->nla_len -------------->
  */
 
 struct nlattr {
-	__u16           nla_len;
-	__u16           nla_type;
+	__u16                        nla_len;
+	__u16                        nla_type;
 };
 
 /*
  * nla_type (16 bits)
  * +---+---+-------------------------------+
- * | N | O | Attribute Type                |
+ * | N | O | Attribute Type                                          |
  * +---+---+-------------------------------+
  * N := Carries nested attributes
  * O := Payload stored in network byte order

@@ -29,8 +29,8 @@
 #define D3DXFX_NOT_CLONEABLE (1 << 11)
 #define D3DXFX_LARGEADDRESSAWARE (1 << 17)
 
-#define D3DX_PARAMETER_SHARED       1
-#define D3DX_PARAMETER_LITERAL      2
+#define D3DX_PARAMETER_SHARED                    1
+#define D3DX_PARAMETER_LITERAL                   2
 #define D3DX_PARAMETER_ANNOTATION   4
 
 typedef struct _D3DXEFFECT_DESC
@@ -373,7 +373,7 @@ DECLARE_INTERFACE_(ID3DXEffectCompiler, ID3DXBaseEffect)
     STDMETHOD(GetLiteral)(THIS_ D3DXHANDLE parameter, WINBOOL* literal) PURE;
     STDMETHOD(CompileEffect)(THIS_ DWORD flags, ID3DXBuffer **effect, ID3DXBuffer **error_msgs) PURE;
     STDMETHOD(CompileShader)(THIS_ D3DXHANDLE function, const char *target, DWORD flags,
-            ID3DXBuffer **shader, ID3DXBuffer **error_msgs, ID3DXConstantTable **constant_table) PURE;
+                                      ID3DXBuffer **shader, ID3DXBuffer **error_msgs, ID3DXConstantTable **constant_table) PURE;
 };
 #undef INTERFACE
 
@@ -383,59 +383,59 @@ extern "C" {
 
 HRESULT WINAPI D3DXCreateEffectPool(ID3DXEffectPool **pool);
 HRESULT WINAPI D3DXCreateEffect(struct IDirect3DDevice9 *device, const void *srcdata, UINT srcdatalen,
-        const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
-        struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
+                     struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 HRESULT WINAPI D3DXCreateEffectEx(struct IDirect3DDevice9 *device, const void *srcdata, UINT srcdatalen,
-        const D3DXMACRO *defines, struct ID3DXInclude *include, const char *skip_constants, DWORD flags,
-        struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const D3DXMACRO *defines, struct ID3DXInclude *include, const char *skip_constants, DWORD flags,
+                     struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 HRESULT WINAPI D3DXCreateEffectCompiler(const char *srcdata, UINT srcdatalen, const D3DXMACRO *defines,
-        ID3DXInclude *include, DWORD flags, ID3DXEffectCompiler **compiler, ID3DXBuffer **parse_errors);
+                     ID3DXInclude *include, DWORD flags, ID3DXEffectCompiler **compiler, ID3DXBuffer **parse_errors);
 HRESULT WINAPI D3DXCreateEffectFromFileExA(struct IDirect3DDevice9 *device, const char *srcfile,
-        const D3DXMACRO *defines, struct ID3DXInclude *include, const char *skip_constants, DWORD flags,
-        struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const D3DXMACRO *defines, struct ID3DXInclude *include, const char *skip_constants, DWORD flags,
+                     struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 HRESULT WINAPI D3DXCreateEffectFromFileExW(struct IDirect3DDevice9 *device, const WCHAR *srcfile,
-        const D3DXMACRO *defines, struct ID3DXInclude *include, const char *skip_constants, DWORD flags,
-        struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const D3DXMACRO *defines, struct ID3DXInclude *include, const char *skip_constants, DWORD flags,
+                     struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 #define D3DXCreateEffectFromFileEx __MINGW_NAME_AW(D3DXCreateEffectFromFileEx)
 
 HRESULT WINAPI D3DXCreateEffectFromFileA(struct IDirect3DDevice9 *device, const char *srcfile,
-        const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
-        struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
+                     struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 HRESULT WINAPI D3DXCreateEffectFromFileW(struct IDirect3DDevice9 *device, const WCHAR *srcfile,
-        const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
-        struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
+                     struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 #define D3DXCreateEffectFromFile __MINGW_NAME_AW(D3DXCreateEffectFromFile)
 
 HRESULT WINAPI D3DXCreateEffectFromResourceExA(struct IDirect3DDevice9 *device, HMODULE srcmodule,
-        const char *srcresource, const D3DXMACRO *defines, struct ID3DXInclude *include,
-        const char *skip_constants, DWORD flags, struct ID3DXEffectPool *pool,
-        struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const char *srcresource, const D3DXMACRO *defines, struct ID3DXInclude *include,
+                     const char *skip_constants, DWORD flags, struct ID3DXEffectPool *pool,
+                     struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 HRESULT WINAPI D3DXCreateEffectFromResourceExW(struct IDirect3DDevice9 *device, HMODULE srcmodule,
-        const WCHAR *srcresource, const D3DXMACRO *defines, struct ID3DXInclude *include,
-        const char *skip_constants, DWORD flags, struct ID3DXEffectPool *pool,
-        struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const WCHAR *srcresource, const D3DXMACRO *defines, struct ID3DXInclude *include,
+                     const char *skip_constants, DWORD flags, struct ID3DXEffectPool *pool,
+                     struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 #define D3DXCreateEffectFromResourceEx __MINGW_NAME_AW(D3DXCreateEffectFromResourceEx)
 
 HRESULT WINAPI D3DXCreateEffectFromResourceA(struct IDirect3DDevice9 *device, HMODULE srcmodule,
-        const char *srcresource, const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
-        struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const char *srcresource, const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
+                     struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 HRESULT WINAPI D3DXCreateEffectFromResourceW(struct IDirect3DDevice9 *device, HMODULE srcmodule,
-        const WCHAR *srcresource, const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
-        struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
+                     const WCHAR *srcresource, const D3DXMACRO *defines, struct ID3DXInclude *include, DWORD flags,
+                     struct ID3DXEffectPool *pool, struct ID3DXEffect **effect, struct ID3DXBuffer **compilation_errors);
 #define D3DXCreateEffectFromResource __MINGW_NAME_AW(D3DXCreateEffectFromResource)
 
 HRESULT WINAPI D3DXCreateEffectCompilerFromFileA(const char *srcfile, const D3DXMACRO *defines,
-        ID3DXInclude *include, DWORD flags, ID3DXEffectCompiler **effectcompiler, ID3DXBuffer **parseerrors);
+                     ID3DXInclude *include, DWORD flags, ID3DXEffectCompiler **effectcompiler, ID3DXBuffer **parseerrors);
 HRESULT WINAPI D3DXCreateEffectCompilerFromFileW(const WCHAR *srcfile, const D3DXMACRO *defines,
-        ID3DXInclude *include, DWORD flags, ID3DXEffectCompiler **effectcompiler, ID3DXBuffer **parseerrors);
+                     ID3DXInclude *include, DWORD flags, ID3DXEffectCompiler **effectcompiler, ID3DXBuffer **parseerrors);
 #define D3DXCreateEffectCompilerFromFile __MINGW_NAME_AW(D3DXCreateEffectCompilerFromFile)
 
 HRESULT WINAPI D3DXCreateEffectCompilerFromResourceA(HMODULE srcmodule, const char *srcresource,
-        const D3DXMACRO *defines, ID3DXInclude *include, DWORD flags,
-        ID3DXEffectCompiler **effectcompiler, ID3DXBuffer **parseerrors);
+                     const D3DXMACRO *defines, ID3DXInclude *include, DWORD flags,
+                     ID3DXEffectCompiler **effectcompiler, ID3DXBuffer **parseerrors);
 HRESULT WINAPI D3DXCreateEffectCompilerFromResourceW(HMODULE srcmodule, const WCHAR *srcresource,
-        const D3DXMACRO *defines, ID3DXInclude *include, DWORD flags,
-        ID3DXEffectCompiler **effectcompiler, ID3DXBuffer **parseerrors);
+                     const D3DXMACRO *defines, ID3DXInclude *include, DWORD flags,
+                     ID3DXEffectCompiler **effectcompiler, ID3DXBuffer **parseerrors);
 #define D3DXCreateEffectCompilerFromResource __MINGW_NAME_AW(D3DXCreateEffectCompilerFromResource)
 
 HRESULT WINAPI D3DXDisassembleEffect(ID3DXEffect *effect, WINBOOL enable_color_code, ID3DXBuffer **disassembly);

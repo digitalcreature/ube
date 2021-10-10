@@ -20,10 +20,10 @@
 #ifndef _LINUX_IF_H
 #define _LINUX_IF_H
 
-#include <linux/libc-compat.h>          /* for compatibility with glibc */
+#include <linux/libc-compat.h>                       /* for compatibility with glibc */
 #include <linux/types.h>		/* for "__kernel_caddr_t" et al	*/
 #include <linux/socket.h>		/* for "struct sockaddr" et al	*/
-		/* for "__user" et al           */
+		/* for "__user" et al                        */
 
 #include <sys/socket.h>			/* for struct sockaddr.		*/
 
@@ -143,7 +143,7 @@ enum net_device_flags {
 #define IF_IFACE_T1	0x1003		/* T1 telco serial interface	*/
 #define IF_IFACE_E1	0x1004		/* E1 telco serial interface	*/
 #define IF_IFACE_SYNC_SERIAL 0x1005	/* can't be set by software	*/
-#define IF_IFACE_X21D   0x1006          /* X.21 Dual Clocking (FarSite) */
+#define IF_IFACE_X21D   0x1006                       /* X.21 Dual Clocking (FarSite) */
 
 /* For definitions see hdlc.h */
 #define IF_PROTO_HDLC	0x2000		/* raw HDLC protocol		*/
@@ -158,7 +158,7 @@ enum net_device_flags {
 #define IF_PROTO_FR_DEL_ETH_PVC 0x2009	/*  Delete FR Ethernet-bridged PVC */
 #define IF_PROTO_FR_PVC	0x200A		/* for reading PVC status	*/
 #define IF_PROTO_FR_ETH_PVC 0x200B
-#define IF_PROTO_RAW    0x200C          /* RAW Socket                   */
+#define IF_PROTO_RAW    0x200C                       /* RAW Socket                                                          */
 
 /* RFC 2863 operational status */
 enum {

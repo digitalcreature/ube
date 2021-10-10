@@ -56,7 +56,7 @@ typedef __u64 binder_uintptr_t;
  * @type:	type of the object
  */
 struct binder_object_header {
-	__u32        type;
+	__u32                     type;
 };
 
 /*
@@ -177,7 +177,7 @@ struct binder_write_read {
 /* Use with BINDER_VERSION, driver fills in fields. */
 struct binder_version {
 	/* driver protocol version -- increment with incompatible change */
-	__s32       protocol_version;
+	__s32                    protocol_version;
 };
 
 /* This is the current protocol version. */
@@ -196,8 +196,8 @@ struct binder_version {
 struct binder_node_debug_info {
 	binder_uintptr_t ptr;
 	binder_uintptr_t cookie;
-	__u32            has_strong_ref;
-	__u32            has_weak_ref;
+	__u32                                      has_strong_ref;
+	__u32                                      has_weak_ref;
 };
 
 #define BINDER_WRITE_READ		_IOWR('b', 1, struct binder_write_read)
@@ -245,7 +245,7 @@ struct binder_transaction_data {
 	__u32		code;		/* transaction command */
 
 	/* General information about the transaction. */
-	__u32	        flags;
+	__u32	                     flags;
 	pid_t		sender_pid;
 	uid_t		sender_euid;
 	binder_size_t	data_size;	/* number of bytes of data */

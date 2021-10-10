@@ -75,28 +75,28 @@ DriverEntry(
 #define VideoDebugPrint(x)
 #endif
 
-#define GET_VIDEO_PHYSICAL_ADDRESS(scatterList,                        \
-                                   VirtualAddress,                     \
-                                   InputBuffer,                        \
-                                   pLength,                            \
-                                   Address)                            \
-  do {                                                                 \
-    ULONG_PTR byteOffset;                                              \
-                                                                       \
-    byteOffset = (PCHAR) VirtualAddress - (PCHAR)InputBuffer;          \
-    while (byteOffset >= scatterList->Length) {                        \
-      byteOffset -= scatterList->Length;                               \
-      scatterList++;                                                   \
-    }                                                                  \
-    *pLength = scatterList->Length - byteOffset;                       \
+#define GET_VIDEO_PHYSICAL_ADDRESS(scatterList,                                                                            \
+                                                                                                    VirtualAddress,                                                            \
+                                                                                                    InputBuffer,                                                                            \
+                                                                                                    pLength,                                                                                \
+                                                                                                    Address)                                                                                \
+  do {                                                                                                                                                                                                   \
+    ULONG_PTR byteOffset;                                                                                                                                         \
+                                                                                                                                                                                                                      \
+    byteOffset = (PCHAR) VirtualAddress - (PCHAR)InputBuffer;                       \
+    while (byteOffset >= scatterList->Length) {                                                                            \
+                   byteOffset -= scatterList->Length;                                                                                                \
+                   scatterList++;                                                                                                                                                           \
+    }                                                                                                                                                                                                                 \
+    *pLength = scatterList->Length - byteOffset;                                                              \
     Address = (ULONG_PTR) (scatterList->PhysicalAddress + byteOffset); \
   } while (0)
 
 #define GET_VIDEO_SCATTERGATHER(ppDma) (**(PVRB_SG **)ppDma)
 
 /* VIDEO_ACCESS_RANGE.RangePassive */
-#define VIDEO_RANGE_PASSIVE_DECODE        1
-#define VIDEO_RANGE_10_BIT_DECODE         2
+#define VIDEO_RANGE_PASSIVE_DECODE                     1
+#define VIDEO_RANGE_10_BIT_DECODE                      2
 
 #define SIZE_OF_NT4_VIDEO_PORT_CONFIG_INFO FIELD_OFFSET(VIDEO_PORT_CONFIG_INFO, Master)
 #define SIZE_OF_WXP_VIDEO_PORT_CONFIG_INFO sizeof(VIDEO_PORT_CONFIG_INFO)
@@ -104,51 +104,51 @@ DriverEntry(
 #define SET_USER_EVENT    0x01
 #define SET_DISPLAY_EVENT 0x02
 
-#define EVENT_TYPE_MASK                   1
-#define SYNCHRONIZATION_EVENT             0
-#define NOTIFICATION_EVENT                1
+#define EVENT_TYPE_MASK                                                          1
+#define SYNCHRONIZATION_EVENT                                       0
+#define NOTIFICATION_EVENT                                          1
 
-#define INITIAL_EVENT_STATE_MASK          2
-#define INITIAL_EVENT_NOT_SIGNALED        0
-#define INITIAL_EVENT_SIGNALED            2
+#define INITIAL_EVENT_STATE_MASK                       2
+#define INITIAL_EVENT_NOT_SIGNALED                     0
+#define INITIAL_EVENT_SIGNALED                                      2
 
-#define DISPLAY_ADAPTER_HW_ID             0xFFFFFFFF
+#define DISPLAY_ADAPTER_HW_ID                                       0xFFFFFFFF
 
-#define VIDEO_INVALID_CHILD_ID            0xFFFFFFFF
+#define VIDEO_INVALID_CHILD_ID                                      0xFFFFFFFF
 
 #define SIZE_OF_NT4_VIDEO_HW_INITIALIZATION_DATA FIELD_OFFSET(VIDEO_HW_INITIALIZATION_DATA, HwStartDma)
 #define SIZE_OF_W2K_VIDEO_HW_INITIALIZATION_DATA FIELD_OFFSET(VIDEO_HW_INITIALIZATION_DATA, Reserved)
 #define SIZE_OF_WXP_VIDEO_HW_INITIALIZATION_DATA (SIZE_OF_W2K_VIDEO_HW_INITIALIZATION_DATA + sizeof(ULONG))
 
-#define VIDEO_PORT_AGP_INTERFACE_VERSION_1                 1
-#define VIDEO_PORT_AGP_INTERFACE_VERSION_2                 2
-#define VIDEO_PORT_I2C_INTERFACE_VERSION_1                 1
-#define VIDEO_PORT_I2C_INTERFACE_VERSION_2                 2
-#define VIDEO_PORT_INT10_INTERFACE_VERSION_1               1
+#define VIDEO_PORT_AGP_INTERFACE_VERSION_1                                           1
+#define VIDEO_PORT_AGP_INTERFACE_VERSION_2                                           2
+#define VIDEO_PORT_I2C_INTERFACE_VERSION_1                                           1
+#define VIDEO_PORT_I2C_INTERFACE_VERSION_2                                           2
+#define VIDEO_PORT_INT10_INTERFACE_VERSION_1                                         1
 #define VIDEO_PORT_WCMEMORYPROTECTION_INTERFACE_VERSION_1  1
-#define VIDEO_PORT_DEBUG_REPORT_INTERFACE_VERSION_1        1
+#define VIDEO_PORT_DEBUG_REPORT_INTERFACE_VERSION_1                     1
 
 /* Flags for VideoPortGetDeviceBase and VideoPortMapMemory */
-#define VIDEO_MEMORY_SPACE_MEMORY         0x00
-#define VIDEO_MEMORY_SPACE_IO             0x01
-#define VIDEO_MEMORY_SPACE_USER_MODE      0x02
-#define VIDEO_MEMORY_SPACE_DENSE          0x04
-#define VIDEO_MEMORY_SPACE_P6CACHE        0x08
+#define VIDEO_MEMORY_SPACE_MEMORY                      0x00
+#define VIDEO_MEMORY_SPACE_IO                                       0x01
+#define VIDEO_MEMORY_SPACE_USER_MODE                   0x02
+#define VIDEO_MEMORY_SPACE_DENSE                       0x04
+#define VIDEO_MEMORY_SPACE_P6CACHE                     0x08
 
 /* PVIDEO_HW_GET_CHILD_DESCRIPTOR return values */
-#define VIDEO_ENUM_MORE_DEVICES           ERROR_CONTINUE
-#define VIDEO_ENUM_NO_MORE_DEVICES        ERROR_NO_MORE_DEVICES
-#define VIDEO_ENUM_INVALID_DEVICE         ERROR_INVALID_NAME
+#define VIDEO_ENUM_MORE_DEVICES                        ERROR_CONTINUE
+#define VIDEO_ENUM_NO_MORE_DEVICES                     ERROR_NO_MORE_DEVICES
+#define VIDEO_ENUM_INVALID_DEVICE                      ERROR_INVALID_NAME
 
-#define DEVICE_VGA_ENABLED                1
+#define DEVICE_VGA_ENABLED                                          1
 
 /* VideoPortCheckForDeviceExistence.Flags constants */
-#define CDE_USE_SUBSYSTEM_IDS             0x00000001
-#define CDE_USE_REVISION                  0x00000002
+#define CDE_USE_SUBSYSTEM_IDS                                       0x00000001
+#define CDE_USE_REVISION                                                         0x00000002
 
-#define BUGCHECK_DATA_SIZE_RESERVED       48
+#define BUGCHECK_DATA_SIZE_RESERVED                    48
 
-#define VIDEO_DEBUG_REPORT_MAX_SIZE       0x8000
+#define VIDEO_DEBUG_REPORT_MAX_SIZE                    0x8000
 
 typedef LONG VP_STATUS, *PVP_STATUS;
 typedef ULONG DMA_EVENT_FLAGS;

@@ -103,7 +103,7 @@ struct tpacket_auxdata {
 };
 
 /* Rx ring - header status */
-#define TP_STATUS_KERNEL		      0
+#define TP_STATUS_KERNEL		                   0
 #define TP_STATUS_USER			(1 << 0)
 #define TP_STATUS_COPY			(1 << 1)
 #define TP_STATUS_LOSING		(1 << 2)
@@ -114,7 +114,7 @@ struct tpacket_auxdata {
 #define TP_STATUS_CSUM_VALID		(1 << 7)
 
 /* Tx ring - header status */
-#define TP_STATUS_AVAILABLE	      0
+#define TP_STATUS_AVAILABLE	                   0
 #define TP_STATUS_SEND_REQUEST	(1 << 0)
 #define TP_STATUS_SENDING	(1 << 1)
 #define TP_STATUS_WRONG_FORMAT	(1 << 2)

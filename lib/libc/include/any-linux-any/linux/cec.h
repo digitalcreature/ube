@@ -138,7 +138,7 @@ static __inline__ void cec_msg_set_reply_to(struct cec_msg *msg,
 {
 	/* The destination becomes the initiator and vice versa */
 	msg->msg[0] = (cec_msg_destination(orig) << 4) |
-		      cec_msg_initiator(orig);
+		                   cec_msg_initiator(orig);
 	msg->reply = msg->timeout = 0;
 }
 
@@ -1011,8 +1011,8 @@ static __inline__ int cec_is_2nd_tv(const struct cec_log_addrs *las)
 	 * primary device type is a TV.
 	 */
 	return las->num_log_addrs &&
-	       las->log_addr[0] >= CEC_LOG_ADDR_SPECIFIC &&
-	       las->primary_device_type[0] == CEC_OP_PRIM_DEVTYPE_TV;
+	                    las->log_addr[0] >= CEC_LOG_ADDR_SPECIFIC &&
+	                    las->primary_device_type[0] == CEC_OP_PRIM_DEVTYPE_TV;
 }
 
 static __inline__ int cec_is_processor(const struct cec_log_addrs *las)
@@ -1022,8 +1022,8 @@ static __inline__ int cec_is_processor(const struct cec_log_addrs *las)
 	 * primary device type is a Processor.
 	 */
 	return las->num_log_addrs &&
-	       las->log_addr[0] >= CEC_LOG_ADDR_BACKUP_1 &&
-	       las->primary_device_type[0] == CEC_OP_PRIM_DEVTYPE_PROCESSOR;
+	                    las->log_addr[0] >= CEC_LOG_ADDR_BACKUP_1 &&
+	                    las->primary_device_type[0] == CEC_OP_PRIM_DEVTYPE_PROCESSOR;
 }
 
 static __inline__ int cec_is_switch(const struct cec_log_addrs *las)
@@ -1033,9 +1033,9 @@ static __inline__ int cec_is_switch(const struct cec_log_addrs *las)
 	 * primary device type is a Switch and the CDC-Only flag is not set.
 	 */
 	return las->num_log_addrs == 1 &&
-	       las->log_addr[0] == CEC_LOG_ADDR_UNREGISTERED &&
-	       las->primary_device_type[0] == CEC_OP_PRIM_DEVTYPE_SWITCH &&
-	       !(las->flags & CEC_LOG_ADDRS_FL_CDC_ONLY);
+	                    las->log_addr[0] == CEC_LOG_ADDR_UNREGISTERED &&
+	                    las->primary_device_type[0] == CEC_OP_PRIM_DEVTYPE_SWITCH &&
+	                    !(las->flags & CEC_LOG_ADDRS_FL_CDC_ONLY);
 }
 
 static __inline__ int cec_is_cdc_only(const struct cec_log_addrs *las)
@@ -1045,9 +1045,9 @@ static __inline__ int cec_is_cdc_only(const struct cec_log_addrs *las)
 	 * primary device type is a Switch and the CDC-Only flag is set.
 	 */
 	return las->num_log_addrs == 1 &&
-	       las->log_addr[0] == CEC_LOG_ADDR_UNREGISTERED &&
-	       las->primary_device_type[0] == CEC_OP_PRIM_DEVTYPE_SWITCH &&
-	       (las->flags & CEC_LOG_ADDRS_FL_CDC_ONLY);
+	                    las->log_addr[0] == CEC_LOG_ADDR_UNREGISTERED &&
+	                    las->primary_device_type[0] == CEC_OP_PRIM_DEVTYPE_SWITCH &&
+	                    (las->flags & CEC_LOG_ADDRS_FL_CDC_ONLY);
 }
 
 #endif

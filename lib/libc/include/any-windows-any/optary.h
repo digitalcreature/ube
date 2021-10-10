@@ -56,14 +56,14 @@ MIDL_INTERFACE("22b6d492-0f88-11d1-ba19-00c04fd912d0")
 IOptionArray : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE QueryOption(
-        DWORD dwOption,
-        LPVOID pBuffer,
-        ULONG *pcbBuf) = 0;
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     ULONG *pcbBuf) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetOption(
-        DWORD dwOption,
-        LPVOID pBuffer,
-        ULONG cbBuf) = 0;
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     ULONG cbBuf) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -75,28 +75,28 @@ typedef struct IOptionArrayVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IOptionArray *This,
-        REFIID riid,
-        void **ppvObject);
+                     IOptionArray *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IOptionArray *This);
+                     IOptionArray *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IOptionArray *This);
+                     IOptionArray *This);
 
     /*** IOptionArray methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryOption)(
-        IOptionArray *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        ULONG *pcbBuf);
+                     IOptionArray *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     ULONG *pcbBuf);
 
     HRESULT (STDMETHODCALLTYPE *SetOption)(
-        IOptionArray *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        ULONG cbBuf);
+                     IOptionArray *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     ULONG cbBuf);
 
     END_INTERFACE
 } IOptionArrayVtbl;
@@ -167,28 +167,28 @@ typedef struct IHtmlLoadOptionsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IHtmlLoadOptions *This,
-        REFIID riid,
-        void **ppvObject);
+                     IHtmlLoadOptions *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IHtmlLoadOptions *This);
+                     IHtmlLoadOptions *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IHtmlLoadOptions *This);
+                     IHtmlLoadOptions *This);
 
     /*** IOptionArray methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryOption)(
-        IHtmlLoadOptions *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        ULONG *pcbBuf);
+                     IHtmlLoadOptions *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     ULONG *pcbBuf);
 
     HRESULT (STDMETHODCALLTYPE *SetOption)(
-        IHtmlLoadOptions *This,
-        DWORD dwOption,
-        LPVOID pBuffer,
-        ULONG cbBuf);
+                     IHtmlLoadOptions *This,
+                     DWORD dwOption,
+                     LPVOID pBuffer,
+                     ULONG cbBuf);
 
     END_INTERFACE
 } IHtmlLoadOptionsVtbl;

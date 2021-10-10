@@ -108,11 +108,11 @@ extern int putsgent (const struct sgrp *__g, FILE *__stream);
    or due to the implementation they are cancellation points and
    therefore not marked with __THROW.  */
 extern int getsgent_r (struct sgrp *__result_buf, char *__buffer,
-		       size_t __buflen, struct sgrp **__result);
+		                    size_t __buflen, struct sgrp **__result);
 
 extern int getsgnam_r (const char *__name, struct sgrp *__result_buf,
-		       char *__buffer, size_t __buflen,
-		       struct sgrp **__result);
+		                    char *__buffer, size_t __buflen,
+		                    struct sgrp **__result);
 
 extern int sgetsgent_r (const char *__string, struct sgrp *__result_buf,
 			char *__buffer, size_t __buflen,

@@ -54,10 +54,10 @@ struct rtc_wkalrm {
  */
 
 struct rtc_pll_info {
-	int pll_ctrl;       /* placeholder for fancier control */
-	int pll_value;      /* get/set correction value */
-	int pll_max;        /* max +ve (faster) adjustment value */
-	int pll_min;        /* max -ve (slower) adjustment value */
+	int pll_ctrl;                    /* placeholder for fancier control */
+	int pll_value;                   /* get/set correction value */
+	int pll_max;                     /* max +ve (faster) adjustment value */
+	int pll_min;                     /* max -ve (slower) adjustment value */
 	int pll_posmult;    /* factor for +ve correction */
 	int pll_negmult;    /* factor for -ve correction */
 	long pll_clock;     /* base PLL frequency */
@@ -83,8 +83,8 @@ struct rtc_pll_info {
 #define RTC_SET_TIME	_IOW('p', 0x0a, struct rtc_time) /* Set RTC time    */
 #define RTC_IRQP_READ	_IOR('p', 0x0b, unsigned long)	 /* Read IRQ rate   */
 #define RTC_IRQP_SET	_IOW('p', 0x0c, unsigned long)	 /* Set IRQ rate    */
-#define RTC_EPOCH_READ	_IOR('p', 0x0d, unsigned long)	 /* Read epoch      */
-#define RTC_EPOCH_SET	_IOW('p', 0x0e, unsigned long)	 /* Set epoch       */
+#define RTC_EPOCH_READ	_IOR('p', 0x0d, unsigned long)	 /* Read epoch                   */
+#define RTC_EPOCH_SET	_IOW('p', 0x0e, unsigned long)	 /* Set epoch                    */
 
 #define RTC_WKALM_SET	_IOW('p', 0x0f, struct rtc_wkalrm)/* Set wakeup alarm*/
 #define RTC_WKALM_RD	_IOR('p', 0x10, struct rtc_wkalrm)/* Get wakeup alarm*/

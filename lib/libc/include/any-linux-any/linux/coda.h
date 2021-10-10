@@ -5,11 +5,11 @@
 
 /* BLURB lgpl
 
-                           Coda File System
-                              Release 5
+                                                                               Coda File System
+                                                                                               Release 5
 
-          Copyright (c) 1987-1999 Carnegie Mellon University
-                  Additional copyrights listed below
+                       Copyright (c) 1987-1999 Carnegie Mellon University
+                                                         Additional copyrights listed below
 
 This code is distributed "AS IS" without warranty of any kind under
 the terms of the GNU Library General Public Licence Version 2, as
@@ -17,16 +17,16 @@ shown in the file LICENSE, or under the license shown below. The
 technical and financial contributors to Coda are listed in the file
 CREDITS.
 
-                        Additional copyrights 
+                                                                            Additional copyrights 
 */
 
 /*
 
-            Coda: an Experimental Distributed File System
-                             Release 4.0
+                                      Coda: an Experimental Distributed File System
+                                                                                 Release 4.0
 
-          Copyright (c) 1987-1999 Carnegie Mellon University
-                         All Rights Reserved
+                       Copyright (c) 1987-1999 Carnegie Mellon University
+                                                                             All Rights Reserved
 
 Permission  to  use, copy, modify and distribute this software and its
 documentation is hereby granted,  provided  that  both  the  copyright
@@ -87,8 +87,8 @@ typedef unsigned long long u_quad_t;
 #define __inline__
 
 struct timespec {
-        long       ts_sec;
-        long       ts_nsec;
+                     long                    ts_sec;
+                     long                    ts_nsec;
 };
 #else  /* DJGPP but not KERNEL */
 #include <sys/time.h>
@@ -110,14 +110,14 @@ typedef unsigned long long u_quad_t;
 
 #ifdef __CYGWIN32__
 struct timespec {
-        time_t  tv_sec;         /* seconds */
-        long    tv_nsec;        /* nanoseconds */
+                     time_t  tv_sec;                      /* seconds */
+                     long    tv_nsec;                     /* nanoseconds */
 };
 #endif
 
 #ifndef __BIT_TYPES_DEFINED__
 #define __BIT_TYPES_DEFINED__
-typedef signed char	      int8_t;
+typedef signed char	                   int8_t;
 typedef unsigned char	    u_int8_t;
 typedef short		     int16_t;
 typedef unsigned short	   u_int16_t;
@@ -137,8 +137,8 @@ typedef unsigned int	   u_int32_t;
  * to deal with VFS open modes
  */
 #define	C_O_READ	0x001
-#define	C_O_WRITE       0x002
-#define C_O_TRUNC       0x010
+#define	C_O_WRITE                    0x002
+#define C_O_TRUNC                    0x010
 #define C_O_EXCL	0x100
 #define C_O_CREAT	0x200
 
@@ -147,26 +147,26 @@ typedef unsigned int	   u_int32_t;
 #define C_M_WRITE 00200
 
 /* for access Venus will use */
-#define C_A_C_OK    8               /* Test for writing upon create.  */
-#define C_A_R_OK    4               /* Test for read permission.  */
-#define C_A_W_OK    2               /* Test for write permission.  */
-#define C_A_X_OK    1               /* Test for execute permission.  */
-#define C_A_F_OK    0               /* Test for existence.  */
+#define C_A_C_OK    8                                         /* Test for writing upon create.  */
+#define C_A_R_OK    4                                         /* Test for read permission.  */
+#define C_A_W_OK    2                                         /* Test for write permission.  */
+#define C_A_X_OK    1                                         /* Test for execute permission.  */
+#define C_A_F_OK    0                                         /* Test for existence.  */
 
 
 
 #ifndef _VENUS_DIRENT_T_
 #define _VENUS_DIRENT_T_ 1
 struct venus_dirent {
-        u_int32_t d_fileno;		/* file number of entry */
-        u_int16_t d_reclen;		/* length of this record */
-        u_int8_t  d_type;			/* file type, see below */
-        u_int8_t  d_namlen;		/* length of string in d_name */
-        char	  d_name[CODA_MAXNAMLEN + 1];/* name must be no longer than this */
+                     u_int32_t d_fileno;		/* file number of entry */
+                     u_int16_t d_reclen;		/* length of this record */
+                     u_int8_t  d_type;			/* file type, see below */
+                     u_int8_t  d_namlen;		/* length of string in d_name */
+                     char	  d_name[CODA_MAXNAMLEN + 1];/* name must be no longer than this */
 };
 #undef DIRSIZ
-#define DIRSIZ(dp)      ((sizeof (struct venus_dirent) - (CODA_MAXNAMLEN+1)) + \
-                         (((dp)->d_namlen+1 + 3) &~ 3))
+#define DIRSIZ(dp)                   ((sizeof (struct venus_dirent) - (CODA_MAXNAMLEN+1)) + \
+                                                                             (((dp)->d_namlen+1 + 3) &~ 3))
 
 /*
  * File types
@@ -223,7 +223,7 @@ struct coda_vattr {
 	struct timespec	va_ctime;	/* time file changed */
 	u_long		va_gen;		/* generation number of file */
 	u_long		va_flags;	/* flags defined for file */
-	cdev_t	        va_rdev;	/* device special file represents */
+	cdev_t	                     va_rdev;	/* device special file represents */
 	u_quad_t	va_bytes;	/* bytes of disk space held by file */
 	u_quad_t	va_filerev;	/* file modification number */
 };
@@ -264,10 +264,10 @@ struct coda_statfs {
 #define CODA_VGET	22
 #define CODA_SIGNAL	23
 #define CODA_REPLACE	 24 /* DOWNCALL */
-#define CODA_FLUSH       25 /* DOWNCALL */
+#define CODA_FLUSH                    25 /* DOWNCALL */
 #define CODA_PURGEUSER   26 /* DOWNCALL */
 #define CODA_ZAPFILE     27 /* DOWNCALL */
-#define CODA_ZAPDIR      28 /* DOWNCALL */
+#define CODA_ZAPDIR                   28 /* DOWNCALL */
 #define CODA_PURGEFID    30 /* DOWNCALL */
 #define CODA_OPEN_BY_PATH 31
 #define CODA_RESOLVE     32
@@ -280,15 +280,15 @@ struct coda_statfs {
 #define DOWNCALL(opcode) (opcode >= CODA_REPLACE && opcode <= CODA_PURGEFID)
 
 #define VC_MAXDATASIZE	    8192
-#define VC_MAXMSGSIZE      sizeof(union inputArgs)+sizeof(union outputArgs) +\
-                            VC_MAXDATASIZE  
+#define VC_MAXMSGSIZE                   sizeof(union inputArgs)+sizeof(union outputArgs) +\
+                                                                                VC_MAXDATASIZE  
 
 #define CIOC_KERNEL_VERSION _IOWR('c', 10, size_t)
 
 #define CODA_KERNEL_VERSION 3 /* 128-bit file identifiers */
 
 /*
- *        Venus <-> Coda  RPC arguments
+ *                     Venus <-> Coda  RPC arguments
  */
 struct coda_in_hdr {
     u_int32_t opcode;
@@ -422,8 +422,8 @@ struct coda_access_out {
 struct  coda_lookup_in {
     struct coda_in_hdr ih;
     struct CodaFid VFid;
-    int         name;		/* Place holder for data. */
-    int         flags;	
+    int                      name;		/* Place holder for data. */
+    int                      flags;	
 };
 
 struct coda_lookup_out {
@@ -606,7 +606,7 @@ struct coda_replace_out { /* coda_replace is a venus->kernel call */
 struct coda_open_by_fd_in {
     struct coda_in_hdr ih;
     struct CodaFid VFid;
-    int        flags;
+    int                     flags;
 };
 
 struct coda_open_by_fd_out {
@@ -642,7 +642,7 @@ struct coda_statfs_out {
  * For instance, if the fid is inconsistent. 
  * This case is handled by setting the top bit of the type result parameter.
  */
-#define CODA_NOCACHE          0x80000000
+#define CODA_NOCACHE                       0x80000000
 
 union inputArgs {
     struct coda_in_hdr ih;		/* NB: every struct below begins with an ih */
@@ -708,16 +708,16 @@ union coda_downcalls {
 
 #define PIOCPARM_MASK 0x0000ffff
 struct ViceIoctl {
-        void *in;        /* Data to be transferred in */
-        void *out;       /* Data to be transferred out */
-        u_short in_size;        /* Size of input buffer <= 2K */
-        u_short out_size;       /* Maximum size of output buffer, <= 2K */
+                     void *in;                     /* Data to be transferred in */
+                     void *out;                    /* Data to be transferred out */
+                     u_short in_size;                     /* Size of input buffer <= 2K */
+                     u_short out_size;                    /* Maximum size of output buffer, <= 2K */
 };
 
 struct PioctlData {
-        const char *path;
-        int follow;
-        struct ViceIoctl vi;
+                     const char *path;
+                     int follow;
+                     struct ViceIoctl vi;
 };
 
 #define CODA_CONTROL		".CONTROL"
@@ -730,7 +730,7 @@ struct PioctlData {
 
 struct coda_mount_data {
 	int		version;
-	int		fd;       /* Opened device */
+	int		fd;                    /* Opened device */
 };
 
 #endif /* _CODA_HEADER_ */

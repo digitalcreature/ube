@@ -119,7 +119,7 @@ typedef struct _USBD_INTERFACE_LIST_ENTRY {
 	  - sizeof(USBD_PIPE_INFORMATION))
 
 #define  GET_ISO_URB_SIZE(n) (sizeof(struct _URB_ISOCH_TRANSFER)+				\
-			      sizeof(USBD_ISO_PACKET_DESCRIPTOR)*n)
+			                   sizeof(USBD_ISO_PACKET_DESCRIPTOR)*n)
 
 #ifndef _USBD_
 

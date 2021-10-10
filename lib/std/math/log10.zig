@@ -24,23 +24,23 @@ const maxInt = std.math.maxInt;
 pub fn log10(x: anytype) @TypeOf(x) {
     const T = @TypeOf(x);
     switch (@typeInfo(T)) {
-        .ComptimeFloat => {
-            return @as(comptime_float, log10_64(x));
-        },
-        .Float => {
-            return switch (T) {
-                f32 => log10_32(x),
-                f64 => log10_64(x),
-                else => @compileError("log10 not implemented for " ++ @typeName(T)),
-            };
-        },
-        .ComptimeInt => {
-            return @as(comptime_int, math.floor(log10_64(@as(f64, x))));
-        },
-        .Int => {
-            return @floatToInt(T, math.floor(log10_64(@intToFloat(f64, x))));
-        },
-        else => @compileError("log10 not implemented for " ++ @typeName(T)),
+                     .ComptimeFloat => {
+                                      return @as(comptime_float, log10_64(x));
+                     },
+                     .Float => {
+                                      return switch (T) {
+                                          f32 => log10_32(x),
+                                          f64 => log10_64(x),
+                                          else => @compileError("log10 not implemented for " ++ @typeName(T)),
+                                      };
+                     },
+                     .ComptimeInt => {
+                                      return @as(comptime_int, math.floor(log10_64(@as(f64, x))));
+                     },
+                     .Int => {
+                                      return @floatToInt(T, math.floor(log10_64(@intToFloat(f64, x))));
+                     },
+                     else => @compileError("log10 not implemented for " ++ @typeName(T)),
     }
 }
 
@@ -61,22 +61,22 @@ pub fn log10_32(x_: f32) f32 {
 
     // x < 2^(-126)
     if (ix < 0x00800000 or ix >> 31 != 0) {
-        // log(+-0) = -inf
-        if (ix << 1 == 0) {
-            return -math.inf(f32);
-        }
-        // log(-#) = nan
-        if (ix >> 31 != 0) {
-            return math.nan(f32);
-        }
+                     // log(+-0) = -inf
+                     if (ix << 1 == 0) {
+                                      return -math.inf(f32);
+                     }
+                     // log(-#) = nan
+                     if (ix >> 31 != 0) {
+                                      return math.nan(f32);
+                     }
 
-        k -= 25;
-        x *= 0x1.0p25;
-        ix = @bitCast(u32, x);
+                     k -= 25;
+                     x *= 0x1.0p25;
+                     ix = @bitCast(u32, x);
     } else if (ix >= 0x7F800000) {
-        return x;
+                     return x;
     } else if (ix == 0x3F800000) {
-        return 0;
+                     return 0;
     }
 
     // x into [sqrt(2) / 2, sqrt(2)]
@@ -123,23 +123,23 @@ pub fn log10_64(x_: f64) f64 {
     var k: i32 = 0;
 
     if (hx < 0x00100000 or hx >> 31 != 0) {
-        // log(+-0) = -inf
-        if (ix << 1 == 0) {
-            return -math.inf(f32);
-        }
-        // log(-#) = nan
-        if (hx >> 31 != 0) {
-            return math.nan(f32);
-        }
+                     // log(+-0) = -inf
+                     if (ix << 1 == 0) {
+                                      return -math.inf(f32);
+                     }
+                     // log(-#) = nan
+                     if (hx >> 31 != 0) {
+                                      return math.nan(f32);
+                     }
 
-        // subnormal, scale x
-        k -= 54;
-        x *= 0x1.0p54;
-        hx = @intCast(u32, @bitCast(u64, x) >> 32);
+                     // subnormal, scale x
+                     k -= 54;
+                     x *= 0x1.0p54;
+                     hx = @intCast(u32, @bitCast(u64, x) >> 32);
     } else if (hx >= 0x7FF00000) {
-        return x;
+                     return x;
     } else if (hx == 0x3FF00000 and ix << 32 == 0) {
-        return 0;
+                     return 0;
     }
 
     // x into [sqrt(2) / 2, sqrt(2)]

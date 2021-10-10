@@ -7,7 +7,7 @@ struct FLOATSAFE {
   }
   FLOATSAFE::~FLOATSAFE(void) {
     if (NT_SUCCESS(ntStatus)) {
-      KeRestoreFloatingPointState(&FloatSave);
+                   KeRestoreFloatingPointState(&FloatSave);
     }
   }
 };

@@ -194,13 +194,13 @@ extern "C"{
 #else
   typedef struct IEnumMsmStringVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumMsmString *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumMsmString *This);
-      ULONG (WINAPI *Release)(IEnumMsmString *This);
-      HRESULT (WINAPI *Next)(IEnumMsmString *This,unsigned __LONG32 cFetch,BSTR *rgbstrStrings,unsigned __LONG32 *pcFetched);
-      HRESULT (WINAPI *Skip)(IEnumMsmString *This,unsigned __LONG32 cSkip);
-      HRESULT (WINAPI *Reset)(IEnumMsmString *This);
-      HRESULT (WINAPI *Clone)(IEnumMsmString *This,IEnumMsmString **pemsmStrings);
+                   HRESULT (WINAPI *QueryInterface)(IEnumMsmString *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumMsmString *This);
+                   ULONG (WINAPI *Release)(IEnumMsmString *This);
+                   HRESULT (WINAPI *Next)(IEnumMsmString *This,unsigned __LONG32 cFetch,BSTR *rgbstrStrings,unsigned __LONG32 *pcFetched);
+                   HRESULT (WINAPI *Skip)(IEnumMsmString *This,unsigned __LONG32 cSkip);
+                   HRESULT (WINAPI *Reset)(IEnumMsmString *This);
+                   HRESULT (WINAPI *Clone)(IEnumMsmString *This,IEnumMsmString **pemsmStrings);
     END_INTERFACE
   } IEnumMsmStringVtbl;
   struct IEnumMsmString {
@@ -238,16 +238,16 @@ extern "C"{
 #else
   typedef struct IMsmStringsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmStrings *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmStrings *This);
-      ULONG (WINAPI *Release)(IMsmStrings *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmStrings *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmStrings *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmStrings *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmStrings *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IMsmStrings *This,__LONG32 Item,BSTR *Return);
-      HRESULT (WINAPI *get_Count)(IMsmStrings *This,__LONG32 *Count);
-      HRESULT (WINAPI *get__NewEnum)(IMsmStrings *This,IUnknown **NewEnum);
+                   HRESULT (WINAPI *QueryInterface)(IMsmStrings *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmStrings *This);
+                   ULONG (WINAPI *Release)(IMsmStrings *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmStrings *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmStrings *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmStrings *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmStrings *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IMsmStrings *This,__LONG32 Item,BSTR *Return);
+                   HRESULT (WINAPI *get_Count)(IMsmStrings *This,__LONG32 *Count);
+                   HRESULT (WINAPI *get__NewEnum)(IMsmStrings *This,IUnknown **NewEnum);
     END_INTERFACE
   } IMsmStringsVtbl;
   struct IMsmStrings {
@@ -290,20 +290,20 @@ extern "C"{
 #else
   typedef struct IMsmErrorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmError *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmError *This);
-      ULONG (WINAPI *Release)(IMsmError *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmError *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmError *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmError *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmError *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Type)(IMsmError *This,msmErrorType *ErrorType);
-      HRESULT (WINAPI *get_Path)(IMsmError *This,BSTR *ErrorPath);
-      HRESULT (WINAPI *get_Language)(IMsmError *This,short *ErrorLanguage);
-      HRESULT (WINAPI *get_DatabaseTable)(IMsmError *This,BSTR *ErrorTable);
-      HRESULT (WINAPI *get_DatabaseKeys)(IMsmError *This,IMsmStrings **ErrorKeys);
-      HRESULT (WINAPI *get_ModuleTable)(IMsmError *This,BSTR *ErrorTable);
-      HRESULT (WINAPI *get_ModuleKeys)(IMsmError *This,IMsmStrings **ErrorKeys);
+                   HRESULT (WINAPI *QueryInterface)(IMsmError *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmError *This);
+                   ULONG (WINAPI *Release)(IMsmError *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmError *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmError *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmError *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmError *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Type)(IMsmError *This,msmErrorType *ErrorType);
+                   HRESULT (WINAPI *get_Path)(IMsmError *This,BSTR *ErrorPath);
+                   HRESULT (WINAPI *get_Language)(IMsmError *This,short *ErrorLanguage);
+                   HRESULT (WINAPI *get_DatabaseTable)(IMsmError *This,BSTR *ErrorTable);
+                   HRESULT (WINAPI *get_DatabaseKeys)(IMsmError *This,IMsmStrings **ErrorKeys);
+                   HRESULT (WINAPI *get_ModuleTable)(IMsmError *This,BSTR *ErrorTable);
+                   HRESULT (WINAPI *get_ModuleKeys)(IMsmError *This,IMsmStrings **ErrorKeys);
     END_INTERFACE
   } IMsmErrorVtbl;
   struct IMsmError {
@@ -355,13 +355,13 @@ extern "C"{
 #else
   typedef struct IEnumMsmErrorVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumMsmError *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumMsmError *This);
-      ULONG (WINAPI *Release)(IEnumMsmError *This);
-      HRESULT (WINAPI *Next)(IEnumMsmError *This,unsigned __LONG32 cFetch,IMsmError **rgmsmErrors,unsigned __LONG32 *pcFetched);
-      HRESULT (WINAPI *Skip)(IEnumMsmError *This,unsigned __LONG32 cSkip);
-      HRESULT (WINAPI *Reset)(IEnumMsmError *This);
-      HRESULT (WINAPI *Clone)(IEnumMsmError *This,IEnumMsmError **pemsmErrors);
+                   HRESULT (WINAPI *QueryInterface)(IEnumMsmError *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumMsmError *This);
+                   ULONG (WINAPI *Release)(IEnumMsmError *This);
+                   HRESULT (WINAPI *Next)(IEnumMsmError *This,unsigned __LONG32 cFetch,IMsmError **rgmsmErrors,unsigned __LONG32 *pcFetched);
+                   HRESULT (WINAPI *Skip)(IEnumMsmError *This,unsigned __LONG32 cSkip);
+                   HRESULT (WINAPI *Reset)(IEnumMsmError *This);
+                   HRESULT (WINAPI *Clone)(IEnumMsmError *This,IEnumMsmError **pemsmErrors);
     END_INTERFACE
   } IEnumMsmErrorVtbl;
   struct IEnumMsmError {
@@ -400,16 +400,16 @@ extern "C"{
 #else
   typedef struct IMsmErrorsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmErrors *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmErrors *This);
-      ULONG (WINAPI *Release)(IMsmErrors *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmErrors *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmErrors *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmErrors *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmErrors *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IMsmErrors *This,__LONG32 Item,IMsmError **Return);
-      HRESULT (WINAPI *get_Count)(IMsmErrors *This,__LONG32 *Count);
-      HRESULT (WINAPI *get__NewEnum)(IMsmErrors *This,IUnknown **NewEnum);
+                   HRESULT (WINAPI *QueryInterface)(IMsmErrors *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmErrors *This);
+                   ULONG (WINAPI *Release)(IMsmErrors *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmErrors *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmErrors *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmErrors *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmErrors *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IMsmErrors *This,__LONG32 Item,IMsmError **Return);
+                   HRESULT (WINAPI *get_Count)(IMsmErrors *This,__LONG32 *Count);
+                   HRESULT (WINAPI *get__NewEnum)(IMsmErrors *This,IUnknown **NewEnum);
     END_INTERFACE
   } IMsmErrorsVtbl;
   struct IMsmErrors {
@@ -448,16 +448,16 @@ extern "C"{
 #else
   typedef struct IMsmDependencyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmDependency *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmDependency *This);
-      ULONG (WINAPI *Release)(IMsmDependency *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmDependency *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmDependency *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmDependency *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmDependency *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Module)(IMsmDependency *This,BSTR *Module);
-      HRESULT (WINAPI *get_Language)(IMsmDependency *This,short *Language);
-      HRESULT (WINAPI *get_Version)(IMsmDependency *This,BSTR *Version);
+                   HRESULT (WINAPI *QueryInterface)(IMsmDependency *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmDependency *This);
+                   ULONG (WINAPI *Release)(IMsmDependency *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmDependency *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmDependency *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmDependency *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmDependency *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Module)(IMsmDependency *This,BSTR *Module);
+                   HRESULT (WINAPI *get_Language)(IMsmDependency *This,short *Language);
+                   HRESULT (WINAPI *get_Version)(IMsmDependency *This,BSTR *Version);
     END_INTERFACE
   } IMsmDependencyVtbl;
   struct IMsmDependency {
@@ -497,13 +497,13 @@ extern "C"{
 #else
   typedef struct IEnumMsmDependencyVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumMsmDependency *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumMsmDependency *This);
-      ULONG (WINAPI *Release)(IEnumMsmDependency *This);
-      HRESULT (WINAPI *Next)(IEnumMsmDependency *This,unsigned __LONG32 cFetch,IMsmDependency **rgmsmDependencies,unsigned __LONG32 *pcFetched);
-      HRESULT (WINAPI *Skip)(IEnumMsmDependency *This,unsigned __LONG32 cSkip);
-      HRESULT (WINAPI *Reset)(IEnumMsmDependency *This);
-      HRESULT (WINAPI *Clone)(IEnumMsmDependency *This,IEnumMsmDependency **pemsmDependencies);
+                   HRESULT (WINAPI *QueryInterface)(IEnumMsmDependency *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumMsmDependency *This);
+                   ULONG (WINAPI *Release)(IEnumMsmDependency *This);
+                   HRESULT (WINAPI *Next)(IEnumMsmDependency *This,unsigned __LONG32 cFetch,IMsmDependency **rgmsmDependencies,unsigned __LONG32 *pcFetched);
+                   HRESULT (WINAPI *Skip)(IEnumMsmDependency *This,unsigned __LONG32 cSkip);
+                   HRESULT (WINAPI *Reset)(IEnumMsmDependency *This);
+                   HRESULT (WINAPI *Clone)(IEnumMsmDependency *This,IEnumMsmDependency **pemsmDependencies);
     END_INTERFACE
   } IEnumMsmDependencyVtbl;
   struct IEnumMsmDependency {
@@ -541,16 +541,16 @@ extern "C"{
 #else
   typedef struct IMsmDependenciesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmDependencies *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmDependencies *This);
-      ULONG (WINAPI *Release)(IMsmDependencies *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmDependencies *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmDependencies *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmDependencies *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmDependencies *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IMsmDependencies *This,__LONG32 Item,IMsmDependency **Return);
-      HRESULT (WINAPI *get_Count)(IMsmDependencies *This,__LONG32 *Count);
-      HRESULT (WINAPI *get__NewEnum)(IMsmDependencies *This,IUnknown **NewEnum);
+                   HRESULT (WINAPI *QueryInterface)(IMsmDependencies *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmDependencies *This);
+                   ULONG (WINAPI *Release)(IMsmDependencies *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmDependencies *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmDependencies *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmDependencies *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmDependencies *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IMsmDependencies *This,__LONG32 Item,IMsmDependency **Return);
+                   HRESULT (WINAPI *get_Count)(IMsmDependencies *This,__LONG32 *Count);
+                   HRESULT (WINAPI *get__NewEnum)(IMsmDependencies *This,IUnknown **NewEnum);
     END_INTERFACE
   } IMsmDependenciesVtbl;
   struct IMsmDependencies {
@@ -597,23 +597,23 @@ extern "C"{
 #else
   typedef struct IMsmConfigurableItemVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmConfigurableItem *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmConfigurableItem *This);
-      ULONG (WINAPI *Release)(IMsmConfigurableItem *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmConfigurableItem *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmConfigurableItem *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmConfigurableItem *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmConfigurableItem *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(IMsmConfigurableItem *This,BSTR *Name);
-      HRESULT (WINAPI *get_Format)(IMsmConfigurableItem *This,msmConfigurableItemFormat *Format);
-      HRESULT (WINAPI *get_Type)(IMsmConfigurableItem *This,BSTR *Type);
-      HRESULT (WINAPI *get_Context)(IMsmConfigurableItem *This,BSTR *Context);
-      HRESULT (WINAPI *get_DefaultValue)(IMsmConfigurableItem *This,BSTR *DefaultValue);
-      HRESULT (WINAPI *get_Attributes)(IMsmConfigurableItem *This,__LONG32 *Attributes);
-      HRESULT (WINAPI *get_DisplayName)(IMsmConfigurableItem *This,BSTR *DisplayName);
-      HRESULT (WINAPI *get_Description)(IMsmConfigurableItem *This,BSTR *Description);
-      HRESULT (WINAPI *get_HelpLocation)(IMsmConfigurableItem *This,BSTR *HelpLocation);
-      HRESULT (WINAPI *get_HelpKeyword)(IMsmConfigurableItem *This,BSTR *HelpKeyword);
+                   HRESULT (WINAPI *QueryInterface)(IMsmConfigurableItem *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmConfigurableItem *This);
+                   ULONG (WINAPI *Release)(IMsmConfigurableItem *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmConfigurableItem *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmConfigurableItem *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmConfigurableItem *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmConfigurableItem *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(IMsmConfigurableItem *This,BSTR *Name);
+                   HRESULT (WINAPI *get_Format)(IMsmConfigurableItem *This,msmConfigurableItemFormat *Format);
+                   HRESULT (WINAPI *get_Type)(IMsmConfigurableItem *This,BSTR *Type);
+                   HRESULT (WINAPI *get_Context)(IMsmConfigurableItem *This,BSTR *Context);
+                   HRESULT (WINAPI *get_DefaultValue)(IMsmConfigurableItem *This,BSTR *DefaultValue);
+                   HRESULT (WINAPI *get_Attributes)(IMsmConfigurableItem *This,__LONG32 *Attributes);
+                   HRESULT (WINAPI *get_DisplayName)(IMsmConfigurableItem *This,BSTR *DisplayName);
+                   HRESULT (WINAPI *get_Description)(IMsmConfigurableItem *This,BSTR *Description);
+                   HRESULT (WINAPI *get_HelpLocation)(IMsmConfigurableItem *This,BSTR *HelpLocation);
+                   HRESULT (WINAPI *get_HelpKeyword)(IMsmConfigurableItem *This,BSTR *HelpKeyword);
     END_INTERFACE
   } IMsmConfigurableItemVtbl;
   struct IMsmConfigurableItem {
@@ -674,13 +674,13 @@ extern "C"{
 #else
   typedef struct IEnumMsmConfigurableItemVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumMsmConfigurableItem *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumMsmConfigurableItem *This);
-      ULONG (WINAPI *Release)(IEnumMsmConfigurableItem *This);
-      HRESULT (WINAPI *Next)(IEnumMsmConfigurableItem *This,unsigned __LONG32 cFetch,IMsmConfigurableItem **rgmsmItems,unsigned __LONG32 *pcFetched);
-      HRESULT (WINAPI *Skip)(IEnumMsmConfigurableItem *This,unsigned __LONG32 cSkip);
-      HRESULT (WINAPI *Reset)(IEnumMsmConfigurableItem *This);
-      HRESULT (WINAPI *Clone)(IEnumMsmConfigurableItem *This,IEnumMsmConfigurableItem **pemsmConfigurableItem);
+                   HRESULT (WINAPI *QueryInterface)(IEnumMsmConfigurableItem *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumMsmConfigurableItem *This);
+                   ULONG (WINAPI *Release)(IEnumMsmConfigurableItem *This);
+                   HRESULT (WINAPI *Next)(IEnumMsmConfigurableItem *This,unsigned __LONG32 cFetch,IMsmConfigurableItem **rgmsmItems,unsigned __LONG32 *pcFetched);
+                   HRESULT (WINAPI *Skip)(IEnumMsmConfigurableItem *This,unsigned __LONG32 cSkip);
+                   HRESULT (WINAPI *Reset)(IEnumMsmConfigurableItem *This);
+                   HRESULT (WINAPI *Clone)(IEnumMsmConfigurableItem *This,IEnumMsmConfigurableItem **pemsmConfigurableItem);
     END_INTERFACE
   } IEnumMsmConfigurableItemVtbl;
   struct IEnumMsmConfigurableItem {
@@ -718,16 +718,16 @@ extern "C"{
 #else
   typedef struct IMsmConfigurableItemsVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmConfigurableItems *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmConfigurableItems *This);
-      ULONG (WINAPI *Release)(IMsmConfigurableItems *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmConfigurableItems *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmConfigurableItems *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmConfigurableItems *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmConfigurableItems *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Item)(IMsmConfigurableItems *This,__LONG32 Item,IMsmConfigurableItem **Return);
-      HRESULT (WINAPI *get_Count)(IMsmConfigurableItems *This,__LONG32 *Count);
-      HRESULT (WINAPI *get__NewEnum)(IMsmConfigurableItems *This,IUnknown **NewEnum);
+                   HRESULT (WINAPI *QueryInterface)(IMsmConfigurableItems *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmConfigurableItems *This);
+                   ULONG (WINAPI *Release)(IMsmConfigurableItems *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmConfigurableItems *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmConfigurableItems *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmConfigurableItems *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmConfigurableItems *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Item)(IMsmConfigurableItems *This,__LONG32 Item,IMsmConfigurableItem **Return);
+                   HRESULT (WINAPI *get_Count)(IMsmConfigurableItems *This,__LONG32 *Count);
+                   HRESULT (WINAPI *get__NewEnum)(IMsmConfigurableItems *This,IUnknown **NewEnum);
     END_INTERFACE
   } IMsmConfigurableItemsVtbl;
   struct IMsmConfigurableItems {
@@ -765,15 +765,15 @@ extern "C"{
 #else
   typedef struct IMsmConfigureModuleVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmConfigureModule *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmConfigureModule *This);
-      ULONG (WINAPI *Release)(IMsmConfigureModule *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmConfigureModule *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmConfigureModule *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmConfigureModule *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmConfigureModule *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *ProvideTextData)(IMsmConfigureModule *This,const BSTR Name,BSTR *ConfigData);
-      HRESULT (WINAPI *ProvideIntegerData)(IMsmConfigureModule *This,const BSTR Name,__LONG32 *ConfigData);
+                   HRESULT (WINAPI *QueryInterface)(IMsmConfigureModule *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmConfigureModule *This);
+                   ULONG (WINAPI *Release)(IMsmConfigureModule *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmConfigureModule *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmConfigureModule *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmConfigureModule *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmConfigureModule *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *ProvideTextData)(IMsmConfigureModule *This,const BSTR Name,BSTR *ConfigData);
+                   HRESULT (WINAPI *ProvideIntegerData)(IMsmConfigureModule *This,const BSTR Name,__LONG32 *ConfigData);
     END_INTERFACE
   } IMsmConfigureModuleVtbl;
   struct IMsmConfigureModule {
@@ -820,26 +820,26 @@ extern "C"{
 #else
   typedef struct IMsmMergeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmMerge *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmMerge *This);
-      ULONG (WINAPI *Release)(IMsmMerge *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmMerge *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmMerge *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmMerge *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmMerge *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *OpenDatabase)(IMsmMerge *This,const BSTR Path);
-      HRESULT (WINAPI *OpenModule)(IMsmMerge *This,const BSTR Path,const short Language);
-      HRESULT (WINAPI *CloseDatabase)(IMsmMerge *This,const VARIANT_BOOL Commit);
-      HRESULT (WINAPI *CloseModule)(IMsmMerge *This);
-      HRESULT (WINAPI *OpenLog)(IMsmMerge *This,const BSTR Path);
-      HRESULT (WINAPI *CloseLog)(IMsmMerge *This);
-      HRESULT (WINAPI *Log)(IMsmMerge *This,const BSTR Message);
-      HRESULT (WINAPI *get_Errors)(IMsmMerge *This,IMsmErrors **Errors);
-      HRESULT (WINAPI *get_Dependencies)(IMsmMerge *This,IMsmDependencies **Dependencies);
-      HRESULT (WINAPI *Merge)(IMsmMerge *This,const BSTR Feature,const BSTR RedirectDir);
-      HRESULT (WINAPI *Connect)(IMsmMerge *This,const BSTR Feature);
-      HRESULT (WINAPI *ExtractCAB)(IMsmMerge *This,const BSTR FileName);
-      HRESULT (WINAPI *ExtractFiles)(IMsmMerge *This,const BSTR Path);
+                   HRESULT (WINAPI *QueryInterface)(IMsmMerge *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmMerge *This);
+                   ULONG (WINAPI *Release)(IMsmMerge *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmMerge *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmMerge *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmMerge *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmMerge *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *OpenDatabase)(IMsmMerge *This,const BSTR Path);
+                   HRESULT (WINAPI *OpenModule)(IMsmMerge *This,const BSTR Path,const short Language);
+                   HRESULT (WINAPI *CloseDatabase)(IMsmMerge *This,const VARIANT_BOOL Commit);
+                   HRESULT (WINAPI *CloseModule)(IMsmMerge *This);
+                   HRESULT (WINAPI *OpenLog)(IMsmMerge *This,const BSTR Path);
+                   HRESULT (WINAPI *CloseLog)(IMsmMerge *This);
+                   HRESULT (WINAPI *Log)(IMsmMerge *This,const BSTR Message);
+                   HRESULT (WINAPI *get_Errors)(IMsmMerge *This,IMsmErrors **Errors);
+                   HRESULT (WINAPI *get_Dependencies)(IMsmMerge *This,IMsmDependencies **Dependencies);
+                   HRESULT (WINAPI *Merge)(IMsmMerge *This,const BSTR Feature,const BSTR RedirectDir);
+                   HRESULT (WINAPI *Connect)(IMsmMerge *This,const BSTR Feature);
+                   HRESULT (WINAPI *ExtractCAB)(IMsmMerge *This,const BSTR FileName);
+                   HRESULT (WINAPI *ExtractFiles)(IMsmMerge *This,const BSTR Path);
     END_INTERFACE
   } IMsmMergeVtbl;
   struct IMsmMerge {
@@ -906,14 +906,14 @@ extern "C"{
 #else
   typedef struct IMsmGetFilesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmGetFiles *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmGetFiles *This);
-      ULONG (WINAPI *Release)(IMsmGetFiles *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmGetFiles *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmGetFiles *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmGetFiles *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmGetFiles *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_ModuleFiles)(IMsmGetFiles *This,IMsmStrings **Files);
+                   HRESULT (WINAPI *QueryInterface)(IMsmGetFiles *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmGetFiles *This);
+                   ULONG (WINAPI *Release)(IMsmGetFiles *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmGetFiles *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmGetFiles *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmGetFiles *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmGetFiles *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_ModuleFiles)(IMsmGetFiles *This,IMsmStrings **Files);
     END_INTERFACE
   } IMsmGetFilesVtbl;
   struct IMsmGetFiles {
@@ -962,31 +962,31 @@ extern "C"{
 #else
   typedef struct IMsmMerge2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMsmMerge2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMsmMerge2 *This);
-      ULONG (WINAPI *Release)(IMsmMerge2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMsmMerge2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMsmMerge2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMsmMerge2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMsmMerge2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *OpenDatabase)(IMsmMerge2 *This,const BSTR Path);
-      HRESULT (WINAPI *OpenModule)(IMsmMerge2 *This,const BSTR Path,const short Language);
-      HRESULT (WINAPI *CloseDatabase)(IMsmMerge2 *This,const VARIANT_BOOL Commit);
-      HRESULT (WINAPI *CloseModule)(IMsmMerge2 *This);
-      HRESULT (WINAPI *OpenLog)(IMsmMerge2 *This,const BSTR Path);
-      HRESULT (WINAPI *CloseLog)(IMsmMerge2 *This);
-      HRESULT (WINAPI *Log)(IMsmMerge2 *This,const BSTR Message);
-      HRESULT (WINAPI *get_Errors)(IMsmMerge2 *This,IMsmErrors **Errors);
-      HRESULT (WINAPI *get_Dependencies)(IMsmMerge2 *This,IMsmDependencies **Dependencies);
-      HRESULT (WINAPI *Merge)(IMsmMerge2 *This,const BSTR Feature,const BSTR RedirectDir);
-      HRESULT (WINAPI *Connect)(IMsmMerge2 *This,const BSTR Feature);
-      HRESULT (WINAPI *ExtractCAB)(IMsmMerge2 *This,const BSTR FileName);
-      HRESULT (WINAPI *ExtractFiles)(IMsmMerge2 *This,const BSTR Path);
-      HRESULT (WINAPI *MergeEx)(IMsmMerge2 *This,const BSTR Feature,const BSTR RedirectDir,IMsmConfigureModule *pConfiguration);
-      HRESULT (WINAPI *ExtractFilesEx)(IMsmMerge2 *This,const BSTR Path,VARIANT_BOOL fLongFileNames,IMsmStrings **pFilePaths);
-      HRESULT (WINAPI *get_ConfigurableItems)(IMsmMerge2 *This,IMsmConfigurableItems **ConfigurableItems);
-      HRESULT (WINAPI *CreateSourceImage)(IMsmMerge2 *This,const BSTR Path,VARIANT_BOOL fLongFileNames,IMsmStrings **pFilePaths);
-      HRESULT (WINAPI *get_ModuleFiles)(IMsmMerge2 *This,IMsmStrings **Files);
+                   HRESULT (WINAPI *QueryInterface)(IMsmMerge2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMsmMerge2 *This);
+                   ULONG (WINAPI *Release)(IMsmMerge2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMsmMerge2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMsmMerge2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMsmMerge2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMsmMerge2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *OpenDatabase)(IMsmMerge2 *This,const BSTR Path);
+                   HRESULT (WINAPI *OpenModule)(IMsmMerge2 *This,const BSTR Path,const short Language);
+                   HRESULT (WINAPI *CloseDatabase)(IMsmMerge2 *This,const VARIANT_BOOL Commit);
+                   HRESULT (WINAPI *CloseModule)(IMsmMerge2 *This);
+                   HRESULT (WINAPI *OpenLog)(IMsmMerge2 *This,const BSTR Path);
+                   HRESULT (WINAPI *CloseLog)(IMsmMerge2 *This);
+                   HRESULT (WINAPI *Log)(IMsmMerge2 *This,const BSTR Message);
+                   HRESULT (WINAPI *get_Errors)(IMsmMerge2 *This,IMsmErrors **Errors);
+                   HRESULT (WINAPI *get_Dependencies)(IMsmMerge2 *This,IMsmDependencies **Dependencies);
+                   HRESULT (WINAPI *Merge)(IMsmMerge2 *This,const BSTR Feature,const BSTR RedirectDir);
+                   HRESULT (WINAPI *Connect)(IMsmMerge2 *This,const BSTR Feature);
+                   HRESULT (WINAPI *ExtractCAB)(IMsmMerge2 *This,const BSTR FileName);
+                   HRESULT (WINAPI *ExtractFiles)(IMsmMerge2 *This,const BSTR Path);
+                   HRESULT (WINAPI *MergeEx)(IMsmMerge2 *This,const BSTR Feature,const BSTR RedirectDir,IMsmConfigureModule *pConfiguration);
+                   HRESULT (WINAPI *ExtractFilesEx)(IMsmMerge2 *This,const BSTR Path,VARIANT_BOOL fLongFileNames,IMsmStrings **pFilePaths);
+                   HRESULT (WINAPI *get_ConfigurableItems)(IMsmMerge2 *This,IMsmConfigurableItems **ConfigurableItems);
+                   HRESULT (WINAPI *CreateSourceImage)(IMsmMerge2 *This,const BSTR Path,VARIANT_BOOL fLongFileNames,IMsmStrings **pFilePaths);
+                   HRESULT (WINAPI *get_ModuleFiles)(IMsmMerge2 *This,IMsmStrings **Files);
     END_INTERFACE
   } IMsmMerge2Vtbl;
   struct IMsmMerge2 {

@@ -37,7 +37,7 @@ extern char *envz_entry (const char *__restrict __envz, size_t __envz_len,
 /* Returns a pointer to the value portion of the entry in ENVZ for NAME, or 0
    if there is none.  */
 extern char *envz_get (const char *__restrict __envz, size_t __envz_len,
-		       const char *__restrict __name)
+		                    const char *__restrict __name)
      __THROW __attribute_pure__;
 
 /* Adds an entry for NAME with value VALUE to ENVZ & ENVZ_LEN.  If an entry

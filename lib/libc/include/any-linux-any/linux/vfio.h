@@ -218,7 +218,7 @@ struct vfio_device_info {
 
 /**
  * VFIO_DEVICE_GET_REGION_INFO - _IOWR(VFIO_TYPE, VFIO_BASE + 8,
- *				       struct vfio_region_info)
+ *				                    struct vfio_region_info)
  *
  * Retrieve information about a device region.  Caller provides
  * struct vfio_region_info with index value set.  Caller sets argsz.
@@ -477,7 +477,7 @@ enum {
 
 /**
  * VFIO_DEVICE_GET_PCI_HOT_RESET_INFO - _IORW(VFIO_TYPE, VFIO_BASE + 12,
- *					      struct vfio_pci_hot_reset_info)
+ *					                   struct vfio_pci_hot_reset_info)
  *
  * Return: 0 on success, -errno on failure:
  *	-enospc = insufficient buffer, -enodev = unsupported for device.
@@ -515,7 +515,7 @@ struct vfio_pci_hot_reset {
 
 /**
  * VFIO_DEVICE_QUERY_GFX_PLANE - _IOW(VFIO_TYPE, VFIO_BASE + 14,
- *                                    struct vfio_device_query_gfx_plane)
+ *                                                                                                                  struct vfio_device_query_gfx_plane)
  *
  * Set the drm_plane_type and flags, then retrieve the gfx plane info.
  *
@@ -577,7 +577,7 @@ struct vfio_device_gfx_plane_info {
 
 /**
  * VFIO_DEVICE_IOEVENTFD - _IOW(VFIO_TYPE, VFIO_BASE + 16,
- *                              struct vfio_device_ioeventfd)
+ *                                                                                               struct vfio_device_ioeventfd)
  *
  * Perform a write to the device at the specified device fd offset, with
  * the specified data and width when the provided eventfd is triggered.
@@ -738,17 +738,17 @@ struct vfio_eeh_pe_op {
 #define VFIO_EEH_PE_ENABLE		1	/* Enable EEH functionality  */
 #define VFIO_EEH_PE_UNFREEZE_IO		2	/* Enable IO for frozen PE   */
 #define VFIO_EEH_PE_UNFREEZE_DMA	3	/* Enable DMA for frozen PE  */
-#define VFIO_EEH_PE_GET_STATE		4	/* PE state retrieval        */
+#define VFIO_EEH_PE_GET_STATE		4	/* PE state retrieval                     */
 #define  VFIO_EEH_PE_STATE_NORMAL	0	/* PE in functional state    */
-#define  VFIO_EEH_PE_STATE_RESET	1	/* PE reset in progress      */
-#define  VFIO_EEH_PE_STATE_STOPPED	2	/* Stopped DMA and IO        */
-#define  VFIO_EEH_PE_STATE_STOPPED_DMA	4	/* Stopped DMA only          */
-#define  VFIO_EEH_PE_STATE_UNAVAIL	5	/* State unavailable         */
-#define VFIO_EEH_PE_RESET_DEACTIVATE	5	/* Deassert PE reset         */
-#define VFIO_EEH_PE_RESET_HOT		6	/* Assert hot reset          */
+#define  VFIO_EEH_PE_STATE_RESET	1	/* PE reset in progress                   */
+#define  VFIO_EEH_PE_STATE_STOPPED	2	/* Stopped DMA and IO                     */
+#define  VFIO_EEH_PE_STATE_STOPPED_DMA	4	/* Stopped DMA only                       */
+#define  VFIO_EEH_PE_STATE_UNAVAIL	5	/* State unavailable                      */
+#define VFIO_EEH_PE_RESET_DEACTIVATE	5	/* Deassert PE reset                      */
+#define VFIO_EEH_PE_RESET_HOT		6	/* Assert hot reset                       */
 #define VFIO_EEH_PE_RESET_FUNDAMENTAL	7	/* Assert fundamental reset  */
-#define VFIO_EEH_PE_CONFIGURE		8	/* PE configuration          */
-#define VFIO_EEH_PE_INJECT_ERR		9	/* Inject EEH error          */
+#define VFIO_EEH_PE_CONFIGURE		8	/* PE configuration                       */
+#define VFIO_EEH_PE_INJECT_ERR		9	/* Inject EEH error                       */
 
 #define VFIO_EEH_PE_OP			_IO(VFIO_TYPE, VFIO_BASE + 21)
 

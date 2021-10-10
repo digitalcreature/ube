@@ -41,9 +41,9 @@
 
 _STRUCT_SIGALTSTACK
 {
-	void            *ss_sp;         /* signal stack base */
-	__darwin_size_t ss_size;        /* signal stack length */
-	int             ss_flags;       /* SA_DISABLE and/or SA_ONSTACK */
+	void                                      *ss_sp;                      /* signal stack base */
+	__darwin_size_t ss_size;                     /* signal stack length */
+	int                                       ss_flags;                    /* SA_DISABLE and/or SA_ONSTACK */
 };
 typedef _STRUCT_SIGALTSTACK     stack_t; /* [???] signal stack */
 

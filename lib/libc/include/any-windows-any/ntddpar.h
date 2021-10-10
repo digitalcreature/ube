@@ -69,14 +69,14 @@ typedef struct _PAR_DEVICE_ID_SIZE_INFORMATION {
   ULONG  DeviceIdSize;
 } PAR_DEVICE_ID_SIZE_INFORMATION, *PPAR_DEVICE_ID_SIZE_INFORMATION;
 
-#define PARALLEL_INIT                     0x01
-#define PARALLEL_AUTOFEED                 0x02
-#define PARALLEL_PAPER_EMPTY              0x04
-#define PARALLEL_OFF_LINE                 0x08
-#define PARALLEL_POWER_OFF                0x10
-#define PARALLEL_NOT_CONNECTED            0x20
-#define PARALLEL_BUSY                     0x40
-#define PARALLEL_SELECTED                 0x80
+#define PARALLEL_INIT                                                            0x01
+#define PARALLEL_AUTOFEED                                           0x02
+#define PARALLEL_PAPER_EMPTY                                        0x04
+#define PARALLEL_OFF_LINE                                           0x08
+#define PARALLEL_POWER_OFF                                          0x10
+#define PARALLEL_NOT_CONNECTED                                      0x20
+#define PARALLEL_BUSY                                                            0x40
+#define PARALLEL_SELECTED                                           0x80
 
 typedef struct _PAR_QUERY_INFORMATION {
   UCHAR  Status;
@@ -91,20 +91,20 @@ typedef struct _PARCLASS_NEGOTIATION_MASK {
   USHORT  usWriteMask;
 } PARCLASS_NEGOTIATION_MASK, *PPARCLASS_NEGOTIATION_MASK;
 
-#define NONE                              0x0000
-#define CENTRONICS                        0x0001
-#define IEEE_COMPATIBILITY                0x0002
-#define NIBBLE                            0x0004
-#define CHANNEL_NIBBLE                    0x0008
-#define BYTE_BIDIR                        0x0010
-#define EPP_HW                            0x0020
-#define EPP_SW                            0x0040
-#define EPP_ANY                           0x0060
-#define BOUNDED_ECP                       0x0080
-#define ECP_HW_NOIRQ                      0x0100
-#define ECP_HW_IRQ                        0x0200
-#define ECP_SW                            0x0400
-#define ECP_ANY                           0x0780
+#define NONE                                                                                               0x0000
+#define CENTRONICS                                                                            0x0001
+#define IEEE_COMPATIBILITY                                          0x0002
+#define NIBBLE                                                                                0x0004
+#define CHANNEL_NIBBLE                                                           0x0008
+#define BYTE_BIDIR                                                                            0x0010
+#define EPP_HW                                                                                0x0020
+#define EPP_SW                                                                                0x0040
+#define EPP_ANY                                                                               0x0060
+#define BOUNDED_ECP                                                              0x0080
+#define ECP_HW_NOIRQ                                                             0x0100
+#define ECP_HW_IRQ                                                                            0x0200
+#define ECP_SW                                                                                0x0400
+#define ECP_ANY                                                                               0x0780
 
 #ifdef __cplusplus
 }

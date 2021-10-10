@@ -41,46 +41,46 @@ pub fn __divdf3(a: f64, b: f64) callconv(.C) f64 {
 
     // Detect if a or b is zero, denormal, infinity, or NaN.
     if (aExponent -% 1 >= maxExponent -% 1 or bExponent -% 1 >= maxExponent -% 1) {
-        const aAbs: Z = @bitCast(Z, a) & absMask;
-        const bAbs: Z = @bitCast(Z, b) & absMask;
+                     const aAbs: Z = @bitCast(Z, a) & absMask;
+                     const bAbs: Z = @bitCast(Z, b) & absMask;
 
-        // NaN / anything = qNaN
-        if (aAbs > infRep) return @bitCast(f64, @bitCast(Z, a) | quietBit);
-        // anything / NaN = qNaN
-        if (bAbs > infRep) return @bitCast(f64, @bitCast(Z, b) | quietBit);
+                     // NaN / anything = qNaN
+                     if (aAbs > infRep) return @bitCast(f64, @bitCast(Z, a) | quietBit);
+                     // anything / NaN = qNaN
+                     if (bAbs > infRep) return @bitCast(f64, @bitCast(Z, b) | quietBit);
 
-        if (aAbs == infRep) {
-            // infinity / infinity = NaN
-            if (bAbs == infRep) {
-                return @bitCast(f64, qnanRep);
-            }
-            // infinity / anything else = +/- infinity
-            else {
-                return @bitCast(f64, aAbs | quotientSign);
-            }
-        }
+                     if (aAbs == infRep) {
+                                      // infinity / infinity = NaN
+                                      if (bAbs == infRep) {
+                                          return @bitCast(f64, qnanRep);
+                                      }
+                                      // infinity / anything else = +/- infinity
+                                      else {
+                                          return @bitCast(f64, aAbs | quotientSign);
+                                      }
+                     }
 
-        // anything else / infinity = +/- 0
-        if (bAbs == infRep) return @bitCast(f64, quotientSign);
+                     // anything else / infinity = +/- 0
+                     if (bAbs == infRep) return @bitCast(f64, quotientSign);
 
-        if (aAbs == 0) {
-            // zero / zero = NaN
-            if (bAbs == 0) {
-                return @bitCast(f64, qnanRep);
-            }
-            // zero / anything else = +/- zero
-            else {
-                return @bitCast(f64, quotientSign);
-            }
-        }
-        // anything else / zero = +/- infinity
-        if (bAbs == 0) return @bitCast(f64, infRep | quotientSign);
+                     if (aAbs == 0) {
+                                      // zero / zero = NaN
+                                      if (bAbs == 0) {
+                                          return @bitCast(f64, qnanRep);
+                                      }
+                                      // zero / anything else = +/- zero
+                                      else {
+                                          return @bitCast(f64, quotientSign);
+                                      }
+                     }
+                     // anything else / zero = +/- infinity
+                     if (bAbs == 0) return @bitCast(f64, infRep | quotientSign);
 
-        // one or both of a or b is denormal, the other (if applicable) is a
-        // normal number.  Renormalize one or both of a and b, and set scale to
-        // include the necessary exponent adjustment.
-        if (aAbs < implicitBit) scale +%= normalize(f64, &aSignificand);
-        if (bAbs < implicitBit) scale -%= normalize(f64, &bSignificand);
+                     // one or both of a or b is denormal, the other (if applicable) is a
+                     // normal number.  Renormalize one or both of a and b, and set scale to
+                     // include the necessary exponent adjustment.
+                     if (aAbs < implicitBit) scale +%= normalize(f64, &aSignificand);
+                     if (bAbs < implicitBit) scale -%= normalize(f64, &bSignificand);
     }
 
     // Or in the implicit significand bit.  (If we fell through from the
@@ -143,7 +143,7 @@ pub fn __divdf3(a: f64, b: f64) callconv(.C) f64 {
     //    1. q < a/b
     //    2. q is in the interval [0.5, 2.0)
     //    3. the error in q is bounded away from 2^-53 (actually, we have a
-    //       couple of bits to spare, but this is all we need).
+    //                    couple of bits to spare, but this is all we need).
 
     // We need a 64 x 64 multiply high to compute q, which isn't a basic
     // operation in C, so we need to be a little bit fussy.
@@ -166,153 +166,153 @@ pub fn __divdf3(a: f64, b: f64) callconv(.C) f64 {
     // range and adjust the exponent accordingly.
     var residual: Z = undefined;
     if (quotient < (implicitBit << 1)) {
-        residual = (aSignificand << 53) -% quotient *% bSignificand;
-        quotientExponent -%= 1;
+                     residual = (aSignificand << 53) -% quotient *% bSignificand;
+                     quotientExponent -%= 1;
     } else {
-        quotient >>= 1;
-        residual = (aSignificand << 52) -% quotient *% bSignificand;
+                     quotient >>= 1;
+                     residual = (aSignificand << 52) -% quotient *% bSignificand;
     }
 
     const writtenExponent = quotientExponent +% exponentBias;
 
     if (writtenExponent >= maxExponent) {
-        // If we have overflowed the exponent, return infinity.
-        return @bitCast(f64, infRep | quotientSign);
+                     // If we have overflowed the exponent, return infinity.
+                     return @bitCast(f64, infRep | quotientSign);
     } else if (writtenExponent < 1) {
-        if (writtenExponent == 0) {
-            // Check whether the rounded result is normal.
-            const round = @boolToInt((residual << 1) > bSignificand);
-            // Clear the implicit bit.
-            var absResult = quotient & significandMask;
-            // Round.
-            absResult += round;
-            if ((absResult & ~significandMask) != 0) {
-                // The rounded result is normal; return it.
-                return @bitCast(f64, absResult | quotientSign);
-            }
-        }
-        // Flush denormals to zero.  In the future, it would be nice to add
-        // code to round them correctly.
-        return @bitCast(f64, quotientSign);
+                     if (writtenExponent == 0) {
+                                      // Check whether the rounded result is normal.
+                                      const round = @boolToInt((residual << 1) > bSignificand);
+                                      // Clear the implicit bit.
+                                      var absResult = quotient & significandMask;
+                                      // Round.
+                                      absResult += round;
+                                      if ((absResult & ~significandMask) != 0) {
+                                          // The rounded result is normal; return it.
+                                          return @bitCast(f64, absResult | quotientSign);
+                                      }
+                     }
+                     // Flush denormals to zero.  In the future, it would be nice to add
+                     // code to round them correctly.
+                     return @bitCast(f64, quotientSign);
     } else {
-        const round = @boolToInt((residual << 1) > bSignificand);
-        // Clear the implicit bit
-        var absResult = quotient & significandMask;
-        // Insert the exponent
-        absResult |= @bitCast(Z, @as(SignedZ, writtenExponent)) << significandBits;
-        // Round
-        absResult +%= round;
-        // Insert the sign and return
-        return @bitCast(f64, absResult | quotientSign);
+                     const round = @boolToInt((residual << 1) > bSignificand);
+                     // Clear the implicit bit
+                     var absResult = quotient & significandMask;
+                     // Insert the exponent
+                     absResult |= @bitCast(Z, @as(SignedZ, writtenExponent)) << significandBits;
+                     // Round
+                     absResult +%= round;
+                     // Insert the sign and return
+                     return @bitCast(f64, absResult | quotientSign);
     }
 }
 
 pub fn wideMultiply(comptime Z: type, a: Z, b: Z, hi: *Z, lo: *Z) void {
     @setRuntimeSafety(builtin.is_test);
     switch (Z) {
-        u32 => {
-            // 32x32 --> 64 bit multiply
-            const product = @as(u64, a) * @as(u64, b);
-            hi.* = @truncate(u32, product >> 32);
-            lo.* = @truncate(u32, product);
-        },
-        u64 => {
-            const S = struct {
-                fn loWord(x: u64) u64 {
-                    return @truncate(u32, x);
-                }
-                fn hiWord(x: u64) u64 {
-                    return @truncate(u32, x >> 32);
-                }
-            };
-            // 64x64 -> 128 wide multiply for platforms that don't have such an operation;
-            // many 64-bit platforms have this operation, but they tend to have hardware
-            // floating-point, so we don't bother with a special case for them here.
-            // Each of the component 32x32 -> 64 products
-            const plolo: u64 = S.loWord(a) * S.loWord(b);
-            const plohi: u64 = S.loWord(a) * S.hiWord(b);
-            const philo: u64 = S.hiWord(a) * S.loWord(b);
-            const phihi: u64 = S.hiWord(a) * S.hiWord(b);
-            // Sum terms that contribute to lo in a way that allows us to get the carry
-            const r0: u64 = S.loWord(plolo);
-            const r1: u64 = S.hiWord(plolo) +% S.loWord(plohi) +% S.loWord(philo);
-            lo.* = r0 +% (r1 << 32);
-            // Sum terms contributing to hi with the carry from lo
-            hi.* = S.hiWord(plohi) +% S.hiWord(philo) +% S.hiWord(r1) +% phihi;
-        },
-        u128 => {
-            const Word_LoMask = @as(u64, 0x00000000ffffffff);
-            const Word_HiMask = @as(u64, 0xffffffff00000000);
-            const Word_FullMask = @as(u64, 0xffffffffffffffff);
-            const S = struct {
-                fn Word_1(x: u128) u64 {
-                    return @truncate(u32, x >> 96);
-                }
-                fn Word_2(x: u128) u64 {
-                    return @truncate(u32, x >> 64);
-                }
-                fn Word_3(x: u128) u64 {
-                    return @truncate(u32, x >> 32);
-                }
-                fn Word_4(x: u128) u64 {
-                    return @truncate(u32, x);
-                }
-            };
-            // 128x128 -> 256 wide multiply for platforms that don't have such an operation;
-            // many 64-bit platforms have this operation, but they tend to have hardware
-            // floating-point, so we don't bother with a special case for them here.
+                     u32 => {
+                                      // 32x32 --> 64 bit multiply
+                                      const product = @as(u64, a) * @as(u64, b);
+                                      hi.* = @truncate(u32, product >> 32);
+                                      lo.* = @truncate(u32, product);
+                     },
+                     u64 => {
+                                      const S = struct {
+                                          fn loWord(x: u64) u64 {
+                                                           return @truncate(u32, x);
+                                          }
+                                          fn hiWord(x: u64) u64 {
+                                                           return @truncate(u32, x >> 32);
+                                          }
+                                      };
+                                      // 64x64 -> 128 wide multiply for platforms that don't have such an operation;
+                                      // many 64-bit platforms have this operation, but they tend to have hardware
+                                      // floating-point, so we don't bother with a special case for them here.
+                                      // Each of the component 32x32 -> 64 products
+                                      const plolo: u64 = S.loWord(a) * S.loWord(b);
+                                      const plohi: u64 = S.loWord(a) * S.hiWord(b);
+                                      const philo: u64 = S.hiWord(a) * S.loWord(b);
+                                      const phihi: u64 = S.hiWord(a) * S.hiWord(b);
+                                      // Sum terms that contribute to lo in a way that allows us to get the carry
+                                      const r0: u64 = S.loWord(plolo);
+                                      const r1: u64 = S.hiWord(plolo) +% S.loWord(plohi) +% S.loWord(philo);
+                                      lo.* = r0 +% (r1 << 32);
+                                      // Sum terms contributing to hi with the carry from lo
+                                      hi.* = S.hiWord(plohi) +% S.hiWord(philo) +% S.hiWord(r1) +% phihi;
+                     },
+                     u128 => {
+                                      const Word_LoMask = @as(u64, 0x00000000ffffffff);
+                                      const Word_HiMask = @as(u64, 0xffffffff00000000);
+                                      const Word_FullMask = @as(u64, 0xffffffffffffffff);
+                                      const S = struct {
+                                          fn Word_1(x: u128) u64 {
+                                                           return @truncate(u32, x >> 96);
+                                          }
+                                          fn Word_2(x: u128) u64 {
+                                                           return @truncate(u32, x >> 64);
+                                          }
+                                          fn Word_3(x: u128) u64 {
+                                                           return @truncate(u32, x >> 32);
+                                          }
+                                          fn Word_4(x: u128) u64 {
+                                                           return @truncate(u32, x);
+                                          }
+                                      };
+                                      // 128x128 -> 256 wide multiply for platforms that don't have such an operation;
+                                      // many 64-bit platforms have this operation, but they tend to have hardware
+                                      // floating-point, so we don't bother with a special case for them here.
 
-            const product11: u64 = S.Word_1(a) * S.Word_1(b);
-            const product12: u64 = S.Word_1(a) * S.Word_2(b);
-            const product13: u64 = S.Word_1(a) * S.Word_3(b);
-            const product14: u64 = S.Word_1(a) * S.Word_4(b);
-            const product21: u64 = S.Word_2(a) * S.Word_1(b);
-            const product22: u64 = S.Word_2(a) * S.Word_2(b);
-            const product23: u64 = S.Word_2(a) * S.Word_3(b);
-            const product24: u64 = S.Word_2(a) * S.Word_4(b);
-            const product31: u64 = S.Word_3(a) * S.Word_1(b);
-            const product32: u64 = S.Word_3(a) * S.Word_2(b);
-            const product33: u64 = S.Word_3(a) * S.Word_3(b);
-            const product34: u64 = S.Word_3(a) * S.Word_4(b);
-            const product41: u64 = S.Word_4(a) * S.Word_1(b);
-            const product42: u64 = S.Word_4(a) * S.Word_2(b);
-            const product43: u64 = S.Word_4(a) * S.Word_3(b);
-            const product44: u64 = S.Word_4(a) * S.Word_4(b);
+                                      const product11: u64 = S.Word_1(a) * S.Word_1(b);
+                                      const product12: u64 = S.Word_1(a) * S.Word_2(b);
+                                      const product13: u64 = S.Word_1(a) * S.Word_3(b);
+                                      const product14: u64 = S.Word_1(a) * S.Word_4(b);
+                                      const product21: u64 = S.Word_2(a) * S.Word_1(b);
+                                      const product22: u64 = S.Word_2(a) * S.Word_2(b);
+                                      const product23: u64 = S.Word_2(a) * S.Word_3(b);
+                                      const product24: u64 = S.Word_2(a) * S.Word_4(b);
+                                      const product31: u64 = S.Word_3(a) * S.Word_1(b);
+                                      const product32: u64 = S.Word_3(a) * S.Word_2(b);
+                                      const product33: u64 = S.Word_3(a) * S.Word_3(b);
+                                      const product34: u64 = S.Word_3(a) * S.Word_4(b);
+                                      const product41: u64 = S.Word_4(a) * S.Word_1(b);
+                                      const product42: u64 = S.Word_4(a) * S.Word_2(b);
+                                      const product43: u64 = S.Word_4(a) * S.Word_3(b);
+                                      const product44: u64 = S.Word_4(a) * S.Word_4(b);
 
-            const sum0: u128 = @as(u128, product44);
-            const sum1: u128 = @as(u128, product34) +%
-                @as(u128, product43);
-            const sum2: u128 = @as(u128, product24) +%
-                @as(u128, product33) +%
-                @as(u128, product42);
-            const sum3: u128 = @as(u128, product14) +%
-                @as(u128, product23) +%
-                @as(u128, product32) +%
-                @as(u128, product41);
-            const sum4: u128 = @as(u128, product13) +%
-                @as(u128, product22) +%
-                @as(u128, product31);
-            const sum5: u128 = @as(u128, product12) +%
-                @as(u128, product21);
-            const sum6: u128 = @as(u128, product11);
+                                      const sum0: u128 = @as(u128, product44);
+                                      const sum1: u128 = @as(u128, product34) +%
+                                          @as(u128, product43);
+                                      const sum2: u128 = @as(u128, product24) +%
+                                          @as(u128, product33) +%
+                                          @as(u128, product42);
+                                      const sum3: u128 = @as(u128, product14) +%
+                                          @as(u128, product23) +%
+                                          @as(u128, product32) +%
+                                          @as(u128, product41);
+                                      const sum4: u128 = @as(u128, product13) +%
+                                          @as(u128, product22) +%
+                                          @as(u128, product31);
+                                      const sum5: u128 = @as(u128, product12) +%
+                                          @as(u128, product21);
+                                      const sum6: u128 = @as(u128, product11);
 
-            const r0: u128 = (sum0 & Word_FullMask) +%
-                ((sum1 & Word_LoMask) << 32);
-            const r1: u128 = (sum0 >> 64) +%
-                ((sum1 >> 32) & Word_FullMask) +%
-                (sum2 & Word_FullMask) +%
-                ((sum3 << 32) & Word_HiMask);
+                                      const r0: u128 = (sum0 & Word_FullMask) +%
+                                          ((sum1 & Word_LoMask) << 32);
+                                      const r1: u128 = (sum0 >> 64) +%
+                                          ((sum1 >> 32) & Word_FullMask) +%
+                                          (sum2 & Word_FullMask) +%
+                                          ((sum3 << 32) & Word_HiMask);
 
-            lo.* = r0 +% (r1 << 64);
-            hi.* = (r1 >> 64) +%
-                (sum1 >> 96) +%
-                (sum2 >> 64) +%
-                (sum3 >> 32) +%
-                sum4 +%
-                (sum5 << 32) +%
-                (sum6 << 64);
-        },
-        else => @compileError("unsupported"),
+                                      lo.* = r0 +% (r1 << 64);
+                                      hi.* = (r1 >> 64) +%
+                                          (sum1 >> 96) +%
+                                          (sum2 >> 64) +%
+                                          (sum3 >> 32) +%
+                                          sum4 +%
+                                          (sum5 << 32) +%
+                                          (sum6 << 64);
+                     },
+                     else => @compileError("unsupported"),
     }
 }
 

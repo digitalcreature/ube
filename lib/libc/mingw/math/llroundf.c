@@ -14,24 +14,24 @@ llroundf (float x)
 
   if (x >= 0.0F)
     {
-      res = ceilf (x);
-      if (res - x > 0.5F)
-        res -= 1.0F;
+                   res = ceilf (x);
+                   if (res - x > 0.5F)
+                     res -= 1.0F;
     }
   else
     {
-      res = ceilf (-x);
-      if (res + x > 0.5F)
-        res -= 1.0F;
-      res = -res;
+                   res = ceilf (-x);
+                   if (res + x > 0.5F)
+                     res -= 1.0F;
+                   res = -res;
     }
   if (!isfinite (res)
-      || res > (float) LONG_LONG_MAX
-      || res < (float) LONG_LONG_MIN)
+                   || res > (float) LONG_LONG_MAX
+                   || res < (float) LONG_LONG_MIN)
     {
-      errno = ERANGE;
-      /* Undefined behaviour, so we could return anything.  */
-      /* return res > 0.0F ? LONG_LONG_MAX : LONG_LONG_MIN; */
+                   errno = ERANGE;
+                   /* Undefined behaviour, so we could return anything.  */
+                   /* return res > 0.0F ? LONG_LONG_MAX : LONG_LONG_MIN; */
     }
   return (long long) res;
 }

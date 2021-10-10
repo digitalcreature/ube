@@ -55,19 +55,19 @@ int feclearexcept (int excepts)
   int _mxcsr;
   if (excepts == FE_ALL_EXCEPT)
     {
-      __asm__ volatile ("fnclex");
+                   __asm__ volatile ("fnclex");
     }
   else
     {
-      __asm__ volatile ("fnstenv %0" : "=m" (_env));
-      _env.__status_word &= ~(excepts & FE_ALL_EXCEPT);
-      __asm__ volatile ("fldenv %0" : : "m" (_env));
+                   __asm__ volatile ("fnstenv %0" : "=m" (_env));
+                   _env.__status_word &= ~(excepts & FE_ALL_EXCEPT);
+                   __asm__ volatile ("fldenv %0" : : "m" (_env));
     }
   if (__mingw_has_sse ())
     {
-      __asm__ volatile ("stmxcsr %0" : "=m" (_mxcsr));
-      _mxcsr &= ~(((excepts & FE_ALL_EXCEPT)));
-      __asm__ volatile ("ldmxcsr %0" : : "m" (_mxcsr));
+                   __asm__ volatile ("stmxcsr %0" : "=m" (_mxcsr));
+                   _mxcsr &= ~(((excepts & FE_ALL_EXCEPT)));
+                   __asm__ volatile ("ldmxcsr %0" : : "m" (_mxcsr));
     }
 #endif /* defined(_ARM_) || defined(__arm__) || defined(_ARM64_) || defined(__aarch64__) */
   return (0);

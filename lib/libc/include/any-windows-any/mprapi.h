@@ -199,47 +199,47 @@ extern "C" {
 
 #if (_WIN32_WINNT >= 0x0600)
   typedef struct _MPR_INTERFACE_3 {
-    WCHAR                   wszInterfaceName[MAX_INTERFACE_NAME_LEN+1];
-    HANDLE                  hInterface;
-    WINBOOL                 fEnabled;
+    WCHAR                                                          wszInterfaceName[MAX_INTERFACE_NAME_LEN+1];
+    HANDLE                                                         hInterface;
+    WINBOOL                                           fEnabled;
     ROUTER_INTERFACE_TYPE   dwIfType;
     ROUTER_CONNECTION_STATE dwConnectionState;
-    DWORD                   fUnReachabilityReasons;
-    DWORD                   dwLastError;
-    DWORD                   dwfOptions;
-    WCHAR                   szLocalPhoneNumber[RAS_MaxPhoneNumber + 1];
-    PWCHAR                  szAlternates;
-    DWORD                   ipaddr;
-    DWORD                   ipaddrDns;
-    DWORD                   ipaddrDnsAlt;
-    DWORD                   ipaddrWins;
-    DWORD                   ipaddrWinsAlt;
-    DWORD                   dwfNetProtocols;
-    WCHAR                   szDeviceType[MPR_MaxDeviceType + 1];
-    WCHAR                   szDeviceName[MPR_MaxDeviceName + 1];
-    WCHAR                   szX25PadType[MPR_MaxPadType + 1];
-    WCHAR                   szX25Address[MPR_MaxX25Address + 1];
-    WCHAR                   szX25Facilities[MPR_MaxFacilities + 1];
-    WCHAR                   szX25UserData[MPR_MaxUserData + 1];
-    DWORD                   dwChannels;
-    DWORD                   dwSubEntries;
-    DWORD                   dwDialMode;
-    DWORD                   dwDialExtraPercent;
-    DWORD                   dwDialExtraSampleSeconds;
-    DWORD                   dwHangUpExtraPercent;
-    DWORD                   dwHangUpExtraSampleSeconds;
-    DWORD                   dwIdleDisconnectSeconds;
-    DWORD                   dwType;
-    DWORD                   dwEncryptionType;
-    DWORD                   dwCustomAuthKey;
-    DWORD                   dwCustomAuthDataSize;
-    LPBYTE                  lpbCustomAuthData;
-    GUID                    guidId;
-    DWORD                   dwVpnStrategy;
-    ULONG                   AddressCount;
-    IN6_ADDR                ipv6addrDns;
-    IN6_ADDR                ipv6addrDnsAlt;
-    IN6_ADDR *              ipv6addr;
+    DWORD                                                          fUnReachabilityReasons;
+    DWORD                                                          dwLastError;
+    DWORD                                                          dwfOptions;
+    WCHAR                                                          szLocalPhoneNumber[RAS_MaxPhoneNumber + 1];
+    PWCHAR                                                         szAlternates;
+    DWORD                                                          ipaddr;
+    DWORD                                                          ipaddrDns;
+    DWORD                                                          ipaddrDnsAlt;
+    DWORD                                                          ipaddrWins;
+    DWORD                                                          ipaddrWinsAlt;
+    DWORD                                                          dwfNetProtocols;
+    WCHAR                                                          szDeviceType[MPR_MaxDeviceType + 1];
+    WCHAR                                                          szDeviceName[MPR_MaxDeviceName + 1];
+    WCHAR                                                          szX25PadType[MPR_MaxPadType + 1];
+    WCHAR                                                          szX25Address[MPR_MaxX25Address + 1];
+    WCHAR                                                          szX25Facilities[MPR_MaxFacilities + 1];
+    WCHAR                                                          szX25UserData[MPR_MaxUserData + 1];
+    DWORD                                                          dwChannels;
+    DWORD                                                          dwSubEntries;
+    DWORD                                                          dwDialMode;
+    DWORD                                                          dwDialExtraPercent;
+    DWORD                                                          dwDialExtraSampleSeconds;
+    DWORD                                                          dwHangUpExtraPercent;
+    DWORD                                                          dwHangUpExtraSampleSeconds;
+    DWORD                                                          dwIdleDisconnectSeconds;
+    DWORD                                                          dwType;
+    DWORD                                                          dwEncryptionType;
+    DWORD                                                          dwCustomAuthKey;
+    DWORD                                                          dwCustomAuthDataSize;
+    LPBYTE                                                         lpbCustomAuthData;
+    GUID                                                           guidId;
+    DWORD                                                          dwVpnStrategy;
+    ULONG                                                          AddressCount;
+    IN6_ADDR                                          ipv6addrDns;
+    IN6_ADDR                                          ipv6addrDnsAlt;
+    IN6_ADDR *                                        ipv6addr;
   } MPR_INTERFACE_3, *PMPR_INTERFACE_3;
 #endif
 
@@ -665,15 +665,15 @@ typedef struct _PPP_INFO_3 {
 } PPP_INFO_3;
 
 typedef struct _RAS_CONNECTION_3 {
-  DWORD                 dwVersion;
-  DWORD                 dwSize;
-  HANDLE                hConnection;
-  WCHAR                 wszUserName[UNLEN + 1];
+  DWORD                                           dwVersion;
+  DWORD                                           dwSize;
+  HANDLE                                          hConnection;
+  WCHAR                                           wszUserName[UNLEN + 1];
   ROUTER_INTERFACE_TYPE dwInterfaceType;
-  GUID                  guid;
-  PPP_INFO_3            PppInfo3;
+  GUID                                                         guid;
+  PPP_INFO_3                                      PppInfo3;
   RAS_QUARANTINE_STATE  rasQuarState;
-  FILETIME              timer;
+  FILETIME                                        timer;
 } RAS_CONNECTION_3, *PRAS_CONNECTION_3;
 
 WINBOOL CALLBACK MprAdminAcceptNewConnection3(
@@ -732,11 +732,11 @@ DWORD WINAPI MprConfigFilterSetInfo(
 #define MPRAPI_MPR_SERVER_SET_CONFIG_OBJECT_REVISION_1 0x01
 
 typedef enum  {
-  MPRAPI_OBJECT_TYPE_RAS_CONNECTION_OBJECT          = 0x1,
-  MPRAPI_OBJECT_TYPE_MPR_SERVER_OBJECT              = 0x2,
+  MPRAPI_OBJECT_TYPE_RAS_CONNECTION_OBJECT                       = 0x1,
+  MPRAPI_OBJECT_TYPE_MPR_SERVER_OBJECT                                        = 0x2,
   MPRAPI_OBJECT_TYPE_MPR_SERVER_SET_CONFIG_OBJECT   = 0x3,
-  MPRAPI_OBJECT_TYPE_AUTH_VALIDATION_OBJECT         = 0x4,
-  MPRAPI_OBJECT_TYPE_UPDATE_CONNECTION_OBJECT       = 0x5 
+  MPRAPI_OBJECT_TYPE_AUTH_VALIDATION_OBJECT                      = 0x4,
+  MPRAPI_OBJECT_TYPE_UPDATE_CONNECTION_OBJECT                    = 0x5 
 } MPRAPI_OBJECT_TYPE;
 
 typedef struct _MPRAPI_OBJECT_HEADER {
@@ -746,12 +746,12 @@ typedef struct _MPRAPI_OBJECT_HEADER {
 } MPRAPI_OBJECT_HEADER, *PMPRAPI_OBJECT_HEADER;
 
 typedef struct _AUTH_VALIDATION_EX {
-  MPRAPI_OBJECT_HEADER         Header;
-  HANDLE                       hRasConnection;
-  WCHAR                        wszUserName[UNLEN + 1 ];
-  WCHAR                        wszLogonDomain[DNLEN + 1 ];
-  DWORD                        AuthInfoSize;
-  BYTE                         AuthInfo[1];
+  MPRAPI_OBJECT_HEADER                      Header;
+  HANDLE                                                              hRasConnection;
+  WCHAR                                                                            wszUserName[UNLEN + 1 ];
+  WCHAR                                                                            wszLogonDomain[DNLEN + 1 ];
+  DWORD                                                                            AuthInfoSize;
+  BYTE                                                                             AuthInfo[1];
 } AUTH_VALIDATION_EX, *PAUTH_VALIDATION_EX;
 
 #define RAS_FLAGS_PPP_CONNECTION 0x00000001
@@ -822,59 +822,59 @@ typedef struct _PROJECTION_INFO {
 
 typedef struct _RAS_CONNECTION_EX {
   MPRAPI_OBJECT_HEADER  Header;
-  DWORD                 dwConnectDuration;
+  DWORD                                           dwConnectDuration;
   ROUTER_INTERFACE_TYPE dwInterfaceType;
-  DWORD                 dwConnectionFlags;
-  WCHAR                 wszInterfaceName[MAX_INTERFACE_NAME_LEN + 1];
-  WCHAR                 wszUserName[UNLEN + 1];
-  WCHAR                 wszLogonDomain[DNLEN + 1];
-  WCHAR                 wszRemoteComputer[NETBIOS_NAME_LEN + 1];
-  GUID                  guid;
+  DWORD                                           dwConnectionFlags;
+  WCHAR                                           wszInterfaceName[MAX_INTERFACE_NAME_LEN + 1];
+  WCHAR                                           wszUserName[UNLEN + 1];
+  WCHAR                                           wszLogonDomain[DNLEN + 1];
+  WCHAR                                           wszRemoteComputer[NETBIOS_NAME_LEN + 1];
+  GUID                                                         guid;
   RAS_QUARANTINE_STATE  rasQuarState;
-  FILETIME              probationTime;
-  DWORD                 dwBytesXmited;
-  DWORD                 dwBytesRcved;
-  DWORD                 dwFramesXmited;
-  DWORD                 dwFramesRcved;
-  DWORD                 dwCrcErr;
-  DWORD                 dwTimeoutErr;
-  DWORD                 dwAlignmentErr;
-  DWORD                 dwHardwareOverrunErr;
-  DWORD                 dwFramingErr;
-  DWORD                 dwBufferOverrunErr;
-  DWORD                 dwCompressionRatioIn;
-  DWORD                 dwCompressionRatioOut;
-  DWORD                 dwNumSwitchOvers;
-  WCHAR                 wszRemoteEndpointAddress[MAXIPADRESSLEN+1];
-  WCHAR                 wszLocalEndpointAddress[MAXIPADRESSLEN+1];
-  PROJECTION_INFO       ProjectionInfo;
-  HANDLE                hConnection;
-  HANDLE                hInterface;
+  FILETIME                                        probationTime;
+  DWORD                                           dwBytesXmited;
+  DWORD                                           dwBytesRcved;
+  DWORD                                           dwFramesXmited;
+  DWORD                                           dwFramesRcved;
+  DWORD                                           dwCrcErr;
+  DWORD                                           dwTimeoutErr;
+  DWORD                                           dwAlignmentErr;
+  DWORD                                           dwHardwareOverrunErr;
+  DWORD                                           dwFramingErr;
+  DWORD                                           dwBufferOverrunErr;
+  DWORD                                           dwCompressionRatioIn;
+  DWORD                                           dwCompressionRatioOut;
+  DWORD                                           dwNumSwitchOvers;
+  WCHAR                                           wszRemoteEndpointAddress[MAXIPADRESSLEN+1];
+  WCHAR                                           wszLocalEndpointAddress[MAXIPADRESSLEN+1];
+  PROJECTION_INFO                    ProjectionInfo;
+  HANDLE                                          hConnection;
+  HANDLE                                          hInterface;
 } RAS_CONNECTION_EX, *PRAS_CONNECTION_EX;
 
 typedef struct _RAS_UPDATE_CONNECTION {
   MPRAPI_OBJECT_HEADER Header;
-  DWORD                dwIfIndex;
-  WCHAR                wszLocalEndpointAddress[MAXIPADRESSLEN+1];
-  WCHAR                wszRemoteEndpointAddress[MAXIPADRESSLEN+1];
+  DWORD                                          dwIfIndex;
+  WCHAR                                          wszLocalEndpointAddress[MAXIPADRESSLEN+1];
+  WCHAR                                          wszRemoteEndpointAddress[MAXIPADRESSLEN+1];
 } RAS_UPDATE_CONNECTION, *PRAS_UPDATE_CONNECTION;
 
 #define MPRAPI_IKEV2_SET_TUNNEL_CONFIG_PARAMS 0x01
 
 typedef struct _IKEV2_TUNNEL_CONFIG_PARAMS {
-  DWORD          dwIdleTimeout;
-  DWORD          dwNetworkBlackoutTime;
-  DWORD          dwSaLifeTime;
-  DWORD          dwSaDataSizeForRenegotiation;
-  DWORD          dwConfigOptions;
-  DWORD          dwTotalCertificates;
+  DWORD                       dwIdleTimeout;
+  DWORD                       dwNetworkBlackoutTime;
+  DWORD                       dwSaLifeTime;
+  DWORD                       dwSaDataSizeForRenegotiation;
+  DWORD                       dwConfigOptions;
+  DWORD                       dwTotalCertificates;
   CERT_NAME_BLOB *certificateNames;
 } IKEV2_TUNNEL_CONFIG_PARAMS, *PIKEV2_TUNNEL_CONFIG_PARAMS;
 
 typedef struct _IKEV2_CONFIG_PARAMS {
-  DWORD                      dwNumPorts;
-  DWORD                      dwPortFlags;
-  DWORD                      dwTunnelConfigParamFlags;
+  DWORD                                                             dwNumPorts;
+  DWORD                                                             dwPortFlags;
+  DWORD                                                             dwTunnelConfigParamFlags;
   IKEV2_TUNNEL_CONFIG_PARAMS TunnelConfigParams;
 } IKEV2_CONFIG_PARAMS, *PIKEV2_CONFIG_PARAMS;
 
@@ -889,15 +889,15 @@ typedef struct _L2TP_CONFIG_PARAMS {
 } L2TP_CONFIG_PARAMS, *PL2TP_CONFIG_PARAMS;
 
 typedef struct _SSTP_CERT_INFO {
-  BOOL            isDefault;
+  BOOL                                      isDefault;
   CRYPT_HASH_BLOB certBlob;
 } SSTP_CERT_INFO, *PSSTP_CERT_INFO;
 
 typedef struct _SSTP_CONFIG_PARAMS {
-  DWORD          dwNumPorts;
-  DWORD          dwPortFlags;
-  BOOL           isUseHttps;
-  DWORD          certAlgorithm;
+  DWORD                       dwNumPorts;
+  DWORD                       dwPortFlags;
+  BOOL                        isUseHttps;
+  DWORD                       certAlgorithm;
   SSTP_CERT_INFO sstpCertDetails;
 } SSTP_CONFIG_PARAMS, *PSSTP_CONFIG_PARAMS;
 
@@ -909,18 +909,18 @@ typedef struct _MPRAPI_TUNNEL_CONFIG_PARAMS {
 } MPRAPI_TUNNEL_CONFIG_PARAMS, *PMPRAPI_TUNNEL_CONFIG_PARAMS;
 
 typedef struct _MPR_SERVER_SET_CONFIG_EX {
-  MPRAPI_OBJECT_HEADER        Header;
-  DWORD                       setConfigForProtocols;
+  MPRAPI_OBJECT_HEADER                     Header;
+  DWORD                                                              setConfigForProtocols;
   MPRAPI_TUNNEL_CONFIG_PARAMS ConfigParams;
 } MPR_SERVER_SET_CONFIG_EX, *PMPR_SERVER_SET_CONFIG_EX;
 
 typedef struct _MPR_SERVER_EX {
-  MPRAPI_OBJECT_HEADER        Header;
-  DWORD                       fLanOnlyMode;
-  DWORD                       dwUpTime;
-  DWORD                       dwTotalPorts;
-  DWORD                       dwPortsInUse;
-  DWORD                       Reserved;
+  MPRAPI_OBJECT_HEADER                     Header;
+  DWORD                                                              fLanOnlyMode;
+  DWORD                                                              dwUpTime;
+  DWORD                                                              dwTotalPorts;
+  DWORD                                                              dwPortsInUse;
+  DWORD                                                              Reserved;
   MPRAPI_TUNNEL_CONFIG_PARAMS ConfigParams;
 } MPR_SERVER_EX, *PMPR_SERVER_EX;
 
@@ -936,16 +936,16 @@ typedef BOOL  (APIENTRY * PMPRADMINACCEPTREAUTHENTICATIONEX)(RAS_CONNECTION_EX *
 typedef VOID  (APIENTRY * PMPRADMINCONNECTIONHANGUPNOTIFICATIONEX)(RAS_CONNECTION_EX *);
 
 typedef struct _MPRAPI_ADMIN_DLL_CALLBACKS {
-  UCHAR                                   revision;
-  PMPRADMINGETIPADDRESSFORUSER            lpfnMprAdminGetIpAddressForUser;
-  PMPRADMINRELEASEIPADRESS                lpfnMprAdminReleaseIpAddress;
-  PMPRADMINGETIPV6ADDRESSFORUSER          lpfnMprAdminGetIpv6AddressForUser;
-  PMPRADMINRELEASEIPV6ADDRESSFORUSER      lpfnMprAdminReleaseIpV6AddressForUser;
-  PMPRADMINACCEPTNEWLINK                  lpfnRasAdminAcceptNewLink;
-  PMPRADMINLINKHANGUPNOTIFICATION         lpfnRasAdminLinkHangupNotification;
-  PMPRADMINTERMINATEDLL                   lpfnRasAdminTerminateDll;
-  PMPRADMINACCEPTNEWCONNECTIONEX          lpfnRasAdminAcceptNewConnectionEx;
-  PMPRADMINACCEPTREAUTHENTICATIONEX       lpfnRasAdminAcceptReauthenticationEx;
+  UCHAR                                                                                                    revision;
+  PMPRADMINGETIPADDRESSFORUSER                                      lpfnMprAdminGetIpAddressForUser;
+  PMPRADMINRELEASEIPADRESS                                          lpfnMprAdminReleaseIpAddress;
+  PMPRADMINGETIPV6ADDRESSFORUSER                       lpfnMprAdminGetIpv6AddressForUser;
+  PMPRADMINRELEASEIPV6ADDRESSFORUSER                   lpfnMprAdminReleaseIpV6AddressForUser;
+  PMPRADMINACCEPTNEWLINK                                                         lpfnRasAdminAcceptNewLink;
+  PMPRADMINLINKHANGUPNOTIFICATION                      lpfnRasAdminLinkHangupNotification;
+  PMPRADMINTERMINATEDLL                                                          lpfnRasAdminTerminateDll;
+  PMPRADMINACCEPTNEWCONNECTIONEX                       lpfnRasAdminAcceptNewConnectionEx;
+  PMPRADMINACCEPTREAUTHENTICATIONEX                    lpfnRasAdminAcceptReauthenticationEx;
   PMPRADMINCONNECTIONHANGUPNOTIFICATIONEX lpfnRasAdminConnectionHangupNotificationEx;
 } MPRAPI_ADMIN_DLL_CALLBACKS, *PMPRAPI_ADMIN_DLL_CALLBACKS;
 

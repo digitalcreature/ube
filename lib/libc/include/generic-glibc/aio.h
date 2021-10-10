@@ -147,8 +147,8 @@ extern int aio_write (struct aiocb *__aiocbp) __THROW __nonnull ((1));
 
 /* Initiate list of I/O requests.  */
 extern int lio_listio (int __mode,
-		       struct aiocb *const __list[__restrict_arr],
-		       int __nent, struct sigevent *__restrict __sig)
+		                    struct aiocb *const __list[__restrict_arr],
+		                    int __nent, struct sigevent *__restrict __sig)
   __THROW __nonnull ((2));
 
 /* Retrieve error status associated with AIOCBP.  */

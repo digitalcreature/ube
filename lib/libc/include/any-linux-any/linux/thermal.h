@@ -5,9 +5,9 @@
 #define THERMAL_NAME_LENGTH	20
 
 /* Adding event notification support elements */
-#define THERMAL_GENL_FAMILY_NAME                "thermal_event"
-#define THERMAL_GENL_VERSION                    0x01
-#define THERMAL_GENL_MCAST_GROUP_NAME           "thermal_mc_grp"
+#define THERMAL_GENL_FAMILY_NAME                                          "thermal_event"
+#define THERMAL_GENL_VERSION                                                           0x01
+#define THERMAL_GENL_MCAST_GROUP_NAME                        "thermal_mc_grp"
 
 /* Events supported by Thermal Netlink */
 enum events {

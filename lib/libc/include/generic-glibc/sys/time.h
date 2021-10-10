@@ -35,13 +35,13 @@ __BEGIN_DECLS
 
 #ifdef __USE_GNU
 /* Macros for converting between `struct timeval' and `struct timespec'.  */
-# define TIMEVAL_TO_TIMESPEC(tv, ts) {                                   \
-	(ts)->tv_sec = (tv)->tv_sec;                                    \
-	(ts)->tv_nsec = (tv)->tv_usec * 1000;                           \
+# define TIMEVAL_TO_TIMESPEC(tv, ts) {                                                                                                    \
+	(ts)->tv_sec = (tv)->tv_sec;                                                                                                                  \
+	(ts)->tv_nsec = (tv)->tv_usec * 1000;                                                                               \
 }
-# define TIMESPEC_TO_TIMEVAL(tv, ts) {                                   \
-	(tv)->tv_sec = (ts)->tv_sec;                                    \
-	(tv)->tv_usec = (ts)->tv_nsec / 1000;                           \
+# define TIMESPEC_TO_TIMEVAL(tv, ts) {                                                                                                    \
+	(tv)->tv_sec = (ts)->tv_sec;                                                                                                                  \
+	(tv)->tv_usec = (ts)->tv_nsec / 1000;                                                                               \
 }
 #endif
 
@@ -95,7 +95,7 @@ enum __itimer_which
     ITIMER_VIRTUAL = 1,
 #define ITIMER_VIRTUAL ITIMER_VIRTUAL
     /* Timers run when the process is executing and when
-       the system is executing on behalf of the process.  */
+                    the system is executing on behalf of the process.  */
     ITIMER_PROF = 2
 #define ITIMER_PROF ITIMER_PROF
   };
@@ -121,14 +121,14 @@ typedef int __itimer_which_t;
 /* Set *VALUE to the current setting of timer WHICH.
    Return 0 on success, -1 on errors.  */
 extern int getitimer (__itimer_which_t __which,
-		      struct itimerval *__value) __THROW;
+		                   struct itimerval *__value) __THROW;
 
 /* Set the timer WHICH to *NEW.  If OLD is not NULL,
    set *OLD to the old value of timer WHICH.
    Returns 0 on success, -1 on errors.  */
 extern int setitimer (__itimer_which_t __which,
-		      const struct itimerval *__restrict __new,
-		      struct itimerval *__restrict __old) __THROW;
+		                   const struct itimerval *__restrict __new,
+		                   struct itimerval *__restrict __old) __THROW;
 
 /* Change the access time of FILE to TVP[0] and the modification time of
    FILE to TVP[1].  If TVP is a null pointer, use the current time instead.
@@ -150,7 +150,7 @@ extern int futimes (int __fd, const struct timeval __tvp[2]) __THROW;
    modification time of FILE to TVP[1].  If TVP is a null pointer, use
    the current time instead.  Returns 0 on success, -1 on errors.  */
 extern int futimesat (int __fd, const char *__file,
-		      const struct timeval __tvp[2]) __THROW;
+		                   const struct timeval __tvp[2]) __THROW;
 #endif
 
 
@@ -159,28 +159,28 @@ extern int futimesat (int __fd, const char *__file,
    NOTE: `timercmp' does not work for >= or <=.  */
 # define timerisset(tvp)	((tvp)->tv_sec || (tvp)->tv_usec)
 # define timerclear(tvp)	((tvp)->tv_sec = (tvp)->tv_usec = 0)
-# define timercmp(a, b, CMP) 						      \
-  (((a)->tv_sec == (b)->tv_sec) 					      \
-   ? ((a)->tv_usec CMP (b)->tv_usec) 					      \
+# define timercmp(a, b, CMP) 						                   \
+  (((a)->tv_sec == (b)->tv_sec) 					                   \
+   ? ((a)->tv_usec CMP (b)->tv_usec) 					                   \
    : ((a)->tv_sec CMP (b)->tv_sec))
-# define timeradd(a, b, result)						      \
-  do {									      \
-    (result)->tv_sec = (a)->tv_sec + (b)->tv_sec;			      \
-    (result)->tv_usec = (a)->tv_usec + (b)->tv_usec;			      \
-    if ((result)->tv_usec >= 1000000)					      \
-      {									      \
-	++(result)->tv_sec;						      \
-	(result)->tv_usec -= 1000000;					      \
-      }									      \
+# define timeradd(a, b, result)						                   \
+  do {									                   \
+    (result)->tv_sec = (a)->tv_sec + (b)->tv_sec;			                   \
+    (result)->tv_usec = (a)->tv_usec + (b)->tv_usec;			                   \
+    if ((result)->tv_usec >= 1000000)					                   \
+                   {									                   \
+	++(result)->tv_sec;						                   \
+	(result)->tv_usec -= 1000000;					                   \
+                   }									                   \
   } while (0)
-# define timersub(a, b, result)						      \
-  do {									      \
-    (result)->tv_sec = (a)->tv_sec - (b)->tv_sec;			      \
-    (result)->tv_usec = (a)->tv_usec - (b)->tv_usec;			      \
-    if ((result)->tv_usec < 0) {					      \
-      --(result)->tv_sec;						      \
-      (result)->tv_usec += 1000000;					      \
-    }									      \
+# define timersub(a, b, result)						                   \
+  do {									                   \
+    (result)->tv_sec = (a)->tv_sec - (b)->tv_sec;			                   \
+    (result)->tv_usec = (a)->tv_usec - (b)->tv_usec;			                   \
+    if ((result)->tv_usec < 0) {					                   \
+                   --(result)->tv_sec;						                   \
+                   (result)->tv_usec += 1000000;					                   \
+    }									                   \
   } while (0)
 #endif	/* Misc.  */
 

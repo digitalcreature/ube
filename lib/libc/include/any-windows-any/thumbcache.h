@@ -147,20 +147,20 @@ MIDL_INTERFACE("091162a4-bc96-411f-aae8-c5122cd03363")
 ISharedBitmap : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetSharedBitmap(
-        HBITMAP *phbm) = 0;
+                     HBITMAP *phbm) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSize(
-        SIZE *pSize) = 0;
+                     SIZE *pSize) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFormat(
-        WTS_ALPHATYPE *pat) = 0;
+                     WTS_ALPHATYPE *pat) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE InitializeBitmap(
-        HBITMAP hbm,
-        WTS_ALPHATYPE wtsAT) = 0;
+                     HBITMAP hbm,
+                     WTS_ALPHATYPE wtsAT) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Detach(
-        HBITMAP *phbm) = 0;
+                     HBITMAP *phbm) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -172,37 +172,37 @@ typedef struct ISharedBitmapVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        ISharedBitmap *This,
-        REFIID riid,
-        void **ppvObject);
+                     ISharedBitmap *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        ISharedBitmap *This);
+                     ISharedBitmap *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        ISharedBitmap *This);
+                     ISharedBitmap *This);
 
     /*** ISharedBitmap methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSharedBitmap)(
-        ISharedBitmap *This,
-        HBITMAP *phbm);
+                     ISharedBitmap *This,
+                     HBITMAP *phbm);
 
     HRESULT (STDMETHODCALLTYPE *GetSize)(
-        ISharedBitmap *This,
-        SIZE *pSize);
+                     ISharedBitmap *This,
+                     SIZE *pSize);
 
     HRESULT (STDMETHODCALLTYPE *GetFormat)(
-        ISharedBitmap *This,
-        WTS_ALPHATYPE *pat);
+                     ISharedBitmap *This,
+                     WTS_ALPHATYPE *pat);
 
     HRESULT (STDMETHODCALLTYPE *InitializeBitmap)(
-        ISharedBitmap *This,
-        HBITMAP hbm,
-        WTS_ALPHATYPE wtsAT);
+                     ISharedBitmap *This,
+                     HBITMAP hbm,
+                     WTS_ALPHATYPE wtsAT);
 
     HRESULT (STDMETHODCALLTYPE *Detach)(
-        ISharedBitmap *This,
-        HBITMAP *phbm);
+                     ISharedBitmap *This,
+                     HBITMAP *phbm);
 
     END_INTERFACE
 } ISharedBitmapVtbl;
@@ -270,18 +270,18 @@ MIDL_INTERFACE("f676c15d-596a-4ce2-8234-33996f445db1")
 IThumbnailCache : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetThumbnail(
-        IShellItem *pShellItem,
-        UINT cxyRequestedThumbSize,
-        WTS_FLAGS flags,
-        ISharedBitmap **ppvThumb,
-        WTS_CACHEFLAGS *pOutFlags,
-        WTS_THUMBNAILID *pThumbnailID) = 0;
+                     IShellItem *pShellItem,
+                     UINT cxyRequestedThumbSize,
+                     WTS_FLAGS flags,
+                     ISharedBitmap **ppvThumb,
+                     WTS_CACHEFLAGS *pOutFlags,
+                     WTS_THUMBNAILID *pThumbnailID) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThumbnailByID(
-        WTS_THUMBNAILID thumbnailID,
-        UINT cxyRequestedThumbSize,
-        ISharedBitmap **ppvThumb,
-        WTS_CACHEFLAGS *pOutFlags) = 0;
+                     WTS_THUMBNAILID thumbnailID,
+                     UINT cxyRequestedThumbSize,
+                     ISharedBitmap **ppvThumb,
+                     WTS_CACHEFLAGS *pOutFlags) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -293,32 +293,32 @@ typedef struct IThumbnailCacheVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThumbnailCache *This,
-        REFIID riid,
-        void **ppvObject);
+                     IThumbnailCache *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThumbnailCache *This);
+                     IThumbnailCache *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThumbnailCache *This);
+                     IThumbnailCache *This);
 
     /*** IThumbnailCache methods ***/
     HRESULT (STDMETHODCALLTYPE *GetThumbnail)(
-        IThumbnailCache *This,
-        IShellItem *pShellItem,
-        UINT cxyRequestedThumbSize,
-        WTS_FLAGS flags,
-        ISharedBitmap **ppvThumb,
-        WTS_CACHEFLAGS *pOutFlags,
-        WTS_THUMBNAILID *pThumbnailID);
+                     IThumbnailCache *This,
+                     IShellItem *pShellItem,
+                     UINT cxyRequestedThumbSize,
+                     WTS_FLAGS flags,
+                     ISharedBitmap **ppvThumb,
+                     WTS_CACHEFLAGS *pOutFlags,
+                     WTS_THUMBNAILID *pThumbnailID);
 
     HRESULT (STDMETHODCALLTYPE *GetThumbnailByID)(
-        IThumbnailCache *This,
-        WTS_THUMBNAILID thumbnailID,
-        UINT cxyRequestedThumbSize,
-        ISharedBitmap **ppvThumb,
-        WTS_CACHEFLAGS *pOutFlags);
+                     IThumbnailCache *This,
+                     WTS_THUMBNAILID thumbnailID,
+                     UINT cxyRequestedThumbSize,
+                     ISharedBitmap **ppvThumb,
+                     WTS_CACHEFLAGS *pOutFlags);
 
     END_INTERFACE
 } IThumbnailCacheVtbl;
@@ -426,9 +426,9 @@ MIDL_INTERFACE("e357fccd-a995-4576-b01f-234630154e96")
 IThumbnailProvider : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetThumbnail(
-        UINT cx,
-        HBITMAP *phbmp,
-        WTS_ALPHATYPE *pdwAlpha) = 0;
+                     UINT cx,
+                     HBITMAP *phbmp,
+                     WTS_ALPHATYPE *pdwAlpha) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -440,22 +440,22 @@ typedef struct IThumbnailProviderVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThumbnailProvider *This,
-        REFIID riid,
-        void **ppvObject);
+                     IThumbnailProvider *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThumbnailProvider *This);
+                     IThumbnailProvider *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThumbnailProvider *This);
+                     IThumbnailProvider *This);
 
     /*** IThumbnailProvider methods ***/
     HRESULT (STDMETHODCALLTYPE *GetThumbnail)(
-        IThumbnailProvider *This,
-        UINT cx,
-        HBITMAP *phbmp,
-        WTS_ALPHATYPE *pdwAlpha);
+                     IThumbnailProvider *This,
+                     UINT cx,
+                     HBITMAP *phbmp,
+                     WTS_ALPHATYPE *pdwAlpha);
 
     END_INTERFACE
 } IThumbnailProviderVtbl;
@@ -507,7 +507,7 @@ MIDL_INTERFACE("f4376f00-bef5-4d45-80f3-1e023bbf1209")
 IThumbnailSettings : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetContext(
-        WTS_CONTEXTFLAGS dwContext) = 0;
+                     WTS_CONTEXTFLAGS dwContext) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -519,20 +519,20 @@ typedef struct IThumbnailSettingsVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThumbnailSettings *This,
-        REFIID riid,
-        void **ppvObject);
+                     IThumbnailSettings *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThumbnailSettings *This);
+                     IThumbnailSettings *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThumbnailSettings *This);
+                     IThumbnailSettings *This);
 
     /*** IThumbnailSettings methods ***/
     HRESULT (STDMETHODCALLTYPE *SetContext)(
-        IThumbnailSettings *This,
-        WTS_CONTEXTFLAGS dwContext);
+                     IThumbnailSettings *This,
+                     WTS_CONTEXTFLAGS dwContext);
 
     END_INTERFACE
 } IThumbnailSettingsVtbl;
@@ -584,9 +584,9 @@ MIDL_INTERFACE("0f03f8fe-2b26-46f0-965a-212aa8d66b76")
 IThumbnailCachePrimer : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE PageInThumbnail(
-        IShellItem *psi,
-        WTS_FLAGS wtsFlags,
-        UINT cxyRequestedThumbSize) = 0;
+                     IShellItem *psi,
+                     WTS_FLAGS wtsFlags,
+                     UINT cxyRequestedThumbSize) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -598,22 +598,22 @@ typedef struct IThumbnailCachePrimerVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IThumbnailCachePrimer *This,
-        REFIID riid,
-        void **ppvObject);
+                     IThumbnailCachePrimer *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IThumbnailCachePrimer *This);
+                     IThumbnailCachePrimer *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IThumbnailCachePrimer *This);
+                     IThumbnailCachePrimer *This);
 
     /*** IThumbnailCachePrimer methods ***/
     HRESULT (STDMETHODCALLTYPE *PageInThumbnail)(
-        IThumbnailCachePrimer *This,
-        IShellItem *psi,
-        WTS_FLAGS wtsFlags,
-        UINT cxyRequestedThumbSize);
+                     IThumbnailCachePrimer *This,
+                     IShellItem *psi,
+                     WTS_FLAGS wtsFlags,
+                     UINT cxyRequestedThumbSize);
 
     END_INTERFACE
 } IThumbnailCachePrimerVtbl;
@@ -684,10 +684,10 @@ __CRT_UUID_DECL(SharedBitmap, 0x4db26476, 0x6787, 0x4046, 0xb8,0x36, 0xe8,0x41,0
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HBITMAP_UserSize     (ULONG *, ULONG, HBITMAP *);
+ULONG                        __RPC_USER HBITMAP_UserSize     (ULONG *, ULONG, HBITMAP *);
 unsigned char * __RPC_USER HBITMAP_UserMarshal  (ULONG *, unsigned char *, HBITMAP *);
 unsigned char * __RPC_USER HBITMAP_UserUnmarshal(ULONG *, unsigned char *, HBITMAP *);
-void            __RPC_USER HBITMAP_UserFree     (ULONG *, HBITMAP *);
+void                                      __RPC_USER HBITMAP_UserFree     (ULONG *, HBITMAP *);
 
 /* End additional prototypes */
 

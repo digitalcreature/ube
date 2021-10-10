@@ -35,8 +35,8 @@
 #define SIOCAX25GETINFOOLD	(SIOCPROTOPRIVATE+9)
 #define SIOCAX25ADDFWD		(SIOCPROTOPRIVATE+10)
 #define SIOCAX25DELFWD		(SIOCPROTOPRIVATE+11)
-#define SIOCAX25DEVCTL          (SIOCPROTOPRIVATE+12)
-#define SIOCAX25GETINFO         (SIOCPROTOPRIVATE+13)
+#define SIOCAX25DEVCTL                       (SIOCPROTOPRIVATE+12)
+#define SIOCAX25GETINFO                      (SIOCPROTOPRIVATE+13)
 
 #define AX25_SET_RT_IPMODE	2
 
@@ -76,13 +76,13 @@ struct ax25_route_opt_struct {
 };
 
 struct ax25_ctl_struct {
-        ax25_address            port_addr;
-        ax25_address            source_addr;
-        ax25_address            dest_addr;
-        unsigned int            cmd;
-        unsigned long           arg;
-        unsigned char           digi_count;
-        ax25_address            digi_addr[AX25_MAX_DIGIS];
+                     ax25_address                                      port_addr;
+                     ax25_address                                      source_addr;
+                     ax25_address                                      dest_addr;
+                     unsigned int                                      cmd;
+                     unsigned long                        arg;
+                     unsigned char                        digi_count;
+                     ax25_address                                      digi_addr[AX25_MAX_DIGIS];
 };
 
 /* this will go away. Please do not export to user land */

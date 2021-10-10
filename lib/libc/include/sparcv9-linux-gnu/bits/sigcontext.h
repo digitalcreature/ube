@@ -35,13 +35,13 @@
 struct sigcontext
   {
     struct
-      {
+                   {
 	unsigned int	psr;
 	unsigned int	pc;
 	unsigned int	npc;
 	unsigned int	y;
 	unsigned int	u_regs[16]; /* globals and ins */
-      }			si_regs;
+                   }			si_regs;
     int			si_mask;
   };
 
@@ -59,21 +59,21 @@ struct sigcontext
   {
     char		sigc_info[128];
     struct
-      {
+                   {
 	unsigned long	u_regs[16]; /* globals and ins */
 	unsigned long	tstate;
 	unsigned long	tpc;
 	unsigned long	tnpc;
 	unsigned int	y;
 	unsigned int	fprs;
-      }			sigc_regs;
+                   }			sigc_regs;
     __siginfo_fpu_t *	sigc_fpu_save;
     struct
-      {
+                   {
 	void *		ss_sp;
 	int		ss_flags;
 	unsigned long	ss_size;
-      }			sigc_stack;
+                   }			sigc_stack;
     unsigned long	sigc_mask;
 };
 

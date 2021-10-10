@@ -60,6 +60,6 @@ wctype_t wctype (const char *property)
   int i;
   for (i = 0; i < (int) NCMAP; ++i)
     if (strcmp (property, cmap[i].name) == 0)
-      return cmap[i].flags;
+                   return cmap[i].flags;
   return 0;
 }

@@ -251,8 +251,8 @@ struct kvm_vcpu_events {
 #define VGIC_LEVEL_INFO_LINE_LEVEL	0
 
 #define   KVM_DEV_ARM_VGIC_CTRL_INIT		0
-#define   KVM_DEV_ARM_ITS_SAVE_TABLES           1
-#define   KVM_DEV_ARM_ITS_RESTORE_TABLES        2
+#define   KVM_DEV_ARM_ITS_SAVE_TABLES                        1
+#define   KVM_DEV_ARM_ITS_RESTORE_TABLES                     2
 #define   KVM_DEV_ARM_VGIC_SAVE_PENDING_TABLES	3
 #define   KVM_DEV_ARM_ITS_CTRL_RESET		4
 
@@ -289,7 +289,7 @@ struct kvm_vcpu_events {
 #define KVM_ARM_IRQ_GIC_MAX		127
 
 /* One single KVM irqchip, ie. the VGIC */
-#define KVM_NR_IRQCHIPS          1
+#define KVM_NR_IRQCHIPS                       1
 
 /* PSCI interface */
 #define KVM_PSCI_FN_BASE		0x95c1ba5e

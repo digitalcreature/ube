@@ -35,25 +35,25 @@
 #include <_types/_uint64_t.h>
 
 /* 7.18.1.2 Minimum-width integer types */
-typedef int8_t           int_least8_t;
-typedef int16_t         int_least16_t;
-typedef int32_t         int_least32_t;
-typedef int64_t         int_least64_t;
-typedef uint8_t         uint_least8_t;
-typedef uint16_t       uint_least16_t;
-typedef uint32_t       uint_least32_t;
-typedef uint64_t       uint_least64_t;
+typedef int8_t                        int_least8_t;
+typedef int16_t                      int_least16_t;
+typedef int32_t                      int_least32_t;
+typedef int64_t                      int_least64_t;
+typedef uint8_t                      uint_least8_t;
+typedef uint16_t                    uint_least16_t;
+typedef uint32_t                    uint_least32_t;
+typedef uint64_t                    uint_least64_t;
 
 
 /* 7.18.1.3 Fastest-width integer types */
-typedef int8_t            int_fast8_t;
-typedef int16_t          int_fast16_t;
-typedef int32_t          int_fast32_t;
-typedef int64_t          int_fast64_t;
-typedef uint8_t          uint_fast8_t;
-typedef uint16_t        uint_fast16_t;
-typedef uint32_t        uint_fast32_t;
-typedef uint64_t        uint_fast64_t;
+typedef int8_t                                      int_fast8_t;
+typedef int16_t                       int_fast16_t;
+typedef int32_t                       int_fast32_t;
+typedef int64_t                       int_fast64_t;
+typedef uint8_t                       uint_fast8_t;
+typedef uint16_t                     uint_fast16_t;
+typedef uint32_t                     uint_fast32_t;
+typedef uint64_t                     uint_fast64_t;
 
 
 /* 7.18.1.4 Integer types capable of holding object pointers */
@@ -97,26 +97,26 @@ typedef uint64_t        uint_fast64_t;
 
 
 /* 7.18.2.1 Limits of exact-width integer types */
-#define INT8_MAX         127
-#define INT16_MAX        32767
-#define INT32_MAX        2147483647
-#define INT64_MAX        9223372036854775807LL
+#define INT8_MAX                      127
+#define INT16_MAX                     32767
+#define INT32_MAX                     2147483647
+#define INT64_MAX                     9223372036854775807LL
 
-#define INT8_MIN          -128
-#define INT16_MIN         -32768
+#define INT8_MIN                       -128
+#define INT16_MIN                      -32768
    /*
-      Note:  the literal "most negative int" cannot be written in C --
-      the rules in the standard (section 6.4.4.1 in C99) will give it
-      an unsigned type, so INT32_MIN (and the most negative member of
-      any larger signed type) must be written via a constant expression.
+                   Note:  the literal "most negative int" cannot be written in C --
+                   the rules in the standard (section 6.4.4.1 in C99) will give it
+                   an unsigned type, so INT32_MIN (and the most negative member of
+                   any larger signed type) must be written via a constant expression.
    */
-#define INT32_MIN        (-INT32_MAX-1)
-#define INT64_MIN        (-INT64_MAX-1)
+#define INT32_MIN                     (-INT32_MAX-1)
+#define INT64_MIN                     (-INT64_MAX-1)
 
-#define UINT8_MAX         255
-#define UINT16_MAX        65535
-#define UINT32_MAX        4294967295U
-#define UINT64_MAX        18446744073709551615ULL
+#define UINT8_MAX                      255
+#define UINT16_MAX                     65535
+#define UINT32_MAX                     4294967295U
+#define UINT64_MAX                     18446744073709551615ULL
 
 /* 7.18.2.2 Limits of minimum-width integer types */
 #define INT_LEAST8_MIN    INT8_MIN
@@ -153,36 +153,36 @@ typedef uint64_t        uint_fast64_t;
 /* 7.18.2.4 Limits of integer types capable of holding object pointers */
 
 #if __WORDSIZE == 64
-#define INTPTR_MAX        9223372036854775807L
+#define INTPTR_MAX                     9223372036854775807L
 #else
-#define INTPTR_MAX        2147483647L
+#define INTPTR_MAX                     2147483647L
 #endif
-#define INTPTR_MIN        (-INTPTR_MAX-1)
+#define INTPTR_MIN                     (-INTPTR_MAX-1)
 
 #if __WORDSIZE == 64
-#define UINTPTR_MAX       18446744073709551615UL
+#define UINTPTR_MAX                    18446744073709551615UL
 #else
-#define UINTPTR_MAX       4294967295UL
+#define UINTPTR_MAX                    4294967295UL
 #endif
 
 /* 7.18.2.5 Limits of greatest-width integer types */
-#define INTMAX_MAX        INTMAX_C(9223372036854775807)
-#define UINTMAX_MAX       UINTMAX_C(18446744073709551615)
-#define INTMAX_MIN        (-INTMAX_MAX-1)
+#define INTMAX_MAX                     INTMAX_C(9223372036854775807)
+#define UINTMAX_MAX                    UINTMAX_C(18446744073709551615)
+#define INTMAX_MIN                     (-INTMAX_MAX-1)
 
 /* 7.18.3 "Other" */
 #if __WORDSIZE == 64
 #define PTRDIFF_MIN	  INTMAX_MIN
 #define PTRDIFF_MAX	  INTMAX_MAX
 #else
-#define PTRDIFF_MIN       INT32_MIN
-#define PTRDIFF_MAX       INT32_MAX
+#define PTRDIFF_MIN                    INT32_MIN
+#define PTRDIFF_MAX                    INT32_MAX
 #endif
 
-#define SIZE_MAX          UINTPTR_MAX
+#define SIZE_MAX                       UINTPTR_MAX
 
 #if defined(__STDC_WANT_LIB_EXT1__) && __STDC_WANT_LIB_EXT1__ >= 1
-#define RSIZE_MAX         (SIZE_MAX >> 1)
+#define RSIZE_MAX                      (SIZE_MAX >> 1)
 #endif
 
 #ifndef WCHAR_MAX
@@ -199,9 +199,9 @@ typedef uint64_t        uint_fast64_t;
    the type. */
 #ifndef WCHAR_MIN
 #  if WCHAR_MAX == 0xffff
-#    define WCHAR_MIN       0
+#    define WCHAR_MIN                    0
 #  else
-#    define WCHAR_MIN       (-WCHAR_MAX-1)
+#    define WCHAR_MIN                    (-WCHAR_MAX-1)
 #  endif
 #endif
 

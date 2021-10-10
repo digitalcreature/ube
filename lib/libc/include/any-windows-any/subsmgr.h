@@ -98,14 +98,14 @@ extern "C" {
 #else
   typedef struct IEnumItemPropertiesVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumItemProperties *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumItemProperties *This);
-      ULONG (WINAPI *Release)(IEnumItemProperties *This);
-      HRESULT (WINAPI *Next)(IEnumItemProperties *This,ULONG celt,ITEMPROP *rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumItemProperties *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumItemProperties *This);
-      HRESULT (WINAPI *Clone)(IEnumItemProperties *This,IEnumItemProperties **ppenum);
-      HRESULT (WINAPI *GetCount)(IEnumItemProperties *This,ULONG *pnCount);
+                   HRESULT (WINAPI *QueryInterface)(IEnumItemProperties *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumItemProperties *This);
+                   ULONG (WINAPI *Release)(IEnumItemProperties *This);
+                   HRESULT (WINAPI *Next)(IEnumItemProperties *This,ULONG celt,ITEMPROP *rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumItemProperties *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumItemProperties *This);
+                   HRESULT (WINAPI *Clone)(IEnumItemProperties *This,IEnumItemProperties **ppenum);
+                   HRESULT (WINAPI *GetCount)(IEnumItemProperties *This,ULONG *pnCount);
     END_INTERFACE
   } IEnumItemPropertiesVtbl;
   struct IEnumItemProperties {
@@ -166,16 +166,16 @@ extern "C" {
 #else
   typedef struct ISubscriptionItemVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISubscriptionItem *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISubscriptionItem *This);
-      ULONG (WINAPI *Release)(ISubscriptionItem *This);
-      HRESULT (WINAPI *GetCookie)(ISubscriptionItem *This,SUBSCRIPTIONCOOKIE *pCookie);
-      HRESULT (WINAPI *GetSubscriptionItemInfo)(ISubscriptionItem *This,SUBSCRIPTIONITEMINFO *pSubscriptionItemInfo);
-      HRESULT (WINAPI *SetSubscriptionItemInfo)(ISubscriptionItem *This,const SUBSCRIPTIONITEMINFO *pSubscriptionItemInfo);
-      HRESULT (WINAPI *ReadProperties)(ISubscriptionItem *This,ULONG nCount,const LPCWSTR rgwszName[],VARIANT rgValue[]);
-      HRESULT (WINAPI *WriteProperties)(ISubscriptionItem *This,ULONG nCount,const LPCWSTR rgwszName[],const VARIANT rgValue[]);
-      HRESULT (WINAPI *EnumProperties)(ISubscriptionItem *This,IEnumItemProperties **ppEnumItemProperties);
-      HRESULT (WINAPI *NotifyChanged)(ISubscriptionItem *This);
+                   HRESULT (WINAPI *QueryInterface)(ISubscriptionItem *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISubscriptionItem *This);
+                   ULONG (WINAPI *Release)(ISubscriptionItem *This);
+                   HRESULT (WINAPI *GetCookie)(ISubscriptionItem *This,SUBSCRIPTIONCOOKIE *pCookie);
+                   HRESULT (WINAPI *GetSubscriptionItemInfo)(ISubscriptionItem *This,SUBSCRIPTIONITEMINFO *pSubscriptionItemInfo);
+                   HRESULT (WINAPI *SetSubscriptionItemInfo)(ISubscriptionItem *This,const SUBSCRIPTIONITEMINFO *pSubscriptionItemInfo);
+                   HRESULT (WINAPI *ReadProperties)(ISubscriptionItem *This,ULONG nCount,const LPCWSTR rgwszName[],VARIANT rgValue[]);
+                   HRESULT (WINAPI *WriteProperties)(ISubscriptionItem *This,ULONG nCount,const LPCWSTR rgwszName[],const VARIANT rgValue[]);
+                   HRESULT (WINAPI *EnumProperties)(ISubscriptionItem *This,IEnumItemProperties **ppEnumItemProperties);
+                   HRESULT (WINAPI *NotifyChanged)(ISubscriptionItem *This);
     END_INTERFACE
   } ISubscriptionItemVtbl;
   struct ISubscriptionItem {
@@ -227,14 +227,14 @@ extern "C" {
 #else
   typedef struct IEnumSubscriptionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumSubscription *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumSubscription *This);
-      ULONG (WINAPI *Release)(IEnumSubscription *This);
-      HRESULT (WINAPI *Next)(IEnumSubscription *This,ULONG celt,SUBSCRIPTIONCOOKIE *rgelt,ULONG *pceltFetched);
-      HRESULT (WINAPI *Skip)(IEnumSubscription *This,ULONG celt);
-      HRESULT (WINAPI *Reset)(IEnumSubscription *This);
-      HRESULT (WINAPI *Clone)(IEnumSubscription *This,IEnumSubscription **ppenum);
-      HRESULT (WINAPI *GetCount)(IEnumSubscription *This,ULONG *pnCount);
+                   HRESULT (WINAPI *QueryInterface)(IEnumSubscription *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumSubscription *This);
+                   ULONG (WINAPI *Release)(IEnumSubscription *This);
+                   HRESULT (WINAPI *Next)(IEnumSubscription *This,ULONG celt,SUBSCRIPTIONCOOKIE *rgelt,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Skip)(IEnumSubscription *This,ULONG celt);
+                   HRESULT (WINAPI *Reset)(IEnumSubscription *This);
+                   HRESULT (WINAPI *Clone)(IEnumSubscription *This,IEnumSubscription **ppenum);
+                   HRESULT (WINAPI *GetCount)(IEnumSubscription *This,ULONG *pnCount);
     END_INTERFACE
   } IEnumSubscriptionVtbl;
   struct IEnumSubscription {
@@ -331,17 +331,17 @@ extern "C" {
 #else
   typedef struct ISubscriptionMgrVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISubscriptionMgr *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISubscriptionMgr *This);
-      ULONG (WINAPI *Release)(ISubscriptionMgr *This);
-      HRESULT (WINAPI *DeleteSubscription)(ISubscriptionMgr *This,LPCWSTR pwszURL,HWND hwnd);
-      HRESULT (WINAPI *UpdateSubscription)(ISubscriptionMgr *This,LPCWSTR pwszURL);
-      HRESULT (WINAPI *UpdateAll)(ISubscriptionMgr *This);
-      HRESULT (WINAPI *IsSubscribed)(ISubscriptionMgr *This,LPCWSTR pwszURL,WINBOOL *pfSubscribed);
-      HRESULT (WINAPI *GetSubscriptionInfo)(ISubscriptionMgr *This,LPCWSTR pwszURL,SUBSCRIPTIONINFO *pInfo);
-      HRESULT (WINAPI *GetDefaultInfo)(ISubscriptionMgr *This,SUBSCRIPTIONTYPE subType,SUBSCRIPTIONINFO *pInfo);
-      HRESULT (WINAPI *ShowSubscriptionProperties)(ISubscriptionMgr *This,LPCWSTR pwszURL,HWND hwnd);
-      HRESULT (WINAPI *CreateSubscription)(ISubscriptionMgr *This,HWND hwnd,LPCWSTR pwszURL,LPCWSTR pwszFriendlyName,DWORD dwFlags,SUBSCRIPTIONTYPE subsType,SUBSCRIPTIONINFO *pInfo);
+                   HRESULT (WINAPI *QueryInterface)(ISubscriptionMgr *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISubscriptionMgr *This);
+                   ULONG (WINAPI *Release)(ISubscriptionMgr *This);
+                   HRESULT (WINAPI *DeleteSubscription)(ISubscriptionMgr *This,LPCWSTR pwszURL,HWND hwnd);
+                   HRESULT (WINAPI *UpdateSubscription)(ISubscriptionMgr *This,LPCWSTR pwszURL);
+                   HRESULT (WINAPI *UpdateAll)(ISubscriptionMgr *This);
+                   HRESULT (WINAPI *IsSubscribed)(ISubscriptionMgr *This,LPCWSTR pwszURL,WINBOOL *pfSubscribed);
+                   HRESULT (WINAPI *GetSubscriptionInfo)(ISubscriptionMgr *This,LPCWSTR pwszURL,SUBSCRIPTIONINFO *pInfo);
+                   HRESULT (WINAPI *GetDefaultInfo)(ISubscriptionMgr *This,SUBSCRIPTIONTYPE subType,SUBSCRIPTIONINFO *pInfo);
+                   HRESULT (WINAPI *ShowSubscriptionProperties)(ISubscriptionMgr *This,LPCWSTR pwszURL,HWND hwnd);
+                   HRESULT (WINAPI *CreateSubscription)(ISubscriptionMgr *This,HWND hwnd,LPCWSTR pwszURL,LPCWSTR pwszFriendlyName,DWORD dwFlags,SUBSCRIPTIONTYPE subsType,SUBSCRIPTIONINFO *pInfo);
     END_INTERFACE
   } ISubscriptionMgrVtbl;
   struct ISubscriptionMgr {
@@ -409,24 +409,24 @@ extern "C" {
 #else
   typedef struct ISubscriptionMgr2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISubscriptionMgr2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISubscriptionMgr2 *This);
-      ULONG (WINAPI *Release)(ISubscriptionMgr2 *This);
-      HRESULT (WINAPI *DeleteSubscription)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,HWND hwnd);
-      HRESULT (WINAPI *UpdateSubscription)(ISubscriptionMgr2 *This,LPCWSTR pwszURL);
-      HRESULT (WINAPI *UpdateAll)(ISubscriptionMgr2 *This);
-      HRESULT (WINAPI *IsSubscribed)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,WINBOOL *pfSubscribed);
-      HRESULT (WINAPI *GetSubscriptionInfo)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,SUBSCRIPTIONINFO *pInfo);
-      HRESULT (WINAPI *GetDefaultInfo)(ISubscriptionMgr2 *This,SUBSCRIPTIONTYPE subType,SUBSCRIPTIONINFO *pInfo);
-      HRESULT (WINAPI *ShowSubscriptionProperties)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,HWND hwnd);
-      HRESULT (WINAPI *CreateSubscription)(ISubscriptionMgr2 *This,HWND hwnd,LPCWSTR pwszURL,LPCWSTR pwszFriendlyName,DWORD dwFlags,SUBSCRIPTIONTYPE subsType,SUBSCRIPTIONINFO *pInfo);
-      HRESULT (WINAPI *GetItemFromURL)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,ISubscriptionItem **ppSubscriptionItem);
-      HRESULT (WINAPI *GetItemFromCookie)(ISubscriptionMgr2 *This,const SUBSCRIPTIONCOOKIE *pSubscriptionCookie,ISubscriptionItem **ppSubscriptionItem);
-      HRESULT (WINAPI *GetSubscriptionRunState)(ISubscriptionMgr2 *This,DWORD dwNumCookies,const SUBSCRIPTIONCOOKIE *pCookies,DWORD *pdwRunState);
-      HRESULT (WINAPI *EnumSubscriptions)(ISubscriptionMgr2 *This,DWORD dwFlags,IEnumSubscription **ppEnumSubscriptions);
-      HRESULT (WINAPI *UpdateItems)(ISubscriptionMgr2 *This,DWORD dwFlags,DWORD dwNumCookies,const SUBSCRIPTIONCOOKIE *pCookies);
-      HRESULT (WINAPI *AbortItems)(ISubscriptionMgr2 *This,DWORD dwNumCookies,const SUBSCRIPTIONCOOKIE *pCookies);
-      HRESULT (WINAPI *AbortAll)(ISubscriptionMgr2 *This);
+                   HRESULT (WINAPI *QueryInterface)(ISubscriptionMgr2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISubscriptionMgr2 *This);
+                   ULONG (WINAPI *Release)(ISubscriptionMgr2 *This);
+                   HRESULT (WINAPI *DeleteSubscription)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,HWND hwnd);
+                   HRESULT (WINAPI *UpdateSubscription)(ISubscriptionMgr2 *This,LPCWSTR pwszURL);
+                   HRESULT (WINAPI *UpdateAll)(ISubscriptionMgr2 *This);
+                   HRESULT (WINAPI *IsSubscribed)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,WINBOOL *pfSubscribed);
+                   HRESULT (WINAPI *GetSubscriptionInfo)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,SUBSCRIPTIONINFO *pInfo);
+                   HRESULT (WINAPI *GetDefaultInfo)(ISubscriptionMgr2 *This,SUBSCRIPTIONTYPE subType,SUBSCRIPTIONINFO *pInfo);
+                   HRESULT (WINAPI *ShowSubscriptionProperties)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,HWND hwnd);
+                   HRESULT (WINAPI *CreateSubscription)(ISubscriptionMgr2 *This,HWND hwnd,LPCWSTR pwszURL,LPCWSTR pwszFriendlyName,DWORD dwFlags,SUBSCRIPTIONTYPE subsType,SUBSCRIPTIONINFO *pInfo);
+                   HRESULT (WINAPI *GetItemFromURL)(ISubscriptionMgr2 *This,LPCWSTR pwszURL,ISubscriptionItem **ppSubscriptionItem);
+                   HRESULT (WINAPI *GetItemFromCookie)(ISubscriptionMgr2 *This,const SUBSCRIPTIONCOOKIE *pSubscriptionCookie,ISubscriptionItem **ppSubscriptionItem);
+                   HRESULT (WINAPI *GetSubscriptionRunState)(ISubscriptionMgr2 *This,DWORD dwNumCookies,const SUBSCRIPTIONCOOKIE *pCookies,DWORD *pdwRunState);
+                   HRESULT (WINAPI *EnumSubscriptions)(ISubscriptionMgr2 *This,DWORD dwFlags,IEnumSubscription **ppEnumSubscriptions);
+                   HRESULT (WINAPI *UpdateItems)(ISubscriptionMgr2 *This,DWORD dwFlags,DWORD dwNumCookies,const SUBSCRIPTIONCOOKIE *pCookies);
+                   HRESULT (WINAPI *AbortItems)(ISubscriptionMgr2 *This,DWORD dwNumCookies,const SUBSCRIPTIONCOOKIE *pCookies);
+                   HRESULT (WINAPI *AbortAll)(ISubscriptionMgr2 *This);
     END_INTERFACE
   } ISubscriptionMgr2Vtbl;
   struct ISubscriptionMgr2 {

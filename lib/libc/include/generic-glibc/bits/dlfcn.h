@@ -49,7 +49,7 @@
    Rewrite
 	foo = (*fctp) (arg1, arg2);
    into
-        foo = DL_CALL_FCT (fctp, (arg1, arg2));
+                     foo = DL_CALL_FCT (fctp, (arg1, arg2));
 */
 # define DL_CALL_FCT(fctp, args) \
   (_dl_mcount_wrapper_check ((void *) (fctp)), (*(fctp)) args)

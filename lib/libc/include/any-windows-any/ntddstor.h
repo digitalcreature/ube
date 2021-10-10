@@ -66,23 +66,23 @@ DEFINE_GUID(GUID_DEVINTERFACE_HIDDEN_VOLUME,
   {0xe9f2d03a, 0x747c, 0x41c2, {0xbb, 0x9a, 0x02, 0xc6, 0x2b, 0x6d, 0x5f, 0xcb}};
 
 /* Aliases for storage guids */
-#define DiskClassGuid               GUID_DEVINTERFACE_DISK
-#define CdRomClassGuid              GUID_DEVINTERFACE_CDROM
-#define PartitionClassGuid          GUID_DEVINTERFACE_PARTITION
-#define TapeClassGuid               GUID_DEVINTERFACE_TAPE
-#define WriteOnceDiskClassGuid      GUID_DEVINTERFACE_WRITEONCEDISK
-#define VolumeClassGuid             GUID_DEVINTERFACE_VOLUME
-#define MediumChangerClassGuid      GUID_DEVINTERFACE_MEDIUMCHANGER
-#define FloppyClassGuid             GUID_DEVINTERFACE_FLOPPY
-#define CdChangerClassGuid          GUID_DEVINTERFACE_CDCHANGER
-#define StoragePortClassGuid        GUID_DEVINTERFACE_STORAGEPORT
-#define HiddenVolumeClassGuid       GUID_DEVINTERFACE_HIDDEN_VOLUME
+#define DiskClassGuid                                         GUID_DEVINTERFACE_DISK
+#define CdRomClassGuid                                        GUID_DEVINTERFACE_CDROM
+#define PartitionClassGuid                       GUID_DEVINTERFACE_PARTITION
+#define TapeClassGuid                                         GUID_DEVINTERFACE_TAPE
+#define WriteOnceDiskClassGuid                   GUID_DEVINTERFACE_WRITEONCEDISK
+#define VolumeClassGuid                                       GUID_DEVINTERFACE_VOLUME
+#define MediumChangerClassGuid                   GUID_DEVINTERFACE_MEDIUMCHANGER
+#define FloppyClassGuid                                       GUID_DEVINTERFACE_FLOPPY
+#define CdChangerClassGuid                       GUID_DEVINTERFACE_CDCHANGER
+#define StoragePortClassGuid                     GUID_DEVINTERFACE_STORAGEPORT
+#define HiddenVolumeClassGuid                    GUID_DEVINTERFACE_HIDDEN_VOLUME
 
 #endif /* defined(DEFINE_GUID) */
 
 #ifndef _WINIOCTL_
 
-#define IOCTL_STORAGE_BASE                FILE_DEVICE_MASS_STORAGE
+#define IOCTL_STORAGE_BASE                                          FILE_DEVICE_MASS_STORAGE
 
 #define IOCTL_STORAGE_CHECK_VERIFY \
   CTL_CODE(IOCTL_STORAGE_BASE, 0x0200, METHOD_BUFFERED, FILE_READ_ACCESS)
@@ -182,24 +182,24 @@ DEFINE_GUID(GUID_DEVINTERFACE_HIDDEN_VOLUME,
 #define IOCTL_STORAGE_CHECK_PRIORITY_HINT_SUPPORT \
   CTL_CODE(IOCTL_STORAGE_BASE, 0x0620, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
-#define RECOVERED_WRITES_VALID         0x00000001
-#define UNRECOVERED_WRITES_VALID       0x00000002
-#define RECOVERED_READS_VALID          0x00000004
-#define UNRECOVERED_READS_VALID        0x00000008
+#define RECOVERED_WRITES_VALID                      0x00000001
+#define UNRECOVERED_WRITES_VALID                    0x00000002
+#define RECOVERED_READS_VALID                       0x00000004
+#define UNRECOVERED_READS_VALID                     0x00000008
 #define WRITE_COMPRESSION_INFO_VALID   0x00000010
 #define READ_COMPRESSION_INFO_VALID    0x00000020
 
-#define TAPE_RETURN_STATISTICS         __MSABI_LONG(0)
-#define TAPE_RETURN_ENV_INFO           __MSABI_LONG(1)
-#define TAPE_RESET_STATISTICS          __MSABI_LONG(2)
+#define TAPE_RETURN_STATISTICS                      __MSABI_LONG(0)
+#define TAPE_RETURN_ENV_INFO                        __MSABI_LONG(1)
+#define TAPE_RESET_STATISTICS                       __MSABI_LONG(2)
 
 /* DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo.MediaCharacteristics constants */
-#define MEDIA_ERASEABLE                   0x00000001
-#define MEDIA_WRITE_ONCE                  0x00000002
-#define MEDIA_READ_ONLY                   0x00000004
-#define MEDIA_READ_WRITE                  0x00000008
-#define MEDIA_WRITE_PROTECTED             0x00000100
-#define MEDIA_CURRENTLY_MOUNTED           0x80000000
+#define MEDIA_ERASEABLE                                                          0x00000001
+#define MEDIA_WRITE_ONCE                                                         0x00000002
+#define MEDIA_READ_ONLY                                                          0x00000004
+#define MEDIA_READ_WRITE                                                         0x00000008
+#define MEDIA_WRITE_PROTECTED                                       0x00000100
+#define MEDIA_CURRENTLY_MOUNTED                        0x80000000
 
 #define StorageIdTypeNAA StorageIdTypeFCPHName
 
@@ -207,18 +207,18 @@ DEFINE_GUID(GUID_DEVINTERFACE_HIDDEN_VOLUME,
 
 #define IsDsmActionNonDestructive(_Action) ((BOOLEAN)((_Action & DeviceDsmActionFlag_NonDestructive) != 0))
 
-#define DeviceDsmAction_None            0
-#define DeviceDsmAction_Trim            1
+#define DeviceDsmAction_None                                      0
+#define DeviceDsmAction_Trim                                      1
 #define DeviceDsmAction_Notification   (2 | DeviceDsmActionFlag_NonDestructive)
 
 #define DEVICE_DSM_FLAG_ENTIRE_DATA_SET_RANGE    0x00000001
 
-#define DEVICE_DSM_NOTIFY_FLAG_BEGIN             0x00000001
-#define DEVICE_DSM_NOTIFY_FLAG_END               0x00000002
+#define DEVICE_DSM_NOTIFY_FLAG_BEGIN                                       0x00000001
+#define DEVICE_DSM_NOTIFY_FLAG_END                                         0x00000002
 
-#define IOCTL_STORAGE_BC_VERSION                 1
+#define IOCTL_STORAGE_BC_VERSION                                           1
 
-#define STORAGE_PRIORITY_HINT_SUPPORTED          0x0001
+#define STORAGE_PRIORITY_HINT_SUPPORTED                       0x0001
 
 typedef struct _STORAGE_HOTPLUG_INFO {
   ULONG Size;
@@ -366,34 +366,34 @@ typedef enum _STORAGE_BUS_TYPE {
 typedef struct _DEVICE_MEDIA_INFO {
   union {
     struct {
-      LARGE_INTEGER Cylinders;
-      STORAGE_MEDIA_TYPE MediaType;
-      ULONG TracksPerCylinder;
-      ULONG SectorsPerTrack;
-      ULONG BytesPerSector;
-      ULONG NumberMediaSides;
-      ULONG MediaCharacteristics;
+                   LARGE_INTEGER Cylinders;
+                   STORAGE_MEDIA_TYPE MediaType;
+                   ULONG TracksPerCylinder;
+                   ULONG SectorsPerTrack;
+                   ULONG BytesPerSector;
+                   ULONG NumberMediaSides;
+                   ULONG MediaCharacteristics;
     } DiskInfo;
     struct {
-      LARGE_INTEGER Cylinders;
-      STORAGE_MEDIA_TYPE MediaType;
-      ULONG TracksPerCylinder;
-      ULONG SectorsPerTrack;
-      ULONG BytesPerSector;
-      ULONG NumberMediaSides;
-      ULONG MediaCharacteristics;
+                   LARGE_INTEGER Cylinders;
+                   STORAGE_MEDIA_TYPE MediaType;
+                   ULONG TracksPerCylinder;
+                   ULONG SectorsPerTrack;
+                   ULONG BytesPerSector;
+                   ULONG NumberMediaSides;
+                   ULONG MediaCharacteristics;
     } RemovableDiskInfo;
     struct {
-      STORAGE_MEDIA_TYPE MediaType;
-      ULONG MediaCharacteristics;
-      ULONG CurrentBlockSize;
-      STORAGE_BUS_TYPE BusType;
-      union {
-        struct {
-          UCHAR MediumType;
-          UCHAR DensityCode;
-        } ScsiInformation;
-      } BusSpecificData;
+                   STORAGE_MEDIA_TYPE MediaType;
+                   ULONG MediaCharacteristics;
+                   ULONG CurrentBlockSize;
+                   STORAGE_BUS_TYPE BusType;
+                   union {
+                     struct {
+                       UCHAR MediumType;
+                       UCHAR DensityCode;
+                     } ScsiInformation;
+                   } BusSpecificData;
     } TapeInfo;
   } DeviceSpecific;
 } DEVICE_MEDIA_INFO, *PDEVICE_MEDIA_INFO;
@@ -630,16 +630,16 @@ typedef struct _PERSISTENT_RESERVE_COMMAND {
   ULONG Size;
   __C89_NAMELESS union {
     struct {
-      UCHAR ServiceAction:5;
-      UCHAR Reserved1:3;
-      USHORT AllocationLength;
+                   UCHAR ServiceAction:5;
+                   UCHAR Reserved1:3;
+                   USHORT AllocationLength;
     } PR_IN;
     struct {
-      UCHAR ServiceAction:5;
-      UCHAR Reserved1:3;
-      UCHAR Type:4;
-      UCHAR Scope:4;
-      UCHAR ParameterList[0];
+                   UCHAR ServiceAction:5;
+                   UCHAR Reserved1:3;
+                   UCHAR Type:4;
+                   UCHAR Scope:4;
+                   UCHAR ParameterList[0];
     } PR_OUT;
   } DUMMYUNIONNAME;
 } PERSISTENT_RESERVE_COMMAND, *PPERSISTENT_RESERVE_COMMAND;

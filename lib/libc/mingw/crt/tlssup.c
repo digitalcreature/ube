@@ -84,17 +84,17 @@ __dyn_tls_init (HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
 
   if (dwReason != DLL_THREAD_ATTACH)
     {
-      if (dwReason == DLL_PROCESS_ATTACH)
-        __mingw_TLScallback (hDllHandle, dwReason, lpreserved);
-      return TRUE;
+                   if (dwReason == DLL_PROCESS_ATTACH)
+                     __mingw_TLScallback (hDllHandle, dwReason, lpreserved);
+                   return TRUE;
     }
 
   ps = (uintptr_t) &__xd_a;
   ps += sizeof (uintptr_t);
   for ( ; ps != (uintptr_t) &__xd_z; ps += sizeof (uintptr_t))
     {
-      pfunc = (_PVFV *) ps;
-      if (*pfunc != NULL)
+                   pfunc = (_PVFV *) ps;
+                   if (*pfunc != NULL)
 	(*pfunc)();
     }
   return TRUE;
@@ -113,19 +113,19 @@ __tlregdtor (_PVFV func)
 #if !defined (DISABLE_MS_TLS)
   if (dtor_list == NULL)
     {
-      dtor_list = &dtor_list_head;
-      dtor_list_head.count = 0;
+                   dtor_list = &dtor_list_head;
+                   dtor_list_head.count = 0;
     }
     else if (dtor_list->count == FUNCS_PER_NODE)
     {
-      TlsDtorNode *pnode = (TlsDtorNode *) malloc (sizeof (TlsDtorNode));
-      if (pnode == NULL)
+                   TlsDtorNode *pnode = (TlsDtorNode *) malloc (sizeof (TlsDtorNode));
+                   if (pnode == NULL)
 	return -1;
-      pnode->count = 0;
-      pnode->next = dtor_list;
-      dtor_list = pnode;
+                   pnode->count = 0;
+                   pnode->next = dtor_list;
+                   dtor_list = pnode;
 
-      dtor_list->count = 0;
+                   dtor_list->count = 0;
     }
   dtor_list->funcs[dtor_list->count++] = func;
 #endif
@@ -150,17 +150,17 @@ __dyn_tls_dtor (HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
 #if !defined (DISABLE_MS_TLS)
   if (dwReason != DLL_PROCESS_DETACH)
     {
-      for (pnode = dtor_list; pnode != NULL; pnode = pnext)
-        {
-          for (i = pnode->count - 1; i >= 0; --i)
+                   for (pnode = dtor_list; pnode != NULL; pnode = pnext)
+                     {
+                       for (i = pnode->count - 1; i >= 0; --i)
 	    {
-	      if (pnode->funcs[i] != NULL)
-	        (*pnode->funcs[i])();
+	                   if (pnode->funcs[i] != NULL)
+	                     (*pnode->funcs[i])();
 	    }
-          pnext = pnode->next;
-          if (pnext != NULL)
+                       pnext = pnode->next;
+                       if (pnext != NULL)
 	    free ((void *) pnode);
-        }
+                     }
     }
 #endif
   __mingw_TLScallback (hDllHandle, dwReason, lpreserved);

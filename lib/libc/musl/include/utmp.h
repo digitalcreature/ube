@@ -25,12 +25,12 @@ struct lastlog {
 #define e_exit __e_exit
 #define e_termination __e_termination
 
-void         endutent(void);
+void                      endutent(void);
 struct utmp *getutent(void);
 struct utmp *getutid(const struct utmp *);
 struct utmp *getutline(const struct utmp *);
 struct utmp *pututline(const struct utmp *);
-void         setutent(void);
+void                      setutent(void);
 
 void updwtmp(const char *, const struct utmp *);
 int utmpname(const char *);

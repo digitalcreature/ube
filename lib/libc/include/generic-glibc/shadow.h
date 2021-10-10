@@ -122,11 +122,11 @@ extern int putspent (const struct spwd *__p, FILE *__stream);
    or due to the implementation they are cancellation points and
    therefore not marked with __THROW.  */
 extern int getspent_r (struct spwd *__result_buf, char *__buffer,
-		       size_t __buflen, struct spwd **__result);
+		                    size_t __buflen, struct spwd **__result);
 
 extern int getspnam_r (const char *__name, struct spwd *__result_buf,
-		       char *__buffer, size_t __buflen,
-		       struct spwd **__result);
+		                    char *__buffer, size_t __buflen,
+		                    struct spwd **__result);
 
 extern int sgetspent_r (const char *__string, struct spwd *__result_buf,
 			char *__buffer, size_t __buflen,

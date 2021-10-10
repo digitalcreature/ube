@@ -21,11 +21,11 @@
  */
 
 /******************************************************************************
- *                                                                            *
- *     File:  complex.h                                                       *
- *                                                                            *
- *     Contains: prototypes and macros germane to C99 complex math.           *
- *                                                                            *
+ *                                                                                                                                                                                                                                        *
+ *     File:  complex.h                                                                                                                                                                            *
+ *                                                                                                                                                                                                                                        *
+ *     Contains: prototypes and macros germane to C99 complex math.                        *
+ *                                                                                                                                                                                                                                        *
  ******************************************************************************/
 
 #ifndef __COMPLEX_H__
@@ -36,7 +36,7 @@
 #undef complex
 #define complex _Complex
 #undef _Complex_I
-/*  Constant expression of type const float _Complex                          */
+/*  Constant expression of type const float _Complex                                                                              */
 #define _Complex_I (__extension__ 1.0iF)
 #undef I
 #define I _Complex_I
@@ -50,9 +50,9 @@
     compiler, as there is no way to support them with the gcc-4.2 frontend.
     These may be used for static initialization of complex values, like so:
  
-        static const float complex someVariable = CMPLXF(1.0, INFINITY);
+                     static const float complex someVariable = CMPLXF(1.0, INFINITY);
  
-    they may, of course, be used outside of static contexts as well.          */
+    they may, of course, be used outside of static contexts as well.                       */
 
 #define  CMPLX(__real,__imag) \
     _Pragma("clang diagnostic push") \
@@ -72,7 +72,7 @@
     (long double _Complex){(__real),(__imag)} \
     _Pragma("clang diagnostic pop")
 
-#endif /* End C11 features.                                                   */
+#endif /* End C11 features.                                                                                                                                                           */
 
 __BEGIN_DECLS
 extern float complex cacosf(float complex);

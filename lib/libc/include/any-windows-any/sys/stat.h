@@ -77,8 +77,8 @@ extern "C" {
     struct _stat64 st;
     int __ret=_fstat64(_FileDes,&st);
     if (__ret == -1) {
-      memset(_Stat,0,sizeof(struct _stat64i32));
-      return -1;
+                   memset(_Stat,0,sizeof(struct _stat64i32));
+                   return -1;
     }
     _Stat->st_dev=st.st_dev;
     _Stat->st_ino=st.st_ino;
@@ -103,8 +103,8 @@ extern "C" {
     struct _stat64 st;
     int __ret=_stat64(_Name,&st);
     if (__ret == -1) {
-      memset(_Stat,0,sizeof(struct _stat64i32));
-      return -1;
+                   memset(_Stat,0,sizeof(struct _stat64i32));
+                   return -1;
     }
     _Stat->st_dev=st.st_dev;
     _Stat->st_ino=st.st_ino;

@@ -46,9 +46,9 @@ MIDL_INTERFACE("3694dbf9-8f68-44be-8ff5-195c98ede8a6")
 IUIViewSettingsInterop : public IInspectable
 {
     virtual HRESULT STDMETHODCALLTYPE GetForWindow(
-        HWND hwnd,
-        REFIID riid,
-        void **ppv) = 0;
+                     HWND hwnd,
+                     REFIID riid,
+                     void **ppv) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -60,36 +60,36 @@ typedef struct IUIViewSettingsInteropVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IUIViewSettingsInterop *This,
-        REFIID riid,
-        void **ppvObject);
+                     IUIViewSettingsInterop *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IUIViewSettingsInterop *This);
+                     IUIViewSettingsInterop *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IUIViewSettingsInterop *This);
+                     IUIViewSettingsInterop *This);
 
     /*** IInspectable methods ***/
     HRESULT (STDMETHODCALLTYPE *GetIids)(
-        IUIViewSettingsInterop *This,
-        ULONG *iidCount,
-        IID **iids);
+                     IUIViewSettingsInterop *This,
+                     ULONG *iidCount,
+                     IID **iids);
 
     HRESULT (STDMETHODCALLTYPE *GetRuntimeClassName)(
-        IUIViewSettingsInterop *This,
-        HSTRING *className);
+                     IUIViewSettingsInterop *This,
+                     HSTRING *className);
 
     HRESULT (STDMETHODCALLTYPE *GetTrustLevel)(
-        IUIViewSettingsInterop *This,
-        TrustLevel *trustLevel);
+                     IUIViewSettingsInterop *This,
+                     TrustLevel *trustLevel);
 
     /*** IUIViewSettingsInterop methods ***/
     HRESULT (STDMETHODCALLTYPE *GetForWindow)(
-        IUIViewSettingsInterop *This,
-        HWND hwnd,
-        REFIID riid,
-        void **ppv);
+                     IUIViewSettingsInterop *This,
+                     HWND hwnd,
+                     REFIID riid,
+                     void **ppv);
 
     END_INTERFACE
 } IUIViewSettingsInteropVtbl;
@@ -145,10 +145,10 @@ static FORCEINLINE HRESULT IUIViewSettingsInterop_GetForWindow(IUIViewSettingsIn
 
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
+ULONG                        __RPC_USER HWND_UserSize     (ULONG *, ULONG, HWND *);
 unsigned char * __RPC_USER HWND_UserMarshal  (ULONG *, unsigned char *, HWND *);
 unsigned char * __RPC_USER HWND_UserUnmarshal(ULONG *, unsigned char *, HWND *);
-void            __RPC_USER HWND_UserFree     (ULONG *, HWND *);
+void                                      __RPC_USER HWND_UserFree     (ULONG *, HWND *);
 
 /* End additional prototypes */
 

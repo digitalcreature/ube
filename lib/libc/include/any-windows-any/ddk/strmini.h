@@ -29,9 +29,9 @@ typedef enum {
 #define DebugPrint(x) StreamClassDebugPrint x
 #define DEBUG_BREAKPOINT() DbgBreakPoint()
 #define DEBUG_ASSERT(exp) \
-            if ( !(exp) ) { \
-                StreamClassDebugAssert( __FILE__, __LINE__, #exp, exp); \
-            }
+                                      if ( !(exp) ) { \
+                                          StreamClassDebugAssert( __FILE__, __LINE__, #exp, exp); \
+                                      }
 #else
 
 #define DebugPrint(x)
@@ -89,15 +89,15 @@ typedef struct _HW_CLOCK_OBJECT {
 #define CLOCK_SUPPORT_CAN_RETURN_STREAM_TIME 0x4
 
 typedef struct _HW_STREAM_OBJECT {
-  ULONG           SizeOfThisPacket;
-  ULONG           StreamNumber;
-  PVOID           HwStreamExtension;
+  ULONG                        SizeOfThisPacket;
+  ULONG                        StreamNumber;
+  PVOID                        HwStreamExtension;
   PHW_RECEIVE_STREAM_DATA_SRB ReceiveDataPacket;
   PHW_RECEIVE_STREAM_CONTROL_SRB ReceiveControlPacket;
   HW_CLOCK_OBJECT HwClockObject;
-  BOOLEAN         Dma;
-  BOOLEAN         Pio;
-  PVOID           HwDeviceExtension;
+  BOOLEAN                      Dma;
+  BOOLEAN                      Pio;
+  PVOID                        HwDeviceExtension;
   ULONG    StreamHeaderMediaSpecific;
   ULONG    StreamHeaderWorkspace;
   BOOLEAN Allocator;
@@ -106,34 +106,34 @@ typedef struct _HW_STREAM_OBJECT {
 } HW_STREAM_OBJECT, *PHW_STREAM_OBJECT;
 
 typedef struct _HW_STREAM_HEADER {
-  ULONG           NumberOfStreams;
-  ULONG           SizeOfHwStreamInformation;
-  ULONG           NumDevPropArrayEntries;
+  ULONG                        NumberOfStreams;
+  ULONG                        SizeOfHwStreamInformation;
+  ULONG                        NumDevPropArrayEntries;
   PKSPROPERTY_SET DevicePropertiesArray;
-  ULONG           NumDevEventArrayEntries;
+  ULONG                        NumDevEventArrayEntries;
   PKSEVENT_SET    DeviceEventsArray;
   PKSTOPOLOGY     Topology;
   PHW_EVENT_ROUTINE DeviceEventRoutine;
-  LONG            NumDevMethodArrayEntries;
+  LONG                                      NumDevMethodArrayEntries;
   PKSMETHOD_SET   DeviceMethodsArray;
 } HW_STREAM_HEADER, *PHW_STREAM_HEADER;
 
 typedef struct _HW_STREAM_INFORMATION {
-  ULONG           NumberOfPossibleInstances;
+  ULONG                        NumberOfPossibleInstances;
   KSPIN_DATAFLOW  DataFlow;
-  BOOLEAN         DataAccessible;
-  ULONG           NumberOfFormatArrayEntries;
+  BOOLEAN                      DataAccessible;
+  ULONG                        NumberOfFormatArrayEntries;
   PKSDATAFORMAT*  StreamFormatsArray;
-  PVOID           ClassReserved[4];
-  ULONG           NumStreamPropArrayEntries;
+  PVOID                        ClassReserved[4];
+  ULONG                        NumStreamPropArrayEntries;
   PKSPROPERTY_SET StreamPropertiesArray;
-  ULONG           NumStreamEventArrayEntries;
+  ULONG                        NumStreamEventArrayEntries;
   PKSEVENT_SET    StreamEventsArray;
-  GUID*                   Category;
-  GUID*                   Name;
-  ULONG                   MediumsCount;
+  GUID*                                                          Category;
+  GUID*                                                          Name;
+  ULONG                                                          MediumsCount;
   const KSPIN_MEDIUM*     Mediums;
-  BOOLEAN         BridgeStream;
+  BOOLEAN                      BridgeStream;
   ULONG Reserved[2];
 } HW_STREAM_INFORMATION, *PHW_STREAM_INFORMATION;
 
@@ -159,10 +159,10 @@ typedef struct _STREAM_DATA_INTERSECT_INFO {
 
 typedef struct _STREAM_PROPERTY_DESCRIPTOR {
   PKSPROPERTY     Property;
-  ULONG           PropertySetID;
-  PVOID           PropertyInfo;
-  ULONG           PropertyInputSize;
-  ULONG           PropertyOutputSize;
+  ULONG                        PropertySetID;
+  PVOID                        PropertyInfo;
+  ULONG                        PropertyInputSize;
+  ULONG                        PropertyOutputSize;
 } STREAM_PROPERTY_DESCRIPTOR, *PSTREAM_PROPERTY_DESCRIPTOR;
 
 typedef struct _STREAM_METHOD_DESCRIPTOR {
@@ -222,27 +222,27 @@ typedef enum _SRB_COMMAND {
 
 typedef struct {
   PHYSICAL_ADDRESS    PhysicalAddress;
-  ULONG               Length;
+  ULONG                                         Length;
 } KSSCATTER_GATHER, *PKSSCATTER_GATHER;
 
 
 typedef struct _HW_STREAM_REQUEST_BLOCK {
-  ULONG           SizeOfThisPacket;
+  ULONG                        SizeOfThisPacket;
   SRB_COMMAND     Command;
-  NTSTATUS        Status;
+  NTSTATUS                     Status;
   PHW_STREAM_OBJECT StreamObject;
-  PVOID           HwDeviceExtension;
-  PVOID           SRBExtension;
+  PVOID                        HwDeviceExtension;
+  PVOID                        SRBExtension;
 
   union _CommandData {
     PKSSTREAM_HEADER DataBufferArray;
     PHW_STREAM_DESCRIPTOR StreamBuffer;
-    KSSTATE         StreamState;
+    KSSTATE                      StreamState;
     PSTREAM_TIME_REFERENCE TimeReference;
     PSTREAM_PROPERTY_DESCRIPTOR PropertyInfo;
     PKSDATAFORMAT   OpenFormat;
     struct _PORT_CONFIGURATION_INFORMATION *ConfigInfo;
-    HANDLE          MasterClockHandle;
+    HANDLE                       MasterClockHandle;
     DEVICE_POWER_STATE DeviceState;
     PSTREAM_DATA_INTERSECT_INFO IntersectInfo;
 
@@ -256,22 +256,22 @@ typedef struct _HW_STREAM_REQUEST_BLOCK {
   } CommandData;
 
   ULONG NumberOfBuffers;
-  ULONG           TimeoutCounter;
-  ULONG           TimeoutOriginal;
+  ULONG                        TimeoutCounter;
+  ULONG                        TimeoutOriginal;
   struct _HW_STREAM_REQUEST_BLOCK *NextSRB;
 
-  PIRP            Irp;
-  ULONG           Flags;
-  PVOID       HwInstanceExtension;
+  PIRP                                      Irp;
+  ULONG                        Flags;
+  PVOID                    HwInstanceExtension;
 
   __GNU_EXTENSION union {
-    ULONG         NumberOfBytesToTransfer;
-    ULONG         ActualBytesTransferred;
+    ULONG                      NumberOfBytesToTransfer;
+    ULONG                      ActualBytesTransferred;
   };
 
   PKSSCATTER_GATHER ScatterGatherBuffer;
-  ULONG           NumberOfPhysicalPages;
-  ULONG           NumberOfScatterGatherElements;
+  ULONG                        NumberOfPhysicalPages;
+  ULONG                        NumberOfScatterGatherElements;
   ULONG Reserved[1];
 } HW_STREAM_REQUEST_BLOCK, *PHW_STREAM_REQUEST_BLOCK;
 
@@ -286,26 +286,26 @@ typedef enum {
 
 typedef struct _ACCESS_RANGE {
   STREAM_PHYSICAL_ADDRESS RangeStart;
-  ULONG           RangeLength;
-  BOOLEAN         RangeInMemory;
-  ULONG           Reserved;
+  ULONG                        RangeLength;
+  BOOLEAN                      RangeInMemory;
+  ULONG                        Reserved;
 } ACCESS_RANGE, *PACCESS_RANGE;
 
 typedef struct _PORT_CONFIGURATION_INFORMATION {
-  ULONG           SizeOfThisPacket;
-  PVOID           HwDeviceExtension;
+  ULONG                        SizeOfThisPacket;
+  PVOID                        HwDeviceExtension;
   PDEVICE_OBJECT  ClassDeviceObject;
   PDEVICE_OBJECT  PhysicalDeviceObject;
-  ULONG           SystemIoBusNumber;
+  ULONG                        SystemIoBusNumber;
   INTERFACE_TYPE  AdapterInterfaceType;
-  ULONG           BusInterruptLevel;
-  ULONG           BusInterruptVector;
+  ULONG                        BusInterruptLevel;
+  ULONG                        BusInterruptVector;
   KINTERRUPT_MODE InterruptMode;
-  ULONG           DmaChannel;
-  ULONG           NumberOfAccessRanges;
+  ULONG                        DmaChannel;
+  ULONG                        NumberOfAccessRanges;
   PACCESS_RANGE   AccessRanges;
-  ULONG           StreamDescriptorSize;
-  PIRP            Irp;
+  ULONG                        StreamDescriptorSize;
+  PIRP                                      Irp;
   PKINTERRUPT  InterruptObject;
   PADAPTER_OBJECT  DmaAdapterObject;
   PDEVICE_OBJECT  RealPhysicalDeviceObject;
@@ -349,29 +349,29 @@ typedef enum _STREAM_MINIDRIVER_DEVICE_NOTIFICATION_TYPE {
 typedef struct _HW_INITIALIZATION_DATA {
 #if (NTDDI_VERSION >= NTDDI_WINXP)
   __GNU_EXTENSION union {
-    ULONG         HwInitializationDataSize;
+    ULONG                      HwInitializationDataSize;
     __GNU_EXTENSION struct {
-      USHORT      SizeOfThisPacket;
-      USHORT      StreamClassVersion;
+                   USHORT                   SizeOfThisPacket;
+                   USHORT                   StreamClassVersion;
     };
   };
 #else
-  ULONG           HwInitializationDataSize;
+  ULONG                        HwInitializationDataSize;
 #endif /* NTDDI_VERSION >= NTDDI_WINXP */
 
   PHW_INTERRUPT   HwInterrupt;
   PHW_RECEIVE_DEVICE_SRB HwReceivePacket;
   PHW_CANCEL_SRB  HwCancelPacket;
   PHW_REQUEST_TIMEOUT_HANDLER HwRequestTimeoutHandler;
-  ULONG           DeviceExtensionSize;
-  ULONG           PerRequestExtensionSize;
-  ULONG           PerStreamExtensionSize;
-  ULONG           FilterInstanceExtensionSize;
-  BOOLEAN         BusMasterDMA;
-  BOOLEAN         Dma24BitAddresses;
-  ULONG           BufferAlignment;
-  BOOLEAN         TurnOffSynchronization;
-  ULONG           DmaBufferSize;
+  ULONG                        DeviceExtensionSize;
+  ULONG                        PerRequestExtensionSize;
+  ULONG                        PerStreamExtensionSize;
+  ULONG                        FilterInstanceExtensionSize;
+  BOOLEAN                      BusMasterDMA;
+  BOOLEAN                      Dma24BitAddresses;
+  ULONG                        BufferAlignment;
+  BOOLEAN                      TurnOffSynchronization;
+  ULONG                        DmaBufferSize;
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
   ULONG		NumNameExtensions;
@@ -519,7 +519,7 @@ NTSTATUS
 StreamClassRegisterFilterWithNoKSPins( 
     IN PDEVICE_OBJECT   DeviceObject,
     IN const GUID     * InterfaceClassGUID,
-    IN ULONG            PinCount,
+    IN ULONG                                      PinCount,
     IN BOOLEAN * PinDirection,
     IN KSPIN_MEDIUM * MediumList,
     IN GUID * CategoryList

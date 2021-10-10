@@ -179,30 +179,30 @@ extern "C" {
 #else
   typedef struct ITAgentVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAgent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAgent *This);
-      ULONG (WINAPI *Release)(ITAgent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITAgent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITAgent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITAgent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITAgent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *EnumerateAgentSessions)(ITAgent *This,IEnumAgentSession **ppEnumAgentSession);
-      HRESULT (WINAPI *CreateSession)(ITAgent *This,ITACDGroup *pACDGroup,ITAddress *pAddress,ITAgentSession **ppAgentSession);
-      HRESULT (WINAPI *CreateSessionWithPIN)(ITAgent *This,ITACDGroup *pACDGroup,ITAddress *pAddress,BSTR pPIN,ITAgentSession **ppAgentSession);
-      HRESULT (WINAPI *get_ID)(ITAgent *This,BSTR *ppID);
-      HRESULT (WINAPI *get_User)(ITAgent *This,BSTR *ppUser);
-      HRESULT (WINAPI *put_State)(ITAgent *This,AGENT_STATE AgentState);
-      HRESULT (WINAPI *get_State)(ITAgent *This,AGENT_STATE *pAgentState);
-      HRESULT (WINAPI *put_MeasurementPeriod)(ITAgent *This,__LONG32 lPeriod);
-      HRESULT (WINAPI *get_MeasurementPeriod)(ITAgent *This,__LONG32 *plPeriod);
-      HRESULT (WINAPI *get_OverallCallRate)(ITAgent *This,CURRENCY *pcyCallrate);
-      HRESULT (WINAPI *get_NumberOfACDCalls)(ITAgent *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_NumberOfIncomingCalls)(ITAgent *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_NumberOfOutgoingCalls)(ITAgent *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_TotalACDTalkTime)(ITAgent *This,__LONG32 *plTalkTime);
-      HRESULT (WINAPI *get_TotalACDCallTime)(ITAgent *This,__LONG32 *plCallTime);
-      HRESULT (WINAPI *get_TotalWrapUpTime)(ITAgent *This,__LONG32 *plWrapUpTime);
-      HRESULT (WINAPI *get_AgentSessions)(ITAgent *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *QueryInterface)(ITAgent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAgent *This);
+                   ULONG (WINAPI *Release)(ITAgent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITAgent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITAgent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITAgent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITAgent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *EnumerateAgentSessions)(ITAgent *This,IEnumAgentSession **ppEnumAgentSession);
+                   HRESULT (WINAPI *CreateSession)(ITAgent *This,ITACDGroup *pACDGroup,ITAddress *pAddress,ITAgentSession **ppAgentSession);
+                   HRESULT (WINAPI *CreateSessionWithPIN)(ITAgent *This,ITACDGroup *pACDGroup,ITAddress *pAddress,BSTR pPIN,ITAgentSession **ppAgentSession);
+                   HRESULT (WINAPI *get_ID)(ITAgent *This,BSTR *ppID);
+                   HRESULT (WINAPI *get_User)(ITAgent *This,BSTR *ppUser);
+                   HRESULT (WINAPI *put_State)(ITAgent *This,AGENT_STATE AgentState);
+                   HRESULT (WINAPI *get_State)(ITAgent *This,AGENT_STATE *pAgentState);
+                   HRESULT (WINAPI *put_MeasurementPeriod)(ITAgent *This,__LONG32 lPeriod);
+                   HRESULT (WINAPI *get_MeasurementPeriod)(ITAgent *This,__LONG32 *plPeriod);
+                   HRESULT (WINAPI *get_OverallCallRate)(ITAgent *This,CURRENCY *pcyCallrate);
+                   HRESULT (WINAPI *get_NumberOfACDCalls)(ITAgent *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_NumberOfIncomingCalls)(ITAgent *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_NumberOfOutgoingCalls)(ITAgent *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_TotalACDTalkTime)(ITAgent *This,__LONG32 *plTalkTime);
+                   HRESULT (WINAPI *get_TotalACDCallTime)(ITAgent *This,__LONG32 *plCallTime);
+                   HRESULT (WINAPI *get_TotalWrapUpTime)(ITAgent *This,__LONG32 *plWrapUpTime);
+                   HRESULT (WINAPI *get_AgentSessions)(ITAgent *This,VARIANT *pVariant);
     END_INTERFACE
   } ITAgentVtbl;
   struct ITAgent {
@@ -298,30 +298,30 @@ extern "C" {
 #else
   typedef struct ITAgentSessionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAgentSession *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAgentSession *This);
-      ULONG (WINAPI *Release)(ITAgentSession *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITAgentSession *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITAgentSession *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITAgentSession *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITAgentSession *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Agent)(ITAgentSession *This,ITAgent **ppAgent);
-      HRESULT (WINAPI *get_Address)(ITAgentSession *This,ITAddress **ppAddress);
-      HRESULT (WINAPI *get_ACDGroup)(ITAgentSession *This,ITACDGroup **ppACDGroup);
-      HRESULT (WINAPI *put_State)(ITAgentSession *This,AGENT_SESSION_STATE SessionState);
-      HRESULT (WINAPI *get_State)(ITAgentSession *This,AGENT_SESSION_STATE *pSessionState);
-      HRESULT (WINAPI *get_SessionStartTime)(ITAgentSession *This,DATE *pdateSessionStart);
-      HRESULT (WINAPI *get_SessionDuration)(ITAgentSession *This,__LONG32 *plDuration);
-      HRESULT (WINAPI *get_NumberOfCalls)(ITAgentSession *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_TotalTalkTime)(ITAgentSession *This,__LONG32 *plTalkTime);
-      HRESULT (WINAPI *get_AverageTalkTime)(ITAgentSession *This,__LONG32 *plTalkTime);
-      HRESULT (WINAPI *get_TotalCallTime)(ITAgentSession *This,__LONG32 *plCallTime);
-      HRESULT (WINAPI *get_AverageCallTime)(ITAgentSession *This,__LONG32 *plCallTime);
-      HRESULT (WINAPI *get_TotalWrapUpTime)(ITAgentSession *This,__LONG32 *plWrapUpTime);
-      HRESULT (WINAPI *get_AverageWrapUpTime)(ITAgentSession *This,__LONG32 *plWrapUpTime);
-      HRESULT (WINAPI *get_ACDCallRate)(ITAgentSession *This,CURRENCY *pcyCallrate);
-      HRESULT (WINAPI *get_LongestTimeToAnswer)(ITAgentSession *This,__LONG32 *plAnswerTime);
-      HRESULT (WINAPI *get_AverageTimeToAnswer)(ITAgentSession *This,__LONG32 *plAnswerTime);
+                   HRESULT (WINAPI *QueryInterface)(ITAgentSession *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAgentSession *This);
+                   ULONG (WINAPI *Release)(ITAgentSession *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITAgentSession *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITAgentSession *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITAgentSession *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITAgentSession *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Agent)(ITAgentSession *This,ITAgent **ppAgent);
+                   HRESULT (WINAPI *get_Address)(ITAgentSession *This,ITAddress **ppAddress);
+                   HRESULT (WINAPI *get_ACDGroup)(ITAgentSession *This,ITACDGroup **ppACDGroup);
+                   HRESULT (WINAPI *put_State)(ITAgentSession *This,AGENT_SESSION_STATE SessionState);
+                   HRESULT (WINAPI *get_State)(ITAgentSession *This,AGENT_SESSION_STATE *pSessionState);
+                   HRESULT (WINAPI *get_SessionStartTime)(ITAgentSession *This,DATE *pdateSessionStart);
+                   HRESULT (WINAPI *get_SessionDuration)(ITAgentSession *This,__LONG32 *plDuration);
+                   HRESULT (WINAPI *get_NumberOfCalls)(ITAgentSession *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_TotalTalkTime)(ITAgentSession *This,__LONG32 *plTalkTime);
+                   HRESULT (WINAPI *get_AverageTalkTime)(ITAgentSession *This,__LONG32 *plTalkTime);
+                   HRESULT (WINAPI *get_TotalCallTime)(ITAgentSession *This,__LONG32 *plCallTime);
+                   HRESULT (WINAPI *get_AverageCallTime)(ITAgentSession *This,__LONG32 *plCallTime);
+                   HRESULT (WINAPI *get_TotalWrapUpTime)(ITAgentSession *This,__LONG32 *plWrapUpTime);
+                   HRESULT (WINAPI *get_AverageWrapUpTime)(ITAgentSession *This,__LONG32 *plWrapUpTime);
+                   HRESULT (WINAPI *get_ACDCallRate)(ITAgentSession *This,CURRENCY *pcyCallrate);
+                   HRESULT (WINAPI *get_LongestTimeToAnswer)(ITAgentSession *This,__LONG32 *plAnswerTime);
+                   HRESULT (WINAPI *get_AverageTimeToAnswer)(ITAgentSession *This,__LONG32 *plAnswerTime);
     END_INTERFACE
   } ITAgentSessionVtbl;
   struct ITAgentSession {
@@ -403,16 +403,16 @@ extern "C" {
 #else
   typedef struct ITACDGroupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITACDGroup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITACDGroup *This);
-      ULONG (WINAPI *Release)(ITACDGroup *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITACDGroup *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITACDGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITACDGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITACDGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(ITACDGroup *This,BSTR *ppName);
-      HRESULT (WINAPI *EnumerateQueues)(ITACDGroup *This,IEnumQueue **ppEnumQueue);
-      HRESULT (WINAPI *get_Queues)(ITACDGroup *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *QueryInterface)(ITACDGroup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITACDGroup *This);
+                   ULONG (WINAPI *Release)(ITACDGroup *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITACDGroup *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITACDGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITACDGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITACDGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(ITACDGroup *This,BSTR *ppName);
+                   HRESULT (WINAPI *EnumerateQueues)(ITACDGroup *This,IEnumQueue **ppEnumQueue);
+                   HRESULT (WINAPI *get_Queues)(ITACDGroup *This,VARIANT *pVariant);
     END_INTERFACE
   } ITACDGroupVtbl;
   struct ITACDGroup {
@@ -461,25 +461,25 @@ extern "C" {
 #else
   typedef struct ITQueueVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITQueue *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITQueue *This);
-      ULONG (WINAPI *Release)(ITQueue *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITQueue *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITQueue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITQueue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITQueue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *put_MeasurementPeriod)(ITQueue *This,__LONG32 lPeriod);
-      HRESULT (WINAPI *get_MeasurementPeriod)(ITQueue *This,__LONG32 *plPeriod);
-      HRESULT (WINAPI *get_TotalCallsQueued)(ITQueue *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_CurrentCallsQueued)(ITQueue *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_TotalCallsAbandoned)(ITQueue *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_TotalCallsFlowedIn)(ITQueue *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_TotalCallsFlowedOut)(ITQueue *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_LongestEverWaitTime)(ITQueue *This,__LONG32 *plWaitTime);
-      HRESULT (WINAPI *get_CurrentLongestWaitTime)(ITQueue *This,__LONG32 *plWaitTime);
-      HRESULT (WINAPI *get_AverageWaitTime)(ITQueue *This,__LONG32 *plWaitTime);
-      HRESULT (WINAPI *get_FinalDisposition)(ITQueue *This,__LONG32 *plCalls);
-      HRESULT (WINAPI *get_Name)(ITQueue *This,BSTR *ppName);
+                   HRESULT (WINAPI *QueryInterface)(ITQueue *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITQueue *This);
+                   ULONG (WINAPI *Release)(ITQueue *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITQueue *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITQueue *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITQueue *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITQueue *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *put_MeasurementPeriod)(ITQueue *This,__LONG32 lPeriod);
+                   HRESULT (WINAPI *get_MeasurementPeriod)(ITQueue *This,__LONG32 *plPeriod);
+                   HRESULT (WINAPI *get_TotalCallsQueued)(ITQueue *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_CurrentCallsQueued)(ITQueue *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_TotalCallsAbandoned)(ITQueue *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_TotalCallsFlowedIn)(ITQueue *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_TotalCallsFlowedOut)(ITQueue *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_LongestEverWaitTime)(ITQueue *This,__LONG32 *plWaitTime);
+                   HRESULT (WINAPI *get_CurrentLongestWaitTime)(ITQueue *This,__LONG32 *plWaitTime);
+                   HRESULT (WINAPI *get_AverageWaitTime)(ITQueue *This,__LONG32 *plWaitTime);
+                   HRESULT (WINAPI *get_FinalDisposition)(ITQueue *This,__LONG32 *plCalls);
+                   HRESULT (WINAPI *get_Name)(ITQueue *This,BSTR *ppName);
     END_INTERFACE
   } ITQueueVtbl;
   struct ITQueue {
@@ -545,15 +545,15 @@ extern "C" {
 #else
   typedef struct ITAgentEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAgentEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAgentEvent *This);
-      ULONG (WINAPI *Release)(ITAgentEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITAgentEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITAgentEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITAgentEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITAgentEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Agent)(ITAgentEvent *This,ITAgent **ppAgent);
-      HRESULT (WINAPI *get_Event)(ITAgentEvent *This,AGENT_EVENT *pEvent);
+                   HRESULT (WINAPI *QueryInterface)(ITAgentEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAgentEvent *This);
+                   ULONG (WINAPI *Release)(ITAgentEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITAgentEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITAgentEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITAgentEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITAgentEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Agent)(ITAgentEvent *This,ITAgent **ppAgent);
+                   HRESULT (WINAPI *get_Event)(ITAgentEvent *This,AGENT_EVENT *pEvent);
     END_INTERFACE
   } ITAgentEventVtbl;
   struct ITAgentEvent {
@@ -589,15 +589,15 @@ extern "C" {
 #else
   typedef struct ITAgentSessionEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAgentSessionEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAgentSessionEvent *This);
-      ULONG (WINAPI *Release)(ITAgentSessionEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITAgentSessionEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITAgentSessionEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITAgentSessionEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITAgentSessionEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Session)(ITAgentSessionEvent *This,ITAgentSession **ppSession);
-      HRESULT (WINAPI *get_Event)(ITAgentSessionEvent *This,AGENT_SESSION_EVENT *pEvent);
+                   HRESULT (WINAPI *QueryInterface)(ITAgentSessionEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAgentSessionEvent *This);
+                   ULONG (WINAPI *Release)(ITAgentSessionEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITAgentSessionEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITAgentSessionEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITAgentSessionEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITAgentSessionEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Session)(ITAgentSessionEvent *This,ITAgentSession **ppSession);
+                   HRESULT (WINAPI *get_Event)(ITAgentSessionEvent *This,AGENT_SESSION_EVENT *pEvent);
     END_INTERFACE
   } ITAgentSessionEventVtbl;
   struct ITAgentSessionEvent {
@@ -633,15 +633,15 @@ extern "C" {
 #else
   typedef struct ITACDGroupEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITACDGroupEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITACDGroupEvent *This);
-      ULONG (WINAPI *Release)(ITACDGroupEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITACDGroupEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITACDGroupEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITACDGroupEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITACDGroupEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Group)(ITACDGroupEvent *This,ITACDGroup **ppGroup);
-      HRESULT (WINAPI *get_Event)(ITACDGroupEvent *This,ACDGROUP_EVENT *pEvent);
+                   HRESULT (WINAPI *QueryInterface)(ITACDGroupEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITACDGroupEvent *This);
+                   ULONG (WINAPI *Release)(ITACDGroupEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITACDGroupEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITACDGroupEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITACDGroupEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITACDGroupEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Group)(ITACDGroupEvent *This,ITACDGroup **ppGroup);
+                   HRESULT (WINAPI *get_Event)(ITACDGroupEvent *This,ACDGROUP_EVENT *pEvent);
     END_INTERFACE
   } ITACDGroupEventVtbl;
   struct ITACDGroupEvent {
@@ -677,15 +677,15 @@ extern "C" {
 #else
   typedef struct ITQueueEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITQueueEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITQueueEvent *This);
-      ULONG (WINAPI *Release)(ITQueueEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITQueueEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITQueueEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITQueueEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITQueueEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Queue)(ITQueueEvent *This,ITQueue **ppQueue);
-      HRESULT (WINAPI *get_Event)(ITQueueEvent *This,ACDQUEUE_EVENT *pEvent);
+                   HRESULT (WINAPI *QueryInterface)(ITQueueEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITQueueEvent *This);
+                   ULONG (WINAPI *Release)(ITQueueEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITQueueEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITQueueEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITQueueEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITQueueEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Queue)(ITQueueEvent *This,ITQueue **ppQueue);
+                   HRESULT (WINAPI *get_Event)(ITQueueEvent *This,ACDQUEUE_EVENT *pEvent);
     END_INTERFACE
   } ITQueueEventVtbl;
   struct ITQueueEvent {
@@ -721,15 +721,15 @@ extern "C" {
 #else
   typedef struct ITAgentHandlerEventVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAgentHandlerEvent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAgentHandlerEvent *This);
-      ULONG (WINAPI *Release)(ITAgentHandlerEvent *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITAgentHandlerEvent *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITAgentHandlerEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITAgentHandlerEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITAgentHandlerEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_AgentHandler)(ITAgentHandlerEvent *This,ITAgentHandler **ppAgentHandler);
-      HRESULT (WINAPI *get_Event)(ITAgentHandlerEvent *This,AGENTHANDLER_EVENT *pEvent);
+                   HRESULT (WINAPI *QueryInterface)(ITAgentHandlerEvent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAgentHandlerEvent *This);
+                   ULONG (WINAPI *Release)(ITAgentHandlerEvent *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITAgentHandlerEvent *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITAgentHandlerEvent *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITAgentHandlerEvent *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITAgentHandlerEvent *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_AgentHandler)(ITAgentHandlerEvent *This,ITAgentHandler **ppAgentHandler);
+                   HRESULT (WINAPI *get_Event)(ITAgentHandlerEvent *This,AGENTHANDLER_EVENT *pEvent);
     END_INTERFACE
   } ITAgentHandlerEventVtbl;
   struct ITAgentHandlerEvent {
@@ -765,15 +765,15 @@ extern "C" {
 #else
   typedef struct ITTAPICallCenterVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITTAPICallCenter *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITTAPICallCenter *This);
-      ULONG (WINAPI *Release)(ITTAPICallCenter *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITTAPICallCenter *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITTAPICallCenter *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITTAPICallCenter *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITTAPICallCenter *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *EnumerateAgentHandlers)(ITTAPICallCenter *This,IEnumAgentHandler **ppEnumHandler);
-      HRESULT (WINAPI *get_AgentHandlers)(ITTAPICallCenter *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *QueryInterface)(ITTAPICallCenter *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITTAPICallCenter *This);
+                   ULONG (WINAPI *Release)(ITTAPICallCenter *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITTAPICallCenter *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITTAPICallCenter *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITTAPICallCenter *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITTAPICallCenter *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *EnumerateAgentHandlers)(ITTAPICallCenter *This,IEnumAgentHandler **ppEnumHandler);
+                   HRESULT (WINAPI *get_AgentHandlers)(ITTAPICallCenter *This,VARIANT *pVariant);
     END_INTERFACE
   } ITTAPICallCenterVtbl;
   struct ITTAPICallCenter {
@@ -814,20 +814,20 @@ extern "C" {
 #else
   typedef struct ITAgentHandlerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITAgentHandler *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITAgentHandler *This);
-      ULONG (WINAPI *Release)(ITAgentHandler *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITAgentHandler *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITAgentHandler *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITAgentHandler *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITAgentHandler *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Name)(ITAgentHandler *This,BSTR *ppName);
-      HRESULT (WINAPI *CreateAgent)(ITAgentHandler *This,ITAgent **ppAgent);
-      HRESULT (WINAPI *CreateAgentWithID)(ITAgentHandler *This,BSTR pID,BSTR pPIN,ITAgent **ppAgent);
-      HRESULT (WINAPI *EnumerateACDGroups)(ITAgentHandler *This,IEnumACDGroup **ppEnumACDGroup);
-      HRESULT (WINAPI *EnumerateUsableAddresses)(ITAgentHandler *This,IEnumAddress **ppEnumAddress);
-      HRESULT (WINAPI *get_ACDGroups)(ITAgentHandler *This,VARIANT *pVariant);
-      HRESULT (WINAPI *get_UsableAddresses)(ITAgentHandler *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *QueryInterface)(ITAgentHandler *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITAgentHandler *This);
+                   ULONG (WINAPI *Release)(ITAgentHandler *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITAgentHandler *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITAgentHandler *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITAgentHandler *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITAgentHandler *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Name)(ITAgentHandler *This,BSTR *ppName);
+                   HRESULT (WINAPI *CreateAgent)(ITAgentHandler *This,ITAgent **ppAgent);
+                   HRESULT (WINAPI *CreateAgentWithID)(ITAgentHandler *This,BSTR pID,BSTR pPIN,ITAgent **ppAgent);
+                   HRESULT (WINAPI *EnumerateACDGroups)(ITAgentHandler *This,IEnumACDGroup **ppEnumACDGroup);
+                   HRESULT (WINAPI *EnumerateUsableAddresses)(ITAgentHandler *This,IEnumAddress **ppEnumAddress);
+                   HRESULT (WINAPI *get_ACDGroups)(ITAgentHandler *This,VARIANT *pVariant);
+                   HRESULT (WINAPI *get_UsableAddresses)(ITAgentHandler *This,VARIANT *pVariant);
     END_INTERFACE
   } ITAgentHandlerVtbl;
   struct ITAgentHandler {
@@ -880,13 +880,13 @@ extern "C" {
 #else
   typedef struct IEnumAgentVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumAgent *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumAgent *This);
-      ULONG (WINAPI *Release)(IEnumAgent *This);
-      HRESULT (WINAPI *Next)(IEnumAgent *This,ULONG celt,ITAgent **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumAgent *This);
-      HRESULT (WINAPI *Skip)(IEnumAgent *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumAgent *This,IEnumAgent **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumAgent *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumAgent *This);
+                   ULONG (WINAPI *Release)(IEnumAgent *This);
+                   HRESULT (WINAPI *Next)(IEnumAgent *This,ULONG celt,ITAgent **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumAgent *This);
+                   HRESULT (WINAPI *Skip)(IEnumAgent *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumAgent *This,IEnumAgent **ppEnum);
     END_INTERFACE
   } IEnumAgentVtbl;
   struct IEnumAgent {
@@ -926,13 +926,13 @@ extern "C" {
 #else
   typedef struct IEnumAgentSessionVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumAgentSession *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumAgentSession *This);
-      ULONG (WINAPI *Release)(IEnumAgentSession *This);
-      HRESULT (WINAPI *Next)(IEnumAgentSession *This,ULONG celt,ITAgentSession **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumAgentSession *This);
-      HRESULT (WINAPI *Skip)(IEnumAgentSession *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumAgentSession *This,IEnumAgentSession **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumAgentSession *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumAgentSession *This);
+                   ULONG (WINAPI *Release)(IEnumAgentSession *This);
+                   HRESULT (WINAPI *Next)(IEnumAgentSession *This,ULONG celt,ITAgentSession **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumAgentSession *This);
+                   HRESULT (WINAPI *Skip)(IEnumAgentSession *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumAgentSession *This,IEnumAgentSession **ppEnum);
     END_INTERFACE
   } IEnumAgentSessionVtbl;
   struct IEnumAgentSession {
@@ -972,13 +972,13 @@ extern "C" {
 #else
   typedef struct IEnumQueueVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumQueue *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumQueue *This);
-      ULONG (WINAPI *Release)(IEnumQueue *This);
-      HRESULT (WINAPI *Next)(IEnumQueue *This,ULONG celt,ITQueue **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumQueue *This);
-      HRESULT (WINAPI *Skip)(IEnumQueue *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumQueue *This,IEnumQueue **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumQueue *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumQueue *This);
+                   ULONG (WINAPI *Release)(IEnumQueue *This);
+                   HRESULT (WINAPI *Next)(IEnumQueue *This,ULONG celt,ITQueue **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumQueue *This);
+                   HRESULT (WINAPI *Skip)(IEnumQueue *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumQueue *This,IEnumQueue **ppEnum);
     END_INTERFACE
   } IEnumQueueVtbl;
   struct IEnumQueue {
@@ -1018,13 +1018,13 @@ extern "C" {
 #else
   typedef struct IEnumACDGroupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumACDGroup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumACDGroup *This);
-      ULONG (WINAPI *Release)(IEnumACDGroup *This);
-      HRESULT (WINAPI *Next)(IEnumACDGroup *This,ULONG celt,ITACDGroup **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumACDGroup *This);
-      HRESULT (WINAPI *Skip)(IEnumACDGroup *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumACDGroup *This,IEnumACDGroup **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumACDGroup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumACDGroup *This);
+                   ULONG (WINAPI *Release)(IEnumACDGroup *This);
+                   HRESULT (WINAPI *Next)(IEnumACDGroup *This,ULONG celt,ITACDGroup **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumACDGroup *This);
+                   HRESULT (WINAPI *Skip)(IEnumACDGroup *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumACDGroup *This,IEnumACDGroup **ppEnum);
     END_INTERFACE
   } IEnumACDGroupVtbl;
   struct IEnumACDGroup {
@@ -1064,13 +1064,13 @@ extern "C" {
 #else
   typedef struct IEnumAgentHandlerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IEnumAgentHandler *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IEnumAgentHandler *This);
-      ULONG (WINAPI *Release)(IEnumAgentHandler *This);
-      HRESULT (WINAPI *Next)(IEnumAgentHandler *This,ULONG celt,ITAgentHandler **ppElements,ULONG *pceltFetched);
-      HRESULT (WINAPI *Reset)(IEnumAgentHandler *This);
-      HRESULT (WINAPI *Skip)(IEnumAgentHandler *This,ULONG celt);
-      HRESULT (WINAPI *Clone)(IEnumAgentHandler *This,IEnumAgentHandler **ppEnum);
+                   HRESULT (WINAPI *QueryInterface)(IEnumAgentHandler *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IEnumAgentHandler *This);
+                   ULONG (WINAPI *Release)(IEnumAgentHandler *This);
+                   HRESULT (WINAPI *Next)(IEnumAgentHandler *This,ULONG celt,ITAgentHandler **ppElements,ULONG *pceltFetched);
+                   HRESULT (WINAPI *Reset)(IEnumAgentHandler *This);
+                   HRESULT (WINAPI *Skip)(IEnumAgentHandler *This,ULONG celt);
+                   HRESULT (WINAPI *Clone)(IEnumAgentHandler *This,IEnumAgentHandler **ppEnum);
     END_INTERFACE
   } IEnumAgentHandlerVtbl;
   struct IEnumAgentHandler {

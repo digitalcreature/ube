@@ -96,7 +96,7 @@ static __inline__ int map_to_seg7(struct seg7_conversion_map *map, int c)
  ******************************************************************************/
 
 #define _SEG7(l,a,b,c,d,e,f,g)	\
-      (	a<<BIT_SEG7_A |	b<<BIT_SEG7_B |	c<<BIT_SEG7_C |	d<<BIT_SEG7_D |	\
+                   (	a<<BIT_SEG7_A |	b<<BIT_SEG7_B |	c<<BIT_SEG7_C |	d<<BIT_SEG7_D |	\
 	e<<BIT_SEG7_E |	f<<BIT_SEG7_F |	g<<BIT_SEG7_G )
 
 #define _MAP_0_32_ASCII_SEG7_NON_PRINTABLE	\

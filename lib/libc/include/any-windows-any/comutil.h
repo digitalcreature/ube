@@ -829,7 +829,7 @@ inline _variant_t &_variant_t::operator=(const _bstr_t &bstrSrc)
     V_BSTR(this) = ::SysAllocStringByteLen(reinterpret_cast<char *>(bstr),::SysStringByteLen(bstr));
 
     if(!(V_BSTR(this))) {
-      _com_issue_error(E_OUTOFMEMORY);
+                   _com_issue_error(E_OUTOFMEMORY);
     }
   }
 
@@ -851,7 +851,7 @@ inline _variant_t &_variant_t::operator=(const wchar_t *pSrc)
     V_BSTR(this) = ::SysAllocString(pSrc);
 
     if(!(V_BSTR(this))) {
-      _com_issue_error(E_OUTOFMEMORY);
+                   _com_issue_error(E_OUTOFMEMORY);
     }
   }
 

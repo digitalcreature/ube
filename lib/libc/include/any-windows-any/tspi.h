@@ -76,10 +76,10 @@ extern "C" {
     DWORD dwTotalSize;
     DWORD dwQOSRequestType;
     __C89_NAMELESS union {
-      struct {
+                   struct {
 	DWORD dwNumServiceLevelEntries;
 	LINEQOSSERVICELEVEL LineQOSServiceLevel[1];
-      } SetQOSServiceLevel;
+                   } SetQOSServiceLevel;
     };
   } LINECALLQOSINFO,*LPLINECALLQOSINFO;
 

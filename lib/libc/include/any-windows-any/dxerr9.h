@@ -37,12 +37,12 @@ HRESULT WINAPI DXTraceW(const char* strFile, DWORD dwLine, HRESULT hr, const WCH
 #define DXTrace __MINGW_NAME_AW(DXTrace)
 
 #if defined(DEBUG) || defined(_DEBUG)
-#define DXTRACE_MSG(str)                DXTrace(__FILE__, (DWORD)__LINE__, 0,  str, FALSE)
-#define DXTRACE_ERR(str,hr)             DXTrace(__FILE__, (DWORD)__LINE__, hr, str, TRUE)
+#define DXTRACE_MSG(str)                                          DXTrace(__FILE__, (DWORD)__LINE__, 0,  str, FALSE)
+#define DXTRACE_ERR(str,hr)                                       DXTrace(__FILE__, (DWORD)__LINE__, hr, str, TRUE)
 #define DXTRACE_ERR_NOMSGBOX(str,hr)    DXTrace(__FILE__, (DWORD)__LINE__, hr, str, FALSE)
 #else
-#define DXTRACE_MSG(str)                __MSABI_LONG(0)
-#define DXTRACE_ERR(str,hr)             (hr)
+#define DXTRACE_MSG(str)                                          __MSABI_LONG(0)
+#define DXTRACE_ERR(str,hr)                                       (hr)
 #define DXTRACE_ERR_NOMSGBOX(str,hr)    (hr)
 #endif
 

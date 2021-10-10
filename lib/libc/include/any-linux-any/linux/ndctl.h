@@ -184,18 +184,18 @@ static __inline__ const char *nvdimm_cmd_name(unsigned cmd)
 #define ND_IOCTL_CLEAR_ERROR		_IOWR(ND_IOCTL, ND_CMD_CLEAR_ERROR,\
 					struct nd_cmd_clear_error)
 
-#define ND_DEVICE_DIMM 1            /* nd_dimm: container for "config data" */
+#define ND_DEVICE_DIMM 1                                      /* nd_dimm: container for "config data" */
 #define ND_DEVICE_REGION_PMEM 2     /* nd_region: (parent of PMEM namespaces) */
-#define ND_DEVICE_REGION_BLK 3      /* nd_region: (parent of BLK namespaces) */
+#define ND_DEVICE_REGION_BLK 3                   /* nd_region: (parent of BLK namespaces) */
 #define ND_DEVICE_NAMESPACE_IO 4    /* legacy persistent memory */
 #define ND_DEVICE_NAMESPACE_PMEM 5  /* PMEM namespace (may alias with BLK) */
 #define ND_DEVICE_NAMESPACE_BLK 6   /* BLK namespace (may alias with PMEM) */
-#define ND_DEVICE_DAX_PMEM 7        /* Device DAX interface to pmem */
+#define ND_DEVICE_DAX_PMEM 7                     /* Device DAX interface to pmem */
 
 enum nd_driver_flags {
-	ND_DRIVER_DIMM            = 1 << ND_DEVICE_DIMM,
+	ND_DRIVER_DIMM                                      = 1 << ND_DEVICE_DIMM,
 	ND_DRIVER_REGION_PMEM     = 1 << ND_DEVICE_REGION_PMEM,
-	ND_DRIVER_REGION_BLK      = 1 << ND_DEVICE_REGION_BLK,
+	ND_DRIVER_REGION_BLK                   = 1 << ND_DEVICE_REGION_BLK,
 	ND_DRIVER_NAMESPACE_IO    = 1 << ND_DEVICE_NAMESPACE_IO,
 	ND_DRIVER_NAMESPACE_PMEM  = 1 << ND_DEVICE_NAMESPACE_PMEM,
 	ND_DRIVER_NAMESPACE_BLK   = 1 << ND_DEVICE_NAMESPACE_BLK,
@@ -239,7 +239,7 @@ struct nd_cmd_pkg {
 	__u32   nd_size_out;		/* INPUT: size of payload */
 	__u32   nd_reserved2[9];	/* reserved must be zero */
 	__u32   nd_fw_size;		/* OUTPUT: size fw wants to return */
-	unsigned char nd_payload[];	/* Contents of call      */
+	unsigned char nd_payload[];	/* Contents of call                   */
 };
 
 /* These NVDIMM families represent pre-standardization command sets */

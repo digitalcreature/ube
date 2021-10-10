@@ -87,53 +87,53 @@ extern "C"{
 #else
   typedef struct IBackgroundCopyJob3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBackgroundCopyJob3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBackgroundCopyJob3 *This);
-      ULONG (WINAPI *Release)(IBackgroundCopyJob3 *This);
-      HRESULT (WINAPI *AddFileSet)(IBackgroundCopyJob3 *This,ULONG cFileCount,BG_FILE_INFO *pFileSet);
-      HRESULT (WINAPI *AddFile)(IBackgroundCopyJob3 *This,LPCWSTR RemoteUrl,LPCWSTR LocalName);
-      HRESULT (WINAPI *EnumFiles)(IBackgroundCopyJob3 *This,IEnumBackgroundCopyFiles **pEnum);
-      HRESULT (WINAPI *Suspend)(IBackgroundCopyJob3 *This);
-      HRESULT (WINAPI *Resume)(IBackgroundCopyJob3 *This);
-      HRESULT (WINAPI *Cancel)(IBackgroundCopyJob3 *This);
-      HRESULT (WINAPI *Complete)(IBackgroundCopyJob3 *This);
-      HRESULT (WINAPI *GetId)(IBackgroundCopyJob3 *This,GUID *pVal);
-      HRESULT (WINAPI *GetType)(IBackgroundCopyJob3 *This,BG_JOB_TYPE *pVal);
-      HRESULT (WINAPI *GetProgress)(IBackgroundCopyJob3 *This,BG_JOB_PROGRESS *pVal);
-      HRESULT (WINAPI *GetTimes)(IBackgroundCopyJob3 *This,BG_JOB_TIMES *pVal);
-      HRESULT (WINAPI *GetState)(IBackgroundCopyJob3 *This,BG_JOB_STATE *pVal);
-      HRESULT (WINAPI *GetError)(IBackgroundCopyJob3 *This,IBackgroundCopyError **ppError);
-      HRESULT (WINAPI *GetOwner)(IBackgroundCopyJob3 *This,LPWSTR *pVal);
-      HRESULT (WINAPI *SetDisplayName)(IBackgroundCopyJob3 *This,LPCWSTR Val);
-      HRESULT (WINAPI *GetDisplayName)(IBackgroundCopyJob3 *This,LPWSTR *pVal);
-      HRESULT (WINAPI *SetDescription)(IBackgroundCopyJob3 *This,LPCWSTR Val);
-      HRESULT (WINAPI *GetDescription)(IBackgroundCopyJob3 *This,LPWSTR *pVal);
-      HRESULT (WINAPI *SetPriority)(IBackgroundCopyJob3 *This,BG_JOB_PRIORITY Val);
-      HRESULT (WINAPI *GetPriority)(IBackgroundCopyJob3 *This,BG_JOB_PRIORITY *pVal);
-      HRESULT (WINAPI *SetNotifyFlags)(IBackgroundCopyJob3 *This,ULONG Val);
-      HRESULT (WINAPI *GetNotifyFlags)(IBackgroundCopyJob3 *This,ULONG *pVal);
-      HRESULT (WINAPI *SetNotifyInterface)(IBackgroundCopyJob3 *This,IUnknown *Val);
-      HRESULT (WINAPI *GetNotifyInterface)(IBackgroundCopyJob3 *This,IUnknown **pVal);
-      HRESULT (WINAPI *SetMinimumRetryDelay)(IBackgroundCopyJob3 *This,ULONG Seconds);
-      HRESULT (WINAPI *GetMinimumRetryDelay)(IBackgroundCopyJob3 *This,ULONG *Seconds);
-      HRESULT (WINAPI *SetNoProgressTimeout)(IBackgroundCopyJob3 *This,ULONG Seconds);
-      HRESULT (WINAPI *GetNoProgressTimeout)(IBackgroundCopyJob3 *This,ULONG *Seconds);
-      HRESULT (WINAPI *GetErrorCount)(IBackgroundCopyJob3 *This,ULONG *Errors);
-      HRESULT (WINAPI *SetProxySettings)(IBackgroundCopyJob3 *This,BG_JOB_PROXY_USAGE ProxyUsage,const WCHAR *ProxyList,const WCHAR *ProxyBypassList);
-      HRESULT (WINAPI *GetProxySettings)(IBackgroundCopyJob3 *This,BG_JOB_PROXY_USAGE *pProxyUsage,LPWSTR *pProxyList,LPWSTR *pProxyBypassList);
-      HRESULT (WINAPI *TakeOwnership)(IBackgroundCopyJob3 *This);
-      HRESULT (WINAPI *SetNotifyCmdLine)(IBackgroundCopyJob3 *This,LPCWSTR Program,LPCWSTR Parameters);
-      HRESULT (WINAPI *GetNotifyCmdLine)(IBackgroundCopyJob3 *This,LPWSTR *pProgram,LPWSTR *pParameters);
-      HRESULT (WINAPI *GetReplyProgress)(IBackgroundCopyJob3 *This,BG_JOB_REPLY_PROGRESS *pProgress);
-      HRESULT (WINAPI *GetReplyData)(IBackgroundCopyJob3 *This,byte **ppBuffer,UINT64 *pLength);
-      HRESULT (WINAPI *SetReplyFileName)(IBackgroundCopyJob3 *This,LPCWSTR ReplyFileName);
-      HRESULT (WINAPI *GetReplyFileName)(IBackgroundCopyJob3 *This,LPWSTR *pReplyFileName);
-      HRESULT (WINAPI *SetCredentials)(IBackgroundCopyJob3 *This,BG_AUTH_CREDENTIALS *credentials);
-      HRESULT (WINAPI *RemoveCredentials)(IBackgroundCopyJob3 *This,BG_AUTH_TARGET Target,BG_AUTH_SCHEME Scheme);
-      HRESULT (WINAPI *ReplaceRemotePrefix)(IBackgroundCopyJob3 *This,LPCWSTR OldPrefix,LPCWSTR NewPrefix);
-      HRESULT (WINAPI *AddFileWithRanges)(IBackgroundCopyJob3 *This,LPCWSTR RemoteUrl,LPCWSTR LocalName,DWORD RangeCount,BG_FILE_RANGE Ranges[]);
-      HRESULT (WINAPI *SetFileACLFlags)(IBackgroundCopyJob3 *This,DWORD Flags);
-      HRESULT (WINAPI *GetFileACLFlags)(IBackgroundCopyJob3 *This,DWORD *Flags);
+                   HRESULT (WINAPI *QueryInterface)(IBackgroundCopyJob3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBackgroundCopyJob3 *This);
+                   ULONG (WINAPI *Release)(IBackgroundCopyJob3 *This);
+                   HRESULT (WINAPI *AddFileSet)(IBackgroundCopyJob3 *This,ULONG cFileCount,BG_FILE_INFO *pFileSet);
+                   HRESULT (WINAPI *AddFile)(IBackgroundCopyJob3 *This,LPCWSTR RemoteUrl,LPCWSTR LocalName);
+                   HRESULT (WINAPI *EnumFiles)(IBackgroundCopyJob3 *This,IEnumBackgroundCopyFiles **pEnum);
+                   HRESULT (WINAPI *Suspend)(IBackgroundCopyJob3 *This);
+                   HRESULT (WINAPI *Resume)(IBackgroundCopyJob3 *This);
+                   HRESULT (WINAPI *Cancel)(IBackgroundCopyJob3 *This);
+                   HRESULT (WINAPI *Complete)(IBackgroundCopyJob3 *This);
+                   HRESULT (WINAPI *GetId)(IBackgroundCopyJob3 *This,GUID *pVal);
+                   HRESULT (WINAPI *GetType)(IBackgroundCopyJob3 *This,BG_JOB_TYPE *pVal);
+                   HRESULT (WINAPI *GetProgress)(IBackgroundCopyJob3 *This,BG_JOB_PROGRESS *pVal);
+                   HRESULT (WINAPI *GetTimes)(IBackgroundCopyJob3 *This,BG_JOB_TIMES *pVal);
+                   HRESULT (WINAPI *GetState)(IBackgroundCopyJob3 *This,BG_JOB_STATE *pVal);
+                   HRESULT (WINAPI *GetError)(IBackgroundCopyJob3 *This,IBackgroundCopyError **ppError);
+                   HRESULT (WINAPI *GetOwner)(IBackgroundCopyJob3 *This,LPWSTR *pVal);
+                   HRESULT (WINAPI *SetDisplayName)(IBackgroundCopyJob3 *This,LPCWSTR Val);
+                   HRESULT (WINAPI *GetDisplayName)(IBackgroundCopyJob3 *This,LPWSTR *pVal);
+                   HRESULT (WINAPI *SetDescription)(IBackgroundCopyJob3 *This,LPCWSTR Val);
+                   HRESULT (WINAPI *GetDescription)(IBackgroundCopyJob3 *This,LPWSTR *pVal);
+                   HRESULT (WINAPI *SetPriority)(IBackgroundCopyJob3 *This,BG_JOB_PRIORITY Val);
+                   HRESULT (WINAPI *GetPriority)(IBackgroundCopyJob3 *This,BG_JOB_PRIORITY *pVal);
+                   HRESULT (WINAPI *SetNotifyFlags)(IBackgroundCopyJob3 *This,ULONG Val);
+                   HRESULT (WINAPI *GetNotifyFlags)(IBackgroundCopyJob3 *This,ULONG *pVal);
+                   HRESULT (WINAPI *SetNotifyInterface)(IBackgroundCopyJob3 *This,IUnknown *Val);
+                   HRESULT (WINAPI *GetNotifyInterface)(IBackgroundCopyJob3 *This,IUnknown **pVal);
+                   HRESULT (WINAPI *SetMinimumRetryDelay)(IBackgroundCopyJob3 *This,ULONG Seconds);
+                   HRESULT (WINAPI *GetMinimumRetryDelay)(IBackgroundCopyJob3 *This,ULONG *Seconds);
+                   HRESULT (WINAPI *SetNoProgressTimeout)(IBackgroundCopyJob3 *This,ULONG Seconds);
+                   HRESULT (WINAPI *GetNoProgressTimeout)(IBackgroundCopyJob3 *This,ULONG *Seconds);
+                   HRESULT (WINAPI *GetErrorCount)(IBackgroundCopyJob3 *This,ULONG *Errors);
+                   HRESULT (WINAPI *SetProxySettings)(IBackgroundCopyJob3 *This,BG_JOB_PROXY_USAGE ProxyUsage,const WCHAR *ProxyList,const WCHAR *ProxyBypassList);
+                   HRESULT (WINAPI *GetProxySettings)(IBackgroundCopyJob3 *This,BG_JOB_PROXY_USAGE *pProxyUsage,LPWSTR *pProxyList,LPWSTR *pProxyBypassList);
+                   HRESULT (WINAPI *TakeOwnership)(IBackgroundCopyJob3 *This);
+                   HRESULT (WINAPI *SetNotifyCmdLine)(IBackgroundCopyJob3 *This,LPCWSTR Program,LPCWSTR Parameters);
+                   HRESULT (WINAPI *GetNotifyCmdLine)(IBackgroundCopyJob3 *This,LPWSTR *pProgram,LPWSTR *pParameters);
+                   HRESULT (WINAPI *GetReplyProgress)(IBackgroundCopyJob3 *This,BG_JOB_REPLY_PROGRESS *pProgress);
+                   HRESULT (WINAPI *GetReplyData)(IBackgroundCopyJob3 *This,byte **ppBuffer,UINT64 *pLength);
+                   HRESULT (WINAPI *SetReplyFileName)(IBackgroundCopyJob3 *This,LPCWSTR ReplyFileName);
+                   HRESULT (WINAPI *GetReplyFileName)(IBackgroundCopyJob3 *This,LPWSTR *pReplyFileName);
+                   HRESULT (WINAPI *SetCredentials)(IBackgroundCopyJob3 *This,BG_AUTH_CREDENTIALS *credentials);
+                   HRESULT (WINAPI *RemoveCredentials)(IBackgroundCopyJob3 *This,BG_AUTH_TARGET Target,BG_AUTH_SCHEME Scheme);
+                   HRESULT (WINAPI *ReplaceRemotePrefix)(IBackgroundCopyJob3 *This,LPCWSTR OldPrefix,LPCWSTR NewPrefix);
+                   HRESULT (WINAPI *AddFileWithRanges)(IBackgroundCopyJob3 *This,LPCWSTR RemoteUrl,LPCWSTR LocalName,DWORD RangeCount,BG_FILE_RANGE Ranges[]);
+                   HRESULT (WINAPI *SetFileACLFlags)(IBackgroundCopyJob3 *This,DWORD Flags);
+                   HRESULT (WINAPI *GetFileACLFlags)(IBackgroundCopyJob3 *This,DWORD *Flags);
     END_INTERFACE
   } IBackgroundCopyJob3Vtbl;
   struct IBackgroundCopyJob3 {
@@ -211,14 +211,14 @@ extern "C"{
 #else
   typedef struct IBackgroundCopyFile2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IBackgroundCopyFile2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IBackgroundCopyFile2 *This);
-      ULONG (WINAPI *Release)(IBackgroundCopyFile2 *This);
-      HRESULT (WINAPI *GetRemoteName)(IBackgroundCopyFile2 *This,LPWSTR *pVal);
-      HRESULT (WINAPI *GetLocalName)(IBackgroundCopyFile2 *This,LPWSTR *pVal);
-      HRESULT (WINAPI *GetProgress)(IBackgroundCopyFile2 *This,BG_FILE_PROGRESS *pVal);
-      HRESULT (WINAPI *GetFileRanges)(IBackgroundCopyFile2 *This,DWORD *RangeCount,BG_FILE_RANGE **Ranges);
-      HRESULT (WINAPI *SetRemoteName)(IBackgroundCopyFile2 *This,LPCWSTR Val);
+                   HRESULT (WINAPI *QueryInterface)(IBackgroundCopyFile2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IBackgroundCopyFile2 *This);
+                   ULONG (WINAPI *Release)(IBackgroundCopyFile2 *This);
+                   HRESULT (WINAPI *GetRemoteName)(IBackgroundCopyFile2 *This,LPWSTR *pVal);
+                   HRESULT (WINAPI *GetLocalName)(IBackgroundCopyFile2 *This,LPWSTR *pVal);
+                   HRESULT (WINAPI *GetProgress)(IBackgroundCopyFile2 *This,BG_FILE_PROGRESS *pVal);
+                   HRESULT (WINAPI *GetFileRanges)(IBackgroundCopyFile2 *This,DWORD *RangeCount,BG_FILE_RANGE **Ranges);
+                   HRESULT (WINAPI *SetRemoteName)(IBackgroundCopyFile2 *This,LPCWSTR Val);
     END_INTERFACE
   } IBackgroundCopyFile2Vtbl;
   struct IBackgroundCopyFile2 {

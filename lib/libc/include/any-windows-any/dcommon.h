@@ -97,92 +97,92 @@ typedef struct D2D_SIZE_U {
 typedef struct D2D_SIZE_U D2D1_SIZE_U;
 typedef struct D2D_MATRIX_3X2_F {
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            float m11;
-            float m12;
-            float m21;
-            float m22;
-            float dx;
-            float dy;
-        } __C89_NAMELESSSTRUCTNAME1;
-        __C89_NAMELESS struct {
-            float _11;
-            float _12;
-            float _21;
-            float _22;
-            float _31;
-            float _32;
-        } __C89_NAMELESSSTRUCTNAME2;
-        float m[3][2];
+                     __C89_NAMELESS struct {
+                                      float m11;
+                                      float m12;
+                                      float m21;
+                                      float m22;
+                                      float dx;
+                                      float dy;
+                     } __C89_NAMELESSSTRUCTNAME1;
+                     __C89_NAMELESS struct {
+                                      float _11;
+                                      float _12;
+                                      float _21;
+                                      float _22;
+                                      float _31;
+                                      float _32;
+                     } __C89_NAMELESSSTRUCTNAME2;
+                     float m[3][2];
     } __C89_NAMELESSUNIONNAME;
 } D2D_MATRIX_3X2_F;
 typedef struct D2D_MATRIX_4X3_F {
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            float _11;
-            float _12;
-            float _13;
-            float _21;
-            float _22;
-            float _23;
-            float _31;
-            float _32;
-            float _33;
-            float _41;
-            float _42;
-            float _43;
-        } __C89_NAMELESSSTRUCTNAME;
-        float m[4][3];
+                     __C89_NAMELESS struct {
+                                      float _11;
+                                      float _12;
+                                      float _13;
+                                      float _21;
+                                      float _22;
+                                      float _23;
+                                      float _31;
+                                      float _32;
+                                      float _33;
+                                      float _41;
+                                      float _42;
+                                      float _43;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     float m[4][3];
     } __C89_NAMELESSUNIONNAME;
 } D2D_MATRIX_4X3_F;
 typedef struct D2D_MATRIX_4X4_F {
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            float _11;
-            float _12;
-            float _13;
-            float _14;
-            float _21;
-            float _22;
-            float _23;
-            float _24;
-            float _31;
-            float _32;
-            float _33;
-            float _34;
-            float _41;
-            float _42;
-            float _43;
-            float _44;
-        } __C89_NAMELESSSTRUCTNAME;
-        float m[4][4];
+                     __C89_NAMELESS struct {
+                                      float _11;
+                                      float _12;
+                                      float _13;
+                                      float _14;
+                                      float _21;
+                                      float _22;
+                                      float _23;
+                                      float _24;
+                                      float _31;
+                                      float _32;
+                                      float _33;
+                                      float _34;
+                                      float _41;
+                                      float _42;
+                                      float _43;
+                                      float _44;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     float m[4][4];
     } __C89_NAMELESSUNIONNAME;
 } D2D_MATRIX_4X4_F;
 typedef struct D2D_MATRIX_5X4_F {
     __C89_NAMELESS union {
-        __C89_NAMELESS struct {
-            float _11;
-            float _12;
-            float _13;
-            float _14;
-            float _21;
-            float _22;
-            float _23;
-            float _24;
-            float _31;
-            float _32;
-            float _33;
-            float _34;
-            float _41;
-            float _42;
-            float _43;
-            float _44;
-            float _51;
-            float _52;
-            float _53;
-            float _54;
-        } __C89_NAMELESSSTRUCTNAME;
-        float m[5][4];
+                     __C89_NAMELESS struct {
+                                      float _11;
+                                      float _12;
+                                      float _13;
+                                      float _14;
+                                      float _21;
+                                      float _22;
+                                      float _23;
+                                      float _24;
+                                      float _31;
+                                      float _32;
+                                      float _33;
+                                      float _34;
+                                      float _41;
+                                      float _42;
+                                      float _43;
+                                      float _44;
+                                      float _51;
+                                      float _52;
+                                      float _53;
+                                      float _54;
+                     } __C89_NAMELESSSTRUCTNAME;
+                     float m[5][4];
     } __C89_NAMELESSUNIONNAME;
 } D2D_MATRIX_5X4_F;
 /* Begin additional prototypes for all interfaces */

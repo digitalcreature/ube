@@ -285,27 +285,27 @@ extern "C" {
 #else
   typedef struct IByteBufferVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IByteBuffer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IByteBuffer *This);
-      ULONG (WINAPI *Release)(IByteBuffer *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IByteBuffer *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IByteBuffer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IByteBuffer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IByteBuffer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Stream)(IByteBuffer *This,LPSTREAM *ppStream);
-      HRESULT (WINAPI *put_Stream)(IByteBuffer *This,LPSTREAM pStream);
-      HRESULT (WINAPI *Clone)(IByteBuffer *This,LPBYTEBUFFER *ppByteBuffer);
-      HRESULT (WINAPI *Commit)(IByteBuffer *This,LONG grfCommitFlags);
-      HRESULT (WINAPI *CopyTo)(IByteBuffer *This,LPBYTEBUFFER *ppByteBuffer,LONG cb,LONG *pcbRead,LONG *pcbWritten);
-      HRESULT (WINAPI *Initialize)(IByteBuffer *This,LONG lSize,BYTE *pData);
-      HRESULT (WINAPI *LockRegion)(IByteBuffer *This,LONG libOffset,LONG cb,LONG dwLockType);
-      HRESULT (WINAPI *Read)(IByteBuffer *This,BYTE *pByte,LONG cb,LONG *pcbRead);
-      HRESULT (WINAPI *Revert)(IByteBuffer *This);
-      HRESULT (WINAPI *Seek)(IByteBuffer *This,LONG dLibMove,LONG dwOrigin,LONG *pLibnewPosition);
-      HRESULT (WINAPI *SetSize)(IByteBuffer *This,LONG libNewSize);
-      HRESULT (WINAPI *Stat)(IByteBuffer *This,LPSTATSTRUCT pstatstg,LONG grfStatFlag);
-      HRESULT (WINAPI *UnlockRegion)(IByteBuffer *This,LONG libOffset,LONG cb,LONG dwLockType);
-      HRESULT (WINAPI *Write)(IByteBuffer *This,BYTE *pByte,LONG cb,LONG *pcbWritten);
+                   HRESULT (WINAPI *QueryInterface)(IByteBuffer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IByteBuffer *This);
+                   ULONG (WINAPI *Release)(IByteBuffer *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IByteBuffer *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IByteBuffer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IByteBuffer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IByteBuffer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Stream)(IByteBuffer *This,LPSTREAM *ppStream);
+                   HRESULT (WINAPI *put_Stream)(IByteBuffer *This,LPSTREAM pStream);
+                   HRESULT (WINAPI *Clone)(IByteBuffer *This,LPBYTEBUFFER *ppByteBuffer);
+                   HRESULT (WINAPI *Commit)(IByteBuffer *This,LONG grfCommitFlags);
+                   HRESULT (WINAPI *CopyTo)(IByteBuffer *This,LPBYTEBUFFER *ppByteBuffer,LONG cb,LONG *pcbRead,LONG *pcbWritten);
+                   HRESULT (WINAPI *Initialize)(IByteBuffer *This,LONG lSize,BYTE *pData);
+                   HRESULT (WINAPI *LockRegion)(IByteBuffer *This,LONG libOffset,LONG cb,LONG dwLockType);
+                   HRESULT (WINAPI *Read)(IByteBuffer *This,BYTE *pByte,LONG cb,LONG *pcbRead);
+                   HRESULT (WINAPI *Revert)(IByteBuffer *This);
+                   HRESULT (WINAPI *Seek)(IByteBuffer *This,LONG dLibMove,LONG dwOrigin,LONG *pLibnewPosition);
+                   HRESULT (WINAPI *SetSize)(IByteBuffer *This,LONG libNewSize);
+                   HRESULT (WINAPI *Stat)(IByteBuffer *This,LPSTATSTRUCT pstatstg,LONG grfStatFlag);
+                   HRESULT (WINAPI *UnlockRegion)(IByteBuffer *This,LONG libOffset,LONG cb,LONG dwLockType);
+                   HRESULT (WINAPI *Write)(IByteBuffer *This,BYTE *pByte,LONG cb,LONG *pcbWritten);
     END_INTERFACE
   } IByteBufferVtbl;
   struct IByteBuffer {
@@ -393,23 +393,23 @@ extern "C" {
 #else
   typedef struct ISCardTypeConvVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISCardTypeConv *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISCardTypeConv *This);
-      ULONG (WINAPI *Release)(ISCardTypeConv *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISCardTypeConv *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISCardTypeConv *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISCardTypeConv *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISCardTypeConv *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *ConvertByteArrayToByteBuffer)(ISCardTypeConv *This,LPBYTE pbyArray,DWORD dwArraySize,LPBYTEBUFFER *ppbyBuffer);
-      HRESULT (WINAPI *ConvertByteBufferToByteArray)(ISCardTypeConv *This,LPBYTEBUFFER pbyBuffer,LPBYTEARRAY *ppArray);
-      HRESULT (WINAPI *ConvertByteBufferToSafeArray)(ISCardTypeConv *This,LPBYTEBUFFER pbyBuffer,LPSAFEARRAY *ppbyArray);
-      HRESULT (WINAPI *ConvertSafeArrayToByteBuffer)(ISCardTypeConv *This,LPSAFEARRAY pbyArray,LPBYTEBUFFER *ppbyBuff);
-      HRESULT (WINAPI *CreateByteArray)(ISCardTypeConv *This,DWORD dwAllocSize,LPBYTE *ppbyArray);
-      HRESULT (WINAPI *CreateByteBuffer)(ISCardTypeConv *This,DWORD dwAllocSize,LPBYTEBUFFER *ppbyBuff);
-      HRESULT (WINAPI *CreateSafeArray)(ISCardTypeConv *This,UINT nAllocSize,LPSAFEARRAY *ppArray);
-      HRESULT (WINAPI *FreeIStreamMemoryPtr)(ISCardTypeConv *This,LPSTREAM pStrm,LPBYTE pMem);
-      HRESULT (WINAPI *GetAtIStreamMemory)(ISCardTypeConv *This,LPSTREAM pStrm,LPBYTEARRAY *ppMem);
-      HRESULT (WINAPI *SizeOfIStream)(ISCardTypeConv *This,LPSTREAM pStrm,ULARGE_INTEGER *puliSize);
+                   HRESULT (WINAPI *QueryInterface)(ISCardTypeConv *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISCardTypeConv *This);
+                   ULONG (WINAPI *Release)(ISCardTypeConv *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISCardTypeConv *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISCardTypeConv *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISCardTypeConv *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISCardTypeConv *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *ConvertByteArrayToByteBuffer)(ISCardTypeConv *This,LPBYTE pbyArray,DWORD dwArraySize,LPBYTEBUFFER *ppbyBuffer);
+                   HRESULT (WINAPI *ConvertByteBufferToByteArray)(ISCardTypeConv *This,LPBYTEBUFFER pbyBuffer,LPBYTEARRAY *ppArray);
+                   HRESULT (WINAPI *ConvertByteBufferToSafeArray)(ISCardTypeConv *This,LPBYTEBUFFER pbyBuffer,LPSAFEARRAY *ppbyArray);
+                   HRESULT (WINAPI *ConvertSafeArrayToByteBuffer)(ISCardTypeConv *This,LPSAFEARRAY pbyArray,LPBYTEBUFFER *ppbyBuff);
+                   HRESULT (WINAPI *CreateByteArray)(ISCardTypeConv *This,DWORD dwAllocSize,LPBYTE *ppbyArray);
+                   HRESULT (WINAPI *CreateByteBuffer)(ISCardTypeConv *This,DWORD dwAllocSize,LPBYTEBUFFER *ppbyBuff);
+                   HRESULT (WINAPI *CreateSafeArray)(ISCardTypeConv *This,UINT nAllocSize,LPSAFEARRAY *ppArray);
+                   HRESULT (WINAPI *FreeIStreamMemoryPtr)(ISCardTypeConv *This,LPSTREAM pStrm,LPBYTE pMem);
+                   HRESULT (WINAPI *GetAtIStreamMemory)(ISCardTypeConv *This,LPSTREAM pStrm,LPBYTEARRAY *ppMem);
+                   HRESULT (WINAPI *SizeOfIStream)(ISCardTypeConv *This,LPSTREAM pStrm,ULARGE_INTEGER *puliSize);
     END_INTERFACE
   } ISCardTypeConvVtbl;
   struct ISCardTypeConv {
@@ -507,46 +507,46 @@ extern "C" {
 #else
   typedef struct ISCardCmdVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISCardCmd *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISCardCmd *This);
-      ULONG (WINAPI *Release)(ISCardCmd *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISCardCmd *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISCardCmd *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISCardCmd *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISCardCmd *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Apdu)(ISCardCmd *This,LPBYTEBUFFER *ppApdu);
-      HRESULT (WINAPI *put_Apdu)(ISCardCmd *This,LPBYTEBUFFER pApdu);
-      HRESULT (WINAPI *get_ApduLength)(ISCardCmd *This,LONG *plSize);
-      HRESULT (WINAPI *get_ApduReply)(ISCardCmd *This,LPBYTEBUFFER *ppReplyApdu);
-      HRESULT (WINAPI *put_ApduReply)(ISCardCmd *This,LPBYTEBUFFER pReplyApdu);
-      HRESULT (WINAPI *get_ApduReplyLength)(ISCardCmd *This,LONG *plSize);
-      HRESULT (WINAPI *put_ApduReplyLength)(ISCardCmd *This,LONG lSize);
-      HRESULT (WINAPI *get_ClassId)(ISCardCmd *This,BYTE *pbyClass);
-      HRESULT (WINAPI *put_ClassId)(ISCardCmd *This,BYTE byClass);
-      HRESULT (WINAPI *get_Data)(ISCardCmd *This,LPBYTEBUFFER *ppData);
-      HRESULT (WINAPI *put_Data)(ISCardCmd *This,LPBYTEBUFFER pData);
-      HRESULT (WINAPI *get_InstructionId)(ISCardCmd *This,BYTE *pbyIns);
-      HRESULT (WINAPI *put_InstructionId)(ISCardCmd *This,BYTE byIns);
-      HRESULT (WINAPI *get_LeField)(ISCardCmd *This,LONG *plSize);
-      HRESULT (WINAPI *get_P1)(ISCardCmd *This,BYTE *pbyP1);
-      HRESULT (WINAPI *put_P1)(ISCardCmd *This,BYTE byP1);
-      HRESULT (WINAPI *get_P2)(ISCardCmd *This,BYTE *pbyP2);
-      HRESULT (WINAPI *put_P2)(ISCardCmd *This,BYTE byP2);
-      HRESULT (WINAPI *get_P3)(ISCardCmd *This,BYTE *pbyP3);
-      HRESULT (WINAPI *get_ReplyStatus)(ISCardCmd *This,LPWORD pwStatus);
-      HRESULT (WINAPI *put_ReplyStatus)(ISCardCmd *This,WORD wStatus);
-      HRESULT (WINAPI *get_ReplyStatusSW1)(ISCardCmd *This,BYTE *pbySW1);
-      HRESULT (WINAPI *get_ReplyStatusSW2)(ISCardCmd *This,BYTE *pbySW2);
-      HRESULT (WINAPI *get_Type)(ISCardCmd *This,ISO_APDU_TYPE *pType);
-      HRESULT (WINAPI *get_Nad)(ISCardCmd *This,BYTE *pbNad);
-      HRESULT (WINAPI *put_Nad)(ISCardCmd *This,BYTE bNad);
-      HRESULT (WINAPI *get_ReplyNad)(ISCardCmd *This,BYTE *pbNad);
-      HRESULT (WINAPI *put_ReplyNad)(ISCardCmd *This,BYTE bNad);
-      HRESULT (WINAPI *BuildCmd)(ISCardCmd *This,BYTE byClassId,BYTE byInsId,BYTE byP1,BYTE byP2,LPBYTEBUFFER pbyData,LONG *plLe);
-      HRESULT (WINAPI *Clear)(ISCardCmd *This);
-      HRESULT (WINAPI *Encapsulate)(ISCardCmd *This,LPBYTEBUFFER pApdu,ISO_APDU_TYPE ApduType);
-      HRESULT (WINAPI *get_AlternateClassId)(ISCardCmd *This,BYTE *pbyClass);
-      HRESULT (WINAPI *put_AlternateClassId)(ISCardCmd *This,BYTE byClass);
+                   HRESULT (WINAPI *QueryInterface)(ISCardCmd *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISCardCmd *This);
+                   ULONG (WINAPI *Release)(ISCardCmd *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISCardCmd *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISCardCmd *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISCardCmd *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISCardCmd *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Apdu)(ISCardCmd *This,LPBYTEBUFFER *ppApdu);
+                   HRESULT (WINAPI *put_Apdu)(ISCardCmd *This,LPBYTEBUFFER pApdu);
+                   HRESULT (WINAPI *get_ApduLength)(ISCardCmd *This,LONG *plSize);
+                   HRESULT (WINAPI *get_ApduReply)(ISCardCmd *This,LPBYTEBUFFER *ppReplyApdu);
+                   HRESULT (WINAPI *put_ApduReply)(ISCardCmd *This,LPBYTEBUFFER pReplyApdu);
+                   HRESULT (WINAPI *get_ApduReplyLength)(ISCardCmd *This,LONG *plSize);
+                   HRESULT (WINAPI *put_ApduReplyLength)(ISCardCmd *This,LONG lSize);
+                   HRESULT (WINAPI *get_ClassId)(ISCardCmd *This,BYTE *pbyClass);
+                   HRESULT (WINAPI *put_ClassId)(ISCardCmd *This,BYTE byClass);
+                   HRESULT (WINAPI *get_Data)(ISCardCmd *This,LPBYTEBUFFER *ppData);
+                   HRESULT (WINAPI *put_Data)(ISCardCmd *This,LPBYTEBUFFER pData);
+                   HRESULT (WINAPI *get_InstructionId)(ISCardCmd *This,BYTE *pbyIns);
+                   HRESULT (WINAPI *put_InstructionId)(ISCardCmd *This,BYTE byIns);
+                   HRESULT (WINAPI *get_LeField)(ISCardCmd *This,LONG *plSize);
+                   HRESULT (WINAPI *get_P1)(ISCardCmd *This,BYTE *pbyP1);
+                   HRESULT (WINAPI *put_P1)(ISCardCmd *This,BYTE byP1);
+                   HRESULT (WINAPI *get_P2)(ISCardCmd *This,BYTE *pbyP2);
+                   HRESULT (WINAPI *put_P2)(ISCardCmd *This,BYTE byP2);
+                   HRESULT (WINAPI *get_P3)(ISCardCmd *This,BYTE *pbyP3);
+                   HRESULT (WINAPI *get_ReplyStatus)(ISCardCmd *This,LPWORD pwStatus);
+                   HRESULT (WINAPI *put_ReplyStatus)(ISCardCmd *This,WORD wStatus);
+                   HRESULT (WINAPI *get_ReplyStatusSW1)(ISCardCmd *This,BYTE *pbySW1);
+                   HRESULT (WINAPI *get_ReplyStatusSW2)(ISCardCmd *This,BYTE *pbySW2);
+                   HRESULT (WINAPI *get_Type)(ISCardCmd *This,ISO_APDU_TYPE *pType);
+                   HRESULT (WINAPI *get_Nad)(ISCardCmd *This,BYTE *pbNad);
+                   HRESULT (WINAPI *put_Nad)(ISCardCmd *This,BYTE bNad);
+                   HRESULT (WINAPI *get_ReplyNad)(ISCardCmd *This,BYTE *pbNad);
+                   HRESULT (WINAPI *put_ReplyNad)(ISCardCmd *This,BYTE bNad);
+                   HRESULT (WINAPI *BuildCmd)(ISCardCmd *This,BYTE byClassId,BYTE byInsId,BYTE byP1,BYTE byP2,LPBYTEBUFFER pbyData,LONG *plLe);
+                   HRESULT (WINAPI *Clear)(ISCardCmd *This);
+                   HRESULT (WINAPI *Encapsulate)(ISCardCmd *This,LPBYTEBUFFER pApdu,ISO_APDU_TYPE ApduType);
+                   HRESULT (WINAPI *get_AlternateClassId)(ISCardCmd *This,BYTE *pbyClass);
+                   HRESULT (WINAPI *put_AlternateClassId)(ISCardCmd *This,BYTE byClass);
     END_INTERFACE
   } ISCardCmdVtbl;
   struct ISCardCmd {
@@ -699,31 +699,31 @@ extern "C" {
 #else
   typedef struct ISCardISO7816Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISCardISO7816 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISCardISO7816 *This);
-      ULONG (WINAPI *Release)(ISCardISO7816 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISCardISO7816 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISCardISO7816 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISCardISO7816 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISCardISO7816 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *AppendRecord)(ISCardISO7816 *This,BYTE byRefCtrl,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *EraseBinary)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *ExternalAuthenticate)(ISCardISO7816 *This,BYTE byAlgorithmRef,BYTE bySecretRef,LPBYTEBUFFER pChallenge,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *GetChallenge)(ISCardISO7816 *This,LONG lBytesExpected,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *GetData)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LONG lBytesToGet,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *GetResponse)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LONG lDataLength,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *InternalAuthenticate)(ISCardISO7816 *This,BYTE byAlgorithmRef,BYTE bySecretRef,LPBYTEBUFFER pChallenge,LONG lReplyBytes,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *ManageChannel)(ISCardISO7816 *This,BYTE byChannelState,BYTE byChannel,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *PutData)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *ReadBinary)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LONG lBytesToRead,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *ReadRecord)(ISCardISO7816 *This,BYTE byRecordId,BYTE byRefCtrl,LONG lBytesToRead,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *SelectFile)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LONG lBytesToRead,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *SetDefaultClassId)(ISCardISO7816 *This,BYTE byClass);
-      HRESULT (WINAPI *UpdateBinary)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *UpdateRecord)(ISCardISO7816 *This,BYTE byRecordId,BYTE byRefCtrl,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *Verify)(ISCardISO7816 *This,BYTE byRefCtrl,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *WriteBinary)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *WriteRecord)(ISCardISO7816 *This,BYTE byRecordId,BYTE byRefCtrl,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *QueryInterface)(ISCardISO7816 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISCardISO7816 *This);
+                   ULONG (WINAPI *Release)(ISCardISO7816 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISCardISO7816 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISCardISO7816 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISCardISO7816 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISCardISO7816 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *AppendRecord)(ISCardISO7816 *This,BYTE byRefCtrl,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *EraseBinary)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *ExternalAuthenticate)(ISCardISO7816 *This,BYTE byAlgorithmRef,BYTE bySecretRef,LPBYTEBUFFER pChallenge,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *GetChallenge)(ISCardISO7816 *This,LONG lBytesExpected,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *GetData)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LONG lBytesToGet,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *GetResponse)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LONG lDataLength,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *InternalAuthenticate)(ISCardISO7816 *This,BYTE byAlgorithmRef,BYTE bySecretRef,LPBYTEBUFFER pChallenge,LONG lReplyBytes,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *ManageChannel)(ISCardISO7816 *This,BYTE byChannelState,BYTE byChannel,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *PutData)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *ReadBinary)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LONG lBytesToRead,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *ReadRecord)(ISCardISO7816 *This,BYTE byRecordId,BYTE byRefCtrl,LONG lBytesToRead,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *SelectFile)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LONG lBytesToRead,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *SetDefaultClassId)(ISCardISO7816 *This,BYTE byClass);
+                   HRESULT (WINAPI *UpdateBinary)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *UpdateRecord)(ISCardISO7816 *This,BYTE byRecordId,BYTE byRefCtrl,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *Verify)(ISCardISO7816 *This,BYTE byRefCtrl,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *WriteBinary)(ISCardISO7816 *This,BYTE byP1,BYTE byP2,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *WriteRecord)(ISCardISO7816 *This,BYTE byRecordId,BYTE byRefCtrl,LPBYTEBUFFER pData,LPSCARDCMD *ppCmd);
     END_INTERFACE
   } ISCardISO7816Vtbl;
   struct ISCardISO7816 {
@@ -825,25 +825,25 @@ extern "C" {
 #else
   typedef struct ISCardVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISCard *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISCard *This);
-      ULONG (WINAPI *Release)(ISCard *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISCard *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISCard *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISCard *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISCard *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_Atr)(ISCard *This,LPBYTEBUFFER *ppAtr);
-      HRESULT (WINAPI *get_CardHandle)(ISCard *This,HSCARD *pHandle);
-      HRESULT (WINAPI *get_Context)(ISCard *This,HSCARDCONTEXT *pContext);
-      HRESULT (WINAPI *get_Protocol)(ISCard *This,SCARD_PROTOCOLS *pProtocol);
-      HRESULT (WINAPI *get_Status)(ISCard *This,SCARD_STATES *pStatus);
-      HRESULT (WINAPI *AttachByHandle)(ISCard *This,HSCARD hCard);
-      HRESULT (WINAPI *AttachByReader)(ISCard *This,BSTR bstrReaderName,SCARD_SHARE_MODES ShareMode,SCARD_PROTOCOLS PrefProtocol);
-      HRESULT (WINAPI *Detach)(ISCard *This,SCARD_DISPOSITIONS Disposition);
-      HRESULT (WINAPI *LockSCard)(ISCard *This);
-      HRESULT (WINAPI *ReAttach)(ISCard *This,SCARD_SHARE_MODES ShareMode,SCARD_DISPOSITIONS InitState);
-      HRESULT (WINAPI *Transaction)(ISCard *This,LPSCARDCMD *ppCmd);
-      HRESULT (WINAPI *UnlockSCard)(ISCard *This,SCARD_DISPOSITIONS Disposition);
+                   HRESULT (WINAPI *QueryInterface)(ISCard *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISCard *This);
+                   ULONG (WINAPI *Release)(ISCard *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISCard *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISCard *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISCard *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISCard *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_Atr)(ISCard *This,LPBYTEBUFFER *ppAtr);
+                   HRESULT (WINAPI *get_CardHandle)(ISCard *This,HSCARD *pHandle);
+                   HRESULT (WINAPI *get_Context)(ISCard *This,HSCARDCONTEXT *pContext);
+                   HRESULT (WINAPI *get_Protocol)(ISCard *This,SCARD_PROTOCOLS *pProtocol);
+                   HRESULT (WINAPI *get_Status)(ISCard *This,SCARD_STATES *pStatus);
+                   HRESULT (WINAPI *AttachByHandle)(ISCard *This,HSCARD hCard);
+                   HRESULT (WINAPI *AttachByReader)(ISCard *This,BSTR bstrReaderName,SCARD_SHARE_MODES ShareMode,SCARD_PROTOCOLS PrefProtocol);
+                   HRESULT (WINAPI *Detach)(ISCard *This,SCARD_DISPOSITIONS Disposition);
+                   HRESULT (WINAPI *LockSCard)(ISCard *This);
+                   HRESULT (WINAPI *ReAttach)(ISCard *This,SCARD_SHARE_MODES ShareMode,SCARD_DISPOSITIONS InitState);
+                   HRESULT (WINAPI *Transaction)(ISCard *This,LPSCARDCMD *ppCmd);
+                   HRESULT (WINAPI *UnlockSCard)(ISCard *This,SCARD_DISPOSITIONS Disposition);
     END_INTERFACE
   } ISCardVtbl;
   struct ISCard {
@@ -919,18 +919,18 @@ extern "C" {
 #else
   typedef struct ISCardDatabaseVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISCardDatabase *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISCardDatabase *This);
-      ULONG (WINAPI *Release)(ISCardDatabase *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISCardDatabase *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISCardDatabase *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISCardDatabase *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISCardDatabase *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *GetProviderCardId)(ISCardDatabase *This,BSTR bstrCardName,LPGUID *ppguidProviderId);
-      HRESULT (WINAPI *ListCardInterfaces)(ISCardDatabase *This,BSTR bstrCardName,LPSAFEARRAY *ppInterfaceGuids);
-      HRESULT (WINAPI *ListCards)(ISCardDatabase *This,LPBYTEBUFFER pAtr,LPSAFEARRAY pInterfaceGuids,__LONG32 localeId,LPSAFEARRAY *ppCardNames);
-      HRESULT (WINAPI *ListReaderGroups)(ISCardDatabase *This,__LONG32 localeId,LPSAFEARRAY *ppReaderGroups);
-      HRESULT (WINAPI *ListReaders)(ISCardDatabase *This,__LONG32 localeId,LPSAFEARRAY *ppReaders);
+                   HRESULT (WINAPI *QueryInterface)(ISCardDatabase *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISCardDatabase *This);
+                   ULONG (WINAPI *Release)(ISCardDatabase *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISCardDatabase *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISCardDatabase *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISCardDatabase *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISCardDatabase *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *GetProviderCardId)(ISCardDatabase *This,BSTR bstrCardName,LPGUID *ppguidProviderId);
+                   HRESULT (WINAPI *ListCardInterfaces)(ISCardDatabase *This,BSTR bstrCardName,LPSAFEARRAY *ppInterfaceGuids);
+                   HRESULT (WINAPI *ListCards)(ISCardDatabase *This,LPBYTEBUFFER pAtr,LPSAFEARRAY pInterfaceGuids,__LONG32 localeId,LPSAFEARRAY *ppCardNames);
+                   HRESULT (WINAPI *ListReaderGroups)(ISCardDatabase *This,__LONG32 localeId,LPSAFEARRAY *ppReaderGroups);
+                   HRESULT (WINAPI *ListReaders)(ISCardDatabase *This,__LONG32 localeId,LPSAFEARRAY *ppReaders);
     END_INTERFACE
   } ISCardDatabaseVtbl;
   struct ISCardDatabase {
@@ -984,16 +984,16 @@ extern "C" {
 #else
   typedef struct ISCardLocateVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ISCardLocate *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ISCardLocate *This);
-      ULONG (WINAPI *Release)(ISCardLocate *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ISCardLocate *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ISCardLocate *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ISCardLocate *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ISCardLocate *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *ConfigureCardGuidSearch)(ISCardLocate *This,LPSAFEARRAY pCardGuids,LPSAFEARRAY pGroupNames,BSTR bstrTitle,LONG lFlags);
-      HRESULT (WINAPI *ConfigureCardNameSearch)(ISCardLocate *This,LPSAFEARRAY pCardNames,LPSAFEARRAY pGroupNames,BSTR bstrTitle,LONG lFlags);
-      HRESULT (WINAPI *FindCard)(ISCardLocate *This,SCARD_SHARE_MODES ShareMode,SCARD_PROTOCOLS Protocols,LONG lFlags,LPSCARDINFO *ppCardInfo);
+                   HRESULT (WINAPI *QueryInterface)(ISCardLocate *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ISCardLocate *This);
+                   ULONG (WINAPI *Release)(ISCardLocate *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ISCardLocate *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ISCardLocate *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ISCardLocate *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ISCardLocate *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *ConfigureCardGuidSearch)(ISCardLocate *This,LPSAFEARRAY pCardGuids,LPSAFEARRAY pGroupNames,BSTR bstrTitle,LONG lFlags);
+                   HRESULT (WINAPI *ConfigureCardNameSearch)(ISCardLocate *This,LPSAFEARRAY pCardNames,LPSAFEARRAY pGroupNames,BSTR bstrTitle,LONG lFlags);
+                   HRESULT (WINAPI *FindCard)(ISCardLocate *This,SCARD_SHARE_MODES ShareMode,SCARD_PROTOCOLS Protocols,LONG lFlags,LPSCARDINFO *ppCardInfo);
     END_INTERFACE
   } ISCardLocateVtbl;
   struct ISCardLocate {

@@ -18124,14 +18124,14 @@ __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svusmmla_s32)))
 svint32_t svusmmla(svint32_t, svuint8_t, svint8_t);
 #endif  //defined(__ARM_FEATURE_SVE_MATMUL_INT8)
 #if defined(__ARM_FEATURE_SVE_BF16)
-#define svcvtnt_bf16_x      svcvtnt_bf16_m
+#define svcvtnt_bf16_x                   svcvtnt_bf16_m
 #define svcvtnt_bf16_f32_x  svcvtnt_bf16_f32_m
 #endif /*__ARM_FEATURE_SVE_BF16 */
 
 #if defined(__ARM_FEATURE_SVE2)
-#define svcvtnt_f16_x      svcvtnt_f16_m
+#define svcvtnt_f16_x                   svcvtnt_f16_m
 #define svcvtnt_f16_f32_x  svcvtnt_f16_f32_m
-#define svcvtnt_f32_x      svcvtnt_f32_m
+#define svcvtnt_f32_x                   svcvtnt_f32_m
 #define svcvtnt_f32_f64_x  svcvtnt_f32_f64_m
 
 #define svcvtxnt_f32_x     svcvtxnt_f32_m

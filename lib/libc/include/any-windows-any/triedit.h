@@ -86,15 +86,15 @@ extern "C"{
 #else
   typedef struct ITriEditDocumentVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(ITriEditDocument *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(ITriEditDocument *This);
-      ULONG (WINAPI *Release)(ITriEditDocument *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(ITriEditDocument *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(ITriEditDocument *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(ITriEditDocument *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(ITriEditDocument *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *FilterIn)(ITriEditDocument *This,IUnknown *pStmOld,IUnknown **ppStmNew,DWORD dwFlags,BSTR bstrBaseURL);
-      HRESULT (WINAPI *FilterOut)(ITriEditDocument *This,IUnknown *pStmOld,IUnknown **ppStmNew,DWORD dwFlags,BSTR bstrBaseURL);
+                   HRESULT (WINAPI *QueryInterface)(ITriEditDocument *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(ITriEditDocument *This);
+                   ULONG (WINAPI *Release)(ITriEditDocument *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(ITriEditDocument *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(ITriEditDocument *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(ITriEditDocument *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(ITriEditDocument *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *FilterIn)(ITriEditDocument *This,IUnknown *pStmOld,IUnknown **ppStmNew,DWORD dwFlags,BSTR bstrBaseURL);
+                   HRESULT (WINAPI *FilterOut)(ITriEditDocument *This,IUnknown *pStmOld,IUnknown **ppStmNew,DWORD dwFlags,BSTR bstrBaseURL);
     END_INTERFACE
   } ITriEditDocumentVtbl;
   struct ITriEditDocument {
@@ -138,10 +138,10 @@ extern "C"{
 #else
   typedef struct IDocHostDragDropHandlerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDocHostDragDropHandler *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDocHostDragDropHandler *This);
-      ULONG (WINAPI *Release)(IDocHostDragDropHandler *This);
-      HRESULT (WINAPI *DrawDragFeedback)(IDocHostDragDropHandler *This,RECT *pRect);
+                   HRESULT (WINAPI *QueryInterface)(IDocHostDragDropHandler *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDocHostDragDropHandler *This);
+                   ULONG (WINAPI *Release)(IDocHostDragDropHandler *This);
+                   HRESULT (WINAPI *DrawDragFeedback)(IDocHostDragDropHandler *This,RECT *pRect);
     END_INTERFACE
   } IDocHostDragDropHandlerVtbl;
   struct IDocHostDragDropHandler {

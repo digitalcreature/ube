@@ -105,11 +105,11 @@ public:
 #else
   typedef struct IObjectWithSiteVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IObjectWithSite *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IObjectWithSite *This);
-      ULONG (WINAPI *Release)(IObjectWithSite *This);
-      HRESULT (WINAPI *SetSite)(IObjectWithSite *This,IUnknown *pUnkSite);
-      HRESULT (WINAPI *GetSite)(IObjectWithSite *This,REFIID riid,void **ppvSite);
+                   HRESULT (WINAPI *QueryInterface)(IObjectWithSite *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IObjectWithSite *This);
+                   ULONG (WINAPI *Release)(IObjectWithSite *This);
+                   HRESULT (WINAPI *SetSite)(IObjectWithSite *This,IUnknown *pUnkSite);
+                   HRESULT (WINAPI *GetSite)(IObjectWithSite *This,REFIID riid,void **ppvSite);
     END_INTERFACE
   } IObjectWithSiteVtbl;
   struct IObjectWithSite {
@@ -145,10 +145,10 @@ public:
 #else
   typedef struct IDataPathBrowserVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDataPathBrowser *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDataPathBrowser *This);
-      ULONG (WINAPI *Release)(IDataPathBrowser *This);
-      HRESULT (WINAPI *BrowseType)(IDataPathBrowser *This,REFGUID rguidPathType,LPOLESTR pszDefaultPath,ULONG cchPath,LPOLESTR pszPath,HWND hWnd);
+                   HRESULT (WINAPI *QueryInterface)(IDataPathBrowser *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDataPathBrowser *This);
+                   ULONG (WINAPI *Release)(IDataPathBrowser *This);
+                   HRESULT (WINAPI *BrowseType)(IDataPathBrowser *This,REFGUID rguidPathType,LPOLESTR pszDefaultPath,ULONG cchPath,LPOLESTR pszPath,HWND hWnd);
     END_INTERFACE
   } IDataPathBrowserVtbl;
   struct IDataPathBrowser {
@@ -187,14 +187,14 @@ public:
 #else
   typedef struct IProvideClassInfo3Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IProvideClassInfo3 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IProvideClassInfo3 *This);
-      ULONG (WINAPI *Release)(IProvideClassInfo3 *This);
-      HRESULT (WINAPI *GetClassInfo)(IProvideClassInfo3 *This,ITypeInfo **ppTI);
-      HRESULT (WINAPI *GetGUID)(IProvideClassInfo3 *This,DWORD dwGuidKind,GUID *pGUID);
-      HRESULT (WINAPI *GetGUIDDwordArrays)(IProvideClassInfo3 *This,REFGUID rguidArray,CAUUID *pcaUUID,CADWORD *pcadw);
-      HRESULT (WINAPI *GetClassInfoLocale)(IProvideClassInfo3 *This,ITypeInfo **ppITypeInfo,LCID lcid);
-      HRESULT (WINAPI *GetFlags)(IProvideClassInfo3 *This,REFGUID guidGroup,DWORD *pdwFlags);
+                   HRESULT (WINAPI *QueryInterface)(IProvideClassInfo3 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IProvideClassInfo3 *This);
+                   ULONG (WINAPI *Release)(IProvideClassInfo3 *This);
+                   HRESULT (WINAPI *GetClassInfo)(IProvideClassInfo3 *This,ITypeInfo **ppTI);
+                   HRESULT (WINAPI *GetGUID)(IProvideClassInfo3 *This,DWORD dwGuidKind,GUID *pGUID);
+                   HRESULT (WINAPI *GetGUIDDwordArrays)(IProvideClassInfo3 *This,REFGUID rguidArray,CAUUID *pcaUUID,CADWORD *pcadw);
+                   HRESULT (WINAPI *GetClassInfoLocale)(IProvideClassInfo3 *This,ITypeInfo **ppITypeInfo,LCID lcid);
+                   HRESULT (WINAPI *GetFlags)(IProvideClassInfo3 *This,REFGUID guidGroup,DWORD *pdwFlags);
     END_INTERFACE
   } IProvideClassInfo3Vtbl;
   struct IProvideClassInfo3 {

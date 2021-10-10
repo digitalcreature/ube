@@ -11,37 +11,37 @@ const Lock = std.event.Lock;
 /// are resumed when the lock is released, in order.
 pub fn Locked(comptime T: type) type {
     return struct {
-        lock: Lock,
-        private_data: T,
+                     lock: Lock,
+                     private_data: T,
 
-        const Self = @This();
+                     const Self = @This();
 
-        pub const HeldLock = struct {
-            value: *T,
-            held: Lock.Held,
+                     pub const HeldLock = struct {
+                                      value: *T,
+                                      held: Lock.Held,
 
-            pub fn release(self: HeldLock) void {
-                self.held.release();
-            }
-        };
+                                      pub fn release(self: HeldLock) void {
+                                          self.held.release();
+                                      }
+                     };
 
-        pub fn init(data: T) Self {
-            return Self{
-                .lock = Lock.init(),
-                .private_data = data,
-            };
-        }
+                     pub fn init(data: T) Self {
+                                      return Self{
+                                          .lock = Lock.init(),
+                                          .private_data = data,
+                                      };
+                     }
 
-        pub fn deinit(self: *Self) void {
-            self.lock.deinit();
-        }
+                     pub fn deinit(self: *Self) void {
+                                      self.lock.deinit();
+                     }
 
-        pub fn acquire(self: *Self) callconv(.Async) HeldLock {
-            return HeldLock{
-                // TODO guaranteed allocation elision
-                .held = self.lock.acquire(),
-                .value = &self.private_data,
-            };
-        }
+                     pub fn acquire(self: *Self) callconv(.Async) HeldLock {
+                                      return HeldLock{
+                                          // TODO guaranteed allocation elision
+                                          .held = self.lock.acquire(),
+                                          .value = &self.private_data,
+                                      };
+                     }
     };
 }

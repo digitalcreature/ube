@@ -6,7 +6,7 @@
  * This file is part of the w32api package.
  *
  * Contributors:
- *   Created by Hervé Poussineau <hpoussin@reactos.org>
+ *   Created by Hervï¿½ Poussineau <hpoussin@reactos.org>
  *
  * THIS SOFTWARE IS NOT COPYRIGHTED
  *
@@ -28,147 +28,147 @@ extern "C" {
 #endif
 
 #define MAX_IDE_CHANNEL   2
-#define MAX_IDE_LINE      2
+#define MAX_IDE_LINE                   2
 #define MAX_IDE_DEVICE    2
 
 #include <pshpack1.h>
 typedef struct _IDENTIFY_DATA {
-  USHORT GeneralConfiguration;       /* 00 */
-  USHORT NumCylinders;               /* 02 */
-  USHORT Reserved1;                  /* 04 */
-  USHORT NumHeads;                   /* 06 */
+  USHORT GeneralConfiguration;                    /* 00 */
+  USHORT NumCylinders;                                         /* 02 */
+  USHORT Reserved1;                                                         /* 04 */
+  USHORT NumHeads;                                                          /* 06 */
   USHORT UnformattedBytesPerTrack;   /* 08 */
   USHORT UnformattedBytesPerSector;  /* 10 */
-  USHORT NumSectorsPerTrack;         /* 12 */
-  USHORT VendorUnique1[3];           /* 14 */
-  UCHAR  SerialNumber[20];           /* 20 */
-  USHORT BufferType;                 /* 40 */
-  USHORT BufferSectorSize;           /* 42 */
-  USHORT NumberOfEccBytes;           /* 44 */
-  UCHAR  FirmwareRevision[8];        /* 46 */
-  UCHAR  ModelNumber[40];            /* 54 */
-  UCHAR  MaximumBlockTransfer;       /* 94 */
-  UCHAR  VendorUnique2;              /* 95 */
-  USHORT DoubleWordIo;               /* 96 */
-  USHORT Capabilities;               /* 98 */
-  USHORT Reserved2;                  /* 100 */
-  UCHAR  VendorUnique3;              /* 102 */
-  UCHAR  PioCycleTimingMode;         /* 103 */
-  UCHAR  VendorUnique4;              /* 104 */
-  UCHAR  DmaCycleTimingMode;         /* 105 */
+  USHORT NumSectorsPerTrack;                      /* 12 */
+  USHORT VendorUnique1[3];                        /* 14 */
+  UCHAR  SerialNumber[20];                        /* 20 */
+  USHORT BufferType;                                           /* 40 */
+  USHORT BufferSectorSize;                        /* 42 */
+  USHORT NumberOfEccBytes;                        /* 44 */
+  UCHAR  FirmwareRevision[8];                     /* 46 */
+  UCHAR  ModelNumber[40];                                      /* 54 */
+  UCHAR  MaximumBlockTransfer;                    /* 94 */
+  UCHAR  VendorUnique2;                                        /* 95 */
+  USHORT DoubleWordIo;                                         /* 96 */
+  USHORT Capabilities;                                         /* 98 */
+  USHORT Reserved2;                                                         /* 100 */
+  UCHAR  VendorUnique3;                                        /* 102 */
+  UCHAR  PioCycleTimingMode;                      /* 103 */
+  UCHAR  VendorUnique4;                                        /* 104 */
+  UCHAR  DmaCycleTimingMode;                      /* 105 */
   USHORT TranslationFieldsValid:3;   /* 106 */
-  USHORT Reserved3:13;               /*  -  */
+  USHORT Reserved3:13;                                         /*  -  */
   USHORT NumberOfCurrentCylinders;   /* 108 */
-  USHORT NumberOfCurrentHeads;       /* 110 */
+  USHORT NumberOfCurrentHeads;                    /* 110 */
   USHORT CurrentSectorsPerTrack;     /* 112 */
-  ULONG  CurrentSectorCapacity;      /* 114 */
+  ULONG  CurrentSectorCapacity;                   /* 114 */
   USHORT CurrentMultiSectorSetting;  /* 118 */
   ULONG  UserAddressableSectors;     /* 120 */
   USHORT SingleWordDMASupport:8;     /* 124 */
-  USHORT SingleWordDMAActive:8;      /*  -  */
-  USHORT MultiWordDMASupport:8;      /* 126 */
-  USHORT MultiWordDMAActive:8;       /*  -  */
-  USHORT AdvancedPIOModes:8;         /* 128 */
-  USHORT Reserved4:8;                /*  -  */
+  USHORT SingleWordDMAActive:8;                   /*  -  */
+  USHORT MultiWordDMASupport:8;                   /* 126 */
+  USHORT MultiWordDMAActive:8;                    /*  -  */
+  USHORT AdvancedPIOModes:8;                      /* 128 */
+  USHORT Reserved4:8;                                          /*  -  */
   USHORT MinimumMWXferCycleTime;     /* 130 */
   USHORT RecommendedMWXferCycleTime; /* 132 */
-  USHORT MinimumPIOCycleTime;        /* 134 */
+  USHORT MinimumPIOCycleTime;                     /* 134 */
   USHORT MinimumPIOCycleTimeIORDY;   /* 136 */
-  USHORT Reserved5[11];              /* 138 */
-  USHORT MajorRevision;              /* 160 */
-  USHORT MinorRevision;              /* 162 */
-  USHORT Reserved6;                  /* 164 */
-  USHORT CommandSetSupport;          /* 166 */
-  USHORT Reserved6a[2];              /* 168 */
-  USHORT CommandSetActive;           /* 172 */
-  USHORT Reserved6b;                 /* 174 */
-  USHORT UltraDMASupport:8;          /* 176 */
-  USHORT UltraDMAActive:8;           /*  -  */
-  USHORT Reserved7[11];              /* 178 */
-  ULONG  Max48BitLBA[2];             /* 200 */
-  USHORT Reserved7a[22];             /* 208 */
-  USHORT LastLun:3;                  /* 252 */
-  USHORT Reserved8:13;               /*  -  */
+  USHORT Reserved5[11];                                        /* 138 */
+  USHORT MajorRevision;                                        /* 160 */
+  USHORT MinorRevision;                                        /* 162 */
+  USHORT Reserved6;                                                         /* 164 */
+  USHORT CommandSetSupport;                       /* 166 */
+  USHORT Reserved6a[2];                                        /* 168 */
+  USHORT CommandSetActive;                        /* 172 */
+  USHORT Reserved6b;                                           /* 174 */
+  USHORT UltraDMASupport:8;                       /* 176 */
+  USHORT UltraDMAActive:8;                        /*  -  */
+  USHORT Reserved7[11];                                        /* 178 */
+  ULONG  Max48BitLBA[2];                                       /* 200 */
+  USHORT Reserved7a[22];                                       /* 208 */
+  USHORT LastLun:3;                                                         /* 252 */
+  USHORT Reserved8:13;                                         /*  -  */
   USHORT MediaStatusNotification:2;  /* 254 */
-  USHORT Reserved9:6;                /*  -  */
-  USHORT DeviceWriteProtect:1;       /*  -  */
-  USHORT Reserved10:7;               /*  -  */
-  USHORT Reserved11[128];            /* 256 */
+  USHORT Reserved9:6;                                          /*  -  */
+  USHORT DeviceWriteProtect:1;                    /*  -  */
+  USHORT Reserved10:7;                                         /*  -  */
+  USHORT Reserved11[128];                                      /* 256 */
 } IDENTIFY_DATA, *PIDENTIFY_DATA;
 
 typedef struct _EXTENDED_IDENTIFY_DATA {
-  USHORT GeneralConfiguration;       /* 00 */
-  USHORT NumCylinders;               /* 02 */
-  USHORT Reserved1;                  /* 04 */
-  USHORT NumHeads;                   /* 06 */
+  USHORT GeneralConfiguration;                    /* 00 */
+  USHORT NumCylinders;                                         /* 02 */
+  USHORT Reserved1;                                                         /* 04 */
+  USHORT NumHeads;                                                          /* 06 */
   USHORT UnformattedBytesPerTrack;   /* 08 */
   USHORT UnformattedBytesPerSector;  /* 10 */
-  USHORT NumSectorsPerTrack;         /* 12 */
+  USHORT NumSectorsPerTrack;                      /* 12 */
   __GNU_EXTENSION union
   {
-    USHORT VendorUnique1[3];         /* 14 */
+    USHORT VendorUnique1[3];                      /* 14 */
     struct
     {
-      UCHAR InterSectorGap;          /* 14 */
-      UCHAR InterSectorGapSize;      /* -  */
-      UCHAR Reserved16;              /* 16 */
-      UCHAR BytesInPLO;              /* -  */
-      USHORT VendorUniqueCnt;        /* 18 */
+                   UCHAR InterSectorGap;                       /* 14 */
+                   UCHAR InterSectorGapSize;                   /* -  */
+                   UCHAR Reserved16;                                        /* 16 */
+                   UCHAR BytesInPLO;                                        /* -  */
+                   USHORT VendorUniqueCnt;                     /* 18 */
     } u;
   };
-  UCHAR  SerialNumber[20];           /* 20 */
-  USHORT BufferType;                 /* 40 */
-  USHORT BufferSectorSize;           /* 42 */
-  USHORT NumberOfEccBytes;           /* 44 */
-  UCHAR  FirmwareRevision[8];        /* 46 */
-  UCHAR  ModelNumber[40];            /* 54 */
-  UCHAR  MaximumBlockTransfer;       /* 94 */
-  UCHAR  VendorUnique2;              /* 95 */
-  USHORT DoubleWordIo;               /* 96 */
-  USHORT Capabilities;               /* 98 */
-  USHORT Reserved2;                  /* 100 */
-  UCHAR  VendorUnique3;              /* 102 */
-  UCHAR  PioCycleTimingMode;         /* 103 */
-  UCHAR  VendorUnique4;              /* 104 */
-  UCHAR  DmaCycleTimingMode;         /* 105 */
+  UCHAR  SerialNumber[20];                        /* 20 */
+  USHORT BufferType;                                           /* 40 */
+  USHORT BufferSectorSize;                        /* 42 */
+  USHORT NumberOfEccBytes;                        /* 44 */
+  UCHAR  FirmwareRevision[8];                     /* 46 */
+  UCHAR  ModelNumber[40];                                      /* 54 */
+  UCHAR  MaximumBlockTransfer;                    /* 94 */
+  UCHAR  VendorUnique2;                                        /* 95 */
+  USHORT DoubleWordIo;                                         /* 96 */
+  USHORT Capabilities;                                         /* 98 */
+  USHORT Reserved2;                                                         /* 100 */
+  UCHAR  VendorUnique3;                                        /* 102 */
+  UCHAR  PioCycleTimingMode;                      /* 103 */
+  UCHAR  VendorUnique4;                                        /* 104 */
+  UCHAR  DmaCycleTimingMode;                      /* 105 */
   USHORT TranslationFieldsValid:3;   /* 106 */
-  USHORT Reserved3:13;               /*  -  */
+  USHORT Reserved3:13;                                         /*  -  */
   USHORT NumberOfCurrentCylinders;   /* 108 */
-  USHORT NumberOfCurrentHeads;       /* 110 */
+  USHORT NumberOfCurrentHeads;                    /* 110 */
   USHORT CurrentSectorsPerTrack;     /* 112 */
-  ULONG  CurrentSectorCapacity;      /* 114 */
+  ULONG  CurrentSectorCapacity;                   /* 114 */
   USHORT CurrentMultiSectorSetting;  /* 118 */
   ULONG  UserAddressableSectors;     /* 120 */
   USHORT SingleWordDMASupport:8;     /* 124 */
-  USHORT SingleWordDMAActive:8;      /*  -  */
-  USHORT MultiWordDMASupport:8;      /* 126 */
-  USHORT MultiWordDMAActive:8;       /*  -  */
-  USHORT AdvancedPIOModes:8;         /* 128 */
-  USHORT Reserved4:8;                /*  -  */
+  USHORT SingleWordDMAActive:8;                   /*  -  */
+  USHORT MultiWordDMASupport:8;                   /* 126 */
+  USHORT MultiWordDMAActive:8;                    /*  -  */
+  USHORT AdvancedPIOModes:8;                      /* 128 */
+  USHORT Reserved4:8;                                          /*  -  */
   USHORT MinimumMWXferCycleTime;     /* 130 */
   USHORT RecommendedMWXferCycleTime; /* 132 */
-  USHORT MinimumPIOCycleTime;        /* 134 */
+  USHORT MinimumPIOCycleTime;                     /* 134 */
   USHORT MinimumPIOCycleTimeIORDY;   /* 136 */
-  USHORT Reserved5[11];              /* 138 */
-  USHORT MajorRevision;              /* 160 */
-  USHORT MinorRevision;              /* 162 */
-  USHORT Reserved6;                  /* 164 */
-  USHORT CommandSetSupport;          /* 166 */
-  USHORT Reserved6a[2];              /* 168 */
-  USHORT CommandSetActive;           /* 172 */
-  USHORT Reserved6b;                 /* 174 */
-  USHORT UltraDMASupport:8;          /* 176 */
-  USHORT UltraDMAActive:8;           /*  -  */
-  USHORT Reserved7[11];              /* 178 */
-  ULONG  Max48BitLBA[2];             /* 200 */
-  USHORT Reserved7a[22];             /* 208 */
-  USHORT LastLun:3;                  /* 252 */
-  USHORT Reserved8:13;               /*  -  */
+  USHORT Reserved5[11];                                        /* 138 */
+  USHORT MajorRevision;                                        /* 160 */
+  USHORT MinorRevision;                                        /* 162 */
+  USHORT Reserved6;                                                         /* 164 */
+  USHORT CommandSetSupport;                       /* 166 */
+  USHORT Reserved6a[2];                                        /* 168 */
+  USHORT CommandSetActive;                        /* 172 */
+  USHORT Reserved6b;                                           /* 174 */
+  USHORT UltraDMASupport:8;                       /* 176 */
+  USHORT UltraDMAActive:8;                        /*  -  */
+  USHORT Reserved7[11];                                        /* 178 */
+  ULONG  Max48BitLBA[2];                                       /* 200 */
+  USHORT Reserved7a[22];                                       /* 208 */
+  USHORT LastLun:3;                                                         /* 252 */
+  USHORT Reserved8:13;                                         /*  -  */
   USHORT MediaStatusNotification:2;  /* 254 */
-  USHORT Reserved9:6;                /*  -  */
-  USHORT DeviceWriteProtect:1;       /*  -  */
-  USHORT Reserved10:7;               /*  -  */
-  USHORT Reserved11[128];            /* 256 */
+  USHORT Reserved9:6;                                          /*  -  */
+  USHORT DeviceWriteProtect:1;                    /*  -  */
+  USHORT Reserved10:7;                                         /*  -  */
+  USHORT Reserved11[128];                                      /* 256 */
 } EXTENDED_IDENTIFY_DATA, *PEXTENDED_IDENTIFY_DATA;
 #include <poppack.h>
 

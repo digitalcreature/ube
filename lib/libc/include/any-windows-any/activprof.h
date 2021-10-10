@@ -134,15 +134,15 @@ MIDL_INTERFACE("784b5ff0-69b0-47d1-a7dc-2518f4230e90")
 IActiveScriptProfilerControl : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE StartProfiling(
-        REFCLSID clsidProfilerObject,
-        DWORD dwEventMask,
-        DWORD dwContext) = 0;
+                     REFCLSID clsidProfilerObject,
+                     DWORD dwEventMask,
+                     DWORD dwContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetProfilerEventMask(
-        DWORD dwEventMask) = 0;
+                     DWORD dwEventMask) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopProfiling(
-        HRESULT hrShutdownReason) = 0;
+                     HRESULT hrShutdownReason) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -154,30 +154,30 @@ typedef struct IActiveScriptProfilerControlVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptProfilerControl *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptProfilerControl *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptProfilerControl *This);
+                     IActiveScriptProfilerControl *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptProfilerControl *This);
+                     IActiveScriptProfilerControl *This);
 
     /*** IActiveScriptProfilerControl methods ***/
     HRESULT (STDMETHODCALLTYPE *StartProfiling)(
-        IActiveScriptProfilerControl *This,
-        REFCLSID clsidProfilerObject,
-        DWORD dwEventMask,
-        DWORD dwContext);
+                     IActiveScriptProfilerControl *This,
+                     REFCLSID clsidProfilerObject,
+                     DWORD dwEventMask,
+                     DWORD dwContext);
 
     HRESULT (STDMETHODCALLTYPE *SetProfilerEventMask)(
-        IActiveScriptProfilerControl *This,
-        DWORD dwEventMask);
+                     IActiveScriptProfilerControl *This,
+                     DWORD dwEventMask);
 
     HRESULT (STDMETHODCALLTYPE *StopProfiling)(
-        IActiveScriptProfilerControl *This,
-        HRESULT hrShutdownReason);
+                     IActiveScriptProfilerControl *This,
+                     HRESULT hrShutdownReason);
 
     END_INTERFACE
 } IActiveScriptProfilerControlVtbl;
@@ -238,10 +238,10 @@ MIDL_INTERFACE("47810165-498f-40be-94f1-653557e9e7da")
 IActiveScriptProfilerControl2 : public IActiveScriptProfilerControl
 {
     virtual HRESULT STDMETHODCALLTYPE CompleteProfilerStart(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE PrepareProfilerStop(
-        ) = 0;
+                     ) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -253,37 +253,37 @@ typedef struct IActiveScriptProfilerControl2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptProfilerControl2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptProfilerControl2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptProfilerControl2 *This);
+                     IActiveScriptProfilerControl2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptProfilerControl2 *This);
+                     IActiveScriptProfilerControl2 *This);
 
     /*** IActiveScriptProfilerControl methods ***/
     HRESULT (STDMETHODCALLTYPE *StartProfiling)(
-        IActiveScriptProfilerControl2 *This,
-        REFCLSID clsidProfilerObject,
-        DWORD dwEventMask,
-        DWORD dwContext);
+                     IActiveScriptProfilerControl2 *This,
+                     REFCLSID clsidProfilerObject,
+                     DWORD dwEventMask,
+                     DWORD dwContext);
 
     HRESULT (STDMETHODCALLTYPE *SetProfilerEventMask)(
-        IActiveScriptProfilerControl2 *This,
-        DWORD dwEventMask);
+                     IActiveScriptProfilerControl2 *This,
+                     DWORD dwEventMask);
 
     HRESULT (STDMETHODCALLTYPE *StopProfiling)(
-        IActiveScriptProfilerControl2 *This,
-        HRESULT hrShutdownReason);
+                     IActiveScriptProfilerControl2 *This,
+                     HRESULT hrShutdownReason);
 
     /*** IActiveScriptProfilerControl2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CompleteProfilerStart)(
-        IActiveScriptProfilerControl2 *This);
+                     IActiveScriptProfilerControl2 *This);
 
     HRESULT (STDMETHODCALLTYPE *PrepareProfilerStop)(
-        IActiveScriptProfilerControl2 *This);
+                     IActiveScriptProfilerControl2 *This);
 
     END_INTERFACE
 } IActiveScriptProfilerControl2Vtbl;
@@ -393,11 +393,11 @@ typedef struct _PROFILER_HEAP_OBJECT_RELATIONSHIP {
     PROFILER_HEAP_OBJECT_NAME_ID relationshipId;
     PROFILER_RELATIONSHIP_INFO relationshipInfo;
     __C89_NAMELESS union {
-        double numberValue;
-        LPCWSTR stringValue;
-        BSTR bstrValue;
-        PROFILER_HEAP_OBJECT_ID objectId;
-        PROFILER_EXTERNAL_OBJECT_ADDRESS externalObjectAddress;
+                     double numberValue;
+                     LPCWSTR stringValue;
+                     BSTR bstrValue;
+                     PROFILER_HEAP_OBJECT_ID objectId;
+                     PROFILER_EXTERNAL_OBJECT_ADDRESS externalObjectAddress;
     } __C89_NAMELESSUNIONNAME;
 } PROFILER_HEAP_OBJECT_RELATIONSHIP;
 
@@ -409,24 +409,24 @@ typedef struct _PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST {
 typedef struct _PROFILER_HEAP_OBJECT_OPTIONAL_INFO {
     PROFILER_HEAP_OBJECT_OPTIONAL_INFO_TYPE infoType;
     __C89_NAMELESS union {
-        PROFILER_HEAP_OBJECT_ID prototype;
-        LPCWSTR functionName;
-        UINT elementAttributesSize;
-        UINT elementTextChildrenSize;
-        PROFILER_HEAP_OBJECT_SCOPE_LIST *scopeList;
-        PROFILER_HEAP_OBJECT_RELATIONSHIP *internalProperty;
-        PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST *namePropertyList;
-        PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST *indexPropertyList;
-        PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST *relationshipList;
-        PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST *eventList;
+                     PROFILER_HEAP_OBJECT_ID prototype;
+                     LPCWSTR functionName;
+                     UINT elementAttributesSize;
+                     UINT elementTextChildrenSize;
+                     PROFILER_HEAP_OBJECT_SCOPE_LIST *scopeList;
+                     PROFILER_HEAP_OBJECT_RELATIONSHIP *internalProperty;
+                     PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST *namePropertyList;
+                     PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST *indexPropertyList;
+                     PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST *relationshipList;
+                     PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST *eventList;
     } __C89_NAMELESSUNIONNAME;
 } PROFILER_HEAP_OBJECT_OPTIONAL_INFO;
 
 typedef struct _PROFILER_HEAP_OBJECT {
     UINT size;
     __C89_NAMELESS union {
-        PROFILER_HEAP_OBJECT_ID objectId;
-        PROFILER_EXTERNAL_OBJECT_ADDRESS externalObjectAddress;
+                     PROFILER_HEAP_OBJECT_ID objectId;
+                     PROFILER_EXTERNAL_OBJECT_ADDRESS externalObjectAddress;
     } __C89_NAMELESSUNIONNAME;
     PROFILER_HEAP_OBJECT_NAME_ID typeNameId;
     ULONG flags;
@@ -446,22 +446,22 @@ MIDL_INTERFACE("32e4694e-0d37-419b-b93d-fa20ded6e8ea")
 IActiveScriptProfilerHeapEnum : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Next(
-        ULONG celt,
-        PROFILER_HEAP_OBJECT **heapObjects,
-        ULONG *pceltFetched) = 0;
+                     ULONG celt,
+                     PROFILER_HEAP_OBJECT **heapObjects,
+                     ULONG *pceltFetched) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetOptionalInfo(
-        PROFILER_HEAP_OBJECT *heapObject,
-        ULONG celt,
-        PROFILER_HEAP_OBJECT_OPTIONAL_INFO *optionalInfo) = 0;
+                     PROFILER_HEAP_OBJECT *heapObject,
+                     ULONG celt,
+                     PROFILER_HEAP_OBJECT_OPTIONAL_INFO *optionalInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FreeObjectAndOptionalInfo(
-        ULONG celt,
-        PROFILER_HEAP_OBJECT **heapObjects) = 0;
+                     ULONG celt,
+                     PROFILER_HEAP_OBJECT **heapObjects) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNameIdMap(
-        LPCWSTR * pNameList[],
-        UINT *pcelt) = 0;
+                     LPCWSTR * pNameList[],
+                     UINT *pcelt) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -473,38 +473,38 @@ typedef struct IActiveScriptProfilerHeapEnumVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptProfilerHeapEnum *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptProfilerHeapEnum *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptProfilerHeapEnum *This);
+                     IActiveScriptProfilerHeapEnum *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptProfilerHeapEnum *This);
+                     IActiveScriptProfilerHeapEnum *This);
 
     /*** IActiveScriptProfilerHeapEnum methods ***/
     HRESULT (STDMETHODCALLTYPE *Next)(
-        IActiveScriptProfilerHeapEnum *This,
-        ULONG celt,
-        PROFILER_HEAP_OBJECT **heapObjects,
-        ULONG *pceltFetched);
+                     IActiveScriptProfilerHeapEnum *This,
+                     ULONG celt,
+                     PROFILER_HEAP_OBJECT **heapObjects,
+                     ULONG *pceltFetched);
 
     HRESULT (STDMETHODCALLTYPE *GetOptionalInfo)(
-        IActiveScriptProfilerHeapEnum *This,
-        PROFILER_HEAP_OBJECT *heapObject,
-        ULONG celt,
-        PROFILER_HEAP_OBJECT_OPTIONAL_INFO *optionalInfo);
+                     IActiveScriptProfilerHeapEnum *This,
+                     PROFILER_HEAP_OBJECT *heapObject,
+                     ULONG celt,
+                     PROFILER_HEAP_OBJECT_OPTIONAL_INFO *optionalInfo);
 
     HRESULT (STDMETHODCALLTYPE *FreeObjectAndOptionalInfo)(
-        IActiveScriptProfilerHeapEnum *This,
-        ULONG celt,
-        PROFILER_HEAP_OBJECT **heapObjects);
+                     IActiveScriptProfilerHeapEnum *This,
+                     ULONG celt,
+                     PROFILER_HEAP_OBJECT **heapObjects);
 
     HRESULT (STDMETHODCALLTYPE *GetNameIdMap)(
-        IActiveScriptProfilerHeapEnum *This,
-        LPCWSTR * pNameList[],
-        UINT *pcelt);
+                     IActiveScriptProfilerHeapEnum *This,
+                     LPCWSTR * pNameList[],
+                     UINT *pcelt);
 
     END_INTERFACE
 } IActiveScriptProfilerHeapEnumVtbl;
@@ -569,7 +569,7 @@ MIDL_INTERFACE("0b403015-f381-4023-a5d0-6fed076de716")
 IActiveScriptProfilerControl3 : public IActiveScriptProfilerControl2
 {
     virtual HRESULT STDMETHODCALLTYPE EnumHeap(
-        IActiveScriptProfilerHeapEnum **ppEnum) = 0;
+                     IActiveScriptProfilerHeapEnum **ppEnum) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -581,42 +581,42 @@ typedef struct IActiveScriptProfilerControl3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptProfilerControl3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptProfilerControl3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptProfilerControl3 *This);
+                     IActiveScriptProfilerControl3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptProfilerControl3 *This);
+                     IActiveScriptProfilerControl3 *This);
 
     /*** IActiveScriptProfilerControl methods ***/
     HRESULT (STDMETHODCALLTYPE *StartProfiling)(
-        IActiveScriptProfilerControl3 *This,
-        REFCLSID clsidProfilerObject,
-        DWORD dwEventMask,
-        DWORD dwContext);
+                     IActiveScriptProfilerControl3 *This,
+                     REFCLSID clsidProfilerObject,
+                     DWORD dwEventMask,
+                     DWORD dwContext);
 
     HRESULT (STDMETHODCALLTYPE *SetProfilerEventMask)(
-        IActiveScriptProfilerControl3 *This,
-        DWORD dwEventMask);
+                     IActiveScriptProfilerControl3 *This,
+                     DWORD dwEventMask);
 
     HRESULT (STDMETHODCALLTYPE *StopProfiling)(
-        IActiveScriptProfilerControl3 *This,
-        HRESULT hrShutdownReason);
+                     IActiveScriptProfilerControl3 *This,
+                     HRESULT hrShutdownReason);
 
     /*** IActiveScriptProfilerControl2 methods ***/
     HRESULT (STDMETHODCALLTYPE *CompleteProfilerStart)(
-        IActiveScriptProfilerControl3 *This);
+                     IActiveScriptProfilerControl3 *This);
 
     HRESULT (STDMETHODCALLTYPE *PrepareProfilerStop)(
-        IActiveScriptProfilerControl3 *This);
+                     IActiveScriptProfilerControl3 *This);
 
     /*** IActiveScriptProfilerControl3 methods ***/
     HRESULT (STDMETHODCALLTYPE *EnumHeap)(
-        IActiveScriptProfilerControl3 *This,
-        IActiveScriptProfilerHeapEnum **ppEnum);
+                     IActiveScriptProfilerControl3 *This,
+                     IActiveScriptProfilerHeapEnum **ppEnum);
 
     END_INTERFACE
 } IActiveScriptProfilerControl3Vtbl;
@@ -693,30 +693,30 @@ MIDL_INTERFACE("740eca23-7d9d-42e5-ba9d-f8b24b1c7a9b")
 IActiveScriptProfilerCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Initialize(
-        DWORD dwContext) = 0;
+                     DWORD dwContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Shutdown(
-        HRESULT hrReason) = 0;
+                     HRESULT hrReason) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ScriptCompiled(
-        PROFILER_TOKEN scriptId,
-        PROFILER_SCRIPT_TYPE type,
-        IUnknown *pIDebugDocumentContext) = 0;
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_SCRIPT_TYPE type,
+                     IUnknown *pIDebugDocumentContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE FunctionCompiled(
-        PROFILER_TOKEN functionId,
-        PROFILER_TOKEN scriptId,
-        const WCHAR *pwszFunctionName,
-        const WCHAR *pwszFunctionNameHint,
-        IUnknown *pIDebugDocumentContext) = 0;
+                     PROFILER_TOKEN functionId,
+                     PROFILER_TOKEN scriptId,
+                     const WCHAR *pwszFunctionName,
+                     const WCHAR *pwszFunctionNameHint,
+                     IUnknown *pIDebugDocumentContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFunctionEnter(
-        PROFILER_TOKEN scriptId,
-        PROFILER_TOKEN functionId) = 0;
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_TOKEN functionId) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFunctionExit(
-        PROFILER_TOKEN scriptId,
-        PROFILER_TOKEN functionId) = 0;
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_TOKEN functionId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -728,48 +728,48 @@ typedef struct IActiveScriptProfilerCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptProfilerCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptProfilerCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptProfilerCallback *This);
+                     IActiveScriptProfilerCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptProfilerCallback *This);
+                     IActiveScriptProfilerCallback *This);
 
     /*** IActiveScriptProfilerCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IActiveScriptProfilerCallback *This,
-        DWORD dwContext);
+                     IActiveScriptProfilerCallback *This,
+                     DWORD dwContext);
 
     HRESULT (STDMETHODCALLTYPE *Shutdown)(
-        IActiveScriptProfilerCallback *This,
-        HRESULT hrReason);
+                     IActiveScriptProfilerCallback *This,
+                     HRESULT hrReason);
 
     HRESULT (STDMETHODCALLTYPE *ScriptCompiled)(
-        IActiveScriptProfilerCallback *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_SCRIPT_TYPE type,
-        IUnknown *pIDebugDocumentContext);
+                     IActiveScriptProfilerCallback *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_SCRIPT_TYPE type,
+                     IUnknown *pIDebugDocumentContext);
 
     HRESULT (STDMETHODCALLTYPE *FunctionCompiled)(
-        IActiveScriptProfilerCallback *This,
-        PROFILER_TOKEN functionId,
-        PROFILER_TOKEN scriptId,
-        const WCHAR *pwszFunctionName,
-        const WCHAR *pwszFunctionNameHint,
-        IUnknown *pIDebugDocumentContext);
+                     IActiveScriptProfilerCallback *This,
+                     PROFILER_TOKEN functionId,
+                     PROFILER_TOKEN scriptId,
+                     const WCHAR *pwszFunctionName,
+                     const WCHAR *pwszFunctionNameHint,
+                     IUnknown *pIDebugDocumentContext);
 
     HRESULT (STDMETHODCALLTYPE *OnFunctionEnter)(
-        IActiveScriptProfilerCallback *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_TOKEN functionId);
+                     IActiveScriptProfilerCallback *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_TOKEN functionId);
 
     HRESULT (STDMETHODCALLTYPE *OnFunctionExit)(
-        IActiveScriptProfilerCallback *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_TOKEN functionId);
+                     IActiveScriptProfilerCallback *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_TOKEN functionId);
 
     END_INTERFACE
 } IActiveScriptProfilerCallbackVtbl;
@@ -842,12 +842,12 @@ MIDL_INTERFACE("31b7f8ad-a637-409c-b22f-040995b6103d")
 IActiveScriptProfilerCallback2 : public IActiveScriptProfilerCallback
 {
     virtual HRESULT STDMETHODCALLTYPE OnFunctionEnterByName(
-        const WCHAR *pwszFunctionName,
-        PROFILER_SCRIPT_TYPE type) = 0;
+                     const WCHAR *pwszFunctionName,
+                     PROFILER_SCRIPT_TYPE type) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OnFunctionExitByName(
-        const WCHAR *pwszFunctionName,
-        PROFILER_SCRIPT_TYPE type) = 0;
+                     const WCHAR *pwszFunctionName,
+                     PROFILER_SCRIPT_TYPE type) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -859,59 +859,59 @@ typedef struct IActiveScriptProfilerCallback2Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptProfilerCallback2 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptProfilerCallback2 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptProfilerCallback2 *This);
+                     IActiveScriptProfilerCallback2 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptProfilerCallback2 *This);
+                     IActiveScriptProfilerCallback2 *This);
 
     /*** IActiveScriptProfilerCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IActiveScriptProfilerCallback2 *This,
-        DWORD dwContext);
+                     IActiveScriptProfilerCallback2 *This,
+                     DWORD dwContext);
 
     HRESULT (STDMETHODCALLTYPE *Shutdown)(
-        IActiveScriptProfilerCallback2 *This,
-        HRESULT hrReason);
+                     IActiveScriptProfilerCallback2 *This,
+                     HRESULT hrReason);
 
     HRESULT (STDMETHODCALLTYPE *ScriptCompiled)(
-        IActiveScriptProfilerCallback2 *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_SCRIPT_TYPE type,
-        IUnknown *pIDebugDocumentContext);
+                     IActiveScriptProfilerCallback2 *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_SCRIPT_TYPE type,
+                     IUnknown *pIDebugDocumentContext);
 
     HRESULT (STDMETHODCALLTYPE *FunctionCompiled)(
-        IActiveScriptProfilerCallback2 *This,
-        PROFILER_TOKEN functionId,
-        PROFILER_TOKEN scriptId,
-        const WCHAR *pwszFunctionName,
-        const WCHAR *pwszFunctionNameHint,
-        IUnknown *pIDebugDocumentContext);
+                     IActiveScriptProfilerCallback2 *This,
+                     PROFILER_TOKEN functionId,
+                     PROFILER_TOKEN scriptId,
+                     const WCHAR *pwszFunctionName,
+                     const WCHAR *pwszFunctionNameHint,
+                     IUnknown *pIDebugDocumentContext);
 
     HRESULT (STDMETHODCALLTYPE *OnFunctionEnter)(
-        IActiveScriptProfilerCallback2 *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_TOKEN functionId);
+                     IActiveScriptProfilerCallback2 *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_TOKEN functionId);
 
     HRESULT (STDMETHODCALLTYPE *OnFunctionExit)(
-        IActiveScriptProfilerCallback2 *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_TOKEN functionId);
+                     IActiveScriptProfilerCallback2 *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_TOKEN functionId);
 
     /*** IActiveScriptProfilerCallback2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnFunctionEnterByName)(
-        IActiveScriptProfilerCallback2 *This,
-        const WCHAR *pwszFunctionName,
-        PROFILER_SCRIPT_TYPE type);
+                     IActiveScriptProfilerCallback2 *This,
+                     const WCHAR *pwszFunctionName,
+                     PROFILER_SCRIPT_TYPE type);
 
     HRESULT (STDMETHODCALLTYPE *OnFunctionExitByName)(
-        IActiveScriptProfilerCallback2 *This,
-        const WCHAR *pwszFunctionName,
-        PROFILER_SCRIPT_TYPE type);
+                     IActiveScriptProfilerCallback2 *This,
+                     const WCHAR *pwszFunctionName,
+                     PROFILER_SCRIPT_TYPE type);
 
     END_INTERFACE
 } IActiveScriptProfilerCallback2Vtbl;
@@ -994,7 +994,7 @@ MIDL_INTERFACE("6ac5ad25-2037-4687-91df-b59979d93d73")
 IActiveScriptProfilerCallback3 : public IActiveScriptProfilerCallback2
 {
     virtual HRESULT STDMETHODCALLTYPE SetWebWorkerId(
-        DWORD webWorkerId) = 0;
+                     DWORD webWorkerId) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1006,64 +1006,64 @@ typedef struct IActiveScriptProfilerCallback3Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptProfilerCallback3 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptProfilerCallback3 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptProfilerCallback3 *This);
+                     IActiveScriptProfilerCallback3 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptProfilerCallback3 *This);
+                     IActiveScriptProfilerCallback3 *This);
 
     /*** IActiveScriptProfilerCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *Initialize)(
-        IActiveScriptProfilerCallback3 *This,
-        DWORD dwContext);
+                     IActiveScriptProfilerCallback3 *This,
+                     DWORD dwContext);
 
     HRESULT (STDMETHODCALLTYPE *Shutdown)(
-        IActiveScriptProfilerCallback3 *This,
-        HRESULT hrReason);
+                     IActiveScriptProfilerCallback3 *This,
+                     HRESULT hrReason);
 
     HRESULT (STDMETHODCALLTYPE *ScriptCompiled)(
-        IActiveScriptProfilerCallback3 *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_SCRIPT_TYPE type,
-        IUnknown *pIDebugDocumentContext);
+                     IActiveScriptProfilerCallback3 *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_SCRIPT_TYPE type,
+                     IUnknown *pIDebugDocumentContext);
 
     HRESULT (STDMETHODCALLTYPE *FunctionCompiled)(
-        IActiveScriptProfilerCallback3 *This,
-        PROFILER_TOKEN functionId,
-        PROFILER_TOKEN scriptId,
-        const WCHAR *pwszFunctionName,
-        const WCHAR *pwszFunctionNameHint,
-        IUnknown *pIDebugDocumentContext);
+                     IActiveScriptProfilerCallback3 *This,
+                     PROFILER_TOKEN functionId,
+                     PROFILER_TOKEN scriptId,
+                     const WCHAR *pwszFunctionName,
+                     const WCHAR *pwszFunctionNameHint,
+                     IUnknown *pIDebugDocumentContext);
 
     HRESULT (STDMETHODCALLTYPE *OnFunctionEnter)(
-        IActiveScriptProfilerCallback3 *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_TOKEN functionId);
+                     IActiveScriptProfilerCallback3 *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_TOKEN functionId);
 
     HRESULT (STDMETHODCALLTYPE *OnFunctionExit)(
-        IActiveScriptProfilerCallback3 *This,
-        PROFILER_TOKEN scriptId,
-        PROFILER_TOKEN functionId);
+                     IActiveScriptProfilerCallback3 *This,
+                     PROFILER_TOKEN scriptId,
+                     PROFILER_TOKEN functionId);
 
     /*** IActiveScriptProfilerCallback2 methods ***/
     HRESULT (STDMETHODCALLTYPE *OnFunctionEnterByName)(
-        IActiveScriptProfilerCallback3 *This,
-        const WCHAR *pwszFunctionName,
-        PROFILER_SCRIPT_TYPE type);
+                     IActiveScriptProfilerCallback3 *This,
+                     const WCHAR *pwszFunctionName,
+                     PROFILER_SCRIPT_TYPE type);
 
     HRESULT (STDMETHODCALLTYPE *OnFunctionExitByName)(
-        IActiveScriptProfilerCallback3 *This,
-        const WCHAR *pwszFunctionName,
-        PROFILER_SCRIPT_TYPE type);
+                     IActiveScriptProfilerCallback3 *This,
+                     const WCHAR *pwszFunctionName,
+                     PROFILER_SCRIPT_TYPE type);
 
     /*** IActiveScriptProfilerCallback3 methods ***/
     HRESULT (STDMETHODCALLTYPE *SetWebWorkerId)(
-        IActiveScriptProfilerCallback3 *This,
-        DWORD webWorkerId);
+                     IActiveScriptProfilerCallback3 *This,
+                     DWORD webWorkerId);
 
     END_INTERFACE
 } IActiveScriptProfilerCallback3Vtbl;

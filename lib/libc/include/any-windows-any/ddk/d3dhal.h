@@ -563,8 +563,8 @@ typedef struct _D3DHAL_DP2TEXBLT {
 } D3DHAL_DP2TEXBLT,*LPD3DHAL_DP2TEXBLT;
 
 typedef struct _D3DHAL_DP2STATESET {
-  DWORD               dwOperation;
-  DWORD               dwParam;
+  DWORD                                         dwOperation;
+  DWORD                                         dwParam;
   D3DSTATEBLOCKTYPE   sbType;
 } D3DHAL_DP2STATESET,*LPD3DHAL_DP2STATESET;
 
@@ -750,8 +750,8 @@ typedef struct _DD_GETEXTENDEDMODECOUNTDATA {
 
 typedef struct _DD_GETEXTENDEDMODEDATA {
   DD_GETDRIVERINFO2DATA gdi2;
-  DWORD                 dwModeIndex;
-  D3DDISPLAYMODE        mode;
+  DWORD                                           dwModeIndex;
+  D3DDISPLAYMODE                     mode;
 } DD_GETEXTENDEDMODEDATA;
 
 typedef struct _DD_GETADAPTERGROUPDATA {
@@ -764,7 +764,7 @@ typedef struct _DD_GETADAPTERGROUPDATA {
 typedef struct _DD_MULTISAMPLEQUALITYLEVELSDATA {
   DD_GETDRIVERINFO2DATA gdi2;
   D3DFORMAT Format;
-  BOOL                  bFlip  :  1;
+  BOOL                                                         bFlip  :  1;
   D3DMULTISAMPLE_TYPE   MSType : 31;
   DWORD QualityLevels;
 } DD_MULTISAMPLEQUALITYLEVELSDATA;

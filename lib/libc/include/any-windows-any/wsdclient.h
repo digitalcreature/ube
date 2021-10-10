@@ -189,26 +189,26 @@ MIDL_INTERFACE("11a9852a-8dd8-423e-b537-9356db4fbfb8")
 IWSDAsyncResult : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SetCallback(
-        IWSDAsyncCallback *pCallback,
-        IUnknown *pAsyncState) = 0;
+                     IWSDAsyncCallback *pCallback,
+                     IUnknown *pAsyncState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetWaitHandle(
-        HANDLE hWaitHandle) = 0;
+                     HANDLE hWaitHandle) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE HasCompleted(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAsyncState(
-        IUnknown **ppAsyncState) = 0;
+                     IUnknown **ppAsyncState) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Abort(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEvent(
-        WSD_EVENT *pEvent) = 0;
+                     WSD_EVENT *pEvent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEndpointProxy(
-        IWSDEndpointProxy **ppEndpoint) = 0;
+                     IWSDEndpointProxy **ppEndpoint) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -220,43 +220,43 @@ typedef struct IWSDAsyncResultVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDAsyncResult *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDAsyncResult *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDAsyncResult *This);
+                     IWSDAsyncResult *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDAsyncResult *This);
+                     IWSDAsyncResult *This);
 
     /*** IWSDAsyncResult methods ***/
     HRESULT (STDMETHODCALLTYPE *SetCallback)(
-        IWSDAsyncResult *This,
-        IWSDAsyncCallback *pCallback,
-        IUnknown *pAsyncState);
+                     IWSDAsyncResult *This,
+                     IWSDAsyncCallback *pCallback,
+                     IUnknown *pAsyncState);
 
     HRESULT (STDMETHODCALLTYPE *SetWaitHandle)(
-        IWSDAsyncResult *This,
-        HANDLE hWaitHandle);
+                     IWSDAsyncResult *This,
+                     HANDLE hWaitHandle);
 
     HRESULT (STDMETHODCALLTYPE *HasCompleted)(
-        IWSDAsyncResult *This);
+                     IWSDAsyncResult *This);
 
     HRESULT (STDMETHODCALLTYPE *GetAsyncState)(
-        IWSDAsyncResult *This,
-        IUnknown **ppAsyncState);
+                     IWSDAsyncResult *This,
+                     IUnknown **ppAsyncState);
 
     HRESULT (STDMETHODCALLTYPE *Abort)(
-        IWSDAsyncResult *This);
+                     IWSDAsyncResult *This);
 
     HRESULT (STDMETHODCALLTYPE *GetEvent)(
-        IWSDAsyncResult *This,
-        WSD_EVENT *pEvent);
+                     IWSDAsyncResult *This,
+                     WSD_EVENT *pEvent);
 
     HRESULT (STDMETHODCALLTYPE *GetEndpointProxy)(
-        IWSDAsyncResult *This,
-        IWSDEndpointProxy **ppEndpoint);
+                     IWSDAsyncResult *This,
+                     IWSDEndpointProxy **ppEndpoint);
 
     END_INTERFACE
 } IWSDAsyncResultVtbl;
@@ -332,8 +332,8 @@ MIDL_INTERFACE("a63e109d-ce72-49e2-ba98-e845f5ee1666")
 IWSDAsyncCallback : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AsyncOperationComplete(
-        IWSDAsyncResult *pAsyncResult,
-        IUnknown *pAsyncState) = 0;
+                     IWSDAsyncResult *pAsyncResult,
+                     IUnknown *pAsyncState) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -345,21 +345,21 @@ typedef struct IWSDAsyncCallbackVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDAsyncCallback *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDAsyncCallback *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDAsyncCallback *This);
+                     IWSDAsyncCallback *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDAsyncCallback *This);
+                     IWSDAsyncCallback *This);
 
     /*** IWSDAsyncCallback methods ***/
     HRESULT (STDMETHODCALLTYPE *AsyncOperationComplete)(
-        IWSDAsyncCallback *This,
-        IWSDAsyncResult *pAsyncResult,
-        IUnknown *pAsyncState);
+                     IWSDAsyncCallback *This,
+                     IWSDAsyncResult *pAsyncResult,
+                     IUnknown *pAsyncState);
 
     END_INTERFACE
 } IWSDAsyncCallbackVtbl;
@@ -411,7 +411,7 @@ MIDL_INTERFACE("06996d57-1d67-4928-9307-3d7833fdb846")
 IWSDMetadataExchange : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE GetMetadata(
-        WSD_METADATA_SECTION_LIST **MetadataOut) = 0;
+                     WSD_METADATA_SECTION_LIST **MetadataOut) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -423,20 +423,20 @@ typedef struct IWSDMetadataExchangeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDMetadataExchange *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDMetadataExchange *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDMetadataExchange *This);
+                     IWSDMetadataExchange *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDMetadataExchange *This);
+                     IWSDMetadataExchange *This);
 
     /*** IWSDMetadataExchange methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMetadata)(
-        IWSDMetadataExchange *This,
-        WSD_METADATA_SECTION_LIST **MetadataOut);
+                     IWSDMetadataExchange *This,
+                     WSD_METADATA_SECTION_LIST **MetadataOut);
 
     END_INTERFACE
 } IWSDMetadataExchangeVtbl;
@@ -488,14 +488,14 @@ MIDL_INTERFACE("49b17f52-637a-407a-ae99-fbe82a4d38c0")
 IWSDEventingStatus : public IUnknown
 {
     virtual void STDMETHODCALLTYPE SubscriptionRenewed(
-        LPCWSTR pszSubscriptionAction) = 0;
+                     LPCWSTR pszSubscriptionAction) = 0;
 
     virtual void STDMETHODCALLTYPE SubscriptionRenewalFailed(
-        LPCWSTR pszSubscriptionAction,
-        HRESULT hr) = 0;
+                     LPCWSTR pszSubscriptionAction,
+                     HRESULT hr) = 0;
 
     virtual void STDMETHODCALLTYPE SubscriptionEnded(
-        LPCWSTR pszSubscriptionAction) = 0;
+                     LPCWSTR pszSubscriptionAction) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -507,29 +507,29 @@ typedef struct IWSDEventingStatusVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDEventingStatus *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDEventingStatus *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDEventingStatus *This);
+                     IWSDEventingStatus *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDEventingStatus *This);
+                     IWSDEventingStatus *This);
 
     /*** IWSDEventingStatus methods ***/
     void (STDMETHODCALLTYPE *SubscriptionRenewed)(
-        IWSDEventingStatus *This,
-        LPCWSTR pszSubscriptionAction);
+                     IWSDEventingStatus *This,
+                     LPCWSTR pszSubscriptionAction);
 
     void (STDMETHODCALLTYPE *SubscriptionRenewalFailed)(
-        IWSDEventingStatus *This,
-        LPCWSTR pszSubscriptionAction,
-        HRESULT hr);
+                     IWSDEventingStatus *This,
+                     LPCWSTR pszSubscriptionAction,
+                     HRESULT hr);
 
     void (STDMETHODCALLTYPE *SubscriptionEnded)(
-        IWSDEventingStatus *This,
-        LPCWSTR pszSubscriptionAction);
+                     IWSDEventingStatus *This,
+                     LPCWSTR pszSubscriptionAction);
 
     END_INTERFACE
 } IWSDEventingStatusVtbl;
@@ -589,32 +589,32 @@ MIDL_INTERFACE("1860d430-b24c-4975-9f90-dbb39baa24ec")
 IWSDEndpointProxy : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE SendOneWayRequest(
-        const void *pBody,
-        const WSD_OPERATION *pOperation) = 0;
+                     const void *pBody,
+                     const WSD_OPERATION *pOperation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendTwoWayRequest(
-        const void *pBody,
-        const WSD_OPERATION *pOperation,
-        const WSD_SYNCHRONOUS_RESPONSE_CONTEXT *pResponseContext) = 0;
+                     const void *pBody,
+                     const WSD_OPERATION *pOperation,
+                     const WSD_SYNCHRONOUS_RESPONSE_CONTEXT *pResponseContext) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendTwoWayRequestAsync(
-        const void *pBody,
-        const WSD_OPERATION *pOperation,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pCallback,
-        IWSDAsyncResult **pResult) = 0;
+                     const void *pBody,
+                     const WSD_OPERATION *pOperation,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pCallback,
+                     IWSDAsyncResult **pResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AbortAsyncOperation(
-        IWSDAsyncResult *pAsyncResult) = 0;
+                     IWSDAsyncResult *pAsyncResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ProcessFault(
-        const WSD_SOAP_FAULT *pFault) = 0;
+                     const WSD_SOAP_FAULT *pFault) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetErrorInfo(
-        LPCWSTR *ppszErrorInfo) = 0;
+                     LPCWSTR *ppszErrorInfo) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetFaultInfo(
-        WSD_SOAP_FAULT **ppFault) = 0;
+                     WSD_SOAP_FAULT **ppFault) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -626,51 +626,51 @@ typedef struct IWSDEndpointProxyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDEndpointProxy *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDEndpointProxy *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDEndpointProxy *This);
+                     IWSDEndpointProxy *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDEndpointProxy *This);
+                     IWSDEndpointProxy *This);
 
     /*** IWSDEndpointProxy methods ***/
     HRESULT (STDMETHODCALLTYPE *SendOneWayRequest)(
-        IWSDEndpointProxy *This,
-        const void *pBody,
-        const WSD_OPERATION *pOperation);
+                     IWSDEndpointProxy *This,
+                     const void *pBody,
+                     const WSD_OPERATION *pOperation);
 
     HRESULT (STDMETHODCALLTYPE *SendTwoWayRequest)(
-        IWSDEndpointProxy *This,
-        const void *pBody,
-        const WSD_OPERATION *pOperation,
-        const WSD_SYNCHRONOUS_RESPONSE_CONTEXT *pResponseContext);
+                     IWSDEndpointProxy *This,
+                     const void *pBody,
+                     const WSD_OPERATION *pOperation,
+                     const WSD_SYNCHRONOUS_RESPONSE_CONTEXT *pResponseContext);
 
     HRESULT (STDMETHODCALLTYPE *SendTwoWayRequestAsync)(
-        IWSDEndpointProxy *This,
-        const void *pBody,
-        const WSD_OPERATION *pOperation,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pCallback,
-        IWSDAsyncResult **pResult);
+                     IWSDEndpointProxy *This,
+                     const void *pBody,
+                     const WSD_OPERATION *pOperation,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pCallback,
+                     IWSDAsyncResult **pResult);
 
     HRESULT (STDMETHODCALLTYPE *AbortAsyncOperation)(
-        IWSDEndpointProxy *This,
-        IWSDAsyncResult *pAsyncResult);
+                     IWSDEndpointProxy *This,
+                     IWSDAsyncResult *pAsyncResult);
 
     HRESULT (STDMETHODCALLTYPE *ProcessFault)(
-        IWSDEndpointProxy *This,
-        const WSD_SOAP_FAULT *pFault);
+                     IWSDEndpointProxy *This,
+                     const WSD_SOAP_FAULT *pFault);
 
     HRESULT (STDMETHODCALLTYPE *GetErrorInfo)(
-        IWSDEndpointProxy *This,
-        LPCWSTR *ppszErrorInfo);
+                     IWSDEndpointProxy *This,
+                     LPCWSTR *ppszErrorInfo);
 
     HRESULT (STDMETHODCALLTYPE *GetFaultInfo)(
-        IWSDEndpointProxy *This,
-        WSD_SOAP_FAULT **ppFault);
+                     IWSDEndpointProxy *This,
+                     WSD_SOAP_FAULT **ppFault);
 
     END_INTERFACE
 } IWSDEndpointProxyVtbl;
@@ -746,40 +746,40 @@ MIDL_INTERFACE("eee0c031-c578-4c0e-9a3b-973c35f409db")
 IWSDDeviceProxy : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Init(
-        LPCWSTR pszDeviceId,
-        IWSDAddress *pDeviceAddress,
-        LPCWSTR pszLocalId,
-        IWSDXMLContext *pContext,
-        IWSDDeviceProxy *pSponsor) = 0;
+                     LPCWSTR pszDeviceId,
+                     IWSDAddress *pDeviceAddress,
+                     LPCWSTR pszLocalId,
+                     IWSDXMLContext *pContext,
+                     IWSDDeviceProxy *pSponsor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginGetMetadata(
-        IWSDAsyncResult **ppResult) = 0;
+                     IWSDAsyncResult **ppResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndGetMetadata(
-        IWSDAsyncResult *pResult) = 0;
+                     IWSDAsyncResult *pResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetHostMetadata(
-        WSD_HOST_METADATA **ppHostMetadata) = 0;
+                     WSD_HOST_METADATA **ppHostMetadata) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThisModelMetadata(
-        WSD_THIS_MODEL_METADATA **ppManufacturerMetadata) = 0;
+                     WSD_THIS_MODEL_METADATA **ppManufacturerMetadata) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetThisDeviceMetadata(
-        WSD_THIS_DEVICE_METADATA **ppThisDeviceMetadata) = 0;
+                     WSD_THIS_DEVICE_METADATA **ppThisDeviceMetadata) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetAllMetadata(
-        WSD_METADATA_SECTION_LIST **ppMetadata) = 0;
+                     WSD_METADATA_SECTION_LIST **ppMetadata) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetServiceProxyById(
-        LPCWSTR pszServiceId,
-        IWSDServiceProxy **ppServiceProxy) = 0;
+                     LPCWSTR pszServiceId,
+                     IWSDServiceProxy **ppServiceProxy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetServiceProxyByType(
-        const WSDXML_NAME *pType,
-        IWSDServiceProxy **ppServiceProxy) = 0;
+                     const WSDXML_NAME *pType,
+                     IWSDServiceProxy **ppServiceProxy) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEndpointProxy(
-        IWSDEndpointProxy **ppProxy) = 0;
+                     IWSDEndpointProxy **ppProxy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -791,62 +791,62 @@ typedef struct IWSDDeviceProxyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDDeviceProxy *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDDeviceProxy *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDDeviceProxy *This);
+                     IWSDDeviceProxy *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDDeviceProxy *This);
+                     IWSDDeviceProxy *This);
 
     /*** IWSDDeviceProxy methods ***/
     HRESULT (STDMETHODCALLTYPE *Init)(
-        IWSDDeviceProxy *This,
-        LPCWSTR pszDeviceId,
-        IWSDAddress *pDeviceAddress,
-        LPCWSTR pszLocalId,
-        IWSDXMLContext *pContext,
-        IWSDDeviceProxy *pSponsor);
+                     IWSDDeviceProxy *This,
+                     LPCWSTR pszDeviceId,
+                     IWSDAddress *pDeviceAddress,
+                     LPCWSTR pszLocalId,
+                     IWSDXMLContext *pContext,
+                     IWSDDeviceProxy *pSponsor);
 
     HRESULT (STDMETHODCALLTYPE *BeginGetMetadata)(
-        IWSDDeviceProxy *This,
-        IWSDAsyncResult **ppResult);
+                     IWSDDeviceProxy *This,
+                     IWSDAsyncResult **ppResult);
 
     HRESULT (STDMETHODCALLTYPE *EndGetMetadata)(
-        IWSDDeviceProxy *This,
-        IWSDAsyncResult *pResult);
+                     IWSDDeviceProxy *This,
+                     IWSDAsyncResult *pResult);
 
     HRESULT (STDMETHODCALLTYPE *GetHostMetadata)(
-        IWSDDeviceProxy *This,
-        WSD_HOST_METADATA **ppHostMetadata);
+                     IWSDDeviceProxy *This,
+                     WSD_HOST_METADATA **ppHostMetadata);
 
     HRESULT (STDMETHODCALLTYPE *GetThisModelMetadata)(
-        IWSDDeviceProxy *This,
-        WSD_THIS_MODEL_METADATA **ppManufacturerMetadata);
+                     IWSDDeviceProxy *This,
+                     WSD_THIS_MODEL_METADATA **ppManufacturerMetadata);
 
     HRESULT (STDMETHODCALLTYPE *GetThisDeviceMetadata)(
-        IWSDDeviceProxy *This,
-        WSD_THIS_DEVICE_METADATA **ppThisDeviceMetadata);
+                     IWSDDeviceProxy *This,
+                     WSD_THIS_DEVICE_METADATA **ppThisDeviceMetadata);
 
     HRESULT (STDMETHODCALLTYPE *GetAllMetadata)(
-        IWSDDeviceProxy *This,
-        WSD_METADATA_SECTION_LIST **ppMetadata);
+                     IWSDDeviceProxy *This,
+                     WSD_METADATA_SECTION_LIST **ppMetadata);
 
     HRESULT (STDMETHODCALLTYPE *GetServiceProxyById)(
-        IWSDDeviceProxy *This,
-        LPCWSTR pszServiceId,
-        IWSDServiceProxy **ppServiceProxy);
+                     IWSDDeviceProxy *This,
+                     LPCWSTR pszServiceId,
+                     IWSDServiceProxy **ppServiceProxy);
 
     HRESULT (STDMETHODCALLTYPE *GetServiceProxyByType)(
-        IWSDDeviceProxy *This,
-        const WSDXML_NAME *pType,
-        IWSDServiceProxy **ppServiceProxy);
+                     IWSDDeviceProxy *This,
+                     const WSDXML_NAME *pType,
+                     IWSDServiceProxy **ppServiceProxy);
 
     HRESULT (STDMETHODCALLTYPE *GetEndpointProxy)(
-        IWSDDeviceProxy *This,
-        IWSDEndpointProxy **ppProxy);
+                     IWSDDeviceProxy *This,
+                     IWSDEndpointProxy **ppProxy);
 
     END_INTERFACE
 } IWSDDeviceProxyVtbl;
@@ -934,29 +934,29 @@ MIDL_INTERFACE("d4c7fb9c-03ab-4175-9d67-094fafebf487")
 IWSDServiceProxy : public IWSDMetadataExchange
 {
     virtual HRESULT STDMETHODCALLTYPE BeginGetMetadata(
-        IWSDAsyncResult **ppResult) = 0;
+                     IWSDAsyncResult **ppResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndGetMetadata(
-        IWSDAsyncResult *pResult,
-        WSD_METADATA_SECTION_LIST **ppMetadata) = 0;
+                     IWSDAsyncResult *pResult,
+                     WSD_METADATA_SECTION_LIST **ppMetadata) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetServiceMetadata(
-        WSD_SERVICE_METADATA **ppServiceMetadata) = 0;
+                     WSD_SERVICE_METADATA **ppServiceMetadata) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SubscribeToOperation(
-        const WSD_OPERATION *pOperation,
-        IUnknown *pUnknown,
-        const WSDXML_ELEMENT *pAny,
-        WSDXML_ELEMENT **ppAny) = 0;
+                     const WSD_OPERATION *pOperation,
+                     IUnknown *pUnknown,
+                     const WSDXML_ELEMENT *pAny,
+                     WSDXML_ELEMENT **ppAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnsubscribeToOperation(
-        const WSD_OPERATION *pOperation) = 0;
+                     const WSD_OPERATION *pOperation) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEventingStatusCallback(
-        IWSDEventingStatus *pStatus) = 0;
+                     IWSDEventingStatus *pStatus) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEndpointProxy(
-        IWSDEndpointProxy **ppProxy) = 0;
+                     IWSDEndpointProxy **ppProxy) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -968,53 +968,53 @@ typedef struct IWSDServiceProxyVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDServiceProxy *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDServiceProxy *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDServiceProxy *This);
+                     IWSDServiceProxy *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDServiceProxy *This);
+                     IWSDServiceProxy *This);
 
     /*** IWSDMetadataExchange methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMetadata)(
-        IWSDServiceProxy *This,
-        WSD_METADATA_SECTION_LIST **MetadataOut);
+                     IWSDServiceProxy *This,
+                     WSD_METADATA_SECTION_LIST **MetadataOut);
 
     /*** IWSDServiceProxy methods ***/
     HRESULT (STDMETHODCALLTYPE *BeginGetMetadata)(
-        IWSDServiceProxy *This,
-        IWSDAsyncResult **ppResult);
+                     IWSDServiceProxy *This,
+                     IWSDAsyncResult **ppResult);
 
     HRESULT (STDMETHODCALLTYPE *EndGetMetadata)(
-        IWSDServiceProxy *This,
-        IWSDAsyncResult *pResult,
-        WSD_METADATA_SECTION_LIST **ppMetadata);
+                     IWSDServiceProxy *This,
+                     IWSDAsyncResult *pResult,
+                     WSD_METADATA_SECTION_LIST **ppMetadata);
 
     HRESULT (STDMETHODCALLTYPE *GetServiceMetadata)(
-        IWSDServiceProxy *This,
-        WSD_SERVICE_METADATA **ppServiceMetadata);
+                     IWSDServiceProxy *This,
+                     WSD_SERVICE_METADATA **ppServiceMetadata);
 
     HRESULT (STDMETHODCALLTYPE *SubscribeToOperation)(
-        IWSDServiceProxy *This,
-        const WSD_OPERATION *pOperation,
-        IUnknown *pUnknown,
-        const WSDXML_ELEMENT *pAny,
-        WSDXML_ELEMENT **ppAny);
+                     IWSDServiceProxy *This,
+                     const WSD_OPERATION *pOperation,
+                     IUnknown *pUnknown,
+                     const WSDXML_ELEMENT *pAny,
+                     WSDXML_ELEMENT **ppAny);
 
     HRESULT (STDMETHODCALLTYPE *UnsubscribeToOperation)(
-        IWSDServiceProxy *This,
-        const WSD_OPERATION *pOperation);
+                     IWSDServiceProxy *This,
+                     const WSD_OPERATION *pOperation);
 
     HRESULT (STDMETHODCALLTYPE *SetEventingStatusCallback)(
-        IWSDServiceProxy *This,
-        IWSDEventingStatus *pStatus);
+                     IWSDServiceProxy *This,
+                     IWSDEventingStatus *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetEndpointProxy)(
-        IWSDServiceProxy *This,
-        IWSDEndpointProxy **ppProxy);
+                     IWSDServiceProxy *This,
+                     IWSDEndpointProxy **ppProxy);
 
     END_INTERFACE
 } IWSDServiceProxyVtbl;
@@ -1097,94 +1097,94 @@ MIDL_INTERFACE("f9279d6d-1012-4a94-b8cc-fd35d2202bfe")
 IWSDServiceProxyEventing : public IWSDServiceProxy
 {
     virtual HRESULT STDMETHODCALLTYPE SubscribeToMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IUnknown *pUnknown,
-        const WSD_EVENTING_EXPIRES *pExpires,
-        const WSDXML_ELEMENT *pAny,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IUnknown *pUnknown,
+                     const WSD_EVENTING_EXPIRES *pExpires,
+                     const WSDXML_ELEMENT *pAny,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginSubscribeToMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IUnknown *pUnknown,
-        const WSD_EVENTING_EXPIRES *pExpires,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pAsyncCallback,
-        IWSDAsyncResult **ppResult) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IUnknown *pUnknown,
+                     const WSD_EVENTING_EXPIRES *pExpires,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pAsyncCallback,
+                     IWSDAsyncResult **ppResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndSubscribeToMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IWSDAsyncResult *pResult,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IWSDAsyncResult *pResult,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE UnsubscribeToMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSDXML_ELEMENT *pAny) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSDXML_ELEMENT *pAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginUnsubscribeToMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pAsyncCallback,
-        IWSDAsyncResult **ppResult) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pAsyncCallback,
+                     IWSDAsyncResult **ppResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndUnsubscribeToMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IWSDAsyncResult *pResult) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IWSDAsyncResult *pResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RenewMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSD_EVENTING_EXPIRES *pExpires,
-        const WSDXML_ELEMENT *pAny,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSD_EVENTING_EXPIRES *pExpires,
+                     const WSDXML_ELEMENT *pAny,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginRenewMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSD_EVENTING_EXPIRES *pExpires,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pAsyncCallback,
-        IWSDAsyncResult **ppResult) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSD_EVENTING_EXPIRES *pExpires,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pAsyncCallback,
+                     IWSDAsyncResult **ppResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndRenewMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IWSDAsyncResult *pResult,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IWSDAsyncResult *pResult,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetStatusForMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSDXML_ELEMENT *pAny,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSDXML_ELEMENT *pAny,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE BeginGetStatusForMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pAsyncCallback,
-        IWSDAsyncResult **ppResult) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pAsyncCallback,
+                     IWSDAsyncResult **ppResult) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EndGetStatusForMultipleOperations(
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IWSDAsyncResult *pResult,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny) = 0;
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IWSDAsyncResult *pResult,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1196,156 +1196,156 @@ typedef struct IWSDServiceProxyEventingVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IWSDServiceProxyEventing *This,
-        REFIID riid,
-        void **ppvObject);
+                     IWSDServiceProxyEventing *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IWSDServiceProxyEventing *This);
+                     IWSDServiceProxyEventing *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IWSDServiceProxyEventing *This);
+                     IWSDServiceProxyEventing *This);
 
     /*** IWSDMetadataExchange methods ***/
     HRESULT (STDMETHODCALLTYPE *GetMetadata)(
-        IWSDServiceProxyEventing *This,
-        WSD_METADATA_SECTION_LIST **MetadataOut);
+                     IWSDServiceProxyEventing *This,
+                     WSD_METADATA_SECTION_LIST **MetadataOut);
 
     /*** IWSDServiceProxy methods ***/
     HRESULT (STDMETHODCALLTYPE *BeginGetMetadata)(
-        IWSDServiceProxyEventing *This,
-        IWSDAsyncResult **ppResult);
+                     IWSDServiceProxyEventing *This,
+                     IWSDAsyncResult **ppResult);
 
     HRESULT (STDMETHODCALLTYPE *EndGetMetadata)(
-        IWSDServiceProxyEventing *This,
-        IWSDAsyncResult *pResult,
-        WSD_METADATA_SECTION_LIST **ppMetadata);
+                     IWSDServiceProxyEventing *This,
+                     IWSDAsyncResult *pResult,
+                     WSD_METADATA_SECTION_LIST **ppMetadata);
 
     HRESULT (STDMETHODCALLTYPE *GetServiceMetadata)(
-        IWSDServiceProxyEventing *This,
-        WSD_SERVICE_METADATA **ppServiceMetadata);
+                     IWSDServiceProxyEventing *This,
+                     WSD_SERVICE_METADATA **ppServiceMetadata);
 
     HRESULT (STDMETHODCALLTYPE *SubscribeToOperation)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperation,
-        IUnknown *pUnknown,
-        const WSDXML_ELEMENT *pAny,
-        WSDXML_ELEMENT **ppAny);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperation,
+                     IUnknown *pUnknown,
+                     const WSDXML_ELEMENT *pAny,
+                     WSDXML_ELEMENT **ppAny);
 
     HRESULT (STDMETHODCALLTYPE *UnsubscribeToOperation)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperation);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperation);
 
     HRESULT (STDMETHODCALLTYPE *SetEventingStatusCallback)(
-        IWSDServiceProxyEventing *This,
-        IWSDEventingStatus *pStatus);
+                     IWSDServiceProxyEventing *This,
+                     IWSDEventingStatus *pStatus);
 
     HRESULT (STDMETHODCALLTYPE *GetEndpointProxy)(
-        IWSDServiceProxyEventing *This,
-        IWSDEndpointProxy **ppProxy);
+                     IWSDServiceProxyEventing *This,
+                     IWSDEndpointProxy **ppProxy);
 
     /*** IWSDServiceProxyEventing methods ***/
     HRESULT (STDMETHODCALLTYPE *SubscribeToMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IUnknown *pUnknown,
-        const WSD_EVENTING_EXPIRES *pExpires,
-        const WSDXML_ELEMENT *pAny,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IUnknown *pUnknown,
+                     const WSD_EVENTING_EXPIRES *pExpires,
+                     const WSDXML_ELEMENT *pAny,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny);
 
     HRESULT (STDMETHODCALLTYPE *BeginSubscribeToMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IUnknown *pUnknown,
-        const WSD_EVENTING_EXPIRES *pExpires,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pAsyncCallback,
-        IWSDAsyncResult **ppResult);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IUnknown *pUnknown,
+                     const WSD_EVENTING_EXPIRES *pExpires,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pAsyncCallback,
+                     IWSDAsyncResult **ppResult);
 
     HRESULT (STDMETHODCALLTYPE *EndSubscribeToMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IWSDAsyncResult *pResult,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IWSDAsyncResult *pResult,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny);
 
     HRESULT (STDMETHODCALLTYPE *UnsubscribeToMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSDXML_ELEMENT *pAny);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSDXML_ELEMENT *pAny);
 
     HRESULT (STDMETHODCALLTYPE *BeginUnsubscribeToMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pAsyncCallback,
-        IWSDAsyncResult **ppResult);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pAsyncCallback,
+                     IWSDAsyncResult **ppResult);
 
     HRESULT (STDMETHODCALLTYPE *EndUnsubscribeToMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IWSDAsyncResult *pResult);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IWSDAsyncResult *pResult);
 
     HRESULT (STDMETHODCALLTYPE *RenewMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSD_EVENTING_EXPIRES *pExpires,
-        const WSDXML_ELEMENT *pAny,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSD_EVENTING_EXPIRES *pExpires,
+                     const WSDXML_ELEMENT *pAny,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny);
 
     HRESULT (STDMETHODCALLTYPE *BeginRenewMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSD_EVENTING_EXPIRES *pExpires,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pAsyncCallback,
-        IWSDAsyncResult **ppResult);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSD_EVENTING_EXPIRES *pExpires,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pAsyncCallback,
+                     IWSDAsyncResult **ppResult);
 
     HRESULT (STDMETHODCALLTYPE *EndRenewMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IWSDAsyncResult *pResult,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IWSDAsyncResult *pResult,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny);
 
     HRESULT (STDMETHODCALLTYPE *GetStatusForMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSDXML_ELEMENT *pAny,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSDXML_ELEMENT *pAny,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny);
 
     HRESULT (STDMETHODCALLTYPE *BeginGetStatusForMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        const WSDXML_ELEMENT *pAny,
-        IUnknown *pAsyncState,
-        IWSDAsyncCallback *pAsyncCallback,
-        IWSDAsyncResult **ppResult);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     const WSDXML_ELEMENT *pAny,
+                     IUnknown *pAsyncState,
+                     IWSDAsyncCallback *pAsyncCallback,
+                     IWSDAsyncResult **ppResult);
 
     HRESULT (STDMETHODCALLTYPE *EndGetStatusForMultipleOperations)(
-        IWSDServiceProxyEventing *This,
-        const WSD_OPERATION *pOperations,
-        DWORD dwOperationCount,
-        IWSDAsyncResult *pResult,
-        WSD_EVENTING_EXPIRES **ppExpires,
-        WSDXML_ELEMENT **ppAny);
+                     IWSDServiceProxyEventing *This,
+                     const WSD_OPERATION *pOperations,
+                     DWORD dwOperationCount,
+                     IWSDAsyncResult *pResult,
+                     WSD_EVENTING_EXPIRES **ppExpires,
+                     WSDXML_ELEMENT **ppAny);
 
     END_INTERFACE
 } IWSDServiceProxyEventingVtbl;

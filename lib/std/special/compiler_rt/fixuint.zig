@@ -10,18 +10,18 @@ pub fn fixuint(comptime fp_t: type, comptime fixuint_t: type, a: fp_t) fixuint_t
     @setRuntimeSafety(is_test);
 
     const rep_t = switch (fp_t) {
-        f32 => u32,
-        f64 => u64,
-        f128 => u128,
-        else => unreachable,
+                     f32 => u32,
+                     f64 => u64,
+                     f128 => u128,
+                     else => unreachable,
     };
     const typeWidth = @typeInfo(rep_t).Int.bits;
     const srep_t = @import("std").meta.Int(.signed, typeWidth);
     const significandBits = switch (fp_t) {
-        f32 => 23,
-        f64 => 52,
-        f128 => 112,
-        else => unreachable,
+                     f32 => 23,
+                     f64 => 52,
+                     f128 => 112,
+                     else => unreachable,
     };
     const exponentBits = (typeWidth - significandBits - 1);
     const signBit = (@as(rep_t, 1) << (significandBits + exponentBits));
@@ -49,8 +49,8 @@ pub fn fixuint(comptime fp_t: type, comptime fixuint_t: type, a: fp_t) fixuint_t
     // If 0 <= exponent < significandBits, right shift to get the result.
     // Otherwise, shift left.
     if (exponent < significandBits) {
-        return @intCast(fixuint_t, significand >> @intCast(Log2Int(rep_t), significandBits - exponent));
+                     return @intCast(fixuint_t, significand >> @intCast(Log2Int(rep_t), significandBits - exponent));
     } else {
-        return @intCast(fixuint_t, significand) << @intCast(Log2Int(fixuint_t), exponent - significandBits);
+                     return @intCast(fixuint_t, significand) << @intCast(Log2Int(fixuint_t), exponent - significandBits);
     }
 }

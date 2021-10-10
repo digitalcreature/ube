@@ -112,7 +112,7 @@
 #define PORT_LH7A40X	57
 
 /* PPC CPM type number */
-#define PORT_CPM        58
+#define PORT_CPM                     58
 
 /* MPC52xx (and MPC512x) type numbers */
 #define PORT_MPC52xx	59
@@ -143,7 +143,7 @@
 #define PORT_M32R_SIO	68
 
 /*Digi jsm */
-#define PORT_JSM        69
+#define PORT_JSM                     69
 
 #define PORT_PNX8XXX	70
 
@@ -231,7 +231,7 @@
 #define PORT_EFMUART   100
 
 /* ARC (Synopsys) on-chip UART */
-#define PORT_ARC       101
+#define PORT_ARC                    101
 
 /* Rocketport EXPRESS/INFINITY */
 #define PORT_RP2	102
@@ -243,7 +243,7 @@
 #define PORT_HSCIF	104
 
 /* ST ASC type numbers */
-#define PORT_ASC       105
+#define PORT_ASC                    105
 
 /* Tilera TILE-Gx UART */
 #define PORT_TILEGX	106

@@ -12,7 +12,7 @@ extern "C" {
 #endif
 typedef struct _MFMPEG2DLNASINKSTATS {
   DWORDLONG cBytesWritten;
-  BOOL      fPAL;
+  BOOL                   fPAL;
   DWORD     fccVideo;
   DWORD     dwVideoWidth;
   DWORD     dwVideoHeight;

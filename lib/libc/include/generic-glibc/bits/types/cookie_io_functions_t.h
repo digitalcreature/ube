@@ -25,7 +25,7 @@
 /* Read NBYTES bytes from COOKIE into a buffer pointed to by BUF.
    Return number of bytes read.  */
 typedef __ssize_t cookie_read_function_t (void *__cookie, char *__buf,
-                                          size_t __nbytes);
+                                                                                                                                     size_t __nbytes);
 
 /* Write NBYTES bytes pointed to by BUF to COOKIE.  Write all NBYTES bytes
    unless there is an error.  Return number of bytes written.  If
@@ -34,7 +34,7 @@ typedef __ssize_t cookie_read_function_t (void *__cookie, char *__buf,
    pointer to the end of the file and then do the write; if not, just
    write at the current file pointer.  */
 typedef __ssize_t cookie_write_function_t (void *__cookie, const char *__buf,
-                                           size_t __nbytes);
+                                                                                                                                      size_t __nbytes);
 
 /* Move COOKIE's file position to *POS bytes from the
    beginning of the file (if W is SEEK_SET),

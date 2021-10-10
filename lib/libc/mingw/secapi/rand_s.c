@@ -22,8 +22,8 @@ static errno_t __cdecl init_rand_s(unsigned int *val)
 
     func = (void*)GetProcAddress(__mingw_get_msvcrt_handle(), "rand_s");
     if(!func) {
-        func = mingw_rand_s;
-        pRtlGenRandom = (void*)GetProcAddress(LoadLibraryW(L"advapi32.dll"), "SystemFunction036");
+                     func = mingw_rand_s;
+                     pRtlGenRandom = (void*)GetProcAddress(LoadLibraryW(L"advapi32.dll"), "SystemFunction036");
     }
 
     return (__MINGW_IMP_SYMBOL(rand_s) = func)(val);

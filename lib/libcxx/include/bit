@@ -19,7 +19,7 @@ namespace std {
   template <class T>
     constexpr bool ispow2(T x) noexcept; // C++20
   template <class T>
-    constexpr T ceil2(T x);              // C++20
+    constexpr T ceil2(T x);                                        // C++20
   template <class T>
     constexpr T floor2(T x) noexcept;    // C++20
   template <class T>
@@ -45,9 +45,9 @@ namespace std {
 
   // [bit.endian], endian
   enum class endian {
-    little = see below,        // C++20
-    big = see below,           // C++20
-    native = see below         // C++20
+    little = see below,                     // C++20
+    big = see below,                        // C++20
+    native = see below                      // C++20
 };
 
 } // namespace std
@@ -79,30 +79,30 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 #ifndef _LIBCPP_COMPILER_MSVC
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
-int __libcpp_ctz(unsigned __x)           _NOEXCEPT { return __builtin_ctz(__x); }
+int __libcpp_ctz(unsigned __x)                        _NOEXCEPT { return __builtin_ctz(__x); }
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
-int __libcpp_ctz(unsigned long __x)      _NOEXCEPT { return __builtin_ctzl(__x); }
+int __libcpp_ctz(unsigned long __x)                   _NOEXCEPT { return __builtin_ctzl(__x); }
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
 int __libcpp_ctz(unsigned long long __x) _NOEXCEPT { return __builtin_ctzll(__x); }
 
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
-int __libcpp_clz(unsigned __x)           _NOEXCEPT { return __builtin_clz(__x); }
+int __libcpp_clz(unsigned __x)                        _NOEXCEPT { return __builtin_clz(__x); }
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
-int __libcpp_clz(unsigned long __x)      _NOEXCEPT { return __builtin_clzl(__x); }
+int __libcpp_clz(unsigned long __x)                   _NOEXCEPT { return __builtin_clzl(__x); }
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
 int __libcpp_clz(unsigned long long __x) _NOEXCEPT { return __builtin_clzll(__x); }
 
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
-int __libcpp_popcount(unsigned __x)           _NOEXCEPT { return __builtin_popcount(__x); }
+int __libcpp_popcount(unsigned __x)                        _NOEXCEPT { return __builtin_popcount(__x); }
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
-int __libcpp_popcount(unsigned long __x)      _NOEXCEPT { return __builtin_popcountl(__x); }
+int __libcpp_popcount(unsigned long __x)                   _NOEXCEPT { return __builtin_popcountl(__x); }
 
 inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
 int __libcpp_popcount(unsigned long long __x) _NOEXCEPT { return __builtin_popcountll(__x); }
@@ -195,13 +195,13 @@ inline _LIBCPP_INLINE_VISIBILITY int __libcpp_popcount(unsigned long long __x) {
 
 template <class _Tp>
 using __bitop_unsigned_integer _LIBCPP_NODEBUG_TYPE = integral_constant<bool,
-         is_integral<_Tp>::value &&
-         is_unsigned<_Tp>::value &&
-        _IsNotSame<typename remove_cv<_Tp>::type, bool>::value &&
-        _IsNotSame<typename remove_cv<_Tp>::type, signed char>::value &&
-        _IsNotSame<typename remove_cv<_Tp>::type, wchar_t>::value &&
-        _IsNotSame<typename remove_cv<_Tp>::type, char16_t>::value &&
-        _IsNotSame<typename remove_cv<_Tp>::type, char32_t>::value
+                      is_integral<_Tp>::value &&
+                      is_unsigned<_Tp>::value &&
+                     _IsNotSame<typename remove_cv<_Tp>::type, bool>::value &&
+                     _IsNotSame<typename remove_cv<_Tp>::type, signed char>::value &&
+                     _IsNotSame<typename remove_cv<_Tp>::type, wchar_t>::value &&
+                     _IsNotSame<typename remove_cv<_Tp>::type, char16_t>::value &&
+                     _IsNotSame<typename remove_cv<_Tp>::type, char32_t>::value
     >;
 
 
@@ -212,7 +212,7 @@ _Tp __rotl(_Tp __t, unsigned int __cnt) _NOEXCEPT
     static_assert(__bitop_unsigned_integer<_Tp>::value, "__rotl requires unsigned");
     const unsigned int __dig = numeric_limits<_Tp>::digits;
     if ((__cnt % __dig) == 0)
-        return __t;
+                     return __t;
     return (__t << (__cnt % __dig)) | (__t >> (__dig - (__cnt % __dig)));
 }
 
@@ -224,7 +224,7 @@ _Tp __rotr(_Tp __t, unsigned int __cnt) _NOEXCEPT
     static_assert(__bitop_unsigned_integer<_Tp>::value, "__rotr requires unsigned");
     const unsigned int __dig = numeric_limits<_Tp>::digits;
     if ((__cnt % __dig) == 0)
-        return __t;
+                     return __t;
     return (__t >> (__cnt % __dig)) | (__t << (__dig - (__cnt % __dig)));
 }
 
@@ -236,25 +236,25 @@ int __countr_zero(_Tp __t) _NOEXCEPT
 {
     static_assert(__bitop_unsigned_integer<_Tp>::value, "__countr_zero requires unsigned");
     if (__t == 0)
-        return numeric_limits<_Tp>::digits;
+                     return numeric_limits<_Tp>::digits;
 
-    if      (sizeof(_Tp) <= sizeof(unsigned int))
-        return __libcpp_ctz(static_cast<unsigned int>(__t));
+    if                   (sizeof(_Tp) <= sizeof(unsigned int))
+                     return __libcpp_ctz(static_cast<unsigned int>(__t));
     else if (sizeof(_Tp) <= sizeof(unsigned long))
-        return __libcpp_ctz(static_cast<unsigned long>(__t));
+                     return __libcpp_ctz(static_cast<unsigned long>(__t));
     else if (sizeof(_Tp) <= sizeof(unsigned long long))
-        return __libcpp_ctz(static_cast<unsigned long long>(__t));
+                     return __libcpp_ctz(static_cast<unsigned long long>(__t));
     else
     {
-        int __ret = 0;
-        int __iter = 0;
-        const unsigned int __ulldigits = numeric_limits<unsigned long long>::digits;
-        while ((__iter = __libcpp_ctz(static_cast<unsigned long long>(__t))) == __ulldigits)
-        {
-            __ret += __iter;
-            __t >>= __ulldigits;
-        }
-        return __ret + __iter;
+                     int __ret = 0;
+                     int __iter = 0;
+                     const unsigned int __ulldigits = numeric_limits<unsigned long long>::digits;
+                     while ((__iter = __libcpp_ctz(static_cast<unsigned long long>(__t))) == __ulldigits)
+                     {
+                                      __ret += __iter;
+                                      __t >>= __ulldigits;
+                     }
+                     return __ret + __iter;
     }
 }
 
@@ -264,29 +264,29 @@ int __countl_zero(_Tp __t) _NOEXCEPT
 {
     static_assert(__bitop_unsigned_integer<_Tp>::value, "__countl_zero requires unsigned");
     if (__t == 0)
-        return numeric_limits<_Tp>::digits;
+                     return numeric_limits<_Tp>::digits;
 
-    if      (sizeof(_Tp) <= sizeof(unsigned int))
-        return __libcpp_clz(static_cast<unsigned int>(__t))
-              - (numeric_limits<unsigned int>::digits - numeric_limits<_Tp>::digits);
+    if                   (sizeof(_Tp) <= sizeof(unsigned int))
+                     return __libcpp_clz(static_cast<unsigned int>(__t))
+                                        - (numeric_limits<unsigned int>::digits - numeric_limits<_Tp>::digits);
     else if (sizeof(_Tp) <= sizeof(unsigned long))
-        return __libcpp_clz(static_cast<unsigned long>(__t))
-              - (numeric_limits<unsigned long>::digits - numeric_limits<_Tp>::digits);
+                     return __libcpp_clz(static_cast<unsigned long>(__t))
+                                        - (numeric_limits<unsigned long>::digits - numeric_limits<_Tp>::digits);
     else if (sizeof(_Tp) <= sizeof(unsigned long long))
-        return __libcpp_clz(static_cast<unsigned long long>(__t))
-              - (numeric_limits<unsigned long long>::digits - numeric_limits<_Tp>::digits);
+                     return __libcpp_clz(static_cast<unsigned long long>(__t))
+                                        - (numeric_limits<unsigned long long>::digits - numeric_limits<_Tp>::digits);
     else
     {
-        int __ret = 0;
-        int __iter = 0;
-        const unsigned int __ulldigits = numeric_limits<unsigned long long>::digits;
-        while (true) {
-            __t = __rotr(__t, __ulldigits);
-            if ((__iter = __countl_zero(static_cast<unsigned long long>(__t))) != __ulldigits)
-                break;
-            __ret += __iter;
-            }
-        return __ret + __iter;
+                     int __ret = 0;
+                     int __iter = 0;
+                     const unsigned int __ulldigits = numeric_limits<unsigned long long>::digits;
+                     while (true) {
+                                      __t = __rotr(__t, __ulldigits);
+                                      if ((__iter = __countl_zero(static_cast<unsigned long long>(__t))) != __ulldigits)
+                                          break;
+                                      __ret += __iter;
+                                      }
+                     return __ret + __iter;
     }
 }
 
@@ -296,8 +296,8 @@ int __countl_one(_Tp __t) _NOEXCEPT
 {
     static_assert(__bitop_unsigned_integer<_Tp>::value, "__countl_one requires unsigned");
     return __t != numeric_limits<_Tp>::max()
-        ? __countl_zero(static_cast<_Tp>(~__t))
-        : numeric_limits<_Tp>::digits;
+                     ? __countl_zero(static_cast<_Tp>(~__t))
+                     : numeric_limits<_Tp>::digits;
 }
 
 
@@ -307,8 +307,8 @@ int __countr_one(_Tp __t) _NOEXCEPT
 {
     static_assert(__bitop_unsigned_integer<_Tp>::value, "__countr_one requires unsigned");
     return __t != numeric_limits<_Tp>::max()
-        ? __countr_zero(static_cast<_Tp>(~__t))
-        : numeric_limits<_Tp>::digits;
+                     ? __countr_zero(static_cast<_Tp>(~__t))
+                     : numeric_limits<_Tp>::digits;
 }
 
 
@@ -318,21 +318,21 @@ int
 __popcount(_Tp __t) _NOEXCEPT
 {
     static_assert(__bitop_unsigned_integer<_Tp>::value, "__libcpp_popcount requires unsigned");
-    if      (sizeof(_Tp) <= sizeof(unsigned int))
-        return __libcpp_popcount(static_cast<unsigned int>(__t));
+    if                   (sizeof(_Tp) <= sizeof(unsigned int))
+                     return __libcpp_popcount(static_cast<unsigned int>(__t));
     else if (sizeof(_Tp) <= sizeof(unsigned long))
-        return __libcpp_popcount(static_cast<unsigned long>(__t));
+                     return __libcpp_popcount(static_cast<unsigned long>(__t));
     else if (sizeof(_Tp) <= sizeof(unsigned long long))
-        return __libcpp_popcount(static_cast<unsigned long long>(__t));
+                     return __libcpp_popcount(static_cast<unsigned long long>(__t));
     else
     {
-        int __ret = 0;
-        while (__t != 0)
-        {
-            __ret += __libcpp_popcount(static_cast<unsigned long long>(__t));
-            __t >>= numeric_limits<unsigned long long>::digits;
-        }
-        return __ret;
+                     int __ret = 0;
+                     while (__t != 0)
+                     {
+                                      __ret += __libcpp_popcount(static_cast<unsigned long long>(__t));
+                                      __t >>= numeric_limits<unsigned long long>::digits;
+                     }
+                     return __ret;
     }
 }
 
@@ -447,12 +447,12 @@ ceil2(_Tp __t) noexcept
     _LIBCPP_DEBUG_ASSERT(__libcpp_is_constant_evaluated() || __n != numeric_limits<_Tp>::digits, "Bad input to ceil2");
 
     if constexpr (sizeof(_Tp) >= sizeof(unsigned))
-        return _Tp{1} << __n;
+                     return _Tp{1} << __n;
     else
     {
-        const unsigned __extra = numeric_limits<unsigned>::digits  - numeric_limits<_Tp>::digits;
-        const unsigned __retVal = 1u << (__n + __extra);
-        return (_Tp) (__retVal >> __extra);
+                     const unsigned __extra = numeric_limits<unsigned>::digits  - numeric_limits<_Tp>::digits;
+                     const unsigned __retVal = 1u << (__n + __extra);
+                     return (_Tp) (__retVal >> __extra);
     }
 }
 

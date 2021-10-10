@@ -40,11 +40,11 @@ const root = @import("root");
 //!     // Ignore all non-critical logging from sources other than
 //!     // .my_project, .nice_library and .default
 //!     const scope_prefix = "(" ++ switch (scope) {
-//!         .my_project, .nice_library, .default => @tagName(scope),
-//!         else => if (@enumToInt(level) <= @enumToInt(std.log.Level.crit))
-//!             @tagName(scope)
-//!         else
-//!             return,
+//!                      .my_project, .nice_library, .default => @tagName(scope),
+//!                      else => if (@enumToInt(level) <= @enumToInt(std.log.Level.crit))
+//!                                       @tagName(scope)
+//!                      else
+//!                                       return,
 //!     } ++ "): ";
 //!
 //!     const prefix = "[" ++ @tagName(level) ++ "] " ++ scope_prefix;
@@ -123,29 +123,29 @@ fn log(
     args: anytype,
 ) void {
     if (@enumToInt(message_level) <= @enumToInt(level)) {
-        if (@hasDecl(root, "log")) {
-            root.log(message_level, scope, format, args);
-        } else if (std.Target.current.os.tag == .freestanding) {
-            // On freestanding one must provide a log function; we do not have
-            // any I/O configured.
-            return;
-        } else {
-            const level_txt = switch (message_level) {
-                .emerg => "emergency",
-                .alert => "alert",
-                .crit => "critical",
-                .err => "error",
-                .warn => "warning",
-                .notice => "notice",
-                .info => "info",
-                .debug => "debug",
-            };
-            const prefix2 = if (scope == .default) ": " else "(" ++ @tagName(scope) ++ "): ";
-            const stderr = std.io.getStdErr().writer();
-            const held = std.debug.getStderrMutex().acquire();
-            defer held.release();
-            nosuspend stderr.print(level_txt ++ prefix2 ++ format ++ "\n", args) catch return;
-        }
+                     if (@hasDecl(root, "log")) {
+                                      root.log(message_level, scope, format, args);
+                     } else if (std.Target.current.os.tag == .freestanding) {
+                                      // On freestanding one must provide a log function; we do not have
+                                      // any I/O configured.
+                                      return;
+                     } else {
+                                      const level_txt = switch (message_level) {
+                                          .emerg => "emergency",
+                                          .alert => "alert",
+                                          .crit => "critical",
+                                          .err => "error",
+                                          .warn => "warning",
+                                          .notice => "notice",
+                                          .info => "info",
+                                          .debug => "debug",
+                                      };
+                                      const prefix2 = if (scope == .default) ": " else "(" ++ @tagName(scope) ++ "): ";
+                                      const stderr = std.io.getStdErr().writer();
+                                      const held = std.debug.getStderrMutex().acquire();
+                                      defer held.release();
+                                      nosuspend stderr.print(level_txt ++ prefix2 ++ format ++ "\n", args) catch return;
+                     }
     }
 }
 
@@ -153,83 +153,83 @@ fn log(
 /// provided here.
 pub fn scoped(comptime scope: @Type(.EnumLiteral)) type {
     return struct {
-        /// Log an emergency message. This log level is intended to be used
-        /// for conditions that cannot be handled and is usually followed by a panic.
-        pub fn emerg(
-            comptime format: []const u8,
-            args: anytype,
-        ) void {
-            @setCold(true);
-            log(.emerg, scope, format, args);
-        }
+                     /// Log an emergency message. This log level is intended to be used
+                     /// for conditions that cannot be handled and is usually followed by a panic.
+                     pub fn emerg(
+                                      comptime format: []const u8,
+                                      args: anytype,
+                     ) void {
+                                      @setCold(true);
+                                      log(.emerg, scope, format, args);
+                     }
 
-        /// Log an alert message. This log level is intended to be used for
-        /// conditions that should be corrected immediately (e.g. database corruption).
-        pub fn alert(
-            comptime format: []const u8,
-            args: anytype,
-        ) void {
-            @setCold(true);
-            log(.alert, scope, format, args);
-        }
+                     /// Log an alert message. This log level is intended to be used for
+                     /// conditions that should be corrected immediately (e.g. database corruption).
+                     pub fn alert(
+                                      comptime format: []const u8,
+                                      args: anytype,
+                     ) void {
+                                      @setCold(true);
+                                      log(.alert, scope, format, args);
+                     }
 
-        /// Log a critical message. This log level is intended to be used
-        /// when a bug has been detected or something has gone wrong and it will have
-        /// an effect on the operation of the program.
-        pub fn crit(
-            comptime format: []const u8,
-            args: anytype,
-        ) void {
-            @setCold(true);
-            log(.crit, scope, format, args);
-        }
+                     /// Log a critical message. This log level is intended to be used
+                     /// when a bug has been detected or something has gone wrong and it will have
+                     /// an effect on the operation of the program.
+                     pub fn crit(
+                                      comptime format: []const u8,
+                                      args: anytype,
+                     ) void {
+                                      @setCold(true);
+                                      log(.crit, scope, format, args);
+                     }
 
-        /// Log an error message. This log level is intended to be used when
-        /// a bug has been detected or something has gone wrong but it is recoverable.
-        pub fn err(
-            comptime format: []const u8,
-            args: anytype,
-        ) void {
-            @setCold(true);
-            log(.err, scope, format, args);
-        }
+                     /// Log an error message. This log level is intended to be used when
+                     /// a bug has been detected or something has gone wrong but it is recoverable.
+                     pub fn err(
+                                      comptime format: []const u8,
+                                      args: anytype,
+                     ) void {
+                                      @setCold(true);
+                                      log(.err, scope, format, args);
+                     }
 
-        /// Log a warning message. This log level is intended to be used if
-        /// it is uncertain whether something has gone wrong or not, but the
-        /// circumstances would be worth investigating.
-        pub fn warn(
-            comptime format: []const u8,
-            args: anytype,
-        ) void {
-            log(.warn, scope, format, args);
-        }
+                     /// Log a warning message. This log level is intended to be used if
+                     /// it is uncertain whether something has gone wrong or not, but the
+                     /// circumstances would be worth investigating.
+                     pub fn warn(
+                                      comptime format: []const u8,
+                                      args: anytype,
+                     ) void {
+                                      log(.warn, scope, format, args);
+                     }
 
-        /// Log a notice message. This log level is intended to be used for
-        /// non-error but significant conditions.
-        pub fn notice(
-            comptime format: []const u8,
-            args: anytype,
-        ) void {
-            log(.notice, scope, format, args);
-        }
+                     /// Log a notice message. This log level is intended to be used for
+                     /// non-error but significant conditions.
+                     pub fn notice(
+                                      comptime format: []const u8,
+                                      args: anytype,
+                     ) void {
+                                      log(.notice, scope, format, args);
+                     }
 
-        /// Log an info message. This log level is intended to be used for
-        /// general messages about the state of the program.
-        pub fn info(
-            comptime format: []const u8,
-            args: anytype,
-        ) void {
-            log(.info, scope, format, args);
-        }
+                     /// Log an info message. This log level is intended to be used for
+                     /// general messages about the state of the program.
+                     pub fn info(
+                                      comptime format: []const u8,
+                                      args: anytype,
+                     ) void {
+                                      log(.info, scope, format, args);
+                     }
 
-        /// Log a debug message. This log level is intended to be used for
-        /// messages which are only useful for debugging.
-        pub fn debug(
-            comptime format: []const u8,
-            args: anytype,
-        ) void {
-            log(.debug, scope, format, args);
-        }
+                     /// Log a debug message. This log level is intended to be used for
+                     /// messages which are only useful for debugging.
+                     pub fn debug(
+                                      comptime format: []const u8,
+                                      args: anytype,
+                     ) void {
+                                      log(.debug, scope, format, args);
+                     }
     };
 }
 

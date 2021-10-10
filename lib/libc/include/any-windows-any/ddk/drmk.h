@@ -91,22 +91,22 @@ DEFINE_GUID(IID_IDrmAudioStream,
 DECLARE_INTERFACE_(IDrmAudioStream, IUnknown)
 {
     STDMETHOD_(NTSTATUS, QueryInterface)(THIS_
-        REFIID InterfaceId,
-        PVOID* Interface
-        ) PURE;
+                     REFIID InterfaceId,
+                     PVOID* Interface
+                     ) PURE;
     STDMETHOD_(ULONG,AddRef)(THIS) PURE;
     STDMETHOD_(ULONG,Release)(THIS) PURE;
     STDMETHOD_(NTSTATUS,SetContentId)(THIS_
-        IN ULONG ContentId,
-        IN PCDRMRIGHTS DrmRights) PURE;
+                     IN ULONG ContentId,
+                     IN PCDRMRIGHTS DrmRights) PURE;
 };
 
 typedef IDrmAudioStream *PDRMAUDIOSTREAM;
 
-#define IMP_IDrmAudioStream                 \
+#define IMP_IDrmAudioStream                                           \
     STDMETHODIMP_(NTSTATUS) SetContentId    \
-    (   IN      ULONG       ContentId,      \
-        IN      PCDRMRIGHTS DrmRights       \
+    (   IN                   ULONG                    ContentId,                   \
+                     IN                   PCDRMRIGHTS DrmRights                    \
     );
 
 

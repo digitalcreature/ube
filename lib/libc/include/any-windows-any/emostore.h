@@ -107,28 +107,28 @@ extern "C"{
 #else
   typedef struct IExchangeServerVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IExchangeServer *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IExchangeServer *This);
-      ULONG (WINAPI *Release)(IExchangeServer *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IExchangeServer *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IExchangeServer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IExchangeServer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IExchangeServer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DataSource)(IExchangeServer *This,IDataSource2 **varDataSource);
-      HRESULT (WINAPI *get_Fields)(IExchangeServer *This,Fields **varFields);
-      HRESULT (WINAPI *get_Name)(IExchangeServer *This,BSTR *varName);
-      HRESULT (WINAPI *get_ExchangeVersion)(IExchangeServer *This,BSTR *varExchangeVersion);
-      HRESULT (WINAPI *get_StorageGroups)(IExchangeServer *This,VARIANT *varStorageGroups);
-      HRESULT (WINAPI *get_SubjectLoggingEnabled)(IExchangeServer *This,VARIANT_BOOL *pSubjectLoggingEnabled);
-      HRESULT (WINAPI *put_SubjectLoggingEnabled)(IExchangeServer *This,VARIANT_BOOL varSubjectLoggingEnabled);
-      HRESULT (WINAPI *get_MessageTrackingEnabled)(IExchangeServer *This,VARIANT_BOOL *pMessageTrackingEnabled);
-      HRESULT (WINAPI *put_MessageTrackingEnabled)(IExchangeServer *This,VARIANT_BOOL varMessageTrackingEnabled);
-      HRESULT (WINAPI *get_DaysBeforeLogFileRemoval)(IExchangeServer *This,__LONG32 *pDaysBeforeLogFileRemoval);
-      HRESULT (WINAPI *put_DaysBeforeLogFileRemoval)(IExchangeServer *This,__LONG32 varDaysBeforeLogFileRemoval);
-      HRESULT (WINAPI *get_ServerType)(IExchangeServer *This,CDOEXMServerType *pServerType);
-      HRESULT (WINAPI *put_ServerType)(IExchangeServer *This,CDOEXMServerType varServerType);
-      HRESULT (WINAPI *get_DirectoryServer)(IExchangeServer *This,BSTR *varDirectoryServer);
-      HRESULT (WINAPI *GetInterface)(IExchangeServer *This,BSTR Interface,IDispatch **ppUnknown);
+                   HRESULT (WINAPI *QueryInterface)(IExchangeServer *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IExchangeServer *This);
+                   ULONG (WINAPI *Release)(IExchangeServer *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IExchangeServer *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IExchangeServer *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IExchangeServer *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IExchangeServer *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DataSource)(IExchangeServer *This,IDataSource2 **varDataSource);
+                   HRESULT (WINAPI *get_Fields)(IExchangeServer *This,Fields **varFields);
+                   HRESULT (WINAPI *get_Name)(IExchangeServer *This,BSTR *varName);
+                   HRESULT (WINAPI *get_ExchangeVersion)(IExchangeServer *This,BSTR *varExchangeVersion);
+                   HRESULT (WINAPI *get_StorageGroups)(IExchangeServer *This,VARIANT *varStorageGroups);
+                   HRESULT (WINAPI *get_SubjectLoggingEnabled)(IExchangeServer *This,VARIANT_BOOL *pSubjectLoggingEnabled);
+                   HRESULT (WINAPI *put_SubjectLoggingEnabled)(IExchangeServer *This,VARIANT_BOOL varSubjectLoggingEnabled);
+                   HRESULT (WINAPI *get_MessageTrackingEnabled)(IExchangeServer *This,VARIANT_BOOL *pMessageTrackingEnabled);
+                   HRESULT (WINAPI *put_MessageTrackingEnabled)(IExchangeServer *This,VARIANT_BOOL varMessageTrackingEnabled);
+                   HRESULT (WINAPI *get_DaysBeforeLogFileRemoval)(IExchangeServer *This,__LONG32 *pDaysBeforeLogFileRemoval);
+                   HRESULT (WINAPI *put_DaysBeforeLogFileRemoval)(IExchangeServer *This,__LONG32 varDaysBeforeLogFileRemoval);
+                   HRESULT (WINAPI *get_ServerType)(IExchangeServer *This,CDOEXMServerType *pServerType);
+                   HRESULT (WINAPI *put_ServerType)(IExchangeServer *This,CDOEXMServerType varServerType);
+                   HRESULT (WINAPI *get_DirectoryServer)(IExchangeServer *This,BSTR *varDirectoryServer);
+                   HRESULT (WINAPI *GetInterface)(IExchangeServer *This,BSTR Interface,IDispatch **ppUnknown);
     END_INTERFACE
   } IExchangeServerVtbl;
   struct IExchangeServer {
@@ -216,28 +216,28 @@ extern "C"{
 #else
   typedef struct IStorageGroupVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IStorageGroup *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IStorageGroup *This);
-      ULONG (WINAPI *Release)(IStorageGroup *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IStorageGroup *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IStorageGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IStorageGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IStorageGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DataSource)(IStorageGroup *This,IDataSource2 **varDataSource);
-      HRESULT (WINAPI *get_Fields)(IStorageGroup *This,Fields **varFields);
-      HRESULT (WINAPI *get_Name)(IStorageGroup *This,BSTR *pName);
-      HRESULT (WINAPI *put_Name)(IStorageGroup *This,BSTR varName);
-      HRESULT (WINAPI *get_PublicStoreDBs)(IStorageGroup *This,VARIANT *varPublicStoreDBs);
-      HRESULT (WINAPI *get_MailboxStoreDBs)(IStorageGroup *This,VARIANT *varMailboxStoreDBs);
-      HRESULT (WINAPI *get_LogFilePath)(IStorageGroup *This,BSTR *varLogFilePath);
-      HRESULT (WINAPI *get_SystemFilePath)(IStorageGroup *This,BSTR *varSystemFilePath);
-      HRESULT (WINAPI *get_CircularLogging)(IStorageGroup *This,VARIANT_BOOL *pCircularLogging);
-      HRESULT (WINAPI *put_CircularLogging)(IStorageGroup *This,VARIANT_BOOL varCircularLogging);
-      HRESULT (WINAPI *get_ZeroDatabase)(IStorageGroup *This,VARIANT_BOOL *pZeroDatabase);
-      HRESULT (WINAPI *put_ZeroDatabase)(IStorageGroup *This,VARIANT_BOOL varZeroDatabase);
-      HRESULT (WINAPI *GetInterface)(IStorageGroup *This,BSTR Interface,IDispatch **ppUnknown);
-      HRESULT (WINAPI *MoveLogFiles)(IStorageGroup *This,BSTR LogFilePath,__LONG32 Flags);
-      HRESULT (WINAPI *MoveSystemFiles)(IStorageGroup *This,BSTR SystemFilePath,__LONG32 Flags);
+                   HRESULT (WINAPI *QueryInterface)(IStorageGroup *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IStorageGroup *This);
+                   ULONG (WINAPI *Release)(IStorageGroup *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IStorageGroup *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IStorageGroup *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IStorageGroup *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IStorageGroup *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DataSource)(IStorageGroup *This,IDataSource2 **varDataSource);
+                   HRESULT (WINAPI *get_Fields)(IStorageGroup *This,Fields **varFields);
+                   HRESULT (WINAPI *get_Name)(IStorageGroup *This,BSTR *pName);
+                   HRESULT (WINAPI *put_Name)(IStorageGroup *This,BSTR varName);
+                   HRESULT (WINAPI *get_PublicStoreDBs)(IStorageGroup *This,VARIANT *varPublicStoreDBs);
+                   HRESULT (WINAPI *get_MailboxStoreDBs)(IStorageGroup *This,VARIANT *varMailboxStoreDBs);
+                   HRESULT (WINAPI *get_LogFilePath)(IStorageGroup *This,BSTR *varLogFilePath);
+                   HRESULT (WINAPI *get_SystemFilePath)(IStorageGroup *This,BSTR *varSystemFilePath);
+                   HRESULT (WINAPI *get_CircularLogging)(IStorageGroup *This,VARIANT_BOOL *pCircularLogging);
+                   HRESULT (WINAPI *put_CircularLogging)(IStorageGroup *This,VARIANT_BOOL varCircularLogging);
+                   HRESULT (WINAPI *get_ZeroDatabase)(IStorageGroup *This,VARIANT_BOOL *pZeroDatabase);
+                   HRESULT (WINAPI *put_ZeroDatabase)(IStorageGroup *This,VARIANT_BOOL varZeroDatabase);
+                   HRESULT (WINAPI *GetInterface)(IStorageGroup *This,BSTR Interface,IDispatch **ppUnknown);
+                   HRESULT (WINAPI *MoveLogFiles)(IStorageGroup *This,BSTR LogFilePath,__LONG32 Flags);
+                   HRESULT (WINAPI *MoveSystemFiles)(IStorageGroup *This,BSTR SystemFilePath,__LONG32 Flags);
     END_INTERFACE
   } IStorageGroupVtbl;
   struct IStorageGroup {
@@ -337,40 +337,40 @@ extern "C"{
 #else
   typedef struct IPublicStoreDBVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IPublicStoreDB *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IPublicStoreDB *This);
-      ULONG (WINAPI *Release)(IPublicStoreDB *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IPublicStoreDB *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IPublicStoreDB *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IPublicStoreDB *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IPublicStoreDB *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DataSource)(IPublicStoreDB *This,IDataSource2 **varDataSource);
-      HRESULT (WINAPI *get_Fields)(IPublicStoreDB *This,Fields **varFields);
-      HRESULT (WINAPI *get_Name)(IPublicStoreDB *This,BSTR *pName);
-      HRESULT (WINAPI *put_Name)(IPublicStoreDB *This,BSTR varName);
-      HRESULT (WINAPI *get_FolderTree)(IPublicStoreDB *This,BSTR *pFolderTree);
-      HRESULT (WINAPI *put_FolderTree)(IPublicStoreDB *This,BSTR varFolderTree);
-      HRESULT (WINAPI *get_DBPath)(IPublicStoreDB *This,BSTR *varDBPath);
-      HRESULT (WINAPI *get_SLVPath)(IPublicStoreDB *This,BSTR *varSLVPath);
-      HRESULT (WINAPI *get_Status)(IPublicStoreDB *This,CDOEXMStoreDBStatus *varStatus);
-      HRESULT (WINAPI *get_Enabled)(IPublicStoreDB *This,VARIANT_BOOL *pEnabled);
-      HRESULT (WINAPI *put_Enabled)(IPublicStoreDB *This,VARIANT_BOOL varEnabled);
-      HRESULT (WINAPI *get_StoreQuota)(IPublicStoreDB *This,__LONG32 *pStoreQuota);
-      HRESULT (WINAPI *put_StoreQuota)(IPublicStoreDB *This,__LONG32 varStoreQuota);
-      HRESULT (WINAPI *get_HardLimit)(IPublicStoreDB *This,__LONG32 *pHardLimit);
-      HRESULT (WINAPI *put_HardLimit)(IPublicStoreDB *This,__LONG32 varHardLimit);
-      HRESULT (WINAPI *get_ItemSizeLimit)(IPublicStoreDB *This,__LONG32 *pItemSizeLimit);
-      HRESULT (WINAPI *put_ItemSizeLimit)(IPublicStoreDB *This,__LONG32 varItemSizeLimit);
-      HRESULT (WINAPI *get_DaysBeforeItemExpiration)(IPublicStoreDB *This,__LONG32 *pDaysBeforeItemExpiration);
-      HRESULT (WINAPI *put_DaysBeforeItemExpiration)(IPublicStoreDB *This,__LONG32 varDaysBeforeItemExpiration);
-      HRESULT (WINAPI *get_DaysBeforeGarbageCollection)(IPublicStoreDB *This,__LONG32 *pDaysBeforeGarbageCollection);
-      HRESULT (WINAPI *put_DaysBeforeGarbageCollection)(IPublicStoreDB *This,__LONG32 varDaysBeforeGarbageCollection);
-      HRESULT (WINAPI *get_GarbageCollectOnlyAfterBackup)(IPublicStoreDB *This,VARIANT_BOOL *pGarbageCollectOnlyAfterBackup);
-      HRESULT (WINAPI *put_GarbageCollectOnlyAfterBackup)(IPublicStoreDB *This,VARIANT_BOOL varGarbageCollectOnlyAfterBackup);
-      HRESULT (WINAPI *GetInterface)(IPublicStoreDB *This,BSTR Interface,IDispatch **ppUnknown);
-      HRESULT (WINAPI *MoveDataFiles)(IPublicStoreDB *This,BSTR DBPath,BSTR SLVPath,__LONG32 Flags);
-      HRESULT (WINAPI *Mount)(IPublicStoreDB *This,__LONG32 Timeout);
-      HRESULT (WINAPI *Dismount)(IPublicStoreDB *This,__LONG32 Timeout);
+                   HRESULT (WINAPI *QueryInterface)(IPublicStoreDB *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IPublicStoreDB *This);
+                   ULONG (WINAPI *Release)(IPublicStoreDB *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IPublicStoreDB *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IPublicStoreDB *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IPublicStoreDB *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IPublicStoreDB *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DataSource)(IPublicStoreDB *This,IDataSource2 **varDataSource);
+                   HRESULT (WINAPI *get_Fields)(IPublicStoreDB *This,Fields **varFields);
+                   HRESULT (WINAPI *get_Name)(IPublicStoreDB *This,BSTR *pName);
+                   HRESULT (WINAPI *put_Name)(IPublicStoreDB *This,BSTR varName);
+                   HRESULT (WINAPI *get_FolderTree)(IPublicStoreDB *This,BSTR *pFolderTree);
+                   HRESULT (WINAPI *put_FolderTree)(IPublicStoreDB *This,BSTR varFolderTree);
+                   HRESULT (WINAPI *get_DBPath)(IPublicStoreDB *This,BSTR *varDBPath);
+                   HRESULT (WINAPI *get_SLVPath)(IPublicStoreDB *This,BSTR *varSLVPath);
+                   HRESULT (WINAPI *get_Status)(IPublicStoreDB *This,CDOEXMStoreDBStatus *varStatus);
+                   HRESULT (WINAPI *get_Enabled)(IPublicStoreDB *This,VARIANT_BOOL *pEnabled);
+                   HRESULT (WINAPI *put_Enabled)(IPublicStoreDB *This,VARIANT_BOOL varEnabled);
+                   HRESULT (WINAPI *get_StoreQuota)(IPublicStoreDB *This,__LONG32 *pStoreQuota);
+                   HRESULT (WINAPI *put_StoreQuota)(IPublicStoreDB *This,__LONG32 varStoreQuota);
+                   HRESULT (WINAPI *get_HardLimit)(IPublicStoreDB *This,__LONG32 *pHardLimit);
+                   HRESULT (WINAPI *put_HardLimit)(IPublicStoreDB *This,__LONG32 varHardLimit);
+                   HRESULT (WINAPI *get_ItemSizeLimit)(IPublicStoreDB *This,__LONG32 *pItemSizeLimit);
+                   HRESULT (WINAPI *put_ItemSizeLimit)(IPublicStoreDB *This,__LONG32 varItemSizeLimit);
+                   HRESULT (WINAPI *get_DaysBeforeItemExpiration)(IPublicStoreDB *This,__LONG32 *pDaysBeforeItemExpiration);
+                   HRESULT (WINAPI *put_DaysBeforeItemExpiration)(IPublicStoreDB *This,__LONG32 varDaysBeforeItemExpiration);
+                   HRESULT (WINAPI *get_DaysBeforeGarbageCollection)(IPublicStoreDB *This,__LONG32 *pDaysBeforeGarbageCollection);
+                   HRESULT (WINAPI *put_DaysBeforeGarbageCollection)(IPublicStoreDB *This,__LONG32 varDaysBeforeGarbageCollection);
+                   HRESULT (WINAPI *get_GarbageCollectOnlyAfterBackup)(IPublicStoreDB *This,VARIANT_BOOL *pGarbageCollectOnlyAfterBackup);
+                   HRESULT (WINAPI *put_GarbageCollectOnlyAfterBackup)(IPublicStoreDB *This,VARIANT_BOOL varGarbageCollectOnlyAfterBackup);
+                   HRESULT (WINAPI *GetInterface)(IPublicStoreDB *This,BSTR Interface,IDispatch **ppUnknown);
+                   HRESULT (WINAPI *MoveDataFiles)(IPublicStoreDB *This,BSTR DBPath,BSTR SLVPath,__LONG32 Flags);
+                   HRESULT (WINAPI *Mount)(IPublicStoreDB *This,__LONG32 Timeout);
+                   HRESULT (WINAPI *Dismount)(IPublicStoreDB *This,__LONG32 Timeout);
     END_INTERFACE
   } IPublicStoreDBVtbl;
   struct IPublicStoreDB {
@@ -508,42 +508,42 @@ extern "C"{
 #else
   typedef struct IMailboxStoreDBVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IMailboxStoreDB *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IMailboxStoreDB *This);
-      ULONG (WINAPI *Release)(IMailboxStoreDB *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IMailboxStoreDB *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IMailboxStoreDB *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IMailboxStoreDB *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IMailboxStoreDB *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DataSource)(IMailboxStoreDB *This,IDataSource2 **varDataSource);
-      HRESULT (WINAPI *get_Fields)(IMailboxStoreDB *This,Fields **varFields);
-      HRESULT (WINAPI *get_Name)(IMailboxStoreDB *This,BSTR *pName);
-      HRESULT (WINAPI *put_Name)(IMailboxStoreDB *This,BSTR varName);
-      HRESULT (WINAPI *get_PublicStoreDB)(IMailboxStoreDB *This,BSTR *pPublicStoreDB);
-      HRESULT (WINAPI *put_PublicStoreDB)(IMailboxStoreDB *This,BSTR varPublicStoreDB);
-      HRESULT (WINAPI *get_OfflineAddressList)(IMailboxStoreDB *This,BSTR *pOfflineAddressList);
-      HRESULT (WINAPI *put_OfflineAddressList)(IMailboxStoreDB *This,BSTR varOfflineAddressList);
-      HRESULT (WINAPI *get_DBPath)(IMailboxStoreDB *This,BSTR *varDBPath);
-      HRESULT (WINAPI *get_SLVPath)(IMailboxStoreDB *This,BSTR *varSLVPath);
-      HRESULT (WINAPI *get_Status)(IMailboxStoreDB *This,CDOEXMStoreDBStatus *varStatus);
-      HRESULT (WINAPI *get_Enabled)(IMailboxStoreDB *This,VARIANT_BOOL *pEnabled);
-      HRESULT (WINAPI *put_Enabled)(IMailboxStoreDB *This,VARIANT_BOOL varEnabled);
-      HRESULT (WINAPI *get_StoreQuota)(IMailboxStoreDB *This,__LONG32 *pStoreQuota);
-      HRESULT (WINAPI *put_StoreQuota)(IMailboxStoreDB *This,__LONG32 varStoreQuota);
-      HRESULT (WINAPI *get_OverQuotaLimit)(IMailboxStoreDB *This,__LONG32 *pOverQuotaLimit);
-      HRESULT (WINAPI *put_OverQuotaLimit)(IMailboxStoreDB *This,__LONG32 varOverQuotaLimit);
-      HRESULT (WINAPI *get_HardLimit)(IMailboxStoreDB *This,__LONG32 *pHardLimit);
-      HRESULT (WINAPI *put_HardLimit)(IMailboxStoreDB *This,__LONG32 varHardLimit);
-      HRESULT (WINAPI *get_DaysBeforeGarbageCollection)(IMailboxStoreDB *This,__LONG32 *pDaysBeforeGarbageCollection);
-      HRESULT (WINAPI *put_DaysBeforeGarbageCollection)(IMailboxStoreDB *This,__LONG32 varDaysBeforeGarbageCollection);
-      HRESULT (WINAPI *get_DaysBeforeDeletedMailboxCleanup)(IMailboxStoreDB *This,__LONG32 *pDaysBeforeDeletedMailboxCleanup);
-      HRESULT (WINAPI *put_DaysBeforeDeletedMailboxCleanup)(IMailboxStoreDB *This,__LONG32 varDaysBeforeDeletedMailboxCleanup);
-      HRESULT (WINAPI *get_GarbageCollectOnlyAfterBackup)(IMailboxStoreDB *This,VARIANT_BOOL *pGarbageCollectOnlyAfterBackup);
-      HRESULT (WINAPI *put_GarbageCollectOnlyAfterBackup)(IMailboxStoreDB *This,VARIANT_BOOL varGarbageCollectOnlyAfterBackup);
-      HRESULT (WINAPI *GetInterface)(IMailboxStoreDB *This,BSTR Interface,IDispatch **ppUnknown);
-      HRESULT (WINAPI *MoveDataFiles)(IMailboxStoreDB *This,BSTR DBPath,BSTR SLVPath,__LONG32 Flags);
-      HRESULT (WINAPI *Mount)(IMailboxStoreDB *This,__LONG32 Timeout);
-      HRESULT (WINAPI *Dismount)(IMailboxStoreDB *This,__LONG32 Timeout);
+                   HRESULT (WINAPI *QueryInterface)(IMailboxStoreDB *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IMailboxStoreDB *This);
+                   ULONG (WINAPI *Release)(IMailboxStoreDB *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IMailboxStoreDB *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IMailboxStoreDB *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IMailboxStoreDB *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IMailboxStoreDB *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DataSource)(IMailboxStoreDB *This,IDataSource2 **varDataSource);
+                   HRESULT (WINAPI *get_Fields)(IMailboxStoreDB *This,Fields **varFields);
+                   HRESULT (WINAPI *get_Name)(IMailboxStoreDB *This,BSTR *pName);
+                   HRESULT (WINAPI *put_Name)(IMailboxStoreDB *This,BSTR varName);
+                   HRESULT (WINAPI *get_PublicStoreDB)(IMailboxStoreDB *This,BSTR *pPublicStoreDB);
+                   HRESULT (WINAPI *put_PublicStoreDB)(IMailboxStoreDB *This,BSTR varPublicStoreDB);
+                   HRESULT (WINAPI *get_OfflineAddressList)(IMailboxStoreDB *This,BSTR *pOfflineAddressList);
+                   HRESULT (WINAPI *put_OfflineAddressList)(IMailboxStoreDB *This,BSTR varOfflineAddressList);
+                   HRESULT (WINAPI *get_DBPath)(IMailboxStoreDB *This,BSTR *varDBPath);
+                   HRESULT (WINAPI *get_SLVPath)(IMailboxStoreDB *This,BSTR *varSLVPath);
+                   HRESULT (WINAPI *get_Status)(IMailboxStoreDB *This,CDOEXMStoreDBStatus *varStatus);
+                   HRESULT (WINAPI *get_Enabled)(IMailboxStoreDB *This,VARIANT_BOOL *pEnabled);
+                   HRESULT (WINAPI *put_Enabled)(IMailboxStoreDB *This,VARIANT_BOOL varEnabled);
+                   HRESULT (WINAPI *get_StoreQuota)(IMailboxStoreDB *This,__LONG32 *pStoreQuota);
+                   HRESULT (WINAPI *put_StoreQuota)(IMailboxStoreDB *This,__LONG32 varStoreQuota);
+                   HRESULT (WINAPI *get_OverQuotaLimit)(IMailboxStoreDB *This,__LONG32 *pOverQuotaLimit);
+                   HRESULT (WINAPI *put_OverQuotaLimit)(IMailboxStoreDB *This,__LONG32 varOverQuotaLimit);
+                   HRESULT (WINAPI *get_HardLimit)(IMailboxStoreDB *This,__LONG32 *pHardLimit);
+                   HRESULT (WINAPI *put_HardLimit)(IMailboxStoreDB *This,__LONG32 varHardLimit);
+                   HRESULT (WINAPI *get_DaysBeforeGarbageCollection)(IMailboxStoreDB *This,__LONG32 *pDaysBeforeGarbageCollection);
+                   HRESULT (WINAPI *put_DaysBeforeGarbageCollection)(IMailboxStoreDB *This,__LONG32 varDaysBeforeGarbageCollection);
+                   HRESULT (WINAPI *get_DaysBeforeDeletedMailboxCleanup)(IMailboxStoreDB *This,__LONG32 *pDaysBeforeDeletedMailboxCleanup);
+                   HRESULT (WINAPI *put_DaysBeforeDeletedMailboxCleanup)(IMailboxStoreDB *This,__LONG32 varDaysBeforeDeletedMailboxCleanup);
+                   HRESULT (WINAPI *get_GarbageCollectOnlyAfterBackup)(IMailboxStoreDB *This,VARIANT_BOOL *pGarbageCollectOnlyAfterBackup);
+                   HRESULT (WINAPI *put_GarbageCollectOnlyAfterBackup)(IMailboxStoreDB *This,VARIANT_BOOL varGarbageCollectOnlyAfterBackup);
+                   HRESULT (WINAPI *GetInterface)(IMailboxStoreDB *This,BSTR Interface,IDispatch **ppUnknown);
+                   HRESULT (WINAPI *MoveDataFiles)(IMailboxStoreDB *This,BSTR DBPath,BSTR SLVPath,__LONG32 Flags);
+                   HRESULT (WINAPI *Mount)(IMailboxStoreDB *This,__LONG32 Timeout);
+                   HRESULT (WINAPI *Dismount)(IMailboxStoreDB *This,__LONG32 Timeout);
     END_INTERFACE
   } IMailboxStoreDBVtbl;
   struct IMailboxStoreDB {
@@ -666,21 +666,21 @@ extern "C"{
 #else
   typedef struct IFolderTreeVtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IFolderTree *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IFolderTree *This);
-      ULONG (WINAPI *Release)(IFolderTree *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IFolderTree *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IFolderTree *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IFolderTree *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IFolderTree *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_DataSource)(IFolderTree *This,IDataSource2 **varDataSource);
-      HRESULT (WINAPI *get_Fields)(IFolderTree *This,Fields **varFields);
-      HRESULT (WINAPI *get_Name)(IFolderTree *This,BSTR *pName);
-      HRESULT (WINAPI *put_Name)(IFolderTree *This,BSTR varName);
-      HRESULT (WINAPI *get_StoreDBs)(IFolderTree *This,VARIANT *varStoreDBs);
-      HRESULT (WINAPI *get_TreeType)(IFolderTree *This,CDOEXMFolderTreeType *varTreeType);
-      HRESULT (WINAPI *get_RootFolderURL)(IFolderTree *This,BSTR *varRootFolderURL);
-      HRESULT (WINAPI *GetInterface)(IFolderTree *This,BSTR Interface,IDispatch **ppUnknown);
+                   HRESULT (WINAPI *QueryInterface)(IFolderTree *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IFolderTree *This);
+                   ULONG (WINAPI *Release)(IFolderTree *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IFolderTree *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IFolderTree *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IFolderTree *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IFolderTree *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_DataSource)(IFolderTree *This,IDataSource2 **varDataSource);
+                   HRESULT (WINAPI *get_Fields)(IFolderTree *This,Fields **varFields);
+                   HRESULT (WINAPI *get_Name)(IFolderTree *This,BSTR *pName);
+                   HRESULT (WINAPI *put_Name)(IFolderTree *This,BSTR varName);
+                   HRESULT (WINAPI *get_StoreDBs)(IFolderTree *This,VARIANT *varStoreDBs);
+                   HRESULT (WINAPI *get_TreeType)(IFolderTree *This,CDOEXMFolderTreeType *varTreeType);
+                   HRESULT (WINAPI *get_RootFolderURL)(IFolderTree *This,BSTR *varRootFolderURL);
+                   HRESULT (WINAPI *GetInterface)(IFolderTree *This,BSTR Interface,IDispatch **ppUnknown);
     END_INTERFACE
   } IFolderTreeVtbl;
   struct IFolderTree {
@@ -734,27 +734,27 @@ extern "C"{
 #else
   typedef struct IDataSource2Vtbl {
     BEGIN_INTERFACE
-      HRESULT (WINAPI *QueryInterface)(IDataSource2 *This,REFIID riid,void **ppvObject);
-      ULONG (WINAPI *AddRef)(IDataSource2 *This);
-      ULONG (WINAPI *Release)(IDataSource2 *This);
-      HRESULT (WINAPI *GetTypeInfoCount)(IDataSource2 *This,UINT *pctinfo);
-      HRESULT (WINAPI *GetTypeInfo)(IDataSource2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
-      HRESULT (WINAPI *GetIDsOfNames)(IDataSource2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
-      HRESULT (WINAPI *Invoke)(IDataSource2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
-      HRESULT (WINAPI *get_SourceClass)(IDataSource2 *This,BSTR *varSourceClass);
-      HRESULT (WINAPI *get_Source)(IDataSource2 *This,IUnknown **varSource);
-      HRESULT (WINAPI *get_IsDirty)(IDataSource2 *This,VARIANT_BOOL *pIsDirty);
-      HRESULT (WINAPI *put_IsDirty)(IDataSource2 *This,VARIANT_BOOL varIsDirty);
-      HRESULT (WINAPI *get_SourceURL)(IDataSource2 *This,BSTR *varSourceURL);
-      HRESULT (WINAPI *get_ActiveConnection)(IDataSource2 *This,_Connection **varActiveConnection);
-      HRESULT (WINAPI *SaveToObject)(IDataSource2 *This,IUnknown *Source,BSTR InterfaceName);
-      HRESULT (WINAPI *OpenObject)(IDataSource2 *This,IUnknown *Source,BSTR InterfaceName);
-      HRESULT (WINAPI *SaveTo)(IDataSource2 *This,BSTR SourceURL,IDispatch *ActiveConnection,ConnectModeEnum Mode,RecordCreateOptionsEnum CreateOptions,RecordOpenOptionsEnum Options,BSTR UserName,BSTR Password);
-      HRESULT (WINAPI *Open)(IDataSource2 *This,BSTR SourceURL,IDispatch *ActiveConnection,ConnectModeEnum Mode,RecordCreateOptionsEnum CreateOptions,RecordOpenOptionsEnum Options,BSTR UserName,BSTR Password);
-      HRESULT (WINAPI *Save)(IDataSource2 *This);
-      HRESULT (WINAPI *SaveToContainer)(IDataSource2 *This,BSTR ContainerURL,IDispatch *ActiveConnection,ConnectModeEnum Mode,RecordCreateOptionsEnum CreateOptions,RecordOpenOptionsEnum Options,BSTR UserName,BSTR Password);
-      HRESULT (WINAPI *Delete)(IDataSource2 *This);
-      HRESULT (WINAPI *MoveToContainer)(IDataSource2 *This,BSTR ContainerURL);
+                   HRESULT (WINAPI *QueryInterface)(IDataSource2 *This,REFIID riid,void **ppvObject);
+                   ULONG (WINAPI *AddRef)(IDataSource2 *This);
+                   ULONG (WINAPI *Release)(IDataSource2 *This);
+                   HRESULT (WINAPI *GetTypeInfoCount)(IDataSource2 *This,UINT *pctinfo);
+                   HRESULT (WINAPI *GetTypeInfo)(IDataSource2 *This,UINT iTInfo,LCID lcid,ITypeInfo **ppTInfo);
+                   HRESULT (WINAPI *GetIDsOfNames)(IDataSource2 *This,REFIID riid,LPOLESTR *rgszNames,UINT cNames,LCID lcid,DISPID *rgDispId);
+                   HRESULT (WINAPI *Invoke)(IDataSource2 *This,DISPID dispIdMember,REFIID riid,LCID lcid,WORD wFlags,DISPPARAMS *pDispParams,VARIANT *pVarResult,EXCEPINFO *pExcepInfo,UINT *puArgErr);
+                   HRESULT (WINAPI *get_SourceClass)(IDataSource2 *This,BSTR *varSourceClass);
+                   HRESULT (WINAPI *get_Source)(IDataSource2 *This,IUnknown **varSource);
+                   HRESULT (WINAPI *get_IsDirty)(IDataSource2 *This,VARIANT_BOOL *pIsDirty);
+                   HRESULT (WINAPI *put_IsDirty)(IDataSource2 *This,VARIANT_BOOL varIsDirty);
+                   HRESULT (WINAPI *get_SourceURL)(IDataSource2 *This,BSTR *varSourceURL);
+                   HRESULT (WINAPI *get_ActiveConnection)(IDataSource2 *This,_Connection **varActiveConnection);
+                   HRESULT (WINAPI *SaveToObject)(IDataSource2 *This,IUnknown *Source,BSTR InterfaceName);
+                   HRESULT (WINAPI *OpenObject)(IDataSource2 *This,IUnknown *Source,BSTR InterfaceName);
+                   HRESULT (WINAPI *SaveTo)(IDataSource2 *This,BSTR SourceURL,IDispatch *ActiveConnection,ConnectModeEnum Mode,RecordCreateOptionsEnum CreateOptions,RecordOpenOptionsEnum Options,BSTR UserName,BSTR Password);
+                   HRESULT (WINAPI *Open)(IDataSource2 *This,BSTR SourceURL,IDispatch *ActiveConnection,ConnectModeEnum Mode,RecordCreateOptionsEnum CreateOptions,RecordOpenOptionsEnum Options,BSTR UserName,BSTR Password);
+                   HRESULT (WINAPI *Save)(IDataSource2 *This);
+                   HRESULT (WINAPI *SaveToContainer)(IDataSource2 *This,BSTR ContainerURL,IDispatch *ActiveConnection,ConnectModeEnum Mode,RecordCreateOptionsEnum CreateOptions,RecordOpenOptionsEnum Options,BSTR UserName,BSTR Password);
+                   HRESULT (WINAPI *Delete)(IDataSource2 *This);
+                   HRESULT (WINAPI *MoveToContainer)(IDataSource2 *This,BSTR ContainerURL);
     END_INTERFACE
   } IDataSource2Vtbl;
   struct IDataSource2 {

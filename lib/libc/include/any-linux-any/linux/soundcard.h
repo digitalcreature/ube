@@ -202,8 +202,8 @@ typedef struct seq_event_rec {
  *	Gravis UltraSound. It tries to be universal format for uploading
  *	sample based patches but is probably too limited.
  *
- *      (PBD) As Hannu guessed, the GUS structure is too limited for 
- *      the WaveFront, but this is the right place for a constant definition.
+ *                   (PBD) As Hannu guessed, the GUS structure is too limited for 
+ *                   the WaveFront, but this is the right place for a constant definition.
  */
 
 struct patch_info {
@@ -267,7 +267,7 @@ struct patch_info {
 
 /*	New fields introduced in version 1.99.5	*/
 
-       /* Envelope. Enabled by mode bit WAVE_ENVELOPES	*/
+                    /* Envelope. Enabled by mode bit WAVE_ENVELOPES	*/
 		unsigned char	env_rate[ 6 ];	 /* GUS HW ramping rate */
 		unsigned char	env_offset[ 6 ]; /* 255 == 100% */
 
@@ -288,10 +288,10 @@ struct patch_info {
 		int		scale_frequency;
 		unsigned int	scale_factor;		/* from 0 to 2048 or 0 to 2 */
 	
-	        int		volume;
+	                     int		volume;
 		int		fractions;
 		int		reserved1;
-	        int		spare[2];
+	                     int		spare[2];
 		char data[1];	/* The waveform data starts here */
 	};
 
@@ -416,7 +416,7 @@ struct sysex_info {
 #define    CTRL_EXPRESSION		253	/* Obsolete */
 #define    CTRL_MAIN_VOLUME		252	/* Obsolete */
 #define SEQ_BALANCE		11
-#define SEQ_VOLMODE             12
+#define SEQ_VOLMODE                                       12
 
 /*
  * Volume mode decides how volumes are used
@@ -453,7 +453,7 @@ struct sysex_info {
  *	route the patch to the corresponding device.
  *
  *	For wave table use struct patch_info. Initialize the key field
- *      to WAVE_PATCH.
+ *                   to WAVE_PATCH.
  */
 #define SEQ_PRIVATE		0xfe	/* Low level HW dependent events (8 bytes) */
 #define SEQ_EXTENDED		0xff	/* Extended events (8 bytes) OBSOLETE */
@@ -488,7 +488,7 @@ struct synth_info {	/* Read only */
 
 #define SAMPLE_TYPE_BASIC		0x10
 #define SAMPLE_TYPE_GUS			SAMPLE_TYPE_BASIC
-#define SAMPLE_TYPE_WAVEFRONT           0x11
+#define SAMPLE_TYPE_WAVEFRONT                        0x11
 
 		int	perc_mode;	/* No longer supported */
 		int	nr_voices;
@@ -715,16 +715,16 @@ typedef struct copr_msg {
 		unsigned char data[4000];
 	} copr_msg;
 
-#define SNDCTL_COPR_RESET             _SIO  ('C',  0)
-#define SNDCTL_COPR_LOAD	      _SIOWR('C',  1, copr_buffer)
-#define SNDCTL_COPR_RDATA	      _SIOWR('C',  2, copr_debug_buf)
-#define SNDCTL_COPR_RCODE	      _SIOWR('C',  3, copr_debug_buf)
-#define SNDCTL_COPR_WDATA	      _SIOW ('C',  4, copr_debug_buf)
-#define SNDCTL_COPR_WCODE	      _SIOW ('C',  5, copr_debug_buf)
-#define SNDCTL_COPR_RUN		      _SIOWR('C',  6, copr_debug_buf)
-#define SNDCTL_COPR_HALT	      _SIOWR('C',  7, copr_debug_buf)
-#define SNDCTL_COPR_SENDMSG	      _SIOWR('C',  8, copr_msg)
-#define SNDCTL_COPR_RCVMSG	      _SIOR ('C',  9, copr_msg)
+#define SNDCTL_COPR_RESET                                       _SIO  ('C',  0)
+#define SNDCTL_COPR_LOAD	                   _SIOWR('C',  1, copr_buffer)
+#define SNDCTL_COPR_RDATA	                   _SIOWR('C',  2, copr_debug_buf)
+#define SNDCTL_COPR_RCODE	                   _SIOWR('C',  3, copr_debug_buf)
+#define SNDCTL_COPR_WDATA	                   _SIOW ('C',  4, copr_debug_buf)
+#define SNDCTL_COPR_WCODE	                   _SIOW ('C',  5, copr_debug_buf)
+#define SNDCTL_COPR_RUN		                   _SIOWR('C',  6, copr_debug_buf)
+#define SNDCTL_COPR_HALT	                   _SIOWR('C',  7, copr_debug_buf)
+#define SNDCTL_COPR_SENDMSG	                   _SIOWR('C',  8, copr_msg)
+#define SNDCTL_COPR_RCVMSG	                   _SIOR ('C',  9, copr_msg)
 
 /*********************************************
  * IOCTL commands for /dev/mixer
@@ -981,7 +981,7 @@ typedef struct mixer_vol_table {
  *			0x02	= Channel event (event[3] = chn).
  *			0x01	= note event (event[4] = note).
  *			(0x01 is not used alone but always with bit 0x02).
- *	       event[2] = MIDI message code (0x80=note off etc.)
+ *	                    event[2] = MIDI message code (0x80=note off etc.)
  *
  */
 
@@ -1075,10 +1075,10 @@ void seqbuf_dump(void);	/* This function must be provided by programs */
  *	{
  *	  if (_seqbufptr)
  *	    if (write (seqfd, _seqbuf, _seqbufptr) == -1)
- *	      {
+ *	                   {
  *		perror ("write /dev/sequencer");
  *		exit (-1);
- *	      }
+ *	                   }
  *	  _seqbufptr = 0;
  *	}
  */

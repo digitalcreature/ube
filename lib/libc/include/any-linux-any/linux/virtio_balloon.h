@@ -55,7 +55,7 @@ struct virtio_balloon_config {
 #define VIRTIO_BALLOON_S_CACHES   7   /* Disk caches */
 #define VIRTIO_BALLOON_S_HTLB_PGALLOC  8  /* Hugetlb page allocations */
 #define VIRTIO_BALLOON_S_HTLB_PGFAIL   9  /* Hugetlb page allocation failures */
-#define VIRTIO_BALLOON_S_NR       10
+#define VIRTIO_BALLOON_S_NR                    10
 
 #define VIRTIO_BALLOON_S_NAMES_WITH_PREFIX(VIRTIO_BALLOON_S_NAMES_prefix) { \
 	VIRTIO_BALLOON_S_NAMES_prefix "swap-in", \
@@ -86,9 +86,9 @@ struct virtio_balloon_config {
  *
  * If implementing a similar structure, do something like the below instead:
  *     struct virtio_balloon_stat {
- *         __virtio16 tag;
- *         __u8 reserved[6];
- *         __virtio64 val;
+ *                      __virtio16 tag;
+ *                      __u8 reserved[6];
+ *                      __virtio64 val;
  *     };
  *
  * In other words, add explicit reserved fields to align field and

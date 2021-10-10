@@ -148,57 +148,57 @@ MIDL_INTERFACE("02538130-898f-11d0-9ad0-00a0c9a06e35")
 IDirectInputEffectDriver : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE DeviceID(
-        DWORD a,
-        DWORD b,
-        DWORD c,
-        DWORD d,
-        LPVOID e) = 0;
+                     DWORD a,
+                     DWORD b,
+                     DWORD c,
+                     DWORD d,
+                     LPVOID e) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetVersions(
-        LPDIDRIVERVERSIONS a) = 0;
+                     LPDIDRIVERVERSIONS a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Escape(
-        DWORD a,
-        DWORD b,
-        LPDIEFFESCAPE c) = 0;
+                     DWORD a,
+                     DWORD b,
+                     LPDIEFFESCAPE c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetGain(
-        DWORD a,
-        DWORD b) = 0;
+                     DWORD a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendForceFeedbackCommand(
-        DWORD a,
-        DWORD b) = 0;
+                     DWORD a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetForceFeedbackState(
-        DWORD a,
-        LPDIDEVICESTATE b) = 0;
+                     DWORD a,
+                     LPDIDEVICESTATE b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DownloadEffect(
-        DWORD a,
-        DWORD b,
-        LPDWORD c,
-        LPCDIEFFECT d,
-        DWORD e) = 0;
+                     DWORD a,
+                     DWORD b,
+                     LPDWORD c,
+                     LPCDIEFFECT d,
+                     DWORD e) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DestroyEffect(
-        DWORD a,
-        DWORD b) = 0;
+                     DWORD a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartEffect(
-        DWORD a,
-        DWORD b,
-        DWORD c,
-        DWORD d) = 0;
+                     DWORD a,
+                     DWORD b,
+                     DWORD c,
+                     DWORD d) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StopEffect(
-        DWORD a,
-        DWORD b) = 0;
+                     DWORD a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEffectStatus(
-        DWORD a,
-        DWORD b,
-        LPDWORD c) = 0;
+                     DWORD a,
+                     DWORD b,
+                     LPDWORD c) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -210,80 +210,80 @@ typedef struct IDirectInputEffectDriverVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDirectInputEffectDriver *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDirectInputEffectDriver *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDirectInputEffectDriver *This);
+                     IDirectInputEffectDriver *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDirectInputEffectDriver *This);
+                     IDirectInputEffectDriver *This);
 
     /*** IDirectInputEffectDriver methods ***/
     HRESULT (STDMETHODCALLTYPE *DeviceID)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b,
-        DWORD c,
-        DWORD d,
-        LPVOID e);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b,
+                     DWORD c,
+                     DWORD d,
+                     LPVOID e);
 
     HRESULT (STDMETHODCALLTYPE *GetVersions)(
-        IDirectInputEffectDriver *This,
-        LPDIDRIVERVERSIONS a);
+                     IDirectInputEffectDriver *This,
+                     LPDIDRIVERVERSIONS a);
 
     HRESULT (STDMETHODCALLTYPE *Escape)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b,
-        LPDIEFFESCAPE c);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b,
+                     LPDIEFFESCAPE c);
 
     HRESULT (STDMETHODCALLTYPE *SetGain)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *SendForceFeedbackCommand)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *GetForceFeedbackState)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        LPDIDEVICESTATE b);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     LPDIDEVICESTATE b);
 
     HRESULT (STDMETHODCALLTYPE *DownloadEffect)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b,
-        LPDWORD c,
-        LPCDIEFFECT d,
-        DWORD e);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b,
+                     LPDWORD c,
+                     LPCDIEFFECT d,
+                     DWORD e);
 
     HRESULT (STDMETHODCALLTYPE *DestroyEffect)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *StartEffect)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b,
-        DWORD c,
-        DWORD d);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b,
+                     DWORD c,
+                     DWORD d);
 
     HRESULT (STDMETHODCALLTYPE *StopEffect)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *GetEffectStatus)(
-        IDirectInputEffectDriver *This,
-        DWORD a,
-        DWORD b,
-        LPDWORD c);
+                     IDirectInputEffectDriver *This,
+                     DWORD a,
+                     DWORD b,
+                     LPDWORD c);
 
     END_INTERFACE
 } IDirectInputEffectDriverVtbl;
@@ -612,69 +612,69 @@ MIDL_INTERFACE("1de12ab1-c9f5-11cf-bfc7-444553540000")
 IDirectInputJoyConfig : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Acquire(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unacquire(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCooperativeLevel(
-        HWND a,
-        DWORD b) = 0;
+                     HWND a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendNotify(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumTypes(
-        LPVOID a,
-        LPVOID b) = 0;
+                     LPVOID a,
+                     LPVOID b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTypeInfo(
-        LPCWSTR a,
-        LPDIJOYTYPEINFO b,
-        DWORD c) = 0;
+                     LPCWSTR a,
+                     LPDIJOYTYPEINFO b,
+                     DWORD c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTypeInfo(
-        LPCWSTR a,
-        LPCDIJOYTYPEINFO b,
-        DWORD c) = 0;
+                     LPCWSTR a,
+                     LPCDIJOYTYPEINFO b,
+                     DWORD c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteType(
-        LPCWSTR a) = 0;
+                     LPCWSTR a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConfig(
-        UINT a,
-        LPDIJOYCONFIG b,
-        DWORD c) = 0;
+                     UINT a,
+                     LPDIJOYCONFIG b,
+                     DWORD c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetConfig(
-        UINT a,
-        LPCDIJOYCONFIG b,
-        DWORD c) = 0;
+                     UINT a,
+                     LPCDIJOYCONFIG b,
+                     DWORD c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteConfig(
-        UINT a) = 0;
+                     UINT a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserValues(
-        LPDIJOYUSERVALUES a,
-        DWORD b) = 0;
+                     LPDIJOYUSERVALUES a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUserValues(
-        LPCDIJOYUSERVALUES a,
-        DWORD b) = 0;
+                     LPCDIJOYUSERVALUES a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddNewHardware(
-        HWND a,
-        REFGUID b) = 0;
+                     HWND a,
+                     REFGUID b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenTypeKey(
-        LPCWSTR a,
-        DWORD b,
-        HKEY *c) = 0;
+                     LPCWSTR a,
+                     DWORD b,
+                     HKEY *c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenConfigKey(
-        UINT a,
-        DWORD b,
-        HKEY *c) = 0;
+                     UINT a,
+                     DWORD b,
+                     HKEY *c) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -686,94 +686,94 @@ typedef struct IDirectInputJoyConfigVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDirectInputJoyConfig *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDirectInputJoyConfig *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDirectInputJoyConfig *This);
+                     IDirectInputJoyConfig *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDirectInputJoyConfig *This);
+                     IDirectInputJoyConfig *This);
 
     /*** IDirectInputJoyConfig methods ***/
     HRESULT (STDMETHODCALLTYPE *Acquire)(
-        IDirectInputJoyConfig *This);
+                     IDirectInputJoyConfig *This);
 
     HRESULT (STDMETHODCALLTYPE *Unacquire)(
-        IDirectInputJoyConfig *This);
+                     IDirectInputJoyConfig *This);
 
     HRESULT (STDMETHODCALLTYPE *SetCooperativeLevel)(
-        IDirectInputJoyConfig *This,
-        HWND a,
-        DWORD b);
+                     IDirectInputJoyConfig *This,
+                     HWND a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *SendNotify)(
-        IDirectInputJoyConfig *This);
+                     IDirectInputJoyConfig *This);
 
     HRESULT (STDMETHODCALLTYPE *EnumTypes)(
-        IDirectInputJoyConfig *This,
-        LPVOID a,
-        LPVOID b);
+                     IDirectInputJoyConfig *This,
+                     LPVOID a,
+                     LPVOID b);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDirectInputJoyConfig *This,
-        LPCWSTR a,
-        LPDIJOYTYPEINFO b,
-        DWORD c);
+                     IDirectInputJoyConfig *This,
+                     LPCWSTR a,
+                     LPDIJOYTYPEINFO b,
+                     DWORD c);
 
     HRESULT (STDMETHODCALLTYPE *SetTypeInfo)(
-        IDirectInputJoyConfig *This,
-        LPCWSTR a,
-        LPCDIJOYTYPEINFO b,
-        DWORD c);
+                     IDirectInputJoyConfig *This,
+                     LPCWSTR a,
+                     LPCDIJOYTYPEINFO b,
+                     DWORD c);
 
     HRESULT (STDMETHODCALLTYPE *DeleteType)(
-        IDirectInputJoyConfig *This,
-        LPCWSTR a);
+                     IDirectInputJoyConfig *This,
+                     LPCWSTR a);
 
     HRESULT (STDMETHODCALLTYPE *GetConfig)(
-        IDirectInputJoyConfig *This,
-        UINT a,
-        LPDIJOYCONFIG b,
-        DWORD c);
+                     IDirectInputJoyConfig *This,
+                     UINT a,
+                     LPDIJOYCONFIG b,
+                     DWORD c);
 
     HRESULT (STDMETHODCALLTYPE *SetConfig)(
-        IDirectInputJoyConfig *This,
-        UINT a,
-        LPCDIJOYCONFIG b,
-        DWORD c);
+                     IDirectInputJoyConfig *This,
+                     UINT a,
+                     LPCDIJOYCONFIG b,
+                     DWORD c);
 
     HRESULT (STDMETHODCALLTYPE *DeleteConfig)(
-        IDirectInputJoyConfig *This,
-        UINT a);
+                     IDirectInputJoyConfig *This,
+                     UINT a);
 
     HRESULT (STDMETHODCALLTYPE *GetUserValues)(
-        IDirectInputJoyConfig *This,
-        LPDIJOYUSERVALUES a,
-        DWORD b);
+                     IDirectInputJoyConfig *This,
+                     LPDIJOYUSERVALUES a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *SetUserValues)(
-        IDirectInputJoyConfig *This,
-        LPCDIJOYUSERVALUES a,
-        DWORD b);
+                     IDirectInputJoyConfig *This,
+                     LPCDIJOYUSERVALUES a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *AddNewHardware)(
-        IDirectInputJoyConfig *This,
-        HWND a,
-        REFGUID b);
+                     IDirectInputJoyConfig *This,
+                     HWND a,
+                     REFGUID b);
 
     HRESULT (STDMETHODCALLTYPE *OpenTypeKey)(
-        IDirectInputJoyConfig *This,
-        LPCWSTR a,
-        DWORD b,
-        HKEY *c);
+                     IDirectInputJoyConfig *This,
+                     LPCWSTR a,
+                     DWORD b,
+                     HKEY *c);
 
     HRESULT (STDMETHODCALLTYPE *OpenConfigKey)(
-        IDirectInputJoyConfig *This,
-        UINT a,
-        DWORD b,
-        HKEY *c);
+                     IDirectInputJoyConfig *This,
+                     UINT a,
+                     DWORD b,
+                     HKEY *c);
 
     END_INTERFACE
 } IDirectInputJoyConfigVtbl;
@@ -886,68 +886,68 @@ MIDL_INTERFACE("eb0d7dfa-1990-4f27-b4d6-edf2eec4a44c")
 IDirectInputJoyConfig8 : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Acquire(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Unacquire(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetCooperativeLevel(
-        HWND a,
-        DWORD b) = 0;
+                     HWND a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SendNotify(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE EnumTypes(
-        LPVOID a,
-        LPVOID b) = 0;
+                     LPVOID a,
+                     LPVOID b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetTypeInfo(
-        LPCWSTR a,
-        LPDIJOYTYPEINFO b,
-        DWORD c) = 0;
+                     LPCWSTR a,
+                     LPDIJOYTYPEINFO b,
+                     DWORD c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetTypeInfo(
-        LPCWSTR a,
-        LPCDIJOYTYPEINFO b,
-        DWORD c,
-        LPWSTR d) = 0;
+                     LPCWSTR a,
+                     LPCDIJOYTYPEINFO b,
+                     DWORD c,
+                     LPWSTR d) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteType(
-        LPCWSTR a) = 0;
+                     LPCWSTR a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetConfig(
-        UINT a,
-        LPDIJOYCONFIG b,
-        DWORD c) = 0;
+                     UINT a,
+                     LPDIJOYCONFIG b,
+                     DWORD c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetConfig(
-        UINT a,
-        LPCDIJOYCONFIG b,
-        DWORD c) = 0;
+                     UINT a,
+                     LPCDIJOYCONFIG b,
+                     DWORD c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE DeleteConfig(
-        UINT a) = 0;
+                     UINT a) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetUserValues(
-        LPDIJOYUSERVALUES a,
-        DWORD b) = 0;
+                     LPDIJOYUSERVALUES a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetUserValues(
-        LPCDIJOYUSERVALUES a,
-        DWORD b) = 0;
+                     LPCDIJOYUSERVALUES a,
+                     DWORD b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddNewHardware(
-        HWND a,
-        REFGUID b) = 0;
+                     HWND a,
+                     REFGUID b) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenTypeKey(
-        LPCWSTR a,
-        DWORD b,
-        HKEY *c) = 0;
+                     LPCWSTR a,
+                     DWORD b,
+                     HKEY *c) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE OpenAppStatusKey(
-        HKEY *a) = 0;
+                     HKEY *a) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -959,93 +959,93 @@ typedef struct IDirectInputJoyConfig8Vtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IDirectInputJoyConfig8 *This,
-        REFIID riid,
-        void **ppvObject);
+                     IDirectInputJoyConfig8 *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IDirectInputJoyConfig8 *This);
+                     IDirectInputJoyConfig8 *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IDirectInputJoyConfig8 *This);
+                     IDirectInputJoyConfig8 *This);
 
     /*** IDirectInputJoyConfig8 methods ***/
     HRESULT (STDMETHODCALLTYPE *Acquire)(
-        IDirectInputJoyConfig8 *This);
+                     IDirectInputJoyConfig8 *This);
 
     HRESULT (STDMETHODCALLTYPE *Unacquire)(
-        IDirectInputJoyConfig8 *This);
+                     IDirectInputJoyConfig8 *This);
 
     HRESULT (STDMETHODCALLTYPE *SetCooperativeLevel)(
-        IDirectInputJoyConfig8 *This,
-        HWND a,
-        DWORD b);
+                     IDirectInputJoyConfig8 *This,
+                     HWND a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *SendNotify)(
-        IDirectInputJoyConfig8 *This);
+                     IDirectInputJoyConfig8 *This);
 
     HRESULT (STDMETHODCALLTYPE *EnumTypes)(
-        IDirectInputJoyConfig8 *This,
-        LPVOID a,
-        LPVOID b);
+                     IDirectInputJoyConfig8 *This,
+                     LPVOID a,
+                     LPVOID b);
 
     HRESULT (STDMETHODCALLTYPE *GetTypeInfo)(
-        IDirectInputJoyConfig8 *This,
-        LPCWSTR a,
-        LPDIJOYTYPEINFO b,
-        DWORD c);
+                     IDirectInputJoyConfig8 *This,
+                     LPCWSTR a,
+                     LPDIJOYTYPEINFO b,
+                     DWORD c);
 
     HRESULT (STDMETHODCALLTYPE *SetTypeInfo)(
-        IDirectInputJoyConfig8 *This,
-        LPCWSTR a,
-        LPCDIJOYTYPEINFO b,
-        DWORD c,
-        LPWSTR d);
+                     IDirectInputJoyConfig8 *This,
+                     LPCWSTR a,
+                     LPCDIJOYTYPEINFO b,
+                     DWORD c,
+                     LPWSTR d);
 
     HRESULT (STDMETHODCALLTYPE *DeleteType)(
-        IDirectInputJoyConfig8 *This,
-        LPCWSTR a);
+                     IDirectInputJoyConfig8 *This,
+                     LPCWSTR a);
 
     HRESULT (STDMETHODCALLTYPE *GetConfig)(
-        IDirectInputJoyConfig8 *This,
-        UINT a,
-        LPDIJOYCONFIG b,
-        DWORD c);
+                     IDirectInputJoyConfig8 *This,
+                     UINT a,
+                     LPDIJOYCONFIG b,
+                     DWORD c);
 
     HRESULT (STDMETHODCALLTYPE *SetConfig)(
-        IDirectInputJoyConfig8 *This,
-        UINT a,
-        LPCDIJOYCONFIG b,
-        DWORD c);
+                     IDirectInputJoyConfig8 *This,
+                     UINT a,
+                     LPCDIJOYCONFIG b,
+                     DWORD c);
 
     HRESULT (STDMETHODCALLTYPE *DeleteConfig)(
-        IDirectInputJoyConfig8 *This,
-        UINT a);
+                     IDirectInputJoyConfig8 *This,
+                     UINT a);
 
     HRESULT (STDMETHODCALLTYPE *GetUserValues)(
-        IDirectInputJoyConfig8 *This,
-        LPDIJOYUSERVALUES a,
-        DWORD b);
+                     IDirectInputJoyConfig8 *This,
+                     LPDIJOYUSERVALUES a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *SetUserValues)(
-        IDirectInputJoyConfig8 *This,
-        LPCDIJOYUSERVALUES a,
-        DWORD b);
+                     IDirectInputJoyConfig8 *This,
+                     LPCDIJOYUSERVALUES a,
+                     DWORD b);
 
     HRESULT (STDMETHODCALLTYPE *AddNewHardware)(
-        IDirectInputJoyConfig8 *This,
-        HWND a,
-        REFGUID b);
+                     IDirectInputJoyConfig8 *This,
+                     HWND a,
+                     REFGUID b);
 
     HRESULT (STDMETHODCALLTYPE *OpenTypeKey)(
-        IDirectInputJoyConfig8 *This,
-        LPCWSTR a,
-        DWORD b,
-        HKEY *c);
+                     IDirectInputJoyConfig8 *This,
+                     LPCWSTR a,
+                     DWORD b,
+                     HKEY *c);
 
     HRESULT (STDMETHODCALLTYPE *OpenAppStatusKey)(
-        IDirectInputJoyConfig8 *This,
-        HKEY *a);
+                     IDirectInputJoyConfig8 *This,
+                     HKEY *a);
 
     END_INTERFACE
 } IDirectInputJoyConfig8Vtbl;

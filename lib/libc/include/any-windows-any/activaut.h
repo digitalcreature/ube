@@ -156,47 +156,47 @@ MIDL_INTERFACE("0aee2a94-bcbb-11d0-8c72-00c04fc2b085")
 IScriptNode : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE Alive(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Delete(
-        ) = 0;
+                     ) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetParent(
-        IScriptNode **ppsnParent) = 0;
+                     IScriptNode **ppsnParent) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetIndexInParent(
-        ULONG *pisn) = 0;
+                     ULONG *pisn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetCookie(
-        DWORD *pdwCookie) = 0;
+                     DWORD *pdwCookie) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetNumberOfChildren(
-        ULONG *pcsn) = 0;
+                     ULONG *pcsn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetChild(
-        ULONG isn,
-        IScriptNode **ppsn) = 0;
+                     ULONG isn,
+                     IScriptNode **ppsn) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguage(
-        BSTR *pbstr) = 0;
+                     BSTR *pbstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateChildEntry(
-        ULONG isn,
-        DWORD dwCookie,
-        LPCOLESTR pszDelimiter,
-        IScriptEntry **ppse) = 0;
+                     ULONG isn,
+                     DWORD dwCookie,
+                     LPCOLESTR pszDelimiter,
+                     IScriptEntry **ppse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE CreateChildHandler(
-        LPCOLESTR pszDefaultName,
-        LPCOLESTR *prgpszNames,
-        ULONG cpszNames,
-        LPCOLESTR pszEvent,
-        LPCOLESTR pszDelimiter,
-        ITypeInfo *ptiSignature,
-        ULONG iMethodSignature,
-        ULONG isn,
-        DWORD dwCookie,
-        IScriptEntry **ppse) = 0;
+                     LPCOLESTR pszDefaultName,
+                     LPCOLESTR *prgpszNames,
+                     ULONG cpszNames,
+                     LPCOLESTR pszEvent,
+                     LPCOLESTR pszDelimiter,
+                     ITypeInfo *ptiSignature,
+                     ULONG iMethodSignature,
+                     ULONG isn,
+                     DWORD dwCookie,
+                     IScriptEntry **ppse) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -208,67 +208,67 @@ typedef struct IScriptNodeVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IScriptNode *This,
-        REFIID riid,
-        void **ppvObject);
+                     IScriptNode *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IScriptNode *This);
+                     IScriptNode *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IScriptNode *This);
+                     IScriptNode *This);
 
     /*** IScriptNode methods ***/
     HRESULT (STDMETHODCALLTYPE *Alive)(
-        IScriptNode *This);
+                     IScriptNode *This);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IScriptNode *This);
+                     IScriptNode *This);
 
     HRESULT (STDMETHODCALLTYPE *GetParent)(
-        IScriptNode *This,
-        IScriptNode **ppsnParent);
+                     IScriptNode *This,
+                     IScriptNode **ppsnParent);
 
     HRESULT (STDMETHODCALLTYPE *GetIndexInParent)(
-        IScriptNode *This,
-        ULONG *pisn);
+                     IScriptNode *This,
+                     ULONG *pisn);
 
     HRESULT (STDMETHODCALLTYPE *GetCookie)(
-        IScriptNode *This,
-        DWORD *pdwCookie);
+                     IScriptNode *This,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfChildren)(
-        IScriptNode *This,
-        ULONG *pcsn);
+                     IScriptNode *This,
+                     ULONG *pcsn);
 
     HRESULT (STDMETHODCALLTYPE *GetChild)(
-        IScriptNode *This,
-        ULONG isn,
-        IScriptNode **ppsn);
+                     IScriptNode *This,
+                     ULONG isn,
+                     IScriptNode **ppsn);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IScriptNode *This,
-        BSTR *pbstr);
+                     IScriptNode *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *CreateChildEntry)(
-        IScriptNode *This,
-        ULONG isn,
-        DWORD dwCookie,
-        LPCOLESTR pszDelimiter,
-        IScriptEntry **ppse);
+                     IScriptNode *This,
+                     ULONG isn,
+                     DWORD dwCookie,
+                     LPCOLESTR pszDelimiter,
+                     IScriptEntry **ppse);
 
     HRESULT (STDMETHODCALLTYPE *CreateChildHandler)(
-        IScriptNode *This,
-        LPCOLESTR pszDefaultName,
-        LPCOLESTR *prgpszNames,
-        ULONG cpszNames,
-        LPCOLESTR pszEvent,
-        LPCOLESTR pszDelimiter,
-        ITypeInfo *ptiSignature,
-        ULONG iMethodSignature,
-        ULONG isn,
-        DWORD dwCookie,
-        IScriptEntry **ppse);
+                     IScriptNode *This,
+                     LPCOLESTR pszDefaultName,
+                     LPCOLESTR *prgpszNames,
+                     ULONG cpszNames,
+                     LPCOLESTR pszEvent,
+                     LPCOLESTR pszDelimiter,
+                     ITypeInfo *ptiSignature,
+                     ULONG iMethodSignature,
+                     ULONG isn,
+                     DWORD dwCookie,
+                     IScriptEntry **ppse);
 
     END_INTERFACE
 } IScriptNodeVtbl;
@@ -356,40 +356,40 @@ MIDL_INTERFACE("0aee2a95-bcbb-11d0-8c72-00c04fc2b085")
 IScriptEntry : public IScriptNode
 {
     virtual HRESULT STDMETHODCALLTYPE GetText(
-        BSTR *pbstr) = 0;
+                     BSTR *pbstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetText(
-        LPCOLESTR psz) = 0;
+                     LPCOLESTR psz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetBody(
-        BSTR *pbstr) = 0;
+                     BSTR *pbstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetBody(
-        LPCOLESTR psz) = 0;
+                     LPCOLESTR psz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetName(
-        BSTR *pbstr) = 0;
+                     BSTR *pbstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetName(
-        LPCOLESTR psz) = 0;
+                     LPCOLESTR psz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetItemName(
-        BSTR *pbstr) = 0;
+                     BSTR *pbstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetItemName(
-        LPCOLESTR psz) = 0;
+                     LPCOLESTR psz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSignature(
-        ITypeInfo **ppti,
-        ULONG *piMethod) = 0;
+                     ITypeInfo **ppti,
+                     ULONG *piMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSignature(
-        ITypeInfo *pti,
-        ULONG iMethod) = 0;
+                     ITypeInfo *pti,
+                     ULONG iMethod) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRange(
-        ULONG *pichMin,
-        ULONG *pcch) = 0;
+                     ULONG *pichMin,
+                     ULONG *pcch) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -401,115 +401,115 @@ typedef struct IScriptEntryVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IScriptEntry *This,
-        REFIID riid,
-        void **ppvObject);
+                     IScriptEntry *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IScriptEntry *This);
+                     IScriptEntry *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IScriptEntry *This);
+                     IScriptEntry *This);
 
     /*** IScriptNode methods ***/
     HRESULT (STDMETHODCALLTYPE *Alive)(
-        IScriptEntry *This);
+                     IScriptEntry *This);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IScriptEntry *This);
+                     IScriptEntry *This);
 
     HRESULT (STDMETHODCALLTYPE *GetParent)(
-        IScriptEntry *This,
-        IScriptNode **ppsnParent);
+                     IScriptEntry *This,
+                     IScriptNode **ppsnParent);
 
     HRESULT (STDMETHODCALLTYPE *GetIndexInParent)(
-        IScriptEntry *This,
-        ULONG *pisn);
+                     IScriptEntry *This,
+                     ULONG *pisn);
 
     HRESULT (STDMETHODCALLTYPE *GetCookie)(
-        IScriptEntry *This,
-        DWORD *pdwCookie);
+                     IScriptEntry *This,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfChildren)(
-        IScriptEntry *This,
-        ULONG *pcsn);
+                     IScriptEntry *This,
+                     ULONG *pcsn);
 
     HRESULT (STDMETHODCALLTYPE *GetChild)(
-        IScriptEntry *This,
-        ULONG isn,
-        IScriptNode **ppsn);
+                     IScriptEntry *This,
+                     ULONG isn,
+                     IScriptNode **ppsn);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IScriptEntry *This,
-        BSTR *pbstr);
+                     IScriptEntry *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *CreateChildEntry)(
-        IScriptEntry *This,
-        ULONG isn,
-        DWORD dwCookie,
-        LPCOLESTR pszDelimiter,
-        IScriptEntry **ppse);
+                     IScriptEntry *This,
+                     ULONG isn,
+                     DWORD dwCookie,
+                     LPCOLESTR pszDelimiter,
+                     IScriptEntry **ppse);
 
     HRESULT (STDMETHODCALLTYPE *CreateChildHandler)(
-        IScriptEntry *This,
-        LPCOLESTR pszDefaultName,
-        LPCOLESTR *prgpszNames,
-        ULONG cpszNames,
-        LPCOLESTR pszEvent,
-        LPCOLESTR pszDelimiter,
-        ITypeInfo *ptiSignature,
-        ULONG iMethodSignature,
-        ULONG isn,
-        DWORD dwCookie,
-        IScriptEntry **ppse);
+                     IScriptEntry *This,
+                     LPCOLESTR pszDefaultName,
+                     LPCOLESTR *prgpszNames,
+                     ULONG cpszNames,
+                     LPCOLESTR pszEvent,
+                     LPCOLESTR pszDelimiter,
+                     ITypeInfo *ptiSignature,
+                     ULONG iMethodSignature,
+                     ULONG isn,
+                     DWORD dwCookie,
+                     IScriptEntry **ppse);
 
     /*** IScriptEntry methods ***/
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        IScriptEntry *This,
-        BSTR *pbstr);
+                     IScriptEntry *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetText)(
-        IScriptEntry *This,
-        LPCOLESTR psz);
+                     IScriptEntry *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetBody)(
-        IScriptEntry *This,
-        BSTR *pbstr);
+                     IScriptEntry *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetBody)(
-        IScriptEntry *This,
-        LPCOLESTR psz);
+                     IScriptEntry *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IScriptEntry *This,
-        BSTR *pbstr);
+                     IScriptEntry *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IScriptEntry *This,
-        LPCOLESTR psz);
+                     IScriptEntry *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetItemName)(
-        IScriptEntry *This,
-        BSTR *pbstr);
+                     IScriptEntry *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetItemName)(
-        IScriptEntry *This,
-        LPCOLESTR psz);
+                     IScriptEntry *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetSignature)(
-        IScriptEntry *This,
-        ITypeInfo **ppti,
-        ULONG *piMethod);
+                     IScriptEntry *This,
+                     ITypeInfo **ppti,
+                     ULONG *piMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetSignature)(
-        IScriptEntry *This,
-        ITypeInfo *pti,
-        ULONG iMethod);
+                     IScriptEntry *This,
+                     ITypeInfo *pti,
+                     ULONG iMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetRange)(
-        IScriptEntry *This,
-        ULONG *pichMin,
-        ULONG *pcch);
+                     IScriptEntry *This,
+                     ULONG *pichMin,
+                     ULONG *pcch);
 
     END_INTERFACE
 } IScriptEntryVtbl;
@@ -643,22 +643,22 @@ MIDL_INTERFACE("0aee2a96-bcbb-11d0-8c72-00c04fc2b085")
 IScriptScriptlet : public IScriptEntry
 {
     virtual HRESULT STDMETHODCALLTYPE GetSubItemName(
-        BSTR *pbstr) = 0;
+                     BSTR *pbstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSubItemName(
-        LPCOLESTR psz) = 0;
+                     LPCOLESTR psz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEventName(
-        BSTR *pbstr) = 0;
+                     BSTR *pbstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetEventName(
-        LPCOLESTR psz) = 0;
+                     LPCOLESTR psz) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetSimpleEventName(
-        BSTR *pbstr) = 0;
+                     BSTR *pbstr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE SetSimpleEventName(
-        LPCOLESTR psz) = 0;
+                     LPCOLESTR psz) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -670,140 +670,140 @@ typedef struct IScriptScriptletVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IScriptScriptlet *This,
-        REFIID riid,
-        void **ppvObject);
+                     IScriptScriptlet *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IScriptScriptlet *This);
+                     IScriptScriptlet *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IScriptScriptlet *This);
+                     IScriptScriptlet *This);
 
     /*** IScriptNode methods ***/
     HRESULT (STDMETHODCALLTYPE *Alive)(
-        IScriptScriptlet *This);
+                     IScriptScriptlet *This);
 
     HRESULT (STDMETHODCALLTYPE *Delete)(
-        IScriptScriptlet *This);
+                     IScriptScriptlet *This);
 
     HRESULT (STDMETHODCALLTYPE *GetParent)(
-        IScriptScriptlet *This,
-        IScriptNode **ppsnParent);
+                     IScriptScriptlet *This,
+                     IScriptNode **ppsnParent);
 
     HRESULT (STDMETHODCALLTYPE *GetIndexInParent)(
-        IScriptScriptlet *This,
-        ULONG *pisn);
+                     IScriptScriptlet *This,
+                     ULONG *pisn);
 
     HRESULT (STDMETHODCALLTYPE *GetCookie)(
-        IScriptScriptlet *This,
-        DWORD *pdwCookie);
+                     IScriptScriptlet *This,
+                     DWORD *pdwCookie);
 
     HRESULT (STDMETHODCALLTYPE *GetNumberOfChildren)(
-        IScriptScriptlet *This,
-        ULONG *pcsn);
+                     IScriptScriptlet *This,
+                     ULONG *pcsn);
 
     HRESULT (STDMETHODCALLTYPE *GetChild)(
-        IScriptScriptlet *This,
-        ULONG isn,
-        IScriptNode **ppsn);
+                     IScriptScriptlet *This,
+                     ULONG isn,
+                     IScriptNode **ppsn);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguage)(
-        IScriptScriptlet *This,
-        BSTR *pbstr);
+                     IScriptScriptlet *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *CreateChildEntry)(
-        IScriptScriptlet *This,
-        ULONG isn,
-        DWORD dwCookie,
-        LPCOLESTR pszDelimiter,
-        IScriptEntry **ppse);
+                     IScriptScriptlet *This,
+                     ULONG isn,
+                     DWORD dwCookie,
+                     LPCOLESTR pszDelimiter,
+                     IScriptEntry **ppse);
 
     HRESULT (STDMETHODCALLTYPE *CreateChildHandler)(
-        IScriptScriptlet *This,
-        LPCOLESTR pszDefaultName,
-        LPCOLESTR *prgpszNames,
-        ULONG cpszNames,
-        LPCOLESTR pszEvent,
-        LPCOLESTR pszDelimiter,
-        ITypeInfo *ptiSignature,
-        ULONG iMethodSignature,
-        ULONG isn,
-        DWORD dwCookie,
-        IScriptEntry **ppse);
+                     IScriptScriptlet *This,
+                     LPCOLESTR pszDefaultName,
+                     LPCOLESTR *prgpszNames,
+                     ULONG cpszNames,
+                     LPCOLESTR pszEvent,
+                     LPCOLESTR pszDelimiter,
+                     ITypeInfo *ptiSignature,
+                     ULONG iMethodSignature,
+                     ULONG isn,
+                     DWORD dwCookie,
+                     IScriptEntry **ppse);
 
     /*** IScriptEntry methods ***/
     HRESULT (STDMETHODCALLTYPE *GetText)(
-        IScriptScriptlet *This,
-        BSTR *pbstr);
+                     IScriptScriptlet *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetText)(
-        IScriptScriptlet *This,
-        LPCOLESTR psz);
+                     IScriptScriptlet *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetBody)(
-        IScriptScriptlet *This,
-        BSTR *pbstr);
+                     IScriptScriptlet *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetBody)(
-        IScriptScriptlet *This,
-        LPCOLESTR psz);
+                     IScriptScriptlet *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetName)(
-        IScriptScriptlet *This,
-        BSTR *pbstr);
+                     IScriptScriptlet *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetName)(
-        IScriptScriptlet *This,
-        LPCOLESTR psz);
+                     IScriptScriptlet *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetItemName)(
-        IScriptScriptlet *This,
-        BSTR *pbstr);
+                     IScriptScriptlet *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetItemName)(
-        IScriptScriptlet *This,
-        LPCOLESTR psz);
+                     IScriptScriptlet *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetSignature)(
-        IScriptScriptlet *This,
-        ITypeInfo **ppti,
-        ULONG *piMethod);
+                     IScriptScriptlet *This,
+                     ITypeInfo **ppti,
+                     ULONG *piMethod);
 
     HRESULT (STDMETHODCALLTYPE *SetSignature)(
-        IScriptScriptlet *This,
-        ITypeInfo *pti,
-        ULONG iMethod);
+                     IScriptScriptlet *This,
+                     ITypeInfo *pti,
+                     ULONG iMethod);
 
     HRESULT (STDMETHODCALLTYPE *GetRange)(
-        IScriptScriptlet *This,
-        ULONG *pichMin,
-        ULONG *pcch);
+                     IScriptScriptlet *This,
+                     ULONG *pichMin,
+                     ULONG *pcch);
 
     /*** IScriptScriptlet methods ***/
     HRESULT (STDMETHODCALLTYPE *GetSubItemName)(
-        IScriptScriptlet *This,
-        BSTR *pbstr);
+                     IScriptScriptlet *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetSubItemName)(
-        IScriptScriptlet *This,
-        LPCOLESTR psz);
+                     IScriptScriptlet *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetEventName)(
-        IScriptScriptlet *This,
-        BSTR *pbstr);
+                     IScriptScriptlet *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetEventName)(
-        IScriptScriptlet *This,
-        LPCOLESTR psz);
+                     IScriptScriptlet *This,
+                     LPCOLESTR psz);
 
     HRESULT (STDMETHODCALLTYPE *GetSimpleEventName)(
-        IScriptScriptlet *This,
-        BSTR *pbstr);
+                     IScriptScriptlet *This,
+                     BSTR *pbstr);
 
     HRESULT (STDMETHODCALLTYPE *SetSimpleEventName)(
-        IScriptScriptlet *This,
-        LPCOLESTR psz);
+                     IScriptScriptlet *This,
+                     LPCOLESTR psz);
 
     END_INTERFACE
 } IScriptScriptletVtbl;
@@ -963,87 +963,87 @@ MIDL_INTERFACE("9c109da0-7006-11d1-b36c-00a0c911e8b2")
 IActiveScriptAuthor : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE AddNamedItem(
-        LPCOLESTR pszName,
-        DWORD dwFlags,
-        IDispatch *pdisp) = 0;
+                     LPCOLESTR pszName,
+                     DWORD dwFlags,
+                     IDispatch *pdisp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddScriptlet(
-        LPCOLESTR pszDefaultName,
-        LPCOLESTR pszCode,
-        LPCOLESTR pszItemName,
-        LPCOLESTR pszSubItemName,
-        LPCOLESTR pszEventName,
-        LPCOLESTR pszDelimiter,
-        DWORD dwCookie,
-        DWORD dwFlags) = 0;
+                     LPCOLESTR pszDefaultName,
+                     LPCOLESTR pszCode,
+                     LPCOLESTR pszItemName,
+                     LPCOLESTR pszSubItemName,
+                     LPCOLESTR pszEventName,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwCookie,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE ParseScriptText(
-        LPCOLESTR pszCode,
-        LPCOLESTR pszItemName,
-        LPCOLESTR pszDelimiter,
-        DWORD dwCookie,
-        DWORD dwFlags) = 0;
+                     LPCOLESTR pszCode,
+                     LPCOLESTR pszItemName,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwCookie,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptTextAttributes(
-        LPCOLESTR pszCode,
-        ULONG cch,
-        LPCOLESTR pszDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr) = 0;
+                     LPCOLESTR pszCode,
+                     ULONG cch,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetScriptletTextAttributes(
-        LPCOLESTR pszCode,
-        ULONG cch,
-        LPCOLESTR pszDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr) = 0;
+                     LPCOLESTR pszCode,
+                     ULONG cch,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetRoot(
-        IScriptNode **ppsp) = 0;
+                     IScriptNode **ppsp) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetLanguageFlags(
-        DWORD *pgrfasa) = 0;
+                     DWORD *pgrfasa) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetEventHandler(
-        IDispatch *pdisp,
-        LPCOLESTR pszItem,
-        LPCOLESTR pszSubItem,
-        LPCOLESTR pszEvent,
-        IScriptEntry **ppse) = 0;
+                     IDispatch *pdisp,
+                     LPCOLESTR pszItem,
+                     LPCOLESTR pszSubItem,
+                     LPCOLESTR pszEvent,
+                     IScriptEntry **ppse) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveNamedItem(
-        LPCOLESTR pszName) = 0;
+                     LPCOLESTR pszName) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE AddTypeLib(
-        REFGUID rguidTypeLib,
-        DWORD dwMajor,
-        DWORD dwMinor,
-        DWORD dwFlags) = 0;
+                     REFGUID rguidTypeLib,
+                     DWORD dwMajor,
+                     DWORD dwMinor,
+                     DWORD dwFlags) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE RemoveTypeLib(
-        REFGUID rguidTypeLib,
-        DWORD dwMajor,
-        DWORD dwMinor) = 0;
+                     REFGUID rguidTypeLib,
+                     DWORD dwMajor,
+                     DWORD dwMinor) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetChars(
-        DWORD fRequestedList,
-        BSTR *pbstrChars) = 0;
+                     DWORD fRequestedList,
+                     BSTR *pbstrChars) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetInfoFromContext(
-        LPCOLESTR pszCode,
-        ULONG cchCode,
-        ULONG ichCurrentPosition,
-        DWORD dwListTypesRequested,
-        DWORD *pdwListTypesProvided,
-        ULONG *pichListAnchorPosition,
-        ULONG *pichFuncAnchorPosition,
-        MEMBERID *pmemid,
-        LONG *piCurrentParameter,
-        IUnknown **ppunk) = 0;
+                     LPCOLESTR pszCode,
+                     ULONG cchCode,
+                     ULONG ichCurrentPosition,
+                     DWORD dwListTypesRequested,
+                     DWORD *pdwListTypesProvided,
+                     ULONG *pichListAnchorPosition,
+                     ULONG *pichFuncAnchorPosition,
+                     MEMBERID *pmemid,
+                     LONG *piCurrentParameter,
+                     IUnknown **ppunk) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE IsCommitChar(
-        OLECHAR ch,
-        WINBOOL *pfcommit) = 0;
+                     OLECHAR ch,
+                     WINBOOL *pfcommit) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1055,113 +1055,113 @@ typedef struct IActiveScriptAuthorVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptAuthor *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptAuthor *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptAuthor *This);
+                     IActiveScriptAuthor *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptAuthor *This);
+                     IActiveScriptAuthor *This);
 
     /*** IActiveScriptAuthor methods ***/
     HRESULT (STDMETHODCALLTYPE *AddNamedItem)(
-        IActiveScriptAuthor *This,
-        LPCOLESTR pszName,
-        DWORD dwFlags,
-        IDispatch *pdisp);
+                     IActiveScriptAuthor *This,
+                     LPCOLESTR pszName,
+                     DWORD dwFlags,
+                     IDispatch *pdisp);
 
     HRESULT (STDMETHODCALLTYPE *AddScriptlet)(
-        IActiveScriptAuthor *This,
-        LPCOLESTR pszDefaultName,
-        LPCOLESTR pszCode,
-        LPCOLESTR pszItemName,
-        LPCOLESTR pszSubItemName,
-        LPCOLESTR pszEventName,
-        LPCOLESTR pszDelimiter,
-        DWORD dwCookie,
-        DWORD dwFlags);
+                     IActiveScriptAuthor *This,
+                     LPCOLESTR pszDefaultName,
+                     LPCOLESTR pszCode,
+                     LPCOLESTR pszItemName,
+                     LPCOLESTR pszSubItemName,
+                     LPCOLESTR pszEventName,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwCookie,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *ParseScriptText)(
-        IActiveScriptAuthor *This,
-        LPCOLESTR pszCode,
-        LPCOLESTR pszItemName,
-        LPCOLESTR pszDelimiter,
-        DWORD dwCookie,
-        DWORD dwFlags);
+                     IActiveScriptAuthor *This,
+                     LPCOLESTR pszCode,
+                     LPCOLESTR pszItemName,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwCookie,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptTextAttributes)(
-        IActiveScriptAuthor *This,
-        LPCOLESTR pszCode,
-        ULONG cch,
-        LPCOLESTR pszDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr);
+                     IActiveScriptAuthor *This,
+                     LPCOLESTR pszCode,
+                     ULONG cch,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr);
 
     HRESULT (STDMETHODCALLTYPE *GetScriptletTextAttributes)(
-        IActiveScriptAuthor *This,
-        LPCOLESTR pszCode,
-        ULONG cch,
-        LPCOLESTR pszDelimiter,
-        DWORD dwFlags,
-        SOURCE_TEXT_ATTR *pattr);
+                     IActiveScriptAuthor *This,
+                     LPCOLESTR pszCode,
+                     ULONG cch,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwFlags,
+                     SOURCE_TEXT_ATTR *pattr);
 
     HRESULT (STDMETHODCALLTYPE *GetRoot)(
-        IActiveScriptAuthor *This,
-        IScriptNode **ppsp);
+                     IActiveScriptAuthor *This,
+                     IScriptNode **ppsp);
 
     HRESULT (STDMETHODCALLTYPE *GetLanguageFlags)(
-        IActiveScriptAuthor *This,
-        DWORD *pgrfasa);
+                     IActiveScriptAuthor *This,
+                     DWORD *pgrfasa);
 
     HRESULT (STDMETHODCALLTYPE *GetEventHandler)(
-        IActiveScriptAuthor *This,
-        IDispatch *pdisp,
-        LPCOLESTR pszItem,
-        LPCOLESTR pszSubItem,
-        LPCOLESTR pszEvent,
-        IScriptEntry **ppse);
+                     IActiveScriptAuthor *This,
+                     IDispatch *pdisp,
+                     LPCOLESTR pszItem,
+                     LPCOLESTR pszSubItem,
+                     LPCOLESTR pszEvent,
+                     IScriptEntry **ppse);
 
     HRESULT (STDMETHODCALLTYPE *RemoveNamedItem)(
-        IActiveScriptAuthor *This,
-        LPCOLESTR pszName);
+                     IActiveScriptAuthor *This,
+                     LPCOLESTR pszName);
 
     HRESULT (STDMETHODCALLTYPE *AddTypeLib)(
-        IActiveScriptAuthor *This,
-        REFGUID rguidTypeLib,
-        DWORD dwMajor,
-        DWORD dwMinor,
-        DWORD dwFlags);
+                     IActiveScriptAuthor *This,
+                     REFGUID rguidTypeLib,
+                     DWORD dwMajor,
+                     DWORD dwMinor,
+                     DWORD dwFlags);
 
     HRESULT (STDMETHODCALLTYPE *RemoveTypeLib)(
-        IActiveScriptAuthor *This,
-        REFGUID rguidTypeLib,
-        DWORD dwMajor,
-        DWORD dwMinor);
+                     IActiveScriptAuthor *This,
+                     REFGUID rguidTypeLib,
+                     DWORD dwMajor,
+                     DWORD dwMinor);
 
     HRESULT (STDMETHODCALLTYPE *GetChars)(
-        IActiveScriptAuthor *This,
-        DWORD fRequestedList,
-        BSTR *pbstrChars);
+                     IActiveScriptAuthor *This,
+                     DWORD fRequestedList,
+                     BSTR *pbstrChars);
 
     HRESULT (STDMETHODCALLTYPE *GetInfoFromContext)(
-        IActiveScriptAuthor *This,
-        LPCOLESTR pszCode,
-        ULONG cchCode,
-        ULONG ichCurrentPosition,
-        DWORD dwListTypesRequested,
-        DWORD *pdwListTypesProvided,
-        ULONG *pichListAnchorPosition,
-        ULONG *pichFuncAnchorPosition,
-        MEMBERID *pmemid,
-        LONG *piCurrentParameter,
-        IUnknown **ppunk);
+                     IActiveScriptAuthor *This,
+                     LPCOLESTR pszCode,
+                     ULONG cchCode,
+                     ULONG ichCurrentPosition,
+                     DWORD dwListTypesRequested,
+                     DWORD *pdwListTypesProvided,
+                     ULONG *pichListAnchorPosition,
+                     ULONG *pichFuncAnchorPosition,
+                     MEMBERID *pmemid,
+                     LONG *piCurrentParameter,
+                     IUnknown **ppunk);
 
     HRESULT (STDMETHODCALLTYPE *IsCommitChar)(
-        IActiveScriptAuthor *This,
-        OLECHAR ch,
-        WINBOOL *pfcommit);
+                     IActiveScriptAuthor *This,
+                     OLECHAR ch,
+                     WINBOOL *pfcommit);
 
     END_INTERFACE
 } IActiveScriptAuthorVtbl;
@@ -1265,14 +1265,14 @@ MIDL_INTERFACE("7e2d4b70-bd9a-11d0-9336-00a0c90dcaa9")
 IActiveScriptAuthorProcedure : public IUnknown
 {
     virtual HRESULT STDMETHODCALLTYPE ParseProcedureText(
-        LPCOLESTR pszCode,
-        LPCOLESTR pszFormalParams,
-        LPCOLESTR pszProcedureName,
-        LPCOLESTR pszItemName,
-        LPCOLESTR pszDelimiter,
-        DWORD dwCookie,
-        DWORD dwFlags,
-        IDispatch *pdispFor) = 0;
+                     LPCOLESTR pszCode,
+                     LPCOLESTR pszFormalParams,
+                     LPCOLESTR pszProcedureName,
+                     LPCOLESTR pszItemName,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwCookie,
+                     DWORD dwFlags,
+                     IDispatch *pdispFor) = 0;
 
 };
 #ifdef __CRT_UUID_DECL
@@ -1284,27 +1284,27 @@ typedef struct IActiveScriptAuthorProcedureVtbl {
 
     /*** IUnknown methods ***/
     HRESULT (STDMETHODCALLTYPE *QueryInterface)(
-        IActiveScriptAuthorProcedure *This,
-        REFIID riid,
-        void **ppvObject);
+                     IActiveScriptAuthorProcedure *This,
+                     REFIID riid,
+                     void **ppvObject);
 
     ULONG (STDMETHODCALLTYPE *AddRef)(
-        IActiveScriptAuthorProcedure *This);
+                     IActiveScriptAuthorProcedure *This);
 
     ULONG (STDMETHODCALLTYPE *Release)(
-        IActiveScriptAuthorProcedure *This);
+                     IActiveScriptAuthorProcedure *This);
 
     /*** IActiveScriptAuthorProcedure methods ***/
     HRESULT (STDMETHODCALLTYPE *ParseProcedureText)(
-        IActiveScriptAuthorProcedure *This,
-        LPCOLESTR pszCode,
-        LPCOLESTR pszFormalParams,
-        LPCOLESTR pszProcedureName,
-        LPCOLESTR pszItemName,
-        LPCOLESTR pszDelimiter,
-        DWORD dwCookie,
-        DWORD dwFlags,
-        IDispatch *pdispFor);
+                     IActiveScriptAuthorProcedure *This,
+                     LPCOLESTR pszCode,
+                     LPCOLESTR pszFormalParams,
+                     LPCOLESTR pszProcedureName,
+                     LPCOLESTR pszItemName,
+                     LPCOLESTR pszDelimiter,
+                     DWORD dwCookie,
+                     DWORD dwFlags,
+                     IDispatch *pdispFor);
 
     END_INTERFACE
 } IActiveScriptAuthorProcedureVtbl;
@@ -1349,10 +1349,10 @@ static FORCEINLINE HRESULT IActiveScriptAuthorProcedure_ParseProcedureText(IActi
 #endif
 /* Begin additional prototypes for all interfaces */
 
-ULONG           __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
+ULONG                        __RPC_USER BSTR_UserSize     (ULONG *, ULONG, BSTR *);
 unsigned char * __RPC_USER BSTR_UserMarshal  (ULONG *, unsigned char *, BSTR *);
 unsigned char * __RPC_USER BSTR_UserUnmarshal(ULONG *, unsigned char *, BSTR *);
-void            __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
+void                                      __RPC_USER BSTR_UserFree     (ULONG *, BSTR *);
 
 /* End additional prototypes */
 

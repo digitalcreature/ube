@@ -100,13 +100,13 @@ extern int pthread_attr_setinheritsched (pthread_attr_t *__attr,
 
 /* Return the value of the schedparam attribute in *ATTR in *PARAM.  */
 extern int pthread_attr_getschedparam (const pthread_attr_t *__restrict __attr,
-				       struct sched_param *__restrict __param)
+				                    struct sched_param *__restrict __param)
 	__THROW __nonnull ((1, 2));
 
 /* Set the value of the schedparam attribute in *ATTR to PARAM.  */
 extern int pthread_attr_setschedparam (pthread_attr_t *__restrict __attr,
-				       const struct sched_param *__restrict
-				       __param) __THROW __nonnull ((1, 2));
+				                    const struct sched_param *__restrict
+				                    __param) __THROW __nonnull ((1, 2));
 
 
 /* Return the value of the schedpolicy attribute in *ATTR to *POLICY.  */
@@ -136,12 +136,12 @@ extern int pthread_attr_setscope (pthread_attr_t *__attr,
 /* Return the value of the stackaddr attribute in *ATTR in
    *STACKADDR.  */
 extern int pthread_attr_getstackaddr (const pthread_attr_t *__restrict __attr,
-				      void **__restrict __stackaddr)
+				                   void **__restrict __stackaddr)
 	__THROW __nonnull ((1, 2));
 
 /* Set the value of the stackaddr attribute in *ATTR to STACKADDR.  */
 extern int pthread_attr_setstackaddr (pthread_attr_t *__attr,
-				      void *__stackaddr)
+				                   void *__stackaddr)
 	__THROW __nonnull ((1));
 
 
@@ -178,24 +178,24 @@ extern int pthread_attr_setdetachstate (pthread_attr_t *__attr,
 /* Return the value of the guardsize attribute in *ATTR in
    *GUARDSIZE.  */
 extern int pthread_attr_getguardsize (const pthread_attr_t *__restrict __attr,
-				      size_t *__restrict __guardsize)
+				                   size_t *__restrict __guardsize)
 	__THROW __nonnull ((1, 2));
 
 /* Set the value of the guardsize attribute in *ATTR to GUARDSIZE.  */
 extern int pthread_attr_setguardsize (pthread_attr_t *__attr,
-				      size_t __guardsize)
+				                   size_t __guardsize)
 	__THROW __nonnull ((1));
 
 
 /* Return the value of the stacksize attribute in *ATTR in
    *STACKSIZE.  */
 extern int pthread_attr_getstacksize (const pthread_attr_t *__restrict __attr,
-				      size_t *__restrict __stacksize)
+				                   size_t *__restrict __stacksize)
 	__THROW __nonnull ((1, 2));
 
 /* Set the value of the stacksize attribute in *ATTR to STACKSIZE.  */
 extern int pthread_attr_setstacksize (pthread_attr_t *__attr,
-				      size_t __stacksize)
+				                   size_t __stacksize)
 	__THROW __nonnull ((1));
 
 #ifdef __USE_GNU
@@ -379,7 +379,7 @@ extern int pthread_mutexattr_settype(pthread_mutexattr_t *__attr,
 /* Create a mutex with attributes given by ATTR and store it in
    *__MUTEX.  */
 extern int pthread_mutex_init (struct __pthread_mutex *__restrict __mutex,
-			       const pthread_mutexattr_t *__restrict __attr)
+			                    const pthread_mutexattr_t *__restrict __attr)
 	__THROW __nonnull ((1));
 
 /* Destroy the mutex __MUTEX.  */
@@ -456,12 +456,12 @@ extern int pthread_condattr_destroy (pthread_condattr_t *__attr)
 #ifdef __USE_XOPEN2K
 /* Return the value of the clock attribute in *ATTR in *CLOCK_ID.  */
 extern int pthread_condattr_getclock (const pthread_condattr_t *__restrict __attr,
-				      __clockid_t *__restrict __clock_id)
+				                   __clockid_t *__restrict __clock_id)
 	__THROW __nonnull ((1, 2));
 
 /* Set the value of the clock attribute in *ATTR to CLOCK_ID.  */
 extern int pthread_condattr_setclock (pthread_condattr_t *__attr,
-				      __clockid_t __clock_id)
+				                   __clockid_t __clock_id)
 	__THROW __nonnull ((1));
 #endif
 
@@ -486,7 +486,7 @@ extern int pthread_condattr_setpshared (pthread_condattr_t *__attr,
 #define PTHREAD_COND_INITIALIZER __PTHREAD_COND_INITIALIZER
 
 extern int pthread_cond_init (pthread_cond_t *__restrict __cond,
-			      const pthread_condattr_t *__restrict __attr)
+			                   const pthread_condattr_t *__restrict __attr)
 	__THROW __nonnull ((1));
 
 extern int pthread_cond_destroy (pthread_cond_t *__cond)
@@ -505,7 +505,7 @@ extern int pthread_cond_broadcast (pthread_cond_t *__cond)
    calling thread.  On success, MUTEX will be held by the calling
    thread.  */
 extern int pthread_cond_wait (pthread_cond_t *__restrict __cond,
-			      pthread_mutex_t *__restrict __mutex)
+			                   pthread_mutex_t *__restrict __mutex)
 	 __nonnull ((1, 2));
 
 /* Block on condition variable COND.  MUTEX should be held by the
@@ -654,7 +654,7 @@ extern int pthread_rwlock_tryrdlock (pthread_rwlock_t *__rwlock)
 /* Acquire the rwlock *RWLOCK for reading blocking until *ABSTIME if
    it is already held.  */
 extern int pthread_rwlock_timedrdlock (struct __pthread_rwlock *__restrict __rwlock,
-				       const struct timespec *__restrict __abstime)
+				                    const struct timespec *__restrict __abstime)
 	__THROWNL __nonnull ((1, 2));
 # endif
 
@@ -670,7 +670,7 @@ extern int pthread_rwlock_trywrlock (pthread_rwlock_t *__rwlock)
 /* Acquire the rwlock *RWLOCK for writing blocking until *ABSTIME if
    it is already held.  */
 extern int pthread_rwlock_timedwrlock (struct __pthread_rwlock *__restrict __rwlock,
-				       const struct timespec *__restrict __abstime)
+				                    const struct timespec *__restrict __abstime)
 	__THROWNL __nonnull ((1, 2));
 # endif
 
@@ -783,7 +783,7 @@ extern int pthread_barrier_wait (pthread_barrier_t *__barrier)
    On thread destruction, DESTRUCTOR shall be called with the thread
    specific data associate with KEY if it is not NULL.  */
 extern int pthread_key_create (pthread_key_t *__key,
-			       void (*__destructor) (void *))
+			                    void (*__destructor) (void *))
 	__THROW __nonnull ((1));
 
 /* Delete the thread specific data key KEY.  The associated destructor

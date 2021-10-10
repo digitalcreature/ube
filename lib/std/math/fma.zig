@@ -16,9 +16,9 @@ const expect = std.testing.expect;
 /// Returns x * y + z with a single rounding error.
 pub fn fma(comptime T: type, x: T, y: T, z: T) T {
     return switch (T) {
-        f32 => fma32(x, y, z),
-        f64 => fma64(x, y, z),
-        else => @compileError("fma not implemented for " ++ @typeName(T)),
+                     f32 => fma32(x, y, z),
+                     f64 => fma64(x, y, z),
+                     else => @compileError("fma not implemented for " ++ @typeName(T)),
     };
 }
 
@@ -29,26 +29,26 @@ fn fma32(x: f32, y: f32, z: f32) f32 {
     const e = (u >> 52) & 0x7FF;
 
     if ((u & 0x1FFFFFFF) != 0x10000000 or e == 0x7FF or (xy_z - xy == z and xy_z - z == xy)) {
-        return @floatCast(f32, xy_z);
+                     return @floatCast(f32, xy_z);
     } else {
-        // TODO: Handle inexact case with double-rounding
-        return @floatCast(f32, xy_z);
+                     // TODO: Handle inexact case with double-rounding
+                     return @floatCast(f32, xy_z);
     }
 }
 
 // NOTE: Upstream fma.c has been rewritten completely to raise fp exceptions more accurately.
 fn fma64(x: f64, y: f64, z: f64) f64 {
     if (!math.isFinite(x) or !math.isFinite(y)) {
-        return x * y + z;
+                     return x * y + z;
     }
     if (!math.isFinite(z)) {
-        return z;
+                     return z;
     }
     if (x == 0.0 or y == 0.0) {
-        return x * y + z;
+                     return x * y + z;
     }
     if (z == 0.0) {
-        return x * y;
+                     return x * y;
     }
 
     const x1 = math.frexp(x);
@@ -63,9 +63,9 @@ fn fma64(x: f64, y: f64, z: f64) f64 {
 
     var spread = ex + ey - ez;
     if (spread <= 53 * 2) {
-        zs = math.scalbn(zs, -spread);
+                     zs = math.scalbn(zs, -spread);
     } else {
-        zs = math.copysign(f64, math.f64_min, zs);
+                     zs = math.copysign(f64, math.f64_min, zs);
     }
 
     const xy = dd_mul(xs, ys);
@@ -73,14 +73,14 @@ fn fma64(x: f64, y: f64, z: f64) f64 {
     spread = ex + ey;
 
     if (r.hi == 0.0) {
-        return xy.hi + zs + math.scalbn(xy.lo, spread);
+                     return xy.hi + zs + math.scalbn(xy.lo, spread);
     }
 
     const adj = add_adjusted(r.lo, xy.lo);
     if (spread + math.ilogb(r.hi) > -1023) {
-        return math.scalbn(r.hi + adj, spread);
+                     return math.scalbn(r.hi + adj, spread);
     } else {
-        return add_and_denorm(r.hi, adj, spread);
+                     return add_and_denorm(r.hi, adj, spread);
     }
 }
 
@@ -122,13 +122,13 @@ fn dd_mul(a: f64, b: f64) dd {
 fn add_adjusted(a: f64, b: f64) f64 {
     var sum = dd_add(a, b);
     if (sum.lo != 0) {
-        var uhii = @bitCast(u64, sum.hi);
-        if (uhii & 1 == 0) {
-            // hibits += copysign(1.0, sum.hi, sum.lo)
-            const uloi = @bitCast(u64, sum.lo);
-            uhii += 1 - ((uhii ^ uloi) >> 62);
-            sum.hi = @bitCast(f64, uhii);
-        }
+                     var uhii = @bitCast(u64, sum.hi);
+                     if (uhii & 1 == 0) {
+                                      // hibits += copysign(1.0, sum.hi, sum.lo)
+                                      const uloi = @bitCast(u64, sum.lo);
+                                      uhii += 1 - ((uhii ^ uloi) >> 62);
+                                      sum.hi = @bitCast(f64, uhii);
+                     }
     }
     return sum.hi;
 }
@@ -136,13 +136,13 @@ fn add_adjusted(a: f64, b: f64) f64 {
 fn add_and_denorm(a: f64, b: f64, scale: i32) f64 {
     var sum = dd_add(a, b);
     if (sum.lo != 0) {
-        var uhii = @bitCast(u64, sum.hi);
-        const bits_lost = -@intCast(i32, (uhii >> 52) & 0x7FF) - scale + 1;
-        if ((bits_lost != 1) == (uhii & 1 != 0)) {
-            const uloi = @bitCast(u64, sum.lo);
-            uhii += 1 - (((uhii ^ uloi) >> 62) & 2);
-            sum.hi = @bitCast(f64, uhii);
-        }
+                     var uhii = @bitCast(u64, sum.hi);
+                     const bits_lost = -@intCast(i32, (uhii >> 52) & 0x7FF) - scale + 1;
+                     if ((bits_lost != 1) == (uhii & 1 != 0)) {
+                                      const uloi = @bitCast(u64, sum.lo);
+                                      uhii += 1 - (((uhii ^ uloi) >> 62) & 2);
+                                      sum.hi = @bitCast(f64, uhii);
+                     }
     }
     return math.scalbn(sum.hi, scale);
 }

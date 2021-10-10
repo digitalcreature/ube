@@ -73,7 +73,7 @@
 /* rounding control */
 #define _FPU_RC_NEAREST 0x0    /* RECOMMENDED */
 #define _FPU_RC_DOWN    0x400
-#define _FPU_RC_UP      0x800
+#define _FPU_RC_UP                   0x800
 #define _FPU_RC_ZERO    0xC00
 
 #define _FPU_RESERVED 0xF0C0  /* Reserved bits in cw */

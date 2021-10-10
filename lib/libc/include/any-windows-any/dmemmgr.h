@@ -1,11 +1,11 @@
 
 /* $Id: $
  *
- * COPYRIGHT:            This file is in the public domain.
- * PROJECT:              ReactOS kernel
+ * COPYRIGHT:                                      This file is in the public domain.
+ * PROJECT:                                        ReactOS kernel
  * FILE:
- * PURPOSE:              Directx headers
- * PROGRAMMER:           Magnus Olsen (greatlrd)
+ * PURPOSE:                                        Directx headers
+ * PROGRAMMER:                        Magnus Olsen (greatlrd)
  *
  */
 
@@ -72,16 +72,16 @@ typedef struct _SURFACEALIGNMENT
 {
   __GNU_EXTENSION union {
     struct {
-      DWORD dwStartAlignment;
-      DWORD dwPitchAlignment;
-      DWORD dwFlags;
-      DWORD dwReserved2;
+                   DWORD dwStartAlignment;
+                   DWORD dwPitchAlignment;
+                   DWORD dwFlags;
+                   DWORD dwReserved2;
     } Linear;
     struct {
-      DWORD dwXAlignment;
-      DWORD dwYAlignment;
-      DWORD dwFlags;
-      DWORD dwReserved2;
+                   DWORD dwXAlignment;
+                   DWORD dwYAlignment;
+                   DWORD dwFlags;
+                   DWORD dwReserved2;
     } Rectangular;
   };
 } SURFACEALIGNMENT, *LPSURFACEALIGNMENT;
@@ -141,12 +141,12 @@ extern void WINAPI VidMemFree (LPVMEMHEAP pvmh, FLATPTR ptr);
 extern FLATPTR WINAPI VidMemAlloc (LPVMEMHEAP pvmh, DWORD width, DWORD height);
 
 extern FLATPTR WINAPI
-       HeapVidMemAllocAligned(
-                               LPVIDMEM lpVidMem,
-                               DWORD dwWidth,
-                               DWORD dwHeight,
-                               LPSURFACEALIGNMENT lpAlignment,
-                               LPLONG lpNewPitch );
+                    HeapVidMemAllocAligned(
+                                                                                                LPVIDMEM lpVidMem,
+                                                                                                DWORD dwWidth,
+                                                                                                DWORD dwHeight,
+                                                                                                LPSURFACEALIGNMENT lpAlignment,
+                                                                                                LPLONG lpNewPitch );
 
 #ifdef __cplusplus
 }

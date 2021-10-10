@@ -74,7 +74,7 @@ struct ipc_kludge {
 #define SHMCTL		24
 
 /* Used by the DIPC package, try and avoid reusing it */
-#define DIPC            25
+#define DIPC                                      25
 
 #define IPCCALL(version,op)	((version)<<16 | (op))
 
